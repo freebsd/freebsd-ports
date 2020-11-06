@@ -1,4 +1,5 @@
 @postexec chown %%ZEEKUSER%%:%%ZEEKGROUP%% %D/logs
+%%ZEEKCTL%%@postexec chown %%ZEEKUSER%%:%%ZEEKGROUP%% %D/share/zeekctl/scripts
 %%ZEEKCTL%%@postexec chown %%ZEEKUSER%%:%%ZEEKGROUP%% %D/spool
 %%ZEEKCTL%%@postexec chown %%ZEEKUSER%%:%%ZEEKGROUP%% %D/spool/tmp
 %%ZEEKCTL%%@postexec chown -R %%ZEEKUSER%%:%%ZEEKGROUP%% %D/spool/installed-scripts-do-not-touch
@@ -16,15 +17,9 @@ bin/zeek-config
 bin/zeek-cut
 bin/zeek-wrapper
 %%ZEEKCTL%%bin/zeekctl
-%%ZEEKCTL%%@preunexec if cmp -s %D/etc/networks.cfg.example %D/etc/networks.cfg ; then rm -f %D/etc/networks.cfg; fi
-%%ZEEKCTL%%etc/networks.cfg.example
-%%ZEEKCTL%%@postexec if [ ! -f %D/etc/networks.cfg ] ; then cp -p %D/etc/networks.cfg.example %D/etc/networks.cfg; fi
-%%ZEEKCTL%%@preunexec if cmp -s %D/etc/node.cfg.example %D/etc/node.cfg ; then rm -f %D/etc/node.cfg; fi
-%%ZEEKCTL%%etc/node.cfg.example
-%%ZEEKCTL%%@postexec if [ ! -f %D/etc/node.cfg ] ; then cp -p %D/etc/node.cfg.example %D/etc/node.cfg; fi
-%%ZEEKCTL%%@preunexec if cmp -s %D/etc/zeekctl.cfg.example %D/etc/zeekctl.cfg ; then rm -f %D/etc/zeekctl.cfg; fi
-%%ZEEKCTL%%etc/zeekctl.cfg.example
-%%ZEEKCTL%%@postexec if [ ! -f %D/etc/zeekctl.cfg ] ; then cp -p %D/etc/zeekctl.cfg.example %D/etc/zeekctl.cfg; fi
+@sample etc/networks.cfg.sample
+@sample etc/node.cfg.sample
+@sample etc/zeekctl.cfg.sample
 include/binpac/binpac.h
 include/binpac/binpac_analyzer.h
 include/binpac/binpac_buffer.h
@@ -1722,7 +1717,7 @@ man/man8/zeek.8.gz
 %%DATADIR%%/policy/tuning/defaults/warnings.zeek
 %%DATADIR%%/policy/tuning/json-logs.zeek
 %%DATADIR%%/policy/tuning/track-all-assets.zeek
-%%DATADIR%%/site/local.zeek
+@sample %%DATADIR%%/site/local.zeek.sample
 %%ZEEKCTL%%%%DATADIR%%/zeekctl/__load__.zeek
 %%ZEEKCTL%%%%DATADIR%%/zeekctl/auto.zeek
 %%ZEEKCTL%%%%DATADIR%%/zeekctl/check.zeek

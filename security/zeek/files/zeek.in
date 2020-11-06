@@ -17,65 +17,83 @@ node=$2
 start_cmd="zeek_start"
 stop_cmd="zeek_stop"
 restart_cmd="zeek_restart"
+check_cmd="zeek_check"
 deploy_cmd="zeek_deploy"
 install_cmd="zeek_install"
 cleanup_cmd="zeek_cleanup"
 restart_cmd="zeek_restart"
 status_cmd="zeek_status"
 
-extra_commands="deploy install cleanup status restart"
+extra_commands="check cleanup deploy install restart status"
 
 : ${zeekctl_program:=%%PREFIX%%/bin/zeekctl}
+: ${zeek_user:=root}
 
 zeek_enable=${zeek_enable-"NO"}
 
-zeek_start() {
-    if [ ! "${node}" ];
-    then
-        $zeekctl_program start
-    else
-        $zeekctl_program start $node
-    fi
+run()
+{
+	if [ "${zeek_user}" = "root" ]; then
+		$*
+	else
+		su -m ${zeek_user} -c "$*"
+	fi
 }
 
-zeek_stop() {
-    if [ ! "${node}" ];
-    then
-        $zeekctl_program stop
-    else
-        $zeekctl_program stop $node
-    fi
+zeek_start()
+{
+	if [ ! "${node}" ]; then
+		run ${zeekctl_program} start
+	else
+		run ${zeekctl_program} start ${node}
+	fi
+}
+
+zeek_stop()
+{
+	if [ ! "${node}" ]; then
+		run ${zeekctl_program} stop
+	else
+		run ${zeekctl_program} stop ${node}
+	fi
 }
 
 zeek_restart() {
-    if [ ! "${node}" ];
-    then
-        $zeekctl_program restart
-    else
-        $zeekctl_program restart $node
-    fi
+	if [ ! "${node}" ]; then
+		run ${zeekctl_program} restart
+	else
+		run ${zeekctl_program} restart ${node}
+	fi
 }
 
-zeek_deploy() {
-    $zeekctl_program deploy
+zeek_check()
+{
+	run ${zeekctl_program} check
 }
 
-zeek_install() {
-    $zeekctl_program install
+zeek_deploy()
+{
+	run ${zeekctl_program} deploy
 }
 
-zeek_cleanup() {
-    if [ ! "${node}" ];
-    then
-        $zeekctl_program cleanup
-    else
-        $zeekctl_program cleanup ${node}
-    fi
+zeek_install()
+{
+	run ${zeekctl_program} install
 }
 
-zeek_status() {
-    $zeekctl_program status
+zeek_cleanup()
+{
+	if [ ! "${node}" ]; then
+		run ${zeekctl_program} cleanup
+	else
+		run ${zeekctl_program} cleanup ${node}
+	fi
 }
 
-load_rc_config $name
+zeek_status()
+{
+	run ${zeekctl_program} status
+}
+
+load_rc_config ${name}
 run_rc_command "$1"

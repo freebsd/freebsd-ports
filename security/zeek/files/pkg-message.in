@@ -1,12 +1,39 @@
 [
 { type: install
   message: <<EOM
-During deinstall of this package, the cfg files for broctl
-are not deleted if you have edited them.  Instead
-the software will create a .sample file instead and the
-edited files will remain in place when you upgrade.  If you
-want to delete them, you have to delete them and the directory,
-%%PREFIX%%/etc manually.
+During deinstall of this package, the cfg files for broctl are not
+deleted if you have edited them. Instead the software will create
+a .sample file instead and the edited files will remain in place
+when you upgrade. If you want to delete them, you have to remove
+the %%PREFIX%%/etc directory manually.
+
+The rc.d script now honors the zeek_user rc.d variable.  To run as
+a user other than root (the default) you need to make a few changes.
+For example to run as the user zeek, add this to /etc/rc.conf:
+
+    zeek_enable="YES"
+    zeek_user="zeek"
+
+Add this to /etc/devfs.conf:
+
+    own     bpf     root:bpf
+    perm    bpf     0660
+
+And add zeek to the bpf group:
+
+    bpf:*:81:zeek
+
+and restart the devfs service:
+
+    service devfs restart
+
+or reboot.
+
+If the interface defined in node.cfg is configured for NIC checksum
+offloading (the default when this feature is supported by the
+hardware) you will want to set ignore_checksums in site/local.zeek:
+
+    redef ignore_checksums = T;
 EOM
 }
 ]
