@@ -13,6 +13,9 @@ COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Use devel/pylint instead
+EXPIRATION_DATE=2020-11-30
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid1>=1.6:devel/py-astroid1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isort>=4.2.5:devel/py-isort@${PY_FLAVOR} \
