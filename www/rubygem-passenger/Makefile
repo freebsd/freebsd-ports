@@ -6,7 +6,6 @@ PORTVERSION=	6.0.6
 PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
-PKGNAMEPREFIX=	rubygem-
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Modules for running Ruby on Rails and Rack applications
