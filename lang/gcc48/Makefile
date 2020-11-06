@@ -35,8 +35,8 @@ USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
 SSP_UNSAFE=	yes
-CFLAGS:=	${CFLAGS:N-march=ivybridge:N-march=westmere:N-mretpoline}
-CXXFLAGS:=	${CXXFLAGS:N-march=ivybridge:N-march=westmere:N-mretpoline}
+CFLAGS:=	${CFLAGS:N-march=haswell:N-march=ivybridge:N-march=westmere:N-mretpoline}
+CXXFLAGS:=	${CXXFLAGS:N-march=haswell:N-march=ivybridge:N-march=westmere:N-mretpoline}
 
 .include <bsd.port.pre.mk>
 
