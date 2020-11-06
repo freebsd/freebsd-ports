@@ -42,6 +42,10 @@ MESON_ARGS=	-Dcheck-compatible-gpg=false \
 		-Dpgp-support=true \
 		-Dpkcs11-support=true
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
+LDFLAGS+=	-fuse-ld=lld
+.endif
+
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 PORTSCOUT=	limitw:1,even
 
