@@ -1,0 +1,66 @@
+Obtained from:	https://github.com/mat813/rb-kqueue/pull/12
+
+--- lib/rb-kqueue/event.rb.orig
++++ lib/rb-kqueue/event.rb
+@@ -3,6 +3,11 @@ module KQueue
+   # Each {Watcher} can fire many events,
+   # which are passed to that Watcher's callback.
+   class Event
++
++    # Exception raised on an attempt to construct an {Event}
++    # from a native event with unexpected field values.
++    class UnexpectedEvent < Exception; end
++
+     # Some integer data, the interpretation of which
+     # is specific to each individual {Watcher}.
+     # For specifics, see the individual Watcher subclasses.
+@@ -64,7 +69,11 @@ def initialize(native, queue)
+       @native = native
+       @queue = queue
+       @data = @native[:data]
+-      @filter = KQueue::Native::Flags.from_flag("EVFILT", @native[:filter])
++      begin
++        @filter = KQueue::Native::Flags.from_flag("EVFILT", @native[:filter])
++      rescue Native::Flags::FlagNotFound
++        raise UnexpectedEvent
++      end
+       @flags = Native::Flags.from_mask("EV", @native[:flags])
+ 
+       KQueue.handle_error @native[:data] if @flags.include?(:error)
+--- lib/rb-kqueue/native/flags.rb.orig
++++ lib/rb-kqueue/native/flags.rb
+@@ -97,6 +97,9 @@ module Flags
+       NOTE_TIMER_NSECONDS = 0x00000004 # data is nanoseconds
+       NOTE_TIMER_ABSOLUTE = 0x00000008 # absolute timeout
+ 
++      # Exception raised when a function fails to find a flag satisfying
++      # its given query.
++      class FlagNotFound < Exception; end
+ 
+       # Converts a list of flags to the bitmask that the C API expects.
+       #
+@@ -143,6 +146,7 @@ def self.from_flag(prefix, flag)
+           next unless c =~ re
+           return c.to_s.sub("#{prefix}_", "").downcase.to_sym if const_get(c) == flag
+         end
++        raise FlagNotFound
+       end
+     end
+   end
+--- lib/rb-kqueue/queue.rb.orig
++++ lib/rb-kqueue/queue.rb
+@@ -359,7 +359,13 @@ def read_events(blocking = true)
+       res = Native.kevent(@fd, nil, 0, eventlist, size, timeout)
+ 
+       KQueue.handle_error if res < 0
+-      (0...res).map {|i| KQueue::Event.new(Native::KEvent.new(eventlist[i]), self)}
++      (0...res).map do |i|
++        begin
++          KQueue::Event.new(Native::KEvent.new(eventlist[i]), self)
++        rescue KQueue::Event::UnexpectedEvent
++          nil
++        end
++      end.compact
+     end
+   end
+ end
