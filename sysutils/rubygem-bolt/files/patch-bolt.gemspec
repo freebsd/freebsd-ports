@@ -1,4 +1,4 @@
---- bolt.gemspec.orig	2020-09-23 19:43:23 UTC
+--- bolt.gemspec.orig	2020-11-06 22:18:50 UTC
 +++ bolt.gemspec
 @@ -26,7 +26,7 @@ Gem::Specification.new do |s|
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
@@ -9,13 +9,11 @@
        s.add_runtime_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0"])
        s.add_runtime_dependency(%q<hiera-eyaml>.freeze, ["~> 3"])
        s.add_runtime_dependency(%q<jwt>.freeze, ["~> 2.2"])
-@@ -36,12 +36,12 @@ Gem::Specification.new do |s|
-       s.add_runtime_dependency(%q<net-ssh>.freeze, [">= 4.0"])
+@@ -37,11 +37,11 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<net-ssh-krb>.freeze, ["~> 0.5"])
        s.add_runtime_dependency(%q<orchestrator_client>.freeze, ["~> 0.4"])
--      s.add_runtime_dependency(%q<puppet>.freeze, ["= 6.18.0"])
+       s.add_runtime_dependency(%q<puppet>.freeze, [">= 6.18.0", "< 6.20"])
 -      s.add_runtime_dependency(%q<puppetfile-resolver>.freeze, ["~> 0.4"])
-+      s.add_runtime_dependency(%q<puppet>.freeze, [">= 6.18.0"])
 +      s.add_runtime_dependency(%q<puppetfile-resolver>.freeze, [">= 0.4"])
        s.add_runtime_dependency(%q<puppet-resource_api>.freeze, [">= 1.8.1"])
        s.add_runtime_dependency(%q<puppet-strings>.freeze, ["~> 2.3"])
@@ -34,13 +32,11 @@
        s.add_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0"])
        s.add_dependency(%q<hiera-eyaml>.freeze, ["~> 3"])
        s.add_dependency(%q<jwt>.freeze, ["~> 2.2"])
-@@ -63,12 +63,12 @@ Gem::Specification.new do |s|
-       s.add_dependency(%q<net-ssh>.freeze, [">= 4.0"])
+@@ -64,11 +64,11 @@ Gem::Specification.new do |s|
        s.add_dependency(%q<net-ssh-krb>.freeze, ["~> 0.5"])
        s.add_dependency(%q<orchestrator_client>.freeze, ["~> 0.4"])
--      s.add_dependency(%q<puppet>.freeze, ["= 6.18.0"])
+       s.add_dependency(%q<puppet>.freeze, [">= 6.18.0", "< 6.20"])
 -      s.add_dependency(%q<puppetfile-resolver>.freeze, ["~> 0.4"])
-+      s.add_dependency(%q<puppet>.freeze, [">= 6.18.0"])
 +      s.add_dependency(%q<puppetfile-resolver>.freeze, [">= 0.4"])
        s.add_dependency(%q<puppet-resource_api>.freeze, [">= 1.8.1"])
        s.add_dependency(%q<puppet-strings>.freeze, ["~> 2.3"])
@@ -59,13 +55,11 @@
      s.add_dependency(%q<concurrent-ruby>.freeze, ["~> 1.0"])
      s.add_dependency(%q<hiera-eyaml>.freeze, ["~> 3"])
      s.add_dependency(%q<jwt>.freeze, ["~> 2.2"])
-@@ -91,12 +91,12 @@ Gem::Specification.new do |s|
-     s.add_dependency(%q<net-ssh>.freeze, [">= 4.0"])
+@@ -92,11 +92,11 @@ Gem::Specification.new do |s|
      s.add_dependency(%q<net-ssh-krb>.freeze, ["~> 0.5"])
      s.add_dependency(%q<orchestrator_client>.freeze, ["~> 0.4"])
--    s.add_dependency(%q<puppet>.freeze, ["= 6.18.0"])
+     s.add_dependency(%q<puppet>.freeze, [">= 6.18.0", "< 6.20"])
 -    s.add_dependency(%q<puppetfile-resolver>.freeze, ["~> 0.4"])
-+    s.add_dependency(%q<puppet>.freeze, [">= 6.18.0"])
 +    s.add_dependency(%q<puppetfile-resolver>.freeze, [">= 0.4"])
      s.add_dependency(%q<puppet-resource_api>.freeze, [">= 1.8.1"])
      s.add_dependency(%q<puppet-strings>.freeze, ["~> 2.3"])
