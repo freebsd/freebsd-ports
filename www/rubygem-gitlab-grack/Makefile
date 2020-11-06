@@ -11,6 +11,9 @@ COMMENT=	Ruby/Rack Git Smart-HTTP Server Handler
 
 LICENSE=	MIT
 
+DEPRECATED=	Deprecated by upstream
+EXPIRATION_DATE=2020-11-30
+
 RUN_DEPENDS=	rubygem-rack15>=1.5.1:www/rubygem-rack15
 
 USES=		gem
