@@ -3,6 +3,7 @@
 
 PORTNAME=	fog
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-fog-aliyun>=0.1.0:net/rubygem-fog-aliyun \
 		rubygem-fog-atmos>=0:net/rubygem-fog-atmos \
 		rubygem-fog-aws>=0.6.0:net/rubygem-fog-aws \
-		rubygem-fog-brightbox0>=0.4<1:net/rubygem-fog-brightbox0 \
+		rubygem-fog-brightbox>=0.4:net/rubygem-fog-brightbox \
 		rubygem-fog-cloudatcost>=0.4<1:net/rubygem-fog-cloudatcost \
 		rubygem-fog-cloudstack>=0.1.0<0.2:net/rubygem-fog-cloudstack \
 		rubygem-fog-core>=2.1<3:devel/rubygem-fog-core \
