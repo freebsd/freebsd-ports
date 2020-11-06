@@ -12,6 +12,9 @@ COMMENT=	HTML dashboard framwork based on sinatra
 
 LICENSE=	MIT
 
+DEPRECATED=	Unmaintained by upstream, use www/rubygem-smashing instead
+EXPIRATION_DATE=2020-11-30
+
 RUN_DEPENDS=	rubygem-coffee-script>=2.2.0:devel/rubygem-coffee-script \
 		rubygem-execjs>=2.0.2:devel/rubygem-execjs \
 		rubygem-rack15>=1.5.4,4<1.6,4:www/rubygem-rack15 \
