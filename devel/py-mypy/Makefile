@@ -23,7 +23,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-SHEBANG_FILES=	mypy/typeshed/tests/*.py mypy/typeshed/scripts/*.py
+SHEBANG_FILES=	mypy/typeshed/*/*.py
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
