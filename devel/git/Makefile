@@ -74,7 +74,9 @@ OPTIONS_EXCLUDE=	GUI SVN GITWEB CONTRIB P4 CVS PERL
 
 OPTIONS_SUB=	yes
 
+.if !empty(FLAVOR) && ${FLAVOR:U} != default
 OPTIONS_FILE=		${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
+.endif
 
 CONTRIB_DESC=	Install contributed scripts
 CURL_DESC=	Install curl support (provides HTTPS transport)
