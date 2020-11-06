@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mnn
-DISTVERSION=	1.0.0
-PORTREVISION=	4
+DISTVERSION=	1.1.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
