@@ -4808,6 +4808,7 @@
     SUBDIR += py-poyo
     SUBDIR += py-prance
     SUBDIR += py-pre-commit
+    SUBDIR += py-pre-commit-hooks
     SUBDIR += py-preshed
     SUBDIR += py-pretend
     SUBDIR += py-prettyprinter
