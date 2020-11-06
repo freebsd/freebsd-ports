@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppetserver-ca
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -16,9 +15,5 @@ USES=		gem
 USE_RUBY=	yes
 
 PLIST_FILES=	bin/puppetserver-ca
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
-		${WRKSRC}/lib/puppetserver/ca/config/puppet.rb
 
 .include <bsd.port.mk>
