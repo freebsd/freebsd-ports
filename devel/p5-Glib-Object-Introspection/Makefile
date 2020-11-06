@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Glib-Object-Introspection
-PORTVERSION=	0.048
-PORTREVISION=	2
+PORTVERSION=	0.049
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,11 +21,11 @@ LIB_DEPENDS=	libffi.so:devel/libffi
 RUN_DEPENDS=	p5-Glib>=1.320:devel/p5-Glib
 TEST_DEPENDS=	p5-Cairo-GObject>=0:devel/p5-Cairo-GObject
 
-OPTIONS_DEFINE=	TEST
-
 USES=		gnome perl5
 USE_GNOME=	introspection
 USE_PERL5=	configure
+
+OPTIONS_DEFINE=	TEST
 
 # Glib::Object::Introspection requires cairo and glib20 to build
 # test libraries during build phase, therefore we add them to BUILD_DEPENDS.
