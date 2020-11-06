@@ -1,0 +1,4 @@
+gdown downloads a large file from Google Drive. If you use curl/wget, it fails
+with a large file because of the security warning from Google Drive.
+
+WWW: https://github.com/wkentaro/gdown
