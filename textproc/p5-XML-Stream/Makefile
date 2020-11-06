@@ -19,4 +19,6 @@ RUN_DEPENDS=	p5-Authen-SASL>=0:security/p5-Authen-SASL
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
