@@ -16,7 +16,7 @@ LICENSE=	MIT
 OPTIONS_DEFINE=	PIP SIGNATURE
 
 PIP_DESC=	Use pip to install wheels
-PIP_RUN_DEPENDS=	pip:devel/py-pip
+PIP_RUN_DEPENDS=	pip-${PYTHON_VER}:devel/py-pip@${PY_FLAVOR}
 
 SIGNATURE_DESC=	Enable digital signature of wheels
 SIGNATURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dirspec>=13.05:devel/py-dirspec@${PY_FLAVOR} \
