@@ -2,23 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	dico
-PORTVERSION=	2.7
-PORTREVISION=	3
+PORTVERSION=	2.10
 CATEGORIES=	net textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu-
 
-MAINTAINER=	goran.tal@gmail.com
+MAINTAINER=	info@dikt.tv
 COMMENT=	Flexible modular implementation of DICT server
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
+USES=		gmake libtool localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
-USES=		tar:xz gmake libtool localbase pkgconfig
 
 GNU_CONFIGURE=	yes
 
 INFO=		dico
+
+LDFLAGS+=	-lthr
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 SUB_FILES=	pkg-message
@@ -29,20 +33,11 @@ OPTIONS_DEFAULT=	PYTHON PCRE
 OPTIONS_SUB=	yes
 GSASL_DESC=	GSASL support
 
-PYTHON_USES=		python
-PYTHON_CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
-PYTHON_CONFIGURE_OFF=	--without-python
-
-GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
-GUILE_CONFIGURE_OFF=	--without-guile
-
-PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-PCRE_CONFIGURE_OFF=	--without-pcre
-
 GSASL_LIB_DEPENDS=	libgsasl.so:security/libgsasl
 GSASL_CONFIGURE_WITH=	gsasl
 
-PAM_CONFIGURE_ENABLE=	pam
+GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
+GUILE_CONFIGURE_OFF=	--without-guile
 
 LDAP_USE=		OPENLDAP=yes
 LDAP_CONFIGURE_OFF=	--without-ldap
@@ -50,17 +45,22 @@ LDAP_CONFIGURE_OFF=	--without-ldap
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
+PAM_CONFIGURE_ENABLE=	pam
+
+PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_CONFIGURE_OFF=	--without-pcre
+
+PYTHON_USES=		python
+PYTHON_CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
+PYTHON_CONFIGURE_OFF=	--without-python
+
 post-patch:
 	@${REINPLACE_CMD} 's/@bindir@/@sbindir@/' ${WRKSRC}/dicod/Makefile.in
 	@${REINPLACE_CMD} 's/(bindir)..dir/&\/gdico/' ${WRKSRC}/dico/Makefile.in
-	@${REINPLACE_CMD} '/INSTALL.*charset/d' ${WRKSRC}/gnu/Makefile.in
 	@${REINPLACE_CMD} \
 		-e 's/mu_check_lib_save_LIBS/LIBS/' \
 		-e 's/python-config/$${PYTHON_CONFIG}/' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} 's/mergesort/xmergesort/' ${WRKSRC}/lib/mergesort.c
-	@${REINPLACE_CMD} -E '/(dico_markup_list|text_udb_def);/s,^,extern ,' \
-		${WRKSRC}/include/dico/markup.h ${WRKSRC}/dicod/dicod.h
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/dicod.conf ${STAGEDIR}${PREFIX}/etc/dicod.conf.sample
