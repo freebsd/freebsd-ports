@@ -2,7 +2,7 @@
 
 PORTNAME=	bit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.11
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -17,7 +17,6 @@ GH_ACCOUNT=	chriswalz
 GH_TUPLE=	\
 		AlecAivazis:survey:v2.1.1:alecaivazis_survey/vendor/github.com/AlecAivazis/survey/v2 \
 		apex:log:v1.9.0:apex_log/vendor/github.com/apex/log \
-		bradfitz:iter:e8f45d346db8:bradfitz_iter/vendor/github.com/bradfitz/iter \
 		c-bata:go-prompt:v0.2.5:c_bata_go_prompt/vendor/github.com/c-bata/go-prompt \
 		c4milo:unpackit:4ed373e9ef1c:c4milo_unpackit/vendor/github.com/c4milo/unpackit \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -29,11 +28,8 @@ GH_TUPLE=	\
 		google:go-github:v17.0.0:google_go_github/vendor/github.com/google/go-github \
 		google:go-github:v32.1.0:google_go_github_1/vendor/github.com/google/go-github/v32 \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
-		gosuri:uilive:v0.0.4:gosuri_uilive/vendor/github.com/gosuri/uilive \
-		gosuri:uiprogress:v0.0.1:gosuri_uiprogress/vendor/github.com/gosuri/uiprogress \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:v1.0.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
-		hooklift:assert:v0.1.0:hooklift_assert/vendor/github.com/hooklift/assert \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		klauspost:compress:v1.4.1:klauspost_compress/vendor/github.com/klauspost/compress \
@@ -57,8 +53,8 @@ GH_TUPLE=	\
 		tj:go-update:v2.2.4:tj_go_update/vendor/github.com/tj/go-update \
 		ulikunitz:xz:v0.5.8:ulikunitz_xz/vendor/github.com/ulikunitz/xz
 
-GO_TARGET=	bit ./bitcomplete
-PLIST_FILES=	bin/bit bin/bitcomplete
+GO_TARGET=	bit
+PLIST_FILES=	bin/bit
 SUB_FILES=	pkg-message
 
 .include <bsd.port.mk>

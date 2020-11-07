@@ -3,7 +3,7 @@
    message: <<EOM
    To install bash/zsh completion support, please run:
 
-     $ env COMP_INSTALL=1 %%PREFIX%%/bin/bitcomplete
+     $ bit complete
 EOM
  }
 ]
