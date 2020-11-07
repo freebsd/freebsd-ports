@@ -1,0 +1,10 @@
+bin/blitz
+bin/gs_funcs
+bin/gs_uchroot_so
+bin/gs-mount
+bin/gs-netcat
+bin/gs-sftp
+man/man1/blitz.1.gz
+man/man1/gs-mount.1.gz
+man/man1/gs-netcat.1.gz
+man/man1/gs-sftp.1.gz

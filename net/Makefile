@@ -206,6 +206,7 @@
     SUBDIR += grsync
     SUBDIR += gscloud
     SUBDIR += gsk
+    SUBDIR += gsocket
     SUBDIR += gspoof
     SUBDIR += gssdp
     SUBDIR += gstreamer-plugins-libmms
