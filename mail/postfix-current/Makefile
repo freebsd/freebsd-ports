@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	3.6-20201026
-PORTREVISION?=	1
+DISTVERSION=	3.6-20201104
+PORTREVISION?=	0
 PORTEPOCH=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.porcupine.org/mirrors/postfix-release/ \
@@ -303,7 +303,7 @@ pre-patch:
 		${WRKSRC}/src/global/mail_params.h
 	@${FIND} -X ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man \
 		-type f -a ! \( -name INSTALL -o -name aliases \) | ${XARGS} \
-		${REINPLACE_CMD} -E -e '${REINPLACE}'
+		${REINPLACE_CMD} -i '' -E -e '${REINPLACE}'
 
 post-patch:
 .for f in ${HTML1}
