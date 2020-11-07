@@ -2,8 +2,7 @@
 
 PORTNAME=	openethereum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.1
-PORTREVISION=	6
+DISTVERSION=	3.1.0
 CATEGORIES=	net-p2p
 
 MAINTAINER=	ale@FreeBSD.org
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=		fails to build
 BROKEN_FreeBSD_11=	fails to build
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config90:devel/llvm90
+BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 
 USES=		cargo
 
