@@ -12,8 +12,7 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	${LOCALBASE}/share/calendar/calendar.all:deskutils/calendar-data
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	bsdimp
-GH_TAGNAME=	fcc5d31
+GH_ACCOUNT=	stesser
 
 CFLAGS+=	-D_PATH_LOCALBASE='\"${LOCALBASE}\"'
 LDFLAGS+=	-lm -lutil
