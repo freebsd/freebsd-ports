@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mysqlwsrep
-PORTVERSION?=	5.6.48
+PORTVERSION?=	5.6.49
 DISTVERSIONPREFIX?=	wsrep_
-DISTVERSIONSUFFIX?=	-25.30
+DISTVERSIONSUFFIX?=	-25.31
 PORTREVISION?=	0
 CATEGORIES=	databases
 PKGNAMESUFFIX=	56-server
@@ -144,6 +144,12 @@ SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+# Plugin innodb_memcached requires -fcommon to avoid duplicate symbol linker
+# error with llmv11.
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300109
+CFLAGS+=	-fcommon
+.endif
 
 post-patch:
 	${REINPLACE_CMD} 's/*.1/${MMAN1}/' ${WRKSRC}/man/CMakeLists.txt
