@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rapidcheck
-PORTVERSION=	g20190815
+PORTVERSION=	g20200504
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,10 +10,12 @@ COMMENT=	QuickCheck clone for C++
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+TEST_DEPENDS=	catch>0:devel/catch
+
 USES=		cmake compiler:c++11-lang localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	emil-e
-GH_TAGNAME=	d9482c6
+GH_TAGNAME=	7bc7d30
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
