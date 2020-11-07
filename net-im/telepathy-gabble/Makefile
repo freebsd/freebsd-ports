@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-gabble
-PORTVERSION=	0.18.3
-PORTREVISION=	5
+PORTVERSION=	0.18.4
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
