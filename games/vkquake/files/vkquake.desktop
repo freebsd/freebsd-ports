@@ -7,5 +7,4 @@ Icon=vkquake
 Terminal=false
 Type=Application
 Categories=Game;
-MimeType=x-scheme-handler/steam;
 Keywords=quake;game;First-Person-Shooter;
