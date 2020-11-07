@@ -4512,6 +4512,7 @@
     SUBDIR += py-ipaddr
     SUBDIR += py-ipdb
     SUBDIR += py-ipykernel5
+    SUBDIR += py-ipympl
     SUBDIR += py-ipyparallel
     SUBDIR += py-ipython_genutils
     SUBDIR += py-ipywidgets
