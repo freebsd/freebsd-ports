@@ -18,7 +18,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://samples.mplayerhq.hu/yuv4mpeg2/:pgo
 DIST_SUBDIR=	x264
@@ -33,8 +33,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS?=	libx264.so:multimedia/libx264
 
-X264_BUILD=	160
-X264_REV=	3011
+X264_BUILD=	161
+X264_REV=	3020
 X264_GITVER=	${GL_COMMIT:C/^(.{7}).*/\1/}
 
 USES?=		pkgconfig
@@ -43,15 +43,15 @@ USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
-GL_COMMIT=	cde9a93319bea766a92e306d69059c76de970190
+GL_COMMIT=	d198931a63049db1f2c92d96c34904c69fde8117
 HAS_CONFIGURE=	yes
 SHEBANG_FILES=	configure
 PLIST_FILES?=	bin/x264
 
-OPTIONS_DEFINE+=	DEBUG FFMS LAVF PGO SWSCALE
+OPTIONS_DEFINE+=	BASH DEBUG FFMS LAVF PGO SWSCALE
 OPTIONS_RADIO+=		MP4
 OPTIONS_RADIO_MP4+=	GPAC LSMASH
-OPTIONS_DEFAULT+=	FFMS LAVF LSMASH SWSCALE
+OPTIONS_DEFAULT+=	BASH FFMS LAVF LSMASH SWSCALE
 
 .if make(makesum) # for optional distfiles
 .MAKEFLAGS:	WITH="${OPTIONS_DEFINE}"
@@ -63,6 +63,11 @@ LAVF_DESC=		libav* format input support (requires FFmpeg)
 LSMASH_DESC=		L-SMASH library support
 MP4_DESC=		MPEG-4 output
 SWSCALE_DESC=		Resize video filter
+
+BASH_BUILD_DEPENDS=	bash-completion>0:shells/bash-completion
+BASH_RUN_DEPENDS=	bash-completion>0:shells/bash-completion
+BASH_CONFIGURE_ENABLE=	bashcompletion
+BASH_PLIST_FILES=	share/bash-completion/completions/x264
 
 DEBUG_CONFIGURE_ENABLE=	debug
 DEBUG_CONFIGURE_OFF=	--enable-strip

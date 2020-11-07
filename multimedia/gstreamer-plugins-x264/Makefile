@@ -2,7 +2,7 @@
 # $FreeBSD$
 #   $MCom: ports/multimedia/gstreamer-plugins-x264/Makefile,v 1.3 2008/03/19 14:05:37 ahze Exp $
 
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer x264 plugin
