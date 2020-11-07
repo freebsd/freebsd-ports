@@ -2,16 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-arc-themes
-DISTVERSION=	20190917
+DISTVERSION=	20201013
 CATEGORIES=	x11-themes
 
-MAINTAINER=	mail_me@riseup.net
+MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Arc-themes for GTK-2.0 and GTK-3.0 based desktop environments
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		fails to build
 
 BUILD_DEPENDS=	inkscape:graphics/inkscape \
 		optipng:graphics/optipng \
@@ -22,20 +20,22 @@ RUN_DEPENDS=	gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
 USES=		autoreconf gmake gnome pkgconfig
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	arc-design
+GH_ACCOUNT=	jnsh
 GH_PROJECT=	arc-theme
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 gtk30
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	CINNAMON GNOMESHELL METACITY OPENBOX PLANK UNITY XFCE
-OPTIONS_DEFAULT=	CINNAMON GNOMESHELL METACITY OPENBOX PLANK UNITY XFCE
+OPTIONS_DEFINE=	CINNAMON GNOMESHELL METACITY PLANK UNITY XFCE
+OPTIONS_DEFAULT=	GNOMESHELL METACITY PLANK UNITY XFCE
 OPTIONS_SUB=	yes
 
+CINNAMON_BROKEN=	Current version of Cinnamon in ports is not supported.
 CINNAMON_DESC=	Support for Cinnamon desktop environment
 CINNAMON_IMPLIES=	METACITY
 CINNAMON_CONFIGURE_ENABLE=	cinnamon
+CINNAMON_BUILD_DEPENDS=	cinnamon>0:x11/cinnamon
 
 GNOMESHELL_DESC=	Support for Gnome Shell
 GNOMESHELL_CONFIGURE_ENABLE=	gnome-shell
@@ -43,9 +43,6 @@ GNOMESHELL_BUILD_DEPENDS=	gnome-shell:x11/gnome-shell
 
 METACITY_DESC=	Support for Metacity window manager
 METACITY_CONFIGURE_ENABLE=	metacity
-
-OPENBOX_DESC=	Support for Openbox window manager
-OPENBOX_CONFIGURE_ENABLE=	openbox
 
 PLANK_DESC=	Support for Plank dock
 PLANK_CONFIGURE_ENABLE=	plank
