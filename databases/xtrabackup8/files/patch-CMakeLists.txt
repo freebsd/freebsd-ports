@@ -1,0 +1,13 @@
+--- CMakeLists.txt.orig	2020-08-28 21:02:32 UTC
++++ CMakeLists.txt
+@@ -1575,10 +1575,6 @@ IF(ENABLE_GCOV)
+   INCLUDE(fastcov)
+ ENDIF()
+ 
+-IF(UNIX)
+-  ADD_SUBDIRECTORY(man)
+-ENDIF()
+-
+ IF(NOT WITHOUT_SERVER)
+   ADD_SUBDIRECTORY(packaging/rpm-common)
+   ADD_SUBDIRECTORY(packaging/rpm-oel)

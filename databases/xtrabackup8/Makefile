@@ -3,6 +3,7 @@
 
 PORTNAME=	xtrabackup
 PORTVERSION=	8.0.14
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.percona.com/downloads/Percona-XtraBackup-${PORTVERSION:R}/Percona-XtraBackup-${PORTVERSION}/source/tarball/ \
 		https://github.com/percona/percona-xtrabackup/archive/
@@ -29,6 +30,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	qpress:archivers/qpress
 
+CONFLICTS_INSTALL=	${PORTNAME}
+
 USES=		bison cmake compiler:c++14-lang cpe pkgconfig ssl
 CPE_VENDOR=	percona
 CMAKE_ARGS=	-DBUILD_CONFIG:STRING=xtrabackup_release
@@ -44,7 +47,7 @@ post-patch:
 	@${MV} ${WRKSRC}/lz4 ${WRKSRC}/extra
 
 post-stage:
-	@${RM} -r ${STAGEDIR}${PREFIX}/docs \
-		${STAGEDIR}${PREFIX}/lib/plugin/debug
+	@${RM} -r ${STAGEDIR}${PREFIX}/docs
+	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/plugin/debug
 
 .include <bsd.port.mk>
