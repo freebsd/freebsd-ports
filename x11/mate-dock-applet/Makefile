@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>=0:devel/py-xdg@${PY_FLAVOR}
 
 USES=		python:3.7+ autoreconf gettext gmake gnome libtool localbase \
-		pkgconfig tar:xz
+		pkgconfig shebangfix tar:xz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ubuntu-mate
@@ -32,7 +32,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk3
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
+SHEBANG_FILES=	src/*.in
 
 GLIB_SCHEMAS=	org.mate.panel.applet.dock.gschema.xml
+
+post-patch:
+	${REINPLACE_CMD} -e 's|/usr/bin/env python3|${PYTHON_CMD}|g' \
+		${WRKSRC}/src/org.mate.panel.applet.DockAppletFactory.service.in
 
 .include <bsd.port.mk>
