@@ -19,7 +19,7 @@ index 33b407046..57ad46dd8 100644
  		MESSAGE (STATUS "Cantor Library ${Cantor_VERSION} TOO OLD. Minimum usable version is 19.12")
  	ENDIF ()
 -	IF (${Cantor_VERSION} VERSION_GREATER "20.08")
-+	IF (${Cantor_VERSION} VERSION_GREATER "20.08.2")
++	IF (${Cantor_VERSION} VERSION_GREATER "20.08.3")
  		add_definitions (-DHAVE_NEW_CANTOR_LIBS)
  	ENDIF ()
  ELSE ()
