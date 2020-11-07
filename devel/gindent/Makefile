@@ -2,40 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	gindent
-PORTVERSION=	2.2.12
+DISTVERSION=	2.2.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU/indent
-DISTNAME=	indent-${PORTVERSION}
+DISTNAME=	indent-${DISTVERSION}
 
 MAINTAINER=	moritz@schmi.tt
-COMMENT=	GNU indent
+COMMENT=	C source code reformatter
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		localbase:ldflags makeinfo
+USES=	groff:run localbase:ldflags makeinfo
+
+INFO=	indent
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g
-MAKE_JOBS_UNSAFE=	yes
+CONFIGURE_ARGS=	--program-prefix=g --htmldir=${DOCSDIR}
 
 CPPFLAGS+=	-DBERKELEY_DEFAULTS=1
 
-INFO=		indent
-
 OPTIONS_DEFINE=		DOCS NLS
 OPTIONS_SUB=		yes
+NLS_DESC=		Native Language Support via gettext utilities
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	# XXX: Would be nice to use "configure --htmldir" or something similar
-	# to install this document into an appropriate directory automatically.
-	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/doc/indent/indent.html ${STAGEDIR}${DOCSDIR}
-	${RM} -r ${STAGEDIR}${PREFIX}/doc
 
 .include <bsd.port.mk>
