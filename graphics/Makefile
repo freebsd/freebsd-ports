@@ -399,6 +399,7 @@
     SUBDIR += kipi-plugins
     SUBDIR += klatexformula
     SUBDIR += kludge3d
+    SUBDIR += kmscube
     SUBDIR += kolourpaint
     SUBDIR += kooka
     SUBDIR += kphotoalbum
