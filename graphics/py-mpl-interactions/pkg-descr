@@ -1,0 +1,7 @@
+mpl_interactions aims to simplify creation of interactive Matplotlib plots.
+It provides:
+- sliders to control the output of pyplot functions (e.g. plot and hist)
+- function to compare horizontal and vertical slices of heatmaps
+- zooming with the scroll wheel
+
+WWW: https://pypi.python.org/pypi/mpl-interactions
