@@ -192,7 +192,7 @@ post-configure-XMSS-on:
 
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/ssh_config \
-	    ${STAGEDIR}${ETCDIR}//ssh_config.sample
+	    ${STAGEDIR}${ETCDIR}/ssh_config.sample
 	${MV} ${STAGEDIR}${ETCDIR}/sshd_config \
 	    ${STAGEDIR}${ETCDIR}/sshd_config.sample
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
