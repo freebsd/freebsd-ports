@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-online-miners
-PORTVERSION=	3.26.0
+PORTVERSION=	3.34.0
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
