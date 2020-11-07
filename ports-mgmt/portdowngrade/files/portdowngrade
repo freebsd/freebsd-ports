@@ -61,7 +61,7 @@ getport_recursive()
 	fi
 }
 
-svn=$(which svn 2>/dev/null || which svnlite 2>/dev/null) || err "Where is Subversion??"
+svn=$(which svn 2>/dev/null || which svnlite 2>/dev/null) || err "Subversion appears not to be installed on this system as svnlite or svn.  Please install it (pkg install subversion)"
 
 PORTSDIR="$(make -f /usr/share/mk/bsd.port.mk -VPORTSDIR)"
 

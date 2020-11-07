@@ -12,8 +12,6 @@ COMMENT=	Sets a port back to a previous version
 
 LICENSE=	PD
 
-RUN_DEPENDS=	svn:devel/subversion${WITH_SUBVERSION_VER}
-
 NO_BUILD=	yes
 PLIST_FILES=	sbin/portdowngrade
 
