@@ -28,6 +28,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgpg-error.so:security/libgpg-error
 RUN_DEPENDS=	qpress:archivers/qpress
 
+CONFLICTS_INSTALL=	${PORTNAME}8
+
 # autotool is in use for 5.1 builds
 USES=		alias autoreconf:build bison cmake:noninja compiler:c++11-lang \
 		cpe gettext libtool perl5 shebangfix
