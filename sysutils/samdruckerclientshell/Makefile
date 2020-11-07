@@ -2,6 +2,7 @@
 
 PORTNAME=	SamDruckerClientShell
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=   GH
 
