@@ -34,7 +34,7 @@ lib/babl-0.1/ycbcr.so
 lib/girepository-1.0/Babl-0.1.typelib
 lib/libbabl-0.1.so
 lib/libbabl-0.1.so.0
-lib/libbabl-0.1.so.0.177.1
+lib/libbabl-0.1.so.0.181.1
 libdata/pkgconfig/babl.pc
 share/gir-1.0/Babl-0.1.gir
 share/vala/vapi/babl-0.1.deps
