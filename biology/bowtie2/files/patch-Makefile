@@ -1,6 +1,15 @@
---- Makefile.orig	2020-03-01 15:16:08 UTC
+--- Makefile.orig	2020-11-05 23:04:50 UTC
 +++ Makefile
-@@ -200,22 +200,22 @@ endif
+@@ -24,7 +24,7 @@
+ PREFIX := /usr/local
+ bindir := $(PREFIX)/bin
+ 
+-ARCH := $(shell uname -m)
++ARCH := $(shell uname -p)
+ LDLIBS := -lz
+ GCC_PREFIX := $(shell dirname `which gcc`)
+ GCC_SUFFIX :=
+@@ -201,22 +201,22 @@ endif
  
  BITS := 32
  SSE_FLAG := -msse2
@@ -14,17 +23,17 @@
 +else ifeq (aarch64,$(shell uname -p))
    BITS := 64
    SSE_FLAG :=
-   CXXFLAGS := -fopenmp-simd
-   CPPFLAGS := -Ithird_party/simde
+   CXXFLAGS += -fopenmp-simd
+   CPPFLAGS += -Ithird_party/simde
 -else ifeq (s390x,$(shell uname -m))
 +else ifeq (s390x,$(shell uname -p))
    BITS := 64
    SSE_FLAG :=
-   CXXFLAGS := -fopenmp-simd
-   CPPFLAGS := -Ithird_party/simde
+   CXXFLAGS += -fopenmp-simd
+   CPPFLAGS += -Ithird_party/simde
    SANITIZER_FLAGS :=
 -else ifeq (ppc64le,$(shell uname -m))
 +else ifeq (ppc64le,$(shell uname -p))
    BITS := 64
    SSE_FLAG :=
-   CXXFLAGS := -fopenmp-simd
+   CXXFLAGS += -fopenmp-simd
