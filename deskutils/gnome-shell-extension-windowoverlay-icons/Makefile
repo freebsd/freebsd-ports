@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-windowoverlay-icons
-PORTVERSION=	0.0.0.20171103
-PORTREVISION=	1
+PORTVERSION=	36
+DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome3
 
