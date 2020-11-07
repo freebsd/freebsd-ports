@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	multimarkdown
-DISTVERSION=	6.5.2
+DISTVERSION=	6.6.0
 CATEGORIES=	textproc
 DIST_SUBDIR=	${PORTNAME}
 
@@ -11,7 +11,7 @@ COMMENT=	Extended Markdown processor with more features, written in C
 
 LICENSE=	BSD3CLAUSE MIT GPLv2+ ZLIB
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
@@ -29,7 +29,7 @@ EXTRAS_DESC=		Extra scripts and XSLT support
 HELPERS_DESC=		Helper scripts (conflicts with emulators/mtools)
 
 CHEAT_SHEET_GH_PROJECT=	MultiMarkdown-6-Syntax-Guide:cheat
-CHEAT_SHEET_GH_TAGNAME=	3b268b4:cheat
+CHEAT_SHEET_GH_TAGNAME=	2cf0881:cheat
 CHEAT_SHEET_GH_SUBDIR=	cheat-sheet:cheat
 EXTRAS_GH_PROJECT=	MMD-Support:support
 EXTRAS_GH_TAGNAME=	685c95c:support
@@ -40,7 +40,6 @@ HELPERS_CONFLICTS_INSTALL=	mtools-*
 OPTIONS_SUB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/scripts/*
 
 post-patch-EXTRAS-on:
@@ -66,8 +65,13 @@ do-install-EXTRAS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Support/README.md ${STAGEDIR}${DOCSDIR}/README-extras.md
 
-post-install-CHEAT_SHEET-on:
+do-install-CHEAT_SHEET-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/cheat-sheet
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} cheat-sheet ${STAGEDIR}${DOCSDIR})
+
+post-install:
+.for f in LICENSE.txt README.txt
+	${RM} ${STAGEDIR}${PREFIX}/${f}
+.endfor
 
 .include <bsd.port.mk>
