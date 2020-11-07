@@ -1,4 +1,4 @@
---- tg_owt/CMakeLists.txt.orig	2020-08-30 09:41:57 UTC
+--- tg_owt/CMakeLists.txt.orig	2020-10-07 14:11:02 UTC
 +++ tg_owt/CMakeLists.txt
 @@ -38,7 +38,6 @@ include(cmake/libopenh264.cmake)
  include(cmake/libpffft.cmake)
@@ -8,19 +8,19 @@
  include(cmake/libvpx.cmake)
  include(cmake/libwebrtcbuild.cmake)
  include(cmake/libyuv.cmake)
-@@ -61,7 +60,6 @@ PRIVATE
-     tg_owt::libpffft
-     tg_owt::librnnoise
-     tg_owt::libsrtp
--    tg_owt::libusrsctp
-     tg_owt::libvpx
-     tg_owt::libvpx_mmx
-     tg_owt::libvpx_sse2
-@@ -1757,7 +1755,6 @@ TARGETS
+@@ -62,7 +61,6 @@ if (is_x86 OR is_x64)
+         tg_owt::libpffft
+         tg_owt::librnnoise
+         tg_owt::libsrtp
+-        tg_owt::libusrsctp
+         tg_owt::libvpx
+         tg_owt::libvpx_mmx
+         tg_owt::libvpx_sse2
+@@ -1839,7 +1837,6 @@ TARGETS
      libpffft
      librnnoise
      libsrtp
 -    libusrsctp
      libvpx
-     libvpx_mmx
-     libvpx_sse2
+     ${vpx_export}
+     libwebrtcbuild

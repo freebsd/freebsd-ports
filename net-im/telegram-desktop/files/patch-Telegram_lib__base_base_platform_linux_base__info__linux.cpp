@@ -1,14 +1,14 @@
---- Telegram/lib_base/base/platform/linux/base_info_linux.cpp.orig	2020-08-10 11:25:13 UTC
+--- Telegram/lib_base/base/platform/linux/base_info_linux.cpp.orig	2020-10-20 16:29:09 UTC
 +++ Telegram/lib_base/base/platform/linux/base_info_linux.cpp
-@@ -13,7 +13,6 @@
+@@ -11,7 +11,6 @@
  #include <QtCore/QVersionNumber>
  #include <QtCore/QDate>
  #include <QtGui/QGuiApplication>
 -#include <gnu/libc-version.h>
  
  namespace Platform {
- namespace {
-@@ -72,11 +71,9 @@ QString SystemVersionPretty() {
+ 
+@@ -32,11 +31,9 @@ QString SystemVersionPretty() {
  	const auto value = result ? QString::fromLatin1(result) : QString();
  	const auto list = value.split(':', QString::SkipEmptyParts);
  
@@ -22,7 +22,7 @@
  }
  
  QString SystemCountry() {
-@@ -94,10 +91,6 @@ QString SystemLanguage() {
+@@ -54,10 +51,6 @@ QString SystemLanguage() {
  QDate WhenSystemBecomesOutdated() {
  	if (IsLinux32Bit()) {
  		return QDate(2020, 9, 1);
@@ -33,7 +33,7 @@
  	}
  	return QDate();
  }
-@@ -118,14 +111,6 @@ QString AutoUpdateKey() {
+@@ -78,14 +71,6 @@ QString AutoUpdateKey() {
  	} else {
  		Unexpected("Platform in AutoUpdateKey.");
  	}
