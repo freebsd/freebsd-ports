@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cdo
-PORTVERSION=	1.9.8
-PORTREVISION=	1
+PORTVERSION=	1.9.9
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/20826/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/23323/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -65,7 +64,7 @@ UUID_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "sparc64"
-CFLAGS+=	-DPTHREAD_MUTEXATTR_CONDATTR
+CFLAGS+=	-DPTHREAD_MUTEXATTR
 .endif
 
 post-patch:
