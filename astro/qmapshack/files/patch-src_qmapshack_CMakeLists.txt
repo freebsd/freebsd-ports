@@ -1,11 +1,25 @@
---- src/qmapshack/CMakeLists.txt.orig	2020-03-27 08:07:31 UTC
+--- src/qmapshack/CMakeLists.txt.orig	2020-06-14 10:22:49 UTC
 +++ src/qmapshack/CMakeLists.txt
-@@ -920,7 +920,7 @@ target_link_libraries(${APPLICATION_NAME}
+@@ -897,7 +897,6 @@ include_directories(
+     ${PROJ4_INCLUDE_DIRS}
+     ${ROUTINO_INCLUDE_DIRS}
+     ${ALGLIB_INCLUDE_DIRS}
+-    ${QUAZIP_INCLUDE_DIRS}
+ )
+ 
+ if(APPLE)
+@@ -941,12 +940,12 @@ target_link_libraries(${APPLICATION_NAME}
+     Qt5::Qml
+     Qt5::Positioning
      Qt5::Help
++    QuaZip::QuaZip
      ${DBUS_LIB}
      ${GDAL_LIBRARIES}
 -    ${PROJ4_LIBRARIES}
 +    ${PROJ4_LDFLAGS} ${PROJ4_LIBRARIES}
      ${ROUTINO_LIBRARIES}
      ${ALGLIB_LIBRARIES}
-     ${QUAZIP_LIBRARIES}
+-    ${QUAZIP_LIBRARIES}
+ )
+ 
+ if(APPLE)

@@ -2,6 +2,7 @@
 
 PORTNAME=	mupen64plus-qt
 DISTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	maintainer@hasting.email
@@ -10,7 +11,7 @@ COMMENT=	Basic launcher for Mupen64Plus
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libquazip5.so:archivers/quazip
+LIB_DEPENDS=	libquazip1-qt5.so:archivers/quazip
 RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-audio-sdl.so:emulators/mupen64plus-audio-sdl \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-input-sdl.so:emulators/mupen64plus-input-sdl \
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-video-rice.so:emulators/mupen64plus-video-rice \
 		mupen64plus:emulators/mupen64plus-ui-console
 
-USES=		gl qmake qt:5
+USES=		gl pkgconfig qmake qt:5
 USE_GL=		gl
 USE_QT=		core gui network sql widgets xml \
 		buildtools_build \

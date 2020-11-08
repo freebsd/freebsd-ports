@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2020-03-27 08:07:31 UTC
+--- CMakeLists.txt.orig	2020-06-14 10:22:49 UTC
 +++ CMakeLists.txt
 @@ -65,6 +65,7 @@ include(TranslateDesktop)
  include(DefineCMakeDefaults)
@@ -8,7 +8,7 @@
  include(CPackConfig.cmake)
  include(ConfigureChecks.cmake)
  
-@@ -167,7 +168,10 @@ find_package(Qt5WebEngineWidgets    REQUIRED)
+@@ -167,10 +168,13 @@ find_package(Qt5WebEngineWidgets    REQUIRED)
  find_package(Qt5Qml                 REQUIRED)
  find_package(Qt5Help                REQUIRED)
  find_package(GDAL                   REQUIRED)
@@ -19,4 +19,8 @@
 +endif()
  find_package(JPEG                   REQUIRED)
  find_package(ROUTINO                REQUIRED)
- find_package(QuaZip5                REQUIRED)
+-find_package(QuaZip5                REQUIRED)
++find_package(QuaZip-Qt5             REQUIRED)
+ find_package(ALGLIB                         ) # optional as we can use our local version
+ 
+ 
