@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors java
 MASTER_SITES=	APACHE/openoffice/${PORTVERSION}/source \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
@@ -136,15 +136,14 @@ WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache
 
-OPTIONS_DEFINE=		CRASHDUMP CUPS DBGUTIL DEBUG GNOME GNOMEVFS MMEDIA \
+OPTIONS_DEFINE=		CRASHDUMP CUPS DBGUTIL DEBUG GNOME GNOMEVFS \
 			SDK WIKI_PUBLISHER
-OPTIONS_DEFAULT=	CUPS GNOME GNOMEVFS MMEDIA WIKI_PUBLISHER
+OPTIONS_DEFAULT=	CUPS GNOME GNOMEVFS WIKI_PUBLISHER
 CRASHDUMP_DESC=		Enable crashdumps, you also need to set WITH_DEBUG_PORTS+=${PKGORIGIN}
 DBGUTIL_DESC=		Enable assertions, object counting. (non-production)
 DEBUG_DESC=		Compile with -O0, you also need to set WITH_DEBUG_PORTS+=${PKGORIGIN}
 GNOME_DESC=		GConf + screensaver presentation control via DBUS
 GNOMEVFS_DESC=		GNOME Virtual File System
-MMEDIA_DESC=		Multimedia backend for impress
 SDK_DESC=		Build and install software development kit
 WIKI_PUBLISHER_DESC=	Build and install Wiki Publisher extension
 
@@ -166,10 +165,6 @@ GNOMEVFS_CONFIGURE_ENABLE=	gnome-vfs
 GNOMEVFS_CONFIGURE_OFF=		--enable-gio
 GNOMEVFS_CONFIGURE_ON=		--disable-gio
 GNOMEVFS_USE=			GNOME=gnomevfs2
-
-MMEDIA_CONFIGURE_ENABLE=	gstreamer
-MMEDIA_LIB_DEPENDS=		libgstreamer-0.10.so:multimedia/gstreamer
-MMEDIA_USE=			GSTREAMER=yes
 
 SDK_CONFIGURE_ENABLE=		odk
 SDK_DISTFILES=			unowinreg.dll:unoreg
