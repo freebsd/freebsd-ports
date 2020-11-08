@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fzf
-PORTVERSION=	0.22.0
+PORTVERSION=	0.24.2
 CATEGORIES=	textproc
 
 MAINTAINER=	sascha@root-login.org
@@ -17,18 +17,18 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	junegunn
 GH_TUPLE=	\
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:v1.3.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
-		golang:crypto:69ecbb4d6d5d:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:d101bd2416d5:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		gdamore:tcell:v1.4.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
+		golang:crypto:9e8e0b390897:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sync:67f06af15bc9:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:119d4633e4d1:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		lucasb-eyer:go-colorful:v1.0.3:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.8:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mattn:go-shellwords:v1.0.9:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords \
-		saracen:walker:324a081bae7e:saracen_walker/vendor/github.com/saracen/walker
+		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-shellwords:v1.0.10:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords \
+		saracen:walker:v0.1.1:saracen_walker/vendor/github.com/saracen/walker
 
-GO_BUILDFLAGS=	-ldflags="-X main.revision=334a4fa -w"
+GO_BUILDFLAGS=	-ldflags="-X main.revision=e3e76fa -w"
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/fzf man/man1/fzf.1.gz
