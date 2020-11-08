@@ -17,7 +17,7 @@ user				= %%MARIADB_USER%%
 # socket			= %%MARIADB_RUNDIR%%/mysql.sock # inherited from %%ETCDIR%%/my.cnf
 bind-address			= 127.0.0.1
 basedir				= %%PREFIX%%
-datadir				= /var/db/mysql
+datadir				= %%MARIADB_DBDIR%%
 net_retry_count			= 16384
 log_error			= %%MARIADB_LOGDIR%%/mysqld.err
 # [mysqld] configuration for ZFS
@@ -26,19 +26,19 @@ log_error			= %%MARIADB_LOGDIR%%/mysqld.err
 # zroot/mysql      compression=on recordsize=128k atime=off
 # zroot/mysql/data recordsize=16k
 # zroot/mysql/logs
-# datadir 			= /var/db/mysql/data
-# innodb_log_group_home_dir	= /var/db/mysql/log
-# audit_log_file		= /var/db/mysql/log/audit.log
-# general_log_file		= /var/db/mysql/log/general.log
-# log_bin			= /var/db/mysql/log/mysql-bin
-# relay_log			= /var/db/mysql/log/relay-log
-# slow_query_log_file		= /var/db/mysql/log/slow.log
+# datadir 			= %%MARIADB_DBDIR%%/data
+# innodb_log_group_home_dir	= %%MARIADB_DBDIR%%/log
+# audit_log_file		= %%MARIADB_DBDIR%%/log/audit.log
+# general_log_file		= %%MARIADB_DBDIR%%/log/general.log
+# log_bin			= %%MARIADB_DBDIR%%/log/mysql-bin
+# relay_log			= %%MARIADB_DBDIR%%/log/relay-log
+# slow_query_log_file		= %%MARIADB_DBDIR%%/log/slow.log
 # innodb_doublewrite		= 0
 # innodb_flush_method		= O_DSYNC
 
-# Options read by `mysqld_safe`
+# Options read by `mariadb_safe`
 # Renamed from [mysqld_safe] starting with MariaDB 10.4.6.
-[mariadb_safe]
+[mariadb-safe]
 
 # Options read my `mariabackup`
 [mariabackup]

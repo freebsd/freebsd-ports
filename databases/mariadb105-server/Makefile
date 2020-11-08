@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mariadb
-PORTVERSION=	10.5.6
+PORTVERSION=	10.5.7
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://mirrors.supportex.net/${SITESDIR}/ \
@@ -21,12 +21,10 @@ COMMENT?=	Multithreaded SQL database (server)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-# BROKEN_i386=	compile error: undeclared identifier 'my_atomic_add32'
-
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 
 # Ugly workaround for MariaDB/CMake library detection
-CFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USES=		bison:build cmake:insource compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
 
@@ -58,6 +56,7 @@ OPTIONS_DEFAULT+=	CONNECT_EXTRA INNOBASE SPHINX SPIDER WSREP
 OPTIONS_GROUP=		COMPRESSION ENGINES GROONGA
 OPTIONS_DEFINE=		CONNECT_EXTRA DOCS
 OPTIONS_DEFINE_amd64=	WSREP
+OPTIONS_DEFINE_aarch64=	WSREP
 OPTIONS_GROUP_COMPRESSION=	LZ4 LZO SNAPPY ZSTD
 OPTIONS_GROUP_ENGINES=	COLUMNSTORE INNOBASE MROONGA OQGRAPH ROCKSDB S3 SPHINX SPIDER
 OPTIONS_GROUP_GROONGA=	ZMQ MSGPACK
@@ -125,12 +124,8 @@ GSSAPI_HEIMDAL_USES=	gssapi:heimdal
 GSSAPI_MIT_USES=	gssapi:mit
 GSSAPI_NONE_CMAKE_ON=	-DPLUGIN_AUTH_GSSAPI_CLIENT=OFF
 OPTIONS_SUB=		yes
-SUB_LIST+=	MARIADB_USER="${MARIADB_USER}" \
-		MARIADB_DBDIR="${MARIADB_DBDIR}" \
-		MARIADB_RUNDIR="${MARIADB_RUNDIR}" \
+SUB_LIST+=	MARIADB_RUNDIR="${MARIADB_RUNDIR}" \
 		MARIADB_SOCK="${MARIADB_SOCK}"
-PLIST_SUB+=	MARIADB_USER="${MARIADB_USER}" \
-		MARIADB_GROUP="${MARIADB_GROUP}"
 
 .if ${PKGNAMESUFFIX:M*-client}
 # MySQL-Client part
@@ -139,7 +134,6 @@ CMAKE_OFF+=	WITH_WSREP
 USES+=		readline
 USE_LDCONFIG=	${PREFIX}/lib/mysql
 SUB_FILES+=	my.cnf.sample client.cnf.sample
-PLIST_SUB+=	MARIADB_RUNDIR="${MARIADB_RUNDIR}"
 
 .else # ! ${PKGNAMESUFFIX:M*-client}
 # MySQL-Server part
@@ -151,9 +145,12 @@ USE_RC_SUBR=	mysql-server
 CMAKE_ON+=	CMAKE_SKIP_BUILD_RPATH WITH_EMBEDDED_SERVER
 CMAKE_OFF+=	WITH_CLIENT
 SUB_FILES+=	server.cnf.sample
-SUB_LIST+=	MARIADB_GROUP="${MARIADB_GROUP}" \
-		MARIADB_LOGDIR="${MARIADB_LOGDIR}"
-PLIST_SUB+=	MARIADB_LOGDIR="${MARIADB_LOGDIR}"
+SUB_LIST+=	MARIADB_DBDIR="${MARIADB_DBDIR}" \
+		MARIADB_LOGDIR="${MARIADB_LOGDIR}" \
+		MARIADB_USER="${MARIADB_USER}"
+PLIST_SUB+=	MARIADB_LOGDIR="${MARIADB_LOGDIR}" \
+		MARIADB_USER="${MARIADB_USER}" \
+		MARIADB_GROUP="${MARIADB_GROUP}"
 
 .for ENGINE in ${OPTIONS_GROUP_ENGINES:NINNOBASE}
 ${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO
@@ -210,7 +207,7 @@ SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 GSSAPI_BASE_IGNORE=	GSSAPI_BASE is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
 .endif
 
-.if ${ARCH} != amd64
+.if ${ARCH} != amd64 && ${ARCH} != aarch64
 PLIST_SUB+=	WSREP="@comment "
 .endif
 
@@ -226,6 +223,11 @@ post-patch:
 	${CP} ${WRKSRC}/cmake/os/FreeBSD.cmake \
 		${WRKSRC}/cmake/os/DragonFly.cmake
 .endif
+
+pre-configure:
+	${REINPLACE_CMD} 's|\(CHECK_LIBRARY_EXISTS.*\) "" HAVE_|\1 ${LOCALBASE}/lib HAVE_|' \
+		${WRKSRC}/cmake/pcre.cmake \
+		${WRKSRC}/storage/innobase/*.cmake
 
 post-configure:
 	${REINPLACE_CMD} -Ee 's|(#define INCLUDE.*)"$$|\1 -I${PREFIX}/include"|' \
@@ -248,7 +250,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/include/mysql/server \
 		${STAGEDIR}${ETCDIR}/init.d \
 		${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig
-	${MKDIR} ${STAGEDIR}${MARIADB_RUNDIR}
 
 post-install-GSSAPI_NONE-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mysql/plugin/auth_gssapi_client.so
