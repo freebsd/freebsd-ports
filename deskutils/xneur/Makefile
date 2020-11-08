@@ -3,6 +3,7 @@
 
 PORTNAME=	xneur
 PORTVERSION=	0.20.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=.orig
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/~andrew-crew-kuznetsov/+archive/xneur-stable/+files/
@@ -37,10 +38,8 @@ USE_LDCONFIG=	${PREFIX}/lib/xneur ${PREFIX}/lib/xneur/xneur
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	ASPELL XOSD NLS X11
-OPTIONS_DEFAULT=	GSTREAMER ASPELL
-OPTIONS_RADIO=	SOUND
-OPTIONS_RADIO_SOUND=	GSTREAMER OPENAL
+OPTIONS_DEFINE=	ASPELL XOSD NLS X11 SOUND
+OPTIONS_DEFAULT=	GSTREAMER ASPELL SOUND
 XOSD_DESC=	Xosd support
 
 OPTIONS_SUB=	yes
@@ -58,18 +57,9 @@ ASPELL_CONFIGURE_OFF=	--with-spell=no --without-aspell
 
 XOSD_LIB_DEPENDS=	libxosd.so:misc/xosd
 XOSD_CONFIGURE_WITH=	xosd
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGSTREAMER}
-USE_GSTREAMER=	yes
-CONFIGURE_ARGS+=	--with-sound=gstreamer
-.elif ${PORT_OPTIONS:MOPENAL}
-USES+=			openal:al,alut
-CONFIGURE_ARGS+=	--with-sound=openal
-.else
-CONFIGURE_ARGS+=	--with-sound=no
-.endif
+SOUND_USES=	openal:al,alut
+SOUND_CONFIGURE_ON=	--with-sound=openal
+SOUND_CONFIGURE_OFF=	--with-sound=no
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-Werror,,g; s,-ldl,,g' ${WRKSRC}/configure
