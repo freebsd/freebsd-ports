@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cairosvg
-PORTVERSION=	2.4.2
+PORTVERSION=	2.5.0
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,8 +24,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}pytest-isort>=0:devel/py-pytest-isort@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-flake8>=0:devel/py-pytest-flake8@${PY_FLAVOR}
 
-USES=		python:3.5+
-USE_PYTHON=	autoplist distutils
+USES=		python:3.6+
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
