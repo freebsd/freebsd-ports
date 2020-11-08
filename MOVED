@@ -15675,3 +15675,4 @@ databases/py-sqlparse020|databases/py-sqlparse|2020-11-03|Dependency of removed 
 devel/nimble|lang/nim|2020-11-06|Integrated in lang/nim
 net-im/zephyr||2020-11-07|Has expired: Broken for more than 6 months
 net/samba410|net/samba411|2020-11-08|Has expired: yes
+audio/xfce4-mixer|audio/xfce4-pulseaudio-plugin|2020-11-08|Unsupported upstream since 2015. Try using audio/xfce4-pulseaudio-plugin
