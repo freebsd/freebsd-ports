@@ -19,6 +19,12 @@ share/applications/screensavers/xfce-floaters.desktop
 share/applications/xfce4-screensaver-preferences.desktop
 share/dbus-1/services/org.xfce.ScreenSaver.service
 share/desktop-directories/xfce4-screensaver.directory
+share/icons/hicolor/128x128/apps/org.xfce.ScreenSaver.png
+share/icons/hicolor/16x16/apps/org.xfce.ScreenSaver.png
+share/icons/hicolor/24x24/apps/org.xfce.ScreenSaver.png
+share/icons/hicolor/32x32/apps/org.xfce.ScreenSaver.png
+share/icons/hicolor/48x48/apps/org.xfce.ScreenSaver.png
+share/icons/hicolor/scalable/apps/org.xfce.ScreenSaver.svg
 %%NLS%%share/locale/be/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-screensaver.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xfce4-screensaver.mo
