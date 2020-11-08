@@ -22,6 +22,8 @@
 %%PGADMDIR%%/classes/database/ADODB_base.php
 %%PGADMDIR%%/classes/database/Connection.php
 %%PGADMDIR%%/classes/database/Postgres.php
+%%PGADMDIR%%/classes/database/Postgres12.php
+%%PGADMDIR%%/classes/database/Postgres13.php
 %%PGADMDIR%%/classes/database/Postgres74.php
 %%PGADMDIR%%/classes/database/Postgres80.php
 %%PGADMDIR%%/classes/database/Postgres81.php
@@ -53,6 +55,8 @@
 %%PGADMDIR%%/functions.php
 %%PGADMDIR%%/groups.php
 %%PGADMDIR%%/help.php
+%%PGADMDIR%%/help/PostgresDoc13.php
+%%PGADMDIR%%/help/PostgresDoc14.php
 %%PGADMDIR%%/help/PostgresDoc74.php
 %%PGADMDIR%%/help/PostgresDoc80.php
 %%PGADMDIR%%/help/PostgresDoc81.php
