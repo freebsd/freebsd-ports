@@ -14,6 +14,9 @@ COMMENT=	Webmail system designed to manage big mail folder files efficiently
 RUN_DEPENDS=	p5-Text-Iconv>=0:converters/p5-Text-Iconv	\
 		p5-CGI>=0:www/p5-CGI
 
+DEPRECATED=	Does not use modern Perl syntax and no development activity since 2006
+EXPIRATION_DATE=2021-01-31
+
 USES=		perl5
 USE_PERL5=	run build patch
 NO_BUILD=	yes
