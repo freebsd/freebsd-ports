@@ -16,7 +16,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/COPYING-BSD
 
-BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Sparse:math/eigen3
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
@@ -27,8 +26,8 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libamd.so:math/suitesparse
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		compiler:c++17-lang cpe desktop-file-utils fortran \
-		gettext gmake gnome iconv:wchar_t libtool \
+USES=		compiler:c++17-lang cpe desktop-file-utils eigen:3,build \
+		fortran gettext gmake gnome iconv:wchar_t libtool \
 		localbase ncurses pathfix pkgconfig shared-mime-info
 USE_LOCALE=	en_US.UTF-8
 
