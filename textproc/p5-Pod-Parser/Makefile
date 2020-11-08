@@ -17,6 +17,8 @@ LICENSE_COMB=	dual
 USES=		perl5 dos2unix
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 503100
