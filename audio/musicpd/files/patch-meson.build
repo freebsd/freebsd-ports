@@ -1,7 +1,7 @@
---- meson.build.orig	2018-10-31 18:39:53 UTC
+--- meson.build.orig	2020-11-06 15:12:54 UTC
 +++ meson.build
-@@ -62,10 +62,14 @@ test_cxxflags = test_common_flags + [
-   '-Wno-noexcept-type',
+@@ -79,10 +79,14 @@ test_cxxflags = test_common_flags + [
+   '-Wno-non-virtual-dtor',
  ]
  
 +test_ldflags = [
@@ -15,13 +15,12 @@
  endif
  
  test_cflags = test_common_flags + [
-@@ -78,9 +82,6 @@ test_cflags = test_common_flags + [
+@@ -95,7 +99,7 @@ test_cflags = test_common_flags + [
    '-pedantic',
  ]
  
 -test_ldflags = [
--]
--
- if get_option('buildtype') != 'debug'
-   test_cflags += [
-     '-ffunction-sections',
++test_ldflags += [
+   # make relocations read-only (hardening)
+   '-Wl,-z,relro',
+ 
