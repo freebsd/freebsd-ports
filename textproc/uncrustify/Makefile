@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	uncrustify
-PORTVERSION=	0.71.0
+PORTVERSION=	0.72.0
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	textproc
 
@@ -24,11 +24,6 @@ PORTEXAMPLES=	*
 PLIST_FILES=	bin/uncrustify man/man1/uncrustify.1.gz
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-# fixes build on gcc archs (unrecognized command line option
-# -std=gnu++0x), but may introduce other errors in future
-post-patch:
-	@${REINPLACE_CMD} -e '/gnu++0x/ d' ${WRKSRC}/CMakeLists.txt
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
