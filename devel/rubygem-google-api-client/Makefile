@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-api-client
-PORTVERSION=	0.46.2
+PORTVERSION=	0.47.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -27,6 +27,6 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/generate-api
 
-SHEBANG_FILES=	.kokoro/build.sh
+SHEBANG_FILES=	.kokoro/*.sh
 
 .include <bsd.port.mk>
