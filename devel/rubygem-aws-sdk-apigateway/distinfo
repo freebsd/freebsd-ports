@@ -1,3 +1,3 @@
-TIMESTAMP = 1601713758
-SHA256 (rubygem/aws-sdk-apigateway-1.55.0.gem) = 3fd6471efa9c8e222e3524f25e2eb750857485cc1e8eee147d12f6c01b746b2b
-SIZE (rubygem/aws-sdk-apigateway-1.55.0.gem) = 107520
+TIMESTAMP = 1604680202
+SHA256 (rubygem/aws-sdk-apigateway-1.56.0.gem) = d3e4101949a403ec77fe7ba89e71f081dc60d30aacfb89a491198b9888e3dcd5
+SIZE (rubygem/aws-sdk-apigateway-1.56.0.gem) = 108032
