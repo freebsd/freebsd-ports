@@ -15674,3 +15674,4 @@ devel/py-twext||2020-11-03|Has expired: Uses deprecated version of python
 databases/py-sqlparse020|databases/py-sqlparse|2020-11-03|Dependency of removed www/calendarserver
 devel/nimble|lang/nim|2020-11-06|Integrated in lang/nim
 net-im/zephyr||2020-11-07|Has expired: Broken for more than 6 months
+net/samba410|net/samba411|2020-11-08|Has expired: yes
