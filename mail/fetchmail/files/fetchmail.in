@@ -116,7 +116,7 @@ fetchmail_awaken()
 # query a value from the fetchmail config file, value specified in first argument
 fetchmail_dump_config()
 {
-	su -m ${fetchmail_user} -c "/bin/sh -c 'fetchmail -f ${fetchmail_config} --configdump'" | fgrep $1 | cut -d: -f2
+	su -m ${fetchmail_user} -c "/bin/sh -c '${command} -f ${fetchmail_config} --configdump'" | fgrep $1 | cut -d: -f2
 }
 
 # arguments:
