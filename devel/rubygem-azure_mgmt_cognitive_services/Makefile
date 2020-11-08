@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_mgmt_cognitive_services
-PORTVERSION=	0.19.2
+PORTVERSION=	0.19.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
