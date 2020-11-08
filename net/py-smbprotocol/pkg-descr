@@ -1,0 +1,18 @@
+SMB is a network file sharing protocol and has numerous iterations over the
+years. This library implements the SMBv2 and SMBv3 protocol based on the MS-SMB2
+document.
+
+Features:
+- Negotiation of the SMB 2.0.2 protocol to SMB 3.1.1 (Windows 10/Server 2016)
+- Authentication with both NTLM and Kerberos
+- Message signing
+- Message encryption (SMB 3.x.x+)
+- Connect to a Tree/Share
+- Opening of files, pipes and directories
+- Set create contexts when opening files
+- Read and writing of files and pipes
+- Sending IOCTL commands
+- Sending of multiple messages in one packet (compounding)
+- Experimental support for both standalone and DFS server shares
+
+WWW: https://github.com/jborean93/smbprotocol
