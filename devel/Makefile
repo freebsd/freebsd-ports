@@ -4207,6 +4207,7 @@
     SUBDIR += py-botocore
     SUBDIR += py-bsd
     SUBDIR += py-btest
+    SUBDIR += py-build
     SUBDIR += py-buildbot
     SUBDIR += py-buildbot-console-view
     SUBDIR += py-buildbot-grid-view
