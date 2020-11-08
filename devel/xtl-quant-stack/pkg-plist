@@ -6,6 +6,8 @@ include/xtl/xcomplex.hpp
 include/xtl/xcomplex_sequence.hpp
 include/xtl/xdynamic_bitset.hpp
 include/xtl/xfunctional.hpp
+include/xtl/xhalf_float.hpp
+include/xtl/xhalf_float_impl.hpp
 include/xtl/xhash.hpp
 include/xtl/xhierarchy_generator.hpp
 include/xtl/xiterator_base.hpp
@@ -17,6 +19,7 @@ include/xtl/xmultimethods.hpp
 include/xtl/xoptional.hpp
 include/xtl/xoptional_meta.hpp
 include/xtl/xoptional_sequence.hpp
+include/xtl/xplatform.hpp
 include/xtl/xproxy_wrapper.hpp
 include/xtl/xsequence.hpp
 include/xtl/xspan.hpp
