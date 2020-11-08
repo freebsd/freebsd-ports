@@ -78,7 +78,6 @@ include/wlr/types/wlr_xcursor_manager.h
 include/wlr/types/wlr_xdg_decoration_v1.h
 include/wlr/types/wlr_xdg_output_v1.h
 include/wlr/types/wlr_xdg_shell.h
-include/wlr/types/wlr_xdg_shell_v6.h
 include/wlr/util/edges.h
 include/wlr/util/log.h
 include/wlr/util/region.h
@@ -86,5 +85,5 @@ include/wlr/version.h
 include/wlr/xcursor.h
 %%X11%%include/wlr/xwayland.h
 lib/libwlroots.so
-lib/libwlroots.so.6
+lib/libwlroots.so.7
 libdata/pkgconfig/wlroots.pc
