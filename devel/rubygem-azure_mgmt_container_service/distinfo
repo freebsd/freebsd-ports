@@ -1,3 +1,3 @@
-TIMESTAMP = 1599574527
-SHA256 (rubygem/azure_mgmt_container_service-0.20.4.gem) = 344d7bdf071be94d1106d2e5bfa7eb8a917fa42f022cae230ea02a24be871627
-SIZE (rubygem/azure_mgmt_container_service-0.20.4.gem) = 307200
+TIMESTAMP = 1604680288
+SHA256 (rubygem/azure_mgmt_container_service-0.21.0.gem) = 34b970cab442fee506f47fa30aa98373fb212dbc499f9d529cd765c655b2b8f8
+SIZE (rubygem/azure_mgmt_container_service-0.21.0.gem) = 339456
