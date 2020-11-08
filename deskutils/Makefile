@@ -18,6 +18,7 @@
     SUBDIR += basket
     SUBDIR += belcard
     SUBDIR += bigyear
+    SUBDIR += birdtray
     SUBDIR += bijiben
     SUBDIR += bitcollider
     SUBDIR += cairo-dock
