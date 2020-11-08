@@ -1,0 +1,938 @@
+Obtained from:	https://github.com/websupport-sk/pecl-memcache/commit/2a5de3c5d9c0bd0acbcf7e6e0b7570f15f89f55b
+		https://github.com/websupport-sk/pecl-memcache/commit/7889bd1d2359874d7c6c395589d8fee529976984
+		https://github.com/websupport-sk/pecl-memcache/commit/e090f05a05e4b773f750025a7647f5d590aa4a6a
+
+--- php7/memcache.c.orig	2019-12-20 23:07:05.000000000 +0800
++++ php7/memcache.c	2020-10-16 15:52:01.000000000 +0800
+@@ -38,80 +38,341 @@
+ 
+ /* {{{ memcache_functions[]
+  */
+-ZEND_BEGIN_ARG_INFO(arginfo_memcache_get, 1)
+-	ZEND_ARG_PASS_INFO(0)
+-	ZEND_ARG_PASS_INFO(0)
+-	ZEND_ARG_PASS_INFO(1)
+-	ZEND_ARG_PASS_INFO(1)
++
++#ifndef ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX
++#define ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(name, ref, num, type) \
++			ZEND_BEGIN_ARG_INFO_EX(name, 0u, ref, num)
++#endif
++
++#ifndef ZEND_ARG_TYPE_MASK
++#define ZEND_ARG_TYPE_MASK(ref, name, mask, def) \
++			ZEND_ARG_INFO(ref, name)
++#endif
++
++ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_connect, 0, 0, 1)
++	ZEND_ARG_INFO(0, host)
++	ZEND_ARG_INFO(0, port)
++	ZEND_ARG_INFO(0, timeout)
++	ZEND_ARG_INFO(0, unused4)
++	ZEND_ARG_INFO(0, unused5)
++	ZEND_ARG_INFO(0, unused6)
++	ZEND_ARG_INFO(0, unused7)
++	ZEND_ARG_INFO(0, unugsed8)
+ ZEND_END_ARG_INFO()
+ 
+-ZEND_BEGIN_ARG_INFO(arginfo_memcache_object_get, 1)
+-	ZEND_ARG_PASS_INFO(0)
+-	ZEND_ARG_PASS_INFO(1)
+-	ZEND_ARG_PASS_INFO(1)
++#define arginfo_memcache_pconnect arginfo_memcache_connect
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_add_server, 0, 2, _IS_BOOL, 0)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++	ZEND_ARG_INFO(0, host)
++	ZEND_ARG_INFO(0, port)
++	ZEND_ARG_INFO(0, tcp_port)
++	ZEND_ARG_INFO(0, persistent)
++	ZEND_ARG_INFO(0, weight)
++	ZEND_ARG_INFO(0, timeout)
++	ZEND_ARG_INFO(0, retry_interval)
++	ZEND_ARG_INFO(0, status)
++	ZEND_ARG_INFO(0, failure_callback)
+ ZEND_END_ARG_INFO()
+ 
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_set_server_params, 0, 2, _IS_BOOL, 0)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++	ZEND_ARG_TYPE_INFO(0, host, IS_STRING, 0)
++	ZEND_ARG_TYPE_INFO(0, tcp_port, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, timeout, IS_DOUBLE, 0)
++	ZEND_ARG_TYPE_INFO(0, retry_interval, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, status, _IS_BOOL, 0)
++	ZEND_ARG_INFO(0, failure_callback)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_set_failure_callback, 0, 2, _IS_BOOL, 0)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++	ZEND_ARG_TYPE_INFO(0, failure_callback, IS_CALLABLE, 1)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_memcache_get_server_status, 0, 2, MAY_BE_BOOL|MAY_BE_LONG)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++	ZEND_ARG_TYPE_INFO(0, host, IS_STRING, 0)
++	ZEND_ARG_TYPE_INFO(0, tcp_port, IS_LONG, 0)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_memcache_get_version, 0, 1, MAY_BE_STRING|MAY_BE_BOOL)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_add, 0, 2, _IS_BOOL, 0)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++	ZEND_ARG_TYPE_MASK(0, key, MAY_BE_STRING|MAY_BE_ARRAY, 0)
++#ifdef IS_MIXED
++	ZEND_ARG_TYPE_INFO(0, value, IS_MIXED, 0)
++#else
++	ZEND_ARG_INFO(0, value)
++#endif
++	ZEND_ARG_TYPE_INFO(0, flags, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, exptime, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, cas, IS_LONG, 0)
++ZEND_END_ARG_INFO()
++
++#define arginfo_memcache_set arginfo_memcache_add
++#define arginfo_memcache_replace arginfo_memcache_add
++#define arginfo_memcache_cas arginfo_memcache_add
++#define arginfo_memcache_append arginfo_memcache_add
++#define arginfo_memcache_prepend arginfo_memcache_add
++
++#ifdef IS_MIXED
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_get, 0, 2, IS_MIXED, 0)
++#else
++ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_get, 0, 0, 1)
++#endif
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++	ZEND_ARG_INFO(0, key)
++	ZEND_ARG_INFO(1, flags)
++	ZEND_ARG_INFO(1, cas)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_memcache_delete, 0, 2, MAY_BE_BOOL|MAY_BE_ARRAY)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++	ZEND_ARG_INFO(0, key)
++	ZEND_ARG_INFO(0, exptime)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_debug, 0, 1, _IS_BOOL, 0)
++	ZEND_ARG_INFO(0, on_off)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_memcache_get_stats, 0, 1, MAY_BE_BOOL|MAY_BE_ARRAY)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++	ZEND_ARG_TYPE_INFO(0, type, IS_STRING, 0)
++	ZEND_ARG_TYPE_INFO(0, slabid, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, limit, IS_LONG, 0)
++ZEND_END_ARG_INFO()
++
++#define arginfo_memcache_get_extended_stats arginfo_memcache_get_stats
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_set_compress_threshold, 0, 2, _IS_BOOL, 0)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++	ZEND_ARG_TYPE_INFO(0, threshold, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, min_savings, IS_DOUBLE, 0)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_memcache_increment, 0, 2, MAY_BE_BOOL|MAY_BE_ARRAY|MAY_BE_LONG)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++	ZEND_ARG_TYPE_MASK(0, key, MAY_BE_STRING|MAY_BE_ARRAY, 0)
++	ZEND_ARG_TYPE_INFO(0, value, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, defval, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, exptime, IS_LONG, 0)
++ZEND_END_ARG_INFO()
++
++#define arginfo_memcache_decrement arginfo_memcache_increment
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_close, 0, 1, _IS_BOOL, 0)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_flush, 0, 1, _IS_BOOL, 0)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++	ZEND_ARG_TYPE_INFO(0, delay, IS_LONG, 0)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_set_sasl_auth_data, 0, 3, _IS_BOOL, 0)
++	ZEND_ARG_OBJ_INFO(0, memcache, MemcachePool, 0)
++	ZEND_ARG_TYPE_INFO(0, username, IS_STRING, 0)
++	ZEND_ARG_TYPE_INFO(0, password, IS_STRING, 0)
++ZEND_END_ARG_INFO()
++
+ zend_function_entry memcache_functions[] = {
+-	PHP_FE(memcache_connect,				NULL)
+-	PHP_FE(memcache_pconnect,				NULL)
+-	PHP_FE(memcache_add_server,				NULL)
+-	PHP_FE(memcache_set_server_params,		NULL)
+-	PHP_FE(memcache_set_failure_callback,	NULL)
+-	PHP_FE(memcache_get_server_status,		NULL)
+-	PHP_FE(memcache_get_version,			NULL)
+-	PHP_FE(memcache_add,					NULL)
+-	PHP_FE(memcache_set,					NULL)
+-	PHP_FE(memcache_replace,				NULL)
+-	PHP_FE(memcache_cas,					NULL)
+-	PHP_FE(memcache_append,					NULL)
+-	PHP_FE(memcache_prepend,				NULL)
++	PHP_FE(memcache_connect,				arginfo_memcache_connect)
++	PHP_FE(memcache_pconnect,				arginfo_memcache_pconnect)
++	PHP_FE(memcache_add_server,				arginfo_memcache_add_server)
++	PHP_FE(memcache_set_server_params,		arginfo_memcache_set_server_params)
++	PHP_FE(memcache_set_failure_callback,	arginfo_memcache_set_failure_callback)
++	PHP_FE(memcache_get_server_status,		arginfo_memcache_get_server_status)
++	PHP_FE(memcache_get_version,			arginfo_memcache_get_version)
++	PHP_FE(memcache_add,					arginfo_memcache_add)
++	PHP_FE(memcache_set,					arginfo_memcache_set)
++	PHP_FE(memcache_replace,				arginfo_memcache_replace)
++	PHP_FE(memcache_cas,					arginfo_memcache_cas)
++	PHP_FE(memcache_append,					arginfo_memcache_append)
++	PHP_FE(memcache_prepend,				arginfo_memcache_prepend)
+ 	PHP_FE(memcache_get,					arginfo_memcache_get)
+-	PHP_FE(memcache_delete,					NULL)
+-	PHP_FE(memcache_debug,					NULL)
+-	PHP_FE(memcache_get_stats,				NULL)
+-	PHP_FE(memcache_get_extended_stats,		NULL)
+-	PHP_FE(memcache_set_compress_threshold,	NULL)
+-	PHP_FE(memcache_increment,				NULL)
+-	PHP_FE(memcache_decrement,				NULL)
+-	PHP_FE(memcache_close,					NULL)
+-	PHP_FE(memcache_flush,					NULL)
+-	PHP_FE(memcache_set_sasl_auth_data,		NULL)
+-	{NULL, NULL, NULL}
++	PHP_FE(memcache_delete,					arginfo_memcache_delete)
++	PHP_FE(memcache_debug,					arginfo_memcache_debug)
++	PHP_FE(memcache_get_stats,				arginfo_memcache_get_stats)
++	PHP_FE(memcache_get_extended_stats,		arginfo_memcache_get_extended_stats)
++	PHP_FE(memcache_set_compress_threshold,	arginfo_memcache_set_compress_threshold)
++	PHP_FE(memcache_increment,				arginfo_memcache_increment)
++	PHP_FE(memcache_decrement,				arginfo_memcache_decrement)
++	PHP_FE(memcache_close,					arginfo_memcache_close)
++	PHP_FE(memcache_flush,					arginfo_memcache_flush)
++	PHP_FE(memcache_set_sasl_auth_data,		arginfo_memcache_set_sasl_auth_data)
++	ZEND_FE_END
+ };
+ 
++ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_pool_object_connect, 0, 0, 1)
++	ZEND_ARG_INFO(0, host)
++	ZEND_ARG_INFO(0, tcp_port)
++	ZEND_ARG_INFO(0, udp_port)
++	ZEND_ARG_INFO(0, persistent)
++	ZEND_ARG_INFO(0, weight)
++	ZEND_ARG_INFO(0, timeout)
++	ZEND_ARG_INFO(0, retry_interval)
++ZEND_END_ARG_INFO()
++
++#define arginfo_memcache_object_connect arginfo_memcache_connect
++#define arginfo_memcache_object_pconnect arginfo_memcache_connect
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_pool_object_addserver, 0, 1, _IS_BOOL, 0)
++	ZEND_ARG_INFO(0, host)
++	ZEND_ARG_INFO(0, tcp_port)
++	ZEND_ARG_INFO(0, udp_port)
++	ZEND_ARG_INFO(0, persistent)
++	ZEND_ARG_INFO(0, weight)
++	ZEND_ARG_INFO(0, timeout)
++	ZEND_ARG_INFO(0, retry_interval)
++	ZEND_ARG_INFO(0, status)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_object_addserver, 0, 1, _IS_BOOL, 0)
++	ZEND_ARG_INFO(0, host)
++	ZEND_ARG_INFO(0, tcp_port)
++	ZEND_ARG_INFO(0, persistent)
++	ZEND_ARG_INFO(0, weight)
++	ZEND_ARG_INFO(0, timeout)
++	ZEND_ARG_INFO(0, retry_interval)
++	ZEND_ARG_INFO(0, status)
++	ZEND_ARG_INFO(0, failure_callback)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_object_setserverparams, 0, 1, _IS_BOOL, 0)
++	ZEND_ARG_TYPE_INFO(0, host, IS_STRING, 0)
++	ZEND_ARG_TYPE_INFO(0, tcp_port, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, timeout, IS_DOUBLE, 0)
++	ZEND_ARG_TYPE_INFO(0, retry_interval, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, status, _IS_BOOL, 0)
++	ZEND_ARG_INFO(0, failure_callback)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_object_setfailurecallback, 0, 1, _IS_BOOL, 0)
++	ZEND_ARG_TYPE_INFO(0, failure_callback, IS_CALLABLE, 1)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_memcache_object_getserverstatus, 0, 1, MAY_BE_BOOL|MAY_BE_LONG)
++	ZEND_ARG_TYPE_INFO(0, host, IS_STRING, 0)
++	ZEND_ARG_TYPE_INFO(0, tcp_port, IS_LONG, 0)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_memcache_object_findserver, 0, 1, MAY_BE_STRING|MAY_BE_BOOL)
++	ZEND_ARG_TYPE_INFO(0, key, IS_STRING, 0)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_memcache_object_getversion, 0, 0, MAY_BE_STRING|MAY_BE_BOOL)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_object_add, 0, 1, _IS_BOOL, 0)
++	ZEND_ARG_TYPE_MASK(0, key, MAY_BE_STRING|MAY_BE_ARRAY, 0)
++#ifdef IS_MIXED
++	ZEND_ARG_TYPE_INFO(0, value, IS_MIXED, 0)
++#else
++	ZEND_ARG_INFO(0, value)
++#endif
++	ZEND_ARG_TYPE_INFO(0, flags, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, exptime, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, cas, IS_LONG, 0)
++ZEND_END_ARG_INFO()
++
++#define arginfo_memcache_object_set arginfo_memcache_object_add
++#define arginfo_memcache_object_replace arginfo_memcache_object_add
++#define arginfo_memcache_object_set arginfo_memcache_object_add
++#define arginfo_memcache_object_cas arginfo_memcache_object_add
++#define arginfo_memcache_object_append arginfo_memcache_object_add
++#define arginfo_memcache_object_prepend arginfo_memcache_object_add
++
++#ifdef IS_MIXED
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_object_get, 0, 1, IS_MIXED, 0)
++#else
++ZEND_BEGIN_ARG_INFO_EX(arginfo_memcache_object_get, 0, 0, 1)
++#endif
++	ZEND_ARG_TYPE_MASK(0, key, MAY_BE_STRING|MAY_BE_ARRAY, 0)
++#ifdef IS_MIXED
++	ZEND_ARG_TYPE_INFO(1, flags, IS_MIXED, 0)
++	ZEND_ARG_TYPE_INFO(1, cas, IS_MIXED, 0)
++#else
++	ZEND_ARG_INFO(1, flags)
++	ZEND_ARG_INFO(1, cas)
++#endif
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_memcache_object_delete, 0, 1, MAY_BE_BOOL|MAY_BE_ARRAY)
++	ZEND_ARG_TYPE_MASK(0, key, MAY_BE_STRING|MAY_BE_ARRAY, 0)
++	ZEND_ARG_TYPE_INFO(0, exptime, IS_LONG, 0)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_memcache_object_getstats, 0, 0, MAY_BE_BOOL|MAY_BE_ARRAY)
++	ZEND_ARG_TYPE_INFO(0, type, IS_STRING, 0)
++	ZEND_ARG_TYPE_INFO(0, slabid, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, limit, IS_LONG, 0)
++ZEND_END_ARG_INFO()
++
++#define arginfo_memcache_object_getextendedstats arginfo_memcache_object_getstats
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_object_setcompressthreshold, 0, 1, _IS_BOOL, 0)
++	ZEND_ARG_TYPE_INFO(0, threshold, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, min_savings, IS_DOUBLE, 0)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_MASK_EX(arginfo_memcache_object_increment, 0, 1, MAY_BE_BOOL|MAY_BE_ARRAY|MAY_BE_LONG)
++	ZEND_ARG_TYPE_MASK(0, key, MAY_BE_STRING|MAY_BE_ARRAY, 0)
++	ZEND_ARG_TYPE_INFO(0, value, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, defval, IS_LONG, 0)
++	ZEND_ARG_TYPE_INFO(0, exptime, IS_LONG, 0)
++ZEND_END_ARG_INFO()
++
++#define arginfo_memcache_object_decrement arginfo_memcache_object_increment
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_object_close, 0, 0, _IS_BOOL, 0)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_object_flush, 0, 0, _IS_BOOL, 0)
++	ZEND_ARG_TYPE_INFO(0, delay, IS_LONG, 0)
++ZEND_END_ARG_INFO()
++
++ZEND_BEGIN_ARG_WITH_RETURN_TYPE_INFO_EX(arginfo_memcache_object_setSaslAuthData, 0, 2, _IS_BOOL, 0)
++	ZEND_ARG_TYPE_INFO(0, username, IS_STRING, 0)
++	ZEND_ARG_TYPE_INFO(0, password, IS_STRING, 0)
++ZEND_END_ARG_INFO()
++
+ static zend_function_entry php_memcache_pool_class_functions[] = {
+-	PHP_NAMED_FE(connect,				zif_memcache_pool_connect,			NULL)
+-	PHP_NAMED_FE(addserver,				zif_memcache_pool_addserver,		NULL)
+-	PHP_FALIAS(setserverparams,			memcache_set_server_params,			NULL)
+-	PHP_FALIAS(setfailurecallback,		memcache_set_failure_callback,		NULL)
+-	PHP_FALIAS(getserverstatus,			memcache_get_server_status,			NULL)
+-	PHP_NAMED_FE(findserver,			zif_memcache_pool_findserver,		NULL)
+-	PHP_FALIAS(getversion,				memcache_get_version,				NULL)
+-	PHP_FALIAS(add,						memcache_add,						NULL)
+-	PHP_FALIAS(set,						memcache_set,						NULL)
+-	PHP_FALIAS(replace,					memcache_replace,					NULL)
+-	PHP_FALIAS(cas,						memcache_cas,						NULL)
+-	PHP_FALIAS(append,					memcache_append,					NULL)
+-	PHP_FALIAS(prepend,					memcache_prepend,					NULL)
++	PHP_NAMED_FE(connect,				zif_memcache_pool_connect,			arginfo_memcache_pool_object_connect)
++	PHP_NAMED_FE(addserver,				zif_memcache_pool_addserver,		arginfo_memcache_pool_object_addserver)
++	PHP_FALIAS(setserverparams,			memcache_set_server_params,			arginfo_memcache_object_setserverparams)
++	PHP_FALIAS(setfailurecallback,		memcache_set_failure_callback,		arginfo_memcache_object_setfailurecallback)
++	PHP_FALIAS(getserverstatus,			memcache_get_server_status,			arginfo_memcache_object_getserverstatus)
++	PHP_NAMED_FE(findserver,			zif_memcache_pool_findserver,		arginfo_memcache_object_findserver)
++	PHP_FALIAS(getversion,				memcache_get_version,				arginfo_memcache_object_getversion)
++	PHP_FALIAS(add,						memcache_add,						arginfo_memcache_object_add)
++	PHP_FALIAS(set,						memcache_set,						arginfo_memcache_object_set)
++	PHP_FALIAS(replace,					memcache_replace,					arginfo_memcache_object_replace)
++	PHP_FALIAS(cas,						memcache_cas,						arginfo_memcache_object_cas)
++	PHP_FALIAS(append,					memcache_append,					arginfo_memcache_object_append)
++	PHP_FALIAS(prepend,					memcache_prepend,					arginfo_memcache_object_prepend)
+ 	PHP_FALIAS(get,						memcache_get,						arginfo_memcache_object_get)
+-	PHP_FALIAS(delete,					memcache_delete,					NULL)
+-	PHP_FALIAS(getstats,				memcache_get_stats,					NULL)
+-	PHP_FALIAS(getextendedstats,		memcache_get_extended_stats,		NULL)
+-	PHP_FALIAS(setcompressthreshold,	memcache_set_compress_threshold,	NULL)
+-	PHP_FALIAS(increment,				memcache_increment,					NULL)
+-	PHP_FALIAS(decrement,				memcache_decrement,					NULL)
+-	PHP_FALIAS(close,					memcache_close,						NULL)
+-	PHP_FALIAS(flush,					memcache_flush,						NULL)
+-	PHP_FALIAS(setSaslAuthData,			memcache_set_sasl_auth_data,				NULL)
+-	
+-	{NULL, NULL, NULL}
++	PHP_FALIAS(delete,					memcache_delete,					arginfo_memcache_object_delete)
++	PHP_FALIAS(getstats,				memcache_get_stats,					arginfo_memcache_object_getstats)
++	PHP_FALIAS(getextendedstats,		memcache_get_extended_stats,		arginfo_memcache_object_getextendedstats)
++	PHP_FALIAS(setcompressthreshold,	memcache_set_compress_threshold,	arginfo_memcache_object_setcompressthreshold)
++	PHP_FALIAS(increment,				memcache_increment,					arginfo_memcache_object_increment)
++	PHP_FALIAS(decrement,				memcache_decrement,					arginfo_memcache_object_decrement)
++	PHP_FALIAS(close,					memcache_close,						arginfo_memcache_object_close)
++	PHP_FALIAS(flush,					memcache_flush,						arginfo_memcache_object_flush)
++	PHP_FALIAS(setSaslAuthData,			memcache_set_sasl_auth_data,		arginfo_memcache_object_setSaslAuthData)
++	ZEND_FE_END
+ };
+ 
+ static zend_function_entry php_memcache_class_functions[] = {
+-	PHP_FALIAS(connect,					memcache_connect,					NULL)
+-	PHP_FALIAS(pconnect,				memcache_pconnect,					NULL)
+-	PHP_FALIAS(addserver,				memcache_add_server,				NULL)
+-	{NULL, NULL, NULL}
++	PHP_ME_MAPPING(connect, memcache_connect, arginfo_memcache_object_connect, ZEND_ACC_PUBLIC)
++	PHP_ME_MAPPING(pconnect, memcache_pconnect, arginfo_memcache_object_pconnect, ZEND_ACC_PUBLIC)
++	PHP_ME_MAPPING(addserver, memcache_add_server, arginfo_memcache_object_addserver, ZEND_ACC_PUBLIC)
++	ZEND_FE_END
+ };
+ 
+ /* }}} */
+@@ -269,7 +530,7 @@
+ 	if (new_value) {
+ 		for (i=0 ; i<ZSTR_LEN(new_value) ; i++) {
+ 			if (ZSTR_VAL(new_value)[i]=='.') {
+-				php_error_docref(NULL TSRMLS_CC, E_WARNING, "memcache.session_prefix_static_key cannot have dot inside (.)");
++				php_error_docref(NULL, E_WARNING, "memcache.session_prefix_static_key cannot have dot inside (.)");
+ 				return FAILURE;
+ 			}
+ 		}
+@@ -292,14 +553,14 @@
+ 	STD_PHP_INI_ENTRY("memcache.session_redundancy",	"2",			PHP_INI_ALL, OnUpdateRedundancy,	session_redundancy,	zend_memcache_globals,	memcache_globals)
+ 	STD_PHP_INI_ENTRY("memcache.compress_threshold",	"20000",		PHP_INI_ALL, OnUpdateCompressThreshold,	compress_threshold,	zend_memcache_globals,	memcache_globals)
+ 	STD_PHP_INI_ENTRY("memcache.lock_timeout",			"15",			PHP_INI_ALL, OnUpdateLockTimeout,		lock_timeout,		zend_memcache_globals,	memcache_globals)
+-	STD_PHP_INI_ENTRY("memcache.session_prefix_host_key",       			"0",			PHP_INI_ALL, OnUpdateBool, session_prefix_host_key, zend_memcache_globals, memcache_globals)
+-	STD_PHP_INI_ENTRY("memcache.session_prefix_host_key_remove_www",    	"1",			PHP_INI_ALL, OnUpdateBool, session_prefix_host_key_remove_www, zend_memcache_globals, memcache_globals)
+-	STD_PHP_INI_ENTRY("memcache.session_prefix_host_key_remove_subdomain",  "0",			PHP_INI_ALL, OnUpdateBool, session_prefix_host_key_remove_subdomain, zend_memcache_globals, memcache_globals)
++	STD_PHP_INI_BOOLEAN("memcache.session_prefix_host_key",       			"0",			PHP_INI_ALL, OnUpdateBool, session_prefix_host_key, zend_memcache_globals, memcache_globals)
++	STD_PHP_INI_BOOLEAN("memcache.session_prefix_host_key_remove_www",    	"1",			PHP_INI_ALL, OnUpdateBool, session_prefix_host_key_remove_www, zend_memcache_globals, memcache_globals)
++	STD_PHP_INI_BOOLEAN("memcache.session_prefix_host_key_remove_subdomain",  "0",			PHP_INI_ALL, OnUpdateBool, session_prefix_host_key_remove_subdomain, zend_memcache_globals, memcache_globals)
+ 	STD_PHP_INI_ENTRY("memcache.session_prefix_static_key",         		NULL,			PHP_INI_ALL, OnUpdatePrefixStaticKey, session_prefix_static_key, zend_memcache_globals, memcache_globals)
+ 	STD_PHP_INI_ENTRY("memcache.session_save_path",         				NULL,			PHP_INI_ALL, OnUpdateString, session_save_path, zend_memcache_globals, memcache_globals)
+-	STD_PHP_INI_ENTRY("memcache.prefix_host_key",       					"0",			PHP_INI_ALL, OnUpdateBool, prefix_host_key, zend_memcache_globals, memcache_globals)
+-	STD_PHP_INI_ENTRY("memcache.prefix_host_key_remove_www",    			"1",			PHP_INI_ALL, OnUpdateBool, prefix_host_key_remove_www, zend_memcache_globals, memcache_globals)
+-	STD_PHP_INI_ENTRY("memcache.prefix_host_key_remove_subdomain",  		"0",			PHP_INI_ALL, OnUpdateBool, prefix_host_key_remove_subdomain, zend_memcache_globals, memcache_globals)
++	STD_PHP_INI_BOOLEAN("memcache.prefix_host_key",       					"0",			PHP_INI_ALL, OnUpdateBool, prefix_host_key, zend_memcache_globals, memcache_globals)
++	STD_PHP_INI_BOOLEAN("memcache.prefix_host_key_remove_www",    			"1",			PHP_INI_ALL, OnUpdateBool, prefix_host_key_remove_www, zend_memcache_globals, memcache_globals)
++	STD_PHP_INI_BOOLEAN("memcache.prefix_host_key_remove_subdomain",  		"0",			PHP_INI_ALL, OnUpdateBool, prefix_host_key_remove_subdomain, zend_memcache_globals, memcache_globals)
+ 	STD_PHP_INI_ENTRY("memcache.prefix_static_key",         				NULL,			PHP_INI_ALL, OnUpdatePrefixStaticKey, prefix_static_key, zend_memcache_globals, memcache_globals)
+ PHP_INI_END()
+ /* }}} */
+@@ -458,7 +719,7 @@
+  */
+ PHP_RINIT_FUNCTION(memcache)
+ {
+-	MEMCACHE_G(session_key_prefix) = get_session_key_prefix(TSRMLS_C);
++	MEMCACHE_G(session_key_prefix) = get_session_key_prefix();
+ 
+ 	return SUCCESS;
+ }
+@@ -867,6 +1128,10 @@
+ 
+ 	/* execute all requests */
+ 	mmc_pool_run(pool);
++
++	if (Z_TYPE_P(return_value) == IS_NULL) {
++		RETURN_FALSE;
++	}
+ }
+ /* }}} */
+ 
+@@ -878,7 +1143,7 @@
+ 	memcpy((char *)persistent_id, key, key_len+1);
+ 	if (zend_register_persistent_resource ( (char*) persistent_id, key_len, mmc, le_memcache_server) == NULL) ;
+ 
+-	then not forget to pefree, check refcounts in _mmc_server_free / _mmc_server_list_dtor ,  etc. 
++	then not forget to pefree, check refcounts in _mmc_server_free / _mmc_server_list_dtor ,  etc.
+ 	otherwise we will leak mem with persistent connections /run into other trouble with later versions
+ 	*/
+ mmc_t *mmc_find_persistent(const char *host, int host_len, unsigned short port, unsigned short udp_port, double timeout, int retry_interval) /* {{{ */
+@@ -1018,8 +1283,13 @@
+ 
+ 	if (pool->protocol == &mmc_binary_protocol) {
+ 		zval rv1, rv2;
++#if PHP_VERSION_ID >= 80000
++		zval *username = zend_read_property(memcache_ce, Z_OBJ_P(mmc_object), "username", strlen("username"), 1, &rv1);
++		zval *password = zend_read_property(memcache_ce, Z_OBJ_P(mmc_object), "password", strlen("password"), 1, &rv2);
++#else
+ 		zval *username = zend_read_property(memcache_ce, mmc_object, "username", strlen("username"), 1, &rv1);
+ 		zval *password = zend_read_property(memcache_ce, mmc_object, "password", strlen("password"), 1, &rv2);
++#endif
+ 		if (Z_TYPE_P(username) == IS_STRING && Z_TYPE_P(password) == IS_STRING) {
+ 			if (Z_STRLEN_P(username) > 1  && Z_STRLEN_P(password) > 1) {
+ 				mmc_request_t *request;
+@@ -1058,7 +1328,7 @@
+ 	/* initialize pool and object if need be */
+ 	if (!mmc_object) {
+ 		zend_resource *list_res;
+-		mmc_pool_t *pool = mmc_pool_new();
++		pool = mmc_pool_new();
+ 		pool->failure_callback = (mmc_failure_callback) &php_mmc_failure_callback;
+ 		list_res = zend_register_resource(pool, le_memcache_pool);
+ 		mmc_object = return_value;
+@@ -1241,7 +1511,7 @@
+ 			}
+ 			ZVAL_LONG(errnum, mmc->errnum);
+ 
+-			call_user_function_ex(EG(function_table), NULL, callback, &retval, 5, params, 0, NULL);
++			call_user_function(EG(function_table), NULL, callback, &retval, 5, params);
+ 
+ 			zval_ptr_dtor(host);
+ 			zval_ptr_dtor(tcp_port); zval_ptr_dtor(udp_port);
+@@ -1252,7 +1522,7 @@
+ 			}
+ 		}
+ 		else {
+-			php_mmc_set_failure_callback(pool, (zval *)param, NULL);
++			php_mmc_set_failure_callback(pool, param, NULL);
+ 			php_error_docref(NULL, E_WARNING, "Invalid failure callback");
+ 		}
+ 	}
+@@ -1692,6 +1962,10 @@
+ 			}
+ 		}
+ 	}
++
++	if (Z_TYPE_P(return_value) == IS_NULL) {
++		RETURN_FALSE;
++	}
+ }
+ /* }}} */
+ 
+@@ -1754,6 +2028,9 @@
+ 	if (Z_TYPE_P(result[0]) != IS_ARRAY) {
+ 		array_init(result[0]);
+ 	}
++
++	ZEND_ASSERT(key_len > 0);
++
+ 	add_assoc_zval_ex(result[0], (char *)key, key_len, value);
+ 
+ 	/* add flags to result */
+@@ -1881,19 +2158,23 @@
+ 		if (mmc_prepare_key(keys, request->key, &(request->key_len)) != MMC_OK) {
+ 			mmc_pool_release(pool, request);
+ 			php_error_docref(NULL, E_WARNING, "Invalid key");
+-			return;
++			RETURN_FALSE;
+ 		}
+ 
+ 		pool->protocol->get(request, cas != NULL ? MMC_OP_GETS : MMC_OP_GET, keys, request->key, request->key_len);
+ 
+ 		/* schedule request */
+ 		if (mmc_pool_schedule_key(pool, request->key, request->key_len, request, 1) != MMC_OK) {
+-			return;
++			RETURN_FALSE;
+ 		}
+ 	}
+ 
+ 	/* execute all requests */
+ 	mmc_pool_run(pool);
++
++	if (Z_TYPE_P(return_value) == IS_NULL) {
++		RETURN_FALSE;
++	}
+ }
+ /* }}} */
+ 
+@@ -2000,6 +2281,10 @@
+ 
+ 	/* execute all requests */
+ 	mmc_pool_run(pool);
++
++	if (Z_TYPE_P(return_value) == IS_NULL) {
++		RETURN_FALSE;
++	}
+ }
+ /* }}} */
+ 
+@@ -2057,6 +2342,10 @@
+ 
+ 	/* execute all requests */
+ 	mmc_pool_run(pool);
++
++	if (Z_TYPE_P(return_value) == IS_NULL) {
++		RETURN_FALSE;
++	}
+ }
+ /* }}} */
+ 
+@@ -2241,8 +2530,13 @@
+ 	if (user_length < 1 || password_length < 1) {
+ 		RETURN_FALSE;
+ 	}
++#if PHP_VERSION_ID >= 80000
++	zend_update_property_stringl(memcache_pool_ce, Z_OBJ_P(mmc_object), "username", strlen("username"), user, user_length);
++	zend_update_property_stringl(memcache_pool_ce, Z_OBJ_P(mmc_object), "password", strlen("password"), password, password_length);
++#else
+ 	zend_update_property_stringl(memcache_pool_ce, mmc_object, "username", strlen("username"), user, user_length);
+ 	zend_update_property_stringl(memcache_pool_ce, mmc_object, "password", strlen("password"), password, password_length);
++#endif
+ 	RETURN_TRUE;
+ }
+ /* }}} */
+@@ -2252,6 +2546,8 @@
+ PHP_FUNCTION(memcache_debug)
+ {
+ 	php_error_docref(NULL, E_WARNING, "memcache_debug() is deprecated, please use a debugger (like Eclipse + CDT)");
++
++	RETVAL_BOOL(PHP_DEBUG);
+ }
+ /* }}} */
+ 
+--- php7/memcache_ascii_protocol.c.orig	2020-09-25 03:29:24.000000000 +0800
++++ php7/memcache_ascii_protocol.c	2020-10-16 15:52:01.000000000 +0800
+@@ -56,11 +56,16 @@
+ }	
+ /* }}} */
+ 
+-static int mmc_request_check_response(const char *line, int line_len) /* 
++static int mmc_request_check_response(char *line, int line_len) /*
+ 	checks for response status and error codes {{{ */
+ {
+ 	int response;
+ 
++	// remove newline and thus prevent passing it to userland
++	if (line_len >= 2 && line[line_len - 2] == '\r' && line[line_len - 1] == '\n') {
++		line[line_len - 2] = '\0';
++	}
++
+ 	if (mmc_str_left(line, "OK", line_len, sizeof("OK")-1) ||
+ 		mmc_str_left(line, "STORED", line_len, sizeof("STORED")-1) ||
+ 		mmc_str_left(line, "DELETED", line_len, sizeof("DELETED")-1)) 
+@@ -129,7 +134,7 @@
+ 			return request->response_handler(mmc, request, response, line, line_len - (sizeof("\r\n")-1), request->response_handler_param);
+ 		}
+ 
+-		if (sscanf(line, "%lu", &lval) < 1) {
++		if (sscanf(line, "%ld", &lval) < 1) {
+ 			return mmc_server_failure(mmc, request->io, "Malformed VALUE header", 0);
+ 		}
+ 	
+--- php7/memcache_binary_protocol.c.orig	2020-09-25 03:29:24.000000000 +0800
++++ php7/memcache_binary_protocol.c	2020-10-16 15:52:01.000000000 +0800
+@@ -61,6 +61,12 @@
+ # define htonll mmc_htonll
+ #endif
+ 
++#ifdef __GNUC__
++# define MMC_ATTR_PACKED __attribute__((packed))
++#else
++# define MMC_ATTR_PACKED
++#endif /* UD_ATTR_PACKED */
++
+ #define MMC_REQUEST_MAGIC	0x80
+ #define	MMC_RESPONSE_MAGIC	0x81
+ 
+@@ -79,6 +85,15 @@
+ #define MMC_BIN_OP_APPEND		0x0e
+ #define MMC_BIN_OP_PREPEND		0x0f
+ 
++#define MMC_BINARY_STATUS_OK				0x00
++#define MMC_BINARY_STATUS_KEY_NOT_FOUND		0x01
++#define MMC_BINARY_STATUS_KEY_EXISTS		0x02
++#define MMC_BINARY_STATUS_VALUE_TOO_LARGE	0x03
++#define MMC_BINARY_STATUS_INVALID_ARGS		0x04
++#define MMC_BINARY_STATUS_ITEM_NOT_STORED	0x05
++#define MMC_BINARY_STATUS_INCR_DECR_ERROR	0x06 /* Incr/Decr on non-numeric value */
++#define MMC_BINARY_STATUS_UNKNOWN_COMMAND	0x81
++#define MMC_BINARY_STATUS_OUT_OF_MEMORY		0x82
+ 
+ #define MMC_OP_SASL_LIST		0x20
+ #define MMC_OP_SASL_AUTH		0x21
+@@ -90,7 +105,7 @@
+ 	mmc_queue_t			keys;					/* mmc_queue_t<zval *>, reqid -> key mappings */
+ 	struct {
+ 		uint8_t			opcode;
+-		uint8_t			error;					/* error received in current request */
++		uint16_t		error;					/* error received in current request */
+ 		uint32_t		reqid;					/* current reqid being processed */
+ 	} command;
+ 	struct {									/* stores value info while the body is being read */
+@@ -107,64 +122,63 @@
+ 	uint8_t		extras_len;
+ 	uint8_t		datatype;
+ 	uint16_t	_reserved;
+-	uint32_t	length;							/* trailing body length (not including this header) */
++	uint32_t	length;							/* trailing body total_body_length (not including this header) */
+ 	uint32_t	reqid;							/* opaque request id */
+ 	uint64_t	cas;
+-} mmc_request_header_t;
++} MMC_ATTR_PACKED mmc_request_header_t;
+ 
+ typedef struct mmc_get_request_header {
+ 	mmc_request_header_t	base;
+-} mmc_get_request_header_t;
++} MMC_ATTR_PACKED mmc_get_request_header_t;
+ 
+ typedef struct mmc_version_request_header {
+ 	mmc_request_header_t	base;
+-} mmc_version_request_header_t;
++} MMC_ATTR_PACKED mmc_version_request_header_t;
+ 
+ typedef struct mmc_store_request_header {
+ 	mmc_request_header_t	base;
+ 	uint32_t				flags;
+ 	uint32_t				exptime;
+-} mmc_store_request_header_t;
++} MMC_ATTR_PACKED mmc_store_request_header_t;
+ 
+ typedef struct mmc_store_append_header {
+ 	mmc_request_header_t	base;
+-} mmc_store_append_header_t;
++} MMC_ATTR_PACKED mmc_store_append_header_t;
+ 
+ typedef struct mmc_delete_request_header {
+ 	mmc_request_header_t	base;
+-	uint32_t				exptime;
+-} mmc_delete_request_header_t;
++} MMC_ATTR_PACKED mmc_delete_request_header_t;
+ 
+ typedef struct mmc_mutate_request_header {
+ 	mmc_request_header_t	base;
+ 	uint64_t				delta;
+ 	uint64_t				initial;
+ 	uint32_t				expiration;
+-} mmc_mutate_request_header_t;
++} MMC_ATTR_PACKED mmc_mutate_request_header_t;
+ 
+ typedef struct mmc_sasl_request_header {
+ 	mmc_request_header_t	base;
+-} mmc_sasl_request_header;
++} MMC_ATTR_PACKED mmc_sasl_request_header;
+ 
+ typedef struct mmc_response_header {
+ 	uint8_t		magic;
+ 	uint8_t		opcode;
+-	uint16_t	error;
++	uint16_t	key_len;
+ 	uint8_t		extras_len;
+ 	uint8_t		datatype;
+ 	uint16_t	status;
+-	uint32_t	length;				/* trailing body length (not including this header) */
++	uint32_t	total_body_length;	/* trailing body total_body_length (not including this header) */
+ 	uint32_t	reqid;				/* echo'ed from request */
+ 	uint64_t	cas;
+-} mmc_response_header_t;
++} MMC_ATTR_PACKED mmc_response_header_t;
+ 
+ typedef struct mmc_get_response_header {
+ 	uint32_t				flags;
+-} mmc_get_response_header_t;
++} MMC_ATTR_PACKED mmc_get_response_header_t;
+ 
+ typedef struct mmc_mutate_response_header {
+ 	uint64_t				value;
+-} mmc_mutate_response_header_t;
++} MMC_ATTR_PACKED mmc_mutate_response_header_t;
+ 
+ static int mmc_request_read_response(mmc_t *, mmc_request_t *);
+ static int mmc_request_parse_value(mmc_t *, mmc_request_t *);
+@@ -252,9 +266,40 @@
+ 		}
+ 
+ 		req->command.opcode = header->opcode;
+-		req->command.error = ntohs(header->error);
++
++		switch (ntohs(header->status)) {
++			case MMC_BINARY_STATUS_OK:
++				req->command.error = MMC_OK;
++				break;
++			case MMC_BINARY_STATUS_KEY_NOT_FOUND:
++				req->command.error = MMC_RESPONSE_NOT_FOUND;
++				break;
++			case MMC_BINARY_STATUS_KEY_EXISTS:
++				req->command.error = MMC_RESPONSE_EXISTS;
++				break;
++			case MMC_BINARY_STATUS_VALUE_TOO_LARGE:
++				req->command.error = MMC_RESPONSE_TOO_LARGE;
++				break;
++			case MMC_BINARY_STATUS_INVALID_ARGS:
++			case MMC_BINARY_STATUS_INCR_DECR_ERROR:
++				req->command.error = MMC_RESPONSE_CLIENT_ERROR;
++				break;
++			case MMC_BINARY_STATUS_ITEM_NOT_STORED:
++				req->command.error = MMC_RESPONSE_NOT_STORED;
++				break;
++			case MMC_BINARY_STATUS_UNKNOWN_COMMAND:
++				req->command.error = MMC_RESPONSE_UNKNOWN_CMD;
++				break;
++			case MMC_BINARY_STATUS_OUT_OF_MEMORY:
++				req->command.error = MMC_RESPONSE_OUT_OF_MEMORY;
++				break;
++			default:
++				req->command.error = MMC_RESPONSE_UNKNOWN;
++				break;
++		}
++
+ 		req->command.reqid = ntohl(header->reqid);
+-		req->value.length = ntohl(header->length);
++		req->value.length = ntohl(header->total_body_length);
+ 		req->value.cas = ntohll(header->cas);
+ 
+ 		if (req->value.length == 0) {
+@@ -434,6 +479,7 @@
+ 	header->_reserved = 0;
+ 	header->length = htonl(key_len + extras_len + length);
+ 	header->reqid = htonl(reqid);
++	header->cas = 0;
+ }
+ /* }}} */
+ 
+@@ -618,8 +664,7 @@
+ 	request->parse = mmc_request_parse_response;
+ 	req->next_parse_handler = mmc_request_read_response;
+ 
+-	mmc_pack_header(&(header.base), MMC_OP_DELETE, 0, key_len, sizeof(header) - sizeof(header.base), 0);
+-	header.exptime = htonl(exptime);
++	mmc_pack_header(&(header.base), MMC_OP_DELETE, 0, key_len, 0, 0);
+ 
+ 	smart_string_appendl(&(request->sendbuf.value), (const char *)&header, sizeof(header));
+ 	smart_string_appendl(&(request->sendbuf.value), key, key_len);
+@@ -659,7 +704,6 @@
+ 	else {
+ 		/* server replies with NOT_FOUND if exptime ~0 and key doesn't exist */
+ 		header.expiration = ~(uint32_t)0;
+-		header.expiration = htonl(0x00000e10);
+ 	}
+ 
+ 	/* mutate request is 43 bytes */
+--- php7/memcache_pool.c.orig	2020-09-25 03:29:24.000000000 +0800
++++ php7/memcache_pool.c	2020-10-16 15:52:01.000000000 +0800
+@@ -41,6 +41,24 @@
+ 
+ ZEND_DECLARE_MODULE_GLOBALS(memcache)
+ 
++#if PHP_VERSION_ID >= 80000
++#define mmc_string_concat2 zend_string_concat2
++#else
++static zend_string* mmc_string_concat2(
++		const char *str1, size_t str1_len,
++		const char *str2, size_t str2_len)
++{
++	size_t len = str1_len + str2_len;
++	zend_string *res = zend_string_alloc(len, 0);
++
++	memcpy(ZSTR_VAL(res), str1, str1_len);
++	memcpy(ZSTR_VAL(res) + str1_len, str2, str2_len);
++	ZSTR_VAL(res)[len] = '\0';
++
++	return res;
++}
++#endif
++
+ MMC_POOL_INLINE void mmc_buffer_alloc(mmc_buffer_t *buffer, unsigned int size)  /*
+ 	ensures space for an additional size bytes {{{ */
+ {
+@@ -407,6 +425,7 @@
+ 			PHP_VAR_SERIALIZE_DESTROY(value_hash);
+ 
+ 			if (!buf.s) {
++				zval_dtor(&value_copy);
+ 				php_error_docref(NULL, E_WARNING, "Failed to serialize value");
+ 				return MMC_REQUEST_FAILURE;
+ 			}
+@@ -733,7 +752,16 @@
+ 
+ 	/* check connection and extract socket for select() purposes */
+ 	if (!io->stream || php_stream_cast(io->stream, PHP_STREAM_AS_FD_FOR_SELECT, (void **)&fd, 1) != SUCCESS) {
+-		mmc_server_seterror(mmc, errstr != NULL ? ZSTR_VAL(errstr) : "Connection failed", errnum);
++		if (errstr != NULL) {
++			zend_string* error = mmc_string_concat2(
++				"Connection failed: ", sizeof("Connection failed: ") - 1,
++				ZSTR_VAL(errstr), ZSTR_LEN(errstr));
++
++			mmc_server_seterror(mmc, ZSTR_VAL(error), errnum);
++			zend_string_release(error);
++		} else {
++			mmc_server_seterror(mmc, "Connection failed", errnum);
++		}
+ 		mmc_server_deactivate(pool, mmc);
+ 
+ 		if (errstr != NULL) {
+@@ -821,6 +849,8 @@
+ 
+ void mmc_server_free(mmc_t *mmc) /* {{{ */
+ {
++	mmc_server_sleep(mmc);
++
+ 	pefree(mmc->host, mmc->persistent);
+ 	pefree(mmc, mmc->persistent);
+ }
+--- php7/memcache_session.c.orig	2020-09-25 03:29:24.000000000 +0800
++++ php7/memcache_session.c	2020-10-16 15:52:01.000000000 +0800
+@@ -64,12 +64,13 @@
+ 	}
+ 	if (!path) {
+ 		PS_SET_MOD_DATA(NULL);
++		ZEND_ASSERT(0 && "open");
+ 		return FAILURE;
+ 	}
+ 
+ 	pool = mmc_pool_new();
+ 
+-	for (i=0,j=0,path_len=strlen(path); i<path_len; i=j+1) {
++	for (i=0,path_len=strlen(path); i<path_len; i=j+1) {
+ 		/* find beginning of url */
+ 		while (i<path_len && (isspace(path[i]) || path[i] == ',')) {
+ 			i++;
+@@ -205,6 +206,7 @@
+ 
+ 	mmc_pool_free(pool);
+ 	PS_SET_MOD_DATA(NULL);
++	ZEND_ASSERT(0 &&"open");
+ 	return FAILURE;
+ }
+ /* }}} */
+@@ -360,12 +362,12 @@
+ 				if (skip_servers.len == pool->num_servers && skip_servers.len < MEMCACHE_G(session_redundancy)) {
+ 					*val = ZSTR_EMPTY_ALLOC();
+ 					mmc_queue_free(&skip_servers);
+-					zval_ptr_dtor(&dataresult);
+ 					return SUCCESS;
+-
+ 				}
+ 			}
+ 			else {
++				zval_dtor(&dataresult);
++
+ 				/* if missing lock, back off and retry same server */
+ 				last_index = prev_index;
+ 				usleep(timeout);
+@@ -417,6 +419,9 @@
+ 
+ 			if (mmc_prepare_key_ex(ZSTR_VAL(key), ZSTR_LEN(key), datarequest->key, &(datarequest->key_len), MEMCACHE_G(session_key_prefix)) != MMC_OK) {
+ 				mmc_pool_release(pool, datarequest);
++				if (lockrequest != NULL) {
++					mmc_pool_release(pool, lockrequest);
++				}
+ 				break;
+ 			}
+ 
+@@ -450,6 +455,7 @@
+ 				 mmc_pool_schedule(pool, mmc, lockrequest) != MMC_OK) {
+ 				mmc_pool_release(pool, datarequest);
+ 				mmc_pool_release(pool, lockrequest);
++				lockrequest = NULL;
+ 				continue;
+ 			}
+ 		} while (skip_servers.len < MEMCACHE_G(session_redundancy) && skip_servers.len < pool->num_servers);
