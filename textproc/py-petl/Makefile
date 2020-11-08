@@ -1,0 +1,23 @@
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	petl
+PORTVERSION=	1.6.8
+CATEGORIES=	textproc python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Extract, transform and load tables of data
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.5.4:devel/py-setuptools_scm@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

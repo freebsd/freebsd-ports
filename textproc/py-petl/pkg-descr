@@ -1,0 +1,4 @@
+petl is a general purpose Python package for extracting, transforming and
+loading tables of data.
+
+WWW: https://github.com/petl-developers/petl
