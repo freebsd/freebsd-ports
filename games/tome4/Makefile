@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tome4
-DISTVERSION?=	1.7.0
+DISTVERSION?=	1.7.2
 PORTREVISION?=	0
 CATEGORIES=	games
 MASTER_SITES=	https://te4.org/dl/t-engine/ \
