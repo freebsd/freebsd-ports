@@ -1,7 +1,9 @@
 include/xeus/xauthentication.hpp
 include/xeus/xcomm.hpp
 include/xeus/xcontrol_messenger.hpp
+include/xeus/xdap_tcp_client.hpp
 include/xeus/xdebugger.hpp
+include/xeus/xdebugger_base.hpp
 include/xeus/xeus.hpp
 include/xeus/xguid.hpp
 include/xeus/xhistory_manager.hpp
