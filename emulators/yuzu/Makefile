@@ -78,8 +78,8 @@ SDL_PLIST_FILES=bin/${PORTNAME}-cmd \
 		bin/${PORTNAME}-tester
 
 QT5_USES=	desktop-file-utils qt:5 shared-mime-info
-QT5_USE=	QT=qmake_build,buildtools_build,concurrent_build,core,gui,webengine,widgets
-QT5_CMAKE_BOOL=	ENABLE_QT YUZU_USE_QT_WEB_ENGINE
+QT5_USE=	QT=qmake_build,buildtools_build,linguisttools_build,concurrent_build,core,gui,webengine,widgets
+QT5_CMAKE_BOOL=	ENABLE_QT ENABLE_QT_TRANSLATION YUZU_USE_QT_WEB_ENGINE
 QT5_PLIST_FILES=bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
