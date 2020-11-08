@@ -24,10 +24,13 @@ USERS=		titus titus-keys
 GROUPS=		nogroup
 
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man
-CFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
 
 .include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} != base
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+.endif
 
 post-patch:
 	${REINPLACE_CMD} 's|/var/lib/titus/empty|/var/empty|' ${WRKSRC}/titus.conf.example
