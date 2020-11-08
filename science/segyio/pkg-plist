@@ -1,0 +1,13 @@
+bin/segyio-catb
+bin/segyio-cath
+bin/segyio-catr
+bin/segyio-crop
+include/segyio/segy.h
+lib/libsegyio.so
+lib/libsegyio.so.0
+man/man1/segyio-catb.1.gz
+man/man1/segyio-cath.1.gz
+man/man1/segyio-catr.1.gz
+man/man1/segyio-crop.1.gz
+%%DATADIR%%/cmake/segyio-config-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/cmake/segyio-config.cmake

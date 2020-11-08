@@ -1,0 +1,7 @@
+Segyio is a small LGPL licensed C library for easy interaction with SEG-Y and
+Seismic Unix formatted seismic data, with language bindings for Python and
+Matlab. Segyio is an attempt to create an easy-to-use, embeddable,
+community-oriented library for seismic applications. Features are added as they
+are needed; suggestions and contributions of all kinds are very welcome.
+
+WWW: https://github.com/equinor/segyio
