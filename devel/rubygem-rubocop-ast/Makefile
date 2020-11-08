@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubocop-ast
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
