@@ -354,6 +354,7 @@ bin/rexify
 %%PERL5_MAN3%%/Rex::Box::KVM.3.gz
 %%PERL5_MAN3%%/Rex::Box::VBox.3.gz
 %%PERL5_MAN3%%/Rex::CMDB.3.gz
+%%PERL5_MAN3%%/Rex::CMDB::YAML.3.gz
 %%PERL5_MAN3%%/Rex::Commands.3.gz
 %%PERL5_MAN3%%/Rex::Commands::Augeas.3.gz
 %%PERL5_MAN3%%/Rex::Commands::Box.3.gz

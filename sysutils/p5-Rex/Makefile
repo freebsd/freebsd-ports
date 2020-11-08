@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Rex
-PORTVERSION=	1.13.0
+PORTVERSION=	1.13.1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FERKI
@@ -24,7 +24,6 @@ RUN_DEPENDS=	p5-AWS-Signature4>=0:devel/p5-AWS-Signature4 \
 		p5-IO-String>=0:devel/p5-IO-String \
 		p5-IO-Tty>=0:devel/p5-IO-Tty \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
-		p5-List-MoreUtils>=0.416:lang/p5-List-MoreUtils \
 		p5-Net-OpenSSH>=0:net/p5-Net-OpenSSH \
 		p5-Net-SFTP-Foreign>=0:net/p5-Net-SFTP-Foreign \
 		p5-Parallel-ForkManager>=0:devel/p5-Parallel-ForkManager \
