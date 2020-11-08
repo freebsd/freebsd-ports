@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bootsnap
-PORTVERSION=	1.4.8
+PORTVERSION=	1.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,5 +15,7 @@ RUN_DEPENDS=	rubygem-msgpack>=1.0<2:devel/rubygem-msgpack
 
 USES=		gem
 USE_RUBY=	yes
+
+PLIST_FILES=	bin/bootsnap
 
 .include <bsd.port.mk>
