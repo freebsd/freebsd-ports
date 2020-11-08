@@ -2,7 +2,7 @@
 
 PORTNAME=	msgpuck
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -17,6 +17,6 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tarantool
-GH_TAGNAME=	8ae606a
+GH_TAGNAME=	06e6308
 
 .include <bsd.port.mk>
