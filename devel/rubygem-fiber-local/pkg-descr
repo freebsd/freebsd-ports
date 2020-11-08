@@ -1,0 +1,3 @@
+Fiber::Local is a module to simplify fiber-local state.
+
+WWW: https://github.com/socketry/fiber-local
