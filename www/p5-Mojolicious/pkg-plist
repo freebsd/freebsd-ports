@@ -123,6 +123,9 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/Validator/Validation.pm
 %%SITE_PERL%%/Mojolicious/resources/public/favicon.ico
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/failraptor.png
+%%SITE_PERL%%/Mojolicious/resources/public/mojo/highlight.js/highlight-mojo-dark.css
+%%SITE_PERL%%/Mojolicious/resources/public/mojo/highlight.js/highlight.min.js
+%%SITE_PERL%%/Mojolicious/resources/public/mojo/highlight.js/mojolicious.min.js
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/jquery/jquery.js
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/logo-black-2x.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/logo-black.png
@@ -133,8 +136,6 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/notfound.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/pinstripe-dark.png
 %%SITE_PERL%%/Mojolicious/resources/public/mojo/pinstripe-light.png
-%%SITE_PERL%%/Mojolicious/resources/public/mojo/prettify/prettify-mojo-dark.css
-%%SITE_PERL%%/Mojolicious/resources/public/mojo/prettify/run_prettify.js
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/debug.html.ep
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/exception.html.ep
 %%SITE_PERL%%/Mojolicious/resources/templates/mojo/not_found.html.ep
