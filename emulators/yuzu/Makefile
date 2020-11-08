@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yuzu
-PORTVERSION=	s20201106
+PORTVERSION=	s20201107
 PORTREVISION?=	0
 CATEGORIES=	emulators
 
@@ -24,7 +24,6 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64
 ONLY_FOR_ARCHS_REASON=	requires int128
 
 BUILD_DEPENDS=	catch>0:devel/catch \
-		gmake:devel/gmake \
 		nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzip.so:archivers/libzip \
@@ -36,9 +35,8 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	91a45834f
-GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
-		DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
+GH_TAGNAME=	e82997374
+GH_TUPLE=	DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 		KhronosGroup:SPIRV-Headers:2c51218:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
 		KhronosGroup:Vulkan-Headers:v1.2.145:Vulkan_Headers/externals/Vulkan-Headers \
 		MerryMage:dynarmic:r3-242-g0e1112b7:dynarmic/externals/dynarmic \
@@ -49,7 +47,7 @@ GH_TUPLE=	yuzu-emu:unicorn:1.0.1-153-g73f45735:unicorn/externals/unicorn \
 		kinetiknz:cubeb:cubeb-0.2-1251-ga7e83aa:cubeb/externals/cubeb \
 		benhoyt:inih:r52:inih/externals/inih/inih
 
-USES=		cmake compiler:c++17-lang localbase:ldflags python:build sdl ssl
+USES=		cmake compiler:c++17-lang localbase:ldflags sdl ssl
 USE_SDL=	sdl2
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test
