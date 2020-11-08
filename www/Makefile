@@ -464,6 +464,7 @@
     SUBDIR += npm
     SUBDIR += npm-node10
     SUBDIR += npm-node12
+    SUBDIR += npm-node14
     SUBDIR += nspluginwrapper
     SUBDIR += obhttpd
     SUBDIR += oneshot
