@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tiledb
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.5.4:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.30:devel/py-wheel@${PY_FLAVOR} \
 		${RUN_DEPENDS} \
-		tiledb>=2.0.8:databases/tiledb
+		tiledb>=2.1.2:databases/tiledb
 LIB_DEPENDS=	libtiledb.so:databases/tiledb
 RUN_DEPENDS=	${PYNUMPY}
 
