@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-bcrypt-ruby>=3.0<4:security/rubygem-bcrypt-ruby \
 		rubygem-fastercsv>=1.5<2:devel/rubygem-fastercsv \
 		rubygem-json1>=1.6<2:devel/rubygem-json1 \
 		rubygem-multi_json>=1.0<2:devel/rubygem-multi_json \
-		rubygem-stringex>=1.4:devel/rubygem-stringex \
+		rubygem-stringex>=1.4,1:devel/rubygem-stringex \
 		rubygem-uuidtools>=2.1<3:devel/rubygem-uuidtools
 
 USES=		gem
