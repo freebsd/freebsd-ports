@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aenum
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,5 +14,7 @@ LICENSE_FILE=	${WRKSRC}/aenum/LICENSE
 
 USES=		python:3.4+
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
