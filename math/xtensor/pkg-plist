@@ -9,6 +9,7 @@ include/xtensor/xaxis_slice_iterator.hpp
 include/xtensor/xbroadcast.hpp
 include/xtensor/xbuffer_adaptor.hpp
 include/xtensor/xbuilder.hpp
+include/xtensor/xchunked_array.hpp
 include/xtensor/xcomplex.hpp
 include/xtensor/xcontainer.hpp
 include/xtensor/xcsv.hpp
@@ -67,6 +68,7 @@ include/xtensor/xview.hpp
 include/xtensor/xview_utils.hpp
 include/xtensor/zarray.hpp
 include/xtensor/zarray_impl.hpp
+include/xtensor/zassign.hpp
 include/xtensor/zdispatcher.hpp
 include/xtensor/zdispatching_types.hpp
 include/xtensor/zfunction.hpp
