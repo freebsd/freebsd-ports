@@ -6,7 +6,7 @@ view and it will become a playlist an its content will be loaded into
 tracks view.  Create multiple playlists from folders in your library and
 switch between them quickly.  Similar to "Album list" in Foobar2000.
 
-Built with C++ and Qt framework -- lightweight and fast.  Open Source and
+Built with C++ and Qt framework -- lightweight and fast.  Open-source and
 cross-platform.  Uses audio codecs installed on your system (GStreamer
 though QtMultimedia).  Follows you desktop theme.
 
