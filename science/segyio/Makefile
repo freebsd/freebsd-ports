@@ -10,7 +10,7 @@ COMMENT=	Library to interact with SEG-Y & Seismic Unix formatted seismic data
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/License.md
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
