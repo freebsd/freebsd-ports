@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 CATEGORIES=	textproc
 MASTER_SITES=	CHEESESHOP
 
@@ -19,7 +18,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}lxml>=4.0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		gettext python:3.5+ shebangfix
+USES=		gettext python:3.6+ shebangfix
 USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes
