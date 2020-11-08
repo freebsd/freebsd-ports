@@ -12,5 +12,5 @@ include/wayfire/util/log.hpp
 include/wayfire/util/stringify.hpp
 lib/libwf-config.so
 lib/libwf-config.so.1
-lib/libwf-config.so.0.5.0
+lib/libwf-config.so.0.6.0
 libdata/pkgconfig/wf-config.pc

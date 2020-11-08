@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wf-shell
-DISTVERSION=	0.5.0
+DISTVERSION=	0.6.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
-		wf-config>=0.5.0:devel/wf-config \
+		wf-config>=0.6.0:devel/wf-config \
 		wayfire>0:x11-wm/wayfire
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libwf-config.so:devel/wf-config \
@@ -22,7 +22,8 @@ USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gtkmm30
 GH_ACCOUNT=	WayfireWM
-GH_TUPLE=	GNOME:libgnome-volume-control:468022b:gvc/subprojects/gvc
+GH_TUPLE=	GNOME:libgnome-volume-control:468022b:gvc/subprojects/gvc \
+		soreau:wayland-logout:v1.0-4-gab7c143:wayland_logout/subprojects/wayland-logout
 MESON_ARGS=	-Dgvc:alsa=false
 DATADIR=	${PREFIX}/share/wayfire
 

@@ -7,6 +7,8 @@ include/wayfire/core.hpp
 include/wayfire/debug.hpp
 include/wayfire/decorator.hpp
 include/wayfire/geometry.hpp
+include/wayfire/gtk-shell.hpp
+include/wayfire/idle.hpp
 include/wayfire/img.hpp
 include/wayfire/input-device.hpp
 include/wayfire/matcher.hpp
@@ -14,6 +16,8 @@ include/wayfire/nonstd/noncopyable.hpp
 include/wayfire/nonstd/observer_ptr.h
 include/wayfire/nonstd/reverse.hpp
 include/wayfire/nonstd/safe-list.hpp
+include/wayfire/nonstd/wlroots-full.hpp
+include/wayfire/nonstd/wlroots.hpp
 include/wayfire/object.hpp
 include/wayfire/opengl.hpp
 include/wayfire/option-wrapper.hpp
@@ -22,10 +26,14 @@ include/wayfire/output.hpp
 include/wayfire/plugin.hpp
 include/wayfire/plugins/common/cairo-util.hpp
 include/wayfire/plugins/common/geometry-animation.hpp
+include/wayfire/plugins/common/move-snap-helper.hpp
 include/wayfire/plugins/common/preview-indication.hpp
 include/wayfire/plugins/common/simple-texture.hpp
 include/wayfire/plugins/common/view-change-viewport-signal.hpp
+include/wayfire/plugins/common/workspace-stream-sharing.hpp
 include/wayfire/plugins/common/workspace-wall.hpp
+include/wayfire/plugins/vswitch.hpp
+include/wayfire/plugins/wobbly/wobbly-signal.hpp
 include/wayfire/render-manager.hpp
 include/wayfire/signal-definitions.hpp
 include/wayfire/singleton-plugin.hpp
@@ -44,6 +52,7 @@ lib/wayfire/libcommand.so
 lib/wayfire/libcube.so
 lib/wayfire/libdecoration.so
 lib/wayfire/libexpo.so
+lib/wayfire/libextra-gestures.so
 lib/wayfire/libfast-switcher.so
 lib/wayfire/libfisheye.so
 lib/wayfire/libgrid.so
@@ -53,6 +62,7 @@ lib/wayfire/libmove.so
 lib/wayfire/liboswitch.so
 lib/wayfire/libplace.so
 lib/wayfire/libresize.so
+lib/wayfire/libscale.so
 lib/wayfire/libsimple-tile.so
 lib/wayfire/libswitcher.so
 lib/wayfire/libvswipe.so
@@ -75,6 +85,7 @@ libdata/pkgconfig/wayfire.pc
 %%DATADIR%%/metadata/cube.xml
 %%DATADIR%%/metadata/decoration.xml
 %%DATADIR%%/metadata/expo.xml
+%%DATADIR%%/metadata/extra-gestures.xml
 %%DATADIR%%/metadata/fast-switcher.xml
 %%DATADIR%%/metadata/fisheye.xml
 %%DATADIR%%/metadata/grid.xml
@@ -85,6 +96,7 @@ libdata/pkgconfig/wayfire.pc
 %%DATADIR%%/metadata/oswitch.xml
 %%DATADIR%%/metadata/place.xml
 %%DATADIR%%/metadata/resize.xml
+%%DATADIR%%/metadata/scale.xml
 %%DATADIR%%/metadata/simple-tile.xml
 %%DATADIR%%/metadata/switcher.xml
 %%DATADIR%%/metadata/vswipe.xml

@@ -1,5 +1,7 @@
-TIMESTAMP = 1596263008
-SHA256 (WayfireWM-wf-shell-0.5.0_GH0.tar.gz) = 7e274d46009193129e763e383d2e91b579f4bd1468ed89386a3249f01410b40f
-SIZE (WayfireWM-wf-shell-0.5.0_GH0.tar.gz) = 8948762
+TIMESTAMP = 1604855332
+SHA256 (WayfireWM-wf-shell-0.6.0_GH0.tar.gz) = 6a22db73f6f7500cbc1208a860869c96184067a9ee7b1c4710e7bf79b6c283a3
+SIZE (WayfireWM-wf-shell-0.6.0_GH0.tar.gz) = 8949900
 SHA256 (GNOME-libgnome-volume-control-468022b_GH0.tar.gz) = 1c1d806ad1f57d7f644381b67ee87ef3e7e10f3a2da1432beef535ca50c0040f
 SIZE (GNOME-libgnome-volume-control-468022b_GH0.tar.gz) = 45503
+SHA256 (soreau-wayland-logout-v1.0-4-gab7c143_GH0.tar.gz) = 854ea71dcad6b8ce4d6b5259ee8d5a830c794c31d8177282c81c2a0b29c652e5
+SIZE (soreau-wayland-logout-v1.0-4-gab7c143_GH0.tar.gz) = 16923

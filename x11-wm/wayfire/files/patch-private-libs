@@ -1,14 +1,16 @@
-wf-utils is untagged and has no other consumers. Keep it private to
-wayfire package for now.
+wf-touch and wf-utils are untagged and have no other consumers. Keep
+it private to wayfire package for now.
 
---- meson.build.orig	2020-08-04 18:56:17 UTC
+--- meson.build.orig	2020-11-08 17:19:12 UTC
 +++ meson.build
-@@ -41,7 +41,7 @@ if not use_system_wfconfig
+@@ -41,8 +41,8 @@ if not use_system_wfconfig
    wfconfig = subproject('wf-config').get_variable('wfconfig')
  endif
  
 -wfutils = subproject('wf-utils').get_variable('wfutils')
+-wftouch = subproject('wf-touch').get_variable('wftouch')
 +wfutils = subproject('wf-utils', default_options: ['default_library=static']).get_variable('wfutils')
++wftouch = subproject('wf-touch', default_options: ['default_library=static']).get_variable('wftouch')
  
  needs_libinotify = ['freebsd', 'dragonfly'].contains(host_machine.system())
  libinotify       = dependency('libinotify', required: needs_libinotify)
@@ -49,3 +51,25 @@ wayfire package for now.
  
  # -------------------------------------------------------------------------------------------------
  # Unit tests
+--- subprojects/wf-touch/meson.build.orig	2020-09-20 09:41:37 UTC
++++ subprojects/wf-touch/meson.build
+@@ -5,14 +5,18 @@ project('wf-touch', ['cpp'],
+ glm = dependency('glm')
+ 
+ wf_touch_inc_dirs = include_directories('.')
++if not meson.is_subproject()
+ install_headers([
+ 'wayfire/touch/touch.hpp'],
+ subdir: 'wayfire/touch')
++endif
+ 
+ wftouch_lib = static_library('wftouch', ['src/touch.cpp', 'src/actions.cpp', 'src/math.cpp'],
+-    dependencies: glm, install: true)
++    dependencies: glm, install: not meson.is_subproject())
+ 
+ wftouch = declare_dependency(link_with: wftouch_lib,
+     include_directories: wf_touch_inc_dirs, dependencies: glm)
+ 
++if not meson.is_subproject()
+ subdir('test')
++endif

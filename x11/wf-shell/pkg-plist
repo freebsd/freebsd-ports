@@ -1,3 +1,4 @@
+bin/wayland-logout
 bin/wf-background
 bin/wf-dock
 bin/wf-panel
