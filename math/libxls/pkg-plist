@@ -1,4 +1,6 @@
 bin/xls2csv
+include/libxls/endian.h
+include/libxls/locale.h
 include/libxls/brdb.c.h
 include/libxls/brdb.h
 include/libxls/ole.h
@@ -6,9 +8,8 @@ include/libxls/xlsstruct.h
 include/libxls/xlstool.h
 include/libxls/xlstypes.h
 include/xls.h
-include/libxls/endian.h
 lib/libxlsreader.so
-lib/libxlsreader.so.1
-lib/libxlsreader.so.1.5.3
+lib/libxlsreader.so.8
+lib/libxlsreader.so.8.0.1
 libdata/pkgconfig/libxls.pc
 man/man1/xls2csv.1.gz
