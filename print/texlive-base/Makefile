@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20150521
-PORTREVISION=	58
+PORTREVISION=	59
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/
 PKGNAMESUFFIX=	-base
@@ -24,7 +24,9 @@ LIB_DEPENDS=	libicuio.so:devel/icu \
 		libzzip.so:devel/zziplib \
 		libpoppler.so:graphics/poppler \
 		libpotrace.so:graphics/libpotrace
-RUN_DEPENDS=	psbook:print/psutils
+RUN_DEPENDS=	p5-File-HomeDir>=0:devel/p5-File-HomeDir \
+		p5-YAML-Tiny>=0:textproc/p5-YAML-Tiny \
+		psbook:print/psutils
 
 USES=		compiler:c++11-lib ghostscript localbase pkgconfig perl5 \
 		python:run shebangfix tar:xz
