@@ -13,6 +13,9 @@ PKGNAMESUFFIX=	324
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
+DEPRECATED=	Reduction of syslog-ng ports to one
+EXPIRATION_DATE=	2020-12-31
+
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
 DEPRECATED=	Agreed upon upstream one year deprecation policy

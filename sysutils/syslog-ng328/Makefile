@@ -15,6 +15,9 @@ COMMENT=	Powerful syslogd replacement
 
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
+DEPRECATED=	Reduction of syslog-ng ports to one
+EXPIRATION_DATE=	2020-12-31
+
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
