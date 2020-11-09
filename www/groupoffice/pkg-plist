@@ -435,6 +435,7 @@
 %%WWWDIR%%/go/core/oauth/server/repositories/RefreshTokenRepository.php
 %%WWWDIR%%/go/core/oauth/server/repositories/ScopeRepository.php
 %%WWWDIR%%/go/core/oauth/server/repositories/UserRepository.php
+%%WWWDIR%%/go/core/orm/CustomFieldsModel.php
 %%WWWDIR%%/go/core/orm/CustomFieldsTrait.php
 %%WWWDIR%%/go/core/orm/Entity.php
 %%WWWDIR%%/go/core/orm/EntityFilesTrait.php
@@ -715,6 +716,7 @@
 %%WWWDIR%%/go/modules/business/newsletters/language/nl.php
 %%WWWDIR%%/go/modules/business/newsletters/language/pl.php
 %%WWWDIR%%/go/modules/business/newsletters/language/pt_br.php
+%%WWWDIR%%/go/modules/business/newsletters/language/ro.php
 %%WWWDIR%%/go/modules/business/newsletters/model/AddressList.php
 %%WWWDIR%%/go/modules/business/newsletters/model/AddressListEntity.php
 %%WWWDIR%%/go/modules/business/newsletters/model/Newsletter.php
@@ -750,6 +752,7 @@
 %%WWWDIR%%/go/modules/business/studio/language/en.php
 %%WWWDIR%%/go/modules/business/studio/language/nl.php
 %%WWWDIR%%/go/modules/business/studio/language/pt_br.php
+%%WWWDIR%%/go/modules/business/studio/language/ro.php
 %%WWWDIR%%/go/modules/business/studio/model/Settings.php
 %%WWWDIR%%/go/modules/business/studio/model/Studio.php
 %%WWWDIR%%/go/modules/business/studio/service/AbstractGenerator.php
@@ -846,6 +849,7 @@
 %%WWWDIR%%/go/modules/community/addressbook/language/nl.php
 %%WWWDIR%%/go/modules/community/addressbook/language/pl.php
 %%WWWDIR%%/go/modules/community/addressbook/language/pt_br.php
+%%WWWDIR%%/go/modules/community/addressbook/language/ro.php
 %%WWWDIR%%/go/modules/community/addressbook/model/Address.php
 %%WWWDIR%%/go/modules/community/addressbook/model/AddressBook.php
 %%WWWDIR%%/go/modules/community/addressbook/model/Contact.php
@@ -989,6 +993,7 @@
 %%WWWDIR%%/go/modules/community/comments/language/nl.php
 %%WWWDIR%%/go/modules/community/comments/language/pl.php
 %%WWWDIR%%/go/modules/community/comments/language/pt_br.php
+%%WWWDIR%%/go/modules/community/comments/language/ro.php
 %%WWWDIR%%/go/modules/community/comments/model/Comment.php
 %%WWWDIR%%/go/modules/community/comments/model/Label.php
 %%WWWDIR%%/go/modules/community/comments/views/extjs3/CommentForm.js
@@ -1021,6 +1026,7 @@
 %%WWWDIR%%/go/modules/community/dokuwiki/language/nl.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/pl.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/pt_br.php
+%%WWWDIR%%/go/modules/community/dokuwiki/language/ro.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/ru.php
 %%WWWDIR%%/go/modules/community/dokuwiki/language/vi.php
 %%WWWDIR%%/go/modules/community/dokuwiki/lib/plugins/authgroupoffice/admin.php
@@ -1309,6 +1315,7 @@
 %%WWWDIR%%/go/modules/community/notesencrypt/language/fr.php
 %%WWWDIR%%/go/modules/community/notesencrypt/language/pl.php
 %%WWWDIR%%/go/modules/community/notesencrypt/language/pt_br.php
+%%WWWDIR%%/go/modules/community/notesencrypt/language/ro.php
 %%WWWDIR%%/go/modules/community/notesencrypt/views/extjs3/Functions.js
 %%WWWDIR%%/go/modules/community/notesencrypt/views/extjs3/Module.js
 %%WWWDIR%%/go/modules/community/notesencrypt/views/extjs3/NoteDetailOverride.js
@@ -1340,7 +1347,6 @@
 %%WWWDIR%%/go/modules/community/serverclient/model/HttpClient.php
 %%WWWDIR%%/go/modules/community/serverclient/model/HttpClient.php.bak
 %%WWWDIR%%/go/modules/community/serverclient/model/MailDomain.php
-%%WWWDIR%%/go/modules/community/serverclient/scripts.inc.php
 %%WWWDIR%%/go/modules/community/serverclient/views/extjs3/UserOverride.js
 %%WWWDIR%%/go/modules/community/serverclient/views/extjs3/scripts.txt
 %%WWWDIR%%/go/modules/community/serverclient/views/extjs3/themes/default/images/serverclient.png
@@ -1456,6 +1462,7 @@
 %%WWWDIR%%/modules/assistant/language/nl.php
 %%WWWDIR%%/modules/assistant/language/pl.php
 %%WWWDIR%%/modules/assistant/language/pt_br.php
+%%WWWDIR%%/modules/assistant/language/ro.php
 %%WWWDIR%%/modules/assistant/scripts.txt
 %%WWWDIR%%/modules/assistant/themes/Default/images/assistant.png
 %%WWWDIR%%/modules/assistant/themes/Default/style.css
@@ -1490,6 +1497,7 @@
 %%WWWDIR%%/modules/billing/ExpensesWindow.js
 %%WWWDIR%%/modules/billing/ExportDialog.js
 %%WWWDIR%%/modules/billing/ExportIncomeDialog.js
+%%WWWDIR%%/modules/billing/ExportMonthlyDialog.js
 %%WWWDIR%%/modules/billing/ImportDialog.js
 %%WWWDIR%%/modules/billing/ImportItemsWindow.js
 %%WWWDIR%%/modules/billing/ImportPaymentsDialog.js
@@ -1553,6 +1561,7 @@
 %%WWWDIR%%/modules/billing/controller/ExportCatalogController.php
 %%WWWDIR%%/modules/billing/controller/ExportCustomersController.php
 %%WWWDIR%%/modules/billing/controller/ExportIncomeController.php
+%%WWWDIR%%/modules/billing/controller/ExportMonthlyController.php
 %%WWWDIR%%/modules/billing/controller/ExportOrdersController.php
 %%WWWDIR%%/modules/billing/controller/ExportOutstandingController.php
 %%WWWDIR%%/modules/billing/controller/ExportProductSalesController.php
@@ -1603,6 +1612,7 @@
 %%WWWDIR%%/modules/billing/language/nl.php
 %%WWWDIR%%/modules/billing/language/pl.php
 %%WWWDIR%%/modules/billing/language/pt_br.php
+%%WWWDIR%%/modules/billing/language/ro.php
 %%WWWDIR%%/modules/billing/language/ru.php
 %%WWWDIR%%/modules/billing/language/sv.php
 %%WWWDIR%%/modules/billing/model/Book.php
@@ -2046,6 +2056,7 @@
 %%WWWDIR%%/modules/demodata/language/id.php
 %%WWWDIR%%/modules/demodata/language/pl.php
 %%WWWDIR%%/modules/demodata/language/pt_br.php
+%%WWWDIR%%/modules/demodata/language/ro.php
 %%WWWDIR%%/modules/demodata/scripts.txt
 %%WWWDIR%%/modules/documenttemplates/DocumenttemplatesModule.php
 %%WWWDIR%%/modules/documenttemplates/EmailTemplateDialog.js
@@ -2074,6 +2085,7 @@
 %%WWWDIR%%/modules/documenttemplates/language/nl.php
 %%WWWDIR%%/modules/documenttemplates/language/pl.php
 %%WWWDIR%%/modules/documenttemplates/language/pt_br.php
+%%WWWDIR%%/modules/documenttemplates/language/ro.php
 %%WWWDIR%%/modules/documenttemplates/language/sv.php
 %%WWWDIR%%/modules/documenttemplates/language/th.php
 %%WWWDIR%%/modules/documenttemplates/model/Parser.php
@@ -2404,6 +2416,7 @@
 %%WWWDIR%%/modules/filesearch/language/nl.php
 %%WWWDIR%%/modules/filesearch/language/pl.php
 %%WWWDIR%%/modules/filesearch/language/pt_br.php
+%%WWWDIR%%/modules/filesearch/language/ro.php
 %%WWWDIR%%/modules/filesearch/model/DocBundle.php
 %%WWWDIR%%/modules/filesearch/model/DocBundleFile.php
 %%WWWDIR%%/modules/filesearch/model/Duplicate.php
@@ -2564,6 +2577,7 @@
 %%WWWDIR%%/modules/hoursapproval2/language/nl.php
 %%WWWDIR%%/modules/hoursapproval2/language/pl.php
 %%WWWDIR%%/modules/hoursapproval2/language/pt_br.php
+%%WWWDIR%%/modules/hoursapproval2/language/ro.php
 %%WWWDIR%%/modules/hoursapproval2/language/ru.php
 %%WWWDIR%%/modules/hoursapproval2/language/sv.php
 %%WWWDIR%%/modules/hoursapproval2/scripts.txt
@@ -2598,6 +2612,7 @@
 %%WWWDIR%%/modules/leavedays/language/nl.php
 %%WWWDIR%%/modules/leavedays/language/pl.php
 %%WWWDIR%%/modules/leavedays/language/pt_br.php
+%%WWWDIR%%/modules/leavedays/language/ro.php
 %%WWWDIR%%/modules/leavedays/model/Credit.php
 %%WWWDIR%%/modules/leavedays/model/CreditType.php
 %%WWWDIR%%/modules/leavedays/model/Leaveday.php
@@ -2880,6 +2895,7 @@
 %%WWWDIR%%/modules/pr2analyzer/language/nl.php
 %%WWWDIR%%/modules/pr2analyzer/language/pl.php
 %%WWWDIR%%/modules/pr2analyzer/language/pt_br.php
+%%WWWDIR%%/modules/pr2analyzer/language/ro.php
 %%WWWDIR%%/modules/pr2analyzer/themes/Default/images/pr2analizer.png
 %%WWWDIR%%/modules/pr2analyzer/themes/Default/images/reports.png
 %%WWWDIR%%/modules/pr2analyzer/themes/Default/style.css
@@ -3121,6 +3137,7 @@
 %%WWWDIR%%/modules/savemailas/language/nl.php
 %%WWWDIR%%/modules/savemailas/language/pl.php
 %%WWWDIR%%/modules/savemailas/language/pt_br.php
+%%WWWDIR%%/modules/savemailas/language/ro.php
 %%WWWDIR%%/modules/savemailas/language/sv.php
 %%WWWDIR%%/modules/savemailas/language/th.php
 %%WWWDIR%%/modules/savemailas/model/LinkedEmail.php
@@ -3226,6 +3243,7 @@
 %%WWWDIR%%/modules/site/language/nl.php
 %%WWWDIR%%/modules/site/language/pl.php
 %%WWWDIR%%/modules/site/language/pt_br.php
+%%WWWDIR%%/modules/site/language/ro.php
 %%WWWDIR%%/modules/site/model/Content.php
 %%WWWDIR%%/modules/site/model/FormModel.php
 %%WWWDIR%%/modules/site/model/Menu.php
@@ -3382,6 +3400,7 @@
 %%WWWDIR%%/modules/smime/language/nl.php
 %%WWWDIR%%/modules/smime/language/pl.php
 %%WWWDIR%%/modules/smime/language/pt_br.php
+%%WWWDIR%%/modules/smime/language/ro.php
 %%WWWDIR%%/modules/smime/model/Certificate.php
 %%WWWDIR%%/modules/smime/model/PublicCertificate.php
 %%WWWDIR%%/modules/smime/scripts.txt
@@ -3627,6 +3646,7 @@
 %%WWWDIR%%/modules/tickets/language/nl.php
 %%WWWDIR%%/modules/tickets/language/pl.php
 %%WWWDIR%%/modules/tickets/language/pt_br.php
+%%WWWDIR%%/modules/tickets/language/ro.php
 %%WWWDIR%%/modules/tickets/language/ru.php
 %%WWWDIR%%/modules/tickets/language/sv.php
 %%WWWDIR%%/modules/tickets/language/th.php
@@ -3684,6 +3704,7 @@
 %%WWWDIR%%/modules/timeregistration2/language/nl.php
 %%WWWDIR%%/modules/timeregistration2/language/pl.php
 %%WWWDIR%%/modules/timeregistration2/language/pt_br.php
+%%WWWDIR%%/modules/timeregistration2/language/ro.php
 %%WWWDIR%%/modules/timeregistration2/language/ru.php
 %%WWWDIR%%/modules/timeregistration2/language/sv.php
 %%WWWDIR%%/modules/timeregistration2/model/Day.php
@@ -4083,6 +4104,7 @@
 %%WWWDIR%%/modules/zpushadmin/language/nb.php
 %%WWWDIR%%/modules/zpushadmin/language/nl.php
 %%WWWDIR%%/modules/zpushadmin/language/pl.php
+%%WWWDIR%%/modules/zpushadmin/language/ro.php
 %%WWWDIR%%/modules/zpushadmin/language/sv.php
 %%WWWDIR%%/modules/zpushadmin/language/th.php
 %%WWWDIR%%/modules/zpushadmin/model/Device.php
@@ -4167,6 +4189,7 @@
 %%WWWDIR%%/vendor/egulias/email-validator/src/Exception/CommaInDomain.php
 %%WWWDIR%%/vendor/egulias/email-validator/src/Exception/ConsecutiveAt.php
 %%WWWDIR%%/vendor/egulias/email-validator/src/Exception/ConsecutiveDot.php
+%%WWWDIR%%/vendor/egulias/email-validator/src/Exception/DomainAcceptsNoMail.php
 %%WWWDIR%%/vendor/egulias/email-validator/src/Exception/DomainHyphened.php
 %%WWWDIR%%/vendor/egulias/email-validator/src/Exception/DotAtEnd.php
 %%WWWDIR%%/vendor/egulias/email-validator/src/Exception/DotAtStart.php
@@ -4177,6 +4200,7 @@
 %%WWWDIR%%/vendor/egulias/email-validator/src/Exception/ExpectingDomainLiteralClose.php
 %%WWWDIR%%/vendor/egulias/email-validator/src/Exception/ExpectingQPair.php
 %%WWWDIR%%/vendor/egulias/email-validator/src/Exception/InvalidEmail.php
+%%WWWDIR%%/vendor/egulias/email-validator/src/Exception/LocalOrReservedDomain.php
 %%WWWDIR%%/vendor/egulias/email-validator/src/Exception/NoDNSRecord.php
 %%WWWDIR%%/vendor/egulias/email-validator/src/Exception/NoDomainPart.php
 %%WWWDIR%%/vendor/egulias/email-validator/src/Exception/NoLocalPart.php
@@ -4224,6 +4248,8 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/README.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/UPGRADING.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/composer.json
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/BodySummarizer.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/BodySummarizerInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Client.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/ClientInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/ClientTrait.php
@@ -4251,6 +4277,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Handler/StreamHandler.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/HandlerStack.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/MessageFormatter.php
+%%WWWDIR%%/vendor/guzzlehttp/guzzle/src/MessageFormatterInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Middleware.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Pool.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php
@@ -4261,16 +4288,23 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/Utils.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/functions.php
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/functions_include.php
+%%WWWDIR%%/vendor/guzzlehttp/promises/.php_cs.dist
 %%WWWDIR%%/vendor/guzzlehttp/promises/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/promises/LICENSE
 %%WWWDIR%%/vendor/guzzlehttp/promises/Makefile
 %%WWWDIR%%/vendor/guzzlehttp/promises/README.md
 %%WWWDIR%%/vendor/guzzlehttp/promises/composer.json
+%%WWWDIR%%/vendor/guzzlehttp/promises/phpstan-baseline.neon
+%%WWWDIR%%/vendor/guzzlehttp/promises/phpstan.neon.dist
+%%WWWDIR%%/vendor/guzzlehttp/promises/psalm.xml
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/AggregateException.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/CancellationException.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/Coroutine.php
+%%WWWDIR%%/vendor/guzzlehttp/promises/src/Create.php
+%%WWWDIR%%/vendor/guzzlehttp/promises/src/Each.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/EachPromise.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/FulfilledPromise.php
+%%WWWDIR%%/vendor/guzzlehttp/promises/src/Is.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/Promise.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/PromiseInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/PromisorInterface.php
@@ -4278,6 +4312,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/RejectionException.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/TaskQueue.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/TaskQueueInterface.php
+%%WWWDIR%%/vendor/guzzlehttp/promises/src/Utils.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/functions.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/functions_include.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/CHANGELOG.md
@@ -4289,13 +4324,17 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/CachingStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/DroppingStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/FnStream.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/src/Header.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/InflateStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/LazyOpenStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/LimitStream.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/src/Message.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/MessageTrait.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/src/MimeType.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/MultipartStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/NoSeekStream.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/PumpStream.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/src/Query.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Request.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Response.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Rfc7230.php
@@ -4307,6 +4346,7 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Uri.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriNormalizer.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/UriResolver.php
+%%WWWDIR%%/vendor/guzzlehttp/psr7/src/Utils.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/functions.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/functions_include.php
 %%WWWDIR%%/vendor/html2text/html2text/.gitignore
@@ -6202,6 +6242,8 @@
 %%WWWDIR%%/vendor/setasign/fpdi/README.md
 %%WWWDIR%%/vendor/setasign/fpdi/SECURITY.md
 %%WWWDIR%%/vendor/setasign/fpdi/composer.json
+%%WWWDIR%%/vendor/setasign/fpdi/phpcs.xml
+%%WWWDIR%%/vendor/setasign/fpdi/phpstan.neon
 %%WWWDIR%%/vendor/setasign/fpdi/src/FpdfTpl.php
 %%WWWDIR%%/vendor/setasign/fpdi/src/FpdfTplTrait.php
 %%WWWDIR%%/vendor/setasign/fpdi/src/Fpdi.php
@@ -6664,10 +6706,30 @@
 %%WWWDIR%%/vendor/symfony/polyfill-iconv/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-iconv/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-intl-idn/Idn.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-idn/Info.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-idn/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-intl-idn/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-intl-idn/Resources/unidata/DisallowedRanges.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-idn/Resources/unidata/Regex.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-idn/Resources/unidata/deviation.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-idn/Resources/unidata/disallowed.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-idn/Resources/unidata/disallowed_STD3_mapped.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-idn/Resources/unidata/disallowed_STD3_valid.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-idn/Resources/unidata/ignored.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-idn/Resources/unidata/mapped.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-idn/Resources/unidata/virama.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-idn/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-intl-idn/composer.json
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/LICENSE
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Normalizer.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/canonicalComposition.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/canonicalDecomposition.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/combiningClass.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/Resources/unidata/compatibilityDecomposition.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/README.md
@@ -6676,6 +6738,18 @@
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/composer.json
+%%WWWDIR%%/vendor/symfony/polyfill-php70/LICENSE
+%%WWWDIR%%/vendor/symfony/polyfill-php70/Php70.php
+%%WWWDIR%%/vendor/symfony/polyfill-php70/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php
+%%WWWDIR%%/vendor/symfony/polyfill-php70/Resources/stubs/AssertionError.php
+%%WWWDIR%%/vendor/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php
+%%WWWDIR%%/vendor/symfony/polyfill-php70/Resources/stubs/Error.php
+%%WWWDIR%%/vendor/symfony/polyfill-php70/Resources/stubs/ParseError.php
+%%WWWDIR%%/vendor/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php
+%%WWWDIR%%/vendor/symfony/polyfill-php70/Resources/stubs/TypeError.php
+%%WWWDIR%%/vendor/symfony/polyfill-php70/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php70/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-php72/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php72/Php72.php
 %%WWWDIR%%/vendor/symfony/polyfill-php72/README.md
