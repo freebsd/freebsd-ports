@@ -27,6 +27,7 @@
     SUBDIR += rubygem-atk
     SUBDIR += sct
     SUBDIR += speech-dispatcher
+    SUBDIR += wlsunset
     SUBDIR += yasr
 
 .include <bsd.port.subdir.mk>
