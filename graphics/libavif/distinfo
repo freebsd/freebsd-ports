@@ -1,5 +1,7 @@
-TIMESTAMP = 1602717484
-SHA256 (AOMediaCodec-libavif-v0.8.2_GH0.tar.gz) = 1b79ec439d446dfd659098d36401b4d2df77dd19d53d7d944ade7164b3ef28a2
-SIZE (AOMediaCodec-libavif-v0.8.2_GH0.tar.gz) = 2940396
+TIMESTAMP = 1604954628
+SHA256 (AOMediaCodec-libavif-v0.8.3_GH0.tar.gz) = 0527720a493a08cfcd56cae2fe10e8c674112ebf1a6e1c30d38fca5bb2a504b2
+SIZE (AOMediaCodec-libavif-v0.8.3_GH0.tar.gz) = 2948213
 SHA256 (2340cdb5f0c2.patch) = d6886eb5f74ba65b84b22859d4c5b9b16e8c0d8692959fd04d0624b2487c6763
 SIZE (2340cdb5f0c2.patch) = 1712
+SHA256 (76244a1fca21.patch) = cbe0d5bec045c41d72a3c5a7af0e8886a01437f83cb6dcbb6313e12e33814b83
+SIZE (76244a1fca21.patch) = 923
