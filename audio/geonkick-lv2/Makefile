@@ -28,11 +28,4 @@ USE_XORG=	x11
 
 INSTALLS_ICONS=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == clang
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-plugin_lv2_CMakeLists.txt \
-		${FILESDIR}/extra-patch-standalone_CMakeLists.txt
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

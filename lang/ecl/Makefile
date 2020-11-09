@@ -56,7 +56,6 @@ SAGE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_aclocal.m4 \
 			${PATCHDIR}/extra-patch-src_c_file.d \
 			${PATCHDIR}/extra-patch-src_compile.lsp.in \
 			${PATCHDIR}/extra-patch-src_configure.ac \
-			${PATCHDIR}/extra-patch-src_lsp_format.lsp \
 			${PATCHDIR}/extra-patch-src_Makefile.in
 
 SOCKETS_CONFIGURE_ON=	--with-tcp=yes

@@ -43,12 +43,6 @@ NO_WRKSUBDIR=	YES
 # The bazel binary is also a zip archive (extracted by the elf part), it must not be stripped
 STRIP=
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-EXTRA_PATCHES+=	${FILESDIR}/extra-i386_tools_cpp_BUILD.static.freebsd
-.endif
-
 # Have the location of the system-wide rc file reside ${ETCDIR}.
 # Also adapt the sample file to disable persistent java workers as they
 # do not work reliably on FreeBSD.
@@ -86,4 +80,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/scripts/packages/bazel.bazelrc ${STAGEDIR}${ETCDIR}/bazel.bazelrc.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

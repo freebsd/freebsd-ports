@@ -2,7 +2,7 @@
 
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
-EXTRA_PATCHES=	${.CURDIR}/files/
+EXTRA_PATCHES?=	${.CURDIR}/files/
 PATCHFILES+=	939129/raw
 
 MODEL?=		rpi3

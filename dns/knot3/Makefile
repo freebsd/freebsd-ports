@@ -98,7 +98,6 @@ MAXMINDDB_CONFIGURE_ENABLE=	maxminddb
 
 .if ${ARCH} == i386
 USES+=				autoreconf
-EXTRA_PATCHES+=			${PATCHDIR}/extrapatch-configure.ac
 .endif
 
 post-patch:
