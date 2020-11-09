@@ -1,4 +1,4 @@
-TIMESTAMP = 1594919972
+TIMESTAMP = 1604959694
 SHA256 (binutils-2.25.1.tar.bz2) = b5b14added7d78a8d1ca70b5cb75fef57ce2197264f4f5835326b0df22ac9f22
 SIZE (binutils-2.25.1.tar.bz2) = 24163561
 SHA256 (expat-2.1.0.tar.gz) = 823705472f816df21c8f6aa026dd162b280806838bb55b3432b0fb1fcca7eb86
@@ -19,5 +19,5 @@ SHA256 (ncurses-6.0.tar.gz) = f551c24b30ce8bfb6e96d9f59b42fbea30fa3a6123384172f9
 SIZE (ncurses-6.0.tar.gz) = 3131891
 SHA256 (newlib-2.2.0.tar.gz) = f8add263b0737591aff451b12a00c262c2efac4fa87d741fa1c318fc3bb335be
 SIZE (newlib-2.2.0.tar.gz) = 16521910
-SHA256 (espressif-crosstool-NG-1.22.0.g20200617-1.22.0-96-g2852398_GH0.tar.gz) = d6a170b935babc3374a1e51283f7f6ef4d6c86cb50c6464741fe408782f0b7cf
-SIZE (espressif-crosstool-NG-1.22.0.g20200617-1.22.0-96-g2852398_GH0.tar.gz) = 2668825
+SHA256 (espressif-crosstool-NG-1.22.0.g20200907-1.22.0-97-gc752ad5_GH0.tar.gz) = 6219346b4adef881820c4f90094c530c861a2b02a54831eef02ad03ef69ca251
+SIZE (espressif-crosstool-NG-1.22.0.g20200907-1.22.0-97-gc752ad5_GH0.tar.gz) = 2669631

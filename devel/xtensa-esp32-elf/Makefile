@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtensa-esp32-elf
-DISTVERSION=	1.22.0.g20200617
+DISTVERSION=	1.22.0.g20200907
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases/binutils:source1 \
 		GNU/binutils:source1 \
@@ -56,7 +56,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 NO_MTREE=	yes
 SUBDIR=		crosstool-NG
-TAGNAME=	1.22.0-96-g2852398
+TAGNAME=	1.22.0-97-gc752ad5
 GH_TUPLE=	espressif:${SUBDIR}:${TAGNAME}
 BINARY_ALIAS=	g++=${CXX} gcc=${CC} python=${PYTHON_VERSION}
 BUILD_ENV=	CT_ALLOW_BUILD_AS_ROOT_SURE=1 \
