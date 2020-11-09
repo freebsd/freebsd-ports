@@ -23,8 +23,8 @@ AUTHOR: bapt@FreeBSD.org
 AUTHOR: bapt@FreeBSD.org
 
   @shell has been rewritten in lua
-  It provide the exact same feature as the previous version but it is now
-  sandboxed ans is rootdir compliant (see pkg -r option)
+  It provides the exact same feature set as the previous version but it is now
+  sandboxed and rootdir compliant (see the pkg -r option).
 
 20201001:
 AUTHOR: manu@FreeBSD.org
