@@ -24,9 +24,6 @@ lib/libwx_gtk2u_gl-2.8.so.0.8.0
 lib/libwx_gtk2u_html-2.8.so
 lib/libwx_gtk2u_html-2.8.so.0
 lib/libwx_gtk2u_html-2.8.so.0.8.0
-%%GSTREAMER%%lib/libwx_gtk2u_media-2.8.so
-%%GSTREAMER%%lib/libwx_gtk2u_media-2.8.so.0
-%%GSTREAMER%%lib/libwx_gtk2u_media-2.8.so.0.8.0
 lib/libwx_gtk2u_qa-2.8.so
 lib/libwx_gtk2u_qa-2.8.so.0
 lib/libwx_gtk2u_qa-2.8.so.0.8.0

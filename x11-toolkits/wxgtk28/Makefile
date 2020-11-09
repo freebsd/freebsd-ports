@@ -3,7 +3,7 @@
 
 PORTNAME=	wx
 PORTVERSION=	2.8.12
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/wxwindows/${PORTVERSION}
 PKGNAMESUFFIX=	28-${WXGTK_FLAVOR}
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-opengl\
 		--with-mspack\
 		--with-gtk\
-		--enable-mediactrl\
+		--disable-mediactrl \
 		--disable-backtrace\
 		--enable-graphics_ctx
 CONFIGURE_ENV=	X11BASE="${LOCALBASE}"
@@ -39,21 +39,11 @@ PLIST=		${.CURDIR}/pkg-plist
 
 WXGTK_FLAVOR?=	gtk2
 
-OPTIONS_DEFINE=	GSTREAMER MSPACK
-OPTIONS_DEFAULT=	GSTREAMER MSPACK
+OPTIONS_DEFINE=	MSPACK
+OPTIONS_DEFAULT=	MSPACK
 MSPACK_DESC=	MS archives support
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGSTREAMER}
-CONFIGURE_ARGS+=--enable-mediactrl
-USE_GNOME+=	gconf2
-USE_GSTREAMER=	yes
-PLIST_SUB+=     GSTREAMER=""
-.else
-CONFIGURE_ARGS+=--disable-mediactrl
-PLIST_SUB+=     GSTREAMER="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MMSPACK}
 CONFIGURE_ARGS+=--with-libmspack
