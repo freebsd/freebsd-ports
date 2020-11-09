@@ -736,6 +736,7 @@
     SUBDIR += py-arviz
     SUBDIR += py-autograd
     SUBDIR += py-bayesian-optimization
+    SUBDIR += py-benford_py
     SUBDIR += py-bitmath
     SUBDIR += py-bitvector
     SUBDIR += py-bottleneck
