@@ -217,9 +217,12 @@ MAKE_ARGS+=	USE_PRECOMPILED_HEADER=0
 .endif
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
-CONFIGURE_ARGS+=	--disable-jfr
 EXTRA_PATCHES+= ${FILESDIR}/extra-patch-ppc64-elfv2
 MAKE_ARGS+=	USE_PRECOMPILED_HEADER=0
+.endif
+
+.if ${ARCH} == powerpc64
+CONFIGURE_ARGS+=	--disable-jfr
 .endif
 
 .if empty(ICONV_LIB)
