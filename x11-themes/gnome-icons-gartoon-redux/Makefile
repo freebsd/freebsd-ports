@@ -3,6 +3,7 @@
 
 PORTNAME=	gartoon-redux
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/1.x/${PORTVERSION}/+download/
 
@@ -12,11 +13,10 @@ COMMENT=	Gartoon Redux Gnome Icon Theme
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	rsvg-convert:graphics/librsvg2
-
-USES=		perl5
+USES=		gnome perl5
 USE_PERL5=	build
 
+USE_GNOME=	librsvg2:build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 INSTALLS_ICONS=	yes

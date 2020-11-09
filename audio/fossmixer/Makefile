@@ -2,6 +2,7 @@
 
 PORTNAME=	fossmixer
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.sourceforge.net/project/detroit/
 DISTNAME=	detroit-0.2.1

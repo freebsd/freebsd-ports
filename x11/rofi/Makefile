@@ -2,6 +2,7 @@
 
 PORTNAME=	rofi
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/davatorium/rofi/releases/download/${PORTVERSION}/
 

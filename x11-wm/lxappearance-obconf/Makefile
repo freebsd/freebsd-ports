@@ -3,6 +3,7 @@
 
 PORTNAME=	lxappearance-obconf
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/lxde/LXAppearance%20Obconf/
 

@@ -3,6 +3,7 @@
 
 PORTNAME=	gnome-system-monitor
 PORTVERSION=	3.38.0
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome

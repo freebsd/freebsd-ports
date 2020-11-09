@@ -3,6 +3,7 @@
 
 PORTNAME=	ibus
 PORTVERSION=	1.5.23
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	henry.hu.sh@gmail.com

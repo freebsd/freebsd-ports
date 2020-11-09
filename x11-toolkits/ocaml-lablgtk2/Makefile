@@ -3,6 +3,7 @@
 
 PORTNAME=	lablgtk2
 PORTVERSION=	2.18.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://download.ocamlcore.org/lablgtk/Lablgtk2/${PORTVERSION}/
 PKGNAMEPREFIX=	ocaml-

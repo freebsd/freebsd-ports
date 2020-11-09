@@ -3,7 +3,7 @@
 PORTNAME=	lavalauncher
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://git.sr.ht/~leon_plickat/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -35,8 +35,7 @@ INOTIFY_DESC=		Watch configuration file via libinotify
 INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 INOTIFY_MESON_ENABLED=	watch-config
 
-LIBRSVG2_USE=		GNOME=glib20
-LIBRSVG2_LIB_DEPENDS=	librsvg-2.so.2:graphics/librsvg2-rust
+LIBRSVG2_USE=		GNOME=glib20,librsvg2
 LIBRSVG2_MESON_ENABLED=	librsvg
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc

@@ -3,6 +3,7 @@
 
 PORTNAME=	elementary
 PORTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 PKGNAMEPREFIX=	gnome-icons-
 
