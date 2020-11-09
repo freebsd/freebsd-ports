@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-mailwatch-plugin
-PORTVERSION=	1.2.0
-PORTREVISION=	10
+PORTVERSION=	1.3.0
 CATEGORIES=	mail xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -15,14 +14,13 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
-		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
-		tar:bzip2 xfce:gtk2 xorg
-USE_GNOME=	cairo glib20 gtk20 intltool
+		tar:bzip2 xfce xorg
+USE_GNOME=	cairo glib20 gtk30 intltool
 USE_XFCE=	panel
 USE_XORG=	x11
 
