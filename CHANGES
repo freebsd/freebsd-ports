@@ -791,7 +791,7 @@ AUTHOR: bapt@FreeBSD.org
   @preunexec <command>: execute the <command> during pre-deinstall scripts
   @postunexec <command>: execute the <command> during post-deinstall scripts
 
-  @exec does not specify when if should be executed and is now considered as
+  @exec does not specify when it should be executed and is now considered as
   deprecated.
 
 20150914:
