@@ -5861,6 +5861,7 @@
     SUBDIR += rubygem-blockenspiel
     SUBDIR += rubygem-bones
     SUBDIR += rubygem-bootsnap
+    SUBDIR += rubygem-bootsnap14
     SUBDIR += rubygem-bootstrap_form
     SUBDIR += rubygem-bson
     SUBDIR += rubygem-buftok
