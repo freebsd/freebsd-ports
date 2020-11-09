@@ -1,0 +1,28 @@
+--- Makefile.in.orig	2020-10-24 15:00:00 UTC
++++ Makefile.in
+@@ -4,6 +4,7 @@ prefix := @PREFIX@
+ bindir := @BINDIR@
+ datarootdir := @DATAROOTDIR@
+ datadir := @DATADIR@/@PACKAGE_NAME@
++docdir := @DOCDIR@
+ package_name := @PACKAGE_NAME@
+ package_version := @PACKAGE_VERSION@
+ package_full := $(package_name)-$(package_version)
+@@ -209,7 +210,7 @@ install:
+ 	 $(DESTDIR)$(datarootdir)/icons/hicolor/48x48/apps \
+ 	 $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps \
+ 	 $(DESTDIR)$(datarootdir)/mime/packages \
+-	 $(DESTDIR)$(datadir)/doc \
++	 $(DESTDIR)$(docdir) \
+ 	 $(DESTDIR)$(datadir)/13x13 \
+ 	 $(DESTDIR)$(datadir)/16x16 \
+ 	 $(DESTDIR)$(datadir)/20x20 \
+@@ -227,7 +228,7 @@ install:
+ 	$(instfile) desktop/icons/hicolor/scalable/apps/*.svg $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps
+ 	$(instfile) desktop/mime/packages/azpainter.xml $(DESTDIR)$(datarootdir)/mime/packages
+ 
+-	$(instfile) GPL3 AUTHORS ChangeLog README README_ja manual_ja.html $(DESTDIR)$(datadir)/doc
++	$(instfile) AUTHORS ChangeLog README README_ja manual_ja.html $(DESTDIR)$(docdir)
+ 
+ 	$(instfile) data/*.dat data/*.png data/sckey-2.conf $(DESTDIR)$(datadir)
+ 

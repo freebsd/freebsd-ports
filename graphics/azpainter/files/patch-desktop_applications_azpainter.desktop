@@ -1,5 +1,5 @@
---- desktop/azpainter.desktop.orig	2017-03-04 23:46:17 UTC
-+++ desktop/azpainter.desktop
+--- desktop/applications/azpainter.desktop.orig	2020-10-24 15:00:00 UTC
++++ desktop/applications/azpainter.desktop
 @@ -5,5 +5,10 @@ Exec=azpainter %f
  Icon=azpainter
  Terminal=false
@@ -9,5 +9,5 @@
 +Comment[pt_BR]=16-bit RGB full color painting application
 +Comment[ru]=16-bit RGB full color painting application
 +Comment[uk]=16-bit RGB full color painting application
- MimeType=application/x-azpainter-apd
- StartupNotify=false
+ MimeType=application/x-azpainter-apd;
+ StartupNotify=true

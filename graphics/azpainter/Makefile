@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	azpainter
-PORTVERSION=	2.1.5
+DISTVERSION=	2.1.7b4
 CATEGORIES=	graphics
-MASTER_SITES=	OSDN/${PORTNAME}
-
-EXTRA_PATCHES=	${FILESDIR}/git-2564ee5:-p1
+MASTER_SITES=	http://azsky2.html.xdomain.jp/arc/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	16-bit RGB full color painting application
@@ -17,29 +15,28 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 
-USES=		compiler:c11 desktop-file-utils jpeg localbase \
+USES=		compiler:c11 desktop-file-utils gmake jpeg pkgconfig \
 		shared-mime-info tar:xz xorg
 USE_XORG=	x11 xext xi
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-freetype-dir=${LOCALBASE}/include/freetype2
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--docdir="${DOCSDIR}" CC="${CC}"
 
-PORTDOCS=	AUTHORS ChangeLog NEWS README README_ja manual
+PORTDOCS=	AUTHORS ChangeLog README README_ja manual_ja.html
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--debug
+.endif
+
 post-patch-NLS-off:
-	@${REINPLACE_CMD} -e 's, install-dist_trdataDATA$$,,' \
-		${WRKSRC}/data/Makefile.in
+	@${REINPLACE_CMD} -e '/\/tr/d' ${WRKSRC}/Makefile.in
 
 pre-build-NLS-on:
 	cd ${WRKSRC}/translation && ${CC} ${CFLAGS} -o mtrconv mtrconv.c
-.for lang in be en ru uk zh_CN
+.for lang in en ru uk
 	cd ${WRKSRC}/translation && ./mtrconv ${lang} ../data/tr/${lang}.mtr
 .endfor
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CP} -a ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

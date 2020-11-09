@@ -168,7 +168,9 @@ bin/azpainter
 %%DATADIR%%/texture/various/white_circle.png
 %%DATADIR%%/texture/various/x-mark.png
 %%DATADIR%%/theme/black.theme
+%%DATADIR%%/theme/sai.theme
 %%NLS%%%%DATADIR%%/tr/be.mtr
+%%NLS%%%%DATADIR%%/tr/de_DE.mtr
 %%NLS%%%%DATADIR%%/tr/en.mtr
 %%NLS%%%%DATADIR%%/tr/es_ES.mtr
 %%NLS%%%%DATADIR%%/tr/fr.mtr
