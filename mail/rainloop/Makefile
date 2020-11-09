@@ -9,7 +9,7 @@ PKGNAMESUFFIX?=	${PHP_PKGNAMESUFFIX}
 MAINTAINER=	yasu@utahime.org
 COMMENT?=	Modern and interactive webmail
 
-.if "${PKGNAMESUFFIX"} == "${PHP_PKGNAMESUFFIX}"
+.if "${PKGNAMESUFFIX}" == "${PHP_PKGNAMESUFFIX}"
 LICENSE=	RainLoop
 LICENSE_NAME=	RainLoop Software License
 LICENSE_TEXT=	License can be found at: http://www.rainloop.net/licensing/
