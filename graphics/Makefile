@@ -1014,7 +1014,6 @@
     SUBDIR += svgalib
     SUBDIR += svgbob
     SUBDIR += swappy
-    SUBDIR += swfdec
     SUBDIR += swfmill
     SUBDIR += swftools
     SUBDIR += sxiv

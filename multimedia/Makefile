@@ -394,7 +394,6 @@
     SUBDIR += svt-av1
     SUBDIR += svt-hevc
     SUBDIR += svt-vp9
-    SUBDIR += swfdec-gnome
     SUBDIR += syncplay
     SUBDIR += szap-s2
     SUBDIR += tautulli
