@@ -11,6 +11,9 @@ COMMENT=	Google Cloud Print proxy for local CUPS printers
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Google Cloud Print is being shut down by Google by end of 2020
+EXPIRATION_DATE=2020-12-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configargparse>=0.9.3:devel/py-configargparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}daemon>0:devel/py-daemon@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.7.0:www/py-requests@${PY_FLAVOR}
