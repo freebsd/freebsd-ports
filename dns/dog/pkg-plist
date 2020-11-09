@@ -1,0 +1,4 @@
+bin/dog
+%%COMPLETIONS%%etc/bash_completion.d/dog
+%%COMPLETIONS%%share/fish/completions/dog.fish
+%%COMPLETIONS%%share/zsh/site-functions/_dog

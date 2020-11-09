@@ -60,6 +60,7 @@
     SUBDIR += dnswalk
     SUBDIR += dnswall
     SUBDIR += doc
+    SUBDIR += dog
     SUBDIR += doh-proxy
     SUBDIR += dq
     SUBDIR += drool

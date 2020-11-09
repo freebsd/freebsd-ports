@@ -1,0 +1,6 @@
+Command-line DNS client, like dig.
+
+It has colourful output, understands normal command-line argument syntax,
+supports the DNS-over-TLS and DNS-over-HTTPS protocols, and can emit JSON.
+
+WWW: https://dns.lookup.dog/
