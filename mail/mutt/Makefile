@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-DISTVERSION=	1.14.7
+DISTVERSION=	2.0.0
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
@@ -45,14 +45,12 @@ GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=	AUTOCRYPT DEBUG_LOGS DOCS EXAMPLES FLOCK FORCEBASE64 GPGME \
+OPTIONS_DEFINE=	AUTOCRYPT DEBUG_LOGS DOCS EXAMPLES FLOCK GPGME \
 		GREETING_PATCH HTML ICONV IDN IFDEF_PATCH LOCALES_FIX \
 		MAILBOX_MANPAGES MAILDIR_MTIME_PATCH NLS QUOTE_PATCH \
 		REVERSE_REPLY_PATCH SASL SMIME SMART_DATE SMTP URLVIEW
 
 OPTIONS_SINGLE=	GSSAPI HCACHE SCREEN
-OPTIONS_RADIO=	SPELL
-OPTIONS_RADIO_SPELL=	ASPELL ISPELL
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 OPTIONS_SINGLE_HCACHE=	HCACHE_BDB HCACHE_TOKYOCABINET HCACHE_KYOTOCABINET HCACHE_NONE
 OPTIONS_SINGLE_SCREEN=	NCURSES SLANG
@@ -60,7 +58,6 @@ OPTIONS_SINGLE_SCREEN=	NCURSES SLANG
 AUTOCRYPT_DESC=	Convenient End-to-End Encryption
 DEBUG_LOGS_DESC=	Debugging capabilities
 FLOCK_DESC=	flock() usage
-FORCEBASE64_DESC=	Option to force base64 encoding for compose
 GPGME_DESC=	Gpgme interface
 GREETING_PATCH_DESC=	Greeting support
 HCACHE_BDB_DESC=	Use Berkeley DB (BDB)
@@ -103,10 +100,6 @@ AUTOCRYPT_DEPENDS=		gnupg>=2.1:security/gnupg \
 AUTOCRYPT_BUILD_DEPENDS=	${AUTOCRYPT_DEPENDS}
 AUTOCRYPT_RUN_DEPENDS=		${AUTOCRYPT_DEPENDS}
 
-ASPELL_BUILD_DEPENDS=	aspell:textproc/aspell
-ASPELL_RUN_DEPENDS=	aspell:textproc/aspell
-ISPELL_BUILD_DEPENDS=	ispell:textproc/aspell-ispell
-ISPELL_RUN_DEPENDS=	ispell:textproc/aspell-ispell
 URLVIEW_RUN_DEPENDS=	urlview:textproc/urlview
 
 DEBUG_LOGS_CONFIGURE_ON=	--enable-debug
@@ -176,8 +169,6 @@ GPGME_CONFIGURE_ENABLE=	gpgme
 
 SMTP_CONFIGURE_ENABLE=	smtp
 
-FORCEBASE64_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-forcebase64
-
 MAILDIR_MTIME_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-maildir-mtime
 
 GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
@@ -187,9 +178,8 @@ QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv \
 
 .include <bsd.port.options.mk>
 
-# un/comment as each VERSION is created for PORTVERSION
 VVV_PATCH_VERSION=	1.13.0
-GREETING_PATCH_VERSION=	1.14.3
+GREETING_PATCH_VERSION=	2.0.0
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${MANPREFIX}/man/man5
@@ -215,11 +205,5 @@ post-stage::
 	@${MV} ${STAGEDIR}/${LOCALBASE}/etc/Muttrc.dist \
 	    	${STAGEDIR}/${LOCALBASE}/etc/Muttrc.sample
 	@${RM} ${STAGEDIR}/${LOCALBASE}/etc/mime.types*
-
-# Change default ispell
-post-build-ASPELL-on:
-	@${REINPLACE_CMD} -e '/^# append-hook/p' \
-		-e 's/^# append-hook.*$$/set ispell="aspell --mode=email check"/' \
-		${WRKSRC}/doc/Muttrc
 
 .include <bsd.port.mk>
