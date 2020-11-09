@@ -2,7 +2,7 @@
 
 PORTNAME=	vt
 DISTVERSION=	0.57721
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	Discovers short variants from Next Generation Sequencing data
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libhts.so.3:biology/htslib \
+LIB_DEPENDS=	libhts.so:biology/htslib \
 		libsvm.so:science/libsvm \
 		libdeflate.so:archivers/libdeflate \
 		libcurl.so:ftp/curl
