@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# $FreeBSD: head/sysutils/syslog-ng/files/syslog-ng.in 340872 2014-01-24 00:14:07Z mat $
+#
+
+# PROVIDE: syslogd
+# REQUIRE: mountcritremote cleanvar ldconfig
+# BEFORE:  SERVERS
+
+#
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+#syslog_ng_enable="YES"
+#syslog_ng_flags="-u daemon"
+#syslog_ng_pidfile="/var/run/syslog-ng.pid"
+#
+
+. /etc/rc.subr
+
+name=syslog_ng
+rcvar=syslog_ng_enable
+
+load_rc_config $name
+
+: ${syslog_ng_enable:="NO"}
+: ${syslog_ng_purgeklog:="NO"}
+: ${syslog_ng_config:="%%PREFIX%%/etc/syslog-ng.conf"}
+: ${syslog_ng_pidfile:=/var/run/syslog.pid}
+
+# backwards compatibility
+if [ -n "${syslog_ng_pid}" ]; then
+	syslog_ng_pidfile="${syslog_ng_pid}"
+fi
+if [ ! -f "${syslog_ng_config}" ]; then
+	syslog_ng_flags="${syslog_ng_config}"
+	syslog_ng_config="%%PREFIX%%/etc/syslog-ng.conf"
+fi
+
+if checkyesno syslog_ng_purgeklog; then
+	start_precmd="echo \"Purging klog(9)\" && sysctl -w kern.msgbuf_clear=1"
+fi
+
+pidfile="${syslog_ng_pidfile}"
+required_files="${syslog_ng_config}"
+
+command="%%PREFIX%%/sbin/syslog-ng"
+command_args="-f ${syslog_ng_config} -p ${pidfile}"
+
+stop_postcmd="stop_postcmd"
+extra_commands="reload"
+
+stop_postcmd()
+{
+	rm -f "${pidfile}"
+}
+
+run_rc_command "$1"
