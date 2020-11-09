@@ -1,6 +1,6 @@
 Fix tests for modified files.
 
---- t/porting/customized.dat.orig	2020-10-23 14:06:38 UTC
+--- t/porting/customized.dat.orig	2020-11-07 21:04:53 UTC
 +++ t/porting/customized.dat
 @@ -3,6 +3,7 @@
  #     ./perl -I../lib porting/customized.t --regen
@@ -8,7 +8,7 @@ Fix tests for modified files.
  ExtUtils::Constant cpan/ExtUtils-Constant/t/Constant.t d5c75c41d6736a0c5897130f534af0896a7d6f4d
 +ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm ac29a8dc1c7d6f0aca4abff0730c05bde1dab3ad
  ExtUtils::PL2Bat cpan/ExtUtils-PL2Bat/t/make_executable.t 2f58339b567d943712488812f06d99f907af46ab
- Filter::Util::Call pod/perlfilter.pod 9b4aec0d8518274ddb0dd37e3b770fe13a44dd1f
+ Filter::Util::Call pod/perlfilter.pod 2d98239c4f4a930ad165444c3879629bb91f4cef
  Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6
 @@ -21,7 +22,7 @@ Net::Ping dist/Net-Ping/t/010_pingecho.t 218d7a9ee5b6d
  Net::Ping dist/Net-Ping/t/450_service.t f6578680f2872d7fc9f24dd75388d55654761875
