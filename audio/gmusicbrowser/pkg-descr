@@ -1,5 +1,5 @@
 Jukebox for large collections of mp3/ogg/flac/mpc files
-Uses gstreamer, mpg123/ogg123  or mplayer for playback
+Uses mpg123/ogg123  or mplayer for playback
 
 Main features :
 - customizable window layouts
