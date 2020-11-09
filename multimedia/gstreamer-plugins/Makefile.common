@@ -59,7 +59,6 @@ BAD_GST_ALL_PLUGINS+= \
 		sndfile \
 		soundtouch \
 		spc \
-		swfdec \
 		theoradec \
 		timidity \
 		vdpau \
