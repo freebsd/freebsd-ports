@@ -26,7 +26,7 @@ LIB_DEPENDS=	libicuio.so:devel/icu \
 		libpotrace.so:graphics/libpotrace
 RUN_DEPENDS=	psbook:print/psutils
 
-USES=		compiler:c++11-lib ghostscript pkgconfig perl5 \
+USES=		compiler:c++11-lib ghostscript localbase pkgconfig perl5 \
 		python:run shebangfix tar:xz
 USE_CXXSTD=	gnu++11
 USE_PERL5=	run
@@ -97,9 +97,8 @@ CONFIGURE_ARGS+=--with-system-$L \
 		--with-$L-include=${LOCALBASE}/include \
 		--with-$L-libdir=${LOCALBASE}/lib
 .endfor
-MAKE_ENV+=	CONFIG_SITE=${CONFIG_SITE}
+MAKE_ENV=	CONFIG_SITE=${CONFIG_SITE}
 INSTALL_TARGET=	install-strip
-CFLAGS+=	-I${LOCALBASE}/include
 
 CONFLICTS_INSTALL=	ps2eps texlive-texmf-201[234]*
 EXTRACT_AFTER_ARGS=	${EXCLUDE_FILES:S,^,--exclude ,}
