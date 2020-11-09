@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	msgpack
-PORTVERSION=	0.6.2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 3000
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/msgpack/_cmsgpack.so
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
