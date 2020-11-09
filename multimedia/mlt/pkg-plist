@@ -77,7 +77,6 @@ lib/mlt/libmltplusgpl.so
 %%SAMPLERATE%%lib/mlt/libmltresample.so
 lib/mlt/libmltsdl2.so
 %%SOX%%lib/mlt/libmltsox.so
-%%SWFDEC%%lib/mlt/libmltswfdec.so
 lib/mlt/libmltvideostab.so
 %%VIDSTAB%%lib/mlt/libmltvidstab.so
 lib/mlt/libmltvmfx.so
@@ -396,7 +395,6 @@ man/man1/melt.1.gz
 %%DATADIR%%/sdl2/consumer_sdl2_audio.yml
 %%SOX%%%%DATADIR%%/sox/filter_sox.yml
 %%SOX%%%%DATADIR%%/sox/filter_sox_effect.yml
-%%SWFDEC%%%%DATADIR%%/swfdec/producer_swfdec.yml
 %%VIDSTAB%%%%DATADIR%%/vid.stab/filter_deshake.yml
 %%VIDSTAB%%%%DATADIR%%/vid.stab/filter_vidstab.yml
 %%FREI0R%%%%DATADIR%%/frei0r/resolution_scale.yml
