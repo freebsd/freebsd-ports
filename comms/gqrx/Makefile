@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gqrx
-PORTVERSION=	2.13.3
+PORTVERSION=	2.13.5
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
@@ -47,11 +47,15 @@ GRAUDIO_LIB_DEPENDS=	libgnuradio-audio.so:comms/gnuradio
 GRAUDIO_QMAKE_ON=	AUDIO_BACKEND=gr-audio
 GRAUDIO_DESC=	GNU Radio audio library support
 
-PLIST_FILES=	bin/gqrx share/applications/gqrx.desktop
+PLIST_FILES=	bin/gqrx \
+		share/applications/gqrx.desktop \
+		man/man1/gqrx.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gqrx ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/gqrx.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_MAN} ${WRKSRC}/resources/gqrx.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
