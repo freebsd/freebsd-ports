@@ -35,6 +35,8 @@ INSTALL_WRKSRC=	${WRKSRC}/Source/QtDialog
 
 DISTINFO_FILE=	${.CURDIR}/../cmake/distinfo
 
+CXXFLAGS+=	-D__BSD_VISIBLE
+
 post-patch:
 	@(${FIND} ${WRKSRC}/Modules -name "*.cmake" -print0; \
 		${FIND} ${WRKSRC}/Tests -name "CMakeLists.txt" -print0 ) | \
