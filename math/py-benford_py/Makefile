@@ -2,12 +2,13 @@
 
 PORTNAME=	benford_py
 DISTVERSION=	0.2.7
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Library for testing data sets with Bendford's Law
+COMMENT=	Library for testing data sets with Benford's law
 
 LICENSE=	GPLv3
 
@@ -17,5 +18,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
