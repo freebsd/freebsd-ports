@@ -1,0 +1,12 @@
+--- galerautils/SConscript.orig	2020-10-27 20:24:02 UTC
++++ galerautils/SConscript
+@@ -48,7 +48,9 @@ if not crc32c_no_hardware:
+ 
+                             int main()
+                             {
++				#if defined(__linux__)
+                                 (void)getauxval(AT_HWCAP);
++				#endif
+ 
+                                 (void)__crc32b(0, 0);
+                                 (void)__crc32h(0, 0);

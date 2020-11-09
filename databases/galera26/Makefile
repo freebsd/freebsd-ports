@@ -13,9 +13,6 @@ COMMENT=	Synchronous multi-master replication engine
 
 LICENSE=	GPLv2
 
-BROKEN_aarch64=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
-BROKEN_armv6=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
-BROKEN_armv7=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
 NOT_FOR_ARCHS=		i386
 # On i386 older versions of clang produce:
 #   cannot compile this atomic library call yet ... __atomic_add_fetch
