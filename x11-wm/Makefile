@@ -84,6 +84,7 @@
     SUBDIR += qtile
     SUBDIR += ratmen
     SUBDIR += ratpoison
+    SUBDIR += river
     SUBDIR += rubygem-uh-layout
     SUBDIR += rubygem-uh-wm
     SUBDIR += sawfish
