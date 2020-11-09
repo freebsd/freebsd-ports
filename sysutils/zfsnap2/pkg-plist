@@ -1,4 +1,4 @@
-etc/bash_completion.d/zfsnap.sh
+%%BASH%%etc/bash_completion.d/zfsnap.sh
 etc/periodic/daily/402.zfsnap
 etc/periodic/monthly/402.zfsnap
 etc/periodic/weekly/402.zfsnap
@@ -11,4 +11,4 @@ sbin/zfsnap
 %%DATADIR%%/completion/zfsnap-completion.tcsh
 %%DATADIR%%/completion/zfsnap-completion.zsh
 %%DATADIR%%/core.sh
-share/zsh/site-functions/_zfsnap
+%%ZSH%%share/zsh/site-functions/_zfsnap
