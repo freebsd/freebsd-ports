@@ -15678,3 +15678,4 @@ net/samba410|net/samba411|2020-11-08|Has expired: yes
 audio/xfce4-mixer|audio/xfce4-pulseaudio-plugin|2020-11-08|Unsupported upstream since 2015. Try using audio/xfce4-pulseaudio-plugin
 multimedia/swfdec-gnome||2020-11-09|Depends on the expired gstreamer 0.10
 grapihcs/swfdec||2020-11-09|Depends on the expired gstreamer 0.10
+multimedia/py-openlp||2020-11-09|Depends on the expired gstreamer 0.10

@@ -342,7 +342,6 @@
     SUBDIR += py-mido
     SUBDIR += py-mlt
     SUBDIR += py-moviepy
-    SUBDIR += py-openlp
     SUBDIR += py-periscope
     SUBDIR += py-pretty_midi
     SUBDIR += py-pymediainfo
