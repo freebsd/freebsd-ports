@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-goodies
 PORTVERSION=	4.14
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	xfce@FreeBSD.org
@@ -132,12 +133,11 @@ ARCHIVE_RUN_DEPENDS=		thunar-archive-plugin>=0:archivers/thunar-archive-plugin
 MEDIATAGS_RUN_DEPENDS=		thunar-media-tags-plugin>=0:audio/thunar-media-tags-plugin
 VCS_RUN_DEPENDS=		thunar-vcs-plugin>=0:devel/thunar-vcs-plugin
 
-OPTIONS_GROUP_UNOFFICIAL=	BSDCPUFREQ EQUAKE MENULIBRE MIXER PRINT THEMES \
+OPTIONS_GROUP_UNOFFICIAL=	BSDCPUFREQ EQUAKE MENULIBRE PRINT THEMES \
 				VOLUMED
 BSDCPUFREQ_DESC=		Display the CPU clock frequency in Xfce panel
 EQUAKE_DESC=			Earthquake monitor plugin for the Xfce panel
 MENULIBRE_DESC=			Advanced compliant menu editor
-MIXER_DESC=			Volume control for the Xfce desktop
 PRINT_DESC=			Print system support for the Xfce Desktop
 THEMES_DESC=			Additional themes for xfwm4
 VOLUMED_DESC=			Volume management daemon for the Xfce desktop
@@ -145,7 +145,6 @@ VOLUMED_DESC=			Volume management daemon for the Xfce desktop
 BSDCPUFREQ_RUN_DEPENDS=		xfce4-bsdcpufreq-plugin>=0:sysutils/xfce4-bsdcpufreq-plugin
 EQUAKE_RUN_DEPENDS=		xfce4-equake-plugin>=0:science/xfce4-equake-plugin
 MENULIBRE_RUN_DEPENDS=		py${PYTHON3_DEFAULT:S/.//}-menulibre>=0:x11/menulibre
-MIXER_RUN_DEPENDS=		xfce4-mixer>=0:audio/xfce4-mixer
 PRINT_RUN_DEPENDS=		xfce4-print>=0:print/xfce4-print
 THEMES_RUN_DEPENDS=		xfce4-wm-themes>=0:misc/xfce4-wm-themes
 VOLUMED_RUN_DEPENDS=		xfce4-volumed>=0:deskutils/xfce4-volumed
