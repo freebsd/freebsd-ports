@@ -1,0 +1,13 @@
+IOHexperimenter is the benchmarking platform for Iterative Optimization
+Heuristics (IOHs).
+
+IOHexperimenter provides:
+- A framework for straightforward benchmarking of any iterative optimization
+  heuristic
+- A suite consisting of 23 pre-made Pseudo-Boolean benchmarking function, with
+  easily accessible methods for adding custom functions and suites
+- Logging methods to effortlesly store benchmarking data in a format compatible
+  with IOHanalyzer, with future support for additional data logging options
+- (Soon to come:) A framework which significantly simplifies algorithm design
+
+WWW: https://github.com/IOHprofiler/IOHexperimenter
