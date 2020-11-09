@@ -15680,3 +15680,4 @@ multimedia/swfdec-gnome||2020-11-09|Depends on the expired gstreamer 0.10
 grapihcs/swfdec||2020-11-09|Depends on the expired gstreamer 0.10
 multimedia/py-openlp||2020-11-09|Depends on the expired gstreamer 0.10
 multimedia/p5-GStreamer||2020-11-09|Depends on the expired gstreamer 0.10
+emulators/riscv-fesvr||2020-11-09|Now bundled with emulators/riscv-isa-sim
