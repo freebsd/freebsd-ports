@@ -24,7 +24,7 @@ LICENSE_FILE_LGPLv3=	${WRKSRC}/LICENSES/LGPL-3.0-only.txt
 
 RUN_DEPENDS=	smartmontools>0:sysutils/smartmontools
 
-USES=		cmake kde:5 qt:5 tar:xz
+USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 
 USE_KDE=	activities config configwidgets coreaddons ecm ksysguard \
 		plasma-framework codecs service kio windowsystem auth i18n \
