@@ -61,6 +61,7 @@ share/themes/Matcha-aliz/gnome-shell/assets/bottom-running4-focused.svg
 share/themes/Matcha-aliz/gnome-shell/assets/bottom-running4.svg
 share/themes/Matcha-aliz/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Matcha-aliz/gnome-shell/assets/calendar-arrow-right.svg
+share/themes/Matcha-aliz/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-aliz/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-aliz/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-aliz/gnome-shell/assets/corner-ripple-ltr.svg
@@ -693,6 +694,7 @@ share/themes/Matcha-azul/gnome-shell/assets/bottom-running4-focused.svg
 share/themes/Matcha-azul/gnome-shell/assets/bottom-running4.svg
 share/themes/Matcha-azul/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Matcha-azul/gnome-shell/assets/calendar-arrow-right.svg
+share/themes/Matcha-azul/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-azul/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-azul/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-azul/gnome-shell/assets/corner-ripple-ltr.svg
@@ -1329,6 +1331,7 @@ share/themes/Matcha-dark-aliz/gnome-shell/assets/bottom-running4-focused.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/bottom-running4.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/calendar-arrow-right.svg
+share/themes/Matcha-dark-aliz/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-dark-aliz/gnome-shell/assets/corner-ripple-ltr.svg
@@ -1965,6 +1968,7 @@ share/themes/Matcha-dark-azul/gnome-shell/assets/bottom-running4-focused.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/bottom-running4.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/calendar-arrow-right.svg
+share/themes/Matcha-dark-azul/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-dark-azul/gnome-shell/assets/corner-ripple-ltr.svg
@@ -2601,6 +2605,7 @@ share/themes/Matcha-dark-sea/gnome-shell/assets/bottom-running4-focused.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/bottom-running4.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/calendar-arrow-right.svg
+share/themes/Matcha-dark-sea/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-dark-sea/gnome-shell/assets/corner-ripple-ltr.svg
@@ -3237,6 +3242,7 @@ share/themes/Matcha-light-aliz/gnome-shell/assets/bottom-running4-focused.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/bottom-running4.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/calendar-arrow-right.svg
+share/themes/Matcha-light-aliz/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-light-aliz/gnome-shell/assets/corner-ripple-ltr.svg
@@ -3873,6 +3879,7 @@ share/themes/Matcha-light-azul/gnome-shell/assets/bottom-running4-focused.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/bottom-running4.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/calendar-arrow-right.svg
+share/themes/Matcha-light-azul/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-light-azul/gnome-shell/assets/corner-ripple-ltr.svg
@@ -4509,6 +4516,7 @@ share/themes/Matcha-light-sea/gnome-shell/assets/bottom-running4-focused.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/bottom-running4.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/calendar-arrow-right.svg
+share/themes/Matcha-light-sea/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-light-sea/gnome-shell/assets/corner-ripple-ltr.svg
@@ -5145,6 +5153,7 @@ share/themes/Matcha-sea/gnome-shell/assets/bottom-running4-focused.svg
 share/themes/Matcha-sea/gnome-shell/assets/bottom-running4.svg
 share/themes/Matcha-sea/gnome-shell/assets/calendar-arrow-left.svg
 share/themes/Matcha-sea/gnome-shell/assets/calendar-arrow-right.svg
+share/themes/Matcha-sea/gnome-shell/assets/calendar-today.svg
 share/themes/Matcha-sea/gnome-shell/assets/checkbox-off.svg
 share/themes/Matcha-sea/gnome-shell/assets/checkbox.svg
 share/themes/Matcha-sea/gnome-shell/assets/corner-ripple-ltr.svg

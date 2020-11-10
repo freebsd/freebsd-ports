@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	matcha-gtk-themes
-DISTVERSION=	2020-10-05
+DISTVERSION=	2020-10-23
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
