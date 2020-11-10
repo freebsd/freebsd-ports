@@ -88,6 +88,7 @@ include/frr/qobj.h
 include/frr/ringbuf.h
 include/frr/route_types.h
 include/frr/routemap.h
+include/frr/routing_nb.h
 include/frr/sbuf.h
 include/frr/seqlock.h
 include/frr/sha256.h
@@ -98,6 +99,7 @@ include/frr/skiplist.h
 include/frr/sockopt.h
 include/frr/sockunion.h
 include/frr/srcdest_table.h
+include/frr/srte.h
 include/frr/srv6.h
 include/frr/stream.h
 include/frr/systemd.h
@@ -180,10 +182,7 @@ share/yang/frr-ripngd.yang
 share/yang/frr-route-types.yang
 share/yang/frr-test-module.yang
 share/yang/frr-filter.yang
-share/yang/frr-igmp.yang
 share/yang/frr-nexthop.yang
-share/yang/frr-pim-rp.yang
-share/yang/frr-pim.yang
 share/yang/frr-route-map.yang
 share/yang/frr-routing.yang
 share/yang/frr-staticd.yang
