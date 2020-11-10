@@ -1,0 +1,27 @@
+Extract the contents of Python wheel file to Anki's Python library to load it
+directly from that place.  The .so file will be used for installation later.
+
+Rust from Ports is used as well so there is no need to bootstrap it via
+"rustup".
+
+--- rspy/Makefile.orig	2020-08-30 01:23:44 UTC
++++ rspy/Makefile
+@@ -71,6 +71,7 @@ build: .build/build
+ 	touch ../proto/backend.proto
+ 	${BUILD_VARIABLES} \
+ 		maturin build -i "${PYTHON_FILE}" -o "$(OUTDIR)" $(BUILDFLAGS)
++	%%UNZIP_NATIVE_CMD%% -o -d ../pylib/ `find ../dist/ -name "*.whl"`
+ 	touch $@
+ 
+ check: .build/check
+@@ -87,10 +88,6 @@ clean:
+ RUST_TOOLCHAIN := $(shell cat rust-toolchain)
+ 
+ .build/tools: requirements.txt rust-toolchain
+-	python -m pip install -r requirements.txt
+-	rustup toolchain install $(RUST_TOOLCHAIN)
+-	rustup component add rustfmt-preview --toolchain $(RUST_TOOLCHAIN)
+-	rustup component add clippy-preview --toolchain $(RUST_TOOLCHAIN)
+ 	@touch $@
+ 
+ # we should not call clippy because it break things when running make check Mac OS

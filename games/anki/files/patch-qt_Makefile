@@ -1,0 +1,45 @@
+Avoid Python wheel generation in the ".build/build" target as the produced
+wheels won't be used.  The Python code will be compiled and installed via
+Port's Makefile.
+ 
+--- qt/Makefile.orig	2020-08-30 01:23:44 UTC
++++ qt/Makefile
+@@ -35,11 +35,9 @@ PHONY: all
+ all: check
+ 
+ .build/run-deps: setup.py
+-	python -m pip install -e .
+ 	@touch $@
+ 
+ .build/dev-deps: requirements.dev
+-	python -m pip install -r requirements.dev
+ 	@touch $@
+ 
+ .build/ui: $(shell "${FIND}" designer -type f)
+@@ -55,7 +53,7 @@ all: check
+ TSDEPS := $(wildcard ts/src/*.ts) $(wildcard ts/scss/*.scss)
+ 
+ .build/js: $(TSDEPS)
+-	(cd ts && make build)
++	(cd ts && %%MAKE_CMD%% build)
+ 	python ./tools/extract_scss_colors.py
+ 	@touch $@
+ 
+@@ -64,7 +62,7 @@ TSDEPS := $(wildcard ts/src/*.ts) $(wildcard ts/scss/*
+ 	python -m black aqt/gui_hooks.py
+ 	@touch $@
+ 
+-BUILD_STEPS := .build/vernum .build/run-deps .build/dev-deps .build/js .build/ui aqt/buildinfo.py .build/hooks .build/i18n
++BUILD_STEPS := .build/vernum .build/run-deps .build/dev-deps .build/js .build/ui aqt/buildinfo.py .build/hooks ### NLS ###.build/i18n
+ 
+ # Checking
+ ######################
+@@ -137,8 +135,6 @@ build: .build/build
+ .build/build: $(BUILD_STEPS) $(CHECKDEPS) $(wildcard ../ts/dist/*)
+ 	rm -rf dist build
+ 	rsync -a ../ts/dist/ aqt_data/web/
+-	python setup.py -q bdist_wheel
+-	rsync -a dist/*.whl ../dist/
+ 	touch $@
+ 
+ .PHONY: develop

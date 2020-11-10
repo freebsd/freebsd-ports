@@ -1,0 +1,19 @@
+Avoid vendored OpenSSL dependencies.
+
+--- rslib/Cargo.toml.orig	2020-09-04 08:35:57 UTC
++++ rslib/Cargo.toml
+@@ -61,10 +61,10 @@ features = ["trace", "functions", "collation"]
+ version = "0.23.1"
+ features = ["trace", "functions", "collation", "bundled"]
+ 
+-[target.'cfg(linux)'.dependencies.reqwest]
+-git = "https://github.com/ankitects/reqwest.git"
+-rev = "57665e2c2a39db85723ba860f1b570a608bb73f9"
+-features = ["json", "socks", "stream", "native-tls-vendored"]
++#[target.'cfg(linux)'.dependencies.reqwest]
++#git = "https://github.com/ankitects/reqwest.git"
++#rev = "57665e2c2a39db85723ba860f1b570a608bb73f9"
++#features = ["json", "socks", "stream", "native-tls-vendored"]
+ 
+ [target.'cfg(not(linux))'.dependencies.reqwest]
+ git = "https://github.com/ankitects/reqwest.git"

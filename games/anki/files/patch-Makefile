@@ -1,44 +1,27 @@
---- Makefile.orig	2018-07-27 02:18:05 UTC
+Coerce sequential processing of the build targets as it's already done for the
+"develop" target in the same file.
+
+Not doing this will often cause failures with the "build-qt" target that needs
+files in ${WRKSRC}/ts/dist/ which is created by the "build-ts" target.
+
+A workaround would be to set MAKE_JOBS_UNSAFE but that would also slow down the
+compilation of the Rust library.
+
+Also the "build-ts" target must be run after the "build-pylib" target otherwise
+it produces a ${WRKSRC}/ts/dist/graphs.js with wrong content.
+
+--- Makefile.orig	2020-08-30 01:23:44 UTC
 +++ Makefile
-@@ -1,4 +1,4 @@
--PREFIX=/usr
-+PREFIX?=/usr/local
+@@ -115,7 +115,11 @@ qt/po/repo:
+ 	$(MAKE) pull-i18n
  
- all:
- 	@echo "You can run Anki with ./runanki"
-@@ -6,19 +6,18 @@ all:
- 	@echo "Uninstall with 'sudo make uninstall'"
- 
- install:
--	rm -rf ${DESTDIR}${PREFIX}/share/anki
- 	mkdir -p ${DESTDIR}${PREFIX}/share/anki
- 	cp -av anki aqt web ${DESTDIR}${PREFIX}/share/anki/
--	-cp -av locale ${DESTDIR}${PREFIX}/share/anki/
-+	mkdir -p ${DESTDIR}${PREFIX}/share/anki/locale
-+	mkdir -p qt-locale && mv locale/qt* ./qt-locale/
-+	cp -av qt-locale/* ${DESTDIR}${PREFIX}/share/anki/locale/
-+	mkdir -p ${DESTDIR}${PREFIX}/share/locale
-+	cp -av locale/* ${DESTDIR}${PREFIX}/share/locale/
- 	sed -e 's:@PREFIX@:${PREFIX}:' tools/runanki.system.in > tools/runanki.system
--	install -m 0755 -D tools/runanki.system ${DESTDIR}${PREFIX}/bin/anki
--	install -m 0644 -D -t ${DESTDIR}${PREFIX}/share/pixmaps anki.xpm anki.png
--	install -m 0644 -D -t ${DESTDIR}${PREFIX}/share/applications anki.desktop
--	install -m 0644 -D -t ${DESTDIR}${PREFIX}/share/man/man1 anki.1
--	install -m 0644 -D -t ${DESTDIR}${PREFIX}/share/doc/anki README.contributing README.development README.md LICENSE LICENSE.logo
--	-xdg-mime install anki.xml --novendor
--	-xdg-mime default anki.desktop application/x-anki
--	-xdg-mime default anki.desktop application/x-apkg
-+	cp -av anki.xpm anki.png ${DESTDIR}${PREFIX}/share/pixmaps
-+	cp -av anki.desktop ${DESTDIR}${PREFIX}/share/applications
-+	mkdir -p ${DESTDIR}${PREFIX}/man/man1
-+	cp -av anki.1 ${DESTDIR}${PREFIX}/man/man1/
+ .PHONY: build
+-build: clean-dist build-ts build-rspy build-pylib build-qt add-buildhash
++build:
++	@set -eu -o pipefail ${SHELLFLAGS}; \
++	for dir in $(DEVEL); do \
++		$(SUBMAKE) -C $$dir build BUILDFLAGS="$(BUILDFLAGS)"; \
++	done
  	@echo
- 	@echo "Install complete."
+ 	@echo "Build complete."
  
-@@ -29,6 +28,5 @@ uninstall:
- 	rm -rf ${DESTDIR}${PREFIX}/share/pixmaps/anki.png
- 	rm -rf ${DESTDIR}${PREFIX}/share/applications/anki.desktop
- 	rm -rf ${DESTDIR}${PREFIX}/share/man/man1/anki.1
--	-xdg-mime uninstall ${DESTDIR}${PREFIX}/share/mime/packages/anki.xml
- 	@echo
- 	@echo "Uninstall complete."
