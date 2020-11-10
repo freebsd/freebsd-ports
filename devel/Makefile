@@ -4622,6 +4622,7 @@
     SUBDIR += py-marrow.util
     SUBDIR += py-marshmallow
     SUBDIR += py-matrix-angular-sdk
+    SUBDIR += py-maturin
     SUBDIR += py-mccabe
     SUBDIR += py-mdv
     SUBDIR += py-medikit

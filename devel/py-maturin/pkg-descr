@@ -1,0 +1,8 @@
+Build and publish crates with pyo3, rust-cpython and cffi bindings as well as
+Rust binaries as Python packages.
+
+This project is meant as a zero configuration replacement for setuptools-rust
+and milksnake.  It supports building wheels for Python 3.5+ on FreeBSD and
+various other platforms, can upload them to PyPI and has basic PyPy support.
+
+WWW: https://github.com/PyO3/maturin
