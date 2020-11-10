@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20201110:
+  AFFECTS: users of net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  Changes related to the NetBox configuration:
+
+  1. If in use, LDAP authentication must be enabled by setting
+     REMOTE_AUTH_BACKEND to 'netbox.authentication.LDAPBackend'.  (The LDAP
+     configuration parameters in ldap_config.py remain unchanged.)
+
+  2. REMOTE_AUTH_DEFAULT_PERMISSIONS now takes a dictionary rather than a
+     list.  This is a mapping of permission names to a dictionary of
+     constraining attributes, or None.
+
+     For example, ['dcim.add_site', 'dcim.change_site'] would become
+     {'dcim.add_site': None, 'dcim.change_site': None}.
+
+  3. Support for the DEFAULT_TIMEOUT parameter under REDIS database
+     configuration was removed.  Set RQ_DEFAULT_TIMEOUT as a global
+     configuration parameter instead.
+
+  Please also check the pkg-message and the changelogs for further info.
+
 20201106:
   AFFECTS: users of www/samdruckerserver
   AUTHOR: dvl@FreeBSD.org
