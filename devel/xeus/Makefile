@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xeus
-DISTVERSION=	0.24.3
+DISTVERSION=	0.24.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
