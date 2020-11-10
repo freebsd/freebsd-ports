@@ -213,6 +213,7 @@ gst_aom_LIB_DEPENDS=	libaom.so:multimedia/aom
 
 # assrender
 gst_assrender_LIB_DEPENDS=	libass.so:multimedia/libass
+gst_assrender_USES=	compiler:c11
 
 # bs2b
 gst_bs2b_LIB_DEPENDS=	libbs2b.so:audio/libbs2b
