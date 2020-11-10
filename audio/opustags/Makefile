@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	opustags
-DISTVERSION=	1.3.0
+DISTVERSION=	1.5.0
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	0e9c4e2f9d891f738ac2b3bd97a096bfec642ddd.patch:-p1 # Fix the build failure on 11: Define _GNU_SOURCE for BSD compability https://github.com/fmang/opustags/pull/32
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	View and edit Ogg Opus comments

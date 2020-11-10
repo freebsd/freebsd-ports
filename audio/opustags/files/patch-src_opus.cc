@@ -1,6 +1,6 @@
---- src/opus.cc.orig	2020-08-12 14:10:18 UTC
+--- src/opus.cc.orig	2020-11-08 09:32:46 UTC
 +++ src/opus.cc
-@@ -24,6 +24,7 @@
+@@ -23,6 +23,7 @@
  
  #include <opustags.h>
  
