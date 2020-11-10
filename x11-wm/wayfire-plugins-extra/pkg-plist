@@ -2,6 +2,8 @@ lib/wayfire/libannotate.so
 lib/wayfire/libautorotate-iio.so
 lib/wayfire/libbackground-view.so
 lib/wayfire/libbench.so
+lib/wayfire/libcrosshair.so
+lib/wayfire/libfollow-focus.so
 lib/wayfire/libforce-fullscreen.so
 lib/wayfire/libjoin-views.so
 lib/wayfire/libkeycolor.so
@@ -13,6 +15,8 @@ share/wayfire/metadata/annotate.xml
 share/wayfire/metadata/autorotate-iio.xml
 share/wayfire/metadata/background-view.xml
 share/wayfire/metadata/bench.xml
+share/wayfire/metadata/crosshair.xml
+share/wayfire/metadata/follow-focus.xml
 share/wayfire/metadata/force-fullscreen.xml
 share/wayfire/metadata/join-views.xml
 share/wayfire/metadata/keycolor.xml
