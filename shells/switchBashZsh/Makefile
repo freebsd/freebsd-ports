@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	switchBashZsh
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	shells
 
 MAINTAINER=	bourne.identity@hotmail.com
