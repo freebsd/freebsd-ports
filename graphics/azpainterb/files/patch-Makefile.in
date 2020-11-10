@@ -1,0 +1,28 @@
+--- Makefile.in.orig	2020-10-17 15:00:00 UTC
++++ Makefile.in
+@@ -4,6 +4,7 @@ prefix := @PREFIX@
+ bindir := @BINDIR@
+ datarootdir := @DATAROOTDIR@
+ datadir := @DATADIR@/@PACKAGE_NAME@
++docdir := @DOCDIR@
+ package_name := @PACKAGE_NAME@
+ package_version := @PACKAGE_VERSION@
+ package_full := $(package_name)-$(package_version)
+@@ -194,7 +195,7 @@ install:
+ 	 $(DESTDIR)$(datarootdir)/applications \
+ 	 $(DESTDIR)$(datarootdir)/icons/hicolor/48x48/apps \
+ 	 $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps \
+-	 $(DESTDIR)$(datadir)/doc \
++	 $(DESTDIR)$(docdir) \
+ 	 $(DESTDIR)$(datadir)/13x13 \
+ 	 $(DESTDIR)$(datadir)/16x16 \
+ 	 $(DESTDIR)$(datadir)/20x20 \
+@@ -207,7 +208,7 @@ install:
+ 	$(instfile) desktop/icons/hicolor/48x48/apps/azpainterb.png $(DESTDIR)$(datarootdir)/icons/hicolor/48x48/apps
+ 	$(instfile) desktop/icons/hicolor/scalable/apps/azpainterb.svg $(DESTDIR)$(datarootdir)/icons/hicolor/scalable/apps
+ 
+-	$(instfile) GPL3 AUTHORS ChangeLog README README_ja manual_ja.html $(DESTDIR)$(datadir)/doc
++	$(instfile) AUTHORS ChangeLog README README_ja manual_ja.html $(DESTDIR)$(docdir)
+ 
+ 	$(instfile) data/brushlist.dat data/grad.dat data/sckey.conf \
+ 	 data/coltype.png data/icon.png data/texlib.dat \

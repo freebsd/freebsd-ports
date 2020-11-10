@@ -1,0 +1,6 @@
+AzPainterB is a painting application for Unix-like systems for pixel-art,
+or "dot editing" in the 8-bit color space.  It is not very suitable for
+general-purpose illustration drawing with high color accuracy, AzPainter
+should be used for that instead.
+
+WWW: http://azsky2.html.xdomain.jp/soft/azpainterb.html
