@@ -1,0 +1,11 @@
+Screego allows to share a screen with good quality and low latency.
+It is just an addition to existing software and only helps to share a screen,
+nothing else.
+
+Features:
+- Multi user screenshare
+- Secure transfer via WebRTC
+- Low latency / High resolution
+- Integrated TURN server (see NAT Traversal documentation)
+
+WWW: https://github.com/screego/server

@@ -1,0 +1,18 @@
+bin/screego
+@sample %%ETCDIR%%/screego.config.sample
+@sample %%ETCDIR%%/users.sample
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/_sidebar.md
+%%PORTDOCS%%%%DOCSDIR%%/apple-touch-icon.png
+%%PORTDOCS%%%%DOCSDIR%%/config.md
+%%PORTDOCS%%%%DOCSDIR%%/development.md
+%%PORTDOCS%%%%DOCSDIR%%/faq.md
+%%PORTDOCS%%%%DOCSDIR%%/favicon-16x16.png
+%%PORTDOCS%%%%DOCSDIR%%/favicon-32x32.png
+%%PORTDOCS%%%%DOCSDIR%%/favicon.ico
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.md
+%%PORTDOCS%%%%DOCSDIR%%/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/logo.svg
+%%PORTDOCS%%%%DOCSDIR%%/nat-traversal.md
+%%PORTDOCS%%%%DOCSDIR%%/proxy.md
