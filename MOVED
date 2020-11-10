@@ -15674,7 +15674,7 @@ devel/py-twext||2020-11-03|Has expired: Uses deprecated version of python
 databases/py-sqlparse020|databases/py-sqlparse|2020-11-03|Dependency of removed www/calendarserver
 devel/nimble|lang/nim|2020-11-06|Integrated in lang/nim
 net-im/zephyr||2020-11-07|Has expired: Broken for more than 6 months
-net/samba410|net/samba411|2020-11-08|Has expired: yes
+net/samba410|net/samba412|2020-11-08|Has expired: yes
 audio/xfce4-mixer|audio/xfce4-pulseaudio-plugin|2020-11-08|Unsupported upstream since 2015. Try using audio/xfce4-pulseaudio-plugin
 multimedia/swfdec-gnome||2020-11-09|Depends on the expired gstreamer 0.10
 graphics/swfdec||2020-11-09|Depends on the expired gstreamer 0.10
