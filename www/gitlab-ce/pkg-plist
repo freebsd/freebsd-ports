@@ -6044,6 +6044,7 @@
 %%WWWDIR%%/app/models/ci/build_trace_chunk.rb
 %%WWWDIR%%/app/models/ci/build_trace_chunks/database.rb
 %%WWWDIR%%/app/models/ci/build_trace_chunks/fog.rb
+%%WWWDIR%%/app/models/ci/build_trace_chunks/legacy_fog.rb
 %%WWWDIR%%/app/models/ci/build_trace_chunks/redis.rb
 %%WWWDIR%%/app/models/ci/build_trace_section.rb
 %%WWWDIR%%/app/models/ci/build_trace_section_name.rb
@@ -9745,6 +9746,7 @@
 %%WWWDIR%%/config/feature_flags/development/ci_lint_creates_pipeline_with_dry_run.yml
 %%WWWDIR%%/config/feature_flags/development/ci_lint_vue.yml
 %%WWWDIR%%/config/feature_flags/development/ci_manual_bridges.yml
+%%WWWDIR%%/config/feature_flags/development/ci_new_artifact_file_reader.yml
 %%WWWDIR%%/config/feature_flags/development/ci_pipeline_latest.yml
 %%WWWDIR%%/config/feature_flags/development/ci_pipeline_status_omit_commit_sha_in_cache_key.yml
 %%WWWDIR%%/config/feature_flags/development/ci_pipeline_triggers_settings_vue_ui.yml
@@ -9754,6 +9756,7 @@
 %%WWWDIR%%/config/feature_flags/development/ci_skip_persistent_ref_existence_check.yml
 %%WWWDIR%%/config/feature_flags/development/ci_store_pipeline_messages.yml
 %%WWWDIR%%/config/feature_flags/development/ci_synchronous_artifact_parsing.yml
+%%WWWDIR%%/config/feature_flags/development/ci_trace_new_fog_store.yml
 %%WWWDIR%%/config/feature_flags/development/ci_yaml_limit_size.yml
 %%WWWDIR%%/config/feature_flags/development/cluster_agent_list.yml
 %%WWWDIR%%/config/feature_flags/development/cluster_management_project.yml
@@ -27036,6 +27039,7 @@
 %%WWWDIR%%/spec/models/ci/build_trace_chunk_spec.rb
 %%WWWDIR%%/spec/models/ci/build_trace_chunks/database_spec.rb
 %%WWWDIR%%/spec/models/ci/build_trace_chunks/fog_spec.rb
+%%WWWDIR%%/spec/models/ci/build_trace_chunks/legacy_fog_spec.rb
 %%WWWDIR%%/spec/models/ci/build_trace_chunks/redis_spec.rb
 %%WWWDIR%%/spec/models/ci/build_trace_section_name_spec.rb
 %%WWWDIR%%/spec/models/ci/build_trace_section_spec.rb
