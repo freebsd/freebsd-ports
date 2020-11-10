@@ -122,7 +122,7 @@ PORTDOCS?=	docs index.html interop/.buildinfo interop/* qemu-ga-ref.html qemu-ga
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CFLAGS_amd64+=	-fPIC
-CONFIGURE_ARGS?=--localstatedir=/var --extra-ldflags=-L\"/usr/lib\" \
+CONFIGURE_ARGS?=--localstatedir=/var \
 		--extra-ldflags=-L\"${LOCALBASE}/lib\" --disable-libssh \
 		--prefix=${PREFIX} --cc=${CC} --enable-netmap --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
