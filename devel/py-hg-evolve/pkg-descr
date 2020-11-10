@@ -1,0 +1,14 @@
+evolve is a Mercurial extension for faster and safer mutable history. It
+implements the changeset evolution concept for Mercurial.
+
+- It offers a safe and simple way to refine changesets locally and
+  propagate those changes to other repositories.
+- It can automatically detect and handle the complex issues that can
+  arise from exchanging draft changesets.
+- It even makes it possible for multiple developers to safely rewrite
+  the same parts of history in a distributed way.
+- It fully respects the Phases concept so users will only be able to
+  rewrite parts of the history that are safe to change. Phases have been
+  part of Mercurial since early 2012.
+
+WWW: https://www.mercurial-scm.org/doc/evolution/
