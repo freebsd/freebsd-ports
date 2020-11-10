@@ -14,7 +14,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		gmake shebangfix
+USES=		compiler:c11 gmake shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	tavianator
 SHEBANG_FILES=	tests.sh tests/*.sh
