@@ -2,7 +2,7 @@
 
 PORTNAME=	netdata-go
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0
+DISTVERSION=	0.25.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	driesm.michiels@gmail.com
@@ -16,12 +16,16 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	netdata
 GH_PROJECT=	go.d.plugin
+
 GH_TUPLE=	\
 		DATA-DOG:go-sqlmock:v1.4.1:data_dog_go_sqlmock/vendor/github.com/DATA-DOG/go-sqlmock \
 		Wing924:ltsv:v0.3.1:wing924_ltsv/vendor/github.com/Wing924/ltsv \
+		apparentlymart:go-cidr:v1.1.0:apparentlymart_go_cidr/vendor/github.com/apparentlymart/go-cidr \
 		axiomhq:hyperloglog:a4c4c47bc57f:axiomhq_hyperloglog/vendor/github.com/axiomhq/hyperloglog \
+		blang:semver:v4.0.0:blang_semver_v4/vendor/github.com/blang/semver \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		cloudflare:cfssl:v1.4.1:cloudflare_cfssl/vendor/github.com/cloudflare/cfssl \
+		coreos:go-systemd:408310d1ce37:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgryski:go-metro:280f6062b5bc:dgryski_go_metro/vendor/github.com/dgryski/go-metro \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
@@ -30,6 +34,7 @@ GH_TUPLE=	\
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		godbus:dbus:v5.0.3:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		gofrs:flock:v0.8.0:gofrs_flock/vendor/github.com/gofrs/flock \
 		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:83d349e8ac1a:golang_net/vendor/golang.org/x/net \
@@ -46,7 +51,6 @@ GH_TUPLE=	\
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		miekg:dns:v1.1.29:miekg_dns/vendor/github.com/miekg/dns \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
-		netdata:go-orchestrator:25eff6ec645e:netdata_go_orchestrator/vendor/github.com/netdata/go-orchestrator \
 		niemeyer:pretty:a10e7caefd8e:niemeyer_pretty/vendor/github.com/niemeyer/pretty \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		prometheus:common:v0.10.0:prometheus_common/vendor/github.com/prometheus/common \
