@@ -1,5 +1,5 @@
 PORTNAME=	libass
-DISTVERSION=	0.16.0
+DISTVERSION=	0.17.0
 CATEGORIES=	multimedia devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -22,6 +22,8 @@ INSTALL_TARGET=	install-strip
 LDFLAGS_i386=	-Wl,-znotext
 CPE_VENDOR=	libass_project
 
+OPTIONS_DEFINE=	UNIBREAK
+OPTIONS_DEFAULT=UNIBREAK
 OPTIONS_DEFINE_amd64=	ASM
 OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT_amd64=	ASM
@@ -29,5 +31,9 @@ OPTIONS_DEFAULT_i386=	ASM
 
 ASM_BUILD_DEPENDS=nasm:devel/nasm
 ASM_CONFIGURE_ENABLE=asm
+
+UNIBREAK_DESC=		Unicode Line Breaking Algorithm support
+UNIBREAK_LIB_DEPENDS=	libunibreak.so:textproc/libunibreak
+UNIBREAK_CONFIGURE_ENABLE=	libunibreak
 
 .include <bsd.port.mk>
