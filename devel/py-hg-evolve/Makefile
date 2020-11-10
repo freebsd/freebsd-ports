@@ -6,7 +6,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rhurlin@FreeBSD.org
+MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Changeset Evolution with Mercurial
 
 LICENSE=	GPLv2+
