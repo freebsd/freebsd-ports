@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.1:www/py-django22@${PY_FLAVOR} \
 USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj22-django-cacheops
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj31-django-cacheops
 
 NO_ARCH=		yes
 

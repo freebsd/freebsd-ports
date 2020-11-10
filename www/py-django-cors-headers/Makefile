@@ -18,6 +18,6 @@ USES=		python:3.5+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=		yes
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj22-django-cors-headers
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj31-django-cors-headers
 
 .include <bsd.port.mk>

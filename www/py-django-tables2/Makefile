@@ -18,6 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=0:www/py-django22@${PY_FLAVOR}
 USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj31-django-tables2
+
 NO_ARCH=		yes
 
 OPTIONS_DEFINE=		TABLIB
