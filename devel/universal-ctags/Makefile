@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	universal-ctags
-PORTVERSION=	p5.9.20201018.0
+PORTVERSION=	p5.9.20201108.0
 CATEGORIES=	devel
 
 MAINTAINER=	dereks@lifeofadishwasher.com
