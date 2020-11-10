@@ -104,7 +104,6 @@
     SUBDIR += pcem
     SUBDIR += pcemu
     SUBDIR += pcsxr
-    SUBDIR += playonbsd
     SUBDIR += ppsspp
     SUBDIR += ppsspp-qt5
     SUBDIR += py-gns3-converter

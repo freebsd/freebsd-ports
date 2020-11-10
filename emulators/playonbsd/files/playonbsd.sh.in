@@ -1,3 +1,0 @@
-#!/bin/sh
-PATH=$PATH:%%PREFIX%%/lib/playonbsd
-exec %%PREFIX%%/bin/bash %%PREFIX%%/lib/playonbsd/playonfreebsd

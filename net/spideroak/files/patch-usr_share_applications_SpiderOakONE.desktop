@@ -1,8 +1,0 @@
---- usr/share/applications/SpiderOakONE.desktop.orig	2015-07-25 17:36:07 UTC
-+++ usr/share/applications/SpiderOakONE.desktop
-@@ -8,4 +8,4 @@ Comment[en_US]=Privately sync, backup, a
- Icon=SpiderOakONE
- Exec=SpiderOakONE
- Terminal=false
--Categories=Network;Archiving;Utility;
-+Categories=Archiving;Utility;
