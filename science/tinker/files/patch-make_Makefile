@@ -1,4 +1,4 @@
---- make/Makefile.orig	2020-07-27 02:52:19 UTC
+--- make/Makefile.orig	2020-11-09 22:09:06 UTC
 +++ make/Makefile
 @@ -87,9 +87,9 @@ APBS_LIBS = -lapbsmainroutines -lapbs -lmaloc -lapbsbl
  F77 = gfortran
@@ -12,7 +12,7 @@
  LIBS = 
  LIBFLAGS = -crusv
  RANLIB = ranlib -c
-@@ -813,132 +813,132 @@ listing:
+@@ -817,134 +817,134 @@ listing:
  	cat *.f *.c > tinker.txt
  
  rename_bin:
@@ -22,6 +22,7 @@
 -	mv  archive.x    $(BINDIR)/archive
 -	mv  bar.x        $(BINDIR)/bar
 -	mv  correlate.x  $(BINDIR)/correlate
+-	mv  critical.x   $(BINDIR)/critical
 -	mv  crystal.x    $(BINDIR)/crystal
 -	mv  diffuse.x    $(BINDIR)/diffuse
 -	mv  distgeom.x   $(BINDIR)/distgeom
@@ -84,6 +85,7 @@
 +	${BSD_INSTALL_PROGRAM}  archive.x    $(BINDIR)/archive
 +	${BSD_INSTALL_PROGRAM}  bar.x        $(BINDIR)/bar
 +	${BSD_INSTALL_PROGRAM}  correlate.x  $(BINDIR)/correlate
++	${BSD_INSTALL_PROGRAM}  critical.x   $(BINDIR)/critical
 +	${BSD_INSTALL_PROGRAM}  crystal.x    $(BINDIR)/crystal
 +	${BSD_INSTALL_PROGRAM}  diffuse.x    $(BINDIR)/diffuse
 +	${BSD_INSTALL_PROGRAM}  distgeom.x   $(BINDIR)/distgeom
@@ -148,6 +150,7 @@
 -	mv  archive.x    $(BINDIR)/archive.exe
 -	mv  bar.x        $(BINDIR)/bar.exe
 -	mv  correlate.x  $(BINDIR)/correlate.exe
+-	mv  critical.x   $(BINDIR)/critical.exe
 -	mv  crystal.x    $(BINDIR)/crystal.exe
 -	mv  diffuse.x    $(BINDIR)/diffuse.exe
 -	mv  distgeom.x   $(BINDIR)/distgeom.exe
@@ -210,6 +213,7 @@
 +	${BSD_INSTALL_PROGRAM}  archive.x    $(BINDIR)/archive.exe
 +	${BSD_INSTALL_PROGRAM}  bar.x        $(BINDIR)/bar.exe
 +	${BSD_INSTALL_PROGRAM}  correlate.x  $(BINDIR)/correlate.exe
++	${BSD_INSTALL_PROGRAM}  critical.x   $(BINDIR)/critical.exe
 +	${BSD_INSTALL_PROGRAM}  crystal.x    $(BINDIR)/crystal.exe
 +	${BSD_INSTALL_PROGRAM}  diffuse.x    $(BINDIR)/diffuse.exe
 +	${BSD_INSTALL_PROGRAM}  distgeom.x   $(BINDIR)/distgeom.exe

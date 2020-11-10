@@ -4,6 +4,7 @@ bin/anneal
 bin/archive
 bin/bar
 bin/correlate
+bin/critical
 bin/crystal
 bin/diffuse
 bin/distgeom
@@ -92,6 +93,7 @@ bin/xyzpdb
 %%DATADIR%%/params/smoothaa.prm
 %%DATADIR%%/params/smoothua.prm
 %%DATADIR%%/params/tiny.prm
+%%DATADIR%%/params/uwater.prm
 %%DATADIR%%/params/water03.prm
 %%DATADIR%%/params/water14.prm
 %%DATADIR%%/params/water19.prm
@@ -156,6 +158,7 @@ bin/xyzpdb
 %%DATADIR%%/test/gpcr.blk
 %%DATADIR%%/test/gpcr.key
 %%DATADIR%%/test/gpcr.log
+%%DATADIR%%/test/gpcr.old
 %%DATADIR%%/test/gpcr.run
 %%DATADIR%%/test/gpcr.xyz
 %%DATADIR%%/test/helix.1st
