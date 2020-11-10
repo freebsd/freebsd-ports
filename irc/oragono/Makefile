@@ -2,7 +2,7 @@
 
 PORTNAME=	oragono
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
+DISTVERSION=	2.4.0
 CATEGORIES=	irc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,14 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_TUPLE=	\
+		GehirnInc:crypt:bb7000b8a962:gehirninc_crypt/vendor/github.com/GehirnInc/crypt \
 		cloudfoundry:bytefmt:cf55d5288a48:cloudfoundry_bytefmt/vendor/code.cloudfoundry.org/bytefmt \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		docopt:docopt.go:ee0de3bc6815:docopt_docopt_go/vendor/github.com/docopt/docopt-go \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-test:deep:v1.0.6:go_test_deep/vendor/github.com/go-test/deep \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:948cd5f35899:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:0e2f3a69832c:golang_sys/vendor/golang.org/x/sys \
+		golang:crypto:5c72a883971a:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sys:be1d3432aa8f:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		goshuirc:irc-go:57fd157327ac:goshuirc_irc_go/vendor/github.com/goshuirc/irc-go \
