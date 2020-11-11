@@ -23,6 +23,8 @@
 # The PLIST_SUB feature can be disabled by setting PLIST_SUB_SED=
 # in environment.
 
+set -o pipefail
+
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_CHECK_LEFTOVERS}" ] && set -x
 
 origin="$1"

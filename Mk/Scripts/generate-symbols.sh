@@ -9,6 +9,8 @@
 # /usr/local/bin/ssh    -> /usr/local/lib/debug/usr/local/bin/ssh.debug
 LIB_DIR_PREFIX="${LOCALBASE}/lib/debug"
 
+set -o pipefail
+
 msg() {
         echo "====> $*"
 }

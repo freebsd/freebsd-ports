@@ -2,6 +2,7 @@
 # $FreeBSD$
 # Maintainer: portmgr@FreeBSD.org
 set -e
+set -o pipefail
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_DIALOG4PORTS}" ] && set -x
 
