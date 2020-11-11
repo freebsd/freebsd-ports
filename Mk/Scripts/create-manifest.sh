@@ -63,7 +63,8 @@ EOT
 
 # Then the key/values sections
 echo "deps: { "
-eval ${dp_ACTUAL_PACKAGE_DEPENDS} | grep -v -E ${dp_PKG_IGNORE_DEPENDS} | sort -u
+# Ignore grep's return value.
+eval ${dp_ACTUAL_PACKAGE_DEPENDS} | { grep -v -E ${dp_PKG_IGNORE_DEPENDS} || :; } | sort -u
 echo "}"
 
 echo "options: {"
