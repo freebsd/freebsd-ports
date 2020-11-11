@@ -8,7 +8,7 @@ PORTREVISION=	10
 CATEGORIES=	devel science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific PYthon Development EnviRonment, an alternative to IDLE
 
 LICENSE=	MIT

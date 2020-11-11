@@ -5,7 +5,7 @@ PORTNAME=	txt2tags
 PORTVERSION=	3.6
 CATEGORIES=	textproc
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert simply formatted text into markup (e.g., HTML)
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Musical instrument tuner
 
 LICENSE=	GPLv2
