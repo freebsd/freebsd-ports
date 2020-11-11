@@ -1,5 +1,5 @@
---- configure.in.orig	2019-11-12 05:10:21 UTC
-+++ configure.in
+--- configure.ac.orig	2019-11-12 05:10:21 UTC
++++ configure.ac
 @@ -367,11 +367,11 @@ AC_ARG_WITH(bundled-extension-blobs,
                            and comply with their distribution requirements by updating the
                            files LICENSE_aggregated and NOTICE_aggregated accordingly
