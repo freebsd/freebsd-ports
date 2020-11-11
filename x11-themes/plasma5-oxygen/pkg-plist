@@ -714,6 +714,10 @@ share/locale/sr@latin/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/sr@latin/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/sr@latin/LC_MESSAGES/oxygen_style_config.mo
 share/locale/sr@latin/LC_MESSAGES/oxygen_style_demo.mo
+share/locale/sv/LC_MESSAGES/liboxygenstyleconfig.mo
+share/locale/sv/LC_MESSAGES/oxygen_kdecoration.mo
+share/locale/sv/LC_MESSAGES/oxygen_style_config.mo
+share/locale/sv/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/ta/LC_MESSAGES/oxygen_style_config.mo
 share/locale/ta/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/tg/LC_MESSAGES/oxygen_style_config.mo

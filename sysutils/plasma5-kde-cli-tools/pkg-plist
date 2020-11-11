@@ -627,6 +627,14 @@ share/locale/sr@latin/LC_MESSAGES/kioclient5.mo
 share/locale/sr@latin/LC_MESSAGES/kmimetypefinder5.mo
 share/locale/sr@latin/LC_MESSAGES/kstart5.mo
 share/locale/sr@latin/LC_MESSAGES/ktraderclient5.mo
+share/locale/sv/LC_MESSAGES/kbroadcastnotification.mo
+share/locale/sv/LC_MESSAGES/kcm5_filetypes.mo
+share/locale/sv/LC_MESSAGES/kcmshell5.mo
+share/locale/sv/LC_MESSAGES/kdesu5.mo
+share/locale/sv/LC_MESSAGES/kioclient5.mo
+share/locale/sv/LC_MESSAGES/kmimetypefinder5.mo
+share/locale/sv/LC_MESSAGES/kstart5.mo
+share/locale/sv/LC_MESSAGES/ktraderclient5.mo
 share/locale/ta/LC_MESSAGES/kcm5_filetypes.mo
 share/locale/ta/LC_MESSAGES/kcmshell5.mo
 share/locale/ta/LC_MESSAGES/kdesu5.mo

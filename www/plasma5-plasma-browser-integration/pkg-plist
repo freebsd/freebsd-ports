@@ -132,6 +132,10 @@ share/locale/sr/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_runner_browsertabs.mo
+share/locale/sv/LC_MESSAGES/plasma-browser-extension.mo
+share/locale/sv/LC_MESSAGES/plasma-browser-integration-host.mo
+share/locale/sv/LC_MESSAGES/plasma-browser-integration-reminder.mo
+share/locale/sv/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/tg/LC_MESSAGES/plasma-browser-integration-reminder.mo
 share/locale/tg/LC_MESSAGES/plasma_runner_browsertabs.mo
 share/locale/tr/LC_MESSAGES/plasma-browser-extension.mo

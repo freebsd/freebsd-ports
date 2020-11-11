@@ -128,6 +128,9 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_kscreen.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kscreen.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_kscreen.mo
 share/locale/sr@latin/LC_MESSAGES/kscreen.mo
+share/locale/sv/LC_MESSAGES/kcm_kscreen.mo
+share/locale/sv/LC_MESSAGES/kscreen.mo
+share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
 share/locale/tg/LC_MESSAGES/kcm_kscreen.mo
 share/locale/tg/LC_MESSAGES/kscreen.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.kscreen.mo
