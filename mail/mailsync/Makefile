@@ -24,6 +24,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.pre.mk>
+# This is a nasty hack due to the weird things that mail/cclient
+# do redefining C++ keywords. For some reason GCC seems to build
+# this, but we should expect it to break at some point.
+# See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=250740
+# for reference.
+.if ${OPSYS} == FreeBSD && (${OSREL} == 12.2 || ${OSREL} == 11.4)
+USE_GCC=	yes
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mailsync ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/mailsync.1 ${STAGEDIR}${MANPREFIX}/man/man1
@@ -41,4 +51,4 @@ do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/mailsync ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
