@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+The Datadog port has been installed using an example config file,
+in %%ETCDIR%%/datadog.yaml.
+
+Before starting the daemon, edit %%ETCDIR%%/datadog.yaml and
+update "api_key" with your DataDog API key available at
+https://app.datadoghq.com/account/settings#api
+EOM
+}
+{ type: remove
+  message: <<EOM
+If you want remove DataDog permanently from your system, execute the
+following commands:
+
+# rm -rf %%LOGDIR%%
+# rm -rf %%RUNDIR%%
+# rm -rf %%ETCDIR%%
+# pw userdel %%USER%%
+EOM
+}
+]

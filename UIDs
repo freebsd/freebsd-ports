@@ -425,7 +425,7 @@ gitlab-pages:*:476:476::0:0:GitLab Pages Daemon:/var/tmp/gitlab_pages:/usr/sbin/
 fiche:*:477:477::0:0:fiche Daemon:/usr/local/www/fiche:/usr/sbin/nologin
 prometheus:*:478:478::0:0:Prometheus Daemon:/var/tmp/prometheus:/usr/sbin/nologin
 alertmanager:*:479:479::0:0:Alertmanager Daemon:/var/tmp/alertmanager:/usr/sbin/nologin
-# free: 480
+datadog:*:480:480::0:0:DataDog Agent:/var/db/datadog:/usr/sbin/nologin
 # free: 481
 # free: 482
 # free: 483
