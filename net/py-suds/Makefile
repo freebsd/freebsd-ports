@@ -13,6 +13,9 @@ COMMENT=	SOAP implementation
 
 LICENSE=	LGPL3
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-12
+
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}suds-jurko-*
 
 USES=		python:2.7

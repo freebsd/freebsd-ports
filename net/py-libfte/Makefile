@@ -12,6 +12,9 @@ COMMENT=	Format-Transforming Encryption Library/Toolkit
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-12
+
 BUILD_DEPENDS=	regex2dfa:textproc/regex2dfa \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>=2.6.1:security/py-pycrypto@${PY_FLAVOR}
 LIB_DEPENDS=	libgmp.so:math/gmp

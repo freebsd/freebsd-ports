@@ -15,6 +15,9 @@ EXTRACT_ONLY=	Numeric-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Numeric Extension to Python
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-12
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 

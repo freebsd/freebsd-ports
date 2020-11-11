@@ -12,6 +12,9 @@ COMMENT=	Riak Protocol Buffers Messages
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-12
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=2.4.1:devel/py-protobuf@${PY_FLAVOR}
 
 USES=		python:2.7

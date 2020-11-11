@@ -14,6 +14,9 @@ COMMENT=	General utility modules that simplify common programming in Python
 USES=		python:2.7 zip
 USE_PYTHON=	distutils autoplist
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-12
+
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	*
 

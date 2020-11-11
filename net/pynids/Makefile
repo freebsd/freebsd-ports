@@ -12,6 +12,9 @@ DIST_SUBDIR=	python
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	Python interface to libnids
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-12
+
 LIB_DEPENDS=	libnet.so:net/libnet
 
 USES=		gnome pkgconfig python:2.7

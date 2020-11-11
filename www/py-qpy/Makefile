@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generating safely-quoted html text from python code
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-12
+
 OPTIONS_DEFINE=	DOCS
 
 USE_PYTHON=	autoplist distutils

@@ -14,6 +14,9 @@ COMMENT=	Python bindings for Logitech Harmony library
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-12
+
 LIB_DEPENDS=	libconcord.so:comms/libconcord
 
 USE_LDCONFIG=	yes

@@ -14,6 +14,9 @@ COMMENT=	Test utilities for repoze.who-powered applications
 
 LICENSE=	BSD4CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-12
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}repoze.who>=1.0.15:devel/py-repoze.who@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pastedeploy>=1.3.3:www/py-pastedeploy@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}

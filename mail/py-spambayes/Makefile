@@ -12,6 +12,9 @@ COMMENT=	Bayesian anti-spam filter written in Python
 
 LICENSE=	PSFL
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-12
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:databases/py-bsddb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dns>=2.0:dns/py-dns@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lockfile>=0.2:devel/py-lockfile@${PY_FLAVOR}

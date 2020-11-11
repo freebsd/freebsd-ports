@@ -16,6 +16,9 @@ COMMENT=	Python bindings for GObject
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-12
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo@${PY_FLAVOR}
 LIB_DEPENDS+=	libffi.so:devel/libffi
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:graphics/py-cairo@${PY_FLAVOR}

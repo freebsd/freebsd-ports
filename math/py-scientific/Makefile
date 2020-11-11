@@ -12,6 +12,9 @@ DISTNAME=	ScientificPython-${PORTVERSION}
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	Collection of Python modules for scientific computing
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-12
+
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 RUN_DEPENDS=	${PYNUMPY}
