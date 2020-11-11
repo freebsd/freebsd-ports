@@ -21,16 +21,32 @@
  # if	FREEBSDV>=4000
  #  if	FREEBSDV>=5000
  #   if	FREEBSDV<6020
-@@ -104,6 +111,12 @@ typedef	struct device	*device_t;
- 
+@@ -105,6 +112,12 @@ typedef	struct device	*device_t;
  
  #include <sys/conf.h>
-+
+ 
 +/* 
 + * include <stdbool.h> for refcount(9)
 + */
 +#include <stdbool.h>
 + 
- 
++
  #  if	defined(HAS_VM_MEMATTR_T)
  #undef	vm_memattr_t
+ #  endif	/* defined(HAS_VM_MEMATTR_T) */
+@@ -652,9 +665,15 @@ struct sfile {
+  */
+ 
+ struct	namecache {
++#   if  __FreeBSD_version < 1202000 || (__FreeBSD_version >= 1300000 && __FreeBSD_version < 1300105)
+ 	LIST_ENTRY(namecache) nc_hash;	/* hash chain */
+ 	LIST_ENTRY(namecache) nc_src;	/* source vnode list */
+ 	TAILQ_ENTRY(namecache) nc_dst;	/* destination vnode list */
++#   else
++	LIST_ENTRY(namecache) nc_src;	/* source vnode list */
++	TAILQ_ENTRY(namecache) nc_dst;	/* destination vnode list */
++	LIST_ENTRY(namecache) nc_hash;	/* hash chain */
++#   endif
+ 	struct	vnode *nc_dvp;		/* vnode of parent of name */
+ 	struct	vnode *nc_vp;		/* vnode the name refers to */
+ 	u_char	nc_flag;		/* flag bits */
