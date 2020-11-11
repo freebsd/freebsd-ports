@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	3
+PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -117,9 +117,9 @@ AOOVERSION1=	4
 AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO420m1\(Build:9821\)
-GITREVISION=	6fb151b2c8
-TIMESTAMP=	1589199787
+AOOTAG=		AOO420m3\(Build:9822\)
+GITREVISION=	d92770c00e
+TIMESTAMP=	1602022694
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -394,8 +394,9 @@ post-extract:
 		-e d  ${WRKSRC}/LICENSE_category_b >> ${LICENSE_FILE_MIT}
 	${SED}  -e '\|^For Saxon|,/^__/p'				\
 		-e d ${WRKSRC}/LICENSE_category_b > ${LICENSE_FILE_MPL10}
-	${SED}  -e '\|^For Saxon|,$$d'					\
-		      ${WRKSRC}/LICENSE_category_b > ${LICENSE_FILE_MPL11}
+	${SED}  -e '\|^The following Licenses have some restrictions|,/^- For Network/p' \
+		-e d ${WRKSRC}/LICENSE_category_b |			\
+		${SED} -e :a -e '$d;N;2,3ba' -e 'P;D' > ${LICENSE_FILE_MPL11}
 	${SED}  -e '\|^For main/filter/source/config/tools/merge/pyAltFCFGMerge|,/^__/p'	\
 		-e d  ${WRKSRC}/LICENSE > ${LICENSE_FILE_PSFL}
 	${SED}  -e '\|^For main/twain|,/^__/p'				\

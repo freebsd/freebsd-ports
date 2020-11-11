@@ -5,11 +5,12 @@
  %{
  /**************************************************************
   * 
-@@ -123,8 +124,6 @@ static connectivity::OSQLInternalNode* newNode(const :
+@@ -123,9 +124,6 @@ static connectivity::OSQLInternalNode* newNode(const :
  
  
  connectivity::OSQLParser* xxx_pGLOBAL_SQLPARSER;
 -
+-#define YYDEBUG 1
 -#define YYERROR_VERBOSE
  
  #define SQLyyerror(s)						\
