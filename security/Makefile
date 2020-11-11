@@ -1206,6 +1206,7 @@
     SUBDIR += sops
     SUBDIR += spass
     SUBDIR += spass-qt5
+    SUBDIR += spectre-meltdown-checker
     SUBDIR += spm
     SUBDIR += spybye
     SUBDIR += sqlmap
