@@ -15,6 +15,6 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-suffix
 
-USES=		bison gmake readline
+USES=		bison compiler:c++11-lang gmake readline
 
 .include <bsd.port.mk>
