@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qspin
-DISTVERSION=	0.1.8
-PORTREVISION=	3
+DISTVERSION=	2.3.2
 CATEGORIES=	science
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,12 +9,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Learn quantum spin and entanglement
 
-LICENSE=	GPLv3
+LICENSE=	MIT
 
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
