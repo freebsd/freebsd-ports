@@ -1,0 +1,11 @@
+--- Makefile.orig	2020-11-11 15:27:32 UTC
++++ Makefile
+@@ -11,7 +11,7 @@ OBJECTS= ${SOURCES:.c=.o}
+ #LDFLAGS= -L/usr/lib -lmenu -lncurses -L/usr/local/lib -lsysctlmibinfo2
+ # PORT ncurses
+ CCFLAGS= -Wall -I/usr/local/include/ -I/usr/local/include/ncurses/
+-LDFLAGS= -L/usr/local/lib -lsysctlmibinfo2 -lmenu -lncurses
++LDFLAGS= -L/usr/local/lib -lsysctlmibinfo2 -lmenu -lncurses -ltinfo
+ 
+ BINDIR= /usr/local/sbin
+ 
