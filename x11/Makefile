@@ -405,6 +405,7 @@
     SUBDIR += xcut
     SUBDIR += xditview
     SUBDIR += xdm
+    SUBDIR += xdo
     SUBDIR += xdotool
     SUBDIR += xdpyinfo
     SUBDIR += xdriinfo
