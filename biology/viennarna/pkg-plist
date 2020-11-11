@@ -164,6 +164,7 @@ include/ViennaRNA/utils/higher_order_functions.h
 include/ViennaRNA/utils/strings.h
 include/ViennaRNA/utils/structures.h
 include/ViennaRNA/utils/svm.h
+include/ViennaRNA/utils/units.h
 include/ViennaRNA/vrna_config.h
 include/ViennaRNA/walk.h
 include/g2.h
