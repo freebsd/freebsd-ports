@@ -12,16 +12,9 @@ COMMENT=	SSH server auditing
 
 LICENSE=	MIT
 
-USES=		python shebangfix
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	jtesta
-USE_PYTHON=	concurrent distutils
-NO_ARCH=	yes
-SHEBANG_FILES=	ssh-audit.py
-
-PLIST_FILES=	bin/ssh-audit
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ssh-audit.py ${STAGEDIR}${PREFIX}/bin/ssh-audit
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
