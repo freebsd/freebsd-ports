@@ -5,6 +5,7 @@
 %%WWWDIR%%/README.md
 %%WWWDIR%%/appinfo/info.xml
 %%WWWDIR%%/appinfo/routes.php
+%%WWWDIR%%/css/html-response.css
 %%WWWDIR%%/css/mail.scss
 %%WWWDIR%%/css/mobile.scss
 %%WWWDIR%%/css/redirect.css
@@ -52,6 +53,8 @@
 %%WWWDIR%%/js/autoredirect.js.map
 %%WWWDIR%%/js/dashboard.js
 %%WWWDIR%%/js/dashboard.js.map
+%%WWWDIR%%/js/htmlresponse.js
+%%WWWDIR%%/js/htmlresponse.js.map
 %%WWWDIR%%/js/mail.js
 %%WWWDIR%%/js/mail.js.map
 %%WWWDIR%%/js/settings.js
