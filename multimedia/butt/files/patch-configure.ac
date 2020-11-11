@@ -1,65 +1,64 @@
---- configure.ac.orig	2020-04-20 14:40:46 UTC
-+++ configure.ac
-@@ -64,6 +64,7 @@ AM_CONDITIONAL(WINDOWS, test "$host_os" = "windows")
- 
- 
+--- configure.ac.orig	2020-11-09 19:04:41.803234000 +0100
++++ configure.ac	2020-11-09 19:48:22.239576000 +0100
+@@ -66,6 +66,7 @@
  build_linux=no
-+build_freebsd=no
  build_windows=no
  build_mac=no
++build_freebsd=no
  
-@@ -88,6 +89,25 @@ case "${host_os}" in
- 			    )
- 	])
+ # Detect the target system
+ case "${host_os}" in
+@@ -102,6 +103,25 @@
+         build_mac=yes
+         AC_MSG_NOTICE([MacOS detected])
          ;;
 +    freebsd*)
 +        build_freebsd=yes
 +        AC_MSG_NOTICE([FreeBSD detected])
 +
-+	AS_IF([test "x$enable_aac" != "xno"], 
-+	[
-+	       AC_CHECK_LIB([fdk-aac], [aacEncOpen], [],
-+			    [AC_MSG_ERROR([**** Could not find libfdk-aac     ****])]
-+			   )
-+	])
-+	AS_IF([test "x$enable_ssl" != "xno"], [
-+	       AC_CHECK_LIB([crypto], [EVP_EncryptInit], [],
-+			    [AC_MSG_ERROR([**** Could not find libcrypto    ****])]
-+			    )
-+	       AC_CHECK_LIB([ssl], [SSL_CTX_new], [],
-+			    [AC_MSG_ERROR([**** Could not find libssl     ****])]
-+			    )
-+	])
++        AS_IF([test "x$enable_aac" != "xno"],
++        [
++               AC_CHECK_LIB([fdk-aac], [aacEncOpen], [],
++                            [AC_MSG_ERROR([**** Could not find libfdk-aac     ****])]
++                           )
++        ])
++        AS_IF([test "x$enable_ssl" != "xno"], [
++               AC_CHECK_LIB([ssl], [SSL_CTX_new], [],
++                            [AC_MSG_ERROR([**** Could not find libssl     ****])]
++                            )
++               AC_CHECK_LIB([crypto], [EVP_EncryptInit], [],
++                            [AC_MSG_ERROR([**** Could not find libcrypto    ****])]
++                            )
++        ])
 +        ;;
-     cygwin*|mingw*|windows)
-         build_windows=yes
-         AC_MSG_NOTICE([Windows detected])
-@@ -109,6 +129,7 @@ esac
- 
- # Pass the conditionals to automake
+     *)
+         AC_MSG_ERROR(["OS $host_os is not supported"])
+         ;;
+@@ -111,6 +131,7 @@
  AM_CONDITIONAL([LINUX], [test "$build_linux" = "yes"])
-+AM_CONDITIONAL([FreeBSD], [test "$build_freebsd" = "yes"])
  AM_CONDITIONAL([WINDOWS], [test "$build_windows" = "yes"])
  AM_CONDITIONAL([OSX], [test "$build_mac" = "yes"])
++AM_CONDITIONAL([FREEBSD], [test "$build_freebsd" = "yes"])
  
-@@ -129,6 +150,20 @@ fi
+ AC_CHECK_PROG([FLTKCONFIG],[fltk-config], [fltk-config])
  
- #Add dbus library for Linux
- if test "$build_linux" = "yes"; then
-+	AC_MSG_NOTICE([])
-+	PKG_CHECK_MODULES([DBUS], [dbus-1], [
-+		AC_DEFINE([HAVE_DBUS], [1], [Use dbus to get current tracks])
-+		LIBS="$LIBS $DBUS_LIBS"
-+		CFLAGS="$CFLAGS $LIBS $DBUS_CFLAGS"
-+		CXXFLAGS="$CXXFLAGS $DBUS_CFLAGS"
-+	], [
-+		AC_DEFINE([HAVE_DBUS], [0], [Use dbus to get current tracks])
-+		AC_MSG_ERROR([**** Coud not find dbus dev files])
-+	])
-+fi
-+
+@@ -141,6 +162,19 @@
+ 	])
+ fi
+ 
 +#Add dbus library for FreeBSD
 +if test "$build_freebsd" = "yes"; then
- 	AC_MSG_NOTICE([])
- 	PKG_CHECK_MODULES([DBUS], [dbus-1], [
- 		AC_DEFINE([HAVE_DBUS], [1], [Use dbus to get current tracks])
++        AC_MSG_NOTICE([])
++        PKG_CHECK_MODULES([DBUS], [dbus-1], [
++                AC_DEFINE([HAVE_DBUS], [1], [Use dbus to get current tracks])
++                LIBS="$LIBS $DBUS_LIBS"
++                CFLAGS="$CFLAGS $LIBS $DBUS_CFLAGS"
++                CXXFLAGS="$CXXFLAGS $DBUS_CFLAGS"
++        ], [
++                AC_DEFINE([HAVE_DBUS], [0], [Use dbus to get current tracks])
++                AC_MSG_ERROR([**** Coud not find dbus dev files])
++        ])
++fi
+ # Checks for header files.
+ AC_PATH_X
+ AC_CHECK_HEADERS([fcntl.h limits.h netdb.h netinet/in.h stdlib.h string.h sys/socket.h unistd.h])

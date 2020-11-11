@@ -1,10 +1,10 @@
---- src/Makefile.am.orig	2020-04-21 11:35:33 UTC
-+++ src/Makefile.am
-@@ -34,6 +34,10 @@ if LINUX
+--- src/Makefile.am.orig	2020-11-09 19:05:11.378421000 +0100
++++ src/Makefile.am	2020-11-09 19:12:12.772675000 +0100
+@@ -34,6 +34,10 @@
  butt_SOURCES += currentTrack.h currentTrackLinux.cpp
  endif
  
-+if FreeBSD
++if FREEBSD
 +butt_SOURCES += currentTrack.h currentTrackLinux.cpp
 +endif
 +
