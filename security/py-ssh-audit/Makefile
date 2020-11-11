@@ -3,6 +3,7 @@
 PORTNAME=	ssh-audit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,8 +15,7 @@ LICENSE=	MIT
 USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jtesta
-USE_PYTHON=	concurrent
-NO_BUILD=	yes
+USE_PYTHON=	concurrent distutils
 NO_ARCH=	yes
 SHEBANG_FILES=	ssh-audit.py
 
