@@ -213,6 +213,15 @@
  
  	case "$pkgname" in bsdpan-*) return 3 ;; esac
  
+@@ -576,7 +606,7 @@ origin_from_pdb () {
+ 			# An error above doesn't necessarily mean there's
+ 			# a problem in +MANIFEST, so don't mention it
+ 			echo "	===>>> No origin available for $pkgname" >&2
+-			echo "	===>>> $pdb/$pkgname/+IGNOREME exists" >&2
++			echo "	===>>> $pdb/$pkgname/+IGNOREME exists or the package is locked" >&2
+ 			echo '' >&2
+ 		fi
+ 		return 2
 @@ -684,6 +714,7 @@ for var in "$@" ; do
  	--list-origins)		LIST_ORIGINS=list_origins ;;
  	--show-work)		SHOW_WORK=show ; PM_THOROUGH=thorough ;;
@@ -301,6 +310,15 @@
  # Find the new origin for moved ports
  # Set global variable moved_npd on success
  # Return values:
+@@ -1045,7 +1065,7 @@ find_moved_port () {
+ 					echo ''
+ 					echo "	===>>> The $sf port has been deleted"
+ 					echo "	===>>> Reason: ${moved##*|}"
+-					echo "	===>>> Skipping it due to +IGNOREME file"
++					echo "	===>>> Skipping it due to +IGNOREME file or the package being locked"
+ 					echo ''
+ 				fi
+ 				return 0
 @@ -1056,7 +1076,8 @@ find_moved_port () {
  			fi ;;
  		${sf}\|*) moved_npd=${moved#*\|}	# New port directory
@@ -432,7 +450,7 @@
  			state_set=`pm_make -V $state`
  			if [ -n "$state_set" ]; then
  				echo "	===>>> This port is marked $state"
-@@ -1502,7 +1523,7 @@ check_for_updates () {
+@@ -1502,10 +1523,10 @@ check_for_updates () {
  	fi
  
  	if [ -z "$do_update" -a -z "$skip" -a -z "$PM_INDEX_ONLY" ] && pm_isdir "$pd/$origin"; then
@@ -440,7 +458,20 @@
 +		if ! pm_cd $pd/$origin; then # <se> cannot happen - see pm_isdir test above
  			if pm_islocked "$iport"; then
  				echo "	===>>> Warning: Unable to cd to $pd/$origin"
- 				echo "	===>>> Continuing due to $pdb/$iport/+IGNOREME"
+-				echo "	===>>> Continuing due to $pdb/$iport/+IGNOREME"
++				echo "	===>>> Continuing due to $pdb/$iport/+IGNOREME or the package being locked"
+ 				echo ''
+ 				CUR_DEPS="${CUR_DEPS}${iport}:${originflavor}:"
+ 				return 0
+@@ -1521,7 +1542,7 @@ check_for_updates () {
+ 		# If the port has moved and no +IGNOREME, we have to update it
+ 		if [ -n "$moved_npd" ]; then
+ 			if pm_islocked "$iport"; then
+-				echo "	===>>> Continuing due to $pdb/$iport/+IGNOREME"
++				echo "	===>>> Continuing due to $pdb/$iport/+IGNOREME or the package being locked"
+ 				echo ''
+ 				CUR_DEPS="${CUR_DEPS}${iport}:${originflavor}:"
+ 				return 0
 @@ -1545,7 +1566,7 @@ check_for_updates () {
  				unset port_ver
  			fi
@@ -450,6 +481,15 @@
  			\<)	do_update=upd_lt ;;
  			=)	;;	# Can be reached if same version with different options
  			\>)	if [ -n "$PM_VERBOSE" ]; then
+@@ -1569,7 +1590,7 @@ check_for_updates () {
+ 		if [ -z "$moved_npd" ]; then
+ 			echo "	===>>> New version available: $port_ver"
+ 			if pm_islocked "$iport"; then
+-				echo "	===>>> +IGNOREME file is present for $1"
++				echo "	===>>> +IGNOREME file is present for $1 or the package is locked"
+ 			fi
+ 			pm_cd_pd $origin && check_state
+ 			num_updates=$(( $num_updates + 1 ))
 @@ -1628,7 +1649,7 @@ pm_pkg_create () {
  	fi
  
@@ -702,6 +742,15 @@
  		[ -n "$update_failed" ] && fail "Update for $port failed"
  	done
  
+@@ -2951,7 +2982,7 @@ all_first_pass () {
+ 		origin=`origin_from_pdb $iport` || {
+ 			case "$?" in
+ 			3) ;;
+-			2)	pm_v "	===>>> No ORIGIN for $iport, and +IGNOREME is present"
++			2)	pm_v "	===>>> No ORIGIN for $iport, and +IGNOREME is present or the package is locked"
+ 				echo "	===>>> Skipping"
+ 				echo '' ;;
+ 			*)	fail 'Cannot continue' ;;
 @@ -3029,8 +3060,12 @@ no_valid_port () {
  	echo "===>>> Try $progname --help" ; echo '' ; safe_exit 1
  }
@@ -780,6 +829,33 @@
  }
  
  if [ -z "$upg_port" -a -z "$REPLACE_ORIGIN" ]; then
+@@ -3161,7 +3199,7 @@ if pm_islocked "$upg_port"; then
+ 		*:${upg_port}:*) ;;	# Let it build
+ 		*)	if [ -z "$FETCH_ONLY" ]; then
+ 				echo ''
+-				echo "===>>> $upg_port has an +IGNOREME file"
++				echo "===>>> $upg_port has an +IGNOREME file or the package is locked"
+ 				get_answer_g n y "\t===>>> Update anyway? y/n"
+ 				case "$?" in
+ 				1)	;;	# Let it build
+@@ -3175,7 +3213,7 @@ if pm_islocked "$upg_port"; then
+ 				esac
+ 			else
+ 				echo ''
+-				echo "===>>> $upg_port has an +IGNOREME file, ignoring"
++				echo "===>>> $upg_port has an +IGNOREME file or the package is locked, ignoring"
+ 				echo ''
+ 				CUR_DEPS="${CUR_DEPS}${upg_port}:${portdir}:"
+ 				safe_exit
+@@ -3183,7 +3221,7 @@ if pm_islocked "$upg_port"; then
+ 		esac
+ 	elif [ -n "$PM_URB_UP" ]; then
+ 		echo ''
+-		echo "===>>> $upg_port has an +IGNOREME file, ignoring"
++		echo "===>>> $upg_port has an +IGNOREME file or the package is locked, ignoring"
+ 		echo ''
+ 		safe_exit
+ 	fi
 @@ -3229,11 +3267,14 @@ if [ -n "$PM_FIRST_PASS" -a -z "$FETCH_ONLY" ]; then
  		fi
  	fi
