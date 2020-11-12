@@ -941,11 +941,14 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/setup/__pycache__/main.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/setup/__pycache__/pkginstall.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/setup/__pycache__/pkginstall.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/setup/__pycache__/test_input_purpose.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/setup/__pycache__/test_input_purpose.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/setup/__pycache__/version.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/setup/__pycache__/version.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/setup/i18n.py
 %%DATADIR%%/setup/main.py
 %%DATADIR%%/setup/pkginstall.py
+%%DATADIR%%/setup/test_input_purpose.py
 %%DATADIR%%/setup/version.py
 share/ibus/component/typing-booster.xml
 share/icons/hicolor/128x128/apps/ibus-typing-booster.png
