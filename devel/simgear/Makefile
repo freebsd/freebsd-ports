@@ -32,4 +32,10 @@ LDFLAGS+=	${LDFLAGS_${CHOSEN_COMPILER_TYPE}}
 CMAKE_ARGS+=	-DSYSTEM_EXPAT:BOOL=ON \
 		-DENABLE_TESTS:BOOL=OFF
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CMAKE_ARGS+=	-DENABLE_SIMD:BOOL=OFF
+.endif
+
+.include <bsd.port.post.mk>
