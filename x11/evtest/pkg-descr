@@ -1,0 +1,5 @@
+evtest is a tool to print evdev kernel events. It reads directly from the
+kernel device and prints a device description and the events with the value
+and the symbolic name.
+
+WWW: https://gitlab.freedesktop.org/libevdev/evtest

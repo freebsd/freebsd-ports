@@ -60,6 +60,7 @@
     SUBDIR += erun
     SUBDIR += eterm
     SUBDIR += evilvte
+    SUBDIR += evtest
     SUBDIR += fbdesk
     SUBDIR += fbpanel
     SUBDIR += find-cursor
