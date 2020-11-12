@@ -17,7 +17,6 @@ include/botan-2/botan/asn1_print.h
 include/botan-2/botan/asn1_str.h
 include/botan-2/botan/asn1_time.h
 include/botan-2/botan/assert.h
-include/botan-2/botan/atomic.h
 include/botan-2/botan/auto_rng.h
 include/botan-2/botan/b64_filt.h
 include/botan-2/botan/base32.h
@@ -172,6 +171,7 @@ include/botan-2/botan/ocsp.h
 include/botan-2/botan/ocsp_types.h
 include/botan-2/botan/ofb.h
 include/botan-2/botan/oids.h
+include/botan-2/botan/otp.h
 include/botan-2/botan/p11.h
 include/botan-2/botan/p11_ecc_key.h
 include/botan-2/botan/p11_ecdh.h
@@ -182,6 +182,7 @@ include/botan-2/botan/p11_randomgenerator.h
 include/botan-2/botan/p11_rsa.h
 include/botan-2/botan/p11_session.h
 include/botan-2/botan/p11_slot.h
+include/botan-2/botan/p11_types.h
 include/botan-2/botan/p11_x509.h
 include/botan-2/botan/package.h
 include/botan-2/botan/par_hash.h
@@ -203,6 +204,8 @@ include/botan-2/botan/pkcs11.h
 include/botan-2/botan/pkcs11f.h
 include/botan-2/botan/pkcs11t.h
 include/botan-2/botan/pkcs8.h
+include/botan-2/botan/pkix_enums.h
+include/botan-2/botan/pkix_types.h
 include/botan-2/botan/point_gfp.h
 include/botan-2/botan/poly1305.h
 include/botan-2/botan/polyn_gf2m.h
@@ -302,15 +305,12 @@ include/botan-2/botan/x509path.h
 include/botan-2/botan/x509self.h
 include/botan-2/botan/x919_mac.h
 include/botan-2/botan/xmss.h
-include/botan-2/botan/xmss_address.h
-include/botan-2/botan/xmss_common_ops.h
 include/botan-2/botan/xmss_hash.h
-include/botan-2/botan/xmss_index_registry.h
 include/botan-2/botan/xmss_key_pair.h
 include/botan-2/botan/xmss_parameters.h
 include/botan-2/botan/xmss_privatekey.h
 include/botan-2/botan/xmss_publickey.h
-include/botan-2/botan/xmss_tools.h
+include/botan-2/botan/xmss_wots.h
 include/botan-2/botan/xmss_wots_parameters.h
 include/botan-2/botan/xmss_wots_privatekey.h
 include/botan-2/botan/xmss_wots_publickey.h
