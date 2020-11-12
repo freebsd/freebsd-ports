@@ -2,12 +2,11 @@
 
 PORTNAME=	edbrowse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.6
-PORTREVISION=	5
+DISTVERSION=	3.7.7
 CATEGORIES=	www editors
 
 MAINTAINER=	alfix86@gmail.com
-COMMENT=	Line-oriented Web browser and text editor
+COMMENT=	Line-oriented web browser and text editor
 
 LICENSE=	GPLv2
 
@@ -28,9 +27,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|set(TIDY_NAMES tidy)|set(TIDY_NAMES tidy5)|g' ${WRKSRC}/CMakeModules/FindTidy.cmake
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man-edbrowse-freebsd.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
