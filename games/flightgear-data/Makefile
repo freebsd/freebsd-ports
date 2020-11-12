@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear-data
-PORTVERSION=	2020.3.1
+PORTVERSION=	2020.3.2
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 DISTNAME=	FlightGear-${PORTVERSION}-data
