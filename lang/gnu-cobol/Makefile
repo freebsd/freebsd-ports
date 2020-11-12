@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-cobol
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	3.1
 CATEGORIES=	lang
 MASTER_SITES=	GNU/gnucobol
 DISTNAME=	gnucobol-${PORTVERSION}
@@ -34,9 +33,7 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=nls
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|__gmp_randinit|__gmpz_init|g ; \
-		 s|db-4.[0-9]|${BDB_LIB_NAME}|g ; \
-		 s|-lcurses|-lncurses|g ; \
-		 s|-R$$found_dir|-Wl,-rpath,$$found_dir|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lcurses|-lncurses|g ; \
+		s|-R$$found_dir|-Wl,-rpath,$$found_dir|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
