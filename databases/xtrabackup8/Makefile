@@ -39,6 +39,8 @@ CMAKE_ARGS=	-DBUILD_CONFIG:STRING=xtrabackup_release
 CMAKE_ARGS+=	-DWITH_${component}:STRING=system
 .endfor
 
+.include <bsd.port.pre.mk>
+
 # Since MySQL 8.0.20 InnoDB engine uses new memory alligned allocator
 # which is broken on i386 due to different size of types and causes a
 # 'static_assert(alignof(T) <= alignof(std::max_align_t))' error
@@ -60,4 +62,4 @@ post-stage:
 	@${RM} -r ${STAGEDIR}${PREFIX}/docs
 	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/plugin/debug
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
