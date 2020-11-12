@@ -11,13 +11,13 @@ COMMENT=	C++ library for semigroups and monoids
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	HPCombi>0:math/hpcombi	\
-		eigen>0:math/eigen3
+BUILD_DEPENDS=	HPCombi>0:math/hpcombi
 LIB_DEPENDS=	libfmt.so:devel/libfmt
 
 USE_GITHUB=	yes
 
-USES=		autoreconf compiler:c++11-lang libtool pkgconfig
+USES=		autoreconf compiler:c++11-lang eigen:3,build \
+		libtool pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fmt --with-external-fmt=yes	\
