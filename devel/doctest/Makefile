@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	doctest
-DISTVERSION=	2.4.0
+DISTVERSION=	2.4.1
 CATEGORIES=	devel
 
 MAINTAINER=	nickblack@linux.com
@@ -14,10 +14,10 @@ USES=		compiler:c++17-lang cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	onqtam
 
-NO_BUILD=	yes
-NO_ARCH=	yes
-
 CMAKE_OFF=	DOCTEST_WITH_TESTS DOCTEST_WITH_MAIN_IN_STATIC_LIB
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_FILES=	include/doctest/doctest.h \
 		lib/cmake/doctest/doctest.cmake \
