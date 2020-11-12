@@ -12,8 +12,10 @@ PKGNAMESUFFIX?=	-portable
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	The portable version of OpenBSD's OpenSSH
 
-#LICENSE=      BSD2,BSD3,MIT,public domain,BSD-Style,BEER-WARE,"any purpose with notice intact",ISC-Style
-#LICENSE_FILE= ${WRKSRC}/LICENCE
+LICENSE=	OPENSSH
+LICENSE_NAME=	OpenSSH Licenses
+LICENSE_FILE=	${WRKSRC}/LICENCE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.* openssh-portable-devel-*
 
