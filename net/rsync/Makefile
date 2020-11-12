@@ -44,7 +44,7 @@ PORTDOCS=	NEWS.md README.md csprotocol.txt tech_report.tex
 # define options
 OPTIONS_DEFINE=		DOCS POPT_PORT ZLIB_BASE SSH ICONV
 OPTIONS_RADIO=		PTS
-OPTIONS_RADIO_PTS=	TIMELIMIT RENAMED FLAGS ATIMES ACL
+OPTIONS_RADIO_PTS=	RENAMED FLAGS
 
 # options provided upstream
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
@@ -53,22 +53,16 @@ SSH_DESC=	Use SSH instead of RSH
 
 # options provided by patch (mutually exclusive)
 PTS_DESC=	Functionality provided by third party patches
-TIMELIMIT_DESC=	Time limit patch
 RENAMED_DESC=	Add support for renamed file detection
 FLAGS_DESC=	File system flags support patch, adds --fileflags
-ATIMES_DESC=	Preserve access times, adds --atimes (BROKEN)
-ACL_DESC=	Add backward-compatibility for the --acls option
 
 # define default options
 OPTIONS_DEFAULT=FLAGS ICONV SSH ZLIB_BASE
 
 ZLIB_BASE_CONFIGURE_ON=	--with-included-zlib=no
-TIMELIMIT_EXTRA_PATCHES=	${WRKSRC}/patches/time-limit.diff
-ATIMES_EXTRA_PATCHES=		${WRKSRC}/patches/atimes.diff
 FLAGS_EXTRA_PATCHES=		${WRKSRC}/patches/fileflags.diff \
 				${FILESDIR}/extrapatch-main.c
 RENAMED_EXTRA_PATCHES=		${WRKSRC}/patches/detect-renamed.diff
-ACL_EXTRA_PATCHES=		${WRKSRC}/patches/acls.diff
 
 ICONV_USES=	iconv:translit
 ICONV_CONFIGURE_ENABLE=	iconv iconv-open
@@ -80,12 +74,9 @@ POPT_PORT_CONFIGURE_OFF=	--with-included-popt
 SSH_CONFIGURE_ON=	--with-rsh=ssh
 SSH_CONFIGURE_OFF=	--with-rsh=rsh
 
-ACL_DISTFILES=		${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
-ATIMES_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 FLAGS_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 ICONV_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 RENAMED_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
-TIMELIMIT_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 
 .if make(makesum)
 DISTFILES+=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
