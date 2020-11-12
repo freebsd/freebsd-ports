@@ -37,10 +37,10 @@ GH_TAGNAME=	48e42d5
 
 PLIST_FILES=	sbin/${PORTNAME} man/man8/${PORTNAME}.8.gz
 
-# MCE DB r151
+# MCE DB r165
 CPM_ACCOUNT=	platomav
 CPM_PROJECT=	CPUMicrocodes
-CPM_TAGNAME=	0d2412f
+CPM_TAGNAME=	0cf17aa
 
 OPTIONS_DEFINE=		CPM INTEL
 CPM_DESC=		Download platomav/CPUMicrocodes collection
@@ -50,7 +50,7 @@ CPM_GH_TAGNAME=		${CPM_TAGNAME}:cpm
 CPM_DIR=		${WRKDIR}/${CPM_PROJECT}-${CPM_TAGNAME}
 CPM_DATADIR=		${DATADIR}/CPUMicrocodes/secondary/Intel
 
-INTEL_PACK=		microcode-20200616
+INTEL_PACK=		microcode-20201110
 INTEL_DESC=		Download Intel microcode pack ${INTEL_PACK}
 INTEL_PROJECT=		Intel-Linux-Processor-Microcode-Data-Files
 INTEL_MASTER_SITES=	https://codeload.github.com/intel/${INTEL_PROJECT}/tar.gz/:intel
