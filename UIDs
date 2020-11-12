@@ -824,7 +824,7 @@ librespeed:*:874:874::0:0:LibreSpeed user:/nonexistent:/usr/sbin/nologin
 # free: 876
 # free: 877
 # free: 878
-# free: 879
+_encrypted-dns:*:879:879::0:0:encrypted-dns user:/var/empty:/usr/sbin/nologin
 pyspf-milter:*:880:880::0:0:pyspf-milter:/nonexistent:/usr/sbin/nologin
 ultimaker:*:881:881::0:0:Ultimaker user:/nonexistent:/usr/sbin/nologin
 midpoint:*:882:882::0:0:midPoint user:/var/db/midpoint:/usr/sbin/nologin

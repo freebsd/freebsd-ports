@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: encrypted_dns
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# encrypted_dns_enable (bool):	Set to NO by default.
+#				Set it to YES to enable encrypted-dns.
+# encrypted_dns_config (path):	Set to %%PREFIX%%/etc/encrypted-dns.toml
+#				by default.
+
+. /etc/rc.subr
+
+name=encrypted_dns
+desc="encrypted-dns startup script"
+rcvar=encrypted_dns_enable
+
+load_rc_config $name
+
+: ${encrypted_dns_enable:=NO}
+: ${encrypted_dns_config="%%PREFIX%%/etc/encrypted-dns/encrypted-dns.toml"}
+
+pidfile=/var/run/encrypted-dns.pid
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/bin/encrypted-dns
+
+encrypted_dns_args="-c $encrypted_dns_config"
+command_args="-p ${pidfile} -s "info" -l "daemon" /usr/bin/env ${procname} ${encrypted_dns_args}"
+
+run_rc_command "$1"

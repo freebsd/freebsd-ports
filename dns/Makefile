@@ -67,6 +67,7 @@
     SUBDIR += dsc
     SUBDIR += dsp
     SUBDIR += dynip
+    SUBDIR += encrypted-dns-server
     SUBDIR += erlang-idna
     SUBDIR += fastresolve
     SUBDIR += firedns

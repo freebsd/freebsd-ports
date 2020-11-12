@@ -819,7 +819,7 @@ librespeed:*:874:
 # free: 876
 # free: 877
 # free: 878
-# free: 879
+_encrypted-dns:*:879:
 pyspf-milter:*:880:
 ultimaker:*:881:
 midpoint:*:882:
