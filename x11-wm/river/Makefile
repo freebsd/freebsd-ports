@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	river
-PORTVERSION=	s20201104
+PORTVERSION=	s20201111
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
+		wlroots>=0.12.0:x11-toolkits/wlroots \
 		zig>=0.7.0:lang/zig
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwayland-server.so:graphics/wayland \
@@ -20,7 +21,7 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 USES=		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ifreund
-GH_TAGNAME=	5a6018f
+GH_TAGNAME=	ab5e2f7
 GH_TUPLE=	ifreund:zig-wayland:931b6f7:zig_wayland/deps/zig-wayland
 CONFIGURE_ARGS=	--prefix "${STAGEDIR}${PREFIX}" \
 		${WITH_DEBUG:U-Drelease-fast=true} \
