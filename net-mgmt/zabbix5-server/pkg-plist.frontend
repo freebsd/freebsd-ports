@@ -557,6 +557,9 @@
 %%WWWDIR%%/include/classes/html/CRow.php
 %%WWWDIR%%/include/classes/html/CRowHeader.php
 %%WWWDIR%%/include/classes/html/CScriptTag.php
+%%WWWDIR%%/include/classes/html/CSelect.php
+%%WWWDIR%%/include/classes/html/CSelectOption.php
+%%WWWDIR%%/include/classes/html/CSelectOptionGroup.php
 %%WWWDIR%%/include/classes/html/CSeverity.php
 %%WWWDIR%%/include/classes/html/CSeverityCheckBoxList.php
 %%WWWDIR%%/include/classes/html/CSimpleButton.php
@@ -1010,6 +1013,7 @@
 %%WWWDIR%%/js/class.template.js
 %%WWWDIR%%/js/colorpicker.js
 %%WWWDIR%%/js/common.js
+%%WWWDIR%%/js/component.z-select.js
 %%WWWDIR%%/js/csvggraphwidget.js
 %%WWWDIR%%/js/dashboard.grid.js
 %%WWWDIR%%/js/flickerfreescreen.js
@@ -1026,6 +1030,7 @@
 %%WWWDIR%%/js/pages/items.js
 %%WWWDIR%%/js/pages/popup.condition.common.js
 %%WWWDIR%%/js/pages/popup.operation.common.js
+%%WWWDIR%%/js/pages/setup.js
 %%WWWDIR%%/js/servercheck.js
 %%WWWDIR%%/js/textareaflexible.js
 %%WWWDIR%%/js/vector/class.svg.canvas.js
