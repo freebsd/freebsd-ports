@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ossim
-DISTVERSIONPREFIX=	Neptune-
-DISTVERSION=	2.10.1
-PORTREVISION=	2
+DISTVERSIONPREFIX=	OrchidIsland-
+DISTVERSION=	2.11.1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
