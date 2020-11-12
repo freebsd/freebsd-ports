@@ -140,6 +140,7 @@ libdata/pkgconfig/notcurses.pc
 %%DATADIR%%/dsscaw-purp.png
 %%DATADIR%%/eagles.png
 %%DATADIR%%/fm6.mkv
+%%DATADIR%%/fonts.jpg
 %%DATADIR%%/lamepatents.jpg
 %%DATADIR%%/megaman2.bmp
 %%DATADIR%%/normal.png
