@@ -76,6 +76,7 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/Command/Author/cpanify.pm
 %%SITE_PERL%%/Mojolicious/Command/Author/generate.pm
 %%SITE_PERL%%/Mojolicious/Command/Author/generate/app.pm
+%%SITE_PERL%%/Mojolicious/Command/Author/generate/dockerfile.pm
 %%SITE_PERL%%/Mojolicious/Command/Author/generate/lite_app.pm
 %%SITE_PERL%%/Mojolicious/Command/Author/generate/makefile.pm
 %%SITE_PERL%%/Mojolicious/Command/Author/generate/plugin.pm
@@ -216,6 +217,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojolicious::Command::Author::cpanify.3.gz
 %%PERL5_MAN3%%/Mojolicious::Command::Author::generate.3.gz
 %%PERL5_MAN3%%/Mojolicious::Command::Author::generate::app.3.gz
+%%PERL5_MAN3%%/Mojolicious::Command::Author::generate::dockerfile.3.gz
 %%PERL5_MAN3%%/Mojolicious::Command::Author::generate::lite_app.3.gz
 %%PERL5_MAN3%%/Mojolicious::Command::Author::generate::makefile.3.gz
 %%PERL5_MAN3%%/Mojolicious::Command::Author::generate::plugin.3.gz
