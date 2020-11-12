@@ -1,0 +1,8 @@
+GH_TUPLE=	\
+		felixge:httpsnoop:v1.0.1:felixge_httpsnoop/vendor/github.com/felixge/httpsnoop \
+		gorilla:csrf:v1.7.0:gorilla_csrf/vendor/github.com/gorilla/csrf \
+		gorilla:handlers:v1.5.1:gorilla_handlers/vendor/github.com/gorilla/handlers \
+		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
+		gorilla:securecookie:v1.1.1:gorilla_securecookie/vendor/github.com/gorilla/securecookie \
+		natefinch:lumberjack:v2.0.0:natefinch_lumberjack/vendor/gopkg.in/natefinch/lumberjack.v2 \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors

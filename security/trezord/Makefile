@@ -3,7 +3,7 @@
 
 PORTNAME=	trezord
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.29
+DISTVERSION=	2.0.30
 CATEGORIES=	security
 
 MAINTAINER=	ale@FreeBSD.org
@@ -12,7 +12,7 @@ COMMENT=	TREZOR Communication Daemon aka TREZOR Bridge
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		go
+USES=		go:modules
 
 USE_RC_SUBR=	${PORTNAME}
 
@@ -22,5 +22,7 @@ GH_PROJECT=	${PORTNAME}-go
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 PLIST_FILES=	bin/${GH_PROJECT}
+
+.include "${.CURDIR}/Makefile.modules"
 
 .include <bsd.port.mk>
