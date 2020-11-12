@@ -13,7 +13,6 @@ COMMENT=	Block-sorting file compressor
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RESTRICTED=	may be covered by patents
 USE_CSTD=	gnu89
 
 PLIST_FILES=	bin/bzip bin/bunzip \

@@ -10,6 +10,17 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20201110:
+AUTHOR: bapt@FreeBSD.org
+
+  Patents are a complicated topic, and their regulation varies depending on
+  jurisdiction. Patents are not necessarily related to the license and so
+  should not be connected to the license framework.
+
+  Patent limitations within the ports tree have been removed and left to the
+  user or consumer to deal with their local legislation to determine if they
+  can use the software without legal restrictions.
+
 20201022:
 AUTHOR: bapt@FreeBSD.org
 

@@ -40,7 +40,6 @@ baudline_*		audio/baudline		No redistribution allowed
 BCWipe-*		security/bcwipe		Non-commercial distribution and use only
 bicom*			archivers/bicom		Contact author personally regarding commercial use
 Browser*.tar.gz		net/ldapbrowser		No reply from author regarding redistribution licensing
-bzip-*			archivers/bzip		Some algorithms used may infringe certain US patents.  Opinions differ.  Commercial use could render you liable to unfriendly legal action
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
 arcconf-v*		sysutils/arcconf	May not be redistributed in binary form
 cloudflare-cloudflared*	net/cloudflared		Not sure if we are allowed to redistribute it.
@@ -121,7 +120,6 @@ komodo-*		editors/komodo-edit	Distribution not permitted
 kzip-*			archivers/kzip		License does not allow redistribution
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so binaries should not be distributed.  Contains crypto code from OpenSSL
 ladder.tar		games/ladder		Possible copyright problems
-lame*			audio/lame		patent issues, see http://www.mp3licensing.com/
 lha-1.14i-ac*		archivers/lha-ac	No redistribution allowed
 libaacplus-*		audio/libaacplus	Unclear legal status
 libamrnb/26104-*.zip	audio/libamrnb		unclear legal status, probably need licenses from 3GPP and more
@@ -173,7 +171,6 @@ serialmail-*		mail/serialmail		No license -- see http://cr.yp.to/softwarelaw.htm
 serious.sam*		games/linux-ssamtfe	Redistribution limited
 serious.sam*		games/linux-ssamtse	Redistribution limited
 sharefonts-*		x11-fonts/sharefonts	Shareware: cannot be distributed without prior authorization
-sid-milter-*		mail/sid-milter		May incorporate intellectual property, possible patent issues
 simian-*		devel/simian		Have to agree to license before download
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
 stuffit*		archivers/stuffit	Only unmodified original package can be distributed

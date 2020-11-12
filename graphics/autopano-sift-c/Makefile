@@ -14,8 +14,6 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
 		libpano13.so:graphics/libpano13
 
-RESTRICTED=	May be covered by patents
-
 CONFLICTS=	autopano-sift-[0-9]*
 
 USE_GNOME=	libxml2

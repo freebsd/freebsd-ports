@@ -9,8 +9,6 @@ MASTER_SITES=	SF/${PORTNAME}/SenderID%20Milter/${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Milter module for sid and spf
 
-RESTRICTED=	May incorporate intellectual property, possible patent issues
-
 USES=		groff
 # on FreeBSD 11 optimized code fails with 'MalformedDomain'
 CFLAGS:=	${CFLAGS:S/-O2//g}
