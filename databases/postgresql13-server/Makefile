@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	13.0
+DISTVERSION?=	13.1
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	5
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
