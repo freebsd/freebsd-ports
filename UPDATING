@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20201112:
+  AFFECTS: users of net-mgmt/pushgateway
+  AUTHOR: rhurlin@FreeBSD.org
+
+  The v0.10.0 release changes the storage format. v0.10 can read the
+  storage format of v0.5--v0.9. It will then persist the new format so
+  that a downgrade won't be possible anymore [1].
+
+  For later releases >= v1.0.0 only persistence files created by v0.10+
+  are usable. So please, upgrade to v0.10 first to convert existing
+  persistence files.
+
+  It is intended to replace v0.10.0 in about four weeks from now (not
+  before 2020-12-12) by >= v1.3.0.
+
+  [1] https://github.com/prometheus/pushgateway/releases/tag/v0.10.0
+
 20201110:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org
