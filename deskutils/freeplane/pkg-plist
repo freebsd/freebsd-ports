@@ -1,6 +1,6 @@
 bin/freeplane
 %%DATADIR%%/core/org.freeplane.core/META-INF/MANIFEST.MF
-%%DATADIR%%/core/org.freeplane.core/lib/SimplyHTML-0.17.8.jar
+%%DATADIR%%/core/org.freeplane.core/lib/SimplyHTML-0.17.9.jar
 %%DATADIR%%/core/org.freeplane.core/lib/annotations-16.0.1.jar
 %%DATADIR%%/core/org.freeplane.core/lib/common-image-3.5.jar
 %%DATADIR%%/core/org.freeplane.core/lib/common-io-3.5.jar
