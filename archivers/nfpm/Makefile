@@ -2,7 +2,7 @@
 
 PORTNAME=	nfpm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
+DISTVERSION=	1.10.1
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +22,7 @@ GH_TUPLE=	\
 		Masterminds:semver:v1.5.0:masterminds_semver/vendor/github.com/Masterminds/semver \
 		Masterminds:semver:v3.1.0:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Masterminds:sprig:v2.22.0:masterminds_sprig/vendor/github.com/Masterminds/sprig \
+		Microsoft:go-winio:v0.4.15:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		OpenPeeDeeP:depguard:v1.0.1:openpeedeep_depguard/vendor/github.com/OpenPeeDeeP/depguard \
 		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/github.com/alecthomas/kingpin \
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
@@ -32,15 +33,15 @@ GH_TUPLE=	\
 		daixiang0:gci:v0.2.4:daixiang0_gci/vendor/github.com/daixiang0/gci \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		denis-tingajkin:go-header:v0.3.1:denis_tingajkin_go_header/vendor/github.com/denis-tingajkin/go-header \
-		dominikh:go-tools:v0.0.1-2020.1.5:dominikh_go_tools/vendor/honnef.co/go/tools \
+		dominikh:go-tools:v0.0.1-2020.1.6:dominikh_go_tools/vendor/honnef.co/go/tools \
 		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
-		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
+		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-critic:go-critic:v0.5.2:go_critic_go_critic/vendor/github.com/go-critic/go-critic \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
 		go-git:go-billy:v5.0.0:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
-		go-git:go-git:v5.1.0:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
-		go-ini:ini:v1.57.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-git:go-git:v5.2.0:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
+		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-toolsmith:astcast:v1.0.0:go_toolsmith_astcast/vendor/github.com/go-toolsmith/astcast \
 		go-toolsmith:astcopy:v1.0.0:go_toolsmith_astcopy/vendor/github.com/go-toolsmith/astcopy \
 		go-toolsmith:astequal:v1.0.0:go_toolsmith_astequal/vendor/github.com/go-toolsmith/astequal \
@@ -54,12 +55,12 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		gofrs:flock:v0.8.0:gofrs_flock/vendor/github.com/gofrs/flock \
-		golang:crypto:948cd5f35899:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:9e8e0b390897:golang_crypto/vendor/golang.org/x/crypto \
 		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
-		golang:sys:ddb9806d33ae:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
-		golang:tools:5ae4c3c160a0:golang_tools/vendor/golang.org/x/tools \
+		golang:net:ff519b6c9102:golang_net/vendor/golang.org/x/net \
+		golang:sys:215b40eba54c:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
+		golang:tools:64a9e34f3752:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		golangci:check:cfe4005ccda2:golangci_check/vendor/github.com/golangci/check \
 		golangci:dupl:3e9179ac440a:golangci_dupl/vendor/github.com/golangci/dupl \
@@ -68,7 +69,7 @@ GH_TUPLE=	\
 		golangci:goconst:041c5f2b40f3:golangci_goconst/vendor/github.com/golangci/goconst \
 		golangci:gocyclo:0a533e8fa43d:golangci_gocyclo/vendor/github.com/golangci/gocyclo \
 		golangci:gofmt:244bba706f1a:golangci_gofmt/vendor/github.com/golangci/gofmt \
-		golangci:golangci-lint:v1.31.0:golangci_golangci_lint/vendor/github.com/golangci/golangci-lint \
+		golangci:golangci-lint:v1.32.2:golangci_golangci_lint/vendor/github.com/golangci/golangci-lint \
 		golangci:ineffassign:42439a7714cc:golangci_ineffassign/vendor/github.com/golangci/ineffassign \
 		golangci:lint-1:297bf364a8e0:golangci_lint_1/vendor/github.com/golangci/lint-1 \
 		golangci:maligned:b1d89398deca:golangci_maligned/vendor/github.com/golangci/maligned \
@@ -78,9 +79,11 @@ GH_TUPLE=	\
 		golangci:unconvert:28b1c447d1f4:golangci_unconvert/vendor/github.com/golangci/unconvert \
 		google:go-cmp:v0.5.2:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:rpmpack:1c1eea455332:google_rpmpack/vendor/github.com/google/rpmpack \
-		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
-		goreleaser:chglog:v0.1.1:goreleaser_chglog/vendor/github.com/goreleaser/chglog \
-		gostaticanalysis:analysisutil:v0.0.3:gostaticanalysis_analysisutil/vendor/github.com/gostaticanalysis/analysisutil \
+		google:uuid:v1.1.2:google_uuid/vendor/github.com/google/uuid \
+		goreleaser:chglog:v0.1.2:goreleaser_chglog/vendor/github.com/goreleaser/chglog \
+		goreleaser:fileglob:v0.3.0:goreleaser_fileglob/vendor/github.com/goreleaser/fileglob \
+		gostaticanalysis:analysisutil:v0.1.0:gostaticanalysis_analysisutil/vendor/github.com/gostaticanalysis/analysisutil \
+		gostaticanalysis:comment:v1.3.0:gostaticanalysis_comment/vendor/github.com/gostaticanalysis/comment \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		huandu:xstrings:v1.3.2:huandu_xstrings/vendor/github.com/huandu/xstrings \
 		imdario:mergo:v0.3.11:imdario_mergo/vendor/github.com/imdario/mergo \
@@ -88,46 +91,48 @@ GH_TUPLE=	\
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		jingyugao:rowserrcheck:72ab7603b68a:jingyugao_rowserrcheck/vendor/github.com/jingyugao/rowserrcheck \
 		jirfag:go-printf-func-name:45db9963cdd3:jirfag_go_printf_func_name/vendor/github.com/jirfag/go-printf-func-name \
-		kevinburke:ssh_config:01f96b0aa0cd:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
+		kevinburke:ssh_config:4977a11b4351:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
 		kisielk:gotool:v1.0.0:kisielk_gotool/vendor/github.com/kisielk/gotool \
-		konsorten:go-windows-terminal-sequences:v1.0.3:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kyoh86:exportloopref:v0.1.7:kyoh86_exportloopref/vendor/github.com/kyoh86/exportloopref \
-		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
+		leighmcculloch:gochecknoglobals:acfc0b28355a:leighmcculloch_gochecknoglobals/vendor/4d63.com/gochecknoglobals \
+		magiconair:properties:v1.8.4:magiconair_properties/vendor/github.com/magiconair/properties \
 		maratori:testpackage:v1.0.1:maratori_testpackage/vendor/github.com/maratori/testpackage \
 		matoous:godox:5d6d842e92eb:matoous_godox/vendor/github.com/matoous/godox \
-		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-zglob:602f75124917:mattn_go_zglob/vendor/github.com/mattn/go-zglob \
+		mbilski:exhaustivestruct:v1.1.0:mbilski_exhaustivestruct/vendor/github.com/mbilski/exhaustivestruct \
 		mitchellh:copystructure:v1.0.0:mitchellh_copystructure/vendor/github.com/mitchellh/copystructure \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
-		mitchellh:mapstructure:v1.3.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
+		mitchellh:mapstructure:v1.3.3:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		mitchellh:reflectwalk:v1.0.1:mitchellh_reflectwalk/vendor/github.com/mitchellh/reflectwalk \
-		mvdan:gofumpt:4fd085cb6d5f:mvdan_gofumpt/vendor/mvdan.cc/gofumpt \
+		moricho:tparallel:v0.2.1:moricho_tparallel/vendor/github.com/moricho/tparallel \
+		mvdan:gofumpt:ab5a8192947d:mvdan_gofumpt/vendor/mvdan.cc/gofumpt \
 		mvdan:interfacer:c20040233aed:mvdan_interfacer/vendor/mvdan.cc/interfacer \
 		mvdan:lint:adc824a0674b:mvdan_lint/vendor/mvdan.cc/lint \
-		mvdan:unparam:d51796306d8f:mvdan_unparam/vendor/mvdan.cc/unparam \
+		mvdan:unparam:b37ab49443f7:mvdan_unparam/vendor/mvdan.cc/unparam \
 		nakabonne:nestif:v0.3.0:nakabonne_nestif/vendor/github.com/nakabonne/nestif \
 		nbutton23:zxcvbn-go:ae427f1e4c1d:nbutton23_zxcvbn_go/vendor/github.com/nbutton23/zxcvbn-go \
-		nishanths:exhaustive:6cf413ae40e0:nishanths_exhaustive/vendor/github.com/nishanths/exhaustive \
+		nishanths:exhaustive:v0.1.0:nishanths_exhaustive/vendor/github.com/nishanths/exhaustive \
 		op:go-logging:970db520ece7:op_go_logging/vendor/github.com/op/go-logging \
-		pelletier:go-toml:v1.8.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
+		pelletier:go-toml:v1.8.1:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		phayes:checkstyle:bfd46e6a821d:phayes_checkstyle/vendor/github.com/phayes/checkstyle \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		polyfloyd:go-errorlint:351e25ade6e3:polyfloyd_go_errorlint/vendor/github.com/polyfloyd/go-errorlint \
 		quasilyte:go-ruleguard:v0.2.0:quasilyte_go_ruleguard/vendor/github.com/quasilyte/go-ruleguard \
 		quasilyte:regex:30656e2c4a95:quasilyte_regex_syntax/vendor/github.com/quasilyte/regex \
 		ryancurrah:gomodguard:v1.1.0:ryancurrah_gomodguard/vendor/github.com/ryancurrah/gomodguard \
 		ryanrolds:sqlclosecheck:v0.3.0:ryanrolds_sqlclosecheck/vendor/github.com/ryanrolds/sqlclosecheck \
 		sassoftware:go-rpmutils:a8f1baeba37b:sassoftware_go_rpmutils/vendor/github.com/sassoftware/go-rpmutils \
-		securego:gosec:v2.4.0:securego_gosec_v2/vendor/github.com/securego/gosec/v2 \
+		securego:gosec:v2.5.0:securego_gosec_v2/vendor/github.com/securego/gosec/v2 \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		shazow:go-diff:b6b7b6733b8c:shazow_go_diff/vendor/github.com/shazow/go-diff \
-		sirupsen:logrus:v1.6.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		sonatard:noctx:v0.0.1:sonatard_noctx/vendor/github.com/sonatard/noctx \
-		sourcegraph:go-diff:v0.6.0:sourcegraph_go_diff/vendor/github.com/sourcegraph/go-diff \
-		spf13:afero:v1.3.2:spf13_afero/vendor/github.com/spf13/afero \
+		sourcegraph:go-diff:v0.6.1:sourcegraph_go_diff/vendor/github.com/sourcegraph/go-diff \
+		spf13:afero:v1.4.1:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
-		spf13:cobra:v1.0.0:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.1.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
@@ -136,14 +141,15 @@ GH_TUPLE=	\
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		tdakkota:asciicheck:d7f85be797a2:tdakkota_asciicheck/vendor/github.com/tdakkota/asciicheck \
-		tetafro:godot:v0.4.8:tetafro_godot/vendor/github.com/tetafro/godot \
+		tetafro:godot:v0.4.9:tetafro_godot/vendor/github.com/tetafro/godot \
 		timakin:bodyclose:f7f2e9bca95e:timakin_bodyclose/vendor/github.com/timakin/bodyclose \
+		tomarrell:wrapcheck:df9e8bcb914d:tomarrell_wrapcheck/vendor/github.com/tomarrell/wrapcheck \
 		tommy-muehle:go-mnd:e6f9a994e8fa:tommy_muehle_go_mnd/vendor/github.com/tommy-muehle/go-mnd \
 		ulikunitz:xz:v0.5.7:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
 		ultraware:funlen:v0.0.3:ultraware_funlen/vendor/github.com/ultraware/funlen \
 		ultraware:whitespace:v0.0.4:ultraware_whitespace/vendor/github.com/ultraware/whitespace \
 		uudashr:gocognit:v1.0.1:uudashr_gocognit/vendor/github.com/uudashr/gocognit \
-		xanzy:ssh-agent:v0.2.1:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
+		xanzy:ssh-agent:v0.3.0:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent \
 		xi2:xz:48954b6210f8:xi2_xz/vendor/github.com/xi2/xz
 
 GO_TARGET=	./cmd/${PORTNAME}
