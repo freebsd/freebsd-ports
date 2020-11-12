@@ -39,12 +39,22 @@ CMAKE_ARGS=	-DBUILD_CONFIG:STRING=xtrabackup_release
 CMAKE_ARGS+=	-DWITH_${component}:STRING=system
 .endfor
 
-post-patch:
+# Since MySQL 8.0.20 InnoDB engine uses new memory alligned allocator
+# which is broken on i386 due to different size of types and causes a
+# 'static_assert(alignof(T) <= alignof(std::max_align_t))' error
+.if ${ARCH} == i386
+CMAKE_ARGS+=	-DDISABLE_PSI_MEMORY=1
+.endif
+
+post-extract:
 # Delete bundled components so we won't accidentally use them, except LZ4
 # which cannot be removed just yet
 	@${MV} ${WRKSRC}/extra/lz4 ${WRKSRC}
 	@${RM} -r ${WRKSRC}/extra/*
 	@${MV} ${WRKSRC}/lz4 ${WRKSRC}/extra
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,TRUE,true,' ${WRKSRC}/sql/mysqld.cc
 
 post-stage:
 	@${RM} -r ${STAGEDIR}${PREFIX}/docs
