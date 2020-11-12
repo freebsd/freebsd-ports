@@ -3,6 +3,7 @@ bin/aria_dump_log
 bin/aria_ftdump
 bin/aria_pack
 bin/aria_read_log
+%%S3%%bin/aria_s3_copy
 %%INNOBASE%%bin/innochecksum
 %%INNOBASE%%bin/mariabackup
 bin/mariadb-backup
@@ -57,6 +58,7 @@ bin/resolveip
 @comment %%ETCDIR%%/conf.d/client.cnf
 %%ETCDIR%%/conf.d/enable_encryption.preset
 @comment %%ETCDIR%%/conf.d/mysql-clients.cnf
+%%S3%%%%ETCDIR%%/conf.d/s3.cnf.sample
 @sample %%ETCDIR%%/conf.d/server.cnf.sample
 %%SPIDER%%@sample %%ETCDIR%%/conf.d/spider.cnf.sample
 @comment %%DATADIR%%/wsrep.cnf
@@ -187,6 +189,7 @@ lib/mysql/plugin/ha_federatedx.so
 %%MROONGA%%lib/mysql/plugin/ha_mroonga.so
 %%OQGRAPH%%lib/mysql/plugin/ha_oqgraph.so
 %%ROCKSDB%%lib/mysql/plugin/ha_rocksdb.so
+%%S3%%lib/mysql/plugin/ha_s3.so
 %%SPHINX%%lib/mysql/plugin/ha_sphinx.so
 %%SPIDER%%lib/mysql/plugin/ha_spider.so
 lib/mysql/pam_user_map.so
@@ -202,7 +205,9 @@ lib/mysql/plugin/query_response_time.so
 lib/mysql/plugin/server_audit.so
 lib/mysql/plugin/simple_password_check.so
 lib/mysql/plugin/sql_errlog.so
+lib/mysql/plugin/test_sql_service.so
 lib/mysql/plugin/test_versioning.so
+lib/mysql/plugin/type_mysql_json.so
 lib/mysql/plugin/type_test.so
 %%WSREP%%lib/mysql/plugin/wsrep_info.so
 libexec/mariadbd

@@ -88,6 +88,7 @@ libdata/pkgconfig/mariadb.pc
 @comment man/man1/aria_ftdump.1.gz
 @comment man/man1/aria_pack.1.gz
 @comment man/man1/aria_read_log.1.gz
+man/man1/aria_s3_copy.1.gz
 @comment man/man1/galera_new_cluster.1.gz
 @comment man/man1/galera_recovery.1.gz
 @comment man/man1/innochecksum.1.gz
@@ -182,4 +183,3 @@ man/man1/replace.1.gz
 @comment man/man8/mariadbd.8.gz
 @comment man/man8/mysqld.8.gz
 share/aclocal/mysql.m4
-@dir(%%MARIADB_USER%%,%%MARIADB_GROUP%%,) %%MARIADB_RUNDIR%%
