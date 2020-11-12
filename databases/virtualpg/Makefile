@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualpg
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/
 
