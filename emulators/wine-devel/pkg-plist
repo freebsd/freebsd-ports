@@ -158,6 +158,8 @@ include/wine/windows/bits2_5.h
 include/wine/windows/bits2_5.idl
 include/wine/windows/bits3_0.h
 include/wine/windows/bits3_0.idl
+include/wine/windows/bits5_0.h
+include/wine/windows/bits5_0.idl
 include/wine/windows/bitsmsg.h
 include/wine/windows/bluetoothapis.h
 include/wine/windows/bthsdpdef.h
@@ -1389,6 +1391,7 @@ lib/wine/d3d10core.dll.so
 lib/wine/d3d11.dll.so
 %%VKD3D%%lib/wine/d3d12.dll.so
 lib/wine/d3d8.dll.so
+lib/wine/d3d8thk.dll.so
 lib/wine/d3d9.dll.so
 lib/wine/d3dcompiler_33.dll.so
 lib/wine/d3dcompiler_34.dll.so
@@ -1404,6 +1407,7 @@ lib/wine/d3dcompiler_43.dll.so
 lib/wine/d3dcompiler_46.dll.so
 lib/wine/d3dcompiler_47.dll.so
 lib/wine/d3dim.dll.so
+lib/wine/d3dim700.dll.so
 lib/wine/d3drm.dll.so
 lib/wine/d3dx10_33.dll.so
 lib/wine/d3dx10_34.dll.so
@@ -1856,6 +1860,7 @@ lib/wine/fakedlls/d3d10core.dll
 lib/wine/fakedlls/d3d11.dll
 %%VKD3D%%lib/wine/fakedlls/d3d12.dll
 lib/wine/fakedlls/d3d8.dll
+lib/wine/fakedlls/d3d8thk.dll
 lib/wine/fakedlls/d3d9.dll
 lib/wine/fakedlls/d3dcompiler_33.dll
 lib/wine/fakedlls/d3dcompiler_34.dll
@@ -1871,6 +1876,7 @@ lib/wine/fakedlls/d3dcompiler_43.dll
 lib/wine/fakedlls/d3dcompiler_46.dll
 lib/wine/fakedlls/d3dcompiler_47.dll
 lib/wine/fakedlls/d3dim.dll
+lib/wine/fakedlls/d3dim700.dll
 lib/wine/fakedlls/d3drm.dll
 lib/wine/fakedlls/d3dx10_33.dll
 lib/wine/fakedlls/d3dx10_34.dll
@@ -2210,7 +2216,7 @@ lib/wine/fakedlls/netio.sys
 lib/wine/fakedlls/netprofm.dll
 lib/wine/fakedlls/netsh.exe
 lib/wine/fakedlls/netstat.exe
-%%STAGING%%lib/wine/fakedlls/netutils.dll
+lib/wine/fakedlls/netutils.dll
 lib/wine/fakedlls/newdev.dll
 lib/wine/fakedlls/ngen.exe
 lib/wine/fakedlls/ninput.dll
@@ -2343,7 +2349,7 @@ lib/wine/fakedlls/softpub.dll
 lib/wine/fakedlls/spoolss.dll
 lib/wine/fakedlls/spoolsv.exe
 lib/wine/fakedlls/srclient.dll
-%%STAGING%%lib/wine/fakedlls/srvcli.dll
+lib/wine/fakedlls/srvcli.dll
 lib/wine/fakedlls/sspicli.dll
 lib/wine/fakedlls/start.exe
 lib/wine/fakedlls/stdole2.tlb
@@ -2575,6 +2581,7 @@ lib/wine/fwpuclnt.dll.so
 lib/wine/gameux.dll.so
 %%WINE32%%lib/wine/gdi.exe16.so
 lib/wine/gdi32.dll.so
+lib/wine/gdi32.so
 lib/wine/gdiplus.dll.so
 %%X11%%lib/wine/glu32.dll.so
 lib/wine/gphoto2.ds.so
@@ -2957,7 +2964,7 @@ lib/wine/netio.sys.so
 lib/wine/netprofm.dll.so
 lib/wine/netsh.exe.so
 lib/wine/netstat.exe.so
-%%STAGING%%lib/wine/netutils.dll.so
+lib/wine/netutils.dll.so
 lib/wine/newdev.dll.so
 lib/wine/ngen.exe.so
 lib/wine/ninput.dll.so
@@ -3092,7 +3099,7 @@ lib/wine/softpub.dll.so
 lib/wine/spoolss.dll.so
 lib/wine/spoolsv.exe.so
 lib/wine/srclient.dll.so
-%%STAGING%%lib/wine/srvcli.dll.so
+lib/wine/srvcli.dll.so
 lib/wine/sspicli.dll.so
 lib/wine/start.exe.so
 lib/wine/stdole2.tlb.so

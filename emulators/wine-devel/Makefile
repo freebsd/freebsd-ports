@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	5.20
+DISTVERSION=	5.21
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -113,8 +113,7 @@ STAGING_EXTRACT_DEPENDS=	bash:shells/bash \
 				git:devel/git \
 				autoconf>0:devel/autoconf
 STAGING_LIB_DEPENDS=	libtxc_dxtn.so:graphics/s2tc
-STAGING_EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-dlls-ntdll-unix-file.c \
-			${PATCHDIR}/extrapatch-server-file.c
+STAGING_EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-dlls-ntdll-unix-file.c
 
 V4L_CONFIGURE_WITH=	v4l2
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
