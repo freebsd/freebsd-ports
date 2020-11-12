@@ -9,16 +9,17 @@ MASTER_SITES=	ftp://mirror.switch.ch/pool/4/mirror/rpmfusion/${FC_SUBDIR}/:1 \
 		ftp://ftp.ntua.gr/pub/linux/rpmfusion/${FC_SUBDIR}/:1 \
 		ftp://ftp.pbone.net/mirror/rpmfusion.org/${FC_SUBDIR}/:1 \
 		ftp://ftp.icm.edu.pl/vol/rzm6/linux-rpmfusion/${FC_SUBDIR}/:1 \
-		http://zxspectrum.it.omegahg.com/rom/:2 \
-		https://ladan0.home.xs4all.nl/distfiles/
-DISTFILES=	fuse-emulator-roms-0.9.0-6.fc${FCVER}.noarch.rpm:1,DEFAULT \
-		Opus-22.rom:2,DEFAULT
+		http://zxspectrum.it.omegahg.com/rom/:2
+DISTFILES=	fuse-emulator-roms-0.9.0-6.fc${FCVER}.noarch.rpm:1 \
+		Opus-22.rom:2
 EXTRACT_ONLY=	fuse-emulator-roms-0.9.0-6.fc${FCVER}.noarch.rpm
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Spectrum ROM files, for use with the Fuse emulator
 
 LICENSE=	NONE
+
+BROKEN=		unfetchable
 
 FCVER=		26
 FC_SUBDIR=	nonfree/fedora/releases/${FCVER}/Everything/x86_64/os/Packages/f
@@ -28,7 +29,7 @@ DATADIR=	${PREFIX}/share/fuse
 
 ROMS=		128p-0.rom 128p-1.rom 256s-0.rom 256s-1.rom 256s-2.rom \
 		256s-3.rom gluck.rom if1-1.rom if1-2.rom opus.rom trdos.rom
-PLIST_FILES=	${ROMS:S|^|%%DATADIR%%/|}
+PLIST_FILES=	${ROMS:S|^|${DATADIR_REL}|}
 
 RESTRICTED=	No explicit permission to redistribute
 
