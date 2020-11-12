@@ -23,6 +23,7 @@
 %%LUA_MODSHAREDIR%%/resty/core/request.lua
 %%LUA_MODSHAREDIR%%/resty/core/response.lua
 %%LUA_MODSHAREDIR%%/resty/core/shdict.lua
+%%LUA_MODSHAREDIR%%/resty/core/socket.lua
 %%LUA_MODSHAREDIR%%/resty/core/time.lua
 %%LUA_MODSHAREDIR%%/resty/core/uri.lua
 %%LUA_MODSHAREDIR%%/resty/core/utils.lua
