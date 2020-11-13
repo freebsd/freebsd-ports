@@ -1,0 +1,20 @@
+Regressed by http://github.com/intel/intel-graphics-compiler/commit/d0874824631f
+
+IGC/VectorCompiler/lib/GenXCodeGen/GenXLowering.cpp:2601:12: error: reference to local binding 'IsSignedOps' declared in enclosing function '(anonymous namespace)::GenXLowering::lowerMulSat'
+    return IsSignedOps ? B.CreateSExt(Val, MulType, Val->getName() + ".sext")
+           ^
+IGC/VectorCompiler/lib/GenXCodeGen/GenXLowering.cpp:2581:22: note: 'IsSignedOps' declared here
+  auto [IsSignedRes, IsSignedOps] = IsSignedMulSat(IntrinsicID);
+                     ^
+
+--- IGC/VectorCompiler/lib/GenXCodeGen/GenXLowering.cpp.orig	2020-10-30 09:08:26 UTC
++++ IGC/VectorCompiler/lib/GenXCodeGen/GenXLowering.cpp
+@@ -2597,7 +2597,7 @@ bool GenXLowering::lowerMulSat(CallInst *CI, unsigned 
+         IGCLLVM::FixedVectorType::get(MulType, cast<VectorType>(OpType)->getNumElements());
+ 
+   IRBuilder<> B(CI);
+-  auto ExtendMulOperand = [&](Value *Val) {
++  auto ExtendMulOperand = [&, IsSignedOps=IsSignedOps](Value *Val) {
+     return IsSignedOps ? B.CreateSExt(Val, MulType, Val->getName() + ".sext")
+                        : B.CreateZExt(Val, MulType, Val->getName() + ".zext");
+   };
