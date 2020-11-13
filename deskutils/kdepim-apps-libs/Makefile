@@ -9,6 +9,8 @@ COMMENT=	KDE PIM mail related libraries
 
 LICENSE=	LGPL21
 
+DEPRECATED=	No longer shipped with 20.12 -- will be removed when the update happens
+
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
