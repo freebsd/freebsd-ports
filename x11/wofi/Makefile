@@ -2,14 +2,10 @@
 
 PORTNAME=	wofi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2
-PORTREVISION=	2
+DISTVERSION=	1.2.3
 CATEGORIES=	x11
 #MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 MASTER_SITES+=	LOCAL/jbeich # https://todo.sr.ht/~sircmpwn/hg.sr.ht/33
-
-PATCH_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/rev/
-PATCHFILES+=	ea517e724b07.patch:-p1 # wlroots 0.12
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Launcher/menu program for wlroots-based compositors
