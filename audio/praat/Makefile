@@ -2,7 +2,7 @@
 
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
-DISTVERSION=		6.1.28
+DISTVERSION=		6.1.31
 CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -16,8 +16,9 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libasound.so:audio/alsa-lib
 
 USES=		compiler:c++11-lang dos2unix gnome iconv pkgconfig
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_GITHUB=	yes
+USE_XORG=	x11
 
 DOS2UNIX_REGEX=	.*Makefile
 PLIST_FILES=	bin/praat man/man1/praat.1.gz

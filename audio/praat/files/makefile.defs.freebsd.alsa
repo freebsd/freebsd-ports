@@ -9,7 +9,7 @@ CC ?= gcc
 CXX ?= g++
 
 # -DALSA or -DJACK: Use ALSA or Jack audio in pa_unix_hostapis.c
-COMMONFLAGS = -DUNIX -Dlinux -DALSA -D_FILE_OFFSET_BITS=64 `pkg-config --cflags gtk+-2.0` -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1 -pthread
+COMMONFLAGS = -DUNIX -Dlinux -DALSA -D_FILE_OFFSET_BITS=64 `pkg-config --cflags gtk+-3.0` -Wreturn-type -Wunused -Wunused-parameter -Wuninitialized -O1 -g1 -pthread
 
 CFLAGS = -DHAVE_SYS_SOUNDCARD_H -std=gnu99 $(COMMONFLAGS) -Werror=implicit
 
@@ -19,7 +19,7 @@ LINK ?= $(CXX)
 
 EXECUTABLE = praat
 
-LIBS = `pkg-config --libs gtk+-2.0` -L%%LOCALBASE%%/lib -lasound -lm -lpthread -ltinfow
+LIBS = `pkg-config --libs gtk+-3.0` -L%%LOCALBASE%%/lib -lasound -lm -lpthread -ltinfow -lX11
 
 AR = ar
 RANLIB = ls
