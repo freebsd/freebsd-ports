@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ultralist
-DISTVERSION=	1.6.3
+DISTVERSION=	1.7.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	vulcan@wired.sh
