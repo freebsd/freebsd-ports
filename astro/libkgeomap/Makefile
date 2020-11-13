@@ -12,6 +12,8 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/COPYING-CMAKE-SCRIPTS
 
+DEPRECATED=	No longer shipped with 20.12 -- will be removed when the update happens
+
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/buffer_concepts.hpp:devel/boost-libs
 LIB_DEPENDS=	libopencv_video.so:graphics/opencv
 
