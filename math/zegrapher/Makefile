@@ -26,6 +26,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/128x128/apps/${PORTNAME}.png \
 		share/metainfo/ZeGrapher.appdata.xml
 
-PORTSCOUT=	ignore:continuous
+PORTSCOUT=	limit:^[1-9].*
 
 .include <bsd.port.mk>
