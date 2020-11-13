@@ -5,7 +5,7 @@
  
  	if [ -r "${SRC_BASE}/sys/conf/newvers.sh" ]; then
 -		eval `grep "^[RB][A-Z]*=" ${SRC_BASE}/sys/conf/newvers.sh `
-+		eval `grep "^REVISION=\|^BRANCH=" ${SRC_BASE}/sys/conf/newvers.sh `
++		eval `egrep "^REVISION=|^BRANCH=" ${SRC_BASE}/sys/conf/newvers.sh `
  		RELEASE=${REVISION}-${BRANCH}
  	else
  		RELEASE=$(jget ${JAILNAME} version)
