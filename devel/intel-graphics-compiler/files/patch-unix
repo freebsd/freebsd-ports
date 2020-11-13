@@ -223,6 +223,26 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
          if (!FCL_IGC_IS_FLAG_ENABLED(DumpToCurrentDir) && g_shaderOutputFolder == "" && !FCL_IGC_IS_FLAG_ENABLED(DumpToCustomDir))
          {
              bool needMkdir = true;
+--- IGC/VectorCompiler/lib/GenXCodeGen/GenXWrapper.cpp.orig	2020-10-20 15:50:41 UTC
++++ IGC/VectorCompiler/lib/GenXCodeGen/GenXWrapper.cpp
+@@ -24,7 +24,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ ======================= end_copyright_notice ==================================*/
+ 
+-#if defined(__linux__)
++#if !defined(_WIN32)
+ #include <dlfcn.h>
+ #endif
+ 
+@@ -108,7 +108,7 @@ translateSPIRVToIR(ArrayRef<char> Input, ArrayRef<uint
+           void (*ErrSaver)(const char *pErrMsg, void *ErrUserData),
+           void *ErrUserData);
+ 
+-#if defined(__linux__)
++#if defined(RTLD_DEEPBIND)
+   // Hack to workaround cmoc crashes during loading of SPIRV library
+   static auto DeepBindHack = dlopen(SpirvLibName, RTLD_NOW | RTLD_DEEPBIND);
+ #endif // __linux__
 --- IGC/common/LLVMWarningsPop.hpp.orig	2019-11-27 01:05:20 UTC
 +++ IGC/common/LLVMWarningsPop.hpp
 @@ -58,6 +58,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
