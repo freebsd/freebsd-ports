@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	cava
-DISTVERSION=	0.7.1
-PORTREVISION=	1
+DISTVERSION=	0.7.3
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vendion@gmail.com
 COMMENT=	Console-based Audio Visualizer for MPD, PulseAudio, and sndio
 
 LICENSE=	MIT

@@ -1,6 +1,6 @@
---- output/terminal_ncurses.c.orig	2020-05-29 23:00:32 UTC
+--- output/terminal_ncurses.c.orig	2020-10-29 12:36:59 UTC
 +++ output/terminal_ncurses.c
-@@ -262,9 +262,13 @@ int draw_terminal_ncurses(int is_tty, int terminal_hei
+@@ -267,9 +267,13 @@ int draw_terminal_ncurses(int is_tty, int terminal_hei
  // general: cleanup
  void cleanup_terminal_ncurses(void) {
      echo();

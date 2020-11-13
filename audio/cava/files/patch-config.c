@@ -1,9 +1,9 @@
 Remove noncurses output method which only produces a garbled mess
 on terminals.
 
---- config.c.orig	2020-05-29 23:28:58 UTC
+--- config.c.orig	2020-10-29 12:33:01 UTC
 +++ config.c
-@@ -173,10 +173,6 @@ bool validate_config(struct config_params *p, struct e
+@@ -181,10 +181,6 @@ bool validate_config(struct config_params *p, struct e
          return false;
  #endif
      }
@@ -15,6 +15,15 @@ on terminals.
          p->om = OUTPUT_RAW;
          p->bar_spacing = 0;
 @@ -220,7 +216,7 @@ bool validate_config(struct config_params *p, struct e
+ #ifndef NCURSES
+         write_errorf(
+             error,
+-            "output method %s is not supported, supported methods are: 'noncurses' and 'raw'\n",
++            "output method %s is not supported, supported methods are: 'raw'\n",
+             outputMethod);
+         return false;
+ #endif
+@@ -228,7 +224,7 @@ bool validate_config(struct config_params *p, struct e
  #ifdef NCURSES
          write_errorf(error,
                       "output method %s is not supported, supported methods are: 'ncurses', "
@@ -23,12 +32,3 @@ on terminals.
                       outputMethod);
          return false;
  #endif
-@@ -408,7 +404,7 @@ bool load_config(char configPath[PATH_MAX], struct con
-     }
- 
- #ifdef NCURSES
--    outputMethod = (char *)iniparser_getstring(ini, "output:method", "noncurses");
-+    outputMethod = (char *)iniparser_getstring(ini, "output:method", "ncurses");
- #endif
- #ifndef NCURSES
-     outputMethod = (char *)iniparser_getstring(ini, "output:method", "noncurses");
