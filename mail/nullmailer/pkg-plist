@@ -2,10 +2,12 @@ libexec/nullmailer/smtp
 libexec/nullmailer/qmqp
 @(%%NULLMAIL_USER%%,,4555) libexec/nullmailer/mailq
 libexec/nullmailer/sendmail
+bin/nullmailer-dsn
 bin/nullmailer-inject
 bin/nullmailer-smtpd
 @(%%NULLMAIL_USER%%,,4555) sbin/nullmailer-queue
 sbin/nullmailer-send
+man/man1/nullmailer-dsn.1.gz
 man/man1/nullmailer-inject.1.gz
 man/man1/sendmail.1.gz
 man/man7/nullmailer.7.gz
@@ -13,10 +15,11 @@ man/man8/nullmailer-queue.8.gz
 man/man8/nullmailer-send.8.gz
 %%ETCDIR%%/me.sample
 %%ETCDIR%%/remotes.sample
-@dir(%%NULLMAIL_USER%%,%%NULLMAIL_USER%%,700) %%LOCALSTATEDIR%%/nullmailer/queue
-@dir(%%NULLMAIL_USER%%,%%NULLMAIL_USER%%,700) %%LOCALSTATEDIR%%/nullmailer/tmp
-@dir %%LOCALSTATEDIR%%/nullmailer
-@exec mkfifo %%LOCALSTATEDIR%%/nullmailer/trigger
-@exec chmod 600 %%LOCALSTATEDIR%%/nullmailer/trigger
-@exec chown %%NULLMAIL_USER%%:%%NULLMAIL_USER%% %%LOCALSTATEDIR%%/nullmailer/trigger
-@unexec rm -f %%LOCALSTATEDIR%%/nullmailer/trigger
+@dir(%%NULLMAIL_USER%%,%%NULLMAIL_USER%%,700) %%LOCALSTATEDIR%%/spool/nullmailer/failed
+@dir(%%NULLMAIL_USER%%,%%NULLMAIL_USER%%,700) %%LOCALSTATEDIR%%/spool/nullmailer/queue
+@dir(%%NULLMAIL_USER%%,%%NULLMAIL_USER%%,700) %%LOCALSTATEDIR%%/spool/nullmailer/tmp
+@dir %%LOCALSTATEDIR%%/spool/nullmailer
+@preexec mkfifo %%LOCALSTATEDIR%%/spool/nullmailer/trigger
+@preexec chmod 600 %%LOCALSTATEDIR%%/spool/nullmailer/trigger
+@preexec chown %%NULLMAIL_USER%%:%%NULLMAIL_USER%% %%LOCALSTATEDIR%%/spool/nullmailer/trigger
+@postunexec rm -f %%LOCALSTATEDIR%%/spool/nullmailer/trigger

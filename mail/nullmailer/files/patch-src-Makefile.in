@@ -1,31 +1,29 @@
---- src/Makefile.in.orig	2007-10-09 19:23:25.000000000 -0400
-+++ src/Makefile.in	2009-08-11 17:24:28.000000000 -0400
-@@ -30,10 +30,9 @@
+--- src/Makefile.in.orig	2018-10-12 20:49:36 UTC
++++ src/Makefile.in
+@@ -86,10 +86,10 @@ POST_INSTALL = :
  NORMAL_UNINSTALL = :
  PRE_UNINSTALL = :
  POST_UNINSTALL = :
--bin_PROGRAMS = mailq$(EXEEXT) nullmailer-inject$(EXEEXT) \
--	nullmailer-smtpd$(EXEEXT)
+-bin_PROGRAMS = mailq$(EXEEXT) nullmailer-dsn$(EXEEXT) \
++bin_PROGRAMS = nullmailer-dsn$(EXEEXT) \
+ 	nullmailer-inject$(EXEEXT) nullmailer-smtpd$(EXEEXT)
 -sbin_PROGRAMS = nullmailer-queue$(EXEEXT) nullmailer-send$(EXEEXT) \
 -	sendmail$(EXEEXT)
-+bin_PROGRAMS = nullmailer-inject$(EXEEXT) nullmailer-smtpd$(EXEEXT)
 +sbin_PROGRAMS = nullmailer-queue$(EXEEXT) nullmailer-send$(EXEEXT)
 +libexec_PROGRAMS = mailq$(EXEEXT) sendmail$(EXEEXT)
  subdir = src
- DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -46,7 +46,9 @@
+ am__aclocal_m4_deps = $(top_srcdir)/acinclude.m4 \
+@@ -102,7 +102,7 @@ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
  am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(sbindir)"
- binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
- sbinPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
 -PROGRAMS = $(bin_PROGRAMS) $(sbin_PROGRAMS)
-+libexecPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
-+
 +PROGRAMS = $(bin_PROGRAMS) $(sbin_PROGRAMS) $(libexec_PROGRAMS)
  am_mailq_OBJECTS = mailq.$(OBJEXT)
  mailq_OBJECTS = $(am_mailq_OBJECTS)
  mailq_DEPENDENCIES = ../lib/libnullmailer.a
-@@ -154,7 +156,7 @@
+@@ -268,7 +268,7 @@ includedir = @includedir@
  infodir = @infodir@
  install_sh = @install_sh@
  libdir = @libdir@
@@ -34,9 +32,9 @@
  localedir = @localedir@
  localstatedir = @localstatedir@
  mandir = @mandir@
-@@ -253,6 +255,31 @@
- 	  else :; fi; \
- 	done
+@@ -421,6 +421,31 @@ uninstall-sbinPROGRAMS:
+ clean-sbinPROGRAMS:
+ 	-test -z "$(sbin_PROGRAMS)" || rm -f $(sbin_PROGRAMS)
  
 +mostlyclean-libexecPROGRAMS:
 +
@@ -63,12 +61,12 @@
 +	rm -f $(DESTDIR)$(libexecdir)/`echo $$p|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`; \
 +	done
 +
- uninstall-sbinPROGRAMS:
- 	@$(NORMAL_UNINSTALL)
- 	@list='$(sbin_PROGRAMS)'; for p in $$list; do \
-@@ -435,7 +462,7 @@
+ mailq$(EXEEXT): $(mailq_OBJECTS) $(mailq_DEPENDENCIES) $(EXTRA_mailq_DEPENDENCIES) 
+ 	@rm -f mailq$(EXEEXT)
+ 	$(AM_V_CXXLD)$(CXXLINK) $(mailq_OBJECTS) $(mailq_LDADD) $(LIBS)
+@@ -625,7 +650,7 @@ install-dvi: install-dvi-am
  
- install-dvi: install-dvi-am
+ install-dvi-am:
  
 -install-exec-am: install-binPROGRAMS install-sbinPROGRAMS
 +install-exec-am: install-binPROGRAMS install-sbinPROGRAMS install-libexecPROGRAMS
