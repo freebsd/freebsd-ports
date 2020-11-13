@@ -45,6 +45,7 @@ lib/libhandy-1.so.0
 libdata/pkgconfig/libhandy-1.pc
 share/gir-1.0/Handy-1.gir
 share/glade/catalogs/libhandy-1.xml
+share/locale/ca/LC_MESSAGES/libhandy.mo
 share/locale/en_GB/LC_MESSAGES/libhandy.mo
 share/locale/es/LC_MESSAGES/libhandy.mo
 share/locale/eu/LC_MESSAGES/libhandy.mo
