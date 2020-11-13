@@ -1,5 +1,3 @@
 bin/cscope
 bin/ocs
 man/man1/cscope.1.gz
-%%XCSCOPE%%bin/cscope-indexer
-%%XCSCOPE%%share/emacs/site-lisp/xcscope.el

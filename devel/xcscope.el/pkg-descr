@@ -1,0 +1,4 @@
+xcscope is a wrapper around cscope that can be used to navigate source
+files in GNU Emacs.
+
+WWW: https://github.com/dkogan/xcscope.el

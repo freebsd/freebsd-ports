@@ -6831,6 +6831,7 @@
     SUBDIR += xa65
     SUBDIR += xbyak
     SUBDIR += xc3sprog
+    SUBDIR += xcscope.el
     SUBDIR += xdg-user-dirs
     SUBDIR += xdg-utils
     SUBDIR += xdgpaths
