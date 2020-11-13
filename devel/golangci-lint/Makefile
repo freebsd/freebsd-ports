@@ -2,7 +2,7 @@
 
 PORTNAME=	golangci-lint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.32.0
+DISTVERSION=	1.32.2
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -24,7 +24,7 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		denis-tingajkin:go-header:v0.3.1:denis_tingajkin_go_header/vendor/github.com/denis-tingajkin/go-header \
 		dominikh:go-tools:v0.0.1-2020.1.6:dominikh_go_tools/vendor/honnef.co/go/tools \
-		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
+		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-critic:go-critic:v0.5.2:go_critic_go_critic/vendor/github.com/go-critic/go-critic \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
@@ -75,7 +75,7 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		matoous:godox:5d6d842e92eb:matoous_godox/vendor/github.com/matoous/godox \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mbilski:exhaustivestruct:v1.0.1:mbilski_exhaustivestruct/vendor/github.com/mbilski/exhaustivestruct \
+		mbilski:exhaustivestruct:v1.1.0:mbilski_exhaustivestruct/vendor/github.com/mbilski/exhaustivestruct \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:go-ps:v1.0.0:mitchellh_go_ps/vendor/github.com/mitchellh/go-ps \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
@@ -96,7 +96,7 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		quasilyte:regex:30656e2c4a95:quasilyte_regex_syntax/vendor/github.com/quasilyte/regex \
 		ryancurrah:gomodguard:v1.1.0:ryancurrah_gomodguard/vendor/github.com/ryancurrah/gomodguard \
 		ryanrolds:sqlclosecheck:v0.3.0:ryanrolds_sqlclosecheck/vendor/github.com/ryanrolds/sqlclosecheck \
-		securego:gosec:v2.4.0:securego_gosec_v2/vendor/github.com/securego/gosec/v2 \
+		securego:gosec:v2.5.0:securego_gosec_v2/vendor/github.com/securego/gosec/v2 \
 		shazow:go-diff:b6b7b6733b8c:shazow_go_diff/vendor/github.com/shazow/go-diff \
 		shirou:gopsutil:e4ec7b275ada:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
 		shirou:w32:bb4de0191aa4:shirou_w32/vendor/github.com/shirou/w32 \
