@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octopkg
-PORTVERSION=	0.2.0
-PORTREVISION=	7
+PORTVERSION=	0.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	ports-mgmt
 
@@ -13,23 +12,38 @@ COMMENT=	Graphical front-end to the FreeBSD pkg-ng package manager
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		qmake compiler:c++11-lib qt:5
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	aarnt
 
-USE_QT=		core concurrent declarative gui network xml widgets concurrent \
+USE_QT=		core concurrent declarative gui linguist network xml widgets \
 		buildtools_build
-USES=		qmake compiler:c++11-lib qt:5
 
-PLIST_FILES=	bin/${PORTNAME} share/pixmaps/octopi_green.png
+PLIST_FILES=	bin/${PORTNAME} \
+		lib/${PORTNAME}/${PORTNAME}-doas \
+		share/applications/${PORTNAME}.desktop
 
-DESKTOP_ENTRIES=	"OctoPkg" "A powerful pkgng front-end" \
-			"${PREFIX}/share/pixmaps/octopi_green.png" \
-			"${PORTNAME}" "System;" false
+post-patch:
+	${REINPLACE_CMD} 's#/usr/lib#${PREFIX}/lib#' \
+		${WRKSRC}/src/strconstants.cpp
+	${REINPLACE_CMD} 's#/usr/local#${PREFIX}#' \
+		${WRKSRC}/src/constants.h \
+		${WRKSRC}/src/main.cpp
+
+do-configure:
+	cd ${WRKSRC} && ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS}
+	cd ${WRKSRC}/doas && ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS}
+
+do-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
+	cd ${WRKSRC}/doas && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/resources/images/octopi_green.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_PROGRAM} ${WRKSRC}/doas/${PORTNAME}-doas ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
 
 .include <bsd.port.mk>
