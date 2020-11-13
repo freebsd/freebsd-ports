@@ -993,8 +993,13 @@ man/man7/WITH.7.gz
 %%NLS%%share/locale/ru/LC_MESSAGES/pg_dump-9.5.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pgscripts-9.5.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/psql-9.5.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/ecpg-9.5.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/ecpglib6-9.5.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/libpq5-9.5.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pg_config-9.5.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/pg_dump-9.5.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pgscripts-9.5.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/psql-9.5.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/pg_config-9.5.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/ecpg-9.5.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/ecpglib6-9.5.mo
