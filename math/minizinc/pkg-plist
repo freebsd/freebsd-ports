@@ -674,6 +674,7 @@ lib/libmzn.so
 %%DATADIR%%/std/redefinitions-2.1.mzn
 %%DATADIR%%/std/redefinitions-2.2.1.mzn
 %%DATADIR%%/std/redefinitions-2.3.3.mzn
+%%DATADIR%%/std/redefinitions-2.5.2.mzn
 %%DATADIR%%/std/redefinitions.mzn
 %%DATADIR%%/std/regular.mzn
 %%DATADIR%%/std/regular_nfa.mzn
