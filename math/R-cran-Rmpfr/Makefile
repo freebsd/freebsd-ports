@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Rmpfr
-DISTVERSION=	0.8-1
-PORTREVISION=	1
+DISTVERSION=	0.8-2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,7 +11,7 @@ COMMENT=	R wrapper for the mpfr multiple precision library
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-gmp>=0.5.8:math/R-cran-gmp
+CRAN_DEPENDS=	R-cran-gmp>=0.6.1:math/R-cran-gmp
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 BUILD_DEPENDS=	${CRAN_DEPENDS}
