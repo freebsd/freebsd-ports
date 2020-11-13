@@ -28,6 +28,8 @@ CONFIGURE_ARGS=	--disable-ipcmk --disable-ipcrm --disable-ipcs --disable-makeins
 
 INSTALL_TARGET=	install-strip
 
+CONFLICTS_INSTALL=	cal
+
 OPTIONS_DEFINE=		UUID
 OPTIONS_SUB=		yes
 

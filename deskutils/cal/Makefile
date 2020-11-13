@@ -19,6 +19,8 @@ CFLAGS+=	-DPREFIX='"${ETCDIR}"' -DUSE_REMINDER
 
 PORTDOCS=	readme.cal
 
+CONFLICTS_INSTALL=	util-linux
+
 OPTIONS_DEFINE=	DOCS
 
 do-build:
