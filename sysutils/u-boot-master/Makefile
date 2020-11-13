@@ -173,6 +173,13 @@ PLIST_FILES+=	${UBOOT_DIR}/${i}
 .endfor
 PLIST_FILES+=	${UBOOT_DIR}/README
 
+.if defined(PLIST_EXTRAS)
+.for i in ${PLIST_EXTRAS}
+PLIST_FILES+=	${UBOOT_DIR}/${i}
+.endfor
+.endif
+
+.if !defined(NO_METADATA)
 .if defined(UBOOT_METADATA_${FAMILY:tu}_METHOD)
 METADATA_METHOD=${UBOOT_METADATA_${FAMILY:tu}_METHOD}
 METADATA_FILES=${UBOOT_METADATA_${FAMILY:tu}_FILES}
@@ -184,6 +191,7 @@ METADATA_BS=${UBOOT_METADATA_${FAMILY:tu}_RAW_BS}
 .elif ${METADATA_METHOD} == "file"
 .else
 .error "Unsupported METADATA_METHOD"
+.endif
 .endif
 .endif
 

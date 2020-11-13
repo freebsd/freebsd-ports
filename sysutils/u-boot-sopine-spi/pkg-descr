@@ -1,0 +1,18 @@
+U-Boot loader and related files for the Sopine SPI Flash.
+
+To install this bootloader on the spi flash just do from a running sopine system:
+dd if=/usr/local/share/u-boot/u-boot-sopine-spi/u-boot-sunxi-with-spl.bin of=/dev/flash/spi0 bs=64k conv=sync
+
+U-boot environment variables are save in the flash and not in the fat partition.
+
+You can also use the flasher image
+dd if=/usr/local/share/u-boot/u-boot-sopine-spi/sopine-spi-flasher.img of=/path/to/sdcard
+Boot the sdcard on the sopine/pine64-lts and it will erase and populate the spi flash
+with this u-boot.
+Since there is no led that we can flash do indicate that flashing is done the best way to
+know it to connect an uart adapter or hdmi monitor.
+
+For information about running FreeBSD on Allwinner boards, see
+ https://wiki.freebsd.org/FreeBSD/arm/Allwinner
+
+WWW: https://www.denx.de/wiki/U-Boot
