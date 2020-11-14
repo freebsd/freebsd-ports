@@ -31,7 +31,7 @@ GNU_CONFIGURE=	yes
 USES=		autoreconf cpe gmake gnome libtool localbase shebangfix ssl
 USE_GNOME=	libxml2
 SHEBANG_FILES=	examples/remake_outputs.pl
-CFLAGS+=	-Wno-return-type
+CFLAGS+=	-Wno-return-type -fcommon
 # EXAMPLESDIR=	${PREFIX}/share/examples/cfengine3
 DOCSDIR=	${PREFIX}/share/doc/cfengine
 MAKE_ENV=	EXPLICIT_VERSION=${PORTVERSION}
