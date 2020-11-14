@@ -9,17 +9,21 @@
 @sample %%ETCDIR%%/settings.d/dns_nsupdate.yml.sample
 @sample %%ETCDIR%%/settings.d/dns_nsupdate_gss.yml.sample
 @sample %%ETCDIR%%/settings.d/facts.yml.sample
+@sample %%ETCDIR%%/settings.d/httpboot.yml.sample
 @sample %%ETCDIR%%/settings.d/logs.yml.sample
 @sample %%ETCDIR%%/settings.d/puppet.yml.sample
 @sample %%ETCDIR%%/settings.d/puppet_proxy_customrun.yml.sample
-@sample %%ETCDIR%%/settings.d/puppet_proxy_legacy.yml.sample
 @sample %%ETCDIR%%/settings.d/puppet_proxy_mcollective.yml.sample
 @sample %%ETCDIR%%/settings.d/puppet_proxy_puppet_api.yml.sample
-@sample %%ETCDIR%%/settings.d/puppet_proxy_puppetrun.yml.sample
 @sample %%ETCDIR%%/settings.d/puppet_proxy_salt.yml.sample
 @sample %%ETCDIR%%/settings.d/puppet_proxy_ssh.yml.sample
 @sample %%ETCDIR%%/settings.d/puppetca.yml.sample
+@sample %%ETCDIR%%/settings.d/puppetca_hostname_whitelisting.yml.sample
+@sample %%ETCDIR%%/settings.d/puppetca_http_api.yml.sample
+@sample %%ETCDIR%%/settings.d/puppetca_puppet_cert.yml.sample
+@sample %%ETCDIR%%/settings.d/puppetca_token_whitelisting.yml.sample
 @sample %%ETCDIR%%/settings.d/realm.yml.sample
+@sample %%ETCDIR%%/settings.d/realm_freeipa.yml.sample
 @sample %%ETCDIR%%/settings.d/templates.yml.sample
 @sample %%ETCDIR%%/settings.d/tftp.yml.sample
 @sample %%ETCDIR%%/settings.yml.sample
@@ -37,7 +41,6 @@ sbin/smart-proxy
 %%DATADIR%%/bundler.d/journald.rb
 %%DATADIR%%/bundler.d/krb5.rb
 %%DATADIR%%/bundler.d/libvirt.rb
-%%DATADIR%%/bundler.d/puppet.rb
 %%DATADIR%%/bundler.d/puppetca_token_whitelisting.rb
 %%DATADIR%%/bundler.d/realm_freeipa.rb
 %%DATADIR%%/bundler.d/test.rb
@@ -54,11 +57,11 @@ sbin/smart-proxy
 %%DATADIR%%/extra/migrations/20161209000000_migrate_realm_settings.rb
 %%DATADIR%%/extra/migrations/20170523000000_migrate_autosign_setting.rb
 %%DATADIR%%/extra/migrations/2018062000000_migrate_puppetca_settings.rb
+%%DATADIR%%/extra/migrations/20181016000000_migrate_puppetca_puppet_cert_settings.rb
 %%DATADIR%%/extra/query.rb
 %%DATADIR%%/extra/register-service.rb
 %%DATADIR%%/lib/bundler_helper.rb
-%%DATADIR%%/lib/checks.rb
-%%DATADIR%%/lib/daemon.rb
+%%DATADIR%%/lib/hash-patch.rb
 %%DATADIR%%/lib/launcher.rb
 %%DATADIR%%/lib/proxy/default_di_wirings.rb
 %%DATADIR%%/lib/proxy/default_plugin_validators.rb
@@ -67,8 +70,6 @@ sbin/smart-proxy
 %%DATADIR%%/lib/proxy/file_lock.rb
 %%DATADIR%%/lib/proxy/helpers.rb
 %%DATADIR%%/lib/proxy/http_download.rb
-%%DATADIR%%/lib/proxy/http_download.rb.bak
-%%DATADIR%%/lib/proxy/http_download.rb.orig
 %%DATADIR%%/lib/proxy/kerberos.rb
 %%DATADIR%%/lib/proxy/log.rb
 %%DATADIR%%/lib/proxy/log_buffer/buffer.rb
@@ -92,7 +93,6 @@ sbin/smart-proxy
 %%DATADIR%%/lib/proxy/signal_handler.rb
 %%DATADIR%%/lib/proxy/util.rb
 %%DATADIR%%/lib/proxy/validations.rb
-%%DATADIR%%/lib/rack-patch.rb
 %%DATADIR%%/lib/sinatra/authorization.rb
 %%DATADIR%%/lib/sinatra/default_not_found_page.rb
 %%DATADIR%%/lib/smart_proxy.rb
@@ -199,18 +199,6 @@ sbin/smart-proxy
 %%DATADIR%%/modules/puppet_proxy_customrun/plugin_configuration.rb
 %%DATADIR%%/modules/puppet_proxy_customrun/puppet_proxy_customrun.rb
 %%DATADIR%%/modules/puppet_proxy_customrun/puppet_proxy_customrun_plugin.rb
-%%DATADIR%%/modules/puppet_proxy_legacy/class_scanner.rb
-%%DATADIR%%/modules/puppet_proxy_legacy/class_scanner_base.rb
-%%DATADIR%%/modules/puppet_proxy_legacy/class_scanner_eparser.rb
-%%DATADIR%%/modules/puppet_proxy_legacy/environments_api_request.rb
-%%DATADIR%%/modules/puppet_proxy_legacy/initializer.rb
-%%DATADIR%%/modules/puppet_proxy_legacy/plugin_configuration.rb
-%%DATADIR%%/modules/puppet_proxy_legacy/puppet_api_v2_environments_retriever.rb
-%%DATADIR%%/modules/puppet_proxy_legacy/puppet_cache.rb
-%%DATADIR%%/modules/puppet_proxy_legacy/puppet_config.rb
-%%DATADIR%%/modules/puppet_proxy_legacy/puppet_config_environments_retriever.rb
-%%DATADIR%%/modules/puppet_proxy_legacy/puppet_proxy_legacy.rb
-%%DATADIR%%/modules/puppet_proxy_legacy/puppet_proxy_legacy_plugin.rb
 %%DATADIR%%/modules/puppet_proxy_mcollective/mcollective_main.rb
 %%DATADIR%%/modules/puppet_proxy_mcollective/plugin_configuration.rb
 %%DATADIR%%/modules/puppet_proxy_mcollective/puppet_proxy_mcollective.rb
@@ -219,13 +207,8 @@ sbin/smart-proxy
 %%DATADIR%%/modules/puppet_proxy_puppet_api/puppet_proxy_puppet_api.rb
 %%DATADIR%%/modules/puppet_proxy_puppet_api/puppet_proxy_puppet_api_plugin.rb
 %%DATADIR%%/modules/puppet_proxy_puppet_api/v3_api_request.rb
-%%DATADIR%%/modules/puppet_proxy_puppet_api/v3_classes_retriever.rb
 %%DATADIR%%/modules/puppet_proxy_puppet_api/v3_environment_classes_api_classes_retriever.rb
 %%DATADIR%%/modules/puppet_proxy_puppet_api/v3_environments_retriever.rb
-%%DATADIR%%/modules/puppet_proxy_puppetrun/plugin_configuration.rb
-%%DATADIR%%/modules/puppet_proxy_puppetrun/puppet_proxy_puppetrun.rb
-%%DATADIR%%/modules/puppet_proxy_puppetrun/puppet_proxy_puppetrun_plugin.rb
-%%DATADIR%%/modules/puppet_proxy_puppetrun/puppetrun_main.rb
 %%DATADIR%%/modules/puppet_proxy_salt/plugin_configuration.rb
 %%DATADIR%%/modules/puppet_proxy_salt/puppet_proxy_salt.rb
 %%DATADIR%%/modules/puppet_proxy_salt/puppet_proxy_salt_plugin.rb
@@ -240,11 +223,19 @@ sbin/smart-proxy
 %%DATADIR%%/modules/puppetca/puppetca.rb
 %%DATADIR%%/modules/puppetca/puppetca_api.rb
 %%DATADIR%%/modules/puppetca/puppetca_plugin.rb
-%%DATADIR%%/modules/puppetca/puppetca_puppet_cert.rb
 %%DATADIR%%/modules/puppetca_hostname_whitelisting/plugin_configuration.rb
 %%DATADIR%%/modules/puppetca_hostname_whitelisting/puppetca_hostname_whitelisting.rb
 %%DATADIR%%/modules/puppetca_hostname_whitelisting/puppetca_hostname_whitelisting_autosigner.rb
 %%DATADIR%%/modules/puppetca_hostname_whitelisting/puppetca_hostname_whitelisting_plugin.rb
+%%DATADIR%%/modules/puppetca_http_api/ca_v1_api_request.rb
+%%DATADIR%%/modules/puppetca_http_api/plugin_configuration.rb
+%%DATADIR%%/modules/puppetca_http_api/puppetca_http_api.rb
+%%DATADIR%%/modules/puppetca_http_api/puppetca_http_api_plugin.rb
+%%DATADIR%%/modules/puppetca_http_api/puppetca_impl.rb
+%%DATADIR%%/modules/puppetca_puppet_cert/plugin_configuration.rb
+%%DATADIR%%/modules/puppetca_puppet_cert/puppetca_impl.rb
+%%DATADIR%%/modules/puppetca_puppet_cert/puppetca_puppet_cert.rb
+%%DATADIR%%/modules/puppetca_puppet_cert/puppetca_puppet_cert_plugin.rb
 %%DATADIR%%/modules/puppetca_token_whitelisting/plugin_configuration.rb
 %%DATADIR%%/modules/puppetca_token_whitelisting/puppetca_token_whitelisting.rb
 %%DATADIR%%/modules/puppetca_token_whitelisting/puppetca_token_whitelisting_autosigner.rb
@@ -267,11 +258,15 @@ sbin/smart-proxy
 %%DATADIR%%/modules/root/root_api.rb
 %%DATADIR%%/modules/root/root_module_loader.rb
 %%DATADIR%%/modules/root/root_plugin.rb
+%%DATADIR%%/modules/root/root_v2_api.rb
 %%DATADIR%%/modules/templates/http_config.ru
+%%DATADIR%%/modules/templates/proxy_request.rb
 %%DATADIR%%/modules/templates/template_proxy_request.rb
 %%DATADIR%%/modules/templates/templates.rb
-%%DATADIR%%/modules/templates/templates_api.rb
 %%DATADIR%%/modules/templates/templates_plugin.rb
+%%DATADIR%%/modules/templates/templates_unattended_api.rb
+%%DATADIR%%/modules/templates/templates_userdata_api.rb
+%%DATADIR%%/modules/templates/userdata_proxy_request.rb
 %%DATADIR%%/modules/tftp/http_config.ru
 %%DATADIR%%/modules/tftp/server.rb
 %%DATADIR%%/modules/tftp/tftp.rb

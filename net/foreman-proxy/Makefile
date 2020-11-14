@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	1.21.2
+PORTVERSION=	1.23.2
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.theforeman.org/foreman-proxy/
 
@@ -12,7 +12,9 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bundler_ext>=0.4:sysutils/rubygem-bundler_ext \
+		rubygem-concurrent-ruby>=1.0:devel/rubygem-concurrent-ruby \
 		rubygem-json>=1.8.1:devel/rubygem-json \
+		rubygem-logging>=0:devel/rubygem-logging \
 		rubygem-rack>=2.0:www/rubygem-rack \
 		rubygem-rb-kqueue>=0.2.2:devel/rubygem-rb-kqueue \
 		rubygem-rsec>=0.4.3:devel/rubygem-rsec \
@@ -86,11 +88,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config/settings.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.yml.sample
 .for cfg in bmc dhcp_isc dhcp_libvirt dhcp_native_ms dhcp dns_dnscmd \
-	dns_libvirt dns_nsupdate_gss dns_nsupdate dns facts logs \
-	puppet_proxy_customrun puppet_proxy_legacy \
-	puppet_proxy_mcollective puppet_proxy_puppet_api \
-	puppet_proxy_puppetrun puppet_proxy_salt puppet_proxy_ssh puppet \
-	puppetca realm templates tftp
+	dns_libvirt dns_nsupdate_gss dns_nsupdate dns facts httpboot \
+	logs puppet_proxy_customrun puppet_proxy_mcollective \
+	puppet_proxy_puppet_api puppet_proxy_salt puppet_proxy_ssh puppet \
+	puppetca_hostname_whitelisting puppetca_http_api \
+	puppetca_puppet_cert puppetca_token_whitelisting \
+	puppetca realm_freeipa realm templates tftp
 	${INSTALL_DATA} ${WRKSRC}/config/settings.d/${cfg}.yml.example \
 		${STAGEDIR}${PREFIX}/etc/foreman-proxy/settings.d/${cfg}.yml.sample
 .endfor
