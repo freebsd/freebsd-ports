@@ -24,6 +24,8 @@ USE_GITHUB=	yes
 GH_PROJECT=	v2
 GH_TUPLE=	PuerkitoBio:goquery:v1.6.0:goquery/vendor/github.com/PuerkitoBio/goquery \
 		andybalholm:cascadia:v1.1.0:cascadia/vendor/github.com/andybalholm/cascadia \
+		beorn7:perks:v1.0.1:perks/vendor/github.com/beorn7/perks \
+		cespare:xxhash:v2.1.1:xxhash/vendor/github.com/cespare/xxhash/v2 \
 		coreos:go-oidc:v2.2.1:go_oidc/vendor/github.com/coreos/go-oidc \
 		golang:crypto:75b288015ac9:crypto/vendor/golang.org/x/crypto \
 		golang:net:28c70e62bb1d:net/vendor/golang.org/x/net	\
@@ -31,8 +33,9 @@ GH_TUPLE=	PuerkitoBio:goquery:v1.6.0:goquery/vendor/github.com/PuerkitoBio/goque
 		golang:protobuf:v1.4.3:protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:e3ed0017c211:sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:text/vendor/golang.org/x/text \
-		gorilla:mux:v1.7.4:gorilla/vendor/github.com/gorilla/mux \
+		gorilla:mux:v1.8.0:gorilla/vendor/github.com/gorilla/mux \
 		lib:pq:v1.8.0:pq/vendor/github.com/lib/pq \
+		matttproud:golang_protobuf_extensions:v1.0.1:protobuf_ext/vendor/github.com/matttproud/golang_protobuf_extensions \
 		pquerna:cachecontrol:1555304b9b35:cachecontrol/vendor/github.com/pquerna/cachecontrol \
 		protocolbuffers:protobuf-go:v1.25.0:protobuf_go/vendor/google.golang.org/protobuf \
 		prometheus:client_golang:v1.8.0:client_golang/vendor/github.com/prometheus/client_golang \
