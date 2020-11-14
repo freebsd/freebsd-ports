@@ -1,0 +1,12 @@
+--- tools/translatesieve.orig	2020-10-04 23:31:24 UTC
++++ tools/translatesieve
+@@ -204,6 +204,9 @@ if ($altnamespace > $OPT_WasAlt) {
+ chdir $sievedir or die "couldn't change to $sievedir";
+ opendir (H, ".");
+ while (my $i = readdir H) {
++    if ($i eq "." || $i eq "..") {
++        next;
++    }
+     if (-d $i) {
+         if (! chdir $i) {
+             ouch "couldn't chdir to $i";

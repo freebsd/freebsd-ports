@@ -18,13 +18,16 @@ cyrus/libexec/imapd
 cyrus/libexec/lmtpd
 cyrus/libexec/lmtpproxyd
 cyrus/libexec/master
+%%MURDER%%cyrus/libexec/mupdate
 %%NNTP%%cyrus/libexec/nntpd
 cyrus/libexec/notifyd
 cyrus/libexec/pop3d
 cyrus/libexec/pop3proxyd
 cyrus/libexec/promstatsd
 cyrus/libexec/proxyd
+%%LDAP%%cyrus/libexec/ptloader
 cyrus/libexec/smmapd
+%%REPLICATION%%cyrus/libexec/sync_server
 cyrus/libexec/timsieved
 cyrus/sbin/arbitron
 cyrus/sbin/chk_cyrus
@@ -57,10 +60,8 @@ cyrus/sbin/mbexamine
 cyrus/sbin/mbpath
 cyrus/sbin/mbtool
 cyrus/sbin/mkimap
-%%MURDER%%cyrus/libexec/mupdate
 %%LDAP%%cyrus/sbin/ptdump
 %%LDAP%%cyrus/sbin/ptexpire
-%%LDAP%%cyrus/libexec/ptloader
 cyrus/sbin/quota
 cyrus/sbin/reconstruct
 %%BACKUP%%cyrus/sbin/restore
@@ -69,8 +70,8 @@ cyrus/sbin/sieved
 %%SQUATTER%%cyrus/sbin/squatter
 %%REPLICATION%%cyrus/sbin/sync_client
 %%REPLICATION%%cyrus/sbin/sync_reset
-%%REPLICATION%%cyrus/libexec/sync_server
 cyrus/sbin/tls_prune
+cyrus/sbin/translatesieve
 cyrus/sbin/unexpunge
 etc/man.d/cyrus-imapd.conf
 include/cyrus/acl.h
