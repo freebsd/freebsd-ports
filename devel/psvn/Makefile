@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 DISTNAME=	psvn.el
 EXTRACT_SUFX=	# empty
 
-MAINTAINER=	yasu@utahime.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subversion interface for Emacs
 
 LICENSE=	GPLv2+
