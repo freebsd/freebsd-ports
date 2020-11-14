@@ -3,7 +3,7 @@
 
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=		${PORTNAME}
@@ -25,9 +25,9 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 CONFLICTS=	kicad-4.*
 
-USE_GITLAB=     yes
-GL_ACCOUNT=     kicad
-GL_PROJECT=     code/kicad
+USE_GITLAB=	yes
+GL_ACCOUNT=	kicad
+GL_PROJECT=	code/kicad
 GL_COMMIT=	${GIT_SRC_HASH}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GL_COMMIT}-${GL_COMMIT}
 
@@ -71,9 +71,8 @@ CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DKICAD_USE_OCE=OFF \
 		-DKICAD_USE_OCC=ON \
 		-DOCC_INCLUDE_DIR=${LOCALBASE}/include/OpenCASCADE
-USE_LDCONFIG=   yes
-INSTALLS_ICONS= yes
-
+USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
 .include "Makefile.git_rev"
 

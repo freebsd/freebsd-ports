@@ -3,6 +3,7 @@
 
 PORTNAME=	elmerfem
 PORTVERSION=	8.4.20200708
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	henrik@gulbra.net
