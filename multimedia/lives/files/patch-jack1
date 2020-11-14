@@ -1,0 +1,96 @@
+--- configure.ac.orig
++++ configure.ac
+@@ -240,6 +240,7 @@ AM_CONDITIONAL(HAVE_LINUX_JOYSTICK_H, $HAVE_LINUX_JOYSTICK_H)
+ HAVE_JACK=false
+ HAVE_JACK_SERVER=false
+ HAVE_JACK_TRANSPORT=false
++JACK_V2=false
+ 
+ AC_ARG_ENABLE(jack, [  --disable-jack     Disable jack support.] , disable_jack=yes)
+ AC_ARG_ENABLE(jack-transport, [  --disable-jack-transport     Disable jack transport support.] , disable_jack_transport=yes)
+@@ -252,10 +253,23 @@ PKG_CHECK_MODULES(JACK, [jack >= 0.100.0], HAVE_JACK=true, HAVE_JACK=false)
+ 
+ if test "$HAVE_JACK" = "true" ; then
+ 
++PKG_CHECK_MODULES(JACK_V2, [jack >= 1.0.0], JACK_V2=true, JACK_V2=false)
++
++if test "$JACK_V2" = "true"; then
+ JACK_SERVER_LIBS=`$PKG_CONFIG --variable=server_libs jack`
+ 
+ if test "$JACK_SERVER_LIBS" != ""; then
+ HAVE_JACK_SERVER=true
++fi
++
++else
++AC_CHECK_HEADERS(jack/control.h, HAVE_JACK_SERVER=true, HAVE_JACK_SERVER=false)
++if test "$HAVE_JACK_SERVER" = "true"; then
++JACK_SERVER_LIBS=-ljackserver
++fi
++fi
++
++if test "$HAVE_JACK_SERVER" = "true"; then
+ echo jack server libs found
+ else
+ echo jack server libs not found
+@@ -308,6 +322,7 @@ HAVE_JACK_VIDEO=true
+ AM_CONDITIONAL(ENABLE_JACK,$HAVE_JACK)
+ AM_CONDITIONAL(ENABLE_JACK_TRANSPORT,$HAVE_JACK_TRANSPORT)
+ AM_CONDITIONAL(ENABLE_VJACK,$HAVE_JACK_VIDEO)
++AM_CONDITIONAL(JACK_V2,$JACK_V2)
+ 
+ PKG_CHECK_MODULES(X11,x11,HAVE_X11=true,HAVE_X11=false)
+ 
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -92,6 +92,10 @@ jack_LDADD = @JACK_LIBS@ @JACK_SERVER_LIBS@
+ if ENABLE_JACK_TRANSPORT
+ jack_CFLAGS += -DENABLE_JACK_TRANSPORT=1
+ endif
++
++if JACK_V2
++jack_CFLAGS += -DJACK_V2=1
++endif
+ endif
+ 
+ if ENABLE_LIBOIL
+--- src/jack.c.orig
++++ src/jack.c
+@@ -121,6 +121,7 @@ boolean lives_jack_init(void) {
+       return FALSE;
+     }
+ 
++#ifdef JACK_V2
+     if (!jackctl_server_open(jackserver, driver)) {
+       LIVES_ERROR("Could not create the driver for jack");
+       return FALSE;
+@@ -130,6 +131,12 @@ boolean lives_jack_init(void) {
+       LIVES_ERROR("Could not start the jack server");
+       return FALSE;
+     }
++#else
++    if (!jackctl_server_start(jackserver, driver)) {
++      LIVES_ERROR("Could not create / start the driver for jack");
++      return FALSE;
++    }
++#endif
+   }
+ 
+   mainw->jack_inited = TRUE;
+@@ -1061,7 +1068,7 @@ int lives_start_ready_callback(jack_transport_state_t state, jack_position_t *po
+   if (!jack_transport_client) return TRUE;
+ 
+   if (!LIVES_IS_PLAYING && state == JackTransportStopped) {
+-    if (prefs->jack_opts && JACK_OPTS_TIMEBASE_CLIENT) {
++    if (prefs->jack_opts & JACK_OPTS_TIMEBASE_CLIENT) {
+       double trtime = (double)jack_transport_get_current_ticks() / TICKS_PER_SECOND_DBL;
+       if (!mainw->multitrack) {
+ #ifndef ENABLE_GIW_3
+@@ -1077,7 +1084,7 @@ int lives_start_ready_callback(jack_transport_state_t state, jack_position_t *po
+ 
+   if (state != JackTransportStarting) return TRUE;
+ 
+-  if (LIVES_IS_PLAYING && prefs->jack_opts & JACK_OPTS_TIMEBASE_CLIENT) {
++  if (LIVES_IS_PLAYING && (prefs->jack_opts & JACK_OPTS_TIMEBASE_CLIENT)) {
+     // trigger audio resync
+     mainw->scratch = SCRATCH_JUMP;
+   }
