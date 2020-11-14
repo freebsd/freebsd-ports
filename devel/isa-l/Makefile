@@ -6,7 +6,7 @@ PORTVERSION=	2.21.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	m.bielicki@lizardfs.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intel(R) Intelligent Storage Acceleration Libray
 
 LICENSE=	BSD3CLAUSE
