@@ -2,8 +2,8 @@
 
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	1.20.0-752
-DISTVERSIONSUFFIX=	-gdf3aa4922
+DISTVERSION=	1.20.0-755
+DISTVERSIONSUFFIX=	-g28ed4b95e
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
@@ -42,7 +42,8 @@ MESON_ARGS=	-Dxwayland=true \
 		-Dudev_kms=false \
 		-Ddefault_font_path="${DEFAULT_FONTPATH_LIST:ts,}"
 PLIST_FILES=	bin/Xwayland \
-		libdata/pkgconfig/xwayland.pc
+		libdata/pkgconfig/xwayland.pc \
+		man/man1/Xwayland.1.gz
 
 # Keep in sync with xorg-server
 FONTPATH_ROOT?=	${LOCALBASE}/share/fonts
@@ -68,5 +69,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${BUILD_WRKSRC}/hw/xwayland/xwayland.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_MAN} ${BUILD_WRKSRC}/hw/xwayland/Xwayland.1 \
+		${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
