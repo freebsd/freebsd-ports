@@ -28,7 +28,8 @@ RUN_DEPENDS=	analyseplugin:audio/ladspa \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		autoreconf compiler:c++11-lib gettext-runtime gettext-tools \			gl gnome libtool localbase pathfix perl5 pkgconfig python \
+USES=		autoreconf compiler:c++11-lib gettext-runtime gettext-tools \
+		gl gnome libtool localbase pathfix perl5 pkgconfig python \
 		sdl shebangfix xorg
 SHEBANG_FILES=	build-lives-rfx-plugin build-lives-rfx-plugin-multi smogrify \
 		tools/autolives.pl lives-plugins/plugins/encoders/*_encoder \
