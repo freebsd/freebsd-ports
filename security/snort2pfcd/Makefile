@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcidr.so:devel/libcidr
 RUN_DEPENDS=	snort:security/snort
 
+USES=		compiler:c11
 USE_RC_SUBR=	snort2pfcd
 PLIST_FILES=	man/man8/snort2pfcd.8.gz \
 		sbin/snort2pfcd
