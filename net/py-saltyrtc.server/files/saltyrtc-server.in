@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: saltyrtc_server
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# saltyrtc_server_enable	(bool)	Default: NO
+# saltyrtc_server_key		(str)	Default: %%ETCDIR%%/key
+# saltyrtc_server_dhp		(str)	Default: %%ETCDIR%%/dhparam.pem
+# saltyrtc_server_tlskey	(str)	Default: %%ETCDIR%%/tls.key
+# saltyrtc_server_tlscrt	(str)	Default: %%ETCDIR%%/tls.crt
+# saltyrtc_server_host		(str)	Default: 0.0.0.0
+# saltyrtc_server_port		(int)	Default: 443
+#
+
+. /etc/rc.subr
+
+name="saltyrtc_server"
+rcvar="${name}_enable"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_interpreter="%%PYTHON_CMD%%"
+procname="%%PREFIX%%/bin/saltyrtc-server"
+
+start_precmd="${name}_precmd"
+
+load_rc_config $name
+
+: ${saltyrtc_server_enable:="NO"}
+: ${saltyrtc_server_key:="%%ETCDIR%%/key"}
+: ${saltyrtc_server_dhp:="%%ETCDIR%%/dhparam.pem"}
+: ${saltyrtc_server_tlskey:="%%ETCDIR%%/tls.key"}
+: ${saltyrtc_server_tlscrt:="%%ETCDIR%%/tls.crt"}
+: ${saltyrtc_server_host:="0.0.0.0"}
+: ${saltyrtc_server_port:="443"}
+
+required_files="${saltyrtc_server_dhp} ${saltyrtc_server_tlskey} ${saltyrtc_server_tlscrt}"
+
+command_args_saltyrtc="-k ${saltyrtc_server_key} -dhp ${saltyrtc_server_dhp}"
+command_args_saltyrtc="${command_args_saltyrtc} -tk ${saltyrtc_server_tlskey} -tc ${saltyrtc_server_tlscrt}"
+command_args_saltyrtc="${command_args_saltyrtc} -h ${saltyrtc_server_host} -p ${saltyrtc_server_port}"
+command_args="-o /var/log/${name}.log -p ${pidfile} ${procname} serve ${command_args_saltyrtc}"
+
+saltyrtc_server_precmd() {
+  if [ ! -e ${saltyrtc_server_key} ]; then
+    mkdir -p `dirname ${saltyrtc_server_key}`
+    ${command_interpreter} ${procname} generate ${saltyrtc_server_key}
+  fi
+}
+
+run_rc_command $1
