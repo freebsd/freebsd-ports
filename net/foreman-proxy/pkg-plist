@@ -76,6 +76,7 @@ sbin/smart-proxy
 %%DATADIR%%/lib/proxy/log_buffer/decorator.rb
 %%DATADIR%%/lib/proxy/log_buffer/ring_buffer.rb
 %%DATADIR%%/lib/proxy/log_buffer/trace_decorator.rb
+%%DATADIR%%/lib/proxy/logging_resolv.rb
 %%DATADIR%%/lib/proxy/memory_store.rb
 %%DATADIR%%/lib/proxy/pluggable.rb
 %%DATADIR%%/lib/proxy/plugin.rb
@@ -91,6 +92,7 @@ sbin/smart-proxy
 %%DATADIR%%/lib/proxy/settings/global.rb
 %%DATADIR%%/lib/proxy/settings/plugin.rb
 %%DATADIR%%/lib/proxy/signal_handler.rb
+%%DATADIR%%/lib/proxy/time_utils.rb
 %%DATADIR%%/lib/proxy/util.rb
 %%DATADIR%%/lib/proxy/validations.rb
 %%DATADIR%%/lib/sinatra/authorization.rb

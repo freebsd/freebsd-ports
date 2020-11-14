@@ -1,7 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	foreman-proxy
-PORTVERSION=	1.23.2
+PORTVERSION=	1.24.3
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.theforeman.org/foreman-proxy/
 
