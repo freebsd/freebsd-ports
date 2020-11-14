@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	snakemake
-DISTVERSION=	5.26.1
+DISTVERSION=	5.28.0
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}GitPython>0:devel/py-gitpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbformat>0:devel/py-nbformat@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}PuLP>0:math/py-PuLP@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}PuLP>=2.0:math/py-PuLP@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ratelimiter>0:devel/py-ratelimiter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
