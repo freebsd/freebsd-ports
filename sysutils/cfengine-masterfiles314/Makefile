@@ -15,6 +15,9 @@ LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu
 
+DEPRECATED=		Expire one year after cfengine 3.16.0 released
+EXPIRATION_DATE=	2021-06-22
+
 CONFLICTS=	cfengine-masterfiles3[0-9]-* cfengine-masterfiles31[013-9]-*
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	314
