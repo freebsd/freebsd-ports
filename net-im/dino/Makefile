@@ -2,8 +2,7 @@
 
 PORTNAME=		dino
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.1.0.20201007
-PORTREVISION=		1
+DISTVERSION=		0.2.0
 CATEGORIES=		net-im
 
 MAINTAINER=		ashish@FreeBSD.org
@@ -24,7 +23,6 @@ USES=		cmake desktop-file-utils gettext-tools gnome \
 		ninja pkgconfig
 
 USE_GITHUB=	yes
-GH_TAGNAME=	f28aaac
 
 OPTIONS_DEFINE=		OMEMO UPLOAD GNUPG
 OPTIONS_DEFAULT=	OMEMO UPLOAD GNUPG
