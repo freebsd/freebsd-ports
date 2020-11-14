@@ -14,6 +14,7 @@ include/core/ngcore_api.hpp
 include/core/paje_trace.hpp
 include/core/profiler.hpp
 include/core/python_ngcore.hpp
+include/core/ranges.hpp
 include/core/signal.hpp
 include/core/symboltable.hpp
 include/core/table.hpp
