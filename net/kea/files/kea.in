@@ -2,8 +2,8 @@
 # $FreeBSD$
 #
 # PROVIDE: kea
-# REQUIRE: netif routing
-# KEYWORD: nojail shutdown
+# REQUIRE: NETWORK netif routing
+# KEYWORD: shutdown
 
 #
 # Add the following to /etc/rc.conf[.local] to enable this service

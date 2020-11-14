@@ -437,8 +437,8 @@ lib/libkea-dhcp_ddns.so.3
 lib/libkea-dhcp_ddns.so.3.0.0
 lib/libkea-dhcpsrv.a
 lib/libkea-dhcpsrv.so
-lib/libkea-dhcpsrv.so.27
-lib/libkea-dhcpsrv.so.27.0.0
+lib/libkea-dhcpsrv.so.28
+lib/libkea-dhcpsrv.so.28.0.0
 lib/libkea-dns++.a
 lib/libkea-dns++.so
 lib/libkea-dns++.so.5
@@ -453,8 +453,8 @@ lib/libkea-exceptions.so.0
 lib/libkea-exceptions.so.0.2.1
 lib/libkea-hooks.a
 lib/libkea-hooks.so
-lib/libkea-hooks.so.15
-lib/libkea-hooks.so.15.0.0
+lib/libkea-hooks.so.16
+lib/libkea-hooks.so.16.0.0
 lib/libkea-http.a
 lib/libkea-http.so
 lib/libkea-http.so.7
