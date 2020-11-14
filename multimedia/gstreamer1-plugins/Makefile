@@ -139,6 +139,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
 		${WRKSRC}/ext/resindvd/resindvdbin.c \
 		${WRKSRC}/ext/resindvd/resindvdsrc.c
+# Fix dependency on neon-0.31
+	${REINPLACE_CMD} -e '/neon/s|0.30.99|0.31.99|g' \
+		${WRKSRC}/configure
+
 .endif
 .if ${DIST} != ugly
 	@${FIND} ${WRKSRC}/ext ${WRKSRC}/sys \
