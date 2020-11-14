@@ -1536,6 +1536,8 @@ GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		urfave:cli:v1.20.0:urfave_cli/vendor/github.com/urfave/cli
 
+PORTSCOUT=	site:https://github.com/${PORTNAME}/${GH_PROJECT}/releases
+
 OPTIONS_DEFINE=	DOCS
 
 _YARN_BIN=		${LOCALBASE}/bin/yarn
