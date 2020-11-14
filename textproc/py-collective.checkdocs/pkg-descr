@@ -1,0 +1,15 @@
+collective.checkdocs adds new distutils commands checkdocs and showdocs to
+validate restructured text in long_description field of Python eggs. This
+package aims to make Python egg help page publishing and editing easier.
+
+Eggs' long description field, which is usually also the README.txt file of
+the package, is reST formatted text. This text is converted to HTML to show on
+the package page when package is published in distribution repositories like
+PyPI or plone.org. Unfortunately, since repositories do poor job to validate
+incoming reST text, errors in the text will result to broken published
+package pages.
+
+Unpublishing is usually very cumbersome. We save our time by validating reST
+input using checkdocs and showdocs commands before submitting eggs to PyPi.
+
+WWW: https://github.com/collective/collective.checkdocs

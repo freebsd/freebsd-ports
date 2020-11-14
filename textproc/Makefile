@@ -1242,6 +1242,7 @@
     SUBDIR += py-cjkwrap
     SUBDIR += py-cloud_sptheme
     SUBDIR += py-cmarkgfm
+    SUBDIR += py-collective.checkdocs
     SUBDIR += py-colorclass
     SUBDIR += py-creole
     SUBDIR += py-cssselect2
