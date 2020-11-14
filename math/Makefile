@@ -732,6 +732,7 @@
     SUBDIR += py-affine
     SUBDIR += py-algopy
     SUBDIR += py-altgraph
+    SUBDIR += py-amply
     SUBDIR += py-apgl
     SUBDIR += py-arviz
     SUBDIR += py-autograd
