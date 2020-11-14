@@ -1,11 +1,11 @@
---- highwayhash/arch_specific.cc.orig	2020-10-10 11:16:48 UTC
+--- highwayhash/arch_specific.cc.orig	2020-11-14 08:32:41 UTC
 +++ highwayhash/arch_specific.cc
-@@ -150,7 +150,7 @@ double DetectNominalClockRate() {
-   }
-  #elif __FreeBSD__
-   size_t length = sizeof(freq);
--  sysctlbyname("dev.cpu.0.freq"), &freq, &length, NULL, 0);
-+  sysctlbyname("dev.cpu.0.freq", &freq, &length, NULL, 0);
-   freq *= 1E6;
-   return freq;
+@@ -174,7 +174,7 @@ double InvariantTicksPerSecond() {
+ #elif __FreeBSD__
+   static double cycles_per_second = 0;
+   size_t length = sizeof(cycles_per_second);
+-  sysctlbyname("kern.timecounter.tc.timebase.frequency", &cycles_per_second,
++  sysctlbyname("dev.cpu.0.freq", &cycles_per_second,
+                &length, NULL, 0);
  #endif
+   return cycles_per_second;
