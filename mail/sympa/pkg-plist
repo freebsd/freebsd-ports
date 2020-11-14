@@ -16,6 +16,7 @@ libexec/sympa/Sympa/Archive.pm
 libexec/sympa/Sympa/CommandDef.pm
 libexec/sympa/Sympa/ConfDef.pm
 libexec/sympa/Sympa/Config.pm
+libexec/sympa/Sympa/Config/Schema.pm
 libexec/sympa/Sympa/Config_XML.pm
 libexec/sympa/Sympa/Constants.pm
 libexec/sympa/Sympa/Crash.pm
@@ -230,6 +231,7 @@ man/man3/Sympa::Archive.3Sympa.gz
 man/man3/Sympa::CommandDef.3Sympa.gz
 man/man3/Sympa::ConfDef.3Sympa.gz
 man/man3/Sympa::Config.3Sympa.gz
+man/man3/Sympa::Config::Schema.3Sympa.gz
 man/man3/Sympa::Constants.3Sympa.gz
 man/man3/Sympa::Crash.3Sympa.gz
 man/man3/Sympa::Database.3Sympa.gz
@@ -257,6 +259,7 @@ man/man3/Sympa::HTMLDecorator.3Sympa.gz
 man/man3/Sympa::HTMLSanitizer.3Sympa.gz
 man/man3/Sympa::Internals::Workflow.3Sympa.gz
 man/man3/Sympa::Language.3Sympa.gz
+man/man3/Sympa::List.3Sympa.gz
 man/man3/Sympa::List::Config.3Sympa.gz
 man/man3/Sympa::List::Users.3Sympa.gz
 man/man3/Sympa::ListDef.3Sympa.gz
@@ -385,6 +388,7 @@ man/man5/ldap_alias_manager.conf.5.gz
 man/man5/list_config.5.gz
 man/man5/nrcpt_by_domain.conf.5.gz
 man/man5/sympa.conf.5.gz
+man/man5/sympa_config.5.gz
 man/man5/sympa.wsdl.5.gz
 man/man5/sympa_database.5.gz
 man/man5/sympa_scenario.5.gz
@@ -525,6 +529,7 @@ share/locale/zh_TW/LC_MESSAGES/sympa.mo
 %%DATADIR%%/defaults/mail_tt2/send_auth.tt2
 %%DATADIR%%/defaults/mail_tt2/sendpasswd.tt2
 %%DATADIR%%/defaults/mail_tt2/sendssopasswd.tt2
+%%DATADIR%%/defaults/mail_tt2/shared_moderate.tt2
 %%DATADIR%%/defaults/mail_tt2/stats_report.tt2
 %%DATADIR%%/defaults/mail_tt2/summary.tt2
 %%DATADIR%%/defaults/mail_tt2/urlized_part.tt2

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sympa
-DISTVERSION=	6.2.56
-PORTREVISION=	1
+DISTVERSION=	6.2.58
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-marseille.fr
