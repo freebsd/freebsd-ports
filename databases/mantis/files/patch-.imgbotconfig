@@ -1,0 +1,11 @@
+--- .imgbotconfig.orig	2020-11-14 18:01:51 UTC
++++ .imgbotconfig
+@@ -0,0 +1,7 @@
++{
++    "schedule": "daily",
++    "ignoredFiles": [
++        "css/images/*",
++    ],
++    "aggressiveCompression": "false"
++}
+\ No newline at end of file
