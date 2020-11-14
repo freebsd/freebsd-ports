@@ -2,7 +2,7 @@
 
 PORTNAME=	citra
 PORTVERSION=	s20201106
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -76,8 +76,8 @@ SDL_PLIST_FILES=bin/${PORTNAME} \
 		share/man/man6/${PORTNAME}.6.gz
 
 QT5_USES=	desktop-file-utils qt:5 shared-mime-info
-QT5_USE=	QT=qmake_build,buildtools_build,concurrent_build,core,gui,multimedia,opengl,widgets
-QT5_CMAKE_BOOL=	ENABLE_QT
+QT5_USE=	QT=qmake_build,buildtools_build,linguisttools_build,concurrent_build,core,gui,multimedia,opengl,widgets
+QT5_CMAKE_BOOL=	ENABLE_QT ENABLE_QT_TRANSLATION
 QT5_PLIST_FILES=bin/${PORTNAME}-qt \
 		"@comment bin/${PORTNAME}-room" \
 		share/applications/${PORTNAME}.desktop \
