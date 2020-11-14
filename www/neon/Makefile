@@ -36,6 +36,9 @@ CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root
 EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 EXPAT_CONFIGURE_WITH=	expat
 
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_CONFIGURE_ON=	--with-ssl=gnutls
+
 GSSAPI_CONFIGURE_WITH=	gssapi
 
 LIBXML2_CONFIGURE_WITH=	libxml2
@@ -47,7 +50,7 @@ NLS_USES=		gettext
 
 OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ENV=	ne_cv_libsfor_SSL_library_init=-lssl
-OPENSSL_CONFIGURE_WITH=	ssl
+OPENSSL_CONFIGURE_ON=	--with-ssl=openssl
 
 PROXY_CONFIGURE_WITH=	libproxy
 PROXY_LIB_DEPENDS=	libproxy.so:net/libproxy
