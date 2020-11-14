@@ -2165,6 +2165,7 @@
     SUBDIR += templatelite
     SUBDIR += thirtybees
     SUBDIR += threejs
+    SUBDIR += threema-web
     SUBDIR += thttpd
     SUBDIR += thumbnail_index
     SUBDIR += thundercache

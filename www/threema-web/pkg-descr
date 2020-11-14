@@ -1,0 +1,16 @@
+Threema's web client allows you to use Threema on the desktop without
+compromising security.
+
+  * Complete synchronization: By scanning a QR code, desktop and mobile
+    device are connected at once, and all conversations are fully accessible
+    on the desktop.
+
+  * Security and data restraint: All communication between phone and PC is
+    fully end-to-end encrypted. After the session is terminated, all
+    synchronized messages are immediately deleted in the browser.
+
+  * Open Source: Threema Web is open source and uses open standards. It is
+    also possible to host Threema Web on your own server.
+
+WWW: https://github.com/threema-ch/threema-web
+WWW: https://threema.ch/en/faq/web_info

@@ -1,0 +1,37 @@
+[
+{ type: install
+  message: <<EOM
+
+  This is Threema Web, compiled with 'SELF_HOSTED=true' and with pre-defined
+  STUN/TURN and SaltyRTC servers on its bundled configuration. If you want to run
+  your own servers you must recompile this port yourself and make sure to define
+  the following variables:
+
+    THREEMA_ICE_CREDEN, the credentials for "threema-angular" (static username);
+    THREEMA_ICE_SERVER, your STUN server in a "hostname:port" format; 
+    THREEMA_SALTYRTC_HOST, your SaltyRTC server;
+    THREEMA_SALTYRTC_PORT, the port of your SaltyRTC server,
+    THREEMA_SALTYRTC_KEY, the key used by your SaltyRTC server.
+
+  The web server needs to set the proper MIME type for *.wasm (WebAssembly) files.
+
+  If you use nginx, this would go into nginx's mime types:
+
+    application/wasm wasm;
+
+  Should you opt for Apache, then you would need to add this to httpd.conf:
+
+    AddType application/wasm .wasm
+
+  Make sure to serve Threema Web only via HTTPS. It's also recommend to enable
+  HSTS, HPKP, CSP and other available security mechanisms in your web server.
+
+  If you deployed it to be used on a server with restrictive CSP rules, make sure
+  to add "static.threema.ch" as an allowed style/font source.
+
+  NOTE: While you could in theory host your own version of the "push-server",
+        it won't help much since the GCM/APN API Keys required to dispatch push
+        notifications to the Threema app are *NOT* public.
+EOM
+}
+]
