@@ -15,6 +15,9 @@ LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu
 
+DEPRECATED=		EOL
+EXPIRATION_DATE=	2020-12-31
+
 CONFLICTS=	cfengine-masterfiles3[0-9]-* cfengine-masterfiles31[013-9]-*
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	312
