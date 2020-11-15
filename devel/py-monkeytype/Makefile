@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	monkeytype
-PORTVERSION=	19.11.2
+PORTVERSION=	20.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,12 +13,11 @@ COMMENT=	Generate type annotations from sampled production types
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mypy_extensions>=0:devel/py-mypy_extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}retype>=0:devel/py-retype@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}stringcase>=0:devel/py-stringcase@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcst>=0.3.5:devel/py-libcst@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mypy_extensions>=0:devel/py-mypy_extensions@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
