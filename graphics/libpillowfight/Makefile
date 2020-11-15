@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpillowfight
-DISTVERSION=	0.2.4
+DISTVERSION=	0.3.0
 CATEGORIES=	graphics python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,14 +18,15 @@ USES=		cmake
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org/World
 GL_ACCOUNT=	OpenPaperwork
-GL_COMMIT=	3a7ebba75f4c060ac1707900bd8891e8d200b1c6
+GL_COMMIT=	dae21f97de872e4ad2e94f1b0fc53302a00259fd
 USE_LDCONFIG=	yes
 
 TEST_USES=	python
 
 PLIST_FILES=	include/pillowfight/pillowfight.h \
 		include/pillowfight/util.h \
-		lib/libpillowfight.so
+		lib/libpillowfight.so \
+		lib/libpillowfight.so.0
 
 pre-configure:
 	@cd ${WRKSRC} && ${GMAKE} version
