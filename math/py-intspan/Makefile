@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	intspan
-PORTVERSION=	1.5.15
+PORTVERSION=	1.6.1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Finite element automatic tabulator
 
 LICENSE=	APACHE20
 
-USES=		python zip
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
