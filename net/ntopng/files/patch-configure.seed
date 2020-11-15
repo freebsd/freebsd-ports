@@ -1,5 +1,14 @@
 --- configure.seed.orig	2020-11-02 21:27:19 UTC
 +++ configure.seed
+@@ -4,7 +4,7 @@ dnl> Do not add anything above
+ 
+ AC_ARG_WITH(sanitizer,     [  --with-sanitizer   Build with support for the LLVM address sanitizer])
+ 
+-CPPFLAGS="${CPPFLAGS} -Wno-address-of-packed-member -Wno-unused-function"
++CPPFLAGS="${CPPFLAGS} -Wno-unused-function"
+ AC_PROG_CPP
+ AC_PROG_CXX
+ 
 @@ -77,33 +77,8 @@ fi
  # On CentOS 6 `git rev-list HEAD --count` does not work
  #
