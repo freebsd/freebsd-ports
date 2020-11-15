@@ -53,10 +53,13 @@ share/doc/HTML/en/labplot2/tutorial-xy-function9.png
 share/doc/HTML/en/labplot2/workbook.png
 share/doc/HTML/en/labplot2/worksheet.png
 share/icons/hicolor/128x128/apps/labplot2.png
+share/icons/hicolor/150x150/apps/labplot2.png
 share/icons/hicolor/16x16/apps/labplot2.png
 share/icons/hicolor/22x22/apps/labplot2.png
 share/icons/hicolor/256x256/apps/labplot2.png
+share/icons/hicolor/310x310/apps/labplot2.png
 share/icons/hicolor/32x32/apps/labplot2.png
+share/icons/hicolor/44x44/apps/labplot2.png
 share/icons/hicolor/48x48/apps/labplot2.png
 share/icons/hicolor/512x512/apps/labplot2.png
 share/icons/hicolor/64x64/apps/labplot2.png
@@ -137,7 +140,6 @@ share/kxmlgui5/labplot2/labplot2ui.rc
 %%DATADIR%%/datasets/OzDASL.json
 %%DATADIR%%/datasets/README.md
 %%DATADIR%%/datasets/Rdatasets.json
-%%DATADIR%%/datasets/Socrata.json
 %%DATADIR%%/datasets/StatLib.json
 %%DATADIR%%/example_projects/Big-city-pop.lml
 %%DATADIR%%/example_projects/Rainfall.lml
