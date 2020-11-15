@@ -3,6 +3,7 @@
 
 PORTNAME=	xapian-bindings
 PORTVERSION=	1.4.17
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -20,7 +21,8 @@ OPTIONS_DEFAULT=LUA PERL PHP PYTHON RUBY
 LUA_RUN_DEPENDS=	${LUA_PKGNAMEPREFIX}xapian>=${PORTVERSION}:databases/lua-xapian@${LUA_FLAVOR}
 LUA_USES=		lua:run
 PERL_RUN_DEPENDS=	p5-Xapian>=${PORTVERSION}:databases/p5-Xapian
-PHP_RUN_DEPENDS=	php-xapian>=${PORTVERSION}:databases/php-xapian
+PHP_RUN_DEPENDS=	${PHP_PKGNAMEPREFIX}xapian>=${PORTVERSION}:databases/php-xapian@${PHP_FLAVOR}
+PHP_USES=		php
 PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xapian>=${PORTVERSION}:databases/py-xapian@${PY_FLAVOR}
 PYTHON_USES=		python:run
 RUBY_RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}xapian>=${PORTVERSION}:databases/ruby-xapian
