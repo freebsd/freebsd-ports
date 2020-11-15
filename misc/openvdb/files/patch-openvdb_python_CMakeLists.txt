@@ -1,14 +1,34 @@
---- openvdb/python/CMakeLists.txt.orig	2019-12-06 20:11:33 UTC
+--- openvdb/python/CMakeLists.txt.orig	2020-08-13 19:15:58 UTC
 +++ openvdb/python/CMakeLists.txt
-@@ -104,9 +104,9 @@ elseif(${CMAKE_VERSION} VERSION_LESS 3.14)
+@@ -104,9 +104,9 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
+ elseif(${CMAKE_VERSION} VERSION_LESS 3.14)
+   # CMake < 3.14
+   if(OPENVDB_BUILD_PYTHON_UNITTESTS)
+-    find_package(Python QUIET COMPONENTS Interpreter Development)
++    find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS Interpreter Development)
+   else()
+-    find_package(Python QUIET COMPONENTS Development)
++    find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS Development)
+   endif()
+   OPENVDB_CHECK_PYTHON_VERSION(${Python_VERSION} ${Python_INCLUDE_DIRS})
+   list(APPEND OPENVDB_PYTHON_DEPS Python::Python)
+@@ -119,16 +119,16 @@ elseif(${CMAKE_VERSION} VERSION_LESS 3.14)
  else()
    # CMake >= 3.14
-   if(USE_NUMPY)
--    find_package(Python QUIET REQUIRED COMPONENTS Interpreter Development NumPy)
-+    find_package(Python ${FREEBSD_PYTHON_VER} EXACT QUIET REQUIRED COMPONENTS Interpreter Development NumPy)
+   if(OPENVDB_BUILD_PYTHON_UNITTESTS)
+-    find_package(Python QUIET COMPONENTS Interpreter Development)
++    find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS Interpreter Development)
    else()
--    find_package(Python QUIET REQUIRED COMPONENTS Interpreter Development)
-+    find_package(Python ${FREEBSD_PYTHON_VER} EXACT QUIET REQUIRED COMPONENTS Interpreter Development)
+-    find_package(Python QUIET COMPONENTS Development)
++    find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS Development)
    endif()
  
-   OPENVDB_CHECK_PYTHON_VERSION(${Python_VERSION} ${Python_EXECUTABLE})
+   OPENVDB_CHECK_PYTHON_VERSION(${Python_VERSION} ${Python_INCLUDE_DIRS})
+   list(APPEND OPENVDB_PYTHON_DEPS Python::Python)
+ 
+   if(USE_NUMPY)
+-    find_package(Python QUIET COMPONENTS NumPy)
++    find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS NumPy)
+     if(NOT TARGET Python::NumPy)
+         message(FATAL_ERROR "Could NOT find NumPy (Required is at least version "
+           "\"${MINIMUM_NUMPY_VERSION}\")"

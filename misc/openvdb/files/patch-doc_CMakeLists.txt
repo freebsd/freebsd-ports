@@ -1,6 +1,6 @@
---- doc/CMakeLists.txt.orig	2019-12-06 20:11:33 UTC
+--- doc/CMakeLists.txt.orig	2020-08-13 19:15:58 UTC
 +++ doc/CMakeLists.txt
-@@ -64,5 +64,5 @@ add_custom_target(doc ALL
+@@ -73,5 +73,5 @@ add_custom_target(doc ALL
  )
  
  # Suppress "Installing..." messages for all but one of the hundreds of generated files.

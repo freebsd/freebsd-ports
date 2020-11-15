@@ -67,6 +67,7 @@ include/openvdb/tools/Composite.h
 include/openvdb/tools/Dense.h
 include/openvdb/tools/DenseSparseTools.h
 include/openvdb/tools/Diagnostics.h
+include/openvdb/tools/FastSweeping.h
 include/openvdb/tools/Filter.h
 include/openvdb/tools/FindActiveValues.h
 include/openvdb/tools/GridOperators.h
@@ -143,6 +144,6 @@ lib/cmake/OpenVDB/OpenVDBHoudiniSetup.cmake
 lib/cmake/OpenVDB/OpenVDBMayaSetup.cmake
 lib/cmake/OpenVDB/OpenVDBUtils.cmake
 lib/libopenvdb.so
-lib/libopenvdb.so.7.0
-lib/libopenvdb.so.7.0.0
+lib/libopenvdb.so.7.1
+lib/libopenvdb.so.7.1.0
 %%PYTHON%%%%PYTHON_LIBDIR%%/pyopenvdb.so
