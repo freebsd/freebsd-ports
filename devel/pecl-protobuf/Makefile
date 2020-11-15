@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	protobuf
-PORTVERSION=	3.13.0
+PORTVERSION=	3.13.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
