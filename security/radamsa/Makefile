@@ -12,10 +12,12 @@ COMMENT=	General purpose fuzzer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	aoh
+BROKEN_aarch64=		fails to build: runaway build
 
 BUILD_DEPENDS=	ol:lang/owl-lisp
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	aoh
 
 PLIST_FILES=	bin/radamsa \
 		man/man1/radamsa.1.gz
