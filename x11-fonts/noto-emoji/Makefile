@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	noto
-PORTVERSION=	2.018
+PORTVERSION=	2.020
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v2020-07-22-unicode13_0/fonts/
+MASTER_SITES=	https://github.com/googlefonts/noto-emoji/raw/v2020-09-16-unicode13_1/fonts/
 PKGNAMESUFFIX=	-emoji
 DISTFILES=	NotoColorEmoji.ttf \
 		NotoEmoji-Regular.ttf
