@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librdata
-PORTVERSION=	0.1.0.g20200219
+PORTVERSION=	0.1.0.g20200911
 CATEGORIES=	math
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		autoreconf libtool gettext-tools
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	WizardMac
-GH_TAGNAME=	54e00a0
+GH_TAGNAME=	7188fa5
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
