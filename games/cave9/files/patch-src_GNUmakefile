@@ -6,7 +6,7 @@
  
 -CFLAGS += -std=c99 -Wall -Werror -ggdb `sdl-config --cflags`
 -LDFLAGS += -lSDL_ttf -lSDL_image `sdl-config --libs` -L/usr/X11/lib -lGL -lGLU -lm
-+CFLAGS += -std=c99 -Wall -Werror -isystem ${LOCALBASE}/include `sdl-config --cflags`
++CFLAGS += -std=c99 -Wall -isystem ${LOCALBASE}/include `sdl-config --cflags`
 +LDFLAGS += -lSDL_ttf -lSDL_image -L${LOCALBASE}/lib `sdl-config --libs` -lGL -lGLU -lm
  
  ifdef GLOBAL_SCORE
