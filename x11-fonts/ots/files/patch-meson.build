@@ -1,16 +1,16 @@
---- meson.build.orig	2019-08-30 08:38:31 UTC
+--- meson.build.orig	2020-10-12 15:09:18 UTC
 +++ meson.build
 @@ -1,6 +1,6 @@
  project('ots', 'c', 'cpp',
-   version: '8.0.0',
+   version: '8.1.0',
 -  default_options : ['cpp_std=c++11', 'default_library=static'],
 +  default_options : ['cpp_std=c++11', 'default_library=both'],
  )
  
  cxx = meson.get_compiler('cpp')
-@@ -38,52 +38,52 @@ configure_file(output: 'config.h',
-                configuration: conf)
- 
+@@ -44,28 +44,28 @@ if 'undefined' in get_option('b_sanitize').split(',')
+   brotli_c_args += '-DBROTLI_BUILD_PORTABLE'
+ endif
  
 -brotli_includes = ['third_party/brotli/c/include']
 -libbrotli = library('brotli',
@@ -32,6 +32,7 @@
 -  'third_party/brotli/c/include/brotli/port.h',
 -  'third_party/brotli/c/include/brotli/types.h',
 -  include_directories: include_directories(brotli_includes),
+-  c_args: brotli_c_args,
 -)
 +#brotli_includes = ['third_party/brotli/c/include']
 +#libbrotli = library('brotli',
@@ -53,8 +54,14 @@
 +#  'third_party/brotli/c/include/brotli/port.h',
 +#  'third_party/brotli/c/include/brotli/types.h',
 +#  include_directories: include_directories(brotli_includes),
++#  c_args: brotli_c_args,
 +#)
  
+ 
+ woff2_cpp_args = []
+@@ -75,30 +75,30 @@ if 'undefined' in get_option('b_sanitize').split(',')
+   woff2_cpp_args += '-U__BYTE_ORDER__'
+ endif
  
 -woff2_includes = ['third_party/brotli/c/include', 'third_party/woff2/include']
 -libwoff2 = library('woff2',
@@ -73,6 +80,7 @@
 -  'third_party/woff2/src/woff2_dec.cc',
 -  'third_party/woff2/src/woff2_out.cc',
 -  include_directories: include_directories(woff2_includes),
+-  cpp_args: woff2_cpp_args,
 -)
 +#woff2_includes = ['third_party/brotli/c/include', 'third_party/woff2/include']
 +#libwoff2 = library('woff2',
@@ -91,6 +99,7 @@
 +#  'third_party/woff2/src/woff2_dec.cc',
 +#  'third_party/woff2/src/woff2_out.cc',
 +#  include_directories: include_directories(woff2_includes),
++#  cpp_args: woff2_cpp_args,
 +#)
  
  
@@ -101,7 +110,7 @@
  ]
  
  ots_sources = [
-@@ -167,10 +167,10 @@ ots_sources = [
+@@ -180,10 +180,10 @@ ots_sources = [
    'src/vvar.h',
  ]
  
@@ -114,7 +123,7 @@
    ots_sources += [
      'src/feat.cc',
      'src/feat.h',
-@@ -186,21 +186,27 @@ if get_option('graphite')
+@@ -199,21 +199,28 @@ if get_option('graphite')
      'src/sill.h',
      'src/sill.cc',
    ]
@@ -141,6 +150,7 @@
    ots_sources,
    include_directories: include_directories(ots_includes),
 -  link_with: ots_libs,
++#  link_with: ots_libs,
    cpp_args : '-DHAVE_CONFIG_H',
 -  dependencies: zlib,
 +  dependencies: [libbrotlicommon, libbrotlidec, libwoff2common, libwoff2dec, liblz4, zlib],
@@ -149,7 +159,7 @@
  )
  
  
-@@ -226,6 +232,7 @@ executable('ots-fuzzer',
+@@ -239,6 +246,7 @@ executable('ots-fuzzer',
    cpp_args: fuzzer_defines,
    link_with: libots,
    link_args: fuzzer_ldflags,
@@ -157,10 +167,12 @@
  )
  
  
-@@ -291,12 +298,13 @@ endif
+@@ -303,13 +311,14 @@ if cxx.has_header('sys/time.h')
+ endif
  
  
- gtest = dependency('gtest', fallback: ['gtest', 'gtest_main_dep'])
+-gtest = subproject('gtest').get_variable('gtest_main_dep')
++gtest = dependency('gtest', fallback: ['gtest', 'gtest_main_dep'])
 +gtest_main = dependency('gtest_main')
  
  cff_charstring = executable('cff_charstring',
@@ -172,7 +184,7 @@
  )
  
  test('cff_charstring', cff_charstring)
-@@ -306,7 +314,7 @@ layout_common_table = executable('layout_common_table'
+@@ -319,7 +328,7 @@ layout_common_table = executable('layout_common_table'
    'tests/layout_common_table_test.cc',
    include_directories: include_directories(['include', 'src']),
    link_with: libots,

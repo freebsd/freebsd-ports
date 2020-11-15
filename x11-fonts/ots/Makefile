@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ots
-PORTVERSION=	8.0.0
+PORTVERSION=	8.1.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/khaledhosny/ots/releases/download/v${PORTVERSION}/
 
@@ -22,6 +22,8 @@ USES=		compiler:c++11-lang meson pkgconfig shebangfix tar:xz
 
 MESON_FALSE=	debug
 MESON_TRUE=	graphite
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 SHEBANG_FILES=	tests/*.sh
 bash_CMD=	${SH}
