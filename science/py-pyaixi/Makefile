@@ -3,7 +3,8 @@
 
 PORTNAME=	pyaixi
 PORTVERSION=	1.0.4
-PORTREVISION=	2
+DISTVERSIONSUFFIX=	.post1
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +15,10 @@ COMMENT=	Implementation of the MC-AIXI-CTW AI algorithm
 LICENSE=	CC-BY-SA-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NO_ARCH=	yes
 USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 PORTDOCS=	changelog.txt todo.txt
 PORTEXAMPLES=	*
