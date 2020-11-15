@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-builder
-PORTVERSION=	3.36.1
+PORTVERSION=	3.38.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -23,6 +23,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libdevhelp-3.so:devel/devhelp \
 		libgit2-glib-1.0.so:devel/libgit2-glib \
+		libsoup-2.4.so:devel/libsoup \
 		libpcre.so:devel/pcre \
 		libvala-0.48.so:lang/vala \
 		libgit2.so:devel/libgit2 \
@@ -50,7 +51,7 @@ MESON_ARGS=	-Dplugin_flatpak=false \
 		-Dplugin_jhbuild=false \
 		-Dplugin_update_manager=false
 
-PLIST_SUB+=	PORTVER=${PORTVERSION}
+PLIST_SUB=	BUILDER_VERSION=${PORTVERSION:R}
 
 GLIB_SCHEMAS=	org.gnome.builder.build.gschema.xml \
 		org.gnome.builder.clang.gschema.xml \
@@ -67,6 +68,7 @@ GLIB_SCHEMAS=	org.gnome.builder.build.gschema.xml \
 		org.gnome.builder.plugins.stylelint.gschema.xml \
 		org.gnome.builder.project-tree.gschema.xml \
 		org.gnome.builder.project.gschema.xml \
+		org.gnome.builder.rust-analyzer.gschema.xml \
 		org.gnome.builder.terminal.gschema.xml \
 		org.gnome.builder.workbench.gschema.xml
 
