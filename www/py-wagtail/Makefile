@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wagtail
-PORTVERSION=	2.10.2
+PORTVERSION=	2.11
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,9 +13,10 @@ COMMENT=	Django content management system
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup448>=4.8<4.9:www/py-beautifulsoup448@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}beautifulsoup448>=4.8<4.9:www/py-beautifulsoup448@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django22>=2.1<3.2:www/py-django22@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-modelcluster>=5.0.2<6.0:www/py-django-modelcluster@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-modelcluster>=5.1<6.0:www/py-django-modelcluster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-taggit>=1.0<2.0:www/py-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.2.0<5.0:www/py-django-treebeard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.11.1,1<4.0,1:www/py-djangorestframework@${PY_FLAVOR} \
