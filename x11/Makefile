@@ -363,6 +363,7 @@
     SUBDIR += wofi
     SUBDIR += workrave
     SUBDIR += wshowkeys
+    SUBDIR += wtype
     SUBDIR += x11perf
     SUBDIR += x3270
     SUBDIR += xantfarm
