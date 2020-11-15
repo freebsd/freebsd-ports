@@ -861,6 +861,7 @@
     SUBDIR += gprbuild
     SUBDIR += gputils
     SUBDIR += gradle
+    SUBDIR += gradle-completion
     SUBDIR += gradle4
     SUBDIR += gradle5
     SUBDIR += gradle62
