@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	async
-PORTVERSION=	1.26.2
+PORTVERSION=	1.27.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Modern asynchronous I/O framework for Ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-console>=1.0<2:devel/rubygem-console \
+RUN_DEPENDS=	rubygem-console>=1.10<2:devel/rubygem-console \
 		rubygem-nio4r>=2.3<3:devel/rubygem-nio4r \
 		rubygem-timers>=4.1<5:devel/rubygem-timers
 
