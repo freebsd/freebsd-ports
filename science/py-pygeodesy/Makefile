@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pygeodesy
-PORTVERSION=	18.11.12
+PORTVERSION=	20.10.30
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,7 @@ LICENSE=	MIT
 USES=		python zip
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
 USE_LOCALE=	en_US.UTF-8
 
 .include <bsd.port.mk>
