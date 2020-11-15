@@ -1,0 +1,22 @@
+Optimise combinations of primers and minimise the formation of dimers in
+multiplexed PCR.
+
+Primer Pooler can:
+
+* Check through each proposed pool for combinations that are likely to form
+  dimers
+
+* Automatically move prospective amplicons between proposed pools to reduce
+  dimer formation
+
+* Automatically search the genome sequence to find which amplicons overlap, and
+  place their corresponding primers in separate pools
+
+* Optionally keep pool sizes within a specified range
+
+* Handle thousands of primers without being slow (useful for high-throughput
+  sequencing applications)
+
+* Do all of the above with degenerate primers too.
+
+WWW: http://ssb22.user.srcf.net/pooler/
