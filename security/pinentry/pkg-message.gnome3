@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+Due to a dependency loop, you must install security/pinentry-gnome3 manually.
+A symlink has been created for you so that pinentry-gnome3 will be the default
+pinentry binary after you install it, but bear in mind that the package system
+will not keep track of this dependency.
+
+You may install pinentry-gnome3 with one of the following commands:
+
+# pkg install security/pinentry-gnome3
+  or
+# make -C /usr/ports/security/pinentry-gnome3 install clean
+EOM
+}
+{ type: remove
+  message: <<EOM
+The pinentry package has been removed. If you no longer plan on using this
+package, you may remove the pinentry-gnome3 package as well.
+
+You may remove the pinentry-gnome3 package with the following command:
+
+# pkg delete pinentry-gnome3
+EOM
+}
+]

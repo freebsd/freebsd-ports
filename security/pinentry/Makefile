@@ -3,7 +3,7 @@
 
 PORTNAME=	pinentry
 PORTVERSION=	1.1.0
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	security
 MASTER_SITES=	GNUPG/pinentry
 
@@ -49,7 +49,11 @@ QT5_RUN_DEPENDS=	${PINENTRY_QT5}:security/pinentry-qt5
 
 GNOME3_DESC=	GNOME 3 frontend
 PINENTRY_GNOME3=	pinentry-gnome3
-GNOME3_RUN_DEPENDS=	${PINENTRY_GNOME3}:security/pinentry-gnome3
+# Due to a dependency loop that exists between security/pinentry-gnome3,
+# security/gcr, security/gnupg and security/pinentry, the user must install
+# pinentry-gnome3 manually. See pkg-message.gnome3 for more details.
+#GNOME3_RUN_DEPENDS=	${PINENTRY_GNOME3}:security/pinentry-gnome3
+GNOME3_VARS=		PKGMESSAGE+=${.CURDIR}/pkg-message.gnome3
 
 .include <bsd.port.options.mk>
 
