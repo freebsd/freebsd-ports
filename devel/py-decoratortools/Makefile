@@ -3,7 +3,7 @@
 
 PORTNAME=	DecoratorTools
 PORTVERSION=	1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,9 @@ COMMENT=	Class, function, and metaclass decorators
 LICENSE=	PSFL ZPL21
 LICENSE_COMB=	dual
 
+USES=		python zip
+USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
-USES=		python:2.7 zip
 
 .include <bsd.port.mk>
