@@ -589,6 +589,7 @@
     SUBDIR += openimageio
     SUBDIR += openjpeg
     SUBDIR += openjpeg15
+    SUBDIR += openjph
     SUBDIR += openjump
     SUBDIR += opennurbs
     SUBDIR += openorienteering-mapper

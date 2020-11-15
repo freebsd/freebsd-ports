@@ -1,0 +1,38 @@
+--- CMakeLists.txt.orig	2020-11-04 10:33:56 UTC
++++ CMakeLists.txt
+@@ -29,7 +29,7 @@ if (MSVC)
+ 	SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc /D \"_CRT_SECURE_NO_WARNINGS\"")
+ endif()
+ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
+-  set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-Wall -Wextra -Wconversion -Wunused-parameter")
++  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wconversion -Wunused-parameter")
+ endif()
+ 
+ if (OJPH_DISABLE_INTEL_SIMD)
+@@ -40,9 +40,6 @@ if (OJPH_DISABLE_INTEL_SIMD)
+ 	endif()
+ endif()
+ 
+-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
+-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
+-
+ include_directories(src/core/common)
+ include_directories(src/apps/common)
+ file(GLOB SOURCES "src/core/coding/*.cpp" "src/core/others/*.cpp" "src/core/codestream/*.cpp" "src/core/transform/ojph_colour.cpp" "src/core/transform/ojph_transform.cpp")
+@@ -53,7 +50,7 @@ file(GLOB AVX2_SOURCES "src/core/transform/*_avx2.cpp"
+ 
+ CONFIGURE_FILE(
+   "${CMAKE_CURRENT_SOURCE_DIR}/src/pkg-config.pc.cmake"
+-  "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${PROJECT_NAME}.pc"
++  "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc"
+ )
+ 
+ if (OJPH_DISABLE_INTEL_SIMD)
+@@ -107,6 +104,6 @@ INSTALL (DIRECTORY src/core/common/
+   FILES_MATCHING
+   PATTERN "*.h")
+ 
+-INSTALL(FILES "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${PROJECT_NAME}.pc"
++INSTALL(FILES "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc"
+         DESTINATION lib/pkgconfig)
+ 
