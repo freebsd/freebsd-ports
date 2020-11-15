@@ -1,3 +1,3 @@
-TIMESTAMP = 1601554700
-SHA256 (rubygem/aws-sdk-iotanalytics-1.34.0.gem) = 891ceb37106c1a7878ef3b7178231f96166175d659b039922d2c8c53d5afb3e7
-SIZE (rubygem/aws-sdk-iotanalytics-1.34.0.gem) = 43008
+TIMESTAMP = 1605426537
+SHA256 (rubygem/aws-sdk-iotanalytics-1.35.0.gem) = 2c2d731504ed76c985647fc57538729413c6f639c484b1cca8304931163c6dbc
+SIZE (rubygem/aws-sdk-iotanalytics-1.35.0.gem) = 45056
