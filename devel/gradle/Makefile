@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gradle
-PORTVERSION=	6.6.1
+PORTVERSION=	6.7
 PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://downloads.gradle.org/distributions/
