@@ -11,6 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small footprint implementation of the Scheme programming language
 
+BROKEN_aarch64=		fails to link: ld: error: unable to find library -lm
 BROKEN_armv6=		fails to link: final link failed: Nonrepresentable section on output
 BROKEN_armv7=		fails to link: ld: siod: hidden symbol `__aeabi_uidivmod' in /usr/lib/libgcc.a(aeabi_uidivmod.o) is referenced by DSO
 BROKEN_mips64=		fails to link: final link failed: Nonrepresentable section on output
