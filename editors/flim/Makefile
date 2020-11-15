@@ -3,7 +3,6 @@
 
 PORTNAME=	flim
 PORTVERSION=	1.14.9.${SNAPDATE}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -19,9 +18,9 @@ RUN_DEPENDS=	apel${EMACS_PKGNAMESUFFIX}>0:editors/apel@${EMACS_FLAVOR}
 USES=		cpe emacs iconv makeinfo
 USE_GITHUB=	yes
 GH_ACCOUNT=	wanderlust
-GH_TAGNAME=	f303f2f
+GH_TAGNAME=	b7c6469
 
-SNAPDATE=	20200303
+SNAPDATE=	20201114
 CPE_VENDOR=	gnu
 NO_ARCH=	yes
 
@@ -38,8 +37,7 @@ OPTIONS_DEFINE=	DOCS
 post-build:
 	@(cd ${WRKSRC} ; \
 	for i in mime-en.texi mime-ja.texi; do \
-		${ICONV_CMD} -f ISO-2022-JP -t UTF-8 $${i} > $${i}.utf8 ; \
-		${MAKEINFO} --no-split --no-validate $${i}.utf8 ; \
+		${MAKEINFO} --no-split --no-validate $${i} ; \
 	done)
 
 post-install:
@@ -51,7 +49,7 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC} ; \
-	for i in ChangeLog NEWS README.* VERSION ; do \
+	for i in NEWS README.* VERSION ; do \
 		${INSTALL_DATA} $${i} ${STAGEDIR}${DOCSDIR}/ ; \
 	done)
 
