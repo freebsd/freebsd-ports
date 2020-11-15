@@ -6,3 +6,4 @@ out the least-cost solution, choosing a single item from each row and column in
 the matrix, such that no row and no column are used more than once.
 
 WWW: https://software.clapper.org/munkres/
+WWW: https://github.com/bmc/munkres
