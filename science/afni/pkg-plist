@@ -125,6 +125,8 @@ bin/3dMEMA.R
 bin/3dMEPFM
 bin/3dMEPFM.R
 bin/3dMSE
+bin/3dMSS
+bin/3dMSS.R
 bin/3dMVM
 bin/3dMVM.R
 bin/3dMVM_validator
@@ -368,6 +370,7 @@ bin/@djunct_glue_imgs_vert
 bin/@djunct_json_value.py
 bin/@djunct_modal_smoothing_with_rep
 bin/@djunct_montage_coordinator
+bin/@djunct_overlap_check
 bin/@djunct_slice_space
 bin/@djunct_ssw_intermed_edge_imgs
 bin/@djunct_vol_3slice_select
@@ -477,6 +480,8 @@ bin/adjunct_is_label.py
 bin/adjunct_make_script_and_rst.py
 bin/adjunct_select_str.py
 bin/adjunct_simplify_cost.py
+bin/adjunct_tort_plot_dp_align
+bin/adjunct_tort_read_dp_align.py
 bin/adwarp
 bin/afni
 bin/afni_check_omp
@@ -507,7 +512,6 @@ bin/count
 bin/dcm2niix_afni
 bin/demo.fixed.niml.do
 bin/demo.mobile.niml.do
-bin/demoExpt.py
 bin/dicom_hdr
 bin/dicom_hinfo
 bin/dicom_to_raw
@@ -752,10 +756,6 @@ lib/afni/plug_vol2surf.so
 lib/afni/plug_volreg.so
 lib/afni/plug_wavelets.so
 lib/afni/plug_zeropad.so
-%%PYTHON_SITELIBDIR%%/afniRTI/__init__.py
-%%PYTHON_SITELIBDIR%%/afniRTI/experiment.py
-%%PYTHON_SITELIBDIR%%/afniRTI/realtime.py
-%%PYTHON_SITELIBDIR%%/afniRTI/receiver.py
 %%PYTHON_SITELIBDIR%%/afnipy/__init__.py
 %%PYTHON_SITELIBDIR%%/afnipy/abids_lib.py
 %%PYTHON_SITELIBDIR%%/afnipy/afni_base.py

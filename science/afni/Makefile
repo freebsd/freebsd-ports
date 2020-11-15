@@ -2,7 +2,7 @@
 
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_
-DISTVERSION=		20.3.00
+DISTVERSION=		20.3.02
 CATEGORIES=		science biology graphics perl5 python
 
 MAINTAINER=	ports@FreeBSD.org
@@ -45,8 +45,6 @@ SHEBANG_FILES=	scripts_install/* \
 		jzosky/*.py \
 		jzosky/lib_RetroTS/*.py \
 		discoraj/ClusterExplorer/*.py \
-		roopchansinghv/PsychoPy-NeuroFeedback-Demo/*.py \
-		roopchansinghv/PsychoPy-NeuroFeedback-Demo/*/*.py \
 		pkundu/*.py \
 		pkundu/meica.libs/*.py \
 		pkundu/meica.libs/*/*.py \
@@ -127,7 +125,7 @@ do-install:
 		${INSTALL_TMP}/*.so \
 		${PRESTAGE}/lib
 	@${MV}	${INSTALL_TMP}/*.h ${PRESTAGE}/include
-	@${MV}	${INSTALL_TMP}/afnipy ${INSTALL_TMP}/afniRTI ${PRESTAGE}/pylib
+	@${MV}	${INSTALL_TMP}/afnipy ${PRESTAGE}/pylib
 	@${CP}	${WRKDIR}/afni-AFNI_${PORTVERSION}/doc/README/* ${PRESTAGE}/doc
 	@for binary in `${FILE} ${INSTALL_TMP}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
 		${MV} $${binary} ${PRESTAGE}/bin ; \
