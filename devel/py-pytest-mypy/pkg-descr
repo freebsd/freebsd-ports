@@ -1,0 +1,8 @@
+pytest-mypy provides mypy static type checker plugin for pytest.
+
+Features:
+- Runs the mypy static type checker on your source files as part of your pytest
+  test runs.
+- Does for mypy what the pytest-flake8 plugin does for flake8.
+
+WWW: https://github.com/dbader/pytest-mypy
