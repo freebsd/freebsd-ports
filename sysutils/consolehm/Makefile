@@ -10,6 +10,8 @@ MASTER_SITES=	LOCAL/fenner
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based hardware monitor for FreeBSD
 
+BROKEN_aarch64=		fails to link: undefined symbol: outb
+
 USES=		uidfix
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/consolehm/consolehm

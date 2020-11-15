@@ -18,7 +18,8 @@ COMMENT=	Security tool to monitor and check logs and intrusions
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	Fails to build external OpenSSL dependency
+BROKEN_aarch64=		fails to compile: rootcheck/os_string.c:188:20: use of undeclared identifier '__LDPGSZ'
+BROKEN_i386=		fails to build external OpenSSL dependency
 
 USES=		gmake perl5 readline shebangfix uidfix
 USE_GITHUB=	yes
