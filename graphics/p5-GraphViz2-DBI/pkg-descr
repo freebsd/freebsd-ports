@@ -1,0 +1,3 @@
+GraphViz2::DBI takes a database handle, and graphs the schema.
+
+WWW: https://metacpan.org/release/GraphViz2-DBI
