@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	burp
-PORTVERSION=	2.3.34
+PORTVERSION=	2.3.38
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/grke/burp/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
