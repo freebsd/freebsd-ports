@@ -1691,6 +1691,7 @@
     SUBDIR += py-py-restclient
     SUBDIR += py-pyjwt
     SUBDIR += py-pylons
+    SUBDIR += py-pylsqpack
     SUBDIR += py-pyocclient
     SUBDIR += py-pyramid
     SUBDIR += py-pyramid_rpc
