@@ -2,7 +2,7 @@
 
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.0
+DISTVERSION=	1.11.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -27,7 +27,7 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 gtk30
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_COMMIT=	c0525946ae799d269d966ad5854c87c517dc52a7
+GL_COMMIT=	5aa73347877d1a716d9e668533ae96123d50bf56
 MAKE_ENV=	${CARGO_ENV}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-entry \
@@ -39,7 +39,7 @@ CARGO_CRATES=	atk-0.7.0 \
 		bitflags-1.2.1 \
 		cairo-rs-0.7.1 \
 		cairo-sys-rs-0.9.2 \
-		cc-1.0.61 \
+		cc-1.0.62 \
 		clap-2.33.3 \
 		dtoa-0.4.6 \
 		fragile-0.3.0 \
@@ -55,7 +55,7 @@ CARGO_CRATES=	atk-0.7.0 \
 		gtk-0.7.0 \
 		gtk-sys-0.9.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.79 \
+		libc-0.2.80 \
 		linked-hash-map-0.5.3 \
 		maplit-1.0.2 \
 		memmap-0.7.0 \
@@ -65,11 +65,11 @@ CARGO_CRATES=	atk-0.7.0 \
 		proc-macro2-1.0.24 \
 		quote-1.0.7 \
 		regex-1.3.9 \
-		regex-syntax-0.6.20 \
+		regex-syntax-0.6.21 \
 		serde-1.0.117 \
 		serde_derive-1.0.117 \
-		serde_yaml-0.8.13 \
-		syn-1.0.45 \
+		serde_yaml-0.8.14 \
+		syn-1.0.48 \
 		textwrap-0.11.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
