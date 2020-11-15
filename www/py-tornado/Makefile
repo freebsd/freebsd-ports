@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	${PY_FUTURES}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}tornado4 \
 			${PYTHON_PKGNAMEPREFIX}tornado6
