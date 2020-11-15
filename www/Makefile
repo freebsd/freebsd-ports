@@ -1415,6 +1415,7 @@
     SUBDIR += py-aiohttp-wsgi
     SUBDIR += py-aiohttp2
     SUBDIR += py-aiohttp_cors
+    SUBDIR += py-aioquic
     SUBDIR += py-arxiv
     SUBDIR += py-asgiref
     SUBDIR += py-autobahn
