@@ -11,6 +11,8 @@ COMMENT=	Overclocking utility for ATI Radeon video cards
 
 LICENSE=	GPLv2
 
+BROKEN_aarch64=		fails to compile: rovclock.c:30:10: 'machine/pio.h' file not found
+
 USES=		tar:bzip2
 
 PLIST_FILES=	man/man8/${PORTNAME}.8.gz sbin/${PORTNAME}
