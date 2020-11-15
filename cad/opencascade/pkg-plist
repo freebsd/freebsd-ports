@@ -28165,7 +28165,6 @@ lib/libTKernel.so.%%VER%%
 %%DOXYGEN%%%%DOCSDIR%%/html/build_upgrade__building_documentation.html
 %%DOXYGEN%%%%DOCSDIR%%/html/build_upgrade__building_occt.html
 %%DOXYGEN%%%%DOCSDIR%%/html/build_upgrade_building_3rdparty.html
-%%DOXYGEN%%%%DOCSDIR%%/html/build_upgrade_building_3rdparty.html.bak
 %%DOXYGEN%%%%DOCSDIR%%/html/camera_perspective.png
 %%DOXYGEN%%%%DOCSDIR%%/html/cells_algorithm_001.png
 %%DOXYGEN%%%%DOCSDIR%%/html/cells_algorithm_002.png

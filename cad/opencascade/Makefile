@@ -138,6 +138,7 @@ post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc/overview && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${RM} -r ${STAGEDIR}${DOCSDIR}/latex
+	${RM} ${STAGEDIR}${DOCSDIR}/html/build_upgrade_building_3rdparty.html.bak
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
