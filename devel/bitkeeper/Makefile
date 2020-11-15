@@ -13,6 +13,8 @@ COMMENT=	Scalable Distributed Source Management System
 
 LICENSE=	APACHE20
 
+BROKEN_aarch64=	ld: error: undefined symbol: fpsetround
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:devel/gperf \
 		${LOCALBASE}/include/tommath.h:math/libtommath \
 		bash:shells/bash

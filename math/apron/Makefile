@@ -11,6 +11,8 @@ COMMENT=	APRON numerical abstract domain library
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	ld: error: ../apron/libapron_debug.so: undefined reference to fpsetround
+
 FETCH_DEPENDS=	svn:devel/subversion
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
