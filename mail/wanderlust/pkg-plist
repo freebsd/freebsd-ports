@@ -24,16 +24,12 @@
 %%EMACS_LIBDIR%%/etc/wl/icons/trash-e.xpm
 %%EMACS_LIBDIR%%/etc/wl/icons/trash.xpm
 %%EMACS_LIBDIR%%/etc/wl/icons/unplugged.xpm
-%%EMACS_LIBDIR%%/etc/wl/icons/wl-alpha-logo.img
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-alpha-logo.xbm
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-alpha-logo.xpm
-%%EMACS_LIBDIR%%/etc/wl/icons/wl-alpha-xmas-logo.img
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-alpha-xmas-logo.xbm
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-alpha-xmas-logo.xpm
-%%EMACS_LIBDIR%%/etc/wl/icons/wl-beta-logo.img
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-beta-logo.xbm
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-beta-logo.xpm
-%%EMACS_LIBDIR%%/etc/wl/icons/wl-beta-xmas-logo.img
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-beta-xmas-logo.xbm
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-beta-xmas-logo.xpm
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-draft-insert-signature-up.xpm
@@ -61,10 +57,8 @@
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-message-prev-content-up.xpm
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-message-quit-up.xpm
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-message-read-up.xpm
-%%EMACS_LIBDIR%%/etc/wl/icons/wl-stable-logo.img
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-stable-logo.xbm
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-stable-logo.xpm
-%%EMACS_LIBDIR%%/etc/wl/icons/wl-stable-xmas-logo.img
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-stable-xmas-logo.xbm
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-stable-xmas-logo.xpm
 %%EMACS_LIBDIR%%/etc/wl/icons/wl-summary-delete-up.xpm
@@ -85,7 +79,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/wanderlust-startup.el
 %%EMACS_VERSION_SITE_LISPDIR%%/wl/acap.el
 %%EMACS_VERSION_SITE_LISPDIR%%/wl/acap.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/wl/bbdb-wl.el
 %%EMACS_VERSION_SITE_LISPDIR%%/wl/elmo-access.el
 %%EMACS_VERSION_SITE_LISPDIR%%/wl/elmo-access.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/wl/elmo-archive.el
@@ -176,8 +169,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/wl/modb.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/wl/pldap.el
 %%EMACS_VERSION_SITE_LISPDIR%%/wl/pldap.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/wl/rfc2368.el
-%%EMACS_VERSION_SITE_LISPDIR%%/wl/rfc2368.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/wl/slp.el
 %%EMACS_VERSION_SITE_LISPDIR%%/wl/slp.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/wl/ssl.el
