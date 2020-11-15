@@ -653,6 +653,7 @@
     SUBDIR += p5-GraphViz2-DBI
     SUBDIR += p5-GraphViz2-Data-Grapher
     SUBDIR += p5-GraphViz2-Parse-ISA
+    SUBDIR += p5-GraphViz2-Parse-RecDescent
     SUBDIR += p5-Graphics-Color
     SUBDIR += p5-Graphics-ColorNames
     SUBDIR += p5-Graphics-ColorNames-WWW
