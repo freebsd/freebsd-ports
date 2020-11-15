@@ -2,6 +2,7 @@
 
 PORTNAME=	powerdns
 DISTVERSION=	4.3.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
@@ -14,10 +15,12 @@ LICENSE=	GPLv2
 BROKEN_sparc64=	Does not compile: error: to_string is not a member of std
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libprotobuf.so:devel/protobuf
 
 USES=		compiler:c++11-lib cpe gmake libtool localbase:ldflags pathfix \
 		pkgconfig ssl tar:bzip2
+
 USE_LDCONFIG=	YES
 USE_RC_SUBR=	pdns
 USE_SUBMAKE=	YES
@@ -28,7 +31,8 @@ CONFIGURE_ARGS=	--disable-static \
 		--sysconfdir="${PREFIX}/etc/pdns" \
 		--with-boost="${LOCALBASE}" \
 		--with-dynmodules="pipe bind ${MODULES}" \
-		--with-modules=""
+		--with-modules="" \
+		--with-protobuf
 
 INSTALL_TARGET=	install-strip
 SCRIPTS_ENV=	CURDIR2="${.CURDIR}" DISTNAME="${DISTNAME}" MKDIR="${MKDIR}" \
@@ -36,9 +40,12 @@ SCRIPTS_ENV=	CURDIR2="${.CURDIR}" DISTNAME="${DISTNAME}" MKDIR="${MKDIR}" \
 		WRKDIRPREFIX="${WRKDIRPREFIX}"
 SUB_FILES=	pkg-message
 
+USERS=		pdns
+GROUPS=		pdns
+
 OPTIONS_DEFINE=			DOCS EXAMPLES GEOIP IXFRDIST LMDB LUABACKEND \
-				MYSQL OPENLDAP PGSQL PROTOBUF REMOTE SQLITE3 \
-				TINYDNS TOOLS UNIXODBC
+				MYSQL OPENLDAP PGSQL REMOTE SQLITE3 TINYDNS \
+				TOOLS UNIXODBC
 OPTIONS_DEFAULT=		LMDB LUA MYSQL PGSQL SQLITE3
 OPTIONS_GROUP=			GEOIPOPT REMOTEOPT
 OPTIONS_GROUP_REMOTEOPT=	ZEROMQ
@@ -58,7 +65,6 @@ LUA_DESC=		Use lang/lua
 MYSQL_DESC=		MySQL backend
 OPENLDAP_DESC=		OpenLDAP backend
 PGSQL_DESC=		PostgreSQL backend
-PROTOBUF_DESC=		Protobuf support
 REMOTEOPT_DESC=		Remote backend connectors
 REMOTE_DESC=		Remote backend
 SQLITE3_DESC=		SQLite 3 backend
@@ -70,6 +76,7 @@ GEOIP_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb \
 			libyaml-cpp.so:devel/yaml-cpp
 GEOIP_VARS=		MODULES+=geoip
 
+IXFRDIST_LIB_DEPENDS=		libyaml-cpp.so:devel/yaml-cpp
 IXFRDIST_CONFIGURE_ENABLE=	ixfrdist
 
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
@@ -100,9 +107,6 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--with-pg-config=${LOCALBASE}/bin/pg_config
 PGSQL_VARS=		MODULES+=gpgsql
 
-PROTOBUF_LIB_DEPENDS=		libprotobuf.so:devel/protobuf
-PROTOBUF_CONFIGURE_WITH=	protobuf
-
 REMOTE_VARS=	MODULES+=remote
 
 SQLITE3_USES=	sqlite:3
@@ -129,6 +133,8 @@ CONFIGURE_ARGS+=	--with-libdecaf \
 			--with-libsodium
 LIB_DEPENDS+=		libdecaf.so:security/libdecaf \
 			libsodium.so:security/libsodium
+.else
+CONFIGURE_ARGS+=	--with-libsodium=no
 .endif
 
 post-install::

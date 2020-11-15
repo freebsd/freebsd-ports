@@ -31,7 +31,7 @@ required_files=${pdns_conf}
 pidfile=/var/run/pdns/${name}.pid
 
 command=%%PREFIX%%/sbin/pdns_server
-command_args="--daemon --guardian"
+command_args="${pdns_flags} --daemon --guardian"
 
 monitor_cmd="${command} --daemon=no --guardian=no --control-console --loglevel=9"
 extra_commands="monitor"
