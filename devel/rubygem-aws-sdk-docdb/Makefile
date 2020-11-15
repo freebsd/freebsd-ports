@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-docdb
-PORTVERSION=	1.21.0
+PORTVERSION=	1.23.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
