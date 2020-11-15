@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-control-center
-PORTVERSION=	3.36.4
+PORTVERSION=	3.38.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -33,7 +33,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libgtop-2.0.so:devel/libgtop \
 		libgrilo-0.3.so:net/grilo \
 		libpolkit-gobject-1.so:sysutils/polkit \
-		libhandy-0.0.so:x11-toolkits/libhandy0 \
+		libhandy-1.so:x11-toolkits/libhandy \
 		libudisks2.so:sysutils/libudisks \
 		libsecret-1.so:security/libsecret \
 		libepoxy.so:graphics/libepoxy
