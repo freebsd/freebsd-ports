@@ -28,6 +28,7 @@ include/libgda-%%VERSION%%/libgda-ui/gdaui-rt-editor.h
 include/libgda-%%VERSION%%/libgda-ui/gdaui-server-operation.h
 include/libgda-%%VERSION%%/libgda-ui/gdaui-tree-store.h
 include/libgda-%%VERSION%%/libgda-ui/libgda-ui.h
+lib/girepository-1.0/Gdaui-%%VERSION%%.typelib
 lib/libgda-%%VERSION%%/plugins/gdaui-entry-filesel-spec.xml
 lib/libgda-%%VERSION%%/plugins/gdaui-entry-format-spec.xml
 lib/libgda-%%VERSION%%/plugins/gdaui-entry-password.xml
@@ -42,12 +43,16 @@ libdata/pkgconfig/libgda-ui-%%VERSION%%.pc
 share/appdata/gda-browser-%%VERSION%%.appdata.xml
 share/applications/gda-browser-%%VERSION%%.desktop
 share/applications/gda-control-center-%%VERSION%%.desktop
+share/gir-1.0/Gdaui-%%VERSION%%.gir
 share/gtk-doc/html/gda-browser/BrowserConnection.html
 share/gtk-doc/html/gda-browser/BrowserCore.html
 share/gtk-doc/html/gda-browser/BrowserPerspective.html
 share/gtk-doc/html/gda-browser/BrowserWindow.html
 share/gtk-doc/html/gda-browser/MgrFavorites.html
 share/gtk-doc/html/gda-browser/UILayout.png
+share/gtk-doc/html/gda-browser/annotation-glossary.html
+share/gtk-doc/html/gda-browser/api-deprecated.html
+share/gtk-doc/html/gda-browser/api-index-full.html
 share/gtk-doc/html/gda-browser/code_orga.html
 share/gtk-doc/html/gda-browser/core.html
 share/gtk-doc/html/gda-browser/extrawidgets.html

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgda
-PORTVERSION?=	5.2.5
-PORTREVISION?=	1
+DISTVERSION?=	5.2.10
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	5
@@ -120,6 +119,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in -exec ${REINPLACE_CMD} \
 		-e 's|$$(top_builddir)/libgda/libgda-5.0.la|-lgda-5.0|g' \
 		-e 's|../libgda/libgda-5.0.la|-lgda-5.0|g' \
+		-e '/LIBS =/s|-lgda-5.0|gda-5.0|g' \
 		{} \;
 .endif
 
