@@ -11,6 +11,7 @@ COMMENT=		Extensive set of GNUstep web application frameworks
 
 LICENSE=		LGPL20
 
+BROKEN_aarch64=		fails to build: bundle.make:301: STXSaxDriver.sax/Resources/Info-gnustep.plist] Abort trap (core dumped)
 BROKEN_powerpc64=	fails to build: bundle.make:301: STXSaxDriver.sax/Resources/Info-gnustep.plist] Illegal instruction (core dumped)
 
 LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
