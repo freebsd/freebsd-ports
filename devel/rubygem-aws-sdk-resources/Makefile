@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.84.0
+PORTVERSION=	3.85.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -107,6 +107,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-glacier>=1<2:devel/rubygem-aws-sdk-glacier \
 		rubygem-aws-sdk-globalaccelerator>=1<2:devel/rubygem-aws-sdk-globalaccelerator \
 		rubygem-aws-sdk-glue>=1<2:devel/rubygem-aws-sdk-glue \
+		rubygem-aws-sdk-gluedatabrew>=1<2:devel/rubygem-aws-sdk-gluedatabrew \
 		rubygem-aws-sdk-greengrass>=1<2:devel/rubygem-aws-sdk-greengrass \
 		rubygem-aws-sdk-groundstation>=1<2:devel/rubygem-aws-sdk-groundstation \
 		rubygem-aws-sdk-guardduty>=1<2:devel/rubygem-aws-sdk-guardduty \
