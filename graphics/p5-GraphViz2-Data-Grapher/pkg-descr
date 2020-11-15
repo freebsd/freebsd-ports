@@ -1,0 +1,4 @@
+GraphViz2::Data::Grapher takes a Perl data structure and recursively converts it
+into Tree::DAG_Node object, and then graphs it.
+
+WWW: https://metacpan.org/release/GraphViz2-Data-Grapher
