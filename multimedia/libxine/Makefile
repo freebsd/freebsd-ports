@@ -130,6 +130,10 @@ XVMC_CONFIGURE_ENABLE=		xvmc
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == aarch64
+BUILD_DEPENDS+=	as:devel/binutils
+.endif
+
 post-patch:
 .if ${COMPILER_TYPE} == "clang"
 	@${REINPLACE_CMD} -e 's|-fno-rename-registers||' \
