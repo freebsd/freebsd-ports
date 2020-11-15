@@ -1,4 +1,4 @@
---- Makefile.orig	2020-04-13 15:48:30 UTC
+--- Makefile.orig	2020-08-19 06:37:16 UTC
 +++ Makefile
 @@ -40,7 +40,7 @@ MD5SUM = md5sum
  TINYGO ?= tinygo
@@ -9,8 +9,17 @@
      LLVM_OPTION += '-DLLVM_CCACHE_BUILD=ON'
  endif
  
+@@ -104,7 +104,7 @@ LLD_LIBS = $(START_GROUP) -llldCOFF -llldCommon -llldC
+ ifneq ("$(wildcard $(LLVM_BUILDDIR)/bin/llvm-config*)","")
+     CGO_CPPFLAGS=$(shell $(LLVM_BUILDDIR)/bin/llvm-config --cppflags) -I$(abspath $(LLVM_BUILDDIR))/tools/clang/include -I$(abspath $(CLANG_SRC))/include -I$(abspath $(LLD_SRC))/include
+     CGO_CXXFLAGS=-std=c++14
+-    CGO_LDFLAGS+=$(LIBCLANG_PATH) -std=c++14 -L$(abspath $(LLVM_BUILDDIR)/lib) $(CLANG_LIBS) $(LLD_LIBS) $(shell $(LLVM_BUILDDIR)/bin/llvm-config --ldflags --libs --system-libs $(LLVM_COMPONENTS)) -lstdc++ $(CGO_LDFLAGS_EXTRA)
++    CGO_LDFLAGS+=$(LIBCLANG_PATH) -L$(abspath $(LLVM_BUILDDIR)/lib) $(CLANG_LIBS) $(LLD_LIBS) $(shell $(LLVM_BUILDDIR)/bin/llvm-config --ldflags --libs --system-libs $(LLVM_COMPONENTS)) -lstdc++ $(CGO_LDFLAGS_EXTRA)
+ endif
+ 
+ 
 @@ -121,13 +121,13 @@ fmt-check:
- gen-device: gen-device-avr gen-device-nrf gen-device-sam gen-device-sifive gen-device-stm32
+ gen-device: gen-device-avr gen-device-nrf gen-device-sam gen-device-sifive gen-device-stm32 gen-device-kendryte gen-device-nxp
  
  gen-device-avr:
 -	$(GO) build -o ./build/gen-device-avr ./tools/gen-device-avr/
@@ -25,7 +34,7 @@
  
  gen-device-nrf: build/gen-device-svd
  	./build/gen-device-svd -source=https://github.com/NordicSemiconductor/nrfx/tree/master/mdk lib/nrfx/mdk/ src/device/nrf/
-@@ -165,16 +165,16 @@ $(LLVM_BUILDDIR): $(LLVM_BUILDDIR)/build.ninja
+@@ -173,16 +173,16 @@ $(LLVM_BUILDDIR): $(LLVM_BUILDDIR)/build.ninja
  .PHONY: wasi-libc
  wasi-libc: lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a
  lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a:
@@ -45,8 +54,11 @@
  
  tinygo-test:
  	cd tests/tinygotest && tinygo test
-@@ -345,4 +345,3 @@ release: tinygo gen-device wasi-libc
+@@ -383,7 +383,6 @@ build/release: tinygo gen-device wasi-libc
  	./build/tinygo build-library -target=armv6m-none-eabi  -o build/release/tinygo/pkg/armv6m-none-eabi/picolibc.a picolibc
  	./build/tinygo build-library -target=armv7m-none-eabi  -o build/release/tinygo/pkg/armv7m-none-eabi/picolibc.a picolibc
  	./build/tinygo build-library -target=armv7em-none-eabi -o build/release/tinygo/pkg/armv7em-none-eabi/picolibc.a picolibc
--	tar -czf build/release.tar.gz -C build/release tinygo
+-
+ release: build/release
+ 	tar -czf build/release.tar.gz -C build/release tinygo
+ 
