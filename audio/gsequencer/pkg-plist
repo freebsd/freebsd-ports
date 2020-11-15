@@ -12,6 +12,7 @@ include/ags/audio/ags_char_buffer_util.h
 include/ags/audio/ags_devin.h
 include/ags/audio/ags_devout.h
 include/ags/audio/ags_diatonic_scale.h
+include/ags/audio/ags_fast_pitch_util.h
 include/ags/audio/ags_fifoout.h
 include/ags/audio/ags_filter_util.h
 include/ags/audio/ags_fm_synth_util.h
@@ -82,6 +83,7 @@ include/ags/audio/file/ags_audio_container_manager.h
 include/ags/audio/file/ags_audio_file.h
 include/ags/audio/file/ags_audio_file_link.h
 include/ags/audio/file/ags_audio_file_manager.h
+include/ags/audio/file/ags_gstreamer_file.h
 include/ags/audio/file/ags_ipatch.h
 include/ags/audio/file/ags_ipatch_dls2_reader.h
 include/ags/audio/file/ags_ipatch_gig_reader.h
@@ -166,6 +168,11 @@ include/ags/audio/fx/ags_fx_volume_audio_signal.h
 include/ags/audio/fx/ags_fx_volume_channel.h
 include/ags/audio/fx/ags_fx_volume_channel_processor.h
 include/ags/audio/fx/ags_fx_volume_recycling.h
+include/ags/audio/gstreamer/ags_gstreamer_client.h
+include/ags/audio/gstreamer/ags_gstreamer_devin.h
+include/ags/audio/gstreamer/ags_gstreamer_devout.h
+include/ags/audio/gstreamer/ags_gstreamer_port.h
+include/ags/audio/gstreamer/ags_gstreamer_server.h
 include/ags/audio/jack/ags_jack_client.h
 include/ags/audio/jack/ags_jack_devin.h
 include/ags/audio/jack/ags_jack_devout.h
