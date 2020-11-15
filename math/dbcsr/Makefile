@@ -23,6 +23,7 @@ USE_LDCONFIG=	yes
 LDFLAGS+=	-lopenblas
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	BUILD_TESTING
 CMAKE_ARGS=	-DBLA_VENDOR:STRING="OpenBLAS"
 
 TEST_TARGET=	test # tests hang: https://github.com/cp2k/dbcsr/issues/72
@@ -39,10 +40,18 @@ OPENMP_CMAKE_BOOL=	USE_OPENMP
 C_API_DESC=		Build the C API library
 C_API_CMAKE_BOOL=	WITH_C_API
 
+.include <bsd.port.pre.mk>
+
+.  if ${GCC_DEFAULT} >= 10
+CMAKE_ARGS+=	-DCMAKE_Fortran_FLAGS="${FFLAGS} -fallow-argument-mismatch" # -fallow-argument-mismatch is a workaround of https://github.com/cp2k/dbcsr/issues/387 for gcc10+
+.  else
+CMAKE_ARGS+=	-DCMAKE_Fortran_FLAGS="${FFLAGS}"
+.  endif
+
 do-test: # tests are broken: https://github.com/cp2k/dbcsr/issues/150
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
