@@ -315,6 +315,7 @@
     SUBDIR += ljdeps
     SUBDIR += logswan
     SUBDIR += logtools
+    SUBDIR += ls-qpack
     SUBDIR += lua-resty-core
     SUBDIR += lua-resty-lrucache
     SUBDIR += luakit

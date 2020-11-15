@@ -1,0 +1,14 @@
+QPACK is the compression mechanism used by HTTP/3 to compress HTTP headers. It
+is in the process of being standardazed by the QUIC Working Group. The QPACK
+Internet-Draft is has been stable for some time and we don't expect functional
+changes to it before the final RFC is released.
+
+ls-qpack is a full-featured, tested, and fast QPACK library. The QPACK encoder
+produces excellent compression results based on an innovative mnemonic technique
+(to be described in a future article). It boasts the fastest Huffman encoder and
+decoder.
+
+The library is production quality. It is used in OpenLiteSpeed, LiteSpeed Web
+Server, and LiteSpeed Web ADC.
+
+WWW: https://github.com/litespeedtech/ls-qpack

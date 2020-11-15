@@ -1,0 +1,8 @@
+bin/encode-int
+bin/fuzz-decode
+bin/interop-decode
+bin/interop-encode
+include/huff-tables.h
+include/lsqpack.h
+include/lsxpack_header.h
+lib/libls-qpack.so

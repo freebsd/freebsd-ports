@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2020-05-28 18:23:09 UTC
++++ CMakeLists.txt
+@@ -20,9 +20,11 @@ add_library(ls-qpack "")
+ target_include_directories(ls-qpack PUBLIC .)
+ target_sources(ls-qpack PRIVATE lsqpack.c)
+ 
+-target_include_directories(ls-qpack PRIVATE deps/xxhash/)
+ if(LSQPACK_XXH)
+-    target_sources(ls-qpack PRIVATE deps/xxhash/xxhash.c)
++    find_path(XXHASH_INCLUDE_DIR xxhash.h)
++    find_library(XXHASH_LIBRARY xxhash)
++    include_directories(${XXHASH_INCLUDE_DIR})
++    link_libraries(${XXHASH_LIBRARY})
+ endif()
+ 
+ if(MSVC)
