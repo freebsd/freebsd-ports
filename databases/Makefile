@@ -46,6 +46,7 @@
     SUBDIR += couchdb3
     SUBDIR += courier-authlib-mysql
     SUBDIR += courier-authlib-pgsql
+    SUBDIR += courier-authlib-sqlite
     SUBDIR += courier-authlib-userdb
     SUBDIR += courier-authlib-usergdbm
     SUBDIR += cppdb

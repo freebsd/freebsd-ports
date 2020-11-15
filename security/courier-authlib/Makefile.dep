@@ -19,6 +19,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthmysql.so:databases/couri
 .if ${PORT_OPTIONS:MAUTH_PGSQL}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthpgsql.so:databases/courier-authlib-pgsql
 .endif
+.if ${PORT_OPTIONS:MAUTH_SQLITE}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthsqlite.so:databases/courier-authlib-sqlite
+.endif
 .if ${PORT_OPTIONS:MAUTH_USERDB}
 .if ${PORT_OPTIONS:MGDBM}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthuserdb.so:databases/courier-authlib-usergdbm

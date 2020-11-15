@@ -1,4 +1,4 @@
---- configure.orig	2017-07-02 14:41:39 UTC
+--- configure.orig	2020-06-18 01:05:21 UTC
 +++ configure
 @@ -642,6 +642,10 @@ ltdl_LIBOBJS
  am__EXEEXT_FALSE
@@ -9,9 +9,9 @@
 +HAVE_USERDB_TRUE
 +HAVE_USERDB_FALSE
  LIBOBJS
- HAVE_SGML_FALSE
- HAVE_SGML_TRUE
-@@ -676,6 +680,9 @@ LIBAUTHPGSQL
+ VERSION_INFO
+ courierauth_ldflags
+@@ -678,6 +682,9 @@ LIBAUTHPGSQL
  PGSQL_LIBS
  PG_CONFIG
  authpgsqlrc
@@ -21,7 +21,7 @@
  LIBAUTHPWD
  LIBAUTHSHADOW
  SHADOWLIBS
-@@ -1563,6 +1570,7 @@ Optional Packages:
+@@ -1565,6 +1572,7 @@ Optional Packages:
   --with-authldaprc=filename         Expect to find authldaprc here
   --without-authpwd                  Do not include the authpwd module
   --without-authshadow               Do not include the authshadow module
@@ -29,7 +29,7 @@
   --with-authpgsqlrc=filename        Expect to find authpgsql here
   --without-authpgsql               Do not include the authpgsql module
   --with-pgsql-libs=DIR		Look for pgsql libs in this dir
-@@ -2938,7 +2946,7 @@ else
+@@ -2940,7 +2948,7 @@ else
  fi
  
  fi
@@ -38,7 +38,7 @@
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for a thread-safe mkdir -p" >&5
  $as_echo_n "checking for a thread-safe mkdir -p... " >&6; }
-@@ -18097,8 +18105,12 @@ fi
+@@ -18276,8 +18284,12 @@ fi
  
  if test "$doauthuserdb" = "no"
  then
@@ -51,7 +51,7 @@
  	AUTHUSERDB="authuserdb"
  	LIBAUTHUSERDB="libauthuserdb.la"
  
-@@ -18556,7 +18568,21 @@ else
+@@ -18735,7 +18747,21 @@ else
  fi
  
  
@@ -73,16 +73,10 @@
   if test "$HAVE_LDAP" = 1; then
    HAVE_LDAP_TRUE=
    HAVE_LDAP_FALSE='#'
-@@ -18768,6 +18794,256 @@ if test "$HAVE_PWD" = 1
- then
- 	LIBAUTHPWD="libauthpwd.la"
- fi
-+
-+
-+
-+
-+
-+
+@@ -18953,6 +18979,256 @@ fi
+ 
+ 
+ 
 +
 +vpopmail_home=`$PERL -e '@a=getpwnam("vpopmail"); print "$a[7]";'`
 +
@@ -327,6 +321,45 @@
 +	LIBS=$_SAVE_LIBS
 +fi
 +
++
++
++
++
++
++
+ # Check whether --with-authpgsqlrc was given.
+ if test "${with_authpgsqlrc+set}" = set; then :
+   withval=$with_authpgsqlrc; authpgsqlrc="$withval"
+@@ -19278,8 +19554,9 @@ then
+ 	SQLITE_LIBS="`pkg-config --libs sqlite3 2>/dev/null`"
+         saveLIBS="$LIBS"
+ 	LIBS="$SQLITE_LIBS $LIBS"
+-	ac_fn_c_check_func "$LINENO" "sqlite3_version" "ac_cv_func_sqlite3_version"
+-if test "x$ac_cv_func_sqlite3_version" = xyes; then :
++echo $LIBS
++#	ac_fn_c_check_func "$LINENO" "sqlite3_version" "ac_cv_func_sqlite3_version"
++if test -n $SQLITE_LIBS; then :
+   doauthsqlite="yes"
  
+ fi
+@@ -19296,13 +19573,13 @@ then
+ else
+ 	saveLIBS="$LIBS"
+ 	LIBS="$SQLITE_LIBS $LIBS"
+-	ac_fn_c_check_func "$LINENO" "sqlite3_version" "ac_cv_func_sqlite3_version"
+-if test "x$ac_cv_func_sqlite3_version" = xyes; then :
+-   :
+-else
+-   as_fn_error $? "Cannot link with $SQLITE_LIBS" "$LINENO" 5
+-
+-fi
++#	ac_fn_c_check_func "$LINENO" "sqlite3_version" "ac_cv_func_sqlite3_version"
++#if test "x$ac_cv_func_sqlite3_version" = xyes; then :
++#   :
++#else
++#   as_fn_error $? "Cannot link with $SQLITE_LIBS" "$LINENO" 5
++#
++#fi
  
- 
+ 	LIBS="$saveLIBS"
+ 	HAVE_AUTHSQLITE=1
