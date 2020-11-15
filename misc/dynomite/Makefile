@@ -11,6 +11,8 @@ COMMENT=	Generic dynamo implementation for different k-v storage engines
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=		fails to configure: checking build system type... Invalid configuration 'aarch64-portbld-freebsd13.0': machine 'aarch64-portbld' not recognized
+
 USES=		autoreconf gmake libtool ssl
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
