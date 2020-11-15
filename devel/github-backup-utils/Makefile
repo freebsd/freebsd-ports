@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	github-backup-utils
-PORTVERSION=	2.21.0
+PORTVERSION=	2.22.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/github/backup-utils/releases/download/v${PORTVERSION}/
