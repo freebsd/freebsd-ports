@@ -38,6 +38,12 @@ OPTIONS_DEFINE=	DOCS
 DOCS_CMAKE_ON=	-DOCPN_BUNDLE_DOCS:STRING="ON"
 DOCS_CMAKE_OFF=	-DOCPN_BUNDLE_DOCS:STRING="OFF"
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+CMAKE_ARGS+=	-DHAVE_MSSE=OFF -DHAVE_MSSE2=OFF -DHAVE_MSSE3=OFF -DHAVE_MAVX2=OFF -DHAVE_MFPU_NEON=OFF
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:
