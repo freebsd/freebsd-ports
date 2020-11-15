@@ -1,0 +1,24 @@
+diff --git a/src/client.c b/src/client.c
+index c90c7ada710b482a847e80a1e835adf54fe97f34..13acc44f75455b1c9de70255a73cf4457dfb7531 100644
+--- src/client.c
++++ src/client.c
+@@ -2705,10 +2705,18 @@ clientClose (Client *c)
+ void
+ clientKill (Client *c)
+ {
++    ScreenInfo *screen_info;
++    DisplayInfo *display_info;
++
+     g_return_if_fail (c != NULL);
+     TRACE ("client \"%s\" (0x%lx)", c->name, c->window);
+ 
+-    XKillClient (clientGetXDisplay (c), c->window);
++    screen_info = c->screen_info;
++    display_info = screen_info->display_info;
++
++    myDisplayErrorTrapPush (display_info);
++    XKillClient (display_info->dpy, c->window);
++    myDisplayErrorTrapPopIgnored (display_info);
+ }
+ 
+ void
