@@ -2,7 +2,7 @@
 
 PORTNAME=	fmt
 # Make sure to check devel/spdlog consumers too
-PORTVERSION=	7.0.3
+PORTVERSION=	7.1.2
 MASTER_SITES=	https://github.com/fmtlib/fmt/releases/download/${PORTVERSION}/
 CATEGORIES=	devel
 PKGNAMEPREFIX=	lib
@@ -22,6 +22,12 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 PLIST_SUB=	SHL1=${PORTVERSION:R:R} \
 		SHL3=${PORTVERSION}
+
+OPTIONS_DEFINE=	FULL_CACHE_DRAGONBOX
+OPTIONS_DEFAULT=FULL_CACHE_DRAGONBOX
+FULL_CACHE_DRAGONBOX_DESC=	Use larger binary size for better performance
+
+FULL_CACHE_DRAGONBOX_CXXFLAGS=	-DFMT_USE_FULL_CACHE_DRAGONBOX=1
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
