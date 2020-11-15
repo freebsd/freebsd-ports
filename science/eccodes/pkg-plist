@@ -59,7 +59,6 @@ include/eccodes_windef.h
 include/grib_api.h
 lib/cmake/eccodes/eccodes-config-version.cmake
 lib/cmake/eccodes/eccodes-config.cmake
-lib/cmake/eccodes/eccodes-config.cmake.tpls
 lib/cmake/eccodes/eccodes-import.cmake
 lib/cmake/eccodes/eccodes-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/eccodes/eccodes-targets.cmake
@@ -15341,6 +15340,9 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/shortName.legacy.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/units.def
 %%DATADIR%%/definitions/grib2/localConcepts/ecmf/units.legacy.def
+%%DATADIR%%/definitions/grib2/localConcepts/ecmf/unstructuredGrid.def
+%%DATADIR%%/definitions/grib2/localConcepts/ecmf/unstructuredGridSubtype.def
+%%DATADIR%%/definitions/grib2/localConcepts/ecmf/unstructuredGridType.def
 %%DATADIR%%/definitions/grib2/localConcepts/edzw/default_step_units.def
 %%DATADIR%%/definitions/grib2/localConcepts/edzw/modelName.def
 %%DATADIR%%/definitions/grib2/localConcepts/edzw/name.def
@@ -18696,7 +18698,13 @@ libdata/pkgconfig/eccodes.pc
 %%DATADIR%%/definitions/grib2/tigge_parameter.def
 %%DATADIR%%/definitions/grib2/tigge_short_name.def
 %%DATADIR%%/definitions/grib2/tigge_suiteName.table
+%%DATADIR%%/definitions/grib2/typeOfLevelConcept.def
+%%DATADIR%%/definitions/grib2/typeOfUnstructuredGridConcept.def
 %%DATADIR%%/definitions/grib2/units.def
+%%DATADIR%%/definitions/grib2/unstructuredGridConcept.def
+%%DATADIR%%/definitions/grib2/unstructuredGridSubtype.def
+%%DATADIR%%/definitions/grib2/unstructuredGridType.def
+%%DATADIR%%/definitions/grib2/unstructuredGridUUID.def
 %%DATADIR%%/definitions/grib3/boot.def
 %%DATADIR%%/definitions/grib3/centre.table
 %%DATADIR%%/definitions/grib3/cfName.def
