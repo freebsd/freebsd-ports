@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gspell
-PORTVERSION=	1.8.4
+PORTVERSION=	1.9.1
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -13,10 +13,10 @@ COMMENT=	Spell checking for GTK+
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	valac:lang/vala \
-		iso-codes>=3.57:misc/iso-codes
+BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
-		libfribidi.so:converters/fribidi
+		libfribidi.so:converters/fribidi \
+		libicudata.so:devel/icu
 
 PORTSCOUT=	limitw:even
 
