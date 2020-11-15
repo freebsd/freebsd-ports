@@ -3413,6 +3413,7 @@
     SUBDIR += p5-Test-Signature
     SUBDIR += p5-Test-Simple
     SUBDIR += p5-Test-Singleton
+    SUBDIR += p5-Test-Snapshot
     SUBDIR += p5-Test-Spec
     SUBDIR += p5-Test-Spelling
     SUBDIR += p5-Test-Strict

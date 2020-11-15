@@ -1,0 +1,5 @@
+Test::Snapshot implements a function to automate the storing and updating of
+expected test outputs. This is based on the idea known in frontend development
+circles as "snapshot testing", hence the module name.
+
+WWW: https://metacpan.org/release/Test-Snapshot
