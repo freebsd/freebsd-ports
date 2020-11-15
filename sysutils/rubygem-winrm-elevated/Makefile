@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	winrm-elevated
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
