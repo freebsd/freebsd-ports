@@ -1,0 +1,4 @@
+GraphViz2::Parse::XML takes an XML file and converts it into a graph, using the
+pure-Perl XML::Tiny.
+
+WWW: https://metacpan.org/release/GraphViz2-Parse-XML
