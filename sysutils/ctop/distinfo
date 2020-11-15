@@ -1,6 +1,6 @@
-TIMESTAMP = 1603922969
-SHA256 (bcicen-ctop-v0.7.4_GH0.tar.gz) = 55d9a3c6d4cddf6f1afdd52401bb709d3265a96c45fdc51bfa4223467c5d7fb1
-SIZE (bcicen-ctop-v0.7.4_GH0.tar.gz) = 1291202
+TIMESTAMP = 1605390296
+SHA256 (bcicen-ctop-v0.7.5_GH0.tar.gz) = a9a3be0e5eab2fee6b44a5d063188a354f9c0dde3d96a169d1490981f7826e9a
+SIZE (bcicen-ctop-v0.7.5_GH0.tar.gz) = 1291282
 SHA256 (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = ee1ebe2efef498be1c558bf71e143289db2d21e2d42592503ad2d4a989006821
 SIZE (Azure-go-ansiterm-d6e3b3328b78_GH0.tar.gz) = 20946
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
