@@ -5194,6 +5194,7 @@
     SUBDIR += py-versiontools
     SUBDIR += py-vine
     SUBDIR += py-virtualenv
+    SUBDIR += py-virtualenv-api
     SUBDIR += py-virtualenv-clone
     SUBDIR += py-virtualenvwrapper
     SUBDIR += py-visitor

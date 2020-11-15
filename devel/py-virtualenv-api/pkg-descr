@@ -1,0 +1,8 @@
+virtualenv is a tool to create isolated Python environments. Unfortunately, it
+does not expose a native Python API. This package aims to provide an API in the
+form of a wrapper around virtualenv.
+
+It can be used to create and delete environments and perform package management
+inside the environment.
+
+WWW: https://github.com/sjkingo/virtualenv-api
