@@ -1,5 +1,5 @@
---- /usr/ports/lang/ldc/work/ldc-1.23.0/ltsmaster/driver/targetmachine.cpp
-+++ /usr/ports/lang/ldc.last/work/ldc-1.23.0/ltsmaster/driver/targetmachine.cpp
+--- ltsmaster/driver/targetmachine.cpp 2018-08-24 00:55:46 UTC
++++ ltsmaster/driver/targetmachine.cpp
 @@ -587,6 +587,23 @@
      break;
    }
