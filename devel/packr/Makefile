@@ -2,7 +2,7 @@
 
 PORTNAME=	packr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
+DISTVERSION=	2.8.1
 CATEGORIES=	devel
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -27,7 +27,7 @@ GH_TUPLE=	\
 		golang:tools:11ec41452d41:golang_tools/vendor/golang.org/x/tools \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		joho:godotenv:v1.3.0:joho_godotenv/vendor/github.com/joho/godotenv \
-		karrick:godirwalk:v1.15.3:karrick_godirwalk/vendor/github.com/karrick/godirwalk \
+		karrick:godirwalk:v1.15.8:karrick_godirwalk/vendor/github.com/karrick/godirwalk \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		markbates:errx:v1.1.0:markbates_errx/vendor/github.com/markbates/errx \
 		markbates:oncer:v1.0.0:markbates_oncer/vendor/github.com/markbates/oncer \
