@@ -50,7 +50,7 @@ OPTIONS_DEFAULT=	OPENEXR
 OPTIONS_SUB=		yes
 
 GMIC_DESC=		Depend on the G'Mic plugin #'
-GMIC_RUN_DEPENDS=	gmic_krita_qt:graphics/gmic-qt
+GMIC_RUN_DEPENDS=	gmic_krita_qt:graphics/gmic-qt@krita
 
 OPENEXR_LIB_DEPENDS=	libIlmImf.so:graphics/openexr \
 			libSeExpr2.so:graphics/seexpr
