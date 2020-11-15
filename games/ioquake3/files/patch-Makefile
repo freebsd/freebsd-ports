@@ -1,5 +1,16 @@
 --- Makefile.orig	2009-04-22 18:54:48 UTC
 +++ Makefile
+@@ -16,6 +16,10 @@ ifeq ($(COMPILE_PLATFORM),darwin)
+   # Apple does some things a little differently...
+   COMPILE_ARCH=$(shell uname -p | sed -e s/i.86/i386/)
+ endif
++ifeq ($(COMPILE_PLATFORM),freebsd)
++  # FreeBSD does some things a little differently...
++  COMPILE_ARCH=$(shell uname -p)
++endif
+ 
+ ifeq ($(COMPILE_PLATFORM),mingw32)
+   ifeq ($(COMPILE_ARCH),i386)
 @@ -187,6 +187,8 @@ ifeq ($(shell which pkg-config > /dev/nu
    # FIXME: introduce CLIENT_CFLAGS
    SDL_CFLAGS=$(shell pkg-config --cflags sdl|sed 's/-Dmain=SDL_main//')
