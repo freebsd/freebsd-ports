@@ -14,9 +14,9 @@ LICENSE=	GPLv2
 USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	wanderlust
-GH_TAGNAME=	414dc33
+GH_TAGNAME=	4e3269b
 
-SNAPDATE=	20200824
+SNAPDATE=	20201106
 NO_ARCH=	yes
 
 ALL_TARGET=	elc
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	DOCS
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC} ; \
-	for i in ChangeLog README.* ; do \
+	for i in README.* ; do \
 	    ${INSTALL_DATA} $${i} ${STAGEDIR}${DOCSDIR} ; \
 	done)
 
