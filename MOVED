@@ -15685,3 +15685,25 @@ databases/py-python-rrdtool||2020-11-10|Has expired: Uses deprecated version of 
 net/spideroak||2020-11-10|Has expired: Uses deprecated version of python
 emulators/playonbsd||2020-11-10|Has expired: Uses deprecated version of python
 net/xorp||2020-11-10|Has expired: Uses deprecated version of python
+archivers/py-pyliblzma||2020-11-15|Has expired: Uses deprecated version of python
+databases/postgis23|databases/postgis24|2020-11-15|Has expired: Upstream no longer maintained
+databases/py-htsql||2020-11-15|Has expired: Uses deprecated version of python
+devel/bzr-fastimport||2020-11-15|Has expired: Uses deprecated version of python
+devel/py-ToscaWidgets||2020-11-15|Has expired: Uses deprecated version of python
+devel/py-calendar||2020-11-15|Has expired: Uses deprecated version of python
+devel/py-distorm||2020-11-15|Has expired: Uses deprecated version of python
+devel/py-fabric1|devel/py-fabric|2020-11-15|Has expired: Uses deprecated version of python
+devel/py-rcsparse||2020-11-15|Has expired: Uses deprecated version of python
+devel/pyrex||2020-11-15|Has expired: Uses deprecated version of python
+japanese/py-tegaki||2020-11-15|Has expired: Uses deprecated version of python
+math/py-networkx1|math/py-networkx|2020-11-15|Has expired: Obsolete, please use math/py-networkx instead
+misc/py-progressbar231|misc/py-progressbar|2020-11-15|Has expired: Uses deprecated version of python
+multimedia/py-kaa-imlib2||2020-11-15|Has expired: Uses deprecated version of python
+multimedia/py-kaa-metadata||2020-11-15|Has expired: Uses deprecated version of python
+net-im/libtelepathy||2020-11-15|Has expired: Uses deprecated version of python
+security/py-mcrypt||2020-11-15|Has expired: Uses deprecated version of python
+www/py-beautifulsoup32|www/py-beautifulsoup|2020-11-15|Has expired: Uses deprecated version of python
+www/py-evernote||2020-11-15|Has expired: Uses deprecated version of python
+www/py-meld3||2020-11-15|Has expired: EOLed upstream
+www/py-requestbuilder||2020-11-15|Has expired: Uses deprecated version of python
+x11-toolkits/py-SquareMap||2020-11-15|Has expired: Uses deprecated version of python

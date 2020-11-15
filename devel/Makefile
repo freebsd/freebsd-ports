@@ -262,7 +262,6 @@
     SUBDIR += byacc
     SUBDIR += byaccj
     SUBDIR += bzr
-    SUBDIR += bzr-fastimport
     SUBDIR += c2mdoc
     SUBDIR += caf
     SUBDIR += calibrator
@@ -4009,7 +4008,6 @@
     SUBDIR += py-QtPy
     SUBDIR += py-RPyC
     SUBDIR += py-SymbolType
-    SUBDIR += py-ToscaWidgets
     SUBDIR += py-XStatic
     SUBDIR += py-XStatic-Angular
     SUBDIR += py-XStatic-Angular-Bootstrap
@@ -4224,7 +4222,6 @@
     SUBDIR += py-cachetools
     SUBDIR += py-cachetools3
     SUBDIR += py-cachy
-    SUBDIR += py-calendar
     SUBDIR += py-canonicaljson
     SUBDIR += py-capstone
     SUBDIR += py-castellan
@@ -4348,7 +4345,6 @@
     SUBDIR += py-dirspec
     SUBDIR += py-dis3
     SUBDIR += py-distlib
-    SUBDIR += py-distorm
     SUBDIR += py-distributed
     SUBDIR += py-dj31-django-rq
     SUBDIR += py-django-rq
@@ -4382,7 +4378,6 @@
     SUBDIR += py-extras
     SUBDIR += py-extremes
     SUBDIR += py-fabric
-    SUBDIR += py-fabric1
     SUBDIR += py-fabric3
     SUBDIR += py-factory-boy
     SUBDIR += py-fam
@@ -5005,7 +5000,6 @@
     SUBDIR += py-rauth
     SUBDIR += py-raven
     SUBDIR += py-rchitect
-    SUBDIR += py-rcsparse
     SUBDIR += py-readme_renderer
     SUBDIR += py-rebulk
     SUBDIR += py-rednose
@@ -5299,7 +5293,6 @@
     SUBDIR += pylint1
     SUBDIR += pyobfuscate
     SUBDIR += pyotherside-qt5
-    SUBDIR += pyrex
     SUBDIR += pyside2
     SUBDIR += pyside2-tools
     SUBDIR += pystring

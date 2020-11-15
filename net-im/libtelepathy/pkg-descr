@@ -1,7 +1,0 @@
-The Telepathy project aims to provide a unified framework for all forms
-of real time conversations, including instant messaging, IRC, voice
-calls and video calls. It uses the DBus messaging system to provide a
-simple interface for client applications, allowing them to quickly
-benefit from Telepathy's functionality.
-
-WWW: http://telepathy.freedesktop.org/

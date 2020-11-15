@@ -655,7 +655,6 @@
     SUBDIR += plpgsql_check
     SUBDIR += pointcloud
     SUBDIR += postgis-jdbc
-    SUBDIR += postgis23
     SUBDIR += postgis24
     SUBDIR += postgis25
     SUBDIR += postgis30
@@ -765,7 +764,6 @@
     SUBDIR += py-gdbm
     SUBDIR += py-geoalchemy2
     SUBDIR += py-hiredis
-    SUBDIR += py-htsql
     SUBDIR += py-influxdb
     SUBDIR += py-kyotocabinet
     SUBDIR += py-leveldb

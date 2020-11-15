@@ -335,8 +335,6 @@
     SUBDIR += py-gstreamer1
     SUBDIR += py-guessit
     SUBDIR += py-kaa-base
-    SUBDIR += py-kaa-imlib2
-    SUBDIR += py-kaa-metadata
     SUBDIR += py-librtmp
     SUBDIR += py-mido
     SUBDIR += py-mlt

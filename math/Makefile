@@ -787,7 +787,6 @@
     SUBDIR += py-munkres
     SUBDIR += py-munkres10
     SUBDIR += py-networkx
-    SUBDIR += py-networkx1
     SUBDIR += py-nevergrad
     SUBDIR += py-numeric
     SUBDIR += py-numexpr
