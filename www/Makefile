@@ -1654,6 +1654,7 @@
     SUBDIR += py-httpx
     SUBDIR += py-httpx013
     SUBDIR += py-hyper
+    SUBDIR += py-hypercorn
     SUBDIR += py-hyperframe
     SUBDIR += py-hyperlink
     SUBDIR += py-imdbpy
