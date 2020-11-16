@@ -12,9 +12,8 @@ COMMENT=	Open-world roguelike game where you play an addict
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-LIB_DEPENDS+=	libSDL2.so:devel/sdl20
-
 USES=		cargo gnome
+USE_SDL=	sdl2
 USE_GITHUB=	yes
 GH_ACCOUNT=	tryjumping
 GH_TAGNAME=	179c326
