@@ -4,9 +4,9 @@ r100678 | fanf | 2002-07-25 10:59:40 -0500 (Thu, 25 Jul 2002) | 5 lines
 Document the FreeBSD default for CheckHostIP, which was changed in
 rev 1.2 of readconf.c.
 
---- ssh_config.5.orig	2010-08-04 21:03:13.000000000 -0600
-+++ ssh_config.5	2010-09-14 16:14:13.000000000 -0600
-@@ -377,8 +377,7 @@ or
+--- ssh_config.5.orig	2020-11-16 11:53:55.871161000 -0800
++++ ssh_config.5	2020-11-16 12:43:41.763006000 -0800
+@@ -420,8 +420,7 @@ or
  .Cm no .
  .It Cm CheckHostIP
  If set to
@@ -16,11 +16,12 @@ rev 1.2 of readconf.c.
  .Xr ssh 1
  will additionally check the host IP address in the
  .Pa known_hosts
-@@ -390,6 +389,7 @@ in the process, regardless of the settin
- .Cm StrictHostKeyChecking .
+@@ -434,6 +433,8 @@ in the process, regardless of the setting of
  If the option is set to
  .Cm no ,
-+(the default),
  the check will not be executed.
- .It Cm Cipher
- Specifies the cipher to use for encrypting the session
++The default is
++.Cm no .
+ .It Cm Ciphers
+ Specifies the ciphers allowed and their order of preference.
+ Multiple ciphers must be comma-separated.

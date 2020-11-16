@@ -6,12 +6,13 @@ Changed paths:
 Use net.inet.ip.portrange.reservedhigh instead of IPPORT_RESERVED.
 Submitted upstream, no reaction.
 
-Submitted by:   delphij@
-[rewritten for 7.4 by bdrewery@]
+Submitted by:   delphij
+[rewritten for 7.4 by bdrewery]
+[base removed this in 7.8 but it is still useful - bdrewery]
 
---- serverloop.c.orig	2018-11-10 11:38:16.728617000 -0800
-+++ serverloop.c	2018-11-10 11:38:19.497300000 -0800
-@@ -55,6 +55,8 @@
+--- serverloop.c.orig	2020-09-27 00:25:01.000000000 -0700
++++ serverloop.c	2020-11-16 12:58:44.823775000 -0800
+@@ -56,6 +56,8 @@
  #include <unistd.h>
  #include <stdarg.h>
  
@@ -20,24 +21,32 @@ Submitted by:   delphij@
  #include "openbsd-compat/sys-queue.h"
  #include "xmalloc.h"
  #include "packet.h"
-@@ -109,7 +111,19 @@ bind_permitted(int port, uid_t uid)
+@@ -104,13 +106,27 @@ static void server_init_dispatch(struct ssh *);
+ /* requested tunnel forwarding interface(s), shared with session.c */
+ char *tun_fwd_ifnames = NULL;
+ 
++static int
++ipport_reserved(void)
++{
++#ifdef __FreeBSD__
++	int old;
++	size_t len = sizeof(old);
++
++	if (sysctlbyname("net.inet.ip.portrange.reservedhigh",
++	    &old, &len, NULL, 0) == 0)
++		return (old + 1);
++#endif
++	return (IPPORT_RESERVED);
++}
++
+ /* returns 1 if bind to specified port by specified user is permitted */
+ static int
+ bind_permitted(int port, uid_t uid)
  {
  	if (use_privsep)
  		return 1; /* allow system to decide */
 -	if (port < IPPORT_RESERVED && uid != 0)
-+	int ipport_reserved;
-+#ifdef __FreeBSD__
-+	size_t len_ipport_reserved = sizeof(ipport_reserved);
-+
-+	if (sysctlbyname("net.inet.ip.portrange.reservedhigh",
-+	    &ipport_reserved, &len_ipport_reserved, NULL, 0) != 0)
-+		ipport_reserved = IPPORT_RESERVED;
-+	else
-+		ipport_reserved++;
-+#else
-+	ipport_reserved = IPPORT_RESERVED;
-+#endif
-+	if (port < ipport_reserved && uid != 0)
++	if (port < ipport_reserved() && uid != 0)
  		return 0;
  	return 1;
  }
