@@ -2,7 +2,7 @@
 
 PORTNAME=	quantum-espresso
 DISTVERSIONPREFIX=	qe-
-DISTVERSION=	6.5
+DISTVERSION=	6.6
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,6 +34,12 @@ LDFLAGS+=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgfortran.so -lm
 
 MAKE_JOBS_UNSAFE=	yes # https://github.com/QEF/q-e/issues/9
 
+.include <bsd.port.pre.mk>
+
+.  if ${GCC_DEFAULT} >= 10
+FFLAGS+=	-fallow-argument-mismatch # workaround for https://github.com/QEF/q-e/issues/34
+.  endif
+
 post-extract:
 	@${RM} ${WRKSRC}/archive/lapack-3.6.1.tgz
 	@cd ${WRKSRC} && ${MKDIR} FoX && ${LN} -s ${LOCALBASE}/include FoX/finclude
@@ -42,12 +48,16 @@ pre-build:
 	@${REINPLACE_CMD} -i '' -e ' \
 		s|$$(CPP) $$(CPPFLAGS)|$$(CPP) -P -traditional $$(CPPFLAGS)| ; \
 		s|LD *=.*|LD=${CC}| ; \
-		s|LAPACK_LIBS *=.*|LAPACK_LIBS=-L${LOCALBASE}/lib -llapack -lblas|' \
+		s|LAPACK_LIBS *=.*|LAPACK_LIBS=-L${LOCALBASE}/lib -llapack| ; \
+		s|BLAS_LIBS *=.*|BLAS_LIBS=-L${LOCALBASE}/lib -lblas|' \
 		${WRKSRC}/make.inc
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*.x
 
 run-examples: build
 .for c in PP PW PWCOND PHonon
 	@cd ${WRKSRC}/$c/examples && PREFIX=${STAGEDIR}${PREFIX} ./run_all_examples
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
