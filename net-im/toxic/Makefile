@@ -22,7 +22,7 @@ LIB_DEPENDS=	libvpx.so:multimedia/libvpx		\
 		libconfig.so:devel/libconfig
 RUN_DEPENDS=	${LOCALBASE}/lib/libtoxcore.a:net-im/tox
 
-USES=		desktop-file-utils gettext-runtime gmake ncurses openal:al,alut pkgconfig
+USES=		compiler:c11 desktop-file-utils gettext-runtime gmake ncurses openal:al,alut pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JFreegman
