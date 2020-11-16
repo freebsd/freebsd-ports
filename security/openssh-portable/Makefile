@@ -3,7 +3,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	8.4p1
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -40,8 +40,8 @@ gssapi_PKGNAMESUFFIX=		-portable-gssapi
 
 OPTIONS_DEFINE=		DOCS PAM TCP_WRAPPERS LIBEDIT BSM \
 			HPN KERB_GSSAPI \
-			LDNS NONECIPHER XMSS
-OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS
+			LDNS NONECIPHER XMSS FIDO_U2F
+OPTIONS_DEFAULT=	LIBEDIT PAM TCP_WRAPPERS LDNS FIDO_U2F
 .if ${FLAVOR:U} == hpn
 OPTIONS_DEFAULT+=	HPN NONECIPHER
 .endif
@@ -60,6 +60,7 @@ HEIMDAL_BASE_DESC=	Heimdal Kerberos (base)
 MIT_DESC=		MIT Kerberos (security/krb5)
 NONECIPHER_DESC=	NONE Cipher support
 XMSS_DESC=		XMSS key support (experimental)
+FIDO_U2F_DESC=		FIDO/U2F support (security/libfido2)
 
 OPTIONS_SUB=		yes
 
@@ -83,6 +84,10 @@ TCP_WRAPPERS_CONFIGURE_WITH=	tcp-wrappers
 LIBEDIT_CONFIGURE_WITH=	libedit
 LIBEDIT_USES=		libedit
 BSM_CONFIGURE_ON=	--with-audit=bsm
+
+FIDO_U2F_LIB_DEPENDS=	libfido2.so:security/libfido2
+FIDO_U2F_CONFIGURE_ON=	--with-security-key-builtin
+FIDO_U2F_CONFIGURE_OFF=	--disable-security-key
 
 ETCDIR?=		${PREFIX}/etc/ssh
 
