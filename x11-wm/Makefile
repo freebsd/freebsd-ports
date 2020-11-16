@@ -40,6 +40,7 @@
     SUBDIR += fluxter
     SUBDIR += flwm
     SUBDIR += fvwm2
+    SUBDIR += gamescope
     SUBDIR += gcompmgr
     SUBDIR += herbstluftwm
     SUBDIR += hikari

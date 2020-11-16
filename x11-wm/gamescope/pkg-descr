@@ -1,0 +1,23 @@
+In an embedded session usecase, gamescope does the same thing as
+steamcompmgr, but with less extra copies and latency:
+
+- It's getting game frames through Wayland by way of Xwayland, so
+  there's no copy within X itself before it gets the frame.
+- It can use DRM/KMS to directly flip game frames to the screen, even
+  when stretching or when notifications are up, removing another copy.
+- When it does need to composite with the GPU, it does so with async
+  Vulkan compute, meaning you get to see your frame quick even if the
+  game already has the GPU busy with the next frame.
+
+It also runs on top of a regular desktop, the 'nested' usecase
+steamcompmgr didn't support.
+
+- Because the game is running in its own personal Xwayland sandbox
+  desktop, it can't interfere with your desktop and your desktop can't
+  interfere with it.
+- You can spoof a virtual screen with a desired resolution and refresh
+  rate as the only thing the game sees, and control/resize the output
+  as needed. This can be useful in exotic display configurations like
+  ultrawide or multi-monitor setups that involve rotation.
+
+WWW: https://github.com/Plagman/gamescope
