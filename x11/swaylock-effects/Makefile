@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-effects
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	ea4b63d8fff3.patch:-p1 # https://github.com/mortie/swaylock-effects/pull/37
 
-COMMENT?=	Screen locker for Wayland with fancy effects
+COMMENT=	Screen locker for Wayland with fancy effects
 
 MASTERDIR=	${.CURDIR}/../swaylock
 DESCR=		${.CURDIR}/pkg-descr

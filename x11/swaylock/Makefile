@@ -6,7 +6,7 @@ PORTREVISION?=	2
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Screen locker for Wayland
+COMMENT?=	Screen locker for Wayland
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
