@@ -13,7 +13,7 @@ COMMENT=	Python wrapper for the ls-qpack QPACK library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.5+
+USES=		compiler:c++11-lang python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 do-test:
