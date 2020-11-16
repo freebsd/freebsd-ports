@@ -1993,6 +1993,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-salt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-score.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-score.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-search.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-search.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-sieve.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-sieve.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/gnus-spec.el.gz
@@ -2077,8 +2079,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnheader.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnimap.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnimap.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnir.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnir.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnmail.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnmail.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/nnmaildir.el.gz
@@ -2934,6 +2934,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/metamail.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mouse-sel.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/mouse-sel.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/nnir.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/nnir.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/old-emacs-lock.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/old-emacs-lock.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/otodo-mode.el.gz
