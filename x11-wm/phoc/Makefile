@@ -18,7 +18,7 @@ LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	${LOCALBASE}/share/glib-2.0/schemas/org.gnome.mutter.gschema.xml:x11-wm/mutter
 
-USES=		compiler:c11 gl gnome meson pkgconfig python:3.5+,build shebangfix xorg
+USES=		compiler:c11 gl gnome meson pkgconfig python:build shebangfix xorg
 USE_GITLAB=	yes
 USE_GL=		glesv2
 USE_GNOME=	gnomedesktop3
