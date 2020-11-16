@@ -15707,3 +15707,4 @@ www/py-evernote||2020-11-15|Has expired: Uses deprecated version of python
 www/py-meld3||2020-11-15|Has expired: EOLed upstream
 www/py-requestbuilder||2020-11-15|Has expired: Uses deprecated version of python
 x11-toolkits/py-SquareMap||2020-11-15|Has expired: Uses deprecated version of python
+devel/py-utils||2020-11-16|Removed on maintainers request, uses EOLed python27
