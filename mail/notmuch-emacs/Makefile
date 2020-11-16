@@ -38,7 +38,7 @@ PORTSCOUT=	limit:^[0-9\.]*$$
 
 # fake ./configure to avoid unneeded dependencies
 do-configure:
-	@${CP} ${WRKSRC}/version ${WRKSRC}/version.stamp
+	@${CP} ${WRKSRC}/version.txt ${WRKSRC}/version.stamp
 	@${ECHO_CMD} 'quiet=$$($$(word 1, $$(1)))' > ${WRKSRC}/Makefile.local
 	@${PRINTF} \
 		'%s\n' \
