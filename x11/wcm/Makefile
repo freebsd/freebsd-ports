@@ -3,6 +3,7 @@
 PORTNAME=	wcm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,6 +18,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwf-config.so:devel/wf-config \
 		libwayland-client.so:graphics/wayland
+RUN_DEPENDS=	wayfire>0:x11-wm/wayfire
 
 CONFLICTS_INSTALL=	wcmcommander # bin/wcm
 
