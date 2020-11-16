@@ -1,104 +1,19 @@
---- Makefile.orig	2014-04-13 13:48:18.000000000 +0200
-+++ Makefile	2014-04-13 13:49:38.000000000 +0200
-@@ -6,7 +6,7 @@
+--- Makefile.orig
++++ Makefile
+@@ -89,6 +89,7 @@
+ SDL2_LIBS ?= $(shell sdl2-config --libs)
  
- # compilation tool and detection of targets/achitecture
- _E = @
--CC = gcc
-+CC ?= gcc
- CC_BASEVERSION = $(shell $(CC) -dumpversion | sed -e 's/\..*//g')
+ CFLAGS_c += $(BUILD_DEFS) $(VER_DEFS) $(PATH_DEFS) $(SDL2_CFLAGS) -DNDEBUG -DJSS_CAM -DUSE_PR2 -DWITH_NQPROGS -DUSE_SDL2 -DWITH_ZIP
++CFLAGS_c += -DQ1DIR='"$(Q1DIR)"' -DDATADIR='"$(DATADIR)"'
+ LIBS_c += $(SDL2_LIBS)
  
- # TYPE = release debug
-@@ -19,17 +19,6 @@
- ARCH = $(shell uname -m | sed -e 's/i.86/x86/g' -e 's/Power Macintosh/ppc/g')
- OS = $(shell uname -s | tr A-Z a-z)
- 
--# add special architecture based flags
--ifeq ($(ARCH),x86_64)
--	ARCH_CFLAGS = -mtune=nocona -mmmx -msse -msse2 -m64
--endif
--ifeq ($(ARCH),x86)
--	ARCH_CFLAGS = -march=i686 -mtune=generic -mmmx -Did386
--endif
--ifeq ($(ARCH),ppc)
--	ARCH_CFLAGS = -arch ppc -faltivec -maltivec -mcpu=7450 -mtune=7450 -mpowerpc -mpowerpc-gfxopt
--endif
--
- ifeq ($(OS),linux)
- 	DEFAULT_TARGET = glx
- 	OS_GL_CFLAGS = -DWITH_DGA -DWITH_EVDEV -DWITH_VMODE
-@@ -55,19 +44,19 @@
- # Directories for object files #
- ################################
- 
--GLX_DIR	= $(TYPE)-$(ARCH)/glx
--X11_DIR	= $(TYPE)-$(ARCH)/x11
--SVGA_DIR = $(TYPE)-$(ARCH)/svga
--MAC_DIR	= $(TYPE)-$(ARCH)/mac
-+GLX_DIR	= $(TYPE)/glx
-+X11_DIR	= $(TYPE)/x11
-+SVGA_DIR = $(TYPE)/svga
-+MAC_DIR	= $(TYPE)/mac
- 
- ################
- # Binary files #
- ################
- 
--GLX_TARGET = $(TYPE)-$(ARCH)/ezquake-gl.glx
--X11_TARGET = $(TYPE)-$(ARCH)/ezquake.x11
--SVGA_TARGET = $(TYPE)-$(ARCH)/ezquake.svga
--MAC_TARGET = $(TYPE)-$(ARCH)/ezquake-gl.mac
-+GLX_TARGET = $(TYPE)/ezquake-gl.glx
-+X11_TARGET = $(TYPE)/ezquake.x11
-+SVGA_TARGET = $(TYPE)/ezquake.svga
-+MAC_TARGET = $(TYPE)/ezquake-gl.mac
- QUAKE_DIR="/opt/quake/"
- 
- ################
-@@ -89,7 +78,8 @@
- # -DWITH_MPD       for mpd       MP3 player support
- # -DWITH_WINAMP    for winamp    MP3 player support
- PRJ_CFLAGS = -DWITH_ZLIB -DWITH_PNG -DEMBED_TCL -DJSS_CAM -DWITH_ZIP -DWITH_FTE_VFS
--BASE_CFLAGS = -pipe -Wall -funsigned-char $(ARCH_CFLAGS) $(PRJ_CFLAGS) -I./libs
-+BASE_CFLAGS := $(CFLAGS) -pipe -Wall -funsigned-char $(ARCH_CFLAGS) $(PRJ_CFLAGS) `pcre-config --cflags` -I$(TCL_INCLUDEDIR) -I.. -DQ1DIR='"$(Q1DIR)"' -DDATADIR='"$(DATADIR)"'
-+
- 
- 
- ########################
-@@ -112,7 +102,9 @@
- 
- ########################
- 
-+ifeq ($(USE_OPTIMIZED_CFLAGS),YES)
- RELEASE_CFLAGS = -O2 -fno-strict-aliasing -ffast-math -funroll-loops
-+endif
- DEBUG_CFLAGS = -ggdb
- 
- # opengl builds
-@@ -125,13 +117,13 @@
- endif
- 
- ifeq ($(TYPE),release)
--LDFLAGS = -lm -lpthread
-+LDFLAGS = -lm -pthread
+ # built-in requirements
+@@ -379,7 +380,7 @@
+ ifdef CONFIG_WINDOWS
+     TARG_c := ezquake.exe
  else
--LDFLAGS = -ggdb -lm -lpthread
-+LDFLAGS = -ggdb -lm -pthread
+-    TARG_c := ezquake-$(LSYS)-$(CPU)
++    TARG_c := ezquake-$(LSYS)
  endif
  
--COMMON_LIBS = libs/$(LIB_PREFIX)/minizip.a libs/$(LIB_PREFIX)/libpng.a libs/$(LIB_PREFIX)/libz.a libs/$(LIB_PREFIX)/libpcre.a libs/$(LIB_PREFIX)/libexpat.a libs/$(LIB_PREFIX)/libtcl.a
--GL_LIBS = libs/$(LIB_PREFIX)/libjpeg.a
-+COMMON_LIBS = -lm -lpng -lz `pcre-config --libs` `glib-config --libs` -lexpat -ltcl$(TCL_SUFX)
-+GL_LIBS = -ljpeg
- 
- ifeq ($(OS),freebsd)
- X11BASE ?= /usr/X11R6
-@@ -149,7 +141,7 @@
- GLX_C_OBJS = $(addprefix $(GLX_DIR)/, $(addsuffix .o, $(GLX_C_FILES)))
- GLX_S_OBJS = $(addprefix $(GLX_DIR)/, $(addsuffix .o, $(GLX_S_FILES)))
- GLX_CFLAGS = $(CFLAGS) $(GLCFLAGS)
--GLX_LDFLAGS = $(LDFLAGS) -lGL -lXxf86dga -lXxf86vm
-+GLX_LDFLAGS = $(LDFLAGS) -lGL -lXxf86dga -lXxf86vm -lX11
- 
- glx: _DIR = $(GLX_DIR)
- glx: _OBJS = $(GLX_C_OBJS) $(GLX_S_OBJS) $(COMMON_LIBS) $(GL_LIBS)
+ all: $(TARG_c)

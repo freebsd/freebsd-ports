@@ -1,6 +1,5 @@
-SHA256 (ezquake_source_1.9.7z) = cb1acf57c4dd963cb47ce73b7f400d403637c187063c6754879a39fc9126948e
-SIZE (ezquake_source_1.9.7z) = 7059379
-SHA256 (ezquake_linux-x86_1.9.tar.gz) = 2e65c1632bedbf8382870d79ba7dc1ee76d2371e03943da9cd57f2c4e5ac1dcb
-SIZE (ezquake_linux-x86_1.9.tar.gz) = 19193980
-SHA256 (unzip101e.zip) = 383cc51f505d996a39efe135a57057bdfc817855259c29092bddba9b4fde5dbd
-SIZE (unzip101e.zip) = 40925
+TIMESTAMP = 1605410491
+SHA256 (ezquake/3.2.2.tar.gz) = 2ca2c455bcdd4cd7c3ac95fa87a8a4e3463aa86a5dbe0fd18576f8d9790425fa
+SIZE (ezquake/3.2.2.tar.gz) = 5759652
+SHA256 (ezquake/ezquake-ubuntu-3.2.2-full.tar.gz) = ef594c51b210fb0e534fbd1c46b63a011f473a8f942cda7802289568dd41fefe
+SIZE (ezquake/ezquake-ubuntu-3.2.2-full.tar.gz) = 19076430
