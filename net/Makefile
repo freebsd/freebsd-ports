@@ -174,6 +174,7 @@
     SUBDIR += geoclue
     SUBDIR += geocode-glib
     SUBDIR += geoipupdate
+    SUBDIR += gerbera
     SUBDIR += gfbgraph
     SUBDIR += glflow
     SUBDIR += glib-networking

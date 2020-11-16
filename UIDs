@@ -823,7 +823,7 @@ librespeed:*:874:874::0:0:LibreSpeed user:/nonexistent:/usr/sbin/nologin
 # free: 875
 # free: 876
 # free: 877
-# free: 878
+gerbera:*:878:878::0:0:Gerbera DLNA Media Server:/nonexistent:/usr/sbin/nologin
 _encrypted-dns:*:879:879::0:0:encrypted-dns user:/var/empty:/usr/sbin/nologin
 pyspf-milter:*:880:880::0:0:pyspf-milter:/nonexistent:/usr/sbin/nologin
 ultimaker:*:881:881::0:0:Ultimaker user:/nonexistent:/usr/sbin/nologin

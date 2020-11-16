@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: gerbera
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable gerbera:
+# gerbera_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable gerbera.
+# gerbera_flags (str):		Custom additional arguments to be passed
+#				to gerbera (default empty).
+# gerbera_conf_dir (str):	Directory where ${name} configuration
+#				data is stored.
+
+. /etc/rc.subr
+
+name="gerbera"
+rcvar=gerbera_enable
+
+load_rc_config ${name}
+
+: ${gerbera_enable:="NO"}
+: ${gerbera_user:="%%USER%%"}
+: ${gerbera_group:="%%GROUP%%"}
+: ${gerbera_conf_dir="%%PREFIX%%/etc"}
+
+start_precmd=gerbera_precmd
+stop_postcmd=gerbera_stop_postcmd
+
+procname="%%PREFIX%%/bin/${name}"
+pidfile="/var/run/gerbera/gerbera.pid"
+required_files="${gerbera_conf_dir}/gerbera-config.xml"
+
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} -p ${pidfile} ${procname} -c ${required_files} -l /var/log/gerbera/gerbera.log ${gerbera_args}"
+
+gerbera_precmd()
+{
+        local rundir=${pidfile%/*}
+        if [ ! -d $rundir ] ; then
+                install -d -m 0755 -o %%USER%% -g %%GROUP%% $rundir
+        fi
+}
+
+gerbera_stop_postcmd()
+{
+	rm -f "$rundir"
+}
+
+run_rc_command "$1"

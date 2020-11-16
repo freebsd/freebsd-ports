@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2020-09-06 01:54:18 UTC
++++ CMakeLists.txt
+@@ -528,4 +528,4 @@ INSTALL(FILES
+         ${PROJECT_SOURCE_DIR}/config/mysql.sql
+         ${PROJECT_SOURCE_DIR}/config/sqlite3.sql
+         DESTINATION share/gerbera)
+-INSTALL(FILES ${PROJECT_SOURCE_DIR}/doc/gerbera.1 DESTINATION share/man/man1)
++INSTALL(FILES ${PROJECT_SOURCE_DIR}/doc/gerbera.1 DESTINATION man/man1)
