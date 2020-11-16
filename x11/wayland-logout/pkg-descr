@@ -1,0 +1,6 @@
+wayland-logout is a simple program that sends SIGINT to a wayland
+compositor by looking up the pid for the wayland socket file. The path
+to the socket file is derived from WAYLAND_DISPLAY and XDG_RUNTIME_DIR
+environment variables.
+
+WWW: https://github.com/soreau/wayland-logout
