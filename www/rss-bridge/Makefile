@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rss-bridge
-DISTVERSION=	2020-02-26
+DISTVERSION=	2020-11-10
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -11,6 +11,7 @@ COMMENT=	RSS feed generator for websites missing it
 LICENSE=	PD
 
 USES=		php:web
+USE_PHP=	curl json mbstring openssl simplexml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RSS-Bridge
@@ -19,8 +20,6 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-
-USE_PHP=	curl json mbstring openssl simplexml
 
 OPTIONS_DEFINE=	SQLITE
 OPTIONS_DEFAULT=SQLITE
