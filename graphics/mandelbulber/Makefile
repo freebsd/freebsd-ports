@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mandelbulber
-DISTVERSION=	2.22
+PORTVERSION=	2.23
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -15,6 +15,7 @@ LIB_DEPENDS=	libgsl.so:math/gsl \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		liblzo2.so:archivers/lzo2
+BUILD_DEPENDS=	${LOCALBASE}/include/stb/stb_image.h:devel/stb
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buddhi1980
@@ -36,6 +37,9 @@ OPTIONS_DEFINE=	OPENCL OPENMP DOCS
 OPTIONS_EXCLUDE=	OPENMP  # not properly supported yet
 
 OPENCL_BUILD_DEPENDS=	opencl>=0:devel/opencl
+
+post-extract:
+	@${RM} -rf ${WRKSRC}/mandelbulber2/third-party
 
 post-patch-OPENMP-off:
 	@${REINPLACE_CMD} -e 's|-fopenmp||' \
