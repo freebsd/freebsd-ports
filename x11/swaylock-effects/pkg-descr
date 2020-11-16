@@ -1,0 +1,5 @@
+Swaylock-effects is a fork of swaylock which adds built-in screenshots
+and image manipulation effects like blurring. It's inspired by
+i3lock-color, although the feature sets aren't perfectly overlapping.
+
+WWW: https://github.com/mortie/swaylock-effects
