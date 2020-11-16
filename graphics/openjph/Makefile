@@ -19,4 +19,10 @@ GH_ACCOUNT=	aous72
 GH_PROJECT=	OpenJPH
 USE_GITHUB=	yes
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CMAKE_ARGS+=	-DOJPH_DISABLE_INTEL_SIMD:BOOL=ON
+.endif
+
 .include <bsd.port.mk>
