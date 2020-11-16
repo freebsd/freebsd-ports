@@ -21,7 +21,6 @@ LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libjson-c.so:devel/json-c \
-		libgcrypt.so:security/libgcrypt \
 		libinotify.so:devel/libinotify \
 		libmxml.so:textproc/mxml \
 		libplist.so:devel/libplist \
