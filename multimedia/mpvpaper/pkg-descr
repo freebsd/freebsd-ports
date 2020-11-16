@@ -1,0 +1,5 @@
+MPVPaper is a wallpaper program for wlroots-based Wayland compositors,
+such as Sway. That allows you to play videos with mpv as your
+wallpaper.
+
+WWW: https://github.com/GhostNaN/mpvpaper
