@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# $FreeBSD:$
+#
+# PROVIDE: gitwatch
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# gitwatch_enable (bool):	Set it to "YES" to enable gitwatch
+#				Default is "NO".
+#
+# gitwatch_targets (path):	Set the path to the target directory
+#				Default is %%PREFIX%%/etc. Multiple targets can be separated by spaces
+#
+
+. /etc/rc.subr
+
+name="gitwatch"
+rcvar="gitwatch_enable"
+
+start_cmd="${name}_start"
+
+load_rc_config $name
+
+: ${gitwatch_enable:=NO}
+: ${gitwatch_targets:="%%PREFIX%%/etc"}
+: ${gitwatch_args:="-l 10"}
+
+command="%%PREFIX%%/bin/${name}"
+command_interpreter="%%PREFIX%%/bin/bash"
+command_args="${gitwatch_args}"
+
+PATH="${PATH}:%%PREFIX%%/bin"
+
+gitwatch_start() {
+
+    # Start a gitwatch for each target
+    for TARGET in ${gitwatch_targets}; do
+		${command} ${command_args} "${TARGET}" >/dev/null &
+	done
+}
+
+run_rc_command "$1"
