@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lablgtk2
-PORTVERSION=	2.18.5
+PORTVERSION=	2.18.11
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	https://download.ocamlcore.org/lablgtk/Lablgtk2/${PORTVERSION}/
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	lablgtk-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Objective Caml interface to GTK+ 2.x
@@ -38,6 +36,10 @@ GTKSPELL_DESC=		GtkSpell support
 HAS_CONFIGURE=	yes
 ALL_TARGET=	all opt
 MAKE_JOBS_UNSAFE=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	garrigue
+GH_PROJECT=	lablgtk
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libdir=${PREFIX}/${OCAML_LIBDIR} \
 		--without-gtksourceview

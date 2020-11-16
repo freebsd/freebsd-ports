@@ -3,7 +3,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.40.128
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
@@ -37,8 +37,8 @@ USES=		gmake
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
 MAKE_ARGS=	CFLAGS=""
-MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	unison all
+TEST_TARGET=	selftest
 
 DOCS=		BUGS.txt NEWS README
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
@@ -64,12 +64,13 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's,= Unix\.symlink,s1 s2 & s1 s2,' \
 		${WRKSRC}/system/system_generic.ml
 
-.if ${FLAVOR} == x11
 post-patch:
 	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
 		${WRKSRC}/Makefile.OCaml
 
 post-build:
+	(cd ${WRKSRC} && HOME=${WRKSRC} ./unison -selftest -ui text -batch)
+.if ${FLAVOR} == x11
 	@${ECHO} Building text-only version
 	@${ECHO} ${WRKSRC}
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} CFLAGS="" UISTYLE=text NAME=unison-text

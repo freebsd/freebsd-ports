@@ -3,7 +3,7 @@
 
 PORTNAME=	unison
 PORTVERSION=	2.48.15
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	v4
 CATEGORIES=	net
@@ -37,7 +37,6 @@ WRKSRC_SUBDIR=	src
 NO_OCAML_RUNDEPENDS=yes
 CONFLICTS=	unison-devel-[0-9]*
 MAKE_ENV=	CLIBS="${LIBS:S/^-/-ccopt -/}" COFLAGS="${CFLAGS:C/ *(-[^ ]*) */ -ccopt \"\1 \"/gW}"
-MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	unison all
 
 USE_GITHUB=     yes
@@ -78,6 +77,8 @@ post-patch-FSMONITOR-on:
 		${WRKSRC}/fswatch.ml
 
 post-patch:
+# remove unconditional raise, which causes self tests to always fail
+	${REINPLACE_CMD} -e '/remove me/d' ${WRKSRC}/test.ml
 .if ${FLAVOR} == nox11
 	@${REINPLACE_CMD} -e 's/CFLAGS/COFLAGS/g' \
 		${WRKSRC}/Makefile.OCaml ${WRKSRC}/fsmonitor/linux/Makefile
@@ -87,8 +88,9 @@ post-patch:
 		${WRKSRC}/Makefile.OCaml ${WRKSRC}/fsmonitor/linux/Makefile
 .endif
 
-.if ${FLAVOR} == x11
 post-build:
+	(cd ${WRKSRC} && HOME=${WRKSRC} ./unison -selftest -ui text -batch)
+.if ${FLAVOR} == x11
 	@${ECHO} Building text-only version
 	@${ECHO} ${WRKSRC}
 	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC} UISTYLE=text NAME=unison-text
