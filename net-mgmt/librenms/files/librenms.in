@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: librenms
-# REQUIRE: SERVERS
+# REQUIRE: SERVERS mysql
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
