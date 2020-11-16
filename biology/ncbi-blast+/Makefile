@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ncbi-blast+
-DISTVERSION=	2.10.0
-PORTREVISION=	2
+DISTVERSION=	2.11.0
 CATEGORIES=	biology perl5 python
 MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
 		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/
@@ -48,6 +47,7 @@ GNU_CONFIGURE=	yes
 # --libdir=${PREFIX}/lib/ncbi-tools++ doesn't respect DESTDIR, so do
 # a postinstall mv.
 CONFIGURE_ARGS=	AR="ar cr" --without-boost --libdir=${PREFIX}/lib/ncbi-tools++
+LDFLAGS+=	-latomic
 
 WRKSRC_SUBDIR=		c++
 
