@@ -23,9 +23,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libspeex.so:audio/speex \
 		libspeexdsp.so:audio/speexdsp
 
-USES=		gl gmake jpeg sdl tcl
+USES=		gl gmake jpeg pkgconfig sdl tcl
 USE_GL=		yes
 USE_SDL=	sdl2
+CFLAGS+=	-fcommon
 MAKE_ENV=	TCL_SUFX=${TCL_SHLIB_VER}
 .for v in TCL_INCLUDEDIR TCL_LIBDIR DATADIR
 MAKE_ENV+=	${v}="${${v}}"
