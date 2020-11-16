@@ -2,22 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	lnav
-PORTVERSION=	0.8.5
-PORTREVISION=	1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	0.9.0
 CATEGORIES=	sysutils
+MASTER_SITES=	https://github.com/tstack/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Terminal based log file navigator
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_i386=	fails to build: error: non-constant-expression cannot be narrowed
+
 LIB_DEPENDS=	libpcrecpp.so:devel/pcre
 
-USES=		autoreconf compiler:c++14-lang gmake ncurses sqlite readline
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	tstack
+USES=		autoreconf compiler:c++14-lang gmake ncurses readline sqlite tar:bz2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
