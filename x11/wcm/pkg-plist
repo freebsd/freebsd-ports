@@ -13,14 +13,14 @@ share/icons/hicolor/96x96/apps/wcm.png
 %%DATADIR%%/icons/plugin-autorotate-iio.svg
 %%DATADIR%%/icons/plugin-autostart.svg
 %%DATADIR%%/icons/plugin-background-view.svg
-%%DATADIR%%/icons/plugin-background.svg
+%%WFSHELL%%%%DATADIR%%/icons/plugin-background.svg
 %%DATADIR%%/icons/plugin-bench.svg
 %%DATADIR%%/icons/plugin-blur.svg
 %%DATADIR%%/icons/plugin-command.svg
 %%DATADIR%%/icons/plugin-core.svg
 %%DATADIR%%/icons/plugin-cube.svg
 %%DATADIR%%/icons/plugin-decoration.svg
-%%DATADIR%%/icons/plugin-dock.svg
+%%WFSHELL%%%%DATADIR%%/icons/plugin-dock.svg
 %%DATADIR%%/icons/plugin-expo.svg
 %%DATADIR%%/icons/plugin-fast-switcher.svg
 %%DATADIR%%/icons/plugin-fisheye.svg
@@ -32,7 +32,7 @@ share/icons/hicolor/96x96/apps/wcm.png
 %%DATADIR%%/icons/plugin-mag.svg
 %%DATADIR%%/icons/plugin-move.svg
 %%DATADIR%%/icons/plugin-oswitch.svg
-%%DATADIR%%/icons/plugin-panel.svg
+%%WFSHELL%%%%DATADIR%%/icons/plugin-panel.svg
 %%DATADIR%%/icons/plugin-place.svg
 %%DATADIR%%/icons/plugin-resize.svg
 %%DATADIR%%/icons/plugin-simple-tile.svg
