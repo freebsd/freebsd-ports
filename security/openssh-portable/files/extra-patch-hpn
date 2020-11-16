@@ -685,12 +685,12 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	int64_t rekey_limit;
  	int	rekey_interval;
  	int	no_host_authentication_for_localhost;
---- work/openssh/scp.c.orig	2019-12-20 18:52:08.907088000 -0800
-+++ work/openssh-8.1p1/scp.c	2019-12-20 18:51:55.186005000 -0800
-@@ -1239,7 +1239,7 @@ sink(int argc, char **argv, const char *src)
+--- work/openssh/scp.c.orig	2020-09-27 00:25:01.000000000 -0700
++++ work/openssh/scp.c	2020-11-10 10:31:03.060729000 -0800
+@@ -1246,7 +1246,7 @@ sink(int argc, char **argv, const char *src)
  	off_t size, statbytes;
  	unsigned long long ull;
- 	int setimes, targisdir, wrerrno = 0;
+ 	int setimes, targisdir, wrerr;
 -	char ch, *cp, *np, *targ, *why, *vect[1], buf[2048], visbuf[2048];
 +	char ch, *cp, *np, *targ, *why, *vect[1], buf[COPY_BUFLEN], visbuf[COPY_BUFLEN];
  	char **patterns = NULL;
@@ -1079,9 +1079,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  #define SSHBUF_REFS_MAX		0x100000	/* Max child buffers */
  #define SSHBUF_MAX_BIGNUM	(16384 / 8)	/* Max bignum *bytes* */
  #define SSHBUF_MAX_ECPOINT	((528 * 2 / 8) + 1) /* Max EC point *bytes* */
---- work/openssh/sshconnect.c.orig	2018-10-16 17:01:20.000000000 -0700
-+++ work/openssh/sshconnect.c	2018-11-12 09:04:24.340706000 -0800
-@@ -355,7 +355,32 @@ check_ifaddrs(const char *ifname, int af, const struct
+--- work/openssh/sshconnect.c.orig	2020-09-27 00:25:01.000000000 -0700
++++ work/openssh/sshconnect.c	2020-11-10 21:35:40.945330000 -0800
+@@ -361,7 +361,32 @@ check_ifaddrs(const char *ifname, int af, const struct
  }
  #endif
  
@@ -1114,7 +1114,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
   * Creates a socket for use as the ssh connection.
   */
  static int
-@@ -377,6 +402,11 @@ ssh_create_socket(struct addrinfo *ai)
+@@ -383,6 +408,11 @@ ssh_create_socket(struct addrinfo *ai)
  	}
  	fcntl(sock, F_SETFD, FD_CLOEXEC);
  
@@ -1126,14 +1126,14 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	/* Bind the socket to an alternative local IP address */
  	if (options.bind_address == NULL && options.bind_interface == NULL)
  		return sock;
-@@ -1280,7 +1310,8 @@ ssh_login(struct ssh *ssh, Sensitive *sensitive, const
+@@ -1289,7 +1319,8 @@ ssh_login(struct ssh *ssh, Sensitive *sensitive, const
  	lowercase(host);
  
  	/* Exchange protocol version identification strings with the server. */
--	if (kex_exchange_identification(ssh, timeout_ms, NULL) != 0)
-+	if (kex_exchange_identification(ssh, timeout_ms, NULL,
-+	    options.hpn_disabled) != 0)
- 		cleanup_exit(255); /* error already logged */
+-	if ((r = kex_exchange_identification(ssh, timeout_ms, NULL)) != 0)
++	if ((r = kex_exchange_identification(ssh, timeout_ms, NULL,
++	    options.hpn_disabled)) != 0)
+ 		sshpkt_fatal(ssh, r, "banner exchange");
  
  	/* Put the connection into non-blocking mode. */
 --- sshconnect2.c.orig	2020-02-13 16:40:54.000000000 -0800
@@ -1204,9 +1204,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	debug("Authentication succeeded (%s).", authctxt.method->name);
  }
  
---- work/openssh-7.7p1/sshd.c.orig	2018-04-01 22:38:28.000000000 -0700
-+++ work/openssh-7.7p1/sshd.c	2018-06-27 17:13:03.176633000 -0700
-@@ -957,6 +957,10 @@ listen_on_addrs(struct listenaddr *la)
+--- work/openssh/sshd.c.orig	2020-11-10 21:36:31.340159000 -0800
++++ work/openssh/sshd.c	2020-11-10 21:37:10.097038000 -0800
+@@ -1065,6 +1065,10 @@ listen_on_addrs(struct listenaddr *la)
  	int ret, listen_sock;
  	struct addrinfo *ai;
  	char ntop[NI_MAXHOST], strport[NI_MAXSERV];
@@ -1217,7 +1217,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  
  	for (ai = la->addrs; ai; ai = ai->ai_next) {
  		if (ai->ai_family != AF_INET && ai->ai_family != AF_INET6)
-@@ -1002,6 +1006,13 @@ listen_on_addrs(struct listenaddr *la)
+@@ -1110,6 +1114,13 @@ listen_on_addrs(struct listenaddr *la)
  
  		debug("Bind to port %s on %s.", strport, ntop);
  
@@ -1229,9 +1229,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +#endif
 +
  		/* Bind the socket to the desired port. */
- 		if (bind(listen_sock, ai->ai_addr, ai->ai_addrlen) < 0) {
+ 		if (bind(listen_sock, ai->ai_addr, ai->ai_addrlen) == -1) {
  			error("Bind to port %s on %s failed: %.200s.",
-@@ -1645,6 +1656,15 @@ main(int ac, char **av)
+@@ -1753,6 +1764,15 @@ main(int ac, char **av)
  	/* Fill in default values for those options not explicitly set. */
  	fill_default_server_options(&options);
  
@@ -1247,7 +1247,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	/* challenge-response is implemented via keyboard interactive */
  	if (options.challenge_response_authentication)
  		options.kbd_interactive_authentication = 1;
-@@ -2090,6 +2110,11 @@ main(int ac, char **av)
+@@ -2220,6 +2240,11 @@ main(int ac, char **av)
  	    rdomain == NULL ? "" : "\"");
  	free(laddr);
  
@@ -1259,17 +1259,16 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	/*
  	 * We don't want to listen forever unless the other side
  	 * successfully authenticates itself.  So we set up an alarm which is
-@@ -2102,7 +2127,8 @@ main(int ac, char **av)
- 	if (!debug_flag)
+@@ -2233,7 +2258,7 @@ main(int ac, char **av)
  		alarm(options.login_grace_time);
  
--	if (kex_exchange_identification(ssh, -1, options.version_addendum) != 0)
-+	if (kex_exchange_identification(ssh, -1, options.version_addendum,
-+	    options.hpn_disabled) != 0)
- 		cleanup_exit(255); /* error already logged */
+ 	if ((r = kex_exchange_identification(ssh, -1,
+-	    options.version_addendum)) != 0)
++	    options.version_addendum, options.hpn_disabled)) != 0)
+ 		sshpkt_fatal(ssh, r, "banner exchange");
  
  	ssh_packet_set_nonblocking(ssh);
-@@ -2264,6 +2290,11 @@ do_ssh2_kex(struct ssh *ssh)
+@@ -2397,6 +2422,11 @@ do_ssh2_kex(struct ssh *ssh)
  	char *myproposal[PROPOSAL_MAX] = { KEX_SERVER };
  	struct kex *kex;
  	int r;

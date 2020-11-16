@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	8.2p1
-PORTREVISION=	2
+DISTVERSION=	8.4p1
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -99,12 +99,12 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-hpn-gss-glue
 .  endif
 # - See https://sources.debian.org/data/main/o/openssh/ for which subdir to
 # pull from.
-GSSAPI_DEBIAN_SUBDIR=	${DISTVERSION}-4
+GSSAPI_DEBIAN_SUBDIR=	${DISTVERSION}-2
 # - Debian does not use a versioned filename so we trick fetch to make one for
 # us with the ?<anything>=/ trick.
 PATCH_SITES+=	https://sources.debian.org/data/main/o/openssh/1:${GSSAPI_DEBIAN_SUBDIR}/debian/patches/gssapi.patch?dummy=/:gsskex
 # Bump this when updating the patch location
-GSSAPI_UPDATE_DATE=	20190719
+GSSAPI_UPDATE_DATE=	20200607
 PATCHFILES+=	openssh-${DISTVERSION}-gsskex-all-20141021-debian-rh-${GSSAPI_UPDATE_DATE}.patch:-p1:gsskex
 .endif
 
@@ -206,10 +206,11 @@ post-install:
 
 test: build
 	cd ${WRKSRC} && ${SETENV} -i \
-		OBJ=${WRKDIR} ${MAKE_ENV} \
+		OBJ=${WRKDIR} ${MAKE_ENV:NHOME=*} \
 		TEST_SHELL=${SH} \
 		SUDO="${SUDO}" \
 		LOGNAME="${LOGNAME}" \
+		HOME="${HOME}" \
 		TEST_SSH_TRACE=yes \
 		PATH=${WRKSRC}:${PREFIX}/bin:${PREFIX}/sbin:${PATH} \
 		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} tests
