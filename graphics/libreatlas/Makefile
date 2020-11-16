@@ -15,7 +15,6 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS=	libmspack.so:archivers/libmspack \
 		libspatialite.so:databases/spatialite \
-		libsqlite3.so:databases/sqlite3 \
 		libpcre.so:devel/pcre \
 		libcairo.so:graphics/cairo \
 		libgeos.so:graphics/geos \
@@ -32,7 +31,7 @@ LIB_DEPENDS=	libmspack.so:archivers/libmspack \
 
 GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lang gettext gmake gnome iconv jpeg pathfix \
-		pkgconfig xorg
+	pkgconfig sqlite xorg
 USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender xxf86vm
 USE_GNOME=	atk gdkpixbuf2 glib20 gtk20 pango

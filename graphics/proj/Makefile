@@ -15,9 +15,7 @@ COMMENT=	Cartographic Projections library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-
-USES=		compiler:c++11-lang gmake libtool pathfix pkgconfig
+USES=		compiler:c++11-lang gmake libtool pathfix pkgconfig sqlite
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
