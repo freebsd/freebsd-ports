@@ -1,22 +1,22 @@
---- src/Makefile.am.orig	2020-07-30 18:43:48 UTC
-+++ src/Makefile.am
-@@ -27,7 +27,6 @@ vmod_LTLIBRARIES = \
- 	libvmod_cookie.la \
+--- src/Makefile.am.orig	2020-11-16 14:55:16.098559000 +0100
++++ src/Makefile.am	2020-11-16 15:00:45.451899000 +0100
+@@ -26,7 +26,6 @@ vmod_LTLIBRARIES = \
+ 	libvmod_bodyaccess.la \
  	libvmod_header.la \
  	libvmod_saintmode.la \
 -	libvmod_tcp.la \
  	libvmod_var.la \
  	libvmod_vsthrottle.la \
  	libvmod_xkey.la
-@@ -38,7 +37,6 @@ dist_man_MANS = \
- 	vmod_cookie.3 \
+@@ -36,7 +35,6 @@ dist_man_MANS = \
+ 	vmod_bodyaccess.3 \
  	vmod_header.3 \
  	vmod_saintmode.3 \
 -	vmod_tcp.3 \
  	vmod_var.3 \
  	vmod_vsthrottle.3 \
  	vmod_xkey.3
-@@ -51,7 +49,6 @@ libvmod_cookie_la_SOURCES = vmod_cookie.
+@@ -48,7 +46,6 @@ libvmod_bodyaccess_la_SOURCES = vmod_bod
  libvmod_header_la_SOURCES = vmod_header.c
  libvmod_vsthrottle_la_SOURCES = vmod_vsthrottle.c
  libvmod_saintmode_la_SOURCES = vmod_saintmode.c
@@ -24,19 +24,19 @@
  libvmod_var_la_SOURCES = vmod_var.c
  libvmod_xkey_la_SOURCES = vmod_xkey.c
  
-@@ -60,7 +57,6 @@ nodist_libvmod_cookie_la_SOURCES = vcc_c
+@@ -56,7 +53,6 @@ nodist_libvmod_bodyaccess_la_SOURCES = v
  nodist_libvmod_header_la_SOURCES = vcc_header_if.c vcc_header_if.h
  nodist_libvmod_vsthrottle_la_SOURCES = vcc_vsthrottle_if.c vcc_vsthrottle_if.h
  nodist_libvmod_saintmode_la_SOURCES = vcc_saintmode_if.c vcc_saintmode_if.h
 -nodist_libvmod_tcp_la_SOURCES = vcc_tcp_if.c vcc_tcp_if.h
  nodist_libvmod_var_la_SOURCES = vcc_var_if.c vcc_var_if.h
- nodist_libvmod_xkey_la_SOURCES = vcc_xkey_if.c vcc_xkey_if.h
+ nodist_libvmod_xkey_la_SOURCES = vcc_xkey_if.c vcc_xkey_if.h VSC_xkey.c VSC_xkey.h
  
-@@ -179,7 +175,6 @@ EXTRA_DIST = \
+@@ -144,7 +140,6 @@ EXTRA_DIST = \
+ 	vmod_bodyaccess.vcc \
  	vmod_header.vcc \
  	vmod_saintmode.vcc \
- 	vmod_softpurge.vcc \
 -	vmod_tcp.vcc \
  	vmod_var.vcc \
  	vmod_vsthrottle.vcc \
- 	vmod_xkey.vcc
+ 	vmod_xkey.vcc \

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	varnish-modules
-PORTVERSION=	20200730
-PORTREVISION=	1
+PORTVERSION=	0.17.0
 CATEGORIES=	www
 
 MAINTAINER=	zi@FreeBSD.org
@@ -20,7 +19,7 @@ INSTALL_TARGET=	install-strip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	varnish
-GH_TAGNAME=	2daf752
+GH_PROJECT=	varnish-modules
 
 MAKE_JOBS_UNSAFE=	yes
 
