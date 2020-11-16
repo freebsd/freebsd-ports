@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lordsawar
-PORTVERSION=	0.3.1
-PORTREVISION=	5
+PORTVERSION=	0.3.2
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
@@ -15,11 +14,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler:c++11-lib gettext gmake gnome libarchive pkgconfig \
 		shebangfix
 USE_GNOME=	gtkmm30 intltool libxslt
-USE_GSTREAMER=	mm
-USE_CXXSTD=	c++11
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	create-lw-file
 bash_CMD=	/bin/sh
+
+OPTIONS_DEFINE=	SOUND
+OPTIONS_DEFAULT=SOUND
+
+SOUND_USE=	GSTREAMER1=mm,good,ogg,vorbis
+SOUND_CONFIGURE_ENABLE=	sound
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|class SetList<T>::|typename SetList<T>::|' \
+		${WRKSRC}/src/setlist.h
 
 .include <bsd.port.mk>
