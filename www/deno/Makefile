@@ -2,7 +2,7 @@
 
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.2
+DISTVERSION=	1.5.3
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -258,6 +258,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_urlencoded-0.6.1 \
 		sha-1-0.8.2 \
 		sha-1-0.9.1 \
+		shell-escape-0.1.5 \
 		signal-hook-registry-1.2.1 \
 		siphasher-0.3.3 \
 		slab-0.4.2 \
