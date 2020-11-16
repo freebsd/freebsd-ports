@@ -2,8 +2,11 @@
 
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6-3
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-effects
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	ea4b63d8fff3.patch:-p1 # https://github.com/mortie/swaylock-effects/pull/37
 
 COMMENT?=	Screen locker for Wayland with fancy effects
 
