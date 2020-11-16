@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yarl
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils cython
+
+pre-configure:
+	@rm ${WRKSRC}/yarl/_quoting_c.c
+	@cd ${WRKSRC}/yarl && ${PYTHON_CMD} -m cython -3 -o _quoting_c.c _quoting_c.pyx
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/yarl/_quoting_c.so
