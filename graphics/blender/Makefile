@@ -51,7 +51,6 @@ LDFLAGS+=	-fuse-ld=lld
 .endif
 
 PLIST_SUB+=	VER=${DISTVERSION:R}
-LLVM_VER=	90
 OPTIONS_SUB=	yes
 
 .include "${.CURDIR}/Makefile.options"
@@ -162,6 +161,14 @@ XF86VMODE_USE=			XORG=xi,xxf86vm
 
 .if defined(WITH_DEBUG)
 CMAKE_ARGS+=		-DWITH_GHOST_DEBUG:BOOL=ON
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${LLVM_DEFAULT:M[678]0}
+LLVM_VER=	90
+.else
+LLVM_VER=	${LLVM_DEFAULT}
 .endif
 
 post-patch-OPENCOLORIO-on:

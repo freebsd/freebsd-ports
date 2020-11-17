@@ -33,11 +33,10 @@ GH_PROJECT=	OpenShadingLanguage
 LDFLAGS+=	-fuse-ld=lld
 .endif
 
-LLVM_VER=	90
 CMAKE_ON=	ENABLERTTI OSL_BUILD_TESTS USE_LLVM_BITCODE USE_LIBCPLUSPLUS
 CMAKE_OFF=	USE_BOOST_WAVE
 CMAKE_ARGS+=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VER}" \
-		-DCMAKE_INSTALL_DOCDIR:STRING=${DOCSDIR}
+		-DCMAKE_INSTALL_DOCDIR:STRING=${DOCSDIR} -DCMAKE_CXX_STANDARD=14
 # This flag fixes linking with clang 9.0 ??
 CXXFLAGS+=	-DNDEBUG
 
@@ -59,6 +58,12 @@ CXXFLAGS+=	-I${STAGEDIR}/include
 PLIST_SUB+=	LIBVERS=${DISTVERSION:C/([0-9]*)\.([0-9]*)\.([0-9]*)(.*)/\1.\2.\3/}
 
 .include <bsd.port.options.mk>
+
+.if ${LLVM_DEFAULT:M[678]0}
+LLVM_VER=	90
+.else
+LLVM_VER=	${LLVM_DEFAULT}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},' \
