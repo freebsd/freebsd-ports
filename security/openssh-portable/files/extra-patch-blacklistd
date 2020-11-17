@@ -1,0 +1,428 @@
+--- blacklist.c.orig	2020-11-16 16:45:24.799150000 -0800
++++ blacklist.c	2020-11-16 16:45:20.000470000 -0800
+@@ -0,0 +1,92 @@
++/*-
++ * Copyright (c) 2015 The NetBSD Foundation, Inc.
++ * Copyright (c) 2016 The FreeBSD Foundation, Inc.
++ * All rights reserved.
++ *
++ * Portions of this software were developed by Kurt Lidl
++ * under sponsorship from the FreeBSD Foundation.
++ *
++ * This code is derived from software contributed to The NetBSD Foundation
++ * by Christos Zoulas.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ * 1. Redistributions of source code must retain the above copyright
++ *    notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ *    notice, this list of conditions and the following disclaimer in the
++ *    documentation and/or other materials provided with the distribution.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE NETBSD FOUNDATION, INC. AND CONTRIBUTORS
++ * ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
++ * TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
++ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE FOUNDATION OR CONTRIBUTORS
++ * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
++ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
++ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
++ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
++ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
++ * POSSIBILITY OF SUCH DAMAGE.
++ */
++
++#include "includes.h"
++
++#include <ctype.h>
++#include <stdarg.h>
++#include <stdbool.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <syslog.h>
++#include <unistd.h>
++
++#include "ssh.h"
++#include "packet.h"
++#include "log.h"
++#include "misc.h"
++#include <blacklist.h>
++#include "blacklist_client.h"
++
++static struct blacklist *blstate = NULL;
++
++/* internal definition from bl.h */
++struct blacklist *bl_create(bool, char *, void (*)(int, const char *, va_list));
++
++/* impedence match vsyslog() to sshd's internal logging levels */
++void
++im_log(int priority, const char *message, va_list args)
++{
++	LogLevel imlevel;
++
++	switch (priority) {
++	case LOG_ERR:
++		imlevel = SYSLOG_LEVEL_ERROR;
++		break;
++	case LOG_DEBUG:
++		imlevel = SYSLOG_LEVEL_DEBUG1;
++		break;
++	case LOG_INFO:
++		imlevel = SYSLOG_LEVEL_INFO;
++		break;
++	default:
++		imlevel = SYSLOG_LEVEL_DEBUG2;
++	}
++	do_log(imlevel, message, args);
++}
++
++void
++blacklist_init(void)
++{
++
++	blstate = bl_create(false, NULL, im_log);
++}
++
++void
++blacklist_notify(int action, struct ssh *ssh, const char *msg)
++{
++
++	if (blstate != NULL && ssh_packet_connection_is_on_socket(ssh))
++		(void)blacklist_r(blstate, action,
++		ssh_packet_get_connection_in(ssh), msg);
++}
+--- blacklist_client.h.orig	2020-11-16 16:45:22.823087000 -0800
++++ blacklist_client.h	2020-11-16 16:45:09.761962000 -0800
+@@ -0,0 +1,61 @@
++/*-
++ * Copyright (c) 2015 The NetBSD Foundation, Inc.
++ * Copyright (c) 2016 The FreeBSD Foundation, Inc.
++ * All rights reserved.
++ *
++ * Portions of this software were developed by Kurt Lidl
++ * under sponsorship from the FreeBSD Foundation.
++ *
++ * This code is derived from software contributed to The NetBSD Foundation
++ * by Christos Zoulas.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ * 1. Redistributions of source code must retain the above copyright
++ *    notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ *    notice, this list of conditions and the following disclaimer in the
++ *    documentation and/or other materials provided with the distribution.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE NETBSD FOUNDATION, INC. AND CONTRIBUTORS
++ * ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
++ * TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
++ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE FOUNDATION OR CONTRIBUTORS
++ * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
++ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
++ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
++ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
++ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
++ * POSSIBILITY OF SUCH DAMAGE.
++ */
++
++#ifndef BLACKLIST_CLIENT_H
++#define BLACKLIST_CLIENT_H
++
++#ifndef BLACKLIST_API_ENUM
++enum {
++	BLACKLIST_AUTH_OK = 0,
++	BLACKLIST_AUTH_FAIL,
++	BLACKLIST_ABUSIVE_BEHAVIOR,
++	BLACKLIST_BAD_USER
++};
++#endif
++
++#ifdef USE_BLACKLIST
++void blacklist_init(void);
++void blacklist_notify(int, struct ssh *, const char *);
++
++#define BLACKLIST_INIT() blacklist_init()
++#define BLACKLIST_NOTIFY(x, ssh, msg) blacklist_notify(x, ssh, msg)
++
++#else
++
++#define BLACKLIST_INIT()
++#define BLACKLIST_NOTIFY(x, ssh, msg)
++
++#endif
++
++
++#endif /* BLACKLIST_CLIENT_H */
+--- servconf.c.orig	2020-11-16 15:52:13.175438000 -0800
++++ servconf.c	2020-11-16 15:52:15.812142000 -0800
+@@ -168,6 +168,7 @@ initialize_server_options(ServerOptions *options)
+ 	options->max_sessions = -1;
+ 	options->banner = NULL;
+ 	options->use_dns = -1;
++	options->use_blacklist = -1;
+ 	options->client_alive_interval = -1;
+ 	options->client_alive_count_max = -1;
+ 	options->num_authkeys_files = 0;
+@@ -432,6 +433,8 @@ fill_default_server_options(ServerOptions *options)
+ 		options->max_sessions = DEFAULT_SESSIONS_MAX;
+ 	if (options->use_dns == -1)
+ 		options->use_dns = 0;
++	if (options->use_blacklist == -1)
++		options->use_blacklist = 0;
+ 	if (options->client_alive_interval == -1)
+ 		options->client_alive_interval = 0;
+ 	if (options->client_alive_count_max == -1)
+@@ -528,6 +531,7 @@ typedef enum {
+ 	sGatewayPorts, sPubkeyAuthentication, sPubkeyAcceptedKeyTypes,
+ 	sXAuthLocation, sSubsystem, sMaxStartups, sMaxAuthTries, sMaxSessions,
+ 	sBanner, sUseDNS, sHostbasedAuthentication,
++	sUseBlacklist,
+ 	sHostbasedUsesNameFromPacketOnly, sHostbasedAcceptedKeyTypes,
+ 	sHostKeyAlgorithms,
+ 	sClientAliveInterval, sClientAliveCountMax, sAuthorizedKeysFile,
+@@ -658,6 +662,8 @@ static struct {
+ 	{ "maxsessions", sMaxSessions, SSHCFG_ALL },
+ 	{ "banner", sBanner, SSHCFG_ALL },
+ 	{ "usedns", sUseDNS, SSHCFG_GLOBAL },
++	{ "useblacklist", sUseBlacklist, SSHCFG_GLOBAL },
++	{ "useblocklist", sUseBlacklist, SSHCFG_GLOBAL } /* alias */,
+ 	{ "verifyreversemapping", sDeprecated, SSHCFG_GLOBAL },
+ 	{ "reversemappingcheck", sDeprecated, SSHCFG_GLOBAL },
+ 	{ "clientaliveinterval", sClientAliveInterval, SSHCFG_ALL },
+@@ -1708,6 +1714,10 @@ process_server_config_line_depth(ServerOptions *option
+ 		intptr = &options->use_dns;
+ 		goto parse_flag;
+ 
++	case sUseBlacklist:
++		intptr = &options->use_blacklist;
++		goto parse_flag;
++
+ 	case sLogFacility:
+ 		log_facility_ptr = &options->log_facility;
+ 		arg = strdelim(&cp);
+@@ -2841,6 +2851,7 @@ dump_config(ServerOptions *o)
+ 	dump_cfg_fmtint(sCompression, o->compression);
+ 	dump_cfg_fmtint(sGatewayPorts, o->fwd_opts.gateway_ports);
+ 	dump_cfg_fmtint(sUseDNS, o->use_dns);
++	dump_cfg_fmtint(sUseBlacklist, o->use_blacklist);
+ 	dump_cfg_fmtint(sAllowTcpForwarding, o->allow_tcp_forwarding);
+ 	dump_cfg_fmtint(sAllowAgentForwarding, o->allow_agent_forwarding);
+ 	dump_cfg_fmtint(sDisableForwarding, o->disable_forwarding);
+--- servconf.h.orig	2020-11-16 15:51:00.752090000 -0800
++++ servconf.h	2020-11-16 15:51:02.962173000 -0800
+@@ -179,6 +179,7 @@ typedef struct {
+ 	int	max_sessions;
+ 	char   *banner;			/* SSH-2 banner message */
+ 	int	use_dns;
++	int	use_blacklist;
+ 	int	client_alive_interval;	/*
+ 					 * poke the client this often to
+ 					 * see if it's still there
+--- auth-pam.c.orig	2020-11-16 15:52:45.816578000 -0800
++++ auth-pam.c	2020-11-16 15:54:19.796583000 -0800
+@@ -105,6 +105,7 @@ extern char *__progname;
+ #include "ssh-gss.h"
+ #endif
+ #include "monitor_wrap.h"
++#include "blacklist_client.h"
+ 
+ extern ServerOptions options;
+ extern struct sshbuf *loginmsg;
+@@ -916,6 +917,10 @@ sshpam_query(void *ctx, char **name, char **info,
+ 				sshbuf_free(buffer);
+ 				return (0);
+ 			}
++			/* XXX: ssh context unavailable here, unclear if this is even needed.
++			BLACKLIST_NOTIFY(BLACKLIST_BAD_USER,
++			    the_active_state, sshpam_authctxt->user);
++			*/
+ 			error("PAM: %s for %s%.100s from %.100s", msg,
+ 			    sshpam_authctxt->valid ? "" : "illegal user ",
+ 			    sshpam_authctxt->user, sshpam_rhost);
+--- auth.c.orig	2020-11-16 15:52:45.824171000 -0800
++++ auth.c	2020-11-16 15:57:51.091969000 -0800
+@@ -76,6 +76,7 @@
+ #include "ssherr.h"
+ #include "compat.h"
+ #include "channels.h"
++#include "blacklist_client.h"
+ 
+ /* import */
+ extern ServerOptions options;
+@@ -331,8 +332,11 @@ auth_log(struct ssh *ssh, int authenticated, int parti
+ 		authmsg = "Postponed";
+ 	else if (partial)
+ 		authmsg = "Partial";
+-	else
++	else {
+ 		authmsg = authenticated ? "Accepted" : "Failed";
++		if (authenticated)
++			BLACKLIST_NOTIFY(BLACKLIST_AUTH_OK, ssh, "ssh");
++	}
+ 
+ 	if ((extra = format_method_key(authctxt)) == NULL) {
+ 		if (authctxt->auth_method_info != NULL)
+@@ -586,6 +590,7 @@ getpwnamallow(struct ssh *ssh, const char *user)
+ 	aix_restoreauthdb();
+ #endif
+ 	if (pw == NULL) {
++		BLACKLIST_NOTIFY(BLACKLIST_BAD_USER, ssh, user);
+ 		logit("Invalid user %.100s from %.100s port %d",
+ 		    user, ssh_remote_ipaddr(ssh), ssh_remote_port(ssh));
+ #ifdef CUSTOM_FAILED_LOGIN
+--- auth2.c.orig	2020-11-16 17:10:36.772062000 -0800
++++ auth2.c	2020-11-16 17:12:04.852943000 -0800
+@@ -58,6 +58,7 @@
+ #endif
+ #include "monitor_wrap.h"
+ #include "digest.h"
++#include "blacklist_client.h"
+ 
+ /* import */
+ extern ServerOptions options;
+@@ -295,6 +296,7 @@ input_userauth_request(int type, u_int32_t seq, struct
+ 		} else {
+ 			/* Invalid user, fake password information */
+ 			authctxt->pw = fakepw();
++			BLACKLIST_NOTIFY(BLACKLIST_BAD_USER, ssh, "ssh");
+ #ifdef SSH_AUDIT_EVENTS
+ 			PRIVSEP(audit_event(ssh, SSH_INVALID_USER));
+ #endif
+@@ -448,8 +450,10 @@ userauth_finish(struct ssh *ssh, int authenticated, co
+ 	} else {
+ 		/* Allow initial try of "none" auth without failure penalty */
+ 		if (!partial && !authctxt->server_caused_failure &&
+-		    (authctxt->attempt > 1 || strcmp(method, "none") != 0))
++		    (authctxt->attempt > 1 || strcmp(method, "none") != 0)) {
+ 			authctxt->failures++;
++			BLACKLIST_NOTIFY(BLACKLIST_AUTH_FAIL, ssh, "ssh");
++		}
+ 		if (authctxt->failures >= options.max_authtries) {
+ #ifdef SSH_AUDIT_EVENTS
+ 			PRIVSEP(audit_event(ssh, SSH_LOGIN_EXCEED_MAXTRIES));
+--- packet.c.orig	2020-11-16 15:52:45.839070000 -0800
++++ packet.c	2020-11-16 15:56:09.285418000 -0800
+@@ -96,6 +96,7 @@
+ #include "packet.h"
+ #include "ssherr.h"
+ #include "sshbuf.h"
++#include "blacklist_client.h"
+ 
+ #ifdef PACKET_DEBUG
+ #define DBG(x) x
+@@ -1882,6 +1883,7 @@ sshpkt_vfatal(struct ssh *ssh, int r, const char *fmt,
+ 	case SSH_ERR_NO_KEX_ALG_MATCH:
+ 	case SSH_ERR_NO_HOSTKEY_ALG_MATCH:
+ 		if (ssh && ssh->kex && ssh->kex->failed_choice) {
++			BLACKLIST_NOTIFY(BLACKLIST_AUTH_FAIL, ssh, "ssh");
+ 			ssh_packet_clear_keys(ssh);
+ 			errno = oerrno;
+ 			logdie("Unable to negotiate with %s: %s. "
+--- sshd.c.orig	2020-11-16 15:52:45.846609000 -0800
++++ sshd.c	2020-11-16 15:56:34.401305000 -0800
+@@ -131,6 +131,7 @@
+ #include "version.h"
+ #include "ssherr.h"
+ #include "sk-api.h"
++#include "blacklist_client.h"
+ 
+ #ifdef LIBWRAP
+ #include <tcpd.h>
+@@ -388,6 +389,8 @@ grace_alarm_handler(int sig)
+ 		kill(0, SIGTERM);
+ 	}
+ 
++	BLACKLIST_NOTIFY(BLACKLIST_AUTH_FAIL, the_active_state, "ssh");
++
+ 	/* XXX pre-format ipaddr/port so we don't need to access active_state */
+ 	/* Log error and exit. */
+ 	sigdie("Timeout before authentication for %s port %d",
+@@ -2290,6 +2293,9 @@ main(int ac, char **av)
+ 	if ((loginmsg = sshbuf_new()) == NULL)
+ 		fatal("%s: sshbuf_new failed", __func__);
+ 	auth_debug_reset();
++
++	if (options.use_blacklist)
++		BLACKLIST_INIT();
+ 
+ 	if (use_privsep) {
+ 		if (privsep_preauth(ssh) == 1)
+--- Makefile.in.orig	2020-11-16 16:27:13.408700000 -0800
++++ Makefile.in	2020-11-16 16:28:28.083007000 -0800
+@@ -180,6 +180,8 @@ FIXPATHSCMD	= $(SED) $(PATHSUBS)
+ FIXALGORITHMSCMD= $(SHELL) $(srcdir)/fixalgorithms $(SED) \
+ 		     @UNSUPPORTED_ALGORITHMS@
+ 
++LIBSSH_OBJS+=	blacklist.o
++
+ all: configure-check $(CONFIGFILES) $(MANPAGES) $(TARGETS)
+ 
+ $(LIBSSH_OBJS): Makefile.in config.h
+--- sshd_config.orig	2020-11-16 16:57:14.276036000 -0800
++++ sshd_config	2020-11-16 16:57:42.183846000 -0800
+@@ -94,6 +94,7 @@
+ #PrintLastLog yes
+ #TCPKeepAlive yes
+ #PermitUserEnvironment no
++#UseBlacklist no
+ #Compression delayed
+ #ClientAliveInterval 0
+ #ClientAliveCountMax 3
+--- sshd_config.5.orig	2020-11-16 16:57:58.533307000 -0800
++++ sshd_config.5	2020-11-16 17:00:02.635070000 -0800
+@@ -1703,6 +1703,20 @@ for authentication using
+ .Cm TrustedUserCAKeys .
+ For more details on certificates, see the CERTIFICATES section in
+ .Xr ssh-keygen 1 .
++.It Cm UseBlacklist
++Specifies whether
++.Xr sshd 8
++attempts to send authentication success and failure messages
++to the
++.Xr blacklistd 8
++daemon.
++The default is
++.Cm no .
++For forward compatibility with an upcoming
++.Xr blacklistd
++rename, the
++.Cm UseBlocklist
++alias can be used instead.
+ .It Cm UseDNS
+ Specifies whether
+ .Xr sshd 8
+--- monitor.c.orig	2020-11-16 17:24:03.457283000 -0800
++++ monitor.c	2020-11-16 17:25:57.642510000 -0800
+@@ -96,6 +96,7 @@
+ #include "match.h"
+ #include "ssherr.h"
+ #include "sk-api.h"
++#include "blacklist_client.h"
+ 
+ #ifdef GSSAPI
+ static Gssctxt *gsscontext = NULL;
+@@ -342,8 +343,11 @@ monitor_child_preauth(struct ssh *ssh, struct monitor 
+ 		if (ent->flags & (MON_AUTHDECIDE|MON_ALOG)) {
+ 			auth_log(ssh, authenticated, partial,
+ 			    auth_method, auth_submethod);
+-			if (!partial && !authenticated)
++			if (!partial && !authenticated) {
+ 				authctxt->failures++;
++				BLACKLIST_NOTIFY(BLACKLIST_AUTH_FAIL,
++				    ssh, "ssh");
++			}
+ 			if (authenticated || partial) {
+ 				auth2_update_session_info(authctxt,
+ 				    auth_method, auth_submethod);
+@@ -1228,6 +1232,7 @@ mm_answer_keyallowed(struct ssh *ssh, int sock, struct
+ 	} else {
+ 		/* Log failed attempt */
+ 		auth_log(ssh, 0, 0, auth_method, NULL);
++		BLACKLIST_NOTIFY(BLACKLIST_AUTH_FAIL, ssh, "ssh");
+ 		free(cuser);
+ 		free(chost);
+ 	}
