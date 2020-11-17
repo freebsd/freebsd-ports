@@ -62,6 +62,14 @@ ARPACK_PREVENTS=	MPI # ARPACK is only used in a single-core application
 
 MAKE_JOBS_UNSAFE=	yes # race conditions when some options are ON
 
+.include <bsd.port.pre.mk>
+
+.if ${GCC_DEFAULT} >= 10
+# workaround for Type mismatch between actual argument at (1) and actual argument at (2) (COMPLEX(8)/CHARACTER(*)).
+# in theory, this should set FCFLAGS, but the port does not conform
+FFLAGS+=	-fallow-argument-mismatch
+.endif
+
 post-extract:
 	@${RM} ${WRKSRC}/external/scalapackfx/origin/test/psyr_result.dat.orig
 	@cd ${WRKSRC} && ${CP} sys/make.x86_64-linux-gnu make.arch
@@ -69,4 +77,4 @@ post-extract:
 post-install:
 	@cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} dftb+ modes waveplot
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
