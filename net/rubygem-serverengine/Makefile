@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	serverengine
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
