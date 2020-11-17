@@ -8,11 +8,11 @@ MASTER_SITES=	https://www.wolfssl.com/ \
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Embedded SSL C-Library
 
+PATCH_SITES=	https://github.com/wolfSSL/wolfssl/commit/
+PATCHFILES=	e9b1ceae7e1daac6206d399e30c04bd51e3f8c7f.patch:-p1
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_mips=	fails to package: pkg-static: Unable to access file libwolfssl.so.3: No such file or directory
-BROKEN_mips64=	fails to package: pkg-static: Unable to access file libwolfssl.so.3: No such file or directory
 
 USES=		libtool zip
 USE_LDCONFIG=	yes
