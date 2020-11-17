@@ -1,10 +1,10 @@
---- src/mtserver/Makefile.in.orig	2019-05-13 08:40:47 UTC
+--- src/mtserver/Makefile.in.orig	2020-11-01 13:42:44 UTC
 +++ src/mtserver/Makefile.in
-@@ -13,7 +13,7 @@
+@@ -16,7 +16,7 @@
  
  CC      = @CC@ 
  CXX     = @CXX@ 
--CFLAGS  = @CFLAGS@ -I. -I..
+-CFLAGS  = @CFLAGS@ -I. -I..     # -DUFDB_TEST_PROXY
 +CFLAGS  = @CFLAGS@ -D__BSD_VISIBLE=1 -I. -I..
  CXXFLAGS= @CXXFLAGS@ -I. -I..
  CPPFLAGS= @CPPFLAGS@
