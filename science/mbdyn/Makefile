@@ -58,9 +58,17 @@ METIS_LIB_DEPENDS=	libmetis.so:math/metis
 REFERENCE_CONFIGURE_ON=	--with-blas=blas
 REFERENCE_USES=	blaslapack:netlib
 
+.include <bsd.port.pre.mk>
+
+.if ${GCC_DEFAULT} >= 10
+# workaround for Type mismatch in argument 't' at (1); passed REAL(4) to INTEGER(4)
+# in theory, this should set FCFLAGS, but the port does not conform
+FFLAGS+=	-fallow-argument-mismatch
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e '/try_lapack_LIBS=/s/-llapack/${LAPACKLIB}/' \
 		-e 's/ -lxerbla//; s/-lcholmod/-lcholmod ${BLASLIB} ${LAPACKLIB} -lsuitesparseconfig/'	\
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
