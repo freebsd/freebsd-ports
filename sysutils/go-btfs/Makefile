@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-btfs
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 DISTVERSIONPREFIX=	btfs-v
 CATEGORIES=	sysutils
 
@@ -27,21 +27,21 @@ GH_TUPLE=	\
 		TRON-US:go-btfs-api:v0.3.0:tron_us_go_btfs_api/vendor/github.com/TRON-US/go-btfs-api \
 		TRON-US:go-btfs-chunker:v0.3.0:tron_us_go_btfs_chunker/vendor/github.com/TRON-US/go-btfs-chunker \
 		TRON-US:go-btfs-cmds:v0.2.6:tron_us_go_btfs_cmds/vendor/github.com/TRON-US/go-btfs-cmds \
-		TRON-US:go-btfs-config:v0.6.11:tron_us_go_btfs_config/vendor/github.com/TRON-US/go-btfs-config \
+		TRON-US:go-btfs-config:v0.6.13:tron_us_go_btfs_config/vendor/github.com/TRON-US/go-btfs-config \
 		TRON-US:go-btfs-files:v0.2.0:tron_us_go_btfs_files/vendor/github.com/TRON-US/go-btfs-files \
 		TRON-US:go-btfs-pinner:v0.1.1:tron_us_go_btfs_pinner/vendor/github.com/TRON-US/go-btfs-pinner \
 		TRON-US:go-btns:v0.1.0:tron_us_go_btns/vendor/github.com/TRON-US/go-btns \
-		TRON-US:go-car:v0.2.1:tron_us_go_car_1/vendor/github.com/ipld/go-car \
-		TRON-US:go-cid:v0.2.1:tron_us_go_cid_1/vendor/github.com/ipfs/go-cid \
+		TRON-US:go-car:v0.2.1:tron_us_go_car/vendor/github.com/ipld/go-car \
+		TRON-US:go-cid:v0.2.1:tron_us_go_cid/vendor/github.com/ipfs/go-cid \
 		TRON-US:go-eccrypto:v0.0.1:tron_us_go_eccrypto/vendor/github.com/TRON-US/go-eccrypto \
-		TRON-US:go-graphsync:v0.1.2:tron_us_go_graphsync_1/vendor/github.com/ipfs/go-graphsync \
+		TRON-US:go-graphsync:v0.1.2:tron_us_go_graphsync/vendor/github.com/ipfs/go-graphsync \
 		TRON-US:go-ipld-format:v0.2.0:tron_us_go_ipld_format_1/vendor/github.com/ipfs/go-ipld-format \
-		TRON-US:go-ipld-prime-proto:v0.0.2:tron_us_go_ipld_prime_proto/vendor/github.com/ipld/go-ipld-prime-proto \
+		TRON-US:go-ipld-prime-proto:v0.0.2:tron_us_go_ipld_prime_proto_1/vendor/github.com/ipld/go-ipld-prime-proto \
 		TRON-US:go-libp2p-core:v0.5.1:tron_us_go_libp2p_core/vendor/github.com/libp2p/go-libp2p-core \
 		TRON-US:go-libp2p-kad-dht:v0.9.3:tron_us_go_libp2p_kad_dht/vendor/github.com/libp2p/go-libp2p-kad-dht \
 		TRON-US:go-mfs:v0.3.1:tron_us_go_mfs/vendor/github.com/TRON-US/go-mfs \
-		TRON-US:go-multiaddr:v0.3.1:tron_us_go_multiaddr_1/vendor/github.com/multiformats/go-multiaddr \
-		TRON-US:go-path:v0.1.0:tron_us_go_path_1/vendor/github.com/ipfs/go-path \
+		TRON-US:go-multiaddr:v0.3.1:tron_us_go_multiaddr/vendor/github.com/multiformats/go-multiaddr \
+		TRON-US:go-path:v0.1.0:tron_us_go_path/vendor/github.com/ipfs/go-path \
 		TRON-US:go-unixfs:v0.6.0:tron_us_go_unixfs/vendor/github.com/TRON-US/go-unixfs \
 		TRON-US:interface-go-btfs-core:v0.6.1:tron_us_interface_go_btfs_core/vendor/github.com/TRON-US/interface-go-btfs-core \
 		Workiva:go-datastructures:v1.0.52:workiva_go_datastructures/vendor/github.com/Workiva/go-datastructures \
@@ -239,8 +239,7 @@ GH_TUPLE=	\
 		multiformats:go-multihash:v0.0.13:multiformats_go_multihash/vendor/github.com/multiformats/go-multihash \
 		multiformats:go-multistream:v0.1.1:multiformats_go_multistream/vendor/github.com/multiformats/go-multistream \
 		multiformats:go-varint:v0.0.5:multiformats_go_varint/vendor/github.com/multiformats/go-varint \
-		natefinch:lumberjack:v2.0.0:natefinch_lumberjack/vendor/github.com/natefinch/lumberjack \
-		natefinch:lumberjack:v2.0.0:natefinch_lumberjack_1/vendor/gopkg.in/natefinch/lumberjack.v2 \
+		natefinch:lumberjack:v2.0.0:natefinch_lumberjack/vendor/gopkg.in/natefinch/lumberjack.v2 \
 		nwaples:rardecode:v1.0.0:nwaples_rardecode/vendor/github.com/nwaples/rardecode \
 		opentracing:opentracing-go:v1.1.0:opentracing_opentracing_go/vendor/github.com/opentracing/opentracing-go \
 		orcaman:concurrent-map:8c72a8bb44f6:orcaman_concurrent_map/vendor/github.com/orcaman/concurrent-map \
@@ -262,7 +261,8 @@ GH_TUPLE=	\
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		syndtr:goleveldb:758128399b1d:syndtr_goleveldb/vendor/github.com/syndtr/goleveldb \
 		texttheater:golang-levenshtein:d188e65d659e:texttheater_golang_levenshtein/vendor/github.com/texttheater/golang-levenshtein \
-		tron-us:go-btfs-common:v0.6.1:tron_us_go_btfs_common/vendor/github.com/tron-us/go-btfs-common \
+		thedevsaddam:gojsonq:v2.5.2:thedevsaddam_gojsonq_v2/vendor/github.com/thedevsaddam/gojsonq/v2 \
+		tron-us:go-btfs-common:v0.6.2:tron_us_go_btfs_common/vendor/github.com/tron-us/go-btfs-common \
 		tron-us:go-common:v2.2.1:tron_us_go_common_v2/vendor/github.com/tron-us/go-common/v2 \
 		tron-us:protobuf:v1.3.4:tron_us_protobuf/vendor/github.com/tron-us/protobuf \
 		tyler-smith:go-bip32:2c9cfd177564:tyler_smith_go_bip32/vendor/github.com/tyler-smith/go-bip32 \
