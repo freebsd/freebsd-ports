@@ -11,7 +11,7 @@ COMMENT=	Utility to quickly create transient single-command jails
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		uidfix
+USES=		compiler:c11 uidfix
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
