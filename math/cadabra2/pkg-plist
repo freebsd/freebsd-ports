@@ -4,6 +4,7 @@ bin/cadabra2-cli
 %%GUI%%bin/cadabra2-gtk
 bin/cadabra2cadabra
 bin/cadabra2html
+bin/cadabra2ipynb
 bin/cadabra2latex
 bin/cadabra2python
 %%PYTHON_SITELIBDIR%%/cadabra2.so
@@ -136,5 +137,6 @@ share/man/man1/cadabra2-cli.1.gz
 share/man/man1/cadabra2.1.gz
 share/man/man1/cadabra2cadabra.1.gz
 share/man/man1/cadabra2html.1.gz
+share/man/man1/cadabra2ipynb.1.gz
 share/man/man1/cadabra2latex.1.gz
 share/man/man1/cadabra2python.1.gz
