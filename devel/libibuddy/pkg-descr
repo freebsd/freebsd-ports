@@ -1,0 +1,9 @@
+libibuddy is a C library to control the i-buddy
+USB device. The i-Buddy is a small USB figure
+in the form of an MSN messenger contact with
+butterfly wings.
+
+To start plug your i-buddy, and run the ibuddy_test
+command.
+
+WWW: http://www.osorio.me/projects/dev/libibbudy/
