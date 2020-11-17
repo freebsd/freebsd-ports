@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	proj
-PORTVERSION=	6.3.1
+PORTVERSION=	7.1.1
 PORTEPOCH=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/proj/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATUM_GRID_FILES}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DATUM_GRID_FILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Cartographic Projections library
 
 LICENSE=	MIT
@@ -36,8 +37,14 @@ post-extract:
 .for f in ${DATUM_GRID_FILES}
 	@${TAR} -xf ${DISTDIR}/${f} -C ${WRKSRC}/datum
 .endfor
+post-extract-DATA-on:
+	${MKDIR} ${WRKSRC}/proj_data
+	@${TAR} -xf ${DISTDIR}/${DATA_DISTFILES} -C ${WRKSRC}/proj_data
 
 post-install:
 	cd ${WRKSRC}/datum && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR}
+
+post-install-DATA-on:
+	cd ${WRKSRC}/proj_data && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

@@ -1,0 +1,35 @@
+[
+{ type: install
+  message: <<EOM
+Since proj 7, datum grids are available from a CDN at https://cdn.proj.org and
+should either be fetched dynamically at runtime (disabled by default, cf
+https://proj.org/usage/network.html) or be fetched locally depending on your
+work area needs, using the projsync command. 
+
+DATA option allows you to download all the data, but it requires more than 400mb!
+This option is disabled by default.
+
+It is better to use the projsync command.
+
+Use projsync --list-files to list the CDN content.
+
+They can either by installed in the user homedir (under ~/.local/share/proj)
+
+$ projsync --file fr_ign_ntf_r93.tif
+Downloading from https://cdn.proj.org into /home/user/.local/share/proj
+Total to download: 93581 bytes
+Downloading https://cdn.proj.org/fr_ign_ntf_r93.tif... (1 / 1)
+
+or systemwide in the default PROJ_LIB dir (under %%PREFIX%%/share/proj, cf
+https://proj.org/resource_files.html)
+
+# projsync --system-directory --file fr_ign_ntf_r93.tif
+Downloading from https://cdn.proj.org into %%PREFIX%%/share/proj
+Total to download: 93581 bytes
+Downloading https://cdn.proj.org/fr_ign_ntf_r93.tif... (1 / 1)
+
+If not using the default, make sure to set PROJ_LIB environment variable
+accordingly.
+EOM
+}
+]
