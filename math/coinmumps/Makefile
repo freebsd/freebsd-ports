@@ -29,6 +29,14 @@ INSTALL_TARGET=	install-strip
 
 MUMPS_VERSION=	4.10.0
 
+.include <bsd.port.pre.mk>
+
+.if ${GCC_DEFAULT} >= 10
+# workaround for Rank mismatch between actual argument at (1) and actual argument at (2) (scalar and rank-1)
+# in theory, this should set FCFLAGS, but the port does not conform
+FFLAGS+=	-fallow-argument-mismatch
+.endif
+
 post-extract:
 	@${RLN} ${WRKDIR}/MUMPS_${MUMPS_VERSION} ${WRKSRC}/MUMPS
 
@@ -38,4 +46,4 @@ post-patch: # from get.Mumps
 		${PATCH} -p0 < mumps_mpi.patch && \
 		${MV} MUMPS/libseq/mpi.h MUMPS/libseq/mumps_mpi.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
