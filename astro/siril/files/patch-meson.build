@@ -1,0 +1,10 @@
+--- meson.build.orig	2020-09-22 20:01:48 UTC
++++ meson.build
+@@ -123,6 +123,7 @@ if platform_linux
+ elif platform_bsd
+   siril_link_arg += '-rdynamic'
+   siril_link_arg += '-lexecinfo'
++  siril_link_arg += '-Wl,--no-as-needed' # workaround for https://gitlab.com/free-astro/siril/-/issues/614 (Bug#251206)
+ elif platform_windows
+   #TODO: Do Meson provide more elegant way?
+   siril_link_arg += '-Wl,--export-all-symbols'
