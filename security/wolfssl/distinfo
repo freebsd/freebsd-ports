@@ -1,3 +1,5 @@
-TIMESTAMP = 1598056212
+TIMESTAMP = 1605621449
 SHA256 (wolfssl-4.5.0.zip) = db2dd2c85e36130bb6dd666edca70c1bd642afa10ef0a5ac69e9142a26d25b3f
 SIZE (wolfssl-4.5.0.zip) = 8747110
+SHA256 (e9b1ceae7e1daac6206d399e30c04bd51e3f8c7f.patch) = d012891c56b9d82d1dde9d956affc49c596d4ebf2d71f4ee0cc3ff1c50aa6fbd
+SIZE (e9b1ceae7e1daac6206d399e30c04bd51e3f8c7f.patch) = 1043
