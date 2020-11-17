@@ -1,1 +1,10 @@
 Curses-based interface for nagios.
+
+Flavours:
+
+nagios3 - RUN_PENDS will include net-mgmt/nagios
+nagios4 - RUN_PENDS will include net-mgmt/nagios4
+
+In both cases, the PKGNAME will be cnagios-${FLAVOR}
+
+WWW: https://github.com/dannywarren/cnagios

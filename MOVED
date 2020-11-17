@@ -25,6 +25,8 @@
 # This file can be linted with Tools/scripts/MOVEDlint.awk
 #
 # Port|Moved to|Date|Why
+net-mgmt/cnagios|net-mgmt/cnagios@nagios3|2020-11-17|Moved to nagios3 or nagios4 flavored version
+net-mgmt/cnagios4|net-mgmt/cnagios@nagios4|2020-11-17|Moved to nagios4 flavored version
 audio/polypaudio|audio/pulseaudio|2008-01-01|Project renamed
 audio/akode-plugins-polypaudio||2008-01-01|Polypaudio is obsolete in favor of Pulseaudio
 audio/teknap|net-p2p/teknap|2008-01-09|Moved to net-p2p category
