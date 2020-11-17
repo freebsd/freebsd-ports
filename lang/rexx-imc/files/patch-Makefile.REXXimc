@@ -35,3 +35,12 @@
  
  $(LIBDIR)/librexx.a: $(LIBFILES)
  	$(VERBOSE) "$(LIBDIR)/librexx.a:"
+@@ -143,7 +144,7 @@ interface.o: $(SRC)/interface.c $(HFILES)
+ rxmathfn.rxfn: $(SRC)/rxmathfn.c $(SRC)/const.h $(SRC)/functions.h
+ 	$(VERBOSE) "rxmathfn.rxfn:"
+ 	$(CC) $(OPTFLAG) $(CCFLAG) -c $(PIC) -I$(SRC) $(SRC)/rxmathfn.c
+-	$(LD) $(SOFLAG) -o rxmathfn.rxfn rxmathfn.o -lm
++	$(LD) $(SOFLAG) -o rxmathfn.rxfn rxmathfn.o -L/usr/lib -lm
+ 	@rm rxmathfn.o
+ 
+ # If the source is in the current directory, this rule can be used.
