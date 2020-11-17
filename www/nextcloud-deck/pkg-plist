@@ -33,19 +33,18 @@
 %%WWWDIR%%/img/favicon.svg
 %%WWWDIR%%/img/filter.svg
 %%WWWDIR%%/img/filter_set.svg
+%%WWWDIR%%/img/notifications-dark.svg
 %%WWWDIR%%/img/reply.svg
 %%WWWDIR%%/img/toggle-view-collapse.svg
 %%WWWDIR%%/img/toggle-view-expand.svg
+%%WWWDIR%%/js/3.js
+%%WWWDIR%%/js/3.js.map
 %%WWWDIR%%/js/4.js
 %%WWWDIR%%/js/4.js.map
-%%WWWDIR%%/js/5.js
-%%WWWDIR%%/js/5.js.map
 %%WWWDIR%%/js/collections.js
 %%WWWDIR%%/js/collections.js.map
 %%WWWDIR%%/js/dashboard.js
 %%WWWDIR%%/js/dashboard.js.map
-%%WWWDIR%%/js/deck.js
-%%WWWDIR%%/js/deck.js.map
 %%WWWDIR%%/js/main.js
 %%WWWDIR%%/js/main.js.map
 %%WWWDIR%%/l10n/.gitkeep
@@ -179,8 +178,6 @@
 %%WWWDIR%%/l10n/oc.json
 %%WWWDIR%%/l10n/pl.js
 %%WWWDIR%%/l10n/pl.json
-%%WWWDIR%%/l10n/ps.js
-%%WWWDIR%%/l10n/ps.json
 %%WWWDIR%%/l10n/pt_BR.js
 %%WWWDIR%%/l10n/pt_BR.json
 %%WWWDIR%%/l10n/pt_PT.js
@@ -264,8 +261,8 @@
 %%WWWDIR%%/lib/Dashboard/DeckWidget.php
 %%WWWDIR%%/lib/Db/Acl.php
 %%WWWDIR%%/lib/Db/AclMapper.php
-%%WWWDIR%%/lib/Db/AssignedUsers.php
-%%WWWDIR%%/lib/Db/AssignedUsersMapper.php
+%%WWWDIR%%/lib/Db/Assignment.php
+%%WWWDIR%%/lib/Db/AssignmentMapper.php
 %%WWWDIR%%/lib/Db/Attachment.php
 %%WWWDIR%%/lib/Db/AttachmentMapper.php
 %%WWWDIR%%/lib/Db/Board.php
@@ -293,6 +290,7 @@
 %%WWWDIR%%/lib/Migration/UnknownUsers.php
 %%WWWDIR%%/lib/Migration/Version1000Date20200306161713.php
 %%WWWDIR%%/lib/Migration/Version1000Date20200308073933.php
+%%WWWDIR%%/lib/Migration/Version10200Date20201111150114.php
 %%WWWDIR%%/lib/NoPermissionException.php
 %%WWWDIR%%/lib/NotFoundException.php
 %%WWWDIR%%/lib/Notification/NotificationHelper.php
@@ -305,6 +303,7 @@
 %%WWWDIR%%/lib/Service/AttachmentService.php
 %%WWWDIR%%/lib/Service/BoardService.php
 %%WWWDIR%%/lib/Service/CardService.php
+%%WWWDIR%%/lib/Service/CirclesService.php
 %%WWWDIR%%/lib/Service/CommentService.php
 %%WWWDIR%%/lib/Service/ConfigService.php
 %%WWWDIR%%/lib/Service/DefaultBoardService.php
@@ -373,6 +372,7 @@
 %%WWWDIR%%/vendor/cogpowered/finediff/tests/Usage/Resources/word/simple.txt
 %%WWWDIR%%/vendor/cogpowered/finediff/tests/Usage/SimpleTest.php
 %%WWWDIR%%/vendor/composer/ClassLoader.php
+%%WWWDIR%%/vendor/composer/InstalledVersions.php
 %%WWWDIR%%/vendor/composer/LICENSE
 %%WWWDIR%%/vendor/composer/autoload_classmap.php
 %%WWWDIR%%/vendor/composer/autoload_namespaces.php
@@ -380,4 +380,6 @@
 %%WWWDIR%%/vendor/composer/autoload_real.php
 %%WWWDIR%%/vendor/composer/autoload_static.php
 %%WWWDIR%%/vendor/composer/installed.json
+%%WWWDIR%%/vendor/composer/installed.php
+%%WWWDIR%%/vendor/composer/platform_check.php
 %%WWWDIR%%/webpack.js
