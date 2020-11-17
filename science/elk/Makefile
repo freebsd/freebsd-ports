@@ -39,8 +39,17 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=		bin/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${GCC_DEFAULT} >= 10
+# workaround for Type mismatch in argument 'cc' at (1); passed COMPLEX(8) to REAL(8)
+FCFLAGS+=	-fallow-argument-mismatch
+.endif
+
 post-patch:
-	@${SED} 's|%%GMAKE%%|${GMAKE}|; s|%%FC%%|${FC}|; s|%%OPENMP_FLAGS%%|${OPENMP_FLAGS}|' \
+	@${SED} 's|%%GMAKE%%|${GMAKE}|; s|%%FC%%|${FC}|; \
+		s|%%FCFLAGS%%|${FCFLAGS}|; \
+		s|%%OPENMP_FLAGS%%|${OPENMP_FLAGS}|' \
 		< ${FILESDIR}/make.inc.in \
 		> ${WRKSRC}/make.inc
 
@@ -58,4 +67,4 @@ do-install-EXAMPLES-on:
 do-test:
 	@cd ${WRKSRC}/tests && ./tests.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

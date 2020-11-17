@@ -1,7 +1,7 @@
 
 MAKE = %%GMAKE%%
 F90 = %%FC%%
-F90_OPTS = -O3 -ffast-math -funroll-loops %%OPENMP_FLAGS%%
+F90_OPTS = -O3 -ffast-math -funroll-loops %%OPENMP_FLAGS%% %%FCFLAGS%%
 F77 = %%FC%%
 F77_OPTS = -O3 -ffast-math -funroll-loops %%OPENMP_FLAGS%%
 AR = ar
