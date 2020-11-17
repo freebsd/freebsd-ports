@@ -4,6 +4,7 @@
 PORTNAME=	fluent-bit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -11,7 +12,7 @@ COMMENT=	Fast and lightweight data forwarder
 
 LICENSE=	APACHE20
 
-USE_GITHUB=     yes
+USE_GITHUB=	yes
 GH_ACCOUNT=	fluent
 
 BROKEN_mips=		fails to build: conflicting types for 'restrict'
