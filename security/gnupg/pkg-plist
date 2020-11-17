@@ -50,7 +50,9 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/OpenPGP
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TRANSLATE
+%%PORTDOCS%%%%DOCSDIR%%/examples/Automatic.prf
 %%PORTDOCS%%%%DOCSDIR%%/examples/README
+%%PORTDOCS%%%%DOCSDIR%%/examples/VS-NfD.prf
 %%PORTDOCS%%%%DOCSDIR%%/examples/debug.prf
 %%PORTDOCS%%%%DOCSDIR%%/examples/gpgconf.conf
 %%PORTDOCS%%%%DOCSDIR%%/examples/pwpattern.list
@@ -64,7 +66,6 @@ sbin/applygnupgdefaults
 %%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/gpg-agent.service
 %%PORTDOCS%%%%DOCSDIR%%/examples/systemd-user/gpg-agent.socket
 %%PORTDOCS%%%%DOCSDIR%%/examples/trustlist.txt
-%%PORTDOCS%%%%DOCSDIR%%/examples/vsnfd.prf
 %%PORTDOCS%%%%DOCSDIR%%/help.be.txt
 %%PORTDOCS%%%%DOCSDIR%%/help.ca.txt
 %%PORTDOCS%%%%DOCSDIR%%/help.cs.txt

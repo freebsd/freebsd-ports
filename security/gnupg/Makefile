@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnupg
-PORTVERSION=	2.2.23
+PORTVERSION=	2.2.24
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -18,8 +18,6 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libksba.so:security/libksba \
 		libnpth.so:devel/npth
-BUILD_DEPENDS=	libassuan>=2.5.1:security/libassuan \
-		libgpg-error>=1.16:security/libgpg-error
 RUN_DEPENDS=	pinentry:security/pinentry
 
 USES=		compiler:c11 cpe gmake iconv makeinfo pkgconfig readline sqlite tar:bzip2
