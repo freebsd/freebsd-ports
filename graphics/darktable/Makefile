@@ -12,8 +12,8 @@ COMMENT=	Virtual lighttable and darkroom for photographers
 
 LICENSE=	GPLv3
 
-ONLY_FOR_ARCHS=		amd64
-ONLY_FOR_ARCHS_REASON=	uses SSE instructions and 64-bit address space
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	uses 64-bit address space
 
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
