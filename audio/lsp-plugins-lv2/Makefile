@@ -22,7 +22,9 @@ LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 USES=		compiler:c11 gmake gl gnome iconv:wchar_t pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	sadko4u
-USE_GCC=	any # clang breaks: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=232911
+# changed from yes to 9 due to:
+# types.h:95:37: error: 'asm' operand has impossible constraints
+USE_GCC=	9 # clang breaks: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=232911
 USE_GNOME=	cairo
 USE_XORG=	x11
 USE_GL=		gl
