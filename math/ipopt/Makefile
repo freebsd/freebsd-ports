@@ -41,6 +41,13 @@ DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 PORTDOCS=		*
 
+.include <bsd.port.pre.mk>
+
+.if ${GCC_DEFAULT} >= 10
+# workaround for Rank mismatch between actual argument at (1) and actual argument at (2) (scalar and rank-1)
+FFLAGS+=	-fallow-argument-mismatch
+.endif
+
 post-extract:
 	@(${ECHO} "Extracting Metis and Mumps ThirdParty libraries ..." )
 	@(cd ${WRKSRC}/ThirdParty/Metis && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/metis-4.0.3.tar.gz ${EXTRACT_AFTER_ARGS});
