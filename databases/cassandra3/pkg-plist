@@ -19,8 +19,7 @@
 %%DATADIR%%/lib/asm-5.0.4.jar
 %%DATADIR%%/lib/caffeine-2.2.6.jar
 %%DATADIR%%/lib/cassandra-driver-core-3.0.1-shaded.jar
-%%DATADIR%%/lib/cassandra-driver-internal-only-3.10.zip
-%%DATADIR%%/lib/cassandra-driver-internal-only-3.11.0-bb96859b.zip
+%%DATADIR%%/lib/cassandra-driver-internal-only-3.23.0.post0-1a184b99.zip
 %%DATADIR%%/lib/commons-cli-1.1.jar
 %%DATADIR%%/lib/commons-codec-1.9.jar
 %%DATADIR%%/lib/commons-lang3-3.1.jar
@@ -31,12 +30,14 @@
 %%DATADIR%%/lib/disruptor-3.0.1.jar
 %%DATADIR%%/lib/ecj-4.4.2.jar
 %%DATADIR%%/lib/futures-2.1.6-py2.py3-none-any.zip
+%%DATADIR%%/lib/geomet-0.1.0.zip
 %%DATADIR%%/lib/guava-18.0.jar
 %%DATADIR%%/lib/HdrHistogram-2.1.9.jar
 %%DATADIR%%/lib/high-scale-lib-1.0.6.jar
 %%DATADIR%%/lib/hppc-0.5.4.jar
-%%DATADIR%%/lib/jackson-core-asl-1.9.13.jar
-%%DATADIR%%/lib/jackson-mapper-asl-1.9.13.jar
+%%DATADIR%%/lib/jackson-annotations-2.9.10.jar
+%%DATADIR%%/lib/jackson-core-2.9.10.jar
+%%DATADIR%%/lib/jackson-databind-2.9.10.4.jar
 %%DATADIR%%/lib/jamm-0.3.0.jar
 %%DATADIR%%/lib/javax.inject.jar
 %%DATADIR%%/lib/jbcrypt-0.3m.jar
@@ -110,7 +111,7 @@
 %%DATADIR%%/lib/ohc-core-j8-0.4.4.jar
 %%DATADIR%%/lib/reporter-config-base-3.0.3.jar
 %%DATADIR%%/lib/reporter-config3-3.0.3.jar
-%%DATADIR%%/lib/six-1.7.3-py2.py3-none-any.zip
+%%DATADIR%%/lib/six-1.12.0-py2.py3-none-any.zip
 %%DATADIR%%/lib/slf4j-api-1.7.7.jar
 %%DATADIR%%/lib/snakeyaml-1.11.jar
 %%DATADIR%%/lib/snappy-java.jar

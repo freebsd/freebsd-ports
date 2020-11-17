@@ -1,6 +1,6 @@
---- bin/cassandra.orig	2019-12-13 12:50:29 UTC
+--- bin/cassandra.orig	2020-07-14 21:00:51 UTC
 +++ bin/cassandra
-@@ -30,7 +30,7 @@
+@@ -31,7 +31,7 @@
  #   JVM_OPTS -- Additional arguments to the JVM for heap size, etc
  #   JVM_ON_OUT_OF_MEMORY_ERROR_OPT -- The OnOutOfMemoryError JVM option if specified
  #   CASSANDRA_CONF -- Directory containing Cassandra configuration files.
@@ -9,7 +9,7 @@
  #
  # As a convenience, a fragment of shell is sourced in order to set one or
  # more of these variables. This so-called `include' can be placed in a 
-@@ -127,7 +127,7 @@ if [ -f "$CASSANDRA_CONF/cassandra-env.sh" ]; then
+@@ -128,7 +128,7 @@ if [ -f "$CASSANDRA_CONF/cassandra-env.sh" ]; then
  fi
  
  if [ -z "$CASSANDRA_LOG_DIR" ]; then

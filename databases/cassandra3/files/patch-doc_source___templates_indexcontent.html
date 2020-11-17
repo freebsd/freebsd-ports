@@ -1,0 +1,17 @@
+--- doc/source/_templates/indexcontent.html.orig	2020-10-28 18:46:34 UTC
++++ doc/source/_templates/indexcontent.html
+@@ -1,5 +1,12 @@
+-{% extends "defindex.html" %}
+-{% block tables %}
++{% extends "layout.html" %}
++{%- block htmltitle -%}
++<title>{{ html_title }}</title>
++{%- endblock -%}
++{% block body %}
++  <h1>{{ docstitle|e }}</h1>
++  <p>
++  {% trans %}Welcome! This is the documentation for Apache Cassandra {{ version }}.{% endtrans %}
++  </p>
+ <div id="wipwarning">This documentation is currently a work-in-progress and contains a number of TODO sections.
+     <a href="{{ pathto("bugs") }}">Contributions</a> are welcome.</div>
+ 
