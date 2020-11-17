@@ -78,6 +78,10 @@ GOTOFLAGS+=	INTERFACE64=1
 GOTOFLAGS+=	USE_OPENMP=1
 .endif
 
+.if ${GCC_DEFAULT} >= 10
+BROKEN=		fails to build with GCC 10: Type mismatch between actual argument at (1) and actual argument at (2) (REAL(8)/INTEGER(4)).
+.endif
+
 #.if ${PORT_OPTIONS:MQUAD_PRECISION}
 #BROKEN=	WITH_QUAD_PRECISION is broken; please disable this option
 #GOTOFLAGS+=	QUAD_PRECISION=1
