@@ -75,6 +75,11 @@ CFLAGS+=	${FPIC}
 FFLAGS+=	${FPIC}
 SVERSION=	2
 
+.if ${GCC_DEFAULT} >= 10
+# workaround for Rank mismatch between actual argument at (1) and actual argument at (2) (scalar and rank-1)
+FFLAGS+=	-fallow-argument-mismatch
+.endif
+
 .if defined(WITH_OPTIMIZED_FLAGS)
 .if ${ARCH} == "amd64"
 FFLAGS+=	-pipe -O3 -ffast-math -funroll-all-loops -fpeel-loops -ftracer -funswitch-loops -funit-at-a-time
