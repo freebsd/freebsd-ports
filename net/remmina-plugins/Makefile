@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	remmina-plugins
-DISTVERSION=	1.3.9
+DISTVERSION=	1.4.8
 CATEGORIES=	net gnome
 
 MAINTAINER?=	woodsb02@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE?=	GPLv2+
 USE_GITLAB=	yes
 GL_ACCOUNT=	Remmina
 GL_PROJECT=	Remmina
-GL_COMMIT=	0606fee3f396e28d18dedf202fedcb064ce27ee6
+GL_COMMIT=	7ebc497062de66881b71bbe7f54dabfda0129ac2
 
 .include "${.CURDIR}/../remmina-plugins/bsd.plugin.mk"
 
