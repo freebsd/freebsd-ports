@@ -1,18 +1,11 @@
---- src/util/util.h.orig	2014-09-17 13:01:37 UTC
+diff --git src/util/util.h src/util/util.h
+index 1e36bf02a..e883f322f 100644
+--- src/util/util.h
 +++ src/util/util.h
-@@ -227,8 +227,6 @@ void sig_term(int sig);
- #include <signal.h>
- void BlockSignals(bool block, int signum);
- void (*CatchSignal(int signum,void (*handler)(int )))(int);
--void CatchChild(void);
--void CatchChildLeaveStatus(void);
+@@ -733,4 +733,6 @@ errno_t create_preauth_indicator(void);
+ #define N_ELEMENTS(arr) (sizeof(arr) / sizeof(arr[0]))
+ #endif
  
- /* from memory.c */
- typedef int (void_destructor_fn_t)(void *);
-@@ -542,5 +540,6 @@ char * sss_replace_space(TALLOC_CTX *mem_ctx,
- char * sss_reverse_replace_space(TALLOC_CTX *mem_ctx,
-                                  const char *orig_name,
-                                  const char replace_char);
 +#include "util/sss_bsd_errno.h"
- 
++
  #endif /* __SSSD_UTIL_H__ */

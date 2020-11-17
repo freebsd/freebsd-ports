@@ -1,0 +1,10 @@
+diff --git src/sbus/sbus_codegen src/sbus/sbus_codegen
+index a97a92591..fb3b6d9b3 100755
+--- src/sbus/sbus_codegen
++++ src/sbus/sbus_codegen
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ 
+ #
+ # Authors:

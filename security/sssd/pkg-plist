@@ -1,40 +1,52 @@
 bin/sss_ssh_authorizedkeys
 bin/sss_ssh_knownhostsproxy
 etc/dbus-1/system.d/org.freedesktop.sssd.infopipe.conf
+etc/pam.d/sssd-shadowutils
 %%ETCDIR%%/sssd.conf.sample
 include/ipa_hbac.h
+include/sss_certmap.h
 include/sss_idmap.h
 include/sss_nss_idmap.h
+include/sss_sifp.h
+include/sss_sifp_dbus.h
+include/wbclient_sssd.h
 %%SMB%%lib/krb5/plugins/authdata/sssd_pac_plugin.so
 lib/krb5/plugins/libkrb5/sssd_krb5_locator_plugin.so
 lib/libipa_hbac.so
 lib/libipa_hbac.so.0
-lib/libipa_hbac.so.0.0.1
+lib/libipa_hbac.so.0.1.0
+lib/libsss_certmap.so
+lib/libsss_certmap.so.0
+lib/libsss_certmap.so.0.0.0
 lib/libsss_idmap.so
 lib/libsss_idmap.so.0
-lib/libsss_idmap.so.0.4.0
+lib/libsss_idmap.so.0.5.1
 lib/libsss_nss_idmap.so
 lib/libsss_nss_idmap.so.0
-lib/libsss_nss_idmap.so.0.0.1
+lib/libsss_nss_idmap.so.0.5.0
+lib/libsss_simpleifp.so
+lib/libsss_simpleifp.so.0
+lib/libsss_simpleifp.so.0.1.1
 lib/libsss_sudo.so
 lib/nss_sss.so
 lib/nss_sss.so.1
 lib/nss_sss.so.2
 lib/nss_sss.so.2.0.0
 lib/pam_sss.so
-%%PYTHON_SITELIBDIR%%/SSSDConfig-1.11.7-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/SSSDConfig-1.16.5-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.py
-%%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/__init__.cpython-37.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/ipachangeconf.cpython-37.pyc
 %%PYTHON_SITELIBDIR%%/SSSDConfig/ipachangeconf.py
-%%PYTHON_SITELIBDIR%%/SSSDConfig/ipachangeconf.pyc
-%%PYTHON_SITELIBDIR%%/SSSDConfig/sssd_upgrade_config.py
-%%PYTHON_SITELIBDIR%%/SSSDConfig/sssd_upgrade_config.pyc
 %%PYTHON_SITELIBDIR%%/pyhbac.so
 %%PYTHON_SITELIBDIR%%/pysss.so
 %%PYTHON_SITELIBDIR%%/pysss_murmur.so
 %%PYTHON_SITELIBDIR%%/pysss_nss_idmap.so
+%%SMB%%lib/samba/idmap/winbind_idmap_sss.so
 lib/shared-modules/ldb/memberof.so
 %%SMB%%lib/sssd/libsss_ad.so
+lib/sssd/conf/sssd.conf
+lib/sssd/libsss_cert.so
 lib/sssd/libsss_child.so
 lib/sssd/libsss_crypt.so
 lib/sssd/libsss_debug.so
@@ -44,13 +56,23 @@ lib/sssd/libsss_krb5_common.so
 lib/sssd/libsss_ldap.so
 lib/sssd/libsss_ldap_common.so
 lib/sssd/libsss_proxy.so
+lib/sssd/libsss_semanage.so
 lib/sssd/libsss_simple.so
 lib/sssd/libsss_util.so
+lib/sssd/modules/libwbclient.so
+lib/sssd/modules/libwbclient.so.0
+lib/sssd/modules/libwbclient.so.0.14.0
+lib/sssd/modules/sssd_krb5_localauth_plugin.so
 libdata/pkgconfig/ipa_hbac.pc
+libdata/pkgconfig/sss_certmap.pc
 libdata/pkgconfig/sss_idmap.pc
 libdata/pkgconfig/sss_nss_idmap.pc
+libdata/pkgconfig/sss_simpleifp.pc
+libdata/pkgconfig/wbclient_sssd.pc
+%%SMB%%libexec/sssd/gpo_child
 libexec/sssd/krb5_child
 libexec/sssd/ldap_child
+libexec/sssd/p11_child
 libexec/sssd/proxy_child
 libexec/sssd/sss_signal
 libexec/sssd/sssd_be
@@ -60,15 +82,27 @@ libexec/sssd/sssd_nss
 libexec/sssd/sssd_pam
 libexec/sssd/sssd_ssh
 libexec/sssd/sssd_sudo
-man/es/man1/sss_ssh_authorizedkeys.1.gz
-man/es/man1/sss_ssh_knownhostsproxy.1.gz
+man/de/man1/sss_ssh_knownhostsproxy.1.gz
+man/de/man5/sssd-ifp.5.gz
+man/de/man5/sssd-krb5.5.gz
+man/de/man5/sssd-ldap.5.gz
+man/de/man5/sssd-simple.5.gz
+man/de/man5/sssd-sudo.5.gz
+man/de/man8/sss_groupadd.8.gz
+man/de/man8/sss_groupdel.8.gz
+man/de/man8/sss_groupmod.8.gz
+man/de/man8/sss_groupshow.8.gz
+man/de/man8/sss_obfuscate.8.gz
+man/de/man8/sss_seed.8.gz
+man/de/man8/sss_useradd.8.gz
+man/de/man8/sss_userdel.8.gz
+man/de/man8/sss_usermod.8.gz
+man/de/man8/sssd.8.gz
 man/es/man5/sssd-ldap.5.gz
+man/es/man5/sssd.conf.5.gz
 man/es/man5/sssd-simple.5.gz
 man/es/man5/sssd-sudo.5.gz
-man/es/man5/sssd.conf.5.gz
 man/es/man8/pam_sss.8.gz
-man/es/man8/sss_cache.8.gz
-man/es/man8/sss_debuglevel.8.gz
 man/es/man8/sss_groupadd.8.gz
 man/es/man8/sss_groupdel.8.gz
 man/es/man8/sss_groupmod.8.gz
@@ -80,17 +114,11 @@ man/es/man8/sss_userdel.8.gz
 man/es/man8/sss_usermod.8.gz
 man/es/man8/sssd.8.gz
 man/es/man8/sssd_krb5_locator_plugin.8.gz
-man/fr/man1/sss_ssh_authorizedkeys.1.gz
 man/fr/man1/sss_ssh_knownhostsproxy.1.gz
-man/fr/man5/sssd-ad.5.gz
 man/fr/man5/sssd-krb5.5.gz
 man/fr/man5/sssd-ldap.5.gz
 man/fr/man5/sssd-simple.5.gz
 man/fr/man5/sssd-sudo.5.gz
-man/fr/man5/sssd.conf.5.gz
-man/fr/man8/pam_sss.8.gz
-man/fr/man8/sss_cache.8.gz
-man/fr/man8/sss_debuglevel.8.gz
 man/fr/man8/sss_groupadd.8.gz
 man/fr/man8/sss_groupdel.8.gz
 man/fr/man8/sss_groupmod.8.gz
@@ -101,16 +129,8 @@ man/fr/man8/sss_useradd.8.gz
 man/fr/man8/sss_userdel.8.gz
 man/fr/man8/sss_usermod.8.gz
 man/fr/man8/sssd.8.gz
-man/fr/man8/sssd_krb5_locator_plugin.8.gz
-man/ja/man1/sss_ssh_authorizedkeys.1.gz
 man/ja/man1/sss_ssh_knownhostsproxy.1.gz
-man/ja/man5/sssd-krb5.5.gz
-man/ja/man5/sssd-ldap.5.gz
 man/ja/man5/sssd-simple.5.gz
-man/ja/man5/sssd.conf.5.gz
-man/ja/man8/pam_sss.8.gz
-man/ja/man8/sss_cache.8.gz
-man/ja/man8/sss_debuglevel.8.gz
 man/ja/man8/sss_groupadd.8.gz
 man/ja/man8/sss_groupdel.8.gz
 man/ja/man8/sss_groupmod.8.gz
@@ -120,17 +140,20 @@ man/ja/man8/sss_useradd.8.gz
 man/ja/man8/sss_userdel.8.gz
 man/ja/man8/sss_usermod.8.gz
 man/ja/man8/sssd.8.gz
-man/ja/man8/sssd_krb5_locator_plugin.8.gz
 man/man1/sss_ssh_authorizedkeys.1.gz
 man/man1/sss_ssh_knownhostsproxy.1.gz
-man/man5/sssd-ad.5.gz
+man/man5/sss-certmap.5.gz
+%%SMB%%man/man5/sssd-ad.5.gz
+man/man5/sssd-files.5.gz
 man/man5/sssd-ifp.5.gz
-man/man5/sssd-ipa.5.gz
+%%SMB%%man/man5/sssd-ipa.5.gz
 man/man5/sssd-krb5.5.gz
 man/man5/sssd-ldap.5.gz
+man/man5/sssd-session-recording.5.gz
 man/man5/sssd-simple.5.gz
 man/man5/sssd-sudo.5.gz
 man/man5/sssd.conf.5.gz
+man/man8/idmap_sss.8.gz
 man/man8/pam_sss.8.gz
 man/man8/sss_cache.8.gz
 man/man8/sss_debuglevel.8.gz
@@ -139,24 +162,58 @@ man/man8/sss_groupdel.8.gz
 man/man8/sss_groupmod.8.gz
 man/man8/sss_groupshow.8.gz
 man/man8/sss_obfuscate.8.gz
+man/man8/sss_override.8.gz
 man/man8/sss_seed.8.gz
 man/man8/sss_useradd.8.gz
 man/man8/sss_userdel.8.gz
 man/man8/sss_usermod.8.gz
+man/man8/sssctl.8.gz
 man/man8/sssd.8.gz
 man/man8/sssd_krb5_locator_plugin.8.gz
 man/nl/man8/sss_groupmod.8.gz
 man/pt/man8/sss_groupdel.8.gz
 man/pt/man8/sss_groupmod.8.gz
+man/sv/man5/sssd.conf.5.gz
+man/sv/man5/sssd-ad.5.gz
+man/sv/man5/sssd-ifp.5.gz
+man/sv/man5/sssd-ipa.5.gz
+man/sv/man5/sssd-krb5.5.gz
+man/sv/man5/sssd-ldap.5.gz
+man/sv/man5/sssd-simple.5.gz
+man/sv/man5/sssd-sudo.5.gz
+man/sv/man5/sss-certmap.5.gz
+man/sv/man8/pam_sss.8.gz
+man/sv/man8/sss_cache.8.gz
+man/sv/man8/sss_debuglevel.8.gz
+man/sv/man8/sss_groupadd.8.gz
+man/sv/man8/sss_groupdel.8.gz
+man/sv/man8/sss_groupmod.8.gz
+man/sv/man8/sss_groupshow.8.gz
+man/sv/man8/sss_obfuscate.8.gz
+man/sv/man8/sss_override.8.gz
+man/sv/man8/sss_seed.8.gz
+man/sv/man8/sss_useradd.8.gz
+man/sv/man8/sss_userdel.8.gz
+man/sv/man8/sss_usermod.8.gz
+man/sv/man8/sssd.8.gz
+man/sv/man8/sssd_krb5_locator_plugin.8.gz
 man/uk/man1/sss_ssh_authorizedkeys.1.gz
 man/uk/man1/sss_ssh_knownhostsproxy.1.gz
+man/uk/man5/sss-certmap.5.gz
+man/uk/man5/sss_rpcidmapd.5.gz
 man/uk/man5/sssd-ad.5.gz
+man/uk/man5/sssd-files.5.gz
 man/uk/man5/sssd-ifp.5.gz
+man/uk/man5/sssd-ipa.5.gz
 man/uk/man5/sssd-krb5.5.gz
 man/uk/man5/sssd-ldap.5.gz
+man/uk/man5/sssd-secrets.5.gz
+man/uk/man5/sssd-session-recording.5.gz
 man/uk/man5/sssd-simple.5.gz
 man/uk/man5/sssd-sudo.5.gz
+man/uk/man5/sssd-systemtap.5.gz
 man/uk/man5/sssd.conf.5.gz
+man/uk/man8/idmap_sss.8.gz
 man/uk/man8/pam_sss.8.gz
 man/uk/man8/sss_cache.8.gz
 man/uk/man8/sss_debuglevel.8.gz
@@ -165,10 +222,13 @@ man/uk/man8/sss_groupdel.8.gz
 man/uk/man8/sss_groupmod.8.gz
 man/uk/man8/sss_groupshow.8.gz
 man/uk/man8/sss_obfuscate.8.gz
+man/uk/man8/sss_override.8.gz
 man/uk/man8/sss_seed.8.gz
 man/uk/man8/sss_useradd.8.gz
 man/uk/man8/sss_userdel.8.gz
 man/uk/man8/sss_usermod.8.gz
+man/uk/man8/sssctl.8.gz
+man/uk/man8/sssd-kcm.8.gz
 man/uk/man8/sssd.8.gz
 man/uk/man8/sssd_krb5_locator_plugin.8.gz
 sbin/sss_cache
@@ -178,19 +238,30 @@ sbin/sss_groupdel
 sbin/sss_groupmod
 sbin/sss_groupshow
 sbin/sss_obfuscate
+sbin/sss_override
 sbin/sss_seed
 sbin/sss_useradd
 sbin/sss_userdel
 sbin/sss_usermod
+sbin/sssctl
 sbin/sssd
+@dir %%ETCDIR%%/conf.d
+@dir %%ETCDIR%%/pki
 @dir lib/ldb
-@dir lib/sssd/modules
 %%PORTDOCS%%@dir %%DOCSDIR%%/doc
 %%PORTDOCS%%@dir %%DOCSDIR%%/hbac_doc
 %%PORTDOCS%%@dir %%DOCSDIR%%/idmap_doc
-%%PORTDOCS%%@dir %%DOCSDIR%%/libsss_sudo_doc
 %%PORTDOCS%%@dir %%DOCSDIR%%/nss_idmap_doc
-@postexec if [ -d %%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf %%ETCDIR%%`` to remove any configuration files."; fi
-@postexec if [ -d /var/db/sss ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/db/sss`` to remove any additional files."; fi
-@postexec if [ -d /var/db/sss_mc ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/db/sss_mc`` to remove any additional files."; fi
-@postexec if [ -d /var/run/sss ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf /var/run/sss`` to remove any additional files."; fi
+%%PORTDOCS%%@dir %%DOCSDIR%%/sss_simpleifp_doc
+@dir /var/db/sss/db
+@dir /var/db/sss/deskprofile
+@dir /var/db/sss/gpo_cache
+@dir /var/db/sss/keytabs
+@dir /var/db/sss/mc
+@dir /var/db/sss/pubconf/krb5.include.d
+@dir /var/db/sss/pubconf
+@dir /var/db/sss
+@dir /var/log/sssd
+@dir /var/run/sss/pipes/private
+@dir /var/run/sss/pipes
+@dir /var/run/sss

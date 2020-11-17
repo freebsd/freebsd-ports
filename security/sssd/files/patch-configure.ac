@@ -1,20 +1,13 @@
---- configure.ac.orig	2014-09-17 13:01:37 UTC
+diff --git configure.ac configure.ac
+index 9df463d9c..17d0d9ea7 100644
+--- configure.ac
 +++ configure.ac
-@@ -5,14 +5,14 @@ AC_INIT([sssd],
-         VERSION_NUMBER,
-         [sssd-devel@lists.fedorahosted.org])
+@@ -44,8 +44,6 @@ AM_CONDITIONAL([HAVE_GCC], [test "$ac_cv_prog_gcc" = yes])
+ AC_CHECK_HEADERS(stdint.h dlfcn.h)
+ AC_CONFIG_HEADER(config.h)
  
-+AC_CONFIG_SRCDIR([BUILD.txt])
-+AC_CONFIG_AUX_DIR([build])
-+
- m4_ifdef([AC_USE_SYSTEM_EXTENSIONS],
-     [AC_USE_SYSTEM_EXTENSIONS],
-     [AC_GNU_SOURCE])
- 
- CFLAGS="$CFLAGS -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE"
+-AC_CHECK_TYPES([errno_t], [], [], [[#include <errno.h>]])
 -
--AC_CONFIG_SRCDIR([BUILD.txt])
--AC_CONFIG_AUX_DIR([build])
+ m4_include([src/build_macros.m4])
+ BUILD_WITH_SHARED_BUILD_DIR
  
- AM_INIT_AUTOMAKE([-Wall foreign subdir-objects tar-pax])
- AM_PROG_CC_C_O

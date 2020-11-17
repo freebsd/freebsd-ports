@@ -1,22 +1,38 @@
---- Makefile.am.orig	2020-03-16 18:30:24 UTC
+diff --git Makefile.am Makefile.am
+index be17d6a59..03386d1f8 100644
+--- Makefile.am
 +++ Makefile.am
-@@ -311,6 +311,7 @@ AM_CPPFLAGS = \
-     $(LIBNL_CFLAGS) \
-     $(OPENLDAP_CFLAGS) \
-     $(GLIB2_CFLAGS) \
-+    -DHOST_NAME_MAX=_POSIX_HOST_NAME_MAX \
-     -DLIBDIR=\"$(libdir)\" \
-     -DVARDIR=\"$(localstatedir)\" \
-     -DSHLIBEXT=\"$(SHLIBEXT)\" \
-@@ -378,6 +379,7 @@ SSSD_LIBS = \
-     $(DHASH_LIBS) \
-     $(SSS_CRYPT_LIBS) \
-     $(OPENLDAP_LIBS) \
-+    $(LTLIBINTL) \
-     $(TDB_LIBS)
+@@ -61,7 +61,7 @@ sssdapiplugindir = $(sssddatadir)/sssd.api.d
+ sssdtapscriptdir = $(sssddatadir)/systemtap
+ dbuspolicydir = $(sysconfdir)/dbus-1/system.d
+ dbusservicedir = $(datadir)/dbus-1/system-services
+-sss_statedir = $(localstatedir)/lib/sss
++sss_statedir = $(localstatedir)/db/sss
+ runstatedir = @runstatedir@
+ localedir = @localedir@
+ nsslibdir = @nsslibdir@
+@@ -378,12 +378,6 @@ sssdlib_LTLIBRARIES += \
+     libsss_ad.la
+ endif
  
- PYTHON_BINDINGS_LIBS = \
-@@ -433,6 +435,7 @@ dist_noinst_HEADERS = \
+-if HAVE_INOTIFY
+-sssdlib_LTLIBRARIES += \
+-    libsss_files.la \
+-    $(NULL)
+-endif # HAVE_INOTIFY
+-
+ ldblib_LTLIBRARIES = \
+     memberof.la
+ 
+@@ -610,6 +604,7 @@ SSSD_FAILOVER_OBJ = \
+ 
+ SSSD_LIBS = \
+     $(TALLOC_LIBS) \
++    $(LTLIBINTL) \
+     $(TEVENT_LIBS) \
+     $(POPT_LIBS) \
+     $(LDB_LIBS) \
+@@ -664,6 +659,7 @@ dist_noinst_HEADERS = \
      src/util/sss_ssh.h \
      src/util/sss_ini.h \
      src/util/sss_format.h \
@@ -24,7 +40,137 @@
      src/util/refcount.h \
      src/util/find_uid.h \
      src/util/user_info_msg.h \
-@@ -1700,9 +1703,10 @@ endif
+@@ -1358,6 +1354,7 @@ sssd_LDADD = \
+     $(SSSD_LIBS) \
+     $(INOTIFY_LIBS) \
+     $(LIBNL_LIBS) \
++    $(LTLIBINTL) \
+     $(KEYUTILS_LIBS) \
+     $(SYSTEMD_DAEMON_LIBS) \
+     $(SSSD_INTERNAL_LTLIBS)
+@@ -1381,6 +1378,7 @@ sssd_nss_SOURCES = \
+ sssd_nss_LDADD = \
+     $(TDB_LIBS) \
+     $(SSSD_LIBS) \
++    $(LTLIBINTL) \
+     libsss_idmap.la \
+     libsss_cert.la \
+     $(SYSTEMD_DAEMON_LIBS) \
+@@ -1397,6 +1395,7 @@ sssd_pam_SOURCES = \
+ sssd_pam_LDADD = \
+     $(TDB_LIBS) \
+     $(SSSD_LIBS) \
++    $(LTLIBINTL) \
+     $(SELINUX_LIBS) \
+     $(PAM_LIBS) \
+     $(SYSTEMD_DAEMON_LIBS) \
+@@ -1414,6 +1413,7 @@ sssd_sudo_SOURCES = \
+     $(SSSD_RESPONDER_OBJ)
+ sssd_sudo_LDADD = \
+     $(SSSD_LIBS) \
++    $(LTLIBINTL) \
+     $(SYSTEMD_DAEMON_LIBS) \
+     $(SSSD_INTERNAL_LTLIBS)
+ endif
+@@ -1426,6 +1426,7 @@ sssd_autofs_SOURCES = \
+     $(SSSD_RESPONDER_OBJ)
+ sssd_autofs_LDADD = \
+     $(SSSD_LIBS) \
++    $(LTLIBINTL) \
+     $(SYSTEMD_DAEMON_LIBS) \
+     $(SSSD_INTERNAL_LTLIBS)
+ endif
+@@ -1441,6 +1442,7 @@ sssd_ssh_SOURCES = \
+     $(NULL)
+ sssd_ssh_LDADD = \
+     $(SSSD_LIBS) \
++    $(LTLIBINTL) \
+     $(SSSD_INTERNAL_LTLIBS) \
+     $(SYSTEMD_DAEMON_LIBS) \
+     libsss_cert.la \
+@@ -1481,6 +1483,7 @@ sssd_ifp_CFLAGS = \
+     $(AM_CFLAGS)
+ sssd_ifp_LDADD = \
+     $(SSSD_LIBS) \
++    $(LTLIBINTL) \
+     $(SYSTEMD_DAEMON_LIBS) \
+     $(SSSD_INTERNAL_LTLIBS) \
+     libsss_cert.la \
+@@ -1604,6 +1607,7 @@ sssd_be_SOURCES = \
+ sssd_be_LDADD = \
+     $(LIBADD_DL) \
+     $(SSSD_LIBS) \
++    $(LTLIBINTL) \
+     $(CARES_LIBS) \
+     $(PAM_LIBS) \
+     $(SSSD_INTERNAL_LTLIBS)
+@@ -1726,6 +1730,7 @@ sss_signal_SOURCES = \
+     src/tools/common/sss_process.c
+     $(NULL)
+ sss_signal_LDADD = \
++    $(LTLIBINTL) \
+     libsss_debug.la \
+     $(NULL)
+ 
+@@ -2318,6 +2323,7 @@ test_ssh_client_CFLAGS = \
+ test_ssh_client_LDADD = \
+     $(SSSD_INTERNAL_LTLIBS) \
+     $(SSSD_LIBS) \
++    $(LTLIBINTL) \
+     $(NULL)
+ 
+ if BUILD_DBUS_TESTS
+@@ -2602,6 +2608,7 @@ test_authtok_LDADD = \
+     $(CMOCKA_LIBS) \
+     $(DHASH_LIBS) \
+     $(POPT_LIBS) \
++    $(LTLIBINTL) \
+     libsss_test_common.la \
+     libsss_debug.la \
+     $(NULL)
+@@ -2622,6 +2629,7 @@ deskprofile_utils_tests_SOURCES = \
+ deskprofile_utils_tests_CFLAGS = \
+     $(AM_CFLAGS)
+ deskprofile_utils_tests_LDADD = \
++    $(LTLIBINTL) \
+     $(CMOCKA_LIBS) \
+     $(SSSD_INTERNAL_LTLIBS) \
+     libsss_test_common.la
+@@ -2654,6 +2662,7 @@ domain_resolution_order_tests_CFLAGS = \
+ 	$(AM_CFLAGS)
+ domain_resolution_order_tests_LDADD = \
+ 	$(CMOCKA_LIBS) \
++        $(LTLIBINTL) \
+ 	$(SSSD_INTERNAL_LTLIBS) \
+ 	libsss_test_common.la
+ 
+@@ -2738,6 +2747,7 @@ test_search_bases_LDADD = \
+     $(CMOCKA_LIBS) \
+     $(TALLOC_LIBS) \
+     $(SSSD_INTERNAL_LTLIBS) \
++    $(LTLIBINTL) \
+     libsss_ldap_common.la \
+     libsss_test_common.la \
+     libdlopen_test_providers.la \
+@@ -3545,6 +3555,7 @@ test_inotify_LDADD = \
+     $(CMOCKA_LIBS) \
+     $(SSSD_LIBS) \
+     $(SSSD_INTERNAL_LTLIBS) \
++    $(INOTIFY_LIBS) \
+     $(LIBADD_DL) \
+     libsss_test_common.la \
+     $(NULL)
+@@ -3637,9 +3648,6 @@ endif
+ if BUILD_WITH_LIBCURL
+ noinst_PROGRAMS += tcurl-test-tool
+ endif
+-if BUILD_PAC_RESPONDER
+-    noinst_PROGRAMS += sssd_pac_test_client
+-endif
+ 
+ if BUILD_AUTOFS
+ autofs_test_client_SOURCES = \
+@@ -3730,9 +3738,10 @@ intgcheck:
  # Client Libraries #
  ####################
  
@@ -37,9 +183,9 @@
      src/sss_client/nss_passwd.c \
      src/sss_client/nss_group.c \
      src/sss_client/nss_netgroup.c \
-@@ -1715,9 +1719,9 @@ libnss_sss_la_SOURCES = \
-     src/sss_client/nss_mc_passwd.c \
+@@ -3748,9 +3757,9 @@ libnss_sss_la_SOURCES = \
      src/sss_client/nss_mc_group.c \
+     src/sss_client/nss_mc_initgr.c \
      src/sss_client/nss_mc.h
 -libnss_sss_la_LIBADD = \
 +nss_sss_la_LIBADD = \
@@ -49,20 +195,43 @@
      -module \
      -version-info 2:0:0 \
      -Wl,--version-script,$(srcdir)/src/sss_client/sss_nss.exports
-@@ -2086,6 +2090,7 @@ ldap_child_LDADD = \
-     $(POPT_LIBS) \
+@@ -3908,6 +3917,7 @@ libsss_ldap_common_la_LIBADD = \
      $(OPENLDAP_LIBS) \
      $(DHASH_LIBS) \
+     $(KRB5_LIBS) \
 +    $(LTLIBINTL) \
-     $(KRB5_LIBS)
+     libsss_krb5_common.la \
+     libsss_idmap.la \
+     libsss_certmap.la \
+@@ -4271,6 +4281,7 @@ ldap_child_CFLAGS = \
+     $(KRB5_CFLAGS)
+ ldap_child_LDADD = \
+     libsss_debug.la \
++    $(LTLIBINTL) \
+     $(TALLOC_LIBS) \
+     $(POPT_LIBS) \
+     $(DHASH_LIBS) \
+@@ -4313,6 +4324,7 @@ gpo_child_CFLAGS = \
+     $(SMBCLIENT_CFLAGS)
+ gpo_child_LDADD = \
+     libsss_debug.la \
++    $(LTLIBINTL) \
+     $(TALLOC_LIBS) \
+     $(POPT_LIBS) \
+     $(DHASH_LIBS) \
+@@ -4329,6 +4341,7 @@ proxy_child_CFLAGS = \
+ proxy_child_LDADD = \
+     $(PAM_LIBS) \
+     $(SSSD_LIBS) \
++    $(LTLIBINTL) \
+     $(SSSD_INTERNAL_LTLIBS)
  
- proxy_child_SOURCES = \
-@@ -2333,7 +2338,7 @@ else
- 	mkdir -p $(DESTDIR)$(initdir)
- endif
+ p11_child_SOURCES = \
+@@ -4361,6 +4374,7 @@ endif
  
--install-data-hook:
-+notinstall-data-hook:
- 	rm $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2 \
-        $(DESTDIR)/$(nsslibdir)/libnss_sss.so
- 	mv $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2.0.0 $(DESTDIR)/$(nsslibdir)/libnss_sss.so.2
+ p11_child_LDADD = \
+     libsss_debug.la \
++    $(LTLIBINTL) \
+     $(TALLOC_LIBS) \
+     $(DHASH_LIBS) \
+     $(POPT_LIBS) \
