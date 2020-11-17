@@ -11,10 +11,10 @@ MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF/releases/HDF${PORTVERSION}/src/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
-LIB_DEPENDS=	libsz.so:science/szip
-
 NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	fails to compile: no machine type has been defined
+
+LIB_DEPENDS=	libsz.so:science/szip
 
 CONFLICTS_INSTALL=	netcdf-4.[0-9]*
 
@@ -31,6 +31,14 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 
+.include <bsd.port.pre.mk>
+
+.if ${GCC_DEFAULT} >= 10
+# workaround for Type mismatch between actual argument at (1) and actual argument at (2) (CHARACTER(0)/INTEGER(4)).
+# in theory, this should set FCFLAGS, but the port does not conform
+FFLAGS+=	-fallow-argument-mismatch
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/PROD_/ s|=.*|=""|' ${WRKSRC}/config/freebsd
 	@${REINPLACE_CMD} -e 's/ || (__APPLE__.*//' \
@@ -42,4 +50,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/gr_chunk.3 \
 		${STAGEDIR}${MAN3PREFIX}/man/man3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
