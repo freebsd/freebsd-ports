@@ -61,6 +61,11 @@ BLASLIB=	-lblas
 #LAPACKLIB=	-llapack
 .endif
 
+.if ${GCC_DEFAULT} >= 10
+# workaround for Type mismatch in argument 's' at (1); passed INTEGER(4) to LOGICAL(4)
+FCFLAGS+=	-fallow-argument-mismatch
+.endif
+
 pre-configure:
 	${INSTALL_DATA} ${WRKSRC}/Make.inc/Makefile.inc.generic.SEQ \
 		${WRKSRC}/Makefile.inc
