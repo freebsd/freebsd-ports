@@ -1,4 +1,4 @@
-TIMESTAMP = 1586597911
+TIMESTAMP = 1605633040
 SHA256 (cabal/MonadRandom-0.5.1.2/MonadRandom-0.5.1.2.tar.gz) = 776f0e69ddea30c9e819f1cd75249377b7fc6f7c8181b90e72ec9c7bc7e33448
 SIZE (cabal/MonadRandom-0.5.1.2/MonadRandom-0.5.1.2.tar.gz) = 10562
 SHA256 (cabal/SHA-1.6.4.4/SHA-1.6.4.4.tar.gz) = 6bd950df6b11a3998bb1452d875d2da043ee43385459afc5f16d471d25178b44
@@ -121,8 +121,8 @@ SHA256 (cabal/hashable-1.3.0.0/revision/1.cabal) = 4c70f1407881059e93550d3742191
 SIZE (cabal/hashable-1.3.0.0/revision/1.cabal) = 5206
 SHA256 (cabal/haskell-lexer-1.1/haskell-lexer-1.1.tar.gz) = 313a15cc643322c8badd148867ce25ca1ffc191df9e7eeec5b10bc08c4b563d5
 SIZE (cabal/haskell-lexer-1.1/haskell-lexer-1.1.tar.gz) = 14368
-SHA256 (cabal/hmatrix-0.20.0.0/hmatrix-0.20.0.0.tar.gz) = ef421aba2e6c93a22043a233b2c83789b24363ebe35732d67ccafd12990a1eeb
-SIZE (cabal/hmatrix-0.20.0.0/hmatrix-0.20.0.0.tar.gz) = 102180
+SHA256 (cabal/hmatrix-0.20.1/hmatrix-0.20.1.tar.gz) = b18044cbd862a66597d172b66cea50758ba6b4bb987f2d9b3512fb43eb07c96c
+SIZE (cabal/hmatrix-0.20.1/hmatrix-0.20.1.tar.gz) = 104087
 SHA256 (cabal/hourglass-0.2.12/hourglass-0.2.12.tar.gz) = 44335b5c402e80c60f1db6a74462be4ea29d1a9043aa994334ffee1164f1ca4a
 SIZE (cabal/hourglass-0.2.12/hourglass-0.2.12.tar.gz) = 25797
 SHA256 (cabal/hsc2hs-0.68.7/hsc2hs-0.68.7.tar.gz) = fd7915e41e3ed3bc7750fee0e8add2b4f32dcac8b7c544cfdf5542293223894a
