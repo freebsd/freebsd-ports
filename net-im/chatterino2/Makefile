@@ -2,6 +2,7 @@
 
 PORTNAME=	chatterino2
 PORTVERSION=	g2020090101
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	swills@FreeBSD.org
@@ -46,7 +47,7 @@ QMAKE_ARGS=	INCLUDEPATH+=${LOCALBASE}/include/qt5keychain \
 PORTDOCS=	README.md docs/Commands.md docs/ENV.md docs/IMAGEUPLOADER.md \
 		docs/README.md docs/Regex.md
 
-PORTSCOUT=	skipv:v2.1.7,v2.1.0,v2.0.4,v2.0.3,v2.0.2,v2.0.1,v2.0.0
+PORTSCOUT=	skipv:v2.2.2,v2.2.1,v2.2.0,v2.1.7,v2.1.6,v2.1.5,v2.1.4,v2.1.3,v2.1.2,v2.1.0,v2.0.4,v2.0.3,v2.0.2,v2.0.1,v2.0.0
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/docs
