@@ -9,6 +9,8 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Probes JPEG or TIFF images and reports contents and structure
 
+MAKE_JOBS_UNSAFE=	yes
+
 PLIST_FILES=	bin/exifgrep \
 		bin/exifprobe \
 		man/man1/exifgrep.1.gz \
