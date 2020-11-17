@@ -40,4 +40,12 @@ MPI_PLIST_FILES_OFF=	bin/LATTE_DOUBLE
 
 CONFLICTS_INSTALL=	latte-integrale
 
+.include <bsd.port.pre.mk>
+
+.if ${GCC_DEFAULT} >= 10
+# workaround for Type mismatch between actual argument at (1) and actual argument at (2) (COMPLEX(8)/REAL(8)).
+# in theory, this should set FCFLAGS, but the port does not conform
+FFLAGS+=	-fallow-argument-mismatch
+.endif
+
 .include <bsd.port.mk>
