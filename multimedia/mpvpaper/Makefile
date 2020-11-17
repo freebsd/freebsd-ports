@@ -13,7 +13,7 @@ BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 		libmpv.so:multimedia/mpv
 
-USES=		gl meson pkgconfig
+USES=		compiler:c++11-lang gl meson pkgconfig
 USE_GITHUB=	yes
 USE_GL=		egl
 GH_ACCOUNT=	GhostNaN
