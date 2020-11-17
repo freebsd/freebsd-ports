@@ -1,6 +1,6 @@
 --- configure.ac.orig	2019-08-08 20:00:41.682261000 +0800
 +++ configure.ac	2019-08-08 20:01:10.652575000 +0800
-@@ -4278,6 +4278,16 @@
+@@ -4278,6 +4278,21 @@
          RTL_ARCH=X86_64
          PLATFORMID=freebsd_x86_64
          ;;
@@ -8,6 +8,11 @@
 +        CPUNAME=POWERPC64
 +        RTL_ARCH=PowerPC_64
 +        PLATFORMID=freebsd_powerpc64
++        ;;
++    powerpc64le)
++        CPUNAME=POWERPC64
++        RTL_ARCH=PowerPC_64
++        PLATFORMID=freebsd_powerpc64_le
 +        ;;
 +    powerpc|powerpcspe)
 +        CPUNAME=POWERPC
@@ -19,7 +24,7 @@
          ;;
 --- configure.orig	2019-08-07 01:54:44.000000000 +0800
 +++ configure	2019-08-08 20:00:26.166619000 +0800
-@@ -12537,6 +12537,16 @@
+@@ -12537,6 +12537,21 @@
           PLATFORMID=freebsd_aarch64
           RTL_ARCH=AARCH64
           ;;
@@ -27,6 +32,11 @@
 +        CPUNAME=POWERPC64
 +        RTL_ARCH=PowerPC_64
 +        PLATFORMID=freebsd_powerpc64
++        ;;
++    powerpc64le)
++        CPUNAME=POWERPC64
++        RTL_ARCH=PowerPC_64
++        PLATFORMID=freebsd_powerpc64_le
 +        ;;
 +    powerpc|powerpcspe)
 +        CPUNAME=POWERPC
