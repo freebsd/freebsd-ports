@@ -1,0 +1,15 @@
+--- Makefile.FreeBSD.orig	2020-10-28 21:12:45 UTC
++++ Makefile.FreeBSD
+@@ -10,10 +10,10 @@
+ BUILDDIR = ../bin/
+ CC ?= gcc
+ 
+-CFLAGS = -c -O -fno-strict-aliasing -DNOODBC -DWITH_STD_MALLOC -DFD_SETSIZE=4096 -DWITH_POLL
++CFLAGS = -c %%CFLAGS%% -DNOODBC -DWITH_STD_MALLOC -DFD_SETSIZE=4096 -DWITH_POLL
+ COUT = -o 
+ LN ?= ${CC}
+-LDFLAGS = -pthread -O -fno-strict-aliasing 
++LDFLAGS = -pthread
+ # -lpthreads may be reuqired on some platforms instead of -pthreads
+ # -ldl or -lld may be required for some platforms
+ DCFLAGS = -fPIC

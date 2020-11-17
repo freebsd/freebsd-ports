@@ -1,8 +1,6 @@
 bin/3proxy
-bin/dighosts
 bin/ftppr
 bin/httppr
-bin/icqpr
 bin/mycrypt
 bin/pop3p
 bin/smtpp
