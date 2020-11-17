@@ -277,7 +277,7 @@ MAKE_ENV+=	verbose=1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:Mpowerpc*}
+.if ${ARCH} == powerpc || ${ARCH} == powerpcspe || ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--disable-skia
 .endif
 
