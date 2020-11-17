@@ -27,6 +27,8 @@ SUB_FILES=	pkg-message
 USERS=		_bgpd
 GROUPS=		_bgpd
 
+CFLAGS=		-fcommon
+
 OPTIONS_DEFINE=	IPV6LLPEER
 OPTIONS_DEFAULT=IPV6LLPEER
 IPV6LLPEER_DESC=Support nexthop using IPv6 link-local address
