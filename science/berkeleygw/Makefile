@@ -28,9 +28,15 @@ EXAMPLES_MAKE_ARGS=	INSTALL_EXAMPLES=yes
 
 PORTEXAMPLES=	*
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386 && ${GCC_DEFAULT} >= 10
+BROKEN=		f951: internal compiler error: Segmentation fault
+.endif
+
 post-patch:
 	@${LN} -s ${WRKSRC}/config/generic.serial.freebsd.mk ${WRKSRC}/arch.mk
 	@${LN} -s ${WRKSRC}/flavor_real.mk ${WRKSRC}/flavor.mk
 	@${FIND} ${WRKSRC} -name "script*" -o -name "*.scr" | ${XARGS} ${REINPLACE_CMD} -i '' 's|#! */bin/bash.*|#!/bin/sh|'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
