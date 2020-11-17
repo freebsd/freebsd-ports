@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	i3
-DISTVERSION=	4.18.3
+DISTVERSION=	4.19
 CATEGORIES=	x11-wm
 PKGNAMESUFFIX=	-gaps
 
@@ -11,8 +11,7 @@ COMMENT=	Fork of i3 tiling window manager with more features, including gaps
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
-		xmlto:textproc/xmlto
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libev.so:devel/libev \
 		libpangocairo-1.0.so:x11-toolkits/pango \
@@ -30,22 +29,24 @@ RUN_DEPENDS=	p5-AnyEvent-I3>=0:devel/p5-AnyEvent-I3 \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
-USES=		autoreconf compiler:c11 gettext-runtime gmake gnome iconv \
-		localbase perl5 pkgconfig xorg
+USES=		compiler:c11 gettext-runtime gmake gnome iconv localbase:ldflags \
+		meson perl5 pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	Airblader
 USE_GNOME=	glib20
-USE_PERL5=	run
 USE_XORG=	xcb
-
-GNU_CONFIGURE=	yes
-CONFIGURE_OUTSOURCE=	yes
-MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	i3
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=		DOCS MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=		yes
 
-DOCS_CONFIGURE_ENABLE=	docs
+DOCS_BUILD_DEPENDS=	asciidoc:textproc/asciidoc
+DOCS_MESON_TRUE=	docs
+
+MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+			xmlto:textproc/xmlto
+MANPAGES_MESON_TRUE=	mans
 
 .include <bsd.port.mk>
