@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	rprojroot
-DISTVERSION=	1.3-2
-PORTREVISION=	3
+DISTVERSION=	2.0.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Finding Files in Project Subdirectories
 
-LICENSE=	GPLv3
+LICENSE=	MIT
 
 CRAN_DEPENDS=	R-cran-backports>0:math/R-cran-backports
 BUILD_DEPENDS=	${CRAN_DEPENDS}
