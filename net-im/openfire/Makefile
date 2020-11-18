@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	4.5.4
-PORTREVISION=	0
+PORTVERSION=	4.6.0
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	https://github.com/igniterealtime/${PORTNAME}/releases/download/v${PORTVERSION}/ \
@@ -20,6 +19,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	mvn:devel/maven
 
 OPTIONS_DEFINE=	DOCS
+OPTIONS_SINGLE=	MAVEN
+OPTIONS_SINGLE_MAVEN=	LOCAL_M2 ONLINE_M2
+MAVEN_DESC=	Source of Maven build plugins
+LOCAL_M2_DESC=	Use prefetch plugins from FreeBSD repository
+ONLINE_M2_DESC=	Download last plugins during build process (into ~/.m2)
+OPTIONS_DEFAULT=	LOCAL_M2
+LOCAL_M2_DISTFILES=	FreeBSD-${PORTNAME}-${PORTVERSION}-maven-repository.tar.gz:maven
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
@@ -40,8 +46,17 @@ PLIST_SUB+=	VARLOG=${VARLOG} \
 		VARDB=${VARDB}
 
 MVN=		mvn
-MVN_OPTS=	-o -Dmaven.repo.local=${WRKDIR}/m2
 MVN_TARGET=	package
+##
+.include <bsd.port.options.mk>
+##
+.if ${PORT_OPTIONS:MLOCAL_M2}
+MVN_OPTS=	-o -Dmaven.repo.local=${WRKDIR}/m2
+.endif
+
+.if ${PORT_OPTIONS:MONLINE_M2}
+MVN_OPTS=	-U
+.endif
 
 do-build:
 	${ECHO_CMD} "cd ${WRKSRC} && ${MVN} ${MVN_OPTS} ${MVN_TARGET}"
