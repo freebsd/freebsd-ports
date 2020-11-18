@@ -51,7 +51,7 @@ MAX_NETMAP_OSVERSION?=	1200500  # Maximum OSVERSION for which NETMAP support wor
 .if ${PORTNAME} == ixl
 PATCH_SITES=	https://svnweb.freebsd.org/base/head/sys/dev/ixl/
 PATCHFILES=	ixl_pf_main.c?view=patch&r1=358698&r2=358697&pathrev=358698:-p4
-ONLY_FOR_ARCHS=		amd64 powerpc64
+ONLY_FOR_ARCHS=		amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Not supported on other architectures, amd64 and powerpc64 only.
 .endif
 
