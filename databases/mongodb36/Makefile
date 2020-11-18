@@ -2,11 +2,10 @@
 
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	3.6.20
+DISTVERSION=	3.6.21
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
-		http://fastdl.mongodb.org/src/ \
-		http://download.mongodb.org/src/
+		http://fastdl.mongodb.org/src/
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
