@@ -114,6 +114,7 @@
     SUBDIR += sp2sp
     SUBDIR += spice
     SUBDIR += stepcode
+    SUBDIR += stm32flash
     SUBDIR += sumo
     SUBDIR += sweethome3d
     SUBDIR += tkgate
