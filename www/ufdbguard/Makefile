@@ -12,7 +12,7 @@ COMMENT=	URL filter for the Squid web proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		perl5 shebangfix ssl
+USES=		compiler:c11 perl5 shebangfix ssl
 USE_RC_SUBR=	ufdbguardd
 
 SHEBANG_FILES=	samples/URLblocked.cgi
