@@ -11,7 +11,7 @@ COMMENT=	Read and write R data frames from C
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf libtool gettext-tools
+USES=		autoreconf compiler:c11 libtool gettext-tools
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	WizardMac
