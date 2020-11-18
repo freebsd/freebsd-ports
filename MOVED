@@ -25,7 +25,6 @@
 # This file can be linted with Tools/scripts/MOVEDlint.awk
 #
 # Port|Moved to|Date|Why
-net-mgmt/cnagios4|net-mgmt/cnagio|2020-11-17|Moved to nagios4 flavored version
 audio/polypaudio|audio/pulseaudio|2008-01-01|Project renamed
 audio/akode-plugins-polypaudio||2008-01-01|Polypaudio is obsolete in favor of Pulseaudio
 audio/teknap|net-p2p/teknap|2008-01-09|Moved to net-p2p category
@@ -15709,3 +15708,4 @@ www/py-meld3||2020-11-15|Has expired: EOLed upstream
 www/py-requestbuilder||2020-11-15|Has expired: Uses deprecated version of python
 x11-toolkits/py-SquareMap||2020-11-15|Has expired: Uses deprecated version of python
 devel/py-utils||2020-11-16|Removed on maintainers request, uses EOLed python27
+net-mgmt/cnagios4|net-mgmt/cnagio|2020-11-17|Moved to nagios4 flavored version
