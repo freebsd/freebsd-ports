@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkcs11-helper
-PORTVERSION=	1.26.0
+PORTVERSION=	1.27.0
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-${PORTVERSION:R}/
 
