@@ -11714,6 +11714,7 @@
 %%WWWDIR%%/db/post_migrate/20201014142521_schedule_sync_blocking_issues_count.rb
 %%WWWDIR%%/db/post_migrate/20201015073808_schedule_blocked_by_links_replacement.rb
 %%WWWDIR%%/db/post_migrate/20201015154527_add_index_on_services_for_usage_data.rb
+%%WWWDIR%%/db/post_migrate/20201104124300_ensure_namespace_settings_creation.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/schema_migrations/20181228175414
 %%WWWDIR%%/db/schema_migrations/20190102152410
@@ -13172,6 +13173,7 @@
 %%WWWDIR%%/db/schema_migrations/20201014205300
 %%WWWDIR%%/db/schema_migrations/20201015073808
 %%WWWDIR%%/db/schema_migrations/20201015154527
+%%WWWDIR%%/db/schema_migrations/20201104124300
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/db/structure.sql
 %%WWWDIR%%/doc/.vale/gitlab/Acronyms.yml
@@ -26900,6 +26902,7 @@
 %%WWWDIR%%/spec/migrations/enqueue_reset_merge_status_spec.rb
 %%WWWDIR%%/spec/migrations/ensure_filled_external_diff_store_on_merge_request_diffs_spec.rb
 %%WWWDIR%%/spec/migrations/ensure_filled_file_store_on_package_files_spec.rb
+%%WWWDIR%%/spec/migrations/ensure_namespace_settings_creation_spec.rb
 %%WWWDIR%%/spec/migrations/ensure_target_project_id_is_filled_spec.rb
 %%WWWDIR%%/spec/migrations/fill_file_store_ci_job_artifacts_spec.rb
 %%WWWDIR%%/spec/migrations/fill_file_store_lfs_objects_spec.rb
