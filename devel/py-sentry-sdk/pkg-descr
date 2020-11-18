@@ -1,0 +1,8 @@
+Sentry SDK is a Python client for Sentry (http://getsentry.com/).
+
+It enables automatic reporting of errors and exceptions as well as identifies
+performance issues in the application.
+
+It is intended to replace Raven.
+
+WWW: https://github.com/getsentry/sentry-python

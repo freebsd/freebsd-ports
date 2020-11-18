@@ -5050,6 +5050,7 @@
     SUBDIR += py-selectors2
     SUBDIR += py-semantic_version
     SUBDIR += py-semver
+    SUBDIR += py-sentry-sdk
     SUBDIR += py-serializable
     SUBDIR += py-serpent
     SUBDIR += py-setproctitle
