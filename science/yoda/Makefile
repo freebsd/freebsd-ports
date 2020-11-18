@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yoda
-DISTVERSION=	1.8.3
+DISTVERSION=	1.8.4
 CATEGORIES=	science
 MASTER_SITES=	https://yoda.hepforge.org/downloads/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
@@ -25,6 +25,9 @@ PYTHON_CONFIGURE_ENABLE=	pyext
 PYTHON_MAKE_ENV=		PYTHON_VERSION=${PYTHON_VER} PYTHON=${PYTHON_CMD}
 PYTHON_VARS=			SHEBANG_FILES="bin/${PORTNAME}* bin/aida2yoda bin/aida2flat bin/flat2yoda"
 PYTHON_BROKEN=			Fails with "Error: 'lib/python2.7/site-packages/yoda/plotting.pyc' is referring to /usr/ports/science/yoda/work/stage"
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libYODA.so
 
 post-install-PYTHON-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
