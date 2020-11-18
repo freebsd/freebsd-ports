@@ -31,4 +31,10 @@ LDFLAGS+=	-pthread # https://github.com/IntelVCL/Open3D/issues/510
 
 PLIST_FILES=	${PYTHON_SITELIBDIR}/open3d.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if !exists(/usr/include/c++/v1/experimental/optional) && ${CHOSEN_COMPILER_TYPE} == clang
+BROKEN=		Base C++ compiler is missing the header <experimental/optional>, see bug\#249538
+.endif
+
+.include <bsd.port.post.mk>
