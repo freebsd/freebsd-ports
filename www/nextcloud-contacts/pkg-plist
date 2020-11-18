@@ -21,6 +21,7 @@
 %%WWWDIR%%/img/diaspora.svg
 %%WWWDIR%%/img/eye.svg
 %%WWWDIR%%/img/facebook.svg
+%%WWWDIR%%/img/gravatar.svg
 %%WWWDIR%%/img/group.svg
 %%WWWDIR%%/img/instagram.svg
 %%WWWDIR%%/img/language.svg
@@ -35,6 +36,7 @@
 %%WWWDIR%%/img/tumblr.svg
 %%WWWDIR%%/img/twitter.svg
 %%WWWDIR%%/img/up.svg
+%%WWWDIR%%/img/xing.svg
 %%WWWDIR%%/js/contacts-admin-settings.js
 %%WWWDIR%%/js/contacts-admin-settings.js.map
 %%WWWDIR%%/js/contacts-files-action.js
@@ -500,11 +502,13 @@
 %%WWWDIR%%/lib/Service/Social/CompositeSocialProvider.php
 %%WWWDIR%%/lib/Service/Social/DiasporaProvider.php
 %%WWWDIR%%/lib/Service/Social/FacebookProvider.php
+%%WWWDIR%%/lib/Service/Social/GravatarProvider.php
 %%WWWDIR%%/lib/Service/Social/ISocialProvider.php
 %%WWWDIR%%/lib/Service/Social/InstagramProvider.php
 %%WWWDIR%%/lib/Service/Social/MastodonProvider.php
 %%WWWDIR%%/lib/Service/Social/TumblrProvider.php
 %%WWWDIR%%/lib/Service/Social/TwitterProvider.php
+%%WWWDIR%%/lib/Service/Social/XingProvider.php
 %%WWWDIR%%/lib/Service/SocialApiService.php
 %%WWWDIR%%/lib/Settings/AdminSettings.php
 %%WWWDIR%%/templates/main.php
