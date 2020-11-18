@@ -1,0 +1,11 @@
+--- Source/CMakeLists.txt.orig	2020-10-19 21:24:20 UTC
++++ Source/CMakeLists.txt
+@@ -450,7 +450,7 @@ target_include_directories(PlayCore
+ target_compile_definitions(PlayCore PUBLIC ${DEFINITIONS_LIST})
+ if(NOT ANDROID)
+ 	if(THREADS_HAVE_PTHREAD_ARG)
+-		target_compile_options(PUBLIC PlayCore "-pthread")
++		add_compile_options( PlayCore "-pthread")
+ 	endif()
+ endif()
+ 

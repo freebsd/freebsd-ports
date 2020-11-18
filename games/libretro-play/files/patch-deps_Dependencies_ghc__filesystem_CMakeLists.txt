@@ -1,0 +1,13 @@
+--- deps/Dependencies/ghc_filesystem/CMakeLists.txt.orig	2020-03-30 22:01:31 UTC
++++ deps/Dependencies/ghc_filesystem/CMakeLists.txt
+@@ -14,8 +14,8 @@ cmake_dependent_option(GHC_FILESYSTEM_WITH_INSTALL
+     "CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR" OFF)
+ 
+ if(NOT DEFINED CMAKE_CXX_STANDARD)
+-    set(CMAKE_CXX_STANDARD 11)
+-    set(CMAKE_CXX_STANDARD_REQUIRED ON)
++    
++    
+     set(CMAKE_CXX_EXTENSIONS OFF)
+ endif()
+ if(CMAKE_CXX_STANDARD LESS 11)
