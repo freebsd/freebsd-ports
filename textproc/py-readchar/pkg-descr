@@ -1,0 +1,4 @@
+Library to easily read single chars and key strokes.  The idea is to have a
+portable way to read single characters and key-strokes.
+
+WWW: https://github.com/magmax/python-readchar
