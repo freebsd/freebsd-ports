@@ -7,7 +7,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://files.maximintegrated.com/sia_bu/public/
 DISTNAME=	owpd300b
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version 3.00 beta API for Dallas Semiconductors 1-wire lan devices
 
 LICENSE=	MIT
