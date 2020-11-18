@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	magrittr
-PORTVERSION=	1.5
-PORTREVISION=	4
+PORTVERSION=	2.0.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,6 +11,6 @@ COMMENT=	Forward-Pipe Operator for R
 
 LICENSE=	MIT
 
-USES=	cran:auto-plist
+USES=	cran:auto-plist,compiles
 
 .include <bsd.port.mk>
