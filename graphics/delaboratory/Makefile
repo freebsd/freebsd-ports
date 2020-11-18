@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	https://BSDforge.com/projects/source/graphics/delaboratory/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unique image postprocessing application
 
 LICENSE=	GPLv3+
