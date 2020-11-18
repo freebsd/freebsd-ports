@@ -19,6 +19,8 @@ GH_ACCOUNT=	getsentry
 GH_PROJECT=	raven-python
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3200
