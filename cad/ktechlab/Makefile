@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgpsim.so:misc/gpsim
 
-USES=		cmake desktop-file-utils gnome kde:5 localbase qt:5 shared-mime-info
+USES=		cmake compiler:c++11-lang desktop-file-utils gnome kde:5 \
+		localbase qt:5 shared-mime-info
 USE_GITHUB=	yes
 USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		qmake_build buildtools_build
