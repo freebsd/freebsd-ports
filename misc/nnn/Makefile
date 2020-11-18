@@ -2,7 +2,7 @@
 
 PORTNAME=	nnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4
+DISTVERSION=	3.5
 CATEGORIES=	misc shells
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -17,9 +17,8 @@ GH_ACCOUNT=	jarun
 
 MAKE_ARGS=	CFLAGS_OPTIMIZATION= \
 		LDLIBS_CURSES=-lncursesw \
-		MANPREFIX=${PREFIX}/share/man
-# enable dprintf prototype
-CFLAGS+=	-D_WITH_DPRINTF
+		MANPREFIX=${PREFIX}/share/man \
+		PKG_CONFIG=/usr/bin/true
 
 PLIST_FILES=	bin/nnn \
 		etc/bash_completion.d/nnn-completion.bash \
