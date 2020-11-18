@@ -1,0 +1,621 @@
+bin/ART
+bin/ART-cli
+share/ART/camconst.json
+share/ART/cammatrices.json
+share/ART/dcpprofiles/CANON EOS 250D.dcp
+share/ART/dcpprofiles/CANON EOS 5D MARK IV.dcp
+share/ART/dcpprofiles/CANON EOS 800D.dcp
+share/ART/dcpprofiles/CANON EOS M50.dcp
+share/ART/dcpprofiles/CANON EOS M6 MARK II.dcp
+share/ART/dcpprofiles/CANON EOS R.dcp
+share/ART/dcpprofiles/CANON EOS R5.dcp
+share/ART/dcpprofiles/CANON EOS R6.dcp
+share/ART/dcpprofiles/CANON EOS RP.dcp
+share/ART/dcpprofiles/CANON POWERSHOT G1 X MARK II.dcp
+share/ART/dcpprofiles/Canon EOS 100D.dcp
+share/ART/dcpprofiles/Canon EOS 1300D.dcp
+share/ART/dcpprofiles/Canon EOS 20D.dcp
+share/ART/dcpprofiles/Canon EOS 400D.dcp
+share/ART/dcpprofiles/Canon EOS 40D.dcp
+share/ART/dcpprofiles/Canon EOS 450D.dcp
+share/ART/dcpprofiles/Canon EOS 50D.dcp
+share/ART/dcpprofiles/Canon EOS 550D.dcp
+share/ART/dcpprofiles/Canon EOS 5D Mark III.dcp
+share/ART/dcpprofiles/Canon EOS 5D.dcp
+share/ART/dcpprofiles/Canon EOS 600D.dcp
+share/ART/dcpprofiles/Canon EOS 60D.dcp
+share/ART/dcpprofiles/Canon EOS 650D.dcp
+share/ART/dcpprofiles/Canon EOS 6D Mark II.dcp
+share/ART/dcpprofiles/Canon EOS 6D.dcp
+share/ART/dcpprofiles/Canon EOS 7D Mark II.dcp
+share/ART/dcpprofiles/Canon EOS 7D.dcp
+share/ART/dcpprofiles/Canon EOS D60.dcp
+share/ART/dcpprofiles/Canon EOS-1D Mark III.dcp
+share/ART/dcpprofiles/Canon PowerShot G10.dcp
+share/ART/dcpprofiles/Canon PowerShot G12.dcp
+share/ART/dcpprofiles/Canon PowerShot G7 X.dcp
+share/ART/dcpprofiles/Canon PowerShot S110.dcp
+share/ART/dcpprofiles/FUJIFILM FinePix F600EXR.dcp
+share/ART/dcpprofiles/FUJIFILM GFX 50R.dcp
+share/ART/dcpprofiles/FUJIFILM X-A5.dcp
+share/ART/dcpprofiles/FUJIFILM X-E3.dcp
+share/ART/dcpprofiles/FUJIFILM X-H1.dcp
+share/ART/dcpprofiles/FUJIFILM X-PRO3.dcp
+share/ART/dcpprofiles/FUJIFILM X-Pro2.dcp
+share/ART/dcpprofiles/FUJIFILM X-S1.dcp
+share/ART/dcpprofiles/FUJIFILM X-T1.dcp
+share/ART/dcpprofiles/FUJIFILM X-T2.dcp
+share/ART/dcpprofiles/FUJIFILM X-T20.dcp
+share/ART/dcpprofiles/FUJIFILM X-T3.dcp
+share/ART/dcpprofiles/FUJIFILM X-T30.dcp
+share/ART/dcpprofiles/FUJIFILM X100S.dcp
+share/ART/dcpprofiles/FUJIFILM X100T.dcp
+share/ART/dcpprofiles/Fujifilm FinePix S9500.dcp
+share/ART/dcpprofiles/Fujifilm X-E1.dcp
+share/ART/dcpprofiles/Fujifilm X-E2.dcp
+share/ART/dcpprofiles/LG Mobile LG-H815.dcp
+share/ART/dcpprofiles/Leaf Aptus 75.dcp
+share/ART/dcpprofiles/MINOLTA DYNAX 7D.dcp
+share/ART/dcpprofiles/NIKON COOLPIX P7800.dcp
+share/ART/dcpprofiles/NIKON D300.dcp
+share/ART/dcpprofiles/NIKON D50.dcp
+share/ART/dcpprofiles/NIKON D500.dcp
+share/ART/dcpprofiles/NIKON D5000.dcp
+share/ART/dcpprofiles/NIKON D5300.dcp
+share/ART/dcpprofiles/NIKON D5600.dcp
+share/ART/dcpprofiles/NIKON D600.dcp
+share/ART/dcpprofiles/NIKON D610.dcp
+share/ART/dcpprofiles/NIKON D700.dcp
+share/ART/dcpprofiles/NIKON D70s.dcp
+share/ART/dcpprofiles/NIKON D7100.dcp
+share/ART/dcpprofiles/NIKON D7200.dcp
+share/ART/dcpprofiles/NIKON D750.dcp
+share/ART/dcpprofiles/NIKON D7500.dcp
+share/ART/dcpprofiles/NIKON D80.dcp
+share/ART/dcpprofiles/NIKON D800.dcp
+share/ART/dcpprofiles/NIKON D800E.dcp
+share/ART/dcpprofiles/NIKON D810.dcp
+share/ART/dcpprofiles/NIKON D850.dcp
+share/ART/dcpprofiles/NIKON Z 5.dcp
+share/ART/dcpprofiles/NIKON Z 50.dcp
+share/ART/dcpprofiles/NIKON Z 6.dcp
+share/ART/dcpprofiles/NIKON Z 7.dcp
+share/ART/dcpprofiles/Nikon D200.dcp
+share/ART/dcpprofiles/Nikon D3000.dcp
+share/ART/dcpprofiles/Nikon D3100.dcp
+share/ART/dcpprofiles/Nikon D3S.dcp
+share/ART/dcpprofiles/Nikon D5100.dcp
+share/ART/dcpprofiles/Nikon D7000.dcp
+share/ART/dcpprofiles/OLYMPUS E-510.dcp
+share/ART/dcpprofiles/OLYMPUS E-M10.dcp
+share/ART/dcpprofiles/OLYMPUS E-M1MarkII.dcp
+share/ART/dcpprofiles/OLYMPUS E-M5MARKII.dcp
+share/ART/dcpprofiles/Olympus E-1.dcp
+share/ART/dcpprofiles/Olympus E-520.dcp
+share/ART/dcpprofiles/Olympus E-P2.dcp
+share/ART/dcpprofiles/Olympus XZ-1.dcp
+share/ART/dcpprofiles/PENTAX K-5 II.dcp
+share/ART/dcpprofiles/PENTAX K-5.dcp
+share/ART/dcpprofiles/PENTAX K-50.dcp
+share/ART/dcpprofiles/PENTAX K10D.dcp
+share/ART/dcpprofiles/Panasonic DC-G9.dcp
+share/ART/dcpprofiles/Panasonic DC-GX9.dcp
+share/ART/dcpprofiles/Panasonic DC-S1.dcp
+share/ART/dcpprofiles/Panasonic DC-TZ91.dcp
+share/ART/dcpprofiles/Panasonic DMC-FZ1000.dcp
+share/ART/dcpprofiles/Panasonic DMC-FZ150.dcp
+share/ART/dcpprofiles/Panasonic DMC-FZ35.dcp
+share/ART/dcpprofiles/Panasonic DMC-FZ38.dcp
+share/ART/dcpprofiles/Panasonic DMC-G1.dcp
+share/ART/dcpprofiles/Panasonic DMC-G3.dcp
+share/ART/dcpprofiles/Panasonic DMC-G5.dcp
+share/ART/dcpprofiles/Panasonic DMC-GH1.dcp
+share/ART/dcpprofiles/Panasonic DMC-GH2.dcp
+share/ART/dcpprofiles/Panasonic DMC-GX85.dcp
+share/ART/dcpprofiles/Pentax K-r.dcp
+share/ART/dcpprofiles/Pentax K200D.dcp
+share/ART/dcpprofiles/RICOH PENTAX K-1.dcp
+share/ART/dcpprofiles/RICOH PENTAX K-3.dcp
+share/ART/dcpprofiles/SONY DSC-RX100M6.dcp
+share/ART/dcpprofiles/SONY DSLR-A580.dcp
+share/ART/dcpprofiles/SONY ILCE-6000.dcp
+share/ART/dcpprofiles/SONY ILCE-6400.dcp
+share/ART/dcpprofiles/SONY ILCE-6500.dcp
+share/ART/dcpprofiles/SONY ILCE-6600.dcp
+share/ART/dcpprofiles/SONY ILCE-7M2.dcp
+share/ART/dcpprofiles/SONY ILCE-7M3.dcp
+share/ART/dcpprofiles/SONY ILCE-7RM3.dcp
+share/ART/dcpprofiles/SONY ILCE-7RM4.dcp
+share/ART/dcpprofiles/SONY ILCE-9.dcp
+share/ART/dcpprofiles/SONY SLT-A99V.dcp
+share/ART/dcpprofiles/Sony DSLR-A700.dcp
+share/ART/dcpprofiles/Sony DSLR-A900.dcp
+share/ART/dcpprofiles/Sony NEX-5N.dcp
+share/ART/dcpprofiles/Sony SLT-A55V.dcp
+share/ART/dcpprofiles/YI TECHNOLOGY M1.dcp
+share/ART/dcpprofiles/camera_model_aliases.json
+share/ART/dcraw.json
+share/ART/dynamicprofile.cfg
+share/ART/iccprofiles/input/Canon EOS 20D.icc
+share/ART/iccprofiles/input/Canon EOS 40D.icc
+share/ART/iccprofiles/input/Canon EOS 450D.icc
+share/ART/iccprofiles/input/Canon EOS 550D.icc
+share/ART/iccprofiles/input/Canon EOS 5D.icc
+share/ART/iccprofiles/input/Canon EOS-1D Mark III.icc
+share/ART/iccprofiles/input/Canon PowerShot G10.icc
+share/ART/iccprofiles/input/Canon PowerShot G12.icc
+share/ART/iccprofiles/input/Nikon D200.icc
+share/ART/iccprofiles/input/Nikon D3000.icc
+share/ART/iccprofiles/input/Nikon D3100.icc
+share/ART/iccprofiles/input/Nikon D3S.icc
+share/ART/iccprofiles/input/Nikon D700.icc
+share/ART/iccprofiles/input/Nikon D7000.icc
+share/ART/iccprofiles/input/Olympus E-P2.icc
+share/ART/iccprofiles/input/Panasonic DMC-FZ150.icc
+share/ART/iccprofiles/input/Panasonic DMC-FZ35.icc
+share/ART/iccprofiles/input/Panasonic DMC-FZ38.icc
+share/ART/iccprofiles/input/Panasonic DMC-G1.icc
+share/ART/iccprofiles/input/Panasonic DMC-G3.icc
+share/ART/iccprofiles/input/Panasonic DMC-GH1.icc
+share/ART/iccprofiles/input/Panasonic DMC-GH2.icc
+share/ART/iccprofiles/input/Pentax K200D.icc
+share/ART/iccprofiles/input/Sony DSLR-A700.icc
+share/ART/iccprofiles/input/Sony DSLR-A900.icc
+share/ART/iccprofiles/input/Sony SLT-A55V.icc
+share/ART/iccprofiles/input/sd14-bl15-crop-matrix-gamma-wp10.icm
+share/ART/iccprofiles/input/sd14-bl15-crop-matrix-gamma-wp11.icm
+share/ART/iccprofiles/input/sd14-bl15-crop-matrix-gamma-wp12.icm
+share/ART/iccprofiles/input/sd1_merrill_cloudy8140-CROP-WP10.icm
+share/ART/iccprofiles/input/sd1_merrill_cloudy8140-CROP-WP11.icm
+share/ART/iccprofiles/input/sd1_merrill_sunny8161-crop-wp10.icm
+share/ART/iccprofiles/input/sd1_merrill_sunny8161-crop-wp11.icm
+share/ART/iccprofiles/input/sd1_merrill_tungsten8130-CROP-WP10.icm
+share/ART/iccprofiles/input/sd1_merrill_tungsten8130-CROP-WP11.icm
+share/ART/iccprofiles/output/DCI-P3 D65.icc
+share/ART/iccprofiles/output/DCI-P3 Theater.icc
+share/ART/iccprofiles/output/RTv2_ACES-AP0.icc
+share/ART/iccprofiles/output/RTv2_ACES-AP1.icc
+share/ART/iccprofiles/output/RTv2_Best.icc
+share/ART/iccprofiles/output/RTv2_Beta.icc
+share/ART/iccprofiles/output/RTv2_Bruce.icc
+share/ART/iccprofiles/output/RTv2_Large.icc
+share/ART/iccprofiles/output/RTv2_Medium.icc
+share/ART/iccprofiles/output/RTv2_Rec2020.icc
+share/ART/iccprofiles/output/RTv2_Wide.icc
+share/ART/iccprofiles/output/RTv2_sRGB.icc
+share/ART/iccprofiles/output/RTv4_ACES-AP0.icc
+share/ART/iccprofiles/output/RTv4_ACES-AP1.icc
+share/ART/iccprofiles/output/RTv4_Best.icc
+share/ART/iccprofiles/output/RTv4_Beta.icc
+share/ART/iccprofiles/output/RTv4_Bruce.icc
+share/ART/iccprofiles/output/RTv4_Large.icc
+share/ART/iccprofiles/output/RTv4_Medium.icc
+share/ART/iccprofiles/output/RTv4_Rec2020.icc
+share/ART/iccprofiles/output/RTv4_Wide.icc
+share/ART/iccprofiles/output/RTv4_sRGB.icc
+share/ART/images/ART-logo-128.png
+share/ART/images/ART-logo-16.png
+share/ART/images/ART-logo-24.png
+share/ART/images/ART-logo-256.png
+share/ART/images/ART-logo-32.png
+share/ART/images/ART-logo-48.png
+share/ART/images/ART-logo-64.png
+share/ART/images/ART-logo.svg
+share/ART/images/ART.ico
+share/ART/images/Spinning_top.svg
+share/ART/images/add-small.svg
+share/ART/images/add.svg
+share/ART/images/aperture.svg
+share/ART/images/area-shape-add.svg
+share/ART/images/area-shape-draw-add.svg
+share/ART/images/area-shape-draw.svg
+share/ART/images/area-shape-intersect.svg
+share/ART/images/area-shape-polygon-add.svg
+share/ART/images/area-shape-subtract.svg
+share/ART/images/arrow-down-small.svg
+share/ART/images/arrow-left-small.svg
+share/ART/images/arrow-pointer.svg
+share/ART/images/arrow-right-small.svg
+share/ART/images/arrow-up-small.svg
+share/ART/images/arrow-updown.svg
+share/ART/images/arrow2-left.svg
+share/ART/images/arrow2-right.svg
+share/ART/images/atom.svg
+share/ART/images/bayer.svg
+share/ART/images/beforeafter.svg
+share/ART/images/bidirectional-arrow-horizontal-hicontrast.svg
+share/ART/images/bidirectional-arrow-horizontal-prelight.svg
+share/ART/images/bidirectional-arrow-vertical-hicontrast.svg
+share/ART/images/bidirectional-arrow-vertical-prelight.svg
+share/ART/images/box.svg
+share/ART/images/brush.svg
+share/ART/images/cancel-small.svg
+share/ART/images/cancel.svg
+share/ART/images/circle-black-small.svg
+share/ART/images/circle-blue-green-small.svg
+share/ART/images/circle-blue-red-small.svg
+share/ART/images/circle-blue-small.svg
+share/ART/images/circle-blue-yellow-small.svg
+share/ART/images/circle-bluecyan-small.svg
+share/ART/images/circle-bluepurple-small.svg
+share/ART/images/circle-cyan-red-small.svg
+share/ART/images/circle-cyan-small.svg
+share/ART/images/circle-darkgray-small.svg
+share/ART/images/circle-empty-blue-small.svg
+share/ART/images/circle-empty-darkgray-small.svg
+share/ART/images/circle-empty-gray-small.svg
+share/ART/images/circle-empty-green-small.svg
+share/ART/images/circle-empty-purple-small.svg
+share/ART/images/circle-empty-red-small.svg
+share/ART/images/circle-empty-yellow-small.svg
+share/ART/images/circle-gray-blue-small.svg
+share/ART/images/circle-gray-green-small.svg
+share/ART/images/circle-gray-red-small.svg
+share/ART/images/circle-gray-small.svg
+share/ART/images/circle-green-blue-small.svg
+share/ART/images/circle-green-red-small.svg
+share/ART/images/circle-green-small.svg
+share/ART/images/circle-greencyan-small.svg
+share/ART/images/circle-greenyellow-small.svg
+share/ART/images/circle-magenta-small.svg
+share/ART/images/circle-orange-small.svg
+share/ART/images/circle-purple-small.svg
+share/ART/images/circle-red-blue-small.svg
+share/ART/images/circle-red-cyan-small.svg
+share/ART/images/circle-red-green-small.svg
+share/ART/images/circle-red-small.svg
+share/ART/images/circle-redpurple-small.svg
+share/ART/images/circle-white-small.svg
+share/ART/images/circle-yellow-blue-small.svg
+share/ART/images/circle-yellow-small.svg
+share/ART/images/color-circles.svg
+share/ART/images/color-picker-add-hicontrast.svg
+share/ART/images/color-picker-add.svg
+share/ART/images/color-picker-bars.svg
+share/ART/images/color-picker-hicontrast.svg
+share/ART/images/color-picker-hide.svg
+share/ART/images/color-picker-small.svg
+share/ART/images/color-picker.svg
+share/ART/images/contrastmask-off.svg
+share/ART/images/contrastmask-on.svg
+share/ART/images/copy-small.svg
+share/ART/images/copy.svg
+share/ART/images/crop-auto-small.svg
+share/ART/images/crop-auto.svg
+share/ART/images/crop-point-hicontrast.svg
+share/ART/images/crop-small.svg
+share/ART/images/crop.svg
+share/ART/images/crossed-arrows-in.svg
+share/ART/images/crossed-arrows-out.svg
+share/ART/images/crosshair-adjust.svg
+share/ART/images/crosshair-hicontrast.svg
+share/ART/images/crosshair-node-curve.svg
+share/ART/images/crosshair-small.svg
+share/ART/images/curve-catmullrom-small.svg
+share/ART/images/curve-catmullrom.svg
+share/ART/images/curve-controlpoints-small.svg
+share/ART/images/curve-controlpoints.svg
+share/ART/images/curve-flat-small.svg
+share/ART/images/curve-flat.svg
+share/ART/images/curve-linear-small.svg
+share/ART/images/curve-linear.svg
+share/ART/images/curve-nurbs-small.svg
+share/ART/images/curve-nurbs.svg
+share/ART/images/curve-parametric-small.svg
+share/ART/images/curve-parametric.svg
+share/ART/images/curve-spline-small.svg
+share/ART/images/curve-spline.svg
+share/ART/images/detail.svg
+share/ART/images/device-floppy.svg
+share/ART/images/device-hdd.svg
+share/ART/images/device-network.svg
+share/ART/images/device-optical.svg
+share/ART/images/device-usb.svg
+share/ART/images/distortion-auto-small.svg
+share/ART/images/distortion-auto.svg
+share/ART/images/distortion-barrel-small.svg
+share/ART/images/distortion-barrel.svg
+share/ART/images/distortion-pincushion-small.svg
+share/ART/images/distortion-pincushion.svg
+share/ART/images/drawn-mask-add-bounded.svg
+share/ART/images/edit-point.svg
+share/ART/images/edit-small.svg
+share/ART/images/edit.svg
+share/ART/images/empty.png
+share/ART/images/equilizer-narrow.svg
+share/ART/images/equilizer-wide.svg
+share/ART/images/expander-closed-small.svg
+share/ART/images/expander-open-small.svg
+share/ART/images/exposure.svg
+share/ART/images/false-colors-off.svg
+share/ART/images/false-colors.svg
+share/ART/images/fast-export-small.svg
+share/ART/images/filetype-hdr.svg
+share/ART/images/filetype-ps.svg
+share/ART/images/filter-clear.svg
+share/ART/images/filter-original.svg
+share/ART/images/filter-original2.svg
+share/ART/images/filter.svg
+share/ART/images/flip-horizontal.svg
+share/ART/images/flip-vertical.svg
+share/ART/images/focusscreen-off.svg
+share/ART/images/focusscreen-on.svg
+share/ART/images/folder-closed-home-small.svg
+share/ART/images/folder-closed-home.svg
+share/ART/images/folder-closed-recent-small.svg
+share/ART/images/folder-closed-recent.svg
+share/ART/images/folder-closed-small.svg
+share/ART/images/folder-closed.svg
+share/ART/images/folder-open-recent-small.svg
+share/ART/images/folder-open-recent.svg
+share/ART/images/folder-open-small.svg
+share/ART/images/folder-open.svg
+share/ART/images/fullscreen-enter.svg
+share/ART/images/fullscreen-leave.svg
+share/ART/images/gamut-hist.svg
+share/ART/images/gamut-plus.svg
+share/ART/images/gamut-softproof.svg
+share/ART/images/gamut-warning.svg
+share/ART/images/gamut_srgb_prophoto_xy.svg
+share/ART/images/gears-pause.svg
+share/ART/images/gears-play.svg
+share/ART/images/gears-small.svg
+share/ART/images/gears.svg
+share/ART/images/goto-end-small.svg
+share/ART/images/goto-start-small.svg
+share/ART/images/hand-closed-hicontrast.svg
+share/ART/images/hand-open-hicontrast.svg
+share/ART/images/hand-open.svg
+share/ART/images/histogram-bar-off-small.svg
+share/ART/images/histogram-bar-on-small.svg
+share/ART/images/histogram-bayer-off-small.svg
+share/ART/images/histogram-bayer-on-small.svg
+share/ART/images/histogram-blue-off-small.svg
+share/ART/images/histogram-blue-on-small.svg
+share/ART/images/histogram-ellipsis-small.svg
+share/ART/images/histogram-gold-off-small.svg
+share/ART/images/histogram-gold-on-small.svg
+share/ART/images/histogram-green-off-small.svg
+share/ART/images/histogram-green-on-small.svg
+share/ART/images/histogram-mode-linear-small.svg
+share/ART/images/histogram-mode-logx-small.svg
+share/ART/images/histogram-mode-logxy-small.svg
+share/ART/images/histogram-red-off-small.svg
+share/ART/images/histogram-red-on-small.svg
+share/ART/images/histogram-silver-off-small.svg
+share/ART/images/histogram-silver-on-small.svg
+share/ART/images/histogram-type-histogram-raw-small.svg
+share/ART/images/histogram-type-histogram-small.svg
+share/ART/images/histogram-type-parade-small.svg
+share/ART/images/histogram-type-vectorscope-hc-small.svg
+share/ART/images/histogram-type-vectorscope-hs-small.svg
+share/ART/images/histogram-type-waveform-small.svg
+share/ART/images/histogram.svg
+share/ART/images/info.svg
+share/ART/images/intent-absolute.svg
+share/ART/images/intent-perceptual.svg
+share/ART/images/intent-relative.svg
+share/ART/images/intent-saturation.svg
+share/ART/images/local-edit.svg
+share/ART/images/magnifier-1to1-small.svg
+share/ART/images/magnifier-1to1.svg
+share/ART/images/magnifier-crop.svg
+share/ART/images/magnifier-fit.svg
+share/ART/images/magnifier-minus-small.svg
+share/ART/images/magnifier-minus.svg
+share/ART/images/magnifier-plus-small.svg
+share/ART/images/magnifier-plus.svg
+share/ART/images/magnifier.svg
+share/ART/images/metadata.svg
+share/ART/images/node-move-nw-se-hicontrast.svg
+share/ART/images/node-move-sw-ne-hicontrast.svg
+share/ART/images/node-move-x-hicontrast.svg
+share/ART/images/node-move-xy-hicontrast.svg
+share/ART/images/node-move-y-hicontrast.svg
+share/ART/images/one-to-one-small.svg
+share/ART/images/ornament1.svg
+share/ART/images/padlock-locked-small.svg
+share/ART/images/padlock-unlocked-small.svg
+share/ART/images/palette-brush.svg
+share/ART/images/panel-to-bottom.svg
+share/ART/images/panel-to-left.svg
+share/ART/images/panel-to-right.svg
+share/ART/images/panel-to-top.svg
+share/ART/images/paste.svg
+share/ART/images/perspective-aspect-horizontal-small.svg
+share/ART/images/perspective-aspect-vertical-small.svg
+share/ART/images/perspective-horizontal-left-small.svg
+share/ART/images/perspective-horizontal-left.svg
+share/ART/images/perspective-horizontal-right-small.svg
+share/ART/images/perspective-horizontal-right.svg
+share/ART/images/perspective-horizontal-vertical.svg
+share/ART/images/perspective-shear-left-small.svg
+share/ART/images/perspective-shear-right-small.svg
+share/ART/images/perspective-vertical-bottom-small.svg
+share/ART/images/perspective-vertical-bottom.svg
+share/ART/images/perspective-vertical-top-small.svg
+share/ART/images/perspective-vertical-top.svg
+share/ART/images/power-inconsistent-small.svg
+share/ART/images/power-off-small.svg
+share/ART/images/power-on-small-faded.svg
+share/ART/images/power-on-small.svg
+share/ART/images/preferences.svg
+share/ART/images/profile-filled.svg
+share/ART/images/profile-partial.svg
+share/ART/images/raw-clip-curve.svg
+share/ART/images/raw-film-curve.svg
+share/ART/images/raw-linear-curve.svg
+share/ART/images/raw-shadow-curve.svg
+share/ART/images/redo-all.svg
+share/ART/images/redo-small.svg
+share/ART/images/redo.svg
+share/ART/images/refresh-red-small.svg
+share/ART/images/refresh-small.svg
+share/ART/images/refresh.svg
+share/ART/images/remove-small.svg
+share/ART/images/remove.svg
+share/ART/images/rotate-aroundnode-hicontrast.svg
+share/ART/images/rotate-aroundnode.svg
+share/ART/images/rotate-left-90.svg
+share/ART/images/rotate-left-small.svg
+share/ART/images/rotate-left.svg
+share/ART/images/rotate-right-90.svg
+share/ART/images/rotate-right-small.svg
+share/ART/images/rotate-right.svg
+share/ART/images/rotate-straighten-small.svg
+share/ART/images/rotate-straighten.svg
+share/ART/images/rt-logo.svg
+share/ART/images/save-small.svg
+share/ART/images/save.svg
+share/ART/images/saved-no-small.svg
+share/ART/images/saved-yes-small.svg
+share/ART/images/splash.svg
+share/ART/images/spot-active-target.svg
+share/ART/images/spot-active.svg
+share/ART/images/spot-normal-target.svg
+share/ART/images/spot-normal.svg
+share/ART/images/spot-prelight-target.svg
+share/ART/images/spot-prelight.svg
+share/ART/images/square-toggle-black-off-narrow.svg
+share/ART/images/square-toggle-black-on-narrow.svg
+share/ART/images/square-toggle-blue-off-narrow.svg
+share/ART/images/square-toggle-blue-on-narrow.svg
+share/ART/images/square-toggle-gray-off-narrow.svg
+share/ART/images/square-toggle-gray-on-narrow.svg
+share/ART/images/square-toggle-green-off-narrow.svg
+share/ART/images/square-toggle-green-on-narrow.svg
+share/ART/images/square-toggle-luminosity-off-narrow.svg
+share/ART/images/square-toggle-luminosity-on-narrow.svg
+share/ART/images/square-toggle-red-off-narrow.svg
+share/ART/images/square-toggle-red-on-narrow.svg
+share/ART/images/square-toggle-theme-off-narrow.svg
+share/ART/images/square-toggle-theme-on-narrow.svg
+share/ART/images/square-toggle-white-off-narrow.svg
+share/ART/images/square-toggle-white-on-narrow.svg
+share/ART/images/star-gold-hollow-narrow.svg
+share/ART/images/star-gold-hollow-small.svg
+share/ART/images/star-gold-narrow.svg
+share/ART/images/star-gold-small.svg
+share/ART/images/star-hollow-narrow.svg
+share/ART/images/star-hollow-small.svg
+share/ART/images/star-narrow.svg
+share/ART/images/star-small.svg
+share/ART/images/star.svg
+share/ART/images/template-16.svg
+share/ART/images/template-24.svg
+share/ART/images/template-narrow.svg
+share/ART/images/tick-green-hollow-small.svg
+share/ART/images/tick-green-hollow.svg
+share/ART/images/tick-green-small.svg
+share/ART/images/tick-green.svg
+share/ART/images/tick-hollow-small.svg
+share/ART/images/tick-small.svg
+share/ART/images/tick.svg
+share/ART/images/transform.svg
+share/ART/images/trash-delete.svg
+share/ART/images/trash-empty-show.svg
+share/ART/images/trash-empty.svg
+share/ART/images/trash-full-show.svg
+share/ART/images/trash-full.svg
+share/ART/images/trash-hide-deleted.svg
+share/ART/images/trash-remove-small.svg
+share/ART/images/trash-remove.svg
+share/ART/images/trash-small.svg
+share/ART/images/undo-all.svg
+share/ART/images/undo-small.svg
+share/ART/images/undo.svg
+share/ART/images/volume-small.svg
+share/ART/images/wand.svg
+share/ART/images/warning-highlights.svg
+share/ART/images/warning-shadows.svg
+share/ART/images/warning-small.svg
+share/ART/images/warning.svg
+share/ART/images/wavelets.svg
+share/ART/images/wb-auto-small.svg
+share/ART/images/wb-auto.svg
+share/ART/images/wb-camera-small.svg
+share/ART/images/wb-camera.svg
+share/ART/images/wb-cloudy-small.svg
+share/ART/images/wb-cloudy.svg
+share/ART/images/wb-custom-small.svg
+share/ART/images/wb-custom.svg
+share/ART/images/wb-custom2-small.svg
+share/ART/images/wb-flash-small.svg
+share/ART/images/wb-flash.svg
+share/ART/images/wb-fluorescent-small.svg
+share/ART/images/wb-fluorescent.svg
+share/ART/images/wb-lamp-small.svg
+share/ART/images/wb-lamp.svg
+share/ART/images/wb-led-small.svg
+share/ART/images/wb-led.svg
+share/ART/images/wb-shade-small.svg
+share/ART/images/wb-shade.svg
+share/ART/images/wb-sun-small.svg
+share/ART/images/wb-sun.svg
+share/ART/images/wb-tungsten-small.svg
+share/ART/images/wb-tungsten.svg
+share/ART/images/wb-water-small.svg
+share/ART/images/wb-water.svg
+share/ART/images/window-add.svg
+share/ART/languages/Francais
+share/ART/languages/LICENSE
+share/ART/languages/Nederlands
+share/ART/languages/Portugues (Brasil)
+share/ART/languages/README
+share/ART/languages/default
+share/ART/options
+share/ART/profiles/Auto-Matched Curve.arp
+share/ART/profiles/Noise Reduction High.arp
+share/ART/profiles/Noise Reduction Low.arp
+share/ART/profiles/Sharpening.arp
+share/ART/profiles/Simple Film Curve.arp
+share/ART/rt.json
+share/ART/sounds/BatchComplete.wav
+share/ART/sounds/Empty.wav
+share/ART/sounds/ProcessComplete.wav
+share/ART/themes/RawTherapee-GTK3-20_.css
+share/ART/themes/RawTherapee-GTK3-_19.css
+share/ART/themes/TooWaBlue - Bright-GTK3-20_.css
+share/ART/themes/TooWaBlue - Dark-GTK3-20_.css
+share/ART/themes/TooWaBlue-GTK3-20_.css
+share/ART/themes/TooWaBlue-GTK3-_19.css
+share/ART/themes/TooWaGrey - Average Surround-GTK3-20_.css
+share/ART/themes/TooWaGrey - Bright-GTK3-20_.css
+share/ART/themes/TooWaGrey - Dark-GTK3-20_.css
+share/ART/themes/TooWaGrey-GTK3-20_.css
+share/ART/themes/_ART-GTK3-20_.css
+share/ART/themes/_ART-GTK3-_19.css
+share/ART/themes/images/svg/twb/checkbox-checked-disabled.svg
+share/ART/themes/images/svg/twb/checkbox-checked.svg
+share/ART/themes/images/svg/twb/checkbox-inconsistent-disabled.svg
+share/ART/themes/images/svg/twb/checkbox-inconsistent.svg
+share/ART/themes/images/svg/twb/checkbox-unchecked-disabled.svg
+share/ART/themes/images/svg/twb/checkbox-unchecked.svg
+share/ART/themes/images/svg/twb/radio-checked-disabled.svg
+share/ART/themes/images/svg/twb/radio-checked.svg
+share/ART/themes/images/svg/twb/radio-inconsistent-disabled.svg
+share/ART/themes/images/svg/twb/radio-inconsistent.svg
+share/ART/themes/images/svg/twb/radio-unchecked-disabled.svg
+share/ART/themes/images/svg/twb/radio-unchecked.svg
+share/ART/themes/images/twb/checkbox-checked-disabled.png
+share/ART/themes/images/twb/checkbox-checked.png
+share/ART/themes/images/twb/checkbox-inconsistent-disabled.png
+share/ART/themes/images/twb/checkbox-inconsistent.png
+share/ART/themes/images/twb/checkbox-unchecked-disabled.png
+share/ART/themes/images/twb/checkbox-unchecked.png
+share/ART/themes/images/twb/radio-checked-disabled.png
+share/ART/themes/images/twb/radio-checked.png
+share/ART/themes/images/twb/radio-inconsistent-disabled.png
+share/ART/themes/images/twb/radio-inconsistent.png
+share/ART/themes/images/twb/radio-unchecked-disabled.png
+share/ART/themes/images/twb/radio-unchecked.png
+share/ART/themes/size.css
+share/ART/themes/system.iconset
+share/ART/wbpresets.json
+share/applications/ART.desktop
+share/icons/hicolor/128x128/apps/ART.png
+share/icons/hicolor/16x16/apps/ART.png
+share/icons/hicolor/24x24/apps/ART.png
+share/icons/hicolor/256x256/apps/ART.png
+share/icons/hicolor/48x48/apps/ART.png
+share/man/man1/ART.1.gz

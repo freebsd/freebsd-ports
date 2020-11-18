@@ -55,6 +55,7 @@
     SUBDIR += apngasm
     SUBDIR += apngdis
     SUBDIR += argyllcms
+    SUBDIR += art
     SUBDIR += asciio
     SUBDIR += aseprite
     SUBDIR += atril
