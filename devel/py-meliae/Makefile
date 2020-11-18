@@ -1,27 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	meliae
-PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTVERSION=	0.5.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://launchpadlibrarian.net/74803944/ \
-		LOCAL/sbz
+MASTER_SITES=	https://launchpadlibrarian.net/478629999/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python Memory Usage Analyzer
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+#LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-DEPRECATED=	Uses deprecated version of python
-EXPIRATION_DATE=	2020-11-15
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		python:2.7
+USES=		python:-3.8  # compile fails on Python 3.9
 USE_PYTHON=	distutils autoplist cython
 TEST_TARGET=	check  # test fails
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
