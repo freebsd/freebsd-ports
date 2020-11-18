@@ -1,0 +1,15 @@
+--- build.xml.orig	2020-11-17 15:42:56 UTC
++++ build.xml
+@@ -62,10 +62,10 @@
+ 
+ 
+   <!-- Compiler source JDK version -->
+-  <property name="compile.source"          value="1.5"/>
++  <property name="compile.source"          value="1.6"/>
+ 
+   <!-- Compiler target JDK version -->
+-  <property name="compile.target"          value="1.5"/>
++  <property name="compile.target"          value="1.6"/>
+ 
+   <!-- Should Java compilations set the 'debug' compiler option? -->
+   <property name="compile.debug"           value="true"/>
