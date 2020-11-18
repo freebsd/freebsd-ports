@@ -36,6 +36,10 @@ BUILD_WRKSRC=	${WRKSRC}/javahelp_nbproject
 SUB_FILES=	jhindexer \
 		jhsearch
 
+post-patch:
+	${REINPLACE_CMD} '/javac.source/s,4,6,;/javac.target/s,4,6,' \
+		${WRKSRC}/*/nbproject/project.properties
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jhindexer ${WRKDIR}/jhsearch ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${BUILD_WRKSRC}/dist/lib/*.jar ${STAGEDIR}${JAVAJARDIR}/
