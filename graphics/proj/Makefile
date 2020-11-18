@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	proj
-PORTVERSION=	7.1.1
+PORTVERSION=	7.2.0
 PORTEPOCH=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/proj/
@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DATUM_GRID_FILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Cartographic Projections library
 
 LICENSE=	MIT

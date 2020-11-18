@@ -25,7 +25,7 @@ include/proj_symbol_rename.h
 lib/libproj.a
 lib/libproj.so
 lib/libproj.so.19
-lib/libproj.so.19.1.1
+lib/libproj.so.19.2.0
 libdata/pkgconfig/proj.pc
 man/man1/cct.1.gz
 man/man1/cs2cs.1.gz
@@ -344,6 +344,7 @@ man/man1/projsync.1.gz
 %%DATADIR%%/stlrnc
 %%DATADIR%%/stpaul
 %%DATADIR%%/tnhpgn.gsb
+%%DATADIR%%/triangulation.schema.json
 %%DATA%%%%DATADIR%%/uk_os_OSGM15_Belfast.tif
 %%DATA%%%%DATADIR%%/uk_os_OSGM15_Malin.tif
 %%DATA%%%%DATADIR%%/uk_os_OSTN15_NTv2_OSGBtoETRS.tif
