@@ -8,4 +8,4 @@ changes in the mount table as well as device add/remove events and altered
 states of mountable devices are presented to clients. Clients can request DSBMD
 to mount, unmount, and eject media, or set the CD/DVD reading speed.
 
-WWW: http://freeshell.de/~mk/projects/dsbmd.html
+WWW: https://freeshell.de/~mk/projects/dsbmd.html
