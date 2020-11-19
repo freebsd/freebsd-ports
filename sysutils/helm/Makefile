@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	helm
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -18,6 +18,7 @@ USES=		go:modules tar:xz
 USE_GITHUB=	yes
 
 GH_TUPLE=	\
+		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
 		Azure:go-autorest:v13.3.2:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		DATA-DOG:go-sqlmock:v1.5.0:data_dog_go_sqlmock/vendor/github.com/DATA-DOG/go-sqlmock \
@@ -106,16 +107,16 @@ GH_TUPLE=	\
 		kubernetes-sigs:kustomize:v2.0.3:kubernetes_sigs_kustomize/vendor/sigs.k8s.io/kustomize \
 		kubernetes-sigs:structured-merge-diff:v4.0.1:kubernetes_sigs_structured_merge_diff/vendor/sigs.k8s.io/structured-merge-diff/v4 \
 		kubernetes-sigs:yaml:v1.2.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
-		kubernetes:api:v0.19.2:kubernetes_api/vendor/k8s.io/api \
-		kubernetes:apiextensions-apiserver:v0.19.2:kubernetes_apiextensions_apiserver/vendor/k8s.io/apiextensions-apiserver \
-		kubernetes:apimachinery:v0.19.2:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
-		kubernetes:cli-runtime:v0.19.2:kubernetes_cli_runtime/vendor/k8s.io/cli-runtime \
-		kubernetes:client-go:v0.19.2:kubernetes_client_go/vendor/k8s.io/client-go \
-		kubernetes:component-base:v0.19.2:kubernetes_component_base/vendor/k8s.io/component-base \
+		kubernetes:api:v0.19.3:kubernetes_api/vendor/k8s.io/api \
+		kubernetes:apiextensions-apiserver:v0.19.3:kubernetes_apiextensions_apiserver/vendor/k8s.io/apiextensions-apiserver \
+		kubernetes:apimachinery:v0.19.3:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
+		kubernetes:cli-runtime:v0.19.3:kubernetes_cli_runtime/vendor/k8s.io/cli-runtime \
+		kubernetes:client-go:v0.19.3:kubernetes_client_go/vendor/k8s.io/client-go \
+		kubernetes:component-base:v0.19.3:kubernetes_component_base/vendor/k8s.io/component-base \
 		kubernetes:klog:v1.0.0:kubernetes_klog/vendor/k8s.io/klog \
 		kubernetes:klog:v2.2.0:kubernetes_klog_1/vendor/k8s.io/klog/v2 \
 		kubernetes:kube-openapi:6aeccd4b50c6:kubernetes_kube_openapi/vendor/k8s.io/kube-openapi \
-		kubernetes:kubectl:v0.19.2:kubernetes_kubectl/vendor/k8s.io/kubectl \
+		kubernetes:kubectl:v0.19.3:kubernetes_kubectl/vendor/k8s.io/kubectl \
 		kubernetes:utils:d5654de09c73:kubernetes_utils/vendor/k8s.io/utils \
 		lann:builder:47ae307949d0:lann_builder/vendor/github.com/lann/builder \
 		lann:ps:62de8c46ede0:lann_ps/vendor/github.com/lann/ps \
@@ -163,7 +164,7 @@ GH_TUPLE=	\
 
 GO_PKGNAME=	k8s.io/helm
 GO_BUILDFLAGS=	-ldflags="-X helm.sh/helm/v3/internal/version.version=v${PORTVERSION} \
-		-X helm.sh/helm/v3/internal/version.gitCommit=a61ce5633af99708171414353ed49547cf05013d"
+		-X helm.sh/helm/v3/internal/version.gitCommit=c4e74854886b2efe3321e185578e6db9be0a6e29"
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	${GO_TARGET:C/.\/cmd/bin/}
