@@ -8,7 +8,7 @@ lib/cmake/nlopt/NLoptLibraryDepends.cmake
 lib/guile/2.2/extensions/nlopt_guile.so
 lib/libnlopt.so
 lib/libnlopt.so.0
-lib/libnlopt.so.0.10.0
+lib/libnlopt.so.0.11.0
 %%PYTHON_SITELIBDIR%%/_nlopt.so
 %%PYTHON_SITELIBDIR%%/nlopt.py
 libdata/pkgconfig/nlopt.pc
