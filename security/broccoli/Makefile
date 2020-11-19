@@ -13,6 +13,9 @@ COMMENT=	Bro Client Communications Library
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Depends lang/python27 which is EOLed upstream
+EXPIRATION_DATE=	2020-12-31
+
 BUILD_DEPENDS=	swig:devel/swig
 
 USES=		cmake ssl bison
