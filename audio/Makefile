@@ -327,6 +327,7 @@
     SUBDIR += headsetcontrol
     SUBDIR += herrie
     SUBDIR += hexter
+    SUBDIR += hpsjam
     SUBDIR += hts_engine-API
     SUBDIR += hvl2wav
     SUBDIR += hydrogen
