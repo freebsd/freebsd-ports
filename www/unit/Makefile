@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unit
-PORTVERSION=	1.20.0
+PORTVERSION=	1.21.0
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
 
@@ -21,12 +21,14 @@ OPTIONS_DEFINE?=	\
 	DEBUG \
 	DEVKIT \
 	IPV6 \
+	PCRE2 \
 	SSL \
 	UNIXSOCK
 OPTIONS_DEFAULT?=UNIXSOCK
 
 DEBUG_DESC=	Enable debug logging
 DEVKIT_DESC=	Install headers and library
+PCRE2_DESC=	Enable PCRE2 support
 SSL_DESC=	Enable SSL/TLS
 UNIXSOCK_DESC=	Enable unix sockets
 
@@ -87,6 +89,12 @@ PLIST_FILES+=	include/nxt_unit_field.h \
 
 .if empty(PORT_OPTIONS:MIPV6)
 CONFIGURE_ARGS+=--no-ipv6
+.endif
+
+.if empty(PORT_OPTIONS:MPCRE2)
+CONFIGURE_ARGS+=--no-pcre2
+.else
+LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 .endif
 
 .if ${PORT_OPTIONS:MSSL}

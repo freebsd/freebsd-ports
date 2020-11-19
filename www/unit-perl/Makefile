@@ -1,7 +1,6 @@
 # Created by: Sergey Osokin <osa@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	2
 PKGNAMESUFFIX=	-${UNIT_MODNAME}
 
 UNIT_MODNAME=	perl${PERL_VER}
