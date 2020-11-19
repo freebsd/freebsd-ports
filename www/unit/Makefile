@@ -3,7 +3,7 @@
 
 PORTNAME=	unit
 PORTVERSION=	1.21.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
 
@@ -76,7 +76,8 @@ CONFIGURE_ARGS+=--debug
 .endif
 
 .if ${PORT_OPTIONS:MDEVKIT}
-PLIST_FILES+=	include/nxt_unit_field.h \
+PLIST_FILES+=	include/nxt_auto_config.h \
+		include/nxt_unit_field.h \
 		include/nxt_unit_request.h \
 		include/nxt_unit_response.h \
 		include/nxt_unit_sptr.h \
