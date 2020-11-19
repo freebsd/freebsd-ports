@@ -4,6 +4,7 @@
 PORTNAME=	xmrig
 PORTVERSION=	6.5.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -32,25 +33,16 @@ HWLOC_DESC=		Portable hardware locality
 MICROHTTPD_DESC=	Build with libmicrohttpd support
 
 HWLOC_LIB_DEPENDS+=		libhwloc.so:devel/hwloc
+HWLOC_CMAKE_OFF=		-DWITH_HWLOC=OFF
 MICROHTTPD_LIB_DEPENDS+=	libmicrohttpd.so:www/libmicrohttpd \
 				libuv.so:devel/libuv
+MICROHTTPD_CMAKE_OFF=		-DWITH_HTTPD=OFF
 
 STATIC_PREVENTS=	HWLOC MICROHTTPD
 STATIC_PREVENTS_MSG=	hwloc and libmicrohttpd support cannot be built static
 
 STATIC_BUILD_DEPENDS+=	${LOCALBASE}/lib/libuv.a:devel/libuv
-
-post-patch-HWLOC-off:
-	@${REINPLACE_CMD} -e 's|\(.*WITH_HWLOC.*\)\(ON\)|\1OFF|' \
-		${WRKSRC}/CMakeLists.txt
-
-post-patch-MICROHTTPD-off:
-	@${REINPLACE_CMD} -e 's|\(.*WITH_HTTPD.*\)\(ON\)|\1OFF|' \
-		${WRKSRC}/CMakeLists.txt
-
-post-patch-STATIC-on:
-	@${REINPLACE_CMD} -e 's|\(.*BUILD_STATIC.*\)\(OFF\)|\1ON|' \
-		${WRKSRC}/CMakeLists.txt
+STATIC_CMAKE_ON=	-DBUILD_STATIC=ON
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
