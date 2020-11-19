@@ -45,6 +45,11 @@ MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz \
 X11_CONFIGURE_ON=	-Dxwayland=true
 X11_CONFIGURE_OFF=	-Dxwayland=false
 
+post-patch:
+# Respect PREFIX for system-wide config (a la sysconfdir in Meson)
+	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
+		${WRKSRC}/river/main.zig
+
 do-build:
 	@(cd ${WRKSRC} && ${MAKE_ENV} zig build ${CONFIGURE_ARGS})
 
