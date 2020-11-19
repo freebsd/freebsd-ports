@@ -30,6 +30,7 @@
     SUBDIR += rclock
     SUBDIR += t3d
     SUBDIR += tclock
+    SUBDIR += wlclock
     SUBDIR += wmbday
     SUBDIR += wmbinclock
     SUBDIR += wmblueclock
