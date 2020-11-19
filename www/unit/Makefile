@@ -3,6 +3,7 @@
 
 PORTNAME=	unit
 PORTVERSION=	1.21.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
 
@@ -24,7 +25,7 @@ OPTIONS_DEFINE?=	\
 	PCRE2 \
 	SSL \
 	UNIXSOCK
-OPTIONS_DEFAULT?=UNIXSOCK
+OPTIONS_DEFAULT?=	DEVKIT IPV6 PCRE2 SSL UNIXSOCK
 
 DEBUG_DESC=	Enable debug logging
 DEVKIT_DESC=	Install headers and library
