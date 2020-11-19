@@ -7,7 +7,7 @@ bin/cadabra2html
 bin/cadabra2ipynb
 bin/cadabra2latex
 bin/cadabra2python
-%%PYTHON_SITELIBDIR%%/cadabra2.so
+%%PYTHON_SITELIBDIR%%/cadabra2.cpython-%%PYTHON_SUFFIX%%m.so
 %%PYTHON_SITELIBDIR%%/cadabra2_defaults.py
 %%PYTHON_SITELIBDIR%%/cadabra2_jupyter/__init__.py
 %%PYTHON_SITELIBDIR%%/cadabra2_jupyter/__main__.py
