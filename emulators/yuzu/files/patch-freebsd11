@@ -1,0 +1,34 @@
+Drop after FreeBSD 11 EOL. OpenSSL 1.0 still works fine.
+
+-- Could NOT find OpenSSL, try to set the path to OpenSSL root folder in the system variable OPENSSL_ROOT_DIR: Found unsuitable version "1.0.2u", but required is at least "1.1" (found /usr/lib/libcrypto.so, )
+CMake Error at externals/CMakeLists.txt:83 (add_subdirectory):
+
+In file included from src/core/hle/service/bcat/backend/boxcat.cpp:6:
+externals/./httplib/httplib.h:214:2: error: Sorry, OpenSSL versions prior to 1.1.1 are not supported
+#error Sorry, OpenSSL versions prior to 1.1.1 are not supported
+ ^
+
+--- externals/CMakeLists.txt.orig	2020-11-18 04:02:27 UTC
++++ externals/CMakeLists.txt
+@@ -73,7 +73,7 @@ if (NOT LIBZIP_FOUND)
+ endif()
+ 
+ if (ENABLE_WEB_SERVICE)
+-    find_package(OpenSSL 1.1)
++    find_package(OpenSSL)
+     if (OPENSSL_FOUND)
+         set(OPENSSL_LIBRARIES OpenSSL::SSL OpenSSL::Crypto)
+     else()
+--- externals/./httplib/httplib.h.orig	2020-11-18 04:02:27 UTC
++++ externals/./httplib/httplib.h
+@@ -210,10 +210,6 @@ using socket_t = int;
+ #include <iostream>
+ #include <sstream>
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x1010100fL
+-#error Sorry, OpenSSL versions prior to 1.1.1 are not supported
+-#endif
+-
+ #if OPENSSL_VERSION_NUMBER < 0x10100000L
+ #include <openssl/crypto.h>
+ inline const unsigned char *ASN1_STRING_get0_data(const ASN1_STRING *asn1) {
