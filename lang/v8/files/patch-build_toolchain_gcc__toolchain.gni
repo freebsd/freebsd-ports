@@ -1,0 +1,45 @@
+--- build/toolchain/gcc_toolchain.gni.orig	2020-11-16 14:30:51 UTC
++++ build/toolchain/gcc_toolchain.gni
+@@ -50,6 +50,11 @@ if (enable_resource_allowlist_generation) {
+       "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
+ }
+ 
++declare_args() {
++  extra_cxxflags = ""
++  extra_ldflags = ""
++}
++
+ # This template defines a toolchain for something that works like gcc
+ # (including clang).
+ #
+@@ -641,13 +646,23 @@ template("clang_toolchain") {
+   }
+ 
+   gcc_toolchain(target_name) {
+-    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
+-    cc = "$prefix/clang"
+-    cxx = "$prefix/clang++"
+-    ld = cxx
+-    readelf = "${toolprefix}readelf"
+-    ar = "${prefix}/llvm-ar"
+-    nm = "${toolprefix}nm"
++    if (is_bsd) {
++      prefix = "%%LOCALBASE%%/bin"
++      cc = "cc"
++      cxx = "c++"
++      ld = cxx
++      readelf = "readelf"
++      ar = "${prefix}/ar"
++      nm = "${toolprefix}nm"
++    } else {
++      prefix = rebase_path("$clang_base_path/bin", root_build_dir)
++      cc = "$prefix/clang"
++      cxx = "$prefix/clang++"
++      ld = cxx
++      readelf = "${toolprefix}readelf"
++      ar = "${prefix}/llvm-ar"
++      nm = "${toolprefix}nm"
++    }
+ 
+     forward_variables_from(invoker,
+                            [
