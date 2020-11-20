@@ -1,0 +1,9 @@
+The JPEG XL Image Coding System (ISO/IEC 18181) has a rich feature set
+and is particularly optimised for responsive web environments, so that
+content renders well on a wide range of devices. Moreover, it includes
+several features that help transition from the legacy JPEG format.
+
+WARNING: Until further notice, do not depend on future decoders being
+         able to decode the output of a current encoder.
+
+WWW: https://jpeg.org/jpegxl/

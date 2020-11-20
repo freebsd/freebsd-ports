@@ -1,0 +1,25 @@
+highway is untagged and have no other consumers. Keep it private to
+jpeg-xl package for now.
+
+--- third_party/CMakeLists.txt.orig	2020-11-14 00:52:03 UTC
++++ third_party/CMakeLists.txt
+@@ -83,7 +83,7 @@ endif()  # BUILD_TESTING
+ # Highway
+ if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/highway/CMakeLists.txt" AND
+     NOT JPEGXL_FORCE_SYSTEM_HWY)
+-  add_subdirectory(highway)
++  add_subdirectory(highway EXCLUDE_FROM_ALL)
+   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/highway/LICENSE"
+                  ${PROJECT_BINARY_DIR}/LICENSE.highway COPYONLY)
+ else()
+--- third_party/highway/CMakeLists.txt.orig	2020-10-29 17:04:03 UTC
++++ third_party/highway/CMakeLists.txt
+@@ -222,7 +222,7 @@ set_target_properties(hwy_benchmark
+ 
+ include(CTest)
+ 
+-if(BUILD_TESTING)
++if(HWY_BUILD_TESTING)
+ 
+ find_package(GTest REQUIRED)
+ 

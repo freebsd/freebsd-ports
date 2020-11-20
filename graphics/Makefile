@@ -377,6 +377,7 @@
     SUBDIR += jpatch
     SUBDIR += jpeg
     SUBDIR += jpeg-turbo
+    SUBDIR += jpeg-xl
     SUBDIR += jpeginfo
     SUBDIR += jpegoptim
     SUBDIR += jpgtn
