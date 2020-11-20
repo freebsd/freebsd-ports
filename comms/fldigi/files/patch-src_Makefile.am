@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2020-10-22 03:19:34 UTC
++++ src/Makefile.am
+@@ -488,7 +488,7 @@ $(builddir)/../doc/guide.html: $(builddir)/../doc/guid
+ 
+ $(builddir)/dialogs/guide.cxx: $(builddir)/../doc/guide.html
+ 	@mkdir -p $(builddir)/dialogs
+-	$(call silent,GUIDE ,$@)sed 's/\\/\\\\/g; s/"/\\"/g; s/$$/\\n\\/g; 1 s/.*/const char* szBeginner = "&/; $$ s/.*/&n";/' $< > $@
++	$(call silent,GUIDE ,$@)sed 's/\r//g; s/\\/\\\\/g; s/"/\\"/g; s/$$/\\n\\/g; 1 s/.*/const char* szBeginner = "&/; $$ s/.*/&n";/' $< > $@
+ dialogs/htmlstrings.cxx: $(builddir)/dialogs/guide.cxx
+ 
+ distclean-local:
