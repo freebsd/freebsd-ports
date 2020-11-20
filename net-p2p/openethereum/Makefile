@@ -11,10 +11,7 @@ COMMENT=	Fast and feature-rich multi-network Ethereum client
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=		fails to build
-BROKEN_FreeBSD_11=	fails to build
-
-BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+BROKEN_i386=	fails to build
 
 USES=		cargo
 
@@ -25,7 +22,7 @@ PLIST_FILES=	bin/${PORTNAME}
 CARGO_FEATURES=	final
 CARGO_TEST=	yes
 
-MAKE_ENV+=	LLVM_CONFIG_PATH="${LOCALBASE}/bin/llvm-config90"
+RUSTFLAGS+=	-C link-arg=-fuse-ld=lld
 
 .include "${.CURDIR}/Makefile.crates"
 
