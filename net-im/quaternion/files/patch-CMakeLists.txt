@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2020-11-20 20:57:10 UTC
++++ CMakeLists.txt
+@@ -229,7 +229,11 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
+ target_compile_definitions(${PROJECT_NAME} PRIVATE QT_NO_JAVA_STYLE_ITERATORS)
+ if (CMAKE_VERSION VERSION_GREATER_EQUAL "3.16.0"
+         AND NOT CMAKE_CXX_COMPILER_ID STREQUAL GNU) # https://bugzilla.redhat.com/show_bug.cgi?id=1721553
+-    target_precompile_headers(${PROJECT_NAME} PRIVATE <lib/room.h>)
++    if (USE_INTREE_LIBQMC)
++        target_precompile_headers(${PROJECT_NAME} PRIVATE <lib/room.h>)
++    else()
++        target_precompile_headers(${PROJECT_NAME} PRIVATE <room.h>)
++    endif()
+ endif ()
+ target_link_libraries(${PROJECT_NAME}
+     Quotient Qt5::Widgets Qt5::Quick Qt5::Qml Qt5::Gui Qt5::Network)

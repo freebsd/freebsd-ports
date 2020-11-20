@@ -1,8 +1,9 @@
 bin/quaternion
-share/QMatrixClient/quaternion/translations/quaternion_de_DE.qm
-share/QMatrixClient/quaternion/translations/quaternion_en_GB.qm
-share/QMatrixClient/quaternion/translations/quaternion_pl.qm
-share/QMatrixClient/quaternion/translations/quaternion_ru.qm
+share/Quotient/quaternion/translations/quaternion_de.qm
+share/Quotient/quaternion/translations/quaternion_en_GB.qm
+share/Quotient/quaternion/translations/quaternion_es.qm
+share/Quotient/quaternion/translations/quaternion_pl.qm
+share/Quotient/quaternion/translations/quaternion_ru.qm
 share/applications/com.github.quaternion.desktop
 share/icons/hicolor/128x128/apps/quaternion.png
 share/icons/hicolor/16x16/apps/quaternion.png

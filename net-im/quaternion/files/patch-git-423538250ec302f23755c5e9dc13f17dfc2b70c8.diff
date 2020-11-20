@@ -1,0 +1,12 @@
+diff --git client/htmlfilter.cpp client/htmlfilter.cpp
+index 43f7bde2..6f47bb22 100644
+--- client/htmlfilter.cpp
++++ client/htmlfilter.cpp
+@@ -1,6 +1,6 @@
+ #include "htmlfilter.h"
+ 
+-#include <lib/util.h>
++#include <util.h>
+ 
+ #include <QtCore/QRegularExpression>
+ #include <QtCore/QXmlStreamReader>
