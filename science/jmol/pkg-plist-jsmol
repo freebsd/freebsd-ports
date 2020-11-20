@@ -228,6 +228,7 @@
 %%WWWDIR%%/j2s/J/adapter/readers/cif/MSCifParser.js
 %%WWWDIR%%/j2s/J/adapter/readers/cif/MSRdr.js
 %%WWWDIR%%/j2s/J/adapter/readers/cif/Subsystem.js
+%%WWWDIR%%/j2s/J/adapter/readers/cif/TopoCifParser.js
 %%WWWDIR%%/j2s/J/adapter/readers/molxyz/Mol3DReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/molxyz/MolReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/molxyz/V3000Rdr.js
