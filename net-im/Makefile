@@ -59,6 +59,7 @@
     SUBDIR += libpurple
     SUBDIR += libqmatrixclient
     SUBDIR += libqtelegram-ae
+    SUBDIR += libquotient
     SUBDIR += libsignon-glib
     SUBDIR += libstrophe
     SUBDIR += licq
