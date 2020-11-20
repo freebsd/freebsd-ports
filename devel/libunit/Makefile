@@ -3,6 +3,7 @@
 
 PORTNAME=	libunit
 PORTVERSION=	1.21.0
+PORTREVISION=	1
 MASTER_SITES?=	https://unit.nginx.org/download/
 DISTNAME=	unit-${PORTVERSION}
 
@@ -22,7 +23,8 @@ CPE_PRODUCT=	unit
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--ld-opt="-L${LOCALBASE}/lib"
+		--ld-opt="-L${LOCALBASE}/lib" \
+		--no-regex
 
 PLIST_FILES+=	include/nxt_auto_config.h \
 		include/nxt_unit_field.h \
