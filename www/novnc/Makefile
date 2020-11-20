@@ -22,7 +22,7 @@ TARGET_DIR=	${PREFIX}/libexec/novnc
 post-extract:
 	@cd ${WRKSRC} && ${RM} .gitignore .gitmodules .travis.yml .eslintignore
 	@cd ${WRKSRC} && ${RM} -R .github
-	@cd ${WRCSRC} && ${FIND} ${WRKSRC} -name '.eslintrc' -delete
+	@cd ${WRKSRC} && ${FIND} ${WRKSRC} -name '.eslintrc' -delete
 
 do-install:
 	${MKDIR} ${STAGEDIR}${TARGET_DIR}
