@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	concourse
-PORTVERSION=	5.7.2
+PORTVERSION=	6.7.1
 CATEGORIES=	net sysutils
 MASTER_SITES=	LOCAL/dumbbell/concourse/
 PKGNAMESUFFIX=	-fly
@@ -11,11 +11,11 @@ COMMENT=	CLI for Concourse
 
 LICENSE=	APACHE20
 
-GO_PKGNAME=	github.com/concourse/fly
-GO_BUILDFLAGS+=	-mod=vendor \
-		-ldflags="-X github.com/concourse/concourse.Version=${PORTVERSION}"
+USES=		go:modules tar:xz
 
-USES=		go tar:xz
+GO_TARGET=	./cmd/concourse:fly
+GO_BUILDFLAGS=	-ldflags="-s -w -X github.com/concourse/concourse.Version=${PORTVERSION}"
+CGO_CFLAGS=	-I.
 
 CONFLICTS_INSTALL=	fly
 
@@ -42,22 +42,9 @@ PLIST_FILES=	bin/fly
 #
 #     make create-src-archive
 #
-# Because it doesn't match the project layout USES=go expects, we
-# override the post-extract and do-build targets to adapt the commands.
-#
-# In particular, we must pass `-mod=vendor` to go-install to be able to
-# use the third-party dependencies fetched with `go mod vendor`.
-
 # `fly` version is set by default to "0.0.0-dev" in version/Version.go.
 # Instead of patching the file, we use a linker flag to set the variable
 # to the port's version.
-
-post-extract:
-	@:
-
-do-build:
-	(cd ${WRKSRC}/fly; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} 'install' ${GO_BUILDFLAGS})
 
 .PHONY: create-src-archive
 ARCHIVE_DIR=	${DISTDIR}/concourse-${PORTVERSION}
