@@ -1,13 +1,10 @@
 bin/cola
 bin/git-cola
 bin/git-dag
-share/appdata/git-cola.appdata.xml
-share/appdata/git-dag.appdata.xml
 share/applications/git-cola-folder-handler.desktop
 share/applications/git-cola.desktop
 share/applications/git-dag.desktop
 share/icons/hicolor/scalable/apps/git-cola.svg
-%%DATADIR%%/bin/git-xbase
 %%DATADIR%%/bin/ssh-askpass
 %%DATADIR%%/bin/ssh-askpass-darwin
 %%DATADIR%%/icons/a-z-order.svg
@@ -151,7 +148,6 @@ share/icons/hicolor/scalable/apps/git-cola.svg
 %%DATADIR%%/lib/cola/models/selection.py
 %%DATADIR%%/lib/cola/models/stash.py
 %%DATADIR%%/lib/cola/observable.py
-%%DATADIR%%/lib/cola/ordered_dict.py
 %%DATADIR%%/lib/cola/qtcompat.py
 %%DATADIR%%/lib/cola/qtutils.py
 %%DATADIR%%/lib/cola/resources.py
