@@ -4,8 +4,8 @@
 PORTNAME=	chan_sccp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.2
-DISTVERSIONSUFFIX=	-zeta
-PORTREVISION=	4
+DISTVERSIONSUFFIX=	-eta
+PORTREVISION=	5
 CATEGORIES=	net
 PKGNAMEPREFIX=	asterisk-
 
@@ -18,7 +18,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 FLAVORS=	asterisk16 asterisk18 asterisk13
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=           autoreconf compiler:c11 gettext-tools iconv libtool localbase
+LIB_DEPENDS=	libltdl.so:devel/libltdl
+
+USES=		autoreconf compiler:c11 gettext-tools iconv libtool \
+		localbase ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chan-sccp
@@ -61,6 +64,14 @@ VIDEO_DESC=			Enable Video Support
 
 CONFERENCE_CONFIGURE_ENABLE=	conference
 VIDEO_CONFIGURE_ENABLE=		video
+
+.if ${FLAVOR} == asterisk13
+CONFIGURE_ARGS+=		--with-asterisk-version=13
+.elif ${FLAVOR} == asterisk16
+CONFIGURE_ARGS+=		--with-asterisk-version=16
+.elif ${FLAVOR} == asterisk18
+CONFIGURE_ARGS+=		--with-asterisk-version=18
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/asterisk
