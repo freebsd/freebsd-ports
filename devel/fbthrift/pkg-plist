@@ -106,6 +106,7 @@ include/thrift/lib/cpp2/Flags.h
 include/thrift/lib/cpp2/GeneratedCodeHelper.h
 include/thrift/lib/cpp2/GeneratedHeaderHelper.h
 include/thrift/lib/cpp2/OptionalField.h
+include/thrift/lib/cpp2/PluggableFunction.h
 include/thrift/lib/cpp2/SerializationSwitch.h
 include/thrift/lib/cpp2/Thrift.h
 include/thrift/lib/cpp2/TypeClass.h
@@ -148,6 +149,7 @@ include/thrift/lib/cpp2/async/Sink.h
 include/thrift/lib/cpp2/async/SinkBridgeUtil.h
 include/thrift/lib/cpp2/async/StreamCallbacks.h
 include/thrift/lib/cpp2/async/TAsyncTransportHandler.h
+include/thrift/lib/cpp2/async/ThreadBoundAdaptorChannel.h
 include/thrift/lib/cpp2/async/TwoWayBridge.h
 include/thrift/lib/cpp2/async/tests/util/TestSinkService.h
 include/thrift/lib/cpp2/async/tests/util/TestStreamService.h
@@ -450,8 +452,6 @@ lib/libconcurrency.so
 lib/libconcurrency.so.1.0.0
 lib/libmustache_lib.so
 lib/libmustache_lib.so.1.0.0
-lib/libprotocol.so
-lib/libprotocol.so.1.0.0
 lib/librpcmetadata.so
 lib/librpcmetadata.so.1.0.0
 lib/libthrift-core.so
