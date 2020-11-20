@@ -1,6 +1,6 @@
 --- build.sh.orig	2019-03-07 02:31:04 UTC
 +++ build.sh
-@@ -72,7 +72,7 @@
+@@ -72,7 +72,7 @@ echo -e "${RED}*** ${@}${NC}"
  
  cd `dirname $0`
  
@@ -9,7 +9,7 @@
  
  export CFLAGS='-O -Wall -fPIC'
  
-@@ -86,8 +86,8 @@
+@@ -86,15 +86,15 @@ case $OS in
  		MAKEFILE=make_win32.mak
  		;;
  	*)
@@ -20,16 +20,16 @@
  		;;
  esac
  
-@@ -95,7 +95,7 @@
+ # Determine which CPU type we are building for
  if [ "${MODEL}" = "" ]; then
- 	if uname -i > /dev/null 2>&1; then
- 		MODEL=`uname -i`
--		if [ ${MODEL} = 'unknown' ]; then
-+		if [ ${MODEL} = 'unknown' ] || [ ${MODEL} = 'GENERIC' ]; then
+-	if uname -i > /dev/null 2>&1; then
+-		MODEL=`uname -i`
++	if uname -p > /dev/null 2>&1; then
++		MODEL=`uname -p`
+ 		if [ ${MODEL} = 'unknown' ]; then
  		  MODEL=`uname -m`
  		fi
- 	else
-@@ -103,7 +103,7 @@
+@@ -103,7 +103,7 @@ if [ "${MODEL}" = "" ]; then
  	fi
  fi
  case $MODEL in
@@ -38,7 +38,7 @@
  		SWT_ARCH=x86_64
  		AWT_ARCH=amd64
  		;;
-@@ -111,6 +111,10 @@
+@@ -111,6 +111,10 @@ case $MODEL in
  		SWT_ARCH=x86
  		AWT_ARCH=i386
  		;;
@@ -49,7 +49,7 @@
  	*)
  		SWT_ARCH=$MODEL
  		AWT_ARCH=$MODEL
-@@ -156,7 +160,7 @@
+@@ -156,7 +160,7 @@ case $SWT_OS.$SWT_ARCH in
  				# Cross-platform method of finding JAVA_HOME.
  				# Tested on Fedora 24 and Ubuntu 16
  				DYNAMIC_JAVA_HOME=`readlink -f /usr/bin/java | sed "s:jre/::" | sed "s:bin/java::"`
@@ -58,7 +58,7 @@
                  	func_echo_plus "JAVA_HOME not set, but jni.h found, dynamically configured to $DYNAMIC_JAVA_HOME"
              		export JAVA_HOME="$DYNAMIC_JAVA_HOME"
                  else
-@@ -194,10 +198,10 @@
+@@ -194,10 +198,10 @@ esac	
  
  
  # For 64-bit CPUs, we have a switch
@@ -71,7 +71,7 @@
  		export XLIB64
  	fi
  	if [ ${MODEL} = 'ppc64le' ]; then
-@@ -214,11 +218,13 @@
+@@ -214,11 +218,13 @@ if [ ${MODEL} = 'x86' -a ${SWT_OS} = 'linux' ]; then
  	export SWT_LFLAGS SWT_PTR_CFLAGS
  fi
  
@@ -85,7 +85,7 @@
  fi
  
  # Find AWT if available
-@@ -364,4 +370,4 @@
+@@ -364,4 +370,4 @@ elif [ "${GTK_VERSION}" = "4.0" ]; then
  elif [ "${GTK_VERSION}" = "3.0" -o "${GTK_VERSION}" = "" ]; then
  	export GTK_VERSION="3.0"
  	func_build_gtk3 "$@"
