@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2020-11-20 16:39:59 UTC
++++ CMakeLists.txt
+@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1)
+ 
+ project(Neochat)
+ 
+-set(KF5_MIN_VERSION "5.76.0")
++set(KF5_MIN_VERSION "5.75.0")
+ set(QT_MIN_VERSION "5.15.0")
+ 
+ find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)

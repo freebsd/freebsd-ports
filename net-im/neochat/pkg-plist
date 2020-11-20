@@ -1,0 +1,5 @@
+bin/neochat
+share/applications/org.kde.neochat.desktop
+share/icons/hicolor/scalable/apps/neochat.svg
+share/knotifications5/neochat.notifyrc
+share/metainfo/org.kde.neochat.appdata.xml
