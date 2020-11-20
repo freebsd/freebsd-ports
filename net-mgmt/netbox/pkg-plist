@@ -135,7 +135,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/rest-api/filtering.md
 %%PORTDOCS%%%%DOCSDIR%%/rest-api/overview.md
 %%PORTDOCS%%%%DOCSDIR%%/rest-api/working-with-secrets.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apache.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gunicorn.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/netbox_rq.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/netboxrc.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.conf
 %%DATADIR%%/circuits/__init__.py
 %%DATADIR%%/circuits/api/__init__.py
 %%DATADIR%%/circuits/api/nested_serializers.py

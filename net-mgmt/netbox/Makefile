@@ -2,7 +2,7 @@
 
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.8
+DISTVERSION=	2.9.9
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	kai@FreeBSD.org
@@ -53,7 +53,7 @@ USES=		pgsql:9.6+ python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	netbox-community
 
-SUB_FILES=	netboxrc.sample pkg-message
+SUB_FILES=	netbox_rq.sample netboxrc.sample pkg-message
 SUB_LIST=	DATADIR=${DATADIR} PYTHON_CMD=${PYTHON_CMD} PYTHON_VER=${PYTHON_VER} WWWOWN=${WWWOWN}
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -85,6 +85,10 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/netbox_rq.sample ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/netboxrc.sample ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/apache.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/gunicorn.py ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/nginx.conf ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

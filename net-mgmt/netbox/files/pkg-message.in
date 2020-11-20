@@ -249,4 +249,14 @@ rebuild the correct nested relationships after upgrading:
 >>> TenantGroup.objects.rebuild()
 EOD
 }
+{ type: upgrade
+  maximum_version: 2.9.9
+  message: <<EOD
+An new sample rc script has been added to manage the RQ-worker service.  If the
+EXAMPLES option is enabled (which is the default) it can be found in the
+following directory:
+
+%%EXAMPLESDIR%%/netbox_rq.sample
+EOD
+}
 ]
