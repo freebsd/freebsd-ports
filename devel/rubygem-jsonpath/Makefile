@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jsonpath
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,7 @@ COMMENT=	JsonPath is a way of addressing elements within a JSON object
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json \
-		rubygem-to_regexp>=0.2.1<0.3:devel/rubygem-to_regexp
+RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json
 
 USES=		gem
 USE_RUBY=	yes
