@@ -44,6 +44,9 @@ man/man5/neomuttrc.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
+%%PORTDOCS%%%%DOCSDIR%%/SECURITY.md
 %%PORTDOCS%%%%DOCSDIR%%/advancedusage.html
 %%PORTDOCS%%%%DOCSDIR%%/colorschemes/neonwolf-256.neomuttrc
 %%PORTDOCS%%%%DOCSDIR%%/colorschemes/solarized-dark-256.neomuttrc
