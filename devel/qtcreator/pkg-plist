@@ -979,8 +979,8 @@ share/icons/hicolor/64x64/apps/QtProject-qtcreator.png
 %%DATADIR%%/templates/wizards/projects/vcs/subversion/icon@2x.png
 %%DATADIR%%/templates/wizards/projects/vcs/subversion/wizard.json
 %%DATADIR%%/templates/wizards/qtcreatorplugin/MyPlugin.json.in
-%%DATADIR%%/templates/wizards/qtcreatorplugin/github_workflow_README.md
-%%DATADIR%%/templates/wizards/qtcreatorplugin/github_workflow_build_qmake.yml
+%%DATADIR%%/templates/wizards/qtcreatorplugin/github_workflows_README.md
+%%DATADIR%%/templates/wizards/qtcreatorplugin/github_workflows_build_qmake.yml
 %%DATADIR%%/templates/wizards/qtcreatorplugin/myplugin.cpp
 %%DATADIR%%/templates/wizards/qtcreatorplugin/myplugin.h
 %%DATADIR%%/templates/wizards/qtcreatorplugin/myplugin.pro
