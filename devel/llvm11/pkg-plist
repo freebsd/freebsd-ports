@@ -3440,11 +3440,6 @@ llvm%%LLVM_SUFFIX%%/lib/cmake/llvm/VersionFromVCS.cmake
 llvm%%LLVM_SUFFIX%%/lib/libLLVM-%%LLVM_MAJOR%%.so
 llvm%%LLVM_SUFFIX%%/lib/libLLVM-%%LLVM_RELEASE%%.so
 llvm%%LLVM_SUFFIX%%/lib/libLLVM.so
-llvm%%LLVM_SUFFIX%%/lib/libLLVMAVRAsmParser.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMAVRCodeGen.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMAVRDesc.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMAVRDisassembler.a
-llvm%%LLVM_SUFFIX%%/lib/libLLVMAVRInfo.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAggressiveInstCombine.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAnalysis.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAsmParser.a
