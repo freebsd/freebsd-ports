@@ -2173,9 +2173,6 @@ TAR?=	/usr/bin/tar
 EXTRACT_CMD?=	${TAR}
 EXTRACT_BEFORE_ARGS?=	-xf
 EXTRACT_AFTER_ARGS?=	--no-same-owner --no-same-permissions
-.if ${EXTRACT_SUFX} == .zip
-USES+= foo
-.endif
 
 # Figure out where the local mtree file is
 .if !defined(MTREE_FILE) && !defined(NO_MTREE)
