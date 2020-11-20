@@ -3,6 +3,7 @@
 
 PORTNAME=	syslog-ng
 DISTVERSION=	3.30.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 
@@ -226,8 +227,13 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.5 ${STAGEDIR}${PREFIX}/man/man5/
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.8 ${STAGEDIR}${PREFIX}/man/man8/
+.if ${OSVERSION} > 1200000
 	${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample \
 		${STAGEDIR}${PREFIX}/etc
+.else
+	${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample.11 \
+		${STAGEDIR}${PREFIX}/etc/syslog-ng.conf.sample
+.endif
 	${INSTALL_DATA} ${WRKSRC}/scl/syslog-ng.conf.dist \
 		${WRKSRC}/scl/scl.conf.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/lib/ivykis/src/include/iv*.h \
