@@ -11,6 +11,22 @@ in the release notes and/or placed into UPDATING.
 All ports committers are allowed to commit to this file.
 
 20201120:
+AUTHOR: gnome@FreeBSD.org
+
+  New default version for librsvg2.
+
+  Current versions of graphics/librsvg2 are using parts written in rust.
+  For architectures that do not have support for rust, and for people
+  who prefer not to have, or are not able to compile rust software due
+  to hardware limitations, the version can be chosen via this new flag.
+
+  The default on almost all architectures is rust.
+
+  If you prefer no to use rust, add the following to your make.conf:
+
+  	DEFAULT_VERSIONS+=librsvg2=legacy
+
+20201120:
 AUTHOR: pauamma@gundo.com
 
   New virtual category: education.

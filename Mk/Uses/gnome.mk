@@ -261,7 +261,7 @@ vte3_LIB_DEPENDS=	libvte-2.91.so:x11-toolkits/vte3
 vte3_USE_GNOME_IMPL=	gtk30
 
 # Use librsvg2-rust where lang/rust is available
-.if empty(ARCH:Naarch64:Narmv6:Narmv7:Namd64:Ni386:Npowerpc64:Npowerpc64le)
+.if ${LIBRSVG2_DEFAULT:Mrust}
 librsvg2_BUILD_DEPENDS=	librsvg2-rust>=0:graphics/librsvg2-rust
 librsvg2_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2-rust
 librsvg2_RUN_DEPENDS=	librsvg2-rust>=0:graphics/librsvg2-rust
