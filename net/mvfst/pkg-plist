@@ -117,6 +117,7 @@ include/quic/state/PendingPathRateLimiter.h
 include/quic/state/QPRFunctions.h
 include/quic/state/QuicConnectionStats.h
 include/quic/state/QuicPacingFunctions.h
+include/quic/state/QuicPriorityQueue.h
 include/quic/state/QuicStateFunctions.h
 include/quic/state/QuicStreamFunctions.h
 include/quic/state/QuicStreamManager.h
