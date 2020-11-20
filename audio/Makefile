@@ -11,6 +11,7 @@
     SUBDIR += abcde
     SUBDIR += abcselect
     SUBDIR += abgate-lv2
+    SUBDIR += abx
     SUBDIR += adplay
     SUBDIR += afsp
     SUBDIR += aften
