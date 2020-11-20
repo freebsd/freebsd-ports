@@ -3,7 +3,7 @@
 PORTNAME=	popup
 PORTVERSION=	0.5
 PORTREVISION=	10
-CATEGORIES=	textproc gnustep
+CATEGORIES=	textproc education gnustep
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Popup-${PORTVERSION}pre1
 DISTNAME=	Popup-${PORTVERSION}pre1
 

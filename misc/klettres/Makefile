@@ -2,7 +2,7 @@
 
 PORTNAME=	klettres
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	misc kde kde-applications
+CATEGORIES=	misc education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Alphabet learning tool for KDE

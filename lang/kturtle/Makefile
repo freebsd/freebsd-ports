@@ -2,7 +2,7 @@
 
 PORTNAME=	kturtle
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	lang kde kde-applications
+CATEGORIES=	lang education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Educational programming environment for KDE

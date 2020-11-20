@@ -3,7 +3,7 @@
 
 PORTNAME=	sakai
 PORTVERSION=	10.2
-CATEGORIES=	www java
+CATEGORIES=	www education java
 MASTER_SITES=	http://source.sakaiproject.org/release/${PORTVERSION}/artifacts/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 

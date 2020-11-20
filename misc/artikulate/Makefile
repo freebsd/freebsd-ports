@@ -2,7 +2,7 @@
 
 PORTNAME=	artikulate
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	misc kde kde-applications
+CATEGORIES=	misc education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Pronunciation trainer for KDE

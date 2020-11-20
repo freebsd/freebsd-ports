@@ -3,7 +3,7 @@
 PORTNAME=	hourglass
 PORTVERSION=	1.0.1
 DISTVERSIONSUFFIX=	b
-CATEGORIES=	sysutils parallel
+CATEGORIES=	sysutils education parallel
 MASTER_SITES=	http://www.cs.utah.edu/~regehr/hourglass/
 
 MAINTAINER=	ports@FreeBSD.org

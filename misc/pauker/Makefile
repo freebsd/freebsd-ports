@@ -3,7 +3,7 @@
 
 PORTNAME=	pauker
 DISTVERSION=	1.8
-CATEGORIES=	misc java
+CATEGORIES=	misc education java
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=

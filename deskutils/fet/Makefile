@@ -3,7 +3,7 @@
 
 PORTNAME=	fet
 DISTVERSION=	5.46.0
-CATEGORIES=	deskutils
+CATEGORIES=	deskutils education
 MASTER_SITES=	https://lalescu.ro/liviu/fet/download/ \
 		https://lalescu.ro/liviu/fet/download/old/ \
 		https://timetabling.de/download/ \

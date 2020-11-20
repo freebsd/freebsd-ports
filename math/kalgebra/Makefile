@@ -2,7 +2,7 @@
 
 PORTNAME=	kalgebra
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	math kde kde-applications
+CATEGORIES=	math education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE graph calculator

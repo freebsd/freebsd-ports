@@ -4,7 +4,7 @@
 PORTNAME=	ilias
 PORTVERSION=	5.4.11
 DISTVERSIONPREFIX=	v
-CATEGORIES=	www
+CATEGORIES=	www education
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform

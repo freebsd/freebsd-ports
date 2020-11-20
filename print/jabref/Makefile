@@ -4,7 +4,7 @@
 PORTNAME=	jabref
 PORTVERSION=	4.3.1
 PORTEPOCH=	1
-CATEGORIES=	print java editors
+CATEGORIES=	print education java editors
 MASTER_SITES=	https://builds.jabref.org/ \
 		https://github.com/JabRef/jabref/releases/download/v${PORTVERSION}/
 DISTNAME=	JabRef-${PORTVERSION}

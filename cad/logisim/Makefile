@@ -2,7 +2,7 @@
 
 PORTNAME=	logisim
 PORTVERSION=	2.7.1
-CATEGORIES=	cad java
+CATEGORIES=	cad education java
 MASTER_SITES=	SF/circuit/2.7.x/2.7.1/
 DISTNAME=	${PORTNAME}-generic-${PORTVERSION}
 EXTRACT_SUFX=	.jar

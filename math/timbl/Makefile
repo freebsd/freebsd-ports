@@ -5,7 +5,7 @@ PORTNAME=	timbl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.4.13
 PORTREVISION=	4
-CATEGORIES=	math
+CATEGORIES=	math education
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tilburg Memory Based Learner

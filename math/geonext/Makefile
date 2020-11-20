@@ -3,7 +3,7 @@
 
 PORTNAME=	geonext
 PORTVERSION=	1.74
-CATEGORIES+=	math graphics java
+CATEGORIES+=	math education graphics java
 MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/${PORTVERSION}/
 DISTNAME=	geonext.${PORTVERSION}
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	robocode
 PORTVERSION=	1.9.3.9
-CATEGORIES=	games java
+CATEGORIES=	games education java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${DISTVERSION}-setup.jar
 EXTRACT_SUFX=	# empty

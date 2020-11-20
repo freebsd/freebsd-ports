@@ -3,7 +3,7 @@
 PORTNAME=	figtree
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.4
-CATEGORIES=	biology java
+CATEGORIES=	biology education java
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Graphical viewer of phylogenetic trees

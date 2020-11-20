@@ -2,7 +2,7 @@
 
 PORTNAME=	katomic
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	games kde kde-applications
+CATEGORIES=	games education kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${PORTNAME:tu}_DESC}
 

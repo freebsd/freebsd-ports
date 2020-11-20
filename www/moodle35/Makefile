@@ -3,7 +3,7 @@
 
 PORTNAME=	moodle
 PORTVERSION=	3.5.14
-CATEGORIES=	www
+CATEGORIES=	www education
 MASTER_SITES=	SF/moodle/Moodle/stable35/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
 

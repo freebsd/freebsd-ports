@@ -2,7 +2,7 @@
 
 PORTNAME=	gcompris-qt
 DISTVERSION=	0.97.1
-CATEGORIES=	games kde
+CATEGORIES=	games education kde
 MASTER_SITES=	http://gcompris.net/download/qt/src/
 
 MAINTAINER=	kde@FreeBSD.org

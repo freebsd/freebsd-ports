@@ -2,7 +2,7 @@
 
 PORTNAME=	kalzium
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	science kde kde-applications
+CATEGORIES=	science education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Periodic table of elements for KDE 4

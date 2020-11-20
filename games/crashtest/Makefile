@@ -4,7 +4,7 @@
 PORTNAME=	crashtest
 PORTVERSION=	1.1
 PORTREVISION=	2
-CATEGORIES=	games
+CATEGORIES=	games education
 MASTER_SITES=	http://www.stolk.org/crashtest/
 
 MAINTAINER=	amdmi3@FreeBSD.org

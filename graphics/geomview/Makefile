@@ -4,7 +4,7 @@
 PORTNAME=	geomview
 PORTVERSION=	1.9.5
 PORTREVISION=	3
-CATEGORIES=	graphics
+CATEGORIES=	graphics education
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org

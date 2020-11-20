@@ -3,7 +3,7 @@
 
 PORTNAME=	elfkickers
 PORTVERSION=	3.1
-CATEGORIES=	devel sysutils
+CATEGORIES=	devel education sysutils
 MASTER_SITES=	http://www.muppetlabs.com/~breadbox/pub/software/
 DISTNAME=	ELFkickers-${PORTVERSION}
 

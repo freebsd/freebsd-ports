@@ -10,6 +10,19 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20201120:
+AUTHOR: pauamma@gundo.com
+
+  New virtual category: education.
+
+  This category comprises ports that are mainly educational in nature or
+  purpose, such as:
+  * course-writing or course-delivery applications,
+  * classroom or school management applications (eg, scheduling classes),
+  * applications, utilities, or games primarily or substantially designed 
+    to help the user learn a specific topic or study in general, like typing 
+    tutors, flashcard applications, or educational games.
+
 20201110:
 AUTHOR: bapt@FreeBSD.org
 
@@ -3719,7 +3732,7 @@ listed here, and it only starts on January 29, 2004.
 
 Copyright information:
 
-Copyright 2004-2019 FreeBSD Foundation All Rights Reserved.
+Copyright 2004-2020 FreeBSD Foundation All Rights Reserved.
 
 Redistribution, publication, translation and use, with or without
 modification, in full or in part, in any form or format of this

@@ -4,7 +4,7 @@
 PORTNAME=	slimeforest
 PORTVERSION=	158
 PORTREVISION=	0
-CATEGORIES=	japanese games linux
+CATEGORIES=	japanese education games linux
 MASTER_SITES=	http://nivit.altervista.org/FreeBSD/ports/distfiles/${DIST_SUBDIR}/ \
 		http://lrnj.com/
 DISTNAME=	sfa

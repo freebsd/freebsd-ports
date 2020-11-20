@@ -4,7 +4,7 @@
 PORTNAME=	docear
 PORTVERSION=	1.2.0
 _suffix=	_stable
-CATEGORIES=	deskutils java
+CATEGORIES=	deskutils education java
 MASTER_SITES=	http://docear.org/downloads/${PORTVERSION}${_suffix}/ \
 		SF/docear/1.x/${PORTVERSION}${_suffix} \
 		LOCAL/mandree/${DIST_SUBDIR}/

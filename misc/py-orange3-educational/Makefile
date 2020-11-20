@@ -3,7 +3,7 @@
 PORTNAME=	orange3-educational
 DISTVERSION=	0.1.8
 PORTREVISION=	3
-CATEGORIES=	misc python
+CATEGORIES=	misc education python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org

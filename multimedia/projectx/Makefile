@@ -4,7 +4,7 @@
 PORTNAME=	projectx
 PORTVERSION=	0.91.0
 PORTREVISION=	1
-CATEGORIES=	multimedia java
+CATEGORIES=	multimedia education java
 MASTER_SITES=	SF/project-x/project-x/ProjectX_${PORTVERSION}.00
 DISTNAME=	ProjectX_${PORTVERSION}
 

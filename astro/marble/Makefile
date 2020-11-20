@@ -3,7 +3,7 @@
 PORTNAME=	marble
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 PORTREVISION=	1
-CATEGORIES=	astro kde kde-applications
+CATEGORIES=	astro education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual globe and world atlas for KDE

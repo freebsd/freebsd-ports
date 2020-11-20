@@ -4,7 +4,7 @@
 PORTNAME=	anki
 DISTVERSION=	2.1.35
 # Don't forget to update ${_MY_BUILDHASH}
-CATEGORIES=	games python
+CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:npmcache
 DISTFILES=	anki-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
 DIST_SUBDIR=	python

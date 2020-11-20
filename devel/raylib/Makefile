@@ -3,7 +3,7 @@
 PORTNAME=	raylib
 DISTVERSION=	3.0.0
 PORTREVISION=	1
-CATEGORIES=	devel
+CATEGORIES=	devel education
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Library to learn videogames programming

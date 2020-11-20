@@ -3,7 +3,7 @@
 PORTNAME=	fisicalab
 PORTVERSION=	0.3.3
 PORTREVISION=	11
-CATEGORIES=	science gnustep
+CATEGORIES=	science education gnustep
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org

@@ -4,7 +4,7 @@
 PORTNAME=	nightfall
 PORTVERSION=	1.86
 PORTREVISION=	9
-CATEGORIES=	astro
+CATEGORIES=	astro education
 MASTER_SITES=	http://www.la-samhna.de/nightfall/
 
 MAINTAINER=	ports@FreeBSD.org

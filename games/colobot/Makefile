@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	${PORTNAME}-gold-
 DISTVERSION=	0.1.12
 DISTVERSIONSUFFIX=	-alpha
 PORTREVISION=	6
-CATEGORIES=	games
+CATEGORIES=	games education
 MASTER_SITES=	https://colobot.info/files/music/:music
 DISTFILES=	colobot-music_ogg_0.1.12-alpha.tar.gz:music
 

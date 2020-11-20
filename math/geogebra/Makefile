@@ -3,7 +3,7 @@
 
 PORTNAME=	geogebra
 PORTVERSION=	5.0.580.0
-CATEGORIES=	math java
+CATEGORIES=	math education java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/ \
 		https://static.geogebra.org/images/ \
 		http://freebsd.uzsolt.hu/src/
