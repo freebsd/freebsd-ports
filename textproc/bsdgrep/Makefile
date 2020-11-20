@@ -19,7 +19,8 @@ USES=	uidfix
 MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		MANDIR="${MANPREFIX}/man/man" \
 		CATDIR="${MANPREFIX}/man/man" \
-		NLSDIR="${PREFIX}/share/nls"
+		NLSDIR="${PREFIX}/share/nls" \
+		WITHOUT_TESTS=yes
 CFLAGS+=	-std=gnu99
 
 OPTIONS_DEFINE=	GNU_COMPAT NLS
@@ -38,6 +39,6 @@ pre-install-NLS-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/nls/gl_ES.ISO8859-1
 
 post-install:
-	${LN} -sf ${PREFIX}/bin/grep ${STAGEDIR}${PREFIX}/bin/bsdgrep
+	${RLN} ${STAGEDIR}${PREFIX}/bin/grep ${STAGEDIR}${PREFIX}/bin/bsdgrep
 
 .include <bsd.port.mk>

@@ -1,10 +1,11 @@
 --- Makefile.orig	2017-10-19 20:07:52 UTC
 +++ Makefile
-@@ -2,31 +2,13 @@
+@@ -2,31 +2,14 @@
  #	$FreeBSD: head/usr.bin/grep/Makefile 322515 2017-08-14 19:21:37Z ngie $
  #	$OpenBSD: Makefile,v 1.6 2003/06/25 15:00:04 millert Exp $
  
 -.include <src.opts.mk>
++.include <bsd.opts.mk>
 -
 -.if ${MK_BSD_GREP} == "yes"
  PROG=	grep
