@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kim-api
-DISTVERSION=	2.1.3
+DISTVERSION=	2.2.0
 CATEGORIES=	science
 MASTER_SITES=	https://s3.openkim.org/kim-api/
 
@@ -15,5 +15,9 @@ BUILD_DEPENDS=	xxd:editors/vim-console
 
 USES=		cmake:noninja fortran tar:txz
 USE_LDCONFIG=	yes
+
+post-install:
+	${REINPLACE_CMD} -i '' -e 's|#!/bin/bash|#!/bin/sh|' ${STAGEDIR}${PREFIX}/bin/kim-api-collections-management
+	${RM} -r ${STAGEDIR}${PREFIX}/share/doc
 
 .include <bsd.port.mk>
