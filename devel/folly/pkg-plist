@@ -628,6 +628,7 @@ include/folly/portability/Windows.h
 include/folly/python/AsyncioExecutor.h
 include/folly/python/async_generator.h
 include/folly/python/coro.h
+include/folly/python/executor.h
 include/folly/python/futures.h
 include/folly/python/iobuf.h
 include/folly/small_vector.h
