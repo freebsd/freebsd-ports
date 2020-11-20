@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	perkeep
-DISTVERSION=	0.10.20190926
-PORTREVISION=	1
+DISTVERSION=	0.11
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		go:modules
 USE_GITHUB=	yes
-GH_TAGNAME=	d342b0e # master branch doesn't contain 0.10
 
 GO_TARGET=	${EXES:S/^/.\/cmd\//}
 
