@@ -1,4 +1,4 @@
---- Makefile.orig	2020-07-09 15:39:17 UTC
+--- Makefile.orig	2020-11-12 12:03:45 UTC
 +++ Makefile
 @@ -138,7 +138,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
  OVERWRITE=y
@@ -45,8 +45,8 @@
  	"$(ASTDATADIR)/firmware/iax" "$(ASTDATADIR)/images" "$(ASTDATADIR)/keys" \
  	"$(ASTDATADIR)/phoneprov" "$(ASTDATADIR)/rest-api" "$(ASTDATADIR)/static-http" \
  	"$(ASTDATADIR)/sounds" "$(ASTDATADIR)/moh" "$(ASTMANDIR)/man8" "$(AGI_DIR)" "$(ASTDBDIR)" \
--	"$(ASTDATADIR)/third-party"
-+	"$(ASTDATADIR)/third-party" "$(ASTSPOOLDIR)/outgoing"
+-	"$(ASTDATADIR)/third-party" "${ASTDATADIR}/keys/stir_shaken"
++	"$(ASTDATADIR)/third-party" "${ASTDATADIR}/keys/stir_shaken" "$(ASTSPOOLDIR)/outgoing"
  
  installdirs:
  	@for i in $(INSTALLDIRS); do \
@@ -93,7 +93,7 @@
 -		fi ; \
  		echo "Installing file $$x"; \
 -		$(INSTALL) -m 644 "$$x" "$${dst}" ;\
-+		 $(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`.sample ; \
++		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`$(BASENAME) $$x .sample`.sample ; \
  	done ; \
 -	if [ "$(OVERWRITE)" = "y" ]; then \
 +	if true; then \
