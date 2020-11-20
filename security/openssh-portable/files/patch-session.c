@@ -13,8 +13,8 @@ to the child process.
 Reviewed by:    ache
 Sponsored by:   DARPA, NAI Labs
 
---- session.c.orig	2020-02-13 16:40:54.000000000 -0800
-+++ session.c	2020-03-23 16:01:07.583958000 -0700
+--- session.c.orig	2020-09-27 00:25:01.000000000 -0700
++++ session.c	2020-11-19 14:41:50.745308000 -0800
 @@ -946,7 +946,7 @@ read_etc_default_login(char ***env, u_int *envsize, ui
  }
  #endif /* HAVE_ETC_DEFAULT_LOGIN */
@@ -58,7 +58,16 @@ Sponsored by:   DARPA, NAI Labs
  	if (s->term)
  		child_set_env(&env, &envsize, "TERM", s->term);
  	if (s->display)
-@@ -1369,7 +1387,7 @@ do_setusercontext(struct passwd *pw)
+@@ -1285,7 +1303,7 @@ do_nologin(struct passwd *pw)
+ #ifdef HAVE_LOGIN_CAP
+ 	if (login_getcapbool(lc, "ignorenologin", 0) || pw->pw_uid == 0)
+ 		return;
+-	nl = login_getcapstr(lc, "nologin", def_nl, def_nl);
++	nl = (char*)login_getcapstr(lc, "nologin", def_nl, def_nl);
+ #else
+ 	if (pw->pw_uid == 0)
+ 		return;
+@@ -1373,7 +1391,7 @@ do_setusercontext(struct passwd *pw)
  	if (platform_privileged_uidswap()) {
  #ifdef HAVE_LOGIN_CAP
  		if (setusercontext(lc, pw, pw->pw_uid,
