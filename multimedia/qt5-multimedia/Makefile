@@ -2,6 +2,7 @@
 
 PORTNAME=	multimedia
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt5-
 
@@ -17,7 +18,6 @@ USE_GNOME=	glib20
 USE_QT=		core declarative gui network opengl widgets \
 		buildtools_build
 USE_XORG=	x11 xext xv
-USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 QT_CONFIG=	xlib
 

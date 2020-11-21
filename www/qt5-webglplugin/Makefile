@@ -2,6 +2,7 @@
 
 PORTNAME=	webglplugin
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -16,6 +17,5 @@ USE_GL=		gl
 USE_GNOME=	glib20
 USE_QT=		core dbus declarative gui network webchannel websockets \
 		buildtools_build
-USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 .include <bsd.port.mk>

@@ -2,6 +2,7 @@
 
 PORTNAME=	quickcontrols2
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
@@ -14,6 +15,5 @@ USES=		compiler:c++11-lang qmake:norecursive qt-dist:5
 USE_QT=		core declarative gui widgets \
 		buildtools_build
 QT_DIST=	${PORTNAME}
-USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 .include <bsd.port.mk>

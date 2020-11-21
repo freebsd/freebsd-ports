@@ -2,6 +2,7 @@
 
 PORTNAME=	network
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMEPREFIX=	qt5-
 
@@ -14,7 +15,6 @@ USES=		compiler:c++11-lang qmake:no_env qt-dist:5,base ssl
 USE_QT=		core buildtools_build
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-no-gui -no-xcb
-USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}

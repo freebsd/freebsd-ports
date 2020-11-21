@@ -2,6 +2,7 @@
 
 PORTNAME=	designer
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt5-
 
@@ -11,7 +12,6 @@ COMMENT=	Qt 5 graphical user interface designer
 USES=		compiler:c++11-lang qmake qt-dist:5,tools
 USE_QT=		assistant_run core declarative gui network printsupport uiplugin \
 		widgets xml buildtools_build
-USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 DESKTOP_ENTRIES="Qt 5 Designer" "" \
 		"${PREFIX}/share/pixmaps/designer-qt5.png" \

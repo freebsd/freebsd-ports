@@ -2,6 +2,7 @@
 
 PORTNAME=	webview
 DISTVERSION=	${QT5_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -12,7 +13,6 @@ USES=		compiler:c++11-lang gl qmake:norecursive qt-dist:5
 USE_GL=		gl
 USE_QT=		core declarative gui location network webchannel \
 		buildtools_build
-USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 .include <bsd.port.pre.mk>
 
