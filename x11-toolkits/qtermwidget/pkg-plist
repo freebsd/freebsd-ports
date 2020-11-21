@@ -1,5 +1,6 @@
 include/qtermwidget5/Emulation.h
 include/qtermwidget5/Filter.h
+include/qtermwidget5/KeyboardTranslator.h
 include/qtermwidget5/qtermwidget.h
 include/qtermwidget5/qtermwidget_export.h
 include/qtermwidget5/qtermwidget_version.h
@@ -56,7 +57,9 @@ libdata/pkgconfig/qtermwidget5.pc
 %%DATADIR%%5/translations/qtermwidget_fr.qm
 %%DATADIR%%5/translations/qtermwidget_gl.qm
 %%DATADIR%%5/translations/qtermwidget_he.qm
+%%DATADIR%%5/translations/qtermwidget_hr.qm
 %%DATADIR%%5/translations/qtermwidget_hu.qm
+%%DATADIR%%5/translations/qtermwidget_it.qm
 %%DATADIR%%5/translations/qtermwidget_ja.qm
 %%DATADIR%%5/translations/qtermwidget_lt.qm
 %%DATADIR%%5/translations/qtermwidget_nb_NO.qm
