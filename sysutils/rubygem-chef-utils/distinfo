@@ -1,3 +1,3 @@
-TIMESTAMP = 1599376074
-SHA256 (rubygem/chef-utils-16.4.41.gem) = 62de1e745612b071e0f84c6a1c5c68744571146a438d1deb6565c266bfd6fe2e
-SIZE (rubygem/chef-utils-16.4.41.gem) = 30208
+TIMESTAMP = 1605901804
+SHA256 (rubygem/chef-utils-16.6.14.gem) = b41922fd8121018fb17d64c07551cc91bd6f856eb29cf32d161485353bd5887e
+SIZE (rubygem/chef-utils-16.6.14.gem) = 31744
