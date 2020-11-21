@@ -1,3 +1,4 @@
+etc/rc.d/rshim
 sbin/rshim
 share/doc/rshim/README.md
 man/man8/rshim.8.gz
