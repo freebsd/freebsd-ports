@@ -1,6 +1,7 @@
 bin/qtxdg-mat
 %%QT_INCDIR%%xdg/XdgAction
 %%QT_INCDIR%%xdg/XdgAutoStart
+%%QT_INCDIR%%xdg/XdgDefaultApps
 %%QT_INCDIR%%xdg/XdgDesktopFile
 %%QT_INCDIR%%xdg/XdgDirs
 %%QT_INCDIR%%xdg/XdgIcon
@@ -11,6 +12,7 @@ bin/qtxdg-mat
 %%QT_INCDIR%%xdg/XmlHelper
 %%QT_INCDIR%%xdg/xdgaction.h
 %%QT_INCDIR%%xdg/xdgautostart.h
+%%QT_INCDIR%%xdg/xdgdefaultapps.h
 %%QT_INCDIR%%xdg/xdgdesktopfile.h
 %%QT_INCDIR%%xdg/xdgdirs.h
 %%QT_INCDIR%%xdg/xdgicon.h
