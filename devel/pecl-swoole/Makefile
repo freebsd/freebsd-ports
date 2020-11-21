@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swoole
-PORTVERSION=	4.5.7
+PORTVERSION=	4.5.8
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
