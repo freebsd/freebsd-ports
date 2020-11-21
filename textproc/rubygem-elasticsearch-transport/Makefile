@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch-transport
-PORTVERSION=	7.9.0
+PORTVERSION=	7.10.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
