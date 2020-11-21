@@ -3,6 +3,7 @@
 
 PORTNAME=	urjtag
 DISTVERSION=	2019.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -37,10 +38,10 @@ NLS_USES=			gettext
 NLS_CONFIGURE_ENABLE=		nls
 
 PYTHON_CONFIGURE_ENABLE=	python
-PYTHON_BROKEN=			ld: error: unable to find library -l-Wl,-rpath
+PYTHON_BROKEN=			ld: error: unable to find library -l-Wl,-rpath # see https://sourceforge.net/p/urjtag/bugs/132/
 
 USB_DESC=			USB JTAG adapters support
-USB_CONFIGURE_ON=		--with-libusb=/usr
+#USB_CONFIGURE_ON=		--with-libusb=/usr # causes libusb to not be recognized: https://sourceforge.net/p/urjtag/bugs/133/
 USB_CONFIGURE_OFF=		--without-libusb
 
 .include <bsd.port.mk>
