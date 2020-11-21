@@ -44,6 +44,7 @@ share/desktop-directories/lxqt-settings.directory
 %%LXQT_TRANSLATIONS%%/lxqt-panel/colorpicker/colorpicker_hu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/colorpicker/colorpicker_ja.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/colorpicker/colorpicker_nb_NO.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/colorpicker/colorpicker_nl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/colorpicker/colorpicker_pl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/colorpicker/colorpicker_pt_BR.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/colorpicker/colorpicker_ru.qm
@@ -339,6 +340,8 @@ share/desktop-directories/lxqt-settings.directory
 %%LXQT_TRANSLATIONS%%/lxqt-panel/quicklaunch/quicklaunch_fi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/quicklaunch/quicklaunch_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/quicklaunch/quicklaunch_gl.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/quicklaunch/quicklaunch_he.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/quicklaunch/quicklaunch_hr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/quicklaunch/quicklaunch_hu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/quicklaunch/quicklaunch_ia.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/quicklaunch/quicklaunch_id.qm
@@ -442,9 +445,12 @@ share/desktop-directories/lxqt-settings.directory
 %%LXQT_TRANSLATIONS%%/lxqt-panel/statusnotifier/statusnotifier_da.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/statusnotifier/statusnotifier_de.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/statusnotifier/statusnotifier_gl.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/statusnotifier/statusnotifier_he.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/statusnotifier/statusnotifier_hu.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/statusnotifier/statusnotifier_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/statusnotifier/statusnotifier_ja.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/statusnotifier/statusnotifier_nb_NO.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/statusnotifier/statusnotifier_nl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/statusnotifier/statusnotifier_pl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/statusnotifier/statusnotifier_sk_SK.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/statusnotifier/statusnotifier_tr.qm
@@ -460,6 +466,7 @@ share/desktop-directories/lxqt-settings.directory
 %%LXQT_TRANSLATIONS%%/lxqt-panel/sysstat/sysstat_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/sysstat/sysstat_gl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/sysstat/sysstat_he.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/sysstat/sysstat_hr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/sysstat/sysstat_hu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/sysstat/sysstat_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/sysstat/sysstat_it.qm
@@ -526,10 +533,14 @@ share/desktop-directories/lxqt-settings.directory
 %%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_de.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_gl.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_he.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_hr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_hu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_id.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_ja.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_nb_NO.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_nl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_pl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_pt_BR.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/tray/tray_ru_RU.qm
@@ -586,6 +597,7 @@ share/desktop-directories/lxqt-settings.directory
 %%LXQT_TRANSLATIONS%%/lxqt-panel/worldclock/worldclock_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/worldclock/worldclock_gl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/worldclock/worldclock_he.qm
+%%LXQT_TRANSLATIONS%%/lxqt-panel/worldclock/worldclock_hr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/worldclock/worldclock_hu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/worldclock/worldclock_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-panel/worldclock/worldclock_it.qm
