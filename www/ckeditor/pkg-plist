@@ -157,7 +157,6 @@
 %%WWWDIR%%/plugins/exportpdf/CHANGELOG.md
 %%WWWDIR%%/plugins/exportpdf/LICENSE.md
 %%WWWDIR%%/plugins/exportpdf/README.md
-%%WWWDIR%%/plugins/exportpdf/package.json
 %%WWWDIR%%/plugins/exportpdf/plugindefinition.js
 %%WWWDIR%%/plugins/exportpdf/tests/_helpers/tools.js
 %%WWWDIR%%/plugins/exportpdf/tests/authentication.js
