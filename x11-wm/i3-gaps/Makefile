@@ -29,7 +29,7 @@ RUN_DEPENDS=	p5-AnyEvent-I3>=0:devel/p5-AnyEvent-I3 \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 
-USES=		compiler:c11 gettext-runtime gmake gnome iconv localbase:ldflags \
+USES=		compiler:c11 gettext-runtime gnome iconv localbase:ldflags \
 		meson perl5 pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	Airblader
