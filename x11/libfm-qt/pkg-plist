@@ -59,6 +59,7 @@ include/libfm-qt/dnddest.h
 include/libfm-qt/editbookmarksdialog.h
 include/libfm-qt/execfiledialog_p.h
 include/libfm-qt/filedialog.h
+include/libfm-qt/filedialog_p.h
 include/libfm-qt/filedialoghelper.h
 include/libfm-qt/filelauncher.h
 include/libfm-qt/filemenu.h
@@ -96,8 +97,8 @@ include/libfm-qt/utilities.h
 include/libfm-qt/utilities_p.h
 include/libfm-qt/xdndworkaround.h
 lib/libfm-qt.so
-lib/libfm-qt.so.7
-lib/libfm-qt.so.7.0.0
+lib/libfm-qt.so.8
+lib/libfm-qt.so.8.0.0
 libdata/pkgconfig/libfm-qt.pc
 share/cmake/fm-qt/fm-qt-config-version.cmake
 share/cmake/fm-qt/fm-qt-config.cmake
@@ -119,10 +120,12 @@ share/cmake/fm-qt/fm-qt-targets.cmake
 %%DATADIR%%/translations/libfm-qt_fr.qm
 %%DATADIR%%/translations/libfm-qt_gl.qm
 %%DATADIR%%/translations/libfm-qt_he.qm
+%%DATADIR%%/translations/libfm-qt_hr.qm
 %%DATADIR%%/translations/libfm-qt_hu.qm
 %%DATADIR%%/translations/libfm-qt_id.qm
 %%DATADIR%%/translations/libfm-qt_it.qm
 %%DATADIR%%/translations/libfm-qt_ja.qm
+%%DATADIR%%/translations/libfm-qt_ko.qm
 %%DATADIR%%/translations/libfm-qt_lt.qm
 %%DATADIR%%/translations/libfm-qt_nb_NO.qm
 %%DATADIR%%/translations/libfm-qt_nl.qm
