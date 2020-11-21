@@ -12,8 +12,9 @@ COMMENT=	Automatic 3D tetrahedral mesh generator
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	relies on rdtsc() call and the TSC is specific to x86
+ONLY_FOR_ARCHS=		amd64 # i386
+ONLY_FOR_ARCHS_REASON=	relies on rdtsc() call and the TSC is specific to x86 \
+			and pkg-fallout@ reports build errors with i386.
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		git:devel/git
