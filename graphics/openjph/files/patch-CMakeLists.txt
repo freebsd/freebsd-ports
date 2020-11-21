@@ -28,6 +28,19 @@
  )
  
  if (OJPH_DISABLE_INTEL_SIMD)
+@@ -69,10 +66,10 @@ set_target_properties(openjph
+     OUTPUT_NAME "openjph"
+ )
+ 
+-if (OPENJPH_VERSION AND CMAKE_SYSTEM_NAME MATCHES "Linux")
++if (OPENJPH_VERSION AND CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+   set_target_properties(openjph
+     PROPERTIES
+-      SOVERSION "${OPENJPH_VERSION_MAJOR}.${OPENJPH_VERSION_MINOR}")
++      SOVERSION "${OPENJPH_VERSION_MAJOR}.${OPENJPH_VERSION_MINOR}.${OPENJPH_VERSION_PATCH}")
+ endif()
+ 
+ if (MSVC)
 @@ -107,6 +104,6 @@ INSTALL (DIRECTORY src/core/common/
    FILES_MATCHING
    PATTERN "*.h")

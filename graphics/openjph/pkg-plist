@@ -11,4 +11,5 @@ include/openjph/ojph_message.h
 include/openjph/ojph_params.h
 include/openjph/ojph_version.h
 lib/libopenjph.so
+lib/libopenjph.so.%%PORTVERSION%%
 libdata/pkgconfig/openjph.pc
