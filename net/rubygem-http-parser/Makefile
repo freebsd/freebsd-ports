@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	http-parser
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	Super fast http parser for Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-ffi-compiler>=1.0<2.0:devel/rubygem-ffi-compiler
+RUN_DEPENDS=	rubygem-ffi-compiler>=0:devel/rubygem-ffi-compiler
 
 USES=		gem
 USE_RUBY=	yes
