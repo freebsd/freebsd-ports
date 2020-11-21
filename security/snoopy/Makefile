@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	snoopy
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.8
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/a2o/snoopy/releases/download/snoopy-${PORTVERSION}/
 
