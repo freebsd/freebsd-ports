@@ -2,7 +2,7 @@
 
 PORTNAME=	onedrive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.5
+DISTVERSION=	2.4.7
 CATEGORIES=	net
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com
