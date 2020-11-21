@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	traefik
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/riggs/${PORTNAME}
 
@@ -32,7 +32,7 @@ PLIST_FILES=	bin/traefik \
 		"@sample etc/traefik.yml.sample"
 
 # Preparing the vendor dir for a self-contained tarball now works by just
-# running 'go mod vendor' as a user and bundling the resulting
+# running 'go generate && go mod vendor' as a user and bundling the resulting
 # ${WRKSRC}/vendor directory.
 # Building the UI with node + yarn is no longer necessary.
 
