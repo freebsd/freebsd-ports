@@ -1,3 +1,3 @@
-TIMESTAMP = 1588435842
-SHA256 (lxqt/lxqt-openssh-askpass-0.15.0.tar.xz) = 5371e955b18494eaa342c9ccfc7ef64b38af4c78514bdcdc4c81a017898416c1
-SIZE (lxqt/lxqt-openssh-askpass-0.15.0.tar.xz) = 17032
+TIMESTAMP = 1605365246
+SHA256 (lxqt/lxqt-openssh-askpass-0.16.0.tar.xz) = 99f686302e2be457b82ba3444ef36613361a32335f0c44e894835a11a5d22046
+SIZE (lxqt/lxqt-openssh-askpass-0.16.0.tar.xz) = 17160

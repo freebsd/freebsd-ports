@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxqt-openssh-askpass
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 CATEGORIES=	security
 MASTER_SITES=	LXQT
 
