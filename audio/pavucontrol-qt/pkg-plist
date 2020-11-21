@@ -17,6 +17,7 @@ share/applications/pavucontrol-qt.desktop
 %%DATADIR%%/translations/pavucontrol-qt_gu.qm
 %%DATADIR%%/translations/pavucontrol-qt_he.qm
 %%DATADIR%%/translations/pavucontrol-qt_hi.qm
+%%DATADIR%%/translations/pavucontrol-qt_hr.qm
 %%DATADIR%%/translations/pavucontrol-qt_hu.qm
 %%DATADIR%%/translations/pavucontrol-qt_id.qm
 %%DATADIR%%/translations/pavucontrol-qt_it.qm
