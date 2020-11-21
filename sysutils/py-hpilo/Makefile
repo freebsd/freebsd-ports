@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hpilo
-PORTVERSION=	4.4.1
+PORTVERSION=	4.4.2
 PORTREVISION=	0
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,5 +21,13 @@ GH_PROJECT=	python-hpilo
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	RC4_SHA
+
+RC4_SHA_DESC=	Enable RC4-SHA ciphers, for old iLO, but removed from openssl (custom openssl required)
+
+# replace "RC4-SHA:" +  with nothing
+post-patch-RC4_SHA-off:
+	${REINPLACE_CMD} -e 's/"RC4-SHA:" + //g' ${WRKSRC}/hpilo.py
 
 .include <bsd.port.mk>
