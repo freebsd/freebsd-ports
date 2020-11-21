@@ -1,4 +1,4 @@
---- cpustat_p.h.orig	2019-01-30 19:24:29 UTC
+--- cpustat_p.h.orig	2020-11-03 14:45:02 UTC
 +++ cpustat_p.h
 @@ -27,6 +27,9 @@
  #ifndef LIBSYSSTAT__CPU_STAT__PRIVATE__INCLUDED
@@ -10,13 +10,15 @@
  
  #include <QtCore/QObject>
  #include <QtCore/QtGlobal>
-@@ -52,8 +55,13 @@ class CpuStatPrivate : public BaseStatPrivate (public)
+@@ -52,8 +55,15 @@ class CpuStatPrivate : public BaseStatPrivate (public)
      CpuStat::Monitoring monitoring() const;
      void setMonitoring(CpuStat::Monitoring value);
  
 +#ifdef HAVE_SYSCTL_H
 +    ulong minFreq(const QString &source) const;
 +    ulong maxFreq(const QString &source) const;
++    ulong CurrentFreq(void);
++
 +#else
      uint minFreq(const QString &source) const;
      uint maxFreq(const QString &source) const;
@@ -24,7 +26,7 @@
  
  signals:
      void update(float user, float nice, float system, float other);
-@@ -74,12 +82,21 @@ private slots: (private)
+@@ -74,12 +84,21 @@ private slots: (private)
      {
          Values();
  
@@ -46,7 +48,7 @@
  
          void sum();
  
-@@ -89,7 +106,13 @@ private slots: (private)
+@@ -89,7 +108,14 @@ private slots: (private)
  
      CpuStat::Monitoring mMonitoring;
  
@@ -54,6 +56,7 @@
 +    typedef QMap<QString, QPair<ulong, ulong> > Bounds;
 +    int mib0[2];
 +    int mib1[2];
++    int mib2[4];
 +#else
      typedef QMap<QString, QPair<uint, uint> > Bounds;
 +#endif

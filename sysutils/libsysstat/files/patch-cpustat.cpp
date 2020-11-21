@@ -1,6 +1,6 @@
---- cpustat.cpp.orig	2019-01-24 21:43:32 UTC
+--- cpustat.cpp.orig	2020-11-03 14:45:02 UTC
 +++ cpustat.cpp
-@@ -27,11 +27,62 @@
+@@ -27,11 +27,64 @@
  #include <unistd.h>
  
  #include "cpustat.h"
@@ -48,13 +48,15 @@
 +}
 +
 +/* Frequence is in MHz */
-+ulong CurrentFreq(void)
++ulong CpuStatPrivate::CurrentFreq(void)
 +{
 +    ulong freq=0;
 +    size_t len = sizeof(freq);
 +
-+    if (sysctlbyname("dev.cpu.0.freq", &freq, &len, NULL, 0) < 0) // man cpufreq BUGS section all cores have the same frequency.
++    if (sysctl(mib2,4,&freq, &len, NULL, 0) < 0) { // man cpufreq BUGS section all cores have the same frequency.
++	perror("sysctl");
 +        return 0;
++}
 +    else
 +        return freq;
 +
@@ -63,20 +65,22 @@
  CpuStatPrivate::CpuStatPrivate(CpuStat *parent)
      : BaseStatPrivate(parent)
      , mMonitoring(CpuStat::LoadAndFrequency)
-@@ -39,7 +90,11 @@ CpuStatPrivate::CpuStatPrivate(CpuStat *parent)
+@@ -39,7 +92,13 @@ CpuStatPrivate::CpuStatPrivate(CpuStat *parent)
      mSource = defaultSource();
  
      connect(mTimer, SIGNAL(timeout()), SLOT(timeout()));
 -
 +#ifdef HAVE_SYSCTL_H
 +    size_t flen=2;
++    size_t alen=4;
 +    sysctlnametomib("kern.cp_times",mib0,&flen);
 +    sysctlnametomib("kern.cp_time",mib1,&flen);
++    sysctlnametomib("dev.cpu.0.freq",mib2,&alen);
 +#endif
      mUserHz = sysconf(_SC_CLK_TCK);
  
      updateSources();
-@@ -47,6 +102,49 @@ CpuStatPrivate::CpuStatPrivate(CpuStat *parent)
+@@ -47,6 +106,51 @@ CpuStatPrivate::CpuStatPrivate(CpuStat *parent)
  
  void CpuStatPrivate::addSource(const QString &source)
  {
@@ -98,7 +102,6 @@
 +                free(t);
 +                return;
 +            }
-+
 +            while ((tokens = strsep(&t, " ")) != NULL)
 +            {
 +                char *freq;
@@ -117,7 +120,10 @@
 +                        if ((min == 0) || (res < min))
 +                            min = res;
 +                    }
-+                }
++               	if (res + 1 == max)
++			max--;
++		}
++
 +            }
 +
 +            free(t);
@@ -126,7 +132,7 @@
      bool ok;
  
      uint min = readAllFile(qPrintable(QString::fromLatin1("/sys/devices/system/cpu/%1/cpufreq/scaling_min_freq").arg(source))).toUInt(&ok);
-@@ -56,12 +154,27 @@ void CpuStatPrivate::addSource(const QString &source)
+@@ -56,12 +160,27 @@ void CpuStatPrivate::addSource(const QString &source)
          if (ok)
              mBounds[source] = qMakePair(min, max);
      }
@@ -154,7 +160,7 @@
      const QStringList rows = readAllFile("/proc/stat").split(QLatin1Char('\n'), QString::SkipEmptyParts);
      for (const QString &row : rows)
      {
-@@ -99,6 +212,7 @@ void CpuStatPrivate::updateSources()
+@@ -99,6 +218,7 @@ void CpuStatPrivate::updateSources()
                  addSource(QString::fromLatin1("cpu%1").arg(number));
          }
      }
@@ -162,7 +168,7 @@
  }
  
  CpuStatPrivate::~CpuStatPrivate()
-@@ -127,6 +241,88 @@ void CpuStatPrivate::recalculateMinMax()
+@@ -127,6 +247,107 @@ void CpuStatPrivate::recalculateMinMax()
  
  void CpuStatPrivate::timeout()
  {
@@ -193,28 +199,47 @@
 +                current.total = current.user + current.nice + current.system+current.idle+current.other;
 +
 +                float sumDelta = static_cast<float>(current.total - mPrevious.total);
-+
 +                if ((mPrevious.total != 0) && ((sumDelta < mIntervalMin) || (sumDelta > mIntervalMax)))
 +                {
-+                    if (mMonitoring == CpuStat::LoadAndFrequency)
-+                        emit update(0.0, 0.0, 0.0, 0.0, 0.0, 0);
-+                    else
++                    if (mMonitoring == CpuStat::LoadAndFrequency) 
++		    {
++                        float freqRate = 1.0;
++                        ulong freq = CurrentFreq();
++				
++                        if (freq > 0)
++                       	{
++			if (mSource == QLatin1String("cpu"))
++				mSource = QLatin1String("cpu0");
++			//do not report more than 100%
++                	if (freq > mBounds[mSource].second) {
++				freq = mBounds[mSource].second;
++			}
++                        freqRate = static_cast<float>(freq) / static_cast<float>(mBounds[mSource].second);
++                        emit update(0.0, 0.0, 0.0, 0.0, static_cast<float>(freqRate), freq);
++			}
++	            }
++                    else {
 +                        emit update(0.0, 0.0, 0.0, 0.0);
-+
++			 }
 +                    mPrevious.clear();
 +                }
 +                else
++
 +                {
 +                    if (mMonitoring == CpuStat::LoadAndFrequency)
 +                    {
 +                        float freqRate = 1.0;
 +                        ulong freq = CurrentFreq();
++				
 +                        if (freq > 0)
 +                        {
-+                            if(mSource==QLatin1String("cpu"))
-+                                freqRate = static_cast<float>(freq) / static_cast<float>(mBounds[QStringLiteral("cpu0")].second);// use max cpu0 for this case
-+                            else
-+                                freqRate = static_cast<float>(freq) / static_cast<float>(mBounds[mSource].second);
++			if (mSource == QLatin1String("cpu"))
++				mSource = QLatin1String("cpu0");
++			//do not report more than 100%
++                	if (freq > mBounds[mSource].second) {
++				freq = mBounds[mSource].second;
++			}
++                        freqRate = static_cast<float>(freq) / static_cast<float>(mBounds[mSource].second);
 +                           emit update(
 +                               static_cast<float>(current.user   - mPrevious.user  ) / sumDelta,
 +                               static_cast<float>(current.nice   - mPrevious.nice  ) / sumDelta,
@@ -251,7 +276,16 @@
      if ( (mMonitoring == CpuStat::LoadOnly)
        || (mMonitoring == CpuStat::LoadAndFrequency) )
      {
-@@ -261,6 +457,7 @@ void CpuStatPrivate::timeout()
+@@ -229,7 +450,7 @@ void CpuStatPrivate::timeout()
+                     mPrevious = current;
+                 }
+             }
+-        }
++        //}
+     }
+     else
+     {
+@@ -261,6 +482,7 @@ void CpuStatPrivate::timeout()
          }
          emit update(freq);
      }
