@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	radcli
-PORTVERSION=	1.2.12
+PORTVERSION=	1.3.0
 MASTER_SITES=	https://github.com/radcli/radcli/releases/download/${PORTVERSION}/
 CATEGORIES=	net
 

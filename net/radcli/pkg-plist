@@ -6,8 +6,8 @@ include/radcli/radcli.h
 include/radcli/version.h
 lib/libradcli.a
 lib/libradcli.so
-lib/libradcli.so.4
-lib/libradcli.so.4.3.0
+lib/libradcli.so.5
+lib/libradcli.so.5.3.0
 libdata/pkgconfig/radcli.pc
 man/man3/radcli.h.3.gz
 man/man3/rc_aaa.3.gz
