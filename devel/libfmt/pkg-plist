@@ -15,6 +15,6 @@ lib/cmake/fmt/fmt-config.cmake
 lib/cmake/fmt/fmt-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/fmt/fmt-targets.cmake
 lib/libfmt.so
-lib/libfmt.so.%%SHL1%%
-lib/libfmt.so.%%SHL3%%
+lib/libfmt.so.7
+lib/libfmt.so.%%PORTVERSION%%
 libdata/pkgconfig/fmt.pc
