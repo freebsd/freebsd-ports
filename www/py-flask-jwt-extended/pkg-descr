@@ -10,4 +10,4 @@ in to make working with JSON Web Tokens easier. These include:
   - Token revoking/blacklisting
   - Storing tokens in cookies and CSRF protection
 
-WWW: https://github.com/coleifer/flask-peewee
+WWW: https://github.com/vimalloc/flask-jwt-extended
