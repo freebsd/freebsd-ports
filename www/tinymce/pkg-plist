@@ -17,6 +17,8 @@
 %%WWWDIR%%/js/tinymce/plugins/colorpicker/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/contextmenu/plugin.min.js
 %%WWWDIR%%/js/tinymce/plugins/directionality/plugin.min.js
+%%WWWDIR%%/js/tinymce/plugins/emoticons/js/emojiimages.js
+%%WWWDIR%%/js/tinymce/plugins/emoticons/js/emojiimages.min.js
 %%WWWDIR%%/js/tinymce/plugins/emoticons/js/emojis.js
 %%WWWDIR%%/js/tinymce/plugins/emoticons/js/emojis.min.js
 %%WWWDIR%%/js/tinymce/plugins/emoticons/plugin.min.js
@@ -61,12 +63,14 @@
 %%WWWDIR%%/js/tinymce/skins/ui/oxide/fonts/tinymce-mobile.woff
 %%WWWDIR%%/js/tinymce/skins/ui/oxide/skin.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide/skin.mobile.min.css
+%%WWWDIR%%/js/tinymce/skins/ui/oxide/skin.shadowdom.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/content.inline.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/content.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/content.mobile.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/fonts/tinymce-mobile.woff
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/skin.min.css
 %%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/skin.mobile.min.css
+%%WWWDIR%%/js/tinymce/skins/ui/oxide-dark/skin.shadowdom.min.css
 %%WWWDIR%%/js/tinymce/themes/mobile/theme.min.js
 %%WWWDIR%%/js/tinymce/themes/silver/theme.min.js
 %%WWWDIR%%/js/tinymce/tinymce.d.ts
