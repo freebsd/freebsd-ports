@@ -15,6 +15,7 @@ bin/lxsudo
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_gl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_he.qm
+%%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_hr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_hu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_it.qm
