@@ -4,7 +4,7 @@
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
 DISTVERSION=	12.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 PKGNAMESUFFIX=	12
 
@@ -41,7 +41,7 @@ RUN_DEPENDS=	\
 	jq:textproc/jq \
 	flock:sysutils/flock \
 	${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
-	${PYTHON_PKGNAMEPREFIX}prettytable>=0:devel/py-prettytable@${PY_FLAVOR}
+	${PYTHON_PKGNAMEPREFIX}prettytable0>=0:devel/py-prettytable0@${PY_FLAVOR}
 
 CONFLICTS_INSTALL=	ceph-devel
 PORTSCOUT=	limit:^v12\.
