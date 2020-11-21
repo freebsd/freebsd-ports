@@ -27,6 +27,9 @@ USE_PERL5=	configure
 CC=		${CXX}
 CONFIGURE_ARGS=	XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
 
+# later version does not support xapian-core 1.2.x
+PORTSCOUT=	ignore:1
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^if (defined $$builddir) {|if (0) {|' ${WRKSRC}/Makefile.PL
 
