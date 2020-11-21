@@ -1,0 +1,5 @@
+Beziers provides a variety of classes for constructing, manipulating and drawing
+Bezier curves and paths. Principally designed for font design software, it
+allows you to join, split, offset, and perform many other operations on paths.
+
+WWW: https://github.com/simoncozens/beziers.py
