@@ -51,6 +51,11 @@ share/help/cs/devhelp/index-file-format.page
 share/help/cs/devhelp/index.page
 share/help/cs/devhelp/installing-api-documentation.page
 share/help/cs/devhelp/search.page
+share/help/da/devhelp/book-format.page
+share/help/da/devhelp/index-file-format.page
+share/help/da/devhelp/index.page
+share/help/da/devhelp/installing-api-documentation.page
+share/help/da/devhelp/search.page
 share/help/de/devhelp/book-format.page
 share/help/de/devhelp/index-file-format.page
 share/help/de/devhelp/index.page
