@@ -33,6 +33,7 @@ share/kdm/sessions/lxqt.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_gl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_he.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_hr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_hu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_ia.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-session/lxqt-config-session_id.qm
@@ -75,6 +76,7 @@ share/kdm/sessions/lxqt.desktop
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_id.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_it.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_ja.qm
+%%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_ko.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_lt.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_nb_NO.qm
 %%LXQT_TRANSLATIONS%%/lxqt-leave/lxqt-leave_nl.qm
