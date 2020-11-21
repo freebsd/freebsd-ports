@@ -31,7 +31,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		wget:ftp/wget \
 		gpg2:security/gnupg
 
-USES=		python:3.5+
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
