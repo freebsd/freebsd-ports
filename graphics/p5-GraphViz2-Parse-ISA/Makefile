@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphViz2-Parse-ISA
-PORTVERSION=	2.53
+PORTVERSION=	2.54
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Class-Load>=0.23:devel/p5-Class-Load \
-		p5-GraphViz2>=2.48:graphics/p5-GraphViz2 \
+RUN_DEPENDS=	p5-GraphViz2>=2.48:graphics/p5-GraphViz2 \
+		p5-Module-Runtime>=0.016:devel/p5-Module-Runtime \
 		p5-Moo>=2.001001:devel/p5-Moo
 TEST_DEPENDS=	p5-Test-Snapshot>=0.06:devel/p5-Test-Snapshot
 
