@@ -4031,6 +4031,7 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ShapeRectanglePP.js
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ShapeRectanglePP.pro
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ShapeRectanglePP.svg
+%%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ShapeRectanglePP.ui
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/ShapeRectanglePPInit.js
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest00.js
 %%DATADIR%%/scripts/Draw/Shape/ShapeRectanglePP/Tests/ShapeRectanglePPTest01.js
@@ -4215,6 +4216,7 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Text/Tests/Text17.js
 %%DATADIR%%/scripts/Draw/Text/Tests/Text18.js
 %%DATADIR%%/scripts/Draw/Text/Tests/Text19.js
+%%DATADIR%%/scripts/Draw/Text/Tests/Text20.js
 %%DATADIR%%/scripts/Draw/Text/Tests/actual/.gitignore
 %%DATADIR%%/scripts/Draw/Text/Tests/data/text01.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/data/text02.dxf
@@ -4235,6 +4237,7 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Text/Tests/data/text17.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/data/text18.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/data/text19.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/data/text20.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text01_000.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text02_000.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text03_000.dxf
@@ -4269,6 +4272,8 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text18_001.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text19_000.dxf
 %%DATADIR%%/scripts/Draw/Text/Tests/required/Text19_001.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/required/Text20_000.dxf
+%%DATADIR%%/scripts/Draw/Text/Tests/required/Text20_001.dxf
 %%DATADIR%%/scripts/Draw/Text/Text-inverse.svg
 %%DATADIR%%/scripts/Draw/Text/Text.js
 %%DATADIR%%/scripts/Draw/Text/Text.pro
@@ -4442,6 +4447,10 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Edit/AppPreferences/ToolBarPreferences/ToolBarPreferences.js
 %%DATADIR%%/scripts/Edit/AppPreferences/ToolBarPreferences/ToolBarPreferences.pro
 %%DATADIR%%/scripts/Edit/AppPreferences/ToolBarPreferences/ToolBarPreferencesInit.js
+%%DATADIR%%/scripts/Edit/AppPreferences/UiPreferences/PreferencesPage.ui
+%%DATADIR%%/scripts/Edit/AppPreferences/UiPreferences/UiPreferences.js
+%%DATADIR%%/scripts/Edit/AppPreferences/UiPreferences/UiPreferences.pro
+%%DATADIR%%/scripts/Edit/AppPreferences/UiPreferences/UiPreferencesInit.js
 %%DATADIR%%/scripts/Edit/AppPreferences/dir/dir.pro
 %%DATADIR%%/scripts/Edit/AppPreferences/doc/AppPreferences.png
 %%DATADIR%%/scripts/Edit/AppPreferences/doc/AppPreferences_de.html
@@ -7012,10 +7021,12 @@ lib/libstemmer.a
 %%DATADIR%%/scripts/Modify/BreakOutManual/Tests/BreakOutManualTest00.js
 %%DATADIR%%/scripts/Modify/BreakOutManual/Tests/BreakOutManualTest01.js
 %%DATADIR%%/scripts/Modify/BreakOutManual/Tests/BreakOutManualTest02.js
+%%DATADIR%%/scripts/Modify/BreakOutManual/Tests/BreakOutManualTest03.js
 %%DATADIR%%/scripts/Modify/BreakOutManual/Tests/actual/.gitignore
 %%DATADIR%%/scripts/Modify/BreakOutManual/Tests/required/BreakOutManualTest00_000.dxf
 %%DATADIR%%/scripts/Modify/BreakOutManual/Tests/required/BreakOutManualTest01_000.dxf
 %%DATADIR%%/scripts/Modify/BreakOutManual/Tests/required/BreakOutManualTest02_000.dxf
+%%DATADIR%%/scripts/Modify/BreakOutManual/Tests/required/BreakOutManualTest03_000.dxf
 %%DATADIR%%/scripts/Modify/BreakOutManual/doc/BreakOutManual.png
 %%DATADIR%%/scripts/Modify/BreakOutManual/doc/BreakOutManual_de.html
 %%DATADIR%%/scripts/Modify/BreakOutManual/doc/BreakOutManual_desc_de.html
