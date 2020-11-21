@@ -24,10 +24,4 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e '/libcrypto/d' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|endian.h|sys/&|' ${WRKSRC}/CMakeLists.txt ${WRKSRC}/openbsd-compat/openbsd-compat.h
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
