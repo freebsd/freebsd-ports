@@ -1,0 +1,6 @@
+C library for accessing the PostgreSQL parser outside of the server.
+
+This library uses the actual PostgreSQL server source to parse SQL
+queries and return the internal PostgreSQL parse tree.
+
+WWW: https://github.com/lfittl/libpg_query

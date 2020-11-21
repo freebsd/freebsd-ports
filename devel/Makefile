@@ -6107,7 +6107,9 @@
     SUBDIR += rubygem-grape140
     SUBDIR += rubygem-grape_logging
     SUBDIR += rubygem-graphiql-rails
+    SUBDIR += rubygem-graphlient
     SUBDIR += rubygem-graphql
+    SUBDIR += rubygem-graphql-client
     SUBDIR += rubygem-graphql-docs
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-grpc-google-iam-v1
