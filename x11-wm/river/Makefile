@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	river
-PORTVERSION=	s20201119
+PORTVERSION=	s20201121
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,8 +21,8 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 USES=		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	ifreund
-GH_TAGNAME=	7d0014c
-GH_TUPLE=	ifreund:zig-wayland:931b6f7:zig_wayland/deps/zig-wayland
+GH_TAGNAME=	f1e5f1a
+GH_TUPLE=	ifreund:zig-wayland:181f934:zig_wayland/deps/zig-wayland
 CONFIGURE_ARGS=	--prefix "${STAGEDIR}${PREFIX}" \
 		${WITH_DEBUG:U-Drelease-fast=true} \
 		--verbose
