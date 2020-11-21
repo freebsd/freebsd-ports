@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	vctrs
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Vector Helpers
 
-LICENSE=	GPLv3
+LICENSE=	MIT
 
 CRAN_DEPENDS=	R-cran-ellipsis>=0.2.0:devel/R-cran-ellipsis \
 		R-cran-digest>0:security/R-cran-digest \
