@@ -3,7 +3,7 @@
 
 PORTNAME?=	gitlab-ce
 PORTVERSION?=	13.5.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	www devel
 
 MAINTAINER?=	mfechner@FreeBSD.org
@@ -232,7 +232,7 @@ MY_DEPENDS=	git>=2.26:devel/git \
 	rubygem-countries>=3.0.0<4.0.0:devel/rubygem-countries \
 	rubygem-retriable>=3.1.2<3.2.0:devel/rubygem-retriable \
 	rubygem-lru_redux>0:devel/rubygem-lru_redux \
-	rubygem-erubi>=1.9.0<1.10:www/rubygem-erubi \
+	rubygem-erubi19>=1.9.0<1.10:www/rubygem-erubi19 \
 	rubygem-mail>=2.7.1<2.7.2,2:mail/rubygem-mail \
 	rubygem-lockbox>=0.3.3<0.4.0:security/rubygem-lockbox \
 	rubygem-valid_email>=0.1<1:mail/rubygem-valid_email \
