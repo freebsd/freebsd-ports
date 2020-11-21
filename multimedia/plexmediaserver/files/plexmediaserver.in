@@ -56,7 +56,6 @@ plex_precmd()
 	export HOME="${%%PORTNAME%%_support_path}/Plex Media Server"
 	export PYTHONHOME="%%DATADIR%%/Resources/Python"
 	export SCRIPTPATH="%%DATADIR%%"
-	export LD_LIBRARY_PATH="${SCRIPTPATH}/lib"
 	export PLEX_MEDIA_SERVER_HOME="${SCRIPTPATH}"
 	export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=${%%PORTNAME%%_maxplugins}
 	export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=${%%PORTNAME%%_support_path}
