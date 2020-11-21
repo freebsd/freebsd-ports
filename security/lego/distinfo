@@ -1,6 +1,6 @@
-TIMESTAMP = 1599176407
-SHA256 (go-acme-lego-v4.0.1_GH0.tar.gz) = 2b30d231189727b8608001e62b70ce3e1513df1a9766e2d43d5f1c5d1cabecdf
-SIZE (go-acme-lego-v4.0.1_GH0.tar.gz) = 411330
+TIMESTAMP = 1605912765
+SHA256 (go-acme-lego-v4.1.1_GH0.tar.gz) = 4ac467f5dcc593c122baf1fd50939d5fa058f9a25e56bf58362bd59c836041b5
+SIZE (go-acme-lego-v4.1.1_GH0.tar.gz) = 418543
 SHA256 (Azure-azure-sdk-for-go-v32.4.0_GH0.tar.gz) = 3f0824be0fd8bdbe2ea9d39485b8d3d7296465ce65641ce9652491a37d936f96
 SIZE (Azure-azure-sdk-for-go-v32.4.0_GH0.tar.gz) = 17518065
 SHA256 (Azure-go-autorest-2913f263500c_GH0.tar.gz) = e354a5237f2e2f3bbc24fc3547cbdad15af302e65c29dca2455ad3fd79607d50
