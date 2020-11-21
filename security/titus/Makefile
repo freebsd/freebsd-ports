@@ -27,6 +27,10 @@ MAKE_ENV+=	MANDIR=${MANPREFIX}/man
 
 .include <bsd.port.pre.mk>
 
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_11=	Requires OpenSSL 1.1.0+
+.endif
+
 .if ${SSL_DEFAULT} != base
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
