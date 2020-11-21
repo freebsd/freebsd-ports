@@ -21,10 +21,12 @@ share/man/man1/pcmanfm-qt.1.gz
 %%DATADIR%%/translations/pcmanfm-qt_gl.qm
 %%DATADIR%%/translations/pcmanfm-qt_he.qm
 %%DATADIR%%/translations/pcmanfm-qt_hi.qm
+%%DATADIR%%/translations/pcmanfm-qt_hr.qm
 %%DATADIR%%/translations/pcmanfm-qt_hu.qm
 %%DATADIR%%/translations/pcmanfm-qt_id.qm
 %%DATADIR%%/translations/pcmanfm-qt_it.qm
 %%DATADIR%%/translations/pcmanfm-qt_ja.qm
+%%DATADIR%%/translations/pcmanfm-qt_ko.qm
 %%DATADIR%%/translations/pcmanfm-qt_lt.qm
 %%DATADIR%%/translations/pcmanfm-qt_nb_NO.qm
 %%DATADIR%%/translations/pcmanfm-qt_nl.qm
