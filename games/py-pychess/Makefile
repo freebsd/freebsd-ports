@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	pychess
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	games python
 MASTER_SITES=	https://github.com/pychess/pychess/releases/download/${PORTVERSION}/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	GTK chess client written in Python
 
 LICENSE=	GPLv3
