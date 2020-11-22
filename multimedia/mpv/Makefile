@@ -118,7 +118,7 @@ SDL_USE=			SDL=sdl2
 SDL_CONFIGURE_ON=		--enable-sdl2
 
 SIXEL_LIB_DEPENDS=		libsixel.so:graphics/libsixel
-SIXEL_CONFIGURE_ON=		--enable-sixel
+SIXEL_CONFIGURE_OFF=		--disable-sixel
 
 SMB_USES=			samba:lib
 SMB_CONFIGURE_ON=		--enable-libsmbclient
