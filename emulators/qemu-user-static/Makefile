@@ -2,7 +2,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	3.1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-user-static
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -18,7 +18,7 @@ CONFLICTS_INSTALL=	qemu-user-static-devel-[0-9]*
 
 USES=		bison compiler:c11 gmake perl5 pkgconfig python:build
 USE_GITHUB=	yes
-GH_TUPLE=	seanbruno:qemu-bsd-user:4ee077c7906fb	\
+GH_TUPLE=	seanbruno:qemu-bsd-user:6f1319e1138ccb97	\
 		qemu:keycodemapdb:10739aa:keycodemapdb/ui/keycodemapdb
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
@@ -67,16 +67,6 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
 
 QEMU_ARCH=	${ARCH:C/amd64/x86_64/:C/powerpc/ppc/}
 MAKE_ARGS+=	ARCH=${QEMU_ARCH}
-
-post-patch:
-	@${REINPLACE_CMD} -E \
-		-e "s|^(CFLAGS=).*|\1${CFLAGS} -fno-strict-aliasing|" \
-		-e "s|^(LDFLAGS=).*|\1${LDFLAGS}|" \
-		${WRKSRC}/Makefile.target
-	@${REINPLACE_CMD} -E \
-		-e "s|^(CFLAGS=).*|\1${CFLAGS} -fno-strict-aliasing -I.|" \
-		-e "s|^(LDFLAGS=).*|\1${LDFLAGS}|" \
-		${WRKSRC}/Makefile
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/rc.d ${WRKDIR}
