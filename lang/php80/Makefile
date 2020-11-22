@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	php80
-DISTVERSION=	8.0.0RC3
+DISTVERSION=	8.0.0RC5
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=   https://downloads.php.net/~carusogabriel/
