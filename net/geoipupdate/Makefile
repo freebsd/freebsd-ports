@@ -16,19 +16,27 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 RUN_DEPENDS=	ca_root_nss>=3:security/ca_root_nss
 
-USES=		gmake go:no_targets
+USES=		gmake go:modules,no_targets
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
 
-MAKE_ENV+=	GOPATH=${WRKSRC} \
+MAKE_ENV+=	${GO_ENV} \
 		CONFFILE=${PREFIX}/etc/GeoIP.conf \
 		DATADIR=${PREFIX}/share/GeoIP \
 		VERSION=${DISTVERSIONFULL}
 
-GH_SUBDIR=	src/github.com/maxmind/geoipupdate/v4
-GH_TUPLE=	gofrs:flock:v0.8.0:flock/src/github.com/gofrs/flock \
-		pkg:errors:v0.9.1:pkg/src/github.com/pkg/errors \
-		spf13:pflag:v1.0.5:pflag/src/github.com/spf13/pflag
+GH_TUPLE=	\
+		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		go-check:check:038fdea0a05b:go_check_check/vendor/gopkg.in/check.v1 \
+		go-yaml:yaml:eeeca48fe776:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
+		gofrs:flock:v0.8.0:gofrs_flock/vendor/github.com/gofrs/flock \
+		golang:sys:119d4633e4d1:golang_sys/vendor/golang.org/x/sys \
+		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
+		niemeyer:pretty:a10e7caefd8e:niemeyer_pretty/vendor/github.com/niemeyer/pretty \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
+		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
+		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify
 
 OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
@@ -42,9 +50,6 @@ PLIST_FILES=	bin/geoipupdate \
 		'@dir share/GeoIP'
 PORTDOCS=	GeoIP.conf.md geoipupdate.md
 SUB_FILES=	pkg-message
-
-post-extract:
-	${RM} ${WRKSRC}/go.mod
 
 do-build-MANPAGES-on:
 	# lowdown generates everything as section 7

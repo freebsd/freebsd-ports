@@ -1,6 +1,15 @@
---- Makefile.orig	2019-11-07 20:59:07 UTC
+--- Makefile.orig	2020-10-28 21:03:38 UTC
 +++ Makefile
-@@ -57,7 +54,6 @@ $(BUILDDIR)/geoipupdate.md: $(BUILDDIR) doc/geoipupdat
+@@ -41,7 +41,7 @@ $(BUILDDIR):
+ 	mkdir -p $(BUILDDIR)
+ 
+ $(BUILDDIR)/geoipupdate: $(BUILDDIR)
+-	(cd cmd/geoipupdate && go build -ldflags '-X main.defaultConfigFile=$(CONFFILE) -X main.defaultDatabaseDirectory=$(DATADIR) -X "main.version=$(VERSION)"')
++	(cd cmd/geoipupdate && go build -mod=vendor -ldflags '-X main.defaultConfigFile=$(CONFFILE) -X main.defaultDatabaseDirectory=$(DATADIR) -X "main.version=$(VERSION)"')
+ 	cp cmd/geoipupdate/geoipupdate $(BUILDDIR)
+ 
+ $(BUILDDIR)/GeoIP.conf: $(BUILDDIR) conf/GeoIP.conf.default
+@@ -54,7 +54,6 @@ $(BUILDDIR)/geoipupdate.md: $(BUILDDIR) doc/geoipupdat
  	sed -e 's|CONFFILE|$(CONFFILE)|g' -e 's|DATADIR|$(DATADIR)|g' -e 's|$$|$(MAYBE_CR)|g' doc/geoipupdate.md > $(BUILDDIR)/geoipupdate.md
  
  $(BUILDDIR)/GeoIP.conf.5: $(BUILDDIR)/GeoIP.conf.md  $(BUILDDIR)/geoipupdate.md
