@@ -2,7 +2,7 @@
 
 PORTNAME=	signal-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.11
+DISTVERSION=	0.6.12
 CATEGORIES=	net-im java
 MASTER_SITES=	https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/:_jackson_annotations \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.9/:_jackson_core \
@@ -17,13 +17,13 @@ MASTER_SITES=	https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/ja
 		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-posix/3.0.58/:_jnr_posix \
 		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-unixsocket/0.33/:_jnr_unixsocket \
 		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-x86asm/1.0.2/:_jnr_x86asm \
-		https://repo.maven.apache.org/maven2/com/github/turasa/signal-service-java/2.15.3_unofficial_14/:_signal_service_java \
+		https://repo.maven.apache.org/maven2/com/github/turasa/signal-service-java/2.15.3_unofficial_15/:_signal_service_java \
 		https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-javalite/3.10.0/:_protobuf_javalite \
 		https://repo.maven.apache.org/maven2/com/googlecode/libphonenumber/libphonenumber/8.12.6/:_libphonenumber \
 		https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.6.0/:_okhttp \
 		https://repo.maven.apache.org/maven2/com/squareup/okio/okio/2.6.0/:_okio \
 		https://repo.maven.apache.org/maven2/net/sourceforge/argparse4j/argparse4j/0.8.1/:_argparse4j \
-		https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/1.66/:_bcprov_jdk15on \
+		https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/1.67/:_bcprov_jdk15on \
 		https://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/:_annotations \
 		https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.3.71/:_kotlin_stdlib_common \
 		https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.3.71/:_kotlin_stdlib \
@@ -46,7 +46,7 @@ DISTFILES=	annotations-13.0.jar:_annotations \
 		asm-commons-7.1.jar:_asm_commons \
 		asm-tree-7.1.jar:_asm_tree \
 		asm-util-7.1.jar:_asm_util \
-		bcprov-jdk15on-1.66.jar:_bcprov_jdk15on \
+		bcprov-jdk15on-1.67.jar:_bcprov_jdk15on \
 		curve25519-java-0.5.0.jar:_curve25519_java \
 		dbus-java-3.2.3.jar:_dbus_java \
 		jackson-annotations-2.9.0.jar:_jackson_annotations \
@@ -69,7 +69,7 @@ DISTFILES=	annotations-13.0.jar:_annotations \
 		protobuf-javalite-3.10.0.jar:_protobuf_javalite \
 		signal-metadata-java-0.1.2.jar:_signal_metadata_java \
 		signal-protocol-java-2.8.1.jar:_signal_protocol_java \
-		signal-service-java-2.15.3_unofficial_14.jar:_signal_service_java \
+		signal-service-java-2.15.3_unofficial_15.jar:_signal_service_java \
 		slf4j-api-1.7.30.jar:_slf4j_api \
 		slf4j-nop-1.7.30.jar:_slf4j_nop \
 		threetenbp-1.3.6.jar:_threetenbp \
@@ -117,7 +117,8 @@ DBUS_PLIST_FILES=	etc/dbus-1/system.d/org.asamk.Signal.conf \
 			share/dbus-1/services/org.asamk.Signal.service
 
 _GRADLE_CMD=		${LOCALBASE}/bin/gradle
-_GRADLE_ARGS=		-Dorg.gradle.java.home="${JAVA_HOME}" --no-daemon --offline --quiet
+_GRADLE_ARGS=		-Dorg.gradle.java.home="${JAVA_HOME}" --no-daemon \
+			--offline --quiet
 _GRADLE_DEPS_DIR=	${WRKDIR}/gradle-deps
 _ORIGINAL_BUILD_GRADLE=	${WRKSRC}/original-build.gradle
 
