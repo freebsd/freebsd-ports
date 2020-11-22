@@ -27,15 +27,26 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gnome jpeg pkgconfig xorg
 USE_GNOME=	atk atkmm cairo cairomm glibmm gtkmm30 librsvg2
 USE_XORG=	x11
 
+WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
+
 INSTALLS_ICONS=	yes
 
 BB_ACCOUNT=	agriggio
 BB_PROJECT=	art
 BB_COMMIT=	b2d77c8f0080
 
-WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
+.include <bsd.port.pre.mk>
+
+# breaks with llvm-8
+.if ${CHOSEN_COMPILER_TYPE} == clang
+LLVM_VERSION=   10
+BUILD_DEPENDS+=	clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+CC=		clang${LLVM_VERSION}
+CXX=		clang++${LLVM_VERSION}
+CPP=		clang-cpp${LLVM_VERSION}
+.endif
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/doc/ART
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
