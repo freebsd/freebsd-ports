@@ -52,6 +52,9 @@ CONFLICTS_INSTALL?=	rust-nightly
 OPTIONS_DEFINE=		DOCS GDB SOURCES WASM
 OPTIONS_DEFAULT=	SOURCES WASM
 OPTIONS_EXCLUDE=	DOCS # https://github.com/rust-lang/rust/issues/76526
+.if defined(NIGHTLY_DATE)
+OPTIONS_EXCLUDE+=	SOURCES
+.endif
 
 GDB_DESC=	Install ports gdb (necessary for debugging rust programs)
 SOURCES_DESC=	Install source files
