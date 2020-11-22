@@ -21,7 +21,7 @@ USES=		gmake
 CONFLICTS_INSTALL=	luajit
 
 USE_LDCONFIG=	yes
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC=${CC} Q=
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openresty
@@ -41,7 +41,7 @@ USE_GCC=yes
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200000
-MAKE_ARGS+=	XCFLAGS=-DLJ_TARGET_HAS_GETENTROPY=0 Q=
+MAKE_ARGS+=	XCFLAGS=-DLJ_TARGET_HAS_GETENTROPY=0
 .endif
 
 post-install:
