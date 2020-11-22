@@ -1,4 +1,4 @@
---- build/fbcode_builder/CMake/FBThriftLibrary.cmake.orig	2020-09-15 21:55:13 UTC
+--- build/fbcode_builder/CMake/FBThriftLibrary.cmake.orig	2020-11-22 22:29:00 UTC
 +++ build/fbcode_builder/CMake/FBThriftLibrary.cmake
 @@ -43,7 +43,7 @@ function(add_fbthrift_library LIB_NAME THRIFT_FILE)
    set(PY_DEPENDS)

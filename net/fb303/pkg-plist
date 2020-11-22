@@ -46,4 +46,6 @@ lib/cmake/fb303/fb303-config.cmake
 lib/cmake/fb303/fb303-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/fb303/fb303-targets.cmake
 lib/libfb303.so
-lib/libfb303_thrift_cpp.a
+lib/libfb303.so.1.0.0
+lib/libfb303_thrift_cpp.so
+lib/libfb303_thrift_cpp.so.1.0.0
