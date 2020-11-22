@@ -24,7 +24,7 @@ MAKE_ENV+=	CROSS_COMPILE="aarch64-none-elf-"
 ALL_TARGET=	ARCH="aarch64" PLAT=${PLAT} V=1 CFLAGS= bl31
 
 # Default to the latest release
-ATF_VERSION?=	v2.3
+ATF_VERSION?=	v2.4
 
 PLIST_FILES?=	${PREFIX}/share/${PORTNAME}-${PLAT}/${BL31:T}
 

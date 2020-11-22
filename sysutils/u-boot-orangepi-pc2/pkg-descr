@@ -1,7 +1,7 @@
 U-Boot loader and related files for the OrangePi PC2
 
 To install this bootloader on an sdcard just do:
-dd if=$LOCALBASE/share/u-boot/u-boot-orangepi-pc2/u-boot-sunxi-with-spl.bin of=/path/to/sdcarddevice bs=1k seek=8 conv=sync
+dd if=$LOCALBASE/share/u-boot/u-boot-orangepi-pc2/u-boot-sunxi-with-spl.bin of=/path/to/sdcarddevice bs=128k seek=1 conv=sync
 
 For information about running FreeBSD on Allwinner boards, see
 https://wiki.freebsd.org/FreeBSD/arm/Allwinner
