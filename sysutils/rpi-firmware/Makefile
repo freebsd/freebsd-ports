@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpi-firmware
-PORTVERSION=	1.20200723.g20200723
+PORTVERSION=	1.20201022.g20201022
 CATEGORIES=	sysutils
 
 MAINTAINER=	uboot@FreeBSD.org
@@ -39,6 +39,8 @@ do-patch:
 post-patch:
 	${RM} ${WRKSRC}/boot/kernel.img
 	${RM} ${WRKSRC}/boot/kernel7.img
+	${RM} ${WRKSRC}/boot/kernel7l.img
+	${RM} ${WRKSRC}/boot/kernel8.img
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${INSTALL_DIR}

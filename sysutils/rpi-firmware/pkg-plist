@@ -27,8 +27,6 @@
 %%DATADIR%%/fixup_cd.dat
 %%DATADIR%%/fixup_db.dat
 %%DATADIR%%/fixup_x.dat
-%%DATADIR%%/kernel7l.img
-%%DATADIR%%/kernel8.img
 %%DATADIR%%/overlays/README
 %%DATADIR%%/overlays/act-led.dtbo
 %%DATADIR%%/overlays/adau1977-adc.dtbo
@@ -109,11 +107,11 @@
 %%DATADIR%%/overlays/i2s-gpio28-31.dtbo
 %%DATADIR%%/overlays/ilitek251x.dtbo
 %%DATADIR%%/overlays/imx219.dtbo
-%%DATADIR%%/overlays/irs1125.dtbo
 %%DATADIR%%/overlays/iqaudio-codec.dtbo
 %%DATADIR%%/overlays/iqaudio-dac.dtbo
 %%DATADIR%%/overlays/iqaudio-dacplus.dtbo
 %%DATADIR%%/overlays/iqaudio-digi-wm8804-audio.dtbo
+%%DATADIR%%/overlays/irs1125.dtbo
 %%DATADIR%%/overlays/jedec-spi-nor.dtbo
 %%DATADIR%%/overlays/justboom-dac.dtbo
 %%DATADIR%%/overlays/justboom-digi.dtbo
