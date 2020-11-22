@@ -1,9 +1,10 @@
 bin/gcompris-qt
 share/applications/org.kde.gcompris.desktop
+share/doc/HTML/en/gcompris-qt/activity-config.png
+share/doc/HTML/en/gcompris-qt/dataset.png
 share/doc/HTML/en/gcompris-qt/gcompris-main-menu.png
 share/doc/HTML/en/gcompris-qt/index.cache.bz2
 share/doc/HTML/en/gcompris-qt/index.docbook
-share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/activities.rcc
 %%DATADIR%%/rcc/advanced_colors.rcc
 %%DATADIR%%/rcc/algebra_by.rcc
@@ -14,6 +15,8 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/align4-2players.rcc
 %%DATADIR%%/rcc/align4.rcc
 %%DATADIR%%/rcc/alphabet-sequence.rcc
+%%DATADIR%%/rcc/analog_electricity.rcc
+%%DATADIR%%/rcc/baby_keyboard.rcc
 %%DATADIR%%/rcc/baby_tangram.rcc
 %%DATADIR%%/rcc/baby_wordprocessor.rcc
 %%DATADIR%%/rcc/babymatch.rcc
@@ -71,6 +74,7 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/gnumch-multiples.rcc
 %%DATADIR%%/rcc/gnumch-primes.rcc
 %%DATADIR%%/rcc/graph-coloring.rcc
+%%DATADIR%%/rcc/gravity.rcc
 %%DATADIR%%/rcc/guesscount.rcc
 %%DATADIR%%/rcc/guessnumber.rcc
 %%DATADIR%%/rcc/hangman.rcc
@@ -79,9 +83,11 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/rcc/hexagon.rcc
 %%DATADIR%%/rcc/imagename.rcc
 %%DATADIR%%/rcc/instruments.rcc
-%%DATADIR%%/rcc/intro_gravity.rcc
 %%DATADIR%%/rcc/land_safe.rcc
 %%DATADIR%%/rcc/lang.rcc
+%%DATADIR%%/rcc/learn_additions.rcc
+%%DATADIR%%/rcc/learn_digits.rcc
+%%DATADIR%%/rcc/learn_subtractions.rcc
 %%DATADIR%%/rcc/leftright.rcc
 %%DATADIR%%/rcc/letter-in-word.rcc
 %%DATADIR%%/rcc/lightsoff.rcc
@@ -186,6 +192,7 @@ share/doc/HTML/en/gcompris-qt/traffic-select-mode.png
 %%DATADIR%%/translations/gcompris_he.qm
 %%DATADIR%%/translations/gcompris_hi.qm
 %%DATADIR%%/translations/gcompris_hu.qm
+%%DATADIR%%/translations/gcompris_ia.qm
 %%DATADIR%%/translations/gcompris_id.qm
 %%DATADIR%%/translations/gcompris_it.qm
 %%DATADIR%%/translations/gcompris_ja.qm
