@@ -26,7 +26,7 @@
 %%T%%/lib/catalina-storeconfig.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-4.15.jar
+%%T%%/lib/ecj-4.17.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -212,6 +212,7 @@
 %%DOCS%%%%T%%/webapps/docs/websocketapi/index.html
 %%DOCS%%%%T%%/webapps/docs/windows-auth-howto.html
 %%DOCS%%%%T%%/webapps/docs/windows-service-howto.html
+%%EXAMPLES%%%%T%%/webapps/examples/META-INF/context.xml
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/CookieExample.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/CookieExample.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/HelloWorldExample.class
@@ -599,11 +600,12 @@
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/jsp/401.jsp
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/jsp/403.jsp
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/jsp/404.jsp
+%%HOST_MANAGER%%@sample %%T%%/webapps/host-manager/WEB-INF/manager.xml.sample
 %%HOST_MANAGER%%@sample %%T%%/webapps/host-manager/WEB-INF/web.xml.sample
+%%HOST_MANAGER%%%%T%%/webapps/host-manager/css/manager.css
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/asf-logo.svg
-%%HOST_MANAGER%%%%T%%/webapps/host-manager/images/tomcat.gif
+%%HOST_MANAGER%%%%T%%/webapps/host-manager/images/tomcat.svg
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/index.jsp
-%%HOST_MANAGER%%%%T%%/webapps/host-manager/manager.xml
 %%MANAGER%%@sample %%T%%/webapps/manager/META-INF/context.xml.sample
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/401.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/403.jsp
@@ -629,8 +631,5 @@
 %%ROOT%%%%T%%/webapps/ROOT/bg-upper.png
 %%ROOT%%%%T%%/webapps/ROOT/favicon.ico
 %%ROOT%%%%T%%/webapps/ROOT/index.jsp
-%%ROOT%%%%T%%/webapps/ROOT/tomcat-power.gif
 %%ROOT%%%%T%%/webapps/ROOT/tomcat.css
-%%ROOT%%%%T%%/webapps/ROOT/tomcat.gif
-%%ROOT%%%%T%%/webapps/ROOT/tomcat.png
 %%ROOT%%%%T%%/webapps/ROOT/tomcat.svg
