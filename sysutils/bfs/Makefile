@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	bfs
-DISTVERSION=	2.0
+DISTVERSION=	2.1
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	driesm.michiels@gmail.com
 COMMENT=	Breadth-first version of the UNIX find command
 
 LICENSE=	BSD0CLAUSE
@@ -17,6 +17,7 @@ TEST_DEPENDS=	bash:shells/bash
 USES=		compiler:c11 gmake shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	tavianator
+
 SHEBANG_FILES=	tests.sh tests/*.sh
 TEST_TARGET=	check
 PLIST_FILES=	bin/bfs \
