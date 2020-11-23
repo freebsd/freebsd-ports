@@ -14,6 +14,10 @@ COMMENT=	Flexible project management web application
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+# It seems that redmine should work with ruby 2.7 but they have not enable it in gemfile
+# https://www.redmine.org/issues/31500
+BROKEN_RUBY27=	yes
+
 RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-rails52>=5.2.4.4:www/rubygem-rails52 \
 		rubygem-rouge312>=3.12.0:textproc/rubygem-rouge312 \
