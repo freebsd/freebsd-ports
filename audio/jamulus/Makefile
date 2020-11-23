@@ -2,7 +2,7 @@
 
 PORTNAME=	jamulus
 DISTVERSIONPREFIX=	r
-DISTVERSION=	3_6_0
+DISTVERSION=	3_6_1
 CATEGORIES=	audio
 #MASTER_SITES=	SF/llcon/${NAME}/${DISTVERSION}/ # it is unclear whether SF or GH should be used because SF doesn't have 3.6.0, but README on GH claims that it is hosted on SF
 DISTNAME=	${NAME}-${PORTVERSION}
