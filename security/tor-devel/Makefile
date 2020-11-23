@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.4.5.1-alpha
+DISTVERSION=	0.4.5.2-alpha
 CATEGORIES=	security net
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
@@ -57,11 +57,11 @@ LZMA_CONFIGURE_ENABLE=		lzma
 LTTNG_DESC=			Build with LTTng-UST instrumentation
 LTTNG_CONFIGURE_ENABLE=		tracing-instrumentation-lttng
 LTTNG_LIB_DEPENDS=		liblttng-ust.so:sysutils/lttng-ust
-LTTNG_BROKEN=			fatal error: 'core/or/lttng_circuit.inc' file not found
+LTTNG_BROKEN=			fatal error: 'core/or/lttng_circuit.inc' file not found: https://gitlab.torproject.org/tpo/core/tor/-/issues/40173
 USDT_DESC=			Build with tracing USDT instrumentation
 USDT_CONFIGURE_ENABLE=		tracing-instrumentation-usdt
 USDT_LIB_DEPENDS=		liblttng-ust.so:sysutils/lttng-ust
-USDT_BROKEN=			error: use of undeclared identifier 'tor_circuit'
+USDT_BROKEN=			error: use of undeclared identifier 'tor_circuit': https://gitlab.torproject.org/tpo/core/tor/-/issues/40174
 LOG_DEBUG_DESC=			Build with tracing event to debug log
 LOG_DEBUG_CONFIGURE_ENABLE=	tracing-instrumentation-log-debug
 
