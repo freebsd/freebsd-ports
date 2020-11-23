@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spp
-PORTVERSION=	0.4
+PORTVERSION=	0.4.2
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://bitbucket.org/caia-swin/spp/get/
 DISTNAME=	v${PORTVERSION}
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USES=		tar:bzip2
-BB_TAGNAME=	8b9f676fed0e
+BB_TAGNAME=	8cfe6814ce52
 WRKSRC=		${WRKDIR}/caia-swin-${PORTNAME}-${BB_TAGNAME}
 
 PLIST_FILES=	bin/spp man/man1/spp.1.gz
