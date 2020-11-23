@@ -19,6 +19,7 @@ lib/libKF5GlobalAccelPrivate.so.5
 lib/libKF5GlobalAccelPrivate.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_PLUGINDIR%%/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
 %%QT_MKSPECDIR%%/modules/qt_KGlobalAccel.pri
+lib/systemd/user/plasma-kglobalaccel.service
 share/dbus-1/interfaces/kf5_org.kde.KGlobalAccel.xml
 share/dbus-1/interfaces/kf5_org.kde.kglobalaccel.Component.xml
 share/dbus-1/services/org.kde.kglobalaccel.service

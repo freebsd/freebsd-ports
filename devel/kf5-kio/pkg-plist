@@ -37,6 +37,7 @@ include/KF5/KIOCore/KIO/MimetypeJob
 include/KF5/KIOCore/KIO/MkdirJob
 include/KF5/KIOCore/KIO/MkpathJob
 include/KF5/KIOCore/KIO/MultiGetJob
+include/KF5/KIOCore/KIO/NameFinderJob
 include/KF5/KIOCore/KIO/RestoreJob
 include/KF5/KIOCore/KIO/Scheduler
 include/KF5/KIOCore/KIO/SimpleJob
@@ -101,6 +102,7 @@ include/KF5/KIOCore/kio/mimetypejob.h
 include/KF5/KIOCore/kio/mkdirjob.h
 include/KF5/KIOCore/kio/mkpathjob.h
 include/KF5/KIOCore/kio/multigetjob.h
+include/KF5/KIOCore/kio/namefinderjob.h
 include/KF5/KIOCore/kio/restorejob.h
 include/KF5/KIOCore/kio/scheduler.h
 include/KF5/KIOCore/kio/simplejob.h

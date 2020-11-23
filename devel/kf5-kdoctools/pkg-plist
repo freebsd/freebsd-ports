@@ -107,6 +107,7 @@ share/doc/HTML/ja/kdoctools5-common/kde-localised.css
 share/doc/HTML/ko/kdoctools5-common/fdl-translated.html
 share/doc/HTML/ko/kdoctools5-common/gpl-translated.html
 share/doc/HTML/ko/kdoctools5-common/kde-localised.css
+share/doc/HTML/ko/kdoctools5-common/lgpl-translated.html
 share/doc/HTML/lt/kdoctools5-common/kde-localised.css
 share/doc/HTML/nds/kdoctools5-common/kde-localised.css
 share/doc/HTML/nl/kdoctools5-common/fdl-translated.html
@@ -533,14 +534,17 @@ share/kf5/kdoctools/customization/kde-ttlpg.xsl
 share/kf5/kdoctools/customization/kde-web-navig.xsl
 share/kf5/kdoctools/customization/kde-web.xsl
 share/kf5/kdoctools/customization/ko/catalog.xml
+share/kf5/kdoctools/customization/ko/entities/ccbysa4-notice.docbook
 share/kf5/kdoctools/customization/ko/entities/fdl-notice.docbook
 share/kf5/kdoctools/customization/ko/entities/gpl-notice.docbook
 share/kf5/kdoctools/customization/ko/entities/help-menu.docbook
 share/kf5/kdoctools/customization/ko/entities/install-compile.docbook
 share/kf5/kdoctools/customization/ko/entities/install-intro.docbook
 share/kf5/kdoctools/customization/ko/entities/lgpl-notice.docbook
+share/kf5/kdoctools/customization/ko/entities/report-bugs.docbook
 share/kf5/kdoctools/customization/ko/entities/underArtisticLicense.docbook
 share/kf5/kdoctools/customization/ko/entities/underBSDLicense.docbook
+share/kf5/kdoctools/customization/ko/entities/underCCBYSA4.docbook
 share/kf5/kdoctools/customization/ko/entities/underFDL.docbook
 share/kf5/kdoctools/customization/ko/entities/underGPL.docbook
 share/kf5/kdoctools/customization/ko/entities/underLGPL.docbook
@@ -961,6 +965,7 @@ share/kf5/kdoctools/customization/xsl/gl.xml
 share/kf5/kdoctools/customization/xsl/hu.xml
 share/kf5/kdoctools/customization/xsl/id.xml
 share/kf5/kdoctools/customization/xsl/it.xml
+share/kf5/kdoctools/customization/xsl/ko.xml
 share/kf5/kdoctools/customization/xsl/lt.xml
 share/kf5/kdoctools/customization/xsl/nds.xml
 share/kf5/kdoctools/customization/xsl/nl.xml
@@ -1031,8 +1036,8 @@ share/kf5/kdoctools/customization/zh-TW/lang.entities
 share/kf5/kdoctools/customization/zh-TW/strings.entities
 share/kf5/kdoctools/customization/zh-TW/user.entities
 share/locale/af/LC_MESSAGES/kdoctools5.mo
-share/locale/ast/LC_MESSAGES/kdoctools5.mo
 share/locale/ar/LC_MESSAGES/kdoctools5.mo
+share/locale/ast/LC_MESSAGES/kdoctools5.mo
 share/locale/az/LC_MESSAGES/kdoctools5.mo
 share/locale/be/LC_MESSAGES/kdoctools5.mo
 share/locale/bg/LC_MESSAGES/kdoctools5.mo

@@ -12,6 +12,7 @@ share/ECM/find-modules/FindEGL.cmake
 share/ECM/find-modules/FindFontconfig.cmake
 share/ECM/find-modules/FindGLIB2.cmake
 share/ECM/find-modules/FindGperf.cmake
+share/ECM/find-modules/FindGradle.cmake
 share/ECM/find-modules/FindIcoTool.cmake
 share/ECM/find-modules/FindInotify.cmake
 share/ECM/find-modules/FindKF5.cmake
@@ -37,8 +38,10 @@ share/ECM/find-modules/FindX11_XCB.cmake
 share/ECM/find-modules/FindXCB.cmake
 share/ECM/find-modules/GeneratePythonBindingUmbrellaModule.cmake
 share/ECM/find-modules/Qt5Ruleset.py
+share/ECM/find-modules/local.properties.cmake
 share/ECM/find-modules/rules_engine.py
 share/ECM/find-modules/run-sip.py
+share/ECM/find-modules/settings.gradle.cmake
 share/ECM/find-modules/sip_generator.py
 share/ECM/kde-modules/KDECMakeSettings.cmake
 share/ECM/kde-modules/KDEClangFormat.cmake

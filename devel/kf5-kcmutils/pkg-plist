@@ -22,8 +22,11 @@ include/KF5/KCMUtils/ksettings/pluginpage.h
 include/KF5/kcmutils_version.h
 lib/cmake/KF5KCMUtils/KF5KCMUtilsConfig.cmake
 lib/cmake/KF5KCMUtils/KF5KCMUtilsConfigVersion.cmake
+lib/cmake/KF5KCMUtils/KF5KCMUtilsMacros.cmake
 lib/cmake/KF5KCMUtils/KF5KCMUtilsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5KCMUtils/KF5KCMUtilsTargets.cmake
+lib/cmake/KF5KCMUtils/kcmutilsgeneratemoduledata.cpp.in
+lib/cmake/KF5KCMUtils/kcmutilsgeneratemoduledata.h.in
 lib/libKF5KCMUtils.so
 lib/libKF5KCMUtils.so.5
 lib/libKF5KCMUtils.so.%%KDE_FRAMEWORKS_VERSION%%
