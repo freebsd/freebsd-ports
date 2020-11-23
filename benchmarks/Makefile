@@ -32,6 +32,7 @@
     SUBDIR += httperf
     SUBDIR += hyperfine
     SUBDIR += imb
+    SUBDIR += inferno
     SUBDIR += interbench
     SUBDIR += iorate
     SUBDIR += iozone
