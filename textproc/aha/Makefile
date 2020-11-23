@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aha
-PORTVERSION=	0.5
+DISTVERSION=	0.5.1
 CATEGORIES=	textproc devel
 
 MAINTAINER=	woodsb02@FreeBSD.org
