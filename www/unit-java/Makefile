@@ -48,8 +48,7 @@ JETTY_VERSION=	9.4.33.v20201020
 TOMCAT_VERSION=	9.0.39
 UNIT_VERSION=	1.21.0
 
-PLIST_FILES=	libexec/unit/modules/${UNIT_MODNAME}.unit.so \
-		%%JAVAJARDIR%%/classgraph-${CLASSGRAPH_VERSION}.jar \
+PLIST_FILES=	%%JAVAJARDIR%%/classgraph-${CLASSGRAPH_VERSION}.jar \
 		%%JAVAJARDIR%%/ecj-${ECJ_VERSION}.jar \
 		%%JAVAJARDIR%%/jetty-http-${JETTY_VERSION}.jar \
 		%%JAVAJARDIR%%/jetty-server-${JETTY_VERSION}.jar \
@@ -62,9 +61,10 @@ PLIST_FILES=	libexec/unit/modules/${UNIT_MODNAME}.unit.so \
 		%%JAVAJARDIR%%/tomcat-jsp-api-${TOMCAT_VERSION}.jar \
 		%%JAVAJARDIR%%/tomcat-juli-${TOMCAT_VERSION}.jar \
 		%%JAVAJARDIR%%/tomcat-servlet-api-${TOMCAT_VERSION}.jar \
-		%%JAVAJARDIR%%/tomcat-util-scan-${TOMCAT_VERSION}.jar \
 		%%JAVAJARDIR%%/tomcat-util-${TOMCAT_VERSION}.jar \
-		%%JAVAJARDIR%%/websocket-api-java${JAVA_PORT_VERSION}-${UNIT_VERSION}.jar
+		%%JAVAJARDIR%%/tomcat-util-scan-${TOMCAT_VERSION}.jar \
+		%%JAVAJARDIR%%/websocket-api-java${JAVA_PORT_VERSION}-${UNIT_VERSION}.jar \
+		libexec/unit/modules/${UNIT_MODNAME}.unit.so
 
 USE_JAVA=	yes
 JAVA_VERSION=	8+
