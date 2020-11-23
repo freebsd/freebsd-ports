@@ -3,7 +3,7 @@
 
 PORTNAME=	unit
 PORTVERSION=	1.21.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
 
@@ -21,14 +21,19 @@ CPE_PRODUCT=	unit
 OPTIONS_DEFINE?=	\
 	DEBUG \
 	IPV6 \
-	PCRE2 \
 	SSL \
 	UNIXSOCK
 OPTIONS_DEFAULT?=	IPV6 PCRE2 SSL UNIXSOCK
 
+OPTIONS_RADIO+=		REGEX
+OPTIONS_RADIO_REGEX=	NOPCRE PCRE PCRE2
+
 DEBUG_DESC=	Enable debug logging
 DEVKIT_DESC=	Install headers and library
-PCRE2_DESC=	Enable PCRE2 support
+REGEX_DESC=	Support regular expressions
+NOPCRE_DESC=	No support for Regular Expressions
+PCRE_DESC=	Regular Expressions via devel/pcre
+PCRE2_DESC=	Regular Expressions via devel/pcre2
 SSL_DESC=	Enable SSL/TLS
 UNIXSOCK_DESC=	Enable unix sockets
 
@@ -78,9 +83,16 @@ CONFIGURE_ARGS+=--debug
 CONFIGURE_ARGS+=--no-ipv6
 .endif
 
-.if empty(PORT_OPTIONS:MPCRE2)
+.if ${PORT_OPTIONS:MNOPCRE}
+CONFIGURE_ARGS+=--no-regex
+.endif
+
+.if ${PORT_OPTIONS:MPCRE}
 CONFIGURE_ARGS+=--no-pcre2
-.else
+LIB_DEPENDS+=	libpcre.so:devel/pcre
+.endif
+
+.if ${PORT_OPTIONS:MPCRE2}
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 .endif
 
