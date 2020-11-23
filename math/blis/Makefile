@@ -3,6 +3,7 @@
 
 PORTNAME=	blis
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -13,20 +14,22 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
 
+USES=		compiler gmake perl5 python shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	flame
+USE_LDCONFIG=	yes
+USE_PERL5=	build
+SHEBANG_FILES=	build/flatten-headers.py
+
 OPTIONS_DEFINE=	PARA CBLAS
 PARA_DESC=	use pthread parallelization
 CBLAS_DESC=	build the CBLAS compatibility layer
 OPTIONS_DEFAULT=	PARA CBLAS
 OPTIONS_SUB=		yes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	flame
-
-USES=		compiler gmake python shebangfix
-USE_LDCONFIG=	yes
-SHEBANG_FILES=	build/flatten-headers.py
-
 HAS_CONFIGURE=	yes
+
+TEST_TARGET=	test
 
 .include <bsd.port.options.mk>
 
@@ -46,11 +49,13 @@ CONFIGURE_ARGS+=	--enable-cblas
 .endif
 
 .if ${ARCH} == amd64
-LIBNAME=	x86_64
 CONFIGURE_ARGS+=	x86_64
 PLIST_SUB+=	ARCH="x86_64"
+.elif ${ARCH} == powerpc64
+CONFIGURE_ARGS+=	power9
+PLIST_SUB+=	ARCH="power9"
+USE_GCC=	yes
 .else
-LIBNAME=	generic
 CONFIGURE_ARGS+=	generic
 PLIST_SUB+=	ARCH="generic"
 .endif
