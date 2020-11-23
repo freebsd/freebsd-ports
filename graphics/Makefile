@@ -237,6 +237,7 @@
     SUBDIR += giflib
     SUBDIR += gifmerge
     SUBDIR += gifsicle
+    SUBDIR += gifski
     SUBDIR += giftool
     SUBDIR += gimageview
     SUBDIR += gimmage
