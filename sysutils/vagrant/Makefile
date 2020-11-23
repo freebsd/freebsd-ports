@@ -13,6 +13,11 @@ COMMENT=	Vagrant Virtual Machine Manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# an update to a current version should fix this
+# regarding this MR it should be ruby 2.7 compatible
+# https://github.com/hashicorp/vagrant/pull/11814
+BROKEN_RUBY27=	yes
+
 BUILD_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 		rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
 		rubygem-main>=1.0:devel/rubygem-main
