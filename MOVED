@@ -12845,7 +12845,6 @@ textproc/rubygem-gitlab-linguist|textproc/rubygem-github-linguist|2019-08-31|Has
 textproc/rubygem-html-pipeline1|textproc/rubygem-html-pipeline|2019-08-31|Has expired: Use textproc/rubygem-html-pipeline instead
 devel/pure-stldict||2019-09-01|Has expired: Depends on expiring devel/llvm35
 lang/dmd1||2019-09-01|Has expired: No longer supported upstream
-lang/gprolog||2019-09-01|Has expired: Abandonware upstream (more than five years), fails in various ways with remotely recent compilers
 math/pure-mpfr||2019-09-01|Has expired: Depends on expiring devel/llvm35
 math/pure-rational||2019-09-01|Has expired: Depends on expiring devel/llvm35
 net/pure-sockets||2019-09-01|Has expired: Depends on expiring devel/llvm35

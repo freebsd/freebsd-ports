@@ -116,6 +116,7 @@
     SUBDIR += go
     SUBDIR += go-devel
     SUBDIR += gomacro
+    SUBDIR += gprolog
     SUBDIR += gravity
     SUBDIR += groovy
     SUBDIR += gscheme
