@@ -174,7 +174,7 @@ lib/gthumb/extensions/liblist_tools.so
 %%WEBSERVICES%%lib/gthumb/extensions/liboauth.so
 lib/gthumb/extensions/libphoto_importer.so
 %%WEBSERVICES%%lib/gthumb/extensions/libpicasaweb.so
-lib/gthumb/extensions/libraw_files.so
+%%RAW%%lib/gthumb/extensions/libraw_files.so
 lib/gthumb/extensions/libred_eye_removal.so
 lib/gthumb/extensions/librename_series.so
 lib/gthumb/extensions/libresize_images.so
@@ -187,7 +187,7 @@ lib/gthumb/extensions/list_tools.extension
 %%WEBSERVICES%%lib/gthumb/extensions/oauth.extension
 lib/gthumb/extensions/photo_importer.extension
 %%WEBSERVICES%%lib/gthumb/extensions/picasaweb.extension
-lib/gthumb/extensions/raw_files.extension
+%%RAW%%lib/gthumb/extensions/raw_files.extension
 lib/gthumb/extensions/red_eye_removal.extension
 lib/gthumb/extensions/rename_series.extension
 lib/gthumb/extensions/resize_images.extension
