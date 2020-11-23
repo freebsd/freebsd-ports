@@ -1,6 +1,17 @@
 --- Makefile.orig	2011-12-12 22:48:49 UTC
 +++ Makefile
-@@ -205,6 +205,8 @@ ifneq ($(BUILD_CLIENT),0)
+@@ -16,6 +16,10 @@ ifeq ($(COMPILE_PLATFORM),darwin)
+   # Apple does some things a little differently...
+   COMPILE_ARCH=$(shell uname -p | sed -e s/i.86/i386/)
+ endif
++ifeq ($(COMPILE_PLATFORM),freebsd)
++  # FreeBSD does some things a little differently...
++  COMPILE_ARCH=$(shell uname -p)
++endif
+ 
+ ifeq ($(COMPILE_PLATFORM),mingw32)
+   ifeq ($(COMPILE_ARCH),i386)
+@@ -205,6 +209,8 @@ ifneq ($(BUILD_CLIENT),0)
      OPENAL_LIBS=$(shell pkg-config --silence-errors --libs openal)
      SDL_CFLAGS=$(shell pkg-config --silence-errors --cflags sdl|sed 's/-Dmain=SDL_main//')
      SDL_LIBS=$(shell pkg-config --silence-errors --libs sdl)
@@ -9,7 +20,7 @@
    endif
    # Use sdl-config if all else fails
    ifeq ($(SDL_CFLAGS),)
-@@ -570,9 +572,15 @@ else # ifeq mingw32
+@@ -570,9 +576,15 @@ else # ifeq mingw32
  
  ifeq ($(PLATFORM),freebsd)
  
@@ -25,7 +36,7 @@
      -DUSE_ICON -DMAP_ANONYMOUS=MAP_ANON
    CLIENT_CFLAGS = $(SDL_CFLAGS)
    SERVER_CFLAGS = 
-@@ -595,27 +603,24 @@ ifeq ($(PLATFORM),freebsd)
+@@ -595,29 +607,26 @@ ifeq ($(PLATFORM),freebsd)
  
    # optional features/libraries
    ifeq ($(USE_OPENAL),1)
@@ -50,16 +61,18 @@
  
    ifeq ($(USE_CODEC_VORBIS),1)
 -    CLIENT_CFLAGS += -DUSE_CODEC_VORBIS
--  endif
--
--  ifeq ($(USE_CODEC_VORBIS),1)
--    CLIENT_LIBS += -lvorbisfile -lvorbis -logg
 +    CLIENT_CFLAGS += -DUSE_CODEC_VORBIS $(VORBIS_CFLAGS)
 +    CLIENT_LIBS += $(VORBIS_LIBS)
    endif
  
+-  ifeq ($(USE_CODEC_VORBIS),1)
+-    CLIENT_LIBS += -lvorbisfile -lvorbis -logg
+-  endif
+-
    # cross-compiling tweaks
-@@ -897,7 +902,7 @@ ifeq ($(USE_VOIP),1)
+   ifeq ($(ARCH),i386)
+     ifeq ($(CROSS_COMPILING),1)
+@@ -897,7 +906,7 @@ ifeq ($(USE_VOIP),1)
    CLIENT_CFLAGS += -DUSE_VOIP
    SERVER_CFLAGS += -DUSE_VOIP
    ifeq ($(USE_INTERNAL_SPEEX),1)
@@ -68,3 +81,21 @@
    else
      CLIENT_LIBS += -lspeex -lspeexdsp
    endif
+@@ -1564,7 +1573,7 @@ ifeq ($(HAVE_VM_COMPILED),true)
+   ifeq ($(ARCH),ppc)
+     Q3OBJ += $(B)/client/vm_powerpc.o $(B)/client/vm_powerpc_asm.o
+   endif
+-  ifeq ($(ARCH),ppc64)
++  ifeq ($(COMPILE_ARCH),ppc64)
+     Q3OBJ += $(B)/client/vm_powerpc.o $(B)/client/vm_powerpc_asm.o
+   endif
+   ifeq ($(ARCH),sparc)
+@@ -1732,7 +1741,7 @@ ifeq ($(HAVE_VM_COMPILED),true)
+   ifeq ($(ARCH),ppc)
+     Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
+   endif
+-  ifeq ($(ARCH),ppc64)
++  ifeq ($(COMPILE_ARCH),ppc64)
+     Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
+   endif
+   ifeq ($(ARCH),sparc)
