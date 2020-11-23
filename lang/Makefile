@@ -362,6 +362,7 @@
     SUBDIR += visualworks
     SUBDIR += voc
     SUBDIR += yabasic
+    SUBDIR += yap
     SUBDIR += yorick
     SUBDIR += ypsilon
     SUBDIR += zig
