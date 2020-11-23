@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xf86-video-intel
-DISTVERSION=	2.99.917-909
+DISTVERSION=	2.99.917-912
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
 PORTEPOCH=	1
 CATEGORIES=	x11-drivers
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm
 USES=		cpe localbase xorg xorg-cat:driver
 CPE_VENDOR=	x
 USE_GITLAB=	yes
-GL_COMMIT=	5ca3ac1a90af177eb111a965e9b4dd8a27cc58fc
+GL_COMMIT=	ad5540f6ecaec287c70259f0181e613561b716f6
 USE_XORG=	pciaccess pixman
 CONFIGURE_ENV=	ac_cv_header_sys_sysinfo_h=no # XXX ports/242236
 CONFIGURE_ARGS=	--with-builderstring="${DISTVERSIONFULL}"
