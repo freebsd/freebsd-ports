@@ -1,6 +1,3 @@
-This add-on provides joystick drivers and button mapping services
-for Kodi.  It uses Kodi's Peripheral API.
+This is a meta port for Claws Mail plugins.
 
-This port is for multimedia/kodi-devel only.
-
-WWW: https://github.com/xbmc/peripheral.joystick
+WWW: https://www.claws-mail.org/plugins.php
