@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rustscan
-PORTVERSION=	1.10.1
+PORTVERSION=	2.0.1
 CATEGORIES=	security
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -17,109 +17,116 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	RustScan
 GH_PROJECT=	RustScan
 
-CARGO_CRATES=	addr2line-0.13.0 \
+CARGO_CRATES=	addr2line-0.14.0 \
 		adler-0.2.3 \
-		aho-corasick-0.7.13 \
+		aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
+		anyhow-1.0.34 \
 		arrayref-0.3.6 \
-		arrayvec-0.5.1 \
-		async-channel-1.4.2 \
+		arrayvec-0.5.2 \
+		async-channel-1.5.1 \
 		async-executor-1.3.0 \
-		async-global-executor-1.3.0 \
-		async-io-1.1.4 \
+		async-global-executor-1.4.3 \
+		async-io-1.1.10 \
 		async-mutex-1.4.0 \
-		async-std-1.6.5 \
-		async-task-4.0.2 \
-		async-trait-0.1.40 \
+		async-std-1.7.0 \
+		async-task-4.0.3 \
+		async-trait-0.1.41 \
 		atomic-waker-1.0.0 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
-		backtrace-0.3.50 \
+		backtrace-0.3.54 \
 		base64-0.11.0 \
 		base64-0.12.3 \
 		bitflags-1.2.1 \
-		blake2b_simd-0.5.10 \
-		blocking-1.0.0 \
+		blake2b_simd-0.5.11 \
+		blocking-1.0.2 \
 		bumpalo-3.4.0 \
 		bytes-0.5.6 \
 		cache-padded-1.1.1 \
-		cc-1.0.60 \
+		cc-1.0.61 \
 		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
 		cidr-utils-0.5.0 \
 		clap-2.33.3 \
 		colored-2.0.0 \
 		colorful-0.2.1 \
 		concurrent-queue-1.2.2 \
+		const_fn-0.4.3 \
 		constant_time_eq-0.1.5 \
 		crossbeam-utils-0.7.2 \
+		crossbeam-utils-0.8.0 \
 		debug-helper-0.3.10 \
 		dirs-3.0.1 \
 		dirs-sys-0.3.5 \
 		either-1.6.1 \
 		enum-as-inner-0.3.3 \
-		env_logger-0.7.1 \
+		env_logger-0.8.1 \
 		event-listener-2.5.1 \
-		fastrand-1.3.5 \
+		fastrand-1.4.0 \
+		form_urlencoded-1.0.0 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		futures-0.3.5 \
-		futures-channel-0.3.5 \
-		futures-core-0.3.5 \
-		futures-executor-0.3.5 \
-		futures-io-0.3.5 \
-		futures-lite-1.8.0 \
-		futures-macro-0.3.5 \
-		futures-sink-0.3.5 \
-		futures-task-0.3.5 \
-		futures-util-0.3.5 \
+		futures-0.3.7 \
+		futures-channel-0.3.7 \
+		futures-core-0.3.7 \
+		futures-executor-0.3.7 \
+		futures-io-0.3.7 \
+		futures-lite-1.11.2 \
+		futures-macro-0.3.7 \
+		futures-sink-0.3.7 \
+		futures-task-0.3.7 \
+		futures-util-0.3.7 \
 		gcd-2.0.1 \
 		getrandom-0.1.15 \
-		gimli-0.22.0 \
+		gimli-0.23.0 \
 		gloo-timers-0.2.1 \
 		heck-0.3.1 \
-		hermit-abi-0.1.16 \
+		hermit-abi-0.1.17 \
 		hostname-0.3.1 \
-		humantime-1.3.0 \
+		humantime-2.0.1 \
 		idna-0.2.0 \
+		instant-0.1.8 \
 		iovec-0.1.4 \
 		ipconfig-0.2.2 \
 		itertools-0.9.0 \
+		itoa-0.4.6 \
 		js-sys-0.3.45 \
 		kernel32-sys-0.2.2 \
 		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
-		libc-0.2.77 \
+		libc-0.2.80 \
 		linked-hash-map-0.5.3 \
 		log-0.4.11 \
 		lru-cache-0.1.2 \
 		match_cfg-0.1.0 \
 		matches-0.1.8 \
-		memchr-2.3.3 \
-		miniz_oxide-0.4.2 \
+		memchr-2.3.4 \
+		miniz_oxide-0.4.3 \
 		mio-0.6.22 \
 		miow-0.2.1 \
-		nb-connect-1.0.0 \
+		nb-connect-1.0.2 \
 		net2-0.2.35 \
-		num-bigint-0.3.0 \
-		num-integer-0.1.43 \
-		num-traits-0.2.12 \
+		num-bigint-0.3.1 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
-		object-0.20.0 \
+		object-0.22.0 \
 		once_cell-1.4.1 \
 		parking-2.0.0 \
 		percent-encoding-2.1.0 \
-		pin-project-0.4.24 \
-		pin-project-internal-0.4.24 \
-		pin-project-lite-0.1.9 \
+		pin-project-1.0.1 \
+		pin-project-internal-1.0.1 \
+		pin-project-lite-0.1.11 \
 		pin-utils-0.1.0 \
-		polling-1.1.0 \
-		ppv-lite86-0.2.9 \
+		polling-2.0.2 \
+		ppv-lite86-0.2.10 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.18 \
+		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.6 \
-		proc-macro2-1.0.23 \
+		proc-macro2-1.0.24 \
 		quick-error-1.2.3 \
 		quote-1.0.7 \
 		rand-0.7.3 \
@@ -128,35 +135,39 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		rand_hc-0.2.0 \
 		redox_syscall-0.1.57 \
 		redox_users-0.3.5 \
-		regex-1.3.9 \
-		regex-syntax-0.6.18 \
+		regex-1.4.2 \
+		regex-syntax-0.6.21 \
 		resolv-conf-0.6.3 \
 		ring-0.16.15 \
-		rlimit-0.4.0 \
+		rlimit-0.5.2 \
 		rust-argon2-0.8.2 \
-		rustc-demangle-0.1.16 \
+		rustc-demangle-0.1.18 \
 		rustls-0.17.0 \
+		ryu-1.0.5 \
 		sct-0.6.0 \
-		serde-1.0.116 \
-		serde_derive-1.0.116 \
+		serde-1.0.117 \
+		serde_derive-1.0.117 \
+		serde_json-1.0.59 \
 		shell-words-1.0.0 \
 		slab-0.4.2 \
 		smallvec-1.4.2 \
 		socket2-0.3.15 \
 		spin-0.5.2 \
 		strsim-0.8.0 \
-		structopt-0.3.18 \
-		structopt-derive-0.4.11 \
-		syn-1.0.42 \
+		structopt-0.3.20 \
+		structopt-derive-0.4.13 \
+		subprocess-0.2.6 \
+		syn-1.0.48 \
 		termcolor-1.1.0 \
+		text_placeholder-0.4.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.20 \
-		thiserror-impl-1.0.20 \
+		thiserror-1.0.22 \
+		thiserror-impl-1.0.22 \
 		thread_local-1.0.1 \
 		tinyvec-0.3.4 \
 		tokio-0.2.22 \
 		tokio-rustls-0.13.1 \
-		toml-0.5.6 \
+		toml-0.5.7 \
 		trust-dns-proto-0.19.5 \
 		trust-dns-resolver-0.19.5 \
 		trust-dns-rustls-0.19.5 \
@@ -166,10 +177,11 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
 		untrusted-0.7.1 \
-		url-2.1.1 \
+		url-2.2.0 \
 		vec-arena-1.0.0 \
 		vec_map-0.8.2 \
 		version_check-0.9.2 \
+		wait-timeout-0.2.0 \
 		waker-fn-1.1.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.68 \
@@ -181,8 +193,8 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		web-sys-0.3.45 \
 		webpki-0.21.3 \
 		webpki-roots-0.19.0 \
-		wepoll-sys-stjepang-1.0.8 \
-		widestring-0.4.2 \
+		wepoll-sys-3.0.1 \
+		widestring-0.4.3 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
 		winapi-build-0.1.1 \
