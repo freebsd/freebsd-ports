@@ -58,7 +58,6 @@ sbin/dbcheck
 %%MYSQL%%%%DATADIR%%/drop_mysql_tables
 %%PGSQL%%%%DATADIR%%/drop_postgresql_tables
 %%SQLITE3%%%%DATADIR%%/drop_sqlite3_tables
-%%PYTHON%%%%DATADIR%%/dvd-handler
 %%DATADIR%%/grant_bacula_privileges
 %%MYSQL%%%%DATADIR%%/grant_mysql_privileges
 %%PGSQL%%%%DATADIR%%/grant_postgresql_privileges
