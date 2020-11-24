@@ -1,4 +1,4 @@
 inflect.py correctly generates plurals, singular nouns, ordinals, indefinite
 articles and converts numbers to words.
 
-WWW: https://github.com/jazzband/inflect
+WWW: https://github.com/jaraco/inflect
