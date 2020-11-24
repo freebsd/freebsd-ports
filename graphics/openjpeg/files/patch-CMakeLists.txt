@@ -1,0 +1,37 @@
+--- CMakeLists.txt.orig	2019-04-02 12:45:15 UTC
++++ CMakeLists.txt
+@@ -363,14 +363,14 @@ if(BUILD_PKGCONFIG_FILES)
+   configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/lib/openjp2/libopenjp2.pc.cmake.in
+     ${CMAKE_CURRENT_BINARY_DIR}/libopenjp2.pc @ONLY)
+   install( FILES  ${CMAKE_CURRENT_BINARY_DIR}/libopenjp2.pc DESTINATION
+-    ${OPENJPEG_INSTALL_LIB_DIR}/pkgconfig )
++    libdata/pkgconfig)
+ #
+   if(BUILD_JPWL)
+   # install in lib and not share (see multi-arch note above)
+   configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/lib/openjpwl/libopenjpwl.pc.cmake.in
+     ${CMAKE_CURRENT_BINARY_DIR}/libopenjpwl.pc @ONLY)
+   install( FILES  ${CMAKE_CURRENT_BINARY_DIR}/libopenjpwl.pc DESTINATION
+-    ${OPENJPEG_INSTALL_LIB_DIR}/pkgconfig )
++    libdata/pkgconfig)
+   endif()
+ #
+   if(BUILD_JPIP)
+@@ -378,7 +378,7 @@ if(BUILD_PKGCONFIG_FILES)
+   configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/lib/openjpip/libopenjpip.pc.cmake.in
+     ${CMAKE_CURRENT_BINARY_DIR}/libopenjpip.pc @ONLY)
+   install( FILES  ${CMAKE_CURRENT_BINARY_DIR}/libopenjpip.pc DESTINATION
+-    ${OPENJPEG_INSTALL_LIB_DIR}/pkgconfig )
++    libdata/pkgconfig)
+   endif()
+ #
+   if(BUILD_JP3D)
+@@ -386,7 +386,7 @@ if(BUILD_PKGCONFIG_FILES)
+   configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/lib/openjp3d/libopenjp3d.pc.cmake.in
+     ${CMAKE_CURRENT_BINARY_DIR}/libopenjp3d.pc @ONLY)
+   install( FILES  ${CMAKE_CURRENT_BINARY_DIR}/libopenjp3d.pc DESTINATION
+-    ${OPENJPEG_INSTALL_LIB_DIR}/pkgconfig )
++    libdata/pkgconfig)
+   endif()
+ endif()
+ 

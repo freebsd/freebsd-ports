@@ -26,7 +26,4 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} VER=${PORTVERSION:R}
 GH_ACCOUNT=	uclouvain
 USE_GITHUB=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${OPENJPEG_INSTALL_LIB_DIR}/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
-
 .include <bsd.port.mk>
