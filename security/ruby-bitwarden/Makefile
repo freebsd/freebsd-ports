@@ -11,6 +11,10 @@ COMMENT=	Ruby implementation of the BitWarden API
 
 LICENSE=	ISCL
 
+# Port is not maintained anymore:
+# https://github.com/jcs/rubywarden
+BROKEN_RUBY27=	yes
+
 RUN_DEPENDS=	rubygem-bundler>=1.16:sysutils/rubygem-bundler
 
 USES=		sqlite
