@@ -308,9 +308,11 @@ include/folly/experimental/coro/UnboundedQueue.h
 include/folly/experimental/coro/Utils.h
 include/folly/experimental/coro/ViaIfAsync.h
 include/folly/experimental/coro/Wait.h
+include/folly/experimental/coro/WithAsyncStack.h
 include/folly/experimental/coro/WithCancellation.h
 include/folly/experimental/coro/detail/Barrier.h
 include/folly/experimental/coro/detail/BarrierTask.h
+include/folly/experimental/coro/detail/CurrentAsyncFrame.h
 include/folly/experimental/coro/detail/Helpers.h
 include/folly/experimental/coro/detail/InlineTask.h
 include/folly/experimental/coro/detail/Malloc.h
