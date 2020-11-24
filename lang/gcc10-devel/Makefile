@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	10.2.1.s20201114
+PORTVERSION=	10.2.1.s20201121
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -70,7 +70,7 @@ CONFIGURE_ENV+=	UNAME_m="powerpc64"
 . if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
 CONFIGURE_ARGS+=	--with-abi=elfv2
 . else
-USE_GCC=	yes
+USE_GCC=	9
 . endif
 .endif
 
