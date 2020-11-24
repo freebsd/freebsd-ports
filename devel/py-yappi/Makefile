@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yappi
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_yappi.so
 
 do-test:
-	cd ${WRKSRC} && ${PYTHON_CMD} ${FILESDIR}/run_tests.py
+	cd ${WRKSRC} && ${PYTHON_CMD} run_tests.py
 
 .include <bsd.port.mk>
