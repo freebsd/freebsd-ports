@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	lz4
-PORTVERSION=	1.9.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSION=	1.9.3
 PORTEPOCH=	1
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	lib
@@ -15,14 +14,21 @@ COMMENT=	LZ4 compression library, lossless and very fast
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-USES=		gmake pkgconfig
+USES=		meson pkgconfig python:3.5+,build shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-MAKE_ENV+=	TARGET_ARCH=
-MAKE_ARGS=	PREFIX="${PREFIX}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		MANDIR="${PREFIX}/share/man"
+SHEBANG_FILES=	meson/*.py \
+		${WRKDIR}/${PORTNAME}-${DISTVERSION}/tests/*.py
+
+MESON_ARGS=	-Ddefault_library=both -Dbin_programs=true
+
+WRKSRC_SUBDIR=	contrib/meson
+
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+OPTIONS_DEFINE=	TEST
+
+TEST_MESON_TRUE=	bin_tests
 
 .include <bsd.port.mk>
