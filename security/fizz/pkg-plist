@@ -101,6 +101,7 @@ include/fizz/protocol/ZstdCertificateDecompressor.h
 include/fizz/protocol/clock/Clock.h
 include/fizz/protocol/clock/SystemClock.h
 include/fizz/protocol/clock/test/Mocks.h
+include/fizz/protocol/ech/Decrypter.h
 include/fizz/protocol/ech/ECHExtensions-inl.h
 include/fizz/protocol/ech/ECHExtensions.h
 include/fizz/protocol/ech/Encryption.h
