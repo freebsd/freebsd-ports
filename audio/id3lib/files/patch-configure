@@ -1,6 +1,6 @@
 --- configure.orig	2003-03-02 00:23:00 UTC
 +++ configure
-@@ -9134,6 +9134,7 @@ if test x$ac_cv_lib_z_uncompress = xno; 
+@@ -9134,6 +9134,7 @@ if test x$ac_cv_lib_z_uncompress = xno; then
  else
    ID3_NEEDZLIB_TRUE='#'
    ID3_NEEDZLIB_FALSE=
@@ -27,3 +27,12 @@
    else
      echo "$as_me:$LINENO: result: not found (panic)" >&5
  echo "${ECHO_T}not found (panic)" >&6
+@@ -10296,7 +10296,7 @@ done
+ 
+ for ac_header in \
+   string                        \
+-  iomanip.h                     \
++  iomanip                     \
+ 
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`

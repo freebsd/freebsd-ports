@@ -1,6 +1,6 @@
---- src/io_helpers.cpp.orig	Sun Mar  2 07:23:00 2003
-+++ src/io_helpers.cpp	Mon May 29 01:23:33 2006
-@@ -363,9 +363,10 @@
+--- src/io_helpers.cpp.orig	2003-03-02 00:23:00 UTC
++++ src/io_helpers.cpp
+@@ -363,9 +363,10 @@ size_t io::writeUnicodeText(ID3_Writer& writer, String
      // Write the BOM: 0xFEFF
      unicode_t BOM = 0xFEFF;
      writer.writeChars((const unsigned char*) &BOM, 2);
