@@ -1,5 +1,5 @@
---- src/librustc_target/spec/mod.rs.orig        2020-09-30 18:06:16.613040000 -0500
-+++ src/librustc_target/spec/mod.rs     2020-09-30 18:06:47.040460000 -0500
+--- compiler/rustc_target/src/spec/mod.rs.orig        2020-09-30 18:06:16.613040000 -0500
++++ compiler/rustc_target/src/spec/mod.rs     2020-09-30 18:06:47.040460000 -0500
 @@ -553,6 +553,7 @@ supported_targets! {
      ("armv7-unknown-freebsd", armv7_unknown_freebsd),
      ("i686-unknown-freebsd", i686_unknown_freebsd),

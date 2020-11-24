@@ -2,6 +2,7 @@
 
 PORTNAME=	xi-term
 DISTVERSION=	g20190913
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	ed.arrakis@gmail.com

@@ -1,5 +1,5 @@
---- src/librustc_target/spec/powerpc64_unknown_freebsd.rs.orig	2020-07-15 11:31:58 UTC
-+++ src/librustc_target/spec/powerpc64_unknown_freebsd.rs
+--- compiler/rustc_target/src/spec/powerpc64_unknown_freebsd.rs.orig	2020-07-15 11:31:58 UTC
++++ compiler/rustc_target/src/spec/powerpc64_unknown_freebsd.rs
 @@ -17,6 +17,10 @@ pub fn target() -> TargetResult {
          target_env: String::new(),
          target_vendor: "unknown".to_string(),

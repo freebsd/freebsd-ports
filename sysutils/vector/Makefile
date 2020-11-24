@@ -3,6 +3,7 @@
 PORTNAME=	vector
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	greg@unrelenting.technology

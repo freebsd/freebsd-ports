@@ -3,6 +3,7 @@
 PORTNAME=		jail_exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.13.0
+PORTREVISION=	1
 CATEGORIES=		sysutils
 
 MAINTAINER=	dor.bsd@xm0.uk

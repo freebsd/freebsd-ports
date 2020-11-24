@@ -1,5 +1,5 @@
---- src/librustc_llvm/build.rs.orig	2019-12-16 15:38:05 UTC
-+++ src/librustc_llvm/build.rs
+--- compiler/rustc_llvm/build.rs.orig	2019-12-16 15:38:05 UTC
++++ compiler/rustc_llvm/build.rs
 @@ -273,7 +273,14 @@ fn main() {
      };
  

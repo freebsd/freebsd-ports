@@ -2,6 +2,7 @@
 
 PORTNAME=	ods2sql
 DISTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org

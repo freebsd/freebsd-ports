@@ -1,5 +1,5 @@
---- src/librustc_target/abi/call/powerpc64.rs.orig	2020-03-09 22:11:17 UTC
-+++ src/librustc_target/abi/call/powerpc64.rs
+--- compiler/rustc_target/src/abi/call/powerpc64.rs.orig	2020-03-09 22:11:17 UTC
++++ compiler/rustc_target/src/abi/call/powerpc64.rs
 @@ -123,7 +123,7 @@ where
          ELFv2
      } else {

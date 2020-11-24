@@ -1,5 +1,5 @@
---- src/librustc_target/spec/i686_unknown_freebsd.rs.orig	2020-01-23 19:40:44 UTC
-+++ src/librustc_target/spec/i686_unknown_freebsd.rs
+--- compiler/rustc_target/src/spec/i686_unknown_freebsd.rs.orig	2020-01-23 19:40:44 UTC
++++ compiler/rustc_target/src/spec/i686_unknown_freebsd.rs
 @@ -2,7 +2,7 @@ use crate::spec::{LinkerFlavor, Target, TargetResult};
  
  pub fn target() -> TargetResult {

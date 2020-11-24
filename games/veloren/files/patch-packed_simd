@@ -1,0 +1,92 @@
+From 950903a66950eaff745b0a029f2051d305df1c22 Mon Sep 17 00:00:00 2001
+From: Justus K <justus.k@protonmail.com>
+Date: Tue, 22 Sep 2020 15:36:03 +0200
+Subject: [PATCH] Remove `x86_m8x8_sse_impl` macro
+
+---
+ src/codegen/reductions/mask/x86/sse.rs | 32 --------------------------
+ 1 file changed, 32 deletions(-)
+
+diff --git a/src/codegen/reductions/mask/x86/sse.rs b/src/codegen/reductions/mask/x86/sse.rs
+index 7482f943..eb1ef7fa 100644
+--- cargo-crates/packed_simd-0.3.3/src/codegen/reductions/mask/x86/sse.rs
++++ cargo-crates/packed_simd-0.3.3/src/codegen/reductions/mask/x86/sse.rs
+@@ -34,35 +34,3 @@ macro_rules! x86_m32x4_sse_impl {
+         }
+     };
+ }
+-
+-macro_rules! x86_m8x8_sse_impl {
+-    ($id:ident) => {
+-        impl All for $id {
+-            #[inline]
+-            #[target_feature(enable = "sse")]
+-            unsafe fn all(self) -> bool {
+-                #[cfg(target_arch = "x86")]
+-                use crate::arch::x86::_mm_movemask_pi8;
+-                #[cfg(target_arch = "x86_64")]
+-                use crate::arch::x86_64::_mm_movemask_pi8;
+-                // _mm_movemask_pi8(a) creates an 8bit mask containing the most
+-                // significant bit of each byte of `a`. If all bits are set,
+-                // then all 8 lanes of the mask are true.
+-                _mm_movemask_pi8(crate::mem::transmute(self))
+-                    == u8::max_value() as i32
+-            }
+-        }
+-        impl Any for $id {
+-            #[inline]
+-            #[target_feature(enable = "sse")]
+-            unsafe fn any(self) -> bool {
+-                #[cfg(target_arch = "x86")]
+-                use crate::arch::x86::_mm_movemask_pi8;
+-                #[cfg(target_arch = "x86_64")]
+-                use crate::arch::x86_64::_mm_movemask_pi8;
+-
+-                _mm_movemask_pi8(crate::mem::transmute(self)) != 0
+-            }
+-        }
+-    };
+-}
+From 778c0706f356118c7a5dd11c06725fc6c6b84621 Mon Sep 17 00:00:00 2001
+From: Justus K <justus.k@protonmail.com>
+Date: Tue, 22 Sep 2020 15:27:53 +0200
+Subject: [PATCH] Replace `_mm_movemask_pi8` with the fallback_impl
+
+This has to be done, because `_mm_movemask_pi8` got removed
+from stdarch in https://github.com/rust-lang/stdarch/pull/890
+---
+ src/codegen/reductions/mask/x86.rs | 8 +-------
+ src/lib.rs                         | 1 -
+ 2 files changed, 1 insertion(+), 8 deletions(-)
+
+diff --git a/src/codegen/reductions/mask/x86.rs b/src/codegen/reductions/mask/x86.rs
+index 2ae4ed81..bcfb1a6e 100644
+--- cargo-crates/packed_simd-0.3.3/src/codegen/reductions/mask/x86.rs
++++ cargo-crates/packed_simd-0.3.3/src/codegen/reductions/mask/x86.rs
+@@ -19,13 +19,7 @@ mod avx2;
+ /// x86 64-bit m8x8 implementation
+ macro_rules! x86_m8x8_impl {
+     ($id:ident) => {
+-        cfg_if! {
+-            if #[cfg(all(target_arch = "x86_64", target_feature = "sse"))] {
+-                x86_m8x8_sse_impl!($id);
+-            } else {
+-                fallback_impl!($id);
+-            }
+-        }
++        fallback_impl!($id);
+     };
+ }
+ 
+diff --git a/src/lib.rs b/src/lib.rs
+index c3da0d3c..cbd438c0 100644
+--- cargo-crates/packed_simd-0.3.3/src/lib.rs
++++ cargo-crates/packed_simd-0.3.3/src/lib.rs
+@@ -210,7 +210,6 @@
+     core_intrinsics,
+     stmt_expr_attributes,
+     align_offset,
+-    mmx_target_feature,
+     crate_visibility_modifier,
+     custom_inner_attributes
+ )]
