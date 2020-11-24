@@ -1,0 +1,5 @@
+You need to add:
+
+load perl
+
+to your ~/.irssi/startup file.
