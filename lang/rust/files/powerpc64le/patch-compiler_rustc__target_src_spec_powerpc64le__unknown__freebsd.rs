@@ -1,5 +1,5 @@
 --- /dev/null	2020-09-30 18:09:21.093949000 -0500
-+++ src/librustc_target/spec/powerpc64le_unknown_freebsd.rs	2020-09-30 18:08:47.737833000 -0500
++++ compiler/rustc_target/src/spec/powerpc64le_unknown_freebsd.rs	2020-09-30 18:08:47.737833000 -0500
 @@ -0,0 +1,22 @@
 +use crate::spec::{LinkerFlavor, Target, TargetOptions, TargetResult};
 +
