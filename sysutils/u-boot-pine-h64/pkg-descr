@@ -1,0 +1,9 @@
+U-Boot loader and related files for the Pine H64
+
+To install this bootloader on an sdcard just do:
+dd if=/usr/local/share/u-boot/u-boot-pine-h64/u-boot-sunxi-with-spl.bin of=/path/to/sdcarddevice bs=128k seek=1 conv=sync
+
+For information about running FreeBSD on Allwinner boards, see
+ https://wiki.freebsd.org/FreeBSD/arm/Allwinner
+
+WWW: https://www.denx.de/wiki/U-Boot

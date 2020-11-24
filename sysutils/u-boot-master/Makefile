@@ -151,8 +151,13 @@ UBOOT_MOVE=${UBOOT_MOVE_${FAMILY:tu}}
 
 # Per family dependancies
 .if defined(FAMILY) && ${FAMILY} == allwinner64
+.if defined(SUBFAMILY) && ${SUBFAMILY} == h6
+BUILD_DEPENDS+=	${LOCALBASE}/share/atf-sun50i_h6/bl31.bin:sysutils/atf-sun50i_h6
+MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-sun50i_h6/bl31.bin
+.else
 BUILD_DEPENDS+=	${LOCALBASE}/share/atf-sun50i_a64/bl31.bin:sysutils/atf-sun50i_a64
 MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-sun50i_a64/bl31.bin
+.endif
 .endif
 
 .if defined(FAMILY) && ${FAMILY} == rk3328
