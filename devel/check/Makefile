@@ -23,14 +23,4 @@ INFO=		check
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|COPYING.LESSER||' \
-		-e '/^docdir = / s|$$(PACKAGE)|check|' \
-			${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} \
-		-e '/^exampledir = / s|(docdir)/example|(datadir)/examples/check|' \
-		-e '/^example[a-z]*dir = / s|(docdir)/example/|(exampledir)/|' \
-			${WRKSRC}/doc/Makefile.in
-
 .include <bsd.port.mk>
