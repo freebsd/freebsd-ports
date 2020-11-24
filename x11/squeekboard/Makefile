@@ -2,7 +2,7 @@
 
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.0
+DISTVERSION=	1.11.1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -27,7 +27,7 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 gtk30
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_COMMIT=	5aa73347877d1a716d9e668533ae96123d50bf56
+GL_COMMIT=	4049e663072ccd8be3143efccd7b03370890647e
 MAKE_ENV=	${CARGO_ENV}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-entry \
@@ -39,7 +39,7 @@ CARGO_CRATES=	atk-0.7.0 \
 		bitflags-1.2.1 \
 		cairo-rs-0.7.1 \
 		cairo-sys-rs-0.9.2 \
-		cc-1.0.62 \
+		cc-1.0.65 \
 		clap-2.33.3 \
 		dtoa-0.4.6 \
 		fragile-0.3.0 \
