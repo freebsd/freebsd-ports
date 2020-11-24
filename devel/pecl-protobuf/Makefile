@@ -13,4 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		localbase php:pecl
 
+IGNORE_WITH_PHP=80
+
 .include <bsd.port.mk>
