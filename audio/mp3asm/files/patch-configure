@@ -1,0 +1,18 @@
+--- configure.orig	2001-04-12 04:21:33 UTC
++++ configure
+@@ -962,7 +962,6 @@ fi
+ 
+ ac_test_CFLAGS="${CFLAGS+set}"
+ ac_save_CFLAGS="$CFLAGS"
+-CFLAGS=
+ echo $ac_n "checking whether ${CC-cc} accepts -g""... $ac_c" 1>&6
+ echo "configure:968: checking whether ${CC-cc} accepts -g" >&5
+ if eval "test \"`echo '$''{'ac_cv_prog_cc_g'+set}'`\" = set"; then
+@@ -1018,7 +1017,6 @@ else
+ fi
+ 
+ 
+-CFLAGS="-g -O -Wall"
+ 
+ 
+ echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
