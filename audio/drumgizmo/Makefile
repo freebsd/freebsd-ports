@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drumgizmo
-PORTVERSION=	0.9.18.1
-PORTREVISION=	1
+PORTVERSION=	0.9.19
 CATEGORIES=	audio
 MASTER_SITES=	http://www.drumgizmo.org/releases/${PORTNAME}-${PORTVERSION}/
 
@@ -13,8 +12,6 @@ COMMENT=	Multichannel drum sampler
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		pluginlv2.cc:687:2: error: cannot initialize a member subobject of type 'LV2_Handle'
-
 BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
 LIB_DEPENDS=	libsmf.so:audio/libsmf \
 		libzita-resampler.so:audio/zita-resampler \
@@ -22,15 +19,22 @@ LIB_DEPENDS=	libsmf.so:audio/libsmf \
 		libsndfile.so:audio/libsndfile \
 		libexpat.so:textproc/expat2
 
-GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lang gettext-runtime gnome libtool pkgconfig xorg
+USES=		compiler:c++11-lang gnome libtool pkgconfig xorg
 USE_GNOME=	glib20
 USE_XORG=	x11 xext
 
-CPPFLAGS+=	-I../include -I../../include -I../src -I../../src -I${LOCALBASE}/include
-
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-output-alsa --enable-lv2
 CONFIGURE_ENV=	EXPAT_CFLAGS=-isystem${LOCALBASE}/include EXPAT_LDFLAGS=-L${LOCALBASE}/lib \
 		ZITA_CPPFLAGS=-isystem${LOCALBASE}/include ZITA_LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-output-alsa --enable-lv2
+
+CPPFLAGS+=	-I../include -I../../include -I../src -I../../src -I${LOCALBASE}/include
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext-runtime gettext-tools
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/drumgizmo.lv2/drumgizmo.so
 
 .include <bsd.port.mk>
