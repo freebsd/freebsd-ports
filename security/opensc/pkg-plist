@@ -27,6 +27,7 @@ etc/bash_completion.d/dnie-tool
 etc/bash_completion.d/egk-tool
 etc/bash_completion.d/eidenv
 etc/bash_completion.d/gids-tool
+etc/bash_completion.d/goid-tool
 etc/bash_completion.d/iasecc-tool
 etc/bash_completion.d/netkey-tool
 etc/bash_completion.d/npa-tool
@@ -36,6 +37,7 @@ etc/bash_completion.d/opensc-explorer
 etc/bash_completion.d/opensc-notify
 etc/bash_completion.d/opensc-tool
 etc/bash_completion.d/piv-tool
+etc/bash_completion.d/pkcs11-register
 etc/bash_completion.d/pkcs11-tool
 etc/bash_completion.d/pkcs15-crypt
 etc/bash_completion.d/pkcs15-init
@@ -46,11 +48,11 @@ etc/bash_completion.d/westcos-tool
 etc/xdg/autostart/pkcs11-register.desktop
 lib/libopensc.a
 lib/libopensc.so
-lib/libopensc.so.6
-lib/libopensc.so.6.0.0
+lib/libopensc.so.7
+lib/libopensc.so.7.0.0
 %%SM%%lib/libsmm-local.so
-%%SM%%lib/libsmm-local.so.6
-%%SM%%lib/libsmm-local.so.6.0.0
+%%SM%%lib/libsmm-local.so.7
+%%SM%%lib/libsmm-local.so.7.0.0
 lib/onepin-opensc-pkcs11.so
 lib/opensc-pkcs11.so
 lib/pkcs11-spy.so
@@ -97,6 +99,7 @@ share/applications/org.opensc.notify.desktop
 %%MANPAGES%%man/man1/egk-tool.1.gz
 %%MANPAGES%%man/man1/eidenv.1.gz
 %%MANPAGES%%man/man1/gids-tool.1.gz
+%%MANPAGES%%man/man1/goid-tool.1.gz
 %%MANPAGES%%man/man1/iasecc-tool.1.gz
 %%MANPAGES%%man/man1/netkey-tool.1.gz
 %%MANPAGES%%man/man1/npa-tool.1.gz
@@ -106,6 +109,7 @@ share/applications/org.opensc.notify.desktop
 %%MANPAGES%%man/man1/opensc-notify.1.gz
 %%MANPAGES%%man/man1/opensc-tool.1.gz
 %%MANPAGES%%man/man1/piv-tool.1.gz
+%%MANPAGES%%man/man1/pkcs11-register.1.gz
 %%MANPAGES%%man/man1/pkcs11-tool.1.gz
 %%MANPAGES%%man/man1/pkcs15-crypt.1.gz
 %%MANPAGES%%man/man1/pkcs15-init.1.gz
