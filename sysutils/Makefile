@@ -63,6 +63,7 @@
     SUBDIR += atf-rk3328
     SUBDIR += atf-rk3399
     SUBDIR += atf-sun50i_a64
+    SUBDIR += atf-sun50i_h6
     SUBDIR += atitvout
     SUBDIR += atop
     SUBDIR += auto-admin
