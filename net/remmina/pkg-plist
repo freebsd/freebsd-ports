@@ -3,6 +3,16 @@ bin/remmina-file-wrapper
 include/remmina/plugin.h
 include/remmina/remmina_trace_calls.h
 include/remmina/types.h
+%%EXEC%%lib/remmina/plugins/remmina-plugin-exec.so
+%%KWALLET%%lib/remmina/plugins/remmina-plugin-kwallet.so
+%%NX%%lib/remmina/plugins/remmina-plugin-nx.so
+%%RDP%%lib/remmina/plugins/remmina-plugin-rdp.so
+%%SECRET%%lib/remmina/plugins/remmina-plugin-secret.so
+%%SPICE%%lib/remmina/plugins/remmina-plugin-spice.so
+%%ST%%lib/remmina/plugins/remmina-plugin-st.so
+%%VNC%%lib/remmina/plugins/remmina-plugin-vnc.so
+%%WWW%%lib/remmina/plugins/remmina-plugin-www.so
+%%XDMCP%%lib/remmina/plugins/remmina-plugin-xdmcp.so
 libdata/pkgconfig/remmina.pc
 man/man1/remmina-file-wrapper.1.gz
 man/man1/remmina.1.gz
@@ -65,6 +75,17 @@ share/icons/hicolor/scalable/apps/remmina-panel-inverted.svg
 share/icons/hicolor/scalable/apps/remmina-panel.svg
 share/icons/hicolor/scalable/emblems/remmina-sftp-symbolic.svg
 share/icons/hicolor/scalable/emblems/remmina-ssh-symbolic.svg
+%%EXEC%%share/icons/hicolor/scalable/emblems/remmina-tool-symbolic.svg
+%%NX%%share/icons/hicolor/scalable/emblems/remmina-nx-symbolic.svg
+%%RDP%%share/icons/hicolor/scalable/emblems/remmina-rdp-symbolic.svg
+%%RDP%%share/icons/hicolor/scalable/emblems/remmina-rdp-ssh-symbolic.svg
+%%SPICE%%share/icons/hicolor/scalable/emblems/remmina-spice-ssh-symbolic.svg
+%%SPICE%%share/icons/hicolor/scalable/emblems/remmina-spice-symbolic.svg
+%%VNC%%share/icons/hicolor/scalable/emblems/remmina-vnc-ssh-symbolic.svg
+%%VNC%%share/icons/hicolor/scalable/emblems/remmina-vnc-symbolic.svg
+%%WWW%%share/icons/hicolor/scalable/emblems/remmina-www-symbolic.svg
+%%XDMCP%%share/icons/hicolor/scalable/emblems/remmina-xdmcp-ssh-symbolic.svg
+%%XDMCP%%share/icons/hicolor/scalable/emblems/remmina-xdmcp-symbolic.svg
 share/icons/hicolor/scalable/panel/remmina-panel-inverted.svg
 share/icons/hicolor/scalable/panel/remmina-panel.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/remmina.mo
@@ -143,6 +164,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/external_tools/remmina_nslookup.sh
 %%DATADIR%%/external_tools/remmina_ping.sh
 %%DATADIR%%/external_tools/remmina_traceroute.sh
+%%WWW%%%%DATADIR%%/res/www-js.js
 %%DATADIR%%/theme/3024 Day.colors
 %%DATADIR%%/theme/3024 Night.colors
 %%DATADIR%%/theme/AdventureTime.colors

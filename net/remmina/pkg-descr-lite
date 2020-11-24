@@ -3,4 +3,10 @@ system administrators and travellers, who need to work with lots of remote
 computers in front of either large monitors or tiny netbooks. Remmina supports
 multiple network protocols in an integrated and consistant user interface.
 
+Remmina includes support for the following network protocols:
+* RDP, VNC, SPICE, NX, XDMCP, SSH, SFTP
+
+This is the lite flavor of the Remmina package, compiled with the minimum
+dependencies to support the RDP and VNC protocols only.
+
 WWW: https://www.remmina.org/

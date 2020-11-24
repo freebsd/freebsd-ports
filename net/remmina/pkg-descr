@@ -3,20 +3,11 @@ system administrators and travellers, who need to work with lots of remote
 computers in front of either large monitors or tiny netbooks. Remmina supports
 multiple network protocols in an integrated and consistant user interface.
 
-The Remmina main program:
+Remmina includes support for the following network protocols:
+* RDP, VNC, SPICE, NX, XDMCP, SSH, SFTP
 
- * Maintain a list of connection profiles, organized by groups
- * Make quick connections by directly putting in the server address
- * Remote desktops with higher resolutions are scrollable/scalable in both
-   window and fullscreen mode
- * Viewport fullscreen mode: remote desktop automatically scrolls when the
-   mouse moves over the screen edge.
- * Floating toolbar in fullscreen mode, allows you to switch between modes,
-   toggle keyboard grabbing, minimize, etc.
- * Tabbed interface, optionally managed by groups
- * A GTK+ 3 application
-
-Remmina plugins are available for the following network protocols:
- * RDP, VNC, NX, XDMCP, SSH, Telepathy
+This is the full-featured flavor of the Remmina package, compiled with support
+for optional desktop features and network protocols, as shown by the package
+options.
 
 WWW: https://www.remmina.org/
