@@ -1,5 +1,5 @@
---- ../nginx-link-function-3.2.3/config.orig	2019-02-22 21:19:02.000000000 -0500
-+++ ../nginx-link-function-3.2.3/config	2020-01-24 10:29:53.871805000 -0500
+--- ../nginx-link-function-3.2.4/config.orig	2020-10-12 22:32:47.000000000 -0400
++++ ../nginx-link-function-3.2.4/config	2020-11-13 12:26:56.186032000 -0500
 @@ -15,24 +15,6 @@
  #echo "#define NGINX_HTTP_HTTP_LINK_FUNC_VERSION \""$HTTP_LINK_FUNC_VERSION"\"" > $NGX_OBJS/ngx_vod_version.h
  
@@ -13,11 +13,11 @@
 -ngx_feature_path=
 -ngx_feature_libs=
 -# ngx_feature_exit_if_not_found=yes
--ngx_feature_test="int ngx_link_func_module_current_version_=ngx_link_func_module_version_33;"
+-ngx_feature_test="int ngx_link_func_module_current_version_=ngx_link_func_module_version_34;"
 -. auto/feature
 -
 -if [ $ngx_found != yes ]; then
--echo "ngx_link_func_module.h not found in your system c header path, please copy latest ngx_link_func_module.h to your /usr/include or /usr/local/include or relavent header search path with read and write permission given."
+-echo "ngx_link_func_module.h not found or version not aligned in your system c header path, please copy latest ngx_link_func_module.h to your /usr/include or /usr/local/include or relavent header search path with read and write permission given."
 -echo "e.g install -m 644 ../nginx-link-function/src/ngx_link_func_module.h /usr/local/include/"
 -echo
 -exit 1
@@ -25,12 +25,11 @@
  cat $ngx_addon_dir/build_test_resources/sanity_test_raw_parse.t > $ngx_addon_dir/t/sanity.t
  if [ $USE_THREADS = YES ]; then
  cat $ngx_addon_dir/build_test_resources/sanity_test_aio_parse.t >> $ngx_addon_dir/t/sanity.t
-@@ -42,13 +24,13 @@
+@@ -42,13 +24,12 @@
  if [ $USE_THREADS = YES ]; then
  cat $ngx_addon_dir/build_test_resources/sanity_test_subrequest_aio_parse.t >> $ngx_addon_dir/t/sanity.t
  fi
 -fi
-+
  ABSOLUTE_NGX_LINKFUNC_CURRENT_PATH="$( cd "$ngx_addon_dir" ; pwd -P )"
  if [ "$NGX_SYSTEM" = "Darwin" ]; then
  clang -dynamiclib -o $ngx_addon_dir/t/liblinkfuntest.dylib -fPIC $ngx_addon_dir/build_test_resources/linkfuntest.c -Wl,-undefined,dynamic_lookup
