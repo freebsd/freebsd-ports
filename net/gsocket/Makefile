@@ -3,6 +3,7 @@
 PORTNAME=	gsocket
 PORTVERSION=	1.4.22
 CATEGORIES=	net
+MASTER_SITES=	https://github.com/hackerschoice/gsocket/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	arr@watson.org
 COMMENT=	Allows two users behind NAT/Firewall to establish a TCP connection
@@ -10,11 +11,7 @@ COMMENT=	Allows two users behind NAT/Firewall to establish a TCP connection
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf shebangfix ssl
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	hackerschoice
-GH_TAGNAME=	v${PORTVERSION}
+USES=		shebangfix ssl
 
 GNU_CONFIGURE=	yes
 
