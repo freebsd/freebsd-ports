@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gifski
-DISTVERSION=	1.2.2
-PORTREVISION=	1
+DISTVERSION=	1.2.4
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +18,7 @@ GH_TUPLE=	kornelski:rust-ffmpeg:4da6d270cdaa868e5488144ed73bfaabe329cfcb:ffmpeg 
 		meh:rust-ffmpeg-sys:70f711a43eb7ff7447fcffa98bb9f533acc08a1e:ffmpegsys
 
 CARGO_CRATES=	adler-0.2.3 \
-		aho-corasick-0.7.13 \
+		aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
@@ -27,49 +26,51 @@ CARGO_CRATES=	adler-0.2.3 \
 		bitflags-0.9.1 \
 		bitflags-1.2.1 \
 		bytemuck-1.4.1 \
-		cc-1.0.61 \
+		cc-1.0.62 \
 		cexpr-0.4.0 \
 		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
 		clang-sys-1.0.1 \
 		clap-2.33.3 \
 		color_quant-1.1.0 \
-		crc32fast-1.2.0 \
+		crc32fast-1.2.1 \
 		crossbeam-channel-0.4.4 \
 		crossbeam-utils-0.7.2 \
 		dunce-1.0.1 \
 		env_logger-0.7.1 \
-		flate2-1.0.18 \
-		gif-0.11.1 \
-		gif-dispose-3.0.0 \
-		gifsicle-1.92.1 \
+		flate2-1.0.19 \
+		gif-0.10.3 \
+		gif-dispose-2.4.2 \
+		gifsicle-1.92.4 \
 		glob-0.3.0 \
 		hermit-abi-0.1.17 \
 		humantime-1.3.0 \
-		imagequant-2.12.5 \
-		imagequant-sys-2.12.7 \
+		imagequant-2.13.0 \
+		imagequant-sys-2.13.0 \
 		imgref-1.7.0 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.79 \
-		libloading-0.6.4 \
+		libc-0.2.80 \
+		libloading-0.6.5 \
 		lodepng-3.2.2 \
 		log-0.4.11 \
+		lzw-0.10.0 \
 		maybe-uninit-2.0.0 \
-		memchr-2.3.3 \
+		memchr-2.3.4 \
 		miniz_oxide-0.4.3 \
 		natord-1.0.9 \
 		nom-5.1.2 \
 		num_cpus-1.13.0 \
-		openmp-sys-0.1.7 \
+		openmp-sys-1.0.0 \
 		pbr-1.0.3 \
 		peeking_take_while-0.1.2 \
-		pkg-config-0.3.18 \
+		pkg-config-0.3.19 \
 		proc-macro2-1.0.24 \
 		quick-error-1.2.3 \
 		quick-error-2.0.0 \
 		quote-1.0.7 \
-		regex-1.3.9 \
-		regex-syntax-0.6.18 \
+		regex-1.4.2 \
+		regex-syntax-0.6.21 \
 		resize-0.5.5 \
 		rgb-0.8.25 \
 		rustc-hash-1.1.0 \
@@ -85,7 +86,6 @@ CARGO_CRATES=	adler-0.2.3 \
 		vec_map-0.8.2 \
 		version_check-0.9.2 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
-		weezl-0.1.1 \
 		which-3.1.1 \
 		wild-2.0.4 \
 		winapi-0.3.9 \
