@@ -2,7 +2,7 @@
 
 PORTNAME=	intel-graphics-compiler
 DISTVERSIONPREFIX=	igc-
-DISTVERSION=	1.0.5435
+DISTVERSION=	1.0.5585
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -23,7 +23,7 @@ USES=		bison cmake compiler:c++17-lang python:build
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	intel
-GH_TUPLE=	intel:vc-intrinsics:d2a2184:vcintrin/../vc-intrinsics
+GH_TUPLE=	intel:vc-intrinsics:a08fe5b:vcintrin/../vc-intrinsics
 CMAKE_OFF=	INSTALL_SPIRVDLL
 CFLAGS+=	-Wno-macro-redefined # __fastcall
 PLIST_SUB=	ARCH_SUFX=${ARCH:S/i386/32/:S/amd//:S/x86_//}
