@@ -1,31 +1,33 @@
---- config.orig	2015-01-15 18:58:20 UTC
+--- config.orig	2020-04-23 01:16:42 UTC
 +++ config
-@@ -1,24 +1,24 @@
+@@ -1,16 +1,15 @@
  # Installation directories
  
  # Default installation prefix
 -PREFIX=/usr/local
-+PREFIX=%%PREFIX%%
++PREFIX?=/usr/local
+ 
+-LUA_VERSION = 5.1
++LUA_VERSION?= 5.1
  
  # System's libraries directory (where binary libraries are installed)
--LUA_LIBDIR= $(PREFIX)/lib/lua/5.1
+-LUA_LIBDIR= $(PREFIX)/lib/lua/$(LUA_VERSION)
 +LUA_LIBDIR= %%MODLIBDIR%%
  
  # Lua includes directory
--LUA_INC= $(PREFIX)/include
-+LUA_INC= %%INCDIR%%
+-LUA_INC += -I$(PREFIX)/include
+-LUA_INC += -I/usr/include/lua$(LUA_VERSION) -I/usr/include/lua/$(LUA_VERSION)
++LUA_INC += %%INCDIR%%
  
  # OS dependent
  LIB_OPTION= -shared #for Linux
- #LIB_OPTION= -bundle -undefined dynamic_lookup #for MacOS X
- 
--LIBNAME= $T.so.$V
-+LIBNAME= $T.so
- 
+@@ -22,7 +21,7 @@ MACOSX_DEPLOYMENT_TARGET= 10.5
  # Compilation directives
  WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings -pedantic
- INCS= -I$(LUA_INC)
+ INCS= $(LUA_INC)
 -CFLAGS= $(WARN) $(INCS)
 -CC= gcc
 +CFLAGS+= $(WARN) $(INCS)
 +CC?= gcc
+ 
+ # $Id: config,v 1.21 2007/10/27 22:42:32 carregal Exp $

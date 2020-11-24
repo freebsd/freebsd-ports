@@ -3,8 +3,7 @@
 
 PORTNAME=	luafilesystem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1_7_0
-PORTREVISION=	1
+DISTVERSION=	1_8_0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
@@ -13,7 +12,7 @@ COMMENT=	Library to access directory structure and file attributes
 
 LICENSE=	MIT
 
-USES=		lua:-53,module
+USES=		lua:module
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keplerproject
