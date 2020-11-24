@@ -3,3 +3,5 @@ SHA256 (mortie-swaylock-effects-v1.6-3_GH0.tar.gz) = c7c4e420276aef9bd952b321b68
 SIZE (mortie-swaylock-effects-v1.6-3_GH0.tar.gz) = 620277
 SHA256 (ea4b63d8fff3.patch) = 5482c003ae7c2ec2ceac9c3944583b25312b56772a1c77ff427c38376ad368ab
 SIZE (ea4b63d8fff3.patch) = 911
+SHA256 (17fea65e8c99.patch) = 9c014873d781e610680a471aa327a72dba85be778a24d1939164c7063d2bbe70
+SIZE (17fea65e8c99.patch) = 937
