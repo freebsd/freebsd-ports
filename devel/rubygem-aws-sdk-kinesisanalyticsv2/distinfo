@@ -1,3 +1,3 @@
-TIMESTAMP = 1602317919
-SHA256 (rubygem/aws-sdk-kinesisanalyticsv2-1.23.0.gem) = 690d5ee9d56968c7b6bad048925881ae65233355d048efc47ef6495c10df9fc6
-SIZE (rubygem/aws-sdk-kinesisanalyticsv2-1.23.0.gem) = 55808
+TIMESTAMP = 1606243357
+SHA256 (rubygem/aws-sdk-kinesisanalyticsv2-1.24.0.gem) = 7414ffc3e387f84b0662e9254b99fa304689adc08471d24a88d7b7b32719de50
+SIZE (rubygem/aws-sdk-kinesisanalyticsv2-1.24.0.gem) = 58368
