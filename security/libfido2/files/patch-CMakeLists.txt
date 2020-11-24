@@ -1,14 +1,6 @@
 --- CMakeLists.txt.orig	2020-09-01 07:17:43 UTC
 +++ CMakeLists.txt
-@@ -72,7 +72,6 @@ if(MSVC)
- else()
- 	include(FindPkgConfig)
- 	pkg_search_module(CBOR libcbor)
--	pkg_search_module(CRYPTO libcrypto)
- 
- 	# XXX workaround libcbor's missing .pc file
- 	if(NOT CBOR_FOUND)
-@@ -177,8 +176,8 @@ endif()
+@@ -177,8 +177,8 @@ endif()
  
  add_definitions(-DTLS=${TLS})
  
