@@ -129,8 +129,8 @@ lib/gretl-gtk2/vif.so
 %%GUI%%lib/gretl-gtk2/xlsx_import.so
 %%GUI%%lib/gretl-gtk2/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.35
-lib/libgretl-1.0.so.35.0.0
+lib/libgretl-1.0.so.36
+lib/libgretl-1.0.so.36.0.0
 libdata/pkgconfig/gretl.pc
 man/man1/gretl.1.gz
 %%GUI%%share/appdata/gretl.appdata.xml
@@ -415,8 +415,12 @@ man/man1/gretl.1.gz
 %%ADDONS%%%%DATADIR%%/functions/ivpanel/ivpanel.gfn
 %%ADDONS%%%%DATADIR%%/functions/ivpanel/ivpanel.pdf
 %%DATADIR%%/functions/packages.xml
+%%DATADIR%%/functions/regls/examples/fat.inp
+%%DATADIR%%/functions/regls/examples/fatplus.inp
+%%DATADIR%%/functions/regls/examples/lambda_sequence.inp
+%%DATADIR%%/functions/regls/examples/multiprint.inp
 %%DATADIR%%/functions/regls/examples/murder.gdt
-%%DATADIR%%/functions/regls/examples/winequality-red.gdt
+%%DATADIR%%/functions/regls/examples/xvalidate_consec.inp
 %%DATADIR%%/functions/regls/regls.gfn
 %%DATADIR%%/functions/regls/regls.pdf
 %%GUI%%%%DATADIR%%/gretl-logo.xpm
@@ -523,6 +527,7 @@ man/man1/gretl.1.gz
 %%DATADIR%%/scripts/misc/jgm-1996.inp
 %%DATADIR%%/scripts/misc/keane.inp
 %%DATADIR%%/scripts/misc/klein.inp
+%%DATADIR%%/scripts/misc/kleinsim.inp
 %%DATADIR%%/scripts/misc/kmenta.inp
 %%DATADIR%%/scripts/misc/leverage.inp
 %%DATADIR%%/scripts/misc/longley.inp

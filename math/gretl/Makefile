@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gretl
-DISTVERSION=	2020d
+DISTVERSION=	2020e
 CATEGORIES=	math finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -90,8 +90,6 @@ post-patch:
 		{x; s/.*/#include <netinet\/in.h>/; H; x;}' \
 		${WRKSRC}/configure \
 		${WRKSRC}/plugin/mailer.c
-	@${REINPLACE_CMD} -e 's| DOMAIN| CEPHES_DOMAIN|g' \
-		${WRKSRC}/cephes/iv.c
 
 regression-test test check: build
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
