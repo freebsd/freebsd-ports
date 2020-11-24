@@ -94,8 +94,7 @@ SMTP_PLIST_FILES=		lib/syslog-ng/libafsmtp.so
 
 SQL_CONFIGURE_ENABLE=		sql
 SQL_LIB_DEPENDS=		libdbi.so:databases/libdbi
-SQL_CONFIGURE_ENV=		LIBDBI_LIBS="-ldbi"
-SQL_LDFLAGS=			-L${LOCALBASE}/lib
+SQL_CONFIGURE_ENV=		LIBDBI_LIBS="-L${LOCALBASE}/lib -ldbi"
 SQL_PLIST_FILES=		lib/syslog-ng/libafsql.so
 
 MONGO_CONFIGURE_ENABLE=		mongodb
