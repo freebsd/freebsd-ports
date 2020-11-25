@@ -75,9 +75,11 @@
     SUBDIR += fpc-base
     SUBDIR += fpc-docs
     SUBDIR += fpc-lua
+    SUBDIR += fpc-pastojs
     SUBDIR += fpc-rexx
     SUBDIR += fpc-rtl-console
     SUBDIR += fpc-rtl-extra
+    SUBDIR += fpc-rtl-generic
     SUBDIR += fpc-rtl-objpas
     SUBDIR += fpc-rtl-unicode
     SUBDIR += fpc-source
