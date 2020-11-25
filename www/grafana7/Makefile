@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grafana
-PORTVERSION=	7.3.0
+PORTVERSION=	7.3.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://dl.grafana.com/oss/release/:public \
@@ -52,7 +52,7 @@ GH_TUPLE=	\
 		cpuguy83:go-md2man:f79a8a8ca69d:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		crewjam:saml:v0.4.1:crewjam_saml/vendor/github.com/crewjam/saml \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		deepmap:oapi-codegen:v1.3.11:deepmap_oapi_codegen/vendor/github.com/deepmap/oapi-codegen \
+		deepmap:oapi-codegen:v1.3.13:deepmap_oapi_codegen/vendor/github.com/deepmap/oapi-codegen \
 		denisenkom:go-mssqldb:b91950f658ec:denisenkom_go_mssqldb_1/vendor/github.com/denisenkom/go-mssqldb \
 		facebookgo:ensure:b4ab57deab51:facebookgo_ensure/vendor/github.com/facebookgo/ensure \
 		facebookgo:inject:f23751cae28b:facebookgo_inject/vendor/github.com/facebookgo/inject \
@@ -105,7 +105,7 @@ GH_TUPLE=	\
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		gosimple:slug:v1.4.2:gosimple_slug/vendor/github.com/gosimple/slug \
 		grafana:grafana-plugin-model:1fc953a61fb4:grafana_grafana_plugin_model/vendor/github.com/grafana/grafana-plugin-model \
-		grafana:grafana-plugin-sdk-go:v0.78.0:grafana_grafana_plugin_sdk_go/vendor/github.com/grafana/grafana-plugin-sdk-go \
+		grafana:grafana-plugin-sdk-go:v0.79.0:grafana_grafana_plugin_sdk_go/vendor/github.com/grafana/grafana-plugin-sdk-go \
 		grafana:loki:v1.6.0:grafana_loki/vendor/github.com/grafana/loki \
 		grpc-ecosystem:go-grpc-middleware:v1.2.1:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:6af20e3a5340:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
@@ -116,7 +116,7 @@ GH_TUPLE=	\
 		hashicorp:yamux:2f1d1f20f75d:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
 		igm:sockjs-go:v3.0.0:igm_sockjs_go_v3/vendor/github.com/igm/sockjs-go \
 		inconshreveable:log15:67afb5ed74ec:inconshreveable_log15/vendor/github.com/inconshreveable/log15 \
-		influxdata:influxdb-client-go:v2.0.1:influxdata_influxdb_client_go_v2/vendor/github.com/influxdata/influxdb-client-go/v2 \
+		influxdata:influxdb-client-go:v2.2.0:influxdata_influxdb_client_go_v2/vendor/github.com/influxdata/influxdb-client-go/v2 \
 		influxdata:line-protocol:2487e7298839:influxdata_line_protocol/vendor/github.com/influxdata/line-protocol \
 		jmespath:go-jmespath:v0.3.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		jonboulle:clockwork:v0.2.1:jonboulle_clockwork/vendor/github.com/jonboulle/clockwork \
