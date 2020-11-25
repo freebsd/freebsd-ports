@@ -3,9 +3,9 @@
 
 PORTNAME=	checkmol
 PORTVERSION=	0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	science
-MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/checkmol/
+MASTER_SITES=	https://homepage.univie.ac.at/norbert.haider/download/chemistry/checkmol/
 DISTFILES=	${PORTNAME}
 EXTRACT_SUFX=	.pas
 

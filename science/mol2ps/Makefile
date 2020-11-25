@@ -3,9 +3,9 @@
 
 PORTNAME=	mol2ps
 PORTVERSION=	0.4b
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
-MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/${PORTNAME}/
+MASTER_SITES=	https://homepage.univie.ac.at/norbert.haider/download/chemistry/mol2ps/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.pas
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
