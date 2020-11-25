@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	opustags
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libogg.so:audio/libogg
 
 USES=		cmake compiler:c++14-lang iconv pkgconfig
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	fmang
 
