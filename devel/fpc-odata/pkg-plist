@@ -1,0 +1,11 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/odata.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odata/msgraph.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odata/msgraph.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odata/odatabase.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odata/odatabase.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odata/odataservice.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odata/odataservice.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odata/office365client.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odata/office365client.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odata/sharepoint.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/odata/sharepoint.ppu
