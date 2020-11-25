@@ -73,8 +73,8 @@ SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
 SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 .endif
 
-.if ${ARCH} == aarch64
-EXTRA_PATCHES=	${FILESDIR}/aarch64
+.if ${ARCH} == aarch64 || ${ARCH} == powerpc64le
+EXTRA_PATCHES=	${FILESDIR}/${ARCH}
 .endif
 
 ALL_TARGET=	core
@@ -82,6 +82,9 @@ ALL_TARGET=	core
 PORTSCOUT=	limitw:1,even
 
 CPE_PRODUCT=	mongodb
+
+pre-patch:
+	${MV} ${WRKSRC}/src/third_party/wiredtiger/src/checksum/power8/crc32.sx ${WRKSRC}/src/third_party/wiredtiger/src/checksum/power8/crc32.S
 
 post-install:
 .for f in mongo mongod mongos
