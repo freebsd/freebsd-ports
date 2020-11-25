@@ -26,7 +26,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 USES+=		gmake iconv
 USE_BINUTILS=	yes
 BOOTVER=	3.0.4
-MANVER=		3.0.4
+MANVER=		${PORTVERSION}
 
 FPC_LDPATH?=	"${LOCALBASE}/bin/ld.bfd"
 
