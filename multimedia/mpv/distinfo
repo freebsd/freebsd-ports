@@ -3,5 +3,5 @@ SHA256 (waf-2.0.20.tar.bz2) = cce635c2d1a0f93b4f5b811e0452a35b8066e8ccd78632447f
 SIZE (waf-2.0.20.tar.bz2) = 682619
 SHA256 (mpv-player-mpv-v0.33.0_GH0.tar.gz) = f1b9baf5dc2eeaf376597c28a6281facf6ed98ff3d567e3955c95bf2459520b4
 SIZE (mpv-player-mpv-v0.33.0_GH0.tar.gz) = 3259387
-SHA256 (e7bcd38402a8.patch) = eec811caa99dabfacf5d711f5a7f5122ace136cb63666079aace2642d89ee783
-SIZE (e7bcd38402a8.patch) = 15971
+SHA256 (211d621da9a3.patch) = 07c1f4b5f218507629eb6775df0a45697274d38837bdc2f1dbb7ad87ce54372e
+SIZE (211d621da9a3.patch) = 16070

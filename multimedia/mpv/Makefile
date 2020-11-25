@@ -11,7 +11,7 @@ MASTER_SITES=	https://waf.io/:waf
 DISTFILES=	${WAF_RELEASE}${EXTRACT_SUFX}:waf
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	e7bcd38402a8.patch:-p1 # https://github.com/mpv-player/mpv/pull/8312
+PATCHFILES+=	211d621da9a3.patch:-p1 # https://github.com/mpv-player/mpv/pull/8312
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
