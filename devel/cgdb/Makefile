@@ -12,7 +12,8 @@ COMMENT=	Curses-based interface to the GNU Debugger
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		makeinfo ncurses:base readline # fails with ncurses:port because readline is linked with ncurses:base
+USES=		compiler:c++11-lang makeinfo ncurses:base \
+		readline # fails with ncurses:port because readline is linked with ncurses:base
 
 GNU_CONFIGURE=	yes
 
