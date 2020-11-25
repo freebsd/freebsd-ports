@@ -1,0 +1,5 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/libenet.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libenet/enet.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libenet/enet.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libenet/uenetclass.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libenet/uenetclass.ppu
