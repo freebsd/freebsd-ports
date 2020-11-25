@@ -1,0 +1,4 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/vcl-compat.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.netencoding.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.netencoding.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/vcl-compat/system.netencoding.rsj
