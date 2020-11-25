@@ -171,6 +171,7 @@
     SUBDIR += fpc-httpd22
     SUBDIR += fpc-httpd24
     SUBDIR += fpc-libmicrohttpd
+    SUBDIR += fpc-webidl
     SUBDIR += free-sa-devel
     SUBDIR += fswiki
     SUBDIR += fusionpbx
