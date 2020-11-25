@@ -11,6 +11,16 @@ COMMENT=	Embeddable Javascript interpreter in C
 
 LICENSE=	MIT
 
-USES=		gmake tar:xz
+USES=		compiler:c11 gmake tar:xz
 
-.include <bsd.port.mk>
+EXTRA_PATCHES=	${FILESDIR}/extra-${CHOSEN_COMPILER_TYPE}-patch-Makefile
+
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+post-patch:
+	@${REINPLACE_CMD} -e 's/%%GCC_DEFAULT%%/${GCC_DEFAULT}/' \
+		${WRKSRC}/Makefile
+.endif
+
+.include <bsd.port.post.mk>
