@@ -60,7 +60,7 @@ JAVA_DEFAULT?=		8
 # Possible values: 0.6, 0.7, 1.0, 1.1
 JULIA_DEFAULT?=		1.0
 # Possible values: 2.0.8
-LAZARUS_DEFAULT?=	2.0.8
+LAZARUS_DEFAULT?=	2.0.10
 # Possible values: rust legacy
 .if empty(ARCH:Naarch64:Narmv6:Narmv7:Namd64:Ni386:Npowerpc64:Npowerpc64le)
 LIBRSVG2_DEFAULT?=	rust
