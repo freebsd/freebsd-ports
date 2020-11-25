@@ -1,0 +1,11 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/webidl.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidldefs.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidldefs.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidlparser.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidlparser.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidlparser.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidlscanner.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidlscanner.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidlscanner.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidltopas.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/webidl/webidltopas.ppu
