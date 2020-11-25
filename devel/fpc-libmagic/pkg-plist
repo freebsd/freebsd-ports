@@ -1,0 +1,3 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/libmagic.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libmagiv/libmagic.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libmagiv/libmagic.ppu
