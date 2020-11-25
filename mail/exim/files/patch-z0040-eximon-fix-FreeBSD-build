@@ -1,0 +1,25 @@
+From f521f0d2120be2ccfb93306cc05790b9b0f162c1 Mon Sep 17 00:00:00 2001
+From: Richard Clayton <richard@highwayman.com>
+Date: Sat, 12 Sep 2020 22:10:04 +0100
+Subject: [PATCH 40/42] eximon: fix FreeBSD build
+
+(cherry picked from commit ba00bdd4609501dd3ffe187074ff7f8197a9059f)
+---
+ exim_monitor/em_menu.c | 2 +-
+
+diff --git exim_monitor/em_menu.c exim_monitor/em_menu.c
+index 33b3e0c94..2a70a1831 100644
+--- exim_monitor/em_menu.c
++++ exim_monitor/em_menu.c
+@@ -670,7 +670,7 @@ if (spool_read_header(buffer, TRUE, FALSE) != spool_read_OK)
+     sprintf(CS big_buffer, "%s/input/%s", spool_directory, buffer);
+     if (Ustat(big_buffer, &statbuf) == 0)
+       text_showf(text, "Format error in spool file %s: size=%lu\n", buffer,
+-        (ulong)statbuf.st_size);
++        (unsigned long)statbuf.st_size);
+     else text_showf(text, "Format error in spool file %s\n", buffer);
+     }
+   else text_showf(text, "Read error for spool file %s\n", buffer);
+-- 
+2.29.2
+
