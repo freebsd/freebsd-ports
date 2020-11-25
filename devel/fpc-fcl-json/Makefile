@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	5
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-json
 

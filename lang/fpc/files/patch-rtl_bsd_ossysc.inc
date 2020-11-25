@@ -1,32 +1,30 @@
---- rtl/bsd/ossysc.inc	2014-11-23 16:59:25.000000000 -0500
-+++ rtl/bsd/ossysc.inc	2020-02-21 21:01:06.087663000 -0500
-@@ -72,9 +72,9 @@
+--- rtl/bsd/ossysc.inc	2020-10-03 18:58:28.503033000 -0500
++++ rtl/bsd/ossysc.inc	2020-10-03 19:01:01.207504000 -0500
+@@ -76,9 +76,9 @@
  
  begin
    {$ifdef CPU64}
 -    Fplseek:=do_syscall(syscall_nr___syscall,syscall_nr_lseek,TSysParam(fd),0,Offset,whence);
 +    Fplseek:=do_syscall(syscall_nr___syscall,syscall_nr_lseek,TSysParam(fd),Offset,whence);
    {$else}
--    Fplseek:=do_syscall(syscall_nr___syscall,syscall_nr_lseek,0,TSysParam(fd),0,lo(Offset),{0} hi(offset),Whence);
-+    Fplseek:=do_syscall(syscall_nr___syscall,syscall_nr_lseek,0,TSysParam(fd),lo(Offset),{0} hi(offset),Whence);
-   {$endif}
- end;
- 
-@@ -82,11 +82,10 @@
+-    Fplseek:=do_syscall(syscall_nr___syscall,syscall_nr_lseek,0,TSysParam(fd),0,
++    Fplseek:=do_syscall(syscall_nr___syscall,syscall_nr_lseek,0,TSysParam(fd),
+        {$ifdef ENDIAN_BIG}hi(offset),lo(offset){$endif}
+        {$ifdef ENDIAN_LITTLE}lo(Offset),hi(offset){$endif},
+        Whence);
+@@ -90,9 +90,9 @@
  
  begin
   {$ifdef CPU64}
 -   Fpftruncate:=Do_syscall(syscall_nr___syscall,syscall_nr_ftruncate, fd  ,0   ,flength);
-+   Fpftruncate:=Do_syscall(syscall_nr___syscall,syscall_nr_ftruncate, fd ,flength);
++   Fpftruncate:=Do_syscall(syscall_nr___syscall,syscall_nr_ftruncate, fd  ,flength);
   {$else}
 -   Fpftruncate:=Do_syscall(syscall_nr___syscall,syscall_nr_ftruncate,0,fd,0,lo(flength),hi(flength));
 +   Fpftruncate:=Do_syscall(syscall_nr___syscall,syscall_nr_ftruncate,0,fd,lo(flength),hi(flength));
   {$endif}
--
+ 
  end;
- 
- 
-@@ -94,9 +93,9 @@
+@@ -102,9 +102,9 @@
  
  begin
   {$ifdef CPU64}
@@ -38,15 +36,3 @@
           {$ifdef FPC_BIG_ENDIAN}    hi(offst),lo(offst){$endif}
           {$ifdef FPC_LITTLE_ENDIAN} lo(offst),hi(offst){$endif}
           )));
-@@ -282,7 +281,11 @@
-  repeat
-   novalid:=false;
-   CurEntry:=pdirent(dirp^.dd_rewind);
-+{$ifdef dragonfly}
-+  RecLen:=(CurEntry^.d_namlen + 24) and $FFFFFFF8;
-+{$else}
-   RecLen:=CurEntry^.d_reclen;
-+{$endif}
-   if RecLen<>0 Then
-    begin {valid direntry?}
-     if CurEntry^.d_fileno<>0 then

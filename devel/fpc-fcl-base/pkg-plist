@@ -35,11 +35,10 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/eventlog.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/eventlog.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fileinfo.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fileinfo.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fileinfo.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpexprpars.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpexprpars.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpexprpars.rsj
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpmimetypes.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpmimetypes.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpobserver.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpobserver.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpobserver.rsj
@@ -57,6 +56,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/inicol.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/inicol.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/inifiles.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/inifiles.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/inifiles.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/iostream.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/iostream.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/maskutils.o
@@ -64,6 +64,9 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/maskutils.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/maskutils.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/nullstream.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/nullstream.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/nullstream.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/pascodegen.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/pascodegen.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/pooledmm.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/pooledmm.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/rtfpars.o
@@ -77,11 +80,13 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamcoll.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamcoll.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamex.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamex.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamex.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamio.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamio.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/streamio.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/syncobjs.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/syncobjs.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/syncobjs.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/uriparser.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/uriparser.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/wformat.o

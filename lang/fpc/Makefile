@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	fpc
-PORTVERSION=	3.0.4
-PORTREVISION?=	6
+PORTVERSION=	3.2.0
+PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \

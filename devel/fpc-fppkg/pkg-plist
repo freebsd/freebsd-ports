@@ -13,6 +13,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgfphttp.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgfphttp.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgfpmake.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgfpmake.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgfppkg.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgfppkg.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgglobals.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgglobals.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkghandler.o
@@ -24,8 +26,12 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgmkconv.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgmkconv.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgoptions.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgoptions.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgpackagesstructure.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgpackagesstructure.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgrepos.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgrepos.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgrepos.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkguninstalledsrcsrepo.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkguninstalledsrcsrepo.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgwget.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgwget.ppu

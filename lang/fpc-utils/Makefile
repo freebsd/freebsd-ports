@@ -1,16 +1,17 @@
 # $FreeBSD$
 
-PORTREVISION=	6
+PORTREVISION=	0
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-utils
 
 COMMENT=	Free Pascal Compiler utilities
 
 USES=		fpc
-USE_FPC=	chm fcl-base fcl-fpcunit fcl-net fcl-passrc fcl-res fcl-xml \
-		fppkg libcurl fcl-json rtl-extra rtl-objpas openssl fcl-async \
-		fcl-web fcl-db ibase mysql odbc oracle postgres sqlite \
-		dblib pxlib fastcgi httpd22 httpd24
+USE_FPC=	chm dblib fastcgi fcl-async fcl-base fcl-db fcl-fpcunit fcl-js \
+		fcl-net fcl-passrc fcl-res fcl-xml fcl-web fcl-json fppkg \
+		httpd22 httpd24 ibase libcurl libmicrohttpd mysql odbc openssl \
+		oracle pastojs postgres pxlib rtl-extra rtl-generics rtl-objpas \
+		sqlite webidl
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/utils

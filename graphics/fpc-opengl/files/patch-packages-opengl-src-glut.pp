@@ -1,11 +1,11 @@
---- packages/opengl/src/glut.pp.orig	2015-01-05 19:27:06.000000000 +0000
-+++ packages/opengl/src/glut.pp
-@@ -768,7 +768,7 @@ initialization
-   {$ifdef darwin}
+--- packages/opengl/src/glut.pp	2020-10-04 23:20:00.147154000 -0500
++++ packages/opengl/src/glut.pp	2020-10-04 23:20:56.679328000 -0500
+@@ -765,7 +765,7 @@
+   LoadGlut('glut.dll');
+   {$elseif defined(darwin)}
    LoadGlut('/System/Library/Frameworks/GLUT.framework/GLUT');
-   {$else}
--  {$IFDEF haiku}
-+  {$if defined(haiku) or defined(freebsd) or defined(dragonfly)}
+-  {$elseif defined(haiku) or defined(OpenBSD)}
++  {$elseif defined(haiku) or defined(OpenBSD) or defined(freebsd) or defined(dragonfly)}
    LoadGlut('libglut.so');
-   {$ELSE}
-   {$IFNDEF MORPHOS}
+   {$elseif defined(MORPHOS)}
+   {nothing}

@@ -3,6 +3,7 @@ bin/cvsdiff.tdf
 bin/cvsup.tdf
 bin/fp
 bin/fp.ans
+bin/fp.rsj
 bin/gplprog.pt
 bin/gplunit.pt
 bin/grep.tdf

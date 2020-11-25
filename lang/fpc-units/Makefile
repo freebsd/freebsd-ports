@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	units
-PORTVERSION=	3.0.4
+PORTVERSION=	3.2.0
 CATEGORIES=	lang
 PKGNAMEPREFIX=	fpc-
 
@@ -15,20 +15,19 @@ BUILDNAME=	${ARCH}-${OPSYS:tl}
 
 ALL_OPTIONS=	A52 ASPELL BFD BZIP2 CAIRO CHM DBLIB DBUS DTS FASTCGI \
 		FCL_ASYNC FCL_BASE FCL_DB FCL_EXTRA FCL_FPCUNIT FCL_IMAGE \
-		FCL_JS FCL_JSON FCL_NET FCL_PASSRC FCL_PDF FCL_REGISTRY FCL_RES \
-		FCL_SDO FCL_SOUND FCL_STL FCL_WEB FCL_XML FFTW \
-		FPINDEXER FPPKG FV GDBM GMP GOOGLEAPI GTK2 HERMES ICONVENC \
-		IMAGEMAGICK LDAP LIBCURL LIBGD LIBMICROHTTPD LIBPNG LIBXML2 LIBVLC LUA MAD \
-		MODPLUG NCURSES NEWT NUMLIB OGGVORBIS OPENAL OPENGL \
-		OPENSSL PASJPEG PCAP PROJ4 PXLIB RSVG REXX RTL_CONSOLE \
-		RTL_EXTRA RTL_OBJPAS RTL_UNICODE SDL SVGALIB SYMBOLIC \
-		SYSLOG UNZIP USERS UTMP UUID X11 XFORMS ZLIB
-
-# per PR 212919, the inclusion of the VLC unit will cause pkg(8) to require
-# the deinstallation of KDE, so it's not a default option until furter notice
+		FCL_JS FCL_JSON FCL_NET FCL_PASSRC FCL_PDF FCL_REGISTRY \
+		FCL_REPORT FCL_RES FCL_SDO FCL_SOUND FCL_STL FCL_WEB FCL_XML \
+		FFTW FPINDEXER FPPKG FV GDBM GNUTLS GMP GOOGLEAPI \
+		GTK2 HERMES ICONVENC IMAGEMAGICK LDAP LIBCUPS LIBCURL LIBENET \
+		LIBFONTCONFIG LIBGD LIBMAGIC LIBMICROHTTPD LIBPNG LIBXML2 \
+		LIBVLC LUA MAD MODPLUG NCURSES NEWT NUMLIB ODATA OGGVORBIS \
+		OPENAL OPENGL OPENSSL PASJPEG PASTOJS PCAP PROJ4 PXLIB RSVG \
+		REXX RTL_CONSOLE RTL_EXTRA RTL-GENERICS RTL_OBJPAS RTL_UNICODE \
+		SDL SVGALIB SYMBOLIC SYSLOG UNZIP USERS UTMP UUID VCL-COMPAT \
+		WEBIDL X11 XFORMS ZLIB
 
 OPTIONS_DEFINE:=	${ALL_OPTIONS}
-OPTIONS_DEFAULT:=	${ALL_OPTIONS:NLIBVLC}
+OPTIONS_DEFAULT:=	${ALL_OPTIONS}
 
 A52_DESC=		Interface to a52 library
 ASPELL_DESC=		Interface to aspell spelling checker
@@ -52,6 +51,7 @@ FCL_NET_DESC=		Component Library (net)
 FCL_PASSRC_DESC=	Component Library (passrc)
 FCL_PDF_DESC=		Component Library (pdf)
 FCL_REGISTRY_DESC=	Component Library (registry)
+FCL_REPORT_DESC=		Freepascal report unit
 FCL_RES_DESC=		Component Library (res)
 FCL_SDO_DESC=		Component Library (sdo)
 FCL_SOUND_DESC=		Component Library (sound)
@@ -65,13 +65,18 @@ FV_DESC=		Unit for Delphi support
 GDBM_DESC=		Interface to the GNU database system
 GOOGLEAPI_DESC=		Interface to the google api
 GMP_DESC=		Interface to gmp library
+GNUTLS_DESC=		Unit for GnuTLS
 GTK2_DESC=		Interface to gtk2 libraries
 HERMES_DESC=		Unit for hermes
 ICONVENC_DESC=		Interface to iconv library
 IMAGEMAGICK_DESC=	Interface to ImageMagick
 LDAP_DESC=		Interface to OpenLDAP
+LIBCUPS_DESC=		Interface to cups
 LIBCURL_DESC=		Interface to curl library
+LIBENET_DESC=		Interface to enet library
+LIBFONTCONFIG_DESC=	Interface to fontconfig library
 LIBGD_DESC=		Interface to gd library
+LIBMAGIC_DESC=		Interface to magic library
 LIBMICROHTTPD_DESC=	Interface to libmicrohttpd library
 LIBPNG_DESC=		Interface to png library
 LIBVLC_DESC=		Unit for VLC
@@ -82,11 +87,13 @@ MODPLUG_DESC=		Interface to modplug library
 NCURSES_DESC=		Interface to ncurses library
 NEWT_DESC=		Interface to newt library
 NUMLIB_DESC=		Unit for numerical methods
+ODATA_DESC=		Unit for odata protocol
 OGGVORBIS_DESC=		Interaface to ogg & vorbis libraries
 OPENAL_DESC=		Interface to openal library
 OPENGL_DESC=		Interface to opengl library
 OPENSSL_DESC=		Interface to openssl library
 PASJPEG_DESC=		Unit for JPEG image format handling
+PASTOJS_DESC=		Interface to pas2js library
 PCAP_DESC=		Interface to pcap library
 PROJ4_DESC=		Interface to proj library
 PXLIB_DESC=		Unit to read various Paradox file
@@ -94,6 +101,7 @@ REXX_DESC=		Interface to rexx-regina library
 RSVG_DESC=		Interface to rsvg2 library
 RTL_CONSOLE_DESC=	Run-Time lib for console abstraction
 RTL_EXTRA_DESC=		Run-Time lib not needed for bootstrapping
+RTL-GENERICS_DESC=	Run-Time lib for generic containers
 RTL_OBJPAS_DESC=	Rtl-objpas, aux. Delphi compat unit
 RTL_UNICODE_DESC=	Rtl-unicode, misc Unicode units
 SDL_DESC=		Interface to SDL library
@@ -104,8 +112,10 @@ UNZIP_DESC=		Routines for unzipping zip files
 USERS_DESC=		Interface to manipulate users
 UTMP_DESC=		Gather information from the utmp file
 UUID_DESC=		Unit for UUID
+VCL-COMPAT_DESC=	Interface to visual component library
 X11_DESC=		Interface to X windows server
 XFORMS_DESC=		Interface to X-Forms
+WEBIDL_DESC=		Interface to webidl
 ZLIB_DESC=		Interface to the zlib compression library
 
 .include <bsd.port.options.mk>

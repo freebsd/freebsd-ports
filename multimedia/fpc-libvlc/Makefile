@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-PORTREVISION=	6
 CATEGORIES=	multimedia lang
 PKGNAMESUFFIX=	-libvlc
 
@@ -15,8 +14,6 @@ EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	VLC
 VLC_DESC=	Install vlc media player
-OPTIONS_DEFAULT=	VLC
-
 VLC_RUN_DEPENDS=	vlc:multimedia/vlc
 
 .include "${MASTERDIR}/Makefile"

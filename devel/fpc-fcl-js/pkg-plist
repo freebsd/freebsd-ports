@@ -10,6 +10,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jsparser.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jsscanner.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jsscanner.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jsscanner.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jssrcmap.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jssrcmap.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jstoken.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jstoken.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-js/jstree.o

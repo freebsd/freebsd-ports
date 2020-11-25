@@ -43,10 +43,15 @@ LATE_INSTALL_ARGS=	fpc_exampleinstall
 post-extract:
 	@cd ${WRKDIR}/${WRKUNITDIR} && \
 		${FIND} ${WRKSRC} -type d -name .svn | ${XARGS} ${RM} -r
-.if ${PKGNAMESUFFIX:M-utils} || ${PKGNAMESUFFIX:M-ide}
+.if ${PKGNAMESUFFIX:M-utils}
 	${REINPLACE_CMD} -e '/globalunit/ s|\.\./packages|${FPCDIR}|' \
 		${WRKDIR}/${WRKUNITDIR}/Makefile
-.else
+.endif
+.if ${PKGNAMESUFFIX:M-ide}
+	${REINPLACE_CMD} -e '/globalunit/ s|\.\./\.\./packages|${FPCDIR}|' \
+		${WRKDIR}/${WRKUNITDIR}/Makefile
+.endif
+.if ${PKGNAMESUFFIX:N-ide:N-utils}
 	${REINPLACE_CMD} -e '/globalunit/ {s|\.\.|${FPCDIR}|;}' \
 		${WRKDIR}/${WRKUNITDIR}/Makefile
 .endif
@@ -59,4 +64,9 @@ post-patch:
 .if ${PKGNAMESUFFIX} == "-rtl-extra"
 	@${REINPLACE_CMD} -e 's|android,linux,|android,linux,freebsd,dragonfly,|g' \
 		${WRKDIR}/${WRKUNITDIR}/fpmake.pp
+.endif
+.if ${PKGNAMESUFFIX} == "-rtl-generics"
+	@${REINPLACE_CMD} -e 's|googleapi|rtl-generics|g' \
+		${WRKDIR}/${WRKUNITDIR}/Makefile.fpc \
+		${WRKDIR}/${WRKUNITDIR}/Makefile
 .endif

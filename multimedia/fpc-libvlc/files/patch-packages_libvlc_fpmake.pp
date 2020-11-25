@@ -7,7 +7,7 @@
 -    P.OSes := [win32, win64, linux, freebsd];
 +    P.OSes := [win32, win64, linux, dragonfly, freebsd];
      P.Dependencies.Add('fcl-base');
-     P.Version:='3.0.4';
+     P.Version:='3.2.0';
      P.License := 'LGPL with modification';
      P.HomepageURL := 'www.freepascal.org';
      P.Email := 'michael@freepascal.org';

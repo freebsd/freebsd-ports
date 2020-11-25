@@ -1,5 +1,10 @@
 lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/openssl.fpm
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openssl/fpopenssl.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openssl/fpopenssl.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openssl/fpopenssl.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openssl/openssl.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openssl/openssl.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openssl/openssl.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openssl/opensslsockets.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openssl/opensslsockets.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openssl/opensslsockets.rsj

@@ -6,7 +6,8 @@ PKGNAMESUFFIX=	-openssl
 COMMENT=	Free Pascal unit for OpenSSL
 
 USES=		fpc
-USE_FPC=	rtl-extra
+USE_FPC=	fcl-async fcl-base fcl-net fcl-passrc fcl-res fcl-xml rtl-extra \
+		rtl-objpas
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
