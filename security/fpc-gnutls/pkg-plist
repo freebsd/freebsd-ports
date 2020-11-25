@@ -1,0 +1,5 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/gnutls.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnutls/gnutls.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnutls/gnutls.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnutls/gnutlssockets.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gnutls/gnutlssockets.ppu
