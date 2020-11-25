@@ -199,6 +199,7 @@
     SUBDIR += fpc-proj4
     SUBDIR += fpc-rsvg
     SUBDIR += fpc-svgalib
+    SUBDIR += fpc-vcl-compat
     SUBDIR += fracplanet
     SUBDIR += fractgen
     SUBDIR += fraqtive
