@@ -6819,6 +6819,7 @@
     SUBDIR += vera++
     SUBDIR += vexcl
     SUBDIR += viewvc
+    SUBDIR += viewvc-devel
     SUBDIR += violet
     SUBDIR += vitables
     SUBDIR += volk

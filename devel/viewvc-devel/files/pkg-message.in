@@ -1,0 +1,84 @@
+[
+{ type: install
+  message: <<EOM
+ To use ViewVC, modify the configuration file located at
+ %%PREFIX%%/viewvc/viewvc.conf.
+
+ If no webserver was selected during installation, then
+ a rc script for running ViewVC standalone is installed.
+ To enable the standalone ViewVC server in rc.conf use
+ parameter viewvc_enable="YES".
+
+ You can also adjust the user which runs the ViewVC standalone
+ server with the parameter "viewvc_user".
+
+ If you want to run the ViewVC standalone server with another
+ IP/PORT, use the parameter "viewvc_flags".
+
+ To see all available parameters, use the command
+ %%PREFIX%%/viewvc/bin/standalone.py --help
+
+
+ To use ViewVC with Apache or lighttpd as a CGI script,
+ see the following config examples.
+
+ Example config lines for Apache 2.4
+ ===================================
+ <IfModule wsgi_module>
+   WSGIRestrictSignal Off
+ </IfModule>
+
+ <IfModule !wsgi_module>
+   ScriptAlias "/viewvc" "%%PREFIX%%/viewvc/bin/cgi/viewvc.cgi"
+ </IfModule>
+
+ <IfModule wsgi_module>
+   WSGIScriptAlias "/viewvc" "%%PREFIX%%/viewvc/bin/wsgi/viewvc.wsgi"
+ </IfModule>
+
+ <Location /viewvc>
+     Options NONE +ExecCGI
+ </Location>
+
+ Example config lines for lighttpd
+ =================================
+ server.modules = (
+   "mod_alias",
+   "mod_access"
+ )
+
+ alias.url += ( "/viewvc" => "%%PREFIX%%/viewvc/bin/cgi" )
+
+ $HTTP["url"] =~ "^/viewvc/" {
+   index-file.names  = ( "viewvc.cgi" )
+     cgi.assign = (
+       ".cgi" => "%%PYTHON_CMD%%",
+     )
+ }
+
+ Note: Cvsdb (Bonsai-like repository query) feature is not stable and
+       have some incompatibility on DB data with any released version,
+       (and it may be also incompatible with any feature release). 
+EOM
+}
+{
+  type: upgrade
+  maximum_version: "1.3.0"
+  message: <<EOM
+  Please review your vievc.conf, see viewvc.sample.conf
+  ======================================================
+   - the template path has changed
+   - the vhost notation has changed
+
+  Additional upgrade informations:
+  https://github.com/viewvc/viewvc/blob/master/docs/upgrading-howto.html
+
+  Note: Cvsdb (Bonsai-like repository query) feature is not stable and
+        have some incompatibility on DB data with any released version,
+        (and it may be also incompatible with any feature release). 
+        So if you want to use this feature, make sure to make back up
+        of existing DB and then rebuild your DB data with
+        cvsdbadmin/svndbadmin.
+EOM
+}
+]

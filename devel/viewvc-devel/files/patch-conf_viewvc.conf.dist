@@ -1,0 +1,13 @@
+--- conf/viewvc.conf.dist.orig	2020-11-25 18:40:53 UTC
++++ conf/viewvc.conf.dist
+@@ -331,6 +331,10 @@
+ ## diff: Location of the GNU diff program, used for showing file
+ ## version differences.
+ ##
++## If you want to use side-by-side diff or full colored diff on FreeBSD 12
++## or later, it is need to install GNU diff via diffutils packge and to
++## specify it here.
++##
+ ## Example:
+ ## diff = /usr/bin/diff
+ ##
