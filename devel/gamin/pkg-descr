@@ -5,4 +5,4 @@ which allows to detect when a file or a directory has been modified.
 Whereas the FreeBSD port of FAM polls files every few seconds, this port
 includes a kqueue(2) backend for immediate notification of most alterations.
 
-WWW: http://www.gnome.org/~veillard/gamin/index.html
+WWW: http://people.gnome.org/~veillard/gamin/index.html
