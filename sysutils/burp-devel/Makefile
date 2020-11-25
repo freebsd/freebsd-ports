@@ -19,7 +19,7 @@ LIB_DEPENDS=	librsync.so:net/librsync
 RUN_DEPENDS=	bash:shells/bash
 
 #USES=		gmake libtool ncurses pkgconfig ssl tar:bz2
-USES=		libtool ncurses pkgconfig ssl tar:bz2
+USES=		compiler:c11 libtool ncurses pkgconfig ssl tar:bz2
 
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
 GNU_CONFIGURE=	yes
