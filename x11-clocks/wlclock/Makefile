@@ -6,6 +6,9 @@ DISTVERSION=	1.0.0
 CATEGORIES=	x11-clocks
 MASTER_SITES=	https://git.sr.ht/~leon_plickat/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
+PATCH_SITES=	https://git.sr.ht/~leon_plickat/${PORTNAME}/commit/
+PATCHFILES+=	0d8ab34550aa.patch:-p1 # unbreak EPOLL=off
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Digital analog clock for Wayland desktops
 
@@ -24,7 +27,6 @@ OPTIONS_DEFAULT=EPOLL MANPAGES
 EPOLL_DESC=		Handle signals via epoll-shim
 EPOLL_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 EPOLL_MESON_ENABLED=	handle-signals
-EPOLL_BROKEN_OFF=	https://lists.sr.ht/~leon_plickat/public-inbox/%3Cd00a-aqan-wny%40FreeBSD.org%3E
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
