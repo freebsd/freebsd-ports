@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomcat
-PORTVERSION=	7.0.106
+PORTVERSION=	7.0.107
 PORTREVISION=	0
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/tomcat/tomcat-7/v${PORTVERSION}/bin
@@ -75,7 +75,7 @@ post-install:
 
 post-install-HOST_MANAGER-on:
 	(cd ${STAGEDIR}${TOMCAT_HOME}/webapps &&\
-		for f in host-manager/META-INF/context.xml host-manager/WEB-INF/web.xml; do \
+		for f in host-manager/META-INF/context.xml host-manager/WEB-INF/manager.xml host-manager/WEB-INF/web.xml; do \
 			${MV} $$f $$f.sample; done)
 
 post-install-HOST_MANAGER-off:

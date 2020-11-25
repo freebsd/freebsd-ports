@@ -605,6 +605,7 @@
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/jsp/401.jsp
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/jsp/403.jsp
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/WEB-INF/jsp/404.jsp
+%%HOST_MANAGER%%@sample %%T%%/webapps/host-manager/WEB-INF/manager.xml.sample
 %%HOST_MANAGER%%@sample %%T%%/webapps/host-manager/WEB-INF/web.xml.sample
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/add.gif
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/asf-logo.svg
@@ -616,7 +617,6 @@
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/update.gif
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/images/void.gif
 %%HOST_MANAGER%%%%T%%/webapps/host-manager/index.jsp
-%%HOST_MANAGER%%%%T%%/webapps/host-manager/manager.xml
 %%MANAGER%%@sample %%T%%/webapps/manager/META-INF/context.xml.sample
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/401.jsp
 %%MANAGER%%%%T%%/webapps/manager/WEB-INF/jsp/403.jsp
