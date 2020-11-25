@@ -1,0 +1,14 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/rtl-generics.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.collections.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.collections.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.defaults.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.defaults.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.hashes.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.hashes.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.helpers.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.helpers.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.memoryexpanders.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.memoryexpanders.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.strings.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.strings.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl-generics/generics.strings.rsj
