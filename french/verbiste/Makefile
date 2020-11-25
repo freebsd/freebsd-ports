@@ -3,7 +3,7 @@
 
 PORTNAME=	verbiste
 PORTVERSION=	0.1.47
-CATEGORIES=	french textproc
+CATEGORIES=	french education textproc
 MASTER_SITES=	http://sarrazip.com/dev/
 
 MAINTAINER=	dereckson@gmail.com
