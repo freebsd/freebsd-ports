@@ -490,6 +490,7 @@
     SUBDIR += py-afew
     SUBDIR += py-aiosmtpd
     SUBDIR += py-alot
+    SUBDIR += py-authheaders
     SUBDIR += py-authres
     SUBDIR += py-dkimpy
     SUBDIR += py-email-validator
