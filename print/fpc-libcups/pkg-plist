@@ -1,0 +1,3 @@
+lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/libcups.fpm
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcups/cupsdyn.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libcups/cupsdyn.ppu
