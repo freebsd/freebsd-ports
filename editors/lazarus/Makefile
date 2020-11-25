@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	lazarus
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.10
+DISTVERSIONSUFFIX=	-2
 PKGNAMESUFFIX?=  -gtk2
 PORTREVISION?=	0
 CATEGORIES=	editors devel
@@ -26,7 +27,7 @@ USES=		desktop-file-utils fpc gettext gmake iconv shared-mime-info xorg
 USE_FPC?=	chm cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-net \
 		fcl-registry fcl-res fcl-web fcl-xml fppkg gtk2 ibase iconvenc mysql \
 		numlib odbc opengl openssl oracle pasjpeg postgres regexpr rtl-extra \
-		sqlite x11
+		rtl-generics sqlite x11
 USE_XORG=	x11
 OPT?=		"-Sgic "
 
@@ -80,7 +81,7 @@ do-build:
 post-build:
 	@cd ${WRKSRC} && \
 		${RM} -R COPYING* README* debian localize.bat test *.orig *.bak startlazarus.app \
-			ide/Makefile*.orig ide/Makefile*.bak
+			ide/Makefile*.orig ide/Makefile*.bak lcl/interfaces/qt5/qtobjects.pas.orig
 
 pre-install:
 	@${ECHO} "#!/bin/sh" > ${WRKDIR}/lazarus-wrapper
