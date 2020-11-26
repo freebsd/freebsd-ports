@@ -1,0 +1,13 @@
+A lightweight django-gravatar app. Includes helper methods for interacting with
+gravatars outside of template code.
+
+Use in code:
+
+from django_gravatar.helpers import get_gravatar_url, has_gravatar, get_gravatar_profile_url, calculate_gravatar_hash
+
+url = get_gravatar_url('alice@example.com', size=150)
+gravatar_exists = has_gravatar('bob@example.com')
+profile_url = get_gravatar_profile_url('alice@example.com')
+email_hash = calculate_gravatar_hash('alice@example.com')
+
+WWW: https://github.com/twaddington/django-gravatar

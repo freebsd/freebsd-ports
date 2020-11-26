@@ -1,0 +1,4 @@
+The mailmanclient library provides official Python bindings for the GNU
+Mailman 3 REST API.
+
+WWW: https://gitlab.com/mailman/mailmanclient

@@ -1,0 +1,4 @@
+This package contains libraries and templates for Django-based interfaces
+interacting with Mailman.
+
+WWW: https://gitlab.com/mailman/django-mailman3
