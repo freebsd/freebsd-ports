@@ -2,11 +2,8 @@
 
 PORTNAME=	vulkan-loader
 DISTVERSIONPREFIX=sdk-
-DISTVERSION=	1.2.135.0
+DISTVERSION=	1.2.154.1
 CATEGORIES=	graphics devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	8d2d49a9c89d.patch:-p1 # https://github.com/KhronosGroup/Vulkan-Loader/pull/419
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Driver loader for the Vulkan graphics API
@@ -40,5 +37,9 @@ XCB_LIB_DEPENDS=	libX11-xcb.so:x11/libX11 \
 			libxcb.so:x11/libxcb
 WAYLAND_CMAKE_BOOL=	BUILD_WSI_WAYLAND_SUPPORT
 WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
+
+post-patch:
+# _XOPEN_SOURCE enforces X/Open-compliance but alloca isn't there
+	@${REINPLACE_CMD} '/_XOPEN_SOURCE/d' ${WRKSRC}/loader/CMakeLists.txt
 
 .include <bsd.port.mk>

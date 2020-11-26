@@ -7,6 +7,7 @@ include/vulkan/vulkan.hpp
 include/vulkan/vulkan_android.h
 include/vulkan/vulkan_beta.h
 include/vulkan/vulkan_core.h
+include/vulkan/vulkan_directfb.h
 include/vulkan/vulkan_fuchsia.h
 include/vulkan/vulkan_ggp.h
 include/vulkan/vulkan_ios.h

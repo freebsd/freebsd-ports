@@ -1,3 +1,5 @@
 TIMESTAMP = 1573391422
 SHA256 (Novum-vkQuake-1.03.0_GH0.tar.gz) = 5cb745c4ee139aa6e9aaac580db08d4ae98ee4fac8eb3c08a05256af81d5a150
 SIZE (Novum-vkQuake-1.03.0_GH0.tar.gz) = 3869031
+SHA256 (a869a22d9b51.patch) = cfbaf8836da0bbcb7f77afeec435510d63ed9b20ae9627a389d23976655f1069
+SIZE (a869a22d9b51.patch) = 906
