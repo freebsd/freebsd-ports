@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 # Until upstream makes a new release disable cpe
 USES=		gettext-runtime gnome meson localbase:ldflags ncurses \
-		pkgconfig ssl
+		perl5 pkgconfig ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
@@ -46,7 +46,6 @@ CAPSICUM_MESON_YES=	with-capsicum
 OTR_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libotr.so:security/libotr
 OTR_MESON_YES=		with-otr
-PERL_USES=		perl5
 PERL_MESON_YES=		with-perl
 PROXY_MESON_YES=	with-proxy
 TRUECOLOR_MESON_YES=	enable-true-color
