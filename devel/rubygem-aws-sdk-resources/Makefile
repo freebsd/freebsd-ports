@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.87.0
+PORTVERSION=	3.88.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -169,6 +169,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-mobile>=1<2:devel/rubygem-aws-sdk-mobile \
 		rubygem-aws-sdk-mq>=1<2:devel/rubygem-aws-sdk-mq \
 		rubygem-aws-sdk-mturk>=1<2:devel/rubygem-aws-sdk-mturk \
+		rubygem-aws-sdk-mwaa>=1<2:devel/rubygem-aws-sdk-mwaa \
 		rubygem-aws-sdk-neptune>=1<2:devel/rubygem-aws-sdk-neptune \
 		rubygem-aws-sdk-networkfirewall>=1<2:devel/rubygem-aws-sdk-networkfirewall \
 		rubygem-aws-sdk-networkmanager>=1<2:devel/rubygem-aws-sdk-networkmanager \
