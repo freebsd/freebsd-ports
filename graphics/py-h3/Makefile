@@ -18,6 +18,8 @@ BUILD_DEPENDS=	cmake:devel/cmake \
 		ninja:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>=0:devel/py-scikit-build@${PY_FLAVOR}
 LIB_DEPENDS=	libh3.so:graphics/h3
+TEST_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		localbase:ldflags python
 USE_PYTHON=	autoplist concurrent cython distutils
@@ -29,5 +31,8 @@ OPTIONS_DEFAULT=NUMPY
 NUMPY_DESC=	NumPy support
 
 NUMPY_RUN_DEPENDS=	${PYNUMPY}
+
+do-test:
+	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} ${PYTHON_CMD} -m pytest -rs -v
 
 .include <bsd.port.mk>
