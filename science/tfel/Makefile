@@ -18,6 +18,8 @@ RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		cmake compiler:c++0x fortran tar:bzip2
 
+CONFLICTS=	tfel-mfront-edf-3.*
+
 OPTIONS_DEFINE=		DOCS PYTHON
 OPTIONS_DEFAULT=	DOCS PYTHON
 

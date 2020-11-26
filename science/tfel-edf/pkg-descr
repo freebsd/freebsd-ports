@@ -1,4 +1,5 @@
-Remark: if you plan to use this port with Code_Aster, you need science/tfel-edf.
+The aim of this version is to work with Code_Aster. If you want to use TFEL/
+MFront alone, you could get a newer version from science/tfel.
 
 `MFront` is a code generator which translates a set of closely related
 domain specific languages into plain C++ on top of the `TFEL`
