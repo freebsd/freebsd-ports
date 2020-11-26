@@ -88,6 +88,8 @@
 %%WWWDIR%%/core/Raycaster.js
 %%WWWDIR%%/core/Uniform.d.ts
 %%WWWDIR%%/core/Uniform.js
+%%WWWDIR%%/extras/DataUtils.d.ts
+%%WWWDIR%%/extras/DataUtils.js
 %%WWWDIR%%/extras/Earcut.js
 %%WWWDIR%%/extras/ImageUtils.d.ts
 %%WWWDIR%%/extras/ImageUtils.js
