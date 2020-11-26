@@ -14,12 +14,12 @@ USES=		kmod uidfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hlh-restart
-GH_TAGNAME=	1.0h
+GH_TAGNAME=	2.0c
 
-OPTIONS_DEFINE=	INVERSION
+OPTIONS_DEFINE=	MMCCAM
 
-INVERSION_DESC=		Invert codes for card detection and read-only switch
-INVERSION_CFLAGS=	-DRTSX_INVERSION
+MMCCAM_DESC=	Build for MMCCAM-enabled kernel
+MMCCAM_CFLAGS=	-DRTSX_CAM
 
 PLIST_FILES=	${KMODDIR}/rtsx.ko
 
