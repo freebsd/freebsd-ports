@@ -279,6 +279,7 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%NLS%%share/locale/cs/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/da/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/de/LC_MESSAGES/claws-mail.mo
+%%NLS%%share/locale/el_GR/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/es/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/claws-mail.mo
