@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	python-mpd2
-PORTVERSION=	1.1.0
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.0.0
 CATEGORIES=	audio python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,26 +13,15 @@ COMMENT=	Python MPD client library
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python shebangfix
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Mic92
-
-SHEBANG_FILES=	doc/*.py examples/*.py
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/topics
-	${INSTALL_DATA} ${WRKSRC}/doc/commands_header.txt ${WRKSRC}/doc/*.rst ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/topics/*.rst ${STAGEDIR}${DOCSDIR}/topics/
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/generate_command_reference.py ${STAGEDIR}${DOCSDIR}/
-
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.py ${WRKSRC}/examples/summary.txt ${STAGEDIR}${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
