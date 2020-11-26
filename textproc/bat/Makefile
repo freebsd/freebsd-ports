@@ -2,8 +2,7 @@
 
 PORTNAME=	bat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
-PORTREVISION=	2
+DISTVERSION=	0.17.0
 CATEGORIES=	textproc
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -47,7 +46,8 @@ CARGO_CRATES=	adler-0.2.3 \
 		cfg-if-0.1.10 \
 		chrono-0.4.19 \
 		clap-2.33.3 \
-		console-0.12.0 \
+		clircle-0.1.3 \
+		console-0.13.0 \
 		constant_time_eq-0.1.5 \
 		content_inspector-0.2.4 \
 		crc32fast-1.2.0 \
@@ -86,7 +86,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		jobserver-0.1.21 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.78 \
+		libc-0.2.80 \
 		libgit2-sys-0.12.13+1.0.1 \
 		libz-sys-1.1.2 \
 		line-wrap-0.1.1 \
@@ -96,6 +96,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		matches-0.1.8 \
 		memchr-2.3.3 \
 		miniz_oxide-0.4.2 \
+		nix-0.19.0 \
 		normalize-line-endings-0.3.0 \
 		num-integer-0.1.43 \
 		num-traits-0.2.12 \
@@ -130,8 +131,8 @@ CARGO_CRATES=	adler-0.2.3 \
 		same-file-1.0.6 \
 		semver-0.11.0 \
 		semver-parser-0.10.0 \
-		serde-1.0.116 \
-		serde_derive-1.0.116 \
+		serde-1.0.117 \
+		serde_derive-1.0.117 \
 		serde_json-1.0.58 \
 		serde_yaml-0.8.13 \
 		sha-1-0.8.2 \
@@ -143,7 +144,6 @@ CARGO_CRATES=	adler-0.2.3 \
 		tempdir-0.3.7 \
 		term_size-0.3.2 \
 		terminal_size-0.1.13 \
-		termios-0.3.2 \
 		textwrap-0.11.0 \
 		thread_local-1.0.1 \
 		tinyvec-0.3.4 \
