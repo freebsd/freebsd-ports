@@ -12,7 +12,6 @@ COMMENT=	Configuration management framework written in Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		fails to install: Could not load facter; cannot install
 # maybe a newer version like puppet 6.x or 7.x must be used to work with ruby 2.7
 BROKEN_RUBY27=	yes
 

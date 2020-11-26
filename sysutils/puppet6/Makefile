@@ -11,8 +11,6 @@ COMMENT=	Configuration management framework written in Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		fails to install: Could not load facter; cannot install
-
 BUILD_DEPENDS=	rubygem-concurrent-ruby>0:devel/rubygem-concurrent-ruby \
 		rubygem-deep_merge>=1.0:devel/rubygem-deep_merge \
 		rubygem-hiera>=2.0:sysutils/rubygem-hiera \
