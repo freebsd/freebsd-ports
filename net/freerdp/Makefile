@@ -3,7 +3,7 @@
 
 PORTNAME=	freerdp
 DISTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net comms
 MASTER_SITES=   https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
@@ -17,10 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_SSL=	libressl-devel
 BROKEN_SSL_REASON_libressl-devel=	fails to compile: no member named 'alert_dispatch' in 'struct ssl3_state_st'
 
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib	\
-		libepoll-shim.so:devel/libepoll-shim	\
-		libudev.so:devel/libudev-devd		\
-		libuuid.so:misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 
 USES=		alias cmake compiler:c++11-lib cpe gettext gnome localbase pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
