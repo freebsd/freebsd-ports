@@ -4,50 +4,77 @@
 PORTNAME=	nauty
 PORTVERSION=	27r1
 CATEGORIES=	math
-MASTER_SITES=	http://cs.anu.edu.au/~bdm/nauty/	\
-		http://pallini.di.uniroma1.it/
-DISTNAME=	${PORTNAME}${PORTVERSION:S!.!!}
+MASTER_SITES=	http://pallini.di.uniroma1.it/	\
+		http://cs.anu.edu.au/~bdm/nauty/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Nauty & Traces are programs for graph automorphisms
+MAINTAINER=	moritz@schmi.tt
+COMMENT=	Nauty & Traces are programs for computing graph automorphisms
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		gmake
+
 GNU_CONFIGURE=	yes
-CFLAGS+=	-fPIC
 MAKEFILE=	makefile
 TEST_TARGET=	check
 
-PROGRAMS=	addedgeg amtog assembleg biplabg catg complg converseg copyg	\
-		countg cubhamg deledgeg delptg directg dreadnaut dretodot dretog\
-		edgetransg genbg genbgL geng gengL genquarticg genrang		\
-		genspecialg gentourng gentreeg hamheuristic labelg linegraphg	\
-		listg multig newedgeg NRswitchg pickg planarg ranlabg shortg	\
-		showg subdivideg twohamg underlyingg vcolg watercluster2
-
-PORTDOCS=	nug27.pdf
-PLIST_FILES=	include/nauty/nauty.h lib/libnauty.a ${PROGRAMS:S!^!bin/!}
+CFLAGS+=	-fPIC
 
 OPTIONS_DEFINE=	DOCS
-
-post-extract:
-	${RM} ${WRKSRC}/*.a
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/nauty
 	${INSTALL_DATA} ${WRKSRC}/nauty.h ${STAGEDIR}${PREFIX}/include/nauty
 	# Do not use ${INSTALL_LIB} to strip the library!
 	${INSTALL_DATA} ${WRKSRC}/nauty.a ${STAGEDIR}${PREFIX}/lib/libnauty.a
-.for i in ${PROGRAMS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/addedgeg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/amtog ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/assembleg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/biplabg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/catg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/complg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/converseg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/copyg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/countg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cubhamg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/deledgeg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/delptg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/directg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dreadnaut ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dretodot ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dretog ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/edgetransg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/genbg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/genbgL ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/geng ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gengL ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/genquarticg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/genrang ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/genspecialg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gentourng ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gentreeg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/hamheuristic ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/labelg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/linegraphg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/listg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/multig ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/newedgeg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/NRswitchg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/pickg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/planarg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ranlabg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/shortg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/showg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/subdivideg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/twohamg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/underlyingg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/vcolg ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/watercluster2 ${STAGEDIR}${PREFIX}/bin
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/nug27.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
