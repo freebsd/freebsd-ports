@@ -23,7 +23,6 @@ include/usi++/ipcomp.h
 include/usi++/misc.h
 include/usi++/object.h
 include/usi++/radiotap.h
-include/usi++/refcount.h
 include/usi++/tcp.h
 include/usi++/udp.h
 include/usi++/usi++.h

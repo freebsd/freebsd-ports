@@ -1,0 +1,18 @@
+--- configure.ac.orig	2020-11-20 08:51:56 UTC
++++ configure.ac
+@@ -71,15 +71,6 @@ AC_TYPE_SIZE_T
+ # Checks for library functions.
+ AC_CHECK_FUNCS([gethostbyaddr gethostbyname gethostname inet_ntoa memset select socket strerror])
+ 
+-r=`grep DLT_IEEE802_11_RADIO /usr/local/include/pcap/*.h /usr/include/pcap/*.h 2>/dev/null`
+-case "$r" in
+-	*DLT_IEEE802_11_RADIO*)
+-		AC_DEFINE([HAVE_RADIOTAP], [1], [Define if radiotap exists.])
+-		echo "Enabling 80211 radiotap"
+-		;;
+-	*)
+-esac
+-
+ r=`grep pcap_set_immediate_mode /usr/local/include/pcap/pcap.h /usr/include/pcap/pcap.h 2>/dev/null`
+ case "$r" in
+ 	*pcap_set_immediate*)
