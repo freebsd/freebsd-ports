@@ -155,6 +155,11 @@ include/antlr4-runtime/tree/xpath/XPathTokenAnywhereElement.h
 include/antlr4-runtime/tree/xpath/XPathTokenElement.h
 include/antlr4-runtime/tree/xpath/XPathWildcardAnywhereElement.h
 include/antlr4-runtime/tree/xpath/XPathWildcardElement.h
+include/antlr4-runtime/utf8.h
+include/antlr4-runtime/utf8/checked.h
+include/antlr4-runtime/utf8/core.h
+include/antlr4-runtime/utf8/cpp11.h
+include/antlr4-runtime/utf8/unchecked.h
 lib/libantlr4-runtime.a
 lib/libantlr4-runtime.so
 lib/libantlr4-runtime.so.%%LIBVERSION%%

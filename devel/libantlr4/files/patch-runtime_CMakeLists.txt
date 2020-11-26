@@ -1,0 +1,34 @@
+--- runtime/CMakeLists.txt.orig	2020-10-10 06:11:48 UTC
++++ runtime/CMakeLists.txt
+@@ -1,19 +1,9 @@
+ 
+ include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
+ 
+-set(THIRDPARTY_DIR ${CMAKE_BINARY_DIR}/runtime/thirdparty)
++set(THIRDPARTY_DIR ${PROJECT_SOURCE_DIR}/runtime/thirdparty)
+ set(UTFCPP_DIR ${THIRDPARTY_DIR}/utfcpp)
+-ExternalProject_Add(
+-  utfcpp
+-  GIT_REPOSITORY        "git://github.com/nemtrif/utfcpp"
+-  GIT_TAG               "v3.1.1"
+-  SOURCE_DIR            ${UTFCPP_DIR}
+-  UPDATE_DISCONNECTED   1
+-  CMAKE_ARGS            -DCMAKE_INSTALL_PREFIX=${UTFCPP_DIR}/install -Dgtest_force_shared_crt=ON
+-  TEST_AFTER_INSTALL    1
+-  STEP_TARGETS          build)
+ 
+-
+ include_directories(
+   ${PROJECT_SOURCE_DIR}/runtime/src
+   ${PROJECT_SOURCE_DIR}/runtime/src/atn
+@@ -23,8 +13,8 @@ include_directories(
+   ${PROJECT_SOURCE_DIR}/runtime/src/tree
+   ${PROJECT_SOURCE_DIR}/runtime/src/tree/pattern
+   ${PROJECT_SOURCE_DIR}/runtime/src/tree/xpath
+-  ${UTFCPP_DIR}/install/include/utf8cpp
+-  ${UTFCPP_DIR}/install/include/utf8cpp/utf8
++  ${UTFCPP_DIR}/source/
++  ${UTFCPP_DIR}/source/utf8
+ )
+ 
+ 
