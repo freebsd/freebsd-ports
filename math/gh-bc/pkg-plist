@@ -1,7 +1,7 @@
 bin/bc
 bin/dc
-man/man1/bc.1.gz
-man/man1/dc.1.gz
+share/man/man1/bc.1.gz
+share/man/man1/dc.1.gz
 share/nls/C/bc.cat
 share/nls/de_AT.ISO8859-1/bc.cat
 share/nls/de_AT.ISO8859-15/bc.cat

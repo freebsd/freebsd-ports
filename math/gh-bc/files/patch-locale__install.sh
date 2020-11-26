@@ -1,14 +1,14 @@
---- locale_install.sh.orig	2019-11-09 19:04:17 UTC
+--- locale_install.sh.orig	2020-11-26 16:00:16 UTC
 +++ locale_install.sh
-@@ -193,6 +193,7 @@ for file in $locales_dir/*.msg; do
- 		continue
- 	fi
+@@ -211,6 +211,7 @@ for file in $locales_dir/*.msg; do
+ 
+ 	loc=$(gen_nlspath "$destdir/$nlspath" "$locale" "$main_exec")
  
 +	echo gencatfile "$loc" "$file"
  	gencatfile "$loc" "$file"
  
  done
-@@ -217,14 +218,13 @@ for file in $locales_dir/*.msg; do
+@@ -239,14 +240,13 @@ for file in $locales_dir/*.msg; do
  		linkdir=$(dirname "$file")
  		locale=$(basename "$link" .msg)
  		linksrc=$(gen_nlspath "$nlspath" "$locale" "$main_exec")
