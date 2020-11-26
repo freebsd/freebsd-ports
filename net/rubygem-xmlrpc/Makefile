@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlrpc
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
