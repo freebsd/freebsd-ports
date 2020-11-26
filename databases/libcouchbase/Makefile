@@ -10,7 +10,6 @@ COMMENT=	Multithreaded noSQL database (client and library)
 
 LICENSE=	APACHE20
 
-BROKEN_aarch64=		fails to link: error adding symbols: File in wrong format
 BROKEN_armv6=		fails to build: dt_modtext: libdtrace/common/dt_link.c(820): arm not implemented
 BROKEN_armv7=		fails to build: dt_modtext: libdtrace/common/dt_link.c(820): arm not implemented
 BROKEN_mips64=		fails to link: ld: failed to merge target specific data
