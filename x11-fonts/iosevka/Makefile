@@ -2,7 +2,7 @@
 
 PORTNAME=	iosevka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.0
+DISTVERSION=	4.0.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/be5invis/Iosevka/releases/download/${DISTVERSIONFULL}/
 
@@ -62,14 +62,14 @@ ${option}_DESC+=	(${spacing} spacing)
 ${option}_DISTFILES=	ttf-${PORTNAME}${variant}${DISTVERSION}${EXTRACT_SUFX}
 
 post-install-${option}-on:
-	cd ${WRKSRC}/ttf && \
+	cd ${WRKSRC} && \
 	${FIND} -E * -regex '${PORTNAME}${variant}[a-z]+[.]ttf' | \
 	${XARGS} -J {} ${INSTALL_DATA} {} ${STAGEDIR}${FONTSDIR}
 
 _regenerate-plist: _regenerate-plist-${option}
 
 _regenerate-plist-${option}: patch _remove-pkg-plist.tmp
-	cd ${WRKSRC}/ttf && \
+	cd ${WRKSRC} && \
 	${FIND} -E * -regex '${PORTNAME}${variant}[a-z]+[.]ttf' | \
 	${XARGS} ${PRINTF} '%%%%${option}%%%%%%%%FONTSDIR%%%%/%s\n' >> ${WRKDIR}/.pkg-plist.tmp
 .	endfor
