@@ -18,7 +18,7 @@ BUILD_DEPENDS=	wayland-protocols>=1.8:graphics/wayland-protocols
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
-ONLY_FOR_ARCHS=		i386 amd64 aarch64 powerpc64
+ONLY_FOR_ARCHS=		i386 amd64 aarch64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Used only by amd/radeon hardware
 
 MESON_ARGS+=	-Ddri-drivers="" \
