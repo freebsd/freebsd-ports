@@ -24,7 +24,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 
-USES=		cmake gl iconv openal pkgconfig sqlite
+USES=		cmake compiler:c11 gl iconv openal pkgconfig sqlite
 USE_GITHUB=	yes
 USE_GL=		egl gbm gl
 USE_LDCONFIG=	yes
