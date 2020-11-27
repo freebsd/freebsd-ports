@@ -36,6 +36,7 @@ include/openssl/crmf.h
 include/openssl/crmferr.h
 include/openssl/crypto.h
 include/openssl/cryptoerr.h
+include/openssl/cryptoerr_legacy.h
 include/openssl/ct.h
 include/openssl/cterr.h
 include/openssl/decoder.h
@@ -112,6 +113,7 @@ include/openssl/ssl.h
 include/openssl/ssl2.h
 include/openssl/ssl3.h
 include/openssl/sslerr.h
+include/openssl/sslerr_legacy.h
 include/openssl/stack.h
 include/openssl/store.h
 include/openssl/storeerr.h
@@ -360,6 +362,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/EVP_MAC.3.gz
 %%MAN3%%man/man3/EVP_MD_meth_new.3.gz
 %%MAN3%%man/man3/EVP_OpenInit.3.gz
+%%MAN3%%man/man3/EVP_PKEY2PKCS8.3.gz
 %%MAN3%%man/man3/EVP_PKEY_ASN1_METHOD.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_ctrl.3.gz
 %%MAN3%%man/man3/EVP_PKEY_CTX_get0_libctx.3.gz
@@ -752,6 +755,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/d2i_DHparams.3.gz
 %%MAN3%%man/man3/d2i_PKCS8PrivateKey_bio.3.gz
 %%MAN3%%man/man3/d2i_PrivateKey.3.gz
+%%MAN3%%man/man3/d2i_RSAPrivateKey.3.gz
 %%MAN3%%man/man3/d2i_SSL_SESSION.3.gz
 %%MAN3%%man/man3/d2i_X509.3.gz
 %%MAN3%%man/man3/i2d_CMS_bio_stream.3.gz
@@ -844,6 +848,7 @@ man/man5/x509v3_config.5.gz
 %%MAN3%%man/man7/provider-cipher.7.gz
 %%MAN3%%man/man7/provider-digest.7.gz
 %%MAN3%%man/man7/provider-encoder.7.gz
+%%MAN3%%man/man7/provider-kdf.7.gz
 %%MAN3%%man/man7/provider-kem.7.gz
 %%MAN3%%man/man7/provider-keyexch.7.gz
 %%MAN3%%man/man7/provider-keymgmt.7.gz
