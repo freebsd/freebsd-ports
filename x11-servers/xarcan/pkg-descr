@@ -1,0 +1,10 @@
+This is a patched Xserver with a KDrive backend that uses the
+arcan-shmif to map Xlib/Xcb/X clients to a running Arcan instance.
+
+It currently works as a 'desktop in a window', where you supply the
+window manager and so on, and use the X side as normal. Some Arcan
+features will be lost, particularly any customizations done to the
+keybindings - normal X controls for defining keyboard maps and
+overrides are needed.
+
+WWW: https://github.com/letoram/xarcan

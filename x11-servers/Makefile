@@ -6,6 +6,7 @@
     SUBDIR += Xfstt
     SUBDIR += x2vnc
     SUBDIR += x2x
+    SUBDIR += xarcan
     SUBDIR += xephyr
     SUBDIR += xorg-dmx
     SUBDIR += xorg-nestserver
