@@ -372,7 +372,6 @@
 %%WWWDIR%%/vendor/cogpowered/finediff/tests/Usage/Resources/word/simple.txt
 %%WWWDIR%%/vendor/cogpowered/finediff/tests/Usage/SimpleTest.php
 %%WWWDIR%%/vendor/composer/ClassLoader.php
-%%WWWDIR%%/vendor/composer/InstalledVersions.php
 %%WWWDIR%%/vendor/composer/LICENSE
 %%WWWDIR%%/vendor/composer/autoload_classmap.php
 %%WWWDIR%%/vendor/composer/autoload_namespaces.php
@@ -380,6 +379,4 @@
 %%WWWDIR%%/vendor/composer/autoload_real.php
 %%WWWDIR%%/vendor/composer/autoload_static.php
 %%WWWDIR%%/vendor/composer/installed.json
-%%WWWDIR%%/vendor/composer/installed.php
-%%WWWDIR%%/vendor/composer/platform_check.php
 %%WWWDIR%%/webpack.js
