@@ -2,7 +2,7 @@
 
 PORTNAME=	mesa-gallium-vdpau
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	Mesa Gallium VDPAU drivers
