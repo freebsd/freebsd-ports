@@ -1,0 +1,11 @@
+--- src/build-data/cc/clang.txt.orig	2020-11-27 13:34:57 UTC
++++ src/build-data/cc/clang.txt
+@@ -58,7 +58,7 @@ rdseed -> "-mrdseed"
+ sha    -> "-msha"
+ altivec -> "-maltivec"
+ 
+-ppc64:powercrypto -> "-mcrypto"
++ppc64:powercrypto -> "-mcrypto -mvsx"
+ ppc64:power9 -> "-mcpu=power9"
+ 
+ arm64:armv8crypto -> "-march=armv8+crypto"
