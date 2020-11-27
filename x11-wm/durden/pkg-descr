@@ -1,0 +1,13 @@
+Durden is a desktop environment for the Arcan Display Server. It
+serves both as a reference showcase on how to take advantage of some
+of the features in Arcan, and as a very competent entry to the
+advanced-user side of the desktop environment spectrum. The basic
+premise is to absorb most, if not all, features from current desktop
+environments in a modular and configurable way - then let user
+selected profiles actually cherry- pick the configuration, visuals and
+tunning that reflects the desktop the user wants or is familiar
+with. Internally, it is based around a file-system like structure
+("the menu") and everything else is references to paths within this
+structure.
+
+WWW: http://durden.arcan-fe.com/
