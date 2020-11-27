@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hxtools
-DISTVERSION=	20200712
+PORTVERSION=	20201116
 CATEGORIES=	misc
 MASTER_SITES=	http://inai.de/files/hxtools/
 
