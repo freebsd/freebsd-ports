@@ -10,6 +10,7 @@
     SUBDIR += aegisub
     SUBDIR += aom
     SUBDIR += aravis
+    SUBDIR += arcan
     SUBDIR += assimp
     SUBDIR += atomicparsley
     SUBDIR += audacious
