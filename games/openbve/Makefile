@@ -2,11 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	openbve
-PORTVERSION=	1.7.2.0
+PORTVERSION=	1.7.2.1
 CATEGORIES=	games
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	e8c81970ea0e3b9bee1192d85cf67ef3aa31d971.diff:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Realistic 3D train/railway simulator
@@ -33,7 +30,7 @@ NUGET_DEPENDS=	CS-Script.lib=3.30.3 \
 		NLayer=1.12.0 \
 		NVorbis=0.10.1 \
 		OpenTK.GLControl=3.1.0 \
-		OpenTK=3.2.0 \
+		OpenTK=3.3.1 \
 		Prism.Core=7.2.0.1422 \
 		ReactiveProperty.Core=7.1.0 \
 		ReactiveProperty=7.1.0 \
@@ -52,9 +49,6 @@ DATADIR=	${PREFIX}/lib/${PORTNAME}
 PORTDOCS=	changelog.md credits.md routes-and-trains.txt
 
 OPTIONS_DEFINE=	DOCS
-
-post-extract:
-	@${LN} -sf OpenTK.3.2.0 ${_NUGET_PACKAGEDIR}/OpenTK.3.2
 
 post-patch:
 	@${REINPLACE_CMD} -e '/Unix/s,bash,sh,' \

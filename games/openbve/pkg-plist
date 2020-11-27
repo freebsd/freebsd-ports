@@ -47,6 +47,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Compatibility/RoutePatches/Brazil.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Germany.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Holland.xml
+%%DATADIR%%/Data/Compatibility/RoutePatches/HongKong.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Hungary.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Italy.xml
 %%DATADIR%%/Data/Compatibility/RoutePatches/Japan.xml
@@ -468,7 +469,6 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Cursors/nm.png
 %%DATADIR%%/Data/Cursors/nr.png
 %%DATADIR%%/Data/Cursors/ny.png
-%%DATADIR%%/Data/Dependencies/Win32/oalinst.exe
 %%DATADIR%%/Data/Flags/AT.png
 %%DATADIR%%/Data/Flags/BE.png
 %%DATADIR%%/Data/Flags/BR.png
@@ -558,6 +558,9 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/InputDevicePlugins/DefaultDisplayPlugin.dll
 %%DATADIR%%/Data/InputDevicePlugins/DefaultDisplayPlugin.dll.config
 %%DATADIR%%/Data/InputDevicePlugins/DefaultDisplayPlugin.pdb
+%%DATADIR%%/Data/InputDevicePlugins/DenshaDeGoInput.dll
+%%DATADIR%%/Data/InputDevicePlugins/DenshaDeGoInput.dll.config
+%%DATADIR%%/Data/InputDevicePlugins/DenshaDeGoInput.pdb
 %%DATADIR%%/Data/InputDevicePlugins/SanYingInput.dll
 %%DATADIR%%/Data/InputDevicePlugins/SanYingInput.dll.config
 %%DATADIR%%/Data/InputDevicePlugins/SanYingInput.pdb
