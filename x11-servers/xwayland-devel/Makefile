@@ -34,7 +34,7 @@ USE_GL=		gbm gl
 USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
 GH_ACCOUNT=	freedesktop
 GH_PROJECT=	xorg-xserver
-MESON_ARGS=	-Dxwayland=true \
+MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxorg=false \
 		-Dxnest=false \
 		-Dxvfb=false \
@@ -64,7 +64,7 @@ NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
 NVIDIA_MESON_TRUE=	xwayland_eglstream
 
 do-install:
-# Wayland compositors only use the binary
+# XXX Prevent Meson from installing unrelated files
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/hw/xwayland/Xwayland \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${BUILD_WRKSRC}/hw/xwayland/xwayland.pc \
