@@ -2,7 +2,7 @@
 
 PORTNAME=	mongodb42-tools
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.2.10
+DISTVERSION=	4.2.11
 CATEGORIES=	databases
 
 MAINTAINER=	ronald-lists@klop.ws
