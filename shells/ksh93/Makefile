@@ -27,6 +27,7 @@ COMMENT=	AT&T KornShell 93
 LICENSE=	EPL
 
 BROKEN_aarch64=	Fails to compile: needs sbrk
+BROKEN_riscv64=	Fails to compile: needs sbrk
 
 USES=		compiler:c11
 
