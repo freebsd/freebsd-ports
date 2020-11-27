@@ -17,7 +17,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
 		libmusicbrainz5.so:audio/libmusicbrainz5
 
-USES=		localbase meson pkgconfig
+USES=		compiler:c11 localbase meson pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cyanreg
