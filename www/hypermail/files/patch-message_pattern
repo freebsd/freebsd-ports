@@ -1,0 +1,47 @@
+diff --git src/file.c src/file.c
+index cdfa67f..d35d187 100644
+--- src/file.c
++++ src/file.c
+@@ -655,7 +655,7 @@ char *message_name (struct emailinfo *email)
+   else
+     {
+ #endif /* HAVE_LIBFNV */
+-      sprintf (buffer, "%.4d", email->msgnum);
++      sprintf (buffer, set_message_pattern ? set_message_pattern : "%.4d" , email->msgnum);
+       return buffer;
+ #ifdef HAVE_LIBFNV
+     }
+diff --git src/setup.c src/setup.c
+index 3735391..0289a20 100644
+--- src/setup.c
++++ src/setup.c
+@@ -146,6 +146,7 @@ char *set_mhtmlfooter;
+ char *set_attachmentlink;
+ char *set_unsafe_chars;
+ char *set_filename_base;
++char *set_message_pattern;
+ 
+ char *set_folder_by_date;
+ char *set_latest_folder;
+@@ -910,6 +911,9 @@ struct Config cfg[] = {
+      "# option is set to plus a file name extension if one can be found\n"
+      "# in the name supplied by the message. This option is mainly for\n"
+      "# languages that use different character sets from English.\n", FALSE},
++    {"message_pattern", &set_message_pattern, NULL, CFG_STRING,
++     "# This option overrides the default pattern \"%.4d\" for creating\n"
++     "# html files.\n", FALSE},
+ };
+ 
+ /* ---------------------------------------------------------------- */
+diff --git src/setup.h src/setup.h
+index 3a57a26..7f944c0 100644
+--- src/setup.h
++++ src/setup.h
+@@ -162,6 +162,7 @@ extern char *set_mhtmlfooter;
+ extern char *set_attachmentlink;
+ extern char *set_unsafe_chars;
+ extern char *set_filename_base;
++extern char *set_message_pattern;
+ extern bool set_linkquotes;
+ 
+ extern char *set_antispamdomain;
