@@ -1,0 +1,6 @@
+sctd is based on sct (accessibility/sct) by Ted Unangst.
+It calculates sunrise and sunset based on latitude
+and longitude and sets the temperature accordingly.
+The transition logic is based on Redshift.
+
+WWW: https://github.com/amir/sctd

@@ -26,6 +26,7 @@
     SUBDIR += redshift
     SUBDIR += rubygem-atk
     SUBDIR += sct
+    SUBDIR += sctd
     SUBDIR += speech-dispatcher
     SUBDIR += wlsunset
     SUBDIR += yasr
