@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/NOTICE
 
 BROKEN_armv6=		fails to compile: jni-build.xml: gcc failed with return code 1
 BROKEN_armv7=		fails to compile: jni-build.xml: gcc failed with return code 1
-BROKEN_powerpc64=	fails to install: bindings/java/sigar-bin/lib/libsigar-powerpc64-freebsd-1.so: No such file or directory
 
 BUILD_DEPENDS=	${ANT_CMD}:devel/apache-ant
 LIB_DEPENDS=	libsigar.so:devel/sigar
@@ -42,7 +41,7 @@ PLATFORM_VER=	1
 IGNORE=		${OPSYS} platform is not supported
 .endif
 
-LIBNAME=	libsigar-${ARCH:S,i386,x86,}-${OPSYS:tl}-${PLATFORM_VER}.so
+LIBNAME=	libsigar-${ARCH:S,i386,x86,:S,powerpc64,ppc64,}-${OPSYS:tl}-${PLATFORM_VER}.so
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/${LIBNAME}
@@ -61,7 +60,7 @@ do-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/bindings/java/sigar-bin/lib/sigar.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
-	${INSTALL_LIB} ${WRKSRC}/bindings/java/sigar-bin/lib/libsigar-${ARCH:S,i386,x86,}-freebsd-${PLATFORM_VER}.so \
+	${INSTALL_LIB} ${WRKSRC}/bindings/java/sigar-bin/lib/libsigar-${ARCH:S,i386,x86,:S,powerpc64,ppc64,}-freebsd-${PLATFORM_VER}.so \
 		${STAGEDIR}${JAVAJARDIR}/${LIBNAME}
 
 .include <bsd.port.post.mk>
