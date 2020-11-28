@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20201128:
+  AFFECTS: users of databases/cego
+  AUTHOR: pi@FreeBSD.org
+
+  Database updates from 2.45.x to 2.46.x require a xml tableset export
+  and import, since table structure information has been changed.
+
+20201128:
   AFFECTS: users of lang/ruby26
   AUTHOR: mfechner@FreeBSD.org
 
