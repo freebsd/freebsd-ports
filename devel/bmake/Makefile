@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bmake
-PORTVERSION=	20200902
+PORTVERSION=	20201117
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/sjg/
 
