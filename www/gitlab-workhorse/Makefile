@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gitlab-workhorse
-PORTVERSION?=	8.51.0
+PORTVERSION?=	8.54.0
 PORTREVISION?=	0
 CATEGORIES=	www
 
@@ -21,7 +21,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-workhorse/tags
-GL_COMMIT?=	da82ee96dbb38526a5328b485a644b73333a68e6
+GL_COMMIT?=	b4e50d0f720d796522d74b53e783a1ab3823dbe4
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -37,7 +37,7 @@ GH_TUPLE=	\
 		aws:aws-sdk-go:v1.31.13:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-instrumentation:opencensus-go:v0.22.3:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
-		certifi:gocertifi:ee1a9a0726d2:certifi_gocertifi/vendor/github.com/certifi/gocertifi \
+		certifi:gocertifi:2c3bb06c6054:certifi_gocertifi/vendor/github.com/certifi/gocertifi \
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
 		HdrHistogram:hdrhistogram-go:3a0bb77429bd:codahale_hdrhistogram_go/vendor/github.com/codahale/hdrhistogram \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
@@ -46,7 +46,7 @@ GH_TUPLE=	\
 		disintegration:imaging:v1.6.2:disintegration_imaging/vendor/github.com/disintegration/imaging \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dominikh:go-tools:v0.0.1-2020.1.5:dominikh_go_tools/vendor/honnef.co/go/tools \
-		getsentry:raven-go:v0.1.2:getsentry_raven_go/vendor/github.com/getsentry/raven-go \
+		getsentry:raven-go:v0.2.0:getsentry_raven_go/vendor/github.com/getsentry/raven-go \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
 		golang:gddo:af0f2af80721:golang_gddo/vendor/github.com/golang/gddo \
