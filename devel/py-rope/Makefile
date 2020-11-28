@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rope
-PORTVERSION=	0.10.7
+DISTVERSION=	0.18.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,9 +11,11 @@ MAINTAINER=	jjachuf@gmail.com
 COMMENT=	Python refactoring library
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
