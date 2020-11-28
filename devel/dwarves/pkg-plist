@@ -26,8 +26,8 @@ include/dwarves/hash.h
 include/dwarves/libbtf.h
 include/dwarves/libctf.h
 include/dwarves/list.h
+include/dwarves/pahole_strings.h
 include/dwarves/rbtree.h
-include/dwarves/strings.h
 lib/libdwarves.so
 lib/libdwarves.so.1
 lib/libdwarves.so.1.0.0

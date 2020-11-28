@@ -1,6 +1,6 @@
---- lib/bpf/src/libbpf.c.orig	2020-03-12 19:57:29 UTC
+--- lib/bpf/src/libbpf.c.orig	2020-11-16 19:49:14 UTC
 +++ lib/bpf/src/libbpf.c
-@@ -29,18 +29,12 @@
+@@ -30,18 +30,12 @@
  #include <linux/kernel.h>
  #include <linux/bpf.h>
  #include <linux/btf.h>
@@ -18,22 +18,20 @@
 -#include <sys/vfs.h>
  #include <sys/utsname.h>
  #include <sys/resource.h>
- #include <tools/libc_compat.h>
-@@ -73,11 +67,13 @@
+ #include <libelf.h>
+@@ -72,9 +66,11 @@
  
  #define __printf(a, b)	__attribute__((format(printf, a, b)))
  
 +#ifndef __FreeBSD__
  static struct bpf_map *bpf_object__add_map(struct bpf_object *obj);
- static struct bpf_program *bpf_object__find_prog_by_idx(struct bpf_object *obj,
- 							int idx);
  static const struct btf_type *
  skip_mods_and_typedefs(const struct btf *btf, __u32 id, __u32 *res_id);
 +#endif /* !__FreeBSD__ */
  
  static int __base_pr(enum libbpf_print_level level, const char *format,
  		     va_list args)
-@@ -111,6 +107,7 @@ void libbpf_print(enum libbpf_print_level level, const
+@@ -108,6 +104,7 @@ void libbpf_print(enum libbpf_print_level level, const
  	va_end(args);
  }
  
@@ -41,7 +39,22 @@
  static void pr_perm_msg(int err)
  {
  	struct rlimit limit;
-@@ -8396,3 +8387,4 @@ void bpf_object__destroy_skeleton(struct bpf_object_sk
+@@ -8959,12 +8956,14 @@ bpf_object__find_map_by_offset(struct bpf_object *obj,
+ {
+ 	return ERR_PTR(-ENOTSUP);
+ }
++#endif /* !__FreeBSD__ */
+ 
+ long libbpf_get_error(const void *ptr)
+ {
+ 	return PTR_ERR_OR_ZERO(ptr);
+ }
+ 
++#ifndef __FreeBSD__
+ int bpf_prog_load(const char *file, enum bpf_prog_type type,
+ 		  struct bpf_object **pobj, int *prog_fd)
+ {
+@@ -10860,3 +10859,4 @@ void bpf_object__destroy_skeleton(struct bpf_object_sk
  	free(s->progs);
  	free(s);
  }

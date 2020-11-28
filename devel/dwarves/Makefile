@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dwarves
-DISTVERSION=	1.17
+DISTVERSION=	1.19
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorapeople.org/~acme/dwarves/
 
@@ -27,7 +27,7 @@ USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	btfdiff fullcircle ostra/ostra-cg ostra/python/ostra.py
 
-CFLAGS+=	-I${WRKSRC}
+CFLAGS+=	-I${WRKSRC} -Wno-attributes
 
 OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
