@@ -10,8 +10,6 @@ COMMENT=	Very small C interpreter for scripting
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_aarch64=		fails to link: missing sbrk
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	zsaleeba
 GH_TAGNAME= 4555e84
