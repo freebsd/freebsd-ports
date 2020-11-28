@@ -1,0 +1,12 @@
+https://github.com/numba/llvmlite/issues/542
+--- ffi/CMakeLists.txt.orig	2020-01-04 18:08:00 UTC
++++ ffi/CMakeLists.txt
+@@ -11,6 +11,8 @@ find_package(LLVM REQUIRED CONFIG)
+ message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
+ message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
+ 
++set(CMAKE_POSITION_INDEPENDENT_CODE ON) # otherwise FreeBSD build breaks asking for -fPIC
++
+ # Set your project compile flags.
+ # E.g. if using the C++ header files
+ # you will need to enable C++11 support
