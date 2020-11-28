@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PollyReports
-PORTVERSION=	1.7.7
+PORTVERSION=	1.8
 CATEGORIES=	print python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,10 +11,12 @@ MAINTAINER=	jjachuf@gmail.com
 COMMENT=	Band-oriented PDF report generation from database query
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	REPORTLAB
 
