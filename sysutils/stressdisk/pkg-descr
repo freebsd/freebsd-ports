@@ -1,0 +1,9 @@
+This is a program designed to stress test your disks and
+find failures in them.
+
+- Use it to soak test your new disks / memory cards / USB
+  sticks before trusting your valuable data to it.
+
+- Use it to soak test your new PC hardware also for the same reason.
+
+WWW: https://github.com/ncw/stressdisk
