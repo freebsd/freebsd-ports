@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-labkit
-PORTVERSION=	0.12.2
+PORTVERSION=	0.13.2
 PORTREVISION=	0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-actionpack60>=5<6.1.0:www/rubygem-actionpack60 \
 		rubygem-activesupport60>=5<6.1.0:devel/rubygem-activesupport60 \
 		rubygem-grpc>=1.19<2:net/rubygem-grpc \
-		rubygem-jaeger-client>=0.10<1.0:devel/rubygem-jaeger-client \
+		rubygem-jaeger-client>=1.1<2:devel/rubygem-jaeger-client \
 		rubygem-opentracing>=0.4<1.0:devel/rubygem-opentracing \
 		rubygem-redis>3.0.0<5.0.0:databases/rubygem-redis
 
