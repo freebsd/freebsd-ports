@@ -15,8 +15,6 @@ COMMENT=	Belle-sip is a SIP (RFC3261) implementation written in C
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to build: Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-
 LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libbctoolbox.so:net/bctoolbox
 
