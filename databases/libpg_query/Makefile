@@ -3,6 +3,7 @@
 
 PORTNAME=	libpg_query
 DISTVERSION=	10-1.0.3
+PORTREVISION=	1
 CATEGORIES=	databases devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -18,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lfittl
 
 do-install:
-	${INSTALL_LIB} ${WRKSRC}/libpg_query.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/libpg_query.a ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/pg_query.h ${STAGEDIR}${PREFIX}/include/
 
 PLIST_FILES=	include/pg_query.h \
