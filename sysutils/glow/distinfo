@@ -1,6 +1,6 @@
-TIMESTAMP = 1606054390
-SHA256 (charmbracelet-glow-v1.2.0_GH0.tar.gz) = 75d80dcd3258569e187d189f96f79de544332b72d635cc20b5111453d03c3a2d
-SIZE (charmbracelet-glow-v1.2.0_GH0.tar.gz) = 517282
+TIMESTAMP = 1606576923
+SHA256 (charmbracelet-glow-v1.2.1_GH0.tar.gz) = ceb9369e2f93412abf914fd4cdc2e1a7e70cf48e2b2607c1e10847223c4a1b68
+SIZE (charmbracelet-glow-v1.2.1_GH0.tar.gz) = 518065
 SHA256 (alecthomas-chroma-v0.8.0_GH0.tar.gz) = 03bbe1fd43109b125cb33cf72e26338376056b961ea1c9ab1ecc02a60651e67b
 SIZE (alecthomas-chroma-v0.8.0_GH0.tar.gz) = 623074
 SHA256 (atotto-clipboard-v0.1.2_GH0.tar.gz) = 84704a60eb4de90eaebe6e8cbfab30bb53d103c26c25560d67d13469fd17934e

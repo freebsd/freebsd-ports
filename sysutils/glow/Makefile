@@ -2,7 +2,7 @@
 
 PORTNAME=	glow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	vulcan@wired.sh
@@ -68,7 +68,7 @@ GH_TUPLE=	alecthomas:chroma:v0.8.0:alecthomas_chroma/vendor/github.com/alecthoma
 		yuin:goldmark:v1.2.1:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_SHA=	e9d728c
+_BUILD_SHA=	53592dc
 
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
