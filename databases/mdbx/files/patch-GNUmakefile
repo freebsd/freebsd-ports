@@ -1,0 +1,37 @@
+--- GNUmakefile.orig	2020-09-30 14:33:07 UTC
++++ GNUmakefile
+@@ -14,7 +14,7 @@
+ # There may be other macros of interest.
+ #
+ 
+-SHELL   := env bash
++SHELL   := env sh
+ 
+ # install sandbox
+ DESTDIR ?=
+@@ -53,7 +53,7 @@ define uname2sosuffix
+     *) echo so;;
+   esac
+ endef
+-SO_SUFFIX  := $(shell $(uname2sosuffix))
++SO_SUFFIX  := so.0.9.1
+ 
+ HEADERS    := mdbx.h mdbx.h++
+ LIBRARIES  := libmdbx.a libmdbx.$(SO_SUFFIX)
+@@ -110,11 +110,11 @@ mdbx_%:	mdbx_%.c libmdbx.a
+ 	$(CC) $(CFLAGS) $(MDBX_OPTIONS) '-DMDBX_CONFIG_H="config.h"' $^ $(EXE_LDFLAGS) $(LIBS) -o $@
+ 
+ install: $(LIBRARIES) $(TOOLS) $(HEADERS)
+-	install -D -p -s -t $(DESTDIR)$(prefix)/bin$(suffix) $(TOOLS) && \
+-	install -D -p -s -t $(DESTDIR)$(prefix)/lib$(suffix) $(filter-out libmdbx.a,$(LIBRARIES)) && \
+-	install -D -p -t $(DESTDIR)$(prefix)/lib$(suffix) libmdbx.a && \
+-	install -D -p -m 444 -t $(DESTDIR)$(prefix)/include $(HEADERS) && \
+-	install -D -p -m 444 -t $(DESTDIR)$(mandir)/man1 $(addprefix $(MAN_SRCDIR), $(MANPAGES))
++	install -p -s $(TOOLS) $(DESTDIR)$(prefix)/bin$(suffix) && \
++	install -p -s $(filter-out libmdbx.a,$(LIBRARIES)) $(DESTDIR)$(prefix)/lib$(suffix) && \
++	install -p libmdbx.a $(DESTDIR)$(prefix)/lib$(suffix) && \
++	install -p -m 444 $(HEADERS) $(DESTDIR)$(prefix)/include && \
++	install -p -m 444 $(addprefix $(MAN_SRCDIR), $(MANPAGES)) $(DESTDIR)$(mandir)/man1
+ 
+ uninstall:
+ 	rm -f $(addprefix $(DESTDIR)$(prefix)/bin$(suffix)/,$(TOOLS)) \

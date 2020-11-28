@@ -1,0 +1,10 @@
+
+libmdbx is an extremely fast, compact, powerful, embedded, transactional
+key-value database, with permissive license. libmdbx has a specific set of
+properties and capabilities, focused on creating unique lightweight solutions.
+
+Historically, libmdbx is a deeply revised and extended descendant of the
+amazing Lightning Memory-Mapped Database. libmdbx inherits all benefits from
+LMDB, but resolves some issues and adds a set of improvements.
+
+WWW: https://github.com/erthink/libmdbx

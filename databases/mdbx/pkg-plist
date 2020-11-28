@@ -1,0 +1,16 @@
+bin/mdbx_chk
+bin/mdbx_copy
+bin/mdbx_dump
+bin/mdbx_load
+bin/mdbx_stat
+include/mdbx.h
+include/mdbx.h++
+lib/libmdbx.a
+lib/libmdbx.so
+lib/libmdbx.so.0
+lib/libmdbx.so.%%VERSION%%
+man/man1/mdbx_chk.1.gz
+man/man1/mdbx_copy.1.gz
+man/man1/mdbx_dump.1.gz
+man/man1/mdbx_load.1.gz
+man/man1/mdbx_stat.1.gz

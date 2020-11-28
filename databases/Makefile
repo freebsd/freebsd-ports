@@ -187,6 +187,7 @@
     SUBDIR += mariadb105-client
     SUBDIR += mariadb105-server
     SUBDIR += mdbtools
+    SUBDIR += mdbx
     SUBDIR += mdcached
     SUBDIR += memcached
     SUBDIR += mongodb-tools
