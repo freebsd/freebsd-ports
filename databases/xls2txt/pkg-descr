@@ -1,0 +1,6 @@
+xls2txt and xsl2csv allow converting spreadsheet files to text for compatibility
+with terminals and command-line utilities (e.g. diff or less). Despite the name,
+they should work with both excel (xls, xlsx or xlsb) and OpenDocument (ods)
+files.
+
+WWW: https://github.com/masklinn/xls2txt
