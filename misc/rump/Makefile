@@ -11,8 +11,8 @@ COMMENT=	Virtualized NetBSD kernel components in userspace
 
 LICENSE=	BSD2CLAUSE
 
-NOT_FOR_ARCHS=		armv6 armv7 mips mips64 powerpc powerpc64 powerpc64le powerpcspe sparc64
-NOT_FOR_ARCHS_REASON=	not yet ported to FreeBSD on this architecture
+ONLY_FOR_ARCHS=		aarch64 amd64 i386
+ONLY_FOR_ARCHS_REASON=	only supports FreeBSD on this architecture
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rumpkernel
