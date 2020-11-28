@@ -74,6 +74,7 @@ WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 			libxcb-icccm.so:x11/xcb-util-wm \
 			libxkbcommon.so:x11/libxkbcommon
+WAYLAND_RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel
 WAYLAND_USES=		xorg
 WAYLAND_USE=		XORG=xcb
 WAYLAND_CMAKE_BOOL_OFF=	DISABLE_WAYLAND
