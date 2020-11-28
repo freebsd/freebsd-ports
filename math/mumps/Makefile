@@ -47,6 +47,10 @@ MAKE_JOBS_UNSAFE=yes
 PKGNAMESUFFIX+=		-mpich
 .endif
 
+.if ${FORTRAN_DEFAULT} == gfortran && ${GCC_DEFAULT} >= 10
+FCFLAGS+=	-fallow-argument-mismatch
+.endif
+
 post-patch-MPI-on:
 	${INSTALL_DATA} ${WRKSRC}/Make.inc/Makefile.FREEBSD10.PAR \
 		${WRKSRC}/Makefile.inc
