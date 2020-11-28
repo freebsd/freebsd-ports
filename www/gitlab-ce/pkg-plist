@@ -3907,7 +3907,6 @@
 %%WWWDIR%%/app/assets/javascripts/pages/sessions/new/signin_tabs_memoizer.js
 %%WWWDIR%%/app/assets/javascripts/pages/sessions/new/username_validator.js
 %%WWWDIR%%/app/assets/javascripts/pages/shared/mount_badge_settings.js
-%%WWWDIR%%/app/assets/javascripts/pages/shared/mount_runner_instructions.js
 %%WWWDIR%%/app/assets/javascripts/pages/shared/wikis/components/delete_wiki_modal.vue
 %%WWWDIR%%/app/assets/javascripts/pages/shared/wikis/index.js
 %%WWWDIR%%/app/assets/javascripts/pages/shared/wikis/wikis.js
@@ -4778,9 +4777,6 @@
 %%WWWDIR%%/app/assets/javascripts/vue_shared/components/rich_content_editor/services/renderers/render_utils.js
 %%WWWDIR%%/app/assets/javascripts/vue_shared/components/rich_content_editor/services/sanitize_html.js
 %%WWWDIR%%/app/assets/javascripts/vue_shared/components/rich_content_editor/toolbar_item.vue
-%%WWWDIR%%/app/assets/javascripts/vue_shared/components/runner_instructions/graphql/queries/get_runner_platforms.query.graphql
-%%WWWDIR%%/app/assets/javascripts/vue_shared/components/runner_instructions/graphql/queries/get_runner_setup.query.graphql
-%%WWWDIR%%/app/assets/javascripts/vue_shared/components/runner_instructions/runner_instructions.vue
 %%WWWDIR%%/app/assets/javascripts/vue_shared/components/select2_select.vue
 %%WWWDIR%%/app/assets/javascripts/vue_shared/components/sidebar/collapsed_calendar_icon.vue
 %%WWWDIR%%/app/assets/javascripts/vue_shared/components/sidebar/collapsed_grouped_date_picker.vue
@@ -15163,7 +15159,7 @@
 %%WWWDIR%%/doc/user/admin_area/analytics/img/dev_ops_report_v13_4.png
 %%WWWDIR%%/doc/user/admin_area/analytics/img/instance_activity_pipelines_chart_v13_6.png
 %%WWWDIR%%/doc/user/admin_area/analytics/index.md
-%%WWWDIR%%/doc/user/admin_area/analytics/instance_statistics.md
+%%WWWDIR%%/doc/user/admin_area/analytics/usage_trends.md
 %%WWWDIR%%/doc/user/admin_area/analytics/user_cohorts.md
 %%WWWDIR%%/doc/user/admin_area/appearance.md
 %%WWWDIR%%/doc/user/admin_area/approving_users.md
@@ -25437,8 +25433,6 @@
 %%WWWDIR%%/spec/frontend/vue_shared/components/rich_content_editor/services/renderers/render_utils_spec.js
 %%WWWDIR%%/spec/frontend/vue_shared/components/rich_content_editor/services/sanitize_html_spec.js
 %%WWWDIR%%/spec/frontend/vue_shared/components/rich_content_editor/toolbar_item_spec.js
-%%WWWDIR%%/spec/frontend/vue_shared/components/runner_instructions/mock_data.js
-%%WWWDIR%%/spec/frontend/vue_shared/components/runner_instructions/runner_instructions_spec.js
 %%WWWDIR%%/spec/frontend/vue_shared/components/sidebar/collapsed_calendar_icon_spec.js
 %%WWWDIR%%/spec/frontend/vue_shared/components/sidebar/collapsed_grouped_date_picker_spec.js
 %%WWWDIR%%/spec/frontend/vue_shared/components/sidebar/date_picker_spec.js
