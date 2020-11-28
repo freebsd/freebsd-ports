@@ -1,6 +1,6 @@
---- Makefile.orig	2020-10-21 18:08:19 UTC
+--- Makefile.orig	2020-11-20 11:52:08 UTC
 +++ Makefile
-@@ -46,7 +46,7 @@ GO_JUNIT_REPORT   := ${BUILD_DIR}/bin/go-junit-report
+@@ -45,7 +45,7 @@ GO_JUNIT_REPORT   := ${BUILD_DIR}/bin/go-junit-report
  GOCOVER_COBERTURA := ${BUILD_DIR}/bin/gocover-cobertura
  
  # Build information
@@ -9,7 +9,7 @@
  GITALY_PACKAGE  := gitlab.com/gitlab-org/gitaly
  BUILD_TIME      := $(shell date +"%Y%m%d.%H%M%S")
  GITALY_VERSION  := $(shell git describe --match v* 2>/dev/null | sed 's/^v//' || cat ${SOURCE_DIR}/VERSION 2>/dev/null || echo unknown)
-@@ -157,7 +157,7 @@ all: INSTALL_DEST_DIR = ${SOURCE_DIR}
+@@ -156,7 +156,7 @@ all: INSTALL_DEST_DIR = ${SOURCE_DIR}
  all: install
  
  .PHONY: build
@@ -18,7 +18,7 @@
  	go install ${GO_LDFLAGS} -tags "${GO_BUILD_TAGS}" $(addprefix ${GITALY_PACKAGE}/cmd/, $(call find_commands))
  
  .PHONY: install
-@@ -195,7 +195,7 @@ assemble-ruby:
+@@ -194,7 +194,7 @@ assemble-ruby:
  .PHONY: binaries
  binaries: assemble
  	${Q}if [ ${ARCH} != 'x86_64' ]; then echo Incorrect architecture for build: ${ARCH}; exit 1; fi
@@ -26,8 +26,8 @@
 +	${Q}cd ${ASSEMBLY_ROOT} && sha256 bin/* | tee checksums.sha256.txt
  
  .PHONY: prepare-tests
- prepare-tests: git ${GITLAB_SHELL_DIR}/config.yml ${TEST_REPO} ${TEST_REPO_GIT} ${SOURCE_DIR}/.ruby-bundle
-@@ -354,8 +354,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+ prepare-tests: git ${TEST_REPO} ${TEST_REPO_GIT} ${SOURCE_DIR}/.ruby-bundle
+@@ -349,8 +349,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile

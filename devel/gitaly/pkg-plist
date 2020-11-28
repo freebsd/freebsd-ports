@@ -8,76 +8,6 @@
 %%DATADIR%%/ruby/git-hooks/pre-receive
 %%DATADIR%%/ruby/git-hooks/reference-transaction
 %%DATADIR%%/ruby/git-hooks/update
-%%DATADIR%%/ruby/gitlab-shell/.codeclimate.yml
-%%DATADIR%%/ruby/gitlab-shell/.gitlab-ci.yml
-%%DATADIR%%/ruby/gitlab-shell/CHANGELOG
-%%DATADIR%%/ruby/gitlab-shell/CONTRIBUTING.md
-%%DATADIR%%/ruby/gitlab-shell/LICENSE
-%%DATADIR%%/ruby/gitlab-shell/README.md
-%%DATADIR%%/ruby/gitlab-shell/README.orig.md
-%%DATADIR%%/ruby/gitlab-shell/VERSION
-%%DATADIR%%/ruby/gitlab-shell/bin/check
-%%DATADIR%%/ruby/gitlab-shell/bin/dump-config
-%%DATADIR%%/ruby/gitlab-shell/bin/test-logger
-%%DATADIR%%/ruby/gitlab-shell/lib/gitlab_access.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/gitlab_access_status.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/gitlab_config.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/gitlab_custom_hook.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/gitlab_init.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/gitlab_logger.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/gitlab_metrics.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/gitlab_net.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/gitlab_net/errors.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/gitlab_post_receive.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/hooks_utils.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/http_helper.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/httpunix.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/message.rb
-%%DATADIR%%/ruby/gitlab-shell/lib/object_dirs_helper.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/gitlab_access_spec.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/gitlab_config_spec.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/gitlab_custom_hook_spec.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/gitlab_logger_spec.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/gitlab_metrics_spec.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/gitlab_net_spec.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/gitlab_post_receive_spec.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/hooks_utils_spec.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/httpunix_spec.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/object_dirs_helper_spec.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/spec_helper.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/support/gitlab_shell_setup.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/support/gl_id_test_hook
-%%DATADIR%%/ruby/gitlab-shell/spec/support/hook_fail
-%%DATADIR%%/ruby/gitlab-shell/spec/support/hook_ok
-%%DATADIR%%/ruby/gitlab-shell/spec/support/http_unix_server.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/support/vcr.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/support/webmock.rb
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/allowed-pull.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/allowed-push-project-not-found-404-text-html.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/allowed-push-project-not-found-404-text-plain.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/allowed-push-project-not-found-404.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/allowed-push-project-not-found-text-html.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/allowed-push-project-not-found-text-plain.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/allowed-push-project-not-found.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/allowed-push.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/check-ok.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/http-pull-disabled.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/http-push-disabled.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/post-receive-not-found.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/post-receive.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/pre-receive-not-found.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/pre-receive.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/ssh-pull-disabled.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/ssh-pull-project-denied-401-text-html.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/ssh-pull-project-denied-401-text-plain.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/ssh-pull-project-denied-401.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/ssh-pull-project-denied-with-user.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/ssh-pull-project-denied.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/ssh-push-disabled.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/ssh-push-project-denied-401-text-html.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/ssh-push-project-denied-401-text-plain.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/ssh-push-project-denied-401.yml
-%%DATADIR%%/ruby/gitlab-shell/spec/vcr_cassettes/ssh-push-project-denied.yml
 %%DATADIR%%/ruby/lib/gitaly_server.rb
 %%DATADIR%%/ruby/lib/gitaly_server/blob_service.rb
 %%DATADIR%%/ruby/lib/gitaly_server/client.rb
@@ -233,9 +163,6 @@
 %%DATADIR%%/ruby/spec/support/sentry.rb
 %%DATADIR%%/ruby/spec/test_repo_helper.rb
 @(,,755) %%DATADIR%%/ruby/git-hooks/gitlab-shell-hook
-@(,,755) %%DATADIR%%/ruby/gitlab-shell/hooks/post-receive
-@(,,755) %%DATADIR%%/ruby/gitlab-shell/hooks/pre-receive
-@(,,755) %%DATADIR%%/ruby/gitlab-shell/hooks/update
 @(,,555) %%DATADIR%%/bin/gitaly
 @(,,555) %%DATADIR%%/bin/gitaly-blackbox
 @(,,555) %%DATADIR%%/bin/gitaly-debug
@@ -246,4 +173,3 @@
 @(,,555) %%DATADIR%%/bin/gitaly-wrapper
 @(,,555) %%DATADIR%%/bin/praefect
 @sample %%DATADIR%%/config.toml.sample
-@sample %%DATADIR%%/ruby/gitlab-shell/config.yml.sample
