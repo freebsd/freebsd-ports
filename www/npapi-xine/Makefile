@@ -12,6 +12,8 @@ PKGNAMEPREFIX=	npapi-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embed Xine player into browser
 
+BROKEN_aarch64=		fails to build: ../include/prcpucfg.h:604:2: Unknown CPU architecture
+
 LIB_DEPENDS=	libxine.so:multimedia/libxine
 
 USES=		pkgconfig webplugin:native tar:bzip2
