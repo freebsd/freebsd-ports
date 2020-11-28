@@ -3,8 +3,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_16_0
-PORTREVISION=	2
+DISTVERSION=	3_16_1
 CATEGORIES=	graphics geography
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -52,7 +51,8 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libspatialite.so:databases/spatialite \
 		libsz.so:science/szip \
 		libxerces-c.so:textproc/xerces-c3 \
-		libzip.so:archivers/libzip
+		libzip.so:archivers/libzip \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	astyle:devel/astyle \
 		opencl>=0:devel/opencl \
 		${PYTHON_PKGNAMEPREFIX}black>=19.10:devel/py-black@${PY_FLAVOR} \
@@ -145,6 +145,8 @@ GRASS_RUN_DEPENDS=	${GRASS_BUILD_DEPENDS}
 GRASS_CMAKE_BOOL=	WITH_GRASS7
 SERVER_LIB_DEPENDS=	libfcgi.so:www/fcgi
 SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS WITH_QSPATIALITE
+
+SUB_FILES=	pkg-message
 
 PLIST_SUB=	DISTVERSION=${PORTVERSION}
 
