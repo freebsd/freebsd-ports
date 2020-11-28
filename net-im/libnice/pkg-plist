@@ -19,7 +19,7 @@ include/stun/win32_common.h
 lib/girepository-1.0/Nice-0.1.typelib
 lib/libnice.so
 lib/libnice.so.10
-lib/libnice.so.10.6.2
+lib/libnice.so.10.11.0
 libdata/pkgconfig/nice.pc
 share/gir-1.0/Nice-0.1.gir
 share/gtk-doc/html/libnice/NiceAgent.html
@@ -34,7 +34,6 @@ share/gtk-doc/html/libnice/ch04.html
 share/gtk-doc/html/libnice/ch05.html
 share/gtk-doc/html/libnice/home.png
 share/gtk-doc/html/libnice/index.html
-share/gtk-doc/html/libnice/index.sgml
 share/gtk-doc/html/libnice/ix03.html
 share/gtk-doc/html/libnice/ix04.html
 share/gtk-doc/html/libnice/ix05.html
@@ -45,6 +44,11 @@ share/gtk-doc/html/libnice/ix09.html
 share/gtk-doc/html/libnice/ix10.html
 share/gtk-doc/html/libnice/ix11.html
 share/gtk-doc/html/libnice/ix12.html
+share/gtk-doc/html/libnice/ix13.html
+share/gtk-doc/html/libnice/ix14.html
+share/gtk-doc/html/libnice/ix15.html
+share/gtk-doc/html/libnice/ix16.html
+share/gtk-doc/html/libnice/ix17.html
 share/gtk-doc/html/libnice/left-insensitive.png
 share/gtk-doc/html/libnice/left.png
 share/gtk-doc/html/libnice/libnice-Bind.html
@@ -65,6 +69,7 @@ share/gtk-doc/html/libnice/pt03.html
 share/gtk-doc/html/libnice/pt04.html
 share/gtk-doc/html/libnice/right-insensitive.png
 share/gtk-doc/html/libnice/right.png
+share/gtk-doc/html/libnice/states.png
 share/gtk-doc/html/libnice/style.css
 share/gtk-doc/html/libnice/up-insensitive.png
 share/gtk-doc/html/libnice/up.png

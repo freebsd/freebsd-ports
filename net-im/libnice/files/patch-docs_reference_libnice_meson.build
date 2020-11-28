@@ -1,0 +1,11 @@
+--- docs/reference/libnice/meson.build.orig	2020-11-25 16:39:27 UTC
++++ docs/reference/libnice/meson.build
+@@ -26,7 +26,7 @@ ignore_headers = [
+ ]
+ 
+ if dependency('gtk-doc', version: '<1.30', required: false).found()
+-  prog_python = import('python').find_installation('python3')
++  prog_python = import('python').find_installation()
+   fake_makefile = custom_target ('libnice-docs-test-Makefile',
+                                  output: 'Makefile',
+                                  command: [
