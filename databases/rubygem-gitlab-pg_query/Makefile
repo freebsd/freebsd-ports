@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlab-pg_query
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -12,13 +13,11 @@ COMMENT=	Parses SQL queries using a copy of the PostgreSQL server query parser
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpg_query.a:databases/libpg_query
+MY_DEPENDS=	${LOCALBASE}/lib/libpg_query.a:databases/libpg_query
+BUILD_DEPENDS=	${MY_DEPENDS}
+RUN_DEPENDS=	${MY_DEPENDS}
 
 USES=		gem
 USE_RUBY=	yes
-
-#CONFIGURE_ARGS=	--with-pgsql-include-dir=`${PG_CONFIG} --includedir` \
-#		--with-pgsql-lib-dir=`${PG_CONFIG} --libdir`
-#PG_CONFIG=	${LOCALBASE}/bin/pg_config
 
 .include <bsd.port.mk>
