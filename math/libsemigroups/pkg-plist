@@ -66,6 +66,7 @@ include/libsemigroups/timer.hpp
 include/libsemigroups/todd-coxeter.hpp
 include/libsemigroups/transf.hpp
 include/libsemigroups/types.hpp
+include/libsemigroups/uf-old.hpp
 include/libsemigroups/uf.hpp
 include/libsemigroups/wilo.hpp
 include/libsemigroups/wislo.hpp
