@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby_parser
-PORTVERSION=	3.10.1
+PORTVERSION=	3.15.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Ruby parser written in pure ruby
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-sexp_processor>=4.9:devel/rubygem-sexp_processor
+RUN_DEPENDS=	rubygem-sexp_processor>=4.9<5:devel/rubygem-sexp_processor
 
 NO_ARCH=	yes
 USE_RUBY=	yes
