@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mime-types
-PORTVERSION=	3.2.2
+PORTVERSION=	3.3.1
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
