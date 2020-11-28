@@ -1,5 +1,5 @@
-TIMESTAMP = 1589058688
-SHA256 (libfuse-sshfs-sshfs-3.7.0_GH0.tar.gz) = 4037add37cfcd9bb4386c28d1eeed89b56ef5001bcbc3f001f73f38f41a40b73
-SIZE (libfuse-sshfs-sshfs-3.7.0_GH0.tar.gz) = 62912
+TIMESTAMP = 1606532953
+SHA256 (libfuse-sshfs-sshfs-3.7.1_GH0.tar.gz) = 0f0f8f239555effd675d03a3cabfb35ef691a3054c98b62bc28e85620ad9e30d
+SIZE (libfuse-sshfs-sshfs-3.7.1_GH0.tar.gz) = 63174
 SHA256 (952a9c3fda977bce61303ae3311a3adca3d338bf.patch) = 9b55c00a9b63715eeb836c253683240d78e23f824cbf07c07570e74ec2c6b507
 SIZE (952a9c3fda977bce61303ae3311a3adca3d338bf.patch) = 6826
