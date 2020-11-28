@@ -1,8 +1,13 @@
 include/libuvc/libuvc.h
 include/libuvc/libuvc_config.h
+lib/cmake/libuvc/FindJpegPkg.cmake
+lib/cmake/libuvc/FindLibUSB.cmake
 lib/cmake/libuvc/libuvcConfig.cmake
 lib/cmake/libuvc/libuvcConfigVersion.cmake
 lib/cmake/libuvc/libuvcTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libuvc/libuvcTargets.cmake
+lib/libuvc.a
 lib/libuvc.so
+lib/libuvc.so.0
+lib/libuvc.so.0.0.6
 libdata/pkgconfig/libuvc.pc
