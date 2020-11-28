@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PY_ENUM34} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3,1:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tenacity>=5:devel/py-tenacity@${PY_FLAVOR}
 
-USES=		python
+USES=		compiler:c11 python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 OPTIONS_DEFINE=	OPENTRACING
