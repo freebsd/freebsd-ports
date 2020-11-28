@@ -1,2 +1,3 @@
-SHA256 (dfu-util-0.9.tar.gz) = 36428c6a6cb3088cad5a3592933385253da5f29f2effa61518ee5991ea38f833
-SIZE (dfu-util-0.9.tar.gz) = 138397
+TIMESTAMP = 1606529974
+SHA256 (dfu-util-0.10.tar.gz) = a03dc58dfc79c056819c0544b2a5970537566460102b3d82cfb038c60e619b42
+SIZE (dfu-util-0.10.tar.gz) = 151014
