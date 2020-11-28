@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-pages
-PORTVERSION=	1.28.0
+PORTVERSION=	1.30.0
 CATEGORIES=	www
 
 MAINTAINER=	swills@FreeBSD.org
@@ -17,7 +17,7 @@ USE_GITHUB=	nodefault
 
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-pages/tags
-GL_COMMIT=	509da90294ab30a71baa4d6c47bf99c8ac6151dd
+GL_COMMIT=	03aa0f5c194849dba64825a420192cda4efba018
 
 # Build with: make gomod-vendor
 # 60dd
@@ -79,8 +79,8 @@ GH_TUPLE=	\
 		tomasen:realip:f0c99a92ddce:tomasen_realip/vendor/github.com/tomasen/realip \
 		wadey:gocovmerge:b5bfa59ec0ad:wadey_gocovmerge/vendor/github.com/wadey/gocovmerge
 
-GL_TUPLE=	gitlab-org:labkit:eb1fe6499318c774424df80f76fc8b0a420f731b:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit \
-		lupine:go-mimedb:e8af1d65987739a7ab277dedd9772c7398154ff3:lupine_go_mimedb/vendor/gitlab.com/lupine/go-mimedb
+GL_TUPLE=	gitlab-org:go-mimedb:e7aae885685d3b4c73716eae321d8486e914ad74:gitlab_org_go_mimedb/vendor/gitlab.com/gitlab-org/go-mimedb \
+		gitlab-org:labkit:eb1fe6499318c774424df80f76fc8b0a420f731b:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
 GO_BUILDFLAGS=	-ldflags="-X main.VERSION=${PORTVERSION} -X main.REVISION=${GITHASH}"
 GO_PKGNAME=	gitlab.com/gitlab-org/gitlab-pages
