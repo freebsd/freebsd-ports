@@ -27,12 +27,6 @@ USE_XORG=	xtst
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --libdir=${PREFIX}/lib/xneur --with-gtk=gtk2
-CFLAGS_mips=	-fnested-functions
-CFLAGS_mips64=	-fnested-functions
-CFLAGS_powerpc=	-fnested-functions
-CFLAGS_powerpcspe=	-fnested-functions
-CFLAGS_powerpc64=	-fnested-functions
-CFLAGS_sparc64=	-fnested-functions
 
 USE_LDCONFIG=	${PREFIX}/lib/xneur ${PREFIX}/lib/xneur/xneur
 INSTALLS_ICONS=	yes
@@ -61,8 +55,14 @@ SOUND_USES=	openal:al,alut
 SOUND_CONFIGURE_ON=	--with-sound=openal
 SOUND_CONFIGURE_OFF=	--with-sound=no
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_VERSION} == 42
+CFLAGS+=	-fnested-functions
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,-Werror,,g; s,-ldl,,g' ${WRKSRC}/configure
 	@${MV} ${WRKSRC}/etc/xneurrc ${WRKSRC}/etc/xneurrc.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
