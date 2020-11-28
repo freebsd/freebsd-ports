@@ -1,9 +1,9 @@
---- lib/support/nginx/gitlab-ssl.orig	2018-11-21 10:39:57 UTC
+--- lib/support/nginx/gitlab-ssl.orig	2020-11-20 12:00:55 UTC
 +++ lib/support/nginx/gitlab-ssl
 @@ -23,7 +23,7 @@
  upstream gitlab-workhorse {
    # GitLab socket file,
-   # for Omnibus this would be: unix:/var/opt/gitlab/gitlab-workhorse/socket
+   # for Omnibus this would be: unix:/var/opt/gitlab/gitlab-workhorse/sockets/socket
 -  server unix:/home/git/gitlab/tmp/sockets/gitlab-workhorse.socket fail_timeout=0;
 +  server unix:%%PREFIX%%/www/gitlab-ce/tmp/sockets/gitlab-workhorse.socket fail_timeout=0;
  }
