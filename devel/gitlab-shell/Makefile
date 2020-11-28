@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gitlab-shell
-PORTVERSION?=	13.11.0
+PORTVERSION?=	13.13.0
 PORTREVISION?=	0
 CATEGORIES=	devel
 
@@ -11,7 +11,7 @@ COMMENT?=	GitLab Shell handles git commands for GitLab
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	rubygem-bundler1=1.17.3:sysutils/rubygem-bundler1
+BUILD_DEPENDS=	rubygem-bundler>=2.1.4<2.1.5,1:sysutils/rubygem-bundler
 
 USES=		gmake go:modules,no_targets
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
@@ -20,7 +20,7 @@ ALL_TARGET=	build
 USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT?=	027c8c366bd6bac4b291577f10b2c13ffc5a6cc1
+GL_COMMIT?=	3f9890ef73dced430d86801a1efc0e93ec50890e
 
 USERS=		git
 GROUPS=		git
@@ -91,7 +91,7 @@ pre-install:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-.for x in .codeclimate.yml .gitignore .gitlab-ci.yml .rubocop.yml .ruby-version CHANGELOG CONTRIBUTING.md Gemfile Gemfile.lock LICENSE README.md VERSION config.yml.sample
+.for x in .codeclimate.yml .gitignore .gitlab-ci.yml .ruby-version CHANGELOG CONTRIBUTING.md Gemfile Gemfile.lock LICENSE README.md VERSION config.yml.sample
 	${INSTALL_DATA} ${WRKSRC}/${x} ${STAGEDIR}${DATADIR}/
 .endfor
 .for x in bin spec support .gitlab

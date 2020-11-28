@@ -1,7 +1,6 @@
 %%DATADIR%%/.codeclimate.yml
 %%DATADIR%%/.gitignore
 %%DATADIR%%/.gitlab-ci.yml
-%%DATADIR%%/.rubocop.yml
 %%DATADIR%%/.ruby-version
 %%DATADIR%%/CHANGELOG
 %%DATADIR%%/CONTRIBUTING.md
