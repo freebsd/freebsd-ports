@@ -1,6 +1,5 @@
 - Git cannot be used as poudriere disables network access during build
 - ExternalProject_Add fails to build with Ninja
-- https://github.com/letoram/arcan/commit/66efdebb236c requires newer libuvc, so guard
 
 --- frameserver/decode/default/CMakeLists.txt.orig	2020-11-27 15:29:00 UTC
 +++ frameserver/decode/default/CMakeLists.txt
