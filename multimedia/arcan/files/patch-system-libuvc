@@ -39,29 +39,3 @@
  		)
  		set(DECODE_SOURCES
  			${DECODE_SOURCES}
---- frameserver/decode/default/uvc_support.c.orig	2020-11-24 21:15:29 UTC
-+++ frameserver/decode/default/uvc_support.c
-@@ -145,7 +145,9 @@ static void callback(uvc_frame_t* frame, void* tag)
-  * though at least the capture devices I have used this one had the
-  * YUYV frame format have the same output as NV12 /facepalm */
- 	case UVC_FRAME_FORMAT_YUYV:
-+#ifdef UVC_COLOR_FORMAT_NV12
- 	case UVC_FRAME_FORMAT_NV12:
-+#endif
- 		run_swscale(frame, cont, 2, AV_PIX_FMT_NV12);
- 	break;
- 	case UVC_FRAME_FORMAT_UYVY:
-@@ -185,11 +187,13 @@ static int fmt_score(const uint8_t fourcc[static 4], i
- 			.enumv = UVC_FRAME_FORMAT_GRAY8,
- 			.score = 1
- 		},
-+#ifdef UVC_COLOR_FORMAT_NV12
- 		{
-       .fourcc = {'N',  'V',  '1',  '2'},
- 			.enumv = UVC_FRAME_FORMAT_NV12,
- 			.score = 3
- 		},
-+#endif
- /* this does not seem to have the 'right' fourcc? */
- 		{
- 			.fourcc = {0x7d, 0xeb, 0x36, 0xe4},
