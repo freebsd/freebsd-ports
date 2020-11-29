@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.515 2020/05/31 15:15:06 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.519 2020/11/29 17:21:16 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 2;
+my $micro = 3;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1790,14 +1790,24 @@ sub checkmakefile {
 		}
 		if (!grep(/^$i$/, (@mopt, @popt))) {
 			if ($whole !~ /\n${i}_($m)(_\w+)?(.)?=[^\n]+/ and $whole !~ /\n[-\w]+-${i}-(on|off):\n/) {
-				if (!$slaveport) {
-					&perror("WARN", $file, -1, "$i is listed in ".
-						"OPTIONS_DEFINE, but no PORT_OPTIONS:M$i appears.");
-				} else {
-					&perror("WARN", $file, -1, "$i is listed in ".
-						"OPTIONS_DEFINE, but no PORT_OPTIONS:M$i appears ".
-						"in this slave Makefile.  Make sure it appears in ".
-						"the master's Makefile.");
+				my $found_opt_use = 0;
+				foreach my $oarg ('BUILD_DEPENDS', 'RUN_DEPENDS', 'LIB_DEPENDS') {
+					my $oarg_var = &get_makevar("${i}_${oarg}");
+					if ($oarg_var ne "") {
+						$found_opt_use = 1;
+						last;
+					}
+				}
+				if (!$found_opt_use) {
+					if (!$slaveport) {
+						&perror("WARN", $file, -1, "$i is listed in ".
+							"OPTIONS_DEFINE, but no PORT_OPTIONS:M$i appears.");
+					} else {
+						&perror("WARN", $file, -1, "$i is listed in ".
+							"OPTIONS_DEFINE, but no PORT_OPTIONS:M$i appears ".
+							"in this slave Makefile.  Make sure it appears in ".
+							"the master's Makefile.");
+					}
 				}
 			}
 		}
@@ -1830,7 +1840,7 @@ sub checkmakefile {
 		my $lineno = &linenumber($`);
 		&perror("WARN", $file, $lineno, "is $1$2 a user-settable option? ".
 			"Consider using WITH_$2 instead.")
-		if ($1.$2 ne 'USE_GCC');
+		if ($1.$2 ne 'USE_GCC' && $1.$2 ne 'USE_LDCONFIG32');
 	}
 
 	#
@@ -2624,9 +2634,10 @@ xargs xmkmf
 		#$slaveport = 0;
 		print "OK: non-slave port detected, checking for anything after bsd.port(.post).mk.\n"
 			if ($verbose);
-		if ($whole !~ /\n\.include\s+<bsd\.port(?:\.post)?\.mk>\s*$/s) {
+		if ($whole !~ /\n\.include\s+<bsd\.port(?:\.post)?\.mk>\s*$/s &&
+		    $whole !~ /\n\.endif\s*$/s) {
 			&perror("FATAL", $file, -1, "the last line of Makefile has to be".
-				' .include <bsd.port(.post).mk>');
+				' .include <bsd.port(.post).mk> (or .endif in the case of a conditional)');
 		}
 		if ($whole =~ /^MASTERDIR\s*[+?:!]?\s*=/m) {
 			&perror("WARN", $file, -1, "non-slave ports may not define MASTERDIR");
