@@ -17,5 +17,6 @@ MAX_NETMAP_OSVERSION=	1199999  # Doesn't build w/NETMAP on 12
 MASTERDIR=	${.CURDIR}/../intel-ixl-kmod
 PKGDIR=		${.CURDIR}
 DISTINFO_FILE=	${.CURDIR}/distinfo
+PATCHDIR=	${.CURDIR}/files
 
 .include "${MASTERDIR}/Makefile"
