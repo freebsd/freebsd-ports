@@ -69,7 +69,6 @@ post-install:
 MAKE_ARGS+=	CXXFLAGS=-fbracket-depth=512
 .endif
 
-BROKEN_aarch64=		fails to package
 BROKEN_mips=		configure: error: cannot compute suffix of object files: cannot compile
 BROKEN_mips64=		configure: error: cannot compute suffix of object files: cannot compile
 

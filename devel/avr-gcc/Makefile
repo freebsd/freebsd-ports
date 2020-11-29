@@ -12,7 +12,6 @@ COMMENT=	FSF GCC for Atmel AVR 8-bit RISC cross-development
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-BROKEN_aarch64=		Fails to package: cannot find manpages
 BROKEN_mips64=		Fails to configure: cannot compute suffix of object files
 
 BUILD_DEPENDS=	avr-as:devel/binutils@avr \

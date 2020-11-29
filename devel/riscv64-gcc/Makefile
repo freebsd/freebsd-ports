@@ -71,6 +71,4 @@ post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/man/man7/*
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include-fixed
 
-BROKEN_aarch64=		fails to package
-
 .include <bsd.port.mk>
