@@ -1,0 +1,11 @@
+--- unit-tests/Makefile.orig	2020-11-29 15:19:12 UTC
++++ unit-tests/Makefile
+@@ -187,7 +187,7 @@ TESTS+=		modmatch
+ TESTS+=		modmisc
+ TESTS+=		modts
+ TESTS+=		modword
+-TESTS+=		objdir-writable
++#TESTS+=		objdir-writable
+ TESTS+=		opt
+ TESTS+=		opt-backwards
+ TESTS+=		opt-chdir
