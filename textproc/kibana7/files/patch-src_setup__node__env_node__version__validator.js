@@ -1,6 +1,6 @@
---- src/setup_node_env/node_version_validator.js.orig	2020-04-25 11:11:41.868361000 -0700
-+++ src/setup_node_env/node_version_validator.js	2020-04-25 11:13:08.195399000 -0700
-@@ -25,11 +25,11 @@
+--- src/setup_node_env/node_version_validator.js.orig	2020-11-15 15:12:50 UTC
++++ src/setup_node_env/node_version_validator.js
+@@ -25,11 +25,11 @@ var pkg = require('../../package.json'); // Note: This
  var currentVersion = process && process.version || null;
  var rawRequiredVersion = pkg && pkg.engines && pkg.engines.node || null;
  var requiredVersion = rawRequiredVersion ? 'v' + rawRequiredVersion : rawRequiredVersion;
