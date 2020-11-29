@@ -1,11 +1,11 @@
---- unit-tests/Makefile.orig	2020-10-05 03:28:18 UTC
+--- unit-tests/Makefile.orig	2020-11-29 08:44:23 UTC
 +++ unit-tests/Makefile
-@@ -36,7 +36,7 @@
- # src/tests/usr.bin/make/t_make.sh as well.
- TESTS+=		# archive	# broken on FreeBSD, enabled in t_make.sh
+@@ -38,7 +38,7 @@
  TESTS+=		archive-suffix
+ TESTS+=		cmd-errors
+ TESTS+=		cmd-errors-lint
 -TESTS+=		cmd-interrupt
-+TESTS+=		# cmd-interrupt
++#TESTS+=		cmd-interrupt
  TESTS+=		cmdline
+ TESTS+=		cmdline-undefined
  TESTS+=		comment
- TESTS+=		cond-cmp-numeric
