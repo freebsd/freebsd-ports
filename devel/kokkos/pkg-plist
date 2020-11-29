@@ -219,6 +219,6 @@ lib/cmake/Kokkos/KokkosConfigVersion.cmake
 lib/cmake/Kokkos/KokkosTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Kokkos/KokkosTargets.cmake
 lib/libkokkoscontainers.so
-lib/libkokkoscontainers.so.3.2.0
+lib/libkokkoscontainers.so.3.2.1
 lib/libkokkoscore.so
-lib/libkokkoscore.so.3.2.0
+lib/libkokkoscore.so.3.2.1
