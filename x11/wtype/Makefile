@@ -2,11 +2,8 @@
 
 PORTNAME=	wtype
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2
+DISTVERSION=	0.3
 CATEGORIES=	x11
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	bc262ff93e55.patch:-p1 # https://github.com/atx/wtype/issues/16
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Programmatically simulate keyboard input on Wayland
@@ -20,6 +17,7 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	atx
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>
