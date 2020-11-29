@@ -1,6 +1,6 @@
---- src/racket/sconfig.h.orig	2020-02-07 10:30:28 UTC
-+++ src/racket/sconfig.h
-@@ -354,7 +354,6 @@
+--- src/bc/sconfig.h.orig	2020-10-13 22:27:26 UTC
++++ src/bc/sconfig.h
+@@ -357,7 +357,6 @@
  #  define SCHEME_PLATFORM_LIBRARY_SUBPATH "aarch64-freebsd"
  # elif defined(__powerpc__)
  #  define SCHEME_PLATFORM_LIBRARY_SUBPATH "ppc-freebsd"
