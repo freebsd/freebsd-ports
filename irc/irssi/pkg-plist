@@ -275,16 +275,15 @@ man/man1/irssi.1.gz
 %%DATADIR%%/help/whois
 %%DATADIR%%/help/whowas
 %%DATADIR%%/help/window
-%%DATADIR%%/scripts/autoop.pl
-%%DATADIR%%/scripts/autorejoin.pl
-%%DATADIR%%/scripts/buf.pl
-%%DATADIR%%/scripts/dns.pl
-%%DATADIR%%/scripts/kills.pl
-%%DATADIR%%/scripts/mail.pl
-%%DATADIR%%/scripts/mlock.pl
-%%DATADIR%%/scripts/quitmsg.pl
-%%DATADIR%%/scripts/scriptassist.pl
-%%DATADIR%%/scripts/usercount.pl
+%%PERL%%%%DATADIR%%/scripts/autoop.pl
+%%PERL%%%%DATADIR%%/scripts/autorejoin.pl
+%%PERL%%%%DATADIR%%/scripts/buf.pl
+%%PERL%%%%DATADIR%%/scripts/dns.pl
+%%PERL%%%%DATADIR%%/scripts/kills.pl
+%%PERL%%%%DATADIR%%/scripts/mail.pl
+%%PERL%%%%DATADIR%%/scripts/mlock.pl
+%%PERL%%%%DATADIR%%/scripts/quitmsg.pl
+%%PERL%%%%DATADIR%%/scripts/scriptassist.pl
+%%PERL%%%%DATADIR%%/scripts/usercount.pl
 %%DATADIR%%/themes/colorless.theme
 %%DATADIR%%/themes/default.theme
-@dir lib/irssi/modules
