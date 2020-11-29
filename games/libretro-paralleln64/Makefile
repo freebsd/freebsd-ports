@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-paralleln64
-PORTVERSION=	0.20200614
+PORTVERSION=	0.20201129
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -13,7 +13,9 @@ LICENSE_NAME_BITSTREAM_VERA=	Bitstream Vera Sans - Roman Release 1.10
 LICENSE_FILE_BITSTREAM_VERA=	${WRKSRC}/mupen64plus-core/doc/font-license
 LICENSE_PERMS_BITSTREAM_VERA=	auto-accept
 
-USES=		compiler:gcc-c++11-lib gmake gl localbase
+BROKEN_i386=	Doesn't build.
+
+USES=		compiler:c++11-lang gmake gl localbase
 USE_GL=		gl
 USE_LDCONFIG=	yes
 
@@ -26,7 +28,7 @@ MAKE_ARGS=	WITH_DYNAREC=${DYNAREC}
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	parallel-n64
-GH_TAGNAME=	9dd669e
+GH_TAGNAME=	29e7f39
 
 PLIST_FILES=	lib/libretro/parallel_n64_libretro.so
 
