@@ -19,7 +19,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.* openssh-portable-devel-*
 
-USES=			alias autoreconf localbase ncurses pkgconfig ssl
+USES=			alias autoreconf compiler:c11 localbase ncurses \
+			pkgconfig ssl
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--with-ssl-engine \
@@ -185,6 +186,9 @@ CONFIGURE_ARGS+=	--with-xauth=${LOCALBASE}/bin/xauth
 
 RC_SCRIPT_NAME=		openssh
 VERSION_ADDENDUM_DEFAULT?=	${OPSYS}-${PKGNAME}
+
+CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
+CFLAGS_gcc=	-Wno-stringop-truncation
 
 post-patch:
 	@${REINPLACE_CMD} \
