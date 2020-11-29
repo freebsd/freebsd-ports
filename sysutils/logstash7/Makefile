@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	logstash
-PORTVERSION=	7.9.3
+PORTVERSION=	7.10.0
+DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
 PKGNAMESUFFIX=	7
@@ -16,14 +17,21 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		cpe shebangfix
 
+#USE_GITHUB=     yes
+#GH_ACCOUNT=     elastic
+#GH_PROJECT=     logstash
+#GH_TAGNAME=     v${DISTVERSION}
+
 CONFLICTS=	logstash5-[0-9]* logstash6-[0-9]*
 
 SHEBANG_FILES=	bin/*
 CPE_VENDOR=	elasticsearch
 USE_JAVA=	yes
-JAVA_VERSION=	8+
+JAVA_VERSION=	11+
 JAVA_RUN=	yes
 NO_BUILD=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 USERS=	logstash
 GROUPS=	logstash
