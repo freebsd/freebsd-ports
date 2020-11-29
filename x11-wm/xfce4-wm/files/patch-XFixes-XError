@@ -1,0 +1,44 @@
+From c255a406bd353a24a9143b152f91e5eb39f69f1f Mon Sep 17 00:00:00 2001
+From: Olivier Fourdan <fourdan@xfce.org>
+Date: Sat, 28 Nov 2020 21:16:20 +0100
+Subject: [PATCH] compositor: Handle XFixes XError
+
+XFixesSetPictureClipRegion() with the region from the client window can
+cause a RenderBadPicture error.
+
+Make sure to include it within the XError trap.
+
+Signed-off-by: Olivier Fourdan <fourdan@xfce.org>
+https://gitlab.xfce.org/xfce/xfwm4/-/issues/460
+---
+ src/compositor.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/src/compositor.c b/src/compositor.c
+index 5110f29c2..25baaabe5 100644
+--- src/compositor.c
++++ src/compositor.c
+@@ -781,15 +781,16 @@ border_size (CWindow *cw)
+     myDisplayErrorTrapPush (display_info);
+     border = XFixesCreateRegionFromWindow (display_info->dpy,
+                                            cw->id, WindowRegionBounding);
+-    if ((myDisplayErrorTrapPop (display_info) != Success) || (border == None))
+-    {
+-        return None;
+-    }
+     XFixesSetPictureClipRegion (display_info->dpy, cw->picture, 0, 0, border);
+     XFixesTranslateRegion (display_info->dpy, border,
+                            cw->attr.x + cw->attr.border_width,
+                            cw->attr.y + cw->attr.border_width);
+ 
++    if (myDisplayErrorTrapPop (display_info) != Success)
++    {
++        return None;
++    }
++
+     return border;
+ }
+ 
+-- 
+GitLab
+

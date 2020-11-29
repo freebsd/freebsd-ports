@@ -1,0 +1,30 @@
+From 6b3c1ef155a01b61443b832b1922b560ef42ce24 Mon Sep 17 00:00:00 2001
+From: Olivier Fourdan <fourdan@xfce.org>
+Date: Sat, 21 Nov 2020 14:05:04 +0100
+Subject: [PATCH] xsync: Handle XError
+
+XSync can fail, handle the XError gracefully.
+
+Signed-off-by: Olivier Fourdan <fourdan@xfce.org>
+Closes: https://gitlab.xfce.org/xfce/xfwm4/-/issues/448
+---
+ src/xsync.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/xsync.c b/src/xsync.c
+index 920dfdc17..e1c379f9d 100644
+--- src/xsync.c
++++ src/xsync.c
+@@ -113,7 +113,9 @@ clientDestroyXSyncAlarm (Client *c)
+         screen_info = c->screen_info;
+         display_info = screen_info->display_info;
+ 
++        myDisplayErrorTrapPush (display_info);
+         XSyncDestroyAlarm (display_info->dpy, c->xsync_alarm);
++        myDisplayErrorTrapPopIgnored (display_info);
+         c->xsync_alarm = None;
+     }
+ }
+-- 
+GitLab
+
