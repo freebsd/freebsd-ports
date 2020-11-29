@@ -7,6 +7,8 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/coredns.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/couchdb.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dns_query.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dnsdist.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dnsmasq.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dnsmasq_dhcp.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/docker_engine.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/dockerhub.conf.sample
@@ -30,6 +32,8 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/phpfpm.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/pihole.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/portcheck.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/powerdns.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/powerdns_recursor.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/prometheus.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/pulsar.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/rabbitmq.conf.sample

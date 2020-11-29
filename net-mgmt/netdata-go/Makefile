@@ -2,7 +2,7 @@
 
 PORTNAME=	netdata-go
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.0
+DISTVERSION=	0.26.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	driesm.michiels@gmail.com
@@ -16,7 +16,6 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	netdata
 GH_PROJECT=	go.d.plugin
-
 GH_TUPLE=	\
 		DATA-DOG:go-sqlmock:v1.4.1:data_dog_go_sqlmock/vendor/github.com/DATA-DOG/go-sqlmock \
 		Wing924:ltsv:v0.3.1:wing924_ltsv/vendor/github.com/Wing924/ltsv \
