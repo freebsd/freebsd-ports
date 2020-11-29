@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libredwg
-PORTVERSION=	0.11
+PORTVERSION=	0.11.1
 CATEGORIES=	cad devel
 MASTER_SITES=	GNU
 
@@ -15,6 +15,7 @@ USES=		libtool tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-trace
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 INFO=		LibreDWG
