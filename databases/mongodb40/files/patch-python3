@@ -1,0 +1,1397 @@
+diff -ru /data/ports-build/mongodb-src-r4.0.21/SConstruct ./SConstruct
+--- /data/ports-build/mongodb-src-r4.0.21/SConstruct	2020-11-15 22:50:25.001942000 +0100
++++ ./SConstruct	2020-11-16 20:09:38.793885000 +0100
+@@ -28,8 +28,8 @@
+ import mongo.toolchain as mongo_toolchain
+ import mongo.generators as mongo_generators
+ 
+-EnsurePythonVersion(2, 7)
+-EnsureSConsVersion(2, 5)
++EnsurePythonVersion(3, 5)
++EnsureSConsVersion(3, 0, 4)
+ 
+ from buildscripts import utils
+ from buildscripts import moduleconfig
+@@ -435,7 +435,7 @@
+ }
+ 
+ add_option('win-version-min',
+-    choices=win_version_min_choices.keys(),
++    choices=list(win_version_min_choices.keys()),
+     default=None,
+     help='minimum Windows version to support',
+     type='choice',
+@@ -547,7 +547,7 @@
+ except IOError as e:
+     # If the file error wasn't because the file is missing, error out
+     if e.errno != errno.ENOENT:
+-        print("Error opening version.json: {0}".format(e.strerror))
++        print(("Error opening version.json: {0}".format(e.strerror)))
+         Exit(1)
+ 
+     version_data = {
+@@ -556,14 +556,14 @@
+     }
+ 
+ except ValueError as e:
+-    print("Error decoding version.json: {0}".format(e))
++    print(("Error decoding version.json: {0}".format(e)))
+     Exit(1)
+ 
+ # Setup the command-line variables
+ def variable_shlex_converter(val):
+     # If the argument is something other than a string, propogate
+     # it literally.
+-    if not isinstance(val, basestring):
++    if not isinstance(val, str):
+         return val
+     parse_mode = get_option('variable-parse-mode')
+     if parse_mode == 'auto':
+@@ -627,7 +627,7 @@
+ 
+ variables_files = variable_shlex_converter(get_option('variables-files'))
+ for file in variables_files:
+-    print("Using variable customization file %s" % file)
++    print(("Using variable customization file %s" % file))
+ 
+ env_vars = Variables(
+     files=variables_files,
+@@ -636,7 +636,7 @@
+ 
+ sconsflags = os.environ.get('SCONSFLAGS', None)
+ if sconsflags:
+-    print("Using SCONSFLAGS environment variable arguments: %s" % sconsflags)
++    print(("Using SCONSFLAGS environment variable arguments: %s" % sconsflags))
+ 
+ env_vars.Add('ABIDW',
+     help="Configures the path to the 'abidw' (a libabigail) utility")
+@@ -770,7 +770,7 @@
+ def validate_mongo_version(key, val, env):
+     regex = r'^(\d+)\.(\d+)\.(\d+)-?((?:(rc)(\d+))?.*)?'
+     if not re.match(regex, val):
+-        print("Invalid MONGO_VERSION '{}', or could not derive from version.json or git metadata. Please add a conforming MONGO_VERSION=x.y.z[-extra] as an argument to SCons".format(val))
++        print(("Invalid MONGO_VERSION '{}', or could not derive from version.json or git metadata. Please add a conforming MONGO_VERSION=x.y.z[-extra] as an argument to SCons".format(val)))
+         Exit(1)
+ 
+ env_vars.Add('MONGO_VERSION',
+@@ -901,12 +901,12 @@
+         Exit(1)
+ 
+ sconsDataDir = Dir(buildDir).Dir('scons')
+-SConsignFile(str(sconsDataDir.File('sconsign')))
++SConsignFile(str(sconsDataDir.File('sconsign.py3')))
+ 
+ def printLocalInfo():
+     import sys, SCons
+-    print( "scons version: " + SCons.__version__ )
+-    print( "python version: " + " ".join( [ `i` for i in sys.version_info ] ) )
++    print(( "scons version: " + SCons.__version__ ))
++    print(( "python version: " + " ".join( [ repr(i) for i in sys.version_info ] ) ))
+ 
+ printLocalInfo()
+ 
+@@ -986,12 +986,12 @@
+ env.AddMethod(mongo_platform.env_get_os_name_wrapper, 'GetTargetOSName')
+ 
+ def fatal_error(env, msg, *args):
+-    print(msg.format(*args))
++    print((msg.format(*args)))
+     Exit(1)
+ 
+ def conf_error(env, msg, *args):
+-    print(msg.format(*args))
+-    print("See {0} for details".format(env.File('$CONFIGURELOG').abspath))
++    print((msg.format(*args)))
++    print(("See {0} for details".format(env.File('$CONFIGURELOG').abspath)))
+     Exit(1)
+ 
+ env.AddMethod(fatal_error, 'FatalError')
+@@ -1010,12 +1010,12 @@
+ env.AddMethod(lambda env: env['VERBOSE'], 'Verbose')
+ 
+ if has_option('variables-help'):
+-    print(env_vars.GenerateHelpText(env))
++    print((env_vars.GenerateHelpText(env)))
+     Exit(0)
+ 
+ #unknown_vars = env_vars.UnknownVariables()
+ #if unknown_vars:
+-#    env.FatalError("Unknown variables specified: {0}", ", ".join(unknown_vars.keys()))
++#    env.FatalError("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
+ 
+ def set_config_header_define(env, varname, varval = 1):
+     env['CONFIG_HEADER_DEFINES'][varname] = varval
+@@ -1100,7 +1100,7 @@
+         context.Result(ret)
+         return ret;
+ 
+-    for k in processor_macros.keys():
++    for k in list(processor_macros.keys()):
+         ret = run_compile_check(k)
+         if ret:
+             context.Result('Detected a %s processor' % k)
+@@ -1222,7 +1222,7 @@
+     env['TARGET_ARCH'] = detected_processor
+ 
+ if env['TARGET_OS'] not in os_macros:
+-    print("No special config for [{0}] which probably means it won't work".format(env['TARGET_OS']))
++    print(("No special config for [{0}] which probably means it won't work".format(env['TARGET_OS'])))
+ elif not detectConf.CheckForOS(env['TARGET_OS']):
+     env.ConfError("TARGET_OS ({0}) is not supported by compiler", env['TARGET_OS'])
+ 
+@@ -2081,7 +2081,7 @@
+             # form -Wno-xxx (but not -Wno-error=xxx), we also add -Wxxx to the flags. GCC does
+             # warn on unknown -Wxxx style flags, so this lets us probe for availablity of
+             # -Wno-xxx.
+-            for kw in test_mutation.keys():
++            for kw in list(test_mutation.keys()):
+                 test_flags = test_mutation[kw]
+                 for test_flag in test_flags:
+                     if test_flag.startswith("-Wno-") and not test_flag.startswith("-Wno-error="):
+@@ -2095,7 +2095,7 @@
+         # to make them real errors.
+         cloned.Append(CCFLAGS=['-Werror'])
+         conf = Configure(cloned, help=False, custom_tests = {
+-                'CheckFlag' : lambda(ctx) : CheckFlagTest(ctx, tool, extension, flag)
++                'CheckFlag' : lambda ctx : CheckFlagTest(ctx, tool, extension, flag)
+         })
+         available = conf.CheckFlag()
+         conf.Finish()
+@@ -2611,7 +2611,7 @@
+         llvm_symbolizer = get_option('llvm-symbolizer')
+         if os.path.isabs(llvm_symbolizer):
+             if not myenv.File(llvm_symbolizer).exists():
+-                print("WARNING: Specified symbolizer '%s' not found" % llvm_symbolizer)
++                print(("WARNING: Specified symbolizer '%s' not found" % llvm_symbolizer))
+                 llvm_symbolizer = None
+         else:
+             llvm_symbolizer = myenv.WhereIs(llvm_symbolizer)
+@@ -2922,7 +2922,7 @@
+                         # TODO: If we could programmatically extract the paths from the info output
+                         # we could give a better message here, but brew info's machine readable output
+                         # doesn't seem to include the whole 'caveats' section.
+-                        message = subprocess.check_output([brew, "info", "openssl"])
++                        message = subprocess.check_output([brew, "info", "openssl"]).decode('utf-8')
+                         advice = textwrap.dedent(
+                             """\
+                             NOTE: HomeBrew installed to {0} appears to have OpenSSL installed.
+@@ -3082,7 +3082,7 @@
+         files = ['ssleay32.dll', 'libeay32.dll']
+         for extra_file in files:
+             if not addOpenSslLibraryToDistArchive(extra_file):
+-                print("WARNING: Cannot find SSL library '%s'" % extra_file)
++                print(("WARNING: Cannot find SSL library '%s'" % extra_file))
+ 
+ 
+ 
+@@ -3423,7 +3423,7 @@
+ 
+         outputIndex = next((idx for idx in [0,1] if conf.CheckAltivecVbpermqOutput(idx)), None)
+         if outputIndex is not None:
+-	    conf.env.SetConfigHeaderDefine("MONGO_CONFIG_ALTIVEC_VEC_VBPERMQ_OUTPUT_INDEX", outputIndex)
++            conf.env.SetConfigHeaderDefine("MONGO_CONFIG_ALTIVEC_VEC_VBPERMQ_OUTPUT_INDEX", outputIndex)
+         else:
+             myenv.ConfError("Running on ppc64le, but can't find a correct vec_vbpermq output index.  Compiler or platform not supported")
+ 
+@@ -3523,9 +3523,12 @@
+     import buildscripts.pylinters
+     buildscripts.pylinters.lint_all(None, {}, [])
+ 
+-    import buildscripts.lint
+-    if not buildscripts.lint.run_lint( [ "src/mongo/" ] ):
+-        raise Exception( "lint errors" )
++    env.Command(
++        target="#run_lint",
++        source=["buildscripts/lint.py", "src/mongo"],
++        action="$PYTHON $SOURCES[0] $SOURCES[1]",
++    )
++
+ 
+ env.Alias( "lint" , [] , [ doLint ] )
+ env.AlwaysBuild( "lint" )
+Only in .: build
+Only in ./buildscripts: __pycache__
+diff -ru /data/ports-build/mongodb-src-r4.0.21/buildscripts/aggregate_tracefiles.py ./buildscripts/aggregate_tracefiles.py
+--- /data/ports-build/mongodb-src-r4.0.21/buildscripts/aggregate_tracefiles.py	2020-10-16 18:02:58.000000000 +0200
++++ ./buildscripts/aggregate_tracefiles.py	2020-11-16 20:09:38.798317000 +0100
+@@ -20,7 +20,7 @@
+ 
+     args += ['-o', output]
+ 
+-    print ' '.join(args)
++    print(' '.join(args))
+ 
+     return subprocess.call(args)
+ 
+diff -ru /data/ports-build/mongodb-src-r4.0.21/buildscripts/aws_ec2.py ./buildscripts/aws_ec2.py
+--- /data/ports-build/mongodb-src-r4.0.21/buildscripts/aws_ec2.py	2020-10-16 18:02:58.000000000 +0200
++++ ./buildscripts/aws_ec2.py	2020-11-16 20:09:38.801388000 +0100
+@@ -1,8 +1,8 @@
+ #!/usr/bin/env python
+ """AWS EC2 instance launcher and controller."""
+ 
+-from __future__ import print_function
+ 
++
+ import base64
+ import collections
+ import datetime
+@@ -88,12 +88,13 @@
+             if reached_state:
+                 print(" Instance {}!".format(instance.state["Name"]), file=sys.stdout)
+             else:
+-                print(" Instance in state '{}', failed to reach state '{}'{}!".format(
+-                    instance.state["Name"], state, client_error), file=sys.stdout)
++                print(
++                    " Instance in state '{}', failed to reach state '{}'{}!".format(
++                        instance.state["Name"], state, client_error), file=sys.stdout)
+             sys.stdout.flush()
+         return 0 if reached_state else 1
+ 
+-    def control_instance(  #pylint: disable=too-many-arguments,too-many-branches
++    def control_instance(  #pylint: disable=too-many-arguments,too-many-branches,too-many-locals
+             self, mode, image_id, wait_time_secs=0, show_progress=False, console_output_file=None,
+             console_screenshot_file=None):
+         """Control an AMI instance. Returns 0 & status information, if successful."""
+@@ -296,14 +297,15 @@
+     status_options.add_option("--yamlFile", dest="yaml_file", default=None,
+                               help="Save the status into the specified YAML file.")
+ 
+-    status_options.add_option("--consoleOutputFile", dest="console_output_file", default=None,
+-                              help="Save the console output into the specified file, if"
+-                              " available.")
++    status_options.add_option(
++        "--consoleOutputFile", dest="console_output_file", default=None,
++        help="Save the console output into the specified file, if"
++        " available.")
+ 
+-    status_options.add_option("--consoleScreenshotFile", dest="console_screenshot_file",
+-                              default=None,
+-                              help="Save the console screenshot (JPG format) into the specified"
+-                              " file, if available.")
++    status_options.add_option(
++        "--consoleScreenshotFile", dest="console_screenshot_file", default=None,
++        help="Save the console screenshot (JPG format) into the specified"
++        " file, if available.")
+ 
+     parser.add_option_group(control_options)
+     parser.add_option_group(create_options)
+@@ -328,7 +330,6 @@
+                 parser.error("Block size must be an integer")
+             block_devices[device_name] = device_size
+ 
+-        # The 'expire-on' key is a UTC time.
+         expire_dt = datetime.datetime.utcnow() + datetime.timedelta(hours=options.tag_expire_hours)
+         tags = [{"Key": "expire-on", "Value": expire_dt.strftime("%Y-%m-%d %H:%M:%S")},
+                 {"Key": "Name",
+Only in ./buildscripts/idl/idl: __pycache__
+diff -ru /data/ports-build/mongodb-src-r4.0.21/buildscripts/idl/idl/compiler.py ./buildscripts/idl/idl/compiler.py
+--- /data/ports-build/mongodb-src-r4.0.21/buildscripts/idl/idl/compiler.py	2020-10-16 18:02:58.000000000 +0200
++++ ./buildscripts/idl/idl/compiler.py	2020-11-16 20:09:38.804248000 +0100
+@@ -31,8 +31,6 @@
+ Orchestrates the 3 passes (parser, binder, and generator) together.
+ """
+ 
+-from __future__ import absolute_import, print_function, unicode_literals
+-
+ import io
+ import logging
+ import os
+@@ -70,14 +68,14 @@
+     """Class for the IDL compiler to resolve imported files."""
+ 
+     def __init__(self, import_directories):
+-        # type: (List[unicode]) -> None
++        # type: (List[str]) -> None
+         """Construct a ImportResolver."""
+         self._import_directories = import_directories
+ 
+         super(CompilerImportResolver, self).__init__()
+ 
+     def resolve(self, base_file, imported_file_name):
+-        # type: (unicode, unicode) -> unicode
++        # type: (str, str) -> str
+         """Return the complete path to an imported file name."""
+ 
+         logging.debug("Resolving imported file '%s' for file '%s'", imported_file_name, base_file)
+@@ -108,7 +106,7 @@
+         raise errors.IDLError(msg)
+ 
+     def open(self, resolved_file_name):
+-        # type: (unicode) -> Any
++        # type: (str) -> Any
+         """Return an io.Stream for the requested file."""
+         return io.open(resolved_file_name, encoding='utf-8')
+ 
+@@ -125,7 +123,7 @@
+ 
+ 
+ def _update_import_includes(args, spec, header_file_name):
+-    # type: (CompilerArgs, syntax.IDLSpec, unicode) -> None
++    # type: (CompilerArgs, syntax.IDLSpec, str) -> None
+     """Update the list of imports with a list of include files for each import with structs."""
+     # This function is fragile:
+     # In order to try to generate headers with an "include what you use" set of headers, the IDL
+diff -ru /data/ports-build/mongodb-src-r4.0.21/buildscripts/idl/idl/syntax.py ./buildscripts/idl/idl/syntax.py
+--- /data/ports-build/mongodb-src-r4.0.21/buildscripts/idl/idl/syntax.py	2020-10-16 18:02:58.000000000 +0200
++++ ./buildscripts/idl/idl/syntax.py	2020-11-16 20:09:38.806128000 +0100
+@@ -33,8 +33,6 @@
+ it follows the rules of the IDL, etc.
+ """
+ 
+-from __future__ import absolute_import, print_function, unicode_literals
+-
+ import itertools
+ from typing import Any, Dict, Iterator, List, Optional, Tuple, Union
+ 
+@@ -70,7 +68,7 @@
+ 
+ 
+ def parse_array_type(name):
+-    # type: (unicode) -> unicode
++    # type: (str) -> str
+     """Parse a type name of the form 'array<type>' and extract type."""
+     if not name.startswith("array<") and not name.endswith(">"):
+         return None
+@@ -95,7 +93,7 @@
+     # type: (Dict[Any, List[Any]]) -> Iterator[Tuple[Any, Any]]
+     """Return an Iterator of (key, value) pairs from a dictionary."""
+     return itertools.chain.from_iterable(
+-        (_zip_scalar(value, key) for (key, value) in dic.viewitems()))
++        (_zip_scalar(value, key) for (key, value) in dic.items()))
+ 
+ 
+ class SymbolTable(object):
+@@ -115,7 +113,7 @@
+         self.types = []  # type: List[Type]
+ 
+     def _is_duplicate(self, ctxt, location, name, duplicate_class_name):
+-        # type: (errors.ParserContext, common.SourceLocation, unicode, unicode) -> bool
++        # type: (errors.ParserContext, common.SourceLocation, str, str) -> bool
+         """Return true if the given item already exist in the symbol table."""
+         for (item, entity_type) in _item_and_type({
+                 "command": self.commands,
+@@ -179,12 +177,12 @@
+             self.add_type(ctxt, idltype)
+ 
+     def resolve_field_type(self, ctxt, location, field_name, type_name):
+-        # type: (errors.ParserContext, common.SourceLocation, unicode, unicode) -> Optional[Union[Command, Enum, Struct, Type]]
++        # type: (errors.ParserContext, common.SourceLocation, str, str) -> Optional[Union[Command, Enum, Struct, Type]]
+         """Find the type or struct a field refers to or log an error."""
+         return self._resolve_field_type(ctxt, location, field_name, type_name)
+ 
+     def _resolve_field_type(self, ctxt, location, field_name, type_name):
+-        # type: (errors.ParserContext, common.SourceLocation, unicode, unicode) -> Optional[Union[Command, Enum, Struct, Type]]
++        # type: (errors.ParserContext, common.SourceLocation, str, str) -> Optional[Union[Command, Enum, Struct, Type]]
+         """Find the type or struct a field refers to or log an error."""
+         # pylint: disable=too-many-return-statements
+ 
+@@ -237,15 +235,15 @@
+     """IDL imports object."""
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct an Imports section."""
+-        self.imports = []  # type: List[unicode]
++        self.imports = []  # type: List[str]
+ 
+         # These are not part of the IDL syntax but are produced by the parser.
+         # List of imports with structs.
+-        self.resolved_imports = []  # type: List[unicode]
++        self.resolved_imports = []  # type: List[str]
+         # All imports directly or indirectly included
+-        self.dependencies = []  # type: List[unicode]
++        self.dependencies = []  # type: List[str]
+ 
+         super(Import, self).__init__(file_name, line, column)
+ 
+@@ -262,16 +260,16 @@
+     # pylint: disable=too-many-instance-attributes
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct a Type."""
+-        self.name = None  # type: unicode
+-        self.description = None  # type: unicode
+-        self.cpp_type = None  # type: unicode
+-        self.bson_serialization_type = None  # type: List[unicode]
+-        self.bindata_subtype = None  # type: unicode
+-        self.serializer = None  # type: unicode
+-        self.deserializer = None  # type: unicode
+-        self.default = None  # type: unicode
++        self.name = None  # type: str
++        self.description = None  # type: str
++        self.cpp_type = None  # type: str
++        self.bson_serialization_type = None  # type: List[str]
++        self.bindata_subtype = None  # type: str
++        self.serializer = None  # type: str
++        self.deserializer = None  # type: str
++        self.default = None  # type: str
+ 
+         super(Type, self).__init__(file_name, line, column)
+ 
+@@ -288,15 +286,15 @@
+     # pylint: disable=too-many-instance-attributes
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct a Field."""
+-        self.name = None  # type: unicode
+-        self.cpp_name = None  # type: unicode
+-        self.description = None  # type: unicode
+-        self.type = None  # type: unicode
++        self.name = None  # type: str
++        self.cpp_name = None  # type: str
++        self.description = None  # type: str
++        self.type = None  # type: str
+         self.ignore = False  # type: bool
+         self.optional = False  # type: bool
+-        self.default = None  # type: unicode
++        self.default = None  # type: str
+         self.supports_doc_sequence = False  # type: bool
+         self.comparison_order = -1  # type: int
+         self.non_const_getter = False  # type: bool
+@@ -316,10 +314,10 @@
+     """
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct a Type."""
+-        self.name = None  # type: unicode
+-        self.cpp_name = None  # type: unicode
++        self.name = None  # type: str
++        self.cpp_name = None  # type: str
+ 
+         super(ChainedStruct, self).__init__(file_name, line, column)
+ 
+@@ -332,10 +330,10 @@
+     """
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct a Type."""
+-        self.name = None  # type: unicode
+-        self.cpp_name = None  # type: unicode
++        self.name = None  # type: str
++        self.cpp_name = None  # type: str
+ 
+         super(ChainedType, self).__init__(file_name, line, column)
+ 
+@@ -350,10 +348,10 @@
+     # pylint: disable=too-many-instance-attributes
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct a Struct."""
+-        self.name = None  # type: unicode
+-        self.description = None  # type: unicode
++        self.name = None  # type: str
++        self.description = None  # type: str
+         self.strict = True  # type: bool
+         self.immutable = False  # type: bool
+         self.inline_chained_structs = True  # type: bool
+@@ -399,10 +397,10 @@
+     """
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct an Enum."""
+-        self.name = None  # type: unicode
+-        self.value = None  # type: unicode
++        self.name = None  # type: str
++        self.value = None  # type: str
+ 
+         super(EnumValue, self).__init__(file_name, line, column)
+ 
+@@ -415,11 +413,11 @@
+     """
+ 
+     def __init__(self, file_name, line, column):
+-        # type: (unicode, int, int) -> None
++        # type: (str, int, int) -> None
+         """Construct an Enum."""
+-        self.name = None  # type: unicode
+-        self.description = None  # type: unicode
+-        self.type = None  # type: unicode
++        self.name = None  # type: str
++        self.description = None  # type: str
++        self.type = None  # type: str
+         self.values = None  # type: List[EnumValue]
+ 
+         # Internal property that is not represented as syntax. An imported enum is read from an
+diff -ru /data/ports-build/mongodb-src-r4.0.21/buildscripts/idl/idlc.py ./buildscripts/idl/idlc.py
+--- /data/ports-build/mongodb-src-r4.0.21/buildscripts/idl/idlc.py	2020-10-16 18:02:58.000000000 +0200
++++ ./buildscripts/idl/idlc.py	2020-11-16 20:09:38.807705000 +0100
+@@ -29,8 +29,6 @@
+ #
+ """IDL Compiler Driver Main Entry point."""
+ 
+-from __future__ import absolute_import, print_function
+-
+ import argparse
+ import logging
+ import sys
+diff -ru /data/ports-build/mongodb-src-r4.0.21/buildscripts/utils.py ./buildscripts/utils.py
+--- /data/ports-build/mongodb-src-r4.0.21/buildscripts/utils.py	2020-10-16 18:02:58.000000000 +0200
++++ ./buildscripts/utils.py	2020-11-16 20:09:38.809660000 +0100
+@@ -99,7 +99,7 @@
+     with open(os.devnull, "r+") as devnull:
+         proc = subprocess.Popen("git describe --abbrev=7", stdout=subprocess.PIPE, stderr=devnull,
+                                 stdin=devnull, shell=True)
+-        return proc.communicate()[0].strip()
++        return proc.communicate()[0].strip().decode('utf-8')
+ 
+ 
+ def execsys(args):
+Only in ./site_scons: __pycache__
+diff -ru /data/ports-build/mongodb-src-r4.0.21/site_scons/libdeps.py ./site_scons/libdeps.py
+--- /data/ports-build/mongodb-src-r4.0.21/site_scons/libdeps.py	2020-10-16 18:02:58.000000000 +0200
++++ ./site_scons/libdeps.py	2020-11-16 20:09:38.813403000 +0100
+@@ -61,7 +61,7 @@
+ missing_syslibdep = 'MISSING_LIBDEP_'
+ 
+ class dependency(object):
+-    Public, Private, Interface = range(3)
++    Public, Private, Interface = list(range(3))
+ 
+     def __init__(self, value, deptype):
+         self.target_node = value
+@@ -85,7 +85,7 @@
+ class DependencyCycleError(SCons.Errors.UserError):
+     """Exception representing a cycle discovered in library dependencies."""
+ 
+-    def __init__(self, first_node ):
++    def __init__(self, first_node):
+         super(DependencyCycleError, self).__init__()
+         self.cycle_nodes = [first_node]
+ 
+@@ -100,8 +100,8 @@
+         setattr(node.attributes, "libdeps_direct_sorted", direct_sorted)
+     return direct_sorted
+ 
+-def __get_libdeps(node):
+ 
++def __get_libdeps(node):
+     """Given a SCons Node, return its library dependencies, topologically sorted.
+ 
+     Computes the dependencies if they're not already cached.
+@@ -133,7 +133,7 @@
+                 marked.add(n.target_node)
+                 tsorted.append(n.target_node)
+ 
+-            except DependencyCycleError, e:
++            except DependencyCycleError as e:
+                 if len(e.cycle_nodes) == 1 or e.cycle_nodes[0] != e.cycle_nodes[-1]:
+                     e.cycle_nodes.insert(0, n.target_node)
+                 raise
+@@ -150,6 +150,7 @@
+ 
+     return tsorted
+ 
++
+ def __get_syslibdeps(node):
+     """ Given a SCons Node, return its system library dependencies.
+ 
+@@ -161,11 +162,11 @@
+         for lib in __get_libdeps(node):
+             for syslib in node.get_env().Flatten(lib.get_env().get(syslibdeps_env_var, [])):
+                 if syslib:
+-                    if type(syslib) in (str, unicode) and syslib.startswith(missing_syslibdep):
+-                        print("Target '%s' depends on the availability of a "
++                    if type(syslib) is str and syslib.startswith(missing_syslibdep):
++                        print(("Target '%s' depends on the availability of a "
+                               "system provided library for '%s', "
+                               "but no suitable library was found during configuration." %
+-                              (str(node), syslib[len(missing_syslibdep):]))
++                              (str(node), syslib[len(missing_syslibdep):])))
+                         node.get_env().Exit(1)
+                     syslibdeps.append(syslib)
+         setattr(node.attributes, cached_var_name, syslibdeps)
+@@ -181,18 +182,21 @@
+ 
+     if old_scanner:
+         path_function = old_scanner.path_function
++
+         def new_scanner(node, env, path=()):
+             result = old_scanner.function(node, env, path)
+             result.extend(__get_libdeps(node))
+             return result
+     else:
+         path_function = None
++
+         def new_scanner(node, env, path=()):
+             return __get_libdeps(node)
+ 
+     builder.target_scanner = SCons.Scanner.Scanner(function=new_scanner,
+-                                                    path_function=path_function)
++                                                   path_function=path_function)
+ 
++
+ def get_libdeps(source, target, env, for_signature):
+     """Implementation of the special _LIBDEPS environment variable.
+ 
+@@ -202,6 +206,7 @@
+     target = env.Flatten([target])
+     return __get_libdeps(target[0])
+ 
++
+ def get_libdeps_objs(source, target, env, for_signature):
+     objs = []
+     for lib in get_libdeps(source, target, env, for_signature):
+@@ -209,6 +214,7 @@
+         objs.extend(lib.sources)
+     return objs
+ 
++
+ def get_syslibdeps(source, target, env, for_signature):
+     deps = __get_syslibdeps(target[0])
+     lib_link_prefix = env.subst('$LIBLINKPREFIX')
+@@ -220,7 +226,7 @@
+         # they're believed to represent library short names, that should be prefixed with -l
+         # or the compiler-specific equivalent.  I.e., 'm' becomes '-lm', but 'File("m.a") is passed
+         # through whole cloth.
+-        if type(d) in (str, unicode):
++        if type(d) is str:
+             result.append('%s%s%s' % (lib_link_prefix, d, lib_link_suffix))
+         else:
+             result.append(d)
+@@ -382,6 +388,7 @@
+         except KeyError:
+             pass
+ 
++
+ def setup_conftests(conf):
+     def FindSysLibDep(context, name, libs, **kwargs):
+         var = "LIBDEPS_" + name.upper() + "_SYSLIBDEP"
+@@ -394,4 +401,5 @@
+                 return context.Result(result)
+         context.env[var] = __missing_syslib(name)
+         return context.Result(result)
++
+     conf.AddTest('FindSysLibDep', FindSysLibDep)
+diff -ru /data/ports-build/mongodb-src-r4.0.21/site_scons/mongo/__init__.py ./site_scons/mongo/__init__.py
+--- /data/ports-build/mongodb-src-r4.0.21/site_scons/mongo/__init__.py	2020-10-16 18:02:58.000000000 +0200
++++ ./site_scons/mongo/__init__.py	2020-11-16 20:09:38.815614000 +0100
+@@ -5,4 +5,4 @@
+ def print_build_failures():
+     from SCons.Script import GetBuildFailures
+     for bf in GetBuildFailures():
+-        print "%s failed: %s" % (bf.node, bf.errstr)
++        print("%s failed: %s" % (bf.node, bf.errstr))
+Only in ./site_scons/mongo: __pycache__
+diff -ru /data/ports-build/mongodb-src-r4.0.21/site_scons/mongo/generators.py ./site_scons/mongo/generators.py
+--- /data/ports-build/mongodb-src-r4.0.21/site_scons/mongo/generators.py	2020-10-16 18:02:58.000000000 +0200
++++ ./site_scons/mongo/generators.py	2020-11-16 20:09:38.817602000 +0100
+@@ -1,6 +1,6 @@
+ # -*- mode: python; -*-
+ 
+-import md5
++import hashlib
+ 
+ # Default and alternative generator definitions go here.
+ 
+@@ -15,22 +15,69 @@
+ # want to define them.
+ def default_buildinfo_environment_data():
+     return (
+-        ('distmod', '$MONGO_DISTMOD', True, True,),
+-        ('distarch', '$MONGO_DISTARCH', True, True,),
+-        ('cc', '$CC_VERSION', True, False,),
+-        ('ccflags', '$CCFLAGS', True, False,),
+-        ('cxx', '$CXX_VERSION', True, False,),
+-        ('cxxflags', '$CXXFLAGS', True, False,),
+-        ('linkflags', '$LINKFLAGS', True, False,),
+-        ('target_arch', '$TARGET_ARCH', True, True,),
+-        ('target_os', '$TARGET_OS', True, False,),
++        (
++            'distmod',
++            '$MONGO_DISTMOD',
++            True,
++            True,
++        ),
++        (
++            'distarch',
++            '$MONGO_DISTARCH',
++            True,
++            True,
++        ),
++        (
++            'cc',
++            '$CC_VERSION',
++            True,
++            False,
++        ),
++        (
++            'ccflags',
++            '$CCFLAGS',
++            True,
++            False,
++        ),
++        (
++            'cxx',
++            '$CXX_VERSION',
++            True,
++            False,
++        ),
++        (
++            'cxxflags',
++            '$CXXFLAGS',
++            True,
++            False,
++        ),
++        (
++            'linkflags',
++            '$LINKFLAGS',
++            True,
++            False,
++        ),
++        (
++            'target_arch',
++            '$TARGET_ARCH',
++            True,
++            True,
++        ),
++        (
++            'target_os',
++            '$TARGET_OS',
++            True,
++            False,
++        ),
+     )
+ 
++
+ # If you want buildInfo and --version to be relatively empty, set
+ # MONGO_BUILDINFO_ENVIRONMENT_DATA = empty_buildinfo_environment_data()
+ def empty_buildinfo_environment_data():
+     return ()
+ 
++
+ def default_variant_dir_generator(target, source, env, for_signature):
+ 
+     if env.GetOption('cache') != None:
+@@ -44,11 +91,11 @@
+ 
+     # Hash the named options and their values, and take the first 8 characters of the hash as
+     # the variant name
+-    hasher = md5.md5()
++    hasher = hashlib.md5()
+     for option in variant_options:
+-        hasher.update(option)
+-        hasher.update(str(env.GetOption(option)))
+-    variant_dir = hasher.hexdigest()[0:8]
++        hasher.update(option.encode('utf-8'))
++        hasher.update(str(env.GetOption(option)).encode('utf-8'))
++    variant_dir = str(hasher.hexdigest()[0:8])
+ 
+     # If our option hash yields a well known hash, replace it with its name.
+     known_variant_hashes = {
+Only in ./site_scons/site_tools: __pycache__
+diff -ru /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/distsrc.py ./site_scons/site_tools/distsrc.py
+--- /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/distsrc.py	2020-10-16 18:02:58.000000000 +0200
++++ ./site_scons/site_tools/distsrc.py	2020-11-16 20:09:38.819994000 +0100
+@@ -20,7 +20,7 @@
+ import tarfile
+ import time
+ import zipfile
+-import StringIO
++import io
+ 
+ from distutils.spawn import find_executable
+ 
+@@ -28,7 +28,7 @@
+ 
+ class DistSrcFile:
+     def __init__(self, **kwargs):
+-        [ setattr(self, key, val) for (key, val) in kwargs.items() ]
++        [ setattr(self, key, val) for (key, val) in list(kwargs.items()) ]
+ 
+     def __str__(self):
+         return self.name
+@@ -60,6 +60,7 @@
+     def close(self):
+         self.archive_file.close()
+ 
++
+ class DistSrcTarArchive(DistSrcArchive):
+     def __iter__(self):
+         file_list = self.archive_file.getnames()
+@@ -82,7 +83,7 @@
+ 
+     def append_file_contents(self, filename, file_contents,
+             mtime=time.time(),
+-            mode=0644,
++            mode=0o644,
+             uname="root",
+             gname="root"):
+         file_metadata = tarfile.TarInfo(name=filename)
+@@ -91,7 +92,7 @@
+         file_metadata.uname = uname
+         file_metadata.gname = gname
+         file_metadata.size = len(file_contents)
+-        file_buf = StringIO.StringIO(file_contents)
++        file_buf = io.BytesIO(file_contents.encode('utf-8'))
+         if self.archive_mode == 'r':
+             self.archive_file.close()
+             self.archive_file = tarfile.open(
+@@ -105,6 +106,7 @@
+     def append_file(self, filename, localfile):
+         self.archive_file.add(localfile, arcname=filename)
+ 
++
+ class DistSrcZipArchive(DistSrcArchive):
+     def __iter__(self):
+         file_list = self.archive_file.namelist()
+@@ -119,7 +121,7 @@
+             name=key,
+             size=item_data.file_size,
+             mtime=time.mktime(fixed_time),
+-            mode=0775 if is_dir else 0664,
++            mode=0o775 if is_dir else 0o664,
+             type=tarfile.DIRTYPE if is_dir else tarfile.REGTYPE,
+             uid=0,
+             gid=0,
+@@ -129,7 +131,7 @@
+ 
+     def append_file_contents(self, filename, file_contents,
+             mtime=time.time(),
+-            mode=0644,
++            mode=0o644,
+             uname="root",
+             gname="root"):
+         self.archive_file.writestr(filename, file_contents)
+@@ -139,7 +141,7 @@
+ 
+ def build_error_action(msg):
+     def error_stub(target=None, source=None, env=None):
+-        print msg
++        print(msg)
+         env.Exit(1)
+     return [ error_stub ]
+ 
+@@ -162,7 +164,7 @@
+ 
+     target_ext = str(target[0])[-3:]
+     if not target_ext in [ 'zip', 'tar' ]:
+-        print "Invalid file format for distsrc. Must be tar or zip file"
++        print("Invalid file format for distsrc. Must be tar or zip file")
+         env.Exit(1)
+ 
+     git_cmd = "\"%s\" archive --format %s --output %s --prefix ${MONGO_DIST_SRC_PREFIX} HEAD" % (
+@@ -173,14 +175,14 @@
+         SCons.Action.Action(run_distsrc_callbacks, "Running distsrc callbacks for $TARGET")
+     ]
+ 
++
+ def add_callback(env, fn):
+     __distsrc_callbacks.append(fn)
+ 
++
+ def generate(env, **kwargs):
+     env.AddMethod(add_callback, 'AddDistSrcCallback')
+-    env['BUILDERS']['__DISTSRC'] = SCons.Builder.Builder(
+-        generator=distsrc_action_generator,
+-    )
++    env['BUILDERS']['__DISTSRC'] = SCons.Builder.Builder(generator=distsrc_action_generator, )
+ 
+     def DistSrc(env, target):
+         result = env.__DISTSRC(target=target, source=[])
+@@ -189,6 +191,7 @@
+         return result
+ 
+     env.AddMethod(DistSrc, 'DistSrc')
++
+ 
+ def exists(env):
+     return True
+diff -ru /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/idl_tool.py ./site_scons/site_tools/idl_tool.py
+--- /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/idl_tool.py	2020-10-16 18:02:58.000000000 +0200
++++ ./site_scons/site_tools/idl_tool.py	2020-11-16 20:09:38.821062000 +0100
+@@ -21,6 +21,7 @@
+ 
+ import SCons
+ 
++
+ def idlc_emitter(target, source, env):
+     """For each input IDL file, the tool produces a .cpp and .h file."""
+     first_source = str(source[0])
+@@ -43,7 +44,7 @@
+ def idl_scanner(node, env, path):
+     # Use the import scanner mode of the IDL compiler to file imported files
+     cmd = [sys.executable, "buildscripts/idl/idlc.py",  '--include','src', str(node), '--write-dependencies']
+-    deps_str = subprocess.check_output(cmd)
++    deps_str = subprocess.check_output(cmd).decode('utf-8')
+ 
+     deps_list = deps_str.splitlines()
+ 
+@@ -57,19 +58,14 @@
+ idl_scanner = SCons.Scanner.Scanner(function=idl_scanner, skeys=['.idl'])
+ 
+ # TODO: create a scanner for imports when imports are implemented
+-IDLCBuilder = SCons.Builder.Builder(
+-    action=IDLCAction,
+-    emitter=idlc_emitter,
+-    srcsuffx=".idl",
+-    suffix=".cpp",
+-    source_scanner = idl_scanner
+-    )
++IDLCBuilder = SCons.Builder.Builder(action=IDLCAction, emitter=idlc_emitter, srcsuffx=".idl",
++                                    suffix=".cpp", source_scanner=idl_scanner)
+ 
+ 
+ def generate(env):
+     bld = IDLCBuilder
+ 
+-    env.Append(SCANNERS = idl_scanner)
++    env.Append(SCANNERS=idl_scanner)
+ 
+     env['BUILDERS']['Idlc'] = bld
+ 
+diff -ru /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/jstoh.py ./site_scons/site_tools/jstoh.py
+--- /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/jstoh.py	2020-10-16 18:02:58.000000000 +0200
++++ ./site_scons/site_tools/jstoh.py	2020-11-16 20:30:59.809428000 +0100
+@@ -39,7 +39,7 @@
+ 
+     text = '\n'.join(h)
+ 
+-    with open(outFile, 'wb') as out:
++    with open(outFile, 'w') as out:
+         try:
+             out.write(text)
+         finally:
+@@ -48,7 +48,7 @@
+ 
+ if __name__ == "__main__":
+     if len(sys.argv) < 3:
+-        print "Must specify [target] [source] "
++        print("Must specify [target] [source] ")
+         sys.exit(1)
+ 
+     jsToHeader(sys.argv[1], sys.argv[2:])
+diff -ru /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/mongo_benchmark.py ./site_scons/site_tools/mongo_benchmark.py
+--- /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/mongo_benchmark.py	2020-10-16 18:02:58.000000000 +0200
++++ ./site_scons/site_tools/mongo_benchmark.py	2020-11-16 20:09:38.823525000 +0100
+@@ -11,10 +11,10 @@
+     env.Alias('$BENCHMARK_ALIAS', test)
+ 
+ def benchmark_list_builder_action(env, target, source):
+-    ofile = open(str(target[0]), 'wb')
++    ofile = open(str(target[0]), 'w')
+     try:
+         for s in _benchmarks:
+-            print '\t' + str(s)
++            print('\t' + str(s))
+             ofile.write('%s\n' % s)
+     finally:
+         ofile.close()
+@@ -40,9 +40,10 @@
+         bmEnv.Install("#/build/benchmark/", result[0])
+     return result
+ 
++
+ def generate(env):
+     env.Command('$BENCHMARK_LIST', env.Value(_benchmarks),
+-            Action(benchmark_list_builder_action, "Generating $TARGET"))
++                Action(benchmark_list_builder_action, "Generating $TARGET"))
+     env.AddMethod(register_benchmark, 'RegisterBenchmark')
+     env.AddMethod(build_benchmark, 'Benchmark')
+     env.Alias('$BENCHMARK_ALIAS', '$BENCHMARK_LIST')
+diff -ru /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/mongo_integrationtest.py ./site_scons/site_tools/mongo_integrationtest.py
+--- /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/mongo_integrationtest.py	2020-10-16 18:02:58.000000000 +0200
++++ ./site_scons/site_tools/mongo_integrationtest.py	2020-11-16 20:09:38.824569000 +0100
+@@ -12,10 +12,10 @@
+     env.Alias('$INTEGRATION_TEST_ALIAS', installed_test)
+ 
+ def integration_test_list_builder_action(env, target, source):
+-    ofile = open(str(target[0]), 'wb')
++    ofile = open(str(target[0]), 'w')
+     try:
+         for s in _integration_tests:
+-            print '\t' + str(s)
++            print('\t' + str(s))
+             ofile.write('%s\n' % s)
+     finally:
+         ofile.close()
+@@ -31,9 +31,10 @@
+     env.RegisterIntegrationTest(result[0])
+     return result
+ 
++
+ def generate(env):
+     env.Command('$INTEGRATION_TEST_LIST', env.Value(_integration_tests),
+-            Action(integration_test_list_builder_action, "Generating $TARGET"))
++                Action(integration_test_list_builder_action, "Generating $TARGET"))
+     env.AddMethod(register_integration_test, 'RegisterIntegrationTest')
+     env.AddMethod(build_cpp_integration_test, 'CppIntegrationTest')
+     env.Alias('$INTEGRATION_TEST_ALIAS', '$INTEGRATION_TEST_LIST')
+diff -ru /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/mongo_unittest.py ./site_scons/site_tools/mongo_unittest.py
+--- /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/mongo_unittest.py	2020-10-16 18:02:58.000000000 +0200
++++ ./site_scons/site_tools/mongo_unittest.py	2020-11-16 20:09:38.825577000 +0100
+@@ -11,10 +11,10 @@
+     env.Alias('$UNITTEST_ALIAS', test)
+ 
+ def unit_test_list_builder_action(env, target, source):
+-    ofile = open(str(target[0]), 'wb')
++    ofile = open(str(target[0]), 'w')
+     try:
+         for s in _unittests:
+-            print '\t' + str(s)
++            print('\t' + str(s))
+             ofile.write('%s\n' % s)
+     finally:
+         ofile.close()
+@@ -33,9 +33,10 @@
+         env.Install("#/build/unittests/", result[0])
+     return result
+ 
++
+ def generate(env):
+     env.Command('$UNITTEST_LIST', env.Value(_unittests),
+-            Action(unit_test_list_builder_action, "Generating $TARGET"))
++                Action(unit_test_list_builder_action, "Generating $TARGET"))
+     env.AddMethod(register_unit_test, 'RegisterUnitTest')
+     env.AddMethod(build_cpp_unit_test, 'CppUnitTest')
+     env.Alias('$UNITTEST_ALIAS', '$UNITTEST_LIST')
+diff -ru /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/split_dwarf.py ./site_scons/site_tools/split_dwarf.py
+--- /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/split_dwarf.py	2020-10-16 18:02:58.000000000 +0200
++++ ./site_scons/site_tools/split_dwarf.py	2020-11-16 20:09:38.826716000 +0100
+@@ -26,6 +26,7 @@
+ if SCons.Util.case_sensitive_suffixes('.c', '.C'):
+     _CXXSuffixes.append('.C')
+ 
++
+ def _dwo_emitter(target, source, env):
+     new_targets = []
+     for t in target:
+@@ -40,6 +41,7 @@
+     targets = target + new_targets
+     return (targets, source)
+ 
++
+ def generate(env):
+     suffixes = []
+     if _splitDwarfFlag in env['CCFLAGS']:
+@@ -52,7 +54,7 @@
+ 
+     for object_builder in SCons.Tool.createObjBuilders(env):
+         emitterdict = object_builder.builder.emitter
+-        for suffix in emitterdict.iterkeys():
++        for suffix in emitterdict.keys():
+             if not suffix in suffixes:
+                 continue
+             base = emitterdict[suffix]
+@@ -60,6 +62,7 @@
+                 base,
+                 _dwo_emitter,
+             ])
++
+ 
+ def exists(env):
+     return any(_splitDwarfFlag in env[f] for f in ['CCFLAGS', 'CFLAGS', 'CXXFLAGS'])
+diff -ru /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/thin_archive.py ./site_scons/site_tools/thin_archive.py
+--- /data/ports-build/mongodb-src-r4.0.21/site_scons/site_tools/thin_archive.py	2020-10-16 18:02:58.000000000 +0200
++++ ./site_scons/site_tools/thin_archive.py	2020-11-16 20:09:38.827857000 +0100
+@@ -17,6 +17,7 @@
+ import re
+ import subprocess
+ 
++
+ def exists(env):
+     if not 'AR' in env:
+         return False
+@@ -30,10 +31,9 @@
+     if not "rc" in env['ARFLAGS']:
+         return False
+ 
+-    pipe = SCons.Action._subproc(env, SCons.Util.CLVar(ar) + ['--version'],
+-                                 stdin = 'devnull',
+-                                 stderr = 'devnull',
+-                                 stdout = subprocess.PIPE)
++    pipe = SCons.Action._subproc(env,
++                                 SCons.Util.CLVar(ar) + ['--version'], stdin='devnull',
++                                 stderr='devnull', stdout=subprocess.PIPE)
+     if pipe.wait() != 0:
+         return False
+ 
+@@ -41,7 +41,7 @@
+     for line in pipe.stdout:
+         if found:
+             continue  # consume all data
+-        found = re.search(r'^GNU ar|^LLVM', line)
++        found = re.search(r'^GNU ar|^LLVM', line.decode('utf-8'))
+ 
+     return bool(found)
+ 
+@@ -56,6 +56,7 @@
+     new_emitter = SCons.Builder.ListEmitter([base_emitter, new_emitter])
+     builder.emitter = new_emitter
+ 
++
+ def _add_scanner(builder):
+     old_scanner = builder.target_scanner
+     path_function = old_scanner.path_function
+@@ -69,13 +70,16 @@
+                 new_results.extend(base.children())
+         return new_results
+ 
+-    builder.target_scanner = SCons.Scanner.Scanner(function=new_scanner, path_function=path_function)
++    builder.target_scanner = SCons.Scanner.Scanner(function=new_scanner,
++                                                   path_function=path_function)
+ 
++
+ def generate(env):
+     if not exists(env):
+         return
+ 
+-    env['ARFLAGS'] = SCons.Util.CLVar([arflag if arflag != "rc" else "rcsTD" for arflag in env['ARFLAGS']])
++    env['ARFLAGS'] = SCons.Util.CLVar(
++        [arflag if arflag != "rc" else "rcsTD" for arflag in env['ARFLAGS']])
+ 
+     def noop_action(env, target, source):
+         pass
+diff -ru /data/ports-build/mongodb-src-r4.0.21/src/mongo/SConscript ./src/mongo/SConscript
+--- /data/ports-build/mongodb-src-r4.0.21/src/mongo/SConscript	2020-10-16 18:02:58.000000000 +0200
++++ ./src/mongo/SConscript	2020-11-16 20:09:38.834118000 +0100
+@@ -155,9 +155,9 @@
+ 
+ # On windows, we need to escape the backslashes in the command-line
+ # so that windows paths look okay.
+-cmd_line = " ".join(sys.argv).encode('string-escape')
++cmd_line = " ".join(sys.argv).encode('unicode_escape')
+ if env.TargetOSIs('windows'):
+-    cmd_line = cmd_line.replace('\\', r'\\')
++    cmd_line = cmd_line.replace(b'\\', b'\\')
+ 
+ module_list = '{ %s }' % ', '.join([ '"{0}"'.format(x) for x in env['MONGO_MODULES'] ])
+ 
+@@ -662,7 +662,7 @@
+ 
+ # If no module has introduced a file named LICENSE-Enterprise.txt then this
+ # is a Community build, so inject the Community license
+-if sum(itertools.imap(lambda x: x.name == "LICENSE-Enterprise.txt", env['MODULE_BANNERS'])) == 0:
++if sum(map(lambda x: x.name == "LICENSE.txt", env['MODULE_BANNERS'])) == 0:
+     env.Append(MODULE_BANNERS = [distsrc.File('LICENSE-Community.txt')])
+ 
+ # All module banners get staged to the top level of the tarfile, so we
+@@ -681,7 +681,7 @@
+ # Allow modules to map original file name directories to subdirectories
+ # within the archive (e.g. { "src/mongo/db/modules/enterprise/docs": "snmp"})
+ archive_addition_transforms = []
+-for full_dir, archive_dir in env["ARCHIVE_ADDITION_DIR_MAP"].items():
++for full_dir, archive_dir in list(env["ARCHIVE_ADDITION_DIR_MAP"].items()):
+   archive_addition_transforms.append("--transform \"%s=$SERVER_DIST_BASENAME/%s\"" %
+                                      (full_dir, archive_dir))
+ 
+diff -ru /data/ports-build/mongodb-src-r4.0.21/src/mongo/base/generate_error_codes.py ./src/mongo/base/generate_error_codes.py
+--- /data/ports-build/mongodb-src-r4.0.21/src/mongo/base/generate_error_codes.py	2020-10-16 18:02:58.000000000 +0200
++++ ./src/mongo/base/generate_error_codes.py	2020-11-16 20:09:38.838467000 +0100
+@@ -26,7 +26,6 @@
+ # delete this exception statement from your version. If you delete this
+ # exception statement from all source files in the program, then also delete
+ # it in the license file.
+-
+ """Generate error_codes.{h,cpp} from error_codes.err.
+ 
+ Format of error_codes.err:
+@@ -68,11 +67,13 @@
+         self.extra = extra
+         self.categories = []
+ 
++
+ class ErrorClass:
+     def __init__(self, name, codes):
+         self.name = name
+         self.codes = codes
+ 
++
+ def main(argv):
+     # Parse and validate argv.
+     if len(sys.argv) < 2:
+@@ -99,7 +100,7 @@
+                 categories=error_classes,
+                 )
+ 
+-        with open(output, 'wb') as outfile:
++        with open(output, 'w') as outfile:
+             outfile.write(text)
+ 
+ def die(message=None):
+@@ -131,6 +132,7 @@
+     if failed:
+         die()
+ 
++
+ def has_duplicate_error_codes(error_codes):
+     sorted_by_name = sorted(error_codes, key=lambda x: x.name)
+     sorted_by_code = sorted(error_codes, key=lambda x: x.code)
+@@ -139,21 +141,22 @@
+     prev = sorted_by_name[0]
+     for curr in sorted_by_name[1:]:
+         if curr.name == prev.name:
+-            sys.stdout.write('Duplicate name %s with codes %s and %s\n'
+-                    % (curr.name, curr.code, prev.code))
++            sys.stdout.write(
++                'Duplicate name %s with codes %s and %s\n' % (curr.name, curr.code, prev.code))
+             failed = True
+         prev = curr
+ 
+     prev = sorted_by_code[0]
+     for curr in sorted_by_code[1:]:
+         if curr.code == prev.code:
+-            sys.stdout.write('Duplicate code %s with names %s and %s\n'
+-                    % (curr.code, curr.name, prev.name))
++            sys.stdout.write(
++                'Duplicate code %s with names %s and %s\n' % (curr.code, curr.name, prev.name))
+             failed = True
+         prev = curr
+ 
+     return failed
+ 
++
+ def has_duplicate_error_classes(error_classes):
+     names = sorted(ec.name for ec in error_classes)
+ 
+@@ -166,6 +169,7 @@
+         prev_name = name
+     return failed
+ 
++
+ def has_missing_error_codes(error_codes, error_classes):
+     code_names = dict((ec.name, ec) for ec in error_codes)
+     failed = False
+@@ -178,6 +182,7 @@
+                 failed = True
+ 
+     return failed
++
+ 
+ if __name__ == '__main__':
+     main(sys.argv)
+diff -ru /data/ports-build/mongodb-src-r4.0.21/src/mongo/db/auth/generate_action_types.py ./src/mongo/db/auth/generate_action_types.py
+--- /data/ports-build/mongodb-src-r4.0.21/src/mongo/db/auth/generate_action_types.py	2020-10-16 18:02:58.000000000 +0200
++++ ./src/mongo/db/auth/generate_action_types.py	2020-11-16 20:09:38.846414000 +0100
+@@ -26,7 +26,6 @@
+ # delete this exception statement from your version. If you delete this
+ # exception statement from all source files in the program, then also delete
+ # it in the license file.
+-
+ """Generate action_type.{h,cpp}
+ 
+ Usage:
+@@ -35,7 +34,6 @@
+ 
+ import sys
+ 
+-
+ headerFileTemplate = """// AUTO-GENERATED FILE DO NOT EDIT
+ // See src/mongo/db/auth/generate_action_types.py
+ /**
+@@ -194,14 +192,14 @@
+ } // namespace mongo
+ """
+ 
++
+ def writeSourceFile(actionTypes, sourceOutputFile):
+     actionTypeConstants = ""
+     fromStringIfStatements = ""
+     toStringCaseStatements = ""
+     for actionType in actionTypes:
+         actionTypeConstants += ("    const ActionType ActionType::%(actionType)s"
+-                                "(%(actionType)sValue);\n" %
+-                                dict(actionType=actionType))
++                                "(%(actionType)sValue);\n" % dict(actionType=actionType))
+         fromStringIfStatements += """        if (action == "%(actionType)s") {
+             *result = %(actionType)s;
+             return Status::OK();
+@@ -215,6 +213,7 @@
+ 
+     pass
+ 
++
+ def writeHeaderFile(actionTypes, headerOutputFile):
+     actionTypeConstants = ""
+     actionTypeIdentifiers = ""
+@@ -225,6 +224,7 @@
+                                                     actionTypeIdentifiers=actionTypeIdentifiers)
+     headerOutputFile.write(formattedHeaderFile)
+ 
++
+ def hasDuplicateActionTypes(actionTypes):
+     sortedActionTypes = sorted(actionTypes)
+ 
+@@ -232,7 +232,7 @@
+     prevActionType = sortedActionTypes[0]
+     for actionType in sortedActionTypes[1:]:
+         if actionType == prevActionType:
+-            print 'Duplicate actionType %s\n' % actionType
++            print('Duplicate actionType %s\n' % actionType)
+             didFail = True
+         prevActionType = actionType
+ 
+@@ -245,7 +245,7 @@
+ 
+ if __name__ == "__main__":
+     if len(sys.argv) != 4:
+-        print "Usage: generate_action_types.py <path to action_types.txt> <header file path> <source file path>"
++        print("Usage: generate_action_types.py <path to action_types.txt> <header file path> <source file path>")
+         sys.exit(-1)
+ 
+     actionTypes = parseActionTypesFromFile(sys.argv[1])
+diff -ru /data/ports-build/mongodb-src-r4.0.21/src/mongo/db/fts/generate_stop_words.py ./src/mongo/db/fts/generate_stop_words.py
+--- /data/ports-build/mongodb-src-r4.0.21/src/mongo/db/fts/generate_stop_words.py	2020-10-16 18:02:58.000000000 +0200
++++ ./src/mongo/db/fts/generate_stop_words.py	2020-11-16 20:09:38.851050000 +0100
+@@ -1,7 +1,7 @@
+ import sys
+ 
+ def generate( header, source, language_files ):
+-    out = open( header, "wb" )
++    out = open( header, "w" )
+     out.write( """
+ #pragma once
+ #include <set>
+@@ -18,8 +18,8 @@
+ 
+ 
+ 
+-    out = open( source, "wb" )
+-    out.write( '#include "%s"' % header.rpartition( "/" )[2].rpartition( "\\" )[2] )
++    out = open( source, "w", encoding='utf-8')
++    out.write( '#include "{}"'.format(header.rpartition( "/" )[2].rpartition( "\\" )[2]) )
+     out.write( """
+ namespace mongo {
+ namespace fts {
+@@ -35,12 +35,13 @@
+         out.write( '  {\n' )
+         out.write( '   const char* const words[] = {\n' )
+         for word in open( l_file, "rb" ):
+-            out.write( '       "%s",\n' % word.strip() )
++            out.write( '       "%s",\n' % word.decode('utf-8').strip() )
+         out.write( '   };\n' )
+         out.write( '   const size_t wordcnt = sizeof(words) / sizeof(words[0]);\n' )
+         out.write( '   std::set< std::string >& l = (*m)["%s"];\n' % l )
+         out.write( '   l.insert(&words[0], &words[wordcnt]);\n' )
+         out.write( '  }\n' )
++
+     out.write( """
+   }
+ } // namespace fts
+diff -ru /data/ports-build/mongodb-src-r4.0.21/src/mongo/util/generate_icu_init_cpp.py ./src/mongo/util/generate_icu_init_cpp.py
+--- /data/ports-build/mongodb-src-r4.0.21/src/mongo/util/generate_icu_init_cpp.py	2020-10-16 18:02:58.000000000 +0200
++++ ./src/mongo/util/generate_icu_init_cpp.py	2020-11-16 21:01:59.537644000 +0100
+@@ -112,8 +112,8 @@
+ '''
+     decimal_encoded_data = ''
+     with open(data_file_path, 'rb') as data_file:
+-        decimal_encoded_data = ','.join([str(ord(byte)) for byte in data_file.read()])
+-    with open(cpp_file_path, 'wb') as cpp_file:
++        decimal_encoded_data = ','.join([str(byte) for byte in data_file.read()])
++    with open(cpp_file_path, 'w') as cpp_file:
+         cpp_file.write(source_template % dict(decimal_encoded_data=decimal_encoded_data))
+ 
+ if __name__ == '__main__':
