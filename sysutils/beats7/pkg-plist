@@ -66,6 +66,8 @@
 %%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/Filebeat-mysql.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/Filebeat-nats-overview.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/Filebeat-new-users-and-groups.json
+%%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/Filebeat-nginx-ingress-logs.json
+%%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/Filebeat-nginx-ingress-overview.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/Filebeat-nginx-logs.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/Filebeat-nginx-overview.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/kibana/7/dashboard/Filebeat-redis.json
@@ -248,6 +250,8 @@
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/nginx/_meta/config.yml
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/nginx/_meta/docs.asciidoc
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/nginx/_meta/fields.yml
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/nginx/_meta/kibana/7/dashboard/Filebeat-nginx-ingress-logs.json
+%%FILEBEAT%%%%DATADIR%%/filebeat/module/nginx/_meta/kibana/7/dashboard/Filebeat-nginx-ingress-overview.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/nginx/_meta/kibana/7/dashboard/Filebeat-nginx-logs.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/nginx/_meta/kibana/7/dashboard/Filebeat-nginx-overview.json
 %%FILEBEAT%%%%DATADIR%%/filebeat/module/nginx/access/_meta/fields.yml
@@ -835,6 +839,9 @@
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/kubernetes/state_cronjob/_meta/data.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/kubernetes/state_cronjob/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/kubernetes/state_cronjob/_meta/fields.yml
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/kubernetes/state_daemonset/_meta/data.json
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/kubernetes/state_daemonset/_meta/docs.asciidoc
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/kubernetes/state_daemonset/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/kubernetes/state_deployment/_meta/data.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/kubernetes/state_deployment/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/kubernetes/state_deployment/_meta/fields.yml
@@ -890,9 +897,15 @@
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/conntrack/_meta/data.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/conntrack/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/conntrack/_meta/fields.yml
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/iostat/_meta/data.json
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/iostat/_meta/docs.asciidoc
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/iostat/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/ksm/_meta/data.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/ksm/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/ksm/_meta/fields.yml
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/memory/_meta/data.json
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/memory/_meta/docs.asciidoc
+%%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/memory/_meta/fields.yml
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/pageinfo/_meta/data.json
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/pageinfo/_meta/docs.asciidoc
 %%METRICBEAT%%%%DATADIR%%/metricbeat/module/linux/pageinfo/_meta/fields.yml
