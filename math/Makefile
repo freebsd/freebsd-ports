@@ -269,6 +269,7 @@
     SUBDIR += fpc-gmp
     SUBDIR += fpc-numlib
     SUBDIR += fplll
+    SUBDIR += freefem++
     SUBDIR += fricas
     SUBDIR += frobby
     SUBDIR += fxt

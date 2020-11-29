@@ -1,0 +1,53 @@
+--- Makefile.am.orig	2020-04-02 12:11:06 UTC
++++ Makefile.am
+@@ -142,20 +142,17 @@ idp/CC.idp
+ 
+ FF_MAC_PREFIX=FreeFem++v$(VERSION)$(ADD_PACKAGE_NAME)
+ 
+-FF_EXAMPLES_FILES=examples/tutorial/aile.msh \
+-	examples/tutorial/xyf \
+-	examples/3d/dodecaedre01.mesh \
+-	examples/3d/lac-leman-v4.msh \
+-	examples/load/load.link \
+-	examples/load/cube.msh \
+-	examples/load/fig.pgm	\
+-	examples/plugin/lg.pgm \
+-	examples/mpi/regtests.sh \
+-	examples/misc/speedtest.sh \
+-	examples/*/*.edp \
+-	examples/CheckAllEdp \
+-	examples/plugin/ch.pts \
+-	examples/plugin/g.gmesh
++FF_EXAMPLES_FILES=tutorial/aile.msh \
++	tutorial/xyf \
++	3d/dodecaedre01.mesh \
++	3d/lac-leman-v4.msh \
++	plugin/lg.pgm \
++	mpi/regtests.sh \
++	misc/speedtest.sh \
++	*/*.edp \
++	CheckAllEdp \
++	plugin/ch.pts \
++	plugin/g.gmesh
+ 
+ clean-local::
+ 	-find . \( -name '*~' -or  -name ListOfUnAllocPtr.bin \) | xargs rm
+@@ -259,13 +256,14 @@ clean-local::
+ # ----------------------
+ install-exec-local:: bin/script/PostInstall.sh FreeFEM-documentation.pdf
+ 	test `uname` != Darwin || $(MAKE) FreeFem++-CoCoa  bin/script/PostInstall.sh
+-	$(mkinstalldirs) -m 755 $(DESTDIR)$(pkgdatadir)/$(VERSION)
++	$(mkinstalldirs) -m 755 $(DESTDIR)$(pkgdatadir)	\
++		$(DESTDIR)$(PREFIX)/share/examples/freefem++
+ 	test `uname` != Darwin || $(mkinstalldirs) -m 755 $(DESTDIR)/etc/paths.d/
+ 	test `uname` != Darwin || $(mkinstalldirs) -m 755 $(DESTDIR)/usr/local/bin
+-	tar cvf - $(FF_EXAMPLES_FILES)| (cd $(DESTDIR)$(pkgdatadir)/$(VERSION); tar xvf -)
+-	$(INSTALL_SCRIPT) examples/CheckAll examples/CheckAllEdp $(DESTDIR)$(pkgdatadir)/$(VERSION)
++	cd examples ; tar cvf - $(FF_EXAMPLES_FILES) | (cd $(DESTDIR)$(PREFIX)/share/examples/freefem++; tar xvf -)
++	$(INSTALL_SCRIPT) examples/CheckAll examples/CheckAllEdp $(DESTDIR)$(PREFIX)/share/examples/freefem++
+ 	$(mkinstalldirs) -m 755 $(DESTDIR)${bindir}
+-	test ! -s FreeFEM-documentation.pdf || $(INSTALL_DATA) FreeFEM-documentation.pdf  "$(DESTDIR)$(pkgdatadir)" 
++	test ! -s FreeFEM-documentation.pdf || $(INSTALL_DATA) FreeFEM-documentation.pdf  "$(DESTDIR)$(PREFIX)/share/doc/freefem++"
+ 	test `uname` != Darwin || $(INSTALL_SCRIPT) FreeFem++-CoCoa  $(DESTDIR)${bindir}
+ 	test `uname` != Darwin || echo $(bindir) >$(DESTDIR)/etc/paths.d/FreeFem++
+ 	test `uname` != Darwin || ( rm $(DESTDIR)/usr/local/bin/FreeFem++-CoCoa ; $(INSTALL_SCRIPT) FreeFem++-CoCoa  $(DESTDIR)/usr/local/bin )
