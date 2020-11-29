@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	claws-mail-plugins
-PORTVERSION=	3.17
+PORTVERSION=	3.17.8
 CATEGORIES=	mail news
 
 MAINTAINER=	portmaster@BSDforge.com
