@@ -2,7 +2,7 @@
 
 PORTNAME=	grcov
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -65,6 +65,7 @@ CARGO_CRATES=	\
 		gimli-0.23.0 \
 		globset-0.4.6 \
 		hermit-abi-0.1.17 \
+		is_executable-0.1.2 \
 		itoa-0.4.6 \
 		lazy_static-1.4.0 \
 		libc-0.2.80 \
