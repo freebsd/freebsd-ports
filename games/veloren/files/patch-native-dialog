@@ -1,0 +1,38 @@
+https://github.com/balthild/native-dialog-rs/pull/12
+
+error[E0599]: no method named `show` found for struct `MessageAlert<'_>` in the current scope
+   --> voxygen/src/main.rs:121:18
+    |
+121 |                 .show()
+    |                  ^^^^ method not found in `MessageAlert<'_>`
+
+warning: unused import: `Dialog`
+   --> voxygen/src/main.rs:111:33
+    |
+111 |             use native_dialog::{Dialog, MessageAlert, MessageType};
+    |                                 ^^^^^^
+    |
+    = note: `#[warn(unused_imports)]` on by default
+
+--- cargo-crates/native-dialog-0.4.3/Cargo.toml.orig	2020-09-09 23:35:14 UTC
++++ cargo-crates/native-dialog-0.4.3/Cargo.toml
+@@ -25,7 +25,7 @@ version = "1.0.19"
+ [features]
+ windows_dpi_awareness = []
+ windows_visual_styles = ["once_cell", "winapi/sysinfoapi", "winapi/winbase", "winapi/handleapi", "winapi/libloaderapi"]
+-[target."cfg(target_os = \"linux\")".dependencies.which]
++[target."cfg(all(unix, not(target_os = \"macos\"), not(target_os = \"ios\"), not(target_os = \"android\")))".dependencies.which]
+ version = "4.0.0"
+ [target."cfg(target_os = \"macos\")".dependencies.osascript]
+ version = "0.3.0"
+--- cargo-crates/native-dialog-0.4.3/src/impl/mod.rs.orig	2020-09-09 22:21:26 UTC
++++ cargo-crates/native-dialog-0.4.3/src/impl/mod.rs
+@@ -1,7 +1,7 @@
+ #[cfg(target_os = "macos")]
+ pub(crate) mod mac;
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(all(unix, not(target_os = "macos"), not(target_os = "ios"), not(target_os = "android")))]
+ pub(crate) mod gnu;
+ 
+ #[cfg(target_os = "windows")]

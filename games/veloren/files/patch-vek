@@ -1,0 +1,57 @@
+Avoid downgrading to Stable despite RUSTC_BOOTSTRAP
+
+error[E0658]: platform intrinsics are experimental and possibly buggy
+  --> src/simd_llvm.rs:13:8
+   |
+13 | extern "platform-intrinsic" {
+   |        ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: see issue #27731 <https://github.com/rust-lang/rust/issues/27731> for more information
+   = help: add `#![feature(platform_intrinsics)]` to the crate attributes to enable
+
+--- cargo-crates/vek-0.11.2/build.rs.orig	2020-03-29 09:38:47 UTC
++++ cargo-crates/vek-0.11.2/build.rs
+@@ -4,19 +4,6 @@ use rustc_version::{version, version_meta, Channel};
+ fn main() {
+     assert!(version().unwrap().major >= 1);
+ 
+-    match version_meta().unwrap().channel {
+-        Channel::Stable => {
+-            println!("cargo:rustc-cfg=stable");
+-        }
+-        Channel::Beta => {
+-            println!("cargo:rustc-cfg=beta");
+-        }
+-        Channel::Nightly => {
+-            println!("cargo:rustc-cfg=nightly");
+-        }
+-        Channel::Dev => {
+-            println!("cargo:rustc-cfg=dev");
+-        }
+-    }
++    println!("cargo:rustc-cfg=nightly");
+ }
+ 
+--- ../vek-237a78528b505f34f6dde5dc77db3b642388fe4a-237a78528b505f34f6dde5dc77db3b642388fe4a/build.rs.orig	2020-08-07 21:36:50 UTC
++++ ../vek-237a78528b505f34f6dde5dc77db3b642388fe4a-237a78528b505f34f6dde5dc77db3b642388fe4a/build.rs
+@@ -4,19 +4,6 @@ use rustc_version::{version, version_meta, Channel};
+ fn main() {
+     assert!(version().unwrap().major >= 1);
+ 
+-    match version_meta().unwrap().channel {
+-        Channel::Stable => {
+-            println!("cargo:rustc-cfg=stable");
+-        }
+-        Channel::Beta => {
+-            println!("cargo:rustc-cfg=beta");
+-        }
+-        Channel::Nightly => {
+-            println!("cargo:rustc-cfg=nightly");
+-        }
+-        Channel::Dev => {
+-            println!("cargo:rustc-cfg=dev");
+-        }
+-    }
++    println!("cargo:rustc-cfg=nightly");
+ }
+ 
