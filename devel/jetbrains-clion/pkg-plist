@@ -165,7 +165,6 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/jing-20030619.jar
 %%DATADIR%%/lib/jna-platform.jar
 %%DATADIR%%/lib/jna.jar
-%%DATADIR%%/lib/jnaerator-runtime-0.12.jar
 %%DATADIR%%/lib/jnr-a64asm-1.0.0.jar
 %%DATADIR%%/lib/jnr-constants-0.9.12.jar
 %%DATADIR%%/lib/jnr-enxio-0.21.jar
@@ -272,7 +271,6 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/pty4j-0.9.6.jar
 %%DATADIR%%/lib/purejavacomm-0.0.11.1.jar
 %%DATADIR%%/lib/qdox-2.0-M10.jar
-%%DATADIR%%/lib/quiche-jna-stubs-15.jar
 %%DATADIR%%/lib/rd-core-0.202.100.jar
 %%DATADIR%%/lib/rd-framework-0.202.100.jar
 %%DATADIR%%/lib/rd-swing-0.202.100.jar
@@ -293,7 +291,6 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/swingx-core-1.6.2-2.jar
 %%DATADIR%%/lib/testFramework.jar
 %%DATADIR%%/lib/tips-clion-202.7.jar
-%%DATADIR%%/lib/tls-channel-0.3.2.jar
 %%DATADIR%%/lib/trang-core.jar
 %%DATADIR%%/lib/trove4j.jar
 %%DATADIR%%/lib/txw2-2.3.1.jar
@@ -580,14 +577,14 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/git4idea/lib/resources_en.jar
 %%DATADIR%%/plugins/github/lib/github.jar
 %%DATADIR%%/plugins/github/lib/resources_en.jar
-%%DATADIR%%/plugins/gradle/lib/gradle-api-6.5.jar
-%%DATADIR%%/plugins/gradle/lib/gradle-api-impldep-6.5.jar
+%%DATADIR%%/plugins/gradle/lib/gradle-api-6.5.1-java7-sp2.jar
+%%DATADIR%%/plugins/gradle/lib/gradle-api-impldep-6.5.1-java7-sp2.jar
 %%DATADIR%%/plugins/gradle/lib/gradle-common.jar
-%%DATADIR%%/plugins/gradle/lib/gradle-launcher-6.5.jar
+%%DATADIR%%/plugins/gradle/lib/gradle-launcher-6.5.1-java7-sp2.jar
 %%DATADIR%%/plugins/gradle/lib/gradle-tooling-extension-api.jar
 %%DATADIR%%/plugins/gradle/lib/gradle-tooling-extension-impl.jar
 %%DATADIR%%/plugins/gradle/lib/gradle-toolingLoaderRt.jar
-%%DATADIR%%/plugins/gradle/lib/gradle-wrapper-6.5.jar
+%%DATADIR%%/plugins/gradle/lib/gradle-wrapper-6.5.1-java7-sp2.jar
 %%DATADIR%%/plugins/gradle/lib/gradle.jar
 %%DATADIR%%/plugins/hg4idea/lib/hg4idea.jar
 %%DATADIR%%/plugins/hg4idea/lib/resources_en.jar
