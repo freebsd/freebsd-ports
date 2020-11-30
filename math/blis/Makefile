@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	blis
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.8.0
+PORTREVISION=	0
 CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -65,7 +65,7 @@ PLIST_SUB+=	ARCH="generic"
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 USE_GCC=	yes
 .else
-LLVM_VER=	90
+LLVM_VER=	10
 BUILD_DEPENDS+=	llvm${LLVM_VER}>=0:devel/llvm${LLVM_VER}
 CC=	${LOCALBASE}/bin/clang${LLVM_VER}
 CXX=	${LOCALBASE}/bin/clang++${LLVM_VER}
