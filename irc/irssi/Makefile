@@ -53,11 +53,7 @@ TRUECOLOR_MESON_YES=	enable-true-color
 UTF8PROC_LIB_DEPENDS=	libutf8proc.so:textproc/utf8proc
 UTF8PROC_MESON_NO=	disable-utf8proc
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MPERL}
-USE_PERL5=	build
-.endif
+PERL5_USE_OFF=	perl5=build
 
 post-install-PERL-off:
 	@${RM} -r ${STAGEDIR}${DATADIR}/scripts
