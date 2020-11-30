@@ -1,9 +1,9 @@
---- services/sddm-autologin.pam.orig	2017-12-05 16:00:16 UTC
+--- services/sddm-autologin.pam.orig	2020-11-03 09:55:31 UTC
 +++ services/sddm-autologin.pam
 @@ -1,13 +1,9 @@
  #%PAM-1.0
 -auth        required    pam_env.so
--auth        required    pam_tally.so file=/var/log/faillog onerr=succeed
+-auth        required    pam_tally2.so file=/var/log/tallylog onerr=succeed
 -auth        required    pam_shells.so
 -auth        required    pam_nologin.so
  auth        required    pam_permit.so

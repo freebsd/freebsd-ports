@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sddm
-PORTVERSION=	0.18.1
+PORTVERSION=	0.19.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	x11
 
 MAINTAINER=	kde@FreeBSD.org
@@ -46,7 +45,6 @@ post-patch:
 		-e 's#/usr/share/#${LOCALBASE}/share/#' \
 		${WRKSRC}/data/scripts/Xsession \
 		${WRKSRC}/src/common/Configuration.h
-	@${CP} ${PATCHDIR}/VirtualTerminal_FreeBSD.cpp ${WRKSRC}/src/daemon
 
 post-install:
 # Install xsession.desktop to launch .xinitrc via sddm.

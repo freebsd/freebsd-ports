@@ -4,10 +4,6 @@ etc/dbus-1/system.d/org.freedesktop.DisplayManager.conf
 etc/pam.d/sddm
 etc/pam.d/sddm-autologin
 etc/pam.d/sddm-greeter
-man/man1/sddm.1.gz
-man/man1/sddm-greeter.1.gz
-man/man5/sddm.conf.5.gz
-man/man5/sddm-state.conf.5.gz
 %%QT_QMLDIR%%/SddmComponents/Background.qml
 %%QT_QMLDIR%%/SddmComponents/Button.qml
 %%QT_QMLDIR%%/SddmComponents/Clock.qml
@@ -22,6 +18,10 @@ man/man5/sddm-state.conf.5.gz
 %%QT_QMLDIR%%/SddmComponents/qmldir
 %%QT_QMLDIR%%/SddmComponents/warning.png
 libexec/sddm-helper
+man/man1/sddm-greeter.1.gz
+man/man1/sddm.1.gz
+man/man5/sddm-state.conf.5.gz
+man/man5/sddm.conf.5.gz
 %%DATADIR%%/faces/.face.icon
 %%DATADIR%%/faces/root.face.icon
 %%DATADIR%%/flags/ae.png
@@ -156,10 +156,13 @@ libexec/sddm-helper
 %%DATADIR%%/translations/de.qm
 %%DATADIR%%/translations/es.qm
 %%DATADIR%%/translations/et.qm
+%%DATADIR%%/translations/eu.qm
 %%DATADIR%%/translations/fi.qm
 %%DATADIR%%/translations/fr.qm
+%%DATADIR%%/translations/he.qm
 %%DATADIR%%/translations/hi_IN.qm
 %%DATADIR%%/translations/hu.qm
+%%DATADIR%%/translations/ie.qm
 %%DATADIR%%/translations/is.qm
 %%DATADIR%%/translations/it.qm
 %%DATADIR%%/translations/ja.qm
@@ -170,6 +173,7 @@ libexec/sddm-helper
 %%DATADIR%%/translations/nb.qm
 %%DATADIR%%/translations/nl.qm
 %%DATADIR%%/translations/nn.qm
+%%DATADIR%%/translations/oc.qm
 %%DATADIR%%/translations/pl.qm
 %%DATADIR%%/translations/pt_BR.qm
 %%DATADIR%%/translations/pt_PT.qm
