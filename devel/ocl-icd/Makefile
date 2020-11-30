@@ -2,27 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	ocl-icd
-PORTVERSION=	2.2.12
+DISTVERSIONPREFIX=	v
+PORTVERSION=	2.2.13
 CATEGORIES=	devel
-MASTER_SITES=	https://forge.imag.fr/frs/download.php/${REVID}/
 
 MAINTAINER=	ohartmann@walstatt.org
 COMMENT=	OpenCL Installable Client Driver
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	opencl>=2.1:devel/opencl
+BUILD_DEPENDS=	opencl>=3.0:devel/opencl
 
-CONFLICTS=	freeocl-[0-9]* opencl-icd-[0-9]*
-
-USES=		gmake libtool localbase:ldflags pathfix
+USES=		autoreconf gmake libtool localbase:ldflags pathfix
 
 USE_GITHUB=	yes
+GH_ACCOUNT=	OCL-dev
 USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-REVID=		836
+CPPFLAGS+=	-DCL_TARGET_OPENCL_VERSION=300
 
 INSTALL_TARGET=	install-strip
 

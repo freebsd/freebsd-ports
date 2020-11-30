@@ -3,4 +3,4 @@ OpenCL program can use several ICD thanks to the use of an ICD Loader as
 provided by this project. This free ICD Loader can load any (free or non
 free) ICD.
 
-WWW: https://forge.imag.fr/projects/ocl-icd/
+WWW: https://github.com/OCL-dev/ocl-icd
