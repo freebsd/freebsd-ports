@@ -2,20 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	eduke32
-PORTVERSION=	20200404
+PORTVERSION=	20201128
 CATEGORIES=	games
-MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNREVISION}/:eduke32 \
+MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${PORTVERSION}-${GITREVISION}/:eduke32 \
 		http://www.duke4.org/files/nightfright/hrp/:hrp \
 		http://burnbit.com/download/447717/:hrp \
 		http://www.duke4.org/files/nightfright/related/:related \
-		http://dukeworld.duke4.net/classic%20dukeworld/share/:shareware \
+		http://dukeworld.com/classic%20dukeworld/share/:shareware \
 		https://image.dosgamesarchive.com/games/:shareware \
 		https://www.quaddicted.com/files/idgames2/planetquake/planetduke/:shareware \
 		https://ftp.swin.edu.au/gentoo/distfiles/:shareware \
 		ftp://ftp.3drealms.com/share/:shareware \
-		https://github.com/NightFright2k19/voxelpack/releases/download/1.3pre4/:voxel
-DISTFILES=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}:eduke32
-EXTRACT_ONLY=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}${EXTRACT_SUFX}
+		https://github.com/NightFright2k19/voxelpack/releases/download/2.0pre4/:voxel
+DISTFILES=	${PORTNAME}_src_${PORTVERSION}-${GITREVISION}${EXTRACT_SUFX}:eduke32
+EXTRACT_ONLY=	${PORTNAME}_src_${PORTVERSION}-${GITREVISION}${EXTRACT_SUFX}
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
@@ -37,8 +37,8 @@ USES=		dos2unix gl gmake gnome pkgconfig sdl tar:xz
 USE_GL=		gl glu
 USE_GNOME=	gtk20
 USE_SDL=	sdl2 mixer2
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${SVNREVISION}
-SVNREVISION=	8798
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${GITREVISION}
+GITREVISION=	9276-42c62c58f
 DATADIR=	${PREFIX}/share/duke3d
 SUB_FILES=	pkg-message
 MAKEFILE=	GNUmakefile
