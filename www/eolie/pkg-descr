@@ -1,0 +1,17 @@
+Eolie is a new GNOME web browser.  Some of its features:
+
+  * Adblock and more: Block ads, JS, popups, and phishing URLs
+  * Navigation profiles
+  * Firefox sync: Allows one to sync their bookmarks, history, and
+    passwords with Firefox
+  * Fullscreen view: Fullscreen content access
+  * Download images/videos: Download all medias from a webpage
+  * Private browsing: Do not leave information on the web; per-page
+    private browsing
+  * Reader view: Clutter-free web pages
+  * Smart search bar: Search for bookmarks, history, or the web from
+    the same place
+  * Docking your laptop with a 4K screen?  Eolie remembers default
+    zoom level per screen
+
+WWW: https://wiki.gnome.org/Apps/Eolie
