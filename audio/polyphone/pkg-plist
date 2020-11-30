@@ -1,0 +1,10 @@
+bin/polyphone
+share/applications/polyphone.desktop
+share/icons/hicolor/512x512/apps/polyphone.png
+share/icons/hicolor/scalable/apps/polyphone.svg
+share/icons/hicolor/scalable/mimetypes/audio-x-soundfont.svg
+share/man/fr/man1/polyphone.1.gz
+share/man/man1/polyphone.1.gz
+share/man/ru/man1/polyphone.1.gz
+share/metainfo/com.polyphone_soundfonts.polyphone.metainfo.xml
+share/mime/packages/polyphone.xml
