@@ -244,6 +244,7 @@
 %%WWWDIR%%/lib/Migration/Version401001Date20190715092137.php
 %%WWWDIR%%/lib/Migration/Version501000Date20190927102434.php
 %%WWWDIR%%/lib/Migration/Version501000Date20191218182434.php
+%%WWWDIR%%/lib/Migration/Version802000Date20201119112624.php
 %%WWWDIR%%/lib/Mount/GroupFolderStorage.php
 %%WWWDIR%%/lib/Mount/GroupMountPoint.php
 %%WWWDIR%%/lib/Mount/MountProvider.php
