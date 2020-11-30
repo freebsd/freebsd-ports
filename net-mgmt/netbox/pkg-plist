@@ -28,11 +28,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/core-functionality/vlans.md
 %%PORTDOCS%%%%DOCSDIR%%/development/application-registry.md
 %%PORTDOCS%%%%DOCSDIR%%/development/extending-models.md
+%%PORTDOCS%%%%DOCSDIR%%/development/getting-started.md
 %%PORTDOCS%%%%DOCSDIR%%/development/index.md
 %%PORTDOCS%%%%DOCSDIR%%/development/release-checklist.md
 %%PORTDOCS%%%%DOCSDIR%%/development/style-guide.md
 %%PORTDOCS%%%%DOCSDIR%%/development/user-preferences.md
-%%PORTDOCS%%%%DOCSDIR%%/development/utility-views.md
 %%PORTDOCS%%%%DOCSDIR%%/extra.css
 %%PORTDOCS%%%%DOCSDIR%%/index.md
 %%PORTDOCS%%%%DOCSDIR%%/installation/1-postgresql.md
