@@ -1,0 +1,5 @@
+By default pkg uses DNS-based load balancing. This method does not necessarily
+choose the fastest mirror. This script can help you to find the fastest pkg
+mirror near you.
+
+WWW: https://github.com/ehaupt/fastest_pkg
