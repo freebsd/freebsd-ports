@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mnemosyne
-PORTVERSION=		2.7.1
-PORTREVISION=	2
+PORTVERSION=		2.7.3
 PORTEPOCH=	1
 CATEGORIES=	games education python
 MASTER_SITES=	SF/mnemosyne-proj/${PORTNAME}/${PORTNAME}-${DISTVERSION}
@@ -24,9 +23,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}googletrans>=0:textproc/py-googletrans@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gtts>=0:audio/py-gtts@${PY_FLAVOR}
 
-USES=		pyqt:5 python:3.7+ #due textproc/py-googletrans
+USES=		pyqt:5 python:3.7+ shebangfix dos2unix #due textproc/py-googletrans
 USE_PYQT=	gui_run network_run printsupport_run sip_run sql_run webengine_run
 USE_PYTHON=	autoplist concurrent distutils
+
+DOS2UNIX_GLOB=	*.py
+DOS2UNIX_FILES=	mnemosyne/pyqt_ui/mnemosyne
+SHEBANG_GLOB=	*.py
+SHEBANG_FILES=	mnemosyne/pyqt_ui/mnemosyne
 
 NO_ARCH=	yes
 
