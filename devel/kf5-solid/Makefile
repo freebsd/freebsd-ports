@@ -15,4 +15,12 @@ USE_QT=		concurrent core dbus declarative gui linguisttools \
 		network testlib widgets xml \
 		buildtools_build qmake_build
 
+OPTIONS_DEFINE=	IMOBILE
+
+IMOBILE_DESC=		Apple iPhone/iPod Touch support
+IMOBILE_LIB_DEPENDS=	libimobiledevice.so:comms/libimobiledevice \
+			libplist.so:devel/libplist
+IMOBILE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_IMobileDevice \
+			CMAKE_DISABLE_FIND_PACKAGE_PList
+
 .include <bsd.port.mk>
