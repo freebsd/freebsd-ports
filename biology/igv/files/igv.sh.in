@@ -3,7 +3,8 @@ LANG=C
 # phymem=$(free -m | awk '/^Mem:/{print $2}')
 #igvmem=$(($phymem / 3))
 # ARGS=-Xmx${igvmem}m
-java $ARGS \
+%%JAVA_HOME%%/bin/java $ARGS \
+  --module-path="%%JAVAJARDIR%%/igv" \
   -Dapple.laf.useScreenMenuBar=true \
   -Djava.net.preferIPv4Stack=true \
-  -jar %%JAVAJARDIR%%/igv.jar
+  --module=org.igv/org.broad.igv.ui.Main
