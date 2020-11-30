@@ -2,9 +2,12 @@
 
 PORTNAME=	paperless
 PORTVERSION=	2.7.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	b122931185fb.patch:-p1 # https://github.com/the-paperless-project/paperless/pull/712
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Index and archive scanned paper documents
