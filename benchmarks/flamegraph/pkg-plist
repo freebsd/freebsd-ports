@@ -5,10 +5,12 @@ bin/flamegraph.pl
 bin/pkgsplit-perf.pl
 bin/range-perf.pl
 bin/stackcollapse-aix.pl
+bin/stackcollapse-bpftrace.pl
 bin/stackcollapse-elfutils.pl
 bin/stackcollapse-gdb.pl
 bin/stackcollapse-go.pl
 bin/stackcollapse-instruments.pl
+bin/stackcollapse-java-exceptions.pl
 bin/stackcollapse-jstack.pl
 bin/stackcollapse-ljp.awk
 bin/stackcollapse-perf.pl
