@@ -1,5 +1,9 @@
 bin/emu803
 man/man1/emu803.1.gz
+%%DATADIR%%/Algol60-Samples/cogs.a60
+%%DATADIR%%/Algol60-Samples/cogs.script
+%%DATADIR%%/Algol60-Samples/fib.a60
+%%DATADIR%%/Algol60-Samples/fib.script
 %%DATADIR%%/Elliott-Algol60-A104/a104-tape-1.hex5
 %%DATADIR%%/Elliott-Algol60-A104/a104-tape-2.hex5
 %%DATADIR%%/Elliott-Algol60-A104/A104.md
@@ -9,6 +13,11 @@ man/man1/emu803.1.gz
 %%DATADIR%%/Elliott-Programs/t102-rel-add.hex5
 %%DATADIR%%/Elliott-Programs/t2-rel-add.elliott
 %%DATADIR%%/Elliott-Programs/t2-rel-add.hex5
+%%DATADIR%%/Elliott-Programs/X5/46.1.4.61.pdf
+%%DATADIR%%/Elliott-Programs/X5/803X5.pdf
+%%DATADIR%%/Elliott-Programs/X5/X5.pdf
+%%DATADIR%%/Elliott-Programs/X5/x5.hex5
+%%DATADIR%%/Elliott-Programs/X5/x5.script
 %%DATADIR%%/H-Code-Compilers/h-code-compiler-plus.hex5
 %%DATADIR%%/H-Code-Compilers/h-code-compiler.hex5
 %%DATADIR%%/H-Code-Compilers/README.markdown
@@ -16,3 +25,5 @@ man/man1/emu803.1.gz
 %%DATADIR%%/hello/hello-h-code.script
 %%DATADIR%%/hello/hello.a60
 %%DATADIR%%/hello/hello.hc
+%%DATADIR%%/hello/tins.hc
+%%DATADIR%%/hello/tins.md
