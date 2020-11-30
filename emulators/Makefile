@@ -166,6 +166,7 @@
     SUBDIR += wine-gecko-devel
     SUBDIR += wine-mono
     SUBDIR += wine-mono-devel
+    SUBDIR += wine-proton
     SUBDIR += winetricks
     SUBDIR += x16-emulator
     SUBDIR += x16-rom
