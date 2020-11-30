@@ -2276,8 +2276,8 @@ lib/cmake/openturns/UseOpenTURNS.cmake
 lib/libOT.so
 lib/libOT.so.0
 lib/libOT.so.0.0.0
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.16rc1.dist-info/METADATA
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.16rc1.dist-info/WHEEL
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.16.dist-info/METADATA
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns-1.16.dist-info/WHEEL
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_algo.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/openturns/_analytical.so
