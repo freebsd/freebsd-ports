@@ -170,6 +170,26 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
  
  // Linux, Android
  #define MY_EXTERN_C    extern "C"
+--- IGC/AdaptorOCL/ocl_igc_interface/impl/fcl_ocl_translation_ctx_impl.cpp.orig	2020-11-21 02:52:12 UTC
++++ IGC/AdaptorOCL/ocl_igc_interface/impl/fcl_ocl_translation_ctx_impl.cpp
+@@ -64,7 +64,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 
+ #include <memory>
+ 
+-#if defined(__linux__)
++#if defined(__unix__)
+ #include <dlfcn.h>
+ #else
+ #include <Windows.h>
+@@ -132,7 +132,7 @@ llvm::Optional<std::vector<char>> readBinaryFile(const
+ #if !defined(WDDM_LINUX) && (!defined(IGC_VC_DISABLED) || !IGC_VC_DISABLED)
+ 
+ static std::string detectCmIncludes(llvm::sys::DynamicLibrary &LibInfo) {
+-#if defined(__linux__)
++#if defined(__unix__)
+ #define GetFunctionNameAsStr(s) ((void)s, #s);
+   const char *SymName = GetFunctionNameAsStr(IntelCMClangFECompile);
+   void *FAddr = LibInfo.getAddressOfSymbol(SymName);
 --- IGC/GenISAIntrinsics/GenIntrinsics.h.orig	2020-02-10 06:06:31 UTC
 +++ IGC/GenISAIntrinsics/GenIntrinsics.h
 @@ -67,7 +67,7 @@ namespace GenISAIntrinsic {

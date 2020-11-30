@@ -1,0 +1,18 @@
+IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp:462:37: error: no member named 'getMask' in 'llvm::ShuffleVectorInst'
+      NewVec1, NewVec2, ShuffleVec->getMask(), ShuffleVec->getName() + ".tpm");
+                        ~~~~~~~~~~  ^
+
+--- IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp.orig	2020-11-21 02:52:12 UTC
++++ IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp
+@@ -459,7 +459,11 @@ bool GenXThreadPrivateMemory::replaceShuffleVector(
+   Value *NewVec1 = lookForPtrReplacement(Vec1);
+   Value *NewVec2 = lookForPtrReplacement(Vec2);
+   auto NewShuffleVec = new ShuffleVectorInst(
++#if LLVM_VERSION_MAJOR < 11
+       NewVec1, NewVec2, ShuffleVec->getMask(), ShuffleVec->getName() + ".tpm");
++#else
++      NewVec1, NewVec2, ShuffleVec->getShuffleMaskForBitcode(), ShuffleVec->getName() + ".tpm");
++#endif
+   NewShuffleVec->insertAfter(ShuffleVec);
+ 
+   auto CastToOldTy =
