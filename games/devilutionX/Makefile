@@ -4,7 +4,7 @@ PORTNAME=	devilutionX
 PORTVERSION=	1.1.0
 CATEGORIES=	games
 
-MAINTAINER=	benny.goemans@gmail.com
+MAINTAINER=	ed.arrakis@gmail.com
 COMMENT=	Diablo I engine for modern operating systems
 
 LICENSE=	UNLICENSE
