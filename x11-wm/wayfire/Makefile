@@ -2,6 +2,7 @@
 
 PORTNAME=	wayfire
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -48,5 +49,12 @@ post-patch:
 	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
+
+post-install:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ini ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/wayland-sessions
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
+		${STAGEDIR}${PREFIX}/share/wayland-sessions
 
 .include <bsd.port.mk>

@@ -73,6 +73,7 @@ lib/wayfire/libwobbly.so
 lib/wayfire/libwrot.so
 lib/wayfire/libzoom.so
 libdata/pkgconfig/wayfire.pc
+%%EXAMPLESDIR%%/wayfire.ini
 %%DATADIR%%/decoration/resources/close.png
 %%DATADIR%%/decoration/resources/maximize.png
 %%DATADIR%%/decoration/resources/minimize.png
@@ -108,3 +109,4 @@ libdata/pkgconfig/wayfire.pc
 %%DATADIR%%/metadata/wrot.xml
 %%DATADIR%%/metadata/zoom.xml
 %%DATADIR%%/protocols/unstable/wayfire-shell-unstable-v2.xml
+share/wayland-sessions/wayfire.desktop
