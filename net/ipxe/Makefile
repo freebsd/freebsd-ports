@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipxe
-DISTVERSION=	g20201020
+DISTVERSION=	g20201129
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -18,7 +18,7 @@ USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
 USE_GCC=	yes
 USE_GITHUB=	yes
-GH_TAGNAME=	e6f9054
+GH_TAGNAME=	13a6d17
 USE_PERL5=	build
 SHEBANG_FILES=	util/geniso util/gensdsk
 MAKE_ARGS=	AR=${AR} \
