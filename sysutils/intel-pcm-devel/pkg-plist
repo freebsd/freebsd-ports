@@ -1,4 +1,5 @@
 sbin/c_example.x
+sbin/c_example_shlib.x
 sbin/pcm-core.x
 sbin/pcm-iio.x
 sbin/pcm-latency.x
