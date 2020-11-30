@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=			pocl
-PORTVERSION=		1.4
+PORTVERSION=		1.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=			lang
 
@@ -17,11 +17,10 @@ ONLY_FOR_ARCHS_REASON=	only tested on x86
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>=0:devel/llvm${LLVM_VERSION} \
 				opencl>=2.1:devel/opencl
 LIB_DEPENDS=	libhwloc.so:devel/hwloc \
-				libOpenCL.so:devel/ocl-icd \
-				libltdl.so:devel/libltdl
+				libOpenCL.so:devel/ocl-icd
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-LLVM_VERSION=	${MESA_LLVM_VER:U90}
+LLVM_VERSION=	${MESA_LLVM_VER:U10}
 
 USES=			cmake localbase:ldflags ncurses pkgconfig
 

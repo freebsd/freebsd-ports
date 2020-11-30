@@ -2,7 +2,7 @@ bin/poclcc
 etc/OpenCL/vendors/pocl.icd
 lib/libpocl.so
 lib/libpocl.so.2
-lib/libpocl.so.2.4.0
+lib/libpocl.so.2.5.0
 lib/pocl/libllvmopencl.so
 libdata/pkgconfig/pocl.pc
 %%DATADIR%%/include/_builtin_renames.h
