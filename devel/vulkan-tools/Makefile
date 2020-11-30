@@ -48,10 +48,6 @@ XLIB_LIB_DEPENDS=	libX11.so:x11/libX11 \
 			libICE.so:x11/libICE \
 			libSM.so:x11/libSM
 
-# https://github.com/KhronosGroup/Vulkan-Headers/issues/122
-display-build:		.IGNORE
-display-install:	.IGNORE
-
 # https://github.com/KhronosGroup/Vulkan-Tools/issues/307
 .for _wsi in display wayland xcb xlib
 do-configure-${_wsi:tu}-on: ${_wsi}-configure
