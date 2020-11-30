@@ -85,7 +85,7 @@ VIS_CMAKE_OFF=		-DUSE_FREEIMAGE:BOOL=OFF	\
 			-DUSE_GLES2:BOOL=OFF
 VIS_LIB_DEPENDS=	libftgl.so:graphics/ftgl	\
 			libfreeimageplus.so:graphics/freeimage
-VIS_USES=		gl:glesv2
+VIS_USE=		GL=glesv2
 
 DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_USE=	TEX=latex:build
