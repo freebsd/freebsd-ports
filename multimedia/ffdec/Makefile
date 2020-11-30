@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	ffdec
-PORTVERSION=	8.0.1
+DISTVERSION=	11.3.0
 CATEGORIES=	multimedia java
-MASTER_SITES=	http://www.free-decompiler.com/flash/download/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	https://github.com/jindrapetrik/jpexs-decompiler/releases/download/version${PORTVERSION}/
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Flash decompiler
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		zip
 USE_JAVA=	yes

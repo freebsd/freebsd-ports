@@ -12,6 +12,7 @@ bin/ffdec
 %%DATADIR%%/lib/flashdebugger.jar
 %%DATADIR%%/lib/gif.jar
 %%DATADIR%%/lib/gif.license.txt
+%%DATADIR%%/lib/graphs.jar
 %%DATADIR%%/lib/gnujpdf.jar
 %%DATADIR%%/lib/jargs.jar
 %%DATADIR%%/lib/jl.license.txt
@@ -24,6 +25,8 @@ bin/ffdec
 %%DATADIR%%/lib/jpproxy.muffin.license.txt
 %%DATADIR%%/lib/jsyntaxpane-0.9.5.jar
 %%DATADIR%%/lib/jsyntaxpane.license.txt
+%%DATADIR%%/lib/minimal-json-0.9.5.jar
+%%DATADIR%%/lib/minimal-json.license.txt
 %%DATADIR%%/lib/nellymoser.jar
 %%DATADIR%%/lib/nellymoser.license.txt
 %%DATADIR%%/lib/sfntly.jar
