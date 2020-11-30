@@ -6,6 +6,7 @@ include/racket/ext.exp
 include/racket/mzconfig.h
 include/racket/mzscheme.exp
 include/racket/mzscheme3m.exp
+include/racket/racket_version.h
 include/racket/scheme.h
 include/racket/schemef.h
 include/racket/schemegc2.h
@@ -1145,6 +1146,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/compiled/intdef-util_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/kernstruct_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/kernstruct_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/keyword-apply-dict_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/keyword-apply-dict_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/kw-file_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/kw-file_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/kw-prop-key_rkt.dep
@@ -1249,6 +1252,8 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/compiled/string_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/struct-info_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/struct-info_rkt.zo
+%%DATADIR%%/collects/racket/private/compiled/struct-util_rkt.dep
+%%DATADIR%%/collects/racket/private/compiled/struct-util_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/struct_rkt.dep
 %%DATADIR%%/collects/racket/private/compiled/struct_rkt.zo
 %%DATADIR%%/collects/racket/private/compiled/stx_rkt.dep
@@ -1318,6 +1323,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/increader.rkt
 %%DATADIR%%/collects/racket/private/intdef-util.rkt
 %%DATADIR%%/collects/racket/private/kernstruct.rkt
+%%DATADIR%%/collects/racket/private/keyword-apply-dict.rkt
 %%DATADIR%%/collects/racket/private/kw-file.rkt
 %%DATADIR%%/collects/racket/private/kw-prop-key.rkt
 %%DATADIR%%/collects/racket/private/kw-syntax-binding.rkt
@@ -1370,6 +1376,7 @@ man/man1/raco.1.gz
 %%DATADIR%%/collects/racket/private/streams.rkt
 %%DATADIR%%/collects/racket/private/string.rkt
 %%DATADIR%%/collects/racket/private/struct-info.rkt
+%%DATADIR%%/collects/racket/private/struct-util.rkt
 %%DATADIR%%/collects/racket/private/struct.rkt
 %%DATADIR%%/collects/racket/private/stx.rkt
 %%DATADIR%%/collects/racket/private/stxcase-scheme.rkt
