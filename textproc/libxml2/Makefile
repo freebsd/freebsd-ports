@@ -3,17 +3,17 @@
 
 PORTNAME=	libxml2
 DISTVERSION=	2.9.10
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	http://xmlsoft.org/sources/
 DIST_SUBDIR=	gnome2
 
 # CVE-2019-20388, CVE-2020-7595, CVE-2020-24977, Python 3.9 support
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/libxml2/commit/
-PATCHFILES=	7ffcd44d7e6c46704f8af0321d9314cd26e0e18a.patch:-p1 \
-		0e1a49c8907645d2e155f0d89d4d9895ac5112b5.patch:-p1 \
-		50f06b3efb638efb0abd95dc62dca05ae67882c2.patch:-p1 \
-		edc7b6abb0c125eeb888748c334897f60aab0854.patch:-p1
+#PATCH_SITES=	https://gitlab.gnome.org/GNOME/libxml2/commit/
+#PATCHFILES=	7ffcd44d7e6c46704f8af0321d9314cd26e0e18a.patch:-p1 \
+#		0e1a49c8907645d2e155f0d89d4d9895ac5112b5.patch:-p1 \
+#		50f06b3efb638efb0abd95dc62dca05ae67882c2.patch:-p1 \
+#		edc7b6abb0c125eeb888748c334897f60aab0854.patch:-p1
 
 MAINTAINER?=	desktop@FreeBSD.org
 COMMENT?=	XML parser library for GNOME
