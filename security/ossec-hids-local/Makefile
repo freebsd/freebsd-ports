@@ -9,6 +9,7 @@ OSSEC_TYPE?=	local
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to compile: rootcheck/os_string.c:186:20: use of undeclared identifier '__LDPGSZ'
+BROKEN_riscv64=		fails to compile: rootcheck/os_string.c:186:20: use of undeclared identifier '__LDPGSZ'
 
 USES=		compiler gmake ssl
 
