@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xwayland
-PORTREVISION=	1
+PORTREVISION=	2
 
 COMMENT=	X Clients under Wayland
 

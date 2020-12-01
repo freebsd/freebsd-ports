@@ -1,3 +1,7 @@
-TIMESTAMP = 1598382481
+TIMESTAMP = 1606845198
 SHA256 (xorg/xserver/xorg-server-1.20.9.tar.bz2) = e219f2e0dfe455467939149d7cd2ee53b79b512cc1d2094ae4f5c9ed9ccd3571
 SIZE (xorg/xserver/xorg-server-1.20.9.tar.bz2) = 6302902
+SHA256 (xorg/xserver/06d1a032ee491547f7037c3ff042065dc2aeaa99.diff) = 2e0f1027e56e1512f659dc5cc48400de9bea722e516b05498a7c6a4130f09f55
+SIZE (xorg/xserver/06d1a032ee491547f7037c3ff042065dc2aeaa99.diff) = 3867
+SHA256 (xorg/xserver/7ccb3b0eabb4658daf0ecb2c78a53609ae2c263b.diff) = 5f0996f07af30d6d55713def544aa4b3280909ed91a36cd495ca2ace517b328b
+SIZE (xorg/xserver/7ccb3b0eabb4658daf0ecb2c78a53609ae2c263b.diff) = 3606
