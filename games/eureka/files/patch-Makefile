@@ -1,0 +1,23 @@
+--- Makefile.orig	2020-02-05 07:40:29 UTC
++++ Makefile
+@@ -29,7 +29,7 @@ LIBS ?=
+ # general things needed by Eureka
+ CXXFLAGS += $(CXX_DIALECT)
+ LIBS += -lGLU -lGL
+-LIBS += -lz -lm
++LIBS += -lz -lm -lXpm
+ 
+ # add this for software rendering, remove '--use-gl' below, remove -lGL and -lGLU from LIBS
+ # CXXFLAGS += -DNO_OPENGL
+@@ -151,7 +151,10 @@ stripped: all
+ INSTALL_DIR=$(DESTDIR)$(PREFIX)/share/eureka
+ 
+ install: all
+-	install -m 755 $(PROGRAM) $(DESTDIR)$(PREFIX)/bin/
++	$(BSD_INSTALL_PROGRAM) $(PROGRAM) $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_MAN) misc/$(PROGRAM).6 $(DESTDIR)$(MANPREFIX)/man/man6
++	$(BSD_INSTALL_DATA) misc/$(PROGRAM).desktop \
++		$(DESTDIR)$(PREFIX)/share/applications
+ 	install -d $(INSTALL_DIR)/games
+ 	install -d $(INSTALL_DIR)/common
+ 	install -d $(INSTALL_DIR)/ports

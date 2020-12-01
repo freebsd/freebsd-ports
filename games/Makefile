@@ -237,6 +237,7 @@
     SUBDIR += epiphany-game
     SUBDIR += etracer
     SUBDIR += euchre
+    SUBDIR += eureka
     SUBDIR += evilfinder
     SUBDIR += evq3
     SUBDIR += excido
