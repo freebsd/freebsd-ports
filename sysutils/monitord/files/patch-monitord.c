@@ -47,7 +47,16 @@
  
  			line_count++; // Advance the counter
  	
-@@ -197,9 +199,9 @@ int loop ( char **file, char *filename, int max_proc, 
+@@ -179,7 +181,7 @@ int loop ( char **file, char *filename, int max_proc, 
+ 	char value[_BUFSIZE / 6];	/* generic value from config file */
+ 	char email[_BUFSIZE / 6];	/* admin's email */
+ 	char eserver[_BUFSIZE / 6];	/* admin's email server */
+-	char delay[max_proc];		/* array for tracking delay times for processes  */
++	signed char delay[max_proc];		/* array for tracking delay times for processes  */
+ 
+ 	char cmdline[_BUFSIZE];		/* entire process line from config file */
+ 	char tmppath[_BUFSIZE];		/* temporary copy of script_path */
+@@ -197,11 +199,13 @@ int loop ( char **file, char *filename, int max_proc, 
  	buf = (char *) malloc ( (size_t) _BUFSIZE ); // init the all purpose buffer
  	buf2 = (char *) malloc ( (size_t) _BUFSIZE ); // init another all purpose buffer
  	token = (char *) malloc ( (size_t) _BUFSIZE ); // init the token buffer
@@ -59,8 +68,12 @@
 +	bzero (token, sizeof (*token) );
  
  	FOUND = 0;
++
++	memset(delay, 0, max_proc*sizeof(char));
  	
-@@ -290,8 +292,8 @@ int loop ( char **file, char *filename, int max_proc, 
+ 	// Main loop
+ 	while(1) {
+@@ -290,8 +294,8 @@ int loop ( char **file, char *filename, int max_proc, 
  
  			bzero (param, sizeof(param));
  			while ((token = strtok(NULL, " \t"))) {
@@ -71,16 +84,19 @@
  			}
  
  			/* Each line has a \n at the end which must be removed
-@@ -355,7 +357,7 @@ int loop ( char **file, char *filename, int max_proc, 
+@@ -355,18 +359,18 @@ int loop ( char **file, char *filename, int max_proc, 
  //					printf("Couldn't open %s\n", buf);
  				}
  				// Set the FOUND flag if the process we're checking for is found
 -				if (!strncmp (buf, proc, sizeof(buf))) FOUND = TRUE;
-+				if (!strncmp (buf, proc, sizeof(*buf))) FOUND = TRUE;
++				if (!strncmp (buf, proc, MIN(strlen(buf),strlen(proc)))) FOUND = TRUE;
  			}
  			closedir (dirp);   // Close the /proc directory
  
-@@ -365,8 +367,8 @@ int loop ( char **file, char *filename, int max_proc, 
+ 			// If the process wasn't found in the process listing then start it
+-			if (!FOUND && options.isauto && !delay[i]) {
++			if (!FOUND && options.isauto && delay[i] < interval) {
+ 
  				/* Email admin that the service has died, if the "mail"
  				option has been set in the options */
  				if (options.alert) {
@@ -91,7 +107,7 @@
  					sprintf (buf, "[%s] Service \"%s\" has died\n", getdate(), proc);
  					sprintf (buf2, "(monitord) SYSTEM ALERT, \"%s\" has died\n", proc);
  					mail (email, eserver, buf2, buf);
-@@ -405,7 +407,7 @@ int loop ( char **file, char *filename, int max_proc, 
+@@ -405,7 +409,7 @@ int loop ( char **file, char *filename, int max_proc, 
  						/* Email the admin that the service has been
  						restarted if "mail" option is set */
  						if (options.alert) {
@@ -100,7 +116,7 @@
  							sprintf (buf, "[%s] restarted \"%s\" using \"%s %s\"\n", getdate(), proc, script_path, param);
  							sprintf (buf2, "(monitord) \"%s\" restarted\n", proc);
  							mail (email, eserver, buf2, buf);
-@@ -418,7 +420,7 @@ int loop ( char **file, char *filename, int max_proc, 
+@@ -418,7 +422,7 @@ int loop ( char **file, char *filename, int max_proc, 
  						been able to be	restarted if "mail" option
  						is set */
  						if (options.alert) {
@@ -109,7 +125,7 @@
  							sprintf (buf, "[%s] unable to restart \"%s\"\n", getdate(), proc);
  							sprintf (buf2, "(monitord) SYSTEM ALERT: \"%s\" unable to restart\n", proc);
  							mail (email, eserver, buf2, buf);
-@@ -454,13 +456,13 @@ char *getdate () {
+@@ -454,13 +458,13 @@ char *getdate () {
  
  	struct timeval *tp;
  	struct timezone *tzp;
