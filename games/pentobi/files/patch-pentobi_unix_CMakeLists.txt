@@ -5,10 +5,10 @@ Disable bogus file detection
   (e.g. ${LOCALBASE}/share/gettext-0.21/its/metainfo.its)
 - It's not used anywhere
 
---- pentobi/unix/CMakeLists.txt.orig	2020-11-04 07:37:40 UTC
+--- pentobi/unix/CMakeLists.txt.orig	2020-11-20 12:21:18 UTC
 +++ pentobi/unix/CMakeLists.txt
-@@ -6,16 +6,6 @@ if(NOT ITSTOOL)
- endif()
+@@ -10,16 +10,6 @@ endif()
+ # its existence already at configuration time.
  get_filename_component(GETTEXT_BIN_DIR ${GETTEXT_MSGFMT_EXECUTABLE} DIRECTORY)
  get_filename_component(GETTEXT_INSTALL_DIR ${GETTEXT_BIN_DIR} DIRECTORY)
 -find_file(METAINFO_ITS NAMES metainfo.its appdata.its
@@ -21,6 +21,6 @@ Disable bogus file detection
 -        " or appdata.its file."
 -        )
 -endif()
+ 
  find_program(RSVG_CONVERT rsvg-convert)
  if(NOT RSVG_CONVERT)
-     message(FATAL_ERROR "rsvg-convert not found (install librsvg2-bin)")
