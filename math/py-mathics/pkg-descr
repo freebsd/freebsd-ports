@@ -1,0 +1,9 @@
+Mathics is a general-purpose computer algebra system (CAS).
+It is an open-source alternative to Mathematica.
+
+It contains:
+- mathicsscript: a text interface;
+- mathicsserver: a Django-based Web interface.
+
+WWW: https://mathics.org/
+WWW: https://github.com/mathics/Mathics
