@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	toybox
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	vidar@karlsen.tech
