@@ -1,6 +1,6 @@
---- setup.py.orig      2020-08-30 11:47:16 UTC
+--- setup.py.orig	2020-11-02 15:56:08 UTC
 +++ setup.py
-@@ -85,23 +85,6 @@ setup(
+@@ -88,23 +88,6 @@ setup(
          'getmail-gmail-xoauth-tokens',
      ],
      data_files=[
