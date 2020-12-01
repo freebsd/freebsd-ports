@@ -6,6 +6,9 @@ DISTVERSION=	1.5.0-g20190709
 PORTREVISION=	2
 CATEGORIES=	textproc
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=     f905b93de5386284166588ac1f05383af9aa1d2e.patch:-p1
+
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Feature-rich dictionary lookup program
 
