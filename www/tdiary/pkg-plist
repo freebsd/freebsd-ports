@@ -1142,6 +1142,10 @@ bin/%%TDIARY_SCRIPT%%
 %%WWWDIR%%/theme/line/README
 %%WWWDIR%%/theme/line/line.css
 %%WWWDIR%%/theme/loading.gif
+%%WWWDIR%%/theme/logo/bitter.svg
+%%WWWDIR%%/theme/logo/pale.svg
+%%WWWDIR%%/theme/logo/soft.svg
+%%WWWDIR%%/theme/logo/vivid.svg
 %%WWWDIR%%/theme/loose-leaf/README
 %%WWWDIR%%/theme/loose-leaf/loose-leaf.css
 %%WWWDIR%%/theme/loose-leaf/loose-leaf_back.png
