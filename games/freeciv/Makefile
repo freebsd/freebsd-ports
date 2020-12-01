@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	freeciv
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.2.1
 CATEGORIES=	games
-MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
+MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R:R}/${PORTVERSION}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Free turn-based multiplayer strategy
