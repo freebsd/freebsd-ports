@@ -98,10 +98,6 @@ INSTALLS_ICONS=	yes
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-build_config_compiler_pgo_pgo.gni
-.endif
-
 # TODO bz@ : install libwidevinecdm.so (see third_party/widevine/cdm/BUILD.gn)
 #
 # Run "./out/${BUILDTYPE}/gn args out/${BUILDTYPE} --list" for all variables.
@@ -207,6 +203,10 @@ TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX} \
 			test_fonts-85${EXTRACT_SUFX}:fonts
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-build_config_compiler_pgo_pgo.gni
+.endif
 
 # swiftshader/lib/{libEGL.so,libGLESv2.so} is x86 only
 .if ${ARCH} == aarch64
