@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20201130:
+  AFFECTS: users of graphics/jpeg
+  AUTHOR: rene@FreeBSD.org
+
+
+  The graphics/jpeg port has been removed in favor of graphics/jpeg-turbo.
+  The former port was vulnerable and used an outdated ABI and API.
+
+  Please check your make configuration for JPEG_PORT and remove it or
+  set it to "jpeg-turbo" if it is currently set to "jpeg".
+
 20201128:
   AFFECTS: users of databases/cego
   AUTHOR: pi@FreeBSD.org

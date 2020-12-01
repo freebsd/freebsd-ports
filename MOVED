@@ -15716,3 +15716,4 @@ net/remmina-plugin-vnc|net/remmina|2020-11-24|Moved to remmina flavored version
 net/remmina-plugin-www|net/remmina|2020-11-24|Moved to remmina flavored version
 net/remmina-plugin-xdmcp|net/remmina|2020-11-24|Moved to remmina flavored version
 net/remmina-plugins|net/remmina|2020-11-24|Moved to remmina flavored version
+graphics/jpeg|graphics/jpeg-turbo|2020-12-01|Has expired: Outdated and vulnerable, new version breaks API and ABI

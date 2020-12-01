@@ -592,7 +592,7 @@ proxydeps_suggest_uses() {
 	elif [ ${pkg} = "converters/libiconv" ]; then
 		warn "you need USES+=iconv, USES+=iconv:wchar_t, or USES+=iconv:translit depending on needs"
 	# jpeg
-	elif [ ${pkg} = "graphics/jpeg" -o ${pkg} = "graphics/jpeg-turbo" ]; then
+	elif [ ${pkg} = "graphics/jpeg-turbo" ]; then
 		warn "you need USES+=jpeg"
 	# libarchive
 	elif [ ${pkg} = "archivers/libarchive" ]; then

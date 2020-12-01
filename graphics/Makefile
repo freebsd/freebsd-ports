@@ -377,7 +377,6 @@
     SUBDIR += jp
     SUBDIR += jp2a
     SUBDIR += jpatch
-    SUBDIR += jpeg
     SUBDIR += jpeg-turbo
     SUBDIR += jpeg-xl
     SUBDIR += jpeginfo
