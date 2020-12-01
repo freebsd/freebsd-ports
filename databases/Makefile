@@ -53,7 +53,6 @@
     SUBDIR += credis
     SUBDIR += cutelyst-asql
     SUBDIR += dalmp
-    SUBDIR += datamodeler
     SUBDIR += db
     SUBDIR += db5
     SUBDIR += db6

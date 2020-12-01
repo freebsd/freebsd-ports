@@ -90,7 +90,6 @@
     SUBDIR += html2ps
     SUBDIR += hyperlatex
     SUBDIR += indexinfo
-    SUBDIR += jabref
     SUBDIR += kde_poster
     SUBDIR += latex-beamer
     SUBDIR += latex-biber

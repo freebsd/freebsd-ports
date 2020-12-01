@@ -15717,3 +15717,18 @@ net/remmina-plugin-www|net/remmina|2020-11-24|Moved to remmina flavored version
 net/remmina-plugin-xdmcp|net/remmina|2020-11-24|Moved to remmina flavored version
 net/remmina-plugins|net/remmina|2020-11-24|Moved to remmina flavored version
 graphics/jpeg|graphics/jpeg-turbo|2020-12-01|Has expired: Outdated and vulnerable, new version breaks API and ABI
+databases/datamodeler||2020-12-01|Has expired: depends on expiring java/openjfx8-devel
+devel/gradle4||2020-12-01|Has expired: only needed for expiring java/openjfx8-devel
+devel/py-astroid1|devel/py-astroid|2020-12-01|Has expired: Use devel/py-astroid instead
+devel/pylint1|devel/pylint|2020-12-01|Has expired: Use devel/pylint instead
+german/mediathekview||2020-12-01|Has expired: depends on expiring java/openjfx8-devel
+java/openjfx8-devel||2020-12-01|Has expired: No longer maintained upstream
+java/openjfx8-scenebuilder||2020-12-01|Has expired: depends on expiring java/openjfx8-devel
+net-im/py-sleekxmpp|net-im/py-slixmpp|2020-12-01|Has expired: Upstream archived and advices to use net-im/py-slixmpp
+net-mgmt/zabbix44-agent|net-mgmt/zabbix5-agent|2020-12-01|Has expired: End of Life
+net-mgmt/zabbix44-frontend|net-mgmt/zabbix5-frontend|2020-12-01|Has expired: End of Life
+net-mgmt/zabbix44-java|net-mgmt/zabbix5-java|2020-12-01|Has expired: End of Life
+net-mgmt/zabbix44-proxy|net-mgmt/zabbix5-proxy|2020-12-01|Has expired: End of Life
+net-mgmt/zabbix44-server|net-mgmt/zabbix5-server|2020-12-01|Has expired: End of Life
+print/jabref||2020-12-01|Has expired: depends on expiring java/openjfx8-devel
+science/datawarrior||2020-12-01|Has expired: depends on expiring java/openjfx8-devel

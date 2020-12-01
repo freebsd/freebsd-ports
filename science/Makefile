@@ -59,7 +59,6 @@
     SUBDIR += cp2k-data
     SUBDIR += crf++
     SUBDIR += dalton
-    SUBDIR += datawarrior
     SUBDIR += dcl
     SUBDIR += devisor
     SUBDIR += dftbplus

@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cd %%DATADIR%%
-JAVA_VERSION="%%JAVA_VERSION%%" exec %%LOCALBASE%%/bin/java \
-    -Xmx1G -jar MediathekView.jar "$@"
-

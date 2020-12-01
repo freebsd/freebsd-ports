@@ -17,7 +17,6 @@
     SUBDIR += jdictionary-eng-ger
     SUBDIR += jdictionary-ger-hun
     SUBDIR += libreoffice
-    SUBDIR += mediathekview
     SUBDIR += mythes
     SUBDIR += phone
     SUBDIR += schwobifyer
