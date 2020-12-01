@@ -192,7 +192,6 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Si_Zuo_JPCA2020.snap
 %%DATADIR%%/potentials/Si_Zuo_JPCA2020.snapcoeff
 %%DATADIR%%/potentials/Si_Zuo_JPCA2020.snapparam
-%%DATADIR%%/potentials/TABTP_10_10.mesont
 %%DATADIR%%/potentials/Ta06A.mliap
 %%DATADIR%%/potentials/Ta06A.mliap.descriptor
 %%DATADIR%%/potentials/Ta06A.mliap.model
