@@ -1621,6 +1621,8 @@ share/locale/uk/LC_MESSAGES/plasma_wallpaper_org.kde.potd.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_org.kde.plasma.notes.mo
 share/locale/vi/LC_MESSAGES/plasma_applet_org.kde.plasma.weather.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_org.kde.plasma_applet_dict.mo
+share/locale/vi/LC_MESSAGES/plasma_runner_krunner_dictionary.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_org.kde.plasma.binaryclock.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_org.kde.plasma.calculator.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_org.kde.plasma.colorpicker.mo

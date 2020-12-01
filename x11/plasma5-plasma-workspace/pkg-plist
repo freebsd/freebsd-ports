@@ -5283,8 +5283,11 @@ share/locale/vi/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/vi/LC_MESSAGES/plasma_engine_mpris2.mo
 share/locale/vi/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/vi/LC_MESSAGES/plasma_engine_powermanagement.mo
+share/locale/vi/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/vi/LC_MESSAGES/plasma_engine_time.mo
+share/locale/vi/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/vi/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
+share/locale/vi/LC_MESSAGES/plasma_package_plasmashell.mo
 share/locale/vi/LC_MESSAGES/plasma_runner_activities.mo
 share/locale/vi/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/vi/LC_MESSAGES/plasma_runner_baloosearch5.mo

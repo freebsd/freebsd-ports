@@ -859,7 +859,6 @@ share/locale/sv/LC_MESSAGES/kcm-about-distro.mo
 share/locale/sv/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/sv/LC_MESSAGES/kcm_fileindexermonitor.mo
 share/locale/sv/LC_MESSAGES/kcm_memory.mo
-share/locale/sv/LC_MESSAGES/kcm_nic.mo
 share/locale/sv/LC_MESSAGES/kcm_pci.mo
 share/locale/sv/LC_MESSAGES/kcmdevinfo.mo
 share/locale/sv/LC_MESSAGES/kcminfo.mo
