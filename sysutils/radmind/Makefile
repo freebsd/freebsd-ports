@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=	gmake ssl
-MAKE_CMD=	gmake
 USE_RC_SUBR=	radmind
 MAKE_JOBS_UNSAFE=	yes
 
