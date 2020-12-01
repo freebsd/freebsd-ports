@@ -1,20 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	xarcan
-DISTVERSION=	0.5.4-1
-DISTVERSIONSUFFIX=	-g8f075d78b
+DISTVERSION=	0.6.0
 CATEGORIES=	x11-servers
 
-PATCH_SITES=	https://github.com/freedesktop/xorg-xserver/commit/
-PATCHFILES+=	98dc1228f407.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/292
-PATCHFILES+=	c7486613b0dc.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/304
-PATCHFILES+=	3340ddf37743.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/305
-PATCHFILES+=	622eea366aaf.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/318
-PATCHFILES+=	741bd73429e3.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/322
-PATCHFILES+=	f2cf236da8e8.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/393
-PATCHFILES+=	be731e0bdc7d.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/393
-PATCHFILES+=	b5b529799a20.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/393
-PATCHFILES+=	fb310852f67d.patch:-p1 # https://github.com/letoram/xarcan/pull/7
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	2be9063af666.patch:-p1 # https://github.com/letoram/xarcan/pull/8
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	X11 server as Arcan client
