@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vagrant
-PORTVERSION=	2.2.9
+PORTVERSION=	2.2.14
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	sysutils rubygems devel
@@ -13,19 +13,15 @@ COMMENT=	Vagrant Virtual Machine Manager
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# an update to a current version should fix this
-# regarding this MR it should be ruby 2.7 compatible
-# https://github.com/hashicorp/vagrant/pull/11814
-BROKEN_RUBY27=	yes
-
 BUILD_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 		rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
 		rubygem-main>=1.0:devel/rubygem-main
 RUN_DEPENDS=	rubygem-bcrypt_pbkdf>=1.0.0<1.1:security/rubygem-bcrypt_pbkdf \
 		rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
-		rubygem-childprocess3>=3.0.0<3.1.0:devel/rubygem-childprocess3 \
+		rubygem-childprocess>=4.0.0<4.1.0:devel/rubygem-childprocess \
 		rubygem-ed25519>=1.2.4<1.3:security/rubygem-ed25519 \
 		rubygem-erubis>=2.7.0<2.8:www/rubygem-erubis \
+		rubygem-excon>=0.73<1.0:devel/rubygem-excon \
 		rubygem-hashicorp-checkpoint>=0.1.5<0.2:www/rubygem-hashicorp-checkpoint \
 		rubygem-i18n>=1.8,2<2,2:devel/rubygem-i18n \
 		rubygem-listen>=3.1.5:devel/rubygem-listen \
@@ -36,7 +32,7 @@ RUN_DEPENDS=	rubygem-bcrypt_pbkdf>=1.0.0<1.1:security/rubygem-bcrypt_pbkdf \
 		rubygem-rb-kqueue>=0.2.0<0.3:devel/rubygem-rb-kqueue \
 		rubygem-rest-client>=1.6.0<3.0:www/rubygem-rest-client \
 		rubygem-rubyzip>=2.2<3:archivers/rubygem-rubyzip \
-		rubygem-vagrant_cloud>=2.0.3<2.1:sysutils/rubygem-vagrant_cloud \
+		rubygem-vagrant_cloud>=3.0.2<3.1:sysutils/rubygem-vagrant_cloud \
 		rubygem-wdm>=0.1.0<0.2:devel/rubygem-wdm \
 		rubygem-winrm>=2.3.4<3:sysutils/rubygem-winrm \
 		rubygem-winrm-elevated>=1.2.1<2:sysutils/rubygem-winrm-elevated \
@@ -51,7 +47,6 @@ GH_ACCOUNT=	hashicorp
 USES=		shebangfix
 SHEBANG_FILES=	plugins/hosts/darwin/scripts/install_virtualbox.sh \
 		scripts/sign.sh \
-		scripts/website_push_docs.sh \
 		scripts/website_push_www.sh
 USE_RUBY=	yes
 GEMFILES=	vagrant-${PORTVERSION}.gem
