@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	wlrobs
-PORTVERSION=	s20200812
-DISTVERSIONSUFFIX=	-c0b86a1f57b8
+DISTVERSIONPREFIX=	v
+PORTVERSION=	1.0
 CATEGORIES=	multimedia
-#MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONSUFFIX:S/^-//}${EXTRACT_SUFX}?dummy=/
+#MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONFULL:C/.*-//}${EXTRACT_SUFX}?dummy=/
 MASTER_SITES+=	LOCAL/jbeich # https://todo.sr.ht/~sircmpwn/hg.sr.ht/33
-DISTNAME=	${PORTNAME}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland screen capture plugin for obs-studio
