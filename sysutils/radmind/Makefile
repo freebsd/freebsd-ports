@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	radmind
-PORTVERSION=	1.15.2
-PORTREVISION=	2020091801
+PORTVERSION=	1.15.3
+PORTREVISION=	2020113001
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/voretaq7/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
@@ -15,7 +15,8 @@ LICENSE_NAME=	University of Michigan License
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=	ssl
+USES=	gmake ssl
+MAKE_CMD=	gmake
 USE_RC_SUBR=	radmind
 MAKE_JOBS_UNSAFE=	yes
 
