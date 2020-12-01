@@ -24,7 +24,7 @@ CONFLICTS_INSTALL=	nginx-devel
 
 PORTSCOUT=	limit:^1\.18\.[0-9]*
 
-USES=		cpe
+USES=		compiler:c11 cpe
 
 CPE_VENDOR=	nginx
 CPE_PRODUCT=	nginx
