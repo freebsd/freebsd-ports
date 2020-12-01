@@ -2,7 +2,7 @@
 
 PORTNAME=	golangci-lint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.32.2
+DISTVERSION=	1.33.0
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:S/-lint//}
-GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
+GH_TUPLE=	\
+		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		Djarvur:go-err113:5174e21577d5:djarvur_go_err113/vendor/github.com/Djarvur/go-err113 \
 		Masterminds:semver:v1.5.0:masterminds_semver/vendor/github.com/Masterminds/semver \
 		OpenPeeDeeP:depguard:v1.0.1:openpeedeep_depguard/vendor/github.com/OpenPeeDeeP/depguard \
@@ -50,7 +51,6 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		golangci:dupl:3e9179ac440a:golangci_dupl/vendor/github.com/golangci/dupl \
 		golangci:errcheck:ef45e06d44b6:golangci_errcheck/vendor/github.com/golangci/errcheck \
 		golangci:go-misc:927a3d87b613:golangci_go_misc/vendor/github.com/golangci/go-misc \
-		golangci:goconst:041c5f2b40f3:golangci_goconst/vendor/github.com/golangci/goconst \
 		golangci:gocyclo:0a533e8fa43d:golangci_gocyclo/vendor/github.com/golangci/gocyclo \
 		golangci:gofmt:244bba706f1a:golangci_gofmt/vendor/github.com/golangci/gofmt \
 		golangci:ineffassign:42439a7714cc:golangci_ineffassign/vendor/github.com/golangci/ineffassign \
@@ -65,10 +65,12 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		gostaticanalysis:comment:v1.3.0:gostaticanalysis_comment/vendor/github.com/gostaticanalysis/comment \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
+		jgautheron:goconst:ccae5bf973f3:jgautheron_goconst/vendor/github.com/jgautheron/goconst \
 		jingyugao:rowserrcheck:72ab7603b68a:jingyugao_rowserrcheck/vendor/github.com/jingyugao/rowserrcheck \
 		jirfag:go-printf-func-name:45db9963cdd3:jirfag_go_printf_func_name/vendor/github.com/jirfag/go-printf-func-name \
 		kisielk:gotool:v1.0.0:kisielk_gotool/vendor/github.com/kisielk/gotool \
-		kyoh86:exportloopref:v0.1.7:kyoh86_exportloopref/vendor/github.com/kyoh86/exportloopref \
+		kunwardeep:paralleltest:v1.0.2:kunwardeep_paralleltest/vendor/github.com/kunwardeep/paralleltest \
+		kyoh86:exportloopref:v0.1.8:kyoh86_exportloopref/vendor/github.com/kyoh86/exportloopref \
 		leighmcculloch:gochecknoglobals:acfc0b28355a:leighmcculloch_gochecknoglobals/vendor/4d63.com/gochecknoglobals \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		maratori:testpackage:v1.0.1:maratori_testpackage/vendor/github.com/maratori/testpackage \
@@ -114,7 +116,7 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		tdakkota:asciicheck:d7f85be797a2:tdakkota_asciicheck/vendor/github.com/tdakkota/asciicheck \
-		tetafro:godot:v0.4.9:tetafro_godot/vendor/github.com/tetafro/godot \
+		tetafro:godot:v1.3.0:tetafro_godot/vendor/github.com/tetafro/godot \
 		timakin:bodyclose:f7f2e9bca95e:timakin_bodyclose/vendor/github.com/timakin/bodyclose \
 		tomarrell:wrapcheck:df9e8bcb914d:tomarrell_wrapcheck/vendor/github.com/tomarrell/wrapcheck \
 		tommy-muehle:go-mnd:e6f9a994e8fa:tommy_muehle_go_mnd/vendor/github.com/tommy-muehle/go-mnd \
@@ -125,7 +127,7 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		valyala:quicktemplate:v1.6.3:valyala_quicktemplate/vendor/github.com/valyala/quicktemplate
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_COMMIT=	52d26a3
+_BUILD_COMMIT=	b90551c
 _BUILD_DATE=	$$(date -u "+%Y-%m-%dT%H:%M:%SZ")
 
 GO_TARGET=	./cmd/${PORTNAME}
