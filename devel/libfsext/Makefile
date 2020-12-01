@@ -2,7 +2,7 @@
 
 PORTNAME=	libfsext
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20200819
+DISTVERSION=	experimental-20201107
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libfsext/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -14,7 +14,7 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-python
+CONFIGURE_ARGS=	--enable-python --with-openssl=no
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
 USES=		libtool pathfix python:3.5+
 USE_LDCONFIG=	yes
