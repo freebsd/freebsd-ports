@@ -1,5 +1,9 @@
 bin/mousepad
 share/applications/mousepad.desktop
+share/icons/hicolor/128x128/apps/org.xfce.mousepad.png
+share/icons/hicolor/16x16/apps/org.xfce.mousepad.png
+share/icons/hicolor/48x48/apps/org.xfce.mousepad.png
+share/icons/hicolor/scalable/apps/org.xfce.mousepad.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/be/LC_MESSAGES/mousepad.mo
@@ -12,6 +16,7 @@ share/applications/mousepad.desktop
 %%NLS%%share/locale/en_AU/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/es/LC_MESSAGES/mousepad.mo
+%%NLS%%share/locale/et/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mousepad.mo
@@ -20,6 +25,7 @@ share/applications/mousepad.desktop
 %%NLS%%share/locale/hr/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/hy_AM/LC_MESSAGES/mousepad.mo
+%%NLS%%share/locale/hye/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/id/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/ie/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/is/LC_MESSAGES/mousepad.mo
@@ -50,4 +56,5 @@ share/applications/mousepad.desktop
 %%NLS%%share/locale/uk/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/mousepad.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/mousepad.mo
+share/metainfo/mousepad.appdata.xml
 share/polkit-1/actions/org.xfce.mousepad.policy
