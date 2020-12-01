@@ -2,14 +2,14 @@
 
 PORTNAME=	xmenu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.1
+DISTVERSION=	4.4.1
 CATEGORIES=	x11
 
 MAINTAINER=	vulcan@wired.sh
 COMMENT=	X11 menu utility
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/README.md
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libImlib2.so:graphics/imlib2
