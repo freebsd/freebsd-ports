@@ -1,8 +1,8 @@
---- chrome/app/chrome_command_ids.h.orig	2020-05-13 18:39:36 UTC
+--- chrome/app/chrome_command_ids.h.orig	2020-11-13 06:36:35 UTC
 +++ chrome/app/chrome_command_ids.h
-@@ -60,7 +60,7 @@
- #define IDC_MAXIMIZE_WINDOW             34047
+@@ -61,7 +61,7 @@
  #define IDC_ALL_WINDOWS_FRONT           34048
+ #define IDC_NAME_WINDOW                 34049
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)

@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_watchdog_thread.h.orig	2020-09-08 19:14:06 UTC
+--- gpu/ipc/service/gpu_watchdog_thread.h.orig	2020-11-13 06:36:44 UTC
 +++ gpu/ipc/service/gpu_watchdog_thread.h
 @@ -213,7 +213,7 @@ class GPU_IPC_SERVICE_EXPORT GpuWatchdogThreadImplV1
    base::ThreadTicks GetWatchedThreadTime();

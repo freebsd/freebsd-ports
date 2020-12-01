@@ -1,6 +1,6 @@
---- base/system/sys_info_posix.cc.orig	2019-09-09 21:55:05 UTC
+--- base/system/sys_info_posix.cc.orig	2020-11-13 06:36:34 UTC
 +++ base/system/sys_info_posix.cc
-@@ -220,6 +220,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -223,6 +223,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

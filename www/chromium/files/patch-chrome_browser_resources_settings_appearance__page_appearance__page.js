@@ -1,4 +1,4 @@
---- chrome/browser/resources/settings/appearance_page/appearance_page.js.orig	2020-07-07 21:58:14 UTC
+--- chrome/browser/resources/settings/appearance_page/appearance_page.js.orig	2020-11-13 06:36:37 UTC
 +++ chrome/browser/resources/settings/appearance_page/appearance_page.js
 @@ -137,7 +137,7 @@ Polymer({
      'defaultFontSizeChanged_(prefs.webkit.webprefs.default_font_size.value)',

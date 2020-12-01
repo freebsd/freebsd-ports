@@ -1,4 +1,4 @@
---- third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp.orig	2019-03-11 22:07:59 UTC
+--- third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp.orig	2020-11-13 06:42:14 UTC
 +++ third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp
 @@ -8,6 +8,8 @@
  

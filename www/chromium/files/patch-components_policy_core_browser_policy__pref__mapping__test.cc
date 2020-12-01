@@ -1,4 +1,4 @@
---- components/policy/core/browser/policy_pref_mapping_test.cc.orig	2020-07-13 09:35:12 UTC
+--- components/policy/core/browser/policy_pref_mapping_test.cc.orig	2020-11-13 06:36:41 UTC
 +++ components/policy/core/browser/policy_pref_mapping_test.cc
 @@ -270,6 +270,8 @@ class PolicyTestCase {
      const std::string os("chromeos");

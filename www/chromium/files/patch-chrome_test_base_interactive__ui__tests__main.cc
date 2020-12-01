@@ -1,4 +1,4 @@
---- chrome/test/base/interactive_ui_tests_main.cc.orig	2020-09-08 19:14:01 UTC
+--- chrome/test/base/interactive_ui_tests_main.cc.orig	2020-11-13 06:36:38 UTC
 +++ chrome/test/base/interactive_ui_tests_main.cc
 @@ -16,7 +16,7 @@
  #if defined(USE_AURA)

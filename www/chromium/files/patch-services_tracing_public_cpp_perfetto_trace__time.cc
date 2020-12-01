@@ -1,14 +1,15 @@
---- services/tracing/public/cpp/perfetto/trace_time.cc.orig	2020-07-07 21:57:41 UTC
+--- services/tracing/public/cpp/perfetto/trace_time.cc.orig	2020-11-13 06:36:46 UTC
 +++ services/tracing/public/cpp/perfetto/trace_time.cc
-@@ -12,13 +12,17 @@ namespace tracing {
+@@ -12,14 +12,18 @@ namespace tracing {
  
  int64_t TraceBootTicksNow() {
    // On Windows and Mac, TRACE_TIME_TICKS_NOW() behaves like boottime already.
--#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD) || \
+     defined(OS_FUCHSIA)
    struct timespec ts;
-+#if defined(OS_BSD)
 +  int res = clock_gettime(CLOCK_UPTIME, &ts);
++#if defined(OS_BSD)
 +#else
    int res = clock_gettime(CLOCK_BOOTTIME, &ts);
 +#endif

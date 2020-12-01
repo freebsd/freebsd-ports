@@ -1,6 +1,6 @@
---- chrome/test/chromedriver/chrome_launcher.cc.orig	2020-09-08 19:14:01 UTC
+--- chrome/test/chromedriver/chrome_launcher.cc.orig	2020-11-13 06:36:38 UTC
 +++ chrome/test/chromedriver/chrome_launcher.cc
-@@ -69,6 +69,10 @@
+@@ -71,6 +71,10 @@
  #include "chrome/test/chromedriver/keycode_text_conversion.h"
  #endif
  

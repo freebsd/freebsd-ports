@@ -1,4 +1,4 @@
---- build/config/freetype/freetype.gni.orig	2019-03-18 08:59:45 UTC
+--- build/config/freetype/freetype.gni.orig	2020-11-13 06:36:34 UTC
 +++ build/config/freetype/freetype.gni
 @@ -10,5 +10,5 @@ declare_args() {
    # than version 2.7.1 and have color bitmap support compiled in. WARNING:

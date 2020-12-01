@@ -1,4 +1,4 @@
---- base/process/launch_posix.cc.orig	2020-09-08 19:13:57 UTC
+--- base/process/launch_posix.cc.orig	2020-11-13 06:36:34 UTC
 +++ base/process/launch_posix.cc
 @@ -65,6 +65,7 @@
  #error "macOS should use launch_mac.cc"
@@ -8,7 +8,7 @@
  extern char** environ;
  
  namespace base {
-@@ -228,6 +229,28 @@
+@@ -228,6 +229,28 @@ void CloseSuperfluousFds(const base::InjectiveMultimap
    DirReaderPosix fd_dir(kFDDir);
    if (!fd_dir.IsValid()) {
      // Fallback case: Try every possible fd.

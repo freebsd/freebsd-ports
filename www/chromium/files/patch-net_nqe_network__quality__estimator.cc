@@ -1,11 +1,11 @@
---- net/nqe/network_quality_estimator.cc.orig	2020-07-07 21:57:40 UTC
+--- net/nqe/network_quality_estimator.cc.orig	2020-11-13 06:36:46 UTC
 +++ net/nqe/network_quality_estimator.cc
-@@ -105,7 +105,7 @@ nqe::internal::NetworkID DoGetCurrentNetworkID(
+@@ -108,7 +108,7 @@ nqe::internal::NetworkID DoGetCurrentNetworkID(
        case NetworkChangeNotifier::ConnectionType::CONNECTION_ETHERNET:
          break;
        case NetworkChangeNotifier::ConnectionType::CONNECTION_WIFI:
--#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || \
+     defined(OS_WIN)
          network_id.id = GetWifiSSID();
  #endif
-         break;

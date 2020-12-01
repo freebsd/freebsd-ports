@@ -1,9 +1,9 @@
---- chrome/browser/ui/test/test_browser_ui.cc.orig	2020-09-08 19:14:01 UTC
+--- chrome/browser/ui/test/test_browser_ui.cc.orig	2020-11-13 06:36:38 UTC
 +++ chrome/browser/ui/test/test_browser_ui.cc
 @@ -10,7 +10,7 @@
  #include "build/build_config.h"
  
- #if defined(OS_WIN) || defined(OS_MACOSX) || \
+ #if defined(OS_WIN) || defined(OS_MAC) || \
 -    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
 +    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  #include "chrome/test/pixel/browser_skia_gold_pixel_diff.h"

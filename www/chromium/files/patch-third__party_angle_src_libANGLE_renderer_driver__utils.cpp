@@ -1,6 +1,6 @@
---- third_party/angle/src/libANGLE/renderer/driver_utils.cpp.orig	2020-05-18 12:56:36 UTC
+--- third_party/angle/src/libANGLE/renderer/driver_utils.cpp.orig	2020-11-13 06:42:14 UTC
 +++ third_party/angle/src/libANGLE/renderer/driver_utils.cpp
-@@ -16,7 +16,7 @@
+@@ -17,7 +17,7 @@
  #    include <sys/system_properties.h>
  #endif
  
@@ -9,7 +9,7 @@
  #    include <sys/utsname.h>
  #endif
  
-@@ -206,7 +206,7 @@ OSVersion GetMacOSVersion()
+@@ -207,7 +207,7 @@ OSVersion GetMacOSVersion()
  }
  #endif
  
@@ -18,7 +18,7 @@
  bool ParseLinuxOSVersion(const char *version, int *major, int *minor, int *patch)
  {
      errno = 0;  // reset global error flag.
-@@ -218,6 +218,14 @@ bool ParseLinuxOSVersion(const char *version, int *maj
+@@ -219,6 +219,14 @@ bool ParseLinuxOSVersion(const char *version, int *maj
      }
  
      *minor = static_cast<int>(strtol(next + 1, &next, 10));
@@ -33,7 +33,7 @@
      if (next == nullptr || *next != '.' || errno != 0)
      {
          return false;
-@@ -228,6 +236,7 @@ bool ParseLinuxOSVersion(const char *version, int *maj
+@@ -229,6 +237,7 @@ bool ParseLinuxOSVersion(const char *version, int *maj
      {
          return false;
      }
@@ -41,7 +41,7 @@
  
      return true;
  }
-@@ -235,7 +244,7 @@ bool ParseLinuxOSVersion(const char *version, int *maj
+@@ -236,7 +245,7 @@ bool ParseLinuxOSVersion(const char *version, int *maj
  
  OSVersion GetLinuxOSVersion()
  {

@@ -1,6 +1,6 @@
---- net/cert/test_root_certs.h.orig	2020-09-08 19:14:08 UTC
+--- net/cert/test_root_certs.h.orig	2020-11-13 06:36:45 UTC
 +++ net/cert/test_root_certs.h
-@@ -75,7 +75,7 @@
+@@ -75,7 +75,7 @@ class NET_EXPORT TestRootCerts {
    // engine is appropriate. The caller is responsible for freeing the
    // returned HCERTCHAINENGINE.
    HCERTCHAINENGINE GetChainEngine() const;
@@ -9,8 +9,8 @@
    TrustStore* test_trust_store() { return &test_trust_store_; }
  #endif
  
-@@ -93,12 +93,12 @@
- #elif defined(OS_MACOSX)
+@@ -93,12 +93,12 @@ class NET_EXPORT TestRootCerts {
+ #elif defined(OS_APPLE)
    base::ScopedCFTypeRef<CFMutableArrayRef> temporary_roots_;
    TrustStoreInMemory test_trust_store_;
 -#elif defined(OS_FUCHSIA) || defined(OS_LINUX) || defined(OS_CHROMEOS)

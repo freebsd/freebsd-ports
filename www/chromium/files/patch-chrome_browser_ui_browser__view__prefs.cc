@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_view_prefs.cc.orig	2020-09-08 19:14:01 UTC
+--- chrome/browser/ui/browser_view_prefs.cc.orig	2020-11-13 06:36:38 UTC
 +++ chrome/browser/ui/browser_view_prefs.cc
 @@ -26,7 +26,7 @@ namespace {
  // Old values: 0 = SHRINK (default), 1 = STACKED.

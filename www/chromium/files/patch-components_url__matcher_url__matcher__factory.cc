@@ -1,4 +1,4 @@
---- components/url_matcher/url_matcher_factory.cc.orig	2019-03-11 22:00:57 UTC
+--- components/url_matcher/url_matcher_factory.cc.orig	2020-11-13 06:36:42 UTC
 +++ components/url_matcher/url_matcher_factory.cc
 @@ -16,7 +16,11 @@
  #include "base/values.h"

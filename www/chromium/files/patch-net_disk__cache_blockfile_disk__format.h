@@ -1,4 +1,4 @@
---- net/disk_cache/blockfile/disk_format.h.orig	2019-03-11 22:01:01 UTC
+--- net/disk_cache/blockfile/disk_format.h.orig	2020-11-13 06:36:45 UTC
 +++ net/disk_cache/blockfile/disk_format.h
 @@ -149,7 +149,9 @@ struct RankingsNode {
  };

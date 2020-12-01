@@ -1,0 +1,12 @@
+--- ui/ozone/ozone.gni.orig	2020-11-16 15:29:43 UTC
++++ ui/ozone/ozone.gni
+@@ -69,6 +69,9 @@ declare_args() {
+       ozone_platform = "x11"
+       ozone_platform_drm = true
+       ozone_platform_x11 = true
++    } else if (is_bsd) {
++      ozone_platform = "x11"
++      ozone_platform_x11 = true
+     } else if (is_desktop_linux) {
+       ozone_platform = "x11"
+       ozone_platform_wayland = true

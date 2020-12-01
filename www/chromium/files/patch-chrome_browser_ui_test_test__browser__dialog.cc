@@ -1,4 +1,4 @@
---- chrome/browser/ui/test/test_browser_dialog.cc.orig	2020-07-13 09:23:32 UTC
+--- chrome/browser/ui/test/test_browser_dialog.cc.orig	2020-11-13 06:36:38 UTC
 +++ chrome/browser/ui/test/test_browser_dialog.cc
 @@ -114,7 +114,7 @@ bool TestBrowserDialog::VerifyUi() {
  

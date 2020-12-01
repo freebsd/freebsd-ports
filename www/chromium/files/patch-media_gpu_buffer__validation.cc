@@ -1,21 +1,21 @@
---- media/gpu/buffer_validation.cc.orig	2019-12-17 19:41:51 UTC
+--- media/gpu/buffer_validation.cc.orig	2020-11-13 06:36:44 UTC
 +++ media/gpu/buffer_validation.cc
 @@ -12,15 +12,15 @@
  #include "ui/gfx/geometry/size.h"
  #include "ui/gfx/gpu_memory_buffer.h"
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include <sys/types.h>
  #include <unistd.h>
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_LINUX) || defined(OS_BSD)
+-#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
++#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
  namespace media {
  
  bool GetFileSize(const int fd, size_t* size) {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (fd < 0) {
      VLOGF(1) << "Invalid file descriptor";
      return false;
@@ -23,8 +23,8 @@
  #else
    NOTIMPLEMENTED();
    return false;
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_LINUX) || defined(OS_BSD)
+-#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
++#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  }
  
  bool VerifyGpuMemoryBufferHandle(media::VideoPixelFormat pixel_format,
@@ -32,8 +32,8 @@
      VLOGF(1) << "Unexpected GpuMemoryBufferType: " << gmb_handle.type;
      return false;
    }
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    const size_t num_planes = media::VideoFrame::NumPlanes(pixel_format);
    if (num_planes != gmb_handle.native_pixmap_handle.planes.size() ||
        num_planes == 0) {
@@ -41,8 +41,8 @@
  #else
    NOTIMPLEMENTED();
    return false;
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_LINUX) || defined(OS_BSD)
+-#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
++#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  }
  
  }  // namespace media

@@ -1,4 +1,4 @@
---- headless/lib/browser/headless_request_context_manager.cc.orig	2020-09-08 19:14:06 UTC
+--- headless/lib/browser/headless_request_context_manager.cc.orig	2020-11-13 06:36:44 UTC
 +++ headless/lib/browser/headless_request_context_manager.cc
 @@ -26,7 +26,7 @@ namespace headless {
  

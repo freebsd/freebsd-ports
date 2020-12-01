@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/system_menu_model_delegate.cc.orig	2019-06-04 18:55:18 UTC
+--- chrome/browser/ui/views/frame/system_menu_model_delegate.cc.orig	2020-11-13 06:36:38 UTC
 +++ chrome/browser/ui/views/frame/system_menu_model_delegate.cc
 @@ -15,7 +15,7 @@
  #include "components/sessions/core/tab_restore_service.h"

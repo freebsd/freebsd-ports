@@ -1,15 +1,15 @@
---- components/crash/content/browser/BUILD.gn.orig	2019-03-11 22:00:56 UTC
+--- components/crash/content/browser/BUILD.gn.orig	2020-11-13 06:36:40 UTC
 +++ components/crash/content/browser/BUILD.gn
-@@ -28,7 +28,7 @@ source_set("browser") {
+@@ -35,7 +35,7 @@ source_set("browser") {
      "//content/public/common",
    ]
  
--  if (is_linux || is_android) {
-+  if ((is_linux && !is_bsd) || is_android) {
+-  if (is_linux || is_chromeos || is_android) {
++  if ((is_linux || is_chromeos || is_android) && !is_bsd) {
      set_sources_assignment_filter([])
  
      # Want this file on both Linux and Android.
-@@ -42,13 +42,13 @@ source_set("browser") {
+@@ -49,13 +49,13 @@ source_set("browser") {
      deps += [ "//third_party/crashpad/crashpad/client" ]
    }
  

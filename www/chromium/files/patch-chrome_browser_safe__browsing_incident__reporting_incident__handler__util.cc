@@ -1,4 +1,4 @@
---- chrome/browser/safe_browsing/incident_reporting/incident_handler_util.cc.orig	2020-07-07 21:57:32 UTC
+--- chrome/browser/safe_browsing/incident_reporting/incident_handler_util.cc.orig	2020-11-13 06:36:37 UTC
 +++ chrome/browser/safe_browsing/incident_reporting/incident_handler_util.cc
 @@ -8,7 +8,11 @@
  

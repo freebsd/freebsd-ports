@@ -1,6 +1,6 @@
---- third_party/blink/public/common/privacy_budget/identifiable_token.h.orig	2020-10-20 16:51:58 UTC
+--- third_party/blink/public/common/privacy_budget/identifiable_token.h.orig	2020-11-18 10:21:45 UTC
 +++ third_party/blink/public/common/privacy_budget/identifiable_token.h
-@@ -115,7 +115,7 @@ class IdentifiableToken {
+@@ -118,7 +118,7 @@ class IdentifiableToken {
  
    // Enums. Punt to the underlying type.
    template <typename T,

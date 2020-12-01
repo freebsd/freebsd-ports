@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/chrome_views_delegate.h.orig	2019-06-04 18:55:18 UTC
+--- chrome/browser/ui/views/chrome_views_delegate.h.orig	2020-11-13 06:36:38 UTC
 +++ chrome/browser/ui/views/chrome_views_delegate.h
 @@ -44,7 +44,7 @@ class ChromeViewsDelegate : public views::ViewsDelegat
    HICON GetSmallWindowIcon() const override;

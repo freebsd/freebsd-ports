@@ -1,6 +1,34 @@
---- third_party/angle/BUILD.gn.orig	2020-07-07 22:03:17 UTC
+--- third_party/angle/BUILD.gn.orig	2020-11-13 06:42:14 UTC
 +++ third_party/angle/BUILD.gn
-@@ -363,6 +363,7 @@ angle_static_library("angle_gpu_info_util") {
+@@ -141,10 +141,17 @@ config("extra_warnings") {
+     ]
+   }
+   if (is_clang) {
++    if (!is_bsd) {
++      cflags += [
++        "-Wdeprecated-copy",
++        "-Wsuggest-destructor-override",
++        "-Wsuggest-override",
++      ]
++    }
++
+     cflags += [
+       "-Wbad-function-cast",
+       "-Wconditional-uninitialized",
+-      "-Wdeprecated-copy",
+       "-Wextra-semi-stmt",
+       "-Wfloat-conversion",
+       "-Winconsistent-missing-destructor-override",
+@@ -154,8 +161,6 @@ config("extra_warnings") {
+       "-Wredundant-parens",
+       "-Wreturn-std-move-in-c++11",
+       "-Wshadow-field",
+-      "-Wsuggest-destructor-override",
+-      "-Wsuggest-override",
+       "-Wtautological-type-limit-compare",
+       "-Wundefined-reinterpret-cast",
+       "-Wunneeded-internal-declaration",
+@@ -396,6 +401,7 @@ angle_static_library("angle_gpu_info_util") {
          "X11",
          "Xi",
          "Xext",

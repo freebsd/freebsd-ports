@@ -1,6 +1,6 @@
---- third_party/perfetto/src/base/subprocess.cc.orig	2020-07-07 22:03:25 UTC
+--- third_party/perfetto/src/base/subprocess.cc.orig	2020-11-13 06:42:20 UTC
 +++ third_party/perfetto/src/base/subprocess.cc
-@@ -33,8 +33,8 @@
+@@ -35,8 +35,8 @@
  #include "perfetto/base/time.h"
  #include "perfetto/ext/base/utils.h"
  
@@ -11,7 +11,7 @@
  #include <sys/prctl.h>
  #endif
  
-@@ -58,8 +58,8 @@ struct ChildProcessArgs {
+@@ -60,8 +60,8 @@ struct ChildProcessArgs {
  // Don't add any dynamic allocation in this function. This will be invoked
  // under a fork(), potentially in a state where the allocator lock is held.
  void __attribute__((noreturn)) ChildProcess(ChildProcessArgs* args) {

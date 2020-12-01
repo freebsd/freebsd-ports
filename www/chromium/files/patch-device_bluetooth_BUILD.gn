@@ -1,6 +1,15 @@
---- device/bluetooth/BUILD.gn.orig	2020-03-16 18:39:51 UTC
+--- device/bluetooth/BUILD.gn.orig	2020-11-13 06:36:43 UTC
 +++ device/bluetooth/BUILD.gn
-@@ -275,7 +275,7 @@ component("bluetooth") {
+@@ -8,7 +8,7 @@ if (is_android) {
+ }
+ if (is_chromeos) {
+   import("//chromeos/dbus/use_real_dbus_clients.gni")
+-} else if (use_dbus) {
++} else if (use_dbus && !is_bsd) {
+   use_real_dbus_clients = false
+ }
+ 
+@@ -294,7 +294,7 @@ component("bluetooth") {
      ]
    }
  

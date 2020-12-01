@@ -1,4 +1,4 @@
---- extensions/shell/browser/shell_extensions_api_client.cc.orig	2019-09-09 21:55:17 UTC
+--- extensions/shell/browser/shell_extensions_api_client.cc.orig	2020-11-13 06:36:43 UTC
 +++ extensions/shell/browser/shell_extensions_api_client.cc
 @@ -16,7 +16,7 @@
  #include "extensions/shell/browser/shell_virtual_keyboard_delegate.h"

@@ -1,6 +1,6 @@
---- third_party/node/node.py.orig	2019-03-11 22:01:16 UTC
+--- third_party/node/node.py.orig	2020-11-13 06:37:03 UTC
 +++ third_party/node/node.py
-@@ -12,6 +12,7 @@ import sys
+@@ -13,6 +13,7 @@ import os
  def GetBinaryPath():
    return os_path.join(os_path.dirname(__file__), *{
      'Darwin': ('mac', 'node-darwin-x64', 'bin', 'node'),

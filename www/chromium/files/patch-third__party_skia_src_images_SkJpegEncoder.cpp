@@ -1,4 +1,4 @@
---- third_party/skia/src/images/SkJpegEncoder.cpp.orig	2019-09-09 21:57:02 UTC
+--- third_party/skia/src/images/SkJpegEncoder.cpp.orig	2020-11-13 06:42:23 UTC
 +++ third_party/skia/src/images/SkJpegEncoder.cpp
 @@ -76,9 +76,14 @@ bool SkJpegEncoderMgr::setParams(const SkImageInfo& sr
          return (transform_scanline_proc) nullptr;

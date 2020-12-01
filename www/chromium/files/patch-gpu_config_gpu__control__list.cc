@@ -1,4 +1,4 @@
---- gpu/config/gpu_control_list.cc.orig	2020-09-08 19:14:06 UTC
+--- gpu/config/gpu_control_list.cc.orig	2020-11-13 06:36:44 UTC
 +++ gpu/config/gpu_control_list.cc
 @@ -17,7 +17,11 @@
  #include "base/values.h"
@@ -19,7 +19,7 @@
 -#elif defined(OS_LINUX) || defined(OS_OPENBSD)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
    return kGLTypeGL;
- #elif defined(OS_MACOSX)
+ #elif defined(OS_MAC)
    return kGLTypeGL;
 @@ -781,7 +785,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
    return kOsAndroid;
@@ -28,5 +28,5 @@
 -#elif defined(OS_LINUX) || defined(OS_OPENBSD)
 +#elif defined(OS_LINUX) || defined(OS_BSD)
    return kOsLinux;
- #elif defined(OS_MACOSX)
+ #elif defined(OS_MAC)
    return kOsMacosx;

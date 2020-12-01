@@ -1,4 +1,4 @@
---- third_party/swiftshader/src/System/Debug.cpp.orig	2020-05-18 15:37:03 UTC
+--- third_party/swiftshader/src/System/Debug.cpp.orig	2020-11-13 06:42:23 UTC
 +++ third_party/swiftshader/src/System/Debug.cpp
 @@ -18,16 +18,20 @@
  #	include <android/log.h>

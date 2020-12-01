@@ -1,4 +1,4 @@
---- net/url_request/url_fetcher.h.orig	2020-07-07 21:57:40 UTC
+--- net/url_request/url_fetcher.h.orig	2020-11-13 06:36:46 UTC
 +++ net/url_request/url_fetcher.h
 @@ -355,7 +355,7 @@ class NET_EXPORT URLFetcher {
    // The unannotated Create() methods are not available on desktop Linux +

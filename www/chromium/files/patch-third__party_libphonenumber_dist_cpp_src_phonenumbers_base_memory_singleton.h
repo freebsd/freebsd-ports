@@ -1,4 +1,4 @@
---- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h.orig	2019-03-11 22:08:01 UTC
+--- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h.orig	2020-11-13 06:42:18 UTC
 +++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h
 @@ -56,7 +56,7 @@ template <class T> boost::once_flag Singleton<T>::flag
  #include "phonenumbers/base/logging.h"

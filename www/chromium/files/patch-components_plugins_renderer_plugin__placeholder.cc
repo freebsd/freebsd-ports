@@ -1,4 +1,4 @@
---- components/plugins/renderer/plugin_placeholder.cc.orig	2019-03-11 22:00:56 UTC
+--- components/plugins/renderer/plugin_placeholder.cc.orig	2020-11-13 06:36:41 UTC
 +++ components/plugins/renderer/plugin_placeholder.cc
 @@ -17,7 +17,11 @@
  #include "third_party/blink/public/web/web_plugin_container.h"

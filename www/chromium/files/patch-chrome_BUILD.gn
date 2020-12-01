@@ -1,0 +1,13 @@
+--- chrome/BUILD.gn.orig	2020-11-16 16:03:08 UTC
++++ chrome/BUILD.gn
+@@ -1214,6 +1214,10 @@ group("browser_dependencies") {
+     public_deps += [ "//chromeos/lacros" ]
+   }
+ 
++  if (is_bsd) {
++    public_deps -= [ "//components/crash/core/app" ]
++  }
++
+   if (is_chromeos) {
+     public_deps += [
+       "//chrome/browser/chromeos",

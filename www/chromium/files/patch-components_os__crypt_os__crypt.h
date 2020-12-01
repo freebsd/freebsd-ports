@@ -1,4 +1,4 @@
---- components/os_crypt/os_crypt.h.orig	2020-02-03 21:53:30 UTC
+--- components/os_crypt/os_crypt.h.orig	2020-11-13 06:36:41 UTC
 +++ components/os_crypt/os_crypt.h
 @@ -15,9 +15,9 @@
  #include "base/strings/string16.h"
@@ -10,7 +10,7 @@
 -#endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#endif  // (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  
- #if defined(OS_WIN) || (defined(OS_MACOSX) && !defined(OS_IOS))
+ #if defined(OS_WIN) || defined(OS_MAC)
  class PrefRegistrySimple;
 @@ -34,13 +34,13 @@ struct Config;
  // true for Linux, if a password management tool is available.
@@ -24,8 +24,8 @@
 -#endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#endif  // (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  
--#if defined(OS_MACOSX) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+#if defined(OS_MACOSX) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-#if defined(OS_APPLE) || (defined(OS_LINUX) && !defined(OS_CHROMEOS))
++#if defined(OS_APPLE) || (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    // On Linux returns true iff the real secret key (not hardcoded one) is
    // available. On MacOS returns true if Keychain is available (for mock
    // Keychain it returns true if not using locked Keychain, false if using

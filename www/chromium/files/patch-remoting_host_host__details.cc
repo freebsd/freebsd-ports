@@ -1,4 +1,4 @@
---- remoting/host/host_details.cc.orig	2019-09-09 21:55:22 UTC
+--- remoting/host/host_details.cc.orig	2020-11-13 06:36:46 UTC
 +++ remoting/host/host_details.cc
 @@ -22,7 +22,7 @@ std::string GetHostOperatingSystemName() {
    return "Mac";

@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_main_linux.cc.orig	2020-09-08 19:13:59 UTC
+--- chrome/browser/chrome_browser_main_linux.cc.orig	2020-11-13 06:36:36 UTC
 +++ chrome/browser/chrome_browser_main_linux.cc
 @@ -81,6 +81,7 @@ void ChromeBrowserMainPartsLinux::PreProfileInit() {
  void ChromeBrowserMainPartsLinux::PostProfileInit() {

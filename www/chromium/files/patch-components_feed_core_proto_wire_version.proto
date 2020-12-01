@@ -1,0 +1,13 @@
+--- components/feed/core/proto/wire/version.proto.orig	2020-11-26 17:11:18 UTC
++++ components/feed/core/proto/wire/version.proto
+@@ -14,8 +14,8 @@ option java_outer_classname = "VersionProto";
+ // Specification of an application or OS version.
+ // A version string typically looks like: 'major.minor.build.revision'
+ message Version {
+-  optional int32 major = 1;
+-  optional int32 minor = 2;
++  optional int32 gmajor = 1;
++  optional int32 gminor = 2;
+   optional int32 build = 3;
+   optional int32 revision = 4;
+ 

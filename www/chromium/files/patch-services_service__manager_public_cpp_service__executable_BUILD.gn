@@ -1,14 +1,11 @@
---- services/service_manager/public/cpp/service_executable/BUILD.gn.orig	2019-04-30 22:22:56 UTC
+--- services/service_manager/public/cpp/service_executable/BUILD.gn.orig	2020-11-13 06:36:46 UTC
 +++ services/service_manager/public/cpp/service_executable/BUILD.gn
-@@ -29,6 +29,11 @@ source_set("support") {
-       "//sandbox/linux:seccomp_bpf",
-     ]
-   }
-+  if (is_bsd) {
-+    deps -= [
-+      "//sandbox/linux:seccomp_bpf"
-+    ]
-+  }
- }
+@@ -22,7 +22,7 @@ source_set("support") {
+     "//services/service_manager/public/mojom",
+   ]
  
- source_set("switches") {
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     deps += [
+       "//sandbox/linux:sandbox",
+       "//sandbox/linux:sandbox_services",

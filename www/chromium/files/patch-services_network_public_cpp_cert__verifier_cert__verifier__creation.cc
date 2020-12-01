@@ -1,4 +1,4 @@
---- services/network/public/cpp/cert_verifier/cert_verifier_creation.cc.orig	2020-07-13 09:58:25 UTC
+--- services/network/public/cpp/cert_verifier/cert_verifier_creation.cc.orig	2020-11-13 06:36:46 UTC
 +++ services/network/public/cpp/cert_verifier/cert_verifier_creation.cc
 @@ -70,7 +70,7 @@ scoped_refptr<net::CertVerifyProc> CreateCertVerifyPro
  

@@ -1,4 +1,4 @@
---- base/process/process_metrics_freebsd.cc.orig	2020-09-08 19:13:57 UTC
+--- base/process/process_metrics_freebsd.cc.orig	2020-11-13 06:36:34 UTC
 +++ base/process/process_metrics_freebsd.cc
 @@ -3,8 +3,10 @@
  // found in the LICENSE file.
@@ -43,7 +43,7 @@
  
  // static
  std::unique_ptr<ProcessMetrics> ProcessMetrics::CreateProcessMetrics(
-@@ -74,4 +94,216 @@ size_t GetSystemCommitCharge() {
+@@ -69,4 +89,216 @@ size_t GetSystemCommitCharge() {
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
  }
  

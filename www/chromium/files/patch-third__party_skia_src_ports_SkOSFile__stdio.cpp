@@ -1,4 +1,4 @@
---- third_party/skia/src/ports/SkOSFile_stdio.cpp.orig	2020-02-03 21:54:56 UTC
+--- third_party/skia/src/ports/SkOSFile_stdio.cpp.orig	2020-11-13 06:42:23 UTC
 +++ third_party/skia/src/ports/SkOSFile_stdio.cpp
 @@ -132,7 +132,7 @@ void sk_fflush(FILE* f) {
  

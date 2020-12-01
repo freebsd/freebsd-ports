@@ -1,4 +1,4 @@
---- chrome/browser/search/search_suggest/search_suggest_service.cc.orig	2020-05-13 18:39:38 UTC
+--- chrome/browser/search/search_suggest/search_suggest_service.cc.orig	2020-11-13 06:36:37 UTC
 +++ chrome/browser/search/search_suggest/search_suggest_service.cc
 @@ -21,7 +21,11 @@
  #include "components/prefs/scoped_user_pref_update.h"

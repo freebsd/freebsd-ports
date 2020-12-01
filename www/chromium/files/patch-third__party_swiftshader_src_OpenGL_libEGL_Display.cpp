@@ -1,4 +1,4 @@
---- third_party/swiftshader/src/OpenGL/libEGL/Display.cpp.orig	2020-05-13 18:41:54 UTC
+--- third_party/swiftshader/src/OpenGL/libEGL/Display.cpp.orig	2020-11-13 06:42:23 UTC
 +++ third_party/swiftshader/src/OpenGL/libEGL/Display.cpp
 @@ -691,7 +691,7 @@ bool Display::isValidWindow(EGLNativeWindowType window
  			return status != 0;

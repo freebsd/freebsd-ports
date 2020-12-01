@@ -1,16 +1,19 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2020-09-08 19:14:05 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2020-11-13 06:36:42 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
-@@ -19,7 +19,9 @@
+@@ -18,9 +18,12 @@
+ #include "content/public/common/content_switches.h"
  #include "content/public/common/result_codes.h"
  #include "content/public/common/sandboxed_process_launcher_delegate.h"
- #include "content/public/common/zygote/sandbox_support_linux.h"
++
 +#if !defined(OS_BSD)
+ #include "content/public/common/zygote/sandbox_support_linux.h"
  #include "content/public/common/zygote/zygote_handle.h"
+ #include "sandbox/policy/linux/sandbox_linux.h"
 +#endif
- #include "services/service_manager/sandbox/linux/sandbox_linux.h"
  
  namespace content {
-@@ -50,10 +52,12 @@ bool ChildProcessLauncherHelper::BeforeLaunchOnLaunche
+ namespace internal {
+@@ -50,10 +53,12 @@ bool ChildProcessLauncherHelper::BeforeLaunchOnLaunche
    options->fds_to_remap = files_to_register.GetMappingWithIDAdjustment(
        base::GlobalDescriptors::kBaseDescriptor);
  
@@ -23,7 +26,7 @@
  
    options->environment = delegate_->GetEnvironment();
  
-@@ -68,6 +72,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -68,6 +73,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      int* launch_result) {
    *is_synchronous_launch = true;
  
@@ -31,7 +34,7 @@
    ZygoteHandle zygote_handle =
        base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote)
            ? nullptr
-@@ -97,6 +102,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -97,6 +103,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      process.zygote = zygote_handle;
      return process;
    }
@@ -39,7 +42,7 @@
  
    Process process;
    process.process = base::LaunchProcess(*command_line(), options);
-@@ -114,10 +120,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
+@@ -114,10 +121,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead) {
    ChildProcessTerminationInfo info;
@@ -54,9 +57,9 @@
      info.status = base::GetKnownDeadTerminationStatus(process.process.Handle(),
                                                        &info.exit_code);
    } else {
-@@ -141,13 +151,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
+@@ -141,13 +152,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
    DCHECK(CurrentlyOnProcessLauncherTaskRunner());
-   process.process.Terminate(service_manager::RESULT_CODE_NORMAL_EXIT, false);
+   process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
 +#if !defined(OS_BSD)
    if (process.zygote) {

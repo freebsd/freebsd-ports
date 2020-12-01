@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/thread_task_runner.cc.orig	2020-07-07 22:03:25 UTC
+--- third_party/perfetto/src/base/thread_task_runner.cc.orig	2020-11-13 06:42:20 UTC
 +++ third_party/perfetto/src/base/thread_task_runner.cc
 @@ -28,7 +28,7 @@
  #include "perfetto/ext/base/thread_utils.h"

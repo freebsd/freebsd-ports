@@ -1,6 +1,6 @@
---- components/viz/test/fake_output_surface.h.orig	2020-09-08 19:14:05 UTC
+--- components/viz/test/fake_output_surface.h.orig	2020-11-13 06:36:42 UTC
 +++ components/viz/test/fake_output_surface.h
-@@ -82,7 +82,7 @@ class FakeOutputSurface : public OutputSurface {
+@@ -86,7 +86,7 @@ class FakeOutputSurface : public OutputSurface {
        UpdateVSyncParametersCallback callback) override;
    void SetDisplayTransformHint(gfx::OverlayTransform transform) override;
    gfx::OverlayTransform GetDisplayTransform() override;

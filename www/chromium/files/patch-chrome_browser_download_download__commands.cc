@@ -1,35 +1,35 @@
---- chrome/browser/download/download_commands.cc.orig	2020-05-13 18:39:37 UTC
+--- chrome/browser/download/download_commands.cc.orig	2020-11-13 06:36:36 UTC
 +++ chrome/browser/download/download_commands.cc
 @@ -27,7 +27,7 @@
  #include "net/base/url_util.h"
  #include "ui/base/clipboard/scoped_clipboard_writer.h"
  
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || \
+     defined(OS_MAC)
  #include "chrome/browser/ui/browser.h"
  #include "chrome/browser/ui/browser_finder.h"
- #include "chrome/browser/ui/scoped_tabbed_browser_displayer.h"
-@@ -154,7 +154,7 @@ void DownloadCommands::ExecuteCommand(Command command)
+@@ -155,7 +155,7 @@ void DownloadCommands::ExecuteCommand(Command command)
    model_->ExecuteCommand(this, command);
  }
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
+     defined(OS_CHROMEOS)
  
  Browser* DownloadCommands::GetBrowser() const {
-   chrome::ScopedTabbedBrowserDisplayer browser_displayer(model_->profile());
-@@ -177,12 +177,12 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
+@@ -179,12 +179,12 @@ bool DownloadCommands::CanOpenPdfInSystemViewer() cons
    return IsDownloadPdf() &&
           (IsAdobeReaderDefaultPDFViewer() ? is_adobe_pdf_reader_up_to_date
                                            : true);
--#elif defined(OS_MACOSX) || defined(OS_LINUX)
-+#elif defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+-#elif defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#elif defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    return IsDownloadPdf();
  #endif
  }
  
--#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+-#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) ||
++#endif  // defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) ||
+         // defined(OS_CHROMEOS)
  
  void DownloadCommands::CopyFileAsImageToClipboard() {
-   if (model_->GetState() != download::DownloadItem::COMPLETE ||

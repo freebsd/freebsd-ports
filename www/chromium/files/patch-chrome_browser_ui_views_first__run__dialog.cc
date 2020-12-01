@@ -1,12 +1,13 @@
---- chrome/browser/ui/views/first_run_dialog.cc.orig	2020-03-16 18:40:30 UTC
+--- chrome/browser/ui/views/first_run_dialog.cc.orig	2020-11-13 06:36:38 UTC
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -114,8 +114,10 @@ void FirstRunDialog::Done() {
+@@ -114,9 +114,11 @@ void FirstRunDialog::Done() {
  bool FirstRunDialog::Accept() {
    GetWidget()->Hide();
  
 +#if !defined(OS_BSD)
-   ChangeMetricsReportingStateWithReply(report_crashes_->GetChecked(),
-                                        base::Bind(&InitCrashReporterIfEnabled));
+   ChangeMetricsReportingStateWithReply(
+       report_crashes_->GetChecked(),
+       base::BindRepeating(&InitCrashReporterIfEnabled));
 +#endif
  
    if (make_default_->GetChecked())

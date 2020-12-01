@@ -1,8 +1,8 @@
---- third_party/webrtc/system_wrappers/BUILD.gn.orig	2020-05-13 18:41:57 UTC
+--- third_party/webrtc/system_wrappers/BUILD.gn.orig	2020-11-13 06:42:25 UTC
 +++ third_party/webrtc/system_wrappers/BUILD.gn
-@@ -59,8 +59,6 @@ rtc_library("system_wrappers") {
+@@ -62,8 +62,6 @@ rtc_library("system_wrappers") {
      if (!build_with_chromium) {
-       deps += [ ":cpu_features_linux" ]
+       sources += [ "source/cpu_features_linux.cc" ]
      }
 -
 -    libs += [ "rt" ]
