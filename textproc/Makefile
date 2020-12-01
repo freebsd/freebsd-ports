@@ -1297,6 +1297,7 @@
     SUBDIR += py-jtextfsm
     SUBDIR += py-junit-xml
     SUBDIR += py-langdetect
+    SUBDIR += py-langid
     SUBDIR += py-laserhammer
     SUBDIR += py-libxml2
     SUBDIR += py-license-expression

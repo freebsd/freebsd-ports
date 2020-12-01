@@ -1,0 +1,17 @@
+langid.py is a standalone Language Identification (LangID) tool.
+
+The design principles are as follows:
+
+    Fast
+    Pre-trained over a large number of languages (currently 97)
+    Not sensitive to domain-specific features (e.g. HTML/XML markup)
+    Single .py file with minimal dependencies
+    Deployable as a web service
+
+Remark: the main script langid/langid.py is cross-compatible with both Python2
+and Python3, but the accompanying training tools are still Python2-only, hence
+not installed by this port.
+
+See also the port textproc/py-langdetect for a similar program.
+
+WWW: https://github.com/saffsd/langid.py
