@@ -12,6 +12,9 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Adobe Flash Player NPAPI Plugin
 
+DEPRECATED=	Deprecated by upstream
+EXPIRATION_DATE=2020-12-31
+
 ONLY_FOR_ARCHS=	amd64 i386
 USES=		cpe linux webplugin:linux
 CPE_VENDOR=	adobe
