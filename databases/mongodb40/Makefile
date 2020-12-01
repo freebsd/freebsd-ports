@@ -2,8 +2,7 @@
 
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.0.19
-PORTREVISION=	1
+DISTVERSION=	4.0.21
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -11,7 +10,7 @@ PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	dev.ashevchuk@gmail.com
-COMMENT=	Distributed document-oriented "NoSQL" database
+COMMENT=	Distributed document-oriented "NoSQL" database (4.0.x Branch)
 
 LICENSE=	SSPLv1 APACHE20
 LICENSE_COMB=	multi
@@ -35,7 +34,7 @@ USES=		compiler:c++14-lang cpe python:3.5+,build scons shebangfix
 USE_RC_SUBR=	mongod
 
 CONFLICTS_BUILD=	mongo-cxx-driver
-CONFLICTS_INSTALL=	mongodb36 mongodb42
+CONFLICTS_INSTALL=	mongodb36 mongodb4[24]
 
 SHEBANG_FILES=	src/mongo/installer/compass/install_compass.in
 python_OLD_CMD=	@python_interpreter@
