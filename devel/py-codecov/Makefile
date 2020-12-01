@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	codecov
-PORTVERSION=	2.0.15
-PORTREVISION=	1
+PORTVERSION=	2.1.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Hosted coverage reports for Github, Bitbucket and Gitlab
 
 LICENSE=	APACHE20
