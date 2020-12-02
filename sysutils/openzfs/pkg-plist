@@ -2,7 +2,6 @@
 %%PYTHON%%bin/arcstat
 %%PYTHON%%bin/dbufstat
 %%TESTS%%bin/raidz_test
-bin/zpool_influxdb
 etc/sudoers.d/zfs
 etc/zfs/vdev_id.conf.alias.example
 etc/zfs/vdev_id.conf.multipath.example
@@ -229,6 +228,7 @@ include/libzfs/sys/unique.h
 include/libzfs/sys/uuid.h
 include/libzfs/sys/vdev.h
 include/libzfs/sys/vdev_disk.h
+include/libzfs/sys/vdev_draid.h
 include/libzfs/sys/vdev_file.h
 include/libzfs/sys/vdev_impl.h
 include/libzfs/sys/vdev_indirect_births.h
@@ -387,6 +387,7 @@ libexec/zfs/zpool.d/upath
 libexec/zfs/zpool.d/vendor
 libexec/zfs/zpool.d/w_proc
 libexec/zfs/zpool.d/w_ucor
+libexec/zfs/zpool_influxdb
 man/man1/arcstat.1.gz
 %%TESTS%%man/man1/raidz_test.1.gz
 %%TESTS%%man/man1/test-runner.1.gz
@@ -510,6 +511,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/bin/btree_test
 %%TESTS%%share/zfs/zfs-tests/bin/chg_usr_exec
 %%TESTS%%share/zfs/zfs-tests/bin/dir_rd_update
+%%TESTS%%share/zfs/zfs-tests/bin/draid
 %%TESTS%%share/zfs/zfs-tests/bin/file_check
 %%TESTS%%share/zfs/zfs-tests/bin/file_trunc
 %%TESTS%%share/zfs/zfs-tests/bin/file_write
@@ -744,6 +746,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/default.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/filetest_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/filetest_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/run_edonr_test.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/run_sha2_test.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/checksum/run_skein_test.ksh
@@ -926,6 +929,8 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_010_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_011_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_012_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_013_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_014_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_all_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_all_fail.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_mount/zfs_mount_all_mountpoints.ksh
@@ -1175,6 +1180,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_clear/zpool_clear_readonly.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/create-o_ashift.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/draidcfg.gz
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create.shlib
@@ -1202,6 +1208,10 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_023_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_024_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_crypt_combos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_draid_001_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_draid_002_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_draid_003_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_draid_004_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_encrypted.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_features_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_features_002_pos.ksh
@@ -1287,6 +1297,8 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_013_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_014_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_015_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_016_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_017_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_all_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_encrypted.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_import/zpool_import_encrypted_load.ksh
@@ -1966,6 +1978,8 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/raidz_001_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/raidz_002_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/raidz_003_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/raidz_004_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redacted_send/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redacted_send/redacted.cfg
@@ -1991,10 +2005,17 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy.kshlib
-%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_001_pos.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_002_pos.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_003_pos.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_004_neg.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid1.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid2.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid3.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid_spare1.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid_spare2.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid_spare3.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_mirror.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_raidz1.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_raidz2.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_raidz3.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_stripe.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/refquota/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/refquota/refquota_001_pos.ksh
@@ -2285,6 +2306,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_003_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_encrypted.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/vdev_zaps/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/vdev_zaps/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/vdev_zaps/vdev_zaps.kshlib
