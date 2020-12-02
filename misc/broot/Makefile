@@ -2,8 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.5
-PORTREVISION=	1
+DISTVERSION=	1.0.7
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -31,6 +30,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		base64-0.12.3 \
+		base64-0.13.0 \
 		bet-0.3.4 \
 		bincode-1.3.1 \
 		bitflags-1.2.1 \
@@ -47,7 +47,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		clap-2.33.3 \
 		clipboard-win-4.0.3 \
 		cloudabi-0.0.3 \
-		color_quant-1.0.1 \
+		color_quant-1.1.0 \
 		constant_time_eq-0.1.5 \
 		crc32fast-1.2.0 \
 		criterion-0.3.3 \
@@ -81,7 +81,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		hermit-abi-0.1.16 \
 		id-arena-2.2.1 \
 		idna-0.2.0 \
-		image-0.23.10 \
+		image-0.23.12 \
 		indexmap-1.6.0 \
 		is_executable-0.1.2 \
 		itertools-0.9.0 \
@@ -100,7 +100,6 @@ CARGO_CRATES=	adler-0.2.3 \
 		linked-hash-map-0.5.3 \
 		lock_api-0.3.4 \
 		log-0.4.11 \
-		lzw-0.10.0 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
 		memchr-2.3.3 \
@@ -149,6 +148,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		regex-1.3.9 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.18 \
+		remove_dir_all-0.5.3 \
 		rust-argon2-0.8.2 \
 		rustc_version-0.2.3 \
 		ryu-1.0.5 \
@@ -174,14 +174,15 @@ CARGO_CRATES=	adler-0.2.3 \
 		strsim-0.8.0 \
 		syn-1.0.42 \
 		syntect-4.4.0 \
+		tempfile-3.1.0 \
 		term-0.6.1 \
-		termimad-0.8.29 \
+		termimad-0.9.1 \
 		terminal-clipboard-0.1.1 \
 		textwrap-0.11.0 \
 		thiserror-1.0.20 \
 		thiserror-impl-1.0.20 \
 		thread_local-1.0.1 \
-		tiff-0.5.0 \
+		tiff-0.6.0 \
 		time-0.1.44 \
 		tinytemplate-1.1.0 \
 		tinyvec-0.3.4 \
