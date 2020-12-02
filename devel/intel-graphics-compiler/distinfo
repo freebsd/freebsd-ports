@@ -5,3 +5,7 @@ SHA256 (intel-vc-intrinsics-a08fe5b_GH0.tar.gz) = e57f05d56e385449ed86fdbbb3b5f7
 SIZE (intel-vc-intrinsics-a08fe5b_GH0.tar.gz) = 119121
 SHA256 (d878880cbb3b.patch) = f430b2da0d212594ce73f23b279a1435f08dea60f30ec35494411ab0dc0fcf70
 SIZE (d878880cbb3b.patch) = 9088
+SHA256 (f44eb990ac84.patch) = 4774683855caa8ef44a85a43356b7d509683bbdbef23e31ab6f5e4075715d67c
+SIZE (f44eb990ac84.patch) = 1547
+SHA256 (cf887180a0e3.patch) = 20c5afc646f61180880fc8e07abcd0feac04bfb190ab27d8af939d459b61a9a0
+SIZE (cf887180a0e3.patch) = 4191
