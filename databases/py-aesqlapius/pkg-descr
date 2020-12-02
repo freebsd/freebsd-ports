@@ -1,0 +1,19 @@
+So you don't want to use ORM, and want to organize your SQL queries
+in a convenient way. Don't mix them with your python code, don't
+write `execute` and `fetchrow`s by hand for each query. With
+aesqlapius:
+
+- Store your SQL queries separate from the code, in a dedicated
+  file or directory hierarchy
+- Annotate each query with python-like function definition specifying
+  input arguments and output types and patterns
+
+aesqlapius builds a class out of this, where you can call your
+queries as plain methods. It handles arguments (pass positional
+or keyword arguments as you like, default values are also handled) and
+output types and patterns (you may specify whether a method returns
+iterator, list, dict of rows, or a single row, where row may
+be represented as a tuple, list, dict, single value or a custom
+type such as a dataclass).
+
+WWW: https://pypi.org/project/aesqlapius/
