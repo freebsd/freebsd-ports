@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	worker
-PORTVERSION=	4.5.1
+PORTVERSION=	4.6.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 
@@ -14,9 +14,11 @@ LICENSE=	GPLv2+
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++14-lang localbase pkgconfig python:run \
-		shebangfix tar:bzip2 xorg
+		shebangfix ssl tar:bzip2 xorg
 GNU_CONFIGURE=	yes
-USE_XORG=	x11 xinerama
+CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
+USE_XORG=	ice sm x11 xinerama
 
 SHEBANG_FILES=	${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/xeditor \

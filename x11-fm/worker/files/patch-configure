@@ -1,0 +1,20 @@
+--- configure.orig	2020-11-28 21:52:13 UTC
++++ configure
+@@ -21598,7 +21598,7 @@ if test -n "$PKG_CONFIG" && \
+   ($PKG_CONFIG --exists --print-errors "openssl") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
++  test $ac_status = 0 -o -n "$OPENSSL_CFLAGS" -o -n "$OPENSSL_LIBS"; }; then
+ 
+ 
+ pkg_failed=no
+@@ -25182,6 +25182,8 @@ fi
+ 
+ if test "$have_openssl_sha256" = "yes"; then
+     echo "  OpenSSL SHA256              : yes"
++    echo "    $OPENSSL_CFLAGS"
++    echo "    $OPENSSL_LIBS"
+ else
+     echo "  OpenSSL SHA256              : no"
+     echo "    *** install openssl-dev for checksumming support"
