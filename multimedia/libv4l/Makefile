@@ -3,14 +3,8 @@
 # Check v4l_compat and v4l-utils slave ports
 
 PORTNAME?=	libv4l
-PORTVERSION=	1.18.0
+PORTVERSION=	1.20.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://linuxtv.org/downloads/v4l-utils/:master \
-		http://www.selasky.org/hans_petter/distfiles/:local \
-		http://home.selasky.org/distfiles/:local
-WEBCAMDVERSION=	5.7.1.1
-DISTFILES=	v4l-utils-${PORTVERSION}.tar.bz2:master \
-		webcamd-${WEBCAMDVERSION}.tar.bz2:local
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	Video4Linux library
@@ -19,7 +13,17 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 USES=		compiler:c11 tar:bzip2
-WRKSRC=		${WRKDIR}/v4l-utils-${PORTVERSION}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	hselasky
+GH_PROJECT=	v4l-utils
+GH_TAGNAME=	v4l-utils-${PORTVERSION}
+
+GH_TUPLE=	hselasky:webcamd:v5.10.6.0:webcamd \
+		torvalds:linux:v5.10-rc6:linux
+
+WEBCAMDDIR=	${WRKDIR}/webcamd-5.10.6.0
+LINUXDIR=	${WRKDIR}/linux-*
 
 .if ${PORTNAME} == v4l-utils || ${PORTNAME} == libv4l
 LIB_DEPENDS+=	libargp.so:devel/argp-standalone \
@@ -30,7 +34,7 @@ BUILD_DEPENDS+= gsed>0:textproc/gsed \
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES+=		gmake iconv jpeg libtool pathfix pkgconfig
+USES+=		autoreconf gmake iconv jpeg libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	\
 	--disable-qv4l2 \
@@ -66,11 +70,14 @@ CONFIGURE_ARGS+= \
 
 post-patch:
 # Remove old FreeBSD include files (to be removed upstream)
-	@${RM} -r ${WRKDIR}/v4l-utils-${PORTVERSION}/contrib/freebsd/include/*
+	@${RM} -r ${WRKSRC}/contrib/freebsd/include/*
+# Create symbolic link for Linux sources
+	@(${RM} -r ${WEBCAMDDIR}/media_tree && ${LN} -s ${LINUXDIR} ${WEBCAMDDIR}/media_tree)
 # Apply webcamd patches first
-	@(cd ${WRKDIR}/webcamd-${WEBCAMDVERSION}/patches && ${SH} ./do_patch.sh)
+	@(cd ${WEBCAMDDIR}/patches && ${SH} ./do_patch.sh)
 # Patch all source files
-	@${FIND} ${WRKDIR} -type f \( -iname "*.[ch]" -or -iname "*.cpp" -or -iname "msg2ctl.pl" \) | \
+	@${FIND} ${WRKSRC} ${LINUXDIR}/include/uapi \
+		-type f \( -iname "*.[ch]" -or -iname "*.cpp" -or -iname "cec-gen.pl" \) | \
 		${XARGS} -n 10 ${REINPLACE_CMD} \
 			-e 's|__inline__|inline|g' \
 			-e 's|__u8|uint8_t|g' \
@@ -100,6 +107,8 @@ post-patch:
 			-e 's|_IOC_NONE|IOC_VOID|g' \
 			-e 's|<endian.h>|<sys/endian.h>|g' \
 			-e 's|<linux/compiler.h>|<sys/cdefs.h>|g' \
+			-e 's|"compiler.h"|<sys/cdefs.h>|g' \
+			-e 's|fallthrough;|;|g' \
 			-e 's|<linux/errno.h>|<errno.h>|g' \
 			-e 's|<linux/ioctl.h>|<sys/ioctl.h>|g' \
 			-e '/^.*\<linux\/kernel.h\>.*/d' \
@@ -110,11 +119,5 @@ post-patch:
 			-e 's|<sys/sysmacros.h>|<sys/types.h>|g' \
 			-e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|g' \
 			-e 's|__user||g'
-
-# Duplicate some files to avoid patching
-	@${CP} ${WRKSRC}/utils/common/ir-encode.c ${WRKSRC}/utils/ir-ctl/ir-encode.c
-	@${CP} ${WRKSRC}/utils/common/ir-encode.c ${WRKSRC}/utils/keytable/ir-encode.c
-	@${CP} ${WRKSRC}/utils/common/keymap.h ${WRKSRC}/utils/ir-ctl/keymap.h
-	@${CP} ${WRKSRC}/utils/common/keymap.h ${WRKSRC}/utils/keytable/keymap.h
 
 .include <bsd.port.mk>

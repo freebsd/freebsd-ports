@@ -1,4 +1,4 @@
---- lib/include/libdvbv5/descriptors.h.orig	2020-04-09 16:29:54 UTC
+--- lib/include/libdvbv5/descriptors.h.orig	2020-05-21 11:22:05 UTC
 +++ lib/include/libdvbv5/descriptors.h
 @@ -87,6 +87,9 @@ typedef void (*dvb_table_init_func)(struct dvb_v5_fe_p
  extern const dvb_table_init_func dvb_table_initializers[256];

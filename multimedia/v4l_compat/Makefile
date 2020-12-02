@@ -37,7 +37,7 @@ do-install:
 
 .for F in ${BASE_HEADERS}
 	${INSTALL_DATA} \
-		${WRKDIR}/webcamd-${WEBCAMDVERSION}/media_tree/include/uapi/${F} \
+		${LINUXDIR}/include/uapi/${F} \
 		${STAGEDIR}${PREFIX}/include/${F}
 .endfor
 

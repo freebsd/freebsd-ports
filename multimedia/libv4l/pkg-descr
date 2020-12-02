@@ -3,4 +3,4 @@ compliant video devices. It allows for transcoding of capture streams
 in user space instead of kernel space and creates a standard interface
 mechanism for video devices.
 
-WWW: http://freshmeat.net/projects/libv4l
+WWW: https://linuxtv.org/wiki/index.php/V4l-utils
