@@ -69,9 +69,9 @@ AUTHOR: bapt@FreeBSD.org
 20201001:
 AUTHOR: manu@FreeBSD.org
 
- The @sample keyword was rewritten in lua.
- It behaves exactly like the previous one but it is sandboxed and
- is rootdir compliant (see pkg -r option).
+  The @sample keyword was rewritten in lua.
+  It behaves exactly like the previous one but it is sandboxed and
+  is rootdir compliant (see pkg -r option).
 
 20201001:
 AUTHOR: bapt@FreeBSD.org
