@@ -59,19 +59,25 @@ BDB_UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}
 
 _BDB_DEFAULT_save:=${BDB_DEFAULT}
 
-_DB_PORTS=		5 6
+_DB_PORTS=		5 6 18
 _DB_DEFAULTS=	5	# does not include 6 due to different licensing
 #	but user can re-add it through WITH_BDB6_PERMITTED
+#
+#   Since 2020-12-02, this name is not fitting too much but
+#   retained for now for compatibility. The name of this variable
+#   is subject to change especially once db6 were removed.
 . if defined(WITH_BDB6_PERMITTED)
-_DB_DEFAULTS+=	6
+_DB_DEFAULTS+=	6 18
 . endif
 
 # Dependency lines for different db versions
 db5_DEPENDS=	libdb-5.3.so:databases/db5
 db6_DEPENDS=	libdb-6.2.so:databases/db6
+db18_DEPENDS=	libdb-18.1.so:databases/db18
 # Detect db versions by finding some files
 db5_FIND=	${LOCALBASE}/include/db5/db.h
 db6_FIND=	${LOCALBASE}/include/db6/db.h
+db18_FIND=	${LOCALBASE}/include/db18/db.h
 
 # Override the global BDB_DEFAULT with the
 # port specific <BDB_UNIQUENAME>_WITH_BDB_VER
@@ -109,9 +115,9 @@ _INST_BDB_VER+=${bdb}
 # 2. parse supported versions:
 # 2a. build list from _bdb_ARGS
 _SUPP_BDB_VER=
-__bdb_ARGS:=${_bdb_ARGS:C,\+$,,:C/(.)(.)$/\1.\2/}
+__bdb_ARGS:=${_bdb_ARGS:C,\+$,,}
 .if !empty(_bdb_ARGS:M*+)
-. for bdb in ${_DB_PORTS:C/(.)(.)$/\1.\2/}
+. for bdb in ${_DB_PORTS}
 .  if ${__bdb_ARGS} <= ${bdb}
 _SUPP_BDB_VER+=${bdb:C/\.//}
 .  endif
@@ -121,9 +127,9 @@ _SUPP_BDB_VER=${_bdb_ARGS}
 .endif
 # 2b. expand INVALID_BDB_VER if given with "+":
 .if !empty(INVALID_BDB_VER:M*+)
-_INV_BDB:=${INVALID_BDB_VER:C,\+$,,:C/(.)(.)$/\1.\2/}
+_INV_BDB:=${INVALID_BDB_VER:C,\+$,,}
 _INV_BDB_VER:=
-. for bdb in ${_DB_PORTS:C/(.)(.)$/\1.\2/}
+. for bdb in ${_DB_PORTS}
 .  if ${_INV_BDB} <= ${bdb}
 _INV_BDB_VER+=${bdb:C/\.//}
 .  endif
@@ -183,6 +189,10 @@ BDB_LIB_DIR=		${LOCALBASE}/lib/db5
 BDB_LIB_NAME=		db-6.2
 BDB_LIB_CXX_NAME=	db_cxx-6.2
 BDB_LIB_DIR=		${LOCALBASE}/lib/db6
+. elif ${_BDB_VER} == 18
+BDB_LIB_NAME=		db-18.1
+BDB_LIB_CXX_NAME=	db_cxx-18.1
+BDB_LIB_DIR=		${LOCALBASE}/lib/db18
 . endif
 BDB_LIB_NAME?=		db${_BDB_VER}
 BDB_LIB_CXX_NAME?=	db${_BDB_VER}_cxx
