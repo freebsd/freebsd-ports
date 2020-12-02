@@ -126,7 +126,6 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/jing-20030619.jar
 %%DATADIR%%/lib/jna-platform.jar
 %%DATADIR%%/lib/jna.jar
-%%DATADIR%%/lib/jnaerator-runtime-0.12.jar
 %%DATADIR%%/lib/jnr-a64asm-1.0.0.jar
 %%DATADIR%%/lib/jnr-constants-0.9.12.jar
 %%DATADIR%%/lib/jnr-enxio-0.21.jar
@@ -227,7 +226,6 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/proxy-vole-1.0.5-jb.2.jar
 %%DATADIR%%/lib/pty4j-0.9.6.jar
 %%DATADIR%%/lib/purejavacomm-0.0.11.1.jar
-%%DATADIR%%/lib/quiche-jna-stubs-15.jar
 %%DATADIR%%/lib/rd-core-0.202.100.jar
 %%DATADIR%%/lib/rd-framework-0.202.100.jar
 %%DATADIR%%/lib/rd-swing-0.202.100.jar
@@ -247,7 +245,6 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/streamex-0.7.2.jar
 %%DATADIR%%/lib/swingx-core-1.6.2-2.jar
 %%DATADIR%%/lib/tips-goland-202.1057.jar
-%%DATADIR%%/lib/tls-channel-0.3.2.jar
 %%DATADIR%%/lib/trang-core.jar
 %%DATADIR%%/lib/trove4j.jar
 %%DATADIR%%/lib/txw2-2.3.1.jar
@@ -333,10 +330,10 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/Docker/lib/rt/commons-compress-1.20.jar
 %%DATADIR%%/plugins/Docker/lib/rt/commons-io-2.6.jar
 %%DATADIR%%/plugins/Docker/lib/rt/commons-lang-2.6.jar
-%%DATADIR%%/plugins/Docker/lib/rt/docker-java-api-3.2.5.jar
-%%DATADIR%%/plugins/Docker/lib/rt/docker-java-core-3.2.5.jar
-%%DATADIR%%/plugins/Docker/lib/rt/docker-java-transport-3.2.5.jar
-%%DATADIR%%/plugins/Docker/lib/rt/docker-java-transport-okhttp-3.2.5.jar
+%%DATADIR%%/plugins/Docker/lib/rt/docker-java-api-3.2.6.jar
+%%DATADIR%%/plugins/Docker/lib/rt/docker-java-core-3.2.6.jar
+%%DATADIR%%/plugins/Docker/lib/rt/docker-java-transport-3.2.6.jar
+%%DATADIR%%/plugins/Docker/lib/rt/docker-java-transport-okhttp-3.2.6.jar
 %%DATADIR%%/plugins/Docker/lib/rt/guava-19.0.jar
 %%DATADIR%%/plugins/Docker/lib/rt/istack-commons-runtime-3.0.7.jar
 %%DATADIR%%/plugins/Docker/lib/rt/jackson-annotations-2.10.3.jar

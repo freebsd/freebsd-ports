@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	goland
-PORTVERSION=	2020.2.3
+PORTVERSION=	2020.2.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
@@ -27,10 +27,9 @@ SHEBANG_FILES=	bin/printenv.py bin/restart.py
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+SUB_FILES=	goland goland.desktop pkg-message
 
 WRKSRC=		${WRKDIR}/GoLand-${PORTVERSION}
-
-SUB_FILES=	goland goland.desktop pkg-message
 
 OPTIONS_DEFINE_amd64=	DELVE
 OPTIONS_DEFAULT_amd64=	DELVE
