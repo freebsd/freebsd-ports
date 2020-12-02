@@ -5,4 +5,4 @@ of Linux USB device drivers into userspace on FreeBSD. The daemon
 currently depends on libc, pthreads, libusb and the CUSE kernel
 module.
 
-WWW: http://www.selasky.org/hans_petter/video4bsd/
+WWW: https://github.com/hselasky/webcamd
