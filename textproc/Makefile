@@ -404,6 +404,7 @@
     SUBDIR += linuxdoc
     SUBDIR += linuxdoc-tools
     SUBDIR += localize
+    SUBDIR += lookatme
     SUBDIR += loook
     SUBDIR += lowdown
     SUBDIR += lt-aspell
