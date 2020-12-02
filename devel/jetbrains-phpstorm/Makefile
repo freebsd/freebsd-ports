@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpstorm
-PORTVERSION=	2020.2.3
+PORTVERSION=	2020.2.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/webide/
 PKGNAMEPREFIX=	jetbrains-
@@ -29,10 +29,9 @@ SHEBANG_FILES=	bin/printenv.py bin/restart.py
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-
-WRKSRC=		${WRKDIR}/PhpStorm-202.7660.42
-
 SUB_FILES=	phpstorm phpstorm.desktop pkg-message
+
+WRKSRC=		${WRKDIR}/PhpStorm-202.8194.11
 
 do-install:
 # Linux/Windows/OS X only so remove them
