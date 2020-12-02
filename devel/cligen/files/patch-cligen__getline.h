@@ -1,4 +1,4 @@
---- cligen_getline.h.orig	2020-08-28 17:05:52 UTC
+--- cligen_getline.h.orig	2020-10-18 14:29:28 UTC
 +++ cligen_getline.h
 @@ -48,11 +48,11 @@ void	gl_redraw(cligen_handle h);	/* issue \n and redra
  int     gl_regfd(int, cligen_fd_cb_t *, void *);
