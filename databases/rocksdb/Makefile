@@ -6,6 +6,9 @@ PORTVERSION=	6.11.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
+PATCH_SITES=	https://github.com/facebook/${PORTNAME}/commit/
+PATCHFILES=	b937be377901afa32357b60eebbee80f14087180.patch:-p1
+
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT?=	Persistent key-value store for fast storage environments
 
@@ -17,7 +20,8 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
 BROKEN_armv6?=		does not build: db/c.cc:2281:44: implicit conversion loses integer precision: 'uint64_t' (aka 'unsigned long long') to 'size_t' (aka 'unsigned int')
 BROKEN_armv7?=		does not build: /nxb-bin/usr/bin/ld: undefined reference to symbol `__gnu_Unwind_Find_exidx@@FBSD_1.4' (try adding -lc) #'`
-BROKEN_powerpc64=	does not build: util/crc32c.cc:435:22: 'arch_ppc_probe' was not declared in this scope
+BROKEN_FreeBSD_11_powerpc64=	does not build: util/crc32c.cc:435:22: 'arch_ppc_probe' was not declared in this scope
+BROKEN_FreeBSD_12_powerpc64=	does not build: util/crc32c.cc:435:22: 'arch_ppc_probe' was not declared in this scope
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgflags.so:devel/gflags \
