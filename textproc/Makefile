@@ -82,6 +82,7 @@
     SUBDIR += c2html
     SUBDIR += c2man
     SUBDIR += ca-aspell
+    SUBDIR += cast2gif
     SUBDIR += castxml
     SUBDIR += catdoc
     SUBDIR += cdif
