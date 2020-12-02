@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	urbackup-server
-DISTVERSION=	2.4.12
+DISTVERSION=	2.4.13
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Server component of the UrBackup backup system
 
 LICENSE=	AGPLv3
@@ -17,18 +17,18 @@ LIB_DEPENDS=	libcryptopp.so:security/cryptopp \
 
 USES=		autoreconf compiler:c++11-lang dos2unix fakeroot fuse \
 		libtool lua:53+ pkgconfig sqlite:3
+DOS2UNIX_GLOB=	*.c *.cpp *.h *.am
 USE_RC_SUBR=	urbackup_server
 
-USERS=		urbackup
-GROUPS=		urbackup
-
-DOS2UNIX_GLOB=	*.c *.cpp *.h *.am
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-packaging --with-mountvhd --without-embedded-sqlite3 --without-embedded-lmdb --without-embedded-lua
 CXXFLAGS+=	`pkgconf --cflags-only-other libcryptopp`
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message urbackupsrv.conf.sample-daemon
+
+USERS=		urbackup
+GROUPS=		urbackup
 
 post-patch:
 	@(cd ${WRKSRC} && ${REINPLACE_CMD} -e 's|/etc/urbackup|${PREFIX}/etc/urbackup|g' \
