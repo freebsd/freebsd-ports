@@ -2,7 +2,7 @@
 
 PORTNAME=	perl
 DISTVERSION=	${PERL_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0
 DIST_SUBDIR=	perl
@@ -129,7 +129,7 @@ OPTIONS_EXCLUDE=	DTRACE
 .endif
 .for a in aarch64 arm armv6 armv7 \
 	mips mips64 mips64el mips64elhf mips64hf mipsel mipselhf mipshf mipsn32 \
-	powerpc powerpc64 powerpcspe \
+	powerpc powerpcspe \
 	riscv64 riscv64sf sparc64
 OPTIONS_EXCLUDE_${a}=	DTRACE
 .endfor
