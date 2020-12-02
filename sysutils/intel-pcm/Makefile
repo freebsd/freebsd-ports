@@ -18,7 +18,6 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	opcm
 GH_PROJECT=	pcm
-GH_TAGNAME=	202011
 
 CONFLICTS_INSTALL=	intel-pcm-devel
 
