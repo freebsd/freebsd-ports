@@ -1,6 +1,6 @@
-TIMESTAMP = 1604211167
-SHA256 (mvdan-sh-v3.2.0_GH0.tar.gz) = 6755f587fcb6f037f819b96a322b0273d0ab6ecb5911c005b9aae74292c4a819
-SIZE (mvdan-sh-v3.2.0_GH0.tar.gz) = 180555
+TIMESTAMP = 1606941826
+SHA256 (mvdan-sh-v3.2.1_GH0.tar.gz) = a1470285e04b69ee7a2bb3948b64e1da9cabe59658997b50aac7c64465f330bd
+SIZE (mvdan-sh-v3.2.1_GH0.tar.gz) = 181038
 SHA256 (golang-sys-201ba4db2418_GH0.tar.gz) = c5f2e55c3eabde3d255784e0799e7ca72720252884119a041c40c41a3e9d274a
 SIZE (golang-sys-201ba4db2418_GH0.tar.gz) = 1078756
 SHA256 (golang-term-ad39bd3f0407_GH0.tar.gz) = d257efbf736de99e1bdce2466d99432b5fd23706fadf30d9f394a39162aa4c2f
