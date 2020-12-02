@@ -72,7 +72,7 @@ CONFIGURE_ARGS+=	--disable-mfscli
 .endif
 
 .if ${MFS_COMPONENT} == client
-USES=			fuse pkgconfig
+USES=			compiler:c11 fuse pkgconfig
 CONFIGURE_ARGS+=	--enable-mfsmount
 .else
 CONFIGURE_ARGS+=	--disable-mfsmount
