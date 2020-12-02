@@ -22,6 +22,7 @@ USE_GL=		gl
 USE_SDL=	sdl2 ttf2
 MAKE_ARGS+=	DATADIR="${DATADIR}" \
 		LOCALEDIR="${PREFIX}/share/locale"
+CFLAGS+=	-fcommon
 
 PORTDOCS=	*
 PORTDATA=	*
