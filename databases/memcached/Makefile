@@ -3,6 +3,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.6.8
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GENTOO
@@ -33,6 +34,11 @@ OPTIONS_DEFINE=		DOCS SASL
 OPTIONS_DEFAULT=	SASL
 OPTIONS_DEFINE_amd64=	DTRACE
 OPTIONS_DEFAULT_amd64=	DTRACE
+OPTIONS_DEFINE_powerpc64=	DTRACE
+OPTIONS_DEFAULT_powerpc64=	DTRACE
+OPTIONS_EXCLUDE_powerpc64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
+OPTIONS_EXCLUDE_powerpc64_11=	DTRACE
+OPTIONS_EXCLUDE_powerpc64_12=	DTRACE
 
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE+=	DTRACE
@@ -61,12 +67,12 @@ CONFIGURE_ARGS+=	--enable-tls
 USES+=			ssl
 .endif
 
-.if ${ARCH} == amd64
+.if ${ARCH} == amd64 || ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--enable-64bit
 .endif
 
 # avoid triggering a bug in libdtrace, see illumos issue 6653
-.if ${PORT_OPTIONS:MDTRACE}
+.if ${PORT_OPTIONS:MDTRACE} && ${ARCH} == amd64
 CFLAGS+=	-no-integrated-as
 .endif
 
