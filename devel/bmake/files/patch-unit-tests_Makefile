@@ -1,11 +1,17 @@
---- unit-tests/Makefile.orig	2020-11-29 15:19:12 UTC
+--- unit-tests/Makefile.orig	2020-12-02 19:06:25 UTC
 +++ unit-tests/Makefile
-@@ -187,7 +187,7 @@ TESTS+=		modmatch
- TESTS+=		modmisc
- TESTS+=		modts
- TESTS+=		modword
--TESTS+=		objdir-writable
-+#TESTS+=		objdir-writable
- TESTS+=		opt
- TESTS+=		opt-backwards
- TESTS+=		opt-chdir
+@@ -311,12 +311,12 @@ TESTS+=		varmod-defined
+ TESTS+=		varmod-edge
+ TESTS+=		varmod-exclam-shell
+ TESTS+=		varmod-extension
+-TESTS+=		varmod-gmtime
++#TESTS+=		varmod-gmtime
+ TESTS+=		varmod-hash
+ TESTS+=		varmod-head
+ TESTS+=		varmod-ifelse
+ TESTS+=		varmod-l-name-to-value
+-TESTS+=		varmod-localtime
++#TESTS+=		varmod-localtime
+ TESTS+=		varmod-loop
+ TESTS+=		varmod-match
+ TESTS+=		varmod-match-escape
