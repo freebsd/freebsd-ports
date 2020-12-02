@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webcamd
-DISTVERSION=	5.7.1.2
+DISTVERSION=	5.7.1.3
 CATEGORIES=	multimedia
 
 MAINTAINER=	hselasky@FreeBSD.org
