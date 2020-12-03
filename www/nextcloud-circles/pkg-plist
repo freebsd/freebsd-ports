@@ -408,14 +408,20 @@
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Model/Cache.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Model/CacheItem.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Model/Nextcloud/NC19Request.php
+%%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Model/Nextcloud/nc20/NC20Request.php
+%%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Model/Nextcloud/nc20/NC20RequestResult.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Model/Request.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Model/SimpleDataStore.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/Nextcloud/TNC19Request.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/Nextcloud/TNCDataResponse.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/Nextcloud/TNCRequest.php
+%%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/Nextcloud/nc20/TNC20Logger.php
+%%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/Nextcloud/nc20/TNC20Request.php
+%%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/Nextcloud/nc20/TNC20Setup.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/TArrayTools.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/TAsync.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/TFileTools.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/TPathTools.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/TRequest.php
 %%WWWDIR%%/vendor/daita/my-small-php-tools/lib/Traits/TStringTools.php
+@dir %%WWWDIR%%/vendor/bin
