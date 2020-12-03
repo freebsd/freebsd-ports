@@ -12,7 +12,7 @@ COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	zip:archivers/zip \
 		autoconf>0:devel/autoconf \
@@ -147,11 +147,11 @@ CONFIGURE_ARGS+=	--with-extra-ldflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFA
 MAKE_ENV+=	USE_CLANG=true
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH} == powerpc64
+.if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=	--disable-warnings-as-errors \
 			--disable-dtrace
 .endif
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv2
+.if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le
 CONFIGURE_ARGS+=	--disable-precompiled-headers
 .endif
 .if ${ARCH} != amd64

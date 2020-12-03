@@ -1,0 +1,10 @@
+--- src/utils/hsdis/Makefile.orig	2020-11-19 21:27:40 UTC
++++ src/utils/hsdis/Makefile
+@@ -143,6 +143,7 @@ ifdef LP64
+ CFLAGS/sparcv9  += -m64
+ CFLAGS/amd64    += -m64
+ CFLAGS/ppc64    += -m64
++CFLAGS/ppc64le  += -m64 -DABI_ELFv2
+ else # LP64
+ ARCH=$(ARCH2:amd64=i386)
+ ifneq ($(findstring arm,$(ARCH)),)
