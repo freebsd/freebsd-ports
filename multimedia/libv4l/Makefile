@@ -34,7 +34,7 @@ BUILD_DEPENDS+= gsed>0:textproc/gsed \
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES+=		autoreconf gmake iconv jpeg libtool pathfix pkgconfig
+USES+=		autoreconf gettext-tools:build gmake iconv jpeg libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	\
 	--disable-qv4l2 \
