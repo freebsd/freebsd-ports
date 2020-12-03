@@ -139,8 +139,8 @@
 %%JDK_ROOT%%/legal/java.desktop/colorimaging.md
 %%JDK_ROOT%%/legal/java.desktop/harfbuzz.md
 %%JDK_ROOT%%/legal/java.desktop/mesa3d.md
-%%JDK_ROOT%%/legal/java.desktop/opengl.md
-%%JDK_ROOT%%/legal/java.desktop/xwindows.md
+%%PPC64LE%%%%JDK_ROOT%%/legal/java.desktop/opengl.md
+%%PPC64LE%%%%JDK_ROOT%%/legal/java.desktop/xwindows.md
 %%JDK_ROOT%%/legal/java.instrument/ADDITIONAL_LICENSE_INFO
 %%JDK_ROOT%%/legal/java.instrument/ASSEMBLY_EXCEPTION
 %%JDK_ROOT%%/legal/java.instrument/LICENSE
