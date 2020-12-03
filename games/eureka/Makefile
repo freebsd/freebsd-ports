@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png
 
-USES=		desktop-file-utils gl gmake jpeg xorg
+USES=		compiler:c++0x desktop-file-utils gl gmake jpeg xorg
 USE_GL=		gl glu
 USE_XORG=	x11 xcursor xext xfixes xft xinerama xpm xrender
 
