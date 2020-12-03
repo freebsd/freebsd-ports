@@ -3,10 +3,12 @@
 PORTNAME=	intel-graphics-compiler
 DISTVERSIONPREFIX=	igc-
 DISTVERSION=	1.0.5064
+PORTREVISION=	1
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	d878880cbb3b.patch:-p1 # https://github.com/intel/intel-graphics-compiler/pull/129
+PATCHFILES+=	cf887180a0e3.patch:-p1 # https://github.com/intel/intel-graphics-compiler/pull/156
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Intel Graphics Compiler for OpenCL
@@ -27,13 +29,6 @@ GH_TUPLE=	intel:vc-intrinsics:8300678:vcintrin/../vc-intrinsics
 CMAKE_OFF=	INSTALL_SPIRVDLL
 CFLAGS+=	-Wno-macro-redefined # __fastcall
 PLIST_SUB=	ARCH_SUFX=${ARCH:S/i386/32/:S/amd//:S/x86_//}
-
-.if (exists(/usr/lib/clang/10.0.0) || exists(/usr/lib/clang/10.0.1) || exists(/usr/lib/clang/11.0.0)) && ${CXX} == c++
-# https://github.com/intel/intel-graphics-compiler/issues/126
-BUILD_DEPENDS+=	clang++90:devel/llvm90
-USES:=		${USES:Ncompiler*}
-CXX=		clang++90
-.endif
 
 post-patch:
 # lang/python* don't install unsuffixed symlinks
