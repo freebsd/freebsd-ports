@@ -12870,7 +12870,6 @@ editors/dexed||2019-09-05|Has expired: Depends on expiring devel/dfmt
 editors/p5-Padre||2019-09-05|Has expired: Depends on expiring x11-toolkits/p5-Wx
 emulators/qemu2||2019-09-05|Has expired: Latest 3.X branch is in ports tree
 games/asc||2019-09-05|Has expired: Broken for more than 6 months
-games/slade||2019-09-05|Has expired: Broken for more than 6 months
 graphics/gimp-wavelet-decompose-plugin||2019-09-05|Has expired: Broken for more than 6 months
 irc/irssi-otr||2019-09-05|Has expired: Broken for more than 6 months
 mail/p5-Mail-ClamAV||2019-09-05|Has expired: Broken for more than 6 months

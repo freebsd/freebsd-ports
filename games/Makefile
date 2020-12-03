@@ -883,6 +883,7 @@
     SUBDIR += sjeng
     SUBDIR += ski
     SUBDIR += sl
+    SUBDIR += slade
     SUBDIR += slashem-tty
     SUBDIR += slump
     SUBDIR += sokoban

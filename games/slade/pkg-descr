@@ -1,0 +1,13 @@
+SLADE3 is a modern editor for Doom-engine based games and source ports.
+It has the ability to view, modify, and write many different game-specific
+formats, and even convert between some of them, or from/to other generic
+formats such as PNG.
+
+SLADE3 can be considered a successor to both SLumpEd and SLADE.  Some of
+its features:
+
+  - Basic archive/resource editing (create/open/save, import/export)
+  - Simple tabbed interface with copy/paste support
+  - Many supported game formats (ZIP/PK3, Quake PAK/WAD2, etc.)
+
+WWW: http://slade.mancubus.net/
