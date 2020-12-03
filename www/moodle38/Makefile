@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moodle
-PORTVERSION=	3.8.5
+PORTVERSION=	3.8.6
 CATEGORIES=	www education
 MASTER_SITES=	SF/moodle/Moodle/stable38/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
@@ -14,6 +14,9 @@ LICENSE=	GPLv3
 
 CONFLICTS=	moodle35-3.5.[0-9]* moodle37-3.7.[0-9]* moodle39-3.9-[0-9]* \
 		moodle310-3.10
+
+DEPRECATED=	Deprecated by upstream
+EXPIRATION_DATE=2021-03-03
 
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom fileinfo filter gd hash iconv intl json mbstring \
