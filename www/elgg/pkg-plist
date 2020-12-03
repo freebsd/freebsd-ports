@@ -12830,6 +12830,8 @@
 %%WWWDIR%%/vendor/elgg/elgg/docs/locale/fr/LC_MESSAGES/contribute.po
 %%WWWDIR%%/vendor/elgg/elgg/docs/locale/fr/LC_MESSAGES/design.mo
 %%WWWDIR%%/vendor/elgg/elgg/docs/locale/fr/LC_MESSAGES/design.po
+%%WWWDIR%%/vendor/elgg/elgg/docs/locale/fr/LC_MESSAGES/guides.mo
+%%WWWDIR%%/vendor/elgg/elgg/docs/locale/fr/LC_MESSAGES/guides.po
 %%WWWDIR%%/vendor/elgg/elgg/docs/locale/fr/LC_MESSAGES/index.mo
 %%WWWDIR%%/vendor/elgg/elgg/docs/locale/fr/LC_MESSAGES/index.po
 %%WWWDIR%%/vendor/elgg/elgg/docs/locale/fr/LC_MESSAGES/intro.mo
