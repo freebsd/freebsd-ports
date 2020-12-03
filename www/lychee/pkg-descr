@@ -1,0 +1,5 @@
+A fast, async, resource-friendly link checker written in Rust.
+For GitHub links, it can optionally use a GITHUB_TOKEN to avoid
+getting blocked by the rate limiter.
+
+WWW: https://github.com/lycheeverse/lychee
