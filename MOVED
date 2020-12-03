@@ -15731,3 +15731,7 @@ net-mgmt/zabbix44-proxy|net-mgmt/zabbix5-proxy|2020-12-01|Has expired: End of Li
 net-mgmt/zabbix44-server|net-mgmt/zabbix5-server|2020-12-01|Has expired: End of Life
 print/jabref||2020-12-01|Has expired: depends on expiring java/openjfx8-devel
 science/datawarrior||2020-12-01|Has expired: depends on expiring java/openjfx8-devel
+www/rubygem-dashing||2020-12-03|Has expired: Unmaintained by upstream, use www/rubygem-smashing instead
+www/rubygem-redmine_acts_as_taggable_on||2020-12-03|Has expired: Unmaintained by upstream
+www/rubygem-gitlab-grack||2020-12-03|Has expired: Deprecated by upstream
+databases/db6||2020-12-03|Has expired: latest 6.2.x version and newer not downloadable without registration
