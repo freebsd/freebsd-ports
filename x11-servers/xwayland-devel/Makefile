@@ -2,8 +2,8 @@
 
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	1.20.0-741
-DISTVERSIONSUFFIX=	-g96d19e898
+DISTVERSION=	1.20.0-789
+DISTVERSIONSUFFIX=	-g446ff2d31
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
@@ -34,7 +34,7 @@ USE_GL=		gbm gl
 USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
 GH_ACCOUNT=	freedesktop
 GH_PROJECT=	xorg-xserver
-MESON_ARGS=	-Dxwayland=true \
+MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxorg=false \
 		-Dxnest=false \
 		-Dxvfb=false \
@@ -42,7 +42,8 @@ MESON_ARGS=	-Dxwayland=true \
 		-Dudev_kms=false \
 		-Ddefault_font_path="${DEFAULT_FONTPATH_LIST:ts,}"
 PLIST_FILES=	bin/Xwayland \
-		libdata/pkgconfig/xwayland.pc
+		libdata/pkgconfig/xwayland.pc \
+		man/man1/Xwayland.1.gz
 
 # Keep in sync with xorg-server
 FONTPATH_ROOT?=	${LOCALBASE}/share/fonts
@@ -63,10 +64,12 @@ NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
 NVIDIA_MESON_TRUE=	xwayland_eglstream
 
 do-install:
-# Wayland compositors only use the binary
+# XXX Prevent Meson from installing unrelated files
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/hw/xwayland/Xwayland \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${BUILD_WRKSRC}/hw/xwayland/xwayland.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_MAN} ${BUILD_WRKSRC}/hw/xwayland/Xwayland.1 \
+		${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
