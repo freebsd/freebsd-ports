@@ -1,3 +1,3 @@
-TIMESTAMP = 1601080727
-SHA256 (karelzak-util-linux-v2.36_GH0.tar.gz) = 5e4a6f73b28aadceab66ec4490bb5fc77861066660f27b5ec605648809205522
-SIZE (karelzak-util-linux-v2.36_GH0.tar.gz) = 7806261
+TIMESTAMP = 1606843635
+SHA256 (util-linux-2.36.tar.xz) = 9e4b1c67eb13b9b67feb32ae1dc0d50e08ce9e5d82e1cccd0ee771ad2fa9e0b1
+SIZE (util-linux-2.36.tar.xz) = 5242420
