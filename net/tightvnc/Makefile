@@ -15,13 +15,14 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
 BROKEN_aarch64=	Fails to build: invokes x86 asm
-
-USES=		cpe imake jpeg shebangfix perl5 tar:bzip2 xorg
-USE_XORG=	ice sm x11 xaw xext xmu xt xpm
+BROKEN_riscv64=	Fails to build: invokes x86 asm
 
 RUN_DEPENDS=	showrgb:x11/rgb \
 		xauth:x11/xauth \
 		xorg-fonts>=7.2:x11-fonts/xorg-fonts
+
+USES=		cpe imake jpeg shebangfix perl5 tar:bzip2 xorg
+USE_XORG=	ice sm x11 xaw xext xmu xt xpm
 
 CFLAGS+=	-fcommon # for build with clang-11, see https://sourceforge.net/p/vnc-tight/bugs/1523/
 
