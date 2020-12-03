@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libmypaint
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+DISTVERSION=	1.6.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/mypaint/libmypaint/releases/download/v${PORTVERSION}/
 

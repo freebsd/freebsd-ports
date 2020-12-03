@@ -16,12 +16,12 @@ include/libmypaint/mypaint-rectangle.h
 include/libmypaint/mypaint-surface.h
 include/libmypaint/mypaint-symmetry.h
 include/libmypaint/mypaint-tiled-surface.h
-lib/girepository-1.0/MyPaint-1.5.typelib
-lib/libmypaint-1.5.so.1
-lib/libmypaint-1.5.so.1.0.1
+lib/girepository-1.0/MyPaint-1.6.typelib
 lib/libmypaint.so
+lib/libmypaint.so.0
+lib/libmypaint.so.0.0.0
 libdata/pkgconfig/libmypaint.pc
-share/gir-1.0/MyPaint-1.5.gir
+share/gir-1.0/MyPaint-1.6.gir
 %%NLS%%share/locale/af/LC_MESSAGES/libmypaint.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/libmypaint.mo
 %%NLS%%share/locale/as/LC_MESSAGES/libmypaint.mo
