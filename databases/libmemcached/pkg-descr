@@ -20,4 +20,4 @@ memcp - Copy files to a memached server.
 memstat - Dump the stats of your servers to standard output
 memslap - Generate testing loads on a memcached cluster
 
-WWW: http://libmemcached.org
+WWW: https://libmemcached.org/

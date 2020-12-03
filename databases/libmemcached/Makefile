@@ -12,7 +12,7 @@ COMMENT=	C and C++ client library to the memcached server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS?=	libevent.so:devel/libevent
+LIB_DEPENDS=	libevent.so:devel/libevent
 TEST_DEPENDS=	memcached:databases/memcached
 
 USES=		autoreconf gmake libtool localbase pathfix pkgconfig
