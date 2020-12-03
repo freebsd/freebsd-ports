@@ -12,7 +12,7 @@ COMMENT?=	Video4Linux library
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-USES=		compiler:c11 tar:bzip2
+USES=		compiler:c11 gettext-tools tar:bzip2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
