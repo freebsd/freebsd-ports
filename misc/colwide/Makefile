@@ -4,7 +4,7 @@ PORTNAME=	colwide
 PORTVERSION=	0.01
 CATEGORIES=	misc perl5
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Utility which outputs a number of characters to the screen
 
 LICENSE=	BSD2CLAUSE
