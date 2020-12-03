@@ -2,8 +2,7 @@
 
 PORTNAME=	inferno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
-PORTREVISION=	1
+DISTVERSION=	0.10.2
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,10 +18,10 @@ GH_ACCOUNT=	jonhoo
 
 CARGO_CRATES=	adler32-1.2.0 \
 		ahash-0.3.8 \
-		ahash-0.4.6 \
+		ahash-0.6.1 \
 		ansi_term-0.11.0 \
 		arrayvec-0.4.12 \
-		assert_cmd-1.0.1 \
+		assert_cmd-1.0.2 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
@@ -40,21 +39,19 @@ CARGO_CRATES=	adler32-1.2.0 \
 		crc32fast-1.2.1 \
 		criterion-0.3.3 \
 		criterion-plot-0.4.3 \
-		crossbeam-channel-0.4.4 \
 		crossbeam-channel-0.5.0 \
 		crossbeam-deque-0.8.0 \
-		crossbeam-epoch-0.9.0 \
-		crossbeam-utils-0.7.2 \
-		crossbeam-utils-0.8.0 \
+		crossbeam-epoch-0.9.1 \
+		crossbeam-utils-0.8.1 \
 		crunchy-0.2.2 \
-		csv-1.1.4 \
+		csv-1.1.5 \
 		csv-core-0.1.10 \
 		ctor-0.1.16 \
 		dashmap-3.11.10 \
 		difference-2.0.0 \
 		doc-comment-0.3.3 \
 		either-1.6.1 \
-		env_logger-0.7.1 \
+		env_logger-0.8.2 \
 		getrandom-0.1.15 \
 		getrandom-0.2.0 \
 		half-1.6.0 \
@@ -64,16 +61,15 @@ CARGO_CRATES=	adler32-1.2.0 \
 		indexmap-1.6.0 \
 		itertools-0.9.0 \
 		itoa-0.4.6 \
-		js-sys-0.3.45 \
+		js-sys-0.3.46 \
 		lazy_static-1.4.0 \
 		libc-0.2.80 \
 		libflate-1.0.3 \
 		libflate_lz77-1.0.0 \
 		log-0.4.11 \
 		maplit-1.0.2 \
-		maybe-uninit-2.0.0 \
 		memchr-2.3.4 \
-		memoffset-0.5.6 \
+		memoffset-0.6.1 \
 		nodrop-0.1.14 \
 		num-format-0.4.0 \
 		num-traits-0.2.14 \
@@ -90,7 +86,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.24 \
-		quick-xml-0.19.0 \
+		quick-xml-0.20.0 \
 		quote-1.0.7 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
@@ -113,18 +109,18 @@ CARGO_CRATES=	adler32-1.2.0 \
 		serde-1.0.117 \
 		serde_cbor-0.11.1 \
 		serde_derive-1.0.117 \
-		serde_json-1.0.59 \
+		serde_json-1.0.60 \
 		str_stack-0.1.0 \
 		strsim-0.8.0 \
-		structopt-0.3.20 \
-		structopt-derive-0.4.13 \
-		syn-1.0.50 \
+		structopt-0.3.21 \
+		structopt-derive-0.4.14 \
+		syn-1.0.53 \
 		testing_logger-0.1.1 \
 		textwrap-0.11.0 \
 		tiny-keccak-2.0.2 \
 		tinytemplate-1.1.0 \
 		treeline-0.1.0 \
-		unicode-segmentation-1.7.0 \
+		unicode-segmentation-1.7.1 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
 		vec_map-0.8.2 \
@@ -132,12 +128,12 @@ CARGO_CRATES=	adler32-1.2.0 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.68 \
-		wasm-bindgen-backend-0.2.68 \
-		wasm-bindgen-macro-0.2.68 \
-		wasm-bindgen-macro-support-0.2.68 \
-		wasm-bindgen-shared-0.2.68 \
-		web-sys-0.3.45 \
+		wasm-bindgen-0.2.69 \
+		wasm-bindgen-backend-0.2.69 \
+		wasm-bindgen-macro-0.2.69 \
+		wasm-bindgen-macro-support-0.2.69 \
+		wasm-bindgen-shared-0.2.69 \
+		web-sys-0.3.46 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
