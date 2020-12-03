@@ -4,7 +4,7 @@ PORTNAME=	nestopia
 DISTVERSION=	1.50
 CATEGORIES=	emulators
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Portable NES/Famicom emulator
 
 LICENSE=	GPLv2
