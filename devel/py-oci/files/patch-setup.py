@@ -5,7 +5,7 @@
  requires = [
      "certifi",
 -    "configparser==4.0.2",
--    "cryptography==2.8",
+-    "cryptography==3.2.1",
 +    "configparser>=3.5.3",
 +    "cryptography>=2.6",
      "pyOpenSSL>=17.5.0,<=19.1.0",
