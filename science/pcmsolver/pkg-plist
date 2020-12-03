@@ -3,7 +3,6 @@ bin/plot_cavity.py
 bin/run_pcm
 include/PCMSolver/Citation.hpp
 include/PCMSolver/Config.hpp
-include/PCMSolver/Cxx11Workarounds.hpp
 include/PCMSolver/ErrorHandling.hpp
 include/PCMSolver/LoggerInterface.hpp
 include/PCMSolver/PCMInput.h
@@ -50,6 +49,7 @@ include/PCMSolver/green/UniformDielectric.hpp
 include/PCMSolver/green/Vacuum.hpp
 include/PCMSolver/interface/Input.hpp
 include/PCMSolver/interface/Meddle.hpp
+include/PCMSolver/mmfq/FQOhno.hpp
 include/PCMSolver/pcmsolver.f90
 include/PCMSolver/pcmsolver.h
 include/PCMSolver/solver/CPCMSolver.hpp
@@ -64,6 +64,7 @@ include/PCMSolver/utils/Factory.hpp
 include/PCMSolver/utils/Legendre.hpp
 include/PCMSolver/utils/Logger.hpp
 include/PCMSolver/utils/LoggerImpl.hpp
+include/PCMSolver/utils/MMFQ.hpp
 include/PCMSolver/utils/MathUtils.hpp
 include/PCMSolver/utils/Molecule.hpp
 include/PCMSolver/utils/QuadratureRules.hpp
