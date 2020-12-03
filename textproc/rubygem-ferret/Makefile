@@ -13,9 +13,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 BROKEN_aarch64=	fails to build: cannot determine target CPU
+BROKEN_riscv64=	fails to build: cannot determine target CPU
 
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
 
 PLIST_FILES=	bin/ferret-browser
 
