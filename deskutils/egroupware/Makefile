@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	20.1.20201028
+PORTVERSION=	20.1.20201202
 CATEGORIES=	deskutils
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME:tl}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME:tl}-docker-${PORTVERSION}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Net/Sieve.php:net/pear-Net_Sieve@${PHP_FLAV
 		${LOCALBASE}/share/pear/Horde/Crypt.php:security/pear-Horde_Crypt@${PHP_FLAVOR}
 
 USES=		cpe php tar:bzip2
-USE_PHP=	bcmath bz2 ctype json session simplexml tidy xsl xmlreader zlib
+USE_PHP=	bcmath bz2 ctype filter json session simplexml tidy xsl xmlreader zlib
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
