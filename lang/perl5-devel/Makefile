@@ -160,7 +160,7 @@ OPTIONS_EXCLUDE=	DTRACE
 .endif
 .for a in aarch64 arm armv6 armv7 \
 	mips mips64 mips64el mips64elhf mips64hf mipsel mipselhf mipshf mipsn32 \
-	powerpc powerpc64 powerpcspe \
+	powerpc powerpcspe \
 	riscv64 riscv64sf sparc64
 OPTIONS_EXCLUDE_${a}=	DTRACE
 .endfor
