@@ -1,3 +1,24 @@
+@comment include/EGL/egl.h
+@comment include/EGL/eglext.h
+@comment include/EGL/eglextchromium.h
+@comment include/EGL/eglmesaext.h
+@comment include/EGL/eglplatform.h
+@comment include/GL/gl.h
+@comment include/GL/glcorearb.h
+@comment include/GL/glext.h
+@comment include/GL/internal/dri_interface.h
+@comment include/KHR/khrplatform.h
+@comment lib/dri/r300_dri.so
+@comment lib/dri/r600_dri.so
+@comment lib/dri/r600_drv_video.so
+@comment lib/dri/radeonsi_dri.so
+@comment lib/dri/radeonsi_drv_video.so
+@comment lib/libEGL.so
+@comment lib/libEGL.so.1
+@comment lib/libEGL.so.1.0.0
+@comment lib/libglapi.so
+@comment lib/libglapi.so.0
+@comment lib/libglapi.so.0.0.0
 lib/vdpau/libvdpau_r300.so
 lib/vdpau/libvdpau_r300.so.1
 lib/vdpau/libvdpau_r300.so.1.0
@@ -10,4 +31,6 @@ lib/vdpau/libvdpau_radeonsi.so
 lib/vdpau/libvdpau_radeonsi.so.1
 lib/vdpau/libvdpau_radeonsi.so.1.0
 lib/vdpau/libvdpau_radeonsi.so.1.0.0
+@comment libdata/pkgconfig/dri.pc
+@comment libdata/pkgconfig/egl.pc
 @comment share/drirc.d/00-mesa-defaults.conf

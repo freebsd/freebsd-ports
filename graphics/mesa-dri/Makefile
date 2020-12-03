@@ -3,7 +3,6 @@
 
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
@@ -71,9 +70,9 @@ MESA_PLATFORMS+=	wayland
 .endif
 
 MESON_ARGS+=	-Ddri-drivers="${DRI_DRIVERS:ts,:tl}" \
-			-Dgallium-drivers="${GALLIUM_DRIVERS:ts,:tl}" \
-			-Dvulkan-drivers="${VULKAN_DRIVERS:ts,:tl}" \
-			-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
+		-Dgallium-drivers="${GALLIUM_DRIVERS:ts,:tl}" \
+		-Dvulkan-drivers="${VULKAN_DRIVERS:ts,:tl}" \
+		-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
 
 # Disable some options
 MESON_ARGS+=	-Dgallium-xa=disabled \

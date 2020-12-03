@@ -3,7 +3,6 @@
 
 PORTNAME=	mesa-gallium-xa
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	Mesa Gallium XA state tracker
