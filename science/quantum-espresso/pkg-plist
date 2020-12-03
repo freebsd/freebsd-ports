@@ -21,8 +21,6 @@ bin/head.x
 bin/hp.x
 bin/ibrav2cell.x
 bin/initial_state.x
-bin/iotk.x
-bin/iotk_print_kinds.x
 bin/kpoints.x
 bin/lambda.x
 bin/ld1.x

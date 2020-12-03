@@ -1,7 +1,7 @@
---- install/extlibs_makefile.orig	2018-07-18 09:59:27 UTC
+--- install/extlibs_makefile.orig	2020-11-30 12:57:09 UTC
 +++ install/extlibs_makefile
-@@ -62,12 +62,6 @@ fake_lapack_external :
- 	-rm fake_liblapack.a
+@@ -39,12 +39,6 @@ liblapack : liblapack_$(LAPACK_LIBS_SWITCH) 
+ liblapack_external : 
  
  liblapack_internal:
 -	$(call download_and_unpack,$(LAPACK_NETLIB_NAME),$(LAPACK_NETLIB_URL),LAPACK,LAPACK)
@@ -10,6 +10,6 @@
 -	  cd ../LAPACK; $(MAKE) blaslib lapacklib); else \
 -        (echo "no configuration file found for lapack"; \
 -         echo "run configure from main QE dir"; exit); fi 
- 
- libiotk:
- 	if test ! -d ../S3DE; then \
+ lapack_clean:
+ 	if test -d ../LAPACK; then (cd ../LAPACK; $(MAKE) clean); fi
+ lapack_veryclean:

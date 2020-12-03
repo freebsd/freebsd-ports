@@ -2,7 +2,7 @@
 
 PORTNAME=	quantum-espresso
 DISTVERSIONPREFIX=	qe-
-DISTVERSION=	6.6
+DISTVERSION=	6.7.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
