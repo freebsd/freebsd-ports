@@ -16,6 +16,7 @@
 %%DATADIR%%/tables/as.tbl
 %%DATADIR%%/tables/awa.tbl
 %%DATADIR%%/tables/aw-in-g1.utb
+%%DATADIR%%/tables/ba.utb
 %%DATADIR%%/tables/be-in-g1.utb
 %%DATADIR%%/tables/bengali.cti
 %%DATADIR%%/tables/bg.ctb
@@ -113,6 +114,7 @@
 %%DATADIR%%/tables/en-us-comp8.ctb
 %%DATADIR%%/tables/en-us-comp8-ext.utb
 %%DATADIR%%/tables/en-us-compbrl.uti
+%%DATADIR%%/tables/en-us-emphasis.uti
 %%DATADIR%%/tables/en-us-g1.ctb
 %%DATADIR%%/tables/en-us-g2.ctb
 %%DATADIR%%/tables/en-us-interline.ctb
@@ -302,9 +304,8 @@
 %%DATADIR%%/tables/ru.ctb
 %%DATADIR%%/tables/ru-letters.dis
 %%DATADIR%%/tables/ru-litbrl.ctb
+%%DATADIR%%/tables/ru-litbrl-detailed.utb
 %%DATADIR%%/tables/ru-ru.dis
-%%DATADIR%%/tables/ru-ru-g1.utb
-%%DATADIR%%/tables/ru.tbl
 %%DATADIR%%/tables/ru-unicode.dis
 %%DATADIR%%/tables/sa-in-g1.utb
 %%DATADIR%%/tables/sa.tbl
@@ -395,7 +396,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.3
+lib/liblouis.so.20.0.4
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
