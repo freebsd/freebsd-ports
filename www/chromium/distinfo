@@ -1,7 +1,7 @@
-TIMESTAMP = 1605893526
-SHA256 (chromium-87.0.4280.66.tar.xz) = 29a8e4ea82edec2fdcf34ece68323bec7ab90f3d5669e6b77f58cff9c278f741
-SIZE (chromium-87.0.4280.66.tar.xz) = 856464608
-SHA256 (chromium-87.0.4280.66-testdata.tar.xz) = f6f26bac71a58d36b1b47abdaf4b209b135877a15b6964b126f7677be101e676
-SIZE (chromium-87.0.4280.66-testdata.tar.xz) = 257359532
+TIMESTAMP = 1606957721
+SHA256 (chromium-87.0.4280.88.tar.xz) = 3e4645328735ef60db78d1a313efb3770a3edeaede90d076414df52f567a09c0
+SIZE (chromium-87.0.4280.88.tar.xz) = 856266548
+SHA256 (chromium-87.0.4280.88-testdata.tar.xz) = 35c4676c9cb699aa76335757ec2a71a246102f2e6e6a3536e43c1c4afb04e494
+SIZE (chromium-87.0.4280.88-testdata.tar.xz) = 257423892
 SHA256 (test_fonts-85.tar.xz) = f22b61b3639acb147c98ec2e2305d8b96f0b55c8c74c40e2ea696402fae8cef9
 SIZE (test_fonts-85.tar.xz) = 9511984
