@@ -1,3 +1,5 @@
 TIMESTAMP = 1606573875
 SHA256 (bind-9.11.25.tar.gz) = 8491c24e5a3da68f421d0fcb946602c8d0ff963012fdd176b8026c8890f3a117
 SIZE (bind-9.11.25.tar.gz) = 8284943
+SHA256 (bind-9.11.25-fixed-man-pages.tar.gz) = 4da5592ffef2a0241f232d26927f46d94621e7649520260acbf91a541867a282
+SIZE (bind-9.11.25-fixed-man-pages.tar.gz) = 84725
