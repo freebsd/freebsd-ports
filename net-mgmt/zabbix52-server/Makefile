@@ -128,6 +128,10 @@ NMAP_RUN_DEPENDS=	nmap:security/nmap \
 LIBXML2_CONFIGURE_WITH=	libxml2=${LOCALBASE}
 LIBXML2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
+MODBUS_DESC=		Support for Modbus checks
+MODBUS_CONFIGURE_WITH=	libmodbus
+MODBUS_LIB_DEPENDS=	libmodbus.so:comms/libmodbus
+
 OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_USES=		ssl
 OPENSSL_VARS=		BROKEN_SSL="libressl libressl-devel" \
