@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	puppet
-PORTVERSION=	5.5.22
+PORTVERSION=	7.0.0
 CATEGORIES=	sysutils
-MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
-PKGNAMESUFFIX=	5
+PKGNAMESUFFIX=	7
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Configuration management framework written in Ruby
@@ -12,24 +11,30 @@ COMMENT=	Configuration management framework written in Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# maybe a newer version like puppet 6.x or 7.x must be used to work with ruby 2.7
-BROKEN_RUBY27=	yes
-
-BUILD_DEPENDS=	rubygem-hiera>=2.0:sysutils/rubygem-hiera \
-		rubygem-json_pure>=0:devel/rubygem-json_pure
-RUN_DEPENDS=	rubygem-gettext-setup>=0:devel/rubygem-gettext-setup \
+BUILD_DEPENDS=	rubygem-deep_merge>=1.0:devel/rubygem-deep_merge \
+		rubygem-hiera>=2.0:sysutils/rubygem-hiera \
+		rubygem-json_pure>=0:devel/rubygem-json_pure \
+		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
+RUN_DEPENDS=	rubygem-concurrent-ruby>0:devel/rubygem-concurrent-ruby \
+		rubygem-deep_merge>0:devel/rubygem-deep_merge \
+		rubygem-gettext-setup>=0:devel/rubygem-gettext-setup \
 		rubygem-hiera>=2.0:sysutils/rubygem-hiera \
 		rubygem-hocon>=0:devel/rubygem-hocon \
 		rubygem-json_pure>=0:devel/rubygem-json_pure \
-		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas
+		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas \
+		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
 
 USES=		cpe
 CPE_VENDOR=	puppetlabs
-CONFLICTS_INSTALL=	puppet6-* puppet7-*
+USE_GITHUB=	yes
+GH_ACCOUNT=	puppetlabs
+
+CONFLICTS_INSTALL=	puppet5-* puppet6-*
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_RUBY=	yes
-USE_RC_SUBR=	puppet puppetmaster
+USE_RC_SUBR=	puppet
 PORTDOCS=	LICENSE README.md
 PORTEXAMPLES=	*
 USERS=		puppet
@@ -38,7 +43,7 @@ SUB_FILES+=	pkg-message
 SUB_LIST=	RUBY=${RUBY}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
-OPTIONS_DEFAULT=	CFACTER
+OPTIONS_DEFAULT=	RFACTER
 OPTIONS_RADIO=		FACTER
 OPTIONS_RADIO_FACTER=	CFACTER RFACTER
 
@@ -70,7 +75,12 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/var/log/puppetlabs/puppet|/var/log/puppet|" \
 		${WRKSRC}/install.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
+	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/public|/var/puppet/state|" \
+		${WRKSRC}/install.rb \
+		${WRKSRC}/lib/puppet/util/run_mode.rb
 	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/modules|${ETCDIR}/modules|" \
+		-e "s|/etc/puppetlabs/puppetserver/ca|/var/puppetserver/ca|" \
+		-e "s|/opt/puppetlabs/puppet/vendor_modules|${ETCDIR}/vendor_modules|" \
 		${WRKSRC}/lib/puppet/defaults.rb
 	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/bin/gem|${LOCALBASE}/bin/gem|" \
 		${WRKSRC}/lib/puppet/provider/package/puppet_gem.rb
@@ -78,18 +88,15 @@ post-patch:
 		${WRKSRC}/lib/puppet/defaults.rb
 	@${REINPLACE_CMD} -e "s|\.\./\.\./\.\./locales|../locales|" \
 		${WRKSRC}/lib/puppet/gettext/config.rb
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
-		${WRKSRC}/ext/rack/config.ru
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} LC_ALL=C.UTF-8 ${RUBY} ${WRKSRC}/install.rb --no-configs --destdir=${STAGEDIR} \
-		--localedir=${RUBY_SITELIBDIR}/puppet/locales
+		--localedir=${RUBY_SITELIBDIR}/puppet/locales --publicdir=/var/puppet/state/
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/manifests
 	${MKDIR} ${STAGEDIR}${ETCDIR}/modules
 	${MKDIR} ${STAGEDIR}/var/puppet
-	${INSTALL_DATA} ${WRKSRC}/conf/auth.conf ${STAGEDIR}${ETCDIR}/auth.conf-dist
 	${SETENV} LC_ALL=C.UTF-8 ${RUBY} -I ${STAGEDIR}/${RUBY_SITELIBDIR} ${STAGEDIR}${PREFIX}/bin/puppet agent --genconfig \
 		--confdir=${ETCDIR} \
 		--rundir=/var/run/puppet \
@@ -101,8 +108,8 @@ post-install:
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/ext/rack/config.ru ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/specifications
+	${INSTALL_DATA} ${WRKSRC}/.gemspec ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/specifications/${PORTNAME}-${PORTVERSION}.gemspec
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -111,6 +118,5 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/ext/rack/example-passenger-vhost.conf ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

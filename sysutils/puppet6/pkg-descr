@@ -4,4 +4,4 @@ elements normally aggregated in different files, like users, cron jobs, and
 hosts, along with obviously discrete elements like packages, services, and
 files.
 
-WWW: https://puppetlabs.com/puppet/puppet-open-source
+WWW: https://puppet.com/docs/puppet/latest/puppet_index.html
