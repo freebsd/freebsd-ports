@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rebar3
-PORTVERSION=	3.14.2
+PORTVERSION=	3.14.3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES+=	LOCAL/olgeni:deps \
@@ -43,7 +43,7 @@ REBAR_DEPS=	bbmustache-1.10.0 \
 		getopt-1.0.1 \
 		parse_trans-3.3.0 \
 		providers-1.8.1 \
-		relx-4.1.0 \
+		relx-4.2.0 \
 		ssl_verify_fun-1.1.6
 
 .for _dep in ${REBAR_DEPS} ${REBAR_PLUGINS}
