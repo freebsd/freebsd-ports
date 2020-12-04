@@ -1,7 +1,7 @@
 This package allows you to send an SMS to any GSM, using scripts
 to connect the providers' sites.
-You can make your own scripts, it is very simple, just watch the
-example files from this archive, and send them to me so I'll add
-them to the official archive.
+You can make your own scripts, it's simple and easy. Simply
+examine the example files from this archive, and create your own,
+and send them to me so I can add them to the official archive.
 
-WWW: http://zekiller.skytech.org/smssend_en.php
+WWW: https://BSDforge.com/projects/misc/smssend/

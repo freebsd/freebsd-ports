@@ -2,21 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	smssend
-PORTVERSION=	3.5
-PORTREVISION=	2
+PORTVERSION=	3.6
 CATEGORIES=	misc
-MASTER_SITES=	LOCAL/laszlof \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://BSDforge.com/projects/source/misc/smssend/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Tool to send a SMS to any GSM
+MAINTAINER=	portmaster@BSDforge.com
+COMMENT=	Tool to send an SMS to any GSM
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libskyutils.so:misc/skyutils
 
-USES=		libtool shebangfix
+USES=		libtool shebangfix tar:txz
 SHEBANG_FILES=	bestsms.sh email2smssend
 GNU_CONFIGURE=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
