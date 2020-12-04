@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	1password-client
-DISTVERSION=	1.0.0
+DISTVERSION=	1.8.0
 CATEGORIES=	security
 MASTER_SITES=	https://cache.agilebits.com/dist/1P/op/pkg/v${DISTVERSION}/ \
 		LOCAL/ler/op
