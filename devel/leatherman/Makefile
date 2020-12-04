@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	leatherman
-PORTVERSION=	1.12.2
+PORTVERSION=	1.12.3
 CATEGORIES=	devel
 
 MAINTAINER=	puppet@FreeBSD.org
