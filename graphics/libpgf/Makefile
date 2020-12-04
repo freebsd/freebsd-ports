@@ -10,7 +10,8 @@ DISTNAME=	libPGF-codec-and-console-src
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Progressive Graphics Format (PGF) library
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf dos2unix libtool pathfix zip
 USE_LDCONFIG=	yes
