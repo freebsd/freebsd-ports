@@ -1,5 +1,4 @@
-%%GTK2%%bin/gtk-youtube-viewer
-bin/youtube-viewer
+%%GTK2%%bin/youtube-viewer
 %%SITE_PERL%%/WWW/YoutubeViewer.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/Activities.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/Authentication.pm
@@ -19,13 +18,6 @@ bin/youtube-viewer
 %%SITE_PERL%%/WWW/YoutubeViewer/Utils.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/VideoCategories.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/Videos.pm
-%%GTK2%%%%SITE_PERL%%/auto/share/dist/WWW-YoutubeViewer/gtk-youtube-viewer.desktop
-%%GTK2%%%%SITE_PERL%%/auto/share/dist/WWW-YoutubeViewer/gtk-youtube-viewer.glade
-%%GTK2%%%%SITE_PERL%%/auto/share/dist/WWW-YoutubeViewer/icons/default_thumb.jpg
-%%GTK2%%%%SITE_PERL%%/auto/share/dist/WWW-YoutubeViewer/icons/feed_icon.png
-%%GTK2%%%%SITE_PERL%%/auto/share/dist/WWW-YoutubeViewer/icons/gtk-youtube-viewer.png
-%%GTK2%%%%SITE_PERL%%/auto/share/dist/WWW-YoutubeViewer/icons/spinner.gif
-%%GTK2%%%%SITE_PERL%%/auto/share/dist/WWW-YoutubeViewer/icons/user.png
 %%PERL5_MAN1%%/youtube-viewer.1.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::Activities.3.gz

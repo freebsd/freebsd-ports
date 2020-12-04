@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-youtube-viewer
-PORTVERSION=	3.5.9
+PORTVERSION=	3.8.0
 CATEGORIES=	multimedia perl5
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	GTK Search and play YouTube videos streaming in MPlayer
 
 LICENSE=	ART10 GPLv3
@@ -25,8 +25,6 @@ BUILD_DEPENDS=	p5-JSON>0:converters/p5-JSON \
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-common-sense>=2.02:devel/p5-common-sense
 
-NO_ARCH=	yes
-
 USES=		perl5 shebangfix
 SHEBANG_FILES=	bin/gtk-youtube-viewer bin/youtube-viewer
 USE_PERL5=	patch modbuild
@@ -34,6 +32,8 @@ USE_PERL5=	patch modbuild
 USE_GITHUB=	yes
 GH_ACCOUNT=	trizen
 GH_PROJECT=	youtube-viewer
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=		GTK2
 OPTIONS_MULTI=		PLAYER
