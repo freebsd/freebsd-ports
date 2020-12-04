@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		pop
-PORTVERSION=	14
+PORTVERSION=	16.1
 CATEGORIES=		devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -23,7 +23,7 @@ USE_PYTHON=	autoplist distutils
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	saltstack/pop
-GL_COMMIT=	d7b457b5fdee7f6feb0fe8f19a34633b4ec9992a
+GL_COMMIT=	5d00f3b78a0d7caecf7747de7f03985c850d3750
 
 NO_ARCH=	yes
 
