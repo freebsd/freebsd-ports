@@ -1,0 +1,17 @@
+%%RUBY_SITELIBDIR%%/puppet/face/node/deactivate.rb
+%%RUBY_SITELIBDIR%%/puppet/face/node/status.rb
+%%RUBY_SITELIBDIR%%/puppet/functions/puppetdb_query.rb
+%%RUBY_SITELIBDIR%%/puppet/indirector/catalog/puppetdb.rb
+%%RUBY_SITELIBDIR%%/puppet/indirector/facts/puppetdb.rb
+%%RUBY_SITELIBDIR%%/puppet/indirector/facts/puppetdb_apply.rb
+%%RUBY_SITELIBDIR%%/puppet/indirector/node/puppetdb.rb
+%%RUBY_SITELIBDIR%%/puppet/indirector/resource/puppetdb.rb
+%%RUBY_SITELIBDIR%%/puppet/reports/puppetdb.rb
+%%RUBY_SITELIBDIR%%/puppet/util/puppetdb.rb
+%%RUBY_SITELIBDIR%%/puppet/util/puppetdb/atom.rb
+%%RUBY_SITELIBDIR%%/puppet/util/puppetdb/char_encoding.rb
+%%RUBY_SITELIBDIR%%/puppet/util/puppetdb/command.rb
+%%RUBY_SITELIBDIR%%/puppet/util/puppetdb/command_names.rb
+%%RUBY_SITELIBDIR%%/puppet/util/puppetdb/config.rb
+%%RUBY_SITELIBDIR%%/puppet/util/puppetdb/http.rb
+
