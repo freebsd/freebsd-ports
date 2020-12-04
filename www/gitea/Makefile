@@ -2,7 +2,7 @@
 
 PORTNAME=	gitea
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.6
+DISTVERSION=	1.13.0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/go-gitea/gitea/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	gitea-src-${DISTVERSION}
@@ -66,7 +66,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gitea ${STAGEDIR}${PREFIX}/sbin
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf
 	${INSTALL_DATA} ${WRKDIR}/app.ini.sample ${STAGEDIR}${ETCDIR}/conf/app.ini.sample
-	${INSTALL_DATA} ${WRKSRC}/custom/conf/app.ini.sample ${STAGEDIR}${ETCDIR}/conf/app.ini.defaults
+	${INSTALL_DATA} ${WRKSRC}/custom/conf/app.example.ini ${STAGEDIR}${ETCDIR}/conf/app.ini.defaults
 
 	@${MKDIR} ${STAGEDIR}${DESTDIR}/var/db/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DESTDIR}/var/log/${PORTNAME}
