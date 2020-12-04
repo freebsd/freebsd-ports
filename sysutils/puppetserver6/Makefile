@@ -2,6 +2,7 @@
 
 PORTNAME=	puppetserver
 PORTVERSION=	6.14.1
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.puppetlabs.com/puppet/:upstream \
 		https://raw.githubusercontent.com/jruby/jruby/fb3ba4b3543b72e735ba53b51e6b7ec8a9916e1b/lib/ruby/stdlib/ffi/:ffi
@@ -30,7 +31,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 JAVA_VERSION=	1.8+
 
-CONFLICTS_INSTALL=	puppetserver-* puppetserver5-*
+CONFLICTS_INSTALL=	puppetserver5-* puppetserver7-*
 
 SHEBANG_FILES=  ext/bin/puppetserver
 
@@ -70,6 +71,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/var/log/puppetserver
 	@${MKDIR} ${STAGEDIR}/var/puppet/server
 	@${MKDIR} ${STAGEDIR}/var/puppet/server/data
+	@${MKDIR} ${STAGEDIR}/var/puppetserver
 	@${MKDIR} ${STAGEDIR}/var/run/puppetserver
 	${INSTALL_DATA} ${WRKSRC}/puppet-server-release.jar ${STAGEDIR}${DATADIR}/puppet-server-release.jar
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/global.conf ${STAGEDIR}${ETCDIR}/conf.d/global.conf.sample
