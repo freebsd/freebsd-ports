@@ -2,30 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	radsecproxy
-PORTVERSION=	1.8.2
+DISTVERSION=	1.8.2
 CATEGORIES=	net
-MASTER_SITES=	GH
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	neel@neelc.org
 COMMENT=	Generic RADIUS proxy
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnettle.so:security/nettle
 
-USES=		autoreconf cpe localbase:ldflags ssl tar:tgz
+USES=		cpe localbase:ldflags ssl
+USE_RC_SUBR=	${PORTNAME}
+CPE_VENDOR=	uninett
 
 GNU_CONFIGURE=	yes
-USE_GITHUB=	yes
-USE_RC_SUBR=	${PORTNAME}
-CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
-CPE_VENDOR=	switch
 
-.include <bsd.port.pre.mk>
+CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 
 post-install:
 	${MAKE} install-man -C ${WRKSRC} ${MAKE_ARGS}
 	${INSTALL_DATA} ${WRKSRC}/radsecproxy.conf-example \
 		${STAGEDIR}${PREFIX}/etc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
