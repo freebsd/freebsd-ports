@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-notifyd
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
