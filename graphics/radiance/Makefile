@@ -12,6 +12,8 @@ COMMENT=	Video art software for VJs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build with the latest mpv: https://github.com/zbanks/radiance/issues/114
+
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libmpv.so:multimedia/mpv \
