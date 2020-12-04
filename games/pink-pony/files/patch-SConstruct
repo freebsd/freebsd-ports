@@ -5,7 +5,7 @@
  #optimization_flags = ['-O0', '-ggdb']
  
 -env = Environment()
-+env = Environment(ENV=os.environ, **dict((k, v.split()) for k, v in ARGUMENTS.iteritems()))
++env = Environment(ENV=os.environ, **dict((k, v.split()) for k, v in ARGUMENTS.items()))
 -env['CC'] = 'g++'
 -env['CCFLAGS'] = ['-Wall', '-Wextra', '-Wno-reorder', '-Wno-unused-parameter'] + optimization_flags
 +env.Append(CCFLAGS = ['-Wall', '-Wextra', '-Wno-reorder', '-Wno-unused-parameter'])
