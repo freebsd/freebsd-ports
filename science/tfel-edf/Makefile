@@ -43,6 +43,10 @@ TEST_TARGET=	check
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 
+.if ${FORTRAN_DEFAULT} == gfortran && ${GCC_DEFAULT} >= 10
+FCFLAGS+=	-fallow-argument-mismatch
+.endif
+
 post-install:
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})
