@@ -3,7 +3,7 @@
 PORTNAME=	maturin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,6 +22,7 @@ NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc
 NOT_FOR_ARCHS_REASON=	the creation of 32-bit Python wheels is not supported for FreeBSD
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}toml>=0.10.0:textproc/py-toml@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}toml>=0.10.0:textproc/py-toml@${PY_FLAVOR}
 
 USES=		cargo python:3.5+
 USE_GITHUB=	yes
