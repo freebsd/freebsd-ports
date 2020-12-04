@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-for-it
-DISTVERSION=	1.8.6
+DISTVERSION=	1.8.7
 CATEGORIES=	deskutils
 
 MAINTAINER=	neel@neelc.org
