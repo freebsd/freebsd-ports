@@ -472,7 +472,6 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/astspec.txt
 %%PORTDOCS%%%%DOCSDIR%%/backends.rst
 %%PORTDOCS%%%%DOCSDIR%%/basicopt.txt
-%%PORTDOCS%%%%DOCSDIR%%/codeowners.rst
 %%PORTDOCS%%%%DOCSDIR%%/contributing.rst
 %%PORTDOCS%%%%DOCSDIR%%/destructors.rst
 %%PORTDOCS%%%%DOCSDIR%%/docgen.rst
@@ -509,7 +508,6 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/html/cgi.html
 %%PORTDOCS%%%%DOCSDIR%%/html/chains.html
 %%PORTDOCS%%%%DOCSDIR%%/html/channels.html
-%%PORTDOCS%%%%DOCSDIR%%/html/codeowners.html
 %%PORTDOCS%%%%DOCSDIR%%/html/colors.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/aliases.html
