@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-btfs
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 DISTVERSIONPREFIX=	btfs-v
 CATEGORIES=	sysutils
 
@@ -35,8 +35,8 @@ GH_TUPLE=	\
 		TRON-US:go-cid:v0.2.1:tron_us_go_cid/vendor/github.com/ipfs/go-cid \
 		TRON-US:go-eccrypto:v0.0.1:tron_us_go_eccrypto/vendor/github.com/TRON-US/go-eccrypto \
 		TRON-US:go-graphsync:v0.1.2:tron_us_go_graphsync/vendor/github.com/ipfs/go-graphsync \
-		TRON-US:go-ipld-format:v0.2.0:tron_us_go_ipld_format_1/vendor/github.com/ipfs/go-ipld-format \
-		TRON-US:go-ipld-prime-proto:v0.0.2:tron_us_go_ipld_prime_proto_1/vendor/github.com/ipld/go-ipld-prime-proto \
+		TRON-US:go-ipld-format:v0.2.0:tron_us_go_ipld_format/vendor/github.com/ipfs/go-ipld-format \
+		TRON-US:go-ipld-prime-proto:v0.0.2:tron_us_go_ipld_prime_proto/vendor/github.com/ipld/go-ipld-prime-proto \
 		TRON-US:go-libp2p-core:v0.5.1:tron_us_go_libp2p_core/vendor/github.com/libp2p/go-libp2p-core \
 		TRON-US:go-libp2p-kad-dht:v0.9.3:tron_us_go_libp2p_kad_dht/vendor/github.com/libp2p/go-libp2p-kad-dht \
 		TRON-US:go-mfs:v0.3.1:tron_us_go_mfs/vendor/github.com/TRON-US/go-mfs \
