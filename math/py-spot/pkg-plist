@@ -5,8 +5,8 @@
 %%PYTHON_SITELIBDIR%%/spot/__init__.py
 %%PYTHON_SITELIBDIR%%/spot/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/spot/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/spot/__pycache__/aux.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/spot/__pycache__/aux.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/spot/__pycache__/aux_.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/spot/__pycache__/aux_.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/spot/__pycache__/gen.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/spot/__pycache__/gen.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/spot/__pycache__/impl.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -18,7 +18,7 @@
 %%PYTHON_SITELIBDIR%%/spot/_gen.so
 %%PYTHON_SITELIBDIR%%/spot/_impl.so
 %%PYTHON_SITELIBDIR%%/spot/_ltsmin.so
-%%PYTHON_SITELIBDIR%%/spot/aux.py
+%%PYTHON_SITELIBDIR%%/spot/aux_.py
 %%PYTHON_SITELIBDIR%%/spot/gen.py
 %%PYTHON_SITELIBDIR%%/spot/impl.py
 %%PYTHON_SITELIBDIR%%/spot/jupyter.py
