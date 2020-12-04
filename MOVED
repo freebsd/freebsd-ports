@@ -15735,3 +15735,4 @@ www/rubygem-dashing||2020-12-03|Has expired: Unmaintained by upstream, use www/r
 www/rubygem-redmine_acts_as_taggable_on||2020-12-03|Has expired: Unmaintained by upstream
 www/rubygem-gitlab-grack||2020-12-03|Has expired: Deprecated by upstream
 databases/db6||2020-12-03|Has expired: latest 6.2.x version and newer not downloadable without registration
+graphics/geeqie-devel|graphics/geeqie|2020-12-04|Development version no longer necessary

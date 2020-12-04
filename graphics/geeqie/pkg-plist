@@ -10,6 +10,7 @@ lib/geeqie/geeqie-image-crop
 lib/geeqie/geeqie-random-image
 lib/geeqie/geeqie-tethered-photography
 lib/geeqie/geeqie-tethered-photography-hook-script
+lib/geeqie/lensID
 man/man1/geeqie.1.gz
 share/applications/geeqie.desktop
 %%DATADIR%%/applications/camera-import.desktop
@@ -61,4 +62,5 @@ share/applications/geeqie.desktop
 %%NLS%%share/locale/vi/LC_MESSAGES/geeqie.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/geeqie.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/geeqie.mo
+share/metainfo/org.geeqie.Geeqie.appdata.xml
 share/pixmaps/geeqie.png
