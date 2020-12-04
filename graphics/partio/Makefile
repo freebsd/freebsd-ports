@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	partio
-PORTVERSION=	1.13.0
+PORTVERSION=	1.13.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics math
 
@@ -23,7 +23,11 @@ USE_XORG=	xi xmu
 USE_GITHUB=	yes
 GH_ACCOUNT=	wdas
 
-OPTIONS_DEFINE=		DOCS DOXYGEN EXAMPLES
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=		DOCS DOXYGEN EXAMPLES PYQT
+PYQT_DESC=		Install PyQt-based auxiliary tools
 
 # DOCS must be selected for PORTDOCS to work
 DOXYGEN_IMPLIES=	DOCS
@@ -32,12 +36,16 @@ DOXYGEN_ALL_TARGET=	all doc
 
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
+PYQT_USES=		pyqt:5 python
+PYQT_USE=		PYQT=core,gui,widgets
+PYQT_PLIST_FILES=	bin/partinspect
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,OpenGL::OpenGL,$${OPENGL_LIBRARIES},' \
 		${WRKSRC}/src/tools/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's,^from Qt,from PyQt5,' \
+		${WRKSRC}/src/tools/partinspect.py
+	@${REINPLACE_CMD} -e '/^install/d' ${WRKSRC}/src/tests/CMakeLists.txt
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/add_subdirectory(src\/doc)/d' \
@@ -45,7 +53,7 @@ post-patch-DOCS-off:
 
 # Remove those files that don't yet work
 post-install:
-	${RM} ${STAGEDIR}${PREFIX}/bin/partedit ${STAGEDIR}${PREFIX}/bin/partinspect
+	${RM} ${STAGEDIR}${PREFIX}/bin/partedit
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -54,5 +62,8 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/src/data && ${INSTALL_DATA} * ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-PYQT-off:
+	cd ${STAGEDIR}${PREFIX} && ${RM} ${PYQT_PLIST_FILES}
 
 .include <bsd.port.mk>
