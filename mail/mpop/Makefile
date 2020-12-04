@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	mpop
-DISTVERSION=	1.4.10
+DISTVERSION=	1.4.11
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/mpop/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Small and fast POP3 client
 
 LICENSE=	GPLv3+
