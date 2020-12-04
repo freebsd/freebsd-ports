@@ -1,3 +1,4 @@
+%%PORTDOCS%%%%DOCSDIR%%/Normaliz.pdf
 include/libnormaliz/HilbertSeries.h
 include/libnormaliz/cone.h
 include/libnormaliz/cone_property.h
@@ -12,4 +13,3 @@ include/libnormaliz/sublattice_representation.h
 include/libnormaliz/vector_operations.h
 include/libnormaliz/version.h
 lib/libnormaliz.a
-%%PORTDOCS%%%%DOCSDIR%%/Normaliz.pdf

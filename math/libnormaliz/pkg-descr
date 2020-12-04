@@ -1,18 +1,4 @@
 Normaliz is an open source tool for computations in affine monoids,
 vector configurations, lattice polytopes, and rational cones.
 
-Computation goals:
-- convex hulls and dual cones;
-- conversion from generators to constraints and vice versa;
-- projections of cones and polyhedra;
-- triangulations, disjoint decompositions and Stanley decompositions;
-- Hilbert basis of rational, not necessarily pointed cones;
-- normalization of affine monoids;
-- lattice points of rational polytopes and (unbounded) polyhedra;
-- Euclidean and lattice normalized volumes of polytopes;
-- Hilbert (or Ehrhart) series and (quasi) polynomials under Z-gradings
-(for example, for rational polytopes);
-- generalized (or weighted) Ehrhart series and Lebesgue integrals of
-polynomials over rational polytopes.
-
 WWW: https://www.normaliz.uni-osnabrueck.de
