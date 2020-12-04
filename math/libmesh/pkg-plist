@@ -475,7 +475,6 @@ include/libmesh/wrapped_functor.h
 include/libmesh/xdr_cxx.h
 include/libmesh/xdr_io.h
 include/libmesh/zero_function.h
-include/metis.h
 include/timpi/attributes.h
 include/timpi/communicator.h
 include/timpi/data_type.h
