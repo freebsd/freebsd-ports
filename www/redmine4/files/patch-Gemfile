@@ -1,7 +1,10 @@
 --- Gemfile.orig	2020-04-06 17:00:48 UTC
 +++ Gemfile
-@@ -3,7 +3,7 @@ source 'https://rubygems.org'
- ruby '>= 2.3.0', '< 2.7.0' if Bundler::VERSION >= '1.12.0'
+@@ -1,9 +1,9 @@
+ source 'https://rubygems.org'
+ 
+-ruby '>= 2.3.0', '< 2.7.0' if Bundler::VERSION >= '1.12.0'
++ruby '>= 2.3.0', '< 2.8.0' if Bundler::VERSION >= '1.12.0'
  gem "bundler", ">= 1.5.0"
  
 -gem 'rails', '5.2.4.2'
