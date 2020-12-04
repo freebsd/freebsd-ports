@@ -340,27 +340,27 @@ kgdb_thr_next(struct kthr *kt)
 const char *
 kgdb_thr_extra_thread_info(int tid)
 {
-	char comm[MAXCOMLEN + 1];
-	char td_name[MAXCOMLEN + 1];
-	struct kthr *kt;
-	static char buf[64];
+  static char buf[64];
 
-	kt = kgdb_thr_lookup_tid(tid);
-	if (kt == NULL)
-		return (NULL);	
-	snprintf(buf, sizeof(buf), "PID=%d", kt->pid);
-	try {
-		read_memory_string (kt->paddr + proc_off_p_comm, comm,
-		    sizeof(comm));
-		strlcat(buf, ": ", sizeof(buf));
-		strlcat(buf, comm, sizeof(buf));
-		read_memory_string (kt->kaddr + thread_off_td_name, td_name,
-		    sizeof(td_name));
-		if (strcmp(comm, td_name) != 0) {
-			strlcat(buf, "/", sizeof(buf));
-			strlcat(buf, td_name, sizeof(buf));
-		}
-	} catch (const gdb_exception_error &e) {
+  struct kthr *kt = kgdb_thr_lookup_tid(tid);
+  if (kt == nullptr)
+    return (nullptr);
+
+  snprintf(buf, sizeof (buf), "PID=%d", kt->pid);
+  gdb::unique_xmalloc_ptr<char> comm
+    = target_read_string (kt->paddr + proc_off_p_comm, MAXCOMLEN + 1);
+  if (comm != nullptr)
+    {
+      strlcat(buf, ": ", sizeof (buf));
+      strlcat(buf, comm.get (), sizeof (buf));
+
+      gdb::unique_xmalloc_ptr<char> td_name
+	= target_read_string (kt->kaddr + thread_off_td_name, MAXCOMLEN + 1);
+      if (td_name != nullptr && strcmp (comm.get (), td_name.get ()) != 0)
+	{
+	  strlcat(buf, "/", sizeof (buf));
+	  strlcat(buf, td_name.get (), sizeof (buf));
 	}
-	return (buf);
+    }
+  return (buf);
 }

@@ -25,10 +25,9 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * from: src/gnu/usr.bin/gdb/kgdb/trgt_alpha.c,v 1.2.2.1 2005/09/15 05:32:10 marcel
+ *
+ * $FreeBSD: head/gnu/usr.bin/gdb/kgdb/trgt_mips.c 249878 2013-04-25 04:53:01Z imp $
  */
-
-#include <sys/cdefs.h>
-__FBSDID("$FreeBSD: head/gnu/usr.bin/gdb/kgdb/trgt_mips.c 249878 2013-04-25 04:53:01Z imp $");
 
 #include "defs.h"
 #include "frame-unwind.h"
@@ -286,6 +285,7 @@ mipsfbsd_kernel_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
   fbsd_vmcore_set_cpu_pcb_addr (gdbarch, kgdb_trgt_stop_pcb);
 }
 
+void _initialize_mips_kgdb_tdep(void);
 void
 _initialize_mips_kgdb_tdep (void)
 {

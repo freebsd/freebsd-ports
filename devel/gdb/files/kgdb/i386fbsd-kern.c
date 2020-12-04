@@ -467,6 +467,7 @@ i386fbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
 	fbsd_vmcore_set_cpu_pcb_addr(gdbarch, kgdb_trgt_stop_pcb);
 }
 
+void _initialize_i386_kgdb_tdep(void);
 void
 _initialize_i386_kgdb_tdep(void)
 {

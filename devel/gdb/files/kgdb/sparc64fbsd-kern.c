@@ -303,6 +303,7 @@ sparc64fbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
 #endif
 }
 
+void _initialize_sparc64_kgdb_tdep(void);
 void
 _initialize_sparc64_kgdb_tdep(void)
 {

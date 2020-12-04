@@ -186,11 +186,13 @@ fbsd_kernel_osabi_sniffer(bfd *abfd)
 		    &osabi);
 
 		/*
-		 * aarch64 kernels don't have the right note tag for
-		 * kernels so just look for /red/herring anyway.
+		 * aarch64 and RISC-V kernels don't have the right
+		 * note tag for kernels so just look for /red/herring
+		 * anyway.
 		 */
 		if (osabi == GDB_OSABI_UNKNOWN &&
-		    elf_elfheader(abfd)->e_machine == EM_AARCH64)
+		    ((elf_elfheader(abfd)->e_machine == EM_AARCH64) ||
+		    (elf_elfheader(abfd)->e_machine == EM_RISCV)))
 			break;
 		if (osabi != GDB_OSABI_FREEBSD)
 			return (GDB_OSABI_UNKNOWN);
@@ -249,7 +251,7 @@ public:
   bool has_memory () override;
   bool has_stack () override;
   bool has_registers () override;
-  bool has_execution (ptid_t) override { return false; }
+  bool has_execution (inferior *inf) override { return false; }
 };
 
 /* Target ops for libkvm interface.  */
@@ -405,14 +407,16 @@ fbsd_kvm_target_open (const char *args, int from_tty)
 		inf->fake_pid_p = 1;
 	}
 	solib_create_inferior_hook(0);
-	init_thread_list();
 	kt = kgdb_thr_init(ops->cpu_pcb_addr);
+	thread_info *curthr = nullptr;
 	while (kt != NULL) {
-		add_thread_silent(fbsd_vmcore_ptid(kt->tid));
+		thread_info *thr = add_thread_silent(&fbsd_kvm_ops,
+		    fbsd_vmcore_ptid(kt->tid));
+		if (kt == curkthr)
+			curthr = thr;
 		kt = kgdb_thr_next(kt);
 	}
-	if (curkthr != 0)
-		inferior_ptid = fbsd_vmcore_ptid(curkthr->tid);
+	switch_to_thread (curthr);
 
 	target_fetch_registers (get_current_regcache (), -1);
 
@@ -434,7 +438,8 @@ fbsd_kvm_target::close()
 		vmcore = NULL;
 	}
 
-	inferior_ptid = null_ptid;
+	switch_to_no_thread ();
+	exit_inferior_silent (current_inferior ());
 }
 
 #if 0
@@ -530,7 +535,7 @@ fbsd_kvm_target::fetch_registers(struct regcache *regcache, int regnum)
 
 	if (ops->supply_pcb == NULL)
 		return;
-	kt = kgdb_thr_lookup_tid(inferior_ptid.tid());
+	kt = kgdb_thr_lookup_tid(regcache->ptid().tid());
 	if (kt == NULL)
 		return;
 	ops->supply_pcb(regcache, kt->pcb);
@@ -590,7 +595,7 @@ kgdb_switch_to_thread(const char *arg, int tid)
 {
   struct thread_info *tp;
 
-  tp = find_thread_ptid (fbsd_vmcore_ptid (tid));
+  tp = find_thread_ptid (&fbsd_kvm_ops, fbsd_vmcore_ptid (tid));
   if (tp == NULL)
     error ("invalid tid");
   thread_select (arg, tp);
@@ -642,11 +647,13 @@ kgdb_set_tid_cmd (const char *arg, int from_tty)
 	kgdb_switch_to_thread(arg, addr);
 }
 
+void _initialize_kgdb_target(void);
 void
 _initialize_kgdb_target(void)
 {
 
-	add_target(fbsd_kvm_target_info, fbsd_kvm_target_open);
+	add_target(fbsd_kvm_target_info, fbsd_kvm_target_open,
+	    filename_completer);
 
 	fbsd_vmcore_data = gdbarch_data_register_pre_init(fbsd_vmcore_init);
 

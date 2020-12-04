@@ -49,11 +49,8 @@ static const struct regcache_map_entry riscv_fbsd_pcbmap[] =
     { 1, RISCV_SP_REGNUM, 0 },
     { 1, RISCV_GP_REGNUM, 0 },
     { 1, RISCV_TP_REGNUM, 0 },
-    { 3, 5, 0 },		/* t0 - t2 */
-    { 4, 28, 0 },		/* t3 - t6 */
     { 2, RISCV_FP_REGNUM, 0 },	/* s0 - s1 */
     { 10, 18, 0 },		/* s2 - s11 */
-    { 8, RISCV_A0_REGNUM, 0 },	/* a0 - a7 */
     { 0 }
   };
 
@@ -66,7 +63,7 @@ static const struct regset riscv_fbsd_pcbregset =
 static void
 riscv_fbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 {
-  gdb_byte buf[31 * 8];
+  gdb_byte buf[16 * riscv_abi_xlen (regcache->arch ())];
 
   /* Always give a value for PC in case the PCB isn't readable. */
   regcache->raw_supply_zeroed (RISCV_PC_REGNUM);

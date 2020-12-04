@@ -1,5 +1,5 @@
---- gdb/gdbsupport/common-defs.h.orig	2020-02-08 04:50:14.000000000 -0800
-+++ gdb/gdbsupport/common-defs.h	2020-02-27 10:06:21.899297000 -0800
+--- gdbsupport/common-defs.h.orig	2020-02-08 04:50:14.000000000 -0800
++++ gdbsupport/common-defs.h	2020-02-27 10:06:21.899297000 -0800
 @@ -55,9 +55,15 @@
  
     Must do this before including any system header, since other system

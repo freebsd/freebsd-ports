@@ -78,6 +78,7 @@ man/man1/gdb%%VER%%.1.gz
 %%DATADIR%%/syscalls/mips-n32-linux.xml
 %%DATADIR%%/syscalls/mips-n64-linux.xml
 %%DATADIR%%/syscalls/mips-o32-linux.xml
+%%DATADIR%%/syscalls/netbsd.xml
 %%DATADIR%%/syscalls/ppc-linux.xml
 %%DATADIR%%/syscalls/ppc64-linux.xml
 %%DATADIR%%/syscalls/s390-linux.xml

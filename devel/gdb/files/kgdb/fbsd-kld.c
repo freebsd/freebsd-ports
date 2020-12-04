@@ -88,7 +88,7 @@ get_kld_info (void)
 }
 
 static int
-kld_ok (char *path)
+kld_ok (const char *path)
 {
 	struct stat sb;
 
@@ -106,66 +106,60 @@ static const char *kld_suffixes[] = {
 	".debug",
 	".symbols",
 	"",
-	NULL
 };
 
-static int
-check_kld_path (char *path, size_t path_size)
+static bool
+check_kld_path (std::string &path)
 {
-	const char **suffix;
-	char *ep;
-
-	ep = path + strlen(path);
-	suffix = kld_suffixes;
-	while (*suffix != NULL) {
-		if (strlcat(path, *suffix, path_size) < path_size) {
-			if (kld_ok(path))
-				return (1);
-		}
-
-		/* Restore original path to remove suffix. */
-		*ep = '\0';
-		suffix++;
-	}
-	return (0);
+  for (const char *suffix : kld_suffixes) {
+    std::string new_path = path + suffix;
+    if (kld_ok (new_path.c_str ())) {
+      path = new_path;
+      return true;
+    }
+  }
+  return false;
 }
 
 /*
  * Try to find the path for a kld by looking in the kernel's directory and
  * in the various paths in the module path.
  */
-static int
-find_kld_path (const char *filename, char *path, size_t path_size)
+static gdb::optional<std::string>
+find_kld_path (const char *filename)
 {
-	struct kld_info *info;
-	gdb::unique_xmalloc_ptr<char> module_path;
-	char *module_dir, *cp;
-	int error;
+  if (exec_bfd)
+    {
+      std::string kernel_dir = ldirname (bfd_get_filename (exec_bfd));
+      if (!kernel_dir.empty ())
+	{
+	  std::string path = string_printf("%s/%s", kernel_dir.c_str (),
+					   filename);
+	  if (check_kld_path (path))
+	    return path;
+	}
+    }
 
-	info = get_kld_info();
-	if (exec_bfd) {
-		std::string kernel_dir = ldirname(bfd_get_filename(exec_bfd));
-		if (!kernel_dir.empty()) {
-			snprintf(path, path_size, "%s/%s", kernel_dir.c_str(),
-			    filename);
-			if (check_kld_path(path, path_size))
-				return (1);
-		}
+  struct kld_info *info = get_kld_info ();
+  if (info->module_path_addr != 0)
+    {
+      gdb::unique_xmalloc_ptr<char> module_path
+	= target_read_string(info->module_path_addr, PATH_MAX);
+
+      if (module_path != nullptr)
+	{
+	  char *cp = module_path.get();
+	  char *module_dir;
+	  while ((module_dir = strsep(&cp, ";")) != NULL)
+	    {
+	      std::string path = string_printf("%s/%s", module_dir, filename);
+	      if (check_kld_path (path))
+		return path;
+	    }
 	}
-	if (info->module_path_addr != 0) {
-		target_read_string(info->module_path_addr, &module_path,
-		    PATH_MAX, &error);
-		if (error == 0) {
-			cp = module_path.get();
-			while ((module_dir = strsep(&cp, ";")) != NULL) {
-				snprintf(path, path_size, "%s/%s", module_dir,
-				    filename);
-				if (check_kld_path(path, path_size))
-					return (1);
-			}
-		}
-	}
-	return (0);
+    }
+
+  return {};
 }
 
 /*
@@ -193,28 +187,23 @@ read_pointer (CORE_ADDR address)
 static int
 find_kld_address (const char *arg, CORE_ADDR *address)
 {
-	struct kld_info *info;
-	CORE_ADDR kld;
-	gdb::unique_xmalloc_ptr<char> kld_filename;
-	const char *filename;
-	int error;
-
-	info = get_kld_info();
+	struct kld_info *info = get_kld_info();
 	if (info->linker_files_addr == 0 || info->off_address == 0 ||
 	    info->off_filename == 0 || info->off_next == 0)
 		return (0);
 
-	filename = lbasename(arg);
-	for (kld = read_pointer(info->linker_files_addr); kld != 0;
+	const char *filename = lbasename(arg);
+	for (CORE_ADDR kld = read_pointer(info->linker_files_addr); kld != 0;
 	     kld = read_pointer(kld + info->off_next)) {
 		/* Try to read this linker file's filename. */
-		target_read_string(read_pointer(kld + info->off_filename),
-		    &kld_filename, PATH_MAX, &error);
-		if (error)
+		gdb::unique_xmalloc_ptr<char> kld_filename =
+		    target_read_string (read_pointer (kld + info->off_filename),
+		    PATH_MAX);
+		if (kld_filename == nullptr)
 			continue;
 
 		/* Compare this kld's filename against our passed in name. */
-		if (strcmp(kld_filename.get(), filename) != 0)
+		if (strcmp(kld_filename.get (), filename) != 0)
 			continue;
 
 		/*
@@ -249,7 +238,7 @@ adjust_section_address (struct target_section *sec, CORE_ADDR *curr_base)
 }
 
 static void
-load_kld (char *path, CORE_ADDR base_addr, int from_tty)
+load_kld (const char *path, CORE_ADDR base_addr, int from_tty)
 {
 	struct target_section *sections = NULL, *sections_end = NULL, *s;
 	gdb_bfd_ref_ptr bfd;
@@ -301,24 +290,25 @@ load_kld (char *path, CORE_ADDR base_addr, int from_tty)
 static void
 kgdb_add_kld_cmd (const char *arg, int from_tty)
 {
-	char path[PATH_MAX];
 	CORE_ADDR base_addr;
 
 	if (!exec_bfd)
 		error("No kernel symbol file");
 
 	/* Try to open the raw path to handle absolute paths first. */
-	snprintf(path, sizeof(path), "%s", arg);
-	if (!check_kld_path(path, sizeof(path))) {
+	std::string path (arg);
+	if (!check_kld_path(path)) {
 
 		/*
 		 * If that didn't work, look in the various possible
 		 * paths for the module.
 		 */
-		if (!find_kld_path(arg, path, sizeof(path))) {
+		gdb::optional<std::string> found = find_kld_path (arg);
+		if (!found) {
 			error("Unable to locate kld");
 			return;
 		}
+		path = std::move(*found);
 	}
 
 	if (!find_kld_address(arg, &base_addr)) {
@@ -326,7 +316,7 @@ kgdb_add_kld_cmd (const char *arg, int from_tty)
 		return;
 	}
 
-	load_kld(path, base_addr, from_tty);
+	load_kld(path.c_str (), base_addr, from_tty);
 
 	reinit_frame_cache();
 }
@@ -435,33 +425,27 @@ kld_solib_create_inferior_hook (int from_tty)
 static struct so_list *
 kld_current_sos (void)
 {
-	struct so_list *head, **prev, *newobj;
-	struct kld_info *info;
-	CORE_ADDR kld, kernel;
-	gdb::unique_xmalloc_ptr<char> path;
-	int error;
-
-	info = get_kld_info();
+	struct kld_info *info = get_kld_info();
 	if (info->linker_files_addr == 0 || info->kernel_file_addr == 0 ||
 	    info->off_address == 0 || info->off_filename == 0 ||
 	    info->off_next == 0)
 		return (NULL);
 
-	head = NULL;
-	prev = &head;
+	struct so_list *head = NULL;
+	struct so_list **prev = &head;
 
 	/*
 	 * Walk the list of linker files creating so_list entries for
 	 * each non-kernel file.
 	 */
-	kernel = read_pointer(info->kernel_file_addr);
-	for (kld = read_pointer(info->linker_files_addr); kld != 0;
+	CORE_ADDR kernel = read_pointer(info->kernel_file_addr);
+	for (CORE_ADDR kld = read_pointer(info->linker_files_addr); kld != 0;
 	     kld = read_pointer(kld + info->off_next)) {
 		/* Skip the main kernel file. */
 		if (kld == kernel)
 			continue;
 
-		newobj = XCNEW (struct so_list);
+		struct so_list *newobj = XCNEW (struct so_list);
 
 		lm_info_kld *li = new lm_info_kld;
 		li->base_address = 0;
@@ -469,11 +453,11 @@ kld_current_sos (void)
 		newobj->lm_info = li;
 
 		/* Read the base filename and store it in so_original_name. */
-		target_read_string(read_pointer(kld + info->off_filename),
-		    &path, sizeof(newobj->so_original_name), &error);
-		if (error != 0) {
-			warning("kld_current_sos: Can't read filename: %s\n",
-			    safe_strerror(error));
+		gdb::unique_xmalloc_ptr<char> path =
+		    target_read_string (read_pointer (kld + info->off_filename),
+		    sizeof(newobj->so_original_name));
+		if (path == nullptr) {
+			warning("kld_current_sos: Can't read filename\n");
 			free_so(newobj);
 			continue;
 		}
@@ -484,18 +468,14 @@ kld_current_sos (void)
 		 * Try to read the pathname (if it exists) and store
 		 * it in so_name.
 		 */
-		if (find_kld_path(newobj->so_original_name, newobj->so_name,
-		    sizeof(newobj->so_name))) {
-			/* we found the kld */;
-		} else if (info->off_pathname != 0) {
-			target_read_string(read_pointer(kld +
+		if (info->off_pathname != 0) {
+			path = target_read_string (read_pointer (kld +
 			    info->off_pathname),
-			    &path, sizeof(newobj->so_name), &error);
-			if (error != 0) {
+			    sizeof(newobj->so_name));
+			if (path == nullptr) {
 				warning(
-		    "kld_current_sos: Can't read pathname for \"%s\": %s\n",
-				    newobj->so_original_name,
-				    safe_strerror(error));
+		    "kld_current_sos: Can't read pathname for \"%s\"\n",
+				    newobj->so_original_name);
 				strlcpy(newobj->so_name, newobj->so_original_name,
 				    sizeof(newobj->so_name));
 			} else {
@@ -542,20 +522,19 @@ static int
 kld_find_and_open_solib (const char *solib, unsigned o_flags,
     gdb::unique_xmalloc_ptr<char> *temp_pathname)
 {
-	char path[PATH_MAX];
-	int fd;
-
-	temp_pathname->reset (NULL);
-	if (!find_kld_path(solib, path, sizeof(path))) {
-		errno = ENOENT;
-		return (-1);
-	}
-	fd = open(path, o_flags, 0);
-	if (fd >= 0)
-		temp_pathname->reset(xstrdup(path));
-	return (fd);
+  temp_pathname->reset (NULL);
+  gdb::optional<std::string> found = find_kld_path (solib);
+  if (!found) {
+    errno = ENOENT;
+    return (-1);
+  }
+  int fd = open(found->c_str (), o_flags, 0);
+  if (fd >= 0)
+    temp_pathname->reset (xstrdup (found->c_str ()));
+  return (fd);
 }
 
+void _initialize_kld_target(void);
 void
 _initialize_kld_target(void)
 {
