@@ -1,0 +1,26 @@
+Workaround for OpenSSL 1.0.2t/u to handle unnamed but really named curves
+
+PR #5362
+
+Obtained from:
+https://github.com/pyca/cryptography/commit/241f845071a8747d0986ed60575e28840f096b79
+
+--- src/_cffi_src/openssl/cryptography.py.orig	2020-04-22 22:27:48 UTC
++++ src/_cffi_src/openssl/cryptography.py
+@@ -47,6 +47,8 @@ INCLUDES = """
+     (OPENSSL_VERSION_NUMBER >= 0x10002000 && !CRYPTOGRAPHY_IS_LIBRESSL)
+ #define CRYPTOGRAPHY_OPENSSL_102L_OR_GREATER \
+     (OPENSSL_VERSION_NUMBER >= 0x100020cf && !CRYPTOGRAPHY_IS_LIBRESSL)
++#define CRYPTOGRAPHY_OPENSSL_102U_OR_GREATER \
++    (OPENSSL_VERSION_NUMBER >= 0x1000215fL && !CRYPTOGRAPHY_IS_LIBRESSL)
+ #define CRYPTOGRAPHY_OPENSSL_110_OR_GREATER \
+     (OPENSSL_VERSION_NUMBER >= 0x10100000 && !CRYPTOGRAPHY_IS_LIBRESSL)
+ #define CRYPTOGRAPHY_OPENSSL_110F_OR_GREATER \
+@@ -68,6 +70,7 @@ INCLUDES = """
+ 
+ TYPES = """
+ static const int CRYPTOGRAPHY_OPENSSL_102L_OR_GREATER;
++static const int CRYPTOGRAPHY_OPENSSL_102U_OR_GREATER;
+ static const int CRYPTOGRAPHY_OPENSSL_110_OR_GREATER;
+ static const int CRYPTOGRAPHY_OPENSSL_110F_OR_GREATER;
+ 
