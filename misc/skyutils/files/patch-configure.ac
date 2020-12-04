@@ -1,5 +1,5 @@
---- configure.in.orig	Mon May  9 12:16:44 2005
-+++ configure.in	Fri Jun 24 17:04:44 2005
+--- configure.ac.orig	Mon May  9 12:16:44 2005
++++ configure.ac	Fri Jun 24 17:04:44 2005
 @@ -171,7 +171,7 @@
  
  SU_SSL_CFLAGS=""
