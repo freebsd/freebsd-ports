@@ -736,8 +736,10 @@
     SUBDIR += pspg
     SUBDIR += puppetdb-terminus5
     SUBDIR += puppetdb-terminus6
+    SUBDIR += puppetdb-terminus7
     SUBDIR += puppetdb5
     SUBDIR += puppetdb6
+    SUBDIR += puppetdb7
     SUBDIR += puredb
     SUBDIR += pxlib
     SUBDIR += pxtools
