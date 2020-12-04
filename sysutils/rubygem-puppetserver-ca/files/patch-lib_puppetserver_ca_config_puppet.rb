@@ -5,7 +5,7 @@
            base_defaults = [
              [:confdir, user_specific_puppet_confdir],
 -            [:ssldir,'$confdir/ssl'],
-+            [:ssldir,'/var/puppet/ssl'],
++            [:ssldir, '/var/puppet/ssl'],
              [:certdir, '$ssldir/certs'],
              [:certname, default_certname],
              [:server, 'puppet'],
