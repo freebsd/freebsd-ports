@@ -13,13 +13,11 @@ OPTIONS_DEFINE = \
 	OWSERVER \
 	OWTAP \
 	OWMALLOC \
-	OWTRAFFIC \
 	OWMON \
 	OWCAPI \
 	OWEXTERNAL \
 	OWPERL \
 	OWPHP \
-	OWPYTHON \
 	OWTCL \
 	PROFILING \
 	OWFS \
@@ -41,14 +39,12 @@ OWHTTPD_DESC=		Enable owhttpd HTTP server
 OWFTPD_DESC=		Enable owftpd FTP server
 OWSERVER_DESC=		Enable owserver
 OWMALLOC_DESC=		Enable malloc checking
-OWTRAFFIC_DESC=		Enable debug bus traffic reports
 OWTAP_DESC=		Enable owtap module (X11)
 OWMON_DESC=		Enable owmon module (X11)
 OWCAPI_DESC=		Enable C API
 OWEXTERNAL_DESC=	Enable owexternal
 OWPERL_DESC=		Enable Perl binding (BROKEN)
 OWPHP_DESC=		Enable PHP binding (BROKEN)
-OWPYTHON_DESC=		Enable Python binding 
 OWTCL_DESC=		Enable TCL binding
 PROFILING_DESC=		Enable profiling (BROKEN)
 OWFS_DESC=		Enable FUSE support
