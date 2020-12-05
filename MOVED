@@ -15739,3 +15739,4 @@ devel/py-microversion_parse|devel/py-microversion-parse|2020-12-05|Rename to mat
 devel/py-semantic_version|devel/py-semantic-version|2020-12-05|Rename to match upstream naming
 devel/py-wsgi_intercept|devel/py-wsgi-intercept|2020-12-05|Rename to match upstream naming
 net/py-ndg_httpsclient|net/py-ndg-httpsclient|2020-12-05|Rename to match upstream naming
+www/py-draftjs_exporter|www/py-draftjs-exporter|2020-12-05|Rename to match upstream naming

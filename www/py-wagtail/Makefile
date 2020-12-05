@@ -3,6 +3,7 @@
 
 PORTNAME=	wagtail
 PORTVERSION=	2.11
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}django-taggit>=1.0<2.0:www/py-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.2.0<5.0:www/py-django-treebeard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.11.1,1<4.0,1:www/py-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}draftjs_exporter>=2.1.5:www/py-draftjs_exporter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=2.1.5:www/py-draftjs-exporter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.999<2:www/py-html5lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}l18n>=2018.5:devel/py-l18n@${PY_FLAVOR} \
 		${PY_PILLOW} \
