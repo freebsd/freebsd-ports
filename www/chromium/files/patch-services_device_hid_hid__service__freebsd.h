@@ -1,4 +1,4 @@
---- services/device/hid/hid_service_freebsd.h.orig	2020-08-18 20:44:53 UTC
+--- services/device/hid/hid_service_freebsd.h.orig	2020-11-16 10:08:51 UTC
 +++ services/device/hid/hid_service_freebsd.h
 @@ -0,0 +1,46 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.

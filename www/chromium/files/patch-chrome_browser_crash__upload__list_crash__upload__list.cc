@@ -1,4 +1,4 @@
---- chrome/browser/crash_upload_list/crash_upload_list.cc.orig	2019-12-31 13:55:02 UTC
+--- chrome/browser/crash_upload_list/crash_upload_list.cc.orig	2020-11-13 06:36:36 UTC
 +++ chrome/browser/crash_upload_list/crash_upload_list.cc
 @@ -38,7 +38,7 @@ scoped_refptr<UploadList> CreateCrashUploadList() {
  // ChromeOS uses crash_sender as its uploader even when Crashpad is enabled,

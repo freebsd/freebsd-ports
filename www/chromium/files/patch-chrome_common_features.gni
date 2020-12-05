@@ -1,8 +1,8 @@
---- chrome/common/features.gni.orig	2020-07-07 21:58:14 UTC
+--- chrome/common/features.gni.orig	2020-11-13 06:36:38 UTC
 +++ chrome/common/features.gni
-@@ -54,7 +54,7 @@ declare_args() {
-   # Enables password change in leaked password dialog, disabled by default.
-   enable_password_change_in_leaked_dialog = false
+@@ -51,7 +51,7 @@ declare_args() {
+   enable_one_click_signin =
+       is_win || is_mac || (is_linux && !is_chromeos && !is_chromecast)
  
 -  enable_service_discovery = (enable_mdns && !is_android) || is_mac
 +  enable_service_discovery = (enable_mdns && !is_android) || is_mac || is_bsd

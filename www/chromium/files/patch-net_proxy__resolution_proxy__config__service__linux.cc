@@ -1,4 +1,4 @@
---- net/proxy_resolution/proxy_config_service_linux.cc.orig	2020-05-13 18:39:46 UTC
+--- net/proxy_resolution/proxy_config_service_linux.cc.orig	2020-11-13 06:36:46 UTC
 +++ net/proxy_resolution/proxy_config_service_linux.cc
 @@ -6,7 +6,9 @@
  

@@ -1,6 +1,6 @@
---- gpu/config/gpu_test_config.cc.orig	2019-03-11 22:00:59 UTC
+--- gpu/config/gpu_test_config.cc.orig	2020-11-13 06:36:44 UTC
 +++ gpu/config/gpu_test_config.cc
-@@ -25,7 +25,7 @@ namespace {
+@@ -27,7 +27,7 @@ namespace {
  GPUTestConfig::OS GetCurrentOS() {
  #if defined(OS_CHROMEOS)
    return GPUTestConfig::kOsChromeOS;

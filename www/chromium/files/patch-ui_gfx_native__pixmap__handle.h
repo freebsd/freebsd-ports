@@ -1,11 +1,11 @@
---- ui/gfx/native_pixmap_handle.h.orig	2019-10-21 19:07:29 UTC
+--- ui/gfx/native_pixmap_handle.h.orig	2020-11-13 06:37:06 UTC
 +++ ui/gfx/native_pixmap_handle.h
 @@ -15,7 +15,7 @@
  #include "build/build_config.h"
  #include "ui/gfx/gfx_export.h"
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "base/files/scoped_file.h"
  #endif
  
@@ -13,8 +13,8 @@
    NativePixmapPlane(int stride,
                      int offset,
                      uint64_t size
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
                      ,
                      base::ScopedFD fd
  #elif defined(OS_FUCHSIA)
@@ -22,8 +22,8 @@
    // This is necessary to map the buffers.
    uint64_t size;
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // File descriptor for the underlying memory object (usually dmabuf).
    base::ScopedFD fd;
  #elif defined(OS_FUCHSIA)
@@ -31,8 +31,8 @@
  
    std::vector<NativePixmapPlane> planes;
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // The modifier is retrieved from GBM library and passed to EGL driver.
    // Generally it's platform specific, and we don't need to modify it in
    // Chromium code. Also one per plane per entry.

@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/webrtc_logging_controller.h.orig	2019-10-30 15:50:11 UTC
+--- chrome/browser/media/webrtc/webrtc_logging_controller.h.orig	2020-11-13 06:36:37 UTC
 +++ chrome/browser/media/webrtc/webrtc_logging_controller.h
 @@ -129,13 +129,13 @@ class WebRtcLoggingController
                           size_t web_app_id,
@@ -9,8 +9,8 @@
    // Ensures that the WebRTC Logs directory exists and then grants render
    // process access to the 'WebRTC Logs' directory, and invokes |callback| with
    // the ids necessary to create a DirectoryEntry object.
-   void GetLogsDirectory(const LogsDirectoryCallback& callback,
-                         const LogsDirectoryErrorCallback& error_callback);
+   void GetLogsDirectory(LogsDirectoryCallback callback,
+                         LogsDirectoryErrorCallback error_callback);
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
@@ -25,10 +25,10 @@
    // Grants the render process access to the 'WebRTC Logs' directory, and
    // invokes |callback| with the ids necessary to create a DirectoryEntry
    // object. If the |logs_path| couldn't be created or found, |error_callback|
-@@ -197,7 +197,7 @@ class WebRtcLoggingController
-       const LogsDirectoryCallback& callback,
-       const LogsDirectoryErrorCallback& error_callback,
-       const base::FilePath& logs_path);
+@@ -196,7 +196,7 @@ class WebRtcLoggingController
+   void GrantLogsDirectoryAccess(LogsDirectoryCallback callback,
+                                 LogsDirectoryErrorCallback error_callback,
+                                 const base::FilePath& logs_path);
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  

@@ -1,4 +1,4 @@
---- net/cert/cert_verifier.cc.orig	2020-07-13 09:51:56 UTC
+--- net/cert/cert_verifier.cc.orig	2020-11-13 06:36:45 UTC
 +++ net/cert/cert_verifier.cc
 @@ -87,7 +87,7 @@ std::unique_ptr<CertVerifier> CertVerifier::CreateDefa
    return std::unique_ptr<CertVerifier>();

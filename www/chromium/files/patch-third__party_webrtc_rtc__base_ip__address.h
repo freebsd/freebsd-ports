@@ -1,4 +1,4 @@
---- third_party/webrtc/rtc_base/ip_address.h.orig	2019-03-11 22:08:15 UTC
+--- third_party/webrtc/rtc_base/ip_address.h.orig	2020-11-13 06:42:25 UTC
 +++ third_party/webrtc/rtc_base/ip_address.h
 @@ -17,6 +17,10 @@
  #include <netinet/in.h>

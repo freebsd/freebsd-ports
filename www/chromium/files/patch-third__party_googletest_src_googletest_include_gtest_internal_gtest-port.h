@@ -1,6 +1,6 @@
---- third_party/googletest/src/googletest/include/gtest/internal/gtest-port.h.orig	2020-07-13 13:11:01 UTC
+--- third_party/googletest/src/googletest/include/gtest/internal/gtest-port.h.orig	2020-11-13 06:42:16 UTC
 +++ third_party/googletest/src/googletest/include/gtest/internal/gtest-port.h
-@@ -1631,6 +1631,8 @@ class ThreadLocal : public ThreadLocalBase {
+@@ -1641,6 +1641,8 @@ class ThreadLocal : public ThreadLocalBase {
  // MutexBase and Mutex implement mutex on pthreads-based platforms.
  class MutexBase {
   public:
@@ -9,7 +9,7 @@
    // Acquires this mutex.
    void Lock() {
      GTEST_CHECK_POSIX_SUCCESS_(pthread_mutex_lock(&mutex_));
-@@ -1647,6 +1649,7 @@ class MutexBase {
+@@ -1657,6 +1659,7 @@ class MutexBase {
      has_owner_ = false;
      GTEST_CHECK_POSIX_SUCCESS_(pthread_mutex_unlock(&mutex_));
    }

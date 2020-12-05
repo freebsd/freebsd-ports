@@ -1,15 +1,15 @@
---- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2020-05-13 18:39:44 UTC
+--- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2020-11-13 06:36:44 UTC
 +++ gpu/ipc/service/gpu_watchdog_thread.cc
-@@ -64,7 +64,7 @@ void GpuWatchdogTimeoutHistogram(GpuWatchdogTimeoutEve
-   base::UmaHistogramEnumeration("GPU.WatchdogThread.V1.Timeout", timeout_event);
- }
+@@ -57,7 +57,7 @@ const int kNewGpuTimeout = 17000;
+ const int kNewGpuTimeout = 15000;
+ #endif
  
 -#if defined(USE_X11)
 +#if defined(USE_X11) && !defined(OS_BSD)
  const base::FilePath::CharType kTtyFilePath[] =
      FILE_PATH_LITERAL("/sys/class/tty/tty0/active");
  #endif
-@@ -82,7 +82,7 @@ GpuWatchdogThreadImplV1::GpuWatchdogThreadImplV1()
+@@ -75,7 +75,7 @@ GpuWatchdogThreadImplV1::GpuWatchdogThreadImplV1()
        arm_cpu_time_(),
  #endif
        suspension_counter_(this)
@@ -18,7 +18,7 @@
        ,
        host_tty_(-1)
  #endif
-@@ -104,7 +104,7 @@ GpuWatchdogThreadImplV1::GpuWatchdogThreadImplV1()
+@@ -97,7 +97,7 @@ GpuWatchdogThreadImplV1::GpuWatchdogThreadImplV1()
    DCHECK(result);
  #endif
  
@@ -27,7 +27,7 @@
    tty_file_ = base::OpenFile(base::FilePath(kTtyFilePath), "r");
    UpdateActiveTTY();
    host_tty_ = active_tty_;
-@@ -252,7 +252,7 @@ GpuWatchdogThreadImplV1::~GpuWatchdogThreadImplV1() {
+@@ -239,7 +239,7 @@ GpuWatchdogThreadImplV1::~GpuWatchdogThreadImplV1() {
  
    base::PowerMonitor::RemoveObserver(this);
  
@@ -36,7 +36,7 @@
    if (tty_file_)
      fclose(tty_file_);
  #endif
-@@ -435,7 +435,7 @@ void GpuWatchdogThreadImplV1::DeliberatelyTerminateToR
+@@ -388,7 +388,7 @@ void GpuWatchdogThreadImplV1::DeliberatelyTerminateToR
      return;
  #endif
  
@@ -45,7 +45,7 @@
    // Don't crash if we're not on the TTY of our host X11 server.
    UpdateActiveTTY();
    if (host_tty_ != -1 && active_tty_ != -1 && host_tty_ != active_tty_) {
-@@ -610,7 +610,7 @@ base::ThreadTicks GpuWatchdogThreadImplV1::GetWatchedT
+@@ -548,7 +548,7 @@ base::ThreadTicks GpuWatchdogThreadImplV1::GetWatchedT
  }
  #endif
  

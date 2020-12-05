@@ -1,4 +1,4 @@
---- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h.orig	2019-10-21 19:09:13 UTC
+--- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h.orig	2020-11-13 06:42:18 UTC
 +++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/synchronization/lock.h
 @@ -63,7 +63,7 @@ class Lock { (private)
  // Dummy lock implementation on non-POSIX platforms. If you are running on a

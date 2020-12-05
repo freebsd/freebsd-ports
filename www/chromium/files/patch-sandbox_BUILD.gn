@@ -1,0 +1,11 @@
+--- sandbox/BUILD.gn.orig	2020-11-17 10:04:06 UTC
++++ sandbox/BUILD.gn
+@@ -27,7 +27,7 @@ group("sandbox") {
+       "//sandbox/mac:system_services",
+       "//sandbox/mac/mojom",
+     ]
+-  } else if (is_linux || is_chromeos || is_android) {
++  } else if ((is_linux || is_chromeos || is_android) && !is_bsd) {
+     public_deps = [ "//sandbox/linux:sandbox" ]
+   }
+ }

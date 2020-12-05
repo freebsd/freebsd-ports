@@ -1,4 +1,4 @@
---- base/profiler/stack_copier_signal.cc.orig	2020-05-13 18:40:16 UTC
+--- base/profiler/stack_copier_signal.cc.orig	2020-11-13 06:36:34 UTC
 +++ base/profiler/stack_copier_signal.cc
 @@ -4,7 +4,14 @@
  
@@ -15,7 +15,7 @@
  #include <signal.h>
  #include <sys/ucontext.h>
  #include <syscall.h>
-@@ -33,8 +40,13 @@ class AsyncSafeWaitableEvent {
+@@ -34,8 +41,13 @@ class AsyncSafeWaitableEvent {
      // for a pthread mutex. So, also check the condition.
      while (true) {
        int res =
@@ -29,7 +29,7 @@
        if (futex_.load(std::memory_order_acquire) != 0)
          return true;
        if (res != 0)
-@@ -44,8 +56,12 @@ class AsyncSafeWaitableEvent {
+@@ -45,8 +57,12 @@ class AsyncSafeWaitableEvent {
  
    void Signal() {
      futex_.store(1, std::memory_order_release);
@@ -42,7 +42,7 @@
    }
  
   private:
-@@ -215,11 +231,18 @@ bool StackCopierSignal::CopyStack(StackBuffer* stack_b
+@@ -216,11 +232,18 @@ bool StackCopierSignal::CopyStack(StackBuffer* stack_b
      if (!scoped_sigaction.succeeded())
        return false;
  

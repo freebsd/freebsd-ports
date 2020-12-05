@@ -1,9 +1,10 @@
---- base/system/sys_info_freebsd.cc.orig	2020-07-07 21:57:30 UTC
+--- base/system/sys_info_freebsd.cc.orig	2020-11-13 06:36:34 UTC
 +++ base/system/sys_info_freebsd.cc
-@@ -9,30 +9,86 @@
+@@ -9,30 +9,95 @@
  #include <sys/sysctl.h>
  
  #include "base/notreached.h"
++#include "base/process/process_metrics.h"
 +#include "base/strings/string_util.h"
  
  namespace base {
@@ -53,6 +54,14 @@
 +}
 +
  // static
++int64_t SysInfo::AmountOfAvailablePhysicalMemory(const SystemMemoryInfoKB& info) {
++  int64_t res_kb = info.available != 0
++                       ? info.available - info.active_file
++                       : info.free + info.reclaimable + info.inactive_file;
++  return res_kb * 1024;
++}
++
++// static
 +std::string SysInfo::CPUModelName() {
 +  int mib[] = { CTL_HW, HW_MODEL };
 +  char name[256];

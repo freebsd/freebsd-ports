@@ -1,4 +1,4 @@
---- ui/views/corewm/tooltip_aura.cc.orig	2020-05-13 18:40:37 UTC
+--- ui/views/corewm/tooltip_aura.cc.orig	2020-11-13 06:37:06 UTC
 +++ ui/views/corewm/tooltip_aura.cc
 @@ -46,7 +46,7 @@ constexpr int kVerticalPaddingBottom = 5;
  

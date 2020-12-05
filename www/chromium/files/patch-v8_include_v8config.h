@@ -1,6 +1,6 @@
---- v8/include/v8config.h.orig	2020-03-03 18:55:34 UTC
+--- v8/include/v8config.h.orig	2020-11-13 06:42:28 UTC
 +++ v8/include/v8config.h
-@@ -273,7 +273,18 @@
+@@ -276,7 +276,18 @@
  # define V8_HAS_ATTRIBUTE_WARN_UNUSED_RESULT \
      (__has_attribute(warn_unused_result))
  

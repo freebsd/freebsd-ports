@@ -1,12 +1,15 @@
---- base/synchronization/lock_impl.h.orig	2020-07-07 21:58:11 UTC
+--- base/synchronization/lock_impl.h.orig	2020-11-13 06:36:34 UTC
 +++ base/synchronization/lock_impl.h
-@@ -69,10 +69,13 @@ void LockImpl::Unlock() {
-   ::ReleaseSRWLockExclusive(reinterpret_cast<PSRWLOCK>(&native_handle_));
+@@ -105,6 +105,8 @@ void LockImpl::Unlock() {
  }
+ 
  #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
 +#pragma GCC diagnostic push
 +#pragma GCC diagnostic ignored "-Wthread-safety-analysis"
- void LockImpl::Unlock() {
+ 
+ bool LockImpl::Try() {
+   int rv = pthread_mutex_trylock(&native_handle_);
+@@ -116,6 +118,7 @@ void LockImpl::Unlock() {
    int rv = pthread_mutex_unlock(&native_handle_);
    DCHECK_EQ(rv, 0) << ". " << strerror(rv);
  }

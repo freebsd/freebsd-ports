@@ -1,6 +1,6 @@
---- third_party/googletest/src/googletest/src/gtest.cc.orig	2020-07-07 22:03:20 UTC
+--- third_party/googletest/src/googletest/src/gtest.cc.orig	2020-11-13 06:42:16 UTC
 +++ third_party/googletest/src/googletest/src/gtest.cc
-@@ -119,6 +119,7 @@
+@@ -117,6 +117,7 @@
  
  #if GTEST_CAN_STREAM_RESULTS_
  # include <arpa/inet.h>  // NOLINT

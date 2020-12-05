@@ -1,11 +1,11 @@
---- services/device/serial/BUILD.gn.orig	2019-03-11 22:01:01 UTC
+--- services/device/serial/BUILD.gn.orig	2020-11-13 06:36:46 UTC
 +++ services/device/serial/BUILD.gn
-@@ -4,7 +4,7 @@
+@@ -11,7 +11,7 @@ import("//build/config/features.gni")
+ import("//build/config/deprecated_default_sources_assignment_filter.gni")
+ set_sources_assignment_filter(deprecated_default_sources_assignment_filter)
  
- import("//build/config/features.gni")
- 
--if (is_win || (is_linux && use_udev) || is_mac) {
-+if (is_win || (is_linux && use_udev) || is_mac || is_bsd) {
+-if (is_win || ((is_linux || is_chromeos) && use_udev) || is_mac) {
++if (is_win || ((is_linux || is_chromeos) && use_udev) || is_mac || is_bsd) {
    config("platform_support") {
      visibility = [ ":serial" ]
      if (is_win) {

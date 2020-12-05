@@ -1,4 +1,4 @@
---- components/viz/test/mock_display_client.h.orig	2020-07-07 21:57:37 UTC
+--- components/viz/test/mock_display_client.h.orig	2020-11-13 06:36:42 UTC
 +++ components/viz/test/mock_display_client.h
 @@ -36,7 +36,7 @@ class MockDisplayClient : public mojom::DisplayClient 
    MOCK_METHOD1(SetWideColorEnabled, void(bool enabled));

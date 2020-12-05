@@ -1,14 +1,14 @@
---- remoting/host/host_main.cc.orig	2020-07-07 21:57:41 UTC
+--- remoting/host/host_main.cc.orig	2020-11-13 06:36:46 UTC
 +++ remoting/host/host_main.cc
 @@ -48,9 +48,9 @@ int DesktopProcessMain();
  int FileChooserMain();
  int RdpDesktopSessionMain();
  #endif  // defined(OS_WIN)
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  int XSessionChooserMain();
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_LINUX) || defined(OS_BSD)
+-#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
++#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
  namespace {
  
@@ -16,12 +16,12 @@
    } else if (process_type == kProcessTypeRdpDesktopSession) {
      main_routine = &RdpDesktopSessionMain;
  #endif  // defined(OS_WIN)
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    } else if (process_type == kProcessTypeXSessionChooser) {
      main_routine = &XSessionChooserMain;
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_LINUX) || defined(OS_BSD)
+-#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
++#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    }
  
    return main_routine;

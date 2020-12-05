@@ -1,6 +1,6 @@
---- v8/src/base/cpu.cc.orig	2020-05-13 18:41:59 UTC
+--- v8/src/base/cpu.cc.orig	2020-11-13 06:42:28 UTC
 +++ v8/src/base/cpu.cc
-@@ -427,6 +427,7 @@ CPU::CPU()
+@@ -534,6 +534,7 @@ CPU::CPU()
  
  #if V8_OS_LINUX
  
@@ -8,7 +8,7 @@
    CPUInfo cpu_info;
  
    // Extract implementor from the "CPU implementer" field.
-@@ -460,6 +461,7 @@ CPU::CPU()
+@@ -567,6 +568,7 @@ CPU::CPU()
      }
      delete[] part;
    }

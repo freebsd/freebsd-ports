@@ -1,6 +1,6 @@
---- ui/base/ui_base_features.cc.orig	2020-07-07 21:58:19 UTC
+--- ui/base/ui_base_features.cc.orig	2020-11-13 06:37:05 UTC
 +++ ui/base/ui_base_features.cc
-@@ -98,7 +98,7 @@ const base::Feature kCompositorThreadedScrollbarScroll
+@@ -100,7 +100,7 @@ const base::Feature kCompositorThreadedScrollbarScroll
  // native apps on Windows.
  const base::Feature kExperimentalFlingAnimation {
    "ExperimentalFlingAnimation",
@@ -9,30 +9,30 @@
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -130,7 +130,7 @@ const base::Feature kPrecisionTouchpadLogging{
+@@ -132,7 +132,7 @@ const base::Feature kPrecisionTouchpadLogging{
      "PrecisionTouchpadLogging", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // defined(OS_WIN)
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) || \
+     defined(OS_CHROMEOS)
  // Enables stylus appearing as touch when in contact with digitizer.
  const base::Feature kDirectManipulationStylus = {
-     "DirectManipulationStylus",
-@@ -140,7 +140,7 @@ const base::Feature kDirectManipulationStylus = {
+@@ -143,7 +143,7 @@ const base::Feature kDirectManipulationStylus = {
      base::FEATURE_DISABLED_BY_DEFAULT
  #endif
  };
--#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+-#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||
++#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) ||
+         // defined(OS_CHROMEOS)
  
  // Enables forced colors mode for web content.
- const base::Feature kForcedColors{"ForcedColors",
-@@ -166,7 +166,7 @@ bool IsEyeDropperEnabled() {
+@@ -182,7 +182,7 @@ bool IsCSSColorSchemeUARenderingEnabled() {
  // crbug.com/1012106 for the Windows launch bug, and crbug.com/1012108 for the
  // Mac launch bug.
  const base::Feature kFormControlsRefresh = {"FormControlsRefresh",
 -#if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \
 +#if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD) || \
-     defined(OS_MACOSX)
+     defined(OS_APPLE)
                                              base::FEATURE_ENABLED_BY_DEFAULT
  #else

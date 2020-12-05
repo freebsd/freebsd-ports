@@ -1,6 +1,6 @@
---- third_party/nasm/config/config-linux.h.orig	2019-04-30 22:25:54 UTC
+--- third_party/nasm/config/config-linux.h.orig	2020-11-13 06:42:20 UTC
 +++ third_party/nasm/config/config-linux.h
-@@ -117,7 +117,7 @@
+@@ -139,7 +139,7 @@
  #define HAVE_ACCESS 1
  
  /* Define to 1 if you have the `canonicalize_file_name' function. */
@@ -9,7 +9,7 @@
  
  /* Define to 1 if you have the `cpu_to_le16' intrinsic function. */
  /* #undef HAVE_CPU_TO_LE16 */
-@@ -161,7 +161,7 @@
+@@ -183,7 +183,7 @@
  #define HAVE_DECL_STRSEP 1
  
  /* Define to 1 if you have the <endian.h> header file. */
@@ -18,7 +18,16 @@
  
  /* Define to 1 if you have the `faccessat' function. */
  #define HAVE_FACCESSAT 1
-@@ -322,7 +322,7 @@
+@@ -336,7 +336,7 @@
+ #define HAVE_MEMORY_H 1
+ 
+ /* Define to 1 if you have the `mempcpy' function. */
+-#define HAVE_MEMPCPY 1
++/* #undef HAVE_MEMPCPY */
+ 
+ /* Define to 1 if you have a working `mmap' system call. */
+ #define HAVE_MMAP 1
+@@ -411,7 +411,7 @@
  #define HAVE_SYSCONF 1
  
  /* Define to 1 if you have the <sys/endian.h> header file. */

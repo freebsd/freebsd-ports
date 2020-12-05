@@ -1,4 +1,4 @@
---- components/sync_device_info/local_device_info_util_linux.cc.orig	2020-02-24 18:39:14 UTC
+--- components/sync_device_info/local_device_info_util_linux.cc.orig	2020-11-13 06:36:42 UTC
 +++ components/sync_device_info/local_device_info_util_linux.cc
 @@ -37,8 +37,9 @@ std::string GetPersonalizableDeviceNameInternal() {
  #if defined(OS_CHROMEOS)

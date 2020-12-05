@@ -1,12 +1,18 @@
---- content/browser/BUILD.gn.orig	2020-07-07 21:58:15 UTC
+--- content/browser/BUILD.gn.orig	2020-11-13 06:36:42 UTC
 +++ content/browser/BUILD.gn
-@@ -2044,6 +2044,9 @@ jumbo_source_set("browser") {
-       "//third_party/blink/public/mojom:memory_usage_monitor_linux_mojo_bindings",
-     ]
+@@ -2113,6 +2113,15 @@ source_set("browser") {
+     deps += [ "//third_party/speech-dispatcher" ]
    }
-+  if (is_bsd) {
-+    deps -= [ "//services/service_manager/zygote" ]
-+  }
  
-   if (is_desktop_linux) {
-     sources += [ "speech/tts_linux.cc" ]
++  if (is_bsd) {
++    sources -= [
++      "sandbox_host_linux.cc",
++      "sandbox_host_linux.h",
++      "sandbox_ipc_linux.cc",
++      "sandbox_ipc_linux.h",
++    ]
++  }
++
+   # ChromeOS also defines linux but their memory-monitors conflict.
+   if (is_chromeos) {
+     sources += [

@@ -1,20 +1,20 @@
---- components/feature_engagement/public/feature_constants.h.orig	2020-02-03 21:53:30 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2020-11-13 06:36:40 UTC
 +++ components/feature_engagement/public/feature_constants.h
-@@ -17,7 +17,7 @@ extern const base::Feature kIPHDemoMode;
+@@ -16,7 +16,7 @@ extern const base::Feature kIPHDemoMode;
  // A feature to ensure all arrays can contain at least one feature.
  extern const base::Feature kIPHDummyFeature;
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) || \
+-#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) || \
      defined(OS_CHROMEOS)
+ extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
  extern const base::Feature kIPHFocusModeFeature;
- extern const base::Feature kIPHGlobalMediaControlsFeature;
-@@ -29,7 +29,7 @@ extern const base::Feature kIPHBookmarkFeature;
- extern const base::Feature kIPHIncognitoWindowFeature;
- extern const base::Feature kIPHNewTabFeature;
- #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IPH)
--#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
-+#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) ||
+@@ -26,7 +26,7 @@ extern const base::Feature kIPHPasswordsAccountStorage
+ extern const base::Feature kIPHReopenTabFeature;
+ extern const base::Feature kIPHWebUITabStripFeature;
+ extern const base::Feature kIPHDesktopSnoozeFeature;
+-#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||
++#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) ||
          // defined(OS_CHROMEOS)
  
  // All the features declared for Android below that are also used in Java,

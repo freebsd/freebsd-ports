@@ -1,22 +1,11 @@
---- chrome/browser/BUILD.gn.orig	2020-07-07 21:58:13 UTC
+--- chrome/browser/BUILD.gn.orig	2020-11-13 06:36:36 UTC
 +++ chrome/browser/BUILD.gn
-@@ -4209,7 +4209,9 @@ static_library("browser") {
-     if (use_x11) {
-       deps += [ "//ui/gfx/x" ]
-     }
--    deps += [ "//services/service_manager/zygote" ]
-+    if (!is_bsd) {
-+      deps += [ "//services/service_manager/zygote" ]
-+    }
- 
-     if (use_allocator == "tcmalloc") {
-       deps += [ "//chrome/common/performance_manager/mojom" ]
-@@ -4424,7 +4426,7 @@ static_library("browser") {
+@@ -4999,7 +4999,7 @@ static_library("browser") {
      ]
    }
  
 -  if (is_posix && !is_mac) {
 +  if (is_posix && !is_mac && !is_bsd) {
-     # TODO(crbug.com/753619): Enable crash reporting on Fuchsia.
+     # TODO(crbug.com / 753619): Enable crash reporting on Fuchsia.
      sources += [
        "//chrome/app/chrome_crash_reporter_client.cc",

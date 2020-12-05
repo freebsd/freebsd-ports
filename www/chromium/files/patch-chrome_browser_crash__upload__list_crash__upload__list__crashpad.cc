@@ -1,4 +1,4 @@
---- chrome/browser/crash_upload_list/crash_upload_list_crashpad.cc.orig	2019-12-31 13:56:21 UTC
+--- chrome/browser/crash_upload_list/crash_upload_list_crashpad.cc.orig	2020-11-13 06:36:36 UTC
 +++ chrome/browser/crash_upload_list/crash_upload_list_crashpad.cc
 @@ -42,6 +42,9 @@ CrashUploadListCrashpad::CrashUploadListCrashpad() = d
  CrashUploadListCrashpad::~CrashUploadListCrashpad() = default;

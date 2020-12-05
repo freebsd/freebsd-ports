@@ -1,4 +1,4 @@
---- tools/gn/src/base/files/file_posix.cc.orig	2020-03-16 18:48:21 UTC
+--- tools/gn/src/base/files/file_posix.cc.orig	2020-11-13 06:49:31 UTC
 +++ tools/gn/src/base/files/file_posix.cc
 @@ -372,7 +372,7 @@ void File::DoInitialize(const FilePath& path, uint32_t
  bool File::Flush() {

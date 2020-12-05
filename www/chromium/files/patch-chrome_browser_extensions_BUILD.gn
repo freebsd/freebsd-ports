@@ -1,6 +1,6 @@
---- chrome/browser/extensions/BUILD.gn.orig	2020-07-07 21:58:13 UTC
+--- chrome/browser/extensions/BUILD.gn.orig	2020-11-13 06:36:36 UTC
 +++ chrome/browser/extensions/BUILD.gn
-@@ -1186,6 +1186,12 @@ static_library("extensions") {
+@@ -1219,6 +1219,12 @@ static_library("extensions") {
      deps += [ "//chrome/common:service_process_mojom" ]
    }
  

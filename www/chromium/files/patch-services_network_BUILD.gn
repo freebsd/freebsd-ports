@@ -1,10 +1,19 @@
---- services/network/BUILD.gn.orig	2020-07-07 21:58:16 UTC
+--- services/network/BUILD.gn.orig	2020-11-13 06:36:46 UTC
 +++ services/network/BUILD.gn
-@@ -261,7 +261,6 @@ jumbo_component("network_service") {
+@@ -261,9 +261,15 @@ component("network_service") {
+     deps += [ "//components/certificate_transparency" ]
+   }
  
-   if (is_linux) {
+-  if (is_linux || is_chromeos) {
++  if ((is_linux && !is_bsd) || is_chromeos) {
      deps += [
--      "//sandbox/linux:sandbox_services",
-       "//services/service_manager/sandbox:sandbox",
+       "//sandbox/linux:sandbox_services",
++      "//sandbox/policy",
++    ]
++  }
++
++  if (is_bsd) {
++    deps += [
+       "//sandbox/policy",
      ]
    }

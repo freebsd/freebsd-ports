@@ -1,19 +1,26 @@
---- third_party/skia/src/core/SkCpu.cpp.orig	2019-07-24 19:03:35 UTC
+--- third_party/skia/src/core/SkCpu.cpp.orig	2020-11-13 06:42:23 UTC
 +++ third_party/skia/src/core/SkCpu.cpp
-@@ -76,6 +76,8 @@
-     #include <sys/auxv.h>
- 
-     static uint32_t read_cpu_features() {
-+return 0;
-+#if 0
-         const uint32_t kHWCAP_CRC32   = (1<< 7),
-                        kHWCAP_ASIMDHP = (1<<10);
- 
-@@ -112,6 +114,7 @@
-             }
-         }
+@@ -72,6 +72,23 @@
          return features;
-+#endif
      }
  
- #elif defined(SK_CPU_ARM32) && __has_include(<sys/auxv.h>) && \
++#elif defined(SK_CPU_ARM64) && defined(__FreeBSD__)
++    #include <machine/armreg.h>
++    #ifndef ID_AA64ISAR0_CRC32_VAL
++    #define ID_AA64ISAR0_CRC32_VAL ID_AA64ISAR0_CRC32
++    #endif
++
++    static uint32_t read_cpu_features() {
++      uint32_t features = 0;
++      uint64_t id_aa64isar0;
++
++      id_aa64isar0 = READ_SPECIALREG(id_aa64isar0_el1);
++      if (ID_AA64ISAR0_CRC32_VAL(id_aa64isar0) == ID_AA64ISAR0_CRC32_BASE) {
++        features |= SkCpu::CRC32;
++      }
++      return features;
++    }
++
+ #elif defined(SK_CPU_ARM64) && __has_include(<sys/auxv.h>)
+     #include <sys/auxv.h>
+ 

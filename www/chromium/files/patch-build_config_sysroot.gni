@@ -1,4 +1,4 @@
---- build/config/sysroot.gni.orig	2020-05-13 18:39:36 UTC
+--- build/config/sysroot.gni.orig	2020-11-13 06:36:34 UTC
 +++ build/config/sysroot.gni
 @@ -21,9 +21,9 @@ declare_args() {
  

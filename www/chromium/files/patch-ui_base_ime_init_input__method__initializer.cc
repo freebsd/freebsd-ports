@@ -1,9 +1,9 @@
---- ui/base/ime/init/input_method_initializer.cc.orig	2020-07-07 21:58:19 UTC
+--- ui/base/ime/init/input_method_initializer.cc.orig	2020-11-13 06:37:05 UTC
 +++ ui/base/ime/init/input_method_initializer.cc
 @@ -10,7 +10,7 @@
  
  #if defined(OS_CHROMEOS)
- #include "ui/base/ime/ime_bridge.h"
+ #include "ui/base/ime/chromeos/ime_bridge.h"
 -#elif defined(USE_AURA) && defined(OS_LINUX)
 +#elif defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
  #include "base/check.h"

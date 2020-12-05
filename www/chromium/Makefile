@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	84.0.4147.135
+PORTVERSION=	87.0.4280.88
 CATEGORIES?=	www java
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
-		LOCAL/cpm/chromium/:fonts
+		LOCAL/rene/chromium/:fonts
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	chromium@FreeBSD.org
@@ -59,7 +59,8 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libsecret-1.so:security/libsecret \
 		libnss3.so:security/nss \
 		libexpat.so:textproc/expat2 \
-		libfontconfig.so:x11-fonts/fontconfig
+		libfontconfig.so:x11-fonts/fontconfig \
+		libxkbcommon.so:x11/libxkbcommon
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
@@ -137,7 +138,7 @@ GN_ARGS+=	google_api_key="AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8" \
 		google_default_client_secret="IR1za9-1VK0zZ0f_O8MVFicn"
 
 .if !defined(GN_ONLY)
-SUB_FILES=	chromium-browser.desktop chrome pkg-message
+SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
 
 OPTIONS_DEFINE=	CODECS CUPS DEBUG DRIVER KERBEROS TEST
@@ -146,7 +147,7 @@ DRIVER_DESC=	Install chromedriver
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
 
-OPTIONS_DEFAULT=	ALSA CODECS CUPS DRIVER KERBEROS
+OPTIONS_DEFAULT=	CODECS CUPS DRIVER KERBEROS SNDIO
 OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -199,9 +200,13 @@ SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 .include "Makefile.tests"
 TEST_ALL_TARGET=	${TEST_TARGETS}
 TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX} \
-			test_fonts${EXTRACT_SUFX}:fonts
+			test_fonts-85${EXTRACT_SUFX}:fonts
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-build_config_compiler_pgo_pgo.gni
+.endif
 
 # swiftshader/lib/{libEGL.so,libGLESv2.so} is x86 only
 .if ${ARCH} == aarch64
@@ -235,11 +240,6 @@ pre-everything::
 post-extract-TEST-on:
 	@${MKDIR} ${WRKSRC}/third_party/test_fonts/test_fonts
 	@${MV} ${WRKDIR}/test_fonts ${WRKSRC}/third_party/test_fonts/
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|@@PACKAGE@@|chromium|' \
-			-e 's|@@MENUNAME@@|Chromium Web Browser|' \
-			${WRKSRC}/chrome/app/resources/manpage.1.in
 
 post-patch-SNDIO-on:
 	@${MKDIR} ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd

@@ -1,6 +1,6 @@
---- components/storage_monitor/BUILD.gn.orig	2019-10-21 19:06:30 UTC
+--- components/storage_monitor/BUILD.gn.orig	2020-11-13 06:36:41 UTC
 +++ components/storage_monitor/BUILD.gn
-@@ -81,6 +81,13 @@ static_library("storage_monitor") {
+@@ -88,6 +88,13 @@ static_library("storage_monitor") {
      }
    }
  

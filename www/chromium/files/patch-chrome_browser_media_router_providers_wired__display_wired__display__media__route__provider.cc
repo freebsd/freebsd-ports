@@ -1,7 +1,7 @@
---- chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc.orig	2019-09-09 21:55:09 UTC
+--- chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc.orig	2020-11-13 06:36:37 UTC
 +++ chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc
 @@ -112,6 +112,12 @@ void WiredDisplayMediaRouteProvider::CreateRoute(
-     bool incognito,
+     bool off_the_record,
      CreateRouteCallback callback) {
    DCHECK(!base::Contains(presentations_, presentation_id));
 +#if defined(OS_BSD)

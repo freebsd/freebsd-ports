@@ -1,4 +1,4 @@
---- third_party/angle/third_party/vulkan-validation-layers/src/layers/vk_loader_platform.h.orig	2020-05-13 18:41:57 UTC
+--- third_party/angle/third_party/vulkan-validation-layers/src/layers/vk_loader_platform.h.orig	2020-11-13 06:42:27 UTC
 +++ third_party/angle/third_party/vulkan-validation-layers/src/layers/vk_loader_platform.h
 @@ -33,7 +33,7 @@
  #undef NOMINMAX

@@ -1,4 +1,4 @@
---- media/formats/mp2t/es_parser_mpeg1audio.cc.orig	2019-03-11 22:00:59 UTC
+--- media/formats/mp2t/es_parser_mpeg1audio.cc.orig	2020-11-13 06:36:44 UTC
 +++ media/formats/mp2t/es_parser_mpeg1audio.cc
 @@ -108,11 +108,11 @@ bool EsParserMpeg1Audio::LookForMpeg1AudioFrame(
    const uint8_t* es;

@@ -1,6 +1,6 @@
---- base/process/internal_linux.cc.orig	2020-03-16 18:39:41 UTC
+--- base/process/internal_linux.cc.orig	2020-11-13 06:36:34 UTC
 +++ base/process/internal_linux.cc
-@@ -29,7 +29,11 @@ namespace internal {
+@@ -30,7 +30,11 @@ namespace internal {
  
  const char kProcDir[] = "/proc";
  
@@ -12,7 +12,7 @@
  
  FilePath GetProcPidDir(pid_t pid) {
    return FilePath(kProcDir).Append(NumberToString(pid));
-@@ -64,6 +68,7 @@ bool ReadProcFile(const FilePath& file, std::string* b
+@@ -66,6 +70,7 @@ bool ReadProcFile(const FilePath& file, std::string* b
      DLOG(WARNING) << "Failed to read " << file.MaybeAsASCII();
      return false;
    }
@@ -20,7 +20,7 @@
    return !buffer->empty();
  }
  
-@@ -79,6 +84,22 @@ bool ParseProcStats(const std::string& stats_data,
+@@ -81,6 +86,22 @@ bool ParseProcStats(const std::string& stats_data,
    if (stats_data.empty())
      return false;
  
@@ -43,7 +43,7 @@
    // The stat file is formatted as:
    // pid (process name) data1 data2 .... dataN
    // Look for the closing paren by scanning backwards, to avoid being fooled by
-@@ -108,6 +129,7 @@ bool ParseProcStats(const std::string& stats_data,
+@@ -110,6 +131,7 @@ bool ParseProcStats(const std::string& stats_data,
        base::TRIM_WHITESPACE, base::SPLIT_WANT_ALL);
    for (const auto& i : other_stats)
      proc_stats->push_back(i);
@@ -51,7 +51,7 @@
    return true;
  }
  
-@@ -155,7 +177,11 @@ int64_t ReadProcStatsAndGetFieldAsInt64(pid_t pid, Pro
+@@ -157,7 +179,11 @@ int64_t ReadProcStatsAndGetFieldAsInt64(pid_t pid, Pro
  }
  
  int64_t ReadProcSelfStatsAndGetFieldAsInt64(ProcStatsFields field_num) {
@@ -63,7 +63,7 @@
    return ReadStatFileAndGetFieldAsInt64(stat_file, field_num);
  }
  
-@@ -171,6 +197,9 @@ size_t ReadProcStatsAndGetFieldAsSizeT(pid_t pid,
+@@ -173,6 +199,9 @@ size_t ReadProcStatsAndGetFieldAsSizeT(pid_t pid,
  }
  
  Time GetBootTime() {
@@ -73,7 +73,7 @@
    FilePath path("/proc/stat");
    std::string contents;
    if (!ReadProcFile(path, &contents))
-@@ -184,9 +213,13 @@ Time GetBootTime() {
+@@ -186,9 +215,13 @@ Time GetBootTime() {
    if (!StringToInt(btime_it->second, &btime))
      return Time();
    return Time::FromTimeT(btime);
@@ -87,7 +87,7 @@
    FilePath path("/proc/stat");
    std::string contents;
    if (!ReadProcFile(path, &contents))
-@@ -210,6 +243,7 @@ TimeDelta GetUserCpuTimeSinceBoot() {
+@@ -212,6 +245,7 @@ TimeDelta GetUserCpuTimeSinceBoot() {
      return TimeDelta();
  
    return ClockTicksToTimeDelta(user + nice);

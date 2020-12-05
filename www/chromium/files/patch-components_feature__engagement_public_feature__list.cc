@@ -1,20 +1,20 @@
---- components/feature_engagement/public/feature_list.cc.orig	2020-08-18 18:40:09 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2020-11-13 06:36:40 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -63,7 +63,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kIPHBadgedReadingListFeature,
+@@ -66,7 +66,7 @@ const base::Feature* const kAllFeatures[] = {
      &kIPHBadgedTranslateManualTriggerFeature,
+     &kIPHDiscoverFeedHeaderFeature,
  #endif  // defined(OS_IOS)
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || \
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) || \
+-#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) || \
      defined(OS_CHROMEOS)
+     &kIPHDesktopTabGroupsNewGroupFeature,
      &kIPHFocusModeFeature,
-     &kIPHGlobalMediaControlsFeature,
-@@ -74,7 +74,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kIPHIncognitoWindowFeature,
-     &kIPHNewTabFeature,
- #endif  // BUILDFLAG(ENABLE_LEGACY_DESKTOP_IN_PRODUCT_HELP)
--#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) ||
-+#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD) ||
+@@ -75,7 +75,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHPasswordsAccountStorageFeature,
+     &kIPHReopenTabFeature,
+     &kIPHWebUITabStripFeature,
+-#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||
++#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) ||
          // defined(OS_CHROMEOS)
  };
  }  // namespace

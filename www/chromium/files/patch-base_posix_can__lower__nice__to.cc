@@ -1,4 +1,4 @@
---- base/posix/can_lower_nice_to.cc.orig	2019-03-11 22:00:51 UTC
+--- base/posix/can_lower_nice_to.cc.orig	2020-11-13 06:36:34 UTC
 +++ base/posix/can_lower_nice_to.cc
 @@ -31,6 +31,9 @@ bool CanLowerNiceTo(int nice_value) {
    if (geteuid() == 0)

@@ -1,4 +1,4 @@
---- third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2020-07-07 22:03:28 UTC
+--- third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2020-11-13 06:42:25 UTC
 +++ third_party/webrtc/rtc_base/physical_socket_server.cc
 @@ -50,7 +50,7 @@
  #include "rtc_base/null_socket_server.h"
@@ -18,7 +18,7 @@
  
  int64_t GetSocketRecvTimestamp(int socket) {
    struct timeval tv_ioctl;
-@@ -291,7 +291,7 @@ int PhysicalSocket::GetOption(Option opt, int* value) 
+@@ -305,7 +305,7 @@ int PhysicalSocket::GetOption(Option opt, int* value) 
      return -1;
    }
    if (opt == OPT_DONTFRAGMENT) {
@@ -27,7 +27,7 @@
      *value = (*value != IP_PMTUDISC_DONT) ? 1 : 0;
  #endif
    } else if (opt == OPT_DSCP) {
-@@ -309,7 +309,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
+@@ -323,7 +323,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
    if (TranslateOption(opt, &slevel, &sopt) == -1)
      return -1;
    if (opt == OPT_DONTFRAGMENT) {
@@ -36,7 +36,7 @@
      value = (value) ? IP_PMTUDISC_DO : IP_PMTUDISC_DONT;
  #endif
    } else if (opt == OPT_DSCP) {
-@@ -550,7 +550,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -564,7 +564,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *slevel = IPPROTO_IP;
        *sopt = IP_DONTFRAGMENT;
        break;

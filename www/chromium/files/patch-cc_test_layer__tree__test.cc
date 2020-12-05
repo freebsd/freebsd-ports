@@ -1,11 +1,11 @@
---- cc/test/layer_tree_test.cc.orig	2020-07-13 09:14:49 UTC
+--- cc/test/layer_tree_test.cc.orig	2020-11-13 06:36:34 UTC
 +++ cc/test/layer_tree_test.cc
-@@ -645,7 +645,7 @@ LayerTreeTest::LayerTreeTest(LayerTreeTest::RendererTy
+@@ -669,7 +669,7 @@ LayerTreeTest::LayerTreeTest(viz::RendererType rendere
      init_vulkan = true;
-   } else if (renderer_type_ == RENDERER_SKIA_DAWN) {
+   } else if (renderer_type_ == viz::RendererType::kSkiaDawn) {
      scoped_feature_list_.InitAndEnableFeature(features::kSkiaDawn);
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
      init_vulkan = true;
  #elif defined(OS_WIN)
      // TODO(sgilhuly): Initialize D3D12 for Windows.

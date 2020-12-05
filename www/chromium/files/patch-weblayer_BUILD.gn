@@ -1,6 +1,6 @@
---- weblayer/BUILD.gn.orig	2020-07-07 21:58:19 UTC
+--- weblayer/BUILD.gn.orig	2020-11-13 06:37:06 UTC
 +++ weblayer/BUILD.gn
-@@ -511,6 +511,14 @@ source_set("weblayer_lib_base") {
+@@ -671,6 +671,14 @@ source_set("weblayer_lib_base") {
      ]
    }
  

@@ -1,4 +1,4 @@
---- base/files/file_path_watcher_kqueue.h.orig	2019-03-11 22:00:51 UTC
+--- base/files/file_path_watcher_kqueue.h.orig	2020-11-13 06:36:34 UTC
 +++ base/files/file_path_watcher_kqueue.h
 @@ -5,6 +5,10 @@
  #ifndef BASE_FILES_FILE_PATH_WATCHER_KQUEUE_H_

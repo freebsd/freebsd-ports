@@ -1,6 +1,6 @@
---- extensions/shell/BUILD.gn.orig	2020-05-18 11:01:17 UTC
+--- extensions/shell/BUILD.gn.orig	2020-11-13 06:36:43 UTC
 +++ extensions/shell/BUILD.gn
-@@ -193,7 +193,7 @@ source_set("app_shell_lib") {
+@@ -202,7 +202,7 @@ source_set("app_shell_lib") {
      }
    }
  

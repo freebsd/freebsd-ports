@@ -1,4 +1,4 @@
---- third_party/libyuv/include/libyuv/row.h.orig	2019-03-11 22:08:01 UTC
+--- third_party/libyuv/include/libyuv/row.h.orig	2020-11-13 06:42:19 UTC
 +++ third_party/libyuv/include/libyuv/row.h
 @@ -157,10 +157,14 @@ extern "C" {
  #define HAS_ARGBSHADEROW_SSE2

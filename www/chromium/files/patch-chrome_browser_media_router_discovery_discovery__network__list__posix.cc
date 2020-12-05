@@ -1,4 +1,4 @@
---- chrome/browser/media/router/discovery/discovery_network_list_posix.cc.orig	2019-03-11 22:00:53 UTC
+--- chrome/browser/media/router/discovery/discovery_network_list_posix.cc.orig	2020-11-13 06:36:37 UTC
 +++ chrome/browser/media/router/discovery/discovery_network_list_posix.cc
 @@ -10,6 +10,7 @@
  #include <netinet/in.h>
@@ -8,21 +8,27 @@
  
  #include <algorithm>
  
-@@ -19,7 +20,7 @@
+@@ -18,7 +19,7 @@
  #include "chrome/browser/media/router/discovery/discovery_network_list_wifi.h"
  #include "net/base/net_errors.h"
  
--#if !defined(OS_MACOSX)
-+#if !defined(OS_MACOSX) && !defined(OS_BSD)
+-#if !defined(OS_MAC)
++#if !defined(OS_MAC) && !defined(OS_BSD)
  #include <netpacket/packet.h>
  #else
  #include <net/if_dl.h>
-@@ -28,7 +29,7 @@
+@@ -27,12 +28,12 @@
  namespace media_router {
  namespace {
  
--#if !defined(OS_MACOSX)
-+#if !defined(OS_MACOSX) && !defined(OS_BSD)
+-#if !defined(OS_MAC)
++#if !defined(OS_MAC) && !defined(OS_BSD)
  using sll = struct sockaddr_ll;
  #define SOCKET_ARP_TYPE(s) ((s)->sll_hatype)
  #define SOCKET_ADDRESS_LEN(s) ((s)->sll_halen)
+ #define SOCKET_ADDRESS(s) ((s)->sll_addr)
+-#else  // defined(OS_MAC)
++#else  // defined(OS_MAC) || defined(OS_BSD)
+ #define AF_PACKET AF_LINK
+ using sll = struct sockaddr_dl;
+ #define SOCKET_ARP_TYPE(s) ((s)->sdl_type)

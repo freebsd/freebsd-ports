@@ -1,6 +1,6 @@
---- content/public/test/content_browser_test.cc.orig	2020-05-13 18:40:32 UTC
+--- content/public/test/content_browser_test.cc.orig	2020-11-13 06:36:43 UTC
 +++ content/public/test/content_browser_test.cc
-@@ -25,7 +25,7 @@
+@@ -26,7 +26,7 @@
  #include "base/mac/foundation_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
-@@ -82,7 +82,7 @@ void ContentBrowserTest::SetUp() {
+@@ -87,7 +87,7 @@ void ContentBrowserTest::SetUp() {
  #endif
  
    // LinuxInputMethodContextFactory has to be initialized.
@@ -18,7 +18,7 @@
    ui::InitializeInputMethodForTesting();
  #endif
  
-@@ -95,7 +95,7 @@ void ContentBrowserTest::TearDown() {
+@@ -100,7 +100,7 @@ void ContentBrowserTest::TearDown() {
    BrowserTestBase::TearDown();
  
    // LinuxInputMethodContextFactory has to be shutdown.

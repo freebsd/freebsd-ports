@@ -1,4 +1,4 @@
---- third_party/perfetto/include/perfetto/ext/base/event_fd.h.orig	2019-09-16 11:03:16 UTC
+--- third_party/perfetto/include/perfetto/ext/base/event_fd.h.orig	2020-11-13 06:42:20 UTC
 +++ third_party/perfetto/include/perfetto/ext/base/event_fd.h
 @@ -20,8 +20,8 @@
  #include "perfetto/base/build_config.h"

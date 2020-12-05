@@ -1,6 +1,6 @@
---- cc/BUILD.gn.orig	2020-07-07 21:58:11 UTC
+--- cc/BUILD.gn.orig	2020-11-13 06:36:34 UTC
 +++ cc/BUILD.gn
-@@ -599,7 +599,7 @@ cc_test_static_library("test_support") {
+@@ -615,7 +615,7 @@ cc_test_static_library("test_support") {
    if (enable_vulkan) {
      deps += [ "//gpu/vulkan/init" ]
    }
@@ -9,11 +9,11 @@
      data_deps = [ "//third_party/mesa_headers" ]
    }
  }
-@@ -801,7 +801,6 @@ cc_test("cc_unittests") {
+@@ -824,7 +824,6 @@ cc_test("cc_unittests") {
    ]
    data_deps = [
      "//testing/buildbot/filters:cc_unittests_filters",
 -    "//third_party/mesa_headers",
    ]
  
-   defines = []
+   if (is_fuchsia) {

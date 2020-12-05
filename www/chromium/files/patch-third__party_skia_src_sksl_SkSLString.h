@@ -1,4 +1,4 @@
---- third_party/skia/src/sksl/SkSLString.h.orig	2019-12-16 21:56:18 UTC
+--- third_party/skia/src/sksl/SkSLString.h.orig	2020-11-13 06:42:23 UTC
 +++ third_party/skia/src/sksl/SkSLString.h
 @@ -17,6 +17,8 @@
  #include "include/core/SkString.h"

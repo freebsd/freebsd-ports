@@ -1,9 +1,21 @@
---- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc.orig	2020-07-07 21:58:16 UTC
+--- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc.orig	2020-11-13 06:36:46 UTC
 +++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics_linux.cc
-@@ -22,8 +22,10 @@
+@@ -5,7 +5,6 @@
+ #include <dlfcn.h>
+ #include <fcntl.h>
+ #include <stdint.h>
+-#include <sys/prctl.h>
+ 
+ #include <memory>
+ 
+@@ -25,8 +24,14 @@
  #include "build/build_config.h"
  #include "services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h"
  
++#if !defined(OS_BSD)
++#include <sys/prctl.h>
++#endif
++
 +#if !defined(OS_BSD)
  // Symbol with virtual address of the start of ELF header of the current binary.
  extern char __ehdr_start;
@@ -11,7 +23,7 @@
  
  namespace memory_instrumentation {
  
-@@ -86,6 +88,7 @@ struct ModuleData {
+@@ -89,6 +94,7 @@ struct ModuleData {
  
  ModuleData GetMainModuleData() {
    ModuleData module_data;
@@ -19,7 +31,7 @@
    Dl_info dl_info;
    if (dladdr(&__ehdr_start, &dl_info)) {
      base::debug::ElfBuildIdBuffer build_id;
-@@ -96,6 +99,7 @@ ModuleData GetMainModuleData() {
+@@ -99,6 +105,7 @@ ModuleData GetMainModuleData() {
        module_data.build_id = std::string(build_id, build_id_length);
      }
    }
@@ -27,7 +39,7 @@
    return module_data;
  }
  
-@@ -143,14 +147,14 @@ bool ParseSmapsHeader(const char* header_line,
+@@ -146,14 +153,14 @@ bool ParseSmapsHeader(const char* header_line,
    // Build ID is needed to symbolize heap profiles, and is generated only on
    // official builds. Build ID is only added for the current library (chrome)
    // since it is racy to read other libraries which can be unmapped any time.
@@ -44,7 +56,36 @@
  
    return res;
  }
-@@ -241,6 +245,7 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
+@@ -236,6 +243,7 @@ uint32_t ReadLinuxProcSmapsFile(FILE* smaps_file,
+ class ScopedProcessSetDumpable {
+  public:
+   ScopedProcessSetDumpable() {
++#if !defined(OS_BSD)
+     int result = prctl(PR_GET_DUMPABLE, 0, 0, 0, 0);
+     if (result < 0) {
+       PLOG(ERROR) << "prctl";
+@@ -251,15 +259,20 @@ class ScopedProcessSetDumpable {
+         AvoidPrctlOnDestruction();
+       }
+     }
++#else
++    was_dumpable_ = true;
++#endif
+   }
+ 
+   ScopedProcessSetDumpable(const ScopedProcessSetDumpable&) = delete;
+   ScopedProcessSetDumpable& operator=(const ScopedProcessSetDumpable&) = delete;
+ 
+   ~ScopedProcessSetDumpable() {
++#if !defined(OS_BSD)
+     if (!was_dumpable_) {
+       PCHECK(prctl(PR_SET_DUMPABLE, 0, 0, 0, 0) == 0) << "prctl";
+     }
++#endif
+   }
+ 
+  private:
+@@ -282,6 +295,7 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
                                   mojom::RawOSMemDump* dump) {
    // TODO(chiniforooshan): There is no need to read both /statm and /status
    // files. Refactor to get everything from /status using ProcessMetric.
@@ -52,7 +93,7 @@
    auto statm_file = GetProcPidDir(pid).Append("statm");
    auto autoclose = base::ScopedFD(open(statm_file.value().c_str(), O_RDONLY));
    int statm_fd = autoclose.get();
-@@ -255,6 +260,10 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
+@@ -296,6 +310,10 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
  
    if (!success)
      return false;
@@ -63,7 +104,7 @@
  
    auto process_metrics = CreateProcessMetrics(pid);
  
-@@ -295,6 +304,10 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
+@@ -340,6 +358,10 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
  
  // static
  std::vector<VmRegionPtr> OSMetrics::GetProcessMemoryMaps(base::ProcessId pid) {
@@ -74,7 +115,7 @@
    std::vector<VmRegionPtr> maps;
    uint32_t res = 0;
    if (g_proc_smaps_for_testing) {
-@@ -312,6 +325,7 @@ std::vector<VmRegionPtr> OSMetrics::GetProcessMemoryMa
+@@ -357,6 +379,7 @@ std::vector<VmRegionPtr> OSMetrics::GetProcessMemoryMa
      return std::vector<VmRegionPtr>();
  
    return maps;
@@ -82,7 +123,7 @@
  }
  
  // static
-@@ -319,6 +333,10 @@ OSMetrics::MappedAndResidentPagesDumpState OSMetrics::
+@@ -364,6 +387,10 @@ OSMetrics::MappedAndResidentPagesDumpState OSMetrics::
      const size_t start_address,
      const size_t end_address,
      std::vector<uint8_t>* accessed_pages_bitmap) {
@@ -93,7 +134,7 @@
    const char* kPagemap = "/proc/self/pagemap";
  
    base::ScopedFILE pagemap_file(fopen(kPagemap, "r"));
-@@ -360,6 +378,7 @@ OSMetrics::MappedAndResidentPagesDumpState OSMetrics::
+@@ -411,6 +438,7 @@ OSMetrics::MappedAndResidentPagesDumpState OSMetrics::
      }
    }
    return OSMetrics::MappedAndResidentPagesDumpState::kSuccess;

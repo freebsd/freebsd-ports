@@ -1,6 +1,6 @@
---- third_party/pdfium/fxjs/cjs_publicmethods.cpp.orig	2019-06-04 18:58:01 UTC
+--- third_party/pdfium/fxjs/cjs_publicmethods.cpp.orig	2020-11-13 06:42:21 UTC
 +++ third_party/pdfium/fxjs/cjs_publicmethods.cpp
-@@ -86,6 +86,103 @@ constexpr const wchar_t* kDateFormats[] = {L"m/d",
+@@ -87,6 +87,103 @@ constexpr const wchar_t* kDateFormats[] = {L"m/d",
  constexpr const wchar_t* kTimeFormats[] = {L"HH:MM", L"h:MM tt", L"HH:MM:ss",
                                             L"h:MM:ss tt"};
  
