@@ -15736,3 +15736,4 @@ www/rubygem-gitlab-grack||2020-12-03|Has expired: Deprecated by upstream
 databases/db6||2020-12-03|Has expired: latest 6.2.x version and newer not downloadable without registration
 graphics/geeqie-devel|graphics/geeqie|2020-12-04|Development version no longer necessary
 devel/py-microversion_parse|devel/py-microversion-parse|2020-12-05|Rename to match upstream naming
+devel/py-semantic_version|devel/py-semantic-version|2020-12-05|Rename to match upstream naming

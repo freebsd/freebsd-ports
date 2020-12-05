@@ -1,11 +1,12 @@
 # Created by: Fukang Chen <loader@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	semantic_version
+PORTNAME=	semantic-version
 PORTVERSION=	2.8.5
 MASTER_SITES=	CHEESESHOP
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	semantic_version-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library provides a few tools to handle SemVer in Python

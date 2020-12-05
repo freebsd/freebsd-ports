@@ -3,7 +3,7 @@
 
 PORTNAME=	horizon
 PORTVERSION=	17.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	https://tarballs.openstack.org/horizon/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -45,7 +45,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-swiftclient>=3.2.0:databases/py-python-swiftclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2013.6:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.12.0:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}semantic_version>=2.3.1:devel/py-semantic_version@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}semantic-version>=2.3.1:devel/py-semantic-version@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}XStatic>=1.0.0:devel/py-XStatic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}XStatic-Angular>=1.5.8.0:devel/py-XStatic-Angular@${PY_FLAVOR} \

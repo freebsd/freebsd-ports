@@ -5052,7 +5052,7 @@
     SUBDIR += py-scripttest
     SUBDIR += py-selection
     SUBDIR += py-selectors2
-    SUBDIR += py-semantic_version
+    SUBDIR += py-semantic-version
     SUBDIR += py-semver
     SUBDIR += py-sentry-sdk
     SUBDIR += py-serializable
