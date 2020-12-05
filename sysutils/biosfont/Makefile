@@ -5,7 +5,7 @@ PORTNAME=	biosfont
 PORTVERSION=	1.3
 CATEGORIES=	sysutils
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	rene0@freedom.nl
 COMMENT=	Kernel module to retrieve bitmap fonts from BIOS memory
 
 LICENSE=	BSD2CLAUSE

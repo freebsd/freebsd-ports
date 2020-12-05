@@ -6,7 +6,7 @@ PORTVERSION=	1.3.1
 PORTREVISION=	1
 CATEGORIES=	lang
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	rene0@freedom.nl
 COMMENT=	Optimizing BrainF*ck to C compiler
 
 LICENSE=	BSD2CLAUSE

@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=v
 PORTREVISION=	1
 CATEGORIES=	comms
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	rene0@freedom.nl
 COMMENT=	DCF77 receiver/logger/analyzer and library for the Raspberry Pi
 
 LICENSE=	BSD2CLAUSE
