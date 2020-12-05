@@ -4,7 +4,7 @@ PORTNAME=	rlvm
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.14-67
 DISTVERSIONSUFFIX=	-g9350209
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	games
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -70,7 +70,8 @@ post-patch:
 		${WRKSRC}/src/platforms/gtk/gtk_rlvm_instance.cc
 	@${REINPLACE_CMD} -e 's,/usr/share,${LOCALBASE}/share,' \
 		-e 's,truetype/ttf-dejavu,dejavu,' \
-		-e 's,truetype/[^/"]*/,TTF/,' \
+		-e 's,truetype/mona,mona-ttf,' \
+		-e 's,truetype/,,' \
 		${WRKSRC}/src/utilities/find_font_file.cc
 
 do-test-TEST-on:
