@@ -103,6 +103,8 @@ lib/librhythmbox-core.so.10.0.0
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/musicbrainz.py
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/oldcache.py
 %%PYTHON%%lib/rhythmbox/plugins/artsearch/songinfo.py
+lib/rhythmbox/plugins/android/android.plugin
+lib/rhythmbox/plugins/android/libandroid.so
 lib/rhythmbox/plugins/audiocd/audiocd.plugin
 lib/rhythmbox/plugins/audiocd/libaudiocd.so
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.plugin
