@@ -1,4 +1,4 @@
---- bolt.gemspec.orig	2020-11-06 22:18:50 UTC
+--- bolt.gemspec.orig	2020-12-04 20:50:32 UTC
 +++ bolt.gemspec
 @@ -26,7 +26,7 @@ Gem::Specification.new do |s|
      if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
@@ -12,7 +12,7 @@
 @@ -37,11 +37,11 @@ Gem::Specification.new do |s|
        s.add_runtime_dependency(%q<net-ssh-krb>.freeze, ["~> 0.5"])
        s.add_runtime_dependency(%q<orchestrator_client>.freeze, ["~> 0.4"])
-       s.add_runtime_dependency(%q<puppet>.freeze, [">= 6.18.0", "< 6.20"])
+       s.add_runtime_dependency(%q<puppet>.freeze, [">= 6.18.0"])
 -      s.add_runtime_dependency(%q<puppetfile-resolver>.freeze, ["~> 0.4"])
 +      s.add_runtime_dependency(%q<puppetfile-resolver>.freeze, [">= 0.4"])
        s.add_runtime_dependency(%q<puppet-resource_api>.freeze, [">= 1.8.1"])
@@ -35,7 +35,7 @@
 @@ -64,11 +64,11 @@ Gem::Specification.new do |s|
        s.add_dependency(%q<net-ssh-krb>.freeze, ["~> 0.5"])
        s.add_dependency(%q<orchestrator_client>.freeze, ["~> 0.4"])
-       s.add_dependency(%q<puppet>.freeze, [">= 6.18.0", "< 6.20"])
+       s.add_dependency(%q<puppet>.freeze, [">= 6.18.0"])
 -      s.add_dependency(%q<puppetfile-resolver>.freeze, ["~> 0.4"])
 +      s.add_dependency(%q<puppetfile-resolver>.freeze, [">= 0.4"])
        s.add_dependency(%q<puppet-resource_api>.freeze, [">= 1.8.1"])
@@ -58,7 +58,7 @@
 @@ -92,11 +92,11 @@ Gem::Specification.new do |s|
      s.add_dependency(%q<net-ssh-krb>.freeze, ["~> 0.5"])
      s.add_dependency(%q<orchestrator_client>.freeze, ["~> 0.4"])
-     s.add_dependency(%q<puppet>.freeze, [">= 6.18.0", "< 6.20"])
+     s.add_dependency(%q<puppet>.freeze, [">= 6.18.0"])
 -    s.add_dependency(%q<puppetfile-resolver>.freeze, ["~> 0.4"])
 +    s.add_dependency(%q<puppetfile-resolver>.freeze, [">= 0.4"])
      s.add_dependency(%q<puppet-resource_api>.freeze, [">= 1.8.1"])

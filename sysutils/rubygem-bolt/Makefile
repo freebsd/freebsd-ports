@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bolt
-PORTVERSION=	2.35.0
+PORTVERSION=	2.36.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,7 @@ COMMENT=	Execute commands remotely over SSH and WinRM
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	puppet:sysutils/puppet6 \
-		r10k:sysutils/rubygem-r10k \
+RUN_DEPENDS=	r10k:sysutils/rubygem-r10k \
 		rubygem-addressable>=2.5:www/rubygem-addressable \
 		rubygem-aws-sdk-ec2>1:devel/rubygem-aws-sdk-ec2 \
 		rubygem-CFPropertyList>=2.2:devel/rubygem-CFPropertyList \
@@ -39,5 +38,17 @@ ruby_OLD_CMD+=	/opt/puppetlabs/puppet/bin/ruby
 SHEBANG_FILES=	libexec/*
 
 PLIST_FILES=	bin/bolt
+
+OPTIONS_SINGLE= PUPPET
+OPTIONS_SINGLE_PUPPET=PUPPET5 PUPPET6 PUPPET7
+OPTIONS_DEFAULT=PUPPET6
+
+PUPPET5_DESC=   Depend on sysutils/puppet5
+PUPPET6_DESC=   Depend on sysutils/puppet6
+PUPPET7_DESC=   Depend on sysutils/puppet7
+
+PUPPET5_RUN_DEPENDS=puppet:sysutils/puppet5
+PUPPET6_RUN_DEPENDS=puppet:sysutils/puppet6
+PUPPET7_RUN_DEPENDS=puppet:sysutils/puppet7
 
 .include <bsd.port.mk>
