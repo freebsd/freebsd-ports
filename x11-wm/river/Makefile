@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	river
-PORTVERSION=	s20201129
+PORTVERSION=	s20201205
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,10 +18,11 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libwlroots.so:x11-toolkits/wlroots \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		pkgconfig
+USES=		pkgconfig xorg
 USE_GITHUB=	yes
+USE_XORG=	pixman
 GH_ACCOUNT=	ifreund
-GH_TAGNAME=	807d4a4
+GH_TAGNAME=	342b2e5
 GH_TUPLE=	ifreund:zig-wayland:ba49b2b:zig_wayland/deps/zig-wayland
 CONFIGURE_ARGS=	--prefix "${STAGEDIR}${PREFIX}" \
 		${WITH_DEBUG:U-Drelease-fast=true} \
