@@ -1,10 +1,10 @@
 bin/ruqola
 lib/librocketchatrestapi-qt5.so.0
-lib/librocketchatrestapi-qt5.so.1.1.1
+lib/librocketchatrestapi-qt5.so.1.2.1
 lib/libruqolacore.so.0
-lib/libruqolacore.so.1.1.1
+lib/libruqolacore.so.1.2.1
 lib/libruqolawidgets.so.0
-lib/libruqolawidgets.so.1.1.1
+lib/libruqolawidgets.so.1.2.1
 %%QT_PLUGINDIR%%/ruqolaplugins/authentication/ruqola_passwordauthenticationplugin.so
 %%QT_PLUGINDIR%%/ruqolaplugins/textplugins/ruqola_texttospeechtextplugin.so
 %%QT_PLUGINDIR%%/ruqolaplugins/textplugins/ruqola_webshortcuttextplugin.so
