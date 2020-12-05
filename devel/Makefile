@@ -5218,7 +5218,7 @@
     SUBDIR += py-wlc
     SUBDIR += py-woops
     SUBDIR += py-wrapt
-    SUBDIR += py-wsgi_intercept
+    SUBDIR += py-wsgi-intercept
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgitools
     SUBDIR += py-wsgiutils

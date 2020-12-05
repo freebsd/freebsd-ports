@@ -1,11 +1,12 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
 # $FreeBSD$
 
-PORTNAME=	wsgi_intercept
+PORTNAME=	wsgi-intercept
 PORTVERSION=	1.9.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	wsgi_intercept-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	WSGI application in place of a real URI for testing

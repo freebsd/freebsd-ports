@@ -15737,3 +15737,4 @@ databases/db6||2020-12-03|Has expired: latest 6.2.x version and newer not downlo
 graphics/geeqie-devel|graphics/geeqie|2020-12-04|Development version no longer necessary
 devel/py-microversion_parse|devel/py-microversion-parse|2020-12-05|Rename to match upstream naming
 devel/py-semantic_version|devel/py-semantic-version|2020-12-05|Rename to match upstream naming
+devel/py-wsgi_intercept|devel/py-wsgi-intercept|2020-12-05|Rename to match upstream naming
