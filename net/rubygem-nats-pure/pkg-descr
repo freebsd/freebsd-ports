@@ -1,0 +1,3 @@
+A thread safe Ruby client for the NATS messaging system written in pure Ruby.
+
+WWW: http://rubygems.org/gems/nats-pure

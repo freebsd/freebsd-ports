@@ -1273,6 +1273,7 @@
     SUBDIR += rubygem-macaddr
     SUBDIR += rubygem-maxmind-db
     SUBDIR += rubygem-mqtt
+    SUBDIR += rubygem-nats-pure
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc
     SUBDIR += rubygem-net-ntp
