@@ -50,11 +50,14 @@ share/icons/hicolor/symbolic/apps/com.github.johnfactotum.Foliate-symbolic.svg
 share/locale/cs_CS/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/de_DE/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/es/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
+share/locale/eu/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/fr_FR/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/id_ID/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/ie/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/it/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
+share/locale/nb/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/nl/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
+share/locale/nn/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/pt_BR/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/ru_RU/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/sv/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
