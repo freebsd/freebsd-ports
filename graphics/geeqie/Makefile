@@ -55,9 +55,15 @@ LIRC_CONFIGURE_ON=	--with-lirc-prefix="${LOCALBASE}"
 LIRC_BROKEN=		does not build with old lirc from ports
 
 MAP_LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
-			libclutter-gtk-1.0.so:graphics/clutter-gtk3
+			libclutter-gtk-1.0.so:graphics/clutter-gtk3 \
+			libclutter-1.0.so:graphics/clutter \
+			libcogl.so:graphics/cogl \
+			libjson-glib-1.0.so:devel/json-glib
+
 MAP_CONFIGURE_ENABLE=	map gpu-accel
 MAP_REQUIRES=		GTK3
+MAP_USES=		gl xorg
+MAP_USE=		GL=egl XORG=xrandr,x11,xext,xdamage,xfixes,xcomposite,xi
 
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_ENABLE=	tiff
@@ -73,6 +79,9 @@ PDF_REQUIRES=		GTK3
 FFMPEGTHUMBNAILER_DESC=	Video file thumbnails generating support
 FFMPEGTHUMBNAILER_CONFIGURE_ENABLE=	ffmpegthumbnailer
 FFMPEGTHUMBNAILER_LIB_DEPENDS=	libffmpegthumbnailer.so:multimedia/ffmpegthumbnailer
+
+GTK2_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+			libfontconfig.so:x11-fonts/fontconfig
 
 NLS_CONFIGURE_ENABLE=	nls
 
