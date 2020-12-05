@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Known issues:
-- OpenGL renderer may glitch on Intel GPUs when using i965 Mesa driver.
-  Consider defining `MESA_LOADER_DRIVER_OVERRIDE=iris` via environ(7).
-EOM
-}
-]
