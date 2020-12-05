@@ -28,5 +28,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} '/AM_PATH_WXCONFIG/ s,3.0.0,2.8.0,' ${WRKSRC}/configure.ac
+	# Poppler 20.12 no longer installs the pc file for this private backend.
+	${REINPLACE_CMD} 's|poppler-cairo >= 0.10||g' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
