@@ -2,6 +2,7 @@
 
 PORTNAME=	postorius
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-mailman3>=1.3.3:mail/py-django-mailma
 		${PYTHON_PKGNAMEPREFIX}django22>0:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mailmanclient>=3.3.1:mail/py-mailmanclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-gravatar2>1.0.6:www/py-django-gravatar2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}readme_renderer>0:devel/py-readme_renderer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}readme-renderer>0:devel/py-readme-renderer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup448>0:www/py-beautifulsoup448@${PY_FLAVOR} \

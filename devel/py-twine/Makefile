@@ -3,6 +3,7 @@
 
 PORTNAME=	twine
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15:devel/py-setuptools_s
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0.4.3:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>=15.1:security/py-keyring@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pkginfo>=1.4.2:sysutils/py-pkginfo@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}readme_renderer>=21.0:devel/py-readme_renderer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}readme-renderer>=21.0:devel/py-readme-renderer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.20:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-toolbelt>=0.8.0:www/py-requests-toolbelt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rfc3986>=1.4.0:www/py-rfc3986@${PY_FLAVOR} \
