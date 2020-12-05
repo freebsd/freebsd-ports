@@ -1,8 +1,6 @@
 bin/appstream-builder
 bin/appstream-compose
 bin/appstream-util
-include/libappstream-builder/appstream-builder.h
-include/libappstream-builder/asb-app.h
 include/libappstream-glib/appstream-glib.h
 include/libappstream-glib/as-agreement-section.h
 include/libappstream-glib/as-agreement.h
@@ -38,16 +36,12 @@ lib/asb-plugins-5/libasb_plugin_desktop.so
 lib/asb-plugins-5/libasb_plugin_font.so
 lib/asb-plugins-5/libasb_plugin_gettext.so
 lib/asb-plugins-5/libasb_plugin_hardcoded.so
+lib/asb-plugins-5/libasb_plugin_icon.so
 lib/asb-plugins-5/libasb_plugin_shell_extension.so
-lib/girepository-1.0/AppStreamBuilder-1.0.typelib
 lib/girepository-1.0/AppStreamGlib-1.0.typelib
-lib/libappstream-builder.so
-lib/libappstream-builder.so.8
-lib/libappstream-builder.so.8.0.10
 lib/libappstream-glib.so
 lib/libappstream-glib.so.8
 lib/libappstream-glib.so.8.0.10
-libdata/pkgconfig/appstream-builder.pc
 libdata/pkgconfig/appstream-glib.pc
 %%MANPAGES%%man/man1/appstream-builder.1.gz
 %%MANPAGES%%man/man1/appstream-compose.1.gz
@@ -58,7 +52,6 @@ share/bash-completion/completions/appstream-builder
 share/bash-completion/completions/appstream-util
 share/gettext/its/appdata.its
 share/gettext/its/appdata.loc
-share/gir-1.0/AppStreamBuilder-1.0.gir
 share/gir-1.0/AppStreamGlib-1.0.gir
 share/installed-tests/appstream-glib/appdata-validate.test
 share/installed-tests/appstream-glib/destdir-check.test
@@ -68,10 +61,12 @@ share/locale/da/LC_MESSAGES/appstream-glib.mo
 share/locale/de/LC_MESSAGES/appstream-glib.mo
 share/locale/en_GB/LC_MESSAGES/appstream-glib.mo
 share/locale/es/LC_MESSAGES/appstream-glib.mo
+share/locale/fa/LC_MESSAGES/appstream-glib.mo
 share/locale/fi/LC_MESSAGES/appstream-glib.mo
 share/locale/fr/LC_MESSAGES/appstream-glib.mo
 share/locale/fur/LC_MESSAGES/appstream-glib.mo
 share/locale/gl/LC_MESSAGES/appstream-glib.mo
+share/locale/hr/LC_MESSAGES/appstream-glib.mo
 share/locale/hu/LC_MESSAGES/appstream-glib.mo
 share/locale/id/LC_MESSAGES/appstream-glib.mo
 share/locale/it/LC_MESSAGES/appstream-glib.mo
