@@ -39,6 +39,8 @@ OPTIONS_DEFAULT_powerpc64=	DTRACE
 OPTIONS_EXCLUDE_powerpc64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
 OPTIONS_EXCLUDE_powerpc64_11=	DTRACE
 OPTIONS_EXCLUDE_powerpc64_12=	DTRACE
+OPTIONS_DEFINE_powerpc64le=	DTRACE
+OPTIONS_DEFAULT_powerpc64le=	DTRACE
 
 .if !exists(/usr/sbin/dtrace)
 OPTIONS_EXCLUDE+=	DTRACE
@@ -67,7 +69,7 @@ CONFIGURE_ARGS+=	--enable-tls
 USES+=			ssl
 .endif
 
-.if ${ARCH} == amd64 || ${ARCH} == powerpc64
+.if ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=	--enable-64bit
 .endif
 
