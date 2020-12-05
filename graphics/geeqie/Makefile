@@ -19,7 +19,8 @@ CONFLICTS=	geeqie-devel-[0-9]*
 
 USES=		autoreconf compiler:c++11-lang gettext gmake gnome jpeg \
 		localbase pkgconfig desktop-file-utils tar:xz lua:53 shebangfix
-USE_GNOME=	intltool
+USE_GNOME=	cairo gdkpixbuf2 intltool
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readmedir="${DOCSDIR}"
 CONFIGURE_ARGS+=--disable-j2k  # not in ports (yet), disable proactively to avoid hidden dependency
