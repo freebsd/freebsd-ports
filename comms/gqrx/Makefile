@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gqrx
-PORTVERSION=	2.13.5
+PORTVERSION=	2.14.2
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
@@ -25,34 +25,31 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		liblog4cpp.so:devel/log4cpp \
 		libgmpxx.so:math/gmp \
 		libgmp.so:math/gmp \
-		libvolk.so:devel/volk
+		libvolk.so:devel/volk \
+		libfftw3f.so:math/fftw3-float \
+		libfftw3f_threads.so:math/fftw3-float \
+		liborc-0.4.so:devel/orc \
+		libasound.so:audio/alsa-lib \
+		libjack.so:audio/jack \
+		libportaudio.so:audio/portaudio
 
-USES=		compiler:c++11-lang gl pkgconfig qmake qt:5
+USES=		cmake compiler:c++11-lang gl pkgconfig qt:5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	csete
 USE_GL=		gl
-USE_QT=		buildtools_build core gui svg network widgets
+USE_QT=		core gui network svg widgets
 
-OPTIONS_RADIO=	AUDIO
-AUDIO_DESC=	Audio backend
-OPTIONS_RADIO_AUDIO=	PULSEAUDIO PORTAUDIO GRAUDIO
-OPTIONS_DEFAULT=	AUDIO PULSEAUDIO
-PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
-			libpulse-simple.so:audio/pulseaudio
-PULSEAUDIO_QMAKE_ON=	AUDIO_BACKEND=pulseaudio
-PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
-PORTAUDIO_QMAKE_ON=	AUDIO_BACKEND=portaudio
-GRAUDIO_LIB_DEPENDS=	libgnuradio-audio.so:comms/gnuradio
-GRAUDIO_QMAKE_ON=	AUDIO_BACKEND=gr-audio
-GRAUDIO_DESC=	GNU Radio audio library support
+# XXX Use Portaudio as Gqrx is invariably linked to it
+# (auto-detected and used through Gnuradio CMake files)
+CMAKE_ARGS+=	-DLINUX_AUDIO_BACKEND:STRING="Portaudio"
 
 PLIST_FILES=	bin/gqrx \
 		share/applications/gqrx.desktop \
 		man/man1/gqrx.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gqrx ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/src/gqrx ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/gqrx.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_MAN} ${WRKSRC}/resources/gqrx.1 \
