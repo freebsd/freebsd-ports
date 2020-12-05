@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dragon
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
