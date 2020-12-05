@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpvpaper
-DISTVERSION=	1.0
+DISTVERSION=	1.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +17,8 @@ USES=		compiler:c11 gl meson pkgconfig
 USE_GITHUB=	yes
 USE_GL=		egl
 GH_ACCOUNT=	GhostNaN
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/${PORTNAME}-holder
 
 post-patch:
 	@${REINPLACE_CMD} 's/pidof/pgrep/' ${WRKSRC}/src/main.c
