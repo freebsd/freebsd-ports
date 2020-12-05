@@ -6,7 +6,7 @@
  env = Environment(
 +  ENV=os.environ,
    tools = ["default", "rlvm"],
-+  **dict((k, v.split()) for k, v in ARGUMENTS.iteritems())
++  **dict((k, v.split()) for k, v in ARGUMENTS.items())
 +)
 +
 +env.Append(
