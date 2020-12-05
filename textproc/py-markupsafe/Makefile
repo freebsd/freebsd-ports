@@ -1,11 +1,12 @@
 # Created by: wen@FreeBSD.org
 # $FreeBSD$
 
-PORTNAME=	MarkupSafe
+PORTNAME=	markupsafe
 PORTVERSION=	1.1.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	MarkupSafe-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implements XML/HTML/XHTML Markup safe string for Python

@@ -1221,7 +1221,6 @@
     SUBDIR += pup
     SUBDIR += py-Chameleon
     SUBDIR += py-CommonMark
-    SUBDIR += py-MarkupSafe
     SUBDIR += py-QDarkStyle
     SUBDIR += py-Tempita
     SUBDIR += py-acora
@@ -1311,6 +1310,7 @@
     SUBDIR += py-markdown2
     SUBDIR += py-markuppy
     SUBDIR += py-markups
+    SUBDIR += py-markupsafe
     SUBDIR += py-misaka
     SUBDIR += py-mistune
     SUBDIR += py-mkdocs

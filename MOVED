@@ -15768,3 +15768,4 @@ devel/py-XStatic-roboto-fontface|devel/py-xstatic-roboto-fontface|2020-12-05|Use
 devel/py-XStatic-smart-table|devel/py-xstatic-smart-table|2020-12-05|Use lowercase PORTNAME and path
 devel/py-XStatic-term.js|devel/py-xstatic-term.js|2020-12-05|Use lowercase PORTNAME and path
 devel/py-XStatic-tv4|devel/py-xstatic-tv4|2020-12-05|Use lowercase PORTNAME and path
+textproc/py-MarkupSafe|textproc/py-markupsafe|2020-12-05|Use lowercase PORTNAME and path
