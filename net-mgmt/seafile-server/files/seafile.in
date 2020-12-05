@@ -97,6 +97,12 @@ validate_already_running() {
 prepare_env() {
 export PATH=${seafile_path}/seafile/bin:$PATH
 export LD_LIBRARY_PATH=${seafile_path}/seafile/lib/:${seafile_path}/seafile/lib64:${LD_LIBRARY_PATH}
+export CCNET_CONF_DIR=${seafile_ccnet}
+export SEAFILE_CONF_DIR=${seafile_datadir}
+export SEAFILE_CENTRAL_CONF_DIR=${seafile_conf}
+export PYTHON=%%PREFIX%%/bin/%%PYTHON%%
+export PYTHONPATH=${seafile_path}/seafile/lib/%%PYTHON%%/site-packages:${seafile_path}/seafile/lib64/%%PYTHON%%/site-packages:${seafile_path}/seahub/thirdpart:$PYTHONPATH
+export SEAFILE_RPC_PIPE_PATH=${seafile_path}/runtime
 }
 
 seafile_start() {
