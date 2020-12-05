@@ -30,8 +30,10 @@ include/wine/itss.idl
 include/wine/svcctl.h
 include/wine/svcctl.idl
 include/wine/msvcrt/assert.h
+include/wine/msvcrt/complex.h
 include/wine/msvcrt/conio.h
 include/wine/msvcrt/corecrt.h
+include/wine/msvcrt/corecrt_io.h
 include/wine/msvcrt/corecrt_startup.h
 include/wine/msvcrt/corecrt_stdio_config.h
 include/wine/msvcrt/corecrt_wctype.h
@@ -950,6 +952,8 @@ include/wine/windows/windns.h
 include/wine/windows/windows.foundation.h
 include/wine/windows/windows.foundation.idl
 include/wine/windows/windows.h
+include/wine/windows/windowscontracts.h
+include/wine/windows/windowscontracts.idl
 include/wine/windows/windowsx.h
 include/wine/windows/winerror.h
 include/wine/windows/winevt.h
@@ -1440,6 +1444,7 @@ lib/wine/davclnt.dll.so
 lib/wine/dbgeng.dll.so
 lib/wine/dbghelp.dll.so
 lib/wine/dciman32.dll.so
+lib/wine/dcomp.dll.so
 %%WINE32%%lib/wine/ddeml.dll16.so
 lib/wine/ddraw.dll.so
 lib/wine/ddrawex.dll.so
@@ -1909,6 +1914,7 @@ lib/wine/fakedlls/davclnt.dll
 lib/wine/fakedlls/dbgeng.dll
 lib/wine/fakedlls/dbghelp.dll
 lib/wine/fakedlls/dciman32.dll
+lib/wine/fakedlls/dcomp.dll
 %%WINE32%%lib/wine/fakedlls/ddeml.dll16
 lib/wine/fakedlls/ddraw.dll
 lib/wine/fakedlls/ddrawex.dll
@@ -3027,6 +3033,7 @@ lib/wine/pstorec.dll.so
 lib/wine/pwrshplugin.dll.so
 lib/wine/qasf.dll.so
 lib/wine/qcap.dll.so
+lib/wine/qcap.so
 lib/wine/qdvd.dll.so
 lib/wine/qedit.dll.so
 lib/wine/qmgr.dll.so
