@@ -9,6 +9,7 @@ CATEGORIES=	games
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	fb627bad9129.patch:-p1
+PATCHFILES+=	97c808194c56.patch:-p1 # https://github.com/eglaysher/rlvm/pull/89
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	RealLive virtual machine clone
@@ -28,7 +29,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 USE_GITHUB=	yes
 GH_ACCOUNT=	eglaysher
 
-USES=		compiler:c++11-lib gl gnome pkgconfig scons:python2 sdl
+USES=		compiler:c++11-lib gl gnome pkgconfig scons sdl
 USE_GL=		glew glu
 USE_GNOME=	gtk20
 USE_SDL=	image mixer ttf

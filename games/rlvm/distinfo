@@ -3,3 +3,5 @@ SHA256 (eglaysher-rlvm-release-0.14-67-g9350209_GH0.tar.gz) = 70a48aeca8e9298c1c
 SIZE (eglaysher-rlvm-release-0.14-67-g9350209_GH0.tar.gz) = 1895634
 SHA256 (fb627bad9129.patch) = a949dc649fac6cdff44ddf7f76480de82035b979b4bf8d959ae07ab648c5589d
 SIZE (fb627bad9129.patch) = 837
+SHA256 (97c808194c56.patch) = 8d2e8acf8bcb1f8fd5c78373dbea29036ccee1947a31ea99ae92af72b8ca84fd
+SIZE (97c808194c56.patch) = 6788
