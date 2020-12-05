@@ -1,7 +1,3 @@
-TIMESTAMP = 1475126655
-SHA256 (eglaysher-rlvm-release-0.14-67-g9350209_GH0.tar.gz) = 70a48aeca8e9298c1c5d3e4c7c4d9abd49bfc96e1afad5f2141039feb304df50
-SIZE (eglaysher-rlvm-release-0.14-67-g9350209_GH0.tar.gz) = 1895634
-SHA256 (fb627bad9129.patch) = a949dc649fac6cdff44ddf7f76480de82035b979b4bf8d959ae07ab648c5589d
-SIZE (fb627bad9129.patch) = 837
-SHA256 (97c808194c56.patch) = 8d2e8acf8bcb1f8fd5c78373dbea29036ccee1947a31ea99ae92af72b8ca84fd
-SIZE (97c808194c56.patch) = 6788
+TIMESTAMP = 1580529853
+SHA256 (eglaysher-rlvm-release-0.14-75-g975e740c_GH0.tar.gz) = ecac97ae2098f6e4aa8f81d7ad10882e4947e6491e79ed265d240115d3f205fc
+SIZE (eglaysher-rlvm-release-0.14-75-g975e740c_GH0.tar.gz) = 1905520
