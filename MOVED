@@ -15769,3 +15769,4 @@ devel/py-XStatic-smart-table|devel/py-xstatic-smart-table|2020-12-05|Use lowerca
 devel/py-XStatic-term.js|devel/py-xstatic-term.js|2020-12-05|Use lowercase PORTNAME and path
 devel/py-XStatic-tv4|devel/py-xstatic-tv4|2020-12-05|Use lowercase PORTNAME and path
 textproc/py-MarkupSafe|textproc/py-markupsafe|2020-12-05|Use lowercase PORTNAME and path
+devel/py-git_semver|devel/py-git-semver|2020-12-05|Rename to match upstream naming
