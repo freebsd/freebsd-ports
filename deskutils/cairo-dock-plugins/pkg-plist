@@ -21,6 +21,7 @@ lib/cairo-dock/libcd-drop_indicator.so
 lib/cairo-dock/libcd-dustbin.so
 lib/cairo-dock/libcd-icon-effect.so
 lib/cairo-dock/libcd-illusion.so
+lib/cairo-dock/libcd_kde-integration.so
 lib/cairo-dock/libcd-logout.so
 %%MAIL%%lib/cairo-dock/libcd-mail.so
 lib/cairo-dock/libcd-motion_blur.so
@@ -272,6 +273,7 @@ lib/cairo-dock/libcd-wifi.so
 %%DATADIR%%/plug-ins/illusion/icon.svg
 %%DATADIR%%/plug-ins/illusion/illusion.conf
 %%DATADIR%%/plug-ins/illusion/preview.jpg
+%%DATADIR%%/plug-ins/kde-integration/icon.png
 %%DATADIR%%/plug-ins/logout/icon-scheduling.svg
 %%DATADIR%%/plug-ins/logout/icon.svg
 %%DATADIR%%/plug-ins/logout/locked.svg
