@@ -88,6 +88,7 @@ include/ViennaRNA/fold_vars.h
 include/ViennaRNA/gquad.h
 include/ViennaRNA/grammar.h
 include/ViennaRNA/hairpin_loops.h
+include/ViennaRNA/heat_capacity.h
 include/ViennaRNA/interior_loops.h
 include/ViennaRNA/inverse.h
 include/ViennaRNA/io/file_formats.h
@@ -167,6 +168,7 @@ include/ViennaRNA/utils/svm.h
 include/ViennaRNA/utils/units.h
 include/ViennaRNA/vrna_config.h
 include/ViennaRNA/walk.h
+include/ViennaRNA/zscore.h
 include/g2.h
 include/g2_FIG.h
 include/g2_PS.h
