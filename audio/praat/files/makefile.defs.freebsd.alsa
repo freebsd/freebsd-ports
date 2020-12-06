@@ -26,7 +26,3 @@ RANLIB = ls
 ICON =
 MAIN_ICON =
 
-# Replace pa_linux_alsa.o in portaudio/Makefile.
-# Does not seem necessary anymore.  If not, the portaudio patches can probably
-# be removed as well.
-# PA_BACKEND = pa_unix_oss.o
