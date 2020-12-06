@@ -119,6 +119,7 @@
     SUBDIR += cy-aspell
     SUBDIR += da-aspell
     SUBDIR += dadadodo
+    SUBDIR += dasel
     SUBDIR += datamash
     SUBDIR += db2latex
     SUBDIR += dbacl
