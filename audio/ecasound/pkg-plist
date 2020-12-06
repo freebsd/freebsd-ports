@@ -1,7 +1,7 @@
 bin/ecaconvert
 bin/ecafixdc
 bin/ecalength
-bin/ecamonitor
+%%PYTHON%%bin/ecamonitor
 bin/ecanormalize
 bin/ecaplay
 bin/ecasignalview
@@ -160,7 +160,7 @@ lib/libkvutils.a
 man/man1/ecaconvert.1.gz
 man/man1/ecafixdc.1.gz
 man/man1/ecalength.1.gz
-man/man1/ecamonitor.1.gz
+%%PYTHON%%man/man1/ecamonitor.1.gz
 man/man1/ecanormalize.1.gz
 man/man1/ecaplay.1.gz
 man/man1/ecasignalview.1.gz
