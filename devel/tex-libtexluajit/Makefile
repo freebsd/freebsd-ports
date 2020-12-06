@@ -18,6 +18,7 @@ BROKEN_aarch64=		Does not configure: error: Sorry, cannot preprocess lj_arch.h
 BROKEN_mips=		Does not configure: error: Sorry, cannot preprocess lj_arch.h
 BROKEN_mips64=		Does not configure: error: Sorry, cannot preprocess lj_arch.h
 BROKEN_powerpc64=	Does not build: uninitialized constant Config (NameError)
+BROKEN_riscv64=		Does not configure: error: Sorry, cannot preprocess lj_arch.h
 BROKEN_sparc64=		Does not configure: error: Sorry, cannot preprocess lj_arch.h
 
 USES=		tar:xz libtool pathfix pkgconfig
