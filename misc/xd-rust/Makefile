@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	xd
-DISTVERSION=	0.0.3
-MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/:main
+DISTVERSION=	0.0.4
 CATEGORIES=	misc
+MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/get/${BB_COMMIT}.tar.gz?dummy=/:main
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:main
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,6 +47,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		memchr-2.3.4 \
 		miniz_oxide-0.4.3 \
 		mktemp-0.4.0 \
+		nix-0.19.1 \
 		object-0.22.0 \
 		once_cell-1.5.2 \
 		owo-colors-1.1.3 \
@@ -99,7 +100,7 @@ CARGO_USE_GITHUB=	yes
 
 BB_ACCOUNT=	delan
 BB_PROJECT=	${PORTNAME}
-BB_COMMIT=	9093006db52c
+BB_COMMIT=	4bdbb191ed6d
 
 WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 
