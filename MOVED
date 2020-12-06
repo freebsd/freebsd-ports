@@ -15771,3 +15771,4 @@ devel/py-XStatic-tv4|devel/py-xstatic-tv4|2020-12-05|Use lowercase PORTNAME and 
 textproc/py-MarkupSafe|textproc/py-markupsafe|2020-12-05|Use lowercase PORTNAME and path
 devel/py-git_semver|devel/py-git-semver|2020-12-05|Rename to match upstream naming
 devel/py-readme_renderer|devel/py-readme-renderer|2020-12-05|Rename to match upstream naming
+sysutils/datadog|sysutils/datadog-agent|2020-12-06|Renamed

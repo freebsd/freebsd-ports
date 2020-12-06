@@ -10,13 +10,16 @@
 +package system
 +
 +import (
++	"github.com/DataDog/datadog-agent/pkg/aggregator"
 +	"github.com/DataDog/datadog-agent/pkg/autodiscovery/integration"
 +	"github.com/DataDog/datadog-agent/pkg/collector/check"
 +	core "github.com/DataDog/datadog-agent/pkg/collector/corechecks"
 +	"github.com/DataDog/datadog-agent/pkg/util/log"
-+	"github.com/DataDog/datadog-agent/pkg/aggregator"
 +	"github.com/blabber/go-freebsd-sysctl/sysctl"
 +)
++
++// For testing purpose
++var getInt64 = sysctl.GetInt64
 +
 +const fileHandlesCheckName = "file_handle"
 +
@@ -31,19 +34,19 @@
 +	if err != nil {
 +		return err
 +	}
-+	openFh, err := sysctl.GetInt64("kern.openfiles")
++	openFh, err := getInt64("kern.openfiles")
 +	if err != nil {
 +		log.Warnf("Error getting kern.openfiles value %v", err)
 +		return err
 +	}
-+	maxFh, err := sysctl.GetInt64("kern.maxfiles")
++	maxFh, err := getInt64("kern.maxfiles")
 +	if err != nil {
 +		log.Warnf("Error getting kern.maxfiles value %v", err)
 +		return err
 +	}
 +	log.Debugf("Submitting kern.openfiles %v", openFh)
 +	log.Debugf("Submitting kern.maxfiles %v", maxFh)
-+	sender.Gauge("system.fs.file_handles.in_use", float64(openFh), "", nil)
++	sender.Gauge("system.fs.file_handles.used", float64(openFh), "", nil)
 +	sender.Gauge("system.fs.file_handles.max", float64(maxFh), "", nil)
 +	sender.Commit()
 +

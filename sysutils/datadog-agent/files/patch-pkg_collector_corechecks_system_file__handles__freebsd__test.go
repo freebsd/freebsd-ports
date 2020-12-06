@@ -5,31 +5,34 @@
 +// under the Apache License Version 2.0.
 +// This product includes software developed at Datadog (https://www.datadoghq.com/).
 +// Copyright 2016-2019 Datadog, Inc.
-+// +build !freebsd
++// +build freebsd
 +
 +package system
 +
 +import (
++	"reflect"
 +	"testing"
 +
 +	"github.com/DataDog/datadog-agent/pkg/aggregator/mocksender"
 +	"github.com/DataDog/datadog-agent/pkg/util/log"
-+
-+	"bou.ke/monkey"
 +)
 +
++func GetInt64(name string) (value int64, err error) {
++	value = 65534
++	err = nil
++	return
++}
++
++
 +func TestFhCheckFreeBSD(t *testing.T) {
++	getInt64 = GetInt64
 +
 +	fileHandleCheck := new(fhCheck)
 +	fileHandleCheck.Configure(nil, nil, "test")
 +
-+	monkey.PatchInstanceMethod(sysctl.GetInt64, (name string, err error)) {
-+		return (65534, nil)
-+	})
-+
 +	mock := mocksender.NewMockSender(fileHandleCheck.ID())
 +
-+	mock.On("Gauge", "system.fs.file_handles.in_use", 421, "", []string(nil)).Return().Times(1)
++	mock.On("Gauge", "system.fs.file_handles.used", 421, "", []string(nil)).Return().Times(1)
 +	mock.On("Gauge", "system.fs.file_handles.max", 65534, "", []string(nil)).Return().Times(1)
 +	mock.On("Commit").Return().Times(1)
 +	fileHandleCheck.Run()
@@ -39,3 +42,4 @@
 +	mock.AssertNumberOfCalls(t, "Commit", 1)
 +
 +}
++

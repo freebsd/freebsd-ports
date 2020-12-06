@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: datadog_dogstatsd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# datadog_dogstatsd_enable (bool):	Set to NO by default.
+#				Set it to YES to enable Datadog dogstatsd.
+# datadog_dogstatsd_user (user):	Set user to run Datadog dogstatsd.
+#				Default is "%%USER%%".
+# datadog_dogstatsd_conf (path):	Path to Datadog dogstatsd configuration file.
+#				Default is %%ETCDIR%%/datadog.yaml
+
+. /etc/rc.subr
+
+name=datadog_dogstatsd
+rcvar=datadog_dogstatsd_enable
+
+load_rc_config $name
+
+: ${datadog_dogstatsd_enable:="NO"}
+: ${datadog_dogstatsd_user:="%%USER%%"}
+: ${datadog_dogstatsd_conf:="%%ETCDIR%%/datadog.yaml"}
+
+command="%%DATADOG_PREFIX%%/dogstatsd"
+command_args="-c ${datadog_dogstatsd_conf}"
+
+required_files=%%ETCDIR%%/datadog.yaml
+pidfile="%%RUNDIR%%/datadog-dogstatsd.pid"
+
+start_cmd="${name}_start start $@"
+stop_cmd="${name}_stop stop $@"
+status_cmd="${name}_status"
+
+datadog_dogstatsd_status()
+{
+	rc_pid=`check_pidfile ${pidfile} ${command}`
+	if [ -n "${rc_pid}" ]; then
+		echo "Datadog dogstatsd is running as pid ${rc_pid}."
+	else
+		echo "Datadog dogstatsd is not running."
+		return 1
+	fi
+}
+
+datadog_dogstatsd_start() {
+	/usr/sbin/daemon -f -p ${pidfile} -u ${datadog_dogstatsd_user} ${command} start ${command_args}
+	return $?
+}
+
+datadog_dogstatsd_stop() {
+	rc_pid=`check_pidfile ${pidfile} ${command}`
+	if [ -n "${rc_pid}" ]; then
+		kill ${rc_pid}
+	else
+		echo "Datadog dogstatsd is not running."
+	fi
+}
+
+run_rc_command "$@"
