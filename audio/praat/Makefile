@@ -3,6 +3,7 @@
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
 DISTVERSION=		6.1.35
+PORTREVISION=		1
 CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 # RUN_DEPENDS=	CharisSIL>=0:x11-fonts/charis \
 #		DoulosSIL>=0:x11-fonts/doulos
 
-USES=		compiler:c++11-lang dos2unix gnome iconv pkgconfig
+USES=		compiler:c++11-lang dos2unix gnome iconv pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_GITHUB=	yes
 USE_XORG=	x11
@@ -30,33 +31,12 @@ DOS2UNIX_FILES=	\
 
 PLIST_FILES=	bin/praat man/man1/praat.1.gz
 
-HARDCPPFLAGS=	${WRKSRC}/EEG/Makefile \
-		${WRKSRC}/FFNet/Makefile \
-		${WRKSRC}/LPC/Makefile \
-		${WRKSRC}/artsynth/Makefile \
-		${WRKSRC}/dwsys/Makefile \
-		${WRKSRC}/dwtools/Makefile \
-		${WRKSRC}/external/espeak/Makefile \
-		${WRKSRC}/external/flac/Makefile \
-		${WRKSRC}/external/gsl/Makefile \
-		${WRKSRC}/external/mp3/Makefile \
-		${WRKSRC}/fon/Makefile \
-		${WRKSRC}/gram/Makefile \
-		${WRKSRC}/kar/Makefile \
-		${WRKSRC}/main/Makefile \
-		${WRKSRC}/melder/Makefile \
-		${WRKSRC}/stat/Makefile \
-		${WRKSRC}/sys/Makefile
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|^CPPFLAGS =|CPPFLAGS +=|' ${HARDCPPFLAGS}
+	@${REINPLACE_CMD} -e 's|^CPPFLAGS =|CPPFLAGS +=|' \
+		${WRKSRC}/*/Makefile \
+		${WRKSRC}/external/*/Makefile
 	@${CP} ${FILESDIR}/makefile.defs.freebsd.alsa \
 		${WRKSRC}/makefile.defs
-	@${REINPLACE_CMD} -e 's|%%WRKSRC%%|${WRKSRC}|g' \
-			  -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/makefile.defs
-	@${REINPLACE_CMD} -e 's| log2| NUMlog2|g' \
-		${WRKSRC}/dwtools/Sound_extensions.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/praat ${STAGEDIR}${PREFIX}/bin
