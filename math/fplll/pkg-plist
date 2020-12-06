@@ -1,5 +1,4 @@
 bin/fplll
-bin/latsieve
 bin/latticegen
 include/fplll.h
 include/fplll/bkz.h
@@ -8,6 +7,7 @@ include/fplll/defs.h
 include/fplll/enum/enumerate.h
 include/fplll/enum/enumerate_base.h
 include/fplll/enum/enumerate_ext.h
+include/fplll/enum/enumerate_ext_api.h
 include/fplll/enum/evaluator.h
 include/fplll/fplll.h
 include/fplll/fplll_config.h
@@ -39,16 +39,12 @@ include/fplll/nr/nr_rand.inl
 include/fplll/nr/numvect.h
 include/fplll/pruner/pruner.h
 include/fplll/pruner/pruner_simplex.h
-include/fplll/sieve/sampler_basic.h
-include/fplll/sieve/sieve_common.h
-include/fplll/sieve/sieve_gauss.h
-include/fplll/sieve/sieve_gauss_str.h
 include/fplll/svpcvp.h
 include/fplll/threadpool.h
 include/fplll/util.h
 include/fplll/wrapper.h
 lib/libfplll.so
-lib/libfplll.so.6
-lib/libfplll.so.6.0.3
+lib/libfplll.so.7
+lib/libfplll.so.7.0.0
 libdata/pkgconfig/fplll.pc
 %%DATADIR%%/strategies/default.json
