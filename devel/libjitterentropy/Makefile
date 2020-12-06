@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libjitterentropy
-PORTVERSION=	2.2.0
+PORTVERSION=	3.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -17,5 +17,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	smuellerDD
 GH_PROJECT=	jitterentropy-library
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION} PORTVERSION_MAJOR=${PORTVERSION:C/\..*//}
 
 .include <bsd.port.mk>
