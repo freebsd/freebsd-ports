@@ -12,15 +12,12 @@
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/bkz.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/bkz2.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/bkz2.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/pbkz.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/pbkz.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/simple_bkz.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/simple_bkz.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/simple_dbkz.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/simple_dbkz.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/bkz.py
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/bkz2.py
-%%PYTHON_SITELIBDIR%%/fpylll/algorithms/pbkz.py
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/simple_bkz.py
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/simple_dbkz.py
 %%PYTHON_SITELIBDIR%%/fpylll/config.so
@@ -34,7 +31,6 @@
 %%PYTHON_SITELIBDIR%%/fpylll/fplll/integer_matrix.so
 %%PYTHON_SITELIBDIR%%/fpylll/fplll/lll.so
 %%PYTHON_SITELIBDIR%%/fpylll/fplll/pruner.so
-%%PYTHON_SITELIBDIR%%/fpylll/fplll/sieve_gauss.so
 %%PYTHON_SITELIBDIR%%/fpylll/fplll/svpcvp.so
 %%PYTHON_SITELIBDIR%%/fpylll/fplll/wrapper.so
 %%PYTHON_SITELIBDIR%%/fpylll/gmp/__init__.py

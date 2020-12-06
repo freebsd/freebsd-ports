@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fpylll
-DISTVERSION=	0.5.2dev
+DISTVERSION=	0.5.3dev
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,8 @@ BUILD_DEPENDS=	${PYNUMPY}	\
 LIB_DEPENDS=	libfplll.so:math/fplll	\
 		libgmp.so:math/gmp	\
 		libmpfr.so:math/mpfr	\
-		libpari.so:math/pari
+		libpari.so:math/pari	\
+		libqd.so:math/qd
 RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
 TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
