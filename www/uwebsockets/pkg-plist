@@ -10,6 +10,8 @@ include/uWebSockets/HttpResponseData.h
 include/uWebSockets/HttpRouter.h
 include/uWebSockets/Loop.h
 include/uWebSockets/LoopData.h
+include/uWebSockets/MessageParser.h
+include/uWebSockets/Multipart.h
 include/uWebSockets/PerMessageDeflate.h
 include/uWebSockets/ProxyParser.h
 include/uWebSockets/QueryParser.h
