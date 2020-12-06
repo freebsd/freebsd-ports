@@ -45,6 +45,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tile38-server ${STAGEDIR}${PREFIX}/bin/
 
 do-test:
-	@cd ${WRKSRC} && ./build.sh test
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ./build.sh test
 
 .include <bsd.port.mk>
