@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gocheese
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.gocheese.cypherpunks.ru/
 
