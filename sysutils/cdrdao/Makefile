@@ -13,6 +13,8 @@ COMMENT?=	Record CD-R[W]s in disk-at-once mode
 
 LICENSE=	GPLv2
 
+BROKEN_riscv64=	../include/mconfig.h:86:2: error: Architecture not defined here
+
 USES=		alias compiler:c++11-lang gmake tar:bzip2
 GNU_CONFIGURE=	yes
 USE_CXXSTD=	c++11
