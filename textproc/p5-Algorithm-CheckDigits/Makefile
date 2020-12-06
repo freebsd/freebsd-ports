@@ -1,8 +1,7 @@
-# Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	Algorithm-CheckDigits
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
