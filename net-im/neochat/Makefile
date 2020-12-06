@@ -2,7 +2,7 @@
 
 PORTNAME=	neochat
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -24,7 +24,7 @@ USE_QT=		core dbus declarative graphicaleffects gui imageformats \
 USE_KDE=	config i18n kirigami2 notifications \
 		ecm_build 
 
-COMMIT=		32b82d247fc5c346c3eace25645c8d9dc28a96d8
+COMMIT=		1ed467bd193b7e210cdafd1ce61f5150fa566190
 DISTFILES=	${PORTNAME}-${COMMIT}.tar.bz2:neochat
 MASTER_SITES=	https://invent.kde.org/network/${PORTNAME}/-/archive/${COMMIT}/:neochat
 
