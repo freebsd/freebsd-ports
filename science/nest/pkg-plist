@@ -31,7 +31,6 @@ include/nest/clopath_archiving_node.h
 include/nest/clopath_connection.h
 include/nest/common_properties_hom_w.h
 include/nest/common_synapse_properties.h
-include/nest/completed_checker.h
 include/nest/compose.hpp
 include/nest/config.h
 include/nest/conn_builder.h
@@ -134,6 +133,7 @@ include/nest/integerdatum.h
 include/nest/interpret.h
 include/nest/io_manager.h
 include/nest/iostreamdatum.h
+include/nest/iterator_pair.h
 include/nest/iteratordatum.h
 include/nest/izhikevich.h
 include/nest/kernel_manager.h
@@ -200,6 +200,7 @@ include/nest/parrot_neuron.h
 include/nest/parrot_neuron_ps.h
 include/nest/parser.h
 include/nest/parserdatum.h
+include/nest/per_thread_bool_indicator.h
 include/nest/poisson_generator.h
 include/nest/poisson_generator_ps.h
 include/nest/poisson_randomdev.h

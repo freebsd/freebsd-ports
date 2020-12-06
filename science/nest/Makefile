@@ -2,8 +2,7 @@
 
 PORTNAME=	nest
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.20.0
-PORTREVISION=	1
+DISTVERSION=	2.20.1
 CATEGORIES=	science biology # NEST is used in neuroscience
 
 MAINTAINER=	yuri@FreeBSD.org
