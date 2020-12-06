@@ -135,8 +135,10 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/api/libvirt-api.xml
 %%DATADIR%%/api/libvirt-lxc-api.xml
 %%DATADIR%%/api/libvirt-qemu-api.xml
+%%DATADIR%%/cpu_map/arm_FT-2000plus.xml
 %%DATADIR%%/cpu_map/arm_Falkor.xml
 %%DATADIR%%/cpu_map/arm_Kunpeng-920.xml
+%%DATADIR%%/cpu_map/arm_Tengyun-S2500.xml
 %%DATADIR%%/cpu_map/arm_ThunderX299xx.xml
 %%DATADIR%%/cpu_map/arm_cortex-a53.xml
 %%DATADIR%%/cpu_map/arm_cortex-a57.xml
