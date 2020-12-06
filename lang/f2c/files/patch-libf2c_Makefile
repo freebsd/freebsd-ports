@@ -1,5 +1,5 @@
---- libf2c/Makefile.orig	Fri Jun  6 15:09:42 2003
-+++ libf2c/Makefile	Sun Jul 30 11:48:17 2006
+--- libf2c/Makefile.orig	2008-11-27 06:20:03 UTC
++++ libf2c/Makefile
 @@ -13,9 +13,9 @@
  # to the CFLAGS = line below.
  
@@ -12,25 +12,25 @@
  
  # compile, then strip unnecessary symbols
  .c.o:
-@@ -29,7 +29,7 @@
+@@ -29,7 +29,7 @@ CFLAGS = -O
  
  MISC =	f77vers.o i77vers.o main.o s_rnge.o abort_.o exit_.o getarg_.o iargc_.o\
- 	getenv_.o signal_.o s_stop.o s_paus.o system_.o cabs.o\
+ 	getenv_.o signal_.o s_stop.o s_paus.o system_.o cabs.o ctype.o\
 -	derf_.o derfc_.o erf_.o erfc_.o sig_die.o uninit.o
 +	derf_.o derfc_.o erf_.o erfc_.o sig_die.o uninit.o MAIN.o
  POW =	pow_ci.o pow_dd.o pow_di.o pow_hh.o pow_ii.o pow_ri.o pow_zi.o pow_zz.o
  CX =	c_abs.o c_cos.o c_div.o c_exp.o c_log.o c_sin.o c_sqrt.o
  DCX =	z_abs.o z_cos.o z_div.o z_exp.o z_log.o z_sin.o z_sqrt.o
-@@ -82,7 +82,7 @@
- ## of "cc -shared".
+@@ -86,7 +86,7 @@ libf2c.a: $(OFILES)
+ ## arrange for $DYLD_LIBRARY_PATH to include the directory containing libf2c.so.
  
  libf2c.so: $(OFILES)
--	cc -shared -o libf2c.so $(OFILES)
+-	$(CC) -shared -o libf2c.so $(OFILES)
 +	$(CC) -shared -Wl,-soname,libf2c.so.%%LIBVER%% -o libf2c.so $(OFILES)
  
  ### If your system lacks ranlib, you don't need it; see README.
  
-@@ -110,12 +110,15 @@
+@@ -114,12 +114,15 @@ sysdep1.h: sysdep1.h0
  # If your system lacks onexit() and you are not using an
  # ANSI C compiler, then you should uncomment the following
  # two lines (for compiling main.o):
@@ -40,8 +40,10 @@
 +	$(CC) -c $(CFLAGS) -DNO_ONEXIT -DSkip_f2c_Undefs main.c
  # On at least some Sun systems, it is more appropriate to
  # uncomment the following two lines:
- #main.o: main.c
- #	$(CC) -c -Donexit=on_exit -DSkip_f2c_Undefs main.c
+-#main.o: main.c
+-#	$(CC) -c -Donexit=on_exit -DSkip_f2c_Undefs main.c
++main.o: main.c
++	$(CC) -c $(CFLAGS) -Donexit=on_exit -DSkip_f2c_Undefs main.c
 +
 +MAIN.o: MAIN.c
 +	$(CC) -c $(CFLAGS) -DSkip_f2c_Undefs MAIN.c

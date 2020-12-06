@@ -1,9 +1,8 @@
-diff -ruN f2c.orig/files/patch-libf2c+lwrite.c f2c/files/patch-libf2c+lwrite.c
---- f2c.orig/files/patch-libf2c+lwrite.c	1969-12-31 19:00:00.000000000 -0500
-+++ f2c/files/patch-libf2c+lwrite.c	2008-07-29 14:05:35.000000000 -0500
+--- f2c/files/patch-libf2c+lwrite.c.orig	2020-12-05 22:19:12 UTC
++++ f2c/files/patch-libf2c+lwrite.c
 @@ -0,0 +1,24 @@
 +--- libf2c/lwrite.c.orig	2008-07-29 13:57:49.000000000 -0500
-++++ libf2c/lwrite.c	2008-07-29 14:02:33.000000000 -0500
+++++ libf2c/lwrite.c
 +@@ -107,10 +107,10 @@
 + 		absn = -absn;
 + 	fmt = LLOW <= absn && absn < LHIGH ? LFFMT : LEFMT;
@@ -26,12 +25,11 @@ diff -ruN f2c.orig/files/patch-libf2c+lwrite.c f2c/files/patch-libf2c+lwrite.c
 + 	switch(*b) {
 + #ifndef WANT_LEAD_0
 + 		case '0':
-diff -ruN f2c.orig/files/patch-libf2c+open.c f2c/files/patch-libf2c+open.c
---- f2c.orig/files/patch-libf2c+open.c	1969-12-31 19:00:00.000000000 -0500
-+++ f2c/files/patch-libf2c+open.c	2008-07-29 14:08:51.000000000 -0500
+--- f2c/files/patch-libf2c+open.c.orig	2020-12-05 22:19:12 UTC
++++ f2c/files/patch-libf2c+open.c
 @@ -0,0 +1,29 @@
 +--- libf2c/open.c.orig	2008-07-29 13:58:04.000000000 -0500
-++++ libf2c/open.c	2008-07-29 14:08:30.000000000 -0500
+++++ libf2c/open.c
 +@@ -12,7 +12,7 @@
 + #ifdef KR_headers
 + extern char *malloc();
@@ -59,12 +57,11 @@ diff -ruN f2c.orig/files/patch-libf2c+open.c f2c/files/patch-libf2c+open.c
 + 		goto replace;
 + #else
 + 		if (!(b->ufd = tmpfile()))
-diff -ruN f2c.orig/files/patch-libf2c+rawio.h f2c/files/patch-libf2c+rawio.h
---- f2c.orig/files/patch-libf2c+rawio.h	1969-12-31 19:00:00.000000000 -0500
-+++ f2c/files/patch-libf2c+rawio.h	2008-07-29 14:09:17.000000000 -0500
+--- f2c/files/patch-libf2c+rawio.h.orig	2020-12-05 22:19:12 UTC
++++ f2c/files/patch-libf2c+rawio.h
 @@ -0,0 +1,11 @@
 +--- libf2c/rawio.h.orig	2008-07-29 14:07:02.000000000 -0500
-++++ libf2c/rawio.h	2008-07-29 14:08:08.000000000 -0500
+++++ libf2c/rawio.h
 +@@ -26,7 +26,7 @@
 + #endif
 + #endif /*KR_HEADERS*/
