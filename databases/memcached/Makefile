@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcached
-PORTVERSION=	1.6.8
-PORTREVISION=	1
+PORTVERSION=	1.6.9
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GENTOO
