@@ -43,7 +43,7 @@ include/mysql/mysql/plugin_auth_common.h
 include/mysql/mysqld_error.h
 @comment etc/init.d/mysql
 @comment etc/logrotate.d/mysql
-etc/my.cnf
+@sample etc/my.cnf.sample
 @comment libexec/rcmysql
 %%NO_GSSAPI_NONE%%lib/mysql/plugin/auth_gssapi_client.so
 lib/mysql/libmariadb.so

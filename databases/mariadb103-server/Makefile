@@ -206,6 +206,7 @@ post-install:
 	${RM} -r ${STAGEDIR}${DATADIR} \
 		${STAGEDIR}${PREFIX}/include/mysql/server \
 		${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig
+	${MV} ${STAGEDIR}${PREFIX}/etc/my.cnf ${STAGEDIR}${PREFIX}/etc/my.cnf.sample
 	${MKDIR} -p ${STAGEDIR}${PREFIX}/etc/mysql/conf.d
 
 post-install-GSSAPI_NONE-off:
