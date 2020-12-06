@@ -868,6 +868,7 @@
     SUBDIR += gradle62
     SUBDIR += grantlee5
     SUBDIR += grcov
+    SUBDIR += grex
     SUBDIR += grpc
     SUBDIR += grv
     SUBDIR += gsettings-desktop-schemas
