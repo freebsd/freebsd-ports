@@ -1,6 +1,6 @@
-TIMESTAMP = 1604432785
-SHA256 (concourse-concourse-v6.7.1_GH0.tar.gz) = b7e779b161dcf8508d87702478504fbdd2a17cdfaa898eb10261e5067ed3c7e5
-SIZE (concourse-concourse-v6.7.1_GH0.tar.gz) = 15896721
+TIMESTAMP = 1607242464
+SHA256 (concourse-concourse-v6.7.2_GH0.tar.gz) = c57852dc9cc56b0b671179ae89f3ffe20090b1b2c80b43179125e6e2bdf1302c
+SIZE (concourse-concourse-v6.7.2_GH0.tar.gz) = 15902843
 SHA256 (Azure-go-autorest-5bd9621f41a0_GH0.tar.gz) = 1cd0fa3f623475cd94daf16fff33e873d6a8191de89b1306008744fbf78f892b
 SIZE (Azure-go-autorest-5bd9621f41a0_GH0.tar.gz) = 156993
 SHA256 (Azure-go-autorest-autorest-v0.10.1_GH0.tar.gz) = afdbf7173b324835cd6556d6cb14527f9ec00956a8b467d679d8f9dcad688a3f
