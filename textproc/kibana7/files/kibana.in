@@ -31,7 +31,7 @@ pidfile="/var/run/${name}/${name}.pid"
 start_precmd="kibana_precmd"
 procname="%%LOCALBASE%%/bin/node"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} ${procname} --no-warnings %%WWWDIR%%/src/cli serve --config ${kibana_config} --log-file ${kibana_log}"
+command_args="-f -p ${pidfile} ${procname} --no-warnings %%WWWDIR%%/src/cli/dist serve --config ${kibana_config} --log-file ${kibana_log}"
 
 kibana_precmd()
 {
