@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	enlighten
-DISTVERSION=	1.6.2
+DISTVERSION=	1.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Console progress bar module for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blessed>0:devel/py-blessed@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blessed>=1.17.7:devel/py-blessed@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
