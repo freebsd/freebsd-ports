@@ -1,2 +1,16 @@
+%%PERL5_MAN3%%/Spreadsheet::ParseODS.3.gz
+%%PERL5_MAN3%%/Spreadsheet::ParseODS::Cell.3.gz
+%%PERL5_MAN3%%/Spreadsheet::ParseODS::Settings.3.gz
+%%PERL5_MAN3%%/Spreadsheet::ParseODS::Styles.3.gz
+%%PERL5_MAN3%%/Spreadsheet::ParseODS::Workbook.3.gz
+%%PERL5_MAN3%%/Spreadsheet::ParseODS::Worksheet.3.gz
 %%PERL5_MAN3%%/Spreadsheet::ReadSXC.3.gz
+%%PERL5_MAN3%%/Spreadsheet::Todo.3.gz
+%%SITE_PERL%%/Spreadsheet/ParseODS.pm
+%%SITE_PERL%%/Spreadsheet/ParseODS/Cell.pm
+%%SITE_PERL%%/Spreadsheet/ParseODS/Settings.pm
+%%SITE_PERL%%/Spreadsheet/ParseODS/Styles.pm
+%%SITE_PERL%%/Spreadsheet/ParseODS/Workbook.pm
+%%SITE_PERL%%/Spreadsheet/ParseODS/Worksheet.pm
 %%SITE_PERL%%/Spreadsheet/ReadSXC.pm
+%%SITE_PERL%%/Spreadsheet/Todo.pod
