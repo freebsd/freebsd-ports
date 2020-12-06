@@ -2,6 +2,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.22.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -16,7 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libicudata.so:devel/icu
 
-USES=		compiler:c++17-lang gnome meson pkgconfig python:build tar:xz
+USES=		compiler:c++17-lang gnome localbase:ldflags meson pkgconfig \
+		python:build tar:xz
 
 USE_GNOME=	glib20
 
@@ -30,9 +32,6 @@ MESON_ARGS=	-Dauto_features=disabled \
 		-Dpipe=true \
 		-Dsyslog=enabled \
 		-Dzlib=enabled
-CFLAGS+=	-I${PREFIX}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS README.md NEWS
 
@@ -79,7 +78,7 @@ WILDMIDI_DESC=	WildMIDI support (MIDI files)
 YAJL_DESC=	JSON support via libyajl
 ZZIP_DESC=	Support for zzip archives
 
-OPTIONS_DEFAULT=CURL FFMPEG FLAC ID3TAG \
+OPTIONS_DEFAULT=CURL FFMPEG FLAC ID3TAG LAME OPUS \
 		PLAYLISTS SNDFILE VORBIS VORBISENC
 
 # Decoder plugins
