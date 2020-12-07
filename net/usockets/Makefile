@@ -12,6 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_11=	error: unknown type name 'u_short'; did you mean 'short'?, etc
+BROKEN_riscv64=		fails to build: Hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension
 
 USES=		compiler:c++17-lang gmake ssl # c++17 only for temp C_++ code, otherwise it is c11
 USE_GITHUB=	yes
