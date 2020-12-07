@@ -7,7 +7,7 @@ DISTVERSION=	0.4
 PORTREVISION=	2
 CATEGORIES=	devel net
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuring TUN or TAP devices API in a portable manner
 
 LICENSE=	MIT

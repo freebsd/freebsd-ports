@@ -6,7 +6,7 @@ PORTVERSION=	1.4.32
 CATEGORIES=	devel
 MASTER_SITES=	https://ccid.apdu.fr/files/
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic driver for USB CCID and ICCD
 
 LICENSE=	LGPL21

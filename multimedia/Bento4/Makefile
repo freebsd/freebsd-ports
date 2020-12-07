@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=v
 DISTVERSIONSUFFIX=-628
 CATEGORIES=	multimedia devel
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured MP4 format and MPEG DASH library and tools
 
 LICENSE=	GPLv2

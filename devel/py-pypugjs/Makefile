@@ -6,7 +6,7 @@ CATEGORIES=	devel lang python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PugJS syntax adapter for Django, Jinja2 and Mako templates
 
 LICENSE=	MIT

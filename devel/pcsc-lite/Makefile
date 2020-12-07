@@ -8,7 +8,7 @@ PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	https://pcsclite.apdu.fr/files/
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Middleware library to access a smart card using SCard API (PC/SC)
 
 LICENSE=	BSD3CLAUSE GPLv3+

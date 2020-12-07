@@ -6,7 +6,7 @@ PORTVERSION=	12.0
 PORTREVISION=	4
 CATEGORIES=	editors devel
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source IDE for C/C++
 
 LICENSE=	GPLv2+

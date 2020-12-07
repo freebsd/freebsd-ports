@@ -7,7 +7,7 @@ PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved rich city simulation game for X
 
 BUILD_DEPENDS=	jam:devel/jam

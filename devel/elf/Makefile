@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	PACKETSTORM/linux/reverse-engineering
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline based ELF header analyzer
 
 LICENSE=	GPLv2

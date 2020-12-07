@@ -8,7 +8,7 @@ CATEGORIES=		lang devel
 MASTER_SITES=		https://root.cern.ch/download/cling/
 DISTNAME=		${PORTNAME}_${DISTVERSION:C/^[0-9]\.[0-9]-//}_sources
 
-MAINTAINER=		mmokhi@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Interactive C++ Interpreter Based on LLVM and Clang Libs
 
 LICENSE=		LLVM NCSA

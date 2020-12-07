@@ -7,7 +7,7 @@ DISTVERSION=	20170501
 CATEGORIES=	devel lang
 MASTER_SITES=	http://frama-c.com/download/
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible platform for source-code analysis of C
 
 LICENSE=	LGPL21

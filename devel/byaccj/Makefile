@@ -7,7 +7,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}${PORTVERSION}_src
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java extension of BSD YACC-compatible parser generator
 
 PLIST_FILES=	bin/byaccj

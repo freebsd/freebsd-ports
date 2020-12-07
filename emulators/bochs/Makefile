@@ -8,7 +8,7 @@ PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
 LICENSE=	LGPL21

@@ -5,7 +5,7 @@ PORTVERSION=	2.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://embed.cs.utah.edu/csmith/
 
-MAINTAINER=	mmokhi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates random C programs that conform to the C99 standard
 
 LICENSE=	BSD2CLAUSE
