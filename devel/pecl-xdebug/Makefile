@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xdebug
-DISTVERSION=	2.9.8
+DISTVERSION=	3.0.1
 CATEGORIES=	devel pear
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFIGURE_ARGS=	--enable-xdebug
 USES=		php:pecl,zend tar:tgz
-IGNORE_WITH_PHP=	80
 
 SUB_FILES=	pkg-message
 

@@ -15,10 +15,13 @@ to your php.ini to load it. xdebug is not compatible with the extension
 at least the lesser required extension disabled by commenting out it's
 loader line in your php.ini.
 
+xdebug 3.0 introduces several breaking changes in the configuration.
+Please check the documentation at https://xdebug.org/docs/upgrade_guide
+
 Add following section to enable profiling:
 
-xdebug.profiler_enable = 1
-xdebug.profiler_output_dir = /tmp/profiler
+xdebug.mode=profile
+xdebug.output_dir = /tmp/profiler
 EOM
 }
 ]
