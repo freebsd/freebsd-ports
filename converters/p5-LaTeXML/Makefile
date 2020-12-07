@@ -2,13 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	LaTeXML
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN \
 		http://dlmf.nist.gov/LaTeXML/releases/
+MASTER_SITE_SUBDIR=	CPAN:BRMILLER
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	LaTeX to XML/HTML/MathML converter in Perl
 
 LICENSE=	PD CC0-1.0

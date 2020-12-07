@@ -99,6 +99,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/afterpage.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/aipcheck.tex.ltxml
 %%SITE_PERL%%/LaTeXML/Package/aipproc.cls.ltxml
+%%SITE_PERL%%/LaTeXML/Package/aipproc.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/algc.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/algcompatible.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/algmatlab.sty.ltxml
@@ -193,6 +194,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/emulateapj.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/emulateapj5.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/endnotes.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/english.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/enumerate.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/enumitem.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/epigraph.sty.ltxml
@@ -209,6 +211,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/eulervm.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/eurosym.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/euscript.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/expl3.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/exscale.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/fancyhdr.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/fancyheadings.sty.ltxml
@@ -237,6 +240,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/gensymb.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/geometry.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/german.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/glossaries.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/graphics.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/graphicx.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/grffile.sty.ltxml
@@ -272,7 +276,6 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/lipsum.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/listings.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/listingsutf8.sty.ltxml
-%%SITE_PERL%%/LaTeXML/Package/llamapun.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/llncs.cls.ltxml
 %%SITE_PERL%%/LaTeXML/Package/lmodern.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/longtable.sty.ltxml
@@ -303,6 +306,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/multirow.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/nameref.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/natbib.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/neurips.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/newcent.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/newfloat.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/newlfont.sty.ltxml
@@ -310,6 +314,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/newtxtext.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ngerman.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/nicefrac.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/nil.ldf.ltxml
 %%SITE_PERL%%/LaTeXML/Package/nopageno.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/ntheorem.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/numprint.sty.ltxml
@@ -324,8 +329,11 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/pgf.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pgfkeys.code.tex.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pgfmath.code.tex.ltxml
+%%SITE_PERL%%/LaTeXML/Package/pgfmathcalc.code.tex.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pgfplots.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pgfsys-latexml.def.ltxml
+%%SITE_PERL%%/LaTeXML/Package/pgfutil-common.tex.ltxml
+%%SITE_PERL%%/LaTeXML/Package/physics.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pifont.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/placeins.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/preview.sty.ltxml
@@ -336,6 +344,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/pst-grad.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pst-node.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pstricks.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/pstricks.tex.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pxfonts.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/pzd.fontmap.ltxml
 %%SITE_PERL%%/LaTeXML/Package/quantumarticle.cls.ltxml
@@ -430,6 +439,7 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/Package/xcolor.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/xkeyval.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/xkvview.sty.ltxml
+%%SITE_PERL%%/LaTeXML/Package/xparse.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/xspace.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/xunicode.sty.ltxml
 %%SITE_PERL%%/LaTeXML/Package/yfonts.sty.ltxml
@@ -491,9 +501,6 @@ bin/latexmlpost
 %%SITE_PERL%%/LaTeXML/resources/Profiles/math.opt
 %%SITE_PERL%%/LaTeXML/resources/Profiles/modern.opt
 %%SITE_PERL%%/LaTeXML/resources/Profiles/standard.opt
-%%SITE_PERL%%/LaTeXML/resources/Profiles/stex-migration.opt
-%%SITE_PERL%%/LaTeXML/resources/Profiles/stex-module.opt
-%%SITE_PERL%%/LaTeXML/resources/Profiles/stex.opt
 %%SITE_PERL%%/LaTeXML/resources/RelaxNG/LaTeXML-bib.rnc
 %%SITE_PERL%%/LaTeXML/resources/RelaxNG/LaTeXML-bib.rng
 %%SITE_PERL%%/LaTeXML/resources/RelaxNG/LaTeXML-block.rnc
