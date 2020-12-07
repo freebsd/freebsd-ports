@@ -3,7 +3,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	3.38.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -27,7 +27,6 @@ LIB_DEPENDS=	libgdata.so:devel/libgdata \
 		libpeas-1.0.so:devel/libpeas \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgrilo-0.3.so:net/grilo \
-		libzeitgeist-2.0.so:sysutils/zeitgeist \
 		libtotem-plparser.so:multimedia/totem-pl-parser
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR} \
