@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-ide
 COMMENT=	Free Pascal integrated IDE/compiler
 
 USES=		fpc
-USE_FPC=	chm fv gdbint regexpr rtl-extra rtl-console fcl-xml
+USE_FPC=	chm fv gdbint regexpr rtl-console rtl-extra rtl-generics fcl-xml
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
