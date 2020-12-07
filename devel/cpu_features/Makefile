@@ -10,8 +10,8 @@ COMMENT=	Cross platform C99 library to get cpu features at runtime
 
 LICENSE=	APACHE20
 
-NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64
-NOT_FOR_ARCHS_REASON=	assumes android if on ARM or MIPS
+NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64 riscv64
+NOT_FOR_ARCHS_REASON=	assumes android if on ARM or MIPS; not ported to riscv64
 
 USES=	cmake:insource
 USE_GITHUB=	yes
