@@ -10,7 +10,7 @@ COMMENT=	Command-line interface generator
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		bison:alias gmake
+USES=		bison:alias compiler:c11 gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	clicon
