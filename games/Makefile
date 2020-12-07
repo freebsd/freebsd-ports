@@ -14,6 +14,7 @@
     SUBDIR += 7kaa
     SUBDIR += 90secondportraits
     SUBDIR += CaribbeanStud
+    SUBDIR += DDNet
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
     SUBDIR += NBlood
