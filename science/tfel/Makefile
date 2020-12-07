@@ -8,7 +8,7 @@ CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/
 PKGNAMESUFFIX=	-mfront
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code generation tool dedicated to material knowledge
 
 LICENSE=	GPLv3
