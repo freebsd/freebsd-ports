@@ -1,0 +1,8 @@
+CEmu is a TI-84 Plus CE/TI-83 Premium CE calculator emulator, focused
+on developer features.
+
+CEmu works natively on Windows, macOS, and Unix-like operating systems.
+For performance and portability, the core is programmed in C and its
+customizable GUI in C++ with Qt.
+
+WWW: https://ce-programming.github.io/CEmu/

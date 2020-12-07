@@ -15,6 +15,7 @@
     SUBDIR += bochs
     SUBDIR += bsvc
     SUBDIR += cannonball
+    SUBDIR += cemu
     SUBDIR += cinc
     SUBDIR += cingb
     SUBDIR += citra
