@@ -4,7 +4,6 @@
 @sample %%ETCDIR%%/conf.d/auth.conf.sample
 @sample %%ETCDIR%%/conf.d/cgi.conf.sample
 @sample %%ETCDIR%%/conf.d/cml.conf.sample
-@sample %%ETCDIR%%/conf.d/compress.conf.sample
 @sample %%ETCDIR%%/conf.d/debug.conf.sample
 @sample %%ETCDIR%%/conf.d/dirlisting.conf.sample
 @sample %%ETCDIR%%/conf.d/evhost.conf.sample
@@ -34,7 +33,6 @@ lib/lighttpd/mod_authn_file.so
 %%MYSQL%%lib/lighttpd/mod_authn_mysql.so
 lib/lighttpd/mod_cgi.so
 %%LUA%%lib/lighttpd/mod_cml.so
-lib/lighttpd/mod_compress.so
 lib/lighttpd/mod_deflate.so
 lib/lighttpd/mod_dirlisting.so
 lib/lighttpd/mod_evasive.so

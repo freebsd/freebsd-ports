@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.55
-PORTREVISION=	1
+PORTVERSION=	1.4.56
 CATEGORIES?=	www
 MASTER_SITES?=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -37,14 +36,13 @@ PORTDOCS=	AUTHORS COPYING INSTALL NEWS README
 USE_RC_SUBR=	lighttpd
 REQUIRE=	LOGIN
 
-OPTIONS_DEFINE=	ATTR BZIP2 DOCS FAM GDBM IPV6 KRB5 LIBEV LUA MEMCACHED \
+OPTIONS_DEFINE=	ATTR DOCS FAM GDBM IPV6 KRB5 LIBEV LUA MEMCACHED \
 		MYSQL LDAP OPENSSL SPAWNFCGI VALGRIND WEBDAV
 
 OPTIONS_DEFAULT=	LUA OPENSSL
 OPTIONS_SUB=	yes
 
 ATTR_DESC=	extended attributes support
-BZIP2_DESC=	bzip2 support (mod_compress)
 GDBM_DESC=	gdbm storage (mod_trigger_b4_dl)
 KRB5_DESC=	Kerberos authentication (mod_authn_gssapi)
 LDAP_DESC=	LDAP authentication (mod_authn_ldap)
@@ -57,7 +55,6 @@ VALGRIND_DESC=	valgrind support
 WEBDAV_DESC=	WebDAV support
 
 ATTR_CONFIGURE_WITH=	attr
-BZIP2_CONFIGURE_WITH=	bzip2
 FAM_USES=		fam
 FAM_CONFIGURE_ON=	--with-fam
 FAM_CONFIGURE_ENV=	FAM_CFLAGS="-I${LOCALBASE}/include" FAM_LIBS="-L${LOCALBASE}/lib"
@@ -99,7 +96,7 @@ LIGHTTPD_CONF_FILES=	lighttpd.conf modules.conf
 
 LIGHTTPD_CONF_D_FILES=	access_log.conf \
 	auth.conf cgi.conf cml.conf \
-	compress.conf debug.conf dirlisting.conf \
+	debug.conf dirlisting.conf \
 	evhost.conf expire.conf fastcgi.conf \
 	magnet.conf mime.conf mysql_vhost.conf proxy.conf \
 	rrdtool.conf scgi.conf secdownload.conf \
