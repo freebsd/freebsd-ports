@@ -84,18 +84,18 @@ Revert https://gitlab.gnome.org/GNOME/gtk/-/commit/ed8203e700aa
    atk_bridge_adaptor_init (NULL, NULL);
  #endif
  
---- meson.build.orig	2019-07-03 20:24:52 UTC
+--- meson.build.orig	2020-12-06 00:49:26 UTC
 +++ meson.build
-@@ -561,7 +561,7 @@ if x11_enabled
+@@ -576,7 +576,7 @@ if x11_enabled
    xfixes_dep     = dependency('xfixes', required: false)
    xcomposite_dep = dependency('xcomposite', required: false)
    fontconfig_dep = dependency('fontconfig', fallback: ['fontconfig', 'fontconfig_dep'])
--  atkbridge_dep  = dependency('atk-bridge-2.0', version: atk_req)
-+  atkbridge_dep  = dependency('atk-bridge-2.0', version: atk_req, required: get_option('atk-bridge'))
+-  atkbridge_dep  = dependency('atk-bridge-2.0', version: at_spi2_atk_req)
++  atkbridge_dep  = dependency('atk-bridge-2.0', version: at_spi2_atk_req, required: get_option('atk-bridge'))
  
    x11_pkgs = ['fontconfig', 'x11', 'xext', 'xi', 'xrandr']
  
-@@ -578,7 +578,10 @@ if x11_enabled
+@@ -593,7 +593,10 @@ if x11_enabled
      x11_pkgs += ['xdamage']
    endif
  
