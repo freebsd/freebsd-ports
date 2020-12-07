@@ -14,8 +14,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 # Until upstream makes a new release disable cpe
-USES=		gettext-runtime gnome meson localbase:ldflags ncurses \
-		perl5 pkgconfig ssl
+USES=		compiler:c11 gettext-runtime gnome meson localbase:ldflags \
+		ncurses perl5 pkgconfig ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
