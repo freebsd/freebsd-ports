@@ -12,6 +12,8 @@ COMMENT=	Columnar in-memory analytics layer for big data
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
+BROKEN_riscv64=		fails to compile: /nxb-bin/usr/lib/clang/11.0.0/include/mmintrin.h:33:5: use of undeclared identifier '__builtin_ia32_emms'
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang pkgconfig
