@@ -15772,3 +15772,4 @@ textproc/py-MarkupSafe|textproc/py-markupsafe|2020-12-05|Use lowercase PORTNAME 
 devel/py-git_semver|devel/py-git-semver|2020-12-05|Rename to match upstream naming
 devel/py-readme_renderer|devel/py-readme-renderer|2020-12-05|Rename to match upstream naming
 sysutils/datadog|sysutils/datadog-agent|2020-12-06|Renamed
+devel/py-libpeas@py27||2020-12-07|Removed flavor
