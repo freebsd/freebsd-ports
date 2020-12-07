@@ -22,10 +22,9 @@
  * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * $FreeBSD$
  */
-
-#include <sys/cdefs.h>
-__FBSDID("$FreeBSD$");
 
 #include "defs.h"
 #include "command.h"
@@ -339,18 +338,10 @@ fbsd_kvm_target_open (const char *args, int from_tty)
 	if (symfile_objfile &&
 	    (bfd_get_file_flags(symfile_objfile->obfd) &
 	      (EXEC_P | DYNAMIC)) != 0) {
-		struct section_offsets *new_offsets;
-		int i;
-		CORE_ADDR displacement;
-
-		displacement = kvm_kerndisp(nkvm);
+		CORE_ADDR displacement = kvm_kerndisp(nkvm);
 		if (displacement != 0) {
-			new_offsets = XALLOCAVEC (struct section_offsets,
-				symfile_objfile->num_sections);
-
-			for (i = 0; i < symfile_objfile->num_sections; i++)
-				new_offsets->offsets[i] = displacement;
-
+			section_offsets new_offsets (symfile_objfile->section_offsets.size (),
+			    displacement);
 			objfile_relocate(symfile_objfile, new_offsets);
 		}
 	}
