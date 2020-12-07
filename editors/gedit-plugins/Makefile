@@ -3,6 +3,7 @@
 
 PORTNAME=	gedit-plugins
 PORTVERSION=	3.38.1
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -18,7 +19,6 @@ BUILD_DEPENDS=	gedit>=0:editors/gedit \
 		itstool:textproc/itstool \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
 LIB_DEPENDS=	libpeas-1.0.so:devel/libpeas \
-		libzeitgeist-2.0.so:sysutils/zeitgeist \
 		libgit2-glib-1.0.so:devel/libgit2-glib \
 		libgucharmap_2_90.so:deskutils/gucharmap
 RUN_DEPENDS=	gedit>=0:editors/gedit \
