@@ -13,7 +13,7 @@ DISTFILES=	${WAF_RELEASE}${EXTRACT_SUFX}:waf
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	1bb2665e3d09.patch:-p1 59c32a04b04d.patch:-p1 62fb374349e0.patch:-p1
 PATCHFILES+=	24525e4ef9ba.patch:-p1 4dd5fdc0876e.patch:-p1 4d80314c5c88.patch:-p1
-PATCHFILES+=	d902a7bfd7c4.patch:-p1 # https://github.com/mpv-player/mpv/pull/8312
+PATCHFILES+=	62e566dbcd8f.patch:-p1 # https://github.com/mpv-player/mpv/pull/8312
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
