@@ -11,6 +11,8 @@ COMMENT=	Decompression library for RAR, TAR, ZIP and 7z* archives
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_riscv64=		fails to build: Hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension
+
 USES=		cmake
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
