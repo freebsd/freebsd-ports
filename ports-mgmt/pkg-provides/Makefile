@@ -2,7 +2,7 @@
 
 PORTNAME=	pkg-provides
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rosorio
-GH_TAGNAME=	691abba
+GH_TAGNAME=	9304c3d
 USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
