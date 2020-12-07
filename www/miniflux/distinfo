@@ -1,6 +1,6 @@
-TIMESTAMP = 1604908243
-SHA256 (miniflux-v2-2.0.25_GH0.tar.gz) = be207d714c0981052de03172dfe19ca2fcbdc97d9f7d7f9bbbeae5bd8a3c16ae
-SIZE (miniflux-v2-2.0.25_GH0.tar.gz) = 555902
+TIMESTAMP = 1607326894
+SHA256 (miniflux-v2-2.0.26_GH0.tar.gz) = c16c9386f7a7fa1f938453beaa84d5d704bb8a3e4338a09c7c56df99c776de13
+SIZE (miniflux-v2-2.0.26_GH0.tar.gz) = 560333
 SHA256 (PuerkitoBio-goquery-v1.6.0_GH0.tar.gz) = a004e560ec3a0feeb15b29a6360c89681cb7843aa73c0bb8d6d835d022fc30e0
 SIZE (PuerkitoBio-goquery-v1.6.0_GH0.tar.gz) = 102842
 SHA256 (andybalholm-cascadia-v1.1.0_GH0.tar.gz) = 5d03f4610b70cab7860b158efab1afd91baa58fd95286a0adbadcdc3b49c7936
