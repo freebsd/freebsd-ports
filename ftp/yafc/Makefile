@@ -10,10 +10,11 @@ MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Yet another FTP client, similar to ftp(1)
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	glib>0:devel/glib20
 
-USES=		autoreconf gmake makeinfo pkgconfig ssl tar:xz
+USES=		autoreconf gmake localbase makeinfo pkgconfig ssl tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastinas
 
@@ -23,9 +24,6 @@ CONFIGURE_ARGS=	--with-krb5=no \
 		--with-socks5=no \
 		--with-socks=no
 CONFIGURE_ENV=	ac_cv_ipv6=yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 INFO=		yafc
 PLIST_FILES=	bin/yafc \
@@ -51,10 +49,10 @@ READLINE_CONFIGURE_WITH=	readline
 SSH_LIB_DEPENDS=	libssh.so:security/libssh
 SSH_CONFIGURE_OFF=	--without-ssh
 
-pre-configure-NLS-on:
+pre-configure:
 	@(cd ${WRKSRC} && ${LOCALBASE}/bin/glib-gettextize -f -c)
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 
