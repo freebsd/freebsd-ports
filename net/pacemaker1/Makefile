@@ -1,7 +1,7 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
 # $FreeBSD$
 
-PORTVERSION=		1.1.23
+PORTVERSION=		1.1.24
 PKGNAMESUFFIX=		1
 
 .include "${.CURDIR}/Makefile.common"
