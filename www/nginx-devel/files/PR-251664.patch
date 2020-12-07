@@ -1,0 +1,72 @@
+# HG changeset patch
+# User Ruslan Ermilov <ru@nginx.com>
+# Date 1607367150 -10800
+#      Mon Dec 07 21:52:30 2020 +0300
+# Node ID 9cad062c593037ada10c2e50ff503a4d4ce19a8f
+# Parent  2522d789afbaa1d79105a08c35c46e52984cee68
+SSL: fixed SSL shutdown on lingering close.
+
+Ensure c->recv is properly reset to ngx_recv if SSL_shutdown()
+blocks on writing.
+
+The bug had appeared in 554c6ae25ffc.
+
+diff --git a/src/event/ngx_event_openssl.c b/src/event/ngx_event_openssl.c
+--- a/src/event/ngx_event_openssl.c
++++ b/src/event/ngx_event_openssl.c
+@@ -2880,6 +2880,7 @@ ngx_ssl_shutdown(ngx_connection_t *c)
+
+         SSL_free(c->ssl->connection);
+         c->ssl = NULL;
++        c->recv = ngx_recv;
+
+         return NGX_OK;
+     }
+@@ -2925,6 +2926,7 @@ ngx_ssl_shutdown(ngx_connection_t *c)
+         if (n == 1) {
+             SSL_free(c->ssl->connection);
+             c->ssl = NULL;
++            c->recv = ngx_recv;
+
+             return NGX_OK;
+         }
+@@ -2967,6 +2969,7 @@ ngx_ssl_shutdown(ngx_connection_t *c)
+         if (sslerr == SSL_ERROR_ZERO_RETURN || ERR_peek_error() == 0) {
+             SSL_free(c->ssl->connection);
+             c->ssl = NULL;
++            c->recv = ngx_recv;
+
+             return NGX_OK;
+         }
+@@ -2977,6 +2980,7 @@ ngx_ssl_shutdown(ngx_connection_t *c)
+
+         SSL_free(c->ssl->connection);
+         c->ssl = NULL;
++        c->recv = ngx_recv;
+
+         return NGX_ERROR;
+     }
+diff --git a/src/http/ngx_http_request.c b/src/http/ngx_http_request.c
+--- a/src/http/ngx_http_request.c
++++ b/src/http/ngx_http_request.c
+@@ -3397,8 +3397,6 @@ ngx_http_set_lingering_close(ngx_connect
+             c->ssl->handler = ngx_http_set_lingering_close;
+             return;
+         }
+-
+-        c->recv = ngx_recv;
+     }
+ #endif
+
+diff --git a/src/http/v2/ngx_http_v2.c b/src/http/v2/ngx_http_v2.c
+--- a/src/http/v2/ngx_http_v2.c
++++ b/src/http/v2/ngx_http_v2.c
+@@ -739,8 +739,6 @@ ngx_http_v2_lingering_close(ngx_connecti
+             c->ssl->handler = ngx_http_v2_lingering_close;
+             return;
+         }
+-
+-        c->recv = ngx_recv;
+     }
+ #endif
+
