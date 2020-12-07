@@ -3,6 +3,7 @@
 
 PORTNAME=	x265
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://bitbucket.org/multicoreware/x265_git/get/${BB_TAG}.tar.gz?meow=/
 
