@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpeas
-PORTVERSION=	1.22.0
+PORTVERSION=	1.26.0
 PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
@@ -25,34 +25,41 @@ LIB_DEPENDS+=	libpeas-1.0.so:devel/libpeas
 PORTSCOUT=	ignore:1
 .endif
 
-USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
+USES=		gettext gnome meson pkgconfig tar:xz
 USE_GNOME=	cairo gtk30 intlhack introspection
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS+=--disable-glade-catalog
-PLIST=          ${.CURDIR}/pkg-plist
+MESON_ARGS+=	-Dglade_catalog=false
+PLIST=		${.CURDIR}/pkg-plist
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
+
+DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+DOCS_MESON_TRUE=	gtk_doc
 
 .if ${LIBPEAS_SLAVE} == python
-USES+=		python
+USES+=		python:3.6+
 USE_PYTHON=	flavors
 USE_GNOME+=	pygobject3
-.if ${FLAVOR:Upy36:Mpy2*}
-CONFIGURE_ARGS+=	--disable-python3
-BUILD_WRKSRC=	${WRKSRC}/loaders/python
-INSTALL_WRKSRC=	${WRKSRC}/loaders/python
+MESON_ARGS+=	-Dpython3=true
+ALL_TARGET=	loaders/python3/libpython3loader.so
+
+post-patch:
+	${REINPLACE_CMD} -e "s|dependency('python3'|dependency('python-${PYTHON_VER}'|" \
+		-e "s|dependency('python3-embed'|dependency('python-${PYTHON_VER}-embed'|" \
+		${WRKSRC}/meson.build
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/libpeas-1.0/loaders/
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/loaders/python3/libpython3loader.so \
+		${STAGEDIR}${PREFIX}/lib/libpeas-1.0/loaders/
+
 .else
-CONFIGURE_ARGS+=	--disable-python2 \
-			ac_cv_path_PYTHON3_CONFIG=${LOCALBASE}/bin/python${PYTHON_VER}-config
-BUILD_WRKSRC=	${WRKSRC}/loaders/python3
-INSTALL_WRKSRC=	${WRKSRC}/loaders/python3
-.endif
-.else
-CONFIGURE_ARGS+=	--disable-python2 --disable-python3
+MESON_ARGS+=	-Dpython3=false
 .endif
 
 # lua needs lua 5.1 and devel/lua-lgi. The latter is build for lua 5.2 however..
-CONFIGURE_ARGS+=	--disable-lua5.1 --disable-luajit
+MESON_ARGS+=	-Dpython2=false -Dlua51=false
 
 .include <bsd.port.mk>
