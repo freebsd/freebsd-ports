@@ -62,4 +62,4 @@ pre-patch:
 pre-build: # workaround: configure fails to find the 'rand' function, need to investigate. This patch unbreaks the build.
 	@${REINPLACE_CMD} -e 's|.*HAVE_RAND.*|#define HAVE_RAND 1|' ${WRKSRC}/Ipopt/src/Common/config.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
