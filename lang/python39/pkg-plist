@@ -2186,7 +2186,6 @@ lib/python%%XYDOT%%/ensurepip/_bundled/__init__.py
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/ensurepip/_bundled/__pycache__/__init__.cpython-%%XY%%.pyc
-lib/python%%XYDOT%%/ensurepip/_bundled/pip-20.2.1-py2.py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_bundled/pip-20.2.3-py2.py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_bundled/setuptools-49.2.1-py3-none-any.whl
 lib/python%%XYDOT%%/ensurepip/_uninstall.py
@@ -5458,6 +5457,9 @@ lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_events.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_futures.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_futures.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_futures.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_futures2.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_futures2.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_futures2.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_locks.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_locks.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/test/test_asyncio/__pycache__/test_locks.cpython-%%XY%%.pyc
@@ -5527,6 +5529,7 @@ lib/python%%XYDOT%%/test/test_asyncio/test_buffered_proto.py
 lib/python%%XYDOT%%/test/test_asyncio/test_context.py
 lib/python%%XYDOT%%/test/test_asyncio/test_events.py
 lib/python%%XYDOT%%/test/test_asyncio/test_futures.py
+lib/python%%XYDOT%%/test/test_asyncio/test_futures2.py
 lib/python%%XYDOT%%/test/test_asyncio/test_locks.py
 lib/python%%XYDOT%%/test/test_asyncio/test_pep492.py
 lib/python%%XYDOT%%/test/test_asyncio/test_proactor_events.py
