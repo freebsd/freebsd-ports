@@ -41,6 +41,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql51.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql51.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql51dyn.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql51dyn.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql51dyn.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql55.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql55.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/mysql/mysql55dyn.o
