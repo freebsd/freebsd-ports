@@ -1,6 +1,6 @@
 https://github.com/intel/intel-graphics-compiler/issues/155
 
---- IGC/Compiler/CISACodeGen/ResolveGAS.cpp.orig	2020-11-13 09:31:31 UTC
+--- IGC/Compiler/CISACodeGen/ResolveGAS.cpp.orig	2020-12-01 09:02:30 UTC
 +++ IGC/Compiler/CISACodeGen/ResolveGAS.cpp
 @@ -35,7 +35,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  #include "llvm/Support/Debug.h"
@@ -55,7 +55,7 @@ https://github.com/intel/intel-graphics-compiler/issues/155
      populateResolvableLoopPHIs();
  
      bool Changed = false;
-@@ -687,175 +674,5 @@ bool GASPropagator::visitCallInst(CallInst& I) {
+@@ -716,177 +703,5 @@ bool GASPropagator::visitCallInst(CallInst& I) {
          return true;
      }
  
@@ -174,6 +174,8 @@ https://github.com/intel/intel-graphics-compiler/issues/155
 -    // next check that it is a load from function argument + offset
 -    // which is necessary to prove that this address has global addrspace
 -    Value* LoadBase = LI->getPointerOperand()->stripInBoundsOffsets();
+-    // WA for gep not_inbounds base, 0, 0 that is not handled in stripoffsets
+-    LoadBase = LoadBase->stripPointerCasts();
 -    if (!isa<Argument>(LoadBase))
 -        return false;
 -
@@ -231,6 +233,7 @@ https://github.com/intel/intel-graphics-compiler/issues/155
 -    }
      return false;
  }
+\ No newline at end of file
 --- IGC/VectorCompiler/lib/GenXOpts/CMPacketize/GenXPacketize.cpp.orig	2020-11-13 09:31:31 UTC
 +++ IGC/VectorCompiler/lib/GenXOpts/CMPacketize/GenXPacketize.cpp
 @@ -276,7 +276,7 @@ Function *GenXPacketize::vectorizeSIMTFunction(Functio
@@ -290,9 +293,9 @@ https://github.com/intel/intel-graphics-compiler/issues/155
  }
  
  FenceInst* FENCE(AtomicOrdering Ordering, SyncScope::ID SSID = SyncScope::System, const Twine &Name = "")
---- IGC/WrapperLLVM/include/llvmWrapper/Support/Alignment.h.orig	2020-11-13 09:31:31 UTC
+--- IGC/WrapperLLVM/include/llvmWrapper/Support/Alignment.h.orig	2020-12-01 09:02:30 UTC
 +++ IGC/WrapperLLVM/include/llvmWrapper/Support/Alignment.h
-@@ -63,36 +63,48 @@ namespace IGCLLVM {
+@@ -63,16 +63,16 @@ namespace IGCLLVM {
      inline llvm::Align getAlignmentValueIfNeeded(llvm::Align A) { return A; }
  #endif
  
@@ -313,6 +316,12 @@ https://github.com/intel/intel-graphics-compiler/issues/155
 +    >
 +    inline T getCorrectAlign(uint32_t Val)
      {
+         if (Val == 0)
+         {
+@@ -80,25 +80,37 @@ namespace IGCLLVM {
+             // Instead assume byte-align.
+             Val = 1;
+         }
 -        return Align{ Val };
 +        return T{ Val };
      }
