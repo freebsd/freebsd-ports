@@ -1,0 +1,5 @@
+A shim library providing limited glibc ABI compatibility on top of FreeBSD libc.
+It allows loading shared objects compiled on Linux and dynamically linked to
+glibc into native FreeBSD processes.
+
+WWW: https://github.com/shkhln/libc6-shim
