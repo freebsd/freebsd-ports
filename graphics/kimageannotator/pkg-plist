@@ -27,4 +27,4 @@ lib/libkImageAnnotator.so.%%SHLIB_VER%%
 %%DATADIR%%/translations/kImageAnnotator_sv.qm
 %%DATADIR%%/translations/kImageAnnotator_tr.qm
 %%DATADIR%%/translations/kImageAnnotator_uk.qm
-%%DATADIR%%/translations/kImageAnnotator_zh_Hans.qm
+%%DATADIR%%/translations/kImageAnnotator_zh_CN.qm

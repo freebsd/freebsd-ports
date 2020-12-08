@@ -1,14 +1,10 @@
---- CMakeLists.txt.orig	2020-07-29 15:03:30 UTC
+--- CMakeLists.txt.orig	2020-12-06 21:01:08 UTC
 +++ CMakeLists.txt
-@@ -67,10 +67,10 @@ target_include_directories(kImageAnnotator
- 						   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
- 						   )
- 
--target_link_libraries(kImageAnnotator PUBLIC Qt5::Widgets Qt5::Svg kColorPicker::kColorPicker)
-+target_link_libraries(kImageAnnotator PUBLIC Qt5::Widgets Qt5::Svg PRIVATE kColorPicker::kColorPicker)
+@@ -70,7 +70,7 @@ target_include_directories(kImageAnnotator
+ target_link_libraries(kImageAnnotator PUBLIC Qt5::Widgets Qt5::Svg PRIVATE kColorPicker::kColorPicker)
  
  if (UNIX AND NOT APPLE)
--	target_link_libraries(kImageAnnotator PUBLIC X11)
+-	target_link_libraries(kImageAnnotator PRIVATE X11)
 +	target_link_libraries(kImageAnnotator PRIVATE X11::X11)
  endif ()
  

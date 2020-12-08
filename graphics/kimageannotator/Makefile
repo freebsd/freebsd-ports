@@ -2,8 +2,7 @@
 
 PORTNAME=	kImageAnnotator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
-PORTREVISION=	1
+DISTVERSION=	0.4.0
 CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libkColorPicker.so:graphics/kcolorpicker
 
-USES=		cmake localbase compiler:c++11-lang qt:5
+USES=		cmake localbase compiler:c++11-lang qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	ksnip
 USE_QT=		core gui svg widgets \
