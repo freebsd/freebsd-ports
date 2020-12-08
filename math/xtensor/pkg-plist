@@ -66,13 +66,6 @@ include/xtensor/xutils.hpp
 include/xtensor/xvectorize.hpp
 include/xtensor/xview.hpp
 include/xtensor/xview_utils.hpp
-include/xtensor/zarray.hpp
-include/xtensor/zarray_impl.hpp
-include/xtensor/zassign.hpp
-include/xtensor/zdispatcher.hpp
-include/xtensor/zdispatching_types.hpp
-include/xtensor/zfunction.hpp
-include/xtensor/zmath.hpp
 lib/cmake/xtensor/xtensorConfig.cmake
 lib/cmake/xtensor/xtensorConfigVersion.cmake
 lib/cmake/xtensor/xtensorTargets.cmake
