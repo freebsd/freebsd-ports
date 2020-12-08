@@ -1,6 +1,6 @@
---- src/src.pro.orig	2020-04-12 20:15:00 UTC
+--- src/src.pro.orig	2020-11-20 20:05:15 UTC
 +++ src/src.pro
-@@ -1,54 +1,3 @@
+@@ -1,55 +1,3 @@
  TEMPLATE = subdirs
  
 -qtHaveModule(widgets) {
@@ -9,9 +9,10 @@
 -    } else {
 -        QT_FOR_CONFIG += widgets
 -        qtConfig(pushbutton):qtConfig(toolbutton) {
--            SUBDIRS = assistant \
--                      designer \
+-            SUBDIRS = designer \
 -                      pixeltool
+-
+-            !static|contains(QT_PLUGINS, qsqlite): SUBDIRS += assistant
 -
 -            linguist.depends = designer
 -        }

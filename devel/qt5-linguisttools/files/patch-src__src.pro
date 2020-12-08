@@ -1,9 +1,9 @@
 Only enter the directories we want to build, otherwise we might fail due to
 missing dependencies.
 
---- src/src.pro.orig	2019-02-14 20:23:20 UTC
+--- src/src.pro.orig	2020-11-20 20:18:27 UTC
 +++ src/src.pro
-@@ -1,54 +1,3 @@
+@@ -1,55 +1,3 @@
  TEMPLATE = subdirs
  
 -qtHaveModule(widgets) {
@@ -12,9 +12,10 @@ missing dependencies.
 -    } else {
 -        QT_FOR_CONFIG += widgets
 -        qtConfig(pushbutton):qtConfig(toolbutton) {
--            SUBDIRS = assistant \
--                      designer \
+-            SUBDIRS = designer \
 -                      pixeltool
+-
+-            !static|contains(QT_PLUGINS, qsqlite): SUBDIRS += assistant
 -
 -            linguist.depends = designer
 -        }

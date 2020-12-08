@@ -1,16 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	qtbuilder
-PORTVERSION=	1.4.0 # ${QTBUILDER_VERSION}
+PORTVERSION=	${PYQTBUILDER_VERSION}
 CATEGORIES=	devel python
-MASTER_SITES=	https://pypi.io/packages/source/P/PyQt-builder/  # ${MASTER_SITES_QTBUILDER}
+MASTER_SITES=	${MASTER_SITES_PYQTBUILDER}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyQt-builder-${PORTVERSION} # ${QTBUILDER_DISTNAME}
+DISTNAME=	${PYQTBUILDER_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The PEP 517 compliant PyQt build system
 
-USES=		python
+USES=		python:3.5+ pyqt:5
 USE_PYTHON=	autoplist concurrent distutils flavors py3kplist
 USE_PYQT=	#
 

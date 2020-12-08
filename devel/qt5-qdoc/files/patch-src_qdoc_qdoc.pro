@@ -1,6 +1,6 @@
---- src/qdoc/qdoc.pro.orig	2019-12-31 21:11:48 UTC
+--- src/qdoc/qdoc.pro.orig	2020-08-24 09:20:54 UTC
 +++ src/qdoc/qdoc.pro
-@@ -152,6 +152,6 @@ cmake_qdoc_config_version_file.output = $$MODULE_BASE_
+@@ -158,6 +158,6 @@ cmake_qdoc_config_version_file.output = $$MODULE_BASE_
  QMAKE_SUBSTITUTES += cmake_qdoc_config_file cmake_qdoc_config_version_file
  
  cmake_qdoc_tools_files.files += $$cmake_qdoc_config_file.output $$cmake_qdoc_config_version_file.output

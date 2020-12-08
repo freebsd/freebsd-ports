@@ -14,10 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsmin>0:devel/py-jsmin@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sip>0:devel/py-sip@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qt5-webkit>0:www/py-qt5-webkit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qt5-webkitwidgets>0:www/py-qt5-webkitwidgets@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
 
 GH_ACCOUNT=	raelgc
 
@@ -28,7 +25,8 @@ INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	HUNSPELL
 
-USES=		gnome python:3.4+
+USES=		gnome python:3.5+ pyqt:5
+USE_PYQT=	sip_run webkit_run webkitwidgets_run
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils optsuffix
 NO_ARCH=	yes

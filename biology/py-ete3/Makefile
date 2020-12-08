@@ -19,7 +19,7 @@ PY_DEPENDS=	${PYNUMPY} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python pyqt:5 shebangfix
+USES=		python:3.5+ pyqt:5 shebangfix
 SHEBANG_GLOB=	*.py
 USE_PYTHON=	distutils concurrent autoplist
 USE_PYQT=	core gui opengl printsupport svg widgets

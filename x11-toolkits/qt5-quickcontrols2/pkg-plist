@@ -458,6 +458,7 @@
 %%QT_QMLDIR%%/QtQuick/Controls.2/designer/DialSpecifics.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/designer/FrameSpecifics.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/designer/GroupBoxSpecifics.qml
+%%QT_QMLDIR%%/QtQuick/Controls.2/designer/InsetSection.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/designer/ItemDelegateSection.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/designer/ItemDelegateSpecifics.qml
 %%QT_QMLDIR%%/QtQuick/Controls.2/designer/LabelSpecifics.qml

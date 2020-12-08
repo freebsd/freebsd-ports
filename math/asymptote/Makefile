@@ -19,17 +19,16 @@ ONLY_FOR_ARCHS=	amd64 i386
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libsigsegv.so:devel/libsigsegv
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cson>=0.8:devel/py-cson@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qt5-svg>0:graphics/py-qt5-svg@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qt5-widgets>0:x11-toolkits/py-qt5-widgets@${PY_FLAVOR} \
 		${PY_PILLOW}
 
 USES=		compiler:c++14-lang gettext-runtime ghostscript gl gmake gnome ncurses perl5 python:3.6+ \
-		shebangfix tar:tgz
+		pyqt:5 shebangfix tar:tgz
 SHEBANG_FILES=	GUI/*.py
 USE_GL=		gl glu glut
 USE_GNOME=	librsvg2:run
 USE_PERL5=	build
 USE_TEX=	dvipsk formats
+USE_PYQT=	svg_run widgets_run
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes

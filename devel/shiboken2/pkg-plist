@@ -22,6 +22,7 @@ include/shiboken2/shiboken.h
 include/shiboken2/shibokenbuffer.h
 include/shiboken2/shibokenmacros.h
 include/shiboken2/signature.h
+include/shiboken2/signature_p.h
 include/shiboken2/threadstatesaver.h
 include/shiboken2/typespec.h
 include/shiboken2/voidptr.h

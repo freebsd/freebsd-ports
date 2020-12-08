@@ -13,6 +13,7 @@
 %%QT_L10NDIR%%/assistant_ru.qm
 %%QT_L10NDIR%%/assistant_sk.qm
 %%QT_L10NDIR%%/assistant_sl.qm
+%%QT_L10NDIR%%/assistant_tr.qm
 %%QT_L10NDIR%%/assistant_uk.qm
 %%QT_L10NDIR%%/assistant_zh_CN.qm
 %%QT_L10NDIR%%/assistant_zh_TW.qm
@@ -31,6 +32,7 @@
 %%QT_L10NDIR%%/designer_ru.qm
 %%QT_L10NDIR%%/designer_sk.qm
 %%QT_L10NDIR%%/designer_sl.qm
+%%QT_L10NDIR%%/designer_tr.qm
 %%QT_L10NDIR%%/designer_uk.qm
 %%QT_L10NDIR%%/designer_zh_CN.qm
 %%QT_L10NDIR%%/designer_zh_TW.qm
@@ -51,6 +53,7 @@
 %%QT_L10NDIR%%/linguist_sk.qm
 %%QT_L10NDIR%%/linguist_sl.qm
 %%QT_L10NDIR%%/linguist_sv.qm
+%%QT_L10NDIR%%/linguist_tr.qm
 %%QT_L10NDIR%%/linguist_uk.qm
 %%QT_L10NDIR%%/linguist_zh_CN.qm
 %%QT_L10NDIR%%/linguist_zh_TW.qm
@@ -86,6 +89,7 @@
 %%QT_L10NDIR%%/qt_help_ru.qm
 %%QT_L10NDIR%%/qt_help_sk.qm
 %%QT_L10NDIR%%/qt_help_sl.qm
+%%QT_L10NDIR%%/qt_help_tr.qm
 %%QT_L10NDIR%%/qt_help_uk.qm
 %%QT_L10NDIR%%/qt_help_zh_CN.qm
 %%QT_L10NDIR%%/qt_help_zh_TW.qm
@@ -101,6 +105,7 @@
 %%QT_L10NDIR%%/qt_sk.qm
 %%QT_L10NDIR%%/qt_sl.qm
 %%QT_L10NDIR%%/qt_sv.qm
+%%QT_L10NDIR%%/qt_tr.qm
 %%QT_L10NDIR%%/qt_uk.qm
 %%QT_L10NDIR%%/qt_zh_CN.qm
 %%QT_L10NDIR%%/qt_zh_TW.qm
@@ -124,6 +129,7 @@
 %%QT_L10NDIR%%/qtbase_pl.qm
 %%QT_L10NDIR%%/qtbase_ru.qm
 %%QT_L10NDIR%%/qtbase_sk.qm
+%%QT_L10NDIR%%/qtbase_tr.qm
 %%QT_L10NDIR%%/qtbase_uk.qm
 %%QT_L10NDIR%%/qtbase_zh_TW.qm
 %%QT_L10NDIR%%/qtconnectivity_bg.qm
@@ -136,6 +142,7 @@
 %%QT_L10NDIR%%/qtconnectivity_ko.qm
 %%QT_L10NDIR%%/qtconnectivity_pl.qm
 %%QT_L10NDIR%%/qtconnectivity_ru.qm
+%%QT_L10NDIR%%/qtconnectivity_tr.qm
 %%QT_L10NDIR%%/qtconnectivity_uk.qm
 %%QT_L10NDIR%%/qtdeclarative_bg.qm
 %%QT_L10NDIR%%/qtdeclarative_da.qm
@@ -151,6 +158,7 @@
 %%QT_L10NDIR%%/qtdeclarative_pl.qm
 %%QT_L10NDIR%%/qtdeclarative_ru.qm
 %%QT_L10NDIR%%/qtdeclarative_sk.qm
+%%QT_L10NDIR%%/qtdeclarative_tr.qm
 %%QT_L10NDIR%%/qtdeclarative_uk.qm
 %%QT_L10NDIR%%/qtlocation_bg.qm
 %%QT_L10NDIR%%/qtlocation_ca.qm
@@ -164,6 +172,7 @@
 %%QT_L10NDIR%%/qtlocation_ko.qm
 %%QT_L10NDIR%%/qtlocation_pl.qm
 %%QT_L10NDIR%%/qtlocation_ru.qm
+%%QT_L10NDIR%%/qtlocation_tr.qm
 %%QT_L10NDIR%%/qtlocation_uk.qm
 %%QT_L10NDIR%%/qtmultimedia_ar.qm
 %%QT_L10NDIR%%/qtmultimedia_bg.qm
@@ -182,6 +191,7 @@
 %%QT_L10NDIR%%/qtmultimedia_pl.qm
 %%QT_L10NDIR%%/qtmultimedia_ru.qm
 %%QT_L10NDIR%%/qtmultimedia_sk.qm
+%%QT_L10NDIR%%/qtmultimedia_tr.qm
 %%QT_L10NDIR%%/qtmultimedia_uk.qm
 %%QT_L10NDIR%%/qtmultimedia_zh_TW.qm
 %%QT_L10NDIR%%/qtquickcontrols2_ar.qm
@@ -191,6 +201,7 @@
 %%QT_L10NDIR%%/qtquickcontrols2_en.qm
 %%QT_L10NDIR%%/qtquickcontrols2_hu.qm
 %%QT_L10NDIR%%/qtquickcontrols2_ko.qm
+%%QT_L10NDIR%%/qtquickcontrols2_tr.qm
 %%QT_L10NDIR%%/qtquickcontrols2_uk.qm
 %%QT_L10NDIR%%/qtquickcontrols2_zh_TW.qm
 %%QT_L10NDIR%%/qtquickcontrols_bg.qm
@@ -201,7 +212,9 @@
 %%QT_L10NDIR%%/qtquickcontrols_fi.qm
 %%QT_L10NDIR%%/qtquickcontrols_fr.qm
 %%QT_L10NDIR%%/qtquickcontrols_ja.qm
+%%QT_L10NDIR%%/qtquickcontrols_ko.qm
 %%QT_L10NDIR%%/qtquickcontrols_ru.qm
+%%QT_L10NDIR%%/qtquickcontrols_tr.qm
 %%QT_L10NDIR%%/qtquickcontrols_uk.qm
 %%QT_L10NDIR%%/qtquickcontrols_zh_TW.qm
 %%QT_L10NDIR%%/qtscript_ar.qm
@@ -223,6 +236,7 @@
 %%QT_L10NDIR%%/qtscript_pl.qm
 %%QT_L10NDIR%%/qtscript_ru.qm
 %%QT_L10NDIR%%/qtscript_sk.qm
+%%QT_L10NDIR%%/qtscript_tr.qm
 %%QT_L10NDIR%%/qtscript_uk.qm
 %%QT_L10NDIR%%/qtserialport_de.qm
 %%QT_L10NDIR%%/qtserialport_en.qm

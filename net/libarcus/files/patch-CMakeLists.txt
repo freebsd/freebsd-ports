@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2020-10-11 05:33:17 UTC
++++ CMakeLists.txt
+@@ -94,7 +94,7 @@ endif()
+ if(BUILD_PYTHON)
+     set(SIP_EXTRA_FILES_DEPEND python/SocketListener.sip python/Types.sip python/PythonMessage.sip python/Error.sip)
+     set(SIP_EXTRA_SOURCE_FILES python/PythonMessage.cpp)
+-    set(SIP_EXTRA_OPTIONS -g) # -g means always release the GIL before calling C++ methods.
++    set(SIP_EXTRA_OPTIONS -g -n PyQt5.sip) # -g means always release the GIL before calling C++ methods.
+     add_sip_python_module(Arcus python/Socket.sip Arcus)
+ endif()
+ 

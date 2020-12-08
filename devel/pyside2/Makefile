@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyside2
-DISTVERSION=	5.15.1
+DISTVERSION=	5.15.2
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,5 +42,15 @@ USE_QT+=	webengine
 .else
 PLIST_SUB+=	WEBENGINE="@comment "
 .endif
+
+# AVOID a build_fs_violation with poudriere
+post-build:
+	${RM} -r ${PYTHON_SITELIBDIR}/shiboken2/files.dir/shibokensupport/__pycache__
+	${RM} -r ${PYTHON_SITELIBDIR}/shiboken2/files.dir/shibokensupport/signature/__pycache__
+	${RM} -r ${PYTHON_SITELIBDIR}/shiboken2/files.dir/shibokensupport/signature/lib/__pycache__
+post-stage:
+	${RM} -r ${PYTHON_SITELIBDIR}/shiboken2/files.dir/shibokensupport/__pycache__
+	${RM} -r ${PYTHON_SITELIBDIR}/shiboken2/files.dir/shibokensupport/signature/__pycache__
+	${RM} -r ${PYTHON_SITELIBDIR}/shiboken2/files.dir/shibokensupport/signature/lib/__pycache__
 
 .include <bsd.port.post.mk>

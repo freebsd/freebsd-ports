@@ -12,7 +12,7 @@ RUN_DEPENDS=	${PY_ENUM34}
 CONFIGURE_ARGS=	--enable QtQuick3D
 PYQT_DIST=	yes
 
-USES=		gl python pyqt:5 qt:5
+USES=		gl python:3.5+ pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core_run gui_run 
 USE_PYTHON=	concurrent flavors py3kplist

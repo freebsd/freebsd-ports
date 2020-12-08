@@ -1,0 +1,42 @@
+From https://github.com/frescobaldi/python-poppler-qt5/pull/41/commits/4ee58b6ee02772db915fdc5e70e336e0e5b2f34c
+
+--- pyproject.toml.orig	2020-10-11 18:59:42 UTC
++++ pyproject.toml
+@@ -0,0 +1,37 @@
++[build-system]
++requires = ["sip >=5", "PyQt-builder", "PyQt5"]
++build-backend = "sipbuild.api"
++
++[tool.sip.metadata]
++name = "python-poppler-qt5"
++version = "0.75.0"
++summary = "A Python binding to Poppler-Qt5"
++description-file = "README.rst"
++home-page = "https://github.com/frescobaldi/python-poppler-qt5"
++maintainer = "Wilbert Berendsen"
++maintainer-email = "wbsoft@xs4all.nl"
++license = "LGPL"
++classifier = [
++  "Development Status :: 5 - Production/Stable",
++  "Intended Audience :: Developers",
++  "License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)",
++  "Operating System :: MacOS :: MacOS X",
++  "Operating System :: Microsoft :: Windows",
++  "Operating System :: POSIX",
++  "Programming Language :: Python :: 3",
++  "Topic :: Multimedia :: Graphics :: Viewers"
++]
++requires-dist = "PyQt5"
++
++[tool.sip.project]
++sip-files-dir = "."
++sdist-excludes = [
++  "version.sip",
++  ".git/*",
++  ".git/*/*",
++  ".git/*/*/*",
++  ".git/*/*/*/*",
++  ".git/*/*/*/*/*",
++  ".git/*/*/*/*/*/*",
++  ".git/*/*/*/*/*/*/*"
++]

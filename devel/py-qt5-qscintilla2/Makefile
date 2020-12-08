@@ -17,7 +17,7 @@ DESTDIRNAME=	INSTALL_ROOT
 
 HAS_CONFIGURE=	yes
 
-USES=		python pyqt:5 gl qmake:no_env qt:5
+USES=		python:3.5+ pyqt:5 gl qmake:no_env qt:5
 USE_GL=		gl
 USE_PYQT=	core gui printsupport widgets
 USE_PYTHON=	concurrent flavors py3kplist

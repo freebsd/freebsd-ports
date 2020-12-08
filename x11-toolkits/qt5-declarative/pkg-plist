@@ -699,6 +699,7 @@
 %%QT_INCDIR%%/QtQuickParticles/%%FULLVER%%/QtQuickParticles/private/qquickparticleaffector_p.h
 %%QT_INCDIR%%/QtQuickParticles/%%FULLVER%%/QtQuickParticles/private/qquickparticleemitter_p.h
 %%QT_INCDIR%%/QtQuickParticles/%%FULLVER%%/QtQuickParticles/private/qquickparticleextruder_p.h
+%%QT_INCDIR%%/QtQuickParticles/%%FULLVER%%/QtQuickParticles/private/qquickparticleflatset_p.h
 %%QT_INCDIR%%/QtQuickParticles/%%FULLVER%%/QtQuickParticles/private/qquickparticlegroup_p.h
 %%QT_INCDIR%%/QtQuickParticles/%%FULLVER%%/QtQuickParticles/private/qquickparticlepainter_p.h
 %%QT_INCDIR%%/QtQuickParticles/%%FULLVER%%/QtQuickParticles/private/qquickparticlesmodule_p.h

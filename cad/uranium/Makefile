@@ -14,11 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qt5-quick>0:x11-toolkits/py-qt5-quick@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL>0:graphics/py-PyOpenGL@${PY_FLAVOR}
 
-USES=		cmake python:3.4+ gettext
+USES=		cmake gettext python:3.5+ pyqt:5
+USE_PYQT=	quick
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
 GH_TAGNAME=	3ed9c4de

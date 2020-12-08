@@ -15,7 +15,7 @@ NO_BUILD=	yes
 
 PORTSCOUT=	limit:^${PYQT5_VERSION}
 
-USES=		python pyqt:5
+USES=		python:3.5+ pyqt:5
 USE_PYQT=	core_run dbus_run designer_run \
 		designerplugin_run gui_run multimedia_run \
 		multimediawidgets_run network_run opengl_run \

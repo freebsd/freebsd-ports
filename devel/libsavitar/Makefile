@@ -2,9 +2,12 @@
 
 PORTNAME=	libSavitar
 DISTVERSION=	4.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel cad
 DIST_SUBDIR=	Ultimaker
+
+PATCH_SITES=   https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=    195633cf0c5f.patch:-p1
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	C++ implementation of 3mf loading/python bindings
@@ -12,10 +15,10 @@ COMMENT=	C++ implementation of 3mf loading/python bindings
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sip>0:devel/py-sip@${PY_FLAVOR}
 LIB_DEPENDS=	libpugixml.so:textproc/pugixml
 
-USES=		cmake compiler:c++11-lang python:3.4+
+USES=		cmake compiler:c++11-lang python:3.5+ pyqt:5
+USE_PYQT=	sip pysip
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
 GH_TAGNAME=	96eba0e

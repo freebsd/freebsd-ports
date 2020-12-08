@@ -1,0 +1,30 @@
+diff --git komparepart/kompare_part.cpp komparepart/kompare_part.cpp
+index 42d3120..88346d6 100644
+--- komparepart/kompare_part.cpp
++++ komparepart/kompare_part.cpp
+@@ -26,6 +26,7 @@
+ #include <QMenu>
+ #include <QPainter>
+ #include <QPrinter>
++#include <QPageLayout>
+ #include <QPrintDialog>
+ #include <QPrintPreviewDialog>
+ #include <QTemporaryDir>
+@@ -610,7 +611,7 @@ void KomparePart::saveDiff()
+ void KomparePart::slotFilePrint()
+ {
+     QPrinter printer;
+-    printer.setOrientation(QPrinter::Landscape);
++    printer.setPageOrientation(QPageLayout::Landscape);
+     QPrintDialog* dlg = new QPrintDialog(&printer, nullptr);
+ 
+     if (dlg->exec() == QDialog::Accepted)
+@@ -625,7 +626,7 @@ void KomparePart::slotFilePrint()
+ void KomparePart::slotFilePrintPreview()
+ {
+     QPrinter printer;
+-    printer.setOrientation(QPrinter::Landscape);
++    printer.setPageOrientation(QPageLayout::Landscape);
+     QPrintPreviewDialog dlg(&printer);
+ 
+     connect(&dlg, &QPrintPreviewDialog::paintRequested, this, &KomparePart::slotPaintRequested);

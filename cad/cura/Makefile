@@ -13,10 +13,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	Uranium>0,1:cad/uranium
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt5-gui>0:x11-toolkits/py-qt5-gui@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qt5-widgets>0:x11-toolkits/py-qt5-widgets@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qt5-qml>0:lang/py-qt5-qml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>0:comms/py-pyserial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Shapely>0:devel/py-shapely@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy-stl>0:math/py-numpy-stl@${PY_FLAVOR} \
@@ -31,7 +28,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt5-gui>0:x11-toolkits/py-qt5-gui@${PY_FLAVO
 LIB_DEPENDS=	libArcus.so:net/libarcus \
 		libSavitar.so:devel/libsavitar
 
-USES=		cmake gettext shebangfix python:3.4+ desktop-file-utils shared-mime-info
+USES=		cmake gettext shebangfix python:3.5+ pyqt:5 \
+		desktop-file-utils shared-mime-info
+USE_PYQT=	gui widgets qml
 CMAKE_ARGS+=	-DURANIUM_SCRIPTS_DIR:STRING="${LOCALBASE}/share/uranium/scripts"
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker

@@ -15,7 +15,7 @@ LICENSE=	${PYQT5_LICENSE}
 BUILD_DEPENDS=	${PY_ENUM34}
 RUN_DEPENDS=	${PY_ENUM34}
 
-USES=		gl python pyqt:5 qt:5
+USES=		gl python:3.5+ pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core gui widgets
 USE_PYTHON=	concurrent flavors py3kplist

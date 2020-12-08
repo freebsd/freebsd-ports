@@ -1,3 +1,5 @@
-TIMESTAMP = 1583953836
+TIMESTAMP = 1602393384
 SHA256 (Ultimaker/Ultimaker-libSavitar-4.5.0-96eba0e_GH0.tar.gz) = f64e9b20d6783247a88ddc751a80d20eec2073465c0b46fbba45c1ab9c01eb75
 SIZE (Ultimaker/Ultimaker-libSavitar-4.5.0-96eba0e_GH0.tar.gz) = 98038
+SHA256 (Ultimaker/195633cf0c5f.patch) = 5c4fce2fbf144ae92882234dc5b703a7e1f9594a80cfefbaaa083b4c7d81b0f4
+SIZE (Ultimaker/195633cf0c5f.patch) = 5331

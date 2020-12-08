@@ -1,9 +1,9 @@
 Only enter the directories we want to build, otherwise we might fail due to
 missing dependencies.
 
---- src/src.pro.orig	2019-02-14 20:02:00 UTC
+--- src/src.pro.orig	2020-11-20 20:04:42 UTC
 +++ src/src.pro
-@@ -1,54 +1,3 @@
+@@ -1,55 +1,3 @@
  TEMPLATE = subdirs
  
 -qtHaveModule(widgets) {
@@ -12,9 +12,10 @@ missing dependencies.
 -    } else {
 -        QT_FOR_CONFIG += widgets
 -        qtConfig(pushbutton):qtConfig(toolbutton) {
--            SUBDIRS = assistant \
--                      designer \
+-            SUBDIRS = designer \
 -                      pixeltool
+-
+-            !static|contains(QT_PLUGINS, qsqlite): SUBDIRS += assistant
 -
 -            linguist.depends = designer
 -        }
@@ -39,7 +40,7 @@ missing dependencies.
 -    SUBDIRS += macdeployqt
 -}
 -
- qtHaveModule(dbus): SUBDIRS += qdbus
+-qtHaveModule(dbus): SUBDIRS += qdbus
 -
 -win32|winrt:SUBDIRS += windeployqt
 -winrt:SUBDIRS += winrtrunner
@@ -58,3 +59,4 @@ missing dependencies.
 -    winrtrunner.depends += qtattributionsscanner
 -    linguist.depends += qtattributionsscanner
 -}
++SUBDIRS = qdbus

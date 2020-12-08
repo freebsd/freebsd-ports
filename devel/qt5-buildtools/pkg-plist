@@ -6,5 +6,3 @@
 %%QT_LIBDIR%%/libQt5Bootstrap.a
 %%QT_LIBDIR%%/libQt5Bootstrap.prl
 %%QT_MKSPECDIR%%/modules/qt_lib_bootstrap_private.pri
-%%QT_CMAKEDIR%%/Qt5Bootstrap/Qt5BootstrapConfig.cmake
-%%QT_CMAKEDIR%%/Qt5Bootstrap/Qt5BootstrapConfigVersion.cmake

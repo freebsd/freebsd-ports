@@ -15,7 +15,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus
 CONFIGURE_ARGS=	--enable QtCore
 PYQT_DIST=	yes
 
-USES=		pkgconfig python pyqt:5 qt:5
+USES=		pkgconfig python:3.5+ pyqt:5 qt:5
 USE_PYQT=	sip_build 
 USE_PYTHON=	concurrent flavors py3kplist
 USE_QT=		core buildtools_build qmake_build
