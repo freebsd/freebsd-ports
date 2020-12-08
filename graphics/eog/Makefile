@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eog
-PORTVERSION=	3.28.4
-PORTREVISION=	4
+PORTVERSION=	3.38.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -29,6 +28,8 @@ USE_GNOME=	cairo librsvg2 gtk30 gnomedesktop3 introspection
 USE_XORG=	x11
 INSTALLS_ICONS=	yes
 SHEBANG_FILES=	${WRKSRC}/meson_post_install.py
+
+MESON_ARGS=	-Dlibportal=false
 
 GLIB_SCHEMAS=	org.gnome.eog.enums.xml \
 		org.gnome.eog.gschema.xml
