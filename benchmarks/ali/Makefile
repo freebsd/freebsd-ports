@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ali
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks
 
@@ -19,6 +19,7 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-sp
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
 		gdamore:tcell:v1.3.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
+		golang:crypto:9756ffdc2472:golang_crypto/vendor/golang.org/x/crypto \
 		golang:lint:16217165b5de:golang_lint/vendor/golang.org/x/lint \
 		golang:mock:v1.4.4:golang_mock/vendor/github.com/golang/mock \
 		golang:net:ba9fcec4b297:golang_net/vendor/golang.org/x/net \
@@ -33,6 +34,7 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-sp
 		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		miekg:dns:v1.1.17:miekg_dns/vendor/github.com/miekg/dns \
 		mum4k:termdash:v0.12.2:mum4k_termdash/vendor/github.com/mum4k/termdash \
 		nsf:termbox-go:4d2b513ad8be:nsf_termbox_go/vendor/github.com/nsf/termbox-go \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
