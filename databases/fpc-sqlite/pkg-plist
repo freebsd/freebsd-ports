@@ -8,5 +8,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite3db.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite3dyn.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite3dyn.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite3dyn.rsj
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite3ext.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlite3ext.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlitedb.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sqlite/sqlitedb.ppu
