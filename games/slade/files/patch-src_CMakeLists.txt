@@ -20,9 +20,9 @@
 -SET(WX_LIBS std aui gl stc richtext propgrid media)
 +# Work around find_package(wxWidgets...) inability to detect absence of some
 +# optional components (e.g., media)
-+find_library(WX_MEDIA wx_gtk2u_media-3.0)
++find_library(WX_MEDIA wx_gtk${GTK_VERSION}u_media-3.0)
 +if (NOT WX_MEDIA)
-+	message(STATUS "wx_gtk2u_media-3.0 not found, building without MP3 playback support.")
++	message(STATUS "wx_gtk${GTK_VERSION}u_media-3.0 not found, building without MP3 playback support.")
 +else (WX_MEDIA)
 +	SET(WX_LIBS ${WX_LIBS} media)
 +endif ()
