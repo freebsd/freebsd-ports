@@ -1,6 +1,7 @@
 bin/ircd
 bin/ircd-hybrid-mkpasswd
 %%ETCDIR%%/reference.conf
+etc/rc.d/ircd-hybrid
 lib/ircd-hybrid/modules/autoload/m_accept.la
 lib/ircd-hybrid/modules/autoload/m_accept.so
 lib/ircd-hybrid/modules/autoload/m_admin.la
@@ -51,10 +52,12 @@ lib/ircd-hybrid/modules/autoload/m_lusers.la
 lib/ircd-hybrid/modules/autoload/m_lusers.so
 lib/ircd-hybrid/modules/autoload/m_map.la
 lib/ircd-hybrid/modules/autoload/m_map.so
-@comment lib/ircd-hybrid/modules/autoload/m_metadata.la
-@comment lib/ircd-hybrid/modules/autoload/m_metadata.so
+lib/ircd-hybrid/modules/autoload/m_metadata.la
+lib/ircd-hybrid/modules/autoload/m_metadata.so
 lib/ircd-hybrid/modules/autoload/m_module.la
 lib/ircd-hybrid/modules/autoload/m_module.so
+lib/ircd-hybrid/modules/autoload/m_monitor.la
+lib/ircd-hybrid/modules/autoload/m_monitor.so
 lib/ircd-hybrid/modules/autoload/m_motd.la
 lib/ircd-hybrid/modules/autoload/m_motd.so
 lib/ircd-hybrid/modules/autoload/m_names.la
@@ -81,6 +84,8 @@ lib/ircd-hybrid/modules/autoload/m_stats.la
 lib/ircd-hybrid/modules/autoload/m_stats.so
 lib/ircd-hybrid/modules/autoload/m_svinfo.la
 lib/ircd-hybrid/modules/autoload/m_svinfo.so
+lib/ircd-hybrid/modules/autoload/m_svsaccount.la
+lib/ircd-hybrid/modules/autoload/m_svsaccount.so
 lib/ircd-hybrid/modules/autoload/m_svshost.la
 lib/ircd-hybrid/modules/autoload/m_svshost.so
 lib/ircd-hybrid/modules/autoload/m_svsjoin.la
@@ -119,8 +124,6 @@ lib/ircd-hybrid/modules/autoload/m_version.la
 lib/ircd-hybrid/modules/autoload/m_version.so
 lib/ircd-hybrid/modules/autoload/m_wallops.la
 lib/ircd-hybrid/modules/autoload/m_wallops.so
-lib/ircd-hybrid/modules/autoload/m_watch.la
-lib/ircd-hybrid/modules/autoload/m_watch.so
 lib/ircd-hybrid/modules/autoload/m_webirc.la
 lib/ircd-hybrid/modules/autoload/m_webirc.so
 lib/ircd-hybrid/modules/autoload/m_who.la
@@ -225,7 +228,7 @@ man/man8/ircd.8.gz
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/whois
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/whowas
 %%DATADIR%%-%%PORTVERSION%%/ircd-hybrid/help/xline
-@dir(ircd,ircd) /var/ircd-hybrid/lib
-@dir(ircd,ircd) /var/ircd-hybrid/log
-@dir(ircd,ircd) /var/ircd-hybrid/run
-@dir(ircd,ircd) /var/ircd-hybrid
+@dir /var/ircd-hybrid/lib
+@dir /var/ircd-hybrid/log
+@dir /var/ircd-hybrid/run
+@dir /var/ircd-hybrid
