@@ -12,6 +12,8 @@ COMMENT=	Highly dynamic multi-platform foreign function call interface library
 
 LICENSE=	ISCL
 
+BROKEN_riscv64=		fails to compile: dyncall_callvm.c:75:4: unsupported platform
+
 HAS_CONFIGURE=	yes
 
 CFLAGS+=	-fPIC
