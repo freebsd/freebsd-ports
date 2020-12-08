@@ -48,4 +48,4 @@ CONFLICTS_INSTALL=	latte-integrale
 FFLAGS+=	-fallow-argument-mismatch
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
