@@ -17,19 +17,23 @@ COMMENT=	Distributed source code management tool ${COMMENT_${FLAVOR}}
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	default gui lite
-default_CONFLICTS_INSTALL=	git-gui git-lite
-gui_CONFLICTS_INSTALL=		git git-lite
+FLAVORS=	default gui lite tiny
+default_CONFLICTS_INSTALL=	git-gui git-lite git-tiny
+gui_CONFLICTS_INSTALL=		git git-lite git-tiny
 gui_DESCR=			${.CURDIR}/pkg-descr-gui
 gui_PKGNAMESUFFIX=		-gui
-lite_CONFLICTS_INSTALL=		git git-gui
+lite_CONFLICTS_INSTALL=		git git-gui git-tiny
 lite_DESCR=			${.CURDIR}/pkg-descr-lite
 lite_PKGNAMESUFFIX=		-lite
+tiny_CONFLICTS_INSTALL=		git git-gui git-lite
+tiny_DESCR=			${.CURDIR}/pkg-descr-tiny
+tiny_PKGNAMESUFFIX=		-tiny
 
 USES=		autoreconf gmake iconv shebangfix ssl tar:xz
 
 COMMENT_gui=	(GUI enabled flavor)
 COMMENT_lite=	(lite flavor)
+COMMENT_tiny=	(tiny flavor)
 
 USERS=		git_daemon
 GROUPS=		git_daemon
@@ -70,6 +74,9 @@ OPTIONS_DEFAULT=	CONTRIB P4 CVS PERL GITWEB ICONV CURL SEND_EMAIL PCRE \
 OPTIONS_SLAVE+=		GUI
 .elif ${FLAVOR:U} == lite
 OPTIONS_EXCLUDE=	GUI SVN GITWEB CONTRIB P4 CVS PERL
+.elif ${FLAVOR:U} == tiny
+OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NCURL} ${OPTIONS_RADIO_PCRE_VERSION}
+OPTIONS_SLAVE=		CURL
 .endif
 
 OPTIONS_SUB=	yes
