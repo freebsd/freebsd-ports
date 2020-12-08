@@ -1,19 +1,19 @@
---- commands/report.go.orig	2018-11-16 12:22:18 UTC
-+++ commands/report.go
-@@ -110,10 +110,10 @@ func (p *ReportCmd) SetFlags(f *flag.Fla
- 	f.BoolVar(&c.Conf.Debug, "debug", false, "debug mode")
- 	f.BoolVar(&c.Conf.DebugSQL, "debug-sql", false, "SQL debug mode")
+--- subcmds/report.go.orig	2020-11-27 21:39:52 UTC
++++ subcmds/report.go
+@@ -108,10 +108,10 @@ func (p *ReportCmd) SetFlags(f *flag.FlagSet) {
+ 	f.BoolVar(&c.Conf.Quiet, "quiet", false, "Quiet mode. No output on stdout")
+ 	f.BoolVar(&c.Conf.NoProgress, "no-progress", false, "Suppress progress bar")
  
 -	wd, _ := os.Getwd()
 -	defaultConfPath := filepath.Join(wd, "config.toml")
-+    defaultConfPath := "%%ETCDIR%%/config.toml"
++	defaultConfPath := filepath.Join("%%ETCDIR%%", "config.toml")
  	f.StringVar(&p.configPath, "config", defaultConfPath, "/path/to/toml")
  
-+	wd, _ := os.Getwd()
++    wd, _ := os.Getwd()
  	defaultResultsDir := filepath.Join(wd, "results")
  	f.StringVar(&c.Conf.ResultsDir, "results-dir", defaultResultsDir, "/path/to/results")
  
-@@ -172,7 +172,7 @@ func (p *ReportCmd) SetFlags(f *flag.Fla
+@@ -177,7 +177,7 @@ func (p *ReportCmd) SetFlags(f *flag.FlagSet) {
  
  	f.StringVar(&p.cveDict.Type, "cvedb-type", "",
  		"DB type of go-cve-dictionary (sqlite3, mysql, postgres, redis or http)")

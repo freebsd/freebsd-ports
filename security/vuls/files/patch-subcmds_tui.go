@@ -1,6 +1,6 @@
---- commands/tui.go.orig	2018-11-16 12:22:18 UTC
-+++ commands/tui.go
-@@ -116,7 +116,7 @@ func (p *TuiCmd) SetFlags(f *flag.FlagSe
+--- subcmds/tui.go.orig	2020-12-04 00:20:42 UTC
++++ subcmds/tui.go
+@@ -111,7 +111,7 @@ func (p *TuiCmd) SetFlags(f *flag.FlagSet) {
  
  	f.StringVar(&p.cveDict.Type, "cvedb-type", "",
  		"DB type of go-cve-dictionary (sqlite3, mysql, postgres or redis)")
