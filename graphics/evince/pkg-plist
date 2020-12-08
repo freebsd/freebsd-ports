@@ -27,6 +27,7 @@ include/evince/%%VERSION%%/libdocument/ev-document-type-builtins.h
 include/evince/%%VERSION%%/libdocument/ev-document.h
 include/evince/%%VERSION%%/libdocument/ev-file-exporter.h
 include/evince/%%VERSION%%/libdocument/ev-file-helpers.h
+include/evince/%%VERSION%%/libdocument/ev-form-field-private.h
 include/evince/%%VERSION%%/libdocument/ev-form-field.h
 include/evince/%%VERSION%%/libdocument/ev-image.h
 include/evince/%%VERSION%%/libdocument/ev-init.h
@@ -76,6 +77,8 @@ lib/libevview3.so.%%GTK3_VERSION%%
 libdata/pkgconfig/evince-document-%%VERSION%%.pc
 libdata/pkgconfig/evince-view-%%VERSION%%.pc
 %%DBUS%%libexec/evinced
+man/man1/evince-previewer.1.gz
+man/man1/evince-thumbnailer.1.gz
 man/man1/evince.1.gz
 share/GConf/gsettings/evince.convert
 share/applications/org.gnome.Evince-previewer.desktop
