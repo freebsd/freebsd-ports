@@ -18,6 +18,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/paswrite.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/paswrite.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/pparser.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/pparser.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/pparser.rsj
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/pscanner.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/pscanner.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-passrc/pscanner.rsj
