@@ -17,6 +17,7 @@ LICENSE_COMB=	multi
 
 BROKEN_aarch64=		fails to package: ansidecl.h: No such file or directory
 BROKEN_mips64=		fails to package: ansidecl.h: No such file or directory
+BROKEN_riscv64=		fails to package: ansidecl.h: No such file or directory
 
 USES=		gmake tar:bzip2 libtool
 
