@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mrboom
-PORTVERSION=	5.0
+PORTVERSION=	5.1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Javanaise/mrboom-libretro/releases/download/${PORTVERSION}/
 DISTNAME=	MrBoom-src-${PORTVERSION}
