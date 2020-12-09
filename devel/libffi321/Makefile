@@ -14,6 +14,8 @@ COMMENT=	Foreign Function Interface (stripped down compat version)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_riscv64=		fails to configure: libffi has not been ported to riscv64-portbld-freebsd13.0.
+
 USES=		libtool
 USE_LDCONFIG=	${PREFIX}/lib/compat
 GNU_CONFIGURE=	yes
