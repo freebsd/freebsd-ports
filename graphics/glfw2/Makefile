@@ -12,9 +12,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USES=		gl tar:bzip2 xorg
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	compile.sh
 ALL_TARGET=	x11
 INSTALL_TARGET=	x11-install
@@ -28,28 +29,10 @@ PLIST_FILES=	include/GL/glfw.h lib/libglfw.a lib/libglfw.so \
 		lib/libglfw.so.0 libdata/pkgconfig/libglfw.pc
 
 PORTDOCS=	*
-
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-
-DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	*.html
-
-DOCSRCDIR2=	${WRKSRC}/docs
-DOCSDIR2=	${DOCSDIR}/docs
-DOC_FILES2=	*.pdf *.sty *.tex *.txt
-
 PORTEXAMPLES=	*
 
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
-
-EXAMPLESSRCDIR1=	${WRKSRC}/examples
-EXAMPLES_FILES1=	boing gears heightmap listmodes mipmaps mtbench \
-			mthello pong3d splitview triangle wave
-
-EXAMPLESSRCDIR2=	${WRKSRC}/tests
-EXAMPLESDIR2=		${EXAMPLESDIR}/tests
-EXAMPLES_FILES2=	accuracy defaults dynamic events fsaa fsinput iconify \
-			joysticks peter reopen tearing version
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -57,7 +40,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 PORTSCOUT=	limit:^2\..*
 
 post-extract:
-	@${CHMOD} ${BINMODE} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${CHMOD} +x ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|; \
@@ -68,21 +51,24 @@ post-patch:
 		${WRKSRC}/lib/x11/Makefile.x11.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/x11/libglfw.so \
-		${STAGEDIR}${PREFIX}/lib/libglfw.so.0
-	${LN} -sf ${PREFIX}/lib/libglfw.so.0 ${STAGEDIR}${PREFIX}/lib/libglfw.so
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libglfw.so.0
+	${INSTALL_LIB} ${WRKSRC}/lib/x11/libglfw.so ${STAGEDIR}${PREFIX}/lib/libglfw.so.0
+	${LN} -sf libglfw.so.0 ${STAGEDIR}${PREFIX}/lib/libglfw.so
 
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} *.html ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && ${INSTALL_DATA} *.pdf *.sty *.tex *.txt ${STAGEDIR}${DOCSDIR}
 
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_PROGRAM} ${EXAMPLES_FILES1:S|^|${EXAMPLESSRCDIR1}/|} \
-		${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${EXAMPLESSRCDIR1}/*.tga ${STAGEDIR}${EXAMPLESDIR}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR2}
-	${INSTALL_PROGRAM} ${EXAMPLES_FILES2:S|^|${EXAMPLESSRCDIR2}/|} \
-		${STAGEDIR}${EXAMPLESDIR2}
+.for f in boing gears heightmap listmodes mipmaps mtbench mthello pong3d splitview triangle wave
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/examples/*.tga ${STAGEDIR}${EXAMPLESDIR}
+
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/tests
+.for f in accuracy defaults dynamic events fsaa fsinput iconify joysticks peter reopen tearing version
+	${INSTALL_PROGRAM} ${WRKSRC}/tests/${f} ${STAGEDIR}${EXAMPLESDIR}/tests
+.endfor
 
 .include <bsd.port.mk>

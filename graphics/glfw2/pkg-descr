@@ -3,4 +3,4 @@ development that provides a powerful API for handling operating system specific
 tasks such as opening an OpenGL window, reading keyboard, mouse, joystick and
 time input, creating threads, and more.
 
-WWW: http://www.glfw.org/
+WWW: https://www.glfw.org/
