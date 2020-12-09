@@ -13,8 +13,8 @@ COMMENT=	Utility for reading, writing, verifying, and erasing flash ROM chips
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NOT_FOR_ARCHS=	aarch64
-NOT_FOR_ARCHS_REASON=	./hwaccess.h:126:2: error: Unable to determine endianness.
+NOT_FOR_ARCHS=	aarch64 riscv64
+NOT_FOR_ARCHS_REASON=	Unable to determine endianness.
 
 LIB_DEPENDS=	libpci.so:devel/libpci
 
