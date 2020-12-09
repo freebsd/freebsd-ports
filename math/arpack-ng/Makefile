@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arpack-ng
-DISTVERSION=	3.7.0-49
-DISTVERSIONSUFFIX=	-g35bffac
+DISTVERSION=	3.8.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,6 @@ COMMENT=	Revised Argand library for solving large-scale eigenvalue problems
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libmpich.so:net/mpich # MPI is incremental: it adds the libparpack.so lib, it is a candidate for a sub-package
 
 USES=		autoreconf fortran libtool pkgconfig
@@ -27,8 +25,6 @@ CONFIGURE_ARGS=	--with-blas="${BLAS}" \
 LDFLAGS+=	-L${LOCALBASE}/lib
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-
-CONFIGURE_SHELL=	${LOCALBASE}/bin/bash # https://github.com/opencollab/arpack-ng/issues/252
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -56,16 +52,8 @@ LIB_DEPENDS+=	libblas.so:math/blas \
 IGNORE=		unknown value of WITH_BLAS: ${WITH_BLAS}
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -Ee 's|\(libdir\)(/pkgconfig)|(prefix)/libdata\1|' ${WRKSRC}/Makefile.am
-
 pre-configure:
 	@cd ${WRKSRC}; ./bootstrap
-	@${REINPLACE_CMD} -e '/BLAS_LIBS.*LAPACK_LIBS/ \
-	{s/LAPACK_LIBS/BLAS_LIBS/;s/BLAS_LIBS/LAPACK_LIBS/;}' \
-	${WRKSRC}/Makefile.in \
-	${WRKSRC}/arpack.pc.in \
-	${WRKSRC}/TESTS/Makefile.in
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*arpack.so.*.*

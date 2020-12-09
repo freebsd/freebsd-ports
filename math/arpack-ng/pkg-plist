@@ -9,8 +9,8 @@ include/arpack/parpack.hpp
 include/arpack/stat.h
 include/arpack/stat_c.h
 include/arpack/stat_c.hpp
-lib/cmake/arpack-ng-config-version.cmake
-lib/cmake/arpack-ng-config.cmake
+lib/cmake/arpack-ng/arpack-ng-config-version.cmake
+lib/cmake/arpack-ng/arpack-ng-config.cmake
 lib/libarpack.so
 lib/libarpack.so.2
 lib/libarpack.so.2.1.0
@@ -18,3 +18,4 @@ lib/libparpack.so
 lib/libparpack.so.2
 lib/libparpack.so.2.1.0
 libdata/pkgconfig/arpack.pc
+libdata/pkgconfig/parpack.pc
