@@ -2,8 +2,7 @@
 
 PORTNAME=	klee
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1
-PORTREVISION=	1
+DISTVERSION=	2.2
 CATEGORIES=	security devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -21,7 +20,7 @@ RUN_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 USES=		cmake compiler:c++14-lang localbase pkgconfig python:3.5+,run \
 		shebangfix sqlite
 USE_GITHUB=	yes
-SHEBANG_FILES=	tools/klee-stats/klee-stats tools/ktest-tool/ktest-tool
+SHEBANG_FILES=	tools/klee-stats/klee-stats tools/ktest-tool/ktest-tool tools/klee-zesti/klee-zesti
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	ENABLE_POSIX_RUNTIME ENABLE_UNIT_TESTS ENABLE_SYSTEM_TESTS
@@ -43,7 +42,7 @@ Z3_RUN_DEPENDS=		z3:math/z3
 
 STP_DESC=		Enable STP SMT solver
 STP_CMAKE_BOOL=		ENABLE_SOLVER_STP
-STP_BUILD_DEPENDS=	stp>0:math/stp
-STP_LIB_DEPENDS=	libcryptominisat5.so:math/cryptominisat
+STP_LIB_DEPENDS=	libstp.so:math/stp \
+			libcryptominisat5.so:math/cryptominisat
 
 .include <bsd.port.mk>
