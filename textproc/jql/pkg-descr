@@ -1,0 +1,10 @@
+A JSON Query Language CLI tool built with Rust.
+
+Core philosophy:
+* Stay lightweight
+* Keep features as simple as possible
+* Avoid redundancy
+* Provide meaningful error messages
+* Eat JSON as input, process, output JSON back
+
+WWW: https://github.com/yamafaktory/jql

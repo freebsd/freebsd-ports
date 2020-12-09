@@ -1,0 +1,151 @@
+# $FreeBSD$
+
+PORTNAME=	jql
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.8.0
+CATEGORIES=	textproc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	JSON Query Language CLI tool built with Rust
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	yamafaktory
+
+CARGO_CRATES=	ansi_term-0.11.0 \
+		ansi_term-0.12.1 \
+		anyhow-1.0.34 \
+		arrayref-0.3.5 \
+		async-attributes-1.1.1 \
+		async-channel-1.5.1 \
+		async-executor-1.3.0 \
+		async-global-executor-1.4.3 \
+		async-io-1.1.10 \
+		async-mutex-1.4.0 \
+		async-std-1.7.0 \
+		async-task-4.0.3 \
+		atomic-waker-1.0.0 \
+		atty-0.2.11 \
+		autocfg-1.0.0 \
+		bitflags-1.0.4 \
+		block-buffer-0.3.3 \
+		blocking-1.0.2 \
+		bstr-0.2.8 \
+		bumpalo-3.1.2 \
+		byte-tools-0.2.0 \
+		byteorder-1.2.7 \
+		cache-padded-1.1.1 \
+		cast-0.2.2 \
+		cc-1.0.62 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		clap-2.33.3 \
+		colored_json-2.1.0 \
+		concurrent-queue-1.2.2 \
+		const_fn-0.4.3 \
+		criterion-0.3.3 \
+		criterion-plot-0.4.3 \
+		crossbeam-channel-0.5.0 \
+		crossbeam-deque-0.8.0 \
+		crossbeam-epoch-0.9.0 \
+		crossbeam-utils-0.8.0 \
+		csv-1.1.1 \
+		csv-core-0.1.6 \
+		digest-0.7.6 \
+		either-1.5.0 \
+		event-listener-2.5.1 \
+		fake-simd-0.1.2 \
+		fastrand-1.4.0 \
+		futures-channel-0.3.7 \
+		futures-core-0.3.7 \
+		futures-io-0.3.7 \
+		futures-lite-1.11.2 \
+		generic-array-0.9.0 \
+		gloo-timers-0.2.1 \
+		half-1.6.0 \
+		hashbrown-0.9.1 \
+		hermit-abi-0.1.17 \
+		indexmap-1.6.0 \
+		instant-0.1.8 \
+		itertools-0.9.0 \
+		itoa-0.4.3 \
+		js-sys-0.3.45 \
+		kv-log-macro-1.0.7 \
+		lazy_static-1.4.0 \
+		libc-0.2.80 \
+		log-0.4.11 \
+		maplit-1.0.1 \
+		memchr-2.3.4 \
+		memoffset-0.5.6 \
+		nb-connect-1.0.2 \
+		num-traits-0.2.6 \
+		num_cpus-1.13.0 \
+		once_cell-1.4.1 \
+		oorandom-11.1.0 \
+		parking-2.0.0 \
+		pest-2.1.3 \
+		pest_derive-2.1.0 \
+		pest_generator-2.1.0 \
+		pest_meta-2.1.0 \
+		pin-project-lite-0.1.11 \
+		pin-utils-0.1.0 \
+		plotters-0.2.12 \
+		polling-2.0.2 \
+		proc-macro2-0.4.24 \
+		proc-macro2-1.0.24 \
+		quote-0.6.10 \
+		quote-1.0.2 \
+		rayon-1.5.0 \
+		rayon-core-1.9.0 \
+		redox_syscall-0.1.44 \
+		redox_termios-0.1.1 \
+		regex-1.3.4 \
+		regex-automata-0.1.8 \
+		regex-syntax-0.6.14 \
+		ryu-1.0.0 \
+		same-file-1.0.4 \
+		scopeguard-1.1.0 \
+		serde-1.0.100 \
+		serde_cbor-0.11.1 \
+		serde_derive-1.0.82 \
+		serde_json-1.0.59 \
+		sha-1-0.7.0 \
+		slab-0.4.2 \
+		strsim-0.8.0 \
+		syn-0.15.23 \
+		syn-1.0.48 \
+		termion-1.5.1 \
+		textwrap-0.11.0 \
+		tinytemplate-1.1.0 \
+		typenum-1.10.0 \
+		ucd-trie-0.1.1 \
+		unicode-width-0.1.5 \
+		unicode-xid-0.1.0 \
+		unicode-xid-0.2.0 \
+		vec-arena-1.0.0 \
+		vec_map-0.8.1 \
+		waker-fn-1.1.0 \
+		walkdir-2.3.1 \
+		wasm-bindgen-0.2.68 \
+		wasm-bindgen-backend-0.2.68 \
+		wasm-bindgen-futures-0.4.18 \
+		wasm-bindgen-macro-0.2.68 \
+		wasm-bindgen-macro-support-0.2.68 \
+		wasm-bindgen-shared-0.2.68 \
+		web-sys-0.3.45 \
+		wepoll-sys-3.0.1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.1 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

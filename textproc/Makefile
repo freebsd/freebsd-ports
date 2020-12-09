@@ -313,6 +313,7 @@
     SUBDIR += jing
     SUBDIR += jo
     SUBDIR += jq
+    SUBDIR += jql
     SUBDIR += jrefentry
     SUBDIR += jshon
     SUBDIR += json-yaml
