@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grsync
-PORTVERSION=	1.2.8
+PORTVERSION=	1.3.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.opbyte.it/release/ \
 		LOCAL/martymac
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		desktop-file-utils gettext gmake gnome \
 		pkgconfig shared-mime-info shebangfix
-USE_GNOME=	cairo gtk20 intltool
+USE_GNOME=	cairo gtk30 intltool
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-unity
