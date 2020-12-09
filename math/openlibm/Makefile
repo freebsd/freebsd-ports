@@ -18,6 +18,7 @@ BROKEN_armv6=	fails to compile: a parameter list without types is only allowed i
 BROKEN_armv7=	fails to compile: a parameter list without types is only allowed in a function definition
 BROKEN_mips=	fails to compile: No rule to make target mips/Make.files
 BROKEN_mips64=	fails to compile: No rule to make target mips64/Make.files
+BROKEN_riscv64=	fails to compile: No rule to make target riscv64/Make.files
 
 USES=		gmake
 USE_GITHUB=	yes
@@ -41,6 +42,10 @@ MAKE_ENV_gcc=	USEGCC=1 USECLANG=0
 MAKE_ENV_clang=	USEGCC=0 USECLANG=1
 
 TEST_TARGET=	check
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-Make.inc
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's/USEGCC =/USEGCC ?=/g' \
