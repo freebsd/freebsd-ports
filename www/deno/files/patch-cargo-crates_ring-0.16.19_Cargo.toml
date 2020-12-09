@@ -1,0 +1,11 @@
+--- cargo-crates/ring-0.16.19/Cargo.toml.orig	2020-12-02 03:20:32.000000000 +0100
++++ cargo-crates/ring-0.16.19/Cargo.toml	2020-12-09 09:54:26.615745000 +0100
+@@ -62,7 +62,7 @@ wasm32_c = []
+ version = "0.3.37"
+ features = ["Crypto", "Window"]
+ default-features = false
+-[target."cfg(any(target_arch = \"x86\",target_arch = \"x86_64\", all(any(target_arch = \"aarch64\", target_arch = \"arm\"), any(target_os = \"android\", target_os = \"fuchsia\", target_os = \"linux\"))))".dependencies.spin]
++[target."cfg(any(target_arch = \"x86\",target_arch = \"x86_64\", all(any(target_arch = \"aarch64\", target_arch = \"arm\"), any(target_os = \"android\", target_os = \"freebsd\", target_os = \"fuchsia\", target_os = \"linux\"))))".dependencies.spin]
+ version = "0.5.2"
+ default-features = false
+ [target."cfg(any(target_os = \"android\", target_os = \"linux\"))".dependencies.libc]
