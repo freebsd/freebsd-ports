@@ -2,7 +2,7 @@
 
 PORTNAME=	turbostat
 PORTVERSION=	4.17 # Turbostat itself has a version, but we don't bother
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/torvalds/linux/v${PORTVERSION}/tools/power/x86/turbostat/ \
 		https://raw.githubusercontent.com/torvalds/linux/v${PORTVERSION}/arch/x86/include/asm/

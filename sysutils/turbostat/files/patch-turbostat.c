@@ -1,4 +1,4 @@
---- turbostat.c.orig	2018-07-31 20:42:12 UTC
+--- turbostat.c.orig	2020-11-13 21:55:04 UTC
 +++ turbostat.c
 @@ -41,7 +41,31 @@
  #include <sched.h>
@@ -99,7 +99,7 @@
  
  /*
   * Each string in this array is compared in --show and --hide cmdline.
-@@ -2239,6 +2288,173 @@ int parse_int_file(const char *fmt, ...)
+@@ -2239,6 +2288,177 @@ int parse_int_file(const char *fmt, ...)
  	return value;
  }
  
@@ -150,13 +150,15 @@
 +
 +static void read_topology_spec(void)
 +{
-+	char spec[16384];
-+	size_t sz = sizeof(spec) - 1;
-+	char *i;
-+
++	char *spec, *i;
++	size_t sz = 0;
++	if (sysctlbyname("kern.sched.topology_spec", NULL, &sz, NULL, 0) != 0 && errno != ENOMEM)
++		err(1, "sysctl: kern.sched.topology_spec: failed");
++	spec = malloc(sz);
++	if (spec == NULL)
++		err(1, "malloc: failed");
 +	if (sysctlbyname("kern.sched.topology_spec", spec, &sz, NULL, 0))
 +		err(1, "sysctl: kern.sched.topology_spec: failed");
-+	spec[sizeof(spec) - 1] = '\0';
 +
 +	/* Skip the entire system entry. */
 +	i = strstr(spec, "<cpu");
@@ -194,6 +196,8 @@
 +	ncpus = 0;
 +	for (int i = 0; i < packages.len; i++)
 +		ncpus += CPU_COUNT(packages.sets + i);
++
++	free(spec);
 +}
 +
 +static int get_physical_package_id(int cpu)
@@ -273,7 +277,7 @@
  /*
   * get_cpu_position_in_core(cpu)
   * return the position of the CPU among its HT siblings in the core
-@@ -2326,6 +2542,7 @@ int get_num_ht_siblings(int cpu)
+@@ -2326,6 +2546,7 @@ int get_num_ht_siblings(int cpu)
  	fclose(filep);
  	return matches+1;
  }
@@ -281,7 +285,7 @@
  
  /*
   * run func(thread, core, package) in topology order
-@@ -2371,6 +2588,22 @@ int for_all_cpus_2(int (func)(struct thread_data *, st
+@@ -2371,6 +2592,22 @@ int for_all_cpus_2(int (func)(struct thread_data *, st
  	return 0;
  }
  
@@ -304,7 +308,7 @@
  /*
   * run func(cpu) on every cpu in /proc/stat
   * return max_cpu number
-@@ -2401,6 +2634,7 @@ int for_all_proc_cpus(int (func)(int))
+@@ -2401,6 +2638,7 @@ int for_all_proc_cpus(int (func)(int))
  	fclose(fp);
  	return 0;
  }
@@ -312,7 +316,7 @@
  
  void re_initialize(void)
  {
-@@ -2428,6 +2662,85 @@ int mark_cpu_present(int cpu)
+@@ -2428,6 +2666,85 @@ int mark_cpu_present(int cpu)
  	return 0;
  }
  
@@ -398,7 +402,7 @@
  /*
   * snapshot_proc_interrupts()
   *
-@@ -2491,6 +2804,8 @@ int snapshot_proc_interrupts(void)
+@@ -2491,6 +2808,8 @@ int snapshot_proc_interrupts(void)
  	}
  	return 0;
  }
@@ -407,7 +411,7 @@
  /*
   * snapshot_gfx_rc6_ms()
   *
-@@ -2629,6 +2944,18 @@ restart:
+@@ -2629,6 +2948,18 @@ restart:
  	}
  }
  
@@ -426,7 +430,7 @@
  void check_dev_msr()
  {
  	struct stat sb;
-@@ -2677,6 +3004,7 @@ void check_permissions()
+@@ -2677,6 +3008,7 @@ void check_permissions()
  	if (do_exit)
  		exit(-6);
  }
@@ -434,7 +438,7 @@
  
  /*
   * NHM adds support for additional MSRs:
-@@ -4520,8 +4848,21 @@ void setup_all_buffers(void)
+@@ -4520,8 +4852,21 @@ void setup_all_buffers(void)
  	for_all_proc_cpus(initialize_counters);
  }
  
@@ -456,7 +460,7 @@
  	base_cpu = sched_getcpu();
  	if (base_cpu < 0)
  		err(-ENODEV, "No valid cpus found");
-@@ -4529,6 +4870,7 @@ void set_base_cpu(void)
+@@ -4529,6 +4874,7 @@ void set_base_cpu(void)
  	if (debug > 1)
  		fprintf(outf, "base_cpu = %d\n", base_cpu);
  }
