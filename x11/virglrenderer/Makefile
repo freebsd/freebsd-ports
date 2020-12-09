@@ -10,6 +10,8 @@ COMMENT=	VirGL virtual OpenGL renderer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_riscv64=		fails to build: ../src/gallium/include/pipe/p_config.h:171:2: Unknown Endianness
+
 BUILD_DEPENDS=	cmake:devel/cmake
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy
