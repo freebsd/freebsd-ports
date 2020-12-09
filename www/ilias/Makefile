@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ilias
-PORTVERSION=	5.4.11
+PORTVERSION=	5.4.18
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www education
 
@@ -12,6 +12,7 @@ COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
 LICENSE=	GPLv2
 
 CONFLICTS=	ilias6-[0-9]*
+PORTSCOUT=	limit:^5\.
 
 RUN_DEPENDS=	convert:graphics/ImageMagick6 \
 		zip:archivers/zip \
