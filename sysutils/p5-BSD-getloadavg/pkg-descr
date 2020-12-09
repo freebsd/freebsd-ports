@@ -1,0 +1,6 @@
+Perl Interface to getloadavg(3)
+
+This module allows you to access load average from perl scripts
+without invoking uptime(1).
+
+WWW: https://metacpan.org/release/BSD-getloadavg
