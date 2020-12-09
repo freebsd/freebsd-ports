@@ -33,6 +33,7 @@
     SUBDIR += R-cran-cpp11
     SUBDIR += R-cran-crayon
     SUBDIR += R-cran-data.table
+    SUBDIR += R-cran-diffobj
     SUBDIR += R-cran-doParallel
     SUBDIR += R-cran-ellipsis
     SUBDIR += R-cran-evaluate
