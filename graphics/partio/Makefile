@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	partio
-PORTVERSION=	1.13.2
+PORTVERSION=	1.14.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics math
 
@@ -36,11 +36,14 @@ DOXYGEN_ALL_TARGET=	all doc
 
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 
-PYQT_USES=		pyqt:5 python
+PYQT_USES=		pyqt:5
 PYQT_USE=		PYQT=core,gui,widgets
 PYQT_PLIST_FILES=	bin/partinspect
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+	    '/^project/s,${PORTNAME},& VERSION ${PORTVERSION},' \
+		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's,OpenGL::OpenGL,$${OPENGL_LIBRARIES},' \
 		${WRKSRC}/src/tools/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's,^from Qt,from PyQt5,' \

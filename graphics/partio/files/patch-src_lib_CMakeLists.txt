@@ -1,0 +1,15 @@
+--- src/lib/CMakeLists.txt.orig	2020-12-02 01:19:18 UTC
++++ src/lib/CMakeLists.txt
+@@ -40,7 +40,11 @@ else()
+     set(PARTIO_LIBRARY_TYPE STATIC)
+ endif()
+ add_library(partio ${PARTIO_LIBRARY_TYPE} ${io_cpp} ${core_cpp})
+-set_target_properties(partio PROPERTIES OUTPUT_NAME partio POSITION_INDEPENDENT_CODE ON)
++set_target_properties(partio PROPERTIES
++    OUTPUT_NAME partio
++    VERSION ${CMAKE_PROJECT_VERSION}
++    SOVERSION 1
++    POSITION_INDEPENDENT_CODE ON)
+ 
+ target_include_directories(partio
+     PUBLIC
