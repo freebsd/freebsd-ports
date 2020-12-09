@@ -18,6 +18,7 @@ CONFLICTS=	hping-devel-[0-9]*
 WRKSRC=		${WRKDIR}/hping2-rc3
 
 BROKEN_aarch64=	fails to build: cannot find the byte order for this architecture, fix bytesex.h
+BROKEN_riscv64=	fails to build: cannot find the byte order for this architecture, fix bytesex.h
 
 USES=		gmake
 GNU_CONFIGURE=	yes
