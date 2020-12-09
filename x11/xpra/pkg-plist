@@ -497,6 +497,8 @@ libexec/xpra/xdg-open
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/gobject_util.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/graph.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/graph.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/gtk_clipboard.cpython-37.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/gtk_clipboard.cpython-37.pyc
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/gtk_notifier.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/gtk_notifier.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/__pycache__/gtk_util.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -520,6 +522,7 @@ libexec/xpra/xdg-open
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/graph.py
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/gtk3/gdk_atoms.so
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/gtk3/gdk_bindings.so
+%%PYTHON_SITELIBDIR%%/xpra/gtk_common/gtk_clipboard.py
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/gtk_notifier.py
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/gtk_util.py
 %%PYTHON_SITELIBDIR%%/xpra/gtk_common/gtk_view_clipboard.py
@@ -1473,6 +1476,9 @@ share/pixmaps/xpra.png
 %%HTML5%%%%DATADIR%%/www/js/Window.js
 %%HTML5%%%%DATADIR%%/www/js/Window.js.br
 %%HTML5%%%%DATADIR%%/www/js/Window.js.gz
+%%HTML5%%%%DATADIR%%/www/js/lib/AudioContextMonkeyPatch.js
+%%HTML5%%%%DATADIR%%/www/js/lib/AudioContextMonkeyPatch.js.br
+%%HTML5%%%%DATADIR%%/www/js/lib/AudioContextMonkeyPatch.js.gz
 %%HTML5%%%%DATADIR%%/www/js/lib/FileSaver.js
 %%HTML5%%%%DATADIR%%/www/js/lib/FileSaver.js.br
 %%HTML5%%%%DATADIR%%/www/js/lib/FileSaver.js.gz
@@ -1548,4 +1554,3 @@ share/pixmaps/xpra.png
 %%HTML5%%%%DATADIR%%/www/js/lib/zlib.pretty.js.map
 %%HTML5%%%%DATADIR%%/www/js/lib/zlib.pretty.js.map.br
 %%HTML5%%%%DATADIR%%/www/js/lib/zlib.pretty.js.map.gz
-@dir(0,0,1777) /var/run/xpra
