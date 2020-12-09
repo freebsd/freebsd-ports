@@ -1,6 +1,14 @@
---- CMakeModules/FindSCOTCH.cmake.orig	2020-09-20 01:42:12 UTC
+--- CMakeModules/FindSCOTCH.cmake.orig	2014-10-28 09:12:48 UTC
 +++ CMakeModules/FindSCOTCH.cmake
-@@ -121,6 +121,7 @@ endif()
+@@ -114,13 +114,14 @@ find_library(PTSCOTCHERR_LIBRARY
+   )
+ 
+ #set(SCOTCH_DEBUG 1)
+-set(SCOTCH_LIBRARIES ${PTSCOTCH_LIBRARY})
++set(SCOTCH_LIBRARIES ${SCOTCH_LIBRARY} ${SCOTCHERR_LIBRARY} ${PTSCOTCH_LIBRARY})
+ if (PTESMUMPS_LIBRARY)
+   set(SCOTCH_LIBRARIES ${SCOTCH_LIBRARIES}  ${PTESMUMPS_LIBRARY})
+ endif()
  set(SCOTCH_LIBRARIES ${SCOTCH_LIBRARIES} ${PTSCOTCHERR_LIBRARY})
  
  # Try compiling and running test program

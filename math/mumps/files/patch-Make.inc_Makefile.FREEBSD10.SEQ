@@ -1,4 +1,4 @@
---- Make.inc/Makefile.FREEBSD10.SEQ.orig	2019-04-03 14:40:12 UTC
+--- Make.inc/Makefile.FREEBSD10.SEQ.orig	2020-10-23 09:16:48 UTC
 +++ Make.inc/Makefile.FREEBSD10.SEQ
 @@ -20,7 +20,7 @@
  #
@@ -9,7 +9,17 @@
  #
  # You have to choose one among the following two lines depending on
  # the type of analysis you want to perform. If you want to perform only
-@@ -36,8 +36,8 @@ LPORDDIR = $(topdir)/PORD/lib/
+@@ -28,16 +28,16 @@
+ # variable below); for both parallel and sequential analysis choose the second 
+ # line (remember to add -Dptscotch in the ORDERINGSF variable below)
+ 
+-#LSCOTCH    = -L$(SCOTCHDIR)/lib -lesmumps -lscotch -lscotcherr
+-#LSCOTCH    = -L$(SCOTCHDIR)/lib -lptesmumps -lptscotch -lptscotcherr
++#LSCOTCH    = -L$(SCOTCHDIR)/lib -lesmumps -lscotch -lscotcherr -lz
++#LSCOTCH    = -L$(SCOTCHDIR)/lib -lptesmumps -lptscotch -lptscotcherr -lz
+ 
+ 
+ LPORDDIR = $(topdir)/PORD/lib/
  IPORD    = -I$(topdir)/PORD/include/
  LPORD    = -L$(LPORDDIR) -lpord
  

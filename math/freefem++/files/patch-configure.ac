@@ -27,12 +27,14 @@
  	[[libseq],[-lmpiseq_seq],[${inc_usr_include}mumps_seq/mpi.h]],
  	[[mumps_ptscotch],[-lpord_ptscotch -lmumps_common_ptscotch -ldmumps_ptscotch -lzmumps_ptscotch -lpord_ptscotch],[dmumps_c.h]],
  	[[mumps_scotch],[-lpord_scotch -lmumps_common_scotch -ldmumps_scotch -lzmumps_scotch -lpord_scotch],[dmumps_c.h]],
-@@ -2092,7 +2092,7 @@ m4_map([AC_FF_WHERELIB],[
+@@ -2092,8 +2092,8 @@ m4_map([AC_FF_WHERELIB],[
  	[[superlu],[-lsuperlu],[${inc_usr_include}superlu/superlu_enum_consts.h],[]],
          [[blacs],[ -lblacsCinit$ff_with_mpi	-lblacsF77init$ff_with_mpi	-lblacs$ff_with_mpi],[]],
          [[scalapack],[-lscalapack$ff_with_mpi],[]],
 -        [[scotch],[-lscotch -lscotcherr],[scotch.h]],
+-        [[ptscotch],[-lptscotch -lptscotcherr],[ptscotch.h]],
 +        [[scotch],[-lscotch -lscotcherr], [scotch.h]],
-         [[ptscotch],[-lptscotch -lptscotcherr],[ptscotch.h]],
++        [[ptscotch],[-lscotch -lscotcherr -lptscotch -lptscotcherr],[ptscotch.h]],
  	[[metis],[-lmetis],[${inc_usr_include}metis/metis.h],[]],
  	[[metis],[-lmetis],[metis.h],[]],
+ 	[[parmetis],[-lparmetis -lmetis],[],[]],

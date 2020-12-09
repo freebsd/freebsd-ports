@@ -3,8 +3,8 @@
 
 PORTNAME=	code_saturne
 PORTVERSION=	6.1.2
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	science parallel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -64,7 +64,7 @@ PARMETIS_CONFIGURE_ON=	--with-metis-include="${LOCALBASE}/include/parmetis"	\
 			--with-metis-lib="${LOCALBASE}/lib/parmetis"
 PARMETIS_CONFIGURE_ENV=	LIBS=-lexecinfo
 SCOTCH_DESC=		Support of Scotch
-SCOTCH_BUILD_DEPENDS=	scotch>0:cad/scotch
+SCOTCH_LIB_DEPENDS=	libscotch.so:cad/scotch
 SCOTCH_CONFIGURE_ON=	--with-scotch-include="${LOCALBASE}/include"
 
 TEST_TARGET=	check
@@ -86,7 +86,7 @@ CONFIGURE_ARGS+=	--disable-openmp
 
 .if ${PORT_OPTIONS:MDOCS}
 USE_TEX=	tex:build
-BUILD_DEPENDS+=	fig2dev:print/transfig		\
+BUILD_DEPENDS+=	fig2dev:print/fig2dev		\
 		doxygen:devel/doxygen		\
 		dot:graphics/graphviz		\
 		${PY_SPHINX}

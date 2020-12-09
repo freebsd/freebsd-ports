@@ -3,7 +3,7 @@
 
 PORTNAME=	scotch
 DISTVERSION=	6.0.4-aster7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -30,16 +30,19 @@ ALL_TARGET=	esmumps
 TEST_TARGET=	check
 MAKE_ENV=	prefix=${STAGEDIR}${PREFIX} mandir=${STAGEDIR}${PREFIX}/share/man	\
 		-DSCOTCH_PTHREAD_NUMBER=2
+USE_LDCONFIG=	yes
 
 DOCVER=		${PORTVERSION:R:R}
 PORTDOCS=	ptscotch_user${DOCVER}.pdf scotch_user${DOCVER}.pdf scotch_example.f
-EXAMPLES=	scotch_example.f
+LIBS=		esmumps scotch scotcherr scotcherrexit scotchmetis
 
 .if !defined(WITHOUT_MPI)
 LIB_DEPENDS+=	libmpi.so:net/mpich
 
 ALL_TARGET+=	ptesmumps
 TEST_TARGET+=	ptcheck
+
+LIBS+=		ptesmumps ptscotch ptscotcherr ptscotcherrexit ptscotchparmetis
 
 PLIST_SUB+=	MPI=""
 .else
@@ -63,7 +66,6 @@ pre-everything::
 
 pre-configure:
 	${REINPLACE_CMD} -e 's/-lthread/-pthread/;s/-lpthread/-pthread/'\
-		-e 's/CLIBFLAGS	=/CLIBFLAGS	= -fPIC/'	\
 		${WRKSRC}/src/Make.inc/Makefile.inc.${MF}_pc_freebsd
 	${LN} -sf ${WRKSRC}/src/Make.inc/Makefile.inc.${MF}_pc_freebsd	\
 		${WRKSRC}/src/Makefile.inc
@@ -71,7 +73,11 @@ pre-configure:
 		-e 's|\&\& \$$\(MAKE\)||' ${WRKSRC}/src/Makefile
 
 post-stage:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/lib*
+.for l in ${LIBS}
+	${MV} ${STAGEDIR}${PREFIX}/lib/lib${l}.so ${STAGEDIR}${PREFIX}/lib/lib${l}.so.0
+	${LN} -sf lib${l}.so.0 ${STAGEDIR}${PREFIX}/lib/lib${l}.so
+.endfor
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

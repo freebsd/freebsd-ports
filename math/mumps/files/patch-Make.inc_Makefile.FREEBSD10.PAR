@@ -15,8 +15,8 @@
  
 -#LSCOTCH    = -L$(SCOTCHDIR)/lib -lesmumps -lscotch -lscotcherr
 -#LSCOTCH    = -L$(SCOTCHDIR)/lib -lptesmumps -lptscotch -lptscotcherr
-+#LSCOTCH    = -L@LOCALBASE@/lib -lesmumps -lscotch -lscotcherr
-+LSCOTCH    = -L@LOCALBASE@/lib -lptesmumps -lptscotch -lptscotcherr
++#LSCOTCH    = -L@LOCALBASE@/lib -lesmumps -lscotch -lscotcherr -lz
++LSCOTCH    = -L@LOCALBASE@/lib -lptesmumps -lscotch -lptscotch -lptscotcherr -lz
  
  
  LPORDDIR = $(topdir)/PORD/lib/

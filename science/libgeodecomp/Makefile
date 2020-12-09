@@ -3,7 +3,7 @@
 
 PORTNAME=		libgeodecomp
 PORTVERSION=		0.4.0
-PORTREVISION=		20
+PORTREVISION=		21
 CATEGORIES=		science devel
 MASTER_SITES=		http://www.libgeodecomp.org/archive/
 
@@ -35,7 +35,7 @@ SILO_LIB_DEPENDS=	libsiloh5.so:science/silo
 SILO_CMAKE_BOOL=	WITH_SILO
 
 SCOTCH_DESC=		Enable graph partitioning based on Scotch/Scotch-PT
-SCOTCH_BUILD_DEPENDS=	${LOCALBASE}/lib/libscotch.a:cad/scotch
+SCOTCH_LIB_DEPENDS=	libscotch.so:cad/scotch
 SCOTCH_CMAKE_BOOL=	WITH_SCOTCH
 
 .include <bsd.port.mk>

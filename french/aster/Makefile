@@ -3,6 +3,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -27,14 +28,12 @@ NOT_FOR_ARCHS_REASON=	ARG_MAX is too small for Code_Aster on 32 bits systems
 # - WITHOUT_GRACE: don't install Grace (used to create 2D graph);
 # - WITHOUT_MACR_RECAL: don't install Numerical Python
 #			(required by the macro MACR_RECAL);
-# - WITHOUT_SCOTCH: don't install Scotch.
 # - WITH_MUMPS: install the interface between Code_Aster and MUMPS (experimental)
 #
 #-----------------------------------------------------------------------
 
 BUILD_DEPENDS+=	astk-serveur>0:cad/astk-serveur	\
 		${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
-		${LOCALBASE}/lib/libscotch.a:cad/scotch		\
 		gnproc:sysutils/coreutils			\
 		bash:shells/bash				\
 		getopt>0:misc/getopt				\
@@ -42,6 +41,7 @@ BUILD_DEPENDS+=	astk-serveur>0:cad/astk-serveur	\
 		${PYNUMPY}
 #		pylupdate5:textproc/py-qt5-xml
 LIB_DEPENDS+=	libhdf5.so:science/hdf5				\
+		libscotch.so:cad/scotch				\
 		libmetis.so:math/metis				\
 		libmed.so:french/med				\
 		libAsterInterface.so:science/tfel-edf
@@ -57,7 +57,7 @@ USE_GCC=	yes
 USE_BINUTILS=	yes
 USE_QT=		linguisttools_build
 
-#CONFLICTS_BUILD=${PYTHON_PKGNAMEPREFIX}cysignals-1.*
+CONFLICTS_BUILD=${PYTHON_PKGNAMEPREFIX}cysignals-1.*
 
 .if defined(WITH_ATLAS)
 USES+=		blaslapack:atlas
@@ -212,7 +212,7 @@ v_ifdef=	${OPSYS:tu}
 SHELL_INSTALL_ASTER=	${LOCALBASE}/bin/${SHIA}
 tcl_dir=	${LOCALBASE}
 hdf_dir=	${LOCALBASE}
-lib_math=	"-L${LOCALBASE}/lib ${BLASLIB} ${LAPACKLIB} ${ATLASLIB}"
+lib_math=	"-L${LOCALBASE}/lib ${BLASLIB} ${LAPACKLIB} ${ATLASLIB} -lscotch -lscotcherr"
 
 LASTKDIR?=	${PORTNAME}/ASTK/ASTK_CLIENT
 ASTKDIR=	${LOCALBASE}/${LASTKDIR}

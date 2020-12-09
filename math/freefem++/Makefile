@@ -4,6 +4,7 @@
 PORTNAME=	freefem++
 PORTVERSION=	4.6
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	math science
 
 MAINTAINER=	kh@mogami.com
@@ -11,8 +12,7 @@ COMMENT=	Partial differential equation solver
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	amk_fft2:cad/scotch		\
-		bash:shells/bash		\
+BUILD_DEPENDS=	bash:shells/bash		\
 		gmm++>0:math/gmm++		\
 		pipe:misc/pipe			\
 		tetgen:math/tetgen
@@ -23,6 +23,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5		\
 		libgsl.so:math/gsl		\
 		libipopt.so:math/ipopt		\
 		libmetis.so:math/metis		\
+		libscotch.so:cad/scotch		\
 		libcmumps.so:math/mumps		\
 		libnlopt.so:math/nlopt		\
 		libsuperlu.so:math/superlu	\
@@ -45,7 +46,7 @@ LDFLAGS+=	-s
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CNOFLAGS="${CFLAGS}"
+CONFIGURE_ENV=	CNOFLAGS="${CFLAGS}" LIBS=-lz
 CONFIGURE_ARGS=	--disable-download		\
 		--without-mpi			\
 		--with-blas=${BLASLIB}		\
