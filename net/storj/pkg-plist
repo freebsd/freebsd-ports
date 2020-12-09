@@ -1,6 +1,7 @@
 bin/certificates
 bin/inspector
 bin/metric-receiver
+bin/multinode
 bin/satellite
 bin/segment-reaper
 bin/storagenode

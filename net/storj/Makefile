@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	storj
-PORTVERSION=	1.17.4
+PORTVERSION=	1.18.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -16,11 +16,16 @@ USE_GITHUB=	yes
 
 .include "${.CURDIR}/Makefile.deps"
 
-STORJ_CMDS=	certificates identity inspector metric-receiver \
+STORJ_CMDS=	certificates identity inspector metric-receiver multinode \
 		satellite segment-reaper storagenode storagenode-updater \
 		storj-admin storj-sim uplink versioncontrol
 
 GO_TARGET=	${STORJ_CMDS:S,^,./cmd/,}
+
+post-patch:
+# Unbreak the build on 32-bit architectures
+	@${REINPLACE_CMD} -e 's,1 << 31,1 << 30,' \
+		${WRKSRC}/cmd/storj-sim/main.go
 
 post-stage:
 # Avoid conflict with `graphics/mesa-demos'
