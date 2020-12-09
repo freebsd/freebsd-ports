@@ -11,6 +11,8 @@ COMMENT=	C++ caching compiler based on clang
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
+BROKEN_riscv64=		fails to build: CMake Error at cmake/config-ix.cmake:407: Unknown architecture riscv64
+
 BUILD_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake compiler:c++11-lang gnome libedit python:3.4+ shebangfix
