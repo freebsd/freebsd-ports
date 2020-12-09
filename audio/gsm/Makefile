@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
 		http://www.quut.com/gsm/ \
 		http://downloads.openwrt.org/sources/
 
-MAINTAINER=	m.tsatsenko@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio converter and library for converting u-law to gsm encoding
 
 LICENSE=	TU-BERLIN
