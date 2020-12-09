@@ -178,6 +178,7 @@
     SUBDIR += uTox
     SUBDIR += vqcc-gtk
     SUBDIR += xmpp-client
+    SUBDIR += yume
     SUBDIR += zoom
 
 .include <bsd.port.subdir.mk>

@@ -1,0 +1,152 @@
+# $FreeBSD$
+
+PORTNAME=	yume
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.0
+CATEGORIES=	net-im
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Encrypted peer-to-peer IPv6 UDP messaging terminal
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	yamafaktory
+
+CARGO_CRATES=	aead-0.2.0 \
+		ansi_term-0.11.0 \
+		arc-swap-0.4.4 \
+		async-attributes-1.1.1 \
+		async-std-1.6.0 \
+		async-task-3.0.0 \
+		atty-0.2.13 \
+		autocfg-0.1.7 \
+		autocfg-1.0.0 \
+		base64-0.12.1 \
+		bitflags-1.2.1 \
+		bumpalo-3.2.1 \
+		cc-1.0.52 \
+		cfg-if-0.1.10 \
+		chacha20-0.3.3 \
+		chacha20poly1305-0.4.1 \
+		clap-2.33.0 \
+		cloudabi-0.0.3 \
+		crossbeam-0.7.3 \
+		crossbeam-channel-0.4.0 \
+		crossbeam-deque-0.7.2 \
+		crossbeam-epoch-0.8.0 \
+		crossbeam-queue-0.2.1 \
+		crossbeam-utils-0.7.2 \
+		crossterm-0.17.5 \
+		crossterm_winapi-0.6.1 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		futures-0.3.5 \
+		futures-channel-0.3.5 \
+		futures-core-0.3.5 \
+		futures-executor-0.3.5 \
+		futures-io-0.3.5 \
+		futures-macro-0.3.5 \
+		futures-sink-0.3.5 \
+		futures-task-0.3.5 \
+		futures-timer-3.0.2 \
+		futures-util-0.3.5 \
+		generic-array-0.12.3 \
+		gloo-timers-0.2.1 \
+		heck-0.3.1 \
+		hermit-abi-0.1.3 \
+		iovec-0.1.4 \
+		itoa-0.4.4 \
+		js-sys-0.3.39 \
+		kernel32-sys-0.2.2 \
+		kv-log-macro-1.0.4 \
+		lazy_static-1.4.0 \
+		libc-0.2.69 \
+		lock_api-0.3.3 \
+		log-0.4.8 \
+		memchr-2.3.3 \
+		memoffset-0.5.1 \
+		mio-0.6.21 \
+		miow-0.2.1 \
+		net2-0.2.33 \
+		nix-0.17.0 \
+		num_cpus-1.13.0 \
+		once_cell-1.3.1 \
+		parking_lot-0.10.0 \
+		parking_lot_core-0.7.0 \
+		pin-project-0.4.16 \
+		pin-project-internal-0.4.16 \
+		pin-project-lite-0.1.4 \
+		pin-utils-0.1.0 \
+		piper-0.1.2 \
+		poly1305-0.5.2 \
+		proc-macro-error-1.0.2 \
+		proc-macro-error-attr-1.0.2 \
+		proc-macro-hack-0.5.11 \
+		proc-macro-nested-0.1.3 \
+		proc-macro2-1.0.13 \
+		quote-1.0.2 \
+		redox_syscall-0.1.56 \
+		ring-0.16.13 \
+		rustc_version-0.2.3 \
+		ryu-1.0.2 \
+		scoped-tls-hkt-0.1.2 \
+		scopeguard-1.0.0 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		send_wrapper-0.4.0 \
+		serde-1.0.110 \
+		serde_derive-1.0.110 \
+		serde_json-1.0.53 \
+		signal-hook-0.1.15 \
+		signal-hook-registry-1.2.0 \
+		slab-0.4.2 \
+		smallvec-1.1.0 \
+		smol-0.1.10 \
+		socket2-0.3.12 \
+		spin-0.5.2 \
+		stream-cipher-0.3.2 \
+		strsim-0.8.0 \
+		structopt-0.3.14 \
+		structopt-derive-0.4.7 \
+		subtle-2.2.2 \
+		syn-1.0.22 \
+		syn-mid-0.5.0 \
+		textwrap-0.11.0 \
+		thiserror-1.0.19 \
+		thiserror-impl-1.0.19 \
+		typenum-1.11.2 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.7 \
+		unicode-xid-0.2.0 \
+		universal-hash-0.3.0 \
+		untrusted-0.7.1 \
+		vec_map-0.8.2 \
+		version_check-0.9.1 \
+		void-1.0.2 \
+		wasm-bindgen-0.2.62 \
+		wasm-bindgen-backend-0.2.62 \
+		wasm-bindgen-futures-0.4.12 \
+		wasm-bindgen-macro-0.2.62 \
+		wasm-bindgen-macro-support-0.2.62 \
+		wasm-bindgen-shared-0.2.62 \
+		web-sys-0.3.39 \
+		wepoll-binding-2.0.2 \
+		wepoll-sys-2.0.0 \
+		winapi-0.2.8 \
+		winapi-0.3.8 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		ws2_32-sys-0.2.1 \
+		zeroize-1.1.0
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
