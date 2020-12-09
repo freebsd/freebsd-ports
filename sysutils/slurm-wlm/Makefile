@@ -2,7 +2,7 @@
 
 PORTNAME=	slurm
 DISTVERSION=	20.02.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -82,8 +82,8 @@ RRD_CONFIGURE_WITH=	rrdtool
 CONFIGURE_ARGS=	--without-ofed
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 
-CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lprocstat
+CFLAGS+=	-I${WRKSRC}/slurm -I${LOCALBASE}/include -fcommon
+LDFLAGS+=	-L${LOCALBASE}/lib -lsysinfo -lprocstat -fcommon
 
 # Hack around nonfunctional --disable-gtktest flag
 pre-configure-GUI-off:
