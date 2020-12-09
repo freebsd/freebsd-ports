@@ -259,7 +259,8 @@ _NATIVE_BACKENDS=	Mips
 .elif ${ARCH:Mpowerpc*}
 _NATIVE_BACKENDS=	PowerPC
 .elif ${ARCH:Mriscv*}
-BROKEN_riscv=	No non-experimental native backend
+BROKEN_riscv=		No non-experimental native backend.  Use llvm 9 or above.
+BROKEN_riscv64=		No non-experimental native backend.  Use llvm 9 or above.
 .endif
 NATIVE_BACKENDS=	${_NATIVE_BACKENDS}
 .if ${PORT_OPTIONS:MBE_AMDGPU}
@@ -272,7 +273,7 @@ _BE_LIBS_COMMON=	CodeGen Desc Info
 _BE_LIBS_AArch64=	AsmParser AsmPrinter Disassembler Utils
 _BE_LIBS_AMDGPU=	AsmParser AsmPrinter Disassembler Utils
 _BE_LIBS_ARM=		AsmParser AsmPrinter Disassembler Utils
-_BE_LIBS_BPF=		AsmParser AsmPrinter Disassembler 
+_BE_LIBS_BPF=		AsmParser AsmPrinter Disassembler
 _BE_LIBS_Hexagon=	AsmParser Disassembler
 _BE_LIBS_Lanai=		AsmParser AsmPrinter Disassembler
 _BE_LIBS_MSP430=	AsmParser AsmPrinter Disassembler
