@@ -11,6 +11,8 @@ COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_riscv64=		fails to build: Hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension
+
 BUILD_DEPENDS=	erlc:lang/erlang
 RUN_DEPENDS=	erl:lang/erlang
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
