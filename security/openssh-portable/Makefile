@@ -188,7 +188,7 @@ RC_SCRIPT_NAME=		openssh
 VERSION_ADDENDUM_DEFAULT?=	${OPSYS}-${PKGNAME}
 
 CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
-CFLAGS_gcc=	-Wno-stringop-truncation
+CFLAGS_gcc=	-Wno-stringop-truncation -Wno-stringop-overflow
 
 post-patch:
 	@${REINPLACE_CMD} \
