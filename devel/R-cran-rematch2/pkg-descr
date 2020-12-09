@@ -1,0 +1,4 @@
+Wrappers on 'regexpr' and 'gregexpr' to return the match results in tidy data
+frames.
+
+WWW: https://github.com/r-lib/rematch2#readme
