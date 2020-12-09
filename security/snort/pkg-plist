@@ -144,6 +144,10 @@ lib/snort_dynamicpreprocessor/libsf_reputation_preproc.a
 lib/snort_dynamicpreprocessor/libsf_reputation_preproc.so
 lib/snort_dynamicpreprocessor/libsf_reputation_preproc.so.0
 lib/snort_dynamicpreprocessor/libsf_reputation_preproc.so.0.0.0
+lib/snort_dynamicpreprocessor/libsf_s7commplus_preproc.a
+lib/snort_dynamicpreprocessor/libsf_s7commplus_preproc.so
+lib/snort_dynamicpreprocessor/libsf_s7commplus_preproc.so.0
+lib/snort_dynamicpreprocessor/libsf_s7commplus_preproc.so.0.0.0
 lib/snort_dynamicpreprocessor/libsf_sdf_preproc.a
 lib/snort_dynamicpreprocessor/libsf_sdf_preproc.so
 lib/snort_dynamicpreprocessor/libsf_sdf_preproc.so.0
