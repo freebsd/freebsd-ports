@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	xstatic-angular-gettext
-PORTVERSION=	2.3.8.0
-PORTREVISION=	2
+PORTVERSION=	2.4.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	XStatic-Angular-Gettext-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Gettext support for Angular.js (angular-gettext)
+COMMENT=	Angular-Gettext (XStatic packaging standard)
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xstatic>=0:devel/py-xstatic@${PY_FLAVOR}
 
