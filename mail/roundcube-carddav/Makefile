@@ -3,6 +3,7 @@
 
 PORTNAME=	carddav
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/blind-coder/rcmcarddav/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	roundcube-
