@@ -140,9 +140,9 @@
     SUBDIR += tiemu3
     SUBDIR += tilem
     SUBDIR += tme
+    SUBDIR += tnylpo
     SUBDIR += tpm-emulator
     SUBDIR += tuxnes
-    SUBDIR += tnylpo
     SUBDIR += uae
     SUBDIR += ucon64
     SUBDIR += ukncbtl
