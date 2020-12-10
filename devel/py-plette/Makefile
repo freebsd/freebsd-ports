@@ -1,0 +1,30 @@
+# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	plette
+PORTVERSION=	0.2.3
+CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Structured Pipfile and Pipfile.lock models
+
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tomlkit>=0:textproc/py-tomlkit@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
+
+OPTIONS_DEFINE=	VALIDATION
+OPTIONS_DEFAULT=VALIDATION
+VALIDATION_DESC=Validation support
+
+VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Cerberus>=0:devel/py-cerberus@${PY_FLAVOR}
+
+.include <bsd.port.mk>

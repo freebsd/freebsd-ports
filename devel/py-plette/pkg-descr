@@ -1,0 +1,4 @@
+Plette implements Pipfle and Pipfile.lock parsers, generators, and optional
+validators to let the user work with them in a structured manner.
+
+WWW: https://github.com/sarugaku/plette

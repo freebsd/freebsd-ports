@@ -4775,6 +4775,7 @@
     SUBDIR += py-pkgconfig
     SUBDIR += py-plac
     SUBDIR += py-plan
+    SUBDIR += py-plette
     SUBDIR += py-plex
     SUBDIR += py-pluggy
     SUBDIR += py-pluginbase
