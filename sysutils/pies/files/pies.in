@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: pies
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name="pies"
+rcvar=pies_enable
+command="%%PREFIX%%/sbin/${name}"
+ctlcommand="%%PREFIX%%/bin/${name}ctl"
+pidfile="/var/run/${name}/${name}.pid"
+
+: ${pies_enable="NO"}
+
+start_cmd="${name}_start"
+reload_cmd="${name}_reload"
+restart_cmd="${name}_restart"
+status_cmd="${name}_status"
+stop_cmd="${name}_stop"
+configtest_cmd="${name}_configtest"
+
+extra_commands="reload configtest"
+
+pies_start()
+{
+	${command}
+}
+
+pies_reload()
+{
+	${ctlcommand} -v config reload
+}
+
+pies_restart()
+{
+	${ctlcommand} reboot
+}
+
+pies_status()
+{
+	${ctlcommand} -v list
+}
+
+pies_stop()
+{
+	${ctlcommand} shutdown
+}
+
+pies_configtest()
+{
+	${command} --lint
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

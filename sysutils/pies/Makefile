@@ -3,6 +3,7 @@
 
 PORTNAME=	pies
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
@@ -14,6 +15,7 @@ LICENSE=	GPLv3+
 
 USES=		charsetfix iconv tar:bz2
 GNU_CONFIGURE=	yes
+USE_RC_SUBR=	${PORTNAME}
 
 INFO=		${PORTNAME}
 PORTDOCS=	ChangeLog NEWS README
