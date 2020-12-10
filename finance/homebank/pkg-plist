@@ -136,7 +136,6 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/images/dlg-filter4.png
 %%DATADIR%%/help/images/dlg-filter5.png
 %%DATADIR%%/help/images/dlg-filter6.png
-%%DATADIR%%/help/images/dlg-payee.png
 %%DATADIR%%/help/images/dlg-payee1.png
 %%DATADIR%%/help/images/dlg-payee2.png
 %%DATADIR%%/help/images/dlg-prefs1.png
@@ -317,5 +316,8 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/icons/hicolor/scalable/actions/list-collapse-all-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/list-expand-all-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/list-merge-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/text-casesensitive-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/text-regularexpression-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/toggle-sign-symbolic.svg
+%%DATADIR%%/images/homebank-icon.svg
 %%DATADIR%%/images/splash.png
