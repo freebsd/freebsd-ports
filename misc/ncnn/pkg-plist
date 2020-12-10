@@ -14,12 +14,13 @@ include/ncnn/layer_type_enum.h
 include/ncnn/mat.h
 include/ncnn/modelbin.h
 include/ncnn/net.h
-include/ncnn/opencv.h
 include/ncnn/option.h
 include/ncnn/paramdict.h
 include/ncnn/pipeline.h
 include/ncnn/pipelinecache.h
 include/ncnn/platform.h
+include/ncnn/simpleocv.h
+include/ncnn/simpleomp.h
 include/ncnn/simplestl.h
 lib/cmake/ncnn/ncnn-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ncnn/ncnn.cmake
