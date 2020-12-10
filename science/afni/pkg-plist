@@ -904,6 +904,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_cckung.jpg
 %%DATADIR%%/funstuff/face_ccss.jpg
 %%DATADIR%%/funstuff/face_cesarcaballo.jpg
+%%DATADIR%%/funstuff/face_chat_toutplat_focused.jpg
 %%DATADIR%%/funstuff/face_cheesehead.jpg
 %%DATADIR%%/funstuff/face_chen_gang.jpg
 %%DATADIR%%/funstuff/face_chiaraBagnato.jpg
@@ -1381,6 +1382,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/splash_Sunset_VG.jpg
 %%DATADIR%%/funstuff/splash_Traffic_VG.jpg
 %%DATADIR%%/funstuff/splash_UWash.kayakBG.jpg
+%%DATADIR%%/funstuff/splash_UtahCitadel.jpg
 %%DATADIR%%/funstuff/splash_Utah_Dog.jpg
 %%DATADIR%%/funstuff/splash_Utah_Tree.jpg
 %%DATADIR%%/funstuff/splash_Wave_VG.jpg
@@ -1528,6 +1530,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/splash_nihfence.jpg
 %%DATADIR%%/funstuff/splash_nihwalk.jpg
 %%DATADIR%%/funstuff/splash_nimhans2020dti.jpg
+%%DATADIR%%/funstuff/splash_nimhans_dti_2020.jpg
 %%DATADIR%%/funstuff/splash_njit_2019.jpg
 %%DATADIR%%/funstuff/splash_okazaki_A.jpg
 %%DATADIR%%/funstuff/splash_onprc_2019.jpg
@@ -1595,6 +1598,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/splash_umiami.jpg
 %%DATADIR%%/funstuff/splash_usajapan.jpg
 %%DATADIR%%/funstuff/splash_utah_sulfur.jpg
+%%DATADIR%%/funstuff/splash_utaharch.jpg
 %%DATADIR%%/funstuff/splash_uwm2019.jpg
 %%DATADIR%%/funstuff/splash_vancouver.jpg
 %%DATADIR%%/funstuff/splash_vincent.jpg
