@@ -62,7 +62,7 @@ diff --git dom/media/AudioStream.h dom/media/AudioStream.h
 index 933e4cb3bfdb5..5d2181e632af9 100644
 --- dom/media/AudioStream.h
 +++ dom/media/AudioStream.h
-@@ -304,7 +304,6 @@
+@@ -307,7 +307,6 @@ class AudioStream final
  
    template <typename Function, typename... Args>
    int InvokeCubeb(Function aFunction, Args&&... aArgs);
@@ -70,13 +70,13 @@ index 933e4cb3bfdb5..5d2181e632af9 100644
  
    // The monitor is held to protect all access to member variables.
    Monitor mMonitor;
-@@ -338,9 +337,6 @@
+@@ -341,9 +340,6 @@ class AudioStream final
    // the default device is used. It is set
    // during the Init() in decoder thread.
    RefPtr<AudioDeviceInfo> mSinkInfo;
 -  /* Contains the id of the audio thread, from profiler_get_thread_id. */
 -  std::atomic<int> mAudioThreadId;
 -  const bool mSandboxed = false;
- };
  
- }  // namespace mozilla
+   MozPromiseHolder<MediaSink::EndedPromise> mEndedPromise;
+   Atomic<bool> mPlaybackComplete;

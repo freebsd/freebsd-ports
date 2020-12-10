@@ -1,0 +1,148 @@
+commit 16e7bdc29390
+Author: Dan Minor <dminor@mozilla.com>
+Date:   Thu Nov 19 14:14:40 2020 +0000
+
+    Bug 1677715 - Build libpipewire as a dependency of libwebrtc; r=ng
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D97431
+---
+ dom/media/webrtc/third_party_build/moz.build | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git dom/media/webrtc/third_party_build/moz.build dom/media/webrtc/third_party_build/moz.build
+index db10dab7ff21..dc0df3ba1b6c 100644
+--- dom/media/webrtc/third_party_build/moz.build
++++ dom/media/webrtc/third_party_build/moz.build
+@@ -56,6 +56,9 @@ webrtc_non_unified_sources = [
+     "../../../../third_party/libwebrtc/webrtc/video/overuse_frame_detector.cc",  # Because of name clash with call_stats.cc on kWeightFactor
+ ]
+ 
++if CONFIG["MOZ_WIDGET_TOOLKIT"] == "gtk":
++    DIRS += ["../../../../third_party/pipewire/libpipewire"]
++
+ GN_DIRS += ["../../../../third_party/libwebrtc/webrtc"]
+ 
+ gn_vars_copy = gn_vars.copy()
+commit 553093ff0fa7
+Author: Dan Minor <dminor@mozilla.com>
+Date:   Thu Nov 19 14:14:50 2020 +0000
+
+    Bug 1677715 - Regenerate moz.build files; r=ng
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D97433
+---
+ .../desktop_capture_generic_gn/moz.build           | 51 +++++++++++++++++-----
+ third_party/libwebrtc/webrtc/moz.build             |  3 --
+ 2 files changed, 40 insertions(+), 14 deletions(-)
+
+diff --git third_party/libwebrtc/webrtc/modules/desktop_capture/desktop_capture_generic_gn/moz.build third_party/libwebrtc/webrtc/modules/desktop_capture/desktop_capture_generic_gn/moz.build
+index 8df8b8b993f9..a0e116195e0e 100644
+--- third_party/libwebrtc/webrtc/modules/desktop_capture/desktop_capture_generic_gn/moz.build
++++ third_party/libwebrtc/webrtc/modules/desktop_capture/desktop_capture_generic_gn/moz.build
+@@ -5,6 +5,8 @@
+ 
+   ### This moz.build was AUTOMATICALLY GENERATED from a GN config,  ###
+   ### DO NOT edit it by hand.                                       ###
++if CONFIG["MOZ_WIDGET_TOOLKIT"] == "gtk":
++    CXXFLAGS += CONFIG["TK_CFLAGS"]
+ 
+ COMPILE_FLAGS["OS_INCLUDES"] = []
+ AllowCompilerWarnings()
+@@ -25,8 +27,7 @@ LOCAL_INCLUDES += [
+     "/ipc/chromium/src",
+     "/ipc/glue",
+     "/media/libyuv/libyuv/include/",
+-    "/third_party/libwebrtc/webrtc/",
+-    "/third_party/pipewire"
++    "/third_party/libwebrtc/webrtc/"
+ ]
+ 
+ UNIFIED_SOURCES += [
+@@ -162,7 +163,6 @@ if CONFIG["OS_TARGET"] == "Linux":
+     DEFINES["WEBRTC_LINUX"] = True
+     DEFINES["WEBRTC_POSIX"] = True
+     DEFINES["_FILE_OFFSET_BITS"] = "64"
+-    DEFINES["WEBRTC_USE_PIPEWIRE"] = "1"
+ 
+     OS_LIBS += [
+         "rt",
+@@ -195,14 +195,6 @@ if CONFIG["OS_TARGET"] == "Linux":
+         "/third_party/libwebrtc/webrtc/modules/desktop_capture/window_capturer_linux.cc"
+     ]
+ 
+-    CXXFLAGS += CONFIG['TK_CFLAGS']
+-
+-    UNIFIED_SOURCES += [
+-        "/third_party/libwebrtc/webrtc/modules/desktop_capture/linux/base_capturer_pipewire.cc",
+-        "/third_party/libwebrtc/webrtc/modules/desktop_capture/linux/screen_capturer_pipewire.cc",
+-        "/third_party/libwebrtc/webrtc/modules/desktop_capture/linux/window_capturer_pipewire.cc"
+-    ]
+-
+ if CONFIG["OS_TARGET"] == "NetBSD":
+ 
+     DEFINES["USE_X11"] = "1"
+@@ -393,6 +385,17 @@ if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
+ 
+     DEFINES["DISABLE_NACL"] = True
+     DEFINES["NO_TCMALLOC"] = True
++    DEFINES["WEBRTC_USE_PIPEWIRE"] = True
++
++    LOCAL_INCLUDES += [
++        "/third_party/pipewire/"
++    ]
++
++    UNIFIED_SOURCES += [
++        "/third_party/libwebrtc/webrtc/modules/desktop_capture/linux/base_capturer_pipewire.cc",
++        "/third_party/libwebrtc/webrtc/modules/desktop_capture/linux/screen_capturer_pipewire.cc",
++        "/third_party/libwebrtc/webrtc/modules/desktop_capture/linux/window_capturer_pipewire.cc"
++    ]
+ 
+ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
+ 
+@@ -400,6 +403,32 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
+         "-msse2"
+     ]
+ 
++    DEFINES["WEBRTC_USE_PIPEWIRE"] = True
++
++    LOCAL_INCLUDES += [
++        "/third_party/pipewire/"
++    ]
++
++    UNIFIED_SOURCES += [
++        "/third_party/libwebrtc/webrtc/modules/desktop_capture/linux/base_capturer_pipewire.cc",
++        "/third_party/libwebrtc/webrtc/modules/desktop_capture/linux/screen_capturer_pipewire.cc",
++        "/third_party/libwebrtc/webrtc/modules/desktop_capture/linux/window_capturer_pipewire.cc"
++    ]
++
++if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
++
++    DEFINES["WEBRTC_USE_PIPEWIRE"] = True
++
++    LOCAL_INCLUDES += [
++        "/third_party/pipewire/"
++    ]
++
++    UNIFIED_SOURCES += [
++        "/third_party/libwebrtc/webrtc/modules/desktop_capture/linux/base_capturer_pipewire.cc",
++        "/third_party/libwebrtc/webrtc/modules/desktop_capture/linux/screen_capturer_pipewire.cc",
++        "/third_party/libwebrtc/webrtc/modules/desktop_capture/linux/window_capturer_pipewire.cc"
++    ]
++
+ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "NetBSD":
+ 
+     CXXFLAGS += [
+diff --git third_party/libwebrtc/webrtc/moz.build third_party/libwebrtc/webrtc/moz.build
+index 53af3e5786bf..295247899372 100644
+--- third_party/libwebrtc/webrtc/moz.build
++++ third_party/libwebrtc/webrtc/moz.build
+@@ -186,9 +186,6 @@ if CONFIG["OS_TARGET"] == "Linux":
+         "/third_party/libwebrtc/webrtc/modules/video_capture/video_capture_internal_impl_gn",
+         "/third_party/libwebrtc/webrtc/system_wrappers/cpu_features_linux_gn"
+     ]
+-    DIRS += [
+-        "/third_party/pipewire/libpipewire"
+-    ]
+ 
+ if CONFIG["OS_TARGET"] == "NetBSD":
+ 
