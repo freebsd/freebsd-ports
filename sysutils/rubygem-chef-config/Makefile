@@ -3,6 +3,7 @@
 
 PORTNAME=	chef-config
 PORTVERSION=	13.8.3
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +17,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-fuzzyurl>=0:www/rubygem-fuzzyurl \
 		rubygem-mixlib-config>=2.0<3:devel/rubygem-mixlib-config \
 		rubygem-mixlib-shellout>=2.0<3:devel/rubygem-mixlib-shellout \
-		rubygem-tomlrb>=1.2<2:textproc/rubygem-tomlrb
+		rubygem-tomlrb1>=1.2<2:textproc/rubygem-tomlrb1
 
 USES=		gem
 USE_RUBY=	yes
