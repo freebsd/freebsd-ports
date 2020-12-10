@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyspnego
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,4 +26,3 @@ YAML_DESC=	YAML output support
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0:devel/py-ruamel.yaml@${PY_FLAVOR}
 
 .include <bsd.port.mk>
-
