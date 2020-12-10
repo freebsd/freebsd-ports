@@ -382,6 +382,7 @@ man/man1/abiword.1.gz
 %%DATADIR%%-%%ABIVERSION%%/xsltml/scripts.xsl
 %%DATADIR%%-%%ABIVERSION%%/xsltml/tables.xsl
 %%DATADIR%%-%%ABIVERSION%%/xsltml/tokens.xsl
+share/appdata/abiword.appdata.xml
 share/applications/abiword.desktop
 %%COLTELEPATHY%%share/dbus-1/services/org.freedesktop.Telepathy.Client.AbiCollab.service
 share/icons/hicolor/16x16/apps/abiword.png

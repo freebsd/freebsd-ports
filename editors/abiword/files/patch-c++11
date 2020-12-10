@@ -4,78 +4,10 @@ xap_Dialog.cpp:270:17: error: cast from pointer to smaller type 'char' loses inf
 ap_UnixApp.cpp:866:29: error: invalid suffix on literal; C++11 requires a space between literal and identifier [-Wreserved-user-defined-literal]
         if(0 == strcmp (suffix, "."G_MODULE_SUFFIX))
                                    ^
-ie_exp_XSL-FO.cpp:1454:13: error: invalid suffix on literal; C++11 requires a space between literal and identifier [-Wreserved-user-defined-literal]
-                buf += " "x"=\""; \
-                          ^
-ie_exp_LaTeX.cpp:1332:43: error: invalid suffix on literal; C++11 requires a space between literal and identifier [-Wreserved-user-defined-literal]
-#define SUB(a,who) case a: subst = "\\(\\"who"\\)"; return true;
-                                          ^
-RealmProtocol.cpp:16:2: error: constant expression evaluates to -1 which cannot be narrowed to type 'uint32_t' (aka 'unsigned int') [-Wc++11-narrowing]
-        RPV1_PACKET_VARIABLE, /* user joined */
-        ^~~~~~~~~~~~~~~~~~~~
-RealmProtocol.cpp:10:30: note: expanded from macro 'RPV1_PACKET_VARIABLE'
-#define RPV1_PACKET_VARIABLE -1
-                             ^~
-RealmProtocol.cpp:16:2: note: insert an explicit cast to silence this issue
-        RPV1_PACKET_VARIABLE, /* user joined */
-        ^~~~~~~~~~~~~~~~~~~~
-        static_cast<uint32_t>( )
-RealmProtocol.cpp:10:30: note: expanded from macro 'RPV1_PACKET_VARIABLE'
-#define RPV1_PACKET_VARIABLE -1
-                             ^~
-soa_soup.cpp:166:11: error: no viable conversion from returned value of type 'soa::GenericPtr' (aka 'shared_ptr<soa::Generic>') to function return type 'bool'
-                        return soa::GenericPtr();
-                               ^~~~~~~~~~~~~~~~~
 
 https://github.com/AbiWord/abiword/commit/a83e6f50dbd5
 https://github.com/AbiWord/abiword/commit/5623a94c756c
 
---- plugins/collab/backends/service/xp/RealmProtocol.cpp.orig	2009-05-27 05:41:59 UTC
-+++ plugins/collab/backends/service/xp/RealmProtocol.cpp
-@@ -6,8 +6,8 @@ namespace protocolv1 {
- 
- #define MAX_PACKET_DATA_SIZE 64*1024*1024
- 		
--#define RPV1_PACKET_NONEXISTENT -2
--#define RPV1_PACKET_VARIABLE -1
-+#define RPV1_PACKET_NONEXISTENT uint32_t(-2)
-+#define RPV1_PACKET_VARIABLE uint32_t(-1)
- 	
- static uint32_t body_size[6] = {
- 	RPV1_PACKET_NONEXISTENT, /* 0: reserved */
---- plugins/collab/backends/service/xp/soa_soup.cpp.orig	2009-09-29 13:58:11 UTC
-+++ plugins/collab/backends/service/xp/soa_soup.cpp
-@@ -163,7 +163,7 @@ namespace soup_soa {
- 	
- 	static bool _invoke(const std::string& /*url*/, const soa::method_invocation& /*mi*/, SoaSoupSession& sess, std::string& result) {
- 		if (!sess.m_session || !sess.m_msg )
--			return soa::GenericPtr();
-+			return false;
- 
- 		guint status = soup_session_send_message (sess.m_session, sess.m_msg);
- 		if (!(SOUP_STATUS_IS_SUCCESSFUL (status) ||
---- plugins/latex/xp/ie_exp_LaTeX.cpp.orig	2013-04-07 13:53:03 UTC
-+++ plugins/latex/xp/ie_exp_LaTeX.cpp
-@@ -1329,7 +1329,7 @@ void s_LaTeX_Listener::_outputData(const UT_UCSChar * 
- 	m_pie->write(sBuf.c_str(),sBuf.size());
- }
- 
--#define SUB(a,who) case a: subst = "\\(\\"who"\\)"; return true;
-+#define SUB(a,who) case a: subst = "\\(\\" who"\\)"; return true;
- #define SUBd(a,who) case a: subst = who; return true;
- static bool _convertLettersToSymbols(char c, const char *& subst)
- {
---- plugins/xslfo/xp/ie_exp_XSL-FO.cpp.orig	2013-04-07 13:53:03 UTC
-+++ plugins/xslfo/xp/ie_exp_XSL-FO.cpp
-@@ -1451,7 +1451,7 @@ void s_XSL_FO_Listener::_openSection(PT_AttrPropIndex 
- 	{ \
- 		UT_UTF8String esc = szValue; \
- 		esc.escapeXML(); \
--		buf += " "x"=\""; \
-+		buf += " " x"=\""; \
- 		buf += esc.utf8_str(); \
- 		buf += "\""; \
- 	}
 --- src/af/xap/xp/xap_Dialog.cpp.orig	2013-04-07 13:53:03 UTC
 +++ src/af/xap/xp/xap_Dialog.cpp
 @@ -267,7 +267,7 @@ XAP_Dialog_Modeless::BuildWindowName(char * pWindowNam
