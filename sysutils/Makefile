@@ -654,6 +654,7 @@
     SUBDIR += mate-system-monitor
     SUBDIR += mbgtools
     SUBDIR += mcelog
+    SUBDIR += mcfly
     SUBDIR += mcollective
     SUBDIR += mcollective-actionpolicy-auth
     SUBDIR += mcollective-nettest-agent
