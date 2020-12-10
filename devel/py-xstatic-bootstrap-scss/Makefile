@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	xstatic-bootstrap-scss
-PORTVERSION=	3.3.7.1
-PORTREVISION=	2
+PORTVERSION=	3.4.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	XStatic-Bootstrap-SCSS-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Bootstrap SCSS stylesheets (bootstrap-scss)
+COMMENT=	Bootstrap-SCSS (XStatic packaging standard)
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xstatic>=0:devel/py-xstatic@${PY_FLAVOR}
 
