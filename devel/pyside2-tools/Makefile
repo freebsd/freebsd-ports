@@ -7,7 +7,7 @@ MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyside-setup-opensource-src-${DISTVERSION}
 
-MAINTAINER=	cmt@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Pyside2 development tools
 
 LICENSE=	BSD3CLAUSE GPLv2
