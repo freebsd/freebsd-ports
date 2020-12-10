@@ -5175,6 +5175,7 @@
     SUBDIR += py-virtualenv-clone
     SUBDIR += py-virtualenvwrapper
     SUBDIR += py-visitor
+    SUBDIR += py-vistir
     SUBDIR += py-voluptuous
     SUBDIR += py-vsts
     SUBDIR += py-vsts-cd-manager

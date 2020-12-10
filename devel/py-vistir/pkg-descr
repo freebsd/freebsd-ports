@@ -1,0 +1,10 @@
+vistir is a library full of utility functions designed to make life easier.
+
+vistir provides several categories of functionality, including:
+- Backports
+- Compatibility Shims
+- Context Managers
+- Miscellaneous Utilities
+- Path Utilities
+
+WWW: https://github.com/sarugaku/vistir
