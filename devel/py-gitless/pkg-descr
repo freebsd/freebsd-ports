@@ -7,4 +7,5 @@ changes the underlying concepts. Because Gitless is implemented on top of Git
 fall back on Git. And of course your coworkers you share a repository with
 need never know that you're not a Git aficionado.
 
-WWW: https://github.com/sdg-mit/gitless
+WWW: https://gitless.com/
+WWW: https://github.com/gitless-vcs/gitless
