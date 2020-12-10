@@ -44,6 +44,9 @@ PLIST_SUB=		PYQT_WEBENGINE_VERSION=${DISTVERSION}
 post-install-DEBUG-off:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/PyQt5/QtWebEngine*.so
 
+post-patch:
+	${REINPLACE_CMD} -e "s/sip-module/sip-module-${PYTHON_VER}/" ${WRKSRC}/configure.py
+
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${PYTHON_CMD} configure.py ${CONFIGURE_ARGS}

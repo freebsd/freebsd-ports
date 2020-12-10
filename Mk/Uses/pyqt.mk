@@ -250,6 +250,7 @@ EXTRACT_AFTER_ARGS+=	--exclude "${DISTNAME}/dbus"
 
 .    if !target(do-configure)
 do-configure:
+	${REINPLACE_CMD} -e "s/sip-module/sip-module-${PYTHON_VER}/" ${WRKSRC}/configure.py
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		${PYTHON_CMD} configure.py ${CONFIGURE_ARGS}
 .    endif  # !target(do-configure)
