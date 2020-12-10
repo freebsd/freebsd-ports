@@ -4765,6 +4765,7 @@
     SUBDIR += py-pip-api
     SUBDIR += py-pip-licenses
     SUBDIR += py-pip-run
+    SUBDIR += py-pip-shims
     SUBDIR += py-pip-tools
     SUBDIR += py-pip-tools4
     SUBDIR += py-pipdeptree

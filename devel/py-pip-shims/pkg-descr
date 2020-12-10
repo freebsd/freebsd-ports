@@ -1,0 +1,6 @@
+pip-shims is a set of compatibilty access shims to the pip internal API.
+pip-shims provides compatibility with pip versions 8.0 through the current
+release. The shims are provided using a lazy import strategy by hacking a module
+by overloading a class instance's getattr method.
+
+WWW: https://github.com/sarugaku/pip-shims
