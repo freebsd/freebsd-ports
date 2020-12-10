@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>0:devel/py-cachetools@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}theano>=0.9.0:math/py-theano@${PY_FLAVOR} \
 		${PYNUMPY}
 
-USES=		python:3.5+
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
