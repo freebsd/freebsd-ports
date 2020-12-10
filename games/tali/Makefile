@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tali
-PORTVERSION=	3.22.0
-PORTREVISION=	1
+PORTVERSION=	3.38.2
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -15,16 +14,17 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
+LIB_DEPENDS=	libgnome-games-support-1.so:games/libgnome-games-support
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake gnome localbase pathfix pkgconfig tar:xz
+USES=		gettext gnome localbase meson pkgconfig \
+		python:3.6+,build tar:xz
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
 INSTALLS_ICONS=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share
 
-GLIB_SCHEMAS=	org.gnome.tali.gschema.xml
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+GLIB_SCHEMAS=	org.gnome.Tali.gschema.xml
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games
