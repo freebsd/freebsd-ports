@@ -407,6 +407,7 @@ bin/rexify
 %%PERL5_MAN3%%/Rex::Shared::Var.3.gz
 %%PERL5_MAN3%%/Rex::Task.3.gz
 %%PERL5_MAN3%%/Rex::Template.3.gz
+%%PERL5_MAN3%%/Rex::Template::NG.3.gz
 %%PERL5_MAN3%%/Rex::Test::Base.3.gz
 %%PERL5_MAN3%%/Rex::Transaction.3.gz
 %%PERL5_MAN3%%/Rex::Virtualization::Docker.3.gz
