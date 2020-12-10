@@ -1,5 +1,3 @@
-TIMESTAMP = 1589329059
-SHA256 (milkytracker-MilkyTracker-v1.02.00_GH0.tar.gz) = 6bcb6e74ee333e831137435a25c0f2f3da6e1462864deec9e693ef7d23a16023
-SIZE (milkytracker-MilkyTracker-v1.02.00_GH0.tar.gz) = 3753882
-SHA256 (ba5699e109018d38fd1675c43aef2bab19a880c2.patch) = 9593e4bec627825d267e4c9993d29c8b1f7f18056b810a132da92288cc359405
-SIZE (ba5699e109018d38fd1675c43aef2bab19a880c2.patch) = 2557
+TIMESTAMP = 1607618184
+SHA256 (milkytracker-MilkyTracker-v1.03.00_GH0.tar.gz) = 72d5357e303380b52383b66b51f944a77cd77e2b3bfeb227d87cc0e72ab292f7
+SIZE (milkytracker-MilkyTracker-v1.03.00_GH0.tar.gz) = 3705395

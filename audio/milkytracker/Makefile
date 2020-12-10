@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	milkytracker
-PORTVERSION=	1.02.00
+PORTVERSION=	1.03.00
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	audio
-
-PATCH_SITES=	https://github.com/${PORTNAME}/MilkyTracker/commit/
-PATCHFILES=	ba5699e109018d38fd1675c43aef2bab19a880c2.patch:-p1
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music creation tool inspired by Fast Tracker 2
