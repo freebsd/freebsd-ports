@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xstatic-bootstrap-datepicker
-PORTVERSION=	1.3.1.0
-PORTREVISION=	2
+PORTVERSION=	1.4.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +10,8 @@ DISTNAME=	XStatic-Bootstrap-Datepicker-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Datepicker for Bootstrap (bootstrap-datepicker)
+
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xstatic>=0:devel/py-xstatic@${PY_FLAVOR}
 
