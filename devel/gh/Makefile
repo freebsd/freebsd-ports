@@ -2,7 +2,7 @@
 
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	devel
 
 MAINTAINER=	vulcan@wired.sh
@@ -17,7 +17,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	cli
 GH_PROJECT=	${GH_ACCOUNT}
-GH_TUPLE=	AlecAivazis:survey:v2.1.1:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
+GH_TUPLE=	AlecAivazis:survey:v2.2.3:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
 		MakeNowJust:heredoc:v1.0.0:makenowjust_heredoc/vendor/github.com/MakeNowJust/heredoc \
 		alecthomas:chroma:v0.7.3:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		briandowns:spinner:v1.11.1:briandowns_spinner/vendor/github.com/briandowns/spinner \
