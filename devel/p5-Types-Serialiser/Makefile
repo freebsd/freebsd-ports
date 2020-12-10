@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Types-Serialiser
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MLEHMANN
@@ -18,8 +17,8 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-common-sense>=0:devel/p5-common-sense
 
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
 
 NO_ARCH=	yes
 
