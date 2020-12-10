@@ -1,0 +1,6 @@
+Yaspin provides a full-featured terminal spinner to show the progress during
+long-hanging operations. It is easy to integrate into existing codebase by using
+it as a context manager or as a function decorator. Yaspin also provides an
+intuitive and powerful API. For example, you can easily summon a shark.
+
+WWW: https://github.com/pavdmyt/yaspin
