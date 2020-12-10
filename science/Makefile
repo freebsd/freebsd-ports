@@ -250,6 +250,7 @@
     SUBDIR += py-molmod
     SUBDIR += py-moltemplate
     SUBDIR += py-netCDF4
+    SUBDIR += py-netcdf-flattener
     SUBDIR += py-obspy
     SUBDIR += py-oddt
     SUBDIR += py-openpiv

@@ -1,0 +1,4 @@
+The flattener takes as input and output NetCDF Dataset objects, which the user
+can create or open from ".nc" files using the netCDF4 API.
+
+WWW: https://gitlab.eumetsat.int/open-source/netcdf-flattener
