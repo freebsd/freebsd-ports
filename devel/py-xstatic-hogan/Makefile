@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	xstatic-hogan
-PORTVERSION=	2.0.0.2
-PORTREVISION=	2
+PORTVERSION=	2.0.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	XStatic-Hogan-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	JavaScript templating framework (hogan.js)
+COMMENT=	Hogan (XStatic packaging standard)
+
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xstatic>=0:devel/py-xstatic@${PY_FLAVOR}
 
