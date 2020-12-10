@@ -1,21 +1,25 @@
---- CMakeLists.txt.orig	2019-04-16 12:18:24 UTC
+--- CMakeLists.txt.orig	2020-11-19 11:17:49 UTC
 +++ CMakeLists.txt
-@@ -1277,18 +1277,6 @@ endif()
- # Install documentation
- #
+@@ -1297,22 +1297,6 @@ endif()
  
+ ###############################################################################
+ #
+-# Install documentation
+-#
+-
 -set(DOCUMENTATION_FILES
 -        COPYING.txt
 -        FUNDING.txt
 -        LICENSE.txt
 -        NEWS.txt
--        OLD_NEWS.txt
--        README.txt
+-        README.md
 -        VERSION.txt
 -)
 -
 -install(FILES ${DOCUMENTATION_FILES} DESTINATION ${MISC_PREFIX})
 -
- ###############################################################################
- #
+-###############################################################################
+-#
  # Write libsbml.pc
+ #
+ 

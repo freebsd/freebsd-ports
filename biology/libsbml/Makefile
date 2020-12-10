@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsbml
-PORTVERSION=	5.18.0
+PORTVERSION=	5.19.0
 CATEGORIES=	biology devel
 MASTER_SITES=	SF/sbml/libsbml/${PORTVERSION}/stable
 DISTNAME=	libSBML-${PORTVERSION}-core-src
