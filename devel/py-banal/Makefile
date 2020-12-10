@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	banal
-DISTVERSION=	0.4.2
+DISTVERSION=	1.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,7 @@ COMMENT=	Commons of banal micro-functions for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
-
-USES=		python
+USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
