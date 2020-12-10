@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	git-semver
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.3.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,7 @@ COMMENT=	Semantic versions management integrated to git
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GitPython>=2.1<3:devel/py-gitpython@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GitPython>=3.1<3.2:devel/py-gitpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semantic-version>=2.8<3:devel/py-semantic-version@${PY_FLAVOR}
 
 USES=		python
