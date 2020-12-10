@@ -18,6 +18,7 @@ LIB_DEPENDS=	libabsl_strings.so:devel/abseil
 
 USES=		compiler:c++14-lang localbase:ldflags meson
 USE_LDCONFIG=	yes
+CFLAGS_armv6=	-DPFFFT_SIMD_DISABLE # https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/issues/6
 CFLAGS_i386=	-msse # https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/issues/5
 
 post-patch:
