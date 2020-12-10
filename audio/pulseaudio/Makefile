@@ -6,7 +6,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 
@@ -89,7 +89,7 @@ SPEEX_DESC=	Speex resampler and AEC support
 SPEEX_CONFIGURE_WITH=	speex
 SPEEX_LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
 WEBRTC_AEC_DESC=	WebRTC-based echo canceller
-WEBRTC_AEC_LIB_DEPENDS=	libwebrtc_audio_processing.so:audio/webrtc-audio-processing
+WEBRTC_AEC_LIB_DEPENDS=	libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
 WEBRTC_AEC_CONFIGURE_ENABLE=	webrtc-aec
 
 OPTIONS_SINGLE=	DATABASE
