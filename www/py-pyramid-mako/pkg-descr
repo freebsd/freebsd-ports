@@ -1,0 +1,4 @@
+pyramid_mako is a set of bindings that makes templates written for the Mako
+templating system work under the Pyramid web framework.
+
+WWW: https://github.com/Pylons/pyramid_mako

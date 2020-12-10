@@ -1696,6 +1696,7 @@
     SUBDIR += py-pylsqpack
     SUBDIR += py-pyocclient
     SUBDIR += py-pyramid
+    SUBDIR += py-pyramid-mako
     SUBDIR += py-pyramid_rpc
     SUBDIR += py-pysmartdl
     SUBDIR += py-python-digitalocean
