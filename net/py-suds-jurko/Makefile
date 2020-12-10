@@ -14,19 +14,19 @@ COMMENT=	Lightweight SOAP client (Jurko's fork)
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		dos2unix python tar:bz2
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
 post-patch:
 	# Move the tests into the main package so
 	# they are processed by 2to3 so we can test Python 3
-	${MV} ${WRKSRC}/tests ${WRKSRC}/suds/tests
+	@${MV} ${WRKSRC}/tests ${WRKSRC}/suds/tests
 	# Compensate for the package/module name change
-	${REINPLACE_CMD} -e 's|import tests|import suds.tests|g' \
+	@${REINPLACE_CMD} -e 's|import tests|import suds.tests|g' \
 		${WRKSRC}/suds/tests/test_argument_parser.py \
 		${WRKSRC}/suds/tests/test_date_time.py \
 		${WRKSRC}/suds/tests/test_input_parameters.py \
@@ -34,7 +34,7 @@ post-patch:
 		${WRKSRC}/suds/tests/test_request_construction.py \
 		${WRKSRC}/suds/tests/test_suds.py \
 		${WRKSRC}/suds/tests/test_timezone.py
-	${REINPLACE_CMD} -e 's|tests.|suds.tests.|g' \
+	@${REINPLACE_CMD} -e 's|tests.|suds.tests.|g' \
 		${WRKSRC}/suds/tests/conftest.py \
 		${WRKSRC}/suds/tests/test_reply_handling.py \
 		${WRKSRC}/suds/tests/test_suds.py \
