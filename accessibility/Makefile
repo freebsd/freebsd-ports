@@ -11,6 +11,7 @@
     SUBDIR += caribou
     SUBDIR += eflite
     SUBDIR += feedbackd
+    SUBDIR += gammy
     SUBDIR += kdeaccessibility
     SUBDIR += kmag
     SUBDIR += kmousetool
