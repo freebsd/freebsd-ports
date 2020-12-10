@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	xstatic-jquery-ui
-PORTVERSION=	1.12.0.1
-PORTREVISION=	2
+PORTVERSION=	1.12.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	XStatic-jquery-ui-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	JQuery library for building user interfaces (jquery-ui)
+COMMENT=	jquery-ui (XStatic packaging standard)
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xstatic>=0:devel/py-xstatic@${PY_FLAVOR}
+LICENSE=	MIT
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xstatic>=0:devel/py-xstatic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xstatic-jquery>=0:devel/py-xstatic-jquery@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
