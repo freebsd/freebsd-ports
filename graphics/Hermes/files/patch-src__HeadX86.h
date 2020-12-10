@@ -1,6 +1,6 @@
---- ./src/HeadX86.h.orig	2000-12-06 05:55:28.000000000 +0100
-+++ ./src/HeadX86.h	2014-01-17 03:59:56.000000000 +0100
-@@ -83,7 +83,7 @@
+--- src/HeadX86.h.orig	2000-12-06 04:55:28 UTC
++++ src/HeadX86.h
+@@ -83,7 +83,7 @@ extern int32 ConvertX86p16_32BGRA888_LUT_X86[512];
  
  /* Now fix up the ELF underscore problem */
  

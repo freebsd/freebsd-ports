@@ -1,6 +1,6 @@
---- ./src/Makefile.in.orig	2003-07-06 17:56:57.000000000 +0200
-+++ ./src/Makefile.in	2014-01-17 04:02:38.000000000 +0100
-@@ -540,13 +540,13 @@
+--- src/Makefile.in.orig	2003-07-06 15:56:57 UTC
++++ src/Makefile.in
+@@ -540,13 +540,13 @@ uninstall-am: uninstall-info-am uninstall-libLTLIBRARI
  
  
  .S.o:
