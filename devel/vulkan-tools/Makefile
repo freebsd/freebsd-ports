@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	vulkan-tools
-DISTVERSIONPREFIX=	sdk-
-DISTVERSION=	1.2.154.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.162
 CATEGORIES=	devel graphics
 
 MAINTAINER=	greg@unrelenting.technology

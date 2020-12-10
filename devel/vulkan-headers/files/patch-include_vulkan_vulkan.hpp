@@ -1,6 +1,6 @@
---- include/vulkan/vulkan.hpp.orig	2020-09-21 09:26:07 UTC
+--- include/vulkan/vulkan.hpp.orig	2020-12-07 12:15:47 UTC
 +++ include/vulkan/vulkan.hpp
-@@ -66,7 +66,7 @@
+@@ -67,7 +67,7 @@
  #endif
  
  #if VULKAN_HPP_ENABLE_DYNAMIC_LOADER_TOOL == 1
@@ -9,7 +9,7 @@
  #    include <dlfcn.h>
  #  elif defined( _WIN32 )
  typedef struct HINSTANCE__ * HINSTANCE;
-@@ -90062,7 +90062,7 @@ namespace VULKAN_HPP_NAMESPACE
+@@ -92754,7 +92754,7 @@ namespace VULKAN_HPP_NAMESPACE
      {
        if ( !vulkanLibraryName.empty() )
        {
@@ -18,7 +18,7 @@
          m_library = dlopen( vulkanLibraryName.c_str(), RTLD_NOW | RTLD_LOCAL );
  #  elif defined( _WIN32 )
          m_library = ::LoadLibraryA( vulkanLibraryName.c_str() );
-@@ -90072,7 +90072,7 @@ namespace VULKAN_HPP_NAMESPACE
+@@ -92764,7 +92764,7 @@ namespace VULKAN_HPP_NAMESPACE
        }
        else
        {
@@ -27,7 +27,7 @@
          m_library = dlopen( "libvulkan.so", RTLD_NOW | RTLD_LOCAL );
          if ( m_library == nullptr )
          {
-@@ -90119,7 +90119,7 @@ namespace VULKAN_HPP_NAMESPACE
+@@ -92807,7 +92807,7 @@ namespace VULKAN_HPP_NAMESPACE
      {
        if ( m_library )
        {
@@ -36,7 +36,7 @@
          dlclose( m_library );
  #  elif defined( _WIN32 )
          ::FreeLibrary( m_library );
-@@ -90132,7 +90132,7 @@ namespace VULKAN_HPP_NAMESPACE
+@@ -92820,7 +92820,7 @@ namespace VULKAN_HPP_NAMESPACE
      template <typename T>
      T getProcAddress( const char* function ) const VULKAN_HPP_NOEXCEPT
      {
@@ -45,10 +45,10 @@
        return (T)dlsym( m_library, function );
  #  elif defined( _WIN32 )
        return (T)::GetProcAddress( m_library, function );
-@@ -90145,7 +90145,7 @@ namespace VULKAN_HPP_NAMESPACE
+@@ -92832,7 +92832,7 @@ namespace VULKAN_HPP_NAMESPACE
+     bool success() const VULKAN_HPP_NOEXCEPT { return m_library != nullptr; }
  
    private:
-     bool m_success;
 -#  if defined( __linux__ ) || defined( __APPLE__ )
 +#  if defined( __unix__ ) || defined( __APPLE__ )
      void * m_library;

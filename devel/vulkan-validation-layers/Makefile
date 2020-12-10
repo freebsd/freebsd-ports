@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	vulkan-validation-layers
-DISTVERSIONPREFIX=	sdk-
-DISTVERSION=	1.2.154.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.162
 CATEGORIES=	devel graphics
 
 MAINTAINER=	greg@unrelenting.technology
@@ -21,20 +21,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ValidationLayers
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.3.reservations1:headers/external/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed:headers/external/spirv-headers
 
 # WSI_* in here are leftover from when all of Vulkan SDK was in one repo
-CMAKE_OFF=	BUILD_TESTS BUILD_WSI_XCB_SUPPORT BUILD_WSI_XLIB_SUPPORT \
-		BUILD_WSI_WAYLAND_SUPPORT
+CMAKE_OFF=	BUILD_TESTS ${WAYLAND XCB XLIB:L:C/.*/BUILD_WSI_&_SUPPORT/}
 CMAKE_ON=	BUILD_LAYER_SUPPORT_FILES
-CMAKE_ARGS=	-DGLSLANG_INSTALL_DIR=${LOCALBASE} \
-		-DCMAKE_INSTALL_INCLUDEDIR=${LOCALBASE}/include \
-		-DSPIRV_HEADERS_INSTALL_DIR=${WRKSRC_headers} \
-		-DSPIRV_TOOLS_INSTALL_DIR=${LOCALBASE} \
-		-DCMAKE_BUILD_TYPE=Release
-
-post-install:
-# Avoid conflict with devel/xxhash
-	@${RM} ${STAGEDIR}${PREFIX}/include/xxhash.*
+CMAKE_ARGS=	-DGLSLANG_INSTALL_DIR:PATH="${LOCALBASE}" \
+		-DSPIRV_HEADERS_INSTALL_DIR:PATH="${WRKSRC_headers}"
 
 .include <bsd.port.mk>

@@ -1,15 +1,15 @@
---- loader/vk_loader_platform.h.orig	2020-10-07 20:39:07 UTC
+--- loader/vk_loader_platform.h.orig	2020-11-23 16:19:03 UTC
 +++ loader/vk_loader_platform.h
-@@ -31,7 +31,7 @@
+@@ -35,7 +35,7 @@
  #include "vulkan/vk_platform.h"
  #include "vulkan/vk_sdk_platform.h"
  
--#if defined(__linux__) || defined(__APPLE__)
-+#if defined(__unix__)
+-#if defined(__linux__) || defined(__APPLE__) || defined(__Fuchsia__)
++#if defined(__unix__) || defined(__APPLE__) || defined(__Fuchsia__)
  /* Linux-specific common code: */
  
  // Headers:
-@@ -116,6 +116,26 @@ static inline char *loader_platform_executable_path(ch
+@@ -120,6 +120,26 @@ static inline char *loader_platform_executable_path(ch
      int ret = proc_pidpath(pid, buffer, size);
      if (ret <= 0) return NULL;
      buffer[ret] = '\0';
@@ -35,4 +35,4 @@
 +
      return buffer;
  }
- #endif  // defined (__APPLE__)
+ #elif defined(__Fuchsia__)

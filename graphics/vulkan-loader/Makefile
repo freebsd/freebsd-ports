@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	vulkan-loader
-DISTVERSIONPREFIX=sdk-
-DISTVERSION=	1.2.154.1
+DISTVERSIONPREFIX=v
+DISTVERSION=	1.2.162
 CATEGORIES=	graphics devel
 
 MAINTAINER=	greg@unrelenting.technology
