@@ -12,6 +12,8 @@ DISTNAME=	XStatic-Font-Awesome-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Iconic font and CSS framework (font-awesome)
 
+LICENSE=	OFL11
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xstatic>=0:devel/py-xstatic@${PY_FLAVOR}
 
 USES=		python
