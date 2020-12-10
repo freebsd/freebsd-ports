@@ -10,7 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	XStatic-Angular-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	JavaScript MVW Framework (angular)
+COMMENT=	Angular (XStatic packaging standard)
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xstatic>=0:devel/py-xstatic@${PY_FLAVOR}
 
