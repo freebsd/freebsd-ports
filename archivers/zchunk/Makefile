@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zchunk
-DISTVERSION=	1.1.7
+DISTVERSION=	1.1.8
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
