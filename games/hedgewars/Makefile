@@ -39,6 +39,8 @@ PLIST_FILES=	bin/${PORTNAME} bin/hwengine \
 PORTDATA=	*
 
 USE_LOCALE=	en_US.UTF-8
+MAKE_ENV=	LOCALBASE="${LOCALBASE}"  # fpc issue https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=251712
+CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"  # fpc issue https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=251712
 
 OPTIONS_DEFINE=	VIDEOREC
 OPTIONS_DEFAULT=VIDEOREC
@@ -59,6 +61,8 @@ BUILD_DEPENDS+=	ghc:lang/ghc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/cmake_modules/*.cmake
+	@${REINPLACE_CMD} -e "s|'liblua'|'liblua-${LUA_VER}'|" ${WRKSRC}/hedgewars/LuaPas.pas
+	@${REINPLACE_CMD} -e "/linklib/ s|lua|&-${LUA_VER}|" ${WRKSRC}/hedgewars/LuaPas.pas
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
