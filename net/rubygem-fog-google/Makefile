@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fog-google
-PORTVERSION=	1.11.0
+PORTVERSION=	1.12.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-fog-core210>=0:devel/rubygem-fog-core210 \
 		rubygem-fog-json>=1.2<2:devel/rubygem-fog-json \
 		rubygem-fog-xml>=0.1.0<0.2:textproc/rubygem-fog-xml \
-		rubygem-google-api-client>=0.32<1:devel/rubygem-google-api-client \
+		rubygem-google-api-client>=0.44.2<0.51:devel/rubygem-google-api-client \
 		rubygem-google-cloud-env>=1.2<2:net/rubygem-google-cloud-env
 
 USES=		gem
