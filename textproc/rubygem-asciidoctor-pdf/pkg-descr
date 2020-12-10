@@ -1,0 +1,7 @@
+Asciidoctor PDF is a native PDF converter for AsciiDoc. It bypasses the
+requirement to generate an intermediary format such as DocBook, Apache FO, or
+LaTeX. Instead, you can use this extension to convert your documents directly
+from AsciiDoc to PDF. Its aim is to take the pain out of creating PDF documents
+from AsciiDoc.
+
+WWW: https://github.com/asciidoctor/asciidoctor-pdf
