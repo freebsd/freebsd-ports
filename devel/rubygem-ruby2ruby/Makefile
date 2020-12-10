@@ -11,12 +11,13 @@ COMMENT=	Pure ruby code generator easily from ParseTree's Sexps # '
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-ruby_parser>=3.1:devel/rubygem-ruby_parser \
-		rubygem-sexp_processor>=4.6:devel/rubygem-sexp_processor
+RUN_DEPENDS=	rubygem-ruby_parser>=3.1<4:devel/rubygem-ruby_parser \
+		rubygem-sexp_processor>=4.6<5:devel/rubygem-sexp_processor
+
+USES=		gem shebangfix
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem shebangfix
 
 PLIST_FILES=	bin/r2r_show
 
