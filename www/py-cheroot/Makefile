@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cheroot
-PORTVERSION=	8.4.8
+PORTVERSION=	8.5.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ NO_ARCH=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 3300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>0:devel/py-backports.functools_lru_cache@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.functools-lru-cache>0:devel/py-backports.functools_lru_cache@${PY_FLAVOR}
 .endif
 
 .if ${PYTHON_REL} < 3400
