@@ -9,6 +9,7 @@
     SUBDIR += admesh
     SUBDIR += adms
     SUBDIR += alliance
+    SUBDIR += archimedes
     SUBDIR += astk-client
     SUBDIR += astk-serveur
     SUBDIR += atlc
