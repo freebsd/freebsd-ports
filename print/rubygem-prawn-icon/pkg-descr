@@ -1,0 +1,9 @@
+Prawn::Icon provides a simple mechanism for rendering icons and icon fonts from
+within Prawn.
+
+The following icon fonts ship with Prawn::Icon:
+- FontAwesome (http://fontawesome.io/icons/)
+- Foundation Icons (http://zurb.com/playground/foundation-icon-fonts-3)
+- PaymentFont (https://paymentfont.com)
+
+WWW: https://github.com/jessedoyle/prawn-icon
