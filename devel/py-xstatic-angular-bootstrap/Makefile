@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	xstatic-angular-bootstrap
-PORTVERSION=	2.2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.5.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	XStatic-Angular-Bootstrap-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Bootstrap widgets for Angular (angular-bootstrap)
+COMMENT=	Angular-Bootstrap (XStatic packaging standard)
 
 LICENSE=	MIT
 
