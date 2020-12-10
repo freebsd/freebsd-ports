@@ -10,7 +10,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	XStatic-tv4-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	JSON Schema validator for JavaScript (tv4)
+COMMENT=	tv4 (XStatic packaging standard)
+
+LICENSE=	MIT PD
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xstatic>=0:devel/py-xstatic@${PY_FLAVOR}
 
