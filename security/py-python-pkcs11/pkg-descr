@@ -1,0 +1,18 @@
+A high level, "more Pythonic" interface to the PKCS#11 (Cryptoki) standard to
+support HSM and Smartcard devices in Python.
+
+The interface is designed to follow the logical structure of a HSM, with useful
+defaults for obscurely documented parameters. Many APIs will optionally accept
+iterables and act as generators, allowing you to stream large data blocks for
+symmetric encryption.
+
+python-pkcs11 also includes numerous utility functions to convert between PKCS
+#11 data structures and common interchange formats including PKCS #1 and X.509.
+
+python-pkcs11 is fully documented and has a full integration test suite for all
+features, with continuous integration against multiple HSM platforms including:
+- Thales nCipher
+- Opencryptoki TPM
+- OpenSC/Smartcard-HSM/Nitrokey HSM
+
+WWW: https://github.com/danni/python-pkcs11
