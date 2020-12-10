@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gitlab-ce
-PORTVERSION?=	13.6.1
+PORTVERSION?=	13.6.2
 PORTREVISION?=	0
 CATEGORIES=	www devel
 
@@ -265,7 +265,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 GL_PROJECT?=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT?=	1b6a590b197788a06a1ff726ea61630a49b10412
+GL_COMMIT?=	f508fb8a043a4b1f996cb7ec8bba198e5b5986f5
 
 USERS=	git
 GROUPS=	git

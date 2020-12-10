@@ -12102,6 +12102,7 @@
 %%WWWDIR%%/db/post_migrate/20201104124300_ensure_namespace_settings_creation.rb
 %%WWWDIR%%/db/post_migrate/20201106082723_add_merge_request_jira_reference_indexes.rb
 %%WWWDIR%%/db/post_migrate/20201106134950_deduplicate_epic_iids.rb
+%%WWWDIR%%/db/post_migrate/20201109114603_schedule_remove_inaccessible_epic_todos.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/schema_migrations/20181228175414
 %%WWWDIR%%/db/schema_migrations/20190102152410
@@ -13654,6 +13655,7 @@
 %%WWWDIR%%/db/schema_migrations/20201106134139
 %%WWWDIR%%/db/schema_migrations/20201106134950
 %%WWWDIR%%/db/schema_migrations/20201107032257
+%%WWWDIR%%/db/schema_migrations/20201109114603
 %%WWWDIR%%/db/schema_migrations/20201109144634
 %%WWWDIR%%/db/schema_migrations/20201109180311
 %%WWWDIR%%/db/schema_migrations/20201109184023
@@ -17102,6 +17104,7 @@
 %%WWWDIR%%/lib/gitlab/background_migration/recalculate_project_authorizations_with_min_max_user_id.rb
 %%WWWDIR%%/lib/gitlab/background_migration/remove_duplicate_cs_findings.rb
 %%WWWDIR%%/lib/gitlab/background_migration/remove_duplicated_cs_findings_without_vulnerability_id.rb
+%%WWWDIR%%/lib/gitlab/background_migration/remove_inaccessible_epic_todos.rb
 %%WWWDIR%%/lib/gitlab/background_migration/remove_undefined_occurrence_confidence_level.rb
 %%WWWDIR%%/lib/gitlab/background_migration/remove_undefined_occurrence_severity_level.rb
 %%WWWDIR%%/lib/gitlab/background_migration/remove_undefined_vulnerability_confidence_level.rb
@@ -21601,6 +21604,7 @@
 %%WWWDIR%%/spec/controllers/concerns/sorting_preference_spec.rb
 %%WWWDIR%%/spec/controllers/concerns/sourcegraph_decorator_spec.rb
 %%WWWDIR%%/spec/controllers/concerns/static_object_external_storage_spec.rb
+%%WWWDIR%%/spec/controllers/confirmations_controller_spec.rb
 %%WWWDIR%%/spec/controllers/dashboard/groups_controller_spec.rb
 %%WWWDIR%%/spec/controllers/dashboard/labels_controller_spec.rb
 %%WWWDIR%%/spec/controllers/dashboard/milestones_controller_spec.rb
@@ -30376,6 +30380,7 @@
 %%WWWDIR%%/spec/validators/system_hook_url_validator_spec.rb
 %%WWWDIR%%/spec/validators/variable_duplicates_validator_spec.rb
 %%WWWDIR%%/spec/validators/x509_certificate_credentials_validator_spec.rb
+%%WWWDIR%%/spec/validators/zoom_url_validator_spec.rb
 %%WWWDIR%%/spec/views/admin/application_settings/_eks.html.haml_spec.rb
 %%WWWDIR%%/spec/views/admin/application_settings/_package_registry.html.haml_spec.rb
 %%WWWDIR%%/spec/views/admin/application_settings/_repository_storage.html.haml_spec.rb
