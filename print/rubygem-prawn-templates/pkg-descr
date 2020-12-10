@@ -1,0 +1,7 @@
+Support for templates was dropped in Prawn 0.13.0, disabled by default in
+0.14.0, and extracted in 0.15.0.
+
+This gem includes the extracted templates code, which is mainly unsupported, but
+provides the old functionality that was in Prawn 0.12.0 for years.
+
+WWW: https://github.com/prawnpdf/prawn-templates
