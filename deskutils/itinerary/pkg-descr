@@ -1,9 +1,22 @@
-KRuler displays on screen a ruler measuring pixels.
+KDE Itinerary is a digital travel assistant with a priority on protecting your privacy.
 
-FEATURES
-- Integrated color picker.
-- Change the length of the ruler.
-- Change the orientation of the ruler.
-- Change the color, transparency and font of the ruler.
+Features:
 
-WWW: http://www.kde.org/applications/graphics/kruler
+   * Timeline view of a unified travel itinerary with automatic trip grouping.
+   * Supports train, bus and flight bookings as well as hotel, restaurant, event and rental car reservations.
+   * Boarding pass management.
+   * Supports ticket management for multi-traveler and multi-ticket bookings.
+   * Automatic booking data extraction from various input formats, performed locally on your device.
+   * Real-time delay and platform change information for trains.
+   * Weather forecast for destination along your trip.
+   * Full control over all online access.
+   * Selection of alternative train connections on unbound tickets or on missed connections.
+   * Local ground transportation navigation between elements of your itinerary.
+   * Train coach layout view (for some operators only).
+   * Train station and airport per-floor maps based on OpenStreetMap data.
+   * Available dock-based or free-floating rental bikes can be displayed on the train station map.
+   * Personal travel statistics to monitor environmental impact.
+
+KDE Itinerary works best alongside KMail's itinerary extraction plug-in and KDE Connect, or Nextcloud Hub and DavDroid.
+
+WWW: https://apps.kde.org/en/itinerary
