@@ -3,3 +3,5 @@ SHA256 (webrtc-audio-processing-1.0.tar.gz) = 441a30d2717b2eb4145c6eb96c2d5a270f
 SIZE (webrtc-audio-processing-1.0.tar.gz) = 856721
 SHA256 (2083c9a5dd34.diff) = e61660be88366621317924a3bbd6a852e07ee0912e96cbcbe332bf76a57761b9
 SIZE (2083c9a5dd34.diff) = 2243
+SHA256 (3f9907f93d39.diff) = 1fb7465780b5a522d30de4bc6eaf1ebb783c1827237d018e765c4684c7ce0429
+SIZE (3f9907f93d39.diff) = 1675
