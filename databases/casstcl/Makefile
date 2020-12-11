@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	casstcl
-PORTVERSION=	2.14.0
+PORTVERSION=	2.15.0
 DISTVERSIONPREFIX=v
 PORTREVISION=	0
 CATEGORIES=	databases
@@ -21,5 +21,8 @@ GH_ACCOUNT=	flightaware
 
 USE_LDCONFIG=	${PREFIX}/lib/casstcl${PORTVERSION}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION:R}
+
+post-patch:
+	@${REINPLACE_CMD} 's|2.14.0|2.15.0|' ${WRKSRC}/configure.in
 
 .include <bsd.port.mk>
