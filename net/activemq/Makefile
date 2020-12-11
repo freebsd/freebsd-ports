@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	activemq
-PORTVERSION=	5.15.13
+PORTVERSION=	5.16.0
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	-bin.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Messaging and Integration Patterns provider
 
 LICENSE=	APACHE20
