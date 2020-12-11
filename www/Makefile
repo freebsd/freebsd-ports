@@ -2126,6 +2126,7 @@
     SUBDIR += serendipity
     SUBDIR += serf
     SUBDIR += servlet-api
+    SUBDIR += sfeed
     SUBDIR += sfnt2woff
     SUBDIR += shellinabox
     SUBDIR += shttpd
