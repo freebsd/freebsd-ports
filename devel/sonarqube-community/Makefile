@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	sonarqube
-DISTVERSION=	8.5.1.38104
-PORTREVISION=	3
+DISTVERSION=	8.6.0.39681
+PORTREVISION=	0
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
 		https://binaries.sonarsource.com/Distribution/sonar-csharp-plugin/:m_csharp \
@@ -53,7 +53,7 @@ TEMP_DIR=	${DBBASE_DIR}/temp
 
 SONARCSHARP_VER=	8.15.0.24505
 SONARJAVA_VER=		6.10.0.24201
-SONARJAVASCRIPT_VER=	7.0.0.14528
+SONARJAVASCRIPT_VER=	7.0.1.14561
 SONARPHP_VER=		3.13.0.6849
 SONARPYTHON_VER=	3.1.0.7619
 SONARVBNET_VER=		8.15.0.24505
