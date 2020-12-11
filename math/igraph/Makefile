@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	igraph
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.5
 CATEGORIES=	math
 
 MAINTAINER=	wen@FreeBSD.org
