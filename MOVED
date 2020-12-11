@@ -15774,3 +15774,4 @@ devel/py-readme_renderer|devel/py-readme-renderer|2020-12-05|Rename to match ups
 sysutils/datadog|sysutils/datadog-agent|2020-12-06|Renamed
 devel/py-libpeas@py27||2020-12-07|Removed flavor
 www/moodle37|www/moodle39|2020-12-10|Has expired: Unmaintained by upstream
+devel/py-prompt_toolkit|devel/py-prompt-toolkit|2020-12-11|Rename to match upstream naming
