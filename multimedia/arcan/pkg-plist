@@ -5,7 +5,7 @@ bin/afsrv_game
 bin/afsrv_net
 bin/afsrv_remoting
 bin/afsrv_terminal
-bin/arcan
+%%MAYBE_SUID%%bin/arcan
 bin/arcan-net
 %%WAYLAND%%bin/arcan-wayland
 bin/arcan_db
