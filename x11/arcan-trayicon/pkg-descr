@@ -1,0 +1,6 @@
+Arcan-trayicon is a tool that chain-loads another arcan client, along with
+two reference images (active and inactive). It tries to register itself in
+the icon-tray of a running arcan application, though it must explicitly
+enable the support.
+
+WWW: https://arcan-fe.com/

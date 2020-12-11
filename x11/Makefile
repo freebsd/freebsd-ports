@@ -17,6 +17,7 @@
     SUBDIR += appres
     SUBDIR += apwal
     SUBDIR += arandr
+    SUBDIR += arcan-trayicon
     SUBDIR += aterm
     SUBDIR += babl
     SUBDIR += bbappconf
