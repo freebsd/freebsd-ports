@@ -15,6 +15,7 @@
     SUBDIR += accounts-qml-module
     SUBDIR += accountsservice
     SUBDIR += acerhdf-kmod
+    SUBDIR += acfgfs
     SUBDIR += acltool
     SUBDIR += acpi_call
     SUBDIR += acpica-tools
