@@ -3,7 +3,7 @@
 
 PORTNAME=	ipython
 PORTVERSION=	5.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>=0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=2:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}decorator>=0:devel/py-decorator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pickleshare>=0:databases/py-pickleshare@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}prompt_toolkit1>=1.0.4<2.0.0:devel/py-prompt_toolkit1@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}prompt-toolkit1>=1.0.4<2.0.0:devel/py-prompt-toolkit1@${PY_FLAVOR} \
 		${PY_PYGMENTS} \
 		${PYTHON_PKGNAMEPREFIX}simplegeneric>0.8:devel/py-simplegeneric@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=4.2:devel/py-traitlets@${PY_FLAVOR}

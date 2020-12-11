@@ -1,12 +1,13 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	prompt_toolkit
+PORTNAME=	prompt-toolkit
 PORTVERSION=	1.0.18
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	1
+DISTNAME=	prompt_toolkit-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for building powerful interactive command lines in Python
