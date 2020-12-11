@@ -46,6 +46,7 @@
     SUBDIR += agg
     SUBDIR += akira
     SUBDIR += alembic
+    SUBDIR += aloadimage
     SUBDIR += alpng
     SUBDIR += ampasACES-container
     SUBDIR += ampasCTL

@@ -1,0 +1,12 @@
+Aloadimage is a simple command-line imageviewer for arcan, built on
+the image parsers provided by stb. Image loading is performed in the
+background as a separate, sandboxed (on Linux) processes and should be
+reasonably safe against maliciously crafted input sources.
+
+The primary purpose is to provide an arcan- specific replacement for
+xloadimage, and to serve as a testing ground for advanced image output such as
+full HDR- paths. The secondary purpose is to craft the image- loading worker
+pool to be secure and efficient enough to act as a building block for other
+components within the Arcan umbrella.
+
+WWW: https://arcan-fe.com/
