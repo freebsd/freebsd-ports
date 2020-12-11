@@ -932,6 +932,7 @@
     SUBDIR += tablix
     SUBDIR += taucs
     SUBDIR += tblis
+    SUBDIR += testu01
     SUBDIR += tetgen
     SUBDIR += teyjus
     SUBDIR += timbl
