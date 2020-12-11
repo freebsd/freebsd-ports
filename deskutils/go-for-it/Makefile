@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	go-for-it
-DISTVERSION=	1.8.7
+DISTVERSION=	1.9.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	neel@neelc.org
@@ -11,7 +11,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	valac:lang/vala
-LIB_DEPENDS=	libnotify.so:devel/libnotify
+LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
+		libnotify.so:devel/libnotify
 
 USES=		cmake gettext gnome pkgconfig
 CMAKE_ARGS=	-DAPP_SYSTEM_NAME:STRING=${PORTNAME}
