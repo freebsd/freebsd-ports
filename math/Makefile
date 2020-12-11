@@ -921,6 +921,7 @@
     SUBDIR += spooles
     SUBDIR += spooles-mpich
     SUBDIR += spot
+    SUBDIR += sprng
     SUBDIR += stp
     SUBDIR += suitesparse
     SUBDIR += sundials

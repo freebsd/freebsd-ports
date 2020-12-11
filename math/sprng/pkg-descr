@@ -1,0 +1,13 @@
+Computational stochastic approaches (Monte Carlo methods) based on the random
+sampling are becoming extremely important research tools not only in their
+"traditional" fields such as physics, chemistry or applied mathematics but also
+in social sciences and, recently, in various branches of industry. An indication
+of importance is, for example, the fact that Monte Carlo calculations consume
+about one half of the supercomputer cycles. One of the indispensable and
+important ingredients for reliable and statistically sound calculations is the
+source of pseudo random numbers. The goal of this project is to develop,
+implement and test a scalable package for parallel pseudo random number
+generation which will be easy to use on a variety of architectures, especially
+in large-scale parallel Monte Carlo applications.
+
+WWW: http://www.sprng.org/
