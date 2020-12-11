@@ -1,0 +1,6 @@
+anongitssh: a restricted shell for git-upload-pack over SSH
+
+Note: The default setting is for git.FreeBSD.org only and needs to be
+      overridden and rebuilt for being useful in other setups.
+
+WWW: https://github.com/hrs-allbsd/anongitssh/

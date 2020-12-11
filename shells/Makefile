@@ -5,6 +5,7 @@
 
     SUBDIR += 44bsd-csh
     SUBDIR += ammonite
+    SUBDIR += anongitssh
     SUBDIR += antibody
     SUBDIR += ast-ksh
     SUBDIR += bash
