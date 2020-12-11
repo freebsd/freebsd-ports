@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Note that some standard Python modules are not included as they require
+additional dependencies. These are:
+- bsddb
+- gdbm
+- sqlite3
+- tkinter
+If needed, they should be provided in other ports. Porters welcome!
+EOM
+}
+]
