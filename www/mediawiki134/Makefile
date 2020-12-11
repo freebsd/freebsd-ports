@@ -14,6 +14,9 @@ LICENSE=	GPLv2
 
 CONFLICTS=	mediawiki13[1-3]-[0-9]* mediawiki135-[0-9]*
 
+DEPRECATED=	Upstream end of life
+EXPIRATION_DATE=2020-12-31
+
 USES=		php:flavors shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
 		maintenance/postgres/*.pl \
