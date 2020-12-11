@@ -328,6 +328,7 @@
     SUBDIR += madsonic
     SUBDIR += man2web
     SUBDIR += mathjax
+    SUBDIR += mathjax3
     SUBDIR += mathopd
     SUBDIR += matomo
     SUBDIR += mattermost-server
