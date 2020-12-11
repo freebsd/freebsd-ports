@@ -1,6 +1,4 @@
 bin/klettres
-share/qlogging-categories5/klettres.categories
-etc/xdg/klettres.knsrc
 share/applications/org.kde.klettres.desktop
 share/config.kcfg/klettres.kcfg
 share/icons/hicolor/128x128/apps/klettres.png
@@ -1964,6 +1962,7 @@ share/icons/hicolor/64x64/apps/klettres.png
 %%DATADIR%%/uk/syllab/zhyt.ogg
 %%DATADIR%%/uk/syllab/zmi.ogg
 %%DATADIR%%/uk/syllab/zyk.ogg
+share/knsrcfiles/klettres.knsrc
 share/kxmlgui5/klettres/klettresui.rc
 share/locale/ar/LC_MESSAGES/klettres.mo
 share/locale/bg/LC_MESSAGES/klettres.mo
@@ -2018,3 +2017,5 @@ share/locale/wa/LC_MESSAGES/klettres.mo
 share/locale/zh_CN/LC_MESSAGES/klettres.mo
 share/locale/zh_TW/LC_MESSAGES/klettres.mo
 share/metainfo/org.kde.klettres.appdata.xml
+share/qlogging-categories5/klettres.categories
+

@@ -1,6 +1,5 @@
 bin/kblocks
 share/qlogging-categories5/kblocks.categories
-etc/xdg/kblocks.knsrc
 share/applications/org.kde.kblocks.desktop
 share/config.kcfg/kblocks.kcfg
 share/icons/hicolor/128x128/apps/kblocks.png
@@ -20,6 +19,7 @@ share/icons/hicolor/64x64/apps/kblocks.png
 %%DATADIR%%/themes/oxygen.desktop
 %%DATADIR%%/themes/oxygen.svg
 %%DATADIR%%/themes/oxygen_preview.png
+share/knsrcfiles/kblocks.knsrc
 share/kxmlgui5/kblocks/kblocksui.rc
 share/locale/ar/LC_MESSAGES/kblocks.mo
 share/locale/bg/LC_MESSAGES/kblocks.mo

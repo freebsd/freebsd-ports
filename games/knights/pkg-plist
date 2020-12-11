@@ -1,6 +1,5 @@
 bin/knights
 share/qlogging-categories5/knights.categories
-etc/xdg/knights.knsrc
 share/applications/org.kde.knights.desktop
 share/config.kcfg/knights.kcfg
 share/dbus-1/interfaces/org.kde.Knights.xml
@@ -75,3 +74,4 @@ share/locale/uk/LC_MESSAGES/knights.mo
 share/locale/zh_CN/LC_MESSAGES/knights.mo
 share/locale/zh_TW/LC_MESSAGES/knights.mo
 share/metainfo/org.kde.knights.appdata.xml
+share/knsrcfiles/knights.knsrc

@@ -27,9 +27,9 @@
     SUBDIR += gpxloggerd
     SUBDIR += jday
     SUBDIR += josm
+    SUBDIR += kosmindoormap
     SUBDIR += kstars
     SUBDIR += libgal
-    SUBDIR += libkgeomap
     SUBDIR += libnova
     SUBDIR += libosmium
     SUBDIR += libosmpbf

@@ -1,6 +1,4 @@
 bin/kigo
-etc/xdg/kigo-games.knsrc
-etc/xdg/kigo.knsrc
 share/applications/org.kde.kigo.desktop
 share/config.kcfg/kigo.kcfg
 share/icons/hicolor/128x128/apps/kigo.png
@@ -17,6 +15,8 @@ share/icons/hicolor/64x64/apps/kigo.png
 %%DATADIR%%/themes/kigo_plain.png
 %%DATADIR%%/themes/kigo_plain.svgz
 %%DATADIR%%/themes/plain.desktop
+share/knsrcfiles/kigo-games.knsrc
+share/knsrcfiles/kigo.knsrc
 share/kxmlgui5/kigo/kigoui.rc
 share/locale/bs/LC_MESSAGES/kigo.mo
 share/locale/ca/LC_MESSAGES/kigo.mo
@@ -29,6 +29,7 @@ share/locale/en_GB/LC_MESSAGES/kigo.mo
 share/locale/eo/LC_MESSAGES/kigo.mo
 share/locale/es/LC_MESSAGES/kigo.mo
 share/locale/et/LC_MESSAGES/kigo.mo
+share/locale/eu/LC_MESSAGES/kigo.mo
 share/locale/fi/LC_MESSAGES/kigo.mo
 share/locale/fr/LC_MESSAGES/kigo.mo
 share/locale/ga/LC_MESSAGES/kigo.mo

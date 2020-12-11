@@ -1,5 +1,4 @@
 bin/katomic
-etc/xdg/katomic.knsrc
 share/applications/org.kde.katomic.desktop
 share/icons/hicolor/128x128/apps/katomic.png
 share/icons/hicolor/16x16/apps/katomic.png
@@ -11,6 +10,7 @@ share/icons/hicolor/64x64/apps/katomic.png
 %%DATADIR%%/pics/default_theme.svgz
 share/kconf_update/katomic-levelset-upd.pl
 share/kconf_update/katomic-levelset.upd
+share/knsrcfiles/katomic.knsrc
 share/kxmlgui5/katomic/katomicui.rc
 share/locale/ar/LC_MESSAGES/katomic.mo
 share/locale/bg/LC_MESSAGES/katomic.mo

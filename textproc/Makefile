@@ -427,6 +427,7 @@
     SUBDIR += markdown
     SUBDIR += markdown-mode.el
     SUBDIR += markdownfmt
+    SUBDIR += markdownpart
     SUBDIR += mathml-xsd
     SUBDIR += mdbook
     SUBDIR += mdocml

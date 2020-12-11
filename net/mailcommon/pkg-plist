@@ -1,10 +1,12 @@
-share/qlogging-categories5/mailcommon.categories
-share/qlogging-categories5/mailcommon.renamecategories
 include/KF5/MailCommon/AccountConfigOrderDialog
 include/KF5/MailCommon/AddTagDialog
 include/KF5/MailCommon/BackupJob
 include/KF5/MailCommon/CollectionExpiryPage
+include/KF5/MailCommon/CollectionExpiryWidget
 include/KF5/MailCommon/CollectionGeneralPage
+include/KF5/MailCommon/CollectionGeneralWidget
+include/KF5/MailCommon/CollectionTemplatesWidget
+include/KF5/MailCommon/CollectionViewWidget
 include/KF5/MailCommon/CryptoUtils
 include/KF5/MailCommon/DBusOperators
 include/KF5/MailCommon/ExpireCollectionAttribute
@@ -52,7 +54,11 @@ include/KF5/mailcommon/accountconfigorderdialog.h
 include/KF5/mailcommon/addtagdialog.h
 include/KF5/mailcommon/backupjob.h
 include/KF5/mailcommon/collectionexpirypage.h
+include/KF5/mailcommon/collectionexpirywidget.h
 include/KF5/mailcommon/collectiongeneralpage.h
+include/KF5/mailcommon/collectiongeneralwidget.h
+include/KF5/mailcommon/collectiontemplateswidget.h
+include/KF5/mailcommon/collectionviewwidget.h
 include/KF5/mailcommon/cryptoutils.h
 include/KF5/mailcommon/dbusoperators.h
 include/KF5/mailcommon/expirecollectionattribute.h
@@ -105,8 +111,8 @@ lib/cmake/KF5MailCommon/KF5MailCommonConfigVersion.cmake
 lib/cmake/KF5MailCommon/KF5MailCommonTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5MailCommon/KF5MailCommonTargets.cmake
 lib/libKF5MailCommon.so
-lib/libKF5MailCommon.so.5
 lib/libKF5MailCommon.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKF5MailCommon.so.5
 %%QT_MKSPECDIR%%/modules/qt_MailCommon.pri
 %%QT_PLUGINDIR%%/designer/mailcommonwidgets.so
 share/locale/ar/LC_MESSAGES/libmailcommon.mo
@@ -152,3 +158,5 @@ share/locale/ug/LC_MESSAGES/libmailcommon.mo
 share/locale/uk/LC_MESSAGES/libmailcommon.mo
 share/locale/zh_CN/LC_MESSAGES/libmailcommon.mo
 share/locale/zh_TW/LC_MESSAGES/libmailcommon.mo
+share/qlogging-categories5/mailcommon.categories
+share/qlogging-categories5/mailcommon.renamecategories

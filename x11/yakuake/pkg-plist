@@ -1,5 +1,4 @@
 bin/yakuake
-etc/xdg/yakuake.knsrc
 share/applications/org.kde.yakuake.desktop
 share/dbus-1/services/org.kde.yakuake.service
 share/icons/hicolor/128x128/apps/yakuake.png
@@ -10,6 +9,7 @@ share/icons/hicolor/32x32/apps/yakuake.png
 share/icons/hicolor/48x48/apps/yakuake.png
 share/icons/hicolor/64x64/apps/yakuake.png
 share/knotifications5/yakuake.notifyrc
+share/knsrcfiles/yakuake.knsrc
 share/locale/ar/LC_MESSAGES/yakuake.mo
 share/locale/ast/LC_MESSAGES/yakuake.mo
 share/locale/bs/LC_MESSAGES/yakuake.mo

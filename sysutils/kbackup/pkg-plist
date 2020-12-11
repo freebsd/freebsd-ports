@@ -1,4 +1,9 @@
 bin/kbackup
+man/ca/man1/kbackup.1.gz
+man/it/man1/kbackup.1.gz
+man/man1/kbackup.1.gz
+man/sv/man1/kbackup.1.gz
+man/uk/man1/kbackup.1.gz
 share/applications/org.kde.kbackup.desktop
 share/icons/hicolor/16x16/apps/kbackup.png
 share/icons/hicolor/16x16/mimetypes/text-x-kbp.png

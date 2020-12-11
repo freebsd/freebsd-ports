@@ -1,5 +1,6 @@
 bin/spectacle
 lib/kconf_update_bin/spectacle-migrate-shortcuts
+lib/systemd/user/app-org.kde.spectacle.service
 share/qlogging-categories5/spectacle.categories
 share/applications/org.kde.spectacle.desktop
 share/dbus-1/interfaces/org.kde.Spectacle.xml

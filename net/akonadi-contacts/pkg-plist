@@ -7,6 +7,7 @@ include/KF5/Akonadi/Contact/AddEmailDisplayJob
 include/KF5/Akonadi/Contact/ContactDefaultActions
 include/KF5/Akonadi/Contact/ContactEditor
 include/KF5/Akonadi/Contact/ContactEditorDialog
+include/KF5/Akonadi/Contact/ContactGrantleeWrapper
 include/KF5/Akonadi/Contact/ContactGroupEditor
 include/KF5/Akonadi/Contact/ContactGroupEditorDialog
 include/KF5/Akonadi/Contact/ContactGroupExpandJob
@@ -24,6 +25,10 @@ include/KF5/Akonadi/Contact/EmailAddressSelection
 include/KF5/Akonadi/Contact/EmailAddressSelectionDialog
 include/KF5/Akonadi/Contact/EmailAddressSelectionModel
 include/KF5/Akonadi/Contact/EmailAddressSelectionWidget
+include/KF5/Akonadi/Contact/GrantleeContactFormatter
+include/KF5/Akonadi/Contact/GrantleeContactGroupFormatter
+include/KF5/Akonadi/Contact/GrantleeContactViewer
+include/KF5/Akonadi/Contact/GrantleePrint
 include/KF5/Akonadi/Contact/OpenEmailAddressJob
 include/KF5/Akonadi/Contact/RecipientsEditorManager
 include/KF5/Akonadi/Contact/RecipientsPickerWidget
@@ -43,6 +48,7 @@ include/KF5/akonadi/contact/akonadi-contact_export.h
 include/KF5/akonadi/contact/contactdefaultactions.h
 include/KF5/akonadi/contact/contacteditor.h
 include/KF5/akonadi/contact/contacteditordialog.h
+include/KF5/akonadi/contact/contactgrantleewrapper.h
 include/KF5/akonadi/contact/contactgroupeditor.h
 include/KF5/akonadi/contact/contactgroupeditordialog.h
 include/KF5/akonadi/contact/contactgroupexpandjob.h
@@ -60,6 +66,10 @@ include/KF5/akonadi/contact/emailaddressselection.h
 include/KF5/akonadi/contact/emailaddressselectiondialog.h
 include/KF5/akonadi/contact/emailaddressselectionmodel.h
 include/KF5/akonadi/contact/emailaddressselectionwidget.h
+include/KF5/akonadi/contact/grantleecontactformatter.h
+include/KF5/akonadi/contact/grantleecontactgroupformatter.h
+include/KF5/akonadi/contact/grantleecontactviewer.h
+include/KF5/akonadi/contact/grantleeprint.h
 include/KF5/akonadi/contact/openemailaddressjob.h
 include/KF5/akonadi/contact/recipientseditormanager.h
 include/KF5/akonadi/contact/recipientspickerwidget.h

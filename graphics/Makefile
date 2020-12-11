@@ -405,6 +405,7 @@
     SUBDIR += kludge3d
     SUBDIR += kmscube
     SUBDIR += kolourpaint
+    SUBDIR += kontrast
     SUBDIR += kooka
     SUBDIR += kphotoalbum
     SUBDIR += kqtquickcharts

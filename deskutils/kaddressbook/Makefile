@@ -20,7 +20,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		prison service sonnet textwidgets widgetsaddons xmlgui
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadisearch contacts grantleetheme \
-		imap kdepim-apps-libs kontactinterface libkdepim mime pimcommon \
+		imap kontactinterface libkdepim mime pimcommon \
 		kdepim-runtime5_run
 USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build

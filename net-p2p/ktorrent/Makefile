@@ -1,10 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ktorrent
-DISTVERSION=	5.2.0
-PORTREVISION=	1
-CATEGORIES=	net-p2p kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	net-p2p kde kde-applications
 
 # Since libktorrent is released with ktorrent, it lives in a
 # strange download directory; keep this in-sync with net-p2p/libktorrent.
@@ -27,7 +25,7 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 USE_QT=		concurrent core dbus gui network phonon4 script widgets xml \
 		buildtools_build qmake_build
 
-OPTIONS_DEFINE=	WORKSPACE
+OPTIONS_DEFINE=	DOCS WORKSPACE
 OPTIONS_DEFAULT=	WORKSPACE
 OPTIONS_SUB=	yes
 

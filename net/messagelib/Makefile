@@ -24,7 +24,7 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime akonadisearch calendarcore \
 		contacts grantleetheme gravatar identitymanagement \
-		kdepim-apps-libs ldap libkdepim libkleo mailtransport mbox \
+		ldap libkdepim libkleo mailtransport mbox \
 		mime pimcommon pimtextedit
 USE_QT=		concurrent core dbus declarative gui location network printsupport testlib \
 		uitools webchannel webengine widgets xml \

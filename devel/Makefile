@@ -1053,6 +1053,7 @@
     SUBDIR += kodi-platform
     SUBDIR += kokkos
     SUBDIR += kore
+    SUBDIR += kpublictransport
     SUBDIR += kronosnet
     SUBDIR += ksql
     SUBDIR += kyra

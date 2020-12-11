@@ -4,7 +4,6 @@ include/KPim/KGAPI/KGAPI/AccountInfo
 include/KPim/KGAPI/KGAPI/AccountInfoFetchJob
 include/KPim/KGAPI/KGAPI/AccountManager
 include/KPim/KGAPI/KGAPI/AuthJob
-include/KPim/KGAPI/KGAPI/AuthWidget
 include/KPim/KGAPI/KGAPI/Blogger/Blog
 include/KPim/KGAPI/KGAPI/Blogger/BlogFetchJob
 include/KPim/KGAPI/KGAPI/Blogger/Comment
@@ -71,6 +70,7 @@ include/KPim/KGAPI/KGAPI/Drive/DrivesSearchQuery
 include/KPim/KGAPI/KGAPI/Drive/File
 include/KPim/KGAPI/KGAPI/Drive/FileAbstractDataJob
 include/KPim/KGAPI/KGAPI/Drive/FileAbstractModifyJob
+include/KPim/KGAPI/KGAPI/Drive/FileAbstractResumableJob
 include/KPim/KGAPI/KGAPI/Drive/FileAbstractUploadJob
 include/KPim/KGAPI/KGAPI/Drive/FileCopyJob
 include/KPim/KGAPI/KGAPI/Drive/FileCreateJob
@@ -78,6 +78,8 @@ include/KPim/KGAPI/KGAPI/Drive/FileDeleteJob
 include/KPim/KGAPI/KGAPI/Drive/FileFetchContentJob
 include/KPim/KGAPI/KGAPI/Drive/FileFetchJob
 include/KPim/KGAPI/KGAPI/Drive/FileModifyJob
+include/KPim/KGAPI/KGAPI/Drive/FileResumableCreateJob
+include/KPim/KGAPI/KGAPI/Drive/FileResumableModifyJob
 include/KPim/KGAPI/KGAPI/Drive/FileSearchQuery
 include/KPim/KGAPI/KGAPI/Drive/FileTouchJob
 include/KPim/KGAPI/KGAPI/Drive/FileTrashJob
@@ -135,7 +137,6 @@ include/KPim/KGAPI/kgapi/accountinfo.h
 include/KPim/KGAPI/kgapi/accountinfofetchjob.h
 include/KPim/KGAPI/kgapi/accountmanager.h
 include/KPim/KGAPI/kgapi/authjob.h
-include/KPim/KGAPI/kgapi/authwidget.h
 include/KPim/KGAPI/kgapi/blogger/blog.h
 include/KPim/KGAPI/kgapi/blogger/blogfetchjob.h
 include/KPim/KGAPI/kgapi/blogger/comment.h
@@ -205,6 +206,7 @@ include/KPim/KGAPI/kgapi/drive/drivessearchquery.h
 include/KPim/KGAPI/kgapi/drive/file.h
 include/KPim/KGAPI/kgapi/drive/fileabstractdatajob.h
 include/KPim/KGAPI/kgapi/drive/fileabstractmodifyjob.h
+include/KPim/KGAPI/kgapi/drive/fileabstractresumablejob.h
 include/KPim/KGAPI/kgapi/drive/fileabstractuploadjob.h
 include/KPim/KGAPI/kgapi/drive/filecopyjob.h
 include/KPim/KGAPI/kgapi/drive/filecreatejob.h
@@ -212,6 +214,8 @@ include/KPim/KGAPI/kgapi/drive/filedeletejob.h
 include/KPim/KGAPI/kgapi/drive/filefetchcontentjob.h
 include/KPim/KGAPI/kgapi/drive/filefetchjob.h
 include/KPim/KGAPI/kgapi/drive/filemodifyjob.h
+include/KPim/KGAPI/kgapi/drive/fileresumablecreatejob.h
+include/KPim/KGAPI/kgapi/drive/fileresumablemodifyjob.h
 include/KPim/KGAPI/kgapi/drive/filesearchquery.h
 include/KPim/KGAPI/kgapi/drive/filetouchjob.h
 include/KPim/KGAPI/kgapi/drive/filetrashjob.h

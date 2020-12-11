@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	libktorrent
-DISTVERSION=	2.2.0
-CATEGORIES=	net-p2p kde
-MASTER_SITES=	KDE/stable/ktorrent/5.2.0/
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	net-p2p kde kde-applications
 
 # Since libktorrent is released with ktorrent, it lives in a
 # strange download directory; keep this in-sync with net-p2p/ktorrent.
@@ -21,5 +20,7 @@ USE_KDE=	archive completion config coreaddons crash ecm i18n \
 		jobwidgets kio service solid widgetsaddons
 USE_QT=		core gui network testlib xml \
 		buildtools_build qmake_build
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

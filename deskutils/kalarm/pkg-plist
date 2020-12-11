@@ -31,6 +31,7 @@ share/kconf_update/kalarm-2.0.2-general.pl
 share/kconf_update/kalarm-2.1.5-general.pl
 share/kconf_update/kalarm-version.pl
 share/kconf_update/kalarm.upd
+share/knotifications5/kalarm.notifyrc
 share/kxmlgui5/kalarm/kalarmui.rc
 share/locale/ar/LC_MESSAGES/kalarm.mo
 share/locale/bg/LC_MESSAGES/kalarm.mo

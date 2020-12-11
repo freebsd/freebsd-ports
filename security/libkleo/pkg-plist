@@ -11,7 +11,6 @@ include/KF5/Libkleo/DefaultKeyGenerationJob
 include/KF5/Libkleo/DirectoryServicesWidget
 include/KF5/Libkleo/Dn
 include/KF5/Libkleo/Enum
-include/KF5/Libkleo/Exception
 include/KF5/Libkleo/FileNameRequester
 include/KF5/Libkleo/FileSystemWatcher
 include/KF5/Libkleo/Formatting
@@ -30,6 +29,7 @@ include/KF5/Libkleo/KeyRequester
 include/KF5/Libkleo/KeyResolver
 include/KF5/Libkleo/KeySelectionCombo
 include/KF5/Libkleo/KeySelectionDialog
+include/KF5/Libkleo/KleoException
 include/KF5/Libkleo/MessageBox
 include/KF5/Libkleo/NewKeyApprovalDialog
 include/KF5/Libkleo/OidMap
@@ -48,7 +48,6 @@ include/KF5/libkleo/directoryserviceswidget.h
 include/KF5/libkleo/dn.h
 include/KF5/libkleo/dnattributeorderconfigwidget.h
 include/KF5/libkleo/enum.h
-include/KF5/libkleo/exception.h
 include/KF5/libkleo/filenamerequester.h
 include/KF5/libkleo/filesystemwatcher.h
 include/KF5/libkleo/formatting.h
@@ -68,6 +67,7 @@ include/KF5/libkleo/keyresolver.h
 include/KF5/libkleo/keyselectioncombo.h
 include/KF5/libkleo/keyselectiondialog.h
 include/KF5/libkleo/kleo_export.h
+include/KF5/libkleo/kleoexception.h
 include/KF5/libkleo/messagebox.h
 include/KF5/libkleo/newkeyapprovaldialog.h
 include/KF5/libkleo/oidmap.h

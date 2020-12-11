@@ -14,7 +14,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		ecm i18n iconthemes itemmodels jobwidgets kcmutils kio parts \
 		service sonnet textwidgets widgetsaddons windowsystem xmlgui
 # pim components
-USE_KDE+=	akonadi grantleetheme kdepim-apps-libs kontactinterface libkdepim
+USE_KDE+=	akonadi grantleetheme kontactinterface libkdepim pimcommon
 USE_QT=		concurrent core dbus declarative gui location network  \
 		printsupport webchannel webengine widgets xml \
 		buildtools_build qmake_build

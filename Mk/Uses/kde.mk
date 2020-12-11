@@ -62,8 +62,8 @@ KDE_FRAMEWORKS_VERSION?=	5.76.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=	20.08.3
-KDE_APPLICATIONS_SHLIB_VER?=	5.15.3
+KDE_APPLICATIONS_VERSION?=	20.12.0
+KDE_APPLICATIONS_SHLIB_VER?=	5.16.0
 KDE_APPLICATIONS_BRANCH?=	stable
 # Upstream moves old software to Attic/. Specify the newest applications release there.
 # Only the major version is used for the comparison.
@@ -175,7 +175,7 @@ PLIST_SUB+=		KDE_PLASMA_VERSION="${KDE_PLASMA_VERSION}" \
 
 _USE_KDE_BOTH=		akonadi attica libkcddb libkcompactdisc libkdcraw libkdegames \
 			libkeduvocdocument libkexiv2 libkipi libksane okular \
-			baloo baloo-widgets kate marble
+			baloo baloo-widgets kate marble 
 
 # List of components of the KDE Frameworks distribution.
 # The *_TIER<n> variables are internal, primarily for checking
@@ -211,7 +211,8 @@ _USE_FRAMEWORKS_ALL=	ecm \
 			${_USE_FRAMEWORKS_TIER3} \
 			${_USE_FRAMEWORKS_TIER4} \
 			${_USE_FRAMEWORKS_PORTING} \
-			${_USE_FRAMEWORKS_EXTRA}
+			${_USE_FRAMEWORKS_EXTRA} \
+			kpublictransport kosm
 
 # List of components of the KDE Plasma distribution.
 _USE_PLASMA_ALL=	activitymanagerd breeze breeze-gtk \
@@ -231,7 +232,7 @@ _USE_KDEPIM5_ALL=	akonadicontacts akonadiimportwizard akonadimime akonadinotes \
 			calendarcore calendarsupport calendarutils \
 			contacts eventviews gapi grantleetheme \
 			gravatar identitymanagement imap \
-			incidenceeditor kdepim-addons kdepim-apps-libs \
+			incidenceeditor kdepim-addons \
 			kdepim-runtime5 kitinerary kontactinterface kpkpass \
 			ksmtp ldap libkdepim libkleo libksieve mailcommon \
 			mailimporter mailtransport mbox messagelib \
@@ -661,9 +662,6 @@ kde-kdav_LIB=			libKF5DAV.so
 kde-kdepim-addons_PORT=	deskutils/kdepim-addons
 kde-kdepim-addons_PATH=	${KDE_PREFIX}/lib/contacteditor/editorpageplugins/cryptopageplugin.so
 
-kde-kdepim-apps-libs_PORT=	deskutils/kdepim-apps-libs
-kde-kdepim-apps-libs_LIB=	libKF5KaddressbookGrantlee.so
-
 kde-kdepim-runtime5_PORT=	deskutils/kdepim-runtime
 kde-kdepim-runtime5_PATH=	${KDE_PREFIX}/bin/gidmigrator
 
@@ -792,6 +790,12 @@ kde-libksane5_LIB=		libKF5Sane.so
 
 kde-marble5_PORT=		astro/marble
 kde-marble5_LIB=		libmarblewidget-qt5.so
+
+kde-kpublictransport_PORT=	devel/kpublictransport
+kde-kpublictransport_LIB=	libKPublicTransport.so
+
+kde-kosm_PORT=			astro/kosmindoormap
+kde-kosm_LIB=			libKOSM.so
 
 kde-okular5_PORT=		graphics/okular
 kde-okular5_LIB=		libOkular5Core.so

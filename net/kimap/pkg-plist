@@ -9,6 +9,7 @@ include/KF5/KIMAP/KIMAP/CopyJob
 include/KF5/KIMAP/KIMAP/CreateJob
 include/KF5/KIMAP/KIMAP/DeleteAclJob
 include/KF5/KIMAP/KIMAP/DeleteJob
+include/KF5/KIMAP/KIMAP/EnableJob
 include/KF5/KIMAP/KIMAP/ExpungeJob
 include/KF5/KIMAP/KIMAP/FetchJob
 include/KF5/KIMAP/KIMAP/GetAclJob
@@ -28,8 +29,8 @@ include/KF5/KIMAP/KIMAP/MoveJob
 include/KF5/KIMAP/KIMAP/MyRightsJob
 include/KF5/KIMAP/KIMAP/NamespaceJob
 include/KF5/KIMAP/KIMAP/QuotaJobBase
-include/KF5/KIMAP/KIMAP/RenameJob
 include/KF5/KIMAP/KIMAP/RFCCodecs
+include/KF5/KIMAP/KIMAP/RenameJob
 include/KF5/KIMAP/KIMAP/SearchJob
 include/KF5/KIMAP/KIMAP/SelectJob
 include/KF5/KIMAP/KIMAP/Session
@@ -50,6 +51,7 @@ include/KF5/KIMAP/kimap/CopyJob
 include/KF5/KIMAP/kimap/CreateJob
 include/KF5/KIMAP/kimap/DeleteAclJob
 include/KF5/KIMAP/kimap/DeleteJob
+include/KF5/KIMAP/kimap/EnableJob
 include/KF5/KIMAP/kimap/ExpungeJob
 include/KF5/KIMAP/kimap/FetchJob
 include/KF5/KIMAP/kimap/GetAclJob
@@ -69,8 +71,8 @@ include/KF5/KIMAP/kimap/MoveJob
 include/KF5/KIMAP/kimap/MyRightsJob
 include/KF5/KIMAP/kimap/NamespaceJob
 include/KF5/KIMAP/kimap/QuotaJobBase
-include/KF5/KIMAP/kimap/RenameJob
 include/KF5/KIMAP/kimap/RFCCodecs
+include/KF5/KIMAP/kimap/RenameJob
 include/KF5/KIMAP/kimap/SearchJob
 include/KF5/KIMAP/kimap/SelectJob
 include/KF5/KIMAP/kimap/Session
@@ -91,6 +93,7 @@ include/KF5/KIMAP/kimap/copyjob.h
 include/KF5/KIMAP/kimap/createjob.h
 include/KF5/KIMAP/kimap/deleteacljob.h
 include/KF5/KIMAP/kimap/deletejob.h
+include/KF5/KIMAP/kimap/enablejob.h
 include/KF5/KIMAP/kimap/expungejob.h
 include/KF5/KIMAP/kimap/fetchjob.h
 include/KF5/KIMAP/kimap/getacljob.h

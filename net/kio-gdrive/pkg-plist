@@ -1,6 +1,7 @@
 %%QT_PLUGINDIR%%/kaccounts/daemonplugins/gdrive.so
-%%QT_PLUGINDIR%%/kf5/kfileitemaction/copyurlitemaction.so
+%%QT_PLUGINDIR%%/kf5/kfileitemaction/gdrivecontextmenuaction.so
 %%QT_PLUGINDIR%%/kf5/kio/gdrive.so
+%%QT_PLUGINDIR%%/kf5/propertiesdialog/gdrivepropertiesplugin.so
 share/accounts/services/kde/google-drive.service
 share/knotifications5/gdrive.notifyrc
 share/locale/ar/LC_MESSAGES/kio5_gdrive.mo

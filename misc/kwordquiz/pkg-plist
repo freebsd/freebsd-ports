@@ -1,5 +1,4 @@
 bin/kwordquiz
-etc/xdg/kwordquiz.knsrc
 share/applications/org.kde.kwordquiz.desktop
 share/config.kcfg/kwordquiz.kcfg
 share/icons/hicolor/128x128/apps/kwordquiz.png
@@ -14,6 +13,7 @@ share/icons/hicolor/48x48/apps/kwordquiz.png
 share/icons/hicolor/48x48/mimetypes/application-x-kwordquiz.png
 share/icons/hicolor/64x64/apps/kwordquiz.png
 share/knotifications5/kwordquiz.notifyrc
+share/knsrcfiles/kwordquiz.knsrc
 %%DATADIR%%/examples/example.kvtml
 %%DATADIR%%/examples/fill_in_the_blank.kvtml
 %%DATADIR%%/examples/french_verbs.kvtml

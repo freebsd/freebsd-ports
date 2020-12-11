@@ -18,7 +18,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons ecm \
 		textwidgets wallet widgetsaddons xmlgui
 # pim components
 USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime calendarcore calendarsupport calendarutils \
-		contacts eventviews identitymanagement kdepim-apps-libs ldap \
+		contacts eventviews identitymanagement ldap \
 		libkdepim mailtransport mime pimtextedit
 USE_QT=		concurrent core dbus gui network printsupport testlib uitools \
 		webkit widgets xml \

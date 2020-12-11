@@ -1,7 +1,6 @@
 bin/ksirk
 bin/ksirkskineditor
 share/qlogging-categories5/ksirk.categories
-etc/xdg/ksirk.knsrc
 lib/libiris_ksirk.so
 lib/libiris_ksirk.so.2
 lib/libiris_ksirk.so.2.0.0
@@ -56,6 +55,7 @@ share/icons/hicolor/scalable/apps/ksirk.svgz
 %%DATADIR%%/skins/skinsdir
 %%DATADIR%%skineditor/cross.png
 %%DATADIR%%skineditor/target.png
+share/knsrcfiles/ksirk.knsrc
 share/kxmlgui5/ksirk/ksirkui.rc
 share/kxmlgui5/ksirkskineditor/ksirkskineditorui.rc
 share/locale/ar/LC_MESSAGES/ksirk.mo

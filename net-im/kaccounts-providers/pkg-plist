@@ -9,10 +9,16 @@ share/accounts/providers/kde/nextcloud.provider
 share/accounts/providers/kde/owncloud.provider
 share/accounts/services/kde/nextcloud-contacts.service
 share/accounts/services/kde/nextcloud-storage.service
+share/accounts/services/kde/owncloud-storage.service
+share/icons/hicolor/256x256/apps/kaccounts-owncloud.png
+share/icons/hicolor/scalable/apps/kaccounts-nextcloud.svg
+share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/Server.qml
+share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/Services.qml
+share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/WebLogin.qml
 share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/main.qml
 share/kpackage/genericqml/org.kde.kaccounts.nextcloud/metadata.desktop
 share/kpackage/genericqml/org.kde.kaccounts.nextcloud/metadata.json
-share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/BasicInfo.qml
+share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/Server.qml
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/Services.qml
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/main.qml
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/metadata.desktop
@@ -32,6 +38,7 @@ share/locale/eu/LC_MESSAGES/kaccounts-providers.mo
 share/locale/fi/LC_MESSAGES/kaccounts-providers.mo
 share/locale/fr/LC_MESSAGES/kaccounts-providers.mo
 share/locale/gl/LC_MESSAGES/kaccounts-providers.mo
+share/locale/hu/LC_MESSAGES/kaccounts-providers.mo
 share/locale/ia/LC_MESSAGES/kaccounts-providers.mo
 share/locale/it/LC_MESSAGES/kaccounts-providers.mo
 share/locale/ja/LC_MESSAGES/kaccounts-providers.mo

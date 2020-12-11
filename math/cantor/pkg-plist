@@ -2,16 +2,6 @@ bin/cantor
 bin/cantor_pythonserver
 %%R%%bin/cantor_rserver
 bin/cantor_scripteditor
-etc/xdg/cantor.knsrc
-etc/xdg/cantor_kalgebra.knsrc
-%%LUAJIT%%etc/xdg/cantor_lua.knsrc
-etc/xdg/cantor_maxima.knsrc
-etc/xdg/cantor_octave.knsrc
-etc/xdg/cantor_python.knsrc
-etc/xdg/cantor_qalculate.knsrc
-%%R%%etc/xdg/cantor_r.knsrc
-etc/xdg/cantor_sage.knsrc
-etc/xdg/cantor_scilab.knsrc
 include/cantor/animationresult.h
 include/cantor/backend.h
 include/cantor/cantor_export.h
@@ -30,6 +20,8 @@ include/cantor/imageresult.h
 include/cantor/jupyterutils.h
 include/cantor/latexresult.h
 include/cantor/mimeresult.h
+include/cantor/panelplugin.h
+include/cantor/panelpluginhandler.h
 include/cantor/renderer.h
 include/cantor/result.h
 include/cantor/session.h
@@ -43,7 +35,7 @@ lib/cmake/Cantor/CantorTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Cantor/CantorTargets.cmake
 lib/libcantor_config.so
 lib/libcantorlibs.so
-lib/libcantorlibs.so.27
+lib/libcantorlibs.so.28
 lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_advancedplotassistant.so
 %%QT_PLUGINDIR%%/cantor/assistants/cantor_creatematrixassistant.so
@@ -69,6 +61,7 @@ lib/libcantorlibs.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/cantor/backends/cantor_scilabbackend.so
 %%QT_PLUGINDIR%%/cantor/panels/cantor_filebrowserpanelplugin.so
 %%QT_PLUGINDIR%%/cantor/panels/cantor_helppanelplugin.so
+%%QT_PLUGINDIR%%/cantor/panels/cantor_tocpanelplugin.so
 %%QT_PLUGINDIR%%/cantor/panels/cantor_variablemanagerplugin.so
 %%QT_PLUGINDIR%%/libcantorpart.so
 share/applications/org.kde.cantor.desktop
@@ -109,6 +102,16 @@ share/icons/hicolor/48x48/apps/rbackend.png
 share/icons/hicolor/48x48/apps/sagebackend.png
 share/icons/hicolor/48x48/apps/scilabbackend.png
 share/icons/hicolor/64x64/apps/cantor.png
+share/knsrcfiles/cantor.knsrc
+share/knsrcfiles/cantor_kalgebra.knsrc
+%%LUAJIT%%share/knsrcfiles/cantor_lua.knsrc
+share/knsrcfiles/cantor_maxima.knsrc
+share/knsrcfiles/cantor_octave.knsrc
+share/knsrcfiles/cantor_python.knsrc
+share/knsrcfiles/cantor_qalculate.knsrc
+%%R%%share/knsrcfiles/cantor_r.knsrc
+share/knsrcfiles/cantor_sage.knsrc
+share/knsrcfiles/cantor_scilab.knsrc
 share/kxmlgui5/cantor/cantor_advancedplot_assistant.rc
 share/kxmlgui5/cantor/cantor_create_matrix_assistant.rc
 share/kxmlgui5/cantor/cantor_differentiate_assistant.rc
@@ -143,6 +146,7 @@ share/locale/ga/LC_MESSAGES/cantor.mo
 share/locale/gl/LC_MESSAGES/cantor.mo
 share/locale/hr/LC_MESSAGES/cantor.mo
 share/locale/hu/LC_MESSAGES/cantor.mo
+share/locale/ia/LC_MESSAGES/cantor.mo
 share/locale/it/LC_MESSAGES/cantor.mo
 share/locale/ja/LC_MESSAGES/cantor.mo
 share/locale/kk/LC_MESSAGES/cantor.mo

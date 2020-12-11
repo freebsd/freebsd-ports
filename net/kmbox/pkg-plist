@@ -13,4 +13,4 @@ lib/cmake/KF5Mbox/KF5MboxTargets.cmake
 lib/libKF5Mbox.so
 lib/libKF5Mbox.so.5
 lib/libKF5Mbox.so.%%KDE_APPLICATIONS_SHLIB_VER%%
-%%QT_MKSPECDIR%%/modules/qt_Mbox.pri
+%%QT_MKSPECDIR%%/modules/qt_KMbox.pri

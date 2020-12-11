@@ -22,6 +22,7 @@ share/knotifications5/konsole.notifyrc
 %%DATADIR%%/WhiteOnBlack.colorscheme
 %%DATADIR%%/default.keytab
 %%DATADIR%%/linux.keytab
+%%DATADIR%%/macos.keytab
 %%DATADIR%%/solaris.keytab
 share/knsrcfiles/konsole.knsrc
 share/kservices5/ServiceMenus/konsolehere.desktop

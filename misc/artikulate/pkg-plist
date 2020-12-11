@@ -1,6 +1,5 @@
 bin/artikulate
 bin/artikulate_editor
-etc/xdg/artikulate.knsrc
 lib/libartikulatecore.so.0
 lib/libartikulatelearnerprofile.so.0
 lib/libartikulatesound.so.0
@@ -12,6 +11,7 @@ share/icons/hicolor/32x32/apps/artikulate.png
 share/icons/hicolor/48x48/apps/artikulate.png
 share/icons/hicolor/64x64/apps/artikulate.png
 share/icons/hicolor/scalable/apps/artikulate.svg
+share/knsrcfiles/artikulate.knsrc
 share/locale/bs/LC_MESSAGES/artikulate.mo
 share/locale/ca/LC_MESSAGES/artikulate.mo
 share/locale/ca@valencia/LC_MESSAGES/artikulate.mo

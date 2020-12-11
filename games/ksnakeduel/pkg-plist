@@ -1,6 +1,5 @@
 bin/ksnakeduel
 share/qlogging-categories5/ksnakeduel.categories
-etc/xdg/ksnakeduel.knsrc
 share/applications/org.kde.ksnakeduel.desktop
 share/config.kcfg/ksnakeduel.kcfg
 share/icons/hicolor/128x128/apps/ksnakeduel.png
@@ -16,6 +15,7 @@ share/icons/hicolor/64x64/apps/ksnakeduel.png
 %%DATADIR%%/themes/neon.desktop
 %%DATADIR%%/themes/neon.png
 %%DATADIR%%/themes/neon.svg
+share/knsrcfiles/ksnakeduel.knsrc
 share/locale/bs/LC_MESSAGES/ksnakeduel.mo
 share/locale/ca/LC_MESSAGES/ksnakeduel.mo
 share/locale/ca@valencia/LC_MESSAGES/ksnakeduel.mo

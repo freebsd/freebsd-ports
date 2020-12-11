@@ -1,5 +1,4 @@
 bin/kalzium
-etc/xdg/kalzium.knsrc
 include/libkdeedu/chemicaldataobject.h
 include/libkdeedu/element.h
 include/libkdeedu/elementparser.h
@@ -368,6 +367,7 @@ share/icons/hicolor/scalable/apps/kalzium.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/statematter.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/timeline.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/tooltip.svgz
+share/knsrcfiles/kalzium.knsrc
 share/kxmlgui5/kalzium/kalziumui.rc
 share/libkdeedu/data/elements.xml
 share/libkdeedu/data/isotopes.xml

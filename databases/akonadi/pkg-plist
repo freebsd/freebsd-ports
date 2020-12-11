@@ -304,6 +304,7 @@ include/KF5/AkonadiXml/xmlwriter.h
 include/KF5/akonadi/abstractsearchplugin.h
 include/KF5/akonadi/private/akonadiprivate_export.h
 include/KF5/akonadi/private/capabilities_p.h
+include/KF5/akonadi/private/compressionstream_p.h
 include/KF5/akonadi/private/dbus_p.h
 include/KF5/akonadi/private/externalpartstorage_p.h
 include/KF5/akonadi/private/imapparser_p.h

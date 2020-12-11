@@ -1,6 +1,4 @@
 bin/kgoldrunner
-share/qlogging-categories5/kgoldrunner.categories
-etc/xdg/kgoldrunner.knsrc
 share/applications/org.kde.kgoldrunner.desktop
 share/icons/hicolor/128x128/apps/kgoldrunner.png
 share/icons/hicolor/16x16/apps/kgoldrunner.png
@@ -73,6 +71,7 @@ share/icons/hicolor/64x64/apps/kgoldrunner.png
 %%DATADIR%%/themes/nostalgia/nostalgia-blues.png
 %%DATADIR%%/themes/nostalgia/nostalgia.png
 %%DATADIR%%/themes/nostalgia/set.svg
+share/knsrcfiles/kgoldrunner.knsrc
 share/kxmlgui5/kgoldrunner/kgoldrunnerui.rc
 share/locale/ar/LC_MESSAGES/kgoldrunner.mo
 share/locale/bg/LC_MESSAGES/kgoldrunner.mo
@@ -127,3 +126,4 @@ share/locale/uk/LC_MESSAGES/kgoldrunner.mo
 share/locale/zh_CN/LC_MESSAGES/kgoldrunner.mo
 share/locale/zh_TW/LC_MESSAGES/kgoldrunner.mo
 share/metainfo/org.kde.kgoldrunner.appdata.xml
+share/qlogging-categories5/kgoldrunner.categories

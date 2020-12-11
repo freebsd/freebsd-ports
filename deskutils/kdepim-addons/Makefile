@@ -28,7 +28,7 @@ USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadiimportwizard \
 		akonadimime akonadinotes calendarcore calendarsupport \
 		calendarutils contacts eventviews gapi grantleetheme \
 		gravatar identitymanagement imap incidenceeditor \
-		kdepim-apps-libs kitinerary kontactinterface kpkpass libkdepim \
+		kitinerary kontactinterface kpkpass libkdepim \
 		libkleo libksieve mailcommon mailimporter mailtransport \
 		messagelib mime pimcommon pimtextedit tnef
 USE_QT=		concurrent core dbus declarative gui location network printsupport testlib \

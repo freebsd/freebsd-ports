@@ -1,6 +1,4 @@
 include/KF5/Libkdepim/KCheckComboBox
-include/KF5/Libkdepim/KCursorSaver
-include/KF5/Libkdepim/KPrefsDialog
 include/KF5/Libkdepim/KWidgetLister
 include/KF5/Libkdepim/LineEditCatchReturnKey
 include/KF5/Libkdepim/MultiplyingLine
@@ -10,11 +8,8 @@ include/KF5/Libkdepim/ProgressIndicatorLabel
 include/KF5/Libkdepim/ProgressManager
 include/KF5/Libkdepim/ProgressStatusBarWidget
 include/KF5/Libkdepim/StatusbarProgressWidget
-include/KF5/Libkdepim/UiStateSaver
 include/KF5/libkdepim/kcheckcombobox.h
-include/KF5/libkdepim/kcursorsaver.h
 include/KF5/libkdepim/kdepim_export.h
-include/KF5/libkdepim/kprefsdialog.h
 include/KF5/libkdepim/kwidgetlister.h
 include/KF5/libkdepim/lineeditcatchreturnkey.h
 include/KF5/libkdepim/multiplyingline.h
@@ -24,7 +19,6 @@ include/KF5/libkdepim/progressindicatorlabel.h
 include/KF5/libkdepim/progressmanager.h
 include/KF5/libkdepim/progressstatusbarwidget.h
 include/KF5/libkdepim/statusbarprogresswidget.h
-include/KF5/libkdepim/uistatesaver.h
 include/KF5/libkdepim_version.h
 lib/cmake/KF5Libkdepim/KF5LibkdepimConfig.cmake
 lib/cmake/KF5Libkdepim/KF5LibkdepimConfigVersion.cmake

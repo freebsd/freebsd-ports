@@ -19,7 +19,7 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime \
 		akonadinotes akonadisearch calendarcore calendarsupport \
 		calendarutils contacts eventviews holidays identitymanagement \
-		imap incidenceeditor kdepim-apps-libs kontactinterface ldap \
+		imap incidenceeditor kontactinterface ldap \
 		libkdepim mailtransport mime pimcommon pimtextedit \
 		kdepim-runtime5_run
 USE_QT=		concurrent core dbus gui multimedia network phonon4 printsupport widgets xml \

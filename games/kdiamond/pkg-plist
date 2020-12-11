@@ -1,5 +1,4 @@
 bin/kdiamond
-etc/xdg/kdiamond.knsrc
 share/applications/org.kde.kdiamond.desktop
 share/icons/hicolor/128x128/apps/kdiamond.png
 share/icons/hicolor/16x16/apps/kdiamond.png
@@ -18,6 +17,7 @@ share/icons/hicolor/64x64/apps/kdiamond.png
 %%DATADIR%%/themes/funny_zoo.png
 %%DATADIR%%/themes/funny_zoo.svgz
 share/knotifications5/kdiamond.notifyrc
+share/knsrcfiles/kdiamond.knsrc
 share/kxmlgui5/kdiamond/kdiamondui.rc
 share/locale/ar/LC_MESSAGES/kdiamond.mo
 share/locale/bg/LC_MESSAGES/kdiamond.mo
