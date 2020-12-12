@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.11.0
+PORTVERSION=	1.13.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/ \
 		https://distfiles.crux.guru/
@@ -28,15 +28,17 @@ GROUPS=		${PORTNAME}
 
 USE_RC_SUBR=	unbound
 
-PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
-		README.tests TODO control_proto_spec.txt ietf67-design-02.odp \
+PORTDOCS=	CNAME-basedRedirectionDesignNotes.pdf CREDITS Changelog \
+		FEATURES IP-BasedActions.pdf LICENSE README README.DNS64 \
+		README.ipset.md README.svn README.tests TODO \
+		control_proto_spec.txt example.conf ietf67-design-02.odp \
 		ietf67-design-02.pdf requirements.txt
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN_PLUGIN DOCS LIBEVENT \
-		FILTER_AAAA DNSTAP DNSCRYPT SUBNET EVAPI TFOCL TFOSE \
-		HIREDIS
-OPTIONS_DEFAULT=THREADS ECDSA LIBEVENT GOST
+OPTIONS_DEFINE=	DNSCRYPT DNSTAP DOCS DOH ECDSA EVAPI FILTER_AAAA GOST \
+		HIREDIS LIBEVENT MUNIN_PLUGIN PYTHON SUBNET TFOCL TFOSE \
+		THREADS 
+OPTIONS_DEFAULT=ECDSA GOST LIBEVENT THREADS
 
 LIBEVENT_DESC=	Build against libevent
 GOST_DESC=	Enable GOST support (requires OpenSSL >= 1.0)
@@ -50,6 +52,7 @@ EVAPI_DESC=	(Experimental) pluggable event based libunbound API support
 TFOCL_DESC=	Enable TCP Fast Open for client mode
 TFOSE_DESC=	Enable TCP Fast Open for server mode
 HIREDIS_DESC=	Enable hiredis support for the cachedb module
+DOH_DESC=	Enable DNS-over-HTTPS supports
 
 STRIP_FILES=	.libs/libunbound.so unbound-checkconf unbound \
 		unbound-control .libs/unbound-host .libs/unbound-anchor
@@ -81,6 +84,8 @@ PYTHON_VARS=		STRIP_FILES+=.libs/_unbound.so
 THREADS_CONFIGURE_WITH=	pthreads
 HIREDIS_CONFIGURE_ON=	--enable-cachedb --with-libhiredis
 HIREDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
+DOH_CONFIGURE_ON=	--with-libnghttp2
+DOH_LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
 post-patch:
 	@${RM} ${WRKSRC}/util/configlexer.c
