@@ -58,6 +58,7 @@ LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64
+CFLAGS+=	-Wno-unused-label
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++11-lib
