@@ -1,6 +1,7 @@
 lib/teamspeak/server/libmariadb.so.2
 lib/teamspeak/server/libts3_ssh.so
 lib/teamspeak/server/libts3db_mariadb.so
+lib/teamspeak/server/libts3db_postgresql.so
 lib/teamspeak/server/libts3db_sqlite3.so
 libexec/ts3server
 share/teamspeak/server/CHANGELOG
@@ -101,6 +102,9 @@ share/teamspeak/server/serverquerydocs/privilegekeyadd.txt
 share/teamspeak/server/serverquerydocs/privilegekeydelete.txt
 share/teamspeak/server/serverquerydocs/privilegekeylist.txt
 share/teamspeak/server/serverquerydocs/privilegekeyuse.txt
+share/teamspeak/server/serverquerydocs/queryloginadd.txt
+share/teamspeak/server/serverquerydocs/querylogindel.txt
+share/teamspeak/server/serverquerydocs/queryloginlist.txt
 share/teamspeak/server/serverquerydocs/quit.txt
 share/teamspeak/server/serverquerydocs/sendtextmessage.txt
 share/teamspeak/server/serverquerydocs/servercreate.txt
@@ -135,9 +139,6 @@ share/teamspeak/server/serverquerydocs/servertemppasswordadd.txt
 share/teamspeak/server/serverquerydocs/servertemppassworddel.txt
 share/teamspeak/server/serverquerydocs/servertemppasswordlist.txt
 share/teamspeak/server/serverquerydocs/setclientchannelgroup.txt
-share/teamspeak/server/serverquerydocs/queryloginadd.txt
-share/teamspeak/server/serverquerydocs/querylogindel.txt
-share/teamspeak/server/serverquerydocs/queryloginlist.txt
 share/teamspeak/server/serverquerydocs/tokenadd.txt
 share/teamspeak/server/serverquerydocs/tokendelete.txt
 share/teamspeak/server/serverquerydocs/tokenlist.txt
@@ -198,6 +199,11 @@ share/teamspeak/server/sql/complain_get_by_serverid.sql
 share/teamspeak/server/sql/complain_insert.sql
 share/teamspeak/server/sql/create_mariadb/create_tables.sql
 share/teamspeak/server/sql/create_mariadb/drop_tables.sql
+share/teamspeak/server/sql/create_postgresql/after_defaults.sql
+share/teamspeak/server/sql/create_postgresql/channel_insert_bulk_fixup.sql
+share/teamspeak/server/sql/create_postgresql/client_get_by_serverid_bulk.sql
+share/teamspeak/server/sql/create_postgresql/create_tables.sql
+share/teamspeak/server/sql/create_postgresql/drop_tables.sql
 share/teamspeak/server/sql/create_sqlite/create_tables.sql
 share/teamspeak/server/sql/create_sqlite/drop_tables.sql
 share/teamspeak/server/sql/custom_delete.sql
@@ -272,9 +278,9 @@ share/teamspeak/server/sql/server_get_byid.sql
 share/teamspeak/server/sql/server_get_byport.sql
 share/teamspeak/server/sql/server_insert.sql
 share/teamspeak/server/sql/server_list.sql
-share/teamspeak/server/sql/server_list_detailed.sql
 share/teamspeak/server/sql/server_list_by_machine_id.sql
 share/teamspeak/server/sql/server_list_by_machine_id_detailed.sql
+share/teamspeak/server/sql/server_list_detailed.sql
 share/teamspeak/server/sql/server_snapshot_delete.sql
 share/teamspeak/server/sql/server_snapshot_delete_failed.sql
 share/teamspeak/server/sql/server_update_autostart.sql
@@ -310,6 +316,7 @@ share/teamspeak/server/sql/update_30.sql
 share/teamspeak/server/sql/update_31.sql
 share/teamspeak/server/sql/update_32.sql
 share/teamspeak/server/sql/update_33.sql
+share/teamspeak/server/sql/update_34.sql
 share/teamspeak/server/sql/update_database_version.sql
 share/teamspeak/server/sql/update_mariadb_26.sql
 share/teamspeak/server/sql/update_mariadb_27.sql
@@ -318,6 +325,7 @@ share/teamspeak/server/sql/update_mariadb_29.sql
 share/teamspeak/server/sql/update_mariadb_32.sql
 share/teamspeak/server/sql/update_mariadb_33.sql
 share/teamspeak/server/sql/update_permissions_12.sql
+share/teamspeak/server/sql/update_postgresql_33.sql
 share/teamspeak/server/sql/update_sqlite_27.sql
 share/teamspeak/server/sql/update_sqlite_28.sql
 share/teamspeak/server/sql/update_sqlite_29.sql
