@@ -3996,10 +3996,8 @@
     SUBDIR += ptypes
     SUBDIR += publib
     SUBDIR += pushmi
-    SUBDIR += py-AddOns
     SUBDIR += py-Automat
     SUBDIR += py-BTrees
-    SUBDIR += py-BytecodeAssembler
     SUBDIR += py-DateTime
     SUBDIR += py-Dumper
     SUBDIR += py-ExtensionClass
@@ -4993,7 +4991,6 @@
     SUBDIR += py-repoze.sphinx.autointerface
     SUBDIR += py-repoze.tm2
     SUBDIR += py-repoze.who
-    SUBDIR += py-repoze.who-testutil
     SUBDIR += py-repoze.xmliter
     SUBDIR += py-represent
     SUBDIR += py-requestsexceptions
@@ -5002,7 +4999,6 @@
     SUBDIR += py-responses
     SUBDIR += py-retrying
     SUBDIR += py-retype
-    SUBDIR += py-riak_pb
     SUBDIR += py-robotframework
     SUBDIR += py-robotframework-databaselibrary
     SUBDIR += py-robotframework-pabot
@@ -5310,7 +5306,6 @@
     SUBDIR += pyside2-tools
     SUBDIR += pystring
     SUBDIR += pysvn
-    SUBDIR += pythk
     SUBDIR += pythontidy
     SUBDIR += qbs
     SUBDIR += qca

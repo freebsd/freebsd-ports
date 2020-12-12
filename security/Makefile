@@ -925,7 +925,6 @@
     SUBDIR += py-ntlm-auth
     SUBDIR += py-oauth2client
     SUBDIR += py-oauthlib
-    SUBDIR += py-obfsproxy-tor
     SUBDIR += py-onlykey
     SUBDIR += py-openssl
     SUBDIR += py-ospd

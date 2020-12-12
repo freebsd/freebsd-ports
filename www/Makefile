@@ -1692,7 +1692,6 @@
     SUBDIR += py-puppetboard
     SUBDIR += py-py-restclient
     SUBDIR += py-pyjwt
-    SUBDIR += py-pylons
     SUBDIR += py-pylsqpack
     SUBDIR += py-pyocclient
     SUBDIR += py-pyramid
@@ -1704,7 +1703,6 @@
     SUBDIR += py-python-multipart
     SUBDIR += py-pyweblib
     SUBDIR += py-pywikibot
-    SUBDIR += py-qpy
     SUBDIR += py-qt5-webchannel
     SUBDIR += py-qt5-webengine
     SUBDIR += py-qt5-webkit

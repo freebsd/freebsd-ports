@@ -1,6 +1,0 @@
-@dir %%CACHEDIR%%/pop3proxy-spam-cache
-@dir %%CACHEDIR%%/pop3proxy-ham-cache
-@dir %%CACHEDIR%%/pop3proxy-unknown-cache
-@dir %%CACHEDIR%%
-@dir %%DBDIR%%
-@dir %%LOCALSTATDIR%%

@@ -15778,3 +15778,19 @@ devel/py-prompt_toolkit1|devel/py-prompt-toolkit1|2020-12-11|Rename to match ups
 devel/py-prompt_toolkit2|devel/py-prompt-toolkit2|2020-12-11|Rename to match upstream naming
 deskutils/kdepim-apps-libs|net/akonadi-contacts|2020-12-11|Reintegrated into other packages
 astro/libkgeomap||2020-12-11|No longer shipped in 20.12, as there are no consumers left
+comms/py-libconcord||2020-12-12|Has expired: Uses deprecated version of python
+databases/py-swift||2020-12-12|Has expired: Uses deprecated version of python
+devel/py-AddOns||2020-12-12|Has expired: Uses deprecated version of python
+devel/py-BytecodeAssembler||2020-12-12|Has expired: Uses deprecated version of python
+devel/py-repoze.who-testutil||2020-12-12|Has expired: Uses deprecated version of python
+devel/py-riak_pb||2020-12-12|Has expired: Uses deprecated version of python
+devel/pythk||2020-12-12|Has expired: Uses deprecated version of python
+mail/py-spambayes||2020-12-12|Has expired: Uses deprecated version of python
+math/py-numeric||2020-12-12|Has expired: Uses deprecated version of python
+math/py-scientific||2020-12-12|Has expired: Uses deprecated version of python
+net/py-suds||2020-12-12|Has expired: Uses deprecated version of python
+net/pynids||2020-12-12|Has expired: Uses deprecated version of python
+security/py-obfsproxy-tor||2020-12-12|Has expired: Uses deprecated version of python
+sysutils/syslog-ng324||2020-12-12|Has expired: Agreed upon upstream one year deprecation policy
+www/py-pylons||2020-12-12|Has expired: Uses deprecated version of python
+www/py-qpy||2020-12-12|Has expired: Uses deprecated version of python

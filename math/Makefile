@@ -790,7 +790,6 @@
     SUBDIR += py-munkres10
     SUBDIR += py-networkx
     SUBDIR += py-nevergrad
-    SUBDIR += py-numeric
     SUBDIR += py-numexpr
     SUBDIR += py-numpoly
     SUBDIR += py-numpy
@@ -834,7 +833,6 @@
     SUBDIR += py-random2
     SUBDIR += py-roman
     SUBDIR += py-rpy2
-    SUBDIR += py-scientific
     SUBDIR += py-scikit-umfpack
     SUBDIR += py-scs
     SUBDIR += py-seaborn

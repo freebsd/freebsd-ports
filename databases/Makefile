@@ -831,7 +831,6 @@
     SUBDIR += py-sqlobject
     SUBDIR += py-sqlparse
     SUBDIR += py-sqlrelay
-    SUBDIR += py-swift
     SUBDIR += py-tableschema
     SUBDIR += py-tarantool
     SUBDIR += py-tiledb

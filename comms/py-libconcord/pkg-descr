@@ -1,6 +1,0 @@
-The concordance software suite allows you to program your Logitech Harmony
-remote using a configuration object retreived from the harmony website. The
-Logitech Harmony is a highly configuration universal remote than can control
-most multimedia devices.
-
-This port contains the Python bindings for the concordance framework.
