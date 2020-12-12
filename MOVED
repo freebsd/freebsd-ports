@@ -15786,7 +15786,7 @@ devel/py-repoze.who-testutil||2020-12-12|Has expired: Uses deprecated version of
 devel/py-riak_pb||2020-12-12|Has expired: Uses deprecated version of python
 devel/pythk||2020-12-12|Has expired: Uses deprecated version of python
 mail/py-spambayes||2020-12-12|Has expired: Uses deprecated version of python
-math/py-numeric||2020-12-12|Has expired: Uses deprecated version of python
+math/py-numeric|math/py-numpy|2020-12-12|Has expired: Uses deprecated version of python
 math/py-scientific||2020-12-12|Has expired: Uses deprecated version of python
 net/py-suds||2020-12-12|Has expired: Uses deprecated version of python
 net/pynids||2020-12-12|Has expired: Uses deprecated version of python
