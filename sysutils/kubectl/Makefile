@@ -3,6 +3,7 @@
 
 PORTNAME=	kubectl
 PORTVERSION=	1.19.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -32,8 +33,22 @@ GO_BUILDFLAGS=	-ldflags="-X k8s.io/component-base/version.gitMajor=${PORTVERSION
 
 PLIST_FILES=	bin/${PORTNAME}
 
+OPTIONS_DEFINE=		BASH ZSH
+OPTIONS_DEFAULT=	BASH ZSH
+
+BASH_PLIST_FILES=	share/bash-completions/completions/${PORTNAME}
+ZSH_PLIST_FILES=	share/zsh/site-functions/_${PORTNAME}
+
 post-extract:
 	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
 	${MV} ${WRKSRC}/vendor/golang.org/x/sys_${GOLANG_SYS_V} ${WRKSRC}/vendor/golang.org/x/sys
+
+post-install-BASH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completions/completions
+	${STAGEDIR}${PREFIX}/bin/${PORTNAME} completion bash > ${STAGEDIR}${PREFIX}/share/bash-completions/completions/${PORTNAME}
+
+post-install-ZSH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${STAGEDIR}${PREFIX}/bin/${PORTNAME} completion zsh > ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
 .include <bsd.port.mk>
