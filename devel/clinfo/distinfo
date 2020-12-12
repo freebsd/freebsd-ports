@@ -1,3 +1,5 @@
-TIMESTAMP = 1522993801
-SHA256 (Oblomov-clinfo-2.2.18.04.06_GH0.tar.gz) = f77021a57b3afcdebc73107e2254b95780026a9df9aa4f8db6aff11c03f0ec6c
-SIZE (Oblomov-clinfo-2.2.18.04.06_GH0.tar.gz) = 41459
+TIMESTAMP = 1605877441
+SHA256 (Oblomov-clinfo-3.0.20.11.20_GH0.tar.gz) = 3c506083e72e9ee09fc7d5de513be7c5eff0284f198a60fb60ab493f6f0a549a
+SIZE (Oblomov-clinfo-3.0.20.11.20_GH0.tar.gz) = 49196
+SHA256 (56a6c628555e.patch) = 43989e6df769cb5a938ef6b439325080d0e780a25be6d8ac65f71cda034475d2
+SIZE (56a6c628555e.patch) = 779
