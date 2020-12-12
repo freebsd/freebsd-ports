@@ -14,6 +14,8 @@ COMMENT=	Utility for capturing audio streams from programs with OSS output
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_riscv64=		fails to compile: vsound.c:101:4: Endian guess seems incorrect.
+
 BUILD_DEPENDS=	sox:audio/sox
 RUN_DEPENDS=	sox:audio/sox
 
