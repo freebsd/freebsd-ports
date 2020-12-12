@@ -3,7 +3,11 @@
 PORTNAME=			pocl
 PORTVERSION=		1.5
 DISTVERSIONPREFIX=	v
+PORTREVISION=			1
 CATEGORIES=			lang
+
+PATCH_SITES=			https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=			9ba33d2a570c.patch:-p1 # https://github.com/pocl/pocl/pull/879
 
 MAINTAINER=			ohartmann@walstatt.org
 COMMENT=			POrtable Computing Language (POCL)
