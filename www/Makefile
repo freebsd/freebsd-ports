@@ -1718,6 +1718,7 @@
     SUBDIR += py-requests-mock
     SUBDIR += py-requests-oauthlib
     SUBDIR += py-requests-toolbelt
+    SUBDIR += py-requests-unixsocket
     SUBDIR += py-requests_ntlm
     SUBDIR += py-restclient
     SUBDIR += py-rfc3986

@@ -1,0 +1,3 @@
+Use requests to talk HTTP via a UNIX domain socket
+
+WWW: https://github.com/msabramo/requests-unixsocket
