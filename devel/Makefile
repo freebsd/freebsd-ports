@@ -4432,7 +4432,6 @@
     SUBDIR += py-gitpython
     SUBDIR += py-glance-store
     SUBDIR += py-glob2
-    SUBDIR += py-gobject
     SUBDIR += py-gobject3
     SUBDIR += py-google-cloud-iam
     SUBDIR += py-google-crc32c

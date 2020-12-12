@@ -15795,3 +15795,4 @@ sysutils/syslog-ng324||2020-12-12|Has expired: Agreed upon upstream one year dep
 www/py-pylons||2020-12-12|Has expired: Uses deprecated version of python
 www/py-qpy||2020-12-12|Has expired: Uses deprecated version of python
 news/py-sabyenc|news/py-sabyenc3|2020-12-12|Has expired: Uses deprecated version of python
+devel/py-gobject||2020-12-12|Has expired: Uses deprecated version of python
