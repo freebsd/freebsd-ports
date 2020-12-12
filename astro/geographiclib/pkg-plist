@@ -61,7 +61,7 @@ lib/cmake/GeographicLib/geographiclib-targets.cmake
 lib/libGeographic.a
 lib/libGeographic.so
 lib/libGeographic.so.19
-lib/libGeographic.so.19.0.1
+lib/libGeographic.so.19.1.0
 lib/node_modules/geographiclib/LICENSE.txt
 lib/node_modules/geographiclib/README.md
 lib/node_modules/geographiclib/geographiclib.js

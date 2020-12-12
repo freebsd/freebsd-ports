@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	geographiclib
-DISTVERSION=	1.50.1
-PORTREVISION=	1
+DISTVERSION=	1.51
 CATEGORIES=	astro
 MASTER_SITES=	SF/geographiclib/distrib\
 		SF/geographiclib/distrib/archive\
@@ -18,20 +17,29 @@ COMMENT=	Library for geographic projections
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake compiler:c++14-lang python:env
+USES=		cmake compiler:c++14-lang localbase python:env
 PORTDOCS=	*
 USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DGEOGRAPHICLIB_DATA:STRING=${DATADIR:Q}\
 		-DGEOGRAPHICLIB_LIB_TYPE:STRING=BOTH\
 		-DINSTALL_PYTHON_DIR:STRING=${PYTHON_SITELIBDIR:Q}\
 		-DINSTALL_DOC_DIR:STRING=${DOCSDIR:Q}
+USE_PYTHON=	optsuffix
 
 OPTIONS_DEFINE=	DOCS DOXYGEN PERL
-OPTIONS_DEFAULT=	DOXYGEN PERL
-PERL_DESC=	Build documentation with pod2man and pod2html
-OPTIONS_GROUP=	DATASETS
-OPTIONS_SUB=	yes
+OPTIONS_DEFAULT=	DOXYGEN PERL PREC2
 DATASETS_DESC=	geoid datasets, gravity models and magnetic field models
+PERL_DESC=	Build documentation with pod2man and pod2html
+PREC1_DESC=	1 = float
+PREC2_DESC=	2 = double
+PREC3_DESC=	3 = extended
+PREC4_DESC=	4 = quadruple
+PREC5_DESC=	5 = variable
+PRECISION_DESC=	default "real" precision
+OPTIONS_SINGLE=	PRECISION
+OPTIONS_GROUP=	DATASETS
+OPTIONS_SINGLE_PRECISION=	PREC1 PREC2 PREC3 PREC4 PREC5
+OPTIONS_SUB=	yes
 DOXYGEN_CMAKE_BOOL=	GEOGRAPHICLIB_DOCUMENTATION
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen\
 			sphinx-build:textproc/py-sphinx
@@ -39,6 +47,21 @@ PERL_CMAKE_BOOL_OFF=	GEOGRAPHICLIB_NO_PERL
 PERL_USE=	PERL5=build
 PERL_USES=	perl5
 PERL_BUILD_DEPENDS=	nroff:textproc/groff
+PREC1_CMAKE_ON=	-DGEOGRAPHICLIB_PRECISION:STRING=1
+PREC2_CMAKE_ON=	-DGEOGRAPHICLIB_PRECISION:STRING=2
+PREC3_CMAKE_ON=	-DGEOGRAPHICLIB_PRECISION:STRING=3
+PREC4_CMAKE_ON=	-DGEOGRAPHICLIB_PRECISION:STRING=4
+PREC4_USE=	GCC=yes
+PREC4_BUILD_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:devel/boost-libs
+PREC4_RUN_DEPENDS=	${LOCALBASE}/include/boost/version.hpp:devel/boost-libs
+PREC5_CMAKE_ON=	-DGEOGRAPHICLIB_PRECISION:STRING=5
+PREC5_USE=	GCC=yes
+PREC5_BROKEN=	error: call of overloaded 'max' is ambiguous\
+		error: '*' was not declared in this scope
+PREC5_BUILD_DEPENDS=	${LOCALBASE}/include/mpreal.h:math/mpfrc++
+PREC5_LIB_DEPENDS=	libgmp.so:math/gmp\
+		libmpfr.so:math/mpfr
+PREC5_RUN_DEPENDS=	${LOCALBASE}/include/mpreal.h:math/mpfrc++
 
 GEOID_NAMES=		egm84-30 egm84-15 egm96-15 egm96-5\
 			egm2008-5 egm2008-2_5 egm2008-1
@@ -48,7 +71,7 @@ MAGNETIC_NAMES=		wmm2010 wmm2015 wmm2015v2 wmm2020\
 			emm2010 emm2015 emm2017
 DEFAULT_GEOID_NAMES=	egm96-5
 DEFAULT_GRAVITY_NAMES=	egm96 wgs84
-DEFAULT_MAGNETIC_NAMES=	wmm2020 igrf12
+DEFAULT_MAGNETIC_NAMES=	wmm2020 igrf13
 DEPRECATED_NAMES=	wmm2015
 
 .for n in ${GEOID_NAMES}
