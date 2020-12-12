@@ -1,2 +1,3 @@
-SHA256 (sssd-1.11.7.tar.gz) = ff12d5730a6d7d08fe11140aa58e544900b75c63902b7a07bbbc12d6a99cb5b5
-SIZE (sssd-1.11.7.tar.gz) = 3661227
+TIMESTAMP = 1587639728
+SHA256 (sssd-1.16.5.tar.gz) = 2e1a7bf036b583f686d35164f2d79bdf4857b98f51fe8b0d17aa0fa756e4d0c0
+SIZE (sssd-1.16.5.tar.gz) = 6639917

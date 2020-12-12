@@ -1,10 +1,10 @@
---- src/util/server.c.orig	2014-09-17 13:01:37 UTC
+diff --git src/util/server.c src/util/server.c
+index f34bf49f6..7cb3864af 100644
+--- src/util/server.c
 +++ src/util/server.c
-@@ -322,12 +322,14 @@ static void setup_signals(void)
+@@ -311,10 +311,13 @@ static void setup_signals(void)
      BlockSignals(false, SIGTERM);
  
-     CatchSignal(SIGHUP, sig_hup);
--
  #ifndef HAVE_PRCTL
 -        /* If prctl is not defined on the system, try to handle
 -         * some common termination signals gracefully */

@@ -1,4 +1,6 @@
---- src/external/inotify.m4.orig	2014-09-17 13:01:37 UTC
+diff --git src/external/inotify.m4 src/external/inotify.m4
+index 3ae5ae314..e88bd3ffc 100644
+--- src/external/inotify.m4
 +++ src/external/inotify.m4
 @@ -20,10 +20,10 @@ int main () {
      AS_IF([test x"$inotify_works" != xyes],

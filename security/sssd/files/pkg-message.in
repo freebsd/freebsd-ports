@@ -1,6 +1,4 @@
-[
-{ type: install
-  message: <<EOM
+================================================================================
 Copy %%PREFIX%%/etc/sssd/sssd.conf.sample to %%PREFIX%%/etc/sssd/sssd.conf
 and edit %%PREFIX%%/etc/sssd/sssd.conf (see man sssd.conf for details)
 
@@ -20,6 +18,4 @@ For additional details, please see the man pages for pam.conf and nsswitch.conf
 
 An sssd HOWTO is also available:
 https://fedorahosted.org/sssd/wiki/HOWTO_Configure_1_0_2
-EOM
-}
-]
+================================================================================
