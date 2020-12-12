@@ -1,0 +1,25 @@
+Workarounds for
+* https://github.com/thrill/thrill/issues/197
+* https://github.com/thrill/thrill/issues/198
+
+--- thrill/CMakeLists.txt.orig	2020-04-06 07:06:39 UTC
++++ thrill/CMakeLists.txt
+@@ -42,10 +42,17 @@ if(MPI_FOUND)
+   list(APPEND THRILL_SRCS ${THRILL_NET_MPI_SRCS})
+ endif()
+ 
+-add_library(thrill STATIC ${THRILL_SRCS})
++add_library(thrill ${THRILL_SRCS})
+ target_compile_definitions(thrill PUBLIC ${THRILL_DEFINITIONS})
+ target_include_directories(thrill PUBLIC ${PROJECT_SOURCE_DIR})
+ target_include_directories(thrill SYSTEM PUBLIC ${THRILL_INCLUDE_DIRS})
+ target_link_libraries(thrill ${THRILL_LINK_LIBRARIES})
++
++set(THRILL_HEADERS ${THRILL_SRCS})
++list(FILTER THRILL_HEADERS INCLUDE REGEX "\\.hpp")
++
++set_target_properties(thrill PROPERTIES PUBLIC_HEADER "${THRILL_HEADERS}")
++
++INSTALL(TARGETS thrill LIBRARY DESTINATION lib PUBLIC_HEADER DESTINATION include/thrill)
+ 
+ ################################################################################

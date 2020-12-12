@@ -1,0 +1,5 @@
+Thrill is a C++ framework for distributed Big Data batch computations on a
+cluster of machines. It is currently being designed and developed as a research
+project at Karlsruhe Institute of Technology and is in early testing.
+
+WWW: https://project-thrill.org/

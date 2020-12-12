@@ -479,6 +479,7 @@
     SUBDIR += termatrix
     SUBDIR += teseq
     SUBDIR += thefuck
+    SUBDIR += thrill
     SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkregexp
