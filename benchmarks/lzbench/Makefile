@@ -9,6 +9,8 @@ CATEGORIES=	benchmarks
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	In-memory benchmark of open-source LZ77/LZSS/LZMA compressors
 
+BROKEN_riscv64=		fails to compile: invalid arch name 'native', string must begin with rv32{i,e,g} or rv64{i,g}
+
 USES=		compiler:c11 gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	inikep
