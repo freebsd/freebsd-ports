@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fselect
-DISTVERSION=	0.7.1
-PORTREVISION=	2
+DISTVERSION=	0.7.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	vulcan@wired.sh
@@ -19,7 +18,7 @@ GH_ACCOUNT=	jhspetersson
 
 CARGO_CRATES=	adler32-1.2.0 \
 		ahash-0.3.8 \
-		aho-corasick-0.7.13 \
+		aho-corasick-0.7.15 \
 		ansi_term-0.12.1 \
 		app_dirs-1.2.1 \
 		atty-0.2.14 \
@@ -30,19 +29,20 @@ CARGO_CRATES=	adler32-1.2.0 \
 		bitstream-io-0.8.5 \
 		block-buffer-0.9.0 \
 		block-padding-0.2.1 \
-		bstr-0.2.13 \
-		bytecount-0.6.0 \
+		bstr-0.2.14 \
+		bytecount-0.6.1 \
 		byteorder-1.3.4 \
 		bzip2-0.3.3 \
 		bzip2-sys-0.1.9+1.0.8 \
-		cc-1.0.60 \
+		cc-1.0.64 \
 		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		chrono-english-0.1.4 \
 		cloudabi-0.0.3 \
 		cpuid-bool-0.1.2 \
-		crc32fast-1.2.0 \
-		csv-1.1.3 \
+		crc32fast-1.2.1 \
+		csv-1.1.4 \
 		csv-core-0.1.10 \
 		digest-0.9.0 \
 		either-1.6.1 \
@@ -62,20 +62,20 @@ CARGO_CRATES=	adler32-1.2.0 \
 		kamadak-exif-0.5.2 \
 		keccak-0.1.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.79 \
+		libc-0.2.80 \
 		lock_api-0.3.4 \
 		log-0.4.11 \
 		lscolors-0.7.1 \
 		matroska-0.5.4 \
 		memchr-1.0.2 \
-		memchr-2.3.3 \
+		memchr-2.3.4 \
 		miniz_oxide-0.3.7 \
 		mp3-metadata-0.3.3 \
 		mp4parse-0.11.4 \
 		mutate_once-0.1.1 \
 		nom-3.2.1 \
-		num-integer-0.1.43 \
-		num-traits-0.2.12 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
 		ole32-sys-0.2.0 \
 		opaque-debug-0.3.0 \
 		parking_lot-0.10.2 \
@@ -85,9 +85,9 @@ CARGO_CRATES=	adler32-1.2.0 \
 		phf_generator-0.8.0 \
 		phf_macros-0.8.0 \
 		phf_shared-0.8.0 \
-		pkg-config-0.3.18 \
-		ppv-lite86-0.2.9 \
-		proc-macro-hack-0.5.18 \
+		pkg-config-0.3.19 \
+		ppv-lite86-0.2.10 \
+		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.24 \
 		quote-1.0.7 \
 		rand-0.7.3 \
@@ -96,29 +96,29 @@ CARGO_CRATES=	adler32-1.2.0 \
 		rand_hc-0.2.0 \
 		rand_pcg-0.2.1 \
 		redox_syscall-0.1.57 \
-		regex-1.3.9 \
+		regex-1.4.2 \
 		regex-automata-0.1.9 \
-		regex-syntax-0.6.18 \
+		regex-syntax-0.6.21 \
 		ryu-1.0.5 \
-		scanlex-0.1.2 \
+		scanlex-0.1.4 \
 		scopeguard-1.1.0 \
-		serde-1.0.116 \
-		serde_derive-1.0.116 \
-		serde_json-1.0.58 \
-		sha-1-0.9.1 \
-		sha2-0.9.1 \
+		serde-1.0.117 \
+		serde_derive-1.0.117 \
+		serde_json-1.0.59 \
+		sha-1-0.9.2 \
+		sha2-0.9.2 \
 		sha3-0.9.1 \
 		shell32-sys-0.1.2 \
 		siphasher-0.3.3 \
-		smallvec-1.4.2 \
+		smallvec-1.5.0 \
 		static_assertions-1.1.0 \
-		syn-1.0.42 \
+		syn-1.0.48 \
 		text_io-0.1.8 \
-		thiserror-1.0.21 \
-		thiserror-impl-1.0.21 \
+		thiserror-1.0.22 \
+		thiserror-impl-1.0.22 \
 		thread_local-1.0.1 \
 		time-0.1.44 \
-		toml-0.5.6 \
+		toml-0.5.7 \
 		tree_magic-0.2.3 \
 		typenum-1.12.0 \
 		unicode-xid-0.2.1 \
