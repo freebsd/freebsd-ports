@@ -14,7 +14,6 @@ lib/tuxpaint/plugins/confetti.so
 lib/tuxpaint/plugins/distortion.so
 lib/tuxpaint/plugins/emboss.so
 lib/tuxpaint/plugins/fade_darken.so
-lib/tuxpaint/plugins/fill.so
 lib/tuxpaint/plugins/fisheye.so
 lib/tuxpaint/plugins/flower.so
 lib/tuxpaint/plugins/foam.so

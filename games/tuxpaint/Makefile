@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tuxpaint
-PORTVERSION=	0.9.23
-PORTREVISION=	1
+PORTVERSION=	0.9.24
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -13,6 +12,7 @@ COMMENT=	Drawing program designed for young children
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
+BUILD_DEPENDS=	convert:graphics/ImageMagick7
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libpaper.so:print/libpaper
 RUN_DEPENDS=	anytopnm:graphics/netpbm \

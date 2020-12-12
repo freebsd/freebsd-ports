@@ -1,6 +1,6 @@
---- Makefile.orig	2018-08-30 09:05:19 UTC
+--- Makefile.orig	2020-12-12 07:42:50 UTC
 +++ Makefile
-@@ -167,10 +167,10 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
+@@ -166,10 +166,10 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
  MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
  
  # Docs and man page:
@@ -15,7 +15,7 @@
  
  # BASH tab-completion file:
  COMPLETIONDIR:=$(DESTDIR)/etc/bash_completion.d
-@@ -646,8 +646,8 @@ install-default-config:
+@@ -647,8 +647,8 @@ install-default-config:
  	@echo
  	@echo "...Installing default config file..."
  	@install -d $(CONFDIR)
@@ -26,7 +26,7 @@
  
  # Install BASH completion file:
  .PHONY: install-bash-completion
-@@ -1201,10 +1201,10 @@ tp-magic-config:	src/tp-magic-config.sh.in Makefile
+@@ -1217,10 +1217,10 @@ tp-magic-config:	src/tp-magic-config.sh.in
  	@echo "...Generating 'Magic' tool API configuration script..."
  	@sed -e s/__VERSION__/$(VER_VERSION)/ \
  		-e s/__APIVERSION__/$(MAGIC_API_VERSION)/ \
@@ -41,12 +41,12 @@
  		src/tp-magic-config.sh.in \
  		> tp-magic-config
  
-@@ -1227,7 +1227,7 @@ linux_PLUGIN_LIBS:=
+@@ -1243,7 +1243,7 @@ linux_PLUGIN_LIBS:=
  PLUGIN_LIBS:=$($(OS)_PLUGIN_LIBS)
  
  #MAGIC_CFLAGS:=-g3 -O2 -fvisibility=hidden -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/
 -MAGIC_CFLAGS:=-g3 -O2 -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/ $(ARCH_CFLAGS)
 +MAGIC_CFLAGS:=$(OPTFLAGS) -fno-common -W -Wstrict-prototypes -Wmissing-prototypes -Wall $(MAGIC_SDL_CPPFLAGS) -Isrc/ $(ARCH_CFLAGS)
- SHARED_FLAGS:=-shared -fpic
+ SHARED_FLAGS:=-shared -fpic -lm
  
  MAGIC_C:=$(wildcard magic/src/*.c)
