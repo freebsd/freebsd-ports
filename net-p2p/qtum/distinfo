@@ -1,8 +1,8 @@
-TIMESTAMP = 1593072373
-SHA256 (qtumproject-qtum-mainnet-ignition-v0.19.1_GH0.tar.gz) = f1dac293409461f6504fee539383c36977859510f8c0cf806c7939bf78da3cb3
-SIZE (qtumproject-qtum-mainnet-ignition-v0.19.1_GH0.tar.gz) = 13845114
-SHA256 (qtumproject-cpp-eth-qtum-7147199113d4d71c132c1f_GH0.tar.gz) = 50b96e682cfbeb3642c383e69350d15360c2985a74edf6caa9631029416bef8e
-SIZE (qtumproject-cpp-eth-qtum-7147199113d4d71c132c1f_GH0.tar.gz) = 1036807
+TIMESTAMP = 1607679406
+SHA256 (qtumproject-qtum-mainnet-ignition-v0.20.1_GH0.tar.gz) = 76c239a862ef06d5535a02e673873072c27ff7676978234a3b7839f0c8318a80
+SIZE (qtumproject-qtum-mainnet-ignition-v0.20.1_GH0.tar.gz) = 14173287
+SHA256 (qtumproject-cpp-eth-qtum-397271eb2f80f21caec9e8_GH0.tar.gz) = 6625efcdf883a4b6f57f6cdfa5fb025e34590db12fea8591e5686139e33cb180
+SIZE (qtumproject-cpp-eth-qtum-397271eb2f80f21caec9e8_GH0.tar.gz) = 1036823
 SHA256 (chfast-ethash-67a3216a5494834f7c221df93b079dac4_GH0.tar.gz) = 6c3f996b488844d70f1d4a0234cee5f93e715a3debcb626bdb3778c241bc1860
 SIZE (chfast-ethash-67a3216a5494834f7c221df93b079dac4_GH0.tar.gz) = 95929
 SHA256 (ethereum-evmc-bf7064dca5cbbda4def8c2548d0d7a040_GH0.tar.gz) = 881c99b3093978f3b03811d318373eea04ce91092e1f8585eaa4bb82c41b81b3
