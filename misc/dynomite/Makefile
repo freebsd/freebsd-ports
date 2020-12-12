@@ -12,6 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to configure: checking build system type... Invalid configuration 'aarch64-portbld-freebsd13.0': machine 'aarch64-portbld' not recognized
+BROKEN_riscv64=		fails to configure: configure: error: /bin/sh config/config.sub riscv64-portbld-freebsd13.0 failed
 
 USES=		autoreconf gmake libtool ssl
 GNU_CONFIGURE=	yes
