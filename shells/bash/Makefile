@@ -60,8 +60,6 @@ CONFIGURE_ARGS+=	--without-bash-malloc \
 			--enable-disabled-builtins \
 			--with-libiconv-prefix=${ICONV_PREFIX}
 
-MAKE_JOBS_UNSAFE=	yes
-
 .if empty(PKGNAMESUFFIX)
 CONFLICTS+=		bash-static-[0-9]*
 .else
