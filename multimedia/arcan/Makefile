@@ -61,7 +61,7 @@ SDL_CMAKE_BOOL=		HYBRID_SDL
 
 SUID_DESC=		setuid bit on "${PORTNAME}" binary
 SUID_PLIST_SUB=		MAYBE_SUID="@(,,4755) "
-SUID_PLIST_SUB_OFF=	MAYBE_SUID=""
+SUID_PLIST_SUB_OFF=	MAYBE_SUID="@(,,0755) "
 
 TESSERACT_DESC=		Optical Character Recognition via Tesseract
 TESSERACT_LIB_DEPENDS=	libtesseract.so:graphics/tesseract
