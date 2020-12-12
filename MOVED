@@ -15794,3 +15794,4 @@ security/py-obfsproxy-tor||2020-12-12|Has expired: Uses deprecated version of py
 sysutils/syslog-ng324||2020-12-12|Has expired: Agreed upon upstream one year deprecation policy
 www/py-pylons||2020-12-12|Has expired: Uses deprecated version of python
 www/py-qpy||2020-12-12|Has expired: Uses deprecated version of python
+news/py-sabyenc|news/py-sabyenc3|2020-12-12|Has expired: Uses deprecated version of python
