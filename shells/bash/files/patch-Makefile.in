@@ -1,6 +1,15 @@
---- Makefile.in.orig	2018-05-25 12:47:09 UTC
+--- Makefile.in.orig	2020-12-04 14:51:19 UTC
 +++ Makefile.in
-@@ -824,7 +824,9 @@ install:	.made installdirs
+@@ -584,6 +584,8 @@ $(Program):  .build $(OBJECTS) $(BUILTINS_DEP) $(LIBDE
+ 	ls -l $(Program)
+ 	-$(SIZE) $(Program)
+ 
++$(CSOURCES): $(DEFDIR)/builtext.h
++
+ .build:	$(SOURCES) config.h Makefile version.h $(VERSPROG)
+ 	@echo
+ 	@echo "	  ***********************************************************"
+@@ -831,7 +833,9 @@ install:	.made installdirs
  		infodir=$(infodir) htmldir=$(htmldir) DESTDIR=$(DESTDIR) $@ )
  	-( cd $(DEFDIR) ; $(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) $@ )
  	-( cd $(PO_DIR) ; $(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) $@ )
