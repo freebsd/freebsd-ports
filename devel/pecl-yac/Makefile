@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yac
-PORTVERSION=	2.0.2
+PORTVERSION=	2.2.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -12,7 +12,6 @@ COMMENT=	Shared memory user data cache for PHP
 LICENSE=	PHP301
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	73 74
 
 OPTIONS_DEFINE=	MSGPACK
 MSGPACK_DESC=	Enable MSGPACK module
