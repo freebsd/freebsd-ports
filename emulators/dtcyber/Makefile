@@ -32,6 +32,7 @@ BROKEN_aarch64=		Fails to compile: error: Unable to determine size of basic data
 BROKEN_armv6=		Fails to compile: error: Unable to determine size of basic data types
 BROKEN_armv7=		Fails to compile: error: Unable to determine size of basic data types
 BROKEN_mips64=		Fails to compile: error: Unable to determine size of basic data types
+BROKEN_riscv64=		Fails to compile: error: Unable to determine size of basic data types
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dtcyber ${STAGEDIR}${PREFIX}/bin
