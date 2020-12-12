@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	river
-PORTVERSION=	s20201207
+PORTVERSION=	s20201212
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,7 +22,7 @@ USES=		pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	ifreund
-GH_TAGNAME=	49bf0e6
+GH_TAGNAME=	b2b1a1f
 GH_TUPLE=	ifreund:zig-wayland:ba49b2b:zig_wayland/deps/zig-wayland
 CONFIGURE_ARGS=	--prefix "${STAGEDIR}${PREFIX}" \
 		${WITH_DEBUG:U-Drelease-fast=true} \
