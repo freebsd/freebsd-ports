@@ -3,6 +3,7 @@
 
 PORTNAME=	helm
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -168,5 +169,24 @@ GO_BUILDFLAGS=	-ldflags="-X helm.sh/helm/v3/internal/version.version=v${PORTVERS
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	${GO_TARGET:C/.\/cmd/bin/}
+
+OPTIONS_DEFINE=		BASH FISH ZSH
+OPTIONS_DEFAULT=	BASH FISH ZSH
+
+BASH_PLIST_FILES=	share/bash-completions/completions/helm
+FISH_PLIST_FILES=	share/fish/vendor_functions.d/helm.fish
+ZSH_PLIST_FILES=	share/zsh/site-functions/_helm
+
+post-install-BASH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completions/completions
+	${STAGEDIR}${PREFIX}/bin/helm completion bash > ${STAGEDIR}${PREFIX}/share/bash-completions/completions/helm
+
+post-install-FISH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/vendor_functions.d
+	${STAGEDIR}${PREFIX}/bin/helm completion fish > ${STAGEDIR}${PREFIX}/share/fish/vendor_functions.d/helm.fish
+
+post-install-ZSH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${STAGEDIR}${PREFIX}/bin/helm completion zsh > ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_helm
 
 .include <bsd.port.mk>
