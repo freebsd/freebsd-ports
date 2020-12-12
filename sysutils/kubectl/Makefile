@@ -3,7 +3,7 @@
 
 PORTNAME=	kubectl
 PORTVERSION=	1.19.4
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -36,7 +36,7 @@ PLIST_FILES=	bin/${PORTNAME}
 OPTIONS_DEFINE=		BASH ZSH
 OPTIONS_DEFAULT=	BASH ZSH
 
-BASH_PLIST_FILES=	share/bash-completions/completions/${PORTNAME}
+BASH_PLIST_FILES=	share/bash-completion/completions/${PORTNAME}
 ZSH_PLIST_FILES=	share/zsh/site-functions/_${PORTNAME}
 
 post-extract:
@@ -44,8 +44,8 @@ post-extract:
 	${MV} ${WRKSRC}/vendor/golang.org/x/sys_${GOLANG_SYS_V} ${WRKSRC}/vendor/golang.org/x/sys
 
 post-install-BASH-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completions/completions
-	${STAGEDIR}${PREFIX}/bin/${PORTNAME} completion bash > ${STAGEDIR}${PREFIX}/share/bash-completions/completions/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
+	${STAGEDIR}${PREFIX}/bin/${PORTNAME} completion bash > ${STAGEDIR}${PREFIX}/share/bash-completion/completions/${PORTNAME}
 
 post-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions

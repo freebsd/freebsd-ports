@@ -3,7 +3,7 @@
 
 PORTNAME=	helm
 PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -173,13 +173,13 @@ PLIST_FILES=	${GO_TARGET:C/.\/cmd/bin/}
 OPTIONS_DEFINE=		BASH FISH ZSH
 OPTIONS_DEFAULT=	BASH FISH ZSH
 
-BASH_PLIST_FILES=	share/bash-completions/completions/helm
+BASH_PLIST_FILES=	share/bash-completion/completions/helm
 FISH_PLIST_FILES=	share/fish/vendor_functions.d/helm.fish
 ZSH_PLIST_FILES=	share/zsh/site-functions/_helm
 
 post-install-BASH-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completions/completions
-	${STAGEDIR}${PREFIX}/bin/helm completion bash > ${STAGEDIR}${PREFIX}/share/bash-completions/completions/helm
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
+	${STAGEDIR}${PREFIX}/bin/helm completion bash > ${STAGEDIR}${PREFIX}/share/bash-completion/completions/helm
 
 post-install-FISH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/vendor_functions.d
