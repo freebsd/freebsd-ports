@@ -81,7 +81,7 @@ _USE_GNOME_ALL+= atk cairo \
 		libgnomecanvas libgnomekbd \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt \
-		orbit2 pango pangox-compat pygobject \
+		orbit2 pango pangox-compat \
 		vte
 
 # GNOME 3 components
@@ -298,10 +298,6 @@ gtksourceview4_USE_GNOME_IMPL=gtk30 libxml2
 
 libgsf_LIB_DEPENDS=	libgsf-1.so:devel/libgsf
 libgsf_USE_GNOME_IMPL=	glib20 libxml2
-
-pygobject_BUILD_DEPENDS=	pygobject-codegen-2.0:devel/py-gobject
-pygobject_RUN_DEPENDS=		pygobject-codegen-2.0:devel/py-gobject
-pygobject_USE_GNOME_IMPL=	glib20
 
 pygobject3_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 pygobject3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
