@@ -2,7 +2,7 @@
 
 PORTNAME=	gtk-layer-shell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	greg@unrelenting.technology
