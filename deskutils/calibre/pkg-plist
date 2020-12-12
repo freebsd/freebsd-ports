@@ -530,7 +530,6 @@ lib/calibre/calibre/ebooks/pdf/render/gradients.py
 lib/calibre/calibre/ebooks/pdf/render/graphics.py
 lib/calibre/calibre/ebooks/pdf/render/links.py
 lib/calibre/calibre/ebooks/pdf/render/serialize.py
-lib/calibre/calibre/ebooks/pdf/test_html_writer.py
 lib/calibre/calibre/ebooks/pml/__init__.py
 lib/calibre/calibre/ebooks/pml/pmlconverter.py
 lib/calibre/calibre/ebooks/pml/pmlml.py
@@ -1035,8 +1034,11 @@ lib/calibre/calibre/gui2/tts/develop.py
 lib/calibre/calibre/gui2/tts/errors.py
 lib/calibre/calibre/gui2/tts/implementation.py
 lib/calibre/calibre/gui2/tts/linux.py
+lib/calibre/calibre/gui2/tts/linux_config.py
 lib/calibre/calibre/gui2/tts/macos.py
+lib/calibre/calibre/gui2/tts/macos_config.py
 lib/calibre/calibre/gui2/tts/windows.py
+lib/calibre/calibre/gui2/tts/windows_config.py
 lib/calibre/calibre/gui2/tweak_book/__init__.py
 lib/calibre/calibre/gui2/tweak_book/boss.py
 lib/calibre/calibre/gui2/tweak_book/char_select.py
@@ -1113,6 +1115,7 @@ lib/calibre/calibre/gui2/viewer/search.py
 lib/calibre/calibre/gui2/viewer/shortcuts.py
 lib/calibre/calibre/gui2/viewer/toc.py
 lib/calibre/calibre/gui2/viewer/toolbars.py
+lib/calibre/calibre/gui2/viewer/tts.py
 lib/calibre/calibre/gui2/viewer/ui.py
 lib/calibre/calibre/gui2/viewer/web_view.py
 lib/calibre/calibre/gui2/viewer/widgets.py
@@ -1514,6 +1517,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/book.png
 %%DATADIR%%/images/bookmarks.png
 %%DATADIR%%/images/books_in_series.png
+%%DATADIR%%/images/bullhorn.png
 %%DATADIR%%/images/catalog.png
 %%DATADIR%%/images/chapters.png
 %%DATADIR%%/images/character-set.png
