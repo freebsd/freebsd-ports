@@ -12,6 +12,7 @@ COMMENT=	Set of utilities to benchmark productivity of system calls
 LICENSE=	CDDL
 
 BROKEN_mips64=		Fails to build: bin-mips64: no such file or directory
+BROKEN_riscv64=		Fails to build: bin-riscv64: no such file or directory
 
 USES=		gmake
 WRKSRC=		${WRKDIR}/libMicro-${PORTVERSION}
