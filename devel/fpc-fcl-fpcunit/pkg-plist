@@ -12,6 +12,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/latextestreport.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/latextestreport.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/plaintestreport.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/plaintestreport.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/simpletestrunner.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/simpletestrunner.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/testdecorator.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/testdecorator.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-fpcunit/testregistry.o
