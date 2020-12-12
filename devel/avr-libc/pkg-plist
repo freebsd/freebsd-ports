@@ -423,6 +423,7 @@ avr/lib/avr4/crtatmega48.o
 avr/lib/avr4/crtatmega48a.o
 avr/lib/avr4/crtatmega48p.o
 avr/lib/avr4/crtatmega48pa.o
+avr/lib/avr4/crtatmega48pb.o
 avr/lib/avr4/crtatmega8.o
 avr/lib/avr4/crtatmega8515.o
 avr/lib/avr4/crtatmega8535.o
@@ -430,6 +431,7 @@ avr/lib/avr4/crtatmega88.o
 avr/lib/avr4/crtatmega88a.o
 avr/lib/avr4/crtatmega88p.o
 avr/lib/avr4/crtatmega88pa.o
+avr/lib/avr4/crtatmega88pb.o
 avr/lib/avr4/crtatmega8a.o
 avr/lib/avr4/crtatmega8hva.o
 avr/lib/avr4/libat90pwm1.a
@@ -446,6 +448,7 @@ avr/lib/avr4/libatmega48.a
 avr/lib/avr4/libatmega48a.a
 avr/lib/avr4/libatmega48p.a
 avr/lib/avr4/libatmega48pa.a
+avr/lib/avr4/libatmega48pb.a
 avr/lib/avr4/libatmega8.a
 avr/lib/avr4/libatmega8515.a
 avr/lib/avr4/libatmega8535.a
@@ -453,6 +456,7 @@ avr/lib/avr4/libatmega88.a
 avr/lib/avr4/libatmega88a.a
 avr/lib/avr4/libatmega88p.a
 avr/lib/avr4/libatmega88pa.a
+avr/lib/avr4/libatmega88pb.a
 avr/lib/avr4/libatmega8a.a
 avr/lib/avr4/libatmega8hva.a
 avr/lib/avr4/libc.a
