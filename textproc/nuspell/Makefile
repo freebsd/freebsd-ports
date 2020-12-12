@@ -2,7 +2,7 @@
 
 PORTNAME=	nuspell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.0
+DISTVERSION=	4.2.0
 CATEGORIES=	textproc
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,13 +11,11 @@ COMMENT=	Free and open source C++ spell checking library
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-LIB_DEPENDS=	libboost_locale.so:devel/boost-libs \
-		libicuuc.so:devel/icu
+LIB_DEPENDS=	libicuuc.so:devel/icu
 
-USES=		cmake compiler:c++14-lang
+USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-CMAKE_ON=	BUILD_SHARED_LIBS
 
 OPTIONS_DEFINE=	MANPAGES TEST
 OPTIONS_DEFAULT=MANPAGES
