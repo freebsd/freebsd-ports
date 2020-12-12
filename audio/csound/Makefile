@@ -3,7 +3,7 @@
 
 PORTNAME=	csound
 DISTVERSION=	6.14.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio lang
 
 PATCH_SITES=	https://github.com/csound/csound/commit/

@@ -2,6 +2,7 @@
 
 PORTNAME=	ompl
 DISTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	misc comms
 
 MAINTAINER=	yuri@FreeBSD.org

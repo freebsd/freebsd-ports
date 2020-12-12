@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	gnudatalanguage
-PORTVERSION=	0.9.9
+PORTVERSION=	1.0.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	16
+DISTVERSIONSUFFIX=	-rc.3
 CATEGORIES=	science lang
 .if defined(BUILD_PYTHON_MODULE)
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +17,10 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libgeotiff.so:graphics/libgeotiff\
+		libexpat.so:textproc/expat2	\
 		libplplot.so:math/plplot	\
 		libtiff.so:graphics/tiff	\
+		libshp.so:devel/shapelib	\
 		libpng.so:graphics/png		\
 		libsz.so:science/szip		\
 		libps.so:print/pslib		\
@@ -31,36 +34,29 @@ USES=		cmake compiler:c++11-lang fortran ncurses pkgconfig readline \
 USE_WX=		3.0+
 USE_XORG=	x11 sm ice xext
 
-# On FreeBSD < 11 libc++ lacks support for sized delete operators.
-# GCC dropped the builtin version of these operators in 6+ by
-# defaulting to gnu++14. Force c++11 instead.
-# For a more detailed discussion see:
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=219484
-USE_CXXSTD=	gnu++11
-
 # Disable ncurses and readline from ports
-# Disable ImageMagick (does'nt work with plplot because dynamic drivers
-#	are enabled by default)
-# TODO: add a slave port for mpich
 # TODO: create a port for Cmsvlib http://cow.physics.wisc.edu/~craigm/idl/down/cmsvlib.tar.gz
 # TODO:	create a port for Astron http://idlastro.gsfc.nasa.gov/ftp/astron.tar.gz
 # TODO:	create a port for TexToIdl http://physics.mnstate.edu/mcraig/textoidl/textoidl-2-1-2.tar
 
 CMAKE_ARGS=	-DREADLINEDIR:STRING="/usr"	\
 		-DOPENMP:BOOL=NO		\
-		-DNCURSESDIR:STRING="/usr"
+		-DNCURSESDIR:STRING="/usr"	\
+		-DPYTHON:BOOL=NO
 CPPFLAGS+=	${CFLAGS} -fno-inline -DNPY_NO_DEPRECATED_API -DNPY_1_7_API_VERSION
 CXXFLAGS+=	-std=gnu++11 -DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+TEST_TARGET=	check
 
 SLAVEDIRS=	science/py-gnudatalanguage
 
 # Upstream prefer GraphicsMagick over ImageMackick but ATM it fails
 # see https://github.com/gnudatalanguage/gdl/issues/611
+# + Python is broken on 1.0.0-rc2 See issue  #757
 #OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GLPK GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 MPI NETCDF PYTHON UDUNITS
 #OPTIONS_DEFAULT=EIGEN FFTW GLPK GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 NETCDF PYTHON UDUNITS
-OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GLPK IMAGEMAGICK GRIB HDF5 LIBPROJ4 MPI NETCDF PYTHON UDUNITS
-OPTIONS_DEFAULT=EIGEN FFTW GLPK IMAGEMAGICK GRIB HDF5 LIBPROJ4 NETCDF PYTHON UDUNITS
+OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GLPK IMAGEMAGICK GRIB HDF5 LIBPROJ4 MPI NETCDF UDUNITS
+OPTIONS_DEFAULT=EIGEN FFTW GLPK IMAGEMAGICK GRIB HDF5 LIBPROJ4 NETCDF UDUNITS
 
 EIGEN_DESC=		Eigen3 support (boost performance)
 EIGEN_USES=		eigen:3
@@ -102,19 +98,19 @@ LIBPROJ4_CMAKE_ON=	-DLIBPROJ4:BOOL=YES
 LIBPROJ4_CMAKE_OFF=	-DLIBPROJ4:BOOL=NO
 
 MPI_LIB_DEPENDS=	libmpich.so:net/mpich
-MPI_CMAKE_ON=		-DMPICH:BOOL=ON
-MPI_CMAKE_OFF=		-DMPICH:BOOL=OFF
+MPI_CMAKE_ON=		-DMPI:BOOL=ON
+MPI_CMAKE_OFF=		-DMPI:BOOL=OFF -DMPIDIR=/none
 
 NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
 NETCDF_CMAKE_ON=	-DNETCDF:BOOL=YES -DHDF:BOOL=NO
 NETCDF_CMAKE_OFF=	-DNETCDF:BOOL=NO
 
-PYTHON_USES=		python:2.7
-PYTHON_BUILD_DEPENDS=	${PYNUMPY}
-PYTHON_RUN_DEPENDS=	${PYNUMPY} \
-			${PYTHON_PKGNAMEPREFIX}matplotlib2>0:math/py-matplotlib2@${PY_FLAVOR}
-PYTHON_CMAKE_ON=	-DPYTHON:BOOL=YES -DPYTHONVERSION:STRING="${PYTHON_VER}"
-PYTHON_CMAKE_OFF=	-DPYTHON:BOOL=NO
+#PYTHON_USES=		python:3.6+
+#PYTHON_BUILD_DEPENDS=	${PYNUMPY}
+#PYTHON_RUN_DEPENDS=	${PYNUMPY} \
+#			${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
+#PYTHON_CMAKE_ON=	-DPYTHON:BOOL=YES -DPYTHONVERSION:STRING="${PYTHON_VER}"
+#PYTHON_CMAKE_OFF=	-DPYTHON:BOOL=NO
 
 # QHULL IS NOT NEEDED YET!
 #QHULL_DESC=		Enable Triangulate and Qhull support

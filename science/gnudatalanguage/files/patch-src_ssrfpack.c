@@ -1,6 +1,6 @@
---- src/ssrfpack.c.orig	2018-12-01 14:19:52 UTC
+--- src/ssrfpack.c.orig	2020-03-05 09:15:01 UTC
 +++ src/ssrfpack.c
-@@ -11,6 +11,10 @@
+@@ -15,6 +15,10 @@
  #  define sincos(x,s,c) (*s = sin(x), *c = cos(x))
  #endif
  
