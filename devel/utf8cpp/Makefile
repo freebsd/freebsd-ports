@@ -2,26 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	utf8cpp
-PORTVERSION=	2.3.4
+PORTVERSION=	3.1.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	SF/utfcpp/${PORTNAME:tl}_2x/Release%20${PORTVERSION}/
-DISTNAME=	utf8_v${PORTVERSION:S/./_/g}
 
 MAINTAINER=	k@stereochro.me
 COMMENT=	Simple, portable, lightweight library for handling UTF-8 strings
 
 LICENSE=	BSL
 
-USES=		zip
-NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
+USES=		cmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	nemtrif
+GH_PROJECT=	utfcpp
 
-PLIST_FILES=	include/utf8.h \
-		include/utf8/checked.h \
-		include/utf8/core.h \
-		include/utf8/unchecked.h
-
-do-install:
-	(cd ${WRKSRC}/source; ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include)
+PLIST_FILES=	include/utf8cpp/utf8.h \
+		include/utf8cpp/utf8/checked.h \
+		include/utf8cpp/utf8/core.h \
+		include/utf8cpp/utf8/cpp11.h \
+		include/utf8cpp/utf8/unchecked.h \
+		lib/cmake/utf8cpp/utf8cppConfig.cmake
 
 .include <bsd.port.mk>
