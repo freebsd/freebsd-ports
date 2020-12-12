@@ -25,8 +25,6 @@ PORTDATA=	lib${PORTNAME}.so
 
 .if ${ARCH} == powerpc64
 USES+=		compiler:gcc-c++11-lib
-# XXX Move to "pkg-config --cflags libobs"
-CFLAGS+=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
 .else
 USES+=		compiler:c11
 .endif
