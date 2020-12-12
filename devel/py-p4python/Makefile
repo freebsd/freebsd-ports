@@ -13,6 +13,8 @@ COMMENT=	Python bindings for the Perforce API
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_riscv64=		fails to build: TypeError: can only concatenate str (not "NoneType") to str
+
 BUILD_DEPENDS+=	${LOCALBASE}/lib/perforce/libclient.a:devel/p4api
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
