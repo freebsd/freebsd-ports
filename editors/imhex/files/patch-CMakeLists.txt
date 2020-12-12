@@ -1,0 +1,55 @@
+--- CMakeLists.txt.orig	2020-12-06 20:40:57 UTC
++++ CMakeLists.txt
+@@ -10,23 +10,21 @@ set(CMAKE_CXX_STANDARD 20)
+ find_package(PkgConfig REQUIRED)
+ pkg_search_module(GLFW REQUIRED glfw3)
+ pkg_search_module(GLM REQUIRED glm)
+-pkg_search_module(CRYPTO REQUIRED libcrypto)
+ pkg_search_module(CAPSTONE REQUIRED capstone)
+ find_package(OpenGL REQUIRED)
+-find_package(LLVM REQUIRED CONFIG)
+ find_package(nlohmann_json REQUIRED)
+ find_package(Python COMPONENTS Interpreter Development)
+ 
++include(CheckCXXSymbolExists)
++check_cxx_symbol_exists(abi::__cxa_demangle "cxxabi.h" HAVE_CXXABI)
++
+ if(Python_VERSION LESS 3)
+     message(STATUS ${PYTHON_VERSION_MAJOR_MINOR})
+     message(FATAL_ERROR "No valid version of Python 3 was found.")
+ endif()
+ 
+-llvm_map_components_to_libnames(_llvm_libs demangle)
+-llvm_expand_dependencies(llvm_libs ${_llvm_libs})
++include_directories(include ${GLFW_INCLUDE_DIRS} ${CAPSTONE_INCLUDE_DIRS} libs/ImGui/include libs/glad/include ${Python_INCLUDE_DIRS})
+ 
+-include_directories(include ${GLFW_INCLUDE_DIRS} ${CAPSTONE_INCLUDE_DIRS} ${LLVM_INCLUDE_DIRS} libs/ImGui/include libs/glad/include ${Python_INCLUDE_DIRS})
+-
+ # Get Python major and minor
+ string(REPLACE "." ";" PYTHON_VERSION_MAJOR_MINOR ${Python_VERSION})
+ list(REMOVE_AT PYTHON_VERSION_MAJOR_MINOR 2)
+@@ -42,7 +40,7 @@ endif (WIN32)
+ SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -DRELEASE")
+ SET(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG")
+ 
+-add_executable(ImHex
++add_executable(imhex
+         source/main.cpp
+         source/window.cpp
+ 
+@@ -88,12 +86,10 @@ add_executable(ImHex
+         resource.rc
+         )
+ 
+-target_link_directories(ImHex PRIVATE ${LLVM_LIBRARY_DIR})
+-
+ if (WIN32)
+     target_link_libraries(ImHex libglfw3.a libgcc.a libstdc++.a libmagic.a libgnurx.a libtre.a libintl.a libiconv.a shlwapi.lib libcrypto.a libwinpthread.a libcapstone.a ${llvm_libs} ${Python_LIBRARIES} nlohmann_json::nlohmann_json)
+ endif (WIN32)
+ 
+ if (UNIX)
+-    target_link_libraries(ImHex libglfw.so libmagic.so libcrypto.so libdl.so libcapstone.so ${llvm_libs} ${Python_LIBRARIES} nlohmann_json::nlohmann_json)
+-endif (UNIX)
+\ No newline at end of file
++    target_link_libraries(imhex libglfw.so libmagic.so libcrypto.so libdl.so libcapstone.so ${Python_LIBRARIES} nlohmann_json::nlohmann_json)
++endif (UNIX)

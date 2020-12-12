@@ -64,6 +64,7 @@
     SUBDIR += hexpert
     SUBDIR += hnb
     SUBDIR += hte
+    SUBDIR += imhex
     SUBDIR += impress
     SUBDIR += jed
     SUBDIR += jedit
