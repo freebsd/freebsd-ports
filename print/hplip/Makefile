@@ -73,8 +73,6 @@ XSANE_RUN_DEPENDS=	xsane:graphics/xsane
 
 .if ${PYTHON_MAJOR_VER} >= 3
 RUN_DEPENDS+=  ${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=  ${PYTHON_PKGNAMEPREFIX}gobject>=0:devel/py-gobject@${PY_FLAVOR}
 .endif
 
 post-patch:
