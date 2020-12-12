@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unbound
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/unbound/ \
 		https://distfiles.crux.guru/
@@ -28,15 +28,17 @@ GROUPS=		${PORTNAME}
 
 USE_RC_SUBR=	unbound
 
-PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
-		README.tests TODO control_proto_spec.txt ietf67-design-02.odp \
+PORTDOCS=	CNAME-basedRedirectionDesignNotes.pdf CREDITS Changelog \
+		FEATURES IP-BasedActions.pdf LICENSE README README.DNS64 \
+		README.ipset.md README.svn README.tests TODO \
+		control_proto_spec.txt example.conf ietf67-design-02.odp \
 		ietf67-design-02.pdf requirements.txt
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	THREADS PYTHON GOST ECDSA MUNIN_PLUGIN DOCS LIBEVENT \
-		FILTER_AAAA DNSTAP DNSCRYPT SUBNET EVAPI TFOCL TFOSE \
-		HIREDIS DOH
-OPTIONS_DEFAULT=THREADS ECDSA LIBEVENT GOST
+OPTIONS_DEFINE=	DNSCRYPT DNSTAP DOCS DOH ECDSA EVAPI FILTER_AAAA GOST \
+		HIREDIS LIBEVENT MUNIN_PLUGIN PYTHON SUBNET TFOCL TFOSE \
+		THREADS 
+OPTIONS_DEFAULT=DOH ECDSA GOST LIBEVENT THREADS
 
 LIBEVENT_DESC=	Build against libevent
 GOST_DESC=	Enable GOST support (requires OpenSSL >= 1.0)
