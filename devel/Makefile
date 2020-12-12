@@ -6787,6 +6787,7 @@
     SUBDIR += tl-expected
     SUBDIR += tla
     SUBDIR += tllist
+    SUBDIR += tlx
     SUBDIR += tmake
     SUBDIR += tnt
     SUBDIR += tokamak
