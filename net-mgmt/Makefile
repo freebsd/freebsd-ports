@@ -332,6 +332,7 @@
     SUBDIR += rrdbot
     SUBDIR += rtrlib
     SUBDIR += rubygem-blimpy
+    SUBDIR += rubygem-checkson
     SUBDIR += rubygem-oxidized
     SUBDIR += rubygem-oxidized-script
     SUBDIR += rubygem-oxidized-web
