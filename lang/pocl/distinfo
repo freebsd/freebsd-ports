@@ -1,3 +1,5 @@
 TIMESTAMP = 1571058139
 SHA256 (pocl-pocl-v1.4_GH0.tar.gz) = ec237faa83bb1c803fbdf7c6e83d8a2ad68b6f0ed1879c3aa16c0e1dcc478742
 SIZE (pocl-pocl-v1.4_GH0.tar.gz) = 1560972
+SHA256 (9ba33d2a570c.patch) = ebbf503a5e1b9e6676d66c8839a785bcd26667a0aa881fb68b74883e07e3a139
+SIZE (9ba33d2a570c.patch) = 744
