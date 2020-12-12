@@ -2,16 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	xawtv
-PORTVERSION=	3.106
+PORTVERSION=	3.107
 CATEGORIES=	multimedia
 MASTER_SITES=	http://linuxtv.org/downloads/xawtv/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	TV viewing application and a few TV utilities
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+ONLY_FOR_ARCHS=	amd64 i386
+
 BUILD_DEPENDS=	${LOCALBASE}/share/fonts/misc/led-iso8859-1.pcf.gz:x11-fonts/tv-fonts
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/misc/led-iso8859-1.pcf.gz:x11-fonts/tv-fonts
 LIB_DEPENDS=	libpng.so:graphics/png
+
+USES=		gmake iconv jpeg motif ncurses perl5 tar:bzip2 pkgconfig xorg
 
 OPTIONS_DEFINE=		AALIB BKTR DV QUICKTIME ZVBI
 OPTIONS_DEFINE_i386=	MMX
@@ -26,14 +33,12 @@ ZVBI_DESC=	Enable libzvbi support
 
 BKTR_MAKE_ARGS=	HAVE_BKTR=yes
 
-USES=		gmake iconv jpeg motif ncurses perl5 tar:bzip2 pkgconfig xorg
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xaw
 CPPFLAGS+=	-I${WRKSRC}/common
 LIBS+=		-L${LOCALBASE}/lib
 MAKE_ENV=	verbose=yes
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	amd64 i386
 
 FILES_LIBJPEG=	console/Subdir.mk x11/Subdir.mk libng/plugins/Subdir.mk
 
