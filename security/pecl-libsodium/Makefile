@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsodium
-PORTVERSION=	2.0.22
+PORTVERSION=	2.0.23
 CATEGORIES=	security
 
 MAINTAINER=	sunpoet@FreeBSD.org
