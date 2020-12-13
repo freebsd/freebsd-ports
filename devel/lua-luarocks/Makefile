@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	luarocks
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 CATEGORIES=	devel
 MASTER_SITES=	https://luarocks.org/releases/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}

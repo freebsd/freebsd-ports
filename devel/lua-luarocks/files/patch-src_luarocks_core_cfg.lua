@@ -1,7 +1,7 @@
 - Add DragonFly support
 - Respect CC/CFLAGS/LD/LDFLAGS
 - Prefer system compiler over GCC on BSDs/Solaris
-- OpenBSD uses Clang by default, so don't pass GCC RPATH
+- OpenBSD uses Clang by default, so do not pass GCC RPATH
 
 --- src/luarocks/core/cfg.lua.orig	2020-01-28 15:54:42 UTC
 +++ src/luarocks/core/cfg.lua
