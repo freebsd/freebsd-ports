@@ -3,6 +3,7 @@
 
 PORTNAME=	ledger
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	finance
 
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BROKEN_FreeBSD_11_powerpc64=	fails to link on powerpc64 elfv1: ibledger.so.3: undefined reference to boost::match_results
 BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: ibledger.so.3: undefined reference to boost::match_results
 
-BUILD_DEPENDS=	${LOCALBASE}/include/utf8.h:devel/utf8cpp
+BUILD_DEPENDS=	${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libboost_system.so:devel/boost-libs

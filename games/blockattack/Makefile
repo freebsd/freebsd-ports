@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	blockattack
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.0
 CATEGORIES=	games
@@ -12,7 +13,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	zip:archivers/zip \
-		${LOCALBASE}/include/utf8.h:devel/utf8cpp
+		${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libphysfs.so:devel/physfs
 
@@ -23,7 +24,9 @@ USE_SDL=	image2 mixer2 ttf2
 GH_PROJECT=	${PORTNAME}-game
 SHEBANG_FILES=	packdata.sh source/misc/translation/*.sh
 bash_CMD=	/bin/sh
+CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 LDFLAGS+=	-lintl
+
 
 post-patch:
 # Respect PREFIX when looking for data directories

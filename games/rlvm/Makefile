@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rlvm
+PORTREVISION=	1
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.14-75
 DISTVERSIONSUFFIX=	-g975e740c
@@ -15,7 +16,7 @@ LICENSE_COMB=	multi
 BROKEN_FreeBSD_11_powerpc64=	fails to link on powerpc64 elfv1: gcn_platform.cc: undefined reference to gcn::Exception::Exception
 BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: gcn_platform.cc: undefined reference to gcn::Exception::Exception
 
-BUILD_DEPENDS=	${LOCALBASE}/include/utf8.h:devel/utf8cpp
+BUILD_DEPENDS=	${LOCALBASE}/include/utf8cpp/utf8.h:devel/utf8cpp
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libvorbisfile.so:audio/libvorbis \
 		libboost_serialization.so:devel/boost-libs \
@@ -32,6 +33,7 @@ USE_SDL=	image mixer ttf
 EXCLUDE=	GLEW SDL_image SDL_mixer SDL_ttf gmock gtest guichan \
 		luabind utf8cpp # leaving only pygame, xclannad, *.cpp
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude vendor/,}
+CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (gtk deps)
 MAKE_ARGS=	VERBOSE=1
 INSTALLS_ICONS=	yes
