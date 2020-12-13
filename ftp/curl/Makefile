@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.73.0
+PORTVERSION=	7.74.0
 CATEGORIES=	ftp net www
 MASTER_SITES=	https://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	haxx
 
-DOCS=		FAQ FEATURES INSTALL KNOWN_BUGS MAIL-ETIQUETTE THANKS TODO options-in-versions
+DOCS=		FAQ FEATURES.md INSTALL KNOWN_BUGS MAIL-ETIQUETTE THANKS TODO options-in-versions
 
 SHEBANG_FILES=	*/*.pl
 
