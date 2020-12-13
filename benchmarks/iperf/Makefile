@@ -12,11 +12,15 @@ COMMENT=	Tool to measure maximum TCP and UDP bandwidth
 
 LICENSE=	BSD2CLAUSE
 
+USES=		cpe
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/iperf \
 		man/man1/iperf.1.gz
 PORTDOCS=	*
+
+CPE_VENDOR=	iperf_project
 
 OPTIONS_DEFINE=	DOCS IPV6 THREADS
 OPTIONS_DEFAULT=THREADS
