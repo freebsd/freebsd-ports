@@ -1,10 +1,11 @@
 # $FreeBSD$
 
-PORTNAME=	Flask-Migrate
+PORTNAME=	flask-migrate
 PORTVERSION=	2.5.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Flask-Migrate-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database schema migrations for Flask applications
