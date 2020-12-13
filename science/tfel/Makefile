@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tfel
-PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTVERSION=	3.4.0
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/
 PKGNAMESUFFIX=	-mfront
@@ -18,7 +17,7 @@ RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		cmake compiler:c++0x fortran tar:bzip2
 
-CONFLICTS=	tfel-mfront-edf-3.*
+CONFLICTS_INSTALL=	tfel-mfront-edf-3.*
 
 OPTIONS_DEFINE=		DOCS PYTHON
 OPTIONS_DEFAULT=	DOCS PYTHON
@@ -41,5 +40,11 @@ CMAKE_ON+=	enable-portable-build
 .endif
 
 TEST_TARGET=	check
+
+post-install:
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})
 
 .include <bsd.port.mk>
