@@ -1,6 +1,6 @@
-TIMESTAMP = 1607193224
-SHA256 (netdata-go.d.plugin-v0.26.1_GH0.tar.gz) = e83b7710ea61123e0fca27f0700e50c3ecc6558f68af37483eceb07a70f5d134
-SIZE (netdata-go.d.plugin-v0.26.1_GH0.tar.gz) = 732301
+TIMESTAMP = 1607799055
+SHA256 (netdata-go.d.plugin-v0.26.2_GH0.tar.gz) = acdf8885e0129ca71b4973280365aa168b34c05a2e32bcc7190e97999779c89a
+SIZE (netdata-go.d.plugin-v0.26.2_GH0.tar.gz) = 732931
 SHA256 (DATA-DOG-go-sqlmock-v1.4.1_GH0.tar.gz) = 50a4e370447d4096b288cdbe929fd15fad1196c0e153f068ffdca720196f7f37
 SIZE (DATA-DOG-go-sqlmock-v1.4.1_GH0.tar.gz) = 32714
 SHA256 (Wing924-ltsv-v0.3.1_GH0.tar.gz) = b20c4ed0b836044bd59bbf5ecde4afc1b6eda3879652e8485e42ea5f7db8c087

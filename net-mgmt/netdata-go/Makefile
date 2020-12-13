@@ -2,7 +2,7 @@
 
 PORTNAME=	netdata-go
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.1
+DISTVERSION=	0.26.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	driesm.michiels@gmail.com
