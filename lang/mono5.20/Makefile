@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mono
-PORTVERSION=	5.10.1.57
-PORTREVISION=	3
+PORTVERSION=	5.20.1.34
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -20,14 +19,14 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		bash:shells/bash \
 		cmake>0:devel/cmake
 LIB_DEPENDS=	libinotify.so:devel/libinotify
-RUN_DEPENDS=	${PY_PILLOW} \
-		ca_root_nss>=0:security/ca_root_nss
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-CONFLICTS_INSTALL=	czmq-3*
-
-OPTIONS_DEFINE=		MONOLITE NLS X11
+OPTIONS_DEFINE=		MONOLITE NLS X11 HEAPVIZ
 OPTIONS_DEFAULT=	MONOLITE X11
 OPTIONS_SUB=	yes
+
+HEAPVIZ_DESC=		Install mono-heapviz debug tool (requires py-pillow)
+HEAPVIZ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
 
 MONOLITE_DESC=		Use monolite to bootstrap mcs (otherwise use installed mcs)
 MONOLITE_DISTFILES=	monolite-linux-${MONOLITE_VERSION}-latest.tar.gz:monolite
@@ -48,7 +47,7 @@ SHEBANG_FILES=	scripts/mono-heapviz mono/mini/genmdesc.py mono/tests/test_lldb.p
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 CONFIGURE_ARGS=	--disable-dtrace --enable-btls
-CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAKE_ENV=	MONO_SHARED_DIR="${WRKDIR}" \
 		INSTALL_STRIP_FLAG="${STRIP}" \
@@ -59,7 +58,7 @@ TEST_TARGET=	check
 
 PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
 
-LOCALBASE?=	/usr/local
+#LOCALBASE?=	/usr/local
 .if !exists(${LOCALBASE}/bin/mcs)
 OPTIONS_SLAVE=	MONOLITE
 .endif
