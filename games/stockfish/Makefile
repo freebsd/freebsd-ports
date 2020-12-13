@@ -3,8 +3,11 @@
 
 PORTNAME=	stockfish
 DISTVERSIONPREFIX=	sf_
-DISTVERSION=	11
+DISTVERSION=	12
 CATEGORIES=	games
+MASTER_SITES=	https://tests.stockfishchess.org/api/nn/:nnue
+DISTFILES=	nn-${_NNUE_VER}.nnue:nnue
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	execve@gmail.com
 COMMENT=	Open source chess engine
@@ -18,23 +21,31 @@ BROKEN_armv7=	Fails to configure: config-sanity: Error 1
 BROKEN_mips64=	Fails to build: cannot detect architecture
 NOT_FOR_ARCHS=	sparc64
 
-USES=		compiler:c++11-lang gmake
+USES=		compiler:c++11-lang gmake perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	official-stockfish
 GH_PROJECT=	Stockfish
+USE_PERL5=	build
+
+LDFLAGS+=	-fuse-ld=lld
+
+_NNUE_VER=	82215d0fd0df
 
 WRKSRC_SUBDIR=	src
 MYARCH=		${ARCH}
 MYCC=		${CHOSEN_COMPILER_TYPE}
 TGTBLD=		build
 
-LDFLAGS+=	-fuse-ld=lld
-
 PLIST_FILES=	bin/stockfish
-PORTDOCS=	Readme.md
+PORTDOCS=	README.md
 
-OPTIONS_DEFINE=	DOCS POPCNT
+#POPCNT AVX2 BMI2
+OPTIONS_DEFINE=		DOCS
+OPTIONS_RADIO=		MACHDEP
+OPTIONS_RADIO_MACHDEP=	POPCNT AVX2 BMI2
 
+AVX2_DESC=	Use the AVX2 instruction set
+BMI2_DESC=	Use the BMI2 instruction set
 POPCNT_DESC=	Use the POPCNT instruction
 
 .include <bsd.port.options.mk>
@@ -43,11 +54,23 @@ POPCNT_DESC=	Use the POPCNT instruction
 BROKEN=		POPCNT compiles only on amd64
 .endif
 
+.if ${PORT_OPTIONS:MAVX2} && ${ARCH} != amd64
+BROKEN=		AVX compiles only on amd64
+.endif
+
+.if ${PORT_OPTIONS:MBMI2} && ${ARCH} != amd64
+BROKEN=		BMI compiles only on amd64
+.endif
+
 # workaround the ARCH usage in the stockfish Makefile
 .if ${ARCH} == "i386"
 MYARCH=		x86-32
 .elif ${ARCH} == "amd64"
-.  if ${PORT_OPTIONS:MPOPCNT}
+.  if ${PORT_OPTIONS:MBMI2}
+MYARCH=		x86-64-bmi2
+.  elif ${PORT_OPTIONS:MAVX2}
+MYARCH=		x86-64-avx2
+.  elif ${PORT_OPTIONS:MPOPCNT}
 MYARCH=		x86-64-modern
 .  else
 MYARCH=		x86-64
@@ -61,6 +84,7 @@ MYARCH=		ppc-64
 ALL_TARGET=	${TGTBLD} ARCH=${MYARCH} COMP=${MYCC}
 
 post-patch:
+	@${CP} ${_DISTDIR}/nn-${_NNUE_VER}.nnue ${WRKSRC}/.
 	@${REINPLACE_CMD} -e "s/^PREFIX =/PREFIX ?=/" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s/CXX=g++/CXX=g++${GCC_DEFAULT}/" \
 		${WRKSRC}/Makefile
@@ -70,6 +94,6 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../Readme.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
