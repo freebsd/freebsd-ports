@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.90.0
+PORTVERSION=	3.91.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -30,6 +30,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-appstream>=1<2:devel/rubygem-aws-sdk-appstream \
 		rubygem-aws-sdk-appsync>=1<2:devel/rubygem-aws-sdk-appsync \
 		rubygem-aws-sdk-athena>=1<2:devel/rubygem-aws-sdk-athena \
+		rubygem-aws-sdk-auditmanager>=1<2:devel/rubygem-aws-sdk-auditmanager \
 		rubygem-aws-sdk-augmentedairuntime>=1<2:devel/rubygem-aws-sdk-augmentedairuntime \
 		rubygem-aws-sdk-autoscaling>=1<2:devel/rubygem-aws-sdk-autoscaling \
 		rubygem-aws-sdk-autoscalingplans>=1<2:devel/rubygem-aws-sdk-autoscalingplans \
@@ -103,6 +104,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-elasticsearchservice>=1<2:devel/rubygem-aws-sdk-elasticsearchservice \
 		rubygem-aws-sdk-elastictranscoder>=1<2:devel/rubygem-aws-sdk-elastictranscoder \
 		rubygem-aws-sdk-emr>=1<2:devel/rubygem-aws-sdk-emr \
+		rubygem-aws-sdk-emrcontainers>=1<2:devel/rubygem-aws-sdk-emrcontainers \
 		rubygem-aws-sdk-eventbridge>=1<2:devel/rubygem-aws-sdk-eventbridge \
 		rubygem-aws-sdk-firehose>=1<2:devel/rubygem-aws-sdk-firehose \
 		rubygem-aws-sdk-fms>=1<2:devel/rubygem-aws-sdk-fms \
@@ -119,6 +121,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-groundstation>=1<2:devel/rubygem-aws-sdk-groundstation \
 		rubygem-aws-sdk-guardduty>=1<2:devel/rubygem-aws-sdk-guardduty \
 		rubygem-aws-sdk-health>=1<2:devel/rubygem-aws-sdk-health \
+		rubygem-aws-sdk-healthlake>=1<2:devel/rubygem-aws-sdk-healthlake \
 		rubygem-aws-sdk-honeycode>=1<2:devel/rubygem-aws-sdk-honeycode \
 		rubygem-aws-sdk-iam>=1<2:devel/rubygem-aws-sdk-iam \
 		rubygem-aws-sdk-identitystore>=1<2:devel/rubygem-aws-sdk-identitystore \
@@ -212,6 +215,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-s3control>=1<2:devel/rubygem-aws-sdk-s3control \
 		rubygem-aws-sdk-s3outposts>=1<2:devel/rubygem-aws-sdk-s3outposts \
 		rubygem-aws-sdk-sagemaker>=1<2:devel/rubygem-aws-sdk-sagemaker \
+		rubygem-aws-sdk-sagemakeredgemanager>=1<2:devel/rubygem-aws-sdk-sagemakeredgemanager \
 		rubygem-aws-sdk-sagemakerfeaturestoreruntime>=1<2:devel/rubygem-aws-sdk-sagemakerfeaturestoreruntime \
 		rubygem-aws-sdk-sagemakerruntime>=1<2:devel/rubygem-aws-sdk-sagemakerruntime \
 		rubygem-aws-sdk-savingsplans>=1<2:devel/rubygem-aws-sdk-savingsplans \
