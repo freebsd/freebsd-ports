@@ -2,8 +2,7 @@
 
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	2018_09_3
-PORTREVISION=	7
+DISTVERSION=	2020_09_3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,18 +14,21 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 BUILD_DEPENDS=	catch>0:devel/catch \
 		flex:textproc/flex \
 		rapidjson>=0:devel/rapidjson
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+		libcoordgen.so:science/coordgenlibs \
+		libfreetype.so:print/freetype2 \
+		libmaeparser.so:science/maeparser
 
 USES=		bison:build cmake compiler:c++11-lang eigen:3 python
 USE_GITHUB=	yes
-GH_TUPLE=	schrodinger:maeparser:1.0.0:maeparser/External/CoordGen/maeparser \
-		schrodinger:coordgenlibs:ede3191:coordgenlibs/External/CoordGen/coordgenlibs
+GH_TUPLE=	rareylab:RingDecomposerLib:v1.1.3_rdkit:RingDecomposerLib/External/RingFamilies/RingDecomposerLib
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	RDK_INSTALL_INTREE RDK_USE_FLEXBISON \
 		RDK_INSTALL_STATIC_LIBS RDK_SWIG_STATIC RDK_PGSQL_STATIC \
-		RDK_OPTIMIZE_NATIVE
-CMAKE_ARGS=	-DFREEBSD_DOCSDIR:PATH=${DOCSDIR} -DCATCH_DIR=${LOCALBASE}
+		RDK_OPTIMIZE_NATIVE \
+		RDK_BUILD_CPP_TESTS
+CMAKE_ARGS=	-DFREEBSD_DOCSDIR:PATH=${DOCSDIR} -DCATCH_DIR=${LOCALBASE}/include/catch2
 
 DATADIR=	${PREFIX}/share/RDKit
 DOCSDIR=	${PREFIX}/share/doc/RDKit
