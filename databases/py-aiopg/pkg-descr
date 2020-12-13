@@ -1,5 +1,5 @@
-aiopg is a library for accessing a PostgreSQL database from the asyncio 
-(PEP-3156/tulip) framework. It wraps asynchronous features of the Psycopg 
+aiopg is a library for accessing a PostgreSQL database from the asyncio
+(PEP-3156/tulip) framework. It wraps asynchronous features of the Psycopg
 database driver.
 
 WWW: https://github.com/aio-libs/aiopg

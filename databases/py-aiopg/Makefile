@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aiopg
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,16 +11,15 @@ MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Python library for accessing PostgreSQL database using asyncio
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.7.0:databases/py-psycopg2@${PY_FLAVOR}
-
-OPTIONS_DEFINE=	DOCS
 
 USES=		pgsql:9.2+ python:3.4+
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	DOCS
 PORTDOCS=	PKG-INFO README.rst CHANGES.txt
 
 post-install-DOCS-on:
