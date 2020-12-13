@@ -23,9 +23,8 @@ USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-#USE_LOCALE=	en_US.UTF-8
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} nosetests-${PYTHON_VER} -v
+	cd ${WRKSRC} && ${PYTHON_CMD} -m nose -v
 
 .include <bsd.port.mk>
