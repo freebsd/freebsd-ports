@@ -5,7 +5,7 @@ Sometimes, scli does not show the contact list immediately (e.g., after scli
 was not closed by issuing ":quit" but by sending SIGINT instead). In such a
 situation, it might be necessary to refresh scli by issuing ":reload".
 
-In case it does not enough, the following instructions explain how to clean up
+In case it is not enough, the following instructions explain how to clean up
 existing scli and signal-cli files and start again:
 
 1. Remove ~/.local/share/scli and ~/.local/share/signal-cli.
