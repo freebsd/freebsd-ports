@@ -40,6 +40,7 @@ bin/dh_installpam
 bin/dh_installppp
 bin/dh_installsystemd
 bin/dh_installsystemduser
+bin/dh_installsysusers
 bin/dh_installtmpfiles
 bin/dh_installudev
 bin/dh_installwm
@@ -80,6 +81,7 @@ bin/postinst-systemd-restartnostart
 bin/postinst-systemd-start
 bin/postinst-systemd-user-dont-enable
 bin/postinst-systemd-user-enable
+bin/postinst-sysusers
 bin/postinst-ucf
 bin/postinst-usrlocal
 bin/postinst-wm
