@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kafo_wizards
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	Create wizard like interfaces in terminal applications
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	rubygem-highline>=0:devel/rubygem-highline
+RUN_DEPENDS=	rubygem-highline>=0<3:devel/rubygem-highline
 
 USES=		gem
 USE_RUBY=	yes
