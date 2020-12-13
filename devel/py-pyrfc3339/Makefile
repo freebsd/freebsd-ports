@@ -22,4 +22,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+do-test:
+	cd ${WRKSRC} && ${PYTHON_CMD} -m nose -v
+
 .include <bsd.port.mk>
