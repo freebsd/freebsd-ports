@@ -10,6 +10,7 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python Optimization Modeling Objects
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyUtilib>=5.8.0:devel/py-PyUtilib@${PY_FLAVOR} \
