@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.23.21
+DISTVERSION=	0.23.22
 CATEGORIES=	security devel
-MASTER_SITES=	https://github.com/p11-glue/p11-kit/releases/download/${PORTVERSION}/
+MASTER_SITES=	https://github.com/p11-glue/p11-kit/releases/download/${DISTVERSION}/
 
-# Partially backport https://github.com/p11-glue/p11-kit/pull/315
 PATCH_SITES=	https://github.com/p11-glue/p11-kit/commit/
-PATCHFILES=	1a21df391691d9a9c7b5ebc77022385f7feb266b.patch:-p1
+PATCHFILES=	507c394cfcf4edffc5e4450c5d737e545c26b857.patch:-p1
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Library for loading and enumerating of PKCS\#11 modules
@@ -46,10 +45,6 @@ MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt
 MANPAGES_MESON_TRUE=	man
 
 TEST_MESON_TRUE=	test
-
-# Partially backport https://github.com/p11-glue/p11-kit/pull/315
-pre-configure:
-	${MV} ${WRKSRC}/trust/trust-extract-compat.in ${WRKSRC}/trust/trust-extract-compat
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
