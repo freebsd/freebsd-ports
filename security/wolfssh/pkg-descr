@@ -1,0 +1,6 @@
+The wolfSSH library is a lightweight SSHv2 client and server library written in
+ANSI C and targeted for embedded, RTOS, and resource-constrained environments -
+primarily because of its small size, speed, and feature set.
+
+WWW: https://www.wolfssl.com/products/wolfssh/
+WWW: https://github.com/wolfSSL/wolfssh
