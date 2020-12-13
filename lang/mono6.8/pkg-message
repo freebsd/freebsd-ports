@@ -32,6 +32,19 @@ following first:
 * Some process information are accessed through /proc (e.g. when using
   NUnit) and procfs(5) has to be mounted for these features to work:
     # echo "proc            /proc   procfs  rw 0 0" >> /etc/fstab
+
+* Mono does not use the system certificates files. If you update 
+  security/ca_root_nss separate from Mono, you must manually resync 
+  from the PEM file using the Mono cert-sync tool as root.
+    # cert-sync /usr/local/share/certs/ca-root-nss.crt
+  Otherwise, certificates may fail validation within Mono.
+
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+* If you have installed any custom CAs using the cert-sync tool, you 
+  must re-install them after upgrading Mono.
 EOM
 }
 ]
