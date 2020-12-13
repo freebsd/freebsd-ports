@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pysaml2
-PORTVERSION=	6.3.1
+PORTVERSION=	6.4.1
 CATEGORIES=	security devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,6 +34,6 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 do-test:
-	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
+	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
 
 .include <bsd.port.mk>
