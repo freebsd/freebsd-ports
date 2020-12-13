@@ -164,10 +164,4 @@ PLIST_DIR_LIST=		lib/kicad
 PLIST_SHAREDDIR_LIST=	share/mimelnk/application \
 			share/mimelnk
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} == gcc
-IGNORE=		builds only with clang
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
