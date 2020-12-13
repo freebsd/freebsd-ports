@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	terraform-switcher
-PORTVERSION=	0.8.832
+PORTVERSION=	0.9.934
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
@@ -35,6 +35,7 @@ GH_TUPLE=	\
 		manifoldco:promptui:c0c0d3afc6a0:manifoldco_promptui/vendor/github.com/manifoldco/promptui \
 		mattn:go-colorable:v0.0.9:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.3:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:go-wordwrap:v1.0.0:mitchellh_go_wordwrap/vendor/github.com/mitchellh/go-wordwrap \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		pborman:getopt:7148bc3a4c30:pborman_getopt/vendor/github.com/pborman/getopt \
