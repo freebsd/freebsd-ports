@@ -1,3 +1,4 @@
-Makes it easier to use PySCSS in Django.
+django-pyscss provides a collection of tools for making it easier to use pyScss
+within Django.
 
-WWW: https://pypi.org/project/django-pyscss/
+WWW: https://github.com/fusionbox/django-pyscss
