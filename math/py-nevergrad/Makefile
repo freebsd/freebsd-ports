@@ -4,7 +4,7 @@
 PORTNAME=	nevergrad
 PORTVERSION=	0.4.2
 DISTVERSIONSUFFIX=	.post2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,6 +35,7 @@ BENCHMARK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gym>=0.12.1:math/py-gym@${PY_FLAVO
 			${PYTHON_PKGNAMEPREFIX}mixsimulator>=0.2.9.5:math/py-mixsimulator@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pandas>=0.23.4,1:math/py-pandas@${PY_FLAVOR} \
 			${PY_PILLOW} \
+			${PYTHON_PKGNAMEPREFIX}Pyomo>=5.7:math/py-Pyomo@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyproj>=2.6.1:graphics/py-pyproj@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}requests>=2.21.0:www/py-requests@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR} \
