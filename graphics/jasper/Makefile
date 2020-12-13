@@ -14,7 +14,7 @@ LICENSE_NAME=	JasPer License Version 2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cmake jpeg localbase
+USES=		cmake cpe jpeg localbase
 
 CMAKE_OFF=	JAS_ENABLE_AUTOMATIC_DEPENDENCIES JAS_ENABLE_DOC
 CMAKE_ON=	JAS_ENABLE_LIBJPEG
@@ -24,6 +24,8 @@ DOCSDIR=	${PREFIX}/share/doc/JasPer
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jasper-software
+
+CPE_VENDOR=	jasper_project
 
 OPTIONS_DEFINE=	OPENGL DOCS
 OPTIONS_DEFAULT=OPENGL
