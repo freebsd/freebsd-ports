@@ -5561,6 +5561,7 @@
     SUBDIR += rubygem-aws-sdk-elasticsearchservice
     SUBDIR += rubygem-aws-sdk-elastictranscoder
     SUBDIR += rubygem-aws-sdk-emr
+    SUBDIR += rubygem-aws-sdk-emrcontainers
     SUBDIR += rubygem-aws-sdk-eventbridge
     SUBDIR += rubygem-aws-sdk-firehose
     SUBDIR += rubygem-aws-sdk-fms
