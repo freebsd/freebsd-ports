@@ -3,6 +3,7 @@
 
 PORTNAME=	smart-open
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,16 +27,20 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	AZURE GCP S3
-OPTIONS_DEFAULT=AZURE GCP S3
+OPTIONS_DEFINE=	AZURE HTTP GCP S3 WEBHDFS
+OPTIONS_DEFAULT=AZURE HTTP GCP S3 WEBHDFS
 AZURE_DESC=	Microsoft Azure support
+HTTP_DESC=	HTTP support
 GCP_DESC=	Google Cloud Platform (GCP) support
 S3_DESC=	Amazon Web Services S3 support
+WEBHDFS_DESC=	WebHDFS support
 
 AZURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-common>=0:www/py-azure-common@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}azure-core>=0:devel/py-azure-core@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}azure-storage-blob>=0:devel/py-azure-storage-blob@${PY_FLAVOR}
+HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 GCP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-cloud-storage>=0:www/py-google-cloud-storage@${PY_FLAVOR}
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>=0:www/py-boto3@${PY_FLAVOR}
+WEBHDFS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
 .include <bsd.port.mk>
