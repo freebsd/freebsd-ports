@@ -24,12 +24,13 @@ include/xtl/xproxy_wrapper.hpp
 include/xtl/xsequence.hpp
 include/xtl/xspan.hpp
 include/xtl/xspan_impl.hpp
+include/xtl/xsystem.hpp
 include/xtl/xtl_config.hpp
 include/xtl/xtype_traits.hpp
 include/xtl/xvariant.hpp
 include/xtl/xvariant_impl.hpp
 include/xtl/xvisitor.hpp
-lib/cmake/xtl/xtlConfig.cmake
-lib/cmake/xtl/xtlConfigVersion.cmake
-lib/cmake/xtl/xtlTargets.cmake
-libdata/pkgconfig/xtl.pc
+share/cmake/xtl/xtlConfig.cmake
+share/cmake/xtl/xtlConfigVersion.cmake
+share/cmake/xtl/xtlTargets.cmake
+share/pkgconfig/xtl.pc
