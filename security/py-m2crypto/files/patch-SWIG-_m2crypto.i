@@ -1,6 +1,6 @@
---- SWIG/_m2crypto.i.orig	2018-02-24 13:54:59 UTC
+--- SWIG/_m2crypto.i.orig	2020-01-30 08:17:01 UTC
 +++ SWIG/_m2crypto.i
-@@ -57,7 +57,8 @@ static PyObject *x509_store_verify_cb_fu
+@@ -65,6 +65,7 @@ static PyObject *x509_store_verify_cb_func;
  #ifdef _WIN32
  %include <windows.i>
  #endif
@@ -8,4 +8,3 @@
  %include <openssl/safestack.h>
  
  /* Bring in LHASH_OF macro definition */
- /* XXX Can't include lhash.h where LHASH_OF is defined, because it includes
