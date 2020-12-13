@@ -868,6 +868,7 @@
     SUBDIR += py-pygal
     SUBDIR += py-pyganim
     SUBDIR += py-pygeoapi
+    SUBDIR += py-pygeos
     SUBDIR += py-pyglet
     SUBDIR += py-pyglet150
     SUBDIR += py-pygraphviz
