@@ -30,8 +30,6 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_cffi_backend.so
 
 do-test:
-#	cd ${TEST_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} build_ext -i
-#	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -rs -v
 	cd ${TEST_WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} build_ext -i
 	cd ${TEST_WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
 
