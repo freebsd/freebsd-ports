@@ -14,6 +14,9 @@ COMMENT=	Python library for reading and writing image, video formats
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use graphics/py-imageio instead
+EXPIRATION_DATE=2020-12-31
+
 LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		${PY_ENUM34} \
