@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lua
-DISTVERSION=	5.4.1
+DISTVERSION=	5.4.2
 CATEGORIES=	lang
 MASTER_SITES=	https://www.lua.org/ftp/
 PKGNAMESUFFIX=	${LUA_VER_STR}
