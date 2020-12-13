@@ -10,4 +10,4 @@ form based upload, proxies, HTTP/2, cookies, user+password authentication
 (Basic, Plain, Digest, CRAM-MD5, NTLM, Negotiate and Kerberos), file transfer
 resume, proxy tunneling and more.
 
-WWW: https://curl.haxx.se/
+WWW: https://curl.se/
