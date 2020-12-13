@@ -5,4 +5,5 @@ Extract data from Excel spreadsheets (.xls and .xlsx, versions 2.0
 onwards) on any platform. Pure Python (2.6, 2.7, 3.2+). Strong support
 for Excel dates. Unicode-aware.
 
-WWW: http://www.python-excel.org/
+WWW: https://www.python-excel.org/
+WWW: https://github.com/python-excel/xlrd
