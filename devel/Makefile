@@ -5953,6 +5953,7 @@
     SUBDIR += rubygem-cucumber-core
     SUBDIR += rubygem-cucumber-create-meta
     SUBDIR += rubygem-cucumber-cucumber-expressions
+    SUBDIR += rubygem-cucumber-cucumber-expressions10
     SUBDIR += rubygem-cucumber-formatter-dots
     SUBDIR += rubygem-cucumber-messages
     SUBDIR += rubygem-cucumber-messages4
