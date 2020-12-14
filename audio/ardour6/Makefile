@@ -3,7 +3,7 @@
 
 PORTNAME=	ardour6
 PORTVERSION=	6.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/beerml/ardour_releases/raw/master/
 # The original master side points to the latest release only:
