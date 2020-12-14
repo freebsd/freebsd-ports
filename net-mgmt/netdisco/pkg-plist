@@ -398,6 +398,8 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-59-60-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-60-61-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-61-62-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-62-63-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-63-64-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/admintask.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/duplicatedevices.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/jobqueue.tt
