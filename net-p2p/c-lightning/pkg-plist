@@ -55,6 +55,10 @@ man/man7/lightning-listtransactions.7.gz
 man/man7/lightning-multifundchannel.7.gz
 man/man7/lightning-multiwithdraw.7.gz
 man/man7/lightning-newaddr.7.gz
+man/man7/lightning-notifications.7.gz
+man/man7/lightning-openchannel_init.7.gz
+man/man7/lightning-openchannel_signed.7.gz
+man/man7/lightning-openchannel_update.7.gz
 man/man7/lightning-pay.7.gz
 man/man7/lightning-ping.7.gz
 man/man7/lightning-plugin.7.gz
