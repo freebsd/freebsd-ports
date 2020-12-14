@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	6.0-rc1
+DISTVERSION=	6.0-rc2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -107,14 +107,12 @@ SDL_USES=		sdl
 SDL_USE=		SDL=sdl2
 
 STAGING_MASTER_SITES=	https://github.com/wine-staging/wine-staging/archive/:staging
-STAGING_DIST=		v${DISTVERSION:S/-//}.tar.gz
+STAGING_DIST=		v${DISTVERSION}.tar.gz
 STAGING_DISTFILES=	${STAGING_DIST}:staging
 STAGING_EXTRACT_DEPENDS=	bash:shells/bash \
 				git:devel/git \
 				autoconf>0:devel/autoconf
 STAGING_LIB_DEPENDS=	libtxc_dxtn.so:graphics/s2tc
-STAGING_EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-dlls-ntdll-unix-file.c \
-			${PATCHDIR}/extrapatch-staging-server-fd.c
 
 V4L_CONFIGURE_WITH=	v4l2
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
