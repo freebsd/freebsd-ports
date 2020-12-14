@@ -3,7 +3,7 @@ explore and to investigate basic properties of financial returns
 and related quantities.  The covered fields include techniques of
 explorative data analysis and the investigation of distributional
 properties, including parameter estimation and hypothesis testing.
-Evenmore there are several utility functions for data handling and
+Even more there are several utility functions for data handling and
 management.
 
-WWW: http://cran.r-project.org/web/packages/fBasics/
+WWW: https://cran.r-project.org/web/packages/fBasics/
