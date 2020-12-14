@@ -2,18 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	soundtouch
-PORTVERSION=	1.9.2
-PORTREVISION=	7
+DISTVERSION=	2.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.surina.net/soundtouch/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Open-source audio processing library
 
 LICENSE=	LGPL21
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
+USE_GITLAB=	yes
+GL_COMMIT=	762f56024b7ade81f6565903161dffec0ad4741e
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
