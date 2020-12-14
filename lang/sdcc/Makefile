@@ -3,6 +3,7 @@
 PORTNAME=	sdcc
 PORTVERSION=	4.0.0
 DISTVERSIONPREFIX=src-
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
@@ -43,7 +44,7 @@ STM8_DESC=	STMicroelectronics STM8
 UCSIM_DESC=	The ucSim simulator
 Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000, Toshiba TLCS-90
 
-CONFIGURE_ARGS=	--disable-non-free \
+CONFIGURE_ARGS=	--enable-non-free \
 		docdir=${DOCSDIR}
 PORTDOCS=	*
 WRKSRC=		${WRKDIR}/sdcc-${PORTVERSION}
@@ -80,12 +81,14 @@ post-patch:
 		${WRKSRC}/device/lib/pic14/Makefile.common \
 		${WRKSRC}/device/lib/pic14/Makefile.in \
 		${WRKSRC}/device/lib/pic14/configure \
+		${WRKSRC}/device/lib/pic14/libc/Makefile.in \
 		${WRKSRC}/device/lib/pic14/libm/Makefile.in \
 		${WRKSRC}/device/lib/pic14/libsdcc/enhanced/Makefile.in \
 		${WRKSRC}/device/lib/pic14/libsdcc/enhanced-no-xinst/Makefile.in \
 		${WRKSRC}/device/lib/pic14/libsdcc/regular/Makefile.in \
 		${WRKSRC}/device/lib/pic16/Makefile.in \
 		${WRKSRC}/device/lib/pic16/configure \
+		${WRKSRC}/device/lib/pic16/configure.ac \
 		${WRKSRC}/device/lib/pic16/debug/Makefile.in \
 		${WRKSRC}/device/lib/pic16/libc/Makefile.in \
 		${WRKSRC}/device/lib/pic16/libio/Makefile.in \
@@ -96,7 +99,11 @@ post-patch:
 		${WRKSRC}/device/non-free/lib/pic14/Makefile.rules \
 		${WRKSRC}/device/non-free/lib/pic16/Makefile.in \
 		${WRKSRC}/device/non-free/lib/pic16/configure \
-		${WRKSRC}/device/non-free/lib/pic16/libdev/Makefile.in
+		${WRKSRC}/device/non-free/lib/pic16/configure.ac \
+		${WRKSRC}/device/non-free/lib/pic16/libdev/Makefile.in \
+		${WRKSRC}/device/non-free/lib/pic16/libdev/mkmk.sh
+	@${REINPLACE_CMD} 's/[[:<:]]arch[[:>:]]/picarch/g' \
+		${WRKSRC}/device/non-free/lib/pic16/libdev/mkmk.sh
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
