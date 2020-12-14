@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	fGarch
-DISTVERSION=	3042.83.1
-PORTREVISION=	2
+DISTVERSION=	3042.83.2
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Rmetrics - Autoregressive Conditional Heteroskedastic Modelling
 
 LICENSE=	GPLv2+
