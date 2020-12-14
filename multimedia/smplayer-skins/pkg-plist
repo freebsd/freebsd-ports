@@ -4,6 +4,9 @@
 %%DATADIR%%/themes/Gonzo/main.css
 %%DATADIR%%/themes/Mac/Mac.rcc
 %%DATADIR%%/themes/Mac/main.css
+%%DATADIR%%/themes/Mint-Y/Mint-Y.rcc
+%%DATADIR%%/themes/Mint-Y/README.txt
+%%DATADIR%%/themes/Mint-Y/main.css
 %%DATADIR%%/themes/Modern/Modern.rcc
 %%DATADIR%%/themes/Modern/main.css
 %%DATADIR%%/themes/Vista/Vista.rcc
