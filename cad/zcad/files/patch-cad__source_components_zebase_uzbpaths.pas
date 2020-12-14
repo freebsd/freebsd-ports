@@ -1,16 +1,16 @@
---- cad_source/components/zebase/uzbpaths.pas.orig	2017-05-01 09:50:10 UTC
-+++ cad_source/components/zebase/uzbpaths.pas
+--- cad_source/components/zebase/uzbpaths.pas	2020-10-08 17:19:01.329618000 -0500
++++ cad_source/components/zebase/uzbpaths.pas	2020-10-08 17:38:21.065846000 -0500
 @@ -19,7 +19,8 @@
  unit uzbpaths;
  {$INCLUDE def.inc}
  interface
--uses uzbtypes,Masks,LCLProc,uzbtypesbase,{$IFNDEF DELPHI}LazUTF8,{$ENDIF}sysutils;
+-uses uzbtypes,Masks,LCLProc,uzbtypesbase,{$IFNDEF DELPHI}LazUTF8,{$ENDIF}sysutils,uzmacros;
 +uses uzbtypes,Masks,LCLProc,uzbtypesbase,{$IFNDEF DELPHI}LazUTF8,{$ENDIF}
-+{$IFDEF UNIX}baseunix,{$ENDIF}sysutils;
++{$IFDEF UNIX}baseunix,{$ENDIF}sysutils,uzmacros;
  type
-   TFromDirIterator=procedure (filename:GDBString);
-   TFromDirIteratorObj=procedure (filename:GDBString) of object;
-@@ -35,7 +36,7 @@ function GetPartOfPath(out part:GDBStrin
+   TFromDirIterator=procedure (filename:String);
+   TFromDirIteratorObj=procedure (filename:String) of object;
+@@ -35,7 +36,7 @@
  
  procedure FromDirIterator(const path,mask,firstloadfilename:GDBSTring;proc:TFromDirIterator;method:TFromDirIteratorObj);
  procedure FromDirsIterator(const path,mask,firstloadfilename:GDBString;proc:TFromDirIterator;method:TFromDirIteratorObj);
@@ -19,12 +19,13 @@
  implementation
  //uses log;
  function FindInPaths(Paths,FileName:GDBString):GDBString;
-@@ -147,11 +148,19 @@ begin
+@@ -147,12 +148,20 @@
         DebugLn(sysutils.Format('[FILEOPS]FindInSupportPath: file not found:"%s"',[{$IFNDEF DELPHI}utf8tosys{$ENDIF}(FileName)]));
  end;
  function ExpandPath(path:GDBString):GDBString;
 +{$IFDEF UNIX}var sb:stat;{$ENDIF}
  begin
+   DefaultMacros.SubstituteMacros(path);
       if path='' then
                      result:=programpath
  else if path[1]='*' then
@@ -40,7 +41,7 @@
  else result:=path;
  result:=StringReplace(result,'/', PathDelim,[rfReplaceAll, rfIgnoreCase]);
  if DirectoryExists({$IFNDEF DELPHI}utf8tosys{$ENDIF}(result)) then
-@@ -242,4 +251,10 @@ initialization
+@@ -243,4 +252,10 @@
    if (TempPath[length(TempPath)]<>PathDelim)
     then
         TempPath:=TempPath+PathDelim;
