@@ -25,7 +25,12 @@ RSYNC_DESC=	rsync support
 GIT_DESC=	git support
 HG_DESC=	mercurial support
 RSYNC_RUN_DEPENDS=	rsync:net/rsync
-SVN_RUN_DEPENDS=	svn:devel/subversion${WITH_SUBVERSION_VER}
+WITH_SUBVERSION_VER?=   114
+.if ${WITH_SUBVERSION_VER} == 114
+SVN_RUN_DEPENDS=	svn:devel/subversion
+.elif ${WITH_SUBVERSION_VER} == LTS
+SVN_RUN_DEPENDS=	svn:devel/subversion-lts
+.endif
 GIT_RUN_DEPENDS=	git:devel/git
 HG_RUN_DEPENDS=		${PY_MERCURIAL}
 .else
