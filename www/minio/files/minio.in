@@ -78,6 +78,10 @@ minio_start_precmd()
         install -o "${minio_user}" -g "${minio_group}" "/dev/null" "${pidfile}"
     fi
 
+    if [ ! -d "${minio_disks}" ]; then
+        install -d -o "${minio_user}" -g "${minio_group}" "${minio_disks}"
+    fi
+
     if [ ! -d "${minio_config}" ]; then
         install -d -o "${minio_user}" -g "${minio_group}" "${minio_config}"
     fi
