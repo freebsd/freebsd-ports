@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	timeSeries
-DISTVERSION=	3042.102
-PORTREVISION=	4
+DISTVERSION=	3062.100
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Rmetrics - Financial Time Series Objects
+MAINTAINER=	ygy@FreeBSD.org
+COMMENT=	Financial Time Series Objects (Rmetrics)
 
 LICENSE=	GPLv2+
 

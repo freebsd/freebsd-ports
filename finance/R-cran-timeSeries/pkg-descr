@@ -1,3 +1,5 @@
-Package of time series tools and utilities.
+'S4' classes and various tools for financial time series: Basic functions such
+as scaling and sorting, subsetting, mathematical operations and statistical
+functions.
 
-WWW: http://cran.r-project.org/web/packages/timeSeries/
+WWW: https://cran.r-project.org/web/packages/timeSeries/
