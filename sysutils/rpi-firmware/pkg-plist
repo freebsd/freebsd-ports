@@ -22,6 +22,7 @@
 %%DATADIR%%/config_rpi3_edk2.txt
 %%DATADIR%%/config_rpi4.txt
 %%DATADIR%%/config_rpi_0_w.txt
+%%DATADIR%%/config_arm64.txt
 %%DATADIR%%/fixup.dat
 %%DATADIR%%/fixup4.dat
 %%DATADIR%%/fixup4cd.dat

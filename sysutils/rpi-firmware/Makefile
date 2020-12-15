@@ -2,6 +2,7 @@
 
 PORTNAME=	rpi-firmware
 PORTVERSION=	1.20201201.g20201201
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	uboot@FreeBSD.org
@@ -29,7 +30,8 @@ CONFIG_TXT_FILES=	config.txt \
 			config_rpi_0_w.txt \
 			config_rpi3.txt \
 			config_rpi3_edk2.txt \
-			config_rpi4.txt
+			config_rpi4.txt \
+			config_arm64.txt
 
 do-patch:
 .for i in ${CONFIG_TXT_FILES}
