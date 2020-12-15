@@ -2,7 +2,7 @@
 
 PORTNAME=	pianobooster
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2b
+DISTVERSION=	1.0.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,8 @@ GH_PROJECT=	PianoBooster
 USE_QT=		core gui opengl widgets xml buildtools_build linguisttools_build qmake_build
 USE_GL=		gl glu
 
-CMAKE_ON=	USE_SYSTEM_RTMIDI USE_JACK
+CMAKE_ON=	USE_JACK
+CMAKE_OFF=	USE_BUNDLED_RTMIDI
 CMAKE_ARGS=	-DDATA_DIR:STRING=share/${PORTNAME}
 
 OPTIONS_DEFINE=		FLUIDSYNTH

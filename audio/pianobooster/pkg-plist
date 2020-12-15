@@ -6,8 +6,6 @@ share/icons/hicolor/64x64/apps/pianobooster.png
 %%DATADIR%%/fonts/DejaVuSans.ttf
 %%DATADIR%%/music/BoosterMusicBooks.zip
 %%DATADIR%%/translations/langs.json
-%%DATADIR%%/translations/music_ru.qm
-%%DATADIR%%/translations/music_uk.qm
 %%DATADIR%%/translations/pianobooster_ca.qm
 %%DATADIR%%/translations/pianobooster_cs.qm
 %%DATADIR%%/translations/pianobooster_da.qm
