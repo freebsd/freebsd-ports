@@ -1613,6 +1613,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/lisp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/macroexp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/macroexp.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/memory-report.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/memory-report.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/map-ynp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/map-ynp.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/map.el.gz
@@ -2684,6 +2686,10 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/browse-url.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/dbus.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/dbus.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/dictionary-connection.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/dictionary-connection.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/dictionary.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/dictionary.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/dig.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/dig.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/dns.el.gz
