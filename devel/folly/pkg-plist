@@ -478,6 +478,8 @@ include/folly/io/async/DelayedDestruction.h
 include/folly/io/async/DelayedDestructionBase.h
 include/folly/io/async/DestructorCheck.h
 include/folly/io/async/EventBase.h
+include/folly/io/async/EventBaseAtomicNotificationQueue-inl.h
+include/folly/io/async/EventBaseAtomicNotificationQueue.h
 include/folly/io/async/EventBaseBackendBase.h
 include/folly/io/async/EventBaseLocal.h
 include/folly/io/async/EventBaseManager.h
