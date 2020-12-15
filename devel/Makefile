@@ -6743,6 +6743,7 @@
     SUBDIR += t1lib
     SUBDIR += ta-lib
     SUBDIR += tablist
+    SUBDIR += tailor
     SUBDIR += talloc
     SUBDIR += taskctl
     SUBDIR += taskflow
