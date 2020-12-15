@@ -45,6 +45,7 @@ include/proxygen/lib/http/Window.h
 include/proxygen/lib/http/codec/CodecDictionaries.h
 include/proxygen/lib/http/codec/CodecProtocol.h
 include/proxygen/lib/http/codec/CodecUtil.h
+include/proxygen/lib/http/codec/ControlMessageRateLimitFilter.h
 include/proxygen/lib/http/codec/DefaultHTTPCodecFactory.h
 include/proxygen/lib/http/codec/ErrorCode.h
 include/proxygen/lib/http/codec/FlowControlFilter.h
