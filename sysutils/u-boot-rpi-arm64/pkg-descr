@@ -1,0 +1,6 @@
+U-Boot loader and related files for the 64 bit variants of the RPI
+
+This u-boot config is made to be bootable on any 64bits RPI like the RPI2v1.1
+RPI3 and RPI4.
+
+For general information about U-Boot see WWW: https://www.denx.de/wiki/U-Boot
