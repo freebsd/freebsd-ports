@@ -43,10 +43,6 @@ MAKE_ENV_clang=	USEGCC=0 USECLANG=1
 
 TEST_TARGET=	check
 
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-Make.inc
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's/USEGCC =/USEGCC ?=/g' \
 		-e 's/USECLANG =/USECLANG ?=/g' \
