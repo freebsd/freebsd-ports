@@ -1,16 +1,23 @@
 https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=246106
 
+CMake Warning at /usr/local/share/cmake/Modules/FindBoost.cmake:2023 (message):
+  No header defined for headers; skipping header check (note: header-only
+  libraries have no designated component)
+Call Stack (most recent call first):
+  CMakeLists.txt:199 (find_package)
+
+-- Boost 1.73.0 or newer not found, falling back to Conan
 -- Could NOT find Boost: Found unsuitable version "1.72.0", but required is at least "1.73" (found /usr/local/include)
 -- Packages boost/1.73.0 not found!
 
---- CMakeLists.txt.orig	2020-08-10 17:53:43 UTC
+--- CMakeLists.txt.orig	2020-12-13 07:42:14 UTC
 +++ CMakeLists.txt
-@@ -159,7 +159,7 @@ macro(yuzu_find_packages)
-     # Capitalization matters here. We need the naming to match the generated paths from Conan
-     set(REQUIRED_LIBS
-     #    Cmake Pkg Prefix  Version     Conan Pkg
--        "Boost             1.73        boost/1.73.0"
-+        "Boost             1.72        boost/1.72.0"
-         "Catch2            2.13        catch2/2.13.0"
-         "fmt               7.0         fmt/7.0.3"
-     # can't use until https://github.com/bincrafters/community/issues/1173
+@@ -195,7 +195,7 @@ macro(yuzu_find_packages)
+ endmacro()
+ 
+ if (NOT Boost_FOUND)
+-    find_package(Boost 1.73.0 COMPONENTS context headers QUIET)
++    find_package(Boost 1.72.0 COMPONENTS context headers QUIET)
+     if (Boost_FOUND)
+         set(Boost_LIBRARIES Boost::boost Boost::context)
+     endif()
