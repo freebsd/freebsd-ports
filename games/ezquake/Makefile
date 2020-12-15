@@ -26,7 +26,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		gl gmake jpeg pkgconfig sdl tcl
 USE_GL=		yes
 USE_SDL=	sdl2
-CFLAGS+=	-fcommon
 MAKE_ENV=	TCL_SUFX=${TCL_SHLIB_VER}
 .for v in TCL_INCLUDEDIR TCL_LIBDIR DATADIR
 MAKE_ENV+=	${v}="${${v}}"
