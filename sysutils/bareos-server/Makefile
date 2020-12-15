@@ -2,7 +2,7 @@
 
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	19.2.7
+DISTVERSION=	19.2.9
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -19,9 +19,10 @@ CONFLICTS?=	bacula18*-server bacula17*-server-* bareos16-server-*
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
 
-USES+=		cmake compiler:c++11-lang localbase pkgconfig readline:port \
+USES+=		cmake compiler:c++11-lang localbase perl5 pkgconfig readline:port \
 		shebangfix
 USE_GITHUB=	yes
+USE_PERL5=	run
 
 USERS=		bareos
 GROUPS=		${USERS}
@@ -46,13 +47,14 @@ SCSICRYPTO_DESC=	Build LTO AME crypto plugin
 
 .if ${PKGNAMESUFFIX} == "-server"
 OPTIONS_GROUP=  BACKENDS
-OPTIONS_GROUP_BACKENDS= GFAPI RADOS
+OPTIONS_GROUP_BACKENDS= CEPHFS GFAPI RADOS
 OPTIONS_DEFINE=		MTX PYTHON NDMP NLS SCSICRYPTO
 OPTIONS_DEFAULT+=	PGSQL SCSICRYPTO
 OPTIONS_SINGLE_DATABASE=	SQLITE3 MYSQL PGSQL
 OPTIONS_SINGLE+=		DATABASE
 BACKENDS_DESC= 		Storage backends
 DATABASE_DESC=		Database support
+CEPHFS_DESC=	CEPHFS backend support
 GFAPI_DESC=	GFAPI backend support
 RADOS_DESC=	RADOS backend support
 
@@ -145,9 +147,11 @@ SUB_LIST=	BAREOS_USER=${BAREOS_USER} \
 
 NLS_USES=		gettext
 NLS_CMAKE_ON=		-Dnls=ON
+CEPHFS_CMAKE_ON=	-Dcephfs=ON
+CEPHFS_LIB_DEPENDS=	libcephfs.so:net/ceph14
 GFAPI_CMAKE_ON=		-Dgfapi=ON
 GFAPI_LIB_DEPENDS=	libglusterfs.so:net/glusterfs
-RADOS_CMAKE_ON=		-Drados=ON
+RADOS_CMAKE_ON=		-Drados=ON -Dcephfs=ON
 RADOS_LIB_DEPENDS=	librados.so:net/ceph14
 
 # Client only or full server version
