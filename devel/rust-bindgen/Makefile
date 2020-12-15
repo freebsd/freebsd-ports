@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bindgen
-DISTVERSION=	0.54.1
-PORTREVISION=	6
+DISTVERSION=	0.56.0
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 PKGNAMEPREFIX=	rust-
@@ -20,49 +19,47 @@ RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 USES=		cargo
 PLIST_FILES=	bin/${PORTNAME}
 
-CARGO_CRATES=	aho-corasick-0.7.6 \
+CARGO_CRATES=	aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
-		atty-0.2.13 \
-		bitflags-1.2.0 \
-		byteorder-1.3.2 \
-		cc-1.0.45 \
+		atty-0.2.14 \
+		bitflags-1.2.1 \
 		cexpr-0.4.0 \
 		cfg-if-0.1.10 \
-		clang-sys-0.29.0 \
-		clap-2.33.0 \
-		diff-0.1.11 \
-		env_logger-0.7.0 \
+		cfg-if-1.0.0 \
+		clang-sys-1.0.3 \
+		clap-2.33.3 \
+		diff-0.1.12 \
+		env_logger-0.8.1 \
 		glob-0.3.0 \
-		humantime-1.3.0 \
+		hermit-abi-0.1.17 \
+		humantime-2.0.1 \
 		lazy_static-1.4.0 \
-		lazycell-1.2.1 \
-		libc-0.2.66 \
-		libloading-0.5.2 \
-		log-0.4.8 \
-		memchr-2.2.1 \
-		nom-5.1.1 \
+		lazycell-1.3.0 \
+		libc-0.2.80 \
+		libloading-0.6.5 \
+		log-0.4.11 \
+		memchr-2.3.4 \
+		nom-5.1.2 \
 		peeking_take_while-0.1.2 \
-		proc-macro2-1.0.4 \
-		quick-error-1.2.2 \
-		quote-1.0.2 \
-		regex-1.3.1 \
-		regex-syntax-0.6.12 \
-		rustc-hash-1.0.1 \
+		proc-macro2-1.0.24 \
+		quote-1.0.7 \
+		regex-1.4.2 \
+		regex-syntax-0.6.21 \
+		rustc-hash-1.1.0 \
 		shlex-0.1.1 \
 		strsim-0.8.0 \
-		termcolor-1.0.5 \
+		termcolor-1.1.0 \
 		textwrap-0.11.0 \
-		thread_local-0.3.6 \
-		unicode-width-0.1.6 \
-		unicode-xid-0.2.0 \
-		vec_map-0.8.1 \
-		version_check-0.9.1 \
-		which-3.0.0 \
-		winapi-0.3.8 \
+		thread_local-1.0.1 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		vec_map-0.8.2 \
+		version_check-0.9.2 \
+		which-3.1.1 \
+		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.2 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		wincolor-1.0.2
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,"llvm-config,&${LLVM_DEFAULT},' \
