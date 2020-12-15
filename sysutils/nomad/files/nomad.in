@@ -40,7 +40,7 @@ pidfile=/var/run/nomad.pid
 procname="%%PREFIX%%/bin/nomad"
 command="/usr/sbin/daemon"
 nomad_command="/usr/bin/env ${nomad_env} ${procname} agent -data-dir=${nomad_dir} ${nomad_args}"
-command_args="-f -p ${pidfile} ${nomad_command}"
+command_args="-f -t ${name} -p ${pidfile} ${nomad_command}"
 
 start_precmd=nomad_startprecmd
 
@@ -54,7 +54,7 @@ nomad_startprecmd()
 		install -d -o ${nomad_user} -g ${nomad_group} ${nomad_dir}
 	fi
 	if [ "${nomad_debug}" != "NO" ]; then
-		command_args="-S -T ${name} -p ${pidfile} ${nomad_command}"
+		command_args="-T ${name} ${command_args}"
 	fi
 }
 
