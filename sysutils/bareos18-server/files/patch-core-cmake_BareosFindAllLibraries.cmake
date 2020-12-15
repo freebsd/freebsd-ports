@@ -1,5 +1,5 @@
---- core/cmake/BareosFindAllLibraries.cmake	2019-05-10 00:27:21.421777000 -0500
-+++ core/cmake/BareosFindAllLibraries.cmake	2019-05-10 00:28:47.016424000 -0500
+--- core/cmake/BareosFindAllLibraries.cmake	2020-12-11 10:27:01.000000000 -0500
++++ core/cmake/BareosFindAllLibraries.cmake	2020-12-14 22:52:06.210892000 -0500
 @@ -25,13 +25,15 @@
  
  
@@ -22,3 +22,30 @@
     endif()
  
     INCLUDE(FindPostgreSQL)
+@@ -52,13 +54,21 @@
+ 
+ BareosFindLibraryAndHeaders("fastlz" "fastlzlib.h")
+ BareosFindLibraryAndHeaders("jansson" "jansson.h")
+-BareosFindLibraryAndHeaders("rados" "rados/librados.h")
+-BareosFindLibraryAndHeaders("radosstriper" "radosstriper/libradosstriper.h")
+-BareosFindLibraryAndHeaders("cephfs" "cephfs/libcephfs.h")
++if(rados)
++  BareosFindLibraryAndHeaders("rados" "rados/librados.h")
++  BareosFindLibraryAndHeaders("radosstriper" "radosstriper/libradosstriper.h")
++endif()
++if(cephfs)
++  BareosFindLibraryAndHeaders("cephfs" "cephfs/libcephfs.h")
++endif()
+ BareosFindLibraryAndHeaders("pthread" "pthread.h")
+ BareosFindLibraryAndHeaders("cap" "sys/capability.h")
+-BareosFindLibraryAndHeaders("gfapi" "glusterfs/api/glfs.h")
+-BareosFindLibraryAndHeaders("droplet" "droplet.h")
++if(gfapi)
++  BareosFindLibraryAndHeaders("gfapi" "glusterfs/api/glfs.h")
++endif()
++if(droplet)
++  BareosFindLibraryAndHeaders("droplet" "droplet.h")
++endif()
+ 
+ BareosFindLibraryAndHeaders("pam" "security/pam_appl.h")
+ 

@@ -1,5 +1,5 @@
---- core/cmake/BareosInstallConfigFiles.cmake	2019-02-13 09:25:55.000000000 -0500
-+++ core/cmake/BareosInstallConfigFiles.cmake	2019-05-08 22:47:21.128268000 -0500
+--- core/cmake/BareosInstallConfigFiles.cmake	2020-12-11 10:27:01.000000000 -0500
++++ core/cmake/BareosInstallConfigFiles.cmake	2020-12-15 01:25:25.641687000 -0500
 @@ -43,18 +43,9 @@
     get_filename_component(resname ${resdir} NAME)
     foreach(configfile ${configfiles})
@@ -22,7 +22,7 @@
     endforeach()
  endforeach()
  
-@@ -82,15 +73,9 @@
+@@ -82,21 +73,16 @@
        get_filename_component(dir   ${configfile} DIRECTORY)
        get_filename_component(fname ${configfile} NAME)
  
@@ -41,17 +41,25 @@
     endforeach()
  
     file(GLOB_RECURSE configfiles RELATIVE "${BackendConfigSrcDir}" "${BackendConfigSrcDir}/*.example")
-@@ -104,7 +89,8 @@
+    foreach(configfile ${configfiles})
+       get_filename_component(dir   ${configfile} DIRECTORY)
+-      #get_filename_component(fname ${configfile} NAME)
++      get_filename_component(fname ${configfile} NAME)
++      get_filename_component(fsname ${configfile} NAME_WE)
+ 
+       if (EXISTS ${DESTCONFDIR}/${configfile})
+          MESSAGE(STATUS "overwriting ${configfile}")
+@@ -104,7 +90,8 @@
           MESSAGE(STATUS "${configfile} as ${configfile}")
        endif()
  
 -      FILE(COPY "${BackendConfigSrcDir}/${configfile}" DESTINATION "${DESTCONFDIR}/${dir}")
-+      FILE(RENAME "${BackendConfigSrcDir}/${configfile}" "${BackendConfigSrcDir}/${configfile}.sample")
-+      FILE(COPY "${BackendConfigSrcDir}/${configfile}.sample" DESTINATION "${DESTCONFDIR}/${dir}")
++      FILE(RENAME "${BackendConfigSrcDir}/${configfile}" "${BackendConfigSrcDir}/${fsname}.conf.sample")
++      FILE(COPY "${BackendConfigSrcDir}/${fsname}.conf.sample" DESTINATION "${DESTCONFDIR}/${dir}")
     endforeach()
  
  ENDFOREACH()
-@@ -122,15 +108,9 @@
+@@ -122,15 +109,13 @@
           STRING(REGEX MATCH "\\.in\$" IS_INFILE ${configfile})
           if (NOT "${IS_INFILE}" STREQUAL ".in")
              get_filename_component(fname ${configfile} NAME)
@@ -64,9 +72,13 @@
 -               MESSAGE(STATUS "${resname}/${fname} as ${resname}/${fname}")
 -               FILE (COPY "${configfile}" DESTINATION "${DESTCONFDIR}/${resname}")
 -            endif()
++            get_filename_component(fsname ${configfile} NAME_WE)
 +            MESSAGE(STATUS "${resname}/${fname} as ${resname}/${fname}")
-+            FILE (RENAME "${configfile}" "${configfile}.sample")
-+            FILE (COPY "${configfile}.sample" DESTINATION "${DESTCONFDIR}/${resname}")
++            FILE(RENAME "${configfile}" "${resdir}/${fsname}.conf.sample")
++            FILE(
++             COPY "${resdir}/${fsname}.conf.sample"
++             DESTINATION "${DESTCONFDIR}/${resname}"
++            )
           else()
              MESSAGE(STATUS "skipping .in file ${configfile}:${IS_INFILE}")
           endif()

@@ -2,7 +2,7 @@
 
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	18.2.8
+DISTVERSION=	18.2.10
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -19,9 +19,10 @@ CONFLICTS?=	bacula17*-server-* bareos16-server-* bareos-server-*
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
 
-USES+=		cmake:insource compiler:c++11-lang pkgconfig readline:port \
-		shebangfix
+USES+=		cmake:insource compiler:c++11-lang localbase perl5 pkgconfig \
+		readline:port shebangfix
 USE_GITHUB=	yes
+USE_PERL5=	run
 
 USERS=		bareos
 GROUPS=		${USERS}
@@ -45,11 +46,16 @@ NDMP_DESC=		Enable build of NDMP support
 SCSICRYPTO_DESC=	Build LTO AME crypto plugin
 
 .if ${PKGNAMESUFFIX} == "18-server"
+OPTIONS_GROUP=	BACKENDS
+OPTIONS_GROUP_BACKENDS=	CEPHFS GFAPI RADOS
 OPTIONS_DEFINE=		MTX PYTHON NDMP NLS SCSICRYPTO
 OPTIONS_DEFAULT+=	PGSQL SCSICRYPTO
 OPTIONS_SINGLE_DATABASE=	SQLITE3 MYSQL PGSQL
 OPTIONS_SINGLE+=		DATABASE
 DATABASE_DESC=		Database support
+CEPHFS_DESC=	CEPHFS backend support
+GFAPI_DESC=	GFAPI backend support
+RADOS_DESC=	RADOS backend support
 
 NDMP_CMAKE_ON=	-Dndmp=ON
 NDMP_CMAKE_OFF=	-Dndmp=OFF
@@ -83,7 +89,7 @@ SUB_FILES+=	pkg-message.server
 .endif
 
 CMAKE_ARGS+=	-Dtcp-wrappers=ON \
-		-Dsmartalloc=ON \
+		-Dsmartalloc=OFF \
 		-Dsysconfdir=${PREFIX}/etc \
 		-Darchivedir=${BAREOS_DIR}/storage \
 		-Dworkingdir=${BAREOS_DIR} \
@@ -140,6 +146,12 @@ SUB_LIST=	BAREOS_USER=${BAREOS_USER} \
 
 NLS_USES=		gettext
 NLS_CMAKE_ON=		-Dnls=ON
+CEPHFS_CMAKE_ON=	-Dcephfs=ON
+CEPHFS_LIB_DEPENDS=	libcephfs.so:net/ceph14
+GFAPI_CMAKE_ON=		-Dgfapi=ON
+GFAPI_LIB_DEPENDS=	libglusterfs.so:net/glusterfs
+RADOS_CMAKE_ON=		-Drados=ON -Dcephfs=ON
+RADOS_LIB_DEPENDS=	librados.so:net/ceph14
 
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
@@ -193,6 +205,10 @@ MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
 	@${REINPLACE_CMD}  '42d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|api/glfs.h|glusterfs/api/glfs.h|g' \
+		${WRKSRC}/core/src/stored/backends/gfapi_device.h
+	@${REINPLACE_CMD} -e 's|sm_dump(false)|sm_dump(jcr,false)|g' \
+		${WRKSRC}/core/src/tools/btestls.cc
 .if ${PKGNAMESUFFIX} == "18-server"
 	@${REINPLACE_CMD}  '25d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif

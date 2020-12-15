@@ -1,32 +1,32 @@
---- core/CMakeLists.txt	2019-12-12 12:04:14.000000000 -0500
-+++ core/CMakeLists.txt	2019-12-28 16:17:19.843397000 -0500
-@@ -117,7 +117,9 @@
-    set(PSCMD "ps -ax -o pid,command")
-    include_directories(/usr/local/include)
-    link_directories(/usr/local/lib)
--   link_libraries(intl)
-+   IF(nls)
-+     link_libraries(intl)
-+   ENDIF()
+--- core/CMakeLists.txt	2020-12-11 10:27:01.000000000 -0500
++++ core/CMakeLists.txt	2020-12-14 21:56:05.412121000 -0500
+@@ -115,7 +115,9 @@
+   set(PSCMD "ps -ax -o pid,command")
+   include_directories(/usr/local/include)
+   link_directories(/usr/local/lib)
+-  link_libraries(intl)
++  IF(nls)
++    link_libraries(intl)
++  ENDIF()
  endif()
  
- IF (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-@@ -176,7 +178,9 @@
-    add_definitions("-D_FILE_OFFSET_BITS=64")
+ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+@@ -187,7 +189,9 @@
+   add_definitions("-D_FILE_OFFSET_BITS=64")
  endif()
  
--INCLUDE(FindIntl)
+-include(FindIntl)
 +IF(nls)
-+  INCLUDE(FindIntl)
++  include(FindIntl)
 +ENDIF()
  
- IF(developer)
-    add_definitions("-DDEVELOPER=1")
-@@ -586,7 +590,6 @@
+ if(developer)
+   add_definitions("-DDEVELOPER=1")
+@@ -600,7 +604,6 @@
  
  add_subdirectory(scripts)
  add_subdirectory(manpages)
 -add_subdirectory(platforms)
  add_subdirectory(src)
  
- STRING(TIMESTAMP NOW "%Y-%m-%d %H:%M:%S")
+ string(TIMESTAMP NOW "%Y-%m-%d %H:%M:%S")

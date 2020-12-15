@@ -11,12 +11,22 @@ bin/timelimit
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/LinuxAll.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/SelfTest.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/WindowsAllDrives.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.example.sample
+%%CEPHFS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-cephfs.conf.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-gfapi.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
+%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-rados.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCatalog.conf.sample
+%%CEPHFS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCephfs.conf.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupGFAPI.conf.sample
+%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupRados.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreFiles.conf.sample
+%%CEPHFS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreCephfs.conf.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreGFAPI.conf.sample
+%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreRados.conf.sampl
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-bareos-fd.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.example.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/restore-ldap.conf.example.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/restore-ldap.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/jobdefs/DefaultJob.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/messages/Daemon.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/messages/Standard.conf.sample
@@ -28,13 +38,15 @@ bin/timelimit
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/schedule/WeeklyCycle.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/schedule/WeeklyCycleAfterBackup.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/File.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/NULL.conf.example.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Tape.conf.example.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Gluster.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/NULL.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Tape.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-regress.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/autochanger-0.conf.example.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/autochanger-0.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/FileStorage.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/NULL.conf.example.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/tapedrive-0.conf.example.sample
+%%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/GlusterStorage.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/NULL.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/tapedrive-0.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-dir.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-mon.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/messages/Standard.conf.sample
@@ -44,6 +56,9 @@ etc/logrotate.d/bareos-dir
 lib/bareos/backends/libbareoscats-%%DBTYPE%%.so
 lib/bareos/backends/libbareossd-fifo.so
 lib/bareos/backends/libbareossd-gentape.so
+%%CEPHFS%%lib/bareos/backends/libbareossd-cephfs.so
+%%GFAPI%%lib/bareos/backends/libbareossd-gfapi.so
+%%RADOS%%lib/bareos/backends/libbareossd-rados.so
 lib/bareos/backends/libbareossd-tape.so
 %%PYTHON%%lib/bareos/plugins/BareosDirPluginBaseclass.py
 %%PYTHON%%lib/bareos/plugins/BareosDirWrapper.py
