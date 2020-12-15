@@ -22,7 +22,18 @@
          <syslibset dir="/usr/local/lib" libs="X11"/>
        </linker>
  
-@@ -1401,7 +1401,7 @@
+@@ -1211,6 +1211,10 @@
+         <syslibset dir="/usr/local/lib" libs="X11"/>
+       </linker>
+ 
++      <linker id="linker.cfg.freebsd.ppc.jogl.x11" extends="linker.cfg.freebsd.ppc">
++        <syslibset dir="/usr/local/lib" libs="X11"/>
++      </linker>
++
+       <linker id="linker.cfg.linux.jogl.x11" extends="linker.cfg.linux">
+         <syslibset libs="X11"/>
+       </linker>
+@@ -1401,7 +1405,7 @@
      <target name="c.configure.freebsd.x86" depends="c.configure.x11" if="isFreeBSDX86">
        <echo message="FreeBSD" />
        <property name="compiler.cfg.id"                     value="compiler.cfg.freebsd.jogl" />
@@ -31,6 +42,21 @@
      </target>
  
      <target name="c.configure.freebsd.amd64" depends="c.configure.x11" if="isFreeBSDAMD64">
+@@ -1410,7 +1414,13 @@
+       <property name="linker.cfg.id.os"                    value="linker.cfg.freebsd.amd64.jogl.x11" />
+     </target>
+ 
+-    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.x11" if="isFreeBSD" />
++    <target name="c.configure.freebsd.ppc" depends="c.configure.x11" if="isFreeBSDPpc">
++      <echo message="FreeBSD" />
++      <property name="compiler.cfg.id"                     value="compiler.cfg.freebsd.jogl" />
++      <property name="linker.cfg.id.os"                    value="linker.cfg.freebsd.ppc.jogl.x11" />
++    </target>
++
++    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.freebsd.ppc,c.configure.x11" if="isFreeBSD" />
+ 
+     <target name="c.configure.hpux" depends="c.configure.x11" if="isHPUX">
+       <echo message="HP-UX" />
 --- jogl/make/build-nativewindow.xml.orig	2015-10-10 01:08:14 UTC
 +++ jogl/make/build-nativewindow.xml
 @@ -373,7 +373,7 @@
@@ -42,7 +68,20 @@
          <syslibset dir="/usr/local/lib" libs="X11"/>
          <syslibset dir="/usr/local/lib" libs="Xxf86vm" />
          <syslibset dir="/usr/local/lib" libs="Xrender"/>
-@@ -582,7 +582,7 @@
+@@ -385,6 +385,12 @@
+         <syslibset dir="/usr/local/lib" libs="Xrender"/>
+       </linker>
+ 
++      <linker id="linker.cfg.freebsd.ppc.nativewindow.x11" extends="linker.cfg.freebsd.ppc">
++        <syslibset dir="/usr/local/lib" libs="X11" />
++        <syslibset dir="/usr/local/lib" libs="Xxf86vm" />
++        <syslibset dir="/usr/local/lib" libs="Xrender"/>
++      </linker>
++
+       <linker id="linker.cfg.linux.nativewindow.x11" extends="linker.cfg.linux">
+         <syslibset libs="X11"/>
+         <syslibset libs="Xxf86vm" />
+@@ -582,7 +588,7 @@
      <target name="c.configure.freebsd.x86" if="isFreeBSDX86">
        <echo message="FreeBSD.x86" />
        <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.nativewindow" />
@@ -51,6 +90,22 @@
      </target>
      
      <target name="c.configure.freebsd.amd64" if="isFreeBSDAMD64">
+@@ -590,8 +596,14 @@
+       <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.nativewindow" />
+       <property name="linker.cfg.id.oswin"                  value="linker.cfg.freebsd.amd64.nativewindow.x11" />
+     </target>
++   
++    <target name="c.configure.freebsd.ppc" if="isFreeBSDPpc">
++      <echo message="FreeBSD.Ppc" />
++      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.nativewindow" />
++      <property name="linker.cfg.id.oswin"                  value="linker.cfg.freebsd.ppc.nativewindow.x11" />
++    </target>
+     
+-    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.x11" if="isFreeBSD" />
++    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.freebsd.ppc,c.configure.x11" if="isFreeBSD" />
+ 
+     <target name="c.configure.hpux" depends="c.configure.x11" if="isHPUX">
+       <echo message="HP-UX" />
 --- jogl/make/build-newt.xml.orig	2015-10-10 01:08:14 UTC
 +++ jogl/make/build-newt.xml
 @@ -289,7 +289,7 @@
@@ -62,7 +117,21 @@
          <linkerarg value="-L/usr/local/lib"/>
          <syslibset libs="X11"/>
          <syslibset libs="Xrandr"/>
-@@ -560,8 +560,8 @@
+@@ -303,6 +303,13 @@
+         <syslibset libs="Xcursor"/>
+       </linker>
+ 
++      <linker id="linker.cfg.freebsd.ppc.newt.x11" extends="linker.cfg.freebsd.ppc">
++        <linkerarg value="-L/usr/local/lib"/>
++        <syslibset libs="X11"/>
++        <syslibset libs="Xrandr"/>
++        <syslibset libs="Xcursor"/>
++      </linker>
++
+       <linker id="linker.cfg.linux.newt.bcm_egl" extends="linker.cfg.linux">
+         <syslibset libs="EGL"/>
+         <syslibset libs="GLES_CM"/>
+@@ -560,8 +567,8 @@
      <target name="c.configure.freebsd.x86" if="isFreeBSDX86">
        <echo message="FreeBSD.x86" />
        <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.newt" />
@@ -73,3 +142,22 @@
            <isset property="isX11" />
        </condition>
        <echo message="linker.cfg.id.oswin ${linker.cfg.id.oswin}" />
+@@ -577,7 +584,17 @@
+       <echo message="linker.cfg.id.oswin ${linker.cfg.id.oswin}" />
+     </target>
+ 
+-    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.x11" if="isFreeBSD"/>
++    <target name="c.configure.freebsd.ppc" if="isFreeBSDPpc">
++      <echo message="FreeBSD.Ppc" />
++      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd.newt" />
++      <condition property="linker.cfg.id.oswin"             value="linker.cfg.freebsd.ppc.newt.x11"
++                                                            else="linker.cfg.freebsd.ppc">
++          <isset property="isX11" />
++      </condition>
++      <echo message="linker.cfg.id.oswin ${linker.cfg.id.oswin}" />
++    </target>
++
++    <target name="c.configure.freebsd" depends="c.configure.freebsd.x86,c.configure.freebsd.amd64,c.configure.freebsd.ppc,c.configure.x11" if="isFreeBSD"/>
+ 
+     <target name="c.configure.hpux" depends="c.configure.x11" if="isHPUX">
+       <echo message="HP-UX" />

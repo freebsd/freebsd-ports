@@ -1,4 +1,4 @@
---- jogl/make/build-common.xml.orig	2015-03-27 14:58:50 UTC
+--- jogl/make/build-common.xml.orig	2015-10-10 01:08:14 UTC
 +++ jogl/make/build-common.xml
 @@ -130,8 +130,8 @@
          <condition property="swt.jar" value="${project.root}/make/lib/swt/win32-win32-x86/swt-debug.jar">
@@ -11,7 +11,7 @@
          </condition>
          <condition property="swt.jar" value="${project.root}/make/lib/swt/gtk-linux-x86_64/swt-debug.jar">
            <istrue value="${isLinuxAMD64}" />
-@@ -210,7 +210,7 @@
+@@ -213,7 +213,7 @@
          <property name="gluegen.build.xml"          value="${gluegen.make}/build.xml" />
          <property name="build.gluegen"              value="${gluegen.root}/${rootrel.build}" />
          <property name="obj.gluegen"                value="${build.gluegen}/obj"/>
@@ -20,7 +20,7 @@
  
          <property name="build.joal"                 value="${joal.root}/${rootrel.build}" /> <!-- optional -->
  
-@@ -434,7 +434,7 @@
+@@ -438,7 +438,7 @@
          </path>
  
          <!-- JavaSE combinations -->
