@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	zig
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.0
 CATEGORIES=	lang
-MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/ \
-		https://ziglang.org/builds/
+MASTER_SITES=	https://ziglang.org/download/${DISTVERSION}/
 
-MAINTAINER=	dch@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Language designed for robustness, optimality, and maintainability
 
 LICENSE=	MIT
