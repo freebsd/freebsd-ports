@@ -752,7 +752,6 @@ llvm%%LLVM_SUFFIX%%/bin/yaml2obj
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/CompilationDatabase.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/CompilationDatabasePluginRegistry.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Core/Diagnostic.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Core/Lookup.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Core/Replacement.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/DependencyScanning/DependencyScanningFilesystem.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/DependencyScanning/DependencyScanningService.h
@@ -771,6 +770,7 @@ llvm%%LLVM_SUFFIX%%/bin/yaml2obj
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Refactoring/AtomicChange.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Refactoring/Extract/Extract.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Refactoring/Extract/SourceExtraction.h
+%%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Refactoring/Lookup.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Refactoring/RecursiveSymbolVisitor.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Refactoring/RefactoringAction.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/include/clang/Tooling/Refactoring/RefactoringActionRule.h
@@ -2593,6 +2593,12 @@ llvm%%LLVM_SUFFIX%%/lib/libLLVMAArch64Desc.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAArch64Disassembler.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAArch64Info.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAArch64Utils.a
+llvm%%LLVM_SUFFIX%%/lib/libLLVMARMAsmParser.a
+llvm%%LLVM_SUFFIX%%/lib/libLLVMARMCodeGen.a
+llvm%%LLVM_SUFFIX%%/lib/libLLVMARMDesc.a
+llvm%%LLVM_SUFFIX%%/lib/libLLVMARMDisassembler.a
+llvm%%LLVM_SUFFIX%%/lib/libLLVMARMInfo.a
+llvm%%LLVM_SUFFIX%%/lib/libLLVMARMUtils.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAggressiveInstCombine.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAnalysis.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMAsmParser.a
@@ -2647,6 +2653,11 @@ llvm%%LLVM_SUFFIX%%/lib/libLLVMOption.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMOrcError.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMOrcJIT.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMPasses.a
+llvm%%LLVM_SUFFIX%%/lib/libLLVMPowerPCAsmParser.a
+llvm%%LLVM_SUFFIX%%/lib/libLLVMPowerPCCodeGen.a
+llvm%%LLVM_SUFFIX%%/lib/libLLVMPowerPCDesc.a
+llvm%%LLVM_SUFFIX%%/lib/libLLVMPowerPCDisassembler.a
+llvm%%LLVM_SUFFIX%%/lib/libLLVMPowerPCInfo.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMProfileData.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMRISCVAsmParser.a
 llvm%%LLVM_SUFFIX%%/lib/libLLVMRISCVCodeGen.a

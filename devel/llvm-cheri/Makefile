@@ -19,7 +19,6 @@ LICENSE_PERMS_LLVM2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 NOT_FOR_ARCHS=		i386 armv6 armv7 powerpc mips
 NOT_FOR_ARCHS_REASON=	No one will develop CHERI from 32-bit
-BROKEN_powerpc64=	Does not build
 
 LLVM_SUFFIX?=	-cheri
 LLVM_PREFIX=	${PREFIX}/llvm${LLVM_SUFFIX}
@@ -84,7 +83,7 @@ LLD_PORTDOCS=		lld
 LLDB_DESC=		Install lldb, the LLVM debugger (ignore on 9.x)
 LLDB_BUILD_DEPENDS=	swig:devel/swig
 
-LLVM_TARGETS?=		AArch64;Mips;RISCV;X86
+LLVM_TARGETS?=		AArch64;ARM;Mips;PowerPC;RISCV;X86
 
 PLIST_SUB+=	COMMAND_SUFFIX=${COMMAND_SUFFIX} \
 		LLVM_MAJOR=${LLVM_MAJOR} \
@@ -257,11 +256,6 @@ MAN1SRCS+=	bugpoint.1 \
 		tblgen.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} != clang
-# Evil hack around gcc48 not providing a usable c++11 environment on 9.x
-PLIST_SUB:=	${PLIST_SUB:NLLDB=*} LLDB="@comment "
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
