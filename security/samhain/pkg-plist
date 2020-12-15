@@ -18,7 +18,6 @@
 %%SAMHAIN%%man/man8/samhain.8.gz
 %%SAMHAIN%%sbin/samhain
 %%SETPWD%%sbin/samhain_setpwd
-%%YULE%%@dir /var/lib
 %%YULE%%@dir /var/lib/yule
 %%YULE%%@dir /var/log/yule
 %%YULE%%@sample etc/yulerc.sample

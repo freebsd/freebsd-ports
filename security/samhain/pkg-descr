@@ -1,6 +1,6 @@
 Samhain is an open source file integrity and host-based intrusion
 detection system for Linux and Unix. It can run as a daemon process,
-and and thus can remember file changes - contrary to a tool that runs
+and thus can remember file changes - contrary to a tool that runs
 from cron, if a file is modified you will get only one report, while
 subsequent checks of that file will ignore the modification as it is
 already reported (unless the file is modified again).

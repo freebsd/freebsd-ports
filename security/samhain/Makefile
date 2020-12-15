@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	4.4.2
-PORTREVISION=	1
+PORTVERSION=	4.4.3
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/
 DISTNAME=	samhain_signed-${PORTVERSION}
@@ -20,6 +19,15 @@ BROKEN_mips64=		fails to configure: error: Could not find the libwrap library
 USES=			shebangfix
 SHEBANG_FILES=		scripts/samhainadmin-gpg.pl.in \
 			scripts/samhainadmin-sig.pl.in
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var \
+		--with-logserver=true \
+		--with-altlogserver=true \
+		--with-timeserver=true \
+		--with-alttimeserver=true
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=		ASM DB_RELOAD DEBUG DNMALLOC DOCS ENCRYPT GNUPG IPV6 \
 			LIBWRAP LOGFILE_MONITOR LOGIN_WATCH MAIL \
@@ -39,24 +47,15 @@ LOGIN_WATCH_DESC=	Enable watch for login/logout
 MAIL_DESC=	Enable internal SMTP mailer
 MOUNTS_CHECK_DESC=	Enable check mount options on filesystems
 PORT_CHECK_DESC=	Enable check ports
-PROCESS_CHECK_DESC=	Enable check processes
 POSIX_ACL_DESC=	Enable check posix acls
 PRELUDE_DESC=	Enable Prelude Framework support
+PROCESS_CHECK_DESC=	Enable check processes
 PTRACE_DESC=	Enable use anti-debugger options
 SRP_DESC=	Enable SRP for authentication
 SUIDCHECK_DESC=	Enable check for suid/sgid files
 UDP_DESC=	Enable UDP server
 USERFILES_DESC=	Enable check for users config files
 XML_LOGS_DESC=	Enable XML-formatted logs
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var \
-		--with-logserver=true \
-		--with-altlogserver=true \
-		--with-timeserver=true \
-		--with-alttimeserver=true
 
 ASM_CONFIGURE_ENABLE=		asm
 
@@ -68,8 +67,8 @@ DNMALLOC_CONFIGURE_ENABLE=	dnmalloc
 
 ENCRYPT_CONFIGURE_ENABLE=	encrypt
 
-GNUPG_CONFIGURE_WITH=		gpg=${PREFIX}/bin/gpg
 GNUPG_BUILD_DEPENDS=		gpg:security/gnupg
+GNUPG_CONFIGURE_WITH=		gpg=${PREFIX}/bin/gpg
 
 IPV6_CONFIGURE_ENABLE=		ipv6
 
@@ -97,12 +96,12 @@ PGSQL_CONFIGURE_ON=		--with-database=postgresql
 
 PORT_CHECK_CONFIGURE_ENABLE=	port-check
 
-PROCESS_CHECK_CONFIGURE_ENABLE=	process-check
-
 POSIX_ACL_CONFIGURE_ENABLE=	posix-acl
 
 PRELUDE_LIB_DEPENDS=		libprelude.so:security/libprelude
 PRELUDE_CONFIGURE_WITH=		prelude
+
+PROCESS_CHECK_CONFIGURE_ENABLE=	process-check
 
 PTRACE_CONFIGURE_ENABLE=	ptrace
 
