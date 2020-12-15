@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+When trying to connect to the default public tmate server it may happpen that
+the following errors messages will be printed:
+
+  Connecting to ssh.tmate.io...
+  Cannot authenticate server
+  Reconnecting... (Cannot authenticate server)
+
+This is because the fingerprints of the default tmate server keys are stripped
+out from the tmate binary.
+
+Instead, users are encouraged to specify the fingerprints via ~/.tmate.conf, e.g.:
+
+  set -g tmate-server-rsa-fingerprint   "SHA256:Hthk2T/M/Ivqfk1YYUn5ijC2Att3+UPzD7Rn72P5VWs"
+  set -g tmate-server-ecdsa-fingerprint "SHA256:8GmKHYHEJ6n0TEdciHeEGkKOigQfCFuBULdt6vZIhDc"
+EOM
+}
+]
