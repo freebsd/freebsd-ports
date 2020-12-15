@@ -3,7 +3,7 @@
 
 PORTNAME=	angrysearch
 PORTVERSION=	1.0.2 # untagged, but specified in the setup.py
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils python
 
 MAINTAINER=	danfe@FreeBSD.org
