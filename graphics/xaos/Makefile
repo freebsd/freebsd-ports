@@ -3,7 +3,7 @@
 
 PORTNAME=	xaos
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	4.1
+DISTVERSION=	4.2
 CATEGORIES=	graphics math
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,8 +13,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang gl qmake qt:5
-USE_QT=		core gui opengl widgets buildtools_build linguisttools_build
 USE_GL=		gl
+USE_QT=		core gui opengl widgets buildtools_build linguisttools_build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xaos-project
