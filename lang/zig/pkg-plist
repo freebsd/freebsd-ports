@@ -4716,6 +4716,8 @@ lib/zig/libc/include/sparcv9-linux-gnu/ieee754.h
 lib/zig/libc/include/sparcv9-linux-gnu/sys/ptrace.h
 lib/zig/libc/include/sparcv9-linux-gnu/sys/ucontext.h
 lib/zig/libc/include/sparcv9-linux-gnu/sys/user.h
+lib/zig/libc/include/wasm-freestanding-musl/bits/alltypes.h
+lib/zig/libc/include/wasm-freestanding-musl/errno.h
 lib/zig/libc/include/x86_64-linux-any/asm/auxvec.h
 lib/zig/libc/include/x86_64-linux-any/asm/bitsperlong.h
 lib/zig/libc/include/x86_64-linux-any/asm/byteorder.h
@@ -4942,6 +4944,12 @@ lib/zig/libc/include/x86_64-macos-gnu/tgmath.h
 lib/zig/libc/include/x86_64-macos-gnu/time.h
 lib/zig/libc/include/x86_64-macos-gnu/wchar.h
 lib/zig/libc/include/x86_64-macos-gnu/wctype.h
+lib/zig/libc/mingw/lib-common/wldap32.def
+lib/zig/libc/mingw/lib-common/xinput1_4.def
+lib/zig/libc/mingw/lib32/wldap32.def
+lib/zig/libc/mingw/lib32/xinput1_4.def
+lib/zig/libc/musl/libc.s
+lib/zig/std/segmented_list.zig
 lib/zig/libc/mingw/COPYING
 lib/zig/libc/mingw/complex/_cabs.c
 lib/zig/libc/mingw/complex/cabs.c
@@ -5094,6 +5102,7 @@ lib/zig/libc/mingw/lib-common/crypt32.def
 lib/zig/libc/mingw/lib-common/cryptnet.def
 lib/zig/libc/mingw/lib-common/gdi32.def
 lib/zig/libc/mingw/lib-common/imm32.def
+lib/zig/libc/mingw/lib-common/iphlpapi.def
 lib/zig/libc/mingw/lib-common/kernel32.def.in
 lib/zig/libc/mingw/lib-common/lz32.def
 lib/zig/libc/mingw/lib-common/mpr.def
@@ -5111,6 +5120,7 @@ lib/zig/libc/mingw/lib-common/shell32.def
 lib/zig/libc/mingw/lib-common/shlwapi.def
 lib/zig/libc/mingw/lib-common/urlmon.def
 lib/zig/libc/mingw/lib-common/user32.def.in
+lib/zig/libc/mingw/lib-common/userenv.def
 lib/zig/libc/mingw/lib-common/version.def
 lib/zig/libc/mingw/lib-common/winmm.def
 lib/zig/libc/mingw/lib-common/winscard.def
@@ -5124,6 +5134,7 @@ lib/zig/libc/mingw/lib32/crypt32.def
 lib/zig/libc/mingw/lib32/cryptnet.def
 lib/zig/libc/mingw/lib32/gdi32.def
 lib/zig/libc/mingw/lib32/imm32.def
+lib/zig/libc/mingw/lib32/iphlpapi.def
 lib/zig/libc/mingw/lib32/kernel32.def
 lib/zig/libc/mingw/lib32/lz32.def
 lib/zig/libc/mingw/lib32/mpr.def
@@ -5142,6 +5153,7 @@ lib/zig/libc/mingw/lib32/shell32.def
 lib/zig/libc/mingw/lib32/shlwapi.def
 lib/zig/libc/mingw/lib32/urlmon.def
 lib/zig/libc/mingw/lib32/user32.def
+lib/zig/libc/mingw/lib32/userenv.def
 lib/zig/libc/mingw/lib32/version.def
 lib/zig/libc/mingw/lib32/winmm.def
 lib/zig/libc/mingw/lib32/winscard.def
@@ -8702,7 +8714,6 @@ lib/zig/std/progress.zig
 lib/zig/std/rand.zig
 lib/zig/std/rand/ziggurat.zig
 lib/zig/std/reset_event.zig
-lib/zig/std/segmented_list.zig
 lib/zig/std/sort.zig
 lib/zig/std/special/build_runner.zig
 lib/zig/std/special/c.zig
@@ -8818,5 +8829,3 @@ lib/zig/std/zig/system.zig
 lib/zig/std/zig/system/macos.zig
 lib/zig/std/zig/system/x86.zig
 lib/zig/std/zig/tokenizer.zig
-@comment @dir lib/zig/std/net
-@comment @dir lib/zig/std/unicode
