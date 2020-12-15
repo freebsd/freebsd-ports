@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-DISTVERSION=	2.9.6
+DISTVERSION=	2.9.8
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
@@ -13,6 +13,9 @@ COMMENT?=	High performance authoritative-only DNS server
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Use knot3, it is functionally compatible with 2.9.x
+EXPIRATION_DATE=2021-02-28
 
 CONFLICTS=	knot-1.* knot1-[0-6].*
 
