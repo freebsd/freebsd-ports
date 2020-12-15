@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: minirsyslogd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="minirsyslogd"
+desc="Mini RSyslog Daemon"
+rcvar="minirsyslogd_enable"
+
+load_rc_config "$name"
+
+: ${minirsyslogd_enable:="NO"}
+: ${minirsyslogd_basedir:="/var/log/remote"}
+: ${minirsyslogd_pidfile:="/var/run/minirsyslogd.pid"}
+command="%%PREFIX%%/sbin/minirsyslogd"
+pidfile="${minirsyslogd_pidfile}"
+command_args="--daemon --rootdir ${minirsyslogd_basedir}"
+
+run_rc_command "$1"
