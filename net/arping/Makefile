@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	arping
-DISTVERSION=	2.19
+DISTVERSION=	2.21
 CATEGORIES=	net
 MASTER_SITES=	http://www.habets.pp.se/synscan/files/
 
