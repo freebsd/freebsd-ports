@@ -2,22 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	libarea
-PORTVERSION=	20160313
-PORTREVISION=	13
+PORTVERSION=	20191031
 CATEGORIES=	devel cad
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CAM-related software for profile and pocketing operations
 
 LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	${PY_BOOST}
 
+USES=		cmake python
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Heeks
-GH_TAGNAME=	f1986ac
+GH_TAGNAME=	2752cd9
 
-USES=		cmake python
 USE_LDCONFIG=	yes
 
 post-patch:
