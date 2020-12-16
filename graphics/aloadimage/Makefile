@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	aloadimage
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.0.1
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	f6bbd1d352d7.patch:-p4 # https://github.com/letoram/arcan/pull/205
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Trivial image viewer for Arcan servers

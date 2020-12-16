@@ -1,12 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	acfgfs
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.0.1
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	6b82402a1c0b.patch:-p4 # https://github.com/letoram/arcan/pull/205
-PATCHFILES+=	78144225d358.patch:-p4 # https://github.com/letoram/arcan/pull/205
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	FUSE file system driver for Arcan window managers

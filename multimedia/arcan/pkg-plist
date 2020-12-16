@@ -66,6 +66,7 @@ man/man1/arcan_db.1.gz
 %%DATADIR%%/scripts/builtin/table.lua
 %%DATADIR%%/scripts/builtin/wayland.lua
 %%DATADIR%%/scripts/builtin/wmsupport.lua
+%%DATADIR%%/scripts/hook/alloc_debug.lua
 %%DATADIR%%/scripts/hook/debugstall.lua
 %%DATADIR%%/scripts/hook/external_input.lua
 %%DATADIR%%/scripts/hook/shutdown.lua

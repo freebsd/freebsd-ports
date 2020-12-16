@@ -1,11 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	arcan-trayicon
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.0.1
 CATEGORIES=	x11
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	65c72169927f.patch:-p4 # https://github.com/letoram/arcan/issues/206
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Generic wrapper for registering Arcan clients as tray icons
