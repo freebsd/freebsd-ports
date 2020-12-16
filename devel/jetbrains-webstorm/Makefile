@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	webstorm
-PORTVERSION=	2019.3.2
+PORTVERSION=	2020.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
 DISTNAME=	WebStorm-${PORTVERSION}
 DIST_SUBDIR=	jetbrains
 
-MAINTAINER=	pfg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JetBrains JavaScript IDE
 
 LICENSE=	IntelliJ-WebStorm
@@ -32,7 +32,7 @@ SHEBANG_FILES=	bin/printenv.py bin/restart.py \
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/WebStorm-193.6015.40
+WRKSRC=		${WRKDIR}/WebStorm-202.6397.88
 
 SUB_FILES=	webstorm webstorm.desktop pkg-message
 
@@ -43,7 +43,8 @@ do-install:
 		${WRKSRC}/bin/fsnotifier64 \
 		${WRKSRC}/jbr \
 		${WRKSRC}/lib/pty4j-native \
-		${WRKSRC}/plugins/performanceTesting/bin
+		${WRKSRC}/plugins/performanceTesting/bin \
+		${WRKSRC}/plugins/webp/lib/libwebp
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
 		"! -name *\.so ! -name *\.dll ! -name *\.dylib ! -name *\.pdb ! -name *\.sh")
