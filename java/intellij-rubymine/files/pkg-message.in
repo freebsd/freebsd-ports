@@ -1,10 +1,10 @@
 [
 { type: install
   message: <<EOM
-There is  native (faster) file watching support backed by kqueue which is
-enabled by default.  If you encounter problems  problems with watching large
+The  native (faster) file watching support backed by kqueue is enabled
+by default.  If you encounter problems  problems with watching large
 trees, you disable it by appending the following property into
-%%DATADIR%%/bin/idea.properties:
+%%DATADIR%%/bin/rubymine.properties:
 
 	idea.filewatcher.disabled=true
 EOM
