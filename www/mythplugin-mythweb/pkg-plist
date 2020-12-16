@@ -478,7 +478,6 @@
 %%WWWDIR%%/skins/default/tv_search.css
 %%WWWDIR%%/skins/default/tv_upcoming.css
 %%WWWDIR%%/skins/default/video.css
-%%WWWDIR%%/skins/default/video.css.php
 %%WWWDIR%%/skins/default/welcome.css
 %%WWWDIR%%/skins/elkin/backend_log.css
 %%WWWDIR%%/skins/elkin/header.css
@@ -549,7 +548,6 @@
 %%WWWDIR%%/skins/elkin/tv_search.css
 %%WWWDIR%%/skins/elkin/tv_upcoming.css
 %%WWWDIR%%/skins/elkin/video.css
-%%WWWDIR%%/skins/elkin/video.css.php
 %%WWWDIR%%/skins/elkin/welcome.css
 %%WWWDIR%%/skins/errors.css
 %%WWWDIR%%/skins/grey/backend_log.css

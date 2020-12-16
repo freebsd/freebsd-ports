@@ -3,11 +3,11 @@
 
 PORTNAME=	mythweb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	29.1
+DISTVERSION=	31.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	mythplugin-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	Frontend for scheduling and managing recordings on your MythTV Box
 
 LICENSE=	GPLv2
@@ -30,7 +30,7 @@ REINPLACE_ARGS=	-i ""
 OPTIONS_DEFINE=	APACHE LIGHTTPD NGINX
 OPTIONS_DEFAULT=	APACHE
 
-APACHE_USE=		APACHE_RUN=22+
+APACHE_USES=		apache:2.2+
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 NGINX_DESC=		Nginx server support
 NGINX_RUN_DEPENDS=	nginx:www/nginx
