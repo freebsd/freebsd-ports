@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	rlvm
-PORTREVISION=	1
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	0.14-75
 DISTVERSIONSUFFIX=	-g975e740c
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -33,7 +33,6 @@ USE_SDL=	image mixer ttf
 EXCLUDE=	GLEW SDL_image SDL_mixer SDL_ttf gmock gtest guichan \
 		luabind utf8cpp # leaving only pygame, xclannad, *.cpp
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude vendor/,}
-CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (gtk deps)
 MAKE_ARGS=	VERBOSE=1
 INSTALLS_ICONS=	yes
@@ -62,8 +61,6 @@ TEST_BUILD_DEPENDS=googletest>=1.7.0:devel/googletest \
 TEST_EXTRA_PATCHES_OFF=${FILESDIR}/extra-patch-disable-test
 
 post-patch:
-	@${GREP} -Flr 'utf8cpp/' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
-		-i .bak.utf8cpp -e 's,utf8cpp/,,'
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
 		${WRKSRC}/src/platforms/gtk/gtk_rlvm_instance.cc
 	@${REINPLACE_CMD} -e 's,/usr/share,${LOCALBASE}/share,' \
