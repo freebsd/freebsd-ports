@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	blockattack
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,7 +26,6 @@ SHEBANG_FILES=	packdata.sh source/misc/translation/*.sh
 bash_CMD=	/bin/sh
 CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 LDFLAGS+=	-lintl
-
 
 post-patch:
 # Respect PREFIX when looking for data directories
