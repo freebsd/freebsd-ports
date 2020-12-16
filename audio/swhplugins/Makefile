@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	swhplugins
-PORTVERSION=	0.4.15
-PORTREVISION=	7
+PORTVERSION=	0.4.17
+DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
-MASTER_SITES=	http://plugin.org.uk/releases/${PORTVERSION}/
-DISTNAME=	swh-plugins-${PORTVERSION}
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Steve Harris' huge Collection of LADSPA Plugins
@@ -15,16 +13,17 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
-		${LOCALBASE}/include/fftw3.h:math/fftw3
+		${LOCALBASE}/include/fftw3.h:math/fftw3 \
+		p5-XML-Parser>=0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float
 
-# includes assembler code
-ONLY_FOR_ARCHS=	amd64 i386
-USES=		gmake libtool pkgconfig
+USES=		autoreconf gmake libtool localbase:ldflags pkgconfig shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	swh
+GH_PROJECT=	ladspa
+SHEBANG_FILES=	makestub.pl
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-fPIC -DPIC -fgnu89-inline
@@ -41,11 +40,5 @@ NLS_CONFIGURE_ENABLE=	nls
 3DNOW_CONFIGURE_ENABLE=	3dnow
 
 SSE_CONFIGURE_ENABLE=	sse
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|="$$CFLAGS -Wall .*"|="$$CFLAGS"|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|<stdint\.h>|<inttypes.h>|g' ${WRKSRC}/ladspa-util.h
 
 .include <bsd.port.mk>

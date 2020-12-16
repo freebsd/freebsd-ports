@@ -89,6 +89,7 @@ lib/ladspa/transient_1206.so
 lib/ladspa/triple_para_1204.so
 lib/ladspa/valve_1209.so
 lib/ladspa/valve_rect_1405.so
+lib/ladspa/vocoder_1337.so
 lib/ladspa/vynil_1905.so
 lib/ladspa/wave_terrain_1412.so
 lib/ladspa/xfade_1915.so
