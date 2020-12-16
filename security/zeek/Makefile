@@ -3,6 +3,7 @@
 
 PORTNAME=	zeek
 PORTVERSION=	3.0.12
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://old.zeek.org/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

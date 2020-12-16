@@ -1759,7 +1759,6 @@ man/man8/zeek.8.gz
 %%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-proxy.bro
 %%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-worker.bro
 %%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local.bro
-%%ZEEKCTL%%@preunexec rm -f %D/spool/state.db
 %%ZEEKCTL%%@dir spool/tmp
 %%ZEEKCTL%%@dir spool/installed-scripts-do-not-touch/site
 %%ZEEKCTL%%@dir spool/installed-scripts-do-not-touch/auto

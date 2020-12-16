@@ -1,12 +1,6 @@
 [
 { type: install
   message: <<EOM
-During deinstall of this package, the cfg files for broctl are not
-deleted if you have edited them. Instead the software will create
-a .sample file instead and the edited files will remain in place
-when you upgrade. If you want to delete them, you have to remove
-the %%PREFIX%%/etc directory manually.
-
 The rc.d script now honors the zeek_user rc.d variable.  To run as
 a user other than root (the default) you need to make a few changes.
 For example to run as the user zeek, add this to /etc/rc.conf:
@@ -34,6 +28,17 @@ offloading (the default when this feature is supported by the
 hardware) you will want to set ignore_checksums in site/local.zeek:
 
     redef ignore_checksums = T;
+EOM
+}
+{ type: remove
+  message: <<EOM
+During deinstall of this package, the cfg files for zeekctl are not
+deleted if you have edited them. Instead the software will create
+a .sample file and the edited files will remain in place when you
+upgrade. If you want to delete them, you have to remove the
+%%PREFIX%%/etc directory manually.
+
+You may also need to manually remove %%PREFIX%%/spool/state.db
 EOM
 }
 ]
