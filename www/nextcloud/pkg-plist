@@ -5251,6 +5251,8 @@
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/fr.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/gl.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/gl.json
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/hr.js
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/hr.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/hu.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/hu.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/id.js
@@ -5327,6 +5329,8 @@
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/fr.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/gl.js
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/gl.json
+%%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/hr.js
+%%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/hr.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/is.js
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/is.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/it.js
@@ -5629,8 +5633,12 @@
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/fr.json
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/gl.js
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/gl.json
+%%WWWDIR%%/apps-pkg/contactsinteraction/l10n/hr.js
+%%WWWDIR%%/apps-pkg/contactsinteraction/l10n/hr.json
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/it.js
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/it.json
+%%WWWDIR%%/apps-pkg/contactsinteraction/l10n/lt_LT.js
+%%WWWDIR%%/apps-pkg/contactsinteraction/l10n/lt_LT.json
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/mk.js
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/mk.json
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/nl.js
@@ -5744,6 +5752,8 @@
 %%WWWDIR%%/apps-pkg/dashboard/l10n/tr.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/dashboard/l10n/zh_TW.js
+%%WWWDIR%%/apps-pkg/dashboard/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/dashboard/lib/Controller/DashboardController.php
 %%WWWDIR%%/apps-pkg/dashboard/lib/Controller/LayoutApiController.php
 %%WWWDIR%%/apps-pkg/dashboard/lib/Service/BackgroundService.php
@@ -6554,6 +6564,7 @@
 %%WWWDIR%%/apps-pkg/federatedfilesharing/lib/FederatedShareProvider.php
 %%WWWDIR%%/apps-pkg/federatedfilesharing/lib/Listeners/LoadAdditionalScriptsListener.php
 %%WWWDIR%%/apps-pkg/federatedfilesharing/lib/Migration/Version1010Date20200630191755.php
+%%WWWDIR%%/apps-pkg/federatedfilesharing/lib/Migration/Version1011Date20201120125158.php
 %%WWWDIR%%/apps-pkg/federatedfilesharing/lib/Notifications.php
 %%WWWDIR%%/apps-pkg/federatedfilesharing/lib/Notifier.php
 %%WWWDIR%%/apps-pkg/federatedfilesharing/lib/OCM/CloudFederationProviderFiles.php
@@ -8163,7 +8174,6 @@
 %%WWWDIR%%/apps-pkg/files_rightclick/screenshots/folder.png
 %%WWWDIR%%/apps-pkg/files_rightclick/screenshots/picture.png
 %%WWWDIR%%/apps-pkg/files_sharing/appinfo/app.php
-%%WWWDIR%%/apps-pkg/files_sharing/appinfo/database.xml
 %%WWWDIR%%/apps-pkg/files_sharing/appinfo/info.xml
 %%WWWDIR%%/apps-pkg/files_sharing/appinfo/routes.php
 %%WWWDIR%%/apps-pkg/files_sharing/appinfo/signature.json
@@ -8468,6 +8478,7 @@
 %%WWWDIR%%/apps-pkg/files_sharing/lib/Migration/OwncloudGuestShareType.php
 %%WWWDIR%%/apps-pkg/files_sharing/lib/Migration/SetAcceptedStatus.php
 %%WWWDIR%%/apps-pkg/files_sharing/lib/Migration/SetPasswordColumn.php
+%%WWWDIR%%/apps-pkg/files_sharing/lib/Migration/Version11300Date20201120141438.php
 %%WWWDIR%%/apps-pkg/files_sharing/lib/MountProvider.php
 %%WWWDIR%%/apps-pkg/files_sharing/lib/Notification/Listener.php
 %%WWWDIR%%/apps-pkg/files_sharing/lib/Notification/Notifier.php
@@ -9457,6 +9468,8 @@
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/fr.json
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/gl.js
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/gl.json
+%%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/hr.js
+%%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/hr.json
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/it.js
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/it.json
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/nl.js
@@ -10622,6 +10635,8 @@
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/fr.json
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/gl.js
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/gl.json
+%%WWWDIR%%/apps-pkg/provisioning_api/l10n/hr.js
+%%WWWDIR%%/apps-pkg/provisioning_api/l10n/hr.json
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/it.js
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/it.json
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/nl.js
@@ -13373,6 +13388,8 @@
 %%WWWDIR%%/apps-pkg/user_status/l10n/fr.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/gl.js
 %%WWWDIR%%/apps-pkg/user_status/l10n/gl.json
+%%WWWDIR%%/apps-pkg/user_status/l10n/hr.js
+%%WWWDIR%%/apps-pkg/user_status/l10n/hr.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/is.js
 %%WWWDIR%%/apps-pkg/user_status/l10n/is.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/it.js
@@ -13670,6 +13687,8 @@
 %%WWWDIR%%/apps-pkg/weather_status/l10n/fr.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/gl.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/gl.json
+%%WWWDIR%%/apps-pkg/weather_status/l10n/hr.js
+%%WWWDIR%%/apps-pkg/weather_status/l10n/hr.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/hu.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/hu.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/is.js
@@ -13887,7 +13906,7 @@
 %%WWWDIR%%/config/config.documented.php
 %%WWWDIR%%/config/config.documented.php.bak
 %%WWWDIR%%/config/config.documented.php.orig
-@sample(%%NEXTCLOUD_USERNAME%%,%%NEXTCLOUD_GROUPNAME%%,640) %%WWWDIR%%/config/config.sample.php %%WWWDIR%%/config/config.php
+%%WWWDIR%%/config/config.sample.php
 %%WWWDIR%%/console.php
 %%WWWDIR%%/core/Application.php
 %%WWWDIR%%/core/BackgroundJobs/BackgroundCleanupUpdaterBackupsJob.php
@@ -14047,6 +14066,7 @@
 %%WWWDIR%%/core/Migrations/Version20000Date20201109081918.php
 %%WWWDIR%%/core/Migrations/Version20000Date20201109081919.php
 %%WWWDIR%%/core/Migrations/Version20000Date20201111081915.php
+%%WWWDIR%%/core/Migrations/Version21000Date20201120141228.php
 %%WWWDIR%%/core/Notification/CoreNotifier.php
 %%WWWDIR%%/core/Service/LoginFlowV2Service.php
 %%WWWDIR%%/core/ajax/update.php
@@ -15912,8 +15932,14 @@
 %%WWWDIR%%/lib/private/Repair/NC20/EncryptionMigration.php
 %%WWWDIR%%/lib/private/Repair/NC20/ShippedDashboardEnable.php
 %%WWWDIR%%/lib/private/Repair/OldGroupMembershipShares.php
+%%WWWDIR%%/lib/private/Repair/Owncloud/CleanPreviews.php
+%%WWWDIR%%/lib/private/Repair/Owncloud/CleanPreviewsBackgroundJob.php
 %%WWWDIR%%/lib/private/Repair/Owncloud/DropAccountTermsTable.php
+%%WWWDIR%%/lib/private/Repair/Owncloud/InstallCoreBundle.php
+%%WWWDIR%%/lib/private/Repair/Owncloud/MoveAvatars.php
+%%WWWDIR%%/lib/private/Repair/Owncloud/MoveAvatarsBackgroundJob.php
 %%WWWDIR%%/lib/private/Repair/Owncloud/SaveAccountsTableData.php
+%%WWWDIR%%/lib/private/Repair/Owncloud/UpdateLanguageCodes.php
 %%WWWDIR%%/lib/private/Repair/RemoveLinkShares.php
 %%WWWDIR%%/lib/private/Repair/RepairInvalidShares.php
 %%WWWDIR%%/lib/private/Repair/RepairMimeTypes.php
