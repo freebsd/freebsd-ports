@@ -2,32 +2,28 @@
 # choose your compiler (must be ANSI-compliant!) and linker command, plus
 # any additionally needed flags
 
-LD = ${CC}
-LDFLAGS = -s
+OBJDIR =
+HOST_OBJEXTENSION = .o
+LD = $(CC)
+LDFLAGS =
+HOST_EXEXTENSION =
+
+# no cross build
+
+TARG_OBJDIR = $(OBJDIR)
+TARG_CC = $(CC)
+TARG_CFLAGS = $(CFLAGS)
+TARG_OBJEXTENSION = $(HOST_OBJEXTENSION)
+TARG_LD = $(LD)
+TARG_LDFLAGS = $(LDFLAGS)
+TARG_EXEXTENSION = $(HOST_EXEXTENSION)
 
 # -------------------------------------------------------------------------
-# directories where binaries and includes should go during installation
-
-BINDIR = ${STAGEDIR}/${PREFIX}/bin
-# *INST are where things are installed to, vs where they are searched for
-INCDIR = ${PREFIX}/share/asl
-INCDIRINST = ${STAGEDIR}/${PREFIX}/share/asl
-LIBDIR = ${PREFIX}/share/asl
-LIBDIRINST = ${STAGEDIR}/${PREFIX}/share/asl
-MANDIR = ${STAGEDIR}/${PREFIX}/man
-DOCDIR =
-
-# -------------------------------------------------------------------------
-# language AS will speak to you
-# implemented so far:
-# lang_DE = german
-# lang_EN = english
-
-LANGRSC = lang_EN
-
-# -------------------------------------------------------------------------
-# character encoding to use (choose one of them)
-
-# CHARSET = CHARSET_ASCII7
-# CHARSET = CHARSET_IBM437
-CHARSET = CHARSET_ISO8859_1
+# directories where binaries, includes, and manpages should go during
+# installation
+#
+BINDIR = ${PREFIX}/bin
+INCDIR = ${PREFIX}/include/asl
+MANDIR = ${PREFIX}/man
+LIBDIR = ${PREFIX}/lib/asl
+DOCDIR = ${PREFIX}/share/doc/asl
