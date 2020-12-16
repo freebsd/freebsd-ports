@@ -1,4 +1,5 @@
 lib/mythtv/plugins/libmythmusic.so
+%%MYTHSHARE%%/i18n/mythmusic_bg.qm
 %%MYTHSHARE%%/i18n/mythmusic_ca.qm
 %%MYTHSHARE%%/i18n/mythmusic_cs.qm
 %%MYTHSHARE%%/i18n/mythmusic_da.qm

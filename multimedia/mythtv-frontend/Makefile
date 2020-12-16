@@ -1,10 +1,9 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
 # $FreeBSD$
 
-PORTREVISION=	2
 PKGNAMESUFFIX=	-${SLAVEPORT}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	Homebrew PVR project (frontend only)
 
 MASTERDIR=	${.CURDIR}/../../multimedia/mythtv
