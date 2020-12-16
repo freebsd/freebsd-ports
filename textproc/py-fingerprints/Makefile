@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	fingerprints
-DISTVERSION=	0.6.6
+DISTVERSION=	1.0.1
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
@@ -12,21 +11,24 @@ COMMENT=	Easy comparing and cross-referencing of companies and people
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}normality>=0.4.0:textproc/py-normality@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}normality>=2.0.0:textproc/py-normality@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.5+
+USE_GITHUB=	yes
+GH_ACCOUNT=	alephdata
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
 
-post-extract:
-	# Prevents that the tests directory will be installed into site-packages
-	@(cd ${WRKSRC} && ${MV} tests test)
+.include <bsd.port.pre.mk>
+# Set a locale to avoid build/configure errors.  The UTF-8 mode is enabled by
+# default when the locale is C since Python 3.7.
+.if ${PYTHON_REL} < 3700
+USE_LOCALE=	en_US.UTF-8
+.endif
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
