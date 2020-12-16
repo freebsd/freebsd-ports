@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	efl
-DISTVERSION=	1.24.3
-PORTREVISION=	7
+DISTVERSION=	1.25.1
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/libs/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
@@ -46,11 +45,11 @@ INSTALLS_ICONS=	yes
 
 PLIST_SUB=	BRANCHVERSION=${PORTVERSION:R} PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=		AVAHI FRIBIDI HARFBUZZ NLS PHYSICS PULSEAUDIO SDL VNC EFLONE EXAMPLES DOXYGEN WAYLAND
+OPTIONS_DEFINE=		AVAHI FRIBIDI HARFBUZZ NLS PHYSICS PULSEAUDIO SDL VNC EFLONE ELUA EXAMPLES DOXYGEN WAYLAND
 OPTIONS_GROUP=		EMOTION INPUT LOADER BINDINGS
 OPTIONS_GROUP_EMOTION=	GSTREAMER V4L
 OPTIONS_GROUP_INPUT=	IBUS SCIM XIM
-OPTIONS_GROUP_LOADER=	OPENJPEG PDF PS RAW SVG WEBP XCF
+OPTIONS_GROUP_LOADER=	OPENJPEG PDF PS RAW SVG WEBP XCF AV1
 OPTIONS_GROUP_BINDINGS=	LUA CXX
 OPTIONS_GROUP_WAYLAND=	WAYLAND
 OPTIONS_SINGLE=		CRYPTO ENGINE LUAL
@@ -70,12 +69,14 @@ OPTIONS_SUB=		yes
 HARFBUZZ_DESC=		OpenType text shaping engine
 PHYSICS_DESC=		Physics engine (bullet)
 EFLONE_DESC=		Create EFL-One library (single file library)
+ELUA_DESC=		Lua launcher binary support in efl
 VNC_DESC=		VNC Server support
 IBUS_DESC=		Intelligent Input Bus
 SCIM_DESC=		Smart Common Input Method
 XIM_DESC=		X Input Method
 SVG_DESC=		Vector graphics support
 XCF_DESC=		Gimp image format support
+AV1_DESC=		AV1 image format support
 LUAL_DESC=		LUA
 LUALANG_DESC=		Use Lua
 LUAJIT_DESC=		Use Luajit
@@ -105,6 +106,8 @@ PULSEAUDIO_MESON_TRUE=		pulseaudio
 
 EFLONE_MESON_TRUE=		efl-one
 
+ELUA_MESON_TRUE=		elua
+
 EXAMPLES_MESON_TRUE=		build-examples
 
 DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen
@@ -114,6 +117,8 @@ DOXYGEN_PREVENTS_MSG=		devel/doxygen installs graphics/openjpeg15 which breaks b
 
 VNC_MESON_TRUE=			vnc-server
 VNC_LIB_DEPENDS=		libvncserver.so:net/libvncserver
+
+LUA_IMPLIES=			ELUA
 
 WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.7:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=		libepoll-shim.so:devel/libepoll-shim \
@@ -158,6 +163,9 @@ RAW_LIB_DEPENDS=		libraw.so:graphics/libraw
 
 SVG_USES=			gnome
 SVG_USE=			GNOME=cairo GNOME=librsvg2
+
+AV1_LIB_DEPENDS=		libavif.so:graphics/libavif
+AV1_BROKEN=			AV1 option is broken actually (according to the information from upstream)
 
 WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
 
@@ -285,6 +293,15 @@ EVAS-LOADERS-DISABLER:=		"${EVAS-LOADERS-DISABLER-BASE}xcf"
 .endif
 .endif
 
+.if empty(PORT_OPTIONS:MAV1)
+.if ${EVAS-LOADERS-DISABLER} != ${EVAS-LOADERS-DISABLER-BASE}
+EVAS-LOADERS-DISABLER-BASE:=	${EVAS-LOADERS-DISABLER}
+EVAS-LOADERS-DISABLER:=		"${EVAS-LOADERS-DISABLER-BASE},avif"
+.else
+EVAS-LOADERS-DISABLER:=		"${EVAS-LOADERS-DISABLER-BASE}avif"
+.endif
+.endif
+
 MESON_ARGS+=			${EVAS-LOADERS-DISABLER}
 
 # Work-around build failure, which is caused by subtle problem in lld and -as-needed flag
@@ -293,10 +310,10 @@ MESON_ARGS+=	-Db_asneeded=false
 .endif
 
 .if ${PORT_OPTIONS:MLUA} && ${PORT_OPTIONS:MCXX}
-EFL_BINDINGS=	-Dbindings=luajit,cxx
+EFL_BINDINGS=	-Dbindings=lua,cxx
 .else
 .if ${PORT_OPTIONS:MLUA}
-EFL_BINDINGS=	-Dbindings=luajit
+EFL_BINDINGS=	-Dbindings=lua
 .else
 .if ${PORT_OPTIONS:MCXX}
 EFL_BINDINGS=	-Dbindings=cxx
