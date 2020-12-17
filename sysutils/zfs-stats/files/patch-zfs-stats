@@ -1,4 +1,4 @@
---- zfs-stats.orig	2020-10-07 13:06:33 UTC
+--- zfs-stats.orig	2020-12-17 11:05:01 UTC
 +++ zfs-stats
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
@@ -11,11 +11,19 @@
  Getopt::Long::Configure ("bundling");
  
 -my $version = '1.3.0';
-+my $version = '1.3.0_1';
++my $version = '1.3.0_2';
  
  my $usetunable = 1;			# Change to 0 to disable sysctl MIB spill.
  my $show_sysctl_descriptions = 0;	# Change to 1 (or use the -d flag) to show sysctl descriptions.
-@@ -201,6 +201,14 @@ sub fPerc {
+@@ -98,6 +98,7 @@ Usage: $0 [-ABDHLMSabdhus]
+ -E	: ARC efficiency
+ -D	: VDEV cache statistics
+ -L	: L2 ARC statistics
++-O	: dataset operations statistics
+ -Z	: DMU (zfetch) statistics
+ 
+ -R	: display raw numbers and bytes
+@@ -201,6 +202,14 @@ sub fPerc {
  	} else { return sprintf('%0.' . $Decimal . 'f', 100) . "%"; }
  }
  
@@ -30,7 +38,7 @@
  my @Kstats = qw(
  	hw.machine
  	hw.machine_arch
-@@ -215,12 +223,28 @@ my @Kstats = qw(
+@@ -215,12 +224,28 @@ my @Kstats = qw(
  	vm.kmem_size_min
  	vm.kmem_size_scale
  	vm.stats
@@ -60,7 +68,7 @@
  	div1;
  	printf("ZFS Subsystem Report\t\t\t\t%s", $daydate);
  	div2;
-@@ -330,17 +354,16 @@ sub _arc_summary {
+@@ -330,17 +355,16 @@ sub _arc_summary {
  	my $deleted = $Kstat->{"kstat.zfs.misc.arcstats.deleted"};
  	my $evict_skip = $Kstat->{"kstat.zfs.misc.arcstats.evict_skip"};
  	my $mutex_miss = $Kstat->{"kstat.zfs.misc.arcstats.mutex_miss"};
@@ -79,7 +87,7 @@
  	my $mru_size = $Kstat->{"kstat.zfs.misc.arcstats.p"};
  	my $target_max_size = $Kstat->{"kstat.zfs.misc.arcstats.c_max"};
  	my $target_min_size = $Kstat->{"kstat.zfs.misc.arcstats.c_min"};
-@@ -356,7 +379,12 @@ sub _arc_summary {
+@@ -356,7 +380,12 @@ sub _arc_summary {
  		fPerc($target_min_size, $target_max_size), fBytes($target_min_size));
  	printf("\tMax Size (High Water):\t\t%d:1\t%s\n",
  		$target_size_ratio, fBytes($target_max_size));
@@ -92,7 +100,7 @@
  	print "\nARC Size Breakdown:\n";
  	if ($arc_size > $target_size) {
  		my $mfu_size = ($arc_size - $mru_size);
-@@ -424,7 +452,7 @@ sub _arc_efficiency {
+@@ -424,7 +453,7 @@ sub _arc_efficiency {
  	printf("\tData Demand Efficiency:\t\t%s\t%s\n",
  		fPerc($demand_data_hits, $demand_data_total), fHits($demand_data_total));
  
@@ -101,7 +109,7 @@
  		printf("\tData Prefetch Efficiency:\t%s\t%s\n",
  			fPerc($prefetch_data_hits, $prefetch_data_total), fHits($prefetch_data_total));
  	}
-@@ -474,6 +502,7 @@ sub _l2arc_summary {
+@@ -474,6 +503,7 @@ sub _l2arc_summary {
  		return;
  	}
  
@@ -109,7 +117,7 @@
  	my $l2_abort_lowmem = $Kstat->{"kstat.zfs.misc.arcstats.l2_abort_lowmem"};
  	my $l2_cksum_bad = $Kstat->{"kstat.zfs.misc.arcstats.l2_cksum_bad"};
  	my $l2_evict_lock_retry = $Kstat->{"kstat.zfs.misc.arcstats.l2_evict_lock_retry"};
-@@ -493,14 +522,13 @@ sub _l2arc_summary {
+@@ -493,14 +523,13 @@ sub _l2arc_summary {
  	my $l2_write_full = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_full"};
  	my $l2_write_in_l2 = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_in_l2"};
  	my $l2_write_io_in_progress = $Kstat->{"kstat.zfs.misc.arcstats.l2_write_io_in_progress"};
@@ -126,7 +134,7 @@
  	my $l2_writes_sent = $Kstat->{"kstat.zfs.misc.arcstats.l2_writes_sent"};
  
  	my $l2_access_total = ($l2_hits + $l2_misses);
-@@ -510,19 +538,28 @@ sub _l2arc_summary {
+@@ -510,19 +539,28 @@ sub _l2arc_summary {
  	if ($l2_health_count > 0) {
  		print "(DEGRADED)\n";
  	} else { print "(HEALTHY)\n"; }
@@ -161,7 +169,7 @@
  	printf("\tHeader Size:\t\t\t%s\t%s\n",
  		fPerc($l2_hdr_size, $l2_size), fBytes($l2_hdr_size));
  	print "\n";
-@@ -541,12 +578,14 @@ sub _l2arc_summary {
+@@ -541,12 +579,14 @@ sub _l2arc_summary {
  	printf("\tFeeds:\t\t\t\t\t%s\n", fHits($l2_feeds));
  	print "\n";
  
@@ -182,7 +190,7 @@
  
  	print "L2 ARC Writes:\n";
  	if ($l2_writes_done != $l2_writes_sent) {
-@@ -582,7 +621,7 @@ sub _vdev_summary {
+@@ -582,7 +622,7 @@ sub _vdev_summary {
  	my $vdev_cache_hits = $Kstat->{"kstat.zfs.misc.vdev_cache_stats.hits"};
  	my $vdev_cache_total = ($vdev_cache_misses + $vdev_cache_hits + $vdev_cache_delegations);
  
@@ -191,3 +199,86 @@
  		printf "VDEV cache is disabled\n";
  	} elsif ($vdev_cache_total > 0) {
  		printf("VDEV Cache Summary:\t\t\t\t%s\n", fHits($vdev_cache_total));
+@@ -595,6 +635,57 @@ sub _vdev_summary {
+ 	}
+ }
+ 
++sub _dataset_summary {
++	if ($IsOpenZFS) {
++		my @poolnames = run('zpool', 'list', '-H', '-oname');
++		foreach my $poolname (@poolnames) {
++			chomp($poolname);
++			my @Kstat_pull = run( 'sysctl_q', "kstat.zfs.$poolname.dataset" );
++			my %objset;
++			foreach my $kstat (@Kstat_pull) {
++				chomp $kstat;
++				if ($kstat =~ m/^([^:]+):\s+(.+)\s*$/s) {
++					$Kstat->{$1} = $2;
++					my @fields = split(/\./, $1);
++					if ($fields[5] eq "dataset_name") {
++						my $dataset = $2;
++						$objset{$dataset} = $fields[4];
++					}
++				}
++			}
++			foreach my $dataset (sort(keys(%objset))) {
++				my $objset = $objset{$dataset};
++				my $pfx = "kstat.zfs.$poolname.dataset.$objset";
++				my $dataset_reads = $Kstat->{"$pfx.reads"};
++				my $dataset_nread = $Kstat->{"$pfx.nread"};
++				my $dataset_writes = $Kstat->{"$pfx.writes"};
++				my $dataset_nwritten = $Kstat->{"$pfx.nwritten"};
++				my $dataset_nunlinks = $Kstat->{"$pfx.nunlinks"};
++				my $dataset_ops = $dataset_reads + $dataset_writes + $dataset_nunlinks;
++				my $dataset_amount = $dataset_nread + $dataset_nwritten;
++				if ($dataset_ops > 0) {
++					printf("Dataset statistics for:\t%s\n\n", $dataset);
++					printf("\tReads:\t\t%s\t%s\n",
++						fPerc($dataset_reads, $dataset_ops), fHits($dataset_reads));
++					printf("\tWrites:\t\t%s\t%s\n",
++						fPerc($dataset_writes, $dataset_ops), fHits($dataset_writes));
++					printf("\tUnlinks:\t%s\t%s\n",
++						fPerc($dataset_nunlinks, $dataset_ops), fHits($dataset_nunlinks));
++					printf("\n");
++					printf("\tBytes read:\t%s\t%s\n",
++						fPerc($dataset_nread, $dataset_amount), fHits($dataset_nread));
++					printf("\tBytes written:\t%s\t%s\n",
++						fPerc($dataset_nwritten, $dataset_amount), fHits($dataset_nwritten));
++					printf("\n");
++				}
++			}
++			
++		}
++	} else {
++		printf "Per dataset statistics are not available\n";
++	}
++}
++
+ sub _sysctl_summary {
+ 	return unless $usetunable;
+ 	my @Tunable = qw(
+@@ -633,6 +724,7 @@ my @unSub = map { $_, \&div2 }(
+ 	\&_arc_summary,
+ 	\&_arc_efficiency,
+ 	\&_l2arc_summary,
++	\&_dataset_summary,
+ 	\&_dmu_summary,
+ 	\&_vdev_summary,
+ 	\&_sysctl_summary,
+@@ -640,7 +732,7 @@ my @unSub = map { $_, \&div2 }(
+ 
+ my %opt;
+ GetOptions( \%opt,
+-	qw"A D E I|F L M R|B Z a d t u s",
++	qw"A D E I|F L M O R|B Z a d t u s",
+ 	h => \&_usage,   # exits
+ 	V => \&_version, # exits
+ 	qw"hostname=s user=s id_file=s port=s",
+@@ -676,6 +768,7 @@ if ($opt{a}) {
+ 	if ($opt{A}) { push @out, \&_arc_summary, \&div2 }
+ 	if ($opt{E}) { push @out, \&_arc_efficiency, \&div2 }
+ 	if ($opt{L}) { push @out, \&_l2arc_summary, \&div2 }
++	if ($opt{O}) { push @out, \&_dataset_summary, \&div2 }
+ 	if ($opt{Z}) { push @out, \&_dmu_summary, \&div2 }
+ 	if ($opt{D}) { push @out, \&_vdev_summary, \&div2 }
+ 	if ($opt{s}) { push @out, \&_sysctl_summary, \&div2 }
