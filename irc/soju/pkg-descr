@@ -1,0 +1,11 @@
+A user-friendly IRC bouncer.
+
+ - Multi-user
+
+ - Support multiple clients for a single user, with proper backlog
+   synchronization
+
+ - Support connecting to multiple upstream servers via a single IRC
+   connection to the bouncer
+
+WWW: https://soju.im

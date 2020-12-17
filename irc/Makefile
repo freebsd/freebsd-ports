@@ -106,6 +106,7 @@
     SUBDIR += sirc
     SUBDIR += smartirc4net
     SUBDIR += smuxi
+    SUBDIR += soju
     SUBDIR += srain
     SUBDIR += srvx
     SUBDIR += thales
