@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	https://hoopajoo.net/static/projects/ \
 		https://ftp.sk.FreeBSD.org/pub/FreeBSD/local/distfiles/
 
-MAINTAINER=	juraj@lutter.sk
+MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Client to play MUDs
 
 LICENSE=	GPLv2

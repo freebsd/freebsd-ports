@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libconfuse/libconfuse/releases/download/v${PORTVERSION}/
 DISTNAME=	confuse-${PORTVERSION}
 
-MAINTAINER=	juraj@lutter.sk
+MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Configuration file parsing library
 
 LICENSE=	ISCL

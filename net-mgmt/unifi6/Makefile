@@ -1,4 +1,4 @@
-# Created by: Juraj Lutter <juraj@lutter.sk>
+# Created by: Juraj Lutter <otis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	unifi6
@@ -13,7 +13,7 @@ DISTFILES=	unifi_sysvinit_all.deb:unifi \
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	unifi_sysvinit_all.deb
 
-MAINTAINER=	juraj@lutter.sk
+MAINTAINER=	otis@FreeBSD.org
 COMMENT=	UniFi Controller v6
 
 RUN_DEPENDS=	mongodb36>0:databases/mongodb36 \

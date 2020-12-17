@@ -5,7 +5,7 @@ PORTVERSION=	1.4.3
 CATEGORIES=	mail
 PKGNAMEPREFIX=	dovecot-
 
-MAINTAINER=	juraj@lutter.sk
+MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Dovecot FTS plugin based on Xapian
 
 LICENSE=	LGPL21
