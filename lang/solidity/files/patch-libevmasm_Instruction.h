@@ -1,6 +1,6 @@
---- libevmasm/Instruction.h.orig	2020-01-28 10:08:51 UTC
+--- libevmasm/Instruction.h.orig	2020-12-16 17:41:40 UTC
 +++ libevmasm/Instruction.h
-@@ -26,6 +26,8 @@
+@@ -27,6 +27,8 @@
  #include <libsolutil/Assertions.h>
  #include <functional>
  

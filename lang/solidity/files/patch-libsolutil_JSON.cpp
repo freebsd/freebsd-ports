@@ -1,6 +1,6 @@
---- libsolutil/JSON.cpp.orig	2020-01-27 15:36:51 UTC
+--- libsolutil/JSON.cpp.orig	2020-12-16 17:41:40 UTC
 +++ libsolutil/JSON.cpp
-@@ -31,10 +31,12 @@
+@@ -32,10 +32,12 @@
  
  using namespace std;
  
