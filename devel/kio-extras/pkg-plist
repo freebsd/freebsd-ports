@@ -5,7 +5,7 @@ lib/cmake/KioArchive/KioArchiveConfig.cmake
 lib/cmake/KioArchive/KioArchiveConfigVersion.cmake
 lib/cmake/KioArchive/KioArchiveTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KioArchive/KioArchiveTargets.cmake
-lib/libexec/kf5/smbnotifier
+%%SAMBA%%lib/libexec/kf5/smbnotifier
 lib/libkioarchive.so.5
 lib/libkioarchive.so.5.97.0
 lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
@@ -21,7 +21,7 @@ lib/libmolletnetwork5.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kf5/kded/filenamesearchmodule.so
 %%QT_PLUGINDIR%%/kf5/kded/networkwatcher.so
 %%QT_PLUGINDIR%%/kf5/kded/recentdocumentsnotifier.so
-%%QT_PLUGINDIR%%/kf5/kded/smbwatcher.so
+%%SAMBA%%%%QT_PLUGINDIR%%/kf5/kded/smbwatcher.so
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
 %%QT_PLUGINDIR%%/kf5/kio/about.so
 %%QT_PLUGINDIR%%/kf5/kio/activities.so
