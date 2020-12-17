@@ -1,0 +1,156 @@
+diff --git a/doc/Changelog b/doc/Changelog
+index 07a8e6ea4..3b831fea1 100644
+--- doc/Changelog.orig
++++ doc/Changelog
+@@ -1,3 +1,7 @@
++16 December 2020: George
++	- Fix error cases when udp-connect is set and send() returns an error
++	  (modified patch from Xin Li @delphij).
++
+ 30 November 2020: Wouter
+ 	- Fix assertion failure on double callback when iterator loses
+ 	  interest in query at head of line that then has the tcp stream
+diff --git a/services/authzone.c b/services/authzone.c
+index 15be5d60c..e59548fc3 100644
+--- services/authzone.c.orig
++++ services/authzone.c
+@@ -6093,7 +6093,7 @@ xfr_probe_send_probe(struct auth_xfer* xfr, struct module_env* env,
+ 
+ 	/* send udp packet */
+ 	if(!comm_point_send_udp_msg(xfr->task_probe->cp, env->scratch_buffer,
+-		(struct sockaddr*)&addr, addrlen)) {
++		(struct sockaddr*)&addr, addrlen, 0)) {
+ 		char zname[255+1], as[256];
+ 		dname_str(xfr->name, zname);
+ 		addr_to_str(&addr, addrlen, as, sizeof(as));
+diff --git a/services/outside_network.c b/services/outside_network.c
+index 0886907f7..d8f9874e6 100644
+--- services/outside_network.c.orig
++++ services/outside_network.c
+@@ -1899,17 +1899,10 @@ randomize_and_send_udp(struct pending* pend, sldns_buffer* packet, int timeout)
+ 	log_assert(pend->pc && pend->pc->cp);
+ 
+ 	/* send it over the commlink */
+-	if(outnet->udp_connect) {
+-		if(!comm_point_send_udp_msg(pend->pc->cp, packet, NULL, 0)) {
+-			portcomm_loweruse(outnet, pend->pc);
+-			return 0;
+-		}
+-	} else {
+-		if(!comm_point_send_udp_msg(pend->pc->cp, packet,
+-			(struct sockaddr*)&pend->addr, pend->addrlen)) {
+-			portcomm_loweruse(outnet, pend->pc);
+-			return 0;
+-		}
++	if(!comm_point_send_udp_msg(pend->pc->cp, packet,
++		(struct sockaddr*)&pend->addr, pend->addrlen, outnet->udp_connect)) {
++		portcomm_loweruse(outnet, pend->pc);
++		return 0;
+ 	}
+ 
+ 	/* system calls to set timeout after sending UDP to make roundtrip
+diff --git a/testcode/fake_event.c b/testcode/fake_event.c
+index 75a6b8db9..5164332c0 100644
+--- testcode/fake_event.c.orig
++++ testcode/fake_event.c
+@@ -1766,7 +1766,7 @@ struct comm_point* outnet_comm_point_for_http(struct outside_network* outnet,
+ }
+ 
+ int comm_point_send_udp_msg(struct comm_point *c, sldns_buffer* packet,
+-	struct sockaddr* addr, socklen_t addrlen) 
++	struct sockaddr* addr, socklen_t addrlen, int ATTR_UNUSED(is_connected))
+ {
+ 	struct fake_commpoint* fc = (struct fake_commpoint*)c;
+ 	struct replay_runtime* runtime = fc->runtime;
+diff --git a/util/netevent.c b/util/netevent.c
+index 7c6da50be..88be007e7 100644
+--- util/netevent.c.orig
++++ util/netevent.c
+@@ -333,7 +333,7 @@ int tcp_connect_errno_needs_log(struct sockaddr* addr, socklen_t addrlen)
+ /* send a UDP reply */
+ int
+ comm_point_send_udp_msg(struct comm_point *c, sldns_buffer* packet,
+-	struct sockaddr* addr, socklen_t addrlen) 
++	struct sockaddr* addr, socklen_t addrlen, int is_connected)
+ {
+ 	ssize_t sent;
+ 	log_assert(c->fd != -1);
+@@ -341,8 +341,8 @@ comm_point_send_udp_msg(struct comm_point *c, sldns_buffer* packet,
+ 	if(sldns_buffer_remaining(packet) == 0)
+ 		log_err("error: send empty UDP packet");
+ #endif
+-	if(addr) {
+-		log_assert(addr && addrlen > 0);
++	log_assert(addr && addrlen > 0);
++	if(!is_connected) {
+ 		sent = sendto(c->fd, (void*)sldns_buffer_begin(packet),
+ 			sldns_buffer_remaining(packet), 0,
+ 			addr, addrlen);
+@@ -367,9 +367,14 @@ comm_point_send_udp_msg(struct comm_point *c, sldns_buffer* packet,
+ #endif
+ 			int e;
+ 			fd_set_block(c->fd);
+-			sent = sendto(c->fd, (void*)sldns_buffer_begin(packet), 
+-				sldns_buffer_remaining(packet), 0,
+-				addr, addrlen);
++			if (!is_connected) {
++				sent = sendto(c->fd, (void*)sldns_buffer_begin(packet),
++					sldns_buffer_remaining(packet), 0,
++					addr, addrlen);
++			} else {
++				sent = send(c->fd, (void*)sldns_buffer_begin(packet),
++					sldns_buffer_remaining(packet), 0);
++			}
+ 			e = errno;
+ 			fd_set_nonblock(c->fd);
+ 			errno = e;
+@@ -378,8 +383,12 @@ comm_point_send_udp_msg(struct comm_point *c, sldns_buffer* packet,
+ 	if(sent == -1) {
+ 		if(!udp_send_errno_needs_log(addr, addrlen))
+ 			return 0;
+-		verbose(VERB_OPS, "sendto failed: %s", sock_strerror(errno));
+-		log_addr(VERB_OPS, "remote address is", 
++		if (!is_connected) {
++			verbose(VERB_OPS, "sendto failed: %s", sock_strerror(errno));
++		} else {
++			verbose(VERB_OPS, "send failed: %s", sock_strerror(errno));
++		}
++		log_addr(VERB_OPS, "remote address is",
+ 			(struct sockaddr_storage*)addr, addrlen);
+ 		return 0;
+ 	} else if((size_t)sent != sldns_buffer_remaining(packet)) {
+@@ -764,7 +773,7 @@ comm_point_udp_callback(int fd, short event, void* arg)
+ 			buffer = rep.c->buffer;
+ #endif
+ 			(void)comm_point_send_udp_msg(rep.c, buffer,
+-				(struct sockaddr*)&rep.addr, rep.addrlen);
++				(struct sockaddr*)&rep.addr, rep.addrlen, 0);
+ 		}
+ 		if(!rep.c || rep.c->fd != fd) /* commpoint closed to -1 or reused for
+ 		another UDP port. Note rep.c cannot be reused with TCP fd. */
+@@ -3944,7 +3953,7 @@ comm_point_send_reply(struct comm_reply *repinfo)
+ 			repinfo->addrlen, repinfo);
+ 		else
+ 			comm_point_send_udp_msg(repinfo->c, buffer,
+-			(struct sockaddr*)&repinfo->addr, repinfo->addrlen);
++			(struct sockaddr*)&repinfo->addr, repinfo->addrlen, 0);
+ #ifdef USE_DNSTAP
+ 		if(repinfo->c->dtenv != NULL &&
+ 		   repinfo->c->dtenv->log_client_response_messages)
+diff --git a/util/netevent.h b/util/netevent.h
+index 266a74ff3..810190683 100644
+--- util/netevent.h.orig
++++ util/netevent.h
+@@ -633,10 +633,11 @@ void comm_point_drop_reply(struct comm_reply* repinfo);
+  * @param addr: where to send it to.   If NULL, send is performed,
+  * 	for connected sockets, to the connected address.
+  * @param addrlen: length of addr.
++ * @param is_connected: if the UDP socket is connect()ed.
+  * @return: false on a failure.
+  */
+ int comm_point_send_udp_msg(struct comm_point* c, struct sldns_buffer* packet,
+-	struct sockaddr* addr, socklen_t addrlen);
++	struct sockaddr* addr, socklen_t addrlen,int is_connected);
+ 
+ /**
+  * Stop listening for input on the commpoint. No callbacks will happen.
