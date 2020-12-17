@@ -1,0 +1,5 @@
+Rime data files.  This is a metaport that provides an essential set of
+configuration ports and a preset of IME schema ports for the Rime IME
+framework.
+
+WWW: https://github.com/rime/plum

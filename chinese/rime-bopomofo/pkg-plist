@@ -1,0 +1,12 @@
+share/rime-data/bopomofo.schema.yaml
+share/rime-data/bopomofo_express.schema.yaml
+share/rime-data/bopomofo_tw.schema.yaml
+share/rime-data/build/bopomofo.prism.bin
+share/rime-data/build/bopomofo.prism.txt
+share/rime-data/build/bopomofo.schema.yaml
+share/rime-data/build/bopomofo_express.prism.bin
+share/rime-data/build/bopomofo_express.prism.txt
+share/rime-data/build/bopomofo_express.schema.yaml
+share/rime-data/build/bopomofo_tw.prism.bin
+share/rime-data/build/bopomofo_tw.prism.txt
+share/rime-data/build/bopomofo_tw.schema.yaml
