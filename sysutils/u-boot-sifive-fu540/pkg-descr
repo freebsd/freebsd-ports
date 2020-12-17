@@ -1,0 +1,19 @@
+U-Boot loader and related files for the HiFive Unleashed (FU540).
+
+The SD card must be formatted with a GPT partition scheme, and expects two
+specific GUID partition types for the SPL and FIT image.
+
+Note: due to limitations in gpart(8), sgdisk(8) should be used instead. Install
+it with the sysutils/gdisk port or package.
+
+Assuming an SD card device in /dev/da2, execute:
+sgdisk --clear --set-alignment=2 \
+    --new=1:34:2081 --change-name=1:loader1 --typecode=1:5B193300-FC78-40CD-8002-E86C45580B47 \
+    --new=2:2082:10273 --change-name=2:loader2 --typecode=2:2E54B353-1271-4842-806F-E436D6AF6985 \
+    /dev/da2
+
+Now, copy the u-boot files to the SD card with dd(1).
+dd if=/usr/local/share/u-boot/u-boot-sifive-fu540/u-boot-spl.bin of=/dev/da2p1 conv=sync
+dd if=/usr/local/share/u-boot/u-boot-sifive-fu540/u-boot.itb of=/dev/da2p2 conv=sync
+
+WWW: https://www.denx.de/wiki/U-Boot
