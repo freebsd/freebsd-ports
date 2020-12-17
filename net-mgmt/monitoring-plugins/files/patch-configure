@@ -1,6 +1,6 @@
---- configure.orig	2016-11-29 08:48:11 UTC
+--- configure.orig	2020-12-09 21:48:15 UTC
 +++ configure
-@@ -16747,6 +16747,16 @@ then
+@@ -17472,6 +17472,16 @@ then
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_ps_command" >&5
  $as_echo "$ac_cv_ps_command" >&6; }
  

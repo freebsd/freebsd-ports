@@ -61,6 +61,7 @@ libexec/nagios/check_tcp
 libexec/nagios/check_time
 libexec/nagios/check_udp
 libexec/nagios/check_ups
+libexec/nagios/check_uptime
 libexec/nagios/check_users
 libexec/nagios/check_wave
 libexec/nagios/negate

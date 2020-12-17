@@ -1,6 +1,6 @@
---- plugins/check_procs.c.orig	2016-11-29 08:45:08 UTC
+--- plugins/check_procs.c.orig	2020-12-09 21:38:01 UTC
 +++ plugins/check_procs.c
-@@ -70,6 +70,7 @@ int options = 0; /* bitmask of filter cr
+@@ -70,6 +70,7 @@ int options = 0; /* bitmask of filter criteria to test
  #define PCPU 256
  #define ELAPSED 512
  #define EREG_ARGS 1024
@@ -57,7 +57,7 @@
  					procetime, procprog, procargs);
  			}
  
-@@ -409,6 +414,7 @@ process_arguments (int argc, char **argv
+@@ -409,6 +414,7 @@ process_arguments (int argc, char **argv)
  		{"input-file", required_argument, 0, CHAR_MAX+2},
  		{"no-kthreads", required_argument, 0, 'k'},
  		{"traditional-filter", no_argument, 0, 'T'},
@@ -65,7 +65,7 @@
  		{0, 0, 0, 0}
  	};
  
-@@ -417,7 +423,7 @@ process_arguments (int argc, char **argv
+@@ -417,7 +423,7 @@ process_arguments (int argc, char **argv)
  			strcpy (argv[c], "-t");
  
  	while (1) {
@@ -74,7 +74,7 @@
  			longopts, &option);
  
  		if (c == -1 || c == EOF)
-@@ -451,6 +457,12 @@ process_arguments (int argc, char **argv
+@@ -451,6 +457,12 @@ process_arguments (int argc, char **argv)
  				break;
  			}
  			usage4 (_("Parent Process ID must be an integer!"));
@@ -96,7 +96,7 @@
    printf (" %s\n", "-z, --vsz=VSZ");
    printf ("   %s\n", _("Only scan for processes with VSZ higher than indicated."));
    printf (" %s\n", "-r, --rss=RSS");
-@@ -779,7 +793,7 @@ void
+@@ -784,7 +798,7 @@ void
  print_usage (void)
  {
    printf ("%s\n", _("Usage:"));

@@ -3,7 +3,7 @@ From: Filias Heidt <fh@netzkommune.de>
 Date: Fri, 9 Jun 2017 14:46:00 +0200
 Subject: [PATCH] add support for opensmtpd
 
---- plugins-scripts/check_mailq.pl.orig	2016-11-29 08:45:08 UTC
+--- plugins-scripts/check_mailq.pl.orig	2020-12-09 21:38:01 UTC
 +++ plugins-scripts/check_mailq.pl
 @@ -550,6 +550,39 @@ elsif ( $mailq eq "nullmailer" ) {
  	}
@@ -45,7 +45,7 @@ Subject: [PATCH] add support for opensmtpd
  # Perfdata support
  print "$msg|unsent=$msg_q;$opt_w;$opt_c;0\n";
  exit $state;
-@@ -610,7 +643,7 @@ sub process_arguments(){
+@@ -612,7 +645,7 @@ sub process_arguments(){
  	}
  
  	if (defined $opt_M) {

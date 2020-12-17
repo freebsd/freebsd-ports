@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	monitoring-plugins
-PORTVERSION=	2.2
-PORTREVISION=	9
+PORTVERSION=	2.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.monitoring-plugins.org/download/ \
 		LOCAL/mat/${PORTNAME}
@@ -143,6 +142,5 @@ post-patch:
 	check_users.c
 	@${REINPLACE_CMD} -e 's|setlocale (LC_ALL, "");|setlocale (LC_ALL, ""); setlocale(LC_NUMERIC, "C");|g' ${WRKSRC}/plugins/${file}
 .endfor
-	@${REINPLACE_CMD} -e 's|chown root|${TRUE}|g' ${WRKSRC}/plugins-root/Makefile.in
 
 .include <bsd.port.mk>

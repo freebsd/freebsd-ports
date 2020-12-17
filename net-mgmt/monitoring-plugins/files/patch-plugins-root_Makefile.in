@@ -1,0 +1,24 @@
+--- plugins-root/Makefile.in.orig	2020-12-09 21:48:11 UTC
++++ plugins-root/Makefile.in
+@@ -1357,10 +1357,6 @@ INSTALL_SUID = \
+ 	p=$$f; \
+ 	echo " $(INSTALL_PROGRAM) $$p $(DESTDIR)$(libexecdir)/$$p"; \
+ 	$(INSTALL_PROGRAM) $$p $(DESTDIR)$(libexecdir)/$$p; \
+-	echo " chown root $(DESTDIR)$(libexecdir)/$$p"; \
+-	chown root $(DESTDIR)$(libexecdir)/$$p; \
+-	echo " chmod $(setuid_root_mode) $(DESTDIR)$(libexecdir)/$$p"; \
+-	chmod $(setuid_root_mode) $(DESTDIR)$(libexecdir)/$$p; \
+ 	done
+ 
+ 
+@@ -1795,9 +1791,7 @@ install-exec-local: $(noinst_PROGRAMS)
+ 	rm -f $$TMPFILE; \
+ 	echo > $$TMPFILE; \
+ 	can_create_suid_root_executable=no; \
+-	chown root $$TMPFILE > /dev/null 2>&1 \
+-	  && chmod $(setuid_root_mode) $$TMPFILE > /dev/null 2>&1 \
+-	  && can_create_suid_root_executable=yes; \
++	can_create_suid_root_executable=yes; \
+ 	rm -f $$TMPFILE; \
+ 	if test $$can_create_suid_root_executable = yes; then \
+ 	  $(INSTALL_SUID); \
