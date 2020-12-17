@@ -872,6 +872,8 @@ bin/openbve-routeviewer
 %%DATADIR%%/TrainEditor2.exe
 %%DATADIR%%/TrainEditor2.exe.config
 %%DATADIR%%/TrainEditor2.pdb
+%%DATADIR%%/TrainManager.dll
+%%DATADIR%%/TrainManager.pdb
 %%DATADIR%%/Ude.NetStandard.dll
 %%DATADIR%%/netstandard.dll
 man/man6/openbve-objectviewer.6.gz

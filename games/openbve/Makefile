@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openbve
-PORTVERSION=	1.7.2.1
+PORTVERSION=	1.7.2.2
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
