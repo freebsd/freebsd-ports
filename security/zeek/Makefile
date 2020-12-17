@@ -3,7 +3,7 @@
 
 PORTNAME=	zeek
 PORTVERSION=	3.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://old.zeek.org/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -115,7 +115,6 @@ post-install-ZEEKCTL-on:
 	    ${STAGEDIR}${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh
 
 post-install:
-	${RM} -r ${STAGEDIR}${PREFIX}/share/zeek/cmake
 	${MV} ${STAGEDIR}${DATADIR}/site/local.zeek \
 	    ${STAGEDIR}${DATADIR}/site/local.zeek.sample
 

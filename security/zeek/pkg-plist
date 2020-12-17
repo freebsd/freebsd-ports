@@ -1607,6 +1607,65 @@ man/man8/zeek.8.gz
 %%DATADIR%%/base/utils/thresholds.zeek
 %%DATADIR%%/base/utils/time.zeek
 %%DATADIR%%/base/utils/urls.zeek
+%%DATADIR%%/cmake/AddUninstallTarget.cmake
+%%DATADIR%%/cmake/BifCl.cmake
+%%DATADIR%%/cmake/BinPAC.cmake
+%%DATADIR%%/cmake/BroPlugin.cmake
+%%DATADIR%%/cmake/COPYING
+%%DATADIR%%/cmake/ChangeMacInstallNames.cmake
+%%DATADIR%%/cmake/CheckCompilers.cmake
+%%DATADIR%%/cmake/CheckFunctions.cmake
+%%DATADIR%%/cmake/CheckHeaders.cmake
+%%DATADIR%%/cmake/CheckNameserCompat.cmake
+%%DATADIR%%/cmake/CheckOptionalBuildSources.cmake
+%%DATADIR%%/cmake/CheckTypes.cmake
+%%DATADIR%%/cmake/CommonCMakeConfig.cmake
+%%DATADIR%%/cmake/ConfigurePackaging.cmake
+%%DATADIR%%/cmake/FindBIND.cmake
+%%DATADIR%%/cmake/FindBISON.cmake
+%%DATADIR%%/cmake/FindBinPAC.cmake
+%%DATADIR%%/cmake/FindBroccoli.cmake
+%%DATADIR%%/cmake/FindBroker.cmake
+%%DATADIR%%/cmake/FindCAF.cmake
+%%DATADIR%%/cmake/FindCapstats.cmake
+%%DATADIR%%/cmake/FindFTS.cmake
+%%DATADIR%%/cmake/FindGooglePerftools.cmake
+%%DATADIR%%/cmake/FindJeMalloc.cmake
+%%DATADIR%%/cmake/FindLibKrb5.cmake
+%%DATADIR%%/cmake/FindLibMMDB.cmake
+%%DATADIR%%/cmake/FindPCAP.cmake
+%%DATADIR%%/cmake/FindPyBroccoli.cmake
+%%DATADIR%%/cmake/FindPythonDev.cmake
+%%DATADIR%%/cmake/FindReadline.cmake
+%%DATADIR%%/cmake/FindRequiredPackage.cmake
+%%DATADIR%%/cmake/FindRocksDB.cmake
+%%DATADIR%%/cmake/FindSubnetTree.cmake
+%%DATADIR%%/cmake/FindTraceSummary.cmake
+%%DATADIR%%/cmake/FindZeek.cmake
+%%DATADIR%%/cmake/GetArchitecture.cmake
+%%DATADIR%%/cmake/InstallClobberImmune.cmake
+%%DATADIR%%/cmake/InstallPackageConfigFile.cmake
+%%DATADIR%%/cmake/InstallShellScript.cmake
+%%DATADIR%%/cmake/InstallSymlink.cmake
+%%DATADIR%%/cmake/MAC_PACKAGE_INTRO
+%%DATADIR%%/cmake/MacDependencyPaths.cmake
+%%DATADIR%%/cmake/MiscTests.cmake
+%%DATADIR%%/cmake/OSSpecific.cmake
+%%DATADIR%%/cmake/OpenSSLTests.cmake
+%%DATADIR%%/cmake/PCAPTests.cmake
+%%DATADIR%%/cmake/ProhibitInSourceBuild.cmake
+%%DATADIR%%/cmake/README
+%%DATADIR%%/cmake/RequireCXX11.cmake
+%%DATADIR%%/cmake/SetDefaultCompileFlags.cmake
+%%DATADIR%%/cmake/SetupRPATH.cmake
+%%DATADIR%%/cmake/UserChangedWarning.cmake
+%%DATADIR%%/cmake/ZeekPlugin.cmake
+%%DATADIR%%/cmake/ZeekPluginCommon.cmake
+%%DATADIR%%/cmake/ZeekPluginDynamic.cmake
+%%DATADIR%%/cmake/ZeekPluginStatic.cmake
+%%DATADIR%%/cmake/ZeekSubdir.cmake
+%%DATADIR%%/cmake/zeek-plugin-create-package.sh
+%%DATADIR%%/cmake/zeek-plugin-install-package.sh
 %%DATADIR%%/policy/files/unified2/__load__.zeek
 %%DATADIR%%/policy/files/unified2/main.zeek
 %%DATADIR%%/policy/files/x509/log-ocsp.zeek
@@ -1751,14 +1810,11 @@ man/man8/zeek.8.gz
 %%ZEEKCTL%%spool/zeekctl-config.sh
 %%ZEEKCTL%%@preunexec rm -f %D/logs/current
 %%ZEEKCTL%%@preunexec rm -f %D/spool/zeekctl.dat
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/auto/zeekctl-config.bro
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/auto/local-networks.bro
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/auto/standalone-layout.bro
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-logger.bro
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-manager.bro
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-proxy.bro
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local-worker.bro
-%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local.bro
+%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/auto/local-networks.zeek
+%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/auto/standalone-layout.zeek
+%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/auto/zeekctl-config.zeek
+%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local.zeek
+%%ZEEKCTL%%@preunexec rm -f %D/spool/installed-scripts-do-not-touch/site/local.zeek.sample
 %%ZEEKCTL%%@dir spool/tmp
 %%ZEEKCTL%%@dir spool/installed-scripts-do-not-touch/site
 %%ZEEKCTL%%@dir spool/installed-scripts-do-not-touch/auto
@@ -1810,6 +1866,7 @@ man/man8/zeek.8.gz
 @dir %%DATADIR%%/policy/files/unified2
 @dir %%DATADIR%%/policy/files
 @dir %%DATADIR%%/policy
+@dir %%DATADIR%%/cmake
 @dir %%DATADIR%%/base/utils
 @dir %%DATADIR%%/base/protocols/xmpp
 @dir %%DATADIR%%/base/protocols/tunnels
