@@ -14,8 +14,6 @@ COMMENT=	BlockOut II is an adaptation of the original Blockout DOS game
 
 LICENSE=	GPLv2+
 
-ONLY_FOR_ARCHS=	i386 amd64
-
 USES=		dos2unix gl gmake sdl
 USE_SDL=	mixer sdl
 DOS2UNIX_FILES=	ImageLib/src/gif/gif.h \
