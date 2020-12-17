@@ -11,7 +11,7 @@ pw usermod -L daemon -n vault
 or delete the user and reinstall the package.
 
 You may also need to increase memorylocked for the daemon class in
-/etc/login.conf to 256M or more and run:
+/etc/login.conf to 1024M or more and run:
 
 cap_mkdb /etc/login.conf
 
