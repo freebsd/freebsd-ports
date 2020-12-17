@@ -46,7 +46,7 @@ share/locale/bg/LC_MESSAGES/ConsoleKit2.mo
 share/locale/es/LC_MESSAGES/ConsoleKit2.mo
 share/locale/es_419/LC_MESSAGES/ConsoleKit2.mo
 share/locale/ru/LC_MESSAGES/ConsoleKit2.mo
-share/polkit-1/actions/org.freedesktop.consolekit.policy
+%%POLKIT%%share/polkit-1/actions/org.freedesktop.consolekit.policy
 @dir etc/ConsoleKit/run-seat.d
 @dir etc/ConsoleKit/run-session.d
 @dir lib/ConsoleKit/run-seat.d

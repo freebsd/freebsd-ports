@@ -15,8 +15,16 @@ COMMENT=	Framework for defining and tracking users
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libdbus-1.so:devel/dbus \
-		libpolkit-gobject-1.so:sysutils/polkit
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
+
+OPTIONS_DEFINE=	POLKIT
+OPTIONS_DEFAULT=POLKIT
+OPTIONS_SUB=	yes
+
+POLKIT_DESC=	Build with Polkit support
+
+POLKIT_LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit
+POLKIT_CONFIGURE_ENABLE=	polkit
 
 WRKSRC=		${WRKDIR}/ConsoleKit2-${PORTVERSION}
 USES=		gettext gmake gnome libtool localbase pathfix pkgconfig \
@@ -30,7 +38,6 @@ CONFIGURE_ARGS=	--with-pid-file=/var/run/${PORTNAME}.pid \
 		--enable-pam-module \
 		--with-pam-module-dir=${PREFIX}/lib \
 		--localstatedir=/var \
-		--enable-polkit \
 		--enable-introspection \
 		--without-html-dir \
 		--disable-udev-acl \
