@@ -28,6 +28,7 @@ include/KF5/KWidgetsAddons/KLed
 include/KF5/KWidgetsAddons/KMessageBox
 include/KF5/KWidgetsAddons/KMessageBoxDontAskAgainInterface
 include/KF5/KWidgetsAddons/KMessageBoxNotifyInterface
+include/KF5/KWidgetsAddons/KMessageDialog
 include/KF5/KWidgetsAddons/KMessageWidget
 include/KF5/KWidgetsAddons/KMimeTypeChooser
 include/KF5/KWidgetsAddons/KMimeTypeChooserDialog
@@ -104,6 +105,7 @@ include/KF5/KWidgetsAddons/kled.h
 include/KF5/KWidgetsAddons/kmessagebox.h
 include/KF5/KWidgetsAddons/kmessageboxdontaskagaininterface.h
 include/KF5/KWidgetsAddons/kmessageboxnotifyinterface.h
+include/KF5/KWidgetsAddons/kmessagedialog.h
 include/KF5/KWidgetsAddons/kmessagewidget.h
 include/KF5/KWidgetsAddons/kmimetypechooser.h
 include/KF5/KWidgetsAddons/kmimetypeeditor.h

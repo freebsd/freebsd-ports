@@ -1022,9 +1022,9 @@ share/dbus-1/interfaces/kf5_org.freedesktop.PowerManagement.xml
 share/dbus-1/interfaces/kf5_org.kde.Solid.Networking.Client.xml
 share/dbus-1/interfaces/kf5_org.kde.Solid.PowerManagement.PolicyAgent.xml
 share/doc/HTML/ca/kcontrol5/kcm_ssl/details.png
-share/doc/HTML/ca/kcontrol5/kcm_ssl/module.png
 share/doc/HTML/ca/kcontrol5/kcm_ssl/index.cache.bz2
 share/doc/HTML/ca/kcontrol5/kcm_ssl/index.docbook
+share/doc/HTML/ca/kcontrol5/kcm_ssl/module.png
 share/doc/HTML/ca/kdebugdialog5/index.cache.bz2
 share/doc/HTML/ca/kdebugdialog5/index.docbook
 share/doc/HTML/de/kcontrol5/kcm_ssl/index.cache.bz2
@@ -1037,10 +1037,14 @@ share/doc/HTML/en/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/en/kcontrol5/kcm_ssl/module.png
 share/doc/HTML/en/kdebugdialog5/index.cache.bz2
 share/doc/HTML/en/kdebugdialog5/index.docbook
-share/doc/HTML/es/kdebugdialog5/index.cache.bz2
-share/doc/HTML/es/kdebugdialog5/index.docbook
 share/doc/HTML/es/kcontrol5/kcm_ssl/index.cache.bz2
 share/doc/HTML/es/kcontrol5/kcm_ssl/index.docbook
+share/doc/HTML/es/kdebugdialog5/index.cache.bz2
+share/doc/HTML/es/kdebugdialog5/index.docbook
+share/doc/HTML/fr/kcontrol5/kcm_ssl/index.cache.bz2
+share/doc/HTML/fr/kcontrol5/kcm_ssl/index.docbook
+share/doc/HTML/fr/kdebugdialog5/index.cache.bz2
+share/doc/HTML/fr/kdebugdialog5/index.docbook
 share/doc/HTML/it/kcontrol5/kcm_ssl/index.cache.bz2
 share/doc/HTML/it/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/it/kdebugdialog5/index.cache.bz2
@@ -1059,6 +1063,8 @@ share/doc/HTML/pt_BR/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/pt_BR/kcontrol5/kcm_ssl/module.png
 share/doc/HTML/pt_BR/kdebugdialog5/index.cache.bz2
 share/doc/HTML/pt_BR/kdebugdialog5/index.docbook
+share/doc/HTML/ru/kcontrol5/kcm_ssl/index.cache.bz2
+share/doc/HTML/ru/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/sr/kdebugdialog5/index.cache.bz2
 share/doc/HTML/sr/kdebugdialog5/index.docbook
 share/doc/HTML/sr@latin/kdebugdialog5/index.cache.bz2
@@ -1067,8 +1073,6 @@ share/doc/HTML/sv/kcontrol5/kcm_ssl/index.cache.bz2
 share/doc/HTML/sv/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/sv/kdebugdialog5/index.cache.bz2
 share/doc/HTML/sv/kdebugdialog5/index.docbook
-share/doc/HTML/ru/kcontrol5/kcm_ssl/index.cache.bz2
-share/doc/HTML/ru/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/uk/kcontrol5/kcm_ssl/index.cache.bz2
 share/doc/HTML/uk/kcontrol5/kcm_ssl/index.docbook
 share/doc/HTML/uk/kdebugdialog5/index.cache.bz2
@@ -1819,6 +1823,7 @@ share/kservicetypes5/qimageio_plugin.desktop
 share/locale/af/LC_MESSAGES/kdelibs4support.mo
 share/locale/ar/LC_MESSAGES/kdelibs4support.mo
 share/locale/as/LC_MESSAGES/kdelibs4support.mo
+share/locale/ast/LC_MESSAGES/kdelibs4support.mo
 share/locale/az/LC_MESSAGES/kdelibs4support.mo
 share/locale/be/LC_MESSAGES/kdelibs4support.mo
 share/locale/be@latin/LC_MESSAGES/kdelibs4support.mo

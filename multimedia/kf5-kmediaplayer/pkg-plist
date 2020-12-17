@@ -12,5 +12,5 @@ lib/libKF5MediaPlayer.so
 lib/libKF5MediaPlayer.so.5
 lib/libKF5MediaPlayer.so.%%KDE_FRAMEWORKS_VERSION%%
 share/dbus-1/interfaces/kf5_org.kde.KMediaPlayer.xml
-share/kservicetypes5/kmediaplayer.desktop
-share/kservicetypes5/kmediaplayerengine.desktop
+share/kservicetypes5/kmediaplayer-engine.desktop
+share/kservicetypes5/kmediaplayer-player.desktop

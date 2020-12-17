@@ -18,6 +18,7 @@ bin/kapidox_generate
 %%PYTHON_SITELIBDIR%%/kapidox/data/DoxygenLayout.xml
 %%PYTHON_SITELIBDIR%%/kapidox/data/dependencies.md.tmpl
 %%PYTHON_SITELIBDIR%%/kapidox/data/footer.html
+%%PYTHON_SITELIBDIR%%/kapidox/data/global.qdocconf
 %%PYTHON_SITELIBDIR%%/kapidox/data/header.html
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/3rd-party/jquery/LICENSE.txt
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/3rd-party/jquery/jquery-3.1.0.min.js
@@ -52,6 +53,8 @@ bin/kapidox_generate
 %%PYTHON_SITELIBDIR%%/kapidox/data/templates/library-sidebar.html
 %%PYTHON_SITELIBDIR%%/kapidox/data/templates/library.html
 %%PYTHON_SITELIBDIR%%/kapidox/data/templates/maintainers.html
+%%PYTHON_SITELIBDIR%%/kapidox/data/templates/qdoc-sidebar.html
+%%PYTHON_SITELIBDIR%%/kapidox/data/templates/qdoc-wrapper.html
 %%PYTHON_SITELIBDIR%%/kapidox/data/templates/search.html
 %%PYTHON_SITELIBDIR%%/kapidox/data/templates/subgroup-sidebar.html
 %%PYTHON_SITELIBDIR%%/kapidox/data/templates/subgroup.html
