@@ -218,6 +218,7 @@
     SUBDIR += shutter
     SUBDIR += simpleagenda
     SUBDIR += sliderule
+    SUBDIR += sowon
     SUBDIR += spice-gtk
     SUBDIR += synapse
     SUBDIR += syncthingtray
