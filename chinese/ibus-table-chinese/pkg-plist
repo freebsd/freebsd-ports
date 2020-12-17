@@ -9,6 +9,7 @@
 %%DATADIR%%/icons/cangjie5.svg
 %%DATADIR%%/icons/cantonese.png
 %%DATADIR%%/icons/cantonhk.png
+%%DATADIR%%/icons/cantonyale.png
 %%DATADIR%%/icons/easy-big.png
 %%DATADIR%%/icons/erbi-qs.svg
 %%DATADIR%%/icons/erbi.png
@@ -29,6 +30,7 @@
 %%DATADIR%%/tables/cangjie5.db
 %%DATADIR%%/tables/cantonese.db
 %%DATADIR%%/tables/cantonhk.db
+%%DATADIR%%/tables/cantonyale.db
 %%DATADIR%%/tables/easy-big.db
 %%DATADIR%%/tables/erbi-qs.db
 %%DATADIR%%/tables/erbi.db
