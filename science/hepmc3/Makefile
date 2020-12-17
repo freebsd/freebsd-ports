@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hepmc3
-DISTVERSION=	3.2.2
+DISTVERSION=	3.2.3
 CATEGORIES=	science
 MASTER_SITES=	http://hepmc.web.cern.ch/hepmc/releases/
 DISTNAME=	HepMC3-${DISTVERSION}
