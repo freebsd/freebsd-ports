@@ -47,6 +47,7 @@ sbin/auto-firewall-setup
 sbin/auto-freebsd-wip-checkout
 sbin/auto-fusefs-install
 sbin/auto-gpu-setup
+sbin/auto-group-check
 sbin/auto-harden
 sbin/auto-hex-to-octet
 sbin/auto-idrac-config
@@ -77,7 +78,6 @@ sbin/auto-nfs-client-setup
 sbin/auto-nfs-restart
 sbin/auto-nfs-server-setup
 sbin/auto-octet-to-hex
-sbin/auto-operator-check
 sbin/auto-os-release
 sbin/auto-ostype
 sbin/auto-package-installed
