@@ -1,5 +1,11 @@
-lib/libavahi-ui-gtk3.a
+bin/avahi-discover-standalone
+bin/bshell
+bin/bssh
+bin/bvnc
 lib/libavahi-ui-gtk3.so
 lib/libavahi-ui-gtk3.so.0
 lib/libavahi-ui-gtk3.so.0.1.4
 libdata/pkgconfig/avahi-ui-gtk3.pc
+share/applications/bssh.desktop
+share/applications/bvnc.desktop
+%%DATADIR%%/interfaces/avahi-discover.ui

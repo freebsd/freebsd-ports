@@ -1,5 +1,4 @@
 include/avahi-qt5/qt-watch.h
-lib/libavahi-qt5.a
 lib/libavahi-qt5.so
 lib/libavahi-qt5.so.1
 lib/libavahi-qt5.so.1.0.2

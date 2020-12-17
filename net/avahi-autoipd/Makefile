@@ -9,7 +9,8 @@ PKGNAMESUFFIX=	-autoipd
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	IPv4LL network address configuration daemon
 
-LIB_DEPENDS=	libavahi-common.so:net/avahi-app
+LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
+		libdaemon.so:devel/libdaemon
 
 USERS=		avahi-autoipd
 GROUPS=		${USERS}

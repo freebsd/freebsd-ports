@@ -1,5 +1,4 @@
 include/avahi-compat-libdns_sd/dns_sd.h
-lib/libdns_sd.a
 lib/libdns_sd.so
 lib/libdns_sd.so.1
 lib/libdns_sd.so.1.0.0

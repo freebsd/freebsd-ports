@@ -3,27 +3,27 @@
 #   $MCom: ports/net/avahi/Makefile,v 1.30 2011/03/13 17:23:19 kwm Exp $
 
 PORTNAME=	avahi
-PORTVERSION=	0.7
-PORTREVISION?=	1
+PORTVERSION=	0.8
 CATEGORIES?=	net dns
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	"meta-port" for the Avahi service discovery suite
 
-RUN_DEPENDS=	avahi-app>=0.7:net/avahi-app
+RUN_DEPENDS=	avahi-app>=0.8:net/avahi-app
 
 USES=		metaport
 
-OPTIONS_DEFINE=	AUTOIPD GTK MONO QT5
-OPTIONS_DEFAULT=AUTOIPD GTK
+OPTIONS_DEFINE=	AUTOIPD GTK2 GTK3 MONO QT5 PYTHON
+OPTIONS_DEFAULT=AUTOIPD GTK3
 AUTOIPD_DESC=	IPv4LL network address configuration daemon
-GTK_DESC=	Gtk+ tools and bindings
 LIBDNS_DESC=	Apple's mDNSResponder compatibility library
 
 AUTOIPD_RUN_DEPENDS=	avahi-autoipd:net/avahi-autoipd
-GTK_RUN_DEPENDS=	avahi-discover-standalone:net/avahi-gtk
+GTK2_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-ui.pc:net/avahi-gtk
+GTK3_RUN_DEPENDS=	avahi-discover-standalone:net/avahi-gtk3
 #LIBDNS_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-compat-libdns_sd.pc:net/avahi-libdns
 MONO_RUN_DEPENDS=	${LOCALBASE}/lib/mono/avahi-sharp/avahi-sharp.dll:net/avahi-sharp
 QT5_RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/avahi-qt5.pc:net/avahi-qt5
+PYTHON_RUN_DEPENDS=	avahi-bookmarks:net/py-avahi
 
 .include <bsd.port.mk>
