@@ -108,6 +108,7 @@
 %%DATADIR%%/plugins/colemak/colemak.plugin.zsh
 %%DATADIR%%/plugins/colored-man-pages/README.md
 %%DATADIR%%/plugins/colored-man-pages/colored-man-pages.plugin.zsh
+%%DATADIR%%/plugins/colored-man-pages/nroff
 %%DATADIR%%/plugins/colorize/README.md
 %%DATADIR%%/plugins/colorize/colorize.plugin.zsh
 %%DATADIR%%/plugins/command-not-found/README.md
@@ -235,6 +236,11 @@
 %%DATADIR%%/plugins/gem/README.md
 %%DATADIR%%/plugins/gem/_gem
 %%DATADIR%%/plugins/gem/gem.plugin.zsh
+%%DATADIR%%/plugins/genpass/README.md
+%%DATADIR%%/plugins/genpass/genpass-apple
+%%DATADIR%%/plugins/genpass/genpass-monkey
+%%DATADIR%%/plugins/genpass/genpass-xkcd
+%%DATADIR%%/plugins/genpass/genpass.plugin.zsh
 %%DATADIR%%/plugins/git-auto-fetch/README.md
 %%DATADIR%%/plugins/git-auto-fetch/git-auto-fetch.plugin.zsh
 %%DATADIR%%/plugins/git-escape-magic/README.md
@@ -248,6 +254,8 @@
 %%DATADIR%%/plugins/git-flow/git-flow.plugin.zsh
 %%DATADIR%%/plugins/git-hubflow/README.md
 %%DATADIR%%/plugins/git-hubflow/git-hubflow.plugin.zsh
+%%DATADIR%%/plugins/git-lfs/README.md
+%%DATADIR%%/plugins/git-lfs/git-lfs.plugin.zsh
 %%DATADIR%%/plugins/git-prompt/README.md
 %%DATADIR%%/plugins/git-prompt/git-prompt.plugin.zsh
 %%DATADIR%%/plugins/git-prompt/gitstatus.py
@@ -259,7 +267,6 @@
 %%DATADIR%%/plugins/gitfast/git-prompt.sh
 %%DATADIR%%/plugins/gitfast/gitfast.plugin.zsh
 %%DATADIR%%/plugins/gitfast/update
-%%DATADIR%%/plugins/gitfast/updates.patch
 %%DATADIR%%/plugins/github/README.md
 %%DATADIR%%/plugins/github/_hub
 %%DATADIR%%/plugins/github/github.plugin.zsh
@@ -285,6 +292,8 @@
 %%DATADIR%%/plugins/gradle/gradle.plugin.zsh
 %%DATADIR%%/plugins/grails/README.md
 %%DATADIR%%/plugins/grails/grails.plugin.zsh
+%%DATADIR%%/plugins/grc/README.md
+%%DATADIR%%/plugins/grc/grc.plugin.zsh
 %%DATADIR%%/plugins/grunt/README.md
 %%DATADIR%%/plugins/grunt/grunt.plugin.zsh
 %%DATADIR%%/plugins/gulp/README.md
@@ -310,6 +319,9 @@
 %%DATADIR%%/plugins/httpie/httpie.plugin.zsh
 %%DATADIR%%/plugins/ionic/README.md
 %%DATADIR%%/plugins/ionic/ionic.plugin.zsh
+%%DATADIR%%/plugins/ipfs/LICENSE
+%%DATADIR%%/plugins/ipfs/README.md
+%%DATADIR%%/plugins/ipfs/_ipfs
 %%DATADIR%%/plugins/iterm2/README.md
 %%DATADIR%%/plugins/iterm2/iterm2.plugin.zsh
 %%DATADIR%%/plugins/jake-node/README.md
@@ -345,6 +357,9 @@
 %%DATADIR%%/plugins/kube-ps1/kube-ps1.plugin.zsh
 %%DATADIR%%/plugins/kubectl/README.md
 %%DATADIR%%/plugins/kubectl/kubectl.plugin.zsh
+%%DATADIR%%/plugins/lando/LICENSE
+%%DATADIR%%/plugins/lando/README.md
+%%DATADIR%%/plugins/lando/lando.plugin.zsh
 %%DATADIR%%/plugins/laravel/README.md
 %%DATADIR%%/plugins/laravel/_artisan
 %%DATADIR%%/plugins/laravel/laravel.plugin.zsh
@@ -541,6 +556,8 @@
 %%DATADIR%%/plugins/ssh-agent/ssh-agent.plugin.zsh
 %%DATADIR%%/plugins/stack/README.md
 %%DATADIR%%/plugins/stack/stack.plugin.zsh
+%%DATADIR%%/plugins/sublime-merge/README.md
+%%DATADIR%%/plugins/sublime-merge/sublime-merge.plugin.zsh
 %%DATADIR%%/plugins/sublime/README.md
 %%DATADIR%%/plugins/sublime/sublime.plugin.zsh
 %%DATADIR%%/plugins/sudo/README.md
@@ -843,5 +860,6 @@
 %%DATADIR%%/themes/xiong-chiamiov.zsh-theme
 %%DATADIR%%/themes/ys.zsh-theme
 %%DATADIR%%/themes/zhann.zsh-theme
+%%DATADIR%%/tools/changelog.sh
 %%DATADIR%%/tools/require_tool.sh
 %%DATADIR%%/tools/theme_chooser.sh
