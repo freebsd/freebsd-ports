@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}.tar.gz:fop offo-hyphenation.zip:hyph
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	geoff@sea-incorporated.com
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Print formatter driven by XSL formatting
 
 LICENSE=	APACHE20
