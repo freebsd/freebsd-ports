@@ -17,12 +17,20 @@ BUILD_DEPENDS=	s2>=${PORTVERSION}:graphics/s2 \
 		swig:devel/swig
 LIB_DEPENDS=	libs2.so:graphics/s2
 
-USES=		cmake compiler:c++11-lang localbase:ldflags python
+USES=		cmake localbase:ldflags python
 
 WRKSRC_SUBDIR=	src/python
 
 GH_ACCOUNT=	google
 GH_PROJECT=	s2geometry
 USE_GITHUB=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lang
+.endif
 
 .include <bsd.port.mk>
