@@ -5,6 +5,7 @@ PORTNAME=	mono
 PORTVERSION=	5.20.1.34
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
+PKGNAMESUFFIX=	5.20
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mono@FreeBSD.org
