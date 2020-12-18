@@ -4658,6 +4658,7 @@
     SUBDIR += py-oletools
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
+    SUBDIR += py-onigurumacffi
     SUBDIR += py-opcodes
     SUBDIR += py-openapi-codec
     SUBDIR += py-openapi-spec-validator

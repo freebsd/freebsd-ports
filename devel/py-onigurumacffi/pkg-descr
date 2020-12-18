@@ -1,0 +1,3 @@
+Python cffi bindings for the oniguruma regex engine
+
+WWW: https://github.com/asottile/onigurumacffi
