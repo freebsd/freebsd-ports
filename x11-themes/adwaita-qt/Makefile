@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adwaita-qt
-DISTVERSION=	1.1.4
+DISTVERSION=	1.2.0
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	5
 
@@ -12,14 +12,13 @@ COMMENT=	Adwaita theme for Qt applications
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
-USES=		cmake compiler:c++11-lib localbase pkgconfig qt:5
-USE_QT=		core dbus gui widgets \
+USES=		cmake compiler:c++11-lib localbase pkgconfig qt:5 xorg
+USE_QT=		core dbus gui widgets x11extras \
 		buildtools_build qmake_build
+USE_XORG=	xcb
 CMAKE_OFF=	USE_QT4
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FedoraQt
-
-PLIST_FILES=	${QT_PLUGINDIR}/styles/adwaita.so
 
 .include <bsd.port.mk>

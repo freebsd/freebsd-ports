@@ -1,0 +1,15 @@
+include/AdwaitaQt/adwaita.h
+include/AdwaitaQt/adwaitacolors.h
+include/AdwaitaQt/adwaitaqt_export.h
+lib/cmake/AdwaitaQt/AdwaitaQtConfig.cmake
+lib/cmake/AdwaitaQt/AdwaitaQtConfigVersion.cmake
+lib/cmake/AdwaitaQt/AdwaitaQtTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/AdwaitaQt/AdwaitaQtTargets.cmake
+lib/libadwaitaqt.so
+lib/libadwaitaqt.so.1
+lib/libadwaitaqt.so.1.2.0
+lib/libadwaitaqtpriv.so
+lib/libadwaitaqtpriv.so.1
+lib/libadwaitaqtpriv.so.1.2.0
+%%QT_PLUGINDIR%%/styles/adwaita.so
+libdata/pkgconfig/adwaita-qt.pc
