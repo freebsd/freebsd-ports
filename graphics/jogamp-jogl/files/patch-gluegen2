@@ -1,25 +1,32 @@
 --- gluegen/make/build.xml.orig	2015-10-09 04:18:28 UTC
 +++ gluegen/make/build.xml
-@@ -375,10 +375,17 @@
+@@ -375,10 +375,24 @@
        <property name="c.src.dir.os"                         value="unix" />
      </target>
  
 -    <target name="declare.freebsd" depends="declare.freebsd.x86,declare.freebsd.amd64" if="isFreeBSD" >
-+    <target name="declare.freebsd.ppc" if="isFreeBSDPpc">
-+      <echo message="FreeBSDPpc" />
++    <target name="declare.freebsd.ppc64" if="isFreeBSDPpc64">
++      <echo message="FreeBSDPpc64" />
 +      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd" />
-+      <property name="linker.cfg.id"                        value="linker.cfg.freebsd.ppc" />
++      <property name="linker.cfg.id"                        value="linker.cfg.freebsd.ppc64" />
        <property name="c.src.dir.os"                         value="unix" />
      </target>
  
-+    <target name="declare.freebsd" depends="declare.freebsd.x86,declare.freebsd.amd64,declare.freebsd.ppc" if="isFreeBSD" >
++    <target name="declare.freebsd.ppc64le" if="isFreeBSDPpc64le">
++      <echo message="FreeBSDPpc64le" />
++      <property name="compiler.cfg.id"                      value="compiler.cfg.freebsd" />
++      <property name="linker.cfg.id"                        value="linker.cfg.freebsd.ppc64le" />
++      <property name="c.src.dir.os"                         value="unix" />
++    </target>
++
++    <target name="declare.freebsd" depends="declare.freebsd.x86,declare.freebsd.amd64,declare.freebsd.ppc64,declare.freebsd.ppc64le" if="isFreeBSD" >
 +      <property name="c.src.dir.os"                         value="unix" />
 +    </target>
 +
      <target name="declare.hpux" if="isHPUX">
        <echo message="HP-UX" />
        <property name="compiler.cfg.id"                      value="compiler.cfg.hpux" />
-@@ -408,7 +415,7 @@
+@@ -408,7 +422,7 @@
        <property name="c.compiler.src.files.common" value="src/native/common/*.c" />
        <property name="c.compiler.src.files.os" value="src/native/${c.src.dir.os}/*.c" />
  
@@ -28,7 +35,7 @@
        <condition property="output.lib.name.os" value="lib${output.lib.name}.so"><isset property="isUnix"/></condition>
        <condition property="output.lib.name.os" value="${output.lib.name}.dll"><isset property="isWindows"/></condition>
        <condition property="output.lib.name.os" value="lib${output.lib.name}.jnilib"><isset property="isOSX"/></condition>
-@@ -605,7 +612,7 @@
+@@ -605,7 +619,7 @@
          <srcfiles dir= "${src.jcpp}"  includes="**"/>
          <srcfiles dir= "${c.grammar}" includes="*.g"/>
          <srcfiles dir= "${j.grammar}" includes="*.g"/>
@@ -37,7 +44,7 @@
        </uptodate>
        <uptodate property="gluegen.build.skip.java2">
          <srcfiles dir= "."            includes="*.xml"/>
-@@ -613,7 +620,7 @@
+@@ -613,7 +627,7 @@
          <srcfiles dir= "${src.jcpp}"  includes="**"/>
          <srcfiles dir= "${c.grammar}" includes="*.g"/>
          <srcfiles dir= "${j.grammar}" includes="*.g"/>
@@ -46,7 +53,7 @@
        </uptodate>
        <condition property="gluegen.build.skip.java" value="true">
          <or>
-@@ -763,7 +770,7 @@
+@@ -763,7 +777,7 @@
      </copy>
  
      <!-- Build gluegen.jar. -->
@@ -55,7 +62,7 @@
        <service type="javax.annotation.processing.Processor">
          <provider classname="com.jogamp.gluegen.structgen.CStructAnnotationProcessor"/>
        </service>
-@@ -842,7 +849,7 @@
+@@ -842,7 +856,7 @@
      </copy>
  
      <!-- Build gluegen-rt.jar. -->
