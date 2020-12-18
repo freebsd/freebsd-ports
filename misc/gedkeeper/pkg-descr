@@ -1,0 +1,14 @@
+GEDKeeper is a program for working with personal genealogical databases.
+
+The program is designed with an extremely simple, intuitive interface,
+and provides many features including, but not limited to, the following:
+
+  * Full support of the GEDCOM 5.5.1 standard
+  * No restrictions on the number of persons and generations
+  * Allows pedigree generation
+  * Can build several tree species, as well as print and save their images
+  * Provides fast navigation, filtering, and searching
+  * Able to add multimedia materials
+  * An output of geographic data using Google maps
+
+WWW: https://gedkeeper.github.io/
