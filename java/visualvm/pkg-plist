@@ -292,6 +292,7 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/modules/ext/stagent.jar
 %%DATADIR%%/visualvm/modules/locale/org-netbeans-core-windows_visualvm.jar
 %%DATADIR%%/visualvm/modules/locale/org-netbeans-core_visualvm.jar
+%%DATADIR%%/visualvm/modules/locale/org-netbeans-modules-autoupdate-ui_visualvm.jar
 %%DATADIR%%/visualvm/modules/locale/org-netbeans-modules-profiler_visualvm.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-api-caching.jar
 %%DATADIR%%/visualvm/modules/org-graalvm-visualvm-application-views.jar
