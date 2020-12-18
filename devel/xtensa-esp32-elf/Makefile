@@ -3,6 +3,7 @@
 
 PORTNAME=	xtensa-esp32-elf
 DISTVERSION=	1.22.0.g20200907
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases/binutils:source1 \
 		GNU/binutils:source1 \
@@ -48,11 +49,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 		wget:ftp/wget
 
 USES=		autoreconf:build bison gmake libtool python
-USE_GCC=	7
+USE_GCC=	9
 USE_GITHUB=	yes
-
-# Limit to tier 1 platforms until switching to a version that builds with gcc9
-ONLY_FOR_ARCHS=	amd64 i386
 
 NO_MTREE=	yes
 SUBDIR=		crosstool-NG
