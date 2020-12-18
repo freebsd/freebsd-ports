@@ -15,9 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	msbuild:devel/msbuild
 TEST_DEPENDS=	libgdiplus>=0:x11-toolkits/libgdiplus
 
-USE_GITHUB=	yes
-
 USES=		gmake mono:nuget pkgconfig
+USE_GITHUB=	yes
 MAKE_JOBS_UNSAFE=	Build not parallelizable
 NUGET_LAYOUT=	legacy
 NO_ARCH=	yes
