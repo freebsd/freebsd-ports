@@ -1,0 +1,9 @@
+Mono is an open source implementation of .NET Development Framework. Its
+objective is to enable UNIX developers to build and deploy cross-platform
+.NET Applications. The project implements various technologies developed by
+Microsoft that have now been submitted to the ECMA for standardization.
+
+Mono provides the necessary software to develop and run .NET client and
+server applications on BSD, Linux, Solaris, Mac OS X, Windows, and Unix.
+
+WWW: http://www.mono-project.com/
