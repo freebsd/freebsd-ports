@@ -15,7 +15,7 @@ LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
 DEPRECATED=	Unsupported by upstream. Use GCC 9 or newer instead.
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
