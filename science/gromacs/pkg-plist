@@ -106,9 +106,9 @@ include/gromacs/utility/real.h
 %%LEGACY%%include/gromacs/utility/stringutil.h
 %%LEGACY%%include/gromacs/utility/unique_cptr.h
 %%LEGACY%%include/gromacs/version.h
-lib/libgmxapi%%SUFFIX_MPI%%.so
-lib/libgmxapi%%SUFFIX_MPI%%.so.0
-lib/libgmxapi%%SUFFIX_MPI%%.so.0.1.0
+lib/libgmxapi%%SUFFIX_MPI%%%%SUFFIX_D%%.so
+lib/libgmxapi%%SUFFIX_MPI%%%%SUFFIX_D%%.so.0
+lib/libgmxapi%%SUFFIX_MPI%%%%SUFFIX_D%%.so.0.1.0
 lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so
 lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.5
 lib/libgromacs%%SUFFIX_MPI%%%%SUFFIX_D%%.so.5.0.0
