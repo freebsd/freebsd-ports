@@ -51,7 +51,9 @@ FPC_DEFAULT?=		3.2.0
 .if ${ARCH} == "powerpcspe"
 GCC_DEFAULT?=		8
 .else
-GCC_DEFAULT?=		9
+# XXX MCL 20201013
+#GCC_DEFAULT?=		9
+GCC_DEFAULT?=		10
 .endif
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
@@ -75,7 +77,7 @@ LINUX_DEFAULT?=		c7
 LLVM_DEFAULT?=		90
 # Possible values: 5.1, 5.2, 5.3, 5.4
 LUA_DEFAULT?=		5.2
-# Possible values: 5.10 (not yet committed), 5.20, 6.8
+# Possible values: 5.10, 5.20, 6.8
 MONO_DEFAULT=		5.20
 # Possible values: 5.5, 5.6, 5.7, 8.0, 10.3m, 10.4m, 10.5m, 5.5p, 5.6p, 5.7p, 5.6w, 5.7w
 MYSQL_DEFAULT?=		5.7
