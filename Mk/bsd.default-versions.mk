@@ -45,7 +45,7 @@ COROSYNC_DEFAULT?=	2
 FIREBIRD_DEFAULT?=	2.5
 # Possible values: flang (experimental), gfortran
 FORTRAN_DEFAULT?=	gfortran
-# Possible values: 3.0.4
+# Possible values: 3.2.0
 FPC_DEFAULT?=		3.2.0
 # Possible values: 8, 9 (powerpcspe was dropped with GCC 9)
 .if ${ARCH} == "powerpcspe"
