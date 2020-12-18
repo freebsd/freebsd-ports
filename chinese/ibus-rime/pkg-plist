@@ -1,0 +1,11 @@
+libexec/ibus-rime/ibus-engine-rime
+%%DATADIR%%/icons/abc.png
+%%DATADIR%%/icons/disabled.png
+%%DATADIR%%/icons/keyboard.png
+%%DATADIR%%/icons/pen.png
+%%DATADIR%%/icons/reload.png
+%%DATADIR%%/icons/rime.png
+%%DATADIR%%/icons/sync.png
+%%DATADIR%%/icons/zh.png
+share/ibus/component/rime.xml
+share/rime-data/ibus_rime.yaml

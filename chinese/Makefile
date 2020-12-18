@@ -51,6 +51,7 @@
     SUBDIR += ibus-chewing
     SUBDIR += ibus-libpinyin
     SUBDIR += ibus-pinyin
+    SUBDIR += ibus-rime
     SUBDIR += ibus-table-chinese
     SUBDIR += jis2gb
     SUBDIR += kcfonts
