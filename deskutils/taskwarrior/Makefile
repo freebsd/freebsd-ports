@@ -3,8 +3,10 @@
 
 PORTNAME=	taskwarrior
 PORTVERSION=	2.5.1
-PORTREVISION=	5
 CATEGORIES=	deskutils
+
+MASTER_SITES=	https://taskwarrior.org/download/
+DISTNAME=	task-${PORTVERSION}
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Feature-rich command-line todo list manager
@@ -16,10 +18,6 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls
 TEST_DEPENDS=	faketime:devel/libfaketime
 
 USES=		compiler:c++11-lib cmake python:test shebangfix
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	taskwarrior
-GH_PROJECT=	task
 
 CMAKE_ARGS+=	-DTASK_DOCDIR:STRING=${DATADIR:S/${PREFIX}\///} \
 		-DTASK_MAN1DIR:STRING=man/man1 \
