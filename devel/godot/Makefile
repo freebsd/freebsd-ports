@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	godot
-DISTVERSION=	3.2.2
+DISTVERSION=	3.2.3
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	devel games
 
@@ -21,22 +21,21 @@ RUN_DEPENDS=	xdg-user-dir:devel/xdg-user-dirs \
 		xdg-open:devel/xdg-utils \
 		xmessage:x11/xmessage
 
-USES=		compiler:c++14-lang gl pkgconfig scons ssl xorg
+USES=		compiler:c++14-lang gl pkgconfig scons xorg
 USE_XORG=	x11 xcursor xi xinerama xrandr xrender
 USE_GL=		gl glew glu
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	godotengine
 
-MAKE_ARGS+=		platform=x11 builtin_libpng=False \
-			builtin_openssl=False verbose=True
+MAKE_ARGS+=		platform=x11 builtin_libpng=False verbose=True
 MAKE_ARGS+=		${MAKE_ARGS_${CHOSEN_COMPILER_TYPE}}
-MAKE_ARGS_clang=	use_llvm=True
+MAKE_ARGS_clang=	use_llvm=True use_lld=True
 CXXFLAGS_i386=		${CXXFLAGS_i386_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_i386_gcc=	-march=i586
 
 # option MONO doesn't build (needs 5.12+) so for now leave it out as an option
-OPTIONS_DEFINE=		EXAMPLES TOOLS
+OPTIONS_DEFINE=		EXAMPLES TOOLS UDEV
 OPTIONS_DEFAULT=	ALSA
 # Moved to devel/godot-tools
 OPTIONS_EXCLUDE?=	EXAMPLES TOOLS
@@ -47,8 +46,8 @@ AUDIO_DESC=		Audio support
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_MAKE_ARGS=		alsa=True
 ALSA_MAKE_ARGS_OFF=	alsa=False
-# master at 2/4 tagged for 3.2
-EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:57baf0a1b5d1:DEMOS
+# master at 10/7 tagged for 3.2
+EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:8d9d58f112d8:DEMOS
 EXAMPLES_PORTEXAMPLES=	*
 # mono support doesn't build at present
 MONO_BUILD_DEPENDS=	msbuild:devel/msbuild
@@ -67,6 +66,10 @@ TOOLS_DESKTOP_ENTRIES=	"Godot" "${COMMENT}" "${GODOTFILE}" \
 			"${GODOTFILE}" "Development;IDE;" ""
 TOOLS_PLIST_FILES=	share/pixmaps/${GODOTFILE}.png \
 			share/pixmaps/${GODOTFILE}.svg
+UDEV_DESC=		Libudev support (Joystick)
+UDEV_LIB_DEPENDS=	libudev.so:devel/libudev-devd
+UDEV_MAKE_ARGS=		udev=True
+UDEV_MAKE_ARGS_OFF=	udev=False
 
 GODOTFILE=		${PORTNAME}${PKGNAMESUFFIX}
 PLIST_FILES=		bin/${GODOTFILE}
