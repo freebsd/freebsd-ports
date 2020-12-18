@@ -1,0 +1,11 @@
+--- Makefile.libretro.orig	2020-10-07 22:50:55 UTC
++++ Makefile.libretro
+@@ -39,7 +39,7 @@ ifeq ($(platform), android)
+    SHARED :=  -Wl,--fix-cortex-a8 -llog --shared -Wl,--version-script=$(CORE_DIR)/libretro/core/link.T -Wl,--no-undefined
+ 
+ else ifeq ($(platform), unix)
+-   CC = gcc
++   CC?= gcc
+  TARGET := $(TARGET_NAME)_libretro.so
+    fpic := -fPIC
+    ifneq ($(findstring SunOS,$(shell uname -a)),)
