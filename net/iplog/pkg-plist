@@ -1,4 +1,0 @@
-sbin/iplog
-@sample etc/iplog.conf.sample
-man/man5/iplog.conf.5.gz
-man/man8/iplog.8.gz

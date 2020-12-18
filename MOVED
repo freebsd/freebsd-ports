@@ -15794,3 +15794,5 @@ www/py-pylons||2020-12-12|Has expired: Uses deprecated version of python
 www/py-qpy||2020-12-12|Has expired: Uses deprecated version of python
 news/py-sabyenc|news/py-sabyenc3|2020-12-12|Has expired: Uses deprecated version of python
 devel/py-gobject||2020-12-12|Has expired: Uses deprecated version of python
+games/gemrb||2020-12-18|Has expired: Uses deprecated version of python
+net/iplog||2020-12-18|Has expired: Unmaintained and dead upstream. Does not build with modern compilers.

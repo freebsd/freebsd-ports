@@ -307,7 +307,6 @@
     SUBDIR += gbrainy
     SUBDIR += gcompris-qt
     SUBDIR += gemdropx
-    SUBDIR += gemrb
     SUBDIR += genact
     SUBDIR += gigalomania
     SUBDIR += gillo
