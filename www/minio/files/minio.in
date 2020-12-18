@@ -9,7 +9,7 @@
 # minio_enable (bool):          Set to "NO" by default.
 #                               Set it to "YES" to enable minio
 # minio_config (path):          Set to "%%ETCDIR%%" by default
-#                               Set to directory to store minio config
+#                               Set to directory to store minio config (deprecated)
 # minio_certs (path):           Set to "%%ETCDIR%%/certs" by default
 #                               Set to directory to certs dir
 # minio_disks (path):           Set to "/var/db/minio" by default.
@@ -40,7 +40,6 @@ rcvar=minio_enable
 load_rc_config ${name}
 
 : ${minio_enable:="NO"}
-: ${minio_config="%%ETCDIR%%"}
 : ${minio_certs="%%ETCDIR%%/certs"}
 : ${minio_disks="%%DBDIR%%"}
 : ${minio_address=":9000"}
@@ -67,27 +66,36 @@ else
     minio_syslog_output_flags="-o ${minio_logfile}"
 fi
 
+# legacy compatibility
+if [ -n "${minio_config}" ]; then
+    minio_config_flag="-C \"${minio_config}\""
+fi
+
 pidfile="/var/run/${name}.pid"
 procname="%%PREFIX%%/bin/minio"
 command="/usr/sbin/daemon"
-command_args="-f -t ${name} ${minio_syslog_output_flags} -p ${pidfile} /usr/bin/env ${minio_env} ${procname} -C \"${minio_config}\" -S \"${minio_certs}\" --quiet server --address=\"${minio_address}\" ${minio_disks} ${minio_args}"
+command_args="-f -t ${name} ${minio_syslog_output_flags} -p ${pidfile} /usr/bin/env ${minio_env} ${procname} ${minio_config_flag} -S \"${minio_certs}\" --quiet server --address=\"${minio_address}\" ${minio_disks} ${minio_args}"
 
 minio_start_precmd()
 {
     if [ ! -e "${pidfile}" ]; then
-        install -o "${minio_user}" -g "${minio_group}" "/dev/null" "${pidfile}"
+        install -m 0600 -o "${minio_user}" -g "${minio_group}" /dev/null "${pidfile}"
     fi
 
-    if [ ! -d "${minio_disks}" ]; then
-        install -d -o "${minio_user}" -g "${minio_group}" "${minio_disks}"
+    if echo "${minio_disks}" | egrep -q -v '^[^/]|\.{3}'; then
+        for disk in "${minio_disks}"; do
+            if [ ! -d "${disk}" ]; then
+                install -d -m 0750 -o "${minio_user}" -g "${minio_group}" "${disk}"
+            fi
+        done
     fi
 
-    if [ ! -d "${minio_config}" ]; then
-        install -d -o "${minio_user}" -g "${minio_group}" "${minio_config}"
+    if [ -n "${minio_config}" -a ! -d "${minio_config}" ]; then
+        install -d -m 0750 -o "${minio_user}" -g "${minio_group}" "${minio_config}"
     fi
 
     if ! checkyesno minio_syslog_enable && [ ! -e "${minio_logfile}" ]; then
-        install -o "${minio_user}" -g "${minio_group}" "/dev/null" "${minio_logfile}"
+        install -m 0640 -o "${minio_user}" -g "${minio_group}" /dev/null "${minio_logfile}"
     fi
 }
 
