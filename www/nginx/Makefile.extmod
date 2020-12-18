@@ -65,7 +65,7 @@ GRIDFS_GH_TUPLE=	technowledgy:nginx_http_gridfs_module:7970bab:gridfs \
 			10gen-archive:mongo-c-driver-legacy:f06669b:mongo_c
 GRIDFS_VARS=		DSO_EXTMODS+=gridfs
 
-HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:085fbbc:headers_more
+HEADERS_MORE_GH_TUPLE=		openresty:headers-more-nginx-module:d6d7eba:headers_more
 HEADERS_MORE_VARS=		DSO_EXTMODS+=headers_more
 
 HTTP_ACCEPT_LANGUAGE_GH_TUPLE=	dvershinin:nginx_accept_language_module:5683967:accept_language
