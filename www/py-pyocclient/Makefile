@@ -6,7 +6,7 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	che@bein.link
+MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Python Owncloud client library
 
 LICENSE=	MIT

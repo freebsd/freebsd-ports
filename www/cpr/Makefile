@@ -9,7 +9,7 @@ CATEGORIES=	www
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES=	8eb16e267843d18834bf42d9ae4ccfb58f34bdb5.patch:-p1
 
-MAINTAINER=	che@bein.link
+MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Curl for people, a simple wrapper around libcurl
 
 LICENSE=	MIT

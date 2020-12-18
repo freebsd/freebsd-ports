@@ -6,7 +6,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	che@bein.link
+MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Query metadatdata from sdists / bdists / installed packages
 
 LICENSE=	MIT

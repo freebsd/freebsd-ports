@@ -6,7 +6,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	che@bein.link
+MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Python subprocess interface
 
 LICENSE=	MIT
