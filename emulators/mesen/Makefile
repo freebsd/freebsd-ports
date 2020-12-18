@@ -62,6 +62,12 @@ MONO_DESKTOP_ENTRIES=	"Mesen" "NES/Famicom Emulator" \
 
 LIBRETRO_ALL_TARGET=	libretro
 
+.include <bsd.port.pre.mk>
+
+.if defined(MONO_DEFAULT) && ${MONO_DEFAULT} > 5.10
+BROKEN=		fails to build with Mono version ${MONO_DEFAULT}: The imported project "/usr/local/lib/mono/msbuild/15.0/bin/Roslyn/Microsoft.CSharp.Core.targets" was not found
+.endif
+
 do-install: 	# empty to avoid default
 
 do-install-MONO-on:
@@ -87,4 +93,4 @@ do-install-LIBRETRO-on:
 	${INSTALL_LIB} ${WRKSRC}/bin/mesen_libretro.${MESEN_ARCH}.so \
 			${STAGEDIR}${PREFIX}/lib/libretro/mesen_libretro.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

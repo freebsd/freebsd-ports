@@ -55,6 +55,12 @@ INSTALL_TARGET=	install install-man-page \
 		install-linux-mime install-linux-shortcuts
 PORTDATA=	*
 
+.include <bsd.port.pre.mk>
+
+.if defined(MONO_DEFAULT) && ${MONO_DEFAULT} > 5.10
+BROKEN=		fails to build with Mono version ${MONO_DEFAULT}: The imported project "/usr/local/lib/mono/msbuild/15.0/bin/Roslyn/Microsoft.CSharp.Core.targets" was not found
+.endif
+
 post-extract:
 	${CP} ${_DISTDIR}/${DISTFILES:C/:.*//:MIP2LOCATION-*} ${WRKSRC}
 
@@ -77,4 +83,4 @@ do-test:
 		${NUGET_PACKAGEDIR}/NUnit.ConsoleRunner/tools/nunit3-console.exe \
 		--noresult OpenRA.Test.nunit)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

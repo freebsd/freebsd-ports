@@ -50,6 +50,12 @@ PORTDOCS=	changelog.md credits.md routes-and-trains.txt
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if defined(MONO_DEFAULT) && ${MONO_DEFAULT} > 5.10
+BROKEN=		fails to build with Mono version ${MONO_DEFAULT}: The imported project "/usr/local/lib/mono/msbuild/15.0/bin/Roslyn/Microsoft.CSharp.Core.targets" was not found
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/Unix/s,bash,sh,' \
 		${WRKSRC}/source/OpenBVE/OpenBve.csproj
@@ -79,4 +85,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/debian/,} \
 		${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
