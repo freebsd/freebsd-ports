@@ -7,7 +7,7 @@ CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	linimon@FreeBSD.org
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Open source implementation of .NET Development Framework
 
 LICENSE=	MIT
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 		sqlite3>0:databases/sqlite3 \
 		zip>=0:archivers/zip
 
-CONFLICTS_INSTALL=	czmq-3*
+CONFLICTS_INSTALL=	czmq-3* mono5.10 mono6.8
 
 USES=	autoreconf bison compiler:c11 cpe gmake iconv libtool \
 	pathfix perl5 python:3.6+ shebangfix tar:xz
