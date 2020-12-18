@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	zerotier
-DISTVERSION=	1.4.6
+DISTVERSION=	1.6.2
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/zerotier/zerotierone/pull/
-PATCHFILES=	1043.patch:-p1
+# PATCHFILES=	1043.patch:-p1
+PATCHFILES=	1304.patch:-p1
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Network virtualization everywhere
