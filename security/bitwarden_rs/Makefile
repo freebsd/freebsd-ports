@@ -1,0 +1,373 @@
+# Created by: Michael Reifenberger <mr@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	bitwarden_rs
+# DISTVERSIONPREFIX=	v
+DISTVERSION=	1.17.0
+CATEGORIES=	security
+
+MAINTAINER=	mr@FreeBSD.org
+COMMENT=	Bitwarden compatible backend server
+
+LICENSE=        GPLv3
+LICENSE_FILE=   ${WRKSRC}/LICENSE.txt
+
+LIB_DEPENDS+=   libcapnp.so:devel/capnproto
+LIB_DEPENDS+=   libgmp.so:math/gmp
+LIB_DEPENDS+=   libnettle.so:security/nettle
+
+USES=		cargo ssl pgsql
+
+PLIST_FILES=    bin/${PORTNAME}
+# PORTDATA=       *
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dani-garcia
+CARGO_FEATURES=	postgresql sqlite #vendored_openssl
+#CARGO_BUILD_ARGS+=	--release
+CARGO_USE_GITHUB=       yes
+CARGO_ENV+=	RUSTC_BOOTSTRAP=1
+GH_TUPLE+=	servo:rust-url:7f1bd6ce1c2fde599a757302a843a60e714c5f72:dataurl
+GH_TUPLE+=	SergioBenitez:Devise:e58b3ac9afc3b6ff10a8aaf02a3e768a8f530089:devise
+GH_TUPLE+=	SergioBenitez:Rocket:1010f6a2a88fac899dec0cd2f642156908038a53:rocket
+CARGO_GIT_SUBDIR+=	dataurl:data-url:data-url
+CARGO_GIT_SUBDIR+=	devise:devise:lib
+CARGO_GIT_SUBDIR+=	rocket:rocket:core/lib
+CARGO_GIT_SUBDIR+=	rocket:rocket_contrib:contrib/lib
+CARGO_CRATES=	addr2line-0.13.0 \
+		adler-0.2.3 \
+		aho-corasick-0.7.13 \
+		ansi_term-0.11.0 \
+		arrayvec-0.5.1 \
+		atty-0.2.14 \
+		autocfg-0.1.7 \
+		autocfg-1.0.1 \
+		backtrace-0.3.51 \
+		base-x-0.2.6 \
+		base64-0.9.3 \
+		base64-0.10.1 \
+		base64-0.11.0 \
+		base64-0.12.3 \
+		binascii-0.1.4 \
+		bitflags-1.2.1 \
+		block-buffer-0.7.3 \
+		block-padding-0.1.5 \
+		buf_redux-0.8.4 \
+		bumpalo-3.4.0 \
+		byte-tools-0.1.3 \
+		byte-tools-0.3.1 \
+		byteorder-1.3.4 \
+		bytes-0.4.12 \
+		bytes-0.5.6 \
+		cc-1.0.60 \
+		cfg-if-0.1.10 \
+		chashmap-2.2.2 \
+		chrono-0.4.19 \
+		chrono-tz-0.5.3 \
+		clap-2.33.3 \
+		cloudabi-0.0.3 \
+		cloudabi-0.1.0 \
+		const_fn-0.4.2 \
+		constant_time_eq-0.1.5 \
+		cookie-0.13.3 \
+		core-foundation-0.7.0 \
+		core-foundation-sys-0.7.0 \
+		crypto-mac-0.3.0 \
+		crypto-mac-0.7.0 \
+		data-encoding-2.3.0 \
+		diesel-1.4.5 \
+		diesel_derives-1.4.1 \
+		diesel_migrations-1.4.0 \
+		digest-0.5.2 \
+		digest-0.8.1 \
+		digest-buffer-0.3.1 \
+		discard-1.0.4 \
+		dotenv-0.15.0 \
+		dtoa-0.4.6 \
+		encoding_rs-0.8.24 \
+		error-chain-0.11.0 \
+		fake-simd-0.1.2 \
+		fern-0.6.0 \
+		filetime-0.2.12 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		fsevent-0.4.0 \
+		fsevent-sys-2.0.1 \
+		fuchsia-cprng-0.1.1 \
+		fuchsia-zircon-0.3.3 \
+		fuchsia-zircon-sys-0.3.3 \
+		futf-0.1.4 \
+		futures-0.3.5 \
+		futures-channel-0.3.5 \
+		futures-core-0.3.5 \
+		futures-executor-0.3.5 \
+		futures-io-0.3.5 \
+		futures-macro-0.3.5 \
+		futures-sink-0.3.5 \
+		futures-task-0.3.5 \
+		futures-util-0.3.5 \
+		generic-array-0.7.3 \
+		generic-array-0.12.3 \
+		getrandom-0.1.15 \
+		gimli-0.22.0 \
+		glob-0.3.0 \
+		h2-0.2.6 \
+		handlebars-3.5.0 \
+		hashbrown-0.9.1 \
+		heck-0.3.1 \
+		hermit-abi-0.1.16 \
+		hmac-0.1.1 \
+		hmac-0.7.1 \
+		hostname-0.3.1 \
+		html5ever-0.22.5 \
+		http-0.2.1 \
+		http-body-0.3.1 \
+		httparse-1.3.4 \
+		httpdate-0.3.2 \
+		hyper-0.10.16 \
+		hyper-0.13.8 \
+		hyper-sync-rustls-0.3.0-rc.6 \
+		hyper-tls-0.4.3 \
+		hyperx-1.1.0 \
+		idna-0.1.5 \
+		idna-0.2.0 \
+		indexmap-1.6.0 \
+		inotify-0.7.1 \
+		inotify-sys-0.1.3 \
+		instant-0.1.7 \
+		iovec-0.1.4 \
+		ipnet-2.3.0 \
+		itoa-0.4.6 \
+		js-sys-0.3.45 \
+		jsonwebtoken-7.2.0 \
+		kernel32-sys-0.2.2 \
+		language-tags-0.2.2 \
+		lazy_static-1.4.0 \
+		lazycell-1.3.0 \
+		lettre-0.10.0-alpha.2 \
+		lexical-core-0.7.4 \
+		libc-0.2.78 \
+		libsqlite3-sys-0.18.0 \
+		lock_api-0.4.1 \
+		log-0.3.9 \
+		log-0.4.11 \
+		mac-0.1.1 \
+		maplit-1.0.2 \
+		markup5ever-0.7.5 \
+		match_cfg-0.1.0 \
+		matches-0.1.8 \
+		maybe-uninit-2.0.0 \
+		memchr-2.3.3 \
+		migrations_internals-1.4.1 \
+		migrations_macros-1.4.2 \
+		mime-0.2.6 \
+		mime-0.3.16 \
+		mime_guess-2.0.3 \
+		miniz_oxide-0.4.2 \
+		mio-0.6.22 \
+		mio-extras-2.0.6 \
+		miow-0.2.1 \
+		multipart-0.17.0 \
+		mysqlclient-sys-0.2.4 \
+		native-tls-0.2.4 \
+		net2-0.2.35 \
+		new_debug_unreachable-1.0.4 \
+		newline-converter-0.1.0 \
+		nodrop-0.1.14 \
+		nom-5.1.2 \
+		notify-4.0.15 \
+		num-bigint-0.2.6 \
+		num-derive-0.3.2 \
+		num-integer-0.1.43 \
+		num-traits-0.2.12 \
+		num_cpus-1.13.0 \
+		oath-0.10.2 \
+		object-0.20.0 \
+		once_cell-1.4.1 \
+		opaque-debug-0.2.3 \
+		openssl-0.10.30 \
+		openssl-probe-0.1.2 \
+		openssl-src-111.11.0+1.1.1h \
+		openssl-sys-0.9.58 \
+		owning_ref-0.3.3 \
+		parking_lot-0.4.8 \
+		parking_lot-0.11.0 \
+		parking_lot_core-0.2.14 \
+		parking_lot_core-0.8.0 \
+		parse-zoneinfo-0.3.0 \
+		paste-1.0.1 \
+		pear-0.1.4 \
+		pear_codegen-0.1.4 \
+		pem-0.8.1 \
+		percent-encoding-1.0.1 \
+		percent-encoding-2.1.0 \
+		pest-2.1.3 \
+		pest_derive-2.1.0 \
+		pest_generator-2.1.3 \
+		pest_meta-2.1.3 \
+		phf-0.7.24 \
+		phf_codegen-0.7.24 \
+		phf_generator-0.7.24 \
+		phf_shared-0.7.24 \
+		pin-project-0.4.25 \
+		pin-project-internal-0.4.25 \
+		pin-project-lite-0.1.10 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.18 \
+		ppv-lite86-0.2.9 \
+		pq-sys-0.4.6 \
+		precomputed-hash-0.1.1 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.18 \
+		proc-macro-nested-0.1.6 \
+		proc-macro2-0.4.30 \
+		proc-macro2-1.0.24 \
+		quick-error-1.2.3 \
+		quick-error-2.0.0 \
+		quote-0.6.13 \
+		quote-1.0.7 \
+		quoted_printable-0.4.2 \
+		r2d2-0.8.9 \
+		rand-0.4.6 \
+		rand-0.6.5 \
+		rand-0.7.3 \
+		rand_chacha-0.1.1 \
+		rand_chacha-0.2.2 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.1.0 \
+		rand_hc-0.2.0 \
+		rand_isaac-0.1.1 \
+		rand_jitter-0.1.4 \
+		rand_os-0.1.3 \
+		rand_pcg-0.1.2 \
+		rand_xorshift-0.1.1 \
+		rdrand-0.4.0 \
+		redox_syscall-0.1.57 \
+		regex-1.3.9 \
+		regex-syntax-0.6.18 \
+		remove_dir_all-0.5.3 \
+		reqwest-0.10.8 \
+		ring-0.16.15 \
+		rmp-0.8.9 \
+		rmpv-0.4.5 \
+		rustc-demangle-0.1.16 \
+		rustc-hex-1.0.0 \
+		rustc_version-0.2.3 \
+		rustls-0.16.0 \
+		ryu-1.0.5 \
+		safemem-0.3.3 \
+		same-file-1.0.6 \
+		schannel-0.1.19 \
+		scheduled-thread-pool-0.2.5 \
+		scopeguard-1.1.0 \
+		sct-0.6.0 \
+		security-framework-0.4.4 \
+		security-framework-sys-0.4.3 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		serde-1.0.116 \
+		serde_derive-1.0.116 \
+		serde_json-1.0.58 \
+		serde_urlencoded-0.6.1 \
+		sha-1-0.3.4 \
+		sha-1-0.8.2 \
+		sha1-0.6.0 \
+		sha2-0.5.3 \
+		simple_asn1-0.4.1 \
+		siphasher-0.2.3 \
+		slab-0.4.2 \
+		smallvec-0.6.13 \
+		smallvec-1.4.2 \
+		socket2-0.3.15 \
+		soup-0.5.0 \
+		spin-0.5.2 \
+		stable_deref_trait-1.2.0 \
+		standback-0.2.10 \
+		state-0.4.1 \
+		static_assertions-1.1.0 \
+		stdweb-0.4.20 \
+		stdweb-derive-0.5.3 \
+		stdweb-internal-macros-0.2.9 \
+		stdweb-internal-runtime-0.1.5 \
+		string_cache-0.7.5 \
+		string_cache_codegen-0.4.4 \
+		string_cache_shared-0.3.0 \
+		strsim-0.8.0 \
+		structopt-0.3.18 \
+		structopt-derive-0.4.11 \
+		subtle-1.0.0 \
+		subtle-2.3.0 \
+		syn-0.15.44 \
+		syn-1.0.42 \
+		syslog-4.0.1 \
+		tempfile-3.1.0 \
+		tendril-0.4.1 \
+		textwrap-0.11.0 \
+		thread_local-1.0.1 \
+		threadpool-1.8.1 \
+		time-0.1.44 \
+		time-0.2.22 \
+		time-macros-0.1.1 \
+		time-macros-impl-0.1.1 \
+		tinyvec-0.3.4 \
+		tokio-0.2.22 \
+		tokio-tls-0.3.1 \
+		tokio-util-0.3.1 \
+		toml-0.4.10 \
+		tower-service-0.3.0 \
+		tracing-0.1.21 \
+		tracing-core-0.1.17 \
+		traitobject-0.1.0 \
+		try-lock-0.2.3 \
+		twoway-0.1.8 \
+		typeable-0.1.2 \
+		typenum-1.12.0 \
+		u2f-0.2.0 \
+		ucd-trie-0.1.3 \
+		unicase-1.4.2 \
+		unicase-2.6.0 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.13 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.1.0 \
+		unicode-xid-0.2.1 \
+		untrusted-0.7.1 \
+		url-1.7.2 \
+		url-2.1.1 \
+		utf-8-0.7.5 \
+		uuid-0.8.1 \
+		vcpkg-0.2.10 \
+		vec_map-0.8.2 \
+		version_check-0.1.5 \
+		version_check-0.9.2 \
+		walkdir-2.3.1 \
+		want-0.3.0 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.68 \
+		wasm-bindgen-backend-0.2.68 \
+		wasm-bindgen-futures-0.4.18 \
+		wasm-bindgen-macro-0.2.68 \
+		wasm-bindgen-macro-support-0.2.68 \
+		wasm-bindgen-shared-0.2.68 \
+		web-sys-0.3.45 \
+		webpki-0.21.3 \
+		webpki-roots-0.18.0 \
+		winapi-0.2.8 \
+		winapi-0.3.9 \
+		winapi-build-0.1.1 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		winreg-0.7.0 \
+		ws-0.9.1 \
+		ws2_32-sys-0.2.1 \
+		yansi-0.5.0 \
+		yubico-0.9.1
+
+.include <bsd.port.mk>
