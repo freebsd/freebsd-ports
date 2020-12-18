@@ -4155,6 +4155,7 @@
     SUBDIR += py-b2sdk
     SUBDIR += py-babel
     SUBDIR += py-babelfish
+    SUBDIR += py-babi_grammars
     SUBDIR += py-backcall
     SUBDIR += py-backports
     SUBDIR += py-backports.csv
