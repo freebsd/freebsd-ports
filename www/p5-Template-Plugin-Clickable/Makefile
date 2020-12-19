@@ -19,4 +19,6 @@ RUN_DEPENDS=	p5-URI-Find>=0.13:textproc/p5-URI-Find \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
