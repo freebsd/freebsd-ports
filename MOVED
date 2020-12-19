@@ -15796,3 +15796,4 @@ news/py-sabyenc|news/py-sabyenc3|2020-12-12|Has expired: Uses deprecated version
 devel/py-gobject||2020-12-12|Has expired: Uses deprecated version of python
 games/gemrb||2020-12-18|Has expired: Uses deprecated version of python
 net/iplog||2020-12-18|Has expired: Unmaintained and dead upstream. Does not build with modern compilers.
+www/rubygem-rack21|www/rubygem-rack|2020-12-18|Obsolete, please use www/rubygem-rack
