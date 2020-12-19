@@ -52,7 +52,7 @@ SFCGAL_LIB_DEPENDS=		libSFCGAL.so:databases/sfcgal
 SFCGAL_CONFIGURE_WITH=		sfcgal=${LOCALBASE}/bin/sfcgal-config
 TOPOLOGY_CONFIGURE_WITH=	topology
 
-CONFLICTS_INSTALL=	postgis20 postgis21 postgis22 postgis23 postgis24 postgis30
+CONFLICTS_INSTALL=	postgis20 postgis21 postgis22 postgis23 postgis24 postgis30 postgis31
 
 VER=		${PORTVERSION:R}
 
