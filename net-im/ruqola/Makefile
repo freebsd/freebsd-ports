@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruqola
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
