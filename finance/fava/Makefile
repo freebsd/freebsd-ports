@@ -2,6 +2,7 @@
 
 PORTNAME=	fava
 PORTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	CHEESESHOP
 
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@$
 RUN_DEPENDS=	beancount>=2.1.3:finance/beancount \
 		${PYTHON_PKGNAMEPREFIX}Babel>=2.6.0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cheroot>0:www/py-cheroot@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Flask-Babel>=0.10.1:devel/py-flask-babel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flask-babel>=0.10.1:devel/py-flask-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask>=0.10.1:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
