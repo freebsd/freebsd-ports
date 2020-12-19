@@ -5,8 +5,8 @@ bin/crypt_file
 %%SITE_ARCH%%/PAR/Filter/Crypto.pm
 %%SITE_ARCH%%/auto/Filter/Crypto/CryptFile/CryptFile.so
 %%SITE_ARCH%%/auto/Filter/Crypto/Decrypt/Decrypt.so
+%%PERL5_MAN1%%/crypt_file.1.gz
 %%PERL5_MAN3%%/Filter::Crypto.3.gz
 %%PERL5_MAN3%%/Filter::Crypto::CryptFile.3.gz
 %%PERL5_MAN3%%/Filter::Crypto::Decrypt.3.gz
 %%PERL5_MAN3%%/PAR::Filter::Crypto.3.gz
-%%PERL5_MAN1%%/crypt_file.1.gz

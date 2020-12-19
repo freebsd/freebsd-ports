@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Filter-Crypto
-PORTVERSION=	2.08
+PORTVERSION=	2.09
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,7 @@ TEST_DEPENDS=	p5-CPAN-Changes>=0:devel/p5-CPAN-Changes
 
 USES=		perl5 ssl
 USE_PERL5=	configure
+
 CONFIGURE_ARGS=	--prefix-dir=${OPENSSLBASE} --defaults
 
 .include <bsd.port.mk>
