@@ -1,11 +1,13 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	Flask-Babel
+PORTNAME=	flask-babel
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Flask-Babel-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Adds i18n/l10n support to Flask applications
