@@ -1,9 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	20.07
-PORTREVISION=	1
+PORTVERSION=	20.12
 CATEGORIES=	net-im
+
+# To be removed in the next update
+# See https://github.com/processone/ejabberd/pull/3452
+PATCH_SITES=	https://github.com/processone/ejabberd/commit/
+PATCHFILES=	2f3063def69c1d120262f6dd7a26ce59b6e6569c.patch:-p1
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
@@ -47,7 +51,7 @@ GH_TUPLE=	erlang-lager:lager:${LAGER_VER}:lager/deps/lager \
 		potatosalad:erlang-jose:${JOSE_VER}:jose/deps/jose \
 		processone:eimp:${EIMP_VER}:eimp/deps/eimp \
 		DeadZen:goldrush:${GOLDRUSH_VER}:goldrush/deps/goldrush \
-		dvv:base64url:v${BASE64URL_VER}:base64url/deps/base64url \
+		dvv:base64url:${BASE64URL_VER}:base64url/deps/base64url \
 		processone:ezlib:${EZLIB_VER}:ezlib/deps/ezlib \
 		processone:pkix:${PKIX_VER}:pkix/deps/pkix \
 		processone:mqtree:${MQTREE_VER}:mqtree/deps/mqtree \
@@ -99,35 +103,35 @@ SUB_LIST=	${SUBS} \
 		EJABBERD_LIBDIR=${EJABBERD_LIBDIR}
 SHEBANG_FILES=	${WRKSRC}/ejabberdctl.template
 
-BASE64URL_VER=	1.0
-CACHE_TAB_VER=	1.0.25
-EIMP_VER=	1.0.17
-EPAM_VER=	1.0.9
+BASE64URL_VER=	1.0.1
+CACHE_TAB_VER=	1.0.26
+EIMP_VER=	1.0.18
+EPAM_VER=	1.0.10
 EREDIS_VER=	1.0.8
-ESIP_VER=	1.0.37
-EZLIB_VER=	1.0.8
-FAST_TLS_VER=	1.1.8
-FAST_XML_VER=	1.1.43
-FAST_YAML_VER=	1.0.27
+ESIP_VER=	1.0.39
+EZLIB_VER=	1.0.9
+FAST_TLS_VER=	1.1.10
+FAST_XML_VER=	1.1.45
+FAST_YAML_VER=	1.0.29
 GOLDRUSH_VER=	0.1.9
 IDNA_VER=	6.0.0
 JIFFY_VER=	1.0.5
 JOSE_VER=	1.9.0
 LAGER_VER=	3.6.10
 LUERL_VER=	0.3
-MQTREE_VER=	1.0.10
-P1_ACME_VER=	1.0.8
-P1_MYSQL_VER=	1.0.16
-P1_OAUTH2_VER=	0.6.7
+MQTREE_VER=	1.0.11
+P1_ACME_VER=	1.0.10
+P1_MYSQL_VER=	1.0.17
+P1_OAUTH2_VER=	0.6.8
 P1_PGSQL_VER=	1.1.10
-P1_UTILS_VER=	1.0.20
-PKIX_VER=	1.0.6
-SQLITE3_VER=	1.1.8
-STRINGPREP_VER=	1.0.22
-STUN_VER=	1.0.37
+P1_UTILS_VER=	1.0.21
+PKIX_VER=	1.0.7
+SQLITE3_VER=	1.1.9
+STRINGPREP_VER=	1.0.24
+STUN_VER=	1.0.40
 UNICODE_UTIL_COMPAT_VER=	0.4.1
-XMPP_VER=	1.4.9
-YCONF_VER=	1.0.7
+XMPP_VER=	1.5.1
+YCONF_VER=	1.0.9
 
 OPTIONS_SUB=		yes
 SIP_DESC=	SIP support
@@ -169,8 +173,6 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's,^convert,${LOCALBASE}/bin/convert,' ${WRKSRC}/tools/captcha.sh
 	@${REINPLACE_CMD} -e 's,%%PORTVERSION%%,${PORTVERSION},' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e '/vsn/s/git/"${JIFFY_VER}"/' ${WRKSRC}/deps/jiffy/src/jiffy.app.src
-	@${REINPLACE_CMD} -e '/vsn/s/0.0.1/${BASE64URL_VER}/' ${WRKSRC}/deps/base64url/src/base64url.app.src
 .if ${OSVERSION} < 1200000
 	# Disable LTO required by dependency, not available by default in < 12.x
 	@${REINPLACE_CMD} -e 's/$$FLTO_FLAG//' ${WRKSRC}/deps/jiffy/rebar.config
@@ -179,8 +181,6 @@ post-patch:
 pre-configure:
 	cd ${WRKSRC} && ${SH} autogen.sh
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-		${WRKSRC}/ejabberdctl.template
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}
@@ -199,7 +199,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/priv/bin/captcha.sh \
 		${STAGEDIR}${DATADIR}
-	@${REINPLACE_CMD} -r -e '/captcha_cmd:/s,"[^"]+","${DATADIR}/captcha.sh",' ${STAGEDIR}${ETCDIR}/${PORTNAME}.yml.example
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/eimp-${EIMP_VER}/priv/bin/eimp
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${EJABBERD_LIBDIR}/${PORTNAME}-${PORTVERSION}/lib/eimp-${EIMP_VER}/priv/bin/eimp
 
