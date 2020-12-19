@@ -1,0 +1,3 @@
+TypeProf is a type analysis tool for Ruby code based on abstract interpretation.
+
+WWW: https://github.com/ruby/typeprof

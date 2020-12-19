@@ -6600,6 +6600,7 @@
     SUBDIR += rubygem-tty-which
     SUBDIR += rubygem-turn
     SUBDIR += rubygem-typed-array
+    SUBDIR += rubygem-typeprof
     SUBDIR += rubygem-tzinfo
     SUBDIR += rubygem-tzinfo-data
     SUBDIR += rubygem-tzinfo1
