@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stixfonts
-PORTVERSION=	2.0.2
+PORTVERSION=	2.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fonts
 
@@ -21,15 +21,17 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-FONTNAME=	stix
+FONTNAME=	STIX
 
 OPTIONS_DEFINE=	DOCS
 
-PORTDOCS=	STIX_${PORTVERSION}_release_notes.txt
+PORTDOCS=	FONTLOG.txt STIX-Two_glyph_sets.xlsx STIXTwoMath-Regular.pdf	\
+		STIXTwoText-Regular.pdf
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} OTF/* WOFF/* ${STAGEDIR}${FONTSDIR}
+	cd ${WRKSRC} &&	\
+	${FIND} fonts -type file -exec ${INSTALL_DATA} {} ${STAGEDIR}${FONTSDIR} \;
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
