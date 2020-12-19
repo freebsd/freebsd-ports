@@ -103,8 +103,6 @@
 %%SITE_PERL%%/DateTime/Locale/ckb_IR.pod
 %%SITE_PERL%%/DateTime/Locale/cs.pod
 %%SITE_PERL%%/DateTime/Locale/cs_CZ.pod
-%%SITE_PERL%%/DateTime/Locale/cu.pod
-%%SITE_PERL%%/DateTime/Locale/cu_RU.pod
 %%SITE_PERL%%/DateTime/Locale/cy.pod
 %%SITE_PERL%%/DateTime/Locale/cy_GB.pod
 %%SITE_PERL%%/DateTime/Locale/da.pod
@@ -122,6 +120,8 @@
 %%SITE_PERL%%/DateTime/Locale/de_LU.pod
 %%SITE_PERL%%/DateTime/Locale/dje.pod
 %%SITE_PERL%%/DateTime/Locale/dje_NE.pod
+%%SITE_PERL%%/DateTime/Locale/doi.pod
+%%SITE_PERL%%/DateTime/Locale/doi_IN.pod
 %%SITE_PERL%%/DateTime/Locale/dsb.pod
 %%SITE_PERL%%/DateTime/Locale/dsb_DE.pod
 %%SITE_PERL%%/DateTime/Locale/dua.pod
@@ -592,8 +592,6 @@
 %%SITE_PERL%%/DateTime/Locale/pcm_NG.pod
 %%SITE_PERL%%/DateTime/Locale/pl.pod
 %%SITE_PERL%%/DateTime/Locale/pl_PL.pod
-%%SITE_PERL%%/DateTime/Locale/prg.pod
-%%SITE_PERL%%/DateTime/Locale/prg_001.pod
 %%SITE_PERL%%/DateTime/Locale/ps.pod
 %%SITE_PERL%%/DateTime/Locale/ps_AF.pod
 %%SITE_PERL%%/DateTime/Locale/ps_PK.pod
@@ -635,6 +633,8 @@
 %%SITE_PERL%%/DateTime/Locale/rw_RW.pod
 %%SITE_PERL%%/DateTime/Locale/rwk.pod
 %%SITE_PERL%%/DateTime/Locale/rwk_TZ.pod
+%%SITE_PERL%%/DateTime/Locale/sa.pod
+%%SITE_PERL%%/DateTime/Locale/sa_IN.pod
 %%SITE_PERL%%/DateTime/Locale/sah.pod
 %%SITE_PERL%%/DateTime/Locale/sah_RU.pod
 %%SITE_PERL%%/DateTime/Locale/saq.pod
@@ -757,8 +757,6 @@
 %%SITE_PERL%%/DateTime/Locale/vai_Vaii_LR.pod
 %%SITE_PERL%%/DateTime/Locale/vi.pod
 %%SITE_PERL%%/DateTime/Locale/vi_VN.pod
-%%SITE_PERL%%/DateTime/Locale/vo.pod
-%%SITE_PERL%%/DateTime/Locale/vo_001.pod
 %%SITE_PERL%%/DateTime/Locale/vun.pod
 %%SITE_PERL%%/DateTime/Locale/vun_TZ.pod
 %%SITE_PERL%%/DateTime/Locale/wae.pod
@@ -892,8 +890,6 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ckb.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/cs-CZ.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/cs.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/cu-RU.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/cu.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/cy-GB.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/cy.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/da-DK.pl
@@ -911,6 +907,8 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/de.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/dje-NE.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/dje.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/doi-IN.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/doi.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/dsb-DE.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/dsb.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/dua-CM.pl
@@ -1083,8 +1081,6 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-Adlm-SL.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-Adlm-SN.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-Adlm.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-CM.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-GN.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-Latn-BF.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-Latn-CM.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-Latn-GH.pl
@@ -1098,8 +1094,6 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-Latn-SL.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-Latn-SN.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-Latn.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-MR.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff-SN.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ff.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/fi-FI.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/fi.pl
@@ -1248,7 +1242,6 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/kok.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ks-Arab-IN.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ks-Arab.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/ks-IN.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ks.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ksb-TZ.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ksb.pl
@@ -1379,8 +1372,6 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/pcm.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/pl-PL.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/pl.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/prg-001.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/prg.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ps-AF.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ps-PK.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/ps.pl
@@ -1421,6 +1412,8 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/rw.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/rwk-TZ.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/rwk.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/sa-IN.pl
+%%SITE_PERL%%/auto/share/dist/DateTime-Locale/sa.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/sah-RU.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/sah.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/saq-KE.pl
@@ -1434,7 +1427,6 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/sd-Arab.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/sd-Deva-IN.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/sd-Deva.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/sd-PK.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/sd.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/se-FI.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/se-NO.pl
@@ -1544,8 +1536,6 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/vai.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/vi-VN.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/vi.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/vo-001.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/vo.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/vun-TZ.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/vun.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/wae-CH.pl
@@ -1563,7 +1553,6 @@
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/yo-BJ.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/yo-NG.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/yo.pl
-%%SITE_PERL%%/auto/share/dist/DateTime-Locale/yue-HK.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/yue-Hans-CN.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/yue-Hans.pl
 %%SITE_PERL%%/auto/share/dist/DateTime-Locale/yue-Hant-HK.pl
@@ -1685,8 +1674,6 @@
 %%PERL5_MAN3%%/DateTime::Locale::ckb_IR.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::cs.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::cs_CZ.3.gz
-%%PERL5_MAN3%%/DateTime::Locale::cu.3.gz
-%%PERL5_MAN3%%/DateTime::Locale::cu_RU.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::cy.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::cy_GB.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::da.3.gz
@@ -1704,6 +1691,8 @@
 %%PERL5_MAN3%%/DateTime::Locale::de_LU.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::dje.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::dje_NE.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::doi.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::doi_IN.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::dsb.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::dsb_DE.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::dua.3.gz
@@ -2174,8 +2163,6 @@
 %%PERL5_MAN3%%/DateTime::Locale::pcm_NG.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::pl.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::pl_PL.3.gz
-%%PERL5_MAN3%%/DateTime::Locale::prg.3.gz
-%%PERL5_MAN3%%/DateTime::Locale::prg_001.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::ps.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::ps_AF.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::ps_PK.3.gz
@@ -2217,6 +2204,8 @@
 %%PERL5_MAN3%%/DateTime::Locale::rw_RW.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::rwk.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::rwk_TZ.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::sa.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::sa_IN.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::sah.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::sah_RU.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::saq.3.gz
@@ -2339,8 +2328,6 @@
 %%PERL5_MAN3%%/DateTime::Locale::vai_Vaii_LR.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::vi.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::vi_VN.3.gz
-%%PERL5_MAN3%%/DateTime::Locale::vo.3.gz
-%%PERL5_MAN3%%/DateTime::Locale::vo_001.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::vun.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::vun_TZ.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::wae.3.gz
