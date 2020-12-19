@@ -2,34 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	sourcecodepro
-PORTVERSION=	2.030
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	R-ro/1.050R-it
+PORTVERSION=	2.032
 CATEGORIES=	x11-fonts
 PKGNAMESUFFIX=	-ttf
+MASTER_SITES=	https://github.com/adobe-fonts/source-code-pro/releases/download/${PORTVERSION}R-ro%2F1.052R-it%2F1.012R-VAR/
+DISTNAME=	TTF-source-code-pro-${PORTVERSION}R-ro-1.052R-it
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of fonts by Adobe designed for coders
 
 LICENSE=	OFL11
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 PORTSCOUT=	skipv:variable-fonts
 
-USES=		fonts
+USES=		fonts zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/TTF
 
 FONTNAME=	SourceCodePro
 SUB_FILES=	pkg-message
 
-GH_ACCOUNT=	adobe-fonts
-GH_PROJECT=	source-code-pro
-USE_GITHUB=	yes
-
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/TTF/*.ttf ${STAGEDIR}${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}/
 
 .include <bsd.port.mk>
