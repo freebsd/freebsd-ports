@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	scummvm-tools
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	games emulators
-MASTER_SITES=	http://www.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Tools for use with the SCUMMVM game emulator
 
 LICENSE=	GPLv2+
