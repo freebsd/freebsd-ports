@@ -18,6 +18,7 @@ LIB_DEPENDS=	libibus-1.0.so:textproc/ibus \
 RUN_DEPENDS=	zh-rime-data>=g0:chinese/rime-data
 
 USES=		cmake gnome pkgconfig
+USE_CSTD=	c99
 
 INSTALLS_ICONS=		yes
 
