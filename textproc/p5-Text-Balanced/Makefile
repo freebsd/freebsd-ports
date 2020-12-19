@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Text-Balanced
-PORTVERSION=	2.03
+PORTVERSION=	2.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,10 +12,12 @@ COMMENT=	Extract delimited text sequences from strings
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
+LICENSE_FILE_ART10=	${WRKSRC}/Artistic
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
