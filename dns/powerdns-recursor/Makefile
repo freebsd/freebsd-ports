@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recursor
-DISTVERSION=	4.4.0
+DISTVERSION=	4.4.2
 CATEGORIES=	dns
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 PKGNAMEPREFIX=	powerdns-
@@ -63,10 +63,12 @@ LUA_USES=	lua
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} != openssl
-CONFIGURE_ARGS+=	--enable-libdecaf \
-			--enable-libsodium
+CONFIGURE_ARGS+=	--with-libdecaf \
+			--with-libsodium
 LIB_DEPENDS+=		libdecaf.so:security/libdecaf \
 			libsodium.so:security/libsodium
+.else
+CONFIGURE_ARGS+=	--with-libsodium=no
 .endif
 
 post-install:
