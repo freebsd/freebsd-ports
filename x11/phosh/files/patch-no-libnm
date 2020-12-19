@@ -3,15 +3,17 @@ implements libnm-compatible API required by Phosh and GNOME.
 
 meson.build:134:0: ERROR: Dependency "libnm" not found, tried pkgconfig
 
---- meson.build.orig	2020-08-03 08:10:28 UTC
+--- meson.build.orig	2020-12-18 14:53:37 UTC
 +++ meson.build
-@@ -131,9 +131,9 @@ libhandy_dep = dependency('libhandy-0.0',
+@@ -131,11 +131,11 @@ libhandy_dep = dependency('libhandy-1',
    fallback: ['libhandy', 'libhandy_dep'],
    default_options: ['introspection=disabled']
    )
 -libnm_dep = dependency('libnm', version: '>= 1.14')
 +libnm_dep = dependency('libnm', version: '>= 1.14', required: false)
  libpolkit_agent_dep = dependency('polkit-agent-1', version: '>= 0.105')
+ # TODO: make optional for elogind?
+ libsystemd_dep = dependency('libsystemd', version: '>= 241')
 -network_agent_dep = dependency('libsecret-1')
 +network_agent_dep = dependency('libsecret-1', required: false)
  upower_glib_dep = dependency('upower-glib', version: '>=0.99.1')

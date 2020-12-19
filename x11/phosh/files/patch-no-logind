@@ -1,0 +1,77 @@
+(e)logind is Linux-only. FreeBSD supports libseat but it has a different API.
+
+--- meson.build.orig	2020-12-18 14:53:37 UTC
++++ meson.build
+@@ -134,7 +134,7 @@ libhandy_dep = dependency('libhandy-1',
+ libnm_dep = dependency('libnm', version: '>= 1.14', required: false)
+ libpolkit_agent_dep = dependency('polkit-agent-1', version: '>= 0.105')
+ # TODO: make optional for elogind?
+-libsystemd_dep = dependency('libsystemd', version: '>= 241')
++libsystemd_dep = dependency('libsystemd', version: '>= 241', required: false)
+ network_agent_dep = dependency('libsecret-1', required: false)
+ upower_glib_dep = dependency('upower-glib', version: '>=0.99.1')
+ wayland_client_dep = dependency('wayland-client', version: '>=1.14')
+--- src/util.c.orig	2020-12-18 14:53:37 UTC
++++ src/util.c
+@@ -9,8 +9,6 @@
+ #include "util.h"
+ #include <gtk/gtk.h>
+ 
+-#include <systemd/sd-login.h>
+-
+ /* Just wraps gtk_widget_destroy so we can use it with g_clear_pointer */
+ void
+ phosh_cp_widget_destroy (void *widget)
+@@ -97,51 +95,5 @@ phosh_munge_app_id (const char *app_id)
+ gboolean
+ phosh_find_systemd_session (char **session_id)
+ {
+-  int n_sessions;
+-
+-  g_auto (GStrv) sessions = NULL;
+-  char *session;
+-  int i;
+-
+-  n_sessions = sd_uid_get_sessions (getuid (), 0, &sessions);
+-
+-  if (n_sessions < 0) {
+-    g_debug ("Failed to get sessions for user %d", getuid ());
+-    return FALSE;
+-  }
+-
+-  session = NULL;
+-  for (i = 0; i < n_sessions; i++) {
+-    int r;
+-    g_autofree char *type = NULL;
+-    g_autofree char *desktop = NULL;
+-
+-    r = sd_session_get_desktop (sessions[i], &desktop);
+-    if (r < 0) {
+-      g_debug ("Couldn't get desktop for session '%s': %s",
+-               sessions[i], strerror (-r));
+-      continue;
+-    }
+-
+-    if (g_strcmp0 (desktop, "phosh") != 0)
+-      continue;
+-
+-    r = sd_session_get_type (sessions[i], &type);
+-    if (r < 0) {
+-      g_debug ("Couldn't get type for session '%s': %s",
+-               sessions[i], strerror (-r));
+-      continue;
+-    }
+-
+-    if (g_strcmp0 (type, "wayland") != 0)
+-      continue;
+-
+-    session = sessions[i];
+-    break;
+-  }
+-
+-  if (session != NULL)
+-    *session_id = g_strdup (session);
+-
+-  return session != NULL;
++  return FALSE;
+ }
