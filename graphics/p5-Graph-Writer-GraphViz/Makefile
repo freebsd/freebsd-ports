@@ -15,13 +15,14 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Graph>=0.54:math/p5-Graph \
+RUN_DEPENDS=	p5-Graph>=0.5400,1:math/p5-Graph \
 		p5-Graph-ReadWrite>=0:graphics/p5-Graph-ReadWrite \
 		p5-GraphViz>=2.02:graphics/p5-GraphViz \
 		p5-IO-All>=0.30:devel/p5-IO-All
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
