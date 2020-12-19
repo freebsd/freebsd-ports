@@ -17,11 +17,9 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-App-Options>=0:devel/p5-App-Options
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
 
-post-patch:
-	@${REINPLACE_CMD} -e '/NAME/ s|App-Trace|App::Trace|' ${WRKSRC}/Makefile.PL
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
