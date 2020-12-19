@@ -17,8 +17,9 @@ BUILD_DEPENDS=	p5-ExtUtils-Depends>=0:devel/p5-ExtUtils-Depends \
 RUN_DEPENDS=	p5-Glib>=0:devel/p5-Glib
 
 USES=		gnome perl5
-USE_PERL5=	configure
 USE_GNOME=	gconf2
+USE_PERL5=	configure
+
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>

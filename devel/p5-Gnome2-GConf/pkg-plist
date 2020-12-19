@@ -1,13 +1,3 @@
-%%PERL5_MAN3%%/Gnome2::GConf.3.gz
-%%PERL5_MAN3%%/Gnome2::GConf::ChangeSet.3.gz
-%%PERL5_MAN3%%/Gnome2::GConf::Client.3.gz
-%%PERL5_MAN3%%/Gnome2::GConf::Engine.3.gz
-%%PERL5_MAN3%%/Gnome2::GConf::Entry.3.gz
-%%PERL5_MAN3%%/Gnome2::GConf::Schema.3.gz
-%%PERL5_MAN3%%/Gnome2::GConf::Value.3.gz
-%%PERL5_MAN3%%/Gnome2::GConf::index.3.gz
-%%PERL5_MAN3%%/Gnome2::GConf::main.3.gz
-%%PERL5_MAN3%%/Gnome2::GConf::version.3.gz
 %%SITE_ARCH%%/Gnome2/GConf.pm
 %%SITE_ARCH%%/Gnome2/GConf/ChangeSet.pod
 %%SITE_ARCH%%/Gnome2/GConf/Client.pod
@@ -26,3 +16,13 @@
 %%SITE_ARCH%%/Gnome2/GConf/main.pod
 %%SITE_ARCH%%/Gnome2/GConf/version.pod
 %%SITE_ARCH%%/auto/Gnome2/GConf/GConf.so
+%%PERL5_MAN3%%/Gnome2::GConf.3.gz
+%%PERL5_MAN3%%/Gnome2::GConf::ChangeSet.3.gz
+%%PERL5_MAN3%%/Gnome2::GConf::Client.3.gz
+%%PERL5_MAN3%%/Gnome2::GConf::Engine.3.gz
+%%PERL5_MAN3%%/Gnome2::GConf::Entry.3.gz
+%%PERL5_MAN3%%/Gnome2::GConf::Schema.3.gz
+%%PERL5_MAN3%%/Gnome2::GConf::Value.3.gz
+%%PERL5_MAN3%%/Gnome2::GConf::index.3.gz
+%%PERL5_MAN3%%/Gnome2::GConf::main.3.gz
+%%PERL5_MAN3%%/Gnome2::GConf::version.3.gz
