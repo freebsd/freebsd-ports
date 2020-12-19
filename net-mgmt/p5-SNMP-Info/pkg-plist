@@ -116,6 +116,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/Steelhead.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Sun.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Tasman.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Teltonika.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Timetra.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/VMware.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/VyOS.pm
@@ -251,6 +252,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Steelhead.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Sun.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Tasman.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer3::Teltonika.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Timetra.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::VMware.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::VyOS.3.gz

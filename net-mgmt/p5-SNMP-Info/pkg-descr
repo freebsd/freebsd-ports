@@ -10,4 +10,4 @@ The module is not limited to network devices. Any MIB or device can be
 given an objected oriented front-end by making a module that consists of a
 couple hashes. See EXTENDING SNMP::INFO.
 
-WWW: http://snmp-info.sourceforge.net/
+WWW: https://metacpan.org/release/SNMP-Info
