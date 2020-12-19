@@ -1,13 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=			pocl
-PORTVERSION=		1.5
+PORTVERSION=		1.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=			1
 CATEGORIES=			lang
-
-PATCH_SITES=			https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=			9ba33d2a570c.patch:-p1 # https://github.com/pocl/pocl/pull/879
 
 MAINTAINER=			ohartmann@walstatt.org
 COMMENT=			POrtable Computing Language (POCL)
@@ -19,12 +15,12 @@ ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	only tested on x86
 
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>=0:devel/llvm${LLVM_VERSION} \
-				opencl>=2.1:devel/opencl
+				opencl>=2.2:devel/opencl
 LIB_DEPENDS=	libhwloc.so:devel/hwloc \
 				libOpenCL.so:devel/ocl-icd
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-LLVM_VERSION=	${MESA_LLVM_VER:U10}
+LLVM_VERSION=	${MESA_LLVM_VER:U11}
 
 USES=			cmake localbase:ldflags ncurses pkgconfig
 
@@ -34,7 +30,7 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS=		-DWITH_LLVM_CONFIG="${LOCALBASE}/llvm${LLVM_VERSION}/bin/llvm-config" \
 				-DPOCL_INSTALL_PKGCONFIG_DIR="${PREFIX}/libdata/pkgconfig" \
 				-DKERNELLIB_HOST_CPU_VARIANTS="distro" \
-				-DSINGLE_LLVM_LIB=OFF
+				-DSINGLE_LLVM_LIB=ON
 
 PLIST_SUB=		CONFIGURE_TARGET=${CONFIGURE_TARGET:S/amd64/x86_64/}
 
