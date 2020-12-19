@@ -1,0 +1,5 @@
+ERB provides an easy to use but powerful templating system for Ruby. Using ERB,
+actual Ruby code can be added to any plain text document for the purposes of
+generating document information details and/or flow control.
+
+WWW: https://github.com/ruby/erb
