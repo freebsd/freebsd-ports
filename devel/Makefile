@@ -4204,6 +4204,7 @@
     SUBDIR += py-cachy
     SUBDIR += py-canonicaljson
     SUBDIR += py-capstone
+    SUBDIR += py-capturer
     SUBDIR += py-case
     SUBDIR += py-castellan
     SUBDIR += py-castellan1
