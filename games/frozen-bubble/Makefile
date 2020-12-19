@@ -3,6 +3,7 @@
 
 PORTNAME=	frozen-bubble
 DISTVERSION=	2.213.g${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +17,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 RUN_DEPENDS=	p5-SDL>=2.511:devel/p5-SDL \
 		p5-Locale-gettext>=0:devel/p5-Locale-gettext \
 		p5-IPC-System-Simple>=0:devel/p5-IPC-System-Simple \
-		p5-Locale-Maketext-Simple>=0:devel/p5-Locale-Maketext-Simple \
 		p5-Locale-Maketext-Lexicon>=0:devel/p5-Locale-Maketext-Lexicon \
 		p5-Compress-Bzip2>=0:archivers/p5-Compress-Bzip2 \
 		p5-Alien-SDL>=1.413:devel/p5-Alien-SDL
