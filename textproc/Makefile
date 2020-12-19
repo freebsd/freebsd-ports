@@ -1322,6 +1322,7 @@
     SUBDIR += py-mkdocs
     SUBDIR += py-mkdocs-nature
     SUBDIR += py-mwparserfromhell
+    SUBDIR += py-myst-parser
     SUBDIR += py-nltk
     SUBDIR += py-normality
     SUBDIR += py-numpydoc
