@@ -19,6 +19,7 @@
 %%SITE_PERL%%/Test2/Compare/EventMeta.pm
 %%SITE_PERL%%/Test2/Compare/Float.pm
 %%SITE_PERL%%/Test2/Compare/Hash.pm
+%%SITE_PERL%%/Test2/Compare/Isa.pm
 %%SITE_PERL%%/Test2/Compare/Meta.pm
 %%SITE_PERL%%/Test2/Compare/Negatable.pm
 %%SITE_PERL%%/Test2/Compare/Number.pm
@@ -134,6 +135,7 @@
 %%PERL5_MAN3%%/Test2::Compare::EventMeta.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Float.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Hash.3.gz
+%%PERL5_MAN3%%/Test2::Compare::Isa.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Meta.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Negatable.3.gz
 %%PERL5_MAN3%%/Test2::Compare::Number.3.gz
