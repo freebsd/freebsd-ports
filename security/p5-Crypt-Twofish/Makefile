@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-Twofish
-PORTVERSION=	2.17
-PORTREVISION=	1
+PORTVERSION=	2.18
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,5 +15,8 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Crypt/Twofish/Twofish.so
 
 .include <bsd.port.mk>
