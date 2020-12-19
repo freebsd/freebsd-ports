@@ -37,7 +37,7 @@ include/kcutil.h
 lib/libkyotocabinet.a
 lib/libkyotocabinet.so
 lib/libkyotocabinet.so.16
-lib/libkyotocabinet.so.16.13.0
+lib/libkyotocabinet.so.16.14.0
 libdata/pkgconfig/kyotocabinet.pc
 man/man1/kccachetest.1.gz
 man/man1/kcdirmgr.1.gz

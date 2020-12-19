@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kyotocabinet
-PORTVERSION=	1.2.78
+PORTVERSION=	1.2.79
 CATEGORIES=	databases
 MASTER_SITES=	https://dbmx.net/kyotocabinet/pkg/ \
 		LOCAL/sunpoet
@@ -32,7 +32,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++ ||g' ${WRKSRC}/configure ${WRKSRC}/doc/spex.html ${WRKSRC}/example/Makefile ${WRKSRC}/lab/kcdict/Makefile
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libkyotocabinet.so.16.13.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libkyotocabinet.so
 
 post-install-DOCS-on:
 	${FIND} ${STAGEDIR}${DOCSDIR}/ -type d -exec ${CHMOD} ${BINMODE} {} +
