@@ -5606,6 +5606,7 @@
     SUBDIR += rubygem-aws-sdk-iotsecuretunneling
     SUBDIR += rubygem-aws-sdk-iotsitewise
     SUBDIR += rubygem-aws-sdk-iotthingsgraph
+    SUBDIR += rubygem-aws-sdk-iotwireless
     SUBDIR += rubygem-aws-sdk-ivs
     SUBDIR += rubygem-aws-sdk-kafka
     SUBDIR += rubygem-aws-sdk-kendra
