@@ -18,4 +18,6 @@ RUN_DEPENDS=	p5-Email-Find>=0:mail/p5-Email-Find \
 USES=		perl5
 USE_PERL5=	modbuild
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
