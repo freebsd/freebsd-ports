@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	psych
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
