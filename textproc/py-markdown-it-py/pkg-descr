@@ -1,0 +1,9 @@
+markdown-it-py is a Python port of markdown-it, and some of its associated
+plugins.
+- Follows the CommonMark spec for baseline parsing
+- Configurable syntax: you can add new rules and even replace existing ones.
+- Pluggable: Adds syntax extensions to extend the parser (see the plugin list).
+- High speed (see our benchmarking tests)
+- Safe by default
+
+WWW: https://github.com/executablebooks/markdown-it-py

@@ -1310,6 +1310,7 @@
     SUBDIR += py-m2r
     SUBDIR += py-mako
     SUBDIR += py-markdown
+    SUBDIR += py-markdown-it-py
     SUBDIR += py-markdown-math
     SUBDIR += py-markdown2
     SUBDIR += py-markuppy
