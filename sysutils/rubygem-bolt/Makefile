@@ -2,6 +2,7 @@
 
 PORTNAME=	bolt
 PORTVERSION=	2.40.2
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -27,7 +28,7 @@ RUN_DEPENDS=	r10k:sysutils/rubygem-r10k \
 		rubygem-puppet-strings>=2.3:textproc/rubygem-puppet-strings \
 		rubygem-puppetfile-resolver>=0.1:sysutils/rubygem-puppetfile-resolver \
 		rubygem-ruby_smb>=1.0:net/rubygem-ruby_smb \
-		rubygem-terminal-table>=1.8:textproc/rubygem-terminal-table \
+		rubygem-terminal-table1>=1.8<2:textproc/rubygem-terminal-table1 \
 		rubygem-winrm-fs>=1.3:sysutils/rubygem-winrm-fs \
 		rubygem-winrm>=2.0:sysutils/rubygem-winrm
 
