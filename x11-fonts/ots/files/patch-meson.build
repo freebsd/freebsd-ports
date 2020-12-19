@@ -1,8 +1,8 @@
---- meson.build.orig	2020-10-12 15:09:18 UTC
+--- meson.build.orig	2020-12-02 12:55:02 UTC
 +++ meson.build
 @@ -1,6 +1,6 @@
  project('ots', 'c', 'cpp',
-   version: '8.1.0',
+   version: '8.1.1',
 -  default_options : ['cpp_std=c++11', 'default_library=static'],
 +  default_options : ['cpp_std=c++11', 'default_library=both'],
  )
@@ -167,9 +167,9 @@
  )
  
  
-@@ -303,13 +311,14 @@ if cxx.has_header('sys/time.h')
- endif
+@@ -305,13 +313,14 @@ endif
  
+ install_man('docs/ots-sanitize.1')
  
 -gtest = subproject('gtest').get_variable('gtest_main_dep')
 +gtest = dependency('gtest', fallback: ['gtest', 'gtest_main_dep'])
@@ -184,7 +184,7 @@
  )
  
  test('cff_charstring', cff_charstring)
-@@ -319,7 +328,7 @@ layout_common_table = executable('layout_common_table'
+@@ -321,7 +330,7 @@ layout_common_table = executable('layout_common_table'
    'tests/layout_common_table_test.cc',
    include_directories: include_directories(['include', 'src']),
    link_with: libots,

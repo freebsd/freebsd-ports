@@ -8,3 +8,4 @@ lib/libots.a
 lib/libots.so
 lib/libots.so.8
 lib/libots.so.%%PORTVERSION%%
+man/man1/ots-sanitize.1.gz

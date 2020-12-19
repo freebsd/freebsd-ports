@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ots
-PORTVERSION=	8.1.0
+PORTVERSION=	8.1.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/khaledhosny/ots/releases/download/v${PORTVERSION}/
 
