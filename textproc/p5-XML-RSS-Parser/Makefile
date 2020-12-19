@@ -18,6 +18,8 @@ RUN_DEPENDS=	p5-XML-Elemental>=0:textproc/p5-XML-Elemental \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.0//}
 
 .include <bsd.port.mk>
