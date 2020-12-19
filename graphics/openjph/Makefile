@@ -25,7 +25,7 @@ USE_GITHUB=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} != amd64 && ${ARCH} != i386
-CMAKE_ARGS+=	-DOJPH_DISABLE_INTEL_SIMD:BOOL=ON
+CMAKE_ON+=	OJPH_DISABLE_INTEL_SIMD
 .endif
 
 .include <bsd.port.mk>
