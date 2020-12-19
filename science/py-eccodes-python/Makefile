@@ -13,6 +13,9 @@ COMMENT=	Python interface to the ecCodes BUFR and GRIB de/encoder
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use science/py-eccodes instead
+EXPIRATION_DATE=2020-12-31
+
 LIB_DEPENDS=	libeccodes.so:science/eccodes
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR} \
