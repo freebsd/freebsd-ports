@@ -21,7 +21,7 @@ diff -r 46ea866ca3ac -r 6ef20eee3f8f gfx/2d/DrawTargetSkia.cpp
        SkCanvas::kPreserveLCDText_SaveLayerFlag |
            (aCopyBackground ? SkCanvas::kInitWithPrevious_SaveLayerFlag : 0));
  
-+#if MOZ_BIG_ENDIAN
++#if MOZ_BIG_ENDIAN()
 +  // Pushing a layer where an aMask is defined produces wrong output.
 +  // We _should_ endian swap the data, but I couldn't find a workable way to do so
 +  // Therefore I deactivate those layers in the meantime.
