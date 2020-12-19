@@ -19,7 +19,9 @@ RUN_DEPENDS=	p5-Class-Accessor-Lite>=0:devel/p5-Class-Accessor-Lite \
 		p5-Data-OptList>=0:devel/p5-Data-OptList \
 		p5-Test-SharedFork>=0:devel/p5-Test-SharedFork
 
-USE_PERL5=	modbuild
 USES=		perl5
+USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
