@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	packaging
-PORTVERSION=	20.7
+PORTVERSION=	20.8
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +21,5 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-post-patch:
-	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
