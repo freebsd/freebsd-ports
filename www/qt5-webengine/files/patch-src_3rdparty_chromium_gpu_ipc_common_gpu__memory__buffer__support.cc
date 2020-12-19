@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/ipc/common/gpu_memory_buffer_support.cc.orig	2020-03-16 14:04:24 UTC
+--- src/3rdparty/chromium/gpu/ipc/common/gpu_memory_buffer_support.cc.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/gpu/ipc/common/gpu_memory_buffer_support.cc
-@@ -12,7 +12,7 @@
+@@ -14,7 +14,7 @@
  #include "gpu/ipc/common/gpu_memory_buffer_impl_io_surface.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/gfx/client_native_pixmap_factory.h"
  #include "ui/gfx/linux/client_native_pixmap_factory_dmabuf.h"
  #endif
-@@ -22,7 +22,7 @@
+@@ -24,7 +24,7 @@
  #include "ui/ozone/public/ozone_platform.h"
  #endif
  
@@ -18,16 +18,7 @@
  #include "gpu/ipc/common/gpu_memory_buffer_impl_native_pixmap.h"
  #endif
  
-@@ -112,7 +112,7 @@ bool GpuMemoryBufferSupport::IsNativeGpuMemoryBufferCo
- #elif defined(USE_OZONE)
-   return ui::OzonePlatform::GetInstance()->IsNativePixmapConfigSupported(format,
-                                                                          usage);
--#elif defined(OS_LINUX)
-+#elif defined(OS_LINUX) || defined(OS_BSD)
-   return false;  // TODO(julian.isorce): Add linux support.
- #elif defined(OS_WIN)
-   switch (usage) {
-@@ -168,7 +168,7 @@ GpuMemoryBufferSupport::CreateGpuMemoryBufferImplFromH
+@@ -181,7 +181,7 @@ GpuMemoryBufferSupport::CreateGpuMemoryBufferImplFromH
        return GpuMemoryBufferImplIOSurface::CreateFromHandle(
            std::move(handle), size, format, usage, std::move(callback));
  #endif

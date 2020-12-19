@@ -1,14 +1,25 @@
---- mkspecs/features/functions.prf.orig	2019-12-03 07:18:02 UTC
+--- mkspecs/features/functions.prf.orig	2020-11-07 01:22:36 UTC
 +++ mkspecs/features/functions.prf
-@@ -75,6 +75,7 @@ defineReplace(gnArgs) {
-     linux: include($$QTWEBENGINE_ROOT/src/buildtools/config/linux.pri)
-     macos: include($$QTWEBENGINE_ROOT/src/buildtools/config/mac_osx.pri)
-     win32: include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)
-+    freebsd: include($$QTWEBENGINE_ROOT/src/buildtools/config/freebsd.pri)
+@@ -84,6 +84,10 @@ defineReplace(gnWebEngineArgs) {
+         include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)
+         include($$QTWEBENGINE_ROOT/src/core/config/windows.pri)
+     }
++    freebsd {
++        include($$QTWEBENGINE_ROOT/src/buildtools/config/freebsd.pri)
++        include($$QTWEBENGINE_ROOT/src/core/config/linux.pri)
++    }
      isEmpty(gn_args): error(No gn_args found please make sure you have valid configuration.)
      return($$gn_args)
  }
-@@ -87,6 +88,7 @@ defineReplace(gnArch) {
+@@ -93,6 +97,7 @@ defineReplace(gnPdfArgs) {
+     macos: include($$QTWEBENGINE_ROOT/src/buildtools/config/mac_osx.pri)
+     ios: include($$QTWEBENGINE_ROOT/src/pdf/config/ios.pri)
+     win32: include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)
++    freebsd: include($$QTWEBENGINE_ROOT/src/buildtools/config/freebsd.pri)
+     include($$QTWEBENGINE_ROOT/src/pdf/config/common.pri)
+     isEmpty(gn_args): error(No gn_args found please make sure you have valid configuration.)
+     return($$gn_args)
+@@ -106,6 +111,7 @@ defineReplace(gnArch) {
      contains(qtArch, "arm64"): return(arm64)
      contains(qtArch, "mips"): return(mipsel)
      contains(qtArch, "mips64"): return(mips64el)
@@ -16,7 +27,7 @@
      return(unknown)
  }
  
-@@ -94,6 +96,7 @@ defineReplace(gnOS) {
+@@ -113,6 +119,7 @@ defineReplace(gnOS) {
      macos: return(mac)
      win32: return(win)
      linux: return(linux)

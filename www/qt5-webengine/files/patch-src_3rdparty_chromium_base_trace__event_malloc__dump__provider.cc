@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/base/trace_event/malloc_dump_provider.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/base/trace_event/malloc_dump_provider.cc.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/base/trace_event/malloc_dump_provider.cc
-@@ -18,7 +18,7 @@
+@@ -17,6 +17,8 @@
+ 
  #if defined(OS_MACOSX)
  #include <malloc/malloc.h>
- #else
--#include <malloc.h>
++#elif defined(OS_BSD)
 +#include <stdlib.h>
+ #else
+ #include <malloc.h>
  #endif
- #if defined(OS_WIN)
- #include <windows.h>
-@@ -132,6 +132,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
+@@ -132,6 +134,9 @@ bool MallocDumpProvider::OnMemoryDump(const MemoryDump
    }
  #elif defined(OS_FUCHSIA)
  // TODO(fuchsia): Port, see https://crbug.com/706592.
@@ -18,4 +18,4 @@
 +  allocated_objects_size = 0;
  #else
    struct mallinfo info = mallinfo();
-   DCHECK_GE(info.arena + info.hblkhd, info.uordblks);
+   // In case of Android's jemalloc |arena| is 0 and the outer pages size is

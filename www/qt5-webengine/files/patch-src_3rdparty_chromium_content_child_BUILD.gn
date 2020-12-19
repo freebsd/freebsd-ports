@@ -1,0 +1,16 @@
+--- src/3rdparty/chromium/content/child/BUILD.gn.orig	2020-11-07 01:22:36 UTC
++++ src/3rdparty/chromium/content/child/BUILD.gn
+@@ -147,8 +147,12 @@ target(link_target_type, "child") {
+     deps += [
+       "//components/services/font/public/cpp",
+       "//components/services/font/public/mojom",
+-      "//services/service_manager/zygote",
+     ]
++    if (!is_bsd) {
++      deps += [
++        "//services/service_manager/zygote",
++      ]
++    }
+   }
+ 
+   if (is_win) {

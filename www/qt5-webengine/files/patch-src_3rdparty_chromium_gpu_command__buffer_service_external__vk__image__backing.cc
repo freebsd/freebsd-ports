@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/command_buffer/service/external_vk_image_backing.cc.orig	2020-04-08 09:41:36 UTC
+--- src/3rdparty/chromium/gpu/command_buffer/service/external_vk_image_backing.cc.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/gpu/command_buffer/service/external_vk_image_backing.cc
-@@ -26,7 +26,7 @@
+@@ -29,7 +29,7 @@
  #include "ui/gl/buildflags.h"
  #include "ui/gl/gl_context.h"
  
@@ -9,65 +9,74 @@
  #include "gpu/command_buffer/service/external_vk_image_dawn_representation.h"
  #endif
  
-@@ -34,7 +34,7 @@
+@@ -37,7 +37,7 @@
  #include "gpu/vulkan/fuchsia/vulkan_fuchsia_ext.h"
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
- #define GL_HANDLE_TYPE_OPAQUE_FD_EXT 0x9586
- #endif
- 
-@@ -537,7 +537,7 @@ std::unique_ptr<SharedImageRepresentationDawn>
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD)
+ #define GL_DEDICATED_MEMORY_OBJECT_EXT 0x9581
+ #define GL_TEXTURE_TILING_EXT 0x9580
+ #define GL_TILING_TYPES_EXT 0x9583
+@@ -510,7 +510,7 @@ std::unique_ptr<SharedImageRepresentationDawn>
  ExternalVkImageBacking::ProduceDawn(SharedImageManager* manager,
                                      MemoryTypeTracker* tracker,
                                      WGPUDevice wgpuDevice) {
 -#if defined(OS_LINUX) && BUILDFLAG(USE_DAWN)
 +#if (defined(OS_LINUX) || defined(OS_BSD)) && BUILDFLAG(USE_DAWN)
-   if (!wgpu_format_) {
-     DLOG(ERROR) << "Format not supported for Dawn";
-     return nullptr;
-@@ -560,14 +560,14 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
+   auto wgpu_format = viz::ToWGPUFormat(format());
+ 
+   if (wgpu_format == WGPUTextureFormat_Undefined) {
+@@ -529,14 +529,14 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
+ 
    return std::make_unique<ExternalVkImageDawnRepresentation>(
-       manager, this, tracker, wgpuDevice, wgpu_format_.value(), memory_fd,
-       image_info.fAlloc.fSize, memory_type_index_.value());
+       manager, this, tracker, wgpuDevice, wgpu_format, std::move(memory_fd));
 -#else  // !defined(OS_LINUX) || !BUILDFLAG(USE_DAWN)
-+#else  // !defined(OS_LINUX) || !defined(OS_BSD) || !BUILDFLAG(USE_DAWN)
++#else  // (!defined(OS_LINUX) && !defined(OS_BSD)) || !BUILDFLAG(USE_DAWN)
    NOTIMPLEMENTED_LOG_ONCE();
    return nullptr;
  #endif
  }
  
  GLuint ExternalVkImageBacking::ProduceGLTextureInternal() {
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || \
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD) || \
+     defined(OS_WIN)
    GrVkImageInfo image_info;
    bool result = backend_texture_.getVkImageInfo(&image_info);
-   DCHECK(result);
-@@ -631,7 +631,7 @@ ExternalVkImageBacking::ProduceGLTexture(SharedImageMa
+@@ -545,7 +545,7 @@ GLuint ExternalVkImageBacking::ProduceGLTextureInterna
+   gl::GLApi* api = gl::g_current_gl_context;
+   GLuint memory_object = 0;
+   if (!use_separate_gl_texture()) {
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+     auto memory_fd = image_->GetMemoryFd();
+     if (!memory_fd.is_valid()) {
+       return 0;
+@@ -608,7 +608,7 @@ GLuint ExternalVkImageBacking::ProduceGLTextureInterna
+   }
+   api->glBindTextureFn(GL_TEXTURE_2D, old_texture_binding);
+   return texture_service_id;
+-#else  // !defined(OS_LINUX) && !defined(OS_ANDROID) && !defined(OS_FUCHSIA)
++#else  // !defined(OS_LINUX) && !defined(OS_ANDROID) && !defined(OS_FUCHSIA) && !defined(OS_BSD)
+ #error Unsupported OS
+ #endif
+ }
+@@ -622,7 +622,7 @@ ExternalVkImageBacking::ProduceGLTexture(SharedImageMa
      return nullptr;
    }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || \
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD) || \
+     defined(OS_WIN)
    if (!texture_) {
      GLuint texture_service_id = ProduceGLTextureInternal();
-     if (!texture_service_id)
-@@ -677,7 +677,7 @@ ExternalVkImageBacking::ProduceGLTexturePassthrough(
+@@ -666,7 +666,7 @@ ExternalVkImageBacking::ProduceGLTexturePassthrough(
      return nullptr;
    }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || \
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_BSD) || \
+     defined(OS_WIN)
    if (!texture_passthrough_) {
      GLuint texture_service_id = ProduceGLTextureInternal();
-     if (!texture_service_id)
-@@ -715,7 +715,7 @@ ExternalVkImageBacking::ProduceSkia(
-                                                              tracker);
- }
- 
--#ifdef OS_LINUX
-+#if defined(OS_LINUX) || defined(OS_BSD)
- int ExternalVkImageBacking::GetMemoryFd(const GrVkImageInfo& image_info) {
-   VkMemoryGetFdInfoKHR get_fd_info;
-   get_fd_info.sType = VK_STRUCTURE_TYPE_MEMORY_GET_FD_INFO_KHR;

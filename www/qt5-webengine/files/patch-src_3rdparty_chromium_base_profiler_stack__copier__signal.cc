@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/profiler/stack_copier_signal.cc.orig	2020-04-08 09:41:36 UTC
+--- src/3rdparty/chromium/base/profiler/stack_copier_signal.cc.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/base/profiler/stack_copier_signal.cc
-@@ -4,10 +4,16 @@
+@@ -4,7 +4,14 @@
  
  #include "base/profiler/stack_copier_signal.h"
  
@@ -14,11 +14,8 @@
 +#endif
  #include <signal.h>
  #include <sys/ucontext.h>
--#include <syscall.h>
- 
- #include <atomic>
- 
-@@ -35,8 +41,13 @@ class AsyncSafeWaitableEvent {
+ #include <syscall.h>
+@@ -33,8 +40,13 @@ class AsyncSafeWaitableEvent {
      // for a pthread mutex. So, also check the condition.
      while (true) {
        int res =
@@ -32,7 +29,7 @@
        if (futex_.load(std::memory_order_acquire) != 0)
          return true;
        if (res != 0)
-@@ -46,8 +57,12 @@ class AsyncSafeWaitableEvent {
+@@ -44,8 +56,12 @@ class AsyncSafeWaitableEvent {
  
    void Signal() {
      futex_.store(1, std::memory_order_release);
@@ -45,7 +42,7 @@
    }
  
   private:
-@@ -201,11 +216,17 @@ bool StackCopierSignal::CopyStack(StackBuffer* stack_b
+@@ -215,11 +231,18 @@ bool StackCopierSignal::CopyStack(StackBuffer* stack_b
      if (!scoped_sigaction.succeeded())
        return false;
  
@@ -57,6 +54,7 @@
      }
 +#elif defined(OS_FREEBSD)
 +    if (thr_kill2(getpid(), thread_delegate_->GetThreadId(), SIGURG) != 0) {
++      NOTREACHED();
 +      return false;
 +    }
 +#endif

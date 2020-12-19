@@ -1,20 +1,20 @@
---- src/3rdparty/chromium/base/i18n/icu_util.cc.orig	2020-04-08 09:41:36 UTC
+--- src/3rdparty/chromium/base/i18n/icu_util.cc.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/base/i18n/icu_util.cc
-@@ -43,7 +43,7 @@
+@@ -49,7 +49,7 @@
  #endif
  
  #if defined(OS_ANDROID) || defined(OS_FUCHSIA) || \
--    (defined(OS_LINUX) && !defined(IS_CHROMECAST))
-+    (defined(OS_LINUX) && !defined(IS_CHROMECAST)) || defined(OS_BSD)
+-    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMECAST))
++    (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMECAST)) || defined(OS_BSD)
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  #endif
  
-@@ -293,7 +293,7 @@ void InitializeIcuTimeZone() {
+@@ -345,7 +345,7 @@ void InitializeIcuTimeZone() {
        fuchsia::IntlProfileWatcher::GetPrimaryTimeZoneIdForIcuInitialization();
    icu::TimeZone::adoptDefault(
        icu::TimeZone::createTimeZone(icu::UnicodeString::fromUTF8(zone_id)));
--#elif defined(OS_LINUX) && !defined(IS_CHROMECAST)
-+#elif (defined(OS_LINUX) && !defined(IS_CHROMECAST)) || defined(OS_BSD)
-   // To respond to the timezone change properly, the default timezone
+-#elif defined(OS_LINUX) && !BUILDFLAG(IS_CHROMECAST)
++#elif (defined(OS_LINUX) || defined(OS_BSD)) && !BUILDFLAG(IS_CHROMECAST)
+   // To respond to the time zone change properly, the default time zone
    // cache in ICU has to be populated on starting up.
    // See TimeZoneMonitorLinux::NotifyClientsFromImpl().

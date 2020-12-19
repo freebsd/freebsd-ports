@@ -1,5 +1,14 @@
---- src/3rdparty/chromium/content/gpu/BUILD.gn.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/content/gpu/BUILD.gn.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/content/gpu/BUILD.gn
+@@ -96,7 +96,7 @@ target(link_target_type, "gpu_sources") {
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     deps += [ "//services/service_manager/zygote" ]
+   }
+ 
 @@ -130,7 +130,7 @@ target(link_target_type, "gpu_sources") {
  
    # Use DRI on desktop Linux builds.

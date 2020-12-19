@@ -1,28 +1,24 @@
---- src/3rdparty/chromium/net/base/network_change_notifier.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/net/base/network_change_notifier.cc.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/net/base/network_change_notifier.cc
-@@ -217,7 +217,6 @@ NetworkChangeNotifier* NetworkChangeNotifier::Create()
+@@ -35,7 +35,7 @@
+ #include "net/base/network_change_notifier_linux.h"
  #elif defined(OS_MACOSX)
-   return new NetworkChangeNotifierMac();
+ #include "net/base/network_change_notifier_mac.h"
+-#elif defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#elif defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+ #include "net/base/network_change_notifier_posix.h"
+ #elif defined(OS_FUCHSIA)
+ #include "net/base/network_change_notifier_fuchsia.h"
+@@ -240,8 +240,11 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo
+ #elif defined(OS_FUCHSIA)
+   return std::make_unique<NetworkChangeNotifierFuchsia>(
+       0 /* required_features */);
++#elif defined(OS_BSD)
++  return std::make_unique<MockNetworkChangeNotifier>(
++		        std::make_unique<SystemDnsConfigChangeNotifier>(
++				          nullptr /* task_runner */, nullptr /* dns_config_service */));
  #else
 -  NOTIMPLEMENTED();
    return NULL;
  #endif
  }
-@@ -425,7 +424,7 @@ void NetworkChangeNotifier::LogOperatorCodeHistogram(C
- #endif
- }
- 
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
- // static
- const internal::AddressTrackerLinux*
- NetworkChangeNotifier::GetAddressTracker() {
-@@ -674,7 +673,7 @@ NetworkChangeNotifier::NetworkChangeNotifier(
-   network_change_calculator_->Init();
- }
- 
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
- const internal::AddressTrackerLinux*
- NetworkChangeNotifier::GetAddressTrackerInternal() const {
-   return NULL;

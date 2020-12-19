@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/ui/base/ui_base_features.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/ui/base/ui_base_features.cc.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/ui/base/ui_base_features.cc
-@@ -120,7 +120,7 @@ const base::Feature kPrecisionTouchpadScrollPhase{
-     "PrecisionTouchpadScrollPhase", base::FEATURE_ENABLED_BY_DEFAULT};
+@@ -121,7 +121,7 @@ const base::Feature kPrecisionTouchpadLogging{
+     "PrecisionTouchpadLogging", base::FEATURE_DISABLED_BY_DEFAULT};
  #endif  // defined(OS_WIN)
  
 -#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
@@ -9,12 +9,21 @@
  // Enables stylus appearing as touch when in contact with digitizer.
  const base::Feature kDirectManipulationStylus = {
      "DirectManipulationStylus",
-@@ -130,7 +130,7 @@ const base::Feature kDirectManipulationStylus = {
+@@ -131,7 +131,7 @@ const base::Feature kDirectManipulationStylus = {
      base::FEATURE_DISABLED_BY_DEFAULT
  #endif
  };
 -#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
 +#endif  // defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
  
- const base::Feature kMash = {"Mash", base::FEATURE_DISABLED_BY_DEFAULT};
- 
+ // Enables forced colors mode for web content.
+ const base::Feature kForcedColors{"ForcedColors",
+@@ -157,7 +157,7 @@ bool IsEyeDropperEnabled() {
+ // crbug.com/1012106 for the Windows launch bug, and crbug.com/1012108 for the
+ // Mac launch bug.
+ const base::Feature kFormControlsRefresh = {"FormControlsRefresh",
+-#if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_LINUX) || defined(OS_BSD) || \
+     defined(OS_MACOSX)
+                                             base::FEATURE_ENABLED_BY_DEFAULT
+ #else

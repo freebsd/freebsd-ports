@@ -7,8 +7,8 @@
 -    pInfo->AddPath("/usr/share/fonts");
 -    pInfo->AddPath("/usr/share/X11/fonts/Type1");
 -    pInfo->AddPath("/usr/share/X11/fonts/TTF");
-+    pInfo->AddPath("/usr/local/share/fonts/Type1");
-+    pInfo->AddPath("/usr/local/share/fonts/TTF");
++    pInfo->AddPath("%%LOCALBASE%%/share/fonts/Type1");
++    pInfo->AddPath("%%LOCALBASE%%/share/fonts/TTF");
      pInfo->AddPath("/usr/local/share/fonts");
    }
    return std::move(pInfo);

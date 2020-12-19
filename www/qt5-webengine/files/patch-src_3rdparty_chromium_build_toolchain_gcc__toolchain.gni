@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni
-@@ -47,6 +47,11 @@ analyzer_wrapper =
-     rebase_path("//build/toolchain/clang_static_analyzer_wrapper.py",
-                 root_build_dir) + " --mode=clang"
+@@ -36,6 +36,11 @@ if (is_linux && target_os == "android") {
+   enable_resource_whitelist_generation = false
+ }
  
 +declare_args() {
 +  extra_cxxflags = ""
@@ -12,7 +12,7 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -610,13 +615,24 @@ template("clang_toolchain") {
+@@ -589,13 +594,23 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {
@@ -24,8 +24,7 @@
 -    ar = "${prefix}/llvm-ar"
 -    nm = "${toolprefix}nm"
 +    if (is_bsd) {
-+      # XXX fix the hardcoding!
-+      prefix = "/usr/local/bin"
++      prefix = "%%LOCALBASE%%/bin"
 +      cc = "cc"
 +      cxx = "c++"
 +      ld = cxx

@@ -18,7 +18,7 @@
 +      cflags.extend(['-Wno-deprecated-register', '-Wno-parentheses-equality'])
 +      ldflags.extend(['-pthread'])
 +      libs.extend(['-lexecinfo', '-lkvm', '-lutil'])
-+      include_dirs += ['/usr/local/include']
++      include_dirs += ['%%LOCALBASE%%/include']
  
      if platform.is_posix():
        ldflags.append('-pthread')

@@ -7,8 +7,8 @@
 -    "/usr/share/fonts",
 -    "/usr/share/X11/fonts/Type1",
 -    "/usr/share/X11/fonts/TTF",
-+    "/usr/local/share/fonts/Type1",
-+    "/usr/local/share/fonts/TTF",
++    "%%LOCALBASE%%/share/fonts/Type1",
++    "%%LOCALBASE%%/share/fonts/TTF",
      "/usr/local/share/fonts",
  #elif defined(OS_MACOSX)
      "~/Library/Fonts",

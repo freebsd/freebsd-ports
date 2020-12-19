@@ -11,10 +11,10 @@
  const base::FilePath::CharType kFilepathSinglePrefExtensions[] =
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
 -    FILE_PATH_LITERAL("/usr/share/google-chrome/extensions");
-+    FILE_PATH_LITERAL("/usr/local/share/google-chrome/extensions");
++    FILE_PATH_LITERAL("%%LOCALBASE%%/share/google-chrome/extensions");
  #else
 -    FILE_PATH_LITERAL("/usr/share/chromium/extensions");
-+    FILE_PATH_LITERAL("/usr/local/share/chromium/extensions");
++    FILE_PATH_LITERAL("%%LOCALBASE%%/share/chromium/extensions");
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  
  // The path to the hint file that tells the pepper plugin loader
@@ -41,7 +41,7 @@
        cur = base::FilePath(FILE_PATH_LITERAL("/etc/opt/chrome/policies"));
 +#elif defined(OS_BSD)
 +      cur = base::FilePath(FILE_PATH_LITERAL(
-+          "/usr/local/etc/chrome/policies"));
++          "%%LOCALBASE%%/etc/chrome/policies"));
  #else
        cur = base::FilePath(FILE_PATH_LITERAL("/etc/chromium/policies"));
  #endif
@@ -78,7 +78,7 @@
            "/etc/opt/chrome/native-messaging-hosts"));
 +#elif defined(OS_BSD)
 +      cur = base::FilePath(FILE_PATH_LITERAL(
-+          "/usr/local/etc/chrome/native-messaging-hosts"));
++          "%%LOCALBASE%%/etc/chrome/native-messaging-hosts"));
  #else
        cur = base::FilePath(FILE_PATH_LITERAL(
            "/etc/chromium/native-messaging-hosts"));

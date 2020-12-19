@@ -1,6 +1,11 @@
---- src/3rdparty/chromium/base/system/sys_info_freebsd.cc.orig	2020-03-16 14:04:24 UTC
+--- src/3rdparty/chromium/base/system/sys_info_freebsd.cc.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/base/system/sys_info_freebsd.cc
-@@ -13,26 +13,59 @@
+@@ -9,30 +9,76 @@
+ #include <sys/sysctl.h>
+ 
+ #include "base/logging.h"
++#include "base/strings/string_util.h"
+ 
  namespace base {
  
  int64_t SysInfo::AmountOfPhysicalMemoryImpl() {
@@ -62,6 +67,17 @@
    }
 +
    return static_cast<uint64_t>(limit);
++}
++
++SysInfo::HardwareInfo SysInfo::GetHardwareInfoSync() {
++  HardwareInfo info;
++  // Set the manufacturer to "FreeBSD" and the model to
++  // an empty string.
++  info.manufacturer = "FreeBSD";
++  info.model = HardwareModelName();
++  DCHECK(IsStringUTF8(info.manufacturer));
++  DCHECK(IsStringUTF8(info.model));
++  return info;
  }
--
+ 
  }  // namespace base

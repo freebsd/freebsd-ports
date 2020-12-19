@@ -1,50 +1,21 @@
---- src/3rdparty/chromium/v8/src/base/platform/platform-freebsd.cc.orig	2019-01-16 10:59:47 UTC
+--- src/3rdparty/chromium/v8/src/base/platform/platform-freebsd.cc.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/v8/src/base/platform/platform-freebsd.cc
-@@ -86,5 +86,47 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
+@@ -6,6 +6,7 @@
+ // parts, the implementation is in platform-posix.cc.
  
- void OS::SignalCodeMovingGC() {}
+ #include <pthread.h>
++#include <pthread_np.h>
+ #include <semaphore.h>
+ #include <signal.h>
+ #include <stdlib.h>
+@@ -81,8 +82,8 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
+             lib_name = std::string(path);
+           }
+           result.push_back(SharedLibraryAddress(
+-              lib_name, reinterpret_cast<uintptr_t>(map->kve_start),
+-              reinterpret_cast<uintptr_t>(map->kve_end)));
++              lib_name, static_cast<uintptr_t>(map->kve_start),
++              static_cast<uintptr_t>(map->kve_end)));
+         }
  
-+#ifdef __arm__
-+
-+bool OS::ArmUsingHardFloat() {
-+// GCC versions 4.6 and above define __ARM_PCS or __ARM_PCS_VFP to specify
-+// the Floating Point ABI used (PCS stands for Procedure Call Standard).
-+// We use these as well as a couple of other defines to statically determine
-+// what FP ABI used.
-+// GCC versions 4.4 and below don't support hard-fp.
-+// GCC versions 4.5 may support hard-fp without defining __ARM_PCS or
-+// __ARM_PCS_VFP.
-+
-+#define GCC_VERSION \
-+  (__GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__)
-+#if GCC_VERSION >= 40600 && !defined(__clang__)
-+#if defined(__ARM_PCS_VFP)
-+  return true;
-+#else
-+  return false;
-+#endif
-+
-+#elif GCC_VERSION < 40500 && !defined(__clang__)
-+  return false;
-+
-+#else
-+#if defined(__ARM_PCS_VFP)
-+  return true;
-+#elif defined(__ARM_PCS) || defined(__SOFTFP__) || defined(__SOFTFP) || \
-+    !defined(__VFP_FP__)
-+  return false;
-+#else
-+#error \
-+    "Your version of compiler does not report the FP ABI compiled for."     \
-+       "Please report it on this issue"                                        \
-+       "http://code.google.com/p/v8/issues/detail?id=2140"
-+
-+#endif
-+#endif
-+#undef GCC_VERSION
-+}
-+
-+#endif // def __arm__
-+
- }  // namespace base
- }  // namespace v8
+         start += ssize;

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2019-10-21 08:14:54 UTC
+--- src/3rdparty/chromium/third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/rtc_base/physical_socket_server.cc
 @@ -51,7 +51,7 @@
  #include "rtc_base/null_socket_server.h"
@@ -18,16 +18,16 @@
  
  int64_t GetSocketRecvTimestamp(int socket) {
    struct timeval tv_ioctl;
-@@ -290,7 +290,7 @@ int PhysicalSocket::GetOption(Option opt, int* value) 
-   socklen_t optlen = sizeof(*value);
-   int ret = ::getsockopt(s_, slevel, sopt, (SockOptArg)value, &optlen);
-   if (ret != -1 && opt == OPT_DONTFRAGMENT) {
+@@ -292,7 +292,7 @@ int PhysicalSocket::GetOption(Option opt, int* value) 
+     return -1;
+   }
+   if (opt == OPT_DONTFRAGMENT) {
 -#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
 +#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(WEBRTC_BSD)
      *value = (*value != IP_PMTUDISC_DONT) ? 1 : 0;
  #endif
-   }
-@@ -303,7 +303,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
+   } else if (opt == OPT_DSCP) {
+@@ -310,7 +310,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
    if (TranslateOption(opt, &slevel, &sopt) == -1)
      return -1;
    if (opt == OPT_DONTFRAGMENT) {
@@ -35,26 +35,8 @@
 +#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(WEBRTC_BSD)
      value = (value) ? IP_PMTUDISC_DO : IP_PMTUDISC_DONT;
  #endif
-   }
-@@ -313,7 +313,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
- int PhysicalSocket::Send(const void* pv, size_t cb) {
-   int sent = DoSend(
-       s_, reinterpret_cast<const char*>(pv), static_cast<int>(cb),
--#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
-+#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(WEBRTC_BSD)
-       // Suppress SIGPIPE. Without this, attempting to send on a socket whose
-       // other end is closed will result in a SIGPIPE signal being raised to
-       // our process, which by default will terminate the process, which we
-@@ -342,7 +342,7 @@ int PhysicalSocket::SendTo(const void* buffer,
-   size_t len = addr.ToSockAddrStorage(&saddr);
-   int sent =
-       DoSendTo(s_, static_cast<const char*>(buffer), static_cast<int>(length),
--#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
-+#if defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(WEBRTC_BSD)
-                // Suppress SIGPIPE. See above for explanation.
-                MSG_NOSIGNAL,
- #else
-@@ -533,7 +533,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+   } else if (opt == OPT_DSCP) {
+@@ -551,7 +551,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *slevel = IPPROTO_IP;
        *sopt = IP_DONTFRAGMENT;
        break;

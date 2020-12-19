@@ -1,34 +1,41 @@
---- src/3rdparty/chromium/base/files/file_path_watcher_stub.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/base/files/file_path_watcher_stub.cc.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/base/files/file_path_watcher_stub.cc
-@@ -5,10 +5,14 @@
- // This file exists for Unix systems which don't have the inotify headers, and
- // thus cannot build file_watcher_inotify.cc
+@@ -1,14 +1,15 @@
+-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
++// Copyright 2014 The Chromium Authors. All rights reserved.
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
  
+-// This file exists for Unix systems which don't have the inotify headers, and
+-// thus cannot build file_watcher_inotify.cc
+ 
+-#include "base/files/file_path_watcher.h"
 +#include <memory>
-+
- #include "base/files/file_path_watcher.h"
-+#include "base/files/file_path_watcher_kqueue.h"
  
++#include "base/files/file_path_watcher.h"
++#include "base/files/file_path_watcher_kqueue.h"
  #include "base/macros.h"
  #include "base/memory/ptr_util.h"
 +#include "build/build_config.h"
  
  namespace base {
  
-@@ -22,12 +26,26 @@ class FilePathWatcherImpl : public FilePathWatcher::Pl
+@@ -22,12 +23,29 @@ class FilePathWatcherImpl : public FilePathWatcher::Pl
    bool Watch(const FilePath& path,
               bool recursive,
               const FilePathWatcher::Callback& callback) override {
--    return false;
++#if defined(OS_BSD)
 +    DCHECK(!impl_.get());
 +    if (recursive) {
-+      if (!FilePathWatcher::RecursiveWatchAvailable())
-+        return false;
++      return false;
 +    } else {
-+     impl_ = std::make_unique<FilePathWatcherKQueue>();
++      impl_ = std::make_unique<FilePathWatcherKQueue>();
 +    }
 +    DCHECK(impl_.get());
 +    return impl_->Watch(path, recursive, callback);
++#else
+     return false;
++#endif
    }
  
 -  void Cancel() override {}

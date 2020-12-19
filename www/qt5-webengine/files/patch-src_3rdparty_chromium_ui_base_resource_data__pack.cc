@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/ui/base/resource/data_pack.cc.orig	2019-10-27 17:39:58 UTC
+--- src/3rdparty/chromium/ui/base/resource/data_pack.cc.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/ui/base/resource/data_pack.cc
-@@ -154,16 +154,42 @@ class ScopedFileWriter {
-   DISALLOW_COPY_AND_ASSIGN(ScopedFileWriter);
- };
+@@ -165,16 +165,42 @@ bool MmapHasGzipHeader(const base::MemoryMappedFile* m
+   return header_status == net::GZipHeader::COMPLETE_HEADER;
+ }
  
 +static inline uint16_t byteswap(uint16_t v) { return __builtin_bswap16(v); }
 +static inline uint32_t byteswap(uint32_t v) { return __builtin_bswap32(v); }
@@ -45,7 +45,7 @@
      uint16_t key = *reinterpret_cast<const uint16_t*>(void_key);
      const Entry* entry = reinterpret_cast<const Entry*>(void_entry);
      return key - entry->resource_id;
-@@ -171,10 +197,11 @@ struct DataPack::Entry {
+@@ -182,10 +208,11 @@ struct DataPack::Entry {
  };
  
  struct DataPack::Alias {
@@ -59,7 +59,7 @@
      uint16_t key = *reinterpret_cast<const uint16_t*>(void_key);
      const Alias* entry = reinterpret_cast<const Alias*>(void_entry);
      return key - entry->resource_id;
-@@ -284,7 +311,7 @@ bool DataPack::LoadImpl(std::unique_ptr<DataPack::Data
+@@ -322,7 +349,7 @@ bool DataPack::LoadImpl(std::unique_ptr<DataPack::Data
    // Parse the version and check for truncated header.
    uint32_t version = 0;
    if (data_length > sizeof(version))
@@ -68,7 +68,7 @@
    size_t header_length =
        version == kFileFormatV4 ? kHeaderLengthV4 : kHeaderLengthV5;
    if (version == 0 || data_length < header_length) {
-@@ -295,14 +322,14 @@ bool DataPack::LoadImpl(std::unique_ptr<DataPack::Data
+@@ -333,14 +360,14 @@ bool DataPack::LoadImpl(std::unique_ptr<DataPack::Data
  
    // Parse the header of the file.
    if (version == kFileFormatV4) {
@@ -86,7 +86,7 @@
    } else {
      LOG(ERROR) << "Bad data pack version: got " << version << ", expected "
                 << kFileFormatV4 << " or " << kFileFormatV5;
-@@ -382,12 +382,6 @@ bool DataPack::HasResource(uint16_t resource_id) const {
+@@ -420,12 +447,6 @@ bool DataPack::HasResource(uint16_t resource_id) const
  
  bool DataPack::GetStringPiece(uint16_t resource_id,
                                base::StringPiece* data) const {
@@ -99,7 +99,7 @@
    const Entry* target = LookupEntryById(resource_id);
    if (!target)
      return false;
-@@ -447,9 +480,6 @@ void DataPack::CheckForDuplicateResources(
+@@ -491,9 +512,6 @@ void DataPack::CheckForDuplicateResources(
  bool DataPack::WritePack(const base::FilePath& path,
                           const std::map<uint16_t, base::StringPiece>& resources,
                           TextEncodingType text_encoding_type) {
@@ -109,7 +109,7 @@
    if (text_encoding_type != UTF8 && text_encoding_type != UTF16 &&
        text_encoding_type != BINARY) {
      LOG(ERROR) << "Invalid text encoding type, got " << text_encoding_type
-@@ -467,7 +497,7 @@ bool DataPack::WritePack(const base::FilePath& path,
+@@ -511,7 +529,7 @@ bool DataPack::WritePack(const base::FilePath& path,
    if (!file.valid())
      return false;
  
@@ -118,7 +118,7 @@
  
    // Build a list of final resource aliases, and an alias map at the same time.
    std::vector<uint16_t> resource_ids;
-@@ -494,13 +524,14 @@ bool DataPack::WritePack(const base::FilePath& path,
+@@ -538,13 +556,14 @@ bool DataPack::WritePack(const base::FilePath& path,
  
    // These values are guaranteed to fit in a uint16_t due to the earlier
    // check of |resources_count|.
@@ -137,7 +137,7 @@
    file.Write(&entry_count, sizeof(entry_count));
    file.Write(&alias_count, sizeof(alias_count));
  
-@@ -508,8 +539,8 @@ bool DataPack::WritePack(const base::FilePath& path,
+@@ -552,8 +571,8 @@ bool DataPack::WritePack(const base::FilePath& path,
    // last item so we can compute the size of the list item.
    const uint32_t index_length = (entry_count + 1) * sizeof(Entry);
    const uint32_t alias_table_length = alias_count * sizeof(Alias);
@@ -148,7 +148,7 @@
      file.Write(&resource_id, sizeof(resource_id));
      file.Write(&data_offset, sizeof(data_offset));
      data_offset += resources.find(resource_id)->second.length();
-@@ -517,13 +548,13 @@ bool DataPack::WritePack(const base::FilePath& path,
+@@ -561,13 +580,13 @@ bool DataPack::WritePack(const base::FilePath& path,
  
    // We place an extra entry after the last item that allows us to read the
    // size of the last item.
@@ -159,8 +159,8 @@
  
    // Write the aliases table, if any. Note: |aliases| is an std::map,
    // ensuring values are written in increasing order.
--  for (const std::pair<uint16_t, uint16_t>& alias : aliases) {
-+  for (const std::pair<uint16le_t, uint16le_t> alias : aliases) {
+-  for (const std::pair<const uint16_t, uint16_t>& alias : aliases) {
++  for (const std::pair<const uint16le_t, uint16le_t>& alias : aliases) {
      file.Write(&alias, sizeof(alias));
    }
  

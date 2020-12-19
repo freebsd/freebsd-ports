@@ -1,6 +1,15 @@
---- src/3rdparty/chromium/build/config/compiler/compiler.gni.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/build/config/compiler/compiler.gni.orig	2020-11-07 01:22:36 UTC
 +++ src/3rdparty/chromium/build/config/compiler/compiler.gni
-@@ -181,7 +181,7 @@ declare_args() {
+@@ -47,7 +47,7 @@ declare_args() {
+   # only two architectures that are currently checked in). Turn this off when
+   # you are using a custom toolchain and need to control -B in cflags.
+   linux_use_bundled_binutils =
+-      linux_use_bundled_binutils_override && is_linux &&
++      linux_use_bundled_binutils_override && (is_linux && !is_bsd) &&
+       (current_cpu == "x64" || current_cpu == "x86")
+   binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
+                               root_build_dir)
+@@ -193,7 +193,7 @@ declare_args() {
  declare_args() {
    # Whether to use the gold linker from binutils instead of lld or bfd.
    use_gold =

@@ -18,7 +18,6 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	5
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -50,7 +49,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libwebp.so:graphics/webp
 
 DISTINFO_FILE=	${.CURDIR}/distinfo
-QT5_VERSION=	5.15.0
+QT5_VERSION=	5.15.2
 
 OPTIONS_SINGLE=		AUDIO
 OPTIONS_SINGLE_AUDIO=	ALSA PULSEAUDIO SNDIO
@@ -83,7 +82,6 @@ USE_QT=		core declarative gui location network printsupport \
 		buildtools_build designer_build qmake_build
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xorgproto \
 		xrandr xrender xscrnsaver xtst
-
 
 QMAKE_CONFIGURE_ARGS=	-proprietary-codecs -system-ffmpeg
 
@@ -133,8 +131,16 @@ post-extract-SNDIO-on:
 	@${CP} ${FILESDIR}/audio_manager_openbsd.* \
 		${WRKSRC}/src/3rdparty/chromium/media/audio/openbsd
 
-.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/src/3rdparty/chromium/base/linux_util.cc \
+		${WRKSRC}/src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni \
+		${WRKSRC}/src/3rdparty/chromium/chrome/common/chrome_paths.cc \
+		${WRKSRC}/src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp \
+		${WRKSRC}/src/3rdparty/chromium/third_party/pdfium/xfa/fgas/font/cfx_fontsourceenum_file.cpp \
+		${WRKSRC}/src/3rdparty/gn/build/gen.py
+
+.if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
 	@${REINPLACE_CMD} -e 's/icudtl.dat/icudtb.dat/' \
 		${WRKSRC}/src/core/core_module.pro
 .endif
