@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flake8-bugbear
-PORTVERSION=	20.1.4
+PORTVERSION=	20.11.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=19.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8>=3.0.0:devel/py-flake8@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
