@@ -64,5 +64,7 @@ bin/kotlinc-jvm
 %%DATADIR%%/lib/kotlinx-serialization-compiler-plugin.jar
 %%DATADIR%%/lib/mutability-annotations-compat.jar
 %%DATADIR%%/lib/noarg-compiler-plugin.jar
+%%DATADIR%%/lib/parcelize-compiler.jar
+%%DATADIR%%/lib/parcelize-runtime.jar
 %%DATADIR%%/lib/sam-with-receiver-compiler-plugin.jar
 %%DATADIR%%/lib/trove4j.jar
