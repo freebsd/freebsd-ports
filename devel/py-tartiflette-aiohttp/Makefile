@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tartiflette-aiohttp
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Run Tartiflette GraphQL Engine through aiohttp
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.5.4<3.7.0:www/py-aiohttp@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.5.4<3.8.0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tartiflette>=0.12.0<2.0.0:devel/py-tartiflette@${PY_FLAVOR}
 
 USES=		python:3.6+
