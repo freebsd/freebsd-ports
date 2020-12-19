@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>=0:devel/py-parameterized@${PY
 USES=		python ssl
 USE_PYTHON=	autoplist concurrent distutils
 
-PYDISTUTILS_BUILDARGS=	build_ext --include=${OPENSSLINC} --openssl=${OPENSSLBASE} --swig=${LOCALBASE}/bin/swig
+PYDISTUTILS_BUILDARGS=	build_ext --openssl=${OPENSSLBASE} --swig=${LOCALBASE}/bin/swig
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/M2Crypto/_m2crypto.so
