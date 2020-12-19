@@ -19,14 +19,15 @@ RUN_DEPENDS=	p5-IO-All>=0:devel/p5-IO-All \
 		p5-Spiffy>=0:devel/p5-Spiffy \
 		p5-libwww>=0:www/p5-libwww
 
-OPTIONS_DEFINE=	X11
-X11_DESC=	X11 Clipboard support
+USES=		perl5 shebangfix
+USE_PERL5=	configure
 
 NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5 shebangfix
 
 SHEBANG_FILES=	nopaste
+
+OPTIONS_DEFINE=	X11
+X11_DESC=	X11 Clipboard support
 
 X11_BUILD_DEPENDS=	p5-Clipboard>=0:x11/p5-Clipboard
 X11_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-lib-WebService-NoPaste.pm
