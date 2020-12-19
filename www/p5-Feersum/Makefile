@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Feersum
-PORTVERSION=	1.407
+PORTVERSION=	1.410
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AUDREYT
@@ -23,6 +23,7 @@ TEST_DEPENDS=	p5-AnyEvent>=5.26.1:devel/p5-AnyEvent \
 		p5-JSON-XS>=2:converters/p5-JSON-XS \
 		p5-Test-Fatal>=0.003:devel/p5-Test-Fatal \
 		p5-Test-LeakTrace>=0.13:devel/p5-Test-LeakTrace \
+		p5-Test-SharedFork>=0:devel/p5-Test-SharedFork \
 		p5-Test-TCP>=1.12:devel/p5-Test-TCP
 
 USES=		perl5
