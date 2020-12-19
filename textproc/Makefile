@@ -1300,6 +1300,7 @@
     SUBDIR += py-jsx-lexer
     SUBDIR += py-jtextfsm
     SUBDIR += py-junit-xml
+    SUBDIR += py-jupyterlab-pygments
     SUBDIR += py-langdetect
     SUBDIR += py-langid
     SUBDIR += py-laserhammer

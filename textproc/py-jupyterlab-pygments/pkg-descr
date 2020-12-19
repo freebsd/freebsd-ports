@@ -1,0 +1,7 @@
+JupyterLab Pygments Theme contains a syntax coloring theme for pygments making
+use of the JupyterLab CSS variables.
+
+The goal is to enable the use of JupyterLab's themes with pygments-generated
+HTML.
+
+WWW: https://github.com/jupyterlab/jupyterlab_pygments
