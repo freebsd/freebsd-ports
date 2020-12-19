@@ -19,6 +19,8 @@ BUILD_DEPENDS=	p5-Module-Install>0:devel/p5-Module-Install
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 post-patch:
 	# Really old M::I code
 	${RM} -r ${WRKSRC}/inc
