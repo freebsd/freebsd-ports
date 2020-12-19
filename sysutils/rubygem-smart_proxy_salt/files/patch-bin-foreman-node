@@ -1,11 +1,11 @@
---- bin/foreman-node.orig	2015-05-15 19:21:46 UTC
+--- bin/foreman-node.orig	2020-12-19 12:50:21 UTC
 +++ bin/foreman-node
-@@ -5,7 +5,7 @@
+@@ -7,7 +7,7 @@
  
  require 'yaml'
  
--$settings_file = '/etc/salt/foreman.yaml'
-+$settings_file = '%%LOCALBASE%%/etc/salt/foreman.yaml'
- SETTINGS = YAML.load_file($settings_file)
+-settings_file = '/etc/salt/foreman.yaml'
++settings_file = '%%LOCALBASE%%/etc/salt/foreman.yaml'
+ SETTINGS = YAML.load_file(settings_file)
  
  require 'net/http'

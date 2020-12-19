@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	smart_proxy_salt
-PORTVERSION=	2.1.9
+PORTVERSION=	3.1.2
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -14,10 +14,10 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	foreman-proxy>=1.8.0:net/foreman-proxy \
 		${PYTHON_PKGNAMEPREFIX}salt>0:sysutils/py-salt@${PY_FLAVOR}
 
-NO_ARCH=	yes
-
-USE_RUBY=	yes
 USES=		gem python
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 post-patch:
 		@${REINPLACE_CMD} \
