@@ -12,15 +12,17 @@ COMMENT=	Reading and Writing a variety of graph file formats
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Graph>=0.50:math/p5-Graph \
+RUN_DEPENDS=	p5-Graph>=0,1:math/p5-Graph \
 		p5-Parse-Yapp>=0:devel/p5-Parse-Yapp \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-XML-Writer>=0:textproc/p5-XML-Writer
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
