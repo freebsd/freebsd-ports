@@ -20,4 +20,6 @@ RUN_DEPENDS=	p5-URI>=1:net/p5-URI
 USES=		perl5
 USE_PERL5=	modbuild
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
