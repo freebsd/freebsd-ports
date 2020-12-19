@@ -2,6 +2,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	7.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	7
 
@@ -11,17 +12,14 @@ COMMENT=	Configuration management framework written in Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	rubygem-deep_merge>=1.0:devel/rubygem-deep_merge \
-		rubygem-hiera>=2.0:sysutils/rubygem-hiera \
-		rubygem-json_pure>=0:devel/rubygem-json_pure \
-		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
-RUN_DEPENDS=	rubygem-concurrent-ruby>0:devel/rubygem-concurrent-ruby \
-		rubygem-deep_merge>0:devel/rubygem-deep_merge \
-		rubygem-gettext-setup>=0:devel/rubygem-gettext-setup \
-		rubygem-hiera>=2.0:sysutils/rubygem-hiera \
-		rubygem-hocon>=0:devel/rubygem-hocon \
-		rubygem-json_pure>=0:devel/rubygem-json_pure \
-		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas \
+RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
+		rubygem-deep_merge>1.0:devel/rubygem-deep_merge \
+		rubygem-fast_gettext1>=1.1:devel/rubygem-fast_gettext1 \
+		rubygem-hiera>=3.2.1:sysutils/rubygem-hiera \
+		rubygem-locale>=2.1:devel/rubygem-locale \
+		rubygem-multi_json>=1.10:devel/rubygem-multi_json \
+		rubygem-puppet-resource_api>=1.5:devel/rubygem-puppet-resource_api \
+		rubygem-scanf>=1:devel/rubygem-scanf \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
 
 USES=		cpe
