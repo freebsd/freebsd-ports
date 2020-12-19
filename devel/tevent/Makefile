@@ -2,7 +2,7 @@
 
 PORTNAME=		tevent
 PORTVERSION=		0.10.2
-PORTREVISION=		0
+PORTREVISION=		1
 PORTEPOCH=		0
 CATEGORIES=		devel
 MASTER_SITES=		SAMBA
@@ -59,7 +59,8 @@ CONFIGURE_ARGS+=	--disable-python
 USES+=			python:3.4+
 
 PLIST_FILES+=		${PYTHON_SITELIBDIR}/_tevent.so \
-			${PYTHON_SITELIBDIR}/tevent.py
+			${PYTHON_SITELIBDIR}/tevent.py \
+			${PYTHON_SITELIBDIR}/__pycache__/tevent.cpython-${PYTHON_SUFFIX}.pyc
 .endif
 
 .include <bsd.port.pre.mk>
@@ -94,6 +95,7 @@ post-install:
 			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtevent.so
 .if !defined(NO_PYTHON)
 			${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_tevent.so
+			${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 .endif
 
 .include <bsd.port.post.mk>
