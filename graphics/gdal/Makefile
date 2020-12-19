@@ -85,7 +85,8 @@ HEADER_FILES=	alg/gdalwarpkernel_opencl.h \
 		port/cpl_vsil_curl_priv.h \
 		port/cpl_worker_thread_pool.h
 
-ARMADILLO_CONFIGURE_WITH=	armadillo
+ARMADILLO_CONFIGURE_OFF=--with-armadillo=no
+ARMADILLO_CONFIGURE_ON=	--with-armadillo=${LOCALBASE}
 ARMADILLO_LIB_DEPENDS=	libarmadillo.so:math/armadillo
 CFITSIO_CONFIGURE_WITH=	cfitsio
 CFITSIO_LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
