@@ -224,6 +224,8 @@ TEST_ALL_TARGET=	build
 TEST_ALL_TARGET_OFF=	build-nocheck
 TEST_CONFIGURE_ENABLE=	cve-tests
 
+WEBDAV_CONFIGURE_ON=	--with-webdav=neon
+WEBDAV_CONFIGURE_OFF=	--with-webdav=no
 WEBDAV_CONFIGURE_ENABLE=	neon
 WEBDAV_LIB_DEPENDS=	libneon.so:www/neon
 
