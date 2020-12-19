@@ -5582,6 +5582,7 @@
     SUBDIR += rubygem-aws-sdk-glue
     SUBDIR += rubygem-aws-sdk-gluedatabrew
     SUBDIR += rubygem-aws-sdk-greengrass
+    SUBDIR += rubygem-aws-sdk-greengrassv2
     SUBDIR += rubygem-aws-sdk-groundstation
     SUBDIR += rubygem-aws-sdk-guardduty
     SUBDIR += rubygem-aws-sdk-health
