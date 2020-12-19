@@ -1,7 +1,7 @@
 bin/scummvm
-man/man6/scummvm.6.gz
 share/applications/scummvm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.BSD
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.FREEFONT
@@ -10,8 +10,9 @@ share/applications/scummvm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
-share/appdata/scummvm.appdata.xml
 share/icons/hicolor/scalable/apps/scummvm.svg
+share/man/man6/scummvm.6.gz
+share/metainfo/scummvm.appdata.xml
 share/pixmaps/scummvm.xpm
 %%DATADIR%%/access.dat
 %%DATADIR%%/cryomni3d.dat
@@ -34,5 +35,6 @@ share/pixmaps/scummvm.xpm
 %%DATADIR%%/tony.dat
 %%DATADIR%%/toon.dat
 %%DATADIR%%/translations.dat
-%%DATADIR%%/wintermute.zip
+%%DATADIR%%/ultima.dat
+%%PNG%%%%DATADIR%%/wintermute.zip
 %%DATADIR%%/xeen.ccs
