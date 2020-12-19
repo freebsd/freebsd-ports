@@ -17,4 +17,6 @@ RUN_DEPENDS=	p5-Number-Format>0:textproc/p5-Number-Format \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
