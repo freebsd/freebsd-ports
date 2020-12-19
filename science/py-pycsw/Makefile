@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pycsw
-PORTVERSION=	2.4.2
+PORTVERSION=	2.6.0
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,11 +18,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}geolinks>=0:science/py-geolinks@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}OWSLib>=0:graphics/py-OWSLib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproj>=0:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Shapely>=0:devel/py-shapely@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>=0:devel/py-xmltodict@${PY_FLAVOR}
 
 USES=		python:3.5+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
