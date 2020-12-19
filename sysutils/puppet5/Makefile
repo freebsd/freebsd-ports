@@ -2,6 +2,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	5.5.22
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	5
@@ -15,13 +16,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # maybe a newer version like puppet 6.x or 7.x must be used to work with ruby 2.7
 BROKEN_RUBY27=	yes
 
-BUILD_DEPENDS=	rubygem-hiera>=2.0:sysutils/rubygem-hiera \
-		rubygem-json_pure>=0:devel/rubygem-json_pure
-RUN_DEPENDS=	rubygem-gettext-setup>=0:devel/rubygem-gettext-setup \
-		rubygem-hiera>=2.0:sysutils/rubygem-hiera \
-		rubygem-hocon>=0:devel/rubygem-hocon \
-		rubygem-json_pure>=0:devel/rubygem-json_pure \
-		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas
+RUN_DEPENDS=	rubygem-fast_gettext1>=1.1.2:devel/rubygem-fast_gettext1 \
+		rubygem-hiera>=3.2.1:sysutils/rubygem-hiera \
+		rubygem-locale>=2.1:devel/rubygem-locale \
+		rubygem-multi_json>=1.10:devel/rubygem-multi_json
 
 USES=		cpe
 CPE_VENDOR=	puppetlabs
