@@ -29,8 +29,9 @@ TEST_DEPENDS=	p5-JSON>=0:converters/p5-JSON \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Fake-HTTPD>=0:devel/p5-Test-Fake-HTTPD
 
-NO_ARCH=	yes
-USE_PERL5=	configure
 USES=		perl5
+USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
