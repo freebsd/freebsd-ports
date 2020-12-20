@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsidplayfp
-PORTVERSION=	1.8.6
+PORTVERSION=	2.0.5
 CATEGORIES=	audio
 MASTER_SITES=	SF/sidplay-residfp/libsidplayfp/${PORTVERSION:R}
 
@@ -11,38 +11,36 @@ COMMENT=	Library to play Commodore 64 music derived from libsidplay2
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool pathfix pkgconfig
-GNU_CONFIGURE=	yes
+BUILD_DEPENDS=	libgcrypt-config:security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
+
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-exsid=no \
+		--with-gcrypt
+
 INSTALL_TARGET=	install-strip
+
+PLIST_SUB+=	SIDPLAYFP_SHLIB_VER=${SIDPLAYFP_SHLIB_VERSION:C/\.[[:digit:].]+//} \
+		SIDPLAYFP_SHLIB_VERSION=${SIDPLAYFP_SHLIB_VERSION} \
+		STILVIEW_SHLIB_VER=${STILVIEW_SHLIB_VERSION:C/\.[[:digit:].]+//} \
+		STILVIEW_SHLIB_VERSION=${STILVIEW_SHLIB_VERSION}
 
 PORTDOCS=	NEWS README TODO
 
 OPTIONS_DEFINE=	DEBUG DOCS DOXYGEN
+OPTIONS_SUB=	yes
+
 DEBUG_CONFIGURE_ON=	--enable-debug=full
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
-OPTIONS_GROUP=	OPTIMIZATION
-OPTIONS_GROUP_OPTIMIZATION=	BHINTS INLINE MMX
-OPTIONS_DEFAULT=	BHINTS INLINE
+DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen
+DOXYGEN_CONFIGURE_ENV_OFF=	ac_cv_prog_HAVE_DOXYGEN=false
 
-OPTIMIZATION_DESC=	Increase performance by optimization
-BHINTS_DESC=	Enable branch hints in reSID engine
-BHINTS_CONFIGURE_ENABLE=	branch-hints
-INLINE_DESC=	Enable inlining in reSID engine at bigger code size
-INLINE_CONFIGURE_ENABLE=	inline
-MMX_DESC=	Enable MMX code in reSIDfp for old x86 non-SSE2 CPU
-MMX_CONFIGURE_ENABLE=	mmx
-
-BUILD_DEPENDS+=	xa65:devel/xa65
-
-SIDPLAYFP_SHLIB_VERSION=	4.2.7
-STILVIEW_SHLIB_VERSION=	0.0.3
-PLIST_SUB+=	\
-	SIDPLAYFP_SHLIB_VER=${SIDPLAYFP_SHLIB_VERSION:C/\.[[:digit:].]+//} \
-	SIDPLAYFP_SHLIB_VERSION=${SIDPLAYFP_SHLIB_VERSION} \
-	STILVIEW_SHLIB_VER=${STILVIEW_SHLIB_VERSION:C/\.[[:digit:].]+//} \
-	STILVIEW_SHLIB_VERSION=${STILVIEW_SHLIB_VERSION}
+SIDPLAYFP_SHLIB_VERSION=	5.2.15
+STILVIEW_SHLIB_VERSION=		0.0.4
 
 post-build-DOXYGEN-on:
 	${MAKE_CMD} doc -C ${WRKSRC}
@@ -54,8 +52,5 @@ post-install-DOCS-on:
 post-install-DOXYGEN-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${STAGEDIR}${DOCSDIR}/html
-	@${FIND} ${STAGEDIR}${DOCSDIR}/html -type f | \
-		${SED} 's|${STAGEDIR}${PREFIX}/||' > ${WRKDIR}/PLIST.doc
-	@${SED} -i -e '/PLIST.doc/ r ${WRKDIR}/PLIST.doc' ${TMPPLIST}
 
 .include <bsd.port.mk>
