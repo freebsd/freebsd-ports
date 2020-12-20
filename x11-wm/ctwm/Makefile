@@ -18,4 +18,9 @@ USE_XORG=	x11 xext xt ice sm xpm xmu
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+# mtree isn't run in poudriere, so /usr/local/ isn't all setup like it
+# should be, so we have to force this
+CMAKE_ARGS=	-DMANDIR:STRING="${PREFIX}/share/man"
+
+
 .include <bsd.port.mk>
