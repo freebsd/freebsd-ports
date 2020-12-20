@@ -51,6 +51,7 @@
     SUBDIR += fantasque-sans-mono
     SUBDIR += fanwood
     SUBDIR += farsifonts
+    SUBDIR += fcft
     SUBDIR += fifteen
     SUBDIR += fira
     SUBDIR += firacode

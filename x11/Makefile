@@ -71,6 +71,7 @@
     SUBDIR += flruler
     SUBDIR += fpc-x11
     SUBDIR += fstobdf
+    SUBDIR += fuzzel
     SUBDIR += gdm
     SUBDIR += glcapsviewer
     SUBDIR += gmrun
