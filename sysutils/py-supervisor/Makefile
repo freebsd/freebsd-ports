@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	supervisor
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 PORTEPOCH=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	thomas@gibfest.dk
 COMMENT=	System for controlling process state under UNIX
 
-LICENSE=	REPOZE BSD3CLAUSE MEDUSA
+LICENSE=	BSD3CLAUSE MEDUSA REPOZE
 LICENSE_COMB=	multi
 LICENSE_NAME_MEDUSA=	Medusa License
 LICENSE_NAME_REPOZE=	Repoze License
@@ -22,19 +22,20 @@ LICENSE_PERMS_REPOZE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0.5.0:devel/py-mock@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	supervisord
 SHEBANG_FILES=	supervisor/scripts/*.py supervisor/tests/fixtures/*.py
 python_OLD_CMD=	"<<PYTHON>>"
 
 NO_ARCH=	yes
-SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
-		PIDDIR=${PIDDIR}
+SUB_LIST=	PIDDIR=${PIDDIR} \
+		PYTHON_CMD=${PYTHON_CMD}
+
 PLIST_DIRS=	${PIDDIR}
 PLIST_FILES=	'@sample etc/supervisord.conf.sample'
 PLIST_SUB=	PIDDIR=${PIDDIR}
 
-PORTDOCS=	*.txt *.rst
+PORTDOCS=	*.rst *.txt
 
 OPTIONS_DEFINE=	DOCS
 
