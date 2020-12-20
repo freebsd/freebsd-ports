@@ -38,4 +38,8 @@ PLIST_FILES=	bin/${PORTNAME} \
 CFLAGS+=	-Wno-error=missing-braces
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},g' \
+		${WRKSRC}/xdg.c
+
 .include <bsd.port.mk>
