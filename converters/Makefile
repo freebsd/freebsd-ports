@@ -7,6 +7,7 @@
     SUBDIR += R-cran-base64enc
     SUBDIR += R-cran-jsonlite
     SUBDIR += R-cran-rjson
+    SUBDIR += aha
     SUBDIR += aish
     SUBDIR += ascii2binary
     SUBDIR += asr10
