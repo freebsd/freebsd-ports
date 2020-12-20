@@ -7,6 +7,7 @@
 %%WWWDIR%%/README.TXT
 %%WWWDIR%%/anim.htm
 %%WWWDIR%%/cip.htm
+%%WWWDIR%%/compare2.htm
 %%WWWDIR%%/cover.htm
 %%WWWDIR%%/coverJava.htm
 %%WWWDIR%%/data/04369a.cif
@@ -214,9 +215,6 @@
 %%WWWDIR%%/images/test1.jpg
 %%WWWDIR%%/images/test2.jpg
 %%WWWDIR%%/inchi.htm
-%%WWWDIR%%/inchi/LICENSE.txt
-%%WWWDIR%%/inchi/inchi.js
-%%WWWDIR%%/inchi/inchi.js.mem
 %%WWWDIR%%/inline_old.htm
 %%WWWDIR%%/j2s/J/Jmol.properties
 %%WWWDIR%%/j2s/J/adapter/readers/cif/Cif2DataParser.js
@@ -368,6 +366,7 @@
 %%WWWDIR%%/j2s/J/api/JmolFilesReaderInterface.js
 %%WWWDIR%%/j2s/J/api/JmolGestureServerInterface.js
 %%WWWDIR%%/j2s/J/api/JmolGraphicsInterface.js
+%%WWWDIR%%/j2s/J/api/JmolInChI.js
 %%WWWDIR%%/j2s/J/api/JmolJDXMOLParser.js
 %%WWWDIR%%/j2s/J/api/JmolJDXMOLReader.js
 %%WWWDIR%%/j2s/J/api/JmolJSpecView.js
@@ -522,6 +521,7 @@
 %%WWWDIR%%/j2s/J/i18n/Language.js
 %%WWWDIR%%/j2s/J/i18n/Resource.js
 %%WWWDIR%%/j2s/J/image/AviCreator.js
+%%WWWDIR%%/j2s/J/inchi/InChIJS.js
 %%WWWDIR%%/j2s/J/io/DOMReader.js
 %%WWWDIR%%/j2s/J/io/FileReader.js
 %%WWWDIR%%/j2s/J/io/FilesReader.js
@@ -1179,6 +1179,9 @@
 %%WWWDIR%%/j2s/JV/binding/RasmolBinding.js
 %%WWWDIR%%/j2s/JV/package.js
 %%WWWDIR%%/j2s/Jmol.properties
+%%WWWDIR%%/j2s/_ES6/molfile-to-inchi.js
+%%WWWDIR%%/j2s/_WASM/molfile_to_inchi.wasm
+%%WWWDIR%%/j2s/_WASM/wasi.esm.js
 %%WWWDIR%%/j2s/core/corebinary.js
 %%WWWDIR%%/j2s/core/corebinary.z.js
 %%WWWDIR%%/j2s/core/corebio.js
