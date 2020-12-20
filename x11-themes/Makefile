@@ -31,6 +31,7 @@
     SUBDIR += cursor-neutral-white-theme
     SUBDIR += e16-themes
     SUBDIR += emerald-themes
+    SUBDIR += flat-remix-gtk-themes
     SUBDIR += flat-remix-icon-themes
     SUBDIR += fluxbox-tenr-styles-pack
     SUBDIR += freebsd-8k-wallpapers
