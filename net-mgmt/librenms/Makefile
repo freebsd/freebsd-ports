@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.66
-PORTREVISION=	1
+PORTVERSION=	1.70.1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -19,7 +18,7 @@ USES=		shebangfix python
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-RELEASE_TIMESTAMP=	1596087334
+RELEASE_TIMESTAMP=	1606919946
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
@@ -46,7 +45,7 @@ USERS=		www
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP WMIC DOCS EXAMPLES X11
-OPTIONS_DEFAULT=	 FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER WMIC
+OPTIONS_DEFAULT=	FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER WMIC
 
 FPING_DESC=	Enable fping support ping monitoring
 IPMITOOL_DESC=	Enable support for monitoring hardware IPMI
@@ -87,11 +86,11 @@ SUB_LIST+=	PHP="${PHPBASE}/bin/php" PYTHON=${PYTHON_CMD} \
 		USER="${WWWOWN}" GROUP="${WWWGRP}" WWWDIR="${WWWDIR}"
 
 ROOT_FILES=	addhost.php adduser.php alerts.php artisan billing-calculate.php \
-		build-base.php build.sql check-services.php composer.json \
+		check-services.php composer.json \
 		composer.lock config.php.default config_to_json.php cronic daily.php \
 		delhost.php discovery-wrapper.py discovery.php dist-pollers.php irc.php \
 		librenms-service.py mkdocs.yml pbin.sh phpunit.xml ping.php poll-billing.php poller.php \
-		poller-wrapper.py readmegen.yml renamehost.php snmp-scan.py \
+		poller-wrapper.py renamehost.php snmp-scan.py \
 		snmptrap.php syslog.php validate.php
 
 SCRIPT_FILES=	daily.sh lnms
@@ -108,13 +107,13 @@ OTHER_DIRS=	html/js/lang \
 		storage/logs \
 		tests/Browser/console \
 		tests/Browser/screenshots \
-		vendor/amenadiel/jpgraph/tests/_output \
-		vendor/amenadiel/jpgraph/tests/_support/_generated \
-		vendor/php-amqplib/php-amqplib/docs
+		vendor/librenms/laravel-vue-i18n-generator/tests/output \
+		vendor/ramsey/collection/bin \
+		vendor/symfony/string/Resources/bin
 
 DOCS=		AUTHORS.md CHANGELOG.md CONTRIBUTING.md LICENSE.txt README.md
 PORTDOCS=	*
-PORTEXAMPLES=	snmp.conf.example snmpd.conf.example
+PORTEXAMPLES=	snmpd.conf.example
 NO_ARCH=	yes
 
 post-patch:
@@ -137,7 +136,7 @@ do-install:
 .endfor
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/vendor
 	(cd ${WRKDIR}/${PORTNAME}-vendor-${PORTVERSION} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/vendor)
-	
+
 	# As of 1.66_1, the package installs bootstrap/cache
 	# This was previously left to the code to populate.
 	# That causese problems when the code doesn't do that update.
