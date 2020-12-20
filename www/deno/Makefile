@@ -2,7 +2,7 @@
 
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0
+DISTVERSION=	1.6.1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -52,7 +52,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		alloc-no-stdlib-2.0.1 \
 		alloc-stdlib-0.2.1 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.34 \
+		anyhow-1.0.35 \
 		anymap-0.12.1 \
 		arc-swap-0.4.7 \
 		arrayvec-0.5.1 \
@@ -97,8 +97,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		darling_core-0.10.2 \
 		darling_macro-0.10.2 \
 		dashmap-3.11.10 \
-		deno_doc-0.1.17 \
-		deno_lint-0.2.12 \
+		deno_doc-0.1.18 \
+		deno_lint-0.2.13 \
 		derive_more-0.99.11 \
 		digest-0.8.1 \
 		digest-0.9.0 \
@@ -106,7 +106,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dlopen-0.1.8 \
 		dlopen_derive-0.1.4 \
 		dprint-core-0.33.1 \
-		dprint-plugin-typescript-0.35.0 \
+		dprint-plugin-typescript-0.35.1 \
 		dtoa-0.4.6 \
 		either-1.6.0 \
 		encoding_rs-0.8.24 \
@@ -273,9 +273,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		semver-parser-0.9.0 \
-		serde-1.0.117 \
-		serde_derive-1.0.117 \
-		serde_json-1.0.59 \
+		serde-1.0.118 \
+		serde_derive-1.0.118 \
+		serde_json-1.0.60 \
 		serde_repr-0.1.6 \
 		serde_urlencoded-0.6.1 \
 		sha-1-0.8.2 \
@@ -296,19 +296,19 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strsim-0.8.0 \
 		strsim-0.9.3 \
 		swc_atoms-0.2.5 \
-		swc_bundler-0.17.5 \
-		swc_common-0.10.6 \
+		swc_bundler-0.17.6 \
+		swc_common-0.10.7 \
 		swc_ecma_ast-0.35.0 \
 		swc_ecma_codegen-0.41.1 \
 		swc_ecma_codegen_macros-0.5.0 \
-		swc_ecma_dep_graph-0.9.0 \
+		swc_ecma_dep_graph-0.10.0 \
 		swc_ecma_parser-0.43.1 \
 		swc_ecma_parser_macros-0.4.1 \
 		swc_ecma_transforms-0.30.3 \
 		swc_ecma_transforms_macros-0.1.1 \
 		swc_ecma_utils-0.25.0 \
 		swc_ecma_visit-0.21.0 \
-		swc_ecmascript-0.14.4 \
+		swc_ecmascript-0.15.0 \
 		swc_macros_common-0.3.1 \
 		swc_visit-0.2.2 \
 		swc_visit_macros-0.2.1 \
@@ -316,7 +316,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		syn-1.0.48 \
 		sys-info-0.7.0 \
 		tempfile-3.1.0 \
-		termcolor-1.1.0 \
+		termcolor-1.1.2 \
 		textwrap-0.11.0 \
 		thiserror-1.0.20 \
 		thiserror-impl-1.0.20 \
@@ -324,7 +324,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		time-0.1.44 \
 		tinyvec-0.3.4 \
 		tokio-0.2.22 \
-		tokio-0.3.4 \
+		tokio-0.3.5 \
 		tokio-macros-0.2.5 \
 		tokio-macros-0.3.1 \
 		tokio-rustls-0.14.1 \
