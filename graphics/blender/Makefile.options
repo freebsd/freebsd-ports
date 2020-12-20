@@ -14,6 +14,7 @@ OPTIONS_DEFINE=		\
 	CYCLESOSL 	\
 	DDS 		\
 	DRACO		\
+	EBOOL		\
 	FFMPEG 		\
 	FFTW3 		\
 	FRAMESERVER	\
@@ -44,6 +45,7 @@ OPTIONS_DEFINE=		\
 	SNDFILE		\
 	TBB		\
 	TIFF		\
+	TRACE		\
 	XINPUT		\
 	XF86VMODE
 
@@ -58,6 +60,7 @@ OPTIONS_DEFAULT=	\
 	CYCLES		\
 	DDS		\
 	DRACO		\
+	EBOOL		\
 	FFMPEG 		\
 	FFTW3		\
 	FRAMESERVER	\
@@ -82,6 +85,7 @@ OPTIONS_DEFAULT=	\
 	SDL		\
 	TBB		\
 	TIFF		\
+	TRACE		\
 	XINPUT		\
 	XF86VMODE
 
@@ -101,6 +105,7 @@ CYCLESOSL_DESC=		Shading support for the cycles render engine
 DDS_DESC=		DDS graphics format support
 # this is required to support gltf import/export
 DRACO_DESC=		Install draco python module
+EBOOL_DESC=		Enable exact boolean support
 FFTW3_DESC=		Use fftw for smoke and audio effects
 FRAMESERVER_DESC=	Image FrameServer support for rendering
 FREESTYLE_DESC=		Enable advanced edges rendering
@@ -123,5 +128,6 @@ OPENVDB_DESC=		Use openVDB library for volumetric data
 RAYOPTIMIZATION_DESC=	Enable SSE optimizatons for raytracing
 SDL_DESC=		Audio and Joystick support using SDL
 TBB_DESC=		Enable use of Intel's tbb
+TRACE_DESC=		Enable tracing image to GP stroke
 XINPUT_DESC=		X11 Xinput (tablet) support
 XF86VMODE_DESC=		X11 video mode switching support
