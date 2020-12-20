@@ -3,7 +3,7 @@
 
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.14
+DISTVERSION=	0.9.15.p20201218
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
@@ -29,9 +29,10 @@ USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
-GH_ACCOUNT=	neutrinolabs
+#GH_ACCOUNT=	neutrinolabs
+GH_ACCOUNT=	metalefty
 GH_PROJECT=	xrdp librfxcodec:librfxcodec libpainter:libpainter
-GH_TAGNAME=	v0.1.5:librfxcodec v0.1.1:libpainter
+GH_TAGNAME=	70d231b v0.1.5:librfxcodec v0.1.1:libpainter
 
 CONFIGURE_ARGS=	--localstatedir=/var --enable-strict-locations \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
@@ -79,6 +80,7 @@ post-extract:
 	@${CP} -r ${WRKSRC_libpainter}/ ${WRKSRC}/libpainter/
 
 pre-configure:
+	@${REINPLACE_CMD} -e "s|0.9.14|${DISTVERSION}-${GH_TAGNAME}|" ${WRKSRC}/configure.ac
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./bootstrap
 
 post-install:
