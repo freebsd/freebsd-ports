@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mixlib-config
-PORTVERSION=	2.2.5
+PORTVERSION=	3.0.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,11 @@ COMMENT=	Class based config mixin, similar to the one found in Chef
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
+RUN_DEPENDS=	rubygem-tomlrb>=0:textproc/rubygem-tomlrb
+
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
