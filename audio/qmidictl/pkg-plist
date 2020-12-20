@@ -1,6 +1,6 @@
 bin/qmidictl
+man/fr/man1/qmidictl.1.gz
 man/man1/qmidictl.1.gz
-man/man1/qmidictl.fr.1.gz
 share/applications/hildon/qmidictl.desktop
 share/icons/hicolor/26x26/hildon/qmidictl.png
 share/icons/hicolor/32x32/hildon/qmidictl.png
