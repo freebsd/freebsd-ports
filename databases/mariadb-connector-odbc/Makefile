@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
-PORTVERSION=	3.1.9
+PORTVERSION=	3.1.11
 CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/${SITESDIR}/ \
 		http://mirrors.supportex.net/${SITESDIR}/ \
