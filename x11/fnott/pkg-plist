@@ -1,0 +1,9 @@
+bin/fnott
+bin/fnottctl
+man/man1/fnott.1.gz
+man/man1/fnottctl.1.gz
+man/man5/fnott.5.gz
+share/applications/fnott.desktop
+%%DATADIR%%/fnottrc
+share/zsh/site-functions/_fnott
+share/zsh/site-functions/_fnottctl

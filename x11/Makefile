@@ -69,6 +69,7 @@
     SUBDIR += fireflies
     SUBDIR += florence
     SUBDIR += flruler
+    SUBDIR += fnott
     SUBDIR += fpc-x11
     SUBDIR += fstobdf
     SUBDIR += fuzzel
