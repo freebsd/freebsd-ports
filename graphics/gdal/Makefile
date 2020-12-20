@@ -130,6 +130,7 @@ NETCDF_CONFIGURE_WITH=	netcdf
 NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
 ODBC_CONFIGURE_WITH=	odbc
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
+OPENJPEG_BUILD_DEPENDS=	openjpeg>=2.1.0:graphics/openjpeg
 OPENJPEG_CONFIGURE_WITH=openjpeg
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 PCRE_CONFIGURE_WITH=	pcre
