@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mixlib-cli
-PORTVERSION=	1.7.0
+PORTVERSION=	2.1.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,9 @@ COMMENT=	Simple mixin for CLI interfaces, including option parsing
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
