@@ -298,7 +298,7 @@ SMALL_LIGHT_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6 \
 SMALL_LIGHT_GH_TUPLE=		cubicdaiya:ngx_small_light:v0.9.2:small_light
 SMALL_LIGHT_VARS=		DSO_EXTMODS+=small_light
 
-SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:v0.31:srcache
+SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:v0.32:srcache
 SRCACHE_VARS=		DSO_EXTMODS+=srcache
 
 VOD_GH_TUPLE=		kaltura:nginx-vod-module:1.23:vod
