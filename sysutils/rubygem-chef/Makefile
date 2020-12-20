@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef
-PORTVERSION=	13.8.3
-PORTREVISION=	2
+PORTVERSION=	15.14.0
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -14,33 +13,35 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
+		rubygem-bcrypt_pbkdf>=1.0.1<2:security/rubygem-bcrypt_pbkdf \
 		rubygem-bundler>=1.10:sysutils/rubygem-bundler \
-		rubygem-chef-config>=${PORTVERSION}:sysutils/rubygem-chef-config \
-		rubygem-chef-zero>=13.0:sysutils/rubygem-chef-zero \
+		rubygem-chef-config>=${PORTVERSION}<${PORTVERSION}_99:sysutils/rubygem-chef-config \
+		rubygem-chef-utils>=${PORTVERSION}<${PORTVERSION}_99:sysutils/rubygem-chef-utils \
+		rubygem-chef-zero>=14.0.11:sysutils/rubygem-chef-zero \
 		rubygem-diff-lcs>=1.2.4<2:textproc/rubygem-diff-lcs \
+		rubygem-ed25519>=1.2<2:security/rubygem-ed25519 \
 		rubygem-erubis>=2.7<3:www/rubygem-erubis \
+		rubygem-ffi>=1.9.25:devel/rubygem-ffi \
+		rubygem-ffi-libarchive>=1.0.3<2:devel/rubygem-ffi-libarchive \
 		rubygem-ffi-yajl>=2.2<3:devel/rubygem-ffi-yajl \
 		rubygem-highline1>=1.6.9<2:devel/rubygem-highline1 \
 		rubygem-iniparse>=1.4<2:devel/rubygem-iniparse \
-		rubygem-iso8601>=0.9.1<1:devel/rubygem-iso8601 \
-		rubygem-mixlib-archive>=0.4<1:devel/rubygem-mixlib-archive \
-		rubygem-mixlib-authentication>=1.4<2:devel/rubygem-mixlib-authentication \
-		rubygem-mixlib-cli>=1.7<2:devel/rubygem-mixlib-cli \
-		rubygem-mixlib-log>=1.3<2:devel/rubygem-mixlib-log \
-		rubygem-mixlib-shellout>=2.0<3:devel/rubygem-mixlib-shellout \
-		rubygem-net-sftp>=2.1.2<3:security/rubygem-net-sftp \
-		rubygem-net-ssh4>=2.9,2<5.0,2:security/rubygem-net-ssh4 \
+		rubygem-license-acceptance>=1.0.5:sysutils/rubygem-license-acceptance \
+		rubygem-mixlib-archive>=0.4<2:devel/rubygem-mixlib-archive \
+		rubygem-mixlib-authentication>=2.1<4:devel/rubygem-mixlib-authentication \
+		rubygem-mixlib-cli>=2.1.1<3:devel/rubygem-mixlib-cli \
+		rubygem-mixlib-log>=2.0.3<4:devel/rubygem-mixlib-log \
+		rubygem-mixlib-shellout>=3.0.3<4:devel/rubygem-mixlib-shellout \
+		rubygem-net-sftp>=2.1.2<4:security/rubygem-net-sftp \
+		rubygem-net-ssh>=4.2,2<7,2:security/rubygem-net-ssh \
 		rubygem-net-ssh-multi>=1.2.1<2:security/rubygem-net-ssh-multi \
-		rubygem-ohai>=13.0<14:sysutils/rubygem-ohai \
+		rubygem-ohai>=15.0<16:sysutils/rubygem-ohai \
 		rubygem-plist>=3.2<4:devel/rubygem-plist \
 		rubygem-proxifier>=1.0<2:net/rubygem-proxifier \
-		rubygem-rspec-core>=3.5<4:devel/rubygem-rspec-core \
-		rubygem-rspec-expectations>=3.5<4:devel/rubygem-rspec-expectations \
-		rubygem-rspec_junit_formatter>=0.2<1:devel/rubygem-rspec_junit_formatter \
-		rubygem-rspec-mocks>=3.5<4:devel/rubygem-rspec-mocks \
-		rubygem-serverspec>=2.7<3:sysutils/rubygem-serverspec \
-		rubygem-specinfra>=2.10<3:sysutils/rubygem-specinfra \
 		rubygem-syslog-logger>=1.6<2:sysutils/rubygem-syslog-logger \
+		rubygem-train-core>=3.2.28<4:net/rubygem-train-core \
+		rubygem-train-winrm>=0.2.5:net/rubygem-train-winrm \
+		rubygem-tty-screen>=0.6<1:devel/rubygem-tty-screen \
 		rubygem-uuidtools>=2.1.5<2.2:devel/rubygem-uuidtools
 
 USES=		gem shebangfix
@@ -59,8 +60,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '1d' ${WRKSRC}/spec/data/apt/chef-integration-test*/debian/rules
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/distro/common/man/man1/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/distro/common/man/man8/*.8 ${STAGEDIR}${MANPREFIX}/man/man8/
+#	${INSTALL_MAN} ${WRKSRC}/distro/common/man/man1/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+#	${INSTALL_MAN} ${WRKSRC}/distro/common/man/man8/*.8 ${STAGEDIR}${MANPREFIX}/man/man8/
 	${MKDIR} ${STAGEDIR}/var/chef
 
 .include <bsd.port.mk>
