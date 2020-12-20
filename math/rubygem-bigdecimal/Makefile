@@ -14,6 +14,4 @@ LICENSE=	RUBY
 USES=		gem
 USE_RUBY=	yes
 
-#NO_ARCH=	yes
-
 .include <bsd.port.mk>
