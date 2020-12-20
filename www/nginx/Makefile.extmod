@@ -12,7 +12,7 @@ AWS_AUTH_GH_TUPLE=	anomalizer:ngx_aws_auth:692263b:aws_auth
 AWS_AUTH_VARS=		DSO_EXTMODS+=aws_auth
 
 BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
-BROTLI_GH_TUPLE=	eustas:ngx_brotli:8104036:brotli
+BROTLI_GH_TUPLE=	eustas:ngx_brotli:7fab041:brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 
 CACHE_PURGE_GH_TUPLE=		nginx-modules:ngx_cache_purge:23dc16a:cache_purge
