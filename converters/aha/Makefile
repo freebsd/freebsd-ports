@@ -4,6 +4,7 @@
 PORTNAME=	aha
 PORTVERSION=	0.5.1
 CATEGORIES=	converters
+PKGNAMESUFFIX=	-theZiz
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	ANSI escape-coded formatted output to HTML converter
