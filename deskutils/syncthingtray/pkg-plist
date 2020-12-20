@@ -7,7 +7,6 @@ share/icons/hicolor/scalable/apps/syncthingtray.svg
 share/kservices5/plasma-applet-martchus.syncthingplasmoid.desktop
 share/kservices5/syncthingfileitemaction.desktop
 share/metainfo/syncthingtray.appdata.xml
-share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/ButtonShadow.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/CompactRepresentation.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/DetailItem.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/DetailView.qml
@@ -19,7 +18,6 @@ share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/IconLabel.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/RecentChangesPage.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/StatisticsView.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/TinyButton.qml
-share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/TinyButtonStyle.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/ToolTipTrigger.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/ToolTipView.qml
 share/plasma/plasmoids/martchus.syncthingplasmoid/contents/ui/TopLevelItem.qml
