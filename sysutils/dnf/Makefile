@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnf
-DISTVERSION=	4.4.2
+DISTVERSION=	4.5.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
