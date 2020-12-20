@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinball
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.20201218
 CATEGORIES=	games
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	sergiomb2
+GH_ACCOUNT=	adoptware
 
-USES=		autoreconf gl gettext gmake localbase:ldflags libtool:keepla sdl xorg # .la needed for plugin loading
-USES+=		sdl
+USES=		autoreconf gl gmake localbase:ldflags libtool:keepla	\
+		pkgconfig sdl xorg # .la needed for plugin loading
 USE_XORG=	ice sm
 USE_GL=		gl glu
 USE_SDL=	image mixer sdl
@@ -27,15 +27,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-debug
 
 CPPFLAGS+=	-DRZR_LIBSTATIC
-MAKE_JOBS_UNSAFE=yes
+SCOREDIR=	/var/games
+PLIST_SUB=	SCOREDIR=${SCOREDIR}
+#MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	DOCS
 
-post-install.orig:
-	${MV} ${STAGEDIR}/var/games/pinball/professor/highscores \
-		${STAGEDIR}/var/games/pinball/professor/highscores.sample
-	${MV} ${STAGEDIR}/var/games/pinball/tux/highscores \
-		${STAGEDIR}/var/games/pinball/tux/highscores.sample
+post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pinball/lib*.so*
 
 post-install-DOCS-on:

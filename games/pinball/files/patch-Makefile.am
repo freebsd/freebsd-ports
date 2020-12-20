@@ -1,4 +1,4 @@
---- Makefile.am.orig	2018-03-24 23:40:31 UTC
+--- Makefile.am.orig	2020-12-18 16:34:55 UTC
 +++ Makefile.am
 @@ -1,6 +1,6 @@
  AUTOMAKE_OPTIONS = gnu
@@ -8,8 +8,3 @@
  
  EXTRA_DIST = bootstrap pinball.spec clean pinball.desktop
  
-@@ -10,4 +10,3 @@ pininclude_HEADERS = pinconfig.h
- 
- bin_SCRIPTS = pinball-config
- 
--ACLOCAL_AMFLAGS = -I libltdl/m4
