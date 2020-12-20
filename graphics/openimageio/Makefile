@@ -3,12 +3,12 @@
 
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	2.2.6.1
+DISTVERSION=	2.2.9.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
