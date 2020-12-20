@@ -23,7 +23,8 @@ IGNORE=		cannot build OpenCV and gavl plugins simultaneously
 
 .if defined(BUILDING_FREI0R_OPENCV) || defined(BUILDING_FREI0R_GAVL)
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-frei0r-plugins \
-		${PATCHDIR}/extra-patch-src_filter_facedetect_CMakeLists.txt
+		${PATCHDIR}/extra-patch-src_filter_facedetect_CMakeLists.txt \
+		${PATCHDIR}/extra-patch-src_filter_facebl0r_facebl0r.cpp
 
 USES+=		localbase
 .endif
