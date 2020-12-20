@@ -1,0 +1,9 @@
+This is a library to simulate SSL and TLS handshake from 
+SSLv2, SSLv3, to TLS 1.0-1.2. It does not rely on OpenSSL 
+and is not designed as a replacement either. It targets full 
+support for even older handshakes, which are not available in 
+current releases of OpenSSL anymore. It also aims to be executable 
+on all systems with a sufficiently modern version of Ruby without 
+any additional requirements or pre-compiled binaries.
+
+WWW: https://github.com/arlimus/sslshake
