@@ -1,0 +1,14 @@
+Komposter is a lightweight music composing system intended mainly to be used in
+applications where the size of the executable must be minimized such as 4K and
+64K intros.
+
+It is built using a modular "virtual analog" model, where the composer can build
+the synthesizers from scratch using simple basic building blocks. This minimizes
+the amount of code required and relies more on data, which can be compressed
+more effectively.
+
+A simple pattern-based sequencer is used to create songs which use up to 24
+voices, each of which can use a different synthesizer. Each synthesizer can be
+programmed with a number of patches that can be switched between patterns.
+
+WWW: https://github.com/electronoora/komposter
