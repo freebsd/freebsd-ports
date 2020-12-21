@@ -4,6 +4,7 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.15.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,11 +24,11 @@ USES=		bison cmake compiler:c++14-lang python:build,test shebangfix
 USE_GITHUB=	yes
 SHEBANG_FILES=	*.py
 
-LLVM_VERSION=	10 # Release notes https://github.com/ispc/ispc/blob/master/docs/ReleaseNotes.txt list compatible LLVM versions, but they assume that extra patches are applied to LLVM
+LLVM_VERSION=	-devel # Release notes https://github.com/ispc/ispc/blob/master/docs/ReleaseNotes.txt list compatible LLVM versions, but they assume that extra patches are applied to LLVM
 		# LLVM build script: https://github.com/ispc/ispc/blob/master/scripts/build.sh
 
 CONFIGURE_ENV=	PATH=${LOCALBASE}/llvm${LLVM_VERSION}/bin:${PATH}
-CMAKE_OFF=	ISPC_INCLUDE_EXAMPLES
+CMAKE_OFF=	ISPC_NO_DUMPS ISPC_INCLUDE_EXAMPLES
 
 BINARY_ALIAS=	flex=${LOCALBASE}/bin/flex python=${PYTHON_CMD} m4=${LOCALBASE}/bin/gm4
 
@@ -37,7 +38,7 @@ PLIST_FILES=	bin/ispc \
 do-test: # some tests fail: https://github.com/ispc/ispc/issues/1868
 	@cd ${WRKSRC} && ISPC_HOME=${BUILD_WRKSRC}/bin ./run_tests.py
 
-test-check-all:
+test-check-all: # the upstream claims that some of these checks are broken without using their patched llvm version, hence using llvm-devel
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check-all
 
 run-examples: build
