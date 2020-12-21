@@ -279,7 +279,7 @@ RTMP_GH_TUPLE=		ut0mt8:nginx-rtmp-module:f0ea623:rtmp
 RTMP_VARS=		DSO_EXTMODS+=rtmp
 
 SET_MISC_IMPLIES=	DEVEL_KIT
-SET_MISC_GH_TUPLE=	openresty:set-misc-nginx-module:cda7e50:setmisc
+SET_MISC_GH_TUPLE=	openresty:set-misc-nginx-module:4667684:setmisc
 SET_MISC_VARS=		DSO_EXTMODS+=setmisc
 
 SFLOW_GH_TUPLE=		sflow:nginx-sflow-module:543c72a:sflow
