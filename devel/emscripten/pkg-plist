@@ -1,11 +1,15 @@
 bin/em++
+bin/em-config
 bin/emar
+bin/embuilder
 bin/emcc
+bin/emcmake
 bin/emconfigure
 bin/emmake
 bin/emranlib
 bin/emrun
 bin/emscons
+bin/emsize
 lib/emscripten/cmake/Modules/CMakeSystemSpecificInformation.cmake
 lib/emscripten/cmake/Modules/CheckTypeSize.c.in
 lib/emscripten/cmake/Modules/CheckTypeSize.cmake
