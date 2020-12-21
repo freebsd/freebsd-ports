@@ -3891,6 +3891,7 @@
     SUBDIR += phabricator
     SUBDIR += php-Psr_Log
     SUBDIR += php-composer
+    SUBDIR += php-composer2
     SUBDIR += php-geshi
     SUBDIR += php-ice37
     SUBDIR += php-libawl
