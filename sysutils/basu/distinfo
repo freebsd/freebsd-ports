@@ -1,0 +1,7 @@
+TIMESTAMP = 1608488144
+SHA256 (emersion-basu-v0.1.0-38-gd8475bb_GH0.tar.gz) = ba444fcf844c476d9896546576fade7a52aad30d302c6bb3f32e91da44f9599e
+SIZE (emersion-basu-v0.1.0-38-gd8475bb_GH0.tar.gz) = 241646
+SHA256 (cc178bcb6873.patch) = 34d0a31b195030e7fad033b864f39981aac1c1aa5b0b5a039e72d9415be0bfd4
+SIZE (cc178bcb6873.patch) = 1903
+SHA256 (6bb477cf3ee0.patch) = a3f5eae90c90f81b910b18d659cf649ce7c039198d51df632f2e25098ce50d19
+SIZE (6bb477cf3ee0.patch) = 850
