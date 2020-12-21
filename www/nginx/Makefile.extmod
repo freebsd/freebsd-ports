@@ -287,7 +287,7 @@ SFLOW_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_sflow_config.c \
 			${PATCHDIR}/extra-patch-ngx_http_sflow_config.h \
 			${PATCHDIR}/extra-patch-ngx_http_sflow_module.c
 
-SHIBBOLETH_GH_TUPLE=	nginx-shib:nginx-http-shibboleth:f07bf3c:shibboleth
+SHIBBOLETH_GH_TUPLE=	nginx-shib:nginx-http-shibboleth:a386c18:shibboleth
 SHIBBOLETH_VARS=	DSO_EXTMODS+=shibboleth
 
 SLOWFS_CACHE_GH_TUPLE=	baysao:ngx_slowfs_cache:d011a18:slowfs_cache
