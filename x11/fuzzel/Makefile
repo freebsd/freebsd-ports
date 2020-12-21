@@ -5,10 +5,10 @@ DISTVERSION=	1.4.2
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-PATCH_SITES=	https://github.com/jbeich/${PORTNAME}/commit/
-PATCHFILES+=	d0ce4f2081a5.patch:-p1 # memfd_create
-PATCHFILES+=	7637fdf4133b.patch:-p1 # _POSIX_C_SOURCE
-PATCHFILES+=	816d7e5c06a3.patch:-p1 # epoll-shim
+PATCH_SITES=	https://codeberg.org/dnkl/${PORTNAME}/commit/
+PATCHFILES+=	902f8209cfe2.patch:-p1 # memfd_create
+PATCHFILES+=	452c0161f66c.patch:-p1 # _POSIX_C_SOURCE
+PATCHFILES+=	544c78f0bfdf.patch:-p1 # epoll-shim
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Application launcher for wlroots-based Wayland compositors

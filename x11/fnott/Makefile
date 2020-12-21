@@ -5,13 +5,13 @@ DISTVERSION=	1.0.0
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-PATCH_SITES=	https://github.com/jbeich/${PORTNAME}/commit/
-PATCHFILES+=	3b2cc4b817a2.patch:-p1 # i386
-PATCHFILES+=	a9c864a0ae05.patch:-p1 # Clang
-PATCHFILES+=	b2bc271ff5b3.patch:-p1 # CLOCK_BOOTTIME
-PATCHFILES+=	c27c03bb3e70.patch:-p1 # memfd_create
-PATCHFILES+=	062ddc9612b8.patch:-p1 # _POSIX_C_SOURCE
-PATCHFILES+=	a1a06b71a2ee.patch:-p1 # epoll-shim
+PATCH_SITES=	https://codeberg.org/dnkl/${PORTNAME}/commit/
+PATCHFILES+=	fa88218b3aab.patch:-p1 # i386
+PATCHFILES+=	89b0ebf950ac.patch:-p1 # Clang
+PATCHFILES+=	70320c12d4f2.patch:-p1 # CLOCK_BOOTTIME
+PATCHFILES+=	b18d23338a86.patch:-p1 # memfd_create
+PATCHFILES+=	4dbfa266ecc3.patch:-p1 # _POSIX_C_SOURCE
+PATCHFILES+=	ad36c1beefe6.patch:-p1 # epoll-shim
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Keyboard-driven notification daemon for wlroots-based compositors
