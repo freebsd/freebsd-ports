@@ -2,11 +2,16 @@
 
 PORTNAME=	sway
 DISTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	cd9d1038a822.patch:-p1 # https://github.com/swaywm/sway/pull/5090
 PATCHFILES+=	f98ca3ab7ca1.patch:-p1 # https://github.com/swaywm/sway/pull/5090
+PATCHFILES+=	968c005760b6.patch:-p1 # https://github.com/swaywm/sway/pull/5856
+PATCHFILES+=	fdbe98512a71.patch:-p1 # https://github.com/swaywm/sway/pull/5856
+PATCHFILES+=	a52176f83035.patch:-p1 # https://github.com/swaywm/sway/pull/5856
+PATCHFILES+=	c9fe0626ca73.patch:-p1 # https://github.com/swaywm/sway/pull/5891
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	i3-compatible Wayland compositor
@@ -32,10 +37,15 @@ USE_GL=		glesv2
 USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	swaywm
+MESON_ARGS=	-Dsd-bus-provider=basu
 
-OPTIONS_DEFINE=	MANPAGES PIXBUF SUID X11
-OPTIONS_DEFAULT=MANPAGES PIXBUF SUID X11
+OPTIONS_DEFINE=	BASU MANPAGES PIXBUF SUID X11
+OPTIONS_DEFAULT=BASU MANPAGES PIXBUF SUID X11
 OPTIONS_SUB=	yes
+
+BASU_DESC=		Tray in swaybar via basu
+BASU_LIB_DEPENDS=	libbasu.so:sysutils/basu
+BASU_MESON_ENABLED=	tray
 
 MANPAGES_BUILD_DEPENDS=	scdoc>=1.9.2:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
