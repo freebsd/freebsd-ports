@@ -13,7 +13,6 @@ COMMENT=	Implementation of the IETF Calendaring and Scheduling protocols
 LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
 USES=		cmake compiler:c++11-lib gnome pathfix perl5 pkgconfig
@@ -22,12 +21,15 @@ USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
-CMAKE_ARGS=	-DICAL_BUILD_DOCS=false
 CFLAGS_amd64=	-fPIC
 
-OPTIONS_DEFINE=		GLIB INTROSPECTION VALA
+OPTIONS_DEFINE=		DOCS GLIB INTROSPECTION VALA
 OPTIONS_DEFAULT=	GLIB INTROSPECTION VALA
 OPTIONS_SUB=		yes
+
+DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+DOCS_CMAKE_BOOL=	ICAL_BUILD_DOCS
+DOCSDIR=		${PREFIX}/share/gtk-doc/html/libical-glib
 
 VALA_DESC=		Build VALA bindings
 VALA_BUILD_DEPENDS=	valac:lang/vala
