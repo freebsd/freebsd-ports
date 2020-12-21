@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	composer
-DISTVERSION=	1.10.15
+DISTVERSION=	1.10.19
 CATEGORIES=	devel
 MASTER_SITES=	https://getcomposer.org/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
@@ -19,6 +19,8 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
 USES=		php:flavors
 USE_PHP=	intl openssl phar json ctype filter mbstring
+
+CONFLICTS_INSTALL=	php*-composer2-*
 
 NO_ARCH=	yes
 NO_BUILD=	yes
