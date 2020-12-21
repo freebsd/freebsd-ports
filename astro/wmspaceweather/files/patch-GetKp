@@ -1,6 +1,6 @@
---- GetKp.orig	1999-02-12 05:42:01 UTC
+--- GetKp.orig	2020-12-21 20:19:53 UTC
 +++ GetKp
-@@ -5,7 +5,7 @@
+@@ -5,21 +5,21 @@
  #
  
  
@@ -9,21 +9,46 @@
  
  
      ($Year, $Month, $Day) = &year_month_day();
-@@ -19,7 +19,7 @@
+     
+-    if (-e "/tmp/DGD.txt"){
+-	unlink("/tmp/DGD.txt");
++    if (-e "/tmp/daily-geomagnetic-indices.txt"){
++	unlink("/tmp/daily-geomagnetic-indices.txt");
+     }
+ 
+-    if (-e "/tmp/curind.txt"){
+-	unlink("/tmp/curind.txt");
++    if (-e "/tmp/current-space-weather-indices.txt"){
++	unlink("/tmp/current-space-weather-indices.txt");
      }
  
  
 -    $grabcmd = "cd /tmp; wget --passive-ftp --tries 2 -q ftp://www.sec.noaa.gov/pub/indices/DGD.txt";
-+    $grabcmd = "cd /tmp; fetch -q ftp://ftp.sec.noaa.gov/pub/indices/DGD.txt";
++    $grabcmd = "cd /tmp; fetch -q https://services.swpc.noaa.gov/text/daily-geomagnetic-indices.txt";
      system "$grabcmd";
  
  
-@@ -68,7 +68,7 @@
+@@ -37,7 +37,7 @@
+     $Kp{190001018} = 999;
+ 
+ 
+-    open(TmpFile, "/tmp/DGD.txt");
++    open(TmpFile, "/tmp/daily-geomagnetic-indices.txt");
+     while (<TmpFile>){
+         chop;
+ 	if ($_ =~ /^\d{4} \d{2} \d{2}\s*\d*/ ){
+@@ -68,12 +68,12 @@
      #
      # Add in very latest stuff
      #
 -    $grabcmd = "cd /tmp; wget --passive-ftp --tries 2 -q ftp://www.sec.noaa.gov/pub/latest/curind.txt";
-+    $grabcmd = "cd /tmp; fetch -q ftp://ftp.sec.noaa.gov/pub/latest/curind.txt";
++    $grabcmd = "cd /tmp; fetch -q https://services.swpc.noaa.gov/text/current-space-weather-indices.txt";
      system "$grabcmd";
      %lmonstr = ( "Jan", 1, "Feb", 2, "Mar", 3, "Apr", 4, "May", 5, "Jun", 6, "Jul", 7, "Aug", 8, "Sep", 9, "Oct", 10, "Nov", 11, "Dec", 12);
  
+ @lval = ($lyear, $lmonstr{$lmon}, $ldom);
+-    open(TmpFile, "/tmp/curind.txt");
++    open(TmpFile, "/tmp/current-space-weather-indices.txt");
+     while (<TmpFile>){
+         chop;
+ 	if ($_ =~ /^:Geomagnetic_Values: (\d{4}) (.*) (\d{1,2})/){

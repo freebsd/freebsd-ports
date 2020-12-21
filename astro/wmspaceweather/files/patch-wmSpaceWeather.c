@@ -9,7 +9,7 @@
  int			height, UpToDate, LEDOn;
  double		UT, TU, TU2, TU3, T0, gmst, hour24();
  
-@@ -126,6 +126,7 @@ int 		Kp[8] = { -1, -1, -1, -1, -1, -1, 
+@@ -126,6 +126,7 @@ int 		Kp[8] = { -1, -1, -1, -1, -1, -1, -1, -1 };
  double		E1, E2, P1, P2, P3;
  char		Xray[10], digit[2];
  FILE		*fp;
@@ -67,7 +67,7 @@
  
  	    if (!UpToDate){
  
-@@ -560,7 +561,7 @@ void ParseCMDLine(int argc, char *argv[]
+@@ -560,7 +561,7 @@ void ParseCMDLine(int argc, char *argv[]) {
  
          } else if ((!strcmp(argv[i], "-url"))||(!strcmp(argv[i], "-u"))){
  
