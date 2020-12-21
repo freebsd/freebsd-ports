@@ -2,6 +2,7 @@
 
 PORTNAME=	emscripten
 DISTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +24,7 @@ GH_PROJECT=	emscripten
 SHEBANG_FILES=	${PYSCRIPTS} emcmake tools/emdump system/bin/sdl-config system/bin/sdl2-config third_party/websockify/run
 SHEBANG_GLOB=	*.py *.sh
 
-PYSCRIPTS=	em++ emar emcc emconfigure emmake emranlib emrun emscons
+PYSCRIPTS=	em++ em-config emar embuilder emcc emcmake emconfigure emmake emranlib emrun emscons emsize
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -48,6 +49,11 @@ do-install:
 	cd ${WRKSRC} && ${CP} -r em* cmake site src system third_party tools ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/
 	${FIND} ${STAGEDIR}${PREFIX}/lib/${PORTNAME} \( -name "*.bat" -o -name "*.orig" \) -delete
 .for s in ${PYSCRIPTS}
+	@(echo "#!/bin/sh"; \
+	  echo ""; \
+	  echo "${PYTHON_CMD} ${PREFIX}/lib/${PORTNAME}/${s}.py \"$$"@"\"" \
+	) > ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${s}
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${s}
 	${RLN} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${s} ${STAGEDIR}${PREFIX}/bin/${s}
 .endfor
 	${RM} -rf ${STAGEDIR}${PREFIX}/lib/emscripten/system/lib/pkgconfig
