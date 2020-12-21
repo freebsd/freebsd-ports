@@ -11,7 +11,7 @@ COMMENT=	Radeon Open Compute Thunk Interface
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64
 
 LIB_DEPENDS=	libpci.so:devel/libpci
 
