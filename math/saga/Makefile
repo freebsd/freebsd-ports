@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	saga
-PORTVERSION=	7.8.2
+PORTVERSION=	7.9.0
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -97,8 +97,6 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's|PORTVERSION|${PORTVERSION}|' \
 		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
-
-post-patch-OPENMP-on:
 	@${REINPLACE_CMD} -e 's|-lgomp|-lomp|' \
 		${WRKSRC}/src/accessories/templates/template4saga-tools/my_tool_library/Makefile
 
