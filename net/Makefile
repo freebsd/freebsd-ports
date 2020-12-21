@@ -177,6 +177,7 @@
     SUBDIR += geoipupdate
     SUBDIR += gerbera
     SUBDIR += gfbgraph
+    SUBDIR += gitlab-agent
     SUBDIR += glflow
     SUBDIR += glib-networking
     SUBDIR += glusterfs

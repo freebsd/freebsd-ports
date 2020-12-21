@@ -1,0 +1,10 @@
+GitLab Kubernetes Agent is an active in-cluster component for solving any
+GitLab<->Kubernetes integration tasks.
+
+It's implemented as two communicating pieces - GitLab Kubernetes Agent (agentk)
+that is running in the cluster and GitLab Kubernetes Agent Server (gitlab-kas)
+that is running on the GitLab side. Please see the architecture document and
+other documents in the doc directory for more information.
+User-facing documentation is also available.
+
+WWW: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent
