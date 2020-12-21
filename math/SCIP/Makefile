@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	SCIP
-DISTVERSION=	7.0.1
+DISTVERSION=	7.0.2
 CATEGORIES=	math science
 MASTER_SITES=	https://www.scipopt.org/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
