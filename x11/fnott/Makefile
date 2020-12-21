@@ -2,6 +2,7 @@
 
 PORTNAME=	fnott
 DISTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -12,6 +13,7 @@ PATCHFILES+=	70320c12d4f2.patch:-p1 # CLOCK_BOOTTIME
 PATCHFILES+=	b18d23338a86.patch:-p1 # memfd_create
 PATCHFILES+=	4dbfa266ecc3.patch:-p1 # _POSIX_C_SOURCE
 PATCHFILES+=	ad36c1beefe6.patch:-p1 # epoll-shim
+PATCHFILES+=	df8da5ef6563.patch:-p1 # fnottctl crashfix
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Keyboard-driven notification daemon for wlroots-based compositors
