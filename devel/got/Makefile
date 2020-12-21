@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	got
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	devel
 MASTER_SITES=	https://gameoftrees.org/releases/
 
