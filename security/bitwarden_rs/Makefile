@@ -2,9 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	bitwarden_rs
-# DISTVERSIONPREFIX=	v
 DISTVERSION=	1.17.0
+PORTREVISION=	1
 CATEGORIES=	security
+MASTER_SITES=	https://github.com/dani-garcia/bw_web_builds/releases/download/v${DISTVERSION_WV}/:web
+DISTFILES=	${WV_DISTFILE}:web
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Bitwarden compatible backend server
@@ -18,13 +20,15 @@ LIB_DEPENDS+=   libnettle.so:security/nettle
 
 USES=		cargo ssl pgsql
 
-PLIST_FILES=    bin/${PORTNAME}
-# PORTDATA=       *
+DISTVERSION_WV=	2.17.1
+WV_DISTFILE=	bw_web_v${DISTVERSION_WV}.tar.gz
+USE_RC_SUBR=    ${PORTNAME}
 
+# make makeplist > pkg-plist #One has to edit/review the generated plist
+# make generate-plist && make check-plist
 USE_GITHUB=	yes
 GH_ACCOUNT=	dani-garcia
 CARGO_FEATURES=	postgresql sqlite #vendored_openssl
-#CARGO_BUILD_ARGS+=	--release
 CARGO_USE_GITHUB=       yes
 CARGO_ENV+=	RUSTC_BOOTSTRAP=1
 GH_TUPLE+=	servo:rust-url:7f1bd6ce1c2fde599a757302a843a60e714c5f72:dataurl
@@ -34,6 +38,7 @@ CARGO_GIT_SUBDIR+=	dataurl:data-url:data-url
 CARGO_GIT_SUBDIR+=	devise:devise:lib
 CARGO_GIT_SUBDIR+=	rocket:rocket:core/lib
 CARGO_GIT_SUBDIR+=	rocket:rocket_contrib:contrib/lib
+# make cargo-crates
 CARGO_CRATES=	addr2line-0.13.0 \
 		adler-0.2.3 \
 		aho-corasick-0.7.13 \
@@ -369,5 +374,12 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		ws2_32-sys-0.2.1 \
 		yansi-0.5.0 \
 		yubico-0.9.1
+
+post-install:
+	${MKDIR} ${STAGEDIR}/${WWWDIR}
+	${MKDIR} ${STAGEDIR}/${WWWDIR}/data
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}/${WWWDIR}/data
+	(cd ${WRKDIR} && ${COPYTREE_SHARE} web-vault ${STAGEDIR}/${WWWDIR})
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/data' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

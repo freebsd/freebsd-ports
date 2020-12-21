@@ -1,4 +1,6 @@
-TIMESTAMP = 1608216688
+TIMESTAMP = 1608390478
+SHA256 (bw_web_v2.17.1.tar.gz) = 47d1bee5d21089eaf992ebbe90686b061e0a1ec1e7a9a26c985f47fb220ca2cd
+SIZE (bw_web_v2.17.1.tar.gz) = 7196569
 SHA256 (rust/crates/addr2line-0.13.0.tar.gz) = 1b6a2d3371669ab3ca9797670853d61402b03d0b4b9ebf33d677dfa720203072
 SIZE (rust/crates/addr2line-0.13.0.tar.gz) = 29996
 SHA256 (rust/crates/adler-0.2.3.tar.gz) = ee2a4ec343196209d6594e19543ae87a39f96d5534d7174822a3ad825dd6ed7e
