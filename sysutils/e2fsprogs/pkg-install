@@ -10,7 +10,7 @@ POST-INSTALL)
 	# symbolic links by hard links if possible (pkg ships them as symlinks)
 	d1=${PKG_ROOTDIR}/sbin/ ;              dev1=$(stat -Lf %Xd "$d1")
 	d2=${PKG_ROOTDIR}${PKG_PREFIX}/sbin/ ; dev2=$(stat -Lf %Xd "$d2")
-	if [ "$dev1" = "$dev2" ] && [ "$(realpath "$d1")" != "$(realpath "$d2")"; then
+	if [ "$dev1" = "$dev2" ] && [ "$(realpath "$d1")" != "$(realpath "$d2")" ]; then
 		for i in e2fsck fsck_ext2fs ; do
 			ln -fhP ${d1}${i} ${d2}${i}
 		done
