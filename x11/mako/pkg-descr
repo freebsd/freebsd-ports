@@ -1,0 +1,4 @@
+mako is a lightweight notification daemon for Wayland. It implements
+the GNOME Desktop Notifications Specification. Works on Sway.
+
+WWW: https://github.com/emersion/mako

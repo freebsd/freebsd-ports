@@ -212,6 +212,7 @@
     SUBDIR += lxqt-runner
     SUBDIR += lxrandr
     SUBDIR += ly
+    SUBDIR += mako
     SUBDIR += mate
     SUBDIR += mate-applets
     SUBDIR += mate-base
