@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/kodi/cmake/KodiConfig.cmake:multimedia/kodi
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libp8-platform.so:devel/p8-platform
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
