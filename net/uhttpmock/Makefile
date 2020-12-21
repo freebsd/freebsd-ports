@@ -14,8 +14,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common \
-		vapigen:lang/vala \
-		gtkdoc-rebase:textproc/gtk-doc
+		vapigen:lang/vala
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
 USES=		gettext gmake gnome libtool pathfix pkgconfig tar:xz
@@ -25,5 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-Werror
 
 INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
