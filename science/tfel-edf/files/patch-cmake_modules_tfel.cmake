@@ -1,4 +1,4 @@
---- cmake/modules/tfel.cmake.orig	2019-12-16 14:46:35 UTC
+--- cmake/modules/tfel.cmake.orig	2019-04-04 06:48:40 UTC
 +++ cmake/modules/tfel.cmake
 @@ -21,7 +21,7 @@ macro(tfel_project tfel_version_major tfel_version_min
      set(TFEL_VERSION "${VERSION}")
@@ -18,7 +18,7 @@
    if(LIB_SUFFIX)
      add_definitions("-DLIB_SUFFIX=\\\"\"${LIB_SUFFIX}\"\\\"")
    endif(LIB_SUFFIX)
-@@ -145,8 +145,14 @@ macro(tfel_library_internal name component)
+@@ -132,8 +132,14 @@ macro(tfel_library_internal name component)
    endif(${ARGC} LESS 2)
    add_library(${name} SHARED ${ARGN})
    if(TFEL_APPEND_SUFFIX)
