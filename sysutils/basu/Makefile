@@ -2,13 +2,9 @@
 
 PORTNAME=	basu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0-38 # https://github.com/emersion/basu/pull/32
-DISTVERSIONSUFFIX=	-gd8475bb
+DISTVERSION=	0.1.0-40
+DISTVERSIONSUFFIX=	-g5263cc0
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	cc178bcb6873.patch:-p1 # https://github.com/emersion/basu/pull/31
-PATCHFILES+=	6bb477cf3ee0.patch:-p1 # https://github.com/emersion/basu/pull/31
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	sd-bus library, extracted from systemd
