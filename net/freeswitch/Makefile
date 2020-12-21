@@ -14,7 +14,7 @@ COMMENT=	Multi-protocol soft switch for telephony applications
 
 LICENSE=	MPL11
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64
 
 BUILD_DEPENDS=	gdiff:textproc/diffutils
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
@@ -33,8 +33,8 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libtiff.so:graphics/tiff \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		gmake iconv jpeg libedit autoreconf libtool lua perl5 \
-		pkgconfig shebangfix ssl
+USES=		compiler:c11 gmake iconv jpeg libedit autoreconf libtool lua \
+		perl5 pkgconfig shebangfix ssl
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	freeswitch
 BINARY_ALIAS=	diff=gdiff
