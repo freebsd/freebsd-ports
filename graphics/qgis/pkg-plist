@@ -531,6 +531,7 @@ include/qgis/qgshtmlannotation.h
 include/qgis/qgshtmlutils.h
 include/qgis/qgshtmlwidgetwrapper.h
 include/qgis/qgshuesaturationfilter.h
+include/qgis/qgsidentifycontext.h
 include/qgis/qgsidentifymenu.h
 include/qgis/qgsidwinterpolator.h
 include/qgis/qgsifeatureselectionmanager.h

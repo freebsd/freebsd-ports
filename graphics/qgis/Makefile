@@ -3,8 +3,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_16_1
-PORTREVISION=	2
+DISTVERSION=	3_16_2
 CATEGORIES=	graphics geography
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -111,7 +110,6 @@ USE_QT=		3d buildtools_build core concurrent dbus declarative \
 		webengine widgets webkit xml
 USE_PYQT=	core gui network qml quick quickwidgets qscintilla2 \
 		pysip sip sql svg webkit_run webkitwidgets_run xml
-		
 
 CONFLICTS_INSTALL=	qgis-ltr
 
