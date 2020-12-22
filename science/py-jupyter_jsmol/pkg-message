@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+To run the examples, install the ports science/py-pymatgen
+and science/py-ase.
+EOM
+}
+]
