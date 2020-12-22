@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libpcre.so:devel/pcre
 
-USES=		autoreconf gmake libtool localbase pkgconfig tar:xz
+USES=		autoreconf compiler:c11 gmake libtool localbase pkgconfig tar:xz
 USE_CSTD=	gnu99
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
