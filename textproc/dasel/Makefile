@@ -2,7 +2,7 @@
 
 PORTNAME=	dasel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
+DISTVERSION=	1.10.0
 CATEGORIES=	textproc
 
 MAINTAINER=	vulcan@wired.sh
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	tomwright
-GH_TUPLE=	clbanning:mxj:v2.3.2:clbanning_mxj_v2/vendor/github.com/clbanning/mxj/v2 \
+GH_TUPLE=	clbanning:mxj:e937bdee5a3e:clbanning_mxj_v2/vendor/github.com/clbanning/mxj/v2 \
 		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		pelletier:go-toml:v1.8.1:pelletier_go_toml/vendor/github.com/pelletier/go-toml \

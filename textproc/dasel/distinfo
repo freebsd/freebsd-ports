@@ -1,8 +1,8 @@
-TIMESTAMP = 1607520999
-SHA256 (tomwright-dasel-v1.8.0_GH0.tar.gz) = 4b6685287aa411884827cbee2a581f1cf5580616077a39d284e2f78338b75442
-SIZE (tomwright-dasel-v1.8.0_GH0.tar.gz) = 2683797
-SHA256 (clbanning-mxj-v2.3.2_GH0.tar.gz) = ee669332b5f66cce00ae2a894b958c20aa48706e7d0c1df0fe90b1511fdaff0a
-SIZE (clbanning-mxj-v2.3.2_GH0.tar.gz) = 1094734
+TIMESTAMP = 1608652728
+SHA256 (tomwright-dasel-v1.10.0_GH0.tar.gz) = aa11c72a411cee897184a9fc3a227878307ffb3b2fe8b5ba5ac47e08ea8d9e9d
+SIZE (tomwright-dasel-v1.10.0_GH0.tar.gz) = 2689590
+SHA256 (clbanning-mxj-e937bdee5a3e_GH0.tar.gz) = dbf6c8c7110b9bffc4dec175aac439b1d25120f1002e656d0d030d3ddf57abdd
+SIZE (clbanning-mxj-e937bdee5a3e_GH0.tar.gz) = 1096313
 SHA256 (go-yaml-yaml-v2.2.2_GH0.tar.gz) = 42c3e4ef9eca2860d22b3c6c5582c6c13fb4b417e5ebc1acc56ee5e2c4ddcaff
 SIZE (go-yaml-yaml-v2.2.2_GH0.tar.gz) = 70656
 SHA256 (inconshreveable-mousetrap-v1.0.0_GH0.tar.gz) = 5edc7731c819c305623568e317aa253d342be3447def97f1fa9e10eb5ad819f6
