@@ -198,6 +198,7 @@ include/folly/executors/IOObjectCache.h
 include/folly/executors/IOThreadPoolExecutor.h
 include/folly/executors/InlineExecutor.h
 include/folly/executors/ManualExecutor.h
+include/folly/executors/MeteredExecutor.h
 include/folly/executors/QueuedImmediateExecutor.h
 include/folly/executors/ScheduledExecutor.h
 include/folly/executors/SequencedExecutor.h
@@ -581,6 +582,7 @@ include/folly/memory/MallctlHelper.h
 include/folly/memory/Malloc.h
 include/folly/memory/MemoryResource.h
 include/folly/memory/ReentrantAllocator.h
+include/folly/memory/SanitizeAddress.h
 include/folly/memory/SanitizeLeak.h
 include/folly/memory/ThreadCachedArena.h
 include/folly/memory/UninitializedMemoryHacks.h
@@ -632,6 +634,7 @@ include/folly/portability/Windows.h
 include/folly/python/AsyncioExecutor.h
 include/folly/python/async_generator.h
 include/folly/python/coro.h
+include/folly/python/error.h
 include/folly/python/executor.h
 include/folly/python/futures.h
 include/folly/python/iobuf.h
