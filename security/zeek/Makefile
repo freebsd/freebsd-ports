@@ -13,7 +13,8 @@ COMMENT=	System for detecting network intruders in real-time
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_powerpc64=	Does not build: error: zero-size array 'names'
+BROKEN_FreeBSD_11_powerpc64==	Does not build: error: zero-size array 'names'
+BROKEN_FreeBSD_12_powerpc64==	Does not build: error: zero-size array 'names'
 
 USES=		bison cmake compiler:c++11-lang gettext-runtime ninja perl5 python shebangfix ssl
 USE_LDCONFIG=	yes
