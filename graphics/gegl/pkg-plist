@@ -148,6 +148,7 @@ share/locale/hr/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/id/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/is/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/it/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
+share/locale/kab/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ko/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/lv/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/mr/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
@@ -158,6 +159,7 @@ share/locale/oc/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/pl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/pt/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/pt_BR/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
+share/locale/ro/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ru/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/sk/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/sl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
