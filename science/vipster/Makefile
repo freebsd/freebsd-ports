@@ -2,8 +2,8 @@
 
 PORTNAME=	vipster
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18b.20200514
-PORTREVISION=	3
+DISTVERSION=	1.19.1b-14
+DISTVERSIONSUFFIX=	-g7168a1b
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,21 +12,23 @@ COMMENT=	Crystalline and molecular structure visualisation program
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cli11>0:devel/cli11 \
+BUILD_DEPENDS=	catch>0:devel/catch \
+		cli11>0:devel/cli11 \
 		libfmt>0:devel/libfmt \
 		nlohmann-json>0:devel/nlohmann-json
 
 USES=		cmake compiler:c++17-lang
+USE_GL=		gl
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	sgsaenger
-GH_TAGNAME=	714970a148bc8f6801c8e98120aa884da6ca801c
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		DESKTOP LAMMPS PYTHON
 OPTIONS_DEFAULT=	DESKTOP
 OPTIONS_SUB=		yes
 
-CMAKE_OFF=		VIPSTER_PYWIDGET
+CMAKE_OFF=		VIPSTER_DOWNLOAD_DEPENDENCIES
 
 DESKTOP_DESC=		Build QT-based desktop app
 DESKTOP_CMAKE_BOOL=	VIPSTER_DESKTOP
@@ -36,9 +38,12 @@ DESKTOP_USE=		QT=core,gui,widgets,buildtools_build,qmake_build
 LAMMPS_DESC=		Interactive LAMMPS in desktop app
 LAMMPS_CMAKE_BOOL=	VIPSTER_LAMMPS
 LAMMPS_IMPLIES=		DESKTOP
-LAMMPS_BROKEN=		https://github.com/sgsaenger/vipster/issues/39
+LAMMPS_LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+			liblammps.so:science/lammps \
+			libmpi.so:net/openmpi
+LAMMPS_CONFLICTS_BUILD=	mpich
 
-PYTHON_CMAKE_BOOL=	PYTHON PYSHELL
+PYTHON_CMAKE_BOOL=	VIPSTER_PYLIB VIPSTER_PYWIDGET
 PYTHON_BROKEN=		Bundles pybind11: https://github.com/sgsaenger/vipster/issues/23
 
 PORTSCOUT=	limit:^[0-9][0-9a-z\.]*$$
