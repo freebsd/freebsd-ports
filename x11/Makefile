@@ -363,6 +363,7 @@
     SUBDIR += wmcliphist
     SUBDIR += wmctrl
     SUBDIR += wmdrawer
+    SUBDIR += wmfocus
     SUBDIR += wmmatrix
     SUBDIR += wmsystemtray
     SUBDIR += wmutils-core
