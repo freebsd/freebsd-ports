@@ -50,8 +50,10 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo_console.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo_controller.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo_emulation.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/options_gameinfo_quadtari.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_misc.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_misc_classic.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/options_misc_dark.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_misc_light.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_ui.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/options_video.png
