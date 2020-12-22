@@ -2,7 +2,7 @@
 
 PORTNAME=	fbthrift
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.12.14.00
+DISTVERSION=	2020.12.21.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +18,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfolly.so:devel/folly \
 		libgflags.so:devel/gflags \
 		libglog.so:devel/glog \
+		libsodium.so:security/libsodium \
 		libwangle.so:net/wangle \
 		libzstd.so:archivers/zstd
 

@@ -273,6 +273,7 @@ include/thrift/lib/cpp2/server/Cpp2ConnContext.h
 include/thrift/lib/cpp2/server/Cpp2Connection.h
 include/thrift/lib/cpp2/server/Cpp2Worker.h
 include/thrift/lib/cpp2/server/LoggingEvent.h
+include/thrift/lib/cpp2/server/MonitoringServerInterface.h
 include/thrift/lib/cpp2/server/QIAdmissionController.h
 include/thrift/lib/cpp2/server/RequestDebugLog.h
 include/thrift/lib/cpp2/server/RequestsRegistry.h
