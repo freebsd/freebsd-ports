@@ -21,6 +21,7 @@ LICENSE_FILE_DTOA.C=	${WRKSRC}/COPYING
 LICENSE_PERMS_DTOA.C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_aarch64=	fails to build: error: "Exactly one of IEEE_8087, IEEE_MC68k, VAX, or IBM should be defined."
+BROKEN_riscv64=	fails to build: error: "Exactly one of IEEE_8087, IEEE_MC68k, VAX, or IBM should be defined."
 
 OPTIONS_DEFINE=	GC DEBUG DOCS
 OPTIONS_DEFAULT=	GC
