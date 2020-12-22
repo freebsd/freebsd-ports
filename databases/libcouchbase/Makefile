@@ -13,6 +13,7 @@ LICENSE=	APACHE20
 BROKEN_armv6=		fails to build: dt_modtext: libdtrace/common/dt_link.c(820): arm not implemented
 BROKEN_armv7=		fails to build: dt_modtext: libdtrace/common/dt_link.c(820): arm not implemented
 BROKEN_mips64=		fails to link: ld: failed to merge target specific data
+BROKEN_riscv64=		fails to build: dt_modtext: libdtrace/common/dt_link.c(947): RISC-V implementation required
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libev.so:devel/libev \
