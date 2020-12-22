@@ -122,7 +122,6 @@
 %%DATADIR%%/ruby/spec/lib/gitaly_server/utils_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/sentry/url_sanitizer_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitaly_server/sentry_interceptor_spec.rb
-%%DATADIR%%/ruby/spec/lib/gitlab/config_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/blob_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/branch_spec.rb
 %%DATADIR%%/ruby/spec/lib/gitlab/git/commit_patches_spec.rb
@@ -156,7 +155,6 @@
 %%DATADIR%%/ruby/spec/support/generate-seed-repo-rb
 %%DATADIR%%/ruby/spec/support/helpers/certs/gitalycert.pem
 %%DATADIR%%/ruby/spec/support/helpers/certs/gitalykey.pem
-%%DATADIR%%/ruby/spec/support/helpers/gitlab_shell_helper.rb
 %%DATADIR%%/ruby/spec/support/helpers/integration_helper.rb
 %%DATADIR%%/ruby/spec/support/helpers/seed_repo.rb
 %%DATADIR%%/ruby/spec/support/helpers/testdata/home/.gitconfig
