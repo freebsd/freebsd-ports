@@ -12,6 +12,7 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN_armv6=		fails to build: ng_ipacct_hash.h:52:2: implicit declaration of function 'MALLOC' is invalid in C99
 BROKEN_armv7=		fails to build: ng_ipacct_hash.h:52:2: implicit declaration of function 'MALLOC' is invalid in C99
+BROKEN_riscv64=		fails to build: ng_ipacct.c:972:2: error: implicit declaration of function 'INP_HASH_RLOCK' is invalid in C99
 
 USE_GITHUB=	yes
 USES=		kmod uidfix
