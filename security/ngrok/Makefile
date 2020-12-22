@@ -5,7 +5,7 @@ PORTNAME=	ngrok
 PORTVERSION=	2.2.8
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	https://bin.equinox.io/a/${ARCH:S/i386/${i386_HASH}/:S/amd64/${amd64_HASH}/}/
+MASTER_SITES=	https://bin.equinox.io/a/${${ARCH}_HASH}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd-${ARCH:S/i386/386/}
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
