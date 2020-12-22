@@ -13,7 +13,6 @@ bin/gpgsplit2
 bin/gpgtar
 bin/gpgv2
 bin/kbxutil
-bin/symcryptrun
 bin/watchgnupg
 %%LDAP%%libexec/dirmngr_ldap
 libexec/gpg-check-pattern
