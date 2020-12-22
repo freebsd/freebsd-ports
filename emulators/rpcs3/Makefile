@@ -4,6 +4,7 @@ PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.13-11452 # git rev-list --count HEAD
 DISTVERSIONSUFFIX=	-gbd269bcca
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -49,21 +50,6 @@ CMAKE_ON=	CMAKE_SKIP_RPATH USE_SYSTEM_CURL USE_SYSTEM_FFMPEG USE_SYSTEM_LIBPNG
 CMAKE_OFF=	USE_NATIVE_INSTRUCTIONS USE_PRECOMPILED_HEADERS
 LDFLAGS+=	-Wl,--as-needed # GLU
 
-# https://bugs.llvm.org/show_bug.cgi?id=46557
-BUILD_DEPENDS+=	clang++${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-USES:=		${USES:Ncompiler*}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
-CPP=		clang-cpp${LLVM_DEFAULT}
-
-# XXX Drop after FreeBSD 12.1 EOL
-.if make(makesum) || (!exists(/usr/include/c++/v1/fenv.h) && exists(/usr/lib/libc++.so))
-MASTER_SITES+=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VER}/:libcxx
-DISTFILES+=	libcxx-${LLVM_VER}.src.tar.xz:libcxx
-CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx-${LLVM_VER}.src/include
-LLVM_VER=	10.0.1
-.endif
-
 OPTIONS_DEFINE=	ALSA EVDEV FAUDIO PULSEAUDIO VULKAN
 OPTIONS_DEFAULT=EVDEV FAUDIO VULKAN
 
@@ -95,4 +81,24 @@ post-patch:
 		-e '/GIT_VERSION/s/local_build/${GH_TAGNAME:C/[^-]*-//}/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Ignore Mk/bsd.default-versions.mk but respect make.conf(5)
+.if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*}
+LLVM_DEFAULT=	11 # bump if not latest release
+.endif
+BUILD_DEPENDS+=	clang++${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+USES:=		${USES:Ncompiler*}
+CC=		clang${LLVM_DEFAULT}
+CXX=		clang++${LLVM_DEFAULT}
+CPP=		clang-cpp${LLVM_DEFAULT}
+
+# XXX Drop after FreeBSD 12.1 EOL
+.if make(makesum) || (!exists(/usr/include/c++/v1/fenv.h) && exists(/usr/lib/libc++.so))
+MASTER_SITES+=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VER}/:libcxx
+DISTFILES+=	libcxx-${LLVM_VER}.src.tar.xz:libcxx
+CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx-${LLVM_VER}.src/include
+LLVM_VER=	10.0.1
+.endif
+
+.include <bsd.port.post.mk>
