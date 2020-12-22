@@ -2,7 +2,7 @@
 
 PORTNAME=	flint2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.3
+DISTVERSION=	2.7.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
-		libmpfr.so:math/mpfr
+		libmpfr.so:math/mpfr \
+		libopenblas.so:math/openblas
 
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes

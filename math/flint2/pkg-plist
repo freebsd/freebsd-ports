@@ -21,6 +21,7 @@ include/flint/fmpq.h
 include/flint/fmpq_mat.h
 include/flint/fmpq_matxx.h
 include/flint/fmpq_mpoly.h
+include/flint/fmpq_mpoly_factor.h
 include/flint/fmpq_poly.h
 include/flint/fmpq_polyxx.h
 include/flint/fmpq_vec.h
@@ -40,6 +41,7 @@ include/flint/fmpz_mod_poly_factor.h
 include/flint/fmpz_mod_poly_factorxx.h
 include/flint/fmpz_mod_polyxx.h
 include/flint/fmpz_mpoly.h
+include/flint/fmpz_mpoly_factor.h
 include/flint/fmpz_poly.h
 include/flint/fmpz_poly_factor.h
 include/flint/fmpz_poly_factorxx.h
@@ -61,6 +63,7 @@ include/flint/fq_nmod.h
 include/flint/fq_nmod_embed.h
 include/flint/fq_nmod_mat.h
 include/flint/fq_nmod_mpoly.h
+include/flint/fq_nmod_mpoly_factor.h
 include/flint/fq_nmod_poly.h
 include/flint/fq_nmod_poly_factor.h
 include/flint/fq_nmod_vec.h
@@ -74,6 +77,8 @@ include/flint/fq_vec_templates.h
 include/flint/fq_zech.h
 include/flint/fq_zech_embed.h
 include/flint/fq_zech_mat.h
+include/flint/fq_zech_mpoly.h
+include/flint/fq_zech_mpoly_factor.h
 include/flint/fq_zech_poly.h
 include/flint/fq_zech_poly_factor.h
 include/flint/fq_zech_vec.h
@@ -92,9 +97,11 @@ include/flint/mpfr_mat.h
 include/flint/mpfr_vec.h
 include/flint/mpn_extras.h
 include/flint/mpoly.h
+include/flint/n_poly.h
 include/flint/nmod_mat.h
 include/flint/nmod_matxx.h
 include/flint/nmod_mpoly.h
+include/flint/nmod_mpoly_factor.h
 include/flint/nmod_poly.h
 include/flint/nmod_poly_factor.h
 include/flint/nmod_poly_mat.h
@@ -125,5 +132,5 @@ include/flint/tuple.h
 include/flint/ulong_extras.h
 include/flint/vector.h
 lib/libflint.so
-lib/libflint.so.14
-lib/libflint.so.14.0.3
+lib/libflint.so.15
+lib/libflint.so.15.0.0
