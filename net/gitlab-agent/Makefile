@@ -165,7 +165,7 @@ GL_TUPLE=	gitlab-org:gitaly:89c1ee804f273c9ccc7322644b9ec1cf8e38c0a4:gitlab_org_
 
 GO_BUILDFLAGS=	-tags="tracer_static,tracer_static_jaeger" \
 		-ldflags=" \
-		-X gitlab.com/gitlab-org/cluster-integration/gitlab-agent/cmd.Version=${PORTVERSION} \
+		-X gitlab.com/gitlab-org/cluster-integration/gitlab-agent/cmd.Version=v${PORTVERSION} \
 		-X gitlab.com/gitlab-org/cluster-integration/gitlab-agent/cmd.Commit=${GL_COMMIT:C/^(........).*/\1/}"
 GO_TARGET=	./cmd/kas
 
