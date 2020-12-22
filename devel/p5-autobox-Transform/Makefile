@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	autobox-Transform
-PORTVERSION=	1.034
+PORTVERSION=	1.035
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=CPAN:JOHANL
@@ -16,8 +16,7 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Sort-Maker>=0:devel/p5-Sort-Maker \
 		p5-autobox>=0:devel/p5-autobox \
-		p5-autobox-Core>=0:devel/p5-autobox-Core \
-		p5-true>=0:devel/p5-true
+		p5-autobox-Core>=0:devel/p5-autobox-Core
 TEST_DEPENDS=	p5-Moo>=0:devel/p5-Moo \
 		p5-Test-Differences>=0:devel/p5-Test-Differences \
 		p5-Test-Exception>=0:devel/p5-Test-Exception
