@@ -8,7 +8,7 @@ CATEGORIES=	graphics devel
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	21c8be385b3f.patch:-p1 # https://github.com/google/shaderc/pull/463
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GLSL/HLSL to SPIR-V shader compiler
 
 LICENSE=	APACHE20

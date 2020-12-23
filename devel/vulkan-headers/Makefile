@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=v
 DISTVERSION=	1.2.162
 CATEGORIES=	devel graphics
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Headers for the Vulkan graphics API
 
 LICENSE=	APACHE20

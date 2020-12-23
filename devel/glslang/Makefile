@@ -4,7 +4,7 @@ PORTNAME=	glslang
 DISTVERSION=	8.13.3743
 CATEGORIES=	devel graphics
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	OpenGL and OpenGL ES shader front end and validator
 
 LICENSE=	BSD3CLAUSE

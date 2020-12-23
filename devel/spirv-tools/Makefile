@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2020.6
 CATEGORIES=	devel graphics
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tools for processing SPIR-V intermediate shader language modules
 
 LICENSE=	APACHE20
