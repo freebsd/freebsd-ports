@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef-config
-PORTVERSION=	13.8.3
-PORTREVISION=	1
+PORTVERSION=	15.14.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -14,9 +13,10 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
+		rubygem-chef-utils>=${PORTVERSION}<${PORTVERSION}_99:sysutils/rubygem-chef-utils \
 		rubygem-fuzzyurl>=0:www/rubygem-fuzzyurl \
-		rubygem-mixlib-config>=2.0<3:devel/rubygem-mixlib-config \
-		rubygem-mixlib-shellout>=2.0<3:devel/rubygem-mixlib-shellout \
+		rubygem-mixlib-config>=2.2.12<4:devel/rubygem-mixlib-config \
+		rubygem-mixlib-shellout>=2.0<4:devel/rubygem-mixlib-shellout \
 		rubygem-tomlrb1>=1.2<2:textproc/rubygem-tomlrb1
 
 USES=		gem
