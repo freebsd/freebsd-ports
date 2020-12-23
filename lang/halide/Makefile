@@ -6,6 +6,9 @@ DISTVERSION=	2019_08_27-2654
 DISTVERSIONSUFFIX=	-g664dc4993
 CATEGORIES=	lang
 
+PATCH_SITES=	https://github.com/halide/Halide/commit/
+PATCHFILES=	890a5199ae8ade759de076217670ae980bf44823.patch:-p1
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Halide, a language for fast and portable data-parallel computation
 
