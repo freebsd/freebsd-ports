@@ -2,12 +2,12 @@
 
 PORTNAME=	signal-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.12
+DISTVERSION=	0.7.1
 CATEGORIES=	net-im java
 MASTER_SITES=	https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/:_jackson_annotations \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.9/:_jackson_core \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.9.9.2/:_jackson_databind \
-		https://repo.maven.apache.org/maven2/com/github/hypfvieh/dbus-java/3.2.3/:_dbus_java \
+		https://repo.maven.apache.org/maven2/com/github/hypfvieh/dbus-java/3.2.4/:_dbus_java \
 		https://repo.maven.apache.org/maven2/com/github/hypfvieh/java-utils/1.0.6/:_java_utils \
 		https://repo.maven.apache.org/maven2/com/github/jnr/jffi/1.2.23/:_jffi \
 		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-a64asm/1.0.0/:_jnr_a64asm \
@@ -48,7 +48,7 @@ DISTFILES=	annotations-13.0.jar:_annotations \
 		asm-util-7.1.jar:_asm_util \
 		bcprov-jdk15on-1.67.jar:_bcprov_jdk15on \
 		curve25519-java-0.5.0.jar:_curve25519_java \
-		dbus-java-3.2.3.jar:_dbus_java \
+		dbus-java-3.2.4.jar:_dbus_java \
 		jackson-annotations-2.9.0.jar:_jackson_annotations \
 		jackson-core-2.9.9.jar:_jackson_core \
 		jackson-databind-2.9.9.2.jar:_jackson_databind \
@@ -89,8 +89,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_11_amd64=	fails to build: Gradle build daemon disappeared unexpectedly
 
-BUILD_DEPENDS=	asciidoc>0:textproc/asciidoc \
-		gradle>0:devel/gradle
+EXTRACT_DEPENDS=	zip:archivers/zip
+BUILD_DEPENDS=		asciidoc>0:textproc/asciidoc \
+			gradle>0:devel/gradle
+LIB_DEPENDS=		libzkgroup.so:net-im/zkgroup
 
 USES=		gmake
 USE_GITHUB=	yes
@@ -132,6 +134,10 @@ post-extract:
 		-e 's|%%ORIGINAL_BUILD_GRADLE%%|${_ORIGINAL_BUILD_GRADLE}|g' \
 		${FILESDIR}/build.gradle.in \
 		> ${WRKSRC}/build.gradle
+
+# Delete the bundled library from the JAR. Otherwise, it is going to
+# conflict with the library installed by net-im/zkgroup.
+	zip -d ${_GRADLE_DEPS_DIR}/zkgroup-java-*.jar libzkgroup.so
 
 do-build:
 	(cd ${WRKSRC} && \
