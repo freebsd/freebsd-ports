@@ -1,17 +1,34 @@
+IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp:2148:16: error: call to 'invertCondition' is ambiguous
+        Mask = invertCondition(Mask);
+               ^~~~~~~~~~~~~~~
+IGC/VectorCompiler/lib/GenXCodeGen/GenXUtil.h:206:8: note: candidate function
+Value *invertCondition(Value *Condition);
+       ^
+/usr/local/llvm11/include/llvm/Transforms/Utils/Local.h:557:8: note: candidate function
+Value *invertCondition(Value *Condition);
+       ^
 IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp:2216:41: error: no viable conversion from 'llvm::ElementCount' to 'unsigned int'
     return ConstantDataVector::getSplat(IGCLLVM::getElementCount(OperandWidth),
                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /usr/local/llvm11/include/llvm/IR/Constants.h:803:38: note: passing argument to parameter 'NumElts' here
   static Constant *getSplat(unsigned NumElts, Constant *Elt);
                                      ^
-
 IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp:462:37: error: no member named 'getMask' in 'llvm::ShuffleVectorInst'
       NewVec1, NewVec2, ShuffleVec->getMask(), ShuffleVec->getName() + ".tpm");
                         ~~~~~~~~~~  ^
 
---- IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp.orig	2020-12-06 10:35:55 UTC
+--- IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp.orig	2020-12-12 06:01:51 UTC
 +++ IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp
-@@ -2213,7 +2213,7 @@ static void decomposeSdivPow2(Instruction &Sdiv,
+@@ -2145,7 +2145,7 @@ static bool mergeToWrRegion(SelectInst *SI) {
+       Value *Mask = SI->getCondition();
+       // Invert mask if needed.
+       if (Inverted)
+-        Mask = invertCondition(Mask);
++        Mask = genx::invertCondition(Mask);
+       // Create new wrregion.
+       Region WrReg(Wr, BaleInfo());
+       WrReg.Mask = Mask;
+@@ -2269,7 +2269,7 @@ static void decomposeSdivPow2(Instruction &Sdiv,
  
    auto createConstantVector = [](unsigned int OperandWidth, Type *Ty,
                                   int Value) {

@@ -2,13 +2,12 @@
 
 PORTNAME=	intel-graphics-compiler
 DISTVERSIONPREFIX=	igc-
-DISTVERSION=	1.0.5819
+DISTVERSION=	1.0.5884
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	d878880cbb3b.patch:-p1 # https://github.com/intel/intel-graphics-compiler/pull/129
 PATCHFILES+=	f44eb990ac84.patch:-p1 # https://github.com/intel/intel-graphics-compiler/pull/156
-PATCHFILES+=	cf887180a0e3.patch:-p1 # https://github.com/intel/intel-graphics-compiler/pull/156
 PATCHFILES+=	02d82a7ccbe6.patch:-p1 # https://github.com/intel/intel-graphics-compiler/pull/156
 
 MAINTAINER=	jbeich@FreeBSD.org
