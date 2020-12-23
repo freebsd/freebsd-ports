@@ -3,19 +3,22 @@
 PORTNAME=	zkgroup
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Library for the Signal Private Group System
 
-LICENSE=	GPLv3+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
 GH_TUPLE=	signalapp:curve25519-dalek:477356e017c7cc2aa168f956786b34690870768f:curvedalek \
 		signalapp:poksho:v0.7.0:poksho
-USE_JAVA=	7+
+USE_JAVA=	yes
+JAVA_VERSION=	11+
 USE_LDCONFIG=	yes
 
 CARGO_CRATES=	aead-0.2.0 \
