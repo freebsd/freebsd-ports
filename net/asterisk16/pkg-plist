@@ -104,6 +104,7 @@
 @sample %%ETCDIR%%/ss7.timers.sample
 @sample %%ETCDIR%%/stasis.conf.sample
 @sample %%ETCDIR%%/statsd.conf.sample
+@sample %%ETCDIR%%/stir_shaken.conf.sample
 @sample %%ETCDIR%%/telcordia-1.adsi.sample
 @sample %%ETCDIR%%/test_sorcery.conf.sample
 @sample %%ETCDIR%%/udptl.conf.sample
@@ -224,6 +225,7 @@ include/asterisk/linkedlists.h
 include/asterisk/localtime.h
 include/asterisk/lock.h
 include/asterisk/logger.h
+include/asterisk/logger_category.h
 include/asterisk/manager.h
 include/asterisk/max_forwards.h
 include/asterisk/md5.h
@@ -268,6 +270,7 @@ include/asterisk/res_pjsip_presence_xml.h
 include/asterisk/res_pjsip_pubsub.h
 include/asterisk/res_pjsip_session.h
 include/asterisk/res_srtp.h
+include/asterisk/res_stir_shaken.h
 include/asterisk/rtp_engine.h
 include/asterisk/say.h
 include/asterisk/sched.h
@@ -394,6 +397,7 @@ sbin/safe_asterisk
 @dir %%DATADIR%%/documentation/thirdparty
 @dir %%DATADIR%%/firmware/iax
 @dir %%DATADIR%%/images
+@dir %%DATADIR%%/keys/stir_shaken
 @dir %%DATADIR%%/keys
 @dir %%DATADIR%%/moh
 @dir %%DATADIR%%/sounds
