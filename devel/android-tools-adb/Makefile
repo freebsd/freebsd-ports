@@ -53,7 +53,7 @@ TEST_ALL_TARGET=	adb_test
 TEST_PYTHON_DESC=	${TEST_DESC:S/tests/python &/}
 TEST_PYTHON_GH_TUPLE=	aosp-mirror:platform_development:${DISTVERSIONFULL}:development
 TEST_PYTHON_BUILD_DEPENDS=${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
-TEST_PYTHON_USES=	python:2.7,build
+TEST_PYTHON_USES=	python:build
 
 post-patch:
 # XXX Hidden by poudriere/tinderbox, see lindev(4) for FreeBSD < 11.0
