@@ -541,7 +541,7 @@ VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 VPX_CONFIGURE_ENABLE=	libvpx
 
 # vulkan
-VULKAN_BUILD_DEPENDS=	vulkan-headers>0:devel/vulkan-headers
+VULKAN_BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_CONFIGURE_ENABLE=	vulkan
 VULKAN_IMPLIES=		GLSLANG

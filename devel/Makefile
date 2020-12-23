@@ -6861,9 +6861,6 @@
     SUBDIR += vitables
     SUBDIR += volk
     SUBDIR += vstr
-    SUBDIR += vulkan-headers
-    SUBDIR += vulkan-tools
-    SUBDIR += vulkan-validation-layers
     SUBDIR += vxlog
     SUBDIR += wand-libconfig
     SUBDIR += wandio

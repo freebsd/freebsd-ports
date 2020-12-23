@@ -140,7 +140,7 @@ VAAPI_CONFIGURE_OFF=		--disable-vaapi
 VDPAU_LIB_DEPENDS=		libvdpau.so:multimedia/libvdpau
 VDPAU_CONFIGURE_OFF=		--disable-vdpau
 
-VULKAN_BUILD_DEPENDS=		${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers
+VULKAN_BUILD_DEPENDS=		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=		libplacebo.so:graphics/libplacebo \
 				libvulkan.so:graphics/vulkan-loader
 VULKAN_CONFIGURE_OFF=		--disable-vulkan --disable-libplacebo

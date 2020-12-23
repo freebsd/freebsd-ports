@@ -1074,7 +1074,10 @@
     SUBDIR += vp
     SUBDIR += vpaint
     SUBDIR += vulkan-caps-viewer
+    SUBDIR += vulkan-headers
     SUBDIR += vulkan-loader
+    SUBDIR += vulkan-tools
+    SUBDIR += vulkan-validation-layers
     SUBDIR += vv
     SUBDIR += waffle
     SUBDIR += waifu2x-converter-cpp

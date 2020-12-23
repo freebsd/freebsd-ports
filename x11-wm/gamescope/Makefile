@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	glslangValidator:devel/glslang \
 		evdev-proto>0:devel/evdev-proto \
-		vulkan-headers>0:devel/vulkan-headers \
+		vulkan-headers>0:graphics/vulkan-headers \
 		wayland-protocols>=1.17:graphics/wayland-protocols \
 		wlroots>=0.11.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \

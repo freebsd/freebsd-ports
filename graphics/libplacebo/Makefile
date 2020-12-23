@@ -42,7 +42,7 @@ SHADERC_IMPLIES=	VULKAN
 TEST_MESON_TRUE=	tests
 
 VULKAN_DESC=		Vulkan-based renderer
-VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers \
+VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
 			${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_MESON_ENABLED=	vulkan

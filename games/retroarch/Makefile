@@ -24,7 +24,7 @@ LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libdrm.so:graphics/libdrm \
 		libass.so:multimedia/libass
 BUILD_DEPENDS=	vulkan-loader>0:graphics/vulkan-loader \
-		${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers
+		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 RUN_DEPENDS=	retroarch-assets<=0:games/retroarch-assets
 
 USES=		compiler:c++11-lib gmake pkgconfig python:3.6+ shebangfix ssl

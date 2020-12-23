@@ -20,7 +20,7 @@ RUN_DEPENDS=	zenity:x11/zenity \
 		7z:archivers/p7zip \
 		webfonts>=0:x11-fonts/webfonts \
 		winetricks:emulators/winetricks \
-		vulkaninfo:devel/vulkan-tools \
+		vulkaninfo:graphics/vulkan-tools \
 		glxinfo:graphics/mesa-demos
 
 USE_GITLAB=	yes

@@ -3,7 +3,7 @@
 PORTNAME=	vulkan-headers
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.2.165
-CATEGORIES=	devel graphics
+CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Headers for the Vulkan graphics API

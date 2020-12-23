@@ -3,7 +3,7 @@
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.162
-CATEGORIES=	devel graphics
+CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Validation layers for the Vulkan graphics API
@@ -11,7 +11,7 @@ COMMENT=	Validation layers for the Vulkan graphics API
 LICENSE=	APACHE20
 
 # NOTE: keep spirv-tools and glslang up to date when updating Vulkan
-BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers \
+BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
 		${LOCALBASE}/include/spirv-tools/libspirv.h:devel/spirv-tools \
 		${LOCALBASE}/include/SPIRV/spirv.hpp:devel/glslang
 

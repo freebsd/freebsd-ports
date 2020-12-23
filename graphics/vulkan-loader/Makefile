@@ -10,7 +10,7 @@ COMMENT=	Driver loader for the Vulkan graphics API
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers
+BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 
 USES=		cmake compiler:${ARCH:Mi386:C/.+/gcc-/}c++11-lib pkgconfig python:3.4+,build
 USE_LDCONFIG=	yes
