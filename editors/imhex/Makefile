@@ -10,6 +10,9 @@ COMMENT=	Hex editor for reverse engineers and programmers
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	__uint128_t and __int128_t are not supported
+
 BUILD_DEPENDS=	c++10:lang/gcc10 \
 		glm>0:math/glm \
 		nlohmann-json>0:devel/nlohmann-json
