@@ -5,7 +5,7 @@ PORTNAME=	librime
 PORTVERSION=	1.6.1
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	lichray@gmail.com
+MAINTAINER=	khng300@gmail.com
 COMMENT=	Rime Input Method Engine, the core library
 
 LICENSE=	GPLv3

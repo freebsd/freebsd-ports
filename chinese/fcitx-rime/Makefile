@@ -8,7 +8,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
 
-MAINTAINER=	lichray@gmail.com
+MAINTAINER=	khng300@gmail.com
 COMMENT=	RIME support for Fcitx
 
 LICENSE=	GPLv2
