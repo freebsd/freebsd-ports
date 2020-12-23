@@ -819,7 +819,6 @@
     SUBDIR += global
     SUBDIR += glog
     SUBDIR += glrparser
-    SUBDIR += glslang
     SUBDIR += glui
     SUBDIR += gmake
     SUBDIR += gn

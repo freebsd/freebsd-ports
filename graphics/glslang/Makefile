@@ -2,7 +2,7 @@
 
 PORTNAME=	glslang
 DISTVERSION=	8.13.3743
-CATEGORIES=	devel graphics
+CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	OpenGL and OpenGL ES shader front end and validator

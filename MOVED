@@ -15800,3 +15800,4 @@ www/rubygem-rack21|www/rubygem-rack|2020-12-18|Obsolete, please use www/rubygem-
 devel/vulkan-headers|graphics/vulkan-headers|2020-12-23|Moved to a better category, aligning with vulkan-loader
 devel/vulkan-tools|graphics/vulkan-tools|2020-12-23|Moved to a better category, aligning with vulkan-loader
 devel/vulkan-vulkan-validation-layers|graphics/vulkan-vulkan-validation-layers|2020-12-23|Moved to a better category, aligning with vulkan-loader
+devel/glslang|graphics/glslang|2020-12-23|Moved to a better category, aligning with shaderc

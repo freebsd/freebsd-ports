@@ -14,7 +14,7 @@ COMMENT=	GLSL/HLSL to SPIR-V shader compiler
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libSPIRV-Tools-opt.a:devel/spirv-tools \
-		${LOCALBASE}/lib/libHLSL.a:devel/glslang
+		${LOCALBASE}/lib/libHLSL.a:graphics/glslang
 
 USES=		cmake compiler:c++11-lib pkgconfig localbase:ldflags python:build
 USE_LDCONFIG=	yes

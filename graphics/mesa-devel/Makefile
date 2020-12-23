@@ -118,7 +118,7 @@ VDPAU_BUILD_DEPENDS=	libvdpau>0:multimedia/libvdpau
 VDPAU_MESON_ENABLED=	gallium-vdpau
 
 VULKAN_DESC=		Vulkan drivers and layers
-VULKAN_BUILD_DEPENDS=	glslangValidator:devel/glslang
+VULKAN_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 VULKAN_MESON_TRUE=	vulkan-device-select-layer vulkan-overlay-layer
 anv_DESC=		Haswell and newer
 radv_DESC=		Southern Islands and newer

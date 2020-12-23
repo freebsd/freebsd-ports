@@ -11,7 +11,7 @@ COMMENT=	Tools and demos for the Vulkan graphics API
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
-		glslangValidator:devel/glslang
+		glslangValidator:graphics/glslang
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
 USES=		cmake compiler:c++11-lib pkgconfig python:3.4+,build

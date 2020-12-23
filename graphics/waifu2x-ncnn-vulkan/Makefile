@@ -10,7 +10,7 @@ COMMENT=	Scale and denoise images using convolutional neural networks
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	glslangValidator:devel/glslang \
+BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libwebp.so:graphics/webp \
 		libvulkan.so:graphics/vulkan-loader

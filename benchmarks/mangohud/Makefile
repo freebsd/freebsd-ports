@@ -15,7 +15,7 @@ COMMENT=	Vulkan/OpenGL overlay for CPU/GPU monitoring
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	glslangValidator:devel/glslang \
+BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		${LOCALBASE}/share/vulkan/registry/vk.xml:graphics/vulkan-headers \
 		${PYTHON_PKGNAMEPREFIX}mako>=0:textproc/py-mako@${PY_FLAVOR}
 LIB_DEPENDS=	libinotify.so:devel/libinotify
