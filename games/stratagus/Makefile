@@ -27,8 +27,6 @@ CMAKE_ARGS=	-DGAMEDIR:STRING="bin" \
 		-DTOLUA++_LIBRARY:STRING="${LUA_LIBDIR}/libtolua++.so"
 CMAKE_ON=	ENABLE_DEV
 
-CXXFLAGS+=	-Wno-c++11-narrowing
-
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	MIKMOD MNG THEORA VORBIS X11 FLUIDSYNTH DOCS
@@ -67,4 +65,12 @@ post-install-DOCS-on:
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "[a-z]*.html *.txt graphics scripts" \
 		${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+CXXFLAGS+=	-Wno-c++11-narrowing
+.else
+CXXFLAGS+=	-Wno-error
+.endif
+
+.include <bsd.port.post.mk>
