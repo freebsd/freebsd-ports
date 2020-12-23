@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	permutation
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
+DISTVERSION=	0.3.0
 CATEGORIES=	math python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,9 +13,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python
-USE_GITHUB=	yes
-GH_ACCOUNT=	jwodder
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
+
+pre-configure: # permutation is officially built with "build" (https://github.com/pypa/build), but this is easily circumvented with this simple setup.py
+	@( \
+		${ECHO} "from setuptools import setup" && \
+		${ECHO} "setup()" \
+	) > ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
