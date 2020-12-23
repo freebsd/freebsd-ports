@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chef-utils
-PORTVERSION=	16.6.14
+PORTVERSION=	15.14.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
