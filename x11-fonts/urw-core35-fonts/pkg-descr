@@ -1,0 +1,9 @@
+Recent Ghostscript versions come with a new set of URW fonts that
+have additional support for the Greek and Cyrillic scripts (thus
+superseding the fonts contained in the 'urw-fonts' port).  Ghostscript
+distributes the URW fonts in Type1 format; in addition to these
+files, this port also contains the corresponding Type1 metrics files
+(AFM), together with TrueType (TTF) and OpenType (OTF) versions of
+the fonts.
+
+WWW: https://www.ghostscript.com
