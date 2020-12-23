@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	code_saturne
-PORTVERSION=	6.1.2
+PORTVERSION=	6.1.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	science parallel
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -36,9 +35,10 @@ CFLAGS+=	-D__XSI_VISIBLE
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-salome --without-salome-yacs --without-salome-kernel	\
-		--without-salome-gui
+		--without-salome-gui --enable-python
 CONFIGURE_ENV=	ac_cv_path_SED=${LOCALBASE}/bin/gsed
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 BINARY_ALIAS=	python=${PYTHON_CMD} \
 		pyrcc5=pyrcc5-${PYTHON_VER} \
 		pyuic5=pyuic5-${PYTHON_VER}
@@ -53,7 +53,9 @@ BLAS_CONFIGURE_ON=	--with-blas=yes --with-blas-lib=${LOCALBASE}/lib --with-blas-
 BLAS_LIB_DEPENDS=	libopenblas.so:math/openblas
 BATCH_DESC=		Use Torque to submit batches
 BATCH_RUN_DEPENDS=	pbs-config:sysutils/torque
+MPI_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
 MPI_LIB_DEPENDS=	libmpi.so:net/mpich
+MPI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
 MPI_CONFIGURE_WITH=	mpi
 METIS_DESC=		Support of METIS
 METIS_LIB_DEPENDS=	libmetis.so:math/metis
@@ -101,6 +103,9 @@ pre-configure:
 		-o ${WRKSRC}/src/mei/mei_parser.c ${WRKSRC}/src/mei/mei_parser.y
 	${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|'	\
 		${WRKSRC}/Makefile.am
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/code_saturne/cs_solver
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
