@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Const-Exporter
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Const-Fast>=0:devel/p5-Const-Fast \
 		p5-List-AllUtils>=0.10:devel/p5-List-AllUtils \
 		p5-Package-Stash>=0:devel/p5-Package-Stash \
-		p5-Ref-Util>=0:devel/p5-Ref-Util
+		p5-Ref-Util>=0:devel/p5-Ref-Util \
+		p5-Sub-Identify>=0.06:devel/p5-Sub-Identify
 TEST_DEPENDS=	p5-Hash-Objectify>=0:devel/p5-Hash-Objectify \
 		p5-Test-Most>=0:devel/p5-Test-Most
 
