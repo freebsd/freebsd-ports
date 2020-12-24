@@ -2,6 +2,7 @@
 
 PORTNAME=		sogo4
 PORTVERSION=		4.3.2
+PORTREVISION=		1
 CATEGORIES=		www gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOGo-${PORTVERSION}
@@ -29,9 +30,12 @@ USES=			gnustep ssl objc
 USE_GNUSTEP=		base build
 USE_LDCONFIG=		${GNUSTEP_LOCAL_LIBRARIES}/sogo
 
-CONFLICTS?=		sogo[2-4]-activesync-[0-9]* sogo[2-3]-[0-9]*
+CONFLICTS?=		sogo2-activesync-[0-9]* sogo2-[0-9]*
 
 USE_RC_SUBR=		sogod
+
+DEPRECATED=		Unmaintained, please migrate to a newer version of sogo
+EXPIRATION_DATE=	2021-01-24
 
 SUB_FILES+=		pkg-message
 SUB_LIST+=		GNUSTEP_LOCAL_TOOLS=${GNUSTEP_LOCAL_TOOLS} \
