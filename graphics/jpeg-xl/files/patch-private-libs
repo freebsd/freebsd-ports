@@ -12,14 +12,14 @@ jpeg-xl package for now.
    configure_file("${CMAKE_CURRENT_SOURCE_DIR}/highway/LICENSE"
                   ${PROJECT_BINARY_DIR}/LICENSE.highway COPYONLY)
  else()
---- third_party/highway/CMakeLists.txt.orig	2020-10-29 17:04:03 UTC
+--- third_party/highway/CMakeLists.txt.orig	2020-12-02 19:39:56 UTC
 +++ third_party/highway/CMakeLists.txt
-@@ -222,7 +222,7 @@ set_target_properties(hwy_benchmark
+@@ -230,7 +230,7 @@ set_target_properties(hwy_benchmark
  
  include(CTest)
  
 -if(BUILD_TESTING)
 +if(HWY_BUILD_TESTING)
- 
- find_package(GTest REQUIRED)
+ enable_testing()
+ include(GoogleTest)
  

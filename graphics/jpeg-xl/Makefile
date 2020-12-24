@@ -2,17 +2,15 @@
 
 PORTNAME=	jpeg-xl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1
-PORTREVISION=	1
+DISTVERSION=	0.2
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	JPEG XL reference encoder/decoder
 
-LICENSE=	APACHE20 BSD3CLAUSE MIT ZLIB
+LICENSE=	APACHE20 BSD3CLAUSE ZLIB
 LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/third_party/skcms/LICENSE
-LICENSE_FILE_MIT=	${WRKSRC}/third_party/brunsli/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC}/third_party/lodepng/LICENSE
 
 LIB_DEPENDS=	libbrotlienc.so:archivers/brotli
@@ -22,13 +20,12 @@ USE_GITHUB=	nodefault
 USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GH_TUPLE=	barmco:skcms:6437475:skcms/third_party/skcms \
-		google:brunsli:v0.1-54-gde6768b:brunsli/third_party/brunsli \
-		google:highway:94a72d0:highway/third_party/highway \
+		google:highway:311c183:highway/third_party/highway \
 		lvandeve:lodepng:48e5364:lodepng/third_party/lodepng \
 		webmproject:sjpeg:868ab55:sjpeg/third_party/sjpeg \
 		${NULL}
 GL_ACCOUNT=	wg1
-GL_COMMIT=	739e6cd1305fdec5acfa47ad414189b3d3ecb6a4
+GL_COMMIT=	31c71b0f61123a40789b0b8f54feb70e5995420e
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS
 CMAKE_OFF=	JPEGXL_WARNINGS_AS_ERRORS ${BENCHMARK FUZZERS TCMALLOC:L:S/^/JPEGXL_ENABLE_/}
 CMAKE_OFF+=	${OpenGL GLUT:L:S/^/CMAKE_DISABLE_FIND_PACKAGE_/} # sjpeg
