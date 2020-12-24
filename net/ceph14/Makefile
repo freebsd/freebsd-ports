@@ -4,7 +4,7 @@
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v
 DISTVERSION=	14.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 PKGNAMESUFFIX=	14
 
@@ -62,7 +62,7 @@ RUN_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}routes>=0:www/py-routes@${PY_FLAVOR}
 
-USES=		cmake:noninja dos2unix fuse gettext-runtime gmake ncurses \
+USES=		cmake:noninja compiler:c++17-lang dos2unix fuse gettext-runtime gmake ncurses \
 		pkgconfig python:3.7+ shebangfix ssl
 USE_PYTHON=	cython py3kplist
 USE_OPENLDAP=	yes
@@ -106,6 +106,8 @@ USE_LDCONFIG=	yes
 
 USERS=		ceph
 GROUPS=		ceph
+
+BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
 
 # PLIST_SUB=CMAKE_BUILD_TYPE_regex="\bdebug\b"
 
