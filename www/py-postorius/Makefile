@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-mailman3>=1.3.3:mail/py-django-mailma
 		${PYTHON_PKGNAMEPREFIX}readme-renderer>0:devel/py-readme-renderer@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup448>0:www/py-beautifulsoup448@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isort>0:devel/py-isort@${PY_FLAVOR}
 
 USES=		python:3.6+
