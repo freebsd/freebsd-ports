@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-xkb-plugin
-PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTVERSION=	0.8.2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 
