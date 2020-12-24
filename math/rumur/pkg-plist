@@ -4,6 +4,7 @@ bin/murphi2xml
 bin/rumur
 bin/rumur-run
 include/rumur/Boolean.h
+include/rumur/Comment.h
 include/rumur/Decl.h
 include/rumur/Expr.h
 include/rumur/Function.h
