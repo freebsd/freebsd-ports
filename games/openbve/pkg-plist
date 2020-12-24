@@ -433,6 +433,14 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Compatibility/UchiboV1/slab.png
 %%DATADIR%%/Data/Compatibility/UchiboV1/slab2.png
 %%DATADIR%%/Data/Compatibility/UchiboV1Base.xml
+%%DATADIR%%/Data/Compatibility/Windscreen/Day/drop1.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Day/drop2.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Day/drop3.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Day/drop4.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Night/drop1.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Night/drop2.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Night/drop3.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Night/drop4.png
 %%DATADIR%%/Data/Compatibility/exterior.csv
 %%DATADIR%%/Data/Compatibility/needle_hour.png
 %%DATADIR%%/Data/Compatibility/needle_minute.png
