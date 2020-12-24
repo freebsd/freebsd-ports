@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	rar
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	archivers pear
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	PECL extension to create and read RAR files
 
 LICENSE=	PHP301
