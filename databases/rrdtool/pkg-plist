@@ -17,7 +17,7 @@ lib/librrd.so.8.2.1
 %%PERL%%%%PERL5_MAN3%%/RRDp.3.gz
 %%PERL%%%%PERL5_MAN3%%/RRDs.3.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool-0.1.10-py%%PYTHON_VER%%.egg-info
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtool%%PYTHON_EXT_SUFFIX%%.so
 %%RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so
 libdata/pkgconfig/librrd.pc
 %%PORTDOCS%%man/man1/bin_dec_hex.1.gz

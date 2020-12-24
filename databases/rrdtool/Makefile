@@ -100,7 +100,7 @@ post-install-PERL-off:
 	${RM} -r ${STAGEDIR}${EXAMPLESDIR}/rrdcached
 
 post-install-PYTHON-on:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rrdtool.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rrdtool*.so
 
 post-install-PYTHON-off:
 	${RM} ${STAGEDIR}${EXAMPLESDIR}/stripes.py
