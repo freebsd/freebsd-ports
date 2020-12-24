@@ -9,9 +9,6 @@ PKGNAMESUFFIX=	021
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple Ruby wrapper for the Fogbugz XML API
 
-DEPRECATED=	Old version no longer needed
-EXPIRATION_DATE=2021-02-01
-
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-crack>=0.4:devel/rubygem-crack
