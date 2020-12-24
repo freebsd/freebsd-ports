@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	conan
-DISTVERSION=	1.31.3
+DISTVERSION=	1.32.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 
@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 PY_DEPENDS=	\
-		${PYTHON_PKGNAMEPREFIX}bottle>=0.12.8:www/py-bottle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.3,<0.5.0:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.7.0,<3:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}deprecation>=2.0:devel/py-deprecation@${PY_FLAVOR} \
