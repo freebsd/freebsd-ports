@@ -3,6 +3,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.6.9
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GENTOO
@@ -13,7 +14,6 @@ COMMENT=	High-performance distributed memory object cache system
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	as:devel/binutils
 LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		autoreconf cpe shebangfix
@@ -70,11 +70,6 @@ USES+=			ssl
 
 .if ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=	--enable-64bit
-.endif
-
-# avoid triggering a bug in libdtrace, see illumos issue 6653
-.if ${PORT_OPTIONS:MDTRACE} && ${ARCH} == amd64
-CFLAGS+=	-no-integrated-as
 .endif
 
 post-install:
