@@ -2,8 +2,7 @@
 
 PORTNAME=	antic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2-23
-DISTVERSIONSUFFIX=	-gc0217678
+DISTVERSION=	0.2.3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,9 +18,10 @@ LIB_DEPENDS=	libflint.so:math/flint2 \
 USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	wbhart
-USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/antic/nf.h \
 		include/antic/nf_elem.h \
