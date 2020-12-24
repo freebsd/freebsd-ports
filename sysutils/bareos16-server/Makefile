@@ -35,6 +35,9 @@ SHEBANG_FILES=	${WRKSRC}/src/cats/make_catalog_backup.pl.in
 CPPFLAGS+=	-I${LOCALBASE}/readline -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+DEPRECATED=	Unmaintained, please migrate to a newer version of bareos
+EXPIRATION_DATE=2021-01-23
+
 OPTIONS_DEFAULT=	OPENSSL
 OPTIONS_SINGLE=		CRYPTO
 OPTIONS_SINGLE_CRYPTO=	OPENSSL GNUTLS
