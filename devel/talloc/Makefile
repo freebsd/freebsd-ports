@@ -53,10 +53,10 @@ CONFIGURE_ARGS+=	--disable-python
 USES+=			python:3.4+
 
 PLIST_FILES+=		include/pytalloc.h \
-			lib/libpytalloc-util.so \
-			lib/libpytalloc-util.so.2 \
-			${PYTHON_SITELIBDIR}/talloc.so \
-			${PKGCONFIGDIR}/pytalloc-util.pc
+			lib/libpytalloc-util${PYTHON_EXT_SUFFIX}.so \
+			lib/libpytalloc-util${PYTHON_EXT_SUFFIX}.so.2 \
+			${PYTHON_SITELIBDIR}/talloc${PYTHON_EXT_SUFFIX}.so \
+			${PKGCONFIGDIR}/pytalloc-util${PYTHON_EXT_SUFFIX}.pc
 .endif
 
 .include <bsd.port.pre.mk>
@@ -100,8 +100,8 @@ pre-build-MANPAGES-off:
 post-install:
 			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtalloc.so
 .if !defined(NO_PYTHON)
-			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpytalloc-util.so
-			${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/talloc.so
+			${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpytalloc-util*.so
+			${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/talloc*.so
 .endif
 
 .include <bsd.port.post.mk>
