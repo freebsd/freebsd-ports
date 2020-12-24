@@ -734,7 +734,6 @@ lib/calibre/calibre/gui2/convert/rtf_input_ui.py
 lib/calibre/calibre/gui2/convert/search_and_replace.py
 lib/calibre/calibre/gui2/convert/search_and_replace_ui.py
 lib/calibre/calibre/gui2/convert/single.py
-lib/calibre/calibre/gui2/convert/single_ui.py
 lib/calibre/calibre/gui2/convert/snb_output.py
 lib/calibre/calibre/gui2/convert/snb_output_ui.py
 lib/calibre/calibre/gui2/convert/structure_detection.py
@@ -782,7 +781,6 @@ lib/calibre/calibre/gui2/dialogs/choose_format_device_ui.py
 lib/calibre/calibre/gui2/dialogs/choose_library.py
 lib/calibre/calibre/gui2/dialogs/choose_library_ui.py
 lib/calibre/calibre/gui2/dialogs/choose_plugin_toolbars.py
-lib/calibre/calibre/gui2/dialogs/comicconf_ui.py
 lib/calibre/calibre/gui2/dialogs/comments_dialog.py
 lib/calibre/calibre/gui2/dialogs/comments_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete.py
@@ -818,7 +816,6 @@ lib/calibre/calibre/gui2/dialogs/quickview.py
 lib/calibre/calibre/gui2/dialogs/quickview_ui.py
 lib/calibre/calibre/gui2/dialogs/restore_library.py
 lib/calibre/calibre/gui2/dialogs/saved_search_editor.py
-lib/calibre/calibre/gui2/dialogs/saved_search_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/scheduler.py
 lib/calibre/calibre/gui2/dialogs/search.py
 lib/calibre/calibre/gui2/dialogs/select_formats.py
@@ -1155,6 +1152,7 @@ lib/calibre/calibre/library/schema_upgrades.py
 lib/calibre/calibre/library/sqlite.py
 lib/calibre/calibre/libunzip.py
 lib/calibre/calibre/linux.py
+lib/calibre/calibre/live.py
 lib/calibre/calibre/plugins/_patiencediff_c.so
 lib/calibre/calibre/plugins/bzzdec.so
 lib/calibre/calibre/plugins/cPalmdoc.so
@@ -1500,6 +1498,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/fonts/liberation/LiberationSerif-BoldItalic.ttf
 %%DATADIR%%/fonts/liberation/LiberationSerif-Italic.ttf
 %%DATADIR%%/fonts/liberation/LiberationSerif-Regular.ttf
+%%DATADIR%%/fonts/liberation/version.txt
 %%DATADIR%%/hyphenation/dictionaries.tar.xz
 %%DATADIR%%/hyphenation/locales.json
 %%DATADIR%%/hyphenation/sha1sum
