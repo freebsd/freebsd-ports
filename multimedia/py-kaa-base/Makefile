@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Kaa Media Repository
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-29
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:textproc/py-libxml2@${PY_FLAVOR} \
 		${PYGAME}
 RUN_DEPENDS:=	${BUILD_DEPENDS}

@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Python interface for Zinnia
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-29
+
 LIB_DEPENDS=	libzinnia.so:japanese/zinnia
 RUN_DEPENDS=	zinnia:japanese/zinnia
 

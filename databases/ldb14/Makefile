@@ -13,6 +13,9 @@ COMMENT=		LDAP-like embedded database
 
 LICENSE=		GPLv3
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-29
+
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 BUILD_DEPENDS=		${LDB_DEPENDS}

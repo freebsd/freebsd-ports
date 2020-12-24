@@ -13,6 +13,9 @@ COMMENT=	Pluggable transport library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-29
+
 NO_ARCH=	yes
 
 USES=		python:2.7

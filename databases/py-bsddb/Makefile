@@ -14,6 +14,9 @@ COMMENT=	Standard Python bindings to the Berkeley DB library
 
 LICENSE=	PSFL
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-29
+
 PORTSCOUT=	ignore:1
 
 USE_PYTHON=	distutils autoplist

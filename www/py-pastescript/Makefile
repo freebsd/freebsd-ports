@@ -14,6 +14,9 @@ COMMENT=	Pluggable command-line frontend
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.txt
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-29
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah>=0:devel/py-cheetah@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flup6>=0:www/py-flup6@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Paste>=1.3:www/py-paste@${PY_FLAVOR} \

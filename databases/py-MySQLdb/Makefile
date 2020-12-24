@@ -14,6 +14,9 @@ COMMENT=	Access a MySQL database through Python
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GPL-2.0
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-29
+
 USES=		compiler:c11 mysql python:2.7
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes

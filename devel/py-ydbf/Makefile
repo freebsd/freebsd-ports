@@ -13,6 +13,9 @@ COMMENT=	Yelded DBF reader/writer for Python
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-29
+
 USES=		python:2.7
 USE_PYTHON=	distutils autoplist
 

@@ -14,6 +14,9 @@ COMMENT=	Python helper functions for writing templates in web applications
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Uses deprecated version of python
+EXPIRATION_DATE=	2020-12-29
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}routes>=1.1:www/py-routes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markupsafe>=0.11:textproc/py-markupsafe@${PY_FLAVOR}
 
