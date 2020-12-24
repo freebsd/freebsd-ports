@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	event
-PORTVERSION=	2.5.4
+PORTVERSION=	3.0.2
 CATEGORIES=	devel
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Provides interface to libevent library
 
 LICENSE=	PHP301
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		php:pecl ssl
 CONFIGURE_ARGS=	--with-openssl-dir=${OPENSSLBASE}
+CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-lssl -lcrypto"
 USE_PHP=	sockets:build
-IGNORE_WITH_PHP=	74
 
 .include <bsd.port.mk>
