@@ -22,7 +22,7 @@ post-extract:
 	@${RM} ${WRKSRC}/_mssql.c
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_mssql.so \
-		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pymssql.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_mssql*.so \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pymssql*.so
 
 .include <bsd.port.mk>

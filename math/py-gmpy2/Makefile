@@ -23,6 +23,6 @@ USE_PYTHON=	distutils autoplist
 CONFLICTS=	${PYTHON_PKGNAMEPREFIX}gmpy2-devel-2.1*
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gmpy2.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gmpy2*.so
 
 .include <bsd.port.mk>

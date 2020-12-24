@@ -20,7 +20,7 @@ USE_PYTHON=	autoplist concurrent cython distutils
 
 .if ${PYTHON_REL} >= 3000
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/msgpack/_cmsgpack.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/msgpack/_cmsgpack*.so
 .else
 NO_ARCH=	yes
 .endif

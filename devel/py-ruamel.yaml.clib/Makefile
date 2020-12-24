@@ -17,7 +17,7 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_ruamel_yaml.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_ruamel_yaml*.so
 	${RM} -fr ${STAGEDIR}${PYTHON_SITELIBDIR}/ruamel
 	${REINPLACE_CMD} -e '/LICENSE/d; /__init__.py/d' ${_PYTHONPKGLIST}
 

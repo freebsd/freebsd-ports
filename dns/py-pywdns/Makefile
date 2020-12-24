@@ -21,6 +21,6 @@ post-patch:
 	${REINPLACE_CMD} -e "1s+ python+ ${PYTHON_CMD}+" ${WRKSRC}/gen_pywdns_constants
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/wdns.so
+	${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/wdns*.so
 
 .include <bsd.port.mk>

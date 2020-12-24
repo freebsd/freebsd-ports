@@ -35,6 +35,6 @@ post-patch:
 	${CP} ${WRKSRC}/src/pycryptosat.cpp.in ${WRKSRC}/src/pycryptosat.cpp
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pycryptosat.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pycryptosat*.so
 
 .include <bsd.port.mk>

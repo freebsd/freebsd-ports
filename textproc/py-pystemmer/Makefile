@@ -19,6 +19,6 @@ USES=		python
 USE_PYTHON=	autoplist cython distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Stemmer.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Stemmer*.so
 
 .include <bsd.port.mk>

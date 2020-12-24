@@ -35,6 +35,6 @@ pre-build: # compile fortran files into a static library because distutils fails
 		${AR} -qc libff.a ${FORTRAN_FILES:S/.f/.o/}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/nleq2.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/nleq2*.so
 
 .include <bsd.port.mk>

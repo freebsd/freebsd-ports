@@ -39,6 +39,6 @@ post-install-DOCS-on:
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -and ! -path *doctrees*")
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_portaudio.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_portaudio*.so
 
 .include <bsd.port.mk>

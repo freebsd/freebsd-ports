@@ -19,6 +19,6 @@ USES=		pkgconfig python
 USE_PYTHON=	autoplist cython distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/dnstable.so
+	${STRIP_CMD} ${STAGEDIR}/${PYTHON_SITELIBDIR}/dnstable*.so
 
 .include <bsd.port.mk>

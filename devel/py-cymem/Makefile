@@ -16,6 +16,6 @@ USES=		python
 USE_PYTHON=	distutils cython autoplist
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cymem/cymem.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cymem/cymem*.so
 
 .include <bsd.port.mk>

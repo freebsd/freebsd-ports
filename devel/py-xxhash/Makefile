@@ -22,6 +22,6 @@ CONFIGURE_ENV=	XXHASH_LINK_SO=yes
 MAKE_ENV=	XXHASH_LINK_SO=yes
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/xxhash/_xxhash.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/xxhash/_xxhash*.so
 
 .include <bsd.port.mk>

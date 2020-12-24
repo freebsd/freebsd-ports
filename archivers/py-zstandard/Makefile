@@ -22,6 +22,6 @@ USE_PYTHON=	distutils autoplist
 PYDISTUTILS_BUILDARGS=	--system-zstd
 
 post-install:
-	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} && ${STRIP_CMD} zstd.so _zstd_cffi.so
+	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} && ${STRIP_CMD} zstd*.so _zstd_cffi*.so
 
 .include <bsd.port.mk>

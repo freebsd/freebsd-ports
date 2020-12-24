@@ -15,6 +15,6 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/regex/_regex.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/regex/_regex*.so
 
 .include <bsd.port.mk>

@@ -35,6 +35,6 @@ do-configure-SASL-off:
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py -q saveopts
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_ldap.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_ldap*.so
 
 .include <bsd.port.mk>

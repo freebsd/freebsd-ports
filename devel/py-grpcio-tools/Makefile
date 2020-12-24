@@ -21,6 +21,6 @@ CFLAGS+=	-DHAVE_PTHREAD=1
 LDFLAGS+=	-lcares
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/grpc_tools/_protoc_compiler.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/grpc_tools/_protoc_compiler*.so
 
 .include <bsd.port.mk>

@@ -43,7 +43,7 @@ test:
 
 post-install:
 	cd ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME} && \
-	    ${STRIP_CMD} clipper.so
+	    ${STRIP_CMD} clipper*.so
 
 post-install-EXAMPLES-on:
 	cd ${WRKSRC}/tests && \

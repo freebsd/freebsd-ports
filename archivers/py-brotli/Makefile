@@ -20,6 +20,6 @@ USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	python/bro.py
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_brotli.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_brotli*.so
 
 .include <bsd.port.mk>

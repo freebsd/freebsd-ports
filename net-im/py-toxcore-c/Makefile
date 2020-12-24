@@ -27,6 +27,6 @@ GH_PROJECT=	py-toxcore-c
 USE_PYTHON=	distutils autoplist
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pytox.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pytox*.so
 
 .include <bsd.port.mk>

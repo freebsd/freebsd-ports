@@ -26,6 +26,6 @@ USE_PYTHON=	distutils concurrent autoplist
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/onnx/onnx_cpp2py_export.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/onnx/onnx_cpp2py_export*.so
 
 .include <bsd.port.mk>

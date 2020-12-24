@@ -23,6 +23,6 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/zfec/_fec.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/zfec/_fec*.so
 
 .include <bsd.port.mk>

@@ -27,6 +27,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/changelog ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/crcmod/_crcfunext.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/crcmod/_crcfunext*.so
 
 .include <bsd.port.mk>

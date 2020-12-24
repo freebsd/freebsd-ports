@@ -23,7 +23,7 @@ GH_PROJECT=	py-${PORTNAME}
 PYDISTUTILS_BUILD_TARGET=build_ext -i
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/freebsd.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/freebsd*.so
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m unittest discover tests -v

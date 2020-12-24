@@ -23,6 +23,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|make|gmake|' ${WRKSRC}/setup.py
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pglast/parser.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pglast/parser*.so
 
 .include <bsd.port.mk>

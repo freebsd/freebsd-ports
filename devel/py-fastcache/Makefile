@@ -15,6 +15,6 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/fastcache/_lrucache.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/fastcache/_lrucache*.so
 
 .include <bsd.port.mk>

@@ -31,6 +31,6 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|#ifdef __SVR4|#ifdef __FreeBSD__|' ${WRKSRC}/cupsppd.c
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cups.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cups*.so
 
 .include <bsd.port.post.mk>

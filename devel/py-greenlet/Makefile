@@ -23,6 +23,6 @@ DO_MAKE_TEST=	${PYTHON_CMD}
 TEST_TARGET=	run-tests.py
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/greenlet.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/greenlet*.so
 
 .include <bsd.port.mk>

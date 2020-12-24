@@ -24,7 +24,7 @@ PYDISTUTILS_BUILDARGS=	build_ext \
 			-lpicosat
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pycosat.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pycosat*.so
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

@@ -34,6 +34,6 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/bsddb3/_pybsddb.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/bsddb3/_pybsddb*.so
 
 .include <bsd.port.mk>

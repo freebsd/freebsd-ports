@@ -21,6 +21,6 @@ WRKSRC_SUBDIR=	bindings/python-cffi
 PORTSCOUT=	limit:^[0-9\.]*$$
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/notmuch2/_capi.abi3.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/notmuch2/_capi.abi3*.so
 
 .include "${MASTERDIR}/Makefile"

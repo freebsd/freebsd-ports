@@ -41,6 +41,6 @@ post-patch:
 	@${LN} -fs ${LOCALBASE}/include/ming ${WRKSRC}/src
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_mingc.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_mingc*.so
 
 .include <bsd.port.mk>

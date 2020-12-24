@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	PKG-INFO README.rst
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/asyncpg/protocol/protocol.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/asyncpg/protocol/protocol*.so
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/

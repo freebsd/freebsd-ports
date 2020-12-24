@@ -23,6 +23,6 @@ DOS2UNIX_FILES=	setup.py
 USE_PYTHON=	distutils autoplist
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyipopt/pyipoptcore.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyipopt/pyipoptcore*.so
 
 .include <bsd.port.mk>

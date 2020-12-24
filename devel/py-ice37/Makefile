@@ -33,7 +33,7 @@ OPTIONS_DEFINE=	DEBUG TEST
 TEST_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}passlib>0:security/py-passlib@${PY_FLAVOR}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYSITEDIR}/IcePy.so
+	${STRIP_CMD} ${STAGEDIR}${PYSITEDIR}/IcePy*.so
 	${ECHO} "Ice" > ${STAGEDIR}${PYSITEDIR}/Ice.pth
 	@${FIND} ${STAGEDIR}${PYSITEDIR}/Ice \( -name "*.pyc" -or -name "*.pyo" \) \
 		-exec ${CHMOD} u+w {} \;

@@ -22,6 +22,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|usb-1.0|usb|g' ${WRKSRC}/setup.py
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/hid.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/hid*.so
 
 .include <bsd.port.mk>

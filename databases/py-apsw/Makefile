@@ -19,7 +19,7 @@ USES=		localbase python sqlite:3 zip
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/apsw.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/apsw*.so
 
 do-test:
 	cd ${WRKSRC}/ && ${PYTHON_CMD} setup.py test

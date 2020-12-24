@@ -39,7 +39,7 @@ JBIG2_DESC=	Support for extracting JBIG2 images
 JBIG2_RUN_DEPENDS=	jbig2dec:graphics/jbig2dec
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pikepdf/_qpdf.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pikepdf/_qpdf*.so
 
 do-test:
 	@(cd ${WRKSRC} && ${SETENV} LC_ALL=en_US.UTF-8 ${PYTHON_CMD} -m pytest -rs -v )

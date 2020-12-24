@@ -19,6 +19,6 @@ USES=		python
 USE_PYTHON=	autoplist cython distutils
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/enet.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/enet*.so
 
 .include <bsd.port.mk>

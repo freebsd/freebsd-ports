@@ -17,6 +17,6 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_ubjson.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_ubjson*.so
 
 .include <bsd.port.mk>

@@ -21,6 +21,6 @@ post-patch: # remove examples because they fail: https://github.com/bulletphysic
 	@${REINPLACE_CMD} -E 's,"examples/.*\.(cpp|c|m)",,' ${WRKSRC}/setup.py
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pybullet.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pybullet*.so
 
 .include <bsd.port.mk>

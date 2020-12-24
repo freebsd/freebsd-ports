@@ -20,6 +20,6 @@ USES=		iconv:wchar_t python
 USE_PYTHON=	autoplist distutils
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/zbar/_zbar.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/zbar/_zbar*.so
 
 .include <bsd.port.mk>

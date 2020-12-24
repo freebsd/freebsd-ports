@@ -16,6 +16,6 @@ USES=		python
 USE_PYTHON=	distutils cython autoplist
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/murmurhash/mrmr.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/murmurhash/mrmr*.so
 
 .include <bsd.port.mk>

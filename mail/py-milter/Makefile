@@ -26,6 +26,6 @@ GH_PROJECT=	py${PORTNAME}
 USE_PYTHON=	distutils autoplist flavors
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/milter.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/milter*.so
 
 .include <bsd.port.mk>

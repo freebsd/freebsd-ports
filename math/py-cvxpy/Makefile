@@ -23,6 +23,6 @@ USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 post-install:
-		${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_cvxcore.so
+		${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_cvxcore*.so
 
 .include <bsd.port.mk>

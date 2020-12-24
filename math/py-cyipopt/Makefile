@@ -28,6 +28,6 @@ GH_ACCOUNT=	matthias-k
 USE_PYTHON=	distutils cython autoplist
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}*.so
 
 .include <bsd.port.mk>

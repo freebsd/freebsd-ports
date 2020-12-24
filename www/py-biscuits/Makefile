@@ -18,6 +18,6 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/biscuits.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/biscuits*.so
 
 .include <bsd.port.mk>

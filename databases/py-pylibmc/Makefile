@@ -23,7 +23,7 @@ USE_PYTHON=	autoplist distutils
 MAKE_ENV+=	LIBMEMCACHED="${LOCALBASE}"
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pylibmc.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_pylibmc*.so
 
 # Note: memcached needs to be running first for this to work
 

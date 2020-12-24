@@ -16,6 +16,6 @@ USE_PYTHON=	autoplist concurrent distutils
 USES=		python
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/editdistance/bycython.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/editdistance/bycython*.so
 
 .include <bsd.port.mk>

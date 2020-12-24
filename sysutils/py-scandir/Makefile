@@ -20,7 +20,7 @@ USE_PYTHON=	autoplist concurrent distutils
 USE_LOCALE=	en_US.UTF-8
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_scandir.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_scandir*.so
 
 do-test:
 	${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${WRKSRC}/test/run_tests.py

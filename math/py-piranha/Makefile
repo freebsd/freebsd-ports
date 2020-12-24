@@ -41,6 +41,6 @@ post-patch: # FIND_PACKAGE(Boost) only supports modules python and python3
 	@${REINPLACE_CMD} -e 's|$${REQUIRED_BOOST_LIBS} python)|$${REQUIRED_BOOST_LIBS} python${PYTHON_MAJOR_VER:S/2//})|' ${WRKSRC}/CMakeLists.txt
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyranha/_core.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyranha/_core*.so
 
 .include <bsd.port.mk>

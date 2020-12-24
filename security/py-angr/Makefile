@@ -86,7 +86,7 @@ _EXCLUDED_TESTS+=	test_veritesting_a
 _NOSE_EXCLUDE=	(${_EXCLUDED_TESTS:S,  , ,g:S, ,|,gW})
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/lib/angr_native.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/lib/angr_native*.so
 
 pre-test:
 	@${LN} -Fs ${WRKSRC_binaries} ${WRKDIR}/binaries

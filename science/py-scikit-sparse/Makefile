@@ -25,6 +25,6 @@ CFLAGS+=	-I${LOCALBASE}/include/suitesparse
 LDFLAGS+=	-shared
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sksparse/cholmod.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/sksparse/cholmod*.so
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ USES=		python
 USE_PYTHON=	distutils autoplist
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/patiencediff/_patiencediff_c.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/patiencediff/_patiencediff_c*.so
 
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v build/

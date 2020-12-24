@@ -26,7 +26,7 @@ MAKE_ENV=	LMDB_FORCE_SYSTEM=1 \
 		LMDB_FORCE_CFFI=1
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/lmdb/lmdb_cffi.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/lmdb/lmdb_cffi*.so
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v

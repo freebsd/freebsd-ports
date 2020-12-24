@@ -18,6 +18,6 @@ MAKE_ENV=	MAKE=gmake
 PLIST=
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/miniupnpc.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/miniupnpc*.so
 
 .include "${MASTERDIR}/Makefile"

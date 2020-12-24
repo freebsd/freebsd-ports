@@ -25,7 +25,7 @@ PORTDOCS=	CITATION.txt INSTALL.txt NEWS.txt README.txt
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_fastcluster.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_fastcluster*.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

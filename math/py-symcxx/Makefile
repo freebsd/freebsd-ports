@@ -21,6 +21,6 @@ post-patch:
 	@truncate -s 0 ${WRKSRC}/README.rst # workaround for https://github.com/bjodah/symcxx/issues/19
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/symcxx/_symcxx.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/symcxx/_symcxx*.so
 
 .include <bsd.port.mk>

@@ -19,6 +19,6 @@ USE_PYTHON=	distutils autoplist
 BUILD_DEPENDS=	triangle>0:math/triangle
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/triangle/core.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/triangle/core*.so
 
 .include <bsd.port.mk>

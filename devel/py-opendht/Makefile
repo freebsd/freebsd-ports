@@ -22,6 +22,6 @@ USE_PYTHON=	distutils cython autoplist
 WRKSRC_SUBDIR=	python
 
 post-stage:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/opendht.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/opendht*.so
 
 .include <bsd.port.mk>

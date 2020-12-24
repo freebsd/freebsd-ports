@@ -28,6 +28,6 @@ post-extract:
 	${RM} ${WRKSRC}/setup.cfg
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/fte/cDFA.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/fte/cDFA*.so
 
 .include <bsd.port.mk>

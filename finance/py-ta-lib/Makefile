@@ -26,6 +26,6 @@ GH_ACCOUNT=	mrjbq7
 USE_PYTHON=	distutils cython autoplist
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/talib/_ta_lib.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/talib/_ta_lib*.so
 
 .include <bsd.port.mk>

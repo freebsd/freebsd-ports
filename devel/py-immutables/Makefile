@@ -17,6 +17,6 @@ USES=		python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/immutables/_map.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/immutables/_map*.so
 
 .include <bsd.port.mk>

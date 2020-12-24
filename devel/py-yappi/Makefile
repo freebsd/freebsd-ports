@@ -19,7 +19,7 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_yappi.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_yappi*.so
 
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} run_tests.py
