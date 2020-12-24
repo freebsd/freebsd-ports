@@ -4425,6 +4425,7 @@
     SUBDIR += py-genson
     SUBDIR += py-genty
     SUBDIR += py-geojson
+    SUBDIR += py-get-reader
     SUBDIR += py-gevent
     SUBDIR += py-git-semver
     SUBDIR += py-git-up
