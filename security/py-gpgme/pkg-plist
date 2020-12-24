@@ -2,7 +2,7 @@
 %%PYTHON_SITELIBDIR%%/gpg/__init__.py
 %%PYTHON_SITELIBDIR%%/gpg/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gpg/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gpg/_gpgme.so
+%%PYTHON_SITELIBDIR%%/gpg/_gpgme%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/gpg/callbacks.py
 %%PYTHON_SITELIBDIR%%/gpg/callbacks.pyc
 %%PYTHON_SITELIBDIR%%/gpg/callbacks.pyo
