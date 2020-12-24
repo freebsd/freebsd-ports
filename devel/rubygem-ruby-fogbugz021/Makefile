@@ -6,8 +6,11 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	021
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple Ruby wrapper for the Fogbugz XML API
+
+DEPRECATED=	Old version no longer needed
+EXPIRATION_DATE=2021-02-01
 
 LICENSE=	MIT
 
