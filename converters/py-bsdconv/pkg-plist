@@ -1,1 +1,1 @@
-%%PYTHON_SITELIBDIR%%/bsdconv.so
+%%PYTHON_SITELIBDIR%%/bsdconv%%PYTHON_EXT_SUFFIX%%.so

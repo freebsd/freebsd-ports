@@ -26,6 +26,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/setup.py
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/bsdconv.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/bsdconv*.so
 
 .include <bsd.port.mk>
