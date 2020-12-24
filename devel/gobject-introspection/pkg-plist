@@ -102,7 +102,7 @@ lib/gobject-introspection/giscanner/__pycache__/utils.cpython-%%PYTHON_SUFFIX%%.
 lib/gobject-introspection/giscanner/__pycache__/utils.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/gobject-introspection/giscanner/__pycache__/xmlwriter.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/gobject-introspection/giscanner/__pycache__/xmlwriter.cpython-%%PYTHON_SUFFIX%%.pyc
-lib/gobject-introspection/giscanner/_giscanner.so
+lib/gobject-introspection/giscanner/_giscanner%%PYTHON_EXT_SUFFIX%%.so
 lib/gobject-introspection/giscanner/_version.py
 lib/gobject-introspection/giscanner/annotationmain.py
 lib/gobject-introspection/giscanner/annotationparser.py
