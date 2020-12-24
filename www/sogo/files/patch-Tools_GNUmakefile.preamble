@@ -1,0 +1,9 @@
+--- Tools/GNUmakefile.preamble.orig	2016-07-12 16:56:44 UTC
++++ Tools/GNUmakefile.preamble
+@@ -13,4 +13,5 @@ ADDITIONAL_LIB_DIRS += \
+ 	-L../SoObjects/SOGo/SOGo.framework/sogo -lSOGo \
+ 	-L../SOPE/GDLContentStore/$(GNUSTEP_OBJ_DIR)/ -lGDLContentStore \
+ 	-L../SOPE/NGCards/$(GNUSTEP_OBJ_DIR)/ -lNGCards \
+-        -lEOControl -lNGStreams -lNGMime -lNGExtensions -lNGObjWeb
++        -lEOControl -lNGStreams -lNGMime -lNGExtensions -lNGObjWeb \
++	-lGDLAccess -lDOM -lSaxObjC -lNGLdap -lSBJson -lWEExtensions
