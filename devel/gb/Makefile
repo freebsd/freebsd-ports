@@ -6,10 +6,13 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Project based build tool for Go
 
 LICENSE=	MIT
+
+DEPRECATED=	Unmaintained and dead upstream
+EXPIRATION_DATE=2021-04-01
 
 USES=		go
 USE_GITHUB=	yes
