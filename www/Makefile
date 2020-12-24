@@ -2144,7 +2144,6 @@
     SUBDIR += sogo-activesync
     SUBDIR += sogo2
     SUBDIR += sogo2-activesync
-    SUBDIR += sogo2-activesync
     SUBDIR += sogo4
     SUBDIR += sogo4-activesync
     SUBDIR += spawn-fcgi
