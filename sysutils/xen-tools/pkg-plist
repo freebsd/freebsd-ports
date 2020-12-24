@@ -212,8 +212,8 @@ lib/libxlutil.so.4.14.0
 %%PYTHON_SITELIBDIR%%/xen/__pycache__/util.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/xen/lowlevel/__init__.py
 %%PYTHON_SITELIBDIR%%/xen/lowlevel/__init__.pyc
-%%PYTHON_SITELIBDIR%%/xen/lowlevel/xc.so
-%%PYTHON_SITELIBDIR%%/xen/lowlevel/xs.so
+%%PYTHON_SITELIBDIR%%/xen/lowlevel/xc%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/xen/lowlevel/xs%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/xen/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/xen/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/xen/migration/legacy.py
@@ -231,7 +231,7 @@ lib/libxlutil.so.4.14.0
 %%PYTHON_SITELIBDIR%%/xen/migration/xl.py
 %%PYTHON_SITELIBDIR%%/xen/migration/xl.pyc
 %%PYTHON_SITELIBDIR%%/xen/util.py
-%%PYTHON_SITELIBDIR%%/xenfsimage.so
+%%PYTHON_SITELIBDIR%%/xenfsimage%%PYTHON_EXT_SUFFIX%%.so
 lib/xen/bin/convert-legacy-stream
 lib/xen/bin/depriv-fd-checker
 lib/xen/bin/libxl-save-helper
