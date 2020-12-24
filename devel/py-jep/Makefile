@@ -34,6 +34,6 @@ NUMPY_RUN_DEPENDS=	${PYNUMPY}
 
 post-install:
 	${LN} -s ${PYTHON_SITELIBDIR}/jep/jep-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/jep.jar
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jep/jep.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jep/jep*.so
 
 .include <bsd.port.mk>
