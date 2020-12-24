@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fusioninventory
 GH_PROJECT=	fusioninventory-for-glpi
 GH_TAGNAME=	glpi090+${FUNV_VER}
-USE_PHP=	fileinfo simplexml wddx
+USE_PHP=	fileinfo simplexml
 
 GLPI_VER=	0.90
 FUNV_VER=	1.3
