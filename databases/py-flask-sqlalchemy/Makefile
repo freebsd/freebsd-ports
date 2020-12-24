@@ -1,11 +1,13 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	Flask-SQLAlchemy
+PORTNAME=	flask-sqlalchemy
 PORTVERSION=	2.4.4
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Flask-SQLAlchemy-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Adds SQLAlchemy support to Flask
