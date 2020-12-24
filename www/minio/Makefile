@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-12-18T03-27-42Z
-COMMIT_ID=	f714840da7c1e4e97687725873f3a9aa8f9b9912
+GHTAG=		RELEASE.2020-12-23T02-24-12Z
+COMMIT_ID=	8565cefe4eb945e2068a0431364166e42ecf2f50
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -64,11 +64,11 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		golang:groupcache:869f871628b6:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:lint:16217165b5de:golang_lint/vendor/golang.org/x/lint \
 		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:62affa334b73:golang_net/vendor/golang.org/x/net \
+		golang:net:986b41b23924:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:e64efc72b421:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:da207088b7d1:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:f84b799fce68:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		golang:tools:bf155c11ec6f:golang_tools/vendor/golang.org/x/tools \
@@ -117,7 +117,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:highwayhash:v1.0.0:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:v7.0.6:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:minio-go:3baf9ea06f7c:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
 		minio:selfupdate:v0.3.1:minio_selfupdate/vendor/github.com/minio/selfupdate \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:simdjson-go:v0.1.5:minio_simdjson_go/vendor/github.com/minio/simdjson-go \
