@@ -380,3 +380,15 @@ share/emacs/site-lisp/lilypond-words.el
 %%NLS%%share/locale/uk/LC_MESSAGES/lilypond.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/lilypond.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lilypond.mo
+%%URW%%%%DATADIR%%/%%DISTVERSION%%/fonts/otf/C059-BdIta.otf
+%%URW%%%%DATADIR%%/%%DISTVERSION%%/fonts/otf/C059-Bold.otf
+%%URW%%%%DATADIR%%/%%DISTVERSION%%/fonts/otf/C059-Italic.otf
+%%URW%%%%DATADIR%%/%%DISTVERSION%%/fonts/otf/C059-Roman.otf
+%%URW%%%%DATADIR%%/%%DISTVERSION%%/fonts/otf/NimbusMonoPS-Bold.otf
+%%URW%%%%DATADIR%%/%%DISTVERSION%%/fonts/otf/NimbusMonoPS-BoldItalic.otf
+%%URW%%%%DATADIR%%/%%DISTVERSION%%/fonts/otf/NimbusMonoPS-Italic.otf
+%%URW%%%%DATADIR%%/%%DISTVERSION%%/fonts/otf/NimbusMonoPS-Regular.otf
+%%URW%%%%DATADIR%%/%%DISTVERSION%%/fonts/otf/NimbusSans-Bold.otf
+%%URW%%%%DATADIR%%/%%DISTVERSION%%/fonts/otf/NimbusSans-BoldItalic.otf
+%%URW%%%%DATADIR%%/%%DISTVERSION%%/fonts/otf/NimbusSans-Italic.otf
+%%URW%%%%DATADIR%%/%%DISTVERSION%%/fonts/otf/NimbusSans-Regular.otf
