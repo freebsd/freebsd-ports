@@ -10,9 +10,12 @@ lib/xfce4/panel/plugins/libdatetime.so
 %%NLS%%share/locale/de/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/el/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/xfce4-datetime-plugin.mo
+%%NLS%%share/locale/en_CA/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-datetime-plugin.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfce4-datetime-plugin.mo
+%%NLS%%share/locale/fa_IR/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xfce4-datetime-plugin.mo
@@ -20,6 +23,7 @@ lib/xfce4/panel/plugins/libdatetime.so
 %%NLS%%share/locale/hr/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/hy_AM/LC_MESSAGES/xfce4-datetime-plugin.mo
+%%NLS%%share/locale/hye/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/ie/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/is/LC_MESSAGES/xfce4-datetime-plugin.mo
@@ -42,6 +46,7 @@ lib/xfce4/panel/plugins/libdatetime.so
 %%NLS%%share/locale/ru/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/xfce4-datetime-plugin.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfce4-datetime-plugin.mo
 %%NLS%%share/locale/th/LC_MESSAGES/xfce4-datetime-plugin.mo

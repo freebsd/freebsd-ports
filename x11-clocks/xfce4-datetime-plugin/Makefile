@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-datetime-plugin
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
