@@ -104,7 +104,7 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/chempy/champ/__pycache__/assign.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/chempy/champ/__pycache__/formal_charges.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/chempy/champ/__pycache__/formal_charges.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/chempy/champ/_champ.so
+%%PYTHON_SITELIBDIR%%/chempy/champ/_champ%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/chempy/champ/amber99.py
 %%PYTHON_SITELIBDIR%%/chempy/champ/assign.py
 %%PYTHON_SITELIBDIR%%/chempy/champ/formal_charges.py
@@ -404,7 +404,7 @@ bin/pymol
 %%PYTHON_SITELIBDIR%%/pymol/__pycache__/xray.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pymol/__pycache__/xwin.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pymol/__pycache__/xwin.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/pymol/_cmd.so
+%%PYTHON_SITELIBDIR%%/pymol/_cmd%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/pymol/_gui.py
 %%PYTHON_SITELIBDIR%%/pymol/api.py
 %%PYTHON_SITELIBDIR%%/pymol/callback.py
