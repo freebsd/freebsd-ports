@@ -4,7 +4,7 @@
 %%PYTHON_SITELIBDIR%%/cairo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cairo/__init__.pyi
 %%PYTHON_SITELIBDIR%%/cairo/__init__.pyo
-%%PYTHON_SITELIBDIR%%/cairo/_cairo.so
+%%PYTHON_SITELIBDIR%%/cairo/_cairo%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/cairo/include/pycairo.h
 %%PYTHON3%%%%PYTHON_SITELIBDIR%%/cairo/include/py3cairo.h
 %%PYTHON_SITELIBDIR%%/cairo/py.typed
