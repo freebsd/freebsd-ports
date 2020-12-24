@@ -7,7 +7,7 @@ lib/libpwquality.so
 lib/libpwquality.so.1
 lib/libpwquality.so.1.0.2
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality-1.4.4-py%%PYTHON_VER%%.egg-info
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pwquality%%PYTHON_EXT_SUFFIX%%.so
 libdata/pkgconfig/pwquality.pc
 man/man1/pwmake.1.gz
 man/man1/pwscore.1.gz
