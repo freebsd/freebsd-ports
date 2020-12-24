@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	beanshell
 GH_PROJECT=	beanshell
 
-USE_JAVA=	yes
+USE_JAVA=	8
 USE_ANT=	yes
 ALL_TARGET=	jarall
 
