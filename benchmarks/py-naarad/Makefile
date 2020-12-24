@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=2013.8,1:devel/py-pytz@${PY_FLAVOR} \
 	bash:shells/bash \
 	gawk:lang/gawk
 
-USES=		shebangfix python
+USES=		shebangfix python:3.6+
 
 SHEBANG_LANG=	gawk
 SHEBANG_FILES=	bin/naarad_metric_collector.sh bin/PrintGCStats

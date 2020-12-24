@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_GITHUB=	yes # PyPI doesn't have the latest version for some reason
 GH_ACCOUNT=	openeemeter
 USE_PYTHON=	distutils concurrent autoplist

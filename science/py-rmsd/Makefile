@@ -14,7 +14,7 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist concurrent
 
 .include <bsd.port.mk>

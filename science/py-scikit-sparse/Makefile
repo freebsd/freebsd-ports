@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libumfpack.so:math/suitesparse
 
-USES=		fortran python
+USES=		fortran python:3.6+
 USE_PYTHON=	distutils cython autoplist
 
 CFLAGS+=	-I${LOCALBASE}/include/suitesparse

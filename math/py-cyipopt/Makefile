@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		fortran python pkgconfig # fortran because ipopt's pkg-config returns gcc libs
+USES=		fortran python:3.6+ pkgconfig # fortran because ipopt's pkg-config returns gcc libs
 USE_GITHUB=	yes
 GH_ACCOUNT=	matthias-k
 USE_PYTHON=	distutils cython autoplist

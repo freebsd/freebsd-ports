@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 PORTDOCS=	CITATION.txt INSTALL.txt NEWS.txt README.txt

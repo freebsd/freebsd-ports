@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.13.2:science/py-scipy@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	oxfordcontrol
 GH_PROJECT=	${PORTNAME}-python

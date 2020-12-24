@@ -30,7 +30,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.3:devel/py-appdirs@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}schema>=0.6.7:devel/py-schema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zclockfile>0:devel/py-zclockfile@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist noflavors
 
 NO_ARCH=	yes

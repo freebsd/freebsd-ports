@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}numpy>=1.6.2,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	linkedin

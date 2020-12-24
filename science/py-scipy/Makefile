@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 LIB_DEPENDS=	libblas.so:math/blas
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		blaslapack:openblas fortran python shebangfix
+USES=		blaslapack:openblas fortran python:3.6+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 FFLAGS+=	-std=legacy

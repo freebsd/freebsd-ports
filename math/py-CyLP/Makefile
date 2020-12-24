@@ -24,7 +24,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		compiler:c++11-lang python
+USES=		compiler:c++11-lang python:3.6+
 USE_PYTHON=	distutils cython autoplist
 
 USE_GITHUB=	yes
