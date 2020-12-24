@@ -33,5 +33,6 @@ include/GL/internal/dri_interface.h
 libdata/pkgconfig/dri.pc
 @comment libdata/pkgconfig/gbm.pc
 share/drirc.d/00-mesa-defaults.conf
+share/drirc.d/01-freebsd.conf
 %%INTEL_VDRIVER%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
 %%AMD_VDRIVER%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json

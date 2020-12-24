@@ -3,6 +3,7 @@
 
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
@@ -112,5 +113,7 @@ PLIST_SUB+=	${_vd}_VDRIVER="@comment "
 
 post-install:
 	@${RM} -r ${STAGEDIR}/etc/OpenCL
+	${INSTALL_DATA} ${FILESDIR}/01-freebsd.conf \
+		${STAGEDIR}${PREFIX}/share/drirc.d
 
 .include <bsd.port.post.mk>
