@@ -14,7 +14,7 @@ MASTERDIR=	${.CURDIR}/../libdnet
 INSTALL_WRKSRC=	${WRKSRC}/python
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${NONEXISTENT}
-PLIST_FILES=	${PYTHON_SITELIBDIR}/dnet.so \
+PLIST_FILES=	${PYTHON_SITELIBDIR}/dnet%%PYTHON_EXT_SUFFIX%%.so \
 		${PYTHON_SITELIBDIR}/dnet-${PORTVERSION}-py${PYTHON_VER}.egg-info
 
 LIBDNET_SLAVE=	yes
@@ -32,6 +32,6 @@ post-patch:
 		${WRKSRC}/python/Makefile.am
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/dnet.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/dnet*.so
 
 .include "${MASTERDIR}/Makefile"
