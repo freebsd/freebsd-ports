@@ -56,7 +56,7 @@ man/man8/gpsinit.8.gz
 %%PYTHON_SITELIBDIR%%/gps/fake.py
 %%PYTHON_SITELIBDIR%%/gps/gps.py
 %%PYTHON_SITELIBDIR%%/gps/misc.py
-%%PYTHON_SITELIBDIR%%/gps/packet.so
+%%PYTHON_SITELIBDIR%%/gps/packet%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/gps/watch_options.py
 libdata/pkgconfig/libgps.pc
 sbin/gpsd
