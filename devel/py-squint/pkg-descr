@@ -1,0 +1,11 @@
+Squint is a simple query interface for tabular data that's light-weight and easy
+to learn. A core feature of Squint is that the structure of a query's selection
+determines the structure of its result. With it you can:
+- Select data using Python literals -- sets, lists, dictionaries, etc. -- and
+  get results in the same format.
+- Aggregate, map, filter, reduce, and otherwise manipulate data.
+- Lazily iterate over results, write them to a file, or eagerly evaluate them in
+  memory.
+- Analyze data from CSV, Excel, SQL, and other data sources.
+
+WWW: https://github.com/shawnbrown/squint

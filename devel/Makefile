@@ -5068,6 +5068,7 @@
     SUBDIR += py-speaklater
     SUBDIR += py-speg
     SUBDIR += py-spyder
+    SUBDIR += py-squint
     SUBDIR += py-srsly
     SUBDIR += py-stackexchange
     SUBDIR += py-statgrab
