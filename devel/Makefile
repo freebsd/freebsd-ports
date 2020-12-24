@@ -6716,6 +6716,7 @@
     SUBDIR += sonar-scanner-cli
     SUBDIR += sonarqube-ant-task
     SUBDIR += sonarqube-community
+    SUBDIR += sope
     SUBDIR += sope2
     SUBDIR += sope4
     SUBDIR += sord
