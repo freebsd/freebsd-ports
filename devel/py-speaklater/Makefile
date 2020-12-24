@@ -12,8 +12,11 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Lazy string Python module for translations
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	python
+USES=		python
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
