@@ -11,7 +11,6 @@ bin/eric6_iconeditor
 bin/eric6_plugininstall
 bin/eric6_pluginrepository
 bin/eric6_pluginuninstall
-bin/eric6_qregexp
 bin/eric6_qregularexpression
 bin/eric6_re
 bin/eric6_shell
