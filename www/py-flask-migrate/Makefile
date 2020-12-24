@@ -2,6 +2,7 @@
 
 PORTNAME=	flask-migrate
 PORTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.9:www/py-flask@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Flask-SQLAlchemy>=1.0:databases/py-flask-sqlalchemy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flask-sqlalchemy>=1.0:databases/py-flask-sqlalchemy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}alembic>=0.7:databases/py-alembic@${PY_FLAVOR}
 
 USES=		python
