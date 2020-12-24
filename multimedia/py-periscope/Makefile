@@ -20,7 +20,7 @@ LICENSE=	LGPL3
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:www/py-beautifulsoup@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		desktop-file-utils python
+USES=		desktop-file-utils python:3.6+
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	UNRAR
