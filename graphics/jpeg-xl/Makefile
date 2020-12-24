@@ -3,6 +3,7 @@
 PORTNAME=	jpeg-xl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -63,6 +64,10 @@ TEST_BUILD_DEPENDS=	googletest>0:devel/googletest
 TEST_USES=		localbase:ldflags
 TEST_CMAKE_BOOL=	BUILD_TESTING
 TEST_TEST_TARGET=	test
+
+post-patch:
+	@${REINPLACE_CMD} 's,/usr,${LOCALBASE},' \
+		${WRKSRC}/plugins/gdk-pixbuf/jxl.thumbnailer
 
 # pkg_check_modules doesn't support CMAKE_DISABLE_*
 post-patch-GIMP-off:
