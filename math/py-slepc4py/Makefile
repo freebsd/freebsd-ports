@@ -13,6 +13,9 @@ COMMENT=	SLEPc for Python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
+DEPRECATED=	Depends on broken and expiring math/slepc
+EXPIRATION_DATE=	2020-12-29
+
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libmpich.so:net/mpich \
 		libpetsc.so:science/PETSc \

@@ -12,6 +12,10 @@ COMMENT=	Scalable Library for Eigenvalue Problem Computations
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+DEPRECATED=	Broken, uses deprecated version of python
+EXPIRATION_DATE=	2020-12-29
+
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
 		libmpich.so:net/mpich \
