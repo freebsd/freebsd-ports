@@ -1,6 +1,10 @@
-Gauche is a Scheme interpreter conforming Revised^5 Report on
-Algorithmic Language Scheme. It is designed for rapid development of
-daily tools like system management and text processing. It can handle
-multibyte character strings natively.
+Gauche is a fast, portable Scheme interpreter with "batteries
+included". It conforms to the R5RS and R7RS language standards,
+supports lots of SRFI out of the box, adds its own object-oriented
+programming framework, and supports the R7RS library system as well as
+its own pre-R7RS module system. Gauche is designed for the rapid
+development of scipts to assist daily work in system administration,
+text processing, and other fields. It can handle UTF-8, EUC-JP, and
+Shift JIS character strings natively.
 
-WWW: http://practical-scheme.net/gauche/
+WWW: https://practical-scheme.net/gauche/
