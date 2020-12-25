@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 # NOTE: keep spirv-tools and glslang up to date when updating Vulkan
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
 		${LOCALBASE}/include/spirv-tools/libspirv.h:devel/spirv-tools \
-		${LOCALBASE}/include/SPIRV/spirv.hpp:graphics/glslang
+		${LOCALBASE}/include/glslang/SPIRV/spirv.hpp:graphics/glslang
 
 USES=		cmake compiler:c++11-lib pkgconfig python:3.4+,build
 USE_LDCONFIG=	yes
