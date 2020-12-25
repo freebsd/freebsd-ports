@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: calloutd
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+#
+
+. /etc/rc.subr
+
+name="calloutd"
+rcvar=calloutd_enable
+
+: ${calloutd_enable="NO"}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+
+required_files="%%PREFIX%%/etc/mailfromd.conf"
+
+extra_commands="configlint"
+configlint_cmd="${name} --config-lint"
+
+load_rc_config ${name}
+run_rc_command "$1"
