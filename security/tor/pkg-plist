@@ -16,6 +16,6 @@ bin/torify
 %%PORTDOCS%%%%DOCSDIR%%/torify.html
 %%DATADIR%%/geoip
 %%DATADIR%%/geoip6
-@dir(%%USER%%,%%GROUP%%,700) /var/run/tor
-@dir(%%USER%%,%%GROUP%%,700) /var/log/tor
-@dir(%%USER%%,%%GROUP%%,700) /var/db/tor
+@dir(%%USER%%,%%GROUP%%,750) /var/run/tor
+@dir(%%USER%%,%%GROUP%%,750) /var/log/tor
+@dir(%%USER%%,%%GROUP%%,750) /var/db/tor
