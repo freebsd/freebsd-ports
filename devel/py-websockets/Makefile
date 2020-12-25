@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	websockets
-PORTVERSION=	8.0.2
+PORTVERSION=	8.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ COMMENT=	Implementation of the WebSocket Protocol (RFC 6455 & 7692)
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.4+
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 post-install:
