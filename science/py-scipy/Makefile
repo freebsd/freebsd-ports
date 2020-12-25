@@ -3,6 +3,7 @@
 
 PORTNAME=	scipy
 DISTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	science python
 MASTER_SITES=	https://docs.scipy.org/doc/scipy-${PORTVERSION:R}.1/:doc \
 		CHEESESHOP:source \
@@ -24,7 +25,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 LIB_DEPENDS=	libblas.so:math/blas
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		blaslapack:openblas fortran python:3.6+ shebangfix
+USES=		fortran python:3.6+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 FFLAGS+=	-std=legacy
