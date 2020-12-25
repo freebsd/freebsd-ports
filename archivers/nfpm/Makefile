@@ -2,7 +2,7 @@
 
 PORTNAME=	nfpm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.3
+DISTVERSION=	2.0.0
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,6 +33,7 @@ GH_TUPLE=	\
 		daixiang0:gci:v0.2.7:daixiang0_gci/vendor/github.com/daixiang0/gci \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		denis-tingajkin:go-header:v0.3.1:denis_tingajkin_go_header/vendor/github.com/denis-tingajkin/go-header \
+		djgilcrease:rpmpack:5ac1d3b45cee:djgilcrease_rpmpack/vendor/github.com/google/rpmpack \
 		dominikh:go-tools:v0.0.1-2020.1.6:dominikh_go_tools/vendor/honnef.co/go/tools \
 		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
@@ -77,7 +78,6 @@ GH_TUPLE=	\
 		golangci:revgrep:276a5c0a1039:golangci_revgrep/vendor/github.com/golangci/revgrep \
 		golangci:unconvert:28b1c447d1f4:golangci_unconvert/vendor/github.com/golangci/unconvert \
 		google:go-cmp:v0.5.4:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:rpmpack:59e495f2b7e1:google_rpmpack/vendor/github.com/google/rpmpack \
 		google:uuid:v1.1.2:google_uuid/vendor/github.com/google/uuid \
 		goreleaser:chglog:v0.1.2:goreleaser_chglog/vendor/github.com/goreleaser/chglog \
 		goreleaser:fileglob:v0.3.1:goreleaser_fileglob/vendor/github.com/goreleaser/fileglob \
@@ -129,6 +129,7 @@ GH_TUPLE=	\
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		shazow:go-diff:b6b7b6733b8c:shazow_go_diff/vendor/github.com/shazow/go-diff \
 		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		smartystreets:assertions:v1.0.0:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
 		sonatard:noctx:v0.0.1:sonatard_noctx/vendor/github.com/sonatard/noctx \
 		sourcegraph:go-diff:v0.6.1:sourcegraph_go_diff/vendor/github.com/sourcegraph/go-diff \
 		spf13:afero:v1.5.1:spf13_afero/vendor/github.com/spf13/afero \
