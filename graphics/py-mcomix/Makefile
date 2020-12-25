@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcomix
-PORTVERSION=	1.2.1g20200418
+PORTVERSION=	1.2.1g20201223
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,11 +21,17 @@ USE_PYTHON=	flavors
 USE_GITHUB=	yes
 GH_ACCOUNT=	multiSnow
 GH_PROJECT=	mcomix3
-GH_TAGNAME=	cd39ae5
+GH_TAGNAME=	9ba2f5b
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 SHEBANG_FILES=	mcomix/mcomixstarter.py
+
+OPTIONS_DEFINE=	RAR
+OPTIONS_DEFAULT=RAR
+
+RAR_DESC=	RAR (.cbr) comic book archives support
+RAR_RUN_DEPENDS=${LOCALBASE}/lib/libunrar.so.5:archivers/libunrar5
 
 post-patch:
 	@${REINPLACE_CMD} "s|^VERSION =.*|VERSION = '${PORTVERSION}'|" \

@@ -170,9 +170,7 @@ bin/mcomix
 %%PYTHON_SITELIBDIR%%/mcomix/last_read_page.py
 %%PYTHON_SITELIBDIR%%/mcomix/layout.py
 %%PYTHON_SITELIBDIR%%/mcomix/lens.py
-%%PYTHON_SITELIBDIR%%/mcomix/lib/FlifImagePlugin.py
 %%PYTHON_SITELIBDIR%%/mcomix/lib/__init__.py
-%%PYTHON_SITELIBDIR%%/mcomix/lib/__pycache__/FlifImagePlugin.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/lib/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/lib/__pycache__/mountmanager.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mcomix/lib/__pycache__/mt.cpython-%%PYTHON_SUFFIX%%.pyc
