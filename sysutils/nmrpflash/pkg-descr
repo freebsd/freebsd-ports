@@ -1,0 +1,9 @@
+nmrpflash uses Netgear's NMRP protocol to flash a new firmware image to
+a compatible device.
+
+It has been successfully used on a Netgear EX2700, EX6100v2, EX6120,
+EX6150v2, DNG3700v2, R6100, R6220, R7000, D7000, WNR3500, R6400 and R6800,
+R8000, R8500, WNDR3800, but is likely to be compatible with many other
+Netgear devices.
+
+WWW: https://github.com/jclehner/nmrpflash
