@@ -24,6 +24,8 @@ USES=		fortran gl gmake localbase:ldflags tcl tk xorg
 USE_GL=		gl glu
 USE_XORG=	x11 xmu
 
+CONFLICTS_INSTALL=	cgnslib-4.*	# bin/unitconv
+
 MAKE_ARGS=	prefix=${STAGEDIR}${PREFIX}
 
 CFLAGS+=	-fcommon # notified xcrysden ML on Sep 20, 2020

@@ -22,6 +22,8 @@ GH_PROJECT=	CGNS
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+CONFLICTS_INSTALL=	xcrysden-1.*	# bin/unitconv
+
 TEST_TARGET=	test
 FFLAGS+=	-std=legacy
 
