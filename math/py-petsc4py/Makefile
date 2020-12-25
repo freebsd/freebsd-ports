@@ -13,6 +13,8 @@ COMMENT=	PETSc for Python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libmpich.so:net/mpich \
 		libpetsc.so:science/PETSc
