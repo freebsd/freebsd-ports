@@ -1,7 +1,5 @@
 bin/g2o
 bin/g2o_anonymize_observations
-bin/g2o_incremental
-bin/g2o_online
 bin/g2o_simulator2d
 bin/g2o_simulator3d
 bin/g2o_viewer
@@ -54,6 +52,7 @@ include/g2o/apps/g2o_viewer/viewer_properties_widget.h
 include/g2o/config.h
 include/g2o/core/base_binary_edge.h
 include/g2o/core/base_binary_edge.hpp
+include/g2o/core/base_dynamic_vertex.h
 include/g2o/core/base_edge.h
 include/g2o/core/base_multi_edge.h
 include/g2o/core/base_multi_edge.hpp
@@ -74,6 +73,7 @@ include/g2o/core/g2o_core_api.h
 include/g2o/core/hyper_dijkstra.h
 include/g2o/core/hyper_graph.h
 include/g2o/core/hyper_graph_action.h
+include/g2o/core/io_helper.h
 include/g2o/core/jacobian_workspace.h
 include/g2o/core/linear_solver.h
 include/g2o/core/marginal_covariance_cholesky.h
@@ -101,15 +101,6 @@ include/g2o/core/sparse_block_matrix_ccs.h
 include/g2o/core/sparse_block_matrix_diagonal.h
 include/g2o/core/sparse_optimizer.h
 include/g2o/core/sparse_optimizer_terminate_action.h
-include/g2o/examples/interactive_slam/g2o_incremental/g2o_incremental_api.h
-include/g2o/examples/interactive_slam/g2o_incremental/graph_optimizer_sparse_incremental.h
-include/g2o/examples/interactive_slam/g2o_incremental/linear_solver_cholmod_online.h
-include/g2o/examples/interactive_slam/g2o_interactive/fast_output.h
-include/g2o/examples/interactive_slam/g2o_interactive/g2o_interactive_api.h
-include/g2o/examples/interactive_slam/g2o_interactive/g2o_slam_interface.h
-include/g2o/examples/interactive_slam/g2o_interactive/graph_optimizer_sparse_online.h
-include/g2o/examples/interactive_slam/g2o_interactive/types_slam2d_online.h
-include/g2o/examples/interactive_slam/g2o_interactive/types_slam3d_online.h
 include/g2o/examples/interactive_slam/slam_parser/interface/abstract_slam_interface.h
 include/g2o/examples/interactive_slam/slam_parser/interface/parser_interface.h
 include/g2o/examples/interactive_slam/slam_parser/interface/slam_context_interface.h
@@ -123,7 +114,6 @@ include/g2o/examples/interactive_slam/slam_parser/parser/scanner.h
 include/g2o/examples/interactive_slam/slam_parser/parser/slam_context.h
 include/g2o/examples/interactive_slam/slam_parser/parser/stack.hh
 include/g2o/freeglut/freeglut_minimal.h
-include/g2o/solvers/cholmod/linear_solver_cholmod.h
 include/g2o/solvers/csparse/csparse_extension.h
 include/g2o/solvers/csparse/csparse_helper.h
 include/g2o/solvers/csparse/g2o_csparse_api.h
@@ -249,13 +239,10 @@ lib/libg2o_core.so
 lib/libg2o_csparse_extension.so
 lib/libg2o_ext_freeglut_minimal.so
 lib/libg2o_hierarchical.so
-lib/libg2o_incremental.so
-lib/libg2o_interactive.so
 lib/libg2o_interface.so
 lib/libg2o_opengl_helper.so
 lib/libg2o_parser.so
 lib/libg2o_simulator.so
-lib/libg2o_solver_cholmod.so
 lib/libg2o_solver_csparse.so
 lib/libg2o_solver_dense.so
 lib/libg2o_solver_eigen.so
