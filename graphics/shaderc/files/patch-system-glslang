@@ -1,0 +1,18 @@
+ld: error: undefined symbol: glslang::InitializeProcess()
+>>> referenced by compiler.cc
+>>>               compiler.cc.o:(shaderc_util::GlslangInitializer::GlslangInitializer()) in archive libshaderc_util/libshaderc_util.a
+ld: error: undefined symbol: ConstructCompiler(EShLanguage, int)
+>>> referenced by ShaderLang.cpp
+>>>               ShaderLang.cpp.o:(ShConstructCompiler) in archive /usr/local/lib/libMachineIndependent.a
+
+--- glslc/CMakeLists.txt.orig	2020-12-24 21:26:10 UTC
++++ glslc/CMakeLists.txt
+@@ -43,7 +43,7 @@ if (SHADERC_ENABLE_WGSL_OUTPUT)
+ endif(SHADERC_ENABLE_WGSL_OUTPUT)
+ 
+ target_link_libraries(glslc PRIVATE
+-  glslang OSDependent OGLCompiler HLSL glslang SPIRV    # Glslang libraries
++  glslang MachineIndependent GenericCodeGen             # Glslang libraries
+   $<$<BOOL:${SHADERC_ENABLE_WGSL_OUTPUT}>:libtint>      # Tint libraries, optional
+   shaderc_util shaderc                                  # internal Shaderc libraries
+   ${CMAKE_THREAD_LIBS_INIT})
