@@ -2,7 +2,7 @@
 
 PORTNAME=	swayidle
 DISTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -37,5 +37,11 @@ BASU_MESON_ENABLED=	logind
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
+
+post-patch:
+# Temporarily use ConsoleKit2 like sysutils/gnome-settings-daemon
+	@${REINPLACE_CMD} -e 's,/login1,/ConsoleKit/Manager,' \
+		-e 's,login1,ConsoleKit,' \
+		${WRKSRC}/main.c
 
 .include <bsd.port.mk>
