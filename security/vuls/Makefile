@@ -12,6 +12,8 @@ COMMENT=	Agentless vulnerability scanner
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		unfetchable
+
 RUN_DEPENDS=	${LOCALBASE}/bin/go-cve-dictionary:security/go-cve-dictionary
 
 USES=	go:modules
