@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-02-23 13:28:34 UTC
+--- CMakeLists.txt.orig	2020-12-12 09:55:17 UTC
 +++ CMakeLists.txt
-@@ -6,12 +6,15 @@ include(TestBigEndian)
+@@ -7,12 +7,15 @@ include(CTest)
  
  option(GENERATE_SRS_SECRET "Generate a random SRS secret if none exists during install" ON)
  option(USE_APPARMOR "Enable AppArmor profile" OFF)
@@ -17,26 +17,23 @@
  set(DOC_DIR "share/doc/${PROJECT_NAME}" CACHE PATH "Path for documentation files")
  mark_as_advanced(CHROOT_DIR SYSCONF_DIR SYSD_UNIT_DIR CONFIG_DIR DOC_DIR)
  
-@@ -19,8 +22,6 @@ find_program(HELP2MAN help2man DOC "path to help2man e
+@@ -20,8 +23,6 @@ find_program(HELP2MAN help2man DOC "path to help2man e
  find_program(DD dd DOC "path to dd executable")
  find_program(BASE64 base64 DOC "path to base64 executable")
  find_program(OPENSSL openssl DOC "path to OpenSSL executable")
 -find_program(INSSERV insserv DOC "path to insserv executable")
 -find_program(CHKCONFIG chkconfig DOC "path to chkconfig executable")
- find_program(SYSTEMD systemd)
- find_library(LIBSOCKET socket)
- find_library(LIBNSL nsl)
-@@ -65,26 +66,6 @@ endif()
+ find_program(SYSTEMCTL systemctl DOC "path to systemctl executable")
+ 
+ if(CMAKE_SYSTEM_NAME MATCHES "SunOS")
+@@ -69,23 +70,6 @@ endif()
  check_type_size("unsigned long" SIZEOF_UNSIGNED_LONG)
  add_definitions(-DSIZEOF_UNSIGNED_LONG=${SIZEOF_UNSIGNED_LONG})
  
 -if(NOT DEFINED INIT_FLAVOR)
--    if(SYSTEMD)
+-    if(SYSTEMCTL)
 -        message(STATUS "Detected init flavor: systemd")
 -        set(INIT_FLAVOR "systemd" CACHE STRING "Init daemon of this system")
--    elseif(IS_DIRECTORY "${SYSCONF_DIR}/init" AND EXISTS "/lib/init/upstart-job")
--        message(STATUS "Detected init flavor: upstart")
--        set(INIT_FLAVOR "upstart" CACHE STRING "Init daemon of this system")
 -    elseif(IS_DIRECTORY "${SYSCONF_DIR}/init.d" AND EXISTS "${SYSCONF_DIR}/init.d/functions")
 -        message(STATUS "Detected init flavor: sysv-redhat")
 -        set(INIT_FLAVOR "sysv-redhat" CACHE STRING "Init daemon of this system")
@@ -50,12 +47,12 @@
 -    endif()
 -endif()
 -
+ add_definitions(-DPOSTSRSD_VERSION=\"${PROJECT_VERSION}\")
  add_executable(${PROJECT_NAME} postsrsd.c sha1.c srs2.c)
- enable_testing()
- add_executable(${PROJECT_NAME}_tests tests.c sha1.c srs2.c)
-@@ -95,15 +76,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "SunOS")
-     target_link_libraries(${PROJECT_NAME}_tests ${LIBSOCKET} ${LIBNSL})
+ 
+@@ -95,16 +79,8 @@ if(CMAKE_SYSTEM_NAME MATCHES "SunOS")
  endif()
+ 
  set(POSTSRSD "${PROJECT_NAME}${CMAKE_EXECUTABLE_SUFFIX}")
 -set(APPARMOR_PROFILE "${CMAKE_INSTALL_PREFIX}/sbin/${POSTSRSD}")
 -string(REGEX REPLACE "^/+" "" APPARMOR_PROFILE "${APPARMOR_PROFILE}")
@@ -63,13 +60,14 @@
  
 -configure_file(init/${PROJECT_NAME}.sysv-lsb.in ${PROJECT_NAME}.sysv-lsb @ONLY)
 -configure_file(init/${PROJECT_NAME}.sysv-redhat.in ${PROJECT_NAME}.sysv-redhat @ONLY)
--configure_file(init/${PROJECT_NAME}.upstart.in ${PROJECT_NAME}.upstart @ONLY)
 -configure_file(init/${PROJECT_NAME}.apparmor.in ${PROJECT_NAME}.apparmor @ONLY)
 -configure_file(init/${PROJECT_NAME}.systemd.in ${PROJECT_NAME}.systemd @ONLY)
  configure_file(init/${PROJECT_NAME}.default.in ${PROJECT_NAME}.default @ONLY)
+-configure_file(init/${PROJECT_NAME}-systemd-launcher.in ${PROJECT_NAME}-systemd-launcher @ONLY)
  
  configure_file(postinstall.cmake.in postinstall.cmake @ONLY)
-@@ -113,7 +86,7 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+ 
+@@ -118,7 +94,7 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
  	COMMAND ${HELP2MAN} ARGS -s8 -o${PROJECT_NAME}.8 -n "Postfix Sender Rewriting Scheme daemon" -N -h-h -v-v ${CMAKE_CURRENT_BINARY_DIR}/${POSTSRSD}
  	VERBATIM
  )
@@ -78,12 +76,13 @@
  endif()
  
  if(USE_APPARMOR)
-@@ -130,6 +103,8 @@ if(USE_SELINUX)
+@@ -135,6 +111,8 @@ if(USE_SELINUX)
  endif()
  
  install(TARGETS ${PROJECT_NAME} DESTINATION "sbin")
+-install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-systemd-launcher DESTINATION "share/${PROJECT_NAME}")
 +if(ENABLE_DOCS)
- install(FILES README.md README_UPGRADE.md main.cf.ex DESTINATION "${DOC_DIR}")
++	install(FILES README.md README_UPGRADE.md main.cf.ex DESTINATION "${DOC_DIR}")
 +endif()
+ install(FILES README.md README_UPGRADE.md main.cf.ex DESTINATION "${DOC_DIR}")
  install(SCRIPT "${CMAKE_CURRENT_BINARY_DIR}/postinstall.cmake")
- 
