@@ -13,6 +13,10 @@ COMMENT=	Write fragmentarily and read collectively
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
+BROKEN=		Debugger entered--Lisp error: (wrong-type-argument stringp nil)
+.endif
+
 USES=		emacs
 
 GNU_CONFIGURE=	yes
