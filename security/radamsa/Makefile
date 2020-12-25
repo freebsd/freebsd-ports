@@ -12,7 +12,7 @@ COMMENT=	General purpose fuzzer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-BROKEN_aarch64=		fails to build: runaway build
+BROKEN=		fails to build: runaway build
 
 BUILD_DEPENDS=	ol:lang/owl-lisp
 
