@@ -2,7 +2,7 @@
 
 PORTNAME=	singular
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	4-1-3p2
+DISTVERSION=	4-2-0
 CATEGORIES=	math
 #MASTER_SITES=	ftp://jim.mathematik.uni-kl.de/pub/Math/Singular/SOURCES/${PORTVERSION:C/\./-/g}/
 
@@ -29,15 +29,21 @@ SHEBANG_FILES=	Singular/surfex \
 		libpolys/libpolys-config.in \
 		libsingular-config.in
 
-OPTIONS_DEFINE=		NTL
-OPTIONS_DEFAULT=	NTL
+OPTIONS_DEFINE=		FLINT NTL
+OPTIONS_DEFAULT=	FLINT NTL
 OPTIONS_SUB=		yes
+
+FLINT_DESC=		Use FLINT library
+FLINT_CONFIGURE_ON=	--with-flint=${LOCALBASE}
+FLINT_CONFIGURE_OFF=	--with-flint=no
+FLINT_LIB_DEPENDS=	libflint.so:math/flint2
+
 NTL_DESC=		Use NTL library
+NTL_USES=		compiler:c11
+NTL_CONFIGURE_ON=	--with-ntl=${LOCALBASE}
+NTL_CONFIGURE_OFF=	--with-ntl=no
 NTL_LIB_DEPENDS=	libntl.so:math/ntl	\
 			libcddgmp.so:math/cddlib
-NTL_CONFIGURE_ON=	--with-ntl=${LOCALBASE} --with-flint=no
-NTL_CONFIGURE_OFF=	--with-ntl=no
-NTL_USES=		compiler:c11
 
 # not a shebang but "/bin/bash" is hardcoded in some files
 post-patch:

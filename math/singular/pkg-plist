@@ -7,6 +7,7 @@ include/factory/cf_gmp.h
 include/factory/factory.h
 include/factory/factoryconf.h
 include/factory/globaldefs.h
+include/factory/si_log2.h
 include/factory/templates/ftmpl_afactor.h
 include/factory/templates/ftmpl_array.h
 include/factory/templates/ftmpl_factor.h
@@ -128,6 +129,7 @@ include/singular/coeffs/gnumpc.h
 include/singular/coeffs/gnumpfl.h
 include/singular/coeffs/longrat.h
 include/singular/coeffs/modulop.h
+include/singular/coeffs/modulop_inl.h
 include/singular/coeffs/mpr_complex.h
 include/singular/coeffs/mpr_global.h
 include/singular/coeffs/ntupel.h
@@ -142,11 +144,13 @@ include/singular/kernel/GBEngine/f5data.h
 include/singular/kernel/GBEngine/f5gb.h
 include/singular/kernel/GBEngine/f5lists.h
 include/singular/kernel/GBEngine/janet.h
+include/singular/kernel/GBEngine/kChinese.h
 include/singular/kernel/GBEngine/kInline.h
 include/singular/kernel/GBEngine/khstd.h
 include/singular/kernel/GBEngine/kstd1.h
 include/singular/kernel/GBEngine/kstdfac.h
 include/singular/kernel/GBEngine/kutil.h
+include/singular/kernel/GBEngine/kverify.h
 include/singular/kernel/GBEngine/nc.h
 include/singular/kernel/GBEngine/ratgring.h
 include/singular/kernel/GBEngine/ringgb.h
@@ -187,6 +191,7 @@ include/singular/kernel/numeric/mpr_numeric.h
 include/singular/kernel/oswrapper/feread.h
 include/singular/kernel/oswrapper/rlimit.h
 include/singular/kernel/oswrapper/timer.h
+include/singular/kernel/oswrapper/vspace.h
 include/singular/kernel/polys.h
 include/singular/kernel/preimage.h
 include/singular/kernel/spectrum/GMPrat.h
@@ -241,10 +246,10 @@ include/singular/reporter/reporter.h
 include/singular/reporter/s_buff.h
 include/singular/reporter/si_signals.h
 include/singular/singularconfig.h
-lib/libSingular-4.1.3.so
+lib/libSingular-4.2.0.so
 lib/libSingular.a
 lib/libSingular.so
-lib/libfactory-4.1.3.so
+lib/libfactory-4.2.0.so
 lib/libfactory.a
 lib/libfactory.so
 %%NTL%%lib/libgfan-0.6.so
@@ -253,10 +258,10 @@ lib/libfactory.so
 lib/libomalloc-0.9.6.so
 lib/libomalloc.a
 lib/libomalloc.so
-lib/libpolys-4.1.3.so
+lib/libpolys-4.2.0.so
 lib/libpolys.a
 lib/libpolys.so
-lib/libsingular_resources-4.1.3.so
+lib/libsingular_resources-4.2.0.so
 lib/libsingular_resources.a
 lib/libsingular_resources.so
 libdata/pkgconfig/Singular.pc
@@ -552,11 +557,12 @@ share/ml_singular/extract.lib
 %%DATADIR%%/LIB/paraplanecurves.lib
 %%DATADIR%%/LIB/perf.py
 %%DATADIR%%/LIB/perron.lib
+%%DATADIR%%/LIB/pfd.lib
 %%DATADIR%%/LIB/phindex.lib
 %%DATADIR%%/LIB/pointid.lib
-%%DATADIR%%/LIB/poly.lib
 %%DATADIR%%/LIB/polybori.lib
 %%DATADIR%%/LIB/polyclass.lib
+%%DATADIR%%/LIB/polylib.lib
 %%DATADIR%%/LIB/polymake.lib
 %%DATADIR%%/LIB/presolve.lib
 %%DATADIR%%/LIB/primdec.lib
@@ -599,6 +605,7 @@ share/ml_singular/extract.lib
 %%DATADIR%%/LIB/spcurve.lib
 %%DATADIR%%/LIB/spectrum.lib
 %%DATADIR%%/LIB/standard.lib
+%%DATADIR%%/LIB/stanleyreisner.lib
 %%DATADIR%%/LIB/stratify.lib
 %%DATADIR%%/LIB/surf.lib
 %%DATADIR%%/LIB/surf_jupyter.lib
