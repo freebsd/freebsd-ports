@@ -10,6 +10,8 @@ COMMENT=	Rime Schema Repository
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	rime_deployer:chinese/librime
 
 USES=		gmake
