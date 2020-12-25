@@ -141,6 +141,7 @@ include/mailutils/sys/mailbox.h
 include/mailutils/sys/mailcap.h
 include/mailutils/sys/mailer.h
 include/mailutils/sys/mapfile_stream.h
+include/mailutils/sys/mboxrb.h
 include/mailutils/sys/memory_stream.h
 include/mailutils/sys/message.h
 include/mailutils/sys/message_stream.h
@@ -323,6 +324,7 @@ libexec/mailutils/mailutils-imap
 libexec/mailutils/mailutils-info
 libexec/mailutils/mailutils-ldflags
 libexec/mailutils/mailutils-logger
+libexec/mailutils/mailutils-maildir_fixup
 libexec/mailutils/mailutils-pop
 libexec/mailutils/mailutils-query
 libexec/mailutils/mailutils-send
