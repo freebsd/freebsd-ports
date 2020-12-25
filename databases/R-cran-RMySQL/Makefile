@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RMySQL
-DISTVERSION=	0.10.20
-PORTREVISION=	1
+DISTVERSION=	0.10.21
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,8 +16,5 @@ BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=	cran:auto-plist,compiles mysql
-
-post-patch:
-	@${REINPLACE_CMD} -e '/bin\//s|bash|sh|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
