@@ -1170,6 +1170,7 @@
     SUBDIR += libfreefare
     SUBDIR += libfsapfs
     SUBDIR += libfsext
+    SUBDIR += libfshfs
     SUBDIR += libfsntfs
     SUBDIR += libftdi
     SUBDIR += libftdi1

@@ -1,0 +1,17 @@
+bin/fshfsinfo
+include/libfshfs.h
+include/libfshfs/codepage.h
+include/libfshfs/definitions.h
+include/libfshfs/error.h
+include/libfshfs/extern.h
+include/libfshfs/features.h
+include/libfshfs/types.h
+lib/libfshfs.a
+lib/libfshfs.so
+lib/libfshfs.so.1
+lib/libfshfs.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pyfshfs.a
+%%PYTHON_SITELIBDIR%%/pyfshfs.so
+libdata/pkgconfig/libfshfs.pc
+man/man1/fshfsinfo.1.gz
+man/man3/libfshfs.3.gz
