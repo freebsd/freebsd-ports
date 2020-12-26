@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	picard
-PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTVERSION=	2.5.5
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
