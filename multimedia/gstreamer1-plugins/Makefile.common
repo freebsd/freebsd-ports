@@ -490,8 +490,9 @@ gst_vdpau_GST_PLUGIN_DIR=	sys/vdpau
 
 # vulkan
 gst_vulkan_USE_GSTREAMER1=	gl
-gst_vulkan_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
-				${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
+gst_vulkan_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
+				${LOCALBASE}/include/libdrm/drm_fourcc.h:graphics/libdrm \
+				${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
 				wayland-protocols>=0:graphics/wayland-protocols
 gst_vulkan_LIB_DEPENDS=		libvulkan.so:graphics/vulkan-loader \
 				libwayland-client.so:graphics/wayland
