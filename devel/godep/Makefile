@@ -6,8 +6,11 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Godep helps build packages reproducibly
+
+DEPRECATED=	Unmaintained and dead upstream
+EXPIRATION_DATE=	2021-02-01
 
 LICENSE=	BSD3CLAUSE
 
