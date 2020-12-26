@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	artifacts
-PORTVERSION=	20200515
+PORTVERSION=	20201106
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
-#		https://github.com/ForensicArtifacts/artifacts/releases/download/${PORTVERSION}/
+MASTER_SITES=	CHEESESHOP \
+		https://github.com/ForensicArtifacts/artifacts/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
