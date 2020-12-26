@@ -2,7 +2,7 @@
 
 PORTNAME=	glow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	vulcan@wired.sh
@@ -18,7 +18,7 @@ GH_TUPLE=	alecthomas:chroma:v0.8.0:alecthomas_chroma/vendor/github.com/alecthoma
 		atotto:clipboard:v0.1.2:atotto_clipboard/vendor/github.com/atotto/clipboard \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		calmh:randomart:v1.1.0:calmh_randomart/vendor/github.com/calmh/randomart \
-		charmbracelet:bubbles:v0.7.5:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
+		charmbracelet:bubbles:11f56f9b6b3f:charmbracelet_bubbles/vendor/github.com/charmbracelet/bubbles \
 		charmbracelet:bubbletea:v0.12.2:charmbracelet_bubbletea/vendor/github.com/charmbracelet/bubbletea \
 		charmbracelet:charm:v0.8.2:charmbracelet_charm/vendor/github.com/charmbracelet/charm \
 		charmbracelet:glamour:6c0e29c4dae5:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
@@ -50,7 +50,7 @@ GH_TUPLE=	alecthomas:chroma:v0.8.0:alecthomas_chroma/vendor/github.com/alecthoma
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		muesli:gitcha:5aa4fdccf2f6:muesli_gitcha/vendor/github.com/muesli/gitcha \
 		muesli:go-app-paths:v0.2.1:muesli_go_app_paths/vendor/github.com/muesli/go-app-paths \
-		muesli:reflow:v0.2.0:muesli_reflow/vendor/github.com/muesli/reflow \
+		muesli:reflow:3bcb929042f2:muesli_reflow/vendor/github.com/muesli/reflow \
 		muesli:sasquatch:66979d92330a:muesli_sasquatch/vendor/github.com/muesli/sasquatch \
 		muesli:termenv:v0.7.4:muesli_termenv/vendor/github.com/muesli/termenv \
 		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
@@ -58,6 +58,7 @@ GH_TUPLE=	alecthomas:chroma:v0.8.0:alecthomas_chroma/vendor/github.com/alecthoma
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		sabhiram:go-gitignore:d3107576ba94:sabhiram_go_gitignore/vendor/github.com/sabhiram/go-gitignore \
 		sahilm:fuzzy:v0.1.0:sahilm_fuzzy/vendor/github.com/sahilm/fuzzy \
+		segmentio:ksuid:v1.0.3:segmentio_ksuid/vendor/github.com/segmentio/ksuid \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.1.1:spf13_cobra/vendor/github.com/spf13/cobra \
@@ -68,7 +69,7 @@ GH_TUPLE=	alecthomas:chroma:v0.8.0:alecthomas_chroma/vendor/github.com/alecthoma
 		yuin:goldmark:v1.2.1:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_SHA=	53592dc
+_BUILD_SHA=	0a83048
 
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
