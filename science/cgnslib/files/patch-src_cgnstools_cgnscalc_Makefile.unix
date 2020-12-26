@@ -1,0 +1,14 @@
+--- src/cgnstools/cgnscalc/Makefile.unix.orig	2020-08-18 19:44:35 UTC
++++ src/cgnstools/cgnscalc/Makefile.unix
+@@ -45,8 +45,9 @@ install-prog :
+ 	@echo "installing cgnscalc shell scripts to $(BIN_INSTALL_DIR)"
+ 	@$(INSTALL_PROG) cgnscalc.sh $(BIN_INSTALL_DIR)/cgnscalc
+ 	@chmod +x $(BIN_INSTALL_DIR)/cgnscalc
+-	@$(INSTALL_PROG) unitconv.sh $(BIN_INSTALL_DIR)/unitconv
+-	@chmod +x $(BIN_INSTALL_DIR)/unitconv
++	# Do not install as unitconv to avoid a conflicy with XCrySDen
++	@$(INSTALL_PROG) unitconv.sh $(BIN_INSTALL_DIR)/unitconv.sh
++	@chmod +x $(BIN_INSTALL_DIR)/unitconv.sh
+ 	@if [ ! -f $(EXE_INSTALL_DIR)/cgconfig ] ; then \
+ 	  echo "installing configuration file to $(EXE_INSTALL_DIR)"; \
+ 	  $(INSTALL_DATA) ../cgconfig $(EXE_INSTALL_DIR)/cgconfig; \
