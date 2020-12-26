@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.2
 CATEGORIES=	x11-toolkits
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK+ library for the Wayland layer-shell protocol
 
 LICENSE=	LGPL3+ MIT
