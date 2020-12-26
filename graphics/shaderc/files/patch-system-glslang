@@ -1,3 +1,8 @@
+ld: error: undefined symbol: spvBinaryDestroy
+>>> referenced by shaderc.cc
+>>>               shaderc.cc.o:(shaderc_compilation_result_spv_binary::~shaderc_compilation_result_spv_binary()) in archive libshaderc/./libshaderc_combined.a
+>>> referenced by shaderc.cc
+>>>               shaderc.cc.o:(shaderc_compilation_result_spv_binary::~shaderc_compilation_result_spv_binary()) in archive libshaderc/./libshaderc_combined.a
 ld: error: undefined symbol: glslang::InitializeProcess()
 >>> referenced by compiler.cc
 >>>               compiler.cc.o:(shaderc_util::GlslangInitializer::GlslangInitializer()) in archive libshaderc_util/libshaderc_util.a
@@ -5,6 +10,17 @@ ld: error: undefined symbol: ConstructCompiler(EShLanguage, int)
 >>> referenced by ShaderLang.cpp
 >>>               ShaderLang.cpp.o:(ShConstructCompiler) in archive /usr/local/lib/libMachineIndependent.a
 
+--- libshaderc/CMakeLists.txt.orig	2020-12-09 21:30:21 UTC
++++ libshaderc/CMakeLists.txt
+@@ -114,7 +114,7 @@ endif(SHADERC_ENABLE_INSTALL)
+ 
+ shaderc_add_tests(
+   TEST_PREFIX shaderc_combined
+-  LINK_LIBS shaderc_combined ${CMAKE_THREAD_LIBS_INIT}
++  LINK_LIBS shaderc_combined ${SHADERC_LIBS}
+   INCLUDE_DIRS include ${shaderc_SOURCE_DIR}/libshaderc_util/include ${glslang_SOURCE_DIR}
+                ${spirv-tools_SOURCE_DIR}/include
+                ${SPIRV-Headers_SOURCE_DIR}/include
 --- libshaderc_util/CMakeLists.txt.orig	2020-12-09 21:30:21 UTC
 +++ libshaderc_util/CMakeLists.txt
 @@ -46,8 +46,8 @@ add_definitions(-DENABLE_HLSL)

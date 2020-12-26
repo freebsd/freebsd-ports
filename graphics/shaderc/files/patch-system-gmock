@@ -1,0 +1,18 @@
+ld: error: undefined symbol: testing::internal::IsTrue(bool)
+>>> referenced by compiler_test.cc
+>>>               libshaderc_util/CMakeFiles/shaderc_util_compiler_test.dir/src/compiler_test.cc.o:(testing::internal::SuiteApiResolver<(anonymous namespace)::CompilerTest>::GetSetUpCaseOrSuite(char const*, int))
+ld: error: undefined symbol: pthread_create
+>>> referenced by shaderc_test.cc
+>>>               libshaderc/CMakeFiles/shaderc_shared_shaderc_test.dir/src/shaderc_test.cc.o:((anonymous namespace)::Init_MultipleThreadsCalling_Test::TestBody())
+
+--- cmake/utils.cmake.orig	2020-12-09 21:30:21 UTC
++++ cmake/utils.cmake
+@@ -18,7 +18,7 @@ function (shaderc_use_gmock TARGET)
+   target_include_directories(${TARGET} PRIVATE
+     ${gmock_SOURCE_DIR}/include
+     ${gtest_SOURCE_DIR}/include)
+-  target_link_libraries(${TARGET} PRIVATE gmock gtest_main)
++  target_link_libraries(${TARGET} PRIVATE gmock gtest gtest_main ${CMAKE_THREAD_LIBS_INIT})
+ endfunction(shaderc_use_gmock)
+ 
+ function(shaderc_default_c_compile_options TARGET)
