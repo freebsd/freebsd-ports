@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-runner
-PORTVERSION=	13.6.0
+PORTVERSION=	13.7.0
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -29,10 +29,10 @@ USE_GITHUB=	nodefault
 # Find tags here:
 # https://gitlab.com/gitlab-org/gitlab-runner/tags
 GL_ACCOUNT=	gitlab-org
-GL_COMMIT=	8fa897355aa497d14671c170d7f7df3f00b040bb
-GITBRANCH=	13-6-stable
+GL_COMMIT=	943fc2521df7d18aacd73ab211c35546ace47c27
+GITBRANCH=	13-7-stable
 # https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-freebsd-amd64
-BUILT=		2020-11-21T06:16:06+0000
+BUILT=		2020-12-21T13:47:14+0000
 
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -117,7 +117,7 @@ GH_TUPLE=	\
 		json-iterator:go:v1.1.7:json_iterator_go/vendor/github.com/json-iterator/go \
 		jstemmer:go-junit-report:v0.9.1:jstemmer_go_junit_report/vendor/github.com/jstemmer/go-junit-report \
 		kardianos:osext:c2c54e542fb7:kardianos_osext/vendor/github.com/kardianos/osext \
-		klauspost:compress:v1.11.2:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.11.3:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:pgzip:v1.2.5:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kr:pty:v1.1.1:kr_pty/vendor/github.com/kr/pty \
@@ -151,13 +151,13 @@ GH_TUPLE=	\
 		prometheus:procfs:v0.0.5:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.24.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		ryanuber:go-glob:v1.0.0:ryanuber_go_glob/vendor/github.com/ryanuber/go-glob \
-		saracen:fastzip:v0.1.3:saracen_fastzip/vendor/github.com/saracen/fastzip \
-		saracen:zipextra:f8fcc2e1b58e:saracen_zipextra/vendor/github.com/saracen/zipextra \
+		saracen:fastzip:v0.1.4:saracen_fastzip/vendor/github.com/saracen/fastzip \
+		saracen:zipextra:7347a2ee3f10:saracen_zipextra/vendor/github.com/saracen/zipextra \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:pflag:4c012f6dcd95:spf13_pflag/vendor/github.com/spf13/pflag \
 		square:go-jose:v2.3.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:objx:v0.3.0:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:95a9d909e987:stretchr_testify/vendor/github.com/stretchr/testify \
 		tevino:abool:3c25f2fe7cd0:tevino_abool/vendor/github.com/tevino/abool \
 		urfave:cli:v1.20.0:urfave_cli/vendor/github.com/urfave/cli
 
