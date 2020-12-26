@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-12-23T02-24-12Z
-COMMIT_ID=	8565cefe4eb945e2068a0431364166e42ecf2f50
+GHTAG=		RELEASE.2020-12-26T01-35-54Z
+COMMIT_ID=	59d36393960b8659d962defdb6becf569eafe17e
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -146,6 +146,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		prometheus:common:v0.14.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.2.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.23.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		quasilyte:go-ruleguard:5d7e62a465d3:quasilyte_go_ruleguard_fluent/vendor/github.com/quasilyte/go-ruleguard \
 		rcrowley:go-metrics:10cdbea86bc0:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		rjeczalik:notify:v0.9.2:rjeczalik_notify/vendor/github.com/rjeczalik/notify \
 		rs:cors:v1.7.0:rs_cors/vendor/github.com/rs/cors \
