@@ -8166,7 +8166,6 @@ java/linux-sun-jdk17||2016-04-24|Has expired: Unsupported and known for multiple
 devel/compiler-rt-devel|devel/llvm-devel|2016-04-24|Folded back in to devel/llvm-devel
 databases/rrdtool10|databases/rrdtool|2016-05-02|Old version, not maintained any more
 devel/sope|devel/sope2|2016-05-02|Renamed to devel/sope2
-www/sogo|www/sogo2|2016-05-02|Renamed to www/sogo2
 www/sogo-activesync|www/sogo2-activesync|2016-05-02|Renamed to www/sogo2-activesync
 textproc/rubygem-gherkin3|textproc/rubygem-gherkin|2016-05-03|Has expired: Use textproc/rubygem-gherkin instead
 dns/odsclient||2016-05-03|Has expired: ODS shuts service down, so client is probably useless
