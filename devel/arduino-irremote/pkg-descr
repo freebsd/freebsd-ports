@@ -4,4 +4,4 @@ signals with multiple protocols
 This library enables you to send and receive using infra-red signals
 on an Arduino.
 
-WWW: https://z3t0.github.io/Arduino-IRremote/
+WWW: https://arduino-irremote.github.io/Arduino-IRremote/
