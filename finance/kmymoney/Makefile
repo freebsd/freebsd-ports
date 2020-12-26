@@ -2,8 +2,12 @@
 
 PORTNAME=	kmymoney
 PORTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
+
+PATCH_SITES=	https://invent.kde.org/office/kmymoney/-/commit/
+PATCHFILES+=	a9722f40ec94bd7fdda078e393807dc1e78bbec3.diff:-p1 # Python 3.8 compat
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE personal finance manager
@@ -91,7 +95,7 @@ SQLCIPHER_CMAKE_BOOL=	ENABLE_SQLCIPHER
 WEBOOB_DESC=		Online banking via Web Outside Of Browsers
 WEBOOB_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}weboob>0:www/py-weboob@${PY_FLAVOR}
 WEBOOB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}weboob>0:www/py-weboob@${PY_FLAVOR}
-WEBOOB_USES=		python:2.7
+WEBOOB_USES=		python:3.7+
 WEBOOB_USE=		qt=concurrent
 WEBOOB_CMAKE_BOOL=	ENABLE_WEBOOB
 
