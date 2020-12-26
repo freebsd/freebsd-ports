@@ -4,7 +4,7 @@ PORTNAME=	basu
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0-40
 DISTVERSIONSUFFIX=	-g5263cc0
-CATEGORIES=	sysutils
+CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	sd-bus library, extracted from systemd

@@ -44,7 +44,7 @@ OPTIONS_DEFAULT=BASU MANPAGES PIXBUF SUID X11
 OPTIONS_SUB=	yes
 
 BASU_DESC=		Tray in swaybar via basu
-BASU_LIB_DEPENDS=	libbasu.so:sysutils/basu
+BASU_LIB_DEPENDS=	libbasu.so:devel/basu
 BASU_MESON_ENABLED=	tray
 
 MANPAGES_BUILD_DEPENDS=	scdoc>=1.9.2:textproc/scdoc

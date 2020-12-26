@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	BASU MANPAGES
 OPTIONS_DEFAULT=BASU MANPAGES
 
 BASU_DESC=		Login manager support via basu
-BASU_LIB_DEPENDS=	libbasu.so:sysutils/basu
+BASU_LIB_DEPENDS=	libbasu.so:devel/basu
 BASU_MESON_ENABLED=	logind
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc

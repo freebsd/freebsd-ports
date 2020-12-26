@@ -19,9 +19,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>=1.14:graphics/wayland-protocols
-LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
-		libwayland-client.so:graphics/wayland \
-		libbasu.so:sysutils/basu
+LIB_DEPENDS=	libbasu.so:devel/basu \
+		libepoll-shim.so:devel/libepoll-shim \
+		libwayland-client.so:graphics/wayland
 
 USES=		compiler:c11 gnome meson pkgconfig
 USE_GITHUB=	yes

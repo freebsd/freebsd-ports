@@ -101,7 +101,6 @@
     SUBDIR += barrier
     SUBDIR += bashtop
     SUBDIR += bastille
-    SUBDIR += basu
     SUBDIR += batmon
     SUBDIR += battmond
     SUBDIR += battray

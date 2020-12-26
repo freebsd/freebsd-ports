@@ -17,9 +17,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>=1.14:graphics/wayland-protocols
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
-		libpipewire-0.3.so:multimedia/pipewire \
-		libbasu.so:sysutils/basu
+LIB_DEPENDS=	libbasu.so:devel/basu \
+		libwayland-client.so:graphics/wayland \
+		libpipewire-0.3.so:multimedia/pipewire
 
 USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes

@@ -214,6 +214,7 @@
     SUBDIR += babeltrace
     SUBDIR += bam
     SUBDIR += bashdb
+    SUBDIR += basu
     SUBDIR += bats-core
     SUBDIR += bazel
     SUBDIR += bazel-buildtools
