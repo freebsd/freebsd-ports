@@ -11,7 +11,7 @@ COMMENT=	Game of Trees version control system
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		uidfix
+USES=		compiler:c11 uidfix
 
 n=		${.newline}
 post-extract:
