@@ -1,6 +1,6 @@
-TIMESTAMP = 1607374669
-SHA256 (StackExchange-dnscontrol-v3.5.0_GH0.tar.gz) = d90d5a54e5ea4c2e6bd296f950b3f9059dd1a5801e306b475421d6344489d917
-SIZE (StackExchange-dnscontrol-v3.5.0_GH0.tar.gz) = 1888300
+TIMESTAMP = 1609010695
+SHA256 (StackExchange-dnscontrol-v3.5.1_GH0.tar.gz) = 2d16a3ba5935e344cc1c19d6d70038a1a21ff6856c2723b9ad85edd2123c7857
+SIZE (StackExchange-dnscontrol-v3.5.1_GH0.tar.gz) = 1888382
 SHA256 (Azure-azure-sdk-for-go-v49.0.0_GH0.tar.gz) = 33ef1526e54efe4dd8c2e720a676e5d991bedf5d35b39795e22e4de97fc4ee9c
 SIZE (Azure-azure-sdk-for-go-v49.0.0_GH0.tar.gz) = 31443658
 SHA256 (Azure-go-autorest-4f818eac41f3_GH0.tar.gz) = 4925087331bc039913bc52f5c01bf2b5a3c73cef1cc3167979271a91c04adbc4
