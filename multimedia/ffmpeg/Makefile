@@ -249,7 +249,7 @@ GCRYPT_CONFIGURE_ENABLE=	gcrypt
 
 # glslang
 GLSLANG_BUILD_DEPENDS=	glslang>0:graphics/glslang \
-			spirv-tools>0:devel/spirv-tools
+			spirv-tools>0:graphics/spirv-tools
 GLSLANG_CONFIGURE_ENABLE=	libglslang
 GLSLANG_LDFLAGS=	-lm
 

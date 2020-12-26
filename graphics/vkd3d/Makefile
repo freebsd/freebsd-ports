@@ -12,9 +12,9 @@ COMMENT=	Direct3D 12 to Vulkan translation
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/spirv-tools/libspirv.h:devel/spirv-tools \
+BUILD_DEPENDS=	${LOCALBASE}/include/spirv-tools/libspirv.h:graphics/spirv-tools \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
-LIB_DEPENDS=	libSPIRV-Tools-shared.so:devel/spirv-tools \
+LIB_DEPENDS=	libSPIRV-Tools-shared.so:graphics/spirv-tools \
 		libvulkan.so:graphics/vulkan-loader
 RUN_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--with-spirv-tools
 TEST_TARGET=	check
 
 # XXX Move to a separate port (a la graphics/vulkan-headers) and maybe make
-#     devel/spirv-tools depend on it as well
+#     graphics/spirv-tools depend on it as well
 USE_GITHUB=	nodefault
 GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.3:headers/external/spirv-headers
 CPPFLAGS+=	-isystem${WRKSRC}/external/spirv-headers/include

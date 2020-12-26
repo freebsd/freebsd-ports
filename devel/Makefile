@@ -6730,7 +6730,6 @@
     SUBDIR += spice-protocol
     SUBDIR += spin
     SUBDIR += spirv-llvm-translator
-    SUBDIR += spirv-tools
     SUBDIR += splint
     SUBDIR += spread-sheet-widget
     SUBDIR += srecord

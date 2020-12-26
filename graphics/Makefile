@@ -1019,6 +1019,7 @@
     SUBDIR += sk1libs
     SUBDIR += skanlite
     SUBDIR += spectacle
+    SUBDIR += spirv-tools
     SUBDIR += springgraph
     SUBDIR += squish
     SUBDIR += ssocr
