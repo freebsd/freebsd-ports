@@ -5,14 +5,16 @@ ld: error: undefined symbol: ConstructCompiler(EShLanguage, int)
 >>> referenced by ShaderLang.cpp
 >>>               ShaderLang.cpp.o:(ShConstructCompiler) in archive /usr/local/lib/libMachineIndependent.a
 
---- glslc/CMakeLists.txt.orig	2020-12-24 21:26:10 UTC
-+++ glslc/CMakeLists.txt
-@@ -43,7 +43,7 @@ if (SHADERC_ENABLE_WGSL_OUTPUT)
- endif(SHADERC_ENABLE_WGSL_OUTPUT)
+--- libshaderc_util/CMakeLists.txt.orig	2020-12-09 21:30:21 UTC
++++ libshaderc_util/CMakeLists.txt
+@@ -46,8 +46,8 @@ add_definitions(-DENABLE_HLSL)
  
- target_link_libraries(glslc PRIVATE
--  glslang OSDependent OGLCompiler HLSL glslang SPIRV    # Glslang libraries
-+  glslang MachineIndependent GenericCodeGen OSDependent OGLCompiler # Glslang libraries
-   $<$<BOOL:${SHADERC_ENABLE_WGSL_OUTPUT}>:libtint>      # Tint libraries, optional
-   shaderc_util shaderc                                  # internal Shaderc libraries
-   ${CMAKE_THREAD_LIBS_INIT})
+ find_package(Threads)
+ target_link_libraries(shaderc_util PRIVATE
+-  glslang OSDependent OGLCompiler HLSL glslang SPIRV
+-  SPIRV-Tools-opt ${CMAKE_THREAD_LIBS_INIT})
++  glslang MachineIndependent GenericCodeGen OSDependent OGLCompiler HLSL glslang SPIRV
++  SPIRV-Tools-opt SPIRV-Tools ${CMAKE_THREAD_LIBS_INIT})
+ 
+ shaderc_add_tests(
+   TEST_PREFIX shaderc_util
