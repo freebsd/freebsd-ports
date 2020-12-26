@@ -3,7 +3,7 @@
 
 PORTNAME=	bitwarden_rs
 DISTVERSION=	1.17.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/dani-garcia/bw_web_builds/releases/download/v${DISTVERSION_WV}/:web
 DISTFILES=	${WV_DISTFILE}:web
@@ -23,6 +23,7 @@ USES=		cargo ssl pgsql
 DISTVERSION_WV=	2.17.1
 WV_DISTFILE=	bw_web_v${DISTVERSION_WV}.tar.gz
 USE_RC_SUBR=    ${PORTNAME}
+SUB_FILES=	pkg-message
 
 # make makeplist > pkg-plist #One has to edit/review the generated plist
 # make generate-plist && make check-plist
@@ -376,10 +377,15 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		yubico-0.9.1
 
 post-install:
+	${MKDIR} ${STAGEDIR}/${ETCDIR}/rc.conf.d
+	${CP} ${FILESDIR}/bitwarden_rs_conf.in ${STAGEDIR}/${LOCALBASE}/etc/rc.conf.d/${PORTNAME}.sample
 	${MKDIR} ${STAGEDIR}/${WWWDIR}
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/data
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}/${WWWDIR}/data
+	# ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}/${WWWDIR}/data
 	(cd ${WRKDIR} && ${COPYTREE_SHARE} web-vault ${STAGEDIR}/${WWWDIR})
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/data' >> ${TMPPLIST}
+	# @${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/data' >> ${TMPPLIST}
+	${ECHO_CMD} \
+		'@postexec chown -R ${WWWOWN}:${WWWGRP} %D/${WWWDIR_REL}/data' \
+		>> ${TMPPLIST}
 
 .include <bsd.port.mk>

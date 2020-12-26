@@ -1,4 +1,6 @@
 bin/bitwarden_rs
+etc/rc.conf.d/bitwarden_rs.sample
+etc/rc.d/bitwarden_rs
 %%WWWDIR%%/web-vault/.nojekyll
 %%WWWDIR%%/web-vault/app-id.json
 %%WWWDIR%%/web-vault/app/main.b96b42617884240af451.css
@@ -115,4 +117,5 @@ bin/bitwarden_rs
 %%WWWDIR%%/web-vault/sso-connector.html
 %%WWWDIR%%/web-vault/u2f-connector.html
 %%WWWDIR%%/web-vault/version.json
+@dir %%ETCDIR%%/rc.conf.d
 @dir %%WWWDIR%%/data
