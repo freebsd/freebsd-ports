@@ -12,7 +12,7 @@ ld: error: undefined symbol: ConstructCompiler(EShLanguage, int)
  
  target_link_libraries(glslc PRIVATE
 -  glslang OSDependent OGLCompiler HLSL glslang SPIRV    # Glslang libraries
-+  glslang MachineIndependent GenericCodeGen             # Glslang libraries
++  glslang MachineIndependent GenericCodeGen OSDependent OGLCompiler # Glslang libraries
    $<$<BOOL:${SHADERC_ENABLE_WGSL_OUTPUT}>:libtint>      # Tint libraries, optional
    shaderc_util shaderc                                  # internal Shaderc libraries
    ${CMAKE_THREAD_LIBS_INIT})
