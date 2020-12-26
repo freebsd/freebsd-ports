@@ -1,0 +1,40 @@
+https://github.com/ziglang/zig/issues/7550
+
+./deps/zig-wlroots/src/backend/session.zig:8:12: error: container 'std.os' has no member called 'dev_t'
+    dev: os.dev_t,
+           ^
+./deps/zig-wlroots/src/xwayland.zig:40:21: error: container 'std.os' has no member called 'time_t'
+    server_start: os.time_t,
+                    ^
+./deps/zig-wlroots/src/xwayland.zig:70:5: note: while checking this field
+    server: *XwaylandServer,
+    ^
+./river/Server.zig:56:1: note: while checking this field
+xwayland: if (build_options.xwayland) *wlr.Xwayland else void,
+^
+./river/main.zig:116:26: note: referenced here
+    var server: Server = undefined;
+                         ^
+
+--- deps/zig-wlroots/src/backend/session.zig.orig	2020-12-24 11:19:51 UTC
++++ deps/zig-wlroots/src/backend/session.zig
+@@ -5,7 +5,7 @@ const wl = wayland.server.wl;
+ 
+ pub const Device = extern struct {
+     fd: c_int,
+-    dev: os.dev_t,
++    dev: u64,
+     signal: wl.Signal(*Session),
+ 
+     /// Session.devices
+--- deps/zig-wlroots/src/xwayland.zig.orig	2020-12-24 11:19:51 UTC
++++ deps/zig-wlroots/src/xwayland.zig
+@@ -37,7 +37,7 @@ pub const XwaylandServer = extern struct {
+     wm_fd: [2]c_int,
+     wl_fd: [2]c_int,
+ 
+-    server_start: os.time_t,
++    server_start: i64,
+     display: c_int,
+     display_name: [16]u8,
+     x_fd: [2]c_int,
