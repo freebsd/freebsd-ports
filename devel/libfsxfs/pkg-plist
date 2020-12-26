@@ -1,0 +1,17 @@
+bin/fsxfsinfo
+include/libfsxfs.h
+include/libfsxfs/codepage.h
+include/libfsxfs/definitions.h
+include/libfsxfs/error.h
+include/libfsxfs/extern.h
+include/libfsxfs/features.h
+include/libfsxfs/types.h
+lib/libfsxfs.a
+lib/libfsxfs.so
+lib/libfsxfs.so.1
+lib/libfsxfs.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pyfsxfs.a
+%%PYTHON_SITELIBDIR%%/pyfsxfs.so
+libdata/pkgconfig/libfsxfs.pc
+man/man1/fsxfsinfo.1.gz
+man/man3/libfsxfs.3.gz
