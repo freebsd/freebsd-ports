@@ -1444,6 +1444,7 @@
     SUBDIR += py-ucl
     SUBDIR += py-ufal.udpipe
     SUBDIR += py-whoosh
+    SUBDIR += py-wordcloud
     SUBDIR += py-wordnet
     SUBDIR += py-wstools
     SUBDIR += py-wtf-peewee
