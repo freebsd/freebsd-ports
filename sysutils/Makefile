@@ -98,6 +98,9 @@
     SUBDIR += bareos18-client
     SUBDIR += bareos18-server
     SUBDIR += bareos18-traymonitor
+    SUBDIR += bareos19-client
+    SUBDIR += bareos19-server
+    SUBDIR += bareos19-traymonitor
     SUBDIR += barrier
     SUBDIR += bashtop
     SUBDIR += bastille
