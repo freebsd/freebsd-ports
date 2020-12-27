@@ -5,7 +5,7 @@ PORTNAME=	3omns
 DISTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	https://github.com/chazomaticus/3omns/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://lab.burn.capital/chaz/3omns/uploads/6ec547a14fec72a72f9fa53c374bfa7e/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old-school bomb-dropping Deathmatch
