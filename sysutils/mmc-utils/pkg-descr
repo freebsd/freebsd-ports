@@ -33,4 +33,4 @@ The mmc-utils tools can do the following:
  - Print and parse CSD data.
  - Print and parse SCR data.
 
-WWW: https://github.com/torvalds/linux/blob/master/Documentation/mmc/mmc-tools.txt
+WWW: https://www.kernel.org/doc/Documentation/mmc/mmc-tools.txt
