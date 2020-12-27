@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2018-11-23 20:35:32 UTC
+--- CMakeLists.txt.orig	2020-12-25 09:02:08 UTC
 +++ CMakeLists.txt
 @@ -22,7 +22,7 @@ macro(require_cpp11)
  endmacro()
@@ -18,9 +18,9 @@
  
  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
  
-@@ -46,18 +46,18 @@ configure_file( ${CMAKE_CURRENT_SOURCE_D
- 
- install(FILES ${CMAKE_CURRENT_BINARY_DIR}/easyloggingpp.pc DESTINATION "${ELPP_PKGCONFIG_INSTALL_DIR}")
+@@ -52,18 +52,18 @@ if (HAVE_EXECINFO)
+ 	add_definitions(-DHAVE_EXECINFO)
+ endif()
  
 -if (build_static_lib)
 +if (build_shared_lib)
@@ -40,3 +40,14 @@
  endif()
  
  export(PACKAGE ${PROJECT_NAME})
+@@ -98,7 +98,9 @@ if (test)
+     )
+ 
+     # Standard linking to gtest stuff.
+-    target_link_libraries(easyloggingpp-unit-tests gtest gtest_main)
++    target_include_directories(easyloggingpp-unit-tests PRIVATE ${CMAKE_INSTALL_PREFIX}/include)
++    target_link_directories(easyloggingpp-unit-tests PRIVATE ${CMAKE_INSTALL_PREFIX}/lib)
++    target_link_libraries(easyloggingpp-unit-tests gtest gtest_main execinfo)
+ 
+     add_test(NAME easyloggingppUnitTests COMMAND easyloggingpp-unit-tests -v)
+ endif()

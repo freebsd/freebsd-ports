@@ -4,4 +4,4 @@ built-in features. It provides ability to write logs in your own customized
 format. It also provide support for logging your classes, third-party
 libraries, STL and third-party containers etc.
 
-WWW: https://muflihun.github.io/easyloggingpp/
+WWW: https://github.com/amrayn/easyloggingpp
