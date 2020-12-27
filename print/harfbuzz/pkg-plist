@@ -77,6 +77,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-1-3.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-2-3.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-3-3.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-4-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-4-2.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-4-3.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-1-5-0.html
@@ -95,6 +96,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-4-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-5-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-6-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-7-3.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-full.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/buffers-language-script-and-direction.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/building.html
@@ -121,9 +123,11 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-common.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-coretext.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-deprecated.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-directwrite.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-face.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-font.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ft.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-gdi.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-glib.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-gobject.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-graphite2.html
@@ -133,6 +137,8 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-font.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-layout.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-math.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-meta.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-metrics.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-name.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-shape.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-var.html
