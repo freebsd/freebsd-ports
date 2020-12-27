@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pgroonga
-PORTVERSION=	2.2.6
+PORTVERSION=	2.2.8
 CATEGORIES=	databases textproc
 MASTER_SITES=	http://packages.groonga.org/source/pgroonga/
 
@@ -18,6 +18,7 @@ USES=		gmake pgsql:9.6+ pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/groonga
 LLD_UNSAFE=	yes
 SUB_FILES=	pkg-message
+PLIST_SUB=	MVER=${PORTVERSION}
 
 OPTIONS_DEFINE=	MECAB
 MECAB_DESC=	Use MeCab as a tokenizer

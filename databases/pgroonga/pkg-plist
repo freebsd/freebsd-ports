@@ -31,7 +31,6 @@
 %%OLDPG%%include/postgresql/server/contrib/pgroonga_check/pgrn-wal.h
 %%OLDPG%%include/postgresql/server/contrib/pgroonga_check/pgrn-writable.h
 %%OLDPG%%include/postgresql/server/contrib/pgroonga_check/pgroonga.h
-%%OLDPG%%include/postgresql/server/contrib/pgroonga_check/xxhash.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga/pgrn-alias.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga/pgrn-auto-close.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga/pgrn-column-name.h
@@ -99,7 +98,6 @@
 %%OLDPG%%include/postgresql/server/extension/pgroonga_database/pgrn-wal.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga_database/pgrn-writable.h
 %%OLDPG%%include/postgresql/server/extension/pgroonga_database/pgroonga.h
-%%OLDPG%%include/postgresql/server/extension/pgroonga_database/xxhash.h
 lib/postgresql/pgroonga.so
 lib/postgresql/pgroonga_check.so
 lib/postgresql/pgroonga_database.so
@@ -153,7 +151,9 @@ share/postgresql/extension/pgroonga--2.2.2--2.2.3.sql
 share/postgresql/extension/pgroonga--2.2.3--2.2.4.sql
 share/postgresql/extension/pgroonga--2.2.4--2.2.5.sql
 share/postgresql/extension/pgroonga--2.2.5--2.2.6.sql
-share/postgresql/extension/pgroonga--2.2.6.sql
-share/postgresql/extension/pgroonga_database--2.2.6.sql
+share/postgresql/extension/pgroonga--2.2.6--2.2.7.sql
+share/postgresql/extension/pgroonga--2.2.7--%%MVER%%.sql
+share/postgresql/extension/pgroonga--%%MVER%%.sql
+share/postgresql/extension/pgroonga_database--%%MVER%%.sql
 share/postgresql/extension/pgroonga_database.control
 share/postgresql/extension/pgroonga.control
