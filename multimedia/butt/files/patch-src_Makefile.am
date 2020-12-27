@@ -1,13 +1,18 @@
---- src/Makefile.am.orig	2020-11-09 19:05:11.378421000 +0100
-+++ src/Makefile.am	2020-11-09 19:12:12.772675000 +0100
-@@ -34,6 +34,10 @@
- butt_SOURCES += currentTrack.h currentTrackLinux.cpp
+--- src/Makefile.am.orig	2020-12-27 21:27:17.416688000 +0100
++++ src/Makefile.am	2020-12-27 21:27:34.578674000 +0100
+@@ -25,7 +25,6 @@
+ if WINDOWS
+ butt_SOURCES += resource.rc currentTrack.h currentTrack.cpp
+ AM_CPPFLAGS += -DHAVE_LIBFDK_AAC
+-LDADD = -lintl
  endif
  
-+if FREEBSD
-+butt_SOURCES += currentTrack.h currentTrackLinux.cpp
-+endif
-+
- # used only under MinGW to compile the resource.rc file (manifest and program icon)
+ if OSX
+@@ -38,6 +37,7 @@
  
- .rc.o:
+ if FREEBSD
+ butt_SOURCES += currentTrack.h currentTrackLinux.cpp
++LDADD = -lintl
+ endif
+ 
+ # used only under MinGW to compile the resource.rc file (manifest and program icon)
