@@ -6,6 +6,7 @@ sbin/auto-add-proc-mount
 sbin/auto-add-to-group
 sbin/auto-adduser
 sbin/auto-admin
+sbin/auto-admin-banner
 sbin/auto-amend-fstab
 sbin/auto-append-line
 sbin/auto-ask
@@ -44,6 +45,7 @@ sbin/auto-fastest-mirror
 sbin/auto-fetch-install-media
 sbin/auto-file-secure
 sbin/auto-firewall-setup
+sbin/auto-fix-date
 sbin/auto-freebsd-wip-checkout
 sbin/auto-fusefs-install
 sbin/auto-gpu-setup
@@ -112,6 +114,7 @@ sbin/auto-set-lid-switch-mode
 sbin/auto-set-memory-limits
 sbin/auto-set-sysctl
 sbin/auto-set-umask
+sbin/auto-software-manager
 sbin/auto-sound-driver-setup
 sbin/auto-ssh-authorize
 sbin/auto-ssh-reverse-authorize
@@ -124,7 +127,6 @@ sbin/auto-update-system
 sbin/auto-user-admin
 sbin/auto-useradd
 sbin/auto-using-pkgsrc
-sbin/auto-wheel-check
 sbin/auto-wifi-failover
 sbin/auto-write-cache-toggle
 sbin/auto-xdm-toggle
