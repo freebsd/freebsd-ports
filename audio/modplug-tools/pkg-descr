@@ -2,4 +2,4 @@ modplugtools is a command line player for many music modules (669, amf,
 ams, dbm, dmf, dsm, far, it, j2b, mdl, med mod,  mt2,  mtm,  okt,  psm,
 ptm, s3m, stm, ult, umx and xm) using the libmodplug library.
 
-WWW: http://modplug-xmms.sourceforge.net/
+WWW: https://github.com/alexmyczko/modplug-tools
