@@ -10,6 +10,9 @@ COMMENT=	Tool for registry analysis in forensics examinations
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Upstream repo disappeared
+EXPIRATION_DATE=	2021-01-27
+
 RUN_DEPENDS=	p5-Parse-Win32Registry>=0:devel/p5-Parse-Win32Registry
 
 USE_GITHUB=	yes
