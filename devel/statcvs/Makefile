@@ -19,6 +19,7 @@ BROKEN_armv7=		fails to compile: build.xml: compilation failed
 
 USES=		zip
 USE_JAVA=	yes
+JAVA_VERSION=	8
 USE_ANT=	yes
 NO_ARCH=	yes
 
