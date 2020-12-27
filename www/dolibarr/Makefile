@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dolibarr
-DISTVERSION=	11.0.3
+DISTVERSION=	12.0.4
 CATEGORIES=	www finance
 
 MAINTAINER=	acm@FreeBSD.org
@@ -10,7 +10,7 @@ COMMENT=	Modern software package to manage your company or foundation
 LICENSE=	GPLv3
 
 USE_GITHUB=	yes
-GITHUB_PROJECT=	${PORTNAME:S/d/D/}
+GH_ACCOUNT=	${PORTNAME:S/d/D/}
 USES=		cpe php:web
 USE_PHP=	calendar curl gd intl pcre session openssl
 NO_BUILD=	yes
