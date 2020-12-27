@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	metasploit
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.23
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -27,7 +27,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=2.0.10:security/rubygem-metasploit-payloads \
+		rubygem-metasploit-payloads>=2.0.24:security/rubygem-metasploit-payloads \
 		rubygem-metasploit_payloads-mettle>=1.0.2:security/rubygem-metasploit_payloads-mettle \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
@@ -42,6 +42,7 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-octokit>=0:net/rubygem-octokit \
 		rubygem-redcarpet>=0:textproc/rubygem-redcarpet \
 		rubygem-patch_finder>=0:devel/rubygem-patch_finder \
+		rubygem-puma>=0:www/rubygem-puma \
 		rubygem-thin>=0:www/rubygem-thin \
 		rubygem-sinatra>=0:www/rubygem-sinatra \
 		rubygem-warden>=0:devel/rubygem-warden \
@@ -94,7 +95,8 @@ RUN_DEPENDS=	nmap:security/nmap \
 		rubygem-aws-sdk-ec2>=0:devel/rubygem-aws-sdk-ec2 \
 		rubygem-aws-sdk-iam>=0:devel/rubygem-aws-sdk-iam \
 		rubygem-faye-websocket>=0:www/rubygem-faye-websocket \
-		rubygem-eventmachine>=0:devel/rubygem-eventmachine
+		rubygem-eventmachine>=0:devel/rubygem-eventmachine \
+		rubygem-zeitwerk>=0:devel/rubygem-zeitwerk
 
 USES=		python shebangfix
 USE_RUBY=	yes
@@ -103,6 +105,10 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		data/exploits/CVE-2017-7494/build.sh \
 		data/exploits/CVE-2017-7494/install-deps.sh \
 		docker/entrypoint.sh \
+		external/source/exploits/CVE-2020-9850/payload/loader/make.py \
+		external/source/exploits/CVE-2020-9850/payload/sbx/build-threadexec.sh \
+		external/source/exploits/CVE-2020-9850/payload/sbx/build-webkit.sh \
+		external/source/exploits/CVE-2020-9850/payload/sbx/embed.py \
 		external/source/shellcode/windows/build.sh \
 		external/source/shellcode/windows/x64/build.py \
 		external/source/shellcode/windows/x86/build.py \
@@ -113,11 +119,15 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		external/source/metsvc/test.rb \
 		docker/bin/msfvenom \
 		docker/bin/msfconsole \
+		modules/auxiliary/admin/http/cisco_7937g_ssh_privesc.py \
 		modules/auxiliary/admin/http/grafana_auth_bypass.py \
 		modules/auxiliary/admin/teradata/teradata_odbc_sql.py \
+		modules/auxiliary/dos/cisco/cisco_7937g_dos.py \
+		modules/auxiliary/dos/cisco/cisco_7937g_dos_reboot.py \
 		modules/auxiliary/dos/http/slowloris.py \
 		modules/auxiliary/dos/tcp/claymore_dos.py \
 		modules/auxiliary/gather/get_user_spns.py \
+		modules/auxiliary/gather/mikrotik_winbox_fileread.py \
 		modules/auxiliary/gather/office365userenum.py \
 		modules/auxiliary/scanner/http/onion_omega2_login.py \
 		modules/auxiliary/scanner/smb/impacket/dcomexec.py \
@@ -129,6 +139,7 @@ SHEBANG_FILES=	data/exploits/CVE-2017-17562/build.sh \
 		modules/exploits/linux/smtp/haraka.py \
 		modules/exploits/windows/smb/ms17_010_eternalblue_win8.py \
 		tools/dev/import-dev-keys.sh \
+		tools/dev/update_joomla_components.py \
 		tools/dev/sign-dev-keys.sh \
 		tools/hardware/killerbee_msfrelay.py \
 		tools/modules/aws-aggregator-userdata.sh
