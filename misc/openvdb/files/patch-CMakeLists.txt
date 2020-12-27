@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-12-09 15:44:05 UTC
+--- CMakeLists.txt.orig	2020-12-24 17:13:14 UTC
 +++ CMakeLists.txt
-@@ -197,7 +197,7 @@ mark_as_advanced(
+@@ -199,7 +199,7 @@ mark_as_advanced(
  # @note  Blosc version is currently treated as exception which must be adhered
  # to. The minimum version must be at least 1.5.0. Previous versions are incompatible.
  # Later versions (including 1.5.4), can be buggy on certain platforms.
@@ -8,13 +8,13 @@
 +set(MINIMUM_BLOSC_VERSION 1.15)
  # @note  ABI always enforced so the correct deprecation messages are available.
  # OPENVDB_USE_DEPRECATED_ABI_<VERSION> should be used to circumvent this
- set(MINIMUM_OPENVDB_ABI_VERSION 5)
-@@ -218,7 +218,7 @@ if(NOT DISABLE_DEPENDENCY_VERSION_CHECKS)
-   set(MINIMUM_TBB_VERSION 2017.0)
+ set(MINIMUM_OPENVDB_ABI_VERSION 6)
+@@ -220,7 +220,7 @@ if(NOT DISABLE_DEPENDENCY_VERSION_CHECKS)
+   set(MINIMUM_TBB_VERSION 2018.0)
    set(MINIMUM_LLVM_VERSION 6.0.0)
  
 -  set(MINIMUM_PYTHON_VERSION 2.7)
 +  set(MINIMUM_PYTHON_VERSION ${FREEBSD_PYTHON_VER})
-   set(MINIMUM_NUMPY_VERSION 1.12.1)
+   set(MINIMUM_NUMPY_VERSION 1.14.0)
  
    set(MINIMUM_GOOGLETEST_VERSION 1.8)

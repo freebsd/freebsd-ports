@@ -1,30 +1,21 @@
---- openvdb/openvdb/python/CMakeLists.txt.orig	2020-08-13 19:15:58 UTC
+--- openvdb/openvdb/python/CMakeLists.txt.orig	2020-12-24 17:13:14 UTC
 +++ openvdb/openvdb/python/CMakeLists.txt
-@@ -104,9 +104,9 @@ if(${CMAKE_VERSION} VERSION_LESS 3.12)
- elseif(${CMAKE_VERSION} VERSION_LESS 3.14)
-   # CMake < 3.14
-   if(OPENVDB_BUILD_PYTHON_UNITTESTS)
--    find_package(Python QUIET COMPONENTS Interpreter Development)
-+    find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS Interpreter Development)
-   else()
--    find_package(Python QUIET COMPONENTS Development)
-+    find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS Development)
-   endif()
-   OPENVDB_CHECK_PYTHON_VERSION(${Python_VERSION} ${Python_INCLUDE_DIRS})
-   list(APPEND OPENVDB_PYTHON_DEPS Python::Python)
-@@ -119,16 +119,16 @@ elseif(${CMAKE_VERSION} VERSION_LESS 3.14)
- else()
-   # CMake >= 3.14
-   if(OPENVDB_BUILD_PYTHON_UNITTESTS)
--    find_package(Python QUIET COMPONENTS Interpreter Development)
-+    find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS Interpreter Development)
-   else()
--    find_package(Python QUIET COMPONENTS Development)
-+    find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS Development)
-   endif()
+@@ -85,7 +85,7 @@ if(OPENVDB_BUILD_PYTHON_UNITTESTS)
+ endif()
  
+ if(${CMAKE_VERSION} VERSION_LESS 3.14)
+-  find_package(Python QUIET COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
++  find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
    OPENVDB_CHECK_PYTHON_VERSION(${Python_VERSION} ${Python_INCLUDE_DIRS})
-   list(APPEND OPENVDB_PYTHON_DEPS Python::Python)
+ 
+   if(USE_NUMPY)
+@@ -94,11 +94,11 @@ if(${CMAKE_VERSION} VERSION_LESS 3.14)
+     list(APPEND OPENVDB_PYTHON_DEPS Python::NumPy)
+   endif()
+ else()
+-  find_package(Python QUIET COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
++  find_package(Python ${FREEBSD_PYTHON_VER} EXACT REQUIRED COMPONENTS ${OPENVDB_PYTHON_REQUIRED_COMPONENTS})
+   OPENVDB_CHECK_PYTHON_VERSION(${Python_VERSION} ${Python_INCLUDE_DIRS})
  
    if(USE_NUMPY)
 -    find_package(Python QUIET COMPONENTS NumPy)
