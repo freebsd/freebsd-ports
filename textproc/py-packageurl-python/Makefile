@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	packageurl-python
-DISTVERSION=	0.8.7
+DISTVERSION=	0.9.3
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,6 @@ USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
 
 .include <bsd.port.mk>
