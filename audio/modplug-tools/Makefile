@@ -3,6 +3,7 @@
 
 PORTNAME=	modplug-tools
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -20,6 +21,13 @@ GH_ACCOUNT=	alexmyczko
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/modplug123 \
-		bin/modplugplay
+		bin/modplugplay \
+		share/man/man1/modplug123.1.gz \
+		share/man/man1/modplugplay.1.gz
+
+post-install:
+	${MKDIR} ${STAGEDIR}${MANPREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/modplug*.1 \
+		${STAGEDIR}${MANPREFIX}/share/man/man1
 
 .include <bsd.port.mk>
