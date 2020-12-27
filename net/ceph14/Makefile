@@ -15,7 +15,7 @@ LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	dual
 
 # even though i386 will build, it is not really advised.
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64
 
 BUILD_DEPENDS=	\
 	bash:shells/bash \
@@ -110,6 +110,14 @@ GROUPS=		ceph
 BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
 
 # PLIST_SUB=CMAKE_BUILD_TYPE_regex="\bdebug\b"
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64
+PLIST_SUB+=	NO_AMD64="@comment "
+.else
+PLIST_SUB+=	NO_AMD64=""
+.endif
 
 pre-configure:
 	[ -e ${WRKSRC}/build ] || ${LN} -s ${CONFIGURE_WRKSRC} ${WRKSRC}/build
