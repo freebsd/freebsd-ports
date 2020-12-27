@@ -12390,6 +12390,7 @@
 %%WWWDIR%%/db/post_migrate/20201106082723_add_merge_request_jira_reference_indexes.rb
 %%WWWDIR%%/db/post_migrate/20201106134950_deduplicate_epic_iids.rb
 %%WWWDIR%%/db/post_migrate/20201109114603_schedule_remove_inaccessible_epic_todos.rb
+%%WWWDIR%%/db/post_migrate/20201110161542_cleanup_transfered_projects_shared_runners.rb
 %%WWWDIR%%/db/post_migrate/20201112145311_add_index_on_sha_for_initial_deployments.rb
 %%WWWDIR%%/db/post_migrate/20201113105000_update_index_secure_for_api_fuzzing_telemetry.rb
 %%WWWDIR%%/db/post_migrate/20201119092319_schedule_repopulate_historical_vulnerability_statistics.rb
@@ -13972,6 +13973,7 @@
 %%WWWDIR%%/db/schema_migrations/20201110035029
 %%WWWDIR%%/db/schema_migrations/20201110110454
 %%WWWDIR%%/db/schema_migrations/20201110133629
+%%WWWDIR%%/db/schema_migrations/20201110161542
 %%WWWDIR%%/db/schema_migrations/20201110221400
 %%WWWDIR%%/db/schema_migrations/20201111051655
 %%WWWDIR%%/db/schema_migrations/20201111051847
@@ -15911,6 +15913,7 @@
 %%WWWDIR%%/doc/user/group/iterations/index.md
 %%WWWDIR%%/doc/user/group/repositories_analytics/index.md
 %%WWWDIR%%/doc/user/group/roadmap/img/epics_state_dropdown_v12_10.png
+%%WWWDIR%%/doc/user/group/roadmap/img/roadmap_filters_v13_7.png
 %%WWWDIR%%/doc/user/group/roadmap/img/roadmap_timeline_months.png
 %%WWWDIR%%/doc/user/group/roadmap/img/roadmap_timeline_quarters.png
 %%WWWDIR%%/doc/user/group/roadmap/img/roadmap_timeline_weeks.png
@@ -16037,6 +16040,7 @@
 %%WWWDIR%%/doc/user/project/clusters/add_gke_clusters.md
 %%WWWDIR%%/doc/user/project/clusters/add_remove_clusters.md
 %%WWWDIR%%/doc/user/project/clusters/eks_and_gitlab/index.md
+%%WWWDIR%%/doc/user/project/clusters/img/aws_iam_role_trust.png
 %%WWWDIR%%/doc/user/project/clusters/img/environment.png
 %%WWWDIR%%/doc/user/project/clusters/img/k8s_cluster_monitoring.png
 %%WWWDIR%%/doc/user/project/clusters/img/kubernetes_pod_logs_v12_10.png
@@ -17568,6 +17572,7 @@
 %%WWWDIR%%/lib/gitlab/background_migration/remove_undefined_vulnerability_severity_level.rb
 %%WWWDIR%%/lib/gitlab/background_migration/replace_blocked_by_links.rb
 %%WWWDIR%%/lib/gitlab/background_migration/reset_merge_status.rb
+%%WWWDIR%%/lib/gitlab/background_migration/reset_shared_runners_for_transferred_projects.rb
 %%WWWDIR%%/lib/gitlab/background_migration/set_merge_request_diff_files_count.rb
 %%WWWDIR%%/lib/gitlab/background_migration/set_null_external_diff_store_to_local_value.rb
 %%WWWDIR%%/lib/gitlab/background_migration/set_null_package_files_file_store_to_local_value.rb
@@ -26887,6 +26892,7 @@
 %%WWWDIR%%/spec/lib/gitlab/background_migration/recalculate_project_authorizations_with_min_max_user_id_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/replace_blocked_by_links_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/reset_merge_status_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/background_migration/reset_shared_runners_for_transferred_projects_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/set_merge_request_diff_files_count_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/set_null_external_diff_store_to_local_value_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/background_migration/set_null_package_files_file_store_to_local_value_spec.rb
@@ -28252,6 +28258,7 @@
 %%WWWDIR%%/spec/migrations/20201014205300_drop_backfill_jira_tracker_deployment_type_jobs_spec.rb
 %%WWWDIR%%/spec/migrations/20201027002551_migrate_services_to_http_integrations_spec.rb
 %%WWWDIR%%/spec/migrations/20201028182809_backfill_jira_tracker_deployment_type2_spec.rb
+%%WWWDIR%%/spec/migrations/20201110161542_cleanup_transfered_projects_shared_runners_spec.rb
 %%WWWDIR%%/spec/migrations/README.md
 %%WWWDIR%%/spec/migrations/active_record/schema_spec.rb
 %%WWWDIR%%/spec/migrations/add_default_and_free_plans_spec.rb

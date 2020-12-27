@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gitlab-ce
-PORTVERSION?=	13.7.0
+PORTVERSION?=	13.7.1
 PORTREVISION?=	0
 CATEGORIES=	www devel
 
@@ -116,7 +116,7 @@ MY_DEPENDS=	git>=2.29:devel/git \
 	rubygem-commonmarker>=0.21<1.0:textproc/rubygem-commonmarker \
 	rubygem-kramdown>=2.3.0<2.4:textproc/rubygem-kramdown \
 	rubygem-redcloth>=4.3.2<4.4.0:www/rubygem-redcloth \
-	rubygem-rdoc>=6.1.2<6.3:devel/rubygem-rdoc \
+	rubygem-rdoc>=6.1.2<7:devel/rubygem-rdoc \
 	rubygem-org-ruby>=0.9.12<0.10.0:textproc/rubygem-org-ruby \
 	rubygem-creole>=0.5.0<0.6.0:textproc/rubygem-creole \
 	rubygem-wikicloth081>=0.8.1<0.8.2:textproc/rubygem-wikicloth081 \
@@ -266,7 +266,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 GL_PROJECT?=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT?=	91da1dcc7a1e08e70e2a7daa60b7604d8ceecf9e
+GL_COMMIT?=	c97c8073a0e63b678c31ebba78ca2867db376c76
 
 USERS=	git
 GROUPS=	git
