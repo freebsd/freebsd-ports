@@ -1,12 +1,12 @@
---- core/src/dird/dbcopy/CMakeLists.txt	2020-02-01 12:39:35.841314000 -0500
-+++ core/src/dird/dbcopy/CMakeLists.txt	2020-02-01 12:39:55.280473000 -0500
-@@ -11,6 +11,9 @@
-       bareossql
-       $<$<BOOL:HAVE_PAM>:${PAM_LIBRARIES}>
-       ${LMDB_LIBS}
-+      ${OPENSSL_LIBRARIES}
-+      ${PTHREAD_LIBRARIES}
-+      ${JANSSON_LIBRARIES}
+--- core/src/dird/dbcopy/CMakeLists.txt	2020-12-16 02:46:16.000000000 -0500
++++ core/src/dird/dbcopy/CMakeLists.txt	2020-12-23 22:44:13.161935000 -0500
+@@ -33,7 +33,8 @@
+   )
+   target_link_libraries(
+     bareos-dbcopy bareos dird_objects bareosfind bareoscats bareossql
+-    $<$<BOOL:HAVE_PAM>:${PAM_LIBRARIES}> ${LMDB_LIBS}
++    $<$<BOOL:HAVE_PAM>:${PAM_LIBRARIES}> ${LMDB_LIBS} 
++    ${OPENSSL_LIBRARIES} ${PTHREAD_LIBRARIES} ${JANSSON_LIBRARIES}
    )
  
- install(TARGETS
+   install(TARGETS bareos-dbcopy DESTINATION "${sbindir}")

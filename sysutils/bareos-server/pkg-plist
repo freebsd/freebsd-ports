@@ -1,7 +1,6 @@
 bin/bregex
 bin/bsmtp
 bin/bwild
-bin/timelimit
 @sample(,bareos,640) %%ETCDIR%%/bareos-barcodes.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/catalog/MyCatalog.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/client/bareos-fd.conf.sample
@@ -20,8 +19,8 @@ bin/timelimit
 %%CEPHFS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCephfs.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupGFAPI.conf.sample
 %%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupRados.conf.sample
-@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreFiles.conf.sample
 %%CEPHFS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreCephfs.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreFiles.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreGFAPI.conf.sample
 %%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreRados.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-bareos-fd.conf.sample
@@ -41,12 +40,14 @@ bin/timelimit
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/File.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Gluster.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/NULL.conf.sample
+%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Rados.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Tape.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-regress.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/autochanger-0.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/FileStorage.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/GlusterStorage.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/NULL.conf.sample
+%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/RadosStorage.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/tapedrive-0.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-dir.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-mon.conf.sample
@@ -55,9 +56,9 @@ bin/timelimit
 %%MTX%%@sample(,bareos,640) %%ETCDIR%%/mtx-changer.conf.sample
 etc/logrotate.d/bareos-dir
 lib/bareos/backends/libbareoscats-%%DBTYPE%%.so
+%%CEPHFS%%lib/bareos/backends/libbareossd-cephfs.so
 lib/bareos/backends/libbareossd-fifo.so
 lib/bareos/backends/libbareossd-gentape.so
-%%CEPHFS%%lib/bareos/backends/libbareossd-cephfs.so
 %%GFAPI%%lib/bareos/backends/libbareossd-gfapi.so
 %%RADOS%%lib/bareos/backends/libbareossd-rados.so
 lib/bareos/backends/libbareossd-tape.so
@@ -67,13 +68,9 @@ lib/bareos/backends/libbareossd-tape.so
 %%PYTHON%%lib/bareos/plugins/BareosSdWrapper.py
 lib/bareos/plugins/autoxflate-sd.so
 %%PYTHON%%lib/bareos/plugins/bareos-dir-class-plugin.py
-%%PYTHON%%lib/bareos/plugins/bareos-dir.py.template
 %%PYTHON%%lib/bareos/plugins/bareos-sd-class-plugin.py
-%%PYTHON%%lib/bareos/plugins/bareos-sd.py.template
-%%PYTHON%%lib/bareos/plugins/bareos_dir_consts.py
-%%PYTHON%%lib/bareos/plugins/bareos_sd_consts.py
-%%PYTHON%%lib/bareos/plugins/python-dir.so
-%%PYTHON%%lib/bareos/plugins/python-sd.so
+%%PYTHON%%lib/bareos/plugins/python3-dir.so
+%%PYTHON%%lib/bareos/plugins/python3-sd.so
 %%SCSICRYPTO%%lib/bareos/plugins/scsicrypto-sd.so
 %%SCSICRYPTO%%lib/bareos/plugins/scsitapealert-sd.so
 lib/bareos/scripts/bareos-ctl-dir
@@ -113,15 +110,20 @@ lib/bareos/scripts/mtx-changer
 lib/bareos/scripts/query.sql
 lib/bareos/scripts/update_bareos_tables
 lib/libbareoscats.so
-lib/libbareoscats.so.19
+lib/libbareoscats.so.20
 lib/libbareoscats.so.%%LIB_VERSION%%
+lib/libbareosfastlz.so
+lib/libbareosfastlz.so.20
+lib/libbareosfastlz.so.%%LIB_VERSION%%
 %%NDMP%%lib/libbareosndmp.so
-%%NDMP%%lib/libbareosndmp.so.19
+%%NDMP%%lib/libbareosndmp.so.20
 %%NDMP%%lib/libbareosndmp.so.%%LIB_VERSION%%
 lib/libbareossd.so
 lib/libbareossql.so
-lib/libbareossql.so.19
+lib/libbareossql.so.20
 lib/libbareossql.so.%%LIB_VERSION%%
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosdir.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/bareossd.so
 man/man1/bareos-tray-monitor.1.gz
 man/man1/bregex.1.gz
 man/man1/bsmtp.1.gz
@@ -154,7 +156,6 @@ sbin/btape
 sbin/btestls
 sbin/bwild
 sbin/chio-bareos
-sbin/timelimit
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/catalog
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/client
@@ -170,15 +171,8 @@ sbin/timelimit
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/schedule
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/storage
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/user
-@dir(,bareos,750) %%ETCDIR%%/bareos-dir-export
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir-export/client
-@dir(,bareos,750) %%ETCDIR%%/bareos-sd.d
-@dir(,bareos,750) %%ETCDIR%%/bareos-sd.d/autochanger
-@dir(,bareos,750) %%ETCDIR%%/bareos-sd.d/device
-@dir(,bareos,750) %%ETCDIR%%/bareos-sd.d/director
-@dir(,bareos,750) %%ETCDIR%%/bareos-sd.d/messages
 @dir(,bareos,750) %%ETCDIR%%/bareos-sd.d/ndmp
-@dir(,bareos,750) %%ETCDIR%%/bareos-sd.d/storage
 @dir(bareos,bareos,) %%BAREOS_DIR%%
 @dir(bareos,bareos,) %%BAREOS_DIR%%/storage
 @dir(bareos,bareos,) /var/log/bareos

@@ -4,4 +4,4 @@ bin/bareos-tray-monitor
 @sample %%ETCDIR%%/tray-monitor.d/monitor/bareos-mon.conf.sample
 @sample %%ETCDIR%%/tray-monitor.d/storage/StorageDaemon-local.conf.sample
 share/applications/bareos-tray-monitor.desktop
-share/pixmaps/bareos-tray-monitor.xpm
+share/pixmaps/bareos-tray-monitor.png

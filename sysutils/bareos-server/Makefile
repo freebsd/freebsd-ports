@@ -2,7 +2,7 @@
 
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	19.2.9
+DISTVERSION=	20.0.0
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
@@ -14,7 +14,7 @@ COMMENT?=	Backup archiving recovery open sourced (server)
 LICENSE=	AGPLv3 LGPL3
 LICENSE_COMB=	multi
 
-CONFLICTS?=	bacula18*-server bacula17*-server-* bareos16-server-*
+CONFLICTS?=	bacula19*-server bacula18*-server-* bareos17-server-*
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson
@@ -205,9 +205,9 @@ MP1+=	bsmtp.1 bregex.1 bwild.1 bareos-tray-monitor.1
 MAKE_ENV+=	MAN8="${MP8}" MAN1="${MP1}"
 
 post-patch:
-	@${REINPLACE_CMD}  '69,72d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD}  '76,79d' ${WRKSRC}/CMakeLists.txt
 .if ${PKGNAMESUFFIX} == "-server"
-	@${REINPLACE_CMD}  '24d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
+	@${REINPLACE_CMD}  '51d' ${WRKSRC}/core/src/plugins/CMakeLists.txt
 .endif
 
 post-extract:

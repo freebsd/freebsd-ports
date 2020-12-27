@@ -1,6 +1,6 @@
---- core/src/stored/CMakeLists.txt	2020-01-31 11:21:18.000000000 -0500
-+++ core/src/stored/CMakeLists.txt	2020-01-31 16:11:45.064779000 -0500
-@@ -213,23 +213,23 @@
+--- core/src/stored/CMakeLists.txt	2020-12-16 02:46:16.000000000 -0500
++++ core/src/stored/CMakeLists.txt	2020-12-23 23:06:49.516519000 -0500
+@@ -226,23 +226,23 @@
    list(APPEND BAREOS_SD_LIBRARIES comctl32)
  endif()
  
@@ -28,12 +28,3 @@
  
  install(TARGETS bareossd DESTINATION ${libdir})
  
-@@ -243,7 +243,7 @@
- install(CODE "set(SRC_DIR \"${PROJECT_SOURCE_DIR}\")")
- install(SCRIPT ${PROJECT_SOURCE_DIR}/cmake/install-stored-configfiles.cmake)
- 
--install(DIRECTORY DESTINATION "../${archivedir}")
-+install(DIRECTORY DESTINATION "${archivedir}")
- 
- if(${HAVE_DYNAMIC_SD_BACKENDS})
-   add_subdirectory(backends)
