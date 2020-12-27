@@ -468,6 +468,8 @@ bin/SurfRetinoMap
 bin/SurfSmooth
 bin/SurfToSurf
 bin/SurfaceMetrics
+bin/TRR
+bin/TRR.R
 bin/Vecwarp
 bin/Xphace
 bin/abids_json_info.py
