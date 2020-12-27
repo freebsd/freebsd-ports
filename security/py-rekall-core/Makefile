@@ -13,6 +13,9 @@ COMMENT=	CORE component of the Rekall framework
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=	2021-01-27
+
 RUN_DEPENDS=	cabextract:archivers/cabextract \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}acora>=2.0:textproc/py-acora@${PY_FLAVOR} \

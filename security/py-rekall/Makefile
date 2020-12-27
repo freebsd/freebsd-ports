@@ -13,6 +13,9 @@ COMMENT=	Memory forensics analysis framework
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained upstream, use security/py-volatility3 instead
+EXPIRATION_DATE=	2021-01-27
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rekall_lib>=1.7.1:security/py-rekall_lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rekall-core>=1.7.1:security/py-rekall-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython5>=5.0.0:devel/ipython5@${PY_FLAVOR}

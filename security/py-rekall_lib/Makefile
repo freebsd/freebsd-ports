@@ -13,6 +13,9 @@ COMMENT=	Rekall Support Libraries
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained upstream
+EXPIRATION_DATE=	2021-01-27
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=0.10.0:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=1.5.7:devel/py-sortedcontainers@${PY_FLAVOR} \
