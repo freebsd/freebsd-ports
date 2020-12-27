@@ -102,6 +102,7 @@
     SUBDIR += unixbench
     SUBDIR += uperf
     SUBDIR += vegeta
+    SUBDIR += vkmark
     SUBDIR += webbench
     SUBDIR += wrk
 
