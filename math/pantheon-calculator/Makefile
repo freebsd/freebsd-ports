@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	calculator
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	pantheon-
 DIST_SUBDIR=	pantheon
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Simple calculator written in Vala
 
 LICENSE=	GPLv3
