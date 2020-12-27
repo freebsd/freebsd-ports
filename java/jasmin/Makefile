@@ -15,6 +15,7 @@ USES=		dos2unix zip
 USE_ANT=	yes
 ALL_TARGET=	jasmin
 USE_JAVA=	yes
+JAVA_VERSION=	8
 DOS2UNIX_REGEX=	.*\.(txt|xml|j|class|java|mf|css|bnf|html)
 
 SUB_FILES=	jasmin.sh
