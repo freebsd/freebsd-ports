@@ -460,6 +460,7 @@ share/osinfo/os/netbsd.org/netbsd-8.1.xml
 share/osinfo/os/netbsd.org/netbsd-8.2.xml
 share/osinfo/os/netbsd.org/netbsd-9.0.xml
 share/osinfo/os/nixos.org/nixos-20.03.xml
+share/osinfo/os/nixos.org/nixos-20.09.xml
 share/osinfo/os/nixos.org/nixos-unknown.xml
 share/osinfo/os/nixos.org/nixos-unstable.xml
 share/osinfo/os/novell.com/netware-4.xml
