@@ -29,6 +29,9 @@ PORTDOCS=	*
 USERS=		syncthing
 GROUPS=		syncthing
 
+# Anonymize
+MAKE_ENV+=	BUILD_USER=ports BUILD_HOST=freebsd
+
 OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes
