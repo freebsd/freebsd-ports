@@ -9,7 +9,7 @@ WRKDIR=`pwd`/work
 #mkdir -p "${WRKDIR}"
 
 if [ \! -d "${CURDIR}/kicad-symbols" ]; then
- git clone https://github.com/KiCad/kicad-symbols.git -b master "${CURDIR}/kicad-symbols";
+ git clone https://gitlab.com/kicad/libraries/kicad-symbols.git -b master "${CURDIR}/kicad-symbols";
 else
   cd "${CURDIR}/kicad-symbols"
   git pull;

@@ -6,7 +6,9 @@ DISTVERSION=	r${GIT_P3D_DATE}
 PORTREVISION=	1
 #PORTREVISION=	1
 CATEGORIES=	cad
+MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-packages3D/-/archive/${GL_COMMIT}/
 PKGNAMESUFFIX=	-library-packages3d-devel
+DISTNAME=	${PORTNAME}-packages3D-${GL_COMMIT}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Official KiCad 3D model libraries for rendering and MCAD integration
@@ -17,10 +19,10 @@ RUN_DEPENDS=	kicad:cad/kicad-devel
 
 CONFLICTS=	kicad-4.*
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	KiCad
-GH_PROJECT=	kicad-packages3D
-GH_TAGNAME=	${GIT_P3D_HASH}
+USE_GITLAB=	nodefault
+GL_ACCOUNT=	kicad
+GL_PROJECT=	kicad/packages3D
+GL_COMMIT=	${GIT_P3D_HASH}
 
 USES=		cmake
 

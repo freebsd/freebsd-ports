@@ -9,7 +9,7 @@ WRKDIR=`pwd`/work
 #mkdir -p "${WRKDIR}"
 
 if [ \! -d "${CURDIR}/kicad-templates" ]; then
- git clone https://github.com/KiCad/kicad-templates.git -b master "${CURDIR}/kicad-templates";
+ git clone https://gitlab.com/kicad/libraries/kicad-templates.git -b master "${CURDIR}/kicad-templates";
 else
   cd "${CURDIR}/kicad-templates"
   git pull;
