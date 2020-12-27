@@ -1,0 +1,34 @@
+--- core/CMakeLists.txt	2020-01-31 12:45:28.110777000 -0500
++++ core/CMakeLists.txt	2020-01-31 12:47:41.413976000 -0500
+@@ -249,7 +249,9 @@
+   set(PSCMD "ps -ax -o pid,command")
+   include_directories(/usr/local/include)
+   link_directories(/usr/local/lib)
+-  link_libraries(intl)
++  IF(nls)
++    link_libraries(intl)
++  ENDIF()
+ endif()
+ 
+ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+@@ -316,8 +318,11 @@
+   add_definitions("-D_FILE_OFFSET_BITS=64")
+ endif()
+ 
+-include(FindIntl)
+ 
++IF(nls)
++  INCLUDE(FindIntl)
++ENDIF()
++
+ if(developer)
+   add_definitions("-DDEVELOPER=1")
+ endif()
+@@ -746,7 +751,6 @@
+ 
+ add_subdirectory(scripts)
+ add_subdirectory(manpages)
+-add_subdirectory(platforms)
+ add_subdirectory(src)
+ 
+ include(BareosLocalBuildDefinitions OPTIONAL

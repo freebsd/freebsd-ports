@@ -1,0 +1,39 @@
+--- core/src/stored/CMakeLists.txt	2020-01-31 11:21:18.000000000 -0500
++++ core/src/stored/CMakeLists.txt	2020-01-31 16:11:45.064779000 -0500
+@@ -213,23 +213,23 @@
+   list(APPEND BAREOS_SD_LIBRARIES comctl32)
+ endif()
+ 
+-target_link_libraries(bareos-sd stored_objects ${BAREOS_SD_LIBRARIES})
++target_link_libraries(bareos-sd stored_objects ${BAREOS_SD_LIBRARIES} ${JANSSON_LIBRARIES} ${PTHREAD_LIBRARIES})
+ 
+ add_executable(bls ${BLSSRCS})
+ target_link_libraries(bls bareos bareossd bareosfind)
+ 
+ add_executable(bextract ${BEXTRACTSRS})
+-target_link_libraries(bextract bareossd bareosfind bareos)
++target_link_libraries(bextract bareossd bareosfind bareos ${JANSSON_LIBRARIES} ${PTHREAD_LIBRARIES})
+ 
+ add_executable(bscan ${BSCANSRCS})
+ target_link_libraries(bscan bareos bareossd bareosfind bareossql bareoscats)
+ 
+ add_executable(btape ${BTAPESRCS})
+-target_link_libraries(btape bareossd bareos)
++target_link_libraries(btape bareossd bareos ${JANSSON_LIBRARIES} ${PTHREAD_LIBRARIES})
+ 
+ add_executable(bcopy ${BCOPYSRCS})
+ 
+-target_link_libraries(bcopy bareossd bareos)
++target_link_libraries(bcopy bareossd bareos ${JANSSON_LIBRARIES} ${PTHREAD_LIBRARIES})
+ 
+ install(TARGETS bareossd DESTINATION ${libdir})
+ 
+@@ -243,7 +243,7 @@
+ install(CODE "set(SRC_DIR \"${PROJECT_SOURCE_DIR}\")")
+ install(SCRIPT ${PROJECT_SOURCE_DIR}/cmake/install-stored-configfiles.cmake)
+ 
+-install(DIRECTORY DESTINATION "../${archivedir}")
++install(DIRECTORY DESTINATION "${archivedir}")
+ 
+ if(${HAVE_DYNAMIC_SD_BACKENDS})
+   add_subdirectory(backends)

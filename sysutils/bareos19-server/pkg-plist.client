@@ -1,0 +1,64 @@
+bin/bconsole
+@sample %%ETCDIR%%/bareos-fd.d/client/myself.conf.sample
+@group bareos
+@sample %%ETCDIR%%/bareos-fd.d/director/bareos-dir.conf.sample
+@group bareos
+@sample %%ETCDIR%%/bareos-fd.d/director/bareos-mon.conf.sample
+@group bareos
+@sample %%ETCDIR%%/bareos-fd.d/messages/Standard.conf.sample
+@group bareos
+@sample %%ETCDIR%%/bconsole.d/bconsole.conf.sample
+@group bareos
+lib/libbareos.so
+lib/libbareos.so.19
+lib/libbareos.so.%%LIB_VERSION%%
+lib/libbareosfastlz.so
+lib/libbareosfastlz.so.19
+lib/libbareosfastlz.so.%%LIB_VERSION%%
+lib/libbareosfind.so
+lib/libbareosfind.so.19
+lib/libbareosfind.so.%%LIB_VERSION%%
+%%LMDB%%lib/libbareoslmdb.so
+%%LMDB%%lib/libbareoslmdb.so.19
+%%LMDB%%lib/libbareoslmdb.so.%%LIB_VERSION%%
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginBaseclass.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginLDAP.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginLocalFileset.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginOvirt.py
+%%PYTHON%%lib/bareos/plugins/BareosFdPluginPerconaXtraBackup.py
+%%PYTHON%%lib/bareos/plugins/BareosFdWrapper.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-ldap.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-local-fileset.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-mock-test.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-ovirt.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd-percona-xtrabackup.py
+%%PYTHON%%lib/bareos/plugins/bareos-fd.py.template
+%%PYTHON%%lib/bareos/plugins/bareos_fd_consts.py
+lib/bareos/plugins/bpipe-fd.so
+%%CEPHFS%%lib/bareos/plugins/cephfs-fd.so
+%%GFAPI%%lib/bareos/plugins/gfapi-fd.so
+%%PYTHON%%lib/bareos/plugins/python-fd.so
+%%RADOS%%lib/bareos/plugins/rados-fd.so
+lib/bareos/scripts/bareos
+lib/bareos/scripts/bareos-config
+lib/bareos/scripts/bareos-config-lib.sh
+lib/bareos/scripts/bareos-ctl-fd
+lib/bareos/scripts/bareos-ctl-funcs
+lib/bareos/scripts/btraceback.dbx
+lib/bareos/scripts/btraceback.gdb
+lib/bareos/scripts/btraceback.mdb
+man/man1/bconsole.1.gz
+man/man8/bareos-fd.8.gz
+man/man8/bareos.8.gz
+@group bareos
+sbin/bareos
+@group bareos
+sbin/bareos-fd
+@group bareos
+sbin/bconsole
+@group wheel
+sbin/btraceback
+@group bareos
+@dir(bareos,bareos,)  %%BAREOS_DIR%%
+@dir(bareos,bareos,) /var/log/bareos
+@dir(bareos,bareos,) /var/run/bareos

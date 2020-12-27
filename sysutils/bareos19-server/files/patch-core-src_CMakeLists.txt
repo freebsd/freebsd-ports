@@ -1,0 +1,28 @@
+--- core/src/CMakeLists.txt	2020-01-31 11:21:18.000000000 -0500
++++ core/src/CMakeLists.txt	2020-02-01 12:33:06.503769000 -0500
+@@ -35,15 +35,18 @@
+   add_subdirectory(tests)
+ endif()
+ 
+-add_subdirectory(console)
+-if(${HAVE_LMDB})
+-  add_subdirectory(lmdb)
++if(client-only)
++   add_subdirectory(console)
++   if(${HAVE_LMDB})
++     add_subdirectory(lmdb)
++   endif()
++   add_subdirectory(lib)
++   add_subdirectory(findlib)
++   add_subdirectory(filed)
++   add_subdirectory(fastlz)
+ endif()
+-add_subdirectory(lib)
+-add_subdirectory(findlib)
+-add_subdirectory(filed)
++
+ add_subdirectory(plugins)
+-add_subdirectory(fastlz)
+ 
+ if(${traymonitor})
+   add_subdirectory(qt-tray-monitor)
