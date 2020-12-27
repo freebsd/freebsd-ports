@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.519 2020/11/29 17:21:16 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.522 2020/12/27 19:19:02 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 3;
+my $micro = 4;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -596,6 +596,7 @@ sub checkplist {
 	my $owner_seen = 0;
 	my $group_seen = 0;
 	my $found_so = 0;
+	my $found_naked_so = 0;
 
 	# Variables that are allowed to be out-of-sync in the XXXDIR check.
 	# E.g., %%PORTDOCS%%%%RUBY_MODDOCDIR%% will be OK because there is
@@ -807,12 +808,14 @@ sub checkplist {
 				"into libdata/pkgconfig for them to be found by pkg-config.");
 		}
 
-		if ($_ =~ m|lib[^\/]+\.so(\.\d+)?$| &&
+		if ($_ =~ m|lib[^\/]+\.so\.\d+$| &&
 			$makevar{USE_LDCONFIG} eq '') {
 			&perror("WARN", $file, $., "installing shared libraries, ".
 				"please define USE_LDCONFIG as appropriate");
-		} elsif ($_ =~ m|lib[^\/]+\.so(\.\d+)?$|) {
+		} elsif ($_ =~ m|lib[^\/]+\.so\.\d+$|) {
 			$found_so++;
+		} elsif ($_ =~ m|lib[^\/]+\.so$|) {
+			$found_naked_so++;
 		}
 
 		if ($_ =~ m|^share/icons/.*/| &&
@@ -947,8 +950,14 @@ sub checkplist {
 	}
 
 	if ($makevar{USE_LDCONFIG} ne '' && !$found_so) {
-		&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
-			"port does not install any shared objects.");
+		if ($found_naked_so) {
+			&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
+				"port does not install shared objects in the format lib*.so.[0-9] ".
+				"which ldconfig(8) needs to register them in the hints file.");
+		} else {
+			&perror("WARN", $file, -1, "You have defined USE_LDCONFIG, but this ".
+				"port does not install any shared objects.");
+		}
 	}
 
 	close(IN);
@@ -1142,10 +1151,9 @@ sub check_depends_syntax {
 				if ($verbose);
 			next;
 		} elsif ($j ne 'DEPENDS' && $i =~ /^\$\{([A-Z_]+DEPENDS)}\s*$/ && !$seen_depends{$1}) {
-			# XXX: technically we don't need this elsif block (we could remove the seen_depends check above)
-			# but I don't like that one can use a variable before they've declared it.
-			#&perror("FATAL", $file, -1, "$j points to ${dtype}DEPENDS which has not yet been defined.");
-			print "OK: (kinda) $j refers to $1 (which hasn't been declared yet, but it will work), skipping checks.\n"
+			# make(1) does lazy variable evaluation, so we can use a variable before it is
+			# declared.  However, portlint scans line by line.  Allow this behavior.
+			print "OK: $j refers to $1 (which hasn't been declared yet, but it will work), skipping checks.\n"
 			    if ($verbose);
 			next;
 		}
@@ -1311,7 +1319,7 @@ sub check_depends_syntax {
 				&perror("FATAL", $file, -1, "do not depend on any apache ".
 					"port in *_DEPENDS directly.  ".
 					"Instead use USE_APACHE=VERSION, where VERSION can be ".
-					"found in \${PORTSDIR}/Mk/bsd.apache.mk.");
+					"found in \${PORTSDIR}/Mk/Uses/apache.mk.");
 			}
 
 			# Check for over-specific shared library dependencies
