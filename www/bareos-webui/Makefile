@@ -2,7 +2,7 @@
 
 PORTNAME=       bareos
 DISTVERSIONPREFIX=      Release/
-DISTVERSION=    19.2.9
+DISTVERSION=    20.0.0
 CATEGORIES?=    www sysutils
 PKGNAMESUFFIX= -webui
 
@@ -14,36 +14,29 @@ LICENSE_FILE=	${WRKSRC}/webui/LICENSE
 
 USE_GITHUB=	yes
 
-USES=		php
+USES=		php:build cmake gettext
 USE_PHP=	openssl gettext ctype hash json session iconv
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+CMAKE_SOURCE_PATH=	${WRKSRC}/webui
+CMAKE_INSTALL_PREFIX=	${STAGEDIR}
+CMAKE_ARGS+=	-DSHARE_INSTALL_PREFIX:PATH=${PREFIX}/www \
+		-DCMAKE_INSTALL_FULL_SYSCONFDIR:PATH=${PREFIX}/etc \
+		-Dsysconfdir=${PREFIX}/etc \
+		-Dwebuiconfdir=${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
+
 SUB_FILES=	pkg-message
 PLIST_SUB+=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-SUB_LIST=	BAREOSWEBUIDIR=${WWWDIR}
 
-OPTIONS_DEFINE=		MYSQL PGSQL ZENDFRAMEWORK
+OPTIONS_DEFINE=		MYSQL PGSQL
 OPTIONS_DEFAULT=	PGSQL
-ZENDFRAMEWORK_DESC=	Install zend framework
 
 MYSQL_USE=		PHP=pdo_mysql
 PGSQL_USE=		PHP=pdo_pgsql
-ZENDFRAMEWORK_RUN_DEPENDS=	${LOCALBASE}/share/ZendFramework/bin/classmap_generator.php:www/zend-framework
 
 post-extract:
-	${RM} ${WRKSRC}/webui/config/autoload/.gitignore
-	${RM} ${WRKSRC}/webui/data/cache/.gitignore
-	${RM} ${WRKSRC}/webui/vendor/.gitignore
-	${MV} ${WRKSRC}/webui/version.php.in ${WRKSRC}/webui/version.php
-	${MV} ${WRKSRC}/webui/config/autoload/global.php.in ${WRKSRC}/webui/config/autoload/global.php
-	${MV} ${WRKSRC}/webui/module/Application/view/layout/layout.phtml.in ${WRKSRC}/webui/module/Application/view/layout/layout.phtml
-	${MV} ${WRKSRC}/webui/module/Application/view/layout/login.phtml.in ${WRKSRC}/webui/module/Application/view/layout/login.phtml
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/|${LOCALBASE}/etc/|g' -e 's|@WEBUICONFDIR@|${ETCDIR}|g' -e \
-		's|@dirport@|9101|g' ${WRKSRC}/webui/config/autoload/global.php
-	@${REINPLACE_CMD} -e 's|@BAREOS_FULL_VERSION@|${PORTVERSION}|g' ${WRKSRC}/webui/version.php
+	${FIND} ${WRKSRC}/webui -name .gitignore -delete
 
 do-install:
 	@${ECHO} "Installing in ${WWWDIR}"
@@ -55,10 +48,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/webui/*.php ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/webui/composer* ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/webui/phpunit.xml ${STAGEDIR}${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/webui/install/directors.ini.in ${STAGEDIR}${ETCDIR}/directors.ini
-	${INSTALL_DATA} ${WRKSRC}/webui/install/configuration.ini.in ${STAGEDIR}${ETCDIR}/configuration.ini
+	${INSTALL_DATA} ${WRKSRC}/webui/install/directors.ini ${STAGEDIR}${ETCDIR}/directors.ini
+	${INSTALL_DATA} ${WRKSRC}/webui/install/configuration.ini ${STAGEDIR}${ETCDIR}/configuration.ini
 	${INSTALL_DATA} ${WRKSRC}/webui/install/bareos/bareos-dir.d/console/admin.conf.example ${STAGEDIR}${ETCDIR}/bareos-dir.d/console/admin.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/webui/install/bareos/bareos-dir.d/profile/webui-admin.conf ${STAGEDIR}${ETCDIR}/bareos-dir.d/profile/webui-admin.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/webui/install/bareos/bareos-dir.d/profile/webui-limited.conf.example ${STAGEDIR}${ETCDIR}/bareos-dir.d/profile/webui-limited.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/webui/install/bareos/bareos-dir.d/profile/webui-readonly.conf ${STAGEDIR}${ETCDIR}/bareos-dir.d/profile/webui-readonly.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/webui/install/apache/bareos-webui.conf ${STAGEDIR}${ETCDIR}/apache-bareos-webui.conf
 	${INSTALL_DATA} ${WRKSRC}/webui/install/nginx/bareos-webui.conf ${STAGEDIR}${ETCDIR}/nginx-bareos-webui.conf
 

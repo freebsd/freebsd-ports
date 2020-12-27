@@ -3,14 +3,16 @@
 %%ETCDIR%%/apache-bareos-webui.conf
 @sample(,www,640) %%ETCDIR%%/bareos-dir.d/console/admin.conf.sample
 @sample(,www,640) %%ETCDIR%%/bareos-dir.d/profile/webui-admin.conf.sample
-%%ETCDIR%%/configuration.ini
-%%ETCDIR%%/directors.ini
+@sample(,www,640) %%ETCDIR%%/bareos-dir.d/profile/webui-limited.conf.sample
+@sample(,www,640) %%ETCDIR%%/bareos-dir.d/profile/webui-readonly.conf.sample
+@(,www,640) %%ETCDIR%%/configuration.ini
+@(,www,640) %%ETCDIR%%/directors.ini
 %%ETCDIR%%/nginx-bareos-webui.conf
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/config/application.config.php
 %%WWWDIR%%/config/autoload/README.md
 %%WWWDIR%%/config/autoload/global.php
-%%WWWDIR%%/config/autoload/global.php.bak
+%%WWWDIR%%/config/autoload/global.php.in
 %%WWWDIR%%/init_autoloader.php
 %%WWWDIR%%/module/Application/Module.php
 %%WWWDIR%%/module/Application/autoload_classmap.php
@@ -45,6 +47,8 @@
 %%WWWDIR%%/module/Application/language/sk_SK.po
 %%WWWDIR%%/module/Application/language/tr_TR.mo
 %%WWWDIR%%/module/Application/language/tr_TR.po
+%%WWWDIR%%/module/Application/language/uk_UA.mo
+%%WWWDIR%%/module/Application/language/uk_UA.po
 %%WWWDIR%%/module/Application/language/webui.pot
 %%WWWDIR%%/module/Application/src/Application/Controller/IndexController.php
 %%WWWDIR%%/module/Application/src/Application/Controller/Plugin/CommandACLPlugin.php
@@ -60,7 +64,9 @@
 %%WWWDIR%%/module/Application/view/layout/install.phtml
 %%WWWDIR%%/module/Application/view/layout/json.phtml
 %%WWWDIR%%/module/Application/view/layout/layout.phtml
+%%WWWDIR%%/module/Application/view/layout/layout.phtml.in
 %%WWWDIR%%/module/Application/view/layout/login.phtml
+%%WWWDIR%%/module/Application/view/layout/login.phtml.in
 %%WWWDIR%%/module/Application/view/partial/breadcrumb.phtml
 %%WWWDIR%%/module/Application/view/partial/paginator.phtml
 %%WWWDIR%%/module/Auth/Module.php
@@ -186,6 +192,10 @@
 %%WWWDIR%%/public/css/bootstrap-select.css
 %%WWWDIR%%/public/css/bootstrap-select.css.map
 %%WWWDIR%%/public/css/bootstrap-select.min.css
+%%WWWDIR%%/public/css/bootstrap-slider.css
+%%WWWDIR%%/public/css/bootstrap-slider.min.css
+%%WWWDIR%%/public/css/bootstrap-table-filter-control.css
+%%WWWDIR%%/public/css/bootstrap-table-filter-control.min.css
 %%WWWDIR%%/public/css/bootstrap-table.css
 %%WWWDIR%%/public/css/bootstrap-table.min.css
 %%WWWDIR%%/public/css/bootstrap-theme.css
@@ -194,6 +204,7 @@
 %%WWWDIR%%/public/css/bootstrap.css
 %%WWWDIR%%/public/css/bootstrap.css.map
 %%WWWDIR%%/public/css/bootstrap.min.css
+%%WWWDIR%%/public/css/bootstrap.min.css.map
 %%WWWDIR%%/public/css/jstree.css
 %%WWWDIR%%/public/css/jstree.min.css
 %%WWWDIR%%/public/css/spinner.gif
@@ -224,8 +235,13 @@
 %%WWWDIR%%/public/js/bootstrap-select.js
 %%WWWDIR%%/public/js/bootstrap-select.js.map
 %%WWWDIR%%/public/js/bootstrap-select.min.js
+%%WWWDIR%%/public/js/bootstrap-slider.js
+%%WWWDIR%%/public/js/bootstrap-slider.min.js
 %%WWWDIR%%/public/js/bootstrap-table-cookie.js
 %%WWWDIR%%/public/js/bootstrap-table-cookie.min.js
+%%WWWDIR%%/public/js/bootstrap-table-filter-control.js
+%%WWWDIR%%/public/js/bootstrap-table-filter-control.min.js
+%%WWWDIR%%/public/js/bootstrap-table-formatter.js
 %%WWWDIR%%/public/js/bootstrap-table-locale-all.js
 %%WWWDIR%%/public/js/bootstrap-table-locale-all.min.js
 %%WWWDIR%%/public/js/bootstrap-table.js
@@ -248,6 +264,7 @@
 %%WWWDIR%%/public/js/jquery.min.map
 %%WWWDIR%%/public/js/jstree.js
 %%WWWDIR%%/public/js/jstree.min.js
+%%WWWDIR%%/public/js/jstreegrid-helper.js
 %%WWWDIR%%/public/js/jstreegrid.js
 %%WWWDIR%%/public/js/locale/cn_CN/LC_MESSAGES/cn_CN.mo
 %%WWWDIR%%/public/js/locale/cn_CN/LC_MESSAGES/cn_CN.po
@@ -275,6 +292,8 @@
 %%WWWDIR%%/public/js/locale/sk_SK/LC_MESSAGES/sk_SK.po
 %%WWWDIR%%/public/js/locale/tr_TR/LC_MESSAGES/tr_TR.mo
 %%WWWDIR%%/public/js/locale/tr_TR/LC_MESSAGES/tr_TR.po
+%%WWWDIR%%/public/js/locale/uk_UA/LC_MESSAGES/uk_UA.mo
+%%WWWDIR%%/public/js/locale/uk_UA/LC_MESSAGES/uk_UA.po
 %%WWWDIR%%/public/js/moment-timezone-with-data.js
 %%WWWDIR%%/public/js/moment-timezone-with-data.min.js
 %%WWWDIR%%/public/js/moment-with-locales.js
