@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymaven-patch
-DISTVERSION=	0.2.9
+DISTVERSION=	0.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,6 @@ USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -rs -v
 
 .include <bsd.port.mk>
