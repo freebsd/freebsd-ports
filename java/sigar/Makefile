@@ -26,6 +26,7 @@ GH_TAGNAME=	b5af695
 USES=		perl5
 USE_PERL5=	build
 USE_JAVA=	yes
+JAVA_VERSION=	8
 JAVA_RUN=	yes
 USE_GCC=	any
 NO_CCACHE=	yes
