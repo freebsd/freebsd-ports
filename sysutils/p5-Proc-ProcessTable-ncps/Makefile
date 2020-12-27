@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	Proc-ProcessTable-ncps
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Searches the process table and displays the results
+
+LICENSE=	ART20
 
 BUILD_DEPENDS=	p5-Data-Unixish>=1.57:devel/p5-Data-Unixish \
 		p5-Proc-ProcessTable-InfoString>0:sysutils/p5-Proc-ProcessTable-InfoString \
