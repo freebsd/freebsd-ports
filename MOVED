@@ -15802,3 +15802,4 @@ devel/vulkan-vulkan-validation-layers|graphics/vulkan-vulkan-validation-layers|2
 devel/glslang|graphics/glslang|2020-12-23|Moved to a better category, aligning with shaderc
 devel/spirv-tools|graphics/spirv-tools|2020-12-25|Moved to a better category, aligning with glslang and shaderc
 sysutils/basu|devel/basu|2020-12-25|Moved to a better category, aligning with dbus
+audio/modplugplay|audio/modplug-tools|2020-12-27|Moved to GitHub under a different name
