@@ -13,6 +13,7 @@ COMMENT=	Java library for accessing and manipulating XML documents
 RUN_DEPENDS=	${JAVALIBDIR}/jaxen-jdom.jar:java/jaxen
 
 USE_JAVA=	yes
+JAVA_VERSION=	8
 USE_ANT=	yes
 ALL_TARGET=	package
 
