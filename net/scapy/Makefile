@@ -17,6 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libdnet>0:net/py-libdnet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pypcap>0:net/py-pypcap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR}
 
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
@@ -35,6 +36,7 @@ SOX_DESC=	Support for VoIP
 
 GRAPH_RUN_DEPENDS=	${LOCALBASE}/bin/MagickCore-config:graphics/ImageMagick6 \
 			${LOCALBASE}/bin/dot:graphics/graphviz
+IPYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR}
 NMAP_RUN_DEPENDS=	${LOCALBASE}/share/nmap/nmap-os-db:security/nmap
 MANUF_RUN_DEPENDS=	${LOCALBASE}/share/wireshark/manuf:net/wireshark
 MATPLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
@@ -43,24 +45,6 @@ PYCRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${P
 PYX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyx>0:graphics/py-pyx@${PY_FLAVOR}
 QUESO_BASE_RUN_DEPENDS=	${LOCALBASE}/etc/queso.conf.sample:net/queso
 SOX_RUN_DEPENDS=	${LOCALBASE}/bin/sox:audio/sox
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYX}
-USES+=		python:3.4+
-.else
-USES+=		python
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MIPYTHON}
-.if ${FLAVOR:Mpy27}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipython5>0:devel/ipython5@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR}
-.endif
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} "s,share/man/man1,man/man1," ${WRKSRC}/setup.py
@@ -72,4 +56,4 @@ post-patch:
 	@${REINPLACE_CMD} 's|"use" in line|"use" in line or "nhop" in line|' \
 		${WRKSRC}/scapy/arch/unix.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
