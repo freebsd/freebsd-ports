@@ -62,6 +62,9 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 # Require newer Clang than what's in base system unless user opted out
 # or the base system is new enough.
 .if ${CHOSEN_COMPILER_TYPE} == gcc
+CONFIGURE_ENV+=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT} \
+		LLVM_OBJDUMP=llvm-objdump${LLVM_DEFAULT}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/llvm-objdump${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 USE_GCC=	yes
 .elif ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so) && \
 	${COMPILER_VERSION} < 80
