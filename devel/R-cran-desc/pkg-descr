@@ -1,0 +1,4 @@
+Tools to read, write, create, and manipulate DESCRIPTION files. It is intended
+for packages that create or manipulate other packages.
+
+WWW: https://github.com/r-lib/desc#readme
