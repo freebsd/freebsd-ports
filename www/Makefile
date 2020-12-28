@@ -165,6 +165,7 @@
     SUBDIR += firefox-esr
     SUBDIR += flashplayer
     SUBDIR += flat-frog
+    SUBDIR += flexget
     SUBDIR += flickcurl
     SUBDIR += fnord
     SUBDIR += formication
@@ -1616,7 +1617,6 @@
     SUBDIR += py-flask-sockets
     SUBDIR += py-flask-uploads
     SUBDIR += py-flask-wtf
-    SUBDIR += py-flexget
     SUBDIR += py-flup6
     SUBDIR += py-folium
     SUBDIR += py-forcediphttpsadapter
@@ -2128,6 +2128,7 @@
     SUBDIR += serendipity
     SUBDIR += serf
     SUBDIR += servlet-api
+    SUBDIR += servo
     SUBDIR += sfeed
     SUBDIR += sfnt2woff
     SUBDIR += shellinabox

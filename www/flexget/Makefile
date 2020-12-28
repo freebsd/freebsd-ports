@@ -1,15 +1,12 @@
-# Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	flexget
 DISTVERSIONPREFIX=	v
 PORTVERSION=	3.1.80
-PORTEPOCH=	1
-CATEGORIES=	www python
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+CATEGORIES=	www
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Program to automate downloading from different sources
+COMMENT=	Multipurpose automation tool for all of your media
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -48,12 +45,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.3:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vcrpy>0:devel/py-vcrpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR}
 
-USE_GITHUB=	yes
-GH_PROJECT=	Flexget
-
-NO_ARCH=	yes
 USES=		python:3.6+
+USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
+GH_PROJECT=	Flexget
+NO_ARCH=	yes
 
 post-extract:
 # Unlock dependencies' versions

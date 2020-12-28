@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20201228:
+  AFFECTS: www/py-flexget
+  AUTHOR: jbeich@FreeBSD.org
+
+  py-flexget (or py37-flexget) has been renamed to flexget.
+  "pkg upgrade" doesn't track MOVED file unlike portmaster, so
+  provide a hint e.g.,
+
+    $ pkg upgrade -x flexget
+
+  or install again, letting pkg remove the old version
+
+    $ pkg install flexget
+
 20201218:
   AFFECTS: users of www/qt5-webengine
   AUTHOR: kai@FreeBSD.org
