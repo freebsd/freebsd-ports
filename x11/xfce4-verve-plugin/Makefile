@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	verve-plugin
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 PKGNAMEPREFIX=	xfce4-
