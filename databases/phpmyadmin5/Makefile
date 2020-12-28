@@ -35,7 +35,7 @@ USE_PHP=	ctype filter hash json mysqli session spl xml xmlwriter
 # want this, either turn off GD in the config dialog, or else turn off
 # FONTCONFIG in the graphics/gd port options.
 
-OPTIONS_DEFINE=		BZ2 CURL GD GMP MBSTRING OPCACHE OPENSSL PDF \
+OPTIONS_DEFINE=		BZ2 CURL GD GMP MBSTRING OPCACHE OPENSSL \
 			SODIUM ZIP ZLIB
 OPTIONS_DEFAULT=	BZ2 GD MBSTRING OPENSSL ZIP ZLIB
 
@@ -62,6 +62,10 @@ PLIST_SUB+=	PMA_GRP=${GROUPS}
 SUB_LIST+=	PKGNAME=${PKGNAME}	        \
 		CFG_FILE=${WWWDIR}/${CFG_FILE}
 SUB_FILES+=	pkg-message
+
+.if ${FLAVOR} != php80
+OPTIONS_DEFINE+=	PDF
+.endif
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 
