@@ -3,7 +3,7 @@
 
 PORTNAME=	pushgateway
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	1.3.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	0xdutra@gmail.com
@@ -23,20 +23,21 @@ GH_TUPLE=	\
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:f65c72e2690d:alecthomas_units/vendor/github.com/alecthomas/units \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
-		go-kit:kit:v0.9.0:go_kit_kit/vendor/github.com/go-kit/kit \
-		go-logfmt:logfmt:v0.4.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
-		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:06d7bd2c5f4f:golang_sys/vendor/golang.org/x/sys \
+		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
+		go-kit:kit:v0.10.0:go_kit_kit/vendor/github.com/go-kit/kit \
+		go-logfmt:logfmt:v0.5.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
+		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:f9fddec55a1e:golang_sys/vendor/golang.org/x/sys \
 		julienschmidt:httprouter:v1.3.0:julienschmidt_httprouter/vendor/github.com/julienschmidt/httprouter \
-		kr:logfmt:b84e30acd515:kr_logfmt/vendor/github.com/kr/logfmt \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
-		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
-		prometheus:client_golang:v1.1.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
-		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.7.0:prometheus_common/vendor/github.com/prometheus/common \
-		prometheus:procfs:v0.0.5:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
+		prometheus:client_golang:v1.9.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:common:v0.15.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.2.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		protocolbuffers:protobuf-go:v1.23.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		shurcooL:httpfs:8d4bc4ba7749:shurcool_httpfs/vendor/github.com/shurcooL/httpfs \
-		shurcooL:vfsgen:6a9ea43bcacd:shurcool_vfsgen/vendor/github.com/shurcooL/vfsgen
+		shurcooL:vfsgen:0d455de96546:shurcool_vfsgen/vendor/github.com/shurcooL/vfsgen
 
 USE_RC_SUBR=	pushgateway
 
