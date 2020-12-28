@@ -2,8 +2,7 @@
 #   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 
 PORTNAME=	gnucash
-PORTVERSION=	4.2
-PORTREVISION=	1
+PORTVERSION=	4.3
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -75,7 +74,8 @@ AQBANKING_LIB_DEPENDS=	libgwenhywfar.so:devel/gwenhywfar \
 			libgwengui-gtk3.so:devel/gwenhywfar-gtk3 \
 			libktoblzcheck.so:finance/ktoblzcheck \
 			libaqbanking.so:finance/aqbanking
-AQBANKING_VARS=		GLIB_SCHEMAS+=org.gnucash.dialogs.import.hbci.gschema.xml
+AQBANKING_VARS=		GLIB_SCHEMAS+="org.gnucash.dialogs.import.hbci.gschema.xml \
+			org.gnucash.dialogs.flicker.gschema.xml"
 DATABASE_CMAKE_BOOL=	WITH_SQL
 DATABASE_BUILD_DEPENDS=	libdbi-drivers>=0:databases/libdbi-drivers
 DATABASE_LIB_DEPENDS=	libdbi.so:databases/libdbi
