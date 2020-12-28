@@ -12,7 +12,7 @@ COMMENT=	Create a snowy and Santa-y desktop
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake gnome pkgconfig xorg
+USES=		compiler:c11 gmake gnome pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libxml2
 USE_XORG=	x11 xpm xt xorgproto
 GNU_CONFIGURE=	yes
