@@ -776,6 +776,7 @@
     SUBDIR += sratom
     SUBDIR += stegosaurus-lv2
     SUBDIR += stk
+    SUBDIR += stmp
     SUBDIR += stone-phaser-lv2
     SUBDIR += strawberry
     SUBDIR += streamripper
