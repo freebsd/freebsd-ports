@@ -25,6 +25,7 @@
     SUBDIR += R-cran-ggrepel
     SUBDIR += R-cran-gridBase
     SUBDIR += R-cran-gridExtra
+    SUBDIR += R-cran-jpeg
     SUBDIR += R-cran-munsell
     SUBDIR += R-cran-pROC
     SUBDIR += R-cran-pixmap
