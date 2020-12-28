@@ -24,7 +24,7 @@ OPTIONS_DEFAULT=DRM WAYLAND X11
 OPTIONS_EXCLUDE=DRM # not supported yet
 OPTIONS_SUB=	yes
 
-DRM_DESC=		Windowless KMS/DRM support via GBM
+DRM_DESC=		KMS console support
 DRM_LIB_DEPENDS=	libdrm.so:graphics/libdrm
 DRM_USES=		gl
 DRM_USE=		GL=gbm
