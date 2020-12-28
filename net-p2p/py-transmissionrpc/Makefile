@@ -16,6 +16,9 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
+DEPRECATED=	Unmaintained and dead upstream, use net-p2p/py-transmission-rpc instead
+EXPIRATION_DATE=2021-01-31
+
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
