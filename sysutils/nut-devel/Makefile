@@ -17,12 +17,9 @@ GH_ACCOUNT=     networkupstools
 GH_TAGNAME=     503f6eae
 NUT_COMMIT_DATE=	2020.11.30
 
-BROKEN_powerpc64=	Poudriere builds fail.
-BROKEN_powerpc=		Poudriere builds fail.
-
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		autoreconf:build gmake libtool pkgconfig python:build
+USES=		autoreconf:build compiler:c11 gmake libtool pkgconfig python:build
 
 NUT_USER?=	uucp
 NUT_GROUP?=	uucp
