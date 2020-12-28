@@ -278,7 +278,6 @@ include/folly/experimental/coro/CurrentExecutor.h
 include/folly/experimental/coro/Dematerialize-inl.h
 include/folly/experimental/coro/Dematerialize.h
 include/folly/experimental/coro/DetachOnCancel.h
-include/folly/experimental/coro/Error.h
 include/folly/experimental/coro/Filter-inl.h
 include/folly/experimental/coro/Filter.h
 include/folly/experimental/coro/FutureUtil.h
@@ -293,6 +292,7 @@ include/folly/experimental/coro/Merge.h
 include/folly/experimental/coro/Multiplex-inl.h
 include/folly/experimental/coro/Multiplex.h
 include/folly/experimental/coro/Mutex.h
+include/folly/experimental/coro/Result.h
 include/folly/experimental/coro/Retry.h
 include/folly/experimental/coro/SharedLock.h
 include/folly/experimental/coro/SharedMutex.h
