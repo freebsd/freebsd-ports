@@ -13,7 +13,7 @@ COMMENT=	Set of flexible objects for representing UFO data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-USES=		python zip
+USES=		python:3.6+ zip
 USE_PYTHON=	autoplist distutils
 USE_LOCALE=	en_US.UTF-8
 

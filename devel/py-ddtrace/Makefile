@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PY_ENUM34} \
 		${PYTHON_PKGNAMEPREFIX}tenacity>=5:devel/py-tenacity@${PY_FLAVOR} \
 		${PY_TYPING}
 
-USES=		compiler:c11 python
+USES=		compiler:c11 python:3.6+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 OPTIONS_DEFINE=	OPENTRACING

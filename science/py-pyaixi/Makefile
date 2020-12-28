@@ -15,7 +15,7 @@ COMMENT=	Implementation of the MC-AIXI-CTW AI algorithm
 LICENSE=	CC-BY-SA-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		dos2unix python
+USES=		dos2unix python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cligj>=0.4:devel/py-cligj@${PY_FLAVOR} \
 		${PY_ENUM34}
 LIB_DEPENDS+=	libgdal.so:graphics/gdal
 
-USES=		compiler:c++11-lang python
+USES=		compiler:c++11-lang python:3.6+
 USE_PYTHON=	autoplist distutils cython
 
 post-install:

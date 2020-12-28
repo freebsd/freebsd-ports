@@ -12,7 +12,7 @@ COMMENT=		Asynchronous logging for python and asyncio
 
 LICENSE=		MIT
 
-USES=			python
+USES=			python:3.6+
 USE_PYTHON=		autoplist concurrent distutils
 
 NO_ARCH=		yes

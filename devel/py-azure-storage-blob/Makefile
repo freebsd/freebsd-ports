@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-common>=1.1.5:www/py-azure-common@${PY
 		${PYTHON_PKGNAMEPREFIX}azure-storage-common>=2.1:devel/py-azure-storage-common@${PY_FLAVOR} \
 		${PY_FUTURES}
 
-USES=		azurepy python
+USES=		azurepy python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

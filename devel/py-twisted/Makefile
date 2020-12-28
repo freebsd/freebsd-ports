@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=19.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=4.4.2:devel/py-zope.interface@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}service_identity>0:security/py-service_identity@${PY_FLAVOR}
 
-USES=		python tar:bzip2
+USES=		python:3.6+ tar:bzip2
 USE_PYTHON=	autoplist concurrent distutils
 
 OPTIONS_DEFINE=	CONCH HTTP2 SERIAL TLS

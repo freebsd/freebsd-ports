@@ -13,7 +13,7 @@ COMMENT=	Python interface to Amazon Web Services
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

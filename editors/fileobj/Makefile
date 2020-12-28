@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GH_ACCOUNT=	kusumi
 USE_GITHUB=	yes
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils concurrent optsuffix
 
 PLIST_FILES=	man/man1/fileobj.1.gz

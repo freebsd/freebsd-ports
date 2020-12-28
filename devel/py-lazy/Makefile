@@ -13,7 +13,7 @@ COMMENT=	Lazy attributes for Python objects
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python zip
+USES=		python:3.6+ zip
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

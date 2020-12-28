@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PY_FUTURES} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.3:devel/py-pytest@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 TEST_ENV=	${MAKE_ENV} TZ=UTC
 

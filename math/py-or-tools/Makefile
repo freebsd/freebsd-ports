@@ -31,7 +31,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libprotobuf.so:devel/protobuf
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		blaslapack cmake compiler:c++11-lang pkgconfig python
+USES=		blaslapack cmake compiler:c++11-lang pkgconfig python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 USE_PYTHON=	flavors

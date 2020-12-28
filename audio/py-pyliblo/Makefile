@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblo.so:audio/liblo
 
-USES=		localbase python
+USES=		localbase python:3.6+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 post-install:

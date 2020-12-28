@@ -11,7 +11,7 @@ COMMENT=	API for Xena Hub to access genetic information shared through the hub
 
 LICENSE=	APACHE20
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

@@ -13,7 +13,7 @@ COMMENT=	MessagePack (de)serializer for Python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 .include <bsd.port.pre.mk>

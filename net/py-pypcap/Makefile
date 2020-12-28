@@ -12,7 +12,7 @@ COMMENT=	Simplified object-oriented Python wrapper for libpcap
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist cython distutils
 
 # Add workaround to avoid using /usr/lib32 over /usr/lib

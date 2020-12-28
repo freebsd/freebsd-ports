@@ -12,7 +12,7 @@ COMMENT=	Convert amongst many different IPv4 notations
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils flavors
 
 .include <bsd.port.mk>

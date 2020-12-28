@@ -3,6 +3,7 @@
 
 PORTNAME=	django_compressor
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,20 +18,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-appconf>=1.0.2:www/py-django-appconf@
 		${PYTHON_PKGNAMEPREFIX}rcssmin>=1.0.6:archivers/py-rcssmin@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rjsmin>=1.1.0:archivers/py-rjsmin@${PY_FLAVOR}
 
-USES=		python${PY_SLIMIT}
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=		BEAUTIFULSOUP LXML HTML5LIB SLIMIT
+OPTIONS_DEFINE=		BEAUTIFULSOUP LXML HTML5LIB
 BEAUTIFULSOUP_DESC=	Enable BeautifulSoupParser
 LXML_DESC=		Enable LxmlParser
 HTML5LIB_DESC=		Enable Html5LibParser
-SLIMIT_DESC=		Enable SlimIt JavaScript filter
 
 BEAUTIFULSOUP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4:www/py-beautifulsoup@${PY_FLAVOR}
 LXML_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 HTML5LIB_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR}
-SLIMIT_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}slimit>=0.8.1:www/py-slimit@${PY_FLAVOR}
-SLIMIT_VARS=	PY_SLIMIT=:2.7
 
 .include <bsd.port.mk>

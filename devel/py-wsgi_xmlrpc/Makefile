@@ -14,7 +14,7 @@ COMMENT=	WSGI application for a simple XMLRPC method dispatching
 
 LICENSE=	APACHE20
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

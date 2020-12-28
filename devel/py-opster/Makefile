@@ -12,7 +12,7 @@ COMMENT=	Command line parsing speedster
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

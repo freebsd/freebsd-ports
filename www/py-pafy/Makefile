@@ -17,7 +17,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	youtube_dl>=2016.02.22:www/youtube_dl
 RUN_DEPENDS=	youtube_dl>=2016.02.22:www/youtube_dl
 
-USES=	python
+USES=	python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-patch:

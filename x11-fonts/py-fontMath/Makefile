@@ -13,7 +13,7 @@ COMMENT=	Set of objects for performing math operations on font data
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-USES=		python zip
+USES=		python:3.6+ zip
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

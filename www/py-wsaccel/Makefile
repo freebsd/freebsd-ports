@@ -12,7 +12,7 @@ COMMENT=	WebSocket Accelerator for ws4py and AutobahnPython
 
 LICENSE=	APACHE20
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 post-install:

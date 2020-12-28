@@ -18,7 +18,7 @@ BUILD_DEPENDS=	swig>=2.0.4:devel/swig
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>=0:devel/py-parameterized@${PY_FLAVOR} \
 		${PY_TYPING}
 
-USES=		python ssl
+USES=		python:3.6+ ssl
 USE_PYTHON=	autoplist concurrent distutils
 
 PYDISTUTILS_BUILDARGS=	build_ext --openssl=${OPENSSLBASE} --swig=${LOCALBASE}/bin/swig

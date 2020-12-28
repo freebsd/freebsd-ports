@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PY_PYGMENTS}
 
-USES=		python
+USES=		python:3.6+
 USE_GITHUB=	yes # tests not in sdist
 USE_PYTHON=	autoplist distutils
 

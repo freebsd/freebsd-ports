@@ -15,7 +15,7 @@ LICENSE=	ZLIB
 
 BUILD_DEPENDS=	sqlite3>=${PORTVERSION:R},1:databases/sqlite3
 
-USES=		localbase python sqlite:3 zip
+USES=		localbase python:3.6+ sqlite:3 zip
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

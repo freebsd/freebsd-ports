@@ -17,7 +17,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/COPYING-MIT
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		python ssl
+USES=		python:3.6+ ssl
 USE_PYTHON=	autoplist concurrent distutils
 
 PORTDOCS=	AUTHORS INSTALL.rst README.rst RELEASE-NOTES.rst

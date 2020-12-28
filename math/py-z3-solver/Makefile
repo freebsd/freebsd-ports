@@ -16,7 +16,7 @@ BROKEN_i386=	can't create dynamic relocation R_386_32 against symbol: .L.str in 
 
 # CAVEAT: There should have LIB_DEPENDS=libz3.so:math/z3, but currently it rebuilds all code, see https://github.com/Z3Prover/z3/issues/1767
 
-USES=		compiler:c++11-lang python
+USES=		compiler:c++11-lang python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Z3Prover
 GH_PROJECT=	z3

@@ -13,7 +13,7 @@ COMMENT=	Pure-Python memory-efficient packed representation for bit arrays
 
 LICENSE=	PSFL
 
-USES=		python
+USES=		python:3.6+
 
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_PKGNAME=	BitVector

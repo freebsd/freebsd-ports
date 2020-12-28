@@ -12,7 +12,7 @@ COMMENT=	Pure-Python asynchronous I/O using coroutines
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

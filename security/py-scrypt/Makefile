@@ -12,7 +12,7 @@ COMMENT=	Bindings for the scrypt key derivation function library
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python ssl
+USES=		python:3.6+ ssl
 USE_PYTHON=	autoplist distutils
 
 post-install:

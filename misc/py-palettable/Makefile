@@ -12,7 +12,7 @@ COMMENT=	Library of color palettes for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

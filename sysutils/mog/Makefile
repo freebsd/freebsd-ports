@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PY_PYGMENTS} \
 		${PYTHON_PKGNAMEPREFIX}mdv>0:devel/py-mdv@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		python
+USES=		python:3.6+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils concurrent optsuffix
 NO_ARCH=	yes

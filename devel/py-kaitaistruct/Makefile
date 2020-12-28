@@ -12,7 +12,7 @@ COMMENT=	Kaitai Struct declarative parser generator for binary data
 
 LICENSE=	MIT
 
-USES?=		python
+USES?=		python:3.6+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

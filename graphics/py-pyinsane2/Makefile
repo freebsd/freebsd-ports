@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.0:devel/py-nose@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_PILLOW}
 
-USES=		gmake python
+USES=		gmake python:3.6+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

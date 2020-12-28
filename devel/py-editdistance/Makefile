@@ -13,7 +13,7 @@ COMMENT=	Fast implementation of the edit distance (Levenshtein distance)
 LICENSE=	MIT
 
 USE_PYTHON=	autoplist concurrent distutils
-USES=		python
+USES=		python:3.6+
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/editdistance/bycython*.so

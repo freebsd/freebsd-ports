@@ -12,7 +12,7 @@ COMMENT=	Fast javascript minifier for Python
 
 LICENSE=	APACHE20
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

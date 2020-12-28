@@ -8,7 +8,7 @@ COMMENT=	Python module for libdnet
 
 LIB_DEPENDS=	libdnet.so:net/libdnet
 
-USES=		autoreconf libtool python
+USES=		autoreconf libtool python:3.6+
 
 MASTERDIR=	${.CURDIR}/../libdnet
 INSTALL_WRKSRC=	${WRKSRC}/python

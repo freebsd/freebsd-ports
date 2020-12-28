@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-LGPL-3.0-only.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}isbnlib>=3.10.1<3.11.0:textproc/py-isbnlib@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

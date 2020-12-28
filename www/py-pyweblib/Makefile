@@ -12,7 +12,7 @@ COMMENT=	Yet another web programming framework for Python
 
 LICENSE=	GPLv2
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	pyweblib.forms.html pyweblib.helper.html \

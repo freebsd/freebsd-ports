@@ -21,7 +21,7 @@ GSSAPI_BASE_USES=		gssapi
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
 GSSAPI_MIT_USES=		gssapi:mit
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 GSSAPI_BASE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_kerberosbasic.h \

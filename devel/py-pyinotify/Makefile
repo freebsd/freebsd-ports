@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils py3kplist
 
 NO_ARCH=	YES

@@ -12,7 +12,7 @@ COMMENT=	Micro library for performing multi queries in elasticsearch
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

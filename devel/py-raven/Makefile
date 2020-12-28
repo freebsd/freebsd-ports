@@ -12,7 +12,7 @@ COMMENT=	Client for Sentry
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python
+USES=		python:3.6+
 # either CHEESESHOP or github, whatever is newer
 USE_GITHUB=	yes
 GH_ACCOUNT=	getsentry

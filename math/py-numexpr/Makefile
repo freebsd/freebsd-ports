@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		dos2unix python
+USES=		dos2unix python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

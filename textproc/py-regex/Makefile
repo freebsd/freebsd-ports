@@ -11,7 +11,7 @@ COMMENT=	Alternative regular expression module, to replace re
 
 LICENSE=	PSFL
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 post-install:

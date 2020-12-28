@@ -12,7 +12,7 @@ COMMENT=	Cython bindings for MurmurHash2
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils cython autoplist
 
 post-install:

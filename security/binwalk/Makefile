@@ -11,7 +11,7 @@ COMMENT=	Search binary images for embedded files and executable code
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	devttys0
 USE_PYTHON=	autoplist distutils optsuffix concurrent

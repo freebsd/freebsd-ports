@@ -13,7 +13,7 @@ COMMENT=	Python Extension that Wraps the GMP Library
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		python zip
+USES=		python:3.6+ zip
 USE_PYTHON=	distutils autoplist
 
 post-extract:

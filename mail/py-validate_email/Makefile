@@ -17,7 +17,7 @@ MY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dns>0:dns/py-dns@${PY_FLAVOR}
 
 RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

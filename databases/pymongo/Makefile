@@ -12,7 +12,7 @@ COMMENT=	Python driver for MongoDB
 
 LICENSE=	APACHE20
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	py[0-9][0-9]-pymongo28

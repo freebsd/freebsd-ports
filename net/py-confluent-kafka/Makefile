@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PY_ENUM34} \
 		${PY_FUTURES}
 py27_RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
-USES=		localbase python
+USES=		localbase python:3.6+
 USE_PYTHON=	autoplist distutils
 
 post-install:

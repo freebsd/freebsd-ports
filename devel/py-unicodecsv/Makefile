@@ -12,7 +12,7 @@ COMMENT=	Drop-in replacement for Python 2 csv module with Unicode support
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

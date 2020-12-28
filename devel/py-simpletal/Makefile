@@ -15,7 +15,7 @@ COMMENT=	Stand alone TAL Python implementation to power HTML & XML templates
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

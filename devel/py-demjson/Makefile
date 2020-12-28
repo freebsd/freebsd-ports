@@ -15,7 +15,7 @@ COMMENT=	Encoder, Decoder and Lint/Validator for JSON
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python shebangfix
+USES=		python:3.6+ shebangfix
 SHEBANG_FILES=	jsonlint
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes

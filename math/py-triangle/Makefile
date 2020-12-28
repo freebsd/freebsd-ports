@@ -12,7 +12,7 @@ COMMENT=	Python interface to triangle
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lang python
+USES=		compiler:c++11-lang python:3.6+
 
 USE_PYTHON=	distutils autoplist
 

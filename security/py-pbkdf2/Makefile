@@ -12,7 +12,7 @@ COMMENT=	PKCS5 v2.0 PBKDF2 Module
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

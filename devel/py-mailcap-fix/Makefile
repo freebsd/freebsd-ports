@@ -12,7 +12,7 @@ COMMENT=	Mailcap module that correctly handles windcard entries
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
-USES=		python
+USES=		python:3.6+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	michael-lazar

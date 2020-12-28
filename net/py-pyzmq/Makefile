@@ -18,7 +18,7 @@ LICENSE_FILE_LGPL3=		${WRKSRC}/COPYING.LESSER
 LIB_DEPENDS=	libzmq.so:net/libzmq4
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 PYDISTUTILS_CONFIGUREARGS=	--zmq=${LOCALBASE}

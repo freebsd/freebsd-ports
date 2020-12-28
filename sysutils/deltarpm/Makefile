@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	librpm.so:archivers/rpm4
 
-USES=		gmake python shebangfix tar:bz2
+USES=		gmake python:3.6+ shebangfix tar:bz2
 USE_PYTHON=	flavors optsuffix
 SHEBANG_FILES=	drpmsync
 

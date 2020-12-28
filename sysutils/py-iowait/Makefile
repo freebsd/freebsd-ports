@@ -12,7 +12,7 @@ COMMENT=	Python module for I/O completion events
 
 LICENSE=	GPLv3
 
-USES=	python
+USES=	python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ LICENSE=	ISCL
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}fusefs # fuse.py
 
 NO_ARCH=	yes
-USES=		fuse python
+USES=		fuse python:3.6+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

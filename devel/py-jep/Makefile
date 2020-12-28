@@ -13,7 +13,7 @@ COMMENT=	Java Embedded Python
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}

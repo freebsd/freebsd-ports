@@ -13,7 +13,7 @@ COMMENT=	Python library for accessing Chromium CodeSearch
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 USE_GITHUB=	yes

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
 
-USES=		gnome python
+USES=		gnome python:3.6+
 USE_GNOME=	pygobject3
 USE_PYTHON=	autoplist distutils
 

@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=1.9.1:net/py-urllib3@${PY_FLAVOR}
 
-USES=		dos2unix python
+USES=		dos2unix python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

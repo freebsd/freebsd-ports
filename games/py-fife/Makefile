@@ -55,7 +55,7 @@ CEGUI_LIB_DEPENDS=	libCEGUIBase-0.so:graphics/cegui
 LOGGING_CMAKE_BOOL=	logging
 
 PYTHON_CMAKE_BOOL=	build-python
-PYTHON_USES=		python
+PYTHON_USES=		python:3.6+
 PYTHON_USE=		python=flavors
 PYTHON_BUILD_DEPENDS=	${LOCALBASE}/bin/swig:devel/swig
 PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}

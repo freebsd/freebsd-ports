@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	TWISTED
 TWISTED_DESC=	enable running in threads
 
 NO_ARCH=	yes
-USES=		python tar:bzip2
+USES=		python:3.6+ tar:bzip2
 USE_PYTHON=	autoplist distutils
 
 TWISTED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}

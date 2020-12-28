@@ -13,7 +13,7 @@ COMMENT=	Library for wrapping and filling CJK text in Python
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/licenses/COPYING.LESSER
 
-USES=	python
+USES=	python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 

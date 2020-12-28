@@ -12,7 +12,7 @@ COMMENT=	Read and write bzip2-compressed files
 
 LICENSE=	APACHE20
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

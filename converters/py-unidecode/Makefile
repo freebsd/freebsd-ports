@@ -14,7 +14,7 @@ COMMENT=	ASCII transliterations of Unicode text
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist concurrent
 
 NO_ARCH=	yes

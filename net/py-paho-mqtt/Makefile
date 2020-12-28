@@ -12,7 +12,7 @@ COMMENT=	MQTT version 3.1/3.1.1 client class
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/epl-v10
 
-USES=		python shebangfix
+USES=		python:3.6+ shebangfix
 USE_PYTHON=	distutils autoplist
 SHEBANG_FILES=	examples/*.py
 

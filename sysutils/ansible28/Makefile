@@ -14,7 +14,7 @@ CONFLICTS=	ansible-* \
 MASTERDIR=	${.CURDIR}/../ansible
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
-USES=		cpe python
+USES=		cpe python:3.6+
 EXTRA_PATCHES=
 
 .include "${MASTERDIR}/Makefile"

@@ -23,7 +23,7 @@ GH_ACCOUNT=	armooo
 GH_TAGNAME=	108b9f0
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils optsuffix
 USE_RC_SUBR=	${PORTNAME}
 

@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=		mips mips64
 NOT_FOR_ARCHS_REASON=	greenlet needs to be ported to this platform
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 DO_MAKE_TEST=	${PYTHON_CMD}

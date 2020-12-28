@@ -14,7 +14,7 @@ COMMENT=	Compatible and efficient Python compiler
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python tar:bzip2
+USES=		python:3.6+ tar:bzip2
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ OPTIONS_DEFINE=	TKINTER
 OPTIONS_DEFAULT=	TKINTER
 TKINTER_DESC=	Build with tkinter for X support
 
-USES=		dos2unix gl python
+USES=		dos2unix gl python:3.6+
 USE_GL=		glut
 USE_PYTHON=	distutils autoplist
 

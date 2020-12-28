@@ -12,7 +12,7 @@ COMMENT=	Library to read and edit ELF, PE, Mach-O and OAT
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

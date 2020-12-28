@@ -13,7 +13,7 @@ COMMENT=	Python pickling interface for ZODB
 LICENSE=	PSFL ZPL21
 LICENSE_COMB=	multi
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

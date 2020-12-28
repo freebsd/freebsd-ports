@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PY_SPHINX}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	flavors
 NO_BUILD=	yes
 USE_GITHUB=	yes

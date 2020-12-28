@@ -77,7 +77,7 @@ PORT_READLINE_USES=	readline:port
 PORT_ICONV_USES=	iconv:wchar_t
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}
 PYTHON_CONFIGURE_OFF=	--without-python
-PYTHON_USES=		python
+PYTHON_USES=		python:3.6+
 SOURCE_HIGHLIGHT_WITH=	source-highlight
 SOURCE_HIGHLIGHT_LIB_DEPENDS=	\
 	libsource-highlight.so:textproc/source-highlight

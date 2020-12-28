@@ -11,7 +11,7 @@ COMMENT=	Python FTP server library
 
 LICENSE=	MIT
 
-USES=		python shebangfix
+USES=		python:3.6+ shebangfix
 USE_PYTHON=	autoplist distutils
 SHEBANG_FILES=	demo/*.py
 NO_ARCH=	yes

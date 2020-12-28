@@ -13,7 +13,7 @@ COMMENT=	High performance Python adapter for PostgreSQL
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/doc/COPYING.LESSER
 
-USES=		pgsql python
+USES=		pgsql python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

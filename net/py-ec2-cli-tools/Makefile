@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto>=1.0:devel/py-boto@${PY_FLAVOR} \
 		bash:shells/bash
 
 USE_PYTHON=	distutils autoplist
-USES=		python shebangfix
+USES=		python:3.6+ shebangfix
 SHEBANG_FILES=	bin/ec2getsnaps bin/ec2hostcache bin/ec2ssh
 
 .include <bsd.port.mk>

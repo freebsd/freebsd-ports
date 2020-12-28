@@ -10,7 +10,7 @@ COMMENT=	Simple bencode decoder/encoder library in pure Python
 
 LICENSE=	GPLv1
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes

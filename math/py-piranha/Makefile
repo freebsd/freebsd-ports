@@ -21,7 +21,7 @@ LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libmpfr.so:math/mpfr \
 		${PY_BOOST}
 
-USES=		cmake compiler:c++14-lang python
+USES=		cmake compiler:c++14-lang python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	bluescarni
 USE_PYTHON=	flavors

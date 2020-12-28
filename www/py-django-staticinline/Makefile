@@ -12,7 +12,7 @@ COMMENT=	Django template tag to load static files inline with your template
 LICENSE=	MIT
 #LICENSE_FILE=  Not yet packaged in sdist
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

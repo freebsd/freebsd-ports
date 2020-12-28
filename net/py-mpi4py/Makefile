@@ -13,7 +13,7 @@ COMMENT=	Python bindings for MPI
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils cython autoplist concurrent
 
 OPTIONS_DEFINE=		DOCS MANPAGES

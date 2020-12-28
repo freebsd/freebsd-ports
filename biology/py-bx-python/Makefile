@@ -18,7 +18,7 @@ PY_DEPENDS=	${PYNUMPY} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		compiler python
+USES=		compiler python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	bxlab
 USE_PYTHON=	autoplist cython distutils

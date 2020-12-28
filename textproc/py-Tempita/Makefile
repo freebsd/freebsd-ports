@@ -13,7 +13,7 @@ COMMENT=	Small templating language for text substitutions
 LICENSE=	MIT
 #LICENSE_FILE=	No license in PyPI sdist or repository
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

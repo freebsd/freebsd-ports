@@ -14,7 +14,7 @@ LICENSE=	PD ZLIB
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/doc/copying.rst
 
-USES=		openal:al python
+USES=		openal:al python:3.6+
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

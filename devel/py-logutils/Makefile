@@ -12,7 +12,7 @@ COMMENT=	Handlers for the Python standard library logging package
 
 LICENSE=	BSD3CLAUSE
 
-USES=	python
+USES=	python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

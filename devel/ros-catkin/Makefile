@@ -17,7 +17,7 @@ BUILD_DEPENDS=	cmake>=3.15:devel/cmake \
 		${PYTHON_PKGNAMEPREFIX}empy>=1:textproc/py-empy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 
 USE_PYTHON=	autoplist distutils
 

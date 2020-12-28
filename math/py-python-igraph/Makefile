@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libigraph.so:math/igraph \
 		aclocal:devel/automake
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}texttable>=1.6.2:textproc/py-texttable@${PY_FLAVOR}
 
-USES=		bison gnome libtool:build python
+USES=		bison gnome libtool:build python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 USE_GNOME=	libxml2
 

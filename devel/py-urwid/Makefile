@@ -13,7 +13,7 @@ COMMENT=	Curses-based user interface library for Python
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 PORTEXAMPLES=	*

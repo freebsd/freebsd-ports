@@ -14,7 +14,7 @@ COMMENT=	Serial port encapsulation library for Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	concurrent distutils py3kplist pythonprefix
 
 NO_ARCH=	yes

@@ -12,7 +12,7 @@ COMMENT=	Simple PDF generation for Python
 
 LICENSE=	LGPL3
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

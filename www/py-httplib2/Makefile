@@ -11,7 +11,7 @@ COMMENT=	Comprehensive HTTP client library
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils

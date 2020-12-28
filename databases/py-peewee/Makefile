@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 OPTIONS_DEFINE=		SQLITE MYSQL PGSQL
 OPTIONS_DEFAULT=	SQLITE
 
-USES=			localbase python sqlite
+USES=			localbase python:3.6+ sqlite
 USE_PYTHON=		distutils cython autoplist concurrent
 
 SQLITE_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}

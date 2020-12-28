@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++11-lang fortran python # fortran because otherwise "import numpy" fails with wrong libgcc_s.so message
+USES=		compiler:c++11-lang fortran python:3.6+ # fortran because otherwise "import numpy" fails with wrong libgcc_s.so message
 USE_PYTHON=	distutils autoplist
 
 post-patch:

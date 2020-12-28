@@ -15,7 +15,7 @@ COMMENT=	Python Interface to the File Alteration Monitor
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python fam
+USES=		python:3.6+ fam
 USE_PYTHON=	distutils autoplist
 
 pre-patch:

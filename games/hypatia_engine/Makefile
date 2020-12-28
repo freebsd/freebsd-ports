@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYGAME} \
 		${PY_ENUM34} \
 		${PY_PILLOW}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

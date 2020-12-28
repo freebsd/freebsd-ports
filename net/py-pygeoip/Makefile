@@ -13,7 +13,7 @@ COMMENT=	Pure Python GeoIP API
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes

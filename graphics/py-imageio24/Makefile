@@ -24,7 +24,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		${PY_PILLOW} \
 		${PYNUMPY}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes

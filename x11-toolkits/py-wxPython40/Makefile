@@ -20,7 +20,7 @@ LICENSE_PERMS_WXWINDOWS=	dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pathlib2>0:devel/py-pathlib2@${PY_FLAVOR}
 
-USES=		compiler:c++11-lib gl localbase pkgconfig python
+USES=		compiler:c++11-lib gl localbase pkgconfig python:3.6+
 USE_GL=		glu
 USE_WX=		3.0
 USE_PYTHON=	distutils autoplist

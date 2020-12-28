@@ -28,7 +28,7 @@ OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	*
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist concurrent
 
 .include <bsd.port.options.mk>

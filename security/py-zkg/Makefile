@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}GitPython>=2.1.8:devel/py-gitpython@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}semantic-version>=0:devel/py-semantic-version@${PY_FLAVOR} \
 		git:devel/git
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist concurrent
 
 USE_GITHUB=	yes

@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
 
 USE_PYTHON=	autoplist distutils
-USES=		gettext python
+USES=		gettext python:3.6+
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message

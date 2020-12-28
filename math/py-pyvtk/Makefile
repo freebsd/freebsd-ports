@@ -13,7 +13,7 @@ COMMENT=	Tools for manipulating VTK files in Python
 
 LICENSE=	GPLv2
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

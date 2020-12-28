@@ -13,7 +13,7 @@ COMMENT=	CFF subroutinizer for fontTools
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lang python zip
+USES=		compiler:c++11-lang python:3.6+ zip
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>

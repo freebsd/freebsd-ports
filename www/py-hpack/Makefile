@@ -12,7 +12,7 @@ COMMENT=	HTTP/2 header encoding (HPACK) logic implementation
 
 LICENSE=	MIT
 
-USES?=		python
+USES?=		python:3.6+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

@@ -15,7 +15,7 @@ COMMENT=	SMB/CIFS password generation utility for Python
 LICENSE=	GPLv2
 
 # Python3 ready
-USES=		python tar:tgz
+USES=		python:3.6+ tar:tgz
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libscip.so:math/SCIP
 
-USES=		localbase python
+USES=		localbase python:3.6+
 USE_PYTHON=	distutils cython autoplist
 
 post-install:

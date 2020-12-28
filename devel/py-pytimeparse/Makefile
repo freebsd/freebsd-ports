@@ -12,7 +12,7 @@ COMMENT=	Small Python module to parse various kinds of time expressions
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

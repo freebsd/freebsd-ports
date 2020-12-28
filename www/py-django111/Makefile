@@ -5,6 +5,7 @@
 
 PORTNAME=	django
 PORTVERSION=	1.11.29
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION}/
@@ -24,7 +25,7 @@ DEPRECATED=	Django 1.11 is End-of-Life since April 2020. Switch to Django 2.2+ a
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		cpe python${PY_MYSQL} shebangfix
+USES=		cpe python:3.6+ shebangfix
 USE_PYTHON=	autoplist distutils
 SHEBANG_FILES=	django/bin/django-admin.py \
 		django/conf/project_template/manage.py-tpl
@@ -39,7 +40,7 @@ OPTIONS_DEFINE=		DOCS HTMLDOCS
 OPTIONS_DEFAULT=	SQLITE
 
 OPTIONS_GROUP=		DATABASE
-OPTIONS_GROUP_DATABASE=	PGSQL MYSQL SQLITE
+OPTIONS_GROUP_DATABASE=	PGSQL SQLITE
 
 HTMLDOCS_DESC=	Install HTML documentation (requires Sphinx)
 
@@ -48,8 +49,6 @@ PLIST_FILES=	man/man1/django-admin.1.gz
 HTMLDOCS_BUILD_DEPENDS=	${PY_SPHINX}
 HTMLDOCS_IMPLIES=	DOCS
 PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:databases/py-psycopg2@${PY_FLAVOR}
-MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:databases/py-MySQLdb@${PY_FLAVOR}
-MYSQL_VARS=	PY_MYSQL=:2.7
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 post-build-HTMLDOCS-on:

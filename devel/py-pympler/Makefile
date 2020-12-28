@@ -12,7 +12,7 @@ COMMENT=	Measure, monitor and analyze the memory behavior of Python objects
 
 LICENSE=	APACHE20
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 post-patch:

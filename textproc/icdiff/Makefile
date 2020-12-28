@@ -11,7 +11,7 @@ COMMENT=	Improved colored diff
 
 LICENSE=	PSFL
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist concurrent optsuffix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeffkaufman

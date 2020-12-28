@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpoppler.so:graphics/poppler
 
-USES=		compiler:c11 python
+USES=		compiler:c11 python:3.6+
 USE_PYTHON=	autoplist distutils
 
 do-test:

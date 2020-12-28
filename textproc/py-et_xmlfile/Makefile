@@ -12,7 +12,7 @@ COMMENT=	Implementation of lxml.xmlfile for the standard library
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

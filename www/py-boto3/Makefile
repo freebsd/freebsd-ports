@@ -20,7 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 
 # Actually 2.6-2.7,3.3-3.7
-USES=		python
+USES=		python:3.6+
 USE_GITHUB=	yes # tests missing from PyPI sdist
 USE_PYTHON=	autoplist distutils
 

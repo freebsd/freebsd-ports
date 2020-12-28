@@ -19,7 +19,7 @@ GH_ACCOUNT=	fladd
 GH_PROJECT=	py-${PORTNAME}
 GH_TAGNAME=	43554b1a
 
-USES=		dos2unix python:run shebangfix
+USES=		dos2unix python:3.6+,run shebangfix
 USE_PYTHON=	flavors
 SHEBANG_FILES=	fishcrypt.py
 NO_BUILD=	yes

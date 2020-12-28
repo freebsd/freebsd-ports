@@ -11,7 +11,7 @@ COMMENT=	Quick-and-dirty debugging output for tired programmers
 
 LICENSE=	APACHE20
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist concurrent
 
 NO_ARCH=	yes

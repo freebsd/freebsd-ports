@@ -22,7 +22,7 @@ HIREDIS_DESC=	High performance response parser (via hiredis)
 
 HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>0:databases/py-hiredis@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist concurrent
 
 USE_GITHUB=	yes

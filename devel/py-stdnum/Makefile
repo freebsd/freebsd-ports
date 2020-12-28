@@ -13,7 +13,7 @@ COMMENT=	Python module to handle standardized numbers and codes
 LICENSE=	LGPL21
 
 # Python3 ready
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

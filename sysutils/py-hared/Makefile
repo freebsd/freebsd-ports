@@ -12,7 +12,7 @@ COMMENT=	Small Python server for inserting notications into MQTT
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 ETCDIR=		${PREFIX}/etc

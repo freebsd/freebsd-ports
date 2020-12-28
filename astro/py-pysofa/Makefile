@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	${LOCALBASE}/lib/libsofa_c.so:astro/sofa \
 		${PYNUMPY}
 
-USES=		python
+USES=		python:3.6+
 NO_ARCH=	yes
 USE_PYTHON=	distutils autoplist
 

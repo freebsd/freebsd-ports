@@ -12,7 +12,7 @@ COMMENT=	Calculate the geographical distance between 2 points
 
 LICENSE=	UNLICENSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

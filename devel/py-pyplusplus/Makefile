@@ -14,7 +14,7 @@ LICENSE=	BSL
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygccxml>0:textproc/py-pygccxml@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygccxml>0:textproc/py-pygccxml@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

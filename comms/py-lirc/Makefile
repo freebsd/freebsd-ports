@@ -19,7 +19,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pylircmodule.so
 
-USES=			python
+USES=			python:3.6+
 USE_PYTHON=		distutils pythonprefix
 PYDISTUTILS_PKGNAME=	pylirc
 

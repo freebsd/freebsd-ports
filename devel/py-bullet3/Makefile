@@ -11,7 +11,7 @@ COMMENT=	Python version of 3D collision detection library Bullet
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		compiler:c++11-lang gl localbase python
+USES=		compiler:c++11-lang gl localbase python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	bulletphysics
 USE_PYTHON=	autoplist distutils

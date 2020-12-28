@@ -12,7 +12,7 @@ COMMENT=	Create several groups (clusters) of objects from a list in Python
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:3.6+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	exhuma

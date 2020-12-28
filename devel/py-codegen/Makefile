@@ -12,7 +12,7 @@ COMMENT=	Extension to ast that allows ast to python code generation
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

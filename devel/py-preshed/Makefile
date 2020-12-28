@@ -17,7 +17,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cymem>=2.0.2,<2.1.0:devel/py-cymem@${PY_FLAVO
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	cython distutils autoplist
 
 post-install:

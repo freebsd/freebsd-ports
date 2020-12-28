@@ -12,7 +12,7 @@ COMMENT=	POP3/IMAP4 mail retriever (Python3 fork)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-USES=		python
+USES=		python:3.6+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 

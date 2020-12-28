@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx18>=1.6.2:textproc/py-sphinx18@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openstackdocstheme>=1.6.2:textproc/py-openstackdocstheme@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

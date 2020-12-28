@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 LIB_DEPENDS=	libmetis.so:math/metis
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang localbase python
+USES=		compiler:c++14-lang localbase python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

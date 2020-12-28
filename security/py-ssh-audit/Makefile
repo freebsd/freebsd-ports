@@ -12,7 +12,7 @@ COMMENT=	SSH server auditing
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jtesta
 USE_PYTHON=	autoplist distutils

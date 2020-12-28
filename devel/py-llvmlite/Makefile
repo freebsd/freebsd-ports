@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PY_ENUM34} \
 RUN_DEPENDS=	${PY_ENUM34} \
 		llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 
-USES=		compiler:c++11-lib python fortran
+USES=		compiler:c++11-lib python:3.6+ fortran
 USE_PYTHON=	distutils autoplist
 CXXFLAGS=	-fPIC
 

@@ -11,7 +11,7 @@ DISTNAME=	ZopePageTemplates-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zope-less version of Zope Page Templates
 
-USES=		python tar:tgz
+USES=		python:3.6+ tar:tgz
 USE_PYTHON=	distutils autoplist
 WRKSRC=		${WRKDIR}/ZopePageTemplates
 NO_ARCH=	yes

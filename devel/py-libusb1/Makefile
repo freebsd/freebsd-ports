@@ -14,7 +14,7 @@ LICENSE=	LGPL21+
 CONFLICTS_INSTALL?=	${PKGNAMEPREFIX}${PORTNAME}15
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 do-test:

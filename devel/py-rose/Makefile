@@ -13,7 +13,7 @@ COMMENT=	Small library for keeping your version up-to-date easily everywhere
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

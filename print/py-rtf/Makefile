@@ -13,7 +13,7 @@ COMMENT=	Library to create RTF documents using the Python language
 
 LICENSE=	GPLv1
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

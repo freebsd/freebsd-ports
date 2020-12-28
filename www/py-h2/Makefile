@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hyperframe>=6.0:www/py-hyperframe@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}hpack>=4.0<5:www/py-hpack@${PY_FLAVOR} \
 		${PY_ENUM34}
 
-USES?=		python
+USES?=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

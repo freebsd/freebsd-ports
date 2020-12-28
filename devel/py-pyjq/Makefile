@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libjq.so:textproc/jq \
 		libonig.so:devel/oniguruma
 
-USES=		localbase python
+USES=		localbase python:3.6+
 USE_PYTHON=	autoplist distutils
 
 post-patch:

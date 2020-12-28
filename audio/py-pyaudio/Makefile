@@ -16,7 +16,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
-USES=		python gmake
+USES=		python:3.6+ gmake
 USE_PYTHON=	distutils concurrent autoplist
 
 MAKE_ENV=	PYTHON=${PYTHON_CMD} \

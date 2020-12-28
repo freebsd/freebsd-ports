@@ -12,7 +12,7 @@ COMMENT=	Client SDK for TIP API which require Authentication Tokens
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}

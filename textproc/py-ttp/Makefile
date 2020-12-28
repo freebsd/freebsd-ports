@@ -12,7 +12,7 @@ COMMENT=	Template Text Parser
 
 LICENSE=	MIT
 
-USES=		dos2unix python
+USES=		dos2unix python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

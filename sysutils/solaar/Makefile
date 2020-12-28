@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 # libhidapi.so is only loaded at runtime via ctypes (dlopen)
 RUN_DEPENDS=	${LOCALBASE}/lib/libhidapi.so:comms/hidapi
 
-USES=		python
+USES=		python:3.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	pwr-Solaar
 GH_PROJECT=	Solaar

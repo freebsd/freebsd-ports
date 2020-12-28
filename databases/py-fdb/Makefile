@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 py27_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 
-USES=		firebird python
+USES=		firebird python:3.6+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

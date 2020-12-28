@@ -12,7 +12,7 @@ COMMENT=	Class library for writing Nagios (Icinga) plugins
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

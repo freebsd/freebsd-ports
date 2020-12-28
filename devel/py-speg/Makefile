@@ -12,7 +12,7 @@ COMMENT=	PEG-based parser interpreter with memoization (Python module)
 
 LICENSE=	MIT
 
-USES=		python zip
+USES=		python:3.6+ zip
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

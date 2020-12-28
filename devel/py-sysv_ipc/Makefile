@@ -12,7 +12,7 @@ COMMENT=	System V IPC for Python
 
 LICENSE=	BSD2CLAUSE
 
-USES=	python
+USES=	python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

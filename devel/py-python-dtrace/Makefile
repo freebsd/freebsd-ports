@@ -12,7 +12,7 @@ COMMENT=	DTrace consumer for Python based on libdtrace
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python zip
+USES=		python:3.6+ zip
 USE_PYTHON=	autoplist distutils cython cython_run
 
 .if !exists(${SRC_BASE}/sys/cddl/contrib/opensolaris/uts/common/dtrace.h)

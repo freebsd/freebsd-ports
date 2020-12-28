@@ -14,7 +14,7 @@ COMMENT=	EditorConfig File Locator and Interpreter for Python
 LICENSE=	BSD2CLAUSE PSFL
 LICENSE_COMB=	multi
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

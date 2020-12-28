@@ -12,7 +12,7 @@ COMMENT=	Multi key dictionary implementation
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

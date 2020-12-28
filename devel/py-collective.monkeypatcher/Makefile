@@ -12,7 +12,7 @@ COMMENT=	Applying monkey patches on startup using ZCML configuration
 
 LICENSE=	ZPL21
 
-USES=		python zip
+USES=		python:3.6+ zip
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

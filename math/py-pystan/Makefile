@@ -13,7 +13,7 @@ COMMENT=	Python interface for Stan
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++14-lang python shebangfix
+USES=		compiler:c++14-lang python:3.6+ shebangfix
 USE_PYTHON=	autoplist distutils
 
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cython>0:lang/cython@${PY_FLAVOR}

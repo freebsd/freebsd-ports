@@ -13,7 +13,7 @@ COMMENT=	Python wrapper around Lua and LuaJIT
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		lua pkgconfig python
+USES=		lua pkgconfig python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ARGS=	--no-bundle

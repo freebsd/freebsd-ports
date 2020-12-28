@@ -21,7 +21,7 @@ LIB_DEPENDS=	libh3.so:graphics/h3
 TEST_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		localbase:ldflags python
+USES=		localbase:ldflags python:3.6+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 CFLAGS+=	-I${LOCALBASE}/include/h3

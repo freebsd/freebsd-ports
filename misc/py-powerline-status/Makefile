@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Statusline plugin for vim, zsh, bash, and more
 
-USES=		python shebangfix
+USES=		python:3.6+ shebangfix
 USE_PYTHON=	distutils autoplist
 SHEBANG_FILES=	powerline/bindings/i3/powerline-i3.py \
 		powerline/bindings/bar/powerline-bar.py \

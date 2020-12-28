@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyzmq>0:net/py-pyzmq@${PY_FLAVOR}
 
-USES=		cmake compiler:c++11-lang python
+USES=		cmake compiler:c++11-lang python:3.6+
 USE_PYTHON=	flavors
 
 WRKSRC_SUBDIR=	python

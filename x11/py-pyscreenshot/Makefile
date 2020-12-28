@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}easyprocess>0:devel/py-easyprocess@${PY_FLAV
 		${PY_PILLOW} \
 		import:graphics/ImageMagick6
 
-USES=		python
+USES=		python:3.6+
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils

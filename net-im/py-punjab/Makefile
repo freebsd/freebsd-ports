@@ -13,7 +13,7 @@ COMMENT=	HTTP XMPP client interface
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	punjab
 

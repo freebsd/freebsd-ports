@@ -56,7 +56,7 @@ EXTRA_PATCHES=	${PATCHDIR}/tools
 .elif defined(OCIO_SLAVE) && ${OCIO_SLAVE} == pymodule
 LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio \
 		libOpenColorIO.so:graphics/opencolorio
-USES+=		python
+USES+=		python:3.6+
 USE_PYTHON=	flavors
 LDFLAGS+=	-lOpenColorIO
 CMAKE_ON+=	OCIO_BUILD_PYGLUE OCIO_PYGLUE_LINK
@@ -66,7 +66,7 @@ PLIST=		${PKGDIR}/pkg-plist-pyglue
 .else # master port
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libyaml-cpp03.so:devel/yaml-cpp03
-USES+=		python:build
+USES+=		python:3.6+,build
 USE_LDCONFIG=	yes
 CMAKE_ON+=	OCIO_BUILD_SHARED OCIO_BUILD_PYGLUE
 CMAKE_OFF+=	OCIO_BUILD_APPS

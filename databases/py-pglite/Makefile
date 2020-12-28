@@ -11,7 +11,7 @@ COMMENT=	Light PostgreSQL: use PostgreSQL as a simple SQLite database
 
 LICENSE=	LGPL20+
 
-USES=		python pgsql
+USES=		python:3.6+ pgsql
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 WANT_PGSQL=	server

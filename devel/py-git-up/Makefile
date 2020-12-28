@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.0.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}termcolor>=1.1.0:devel/py-termcolor@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		dos2unix python zip
+USES=		dos2unix python:3.6+ zip
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

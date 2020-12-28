@@ -14,7 +14,7 @@ COMMENT=	Easy-to-use parser generator that generates Python code
 
 PORTSCOUT=	skipv:2-2.1.1-17.1
 WRKSRC=		${WRKDIR}/Yapps-${PORTVERSION}
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

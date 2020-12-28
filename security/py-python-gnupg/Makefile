@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 TEST_DEPENDS=   ${PYTHON_PKGNAMEPREFIX}coverage>=0.15.2:devel/py-coverage@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.6+
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils

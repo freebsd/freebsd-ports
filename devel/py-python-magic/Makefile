@@ -12,7 +12,7 @@ COMMENT=	File type identification using libmagic
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:3.6+
 USE_GITHUB=	yes # missing test data files
 USE_PYTHON=	autoplist distutils
 

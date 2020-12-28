@@ -20,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mgedmin
 #GH_TAGNAME=	f872564
 
-USES=		gnome python
+USES=		gnome python:3.6+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

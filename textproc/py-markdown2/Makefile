@@ -12,7 +12,7 @@ COMMENT=	Fast and complete Python implementation of Markdown
 
 LICENSE=	MIT
 
-USES=		python zip
+USES=		python:3.6+ zip
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

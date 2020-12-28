@@ -12,7 +12,7 @@ COMMENT=	Setuptools plugin that adds test information to .egg-info
 
 LICENSE=	ZPL21
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

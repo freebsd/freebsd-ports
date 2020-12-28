@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS+=	dot:graphics/graphviz
 
-USES=		python shebangfix
+USES=		python:3.6+ shebangfix
 USE_PYTHON=	distutils autoplist concurrent
 SHEBANG_FILES=	examples/*.py
 

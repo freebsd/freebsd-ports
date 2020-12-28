@@ -11,7 +11,7 @@ COMMENT=	Python implementation of simhash algorithm
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

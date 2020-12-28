@@ -11,7 +11,7 @@ COMMENT=	Smaller fork of py-textfsm, a parser for semi-structured text
 
 LICENSE=	APACHE20
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

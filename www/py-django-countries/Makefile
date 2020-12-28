@@ -12,7 +12,7 @@ COMMENT=	Provides country choices for use with django
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
