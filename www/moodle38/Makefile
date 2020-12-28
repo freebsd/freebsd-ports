@@ -21,7 +21,7 @@ EXPIRATION_DATE=2021-03-03
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom fileinfo filter gd hash iconv intl json mbstring \
 		opcache openssl pcre session simplexml soap spl tokenizer \
-		xml xmlreader xmlrpc zip zlib
+		xml xmlreader zip zlib
 WRKSRC=		${WRKDIR}/moodle
 
 OPTIONS_SINGLE=		BACKEND
@@ -43,6 +43,12 @@ SUB_LIST=	MOODLEDIR=${MOODLEDIR} \
 
 MOODLEDIR?=	www/moodle
 MOODLEDATADIR?=	moodledata
+
+.include <bsd.port.options.mk>
+
+.if ${FLAVOR} != php80
+USE_PHP+=       xmlrpc
+.endif
 
 pre-install:
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}

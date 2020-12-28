@@ -18,7 +18,7 @@ CONFLICTS=	moodle35-3.5.[0-9]* moodle37-3.7.[0-9]* moodle38-3.8.[0-9]* \
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom fileinfo filter gd hash iconv intl json mbstring \
 		opcache openssl pcre session simplexml soap spl tokenizer \
-		xml xmlreader xmlrpc zip zlib
+		xml xmlreader zip zlib
 WRKSRC=		${WRKDIR}/moodle
 
 OPTIONS_SINGLE=		BACKEND
@@ -40,6 +40,12 @@ SUB_LIST=	MOODLEDIR=${MOODLEDIR} \
 
 MOODLEDIR?=	www/moodle
 MOODLEDATADIR?=	moodledata
+
+.include <bsd.port.options.mk>
+
+.if ${FLAVOR} != php80
+USE_PHP+=       xmlrpc
+.endif
 
 pre-install:
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
