@@ -1,0 +1,5 @@
+Parse simple '.ini' configuration files to an structured list. Users can
+manipulate this resulting list with lapply() functions. This same structured
+list can be used to write back to file after modifications.
+
+WWW: https://github.com/dvdscripter/ini
