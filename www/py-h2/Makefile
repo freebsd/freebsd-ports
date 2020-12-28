@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	h2
-PORTVERSION=	3.2.0
+PORTVERSION=	4.0.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,8 @@ COMMENT=	HTTP/2 State-Machine based protocol implementation
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hyperframe>=5.2.0:www/py-hyperframe@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hpack>=2.3:www/py-hpack@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hyperframe>=6.0:www/py-hyperframe@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hpack>=4.0<5:www/py-hpack@${PY_FLAVOR} \
 		${PY_ENUM34}
 
 USES?=		python
