@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-cpugraph-plugin
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
