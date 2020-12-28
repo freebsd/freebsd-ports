@@ -6,6 +6,7 @@ include/QGpgME/ChangePasswdJob
 include/QGpgME/CryptoConfig
 include/QGpgME/DN
 include/QGpgME/DataProvider
+include/QGpgME/Debug
 include/QGpgME/DecryptJob
 include/QGpgME/DecryptVerifyJob
 include/QGpgME/DefaultKeyGenerationJob
@@ -42,6 +43,7 @@ include/qgpgme/changeownertrustjob.h
 include/qgpgme/changepasswdjob.h
 include/qgpgme/cryptoconfig.h
 include/qgpgme/dataprovider.h
+include/qgpgme/debug.h
 include/qgpgme/decryptjob.h
 include/qgpgme/decryptverifyjob.h
 include/qgpgme/defaultkeygenerationjob.h
@@ -78,4 +80,4 @@ lib/cmake/QGpgme/QGpgmeConfig.cmake
 lib/cmake/QGpgme/QGpgmeConfigVersion.cmake
 lib/libqgpgme.so
 lib/libqgpgme.so.7
-lib/libqgpgme.so.7.4.0
+lib/libqgpgme.so.7.5.0
