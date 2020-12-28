@@ -104,6 +104,7 @@ include/thrift/lib/cpp2/FieldRefHash.h
 include/thrift/lib/cpp2/Flags.h
 include/thrift/lib/cpp2/GeneratedCodeHelper.h
 include/thrift/lib/cpp2/GeneratedHeaderHelper.h
+include/thrift/lib/cpp2/IndirectionWrapper.h
 include/thrift/lib/cpp2/OptionalField.h
 include/thrift/lib/cpp2/PluggableFunction.h
 include/thrift/lib/cpp2/SerializationSwitch.h
@@ -293,6 +294,7 @@ include/thrift/lib/cpp2/server/admission_strategy/WhitelistAdmissionStrategy.h
 include/thrift/lib/cpp2/server/peeking/PeekingManager.h
 include/thrift/lib/cpp2/server/peeking/TLSHelper.h
 include/thrift/lib/cpp2/server/proxygen/ProxygenThriftServer.h
+include/thrift/lib/cpp2/test/IndirectionWrapperTest.h
 include/thrift/lib/cpp2/test/ProtoBufStructs-inl.h
 include/thrift/lib/cpp2/test/Structs.h
 include/thrift/lib/cpp2/test/ThriftStructs-inl.h
@@ -377,6 +379,7 @@ include/thrift/lib/cpp2/util/ScopedServerInterfaceThread.h
 include/thrift/lib/cpp2/util/ScopedServerThread.h
 include/thrift/lib/cpp2/visitation/for_each.h
 include/thrift/lib/cpp2/visitation/metadata.h
+include/thrift/lib/cpp2/visitation/visit_by_thrift_field_metadata.h
 include/thrift/lib/cpp2/visitation/visit_union.h
 include/thrift/lib/py3/client.h
 include/thrift/lib/py3/client_wrapper.h
@@ -403,6 +406,7 @@ include/thrift/lib/thrift/gen-cpp2/RpcMetadata_metadata.h
 include/thrift/lib/thrift/gen-cpp2/RpcMetadata_types.h
 include/thrift/lib/thrift/gen-cpp2/RpcMetadata_types.tcc
 include/thrift/lib/thrift/gen-cpp2/RpcMetadata_types_custom_protocol.h
+include/thrift/lib/thrift/gen-cpp2/RpcMetadata_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/RpcMetadata_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/RpcMetadata_visitation.h
 include/thrift/lib/thrift/gen-cpp2/ThriftMetadataService.h
@@ -416,6 +420,7 @@ include/thrift/lib/thrift/gen-cpp2/frozen_metadata.h
 include/thrift/lib/thrift/gen-cpp2/frozen_types.h
 include/thrift/lib/thrift/gen-cpp2/frozen_types.tcc
 include/thrift/lib/thrift/gen-cpp2/frozen_types_custom_protocol.h
+include/thrift/lib/thrift/gen-cpp2/frozen_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/frozen_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/frozen_visitation.h
 include/thrift/lib/thrift/gen-cpp2/metadata_constants.h
@@ -425,6 +430,7 @@ include/thrift/lib/thrift/gen-cpp2/metadata_metadata.h
 include/thrift/lib/thrift/gen-cpp2/metadata_types.h
 include/thrift/lib/thrift/gen-cpp2/metadata_types.tcc
 include/thrift/lib/thrift/gen-cpp2/metadata_types_custom_protocol.h
+include/thrift/lib/thrift/gen-cpp2/metadata_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/metadata_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/metadata_visitation.h
 include/thrift/lib/thrift/gen-cpp2/reflection_constants.h
@@ -434,6 +440,7 @@ include/thrift/lib/thrift/gen-cpp2/reflection_metadata.h
 include/thrift/lib/thrift/gen-cpp2/reflection_types.h
 include/thrift/lib/thrift/gen-cpp2/reflection_types.tcc
 include/thrift/lib/thrift/gen-cpp2/reflection_types_custom_protocol.h
+include/thrift/lib/thrift/gen-cpp2/reflection_visit_by_thrift_field_metadata.h
 include/thrift/lib/thrift/gen-cpp2/reflection_visit_union.h
 include/thrift/lib/thrift/gen-cpp2/reflection_visitation.h
 lib/cmake/fbthrift/FBThriftConfig.cmake
