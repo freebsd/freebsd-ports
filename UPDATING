@@ -33,7 +33,6 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of graphics/jpeg
   AUTHOR: rene@FreeBSD.org
 
-
   The graphics/jpeg port has been removed in favor of graphics/jpeg-turbo.
   The former port was vulnerable and used an outdated ABI and API.
 
@@ -242,7 +241,7 @@ you update your ports collection, before attempting any port upgrades.
   consistent with the rest of the ports tree. syslog_ng_config and
   syslog_ng_pid will continue to work until syslog-ng331 has been
   released and imported into ports.
-  
+
 20200924:
   AFFECTS: users of net/freeradius3, who need python support
   AUTHOR: zi@FreeBSD.org
@@ -468,7 +467,7 @@ you update your ports collection, before attempting any port upgrades.
   Switching to the fork panda-cclient fixes these issues. Therefore we make the
   usage of Panda cclient the new default. If you want to use the old cclient,
   you need to enable it now!
-  
+
 20200616:
   AFFECTS: users of www/baikal
   AUTHOR: gahr@FreeBSD.org
@@ -15110,7 +15109,7 @@ or
   sysutils/cdrtools-cjk port has been removed, as the required functionality is
   now available in cdrtools 3.0.0 in the standard sysutils/cdrtools port.
 
- 20100915:
+20100915:
   AFFECTS: autoconf, automake
   AUTHOR: autotools@FreeBSD.org
 
@@ -15697,7 +15696,7 @@ or
   script failure to start nullmailer-send.
 
   Support for "[-u user]" command-line switch was recently MFC'd to 6-STABLE
- (http://www.freebsd.org/cgi/query-pr.cgi?pr=bin/146266).  FreeBSD 6.X users
+  (http://www.freebsd.org/cgi/query-pr.cgi?pr=bin/146266).  FreeBSD 6.X users
   should patch and install daemon(8) by one of the methods described below.
 
   If /usr/src is not yet populated, csup the 6-STABLE sources and run these
