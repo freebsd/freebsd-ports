@@ -2,7 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.9
+DISTVERSION=	1.1.10
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -69,6 +69,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		csv-core-0.1.10 \
 		custom_error-1.8.0 \
 		deflate-0.8.6 \
+		deser-hjson-0.1.4 \
 		directories-2.0.2 \
 		dirs-2.0.2 \
 		dirs-sys-0.3.5 \
@@ -80,7 +81,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		form_urlencoded-1.0.0 \
 		getrandom-0.1.15 \
 		gif-0.11.1 \
-		git2-0.13.12 \
+		git2-0.13.14 \
 		glob-0.3.0 \
 		half-1.6.0 \
 		hashbrown-0.9.1 \
@@ -88,7 +89,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		id-arena-2.2.1 \
 		idna-0.2.0 \
 		image-0.23.12 \
-		indexmap-1.6.0 \
+		indexmap-1.6.1 \
 		is_executable-0.1.2 \
 		itertools-0.9.0 \
 		itoa-0.4.6 \
@@ -100,7 +101,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		lazycell-1.3.0 \
 		lfs-core-0.3.1 \
 		libc-0.2.81 \
-		libgit2-sys-0.12.14+1.1.0 \
+		libgit2-sys-0.12.16+1.1.0 \
 		libz-sys-1.1.2 \
 		line-wrap-0.1.1 \
 		linked-hash-map-0.5.3 \
@@ -142,7 +143,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		ppv-lite86-0.2.10 \
 		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.24 \
-		quote-1.0.7 \
+		quote-1.0.8 \
 		rand-0.7.3 \
 		rand_chacha-0.2.2 \
 		rand_core-0.5.1 \
@@ -175,35 +176,36 @@ CARGO_CRATES=	adler-0.2.3 \
 		simplelog-0.7.6 \
 		siphasher-0.3.3 \
 		smallvec-1.5.1 \
-		socket2-0.3.17 \
+		socket2-0.3.19 \
 		splitty-0.1.0 \
 		str-buf-1.0.5 \
 		strict-0.1.4 \
 		strsim-0.8.0 \
-		syn-1.0.54 \
+		syn-1.0.55 \
 		syntect-4.5.0 \
 		tempfile-3.1.0 \
 		term-0.6.1 \
-		termimad-0.9.1 \
+		termimad-0.9.2 \
 		terminal-clipboard-0.1.1 \
 		textwrap-0.11.0 \
 		thiserror-1.0.22 \
 		thiserror-impl-1.0.22 \
 		thread_local-1.0.1 \
-		tiff-0.6.0 \
+		tiff-0.6.1 \
 		time-0.1.44 \
 		tinytemplate-1.1.0 \
 		tinyvec-1.1.0 \
 		tinyvec_macros-0.1.0 \
-		toml-0.5.7 \
+		toml-0.5.8 \
 		umask-1.0.0 \
+		unescape-0.1.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.16 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
 		url-2.2.0 \
 		users-0.10.0 \
-		vcpkg-0.2.10 \
+		vcpkg-0.2.11 \
 		vec_map-0.8.2 \
 		walkdir-2.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
@@ -228,7 +230,8 @@ CARGO_FEATURES=	--no-default-features
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
-PORTDOCS=	CHANGELOG.md README.md client-server.md
+PORTDOCS=	CHANGELOG.md README.md client-server.md documentation.md \
+		features.md
 
 OPTIONS_DEFINE=		CLIENT_SERVER CLIPBOARD DOCS
 OPTIONS_DEFAULT=	CLIENT_SERVER CLIPBOARD
