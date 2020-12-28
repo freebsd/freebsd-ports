@@ -6,10 +6,8 @@
 
  Example:
   % cd %%PREFIX%%/share/BLACS/TESTING
-  % %%LOCALBASE%%/bin/mpd &
   % %%LOCALBASE%%/bin/mpirun -np 4 ./xCbtest_MPI-FreeBSD
   % %%LOCALBASE%%/bin/mpirun -np 4 ./xFbtest_MPI-FreeBSD
-  % %%LOCALBASE%%/bin/mpdallexit
 
  Or, if you're using OpenMPI:
   % cd %%PREFIX%%/share/BLACS/TESTING

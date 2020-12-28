@@ -35,7 +35,7 @@
     MPILIBdir = $(MPIdir)/lib/
     MPIINCdir = $(MPIdir)/include
 -   MPILIB = $(MPILIBdir)/libmpich.a
-+   MPILIB = $(MPILIBdir)/libmpich.a $(MPILIBdir)/libmpl.a -pthread
++   MPILIB = -lmpi -lmpifort -pthread
  
  #  -------------------------------------
  #  All libraries required by the tester.

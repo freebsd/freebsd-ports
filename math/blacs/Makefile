@@ -3,7 +3,7 @@
 
 PORTNAME=	blacs
 PORTVERSION=	1.7
-PORTREVISION=	37
+PORTREVISION=	38
 CATEGORIES=	math
 MASTER_SITES=	NETLIB/blacs
 DISTNAME=	BLACS
@@ -14,8 +14,11 @@ EXTRACT_ONLY=	mpiblacs.tgz blacstester.tgz mpiblacs-patch03.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BLACS (Basic Linear Algebra Communication Subprograms)
 
+# See http://icl.cs.utk.edu/lapack-forum/archives/lapack/msg01200.html
+LICENSE=	BSD3CLAUSE
+
 SUB_FILES=	pkg-message
-USES=		fortran gmake
+USES=		fortran gmake localbase
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
@@ -29,7 +32,7 @@ DOCS_DISTFILES=	blacs_install.ps f77blacsqref.ps lawn94.ps \
 OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 OPENMPI_EXTRA_PATCHES=	${FILESDIR}/Bmake.inc-openmpi.diff
 
-MPICH_LIB_DEPENDS=	libmpich.so:net/mpich2
+MPICH_LIB_DEPENDS=	libmpi.so:net/mpich
 MPICH_EXTRA_PATCHES=	${FILESDIR}/Bmake.inc-mpich.diff
 
 .include <bsd.port.pre.mk>
