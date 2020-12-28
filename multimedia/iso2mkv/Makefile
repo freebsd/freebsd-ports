@@ -21,18 +21,17 @@ RUN_DEPENDS=	lame:audio/lame \
 		dvdxchap:multimedia/ogmtools \
 		bash:shells/bash
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-USES=		tar:bzip2
-NO_BUILD=	yes
+USES=		shebangfix tar:bzip2
+SHEBANG_FILES=	iso2mkv
 NO_ARCH=	yes
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|^#!/bin/bash|#!${LOCALBASE}/bin/bash| ; \
-		 s|normalize-audio|normalize| ; \
+		's|normalize-audio|normalize| ; \
 		 s|stat -c %s|stat -f %z|' ${WRKSRC}/iso2mkv
 
 do-install:
@@ -40,7 +39,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README.utf8.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.utf8.txt ${STAGEDIR}${DOCSDIR}
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
