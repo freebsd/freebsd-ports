@@ -6,7 +6,7 @@ Add proper architecture name:
 
 --- Source/WTF/wtf/Platform.h.orig	2020-03-04 17:16:37 UTC
 +++ Source/WTF/wtf/Platform.h
-@@ -105,11 +105,15 @@
+@@ -105,11 +105,14 @@
  
  /* CPU(PPC64) - PowerPC 64-bit Big Endian */
  #if (  defined(__ppc64__)      \
@@ -17,17 +17,15 @@ Add proper architecture name:
      && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
  #define WTF_CPU_PPC64 1
  #define WTF_CPU_BIG_ENDIAN 1
-+#define ENABLE_ASSEMBLER 0
 +#define ENABLE_JIT 0
 +#define ENABLE_SAMPLING_PROFILER 0
  #endif
  
  /* CPU(PPC64) - PowerPC 64-bit Little Endian */
-@@ -135,6 +139,9 @@
+@@ -135,6 +139,8 @@
      && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
  #define WTF_CPU_PPC 1
  #define WTF_CPU_BIG_ENDIAN 1
-+#define ENABLE_ASSEMBLER 0
 +#define ENABLE_JIT 0
 +#define ENABLE_SAMPLING_PROFILER 0
  #endif
