@@ -17,6 +17,8 @@ LICENSE_NAME=	MPICH
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	This is the legacy version, it is advised to use MPICH 3: net/mpich
+
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
@@ -55,7 +57,7 @@ LDFLAGS+=	-lpthread -lexecinfo
 MAKE_ENV=	CCACHE_DISABLE=yes PACKAGE=${PORTNAME}
 NO_CCACHE=	yes
 
-CONFLICTS=	lam-7.* mpd-[0-9]* mpiexec-0.*
+CONFLICTS=	mpd-[0-9]* mpich-3.*
 
 VERSO=		8.0.1
 VERSOM=		${VERSO:R:R}
