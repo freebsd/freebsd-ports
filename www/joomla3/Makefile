@@ -29,12 +29,18 @@ SHEBANG_FILES=	libraries/vendor/leafo/lessphp/lessify
 
 SUB_FILES=	pkg-message
 
-USE_PHP=	gd json mbstring pcre pdf session simplexml xml zip zlib
+USE_PHP=	gd json mbstring pcre session simplexml xml zip zlib
 
 MYSQL_USE=	PHP=mysqli
 PGSQL_USE=	PHP=pgsql
 
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PORTVERSION:R:R}
+
+.include <bsd.port.options.mk>
+
+.if ${FLAVOR} != php80
+USE_PHP+=	pdf
+.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
