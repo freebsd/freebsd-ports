@@ -1,5 +1,5 @@
-%%DATADIR%%/ICU-LICENSE
-%%DATADIR%%/apache-license.txt
+%%DATADIR%%/LICENSE.txt
+%%DATADIR%%/README-common.md
 %%DATADIR%%/common/annotations/af.xml
 %%DATADIR%%/common/annotations/am.xml
 %%DATADIR%%/common/annotations/ar.xml
@@ -1425,11 +1425,8 @@
 %%DATADIR%%/common/main/zu.xml
 %%DATADIR%%/common/main/zu_ZA.xml
 %%DATADIR%%/common/properties/ExtendedPictographic.txt
-%%DATADIR%%/common/properties/external_data_versions.tsv
 %%DATADIR%%/common/properties/labels.txt
-%%DATADIR%%/common/properties/readme.md
 %%DATADIR%%/common/properties/scriptMetadata.txt
-%%DATADIR%%/common/properties/segments/GraphemeBreakTest.html
 %%DATADIR%%/common/properties/segments/GraphemeBreakTest.txt
 %%DATADIR%%/common/properties/segments/readme.txt
 %%DATADIR%%/common/rbnf/af.xml
@@ -2298,5 +2295,3 @@
 %%DATADIR%%/common/validity/subdivision.xml
 %%DATADIR%%/common/validity/unit.xml
 %%DATADIR%%/common/validity/variant.xml
-%%DATADIR%%/readme.html
-%%DATADIR%%/unicode-license.txt
