@@ -103,6 +103,7 @@ include/wolfssl/openssl/asn1t.h
 include/wolfssl/openssl/bio.h
 include/wolfssl/openssl/bn.h
 include/wolfssl/openssl/buffer.h
+include/wolfssl/openssl/cms.h
 include/wolfssl/openssl/conf.h
 include/wolfssl/openssl/crypto.h
 include/wolfssl/openssl/des.h
@@ -137,10 +138,12 @@ include/wolfssl/openssl/ripemd.h
 include/wolfssl/openssl/rsa.h
 include/wolfssl/openssl/sha.h
 include/wolfssl/openssl/sha3.h
+include/wolfssl/openssl/srp.h
 include/wolfssl/openssl/ssl.h
 include/wolfssl/openssl/ssl23.h
 include/wolfssl/openssl/stack.h
 include/wolfssl/openssl/tls1.h
+include/wolfssl/openssl/txt_db.h
 include/wolfssl/openssl/ui.h
 include/wolfssl/openssl/x509.h
 include/wolfssl/openssl/x509_vfy.h
@@ -200,6 +203,7 @@ include/wolfssl/wolfcrypt/poly1305.h
 include/wolfssl/wolfcrypt/pwdbased.h
 include/wolfssl/wolfcrypt/rabbit.h
 include/wolfssl/wolfcrypt/random.h
+include/wolfssl/wolfcrypt/rc2.h
 include/wolfssl/wolfcrypt/ripemd.h
 include/wolfssl/wolfcrypt/rsa.h
 include/wolfssl/wolfcrypt/settings.h
@@ -220,5 +224,16 @@ include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
 lib/libwolfssl.so.24
-lib/libwolfssl.so.24.2.0
+lib/libwolfssl.so.24.3.0
 libdata/pkgconfig/wolfssl.pc
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/example/client.c
+%%PORTDOCS%%%%DOCSDIR%%/example/echoclient.c
+%%PORTDOCS%%%%DOCSDIR%%/example/echoserver.c
+%%PORTDOCS%%%%DOCSDIR%%/example/sctp-client-dtls.c
+%%PORTDOCS%%%%DOCSDIR%%/example/sctp-client.c
+%%PORTDOCS%%%%DOCSDIR%%/example/sctp-server-dtls.c
+%%PORTDOCS%%%%DOCSDIR%%/example/sctp-server.c
+%%PORTDOCS%%%%DOCSDIR%%/example/server.c
+%%PORTDOCS%%%%DOCSDIR%%/example/tls_bench.c
+%%PORTDOCS%%%%DOCSDIR%%/taoCert.txt

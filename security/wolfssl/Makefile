@@ -1,15 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	wolfssl
-PORTVERSION=	4.5.0
+PORTVERSION=	4.6.0
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.wolfssl.com/ \
 		LOCAL/fox
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Embedded SSL C-Library
-
-PATCH_SITES=	https://github.com/wolfSSL/wolfssl/commit/
-PATCHFILES=	e9b1ceae7e1daac6206d399e30c04bd51e3f8c7f.patch:-p1
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -33,11 +30,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-ssh \
 		--enable-static \
 		--enable-tls13 \
-		--enable-tls13-draft18 \
-		--enable-tls13-draft22 \
-		--enable-tls13-draft23 \
-		--enable-tls13-draft26 \
-		--enable-tls13-draft28
+		--enable-tls13-draft18
 TEST_TARGET=	check
 PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
