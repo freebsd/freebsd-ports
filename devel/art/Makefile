@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	art
-PORTVERSION=	0.9.01
-PORTREVISION=	4
+PORTVERSION=	0.9.02
 CATEGORIES=	devel
 MASTER_SITES=	http://skylark.tsu.ru/art/0.9/download/src/ \
 		SF/art-project/src/
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libxml++-2.6.so:textproc/libxml++26
 
 USES=		compiler:c++11-lang gmake pkgconfig
 USE_CXXSTD=	c++11
-TEST_TARGET=	test  # XXX: 17 of 18 tests fail
+TEST_TARGET=	test
 
 OPTIONS_DEFINE=	DOCS
 
