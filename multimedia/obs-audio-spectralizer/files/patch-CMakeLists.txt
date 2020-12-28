@@ -1,15 +1,11 @@
---- CMakeLists.txt.orig	2020-02-21 00:25:45 UTC
+--- CMakeLists.txt.orig	2020-12-27 14:03:11 UTC
 +++ CMakeLists.txt
-@@ -33,9 +33,11 @@ set(spectralizer_SOURCES
- add_library(spectralizer MODULE
-         ${spectralizer_SOURCES})
- target_link_libraries(spectralizer
--        libobs
-+        obs
-         ${FFTW_LIBRARIES}
-         ${spectralizer_PLATFORM_DEPS})
-+
-+include(${CMAKE_INSTALL_PREFIX}/lib/cmake/ObsHelpers.cmake)
+@@ -160,7 +160,7 @@ elseif(UNIX AND NOT APPLE)
+     elseif(GLOBAL_INSTALLATION)
+         # For *.deb installer
+         install(TARGETS ${CMAKE_PROJECT_NAME}
+-            LIBRARY DESTINATION "/usr/lib/obs-plugins") # hardcoded, since ubuntu uses the wrong path by default
++            LIBRARY DESTINATION "lib/obs-plugins") # hardcoded, since ubuntu uses the wrong path by default
  
- include_directories(${FFTW_INCLUDE_DIRS})
- install_obs_plugin_with_data(spectralizer data)
+         file(GLOB locale_files data/locale/*.ini)
+         file(GLOB other_files data/*.*)
