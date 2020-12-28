@@ -22,7 +22,7 @@ LIB_DEPENDS=	libosg.so:graphics/osg34 \
 		libprotoc.so:devel/protobuf \
 		librocksdb.so:databases/rocksdb
 
-USES=		cmake compiler:c++11-lang gl pkgconfig sqlite
+USES=		cmake gl pkgconfig sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gwaldron
@@ -36,6 +36,15 @@ CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:PATH=${LOCALBASE}/include \
 		-DLIB_POSTFIX:STRING=""
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lang
+.endif
 
 .include <bsd.port.pre.mk>
 
