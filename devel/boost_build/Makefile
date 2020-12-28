@@ -2,49 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	boost_build
-PORTVERSION=	2.0.m12
-PORTREVISION=	13
+DISTVERSION=	4.3.0
 CATEGORIES=	devel
-MASTER_SITES=	SF/boost/boost-build/2.0-m12
-DISTNAME=	${PORTNAME:S/_/-/g}-${PORTVERSION:S/.m/-m/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible cross-platform build tool suite
 
 LICENSE=	BSL
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bjam:devel/boost-jam
 
 USES=		tar:bzip2
-WRKSRC=		${WRKDIR}/${PORTNAME:S/_/-/g}
-NO_BUILD=	defined
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	boostorg
+GH_PROJECT=	build
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	share/doc/boost.png
-PORTDATA=	*
-PORTDOCS=	*
-PORTEXAMPLES=	*
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
+do-build:
+	@cd ${WRKSRC} && ./bootstrap.sh
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "build kernel options tools util" \
-		${STAGEDIR}${DATADIR} "! -name *.orig")
-	(cd ${WRKSRC} && ${INSTALL_DATA} boost-build.jam bootstrap.jam \
-		build-system.jam site-config.jam user-config.jam \
-		${STAGEDIR}${DATADIR})
-	${INSTALL_DATA} ${WRKSRC}/boost.png ${STAGEDIR}${PREFIX}/share/doc
-	(cd ${WRKSRC}/doc && ${RM} -r Jamfile.v2 project-root.jam \
-		html/userman_HTML.manifest src)
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} .  ${STAGEDIR}${DOCSDIR})
-
-do-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	cd ${WRKSRC} && ./b2 toolset=clang install --prefix=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
