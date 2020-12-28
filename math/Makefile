@@ -52,6 +52,7 @@
     SUBDIR += R-cran-dimRed
     SUBDIR += R-cran-dlmodeler
     SUBDIR += R-cran-dplyr
+    SUBDIR += R-cran-energy
     SUBDIR += R-cran-expm
     SUBDIR += R-cran-forcats
     SUBDIR += R-cran-forecast
