@@ -9,6 +9,7 @@
     SUBDIR += 915resolution
     SUBDIR += LPRng
     SUBDIR += LPRngTool
+    SUBDIR += R-cran-ps
     SUBDIR += UEFITool
     SUBDIR += abduco
     SUBDIR += abgx360
