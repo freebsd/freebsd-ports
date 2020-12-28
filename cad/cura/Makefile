@@ -2,7 +2,7 @@
 
 PORTNAME=	Cura
 DISTVERSION=	4.8
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	cad
 DIST_SUBDIR=	Ultimaker
@@ -35,7 +35,6 @@ USE_PYQT=	gui widgets qml
 CMAKE_ARGS+=	-DURANIUM_SCRIPTS_DIR:STRING="${LOCALBASE}/share/uranium/scripts"
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
-GH_TAGNAME=	d115efbb
 NO_ARCH=	yes
 
 post-patch:
