@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	htop
-DISTVERSION=	3.0.2
+DISTVERSION=	3.0.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
@@ -12,14 +12,17 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf libtool localbase ncurses pkgconfig python:build shebangfix
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-unicode
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	htop-dev
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-unicode
 
 PLIST_FILES=	bin/htop \
 		man/man1/htop.1.gz \
 		share/applications/htop.desktop \
+		share/icons/hicolor/scalable/apps/htop.svg \
 		share/pixmaps/htop.png
 
 OPTIONS_DEFINE=		LSOF
