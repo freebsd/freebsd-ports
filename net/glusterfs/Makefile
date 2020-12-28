@@ -2,7 +2,7 @@
 
 PORTNAME=	glusterfs
 PORTVERSION=	8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://bits.gluster.org/pub/gluster/glusterfs/src/
 
@@ -51,6 +51,7 @@ SHEBANG_FILES=	build-aux/pkg-version \
 
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
+USE_PYTHON=	py3kplist
 USE_RC_SUBR=	glusterd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-epoll \
