@@ -3,22 +3,22 @@
 
 PORTNAME=	apg
 PORTVERSION=	2.3.0b
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/matthew
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Automated password generator
 
+DEPRECATED=	Abandonware. Please try security/makepass or security/rndpassw instead
+EXPIRATION_DATE=	2021-03-28
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DOCS=		APG_TIPS pronun.txt rfc0972.txt rfc1750.txt
 
-OPTIONS_DEFINE=	CRACKLIB DOCS
-CRACKLIB_DESC=	CrackLib support for password quality
-CRACKLIB_LIB_DEPENDS=	libcrack.so:security/cracklib
-CRACKLIB_MAKE_ARGS=	-DWITH_CRACKLIB
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/apg ${STAGEDIR}${PREFIX}/bin
