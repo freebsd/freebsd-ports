@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.9.0
+DISTVERSION=	5.9.1
 CATEGORIES=	security net-vpn
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
