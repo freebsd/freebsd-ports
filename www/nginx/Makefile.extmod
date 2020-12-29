@@ -21,7 +21,7 @@ CACHE_PURGE_CONFIGURE_ON=	--add-module=${WRKDIR}/ngx_cache_purge-23dc16a
 CLOJURE_CATEGORIES+=	java
 CLOJURE_USE=		JAVA=yes JAVA_OS=native JAVA_VERSION=1.8 \
 			JAVA_VENDOR=openjdk JAVA_BUILD=yes JAVA_RUN=yes
-CLOJURE_GH_TUPLE=	nginx-clojure:nginx-clojure:v0.5.1:clojure
+CLOJURE_GH_TUPLE=	nginx-clojure:nginx-clojure:v0.5.2:clojure
 CLOJURE_CONFIGURE_ENV=	"JNI_INCS=-I${LOCALBASE}/openjdk8/include -I${LOCALBASE}/openjdk8/include/freebsd"
 CLOJURE_VARS=		DSO_EXTMODS+=clojure CLOJURE_SUBDIR=/src/c
 

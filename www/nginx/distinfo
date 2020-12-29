@@ -1,4 +1,4 @@
-TIMESTAMP = 1608749735
+TIMESTAMP = 1609282767
 SHA256 (nginx-1.18.0.tar.gz) = 4c373e7ab5bf91d34a4f11a0c9496561061ba5eee6020db272a17a7228d35f99
 SIZE (nginx-1.18.0.tar.gz) = 1039530
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -21,8 +21,8 @@ SHA256 (eustas-ngx_brotli-7fab041_GH0.tar.gz) = 0f85d7df593328807ec3e539d3f7a377
 SIZE (eustas-ngx_brotli-7fab041_GH0.tar.gz) = 13144
 SHA256 (nginx-modules-ngx_cache_purge-23dc16a_GH0.tar.gz) = a6ecc65e2488f9a0394f8aa6c012144708b6b4b37983aa45ea09945ec235ad08
 SIZE (nginx-modules-ngx_cache_purge-23dc16a_GH0.tar.gz) = 16816
-SHA256 (nginx-clojure-nginx-clojure-v0.5.1_GH0.tar.gz) = dd7f6760b4040722e28e8262765596959cbc11b6dc5e058a0a897ca697ffa4cb
-SIZE (nginx-clojure-nginx-clojure-v0.5.1_GH0.tar.gz) = 742237
+SHA256 (nginx-clojure-nginx-clojure-v0.5.2_GH0.tar.gz) = cb8bc0bef5d298df55fb625400cb77c4145dc5167483e111ff2b90d4d3396200
+SIZE (nginx-clojure-nginx-clojure-v0.5.2_GH0.tar.gz) = 755650
 SHA256 (grahamedgecombe-nginx-ct-v1.3.2_GH0.tar.gz) = b4ceae549b9dbf84b2e511633982e4efeee0388e3b7a038a8bac555008a77b88
 SIZE (grahamedgecombe-nginx-ct-v1.3.2_GH0.tar.gz) = 6844
 SHA256 (simpl-ngx_devel_kit-v0.3.1_GH0.tar.gz) = 0e971105e210d272a497567fa2e2c256f4e39b845a5ba80d373e26ba1abfbd85
