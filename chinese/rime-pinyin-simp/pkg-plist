@@ -1,0 +1,8 @@
+share/rime-data/build/pinyin_simp.prism.bin
+share/rime-data/build/pinyin_simp.prism.txt
+share/rime-data/build/pinyin_simp.reverse.bin
+share/rime-data/build/pinyin_simp.schema.yaml
+share/rime-data/build/pinyin_simp.table.bin
+share/rime-data/build/pinyin_simp.table.txt
+share/rime-data/pinyin_simp.dict.yaml
+share/rime-data/pinyin_simp.schema.yaml

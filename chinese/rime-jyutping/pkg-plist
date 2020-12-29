@@ -1,0 +1,16 @@
+share/rime-data/build/hkcantonese.schema.yaml
+share/rime-data/build/jyutping.prism.bin
+share/rime-data/build/jyutping.prism.txt
+share/rime-data/build/jyutping.reverse.bin
+share/rime-data/build/jyutping.schema.yaml
+share/rime-data/build/jyutping.table.bin
+share/rime-data/build/jyutping.table.txt
+share/rime-data/build/yale.prism.bin
+share/rime-data/build/yale.prism.txt
+share/rime-data/build/yale.schema.yaml
+share/rime-data/hkcantonese.schema.yaml
+share/rime-data/jyutping.dict.yaml
+share/rime-data/jyutping.lettered.dict.yaml
+share/rime-data/jyutping.phrase.dict.yaml
+share/rime-data/jyutping.schema.yaml
+share/rime-data/yale.schema.yaml
