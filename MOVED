@@ -15816,3 +15816,4 @@ math/py-slepc4py||2020-12-29|Has expired: Depends on broken and expiring math/sl
 multimedia/py-kaa-base||2020-12-29|Has expired: Uses deprecated version of python
 devel/py-ydbf||2020-12-29|Has expired: Uses deprecated version of python
 devel/py-SymbolType||2020-12-29|Has expired: Uses deprecated version of python
+databases/py-MySQLdb||2020-12-29|Has expired: Uses deprecated version of python

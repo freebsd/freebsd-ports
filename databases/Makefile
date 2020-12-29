@@ -744,7 +744,6 @@
     SUBDIR += pxlib
     SUBDIR += pxtools
     SUBDIR += py-Elixir
-    SUBDIR += py-MySQLdb
     SUBDIR += py-PyGreSQL
     SUBDIR += py-Pyrseas
     SUBDIR += py-aesqlapius
