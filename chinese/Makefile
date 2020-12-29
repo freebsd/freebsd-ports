@@ -100,6 +100,7 @@
     SUBDIR += rime-cangjie
     SUBDIR += rime-cantonese
     SUBDIR += rime-combo-pinyin
+    SUBDIR += rime-data
     SUBDIR += rime-data-full
     SUBDIR += rime-double-pinyin
     SUBDIR += rime-emoji
