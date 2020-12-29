@@ -14,7 +14,7 @@ COMMENT=	Build script creation tool
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64
 
 USES=		dos2unix gmake zip
 DOS2UNIX_FILES=	tests/_tests.lua
