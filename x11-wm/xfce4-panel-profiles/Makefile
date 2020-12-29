@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-panel-profiles
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.12
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
