@@ -1,2 +1,3 @@
-SHA256 (cl-ppcre-2.0.3.tar.gz) = a59e2f2f58297d8f802e2652a68a40176cb0174be9c5b681ef1187e8430133c3
-SIZE (cl-ppcre-2.0.3.tar.gz) = 157665
+TIMESTAMP = 1609099362
+SHA256 (edicl-cl-ppcre-v2.1.1_GH0.tar.gz) = 89631179b71648d9e6c565a928f6896a9d5742aa2083b9c1b705fe0b45d85def
+SIZE (edicl-cl-ppcre-v2.1.1_GH0.tar.gz) = 159055

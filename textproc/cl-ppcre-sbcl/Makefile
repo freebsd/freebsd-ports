@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cl-ppcre
-PORTVERSION=	2.0.3
-PORTREVISION=	50
+PORTVERSION=	2.1.1
 CATEGORIES=	textproc lisp
 DISTFILES=	# none
 
