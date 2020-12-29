@@ -196,6 +196,10 @@
     SUBDIR += fcitx-m17n
     SUBDIR += fcitx-qt5
     SUBDIR += fcitx-table-other
+    SUBDIR += fcitx5
+    SUBDIR += fcitx5-configtool
+    SUBDIR += fcitx5-gtk
+    SUBDIR += fcitx5-qt
     SUBDIR += fex
     SUBDIR += ffe
     SUBDIR += fi-aspell

@@ -37,6 +37,8 @@
     SUBDIR += fcitx-sunpinyin
     SUBDIR += fcitx-table-extra
     SUBDIR += fcitx-ui-light
+    SUBDIR += fcitx5-chewing
+    SUBDIR += fcitx5-rime
     SUBDIR += fireflyttf
     SUBDIR += font-std
     SUBDIR += fortunetw

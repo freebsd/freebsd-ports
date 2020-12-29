@@ -1,0 +1,33 @@
+# Created by: Ka Ho Ng <khng300@gmail.com>
+# $FreeBSD$
+
+PORTNAME=	fcitx5-rime
+DISTVERSION=	5.0.2
+CATEGORIES=	chinese textproc
+
+MAINTAINER=	khng300@gmail.com
+COMMENT=	RIME support for Fcitx5
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
+
+BUILD_DEPENDS=	${_SCHEMA_DEPENDS}
+LIB_DEPENDS=	librime.so:chinese/librime \
+		libFcitx5Core.so:textproc/fcitx5
+RUN_DEPENDS=	${_SCHEMA_DEPENDS}
+
+USES=		compiler:c++17-lang gettext-tools cmake kde:5 localbase \
+		pkgconfig
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	fcitx
+
+USE_KDE=	ecm
+
+_SCHEMA_DEPENDS=	\
+	${LOCALBASE}/share/rime-data/luna_pinyin.schema.yaml:chinese/rime-luna-pinyin	\
+	${LOCALBASE}/share/rime-data/bopomofo.schema.yaml:chinese/rime-bopomofo	\
+	${LOCALBASE}/share/rime-data/cangjie5.schema.yaml:chinese/rime-cangjie	\
+	${LOCALBASE}/share/rime-data/stroke.schema.yaml:chinese/rime-stroke
+
+.include <bsd.port.mk>
