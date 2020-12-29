@@ -15,5 +15,6 @@ USES=		compiler:c++11-lang php:pecl
 CONFIGURE_ARGS=	--with-crypto
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+IGNORE_WITH_PHP=	80
 
 .include <bsd.port.mk>

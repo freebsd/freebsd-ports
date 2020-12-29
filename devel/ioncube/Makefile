@@ -23,6 +23,7 @@ IGNORE_DragonFly=	is unsupported on DragonFly
 ONLY_FOR_ARCHS=	amd64 i386
 NO_BUILD=	yes
 USES=		php:flavors
+IGNORE_WITH_PHP=	80
 
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}

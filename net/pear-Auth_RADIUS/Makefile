@@ -12,5 +12,6 @@ LICENSE=	BSD3CLAUSE
 
 USE_PHP=	radius
 USES=		pear php:flavors
+IGNORE_WITH_PHP=	80
 
 .include <bsd.port.mk>

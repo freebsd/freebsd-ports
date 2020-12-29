@@ -14,6 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	librabbitmq.so:net/rabbitmq-c-devel
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	74
+IGNORE_WITH_PHP=	74 80
 
 .include <bsd.port.mk>

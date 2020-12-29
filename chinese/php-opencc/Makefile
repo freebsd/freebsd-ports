@@ -19,5 +19,6 @@ GH_PROJECT=	opencc4php
 GH_TAGNAME=	8007639
 
 USES=		php:ext
+IGNORE_WITH_PHP=	80
 
 .include <bsd.port.mk>

@@ -11,6 +11,7 @@ COMMENT=	Radius client library for PHP
 LICENSE=	BSD3CLAUSE
 
 USES=		php:pecl
+IGNORE_WITH_PHP=	80
 
 CONFIGURE_ARGS=	--enable-radius
 

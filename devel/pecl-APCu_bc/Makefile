@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/apcu.so:devel/pecl-APCu@${PHP_F
 
 USES=		localbase php:pecl
 
-IGNORE_WITH_PHP=	55 56
+IGNORE_WITH_PHP=	80
 PHP_MODNAME=	apc
 PHP_MOD_PRIO=30
 

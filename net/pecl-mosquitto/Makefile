@@ -14,5 +14,6 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	mosquitto>=0:net/mosquitto
 
 USES=		php:pecl
+IGNORE_WITH_PHP=	80
 
 .include <bsd.port.mk>
