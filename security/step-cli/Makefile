@@ -2,7 +2,7 @@
 
 PORTNAME=	step-cli
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.15.2
+DISTVERSION=	0.15.3
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -31,6 +31,7 @@ GH_TUPLE=	\
 		bgentry:speakeasy:v0.1.0:bgentry_speakeasy/vendor/github.com/bgentry/speakeasy \
 		bombsimon:wsl:v2.0.0:bombsimon_wsl_v2/vendor/github.com/bombsimon/wsl/v2 \
 		boombuler:barcode:v1.0.0:boombuler_barcode/vendor/github.com/boombuler/barcode \
+		census-instrumentation:opencensus-go:v0.22.4:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		cheggaaa:pb:v1.0.28:cheggaaa_pb/vendor/gopkg.in/cheggaaa/pb.v1 \
@@ -49,7 +50,7 @@ GH_TUPLE=	\
 		dgraph-io:ristretto:8f368f2f2ab3:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		dgryski:go-farm:6a90982ecee2:dgryski_go_farm/vendor/github.com/dgryski/go-farm \
-		dominikh:go-tools:v0.0.1-2019.2.3:dominikh_go_tools/vendor/honnef.co/go/tools \
+		dominikh:go-tools:v0.0.1-2020.1.4:dominikh_go_tools/vendor/honnef.co/go/tools \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		etcd-io:bbolt:v1.3.2:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		etcd-io:etcd:v3.3.18:etcd_io_etcd \
@@ -71,18 +72,22 @@ GH_TUPLE=	\
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		gofrs:flock:5135e617513b:gofrs_flock/vendor/github.com/gofrs/flock \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:123391ffb6de:golang_crypto/vendor/golang.org/x/crypto \
 		golang:glog:23def4e6c14b:golang_glog/vendor/github.com/golang/glog \
-		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:lint:fdd1cda4f05f:golang_lint/vendor/golang.org/x/lint \
-		golang:mock:v1.3.1:golang_mock/vendor/github.com/golang/mock \
-		golang:net:16171245cfb2:golang_net/vendor/golang.org/x/net \
-		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:lint:738671d3881b:golang_lint/vendor/golang.org/x/lint \
+		golang:mock:v1.4.4:golang_mock/vendor/github.com/golang/mock \
+		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:c89045814202:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:b016eb3dc98e:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		golang:sys:157a740278f4:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
-		golang:tools:7be0a674c9fc:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:af4cc2cd812e:golang_tools/vendor/golang.org/x/tools \
+		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		golangci:check:cfe4005ccda2:golangci_check/vendor/github.com/golangci/check \
 		golangci:dupl:3e9179ac440a:golangci_dupl/vendor/github.com/golangci/dupl \
 		golangci:errcheck:ef45e06d44b6:golangci_errcheck/vendor/github.com/golangci/errcheck \
@@ -100,15 +105,19 @@ GH_TUPLE=	\
 		golangci:unconvert:28b1c447d1f4:golangci_unconvert/vendor/github.com/golangci/unconvert \
 		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
 		google:certificate-transparency-go:v1.1.0:google_certificate_transparency_go/vendor/github.com/google/certificate-transparency-go \
-		google:go-genproto:f3c370f40bfb:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-cmp:v0.5.2:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-genproto:0bd0a958aa1d:google_go_genproto/vendor/google.golang.org/genproto \
 		google:monologue:35abc9683a6c:google_monologue/vendor/github.com/google/monologue \
-		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
+		google:uuid:v1.1.2:google_uuid/vendor/github.com/google/uuid \
+		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
+		googleapis:google-api-go-client:v0.31.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:3c2db50b5678:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gorilla:websocket:v1.4.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		gostaticanalysis:analysisutil:v0.0.3:gostaticanalysis_analysisutil/vendor/github.com/gostaticanalysis/analysisutil \
-		grpc-ecosystem:go-grpc-middleware:v1.1.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
+			grpc-ecosystem:go-grpc-middleware:v1.1.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:v1.2.0:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
 		grpc-ecosystem:grpc-gateway:v1.12.1:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
-		grpc:grpc-go:v1.26.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.29.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		huandu:xstrings:v1.3.1:huandu_xstrings/vendor/github.com/huandu/xstrings \
 		icrowley:fake:4178557ae428:icrowley_fake/vendor/github.com/icrowley/fake \
@@ -150,6 +159,7 @@ GH_TUPLE=	\
 		prometheus:client_model:v0.1.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.7.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.0.8:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rs:xid:v1.2.1:rs_xid/vendor/github.com/rs/xid \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		samfoo:ansi:b6bd2ded7189:samfoo_ansi/vendor/github.com/samfoo/ansi \
@@ -157,9 +167,9 @@ GH_TUPLE=	\
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		smallstep:assert:82e2b9b3b262:smallstep_assert/vendor/github.com/smallstep/assert \
-		smallstep:certificates:v0.15.1:smallstep_certificates/vendor/github.com/smallstep/certificates \
-		smallstep:certinfo:v1.3.0:smallstep_certinfo/vendor/github.com/smallstep/certinfo \
-		smallstep:crypto:v0.2.0:smallstep_crypto/vendor/go.step.sm/crypto \
+		smallstep:certificates:v0.15.5:smallstep_certificates/vendor/github.com/smallstep/certificates \
+		smallstep:certinfo:v1.4.0:smallstep_certinfo/vendor/github.com/smallstep/certinfo \
+		smallstep:crypto:v0.6.1:smallstep_crypto/vendor/go.step.sm/crypto \
 		smallstep:nosql:v0.3.0:smallstep_nosql/vendor/github.com/smallstep/nosql \
 		smallstep:truststore:v0.9.6:smallstep_truststore/vendor/github.com/smallstep/truststore \
 		smallstep:zcrypto:fbc32cf76bce:smallstep_zcrypto/vendor/github.com/smallstep/zcrypto \
@@ -173,7 +183,7 @@ GH_TUPLE=	\
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.6.1:spf13_viper/vendor/github.com/spf13/viper \
 		sqs:pbtypes:v1.0.0:sqs_pbtypes/vendor/sourcegraph.com/sqs/pbtypes \
-		square:go-jose:v2.4.0:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
+		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
@@ -189,9 +199,13 @@ GH_TUPLE=	\
 		urfave:cli:v1.22.2:urfave_cli/vendor/github.com/urfave/cli \
 		uudashr:gocognit:v1.0.1:uudashr_gocognit/vendor/github.com/uudashr/gocognit \
 		weppos:publicsuffix-go:v0.4.0:weppos_publicsuffix_go/vendor/github.com/weppos/publicsuffix-go \
-		xiang90:probing:43a291ad63a2:xiang90_probing/vendor/github.com/xiang90/probing
+		xiang90:probing:43a291ad63a2:xiang90_probing/vendor/github.com/xiang90/probing \
+		sslmate:go-pkcs12:52f69702a001:sslmate_pkcs12/vendor/software.sslmate.com/src/go-pkcs12
 
 GL_TUPLE=	https://gitlab.howett.net:go:plist:591f970eefbbeb04d7b37f334a0c4c3256e32876:go_plist/vendor/howett.net/plist
+
+		# Mirrors for the following packages are not currently known, please look them up and handle these tuples manually:
+		#::52f69702a001:group_name/vendor/software.sslmate.com/src/go-pkcs12 (from software.sslmate.com/src/go-pkcs12@52f69702a001)
 
 SHEBANG_FILES=	autocomplete/bash_autocomplete
 
