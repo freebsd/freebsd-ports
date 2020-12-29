@@ -3,6 +3,7 @@
 
 PORTNAME=	rime-bopomofo
 DISTVERSION=	g20190120
+PORTREVISION=	1
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng300@gmail.com
@@ -45,7 +46,7 @@ do-build:
 	@${MKDIR} ${MY_OUTDIR}
 	@${RLN} ${WRKSRC}/* ${MY_OUTDIR}
 .for i in ${PRELUDE_FILES} ${ESSAY_FILES} ${TERRA_PINYIN_FILES}
-	@${RLN} ${LOCALBASE}/share/rime-data/${i} ${MY_OUTDIR}
+	@${CP} ${LOCALBASE}/share/rime-data/${i} ${MY_OUTDIR}
 .endfor
 .for i in ${SCHEMA_FILES}
 	rime_deployer --compile ${WRKSRC}/${i} ${MY_OUTDIR}
