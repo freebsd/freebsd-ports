@@ -25,7 +25,6 @@ MY_DEPENDS=	git>=2.29:devel/git \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
-	gtar>0:archivers/gtar \
 	rubygem-rails60>=6.0.3.3<6.1:www/rubygem-rails60 \
 	rubygem-bootsnap14>=1.4.6<2.0:devel/rubygem-bootsnap14 \
 	rubygem-nakayoshi_fork>=0.0.4<0.1.0:devel/rubygem-nakayoshi_fork \
