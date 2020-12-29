@@ -2,7 +2,12 @@
 
 PORTNAME=	exhale
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
+
+# Backport for MacOS compatibility
+PATCH_SITES=	https://gitlab.com/ecodis/exhale/-/commit/
+PATCHFILES=	4002bff2bf60a87731b42aa32743a910a0e017b8.patch:-p1
 
 MAINTAINER=	daniel.engberg.lists@pyret.net
 COMMENT=	Open source xHE-AAC (Extended HE-AAC/USAC) encoder
