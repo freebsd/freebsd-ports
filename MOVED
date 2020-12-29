@@ -15792,6 +15792,7 @@ devel/py-gobject||2020-12-12|Has expired: Uses deprecated version of python
 games/gemrb||2020-12-18|Has expired: Uses deprecated version of python
 net/iplog||2020-12-18|Has expired: Unmaintained and dead upstream. Does not build with modern compilers.
 www/rubygem-rack21|www/rubygem-rack|2020-12-18|Obsolete, please use www/rubygem-rack
+chinese/rime-data||2020-12-23|Unneeded metaport
 devel/vulkan-headers|graphics/vulkan-headers|2020-12-23|Moved to a better category, aligning with vulkan-loader
 devel/vulkan-tools|graphics/vulkan-tools|2020-12-23|Moved to a better category, aligning with vulkan-loader
 devel/vulkan-vulkan-validation-layers|graphics/vulkan-vulkan-validation-layers|2020-12-23|Moved to a better category, aligning with vulkan-loader
