@@ -26,6 +26,7 @@ TOOLS_DESC=	Build and install nim tools, including nimble
 
 OPTIONS_DEFINE=	DOCS TOOLS
 OPTIONS_DEFAULT=	DOCS TOOLS
+OPTIONS_EXCLUDE_powerpc64=	DOCS
 
 TEST_BINARY_ALIAS=	node=nodejs
 
