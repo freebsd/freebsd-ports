@@ -12,7 +12,6 @@
 %%WWWDIR%%/config/application.config.php
 %%WWWDIR%%/config/autoload/README.md
 %%WWWDIR%%/config/autoload/global.php
-%%WWWDIR%%/config/autoload/global.php.bak
 %%WWWDIR%%/init_autoloader.php
 %%WWWDIR%%/module/Application/Module.php
 %%WWWDIR%%/module/Application/autoload_classmap.php
