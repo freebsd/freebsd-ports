@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	ktoblzcheck
-PORTVERSION=	1.49
-PORTREVISION=	2
+PORTVERSION=	1.53
 CATEGORIES=	finance german
-MASTER_SITES=	SF/${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME} \
+		LOCAL/jhale:bankdata
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}-bankdata-${BANKDATA_DATE}${EXTRACT_SUFX}:bankdata
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Check bank codes of German banks
@@ -13,25 +15,31 @@ COMMENT=	Check bank codes of German banks
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pathfix perl5
-GNU_CONFIGURE=	yes
+USES=		cmake pathfix python:3.6+,build
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-wget=${FETCH_BINARY}
-INSTALL_TARGET=	install-strip
 
-SUB_FILES=	pkg-deinstall pkg-message
-PORTDOCS=	README
+CMAKE_ON=	INSTALL_RAW_BANKDATA_FILE
+CMAKE_OFF=	ENABLE_BANKDATA_DOWNLOAD
 
-OPTIONS_DEFINE=	DOCS PYTHON
+PLIST_SUB=	BANKDATA_DATE=${BANKDATA_DATE}
+PORTDOCS=	README.md
+
+BANKDATA_DATE=	20201207
+
+OPTIONS_DEFINE=	DOCS DOXYGEN
 OPTIONS_SUB=	yes
 
-PYTHON_USES=			python:2.7
-PYTHON_CONFIGURE_ENABLE=	python
+DOXYGEN_BUILD_DEPENDS=		doxygen:devel/doxygen \
+				dot:graphics/graphviz
+DOXYGEN_CMAKE_BOOL_OFF=		CMAKE_DISABLE_FIND_PACKAGE_Doxygen
 
-TEST_TARGET=			check
+TEST_TARGET=			test
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/-lstdc++//g" ${WRKSRC}/src/lib/Makefile.in
+	@${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_DATADIR}\/man|$${CMAKE_INSTALL_MANDIR}|' ${WRKSRC}/doc/CMakeLists.txt
+	@(cd ${WRKSRC}/src/bankdata && ${RM} bankdata_*.txt blz_*.txt)
+	@${CP} ${WRKDIR}/${PORTNAME}-bankdata-${BANKDATA_DATE}/blz_${BANKDATA_DATE}.txt ${WRKSRC}/src/bankdata
+	@${TOUCH} ${WRKSRC}/src/bankdata/bankdata_${BANKDATA_DATE}.txt
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
