@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	pizzamig@FreeBSD.org
-COMMENT=	GNU GDB of newer version than comes with the system
+COMMENT=	GNU Project Debugger
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING3
