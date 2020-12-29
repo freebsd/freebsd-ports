@@ -3,7 +3,7 @@
 
 PORTNAME=	gogglesmm
 PORTVERSION=	1.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -19,17 +19,16 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 		libFOX-1.7.so:x11-toolkits/fox17
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gnome \
-		localbase:ldflags pkgconfig shebangfix sqlite xorg
+		localbase:ldflags pkgconfig sqlite xorg
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11
 
-CMAKE_OFF=	WITH_CFOX
+CMAKE_OFF=	WITH_CFOX WITH_IMPORT
 INSTALLS_ICONS=	yes
-SHEBANG_FILES=	extra/*.py
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-OPTIONS_DEFINE=		A52 ALSA DBUS DCA DOCS FAAD FLAC IMPORT MAD NLS \
+OPTIONS_DEFINE=		A52 ALSA DBUS DCA DOCS FAAD FLAC MAD NLS \
 			OGG OPENGL OPUS PULSEAUDIO ZLIB
 OPTIONS_RADIO=		SSL VORBISDEC
 OPTIONS_RADIO_SSL=	GCRYPT GNUTLS OPENSSL
@@ -63,10 +62,6 @@ GCRYPT_CMAKE_BOOL=	WITH_GCRYPT
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CMAKE_BOOL=	WITH_GNUTLS
-
-IMPORT_DESC=		Install scripts to import old databases
-IMPORT_USES=		python:2.7
-IMPORT_CMAKE_BOOL=	WITH_IMPORT
 
 MAD_LIB_DEPENDS=	libmad.so:audio/libmad
 MAD_CMAKE_BOOL=		WITH_MAD
