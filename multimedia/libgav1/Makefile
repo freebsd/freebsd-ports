@@ -3,6 +3,7 @@
 PORTNAME=	libgav1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libabsl_synchronization.so:devel/abseil
 
-USES=		cmake compiler:c++11-lib localbase:ldflags
+USES=		cmake compiler:c++17-lang localbase:ldflags
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	jbeich # mirror
