@@ -1527,6 +1527,7 @@
     SUBDIR += mtbl
     SUBDIR += mustache
     SUBDIR += mutagen
+    SUBDIR += myrepos
     SUBDIR += nana
     SUBDIR += nant
     SUBDIR += nasm
