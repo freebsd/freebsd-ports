@@ -1,0 +1,11 @@
+libgnuregex is the regex subset of Gnulib, the GNU portability library. The
+regex subset offers an extension of the regex(3) API to allow more flexibility
+in the flavor of regular expressions. libgnuregex also enhances POSIX
+regular expressions with more features and shorthand, such as:
+
+- \b and \B (word boundary, not word boundary)
+- \s and \S ([[:space:]], [^[:space:]])
+- \w and \W ([[:alnum:]], [^[:alnum:]])
+- \` and \' (beginning of subject, end of subject)
+
+WWW: http://www.gnu.org/software/gnulib/

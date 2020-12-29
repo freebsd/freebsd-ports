@@ -1194,6 +1194,7 @@
     SUBDIR += libglade2
     SUBDIR += libglademm24
     SUBDIR += libgnt
+    SUBDIR += libgnuregex
     SUBDIR += libgpc
     SUBDIR += libgpkg
     SUBDIR += libgrading
