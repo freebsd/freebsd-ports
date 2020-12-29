@@ -2,6 +2,7 @@
 
 PORTNAME=	webrtc-audio-processing
 DISTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://freedesktop.org/software/pulseaudio/${PORTNAME}/
 
@@ -19,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	cmake:devel/cmake
 LIB_DEPENDS=	libabsl_strings.so:devel/abseil
 
-USES=		compiler:c++14-lang meson
+USES=		compiler:c++17-lang meson
 USE_LDCONFIG=	yes
 CFLAGS_i386=	-msse # https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/issues/5
 
