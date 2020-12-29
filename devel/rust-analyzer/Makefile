@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust-analyzer
-DISTVERSION=	2020-12-21
+DISTVERSION=	2020-12-28
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -32,10 +32,10 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		cc-1.0.66 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
-		chalk-derive-0.43.0 \
-		chalk-ir-0.43.0 \
-		chalk-recursive-0.43.0 \
-		chalk-solve-0.43.0 \
+		chalk-derive-0.45.0 \
+		chalk-ir-0.45.0 \
+		chalk-recursive-0.45.0 \
+		chalk-solve-0.45.0 \
 		chrono-0.4.19 \
 		cmake-0.1.45 \
 		const_fn-0.4.4 \
@@ -64,7 +64,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		generator-0.6.23 \
 		gimli-0.23.0 \
 		hashbrown-0.9.1 \
-		heck-0.3.1 \
+		heck-0.3.2 \
 		hermit-abi-0.1.17 \
 		home-0.5.3 \
 		idna-0.2.0 \
@@ -86,6 +86,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		log-0.4.11 \
 		loom-0.3.6 \
 		lsp-server-0.5.0 \
+		lsp-types-0.86.0 \
 		matchers-0.0.1 \
 		matches-0.1.8 \
 		maybe-uninit-2.0.0 \
@@ -107,7 +108,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		once_cell-1.5.2 \
 		oorandom-11.1.3 \
 		parking_lot-0.11.1 \
-		parking_lot_core-0.8.1 \
+		parking_lot_core-0.8.2 \
 		percent-encoding-2.1.0 \
 		perf-event-0.4.6 \
 		perf-event-open-sys-1.0.1 \
@@ -126,7 +127,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.21 \
 		rowan-0.10.0 \
-		rustc-ap-rustc_lexer-691.0.0 \
+		rustc-ap-rustc_lexer-695.0.0 \
 		rustc-demangle-0.1.18 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.2.3 \
@@ -143,6 +144,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		serde-1.0.118 \
 		serde_derive-1.0.118 \
 		serde_json-1.0.60 \
+		serde_path_to_error-0.1.4 \
 		serde_repr-0.1.6 \
 		sharded-slab-0.1.0 \
 		slab-0.4.2 \
@@ -166,7 +168,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		tracing-subscriber-0.2.15 \
 		tracing-tree-0.1.6 \
 		ucd-trie-0.1.3 \
-		ungrammar-1.4.0 \
+		ungrammar-1.5.0 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.16 \
