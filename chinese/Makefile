@@ -41,6 +41,7 @@
     SUBDIR += fcitx5-chinese-addons
     SUBDIR += fcitx5-rime
     SUBDIR += fcitx5-table-extra
+    SUBDIR += fcitx5-table-other
     SUBDIR += fireflyttf
     SUBDIR += font-std
     SUBDIR += fortunetw
