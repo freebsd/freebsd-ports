@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sslproxy
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.2
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -23,5 +23,8 @@ MAKEFILE=	GNUmakefile
 MAKE_ENV=	DESTDIR=${STAGEDIR} MANDIR=man INSTALLUID=${UID} INSTALLGID=${GID}
 PLIST_FILES=	bin/sslproxy man/man1/sslproxy.1.gz man/man5/sslproxy.conf.5.gz \
 		"@sample etc/sslproxy.conf.sample"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Mk/main.mk
 
 .include <bsd.port.mk>
