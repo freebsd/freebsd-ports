@@ -2,6 +2,7 @@
 
 PORTNAME=	got
 PORTVERSION=	0.47
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://gameoftrees.org/releases/
 
@@ -11,7 +12,7 @@ COMMENT=	Game of Trees version control system
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		compiler:c11 uidfix
+USES=		uidfix
 
 n=		${.newline}
 post-extract:
