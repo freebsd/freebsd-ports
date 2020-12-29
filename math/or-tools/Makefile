@@ -2,8 +2,7 @@
 
 PORTNAME=	or-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.7
-PORTREVISION=	1
+DISTVERSION=	8.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,13 +19,20 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libglog.so:devel/glog \
 		libprotobuf.so:devel/protobuf
 
-USES=		blaslapack cmake compiler:c++11-lang pkgconfig
+USES=		blaslapack cmake compiler:c++17-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_DEPS INSTALL_BUILD_DEPS BUILD_PYTHON BUILD_EXAMPLES
 CONFIGURE_ENV=	UNIX_CBC_DIR=${LOCALBASE} UNIX_CLP_DIR=${LOCALBASE}
+
+OPTIONS_DEFINE=		SCIP
+#OPTIONS_DEFAULT=	SCIP
+
+SCIP_DESC=		Use the SCIP solver # SCIP package isn't built because of licensing restrictions
+SCIP_CMAKE_BOOL=	USE_SCIP
+SCIP_LIB_DEPENDS=	libscip.so:math/SCIP
 
 post-configure: # https://github.com/google/or-tools/issues/2109
 	@${REINPLACE_CMD} -e 's|protobuf::protoc|protoc -I${LOCALBASE}/include| ; s|protobuf$$:$$:protoc||' ${BUILD_WRKSRC}/build.ninja
