@@ -178,6 +178,7 @@
     SUBDIR += gerbera
     SUBDIR += gfbgraph
     SUBDIR += gitlab-agent
+    SUBDIR += gitup
     SUBDIR += glflow
     SUBDIR += glib-networking
     SUBDIR += glusterfs

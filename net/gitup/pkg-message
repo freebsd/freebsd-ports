@@ -1,0 +1,10 @@
+[
+{
+  type: install
+  message: <<EOM
+Currently this program is beta, so the usual caveats/warnings (don't
+use it in a production environment, make sure you've got backups, dont
+(yet) run as root) apply.
+EOM
+}
+]
