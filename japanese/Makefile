@@ -213,7 +213,6 @@
     SUBDIR += plan
     SUBDIR += prn
     SUBDIR += py-jaconv
-    SUBDIR += py-zinnia
     SUBDIR += qkc
     SUBDIR += quit
     SUBDIR += roget-fpw

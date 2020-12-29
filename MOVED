@@ -15801,3 +15801,18 @@ devel/spirv-tools|graphics/spirv-tools|2020-12-25|Moved to a better category, al
 sysutils/basu|devel/basu|2020-12-25|Moved to a better category, aligning with dbus
 audio/modplugplay|audio/modplug-tools|2020-12-27|Moved to GitHub under a different name
 www/py-flexget|www/flexget|2020-12-28|Dropped py- prefix due to be a standalone application
+textproc/py-hypua2jamo||2020-12-29|Has expired: Uses deprecated version of python
+devel/py-delfick_error||2020-12-29|Has expired: Uses deprecated version of python
+devel/py-fusefs||2020-12-29|Has expired: Uses deprecated version of python
+devel/py-noseofyeti||2020-12-29|Has expired: Uses deprecated version of python
+databases/py-bsddb||2020-12-29|Has expired: Uses deprecated version of python
+www/py-webhelpers||2020-12-29|Has expired: Uses deprecated version of python
+security/py-pyptlib||2020-12-29|Has expired: Uses deprecated version of python
+japanese/py-zinnia||2020-12-29|Has expired: Uses deprecated version of python
+math/slepc||2020-12-29|Has expired: Broken, uses deprecated version of python
+www/py-pastescript||2020-12-29|Has expired: Uses deprecated version of python
+databases/ldb14||2020-12-29|Has expired: Uses deprecated version of python
+math/py-slepc4py||2020-12-29|Has expired: Depends on broken and expiring math/slepc
+multimedia/py-kaa-base||2020-12-29|Has expired: Uses deprecated version of python
+devel/py-ydbf||2020-12-29|Has expired: Uses deprecated version of python
+devel/py-SymbolType||2020-12-29|Has expired: Uses deprecated version of python

@@ -336,7 +336,6 @@
     SUBDIR += py-ffmpeg-python
     SUBDIR += py-gstreamer1
     SUBDIR += py-guessit
-    SUBDIR += py-kaa-base
     SUBDIR += py-librtmp
     SUBDIR += py-mido
     SUBDIR += py-mlt

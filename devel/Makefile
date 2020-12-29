@@ -4023,7 +4023,6 @@
     SUBDIR += py-PyUtilib
     SUBDIR += py-QtPy
     SUBDIR += py-RPyC
-    SUBDIR += py-SymbolType
     SUBDIR += py-ZopeUndo
     SUBDIR += py-absl
     SUBDIR += py-absl-py
@@ -4325,7 +4324,6 @@
     SUBDIR += py-deepdiff
     SUBDIR += py-deepmerge
     SUBDIR += py-defusedxml
-    SUBDIR += py-delfick_error
     SUBDIR += py-demjson
     SUBDIR += py-deprecated
     SUBDIR += py-deprecation
@@ -4419,7 +4417,6 @@
     SUBDIR += py-functools32
     SUBDIR += py-funcy
     SUBDIR += py-furl
-    SUBDIR += py-fusefs
     SUBDIR += py-fusepy
     SUBDIR += py-future
     SUBDIR += py-futures
@@ -4660,7 +4657,6 @@
     SUBDIR += py-nose-cov
     SUBDIR += py-nose-timer
     SUBDIR += py-nose2
-    SUBDIR += py-noseofyeti
     SUBDIR += py-nosexcover
     SUBDIR += py-notify2
     SUBDIR += py-num2words
@@ -5259,7 +5255,6 @@
     SUBDIR += py-yarg
     SUBDIR += py-yaspin
     SUBDIR += py-yattag
-    SUBDIR += py-ydbf
     SUBDIR += py-yg.lockfile
     SUBDIR += py-yunomi
     SUBDIR += py-z3c.autoinclude

@@ -128,7 +128,6 @@
     SUBDIR += kexi
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
-    SUBDIR += ldb14
     SUBDIR += ldb15
     SUBDIR += ldb20
     SUBDIR += ldb21
@@ -756,7 +755,6 @@
     SUBDIR += py-alembic
     SUBDIR += py-apsw
     SUBDIR += py-asyncpg
-    SUBDIR += py-bsddb
     SUBDIR += py-bsddb3
     SUBDIR += py-carbon
     SUBDIR += py-cassandra-driver

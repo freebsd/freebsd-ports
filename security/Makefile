@@ -952,7 +952,6 @@
     SUBDIR += py-pynacl
     SUBDIR += py-pyotp
     SUBDIR += py-pyotp2289
-    SUBDIR += py-pyptlib
     SUBDIR += py-pysaml2
     SUBDIR += py-pysaml24
     SUBDIR += py-pyscard

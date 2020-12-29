@@ -1684,7 +1684,6 @@
     SUBDIR += py-pafy
     SUBDIR += py-paste
     SUBDIR += py-pastedeploy
-    SUBDIR += py-pastescript
     SUBDIR += py-path-and-address
     SUBDIR += py-pecan
     SUBDIR += py-pelican
@@ -1768,7 +1767,6 @@
     SUBDIR += py-waitress
     SUBDIR += py-webargs
     SUBDIR += py-webassets
-    SUBDIR += py-webhelpers
     SUBDIR += py-webob
     SUBDIR += py-weboob
     SUBDIR += py-websocket-client
