@@ -19,7 +19,7 @@ USE_RC_SUBR=	viewvc
 
 NO_BUILD=		yes
 NO_OPTIONS_SORT=	yes
-OPTIONS_DEFINE=		WEBSRV APMOD SVN MYSQL
+OPTIONS_DEFINE=		WEBSRV APMOD SVN
 OPTIONS_DEFAULT=	WEBSRV APACHE SVN
 
 OPTIONS_SINGLE=		WEBSRV APMOD
@@ -30,12 +30,10 @@ WEBSRV_DESC=		Enable web server support
 APMOD_DESC=		depend on Apache module
 
 MODWSGI_DESC=		Add mod_wsgi to the list of package dependencies
-MYSQL_DESC=		Bonsai-like repository query facilities
 
 APACHE_USE=		APACHE_RUN=24+
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 MODWSGI_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}${PYTHON_PKGNAMEPREFIX}mod_wsgi>=4.4.13:www/mod_wsgi4@${PY_FLAVOR}
-MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:databases/py-MySQLdb@${PY_FLAVOR}
 
 SVN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}subversion-lts>=0:devel/py-subversion@${PY_FLAVOR}
 
