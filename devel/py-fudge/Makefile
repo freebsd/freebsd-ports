@@ -12,7 +12,7 @@ COMMENT=	Python module for using fake objects to test real ones
 
 LICENSE=	MIT
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
