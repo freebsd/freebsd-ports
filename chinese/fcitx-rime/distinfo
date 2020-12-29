@@ -1,3 +1,5 @@
-TIMESTAMP = 1536696850
+TIMESTAMP = 1608116604
 SHA256 (fcitx/fcitx-rime-0.3.2.tar.xz) = f97ea6f515fcc5f526cc25dce3d4ba05fa1c83001f68502d6c284ba39cd5a82d
 SIZE (fcitx/fcitx-rime-0.3.2.tar.xz) = 40960
+SHA256 (fcitx/a3a9fffb6ee89adc327ad8a7dec05d5f35414f9d.patch) = b108314263ab980947f92ad08ac42642cc5e5274f256bc3cb0d2e86825a78586
+SIZE (fcitx/a3a9fffb6ee89adc327ad8a7dec05d5f35414f9d.patch) = 3167

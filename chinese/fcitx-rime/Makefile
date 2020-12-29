@@ -2,25 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx-rime
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+DISTVERSION=	0.3.2
+PORTREVISION=	2
 CATEGORIES=	chinese
-MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
+MASTER_SITES=	https://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
+
+PATCH_SITES=	https://github.com/fcitx/${PORTNAME}/commit/
+PATCHFILES=	a3a9fffb6ee89adc327ad8a7dec05d5f35414f9d.patch:-p1
 
 MAINTAINER=	khng300@gmail.com
 COMMENT=	RIME support for Fcitx
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+		${_SCHEMA_DEPENDS}
 LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx \
 		librime.so:chinese/librime
-RUN_DEPENDS=	${LOCALBASE}/share/brise/default.yaml:chinese/brise
+RUN_DEPENDS=	${_SCHEMA_DEPENDS}
 
-USES=		cmake gettext gnome pkgconfig tar:xz
+USES=		cmake gettext gnome localbase pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 
-CMAKE_ARGS+=	-DBRISE_DIR=${LOCALBASE}/share/brise
+_SCHEMA_DEPENDS=	\
+	${LOCALBASE}/share/rime-data/luna_pinyin.schema.yaml:chinese/rime-luna-pinyin	\
+	${LOCALBASE}/share/rime-data/bopomofo.schema.yaml:chinese/rime-bopomofo	\
+	${LOCALBASE}/share/rime-data/cangjie5.schema.yaml:chinese/rime-cangjie	\
+	${LOCALBASE}/share/rime-data/stroke.schema.yaml:chinese/rime-stroke
 
 .include <bsd.port.mk>
