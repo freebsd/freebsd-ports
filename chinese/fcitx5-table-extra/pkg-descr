@@ -1,0 +1,4 @@
+This provides extra tables for Fcitx5 input method framework, including
+Boshiamy, Zhengma, Cangjie, and Quick.
+
+WWW: https://github.com/fcitx/fcitx5-table-extra

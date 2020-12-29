@@ -199,6 +199,7 @@
     SUBDIR += fcitx5
     SUBDIR += fcitx5-configtool
     SUBDIR += fcitx5-gtk
+    SUBDIR += fcitx5-lua
     SUBDIR += fcitx5-qt
     SUBDIR += fex
     SUBDIR += ffe

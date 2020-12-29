@@ -1,0 +1,11 @@
+TIMESTAMP = 1608569935
+SHA256 (libime/lm_sc.3gm.arpa-20140820.tar.bz2) = 751bab7c55ea93a2cedfb0fbb7eb09f67d4da9c2c55496e5f31eb8580f1d1e2f
+SIZE (libime/lm_sc.3gm.arpa-20140820.tar.bz2) = 36623028
+SHA256 (libime/dict.utf8-20200715.tar.xz) = 23c36cd4df6de17f66bf2dfc453ec6c773641a479b6020c9e787552489c9c7d2
+SIZE (libime/dict.utf8-20200715.tar.xz) = 471536
+SHA256 (libime/table.tar.gz) = 6196053c724125e3ae3d8bd6b2f9172d0c83b65b0d410d3cde63b7a8d6ab87b7
+SIZE (libime/table.tar.gz) = 4144686
+SHA256 (libime/fcitx-libime-1.0.2-4-e2e48ed_GH0.tar.gz) = 592bd2b60a8665e906aeb8da45f14d3f770abddaa0d1fc67b7bc23dc144ee598
+SIZE (libime/fcitx-libime-1.0.2-4-e2e48ed_GH0.tar.gz) = 122597
+SHA256 (libime/kpu-kenlm-01c49fe_GH0.tar.gz) = 94919822e57cb019cd6a3c64ec00f44d17e3abe8410c07733c42ab2a8e83dc96
+SIZE (libime/kpu-kenlm-01c49fe_GH0.tar.gz) = 408488

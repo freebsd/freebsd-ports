@@ -1,0 +1,5 @@
+This provides Lua support for Fcitx5 input method framework in two ways:
+1. An addon loader for Lua
+2. The googlepinyin API provided by imeapi addon.
+
+WWW: https://github.com/fcitx/fcitx5-lua

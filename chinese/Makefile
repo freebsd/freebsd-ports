@@ -38,7 +38,9 @@
     SUBDIR += fcitx-table-extra
     SUBDIR += fcitx-ui-light
     SUBDIR += fcitx5-chewing
+    SUBDIR += fcitx5-chinese-addons
     SUBDIR += fcitx5-rime
+    SUBDIR += fcitx5-table-extra
     SUBDIR += fireflyttf
     SUBDIR += font-std
     SUBDIR += fortunetw
@@ -59,6 +61,8 @@
     SUBDIR += kcfonts
     SUBDIR += libcangjie
     SUBDIR += libchewing
+    SUBDIR += libime
+    SUBDIR += libime-jyutping
     SUBDIR += libpinyin
     SUBDIR += libreoffice-zh_CN
     SUBDIR += libreoffice-zh_TW
