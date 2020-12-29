@@ -95,7 +95,7 @@ USES+=		ssl
 .if ${PHP_MODNAME} == "gd"
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
-USES+=		jpeg
+USES+=		jpeg pkgconfig
 
 CONFIGURE_ARGS+=--with-gd=${LOCALBASE} \
 		--with-freetype-dir=${LOCALBASE} \
