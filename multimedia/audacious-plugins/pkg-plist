@@ -50,6 +50,8 @@ lib/audacious/General/song_change.so
 lib/audacious/Input/madplug.so
 lib/audacious/Input/metronom.so
 %%MODPLUG%%lib/audacious/Input/modplug.so
+%%ADPLUG%%lib/audacious/Input/adplug.so
+%%OPENMPT%%lib/audacious/Input/openmpt.so
 lib/audacious/Input/psf2.so
 %%SID%%lib/audacious/Input/sid.so
 %%SNDFILE%%lib/audacious/Input/sndfile.so

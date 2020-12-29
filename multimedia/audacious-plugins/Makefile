@@ -3,7 +3,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	4.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -51,14 +51,14 @@ USE_GNOME+=		gtk20 cairo
 PLIST_SUB=		QT5="@comment " GTK2=""
 .endif
 
-OPTIONS_DEFINE=	AAC AMIDI BS2B CDDA CUE FFMPEG FLAC LAME LIRC \
-		MMS MODPLUG MPRIS NEON NLS NOTIFY SAMPLERATE \
+OPTIONS_DEFINE=	AAC ADPLUG AMIDI BS2B CDDA CUE FFMPEG FLAC LAME LIRC \
+		MMS MODPLUG MPRIS NEON NLS NOTIFY OPENMPT SAMPLERATE \
 		SCROBBLER SID SNDFILE SPEEDPITCH VORBIS WAVPACK
 OPTIONS_MULTI=		OUTPUT
 OPTIONS_MULTI_OUTPUT=	ALSA FILEWRITER JACK OSS PULSEAUDIO SDL SNDIO
-OPTIONS_DEFAULT=	AAC CDDA CUE FILEWRITER FFMPEG FLAC MMS MPRIS \
-			NEON NLS NOTIFY OSS PULSEAUDIO SCROBBLER \
-			VORBIS WAVPACK
+OPTIONS_DEFAULT=	AAC ADPLUG CDDA CUE FILEWRITER FFMPEG FLAC MMS MPRIS \
+			NEON NLS NOTIFY OPENMPT OSS PULSEAUDIO SCROBBLER \
+			SID VORBIS WAVPACK
 OPTIONS_SUB=	yes
 
 .if ${FLAVOR} == gtk2
@@ -66,18 +66,24 @@ OPTIONS_DEFINE+=	AOSD OPENGL
 OPTIONS_DEFAULT+=	AOSD
 .endif
 
+ADPLUG_DESC=	ADPLUG plugin
 AMIDI_DESC=	Amidi decoder
 AOSD_DESC=	Audacious OSD
 BS2B_DESC=	BS2B effect
 FILEWRITER_DESC=File writer
 MPRIS_DESC=	NPRIS plugin
 NEON_DESC=	Neon plugin
+OPENMPT_DESC=	OpenMPT plugin
 SCROBBLER_DESC=	Scrobbler decoder
 SID_DESC=	Sound chip emulator of Commodore
 SPEEDPITCH_DESC=Speed and Pitch plugin
 
 AAC_LIB_DEPENDS=	libfaad.so:audio/faad
 AAC_CONFIGURE_ENABLE=	aac
+ADPLUG_LIB_DEPENDS=	libadplug.so:audio/libadplug \
+			libbinio.so:devel/libbinio
+ADPLUG_CONFIGURE_ENABLE=	adplug
+
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa
 AMIDI_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
@@ -120,6 +126,8 @@ NOTIFY_CONFIGURE_ENABLE=notify
 OPENGL_USES=		gl xorg
 OPENGL_USE=		xorg=x11 gl=gl
 OPENGL_CONFIGURE_ENABLE=glspectrum
+OPENMPT_LIB_DEPENDS=	libopenmpt.so:audio/libopenmpt
+OPENMPT_CONFIGURE_ENABLE=	openmpt
 OSS_CONFIGURE_ENABLE=	oss4
 PULSEAUDIO_LIB_DEPENDS=	libpulse-mainloop-glib.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
@@ -157,5 +165,13 @@ post-patch-NLS-off:
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/lib/audacious/ -name "*.so" \
 		-exec ${STRIP_CMD} {} \;
+
+post-install-ADPLUG-on:
+	${INSTALL_LIB} ${WRKSRC}/src/adplug/adplug.so \
+		${STAGEDIR}${PREFIX}/lib/audacious/Input
+
+post-install-OPENMPT-on:
+	${INSTALL_LIB} ${WRKSRC}/src/openmpt/openmpt.so \
+		${STAGEDIR}${PREFIX}/lib/audacious/Input
 
 .include <bsd.port.mk>
