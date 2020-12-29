@@ -148,4 +148,3 @@ include/ClearSilver/util/wildmat.h
 lib/libneo_cgi.a
 lib/libneo_cs.a
 lib/libneo_utl.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/neo_cgi.so
