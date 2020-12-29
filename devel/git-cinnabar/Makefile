@@ -3,7 +3,6 @@
 PORTNAME=	git-cinnabar
 DISTVERSION=	0.5.6
 CATEGORIES=	devel
-py27_PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Git remote helper to interact with Mercurial repositories
@@ -17,7 +16,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	glandium
 
 USES=		gmake python:3.6+,run shebangfix
-USE_PYTHON=	flavors
 TARGET_ORDER_OVERRIDE=	510:fix-shebang # after do-patch
 SHEBANG_FILES=	${PORTNAME} git-remote-hg
 ALL_TARGET=	${PORTNAME}-helper
@@ -33,7 +31,7 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
 
 post-configure:
-	@${TAR} cf - -C$$(${SETENV} -u FLAVOR ${MAKE} -V WRKSRC -C ${PORTSDIR}/devel/git) . | \
+	@${TAR} cf - -C$$(${MAKE} -V WRKSRC -C ${PORTSDIR}/devel/git) . | \
 		${TAR} xof - -C${WRKSRC}/git-core
 
 do-install:
