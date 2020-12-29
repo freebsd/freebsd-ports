@@ -1,7 +1,7 @@
---- src/lattice.cpp.orig	2020-08-30 14:33:39 UTC
+--- src/lattice.cpp.orig	2020-12-17 12:58:30 UTC
 +++ src/lattice.cpp
-@@ -32,6 +32,10 @@
- #include "display.hpp"
+@@ -34,6 +34,10 @@
+ #include "part.hpp"
  #include "spiFlash.hpp"
  
 +#ifndef ETIME
