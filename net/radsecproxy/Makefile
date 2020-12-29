@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnettle.so:security/nettle
 
-USES=		cpe localbase:ldflags ssl
+USES=		compiler:c11 cpe localbase:ldflags ssl
 USE_RC_SUBR=	${PORTNAME}
 CPE_VENDOR=	uninett
 
