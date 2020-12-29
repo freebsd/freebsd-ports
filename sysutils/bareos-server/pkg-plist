@@ -112,9 +112,6 @@ lib/bareos/scripts/update_bareos_tables
 lib/libbareoscats.so
 lib/libbareoscats.so.20
 lib/libbareoscats.so.%%LIB_VERSION%%
-lib/libbareosfastlz.so
-lib/libbareosfastlz.so.20
-lib/libbareosfastlz.so.%%LIB_VERSION%%
 %%NDMP%%lib/libbareosndmp.so
 %%NDMP%%lib/libbareosndmp.so.20
 %%NDMP%%lib/libbareosndmp.so.%%LIB_VERSION%%
