@@ -2,7 +2,7 @@
 
 PORTNAME=	simde
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
+DISTVERSION=	0.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		meson
 USE_GITHUB=	yes
 GH_ACCOUNT=	simd-everywhere
-GH_TUPLE=	nemequ:munit:fbbdf1467eb0d04a6ee465def2e529e4c87f2118:nemequ_munit/test/munit
+GH_TUPLE=	nemequ:munit:da8f73412998e4f1adf1100dc187533a51af77fd:nemequ_munit/test/munit
 
 MESON_ARGS=	-Dtests=false
 
