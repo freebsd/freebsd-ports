@@ -181,7 +181,7 @@ PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		lib/syslog-ng/python/syslogng/debuggercli/__pycache__/templatelang.cpython-${PYTHON_SUFFIX}.pyc \
 		lib/syslog-ng/python/syslogng/debuggercli/templatelexer.py \
 		lib/syslog-ng/python/syslogng/debuggercli/__pycache__/templatelexer.cpython-${PYTHON_SUFFIX}.pyc \
-		lib/syslog-ng/python/syslogng/debuggercli/__pycache__/editline.cpython-37.pyc \
+		lib/syslog-ng/python/syslogng/debuggercli/__pycache__/editline.cpython-${PYTHON_SUFFIX}.pyc \
 		lib/syslog-ng/python/syslogng/debuggercli/editline.py \
 		lib/syslog-ng/python/syslogng/debuggercli/tflang.py \
 		lib/syslog-ng/python/syslogng/debuggercli/__pycache__/tflang.cpython-${PYTHON_SUFFIX}.pyc
