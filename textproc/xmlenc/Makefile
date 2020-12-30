@@ -12,6 +12,7 @@ COMMENT=	Light-weight XML encoding library for Java
 
 USES=		tar:tgz
 USE_JAVA=	yes
+JAVA_VERSION=	8
 USE_ANT=	yes
 NO_ARCH=	yes
 
