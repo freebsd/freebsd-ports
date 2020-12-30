@@ -1,0 +1,13 @@
+--- build.xml.orig	2020-12-29 17:48:35.192124000 -0800
++++ build.xml	2020-12-29 17:48:46.662256000 -0800
+@@ -3,8 +3,8 @@
+ <project basedir="." default="all" name="HFSExplorer">
+   <property environment="env"/>
+   <property name="debuglevel" value="source,lines,vars"/>
+-  <property name="java.target.level" value="1.5"/>
+-  <property name="java.source.level" value="1.5"/>
++  <property name="java.target.level" value="6"/>
++  <property name="java.source.level" value="6"/>
+   <property name="java.source.dir" value="src/java"/>
+   <property name="manifest.source.dir" value="src/META-INF"/>
+   <!--<property name="builddir" value=".build~"/>-->
