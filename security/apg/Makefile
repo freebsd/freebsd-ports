@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/matthew
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Automated password generator
 
-DEPRECATED=	Abandonware. Please try security/makepass or security/rndpassw instead
+DEPRECATED=	Abandonware. Please try security/makepasswd or security/rndpassw instead
 EXPIRATION_DATE=	2021-03-28
 
 LICENSE=	BSD3CLAUSE
