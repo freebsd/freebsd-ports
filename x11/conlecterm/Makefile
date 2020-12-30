@@ -4,7 +4,6 @@ PORTNAME=	conlecterm
 PORTVERSION=	1.4.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	hsw@bitmark.com
 COMMENT=	Multi tabbed terminal for rxvt/xterm/emacs

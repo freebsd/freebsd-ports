@@ -6,7 +6,6 @@ DISTVERSION=	0.1-737
 DISTVERSIONSUFFIX=	-gb336c8d
 PORTREVISION=	3
 CATEGORIES=	math haskell
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Create diagrams by typing mathematical notation in plain text

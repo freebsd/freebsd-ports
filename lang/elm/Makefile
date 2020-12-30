@@ -6,8 +6,6 @@ PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/arrowd/:package_list
 DISTFILES=	elm-compiler-bootstrap-${PORTVERSION}${EXTRACT_SUFX}:package_list
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		elm-compiler-bootstrap-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Delightful language for reliable webapps

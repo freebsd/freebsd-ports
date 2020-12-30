@@ -5,7 +5,6 @@ PORTNAME=	stack
 PORTVERSION=	2.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel haskell
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Cross-platform program for developing Haskell programs

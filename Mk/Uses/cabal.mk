@@ -78,7 +78,6 @@ DIST_SUBDIR?=	cabal
 MASTER_SITES?=	https://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/ \
 		http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/
 DISTFILES?=	${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
-EXTRACT_ONLY?=	${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
 .  endif
 
 _USES_extract=	701:cabal-post-extract
@@ -101,15 +100,16 @@ _REV=			${package:C/[^_]*//:S/_//}
 MASTER_SITES+=	https://hackage.haskell.org/package/:${package:C/[\.-]//g} \
 		http://hackage.haskell.org/package/:${package:C/[\.-]//g}
 DISTFILES+=	${package:C/_[0-9]+//}/${package:C/_[0-9]+//}${CABAL_EXTRACT_SUFX}:${package:C/[\.-]//g}
-.    if !defined(CABAL_BOOTSTRAP)
-EXTRACT_ONLY+=	${package:C/_[0-9]+//}/${package:C/_[0-9]+//}${CABAL_EXTRACT_SUFX}
-.    endif
 
 .    if ${package:C/[^_]*//:S/_//} != ""
 DISTFILES+=	${package:C/_[0-9]+//}/revision/${package:C/[^_]*//:S/_//}.cabal:${package:C/[\.-]//g}
 .    endif
 
 .  endfor
+
+.    if !defined(CABAL_BOOTSTRAP)
+EXTRACT_ONLY=	${DISTFILES:C/:.*//:N*\.cabal}
+.    endif
 
 # Fetches and unpacks package source from Hackage using only PORTNAME and PORTVERSION.
 cabal-extract: ${WRKDIR}

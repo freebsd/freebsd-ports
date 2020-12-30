@@ -3,7 +3,6 @@
 PORTNAME=	matterhorn
 PORTVERSION=	50200.10.1
 CATEGORIES=	net-im
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Feature-rich Unix terminal client for the Mattermost chat system
