@@ -69,6 +69,7 @@ share/boost-build/src/tools/features/archiveflags-feature.jam
 share/boost-build/src/tools/features/asmflags-feature.jam
 share/boost-build/src/tools/features/build-feature.jam
 share/boost-build/src/tools/features/cflags-feature.jam
+share/boost-build/src/tools/features/compileflags-feature.jam
 share/boost-build/src/tools/features/conditional-feature.jam
 share/boost-build/src/tools/features/coverage-feature.jam
 share/boost-build/src/tools/features/cxx-template-depth-feature.jam
@@ -100,6 +101,7 @@ share/boost-build/src/tools/features/objcflags-feature.jam
 share/boost-build/src/tools/features/optimization-feature.jam
 share/boost-build/src/tools/features/os-feature.jam
 share/boost-build/src/tools/features/relevant-feature.jam
+share/boost-build/src/tools/features/response-file-feature.jam
 share/boost-build/src/tools/features/rtti-feature.jam
 share/boost-build/src/tools/features/runtime-feature.jam
 share/boost-build/src/tools/features/sanitizers-feature.jam
