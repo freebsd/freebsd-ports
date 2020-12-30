@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	beats
-PORTVERSION=	7.10.0
-DISTVERSIONPREFIX=v
+DISTVERSIONPREFIX=	v
+DISTVERSION=	7.10.1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	7
 
@@ -15,11 +15,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/mage:devel/mage
 
 USES=		gmake go:modules
 USE_GITHUB=	yes
-USE_GITLAB=	nodefault
 
 GH_ACCOUNT=	elastic
-GH_TUPLE=	\
-		Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor/github.com/Azure/azure-amqp-common-go/v3 \
+GH_TUPLE=	Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor/github.com/Azure/azure-amqp-common-go/v3 \
 		Azure:azure-event-hubs-go:v3.1.2:azure_azure_event_hubs_go_v3/vendor/github.com/Azure/azure-event-hubs-go/v3 \
 		Azure:azure-pipeline-go:v0.2.1:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-sdk-for-go:v37.1.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
@@ -39,8 +37,8 @@ GH_TUPLE=	\
 		Masterminds:semver:v1.4.2:masterminds_semver/vendor/github.com/Masterminds/semver \
 		Microsoft:hcsshim:v0.8.7:microsoft_hcsshim/vendor/github.com/Microsoft/hcsshim \
 		StackExchange:wmi:9f32b5905fd6:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
-		adriansr:fsnotify:c9bbe1f46f1d:adriansr_fsnotify_1/vendor/github.com/fsnotify/fsnotify \
-		adriansr:gopacket:dd62abfa8a41:adriansr_gopacket_1/vendor/github.com/google/gopacket \
+		adriansr:fsnotify:c9bbe1f46f1d:adriansr_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		adriansr:gopacket:dd62abfa8a41:adriansr_gopacket/vendor/github.com/google/gopacket \
 		aerospike:aerospike-client-go:0f3b54da6bdc:aerospike_aerospike_client_go/vendor/github.com/aerospike/aerospike-client-go \
 		akavel:rsrc:v0.8.0:akavel_rsrc/vendor/github.com/akavel/rsrc \
 		andrewkroh:goja:dd2ac4456e20:andrewkroh_goja/vendor/github.com/dop251/goja \
@@ -72,8 +70,8 @@ GH_TUPLE=	\
 		cloudfoundry:sonde-go:b33733203bb4:cloudfoundry_sonde_go/vendor/github.com/cloudfoundry/sonde-go \
 		containerd:containerd:v1.3.3:containerd_containerd/vendor/github.com/containerd/containerd \
 		containerd:continuity:26c1120b8d41:containerd_continuity/vendor/github.com/containerd/continuity \
-		containerd:fifo:bda0ff6ed73c:containerd_fifo/vendor/github.com/tonistiigi/fifo \
-		containerd:fifo:bda0ff6ed73c:containerd_fifo_1/vendor/github.com/containerd/fifo \
+		containerd:fifo:bda0ff6ed73c:containerd_fifo/vendor/github.com/containerd/fifo \
+		containerd:fifo:bda0ff6ed73c:containerd_fifo_1/vendor/github.com/tonistiigi/fifo \
 		coreos:go-systemd:v22.0.0:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
 		coreos:pkg:97fdf19511ea:coreos_pkg/vendor/github.com/coreos/pkg \
 		cucumber:godog:v0.8.1:cucumber_godog/vendor/github.com/cucumber/godog \
@@ -90,20 +88,20 @@ GH_TUPLE=	\
 		dimchansky:utfbom:v1.1.0:dimchansky_utfbom/vendor/github.com/dimchansky/utfbom \
 		dlclark:regexp2:7632a260cbaf:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		docker:distribution:v2.7.1:docker_distribution/vendor/github.com/docker/distribution \
-		docker:engine:ea84732a7725:docker_engine_1/vendor/github.com/docker/docker \
+		docker:engine:ea84732a7725:docker_engine/vendor/github.com/docker/docker \
 		docker:go-connections:v0.4.0:docker_go_connections/vendor/github.com/docker/go-connections \
 		docker:go-metrics:v0.0.1:docker_go_metrics/vendor/github.com/docker/go-metrics \
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
 		docker:spdystream:449fdfce4d96:docker_spdystream/vendor/github.com/docker/spdystream \
 		dominikh:go-tools:v0.0.1-2019.2.3:dominikh_go_tools/vendor/honnef.co/go/tools \
-		dop251:goja_nodejs:adff31b136e6:dop251_goja_nodejs_1/vendor/github.com/dop251/goja_nodejs \
+		dop251:goja_nodejs:adff31b136e6:dop251_goja_nodejs/vendor/github.com/dop251/goja_nodejs \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		eapache:go-resiliency:v1.2.0:eapache_go_resiliency/vendor/github.com/eapache/go-resiliency \
 		eapache:go-xerial-snappy:776d5712da21:eapache_go_xerial_snappy/vendor/github.com/eapache/go-xerial-snappy \
 		eapache:queue:v1.1.0:eapache_queue/vendor/github.com/eapache/queue \
 		eclipse:paho.mqtt.golang:0d940dd29fd2:eclipse_paho_mqtt_golang/vendor/github.com/eclipse/paho.mqtt.golang \
 		elastic:apm-agent-go:v1.9.0:elastic_apm_agent_go \
-		elastic:dhcp:57ec251c7eb3:elastic_dhcp_1/vendor/github.com/insomniacslk/dhcp \
+		elastic:dhcp:57ec251c7eb3:elastic_dhcp/vendor/github.com/insomniacslk/dhcp \
 		elastic:ecs-logging-go-zap:v0.3.0:elastic_ecs_logging_go_zap/vendor/go.elastic.co/ecszap \
 		elastic:ecs:v1.6.0:elastic_ecs/vendor/github.com/elastic/ecs \
 		elastic:elastic-agent-client:d43b7ad5833a:elastic_elastic_agent_client_v7/vendor/github.com/elastic/elastic-agent-client/v7 \
@@ -116,7 +114,7 @@ GH_TUPLE=	\
 		elastic:go-lookslike:v0.3.0:elastic_go_lookslike/vendor/github.com/elastic/go-lookslike \
 		elastic:go-lumber:v0.1.0:elastic_go_lumber/vendor/github.com/elastic/go-lumber \
 		elastic:go-perf:9c656876f595:elastic_go_perf/vendor/github.com/elastic/go-perf \
-		elastic:go-plugins-helpers:bdf17607b79f:elastic_go_plugins_helpers_1/vendor/github.com/docker/go-plugins-helpers \
+		elastic:go-plugins-helpers:bdf17607b79f:elastic_go_plugins_helpers/vendor/github.com/docker/go-plugins-helpers \
 		elastic:go-seccomp-bpf:v1.1.0:elastic_go_seccomp_bpf/vendor/github.com/elastic/go-seccomp-bpf \
 		elastic:go-structform:v0.0.7:elastic_go_structform/vendor/github.com/elastic/go-structform \
 		elastic:go-sysinfo:v1.3.0:elastic_go_sysinfo/vendor/github.com/elastic/go-sysinfo \
@@ -124,7 +122,7 @@ GH_TUPLE=	\
 		elastic:go-ucfg:v0.8.3:elastic_go_ucfg/vendor/github.com/elastic/go-ucfg \
 		elastic:go-windows:v1.0.1:elastic_go_windows/vendor/github.com/elastic/go-windows \
 		elastic:gosigar:f115143bb233:elastic_gosigar/vendor/github.com/elastic/gosigar \
-		elastic:sarama:0e7b69039eec:elastic_sarama_1/vendor/github.com/Shopify/sarama \
+		elastic:sarama:0e7b69039eec:elastic_sarama/vendor/github.com/Shopify/sarama \
 		etcd-io:bbolt:v1.3.4:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		evanphx:json-patch:v4.2.0:evanphx_json_patch/vendor/github.com/evanphx/json-patch \
 		fatih:color:v1.5.0:fatih_color/vendor/github.com/fatih/color \
@@ -288,37 +286,35 @@ GH_TUPLE=	\
 		xanzy:go-gitlab:v0.22.3:xanzy_go_gitlab/vendor/github.com/xanzy/go-gitlab \
 		yuin:gopher-lua:b402f3114ec7:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua
 
+USE_GITLAB=	nodefault
 GL_TUPLE=	https://gitlab.howett.net:go:plist:591f970eefbbeb04d7b37f334a0c4c3256e32876:go_plist/vendor/howett.net/plist
 
 USE_RC_SUBR=	${GO_TARGETS}
 
-CONFLICTS=	beats6*
-
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
-FIND_ARGS=	"! ( -regex .*/*\.(go|in|log) ) ! -path *test* ! -path *vendor*"
-MAKE_ENV+=	GOBUILD_FLAGS="-mod=vendor"
-
 CGO_CFLAGS=	-I.
 CGO_LDFLAGS=	-L.
+_FIND_ARGS=	"! ( -regex .*/*\.(go|in|log) ) ! -path *test* ! -path *vendor*"
+MAKE_ENV+=	GOBUILD_FLAGS="-mod=vendor"
 
-OPTIONS_DEFAULT=FILEBEAT HEARTBEAT METRICBEAT
-OPTIONS_DEFINE=	FILEBEAT HEARTBEAT METRICBEAT AUDITBEAT PACKETBEAT
-OPTIONS_SUB=	yes
+CONFLICTS=	beats6*
 
-FILEBEAT_DESC=	Filebeat
-FILEBEAT_VARS=	GO_TARGETS+=filebeat
+OPTIONS_DEFINE=		AUDITBEAT FILEBEAT HEARTBEAT METRICBEAT PACKETBEAT
+OPTIONS_DEFAULT=	FILEBEAT HEARTBEAT METRICBEAT
+OPTIONS_SUB=		yes
 
-PACKETBEAT_DESC=Packetbeat
-PACKETBEAT_VARS=GO_TARGETS+=packetbeat CGO_CFLAGS+=-I/usr/include CGO_LDFLAGS+=-L/usr/lib
-
-METRICBEAT_DESC=Metricbeat
-METRICBEAT_VARS=GO_TARGETS+=metricbeat
-
-HEARTBEAT_DESC=	Heartbeat
-HEARTBEAT_VARS=	GO_TARGETS+=heartbeat
-
-AUDITBEAT_DESC=	Auditbeat
-AUDITBEAT_VARS=	GO_TARGETS+=auditbeat
+AUDITBEAT_DESC=		Auditbeat
+FILEBEAT_DESC=		Filebeat
+HEARTBEAT_DESC=		Heartbeat
+METRICBEAT_DESC=	Metricbeat
+PACKETBEAT_DESC=	Packetbeat
+AUDITBEAT_VARS=		GO_TARGETS+=auditbeat
+FILEBEAT_VARS=		GO_TARGETS+=filebeat
+HEARTBEAT_VARS=		GO_TARGETS+=heartbeat
+METRICBEAT_VARS=	GO_TARGETS+=metricbeat
+PACKETBEAT_VARS=	CGO_CFLAGS+=-I/usr/include \
+			CGO_LDFLAGS+=-L/usr/lib \
+			GO_TARGETS+=packetbeat
 
 .include <bsd.port.options.mk>
 
@@ -354,7 +350,6 @@ post-patch:
 
 do-build:
 .for GO_TARGET in ${GO_TARGETS}
-#	(cd ${GO_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GMAKE} -C ${GO_TARGET})
 	(cd ${GO_WRKSRC}/${GO_TARGET}; ${SETENV} ${MAKE_ENV} ${GO_ENV} ${LOCALBASE}/bin/mage build)
 .endfor
 
@@ -380,14 +375,14 @@ do-install:
 .for BEATMOD in filebeat metricbeat
 .if !empty(GO_TARGETS:M${BEATMOD})
 	${MKDIR} ${STAGEDIR}${ETCDIR}/${BEATMOD}.modules.d ${STAGEDIR}${DATADIR}/${BEATMOD}/module
-	(cd ${WRKSRC}/${BEATMOD}/module && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${BEATMOD}/module ${FIND_ARGS})
+	(cd ${WRKSRC}/${BEATMOD}/module && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${BEATMOD}/module ${_FIND_ARGS})
 	(cd ${WRKSRC}/${BEATMOD}/modules.d && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/${BEATMOD}.modules.d)
 .endif
 .endfor
 .for BEATMOD in auditbeat
 .if !empty(GO_TARGETS:M${BEATMOD})
 	${MKDIR} ${STAGEDIR}${DATADIR}/${BEATMOD}/module
-	(cd ${WRKSRC}/${BEATMOD}/module && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${BEATMOD}/module ${FIND_ARGS})
+	(cd ${WRKSRC}/${BEATMOD}/module && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/${BEATMOD}/module ${_FIND_ARGS})
 .endif
 .endfor
 
