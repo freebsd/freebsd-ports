@@ -7,4 +7,4 @@ setting a sychronize command. The command should return a numeric value and this
 value will be regarded as a fraction of a second adjustable normalization
 factor.
 
-WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-generic-slider
+WWW: https://gitlab.xfce.org/panel-plugins/xfce4-generic-slider
