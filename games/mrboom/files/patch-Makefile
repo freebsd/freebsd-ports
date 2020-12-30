@@ -1,19 +1,28 @@
---- Makefile.orig	2020-10-16 16:38:11 UTC
+--- Makefile.orig	2020-12-30 21:19:43 UTC
 +++ Makefile
-@@ -4,7 +4,6 @@ AR             := ar
+@@ -3,7 +3,6 @@ AR             := ar
  INSTALL        := install
  RM             := rm
  STRIP          := strip
--GIT_VERSION := " $(shell git rev-parse --short HEAD)"
- BINDIR	       ?= bin
+-GIT_VERSION    := " $(shell git rev-parse --short HEAD)"
+ BINDIR         ?= bin
  LIBDIR         ?= lib
  DATADIR        ?= share
-@@ -397,7 +396,7 @@ endif
- endif
+@@ -16,7 +15,7 @@ CFLAGS := $(filter-out -D_FORTIFY_SOURCE=2,$(CFLAGS))
+ CFLAGS := $(filter-out -D_FORTIFY_SOURCE,$(CFLAGS))
+ CXXFLAGS := $(filter-out -D_FORTIFY_SOURCE=1,$(CXXFLAGS))
+ CXXFLAGS := $(filter-out -D_FORTIFY_SOURCE=2,$(CXXFLAGS))
+-CXXFLAGS := $(filter-out -D_FORTIFY_SOURCE,$(CXXFLAGS))
++
+ CPPFLAGS := $(filter-out -D_FORTIFY_SOURCE=1,$(CPPFLAGS))
+ CPPFLAGS := $(filter-out -D_FORTIFY_SOURCE=2,$(CPPFLAGS))
+ CPPFLAGS := $(filter-out -D_FORTIFY_SOURCE,$(CPPFLAGS))
+@@ -572,7 +571,7 @@ else
+    endif
  endif
  
 -CFLAGS += -DMRBOOM -DHAVE_IBXM -D_FORTIFY_SOURCE=0 -DPLATFORM=\"$(platform)\" -DGIT_VERSION=\"$(GIT_VERSION)\"
 +CFLAGS += -DMRBOOM -DHAVE_IBXM -D_FORTIFY_SOURCE=0 -DPLATFORM=\"$(platform)\"
  
- SDL2LIBS :=  -lSDL2  -lSDL2_mixer -lminizip -lmodplug
- ifneq ($(FALCON),)
+ SDL2LIBS :=  -lSDL2  -lSDL2_mixer -lminizip
+ 
