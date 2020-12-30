@@ -1,13 +1,15 @@
---- tools/setup.py.in.orig	2020-08-03 20:20:27 UTC
+See https://github.com/google/or-tools/issues/2305
+
+--- tools/setup.py.in.orig	2020-12-09 16:30:21 UTC
 +++ tools/setup.py.in
-@@ -46,8 +46,8 @@ setup(
-         'ortools.util',
-     ],
+@@ -42,8 +42,8 @@ setup(
+     version='VVVV',
+     packages=find_packages(),
      install_requires=[
--        'protobuf >= 3.12.2',
--        'six >= 1.10',
-+        #'protobuf >= 3.12.2',
-+        #'six >= 1.10',
+-        'protobuf >= 3.14.0',
+-        'absl-py >= 0.11',
++        #'protobuf >= 3.14.0',
++        #'absl-py >= 0.11',
      ],
      package_data={
-         'ortools.constraint_solver' : ['_pywrapcp.dll'],
+         'ortools.constraint_solver' : ['_pywrapcp.dll', '*.pyi'],
