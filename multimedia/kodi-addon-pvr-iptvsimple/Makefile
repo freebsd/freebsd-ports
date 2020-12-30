@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	kodi-addon-pvr-iptvsimple
-PORTVERSION=	3.9.8
-DISTVERSIONSUFFIX=	-Leia
+PORTVERSION=	7.1.0
+DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	multimedia
 
 MAINTAINER=	decke@FreeBSD.org
@@ -11,10 +11,10 @@ COMMENT=	IPTV Live TV and Radio PVR client for Kodi
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	${LOCALBASE}/include/kodi/libXBMC_addon.h:multimedia/kodi \
-		${LOCALBASE}/include/rapidxml.hpp:textproc/rapidxml
+BUILD_DEPENDS=	${LOCALBASE}/include/kodi/addon-instance/PVR.h:multimedia/kodi
 LIB_DEPENDS=	libp8-platform.so:devel/p8-platform \
-		libkodiplatform.so:devel/kodi-platform
+		libkodiplatform.so:devel/kodi-platform \
+		libpugixml.so:textproc/pugixml
 RUN_DEPENDS=	kodi:multimedia/kodi
 
 USES=		cmake:noninja
@@ -22,10 +22,5 @@ USES=		cmake:noninja
 USE_GITHUB=	yes
 GH_ACCOUNT=	kodi-pvr
 GH_PROJECT=	pvr.iptvsimple
-
-post-patch:
-	@${REINPLACE_CMD} 's|rapidxml/rapidxml.hpp|rapidxml.hpp|' \
-		${WRKSRC}/FindRapidxml.cmake \
-		${WRKSRC}/src/PVRIptvData.cpp
 
 .include <bsd.port.mk>

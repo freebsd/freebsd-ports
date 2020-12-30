@@ -1,9 +1,13 @@
 lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so
-lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so.18.7
-lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so.3.9.8
+lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so.19.0
+lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so.7.1.0
 share/kodi/addons/pvr.iptvsimple/addon.xml
 share/kodi/addons/pvr.iptvsimple/changelog.txt
 share/kodi/addons/pvr.iptvsimple/icon.png
+share/kodi/addons/pvr.iptvsimple/resources/data/genres.xml
+share/kodi/addons/pvr.iptvsimple/resources/data/genres/genreTextMappings/Rytec-UK-Ireland.xml
+share/kodi/addons/pvr.iptvsimple/resources/data/genres/kodiDvbGenres.xml
+share/kodi/addons/pvr.iptvsimple/resources/data/genres/kodiDvbGenresTypeSubtype.xml
 share/kodi/addons/pvr.iptvsimple/resources/language/resource.language.af_za/strings.po
 share/kodi/addons/pvr.iptvsimple/resources/language/resource.language.am_et/strings.po
 share/kodi/addons/pvr.iptvsimple/resources/language/resource.language.ar_sa/strings.po
