@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	logstash
-PORTVERSION=	7.10.0
+PORTVERSION=	7.10.1
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
@@ -17,39 +17,31 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 USES=		cpe shebangfix
 
-#USE_GITHUB=     yes
-#GH_ACCOUNT=     elastic
-#GH_PROJECT=     logstash
-#GH_TAGNAME=     v${DISTVERSION}
-
-CONFLICTS=	logstash5-[0-9]* logstash6-[0-9]*
-
-SHEBANG_FILES=	bin/*
 CPE_VENDOR=	elasticsearch
 USE_JAVA=	yes
 JAVA_VERSION=	11+
 JAVA_RUN=	yes
-NO_BUILD=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-
-USERS=	logstash
-GROUPS=	logstash
-
-LOGSTASH_DIR=	${PREFIX}/${PORTNAME}
-
 USE_RC_SUBR=	logstash
 
-LOGSTASH_HOME?=	${PREFIX}/${PORTNAME}
+SHEBANG_FILES=	bin/*
 
+CONFLICTS=	logstash5-[0-9]* logstash6-[0-9]*
+
+NO_BUILD=	yes
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		LOGSTASH_HOME=${LOGSTASH_HOME}
 
-LOGSTASH_CONF_FILES=	jvm.options log4j2.properties logstash.yml \
-			pipelines.yml startup.options
-LOGSTASH_JRUBY_SUBDIR=	vendor/jruby/bin
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+USERS=		logstash
+GROUPS=		logstash
+
+LOGSTASH_CONF_FILES=		jvm.options log4j2.properties logstash.yml \
+				pipelines.yml startup.options
+LOGSTASH_HOME?=			${PREFIX}/${PORTNAME}
 LOGSTASH_JRUBY_BIN_FILES=	ast gem irb jgem jirb jirb_swing jruby \
 				jruby.bash jruby.sh jrubyc rake rdoc ri testrb
+LOGSTASH_JRUBY_SUBDIR=		vendor/jruby/bin
 
 post-patch:
 	${REINPLACE_CMD} 's|%%ETCDIR%%|${ETCDIR}|g' ${WRKSRC}/config/logstash.yml
@@ -63,12 +55,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config/${x} ${STAGEDIR}${ETCDIR}/${x}.sample
 .endfor
 	${RM} -rf ${WRKSRC}/config
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${LOGSTASH_DIR})
-	${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_DIR}/bin/*
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${LOGSTASH_HOME})
+	${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_HOME}/bin/*
 .for x in ${LOGSTASH_JRUBY_BIN_FILES}
-	${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_DIR}/${LOGSTASH_JRUBY_SUBDIR}/${x}
+	${CHMOD} ${BINMODE} ${STAGEDIR}${LOGSTASH_HOME}/${LOGSTASH_JRUBY_SUBDIR}/${x}
 .endfor
-	${INSTALL} -lrs ${STAGEDIR}${ETCDIR} ${STAGEDIR}${LOGSTASH_DIR}/config
+	${INSTALL} -lrs ${STAGEDIR}${ETCDIR} ${STAGEDIR}${LOGSTASH_HOME}/config
 
 post-install:
 	${ECHO} "@sample ${ETCDIR}/logstash.conf.sample" >> ${TMPPLIST}
