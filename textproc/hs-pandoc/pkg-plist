@@ -1,6 +1,7 @@
 man/man1/pandoc.1.gz
 %%DATADIR%%/data/abbreviations
 %%DATADIR%%/data/bash_completion.tpl
+%%DATADIR%%/data/default.csl
 %%DATADIR%%/data/docx/[Content_Types].xml
 %%DATADIR%%/data/docx/_rels/.rels
 %%DATADIR%%/data/docx/docProps/app.xml
@@ -82,6 +83,7 @@ man/man1/pandoc.1.gz
 %%DATADIR%%/data/pptx/ppt/theme/theme2.xml
 %%DATADIR%%/data/pptx/ppt/viewProps.xml
 %%DATADIR%%/data/sample.lua
+%%DATADIR%%/data/templates/affiliations.jats
 %%DATADIR%%/data/templates/article.jats_publishing
 %%DATADIR%%/data/templates/default.asciidoc
 %%DATADIR%%/data/templates/default.asciidoctor
@@ -169,3 +171,5 @@ man/man1/pandoc.1.gz
 %%DATADIR%%/data/translations/uk.yaml
 %%DATADIR%%/data/translations/ur.yaml
 %%DATADIR%%/data/translations/vi.yaml
+%%DATADIR%%/data/translations/zh-Hans.yaml
+%%DATADIR%%/data/translations/zh-Hant.yaml
