@@ -2356,6 +2356,7 @@
     SUBDIR += yarn
     SUBDIR += yarn-node10
     SUBDIR += yarn-node12
+    SUBDIR += yarn-node14
     SUBDIR += yaws
     SUBDIR += you-get
     SUBDIR += yourls
