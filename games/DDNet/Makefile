@@ -12,7 +12,7 @@ COMMENT=	DDraceNetwork, a cooperative racing mod of Teeworlds
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		cmake pkgconfig python sqlite:3 ssl tar:xz
+USES=		cmake compiler:c++11-lang pkgconfig python sqlite:3 ssl tar:xz
 CMAKE_ARGS=	-DPYTHON_EXECUTABLE="${PYTHON_CMD}"
 CMAKE_OFF=	AUTOUPDATE DOWNLOAD_GTEST PREFER_BUNDLED_LIBS
 
