@@ -1,6 +1,6 @@
 lib/kodi/addons/peripheral.joystick/peripheral.joystick.so
-lib/kodi/addons/peripheral.joystick/peripheral.joystick.so.1.4.9
-lib/kodi/addons/peripheral.joystick/peripheral.joystick.so.18.7
+lib/kodi/addons/peripheral.joystick/peripheral.joystick.so.1.7.1
+lib/kodi/addons/peripheral.joystick/peripheral.joystick.so.19.0
 share/kodi/addons/peripheral.joystick/addon.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/android/Hi_keyboard_v0001_p0001_23b.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/android/NVIDIA_Corporation_NVIDIA_Controller_v01.03_v0955_p7210_23b_8a.xml
@@ -30,6 +30,10 @@ share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/Xbox_360_Wi
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/Xbox_One_Wired_Controller_v045E_p02DD_15b_6a.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/usb_gamepad____________v0810_pE501_10b_3a.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/cocoa/usb_gamepad_v0810_pE501_10b_3a.xml
+share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/darwinembedded/Extended_Gamepad_13b_4a.xml
+share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/darwinembedded/Extended_Gamepad_15b_4a.xml
+share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/darwinembedded/Extended_Gamepad_16b_4a.xml
+share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/darwinembedded/Micro_Gamepad_6b.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/directinput/Adaptoid_v06F7_p1_14b_2a.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/directinput/Bluetooth_HID_Port_v05A0_p3232_16b_1h_6a.xml
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/directinput/GamePad_Pro_USB_v0428_p4001_10b_2a.xml
@@ -99,5 +103,6 @@ share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/xarcade/X-Arcade_
 share/kodi/addons/peripheral.joystick/resources/buttonmaps/xml/xinput/Xbox_360-compatible_controller_15b_6a.xml
 share/kodi/addons/peripheral.joystick/resources/icon.png
 share/kodi/addons/peripheral.joystick/resources/joystickfamilies/joystickfamilies.xml
+share/kodi/addons/peripheral.joystick/resources/language/resource.language.de_de/strings.po
 share/kodi/addons/peripheral.joystick/resources/language/resource.language.en_gb/strings.po
 share/kodi/addons/peripheral.joystick/resources/settings.xml

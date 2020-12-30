@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	kodi-addon-peripheral-joystick
-PORTVERSION=	1.4.9
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-Leia
+PORTVERSION=	1.7.1
+DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -13,7 +12,7 @@ COMMENT=	Joystick support for Kodi
 LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/joystick.h:devel/evdev-proto \
-		${LOCALBASE}/include/kodi/libXBMC_addon.h:multimedia/kodi
+		${LOCALBASE}/include/kodi/addon-instance/Peripheral.h:multimedia/kodi
 LIB_DEPENDS=	libp8-platform.so:devel/p8-platform \
 		libkodiplatform.so:devel/kodi-platform \
 		libtinyxml.so:textproc/tinyxml \
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libp8-platform.so:devel/p8-platform \
 RUN_DEPENDS=	kodi:multimedia/kodi
 
 USES=		cmake:noninja
-
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
 GH_PROJECT=	peripheral.joystick
