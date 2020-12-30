@@ -30,6 +30,7 @@ include/groonga/groonga/aggregator.h
 include/groonga/groonga/array.h
 include/groonga/groonga/arrow.h
 include/groonga/groonga/arrow.hpp
+include/groonga/groonga/bulk.hpp
 include/groonga/groonga/cache.h
 include/groonga/groonga/column.h
 include/groonga/groonga/command.h
