@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	xkbset
-PORTVERSION=	0.5
-PORTREVISION=	3
+PORTVERSION=	0.6
 CATEGORIES=	x11
-MASTER_SITES=	http://faculty.missouri.edu/~stephen/software/xkbset/ \
-		http://www.math.missouri.edu/~stephen/software/xkbset/
+MASTER_SITES=	http://faculty.missouri.edu/~stephen/software/xkbset/
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Manage various XKB features of X Window
