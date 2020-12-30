@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: dendrite
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# dendrite_enable (bool):	Set to NO by default.
+#				Set it to YES to enable dendrite.
+# dendrite_config (path):	Set to %%PREFIX%%/etc/dendrite/dendrite.yaml
+#				by default.
+
+. /etc/rc.subr
+
+name=dendrite
+rcvar=dendrite_enable
+desc="Dendrite (Monolith Server)"
+
+load_rc_config $name
+
+: ${dendrite_enable:=NO}
+: ${dendrite_config="%%PREFIX%%/etc/dendrite/dendrite.yaml"}
+
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/dendrite/bin/dendrite-monolith-server
+pidfile=/var/run/${name}.pid
+
+command_args="-p $pidfile -u dendrite -f $procname -config $dendrite_config"
+
+run_rc_command "$1"
