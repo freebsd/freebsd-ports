@@ -661,7 +661,6 @@
     SUBDIR += py-discogs-client
     SUBDIR += py-eyed3
     SUBDIR += py-fmoo-audiotools
-    SUBDIR += py-gmusicapi
     SUBDIR += py-gtts
     SUBDIR += py-hsaudiotag3k
     SUBDIR += py-mpd
