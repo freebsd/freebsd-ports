@@ -9,3 +9,4 @@ lib/node_modules/yarn/README.md
 @(,,755) lib/node_modules/yarn/lib/cli.js
 lib/node_modules/yarn/lib/v8-compile-cache.js
 lib/node_modules/yarn/package.json
+lib/node_modules/yarn/preinstall.js
