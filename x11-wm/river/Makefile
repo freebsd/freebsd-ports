@@ -54,7 +54,9 @@ post-patch:
 # Respect PREFIX for system-wide config (a la sysconfdir in Meson)
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
 		${WRKSRC}/build.zig \
-		${WRKSRC}/river/main.zig
+		${WRKSRC}/doc/${PORTNAME}.1.scd \
+		${WRKSRC}/doc/${PORTNAME}ctl.1.scd \
+		${WRKSRC}/${PORTNAME}/main.zig
 
 do-build:
 	@(cd ${WRKSRC} && ${MAKE_ENV} zig build ${CONFIGURE_ARGS})
