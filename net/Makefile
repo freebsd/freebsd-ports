@@ -84,6 +84,7 @@
     SUBDIR += clash
     SUBDIR += cloud-init
     SUBDIR += cloudflared
+    SUBDIR += cloudquery
     SUBDIR += clusterit
     SUBDIR += cnd
     SUBDIR += concourse-fly
