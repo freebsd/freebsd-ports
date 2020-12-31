@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	mp
-PORTVERSION=	5.41
+DISTVERSION=	5.44
 CATEGORIES=	editors
-MASTER_SITES=	http://triptico.com/download/mp/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Programming text editor
@@ -13,6 +12,12 @@ LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake iconv
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ttcdt
+GH_PROJECT=	mp-5.x mpdm:mpdm mpsl:mpsl
+GH_TAGNAME=	2.70:mpdm 2.61:mpsl
+GH_SUBDIR=	mpdm:mpdm mpsl:mpsl
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config.sh
@@ -27,14 +32,21 @@ LDFLAGS+=	-Wl,--as-needed
 LLD_UNSAFE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		DOCS NLS PCRE
+OPTIONS_DEFINE=		DOCS MANPAGES NLS PCRE
 OPTIONS_RADIO=		GUI
 OPTIONS_RADIO_GUI=	GTK2 GTK3 QT5
 CONSOLE_DESC=		${NCURSES_DESC}
 OPTIONS_SINGLE=		CONSOLE
 OPTIONS_SINGLE_CONSOLE=	ANSI NCURSES
-OPTIONS_DEFAULT=	NCURSES PCRE
+OPTIONS_DEFAULT=	MANPAGES NCURSES PCRE
 OPTIONS_SUB=		yes
+
+DOCS_BUILD_DEPENDS=	p5-Grutatxt>=0:textproc/p5-Grutatxt \
+			mp_doccer:textproc/mp_doccer
+DOCS_CONFIGURE_WITH=	docs
+
+MANPAGES_BUILD_DEPENDS=	p5-Grutatxt>=0:textproc/p5-Grutatxt
+MANPAGES_CONFIGURE_WITH=manpages
 
 NLS_USES=		gettext
 NLS_CONFIGURE_WITH=	gettext
@@ -90,7 +102,6 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp-5 ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mp-5.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MGTK*} || ${PORT_OPTIONS:MQT5}
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/minimum-profit.desktop ${STAGEDIR}${PREFIX}/share/applications
@@ -106,8 +117,11 @@ do-install-NLS-on:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in AUTHORS README RELEASE_NOTES mp_templates.sample doc/* mpdm/doc/* mpsl/doc/*
+.for doc in README RELEASE_NOTES mp_templates.sample doc/* mpdm/doc/* mpsl/doc/*
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
+
+do-install-MANPAGES-on:
+	${INSTALL_MAN} ${WRKSRC}/mp-5.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

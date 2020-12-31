@@ -13,9 +13,9 @@ __wcwidth(__ct_rune_t _c)
 1 error generated.
 *** [mpdm_s.o] Error code 1
 
---- mpdm/mpdm_s.c.orig	2018-03-04 00:49:18 UTC
+--- mpdm/mpdm_s.c.orig	2020-10-11 16:50:34 UTC
 +++ mpdm/mpdm_s.c
-@@ -1067,8 +1067,6 @@ int mpdm_gettext_domain(const mpdm_t dom, const mpdm_t
+@@ -758,8 +758,6 @@ int mpdm_gettext_domain(const mpdm_t dom, const mpdm_t
  
  #ifdef CONFOPT_WCWIDTH
  

@@ -1,6 +1,6 @@
---- mpdm/config.sh.orig	2020-05-10 08:05:32 UTC
+--- mpdm/config.sh.orig	2020-10-11 16:50:34 UTC
 +++ mpdm/config.sh
-@@ -190,8 +190,8 @@ echo -n "Testing for regular expressions... "
+@@ -192,8 +192,8 @@ echo -n "Testing for regular expressions... "
  
  if [ "$WITH_PCRE" = 1 ] ; then
      # try first the pcre library
@@ -11,7 +11,7 @@
      echo "#include <pcreposix.h>" > .tmp.c
      echo "int main(void) { regex_t r; regmatch_t m; regcomp(&r,\".*\",REG_EXTENDED|REG_ICASE); return 0; }" >> .tmp.c
  
-@@ -371,13 +371,15 @@ else
+@@ -397,13 +397,15 @@ else
          echo "#define CONFOPT_GETTEXT 1" >> config.h
      else
          # try now with -lintl
@@ -29,7 +29,7 @@
              echo "$TMP_LDFLAGS" >> config.ldflags
              LDFLAGS="$LDFLAGS $TMP_LDFLAGS"
          else
-@@ -405,13 +407,15 @@ else
+@@ -431,13 +433,15 @@ else
          echo "#define CONFOPT_ICONV 1" >> config.h
      else
          # try now with -liconv
@@ -47,3 +47,12 @@
              echo "$TMP_LDFLAGS" >> config.ldflags
              LDFLAGS="$LDFLAGS $TMP_LDFLAGS"
          else
+@@ -628,7 +632,7 @@ fi
+ 
+ # test for mp_doccer
+ echo -n "Testing if mp_doccer is installed... "
+-MP_DOCCER=$(which mp_doccer > /dev/null 2>&1||which mp-doccer > /dev/null 2>&1)
++MP_DOCCER=$(which mp_doccer)
+ 
+ if [ $? = 0 ] ; then
+ 

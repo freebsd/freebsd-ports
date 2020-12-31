@@ -1,11 +1,12 @@
 bin/mp-5
-man/man1/mp-5.1.gz
+%%MANPAGES%%man/man1/mp-5.1.gz
 %%GUI%%share/applications/minimum-profit.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/mp_actions.html
 %%PORTDOCS%%%%DOCSDIR%%/mp_actions.txt
+%%PORTDOCS%%%%DOCSDIR%%/mp_api.html
+%%PORTDOCS%%%%DOCSDIR%%/mp_api.txt
 %%PORTDOCS%%%%DOCSDIR%%/mp_configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/mp_configuration.txt
 %%PORTDOCS%%%%DOCSDIR%%/mp_cookbook.html
@@ -14,7 +15,6 @@ man/man1/mp-5.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mp_data_model.txt
 %%PORTDOCS%%%%DOCSDIR%%/mp_encoding.html
 %%PORTDOCS%%%%DOCSDIR%%/mp_encoding.txt
-%%PORTDOCS%%%%DOCSDIR%%/mp_function_reference.html
 %%PORTDOCS%%%%DOCSDIR%%/mp_index.html
 %%PORTDOCS%%%%DOCSDIR%%/mp_index.txt
 %%PORTDOCS%%%%DOCSDIR%%/mp_interactive_dialog_boxes.html
@@ -26,8 +26,12 @@ man/man1/mp-5.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mp_man.html
 %%PORTDOCS%%%%DOCSDIR%%/mp_man.txt
 %%PORTDOCS%%%%DOCSDIR%%/mp_templates.sample
+%%PORTDOCS%%%%DOCSDIR%%/mpdm_api.html
+%%PORTDOCS%%%%DOCSDIR%%/mpdm_api.txt
 %%PORTDOCS%%%%DOCSDIR%%/mpdm_overview.html
 %%PORTDOCS%%%%DOCSDIR%%/mpdm_overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/mpsl_api.html
+%%PORTDOCS%%%%DOCSDIR%%/mpsl_api.txt
 %%PORTDOCS%%%%DOCSDIR%%/mpsl_index.html
 %%PORTDOCS%%%%DOCSDIR%%/mpsl_index.txt
 %%PORTDOCS%%%%DOCSDIR%%/mpsl_internals.html
@@ -36,6 +40,8 @@ man/man1/mp-5.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/mpsl_overview.txt
 %%PORTDOCS%%%%DOCSDIR%%/mpsl_quickref.ps
 %%PORTDOCS%%%%DOCSDIR%%/mpsl_quickref.txt
+%%PORTDOCS%%%%DOCSDIR%%/mpsl_reference.html
+%%PORTDOCS%%%%DOCSDIR%%/mpsl_reference.txt
 %%PORTDOCS%%%%DOCSDIR%%/mptxt_format.txt
 %%GUI%%share/icons/hicolor/48x48/apps/minimum-profit.png
 %%NLS%%share/locale/de/LC_MESSAGES/minimum-profit.mo
