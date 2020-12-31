@@ -1,19 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	ccls
-DISTVERSION=	0.20190823.4
+DISTVERSION=	0.20201219
 CATEGORIES=	devel
-MASTER_SITES=	LOCAL/tobik
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	khng300@gmail.com
 COMMENT=	C/C++/ObjC language server
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
-		rapidjson>=1.1.0_4:devel/rapidjson
-LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	rapidjson>=1.1.0_4:devel/rapidjson
+LIB_DEPENDS=	libclang-cpp.so:devel/llvm${LLVM_DEFAULT}
 
 USES=		cmake compiler:c++17-lang localbase
 USE_GITHUB=	yes
