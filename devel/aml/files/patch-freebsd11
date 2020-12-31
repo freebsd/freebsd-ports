@@ -1,0 +1,57 @@
+Drop after FreeBSD 11 EOL around 2021-09-30
+https://github.com/freebsd/freebsd-src/commit/92bb8c680916
+https://github.com/freebsd/freebsd-src/commit/2b34e8433514
+
+Header <sys/event.h> has symbol "kqueue" : NO
+meson.build:62:1: ERROR: Problem encountered: Unsupported system
+
+Compiler stderr:
+ In file included from _build/meson-private/tmp0rptdqs6/testfile.c:2:
+/usr/include/sys/event.h:75:2: error: unknown type name 'uintptr_t'
+        uintptr_t       ident;          /* identifier for this event */
+        ^
+/usr/include/sys/event.h:77:2: error: unknown type name 'u_short'; did you mean 'short'?
+        u_short         flags;          /* action flags for kqueue */
+        ^
+/usr/include/sys/event.h:78:2: error: unknown type name 'u_int'
+        u_int           fflags;         /* filter flag value */
+        ^
+/usr/include/sys/event.h:79:2: error: unknown type name 'intptr_t'
+        intptr_t        data;           /* filter data value */
+        ^
+In file included from ../src/kqueue.c:20:
+/usr/include/sys/event.h:77:2: error: unknown type name 'u_short'; did you mean 'short'?
+        u_short         flags;          /* action flags for kqueue */
+        ^
+/usr/include/sys/event.h:78:2: error: unknown type name 'u_int'
+        u_int           fflags;         /* filter flag value */
+        ^
+../src/kqueue.c:184:20: error: use of undeclared identifier 'NOTE_ABSTIME'
+                        NOTE_MSECONDS | NOTE_ABSTIME, deadline, NULL);
+                                        ^
+
+--- meson.build.orig	2020-12-31 12:37:18 UTC
++++ meson.build
+@@ -50,7 +50,7 @@ sources = [
+ ]
+ 
+ have_epoll = cc.has_header_symbol('sys/epoll.h', 'epoll_create')
+-have_kqueue = cc.has_header_symbol('sys/event.h', 'kqueue')
++have_kqueue = cc.has_header_symbol('sys/event.h', 'kqueue', prefix: '#include <sys/types.h>')
+ 
+ if have_epoll
+ 	sources += 'src/epoll.c'
+--- src/kqueue.c.orig	2020-12-31 12:37:18 UTC
++++ src/kqueue.c
+@@ -17,6 +17,11 @@
+ #include "aml.h"
+ #include "backend.h"
+ 
++#if defined(__FreeBSD__) && __FreeBSD__ < 12
++#define NOTE_ABSTIME 0
++typedef unsigned short	u_short;
++typedef unsigned int u_int;
++#endif
+ #include <sys/event.h>
+ #include <stdlib.h>
+ #include <unistd.h>
