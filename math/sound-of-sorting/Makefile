@@ -7,12 +7,12 @@ DISTVERSIONPREFIX=	${PORTNAME}-
 PORTREVISION=	2
 CATEGORIES=	math
 
-MAINTAINER=	se@FreeBSD.orgC
+MAINTAINER=	se@FreeBSD.org
 COMMENT=	Visualization and "Audibilization" of Sorting Algorithms
 
 LICENSE=	GPLv3
 
-USES=		sdl
+USES=		compiler:c++11-lang sdl
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
