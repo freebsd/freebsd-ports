@@ -9,7 +9,8 @@
       (m freebsd "" "-lm" #f () ())
 -     (curses freebsd "" "-lncurses" "/usr/lib/libncurses.a" () ())
 +     (curses freebsd "" "-lcurses" "/usr/lib/libcurses.a" () ())
-      (regex freebsd "-I/usr/include/gnu" "-lgnuregex" "" () ())
+-     (regex freebsd "-I/usr/include/gnu" "-lgnuregex" "" () ())
++     (regex freebsd "-I%%LOCALBASE%%/include" "-lgnuregex" "" () ())
       (editline freebsd "" "-lreadline" "" () ())
 -     (dlll freebsd "-DSUN_DL" "-export-dynamic" "" () ())
 -     (nostart freebsd "" "-e start -dc -dp -Bstatic -lgnumalloc" #f ("pre-crt0.c") ())
@@ -56,7 +57,7 @@
  		 (cond
  		  ((equal? (car fnames) "edline") "-lreadline")
 -		  ((equal? (car fnames) "x") "-L/usr/X11R6/lib -lSM -lICE -lXext -lX11 -lxpg4")
-+		  ((equal? (car fnames) "rgx") "-lgnuregex")
++		  ((equal? (car fnames) "rgx") "-L%%LOCALBASE%%/lib -lgnuregex")
 +		  ((equal? (car fnames) "x") "-L%%LOCALBASE%%/lib -lSM -lICE -lXext -lX11")
  		  (else ""))
  		 "-o" (string-append (car fnames) ".so")

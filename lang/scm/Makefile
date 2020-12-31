@@ -56,6 +56,10 @@ SCM_MODULES_X11=x.so
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 1300000
+LIB_DEPENDS+=	libgnuregex.so.[6-9]:devel/libgnuregex
+.endif
+
 .if ${PORT_OPTIONS:MX11}
 SCM_MODULES+=	${SCM_MODULES_X11}
 SCM_DATA+=	${SCM_DATA_X11}
