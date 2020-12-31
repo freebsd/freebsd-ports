@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	river
-PORTVERSION=	s20201227
+PORTVERSION=	s20201230
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,7 +22,7 @@ USES=		pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	ifreund
-GH_TAGNAME=	c51f217
+GH_TAGNAME=	c143864
 GH_TUPLE=	ifreund:zig-pixman:7847fd1:zig_pixman/deps/zig-pixman \
 		ifreund:zig-wayland:d693b37:zig_wayland/deps/zig-wayland \
 		ifreund:zig-xkbcommon:9e4d41f:zig_xkbcommon/deps/zig-xkbcommon \
@@ -33,7 +33,8 @@ CONFIGURE_ARGS=	--prefix "${STAGEDIR}${PREFIX}" \
 NO_INSTALL=	yes # strip(1) breaks runtime
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}ctl \
-		bin/${PORTNAME}tile
+		bin/${PORTNAME}tile \
+		${ETCDIR}/init
 
 OPTIONS_DEFINE=	MANPAGES X11
 OPTIONS_DEFAULT=MANPAGES X11
@@ -52,6 +53,7 @@ X11_CONFIGURE_OFF=	-Dxwayland=false
 post-patch:
 # Respect PREFIX for system-wide config (a la sysconfdir in Meson)
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
+		${WRKSRC}/build.zig \
 		${WRKSRC}/river/main.zig
 
 do-build:

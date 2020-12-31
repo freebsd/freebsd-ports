@@ -1,6 +1,6 @@
-TIMESTAMP = 1609027578
-SHA256 (ifreund-river-s20201227-c51f217_GH0.tar.gz) = fe2b023f556037c3afb45e3eebfe4d62835841b985e6aac771dd1cb1c64d1823
-SIZE (ifreund-river-s20201227-c51f217_GH0.tar.gz) = 91770
+TIMESTAMP = 1609367097
+SHA256 (ifreund-river-s20201230-c143864_GH0.tar.gz) = 92b133fa824f34710b546b1f5ac0c42dcb1b6ca21a1544efdbc737b112b22c6e
+SIZE (ifreund-river-s20201230-c143864_GH0.tar.gz) = 92230
 SHA256 (ifreund-zig-pixman-7847fd1_GH0.tar.gz) = d2f5eef6d8566565c25f0df08aac7d537f303f6ab2b7e7a2aca3a556df60053c
 SIZE (ifreund-zig-pixman-7847fd1_GH0.tar.gz) = 6548
 SHA256 (ifreund-zig-wayland-d693b37_GH0.tar.gz) = 6ac9307869a9233ff56e75b3b2830dd4bb976ecf694839bb45ac6dd6d5a350cf
