@@ -4866,6 +4866,7 @@
     SUBDIR += py-pymaven-patch
     SUBDIR += py-pymisp
     SUBDIR += py-pympler
+    SUBDIR += py-pynest2d
     SUBDIR += py-pyopencl
     SUBDIR += py-pyparsing
     SUBDIR += py-pyperclip
