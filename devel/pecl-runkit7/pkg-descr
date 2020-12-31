@@ -1,0 +1,8 @@
+The runkit extension provides means to modify constants, user-defined functions,
+and user-defined classes.  It also provides for custom superglobal variables and
+embeddable sub-interpreters via sandboxing.
+
+Compatibility: PHP 7.2 to PHP 7.4
+
+Documentation: https://www.php.net/runkit7
+WWW: https://github.com/runkit7/runkit7
