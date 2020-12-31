@@ -1,7 +1,0 @@
-Legacy DRM driver that used to be in FreeBSD base before the removal in FreeBSD
-13.  For newer Intel and AMD hardware, please use graphics/drm-kmod which will
-pick an appropriate driver for your system.
-
-This version is mostly current with Linux 3.8 in terms of hardware support.
-
-WWW: https://github.com/FreeBSDDesktop/drm-legacy
