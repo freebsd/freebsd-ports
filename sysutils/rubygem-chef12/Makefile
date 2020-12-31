@@ -3,7 +3,7 @@
 
 PORTNAME=	chef
 PORTVERSION=	12.22.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	12
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-bundler>=1.10:sysutils/rubygem-bundler \
 		rubygem-chef-config12=${PORTVERSION}:sysutils/rubygem-chef-config12 \
-		rubygem-chef-zero5>=4.8<13:sysutils/rubygem-chef-zero5 \
+		rubygem-chef-zero>=4.8<13:sysutils/rubygem-chef-zero \
 		rubygem-diff-lcs>=1.2.4<2:textproc/rubygem-diff-lcs \
 		rubygem-erubis>=2.7<3:www/rubygem-erubis \
 		rubygem-ffi-yajl>=2.2<3:devel/rubygem-ffi-yajl \
