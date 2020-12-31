@@ -1,5 +1,3 @@
-%%WWWDIR%%/.php_cs.cache
-%%WWWDIR%%/.php_cs.dist
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/COPYING
 %%WWWDIR%%/README.md
@@ -235,4 +233,3 @@
 %%WWWDIR%%/lib/Service/Util.php
 %%WWWDIR%%/templates/dev-mode.php
 %%WWWDIR%%/templates/main.php
-%%WWWDIR%%/webpack.js
