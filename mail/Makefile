@@ -270,7 +270,6 @@
     SUBDIR += opensmtpd-extras-table-mysql
     SUBDIR += opensmtpd-extras-table-passwd
     SUBDIR += opensmtpd-extras-table-postgresql
-    SUBDIR += opensmtpd-extras-table-python
     SUBDIR += opensmtpd-extras-table-redis
     SUBDIR += opensmtpd-extras-table-socketmap
     SUBDIR += opensmtpd-extras-table-sqlite
