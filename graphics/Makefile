@@ -839,7 +839,6 @@
     SUBDIR += py-hiplot
     SUBDIR += py-imageio
     SUBDIR += py-imageio-ffmpeg
-    SUBDIR += py-imageio24
     SUBDIR += py-imagesize
     SUBDIR += py-img2pdf
     SUBDIR += py-leather

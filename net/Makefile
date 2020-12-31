@@ -947,7 +947,6 @@
     SUBDIR += pecl-radius
     SUBDIR += pecl-rdkafka
     SUBDIR += pecl-smbclient
-    SUBDIR += pecl-yaz
     SUBDIR += pecl-zmq
     SUBDIR += pen
     SUBDIR += pfinger

@@ -1,4 +1,0 @@
-PHP/YAZ is an extension to the popular web server language PHP that implements
-Z39.50 origin (client) functionality as well as the SRW/SRU protocols.
-
-WWW: https://pecl.php.net/package/yaz

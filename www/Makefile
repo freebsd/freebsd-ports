@@ -163,7 +163,6 @@
     SUBDIR += filtron
     SUBDIR += firefox
     SUBDIR += firefox-esr
-    SUBDIR += flashplayer
     SUBDIR += flat-frog
     SUBDIR += flexget
     SUBDIR += flickcurl
@@ -314,7 +313,6 @@
     SUBDIR += links
     SUBDIR += links1
     SUBDIR += linux-c7-qtwebkit
-    SUBDIR += linux-flashplayer
     SUBDIR += linux-opera
     SUBDIR += litmus
     SUBDIR += ljdeps
@@ -337,8 +335,6 @@
     SUBDIR += mattermost-server
     SUBDIR += mattermost-webapp
     SUBDIR += mediawiki131
-    SUBDIR += mediawiki133
-    SUBDIR += mediawiki134
     SUBDIR += mediawiki135
     SUBDIR += mergelog
     SUBDIR += mhonarc
@@ -1416,7 +1412,6 @@
     SUBDIR += py-aiohttp
     SUBDIR += py-aiohttp-middlewares
     SUBDIR += py-aiohttp-wsgi
-    SUBDIR += py-aiohttp2
     SUBDIR += py-aiohttp_cors
     SUBDIR += py-aioquic
     SUBDIR += py-arxiv

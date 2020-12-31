@@ -21,7 +21,6 @@
     SUBDIR += catdvi
     SUBDIR += cdlabelgen
     SUBDIR += cloud-print-connector
-    SUBDIR += cloudprint
     SUBDIR += cups
     SUBDIR += cups-bjnp
     SUBDIR += cups-cloud-print

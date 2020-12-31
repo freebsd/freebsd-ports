@@ -15887,3 +15887,24 @@ converters/php72-recode||2020-12-31|Has expired: Security Support ends on 30 Nov
 converters/php72-iconv|converters/php74-iconv|2020-12-31|Has expired: Security Support ends on 30 Nov 2020
 sysutils/php72-posix|sysutils/php74-posix|2020-12-31|Has expired: Security Support ends on 30 Nov 2020
 sysutils/php72-fileinfo|sysutils/php74-fileinfo|2020-12-31|Has expired: Security Support ends on 30 Nov 2020
+devel/arm-none-eabi-gdb||2020-12-31|Has expired: This is an old, obsolete version of gdb
+devel/pecl-weakref2||2020-12-31|Has expired: PHP 7.2 extension
+graphics/py-imageio24|graphics/py-imageio|2020-12-31|Has expired: Use graphics/py-imageio instead
+mail/bogofilter-tc||2020-12-31|Has expired: TokyoCabinet is being phased out in favor of KyotoCabinet.
+net/pecl-yaz||2020-12-31|Has expired: PHP 7.2 extension
+print/cloudprint||2020-12-31|Has expired: Google Cloud Print is being shut down by Google by end of 2020
+science/py-eccodes-python|science/py-eccodes|2020-12-31|Has expired: Use science/py-eccodes instead
+sysutils/cfengine-masterfiles312|sysutils/cfengine-masterfiles315|2020-12-31|Has expired: EOL
+sysutils/cfengine-masterfiles313|sysutils/cfengine-masterfiles315|2020-12-31|Has expired: EOL
+sysutils/cfengine312|sysutils/cfengine315|2020-12-31|Has expired: EOL
+sysutils/cfengine313|sysutils/cfengine315|2020-12-31|Has expired: EOL
+sysutils/rubygem-chef-zero5|sysutils/rubygem-chef-zero|2020-12-31|Has expired: Please use sysutils/rubygem-chef-zero instead
+sysutils/syslog-ng325|sysutils/syslog-ng|2020-12-31|Has expired: Reduction of syslog-ng ports to one
+sysutils/syslog-ng326|sysutils/syslog-ng|2020-12-31|Has expired: Reduction of syslog-ng ports to one
+sysutils/syslog-ng328|sysutils/syslog-ng|2020-12-31|Has expired: Reduction of syslog-ng ports to one
+sysutils/syslog-ng329|sysutils/syslog-ng|2020-12-31|Has expired: Reduction of syslog-ng ports to one
+www/flashplayer||2020-12-31|Has expired: Depends on a deprecated port
+www/linux-flashplayer||2020-12-31|Has expired: Deprecated by upstream
+www/mediawiki133|www/mediawiki135|2020-12-31|Has expired: Upstream end of life
+www/mediawiki134|www/mediawiki135|2020-12-31|Has expired: Upstream end of life
+www/py-aiohttp2|www/py-aiohttp|2020-12-31|Has expired: Use www/py-aiohttp instead

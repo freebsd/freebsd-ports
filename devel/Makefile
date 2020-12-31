@@ -169,7 +169,6 @@
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-none-eabi-gcc
     SUBDIR += arm-none-eabi-gcc492
-    SUBDIR += arm-none-eabi-gdb
     SUBDIR += arm-none-eabi-newlib
     SUBDIR += aros-sdk
     SUBDIR += arpc
@@ -3888,7 +3887,6 @@
     SUBDIR += pecl-uuid
     SUBDIR += pecl-uv
     SUBDIR += pecl-vld
-    SUBDIR += pecl-weakref2
     SUBDIR += pecl-xdebug
     SUBDIR += pecl-yac
     SUBDIR += pecl-yaconf
