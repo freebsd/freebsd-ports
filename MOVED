@@ -15909,3 +15909,4 @@ www/mediawiki133|www/mediawiki135|2020-12-31|Has expired: Upstream end of life
 www/mediawiki134|www/mediawiki135|2020-12-31|Has expired: Upstream end of life
 www/py-aiohttp2|www/py-aiohttp|2020-12-31|Has expired: Use www/py-aiohttp instead
 graphics/drm-legacy-kmod|graphics/drm-kmod|2020-12-31|Has expired: Obsolete version, use drm-kmod
+net/mediatomb|net/gerbera|2020-12-31|Removed: no new release for over 10 years
