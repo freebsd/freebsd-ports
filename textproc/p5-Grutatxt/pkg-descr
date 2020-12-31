@@ -1,0 +1,10 @@
+Grutatxt is a plain text to HTML (and other formats) converter. It succesfully
+converts subtle text markup of lists, bold, italics, tables and headings to
+their corresponding HTML, troff, man page or LaTeX markup without having to
+write unreadable source text files. Grutatxt is a Perl module and a command
+line utility, and is the main text renderer in the Gruta CMS.
+
+The output drivers currently supported by Grutatxt are: HTML, troff (me
+macros), man and LaTeX.
+
+WWW: https://triptico.com/software/grutatxt.html
