@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+To enable the automuteus server, set automuteus_enable="YES" in your
+/etc/rc.conf and set the DISCORD_BOT_TOKEN in 
+%%PREFIX%%/etc/automuteus/config.txt to your Discord bot token.
+
+Additional configuration options can be seen in the source code:
+
+https://github.com/denverquane/automuteus/blob/master/main.go
+
+The %%PREFIX%%/etc/rc.d/automuteus rc.subr script can override the config and
+log pathnames.
+EOM
+}
+]

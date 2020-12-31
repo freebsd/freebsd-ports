@@ -67,6 +67,7 @@
     SUBDIR += atris
     SUBDIR += atris-sounds
     SUBDIR += auralquiz
+    SUBDIR += automuteus
     SUBDIR += avanor
     SUBDIR += avoision
     SUBDIR += avp

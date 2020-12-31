@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: automuteus
+# REQUIRE: DAEMON FILESYSTEMS NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable automuteus.
+#
+#automuteus_enable="YES"
+
+. /etc/rc.subr
+
+name="automuteus"
+rcvar="automuteus_enable"
+
+load_rc_config $name
+
+: ${automuteus_enable:="NO"}
+: ${automuteus_conf:="%%PREFIX%%/etc/automuteus/config.txt"}
+: ${automuteus_log:="/var/log/automuteus.log"}
+
+command="%%PREFIX%%/bin/automuteus"
+pidfile=/var/run/${name}.pid
+start_cmd="automuteus_start"
+
+automuteus_start()
+{
+	check_startmsgs && echo "Starting ${name}."
+	/usr/sbin/daemon \
+		-p ${pidfile} \
+		/usr/bin/env \
+		"CONFIG_FILE=${automuteus_conf}" \
+		"LOG_PATH=${automuteus_log}" \
+		${command}
+}
+
+run_rc_command "$1"
