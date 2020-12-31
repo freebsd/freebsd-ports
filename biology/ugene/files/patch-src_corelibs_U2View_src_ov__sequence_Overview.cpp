@@ -2,9 +2,9 @@
 +++ src/corelibs/U2View/src/ov_sequence/Overview.cpp
 @@ -38,6 +38,7 @@
  
- #include <QVBoxLayout>
  #include <QToolTip>
+ #include <QVBoxLayout>
 +#include <QPainterPath>
  
- 
- namespace U2 {
+ #include <U2Core/AnnotationModification.h>
+ #include <U2Core/AnnotationSettings.h>

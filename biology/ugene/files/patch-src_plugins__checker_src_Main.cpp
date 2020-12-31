@@ -10,9 +10,9 @@
  #define TR_SETTINGS_ROOT QString("test_runner/")
  
 @@ -55,8 +55,10 @@ static void registerCoreServices() {
+     }
+ #endif
  
- int main(int argc, char **argv)
- {
 +#if 0
      CrashHandler::setupHandler();
      CrashHandler::setSendCrashReports(false);

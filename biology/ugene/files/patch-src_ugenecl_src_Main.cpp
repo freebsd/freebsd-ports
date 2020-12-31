@@ -10,9 +10,9 @@
  // local project imports
  #include "DumpHelpTask.h"
 @@ -191,6 +191,7 @@ static void setSearchPaths() {
+ }
  
- int main(int argc, char **argv)
- {
+ int main(int argc, char **argv) {
 +#if 0
      if (CrashHandler::isEnabled()) {
          CrashHandler::setupHandler();
@@ -23,8 +23,8 @@
      }
 +#endif
  
-     const char* build = QT_VERSION_STR, *runtime = qVersion();
-     if (strcmp(build, runtime) > 0){
+     if (!Version::checkBuildAndRuntimeVersions()) {
+         return -1;
 @@ -617,7 +619,7 @@ int main(int argc, char **argv)
      delete pwr;
      appContext->setAlignmentAlgorithmsRegistry(NULL);

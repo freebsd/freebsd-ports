@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ugene
-PORTVERSION=	34.0
+PORTVERSION=	37.0
 CATEGORIES=	biology science
 
 MAINTAINER=	h2+fbsdports@fsfe.org
@@ -21,16 +21,16 @@ GH_ACCOUNT=	ugeneunipro
 USES=		desktop-file-utils gl qmake qt:5 shared-mime-info xorg
 USE_GL=		gl glu
 USE_QT=		buildtools_build linguisttools_build \
-		core declarative gui opengl location network printsupport \
-		script scripttools sql svg testlib webchannel webengine \
-		websockets widgets xml \
+		core gui network opengl printsupport scripttools script \
+		sql svg testlib widgets xml \
 		imageformats_run
 USE_XORG=	x11 xtst
 
 QMAKE_ARGS=	INSTALL_PREFIX="${PREFIX}" UGENE_INSTALL_DATA="${DATADIR}" \
-		INSTALL_MANDIR="${MAN1PREFIX}/man" LRELEASE="${LRELEASE}" \
-		LUPDATE="${LUPDATE}"
+		INSTALL_MANDIR="${MAN1PREFIX}/man" \
+		UGENE_LRELEASE="${LRELEASE}" UGENE_LUPDATE="${LUPDATE}"
 ALL_TARGET=	release
+CXXFLAGS_i386=	-msse2
 
 OPTIONS_DEFINE=	OPENCL
 
@@ -41,10 +41,6 @@ OPENCL_QMAKE_ON=	UGENE_OPENCL_DETECTED=1
 .if ${ARCH} == amd64
 # XXX: need to manually tell the build we are on x64
 QMAKE_ARGS+=	CONFIG+=x64
-.endif
-
-.if ${MACHINE_CPU:Msse2}
-QMAKE_ARGS+=	UGENE_SSE2_DETECTED=1
 .endif
 
 post-patch:
@@ -59,7 +55,10 @@ post-patch:
 		${WRKSRC}/src/plugins_checker/plugins_checker.pri \
 		${WRKSRC}/src/ugenecl/ugenecl.pri \
 		${WRKSRC}/src/ugeneui/ugeneui.pri
-	@${REINPLACE_CMD} -e '422s|NULL|0|' \
-		${WRKSRC}/src/plugins/smith_waterman/src/SmithWatermanAlgorithmOPENCL.cpp
+	@${REINPLACE_CMD} -e '218,220s|NULL)|false)|' \
+		${WRKSRC}/src/plugins/GUITestBase/src/GTUtilsMdi.cpp
+
+post-stage:
+	@cd ${STAGEDIR}${PREFIX} && ${RM} bin/ecp.* lib/ugene/ecp.*
 
 .include <bsd.port.post.mk>
