@@ -1,0 +1,39 @@
+--- milter-regex.c.orig	2020-10-07 13:25:30.000000000 +1100
++++ milter-regex.c	2020-10-07 13:26:01.000000000 +1100
+@@ -61,7 +61,7 @@
+ 		    size_t);
+ 
+ static const char	*rule_file_name = "/etc/milter-regex.conf";
+-static int		 debug = 0;
++static int		 debug = 0, foreground = 0;
+ static unsigned		 maxlines = 0;
+ static pthread_mutex_t	 mutex;
+ 
+@@ -697,7 +697,7 @@
+ 	int test_ruleset = 0;
+ 	FILE *f = NULL;
+ 
+-	while ((ch = getopt(argc, argv, "c:df:j:l:m:p:r:tu:G:P:U:")) != -1) {
++	while ((ch = getopt(argc, argv, "c:dFf:j:l:m:p:r:tu:G:P:U:")) != -1) {
+ 		switch (ch) {
+ 		case 'c':
+ 			rule_file_name = optarg;
+@@ -705,6 +705,9 @@
+ 		case 'd':
+ 			debug = 1;
+ 			break;
++		case 'F':
++			foreground = 1; 
++			break;
+ 		case 'f': {
+ 			int i;
+ 
+@@ -863,7 +866,7 @@
+ 	}
+ 
+ 	/* daemonize (detach from controlling terminal) */
+-	if (!debug && daemon(0, 0)) {
++	if ( !debug && !foreground && daemon(0, 0)) {
+ 		perror("daemon");
+ 		goto done;
+ 	}
