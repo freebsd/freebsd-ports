@@ -2,6 +2,7 @@
 
 PORTNAME=	kross-interpreters
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,13 +13,11 @@ USE_KDE=	ecm kross
 USE_QT=		core gui script widgets xml \
 		buildtools_build qmake_build
 
-OPTIONS_DEFINE=		PYTHON RUBY DOCS
+OPTIONS_DEFINE=		RUBY DOCS
 OPTIONS_SUB=		yes
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-# Remove python option with the removal of Python 2.7 from the tree.
-PYTHON_USES=		python:2.7
-PYTHON_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_PythonLibs
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_PythonLibs
 
 RUBY_USE=		ruby
 RUBY_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Ruby
