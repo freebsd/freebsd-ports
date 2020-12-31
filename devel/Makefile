@@ -76,6 +76,7 @@
     SUBDIR += R-cran-randomForest
     SUBDIR += R-cran-registry
     SUBDIR += R-cran-rematch2
+    SUBDIR += R-cran-remotes
     SUBDIR += R-cran-repr
     SUBDIR += R-cran-reshape
     SUBDIR += R-cran-reshape2

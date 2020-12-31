@@ -1,0 +1,6 @@
+Download and install R packages stored in 'GitHub', 'GitLab', 'Bitbucket',
+'Bioconductor', or plain 'subversion' or 'git' repositories. This package
+provides the 'install_*' functions in 'devtools'. Indeed most of the code was
+copied over from 'devtools'.
+
+WWW: https://remotes.r-lib.org
