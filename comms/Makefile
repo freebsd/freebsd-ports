@@ -85,6 +85,7 @@
     SUBDIR += libticables2
     SUBDIR += libticalcs2
     SUBDIR += libusbmuxd
+    SUBDIR += limesuite
     SUBDIR += linrad
     SUBDIR += liquid-dsp
     SUBDIR += lirc

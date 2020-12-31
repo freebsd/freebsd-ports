@@ -1,0 +1,19 @@
+--- Desktop/CMakeLists.txt.orig	2020-10-29 09:52:56 UTC
++++ Desktop/CMakeLists.txt
+@@ -1,13 +1,13 @@
+ ########################################################################
+ ## Feature registration
+ ########################################################################
+-if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+-    set(LINUX TRUE)
++if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR "FreeBSD")
++    set(UNIX TRUE)
+ endif()
+ 
+ include(FeatureSummary)
+ include(CMakeDependentOption)
+-cmake_dependent_option(ENABLE_DESKTOP "Enable LimeSuite launcher and icons" ON "ENABLE_GUI;LINUX" OFF)
++cmake_dependent_option(ENABLE_DESKTOP "Enable LimeSuite launcher and icons" ON "ENABLE_GUI;UNIX" OFF)
+ add_feature_info(LimeSuiteDesktop ENABLE_DESKTOP "LimeSuite freedesktop integration")
+ if (NOT ENABLE_DESKTOP)
+     return()

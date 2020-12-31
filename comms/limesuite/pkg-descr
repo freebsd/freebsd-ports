@@ -1,0 +1,7 @@
+Lime Suite is a collection of software supporting several hardware platforms
+including the LimeSDR, drivers for the LMS7002M transceiver RFIC, and other
+tools for developing with LMS7-based hardware. Installing the Lime Suite
+enables many SDR applications such as GQRX to work with supported hardware
+through the bundled SoapySDR support module.
+
+WWW: https://github.com/myriadrf/LimeSuite
