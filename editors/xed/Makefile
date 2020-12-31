@@ -3,6 +3,7 @@
 
 PORTNAME=	xed
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -15,7 +16,7 @@ PORTSCOUT=	limit:^[0-9.]+$$	# ignore master.mint* tags
 BUILD_DEPENDS=	intltool-merge:textproc/intltool \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libpeas-1.0.so:devel/libpeas \
-		libxapp.so:x11/xapps
+		libxapp.so:x11/xapp
 RUN_DEPENDS=	${LOCALBASE}/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml:devel/gsettings-desktop-schemas
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome meson \
