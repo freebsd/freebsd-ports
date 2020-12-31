@@ -3,6 +3,7 @@
 
 PORTNAME=	cl-ppcre
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc lisp
 DISTFILES=	# none
 
