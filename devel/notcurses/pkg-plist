@@ -61,6 +61,7 @@ libdata/pkgconfig/notcurses.pc
 %%MANPAGES%%share/man/man1/notcurses-view.1.gz
 %%MANPAGES%%share/man/man3/notcurses.3.gz
 %%MANPAGES%%share/man/man3/notcurses_capabilities.3.gz
+%%MANPAGES%%share/man/man3/notcurses_cell.3.gz
 %%MANPAGES%%share/man/man3/notcurses_channels.3.gz
 %%MANPAGES%%share/man/man3/notcurses_directmode.3.gz
 %%MANPAGES%%share/man/man3/notcurses_fade.3.gz
@@ -71,11 +72,11 @@ libdata/pkgconfig/notcurses.pc
 %%MANPAGES%%share/man/man3/notcurses_menu.3.gz
 %%MANPAGES%%share/man/man3/notcurses_metric.3.gz
 %%MANPAGES%%share/man/man3/notcurses_multiselector.3.gz
-%%MANPAGES%%share/man/man3/notcurses_nccell.3.gz
 %%MANPAGES%%share/man/man3/notcurses_output.3.gz
 %%MANPAGES%%share/man/man3/notcurses_palette.3.gz
 %%MANPAGES%%share/man/man3/notcurses_plane.3.gz
 %%MANPAGES%%share/man/man3/notcurses_plot.3.gz
+%%MANPAGES%%share/man/man3/notcurses_progbar.3.gz
 %%MANPAGES%%share/man/man3/notcurses_reader.3.gz
 %%MANPAGES%%share/man/man3/notcurses_reel.3.gz
 %%MANPAGES%%share/man/man3/notcurses_refresh.3.gz
@@ -87,6 +88,7 @@ libdata/pkgconfig/notcurses.pc
 %%MANPAGES%%share/man/man3/notcurses_visual.3.gz
 %%DATADIR%%/PurpleDrank.jpg
 %%DATADIR%%/aidsrobots.jpeg
+%%DATADIR%%/atma.png
 %%DATADIR%%/changes.jpg
 %%DATADIR%%/chunli01.png
 %%DATADIR%%/chunli02.png
