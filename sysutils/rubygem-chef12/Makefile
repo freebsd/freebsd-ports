@@ -14,6 +14,9 @@ COMMENT=	Systems integration framework. Client part
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Please use sysutils/rubygem-chef instead
+EXPIRATION_DATE=	2021-01-31
+
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-bundler>=1.10:sysutils/rubygem-bundler \
 		rubygem-chef-config12=${PORTVERSION}:sysutils/rubygem-chef-config12 \
