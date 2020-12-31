@@ -1,0 +1,49 @@
+https://github.com/glandium/git-cinnabar/commit/2db9fad6a3df
+
+--- helper/GIT-VERSION.mk.orig	2020-11-12 02:19:34 UTC
++++ helper/GIT-VERSION.mk
+@@ -1,2 +1,2 @@
+-GIT_VERSION ?= v2.29.2
++GIT_VERSION ?= v2.30.0
+ WINDOWS_GIT_VERSION ?= $(GIT_VERSION).windows.1
+--- helper/cinnabar-fast-import.c.orig	2020-11-12 02:19:34 UTC
++++ helper/cinnabar-fast-import.c
+@@ -264,7 +264,7 @@ static uintmax_t parse_mark_ref(const char *p, char **
+ 		e->pack_id = MAX_PACK_ID;
+ 		e->idx.offset = 1;
+ 	}
+-	insert_mark(marks, 2, e);
++	insert_mark(&marks, 2, e);
+ 	return 2;
+ }
+ 
+--- helper/cinnabar-helper.c.orig	2020-11-12 02:19:34 UTC
++++ helper/cinnabar-helper.c
+@@ -1978,8 +1978,8 @@ static void do_upgrade(struct string_list *args)
+ 				free_tree_buffer(get_commit_tree(manifest_commit));
+ 			}
+ 		}
+-		hashmap_free_entries(&track.commit_cache, struct oid_map_entry, ent);
+-		hashmap_free_entries(&track.tree_cache, struct oid_map_entry, ent);
++		hashmap_clear_and_free(&track.commit_cache, struct oid_map_entry, ent);
++		hashmap_clear_and_free(&track.tree_cache, struct oid_map_entry, ent);
+ 		oidset_clear(&track.manifests);
+ 		stop_progress(&track.progress);
+ 	}
+@@ -2371,7 +2371,7 @@ static void do_reload(struct string_list *args)
+ 
+ 	oidset_clear(&hg2git_seen);
+ 
+-	hashmap_free_entries(&git_tree_cache, struct oid_map_entry, ent);
++	hashmap_clear_and_free(&git_tree_cache, struct oid_map_entry, ent);
+ 	hashmap_init(&git_tree_cache, oid_map_entry_cmp, NULL, 0);
+ 
+ 	oid_array_clear(&manifest_heads);
+@@ -2574,6 +2574,6 @@ int main(int argc, const char *argv[])
+ 		free_notes(&files_meta);
+ 
+ 	oidset_clear(&hg2git_seen);
+-	hashmap_free_entries(&git_tree_cache, struct oid_map_entry, ent);
++	hashmap_clear_and_free(&git_tree_cache, struct oid_map_entry, ent);
+ 	return 0;
+ }
