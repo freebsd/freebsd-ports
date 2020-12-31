@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	treeline
-PORTVERSION=	3.1.3
-PORTREVISION=	2
+PORTVERSION=	3.1.4
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/doug-101/TreeLine/releases/download/v${PORTVERSION}/ \
 		SF/${PORTNAME}/${PORTVERSION}
