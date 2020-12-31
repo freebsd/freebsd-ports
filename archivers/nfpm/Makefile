@@ -2,7 +2,7 @@
 
 PORTNAME=	nfpm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	archivers
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,12 +27,14 @@ GH_TUPLE=	\
 		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/github.com/alecthomas/kingpin \
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:f65c72e2690d:alecthomas_units/vendor/github.com/alecthomas/units \
+		ashanbrown:forbidigo:v1.0.0:ashanbrown_forbidigo/vendor/github.com/ashanbrown/forbidigo \
+		ashanbrown:makezero:7b7cdbb3025a:ashanbrown_makezero/vendor/github.com/ashanbrown/makezero \
 		blakesmith:ar:809d4375e1fb:blakesmith_ar/vendor/github.com/blakesmith/ar \
 		bombsimon:wsl:v3.1.0:bombsimon_wsl_v3/vendor/github.com/bombsimon/wsl/v3 \
 		cavaliercoder:go-cpio:925f9528c45e:cavaliercoder_go_cpio/vendor/github.com/cavaliercoder/go-cpio \
 		daixiang0:gci:v0.2.7:daixiang0_gci/vendor/github.com/daixiang0/gci \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		denis-tingajkin:go-header:v0.3.1:denis_tingajkin_go_header/vendor/github.com/denis-tingajkin/go-header \
+		denis-tingajkin:go-header:v0.4.2:denis_tingajkin_go_header/vendor/github.com/denis-tingajkin/go-header \
 		dominikh:go-tools:v0.0.1-2020.1.6:dominikh_go_tools/vendor/honnef.co/go/tools \
 		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
@@ -68,7 +70,7 @@ GH_TUPLE=	\
 		golangci:go-misc:927a3d87b613:golangci_go_misc/vendor/github.com/golangci/go-misc \
 		golangci:gocyclo:0a533e8fa43d:golangci_gocyclo/vendor/github.com/golangci/gocyclo \
 		golangci:gofmt:244bba706f1a:golangci_gofmt/vendor/github.com/golangci/gofmt \
-		golangci:golangci-lint:v1.33.0:golangci_golangci_lint/vendor/github.com/golangci/golangci-lint \
+		golangci:golangci-lint:v1.34.0:golangci_golangci_lint/vendor/github.com/golangci/golangci-lint \
 		golangci:ineffassign:42439a7714cc:golangci_ineffassign/vendor/github.com/golangci/ineffassign \
 		golangci:lint-1:297bf364a8e0:golangci_lint_1/vendor/github.com/golangci/lint-1 \
 		golangci:maligned:b1d89398deca:golangci_maligned/vendor/github.com/golangci/maligned \
@@ -93,6 +95,7 @@ GH_TUPLE=	\
 		jirfag:go-printf-func-name:7558a9eaa5af:jirfag_go_printf_func_name/vendor/github.com/jirfag/go-printf-func-name \
 		kevinburke:ssh_config:4977a11b4351:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
 		kisielk:gotool:v1.0.0:kisielk_gotool/vendor/github.com/kisielk/gotool \
+		kulti:thelper:v0.1.0:kulti_thelper/vendor/github.com/kulti/thelper \
 		kunwardeep:paralleltest:v1.0.2:kunwardeep_paralleltest/vendor/github.com/kunwardeep/paralleltest \
 		kyoh86:exportloopref:v0.1.8:kyoh86_exportloopref/vendor/github.com/kyoh86/exportloopref \
 		leighmcculloch:gochecknoglobals:acfc0b28355a:leighmcculloch_gochecknoglobals/vendor/4d63.com/gochecknoglobals \
@@ -122,7 +125,7 @@ GH_TUPLE=	\
 		polyfloyd:go-errorlint:19bd8db6546f:polyfloyd_go_errorlint/vendor/github.com/polyfloyd/go-errorlint \
 		quasilyte:go-ruleguard:v0.2.1:quasilyte_go_ruleguard/vendor/github.com/quasilyte/go-ruleguard \
 		quasilyte:regex:8f842688393c:quasilyte_regex_syntax/vendor/github.com/quasilyte/regex \
-		ryancurrah:gomodguard:v1.1.0:ryancurrah_gomodguard/vendor/github.com/ryancurrah/gomodguard \
+		ryancurrah:gomodguard:v1.2.0:ryancurrah_gomodguard/vendor/github.com/ryancurrah/gomodguard \
 		ryanrolds:sqlclosecheck:v0.3.0:ryanrolds_sqlclosecheck/vendor/github.com/ryanrolds/sqlclosecheck \
 		sassoftware:go-rpmutils:a8f1baeba37b:sassoftware_go_rpmutils/vendor/github.com/sassoftware/go-rpmutils \
 		securego:gosec:v2.5.0:securego_gosec_v2/vendor/github.com/securego/gosec/v2 \
@@ -146,7 +149,7 @@ GH_TUPLE=	\
 		tetafro:godot:v1.3.2:tetafro_godot/vendor/github.com/tetafro/godot \
 		timakin:bodyclose:cb6215831a94:timakin_bodyclose/vendor/github.com/timakin/bodyclose \
 		tomarrell:wrapcheck:1683564d9756:tomarrell_wrapcheck/vendor/github.com/tomarrell/wrapcheck \
-		tommy-muehle:go-mnd:e6f9a994e8fa:tommy_muehle_go_mnd/vendor/github.com/tommy-muehle/go-mnd \
+		tommy-muehle:go-mnd:16041ac3fe65:tommy_muehle_go_mnd/vendor/github.com/tommy-muehle/go-mnd \
 		ulikunitz:xz:v0.5.9:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
 		ultraware:funlen:v0.0.3:ultraware_funlen/vendor/github.com/ultraware/funlen \
 		ultraware:whitespace:v0.0.4:ultraware_whitespace/vendor/github.com/ultraware/whitespace \
