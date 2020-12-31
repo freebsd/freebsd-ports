@@ -1,0 +1,34 @@
+commit 383a82da4808
+Author: Emilio Cobos Álvarez <emilio@crisal.io>
+Date:   Mon Dec 28 04:39:00 2020 -0800
+
+    Bug 1684180 - Fix ESR build with newer versions of cbindgen. r=kvark
+---
+ dom/webgpu/ipc/WebGPUParent.cpp | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
+
+diff --git dom/webgpu/ipc/WebGPUParent.cpp dom/webgpu/ipc/WebGPUParent.cpp
+index ff93c0630d02..17c2ace6b4ae 100644
+--- dom/webgpu/ipc/WebGPUParent.cpp
++++ dom/webgpu/ipc/WebGPUParent.cpp
+@@ -423,17 +423,15 @@ ipc::IPCResult WebGPUParent::RecvDeviceCreateBindGroup(
+     switch (entry.mType) {
+       case SerialBindGroupEntryType::Buffer:
+         bgb.resource.tag = ffi::WGPUBindingResource_Buffer;
+-        bgb.resource.buffer._0.buffer = entry.mValue;
+-        bgb.resource.buffer._0.offset = entry.mBufferOffset;
+-        bgb.resource.buffer._0.size = entry.mBufferSize;
++        bgb.resource.buffer = {entry.mValue, entry.mBufferOffset, entry.mBufferSize};
+         break;
+       case SerialBindGroupEntryType::Texture:
+         bgb.resource.tag = ffi::WGPUBindingResource_TextureView;
+-        bgb.resource.texture_view._0 = entry.mValue;
++        bgb.resource.texture_view = {entry.mValue};
+         break;
+       case SerialBindGroupEntryType::Sampler:
+         bgb.resource.tag = ffi::WGPUBindingResource_Sampler;
+-        bgb.resource.sampler._0 = entry.mValue;
++        bgb.resource.sampler = {entry.mValue};
+         break;
+       default:
+         MOZ_CRASH("unreachable");
