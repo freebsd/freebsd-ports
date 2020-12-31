@@ -1,0 +1,6 @@
+mp_doccer is a tool that travels C code files, and extracts specially
+marked information to build documentation. This documentation can be
+generated in HTML, man pages, or an executable shell script. The markup
+is very similar to that in the Linux 2.4.x kernel sources.
+
+WWW: https://triptico.com/software/mp_doccer.html

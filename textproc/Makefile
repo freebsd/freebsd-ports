@@ -452,6 +452,7 @@
     SUBDIR += ml1
     SUBDIR += mn-aspell
     SUBDIR += modlogan
+    SUBDIR += mp_doccer
     SUBDIR += mr-aspell
     SUBDIR += ms-aspell
     SUBDIR += msort
