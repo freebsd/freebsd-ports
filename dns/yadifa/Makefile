@@ -1,10 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	yadifa
-DISTVERSION=	2.3.9
-DISTVERSIONSUFFIX=	-8497
+DISTVERSION=	2.4.1
+DISTVERSIONSUFFIX=	-9916
 CATEGORIES=	dns
-MASTER_SITES=	http://cdn.yadifa.eu/sites/default/files/releases/
+MASTER_SITES=	https://www.yadifa.eu/sites/default/files/releases/ \
+		https://dns.company/downloads/yadifa/
 
 MAINTAINER=	freebsd@dns.company
 COMMENT=	Authoritative nameserver with DNSSEC capabilities
@@ -12,36 +13,44 @@ COMMENT=	Authoritative nameserver with DNSSEC capabilities
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	libtool ssl
+USES=		libtool ssl
+USE_RC_SUBR=	${PORTNAME}d
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
 
-OPTIONS_DEFINE=	CTRL DOCS EXAMPLES TCL RRL MESSAGES NSID
-OPTIONS_DEFAULT=	RRL NSID
-OPTIONS_SUB=	yes
+PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README VERSION
 
-CTRL_DESC=	Remote control
-RRL_DESC=	Response Rate Limiting
-MESSAGES_DESC=	Use messages instead of send (if many ip aliases)
-NSID_DESC=	Name Server Identifier Option
+OPTIONS_DEFINE=		CTRL DDNS DNSSECTOOLS DOCS ECDSA EXAMPLES KEYGEN \
+			LARGEFILE MASTER NSID RRL RRSIG TCL ZONESIGN
+OPTIONS_DEFAULT=	DDNS DNSSECTOOLS DOCS ECDSA EXAMPLES KEYGEN LARGEFILE \
+			MASTER NSID RRL RRSIG ZONESIGN
+OPTIONS_SUB=		yes
 
-CTRL_CONFIGURE_ENABLE=	ctrl
-TCL_USES=	tcl
-TCL_CONFIGURE_ENABLE=	tcl
-RRL_CONFIGURE_ENABLE=	rrl
-MESSAGES_CONFIGURE_ENABLE=	messages
-NSID_CONFIGURE_ENABLE=	nsid
+CTRL_DESC=		Remote control
+DDNS_DESC=		Dynamic DNS support (DDNS)
+DNSSECTOOLS_DESC=	DNSSEC module
+ECDSA_DESC=		Elliptic Curve (ECDSA)
+KEYGEN_DESC=		Keygen tool
+LARGEFILE_DESC=		Support for largefiles
+MASTER_DESC=		Use as primary nameserver
+NSID_DESC=		Name Server Identifier Option
+RRL_DESC=		Response Rate Limiting
+RRSIG_DESC=		RRSIG management
+ZONESIGN_DESC=		Zonesign tool
 
-USE_RC_SUBR=	${PORTNAME}d
-
-PORTDOCS=	AUTHORS COPYING ChangeLog \
-		INSTALL NEWS README TODO VERSION
-
-post-patch:
-# Fix the build with -fno-common (for Clang 11 and GCC 10)
-	@${REINPLACE_CMD} -e '/\*g_client_logger/d' \
-		${WRKSRC}/bin/yadifa/yadifa.c
+CTRL_CONFIGURE_OFF=		--disable-ctrl
+DDNS_CONFIGURE_OFF=		--disable-dynupdate
+ECDSA_CONFIGURE_OFF=		--disable-ecdsa
+LARGEFILE_CONFIGURE_OFF=	--disable-largefile
+MASTER_CONFIGURE_OFF=		--disable-master
+NSID_CONFIGURE_OFF=		--disable-nsid
+RRL_CONFIGURE_OFF=		--disable-rrl
+RRSIG_CONFIGURE_OFF=		--disable-rrsig-management
+TCL_USES=			tcl
+DNSSECTOOLS_OFF=		--disable-dnssec-tools
+KEYGEN_ENABLE=			keygen
+ZONESIGN_ENABLE=		zonesign
 
 post-configure:
 	${REINPLACE_CMD} -e 's|^docdir = .*|docdir = ${EXAMPLESDIR}|' ${WRKSRC}/etc/Makefile
@@ -50,11 +59,13 @@ post-configure:
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} features
 
-post-install:
-	${CP} ${WRKSRC}/etc/yadifad.conf \
-		${STAGEDIR}${PREFIX}/etc/yadifad.conf.sample
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/etc/yadifad.conf \
+		${STAGEDIR}${PREFIX}/etc/yadifad.conf.sample
 	${MV} ${STAGEDIR}/var/zones ${STAGEDIR}/var/${PORTNAME}
 
 post-install-EXAMPLES-on:

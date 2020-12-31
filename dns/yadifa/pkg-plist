@@ -1,7 +1,9 @@
-bin/yadifa
 %%EXAMPLES%%etc/bash_completion.d/yadifa.sh
 %%EXAMPLES%%etc/bash_completion.d/yadifad.sh
 @sample etc/yadifad.conf.sample
+etc/yakeyrolld.conf
+include/dnscore/acl-config.h
+include/dnscore/acl.h
 include/dnscore/alarm.h
 include/dnscore/allocator.h
 include/dnscore/async.h
@@ -14,10 +16,12 @@ include/dnscore/base64.h
 include/dnscore/basic-priority-queue.h
 include/dnscore/buffer_input_stream.h
 include/dnscore/buffer_output_stream.h
+include/dnscore/buffered-file.h
 include/dnscore/bytearray_input_stream.h
 include/dnscore/bytearray_output_stream.h
 include/dnscore/bytezarray_output_stream.h
 include/dnscore/chroot.h
+include/dnscore/circular-file.h
 include/dnscore/clone_input_output_stream.h
 include/dnscore/cmdline.h
 include/dnscore/concat_input_stream.h
@@ -32,7 +36,6 @@ include/dnscore/digest.h
 include/dnscore/dns-udp.h
 include/dnscore/dns_resource_record.h
 include/dnscore/dnscore-config-features.h
-include/dnscore/dnscore-config.h
 include/dnscore/dnscore.h
 include/dnscore/dnsformat.h
 include/dnscore/dnskey-keyring.h
@@ -46,15 +49,21 @@ include/dnscore/dnsname_set.h
 include/dnscore/dnssec_errors.h
 include/dnscore/empty-input-stream.h
 include/dnscore/fdtools.h
+include/dnscore/file-pool.h
+include/dnscore/file.h
 include/dnscore/file_input_stream.h
 include/dnscore/file_output_stream.h
+include/dnscore/filesystem-file.h
 include/dnscore/fingerprint.h
 include/dnscore/format.h
+include/dnscore/hash.h
+include/dnscore/hmac.h
 include/dnscore/host_address.h
 include/dnscore/hsdllist.h
 include/dnscore/identity.h
 include/dnscore/input_stream.h
 include/dnscore/io_stream.h
+include/dnscore/json.h
 include/dnscore/limited_input_stream.h
 include/dnscore/limiter.h
 include/dnscore/list-dl.h
@@ -63,9 +72,11 @@ include/dnscore/list-sl.h
 include/dnscore/logger-output-stream.h
 include/dnscore/logger.h
 include/dnscore/logger_channel_file.h
+include/dnscore/logger_channel_pipe.h
 include/dnscore/logger_channel_stream.h
 include/dnscore/logger_channel_syslog.h
 include/dnscore/logger_handle.h
+include/dnscore/mapped-file.h
 include/dnscore/message-buffer.h
 include/dnscore/message-viewer.h
 include/dnscore/message.h
@@ -73,9 +84,10 @@ include/dnscore/message_dnsupdate.h
 include/dnscore/message_verify_rrsig.h
 include/dnscore/mt_output_stream.h
 include/dnscore/mutex.h
-include/dnscore/name.h
 include/dnscore/network.h
+include/dnscore/nsec3-hash.h
 %%NSID%%include/dnscore/nsid.h
+include/dnscore/openssl.h
 include/dnscore/output_stream.h
 include/dnscore/pace.h
 include/dnscore/packet_reader.h
@@ -85,7 +97,9 @@ include/dnscore/parsing.h
 include/dnscore/pid.h
 include/dnscore/pipe_stream.h
 include/dnscore/pool.h
+include/dnscore/popen-output-stream.h
 include/dnscore/print_stream.h
+include/dnscore/process.h
 include/dnscore/ptr_set.h
 include/dnscore/ptr_set_debug.h
 include/dnscore/ptr_vector.h
@@ -97,17 +111,27 @@ include/dnscore/rfc.h
 include/dnscore/serial.h
 include/dnscore/server-setup.h
 include/dnscore/service.h
+include/dnscore/shared-circular-buffer.h
+include/dnscore/shared-heap-bytearray-output-stream.h
+include/dnscore/shared-heap.h
+include/dnscore/signals.h
+include/dnscore/simple-http-server.h
+include/dnscore/socket-server.h
 include/dnscore/string_set.h
 include/dnscore/sys_error.h
 include/dnscore/sys_get_cpu_count.h
 include/dnscore/sys_types.h
 include/dnscore/tcp_io_stream.h
+include/dnscore/tcp_manager.h
+include/dnscore/thread-tag.h
+include/dnscore/thread.h
 include/dnscore/thread_pool.h
 include/dnscore/threaded-qsl-cw.h
 include/dnscore/threaded_dll_cw.h
 include/dnscore/threaded_nb_mm.h
 include/dnscore/threaded_nbrb.h
 include/dnscore/threaded_queue.h
+include/dnscore/threaded_queue_slg.h
 include/dnscore/threaded_ringbuffer.h
 include/dnscore/threaded_ringbuffer_cw.h
 include/dnscore/threaded_ringlist.h
@@ -120,6 +144,9 @@ include/dnscore/u64_set.h
 include/dnscore/u64_set_debug.h
 include/dnscore/xfr_input_stream.h
 include/dnscore/zalloc.h
+include/dnscore/zone_reader.h
+include/dnscore/zone_reader_axfr.h
+include/dnscore/zone_reader_text.h
 include/dnscore/zonefile_reader.h
 include/dnsdb/avl.h
 include/dnsdb/btree.h
@@ -131,9 +158,9 @@ include/dnsdb/dnsrdata.h
 include/dnsdb/dnssec-keystore.h
 include/dnsdb/dnssec.h
 include/dnsdb/dnssec_config.h
-include/dnsdb/dynupdate.h
-include/dnsdb/dynupdate-diff.h
-include/dnsdb/hash.h
+%%DDNS%%include/dnsdb/dynupdate-diff.h
+%%DDNS%%include/dnsdb/dynupdate.h
+%%DDNS%%include/dnsdb/dynupdate-message.h
 include/dnsdb/htable.h
 include/dnsdb/htbt.h
 include/dnsdb/journal-cjf-common.h
@@ -142,15 +169,15 @@ include/dnsdb/journal-cjf-page-cache.h
 include/dnsdb/journal-cjf-page-output-stream.h
 include/dnsdb/journal-cjf-page.h
 include/dnsdb/journal-cjf.h
+include/dnsdb/journal-jnl.h
 include/dnsdb/journal.h
 include/dnsdb/journal_ix.h
-include/dnsdb/nsec.h
 include/dnsdb/nsec-chain-replay.h
+include/dnsdb/nsec.h
 include/dnsdb/nsec3-chain-replay.h
 include/dnsdb/nsec3-forall-label.h
 include/dnsdb/nsec3.h
 include/dnsdb/nsec3_collection.h
-include/dnsdb/nsec3_hash.h
 include/dnsdb/nsec3_item.h
 include/dnsdb/nsec3_load.h
 include/dnsdb/nsec3_name_error.h
@@ -160,7 +187,6 @@ include/dnsdb/nsec3_types.h
 include/dnsdb/nsec3_zone.h
 include/dnsdb/nsec_collection.h
 include/dnsdb/nsec_common.h
-include/dnsdb/rr_canonize.h
 include/dnsdb/rrsig.h
 include/dnsdb/xfr_copy.h
 include/dnsdb/zdb-config-features.h
@@ -173,8 +199,8 @@ include/dnsdb/zdb-zone-dnssec.h
 include/dnsdb/zdb-zone-find.h
 include/dnsdb/zdb-zone-garbage.h
 include/dnsdb/zdb-zone-journal.h
-include/dnsdb/zdb-zone-lock.h
 include/dnsdb/zdb-zone-lock-monitor.h
+include/dnsdb/zdb-zone-lock.h
 include/dnsdb/zdb-zone-maintenance.h
 include/dnsdb/zdb-zone-path-provider.h
 include/dnsdb/zdb-zone-reader-filter.h
@@ -192,8 +218,8 @@ include/dnsdb/zdb_zone.h
 include/dnsdb/zdb_zone_axfr_input_stream.h
 include/dnsdb/zdb_zone_label.h
 include/dnsdb/zdb_zone_label_iterator.h
+include/dnsdb/zdb_zone_label_iterator_ex.h
 include/dnsdb/zdb_zone_load.h
-include/dnsdb/zdb_zone_load_interface.h
 include/dnsdb/zdb_zone_process.h
 include/dnsdb/zdb_zone_write.h
 include/dnslg/config-load.h
@@ -202,21 +228,18 @@ include/dnslg/dns.h
 include/dnslg/dnslg-config-features.h
 include/dnslg/resolv-conf.h
 include/dnslg/resolv.h
-include/dnszone/dnszone-config-features.h
-include/dnszone/dnszone-config.h
-include/dnszone/dnszone.h
-include/dnszone/hints_file_reader.h
-include/dnszone/zone_axfr_reader.h
-include/dnszone/zone_file_reader.h
 lib/libdnscore.a
 lib/libdnsdb.a
 lib/libdnslg.a
-lib/libdnszone.a
+man/man5/yadifa.conf.5.gz
 man/man5/yadifa.rc.5.gz
 man/man5/yadifad.conf.5.gz
+man/man5/yakeyrolld.conf.5.gz
 man/man8/yadifa.8.gz
 man/man8/yadifad.8.gz
+man/man8/yakeyrolld.8.gz
 sbin/yadifad
+sbin/yakeyrolld
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/keys.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifa.bash_completion
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifa.conf
@@ -232,14 +255,19 @@ sbin/yadifad
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.service.arch
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.service.debian
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/yadifad.service.rhel
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yakeyrolld.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yakeyrolld.conf.example
 /var/yadifa/masters/0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa.zone
 /var/yadifa/masters/0.0.127.in-addr.arpa.zone
 /var/yadifa/masters/localhost.zone
 /var/yadifa/masters/localhost6.zone
 /var/yadifa/masters/somedomain.eu.zone
 @dir /var/log/yadifa
+@dir /var/log/yadifad
+@dir /var/log/yakeyrolld
+@dir /var/plans
+@dir /var/yadifa
 @dir /var/yadifa/keys
 @dir /var/yadifa/masters
 @dir /var/yadifa/slaves
 @dir /var/yadifa/xfr
-@dir /var/yadifa
