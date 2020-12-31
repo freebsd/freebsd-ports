@@ -1,0 +1,4 @@
+Convert the output of 'utils::getParseData()' to an 'XML' tree, that one can
+search via 'XPath', and easier to manipulate in general.
+
+WWW: https://github.com/r-lib/xmlparsedata#readme

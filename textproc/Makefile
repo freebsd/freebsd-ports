@@ -29,6 +29,7 @@
     SUBDIR += R-cran-stringr
     SUBDIR += R-cran-utf8
     SUBDIR += R-cran-xml2
+    SUBDIR += R-cran-xmlparsedata
     SUBDIR += R-cran-xtable
     SUBDIR += R-cran-yaml
     SUBDIR += UCD
