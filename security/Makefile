@@ -1299,6 +1299,7 @@
     SUBDIR += xml-security
     SUBDIR += xmlsec1
     SUBDIR += xorsearch
+    SUBDIR += xray-core
     SUBDIR += yafic
     SUBDIR += yapet
     SUBDIR += yara
