@@ -698,8 +698,6 @@
     SUBDIR += pecl-bitset
     SUBDIR += pecl-stats2
     SUBDIR += petiga
-    SUBDIR += php72-bcmath
-    SUBDIR += php72-gmp
     SUBDIR += php73-bcmath
     SUBDIR += php73-gmp
     SUBDIR += php74-bcmath

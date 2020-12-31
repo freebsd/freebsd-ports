@@ -149,10 +149,6 @@
     SUBDIR += php-lz4
     SUBDIR += php-snappy
     SUBDIR += php-zstd
-    SUBDIR += php72-bz2
-    SUBDIR += php72-phar
-    SUBDIR += php72-zip
-    SUBDIR += php72-zlib
     SUBDIR += php73-bz2
     SUBDIR += php73-phar
     SUBDIR += php73-zip

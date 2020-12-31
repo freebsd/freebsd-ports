@@ -258,8 +258,6 @@
     SUBDIR += pfe
     SUBDIR += pharo
     SUBDIR += php-mode.el
-    SUBDIR += php72
-    SUBDIR += php72-extensions
     SUBDIR += php73
     SUBDIR += php73-extensions
     SUBDIR += php74

@@ -354,7 +354,6 @@
     SUBDIR += pecl-timezonedb
     SUBDIR += perkeep
     SUBDIR += pfm
-    SUBDIR += php72-calendar
     SUBDIR += php73-calendar
     SUBDIR += php74-calendar
     SUBDIR += php80-calendar

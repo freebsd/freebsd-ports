@@ -56,8 +56,6 @@
     SUBDIR += pear-Net_FTP
     SUBDIR += pftpd
     SUBDIR += php-fastdfs
-    SUBDIR += php72-curl
-    SUBDIR += php72-ftp
     SUBDIR += php73-curl
     SUBDIR += php73-ftp
     SUBDIR += php74-curl
