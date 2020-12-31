@@ -1,6 +1,6 @@
---- modules/freebsd/vmblock/Makefile.orig
+--- modules/freebsd/vmblock/Makefile.orig	2020-10-16 23:15:58 UTC
 +++ modules/freebsd/vmblock/Makefile
-@@ -46,8 +46,6 @@
+@@ -46,8 +46,6 @@ SRCS   := $(HEADERS) $(CSRCS)
  
  KMOD    = vmblock
  PROG    = ../$(KMOD).ko

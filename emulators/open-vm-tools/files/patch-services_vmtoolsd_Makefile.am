@@ -1,11 +1,11 @@
 --- services/vmtoolsd/Makefile.am.orig	2017-04-25 03:59:07 UTC
 +++ services/vmtoolsd/Makefile.am
-@@ -83,7 +83,7 @@ install-data-hook:
+@@ -76,7 +76,7 @@ install-data-hook:
  	@INSTVMSG@ vmtoolsd $(srcdir)/l10n $(DESTDIR)$(datadir)
  
  install-exec-hook:
 -	$(INSTALL) -d $(DESTDIR)/etc/vmware-tools
 +#	$(INSTALL) -d $(DESTDIR)/etc/vmware-tools
+ 	$(INSTALL) -d $(DESTDIR)/$(PAM_PREFIX)/pam.d/
+ 	$(INSTALL) $(top_srcdir)/pam/generic $(DESTDIR)/$(PAM_PREFIX)/pam.d/vmtoolsd
  
- uninstall-hook:
- 	rm -rf $(DESTDIR)/etc/vmware-tools

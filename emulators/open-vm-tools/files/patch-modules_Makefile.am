@@ -6,12 +6,12 @@
  if FREEBSD
 -	for MOD in $(MODULES); do                                              \
 -	   $(INSTALL) -d $(DESTDIR)$(MODULES_DIR);                             \
--	   $(INSTALL) -m644 $(modulesrc)/$(MODULES_OS)/$$MOD.ko                \
+-	   $(INSTALL) -m 644 $(modulesrc)/$(MODULES_OS)/$$MOD.ko               \
 -	      $(DESTDIR)$(MODULES_DIR);                                        \
 -	done
 +#	for MOD in $(MODULES); do                                              \
 +#	   $(INSTALL) -d $(DESTDIR)$(MODULES_DIR);                             \
-+#	   $(INSTALL) -m644 $(modulesrc)/$(MODULES_OS)/$$MOD.ko                \
++#	   $(INSTALL) -m 644 $(modulesrc)/$(MODULES_OS)/$$MOD.ko               \
 +#	      $(DESTDIR)$(MODULES_DIR);                                        \
 +#	done
  endif
