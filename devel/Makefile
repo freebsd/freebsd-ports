@@ -1246,6 +1246,7 @@
     SUBDIR += libmtrie
     SUBDIR += libmustache
     SUBDIR += libnaji
+    SUBDIR += libnest2d-ultimaker
     SUBDIR += libnfc
     SUBDIR += libnotify
     SUBDIR += libnsutils
