@@ -3,7 +3,7 @@
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.2.30
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 PKGNAMESUFFIX=	12
@@ -21,21 +21,12 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake libtool
 
-CONFIGURE_ARGS=	--disable-tcl
+CONFIGURE_ARGS=	--disable-tcl --disable-python
 
-OPTIONS_DEFINE=	PYTHON RUBY PERL DOCS EXAMPLES
+OPTIONS_DEFINE=	RUBY PERL DOCS EXAMPLES
 OPTIONS_DEFAULT=	PERL
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=		python:2.7
-PLIST_SUB+=	WITH_PYTHON=""
-CONFIGURE_ARGS+=	--enable-python
-.else
-CONFIGURE_ARGS+=	--disable-python
-PLIST_SUB+=	WITH_PYTHON="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MRUBY}
 USE_RUBY=	yes

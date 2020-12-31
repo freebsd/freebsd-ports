@@ -132,6 +132,4 @@ man/man1/rrdlastupdate.1.gz
 %%WITH_PERL%%%%SITE_ARCH%%/RRDs.pm
 %%WITH_PERL%%%%SITE_ARCH%%/ntmake.pl
 %%WITH_PERL%%%%SITE_ARCH%%/auto/RRDs/RRDs.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/rrdtoolmodule.so
-%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/py_rrdtool-0.2.1-py%%PYTHON_VER%%.egg-info
 %%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/RRD.so
