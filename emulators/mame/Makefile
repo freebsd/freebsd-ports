@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mame
-PORTVERSION=	0.223
+PORTVERSION=	0.226
 CATEGORIES=	emulators
 
 MAINTAINER=	manu@FreeBSD.org
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
 USES=		compiler:c++14-lang gl gmake jpeg localbase pkgconfig \
-		python:2.7,build qt:5 sdl shebangfix xorg
+		python:3.7,build qt:5 sdl shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev

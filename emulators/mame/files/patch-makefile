@@ -1,30 +1,6 @@
---- makefile.orig	2019-06-26 10:25:30 UTC
-+++ makefile
-@@ -195,19 +195,19 @@ GENIEOS := solaris
- endif
- ifeq ($(firstword $(filter FreeBSD,$(UNAME))),FreeBSD)
- OS := freebsd
--GENIEOS := freebsd
-+GENIEOS := bsd
- endif
- ifeq ($(firstword $(filter GNU/kFreeBSD,$(UNAME))),GNU/kFreeBSD)
- OS := freebsd
--GENIEOS := freebsd
-+GENIEOS := bsd
- endif
- ifeq ($(firstword $(filter NetBSD,$(UNAME))),NetBSD)
- OS := netbsd
--GENIEOS := freebsd
-+GENIEOS := bsd
- endif
- ifeq ($(firstword $(filter OpenBSD,$(UNAME))),OpenBSD)
- OS := openbsd
--GENIEOS := freebsd
-+GENIEOS := bsd
- endif
- ifeq ($(firstword $(filter Darwin,$(UNAME))),Darwin)
- OS := macosx
-@@ -396,13 +396,13 @@ endif
+--- makefile.orig	2020-10-27 02:00:36.000000000 +0100
++++ makefile	2020-12-26 00:03:58.094364000 +0100
+@@ -419,15 +419,15 @@
  endif # BIGENDIAN
  
  ifndef PYTHON_EXECUTABLE
@@ -34,16 +10,18 @@
 -PYTHON := $(PYTHON_EXECUTABLE)
 +#PYTHON := $(PYTHON_EXECUTABLE)
  endif
+ 
+ ifneq ($(TARGETOS),asmjs)
 -CC := $(SILENT)gcc
 -LD := $(SILENT)g++
 -CXX:= $(SILENT)g++
 +#CC := $(SILENT)gcc
 +#LD := $(SILENT)g++
 +#CXX:= $(SILENT)g++
+ endif
  
  #-------------------------------------------------
- # specify OSD layer: windows, sdl, etc.
-@@ -532,19 +532,19 @@ endif
+@@ -558,19 +558,19 @@
  ifdef OVERRIDE_CC
  PARAMS += --CC='$(OVERRIDE_CC)'
  ifndef CROSS_BUILD
