@@ -15821,7 +15821,7 @@ net/py-libfte||2020-12-29|Has expired: Uses deprecated version of python
 audio/py-gmusicapi||2020-12-30|Has expired: Google Play Music is going away: https://github.com/simon-weber/gmusicapi/issues/673
 net/ceph12|net/ceph14|2020-12-30|Has expired: please use net/ceph14
 x11/xapps|x11/xapp|2020-12-31|Project renamed
-mail/opensmtpd-extras-table-python||2020-13-31|Has expired: Uses deprecated version of python
+mail/opensmtpd-extras-table-python||2020-12-31|Has expired: Uses deprecated version of python
 net/php72-soap|net/php74-soap|2020-12-31|Has expired: Security Support ends on 30 Nov 2020
 net/php72-sockets|net/php74-sockets|2020-12-31|Has expired: Security Support ends on 30 Nov 2020
 net/php72-xmlrpc|net/php74-xmlrpc|2020-12-31|Has expired: Security Support ends on 30 Nov 2020
