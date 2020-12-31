@@ -2,7 +2,7 @@
 
 PORTNAME=	obs-audio-spectralizer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
