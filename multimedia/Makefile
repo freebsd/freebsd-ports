@@ -238,6 +238,7 @@
     SUBDIR += linux-c7-libv4l
     SUBDIR += linux-tsmuxer
     SUBDIR += linux_dvbwrapper-kmod
+    SUBDIR += livego
     SUBDIR += lives
     SUBDIR += livestreamer
     SUBDIR += lsdvd
