@@ -1,3 +1,3 @@
-TIMESTAMP = 1578557367
-SHA256 (smartmontools-7.1.tar.gz) = 3f734d2c99deb1e4af62b25d944c6252de70ca64d766c4c7294545a2e659b846
-SIZE (smartmontools-7.1.tar.gz) = 971468
+TIMESTAMP = 1609432285
+SHA256 (smartmontools-7.2.tar.gz) = 5cd98a27e6393168bc6aaea070d9e1cd551b0f898c52f66b2ff2e5d274118cd6
+SIZE (smartmontools-7.2.tar.gz) = 992256
