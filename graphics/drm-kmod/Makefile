@@ -15,13 +15,7 @@ USES=		metaport
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD (missing linuxkpi functionality)
 .else
-.if ${ARCH} != "amd64"
-.if ${OSVERSION} >= 1200080
-RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-legacy-kmod
-.else
-IGNORE=		legacy kmod not required on less than 12.0
-.endif
-.else
+.if ${ARCH} == "amd64"
 .if ${OSVERSION} >= 1103000 && ${OSVERSION} < 1200000
 RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-fbsd11.2-kmod
 .elif ${OSVERSION} >= 1200058 && ${OSVERSION} < 1300000
