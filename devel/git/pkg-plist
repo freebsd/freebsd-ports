@@ -81,6 +81,7 @@ libexec/git-core/git-fetch-pack
 libexec/git-core/git-filter-branch
 libexec/git-core/git-fmt-merge-msg
 libexec/git-core/git-for-each-ref
+libexec/git-core/git-for-each-repo
 libexec/git-core/git-format-patch
 libexec/git-core/git-fsck
 libexec/git-core/git-fsck-objects
@@ -106,6 +107,7 @@ libexec/git-core/git-ls-remote
 libexec/git-core/git-ls-tree
 libexec/git-core/git-mailinfo
 libexec/git-core/git-mailsplit
+libexec/git-core/git-maintenance
 libexec/git-core/git-merge
 libexec/git-core/git-merge-base
 libexec/git-core/git-merge-file
@@ -129,7 +131,6 @@ libexec/git-core/git-notes
 libexec/git-core/git-pack-objects
 libexec/git-core/git-pack-redundant
 libexec/git-core/git-pack-refs
-libexec/git-core/git-parse-remote
 libexec/git-core/git-patch-id
 libexec/git-core/git-prune
 libexec/git-core/git-prune-packed
@@ -270,6 +271,7 @@ man/man1/git-fetch.1.gz
 man/man1/git-filter-branch.1.gz
 man/man1/git-fmt-merge-msg.1.gz
 man/man1/git-for-each-ref.1.gz
+man/man1/git-for-each-repo.1.gz
 man/man1/git-format-patch.1.gz
 man/man1/git-fsck-objects.1.gz
 man/man1/git-fsck.1.gz
@@ -313,7 +315,6 @@ man/man1/git-p4.1.gz
 man/man1/git-pack-objects.1.gz
 man/man1/git-pack-redundant.1.gz
 man/man1/git-pack-refs.1.gz
-man/man1/git-parse-remote.1.gz
 man/man1/git-patch-id.1.gz
 man/man1/git-prune-packed.1.gz
 man/man1/git-prune.1.gz
@@ -709,6 +710,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.29.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.29.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.29.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.30.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -974,8 +976,6 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/git-pack-redundant.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-pack-refs.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-pack-refs.txt
-%%HTMLDOCS%%%%DOCSDIR%%/git-parse-remote.html
-%%HTMLDOCS%%%%DOCSDIR%%/git-parse-remote.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-patch-id.html
 %%HTMLDOCS%%%%DOCSDIR%%/git-patch-id.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-prune-packed.html
@@ -1354,6 +1354,7 @@ share/git-core/templates/hooks/pre-push.sample
 share/git-core/templates/hooks/pre-rebase.sample
 share/git-core/templates/hooks/pre-receive.sample
 share/git-core/templates/hooks/prepare-commit-msg.sample
+share/git-core/templates/hooks/push-to-checkout.sample
 share/git-core/templates/hooks/update.sample
 share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/about.tcl
@@ -1436,6 +1437,7 @@ share/git-core/templates/info/exclude
 %%NLS%%share/locale/is/LC_MESSAGES/git.mo
 %%NLS%%share/locale/it/LC_MESSAGES/git.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/git.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/git.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/git.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/git.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/git.mo
