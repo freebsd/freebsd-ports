@@ -145,12 +145,18 @@ CONFIGURE_TARGET=	${ARCH}-unknown-freebsd${"${ARCH:Maarch64}" != "":?:-gnueabihf
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-aclocal.m4
 BUILD_DEPENDS+=		llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS+=		llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+# Keep in sync with LLVM_VERSION
+BINARY_ALIAS=		llc-9.0=llc90 \
+			opt-9.0=opt90
 
 # When GHC being compiled and GHC used for bootstrapping support different
 # LLVM versions, we have to pull in both. Luckily, this is relatively rare.
 .  if ${BOOT_LLVM_VERSION} != ${LLVM_VERSION}
 BUILD_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
 RUN_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
+# Keep in sync with BOOT_LLVM_VERSION
+BINARY_ALIAS+=		llc-6.0=llc60 \
+			opt-6.0=opt60
 .  endif
 .endif
 
