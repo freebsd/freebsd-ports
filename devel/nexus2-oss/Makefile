@@ -13,8 +13,6 @@ COMMENT=	Maven (and others) artifacts repostory manager
 
 LICENSE=	EPL
 
-ONLY_FOR_ARCHS=	amd64 i386
-
 PATCH_DEPENDS=	zip:archivers/zip
 RUN_DEPENDS=	javaservicewrapper:sysutils/javaservicewrapper
 
