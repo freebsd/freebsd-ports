@@ -1,0 +1,5 @@
+This project gathers the components which are common to multiple
+desktop environments and required to implement cross-DE solutions.
+Consists of xapp-common and libxapp.
+
+WWW: https://github.com/linuxmint/xapp

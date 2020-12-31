@@ -15820,3 +15820,4 @@ databases/py-MySQLdb||2020-12-29|Has expired: Uses deprecated version of python
 net/py-libfte||2020-12-29|Has expired: Uses deprecated version of python
 audio/py-gmusicapi||2020-12-30|Has expired: Google Play Music is going away: https://github.com/simon-weber/gmusicapi/issues/673
 net/ceph12|net/ceph14|2020-12-30|Has expired: please use net/ceph14
+x11/xapps|x11/xapp|2020-12-31|Project renamed
