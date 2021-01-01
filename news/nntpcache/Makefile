@@ -12,6 +12,7 @@ COMMENT=	News caching/anti-spam/server-merging system
 
 BROKEN_aarch64=		fails to link: missing sbrk
 BROKEN_mips64=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+BROKEN_riscv64=		fails to link: missing sbrk
 
 NO_CDROM=	Free for individuals and non-military, non-profit organisations only
 

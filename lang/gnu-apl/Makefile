@@ -14,6 +14,7 @@ COMMENT=	Free interpreter for APL programming language
 LICENSE=	GPLv3+
 
 BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_riscv64=	Fails to link: missing sbrk
 
 # XXX: should be optional, but no way to disable in the configure script
 LIB_DEPENDS=	libfftw3.so:math/fftw3

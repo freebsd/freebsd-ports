@@ -18,6 +18,7 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Implementation of the UNIX 7th Edition shell
 
 BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_riscv64=	Fails to link: missing sbrk
 
 USES=		uidfix
 EXTRACT_CMD=	${CP}

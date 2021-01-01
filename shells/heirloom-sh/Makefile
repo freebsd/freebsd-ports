@@ -11,6 +11,7 @@ MAINTAINER=	danielt@pilgerer.org
 COMMENT=	Portable version of OpenSolaris' Bourne Shell
 
 BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_riscv64=	Fails to link: missing sbrk
 
 USES=		tar:bzip2
 MAKEFILE=	makefile

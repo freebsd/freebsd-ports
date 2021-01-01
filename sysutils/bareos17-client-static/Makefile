@@ -6,6 +6,7 @@ PKGNAMESUFFIX=	17-client-static
 COMMENT=	Backup archiving recovery open sourced (static client)
 
 BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_riscv64=	Fails to link: missing sbrk
 
 CONFLICTS=	bareos16-client-static-*
 

@@ -13,15 +13,17 @@ COMMENT=	Unreal - the next generation ircd
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcares.so:dns/c-ares
-
 BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_riscv64=	Fails to link: missing sbrk
+
+LIB_DEPENDS=	libcares.so:dns/c-ares
 
 MODULESDIR=	${PREFIX}/lib/${PORTNAME}
 CONFIGDIR=	${PREFIX}/etc/${PORTNAME}
 RUNDIR=		/var/run/ircd
 LOGDIR=		/var/log/ircd
 
+USES=		pkgconfig cpe
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	unrealircd
 
@@ -29,8 +31,6 @@ USERS=		ircd
 GROUPS=		ircd
 CPE_VENDOR=	unrealircd
 CPE_PRODUCT=	unrealircd
-
-USES=		pkgconfig cpe
 
 SUB_LIST+=	RUNDIR=${RUNDIR}
 SUB_LIST+=	USERS=${USERS}

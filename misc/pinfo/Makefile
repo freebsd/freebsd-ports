@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_riscv64=	Fails to link: missing sbrk
 
 USES=		autoreconf gettext-tools libtool localbase makeinfo ncurses tar:bzip2
 GNU_CONFIGURE=	yes

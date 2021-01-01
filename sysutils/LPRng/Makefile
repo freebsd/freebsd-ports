@@ -15,9 +15,10 @@ COMMENT=	Enhanced Printer Spooler
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libgdbm.so:databases/gdbm
-
 BROKEN_aarch64=	Fails to link: missing sbrk
+BROKEN_riscv64=	Fails to link: missing sbrk
+
+LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 USES=		gmake ssl
 GNU_CONFIGURE=	yes

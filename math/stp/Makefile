@@ -13,7 +13,8 @@ COMMENT=	Decision Procedure for Bitvectors and Arrays
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		fails to compile: undefined reference to sbrk
+BROKEN_aarch64=		fails to link: missing sbrk
+BROKEN_riscv64=		fails to link: missing sbrk
 
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libminisat.so:math/minisat \

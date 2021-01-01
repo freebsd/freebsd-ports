@@ -13,12 +13,13 @@ COMMENT=	Sorting files in sophisticated ways
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		fails to link: missing sbrk
+BROKEN_riscv64=		fails to link: missing sbrk
+
 LIB_DEPENDS=	libtre.so:textproc/libtre \
 		libuninum.so:devel/libuninum \
 		libutf8proc.so:textproc/utf8proc
 RUN_DEPENDS=	iwidgets>=0:x11-toolkits/iwidgets
-
-BROKEN_aarch64=		fails to link: missing sbrk
 
 USES=		gettext localbase tk:wrapper,run
 CONFIGURE_ENV=	ac_cv_lib_tre_regwcomp=yes
