@@ -53,15 +53,6 @@ lib/libplotimagen.a
 lib/libplotimagen.so
 lib/libplotimagen.so.1
 lib/libplotimagen_p.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/py27plot.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/py27plot4013.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/py27plot4014.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/py27plot7221.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/py27plotbg.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/py27plotcrt.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/py27plotdumb.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/py27plotgigi.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/py27plotimagen.so
 man/man1/graph.1.gz
 man/man1/spline.1.gz
 man/man1/plot.1.gz
