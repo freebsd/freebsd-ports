@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	zstandard
-DISTVERSION=	0.14.1
+DISTVERSION=	0.15.1
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ USE_PYTHON=	distutils autoplist
 PYDISTUTILS_BUILDARGS=	--system-zstd
 
 post-install:
-	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} && ${STRIP_CMD} zstd*.so _zstd_cffi*.so
+	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zstandard && ${STRIP_CMD} backend_c.so _cffi.so
 
 .include <bsd.port.mk>
