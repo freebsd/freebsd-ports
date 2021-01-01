@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/extremetuxracer/releases/${PORTVERSION}
 PKGNAMESUFFIX=	acer
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Extreme Tux Racer
 
 LICENSE=	GPLv2
