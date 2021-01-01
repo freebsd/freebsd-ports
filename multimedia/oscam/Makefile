@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	oscam
-PORTVERSION=	1.20.20200313
+PORTVERSION=	1.20.20201119
 CATEGORIES=	multimedia
-MASTER_SITES=	https://repo.or.cz/oscam.git/snapshot/7f322cc2cd840f4197488a3ead2c3e48b51e8278.tar.gz?/
+MASTER_SITES=	https://repo.or.cz/oscam.git/snapshot/877648ea724dac9c9d608e5b1f14fefeb263500e.tar.gz?/
 
 MAINTAINER=	franz@bett.ag
 COMMENT=	Softcam software to decrypt digital TV channels
@@ -25,7 +25,7 @@ MAKE_ARGS=	CC="${CC}" HOSTCC="${CC}" \
 		OSCAM_BIN="Distribution/oscam" CONF_DIR="${PREFIX}/etc/oscam" \
 		V=1
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-7f322cc
+WRKSRC=		${WRKDIR}/${PORTNAME}-877648e
 
 .include <bsd.port.pre.mk>
 
