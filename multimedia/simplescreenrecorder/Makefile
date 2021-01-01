@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simplescreenrecorder
-DISTVERSION=	0.4.2
+DISTVERSION=	0.4.3
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,9 @@ COMMENT=	Screen video recorder
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
+BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
+LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
+		libv4l2.so:multimedia/libv4l
 
 USES=		cmake compiler:c++11-lang pkgconfig qt:5 xorg
 USE_GITHUB=	yes
