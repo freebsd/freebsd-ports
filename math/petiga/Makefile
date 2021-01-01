@@ -11,6 +11,8 @@ COMMENT=	Framework for High Performance Isogeometric Analysis
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
+BROKEN=		fails to configure
+
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
 		libmpich.so:net/mpich \
