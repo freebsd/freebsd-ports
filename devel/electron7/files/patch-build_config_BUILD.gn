@@ -1,0 +1,30 @@
+--- build/config/BUILD.gn.orig	2019-12-12 12:38:59 UTC
++++ build/config/BUILD.gn
+@@ -149,7 +149,7 @@ config("debug") {
+       # builds, and we have to tell it to turn it off.
+       defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]
+     }
+-  } else if (is_linux && current_cpu == "x64" && enable_iterator_debugging) {
++  } else if ((is_linux || is_bsd) && current_cpu == "x64" && enable_iterator_debugging) {
+     # Enable libstdc++ debugging facilities to help catch problems early, see
+     # http://crbug.com/65151 .
+     # TODO(phajdan.jr): Should we enable this for all of POSIX?
+@@ -247,9 +247,7 @@ config("default_libs") {
+     ]
+   } else if (is_linux) {
+     libs = [
+-      "dl",
+       "pthread",
+-      "rt",
+     ]
+   }
+ }
+@@ -337,7 +335,7 @@ config("executable_config") {
+       "//build/config/ios:ios_dynamic_flags",
+       "//build/config/ios:ios_executable_flags",
+     ]
+-  } else if (is_linux || is_android || current_os == "aix") {
++  } else if (is_linux || is_bsd || is_android || current_os == "aix") {
+     configs += [ "//build/config/gcc:executable_config" ]
+     if (is_chromecast) {
+       configs += [ "//build/config/chromecast:executable_config" ]

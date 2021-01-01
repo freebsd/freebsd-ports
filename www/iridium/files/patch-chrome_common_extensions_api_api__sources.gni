@@ -1,0 +1,11 @@
+--- chrome/common/extensions/api/api_sources.gni.orig	2020-02-03 21:52:41 UTC
++++ chrome/common/extensions/api/api_sources.gni
+@@ -113,7 +113,7 @@ if (is_chromeos) {
+   if (use_cups) {
+     schema_sources_ += [ "printing.idl" ]
+   }
+-} else if (is_linux || is_win) {
++} else if (is_linux || is_bsd || is_win) {
+   schema_sources_ += [ "input_ime.json" ]
+ }
+ 

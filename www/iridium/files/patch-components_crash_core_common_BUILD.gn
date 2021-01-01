@@ -1,0 +1,31 @@
+--- components/crash/core/common/BUILD.gn.orig	2020-03-16 18:39:48 UTC
++++ components/crash/core/common/BUILD.gn
+@@ -7,7 +7,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
+ 
+ declare_args() {
+   # If set to true, this will stub out and disable the entire crash key system.
+-  use_crash_key_stubs = is_fuchsia
++  use_crash_key_stubs = is_fuchsia || is_bsd
+ }
+ 
+ group("common") {
+@@ -104,7 +104,9 @@ target(crash_key_target_type, "crash_key_lib") {
+       ]
+     }
+ 
+-    deps += [ "//third_party/breakpad:client" ]
++    if (!is_bsd) {
++      deps += [ "//third_party/breakpad:client" ]
++    }
+     if (use_combined_annotations) {
+       public_deps += [ "//third_party/crashpad/crashpad/client" ]
+     }
+@@ -167,7 +169,7 @@ source_set("unit_tests") {
+     sources += [ "objc_zombie_unittest.mm" ]
+   }
+ 
+-  if (!is_mac && !is_ios && !is_win && !is_fuchsia && !is_android) {
++  if (!is_mac && !is_ios && !is_win && !is_fuchsia && !is_android && !is_bsd) {
+     include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
+     sources += [ "crash_key_breakpad_unittest.cc" ]
+   }

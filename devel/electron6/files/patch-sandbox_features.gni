@@ -1,0 +1,10 @@
+--- sandbox/features.gni.orig	2019-09-10 10:42:43 UTC
++++ sandbox/features.gni
+@@ -12,6 +12,6 @@ use_seccomp_bpf =
+     (is_linux || is_android) &&
+     (current_cpu == "x86" || current_cpu == "x64" || current_cpu == "arm" ||
+      current_cpu == "arm64" || current_cpu == "mipsel" ||
+-     current_cpu == "mips64el")
++     current_cpu == "mips64el") && !is_bsd
+ 
+ use_seccomp_bpf = use_seccomp_bpf || is_nacl_nonsfi

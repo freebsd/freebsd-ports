@@ -1,0 +1,11 @@
+--- chrome/app/theme/theme_resources.grd.orig	2019-10-30 15:46:23 UTC
++++ chrome/app/theme/theme_resources.grd
+@@ -25,7 +25,7 @@
+       <!-- KEEP THESE IN ALPHABETICAL ORDER!  DO NOT ADD TO RANDOM PLACES JUST
+            BECAUSE YOUR RESOURCES ARE FUNCTIONALLY RELATED OR FALL UNDER THE
+            SAME CONDITIONALS. -->
+-      <if expr="is_linux or is_win or chromeos">
++      <if expr="is_posix or is_win or chromeos">
+         <structure type="chrome_scaled_image" name="IDR_ACCESSIBILITY_CAPTIONS_PREVIEW_BACKGROUND" file="common/captions-preview-bg.png" />
+       </if>
+       <if expr="toolkit_views and not is_macosx">

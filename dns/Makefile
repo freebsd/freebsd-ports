@@ -180,6 +180,7 @@
     SUBDIR += py-adns
     SUBDIR += py-aiodns
     SUBDIR += py-cloudflare
+    SUBDIR += py-dns
     SUBDIR += py-dns-lexicon
     SUBDIR += py-dnspython
     SUBDIR += py-dnspython2

@@ -1,0 +1,11 @@
+--- electron/spec/fixtures/api/crash-restart.html.orig	2019-12-13 19:48:14 UTC
++++ electron/spec/fixtures/api/crash-restart.html
+@@ -19,7 +19,7 @@ crashReporter.start({
+ })
+ 
+ setImmediate(() => {
+-  if (process.platform !== 'linux') {
++  if (process.platform !== 'linux' && process.platform !== 'freebsd') {
+     crashReporter.addExtraParameter('extra2', 'extra2')
+     crashReporter.removeExtraParameter('extra3')
+   } else {

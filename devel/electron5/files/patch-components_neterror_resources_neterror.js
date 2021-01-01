@@ -1,0 +1,11 @@
+--- components/neterror/resources/neterror.js.orig	2019-04-08 08:32:49 UTC
++++ components/neterror/resources/neterror.js
+@@ -166,7 +166,7 @@ function setUpCachedButton(buttonStrings) {
+ }
+ 
+ var primaryControlOnLeft = true;
+-// <if expr="is_macosx or is_ios or is_linux or is_android">
++// <if expr="is_macosx or is_ios or is_linux or is_android or is_bsd">
+ primaryControlOnLeft = false;
+ // </if>
+ 

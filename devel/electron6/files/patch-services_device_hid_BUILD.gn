@@ -1,0 +1,22 @@
+--- services/device/hid/BUILD.gn.orig	2019-09-10 10:42:43 UTC
++++ services/device/hid/BUILD.gn
+@@ -51,6 +51,19 @@ source_set("hid") {
+     deps += [ "//device/udev_linux" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "hid_connection_linux.cc",
++      "hid_connection_linux.h",
++    ]
++    sources += [
++      "hid_connection_freebsd.cc",
++      "hid_connection_freebsd.h",
++      "hid_service_freebsd.cc",
++      "hid_service_freebsd.h",
++    ]
++  }
++
+   if (is_chromeos) {
+     deps += [ "//chromeos/dbus/permission_broker" ]
+   }

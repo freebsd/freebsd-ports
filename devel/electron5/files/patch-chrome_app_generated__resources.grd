@@ -1,0 +1,29 @@
+--- chrome/app/generated_resources.grd.orig	2019-04-08 08:32:41 UTC
++++ chrome/app/generated_resources.grd
+@@ -5339,7 +5339,7 @@ the Bookmarks menu.">
+         </message>
+       </if>
+ 
+-      <if expr="is_win or (is_linux and not chromeos)">
++      <if expr="is_win or (is_posix and not chromeos)">
+         <message name="IDS_QUIT_ACCELERATOR_TUTORIAL" desc="Instructions for how the user should quit using keyboard shortcuts.">
+           Press |<ph name="ACCELERATOR1">$1<ex>Ctrl</ex></ph>|+|<ph name="ACCELERATOR2">$2<ex>Shift</ex></ph>| followed by |<ph name="ACCELERATOR3">$3<ex>Q</ex></ph>| to exit
+         </message>
+@@ -6160,7 +6160,7 @@ the Bookmarks menu.">
+         Google Pay
+       </message>
+ 
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
+           Use system title bar and borders
+         </message>
+@@ -6946,7 +6946,7 @@ Please help our engineers fix this problem. Tell us wh
+         Set as default
+       </message>
+ 
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <message name="IDS_MINIMIZE_WINDOW_MENU" desc="The Linux browser window menu item text for minimizing the window.">
+           Minimize
+         </message>

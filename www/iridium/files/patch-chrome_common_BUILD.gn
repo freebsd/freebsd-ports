@@ -1,0 +1,13 @@
+--- chrome/common/BUILD.gn.orig	2020-03-16 18:40:30 UTC
++++ chrome/common/BUILD.gn
+@@ -272,6 +272,10 @@ static_library("common") {
+     public_deps += [ "//ppapi/shared_impl" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [ "component_flash_hint_file_linux.cc" ]
++  }
++
+   if (enable_extensions) {
+     sources += [
+       "cast_messages.cc",

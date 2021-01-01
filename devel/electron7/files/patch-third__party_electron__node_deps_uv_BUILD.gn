@@ -1,0 +1,45 @@
+--- third_party/electron_node/deps/uv/BUILD.gn.orig	2019-12-16 13:32:59 UTC
++++ third_party/electron_node/deps/uv/BUILD.gn
+@@ -3,7 +3,7 @@ config("libuv_config") {
+ 
+   defines = []
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     defines += [ "_POSIX_C_SOURCE=200112" ]
+   }
+   if (!is_win) {
+@@ -147,7 +147,7 @@ static_library("uv") {
+     libs += [ "m" ]
+     ldflags += [ "-pthread" ]
+   }
+-  if (is_mac || is_linux) {
++  if (is_mac || (is_linux && !is_bsd)) {
+     sources += [ "src/unix/proctitle.c" ]
+   }
+   if (is_mac) {
+@@ -161,7 +161,7 @@ static_library("uv") {
+       "_DARWIN_UNLIMITED_SELECT=1",
+     ]
+   }
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     defines += [ "_GNU_SOURCE" ]
+     sources += [
+       "src/unix/linux-core.c",
+@@ -180,6 +180,15 @@ static_library("uv") {
+     sources += [
+       "src/unix/bsd-ifaddrs.c",
+       "src/unix/kqueue.c",
++    ]
++  }
++  if (is_bsd) {
++    sources += [
++      "src/unix/bsd-ifaddrs.c",
++      "src/unix/bsd-proctitle.c",
++      "src/unix/freebsd.c",
++      "src/unix/kqueue.c",
++      "src/unix/posix-hrtime.c",
+     ]
+   }
+ }

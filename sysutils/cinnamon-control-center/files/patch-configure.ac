@@ -1,0 +1,24 @@
+--- configure.ac.orig	2014-11-26 22:11:51.000000000 +0100
++++ configure.ac	2015-08-09 16:26:26.690975000 +0200
+@@ -35,7 +35,6 @@
+ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext package])
+ 
+-GNOME_DEBUG_CHECK
+ GNOME_COMPILE_WARNINGS([maximum])
+ 
+ AC_PATH_XTRA
+@@ -138,13 +137,6 @@
+ #----------------------------------------------
+ # Network Manager Stuff
+ 
+-PKG_CHECK_MODULES(NETWORK_MANAGER, NetworkManager >= $NETWORK_MANAGER_REQUIRED_VERSION
+-                  libnm-glib >= $NETWORK_MANAGER_REQUIRED_VERSION
+-                  libnm-glib-vpn >= $NETWORK_MANAGER_REQUIRED_VERSION
+-                  libnm-util >= $NETWORK_MANAGER_REQUIRED_VERSION
+-                  libnm-gtk >= $NETWORK_MANAGER_APPLET_REQUIRED_VERSION
+-                  mm-glib >= $MODEM_MANAGER_REQUIRED_VERSION,
+-                  [have_networkmanager=yes], have_networkmanager=no)
+ if test "x$have_networkmanager" = xno ; then
+         AC_MSG_WARN(*** Network panel will not be built (NetworkManager or ModemManager not found) ***)
+ else

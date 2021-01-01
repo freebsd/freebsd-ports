@@ -1,0 +1,9 @@
+LDAP extensions to grant group permissions
+
+This extension enables the use of existing LDAP groups to grant
+permissions rather than defining permissions for every single user on
+the system.  Also permits storage of permissions (both users and
+groups permissions) in the LDAP directory itself rather than in the
+database backend.
+
+WWW: https://trac-hacks.org/wiki/LdapPlugin

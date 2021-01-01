@@ -1,0 +1,20 @@
+--- build/config/allocator.gni.orig	2019-09-10 11:13:31 UTC
++++ build/config/allocator.gni
+@@ -6,7 +6,7 @@ import("//build/config/sanitizers/sanitizers.gni")
+ 
+ # Temporarily disable tcmalloc on arm64 linux to get rid of compilation errors.
+ if (is_android || is_mac || is_ios || is_asan || is_lsan || is_tsan ||
+-    is_msan || is_win || is_fuchsia || (is_linux && target_cpu == "arm64")) {
++    is_msan || is_win || is_fuchsia || (is_linux && target_cpu == "arm64") || is_bsd) {
+   _default_allocator = "none"
+ } else {
+   _default_allocator = "tcmalloc"
+@@ -17,7 +17,7 @@ if (is_android || is_mac || is_ios || is_asan || is_ls
+ # against the debug CRT with "is_nacl=false".
+ if ((is_linux || is_android || is_mac ||
+      (is_win && !is_component_build && !is_debug)) && !is_asan && !is_hwasan &&
+-    !is_lsan && !is_tsan && !is_msan) {
++    !is_lsan && !is_tsan && !is_msan && !is_bsd) {
+   _default_use_allocator_shim = true
+ } else {
+   _default_use_allocator_shim = false

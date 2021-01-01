@@ -1,0 +1,20 @@
+--- chrome/app/theme/chrome_unscaled_resources.grd.orig	2019-12-12 12:39:06 UTC
++++ chrome/app/theme/chrome_unscaled_resources.grd
+@@ -18,7 +18,7 @@
+         <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/product_logo_64.png" type="BINDATA" />
+         <include name="IDR_PRODUCT_LOGO_128" file="google_chrome/product_logo_128.png" type="BINDATA" />
+         <include name="IDR_PRODUCT_LOGO_256" file="google_chrome/product_logo_256.png" type="BINDATA" />
+-        <if expr="is_linux">
++        <if expr="is_posix">
+           <include name="IDR_PRODUCT_LOGO_128_BETA" file="google_chrome/product_logo_128_beta.png" type="BINDATA" />
+           <include name="IDR_PRODUCT_LOGO_128_DEV" file="google_chrome/product_logo_128_dev.png" type="BINDATA" />
+         </if>
+@@ -109,7 +109,7 @@
+         <include name="IDR_PROFILE_AVATAR_2X_25" file="default_200_percent/common/profile_avatar_sun_cloud.png" type="BINDATA" />
+         <include name="IDR_PROFILE_AVATAR_2X_26" file="default_200_percent/common/profile_avatar_placeholder.png" type="BINDATA" />
+       </if>
+-      <if expr="is_linux and enable_app_list">
++      <if expr="is_posix and enable_app_list">
+         <!-- App Launcher icons for desktop icon. -->
+         <if expr="_google_chrome">
+           <then>

@@ -1,0 +1,20 @@
+--- components/storage_monitor/BUILD.gn.orig	2019-09-10 11:13:58 UTC
++++ components/storage_monitor/BUILD.gn
+@@ -65,6 +65,17 @@ static_library("storage_monitor") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "mtab_watcher_linux.cc",
++      "mtab_watcher_linux.h",
++    ]
++    sources += [
++      "storage_monitor_freebsd.cc",
++      "storage_monitor_freebsd.h",
++    ]
++  }
++
+   if (use_udev) {
+     deps += [ "//device/udev_linux" ]
+   } else if (is_linux) {

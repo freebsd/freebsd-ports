@@ -1,0 +1,13 @@
+--- third_party/blink/renderer/BUILD.gn.orig	2020-03-16 18:40:34 UTC
++++ third_party/blink/renderer/BUILD.gn
+@@ -45,8 +45,8 @@ config("inside_blink") {
+       "-Wconversion",
+       "-Wno-float-conversion",
+       "-Wno-sign-conversion",
+-      "-Wno-implicit-float-conversion",
+-      "-Wno-implicit-int-conversion",
++#      "-Wno-implicit-float-conversion",
++#      "-Wno-implicit-int-conversion",
+     ]
+ 
+     if (!is_chromeos || default_toolchain != "//build/toolchain/cros:target") {

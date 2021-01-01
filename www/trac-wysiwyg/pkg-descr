@@ -1,0 +1,5 @@
+This plugin provides a wiki WYSIWYG editor that generates Trac
+wiki markup. This enables users to switch between the WYSIWYG mode
+and the standard wiki markup format, as needed.
+
+WWW: http://trac-hacks.org/wiki/TracWysiwygPlugin

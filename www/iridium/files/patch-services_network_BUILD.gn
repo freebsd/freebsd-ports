@@ -1,0 +1,10 @@
+--- services/network/BUILD.gn.orig	2020-03-16 18:40:34 UTC
++++ services/network/BUILD.gn
+@@ -260,7 +260,6 @@ jumbo_component("network_service") {
+ 
+   if (is_linux) {
+     deps += [
+-      "//sandbox/linux:sandbox_services",
+       "//services/service_manager/sandbox:sandbox",
+     ]
+   }

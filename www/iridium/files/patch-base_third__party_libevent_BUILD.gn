@@ -1,0 +1,24 @@
+--- base/third_party/libevent/BUILD.gn.orig	2019-03-11 22:00:51 UTC
++++ base/third_party/libevent/BUILD.gn
+@@ -43,13 +43,20 @@ static_library("libevent") {
+       "mac/event-config.h",
+     ]
+     include_dirs = [ "mac" ]
+-  } else if (is_linux) {
++  } else if (is_linux && !is_bsd) {
+     sources += [
+       "epoll.c",
+       "linux/config.h",
+       "linux/event-config.h",
+     ]
+     include_dirs = [ "linux" ]
++  } else if (is_bsd) {
++    sources += [ 
++      "kqueue.c",
++      "freebsd/config.h",
++      "freebsd/event-config.h",
++    ]
++    include_dirs = [ "freebsd" ]
+   } else if (is_android) {
+     sources += [
+       "android/config.h",

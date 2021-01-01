@@ -1,0 +1,299 @@
+# Based on https://gist.github.com/tfoote/675b98df53369e199dea
+
+--- MoinMoin/action/AttachFile.py.orig	2016-10-31 20:44:01 UTC
++++ MoinMoin/action/AttachFile.py
+@@ -44,6 +44,7 @@ from MoinMoin import config, packages
+ from MoinMoin.Page import Page
+ from MoinMoin.util import filesys, timefuncs
+ from MoinMoin.security.textcha import TextCha
++from MoinMoin.security.sec_recaptcha import ReCaptcha
+ from MoinMoin.events import FileAttachedEvent, FileRemovedEvent, send_event
+ 
+ action_name = __name__.split('.')[-1]
+@@ -654,6 +655,7 @@ def send_uploadform(pagename, request):
+ <dd><input type="checkbox" name="overwrite" value="1" %(overwrite_checked)s></dd>
+ </dl>
+ %(textcha)s
++%(recaptcha)s
+ <p>
+ <input type="hidden" name="action" value="%(action_name)s">
+ <input type="hidden" name="do" value="upload">
+@@ -671,6 +673,7 @@ def send_uploadform(pagename, request):
+     'overwrite_checked': ('', 'checked')[request.form.get('overwrite', '0') == '1'],
+     'upload_button': _('Upload'),
+     'textcha': TextCha(request).render(),
++    'recaptcha': ReCaptcha(request).render(),
+     'ticket': wikiutil.createTicket(request),
+ })
+ 
+@@ -728,6 +731,8 @@ def _do_upload(pagename, request):
+     # but it could be extended to more/all attachment write access
+     if not TextCha(request).check_answer_from_form():
+         return _('TextCha: Wrong answer! Go back and try again...')
++    if not ReCaptcha(request).check_answer_from_form():
++        return _('ReCaptcha: Wrong answer! Go back and try again...')
+ 
+     form = request.form
+ 
+--- MoinMoin/action/CopyPage.py.orig	2016-10-31 20:44:01 UTC
++++ MoinMoin/action/CopyPage.py
+@@ -14,6 +14,7 @@ from MoinMoin.Page import Page
+ from MoinMoin.PageEditor import PageEditor
+ from MoinMoin.action import ActionBase
+ from MoinMoin.security.textcha import TextCha
++from MoinMoin.security.sec_recaptcha import ReCaptcha
+ 
+ class CopyPage(ActionBase):
+     """ Copy page action
+@@ -45,11 +46,14 @@ class CopyPage(ActionBase):
+ 
+     def do_action(self):
+         """ copy this page to "pagename" """
++        status = False
+         _ = self._
+         # Currently we only check TextCha for upload (this is what spammers ususally do),
+         # but it could be extended to more/all attachment write access
+         if not TextCha(self.request).check_answer_from_form():
+             return False, _('TextCha: Wrong answer! Go back and try again...')
++        if not ReCaptcha(self.request).check_answer_from_form():
++            return status, _('ReCaptcha: Wrong answer! Go back and try again...')
+ 
+         form = self.form
+         newpagename = form.get('newpagename', u'')
+@@ -90,6 +94,7 @@ class CopyPage(ActionBase):
+ 
+             d = {
+                 'textcha': TextCha(self.request).render(),
++                'recaptcha': ReCaptcha(self.request).render(),
+                 'subpage': subpages,
+                 'subpages_checked': ('', 'checked')[self.request.args.get('subpages_checked', '0') == '1'],
+                 'subpage_label': _('Copy all /subpages too?'),
+@@ -105,6 +110,7 @@ class CopyPage(ActionBase):
+ <br>
+ <br>
+ %(textcha)s
++%(recaptcha)s
+ <table>
+     <tr>
+     <dd>
+@@ -140,6 +146,7 @@ class CopyPage(ActionBase):
+         else:
+             d = {
+                 'textcha': TextCha(self.request).render(),
++                'recaptcha': ReCaptcha(self.request).render(),
+                 'pagename': wikiutil.escape(self.pagename, True),
+                 'newname_label': _("New name"),
+                 'comment_label': _("Optional reason for the copying"),
+@@ -147,6 +154,7 @@ class CopyPage(ActionBase):
+                 }
+             return '''
+ %(textcha)s
++%(recaptcha)s
+ <table>
+     <tr>
+         <td class="label"><label>%(newname_label)s</label></td>
+--- MoinMoin/action/edit.py.orig	2016-10-31 20:44:01 UTC
++++ MoinMoin/action/edit.py
+@@ -163,6 +163,9 @@ def execute(pagename, request):
+             from MoinMoin.security.textcha import TextCha
+             if not TextCha(request).check_answer_from_form():
+                 raise pg.SaveError(_('TextCha: Wrong answer! Try again below...'))
++            from MoinMoin.security.sec_recaptcha import ReCaptcha
++            if not ReCaptcha(request).check_answer_from_form():
++                raise pg.SaveError(_('ReCaptcha: Wrong answer! Try again below...'))
+             if request.cfg.comment_required and not comment:
+                 raise pg.SaveError(_('Supplying a comment is mandatory. Write a comment below and try again...'))
+             savemsg = pg.saveText(savetext, rev, trivial=trivial, comment=comment)
+--- MoinMoin/action/Load.py.orig	2016-10-31 20:44:01 UTC
++++ MoinMoin/action/Load.py
+@@ -14,6 +14,7 @@ from MoinMoin.action import ActionBase, AttachFile
+ from MoinMoin.PageEditor import PageEditor
+ from MoinMoin.Page import Page
+ from MoinMoin.security.textcha import TextCha
++from MoinMoin.security.sec_recaptcha import ReCaptcha
+ 
+ class Load(ActionBase):
+     """ Load page action
+@@ -40,6 +41,8 @@ class Load(ActionBase):
+         # but it could be extended to more/all attachment write access
+         if not TextCha(request).check_answer_from_form():
+             return status, _('TextCha: Wrong answer! Go back and try again...')
++        if not ReCaptcha(request).check_answer_from_form():
++            return _('ReCaptcha: Wrong answer! Go back and try again...')
+ 
+         comment = form.get('comment', u'')
+         comment = wikiutil.clean_input(comment)
+@@ -97,6 +100,7 @@ class Load(ActionBase):
+ <dd><input type="text" name="comment" size="80" maxlength="200"></dd>
+ </dl>
+ %(textcha)s
++%(recaptcha)s
+ <p>
+ <input type="hidden" name="action" value="%(action_name)s">
+ <input type="hidden" name="do" value="upload">
+@@ -115,6 +119,7 @@ class Load(ActionBase):
+     'buttons_html': buttons_html,
+     'action_name': self.form_trigger,
+     'textcha': TextCha(self.request).render(),
++    'recaptcha': ReCaptcha(self.request).render(),
+ }
+ 
+ def execute(pagename, request):
+--- MoinMoin/action/newaccount.py.orig	2016-10-31 20:44:01 UTC
++++ MoinMoin/action/newaccount.py
+@@ -10,6 +10,7 @@ from MoinMoin import user, wikiutil
+ from MoinMoin.Page import Page
+ from MoinMoin.widget import html
+ from MoinMoin.security.textcha import TextCha
++from MoinMoin.security.sec_recaptcha import ReCaptcha
+ from MoinMoin.auth import MoinAuth
+ 
+ 
+@@ -26,6 +27,9 @@ def _create_user(request):
+     if not TextCha(request).check_answer_from_form():
+         return _('TextCha: Wrong answer! Go back and try again...')
+ 
++    if not ReCaptcha(request).check_answer_from_form():
++        return _('ReCaptcha: Wrong answer! Go back and try again...')
++
+     # Create user profile
+     theuser = user.User(request, auth_method="new-user")
+ 
+@@ -141,6 +145,17 @@ def _create_form(request):
+         if textcha:
+             td.append(textcha.render())
+         row.append(td)
++
++    recaptcha = ReCaptcha(request)
++    if recaptcha.is_enabled():
++        row = html.TR()
++        tbl.append(row)
++        row.append(html.TD().append(html.STRONG().append(
++                                      html.Text(_('ReCaptcha (required)')))))
++        td = html.TD()
++        if recaptcha:
++            td.append(recaptcha.render())
++        row.append(td)        
+ 
+     row = html.TR()
+     tbl.append(row)
+--- MoinMoin/PageEditor.py.orig	2016-10-31 20:44:01 UTC
++++ MoinMoin/PageEditor.py
+@@ -422,6 +422,9 @@ If you don't want that, hit '''%(cancel_button_text)s'
+         from MoinMoin.security.textcha import TextCha
+         request.write(TextCha(request).render())
+ 
++        from MoinMoin.security.sec_recaptcha import ReCaptcha
++        request.write(ReCaptcha(request).render())
++
+         # Add textarea with page text
+         self.sendconfirmleaving()
+ 
+--- MoinMoin/PageGraphicalEditor.py.orig	2016-10-31 20:44:01 UTC
++++ MoinMoin/PageGraphicalEditor.py
+@@ -305,6 +305,9 @@ If you don't want that, hit '''%(cancel_button_text)s'
+         from MoinMoin.security.textcha import TextCha
+         request.write(TextCha(request).render())
+ 
++        from MoinMoin.security.sec_recaptcha import ReCaptcha
++        request.write(ReCaptcha(request).render())
++
+         self.sendconfirmleaving() # TODO update state of flgChange to make this work, see PageEditor
+ 
+         # Add textarea with page text
+--- MoinMoin/security/sec_recaptcha.py.orig	2018-05-02 03:24:23 UTC
++++ MoinMoin/security/sec_recaptcha.py
+@@ -0,0 +1,93 @@
++# -*- coding: iso-8859-1 -*-
++"""
++    MoinMoin - recaptcha support
++
++    Based heavily on the textcha support in textcha.py
++
++    @copyright: 2011 by Steve McIntyre
++    @copyright: 2018 by d42
++    @license: GNU GPL, see COPYING for details.
++"""
++import json
++import urllib
++import urllib2
++from textwrap import dedent
++
++from MoinMoin import log
++
++logging = log.getLogger(__name__)
++
++
++class ReCaptcha(object):
++    """ Recaptcha support """
++
++    VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify"
++
++    def __init__(self, request):
++        """ Initialize the Recaptcha setup.
++
++            @param request: the request object
++        """
++        self.request = request
++        self.user_info = request.user.valid and request.user.name or request.remote_addr
++
++        self.site_key = getattr(request.cfg, "recaptcha_site_key", None)
++        self.secret_key = getattr(request.cfg, "recaptcha_secret_key", None)
++
++    def is_enabled(self):
++        """ check if we're configured, i.e. we have a key
++        """
++        return self.site_key and self.secret_key
++
++    def check_answer_from_form(self, form=None):
++        form = self.request.form if form is None else form
++
++        if not self.is_enabled():
++            return True
++
++        return self._submit(
++            response=form.get("g-recaptcha-response"),
++            remoteip=self.request.remote_addr
++        )
++
++    def _submit(self, response, remoteip):
++
++        def encode_if_necessary(s):
++            return s.encode("utf-8") if isinstance(s, unicode) else s
++
++        data = urllib.urlencode({
++            "secret": encode_if_necessary(self.secret_key),
++            "response":  encode_if_necessary(response),
++            "remoteip":  encode_if_necessary(remoteip),
++        })
++
++        request = urllib2.Request(
++            url=self.VERIFY_URL,
++            data=data,
++            headers={"Content-type": "application/x-www-form-urlencoded"}
++        )
++
++        try:
++            resp = urllib2.urlopen(request)
++            http_code = resp.getcode()
++            resp_json = json.loads(resp.read())
++            return resp_json["success"] if http_code == 200 else False
++        except urllib2.URLError as e:
++            logging.exception(e)
++            return False
++        finally:
++            resp.close()
++
++    def render(self, form=None):
++        """ Checks if ReCaptchas are enabled and returns HTML for one,
++            or an empty string if they are not enabled.
++
++            @return: unicode result html
++        """
++        if not self.is_enabled():
++            return u""
++
++        return dedent(u"""
++            <script src='//www.google.com/recaptcha/api.js'></script>
++            <div class="g-recaptcha" data-sitekey="{SITE_KEY}"></div>
++        """.format(SITE_KEY=self.site_key))

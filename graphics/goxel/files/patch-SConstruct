@@ -1,0 +1,35 @@
+--- SConstruct.orig	2018-12-22 14:00:12 UTC
++++ SConstruct
+@@ -28,15 +28,18 @@ clang = int(ARGUMENTS.get("clang", 0))
+ cycles = int(ARGUMENTS.get('cycles', 1))
+ sound = False
+ 
+-if os.environ.get('CC') == 'clang': clang = 1
++import subprocess
++if 'clang' in subprocess.check_output([os.environ.get('CC', 'cc'), '-v'],
++                                      stderr=subprocess.STDOUT):
++    clang = 1
++print 'clang', clang
+ if profile: debug = 0
+ 
+-env = Environment(ENV = os.environ)
++
++env = Environment(ENV = os.environ, CC = os.environ.get('CC', 'cc'),
++                  CXX = os.environ.get('CXX', 'c++'))
+ conf = env.Configure()
+ 
+-if clang:
+-    env.Replace(CC='clang', CXX='clang++')
+-
+ # Asan & Ubsan (need to come first).
+ # Cycles doesn't like libasan with clang, so we only use it on
+ # C code with clang.
+@@ -145,7 +148,7 @@ if cycles:
+     sources += glob.glob('ext_src/cycles/src/subd/*.cpp')
+ 
+     env.Append(CPPPATH=['ext_src/cycles/src'])
+-    env.Append(CPPPATH=['ext_src/cycles/third_party/atomic'])
++    env.Prepend(CPPPATH=['ext_src/cycles/third_party/atomic'])
+     env.Append(CPPFLAGS=[
+         '-DCYCLES_STD_UNORDERED_MAP',
+         '-DCCL_NAMESPACE_BEGIN=namespace ccl {',

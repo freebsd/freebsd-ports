@@ -1,0 +1,3 @@
+A WeakMethod class for storing bound methods using weak references.
+
+WWW: https://github.com/twang817/weakrefmethod

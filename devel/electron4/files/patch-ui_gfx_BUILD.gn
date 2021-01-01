@@ -1,0 +1,11 @@
+--- ui/gfx/BUILD.gn.orig	2019-03-15 06:38:28 UTC
++++ ui/gfx/BUILD.gn
+@@ -572,7 +572,7 @@ source_set("memory_buffer_sources") {
+     deps += [ "//third_party/libdrm" ]
+   }
+ 
+-  if (is_linux || is_android) {
++  if ((is_linux || is_android) && !is_bsd) {
+     deps += [ "//third_party/libsync" ]
+   }
+ 

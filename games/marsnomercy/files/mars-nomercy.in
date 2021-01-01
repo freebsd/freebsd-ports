@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -d "~/.marsnomercy" ]; then
+        cd ~/.marsomercy || exit 1
+        exec %%PREFIX%%/libexec/mars "$@"
+else
+        cd %%DATADIR%% || exit 1
+        find * -type d -exec mkdir -p ~/.marsnomercy/data/{} \; || exit 1
+        find * -type f -exec ln -s %%DATADIR%%/{} ~/.marsnomercy/data/{} \; 2>/dev/null || exit 1
+        cd ~/.marsnomercy || exit 1
+        exec %%PREFIX%%/libexec/mars "$@"
+fi

@@ -1,0 +1,11 @@
+--- third_party/sqlite/BUILD.gn.orig	2019-04-08 08:33:18 UTC
++++ third_party/sqlite/BUILD.gn
+@@ -251,7 +251,7 @@ config("sqlite_warnings") {
+       ]
+     }
+   }
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     cflags += [
+       # SQLite doesn't believe in compiler warnings, preferring testing.
+       # http://www.sqlite.org/faq.html#q17

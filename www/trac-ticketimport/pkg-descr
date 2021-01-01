@@ -1,0 +1,15 @@
+This plugin lets you import into Trac a series of tickets from a CSV
+file or (if the xlrd library is installed) from an Excel file.
+
+You can also use it to modify tickets in batch, by saving a report as
+CSV, editing the CSV file, and re-importing the tickets.
+
+This plugin is very useful when starting a new project: you can import a
+list of requirements that may have come from meeting notes, list of
+features, other ticketing systems... It's also great to review the
+tickets off-line, or to do massive changes to tickets.
+
+Based on the ticket id (or, if no id exists, on the summary) in the
+imported file, tickets are either created or updated.
+
+WWW: http://trac-hacks.org/wiki/TicketImportPlugin

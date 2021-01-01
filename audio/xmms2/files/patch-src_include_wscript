@@ -1,0 +1,22 @@
+--- src/include/wscript.orig	2011-10-20 19:26:08 UTC
++++ src/include/wscript
+@@ -2,12 +2,13 @@ import os
+ 
+ def build(bld):
+     # FIXME: This is a test that should work.
+-    for d in bld.path.ant_glob('**', dir=True, src=False):
+-        rpath = d.path_from(bld.path)
+-        bld.recurse(rpath)
+-        f = d.ant_glob('*.h')
+-        if f:
+-            bld.install_files(os.path.join(bld.env.INCLUDEDIR, 'xmms2', rpath), f)
++    if bld.env.BUILD_XMMS2D:
++        for d in bld.path.ant_glob('**', dir=True, src=False):
++            rpath = d.path_from(bld.path)
++            bld.recurse(rpath)
++            f = d.ant_glob('*.h')
++            if f:
++                bld.install_files(os.path.join(bld.env.INCLUDEDIR, 'xmms2', rpath), f)
+ 
+     #paths = ['xmms', 'xmmsc', 'xmmsclient', 'xmmsclient/xmmsclient++']
+     #for p in paths:

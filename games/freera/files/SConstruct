@@ -1,0 +1,27 @@
+#!/usr/bin/scons
+
+from os import environ
+from glob import glob
+
+# Source files
+source = ["src/freera.cpp"]
+source += glob("src/*/*.cpp")
+source += glob("src/*/*/*.cpp")
+source += glob("src/lua/*.c")
+# This is blatent overkill
+exclude = ["src/misc/fibheap.cpp"]
+source = filter(lambda x: x not in exclude, source)
+
+env = Environment( CPPPATH = ["#/src/include", "#/src/include/lua"],
+		   LIBS = [ "SDL_mixer"], ENV = environ )
+
+for key in [ 'CC', 'CCFLAGS', 'CXX', 'CXXFLAGS' ]:
+	if environ.has_key(key):
+		env.Replace( **{key: environ[key].split(' ')} )
+
+env.Append( CCFLAGS = [ "-Wall", "-Wconversion", "-Wno-unused-parameter" ],
+	    CXXFLAGS = [ "-Wall", "-Wconversion", "-Wno-unused-parameter" ] )
+
+env.ParseConfig(environ["SDL_CONFIG"] + " --cflags --libs")
+
+env.Program(target = "freera", source = source)

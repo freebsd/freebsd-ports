@@ -1,0 +1,11 @@
+--- mojo/public/js/mojo_bindings_resources.grd.orig	2020-03-16 18:39:53 UTC
++++ mojo/public/js/mojo_bindings_resources.grd
+@@ -70,7 +70,7 @@
+           use_base_dir="false"
+           type="BINDATA"
+           compress="gzip" />
+-      <if expr="is_win or is_macosx or is_linux">
++      <if expr="is_win or is_macosx or is_posix">
+         <include name="IDR_MOJO_TIME_MOJOM_HTML"
+             file="${root_gen_dir}/mojo/public/mojom/base/time.mojom.html"
+             use_base_dir="false"

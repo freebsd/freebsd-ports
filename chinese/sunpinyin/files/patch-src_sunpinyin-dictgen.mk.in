@@ -1,0 +1,26 @@
+--- src/sunpinyin-dictgen.mk.in.orig	2014-11-14 14:17:48 UTC
++++ src/sunpinyin-dictgen.mk.in
+@@ -42,22 +42,7 @@ DL_ROOT = ${DL_HOST}/open-gram
+ DICT_PAT = 'dict\.utf8-[0-9]\+.tar.bz2'
+ SLM_PAT = 'lm_sc\.3gm\.arpa-[0-9]\+.tar.bz2'
+ 
+-DICT_AR = $(shell ${W3M} ${DL_LIST} | grep -o ${DICT_PAT} | sort | tail -n 1)
+-SLM_AR = $(shell ${W3M} ${DL_LIST} | grep -o ${SLM_PAT} | sort | tail -n 1)
+-
+-all: install
+-
+-${DICT_AR}:
+-	${WGET} ${DL_ROOT}/$@
+-
+-dict.utf8: ${DICT_AR}
+-	${TAR} xmf $^
+-
+-${SLM_AR}:
+-	${WGET} ${DL_ROOT}/$@
+-
+-lm_sc.3gm.arpa: ${SLM_AR}
+-	${TAR} xmf $^
++all: lm_sc.t3g pydict_sc.bin
+ 
+ lm_sc.3gm: lm_sc.3gm.arpa dict.utf8
+ 	slmpack $^ $@

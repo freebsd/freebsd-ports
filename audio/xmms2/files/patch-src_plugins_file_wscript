@@ -1,0 +1,19 @@
+--- src/plugins/file/wscript.orig	2011-10-20 19:26:08 UTC
++++ src/plugins/file/wscript
+@@ -1,7 +1,7 @@
+ from waftools.plugin import plugin
+ 
+ def plugin_build(bld, obj):
+-    if bld.env.HAVE_FSTATAT and bld.env.HAVE_DIRFD:
++    if bld.env.HAVE_FSTATAT:
+         obj.source.append('browse/fstatat.c')
+     else:
+         obj.source.append('browse/gdir.c')
+@@ -9,7 +9,6 @@ def plugin_build(bld, obj):
+ def plugin_configure(conf):
+     conf.check_cc(function_name='fstatat', header_name=['fcntl.h','sys/stat.h'],
+             defines=['_ATFILE_SOURCE=1'])
+-    conf.check_cc(function_name='dirfd', header_name=['dirent.h','sys/types.h'])
+ 
+ configure, build = plugin("file",
+         configure=plugin_configure, build=plugin_build,

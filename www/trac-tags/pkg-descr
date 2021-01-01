@@ -1,0 +1,6 @@
+The TagsPlugin implements both a generic tagging engine and frontends for the
+Wiki and ticket systems. An extra text entry box is added to the Wiki edit page
+for tagging Wiki pages and ticket fields (you can configure which ones) are
+treated as tags for the ticket system.
+
+WWW: http://trac-hacks.org/wiki/TagsPlugin

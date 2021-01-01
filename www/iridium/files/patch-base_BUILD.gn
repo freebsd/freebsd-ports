@@ -1,0 +1,98 @@
+--- base/BUILD.gn.orig	2020-03-16 18:40:27 UTC
++++ base/BUILD.gn
+@@ -912,7 +912,7 @@ jumbo_component("base") {
+       "timer/hi_res_timer_manager_posix.cc",
+     ]
+ 
+-    if (!is_nacl && !is_mac && !is_ios) {
++    if (!is_nacl && !is_mac && !is_ios && !is_bsd) {
+       sources += [
+         "profiler/stack_copier_signal.cc",
+         "profiler/stack_copier_signal.h",
+@@ -921,6 +921,12 @@ jumbo_component("base") {
+         "profiler/thread_delegate_posix.h",
+       ]
+     }
++
++    if (is_bsd) {
++      sources += [
++        "profiler/stack_sampler_posix.cc",
++      ]
++    }
+   }
+ 
+   if (is_win) {
+@@ -1305,7 +1311,7 @@ jumbo_component("base") {
+   # Needed for <atomic> if using newer C++ library than sysroot, except if
+   # building inside the cros_sdk environment - use host_toolchain as a
+   # more robust check for this.
+-  if (!use_sysroot && (is_android || (is_linux && !is_chromecast)) &&
++  if (!use_sysroot && (is_android || (is_linux && !is_chromecast) && !is_clang) &&
+       host_toolchain != "//build/toolchain/cros:host") {
+     libs += [ "atomic" ]
+   }
+@@ -1331,7 +1337,7 @@ jumbo_component("base") {
+         "allocator/allocator_shim_override_glibc_weak_symbols.h",
+       ]
+       deps += [ "//base/allocator:tcmalloc" ]
+-    } else if (is_linux && use_allocator == "none") {
++    } else if ((is_linux && !is_bsd) && use_allocator == "none") {
+       sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
+     } else if (is_android && use_allocator == "none") {
+       sources += [
+@@ -1930,6 +1936,33 @@ jumbo_component("base") {
+     }
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "files/file_path_watcher_linux.cc",
++      "files/file_util_linux.cc",
++      "process/memory_linux.cc",
++      "process/process_handle_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_metrics_linux.cc",
++      "system/sys_info_linux.cc"
++    ]
++    sources += [
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "files/file_path_watcher_stub.cc",
++      "process/memory_stubs.cc",
++      "process/process_handle_freebsd.cc",
++      "process/process_iterator_freebsd.cc",
++      "process/process_metrics_freebsd.cc",
++      "system/sys_info_freebsd.cc",
++    ]
++    libs = [
++      "execinfo", # logging.cc
++      "kvm",      # process_metrics_freebsd
++      "util"      # process_metrics_freebsd
++    ]
++  }
++
+   # iOS
+   if (is_ios) {
+     sources -= [
+@@ -2880,7 +2913,7 @@ test("base_unittests") {
+       "posix/unix_domain_socket_unittest.cc",
+       "task/thread_pool/task_tracker_posix_unittest.cc",
+     ]
+-    if (!is_nacl && !is_mac && !is_ios) {
++    if (!is_nacl && !is_mac && !is_ios && !is_bsd) {
+       sources += [ "profiler/stack_copier_signal_unittest.cc" ]
+     }
+   }
+@@ -3068,6 +3101,12 @@ test("base_unittests") {
+ 
+     manifest = "//build/config/fuchsia/tests.cmx"
+   }
++
++  if (is_bsd) {
++    sources -= [
++      "debug/proc_maps_linux_unittest.cc",
++    ]
++  } 
+ 
+   if (!is_fuchsia && !is_ios) {
+     sources += [ "files/file_locking_unittest.cc" ]

@@ -1,0 +1,29 @@
+--- extensions/common/api/_permission_features.json.orig	2019-12-12 12:39:44 UTC
++++ extensions/common/api/_permission_features.json
+@@ -135,7 +135,7 @@
+     {
+       "channel": "stable",
+       "extension_types": ["platform_app"],
+-      "platforms": ["chromeos", "win", "mac", "linux"],
++      "platforms": ["chromeos", "win", "mac", "linux", "bsd"],
+       "whitelist": [
+         "1C93BD3CF875F4A73C0B2A163BB8FBDA8B8B3D80",  // http://crbug.com/387169
+         "A3BC37E2148AC4E99BE4B16AF9D42DD1E592BBBE",  // http://crbug.com/387169
+@@ -461,7 +461,7 @@
+   }, {
+     "channel": "stable",
+     "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
+-    "platforms": ["chromeos", "mac", "win", "linux"],
++    "platforms": ["chromeos", "mac", "win", "linux", "bsd"],
+     "whitelist": [
+       "0DE0F05680A4A056BCEC864ED8DDA84296F82B40",  // http://crbug.com/434651
+       "1C93BD3CF875F4A73C0B2A163BB8FBDA8B8B3D80",  // http://crbug.com/293683
+@@ -492,7 +492,7 @@
+   "networkingPrivate": {
+     "channel": "stable",
+     "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
+-    "platforms": ["chromeos", "mac", "win", "linux"],
++    "platforms": ["chromeos", "mac", "win", "linux", "bsd"],
+     "whitelist": [
+       // DO NOT ADD ANY MORE ENTRIES HERE.
+       // networkingPrivate is being migrated to networking.onc.

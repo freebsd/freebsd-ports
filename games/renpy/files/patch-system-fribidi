@@ -1,0 +1,57 @@
+Partially revert 4a9efc0cab7d as module/fribidi-src/ is missing from source archive.
+
+gen/_renpybidi.c:564:10: fatal error: 'fribidi.h' file not found
+#include "fribidi.h"
+         ^
+
+--- module/renpybidicore.c.orig	2018-07-11 04:11:19 UTC
++++ module/renpybidicore.c
+@@ -1,5 +1,5 @@
+ #include <Python.h>
+-#include <fribidi-src/lib/fribidi.h>
++#include <fribidi.h>
+ #include <stdlib.h>
+ 
+ #ifndef alloca
+--- module/setup.py.orig	2018-07-11 04:29:32 UTC
++++ module/setup.py
+@@ -92,6 +92,7 @@ has_avresample = library("avresample", optional=True)
+ has_swresample = library("swresample", optional=True)
+ has_swscale = library("swscale", optional=True)
+ library("freetype")
++has_fribidi = include("fribidi.h", directory="fribidi", optional=True) and library("fribidi", optional=True)
+ library("z")
+ has_libglew = library("GLEW", optional=True)
+ has_libglew32 = library("glew32", optional=True)
+@@ -105,6 +106,16 @@ else:
+     sdl = [ 'SDL2' ]
+     png = 'png'
+ 
++
++if has_fribidi and (not android) and (not ios):
++    try:
++        # Some versions of fribidi require glib, and it doesn't hurt to include it in
++        # our path.
++        glib_flags = subprocess.check_output(["pkg-config", "--cflags", "glib-2.0"])
++        setuplib.extra_compile_args.extend(glib_flags.split())
++    except:
++        pass
++
+ steam_sdk = os.environ.get("RENPY_STEAM_SDK", None)
+ steam_platform = os.environ.get("RENPY_STEAM_PLATFORM", "")
+ 
+@@ -134,11 +145,12 @@ renpybidicore.c
+ """.split()
+ cython(
+     "_renpybidi",
+-    FRIBIDI_SOURCES,
+-    includes=[
++    has_fribidi and [ i for i in FRIBIDI_SOURCES if 'fribidi-src' not in i ] or FRIBIDI_SOURCES,
++    includes=has_fribidi and [] or [
+         BASE + "/fribidi-src/",
+         BASE + "/fribidi-src/lib/",
+         ],
++    libs=has_fribidi and ['fribidi'] or [],
+     define_macros=[
+         ("FRIBIDI_ENTRY", ""),
+         ("HAVE_CONFIG_H", "1"),

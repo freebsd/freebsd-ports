@@ -1,0 +1,11 @@
+--- vst/SConscript.orig	Sat Mar 24 13:25:52 2007
++++ vst/SConscript	Sat Mar 24 13:26:42 2007
+@@ -20,7 +20,7 @@
+ )
+ 
+ ardour_vst.Append (CCFLAGS="-DVST_SUPPORT", CPPPATH="#libs/fst", LIBPATH='#gtk2_ardour', LIBS="ardourgtk")
+-ardour_vst.Append (LINKFLAGS='-L/usr/X11R6/lib -lasound -lX11 -lpthread') 
++#ardour_vst.Append (LINKFLAGS='-L/usr/X11R6/lib -lasound -lX11 -lpthread') 
+ ardour_vst["CC"] ="winegcc"
+ ardour_vst["LINK"] ="wineg++ -mwindows"
+ 

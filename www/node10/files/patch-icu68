@@ -1,0 +1,109 @@
+Regressed by https://github.com/unicode-org/icu/commit/c3fe7e09d844
+
+../deps/v8/src/objects/intl-objects.cc:246:22: error: use of undeclared identifier 'FALSE'
+                     FALSE, &status);
+                     ^
+../deps/v8/src/objects/intl-objects.cc:425:22: error: use of undeclared identifier 'FALSE'
+                     FALSE, &status);
+                     ^
+../deps/v8/src/objects/intl-objects.cc:660:22: error: use of undeclared identifier 'FALSE'
+                     FALSE, &status);
+                     ^
+../deps/v8/src/objects/intl-objects.cc:799:22: error: use of undeclared identifier 'FALSE'
+                     FALSE, &status);
+                     ^
+../deps/v8/src/runtime/runtime-intl.cc:88:66: error: use of undeclared identifier 'TRUE'
+  uloc_toLanguageTag(icu_result, result, ULOC_FULLNAME_CAPACITY, TRUE, &error);
+                                                                 ^
+../deps/v8/src/runtime/runtime-intl.cc:135:66: error: use of undeclared identifier 'FALSE'
+    uloc_toLanguageTag(icu_name, result, ULOC_FULLNAME_CAPACITY, FALSE, &error);
+                                                                 ^
+../deps/v8/src/runtime/runtime-intl.cc:167:22: error: use of undeclared identifier 'FALSE'
+                     FALSE, &status);
+                     ^
+../deps/v8/src/runtime/runtime-intl.cc:402:9: error: use of undeclared identifier 'FALSE'
+        FALSE, GetUCharBufferFromFlat(flat1, &sap1, length1), length1);
+        ^
+../deps/v8/src/runtime/runtime-intl.cc:404:9: error: use of undeclared identifier 'FALSE'
+        FALSE, GetUCharBufferFromFlat(flat2, &sap2, length2), length2);
+        ^
+
+--- deps/v8/src/objects/intl-objects.cc.orig	2020-09-15 13:25:38 UTC
++++ deps/v8/src/objects/intl-objects.cc
+@@ -243,7 +243,7 @@ void SetResolvedDateSettings(Isolate* isolate, const i
+   char result[ULOC_FULLNAME_CAPACITY];
+   status = U_ZERO_ERROR;
+   uloc_toLanguageTag(icu_locale.getName(), result, ULOC_FULLNAME_CAPACITY,
+-                     FALSE, &status);
++                     false, &status);
+   if (U_SUCCESS(status)) {
+     JSObject::SetProperty(resolved, factory->NewStringFromStaticChars("locale"),
+                           factory->NewStringFromAsciiChecked(result),
+@@ -422,7 +422,7 @@ void SetResolvedNumericSettings(Isolate* isolate, cons
+   char result[ULOC_FULLNAME_CAPACITY];
+   UErrorCode status = U_ZERO_ERROR;
+   uloc_toLanguageTag(icu_locale.getName(), result, ULOC_FULLNAME_CAPACITY,
+-                     FALSE, &status);
++                     false, &status);
+   if (U_SUCCESS(status)) {
+     JSObject::SetProperty(resolved, factory->NewStringFromStaticChars("locale"),
+                           factory->NewStringFromAsciiChecked(result),
+@@ -657,7 +657,7 @@ void SetResolvedCollatorSettings(Isolate* isolate,
+   char result[ULOC_FULLNAME_CAPACITY];
+   status = U_ZERO_ERROR;
+   uloc_toLanguageTag(icu_locale.getName(), result, ULOC_FULLNAME_CAPACITY,
+-                     FALSE, &status);
++                     false, &status);
+   if (U_SUCCESS(status)) {
+     JSObject::SetProperty(resolved, factory->NewStringFromStaticChars("locale"),
+                           factory->NewStringFromAsciiChecked(result),
+@@ -796,7 +796,7 @@ void SetResolvedBreakIteratorSettings(Isolate* isolate
+   char result[ULOC_FULLNAME_CAPACITY];
+   status = U_ZERO_ERROR;
+   uloc_toLanguageTag(icu_locale.getName(), result, ULOC_FULLNAME_CAPACITY,
+-                     FALSE, &status);
++                     false, &status);
+   if (U_SUCCESS(status)) {
+     JSObject::SetProperty(resolved, factory->NewStringFromStaticChars("locale"),
+                           factory->NewStringFromAsciiChecked(result),
+--- deps/v8/src/runtime/runtime-intl.cc.orig	2020-09-15 13:25:38 UTC
++++ deps/v8/src/runtime/runtime-intl.cc
+@@ -85,7 +85,7 @@ RUNTIME_FUNCTION(Runtime_CanonicalizeLanguageTag) {
+   char result[ULOC_FULLNAME_CAPACITY];
+ 
+   // Force strict BCP47 rules.
+-  uloc_toLanguageTag(icu_result, result, ULOC_FULLNAME_CAPACITY, TRUE, &error);
++  uloc_toLanguageTag(icu_result, result, ULOC_FULLNAME_CAPACITY, true, &error);
+ 
+   if (U_FAILURE(error) || error == U_STRING_NOT_TERMINATED_WARNING) {
+     return *factory->NewStringFromAsciiChecked(kInvalidTag);
+@@ -132,7 +132,7 @@ RUNTIME_FUNCTION(Runtime_AvailableLocalesOf) {
+ 
+     error = U_ZERO_ERROR;
+     // No need to force strict BCP47 rules.
+-    uloc_toLanguageTag(icu_name, result, ULOC_FULLNAME_CAPACITY, FALSE, &error);
++    uloc_toLanguageTag(icu_name, result, ULOC_FULLNAME_CAPACITY, false, &error);
+     if (U_FAILURE(error) || error == U_STRING_NOT_TERMINATED_WARNING) {
+       // This shouldn't happen, but lets not break the user.
+       continue;
+@@ -164,7 +164,7 @@ RUNTIME_FUNCTION(Runtime_GetDefaultICULocale) {
+   char result[ULOC_FULLNAME_CAPACITY];
+   UErrorCode status = U_ZERO_ERROR;
+   uloc_toLanguageTag(default_locale.getName(), result, ULOC_FULLNAME_CAPACITY,
+-                     FALSE, &status);
++                     false, &status);
+   if (U_SUCCESS(status)) {
+     return *factory->NewStringFromAsciiChecked(result);
+   }
+@@ -399,9 +399,9 @@ RUNTIME_FUNCTION(Runtime_InternalCompare) {
+     std::unique_ptr<uc16[]> sap1;
+     std::unique_ptr<uc16[]> sap2;
+     icu::UnicodeString string_val1(
+-        FALSE, GetUCharBufferFromFlat(flat1, &sap1, length1), length1);
++        false, GetUCharBufferFromFlat(flat1, &sap1, length1), length1);
+     icu::UnicodeString string_val2(
+-        FALSE, GetUCharBufferFromFlat(flat2, &sap2, length2), length2);
++        false, GetUCharBufferFromFlat(flat2, &sap2, length2), length2);
+     result = collator->compare(string_val1, string_val2, status);
+   }
+   if (U_FAILURE(status)) return isolate->ThrowIllegalOperation();

@@ -1,0 +1,11 @@
+--- device/bluetooth/BUILD.gn.orig	2020-03-16 18:39:51 UTC
++++ device/bluetooth/BUILD.gn
+@@ -275,7 +275,7 @@ component("bluetooth") {
+     ]
+   }
+ 
+-  if (is_chromeos || is_linux) {
++  if (is_chromeos || (is_linux && !is_bsd)) {
+     if (use_dbus) {
+       sources += [
+         "bluez/bluetooth_adapter_bluez.cc",

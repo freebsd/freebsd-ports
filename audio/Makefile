@@ -28,6 +28,7 @@
     SUBDIR += ample
     SUBDIR += amsynth
     SUBDIR += aqualung
+    SUBDIR += ardour
     SUBDIR += ardour6
     SUBDIR += ario
     SUBDIR += arss
@@ -501,6 +502,7 @@
     SUBDIR += mixer.app
     SUBDIR += mixertui
     SUBDIR += mixxx
+    SUBDIR += mixxx21
     SUBDIR += mkcue
     SUBDIR += moc
     SUBDIR += modplug-tools
@@ -867,6 +869,7 @@
     SUBDIR += xmix
     SUBDIR += xmixer
     SUBDIR += xmmix
+    SUBDIR += xmms2
     SUBDIR += xmp
     SUBDIR += xmradio
     SUBDIR += xoscope

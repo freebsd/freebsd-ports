@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+Note that some osquery tables are currently unsupported on FreeBSD. A list of
+disabled tables can be found at:
+
+https://github.com/facebook/osquery/blob/master/specs/blacklist
+EOM
+}
+]

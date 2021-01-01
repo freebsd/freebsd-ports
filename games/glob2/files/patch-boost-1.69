@@ -1,0 +1,17 @@
+After https://github.com/boostorg/logic/commit/23cd89d4c80f build fails:
+
+src/AIEcho.cpp:4390:9: error: no viable conversion from returned value of type 'boost::logic::tribool' to function return type 'bool'
+        return is_end!=rhs.is_end || team!=rhs.team || building_type!=rhs.building_type || level!=rhs.level || construction_site!=rhs.construction_site;
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- src/AIEcho.cpp.orig	2009-08-29 20:39:05 UTC
++++ src/AIEcho.cpp
+@@ -4387,7 +4387,7 @@ bool enemy_building_iterator::operator!=(const enemy_b
+ {
+ 	if(is_end && rhs.is_end)
+ 		return false;
+-	return is_end!=rhs.is_end || team!=rhs.team || building_type!=rhs.building_type || level!=rhs.level || construction_site!=rhs.construction_site;
++	return bool(is_end!=rhs.is_end || team!=rhs.team || building_type!=rhs.building_type || level!=rhs.level || construction_site!=rhs.construction_site);
+ }
+ 
+ 

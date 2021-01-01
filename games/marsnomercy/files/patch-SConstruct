@@ -1,0 +1,108 @@
+--- SConstruct.orig	2006-12-19 00:56:15 UTC
++++ SConstruct
+@@ -1,22 +1,22 @@
+ import sys, os
+ 
+-# create build environment and options
++# create build environment and variables
+ env = Environment()
+-opts = Options()
++opts = Variables()
+ 
+ # OPTION debug
+-opts.Add(BoolOption('debug', 'Set to yes (or 1) to build for debug', 'no'))
++opts.Add(BoolVariable('debug', 'Set to yes (or 1) to build for debug', 'no'))
+ # OPTION strip
+-opts.Add(BoolOption('strip', 'Set to no (or 0) to avoid stripping binaries', 'yes'))
++opts.Add(BoolVariable('strip', 'Set to no (or 0) to avoid stripping binaries', 'yes'))
+ # OPTION warning
+-opts.Add(BoolOption('warnings', 'Set to yes (or 1) to print all warnings', 'yes'))
++opts.Add(BoolVariable('warnings', 'Set to yes (or 1) to print all warnings', 'yes'))
+ # OPTION with_opengl
+-opts.Add(BoolOption('with_opengl', 'Set to no (or 0) if you do not want OpenGL support in the game', 'yes'))
++opts.Add(BoolVariable('with_opengl', 'Set to no (or 0) if you do not want OpenGL support in the game', 'yes'))
+ # OPTION root & prefix
+-opts.Add(PathOption('root', 'Path to the fakeroot directory', '/'))
+-opts.Add(PathOption('prefix', 'Path to prefix to default destinations', '/usr/local'))
+-# Adding options to the environment
+-env = Environment(options = opts)
++opts.Add(PathVariable('root', 'Path to the fakeroot directory', '/'))
++opts.Add(PathVariable('prefix', 'Path to prefix to default destinations', '/usr/local'))
++# Adding variables to the environment
++env = Environment(variables = opts)
+ 
+ if 'install' in sys.argv:
+ 	root = ARGUMENTS.get('root', '/')
+@@ -33,17 +33,17 @@ else:
+ 
+ # OPTION no_mingw
+ if env['PLATFORM'] == 'cygwin':
+-	opts.Add(BoolOption('no_mingw', 'Set to yes (or 1) to build without mingw', 'no'))
+-	env = Environment(options = opts)
++	opts.Add(BoolVariable('no_mingw', 'Set to yes (or 1) to build without mingw', 'no'))
++	env = Environment(variables = opts)
+ 
+ # PLATFORM mingw under cygwin
+ if env['PLATFORM'] == 'cygwin' and not int(env['no_mingw']):
+-	# add mingw specific options
+-	opts.AddOptions(
+-		PathOption('mingw_cygdir', 'where your mingw installation is located under cygwin', '/mingw'),
+-		PathOption('mingw_windir', 'where your mingw installation is located under cygwin', 'F:/Programmi/Dev-Cpp')
++	# add mingw specific variables
++	opts.AddVariables(
++		PathVariable('mingw_cygdir', 'where your mingw installation is located under cygwin', '/mingw'),
++		PathVariable('mingw_windir', 'where your mingw installation is located under cygwin', 'F:/Programmi/Dev-Cpp')
+     )
+-	env = Environment(options = opts)
++	env = Environment(variables = opts)
+ 
+ 	mingw_cygdir = env['mingw_cygdir']
+ 	mingw_windir = env['mingw_windir']
+@@ -57,15 +57,21 @@ if env['PLATFORM'] == 'cygwin' and not i
+ 
+ # PLATFORM posix or pure cygwin
+ else:
++	# Section used for FreeBSD port
++        LOCALBASE = os.environ['LOCALBASE']
++        LOCALBASE = os.environ['LOCALBASE']
+ 	# determine compiler and linker flags for SDL
+-	env.ParseConfig('sdl-config --cflags')
+-	env.ParseConfig('sdl-config --libs')
++	SDL_CONFIG = os.environ['SDL_CONFIG']
++	env.ParseConfig(SDL_CONFIG + ' --cflags')
++	env.ParseConfig(SDL_CONFIG + ' --libs')
+ 	# add additional compiler flags
+-	if not int(env['debug']):
+-		env.Append(CXXFLAGS = ['-O2'])
+-
++        env.Replace(CC = os.environ['CC'])
++        env.Replace(CXX = os.environ['CXX'])
++        env.Replace(CPPPATH = [LOCALBASE + '/include',LOCALBASE+ '/include'])
++        env.Replace(LIBPATH = [LOCALBASE + '/lib',LOCALBASE+ '/lib'])
++        env.Append(CXXFLAGS = os.environ['CXXFLAGS'] + ' `' + SDL_CONFIG + ' --cflags`')
+ 
+-# generate help for options
++# generate help for variables
+ Help(opts.GenerateHelpText(env))
+ 
+ # build for debug
+@@ -92,16 +98,16 @@ if data_dir != '': # installation requir
+ if not env.GetOption('clean'):
+ 	print ":: Checking for libs"
+ 	conf = Configure(env)
+-	if not conf.CheckLibWithHeader('SDL', 'SDL.h', 'c', 'SDL_Init(SDL_INIT_VIDEO);', autoadd = 0):
++	if not conf.CheckLibWithHeader('SDL', 'SDL/SDL.h', 'c', 'SDL_Init(SDL_INIT_VIDEO);', autoadd = 0):
+ 		print 'Did not find libSDL, exiting!'
+ 		Exit(1)
+ 	if not conf.CheckLibWithHeader('png', 'png.h', 'c', 'png_error(NULL, "test");'):
+ 		print 'Did not find libpng, exiting!'
+ 		Exit(1)
+-	if not conf.CheckLibWithHeader('SDL_image', 'SDL_image.h', 'c', 'IMG_GetError();'):
++	if not conf.CheckLibWithHeader('SDL_image', 'SDL/SDL_image.h', 'c', 'IMG_GetError();'):
+ 		print 'Did not find libSDL_image, exiting!'
+ 		Exit(1)
+-	if not conf.CheckLibWithHeader('SDL_ttf', 'SDL_ttf.h', 'c', 'TTF_Init();'):
++	if not conf.CheckLibWithHeader('SDL_ttf', 'SDL/SDL_ttf.h', 'c', 'TTF_Init();'):
+ 		print 'Did not find libSDL_ttf, exiting!'
+ 		Exit(1)
+ 	if int(env['with_opengl']):

@@ -44,6 +44,7 @@
     SUBDIR += libtorrent
     SUBDIR += libtorrent-rasterbar
     SUBDIR += lidarr
+    SUBDIR += linuxdcpp
     SUBDIR += litecoin
     SUBDIR += litecoin-daemon
     SUBDIR += litecoin-utils

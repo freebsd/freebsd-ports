@@ -1,0 +1,9 @@
+This package provides backports of new features in Python's os module under the
+backports namespace.
+
+Backported functionality:
+
+- os.fsencode (new in Python 3.2)
+- os.fsdecode (new in Python 3.2)
+
+WWW: https://github.com/pjdelport/backports.os

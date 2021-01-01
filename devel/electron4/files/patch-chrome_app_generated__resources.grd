@@ -1,0 +1,20 @@
+--- chrome/app/generated_resources.grd.orig	2019-03-15 06:36:59 UTC
++++ chrome/app/generated_resources.grd
+@@ -6064,7 +6064,7 @@ the Bookmarks menu.">
+         Google Pay
+       </message>
+ 
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
+           Use system title bar and borders
+         </message>
+@@ -6895,7 +6895,7 @@ Please help our engineers fix this problem. Tell us wh
+         Set as default
+       </message>
+ 
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <message name="IDS_MINIMIZE_WINDOW_MENU" desc="The Linux browser window menu item text for minimizing the window.">
+           Minimize
+         </message>

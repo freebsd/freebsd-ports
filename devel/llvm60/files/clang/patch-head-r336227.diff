@@ -1,0 +1,42 @@
+r336227 | dim | 2018-07-12 21:02:59 +0200 (Thu, 12 Jul 2018) | 27 lines
+
+Pull in r336008 from upstream clang trunk:
+
+  Request init/fini array on FreeBSD 12 and later
+
+  Summary:
+
+  It seems a bad idea to change the default in the middle of a release
+  branch due to possible changes in global ctor / dtor ordering between
+  .ctors and .init_array. With FreeBSD 11.0's release imminent lets
+  change the default now for FreeBSD 12 (the current development
+  stream) and later.
+
+  FreeBSD rtld has supported .init_array / .fini_array for many years.
+  As of Jan 1 2017 all supported FreeBSD releases and branches will
+  have support.
+
+  Reviewers: dim, brooks, arichardson
+
+  Reviewed By: dim, brooks, arichardson
+
+  Subscribers: bsdjhb, krytarowski, emaste, cfe-commits
+
+  Differential Revision: https://reviews.llvm.org/D24867
+
+Requested by:	jhb
+MFC after:	3 days
+
+Index: tools/clang/lib/Driver/ToolChains/Gnu.cpp
+===================================================================
+--- tools/clang/lib/Driver/ToolChains/Gnu.cpp	(revision 336226)
++++ tools/clang/lib/Driver/ToolChains/Gnu.cpp	(revision 336227)
+@@ -2375,6 +2375,8 @@ void Generic_ELF::addClangTargetOptions(const ArgL
+   bool UseInitArrayDefault =
+       getTriple().getArch() == llvm::Triple::aarch64 ||
+       getTriple().getArch() == llvm::Triple::aarch64_be ||
++      (getTriple().getOS() == llvm::Triple::FreeBSD &&
++       getTriple().getOSMajorVersion() >= 12) ||
+       (getTriple().getOS() == llvm::Triple::Linux &&
+        ((!GCCInstallation.isValid() || !V.isOlderThan(4, 7, 0)) ||
+         getTriple().isAndroid())) ||

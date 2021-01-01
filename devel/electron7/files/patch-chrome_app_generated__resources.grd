@@ -1,0 +1,29 @@
+--- chrome/app/generated_resources.grd.orig	2019-12-12 12:39:04 UTC
++++ chrome/app/generated_resources.grd
+@@ -4885,7 +4885,7 @@ Keep your key file in a safe place. You will need it t
+       </if>
+ 
+       <!-- chrome://browser-switch strings -->
+-      <if expr="is_win or is_macosx or (is_linux and not is_chromeos)">
++      <if expr="is_win or is_macosx or (is_posix and not is_chromeos)">
+         <message name="IDS_ABOUT_BROWSER_SWITCH_TITLE" desc="about:browser-switch page title">
+           Legacy Browser Support
+         </message>
+@@ -6520,7 +6520,7 @@ the Bookmarks menu.">
+         Google Pay
+       </message>
+ 
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
+           Use system title bar and borders
+         </message>
+@@ -7401,7 +7401,7 @@ Please help our engineers fix this problem. Tell us wh
+         Set as default
+       </message>
+ 
+-      <if expr="is_linux and not chromeos">
++      <if expr="is_posix and not chromeos">
+         <message name="IDS_MINIMIZE_WINDOW_MENU" desc="The Linux browser window menu item text for minimizing the window.">
+           Minimize
+         </message>

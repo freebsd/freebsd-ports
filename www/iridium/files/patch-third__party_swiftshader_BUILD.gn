@@ -1,0 +1,24 @@
+--- third_party/swiftshader/BUILD.gn.orig	2020-03-16 18:42:12 UTC
++++ third_party/swiftshader/BUILD.gn
+@@ -136,9 +136,6 @@ config("swiftshader_config") {
+       ldflags = [ "-Wl,--gc-sections" ]
+ 
+       if (target_cpu == "mipsel") {
+-        ldflags += [
+-          "-Wl,--hash-style=sysv",
+-        ]
+         if (mips_arch_variant == "r1") {
+           ldflags += [
+             "-mips32",
+@@ -150,11 +147,8 @@ config("swiftshader_config") {
+         }
+       } else if (target_cpu == "mips64el") {
+         ldflags += [
+-          "-Wl,--hash-style=sysv",
+           "-mips64r2",
+         ]
+-      } else {
+-        ldflags += [ "-Wl,--hash-style=both" ]
+       }
+ 
+       # A bug in the gold linker prevents using ICF on 32-bit (crbug.com/729532)

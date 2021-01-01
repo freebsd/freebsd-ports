@@ -1,0 +1,106 @@
+2 errors:
+error[E0432]: unresolved import `crate::arch::x86_64::_mm_movemask_pi8`
+https://github.com/rust-lang/packed_simd/pull/290
+
+unresolved import `crate::arch::x86_64::__m64`
+https://github.com/rust-lang/packed_simd/pull/292/commits/57d96e45916066fa9b5cdf2bc695e190207e78af
+
+From 950903a66950eaff745b0a029f2051d305df1c22 Mon Sep 17 00:00:00 2001
+From: Justus K <justus.k@protonmail.com>
+Date: Tue, 22 Sep 2020 15:36:03 +0200
+Subject: [PATCH] Remove `x86_m8x8_sse_impl` macro
+
+---
+ src/codegen/reductions/mask/x86/sse.rs | 32 --------------------------
+ 1 file changed, 32 deletions(-)
+
+diff --git a/src/codegen/reductions/mask/x86/sse.rs b/src/codegen/reductions/mask/x86/sse.rs
+index 7482f943..eb1ef7fa 100644
+--- mozilla-release/third_party/rust/packed_simd/src/codegen/reductions/mask/x86/sse.rs
++++ mozilla-release/third_party/rust/packed_simd/src/codegen/reductions/mask/x86/sse.rs
+@@ -34,35 +34,3 @@ macro_rules! x86_m32x4_sse_impl {
+         }
+     };
+ }
+-
+-macro_rules! x86_m8x8_sse_impl {
+-    ($id:ident) => {
+-        impl All for $id {
+-            #[inline]
+-            #[target_feature(enable = "sse")]
+-            unsafe fn all(self) -> bool {
+-                #[cfg(target_arch = "x86")]
+-                use crate::arch::x86::_mm_movemask_pi8;
+-                #[cfg(target_arch = "x86_64")]
+-                use crate::arch::x86_64::_mm_movemask_pi8;
+-                // _mm_movemask_pi8(a) creates an 8bit mask containing the most
+-                // significant bit of each byte of `a`. If all bits are set,
+-                // then all 8 lanes of the mask are true.
+-                _mm_movemask_pi8(crate::mem::transmute(self))
+-                    == u8::max_value() as i32
+-            }
+-        }
+-        impl Any for $id {
+-            #[inline]
+-            #[target_feature(enable = "sse")]
+-            unsafe fn any(self) -> bool {
+-                #[cfg(target_arch = "x86")]
+-                use crate::arch::x86::_mm_movemask_pi8;
+-                #[cfg(target_arch = "x86_64")]
+-                use crate::arch::x86_64::_mm_movemask_pi8;
+-
+-                _mm_movemask_pi8(crate::mem::transmute(self)) != 0
+-            }
+-        }
+-    };
+-}
+--- mozilla-release/third_party/rust/packed_simd/src/lib.rs.orig	2019-02-05 21:18:53.000000000 +0100
++++ mozilla-release/third_party/rust/packed_simd/src/lib.rs	2020-11-18 15:06:43.736722000 +0100
+@@ -210,7 +210,6 @@
+     core_intrinsics,
+     stmt_expr_attributes,
+     align_offset,
+-    mmx_target_feature,
+     crate_visibility_modifier,
+     custom_inner_attributes
+ )]
+diff --git a/src/codegen/reductions/mask/x86.rs b/src/codegen/reductions/mask/x86.rs
+index 2ae4ed81..bcfb1a6e 100644
+--- mozilla-release/third_party/rust/packed_simd/src/codegen/reductions/mask/x86.rs
++++ mozilla-release/third_party/rust/packed_simd/src/codegen/reductions/mask/x86.rs
+@@ -19,13 +19,7 @@ mod avx2;
+ /// x86 64-bit m8x8 implementation
+ macro_rules! x86_m8x8_impl {
+     ($id:ident) => {
+-        cfg_if! {
+-            if #[cfg(all(target_arch = "x86_64", target_feature = "sse"))] {
+-                x86_m8x8_sse_impl!($id);
+-            } else {
+-                fallback_impl!($id);
+-            }
+-        }
++        fallback_impl!($id);
+     };
+ }
+ 
+From 57d96e45916066fa9b5cdf2bc695e190207e78af Mon Sep 17 00:00:00 2001
+From: Jubilee Young <workingjubilee@gmail.com>
+Date: Wed, 23 Sep 2020 12:23:29 -0700
+Subject: [PATCH] Remove __m64 type
+
+---
+ src/api/into_bits/arch_specific.rs | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/src/api/into_bits/arch_specific.rs b/src/api/into_bits/arch_specific.rs
+index 6cc2fa37..7b560107 100644
+--- mozilla-release/third_party/rust/packed_simd/src/api/into_bits/arch_specific.rs
++++ mozilla-release/third_party/rust/packed_simd/src/api/into_bits/arch_specific.rs
+@@ -84,7 +84,6 @@ macro_rules! impl_arch {
+ // FIXME: 64-bit single element types
+ // FIXME: arm/aarch float16x4_t missing
+ impl_arch!(
+-    [x86["x86"]: __m64], [x86_64["x86_64"]: __m64],
+     [arm["arm"]: int8x8_t, uint8x8_t, poly8x8_t, int16x4_t, uint16x4_t,
+      poly16x4_t, int32x2_t, uint32x2_t, float32x2_t, int64x1_t,
+      uint64x1_t],

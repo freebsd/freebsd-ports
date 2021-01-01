@@ -1,0 +1,23 @@
+Proposed workaround/fix for:
+https://bugzilla.mozilla.org/show_bug.cgi?id=1426865
+
+diff --git a/js/public/TypeDecls.h b/js/public/TypeDecls.h
+index acb93f9..cbd4b04 100644
+--- js/public/TypeDecls.h
++++ js/public/TypeDecls.h
+@@ -22,6 +22,8 @@
+ 
+ #include "js-config.h"
+ 
++#pragma GCC visibility push(default)
++
+ struct JSContext;
+ class JSFunction;
+ class JSObject;
+@@ -76,4 +78,6 @@ typedef PersistentRooted<Value>       PersistentRootedValue;
+ 
+ } // namespace JS
+ 
++#pragma GCC visibility pop
++
+ #endif /* js_TypeDecls_h */

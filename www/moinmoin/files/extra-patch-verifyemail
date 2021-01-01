@@ -1,0 +1,232 @@
+Description: Add support for requiring new accounts to be verified by email
+Origin: http://moinmo.in/MoinMoinPatch/VerifyAccountCreationByEmail
+Author: Steve McIntyre
+Last-Update: 2013-09-04
+
+--- ./MoinMoin/action/newaccount.py	2014-10-17 12:45:32.000000000 -0700
++++ ./MoinMoin/action/newaccount.py	2016-01-15 13:53:33.209638000 -0800
+@@ -12,5 +12,27 @@
+ from MoinMoin.security.textcha import TextCha
+ from MoinMoin.auth import MoinAuth
++from MoinMoin.mail import sendmail
++import subprocess
+ 
++def _send_verification_mail(request, user):
++    _ = request.getText
++    querystr = {'action': 'verifyaccount',
++                'i': user.id,
++                'v': user.account_verification}
++    page = Page(request, "FrontPage")
++    pagelink = "%(link)s" % {'link': request.getQualifiedURL(page.url(request, querystr))}
++    subject = _('[%(sitename)s] account verification check for new user %(username)s') % {
++            'sitename': request.page.cfg.sitename or request.url_root,
++            'username': user.name,
++        }
++
++    text = "Please verify your account by visiting this URL:\n\n  %(link)s\n\n" % {
++        'link': pagelink}
++
++    mailok, msg = sendmail.sendmail(request, user.email, subject, text, request.cfg.mail_from)
++    if mailok:
++        return (1, _("Verification message sent to %(email)s" % {'email': user.email}))
++    else:
++        return (mailok, msg)
+ 
+ def _create_user(request):
+@@ -43,6 +65,16 @@
+ 
+     # Name required to be unique. Check if name belong to another user.
+-    if user.getUserId(request, theuser.name):
+-        return _("This user name already belongs to somebody else.")
++    userid = user.getUserId(request, theuser.name)
++    if userid:
++        if request.cfg.require_email_verification and theuser.account_verification:
++            resendlink = request.page.url(request, querystr={
++                'action': 'newaccount',
++                'i': userid,
++                'resend': '1'})
++            return _('This user name already belongs to somebody else. If this is a new account'
++                     ' and you need another verification link, try <a href="%s">'
++                     'sending another one</a>. ' % resendlink)
++        else:
++            return _("This user name already belongs to somebody else.")
+ 
+     # try to get the password and pw repeat
+@@ -73,16 +105,39 @@
+     theuser.email = email.strip()
+     if not theuser.email and 'email' not in request.cfg.user_form_remove:
+-        return _("Please provide your email address. If you lose your"
+-                 " login information, you can get it by email.")
++        if request.cfg.require_email_verification:
++            return _("Please provide your email address. You will need it"
++                     " to be able to confirm your registration.")
++        else:
++            return _("Please provide your email address. If you lose your"
++                     " login information, you can get it by email.")
+ 
+     # Email should be unique - see also MoinMoin/script/accounts/moin_usercheck.py
+     if theuser.email and request.cfg.user_email_unique:
+-        if user.get_by_email_address(request, theuser.email):
+-            return _("This email already belongs to somebody else.")
++        emailuser = user.get_by_email_address(request, theuser.email)
++        if emailuser:
++            if request.cfg.require_email_verification and theuser.account_verification:
++                resendlink = request.page.url(request, querystr={
++                    'action': 'newaccount',
++                    'i': emailuser.id,
++                    'resend': '1'})
++                return _('This email already belongs to somebody else. If this is a new account'
++                         ' and you need another verification link, try <a href="%s">'
++                         'sending another one</a>. ' % resendlink)
++            else:
++                return _("This email already belongs to somebody else.")
++
++    # Send verification links if desired
++    if request.cfg.require_email_verification:        
++        mailok, msg = _send_verification_mail(request, theuser)
++        if mailok:
++            result = _("User account created! Use the link in your email (%s) to verify your account"
++                       " then you will be able to use this account to login..." % theuser.email)
++        else:
++            request.theme.add_msg(_("Unable to send verification mail, %s. Account creation aborted." % msg), "error")
++    else:
++        result = _("User account created! You can use this account to login now...")
+ 
+     # save data
+     theuser.save()
+-
+-    result = _("User account created! You can use this account to login now...")
+     return result
+ 
+@@ -171,7 +226,18 @@
+     submitted = form.has_key('create')
+ 
++    uid = request.values.get('i', None)
++    resend = request.values.get('resend', None)
++
+     if submitted: # user pressed create button
+         request.theme.add_msg(_create_user(request), "dialog")
+         return page.send_page()
++    if resend and uid:
++        theuser = user.User(request, id=uid)
++        mailok, msg = _send_verification_mail(request, theuser)
++        if mailok:
++            request.theme.add_msg(_("Verification message re-sent to %s" % theuser.email), "dialog")
++        else:
++            request.theme.add_msg(_("Unable to re-send verification message, %s" % msg), "dialog")
++        return page.send_page()
+     else: # show create form
+         request.theme.send_title(_("Create Account"), pagename=pagename)
+--- ./MoinMoin/action/verifyaccount.py	1969-12-31 16:00:00.000000000 -0800
++++ ./MoinMoin/action/verifyaccount.py	2016-01-15 13:53:33.209957000 -0800
+@@ -0,0 +1,64 @@
++# -*- coding: iso-8859-1 -*-
++"""
++    MoinMoin - verify account action
++
++    @copyright: 2012 Steve McIntyre
++    @license: GNU GPL, see COPYING for details.
++"""
++
++from MoinMoin import user, wikiutil
++from MoinMoin.Page import Page
++from MoinMoin.widget import html
++from MoinMoin.auth import MoinAuth
++
++def execute(pagename, request):
++    found = False
++    for auth in request.cfg.auth:
++        if isinstance(auth, MoinAuth):
++            found = True
++            break
++
++    if not found:
++        # we will not have linked, so forbid access
++        request.makeForbidden(403, 'No MoinAuth in auth list')
++        return
++
++    page = Page(request, "FrontPage")
++    _ = request.getText
++
++    if not request.cfg.require_email_verification:
++        result = _("Verification not configured!")
++        request.theme.add_msg(result, "error")
++        return page.send_page()
++
++    uid = request.values.get('i', None)
++    verify = request.values.get('v', None)
++
++    # Grab user profile
++    theuser = user.User(request, id=uid)
++
++    # Compare the verification code
++    if not theuser.valid:
++        result = _("Unable to verify user account i=%s v=%s") % (uid, verify)
++        request.theme.add_msg(result, "error")
++        return page.send_page()
++
++    if not theuser.account_verification:
++        result = _("User account has been verified!")
++        request.theme.add_msg(result, "error")
++        return page.send_page()
++
++    if theuser.account_verification != verify:
++        result = _("Unable to verify user account i=%s v=%s") % (uid, verify)
++        request.theme.add_msg(result, "error")
++        return page.send_page()
++
++    # All looks sane. Mark verification as done, save data
++    theuser.account_verification = ""
++    theuser.save()
++
++    loginlink = request.page.url(request, querystr={'action': 'login'})
++    result = _('User account verified! You can use this account to <a href="%s">login</a> now...' % loginlink)
++    request.theme.add_msg(result, "dialog")
++    return page.send_page()
++
+--- ./MoinMoin/auth/__init__.py	2014-10-17 12:45:32.000000000 -0700
++++ ./MoinMoin/auth/__init__.py	2016-01-15 13:53:33.210285000 -0800
+@@ -250,6 +250,13 @@
+         check_surge_protect(request, action='auth-name', username=username)
+ 
+-        u = user.User(request, name=username, password=password, auth_method=self.name)
++        u = user.User(request, name=username, password=password, auth_method=self.name)            
+         if u.valid:
++            try:
++                verification = u.account_verification
++            except:
++                verification = False
++            if request.cfg.require_email_verification and verification:
++                logging.debug("%s: could not authenticate user %r (not verified yet)" % (self.name, username))
++                return ContinueLogin(user_obj, _("User account not verified yet."))
+             logging.debug("%s: successfully authenticated user %r (valid)" % (self.name, u.name))
+             log_attempt("auth/login (moin)", True, request, username)
+--- ./MoinMoin/config/multiconfig.py	2014-10-17 12:45:32.000000000 -0700
++++ ./MoinMoin/config/multiconfig.py	2016-01-15 13:53:33.210918000 -0800
+@@ -1097,4 +1097,6 @@
+     ('userprefs_disabled', [],
+      "Disable the listed user preferences plugins."),
++    ('require_email_verification', False ,
++     "Require verification of new user accounts."),
+   )),
+   # ==========================================================================
+--- ./MoinMoin/user.py	2014-10-17 12:45:32.000000000 -0700
++++ ./MoinMoin/user.py	2016-01-15 13:53:33.211435000 -0800
+@@ -24,4 +24,5 @@
+ from copy import deepcopy
+ import md5crypt
++import uuid
+ 
+ try:
+@@ -523,4 +524,10 @@
+             if password is not None:
+                 self.enc_password = encodePassword(self._cfg, password)
++            self.account_creation_date = str(time.time())
++            self.account_creation_host = self._request.remote_addr
++            if self._cfg.require_email_verification:
++                self.account_verification = uuid.uuid4()
++            else:
++                self.account_verification = ""
+ 
+         # "may" so we can say "if user.may.read(pagename):"
+

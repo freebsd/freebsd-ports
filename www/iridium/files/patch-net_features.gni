@@ -1,0 +1,11 @@
+--- net/features.gni.orig	2019-09-09 21:55:21 UTC
++++ net/features.gni
+@@ -23,7 +23,7 @@ declare_args() {
+   disable_brotli_filter = false
+ 
+   # Multicast DNS.
+-  enable_mdns = is_win || is_linux || is_fuchsia || is_mac || is_ios
++  enable_mdns = is_win || is_linux || is_fuchsia || is_mac || is_ios || is_bsd
+ 
+   # Reporting not used on iOS.
+   enable_reporting = !is_ios

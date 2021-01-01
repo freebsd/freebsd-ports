@@ -1,0 +1,65 @@
+# Created by: Craig Leres <leres@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	broccoli
+PORTVERSION=	1.101
+PORTEPOCH=	1
+CATEGORIES=	security
+MASTER_SITES=	https://www.zeek.org/downloads/
+DISTNAME=	bro-2.6.1
+
+MAINTAINER=	leres@FreeBSD.org
+COMMENT=	Bro Client Communications Library
+
+LICENSE=	BSD3CLAUSE
+
+DEPRECATED=	Depends lang/python27 which is EOLed upstream
+EXPIRATION_DATE=	2020-12-31
+
+BUILD_DEPENDS=	swig:devel/swig
+
+USES=		cmake ssl bison
+USE_LDCONFIG=	yes
+
+EXTRACT_AFTER_ARGS=	${DISTNAME}/aux/broccoli
+CMAKE_SOURCE_PATH=	${WRKSRC}/aux/broccoli
+
+.if defined(BRO_PREFIX)
+PREFIX=		${BRO_PREFIX}
+PLIST_SUB+=	CLEANUP_PREFIX=""
+NO_MTREE=	yes
+.else
+PLIST_SUB+=	CLEANUP_PREFIX="@comment "
+.endif
+CMAKE_ARGS+=	-D CMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
+		-D BRO_ETC_INSTALL_DIR:PATH=${PREFIX}/etc
+CFLAGS+=	-I${OPENSSLINC}
+
+OPTIONS_DEFINE=	DEBUG PYTHON RUBY
+OPTIONS_SUB=
+
+OPTIONS_DEFAULT=	PYTHON
+
+PYTHON_DESC=	Build python bindings for broccoli
+RUBY_DESC=	Build ruby bindings for broccoli
+
+DEBUG_CMAKE_ON=	-D ENABLE_DEBUG:BOOL=true
+PYTHON_USES=	python:2.7
+PYTHON_CMAKE_ON=	-D PY_MOD_INSTALL_DIR:PATH=${PYTHON_SITELIBDIR}
+PYTHON_CMAKE_OFF=	-D DISABLE_PYTHON_BINDINGS:BOOL=true
+RUBY_USE=	ruby=yes
+RUBY_CMAKE_ON=	-D RB_INSTALL_DIR:PATH=${RUBY_SITELIBDIR} \
+		-D RB_ARCH_INSTALL_DIR:PATH=${RUBY_SITEARCHLIBDIR}
+RUBY_CMAKE_OFF=		-D DISABLE_RUBY_BINDINGS:BOOL=true
+
+post-install::
+	@${MV} ${STAGEDIR}${PREFIX}/etc/broccoli.conf ${STAGEDIR}${PREFIX}/etc/broccoli.conf.example
+.if defined(BRO_PREFIX) && empty(${PORT_OPTIONS:MPYTHON})
+	# Move lib/pythonX.X tree into BRO_PREFIX
+	${MV} ${STAGEDIR}${PYTHON_LIBDIR} ${STAGEDIR}${PREFIX}/lib
+.endif
+.if defined(BRO_PREFIX)
+	${FIND} ${STAGEDIR} -type d | ${XARGS} ${CHMOD} g-w
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,34 @@
+--- src/clients/lib/xmmsclient/wscript.orig	2011-10-20 19:26:08 UTC
++++ src/clients/lib/xmmsclient/wscript
+@@ -25,19 +25,21 @@ def build(bld):
+     else:
+         source.extend(["visualization/dummy.c"])
+ 
+-    obj = bld(features = 'c cshlib',
+-        target = 'xmmsclient',
+-        includes = '../../../.. ../../../include ../../../includepriv',
+-        source = source,
+-        uselib = 'socket time',
+-        use = 'xmmsipc xmmssocket xmmsutils xmmstypes xmmsvisualization',
+-        vnum = '6.0.0'
+-        )
++    if bld.env.BUILD_XMMS2D:
++       obj = bld(features = 'c cshlib',
++           target = 'xmmsclient',
++           includes = '../../../.. ../../../include ../../../includepriv',
++           source = source,
++           uselib = 'socket time',
++           use = 'xmmsipc xmmssocket xmmsutils xmmstypes xmmsvisualization',
++           vnum = '6.0.0'
++           )
+ 
+-    tool.add_install_flag(bld, obj)
++       tool.add_install_flag(bld, obj)
+ 
+ def configure(conf):
+-    conf.env.XMMS_PKGCONF_FILES.append(("xmms2-client", "-lxmmsclient"))
++    if not conf.options.without_xmms2d:
++        conf.env.XMMS_PKGCONF_FILES.append(("xmms2-client", "-lxmmsclient"))
+ 
+     conf.check_cc(function_name="semtimedop",
+             header_name=["sys/types.h", "sys/ipc.h", "sys/sem.h"],

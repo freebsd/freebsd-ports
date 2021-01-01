@@ -1,0 +1,92 @@
+--- build/config/compiler/BUILD.gn.orig	2019-12-12 12:38:59 UTC
++++ build/config/compiler/BUILD.gn
+@@ -57,7 +57,7 @@ declare_args() {
+   # only two architectures that are currently checked in). Turn this off when
+   # you are using a custom toolchain and need to control -B in cflags.
+   linux_use_bundled_binutils =
+-      linux_use_bundled_binutils_override && is_linux &&
++      linux_use_bundled_binutils_override && (is_linux && !is_bsd) &&
+       (current_cpu == "x64" || current_cpu == "x86")
+   binutils_path = rebase_path("//third_party/binutils/Linux_x64/Release/bin",
+                               root_build_dir)
+@@ -288,7 +288,7 @@ config("compiler") {
+ 
+     # Linker warnings.
+     if (fatal_linker_warnings && !(is_chromeos && current_cpu == "arm") &&
+-        !is_mac && !is_ios && current_os != "aix") {
++        !is_mac && !is_ios && current_os != "aix" && !is_bsd) {
+       # TODO(jochen): Enable this on chromeos on arm. http://crbug.com/356580
+       ldflags += [ "-Wl,--fatal-warnings" ]
+     }
+@@ -383,7 +383,7 @@ config("compiler") {
+ 
+     # Compiler instrumentation can introduce dependencies in DSOs to symbols in
+     # the executable they are loaded into, so they are unresolved at link-time.
+-    if (!using_sanitizer) {
++    if (!using_sanitizer && !is_bsd) {
+       ldflags += [
+         "-Wl,-z,defs",
+         "-Wl,--as-needed",
+@@ -483,7 +483,7 @@ config("compiler") {
+     }
+   }
+ 
+-  if (is_clang && !is_nacl && !use_xcode_clang) {
++  if (is_clang && !is_nacl && !use_xcode_clang && !is_bsd) {
+     cflags += [ "-fcrash-diagnostics-dir=" +
+                 rebase_path("//tools/clang/crashreports", root_build_dir) ]
+ 
+@@ -753,7 +753,7 @@ config("compiler_cpu_abi") {
+         cflags += [ "-mtune=$arm_tune" ]
+       }
+     } else if (current_cpu == "arm64") {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_bsd) {
+         cflags += [ "--target=aarch64-linux-gnu" ]
+         ldflags += [ "--target=aarch64-linux-gnu" ]
+       }
+@@ -1104,7 +1104,7 @@ config("compiler_deterministic") {
+       "-Xclang",
+       ".",
+     ]
+-    if (!is_win) {
++    if (!is_win && !is_bsd) {
+       # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
+       asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
+     }
+@@ -1493,7 +1493,7 @@ config("default_warnings") {
+         cflags += [ "-Wno-nonportable-include-path" ]
+       }
+ 
+-      if (current_toolchain == host_toolchain || !use_xcode_clang) {
++      if ((current_toolchain == host_toolchain || !use_xcode_clang) && !is_bsd) {
+         # Flags NaCl (Clang 3.7) and Xcode 9.2 (Clang clang-900.0.39.2) do not
+         # recognize.
+         cflags += [
+@@ -1722,7 +1722,7 @@ config("thin_archive") {
+   # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
+   # have a "thin archive" mode (it does accept -T, but it means truncating
+   # archive names to 16 characters, which is not what we want).
+-  if ((is_posix && !is_nacl && !is_mac && !is_ios) || is_fuchsia) {
++  if ((is_posix && !is_nacl && !is_mac && !is_ios && !is_bsd) || is_fuchsia) {
+     arflags = [ "-T" ]
+   } else if (is_win && use_lld) {
+     arflags = [ "/llvmlibthin" ]
+@@ -2292,7 +2292,7 @@ config("symbols") {
+     # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
+     # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
+     if (!is_nacl || is_clang) {
+-      cflags += [ "-g2" ]
++      cflags += [ "-g0" ]
+     }
+ 
+     if (use_debug_fission && !is_nacl && !is_android) {
+@@ -2313,7 +2313,7 @@ config("symbols") {
+     # DWARF info may be corrupt; offsets in a range list entry are in different
+     # sections" there.  Maybe just a bug in nacl_switch_32.S.
+     if (!is_mac && !is_ios && !is_nacl && current_cpu != "x86" &&
+-        (use_gold || use_lld)) {
++        (use_gold || use_lld) && !is_bsd) {
+       if (is_clang) {
+         # This flag enables the GNU-format pubnames and pubtypes sections,
+         # which lld needs in order to generate a correct GDB index.

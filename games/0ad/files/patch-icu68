@@ -1,0 +1,17 @@
+Regressed by https://github.com/unicode-org/icu/commit/c3fe7e09d844
+
+../../../source/i18n/L10n.cpp:208:82: error: use of undeclared identifier 'TRUE'
+                currentLocaleIsOriginalGameLocale = (currentLocale == icu::Locale::getUS()) == TRUE;
+                                                                                               ^
+
+--- source/i18n/L10n.cpp.orig	2018-04-10 18:13:32 UTC
++++ source/i18n/L10n.cpp
+@@ -205,7 +205,7 @@ void L10n::ReevaluateCurrentLocaleAndReload()
+ 	else
+ 	{
+ 		GetDictionaryLocale(locale, currentLocale);
+-		currentLocaleIsOriginalGameLocale = (currentLocale == icu::Locale::getUS()) == TRUE;
++		currentLocaleIsOriginalGameLocale = (currentLocale == icu::Locale::getUS()) == true;
+ 		useLongStrings = false;
+ 	}
+ 	LoadDictionaryForCurrentLocale();

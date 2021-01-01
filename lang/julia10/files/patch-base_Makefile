@@ -1,0 +1,11 @@
+--- base/Makefile.orig 2018-09-20 04:08:53 UTC
++++ base/Makefile
+@@ -109,7 +109,7 @@ ifneq ($(OS), WINNT)
+ # put a symlink in the private libdir.
+ # System package managers may want to install these links manually,
+ # but if not, this will try to create the proper symlink to the right minor version.
+-all: symlink_system_libraries
++all:
+ SYMLINK_SYSTEM_LIBRARIES :=
+ 
+ # if it's a symlink, pick up the symlink target instead, for one level of indirection

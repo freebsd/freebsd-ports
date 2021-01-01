@@ -1,0 +1,11 @@
+--- services/audio/BUILD.gn.orig	2019-09-10 10:42:43 UTC
++++ services/audio/BUILD.gn
+@@ -99,7 +99,7 @@ source_set("lib") {
+     "//services/service_manager/sandbox:sandbox",
+   ]
+ 
+-  if (is_linux) {
++  if ((is_linux) && (!is_bsd)) {
+     sources += [
+       "audio_sandbox_hook_linux.cc",
+       "audio_sandbox_hook_linux.h",

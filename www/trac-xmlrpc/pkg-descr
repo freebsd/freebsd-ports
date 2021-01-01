@@ -1,0 +1,7 @@
+This plugin allows Trac plugins to export select parts of their
+interface via XML-RPC.
+
+It also includes some exported functions for manipulating tickets,
+with plans to include interfaces to other parts of Trac's API.
+
+WWW: http://trac-hacks.org/wiki/XmlRpcPlugin

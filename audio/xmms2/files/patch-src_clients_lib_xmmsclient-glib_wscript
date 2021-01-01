@@ -1,0 +1,34 @@
+--- src/clients/lib/xmmsclient-glib/wscript.orig	2011-10-20 19:26:08 UTC
++++ src/clients/lib/xmmsclient-glib/wscript
+@@ -1,19 +1,21 @@
+ from waftools import tool
+ 
+ def build(bld):
+-    obj = bld(features='c cshlib',
+-        target = 'xmmsclient-glib',
+-        includes = '../../../.. ../../../include',
+-        source = 'xmmsclient-glib.c',
+-        uselib = 'glib2',
+-        use = 'xmmsclient',
+-        vnum = '1.0.0'
+-        )
++    if bld.env.BUILD_XMMS2D:
++        obj = bld(features='c cshlib',
++            target = 'xmmsclient-glib',
++            includes = '../../../.. ../../../include',
++            source = 'xmmsclient-glib.c',
++            uselib = 'glib2',
++            use = 'xmmsclient',
++            vnum = '1.0.0'
++            )
+ 
+-    tool.add_install_flag(bld, obj)
++        tool.add_install_flag(bld, obj)
+ 
+ def configure(conf):
+-    conf.env.XMMS_PKGCONF_FILES.append(('xmms2-client-glib', '-lxmmsclient-glib'))
++    if not conf.options.without_xmms2d:
++        conf.env.XMMS_PKGCONF_FILES.append(('xmms2-client-glib', '-lxmmsclient-glib'))
+ 
+     return True
+ 

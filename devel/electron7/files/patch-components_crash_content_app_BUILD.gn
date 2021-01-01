@@ -1,0 +1,20 @@
+--- components/crash/content/app/BUILD.gn.orig	2019-12-12 12:39:29 UTC
++++ components/crash/content/app/BUILD.gn
+@@ -54,7 +54,7 @@ static_library("app") {
+     sources += [ "crashpad.cc" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [
+       "breakpad_linux.cc",
+       "breakpad_linux.h",
+@@ -98,7 +98,7 @@ static_library("app") {
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     deps += [ "//third_party/breakpad:client" ]
+   }
+ 

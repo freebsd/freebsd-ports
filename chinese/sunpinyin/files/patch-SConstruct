@@ -1,0 +1,34 @@
+--- SConstruct.orig	2014-11-14 14:17:48 UTC
++++ SConstruct
+@@ -215,10 +215,11 @@ def CreateEnvironment():
+         make = 'gmake'
+         tar = 'gtar'
+     libln_builder = Builder(action='cd ${TARGET.dir} && ln -s ${SOURCE.name} ${TARGET.name}')
+-    env = Environment(ENV=os.environ, CFLAGS=cflags, CXXFLAGS='',
++    env = Environment(ENV=os.environ,
+                       MAKE=make, WGET=wget, W3M=w3m, TAR=tar,
+-                      CPPPATH=['.'] + allinc(),
+-                      tools=['default', 'textfile'])
++                      tools=['default', 'textfile'],
++                      **ARGUMENTS)
++    env['CPPPATH'] = ['.'] + allinc()
+     env.Append(BUILDERS={'InstallAsSymlink': libln_builder})
+     env['ENDIANNESS'] = "be" if sys.byteorder == "big" else "le"
+     return env
+@@ -375,7 +376,6 @@ def DoConfigure():
+     conf.CheckFunc('getopt_long')
+     conf.CheckFunc('getpagesize')
+     conf.CheckFunc('get_opt')
+-    conf.CheckCHeader('iconv.h')
+     conf.CheckCHeader('inttypes.h')
+     conf.CheckCHeader('locale.h')
+     conf.CheckCHeader('libintl.h')
+@@ -463,7 +463,7 @@ def DoInstall():
+                                  lib_target_bin),
+             ]
+ 
+-    lib_pkgconfig_target = env.Install(os.path.join(libdir, 'pkgconfig'),
++    lib_pkgconfig_target = env.Install(os.path.join(env['PREFIX'], 'libdata/pkgconfig'),
+                                        ['sunpinyin-2.0.pc'])
+     bin_target = env.Install(bindir, bins)
+     man1_target = env.Install(man1dir, man1s)

@@ -1,0 +1,78 @@
+--- SConstruct.orig	2012-12-02 19:19:45 UTC
++++ SConstruct
+@@ -784,10 +784,7 @@ if env['FPU_OPTIMIZATION']:
+ # handle x86/x86_64 libdir properly
+ 
+ if env['DIST_LIBDIR'] == '':
+-    if env['DIST_TARGET'] == 'x86_64':
+-        env['LIBDIR']='lib64'
+-    else:
+-        env['LIBDIR']='lib'
++    env['LIBDIR']='lib'
+ else:
+     env['LIBDIR'] = env['DIST_LIBDIR']
+ 
+@@ -838,13 +835,7 @@ if env['ARCH'] != '':
+ # prepend boiler plate optimization flags
+ #
+ 
+-opt_flags[:0] = [
+-    "-O3",
+-    "-fomit-frame-pointer",
+-    "-ffast-math",
+-    "-fstrength-reduce",
+-    "-pipe"
+-    ]
++opt_flags[:0] = [ "%%CFLAGS%%" ];
+ 
+ if env['DEBUG'] == 1:
+     env.Append(CCFLAGS=" ".join (debug_flags))
+@@ -866,7 +857,7 @@ if env['UNIVERSAL'] == 1:
+ #
+ 
+ env.Append(CCFLAGS="-Wall")
+-env.Append(CXXFLAGS="-Woverloaded-virtual")
++env.Append(CXXFLAGS="-Woverloaded-virtual -std=c++11 -Wno-c++11-narrowing")
+ 
+ if env['EXTRA_WARN']:
+     env.Append(CCFLAGS="-Wextra -pedantic -ansi")
+@@ -955,6 +946,7 @@ conf.Finish()
+ 
+ libraries['usb'] = LibraryInfo ()
+ prep_libcheck(env, libraries['usb'])
++libraries['usb'].Append(CCFLAGS="-I/usr/local/include", LINKFLAGS="-L/usr/local/lib")
+ 
+ conf = Configure (libraries['usb'])
+ if conf.CheckLib ('usb', 'usb_interrupt_write'):
+@@ -1006,6 +998,7 @@ libraries['boost'] = conf.Finish ()
+ 
+ libraries['dmalloc'] = LibraryInfo ()
+ prep_libcheck(env, libraries['dmalloc'])
++libraries['dmalloc'].Append(CCFLAGS="-I/usr/local/include", LINKFLAGS="-L/usr/local/lib")
+ 
+ #
+ # look for the threaded version
+@@ -1063,8 +1056,10 @@ elif conf.CheckCHeader('/System/Library/Frameworks/Cor
+     subst_dict['%MIDITAG%'] = "ardour"
+     subst_dict['%MIDITYPE%'] = "coremidi"
+ else:
+-    print "It appears you don't have the required MIDI libraries installed. For Linux this means you are missing the development package for ALSA libraries."
+-    sys.exit (1)
++    libraries['sysmidi'] = LibraryInfo ()
++    env['SYSMIDI'] = 'none'
++    subst_dict['%MIDITAG%'] = "none"
++    subst_dict['%MIDITYPE%'] = "none"
+ 
+ pname = env['PROGRAM_NAME']
+ subst_dict['%MIDI_DEVICE_NAME%'] = pname.lower()
+@@ -1352,8 +1347,8 @@ if conf.CheckCHeader('/System/Library/Frameworks/CoreA
+     subst_dict['%JACK_INPUT%'] = "coreaudio:Built-in Audio:in"
+     subst_dict['%JACK_OUTPUT%'] = "coreaudio:Built-in Audio:out"
+ else:
+-    subst_dict['%JACK_INPUT%'] = "alsa_pcm:playback_"
+-    subst_dict['%JACK_OUTPUT%'] = "alsa_pcm:capture_"
++    subst_dict['%JACK_INPUT%'] = "oss:playback_"
++    subst_dict['%JACK_OUTPUT%'] = "oss:capture_"
+ 
+ # posix_memalign available
+ if not conf.CheckFunc('posix_memalign'):
