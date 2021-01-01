@@ -14,6 +14,8 @@ COMMENT=	PL/v8js procedural language for PostgreSQL database
 
 LICENSE=	PostgreSQL
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libv8.so:lang/v8
 
 USES=		compiler:c++11-lang gmake perl5 pgsql:9.5-10
