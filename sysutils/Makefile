@@ -1477,6 +1477,7 @@
     SUBDIR += wimlib
     SUBDIR += wmapmload
     SUBDIR += wmbluecpu
+    SUBDIR += wmbsdbatt
     SUBDIR += wmcube
     SUBDIR += wmdiskmon
     SUBDIR += wmflame
