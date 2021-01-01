@@ -13,6 +13,8 @@ COMMENT=	All-electron full-potential linearised augmented-planewave code
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		missing LIB_DEPENDS
+
 LIB_DEPENDS=	libblis.so:math/blis \
 		libopenblas.so:math/openblas \
 		libwannier.so:science/wannier90
