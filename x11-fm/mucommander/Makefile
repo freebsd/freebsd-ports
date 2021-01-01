@@ -11,6 +11,8 @@ COMMENT=	Lightweight file manager featuring a Norton Commander style interface
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to stage
+
 USE_JAVA=	yes
 
 JAVA_VERSION=	1.11+
