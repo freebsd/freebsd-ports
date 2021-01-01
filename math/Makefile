@@ -795,6 +795,7 @@
     SUBDIR += py-numpy
     SUBDIR += py-numpy-stl
     SUBDIR += py-opt-einsum
+    SUBDIR += py-optuna
     SUBDIR += py-or-tools
     SUBDIR += py-osqp
     SUBDIR += py-pandas
