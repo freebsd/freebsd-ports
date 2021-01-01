@@ -15,8 +15,10 @@ include/libplacebo/shaders/colorspace.h
 include/libplacebo/shaders/custom.h
 include/libplacebo/shaders/sampling.h
 include/libplacebo/swapchain.h
+include/libplacebo/utils/libav.h
+include/libplacebo/utils/libav_internal.h
 include/libplacebo/utils/upload.h
 %%VULKAN%%include/libplacebo/vulkan.h
 lib/libplacebo.so
-lib/libplacebo.so.72
+lib/libplacebo.so.104
 libdata/pkgconfig/libplacebo.pc
