@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libpg_query
-DISTVERSION=	10-1.0.3
-PORTREVISION=	1
+DISTVERSION=	10-1.0.4
+PORTREVISION=	0
 CATEGORIES=	databases devel
 
 MAINTAINER=	mfechner@FreeBSD.org
