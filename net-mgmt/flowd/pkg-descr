@@ -7,7 +7,7 @@ features:
     * Supports filtering and tagging of flows, using a packet filter-like syntax
     * Stores recorded flow data in a compact binary format which supports
       run-time choice over which flow fields are stored
-    * Ships with both Perl and Python interfaces for reading and parsing the
+    * Ships with Perl interface for reading and parsing the
       on-disk record format
     * Is licensed under a liberal BSD-like license
 

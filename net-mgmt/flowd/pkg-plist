@@ -11,8 +11,6 @@ lib/libflowd.a
 %%PERL%%%%PERL5_MAN3%%/Flowd.3.gz
 %%PERL%%%%SITE_ARCH%%/Flowd.pm
 %%PERL%%%%SITE_ARCH%%/auto/Flowd/Flowd.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/flowd-0.9.1-py%%PYTHON_VER%%.egg-info
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/flowd.so
 man/man5/flowd.conf.5.gz
 man/man8/flowd-reader.8.gz
 man/man8/flowd.8.gz
