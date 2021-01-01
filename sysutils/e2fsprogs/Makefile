@@ -132,7 +132,7 @@ CONFIGURE_ARGS+=--disable-nls
 libintl=
 .endif
 
-.if ${MASTERDIR} == ${.CURDIR} && ${ARCH} == "aarch64"
+.if ${MASTERDIR} == ${.CURDIR} && (${ARCH} == "aarch64" || ${ARCH} == "riscv64")
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-no-sbrk
 .endif
 
