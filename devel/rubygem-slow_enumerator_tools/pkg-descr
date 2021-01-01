@@ -1,0 +1,4 @@
+SlowEnumeratorTools provides tools for transforming Ruby enumerators
+that produce data slowly and unpredictably.
+
+WWW: https://github.com/ddfreyne/slow_enumerator_tools
