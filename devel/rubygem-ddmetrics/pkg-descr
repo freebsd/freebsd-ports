@@ -1,0 +1,4 @@
+DDMetrics is a Ruby library for recording and analysing measurements
+in short-running Ruby processes.
+
+WWW: https://github.com/ddfreyne/ddmetrics
