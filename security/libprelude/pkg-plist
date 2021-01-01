@@ -74,10 +74,6 @@ lib/libpreludecpp.so.8
 lib/libpreludecpp.so.8.0.0
 %%PERL%%%%SITE_ARCH%%/Prelude.pm
 %%PERL%%%%SITE_ARCH%%/auto/Prelude/Prelude.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_prelude.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/prelude-%%VERSION%%-py%%PYTHON_VER%%.egg-info
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/prelude.pyc
 libdata/pkgconfig/libprelude.pc
 man/man1/prelude-admin.1.gz
 share/aclocal/libprelude.m4
@@ -129,6 +125,5 @@ share/aclocal/libprelude.m4
 %%PORTDOCS%%share/gtk-doc/html/libprelude/up.png
 %%DATADIR%%/swig/libpreludecpp.i
 %%PERL%%%%DATADIR%%/swig/perl/libpreludecpp-perl.i
-%%PYTHON%%%%DATADIR%%/swig/python/libpreludecpp-python.i
 @dir(,,711) %%ETCDIR%%/profile
 @dir(,,711) /var/spool/prelude

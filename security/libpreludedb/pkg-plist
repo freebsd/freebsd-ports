@@ -21,10 +21,6 @@ lib/libpreludedb/plugins/formats/classic.so
 %%MYSQL%%lib/libpreludedb/plugins/sql/mysql.so
 %%PGSQL%%lib/libpreludedb/plugins/sql/pgsql.so
 %%SQLITE%%lib/libpreludedb/plugins/sql/sqlite3.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_preludedb.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb-%%VERSION%%-py%%PYTHON_VER%%.egg-info
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/preludedb.pyc
 man/man1/preludedb-admin.1.gz
 share/aclocal/libpreludedb.m4
 %%PORTDOCS%%share/gtk-doc/html/libpreludedb/api-index-full.html
