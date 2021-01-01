@@ -4,15 +4,19 @@ gen/_renpybidi.c:564:10: fatal error: 'fribidi.h' file not found
 #include "fribidi.h"
          ^
 
---- module/renpybidicore.c.orig	2018-07-11 04:11:19 UTC
-+++ module/renpybidicore.c
-@@ -1,5 +1,5 @@
+--- module/renpybidicore.c.orig	2019-12-14 15:31:48.000000000 +0000
++++ module/renpybidicore.c	2021-01-01 15:45:23.115935083 +0000
+@@ -1,10 +1,6 @@
  #include <Python.h>
+ 
+-#ifdef RENPY_BUILD
+ #include <fribidi.h>
+-#else
 -#include <fribidi-src/lib/fribidi.h>
-+#include <fribidi.h>
+-#endif
+ 
  #include <stdlib.h>
  
- #ifndef alloca
 --- module/setup.py.orig	2018-07-11 04:29:32 UTC
 +++ module/setup.py
 @@ -92,6 +92,7 @@ has_avresample = library("avresample", optional=True)
