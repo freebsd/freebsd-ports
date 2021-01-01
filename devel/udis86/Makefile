@@ -14,21 +14,15 @@ LICENSE=	BSD2CLAUSE
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-sphinx-build --enable-shared
+CONFIGURE_ARGS=	--without-sphinx-build --enable-shared --without-yasm
+CONFIGURE_ENV=	PYTHON="${FALSE}"
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 INFO=		udis86
 PORTDOCS=	x86
 
-OPTIONS_DEFINE=	DOCS TEST
-
-TEST_BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:devel/yasm
-TEST_USES=		python:2.7,build
-TEST_TEST_TARGET=	check
-TEST_CONFIGURE_ENV=	PYTHON="${PYTHON_CMD}" YASM="${LOCALBASE}/bin/yasm"
-TEST_CONFIGURE_ENV_OFF=	PYTHON="${FALSE}"
-TEST_CONFIGURE_OFF=	--without-yasm
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's/function ([^#]+).*/\1 ()/' \
