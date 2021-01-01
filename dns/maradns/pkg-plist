@@ -1,5 +1,4 @@
 bin/askmara
-%%CONV%%bin/bind2csv2
 bin/duende
 bin/fetchzone
 bin/getzone

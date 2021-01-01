@@ -20,12 +20,10 @@ INSTALL_TARGET=	install PREFIX=${STAGEDIR}${PREFIX}
 SHEBANG_FILES=	tools/bind2csv2.py
 HAS_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	IPV6 DOCS EXAMPLES CONV
+OPTIONS_DEFINE=	IPV6 DOCS EXAMPLES
 OPTIONS_SUB=	yes
-CONV_DESC=	Install bind2csv2 tool (needs python)
 
 IPV6_CONFIGURE_ON=	--ipv6
-CONV_USES=	python:2.7,run shebangfix
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -56,9 +54,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_full_mararc ${STAGEDIR}${ETCDIR}/mararc.sample
 	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_csv2 ${STAGEDIR}${ETCDIR}/csv2.sample
 	${INSTALL_DATA} ${WRKSRC}/deadwood-${DEADWOOD_VER}/doc/dwood3rc ${STAGEDIR}${ETCDIR}/dwood3rc.sample
-
-do-install-CONV-on:
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/bind2csv2.py ${STAGEDIR}${PREFIX}/bin/bind2csv2
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
