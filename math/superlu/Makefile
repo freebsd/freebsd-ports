@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	superlu
-PORTVERSION=	5.2.1
-PORTREVISION=	11
+PORTVERSION=	5.2.2
 CATEGORIES=	math
-MASTER_SITES=	http://crd-legacy.lbl.gov/~xiaoye/SuperLU/ \
-		http://crd-legacy.lbl.gov/~xiaoye/:doc
+MASTER_SITES=	https://portal.nersc.gov/project/sparse/superlu/ \
+		https://portal.nersc.gov/project/sparse/xiaoye-web/:doc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
@@ -16,18 +15,15 @@ COMMENT=	Library of routines for performing sparse factorization
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
-USES=		cmake fortran
+USES=		cmake fortran pkgconfig
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/SuperLU_${PORTVERSION}
-PLIST_SUB=	P_VERSION="${PORTVERSION}" P_VER="${PORTVERSION:R:R}"
-
 CMAKE_ON=	USE_XSDK_DEFAULTS
-CMAKE_OFF=	enable_tests enable_examples
+CMAKE_OFF=	enable_tests
 
-PORTDOCS=	*
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_SINGLE=		BLAS
 OPTIONS_SINGLE_BLAS=	ATLAS GOTOBLAS OPENBLAS REFERENCE
 OPTIONS_DEFAULT=	REFERENCE
@@ -47,7 +43,7 @@ REFERENCE_DESC=		Reference blas implementation
 REFERENCE_USES=		blaslapack
 REFERENCE_CMAKE_ON=	-DBLA_VENDOR:STRING="Generic"
 
-SLU_DOCS=	SLU_general.ps.gz simax-29176.pdf
+SLU_DOCS=	SLU_general.ps.gz slu_ilu.pdf simax-29176.pdf
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -61,6 +57,12 @@ post-install-DOCS-on:
 		${STAGEDIR}${DOCSDIR})
 	(cd ${WRKSRC}/DOC && ${COPYTREE_SHARE} "html ug.pdf" \
 		${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/EXAMPLE && ${INSTALL_DATA} * ${STAGEDIR}${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/FORTRAN
+	(cd ${WRKSRC}/FORTRAN && ${INSTALL_DATA} * ${STAGEDIR}${EXAMPLESDIR}/FORTRAN)
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \

@@ -1,7 +1,9 @@
-TIMESTAMP = 1476287508
-SHA256 (superlu/superlu_5.2.1.tar.gz) = 28fb66d6107ee66248d5cf508c79de03d0621852a0ddeba7301801d3d859f463
-SIZE (superlu/superlu_5.2.1.tar.gz) = 2560875
+TIMESTAMP = 1609407741
+SHA256 (superlu/superlu_5.2.2.tar.gz) = 470334a72ba637578e34057f46948495e601a5988a602604f5576367e606a28c
+SIZE (superlu/superlu_5.2.2.tar.gz) = 2481538
 SHA256 (superlu/SLU_general.ps.gz) = 00d00cedfadd96a42014d22b30c0cc451a575d8d309774519068b11d4be1ebe5
 SIZE (superlu/SLU_general.ps.gz) = 89463
+SHA256 (superlu/slu_ilu.pdf) = b0c93fd88cc5c031001aa5891d9c844f6e676526fba8c2f3f4cb90033d272046
+SIZE (superlu/slu_ilu.pdf) = 175465
 SHA256 (superlu/simax-29176.pdf) = 1411a3976b932a834157064dbaf0cdda10763f321bae10eb6f18925432250226
 SIZE (superlu/simax-29176.pdf) = 521916
