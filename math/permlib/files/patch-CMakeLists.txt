@@ -1,0 +1,16 @@
+--- CMakeLists.txt.orig	2021-01-01 06:23:17 UTC
++++ CMakeLists.txt
+@@ -27,7 +27,11 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D
+ 
+ enable_testing()
+ 
+-add_subdirectory(example)
+-add_subdirectory(test)
++if (BUILD_EXAMPLES)
++	add_subdirectory(example)
++endif()
++if (BUILD_TESTS)
++	add_subdirectory(test)
++endif()
+ 
+ exec_program( ${CMAKE_COMMAND} ARGS -E copy_directory ${PROJECT_SOURCE_DIR}/data ${PROJECT_BINARY_DIR}/data )
