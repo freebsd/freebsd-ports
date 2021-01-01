@@ -1,28 +1,35 @@
---- ext/pg_query/extconf.rb.orig	2020-11-21 10:30:23 UTC
+--- ext/pg_query/extconf.rb.orig	2021-01-01 08:22:43 UTC
 +++ ext/pg_query/extconf.rb
-@@ -3,44 +3,12 @@
+@@ -4,53 +4,9 @@ require 'digest'
  require 'mkmf'
  require 'open-uri'
  
--LIB_PG_QUERY_TAG = 'gitlab-10-1.0.3'.freeze
+-LIB_PG_QUERY_TAG = '10-1.0.3'.freeze
 -
  workdir = Dir.pwd
 -libdir = File.join(workdir, 'libpg_query-' + LIB_PG_QUERY_TAG)
  gemdir = File.join(__dir__, '../..')
 -libfile = libdir + '/libpg_query.a'
  
--unless File.exist?("#{workdir}/libpg_query.tar.gz")
--  File.open("#{workdir}/libpg_query.tar.gz", 'wb') do |target_file|
--    open("https://gitlab.com/gitlab-org/libpg_query/-/archive/#{LIB_PG_QUERY_TAG}/libpg_query-#{LIB_PG_QUERY_TAG}.tar.gz", 'rb') do |read_file|
+-expected_sha256 = '1332761f31c198cb9825e6ccccda0b6a0e57daeb824870e8524df77f1592d149'
+-filename = "#{workdir}/libpg_query.tar.gz"
+-
+-unless File.exist?(filename)
+-  File.open(filename, 'wb') do |target_file|
+-    URI.open('https://codeload.github.com/lfittl/libpg_query/tar.gz/' + LIB_PG_QUERY_TAG, 'rb') do |read_file|
 -      target_file.write(read_file.read)
 -    end
 -  end
+-
+-  checksum = Digest::SHA256.hexdigest(File.read(filename))
+-
+-  if checksum != expected_sha256
+-    raise "SHA256 of #{filename} does not match: got #{checksum}, expected #{expected_sha256}"
+-  end
 -end
-+abort "pgquery is missing" unless find_header('pg_query.h')
-+abort "pgquery is missing" unless find_library('pg_query', 'pg_query_init')
- 
+-
 -unless Dir.exist?(libdir)
--  system("tar -xzf #{workdir}/libpg_query.tar.gz") || raise('ERROR')
+-  system("tar -xzf #{filename}") || raise('ERROR')
 -end
 -
 -unless Dir.exist?(libfile)
