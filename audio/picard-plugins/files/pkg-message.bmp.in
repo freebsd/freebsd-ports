@@ -1,9 +1,9 @@
 [
 { type: install
   message: <<EOM
-Due to toolchain issues, if you enabled the BPM option, the bpm plugin
-will probably not work out-of-the-box. Upon startup, picard will likely
-write to stderr something like:
+Due to toolchain issues, the bpm plugin will probably not work
+out-of-the-box. Upon startup, picard will likely write to stderr
+something like:
 
   Original error was: /lib/libgcc_s.so.1: version GCC_4.8.0 required by 
   %%LOCALBASE%%/lib/gcc%%GCC_VER%%/libgfortran.so.4 not found

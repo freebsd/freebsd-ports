@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	picard-plugins
-PORTVERSION=	2.0.20200818
+PORTVERSION=	2.0.20201203
 CATEGORIES=	audio python
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -14,13 +14,11 @@ USES=		python:3.5+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz
-GH_TAGNAME=	ac2fdfd
+GH_TAGNAME=	c833f54
 
 PORTSCOUT=	limit:^2\.
 
 NO_ARCH=	yes
-SUB_FILES=	pkg-message
-SUB_LIST=	GCC_VER=${GCC_DEFAULT:S/.//}
 
 BUILD_WRKSRC=	${WRKSRC}/build
 PLUGINSDIR=	${PYTHON_SITELIBDIR}/picard/plugins
@@ -34,6 +32,9 @@ ALBUM_COLUMN_DESC=	Adds album column to main window (can't be disabled)
 
 BPM_DESC=		Beats per minute
 BPM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aubio>=0.4.5:audio/py-aubio@${PY_FLAVOR}
+BPM_SUB_FILES=		pkg-message.bmp
+BPM_SUB_LIST=		GCC_VER=${GCC_DEFAULT:S/.//}
+BPM_VARS=		PKGMESSAGE+=${.CURDIR}/pkg-message.bmp
 
 MOODBAR_DESC=		Generate moodbar files
 MOODBAR_RUN_DEPENDS=	moodbar:audio/moodbar
