@@ -275,6 +275,7 @@
     SUBDIR += py-caffeine-ng
     SUBDIR += py-i3ipc
     SUBDIR += py-pyscreenshot
+    SUBDIR += py-python-xapp
     SUBDIR += py-pyvirtualdisplay
     SUBDIR += py-qt5-opengl
     SUBDIR += py-xcffib
