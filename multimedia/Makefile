@@ -52,6 +52,7 @@
     SUBDIR += dvd-slideshow
     SUBDIR += dvdauthor
     SUBDIR += dvdid
+    SUBDIR += dvdread
     SUBDIR += dvdrip
     SUBDIR += dvdstyler
     SUBDIR += elementary-videos
