@@ -1,8 +1,0 @@
-Previously known as Google Analytics Plugin, this plugin will enable
-your trac environment to be logged by Google Analytics.
-
-It adds the necessary javascript code to log your environment, plus, it
-also logs the downloads of regular filenames which end with a specific
-extension; these extensions are defined by you; and also external links.
-
-WWW: http://google.ufsoft.org/wiki/TracGoogleAnalytics

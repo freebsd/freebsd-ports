@@ -1,6 +1,0 @@
-This is a plugin that adds (aspires to add) estimation and time
-tracking to Trac.  This basically adds CustomFields and CustomReports
-and an interface for filling the dynamic variables for the report
-(requires Javascript).
-
-WWW: http://trac-hacks.org/wiki/TimingAndEstimationPlugin

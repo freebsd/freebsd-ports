@@ -1,4 +1,0 @@
-Allow embedded equations in wiki pages. Basically a port of mt-math to
-trac.
-
-WWW: https://trac-hacks.org/wiki/TracMathPlugin

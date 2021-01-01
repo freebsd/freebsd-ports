@@ -4160,8 +4160,6 @@
     SUBDIR += py-backports
     SUBDIR += py-backports.csv
     SUBDIR += py-backports.functools_lru_cache
-    SUBDIR += py-backports.os
-    SUBDIR += py-backports.shutil_get_terminal_size
     SUBDIR += py-backports_abc
     SUBDIR += py-banal
     SUBDIR += py-bandit
@@ -4221,7 +4219,6 @@
     SUBDIR += py-chainmap
     SUBDIR += py-characteristic
     SUBDIR += py-check-manifest
-    SUBDIR += py-cheetah
     SUBDIR += py-cheetah3
     SUBDIR += py-circuits
     SUBDIR += py-cld
@@ -4323,7 +4320,6 @@
     SUBDIR += py-diazo
     SUBDIR += py-dill
     SUBDIR += py-dirspec
-    SUBDIR += py-dis3
     SUBDIR += py-distlib
     SUBDIR += py-distributed
     SUBDIR += py-dj31-django-rq
@@ -4406,7 +4402,6 @@
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
     SUBDIR += py-funcsigs
-    SUBDIR += py-functools32
     SUBDIR += py-funcy
     SUBDIR += py-furl
     SUBDIR += py-fusepy
@@ -4618,7 +4613,6 @@
     SUBDIR += py-monotonic
     SUBDIR += py-monty
     SUBDIR += py-more-itertools
-    SUBDIR += py-more-itertools5
     SUBDIR += py-moto
     SUBDIR += py-mox
     SUBDIR += py-mox3
@@ -4738,7 +4732,6 @@
     SUBDIR += py-patch
     SUBDIR += py-patch-ng
     SUBDIR += py-path.py
-    SUBDIR += py-pathlib
     SUBDIR += py-pathlib2
     SUBDIR += py-pathspec
     SUBDIR += py-pathtools
@@ -5030,7 +5023,6 @@
     SUBDIR += py-scikit-build
     SUBDIR += py-scripttest
     SUBDIR += py-selection
-    SUBDIR += py-selectors2
     SUBDIR += py-semantic-version
     SUBDIR += py-semver
     SUBDIR += py-sentry-sdk
@@ -5047,7 +5039,6 @@
     SUBDIR += py-sh
     SUBDIR += py-shapely
     SUBDIR += py-shellingham
-    SUBDIR += py-should_dsl
     SUBDIR += py-simpleeval
     SUBDIR += py-simplegeneric
     SUBDIR += py-simplejson
@@ -5080,7 +5071,6 @@
     SUBDIR += py-stringcase
     SUBDIR += py-structlog
     SUBDIR += py-stsci.distutils
-    SUBDIR += py-subprocess32
     SUBDIR += py-subversion
     SUBDIR += py-sure
     SUBDIR += py-swagger-spec-validator
@@ -5123,7 +5113,6 @@
     SUBDIR += py-tooz
     SUBDIR += py-tooz1
     SUBDIR += py-toposort
-    SUBDIR += py-total-ordering
     SUBDIR += py-tox
     SUBDIR += py-traceback2
     SUBDIR += py-traitlets
@@ -5188,7 +5177,6 @@
     SUBDIR += py-watchdog
     SUBDIR += py-watchgod
     SUBDIR += py-wcwidth
-    SUBDIR += py-weakrefmethod
     SUBDIR += py-weblib
     SUBDIR += py-websockets
     SUBDIR += py-websockify

@@ -15887,7 +15887,7 @@ sysutils/php72-fileinfo|sysutils/php74-fileinfo|2020-12-31|Has expired: Security
 devel/arm-none-eabi-gdb||2020-12-31|Has expired: This is an old, obsolete version of gdb
 devel/pecl-weakref2||2020-12-31|Has expired: PHP 7.2 extension
 graphics/py-imageio24|graphics/py-imageio|2020-12-31|Has expired: Use graphics/py-imageio instead
-mail/bogofilter-tc||2020-12-31|Has expired: TokyoCabinet is being phased out in favor of KyotoCabinet.
+mail/bogofilter-tc||2020-12-31|Has expired: TokyoCabinet is being phased out in favor of KyotoCabinet
 net/pecl-yaz||2020-12-31|Has expired: PHP 7.2 extension
 print/cloudprint||2020-12-31|Has expired: Google Cloud Print is being shut down by Google by end of 2020
 science/py-eccodes-python|science/py-eccodes|2020-12-31|Has expired: Use science/py-eccodes instead
@@ -15907,3 +15907,65 @@ www/mediawiki134|www/mediawiki135|2020-12-31|Has expired: Upstream end of life
 www/py-aiohttp2|www/py-aiohttp|2020-12-31|Has expired: Use www/py-aiohttp instead
 graphics/drm-legacy-kmod|graphics/drm-kmod|2020-12-31|Has expired: Obsolete version, use drm-kmod
 net/mediatomb|net/gerbera|2020-12-31|Removed: no new release for over 10 years
+devel/py-backports.shutil_get_terminal_size||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/py-backports.os||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/py-cheetah||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/py-dis3||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/py-functools32||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/py-more-itertools5||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/py-pathlib||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/py-selectors2||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/py-should_dsl||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/py-subprocess32||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/py-total-ordering||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/py-weakrefmethod||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+dns/py-dns||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+security/py-backports.ssl_match_hostname||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+security/sandsifter||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+sysutils/py-shutilwhich||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-OhlohWidgetsMacro||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-TracGoogleAnalytics||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-ccselector||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-advancedticketworkflow||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-autocomplete||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-customfieldadmin||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-datefield||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-defaultcc||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-discussion||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-email2trac||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-downloads||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-devel||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-email2trac-postfix||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-estimator||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-fivestarvote||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-fullblognotification||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-graphviz||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-iniadmin||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-keywords||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-keywordsecretticket||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-ldapauthstore||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-math||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-mercurial||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-permredirect||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-navadd||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-privatetickets||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-pydotorgtheme||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-subtickets||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-scrumburndown||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-tags||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-ticketimport||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-tickettemplate||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-tocmacro||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-vote||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-tweakui||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-wikigoodies||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-wikinotification||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-wikitemplates||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-wikitopdf||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-wysiwyg||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-xmlrpc||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-fullblog||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-ldap||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-spam-filter||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-timingandestimation||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-themeengine||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream

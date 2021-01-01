@@ -1,9 +1,0 @@
-This plugin allows you to add custom items ("buttons") to both the main
-and the meta navigation bar. Item name, title and URL can be specified
-in trac.ini, as well as an optional permission the user is required to
-have to see the item.
-
-The plugin was inspired by and derived from NavMoverPlugin. In contrast
-to NavMoverPlugin this plugin does not hide navigation bars.
-
-WWW: https://trac-hacks.org/wiki/NavAddPlugin
