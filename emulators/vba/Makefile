@@ -11,7 +11,7 @@ DISTNAME=	VisualBoyAdvance-src-${PORTVERSION}
 MAINTAINER=	arundel@h3c.de
 COMMENT=	Open source Gameboy Advance emulator
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	nasm:devel/nasm
@@ -56,13 +56,15 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${PROG_FILES} ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MGTK2}
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/VisualBoyAdvance
-	${INSTALL_DATA} ${GTK2_DATA_FILES} ${STAGEDIR}${PREFIX}/share/VisualBoyAdvance
-.endif
 	${SED} -e 's|filter=0|filter=1|' ${DATA_FILES} > ${DATA_FILES}-default
 	${INSTALL_DATA} ${DATA_FILES}-default ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+do-install-GTK2-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/VisualBoyAdvance
+	${INSTALL_DATA} ${GTK2_DATA_FILES} ${STAGEDIR}${PREFIX}/share/VisualBoyAdvance
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
