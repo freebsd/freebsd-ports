@@ -1,0 +1,12 @@
+bin/io.elementary.calendar
+etc/xdg/autostart/io.elementary.calendar-daemon.desktop
+include/elementary-calendar/elementary-calendar.h
+lib/io.elementary.calendar/plugins/CalDAV/libcaldav.so
+lib/io.elementary.calendar/plugins/Google/libgoogle.so
+lib/libelementary-calendar.so
+lib/libelementary-calendar.so.0
+lib/libelementary-calendar.so.0.1
+libdata/pkgconfig/elementary-calendar.pc
+libexec/io.elementary.calendar-daemon
+share/vala/vapi/elementary-calendar.deps
+share/vala/vapi/elementary-calendar.vapi
