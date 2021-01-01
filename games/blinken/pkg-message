@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+To play Blinken you need sound. You must install a Phonon backend (just 
+once) to enable sound, one of:
+  multimedia/phonon-gstreamer
+  multimedia/phonon-vlc
+EOM
+}
+]
