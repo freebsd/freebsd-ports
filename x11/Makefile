@@ -417,6 +417,7 @@
     SUBDIR += xcursorgen
     SUBDIR += xcut
     SUBDIR += xdg-desktop-portal-wlr
+    SUBDIR += xdialog
     SUBDIR += xditview
     SUBDIR += xdm
     SUBDIR += xdo

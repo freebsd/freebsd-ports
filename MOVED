@@ -10810,7 +10810,6 @@ french/php_doc||2018-12-21|Has expired: unmaintained and documents obsolete PHP 
 japanese/php_doc||2018-12-21|Has expired: unmaintained and documents obsolete PHP < 5.6
 net/ntop||2018-12-21|Has expired: Broken for more than 6 months
 textproc/ots||2018-12-21|Has expired: Broken for more than 6 months
-x11/xdialog||2018-12-21|Has expired: Uses obsolete glib12
 net/netdude||2018-12-21|Has expired: Uses obsolete glib12
 japanese/jmode-skk||2018-12-21|Has expired: Uses obsolete glib12
 print/gsview||2018-12-21|Has expired: Uses obsolete glib12
