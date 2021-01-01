@@ -1,4 +1,6 @@
 bin/bd_info
+bin/bd_list_titles
+bin/bd_splice
 include/libbluray/bluray-version.h
 include/libbluray/bluray.h
 include/libbluray/clpi_data.h
@@ -10,7 +12,7 @@ include/libbluray/overlay.h
 include/libbluray/player_settings.h
 lib/libbluray.so
 lib/libbluray.so.2
-lib/libbluray.so.2.1.1
+lib/libbluray.so.2.3.0
 libdata/pkgconfig/libbluray.pc
-%%JAVA%%%%JAVASHAREDIR%%/libbluray-j2se-1.1.1.jar
-%%JAVA%%%%JAVASHAREDIR%%/libbluray-awt-j2se-1.1.1.jar
+%%JAVA%%%%JAVASHAREDIR%%/libbluray-j2se-1.2.1.jar
+%%JAVA%%%%JAVASHAREDIR%%/libbluray-awt-j2se-1.2.1.jar
