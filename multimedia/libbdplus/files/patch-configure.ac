@@ -1,0 +1,13 @@
+--- configure.ac.orig	2020-11-09 02:33:57 UTC
++++ configure.ac
+@@ -168,10 +168,6 @@ CC_CHECK_CFLAGS_APPEND([-Wall -Wdisabled-optimization 
+ [-Wredundant-decls -Wcast-qual -Wwrite-strings -Wtype-limits -Wundef ]dnl
+ [-Wmissing-prototypes -Wshadow])
+ 
+-CC_CHECK_CFLAGS_APPEND([-Werror=implicit-function-declaration ]dnl
+-                       [-Werror-implicit-function-declaration],
+-                       [break;])
+-
+ CC_CHECK_WERROR
+ AS_IF([test "x$enable_werror" = "xyes"], [
+   CFLAGS="${CFLAGS} $cc_cv_werror"
