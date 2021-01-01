@@ -1,4 +1,0 @@
-This a plugin for Trac which enables Mercurial to be used instead of Subversion
-as the VersioningSystemBackend for Trac.
-
-WWW: http://trac.edgewall.org/wiki/TracMercurial

@@ -1,3 +1,0 @@
-A backport of recent additions to the 'collections.abc' module.
-
-WWW: https://github.com/cython/backports_abc

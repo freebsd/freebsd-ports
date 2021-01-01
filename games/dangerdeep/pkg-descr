@@ -1,6 +1,0 @@
-Danger from the deep (aka dangerdeep) is a Free / Open Source World War II
-German submarine simulation. It is currently available for FreeBSD, Linux/i386
-and Windows, but since it uses SDL/OpenGL it should be portable to other
-operating systems or platforms.
-
-WWW: http://dangerdeep.sourceforge.net/

@@ -1,8 +1,0 @@
-A copy & paste backport of Python 3.3's shutil.which function.
-
-Import like this: import shutilwhichh.
-
-This will monkeypatch shutil if there is no shutil.which method, otherwise
-leave it alone.
-
-WWW: https://github.com/mbr/shutilwhich

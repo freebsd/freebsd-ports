@@ -60,7 +60,6 @@
     SUBDIR += ffaudioconverter
     SUBDIR += ffdec
     SUBDIR += ffmpeg
-    SUBDIR += ffmpeg2theora
     SUBDIR += ffmpegthumbnailer
     SUBDIR += ffms2
     SUBDIR += flvmeta
@@ -247,7 +246,6 @@
     SUBDIR += makemkv
     SUBDIR += mediainfo
     SUBDIR += mencoder
-    SUBDIR += mimms
     SUBDIR += minitube
     SUBDIR += mjpegtools
     SUBDIR += mkclean

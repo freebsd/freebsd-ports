@@ -280,7 +280,6 @@
     SUBDIR += goocanvasmm2
     SUBDIR += goom
     SUBDIR += gource
-    SUBDIR += goxel
     SUBDIR += gpaint
     SUBDIR += gphoto2
     SUBDIR += gpicview
@@ -855,7 +854,6 @@
     SUBDIR += py-photocollage
     SUBDIR += py-piexif
     SUBDIR += py-pillow
-    SUBDIR += py-pillow6
     SUBDIR += py-pivy
     SUBDIR += py-plotly
     SUBDIR += py-png
@@ -1013,7 +1011,6 @@
     SUBDIR += silgraphite
     SUBDIR += simage
     SUBDIR += simpleviewer
-    SUBDIR += sk1libs
     SUBDIR += skanlite
     SUBDIR += spectacle
     SUBDIR += spirv-tools
@@ -1055,7 +1052,6 @@
     SUBDIR += tumble
     SUBDIR += tweeny
     SUBDIR += ufraw
-    SUBDIR += uniconvertor
     SUBDIR += unpaper
     SUBDIR += urho3d
     SUBDIR += urt

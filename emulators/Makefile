@@ -35,7 +35,6 @@
     SUBDIR += elliott-803
     SUBDIR += emu64
     SUBDIR += emulationstation
-    SUBDIR += fceux
     SUBDIR += fmsx
     SUBDIR += frodo
     SUBDIR += fs-uae
@@ -44,7 +43,6 @@
     SUBDIR += fuse-roms
     SUBDIR += fuse-utils
     SUBDIR += gbe
-    SUBDIR += gem5
     SUBDIR += gens
     SUBDIR += gngb
     SUBDIR += gngeo
@@ -95,7 +93,6 @@
     SUBDIR += mupen64plus-video-z64
     SUBDIR += nemu
     SUBDIR += nestopia
-    SUBDIR += nonpareil
     SUBDIR += o2em
     SUBDIR += ods2reader
     SUBDIR += open-vm-tools

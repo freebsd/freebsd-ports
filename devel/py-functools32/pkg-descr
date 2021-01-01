@@ -1,5 +1,0 @@
-This is a backport of the Python 3.2 functools module for use on Python
-versions 2.7 and PyPy. It includes new features lru_cache (Least-recently-used
-cache decorator).
-
-WWW: https://github.com/MiCHiLU/python-functools32

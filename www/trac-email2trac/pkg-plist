@@ -1,4 +1,0 @@
-bin/delete_spam
-bin/email2trac
-@(,,4111) bin/run_email2trac
-@sample etc/email2trac.conf.sample

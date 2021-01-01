@@ -54,7 +54,6 @@
     SUBDIR += boringssl
     SUBDIR += botan110
     SUBDIR += botan2
-    SUBDIR += broccoli
     SUBDIR += bruteblock
     SUBDIR += bruteforceblocker
     SUBDIR += bsdsfv
@@ -428,7 +427,6 @@
     SUBDIR += openvpn-devel
     SUBDIR += openvpn-mbedtls
     SUBDIR += ophcrack
-    SUBDIR += orthrus
     SUBDIR += ossec-hids
     SUBDIR += ossec-hids-agent
     SUBDIR += ossec-hids-agent-config
@@ -848,7 +846,6 @@
     SUBDIR += py-artifacts
     SUBDIR += py-asyncssh
     SUBDIR += py-authlib
-    SUBDIR += py-backports.ssl_match_hostname
     SUBDIR += py-bcrypt
     SUBDIR += py-btchip-python
     SUBDIR += py-cerealizer
@@ -1159,7 +1156,6 @@
     SUBDIR += samhain-client
     SUBDIR += samhain-server
     SUBDIR += sancp
-    SUBDIR += sandsifter
     SUBDIR += sasp
     SUBDIR += scanlogd
     SUBDIR += scanssh

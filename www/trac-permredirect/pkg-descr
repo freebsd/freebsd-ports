@@ -1,3 +1,0 @@
-Trac plugin which redirects users to the login screen on PermissionError.
-
-WWW: https://trac-hacks.org/wiki/PermRedirectPlugin

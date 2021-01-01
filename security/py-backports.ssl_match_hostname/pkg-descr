@@ -1,3 +1,0 @@
-Backport of Python 3.5's standard library function ssl.match_hostname
-
-WWW: https://bitbucket.org/brandon/backports.ssl_match_hostname

@@ -1,4 +1,0 @@
-This plugin automatically adds a default CC list
-when a new ticket is created, based on its initial component.
-
-WWW: https://trac-hacks.org/wiki/DefaultCcPlugin

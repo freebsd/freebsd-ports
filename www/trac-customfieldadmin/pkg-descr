@@ -1,8 +1,0 @@
-This plugin is a Web Admin panel for administrating custom fields -
-adding, modifying and deleting them without editing the trac.ini file
-directly.
-
-This plugin is a cooperation between CodeResort.com and Optaros.com,
-and is made freely available under a BSD license.
-
-WWW: http://trac-hacks.org/wiki/CustomFieldAdminPlugin

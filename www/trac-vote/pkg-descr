@@ -1,7 +1,0 @@
-This plugin adds a context-navigation entry that lets users easily vote
-for a Trac resource, including Wiki pages, tickets, milestones, etc.
-
-If a user has a valid session and the VOTE_MODIFY permission they will
-be able to vote.
-
-WWW: http://trac-hacks.org/wiki/VotePlugin

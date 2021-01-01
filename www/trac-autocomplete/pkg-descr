@@ -1,4 +1,0 @@
-The AutocompleteUsersPlugin allows AJAX completion of users
-for the owner and CC fields on new and existing tickets.
-
-WWW: https://trac-hacks.org/wiki/AutocompleteUsersPlugin
