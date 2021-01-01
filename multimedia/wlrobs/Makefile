@@ -22,7 +22,7 @@ PORTDATA=	lib${PORTNAME}.so
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc64*}
 USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c11
