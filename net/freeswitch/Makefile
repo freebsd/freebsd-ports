@@ -14,7 +14,7 @@ COMMENT=	Multi-protocol soft switch for telephony applications
 
 LICENSE=	MPL11
 
-ONLY_FOR_ARCHS=	amd64 powerpc64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	gdiff:textproc/diffutils
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
