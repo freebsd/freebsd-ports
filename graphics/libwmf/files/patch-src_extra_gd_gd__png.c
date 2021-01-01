@@ -1,6 +1,6 @@
---- src/extra/gd/gd_png.c.orig	2010-03-28 12:44:53.000000000 +0200
-+++ src/extra/gd/gd_png.c	2010-03-28 12:45:16.000000000 +0200
-@@ -136,7 +136,7 @@
+--- src/extra/gd/gd_png.c.orig	2019-02-01 17:51:32 UTC
++++ src/extra/gd/gd_png.c
+@@ -138,7 +138,7 @@ gdImageCreateFromPngCtx (gdIOCtx * infile)
    /* first do a quick check that the file really is a PNG image; could
     * have used slightly more general png_sig_cmp() function instead */
    gdGetBuf (sig, 8, infile);

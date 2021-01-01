@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libwmf
-PORTVERSION=	0.2.8.4
-PORTREVISION=	15
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.12
 CATEGORIES=	graphics
-MASTER_SITES=	SF/wvware/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)
@@ -14,16 +13,17 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libgd.so:graphics/gd \
+		libexpat.so:textproc/expat2
 
-USES=		gnome jpeg libtool
-USE_GNOME=	libxml2
+USES=		autoreconf:build jpeg libtool localbase pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	caolanm
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-sys-gd=no \
-		--with-png=${LOCALBASE} --with-jpeg=${LOCALBASE} \
-		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
+CONFIGURE_ARGS=	--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
 INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
@@ -38,9 +38,15 @@ X11_USES=	xorg
 X11_USE=	XORG=x11
 X11_CONFIGURE_OFF=--with-x=no
 
+pre-configure:
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} AUTOHEADER="${TRUE}" \
+	 ${LOCALBASE}/bin/autoreconf -vif -Ipatches)
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|autoheader|autoheader -Ipatches|g' \
+		${WRKSRC}/Makefile
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|src include fonts doc|src include fonts|g' \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|@LIBWMF_GDK_PIXBUF_TRUE@|#|g ; \
 		 s|@LIBWMF_GDK_PIXBUF_FALSE@||g ; \

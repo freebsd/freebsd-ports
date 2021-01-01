@@ -1,0 +1,51 @@
+--- configure.ac.orig	2019-02-01 17:51:32 UTC
++++ configure.ac
+@@ -391,40 +391,19 @@ AC_ARG_WITH(freetype,[  --with-freetype=DIR     use fr
+ 	fi
+ ])
+ 
+-if [ test -n "$FREETYPE_DIR" ]; then
+-	AC_PATH_PROG(FREETYPE_CONFIG,freetype-config, ,[$FREETYPE_DIR/bin:$PATH])
+-else
+-	AC_PATH_PROG(FREETYPE_CONFIG,freetype-config)
+-fi
++PKG_CHECK_MODULES(FREETYPE2, freetype2, 
++    CFLAGS="$CFLAGS $FREETYPE2_CFLAGS"
++    LDFLAGS="$LDFLAGS $FREETYPE2_LIBS",
++    AC_MSG_ERROR([*** Unable to find FreeType2 library (http://www.freetype.org/)])
++)
+ 
+-if [ test -n "$FREETYPE_CONFIG" ]; then
+-	if [ test -n "$FREETYPE_DIR" ]; then
+-		freetype_cflags="`$FREETYPE_CONFIG --cflags` -I$FREETYPE_DIR/include"
+-		freetype_libs=`$FREETYPE_CONFIG --libs`
+-	else
+-		freetype_cflags=`$FREETYPE_CONFIG --cflags`
+-		freetype_libs=`$FREETYPE_CONFIG --libs`
+-	fi
+-else
+-	if [ test -n "$FREETYPE_DIR" ]; then
+-		freetype_cflags="-I$FREETYPE_DIR/include/freetype2 -I$FREETYPE_DIR/include"
+-		freetype_libs="-L$FREETYPE_DIR/lib -lfreetype"
+-	else
+-		freetype_cflags=""
+-		freetype_libs="-lfreetype"
+-	fi
+-fi
+-
+-CPPFLAGS="$freetype_cflags $CPPFLAGS"
+-LDFLAGS="$LDFLAGS $freetype_libs"
+-
+ AC_CHECK_LIB(freetype,FT_Init_FreeType,[
+-	WMF_FT_LDFLAGS="$freetype_libs"
++	WMF_FT_LDFLAGS="$FREETYPE2_LIBS"
+ ],[	AC_MSG_ERROR([* * * freetype(2) is required * * *])
+ ])
+ AC_CHECK_HEADER(ft2build.h,[
+-	WMF_FT_CFLAGS="$freetype_cflags"
+-	WMF_FT_CONFIG_CFLAGS="$freetype_cflags"
++	WMF_FT_CFLAGS="$FREETYPE2_CFLAGS"
++	WMF_FT_CONFIG_CFLAGS="$FREETYPE2_CFLAGS"
+ ],[	AC_MSG_ERROR([* * * freetype(2) is required * * *])
+ ])
+ 
