@@ -47,21 +47,15 @@ CONFLICTS_INSTALL=	virtualbox-ose-[0-9]* \
 			virtualbox-ose-lite-[0-9]* \
 			virtualbox-ose-nox11-[0-9]*
 
-OPTIONS_DEFINE=	DBUS DEBUG OPENGL X11
+OPTIONS_DEFINE=	DBUS DEBUG X11
 OPTIONS_DEFAULT=	DBUS X11
 OPTIONS_SUB=	yes
-
-OPENGL_DESC=		3D pass-through support (requires X11)
 
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DEBUG_CONFIGURE_ON=	--build-debug
 DEBUG_VARS=		KMK_BUILDTYPE=debug
 DEBUG_VARS_OFF=		KMK_BUILDTYPE=release
-OPENGL_CONFIGURE_OFF=	--disable-opengl
-OPENGL_IMPLIES=		X11
-OPENGL_USE=		GL=gl,glu XORG=xcomposite,xdamage,xfixes
-OPENGL_USES=		gl python:2.7,build xorg
 X11_BUILD_DEPENDS=	${LOCALBASE}/include/xorg/compiler.h:x11-servers/xorg-server
 X11_RUN_DEPENDS=	xrandr:x11/xrandr
 X11_USE=		XORG=x11,xcursor,xext,xorgproto,xmu,xrandr,xt
@@ -88,11 +82,6 @@ BUILD_WRKSRC=	${VBOX_BIN}/src
 
 KMK_ARCH=	freebsd.${ARCH:S/i386/x86/}
 KMK_CONFIG+=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
-
-.if ${PORT_OPTIONS:MOPENGL}
-VBOX_LIBS=	VBoxEGL.so \
-		VBoxOGL.so
-.endif
 
 .if ${PORT_OPTIONS:MX11}
 .else
@@ -142,9 +131,6 @@ post-patch:
 	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
 
-post-patch-OPENGL-on:
-	@${ECHO_CMD} 'VBOX_USE_SYSTEM_GL_HEADERS = 1' >> ${WRKSRC}/LocalConfig.kmk
-
 post-patch-X11-on:
 	@${ECHO_CMD} 'VBOX_USE_SYSTEM_XORG_HEADERS = 1' >> \
 	    ${WRKSRC}/LocalConfig.kmk
@@ -183,11 +169,5 @@ do-install-X11-on:
 	${MKDIR} ${STAGEDIR}${INPUTDIR}
 	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_system.so \
 	    ${STAGEDIR}${INPUTDIR}/vboxmouse_drv.so
-
-do-install-OPENGL-on:
-	${INSTALL_DATA} ${FILESDIR}/vboxvideo.conf \
-	    ${STAGEDIR}${PREFIX}/etc/libmap.d/
-	${INSTALL_DATA} ${VBOX_LIBS:S|^|${VBOX_BIN}/|} \
-	    ${STAGEDIR}${PREFIX}/lib/
 
 .include <bsd.port.post.mk>
