@@ -37,6 +37,7 @@ LIB_DEPENDS_armv7=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_i386=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_powerpc=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_powerpc64=	libluajit-5.1.so:lang/luajit-openresty
+LIB_DEPENDS_powerpc64le=	libluajit-5.1.so:lang/luajit-openresty
 
 USES=		cmake gl lua pkgconfig python:3.4+ qt:5 xorg
 USE_GITHUB=	yes
@@ -54,7 +55,7 @@ LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc64*}
 CFLAGS+=	-Wno-unused-label
 USES+=		compiler:gcc-c++11-lib
 .else
