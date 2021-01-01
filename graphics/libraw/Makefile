@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libraw
-PORTVERSION=	0.19.5
+PORTVERSION=	0.20.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.org/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -23,7 +23,8 @@ INSTALL_TARGET=	install-strip
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		DOCS EXAMPLES JASPER JPEG LCMS2 OPENMP OPTIMIZED_CFLAGS
+OPTIONS_DEFINE=		DOCS EXAMPLES JASPER JPEG LCMS2 OPENMP OPTIMIZED_CFLAGS \
+			RPIRAW X3F
 OPTIONS_DEFAULT=	JPEG LCMS2
 
 JASPER_CONFIGURE_ENABLE=		jasper
@@ -39,10 +40,17 @@ OPENMP_DESC=				OpenMP support (implies GCC)
 OPENMP_CONFIGURE_ENABLE=		openmp
 OPENMP_USES=				compiler:openmp
 
+RPIRAW_DESC=				Raspberry Pi RAW+JPEG support
+RPIRAW_CPPFLAGS=			-DUSE_6BY9RPI
+
+X3F_DESC=				X3F (Foveon) support
+X3F_CPPFLAGS=				-DUSE_X3FTOOLS
+
 OPTIMIZED_CFLAGS_CFLAGS=		-O3
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/*.pc.in
+	@${TOUCH} -r ${WRKSRC}/configure.ac ${WRKSRC}/aclocal.m4
 
 # Use "\*" instead of "." in COPYTREE_SHARE commands as "." has
 # the undesired effect of copying ".deps" directory

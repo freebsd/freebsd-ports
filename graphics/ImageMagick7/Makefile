@@ -2,7 +2,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	7.0.10-24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://www.imagemagick.org/download/ \
 		https://www.imagemagick.org/download/releases/ \
