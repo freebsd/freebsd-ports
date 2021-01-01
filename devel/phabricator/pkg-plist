@@ -48,7 +48,6 @@ lib/php/phabricator/conf/local/README
 lib/php/phabricator/conf/local/local.json.sample
 lib/php/phabricator/externals/JsShrink/jsShrink.php
 lib/php/phabricator/externals/JsShrink/readme.txt
-lib/php/phabricator/externals/amazon-ses/ses.php
 lib/php/phabricator/externals/cldr/cldr_windows_timezones.xml
 lib/php/phabricator/externals/cowsay/ChangeLog
 lib/php/phabricator/externals/cowsay/INSTALL
@@ -1712,6 +1711,9 @@ lib/php/phabricator/resources/sql/autopatches/20200428.inline.01.differential.co
 lib/php/phabricator/resources/sql/autopatches/20200428.inline.02.diffusion.column.sql
 lib/php/phabricator/resources/sql/autopatches/20200428.inline.03.differential.value.sql
 lib/php/phabricator/resources/sql/autopatches/20200428.inline.04.diffusion.value.sql
+lib/php/phabricator/resources/sql/autopatches/20200520.inline.01.remcache.sql
+lib/php/phabricator/resources/sql/autopatches/20200520.inline.02.addcache.sql
+lib/php/phabricator/resources/sql/autopatches/20200520.inline.03.dropcommit.sql
 lib/php/phabricator/resources/sql/patches/000.project.sql
 lib/php/phabricator/resources/sql/patches/0000.legacy.sql
 lib/php/phabricator/resources/sql/patches/001.maniphest_projects.sql
@@ -2090,8 +2092,10 @@ lib/php/phabricator/resources/sql/quickstart.sql
 lib/php/phabricator/resources/sql/stopwords.txt
 lib/php/phabricator/resources/sql/stopwords_myisam.txt
 lib/php/phabricator/resources/sshd/phabricator-ssh-hook.sh
+lib/php/phabricator/resources/sshd/phabricator-ssh-hook.sh.bak
 lib/php/phabricator/resources/sshd/phabricator-sudoers.sample
 lib/php/phabricator/resources/sshd/sshd_config.phabricator.example
+lib/php/phabricator/resources/sshd/sshd_config.phabricator.example.bak
 lib/php/phabricator/resources/timezones/generate-timezone-map.php
 lib/php/phabricator/resources/timezones/windows-timezones.json
 lib/php/phabricator/scripts/__init_script__.php
@@ -2100,6 +2104,8 @@ lib/php/phabricator/scripts/cache/manage_cache.php
 lib/php/phabricator/scripts/celerity/generate_emoji.php
 lib/php/phabricator/scripts/celerity/generate_sprites.php
 lib/php/phabricator/scripts/celerity/install_merge.sh
+lib/php/phabricator/scripts/celerity/install_merge.sh.bak
+lib/php/phabricator/scripts/celerity/install_merge.sh.orig
 lib/php/phabricator/scripts/daemon/exec/exec_daemon.php
 lib/php/phabricator/scripts/daemon/launch_daemon.php
 lib/php/phabricator/scripts/daemon/manage_daemons.php
@@ -2419,12 +2425,12 @@ lib/php/phabricator/src/applications/audit/management/PhabricatorAuditManagement
 lib/php/phabricator/src/applications/audit/management/PhabricatorAuditManagementWorkflow.php
 lib/php/phabricator/src/applications/audit/management/PhabricatorAuditSynchronizeManagementWorkflow.php
 lib/php/phabricator/src/applications/audit/management/PhabricatorAuditUpdateOwnersManagementWorkflow.php
+lib/php/phabricator/src/applications/audit/query/DiffusionInternalCommitSearchEngine.php
 lib/php/phabricator/src/applications/audit/query/PhabricatorAuditTransactionQuery.php
 lib/php/phabricator/src/applications/audit/query/PhabricatorCommitSearchEngine.php
 lib/php/phabricator/src/applications/audit/storage/PhabricatorAuditInlineComment.php
 lib/php/phabricator/src/applications/audit/storage/PhabricatorAuditTransaction.php
 lib/php/phabricator/src/applications/audit/storage/PhabricatorAuditTransactionComment.php
-lib/php/phabricator/src/applications/audit/view/PhabricatorAuditListView.php
 lib/php/phabricator/src/applications/audit/view/PhabricatorAuditTransactionView.php
 lib/php/phabricator/src/applications/auth/__tests__/PhabricatorAuthPasswordTestCase.php
 lib/php/phabricator/src/applications/auth/__tests__/PhabricatorAuthSSHKeyTestCase.php
@@ -3819,6 +3825,7 @@ lib/php/phabricator/src/applications/diffusion/conduit/DiffusionGetLintMessagesC
 lib/php/phabricator/src/applications/diffusion/conduit/DiffusionGetRecentCommitsByPathConduitAPIMethod.php
 lib/php/phabricator/src/applications/diffusion/conduit/DiffusionHistoryQueryConduitAPIMethod.php
 lib/php/phabricator/src/applications/diffusion/conduit/DiffusionInternalAncestorsConduitAPIMethod.php
+lib/php/phabricator/src/applications/diffusion/conduit/DiffusionInternalCommitSearchConduitAPIMethod.php
 lib/php/phabricator/src/applications/diffusion/conduit/DiffusionInternalGitRawDiffQueryConduitAPIMethod.php
 lib/php/phabricator/src/applications/diffusion/conduit/DiffusionLastModifiedQueryConduitAPIMethod.php
 lib/php/phabricator/src/applications/diffusion/conduit/DiffusionLookSoonConduitAPIMethod.php
@@ -3851,7 +3858,6 @@ lib/php/phabricator/src/applications/diffusion/controller/DiffusionController.ph
 lib/php/phabricator/src/applications/diffusion/controller/DiffusionDiffController.php
 lib/php/phabricator/src/applications/diffusion/controller/DiffusionDocumentController.php
 lib/php/phabricator/src/applications/diffusion/controller/DiffusionExternalController.php
-lib/php/phabricator/src/applications/diffusion/controller/DiffusionGraphController.php
 lib/php/phabricator/src/applications/diffusion/controller/DiffusionHistoryController.php
 lib/php/phabricator/src/applications/diffusion/controller/DiffusionIdentityEditController.php
 lib/php/phabricator/src/applications/diffusion/controller/DiffusionIdentityListController.php
@@ -4136,11 +4142,8 @@ lib/php/phabricator/src/applications/diffusion/typeahead/DiffusionTaggedReposito
 lib/php/phabricator/src/applications/diffusion/view/DiffusionBranchListView.php
 lib/php/phabricator/src/applications/diffusion/view/DiffusionBrowseTableView.php
 lib/php/phabricator/src/applications/diffusion/view/DiffusionCloneURIView.php
-lib/php/phabricator/src/applications/diffusion/view/DiffusionCommitListView.php
+lib/php/phabricator/src/applications/diffusion/view/DiffusionCommitGraphView.php
 lib/php/phabricator/src/applications/diffusion/view/DiffusionEmptyResultView.php
-lib/php/phabricator/src/applications/diffusion/view/DiffusionHistoryListView.php
-lib/php/phabricator/src/applications/diffusion/view/DiffusionHistoryTableView.php
-lib/php/phabricator/src/applications/diffusion/view/DiffusionHistoryView.php
 lib/php/phabricator/src/applications/diffusion/view/DiffusionPatternSearchView.php
 lib/php/phabricator/src/applications/diffusion/view/DiffusionPullLogListView.php
 lib/php/phabricator/src/applications/diffusion/view/DiffusionPushLogListView.php
@@ -4148,7 +4151,6 @@ lib/php/phabricator/src/applications/diffusion/view/DiffusionReadmeView.php
 lib/php/phabricator/src/applications/diffusion/view/DiffusionSourceLinkView.php
 lib/php/phabricator/src/applications/diffusion/view/DiffusionSyncLogListView.php
 lib/php/phabricator/src/applications/diffusion/view/DiffusionTagListView.php
-lib/php/phabricator/src/applications/diffusion/view/DiffusionTagTableView.php
 lib/php/phabricator/src/applications/diffusion/view/DiffusionView.php
 lib/php/phabricator/src/applications/diffusion/worker/DiffusionUpdateObjectAfterCommitWorker.php
 lib/php/phabricator/src/applications/diffusion/xaction/DiffusionCommitAcceptTransaction.php
@@ -4694,6 +4696,8 @@ lib/php/phabricator/src/applications/harbormaster/conduit/HarbormasterBuildLogSe
 lib/php/phabricator/src/applications/harbormaster/conduit/HarbormasterBuildPlanEditAPIMethod.php
 lib/php/phabricator/src/applications/harbormaster/conduit/HarbormasterBuildPlanSearchAPIMethod.php
 lib/php/phabricator/src/applications/harbormaster/conduit/HarbormasterBuildSearchConduitAPIMethod.php
+lib/php/phabricator/src/applications/harbormaster/conduit/HarbormasterBuildStepEditAPIMethod.php
+lib/php/phabricator/src/applications/harbormaster/conduit/HarbormasterBuildStepSearchAPIMethod.php
 lib/php/phabricator/src/applications/harbormaster/conduit/HarbormasterBuildableSearchAPIMethod.php
 lib/php/phabricator/src/applications/harbormaster/conduit/HarbormasterConduitAPIMethod.php
 lib/php/phabricator/src/applications/harbormaster/conduit/HarbormasterCreateArtifactConduitAPIMethod.php
@@ -4735,6 +4739,7 @@ lib/php/phabricator/src/applications/harbormaster/customfield/HarbormasterBuildS
 lib/php/phabricator/src/applications/harbormaster/customfield/HarbormasterBuildStepCustomField.php
 lib/php/phabricator/src/applications/harbormaster/editor/HarbormasterBuildPlanEditEngine.php
 lib/php/phabricator/src/applications/harbormaster/editor/HarbormasterBuildPlanEditor.php
+lib/php/phabricator/src/applications/harbormaster/editor/HarbormasterBuildStepEditEngine.php
 lib/php/phabricator/src/applications/harbormaster/editor/HarbormasterBuildStepEditor.php
 lib/php/phabricator/src/applications/harbormaster/editor/HarbormasterBuildTransactionEditor.php
 lib/php/phabricator/src/applications/harbormaster/editor/HarbormasterBuildableTransactionEditor.php
@@ -4783,6 +4788,7 @@ lib/php/phabricator/src/applications/harbormaster/query/HarbormasterBuildPlanTra
 lib/php/phabricator/src/applications/harbormaster/query/HarbormasterBuildQuery.php
 lib/php/phabricator/src/applications/harbormaster/query/HarbormasterBuildSearchEngine.php
 lib/php/phabricator/src/applications/harbormaster/query/HarbormasterBuildStepQuery.php
+lib/php/phabricator/src/applications/harbormaster/query/HarbormasterBuildStepSearchEngine.php
 lib/php/phabricator/src/applications/harbormaster/query/HarbormasterBuildStepTransactionQuery.php
 lib/php/phabricator/src/applications/harbormaster/query/HarbormasterBuildTargetQuery.php
 lib/php/phabricator/src/applications/harbormaster/query/HarbormasterBuildTargetSearchEngine.php
@@ -4908,6 +4914,7 @@ lib/php/phabricator/src/applications/herald/field/HeraldActingUserField.php
 lib/php/phabricator/src/applications/herald/field/HeraldAlwaysField.php
 lib/php/phabricator/src/applications/herald/field/HeraldAnotherRuleField.php
 lib/php/phabricator/src/applications/herald/field/HeraldBasicFieldGroup.php
+lib/php/phabricator/src/applications/herald/field/HeraldCommentContentField.php
 lib/php/phabricator/src/applications/herald/field/HeraldContentSourceField.php
 lib/php/phabricator/src/applications/herald/field/HeraldDeprecatedFieldGroup.php
 lib/php/phabricator/src/applications/herald/field/HeraldEditFieldGroup.php
@@ -5274,6 +5281,7 @@ lib/php/phabricator/src/applications/metamta/engine/PhabricatorMailSMSEngine.php
 lib/php/phabricator/src/applications/metamta/engineextension/PhabricatorMailPropertiesDestructionEngineExtension.php
 lib/php/phabricator/src/applications/metamta/exception/PhabricatorMetaMTAPermanentFailureException.php
 lib/php/phabricator/src/applications/metamta/exception/PhabricatorMetaMTAReceivedMailProcessingException.php
+lib/php/phabricator/src/applications/metamta/future/PhabricatorAWSSESFuture.php
 lib/php/phabricator/src/applications/metamta/future/PhabricatorAmazonSNSFuture.php
 lib/php/phabricator/src/applications/metamta/future/PhabricatorTwilioFuture.php
 lib/php/phabricator/src/applications/metamta/garbagecollector/MetaMTAMailReceivedGarbageCollector.php
@@ -6612,6 +6620,7 @@ lib/php/phabricator/src/applications/project/edge/PhabricatorProjectProjectHasOb
 lib/php/phabricator/src/applications/project/edge/PhabricatorProjectSilencedEdgeType.php
 lib/php/phabricator/src/applications/project/editor/PhabricatorProjectColumnTransactionEditor.php
 lib/php/phabricator/src/applications/project/editor/PhabricatorProjectTransactionEditor.php
+lib/php/phabricator/src/applications/project/editor/PhabricatorProjectTransactionEditor.php.orig
 lib/php/phabricator/src/applications/project/editor/PhabricatorProjectTriggerEditor.php
 lib/php/phabricator/src/applications/project/engine/PhabricatorBoardLayoutEngine.php
 lib/php/phabricator/src/applications/project/engine/PhabricatorBoardRenderingEngine.php
@@ -6867,8 +6876,6 @@ lib/php/phabricator/src/applications/repository/daemon/PhabricatorRepositoryGrap
 lib/php/phabricator/src/applications/repository/daemon/PhabricatorRepositoryPullLocalDaemon.php
 lib/php/phabricator/src/applications/repository/daemon/PhabricatorRepositoryPullLocalDaemonModule.php
 lib/php/phabricator/src/applications/repository/data/PhabricatorRepositoryParsedChange.php
-lib/php/phabricator/src/applications/repository/data/PhabricatorRepositoryURINormalizer.php
-lib/php/phabricator/src/applications/repository/data/__tests__/PhabricatorRepositoryURINormalizerTestCase.php
 lib/php/phabricator/src/applications/repository/editor/PhabricatorRepositoryEditor.php
 lib/php/phabricator/src/applications/repository/engine/PhabricatorRepositoryCommitRef.php
 lib/php/phabricator/src/applications/repository/engine/PhabricatorRepositoryDiscoveryEngine.php
@@ -6897,7 +6904,6 @@ lib/php/phabricator/src/applications/repository/management/PhabricatorRepository
 lib/php/phabricator/src/applications/repository/management/PhabricatorRepositoryManagementImportingWorkflow.php
 lib/php/phabricator/src/applications/repository/management/PhabricatorRepositoryManagementListPathsWorkflow.php
 lib/php/phabricator/src/applications/repository/management/PhabricatorRepositoryManagementListWorkflow.php
-lib/php/phabricator/src/applications/repository/management/PhabricatorRepositoryManagementLookupUsersWorkflow.php
 lib/php/phabricator/src/applications/repository/management/PhabricatorRepositoryManagementMaintenanceWorkflow.php
 lib/php/phabricator/src/applications/repository/management/PhabricatorRepositoryManagementMarkImportedWorkflow.php
 lib/php/phabricator/src/applications/repository/management/PhabricatorRepositoryManagementMarkReachableWorkflow.php
@@ -7962,6 +7968,10 @@ lib/php/phabricator/src/infrastructure/diff/PhabricatorInlineCommentController.p
 lib/php/phabricator/src/infrastructure/diff/__tests__/PhabricatorDiffScopeEngineTestCase.php
 lib/php/phabricator/src/infrastructure/diff/__tests__/data/zebra.c
 lib/php/phabricator/src/infrastructure/diff/engine/PhabricatorInlineCommentAdjustmentEngine.php
+lib/php/phabricator/src/infrastructure/diff/inline/PhabricatorDiffInlineCommentContentState.php
+lib/php/phabricator/src/infrastructure/diff/inline/PhabricatorDiffInlineCommentContext.php
+lib/php/phabricator/src/infrastructure/diff/inline/PhabricatorInlineCommentContentState.php
+lib/php/phabricator/src/infrastructure/diff/inline/PhabricatorInlineCommentContext.php
 lib/php/phabricator/src/infrastructure/diff/interface/PhabricatorInlineComment.php
 lib/php/phabricator/src/infrastructure/diff/prose/PhutilProseDiff.php
 lib/php/phabricator/src/infrastructure/diff/prose/PhutilProseDifferenceEngine.php
@@ -8342,6 +8352,8 @@ lib/php/phabricator/src/infrastructure/syntax/PhabricatorSyntaxStyle.php
 lib/php/phabricator/src/infrastructure/testing/PhabricatorTestCase.php
 lib/php/phabricator/src/infrastructure/testing/__tests__/PhabricatorTrivialTestCase.php
 lib/php/phabricator/src/infrastructure/testing/fixture/PhabricatorStorageFixtureScopeGuard.php
+lib/php/phabricator/src/infrastructure/testing/fixture/PhabricatorStorageFixtureScopeGuard.php.bak
+lib/php/phabricator/src/infrastructure/testing/fixture/PhabricatorStorageFixtureScopeGuard.php.orig
 lib/php/phabricator/src/infrastructure/time/PhabricatorTime.php
 lib/php/phabricator/src/infrastructure/time/PhabricatorTimeGuard.php
 lib/php/phabricator/src/infrastructure/time/__tests__/PhabricatorTimeTestCase.php
@@ -8414,6 +8426,17 @@ lib/php/phabricator/src/view/formation/PHUIFormationExpanderView.php
 lib/php/phabricator/src/view/formation/PHUIFormationFlankView.php
 lib/php/phabricator/src/view/formation/PHUIFormationResizerView.php
 lib/php/phabricator/src/view/formation/PHUIFormationView.php
+lib/php/phabricator/src/view/fuel/FuelComponentView.php
+lib/php/phabricator/src/view/fuel/FuelGridCellView.php
+lib/php/phabricator/src/view/fuel/FuelGridRowView.php
+lib/php/phabricator/src/view/fuel/FuelGridView.php
+lib/php/phabricator/src/view/fuel/FuelHandleListItemView.php
+lib/php/phabricator/src/view/fuel/FuelHandleListView.php
+lib/php/phabricator/src/view/fuel/FuelMapItemView.php
+lib/php/phabricator/src/view/fuel/FuelMapView.php
+lib/php/phabricator/src/view/fuel/FuelMenuItemView.php
+lib/php/phabricator/src/view/fuel/FuelMenuView.php
+lib/php/phabricator/src/view/fuel/FuelView.php
 lib/php/phabricator/src/view/layout/AphrontListFilterView.php
 lib/php/phabricator/src/view/layout/AphrontMoreView.php
 lib/php/phabricator/src/view/layout/AphrontMultiColumnView.php
@@ -8620,6 +8643,10 @@ lib/php/phabricator/webroot/rsrc/css/diviner/diviner-shared.css
 lib/php/phabricator/webroot/rsrc/css/font/font-awesome.css
 lib/php/phabricator/webroot/rsrc/css/font/font-lato.css
 lib/php/phabricator/webroot/rsrc/css/font/phui-font-icon-base.css
+lib/php/phabricator/webroot/rsrc/css/fuel/fuel-grid.css
+lib/php/phabricator/webroot/rsrc/css/fuel/fuel-handle-list.css
+lib/php/phabricator/webroot/rsrc/css/fuel/fuel-map.css
+lib/php/phabricator/webroot/rsrc/css/fuel/fuel-menu.css
 lib/php/phabricator/webroot/rsrc/css/layout/phabricator-source-code-view.css
 lib/php/phabricator/webroot/rsrc/css/phui/button/phui-button-bar.css
 lib/php/phabricator/webroot/rsrc/css/phui/button/phui-button-simple.css
@@ -8898,6 +8925,7 @@ lib/php/phabricator/webroot/rsrc/js/application/diff/DiffTreeView.js
 lib/php/phabricator/webroot/rsrc/js/application/differential/behavior-diff-radios.js
 lib/php/phabricator/webroot/rsrc/js/application/differential/behavior-populate.js
 lib/php/phabricator/webroot/rsrc/js/application/diffusion/DiffusionLocateFileSource.js
+lib/php/phabricator/webroot/rsrc/js/application/diffusion/ExternalEditorLinkEngine.js
 lib/php/phabricator/webroot/rsrc/js/application/diffusion/behavior-audit-preview.js
 lib/php/phabricator/webroot/rsrc/js/application/diffusion/behavior-commit-branches.js
 lib/php/phabricator/webroot/rsrc/js/application/diffusion/behavior-commit-graph.js
