@@ -3,7 +3,7 @@
 PORTNAME=	shaderc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2020.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -41,7 +41,7 @@ pre-configure:
 	${REINPLACE_CMD} '/build-version/d' ${WRKSRC}/glslc/CMakeLists.txt
 	${ECHO_CMD} "\"${PORTNAME} ${DISTVERSIONFULL}\n\"" >> ${WRKSRC}/glslc/src/build-version.inc
 	${ECHO_CMD} "\"`${PKG_BIN} query '%n v%v' spirv-tools`\n\"" >> ${WRKSRC}/glslc/src/build-version.inc
-	${ECHO_CMD} "\"`${PKG_BIN} query '%n 10-%v' glslang`\n\"" >> ${WRKSRC}/glslc/src/build-version.inc
+	${ECHO_CMD} "\"`${PKG_BIN} query '%n %v' glslang`\n\"" >> ${WRKSRC}/glslc/src/build-version.inc
 
 pre-install-TEST-on:	do-test
 
