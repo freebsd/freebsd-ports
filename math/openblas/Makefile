@@ -49,6 +49,7 @@ OPTIONS_SUB=	yes
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT_i386=	DYNAMIC_ARCH
 OPTIONS_DEFAULT_amd64=	DYNAMIC_ARCH
+OPTIONS_DEFAULT_powerpc64le=	DYNAMIC_ARCH
 .endif
 
 DYNAMIC_ARCH_DESC=	Support multiple CPU types on i386 and amd64
@@ -77,9 +78,13 @@ USE_GCC=		yes
 TARGET_CPU_ARCH=	PPCG4
 .endif
 
+.if ${ARCH} == powerpc64le
+USE_GCC=		yes
+.endif
+
 MAXTHREADS?=	64
 
-.if ! ${PORT_OPTIONS:MDYNAMIC_ARCH} && ( ${ARCH} == "amd64" || ${ARCH} == "i386" )
+.if ! ${PORT_OPTIONS:MDYNAMIC_ARCH} && ( ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "powerpc64le")
 MANUAL_PACKAGE_BUILD=	Optimizes for the build machine.
 .endif
 
@@ -124,7 +129,7 @@ post-patch:
 .if ${PORT_OPTIONS:MOPENMP}
 	@${ECHO} USE_OPENMP=1 >> ${WRKSRC}/Makefile.rule
 .endif
-.if ${ARCH:M*64} == ""
+.if ${ARCH:M*64*} == ""
 	@${ECHO} BINARY=32 >> ${WRKSRC}/Makefile.rule
 .else
 	@${ECHO} BINARY=64 >> ${WRKSRC}/Makefile.rule
