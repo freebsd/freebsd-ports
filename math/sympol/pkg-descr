@@ -1,0 +1,6 @@
+SymPol is a C++ tool to work with symmetric polyhedra. It helps to compute
+restricted automorphisms (parts of the linear symmetry group) of polyhedra and
+performs polyhedral description conversion up to a given or computed symmetry
+group.
+
+WWW: http://www.math.uni-rostock.de/~rehn/software/sympol.html
