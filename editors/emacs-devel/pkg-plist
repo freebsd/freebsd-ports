@@ -3212,6 +3212,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-plot.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-protocol.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-protocol.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-refile.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-refile.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-src.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-src.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-table.el.gz
