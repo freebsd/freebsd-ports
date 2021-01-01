@@ -1,3 +1,5 @@
-TIMESTAMP = 1572020788
+TIMESTAMP = 1609536643
 SHA256 (starkandwayne-eden-v0.7.4_GH0.tar.gz) = d5a777566230ead31fee54eff35d027499af871eb34bbc476f2c3b289c10bafc
 SIZE (starkandwayne-eden-v0.7.4_GH0.tar.gz) = 180779
+SHA256 (cffa0cee9f5897fbd96a3621f2c0dc8aeb90e711.patch) = c833c2b5a6a8f0ae46c6bd6da55a1f8fc9c66f5de2947b92233f8eabce87bbb3
+SIZE (cffa0cee9f5897fbd96a3621f2c0dc8aeb90e711.patch) = 1266
