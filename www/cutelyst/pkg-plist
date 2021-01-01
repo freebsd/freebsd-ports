@@ -104,6 +104,7 @@ include/cutelyst2-qt5/Cutelyst/cutelyst_global.h
 include/cutelyst2-qt5/Cutelyst/dispatcher.h
 include/cutelyst2-qt5/Cutelyst/dispatchtype.h
 include/cutelyst2-qt5/Cutelyst/engine.h
+include/cutelyst2-qt5/Cutelyst/enginerequest.h
 include/cutelyst2-qt5/Cutelyst/headers.h
 include/cutelyst2-qt5/Cutelyst/paramsmultimap.h
 include/cutelyst2-qt5/Cutelyst/plugin.h
@@ -197,3 +198,10 @@ man/man5/Cutelyst2Qt5Session.5.gz
 %%DATADIR%%2/translations/plugin_view_cutelee.en.qm
 %%DATADIR%%2/translations/plugin_view_grantlee.de.qm
 %%DATADIR%%2/translations/plugin_view_grantlee.en.qm
+
+%%GRANTLEE%%include/cutelyst2-qt5/Cutelyst/Plugins/View/Grantlee/grantleeview.h
+%%GRANTLEE%%lib/cutelyst2-plugins/grantlee/%%GRANTLEE_VERSION_SHORT%%/grantlee_cutelyst.so
+%%GRANTLEE%%lib/libCutelyst2Qt5ViewGrantlee.so
+%%GRANTLEE%%lib/libCutelyst2Qt5ViewGrantlee.so.2
+%%GRANTLEE%%lib/libCutelyst2Qt5ViewGrantlee.so.%%SOVER%%
+%%GRANTLEE%%libdata/pkgconfig/Cutelyst2Qt5Grantlee.pc
