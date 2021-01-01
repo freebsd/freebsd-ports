@@ -1,0 +1,17 @@
+include/timezonemap/timezonemap/cc-timezone-location.h
+include/timezonemap/timezonemap/cc-timezone-map.h
+include/timezonemap/timezonemap/timezone-completion.h
+include/timezonemap/timezonemap/tz.h
+lib/girepository-1.0/TimezoneMap-1.0.typelib
+lib/libtimezonemap.so
+lib/libtimezonemap.so.1
+lib/libtimezonemap.so.1.0.0
+libdata/pkgconfig/timezonemap.pc
+share/gir-1.0/TimezoneMap-1.0.gir
+share/glade/catalogs/TimezoneMap.xml
+share/libtimezonemap/admin1Codes.txt
+share/libtimezonemap/backward
+share/libtimezonemap/citiesInfo.txt
+share/libtimezonemap/countryInfo.txt
+share/libtimezonemap/pin.png
+share/libtimezonemap/time_zones_countryInfo-orig.svg

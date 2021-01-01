@@ -480,6 +480,7 @@
     SUBDIR += teseq
     SUBDIR += thefuck
     SUBDIR += thrill
+    SUBDIR += timezonemap
     SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkregexp

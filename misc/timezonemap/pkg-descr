@@ -1,0 +1,5 @@
+This static library is a copied version of the code in GNOME 3.0's
+control center panel 'datetime', which itself is a version of
+Ubiquity's map ported to C.
+
+WWW: https://github.com/dashea/timezonemap
