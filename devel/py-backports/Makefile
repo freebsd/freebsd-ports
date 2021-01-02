@@ -11,9 +11,6 @@ COMMENT=	Shared namespace shim for py-backports.* ports
 
 LICENSE=	MIT
 
-DEPRECATED=	Python 2 is EOL upstream
-EXPIRATION_DATE=2020-12-31
-
 USES=		python
 USE_PYTHON=	flavors py3kplist
 
