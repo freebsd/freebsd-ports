@@ -63,6 +63,7 @@
     SUBDIR += libc6-shim
     SUBDIR += libdsk
     SUBDIR += libretro-ppsspp
+    SUBDIR += libretro-vice
     SUBDIR += libspectrum
     SUBDIR += linux-c7
     SUBDIR += linux-power10-functional-sim
