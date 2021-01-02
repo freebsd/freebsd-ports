@@ -280,7 +280,6 @@
     SUBDIR += goocanvasmm2
     SUBDIR += goom
     SUBDIR += gource
-    SUBDIR += goxel
     SUBDIR += gpaint
     SUBDIR += gphoto2
     SUBDIR += gpicview
@@ -1014,7 +1013,6 @@
     SUBDIR += silgraphite
     SUBDIR += simage
     SUBDIR += simpleviewer
-    SUBDIR += sk1libs
     SUBDIR += skanlite
     SUBDIR += spectacle
     SUBDIR += spirv-tools
@@ -1056,7 +1054,6 @@
     SUBDIR += tumble
     SUBDIR += tweeny
     SUBDIR += ufraw
-    SUBDIR += uniconvertor
     SUBDIR += unpaper
     SUBDIR += urho3d
     SUBDIR += urt
