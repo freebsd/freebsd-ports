@@ -15967,3 +15967,8 @@ www/trac-ldap||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
 www/trac-spam-filter||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
 www/trac-timingandestimation||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
 www/trac-themeengine||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
+www/iridium||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
+editors/atom||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/electron4||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/electron5||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
+devel/electron6||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream

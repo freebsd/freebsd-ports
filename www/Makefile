@@ -265,7 +265,6 @@
     SUBDIR += ilias
     SUBDIR += ilias6
     SUBDIR += interchange
-    SUBDIR += iridium
     SUBDIR += itop
     SUBDIR += jericho-html
     SUBDIR += jesred
