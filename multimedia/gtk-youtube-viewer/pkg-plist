@@ -4,7 +4,6 @@
 %%SITE_PERL%%/WWW/YoutubeViewer/Authentication.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/Channels.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/CommentThreads.pm
-%%SITE_PERL%%/WWW/YoutubeViewer/ConfigData.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/GetCaption.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/GuideCategories.pm
 %%SITE_PERL%%/WWW/YoutubeViewer/Itags.pm
@@ -24,7 +23,6 @@
 %%PERL5_MAN3%%/WWW::YoutubeViewer::Authentication.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::Channels.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::CommentThreads.3.gz
-%%PERL5_MAN3%%/WWW::YoutubeViewer::ConfigData.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::GetCaption.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::GuideCategories.3.gz
 %%PERL5_MAN3%%/WWW::YoutubeViewer::Itags.3.gz
