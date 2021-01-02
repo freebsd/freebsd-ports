@@ -395,7 +395,6 @@ lib/php/arcanist/src/lint/linter/ArcanistMergeConflictLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistNoLintLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistPEP8Linter.php
 lib/php/arcanist/src/lint/linter/ArcanistPhpLinter.php
-lib/php/arcanist/src/lint/linter/ArcanistPhpLinter.php.bak
 lib/php/arcanist/src/lint/linter/ArcanistPhpcsLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistPhutilLibraryLinter.php
 lib/php/arcanist/src/lint/linter/ArcanistPuppetLintLinter.php
@@ -1020,7 +1019,6 @@ lib/php/arcanist/src/lint/renderer/__tests__/data/xml.txt
 lib/php/arcanist/src/log/ArcanistLogEngine.php
 lib/php/arcanist/src/log/ArcanistLogMessage.php
 lib/php/arcanist/src/moduleutils/PhutilLibraryMapBuilder.php
-lib/php/arcanist/src/moduleutils/PhutilLibraryMapBuilder.php.bak
 lib/php/arcanist/src/object/Phobject.php
 lib/php/arcanist/src/object/__tests__/PhobjectTestCase.php
 lib/php/arcanist/src/object/__tests__/PhutilTestPhobject.php
@@ -1298,7 +1296,6 @@ lib/php/arcanist/src/phage/action/PhagePlanAction.php
 lib/php/arcanist/src/phage/agent/PhagePHPAgent.php
 lib/php/arcanist/src/phage/bootloader/PhageAgentBootloader.php
 lib/php/arcanist/src/phage/bootloader/PhagePHPAgentBootloader.php
-lib/php/arcanist/src/phage/bootloader/PhagePHPAgentBootloader.php.bak
 lib/php/arcanist/src/phage/toolset/PhageToolset.php
 lib/php/arcanist/src/phage/util/PhutilBallOfPHP.php
 lib/php/arcanist/src/phage/workflow/PhageExecWorkflow.php
@@ -1408,7 +1405,6 @@ lib/php/arcanist/src/repository/state/ArcanistGitLocalState.php
 lib/php/arcanist/src/repository/state/ArcanistMercurialLocalState.php
 lib/php/arcanist/src/repository/state/ArcanistRepositoryLocalState.php
 lib/php/arcanist/src/runtime/ArcanistRuntime.php
-lib/php/arcanist/src/runtime/ArcanistRuntime.php.bak
 lib/php/arcanist/src/serviceprofiler/PhutilServiceProfiler.php
 lib/php/arcanist/src/symbols/PhutilClassMapQuery.php
 lib/php/arcanist/src/symbols/PhutilSymbolLoader.php
@@ -1430,7 +1426,6 @@ lib/php/arcanist/src/toolset/workflow/ArcanistHelpWorkflow.php
 lib/php/arcanist/src/toolset/workflow/ArcanistPromptsWorkflow.php
 lib/php/arcanist/src/toolset/workflow/ArcanistShellCompleteWorkflow.php
 lib/php/arcanist/src/toolset/workflow/ArcanistVersionWorkflow.php
-lib/php/arcanist/src/toolset/workflow/ArcanistVersionWorkflow.php.bak
 lib/php/arcanist/src/unit/ArcanistUnitTestResult.php
 lib/php/arcanist/src/unit/__tests__/ArcanistUnitTestResultTestCase.php
 lib/php/arcanist/src/unit/engine/ArcanistConfigurationDrivenUnitTestEngine.php
@@ -1484,7 +1479,6 @@ lib/php/arcanist/src/utils/PhutilDirectedScalarGraph.php
 lib/php/arcanist/src/utils/PhutilEditDistanceMatrix.php
 lib/php/arcanist/src/utils/PhutilExampleBufferedIterator.php
 lib/php/arcanist/src/utils/PhutilExecutionEnvironment.php
-lib/php/arcanist/src/utils/PhutilExecutionEnvironment.php.bak
 lib/php/arcanist/src/utils/PhutilHashingIterator.php
 lib/php/arcanist/src/utils/PhutilLunarPhase.php
 lib/php/arcanist/src/utils/PhutilProxyIterator.php
@@ -1523,7 +1517,6 @@ lib/php/arcanist/src/work/ArcanistMercurialWorkEngine.php
 lib/php/arcanist/src/work/ArcanistWorkEngine.php
 lib/php/arcanist/src/workflow/ArcanistAmendWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistAnoidWorkflow.php
-lib/php/arcanist/src/workflow/ArcanistAnoidWorkflow.php.bak
 lib/php/arcanist/src/workflow/ArcanistBookmarksWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistBranchesWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistCallConduitWorkflow.php
@@ -1538,7 +1531,6 @@ lib/php/arcanist/src/workflow/ArcanistInspectWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistInstallCertificateWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistLandWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistLiberateWorkflow.php
-lib/php/arcanist/src/workflow/ArcanistLiberateWorkflow.php.bak
 lib/php/arcanist/src/workflow/ArcanistLintWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistLintersWorkflow.php
 lib/php/arcanist/src/workflow/ArcanistListWorkflow.php
@@ -1588,7 +1580,6 @@ lib/php/arcanist/support/init/init-script.php
 lib/php/arcanist/support/lib/extract-symbols.php
 lib/php/arcanist/support/lib/rebuild-map.php
 lib/php/arcanist/support/shell/hooks/bash-completion.sh
-lib/php/arcanist/support/shell/hooks/bash-completion.sh.bak
 lib/php/arcanist/support/shell/rules/.keep
 lib/php/arcanist/support/shell/templates/bash-template.sh
 lib/php/arcanist/support/unit/cat.php

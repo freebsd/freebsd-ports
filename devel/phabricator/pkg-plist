@@ -2092,10 +2092,8 @@ lib/php/phabricator/resources/sql/quickstart.sql
 lib/php/phabricator/resources/sql/stopwords.txt
 lib/php/phabricator/resources/sql/stopwords_myisam.txt
 lib/php/phabricator/resources/sshd/phabricator-ssh-hook.sh
-lib/php/phabricator/resources/sshd/phabricator-ssh-hook.sh.bak
 lib/php/phabricator/resources/sshd/phabricator-sudoers.sample
 lib/php/phabricator/resources/sshd/sshd_config.phabricator.example
-lib/php/phabricator/resources/sshd/sshd_config.phabricator.example.bak
 lib/php/phabricator/resources/timezones/generate-timezone-map.php
 lib/php/phabricator/resources/timezones/windows-timezones.json
 lib/php/phabricator/scripts/__init_script__.php
@@ -2104,8 +2102,6 @@ lib/php/phabricator/scripts/cache/manage_cache.php
 lib/php/phabricator/scripts/celerity/generate_emoji.php
 lib/php/phabricator/scripts/celerity/generate_sprites.php
 lib/php/phabricator/scripts/celerity/install_merge.sh
-lib/php/phabricator/scripts/celerity/install_merge.sh.bak
-lib/php/phabricator/scripts/celerity/install_merge.sh.orig
 lib/php/phabricator/scripts/daemon/exec/exec_daemon.php
 lib/php/phabricator/scripts/daemon/launch_daemon.php
 lib/php/phabricator/scripts/daemon/manage_daemons.php
@@ -6620,7 +6616,6 @@ lib/php/phabricator/src/applications/project/edge/PhabricatorProjectProjectHasOb
 lib/php/phabricator/src/applications/project/edge/PhabricatorProjectSilencedEdgeType.php
 lib/php/phabricator/src/applications/project/editor/PhabricatorProjectColumnTransactionEditor.php
 lib/php/phabricator/src/applications/project/editor/PhabricatorProjectTransactionEditor.php
-lib/php/phabricator/src/applications/project/editor/PhabricatorProjectTransactionEditor.php.orig
 lib/php/phabricator/src/applications/project/editor/PhabricatorProjectTriggerEditor.php
 lib/php/phabricator/src/applications/project/engine/PhabricatorBoardLayoutEngine.php
 lib/php/phabricator/src/applications/project/engine/PhabricatorBoardRenderingEngine.php
@@ -8352,8 +8347,6 @@ lib/php/phabricator/src/infrastructure/syntax/PhabricatorSyntaxStyle.php
 lib/php/phabricator/src/infrastructure/testing/PhabricatorTestCase.php
 lib/php/phabricator/src/infrastructure/testing/__tests__/PhabricatorTrivialTestCase.php
 lib/php/phabricator/src/infrastructure/testing/fixture/PhabricatorStorageFixtureScopeGuard.php
-lib/php/phabricator/src/infrastructure/testing/fixture/PhabricatorStorageFixtureScopeGuard.php.bak
-lib/php/phabricator/src/infrastructure/testing/fixture/PhabricatorStorageFixtureScopeGuard.php.orig
 lib/php/phabricator/src/infrastructure/time/PhabricatorTime.php
 lib/php/phabricator/src/infrastructure/time/PhabricatorTimeGuard.php
 lib/php/phabricator/src/infrastructure/time/__tests__/PhabricatorTimeTestCase.php
