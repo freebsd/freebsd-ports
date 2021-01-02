@@ -2,7 +2,7 @@
 
 PORTNAME=	cloudquery
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.8
 CATEGORIES=	net
 
 MAINTAINER=	neel@neelc.org
@@ -35,7 +35,7 @@ GH_TUPLE=	\
 		denisenkom:go-mssqldb:06a60b6afbbc:denisenkom_go_mssqldb/vendor/github.com/denisenkom/go-mssqldb \
 		dimchansky:utfbom:v1.1.0:dimchansky_utfbom/vendor/github.com/dimchansky/utfbom \
 		form3tech-oss:jwt-go:v3.2.2:form3tech_oss_jwt_go/vendor/github.com/form3tech-oss/jwt-go \
-		go-gorm:gorm:v1.20.5:go_gorm_gorm/vendor/gorm.io/gorm \
+		go-gorm:gorm:v1.20.9:go_gorm_gorm/vendor/gorm.io/gorm \
 		go-gorm:mysql:v1.0.2:go_gorm_mysql/vendor/gorm.io/driver/mysql \
 		go-gorm:postgres:v1.0.2:go_gorm_postgres/vendor/gorm.io/driver/postgres \
 		go-gorm:sqlite:v1.1.3:go_gorm_sqlite/vendor/gorm.io/driver/sqlite \
