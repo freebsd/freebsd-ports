@@ -1,14 +1,14 @@
---- NanoVNASaver/Hardware/Hardware.py.orig	2020-08-13 17:01:29 UTC
+--- NanoVNASaver/Hardware/Hardware.py.orig	2020-11-01 13:28:10 UTC
 +++ NanoVNASaver/Hardware/Hardware.py
-@@ -32,6 +32,7 @@ from NanoVNASaver.Hardware.NanoVNA_H import NanoVNA_H
+@@ -33,6 +33,7 @@ from NanoVNASaver.Hardware.NanoVNA_H import NanoVNA_H
  from NanoVNASaver.Hardware.NanoVNA_H4 import NanoVNA_H4
  from NanoVNASaver.Hardware.NanoVNA_V2 import NanoVNA_V2
  from NanoVNASaver.Hardware.Serial import drain_serial, Interface
 +from NanoVNASaver.Hardware.Sysctl import usb_vid_pid
  
- logger = logging.getLogger(__name__)
  
-@@ -61,8 +62,12 @@ def get_interfaces() -> List[Interface]:
+ logger = logging.getLogger(__name__)
+@@ -63,8 +64,12 @@ def get_interfaces() -> List[Interface]:
      interfaces = []
      # serial like usb interfaces
      for d in list_ports.comports():
@@ -23,7 +23,7 @@
          for t in USBDEVICETYPES:
              if d.vid != t.vid or d.pid != t.pid:
                  continue
-@@ -72,7 +77,6 @@ def get_interfaces() -> List[Interface]:
+@@ -74,7 +79,6 @@ def get_interfaces() -> List[Interface]:
              iface.port = d.device
              interfaces.append(iface)
      return interfaces
