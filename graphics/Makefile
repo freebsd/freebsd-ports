@@ -935,6 +935,7 @@
     SUBDIR += rayshade
     SUBDIR += reactphysics3d
     SUBDIR += reallyslick
+    SUBDIR += realsr-ncnn-vulkan
     SUBDIR += recoverjpeg
     SUBDIR += renrot
     SUBDIR += repng2jpeg
