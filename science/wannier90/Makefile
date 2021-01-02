@@ -3,7 +3,7 @@
 PORTNAME=	wannier90
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,8 +29,8 @@ TEST_TARGET=	tests # most tests using --numprocs=4 fail: https://github.com/wann
 PLIST_FILES=	bin/postw90.x \
 		bin/w90chk2chk.x \
 		bin/wannier90.x \
-		lib/libwannier90.so \
-		lib/libwannier90.so.0
+		lib/libwannier.so \
+		lib/libwannier.so.0
 
 post-patch:
 	@${REINPLACE_CMD} 's|F90 = gfortran|&${GCC_DEFAULT}|' ${WRKSRC}/config/make.inc.gfort
@@ -41,7 +41,7 @@ do-install:
 .for p in wannier90.x postw90.x w90chk2chk.x
 	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${STAGEDIR}${PREFIX}/bin/${p}
 .endfor
-	${INSTALL_LIB} ${WRKSRC}/src/obj/libwannier.so ${STAGEDIR}${PREFIX}/lib/libwannier90.so.0
-	${LN} -sf libwannier90.so.0 ${STAGEDIR}${PREFIX}/lib/libwannier90.so
+	${INSTALL_LIB} ${WRKSRC}/src/obj/libwannier.so ${STAGEDIR}${PREFIX}/lib/libwannier.so.0
+	${LN} -sf libwannier.so.0 ${STAGEDIR}${PREFIX}/lib/libwannier.so
 
 .include <bsd.port.mk>
