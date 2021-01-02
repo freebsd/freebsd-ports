@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	worker
-PORTVERSION=	4.6.0
+PORTVERSION=	4.6.1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.boomerangsworld.de/cms/worker/downloads/
 
@@ -14,18 +14,16 @@ LICENSE=	GPLv2+
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++14-lang localbase pkgconfig python:run \
-		shebangfix ssl tar:bzip2 xorg
+		shebangfix tar:bzip2 xorg
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
 USE_XORG=	ice sm x11 xinerama
 
 SHEBANG_FILES=	${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/xeditor \
 		${WRKSRC}/scripts/find_file_by_chksum.py
 
-OPTIONS_DEFINE=	AVFS HAL INOTIFY LUA XFT
-OPTIONS_DEFAULT=	AVFS INOTIFY XFT
+OPTIONS_DEFINE=	AVFS HAL INOTIFY LUA SSL XFT
+OPTIONS_DEFAULT=	AVFS INOTIFY SSL XFT
 OPTIONS_EXCLUDE_DragonFly=	AVFS
 
 INOTIFY_DESC=	Monitor directory changes via libinotify
@@ -43,6 +41,11 @@ INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 LUA_CONFIGURE_OFF=	--disable-lua
 LUA_USES=	lua
+
+SSL_DESC=	SHA-256 checksum support via OpenSSL
+SSL_CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
+SSL_USES=	ssl
 
 XFT_CONFIGURE_OFF=	--disable-xft
 XFT_USE=	xorg=xft
