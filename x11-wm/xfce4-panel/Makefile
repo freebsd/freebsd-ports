@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-panel
-PORTVERSION=	4.14.4
+PORTVERSION=	4.16.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -16,7 +16,8 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libdbusmenu-gtk3.so:devel/libdbusmenu
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
 		libtool pathfix perl5 pkgconfig tar:bzip2 xfce xorg
@@ -32,8 +33,8 @@ CONFIGURE_ARGS=	--enable-gio-unix --without-html-dir
 
 PORTSCOUT=	limitw:1,even
 
-OPTIONS_DEFINE=		GIR GTK2 NLS VAPI
-OPTIONS_DEFAULT=	GIR GTK2 VAPI
+OPTIONS_DEFINE=		GIR NLS VAPI
+OPTIONS_DEFAULT=	GIR VAPI
 OPTIONS_SUB=		yes
 
 GIR_DESC=		Use Gobject Introspection
@@ -41,9 +42,6 @@ GIR_DESC=		Use Gobject Introspection
 GIR_USE=		gnome=introspection:build
 GIR_CONFIGURE_ON=       --enable-introspection=yes
 GIR_CONFIGURE_OFF=      --enable-introspection=no
-
-GTK2_USE=		gnome=gtk20
-GTK2_CONFIGURE_ENABLE=	gtk2
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime

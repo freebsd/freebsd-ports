@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-whiskermenu-plugin
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4

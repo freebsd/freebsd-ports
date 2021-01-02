@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunar
-DISTVERSION=	1.8.16
+DISTVERSION=	4.16.1
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -30,6 +30,8 @@ CONFIGURE_ARGS=	--enable-gio-unix \
 		--disable-gudev
 INSTALLS_ICONS=	yes
 INSTALL_TARGET=	install-strip
+
+PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=		GIR NLS NOTIFY
 OPTIONS_GROUP=		PLUGINS

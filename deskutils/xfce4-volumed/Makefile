@@ -13,6 +13,10 @@ COMMENT=	Volume management daemon for the Xfce desktop
 
 LICENSE=	GPLv3
 
+BROKEN=		Fails to compile with XFCE 4.16
+DEPRECATED=	Unsupported upstream, cannot work with XFCE 4.16
+EXPIRATION_DATE=	2021-01-31
+
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libkeybinder.so:x11/keybinder \
 		libfontconfig.so:x11-fonts/fontconfig \

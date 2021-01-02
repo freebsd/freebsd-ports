@@ -1,5 +1,12 @@
 bin/xdt-autogen
 bin/xdt-csource
-share/xfce4/dev-tools/m4macros/xdt-depends.m4
-share/xfce4/dev-tools/m4macros/xdt-features.m4
-share/xfce4/dev-tools/m4macros/xdt-i18n.m4
+bin/xfce-build
+bin/xfce-do-release
+bin/xfce-get-release-notes
+bin/xfce-get-translations
+bin/xfce-update-news
+man/man1/xdt-csource.1.gz
+share/aclocal/xdt-depends.m4
+share/aclocal/xdt-features.m4
+share/aclocal/xdt-i18n.m4
+share/aclocal/xdt-version.m4

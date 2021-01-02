@@ -16003,3 +16003,7 @@ sysutils/osquery||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstrea
 www/cliqz||2021-01-02|Has expired: Uses deprecated version of python
 www/trac||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 www/trac-accountmanager||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
+print/xfce4-print||2021-01-02|Unmaintained, depends on dropped XFCE GTK2 support
+x11/xfce4-quicklauncher-plugin||2021-01-02|Unmaintained, depends on dropped XFCE GTK2 support
+x11/xfce4-wmdock-plugin||2021-01-02|Unmaintained, depends on dropped XFCE GTK2 support
+x11-toolkits/libxfce4gui||2012-01-02|Unmaintained, depends on dropped XFCE GTK2 support

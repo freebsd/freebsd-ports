@@ -1,7 +1,6 @@
 bin/globaltime
 bin/orage
 bin/tz_convert
-lib/xfce4/panel/plugins/liborageclock.so
 man/man1/globaltime.1.gz
 man/man1/orage.1.gz
 man/man1/tz_convert.1.gz
@@ -97,4 +96,3 @@ share/icons/hicolor/scalable/apps/xfcalendar.svg
 %%DATADIR%%/sounds/Spo.wav
 %%DATADIR%%/sounds/Tear.wav
 %%DATADIR%%/sounds/Wall_c.wav
-share/xfce4/panel/plugins/xfce4-orageclock-plugin.desktop

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-dev-tools
-PORTVERSION=	4.14.0
+PORTVERSION=	4.16.0
 CATEGORIES=	devel xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -18,8 +18,10 @@ RUN_DEPENDS=	autoconf>=2.69:devel/autoconf \
 		libtoolize:devel/libtool \
 		bash:shells/bash
 
-USES=		gnome pkgconfig tar:bzip2 xfce
+USES=		gnome pkgconfig shebangfix tar:bzip2 xfce
 USE_GNOME=	glib20
+SHEBANG_FILES=	helpers/xfce-build helpers/xfce-do-release \
+		helpers/xfce-get-translations
 
 GNU_CONFIGURE=	yes
 

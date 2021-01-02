@@ -1,0 +1,15 @@
+[
+{
+  type: install
+  message: <<EOM
+If you are upgrading your packages, due to a problem with the pkg
+package management tool libexo requires to be upgraded by itself
+before the rest of packages, to ensure correct installation, as
+described in UPDATING entry 20210102.
+
+If you skipped the manual step and XFCE parts are failing due to
+missing libraries, please run "pkg upgrade -f libexo" to force
+reinstalling the missing parts.
+EOM
+}
+]

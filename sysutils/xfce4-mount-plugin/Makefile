@@ -3,6 +3,7 @@
 
 PORTNAME=	xfce4-mount-plugin
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4

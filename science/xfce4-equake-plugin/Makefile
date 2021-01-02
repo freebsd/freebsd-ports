@@ -14,6 +14,10 @@ COMMENT=	Earthquake monitor plugin for the Xfce panel
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Depends on removed gtk2 panel library
+DEPRECATED=	Unsupported upstream, cannot work with XFCE 4.16
+EXPIRATION_DATE=	2021-01-31
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libcurl.so:ftp/curl

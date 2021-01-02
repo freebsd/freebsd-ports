@@ -11,6 +11,8 @@ COMMENT=	Slider plugin to adjust and/or monitor any numeric variable
 
 LICENSE=	GPLv3
 
+BROKEN=		Depends on removed XFCE GTK2 support
+
 BUILD_DEPENDS=	xdt-autogen:devel/xfce4-dev-tools
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxfce4menu
-PORTVERSION=	4.14.1
-PORTREVISION=	2
+PORTVERSION=	4.16.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DISTNAME=	libxfce4ui-${DISTVERSIONFULL}
@@ -15,7 +14,9 @@ COMMENT=	Widgets library for the Xfce desktop environment
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libepoxy.so:graphics/libepoxy \
+		libgtop-2.0.so:devel/libgtop
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix \
 		pkgconfig tar:bzip2 xfce xorg
@@ -26,13 +27,15 @@ USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--with-vendor-info=${OPSYS} --without-html-dir
+CONFIGURE_ARGS=	--with-vendor-info=${OPSYS} --without-html-dir \
+		--enable-glibtop --enable-epoxy \
+		--disable-gudev
 INSTALL_TARGET=	install-strip
 
 PORTSCOUT=	limitw:1,even
 
-OPTIONS_DEFINE=		GIR GLADE GTK2 NLS STARTUP VAPI
-OPTIONS_DEFAULT=	GIR GTK2 STARTUP VAPI
+OPTIONS_DEFINE=		GIR GLADE NLS STARTUP VAPI
+OPTIONS_DEFAULT=	GIR STARTUP VAPI
 OPTIONS_SUB=		yes
 
 GIR_DESC=		Use Gobject Introspection
@@ -44,9 +47,6 @@ GIR_CONFIGURE_OFF=	--enable-introspection=no
 GLADE_CONFIGURE_ENABLE=	gladeui2
 GLADE_LIB_DEPENDS=	libgladeui-2.so:devel/glade
 GLADE_USE=		gnome=libxml2
-
-GTK2_CONFIGURE_ENABLE=	gtk2
-GTK2_USE=		gnome=gtk20
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime

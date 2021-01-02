@@ -255,7 +255,6 @@
     SUBDIR += txtbdf2ps
     SUBDIR += typetools
     SUBDIR += utopia
-    SUBDIR += xfce4-print
     SUBDIR += xmbibtex
     SUBDIR += xpdfopen
     SUBDIR += xreader

@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210102:
+  AFFECTS: x11/libexo, XFCE4 desktop users
+  AUTHOR: madpilot@FreeBSD.org
+
+  XFCE4 has been updated to version 4.16. Unluckily due to how the
+  update works out it interacts badly with a defect in pkg which can
+  cause files from the libexo package to be absent after upgrade.
+
+  To avoid the issue, before upgrading all packages, please update
+  libexo by itself:
+
+  # pkg upgrade libexo
+  # pkg upgrade
+
+  If you have already upgraded and you notice XFCE issues due to
+  missing libraries you can recover easily by forcing reinstallation
+  of libexo:
+
+  # pkg upgrade -f libexo
+
+  Users upgrading via ports should not be affected.
+
 20201228:
   AFFECTS: www/py-flexget
   AUTHOR: jbeich@FreeBSD.org

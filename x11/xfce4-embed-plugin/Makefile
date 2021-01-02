@@ -13,6 +13,10 @@ COMMENT=	Embed arbitrary windows into the Xfce panel
 
 LICENSE=	GPLv2
 
+BROKEN=		Depends on removed XFCE GTK2 support
+DEPRECATED=	Unsupported upstream, cannot work with XFCE 4.16
+EXPIRATION_DATE=	2021-01-31
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 

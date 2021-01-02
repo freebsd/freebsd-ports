@@ -46,8 +46,13 @@ share/applications/org.xfce.Catfish.desktop
 %%DATADIR%%/ui/catfish-wl-titlebar.png
 %%DATADIR%%/ui/catfish_preferences.xml
 %%DATADIR%%/ui/catfish_window.xml
-%%PORTDOCS%%%%DOCSDIR%%/README
-share/icons/hicolor/scalable/apps/catfish.svg
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+share/icons/hicolor/128x128/apps/org.xfce.catfish.png
+share/icons/hicolor/16x16/apps/org.xfce.catfish.svg
+share/icons/hicolor/48x48/apps/org.xfce.catfish.png
+share/icons/hicolor/48x48/apps/org.xfce.catfish.svg
+share/icons/hicolor/scalable/apps/org.xfce.catfish.svg
 share/locale/af/LC_MESSAGES/catfish.mo
 share/locale/ar/LC_MESSAGES/catfish.mo
 share/locale/be/LC_MESSAGES/catfish.mo
@@ -60,6 +65,7 @@ share/locale/el/LC_MESSAGES/catfish.mo
 share/locale/en_AU/LC_MESSAGES/catfish.mo
 share/locale/eo/LC_MESSAGES/catfish.mo
 share/locale/es/LC_MESSAGES/catfish.mo
+share/locale/et/LC_MESSAGES/catfish.mo
 share/locale/eu/LC_MESSAGES/catfish.mo
 share/locale/fi/LC_MESSAGES/catfish.mo
 share/locale/fr/LC_MESSAGES/catfish.mo
@@ -68,6 +74,7 @@ share/locale/he/LC_MESSAGES/catfish.mo
 share/locale/hr/LC_MESSAGES/catfish.mo
 share/locale/hu/LC_MESSAGES/catfish.mo
 share/locale/hy_AM/LC_MESSAGES/catfish.mo
+share/locale/hye/LC_MESSAGES/catfish.mo
 share/locale/id/LC_MESSAGES/catfish.mo
 share/locale/ie/LC_MESSAGES/catfish.mo
 share/locale/is/LC_MESSAGES/catfish.mo

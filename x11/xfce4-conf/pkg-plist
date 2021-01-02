@@ -4,6 +4,7 @@ include/xfce4/xfconf-0/xfconf/xfconf-channel.h
 include/xfce4/xfconf-0/xfconf/xfconf-errors.h
 include/xfce4/xfconf-0/xfconf/xfconf-types.h
 include/xfce4/xfconf-0/xfconf/xfconf.h
+lib/gio/modules/libxfconfgsettingsbackend.so
 %%GIR%%lib/girepository-1.0/Xfconf-0.typelib
 lib/libxfconf-0.so
 lib/libxfconf-0.so.3
@@ -34,6 +35,7 @@ share/dbus-1/services/org.xfce.Xfconf.service
 %%NLS%%share/locale/hr/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/hy_AM/LC_MESSAGES/xfconf.mo
+%%NLS%%share/locale/hye/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/is/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfconf.mo
@@ -69,12 +71,5 @@ share/dbus-1/services/org.xfce.Xfconf.service
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/xfconf.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfconf.mo
-%%PERL%%%%PERL5_MAN3%%/Xfce4::Xfconf.3.gz
-%%PERL%%%%SITE_ARCH%%/auto/Xfce4/Xfconf/Xfconf.so
-%%PERL%%%%SITE_ARCH%%/Xfce4/Xfconf/Install/Files.pm
-%%PERL%%%%SITE_ARCH%%/Xfce4/Xfconf/Install/xfconfperl.h
-%%PERL%%%%SITE_ARCH%%/Xfce4/Xfconf/Install/xfconfperl-autogen.h
-%%PERL%%%%SITE_ARCH%%/Xfce4/Xfconf/Install/xfconfperl.typemap
-%%PERL%%%%SITE_ARCH%%/Xfce4/Xfconf.pm
 %%VAPI%%share/vala/vapi/libxfconf-0.deps
 %%VAPI%%share/vala/vapi/libxfconf-0.vapi

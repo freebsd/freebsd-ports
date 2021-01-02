@@ -1,0 +1,13 @@
+diff --git a/panel-plugin/stopwatch.c b/panel-plugin/stopwatch.c
+index 4fd7f68b94671cefed0c46d00b3cf49839d7571f..3bcfdec1222dc77dad28f40feacb3c5e8b948bd8 100644
+--- panel-plugin/stopwatch.c
++++ panel-plugin/stopwatch.c
+@@ -6,7 +6,7 @@
+ #include <config.h>
+ #endif
+ 
+-#include <libxfce4panel/xfce-panel-plugin.h>
++#include <libxfce4panel/libxfce4panel.h>
+ #include <libxfce4util/libxfce4util.h>
+ 
+ #include "stopwatchtimer.h"
