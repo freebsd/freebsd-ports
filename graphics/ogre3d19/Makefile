@@ -15,14 +15,18 @@ COMMENT=	Scene-oriented, flexible 3D engine written in C++ (legacy version 1.9)
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=		does not compile: OgreMain/include/OgreStringConverter.h:126:23: class member cannot be redeclared
+BROKEN_powerpc=		does not install
+BROKEN_riscv64=		does not compile: OgreMain/include/OgreStringConverter.h:126:23: class member cannot be redeclared
+
 LIB_DEPENDS=	libzzip.so:devel/zziplib \
 		libfreetype.so:print/freetype2 \
 		libfreeimage.so:graphics/freeimage
 
 CONFLICTS=	ogre3d-[0-9]*
 
-USE_LDCONFIG=	yes
 USES=		tar:bzip2 cmake pkgconfig compiler:c++11-lib sdl xorg
+USE_LDCONFIG=	yes
 USE_SDL=	sdl
 USE_XORG=	xaw xrandr
 WRKSRC=		${WRKDIR}/sinbad-ogre-dd30349ea667
@@ -32,9 +36,6 @@ OPTIONS_SUB=	yes
 
 BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
 BOOST_RUN_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
-
-BROKEN_aarch64=		does not compile: error: class member cannot be redeclared
-BROKEN_powerpc=		does not install
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|include(FindPkgMacros)|return()|g' \
