@@ -4095,6 +4095,7 @@
     SUBDIR += py-azure-mgmt-containerservice
     SUBDIR += py-azure-mgmt-core
     SUBDIR += py-azure-mgmt-cosmosdb
+    SUBDIR += py-azure-mgmt-databoxedge
     SUBDIR += py-azure-mgmt-datalake-analytics
     SUBDIR += py-azure-mgmt-datalake-store
     SUBDIR += py-azure-mgmt-datamigration
