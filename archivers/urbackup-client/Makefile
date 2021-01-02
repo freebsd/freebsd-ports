@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	urbackup-client
-DISTVERSION=	2.4.10
+DISTVERSION=	2.4.11.0
 CATEGORIES=	archivers
-MASTER_SITES=	https://hndl.urbackup.org/Client/${DISTVERSION}/
+MASTER_SITES=	https://hndl.urbackup.org/Client/${DISTVERSION:R}/
 
 MAINTAINER=	neel@neelc.org
 COMMENT=	Client component of the UrBackup backup system
@@ -26,7 +26,7 @@ CXXFLAGS+=	`pkgconf --cflags-only-other libcryptopp`
 
 SUB_FILES=	pkg-message urbackupclient.conf.sample-daemon
 
-WRKSRC=		${WRKDIR}/${DISTNAME}.0
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 OPTIONS_DEFINE=	GUI
 OPTIONS_SUB=	yes
