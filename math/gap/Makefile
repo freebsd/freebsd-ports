@@ -12,6 +12,7 @@ COMMENT=	System for computational discrete algebra
 LICENSE=	GPLv2+
 
 BROKEN_aarch64=		fails to link: undefined reference to SyAllocBags
+BROKEN_riscv64=		fails to link: undefined reference to SyAllocBags
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp

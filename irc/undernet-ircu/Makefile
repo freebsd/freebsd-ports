@@ -15,6 +15,7 @@ LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
+BROKEN_riscv64=		Fails to compile: undefined reference to .mcount
 
 CONFLICTS=	ircd-hybrid-7.[0-9]*
 

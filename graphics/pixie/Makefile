@@ -14,9 +14,10 @@ COMMENT=	Photorealistic renderer with Pixar's RenderMan-like interface
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to compile: use of undeclared identifier CRenderer
-BROKEN_armv6=		fails to compile: use of undeclared identifier CRenderer
-BROKEN_armv7=		fails to compile: use of undeclared identifier CRenderer
+BROKEN_aarch64=		fails to compile: ri/atomic.h:149:9: use of undeclared identifier CRenderer
+BROKEN_armv6=		fails to compile: ri/atomic.h:149:9: use of undeclared identifier CRenderer
+BROKEN_armv7=		fails to compile: ri/atomic.h:149:9: use of undeclared identifier CRenderer
+BROKEN_riscv64=		fails to compile: ri/atomic.h:149:9: use of undeclared identifier CRenderer
 BROKEN_FreeBSD_11_powerpc64=	fails to compile on powerpc64 elfv1: ../common/mathSpec.h:548:37: error: 'max' was not declared in this scope
 BROKEN_FreeBSD_12_powerpc64=	fails to compile on powerpc64 elfv1: ../common/mathSpec.h:548:37: error: 'max' was not declared in this scope
 

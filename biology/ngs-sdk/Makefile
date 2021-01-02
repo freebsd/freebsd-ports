@@ -12,6 +12,7 @@ LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=		fails to configure: unsupported architecture 'FreeBSD'
+BROKEN_riscv64=		fails to configure: unsupported architecture 'FreeBSD'
 NOT_FOR_ARCHS=		powerpc64
 NOT_FOR_ARCHS_REASON=	os-arch.prl needs to be taught about powerpc64
 

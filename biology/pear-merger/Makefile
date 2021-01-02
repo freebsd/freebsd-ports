@@ -17,6 +17,7 @@ LICENSE=	CC-BY-NC-SA-3.0
 BROKEN_aarch64=		fails to compile: invokes x86 assembler
 BROKEN_armv6=		fails to compile: invokes x86 assembler
 BROKEN_armv7=		fails to compile: invokes x86 assembler
+BROKEN_riscv64=		fails to compile: invokes x86 assembler
 
 GNU_CONFIGURE=	yes
 

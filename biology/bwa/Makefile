@@ -20,6 +20,7 @@ BROKEN_armv7=		fails to compile: invalid conversion between vector type and inte
 BROKEN_mips=		fails to compile: cc1: unrecognized command line option "-msse2"
 BROKEN_mips64=		fails to compile: cc1: unrecognized command line option "-msse2"
 BROKEN_powerpc64=	fails to compile: ksw.c: emmintrin.h: No such file or directory
+BROKEN_riscv64=		fails to compile: invalid conversion between vector type and integer type
 
 USES=		gmake perl5 shebangfix tar:bzip2
 SHEBANG_FILES=	qualfa2fq.pl xa2multi.pl

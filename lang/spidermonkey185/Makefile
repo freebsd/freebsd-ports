@@ -24,6 +24,7 @@ WRKSRC=			${WRKDIR}/js-${PORTVERSION}/js/src
 
 BROKEN_aarch64=		Does not compile: error: cacheFlush support is missing on this platform
 BROKEN_mips64=		Does not compile: error: const union jsval_layout has no member named word
+BROKEN_riscv64=		Does not compile: jsiter.cpp:270:16: cannot initialize return object of type 'bool' with an rvalue of type 'nullptr_t'
 BROKEN_sparc64=		Does not build: fails to link
 
 NOT_FOR_ARCHS=		powerpc powerpc64

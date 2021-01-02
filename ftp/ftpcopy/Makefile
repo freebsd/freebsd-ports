@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 BROKEN_aarch64=		fails to build: regparm is not valid on this platform
 BROKEN_armv6=		fails to build: regparm is not valid on this platform
 BROKEN_armv7=		fails to build: regparm is not valid on this platform
+BROKEN_riscv64=		fails to build: regparm is not valid on this platform
 
 USES=		perl5
 USE_PERL5=	build

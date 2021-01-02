@@ -11,6 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=	fails to build: fatal error: 'LibCpuId/libcpuid.h' file not found
+BROKEN_riscv64=	fails to build: invokes x86 assembler
 
 USES=		cmake:noninja,insource dos2unix gl xorg
 USE_GITHUB=	yes

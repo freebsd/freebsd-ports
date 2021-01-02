@@ -13,7 +13,7 @@ COMMENT=	Highly scalable, fault-tolerant distributed file system
 LICENSE=	APACHE20
 
 BROKEN_aarch64=		Does not compile: fatal error: lzo/lzo1x.h file not found
-NOT_FOR_ARCHS=		powerpc64 powerpc64le sparc64
+NOT_FOR_ARCHS=		powerpc64 powerpc64le riscv64 sparc64
 NOT_FOR_ARCHS_REASON=	does not build: error Please implement AtomicPointer for this platform
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang21/bin/erlc:lang/erlang-runtime21 \

@@ -15,6 +15,7 @@ USES=		qmail
 BROKEN_aarch64=		fails to build: regparm is not valid on this platform
 BROKEN_armv6=		fails to build: regparm is not valid on this platform
 BROKEN_armv7=		fails to build: auto-aliastest.c:3:34: error: alias must point to a defined variable or function
+BROKEN_riscv64=		fails to build: auto-aliastest.c:3:34: error: alias must point to a defined variable or function
 
 WRKSRC=		${WRKDIR}/mail/${DISTNAME}
 

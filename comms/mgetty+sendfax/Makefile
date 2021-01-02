@@ -13,8 +13,12 @@ COMMENT=	Handle external logins, send and receive faxes
 
 LICENSE=	GPLv2
 
-USE_CSTD=	gnu89
+BROKEN_aarch64=		fails to compile: error: initializer element is not a compile-time constant
+BROKEN_mips64=		fails to compile: error: initializer element is not a compile-time constant
+BROKEN_riscv64=		fails to compile: error: initializer element is not a compile-time constant
+
 USES=		makeinfo perl5 shebangfix
+USE_CSTD=	gnu89
 SHEBANG_FILES=	samples/fax samples/new_fax.all/new_fax samples/new_fax.mime1 \
 		samples/new_fax.th samples/coverpg-pl.ps samples/faxview.th
 
@@ -28,9 +32,6 @@ INFO=		mgetty
 CFLAGS+=	-DAUTO_PPP
 
 MAKE_JOBS_UNSAFE=	yes
-
-BROKEN_aarch64=		Fails to compile: error: initializer element is not a compile-time constant
-BROKEN_mips64=		Fails to compile: error: initializer element is not a compile-time constant
 
 OPTIONS_DEFINE=	FIDO
 FIDO_DESC=	Enable FIDO EMSI support

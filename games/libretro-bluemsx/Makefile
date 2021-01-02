@@ -10,6 +10,7 @@ COMMENT=	Port of blueMSX to the libretro API
 LICENSE=	GPLv3
 
 BROKEN_aarch64=	error: constant expression evaluates to -1 which cannot be narrowed to type 'char' [-Wc++11-narrowing]
+BROKEN_riscv64=	error: constant expression evaluates to -1 which cannot be narrowed to type 'char' [-Wc++11-narrowing]
 
 USES=		compiler:c++11-lib gmake
 USE_LDCONFIG=	yes

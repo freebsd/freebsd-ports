@@ -11,6 +11,9 @@ DISTFILES=	xmul200b4.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 mascot based on gal-game "To Heart"
 
+BROKEN_aarch64=	fails to build: fails to build: locale/mywchar.h:16:10: fatal error: 'machine/limits.h' file not found
+BROKEN_riscv64=	fails to build: fails to build: locale/mywchar.h:16:10: fatal error: 'machine/limits.h' file not found
+
 WRKSRC=		${WRKDIR}/xmulti200beta4
 
 USES=		imake xorg
@@ -19,8 +22,6 @@ USE_XORG=	x11 xext xaw xmu xt xpm sm ice
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
-
-BROKEN_aarch64=	Fails to build: fatal error: machine/limits.h file not found
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

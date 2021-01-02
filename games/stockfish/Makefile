@@ -19,6 +19,7 @@ BROKEN_aarch64=	Fails to build: cannot detect architecture
 BROKEN_armv6=	Fails to configure: config-sanity: Error 1
 BROKEN_armv7=	Fails to configure: config-sanity: Error 1
 BROKEN_mips64=	Fails to build: cannot detect architecture
+BROKEN_riscv64=	Fails to configure: config-sanity: Error 1
 NOT_FOR_ARCHS=	sparc64
 
 USES=		compiler:c++11-lang gmake perl5

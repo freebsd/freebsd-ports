@@ -17,6 +17,7 @@ BROKEN_armv6=		invokes x86 assembler
 BROKEN_armv7=		invokes x86 assembler
 BROKEN_mips=		invokes x86 assembler
 BROKEN_mips64=		invokes x86 assembler
+BROKEN_riscv64=		invokes x86 assembler
 BROKEN_sparc64=		missing atomics implementation
 
 USES=		compiler:c11 cmake ncurses

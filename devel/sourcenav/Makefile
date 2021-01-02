@@ -16,6 +16,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=		fails to build: undefined reference to fpsetround
+BROKEN_riscv64=		fails to compile: unix/tclUnixInit.c:135:16: error: use of undeclared identifier 'FP_RN'
+DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
+EXPIRATION_DATE=2021-04-01
 
 USES=		shebangfix tar:bzip2 xorg
 SHEBANG_FILES=	${WRKSRC}/snavigator/demo/c++/contrib/perl/sample_client
@@ -27,9 +30,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--prefix=${PREFIX}/sourcenav
 
 CFLAGS+=		-fcommon
-
-DEPRECATED=	Unmaintained and dead upstream, does not build with -fno-common (llvm 11)
-EXPIRATION_DATE=2021-04-01
 
 post-patch:
 	${REINPLACE_CMD} -e 's|@XINCLUDES@|-I${LOCALBASE}/include|; \
