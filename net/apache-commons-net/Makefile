@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	commons-net
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 CATEGORIES=	net java
 MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	neel@neelc.org
 COMMENT=	Collection of network protocol implementations for Java
 
 LICENSE=	APACHE20
