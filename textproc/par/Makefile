@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	par
-PORTVERSION=	1.52
-PORTREVISION=	1
+PORTVERSION=	1.53.0
 PKGNAMESUFFIX=	_format
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.nicemice.net/par/
-DISTNAME=	Par${PORTVERSION:S|.||}
+DISTNAME=	Par-${PORTVERSION}
 
 MAINTAINER=	markm@FreeBSD.org
 COMMENT=	Paragraph reformatter for email
