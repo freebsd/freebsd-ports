@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	choria-mcorpc-support
-DISTVERSION=	2.22.1
+DISTVERSION=	2.23.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
