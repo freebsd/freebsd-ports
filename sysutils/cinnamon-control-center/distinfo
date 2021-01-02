@@ -1,6 +1,3 @@
-SHA256 (gnome3/linuxmint-cinnamon-control-center-2.4.2_GH0.tar.gz) = 7d25193a3cc13c12f22864f3c9a907acfaa616392cb2b7ab4e0624f0d200f188
-SIZE (gnome3/linuxmint-cinnamon-control-center-2.4.2_GH0.tar.gz) = 4305006
-SHA256 (gnome3/timezone_8.5.png) = 36ad1fd33d77271fe686e71054b80ca77eabb0ed1b45f895c7658c7a4b14f8e9
-SIZE (gnome3/timezone_8.5.png) = 16050
-SHA256 (gnome3/timezone_8.5_dim.png) = c46f8fc9d5851ebf32c7f99d3ee245d3201ff3143cbca87f6b3919dc8e2f9ca0
-SIZE (gnome3/timezone_8.5_dim.png) = 9378
+TIMESTAMP = 1608878686
+SHA256 (gnome/linuxmint-cinnamon-control-center-4.8.1_GH0.tar.gz) = ef908035b2d09ecf67dc18770e242035c6ff1e7f7ea1fa3e8b4843fa12d3ebd1
+SIZE (gnome/linuxmint-cinnamon-control-center-4.8.1_GH0.tar.gz) = 3864967

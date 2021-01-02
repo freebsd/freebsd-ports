@@ -2,76 +2,83 @@
 # $FreeBSD$
 
 PORTNAME=	cinnamon-settings-daemon
-PORTVERSION=	2.4.3
-PORTREVISION=	7
+PORTVERSION=	4.8.2
 CATEGORIES=	sysutils gnome
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME 3 settings daemon
+COMMENT=	Cinnamon desktop settings daemon
+
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	cinnamon-session:x11/cinnamon-session \
-		gnome-autogen.sh:devel/gnome-common \
-		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
-		docbook-xsl>=0:textproc/docbook-xsl \
-		gsed:textproc/gsed
-LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
+		xf86-input-wacom>0:x11-drivers/xf86-input-wacom
+LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
+		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libpolkit-gobject-1.so:sysutils/polkit \
-		libibus-1.0.so:textproc/ibus \
+		libgudev-1.0.so:devel/libgudev \
 		libdbus-1.so:devel/dbus \
+		libdbus-glib-1.so:devel/dbus-glib \
 		libcolord.so:graphics/colord \
 		liblcms2.so:graphics/lcms2 \
 		libcinnamon-desktop.so:x11/cinnamon-desktop \
+		libxklavier.so:x11/libxklavier \
+		libnspr4.so:devel/nspr \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libupower-glib.so:sysutils/upower \
 		libpulse.so:audio/pulseaudio \
-		libgdbm.so:databases/gdbm \
-		libnotify.so:devel/libnotify
-RUN_DEPENDS=	cinnamon-session:x11/cinnamon-session \
-		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
+		libnotify.so:devel/libnotify \
+		libharfbuzz.so:print/harfbuzz
+RUN_DEPENDS=	cinnamon-session:x11/cinnamon-session
 
-USES=		autoreconf gettext gmake gnome libtool pathfix pkgconfig tar:xz
-USE_GNOME=	gnomeprefix intlhack libgnomekbd \
-		libxslt:build
+USES=		gettext-tools gnome localbase meson pkgconfig python:3.5+,build \
+		shebangfix xorg
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libgnomekbd librsvg2
+USE_XORG=	x11 xext xfixes xi xtst
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	ac_cv_path_SED=${LOCALBASE}/bin/gsed
+
+MESON_ARGS=	-Duse_logind=disabled
+
+SHEBANG_GLOB=	*.py
+
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-gudev \
-		--disable-systemd \
-		--disable-packagekit \
-		--with-gnome-distributor="FreeBSD GNOME Project"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.cinnamon.settings-daemon.enums.xml \
 		org.cinnamon.settings-daemon.peripherals.gschema.xml \
-		org.cinnamon.settings-daemon.plugins.background.gschema.xml \
+		org.cinnamon.settings-daemon.peripherals.wacom.gschema.xml \
 		org.cinnamon.settings-daemon.plugins.color.gschema.xml \
 		org.cinnamon.settings-daemon.plugins.gschema.xml \
 		org.cinnamon.settings-daemon.plugins.housekeeping.gschema.xml \
-		org.cinnamon.settings-daemon.plugins.keyboard.gschema.xml \
 		org.cinnamon.settings-daemon.plugins.media-keys.gschema.xml \
-		org.cinnamon.settings-daemon.plugins.orientation.gschema.xml \
 		org.cinnamon.settings-daemon.plugins.power.gschema.xml \
-		org.cinnamon.settings-daemon.plugins.print-notifications.gschema.xml \
 		org.cinnamon.settings-daemon.plugins.xrandr.gschema.xml \
-		org.cinnamon.settings-daemon.plugins.xsettings.gschema.xml \
+		org.cinnamon.settings-daemon.plugins.xsettings.gschema.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	CUPS SMARTCARD
-OPTIONS_DEFAULT=CUPS SMARTCARD
-SMARTCARD_DESC=	Smartcard support
-CUPS_CONFIGURE_ENABLE=	cups
+OPTIONS_DEFINE=	CUPS SMARTCARD WACOM
+OPTIONS_DEFAULT=CUPS SMARTCARD WACOM
+OPTIONS_SUB=	yes
+
+CUPS_MESON_ENABLED=	use_cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
-SMARTCARD_CONFIGURE_ENABLE=	smartcard-support
+
+SMARTCARD_DESC=	Smartcard support
+SMARTCARD_MESON_ENABLED=	enable_smartcard
 SMARTCARD_LIB_DEPENDS=	libnss3.so:security/nss
 
+WACOM_DESC=	Tablet support with libwacom
+WACOM_LIB_DEPENDS=	libwacom.so:x11/libwacom
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/gnome|${PREFIX}/etc/gnome|g' \
-		${WRKSRC}/data/org.cinnamon.settings-daemon.plugins.xrandr.gschema.xml.in.in
-	@${REINPLACE_CMD} -e '/wacom/d' \
-		${WRKSRC}/data/Makefile.am
+	# Adhere to our hier(7).
+	@${MKDIR} ${WRKSRC}/files${PREFIX}
+	@${MV} ${WRKSRC}/files/usr/share ${WRKSRC}/files${PREFIX}
 
 .include <bsd.port.mk>

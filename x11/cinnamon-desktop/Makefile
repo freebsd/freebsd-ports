@@ -2,31 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	cinnamon-desktop
-PORTVERSION=	2.4.2
-PORTREVISION=	3
+PORTVERSION=	4.8.1
 CATEGORIES=	x11 gnome
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Additional UI API for cinnamon
 
-BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common \
-		xkeyboard-config>=0:x11/xkeyboard-config \
+LICENSE=	GPLv2 LGPL20
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
+
+BUILD_DEPENDS=	xkeyboard-config>=0:x11/xkeyboard-config \
 		libxkbfile>=0:x11/libxkbfile
+LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 RUN_DEPENDS=	xkeyboard-config>=0:x11/xkeyboard-config \
 		libxkbfile>=0:x11/libxkbfile
 
-USES=		autoreconf gettext gmake gnome libtool localbase:ldflags \
-		pathfix pkgconfig python:2.7,run shebangfix tar:xz xorg
-USE_XORG=	x11 xrandr xext
+USES=		gettext gnome localbase meson pkgconfig python:3.5+,build shebangfix xorg
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection
+USE_XORG=	x11 xext xrandr
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-USE_GNOME=	gnomeprefix gtk30 intlhack introspection:build
-SHEBANG_FILES=	files/usr/bin/cinnamon-desktop-migrate-mediakeys
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project"
-INSTALL_TARGET=	install-strip
+
+SHEBANG_FILES=	install-scripts/meson_install_schemas.py installer-test
+
 GLIB_SCHEMAS=	org.cinnamon.desktop.a11y.applications.gschema.xml \
 		org.cinnamon.desktop.a11y.keyboard.gschema.xml \
 		org.cinnamon.desktop.a11y.magnifier.gschema.xml \
@@ -50,13 +53,9 @@ GLIB_SCHEMAS=	org.cinnamon.desktop.a11y.applications.gschema.xml \
 		org.cinnamon.desktop.thumbnailers.gschema.xml \
 		org.cinnamon.desktop.wm.preferences.gschema.xml
 
-post-patch:
-	@${MKDIR} ${WRKSRC}/files${PREFIX}
-.for d in bin
-	@${MV} ${WRKSRC}/files/usr/${d} ${WRKSRC}/files${PREFIX}
-.endfor
+OPTIONS_DEFINE=	ALSA
 
-	@${REINPLACE_CMD} -e 's|find -min|find . -|g' \
-		${WRKSRC}/files/Makefile.am
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_MESON_TRUE=	alsa
 
 .include <bsd.port.mk>

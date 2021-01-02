@@ -1,5 +1,5 @@
+include/cinnamon-menus-3.0/gmenu-desktopappinfo.h
 include/cinnamon-menus-3.0/gmenu-tree.h
-lib/libcinnamon-menu-3.a
 lib/libcinnamon-menu-3.so
 lib/libcinnamon-menu-3.so.0
 lib/libcinnamon-menu-3.so.0.0.1

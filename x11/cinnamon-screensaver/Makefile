@@ -2,56 +2,56 @@
 # $FreeBSD$
 
 PORTNAME=	cinnamon-screensaver
-PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTVERSION=	4.8.1
 CATEGORIES=	x11 gnome
-DIST_SUBDIR=	gnome3
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME screen saver and locker
+COMMENT=	Cinnamon screen saver and locker
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2+ LGPL21
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
-BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:devel/gsettings-desktop-schemas \
-		gnome-autogen.sh:devel/gnome-common
-LIB_DEPENDS=	libnotify.so:devel/libnotify \
+BUILD_DEPENDS=	gsettings-desktop-schemas>=3.2.0:devel/gsettings-desktop-schemas
+LIB_DEPENDS=	libaccountsservice.so:sysutils/accountsservice \
 		libcinnamon-desktop.so:x11/cinnamon-desktop \
 		libdbus-glib-1.so:devel/dbus-glib
-RUN_DEPENDS=	pam_helper:security/pam_helper \
-		gsettings-desktop-schemas>=3.2.0:devel/gsettings-desktop-schemas \
-		gnome-keyring>=0:security/gnome-keyring
+RUN_DEPENDS=	${LOCALBASE}/lib/pam_gnome_keyring.so:security/gnome-keyring \
+		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-xapp>0:x11/py-python-xapp@${PY_FLAVOR}
 
-USES=		autoreconf:build gettext gmake gnome libtool pathfix pkgconfig \
-		xorg
+USES=		gettext-tools gnome meson pkgconfig python:3.5+ shebangfix xorg
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-USE_XORG=	x11 xext xxf86vm xscrnsaver
-USE_GNOME=	gnomedesktop3 gnomeprefix intlhack intlhack libgnomekbd libxml2
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-CFLAGS=		-I${LOCALBASE}/include -Wno-error=format-nonliteral
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-pam-prefix=${PREFIX}/etc/pam.d \
-		--without-systemd
-INSTALL_TARGET=	install-strip
+
+USE_XORG=	x11 xext xinerama xrandr xscrnsaver
+
+USE_GNOME=	cairo gdkpixbuf2 intltool introspection:build libgnomekbd pygobject3
+
+INSTALLS_ICONS=	yes
+
+SHEBANG_GLOB=	*.py
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+USE_LDCONFIG=	yes
 
 SUB_FILES+=	cinnamon-screensaver.pam
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/pam.d|${PREFIX}/etc/pam.d|g' \
-		${WRKSRC}/src/gs-auth-pam.c
-	@${REINPLACE_CMD} -e 's|find -m|find . -m|g' \
-		${WRKSRC}/files/Makefile.in
-	@${ECHO} "#define PASSWD_HELPER_PROGRAM \"/usr/local/bin/pam_helper\"" \
-		>> ${WRKSRC}/config.h.in
+	@${FIND} ${WRKSRC} -name \*.py | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|/usr/bin|${PREFIX}/bin|g' \
+		-e 's|/usr/lib|${PREFIX}/lib|g' \
+		-e 's|/usr/share|${PREFIX}/share|g'
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
+		${WRKSRC}/src/pamhelper/cinnamon-screensaver-pam-helper.c \
+		${WRKSRC}/libcscreensaver/test-passwd.c
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/cinnamon-screensaver.pam \
 		${STAGEDIR}${PREFIX}/etc/pam.d/cinnamon-screensaver
-	${RM} -r ${STAGEDIR}${PREFIX}/etc/pam.d/pam.d/
-
-pre-configure:
-	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
 
 .include <bsd.port.mk>
