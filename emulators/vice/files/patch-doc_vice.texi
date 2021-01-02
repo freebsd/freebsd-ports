@@ -35,14 +35,3 @@
  following values:
  
  @itemize @bullet
-@@ -26924,8 +26926,8 @@ the VICE FAQ (it is available on the Int
- VICE home page:
- @uref{http://vice-emu.sourceforge.net});
- @item
--the @code{comp.emulators.cbm} and @code{comp.sys.cbm} FAQs (@pxref{FAQs
--you should read}).
-+the @code{comp.emulators.cbm} and @code{comp.sys.cbm}
-+FAQs (@pxref{FAQs you should read}).
- @end itemize
- 
- @item
