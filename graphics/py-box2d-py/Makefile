@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libBox2D.so:misc/box2d
 
-USES=		python:3.6+
+USES=		compiler:c11 python:3.6+
 USE_PYTHON=	autoplist distutils
 
 SUB_FILES=	pkg-message
