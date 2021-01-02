@@ -16,7 +16,7 @@ LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libcddgmp.so:math/cddlib \
 		libgmp.so:math/gmp
 
-USES=		cmake eigen:3 localbase:ldflags
+USES=		cmake compiler:c++11-lang eigen:3 localbase:ldflags
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
