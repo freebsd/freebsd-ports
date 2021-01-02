@@ -12,3 +12,4 @@ lib/cmake/FAudio/FAudio-targets.cmake
 lib/libFAudio.so
 lib/libFAudio.so.0
 lib/libFAudio.so.0.%%SOVERSION%%
+libdata/pkgconfig/FAudio.pc
