@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
- If you're looking for the other version of Julia,
- there is a meta port lang/julia.
- Please checkout "make -C /usr/ports/lang/julia config" as well.
-EOM
-}
-]

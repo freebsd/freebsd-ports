@@ -15992,3 +15992,14 @@ graphics/sk1libs||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstrea
 graphics/uniconvertor||2021-01-02|Has expired: Uses deprecated version of python
 games/dangerdeep||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 games/dangerdeep-data||2021-01-02|Removed, useless without games/dangerdeep
+lang/julia||2021-01-02|Removed, useless without any consumers
+lang/julia10||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
+lang/spidermonkey24||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
+mail/getmail||2021-01-02|Has expired: Uses deprecated version of python
+security/broccoli||2021-01-02|Has expired: Depends lang/python27 which is EOLed upstream
+security/orthrus||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
+sysutils/ori||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
+sysutils/osquery||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
+www/cliqz||2021-01-02|Has expired: Uses deprecated version of python
+www/trac||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
+www/trac-accountmanager||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream

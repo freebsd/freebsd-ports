@@ -81,7 +81,6 @@
     SUBDIR += cl-lml
     SUBDIR += cl-lml-sbcl
     SUBDIR += clearsilver
-    SUBDIR += cliqz
     SUBDIR += closure-compiler
     SUBDIR += cntlm
     SUBDIR += codeigniter
@@ -2183,8 +2182,6 @@
     SUBDIR += tomcat85
     SUBDIR += tomcat9
     SUBDIR += tomee
-    SUBDIR += trac
-    SUBDIR += trac-accountmanager
     SUBDIR += trafficserver
     SUBDIR += transmission-web
     SUBDIR += transproxy

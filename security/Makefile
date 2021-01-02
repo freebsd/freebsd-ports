@@ -54,7 +54,6 @@
     SUBDIR += boringssl
     SUBDIR += botan110
     SUBDIR += botan2
-    SUBDIR += broccoli
     SUBDIR += bruteblock
     SUBDIR += bruteforceblocker
     SUBDIR += bsdsfv
@@ -428,7 +427,6 @@
     SUBDIR += openvpn-devel
     SUBDIR += openvpn-mbedtls
     SUBDIR += ophcrack
-    SUBDIR += orthrus
     SUBDIR += ossec-hids
     SUBDIR += ossec-hids-agent
     SUBDIR += ossec-hids-agent-config

@@ -143,8 +143,6 @@
     SUBDIR += janet
     SUBDIR += jimtcl
     SUBDIR += jruby
-    SUBDIR += julia
-    SUBDIR += julia10
     SUBDIR += jython
     SUBDIR += kawa
     SUBDIR += kf5-kross
@@ -337,7 +335,6 @@
     SUBDIR += solidity
     SUBDIR += spidermonkey17
     SUBDIR += spidermonkey185
-    SUBDIR += spidermonkey24
     SUBDIR += spidermonkey52
     SUBDIR += spidermonkey60
     SUBDIR += spidermonkey78

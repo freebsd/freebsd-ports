@@ -790,9 +790,7 @@
     SUBDIR += openupsd
     SUBDIR += openzfs
     SUBDIR += openzfs-kmod
-    SUBDIR += ori
     SUBDIR += osinfo-db-tools
-    SUBDIR += osquery
     SUBDIR += p5-App-RunCron
     SUBDIR += p5-App-ZFSCurses
     SUBDIR += p5-BSD-Jail-Object
