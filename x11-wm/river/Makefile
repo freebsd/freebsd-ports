@@ -27,7 +27,8 @@ GH_TUPLE=	ifreund:zig-pixman:7847fd1:zig_pixman/deps/zig-pixman \
 		ifreund:zig-wayland:d693b37:zig_wayland/deps/zig-wayland \
 		ifreund:zig-xkbcommon:9e4d41f:zig_xkbcommon/deps/zig-xkbcommon \
 		swaywm:zig-wlroots:10ddf02:zig_wlroots/deps/zig-wlroots
-CONFIGURE_ARGS=	--prefix "${STAGEDIR}${PREFIX}" \
+MAKE_ENV=	DESTDIR="${STAGEDIR}"
+CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:U-Drelease-fast=true} \
 		--verbose
 NO_INSTALL=	yes # strip(1) breaks runtime
