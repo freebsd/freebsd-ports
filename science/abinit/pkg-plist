@@ -1,8 +1,9 @@
 bin/abinit
+bin/abitk
 bin/aim
 bin/anaddb
+bin/atdep
 bin/band2eps
-bin/bsepostproc
 bin/conducti
 bin/cut3d
 bin/dummy_tests
@@ -17,7 +18,7 @@ bin/mrggkk
 bin/mrgscr
 bin/multibinit
 bin/optic
-bin/tdep
+bin/testtransposer
 bin/ujdet
 bin/vdw_kernelgen
 libdata/pkgconfig/abinit.pc
