@@ -24,13 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3400
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>=0:devel/py-singledispatch@${PY_FLAVOR}
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/librtmp/_librtmp*.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

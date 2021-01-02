@@ -27,17 +27,7 @@ POST_PLIST=	trim-jaraco-namespace
 # jaraco.functools 3.0.0+ requires Python 3.6+
 PORTSCOUT=	limit:^2\.
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>=1.0.3:devel/py-backports.functools_lru_cache@${PY_FLAVOR}
-.endif
-
-.if ${PYTHON_REL} >= 3400
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}more-itertools>=2.7:devel/py-more-itertools@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}more-itertools5>=2.7:devel/py-more-itertools5@${PY_FLAVOR}
-.endif
 
 post-install:
 	@${RM} ${STAGEDIR}${PYTHON_SITELIBDIR}/jaraco/__init__.py*
@@ -47,4 +37,4 @@ post-install:
 trim-jaraco-namespace:
 	@${REINPLACE_CMD} '/jaraco\/__init__\./d; /jaraco\/__pycache__\/__init__\./d' ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

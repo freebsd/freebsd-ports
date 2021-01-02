@@ -16007,3 +16007,9 @@ print/xfce4-print||2021-01-02|Unmaintained, depends on dropped XFCE GTK2 support
 x11/xfce4-quicklauncher-plugin||2021-01-02|Unmaintained, depends on dropped XFCE GTK2 support
 x11/xfce4-wmdock-plugin||2021-01-02|Unmaintained, depends on dropped XFCE GTK2 support
 x11-toolkits/libxfce4gui||2012-01-02|Unmaintained, depends on dropped XFCE GTK2 support
+devel/py-backports.functools_lru_cache||2020-01-02|Uses Python 2.7 which is EOLed upstream
+devel/py-backports_abc||2020-01-02|Uses Python 2.7 which is EOLed upstream
+devel/py-futures||2020-01-02|Uses Python 2.7 which is EOLed upstream
+devel/py-singledispatch||2020-01-02|Uses Python 2.7 which is EOLed upstream
+devel/py-typing||2020-01-02|Python 2 only, backport of Python 3
+graphics/py-pillow6|graphics/pillow|2020-01-02|Uses Python 2.7 which is EOLed upstream

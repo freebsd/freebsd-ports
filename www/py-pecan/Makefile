@@ -21,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=1.2:www/py-webob@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gunicorn>=0:www/py-gunicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0:databases/py-sqlalchemy10@${PY_FLAVOR}
-
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0:databases/py-sqlalchemy10@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Genshi>=0.7:textproc/py-genshi@${PY_FLAVOR}
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist concurrent
 
@@ -31,19 +31,4 @@ NO_ARCH=	yes
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} setup.py test)
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VER} < 3.4
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}singledispatch>=0:devel/py-singledispatch@${PY_FLAVOR}
-.endif
-
-.if ${PYTHON_VER} < 3.0
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Genshi>=0:textproc/py-genshi@${PY_FLAVOR}
-# To be ported
-# 		${PYTHON_PKGNAMEPREFIX}kajiki>0:textproc/py-kajiki@${PY_FLAVOR}
-.else
-# Genshi added Python3 (< 3.5) support in 0.7
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.7:textproc/py-genshi@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

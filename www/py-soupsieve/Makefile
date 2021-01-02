@@ -22,13 +22,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VER} < 3
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.functools_lru_cache>0:devel/py-backports.functools_lru_cache@${PY_FLAVOR}
-.endif
-
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
