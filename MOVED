@@ -15990,3 +15990,5 @@ games/pingus||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Pyth
 graphics/goxel||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 graphics/sk1libs||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 graphics/uniconvertor||2021-01-02|Has expired: Uses deprecated version of python
+games/dangerdeep||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
+games/dangerdeep-data||2021-01-02|Removed, useless without games/dangerdeep

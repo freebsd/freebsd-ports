@@ -184,8 +184,6 @@
     SUBDIR += d2x
     SUBDIR += dMagnetic
     SUBDIR += dangen
-    SUBDIR += dangerdeep
-    SUBDIR += dangerdeep-data
     SUBDIR += darkplaces
     SUBDIR += defendguin
     SUBDIR += devilutionX
