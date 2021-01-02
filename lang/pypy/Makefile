@@ -38,6 +38,7 @@ PYPY_DESC=	Use PyPy to translate (fastest, highest memory usage)
 PYPY_MINMEM_DESC=	Use PyPy to translate (lowest memory usage)
 TRANS_DESC=	Translation method
 LOCALBASE?=	/usr/local
+# Only allow building with pypy if it wouldn't cause a dependency loop (pypy depending on itself)
 .if exists(${LOCALBASE}/bin/pypy) || ${PORTNAME} != pypy
 OPTIONS_SINGLE_TRANS+=	PYPY PYPY_MINMEM
 . if exists(${LOCALBASE}/bin/pypy)
@@ -50,7 +51,7 @@ OPTIONS_SLAVE=	PYTHON
 .endif
 
 ALL_TARGET=	${PORTNAME}-c
-BUILD_WRKSRC?=	${WRKDIR}/build/usession-release-pypy2.7-v${DISTVERSION}rc4-0/testing_1
+BUILD_WRKSRC?=	${WRKDIR}/build/usession-${PORTNAME}-0/testing_1
 MAKE_ENV+=	PYPY_LOCALBASE=${LOCALBASE} LDSHARED="${CC} -shared"
 PACKAGE_ARGS?=	--without-gdbm --without-sqlite3 --without-tk
 LLD_UNSAFE=	yes
@@ -102,11 +103,10 @@ PYTHON_USES=	python:2.7,build
 
 DESCR=		${.CURDIR}/pkg-descr
 DISTINFO_FILE=	${.CURDIR}/distinfo
-MASTERDIR?=	${.CURDIR}
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
-.include "${MASTERDIR}/bsd.pypy.mk"
+.include "bsd.pypy.mk"
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${ARCH} != i386 && ${ARCH} != amd64
@@ -115,15 +115,12 @@ PYPY_ARGS=	--withoutmod-_vmprof
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
-post-extract:
-	${FIND} ${WRKSRC} -name '*.swn' -delete
-
 pre-build:
 	if [ ! -f ${BUILD_WRKSRC}/Makefile ]; then \
 		${RM} -r ${WRKDIR}/build; \
 		${MKDIR} ${WRKDIR}/build; \
 		(cd ${WRKSRC}/pypy/goal; \
-			${SETENV} ${MAKE_ENV} TMPDIR=${WRKDIR}/build \
+			${SETENV} ${MAKE_ENV} TMPDIR=${WRKDIR}/build PYPY_USESSION_BASENAME=${PORTNAME} \
 			${PYTHON_CMD} ../../rpython/bin/rpython --source -Ojit targetpypystandalone.py ${PYPY_ARGS}); \
 	fi
 
