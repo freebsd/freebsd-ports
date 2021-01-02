@@ -134,6 +134,7 @@ share/mime/packages/org.zrythm.Zrythm-mime.xml
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/stereo.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/text-bubble.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/track-inspector.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/unfavorite.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/view-media-visualization.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/view-visible.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/waveform.svg
