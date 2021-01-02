@@ -18,6 +18,4 @@ LIB_DEPENDS=	libBox2D.so:misc/box2d
 USES=		compiler:c11 python:3.6+
 USE_PYTHON=	autoplist distutils
 
-SUB_FILES=	pkg-message
-
 .include <bsd.port.mk>
