@@ -1,7 +1,7 @@
 bin/geonkick
 lib/lv2/geonkick.lv2/geonkick.ttl
-lib/lv2/geonkick.lv2/libgeonkick_lv2.so
-lib/lv2/geonkick.lv2/libgeonkick_single_lv2.so
+lib/lv2/geonkick.lv2/geonkick_lv2.so
+lib/lv2/geonkick.lv2/geonkick_single_lv2.so
 lib/lv2/geonkick.lv2/manifest.ttl
 share/applications/geonkick.desktop
 %%DATADIR%%/presets/AVL-Drumkit/AVL-Drumkit.gkit
