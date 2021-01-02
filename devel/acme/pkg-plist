@@ -1,0 +1,84 @@
+bin/acme
+%%DATADIR%%/6502/opcodes.a
+%%DATADIR%%/6502/rc4.a
+%%DATADIR%%/6502/split.a
+%%DATADIR%%/6502/std.a
+%%DATADIR%%/65816/std.a
+%%DATADIR%%/apple ii/convtab.bin
+%%DATADIR%%/cbm/264/basic.a
+%%DATADIR%%/cbm/264/petscii.a
+%%DATADIR%%/cbm/264/ted.a
+%%DATADIR%%/cbm/baserror.a
+%%DATADIR%%/cbm/basic1.a
+%%DATADIR%%/cbm/basic10.a
+%%DATADIR%%/cbm/basic2.a
+%%DATADIR%%/cbm/basic3.5.a
+%%DATADIR%%/cbm/basic4.a
+%%DATADIR%%/cbm/basic7.a
+%%DATADIR%%/cbm/c128/basic.a
+%%DATADIR%%/cbm/c128/kernal.a
+%%DATADIR%%/cbm/c128/kernel.a
+%%DATADIR%%/cbm/c128/mmu.a
+%%DATADIR%%/cbm/c128/petscii.a
+%%DATADIR%%/cbm/c128/vdc.a
+%%DATADIR%%/cbm/c128/vic.a
+%%DATADIR%%/cbm/c128/zeropage.a
+%%DATADIR%%/cbm/c64/basic.a
+%%DATADIR%%/cbm/c64/cia1.a
+%%DATADIR%%/cbm/c64/cia2.a
+%%DATADIR%%/cbm/c64/float.a
+%%DATADIR%%/cbm/c64/georam.a
+%%DATADIR%%/cbm/c64/kernal.a
+%%DATADIR%%/cbm/c64/kernel.a
+%%DATADIR%%/cbm/c64/memcopy.a
+%%DATADIR%%/cbm/c64/petscii.a
+%%DATADIR%%/cbm/c64/reu.a
+%%DATADIR%%/cbm/c64/sid.a
+%%DATADIR%%/cbm/c64/vic.a
+%%DATADIR%%/cbm/c65/basic.a
+%%DATADIR%%/cbm/cia.a
+%%DATADIR%%/cbm/flpt.a
+%%DATADIR%%/cbm/ioerror.a
+%%DATADIR%%/cbm/kernal.a
+%%DATADIR%%/cbm/kernel.a
+%%DATADIR%%/cbm/mflpt.a
+%%DATADIR%%/cbm/msbstring.a
+%%DATADIR%%/cbm/multicolor.a
+%%DATADIR%%/cbm/petscii.a
+%%DATADIR%%/m65/std.a
+%%PORTDOCS%%%%DOCSDIR%%/65816.txt
+%%PORTDOCS%%%%DOCSDIR%%/AddrModes.txt
+%%PORTDOCS%%%%DOCSDIR%%/AllPOs.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/Changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/Errors.txt
+%%PORTDOCS%%%%DOCSDIR%%/Example.txt
+%%PORTDOCS%%%%DOCSDIR%%/Floats.txt
+%%PORTDOCS%%%%DOCSDIR%%/Help.txt
+%%PORTDOCS%%%%DOCSDIR%%/Illegals.txt
+%%PORTDOCS%%%%DOCSDIR%%/Lib.txt
+%%PORTDOCS%%%%DOCSDIR%%/QuickRef.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReadMe.txt
+%%PORTDOCS%%%%DOCSDIR%%/Source.txt
+%%PORTDOCS%%%%DOCSDIR%%/Upgrade.txt
+%%PORTDOCS%%%%DOCSDIR%%/cputypes/all.txt
+%%PORTDOCS%%%%DOCSDIR%%/cputypes/cpu 4502.txt
+%%PORTDOCS%%%%DOCSDIR%%/cputypes/cpu 6502.txt
+%%PORTDOCS%%%%DOCSDIR%%/cputypes/cpu 65816.txt
+%%PORTDOCS%%%%DOCSDIR%%/cputypes/cpu 65c02.txt
+%%PORTDOCS%%%%DOCSDIR%%/cputypes/cpu 65ce02.txt
+%%PORTDOCS%%%%DOCSDIR%%/cputypes/cpu m65.txt
+%%PORTDOCS%%%%DOCSDIR%%/cputypes/cpu nmos6502.txt
+%%PORTDOCS%%%%DOCSDIR%%/cputypes/cpu r65c02.txt
+%%PORTDOCS%%%%DOCSDIR%%/cputypes/cpu w65c02.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c64misc.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ddrv.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/macedit.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/me/const.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/me/core.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/me/cursor.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/me/file.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/me/macros.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/me/out.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/me/vars.a
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trigono.a

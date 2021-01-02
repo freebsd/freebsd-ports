@@ -105,6 +105,7 @@
     SUBDIR += aarch64-xtoolchain-gcc
     SUBDIR += abi-compliance-checker
     SUBDIR += abseil
+    SUBDIR += acme
     SUBDIR += acsccid
     SUBDIR += activitymail
     SUBDIR += ada-util
