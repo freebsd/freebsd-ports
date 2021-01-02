@@ -2,7 +2,7 @@
 
 PORTNAME=	xray-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.5
+DISTVERSION=	1.2.0
 CATEGORIES=	security
 
 MAINTAINER=	neel@neelc.org
@@ -20,7 +20,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	xtls
 GH_PROJECT=	Xray-core
 GH_TUPLE=	\
-		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		cheekybits:genny:v1.0.0:cheekybits_genny/vendor/github.com/cheekybits/genny \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgryski:go-metro:85c65e2d0165:dgryski_go_metro/vendor/github.com/dgryski/go-metro \
@@ -32,7 +31,7 @@ GH_TUPLE=	\
 		golang:net:6772e930b67b:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:09787c993a3a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:0d417f636930:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:2d18734c6014:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.4:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -45,6 +44,7 @@ GH_TUPLE=	\
 		marten-seemann:qtls-go1-15:v0.1.1:marten_seemann_qtls_go1_15/vendor/github.com/marten-seemann/qtls-go1-15 \
 		marten-seemann:qtls:v0.10.0:marten_seemann_qtls/vendor/github.com/marten-seemann/qtls \
 		miekg:dns:v1.1.35:miekg_dns/vendor/github.com/miekg/dns \
+		pelletier:go-toml:v1.8.1:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pires:go-proxyproto:v0.3.3:pires_go_proxyproto/vendor/github.com/pires/go-proxyproto \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
