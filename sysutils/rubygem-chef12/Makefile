@@ -15,6 +15,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 DEPRECATED=	Please use sysutils/rubygem-chef instead
+BROKEN=		Please use sysutils/rubygem-chef instead
 EXPIRATION_DATE=	2021-01-31
 
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
