@@ -3,7 +3,6 @@ include/cppad/configure.hpp
 include/cppad/core/abort_recording.hpp
 include/cppad/core/abs.hpp
 include/cppad/core/abs_normal_fun.hpp
-include/cppad/core/acosh.hpp
 include/cppad/core/ad.hpp
 include/cppad/core/ad_assign.hpp
 include/cppad/core/ad_binary.hpp
@@ -16,9 +15,7 @@ include/cppad/core/ad_valued.hpp
 include/cppad/core/add.hpp
 include/cppad/core/add_eq.hpp
 include/cppad/core/arithmetic.hpp
-include/cppad/core/asinh.hpp
 include/cppad/core/atan2.hpp
-include/cppad/core/atanh.hpp
 include/cppad/core/atomic/atomic_one.hpp
 include/cppad/core/atomic/atomic_three.hpp
 include/cppad/core/atomic/atomic_two.hpp
@@ -89,9 +86,6 @@ include/cppad/core/div_eq.hpp
 include/cppad/core/drivers.hpp
 include/cppad/core/epsilon.hpp
 include/cppad/core/equal_op_seq.hpp
-include/cppad/core/erf.hpp
-include/cppad/core/erfc.hpp
-include/cppad/core/expm1.hpp
 include/cppad/core/for_hes_sparsity.hpp
 include/cppad/core/for_jac_sparsity.hpp
 include/cppad/core/for_one.hpp
@@ -114,7 +108,6 @@ include/cppad/core/identical.hpp
 include/cppad/core/independent/independent.hpp
 include/cppad/core/integer.hpp
 include/cppad/core/jacobian.hpp
-include/cppad/core/log1p.hpp
 include/cppad/core/lu_ratio.hpp
 include/cppad/core/mul.hpp
 include/cppad/core/mul_eq.hpp
@@ -143,7 +136,7 @@ include/cppad/core/sparse_hessian.hpp
 include/cppad/core/sparse_jac.hpp
 include/cppad/core/sparse_jacobian.hpp
 include/cppad/core/standard_math.hpp
-include/cppad/core/std_math_98.hpp
+include/cppad/core/std_math_11.hpp
 include/cppad/core/sub.hpp
 include/cppad/core/sub_eq.hpp
 include/cppad/core/subgraph_jac_rev.hpp
@@ -166,6 +159,7 @@ include/cppad/example/atomic_two/eigen_cholesky.hpp
 include/cppad/example/atomic_two/eigen_mat_inv.hpp
 include/cppad/example/atomic_two/eigen_mat_mul.hpp
 include/cppad/example/base_adolc.hpp
+include/cppad/example/code_gen_fun.hpp
 include/cppad/example/cppad_eigen.hpp
 include/cppad/example/eigen_plugin.hpp
 include/cppad/ipopt/solve.hpp
@@ -246,6 +240,7 @@ include/cppad/local/record/comp_op.hpp
 include/cppad/local/record/cond_exp.hpp
 include/cppad/local/record/put_dyn_atomic.hpp
 include/cppad/local/record/put_var_atomic.hpp
+include/cppad/local/record/put_var_vecad.hpp
 include/cppad/local/record/recorder.hpp
 include/cppad/local/set_get_in_parallel.hpp
 include/cppad/local/sign_op.hpp
@@ -328,6 +323,6 @@ include/cppad/utility/vector.hpp
 include/cppad/utility/vector_bool.hpp
 include/cppad/wno_conversion.hpp
 lib/libcppad_lib.so
-lib/libcppad_lib.so.340.3
+lib/libcppad_lib.so.712.0
 libdata/pkgconfig/cppad.pc
 share/pkgconfig/cppad.pc
