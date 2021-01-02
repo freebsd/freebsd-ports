@@ -3,7 +3,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	5.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	https://rawtherapee.com/shared/source/ \
 		LOCAL/mandree/
@@ -90,19 +90,13 @@ CMAKE_ARGS+=	-DCMAKE_C_COMPILER_LAUNCHER=${CCACHE_BIN} \
 .endif
 
 OPTIONS_DEFINE=		DOCS NATIVE
-OPTIONS_DEFINE_amd64=	OPENMP TCMALLOC
-OPTIONS_DEFINE_i386=	OPENMP TCMALLOC
-OPTIONS_DEFAULT=	OPENMP TCMALLOC
-# For some reason, 11.4-amd64 fails run-time tests with TCMALLOC, strip out:
-OPTIONS_EXCLUDE_FreeBSD_11=	TCMALLOC
+OPTIONS_DEFINE_amd64=	OPENMP
+OPTIONS_DEFINE_i386=	OPENMP
+OPTIONS_DEFAULT=	OPENMP
 NATIVE_DESC=		Use -march=native (avoid for generic packages!)
 OPENMP_DESC=		Enable OpenMP parallel processing (i386/amd64 only)
-TCMALLOC_DESC=		Use Google's tcmalloc instead of system allocator
 
 OPENMP_CMAKE_BOOL=	OPTION_OMP
-
-TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
-TCMALLOC_CMAKE_BOOL=	ENABLE_TCMALLOC
 
 .include <bsd.port.options.mk>
 
@@ -175,22 +169,29 @@ TESTIMAGES=	${FILESDIR}/../testimages
 _check_version=	${PKGVERSION:C/.g0//}
 _env=		LANG= LC_ALL=C LANGUAGE= DISPLAY= HOME="$$TMP" RT_SETTINGS=${WRKDIR}/rt-config RT_CACHE="$$TMP/rtcache"
 post-install:
-	@${ECHO_MSG} "===> Running smoke tests"
 	@${RM} -f ${WRKDIR}/selftest.exitcodes ${WRKDIR}/selftest.expect
-	@${RM} -rf ${WRKDIR}/rt-config
-	${MKDIR} ${WRKDIR}/rt-config ${WRKDIR}/rt-config/dcpprofiles ${WRKDIR}/rt-config/profiles
-	${CP} ${WRKSRC}/rtengine/camconst.json ${WRKDIR}/rt-config
-	${CP} ${WRKSRC}/rtdata/options/options.lin ${WRKDIR}/rt-config/options
-	(cd ${WRKSRC}/rtdata/ && ${COPYTREE_SHARE} "profiles dcpprofiles" ${WRKDIR}/rt-config )
-	@(set -x ; TMP=$$(${MKTEMP} -d -t ${PORTNAME}) && trap "rc=$$? ; ${RM} -rf \"$$TMP\" ; exit \$$rc" 0 && \
+	@(set -e; _mp=$$(/bin/df -P ${STAGEDIR}${PREFIX}/bin/rawtherapee | ${AWK} 'NR==2{print $$NF}') ; \
+	_fsflags=$$(${MOUNT} -p | ${AWK} "{ if (\$$2 == \"$$_mp\") { print \$$4 } }") ; \
+	case $$_fsflags in *noexec*) \
+		${TOUCH} ${WRKDIR}/selftest.expect ${WRKDIR}/selftest.exitcodes ; \
+		${ECHO_CMD} "===> Skipping smoke tests, STAGEDIR=${STAGEDIR} is on a noexec file system" ; \
+		exit 0 ;; \
+	esac ; \
+	${ECHO_MSG} "===> Running smoke tests" ; \
+	${RM} -rf ${WRKDIR}/rt-config ; \
+	${MKDIR} ${WRKDIR}/rt-config ${WRKDIR}/rt-config/dcpprofiles ${WRKDIR}/rt-config/profiles ; \
+	${CP} ${WRKSRC}/rtengine/camconst.json ${WRKDIR}/rt-config ; \
+	${CP} ${WRKSRC}/rtdata/options/options.lin ${WRKDIR}/rt-config/options ; \
+	(cd ${WRKSRC}/rtdata/ && ${COPYTREE_SHARE} "profiles dcpprofiles" ${WRKDIR}/rt-config ) ; \
+	(set -x ; TMP=$$(${MKTEMP} -d -t ${PORTNAME}) && trap "rc=$$? ; ${RM} -rf \"$$TMP\" ; exit \$$rc" 0 && \
 		( set +e ; ${SETENV} ${_env} ${STAGEDIR}${PREFIX}/bin/rawtherapee -v ; \
 		    echo $$? >&3 ) 3>&3 | ${EGREP} -q "RawTherapee, version ${_check_version:C/_.*//:C/,.*//}|cannot open display:" && \
 		( set +e ; ${SETENV} ${_env} ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli ; \
 		    echo $$? >&3 ) 3>&3 | ${EGREP} -q "RawTherapee, version ${_check_version:C/_.*//:C/,.*//}" && \
-		expect='0\n0\n' && \
+		expect=$$'0\n0\n' && \
 		onefile=$$(ls "${TESTIMAGES}"/* | head -1) && \
 		if test -d "${TESTIMAGES}" && test -n "$$onefile" -a -r "$$onefile" ; then \
-		  expect='0\n0\n0\n0\n0\n' && \
+		  expect=$$'0\n0\n0\n0\n0\n' && \
 		  ( set +e ; \
 		  /usr/bin/time ${SETENV} ${_env} ${STAGEDIR}${PREFIX}/bin/rawtherapee-cli \
 			-o "$$TMP" -q -f -c ${TESTIMAGES} ; echo $$? >&3 ; \
@@ -200,7 +201,9 @@ post-install:
 			-o "$$TMP" -q -s -Y -tz -c ${TESTIMAGES} ; echo $$? >&3 ) 3>&3 ; \
 		fi ; \
 		ls -Rlbai "${TESTIMAGES}" "$${TMP}" || :; \
-	${PRINTF} "%s" "$$expect" >&4 ) 3>${WRKDIR}/selftest.exitcodes 4>${WRKDIR}/selftest.expect ; \
-	${PRINTF} "$$(cat ${WRKDIR}/selftest.expect)" | cmp - ${WRKDIR}/selftest.exitcodes || { ${ECHO_CMD} '===> !!! SELF-TEST FAILED !!! <===' ; exit 1 ; }
+	${PRINTF} "%s" "$$expect" >&4 ) ) 3>${WRKDIR}/selftest.exitcodes 4>${WRKDIR}/selftest.expect  ; \
+	${HEAD} ${WRKDIR}/selftest.exitcodes ${WRKDIR}/selftest.expect ; \
+	cmp ${WRKDIR}/selftest.expect ${WRKDIR}/selftest.exitcodes \
+	|| { ${ECHO_CMD} '===> !!! SELF-TEST FAILED !!! <===' ; exit 1 ; }
 
 .include <bsd.port.post.mk>
