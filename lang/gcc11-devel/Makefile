@@ -69,6 +69,9 @@ CONFIGURE_ENV+=	UNAME_m="powerpc64"
 CONFIGURE_ARGS+=	--with-abi=elfv2
 . endif
 USE_GCC=	yes
+
+.elif ${ARCH} == powerpc64le
+USE_GCC=	yes
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran
