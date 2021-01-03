@@ -39,7 +39,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc64*}
 CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
 USES+=		compiler:gcc-c++11-lib
 .else
