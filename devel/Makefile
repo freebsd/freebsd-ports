@@ -4030,6 +4030,7 @@
     SUBDIR += py-ansi
     SUBDIR += py-antlr4-python3-runtime
     SUBDIR += py-anyconfig
+    SUBDIR += py-anyio
     SUBDIR += py-anyjson
     SUBDIR += py-apache_conf_parser
     SUBDIR += py-apipkg
