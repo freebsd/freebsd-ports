@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gem
 USE_RUBY=	yes
 
+NO_ARCH=	yes
+
 PLIST_FILES=	bin/pathspec-rb
 
 .include <bsd.port.mk>
