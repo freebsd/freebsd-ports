@@ -1273,6 +1273,7 @@
     SUBDIR += rubygem-net-protocol
     SUBDIR += rubygem-netrc
     SUBDIR += rubygem-network_interface
+    SUBDIR += rubygem-nkf
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
     SUBDIR += rubygem-octokit
