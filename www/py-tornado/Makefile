@@ -12,8 +12,6 @@ COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PY_FUTURES}
-
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
