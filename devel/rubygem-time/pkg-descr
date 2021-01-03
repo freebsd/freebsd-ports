@@ -1,0 +1,12 @@
+When 'time' is required, Time is extended with additional methods for parsing
+and converting Times.
+
+This library extends the Time class with the following conversions between date
+strings and Time objects:
+- date-time defined by RFC 2822
+- HTTP-date defined by RFC 2616.
+- dateTime defined by XML Schema Part 2: Datatypes (ISO 8601)
+- various formats handled by Date._parse
+- custom formats handled by Date._strptime
+
+WWW: https://github.com/ruby/time
