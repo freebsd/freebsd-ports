@@ -35,15 +35,6 @@ MANPAGES_BUILD_DEPENDS=	${DOCS_BUILD_DEPENDS}
 MANPAGES_MAKE_ARGS=	${DOCS_MAKE_ARGS}
 MANPAGES_USES=		gmake
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dis3>0:devel/py-dis3@${PY_FLAVOR}
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dis3>0:devel/py-dis3@${PY_FLAVOR}
-.endif
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/install_requires/s,distribute,setuptools,' \
 		${WRKSRC}/${PYSETUP}
@@ -65,4 +56,4 @@ do-install-DOCS-on:
 	(cd ${WRKSRC}/doc ; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} text ${MAKE_ARGS})
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/_build/text/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
