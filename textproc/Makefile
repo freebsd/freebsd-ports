@@ -1503,6 +1503,7 @@
     SUBDIR += ruby-rd-mode.el
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-rttool
+    SUBDIR += rubygem-abbrev
     SUBDIR += rubygem-actionpack-xml_parser-rails5
     SUBDIR += rubygem-actionpack-xml_parser-rails52
     SUBDIR += rubygem-actionpack-xml_parser1-rails4
