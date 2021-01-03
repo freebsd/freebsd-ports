@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dhcpcd-ui
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	net
 MASTER_SITES=	https://roy.marples.name/downloads/dhcpcd/ \
 		https://cflags.cc/roy/dhcpcd/
@@ -29,5 +29,8 @@ OPTIONS_SUB=		yes
 GTK3_USES=		gnome
 GTK3_USE=		gnome=gdkpixbuf2,gtk30
 GTK3_CONFIGURE_WITH=	gtk
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dhcpcd-curses ${STAGEDIR}${PREFIX}/bin/dhcpcd-online
 
 .include <bsd.port.mk>
