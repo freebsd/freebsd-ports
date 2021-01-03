@@ -6479,6 +6479,7 @@
     SUBDIR += rubygem-set
     SUBDIR += rubygem-settingslogic
     SUBDIR += rubygem-sexp_processor
+    SUBDIR += rubygem-shell
     SUBDIR += rubygem-shoulda
     SUBDIR += rubygem-shoulda-context
     SUBDIR += rubygem-shoulda-matchers

@@ -1,0 +1,6 @@
+Shell implements an idiomatic Ruby interface for common UNIX shell commands.
+
+It provides users the ability to execute commands with filters and pipes, like
+sh/csh by using native facilities of Ruby.
+
+WWW: https://github.com/ruby/shell
