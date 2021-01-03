@@ -110,6 +110,10 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-asmcomp_power_arch.ml
 USE_GCC=	yes
 .endif
 
+.if ${ARCH} == powerpc64le
+USE_GCC=	yes
+.endif
+
 post-extract:
 .if ${PORT_OPTIONS:MDOCS}
 	@if ! (cd ${WRKDIR} && \
