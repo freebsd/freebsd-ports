@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspec-core
-PORTVERSION=	3.10.0
+PORTVERSION=	3.10.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
