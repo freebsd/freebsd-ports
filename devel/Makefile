@@ -6318,6 +6318,7 @@
     SUBDIR += rubygem-parser
     SUBDIR += rubygem-pastel
     SUBDIR += rubygem-patch_finder
+    SUBDIR += rubygem-pathname
     SUBDIR += rubygem-pathspec
     SUBDIR += rubygem-pathutil
     SUBDIR += rubygem-pdk
