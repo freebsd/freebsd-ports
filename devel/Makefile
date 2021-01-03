@@ -5172,6 +5172,7 @@
     SUBDIR += py-warlock
     SUBDIR += py-watchdog
     SUBDIR += py-watchgod
+    SUBDIR += py-watermark
     SUBDIR += py-wcwidth
     SUBDIR += py-weblib
     SUBDIR += py-websockets
