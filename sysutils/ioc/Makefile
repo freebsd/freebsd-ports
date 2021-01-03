@@ -10,6 +10,8 @@ COMMENT=	Jail management CLI using libioc
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		needs devel/py-libioc
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libioc>0:devel/py-libioc@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}texttable>0:textproc/py-texttable@${PY_FLAVOR}
