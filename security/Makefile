@@ -1140,6 +1140,7 @@
     SUBDIR += rubygem-safety_net_attestation
     SUBDIR += rubygem-scrypt
     SUBDIR += rubygem-securecompare
+    SUBDIR += rubygem-securerandom
     SUBDIR += rubygem-signet
     SUBDIR += rubygem-six
     SUBDIR += rubygem-sshkey

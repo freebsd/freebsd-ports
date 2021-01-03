@@ -1,0 +1,4 @@
+Securerandom is an interface to secure random number generators which are
+suitable for generating session keys in HTTP cookies, etc.
+
+WWW: https://github.com/ruby/securerandom
