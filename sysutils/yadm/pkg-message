@@ -1,0 +1,12 @@
+[
+{
+  type: upgrade
+  maximum_version: "2.0.0"
+  message: "Version 2.0.0 changed the default storage location for storing data, after upgrading run `yadm upgrade`. See https://yadm.io/docs/upgrade_from_1 for more information."
+}
+{
+  type: upgrade
+  minimum_version: "2.0.0"
+  message: "Version 3.0.0 changed the default storage location for storing data, after upgrading run `yadm upgrade`. See https://yadm.io/docs/upgrade_from_2 for more information."
+}
+]

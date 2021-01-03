@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	yadm
-PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	vendion@gmail.com
@@ -30,7 +29,9 @@ J2CTL_USES=		python
 
 do-install:
 	@${MKDIR} ${STAGEDIR}
-	${INSTALL_MAN} ${WRKSRC}/yadm.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
-	${INSTALL_SCRIPT} ${WRKSRC}/yadm ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/yadm.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_SCRIPT} ${WRKSRC}/yadm \
+		${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
