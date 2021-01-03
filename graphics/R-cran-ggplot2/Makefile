@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	ggplot2
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Implementation of the Grammar of Graphics
 
-LICENSE=	GPLv2
+LICENSE=	MIT
 
 CRAN_DEPENDS=	R-cran-digest>0:security/R-cran-digest \
 		R-cran-glue>0:devel/R-cran-glue \
