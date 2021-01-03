@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	parso
-DISTVERSION=	0.7.1
+DISTVERSION=	0.8.1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,8 @@ COMMENT=	Python Parser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.0.7:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cache>=0:devel/py-pytest-cache@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest<6.0.0:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docopt>=0:devel/py-docopt@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
