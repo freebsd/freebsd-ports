@@ -887,6 +887,7 @@
     SUBDIR += py-qrencode
     SUBDIR += py-qt5-svg
     SUBDIR += py-rasterio
+    SUBDIR += py-rasterstats
     SUBDIR += py-rawkit
     SUBDIR += py-s2
     SUBDIR += py-scikit-image
