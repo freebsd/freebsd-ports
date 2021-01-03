@@ -848,6 +848,7 @@
     SUBDIR += py-splot
     SUBDIR += py-spot
     SUBDIR += py-spreg
+    SUBDIR += py-spvcm
     SUBDIR += py-ssm
     SUBDIR += py-statsmodels
     SUBDIR += py-statsmodels010

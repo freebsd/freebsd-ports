@@ -1,0 +1,8 @@
+Gibbs sampling for spatially-correlated variance-components
+
+This is a package to estimate spatially-correlated variance components
+models/varying intercept models. In addition to a general toolkit to conduct
+Gibbs sampling in Python, the package also provides an interface to PyMC3 and
+CODA.
+
+WWW: https://github.com/pysal/spvcm
