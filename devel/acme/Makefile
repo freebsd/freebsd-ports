@@ -5,7 +5,7 @@ PORTNAME=	acme
 DISTVERSION=	0.97.${SVN_REV}
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://sourceforge.net/code-snapshots/svn/a/ac/acme-crossass/code-0/
+MASTER_SITES=	LOCAL/ehaupt
 DISTNAME=	acme-crossass-code-0-${SVN_REV}-trunk
 
 MAINTAINER=	ehaupt@FreeBSD.org
