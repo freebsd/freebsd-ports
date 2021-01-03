@@ -22,7 +22,16 @@ Add proper architecture name:
  #endif
  
  /* CPU(PPC64) - PowerPC 64-bit Little Endian */
-@@ -135,6 +139,8 @@
+@@ -120,6 +123,8 @@
+     && defined(__BYTE_ORDER__) \
+     && (__BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__)
+ #define WTF_CPU_PPC64LE 1
++#define ENABLE_JIT 0
++#define ENABLE_SAMPLING_PROFILER 0
+ #endif
+ 
+ /* CPU(PPC) - PowerPC 32-bit */
+@@ -135,6 +140,8 @@
      && (__BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
  #define WTF_CPU_PPC 1
  #define WTF_CPU_BIG_ENDIAN 1
