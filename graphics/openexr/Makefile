@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openexr
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	graphics devel
 MASTER_SITES=	LOCAL/mandree/:test
 DISTFILES=	${PORTNAME}-2.2.0-comp_dwa-test-images.tar.xz:test
@@ -42,7 +42,7 @@ _DOC_FILES2=	*.odt *.pdf
 MAJORVER=	2_5
 _VER=		25
 _MINVER=	0
-_PLVER=		2
+_PLVER=		3
 
 PLIST_SUB+=	MAJORVER=${MAJORVER} \
 		VER=${_VER} \
