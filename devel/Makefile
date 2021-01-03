@@ -6476,6 +6476,7 @@
     SUBDIR += rubygem-sentry-raven25
     SUBDIR += rubygem-sentry-raven29
     SUBDIR += rubygem-sequel
+    SUBDIR += rubygem-set
     SUBDIR += rubygem-settingslogic
     SUBDIR += rubygem-sexp_processor
     SUBDIR += rubygem-shoulda
