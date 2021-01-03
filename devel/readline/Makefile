@@ -3,6 +3,7 @@
 
 PORTNAME=	readline
 PORTVERSION=	8.0.${PATCHLEVEL}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -37,6 +38,7 @@ PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
 .endfor
 
 post-patch:
+	@${REINPLACE_CMD} -e '/SYS_INPUTRC/ s|/etc/inputrc|${LOCALBASE}&|' ${WRKSRC}/rlconf.h
 .if exists(/usr/lib/libtermcapw.so)
 	@${REINPLACE_CMD} 's|-ltermcap|-ltermcapw|g' ${WRKSRC}/configure
 .endif
