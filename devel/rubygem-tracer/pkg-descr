@@ -1,0 +1,7 @@
+Tracer outputs a source level execution trace of a Ruby program.
+
+It does this by registering an event handler with Kernel#set_trace_func for
+processing incoming events. It also provides methods for filtering unwanted
+trace output (see Tracer.add_filter, Tracer.on, and Tracer.off).
+
+WWW: https://github.com/ruby/tracer
