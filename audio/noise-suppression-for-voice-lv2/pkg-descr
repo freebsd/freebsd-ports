@@ -1,0 +1,4 @@
+The plugin is meant to suppress a wide range of noise origins (from original
+paper): computer fans, office, crowd, airplane, car, train, construction.
+
+WWW: https://github.com/werman/noise-suppression-for-voice
