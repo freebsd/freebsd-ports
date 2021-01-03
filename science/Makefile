@@ -248,6 +248,7 @@
     SUBDIR += py-kinematics
     SUBDIR += py-kliff
     SUBDIR += py-liac-arff
+    SUBDIR += py-libpysal
     SUBDIR += py-lifelines
     SUBDIR += py-mdp
     SUBDIR += py-mmtf-python

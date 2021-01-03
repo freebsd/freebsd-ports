@@ -1,0 +1,11 @@
+Python Spatial Analysis Library Core
+
+libpysal offers four modules that form the building blocks in many upstream
+packages in the PySAL family:
+- Spatial Weights: libpysal.weights
+- Input-and output: libpysal.io
+- Computational geometry: libpysal.cg
+- Built-in example datasets libpysal.examples
+
+WWW: https://pysal.org/libpysal/
+WWW: https://github.com/pysal/libpysal
