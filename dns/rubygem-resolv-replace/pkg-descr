@@ -1,0 +1,3 @@
+resolv-replace.rb replaces Socket DNS with Resolv.
+
+WWW: https://github.com/ruby/resolv-replace
