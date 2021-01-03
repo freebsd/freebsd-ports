@@ -1,0 +1,22 @@
+--- ../cvs-build/lib/Makefile.orig	2012-09-05 19:19:41.000000000 -0700
++++ ../cvs-build/lib/Makefile	2021-01-02 17:10:09.173277000 -0800
+@@ -11,9 +11,7 @@
+ LIB=		cvs
+ INTERNALLIB=
+ 
+-# gnu must be before lib to pick correct regex.h
+-CFLAGS+= -I. -I${CVSDIR}/src -I/usr/include/gnu \
+-	 -I${CVSDIR}/lib
++CFLAGS+= -I. -I${CVSDIR}/src -I${CVSDIR}/lib
+ CFLAGS+= -DHAVE_CONFIG_H
+ YFLAGS=
+ CLEANFILES+=	config.h
+@@ -23,7 +21,7 @@
+ CVS_TMPDIR_DFLT?=	/tmp
+ 
+ SRCS=	config.h argmatch.c getdate.y getline.c \
+-	getopt.c getopt1.c savecwd.c \
++	getopt.c getopt1.c regex.c savecwd.c \
+ 	sighandle.c stripslash.c \
+ 	xgetwd.c yesno.c
+ 
