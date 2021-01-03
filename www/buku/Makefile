@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	buku
-PORTVERSION=	4.4
+PORTVERSION=	4.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.4.1:www/py-beautifulsoup@${
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.23:net/py-urllib3@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.6+
 USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes
