@@ -1,0 +1,4 @@
+Net::SMTP provides functionality to send internet mail via SMTP, the Simple Mail
+Transfer Protocol.
+
+WWW: https://github.com/ruby/net-smtp
