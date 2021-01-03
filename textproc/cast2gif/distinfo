@@ -1,4 +1,4 @@
-TIMESTAMP = 1606760178
+TIMESTAMP = 1609587915
 SHA256 (rust/crates/adler32-1.0.4.tar.gz) = 5d2e7343e7fc9de883d1b0341e0b13970f764c14101234857d2ddafa1cb1cac2
 SIZE (rust/crates/adler32-1.0.4.tar.gz) = 5105
 SHA256 (rust/crates/aho-corasick-0.7.10.tar.gz) = 8716408b8bc624ed7f65d223ddb9ac2d044c0547b6fa4b0d554f3a9540496ada
@@ -391,5 +391,5 @@ SHA256 (rust/crates/xmlparser-0.13.1.tar.gz) = ccb4240203dadf40be2de9369e5c6dec1
 SIZE (rust/crates/xmlparser-0.13.1.tar.gz) = 25480
 SHA256 (rust/crates/xmlwriter-0.1.0.tar.gz) = ec7a2a501ed189703dba8b08142f057e887dfc4b2cc4db2d343ac6376ba3e0b9
 SIZE (rust/crates/xmlwriter-0.1.0.tar.gz) = 6261
-SHA256 (katharostech-cast2gif-v0.1.0-pre1-4f76eeb_GH0.tar.gz) = 109440194d5060e266dca8b1a88e84e3b118b69fdcfe6a2caf8e2021a6840d25
-SIZE (katharostech-cast2gif-v0.1.0-pre1-4f76eeb_GH0.tar.gz) = 3113696
+SHA256 (katharostech-cast2gif-v0.1.0_GH0.tar.gz) = f22702afb311cb4f3de875c9abb1df421c3752cbe2006d62098b68c2048f0822
+SIZE (katharostech-cast2gif-v0.1.0_GH0.tar.gz) = 3114595

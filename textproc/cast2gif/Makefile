@@ -2,7 +2,7 @@
 
 PORTNAME=	cast2gif
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0-pre1
+DISTVERSION=	0.1.0
 CATEGORIES=	textproc
 
 MAINTAINER=	ed.arrakis@gmail.com
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 USES=		cargo gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	katharostech
-GH_TAGNAME=	4f76eeb
+
 CARGO_CRATES=	adler32-1.0.4 \
 		aho-corasick-0.7.10 \
 		ansi_colours-1.0.1 \
