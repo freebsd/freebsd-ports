@@ -1,0 +1,11 @@
+Multiscale Geographically Weighted Regression (MGWR)
+
+mgwr is a Python implementation of multiscale geographically weighted regression
+for investigating process spatial heterogeneity and scale. It incorporates the
+widely used approach to modeling process spatial heterogeneity - Geographically
+Weighted Regression (GWR) as well as the newly proposed approach - Multiscale
+GWR (MGWR) which relaxes the assumption that all of the processes being modeled
+operate at the same spatial scale. Inferences are available for both approaches.
+
+WWW: https://mgwr.readthedocs.io/en/latest/
+WWW: https://github.com/pysal/mgwr

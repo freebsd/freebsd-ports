@@ -844,6 +844,7 @@
     SUBDIR += py-leather
     SUBDIR += py-mapclassify
     SUBDIR += py-mcomix
+    SUBDIR += py-mgwr
     SUBDIR += py-ming
     SUBDIR += py-mpl-interactions
     SUBDIR += py-mpl-scatter-density
