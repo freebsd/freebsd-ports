@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jira-ruby
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
