@@ -1,0 +1,15 @@
+TSort implements topological sorting using Tarjan's algorithm for strongly
+connected components.
+
+TSort is designed to be able to be used with any object which can be interpreted
+as a directed graph.
+
+TSort requires two methods to interpret an object as a graph, tsort_each_node
+and tsort_each_child:
+- tsort_each_node is used to iterate for all nodes over a graph.
+- tsort_each_child is used to iterate for child nodes of a given node.
+
+The equality of nodes are defined by eql? and hash since TSort uses Hash
+internally.
+
+WWW: https://github.com/ruby/tsort

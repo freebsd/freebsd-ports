@@ -6584,6 +6584,7 @@
     SUBDIR += rubygem-treetop
     SUBDIR += rubygem-trollop
     SUBDIR += rubygem-trollop1
+    SUBDIR += rubygem-tsort
     SUBDIR += rubygem-tty
     SUBDIR += rubygem-tty-box
     SUBDIR += rubygem-tty-color
