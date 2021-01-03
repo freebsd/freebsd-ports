@@ -32,6 +32,7 @@
     SUBDIR += arirang
     SUBDIR += arpCounterattack
     SUBDIR += asignify
+    SUBDIR += assh
     SUBDIR += autossh
     SUBDIR += aws-iam-authenticator
     SUBDIR += aws-vault
