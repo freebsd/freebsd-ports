@@ -38,8 +38,11 @@ USE_BINUTILS=	yes
 
 # As of 2019-09-29, this port is known to be miscompiled by clang90
 # (SIGSEGV or SIBGUS) and 12.1's base clang.
-# So we shall stick to GCC 9.x for now
-USE_GCC=	9+
+# So we shall stick to a modern GCC for now,
+# XXX FIXME note that rawtherapee is somewhat sensitive 
+# versus compiler details so we may need to pin GCC 9.x
+# or a version range.
+USE_GCC=	yes
 
 USE_GNOME=	gtkmm30 librsvg2
 INSTALLS_ICONS=	yes
@@ -50,11 +53,12 @@ _LTO_FLAGS=	-flto=${MAKE_JOBS_NUMBER}
 #
 # llvm/clang needs -flto=thin and will automatically parallelize the link
 
+# Fix <https://bugs.freebsd.org/251041>:
 # 11.x has binutils that don't accept a --plugin option,
 # and gcc-ar9 appears to grab those, so make sure that USE_BINUTILS
 # override those in /usr/bin which usually is first in the PATH,
-# before ${LOCALBASE}/bin.  (For some reason, poudriere does not trigger this.)
-# Fixes https://bugs.freebsd.org/251041
+# before ${LOCALBASE}/bin.
+# (For some reason, poudriere does not trigger this.)
 BINARY_ALIAS+=	ar=${AR} ranlib=${RANLIB}
 #
 _AR=		${CC:S/gcc/gcc-ar/}
@@ -117,7 +121,7 @@ ONLY_FOR_ARCHS_REASON=On i386, rawtherapee malfunctions under FreeBSD 11.x - upg
 
 .if (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1300000)
 # don't waste everybody's time with Tier-2 and moving targets.
-# might add ARM64 or SPARC64 later on if they are established by the
+# might add ARM64 later on if they are established by the
 # time FreeBSD 13 is out.
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=Only amd64 is supported on non-released FreeBSD versions.
@@ -142,7 +146,7 @@ _OPT_FLAGS=	-O3 -funroll-loops
 
 # x86_64/amd64 includes -msse2 by default
 .if ${ARCH} == i386
-# and SSE2 has been around since the years 2003 latest
+# and SSE2 has been around since the year 2003 latest
 _OPT_FLAGS+=	-msse2
 .endif
 
