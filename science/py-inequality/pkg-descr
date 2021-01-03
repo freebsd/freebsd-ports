@@ -1,0 +1,5 @@
+inequality implements measures for the analysis of inequality over space and
+time and is part of the PySAL family.
+
+WWW: https://inequality.readthedocs.io/en/latest/
+WWW: https://github.com/pysal/inequality

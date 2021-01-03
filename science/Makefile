@@ -242,6 +242,7 @@
     SUBDIR += py-gsd
     SUBDIR += py-h5json
     SUBDIR += py-h5py
+    SUBDIR += py-inequality
     SUBDIR += py-jupyter_jsmol
     SUBDIR += py-kim-query
     SUBDIR += py-kinematics
