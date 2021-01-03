@@ -79,6 +79,7 @@
     SUBDIR += quftp
     SUBDIR += rexx-curl
     SUBDIR += rubygem-curb
+    SUBDIR += rubygem-net-ftp
     SUBDIR += smbftpd
     SUBDIR += spegla
     SUBDIR += tftp-hpa

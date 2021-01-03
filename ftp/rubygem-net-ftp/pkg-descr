@@ -1,0 +1,6 @@
+Net::FTP implements the File Transfer Protocol. If you have used a command-line
+FTP program, and are familiar with the commands, you will be able to use this
+class easily. Some extra features are included to take advantage of Ruby's style
+and strengths.
+
+WWW: https://github.com/ruby/net-ftp
