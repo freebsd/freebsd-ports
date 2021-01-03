@@ -1,0 +1,12 @@
+Assuming you shipped your module to CPAN with working tests, test failures from
+CPAN Testers might be due to platform issues, Perl version issues or problems
+with dependencies. This module helps you diagnose deep dependency problems by
+showing you exactly what modules and versions were loaded during a test run.
+
+When this module is loaded, it sets up an END block that will take action if the
+program is about to exit with a non-zero exit code or if
+$test_builder->is_passing is false by the time the END block is reached. If that
+happens, this module prints out the names and version numbers of non-local
+modules appearing in %INC at the end of the test.
+
+WWW: https://metacpan.org/release/Test-DiagINC
