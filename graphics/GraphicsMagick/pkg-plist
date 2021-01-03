@@ -40,6 +40,7 @@ include/GraphicsMagick/magick/describe.h
 include/GraphicsMagick/magick/draw.h
 include/GraphicsMagick/magick/effect.h
 include/GraphicsMagick/magick/enhance.h
+include/GraphicsMagick/magick/enum_strings.h
 include/GraphicsMagick/magick/error.h
 include/GraphicsMagick/magick/forward.h
 include/GraphicsMagick/magick/fx.h
@@ -94,15 +95,15 @@ lib/GraphicsMagick/config/type.mgk
 lib/libGraphicsMagick++.a
 lib/libGraphicsMagick++.so
 lib/libGraphicsMagick++.so.12
-lib/libGraphicsMagick++.so.12.4.3
+lib/libGraphicsMagick++.so.12.5.0
 lib/libGraphicsMagick.a
 lib/libGraphicsMagick.so
 lib/libGraphicsMagick.so.3
-lib/libGraphicsMagick.so.3.21.0
+lib/libGraphicsMagick.so.3.22.0
 lib/libGraphicsMagickWand.a
 lib/libGraphicsMagickWand.so
 lib/libGraphicsMagickWand.so.2
-lib/libGraphicsMagickWand.so.2.9.4
+lib/libGraphicsMagickWand.so.2.9.5
 libdata/pkgconfig/GraphicsMagick++.pc
 libdata/pkgconfig/GraphicsMagick.pc
 libdata/pkgconfig/GraphicsMagickWand.pc
@@ -224,6 +225,7 @@ man/man5/quantize.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/www/api/image.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/import.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/list.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/log.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/memory.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/monitor.html
