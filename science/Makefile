@@ -294,6 +294,7 @@
     SUBDIR += py-spaghetti
     SUBDIR += py-spglib
     SUBDIR += py-tensorflow
+    SUBDIR += py-tobler
     SUBDIR += py-veusz
     SUBDIR += pybrain
     SUBDIR += pynn

@@ -1,0 +1,5 @@
+tobler is a library for areal interpolation and dasymetric mapping. The name is
+an homage to the legendary geographer Waldo Tobler.
+
+WWW: https://pysal.org/tobler/
+WWW: https://github.com/pysal/tobler
