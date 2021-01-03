@@ -1295,6 +1295,7 @@
     SUBDIR += rubygem-omniauth-twitter
     SUBDIR += rubygem-omniauth-ultraauth
     SUBDIR += rubygem-omniauth_openid_connect
+    SUBDIR += rubygem-open-uri
     SUBDIR += rubygem-open-uri-cached
     SUBDIR += rubygem-openid_connect
     SUBDIR += rubygem-opennebula

@@ -1,0 +1,3 @@
+OpenURI is an easy-to-use wrapper for Net::HTTP, Net::HTTPS and Net::FTP.
+
+WWW: https://github.com/ruby/open-uri
