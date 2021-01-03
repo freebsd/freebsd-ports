@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	CatalystX-SimpleLogin
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,8 +25,8 @@ RUN_DEPENDS=	p5-Catalyst-Action-REST>=0.74:www/p5-Catalyst-Action-REST \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-MethodAttributes>=0.18:devel/p5-MooseX-MethodAttributes \
 		p5-MooseX-RelatedClassRoles>=0.004:devel/p5-MooseX-RelatedClassRoles \
-		p5-MooseX-Types-Common>=0:devel/p5-MooseX-Types-Common \
 		p5-MooseX-Types>=0:devel/p5-MooseX-Types \
+		p5-MooseX-Types-Common>=0:devel/p5-MooseX-Types-Common \
 		p5-Try-Tiny>=0.24:lang/p5-Try-Tiny \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean
 TEST_DEPENDS=	p5-Catalyst-Action-RenderView>=0:www/p5-Catalyst-Action-RenderView \
@@ -37,8 +37,9 @@ TEST_DEPENDS=	p5-Catalyst-Action-RenderView>=0:www/p5-Catalyst-Action-RenderView
 		p5-SQL-Translator>=0:databases/p5-SQL-Translator \
 		p5-Test-Exception>=0:devel/p5-Test-Exception
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
