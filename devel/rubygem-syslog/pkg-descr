@@ -1,0 +1,4 @@
+Syslog is a simple wrapper for the UNIX syslog system calls that might be handy
+if you're writing a server in Ruby.
+
+WWW: https://github.com/ruby/syslog
