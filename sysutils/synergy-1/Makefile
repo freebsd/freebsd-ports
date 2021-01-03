@@ -2,7 +2,7 @@
 
 PORTNAME=	synergy-1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.0
+DISTVERSION=	1.13.0
 DISTVERSIONSUFFIX=	-stable
 CATEGORIES=	sysutils
 
@@ -21,8 +21,7 @@ GH_ACCOUNT=	symless
 GH_PROJECT=	synergy-core
 USE_XORG=	ice xtst x11 sm xext xinerama xrandr xi
 
-GH_TUPLE=	google:googletest:2fe3bd994b3189899d93f1d5a881e725e046fdc2:google_googletest/ext/googletest # should not be needed: https://github.com/symless/synergy-core/issues/6787
-
+GH_TUPLE=	google:googletest:18f8200e3079b0e54fa00cb7ac55d4c39dcf6da6:google_googletest/ext/googletest # should not be needed: https://github.com/symless/synergy-core/issues/6787
 
 CONFLICTS=	synergy
 
