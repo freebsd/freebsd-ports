@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	json-ld
-PORTVERSION=	3.1.5
+PORTVERSION=	3.1.6
 CATEGORIES=	converters rubygems
 MASTER_SITES=	RG
 
