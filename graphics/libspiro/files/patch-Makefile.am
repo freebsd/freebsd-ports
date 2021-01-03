@@ -1,4 +1,4 @@
---- Makefile.am.orig	2019-07-31 14:22:46 UTC
+--- Makefile.am.orig	2020-05-05 07:46:37 UTC
 +++ Makefile.am
 @@ -1,6 +1,6 @@
  # Makefile.am - Top level automakefile for libspiro
@@ -8,7 +8,7 @@
  
  test_programs = call-test0 call-test1 call-test2 call-test3 call-test4 \
  		call-test5 call-test6 call-test7 call-test8 call-test9 \
-@@ -18,7 +18,7 @@ AM_LDFLAGS = $(WLSLIB) $(LS_LIB) -no-undefined --mode=
+@@ -19,7 +19,7 @@ AM_LDFLAGS = $(WLSLIB) $(LS_LIB) -no-undefined --mode=
  LIBTOOL_DEPS = @LIBTOOL_DEPS@
  
  DISTCLEANFILES = libspiro.pc
@@ -17,15 +17,7 @@
  
  lib_LTLIBRARIES = libspiro.la
  
-@@ -31,20 +31,13 @@ EXTRA_DIST = bezctx.md get-spiro-src.sh README-RaphLev
- 	java/ShowPlate.java java/Spiro.java java/SpiroBezierContext.java    \
- 	java/SpiroCanvas.java java/SpiroCP.java java/SpiroGeneralPath.java  \
- 	java/SpiroPointType.java README-GeorgeWilliams fontforge-debug.txt  \
--	fontforge.sh m4/ax_check_compile_flag.m4 tests/call-test.c	    \
-+	fontforge.sh m4/ax_check_compile_flag.m4	    \
- 	path5.png path6.png
- 
- include_HEADERS = bezctx.h bezctx_intf.h spiro.h spiroentrypoints.h
+@@ -39,13 +39,6 @@ man_MANS = libspiro.3
  
  libtool: $(LIBTOOL_DEPS)
  	$(SHELL) ./config.status libtool
