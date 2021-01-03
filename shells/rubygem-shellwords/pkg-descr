@@ -1,0 +1,8 @@
+Shellwords manipulates strings according to the word parsing rules of the UNIX
+Bourne shell.
+
+The shellwords() function was originally a port of shellwords.pl, but modified
+to conform to the Shell & Utilities volume of the IEEE Std 1003.1-2008, 2016
+Edition.
+
+WWW: https://github.com/ruby/shellwords
