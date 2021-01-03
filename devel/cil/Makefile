@@ -17,7 +17,7 @@ CONFLICTS=	ccured-[0-9]*
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc64
+ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc64le
 USES=		gmake perl5
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
