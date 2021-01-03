@@ -1,0 +1,4 @@
+SDBM provides a simple file-based key-value store, which can only store String
+keys and values.
+
+WWW: https://github.com/ruby/sdbm
