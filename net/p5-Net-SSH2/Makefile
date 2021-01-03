@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-SSH2
-PORTVERSION=	0.71
+PORTVERSION=	0.72
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +15,9 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libssh2.so:security/libssh2
 
-USES=		perl5
+USES=		localbase perl5
 USE_PERL5=	configure
 
-CFLAGS+=	-I${LOCALBASE}/include
 PORTEXAMPLES=	example/*
 
 OPTIONS_DEFINE=	EXAMPLES
