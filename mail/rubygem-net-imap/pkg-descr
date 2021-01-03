@@ -1,0 +1,4 @@
+Net::IMAP implements Internet Message Access Protocol (IMAP) client
+functionality.
+
+WWW: https://github.com/ruby/net-imap
