@@ -1,9 +1,11 @@
+bin/shout
 include/shout/shout.h
 lib/libshout.a
 lib/libshout.so
 lib/libshout.so.3
 lib/libshout.so.3.2.0
 libdata/pkgconfig/shout.pc
+man/man1/shout.1.gz
 share/aclocal/shout.m4
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
