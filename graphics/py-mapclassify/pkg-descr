@@ -1,5 +1,10 @@
-mapclassify is an open-source python library for Choropleth map classification.
-It is part of a refactoring of PySAL.
+Classification Schemes for Choropleth Maps
+
+mapclassify implements a family of classification schemes for choropleth maps.
+Its focus is on the determination of the number of classes, and the assignment
+of observations to those classes. It is intended for use with upstream mapping
+and geovisualization packages (see geopandas and geoplot) that handle the
+rendering of the maps.
 
 WWW: https://pysal.org/mapclassify/
 WWW: https://github.com/pysal/mapclassify
