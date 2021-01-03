@@ -1,0 +1,12 @@
+splot provides PySAL users with a lightweight visualization interface to explore
+their data and quickly iterate through static and dynamic visualisations.
+
+splot connects spatial analysis done in PySAL to different popular visualization
+toolkits like matplotlib. The splot package allows you to create both static
+plots ready for publication and interactive visualizations for quick iteration
+and spatial data exploration. The primary goal of splot is to enable you to
+visualize popular PySAL objects and gives you different views on your spatial
+analysis workflow.
+
+WWW: https://splot.readthedocs.io/en/latest/
+WWW: https://github.com/pysal/splot

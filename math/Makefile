@@ -845,6 +845,7 @@
     SUBDIR += py-spectral
     SUBDIR += py-spglm
     SUBDIR += py-spint
+    SUBDIR += py-splot
     SUBDIR += py-spot
     SUBDIR += py-ssm
     SUBDIR += py-statsmodels
