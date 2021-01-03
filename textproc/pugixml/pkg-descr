@@ -7,4 +7,4 @@ pugixml is a light-weight C++ XML processing library. It features:
 * Full Unicode support with Unicode interface variants and automatic encoding
   conversions
 
-WWW: http://pugixml.org/
+WWW: https://pugixml.org/
