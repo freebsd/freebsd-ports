@@ -826,6 +826,7 @@
     SUBDIR += py-gdal
     SUBDIR += py-geomdl
     SUBDIR += py-geopandas
+    SUBDIR += py-giddy
     SUBDIR += py-gizeh
     SUBDIR += py-glfw
     SUBDIR += py-glooey
