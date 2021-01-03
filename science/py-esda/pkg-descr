@@ -1,0 +1,9 @@
+ESDA: Exploratory Spatial Data Analysis
+
+ESDA is an open-source Python library for the exploratory analysis of spatial
+data. A subpackage of PySAL (Python Spatial Analysis Library), it is under
+active development and includes methods for global and local spatial
+autocorrelation analysis.
+
+WWW: https://pysal.org/esda/
+WWW: https://github.com/pysal/esda
