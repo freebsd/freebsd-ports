@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubocop
-PORTVERSION=	0.61.1
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -12,13 +11,14 @@ COMMENT=	Ruby code style checking tool
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-jaro_winkler>=1.5.1<1.6:devel/rubygem-jaro_winkler \
-		rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
-		rubygem-parser>=2.5<3:devel/rubygem-parser \
-		rubygem-powerpack>=0.1<1:devel/rubygem-powerpack \
+RUN_DEPENDS=	rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
+		rubygem-parser>=2.7.1.5:devel/rubygem-parser \
 		rubygem-rainbow>=2.2.2<4.0:devel/rubygem-rainbow \
+		rubygem-regexp_parser>=1.8<3.0:textproc/rubygem-regexp_parser \
+		rubygem-rexml>=0:textproc/rubygem-rexml \
+		rubygem-rubocop-ast>=1.2.0<2.0:devel/rubygem-rubocop-ast \
 		rubygem-ruby-progressbar>=1.7<2:devel/rubygem-ruby-progressbar \
-		rubygem-unicode-display_width>=1.4.0<2:devel/rubygem-unicode-display_width
+		rubygem-unicode-display_width>=1.4.0<2.0:devel/rubygem-unicode-display_width
 
 USES=		gem
 USE_RUBY=	yes
