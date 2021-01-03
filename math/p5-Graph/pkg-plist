@@ -1,9 +1,7 @@
 %%SITE_PERL%%/Graph.pm
 %%SITE_PERL%%/Graph.pod
 %%SITE_PERL%%/Graph/AdjacencyMap.pm
-%%SITE_PERL%%/Graph/AdjacencyMap/Heavy.pm
 %%SITE_PERL%%/Graph/AdjacencyMap/Light.pm
-%%SITE_PERL%%/Graph/AdjacencyMap/Vertex.pm
 %%SITE_PERL%%/Graph/AdjacencyMatrix.pm
 %%SITE_PERL%%/Graph/Attribute.pm
 %%SITE_PERL%%/Graph/BitMatrix.pm
@@ -20,7 +18,6 @@
 %%SITE_PERL%%/Graph/UnionFind.pm
 %%PERL5_MAN3%%/Graph.3.gz
 %%PERL5_MAN3%%/Graph::AdjacencyMap.3.gz
-%%PERL5_MAN3%%/Graph::AdjacencyMap::Vertex.3.gz
 %%PERL5_MAN3%%/Graph::AdjacencyMatrix.3.gz
 %%PERL5_MAN3%%/Graph::BitMatrix.3.gz
 %%PERL5_MAN3%%/Graph::Directed.3.gz
