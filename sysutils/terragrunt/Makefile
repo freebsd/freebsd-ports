@@ -17,8 +17,6 @@ USES=	go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	gruntwork-io
 
-PLIST_FILES=	bin/${PORTNAME}
-
 GH_TUPLE=	\
 		Azure:azure-sdk-for-go:v38.1.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:go-autorest:5bd9621f41a0:azure_go_autorest_date/vendor/github.com/Azure/go-autorest \
@@ -128,5 +126,9 @@ post-extract:
 	@${RLN} ${WRKSRC_azure_go_autorest_logger}/logger ${WRKSRC}/vendor/github.com/Azure/go-autorest/logger
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/tracing
 	@${RLN} ${WRKSRC_azure_go_autorest_tracing}/tracing ${WRKSRC}/vendor/github.com/Azure/go-autorest/tracing
+
+GO_BUILDFLAGS=	-ldflags="-X main.VERSION=v${PORTVERSION}"
+
+PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
