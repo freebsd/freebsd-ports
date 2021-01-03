@@ -17,9 +17,9 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 
-SHEBANG_FILES=	${WRKSRC}/tools/blitz \
-		${WRKSRC}/tools/gs_funcs \
-		${WRKSRC}/tools/gs-mount \
-		${WRKSRC}/tools/gs-sftp
+SHEBANG_FILES=	tools/blitz \
+		tools/gs_funcs \
+		tools/gs-mount \
+		tools/gs-sftp
 
 .include <bsd.port.mk>
