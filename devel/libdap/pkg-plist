@@ -140,8 +140,8 @@ include/libdap/util_mit.h
 include/libdap/xdr-datatypes.h
 lib/libdap.a
 lib/libdap.so
-lib/libdap.so.25
-lib/libdap.so.25.2.3
+lib/libdap.so.27
+lib/libdap.so.27.0.4
 lib/libdapclient.a
 lib/libdapclient.so
 lib/libdapclient.so.6
