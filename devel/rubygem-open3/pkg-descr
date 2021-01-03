@@ -1,0 +1,3 @@
+Open3 gives you access to stdin, stdout, and stderr when running other programs.
+
+WWW: https://github.com/ruby/open3
