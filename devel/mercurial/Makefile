@@ -13,7 +13,7 @@ COMMENT=	Fast, lightweight source control management system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe python shebangfix
+USES=		cpe python:3.6+ shebangfix
 SHEBANG_FILES=	contrib/hgweb.fcgi hgweb.cgi
 USE_PYTHON=	autoplist distutils
 

@@ -65,7 +65,7 @@ do-install-HTMLDOCS-on:
 LIB_DEPENDS+=	libdbus-glib-1.so:devel/dbus-glib
 RUN_DEPENDS+=	pydbus-common>=0:devel/pydbus-common
 USE_LDCONFIG=	yes
-USES+=		python
+USES+=		python:3.6+
 USE_PYTHON=	flavors py3kplist
 
 post-install:

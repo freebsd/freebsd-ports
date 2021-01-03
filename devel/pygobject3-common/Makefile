@@ -56,7 +56,7 @@ LIB_DEPENDS+=	libffi.so:devel/libffi
 RUN_DEPENDS+=	pygobject3-common>=0:devel/pygobject3-common
 
 .if ${SLAVE_PORT} == python
-USES+=		python
+USES+=		python:3.6+
 USE_PYTHON=	flavors py3kplist
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${PY_FLAVOR}

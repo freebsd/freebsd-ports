@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.4.1:devel/py-cffi@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.2.1:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>=3.27.0:devel/py-hypothesis@${PY_FLAVOR}
 
-USES=		python localbase
+USES=		python:3.6+ localbase
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	BUNDLED_NACL
