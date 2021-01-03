@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rufus-scheduler
-PORTVERSION=	3.6.0
+PORTVERSION=	3.7.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
