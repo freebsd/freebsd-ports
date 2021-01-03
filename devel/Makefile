@@ -6575,6 +6575,7 @@
     SUBDIR += rubygem-timers
     SUBDIR += rubygem-tins
     SUBDIR += rubygem-titlecase
+    SUBDIR += rubygem-tmpdir
     SUBDIR += rubygem-to_regexp
     SUBDIR += rubygem-tool
     SUBDIR += rubygem-transaction-simple

@@ -1,0 +1,7 @@
+Dir.mktmpdir creates a temporary directory. The directory is created with 0700
+permission.
+
+Application should not change the permission to make the temporary directory
+accessible from other users.
+
+WWW: https://github.com/ruby/tmpdir
