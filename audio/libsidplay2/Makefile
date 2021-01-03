@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	libsidplay2
-PORTVERSION=	2.1.1
-PORTREVISION=	8
+DISTVERSION=	2.1.1
+PORTREVISION=	9
 CATEGORIES=	audio emulators
-MASTER_SITES=	SF/sidplay2/sidplay2/sidplay-libs-${PORTVERSION}
-DISTNAME=	sidplay-libs-${PORTVERSION}
+MASTER_SITES=	SF/sidplay2/sidplay2/sidplay-libs-${DISTVERSION}
+DISTNAME=	sidplay-libs-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to play Commodore 64 SID-tunes cycle accurately
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 post-patch:
