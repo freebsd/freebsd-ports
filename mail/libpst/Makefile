@@ -17,23 +17,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgsf-1.so:devel/libgsf
 
-OPTIONS_DEFINE=	DOCS PST2DII
-OPTIONS_SUB=	yes
-PST2DII_DESC=	Allow Summation Document Image Information output
+USES=		gmake iconv libtool pathfix pkgconfig
 
 CONFIGURE_ARGS=	--disable-python --enable-libpst-shared
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-USES=		gmake iconv libtool pathfix pkgconfig
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS PST2DII
+OPTIONS_SUB=	yes
+PST2DII_DESC=	Allow Summation Document Image Information output
+
 PST2DII_BUILD_DEPENDS=	convert:graphics/ImageMagick6
 PST2DII_CONFIGURE_ENABLE=	dii
-PST2DII_USES=		localbase
 PST2DII_LIB_DEPENDS=	libgd.so:graphics/gd
 PST2DII_RUN_DEPENDS=	convert:graphics/ImageMagick6
+PST2DII_USES=		localbase
 
 post-patch:
 	@${GREP} -lr malloc.h ${WRKSRC}/ | ${XARGS} ${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g'
