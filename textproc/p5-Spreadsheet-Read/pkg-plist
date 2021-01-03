@@ -4,7 +4,7 @@ bin/xls2csv
 bin/xlscat
 bin/xlsgrep
 bin/xlsx2csv
+%%SITE_PERL%%/Spreadsheet/Read.pm
 %%PERL5_MAN1%%/xls2csv.1.gz
 %%PERL5_MAN1%%/xlsx2csv.1.gz
 %%PERL5_MAN3%%/Spreadsheet::Read.3.gz
-%%SITE_PERL%%/Spreadsheet/Read.pm
