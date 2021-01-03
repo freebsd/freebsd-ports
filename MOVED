@@ -16012,3 +16012,4 @@ devel/py-backports_abc||2020-01-02|Uses Python 2.7 which is EOLed upstream
 devel/py-futures||2020-01-02|Uses Python 2.7 which is EOLed upstream
 devel/py-singledispatch||2020-01-02|Uses Python 2.7 which is EOLed upstream
 graphics/py-pillow6|graphics/pillow|2020-01-02|Uses Python 2.7 which is EOLed upstream
+www/wt3|www/wt|2021-01-03|Has expired: Upstream end of life, switch to www/wt instead

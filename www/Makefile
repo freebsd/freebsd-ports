@@ -2281,7 +2281,6 @@
     SUBDIR += wsdlpull
     SUBDIR += wsmake
     SUBDIR += wt
-    SUBDIR += wt3
     SUBDIR += wuzz
     SUBDIR += wwwoffle
     SUBDIR += xapian-omega
