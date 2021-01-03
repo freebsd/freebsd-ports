@@ -289,6 +289,7 @@
     SUBDIR += py-scimath
     SUBDIR += py-scipy
     SUBDIR += py-scoria
+    SUBDIR += py-segregation
     SUBDIR += py-segyio
     SUBDIR += py-spglib
     SUBDIR += py-tensorflow

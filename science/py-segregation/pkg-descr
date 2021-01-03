@@ -1,0 +1,8 @@
+Segregation Analysis, Inference, and Decomposition with PySAL
+
+The PySAL segregation package is a tool for analyzing patterns of urban
+segregation. With only a few lines of code, segregation users can calculate over
+40 segregation measures from simple to state-of-the art.
+
+WWW: https://pysal.org/segregation/
+WWW: https://github.com/pysal/segregation
