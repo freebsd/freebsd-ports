@@ -20,9 +20,11 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	YAML
+OPTIONS_DEFINE=	KERBEROS YAML
+KERBEROS_DESC=	Kerberos authentication support
 YAML_DESC=	YAML output support
 
+KERBEROS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gssapi>=1.5.0:security/py-gssapi@${PY_FLAVOR}
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0:devel/py-ruamel.yaml@${PY_FLAVOR}
 
 .include <bsd.port.mk>
