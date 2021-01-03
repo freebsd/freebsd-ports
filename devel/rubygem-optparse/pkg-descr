@@ -1,0 +1,5 @@
+OptionParser is a class for command-line option analysis. It is much more
+advanced, yet also easier to use, than GetoptLong, and is a more Ruby-oriented
+solution.
+
+WWW: https://github.com/ruby/optparse
