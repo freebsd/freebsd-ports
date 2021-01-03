@@ -1,0 +1,7 @@
+Fiddle is an extension to translate a foreign function interface (FFI) with
+ruby.
+
+It wraps libffi, a popular C library which provides a portable interface that
+allows code written in one language to call code written in another language.
+
+WWW: https://github.com/ruby/fiddle
