@@ -6344,6 +6344,7 @@
     SUBDIR += rubygem-powerbar
     SUBDIR += rubygem-powerpack
     SUBDIR += rubygem-pqueue
+    SUBDIR += rubygem-prettyprint
     SUBDIR += rubygem-progressbar
     SUBDIR += rubygem-prometheus-client-mmap
     SUBDIR += rubygem-protected_attributes
