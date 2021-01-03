@@ -15,7 +15,7 @@ LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	dual
 
 # even though i386 will build, it is not really advised.
-ONLY_FOR_ARCHS=	amd64 powerpc64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	\
 	bash:shells/bash \
