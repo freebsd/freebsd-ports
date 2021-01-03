@@ -14,6 +14,9 @@ COMMENT=	Additional functools for Python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use devel/py-jaraco.functools instead
+EXPIRATION_DATE=2021-01-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaraco>=0:devel/py-jaraco@${PY_FLAVOR}
 
