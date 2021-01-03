@@ -1,0 +1,10 @@
+--- requirements.txt.orig	2020-02-07 04:10:45 UTC
++++ requirements.txt
+@@ -13,5 +13,5 @@ spvcm>=0.3.0
+ tobler>=0.2.0
+ mapclassify>=2.2.0
+ splot>=1.1.2
+-urllib3<1.25
+-python-dateutil<=2.8.0
++urllib3
++python-dateutil
