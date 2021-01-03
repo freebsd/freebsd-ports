@@ -860,6 +860,7 @@
     SUBDIR += py-pivy
     SUBDIR += py-plotly
     SUBDIR += py-png
+    SUBDIR += py-pointpats
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot

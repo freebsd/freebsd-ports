@@ -1,0 +1,9 @@
+Point Pattern Analysis (pointpats)
+
+pointpats is an open-source python library for the statistical analysis of
+planar point patterns. It is a subpackage of PySAL (Python Spatial Analysis
+Library) and is under active development for the inclusion of many newly
+proposed analytics for point patterns.
+
+WWW: https://pointpats.readthedocs.io/en/latest/
+WWW: https://github.com/pysal/pointpats
