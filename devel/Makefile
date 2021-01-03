@@ -6171,6 +6171,7 @@
     SUBDIR += rubygem-interact
     SUBDIR += rubygem-io-console
     SUBDIR += rubygem-io-like
+    SUBDIR += rubygem-io-nonblock
     SUBDIR += rubygem-iobuffer
     SUBDIR += rubygem-irb
     SUBDIR += rubygem-iso8601
