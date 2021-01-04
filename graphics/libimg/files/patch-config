@@ -30,8 +30,8 @@
 +	for p in Img/exec_prefix/lib/Img/*.sh ; do \
  		$(INSTALL_PROGRAM) $$p $(INSTALL_ROOT)$(libdir)/`basename $$p` ; \
  	done
---- configure.in	2014-06-09 15:13:46.000000000 -0400
-+++ configure.in	2013-11-21 17:03:14.000000000 -0500
+--- configure.ac	2020-08-29 18:40:53.178382500 -0400
++++ configure.ac	2021-01-04 15:12:55.394745000 -0500
 @@ -110,16 +110,12 @@
  
  TEA_CONFIG_COLLECT

@@ -7,9 +7,9 @@
 +    vars="tiff.c"
      for i in $vars; do
  	case $i in
---- tiff/tiff.c	2019-03-02 16:33:00.000000000 -0500
-+++ tiff/tiff.c	2020-01-20 21:20:18.135776000 -0500
-@@ -19,11 +19,15 @@
+--- tiff/tiff.c	2020-08-26 17:17:10.040341300 -0400
++++ tiff/tiff.c	2021-01-04 15:02:19.857169000 -0500
+@@ -20,11 +20,15 @@
  #endif
  #include "tkimg.h"
 -#include "tifftcl.h"
@@ -27,17 +27,17 @@
 -#include "jpegtcl.h"
 +#include <jpeglib.h>
  
+ static int SetupTiffLibrary(Tcl_Interp *interp);
+@@ -37,7 +41,4 @@
+ #include "tiffInt.h"
  
-@@ -35,7 +39,4 @@
- #include "init.c"
- 
--#include "tiffInt.h"
 -
+-extern DLLIMPORT int unlink(const char *);
 -
- extern DLLIMPORT int unlink(const char *);
- 
-@@ -88,52 +89,11 @@
-     Tcl_Interp *interp;
+ /*
+  * Prototypes for local procedures defined in this file:
+@@ -84,44 +85,7 @@
+ SetupTiffLibrary (Tcl_Interp *interp)
  {
 -    static int initialized = 0;
 -
@@ -45,15 +45,15 @@
 -        return TCL_ERROR;
 -    }
 -
-     if (errorMessage) {
- 	ckfree(errorMessage);
- 	errorMessage = NULL;
-     }
+-    if (errorMessage) {
+-        ckfree(errorMessage);
+-        errorMessage = NULL;
+-    }
 -    if (TIFFSetErrorHandler != NULL) {
 -        TIFFSetErrorHandler(_TIFFerr);
 -    }
 -    if (TIFFSetWarningHandler != NULL) {
--	TIFFSetWarningHandler(_TIFFwarn);
+-        TIFFSetWarningHandler(_TIFFwarn);
 -    }
 -
 -    /*
@@ -66,304 +66,374 @@
 -    }
 -
 -    if (!initialized) {
--	initialized = 1;
--	if (
--	    TIFFRegisterCODEC   && TIFFError        && TIFFPredictorInit &&
--	    _TIFFMergeFieldInfo  && TIFFFlushData1   && _TIFFNoPostDecode &&
--	    TIFFTileRowSize     && TIFFScanlineSize && _TIFFsetByteArray &&
--	    TIFFVSetField       && TIFFSwabArrayOfShort
--	    ) {
+-        initialized = 1;
+-        if (Zlibtcl_InitStubs(interp, ZLIBTCL_VERSION, 0) == NULL) {
+-            return TCL_ERROR;
+-        }
+-        TIFFRegisterCODEC (COMPRESSION_DEFLATE,  "Deflate",  TkimgTIFFInitZip);
+-        TIFFRegisterCODEC (COMPRESSION_ADOBE_DEFLATE, "AdobeDeflate", TkimgTIFFInitZip);
 -
--	  if (Zlibtcl_InitStubs(interp, ZLIBTCL_VERSION, 0) == NULL) {
--	    return TCL_ERROR;
--	  }
--	  TIFFRegisterCODEC (COMPRESSION_DEFLATE,  "Deflate",  TkimgTIFFInitZip);
--	  TIFFRegisterCODEC (COMPRESSION_ADOBE_DEFLATE, "AdobeDeflate", TkimgTIFFInitZip);
+-        if (Jpegtcl_InitStubs(interp, JPEGTCL_VERSION, 0) == NULL) {
+-            return TCL_ERROR;
+-        }
+-        TIFFRegisterCODEC (COMPRESSION_JPEG,     "JPEG",     TkimgTIFFInitJpeg);
+-        TIFFRegisterCODEC (COMPRESSION_PIXARLOG, "PixarLog", TkimgTIFFInitPixar);
+-    }
 +    TIFFSetErrorHandler(_TIFFerr);
 +    TIFFSetWarningHandler(_TIFFwarn);
- 
--	  if (Jpegtcl_InitStubs(interp, JPEGTCL_VERSION, 0) == NULL) {
--	    return TCL_ERROR;
--	  }
--	  TIFFRegisterCODEC (COMPRESSION_JPEG,     "JPEG",     TkimgTIFFInitJpeg);
--	  TIFFRegisterCODEC (COMPRESSION_PIXARLOG, "PixarLog", TkimgTIFFInitPixar);
--	}
--    }
++ 
      return TCL_OK;
  }
-@@ -451,9 +411,6 @@
- {
+@@ -435,8 +399,6 @@
+ ) {
      TIFF *tif;
--    char *tempFileName = NULL, tempFileNameBuffer[256];
--    size_t count;
-     int result;
+-    char *dir, *tempFileName = NULL, tempFileNameBuffer[1024];
+-    int count, result;
++    int result;
      tkimg_MFile handle;
--    char buffer[1024];
+-    char buffer[4096];
      char *dataPtr = NULL;
  
-@@ -462,35 +419,13 @@
+@@ -445,66 +407,13 @@
      }
  
 -    if (TIFFClientOpen) {
--	if (handle.state != IMG_STRING) {
--	    dataPtr = ckalloc((handle.length*3)/4 + 2);
--	    handle.length = tkimg_Read2(&handle, dataPtr, handle.length);
--	    handle.data = dataPtr;
--	}
--	handle.state = 0;
--	tif = TIFFClientOpen("inline data", "r", (thandle_t) &handle,
--		readString, writeString, seekString, closeDummy,
--		sizeString, mapDummy, unMapDummy);
+-        if (handle.state != IMG_STRING) {
+-            dataPtr = ckalloc((handle.length*3)/4 + 2);
+-            handle.length = tkimg_Read2(&handle, dataPtr, handle.length);
+-            handle.data = dataPtr;
+-        }
+-        handle.state = 0;
+-        tif = TIFFClientOpen("inline data", "r", (thandle_t) &handle,
+-                  readString, writeString, seekString, closeDummy,
+-                  sizeString, mapDummy, unMapDummy);
 -    } else {
--	Tcl_Channel outchan;
--	tempFileName = tmpnam(tempFileNameBuffer);
--	outchan = tkimg_OpenFileChannel(interp, tempFileName, 0644);
--	if (!outchan) {
--	    return TCL_ERROR;
--	}
+-        FILE *outfile;
+-#ifdef WIN32
+-        char dirBuffer[512];
+-        HANDLE h;
 -
--	count = (size_t)tkimg_Read2(&handle, buffer, 1024);
--	while (count == 1024) {
--	    Tcl_Write(outchan, buffer, count);
--	    count = (size_t)tkimg_Read2(&handle, buffer, 1024);
--	}
--	if (count + 1 > 1){
--	    Tcl_Write(outchan, buffer, count);
--	}
--	if (Tcl_Close(interp, outchan) == TCL_ERROR) {
--	    return TCL_ERROR;
--	}
--	tif = TIFFOpen(tempFileName, "r");
+-        dir = dirBuffer;
+-        strcpy(dir, ".");
+-        GetTempPathA(sizeof (dirBuffer), dir);
+-        tempFileName = tempFileNameBuffer;
+-        tempFileName[0] = '\0';
+-        GetTempFileNameA(dir, "tki", 0, tempFileName);
+-        h = CreateFileA(tempFileName, GENERIC_READ|GENERIC_WRITE, 0, NULL,
+-                CREATE_ALWAYS, FILE_ATTRIBUTE_TEMPORARY, NULL);
+-        if (h != INVALID_HANDLE_VALUE) {
+-            CloseHandle(h);
+-        }
+-#else
+-        dir = getenv("TMPDIR");
+-        tempFileName = tempFileNameBuffer;
+-        if (dir) {
+-            strcpy(tempFileName, dir);
+-        } else {
+-#ifdef P_tmpdir
+-            strcpy(tempFileName, P_tmpdir);
+-#else
+-            strcpy(tempFileName, "/tmp");
+-#endif
+-        }
+-        strcat(tempFileName, "/tkimgXXXXXX");
+-        result = mkstemp(tempFileName);
+-        if (result >= 0) {
+-            close(result);
+-        }
+-#endif
+-        outfile = fopen(tempFileName, "wb");
+-        if (outfile == NULL) {
+-            Tcl_AppendResult(interp, "error open output file", (char *) NULL);
+-            return TCL_ERROR;
+-        }
+-
+-        count = tkimg_Read2(&handle, buffer, sizeof (buffer));
+-        while (count == sizeof (buffer)) {
+-            fwrite(buffer, 1, sizeof (buffer), outfile);
+-            count = tkimg_Read2(&handle, buffer, sizeof (buffer));
+-        }
+-        if (count + 1 > 1){
+-            fwrite(buffer, 1, count, outfile);
+-        }
+-        fclose(outfile);
+-        tif = TIFFOpen(tempFileName, "r");
 -    }
 +    if (handle.state != IMG_STRING) {
-+       dataPtr = ckalloc((handle.length*3)/4 + 2);
-+       handle.length = tkimg_Read(&handle, dataPtr, handle.length);
-+       handle.data = dataPtr;
++        dataPtr = ckalloc((handle.length*3)/4 + 2);
++        handle.length = tkimg_Read2(&handle, dataPtr, handle.length);
++        handle.data = dataPtr;
 +    }
 +    handle.state = 0;
 +    tif = TIFFClientOpen("inline data", "r", (thandle_t) &handle,
-+       readString, writeString, seekString, closeDummy,
-+       sizeString, mapDummy, unMapDummy);
++              readString, writeString, seekString, closeDummy,
++              sizeString, mapDummy, unMapDummy);
  
      if (tif != NULL) {
-@@ -500,7 +435,4 @@
- 	result = TCL_ERROR;
+@@ -514,7 +423,4 @@
+         result = TCL_ERROR;
      }
 -    if (tempFileName) {
--	unlink(tempFileName);
+-        unlink(tempFileName);
 -    }
      if (result == TCL_ERROR) {
- 	Tcl_AppendResult(interp, errorMessage, (char *) NULL);
-@@ -527,38 +459,12 @@
- {
+         Tcl_AppendResult(interp, errorMessage, (char *) NULL);
+@@ -540,68 +446,13 @@
+ ) {
      TIFF *tif;
--    char *tempFileName = NULL, tempFileNameBuffer[256];
--    size_t count;
--    int result;
--    char buffer[1024];
+-    char *dir, *tempFileName = NULL, tempFileNameBuffer[1024];
+-    int count, result;
+-    char buffer[4096];
 -
 -    if (TIFFClientOpen) {
--	tkimg_MFile handle;
--	handle.data = (char *) chan;
--	handle.state = IMG_CHAN;
--	tif = TIFFClientOpen(fileName, "r", (thandle_t) &handle,
--		readMFile, writeDummy, seekMFile, closeDummy,
--		sizeMFile, mapDummy, unMapDummy);
+-        tkimg_MFile handle;
+-        handle.data = (char *) chan;
+-        handle.state = IMG_CHAN;
+-        tif = TIFFClientOpen(fileName, "r", (thandle_t) &handle,
+-              readMFile, writeDummy, seekMFile, closeDummy,
+-              sizeMFile, mapDummy, unMapDummy);
 -    } else {
--	Tcl_Channel outchan;
--	tempFileName = tmpnam(tempFileNameBuffer);
--	outchan = tkimg_OpenFileChannel(interp, tempFileName, 0644);
--	if (!outchan) {
--	    return TCL_ERROR;
--	}
-+    int	result;
-+    tkimg_MFile	handle;
- 
--	count = (size_t)Tcl_Read(chan, buffer, 1024);
--	while (count == 1024) {
--	    Tcl_Write(outchan, buffer, count);
--	    count = (size_t)Tcl_Read(chan, buffer, 1024);
--	}
--	if (count + 1 > 1){
--	    Tcl_Write(outchan, buffer, count);
--	}
--	if (Tcl_Close(interp, outchan) == TCL_ERROR) {
--	    return TCL_ERROR;
--	}
+-        FILE *outfile;
+-#ifdef WIN32
+-        char dirBuffer[512];
+-        HANDLE h;
 -
--	tif = TIFFOpen(tempFileName, "r");
--    }
+-        dir = dirBuffer;
+-        strcpy(dir, ".");
+-        GetTempPathA(sizeof (dirBuffer), dir);
+-        tempFileName = tempFileNameBuffer;
+-        tempFileName[0] = '\0';
+-        GetTempFileNameA(dir, "tki", 0, tempFileName);
+-        h = CreateFileA(tempFileName, GENERIC_READ|GENERIC_WRITE, 0, NULL,
+-                CREATE_ALWAYS, FILE_ATTRIBUTE_TEMPORARY, NULL);
+-        if (h != INVALID_HANDLE_VALUE) {
+-            CloseHandle(h);
+-        }
+-#else
+-        dir = getenv("TMPDIR");
+-        tempFileName = tempFileNameBuffer;
+-        if (dir) {
+-            strcpy(tempFileName, dir);
+-        } else {
+-#ifdef P_tmpdir
+-            strcpy(tempFileName, P_tmpdir);
+-#else
+-            strcpy(tempFileName, "/tmp");
+-#endif
+-        }
+-        strcat(tempFileName, "/tkimgXXXXXX");
+-        result = mkstemp(tempFileName);
+-        if (result >= 0) {
+-            close(result);
+-        }
+-#endif
+-        outfile = fopen(tempFileName, "wb");
+-        if (outfile == NULL) {
+-            Tcl_AppendResult(interp, "error open output file", (char *) NULL);
+-            return TCL_ERROR;
+-        }
++    int result;
+ 
+-        count = Tcl_Read(chan, buffer, sizeof (buffer));
+-        while (count == sizeof (buffer)) {
+-            fwrite(buffer, 1, sizeof (buffer), outfile);
+-            count = Tcl_Read(chan, buffer, sizeof (buffer));
+-        }
+-        if (count>0){
+-            fwrite(buffer, 1, count, outfile);
+-        }
+-        fclose(outfile);
++    tkimg_MFile handle;
 +    handle.data = (char *) chan;
 +    handle.state = IMG_CHAN;
 +    tif = TIFFClientOpen(fileName, "r", (thandle_t) &handle,
-+       readMFile, writeDummy, seekMFile, closeDummy,
-+       sizeMFile, mapDummy, unMapDummy);
++          readMFile, writeDummy, seekMFile, closeDummy,
++          sizeMFile, mapDummy, unMapDummy);
+ 
+-        tif = TIFFOpen(tempFileName, "r");
+-    }
      if (tif) {
- 	result = CommonRead(interp, tif, format, imageHandle,
-@@ -567,7 +473,4 @@
- 	result = TCL_ERROR;
+         result = CommonRead(interp, tif, format, imageHandle,
+@@ -610,7 +461,4 @@
+         result = TCL_ERROR;
      }
 -    if (tempFileName) {
--	unlink(tempFileName);
+-        unlink(tempFileName);
 -    }
      if (result == TCL_ERROR) {
- 	Tcl_AppendResult(interp, errorMessage, (char *) NULL);
-@@ -637,5 +540,5 @@
+         Tcl_AppendResult(interp, errorMessage, (char *) NULL);
+@@ -678,5 +526,5 @@
      npixels = w * h;
  
 -    raster = (uint32*) TkimgTIFFmalloc(npixels * sizeof (uint32));
 +    raster = (uint32*) _TIFFmalloc(npixels * sizeof (uint32));
      block.width = w;
      block.height = h;
-@@ -648,5 +551,5 @@
+@@ -689,5 +537,5 @@
  
      if (!TIFFReadRGBAImage(tif, w, h, raster, 0) || errorMessage) {
 -        TkimgTIFFfree (raster);
 +        _TIFFfree (raster);
- 	if (errorMessage) {
- 	    Tcl_AppendResult(interp, errorMessage, (char *) NULL);
-@@ -665,5 +568,5 @@
+         if (errorMessage) {
+             Tcl_AppendResult(interp, errorMessage, (char *) NULL);
+@@ -705,5 +553,5 @@
      }
  
 -    TkimgTIFFfree (raster);
 +    _TIFFfree (raster);
      TIFFClose(tif);
      return result;
-@@ -676,7 +579,6 @@
- ) {
-     TIFF *tif;
--    int result, comp;
-+    int result, comp, length;
+@@ -718,5 +566,4 @@
+     int result, comp;
      tkimg_MFile handle;
--    char *tempFileName = NULL, tempFileNameBuffer[256];
+-    char *dir, *tempFileName = NULL, tempFileNameBuffer[256];
      Tcl_DString dstring;
      const char *mode;
-@@ -688,14 +590,9 @@
+@@ -728,46 +575,9 @@
      }
  
 -    if (TIFFClientOpen) {
--	Tcl_DStringInit(&dstring);
--	tkimg_WriteInit(&dstring, &handle);
--	tif = TIFFClientOpen("inline data", mode, (thandle_t) &handle,
--		readString, writeString, seekString, closeDummy,
--		sizeString, mapDummy, unMapDummy);
+-        Tcl_DStringInit(&dstring);
+-        tkimg_WriteInit(&dstring, &handle);
+-        tif = TIFFClientOpen("inline data", mode, (thandle_t) &handle,
+-                readString, writeString, seekString, closeDummy,
+-                sizeString, mapDummy, unMapDummy);
 -    } else {
--	tempFileName = tmpnam(tempFileNameBuffer);
--	tif = TIFFOpen(tempFileName,mode);
+-#ifdef WIN32
+-        char dirBuffer[512];
+-        HANDLE h;
+-
+-        dir = dirBuffer;
+-        strcpy(dir, ".");
+-        GetTempPathA(sizeof (dirBuffer), dir);
+-        tempFileName = tempFileNameBuffer;
+-        tempFileName[0] = '\0';
+-        GetTempFileNameA(dir, "tki", 0, tempFileName);
+-        h = CreateFileA(tempFileName, GENERIC_READ|GENERIC_WRITE, 0, NULL,
+-                CREATE_ALWAYS, FILE_ATTRIBUTE_TEMPORARY, NULL);
+-        if (h != INVALID_HANDLE_VALUE) {
+-            CloseHandle(h);
+-        }
+-#else
+-        dir = getenv("TMPDIR");
+-        tempFileName = tempFileNameBuffer;
+-        if (dir) {
+-            strcpy(tempFileName, dir);
+-        } else {
+-#ifdef P_tmpdir
+-            strcpy(tempFileName, P_tmpdir);
+-#else
+-            strcpy(tempFileName, "/tmp");
+-#endif
+-        }
+-        strcat(tempFileName, "/tkimgXXXXXX");
+-        result = mkstemp(tempFileName);
+-        if (result >= 0) {
+-            close(result);
+-        }
+-#endif
+-        tif = TIFFOpen(tempFileName,mode);
 -    }
 +    Tcl_DStringInit(&dstring);
 +    tkimg_WriteInit(&dstring, &handle);
 +    tif = TIFFClientOpen("inline data", mode, (thandle_t) &handle,
-+	readString, writeString, seekString, closeDummy,
-+	sizeString, mapDummy, unMapDummy);
++            readString, writeString, seekString, closeDummy,
++            sizeString, mapDummy, unMapDummy);
  
      result = CommonWrite(interp, tif, comp, blockPtr);
-@@ -703,7 +600,4 @@
+@@ -775,11 +585,4 @@
  
      if (result != TCL_OK) {
--	if (tempFileName) {
--	    unlink(tempFileName);
--	}
- 	Tcl_AppendResult(interp, errorMessage, (char *) NULL);
- 	ckfree(errorMessage);
-@@ -712,29 +606,8 @@
+-        if (tempFileName) {
+-#ifdef WIN32
+-            DeleteFileA(tempFileName);
+-#else
+-            unlink(tempFileName);
+-#endif
+-        }
+         Tcl_AppendResult(interp, errorMessage, (char *) NULL);
+         ckfree(errorMessage);
+@@ -788,43 +591,13 @@
      }
  
 -    if (tempFileName) {
--	Tcl_Channel inchan;
--	char buffer[1024];
--	inchan = tkimg_OpenFileChannel(interp, tempFileName, 0644);
--	if (!inchan) {
--	    return TCL_ERROR;
--	}
--	tkimg_WriteInit(&data, &handle);
+-        FILE *infile;
+-        char buffer[4096];
 -
--	result = Tcl_Read(inchan, buffer, 1024);
--	while ((result == TCL_OK) && !Tcl_Eof(inchan)) {
--	    tkimg_Write2(&handle, buffer, result);
--	    result = Tcl_Read(inchan, buffer, 1024);
--	}
--	if (result == TCL_OK) {
--	    tkimg_Write2(&handle, buffer, result);
--	    result = Tcl_Close(interp, inchan);
--	}
--	unlink(tempFileName);
+-        infile = fopen(tempFileName, "rb");
+-        if (infile == NULL) {
+-            Tcl_AppendResult(interp, "error open input file", (char *) NULL);
+-            return TCL_ERROR;
+-        }
+-        tkimg_WriteInit(&data, &handle);
+-
+-        result = fread(buffer, 1, sizeof (buffer), infile);
+-        while (result > 0) {
+-            tkimg_Write2(&handle, buffer, result);
+-            result = fread(buffer, 1, sizeof (buffer), infile);
+-        }
+-        if (ferror(infile)) {
+-            Tcl_AppendResult(interp, "error reading input file", (char *) NULL);
+-            result = TCL_ERROR;
+-        }
+-        fclose(infile);
+-#ifdef WIN32
+-        DeleteFileA(tempFileName);
+-#else
+-        unlink(tempFileName);
+-#endif
 -    } else {
--	int length = handle.length;
--	tkimg_WriteInit(&data, &handle);
--	tkimg_Write2(&handle, Tcl_DStringValue(&dstring), length);
--	Tcl_DStringFree(&dstring);
+-        int length = handle.length;
+-        tkimg_WriteInit(&data, &handle);
+-        tkimg_Write2(&handle, Tcl_DStringValue(&dstring), length);
+-        Tcl_DStringFree(&dstring);
 -    }
-+    length = handle.length;
++    int length = handle.length;
 +    tkimg_WriteInit(&data, &handle);
-+    tkimg_Write(&handle, Tcl_DStringValue(&dstring), length);
++    tkimg_Write2(&handle, Tcl_DStringValue(&dstring), length);
 +    Tcl_DStringFree(&dstring);
++ 
      tkimg_Putc(IMG_DONE, &handle);
-     if (result == TCL_OK) {
-@@ -956,36 +829,2 @@
-     return TCL_OK;
+-    if (result == TCL_OK) {
+-        Tcl_DStringResult(interp, &data);
+-    } else {
+-        Tcl_DStringFree(&data);
+-    }
+-    return result;
++    Tcl_DStringResult(interp, &data);
++ 
++    return TCL_OK;
  }
--
--void
--TkimgTIFFfree (data)
--    tdata_t data;
--{
+ 
+@@ -1043,9 +816,5 @@
+ TkimgTIFFfree(tdata_t data)
+ {
 -    if (_TIFFfree) {
--	_TIFFfree(data);
+-        _TIFFfree(data);
 -    } else {
--	ckfree((char *) data);
+-        ckfree((char *) data);
 -    }
--}
--
--tdata_t
--TkimgTIFFmalloc(size)
--    tsize_t size;
--{
++    _TIFFfree(data);
+ }
+ 
+@@ -1053,9 +822,5 @@
+ TkimgTIFFmalloc(tsize_t size)
+ {
 -    if (_TIFFmalloc) {
--	return _TIFFmalloc(size);
+-        return _TIFFmalloc(size);
 -    } else {
--	return ckalloc(size);
+-        return attemptckalloc(size);
 -    }
--}
--
--tdata_t
--TkimgTIFFrealloc(data, size)
--    tdata_t data;
--    tsize_t size;
--{
++    return _TIFFmalloc(size);
+ }
+ 
+@@ -1065,8 +830,4 @@
+     tsize_t size
+ ) {
 -    if (_TIFFrealloc) {
--	return _TIFFrealloc(data, size);
+-        return _TIFFrealloc(data, size);
 -    } else {
--	return ckrealloc(data, size);
+-        return attemptckrealloc(data, size);
 -    }
--}
---- tests/tiff.test	2016-07-30 10:31:08.000000000 -0400
-+++ tests/tiff.test	2020-01-20 21:44:30.430340000 -0500
-@@ -22,5 +22,5 @@
-     source $file.base64
- 
--    test tiff-1.1 {} -setup {
-+    test tiff-1.1 {} -constraints nonPortable -setup {
-         catch {image delete i}
-     } -body {
-@@ -31,5 +31,5 @@
-     } -result $imgdata
- 
--    test tiff-1.2 {} -setup {
-+    test tiff-1.2 {} -constraints nonPortable -setup {
-         catch {image delete i}
-     } -body {
-@@ -40,5 +40,5 @@
-     } -result $imgdata
- 
--    test tiff-1.3 {} -setup {
-+    test tiff-1.3 {} -constraints nonPortable -setup {
-         catch {image delete i}
-     } -body {
-@@ -50,5 +50,5 @@
-     } -result $imgdata
- 
--    test tiff-1.4 {} -setup {
-+    test tiff-1.4 {} -constraints nonPortable -setup {
-         catch {image delete i}
-     } -body {
++    return _TIFFrealloc(data, size);
+ }

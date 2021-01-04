@@ -1,31 +1,43 @@
---- jpeg/jpeg.c	2018-09-14 09:53:49.000000000 -0400
-+++ jpeg/jpeg.c	2020-01-20 21:56:13.089925000 -0500
-@@ -62,5 +62,9 @@
- 
+--- jpeg/jpeg.c	2019-03-22 10:47:24.654594000 -0400
++++ jpeg/jpeg.c	2021-01-04 14:38:51.161931000 -0500
+@@ -64,5 +64,9 @@
  #include "tkimg.h"
+ #ifdef USE_TCL_STUBS
 -#include "jpegtcl.h"
 +#ifdef EXTERN
 +#	undef EXTERN
 +#endif
 +#include <jpeglib.h>
 +#include <jerror.h>
+ #else
+ #include "jpeglib.h"
+@@ -70,8 +74,5 @@
+ #endif
  
- static int SetupJPegLibrary(Tcl_Interp *interp);
-@@ -143,86 +147,11 @@
+-static int SetupJPegLibrary(Tcl_Interp *interp);
+-
+-#define MORE_INITIALIZATION \
+-    if (SetupJPegLibrary (interp) != TCL_OK) { return TCL_ERROR; }
++#define MORE_INITIALIZATION {}
+ 
+ #include "init.c"
+@@ -149,88 +150,4 @@
  
  
 -
- static int
- SetupJPegLibrary (interp)
-     Tcl_Interp *interp;
- {
+-static int
+-SetupJPegLibrary(
+-    Tcl_Interp *interp
+-) {
 -    struct jpeg_compress_struct *cinfo; /* libjpeg's parameter structure */
 -    struct my_error_mgr jerror;	/* for controlling libjpeg error handling */
 -    int i;
 -
+-#ifdef USE_TCL_STUBS
 -    if (Jpegtcl_InitStubs(interp, JPEGTCL_VERSION, 0) == NULL) {
 -        return TCL_ERROR;
 -    }
+-#endif
 -
 -    /* The followin code tries to determine if the JPEG library is
 -       valid at all. The library might be configured differently,
@@ -92,30 +104,23 @@
 -    }
 -    jpeg_destroy_compress(cinfo);
 -    ckfree((char *) cinfo);
-     return TCL_OK;
- }
- 
+-    return TCL_OK;
+-}
+-
 -
  /*
   *----------------------------------------------------------------------
-@@ -860,8 +789,6 @@
- 		}
+@@ -866,8 +783,6 @@
  		case 2: {
+ #ifdef USE_JPEGTCL_STUBS
 -		    if (jpeg_simple_progression != NULL) {
 -			/* Select simple progressive mode. */
 -			jpeg_simple_progression(cinfo);
 -		    }
 +		    /* Select simple progressive mode. */
 +		    jpeg_simple_progression(cinfo);
- 		    break;
- 		}
-@@ -899,5 +826,5 @@
-     greenOffset = blockPtr->offset[1] - blockPtr->offset[0];
-     blueOffset = blockPtr->offset[2] - blockPtr->offset[0];
--    if ((jpeg_set_colorspace != NULL) &&
-+    if (
- 	    (grayscale || (!greenOffset && !blueOffset))) {
- 	/* Generate monochrome JPEG file if source block is grayscale. */
+ #else
+ 		    jpeg_simple_progression(cinfo);
 --- tests/jpeg.test	2016-07-30 10:30:48.000000000 -0400
 +++ tests/jpeg.test	2020-01-20 21:43:20.086115000 -0500
 @@ -24,5 +24,5 @@

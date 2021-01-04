@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libimg
-PORTVERSION=	1.4.9
+PORTVERSION=	1.4.12
 CATEGORIES?=	graphics tk tcl
 MASTER_SITES=	SF/tkimg/tkimg/${PORTVERSION:R}/tkimg%20${PORTVERSION}
 DISTNAME=	Img-${PORTVERSION}-Source
@@ -35,6 +35,7 @@ EXTRACT_AFTER_ARGS= --exclude 'config.*' --exclude Makefile	\
 		--exclude 'compat' --exclude win
 MAKE_ARGS+=	INSTALL_ROOT="${STAGEDIR}"
 CONFIGURE_ENV=	WRKDIR="${WRKDIR}"
+CONFIGURE_ARGS+=--enable-shared --disable-stubs
 
 post-patch:
 	${REINPLACE_CMD} -E -e 's,"(zlib|tiff|jpeg|png)tcl.h",<\1.h>,' \
