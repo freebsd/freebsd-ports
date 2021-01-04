@@ -973,6 +973,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5333delta.1.gz
 %%MAN1%%/perl5334delta.1.gz
 %%MAN1%%/perl5335delta.1.gz
+%%MAN1%%/perl5336delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1011,6 +1012,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perldeprecation.1.gz
 %%MAN1%%/perldiag.1.gz
 %%MAN1%%/perldoc.1.gz
+%%MAN1%%/perldocstyle.1.gz
 %%MAN1%%/perldos.1.gz
 %%MAN1%%/perldsc.1.gz
 %%MAN1%%/perldtrace.1.gz
@@ -1034,6 +1036,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perlfunc.1.gz
 %%MAN1%%/perlgit.1.gz
 %%MAN1%%/perlglossary.1.gz
+%%MAN1%%/perlgov.1.gz
 %%MAN1%%/perlgpl.1.gz
 %%MAN1%%/perlguts.1.gz
 %%MAN1%%/perlhack.1.gz
@@ -1772,6 +1775,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5333delta.pod
 %%PRIV_LIB%%/pod/perl5334delta.pod
 %%PRIV_LIB%%/pod/perl5335delta.pod
+%%PRIV_LIB%%/pod/perl5336delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
@@ -1809,6 +1813,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perldeprecation.pod
 %%PRIV_LIB%%/pod/perldiag.pod
 %%PRIV_LIB%%/pod/perldoc.pod
+%%PRIV_LIB%%/pod/perldocstyle.pod
 %%PRIV_LIB%%/pod/perldos.pod
 %%PRIV_LIB%%/pod/perldsc.pod
 %%PRIV_LIB%%/pod/perldtrace.pod
@@ -1832,6 +1837,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perlfunc.pod
 %%PRIV_LIB%%/pod/perlgit.pod
 %%PRIV_LIB%%/pod/perlglossary.pod
+%%PRIV_LIB%%/pod/perlgov.pod
 %%PRIV_LIB%%/pod/perlgpl.pod
 %%PRIV_LIB%%/pod/perlguts.pod
 %%PRIV_LIB%%/pod/perlhack.pod
