@@ -2,7 +2,7 @@
 
 PORTNAME=	lychee
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	www net
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -28,9 +28,8 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		aho-corasick-0.7.13 \
 		ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.35 \
+		anyhow-1.0.37 \
 		arc-swap-0.4.7 \
-		arrayref-0.3.6 \
 		arrayvec-0.5.1 \
 		ascii_utils-0.9.3 \
 		assert_cmd-1.0.2 \
@@ -60,7 +59,6 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		bastion-executor-0.4.0 \
 		bastion-utils-0.3.2 \
 		bitflags-1.2.1 \
-		blake2b_simd-0.5.11 \
 		block-buffer-0.7.3 \
 		block-buffer-0.9.0 \
 		block-padding-0.1.5 \
@@ -84,9 +82,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		concurrent-queue-1.2.2 \
 		config-0.10.1 \
 		console-0.12.0 \
-		console_error_panic_hook-0.1.6 \
 		const_fn-0.4.2 \
-		constant_time_eq-0.1.5 \
 		cookie-0.14.3 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
@@ -110,8 +106,8 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		difference-2.0.0 \
 		digest-0.8.1 \
 		digest-0.9.0 \
-		dirs-2.0.2 \
-		dirs-sys-0.3.5 \
+		dirs-next-2.0.0 \
+		dirs-sys-next-0.1.1 \
 		discard-1.0.4 \
 		doc-comment-0.3.3 \
 		either-1.6.0 \
@@ -161,7 +157,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		hmac-0.10.1 \
 		hostname-0.1.5 \
 		hostname-0.3.1 \
-		http-0.2.1 \
+		http-0.2.2 \
 		http-body-0.3.1 \
 		http-types-2.8.0 \
 		httparse-1.3.4 \
@@ -225,7 +221,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		opaque-debug-0.3.0 \
 		openssl-0.10.30 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.58 \
+		openssl-sys-0.9.60 \
 		parking-2.0.0 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.0 \
@@ -242,7 +238,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		polling-1.0.2 \
 		polyval-0.4.2 \
 		ppv-lite86-0.2.9 \
-		predicates-1.0.5 \
+		predicates-1.0.6 \
 		predicates-core-1.0.0 \
 		predicates-tree-1.0.0 \
 		proc-macro-error-1.0.4 \
@@ -264,15 +260,13 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.21 \
 		remove_dir_all-0.5.3 \
-		reqwest-0.10.9 \
+		reqwest-0.10.10 \
 		resolv-conf-0.6.3 \
 		ring-0.16.15 \
-		rust-argon2-0.8.3 \
 		rustc-demangle-0.1.16 \
 		rustc_version-0.2.3 \
 		ryu-1.0.5 \
 		schannel-0.1.19 \
-		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
 		security-framework-0.4.4 \
 		security-framework-sys-0.4.3 \
@@ -280,14 +274,14 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		semver-parser-0.7.0 \
 		serde-1.0.118 \
 		serde_derive-1.0.118 \
-		serde_json-1.0.57 \
+		serde_json-1.0.61 \
 		serde_qs-0.7.0 \
 		serde_urlencoded-0.7.0 \
 		sha-1-0.8.2 \
 		sha1-0.6.0 \
 		sha2-0.9.2 \
 		sharded-slab-0.0.9 \
-		shellexpand-2.0.0 \
+		shellexpand-2.1.0 \
 		signal-hook-registry-1.2.1 \
 		simple_asn1-0.4.1 \
 		slab-0.4.2 \
@@ -325,7 +319,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		tokio-socks-0.3.0 \
 		tokio-tls-0.3.1 \
 		tokio-util-0.3.1 \
-		toml-0.5.7 \
+		toml-0.5.8 \
 		tower-service-0.3.0 \
 		tracing-0.1.19 \
 		tracing-attributes-0.1.11 \
@@ -362,8 +356,6 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		wasm-bindgen-macro-0.2.68 \
 		wasm-bindgen-macro-support-0.2.68 \
 		wasm-bindgen-shared-0.2.68 \
-		wasm-bindgen-test-0.3.18 \
-		wasm-bindgen-test-macro-0.3.18 \
 		web-sys-0.3.44 \
 		wepoll-sys-stjepang-1.0.6 \
 		widestring-0.4.2 \
