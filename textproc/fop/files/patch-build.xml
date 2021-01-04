@@ -1,6 +1,8 @@
---- build.xml.orig	2017-04-03 11:23:57 UTC
-+++ build.xml
-@@ -208,7 +208,7 @@ list of possible build targets.
+This patch reverts FOP-2895 to avoid dependency on maven.
+
+--- fop/build.xml.orig	2020-05-05 09:42:05 UTC
++++ fop/build.xml
+@@ -207,7 +207,7 @@ list of possible build targets.
    <property name="lib.dir" value="${basedir}/lib"/>
    <property name="user.hyph.dir" value="${basedir}/hyph"/>
    <property name="unidata.dir" value="${basedir}/UNIDATA"/>
@@ -9,7 +11,7 @@
    <property name="test.dir" value="${basedir}/test"/>
    <property name="test.java.dir" value="${src.dir}/test/java"/>
    <property name="test.resources.dir" value="${src.dir}/test/resources"/>
-@@ -348,7 +348,7 @@ list of possible build targets.
+@@ -347,7 +347,7 @@ list of possible build targets.
    <target name="compile-java" depends="init, codegen">
  <!-- create directories -->
      <mkdir dir="${build.classes.dir}"/>
@@ -18,3 +20,133 @@
        <src path="${build.gensrc.dir}"/>
        <src path="${core.src.java.dir}"/>
        <src path="${events.src.java.dir}"/>
+@@ -606,6 +606,59 @@ list of possible build targets.
+       </lib>
+     </war>
+   </target>
++  <patternset id="transcoder-classes">
++<!-- General classes -->
++    <patternset>
++      <include name="org/apache/fop/Version.class"/>
++      <include name="org/apache/fop/accessibility/StructureTreeElement.class"/>
++      <include name="org/apache/fop/apps/Fop.class"/>
++      <include name="org/apache/fop/apps/FOPException.class"/>
++      <include name="org/apache/fop/apps/io/**"/>
++      <include name="org/apache/fop/area/AreaTreeControl*"/>
++      <include name="org/apache/fop/complexscripts/bidi/BidiClass.class"/>
++      <include name="org/apache/fop/complexscripts/bidi/BidiConstants.class"/>
++      <include name="org/apache/fop/complexscripts/bidi/UnicodeBidiAlgorithm.class"/>
++      <include name="org/apache/fop/complexscripts/fonts/*.class"/>
++      <include name="org/apache/fop/complexscripts/util/GlyphTester.class"/>
++      <include name="org/apache/fop/events/EventProducer.class"/>
++      <include name="org/apache/fop/fo/Constants.class"/>
++      <include name="org/apache/fop/fo/FOTreeBuilder.class"/>
++      <include name="org/apache/fop/image/loader/batik/BatikImageFlavors*.class"/>
++      <include name="org/apache/fop/svg/**"/>
++      <include name="org/apache/fop/fonts/**"/>
++      <include name="org/apache/fop/render/gradient/**"/>
++      <include name="org/apache/fop/traits/Direction.class"/>
++      <include name="org/apache/fop/traits/MinOptMax.class"/>
++      <include name="org/apache/fop/traits/TraitEnum.class"/>
++      <include name="org/apache/fop/util/CMYKColorSpace*.class"/>
++      <include name="org/apache/fop/util/Color*.class"/>
++      <include name="org/apache/fop/util/ASCII*.class"/>
++      <include name="org/apache/fop/util/*OutputStream.class"/>
++      <include name="org/apache/fop/util/SubInputStream.class"/>
++      <include name="org/apache/fop/util/Finalizable.class"/>
++      <include name="org/apache/fop/util/CharUtilities*.class"/>
++      <include name="org/apache/fop/util/DecimalFormatCache*.class"/>
++      <include name="org/apache/fop/util/ImageObject.class"/>
++      <include name="org/apache/fop/util/HexEncoder.class"/>
++      <include name="org/apache/fop/configuration/**"/>
++    </patternset>
++<!-- PDF transcoder -->
++    <patternset>
++      <include name="org/apache/fop/render/pdf/**"/>
++      <exclude name="org/apache/fop/render/pdf/PDFRenderer.class"/>
++      <exclude name="org/apache/fop/render/pdf/PDFXMLHandler*"/>
++      <include name="org/apache/fop/render/intermediate/IFDocumentHandlerConfigurator.class"/>
++      <include name="org/apache/fop/render/**Config**"/>
++      <include name="org/apache/fop/util/AbstractPaintingState**"/>
++      <include name="org/apache/fop/pdf/**"/>
++    </patternset>
++<!-- PS transcoder -->
++    <patternset>
++      <include name="org/apache/fop/render/ps/**"/>
++      <exclude name="org/apache/fop/render/pdf/PSRenderer.class"/>
++      <exclude name="org/apache/fop/render/pdf/PSXMLHandler*"/>
++    </patternset>
++  </patternset>
+   <fileset dir="${build.classes.dir}" id="transcoder-classes-files">
+     <patternset refid="transcoder-classes"/>
+   </fileset>
+@@ -614,15 +667,60 @@ list of possible build targets.
+     <include name="commons-logging*.jar"/>
+     <include name="xmlgraphics-commons*.jar"/>
+   </fileset>
+-  <target name="transcoder-pkg" depends="remove-cache" description="Generates the jar for the transcoder package for Batik">
+-    <exec executable="mvn" dir="${basedir}/.." failonerror="true">
+-      <env key="MAVEN_OPTS" value="-Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2"/>
+-      <arg value="clean"/>
+-      <arg value="install"/>
+-      <arg value="-DskipTests"/>
+-    </exec>
+-    <copy file="${basedir}/../fop-transcoder/target/fop-transcoder-${version}.jar" tofile="${build.dir}/fop-transcoder.jar"/>
+-    <copy file="${basedir}/../fop-transcoder-allinone/target/fop-transcoder-allinone-${version}.jar" tofile="${build.dir}/fop-transcoder-allinone.jar"/>
++  <target name="uptodate-transcoder-pkg" depends="compile">
++    <uptodate property="transcoder.pkg.uptodate" targetfile="${build.dir}/fop-transcoder.jar">
++      <srcfiles refid="transcoder-classes-files"/>
++      <srcfiles refid="transcoder-lib-files"/>
++    </uptodate>
++  </target>
++  <target name="transcoder-pkg" depends="remove-cache, uptodate-transcoder-pkg, compile" description="Generates the jar for the transcoder package for Batik" unless="transcoder.pkg.uptodate">
++    <echo message="Creating the jar file ${build.dir}/fop-transcoder.jar"/>
++    <property name="fop-transcoder.name" value="FOP Transcoder Package"/>
++    <property name="fop-transcoder.version" value="${version}"/>
++    <tstamp>
++      <format property="ts" pattern="yyyyMMdd-HHmmss-z"/>
++    </tstamp>
++<!-- lean transcoder jar -->
++    <jar jarfile="${build.dir}/fop-transcoder.jar">
++      <fileset refid="transcoder-classes-files"/>
++      <manifest>
++        <attribute name="Implementation-Title" value="${fop-transcoder.name}"/>
++        <attribute name="Implementation-Version" value="${fop-transcoder.version}"/>
++        <attribute name="Implementation-Vendor" value="The Apache Software Foundation (http://xmlgraphics.apache.org/fop/)"/>
++        <attribute name="Build-Id" value="${ts} (${user.name} [${os.name} ${os.version} ${os.arch}, Java ${java.runtime.version}, Target Java ${javac.target}])"/>
++      </manifest>
++      <metainf dir="${basedir}/.." includes="LICENSE,NOTICE"/>
++    </jar>
++<!-- all-in-one transcoder jar -->
++    <property name="transcoder-deps" value="${build.dir}/transcoder-dependencies"/>
++    <mkdir dir="${transcoder-deps}"/>
++    <unjar dest="${transcoder-deps}">
++      <patternset>
++        <include name="org/apache/commons/logging/**"/>
++        <include name="org/apache/commons/io/*.class"/>
++        <include name="org/apache/commons/io/filefilter/*.class"/>
++        <include name="org/apache/commons/io/output/*.class"/>
++      </patternset>
++      <fileset refid="transcoder-lib-files"/>
++    </unjar>
++    <mkdir dir="${transcoder-deps}/legal"/>
++    <copy todir="${transcoder-deps}/legal">
++      <fileset dir="${lib.dir}">
++        <include name="commons-io.LICENSE.txt"/>
++        <include name="commons-logging.LICENSE.txt"/>
++      </fileset>
++    </copy>
++    <jar jarfile="${build.dir}/fop-transcoder-allinone.jar">
++      <fileset refid="transcoder-classes-files"/>
++      <fileset dir="${transcoder-deps}"/>
++      <manifest>
++        <attribute name="Implementation-Title" value="${fop-transcoder.name}"/>
++        <attribute name="Implementation-Version" value="${fop-transcoder.version}"/>
++        <attribute name="Implementation-Vendor" value="The Apache Software Foundation (http://xmlgraphics.apache.org/fop/)"/>
++        <attribute name="Build-Id" value="${ts} (${user.name} [${os.name} ${os.version} ${os.arch}, Java ${java.runtime.version}, Target Java ${javac.target}])"/>
++      </manifest>
++      <metainf dir="${basedir}/.." includes="LICENSE,NOTICE"/>
++    </jar>
+   </target>
+   <target name="all" depends="package, servlet, transcoder-pkg, junit"/>
+ <!-- "all" target for us Makefile converts ;-) -->
