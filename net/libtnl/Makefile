@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/tnl/tnl
 USE_LDCONFIG=	yes
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 # Other arches can be added easily, provided there is hardware to test:
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 powerpc64
 .if defined(NO_PROFILE) || defined(NOPROFILE)
 PLIST_SUB+=	PROFILE='@comment '
 .else
