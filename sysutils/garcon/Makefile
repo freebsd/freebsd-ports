@@ -3,6 +3,7 @@
 
 PORTNAME=	garcon
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -29,8 +30,15 @@ CONFIGURE_ARGS=	--without-html-dir
 
 PORTSCOUT=	limitw:1,even
 
-OPTIONS_DEFINE=		NLS
+OPTIONS_DEFINE=		GIR NLS
+OPTIONS_DEFAULT=	GIR
 OPTIONS_SUB=		yes
+
+GIR_DESC=	Use Gobject Introspection
+
+GIR_USE=	gnome=introspection:build
+GIR_CONFIGURE_ON=	--enable-introspection=yes
+GIR_CONFIGURE_OFF=	--enable-introspection=no
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
