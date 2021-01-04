@@ -22,10 +22,8 @@ CMAKE_OFF=	BUILD_TESTING
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-do-test: # https://github.com/hanickadot/compile-time-regular-expressions/issues/162
-	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON -DCTRE_BUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ctre-test && \
-		ctest --progress --no-tests=ignore --output-on-failure
+do-test: # everything is tested during compilation, if you are able to compile then it's ok
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} -j ${_MAKE_JOBS}
 
 .include <bsd.port.mk>
