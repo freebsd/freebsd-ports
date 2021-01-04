@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lziprecover
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	archivers
 MASTER_SITES=	SAVANNAH/lzip/${PORTNAME}
 
@@ -15,6 +15,7 @@ USES=		tar:lz
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH} \
 		--mandir=${MANPREFIX}/man CXXFLAGS="${CXXFLAGS}"
+TEST_TARGET=	check
 
 INFO=		${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
