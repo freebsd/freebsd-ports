@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	lucene++
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 DISTVERSIONPREFIX=	rel_
-PORTREVISION=	14
 CATEGORIES=	textproc
 
 MAINTAINER=	arved@FreeBSD.org
@@ -19,6 +18,7 @@ GH_ACCOUNT=	luceneplusplus
 GH_PROJECT=	LucenePlusPlus
 USES=		cmake compiler:c++11-lang
 USE_LDCONFIG=	yes
+CMAKE_OFF=	ENABLE_TEST ENABLE_DEMO
 
 .include <bsd.port.pre.mk>
 
@@ -26,9 +26,8 @@ post-patch:
 	${REINPLACE_CMD} "/cotire/d" ${WRKSRC}/src/contrib/CMakeLists.txt \
 		${WRKSRC}/src/core/CMakeLists.txt \
 		${WRKSRC}/src/test/CMakeLists.txt
-
-post-install:
-	cd ${WRKSRC}/include &&${INSTALL_DATA} *.h \
-		${STAGEDIR}${PREFIX}/include/lucene++/
+	${REINPLACE_CMD} 's,include/pkgconfig,libdata/pkgconfig,;s,include/cmake,share/lucene++/cmake,' \
+		${WRKSRC}/src/config/core/CMakeLists.txt \
+		${WRKSRC}/src/config/contrib/CMakeLists.txt
 
 .include <bsd.port.post.mk>
