@@ -2,7 +2,7 @@
 
 PORTNAME=	mppp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21
+DISTVERSION=	0.22
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +18,8 @@ LIB_DEPENDS=	libarb.so:math/arb \
 		libmpfr.so:math/mpfr
 
 USES=		cmake compiler:c++14-lang
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	bluescarni
 

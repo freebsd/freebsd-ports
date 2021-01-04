@@ -2,7 +2,6 @@ include/mp++/complex.hpp
 include/mp++/complex128.hpp
 include/mp++/concepts.hpp
 include/mp++/config.hpp
-include/mp++/detail/fwd_decl.hpp
 include/mp++/detail/gmp.hpp
 include/mp++/detail/integer_literals.hpp
 include/mp++/detail/mpc.hpp
@@ -16,6 +15,7 @@ include/mp++/detail/utils.hpp
 include/mp++/detail/visibility.hpp
 include/mp++/exceptions.hpp
 include/mp++/extra/pybind11.hpp
+include/mp++/fwd.hpp
 include/mp++/integer.hpp
 include/mp++/mp++.hpp
 include/mp++/rational.hpp
@@ -30,5 +30,5 @@ lib/cmake/mp++/mp++-config.cmake
 lib/cmake/mp++/mp++_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/mp++/mp++_export.cmake
 lib/libmp++.so
-lib/libmp++.so.7
-lib/libmp++.so.7.0
+lib/libmp++.so.8
+lib/libmp++.so.8.0
