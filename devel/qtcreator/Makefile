@@ -30,10 +30,6 @@ USE_QT=		buildtools concurrent core declarative designer gui help \
 		quickcontrols script script serialport sql svg webchannel \
 		widgets xml xmlpatterns
 
-CXXFLAGS_powerpc=	-maltivec
-CXXFLAGS_powerpc64=	-maltivec
-CXXFLAGS_powerpc64le=	-maltivec
-
 # be paranoid and do not extract qbs (devel/qbs) copy from source tree
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/src/shared/qbs'
 # Set QBS_INSTALL_DIR for QBS plugin build and set config parameter to build
