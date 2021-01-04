@@ -268,6 +268,7 @@ include/folly/experimental/coro/Accumulate.h
 include/folly/experimental/coro/AsyncGenerator.h
 include/folly/experimental/coro/AsyncPipe.h
 include/folly/experimental/coro/AsyncScope.h
+include/folly/experimental/coro/AsyncStack.h
 include/folly/experimental/coro/Baton.h
 include/folly/experimental/coro/BlockingWait.h
 include/folly/experimental/coro/Collect-inl.h
