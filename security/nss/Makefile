@@ -5,7 +5,6 @@ PORTNAME=	nss
 PORTVERSION=	3.60.1
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
-DISTNAME=	${PORTNAME}-3.60 # XXX Drop after 3.60.1 distfile appears
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
