@@ -14,7 +14,7 @@ BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libnotify.so:devel/libnotify
 
-USES=		cmake gettext gnome pkgconfig
+USES=		cmake compiler:c11 gettext gnome pkgconfig
 CMAKE_ARGS=	-DAPP_SYSTEM_NAME:STRING=${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	JMoerman
