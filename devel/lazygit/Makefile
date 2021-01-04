@@ -2,7 +2,7 @@
 
 PORTNAME=	lazygit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.2
+DISTVERSION=	0.24.2
 CATEGORIES=	devel
 
 MAINTAINER=	meta@FreeBSD.org
@@ -40,8 +40,8 @@ GH_TUPLE=	\
 		imdario:mergo:v0.3.11:imdario_mergo/vendor/github.com/imdario/mergo \
 		integrii:flaggy:v1.4.0:integrii_flaggy/vendor/github.com/integrii/flaggy \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
-		jesseduffield:go-git:341962be15a4:jesseduffield_go_git_v5/vendor/github.com/jesseduffield/go-git/v5 \
-		jesseduffield:go-git:v5.1.1:jesseduffield_go_git_v5_1/vendor/github.com/go-git/go-git/v5 \
+		jesseduffield:go-git:341962be15a4:jesseduffield_go_git_v5_1/vendor/github.com/jesseduffield/go-git/v5 \
+		jesseduffield:go-git:v5.1.1:jesseduffield_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		jesseduffield:gocui:8a6768078fd7:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
 		jesseduffield:termbox-go:a2289ed6aafe:jesseduffield_termbox_go/vendor/github.com/jesseduffield/termbox-go \
 		jesseduffield:yaml:v2.1.0:jesseduffield_yaml/vendor/github.com/jesseduffield/yaml \
@@ -49,6 +49,7 @@ GH_TUPLE=	\
 		kevinburke:ssh_config:01f96b0aa0cd:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kr:logfmt:b84e30acd515:kr_logfmt/vendor/github.com/kr/logfmt \
+		kylelemons:godebug:v1.1.0:kylelemons_godebug/vendor/github.com/kylelemons/godebug \
 		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
@@ -57,6 +58,7 @@ GH_TUPLE=	\
 		onsi:ginkgo:v1.10.3:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		onsi:gomega:v1.7.1:onsi_gomega/vendor/github.com/onsi/gomega \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		sahilm:fuzzy:v0.1.0:sahilm_fuzzy/vendor/github.com/sahilm/fuzzy \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spkg:bom:59b7046e48ad:spkg_bom/vendor/github.com/spkg/bom \
