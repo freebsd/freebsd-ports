@@ -1,3 +1,7 @@
 A Python library to create SVG drawings.
 
+As the name svgwrite implies, svgwrite creates new SVG drawings, it does not
+read existing drawings and also does not import existing drawings, but one can
+always include other SVG drawings by the <image> entity.
+
 WWW: https://github.com/mozman/svgwrite
