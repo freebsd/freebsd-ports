@@ -17,13 +17,13 @@
     SUBDIR += bzip2
     SUBDIR += c-blosc
     SUBDIR += cabextract
+    SUBDIR += cmdpack
     SUBDIR += dact
     SUBDIR += deb2targz
     SUBDIR += deco
     SUBDIR += deutex
     SUBDIR += dpkg
     SUBDIR += dzip
-    SUBDIR += ecm
     SUBDIR += engrampa
     SUBDIR += erlang-snappy
     SUBDIR += fastjar
