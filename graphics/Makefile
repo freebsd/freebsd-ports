@@ -409,6 +409,7 @@
     SUBDIR += kooka
     SUBDIR += kphotoalbum
     SUBDIR += kqtquickcharts
+    SUBDIR += kquickimageeditor
     SUBDIR += krita
     SUBDIR += ksnip
     SUBDIR += kxstitch
