@@ -2,7 +2,7 @@
 
 PORTNAME=	mackerel-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.69.3
+DISTVERSION=	0.71.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	meta@FreeBSD.org
@@ -33,11 +33,11 @@ GH_TUPLE=	\
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:d101bd2416d5:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
 		golang:tools:742c5eb664c2:golang_tools/vendor/golang.org/x/tools \
 		mackerelio:go-osstat:v0.1.0:mackerelio_go_osstat/vendor/github.com/mackerelio/go-osstat \
 		mackerelio:golib:v1.0.0:mackerelio_golib/vendor/github.com/mackerelio/golib \
-		mackerelio:mackerel-client-go:v0.11.0:mackerelio_mackerel_client_go/vendor/github.com/mackerelio/mackerel-client-go \
+		mackerelio:mackerel-client-go:v0.12.0:mackerelio_mackerel_client_go/vendor/github.com/mackerelio/mackerel-client-go \
 		mattn:go-encoding:v0.0.2:mattn_go_encoding/vendor/github.com/mattn/go-encoding \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:goveralls:v0.0.7:mattn_goveralls/vendor/github.com/mattn/goveralls \
