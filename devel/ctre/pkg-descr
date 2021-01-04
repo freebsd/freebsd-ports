@@ -1,0 +1,13 @@
+Fast compile-time regular expressions with support for
+matching/searching/capturing during compile-time or runtime.
+
+
+Features and support:
+* Matching
+* Searching (search or starts_with)
+* Capturing content (named captures are supported too)
+* Back-Reference (\g{N} syntax, and \1...\9 syntax too)
+* Multiline support (with multi_) functions
+* Unicode properties and UTF-8 support
+
+WWW: https://compile-time.re/

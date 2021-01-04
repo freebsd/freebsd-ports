@@ -403,6 +403,7 @@
     SUBDIR += csoap
     SUBDIR += cssc
     SUBDIR += ctags
+    SUBDIR += ctre
     SUBDIR += ctypes.sh
     SUBDIR += cunit
     SUBDIR += cut
