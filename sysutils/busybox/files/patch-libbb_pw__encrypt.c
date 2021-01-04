@@ -1,11 +1,12 @@
---- libbb/pw_encrypt.c.orig	2018-12-05 14:44:34 UTC
+--- libbb/pw_encrypt.c.orig	2021-01-01 13:30:02 UTC
 +++ libbb/pw_encrypt.c
-@@ -6,7 +6,7 @@
-  *
+@@ -7,7 +7,9 @@
   * Licensed under GPLv2 or later, see file LICENSE in this source tree.
   */
--#include <crypt.h>
-+#include <unistd.h>
+ #if !ENABLE_USE_BB_CRYPT
++#ifndef __FreeBSD__
+ #include <crypt.h>
++#endif
+ #endif
  #include "libbb.h"
  
- /* static const uint8_t ascii64[] ALIGN1 =

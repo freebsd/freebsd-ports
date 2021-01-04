@@ -1,22 +1,22 @@
---- networking/ping.c.orig	2018-12-30 15:14:20 UTC
+--- networking/ping.c.orig	2021-01-01 13:30:02 UTC
 +++ networking/ping.c
-@@ -119,7 +119,12 @@
+@@ -119,6 +119,10 @@
  //usage:       "round-trip min/avg/max = 20.1/20.1/20.1 ms\n"
  
  #include <net/if.h>
-+
-+#include <netinet/in.h>
-+#include <netinet/in_systm.h>
++#ifdef __FreeBSD__
++#include <netinet/in.h> /* struct ip and friends */
 +#include <netinet/ip.h>
++#endif
  #include <netinet/ip_icmp.h>
-+
  #include "libbb.h"
  #include "common_bufsiz.h"
- 
-@@ -147,6 +152,42 @@
- # define SOL_RAW IPPROTO_RAW
- #endif
- 
+@@ -155,6 +159,41 @@
+ #  undef IPV6_HOPLIMIT
+ #  define IPV6_HOPLIMIT IPV6_2292HOPLIMIT
+ # endif
++#endif
++
 +#if defined(__FreeBSD__) || defined(__APPLE__)
 +/**
 + * On BSD the IPv4 struct is called struct ip and instead of iXX
@@ -50,9 +50,6 @@
 +    u_int32_t daddr;
 +    /*The options start here. */
 +  };
-+#endif
-+
-+
- #if ENABLE_PING6
- # include <netinet/icmp6.h>
- /* I see RENUMBERED constants in bits/in.h - !!?
+ #endif
+ 
+ enum {

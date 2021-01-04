@@ -1,17 +1,14 @@
---- networking/httpd.c.orig	2019-06-10 09:09:31 UTC
+--- networking/httpd.c.orig	2021-01-01 13:30:02 UTC
 +++ networking/httpd.c
-@@ -2135,10 +2135,10 @@ static void handle_incoming_and_exit(con
- 	}
- #if ENABLE_FEATURE_IPV6
- 	if (fromAddr->u.sa.sa_family == AF_INET6
--	 && fromAddr->u.sin6.sin6_addr.s6_addr32[0] == 0
--	 && fromAddr->u.sin6.sin6_addr.s6_addr32[1] == 0
--	 && ntohl(fromAddr->u.sin6.sin6_addr.s6_addr32[2]) == 0xffff)
--		remote_ip = ntohl(fromAddr->u.sin6.sin6_addr.s6_addr32[3]);
-+	 && fromAddr->u.sin6.sin6_addr.s6_addr[0] == 0
-+	 && fromAddr->u.sin6.sin6_addr.s6_addr[1] == 0
-+	 && ntohl(fromAddr->u.sin6.sin6_addr.s6_addr[2]) == 0xffff)
-+		remote_ip = ntohl(fromAddr->u.sin6.sin6_addr.s6_addr[3]);
- #endif
- 	if (ENABLE_FEATURE_HTTPD_CGI || DEBUG || verbose) {
- 		/* NB: can be NULL (user runs httpd -i by hand?) */
+@@ -267,6 +267,11 @@
+ 
+ #define HEADER_READ_TIMEOUT 60
+ 
++/* see sys/netinet6/in6.h */
++#ifdef __FreeBSD__
++#define s6_addr32 __u6_addr.__u6_addr32
++#endif
++
+ static const char DEFAULT_PATH_HTTPD_CONF[] ALIGN1 = "/etc";
+ static const char HTTPD_CONF[] ALIGN1 = "httpd.conf";
+ static const char HTTP_200[] ALIGN1 = "HTTP/1.0 200 OK\r\n";

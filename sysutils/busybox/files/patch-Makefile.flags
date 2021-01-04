@@ -1,30 +1,12 @@
---- Makefile.flags.orig	2018-12-05 14:44:34 UTC
+--- Makefile.flags.orig	2021-01-03 14:40:37 UTC
 +++ Makefile.flags
-@@ -47,12 +47,11 @@ endif
- # gcc 3.x emits bogus "old style proto" warning on find.c:alloc_action()
- CFLAGS += $(call cc-ifversion, -ge, 0400, -Wold-style-definition)
- 
--CFLAGS += $(call cc-option,-fno-builtin-strlen -finline-limit=0 -fomit-frame-pointer -ffunction-sections -fdata-sections,)
-+CFLAGS += $(call cc-option,-fno-builtin-strlen -fomit-frame-pointer -ffunction-sections -fdata-sections,)
- # -fno-guess-branch-probability: prohibit pseudo-random guessing
- # of branch probabilities (hopefully makes bloatcheck more stable):
- CFLAGS += $(call cc-option,-fno-guess-branch-probability,)
--CFLAGS += $(call cc-option,-funsigned-char -static-libgcc,)
--CFLAGS += $(call cc-option,-falign-functions=1 -falign-jumps=1 -falign-labels=1 -falign-loops=1,)
-+CFLAGS += $(call cc-option,-funsigned-char,)
- # Defeat .eh_frame bloat (gcc 4.6.3 x86-32 defconfig: 20% smaller busybox binary):
- CFLAGS += $(call cc-option,-fno-unwind-tables,)
- CFLAGS += $(call cc-option,-fno-asynchronous-unwind-tables,)
-@@ -156,9 +155,9 @@ CPPFLAGS += $(SELINUX_CFLAGS)
- LDLIBS += $(if $(SELINUX_LIBS),$(SELINUX_LIBS:-l%=%),$(SELINUX_PC_MODULES:lib%=%))
+@@ -180,7 +180,9 @@ LDLIBS += $(if $(SELINUX_LIBS),$(SELINUX_LIBS:-l%=%),$
  endif
  
--ifeq ($(CONFIG_FEATURE_NSLOOKUP_BIG),y)
--LDLIBS += resolv
--endif
-+# ifeq ($(CONFIG_FEATURE_NSLOOKUP_BIG),y)
-+# LDLIBS += resolv
-+# endif
+ ifeq ($(CONFIG_FEATURE_NSLOOKUP_BIG),y)
++ifeq ($(CONFIG_UNAME_OSNAME),Linux)
+ LDLIBS += resolv
++endif
+ endif
  
  ifeq ($(CONFIG_EFENCE),y)
- LDLIBS += efence

@@ -1,22 +1,14 @@
---- include/libbb.h.orig	2019-02-14 13:31:15 UTC
+--- include/libbb.h.orig	2021-01-04 13:16:47 UTC
 +++ include/libbb.h
-@@ -53,6 +53,9 @@
- #include <termios.h>
- #include <time.h>
- #include <sys/param.h>
-+#ifndef HAVE_XTABS
-+# define XTABS TAB3
+@@ -106,7 +106,11 @@
+ #  define updwtmpx updwtmp
+ #  define _PATH_UTMPX _PATH_UTMP
+ # else
++#ifndef __FreeBSD__
+ #  include <utmp.h>
++#else
++#define  _PATH_UTMPX "/var/run/utx.active"
 +#endif
- #include <pwd.h>
- #include <grp.h>
- #if ENABLE_FEATURE_SHADOWPASSWDS
-@@ -160,9 +163,6 @@
- #ifndef HAVE_FDATASYNC
- # define fdatasync fsync
- #endif
--#ifndef HAVE_XTABS
--# define XTABS TAB3
--#endif
- /*
-  * Use '%m' to append error string on platforms that support it,
-  * '%s' and strerror() on those that don't.
+ #  include <utmpx.h>
+ #  if defined _PATH_UTMP && !defined _PATH_UTMPX
+ #   define _PATH_UTMPX _PATH_UTMP

@@ -1,6 +1,6 @@
---- include/platform.h.orig	2018-12-05 14:44:34 UTC
+--- include/platform.h.orig	2021-01-01 13:30:02 UTC
 +++ include/platform.h
-@@ -315,7 +315,7 @@ typedef unsigned smalluint;
+@@ -319,7 +319,7 @@ typedef unsigned smalluint;
  #endif
  
  /* Define bb_setpgrp */
