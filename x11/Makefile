@@ -327,6 +327,7 @@
     SUBDIR += sxhkd
     SUBDIR += sxpc
     SUBDIR += tabbed
+    SUBDIR += taiga
     SUBDIR += temperature.app
     SUBDIR += terminal.app
     SUBDIR += terminator
