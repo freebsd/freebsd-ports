@@ -1,6 +1,7 @@
+bin/graphicator
 bin/simgrid-colorizer
-bin/simgrid_convert_TI_traces
 bin/simgrid_update_xml
+bin/simgrid_convert_TI_traces
 bin/smpicc
 bin/smpicxx
 bin/smpirun
@@ -9,9 +10,12 @@ include/simgrid/Exception.hpp
 include/simgrid/actor.h
 include/simgrid/barrier.h
 include/simgrid/chrono.hpp
+include/simgrid/comm.h
 include/simgrid/cond.h
 include/simgrid/config.h
+include/simgrid/disk.h
 include/simgrid/engine.h
+include/simgrid/exec.h
 include/simgrid/forward.h
 include/simgrid/host.h
 include/simgrid/instr.h
@@ -31,6 +35,7 @@ include/simgrid/kernel/routing/NetZoneImpl.hpp
 include/simgrid/kernel/routing/RoutedZone.hpp
 include/simgrid/kernel/routing/TorusZone.hpp
 include/simgrid/kernel/routing/VivaldiZone.hpp
+include/simgrid/kernel/routing/WifiZone.hpp
 include/simgrid/link.h
 include/simgrid/mailbox.h
 include/simgrid/modelchecker.h
@@ -40,7 +45,6 @@ include/simgrid/plugins/energy.h
 include/simgrid/plugins/file_system.h
 include/simgrid/plugins/live_migration.h
 include/simgrid/plugins/load.h
-include/simgrid/plugins/load_balancer.h
 include/simgrid/s4u.hpp
 include/simgrid/s4u/Activity.hpp
 include/simgrid/s4u/Actor.hpp
@@ -103,6 +107,7 @@ include/xbt/mallocator.h
 include/xbt/misc.h
 include/xbt/module.h
 include/xbt/parmap.h
+include/xbt/parse_units.hpp
 include/xbt/random.hpp
 include/xbt/range.hpp
 include/xbt/replay.hpp
@@ -116,14 +121,7 @@ include/xbt/utility.hpp
 include/xbt/virtu.h
 include/xbt/xbt_os_time.h
 lib/libsimgrid.so
-lib/libsimgrid.so.3.25
+lib/libsimgrid.so.3.26
 lib/simgrid/smpimain
 lib/simgrid/smpireplaymain
 libdata/pkgconfig/simgrid.pc
-man/man1/simgrid_update_xml.1.gz
-man/man1/smpicc.1.gz
-man/man1/smpicxx.1.gz
-man/man1/smpif90.1.gz
-man/man1/smpiff.1.gz
-man/man1/smpirun.1.gz
-man/man1/tesh.1.gz
