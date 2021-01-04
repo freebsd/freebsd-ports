@@ -866,7 +866,6 @@
     SUBDIR += qalculate
     SUBDIR += qd
     SUBDIR += qhull
-    SUBDIR += qhull5
     SUBDIR += qposases
     SUBDIR += qrupdate
     SUBDIR += qtiplot-doc
