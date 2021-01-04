@@ -18,6 +18,7 @@ bin/cadabra2python
 %%PYTHON_SITELIBDIR%%/cdb/core/component.cnb
 %%PYTHON_SITELIBDIR%%/cdb/core/manip.cnb
 %%PYTHON_SITELIBDIR%%/cdb/core/solve.cnb
+%%PYTHON_SITELIBDIR%%/cdb/core/trace.cnb
 %%PYTHON_SITELIBDIR%%/cdb/gauge_theory/__init__.py
 %%PYTHON_SITELIBDIR%%/cdb/gauge_theory/instantons.py
 %%PYTHON_SITELIBDIR%%/cdb/relativity/abstract.cnb
@@ -120,6 +121,7 @@ bin/cadabra2python
 %%GUI%%%%DATADIR%%/manual/properties/Symmetric.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Tableau.cnb
 %%GUI%%%%DATADIR%%/manual/properties/TableauSymmetry.cnb
+%%GUI%%%%DATADIR%%/manual/properties/Trace.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Vielbein.cnb
 %%GUI%%%%DATADIR%%/manual/properties/WeightInherit.cnb
 %%GUI%%%%DATADIR%%/notebook.html
