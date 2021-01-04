@@ -1,0 +1,17 @@
+--- Makefile.orig	2017-01-28 22:03:18 UTC
++++ Makefile
+@@ -23,12 +23,14 @@ target=$(DESTDIR)$(prefix)
+ install-%: % %.1
+ 	install -d "$(target)$(bindir)"
+ 	install -d "$(target)$(mandir)/man1"
++	strip $<
+ 	install $< "$(target)$(bindir)"
+ 	install -m644 $<.1 "$(target)$(mandir)/man1"
+ 
+ install-bin2ecm: bin2ecm bin2ecm.1
+ 	install -d "$(target)$(bindir)"
+ 	install -d "$(target)$(mandir)/man1"
++	strip bin2ecm
+ 	install bin2ecm "$(target)$(bindir)"
+ 	install -m644 bin2ecm.1 "$(target)$(mandir)/man1"
+ 	ln -s bin2ecm "$(target)$(bindir)/ecm2bin"
