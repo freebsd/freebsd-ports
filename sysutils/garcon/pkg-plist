@@ -17,6 +17,8 @@ include/garcon-1/garcon/garcon-menu.h
 include/garcon-1/garcon/garcon.h
 include/garcon-gtk3-1/garcon-gtk/garcon-gtk-menu.h
 include/garcon-gtk3-1/garcon-gtk/garcon-gtk.h
+%%GIR%%lib/girepository-1.0/Garcon-1.0.typelib
+%%GIR%%lib/girepository-1.0/GarconGtk-1.0.typelib
 lib/libgarcon-1.so
 lib/libgarcon-1.so.0
 lib/libgarcon-1.so.0.0.0
@@ -39,6 +41,8 @@ share/desktop-directories/xfce-personal.directory
 share/desktop-directories/xfce-screensavers.directory
 share/desktop-directories/xfce-settings.directory
 share/desktop-directories/xfce-system.directory
+%%GIR%%share/gir-1.0/Garcon-1.0.gir
+%%GIR%%share/gir-1.0/GarconGtk-1.0.gir
 share/icons/hicolor/32x32/apps/org.xfce.garcon.png
 %%NLS%%share/locale/am/LC_MESSAGES/garcon.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/garcon.mo
