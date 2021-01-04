@@ -2,7 +2,7 @@
 
 PORTNAME=	taskflow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.0
+DISTVERSION=	3.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,7 @@ COMMENT=	Header-only library for parallel tasks in modern C++
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 
 CMAKE_OFF=	TF_BUILD_CUDA TF_BUILD_TESTS TF_BUILD_EXAMPLES
