@@ -15932,7 +15932,6 @@ www/trac-defaultcc||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstr
 www/trac-discussion||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
 www/trac-email2trac||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
 www/trac-downloads||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
-www/trac-devel||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
 www/trac-email2trac-postfix||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
 www/trac-estimator||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
 www/trac-fivestarvote||2021-01-01|Has expired: Uses Python 2.7 which is EOLed upstream
@@ -16006,12 +16005,12 @@ www/trac-accountmanager||2021-01-02|Has expired: Uses Python 2.7 which is EOLed 
 print/xfce4-print||2021-01-02|Unmaintained, depends on dropped XFCE GTK2 support
 x11/xfce4-quicklauncher-plugin||2021-01-02|Unmaintained, depends on dropped XFCE GTK2 support
 x11/xfce4-wmdock-plugin||2021-01-02|Unmaintained, depends on dropped XFCE GTK2 support
-x11-toolkits/libxfce4gui||2012-01-02|Unmaintained, depends on dropped XFCE GTK2 support
-devel/py-backports.functools_lru_cache||2020-01-02|Uses Python 2.7 which is EOLed upstream
-devel/py-backports_abc||2020-01-02|Uses Python 2.7 which is EOLed upstream
-devel/py-futures||2020-01-02|Uses Python 2.7 which is EOLed upstream
-devel/py-singledispatch||2020-01-02|Uses Python 2.7 which is EOLed upstream
-graphics/py-pillow6|graphics/pillow|2020-01-02|Uses Python 2.7 which is EOLed upstream
+x11-toolkits/libxfce4gui||2021-01-02|Unmaintained, depends on dropped XFCE GTK2 support
+devel/py-backports.functools_lru_cache||2021-01-02|Uses Python 2.7 which is EOLed upstream
+devel/py-backports_abc||2021-01-02|Uses Python 2.7 which is EOLed upstream
+devel/py-futures||2021-01-02|Uses Python 2.7 which is EOLed upstream
+devel/py-singledispatch||2021-01-02|Uses Python 2.7 which is EOLed upstream
+graphics/py-pillow6|graphics/py-pillow|2021-01-02|Uses Python 2.7 which is EOLed upstream
 www/wt3|www/wt|2021-01-03|Has expired: Upstream end of life, switch to www/wt instead
 archivers/ecm|archivers/cmdpack|2021-01-04|ECM is now included in cmdpack
 math/qhull5|math/qhull|2021-01-04|Has expired: Legacy version of port no longer required by math/octave
