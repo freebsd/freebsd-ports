@@ -78,6 +78,7 @@
     SUBDIR += mikutter
     SUBDIR += mtxclient
     SUBDIR += neochat
+    SUBDIR += nextcloud-spreed-signaling
     SUBDIR += nextcloud-talk
     SUBDIR += nheko
     SUBDIR += openfire

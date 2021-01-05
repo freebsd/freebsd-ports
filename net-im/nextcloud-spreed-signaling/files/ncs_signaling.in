@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: ncs_signaling
+# REQUIRE: DAEMON nats
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# ncs_signaling_enable (bool):  Set to NO by default.
+#                               Set it to YES to enable ncs_signaling.
+# ncs_signaling_config (path):  Set to %%PREFIX%%/etc/ncs_signaling/ncs-signaling.cf
+#                               by default.
+
+. /etc/rc.subr
+
+name=ncs_signaling
+rcvar=ncs_signaling_enable
+
+load_rc_config $name
+: ${ncs_signaling_enable:="NO"}
+: ${ncs_signaling_config:="%%PREFIX%%/etc/ncs/server.conf"}
+
+command=/usr/sbin/daemon
+
+command_args="-u signaling -f -T ncs_signaling -S %%PREFIX%%/bin/ncs-signaling -config $ncs_signaling_config"
+
+run_rc_command "$1"

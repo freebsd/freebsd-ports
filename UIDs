@@ -216,7 +216,7 @@ odoo:*:267:267::0:0:Odoo ERP:/nonexistent:/usr/sbin/nologin
 tenshi:*:268:268::0:0:Tenshi user:/var/lib/tenshi:/usr/sbin/nologin
 dendrite:*:269:269::0:0:Dendrite user:/nonexistent:/usr/sbin/nologin
 _rpki-client:*:270:270::0:0:rpki-client user:/nonexistent:/usr/sbin/nologin
-# free: 271
+signaling:*:271:271::0:0:Signaling server:/nonexistent:/usr/sbin/nologin
 # free: 272
 # free: 273
 # free: 274

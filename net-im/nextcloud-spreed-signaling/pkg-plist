@@ -1,0 +1,5 @@
+bin/ncs-proxy
+bin/ncs-signaling
+@sample etc/ncs/gnatsd.conf.sample
+@sample etc/ncs/proxy.conf.sample
+@sample etc/ncs/server.conf.sample
