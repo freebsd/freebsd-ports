@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	assembly only for these architectures
+BROKEN_i386=	error: inline assembly requires more registers than available
 
 BUILD_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} \
 		lv2>0:audio/lv2
