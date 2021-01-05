@@ -12,4 +12,4 @@ useful in any area demanding reliable or precise numerical computing. Arb scales
 seamlessly from tens of digits up to billions of digits. Efficiency is achieved
 by low level optimizations and use of asymptotically fast algorithms.
 
-WWW: http://arblib.org/
+WWW: https://arblib.org/
