@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	lensfun
-DISTVERSION=	0.2.4-dev
-PORTREVISION=	10
+DISTVERSION=	0.2.5-dev
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Gimp plugin to correct lens distortion using the lensfun library
 
 LICENSE=	GPLv3+
@@ -24,7 +23,7 @@ USES=		compiler:c++11-lang gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	seebk
 GH_PROJECT=	GIMP-Lensfun
-GH_TAGNAME=	d0a0bd2
+GH_TAGNAME=	c5eaf97
 
 PLUGIN_DIR?=	libexec/gimp/2.2/plug-ins
 PLUGINS=	gimp-lensfun
