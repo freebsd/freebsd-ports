@@ -1,7 +1,7 @@
---- src/core/tsi/ssl_transport_security.cc.orig	2018-09-24 23:51:30 UTC
+--- src/core/tsi/ssl_transport_security.cc.orig	2020-12-01 19:24:28 UTC
 +++ src/core/tsi/ssl_transport_security.cc
-@@ -21,7 +21,7 @@
- #include "src/core/tsi/grpc_shadow_boringssl.h"
+@@ -19,7 +19,7 @@
+ #include <grpc/support/port_platform.h>
  
  #include "src/core/tsi/ssl_transport_security.h"
 -
@@ -9,7 +9,7 @@
  #include <limits.h>
  #include <string.h>
  
-@@ -61,11 +61,10 @@ extern "C" {
+@@ -70,11 +70,10 @@ extern "C" {
  #define TSI_SSL_MAX_PROTECTED_FRAME_SIZE_LOWER_BOUND 1024
  #define TSI_SSL_HANDSHAKER_OUTGOING_BUFFER_INITIAL_SIZE 1024
  
@@ -24,7 +24,7 @@
  #endif
  
  /* TODO(jboeuf): I have not found a way to get this number dynamically from the
-@@ -1676,7 +1675,7 @@ tsi_result tsi_create_ssl_client_handshaker_factory_wi
+@@ -1930,7 +1929,7 @@ tsi_result tsi_create_ssl_client_handshaker_factory_wi
                                    options->cipher_suites);
      if (result != TSI_OK) break;
  

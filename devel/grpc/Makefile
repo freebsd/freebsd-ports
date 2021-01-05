@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	grpc
-PORTVERSION=	1.22.0
+PORTVERSION=	1.34.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	devel
 
@@ -14,28 +13,28 @@ COMMENT=	HTTP/2-based RPC framework
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	yasm:devel/yasm
-LIB_DEPENDS=	libgflags.so:devel/gflags \
+LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libbenchmark.so:devel/benchmark \
+		libcares.so:dns/c-ares \
+		libgflags.so:devel/gflags \
 		libprotobuf.so:devel/protobuf \
-		libcares.so:dns/c-ares
+		libre2.so:devel/re2
 
-USES=		cmake go:no_targets localbase:ldflags perl5 pkgconfig ssl
-
+USES=		cmake compiler:c++17-lang localbase:ldflags pkgconfig ssl
 USE_GITHUB=	yes
-GH_TUPLE=	google:benchmark:v1.4.1:benchmark/third_party/benchmark
 USE_LDCONFIG=	yes
-USE_PERL5=	build
-PLIST_SUB+=	SOVERSION=${PORTVERSION}
-LDFLAGS+=	-lcares
 
-CMAKE_ARGS=	-DgRPC_ZLIB_PROVIDER:STRING="package" \
-		-DgRPC_PROTOBUF_PROVIDER:STRING="package" \
-		-DgRPC_GFLAGS_PROVIDER:STRING="package" \
-		-DgRPC_SSL_PROVIDER:STRING="package" \
-		-DgRPC_CARES_PROVIDER:STRING="package" \
-		-DgRPC_BENCHMARK_PROVIDER:STRING="module" \
-		-DBENCHMARK_USE_LIBCXX=ON \
-		-DBENCHMARK_ENABLE_TESTING=OFF \
-		-DBUILD_SHARED_LIBS=ON
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
+		-DgRPC_ABSL_PROVIDER=package \
+		-DgRPC_BENCHMARK_PROVIDER=package \
+		-DgRPC_CARES_PROVIDER=package \
+		-DgRPC_GFLAGS_PROVIDER=package \
+		-DgRPC_PROTOBUF_PROVIDER=package \
+		-DgRPC_RE2_PROVIDER=package \
+		-DgRPC_SSL_PROVIDER=package \
+		-DgRPC_ZLIB_PROVIDER=package
+CMAKE_ON=	BUILD_SHARED_LIBS
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
