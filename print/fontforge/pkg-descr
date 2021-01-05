@@ -10,6 +10,4 @@ FontForge with FONTFORGE_NO_MULTILAYER defined will save some memory.
 If you have installed AutoTrace or Potrace, you can generate outlines
 from imported bitmap images.
 
-For more information, see
-
-WWW: http://fontforge.sourceforge.net/
+WWW: https://fontforge.org/
