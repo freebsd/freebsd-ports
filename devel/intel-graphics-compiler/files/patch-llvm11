@@ -7,9 +7,9 @@ Value *invertCondition(Value *Condition);
 /usr/local/llvm11/include/llvm/Transforms/Utils/Local.h:557:8: note: candidate function
 Value *invertCondition(Value *Condition);
        ^
-IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp:2216:41: error: no viable conversion from 'llvm::ElementCount' to 'unsigned int'
-    return ConstantDataVector::getSplat(IGCLLVM::getElementCount(OperandWidth),
-                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp:2284:36: error: no viable conversion from 'llvm::ElementCount' to 'unsigned int'
+                                   IGCLLVM::getElementCount(OperandWidth),
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /usr/local/llvm11/include/llvm/IR/Constants.h:803:38: note: passing argument to parameter 'NumElts' here
   static Constant *getSplat(unsigned NumElts, Constant *Elt);
                                      ^
@@ -17,7 +17,7 @@ IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp:462:37: error: no
       NewVec1, NewVec2, ShuffleVec->getMask(), ShuffleVec->getName() + ".tpm");
                         ~~~~~~~~~~  ^
 
---- IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp.orig	2020-12-12 06:01:51 UTC
+--- IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp.orig	2020-12-24 13:04:21 UTC
 +++ IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp
 @@ -2145,7 +2145,7 @@ static bool mergeToWrRegion(SelectInst *SI) {
        Value *Mask = SI->getCondition();
@@ -28,15 +28,15 @@ IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp:462:37: error: no
        // Create new wrregion.
        Region WrReg(Wr, BaleInfo());
        WrReg.Mask = Mask;
-@@ -2269,7 +2269,7 @@ static void decomposeSdivPow2(Instruction &Sdiv,
+@@ -2280,7 +2280,7 @@ static void decomposeSdivPow2(Instruction &Sdiv,
+   Builder.SetCurrentDebugLocation(Sdiv.getDebugLoc());
  
-   auto createConstantVector = [](unsigned int OperandWidth, Type *Ty,
-                                  int Value) {
--    return ConstantDataVector::getSplat(IGCLLVM::getElementCount(OperandWidth),
-+    return ConstantVector::getSplat(IGCLLVM::getElementCount(OperandWidth),
-                                         ConstantInt::get(Ty, Value));
-   };
- 
+   auto createConstant = [](unsigned int OperandWidth, Type *Ty, int Value) {
+-    return OperandWidth != 0 ? ConstantDataVector::getSplat(
++    return OperandWidth != 0 ? ConstantVector::getSplat(
+                                    IGCLLVM::getElementCount(OperandWidth),
+                                    ConstantInt::get(Ty, Value))
+                              : ConstantInt::get(Ty, Value);
 --- IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp.orig	2020-11-21 02:52:12 UTC
 +++ IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp
 @@ -459,7 +459,11 @@ bool GenXThreadPrivateMemory::replaceShuffleVector(
