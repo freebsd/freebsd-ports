@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tuptime
-DISTVERSION=	5.0.0
+DISTVERSION=	5.0.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	jeremy@smart-serv.net
@@ -17,8 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rfrail3
 USE_RC_SUBR=	${PORTNAME}
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/tuptime \
