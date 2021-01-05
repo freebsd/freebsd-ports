@@ -1,3 +1,4 @@
-Simple wrapper for the GitHub API
+Octokit.rb wraps the GitHub API in a flat API client that follows Ruby
+conventions and requires little knowledge of REST.
 
 WWW: https://github.com/octokit/octokit.rb
