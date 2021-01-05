@@ -1,0 +1,12 @@
+bin/sha256_profile
+include/aws/cal/cal.h
+include/aws/cal/ecc.h
+include/aws/cal/exports.h
+include/aws/cal/hash.h
+include/aws/cal/hmac.h
+lib/aws-c-cal/cmake/aws-c-cal-config.cmake
+lib/aws-c-cal/cmake/modules/FindLibCrypto.cmake
+lib/aws-c-cal/cmake/shared/aws-c-cal-targets-release.cmake
+lib/aws-c-cal/cmake/shared/aws-c-cal-targets.cmake
+lib/libaws-c-cal.so
+lib/libaws-c-cal.so.1.0.0

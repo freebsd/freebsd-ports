@@ -1,0 +1,4 @@
+AWS Crypto Abstraction Layer: Cross-Platform, C99 wrapper for
+cryptography primitives.
+
+WWW: https://github.com/awslabs/aws-c-cal
