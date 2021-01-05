@@ -1,0 +1,16 @@
+C++ Matrix: The Matrix Reloaded in Terminals (Number falls, Banners,
+Matrix rains, Conway's Game of Life and Mandelbrot set)
+
+I wrote a simple terminal program of Matrix digital rain.
+A part of the purpose of this program is to test the performance
+of terminal emulators. Another purpose is just for fun.
+Enjoy it with fast terminals (e.g., urxvt, alacritty, terminology, etc.)!
+
+Features
+
+- Hankaku kana characters as in the original film
+- Ten levels of "green"s using terminal 256 color support
+- Twinkling effects by adding random brightness fluctuations
+- Diffused reflection effects by cell background colors
+
+WWW: https://github.com/akinomyoga/cxxmatrix
