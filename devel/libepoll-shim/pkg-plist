@@ -1,5 +1,5 @@
 include/libepoll-shim/sys/epoll.h
-include/libepoll-shim/sys/eventfd.h
+%%SHIM_EVENTFD%%include/libepoll-shim/sys/eventfd.h
 include/libepoll-shim/sys/signalfd.h
 include/libepoll-shim/sys/timerfd.h
 lib/cmake/epoll-shim/epoll-shim-config.cmake
