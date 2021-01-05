@@ -1,0 +1,10 @@
+MPFRCX is a library for the arithmetic of univariate polynomials over arbitrary
+precision real (GNU MPFR) or complex (GNU MPC) numbers, without control on the
+rounding. The functions implemented are not very numerous and somewhat
+idiosyncratic: the main motivation behind the library is to have functionality
+available for the floating-point approach to complex multiplication. However,
+asymptotically fast routines such as Toom-Cook and the FFT for multiplication of
+polynomials are available, as well as fast routines for interpolation and
+evaluation based on trees of polynomials. 
+
+WWW: http://www.multiprecision.org/mpfrcx/home.html

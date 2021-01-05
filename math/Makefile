@@ -414,6 +414,7 @@
     SUBDIR += mpfi
     SUBDIR += mpfr
     SUBDIR += mpfrc++
+    SUBDIR += mpfrcx
     SUBDIR += mpir
     SUBDIR += mppp
     SUBDIR += mprime
