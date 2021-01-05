@@ -3,6 +3,7 @@
 PORTNAME=	libarchive
 PORTVERSION=	3.4.3
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://libarchive.org/downloads/
 
@@ -14,13 +15,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-OPTIONS_DEFINE=	LZ4 LZO OPENSSL NETTLE ZSTD
-OPTIONS_DEFAULT=LZ4 LZO OPENSSL
+OPTIONS_DEFINE=	LZ4 LZO ZSTD
+OPTIONS_DEFAULT=LZ4 OPENSSL
 
+OPTIONS_RADIO+=	CRYPTO
+OPTIONS_RADIO_CRYPTO=	OPENSSL MBEDTLS NETTLE
+
+CRYPTO_DESC=	Crypto and hashing support
 LZ4_DESC=	Support lz4 compression via liblz4
 LZO_DESC=	Support lzo compression via liblzo2
-OPENSSL_DESC=	Mtree and xar hashes support through openssl
+MBEDTLS_DESC=	Crypto support from mbedTLS
 NETTLE_DESC=	Crypto support from Nettle
+OPENSSL_DESC=	Crypto support from OpenSSL
 ZSTD_DESC=      Support zstd compression
 
 USES=		cpe iconv libtool localbase:ldflags pathfix
@@ -97,6 +103,9 @@ NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
 NETTLE_CONFIGURE_WITH=	nettle
 OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_WITH=	openssl
+OPENSSL_CONFIGURE_OFF=	--without-openssl
+MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
+MBEDTLS_CONFIGURE_WITH=	mbedtls
 
 .include <bsd.port.pre.mk>
 
