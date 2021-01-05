@@ -14,6 +14,10 @@ COMMENT=	Xfce keyboard LEDs panel plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Fails to compile with XFCE 4.16
+DEPRECATED=	Unsupported upstream, cannot work with XFCE 4.16
+EXPIRATION_DATE=	2021-01-31
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
