@@ -16,6 +16,7 @@ BROKEN_aarch64=		fails to link: c++: error: no such file or directory: 'gcc111li
 BROKEN_armv6=		fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
 BROKEN_mips64=		fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
 BROKEN_powerpc64=	fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
+BROKEN_riscv64=		fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
