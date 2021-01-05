@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	river
-PORTVERSION=	s20210101
+PORTVERSION=	s20210102
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,7 +22,7 @@ USES=		pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	ifreund
-GH_TAGNAME=	75588a5
+GH_TAGNAME=	9d76709
 GH_TUPLE=	ifreund:zig-pixman:7847fd1:zig_pixman/deps/zig-pixman \
 		ifreund:zig-wayland:0dd1bee:zig_wayland/deps/zig-wayland \
 		ifreund:zig-xkbcommon:9e4d41f:zig_xkbcommon/deps/zig-xkbcommon \
