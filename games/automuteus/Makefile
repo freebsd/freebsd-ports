@@ -4,7 +4,7 @@ PORTNAME=	automuteus
 DISTVERSION=	6.7.1
 CATEGORIES=	games
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Discord Bot to automute Among Us players at round transitions
 
 LICENSE=	MIT

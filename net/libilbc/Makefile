@@ -5,7 +5,7 @@ DISTVERSION=	3.0.4
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/TimothyGu/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Internet Low Bit Rate codec (RFC3951)
 
 LICENSE=	BSD3CLAUSE

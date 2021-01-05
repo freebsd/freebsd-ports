@@ -6,7 +6,7 @@ DISTVERSION=	1.4.12
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/mpop/releases/
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Small and fast POP3 client
 
 LICENSE=	GPLv3+

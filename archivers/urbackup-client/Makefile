@@ -5,7 +5,7 @@ DISTVERSION=	2.4.11.0
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Client/${DISTVERSION:R}/
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Client component of the UrBackup backup system
 
 LICENSE=	AGPLv3+

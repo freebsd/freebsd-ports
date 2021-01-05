@@ -4,7 +4,7 @@ PORTNAME=	livego
 DISTVERSION=	0.0.14
 CATEGORIES=	multimedia
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Live video streaming server in golang
 
 LICENSE=	MIT

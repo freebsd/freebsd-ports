@@ -8,7 +8,7 @@ MASTER_SITES=	http://ecasound.seul.org/download/ \
 		http://nosignal.fi/download/ \
 		http://ecawave.sourceforge.net/download/
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Multitrack audio processing software
 
 LICENSE=	GPLv2 LGPL21

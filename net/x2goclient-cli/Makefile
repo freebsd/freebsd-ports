@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://x2go.obviously-nice.de/deb/pool-lenny/x2goclient-cli/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	The x2go perl client
 
 LICENSE=	GPLv2

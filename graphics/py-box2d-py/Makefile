@@ -6,7 +6,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	2D physics library Box2D 2.3 for usage in Python
 
 LICENSE=	ZLIB

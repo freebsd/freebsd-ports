@@ -7,7 +7,7 @@ MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	-bin.tar.gz
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Messaging and Integration Patterns provider
 
 LICENSE=	APACHE20

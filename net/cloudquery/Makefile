@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.8
 CATEGORIES=	net
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Transform cloud infrastructure into queryable SQL tables
 
 LICENSE=	MPL20

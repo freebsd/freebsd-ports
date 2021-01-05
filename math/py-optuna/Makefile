@@ -6,7 +6,7 @@ CATEGORIES=	math # machine-learning
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	neel@neelc.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Hyperparameter optimization framework
 
 LICENSE=	MIT
