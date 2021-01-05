@@ -14,6 +14,8 @@ COMMENT=	Tool for binary data visualization and analysis
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-2.0
 
+BROKEN_riscv64=		fails to build: /usr/include/c++/v1/__config:1141:6: No thread API
+
 PYTHON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr@${PY_FLAVOR} \
