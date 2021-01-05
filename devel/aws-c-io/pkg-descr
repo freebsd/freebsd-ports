@@ -1,0 +1,5 @@
+aws-c-io is an event driven framework for implementing application protocols.
+It is built on top of cross-platform abstractions that allow you as a developer
+to think only about the state machine and API for your protocols.
+
+WWW: https://github.com/awslabs/aws-c-io

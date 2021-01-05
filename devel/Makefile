@@ -212,6 +212,7 @@
     SUBDIR += awless
     SUBDIR += aws-c-common
     SUBDIR += aws-c-event-stream
+    SUBDIR += aws-c-io
     SUBDIR += aws-checksums
     SUBDIR += aws-sdk-cpp
     SUBDIR += aws-sdk-php
