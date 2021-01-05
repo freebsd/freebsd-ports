@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libRmath
-DISTVERSION=	3.6.3
+DISTVERSION=	4.0.3
 CATEGORIES=	math lang
 MASTER_SITES=	CRAN/src/base/R-${PORTVERSION:C|\..*||}
 DISTNAME=	R-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libpcre.so:devel/pcre
+		libpcre2-8.so:devel/pcre2
 
 USES=		localbase
 USE_LDCONFIG=	yes
