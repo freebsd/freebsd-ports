@@ -1,0 +1,8 @@
+The two main functionalities of this package are creating mock objects
+(functions) and selectively intercepting calls to a given function that
+originate in some other function. It can be used with any testing framework
+available for R. Mock objects can be injected with either this package's own
+stub() function or a similar with_mock() facility present in the 'testthat'
+package.
+
+WWW: https://github.com/jfiksel/mockery
