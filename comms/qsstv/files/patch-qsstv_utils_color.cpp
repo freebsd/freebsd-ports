@@ -5,7 +5,7 @@
  #include <assert.h>
  
 -#include "openjpeg.h"
-+#include "openjpeg-2.3/openjpeg.h"
++#include "openjpeg-2.4/openjpeg.h"
  #include "color.h"
  
  
