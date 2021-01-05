@@ -10,7 +10,7 @@ MASTER_SITES=	https://github.com/beerml/ardour_releases/raw/master/
 # MASTER_SITES=	https://community.ardour.org/srctar/
 DISTNAME=	Ardour-${PORTVERSION}
 
-MAINTAINER=	beerml@sigma6audio.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multichannel digital audio workstation
 
 LICENSE=	GPLv2

@@ -6,7 +6,7 @@ PORTVERSION=	0.24.10
 CATEGORIES=	audio
 MASTER_SITES=	https://download.drobilla.net/
 
-MAINTAINER=	beerml@sigma6audio.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lilv makes the use of LV2 plugins as simple as possible
 
 LICENSE=	ISCL

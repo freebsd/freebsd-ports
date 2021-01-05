@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://lv2plug.in/spec/
 
-MAINTAINER=	beerml@sigma6audio.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open standard for audio plugins (successor to LADSPA)
 
 LICENSE=	ISCL MIT

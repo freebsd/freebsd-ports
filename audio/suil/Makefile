@@ -6,7 +6,7 @@ PORTVERSION=	0.10.8
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
-MAINTAINER=	beerml@sigma6audio.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for loading and wrapping LV2 plugin UIs
 
 LICENSE=	ISCL
