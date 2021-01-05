@@ -956,6 +956,7 @@
     SUBDIR += unuran
     SUBDIR += vampire
     SUBDIR += viennacl
+    SUBDIR += vinci
     SUBDIR += visualpolylib
     SUBDIR += vowpal_wabbit
     SUBDIR += vtk6
