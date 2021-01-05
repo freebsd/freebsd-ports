@@ -1,5 +1,5 @@
---- Makefile	Wed Apr 19 11:17:30 2000
-+++ Makefile.new	Sat May 20 01:34:48 2000
+--- Makefile.orig	2000-04-19 15:17:30 UTC
++++ Makefile
 @@ -2,14 +2,15 @@
  # <mfischer@umr.edu>
  # based on wmWeather - see ../Credits for more information
