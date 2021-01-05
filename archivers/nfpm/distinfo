@@ -1,6 +1,6 @@
-TIMESTAMP = 1609554774
-SHA256 (goreleaser-nfpm-v2.2.1_GH0.tar.gz) = fc8d512604368fa9bb134862876e05ce2b9892e151a03636a5d214b5f8597754
-SIZE (goreleaser-nfpm-v2.2.1_GH0.tar.gz) = 427734
+TIMESTAMP = 1609881233
+SHA256 (goreleaser-nfpm-v2.2.2_GH0.tar.gz) = 309a8760f1f329ab1a56a0ad8240e447e5bbcd60a7e1c7f9d24830ff10b89b84
+SIZE (goreleaser-nfpm-v2.2.2_GH0.tar.gz) = 427738
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (Djarvur-go-err113-v0.1.0_GH0.tar.gz) = 743dceee958f146e91ad2e2ce89d4216beba99aa121cb23ecd9a5b158f561fcc
