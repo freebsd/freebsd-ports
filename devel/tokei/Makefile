@@ -2,7 +2,7 @@
 
 PORTNAME=	tokei
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.1.0
+DISTVERSION=	12.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -134,7 +134,7 @@ CARGO_CRATES=	ahash-0.3.8 \
 		serde-1.0.118 \
 		serde_cbor-0.11.1 \
 		serde_derive-1.0.118 \
-		serde_json-1.0.60 \
+		serde_json-1.0.61 \
 		serde_yaml-0.8.14 \
 		sha-1-0.8.2 \
 		slug-0.1.4 \
