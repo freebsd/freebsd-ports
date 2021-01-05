@@ -1,0 +1,29 @@
+--- src/Makefile.in.orig	2020-12-14 01:14:27 UTC
++++ src/Makefile.in
+@@ -916,7 +916,7 @@ icewm_SOURCES = \
+ 	yxtray.cc \
+ 	yxtray.h
+ 
+-icewm_LDADD = libitk.la libice.la $(IMAGE_LIBS) $(XSM_LIBS) $(CORE_LIBS)
++icewm_LDADD = libitk.la libice.la $(IMAGE_LIBS) $(XSM_LIBS) $(CORE_LIBS) @LIBINTL@ @LIBICONV@
+ icesh_SOURCES = \
+ 	intl.h \
+ 	debug.h \
+@@ -960,7 +960,7 @@ icewmbg_SOURCES = \
+ 	icewmbg.cc \
+ 	icewmbg_prefs.h
+ 
+-icewmbg_LDADD = libice.la $(IMAGE_LIBS) $(CORE_LIBS) @LIBINTL@
++icewmbg_LDADD = libice.la $(IMAGE_LIBS) $(CORE_LIBS) @LIBINTL@ @LIBICONV@
+ icesound_SOURCES = \
+ 	base.h \
+ 	debug.h \
+@@ -1002,7 +1002,7 @@ icehelp_SOURCES = \
+ 	yrect.h \
+ 	icehelp.cc
+ 
+-icehelp_LDADD = libitk.la libice.la $(IMAGE_LIBS) $(CORE_LIBS) @LIBINTL@
++icehelp_LDADD = libitk.la libice.la $(IMAGE_LIBS) $(CORE_LIBS) @LIBINTL@ @LIBICONV@
+ iceclock_SOURCES = \
+ 	intl.h \
+ 	debug.h \
