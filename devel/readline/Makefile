@@ -38,7 +38,7 @@ PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
 .endfor
 
 post-patch:
-	@${REINPLACE_CMD} -e '/SYS_INPUTRC/ s|/etc/inputrc|${LOCALBASE}&|' ${WRKSRC}/rlconf.h
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/rlconf.h
 .if exists(/usr/lib/libtermcapw.so)
 	@${REINPLACE_CMD} 's|-ltermcap|-ltermcapw|g' ${WRKSRC}/configure
 .endif
