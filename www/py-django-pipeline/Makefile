@@ -13,8 +13,6 @@ COMMENT=	Asset (css/js) packaging library for Django
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PY_FUTURES}
-
 NO_ARCH=	yes
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils

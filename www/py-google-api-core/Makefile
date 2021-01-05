@@ -13,8 +13,7 @@ COMMENT=	Core Google API Client Library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PY_FUTURES} \
-		${PYTHON_PKGNAMEPREFIX}google-auth>=1.21.1<2.0:security/py-google-auth@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=1.21.1<2.0:security/py-google-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}googleapis-common-protos>=1.6.0<2.0:devel/py-googleapis-common-protos@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.12.0,1:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \

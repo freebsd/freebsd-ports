@@ -668,12 +668,6 @@ PY_IPADDRESS=	${PYTHON_PKGNAMEPREFIX}ipaddress>=1.0.23:net/py-ipaddress@${PY_FLA
 PY_IPADDRESS=
 .endif
 
-.if ${PYTHON_REL} < 3200
-PY_FUTURES=	${PYTHON_PKGNAMEPREFIX}futures>=3.2:devel/py-futures@${PY_FLAVOR}
-.else
-PY_FUTURES=
-.endif
-
 .if ${PYTHON_VER} != ${PYTHON_DEFAULT}
 PY_MERCURIAL=	${PYTHON_PKGNAMEPREFIX}mercurial>=5.5:devel/mercurial@${PY_FLAVOR}
 .else

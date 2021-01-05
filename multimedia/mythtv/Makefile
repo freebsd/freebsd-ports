@@ -123,7 +123,6 @@ BINDINGS_BUILD_DEPENDS= ${PYTHON_PKGNAMEPREFIX}mysqlclient>=0:databases/py-mysql
 			p5-LWP-UserAgent-Determined>=0:www/p5-LWP-UserAgent-Determined
 BINDINGS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mysqlclient>=1.2.2:databases/py-mysqlclient@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
-			${PY_FUTURES} \
 			${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}requests-cache>0:www/py-requests-cache@${PY_FLAVOR} \

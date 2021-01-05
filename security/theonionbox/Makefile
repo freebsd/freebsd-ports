@@ -13,7 +13,6 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apscheduler>=3.4:devel/py-apscheduler@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bottle>=0.12.13:www/py-bottle@${PY_FLAVOR} \
-		${PY_FUTURES} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.4.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>=1.6.7:net/py-pysocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>2.18:www/py-requests@${PY_FLAVOR} \
@@ -22,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apscheduler>=3.4:devel/py-apscheduler@${PY_F
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.22:net/py-urllib3@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} # workaround for bug#230613: missing internal sqlite3 module in python
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils autoplist noflavors
 
 NO_ARCH=	yes

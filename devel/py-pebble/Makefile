@@ -14,8 +14,6 @@ COMMENT=	Threading and multiprocessing eye-candy
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PY_FUTURES}
-
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
