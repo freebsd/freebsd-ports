@@ -57,7 +57,7 @@ LICENSE_DISTFILES_ULG=	${CARDSETDIST}
 LICENSE_FILE_GPLv2+ =		${WRKDIR}/${CARDSETDIR}/cardset-1567/COPYRIGHT
 LICENSE_DISTFILES_GPLv2+ =	${CARDSETDIST}
 
-USES=		python shebangfix tar:xz
+USES=		python:3.6+ shebangfix tar:xz
 USE_PYTHON=	distutils noflavors autoplist
 SHEBANG_FILES=	data/themes/clearlooks/convert_imgs.sh
 NO_ARCH=	yes
