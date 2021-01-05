@@ -139,6 +139,7 @@ share/applications/ardour6.desktop
 %%DATADIR%%/export/Ogg_Vorbis .preset
 %%DATADIR%%/export/Ogg_Vorbis.format
 %%DATADIR%%/export/Ring Tone.format
+%%DATADIR%%/export/WAV (tagged).format
 %%DATADIR%%/icons/act-disabled.png
 %%DATADIR%%/icons/add.png
 %%DATADIR%%/icons/anchored_trim_left_cursor.png
@@ -788,6 +789,7 @@ share/applications/ardour6.desktop
 %%DATADIR%%/scripts/avldrums_midimap.lua
 %%DATADIR%%/scripts/bounce_replace.lua
 %%DATADIR%%/scripts/bypass_all_plugins.lua
+%%DATADIR%%/scripts/collapse_playlists.lua
 %%DATADIR%%/scripts/create_drum_tracks.lua
 %%DATADIR%%/scripts/delete_xrun_markers.lua
 %%DATADIR%%/scripts/export_mp4chaps.lua
