@@ -2,11 +2,8 @@
 
 PORTNAME=	google-cloud-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0.g20190710 # the upstream master branch is mis-versioned: https://github.com/googleapis/google-cloud-cpp/issues/2871
-PORTREVISION=	5
+DISTVERSION=	1.21.0
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/nlohmann/json/releases/download/v3.4.0/:json # should use the package: https://github.com/googleapis/google-cloud-cpp/issues/2874
-DISTFILES=	json.hpp:json
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -16,35 +13,36 @@ COMMENT=	C++ Idiomatic Clients for Google Cloud Platform services
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	protobuf>=3.7.1:devel/protobuf \
-		grpc>=1.19.1:devel/grpc
-LIB_DEPENDS=	libcrc32c.so:devel/crc32c \
+NOT_FOR_ARCHS=	i386
+
+BUILD_DEPENDS=	grpc>=1.19.1:devel/grpc \
+		nlohmann-json>0:devel/nlohmann-json \
+		protobuf>=3.7.1:devel/protobuf
+LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
+		libcares.so:dns/c-ares \
+		libcrc32c.so:devel/crc32c \
 		libcurl.so:ftp/curl \
 		libgrpc.so:devel/grpc \
-		libprotobuf.so:devel/protobuf
+		libprotobuf.so:devel/protobuf \
+		libre2.so:devel/re2
 
-USES=		cmake compiler:c++11-lang ssl
+USES=		cmake compiler:c++17-lang pkgconfig ssl
 USE_GITHUB=	yes
-GH_TAGNAME=	4dff795ca
 GH_ACCOUNT=	GoogleCloudPlatform
-GH_TUPLE=	googleapis:googleapis:a8ee1416f4c588f2ab92da72e7c1f588c784d3e6:googleapis
+GH_TUPLE=	googleapis:googleapis:370e9f9ac14dbc73f56e15257bccc06dfebd4196:googleapis
 USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DGOOGLE_CLOUD_CPP_CXX_STANDARD=17 \
+		-DGOOGLE_CLOUD_CPP_DEPENDENCY_PROVIDER=package
+CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	BUILD_TESTING GOOGLE_CLOUD_CPP_ENABLE_CXX_EXCEPTIONS
 
 CFLAGS+=	-I${BUILD_WRKSRC}/external/googleapis/src/googleapis_project-build
 LDFLAGS+=	-L${BUILD_WRKSRC}/external/googleapis/src/googleapis_project-build
 
-CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	BUILD_TESTING GOOGLE_CLOUD_CPP_ENABLE_CXX_EXCEPTIONS
-CMAKE_ARGS=	-DGOOGLE_CLOUD_CPP_DEPENDENCY_PROVIDER=package
-
 post-extract:
-	@${MKDIR} ${BUILD_WRKSRC}/external/nlohmann_json/src/
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/json.hpp ${BUILD_WRKSRC}/external/nlohmann_json/src/json.hpp
 	@${MKDIR} ${BUILD_WRKSRC}/external/googleapis/src/
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILE_googleapis} \
-		${BUILD_WRKSRC}/external/googleapis/src/a8ee1416f4c588f2ab92da72e7c1f588c784d3e6.tar.gz
-
-post-patch: # workaround for https://github.com/googleapis/google-cloud-cpp/issues/2875, also see files/patch-cmake_external_googleapis.cmake
-	@${REINPLACE_CMD} "s#%%LOCALBASE%%#${LOCALBASE}#" ${WRKSRC}/cmake/external/googleapis.cmake
+		${BUILD_WRKSRC}/external/googleapis/src/370e9f9ac14dbc73f56e15257bccc06dfebd4196.tar.gz
 
 .include <bsd.port.mk>
