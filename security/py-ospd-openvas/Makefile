@@ -29,7 +29,6 @@ GROUPS=         ${USERS}
 
 USE_RC_SUBR=	${PORTNAME:S/-/_/}
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
-SUB_FILES=	pkg-message
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/ospd
