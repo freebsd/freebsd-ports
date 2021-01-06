@@ -904,6 +904,7 @@
     SUBDIR += py-gpsoauth
     SUBDIR += py-gssapi
     SUBDIR += py-gtts-token
+    SUBDIR += py-gvm-tools
     SUBDIR += py-hkdf
     SUBDIR += py-htpasswd
     SUBDIR += py-itsdangerous
