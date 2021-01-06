@@ -28,6 +28,9 @@ ETCDIR=		${PREFIX}/etc/openvas
 
 OPENVAS_VER?=	8
 
+DEPRECATED=	End of life, please migrate to new version of greenbone-security-assistant
+EXPIRATION_DATE=2021-02-06
+
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/gsad_log.conf ${STAGEDIR}${ETCDIR}/gsad_log.conf.sample
 

@@ -956,6 +956,7 @@
     SUBDIR += py-python-axolotl
     SUBDIR += py-python-axolotl-curve25519
     SUBDIR += py-python-gnupg
+    SUBDIR += py-python-gvm
     SUBDIR += py-python-jose
     SUBDIR += py-python-nss
     SUBDIR += py-python-openid

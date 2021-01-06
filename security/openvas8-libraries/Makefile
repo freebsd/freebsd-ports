@@ -31,6 +31,9 @@ USE_GNOME=	glib20
 
 OPENVAS_VER?=	8
 
+DEPRECATED=	End of life, please migrate to security/gvm-libs port
+EXPIRATION_DATE=2021-02-06
+
 OPTIONS_DEFINE=	LDAP RADIUS
 OPTIONS_DEFAULT=LDAP
 

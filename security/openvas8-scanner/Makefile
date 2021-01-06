@@ -32,6 +32,9 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/${OPENVAS_VER}//}
 
 OPENVAS_VER?=	8
 
+DEPRECATED=	End of life, please migrate to security/openvas port
+EXPIRATION_DATE=2021-02-06
+
 OPTIONS_DEFINE=	DOCS
 
 post-install:

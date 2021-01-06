@@ -25,6 +25,9 @@ USE_GNOME=	glib20 libxslt:run
 
 OPENVAS_VER?=	8
 
+DEPRECATED=     End of life
+EXPIRATION_DATE=2021-02-06
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
 	${MV} ${STAGEDIR}${PREFIX}/bin/check_omp \
