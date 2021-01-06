@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	foundationdb-devel
-DISTVERSION=	7.0.0.a.20200515
+DISTVERSION=	7.0.0.a.20201228
 CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
@@ -13,7 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	${LOCALBASE}/include/doctest/doctest.h:devel/doctest \
+		${LOCALBASE}/include/toml.hpp:devel/toml11 \
+		bash:shells/bash \
+		git:devel/git
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libeio.so:devel/libeio
 
@@ -21,7 +25,7 @@ USES=		compiler:c++17-lang cmake mono:build python:build shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple
 GH_PROJECT=	foundationdb
-GH_TAGNAME=	c1fc784
+GH_TAGNAME=	c895049
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	foundationdb
 
@@ -47,6 +51,7 @@ PLIST_SUB+=	${SUB_FDB}
 post-patch:
 		${REINPLACE_CMD} 's/OPENSSL_USE_STATIC_LIBS TRUE/OPENSSL_USE_STATIC_LIBS FALSE/' \
 		${WRKSRC}/cmake/FDBComponents.cmake
+
 do-install:
 	# commands on first line, dev tools on next two
 .for f in fdbbackup fdbcli fdbmonitor fdbserver \
