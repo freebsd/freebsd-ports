@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tailscale
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -30,7 +30,7 @@ GH_TUPLE=	\
 		pborman:getopt:ee0cd42419d3:pborman_getopt/vendor/github.com/pborman/getopt \
 		peterbourgon:ff:v2.0.0:peterbourgon_ff_v2/vendor/github.com/peterbourgon/ff/v2 \
 		rsc:goversion:v1.2.0:rsc_goversion/vendor/rsc.io/goversion \
-		tailscale:wireguard-go:a6168fd06b3f:tailscale_wireguard_go/vendor/github.com/tailscale/wireguard-go \
+		tailscale:wireguard-go:db78fad0bebf:tailscale_wireguard_go/vendor/github.com/tailscale/wireguard-go \
 		tcnksm:go-httpstat:v0.2.0:tcnksm_go_httpstat/vendor/github.com/tcnksm/go-httpstat \
 		toqueteos:webbrowser:v1.2.0:toqueteos_webbrowser/vendor/github.com/toqueteos/webbrowser
 
