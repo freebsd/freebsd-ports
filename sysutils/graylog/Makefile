@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graylog
-DISTVERSION=	3.3.8
+DISTVERSION=	4.0.1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.graylog.org/releases/
 DISTFILES=	graylog/${DISTNAME}${EXTRACT_SUFX} \
@@ -11,8 +11,11 @@ DISTFILES=	graylog/${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Tool for centralized log collection
 
-LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	SSPLv1 APACHE20
+LICENSE_COMB=	multi
+LICENSE_NAME_SSPLv1=	Server Side Public License
+LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE
+LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		tar:tgz
 USE_JAVA=	yes
