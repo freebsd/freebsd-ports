@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210106:
+  AFFECTS: mail/dovecot
+  AUTHOR: pi@FreeBSD.org
+
+  The VPOPMAIL option was removed, because it was dropped upstream,
+  so please check your config bevor upgrading.
+
+20210106:
+  AFFECTS: sysutils/graylog
+  AUTHOR: dch@FreeBSD.org
+
+  graylog 4.0 and higher now use a new license, the SSPL. For more
+  details, see https://www.graylog.org/post/graylog-v4-0-licensing-sspl
+
 20210102:
   AFFECTS: x11/libexo, XFCE4 desktop users
   AUTHOR: madpilot@FreeBSD.org

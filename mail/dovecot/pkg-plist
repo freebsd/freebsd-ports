@@ -37,10 +37,10 @@
 %%ETCDIR%%/example-config/conf.d/auth-sql.conf.ext
 %%ETCDIR%%/example-config/conf.d/auth-static.conf.ext
 %%ETCDIR%%/example-config/conf.d/auth-system.conf.ext
-%%ETCDIR%%/example-config/conf.d/auth-vpopmail.conf.ext
 %%ETCDIR%%/example-config/dovecot-dict-auth.conf.ext
 %%ETCDIR%%/example-config/dovecot-dict-sql.conf.ext
 %%ETCDIR%%/example-config/dovecot-ldap.conf.ext
+%%ETCDIR%%/example-config/dovecot-oauth2.conf.ext
 %%ETCDIR%%/example-config/dovecot-sql.conf.ext
 %%ETCDIR%%/example-config/dovecot.conf
 %%ETCDIR%%/README
@@ -92,8 +92,8 @@ include/dovecot/auth-master-connection.h
 include/dovecot/auth-master.h
 include/dovecot/auth-penalty.h
 include/dovecot/auth-policy.h
-include/dovecot/auth-request-handler.h
 include/dovecot/auth-request-handler-private.h
+include/dovecot/auth-request-handler.h
 include/dovecot/auth-request-stats.h
 include/dovecot/auth-request-var-expand.h
 include/dovecot/auth-request.h
@@ -164,6 +164,8 @@ include/dovecot/dsync-brain.h
 include/dovecot/dsync-ibc.h
 include/dovecot/eacces-error.h
 include/dovecot/env-util.h
+include/dovecot/event-filter-parser.h
+include/dovecot/event-filter-private.h
 include/dovecot/event-filter.h
 include/dovecot/event-log.h
 include/dovecot/execv-const.h
@@ -470,7 +472,7 @@ include/dovecot/mdbox-storage-rebuild.h
 include/dovecot/mdbox-storage.h
 include/dovecot/mdbox-sync.h
 include/dovecot/mech-digest-md5-private.h
-include/dovecot/mech-otp-skey-common.h
+include/dovecot/mech-otp-common.h
 include/dovecot/mech-plain-common.h
 include/dovecot/mech-scram.h
 include/dovecot/mech.h
@@ -637,6 +639,7 @@ include/dovecot/submission-settings.h
 include/dovecot/subscription-file.h
 include/dovecot/syslog-util.h
 include/dovecot/test-common.h
+include/dovecot/test-subprocess.h
 include/dovecot/time-util.h
 include/dovecot/unichar.h
 include/dovecot/unix-socket-create.h
@@ -645,7 +648,6 @@ include/dovecot/unlink-old-files.h
 include/dovecot/uri-util.h
 include/dovecot/userdb-blocking.h
 include/dovecot/userdb-template.h
-include/dovecot/userdb-vpopmail.h
 include/dovecot/userdb.h
 include/dovecot/utc-mktime.h
 include/dovecot/utc-offset.h

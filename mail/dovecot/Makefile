@@ -8,8 +8,7 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.3.11.3
-PORTREVISION=	1
+PORTVERSION=	2.3.13
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.3/
 
@@ -37,7 +36,7 @@ INSTALL_TARGET=	install-strip
 USERS=		dovecot dovenull
 GROUPS=		${USERS}
 
-OPTIONS_DEFINE=	LIBSODIUM LIBWRAP LUA LZ4 VPOPMAIL DOCS EXAMPLES
+OPTIONS_DEFINE=	LIBSODIUM LIBWRAP LUA LZ4 DOCS EXAMPLES
 OPTIONS_DEFAULT=GSSAPI_NONE LIBWRAP
 OPTIONS_SUB=	yes
 
@@ -49,7 +48,6 @@ OPTIONS_SINGLE=		GSSAPI
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_NONE GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 
 LZ4_DESC=	LZ4 compression support
-VPOPMAIL_DESC=	vpopmail support
 
 DB_DESC=	Database support
 CDB_DESC=	CDB database support
@@ -77,9 +75,6 @@ LUA_USES=		lua
 
 LZ4_CONFIGURE_WITH=	lz4
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
-
-VPOPMAIL_BUILD_DEPENDS=	vpopmail>=0:mail/vpopmail
-VPOPMAIL_CONFIGURE_WITH=vpopmail
 
 # Databases
 CDB_CONFIGURE_WITH=	cdb
