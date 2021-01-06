@@ -1,0 +1,19 @@
+--- src/CMakeLists.txt	2020-08-11 10:05:36.000000000 -0500
++++ src/CMakeLists.txt	2021-01-04 19:53:06.893137000 -0500
+@@ -227,7 +227,7 @@
+                        ${GNUTLS_LDFLAGS} ${GPGME_LDFLAGS} ${CMAKE_THREAD_LIBS_INIT} ${LINKER_HARDENING_FLAGS} ${LINKER_DEBUG_FLAGS}
+                        ${PostgreSQL_LIBRARIES} ${GLIB_LDFLAGS} ${GTHREAD_LDFLAGS}
+                        ${LIBGVM_BASE_LDFLAGS} ${LIBGVM_UTIL_LDFLAGS} ${LIBGVM_OSP_LDFLAGS} ${LIBGVM_GMP_LDFLAGS}
+-                       ${LIBICAL_LDFLAGS} ${LINKER_HARDENING_FLAGS})
++                       ${LIBICAL_LDFLAGS} ${LINKER_HARDENING_FLAGS} -lexecinfo)
+ target_link_libraries (manage-test cgreen m
+                        ${GNUTLS_LDFLAGS} ${GPGME_LDFLAGS} ${CMAKE_THREAD_LIBS_INIT} ${LINKER_HARDENING_FLAGS} ${LINKER_DEBUG_FLAGS}
+                        ${PostgreSQL_LIBRARIES} ${GLIB_LDFLAGS} ${GTHREAD_LDFLAGS}
+@@ -441,5 +441,7 @@
+                    COMMAND ctags ${C_FILES})
+ add_custom_target (tags COMMENT "Building tags files...")
+ add_dependencies (tags etags ctags)
++
++file(RENAME "pwpolicy.conf" "pwpolicy.conf.sample")
+ 
+ ## End

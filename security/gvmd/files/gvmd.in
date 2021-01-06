@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: gvmd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# gvmd_enable  (bool):   Set to NO by default.
+#                Set it to YES to enable gvmd.
+# gvmd_flags (params):   Set params used to start gvmd.
+#
+
+. /etc/rc.subr
+
+name=gvmd
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${gvmd_enable=NO}
+: ${gmvd_flags="--osp-vt-update=/var/run/ospd/ospd.sock --unix-socket=/var/run/gvm/gvmd.sock"}
+
+command="%%PREFIX%%/sbin/gvmd"
+command_args="${gmvd_flags}"
+gvmd_user="gvm"
+gvmd_group="gvm"
+pidfile=/var/run/gvm/gvmd.pid
+
+run_rc_command "$1"

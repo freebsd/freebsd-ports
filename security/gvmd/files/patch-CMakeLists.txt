@@ -1,0 +1,52 @@
+--- CMakeLists.txt	2020-08-11 10:05:36.000000000 -0500
++++ CMakeLists.txt	2021-01-04 19:48:05.978938000 -0500
+@@ -132,7 +132,7 @@
+ endif (NOT LIBDIR)
+ 
+ if (NOT LOCALSTATEDIR)
+-  set (LOCALSTATEDIR "${CMAKE_INSTALL_PREFIX}/var")
++  set (LOCALSTATEDIR "/var")
+ endif (NOT LOCALSTATEDIR)
+ 
+ if (NOT DATADIR)
+@@ -183,7 +183,7 @@
+ set (GVM_CA_CERTIFICATE      "${GVM_STATE_DIR}/CA/cacert.pem")
+ 
+ if (NOT GVM_RUN_DIR)
+-  set (GVM_RUN_DIR      "${LOCALSTATEDIR}/run")
++  set (GVM_RUN_DIR      "${LOCALSTATEDIR}/run/gvm")
+ endif (NOT GVM_RUN_DIR)
+ 
+ if (NOT GVM_FEED_LOCK_PATH)
+@@ -240,7 +240,7 @@
+ configure_file (doc/Doxyfile_xml.in doc/Doxyfile_xml)
+ configure_file (doc/example-gvm-manage-certs.conf.in doc/example-gvm-manage-certs.conf @ONLY)
+ configure_file (VERSION.in VERSION)
+-configure_file (src/gvmd_log_conf.cmake_in src/gvmd_log.conf)
++configure_file (src/gvmd_log_conf.cmake_in src/gvmd_log.conf.sample)
+ configure_file (src/schema_formats/XML/GMP.xml.in src/schema_formats/XML/GMP.xml @ONLY)
+ configure_file (tools/greenbone-feed-sync.in tools/greenbone-feed-sync @ONLY)
+ configure_file (tools/greenbone-scapdata-sync.in tools/greenbone-scapdata-sync @ONLY)
+@@ -282,7 +282,7 @@
+ 
+ ## Configs (e.g. systemd service file)
+ 
+-add_subdirectory (config)
++# add_subdirectory (config)
+ 
+ ## Documentation
+ 
+@@ -292,10 +292,11 @@
+ 
+ install (DIRECTORY DESTINATION ${GVMD_STATE_DIR})
+ 
+-install (FILES ${CMAKE_BINARY_DIR}/src/gvmd_log.conf
++install (FILES ${CMAKE_BINARY_DIR}/src/gvmd_log.conf.sample
+          DESTINATION ${GVM_SYSCONF_DIR})
+ 
+-install (FILES ${CMAKE_SOURCE_DIR}/src/pwpolicy.conf
++
++install (FILES ${CMAKE_SOURCE_DIR}/src/pwpolicy.conf.sample
+          DESTINATION ${GVM_SYSCONF_DIR})
+ 
+ # Schema formats.

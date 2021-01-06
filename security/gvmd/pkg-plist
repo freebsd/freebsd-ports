@@ -1,0 +1,54 @@
+bin/gvm-manage-certs
+@sample etc/gvm/gvmd_log.conf.sample
+@sample etc/gvm/pwpolicy.conf.sample
+lib/libgvm-pg-server.so
+lib/libgvm-pg-server.so.20
+lib/libgvm-pg-server.so.20.08.0
+sbin/greenbone-certdata-sync
+sbin/greenbone-feed-sync
+sbin/greenbone-scapdata-sync
+sbin/gvmd
+share/doc/gvm/example-gvm-manage-certs.conf
+share/doc/gvm/html/gmp.html
+share/gvm/cert/cert_bund_getbyname.xsl
+share/gvm/cert/dfn_cert_getbyname.xsl
+share/gvm/gvm-lsc-deb-creator.sh
+share/gvm/gvm-lsc-rpm-creator.sh
+share/gvm/gvmd/global_alert_methods/159f79a5-fce8-4ec5-aa49-7d17a77739a3/alert
+share/gvm/gvmd/global_alert_methods/2db07698-ec49-11e5-bcff-28d24461215b/alert
+share/gvm/gvmd/global_alert_methods/4a398d42-87c0-11e5-a1c0-28d24461215b/alert
+share/gvm/gvmd/global_alert_methods/5b39c481-9137-4876-b734-263849dd96ce/alert
+share/gvm/gvmd/global_alert_methods/5b39c481-9137-4876-b734-263849dd96ce/report-convert.py
+share/gvm/gvmd/global_alert_methods/9d435134-15d3-11e6-bf5c-28d24461215b/alert
+share/gvm/gvmd/global_alert_methods/c427a688-b653-40ab-a9d0-d6ba842a9d63/alert
+share/gvm/gvmd/global_alert_methods/cd1f5a34-6bdc-11e0-9827-002264764cea/alert
+share/gvm/gvmd/global_alert_methods/f9d97653-f89b-41af-9ba1-0f6ee00e9c1a/alert
+share/gvm/gvmd/global_schema_formats/02052818-dab6-11df-9be4-002264764cea/HTML.xsl
+share/gvm/gvmd/global_schema_formats/02052818-dab6-11df-9be4-002264764cea/generate
+share/gvm/gvmd/global_schema_formats/02052818-dab6-11df-9be4-002264764cea/rnc.xsl
+share/gvm/gvmd/global_schema_formats/18e826fc-dab6-11df-b913-002264764cea/GMP.xml
+share/gvm/gvmd/global_schema_formats/18e826fc-dab6-11df-b913-002264764cea/generate
+share/gvm/gvmd/global_schema_formats/787a4a18-dabc-11df-9486-002264764cea/RNC.xsl
+share/gvm/gvmd/global_schema_formats/787a4a18-dabc-11df-9486-002264764cea/generate
+share/gvm/gvmd/global_schema_formats/787a4a18-dabc-11df-9486-002264764cea/rnc.xsl
+share/gvm/gvmd/global_schema_formats/d6cf255e-947c-11e1-829a-406186ea4fc5/GMP.xsl
+share/gvm/gvmd/global_schema_formats/d6cf255e-947c-11e1-829a-406186ea4fc5/generate
+share/gvm/gvmd/wizards/delete_task_deep.xml
+share/gvm/gvmd/wizards/get_tasks_deep.xml
+share/gvm/gvmd/wizards/modify_task.xml
+share/gvm/gvmd/wizards/quick_auth_scan.xml
+share/gvm/gvmd/wizards/quick_first_scan.xml
+share/gvm/gvmd/wizards/quick_task.xml
+share/gvm/gvmd/wizards/reset_task.xml
+share/gvm/scap/cpe_getbyname.xsl
+share/gvm/scap/cve_getbyname.xsl
+share/gvm/scap/ovaldef_getbyname.xsl
+share/man/man1/gvm-manage-certs.1.gz
+share/man/man8/greenbone-certdata-sync.8.gz
+share/man/man8/greenbone-scapdata-sync.8.gz
+share/man/man8/gvmd.8.gz
+@dir(gvm,gvm,750) /var/lib/gvm/gvmd/gnupg
+@dir(gvm,gvm,750) /var/lib/gvm/gvmd
+@dir(gvm,gvm,750) /var/lib/gvm
+@dir(gvm,gvm,750) /var/run/gvm
+@dir(gvm,gvm,750) /var/log/gvm
