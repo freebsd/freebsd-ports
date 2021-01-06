@@ -24,12 +24,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		gpg:security/gnupg \
 		xml:textproc/xmlstarlet \
 		sshpass:security/sshpass \
-		socat:net/socat
+		socat:net/socat \
+		zip:archivers/zip
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone
 
-USES=		cmake gnome pkgconfig pgsql python samba:run zip
+USES=		cmake gnome pkgconfig pgsql python samba:run
 USE_GNOME=	glib20 libxslt:build
 USE_LDCONFIG=	yes
 
