@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpcap
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.10.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/release/
 
