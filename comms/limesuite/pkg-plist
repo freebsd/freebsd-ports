@@ -48,8 +48,8 @@ libdata/pkgconfig/LimeSuite.pc
 %%GUI%%share/pixmaps/lime-suite-48.png
 %%GUI%%share/pixmaps/lime-suite-64.png
 %%QUICKTEST%%bin/LimeQuickTest
-%%OCTAVE%%lib/octave/%%OCTAVE_VERSION%%/site/oct/%%CONFIGURE_TARGET%%/LimeSuite.oct
-%%OCTAVE%%share/octave/%%OCTAVE_VERSION%%/site/m/LoadLimeSuite.m
+%%OCTAVE%%%%OCTAVE_OCT_SITE_DIR%%LimeSuite.oct
+%%OCTAVE%%%%OCTAVE_M_SITE_DIR%%LoadLimeSuite.m
 %%PORTDOCS%%%%DOCSDIR%%/LMS_API_Documentation/_lime_suite_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/LMS_API_Documentation/_lime_suite_8h.js
 %%PORTDOCS%%%%DOCSDIR%%/LMS_API_Documentation/_lime_suite_8h_source.html

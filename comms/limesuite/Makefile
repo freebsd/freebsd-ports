@@ -3,6 +3,7 @@
 PORTNAME=	limesuite
 DISTVERSIONPREFIX=	v
 DISTVERSION=	20.10.0
+PORTREVISION=	1
 CATEGORIES=	comms astro hamradio
 
 MAINTAINER=	tomek@cedro.info
@@ -34,8 +35,8 @@ CMAKE_ON=	ENABLE_LIBRARY \
 		ENABLE_LIMERFE \
 		ENABLE_EVB7COM
 
-OPTIONS_DEFINE=		DOCS GUI QUICKTEST OCTAVE REMOTE SOAPYSDR
-OPTIONS_DEFAULT=	GUI QUICKTEST SOAPYSDR
+OPTIONS_DEFINE=		DOCS GUI QUICKTEST OCTAVE REMOTE SOAPYSDR DEBUG
+OPTIONS_DEFAULT=	GUI QUICKTEST SOAPYSDR DEBUG
 OPTIONS_UNSET=		DOCS
 OPTIONS_SUB=		yes
 QUICKTEST_DESC=		Build QuickTest Self-Test suite
@@ -55,7 +56,6 @@ QUICKTEST_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 OCTAVE_CMAKE_BOOL=	ENABLE_OCTAVE
 OCTAVE_BUILD_DEPENDS=	octave:math/octave
-PLIST_SUB+=		OCTAVE_VERSION=${OCTAVE_VERSION}
 
 REMOTE_CMAKE_BOOL=	ENABLE_REMOTE
 
@@ -66,11 +66,23 @@ SOAPYSDR_LIB_DEPENDS=	libSoapySDR.so:misc/soapysdr
 
 .if ${PORT_OPTIONS:MGUI}
 USES+=		gl xorg
-USE_XORG=	x11 ice sm xcursor xext xfixes xinerama xft xrender
-USE_GL=		gl glu
-USE_WX=		3.1
-WX_COMPS=	wx:lib
+USE_XORG+=	x11 ice sm xcursor xext xfixes xinerama xft xrender
+USE_GL+=		gl glu
+USE_WX+=		3.1
+WX_COMPS+=	wx:lib
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
+.endif
+
+.if ${PORT_OPTIONS:MOCTAVE}
+.include "${.CURDIR}/../../math/octave/Makefile.version"
+OCTAVE_OCT_SITE_DIR=	"lib/octave/${OCTAVE_VERSION}/site/oct/${CONFIGURE_TARGET}/"
+PLIST_SUB+=	OCTAVE_OCT_SITE_DIR=${OCTAVE_OCT_SITE_DIR}
+OCTAVE_M_SITE_DIR=	"share/octave/${OCTAVE_VERSION}/site/m/"
+PLIST_SUB+=	OCTAVE_M_SITE_DIR=${OCTAVE_M_SITE_DIR}
+.endif
+
+.if ${PORT_OPTIONS:MDEBUG}
+WITH_DEBUG=	yes
 .endif
 
 post-build:
@@ -89,5 +101,4 @@ post-build:
 	(cd ${WRKSRC}/Desktop && ${CP} lime-suite.desktop ${STAGEDIR}${PREFIX}/share/applications/)
 .endif
 
-.include "../../math/octave/Makefile.version"
 .include <bsd.port.post.mk>
