@@ -217,7 +217,7 @@ tenshi:*:268:268::0:0:Tenshi user:/var/lib/tenshi:/usr/sbin/nologin
 dendrite:*:269:269::0:0:Dendrite user:/nonexistent:/usr/sbin/nologin
 _rpki-client:*:270:270::0:0:rpki-client user:/nonexistent:/usr/sbin/nologin
 signaling:*:271:271::0:0:Signaling server:/nonexistent:/usr/sbin/nologin
-# free: 272
+gvm:*:272:272::0:0:Greenbone Vulnerability Management:/nonexistent:/usr/sbin/nologin
 # free: 273
 # free: 274
 hacluster:*:275:275::0:0:Heartbeat cluster user:/nonexistent:/usr/sbin/nologin
