@@ -4,7 +4,7 @@ include/gsasl.h
 lib/libgsasl.a
 lib/libgsasl.so
 lib/libgsasl.so.7
-lib/libgsasl.so.7.9.7
+lib/libgsasl.so.7.10.0
 libdata/pkgconfig/libgsasl.pc
 man/man3/gsasl_appinfo_get.3.gz
 man/man3/gsasl_appinfo_set.3.gz
@@ -58,6 +58,9 @@ man/man3/gsasl_encode.3.gz
 man/man3/gsasl_encode_inline.3.gz
 man/man3/gsasl_finish.3.gz
 man/man3/gsasl_free.3.gz
+man/man3/gsasl_hash_length.3.gz
+man/man3/gsasl_hex_from.3.gz
+man/man3/gsasl_hex_to.3.gz
 man/man3/gsasl_hmac_md5.3.gz
 man/man3/gsasl_hmac_sha1.3.gz
 man/man3/gsasl_init.3.gz
@@ -73,6 +76,8 @@ man/man3/gsasl_random.3.gz
 man/man3/gsasl_randomize.3.gz
 man/man3/gsasl_register.3.gz
 man/man3/gsasl_saslprep.3.gz
+man/man3/gsasl_scram_secrets_from_password.3.gz
+man/man3/gsasl_scram_secrets_from_salted_password.3.gz
 man/man3/gsasl_server_application_data_get.3.gz
 man/man3/gsasl_server_application_data_set.3.gz
 man/man3/gsasl_server_callback_anonymous_get.3.gz
@@ -121,10 +126,10 @@ man/man3/gsasl_strerror_name.3.gz
 man/man3/gsasl_stringprep_nfkc.3.gz
 man/man3/gsasl_stringprep_saslprep.3.gz
 man/man3/gsasl_stringprep_trace.3.gz
-%%PORTDOCS%%%%DOCSDIR%%/reference/abstraction.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/api-index-full.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/controlflow.png
-%%PORTDOCS%%%%DOCSDIR%%/reference/controlflow2.png
+%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-abstraction.png
+%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-controlflow.png
+%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-controlflow2.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl-compat.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl-mech.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl.html
@@ -139,6 +144,7 @@ man/man3/gsasl_stringprep_trace.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/reference/ix06.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ix07.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ix08.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/ix09.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/left-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/left.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/right-insensitive.png
