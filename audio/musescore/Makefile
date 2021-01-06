@@ -4,7 +4,7 @@
 PORTNAME=	musescore
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 # DISTNAME=	MuseScore-${DISTVERSION}
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libogg.so:audio/libogg \
 		libfreetype.so:print/freetype2
 
-USES=		cmake compiler:c++11-lib desktop-file-utils \
+USES=		cmake compiler:c++11-lib desktop-file-utils localbase \
 		pkgconfig qt:5 shared-mime-info
 USE_QT=		concurrent core declarative designer graphicaleffects gui \
 		help location network opengl printsupport \
