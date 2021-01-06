@@ -1,0 +1,5 @@
+TIMESTAMP = 1609922298
+SHA256 (greenbone-security-assistant-cache.tar.gz) = 54e91c17d834c20864b7b8bcd539afaae041ea377aea546db2d7cdc6c7e234c1
+SIZE (greenbone-security-assistant-cache.tar.gz) = 49197096
+SHA256 (greenbone-gsa-v20.8.0_GH0.tar.gz) = 8f9f6d985a592b805aeba8c73cba7efaaa497f67a0a9dc8264590d2f41e98ddc
+SIZE (greenbone-gsa-v20.8.0_GH0.tar.gz) = 2131696

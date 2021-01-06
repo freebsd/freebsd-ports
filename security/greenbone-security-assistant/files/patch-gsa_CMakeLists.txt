@@ -1,0 +1,11 @@
+--- gsa/CMakeLists.txt	2021-01-05 00:32:41.516624000 -0500
++++ gsa/CMakeLists.txt	2021-01-05 00:32:59.477060000 -0500
+@@ -1187,7 +1187,7 @@
+ 
+ 
+ add_custom_command (OUTPUT bundle.stamp
+-                    COMMAND ${CMAKE_COMMAND} -E env REACT_APP_VERSION=${PROJECT_VERSION_STRING} ${INSTALLER} "${INSTALLER_ARGS}" run build
++                    COMMAND ${CMAKE_COMMAND} -E env REACT_APP_VERSION=${PROJECT_VERSION_STRING} ${INSTALLER} "${INSTALLER_ARGS}" react-scripts build
+                     COMMAND ${CMAKE_COMMAND} -E touch ${CMAKE_CURRENT_BINARY_DIR}/bundle.stamp
+                     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                     DEPENDS  ${CMAKE_CURRENT_BINARY_DIR}/node-modules.stamp

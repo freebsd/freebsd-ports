@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: gsad
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# gsad_enable  (bool):   Set to NO by default.
+#                Set it to YES to enable gsad.
+# gsad_flags (params):   Set params used to start gsad.
+#
+
+. /etc/rc.subr
+
+load_rc_config $name
+
+: ${gsad_enable="NO"}
+: ${gsad_flags="--http-cors="http://127.0.0.1" -k /var/lib/gvm/private/CA/serverkey.pem -c /var/lib/gvm/CA/servercert.pem --munix-socket=/var/run/gvm/gvmd.sock"}
+
+name=gsad
+rcvar=${name}_enable
+gsad_user=gvm
+command="%%PREFIX%%/sbin/gsad"
+command_args="${gsad_flags}"
+pidfile=/var/run/gvm/gsad.pid
+
+run_rc_command "$1"
