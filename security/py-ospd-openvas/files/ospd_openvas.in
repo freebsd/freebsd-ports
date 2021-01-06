@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: ospd_openvas
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Configuration settings for ospd_openvas in /etc/rc.conf:
+#
+# ospd_openvas_enable:          run ospd_openvas service (default=NO)
+# ospd_openvas_pidfile:         path to ospd_openvas pid file
+# ospd_openvas_config:          path to ospd_openvas configuration file
+# ospd_openvas_flags:           additional flags for ospd_openvas server
+#
+
+. /etc/rc.subr
+
+name=ospd_openvas
+rcvar=ospd_openvas_enable
+
+load_rc_config ${name}
+
+: ${ospd_openvas_enable:=NO}
+: ${ospd_openvas_pidfile="/var/run/ospd/ospd-openvas.pid"}
+: ${ospd_openvas_config="/usr/local/etc/gvm/ospd.conf"}
+: ${ospd_openvas_flags="--lock-file-dir /var/run/ospd --unix-socket /var/run/ospd/ospd.sock"}
+
+ospd_openvas_user="gvm"
+pidfile=${ospd_openvas_pidfile}
+
+command=/usr/local/bin/ospd-openvas
+command_interpreter="%%PYTHON_CMD%%"
+command_args="--pid-file ${pidfile} --config ${ospd_openvas_config} --log-file /var/log/gvm/ospd-openvas.log ${ospd_openvas_flags}"
+
+run_rc_command "$1"
