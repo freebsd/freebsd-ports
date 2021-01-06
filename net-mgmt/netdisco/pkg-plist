@@ -131,6 +131,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Util/SNMP.pm
 %%SITE_PERL%%/App/Netdisco/Util/Statistics.pm
 %%SITE_PERL%%/App/Netdisco/Util/Web.pm
+%%SITE_PERL%%/App/Netdisco/Util/Worker.pm
 %%SITE_PERL%%/App/Netdisco/Web.pm
 %%SITE_PERL%%/App/Netdisco/Web/AdminTask.pm
 %%SITE_PERL%%/App/Netdisco/Web/API/Objects.pm
@@ -198,6 +199,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Worker/Loader.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Arpnip.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Arpnip/Hooks.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Arpnip/Nodes.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Arpnip/Subnets.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Arpwalk.pm
@@ -206,6 +208,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/CanonicalIP.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Entities.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Hooks.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Neighbors.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Neighbors/DOCSIS.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Neighbors/Routed.pm
@@ -221,8 +224,12 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/ExpireNodes.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/GetAPIKey.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Graph.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Hook.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Hook/Exec.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Hook/HTTP.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Location.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Macsuck.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Macsuck/Hooks.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Macsuck/Nodes.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Macsuck/WirelessNodes.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Macwalk.pm
