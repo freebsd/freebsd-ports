@@ -3,6 +3,7 @@
 PORTNAME=	veloren
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://veloren.net/icons/favicon/:icon
 DISTFILES=	android-icon-192x192.png:icon

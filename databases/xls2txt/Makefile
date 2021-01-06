@@ -2,6 +2,7 @@
 
 PORTNAME=	xls2txt
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	databases textproc
 
 MAINTAINER=	yuri@FreeBSD.org

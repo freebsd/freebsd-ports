@@ -2,6 +2,7 @@
 
 PORTNAME=	sctd
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	accessibility
 
 MAINTAINER=	0mp@FreeBSD.org
