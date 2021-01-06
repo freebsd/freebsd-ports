@@ -2,7 +2,7 @@
 
 PORTNAME=	adguardhome
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.104.1
+DISTVERSION=	0.104.3
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ GH_ACCOUNT=	AdguardTeam
 GH_PROJECT=	AdGuardHome
 GH_TUPLE=	\
 		AdguardTeam:dnsproxy:v0.33.2:adguardteam_dnsproxy/vendor/github.com/AdguardTeam/dnsproxy \
-		AdguardTeam:golibs:v0.4.2:adguardteam_golibs/vendor/github.com/AdguardTeam/golibs \
+		AdguardTeam:golibs:v0.4.3:adguardteam_golibs/vendor/github.com/AdguardTeam/golibs \
 		AdguardTeam:urlfilter:v0.12.3:adguardteam_urlfilter/vendor/github.com/AdguardTeam/urlfilter \
 		NYTimes:gziphandler:v1.1.1:nytimes_gziphandler/vendor/github.com/NYTimes/gziphandler \
 		aead:chacha20:8b13a72661da:aead_chacha20/vendor/github.com/aead/chacha20 \
@@ -64,7 +64,7 @@ GH_TUPLE=	\
 		rogpeppe:go-internal:v1.5.2:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
 		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
 		sirupsen:logrus:v1.6.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		go-ping:ping:3977ed72668a0ca7a7894d39075921a6526ee58b:sparrc_go_ping/vendor/github.com/sparrc/go-ping \
+		go-ping:ping:3300c582a663c5bce1d0ecf1868107da0ae38829:sparrc_go_ping/vendor/github.com/sparrc/go-ping \
 		spf13:cobra:v0.0.5:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
