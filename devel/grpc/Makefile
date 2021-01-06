@@ -21,8 +21,8 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libre2.so:devel/re2
 
 USES=		cmake compiler:c++17-lang localbase:ldflags pkgconfig ssl
+
 USE_GITHUB=	yes
-USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DgRPC_ABSL_PROVIDER=package \
@@ -34,6 +34,7 @@ CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DgRPC_SSL_PROVIDER=package \
 		-DgRPC_ZLIB_PROVIDER=package
 CMAKE_ON=	BUILD_SHARED_LIBS
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
