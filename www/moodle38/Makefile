@@ -12,8 +12,7 @@ COMMENT=	Course management system based on social constructionism
 
 LICENSE=	GPLv3
 
-CONFLICTS=	moodle35-3.5.[0-9]* moodle37-3.7.[0-9]* moodle39-3.9-[0-9]* \
-		moodle310-3.10
+CONFLICTS=	moodle35-3.5.[0-9]* moodle39-3.9-[0-9]* moodle310-3.10
 
 DEPRECATED=	Deprecated by upstream
 EXPIRATION_DATE=2021-03-03
