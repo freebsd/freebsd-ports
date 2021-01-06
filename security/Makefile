@@ -204,6 +204,7 @@
     SUBDIR += gss
     SUBDIR += gstreamer1-plugins-dtls
     SUBDIR += gtkpasman
+    SUBDIR += gvmd
     SUBDIR += gvm-libs
     SUBDIR += gwee
     SUBDIR += hackbot
