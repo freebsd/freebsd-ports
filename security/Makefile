@@ -927,6 +927,7 @@
     SUBDIR += py-onlykey
     SUBDIR += py-openssl
     SUBDIR += py-ospd
+    SUBDIR += py-ospd-openvas
     SUBDIR += py-paramiko
     SUBDIR += py-paramiko1
     SUBDIR += py-pass-audit
