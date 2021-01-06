@@ -1,8 +1,8 @@
-TIMESTAMP = 1590777027
-SHA256 (cabal/hoogle-5.0.17.15.tar.gz) = 5d12910d31b3b24900a86fa57494ac955b5c8cc5b011d9f750c3a0d5e98f827a
-SIZE (cabal/hoogle-5.0.17.15.tar.gz) = 97316
-SHA256 (cabal/ListLike-4.7/ListLike-4.7.tar.gz) = 5492ed7589d04510c1d50597baa22768c97d02107c89ced195ea77368eea0988
-SIZE (cabal/ListLike-4.7/ListLike-4.7.tar.gz) = 31676
+TIMESTAMP = 1609956755
+SHA256 (cabal/hoogle-5.0.18.1.tar.gz) = 7c44830d072ce13f326bbcd13e01765ceaad18d59a49ba4b55b6496f12052a96
+SIZE (cabal/hoogle-5.0.18.1.tar.gz) = 97630
+SHA256 (cabal/ListLike-4.7.3/ListLike-4.7.3.tar.gz) = aa8c72d5d6c3c211a788c3110e4fc2ec82072cde70f0c708b3ecf3dfefaa65ee
+SIZE (cabal/ListLike-4.7.3/ListLike-4.7.3.tar.gz) = 31788
 SHA256 (cabal/QuickCheck-2.14/QuickCheck-2.14.tar.gz) = 52be1407fb19f5f3b5aa06d41fac745536d08306adaf6dde46a62255d16c384a
 SIZE (cabal/QuickCheck-2.14/QuickCheck-2.14.tar.gz) = 73915
 SHA256 (cabal/QuickCheck-2.14/revision/1.cabal) = 3f536a4b86bef7ec39025f04ef8d76c5ac5a78ba0b42e660b25d0a8f9c811045
