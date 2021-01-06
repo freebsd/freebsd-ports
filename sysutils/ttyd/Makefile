@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ttyd
-DISTVERSION=	1.6.2
+DISTVERSION=	1.6.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	nc@FreeBSD.org
