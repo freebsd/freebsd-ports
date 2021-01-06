@@ -10,43 +10,38 @@ COMMENT=	Tools and demos for the Vulkan graphics API
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
-		glslangValidator:graphics/glslang
+BUILD_DEPENDS=	glslangValidator:graphics/glslang \
+		vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
 USES=		cmake compiler:c++11-lib pkgconfig python:3.4+,build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-Tools
-
 CMAKE_OFF=	BUILD_CUBE BUILD_ICD
-CMAKE_ARGS=	-DGLSLANG_INSTALL_DIR=${LOCALBASE}
+CMAKE_ARGS=	-DGLSLANG_INSTALL_DIR:PATH="${LOCALBASE}"
 
 OPTIONS_DEFINE=		WAYLAND XCB XLIB
 OPTIONS_DEFAULT=	WAYLAND XCB XLIB
 OPTIONS_SLAVE=		DISPLAY
 OPTIONS_SUB=		yes
 
-WAYLAND_DESC=	Build Wayland WSI (Window System Integration) support
-XCB_DESC=	Build XCB WSI (Window System Integration) support
-XLIB_DESC=	Build Xlib WSI (Window System Integration) support
-
 WAYLAND_PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 WAYLAND_PATCHFILES=	ea2e75bea224.patch:-p1
-WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
+WAYLAND_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 			wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_CMAKE_BOOL=	BUILD_WSI_WAYLAND_SUPPORT
 
+XCB_DESC=		${X11_DESC} via libxcb
+XCB_USES=		xorg
+XCB_USE=		XORG=xcb
 XCB_CMAKE_BOOL=		BUILD_WSI_XCB_SUPPORT
-XCB_LIB_DEPENDS=	libxcb.so:x11/libxcb
 
+XLIB_DESC=		${X11_DESC} via libX11
+XLIB_USES=		xorg
+XLIB_USE=		XORG=x11,xext,ice,sm
 XLIB_CMAKE_BOOL=	BUILD_WSI_XLIB_SUPPORT
-XLIB_LIB_DEPENDS=	libX11.so:x11/libX11 \
-			libXext.so:x11/libXext \
-			libICE.so:x11/libICE \
-			libSM.so:x11/libSM
 
 # https://github.com/KhronosGroup/Vulkan-Tools/issues/307
 .for _wsi in display wayland xcb xlib
