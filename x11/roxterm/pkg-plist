@@ -2,7 +2,7 @@ bin/roxterm
 bin/roxterm-config
 man/man1/roxterm-config.1.gz
 man/man1/roxterm.1.gz
-share/appdata/roxterm.appdata.xml
+share/metainfo/roxterm.metainfo.xml
 share/applications/roxterm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/guide.html
 %%PORTDOCS%%%%DOCSDIR%%/en/index.html

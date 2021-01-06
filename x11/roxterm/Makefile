@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	roxterm
-PORTVERSION=	3.8.5
-PORTREVISION=	1
+PORTVERSION=	3.10.1
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	GTK+ terminal emulator with tabs
 
 LICENSE=	GPLv2+
