@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2020-01-17 06:03:59 UTC
+--- src/Makefile.in.orig	2021-01-01 16:32:54 UTC
 +++ src/Makefile.in
-@@ -233,7 +233,7 @@ am_gsasl_OBJECTS = gsasl.$(OBJEXT) imap.$(OBJEXT) smtp
+@@ -234,7 +234,7 @@ am_gsasl_OBJECTS = gsasl.$(OBJEXT) imap.$(OBJEXT) smtp
  	callbacks.$(OBJEXT)
  gsasl_OBJECTS = $(am_gsasl_OBJECTS)
  am__DEPENDENCIES_1 =
@@ -9,7 +9,7 @@
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) libgsasl_cmd.la
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -1456,7 +1456,7 @@ gsasl_SOURCES = gsasl.c \
+@@ -1560,7 +1560,7 @@ gsasl_SOURCES = gsasl.c \
  	imap.c imap.h smtp.c smtp.h \
  	callbacks.h callbacks.c internal.h
  

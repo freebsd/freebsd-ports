@@ -1,6 +1,6 @@
---- examples/Makefile.in.orig	2020-01-17 06:03:59 UTC
+--- examples/Makefile.in.orig	2021-01-01 16:32:53 UTC
 +++ examples/Makefile.in
-@@ -222,7 +222,7 @@ PROGRAMS = $(noinst_PROGRAMS)
+@@ -223,7 +223,7 @@ PROGRAMS = $(noinst_PROGRAMS)
  client_SOURCES = client.c
  client_OBJECTS = client.$(OBJEXT)
  client_LDADD = $(LDADD)
@@ -9,7 +9,7 @@
  	$(top_builddir)/gl/libgl.la
  AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
-@@ -231,32 +231,32 @@ am__v_lt_1 = 
+@@ -232,32 +232,32 @@ am__v_lt_1 = 
  client_callback_SOURCES = client-callback.c
  client_callback_OBJECTS = client-callback.$(OBJEXT)
  client_callback_LDADD = $(LDADD)
@@ -48,7 +48,7 @@
  	$(top_builddir)/gl/libgl.la
  AM_V_P = $(am__v_P_@AM_V@)
  am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
-@@ -1522,7 +1522,7 @@ AM_CFLAGS = $(WERROR_CFLAGS) $(WARN_CFLAGS)
+@@ -1626,7 +1626,7 @@ AM_CFLAGS = $(WERROR_CFLAGS) $(WARN_CFLAGS) $(WEASY_CF
  AM_CPPFLAGS = -I$(top_srcdir)/gl -I$(top_builddir)/gl \
  	-I$(top_srcdir)/lib/src -I$(top_builddir)/lib/src
  
