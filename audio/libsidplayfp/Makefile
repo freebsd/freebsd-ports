@@ -15,7 +15,7 @@ BUILD_DEPENDS=	libgcrypt-config:security/libgcrypt
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		libtool pathfix pkgconfig
+USES=		compiler:c++11-lang libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
