@@ -1,32 +1,42 @@
 # $FreeBSD$
 
 PORTNAME=	lamprop
-PORTVERSION=	3.8
-PORTREVISION=	1
+PORTVERSION=	2020.12.28
 CATEGORIES=	science python
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rsmith@xs4all.nl
 COMMENT=	Calculates properties of fiber reinforced composites
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${PYNUMPY}
-
-USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python:3.6+ shebangfix
+SHEBANG_FILES=	setup.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	rsmith-nl
 
 NO_ARCH=	yes
 
-PORTDOCS=	lamprop-manual.pdf
+PORTDOCS=	lamprop-manual.pdf README.rst
+PLIST_FILES=	bin/lamprop
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS GUI
 
-post-install-DOCS-on:
+GUI_DESC=		Tkinter GUI for lamprop
+GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
+GUI_PLIST_FILES=	bin/lamprop-gui
+
+do-build:
+	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/lamprop ${STAGEDIR}${PREFIX}/bin
+
+do-install-GUI-on:
+	${INSTALL_SCRIPT} ${WRKSRC}/lamprop-gui ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/lamprop-manual.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.rst ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
