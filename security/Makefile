@@ -204,6 +204,7 @@
     SUBDIR += gss
     SUBDIR += gstreamer1-plugins-dtls
     SUBDIR += gtkpasman
+    SUBDIR += gvm-libs
     SUBDIR += gwee
     SUBDIR += hackbot
     SUBDIR += hardening-check
