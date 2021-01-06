@@ -24,6 +24,12 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON
 
 SUB_FILES=	pkg-message
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != aarch64 && ${ARCH} != amd64 && ${ARCH} != arm && ${ARCH} != armv6 && ${ARCH} != armv7 && ${ARCH} != i386
+CMAKE_ARGS+=	-DS2N_NO_PQ:BOOL=ON
+.endif
+
 post-build-TEST-on:
 	(cd ${WRKDIR}/.build && ninja test)
 
