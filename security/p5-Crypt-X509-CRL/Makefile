@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Crypt-X509-CRL
-PORTVERSION=	0.1
+PORTVERSION=	0.4
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,6 @@ RUN_DEPENDS=	p5-Convert-ASN1>=0.19:converters/p5-Convert-ASN1
 
 USES=		perl5
 USE_PERL5=	configure
-WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_ARCH=	yes
 
 PLIST_FILES=	${SITE_MAN3_REL}/Crypt::X509::CRL.3.gz \
