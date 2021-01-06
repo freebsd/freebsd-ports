@@ -1,3 +1,3 @@
-TIMESTAMP = 1607879386
-SHA256 (iperf-2.0.14a.tar.gz) = 353876a8a238bc66af73f3160a5b8beee8f24bc6acc3ef6a2119fe5941852ea4
-SIZE (iperf-2.0.14a.tar.gz) = 375702
+TIMESTAMP = 1609953859
+SHA256 (iperf-2.1.0-rc.tar.gz) = 6b1db400cb9bd4bed3023a1de580c8b9ed2e1597162fb76ed1b3c12c4d7acd1f
+SIZE (iperf-2.1.0-rc.tar.gz) = 381904
