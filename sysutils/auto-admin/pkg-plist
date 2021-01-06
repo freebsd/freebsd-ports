@@ -2,6 +2,7 @@ man/man1/auto-admin.1.gz
 sbin/auto-ad-adduser
 sbin/auto-add-fdesc-mount
 sbin/auto-add-group
+sbin/auto-add-hosts-entry
 sbin/auto-add-proc-mount
 sbin/auto-add-to-group
 sbin/auto-adduser
@@ -48,6 +49,10 @@ sbin/auto-firewall-setup
 sbin/auto-fix-date
 sbin/auto-freebsd-wip-checkout
 sbin/auto-fusefs-install
+sbin/auto-get-ip
+sbin/auto-get-netmask
+sbin/auto-get-netmask-bits
+sbin/auto-get-network
 sbin/auto-gpu-setup
 sbin/auto-group-check
 sbin/auto-harden
