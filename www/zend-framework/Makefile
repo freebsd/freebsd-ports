@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ZendFramework
-PORTVERSION=	2.3.3
-PORTREVISION=	3
+PORTVERSION=	2.4.13
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	https://packages.zendframework.com/releases/${DISTNAME}/
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Framework for developing PHP web applications
@@ -13,14 +14,12 @@ COMMENT=	Framework for developing PHP web applications
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-IGNORE_WITH_PHP=	74
-
 CONFLICTS=	ZendFramework-1.*
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	spl
-USES=		gettext php:web tar:tgz
+USES=		gettext php:web,flavors tar:tgz
 
 SUB_FILES=	pkg-message
 
@@ -45,7 +44,7 @@ PORTDOCS=	CHANGELOG.md INSTALL.md README-GIT.md CONTRIBUTING.md README.md
 # if chosen by the user.
 .if ${PORT_OPTIONS:MREQPHP}
 USE_PHP+=	ctype curl dom gd hash iconv mbstring ldap mcrypt \
-		opcache pcre pdo session simplexml soap sqlite3 wddx xml zlib
+		opcache pcre pdo session simplexml soap sqlite3 xml zlib
 .endif
 
 .if ${PORT_OPTIONS:MOPTPHP}
