@@ -29,4 +29,7 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/gsad:security/greenbone-security-assistant${OPEN
 SUB_FILES=	pkg-message
 OPENVAS_VER=	9
 
+DEPRECATED=	End of life, please migrate to security/gvm port
+EXPIRATION_DATE=2021-02-06
+
 .include <bsd.port.mk>
