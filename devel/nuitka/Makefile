@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nuitka
-PORTVERSION=	0.6.10.1
+PORTVERSION=	0.6.10.4
 CATEGORIES=	devel python
 MASTER_SITES=	https://nuitka.net/releases/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
