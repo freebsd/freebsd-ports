@@ -197,6 +197,7 @@
     SUBDIR += gpgme-cpp
     SUBDIR += gpgme-qt5
     SUBDIR += gputty
+    SUBDIR += greenbone-security-assistant
     SUBDIR += greenbone-security-assistant8
     SUBDIR += greenbone-security-assistant9
     SUBDIR += gringotts
