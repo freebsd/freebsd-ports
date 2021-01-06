@@ -1265,6 +1265,7 @@
     SUBDIR += socket
     SUBDIR += socklog
     SUBDIR += solaar
+    SUBDIR += spcm
     SUBDIR += spindown
     SUBDIR += spinner
     SUBDIR += spiped
