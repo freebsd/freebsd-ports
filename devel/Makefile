@@ -6832,6 +6832,7 @@
     SUBDIR += tnt
     SUBDIR += tokamak
     SUBDIR += tokei
+    SUBDIR += toml11
     SUBDIR += tortoisehg
     SUBDIR += tpasm
     SUBDIR += tradcpp

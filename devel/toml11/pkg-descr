@@ -1,0 +1,9 @@
+A C++11 (or later) header-only toml parser/encoder depending only on C++
+standard library.
+
+It is compatible to the latest version of TOML v1.0.0-rc.2, and one of
+the most TOML-standard compliant libraries, with great error messages,
+configurable serializer and user-defined type conversions, with full
+UTF-8 support.
+
+WWW: https://github.com/toruniina/toml11
