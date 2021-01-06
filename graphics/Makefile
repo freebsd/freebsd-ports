@@ -865,6 +865,7 @@
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot
+    SUBDIR += py-pydotplus
     SUBDIR += py-pyepsg
     SUBDIR += py-pygal
     SUBDIR += py-pyganim

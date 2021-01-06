@@ -1,0 +1,4 @@
+PyDotPlus is an improved version of the old pydot project that provides a Python
+Interface to Graphviz's Dot language.
+
+WWW: https://github.com/carlos-jenkins/pydotplus
