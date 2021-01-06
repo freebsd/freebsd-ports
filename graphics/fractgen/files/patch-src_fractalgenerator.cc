@@ -1,8 +1,6 @@
-diff --git src/fractalgenerator.cc src/fractalgenerator.cc
-index dc8fb31..8f5d399 100644
---- src/fractalgenerator.cc
+--- src/fractalgenerator.cc.orig	2020-10-10 15:10:01 UTC
 +++ src/fractalgenerator.cc
-@@ -128,7 +128,7 @@ FractalGeneratorApp::FractalGeneratorApp(QWidget* parent, const QString& fileNam
+@@ -128,7 +128,7 @@ FractalGeneratorApp::FractalGeneratorApp(QWidget* pare
     helpMenu->addAction(tr("&About"), this, SLOT(slotHelpAbout()));
  
     Printer.setColorMode(QPrinter::Color);

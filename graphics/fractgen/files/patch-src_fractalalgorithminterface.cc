@@ -8,12 +8,3 @@
  
  QList<FractalAlgorithmInterface*>* FractalAlgorithmInterface::AlgorithmList = nullptr;
  bool                               FractalAlgorithmInterface::Updated       = false;
-@@ -100,7 +101,7 @@ static bool lessThan(const FractalAlgorithmInterface* 
- FractalAlgorithmInterface* FractalAlgorithmInterface::getAlgorithm(const unsigned int index)
- {
-    if(Updated) {
--      qSort(AlgorithmList->begin(), AlgorithmList->end(), lessThan);
-+      std::sort(AlgorithmList->begin(), AlgorithmList->end(), lessThan);
-       Updated = false;
-    }
-    return(AlgorithmList->value(index, nullptr));
