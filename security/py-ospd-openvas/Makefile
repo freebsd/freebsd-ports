@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ospd>=0:security/py-ospd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedxml>=0:devel/py-defusedxml@${PY_FLAVOR} \
 		openvas:security/openvas
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	distutils
 
 NO_ARCH=	yes
