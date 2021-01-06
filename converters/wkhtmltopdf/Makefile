@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 
-USES=		gmake iconv jpeg perl5 pkgconfig ssl xorg
+USES=		compiler gmake iconv jpeg perl5 pkgconfig ssl xorg
 USE_XORG=	x11 xext xrender
 USE_PERL5=	build
 USE_LDCONFIG=	yes
@@ -56,7 +56,7 @@ MAKE_ARGS=	INSTALL_ROOT="${STAGEDIR}${PREFIX}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == "i386" || ${CHOSEN_COMPILER_TYPE} == gcc
 USE_GCC=	8
 .endif
 
