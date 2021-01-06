@@ -40,6 +40,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/greylist.conf
 %%ETCDIR%%/modules.d/hfilter.conf
 %%ETCDIR%%/modules.d/history_redis.conf
+%%ETCDIR%%/modules.d/http_headers.conf
 %%ETCDIR%%/modules.d/maillist.conf
 %%ETCDIR%%/modules.d/metadata_exporter.conf
 %%ETCDIR%%/modules.d/metric_exporter.conf
@@ -205,8 +206,11 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_util.lua
 %%DATADIR%%/lualib/lua_verdict.lua
 %%DATADIR%%/lualib/lupa.lua
+%%DATADIR%%/lualib/plugins/neural.lua
+%%DATADIR%%/lualib/plugins/rbl.lua
 %%DATADIR%%/lualib/plugins_stats.lua
 %%DATADIR%%/lualib/rescore_utility.lua
+%%DATADIR%%/lualib/rspamadm/clickhouse.lua
 %%DATADIR%%/lualib/rspamadm/configgraph.lua
 %%DATADIR%%/lualib/rspamadm/confighelp.lua
 %%DATADIR%%/lualib/rspamadm/configwizard.lua
@@ -242,6 +246,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/plugins/greylist.lua
 %%DATADIR%%/plugins/hfilter.lua
 %%DATADIR%%/plugins/history_redis.lua
+%%DATADIR%%/plugins/http_headers.lua
 %%DATADIR%%/plugins/ip_score.lua
 %%DATADIR%%/plugins/maillist.lua
 %%DATADIR%%/plugins/maps_stats.lua
@@ -273,11 +278,11 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/rules/content.lua
 %%DATADIR%%/rules/controller/init.lua
 %%DATADIR%%/rules/controller/maps.lua
+%%DATADIR%%/rules/controller/neural.lua
 %%DATADIR%%/rules/controller/selectors.lua
 %%DATADIR%%/rules/forwarding.lua
 %%DATADIR%%/rules/headers_checks.lua
 %%DATADIR%%/rules/html.lua
-%%DATADIR%%/rules/http_headers.lua
 %%DATADIR%%/rules/mid.lua
 %%DATADIR%%/rules/misc.lua
 %%DATADIR%%/rules/regexp/compromised_hosts.lua
