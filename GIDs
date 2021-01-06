@@ -213,7 +213,7 @@ dendrite:*:269:
 _rpki-client:*:270:
 signaling:*:271:
 gvm:*:272:
-# free: 273
+seaweedfs:*:273:
 # free: 274
 haclient:*:275:
 frontbase:*:276:

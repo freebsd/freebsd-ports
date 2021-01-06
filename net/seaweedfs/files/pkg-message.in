@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+SeaweedFS presents a simple interface behind a complex distributed system.
+
+For a single node "demo setup" you can just run:
+
+$ mkdir /tmp/weeds
+$ %%PREFIX%%/sbin/weed -logtostderr server -dir /tmp/weeds -s3
+
+For a more typical setup, you should have either 1 or 3 masters, and
+multiple filers, with replication enabled.
+
+Adjust %%PREFIX%%/etc/seaweedfs/*.toml according to your requirements,
+using the sample configs in the same directory. Most parameters can be
+ignored, refer to the seaweedfs wiki for further explanations.
+
+Please read the documentation carefully, particularly around data
+replication, and running redundant masters. Prime numbers of servers are
+your friend, choose them wisely.
+
+EOM
+}
+]

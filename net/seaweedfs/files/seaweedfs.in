@@ -1,0 +1,94 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: seaweedfs
+# REQUIRE: DAEMON LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# seaweedfs_enable (bool):		Set it to YES to enable seaweedfs.
+#					Default is "NO".
+# seaweedfs_user (user):		Set user to run seaweedfs.
+#					Default is "seaweedfs".
+# seaweedfs_group (group):		Set group to run seaweedfs.
+#					Default is "seaweedfs".
+# seaweedfs_dir (directory):		Set directory to store database files.
+#					Default is "/var/db/seaweedfs".
+# seaweedfs_options (string):		Set default parameters.
+#					Default is "server -dir=/var/db/seaweedfs".
+# seaweedfs_syslog_enable (bool):	Set to enable syslog output.
+#					Default is "NO". See daemon(8).
+# seaweedfs_syslog_priority (str):	Set syslog priority if syslog enabled.
+#					Default is "info". See daemon(8).
+# seaweedfs_syslog_facility (str):	Set syslog facility if syslog enabled.
+#					Default is "daemon". See daemon(8).
+
+. /etc/rc.subr
+
+name=seaweedfs
+rcvar=seaweedfs_enable
+
+load_rc_config $name
+
+: ${seaweedfs_enable:="NO"}
+: ${seaweedfs_user:="seaweedfs"}
+: ${seaweedfs_group:="seaweedfs"}
+: ${seaweedfs_dir:="/var/db/seaweedfs"}
+: ${seaweedfs_options:="server -dir=${seaweedfs_dir}/data"}
+
+DAEMON=$(/usr/sbin/daemon 2>&1 | grep -q syslog ; echo $?)
+if [ ${DAEMON} -eq 0 ]; then
+        : ${seaweedfs_syslog_enable:="NO"}
+        : ${seaweedfs_syslog_priority:="info"}
+        : ${seaweedfs_syslog_facility:="daemon"}
+        if checkyesno seaweedfs_syslog_enable; then
+                seaweedfs_syslog_flags="-T ${name}"
+
+                if [ -n "${seaweedfs_syslog_priority}" ]; then
+                        seaweedfs_syslog_flags="${seaweedfs_syslog_flags} -s ${seaweedfs_syslog_priority}"
+                fi
+
+                if [ -n "${seaweedfs_syslog_facility}" ]; then
+                        seaweedfs_syslog_flags="${seaweedfs_syslog_flags} -l ${seaweedfs_syslog_facility}"
+                fi
+        fi
+else
+        seaweedfs_syslog_enable="NO"
+        seaweedfs_syslog_flags=""
+fi
+
+pidfile=/var/run/seaweedfs.pid
+procname="%%PREFIX%%/sbin/weed"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} ${seaweedfs_syslog_flags} -p ${pidfile} ${procname} ${seaweedfs_options}"
+
+extra_commands="reload monitor"
+monitor_cmd=seaweedfs_monitor
+start_precmd=seaweedfs_startprecmd
+required_files="${seaweedfs_dir}"
+
+seaweedfs_monitor()
+{
+	sig_reload=USR1
+	run_rc_command "reload"
+}
+
+seaweedfs_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${seaweedfs_user} -g ${seaweedfs_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -d ${seaweedfs_dir}/data ]; then
+                install -d -m 0750 -o ${seaweedfs_user} -g ${seaweedfs_group} ${seaweedfs_dir}/data
+        fi
+        if [ ! -d ${seaweedfs_dir}/metadata ]; then
+                install -d -m 0750 -o ${seaweedfs_user} -g ${seaweedfs_group} ${seaweedfs_dir}/metadata
+        fi
+        chdir ${seaweedfs_dir}
+}
+
+run_rc_command "$1"

@@ -1,0 +1,7 @@
+SeaweedFS is a distributed object store and file system to store and
+serve billions of files fast. Its object store has O(1) disk seek,
+and transparent cloud integration. The Filer supports cross-cluster
+active-active replication, Kubernetes, POSIX, S3 API, encryption,
+Erasure Coding for warm storage, FUSE mount, Hadoop, and WebDAV.
+
+WWW: https://github.com/chrislusf/seaweedfs/wiki

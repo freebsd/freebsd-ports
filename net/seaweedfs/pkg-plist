@@ -1,0 +1,12 @@
+@dir(seaweedfs,seaweedfs,750) /var/db/seaweedfs
+@dir(seaweedfs,seaweedfs,750) /var/log/seaweedfs
+@comment normally these would auto-populate your etc dir but these generated
+@comment files contain conflicting options; users must read the wiki first!
+%%ETCDIR%%/filer.toml.sample
+%%ETCDIR%%/master.toml.sample
+%%ETCDIR%%/notification.toml.sample
+%%ETCDIR%%/replication.toml.sample
+%%ETCDIR%%/security.toml.sample
+@mode 0755
+sbin/weed
+@mode
