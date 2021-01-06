@@ -1,3 +1,5 @@
+Why is this patch needed?
+
 --- UI/window-basic-preview.cpp.orig	2019-09-17 21:29:34 UTC
 +++ UI/window-basic-preview.cpp
 @@ -572,8 +572,8 @@ void OBSBasicPreview::mousePressEvent(QMouseEvent *eve
