@@ -3,7 +3,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	2.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
@@ -65,7 +65,7 @@ _FONTS_CJK=	${LOCALBASE}/share/fonts/ipa/ipam.otf:japanese/font-ipa \
 
 .if ${PORT_OPTIONS:MFOP} || ${PORT_OPTIONS:MDBLATEX}
 ONLY_FOR_ARCHS=	amd64 i386
-CJK_RUN_DEPENDS=	${_FONTS_CJK}
+CJK_RUN_DEPENDS+=	${_FONTS_CJK}
 .endif
 
 # generate MINIMALDOCPORTS for src/release/Makefile.inc.docports.
