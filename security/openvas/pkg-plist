@@ -1,0 +1,23 @@
+bin/greenbone-nvt-sync
+bin/openvas-nasl
+bin/openvas-nasl-lint
+@sample %%ETCDIR%%/openvas_log.conf.sample
+lib/libopenvas_misc.so
+lib/libopenvas_misc.so.20
+lib/libopenvas_misc.so.20.8.0
+lib/libopenvas_nasl.so
+lib/libopenvas_nasl.so.20
+lib/libopenvas_nasl.so.20.8.0
+sbin/openvas
+share/man/man1/openvas-nasl-lint.1.gz
+share/man/man1/openvas-nasl.1.gz
+share/man/man8/greenbone-nvt-sync.8.gz
+share/man/man8/openvas.8.gz
+@dir %%ETCDIR%%/gnupg
+@dir %%DATADIR%%
+@dir(gvm,gvm,750) /var/lib/openvas/gnupg
+@dir(gvm,gvm,750) /var/lib/openvas/plugins
+@dir(gvm,gvm,750) /var/lib/openvas
+@dir(gvm,gvm,750) /var/log/gvm
+@dir(gvm,gvm,750) /var/run/ospd
+

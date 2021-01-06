@@ -1,0 +1,28 @@
+--- nasl/CMakeLists.txt	2020-12-31 21:48:33.070235000 -0500
++++ nasl/CMakeLists.txt	2020-12-31 21:49:07.420166000 -0500
+@@ -86,6 +86,11 @@
+ 
+ message (STATUS "Looking for pcap...")
+ find_library (PCAP pcap)
++if (PCAP)
++  execute_process (COMMAND pkgconf libpcap --libs
++    OUTPUT_VARIABLE PCAP_LDFLAGS
++    OUTPUT_STRIP_TRAILING_WHITESPACE)
++endif (PCAP)
+ 
+ find_library (GPGME gpgme)
+ message (STATUS "Looking for gpgme... ${GPGME}")
+@@ -227,11 +232,11 @@
+ 
+ # Link the openvas-nasl executable
+ add_executable (openvas-nasl nasl.c)
+-target_link_libraries (openvas-nasl openvas_nasl_shared openvas_misc_shared ${GNUTLS_LDFLAGS} ${LIBSSH_LDFLAGS})
++target_link_libraries (openvas-nasl openvas_nasl_shared openvas_misc_shared ${GNUTLS_LDFLAGS} ${LIBSSH_LDFLAGS} ${PCAP_LDFLAGS})
+ 
+ # Link the openvas-nasl-lint executable
+ add_executable (openvas-nasl-lint nasl-lint.c)
+-target_link_libraries (openvas-nasl-lint openvas_nasl_shared openvas_misc_shared ${GLIB_LDFLAGS} ${GIO_LDFLAGS})
++target_link_libraries (openvas-nasl-lint openvas_nasl_shared openvas_misc_shared ${GLIB_LDFLAGS} ${GIO_LDFLAGS} ${PCAP_LDFLAGS})
+ 
+ ## Install
+ 

@@ -1,0 +1,13 @@
+--- src/CMakeLists.txt	2020-08-11 07:00:25.000000000 -0500
++++ src/CMakeLists.txt	2021-01-04 19:20:27.629700000 -0500
+@@ -228,8 +228,8 @@
+          PERMISSIONS OWNER_EXECUTE OWNER_READ OWNER_WRITE
+          GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+ 
+-install (FILES ${CMAKE_BINARY_DIR}/src/openvas_log.conf
+-         DESTINATION ${OPENVAS_SYSCONF_DIR})
++install (FILES ${CMAKE_BINARY_DIR}/src/openvas_log.conf.sample
++         DESTINATION "${OPENVAS_SYSCONF_DIR}")
+ 
+ install (FILES ${CMAKE_BINARY_DIR}/tools/greenbone-nvt-sync
+          DESTINATION ${BINDIR}

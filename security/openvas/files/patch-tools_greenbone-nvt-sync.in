@@ -1,0 +1,37 @@
+--- tools/greenbone-nvt-sync.in	2020-08-11 07:00:25.000000000 -0500
++++ tools/greenbone-nvt-sync.in	2021-01-02 02:45:37.863324000 -0500
+@@ -87,10 +87,10 @@
+ LOG_CMD="logger -t $SCRIPT_NAME"
+ 
+ check_logger () {
+-  logger --socket-error=on -p daemon.info -t $SCRIPT_NAME "Checking logger" --no-act 1>/dev/null 2>&1
++  logger -p daemon.info -t $SCRIPT_NAME "Checking logger"  1>/dev/null 2>&1
+   if [ $? -gt 0 ]
+   then
+-    LOG_CMD="logger --socket-error=off -s -t $SCRIPT_NAME"
++    LOG_CMD="logger -s -t $SCRIPT_NAME"
+     $LOG_CMD -p daemon.warning "The log facility is not working as expected. All messages will be written to the standard error stream."
+   fi
+ }
+@@ -428,7 +428,7 @@
+         log_err "rsync failed, aborting synchronization."
+         exit 1
+       fi
+-      eval "cd \"$NVT_DIR\" ; md5sum -c --status \"$NVT_DIR/md5sums\""
++      eval "cd \"$NVT_DIR\" ; xargs -n 2 md5 -c < \"$NVT_DIR/md5sums\" > /dev/null"
+       if [ $? -ne 0 ]  ; then
+         if [ -n "$retried" ]
+         then
+@@ -462,10 +462,10 @@
+ 
+ do_self_test ()
+ {
+-  MD5SUM_AVAIL=`command -v md5sum`
++  MD5SUM_AVAIL=`command -v md5`
+   if [ $? -ne 0 ] ; then
+     SELFTEST_FAIL=1
+-    stderr_write "The md5sum binary could not be found."
++    stderr_write "The md5 binary could not be found."
+   fi
+ 
+   RSYNC_AVAIL=`command -v rsync`
