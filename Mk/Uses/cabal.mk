@@ -4,10 +4,13 @@
 #
 # Feature:	cabal
 # Usage:	USES=cabal or USES=cabal:ARGS
-# Valid ARGS:	hpack
+# Valid ARGS:	hpack, nodefault
 #
 # hpack:	The port doesn't have a .cabal file and needs devel/hs-hpack to
 #		generate it from package.yaml file
+# nodefault:	Do not fetch the default distribution file from Hackage. If
+#		USE_GITHUB or USE_GITLAB is specified in the port, this argument
+#		is implied.
 #
 # Variables, which can be set by the port:
 #
@@ -40,7 +43,7 @@
 .if !defined(_INCLUDE_USES_CABAL_MK)
 _INCLUDE_USES_CABAL_MK=    yes
 
-_valid_ARGS=	hpack
+_valid_ARGS=	hpack nodefault
 
 .  for arg in ${cabal_ARGS}
 .    if !${_valid_ARGS:M${arg}}
@@ -74,13 +77,19 @@ LIB_DEPENDS+=	libgmp.so:math/gmp \
 
 DIST_SUBDIR?=	cabal
 
-.  if !defined(USE_GITHUB) && !defined(USE_GITLAB)
-MASTER_SITES?=	https://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/ \
+.  if !defined(USE_GITHUB) && !defined(USE_GITLAB) && !${cabal_ARGS:Mnodefault}
+MASTER_SITES=	https://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/ \
 		http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/
-DISTFILES?=	${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
+DISTFILES+=	${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
+EXTRACT_ONLY+=	${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
+.  else
+.    if defined(USE_GITHUB) && !defined(DISTFILES) && !${USE_GITHUB:Mnodefault}
+EXTRACT_ONLY+=	${DISTNAME_DEFAULT}${_GITHUB_EXTRACT_SUFX}
+.    endif
+.    if defined(USE_GITLAB) && !defined(DISTFILES) && !${USE_GITLAB:Mnodefault}
+EXTRACT_ONLY+=	${DISTNAME}${_GITLAB_EXTRACT_SUFX}
+.    endif
 .  endif
-
-EXTRACT_ONLY?=	${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
 
 _USES_extract=	701:cabal-post-extract
 _USES_patch=	701:cabal-post-patch
