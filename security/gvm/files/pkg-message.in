@@ -23,16 +23,16 @@ Basic instructions for configure your gvm infraestruture are following:
   # createdb -O gvm gvmd
   # psql gvmd
   # create role dba with superuser noinherit;
-  # grant dba to gvm
+  # grant dba to gvm;
   # create extension "uuid-ossp";
-  # create extension "pgcrypto"
+  # create extension "pgcrypto";
 
 4) Add the following lines to /etc/rc.conf
 
-  redis_enable="YES"
-  gvmd_enable="YES"
-  ospd_openvas_enable="YES"
-  gsad_enable="YES"
+  # sysrc redis_enable="YES"
+  # sysrc gvmd_enable="YES"
+  # sysrc ospd_openvas_enable="YES"
+  # sysrc gsad_enable="YES"
 
 5) The following steps are neccessary before of you can access to GVM web 
    interface (gsad):
