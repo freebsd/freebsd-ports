@@ -1,0 +1,9 @@
+Bonsai tree generator, written in C
+using ncurses. It intelligently creates,
+colors, and positions a bonsai tree, and
+is entirely configurable via CLI options--
+see usage. There are 2 modes of operation:
+static (the default), and live. See modes
+for details.
+
+WWW: https://gitlab.com/jallbrit/cbonsai

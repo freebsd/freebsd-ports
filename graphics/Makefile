@@ -87,6 +87,7 @@
     SUBDIR += cal3d
     SUBDIR += camera
     SUBDIR += camerakit
+    SUBDIR += cbonsai
     SUBDIR += cbviewer
     SUBDIR += cegui
     SUBDIR += cenon
