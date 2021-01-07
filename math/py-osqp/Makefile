@@ -2,7 +2,7 @@
 
 PORTNAME=	osqp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.2
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,11 +12,12 @@ COMMENT=	Python binding for Operator Splitting QP Solver
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY} \
-		cmake:devel/cmake
-RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
+PY_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}qdldl>0:math/py-qdldl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.13.2:science/py-scipy@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_DEPENDS} \
+		cmake:devel/cmake
+RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.6+
 USE_GITHUB=	yes
