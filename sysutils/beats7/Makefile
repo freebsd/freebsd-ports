@@ -71,7 +71,6 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.0.0:azure_azure_amqp_common_go_v3/vendor
 		containerd:containerd:v1.3.3:containerd_containerd/vendor/github.com/containerd/containerd \
 		containerd:continuity:26c1120b8d41:containerd_continuity/vendor/github.com/containerd/continuity \
 		containerd:fifo:bda0ff6ed73c:containerd_fifo/vendor/github.com/containerd/fifo \
-		containerd:fifo:bda0ff6ed73c:containerd_fifo_1/vendor/github.com/tonistiigi/fifo \
 		coreos:go-systemd:v22.0.0:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
 		coreos:pkg:97fdf19511ea:coreos_pkg/vendor/github.com/coreos/pkg \
 		cucumber:godog:v0.8.1:cucumber_godog/vendor/github.com/cucumber/godog \
