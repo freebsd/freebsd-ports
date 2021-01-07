@@ -2,7 +2,7 @@
 
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
+DISTVERSION=	0.6.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +25,7 @@ USE_GNOME=	gnomedesktop3
 USE_XORG=	pixman xcb
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_COMMIT=	9fe63674a80268acd97fc7fb7db1a8448243bb1e
+GL_COMMIT=	bfd96f36872fa869ef8d2572a6d0dff91584e5ef
 SHEBANG_FILES=	build-aux/post_install.py
 CFLAGS+=	-Wno-error=format-nonliteral # clang
 PLIST_FILES=	bin/${PORTNAME}
