@@ -96,10 +96,10 @@ include/snort/log/obfuscator.h
 include/snort/log/text_log.h
 include/snort/log/u2_packet.h
 include/snort/log/unified2.h
-include/snort/lua/snort_config.lua
 include/snort/lua/snort_plugin.lua
 include/snort/main/analyzer_command.h
 include/snort/main/policy.h
+include/snort/main/request.h
 include/snort/main/snort.h
 include/snort/main/snort_config.h
 include/snort/main/snort_debug.h
@@ -132,6 +132,7 @@ include/snort/network_inspectors/packet_tracer/packet_tracer.h
 include/snort/network_inspectors/reputation/reputation_common.h
 include/snort/network_inspectors/rna/rna_fingerprint.h
 include/snort/network_inspectors/rna/rna_fingerprint_tcp.h
+include/snort/network_inspectors/rna/rna_fingerprint_udp.h
 include/snort/network_inspectors/rna/rna_fingerprint_ua.h
 include/snort/network_inspectors/rna/rna_inspector.h
 include/snort/network_inspectors/rna/rna_logger.h
@@ -139,7 +140,7 @@ include/snort/network_inspectors/rna/rna_name.h
 include/snort/packet_io/active.h
 include/snort/packet_io/sfdaq.h
 include/snort/packet_io/sfdaq_instance.h
-include/snort/payload_injector/payload_injector_module.h
+include/snort/payload_injector/payload_injector.h
 include/snort/profiler/memory_context.h
 include/snort/profiler/memory_defs.h
 include/snort/profiler/memory_profiler_defs.h
@@ -179,6 +180,7 @@ include/snort/pub_sub/cip_events.h
 include/snort/pub_sub/daq_message_event.h
 include/snort/pub_sub/data_decrypt_event.h
 include/snort/pub_sub/dcerpc_events.h
+include/snort/pub_sub/dhcp_events.h
 include/snort/pub_sub/expect_events.h
 include/snort/pub_sub/finalize_packet_event.h
 include/snort/pub_sub/http_events.h
