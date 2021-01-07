@@ -3,7 +3,7 @@
 PORTNAME=	engauge-digitizer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	12.2.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics math science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	markummitchell
 USE_QT=		core gui printsupport sql xml widgets buildtools_build
 USE_GL=		gl
-CONFIGURE_ENV=	OPENJPEG_INCLUDE=${PREFIX}/include/openjpeg-2.3 OPENJPEG_LIB=${PREFIX}/lib \
+CONFIGURE_ENV=	OPENJPEG_INCLUDE=${PREFIX}/include/openjpeg-2.4 OPENJPEG_LIB=${PREFIX}/lib \
 		POPPLER_INCLUDE=${PREFIX}/include/poppler/qt5 POPPLER_LIB=${PREFIX}/lib
 QMAKE_ARGS=	"CONFIG+=jpeg2000 pdf"
 
