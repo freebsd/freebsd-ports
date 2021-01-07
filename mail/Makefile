@@ -505,6 +505,7 @@
     SUBDIR += py-postfix-mta-sts-resolver
     SUBDIR += py-premailer
     SUBDIR += py-pymailq
+    SUBDIR += py-pysasl
     SUBDIR += py-pyspf
     SUBDIR += py-pyzmail
     SUBDIR += py-spf-engine

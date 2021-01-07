@@ -1,0 +1,8 @@
+pysasl is a Pure Python SASL client and server library. The design of the
+library is intended to be agnostic of the protocol or network library.
+
+The library currently offers PLAIN, LOGIN, and CRAM-MD5 mechanisms by
+default. The EXTERNAL and XOAUTH2 mechanisms are also available for
+special circumstances.
+
+WWW: https://pypi.org/project/pysasl/
