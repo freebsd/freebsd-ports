@@ -1,17 +1,18 @@
 --- etc/slurm.conf.example.orig	2020-03-26 21:44:05 UTC
 +++ etc/slurm.conf.example
-@@ -8,8 +8,8 @@
+@@ -8,8 +8,9 @@
  #
  # See the slurm.conf man page for more information.
  #
 -ClusterName=linux
 -ControlMachine=linux0
-+ClusterName=beastie
-+ControlMachine=beastie0
++ClusterName=Beastie
++# Short hostname of the head node
++ControlMachine=head
  #ControlAddr=
  #BackupController=
  #BackupAddr=
-@@ -25,8 +25,8 @@ StateSaveLocation=/var/spool/slurm/ctld
+@@ -25,8 +26,8 @@ StateSaveLocation=/var/spool/slurm/ctld
  SlurmdSpoolDir=/var/spool/slurm/d
  SwitchType=switch/none
  MpiDefault=none
@@ -22,16 +23,16 @@
  ProctrackType=proctrack/pgid
  #PluginDir=
  #FirstJobId=
-@@ -34,7 +34,7 @@ ReturnToService=0
+@@ -34,7 +35,7 @@ ReturnToService=0
  #MaxJobCount=
  #PlugStackConfig=
  #PropagatePrioProcess=
 -#PropagateResourceLimits=
-+PropagateResourceLimits=none
++PropagateResourceLimits=NONE
  #PropagateResourceLimitsExcept=
  #Prolog=
  #Epilog=
-@@ -42,7 +42,9 @@ ReturnToService=0
+@@ -42,7 +43,9 @@ ReturnToService=0
  #SrunEpilog=
  #TaskProlog=
  #TaskEpilog=
@@ -42,7 +43,7 @@
  #TrackWCKey=no
  #TreeWidth=50
  #TmpFS=
-@@ -57,10 +59,11 @@ KillWait=30
+@@ -57,10 +60,11 @@ KillWait=30
  Waittime=0
  #
  # SCHEDULING
@@ -55,7 +56,7 @@
  #PriorityType=priority/multifactor
  #PriorityDecayHalfLife=14-0
  #PriorityUsageResetPeriod=14-0
-@@ -72,22 +75,58 @@ SelectTypeParameters=CR_Core
+@@ -72,22 +76,58 @@ SelectTypeParameters=CR_Core
  #
  # LOGGING
  SlurmctldDebug=info
@@ -115,8 +116,8 @@
 -PartitionName=debug Nodes=ALL Default=YES MaxTime=INFINITE State=UP
 +# Set RealMemory < avail memory in /var/run/dmesg.boot
 +# Note that it may change slightly following freebsd-update
-+# NodeName=compute-[001-032] Sockets=2 CoresPerSocket=6 RealMemory=30000 State=UNKNOWN
++NodeName=compute-[001-002] Sockets=2 CoresPerSocket=6 RealMemory=30000 State=UNKNOWN
 +# NodeName=compute-256g-[001-002] Sockets=2 CoresPerSocket=6 RealMemory=250000 State=UNKNOWN
 +# PartitionName=debug Nodes=ALL Default=NO MaxTime=INFINITE State=UP
-+# PartitionName=batch Nodes=compute-[001-032] Default=YES MaxTime=INFINITE State=UP
++PartitionName=batch Nodes=compute-[001-002] Default=YES MaxTime=INFINITE State=UP
 +# PartitionName=256g Nodes=compute-256g-[001-002] Default=NO MaxTime=INFINITE State=UP
