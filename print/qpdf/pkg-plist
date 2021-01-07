@@ -40,6 +40,7 @@ include/qpdf/QPDFOutlineObjectHelper.hh
 include/qpdf/QPDFPageDocumentHelper.hh
 include/qpdf/QPDFPageLabelDocumentHelper.hh
 include/qpdf/QPDFPageObjectHelper.hh
+include/qpdf/QPDFStreamFilter.hh
 include/qpdf/QPDFSystemError.hh
 include/qpdf/QPDFTokenizer.hh
 include/qpdf/QPDFWriter.hh
@@ -51,7 +52,7 @@ include/qpdf/Types.h
 include/qpdf/qpdf-c.h
 lib/libqpdf.so
 lib/libqpdf.so.28
-lib/libqpdf.so.28.0.4
+lib/libqpdf.so.28.1.0
 libdata/pkgconfig/libqpdf.pc
 man/man1/fix-qdf.1.gz
 man/man1/qpdf.1.gz
