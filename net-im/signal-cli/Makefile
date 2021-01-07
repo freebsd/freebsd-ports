@@ -2,7 +2,7 @@
 
 PORTNAME=	signal-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.2
 CATEGORIES=	net-im java
 MASTER_SITES=	https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/:_jackson_annotations \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.9/:_jackson_core \
@@ -23,7 +23,7 @@ MASTER_SITES=	https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/ja
 		https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.6.0/:_okhttp \
 		https://repo.maven.apache.org/maven2/com/squareup/okio/okio/2.6.0/:_okio \
 		https://repo.maven.apache.org/maven2/net/sourceforge/argparse4j/argparse4j/0.8.1/:_argparse4j \
-		https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/1.67/:_bcprov_jdk15on \
+		https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk15on/1.68/:_bcprov_jdk15on \
 		https://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/:_annotations \
 		https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.3.71/:_kotlin_stdlib_common \
 		https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.3.71/:_kotlin_stdlib \
@@ -35,7 +35,7 @@ MASTER_SITES=	https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/ja
 		https://repo.maven.apache.org/maven2/org/signal/signal-metadata-java/0.1.2/:_signal_metadata_java \
 		https://repo.maven.apache.org/maven2/org/signal/zkgroup-java/0.7.0/:_zkgroup_java \
 		https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.30/:_slf4j_api \
-		https://repo.maven.apache.org/maven2/org/slf4j/slf4j-nop/1.7.30/:_slf4j_nop \
+		https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/1.7.30/:_slf4j_simple \
 		https://repo.maven.apache.org/maven2/org/threeten/threetenbp/1.3.6/:_threetenbp \
 		https://repo.maven.apache.org/maven2/org/whispersystems/curve25519-java/0.5.0/:_curve25519_java \
 		https://repo.maven.apache.org/maven2/org/whispersystems/signal-protocol-java/2.8.1/:_signal_protocol_java
@@ -46,7 +46,7 @@ DISTFILES=	annotations-13.0.jar:_annotations \
 		asm-commons-7.1.jar:_asm_commons \
 		asm-tree-7.1.jar:_asm_tree \
 		asm-util-7.1.jar:_asm_util \
-		bcprov-jdk15on-1.67.jar:_bcprov_jdk15on \
+		bcprov-jdk15on-1.68.jar:_bcprov_jdk15on \
 		curve25519-java-0.5.0.jar:_curve25519_java \
 		dbus-java-3.2.4.jar:_dbus_java \
 		jackson-annotations-2.9.0.jar:_jackson_annotations \
@@ -71,7 +71,7 @@ DISTFILES=	annotations-13.0.jar:_annotations \
 		signal-protocol-java-2.8.1.jar:_signal_protocol_java \
 		signal-service-java-2.15.3_unofficial_15.jar:_signal_service_java \
 		slf4j-api-1.7.30.jar:_slf4j_api \
-		slf4j-nop-1.7.30.jar:_slf4j_nop \
+		slf4j-simple-1.7.30.jar:_slf4j_simple \
 		threetenbp-1.3.6.jar:_threetenbp \
 		zkgroup-java-0.7.0.jar:_zkgroup_java
 # jffi-native is not being listed as an explicit dependency by Gradle. As a
