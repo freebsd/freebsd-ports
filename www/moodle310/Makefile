@@ -20,6 +20,8 @@ USE_PHP=	ctype curl dom fileinfo filter gd hash iconv intl json mbstring \
 		xml xmlreader zip zlib
 WRKSRC=		${WRKDIR}/moodle
 
+IGNORE_WITH_PHP=	80
+
 OPTIONS_SINGLE=		BACKEND
 OPTIONS_SINGLE_BACKEND=	MYSQL PGSQL MSSQL
 OPTIONS_DEFINE=		LDAP
@@ -43,7 +45,7 @@ MOODLEDATADIR?=	moodledata
 .include <bsd.port.options.mk>
 
 .if ${FLAVOR} != php80
-USE_PHP+=       xmlrpc
+USE_PHP+=	xmlrpc
 .endif
 
 pre-install:
