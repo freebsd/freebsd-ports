@@ -1,0 +1,7 @@
+A simple GUI frontend that interacts with the GPG application to encrypt and
+decrypt files symmetrically (using passwords not private/public keys).
+
+The GUI provides a convenient way to use GPG, rather than through the terminal,
+making it usable for unexperienced users.
+
+WWW: https://github.com/AnsgarKlein/GPG-Gui
