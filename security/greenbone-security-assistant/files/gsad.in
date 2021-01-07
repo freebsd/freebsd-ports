@@ -22,7 +22,6 @@ load_rc_config $name
 
 name=gsad
 rcvar=${name}_enable
-gsad_user=gvm
 command="%%PREFIX%%/sbin/gsad"
 command_args="${gsad_flags}"
 pidfile=/var/run/gvm/gsad.pid
