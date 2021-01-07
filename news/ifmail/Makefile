@@ -2,7 +2,7 @@
 
 PORTNAME=	ifmail
 PORTVERSION=	2.15
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	news comms
 MASTER_SITES=	SUNSITE/system/fido
 
@@ -11,6 +11,8 @@ COMMENT=	FidoNet(tm) support package for UN*X platform
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/README
+
+LIB_DEPENDS=	libgnuregex.so.6:devel/libgnuregex
 
 USES=		shebangfix
 USERS=		ifmail
@@ -48,6 +50,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/CONFIG
 
 pre-install:

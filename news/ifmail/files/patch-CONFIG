@@ -101,11 +101,12 @@
  # SunOS:
  #LIBS =
  # Solaris:
-@@ -276,6 +276,9 @@ LIBS = -lndbm
+@@ -276,6 +276,10 @@ LIBS = -lndbm
  #LIBS = -lcposix -lmalloc -ldbm -linet -lPW
  # NeXTSTEP
  #LIBS = -lgdbm -lposix
 +# FreeBsd:
++LDFLAGS = -L%%LOCALBASE%%/lib
 +LIBS = -lgnuregex
 +
  
