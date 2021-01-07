@@ -945,6 +945,7 @@
     SUBDIR += htable
     SUBDIR += hub
     SUBDIR += hwloc
+    SUBDIR += hwloc2
     SUBDIR += hyperscan
     SUBDIR += i386-gcc
     SUBDIR += i386-xtoolchain-gcc
