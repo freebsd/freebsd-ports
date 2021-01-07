@@ -833,6 +833,7 @@
     SUBDIR += py-python-igraph
     SUBDIR += py-python-louvain
     SUBDIR += py-pyvtk
+    SUBDIR += py-qdldl
     SUBDIR += py-quadprog
     SUBDIR += py-random2
     SUBDIR += py-roman
