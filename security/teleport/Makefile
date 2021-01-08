@@ -48,7 +48,7 @@ post-patch:
 
 do-build:
 	@cd ${WRKDIR}/${GO_TELEPORT_SRC_DIR} && \
-		${SETENV} ${MAKE_ENV} ${BUILD_ENV} \
+		${SETENV} ${MAKE_ENV} ${BUILD_ENV} ${GO_ENV} \
 		CGO_ENABLED=1 GOPATH=${WRKDIR} \
 		${GMAKE} full
 
