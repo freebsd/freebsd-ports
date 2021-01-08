@@ -1,0 +1,24 @@
+Workaround for Roslyn crash: https://github.com/mono/mono/issues/7017
+
+--- mcs/build/profiles/basic.make.orig	2018-07-12 00:08:27 UTC
++++ mcs/build/profiles/basic.make
+@@ -47,7 +47,7 @@ LIBRARY_COMPILE = $(BOOT_COMPILE)
+ #
+ # Copy from rules.make because I don't know how to unset MCS_FLAGS
+ #
+-USE_MCS_FLAGS = /codepage:$(CODEPAGE) /nologo /noconfig /deterministic $(LOCAL_MCS_FLAGS) $(PLATFORM_MCS_FLAGS) $(PROFILE_MCS_FLAGS) $(MCS_FLAGS)
++USE_MCS_FLAGS = /codepage:$(CODEPAGE) /parallel- /nologo /noconfig /deterministic $(LOCAL_MCS_FLAGS) $(PLATFORM_MCS_FLAGS) $(PROFILE_MCS_FLAGS) $(MCS_FLAGS)
+
+ .PHONY: profile-check do-profile-check
+ profile-check:
+--- mcs/build/rules.make.orig	2018-07-12 00:09:18.508196000 +0000
++++ mcs/build/rules.make	2018-07-12 00:12:13.875877000 +0000
+@@ -34,7 +34,7 @@
+ endif
+ endif
+
+-USE_MCS_FLAGS = /codepage:$(CODEPAGE) /nologo /noconfig /deterministic $(LOCAL_MCS_FLAGS) $(PLATFORM_MCS_FLAGS) $(PROFILE_MCS_FLAGS) $(MCS_FLAGS)
++USE_MCS_FLAGS = /codepage:$(CODEPAGE) /parallel- /nologo /noconfig /deterministic $(LOCAL_MCS_FLAGS) $(PLATFORM_MCS_FLAGS) $(PROFILE_MCS_FLAGS) $(MCS_FLAGS)
+ USE_MBAS_FLAGS = /codepage:$(CODEPAGE) $(LOCAL_MBAS_FLAGS) $(PLATFORM_MBAS_FLAGS) $(PROFILE_MBAS_FLAGS) $(MBAS_FLAGS)
+ USE_CFLAGS = $(LOCAL_CFLAGS) $(CFLAGS) $(CPPFLAGS)
+ CSCOMPILE = $(Q_MCS) $(MCS) $(USE_MCS_FLAGS)

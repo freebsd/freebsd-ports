@@ -14,7 +14,7 @@ COMMENT=	Open source implementation of .NET Development Framework
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		amd64 armv6 armv7 i386 powerpc
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		bash:shells/bash \
@@ -66,6 +66,15 @@ PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
 OPTIONS_SLAVE=	MONOLITE
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "aarch64"
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-aarch64-race-workaround
+PLIST_SUB+=	BOEHM="@comment "
+.else
+PLIST_SUB+=	BOEHM=""
+.endif
+
 post-extract-MONOLITE-on:
 	${MKDIR} ${WRKSRC}/mcs/class/lib/monolite-linux
 	${MV} ${WRKDIR}/monolite-linux-${MONOLITE_VERSION}-latest ${WRKSRC}/mcs/class/lib/monolite-linux/${MONOLITE_VERSION}
@@ -94,4 +103,4 @@ post-configure:
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/mono
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
