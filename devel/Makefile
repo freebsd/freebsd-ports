@@ -967,6 +967,7 @@
     SUBDIR += imake
     SUBDIR += inastemp
     SUBDIR += include-what-you-use
+    SUBDIR += indicators
     SUBDIR += inifiled
     SUBDIR += inilib
     SUBDIR += inilike

@@ -1,0 +1,4 @@
+indicators is a header-only C++ library implementing several types of progress
+bars indicators and spinners.
+
+WWW: https://github.com/p-ranav/indicators
