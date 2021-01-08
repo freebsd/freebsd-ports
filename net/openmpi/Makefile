@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmpi
-PORTVERSION=	4.0.5
+PORTVERSION=	4.1.0
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
@@ -15,7 +15,7 @@ BROKEN_armv6=		fails to package: pkg-static: mca_patcher_overwrite.la: No such f
 BROKEN_armv7=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
 BROKEN_sparc64=		fails to compile on sparc64
 
-LIB_DEPENDS=	libhwloc.so:devel/hwloc \
+LIB_DEPENDS=	libhwloc.so:devel/hwloc2 \
 		libltdl.so:devel/libltdl \
 		libevent.so:devel/libevent \
 		libmunge.so:security/munge
@@ -50,8 +50,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--with-wrapper-ldflags=-Wl,-rpath=-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
 			ompi_cv_fortran_ignore_tkr_data=0
 
-USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
-		${PREFIX}/${MPIDIR}/lib/openmpi
+USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib
 
 MANPREFIX=	${PREFIX}/${MPIDIR}
 
@@ -107,7 +106,9 @@ post-patch:
 		${WRKSRC}/opal/tools/wrappers/Makefile.am \
 		${WRKSRC}/opal/tools/wrappers/Makefile.in \
 		${WRKSRC}/orte/tools/wrappers/Makefile.am \
-		${WRKSRC}/orte/tools/wrappers/Makefile.in
+		${WRKSRC}/orte/tools/wrappers/Makefile.in \
+		${WRKSRC}/opal/mca/pmix/pmix3x/pmix/Makefile.am \
+		${WRKSRC}/opal/mca/pmix/pmix3x/pmix/Makefile.in
 	@${REINPLACE_CMD} 's|define MCA_hwloc_external_.*header "|&${LOCALBASE}/include/|' \
 		${WRKSRC}/configure
 
