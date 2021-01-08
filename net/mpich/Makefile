@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpich
-PORTVERSION=	3.2.1
-PORTREVISION=	6
+PORTVERSION=	3.4
 CATEGORIES=	net parallel
 MASTER_SITES=	https://www.mpich.org/static/downloads/${DISTVERSION}/
 
@@ -14,13 +13,21 @@ LICENSE_NAME=	MPICH
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-LIB_DEPENDS=	libhwloc.so:devel/hwloc
+# Unfortunately mpicc is BROKEN with sh (Bad substitution on arrays)
+BUILD_DEPENDS=	bash:shells/bash
+LIB_DEPENDS=	libhwloc.so:devel/hwloc2	\
+		libjson-c.so:devel/json-c	\
+		libfabric.so:net/libfabric	\
+		libslurm.so:sysutils/slurm-wlm	\
+		libepoll-shim.so:devel/libepoll-shim
+RUN_DEPENDS=	bash:shells/bash
 
 CONFLICTS=	lam-7.* mpd-[0-9]* mpiexec-0.* mpich2-[0-9]*
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USES=		compiler:c11 libtool perl5 pkgconfig
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=		DOCS FORTRAN
 OPTIONS_GROUP=		PM
@@ -48,15 +55,18 @@ DGFORKER_DESC=	Make gforker the default process manager
 DHYDRA_DESC=	Make hydra the default process manager
 
 CONFIGURE_ARGS=	--enable-fast="" --with-hwloc-prefix=${LOCALBASE} \
-		ac_cv_path_BASH_SHELL="" \
+		--with-libfabric=${LOCALBASE} \
 		pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
-		MPICHLIB_CFLAGS="${CFLAGS}" CFLAGS="" \
+		MPICHLIB_CFLAGS="${CFLAGS}" \
+		CFLAGS="-I${LOCALBASE}/include/json-c" \
 		MPICHLIB_CPPFLAGS="${CPPFLAGS}" CPPFLAGS="" \
 		MPICHLIB_CXXFLAGS="${CXXFLAGS}" CXXFLAGS="" \
 		MPICHLIB_FFLAGS="${FFLAGS}" FFLAGS="" \
 		MPICHLIB_FCFLAGS="${FCFLAGS}" FCFLAGS="" \
 		MPICHLIB_LDFLAGS="${LDFLAGS}" LDFLAGS="" \
-		MPICHLIB_LIBS="${LIBS}" LIBS=""
+		MPICHLIB_LIBS="${LIBS}" \
+		LIBS="-L${LOCALBASE}/lib -lepoll-shim -ljson-c -lm"	\
+		BASH_SHELL=${LOCALBASE}/bin/bash
 
 .include <bsd.port.options.mk>
 
@@ -86,6 +96,6 @@ PLIST_SUB+=	EXECGFORKER="@comment "
 .endif
 
 post-patch:
-	@${RM} -r ${WRKSRC}/www
+	${RM} -r ${WRKSRC}/www
 
 .include <bsd.port.mk>

@@ -1,15 +1,6 @@
---- test/mpi/configure.orig	2020-07-05 14:40:24 UTC
+--- test/mpi/configure.orig	2021-01-05 15:32:00 UTC
 +++ test/mpi/configure
-@@ -9726,7 +9726,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
- 	# The best solution is to turn off errors on particular routines
- 	# if that isn't possible (e.g., too many of them), then
- 	# just try arguments that turn off all checking
--	for flags in  "-mismatch" ; do
-+	for flags in  "-fallow-argument-mismatch" "-mismatch" ; do
-             testok=no
-             FFLAGS="$FFLAGS $flags"
-             cat > conftest.$ac_ext <<_ACEOF
-@@ -9768,17 +9768,7 @@ the same routine with arguments of different types." "
+@@ -10907,17 +10907,7 @@ the same routine with arguments of different types." "
  fi
  
  addarg=$pac_cv_prog_f77_mismatched_args_parm

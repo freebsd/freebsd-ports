@@ -1,0 +1,26 @@
+--- Makefile.in.orig	2021-01-05 15:32:33 UTC
++++ Makefile.in
+@@ -9967,8 +9967,6 @@ hwlocsrcdir = @hwlocsrcdir@
+ includedir = @includedir@
+ infodir = @infodir@
+ install_sh = @install_sh@
+-jsonlib = @jsonlib@
+-jsonsrcdir = @jsonsrcdir@
+ libdir = @libdir@
+ libexecdir = @libexecdir@
+ libmpi_so_version = @libmpi_so_version@
+@@ -10237,12 +10235,12 @@ errnames_txt_files = src/mpi/errhan/errnames.txt \
+ 	src/mpid/ch3/errnames.txt $(am__append_52) $(am__append_63) \
+ 	$(am__append_66) $(am__append_77) $(am__append_82) \
+ 	src/pmi/errnames.txt
+-external_subdirs = @mplsrcdir@ @zmsrcdir@ @hwlocsrcdir@ @jsonsrcdir@ \
++external_subdirs = @mplsrcdir@ @zmsrcdir@ @hwlocsrcdir@ \
+ 	@yaksasrcdir@ $(am__append_78) $(am__append_83)
+ external_ldflags = @mpllibdir@ @zmlibdir@ @hwloclibdir@ @netloclibdir@ @yaksalibdir@
+ external_libs = @WRAPPER_LIBS@
+ mpi_convenience_libs = $(am__append_13)
+-pmpi_convenience_libs = @mpllib@ @zmlib@ @hwloclib@ @jsonlib@ \
++pmpi_convenience_libs = @mpllib@ @zmlib@ @hwloclib@ \
+ 	@yaksalib@ $(am__append_5) $(am__append_14) $(am__append_79) \
+ 	$(am__append_84)
+ 

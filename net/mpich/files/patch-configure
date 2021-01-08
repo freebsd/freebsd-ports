@@ -1,19 +1,358 @@
---- configure.orig	2017-11-11 02:22:24 UTC
+--- configure.orig	2021-01-05 15:32:39 UTC
 +++ configure
-@@ -32904,7 +32904,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
- 	# The best solution is to turn off errors on particular routines
- 	# if that isn't possible (e.g., too many of them), then
- 	# just try arguments that turn off all checking
--	for flags in  "-mismatch" ; do
-+	for flags in  "-fallow-argument-mismatch" "-mismatch" ; do
-             testok=no
-             FFLAGS="$FFLAGS $flags"
-             cat > conftest.$ac_ext <<_ACEOF
-@@ -32946,17 +32946,7 @@ the same routine with arguments of different types." "
+@@ -1209,8 +1209,6 @@ HWLOC_top_builddir
+ hwloclib
+ hwloclibdir
+ hwlocsrcdir
+-jsonlib
+-jsonsrcdir
+ VISIBILITY_CFLAGS
+ BUILD_PROFILING_LIB_FALSE
+ BUILD_PROFILING_LIB_TRUE
+@@ -31186,336 +31184,9 @@ if test "$NEEDSPLIB" = "yes" ; then
+ fi
+ 
+ # json-c
++# We use the external port devel/json-c
+ 
+-jsonsrcdir=""
+ 
+-jsonlib=""
+-
+-
+-
+-
+-	if test -z "${pac_save_CFLAGS_nesting}" ; then
+-	   pac_save_CFLAGS_nesting=0
+-	fi
+-	eval pac_save_CFLAGS_${pac_save_CFLAGS_nesting}='"$CFLAGS"'
+-	pac_save_CFLAGS_nesting=`expr ${pac_save_CFLAGS_nesting} + 1`
+-
+-
+-	if test -z "${pac_save_CPPFLAGS_nesting}" ; then
+-	   pac_save_CPPFLAGS_nesting=0
+-	fi
+-	eval pac_save_CPPFLAGS_${pac_save_CPPFLAGS_nesting}='"$CPPFLAGS"'
+-	pac_save_CPPFLAGS_nesting=`expr ${pac_save_CPPFLAGS_nesting} + 1`
+-
+-
+-	if test -z "${pac_save_CXXFLAGS_nesting}" ; then
+-	   pac_save_CXXFLAGS_nesting=0
+-	fi
+-	eval pac_save_CXXFLAGS_${pac_save_CXXFLAGS_nesting}='"$CXXFLAGS"'
+-	pac_save_CXXFLAGS_nesting=`expr ${pac_save_CXXFLAGS_nesting} + 1`
+-
+-
+-	if test -z "${pac_save_FFLAGS_nesting}" ; then
+-	   pac_save_FFLAGS_nesting=0
+-	fi
+-	eval pac_save_FFLAGS_${pac_save_FFLAGS_nesting}='"$FFLAGS"'
+-	pac_save_FFLAGS_nesting=`expr ${pac_save_FFLAGS_nesting} + 1`
+-
+-
+-	if test -z "${pac_save_FCFLAGS_nesting}" ; then
+-	   pac_save_FCFLAGS_nesting=0
+-	fi
+-	eval pac_save_FCFLAGS_${pac_save_FCFLAGS_nesting}='"$FCFLAGS"'
+-	pac_save_FCFLAGS_nesting=`expr ${pac_save_FCFLAGS_nesting} + 1`
+-
+-
+-	if test -z "${pac_save_LDFLAGS_nesting}" ; then
+-	   pac_save_LDFLAGS_nesting=0
+-	fi
+-	eval pac_save_LDFLAGS_${pac_save_LDFLAGS_nesting}='"$LDFLAGS"'
+-	pac_save_LDFLAGS_nesting=`expr ${pac_save_LDFLAGS_nesting} + 1`
+-
+-
+-	if test -z "${pac_save_LIBS_nesting}" ; then
+-	   pac_save_LIBS_nesting=0
+-	fi
+-	eval pac_save_LIBS_${pac_save_LIBS_nesting}='"$LIBS"'
+-	pac_save_LIBS_nesting=`expr ${pac_save_LIBS_nesting} + 1`
+-
+-
+-
+-	if test "$FROM_MPICH" = "yes" ; then
+-	   CFLAGS="$USER_CFLAGS"
+-	   CPPFLAGS="$USER_CPPFLAGS"
+-	   CXXFLAGS="$USER_CXXFLAGS"
+-	   FFLAGS="$USER_FFLAGS"
+-	   FCFLAGS="$USER_FCFLAGS"
+-	   LDFLAGS="$USER_LDFLAGS"
+-	   LIBS="$USER_LIBS"
+-	fi
+-
+-
+-        pac_dir="modules/json-c"
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: ===== configuring modules/json-c =====" >&5
+-$as_echo "$as_me: ===== configuring modules/json-c =====" >&6;}
+-
+-	pac_abs_srcdir=`(cd $srcdir && pwd)`
+-
+-	if test -f $pac_abs_srcdir/modules/json-c/setup ; then
+-           { $as_echo "$as_me:${as_lineno-$LINENO}: sourcing $pac_abs_srcdir/modules/json-c/setup" >&5
+-$as_echo "$as_me: sourcing $pac_abs_srcdir/modules/json-c/setup" >&6;}
+-	   . $pac_abs_srcdir/modules/json-c/setup
+-	fi
+-
+-        # Adapted for MPICH from the autoconf-2.67 implementation of
+-        # AC_CONFIG_SUBDIRS.  Search for "MPICH note:" for relevant commentary and
+-        # local modifications.
+-
+-        # Remove --cache-file, --srcdir, and --disable-option-checking arguments
+-        # so they do not pile up.  Otherwise relative paths (like --srcdir=.. from
+-        # make distcheck) will be incorrect.
+-        pac_sub_configure_args="--disable-werror"
+-        pac_prev=
+-        eval "set x $ac_configure_args"
+-        shift
+-        for pac_arg
+-        do
+-          if test -n "$pac_prev"; then
+-            pac_prev=
+-            continue
+-          fi
+-          case $pac_arg in
+-          -cache-file | --cache-file | --cache-fil | --cache-fi \
+-          | --cache-f | --cache- | --cache | --cach | --cac | --ca | --c)
+-            pac_prev=cache_file ;;
+-          -cache-file=* | --cache-file=* | --cache-fil=* | --cache-fi=* \
+-          | --cache-f=* | --cache-=* | --cache=* | --cach=* | --cac=* | --ca=* \
+-          | --c=*)
+-            ;;
+-          --config-cache | -C)
+-            ;;
+-          -srcdir | --srcdir | --srcdi | --srcd | --src | --sr)
+-            pac_prev=srcdir ;;
+-          -srcdir=* | --srcdir=* | --srcdi=* | --srcd=* | --src=* | --sr=*)
+-            ;;
+-          -prefix | --prefix | --prefi | --pref | --pre | --pr | --p)
+-            pac_prev=prefix ;;
+-          -prefix=* | --prefix=* | --prefi=* | --pref=* | --pre=* | --pr=* | --p=*)
+-            ;;
+-          --disable-option-checking)
+-            ;;
+-          *)
+-            # MPICH note: this is a more robust version of the "precious
+-            # variable" propagation code that was present in the previous
+-            # incarnation of this macro
+-            for pac_pvar in $ac_precious_vars ; do
+-                # check if configure argument token contains the
+-                # precious variable, i.e. "name_of_prec_var=".
+-                if ( echo $pac_arg | grep "^$pac_pvar=" >/dev/null 2>&1 ) ; then
+-                    # check if current precious variable is set in env
+-                    eval pvar_set=\${$pac_pvar+set}
+-                    if test "$pvar_set" = "set" ; then
+-                        # Append 'name_of_prec_var=value_of_prec_var'
+-                        # to the subconfigure arguments list, where
+-                        # value_of_prec_var is fetched from the env.
+-                        # this also overrides any value set on the command line
+-                        eval pac_pval=\${$pac_pvar}
+-                        pac_arg="$pac_pvar=$pac_pval"
+-                        break
+-                    fi
+-                fi
+-            done
+-            case $pac_arg in
+-            *\'*) pac_arg=`$as_echo "$pac_arg" | sed "s/'/'\\\\\\\\''/g"` ;;
+-            esac
+-            as_fn_append pac_sub_configure_args " '$pac_arg'" ;;
+-          esac
+-        done
+-
+-        # Always prepend --prefix to ensure using the same prefix
+-        # in subdir configurations.
+-        # MPICH note: see tt#983 for an example of why this is necessary
+-        pac_arg="--prefix=$prefix"
+-        case $pac_arg in
+-        *\'*) pac_arg=`$as_echo "$pac_arg" | sed "s/'/'\\\\\\\\''/g"` ;;
+-        esac
+-        pac_sub_configure_args="'$pac_arg' $pac_sub_configure_args"
+-
+-        # Pass --silent
+-        if test "$silent" = yes; then
+-          pac_sub_configure_args="--silent $pac_sub_configure_args"
+-        fi
+-
+-        # Always prepend --disable-option-checking to silence warnings, since
+-        # different subdirs can have different --enable and --with options.
+-        pac_sub_configure_args="--disable-option-checking $pac_sub_configure_args"
+-
+-        pac_popdir=`pwd`
+-
+-        # Do not complain, so a configure script can configure whichever
+-        # parts of a large source tree are present.
+-        test -d "$srcdir/$pac_dir" || continue
+-
+-        # MPICH note: modified to remove the internal "_AS_*" macro usage, also
+-        # msg is already printed at top
+-        as_dir="$pac_dir"; as_fn_mkdir_p
+-        # MPICH note: we leave this internal macro reference for now.  We can clone
+-        # the macro locally if this turns out to be non-portable across several autoconf
+-        # versions.  It sets the following variables: ac_builddir,
+-        # ac_top_builddir_sub, ac_top_build_prefix, ac_srcdir, ac_top_srcdir,
+-        # ac_abs_top_builddir, ac_abs_builddir, ac_abs_top_srcdir, ac_abs_srcdir
+-        ac_builddir=.
+-
+-case "$pac_dir" in
+-.) ac_dir_suffix= ac_top_builddir_sub=. ac_top_build_prefix= ;;
+-*)
+-  ac_dir_suffix=/`$as_echo "$pac_dir" | sed 's|^\.[\\/]||'`
+-  # A ".." for each directory in $ac_dir_suffix.
+-  ac_top_builddir_sub=`$as_echo "$ac_dir_suffix" | sed 's|/[^\\/]*|/..|g;s|/||'`
+-  case $ac_top_builddir_sub in
+-  "") ac_top_builddir_sub=. ac_top_build_prefix= ;;
+-  *)  ac_top_build_prefix=$ac_top_builddir_sub/ ;;
+-  esac ;;
+-esac
+-ac_abs_top_builddir=$ac_pwd
+-ac_abs_builddir=$ac_pwd$ac_dir_suffix
+-# for backward compatibility:
+-ac_top_builddir=$ac_top_build_prefix
+-
+-case $srcdir in
+-  .)  # We are building in place.
+-    ac_srcdir=.
+-    ac_top_srcdir=$ac_top_builddir_sub
+-    ac_abs_top_srcdir=$ac_pwd ;;
+-  [\\/]* | ?:[\\/]* )  # Absolute name.
+-    ac_srcdir=$srcdir$ac_dir_suffix;
+-    ac_top_srcdir=$srcdir
+-    ac_abs_top_srcdir=$srcdir ;;
+-  *) # Relative name.
+-    ac_srcdir=$ac_top_build_prefix$srcdir$ac_dir_suffix
+-    ac_top_srcdir=$ac_top_build_prefix$srcdir
+-    ac_abs_top_srcdir=$ac_pwd/$srcdir ;;
+-esac
+-ac_abs_srcdir=$ac_abs_top_srcdir$ac_dir_suffix
+-
+-
+-        cd "$pac_dir"
+-
+-        # Check for guested configure; otherwise get Cygnus style configure.
+-        if test -f "$ac_srcdir/configure.gnu"; then
+-          pac_sub_configure=$ac_srcdir/configure.gnu
+-        elif test -f "$ac_srcdir/configure"; then
+-          pac_sub_configure=$ac_srcdir/configure
+-        elif test -f "$ac_srcdir/configure.ac"; then
+-          # This should be Cygnus configure.
+-          pac_sub_configure=$ac_aux_dir/configure
+-        else
+-          { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: no configuration information is in $pac_dir" >&5
+-$as_echo "$as_me: WARNING: no configuration information is in $pac_dir" >&2;}
+-          pac_sub_configure=
+-        fi
+-
+-        # The recursion is here.
+-        if test -n "$pac_sub_configure"; then
+-          # MPICH note: overriding the cache file on purpose to prevent strange
+-          # issues resulting from inter-dir caching
+-          pac_sub_cache_file="/dev/null"
+-
+-          { $as_echo "$as_me:${as_lineno-$LINENO}: running $SHELL $pac_sub_configure $pac_sub_configure_args --cache-file=$pac_sub_cache_file --srcdir=$ac_srcdir" >&5
+-$as_echo "$as_me: running $SHELL $pac_sub_configure $pac_sub_configure_args --cache-file=$pac_sub_cache_file --srcdir=$ac_srcdir" >&6;}
+-          # The eval makes quoting arguments work.
+-          # MPICH note: we want to execute the provided actions, not be silent
+-          # or error out if the subconfigure succeeded/failed
+-          if eval "\$SHELL \"\$pac_sub_configure\" $pac_sub_configure_args \
+-               --cache-file=\"\$pac_sub_cache_file\" --srcdir=\"\$ac_srcdir\""
+-          then
+-            # restore the current dir for the provided actions
+-            cd "$pac_popdir"
+-
+-          else
+-            # restore the current dir for the provided actions
+-            cd "$pac_popdir"
+-            as_fn_error $? "json-c configure failed" "$LINENO" 5
+-          fi
+-        fi
+-
+-        cd "$pac_popdir"
+-
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: ===== done with modules/json-c configure =====" >&5
+-$as_echo "$as_me: ===== done with modules/json-c configure =====" >&6;}
+-
+-	# Check for any localdefs files.  These may be created, so we
+-	# look in the local directory first.
+-	if test -f modules/json-c/localdefs ; then
+-           { $as_echo "$as_me:${as_lineno-$LINENO}: sourcing modules/json-c/localdefs" >&5
+-$as_echo "$as_me: sourcing modules/json-c/localdefs" >&6;}
+-	   . modules/json-c/localdefs
+-	elif test -f $pac_abs_srcdir/modules/json-c/localdefs ; then
+-           { $as_echo "$as_me:${as_lineno-$LINENO}: sourcing $pac_abs_srcdir/modules/json-c/localdefs" >&5
+-$as_echo "$as_me: sourcing $pac_abs_srcdir/modules/json-c/localdefs" >&6;}
+-	   . $pac_abs_srcdir/modules/json-c/localdefs
+-	fi
+-
+-
+-
+-	pac_save_CFLAGS_nesting=`expr ${pac_save_CFLAGS_nesting} - 1`
+-	eval CFLAGS="\$pac_save_CFLAGS_${pac_save_CFLAGS_nesting}"
+-	eval pac_save_CFLAGS_${pac_save_CFLAGS_nesting}=""
+-
+-
+-	pac_save_CPPFLAGS_nesting=`expr ${pac_save_CPPFLAGS_nesting} - 1`
+-	eval CPPFLAGS="\$pac_save_CPPFLAGS_${pac_save_CPPFLAGS_nesting}"
+-	eval pac_save_CPPFLAGS_${pac_save_CPPFLAGS_nesting}=""
+-
+-
+-	pac_save_CXXFLAGS_nesting=`expr ${pac_save_CXXFLAGS_nesting} - 1`
+-	eval CXXFLAGS="\$pac_save_CXXFLAGS_${pac_save_CXXFLAGS_nesting}"
+-	eval pac_save_CXXFLAGS_${pac_save_CXXFLAGS_nesting}=""
+-
+-
+-	pac_save_FFLAGS_nesting=`expr ${pac_save_FFLAGS_nesting} - 1`
+-	eval FFLAGS="\$pac_save_FFLAGS_${pac_save_FFLAGS_nesting}"
+-	eval pac_save_FFLAGS_${pac_save_FFLAGS_nesting}=""
+-
+-
+-	pac_save_FCFLAGS_nesting=`expr ${pac_save_FCFLAGS_nesting} - 1`
+-	eval FCFLAGS="\$pac_save_FCFLAGS_${pac_save_FCFLAGS_nesting}"
+-	eval pac_save_FCFLAGS_${pac_save_FCFLAGS_nesting}=""
+-
+-
+-	pac_save_LDFLAGS_nesting=`expr ${pac_save_LDFLAGS_nesting} - 1`
+-	eval LDFLAGS="\$pac_save_LDFLAGS_${pac_save_LDFLAGS_nesting}"
+-	eval pac_save_LDFLAGS_${pac_save_LDFLAGS_nesting}=""
+-
+-
+-	pac_save_LIBS_nesting=`expr ${pac_save_LIBS_nesting} - 1`
+-	eval LIBS="\$pac_save_LIBS_${pac_save_LIBS_nesting}"
+-	eval pac_save_LIBS_${pac_save_LIBS_nesting}=""
+-
+-
+-jsonsrcdir="${main_top_builddir}/modules/json-c"
+-jsonlib="${main_top_builddir}/modules/json-c/libjson-c.la"
+-
+-
+-	if echo "$CPPFLAGS" | $FGREP -e "\<-I${use_top_srcdir}/modules/json-c\>" >/dev/null 2>&1; then :
+-  echo "CPPFLAGS(='$CPPFLAGS') contains '-I${use_top_srcdir}/modules/json-c', not appending" >&5
+-else
+-  echo "CPPFLAGS(='$CPPFLAGS') does not contain '-I${use_top_srcdir}/modules/json-c', appending" >&5
+-		CPPFLAGS="$CPPFLAGS -I${use_top_srcdir}/modules/json-c"
+-
+-fi
+-
+-
+-
+-	if echo "$CPPFLAGS" | $FGREP -e "\<-I${main_top_builddir}/modules/json-c\>" >/dev/null 2>&1; then :
+-  echo "CPPFLAGS(='$CPPFLAGS') contains '-I${main_top_builddir}/modules/json-c', not appending" >&5
+-else
+-  echo "CPPFLAGS(='$CPPFLAGS') does not contain '-I${main_top_builddir}/modules/json-c', appending" >&5
+-		CPPFLAGS="$CPPFLAGS -I${main_top_builddir}/modules/json-c"
+-
+-fi
+-
+-
+ # ----------------------------------------------------------------------------
+ # HWLOC
+ # ----------------------------------------------------------------------------
+@@ -45612,18 +45283,8 @@ the same routine with arguments of different types." "
  fi
  
  addarg=$pac_cv_prog_f77_mismatched_args_parm
--
++FFLAGS="$FFLAGS $addarg"
+ 
 -    if test "X$addarg" != "X" ; then
 -        # We could add the names of all of the MPI routines that
 -        # accept different types.  Instead, we fail cleanly.
@@ -24,7 +363,20 @@
 -	# the instructions in the following error message.
 -	as_fn_error $? "The Fortran compiler $F77 does not accept programs that call the same routine with arguments of different types without the option $addarg.  Rerun configure with FFLAGS=$addarg" "$LINENO" 5
 -    fi
-+FFLAGS="$FFLAGS $addarg"
- 
+-
      bindings="$bindings f77"
  
+ $as_echo "#define HAVE_FORTRAN_BINDING 1" >>confdefs.h
+@@ -51252,7 +50913,11 @@ $as_echo_n "checking alignment of wchar_t... " >&6; }
+ if ${ac_cv_alignof_wchar_t+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+-  if ac_fn_c_compute_int "$LINENO" "(long int) offsetof (ac__type_alignof_, y)" "ac_cv_alignof_wchar_t"        "0
++  if ac_fn_c_compute_int "$LINENO" "(long int) offsetof (ac__type_alignof_, y)" "ac_cv_alignof_wchar_t"        "
++
++#ifdef STDC_HEADERS
++# include <stddef.h>
++#endif
+ 
+ #ifndef offsetof
+ # define offsetof(type, member) ((char *) &((type *) 0)->member - (char *) 0)
