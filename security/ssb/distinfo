@@ -1,6 +1,6 @@
-TIMESTAMP = 1609861709
-SHA256 (kitabisa-ssb-v0.1.0_GH0.tar.gz) = effba54e80519f9ac9e87e6df3819ee50d07e51d7c45c77400fec7ac03d3096f
-SIZE (kitabisa-ssb-v0.1.0_GH0.tar.gz) = 10236
+TIMESTAMP = 1610123553
+SHA256 (kitabisa-ssb-v0.1.1_GH0.tar.gz) = afb78be47c305b5d46fe879ce1ad940653f3c00b6d6e4c8244ea0103ecbbcd35
+SIZE (kitabisa-ssb-v0.1.1_GH0.tar.gz) = 10380
 SHA256 (golang-crypto-eec23a3978ad_GH0.tar.gz) = bd882536660d6b65619c9d9b9334e9a5c55557613e56e1b485323a2293dfa2f8
 SIZE (golang-crypto-eec23a3978ad_GH0.tar.gz) = 1725798
 SHA256 (golang-sys-33540a1f6037_GH0.tar.gz) = 09ebdf007413c2eaddce123137443d08d1848be410c58896e772f0481ec385d5
