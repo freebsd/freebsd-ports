@@ -10,7 +10,7 @@ COMMENT=	Generic interface to high-performance communication libraries
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libhwloc.so:devel/hwloc \
+LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2 \
 		libmpi.so:net/openmpi
 
 USES=		cmake compiler:c11
