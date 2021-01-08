@@ -22,16 +22,15 @@
  * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * $FreeBSD$
  */
-
-#include <sys/cdefs.h>
-__FBSDID("$FreeBSD$");
 
 #include <sys/param.h>
 #include <sys/proc.h>
 #include <stdbool.h>
 
-#include <defs.h>
+#include "defs.h"
 #include "gdbcore.h"
 #include "objfiles.h"
 #include "value.h"
@@ -47,7 +46,8 @@ static LONGEST mp_maxid;
 static struct kthr *first, *last;
 struct kthr *curkthr;
 
-static int proc_off_p_pid, proc_off_p_comm, proc_off_p_list, proc_off_p_threads;
+static int proc_off_p_pid, proc_off_p_comm, proc_off_p_hash, proc_off_p_list;
+static int proc_off_p_threads;
 static int thread_off_td_tid, thread_off_td_oncpu, thread_off_td_pcb;
 static int thread_off_td_name, thread_off_td_plist;
 static int thread_oncpu_size;
@@ -95,61 +95,105 @@ kgdb_thr_first(void)
 }
 
 static void
-kgdb_thr_add_procs(CORE_ADDR paddr, CORE_ADDR (*cpu_pcb_addr) (u_int))
+kgdb_thr_add_proc(CORE_ADDR paddr, CORE_ADDR (*cpu_pcb_addr) (u_int))
 {
 	struct gdbarch *gdbarch = target_gdbarch ();
 	struct type *ptr_type = builtin_type (gdbarch)->builtin_data_ptr;
 	enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
 	struct kthr *kt;
-	CORE_ADDR pcb, pnext, tdaddr, tdnext;
+	CORE_ADDR pcb, tdaddr, tdnext;
 	ULONGEST oncpu;
 	LONGEST pid, tid;
 
+	try {
+		tdaddr = read_memory_typed_address (paddr + proc_off_p_threads,
+		    ptr_type);
+		pid = read_memory_integer (paddr + proc_off_p_pid, 4, byte_order);
+	} catch (const gdb_exception_error &e) {
+		return;
+	}
+
+	while (tdaddr != 0) {
+		try {
+			tid = read_memory_integer (tdaddr + thread_off_td_tid,
+			    4, byte_order);
+			oncpu = read_memory_unsigned_integer (tdaddr +
+			    thread_off_td_oncpu, thread_oncpu_size, byte_order);
+			pcb = read_memory_typed_address (tdaddr +
+			    thread_off_td_pcb, ptr_type);
+			tdnext = read_memory_typed_address (tdaddr +
+			    thread_off_td_plist, ptr_type);
+		} catch (const gdb_exception_error &e) {
+			return;
+		}
+		kt = XNEW (struct kthr);
+		if (last == NULL)
+			first = last = kt;
+		else
+			last->next = kt;
+		kt->next = NULL;
+		kt->kaddr = tdaddr;
+		if (tid == dumptid)
+			kt->pcb = dumppcb;
+		else if (cpu_stopped(oncpu))
+			kt->pcb = cpu_pcb_addr(oncpu);
+		else
+			kt->pcb = pcb;
+		kt->tid = tid;
+		kt->pid = pid;
+		kt->paddr = paddr;
+		kt->cpu = oncpu;
+		last = kt;
+		tdaddr = tdnext;
+	}
+}
+
+static void
+kgdb_thr_add_procs_hash(CORE_ADDR pidhashtbl, CORE_ADDR (*cpu_pcb_addr) (u_int))
+{
+	struct gdbarch *gdbarch = target_gdbarch ();
+	struct type *ptr_type = builtin_type (gdbarch)->builtin_data_ptr;
+	enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
+	CORE_ADDR paddr, pnext;
+	ULONGEST i, pidhash;
+
+	pidhash = parse_and_eval_long("pidhash");
+	for (i = 0; i < pidhash; i++) {
+		try {
+			paddr = read_memory_typed_address (pidhashtbl +
+			    i * TYPE_LENGTH(ptr_type), ptr_type);
+		} catch (const gdb_exception_error &e) {
+			continue;
+		}
+		while (paddr != 0) {
+			try {
+				pnext = read_memory_typed_address (paddr +
+				    proc_off_p_hash, ptr_type);
+			} catch (const gdb_exception_error &e) {
+				break;
+			}
+			kgdb_thr_add_proc(paddr, cpu_pcb_addr);
+			paddr = pnext;
+		}
+	}
+}
+
+static void
+kgdb_thr_add_procs_list(CORE_ADDR paddr, CORE_ADDR (*cpu_pcb_addr) (u_int))
+{
+	struct gdbarch *gdbarch = target_gdbarch ();
+	struct type *ptr_type = builtin_type (gdbarch)->builtin_data_ptr;
+	enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
+	CORE_ADDR pnext;
+
 	while (paddr != 0) {
 		try {
-			tdaddr = read_memory_typed_address (paddr +
-			    proc_off_p_threads, ptr_type);
-			pid = read_memory_integer (paddr + proc_off_p_pid, 4,
-			    byte_order);
 			pnext = read_memory_typed_address (paddr +
 			    proc_off_p_list, ptr_type);
 		} catch (const gdb_exception_error &e) {
 			break;
 		}
-		while (tdaddr != 0) {
-			try {
-				tid = read_memory_integer (tdaddr +
-				    thread_off_td_tid, 4, byte_order);
-				oncpu = read_memory_unsigned_integer (tdaddr +
-				    thread_off_td_oncpu, thread_oncpu_size,
-				    byte_order);
-				pcb = read_memory_typed_address (tdaddr +
-				    thread_off_td_pcb, ptr_type);
-				tdnext = read_memory_typed_address (tdaddr +
-				    thread_off_td_plist, ptr_type);
-			} catch (const gdb_exception_error &e) {
-				break;
-			}
-			kt = XNEW (struct kthr);
-			if (last == NULL)
-				first = last = kt;
-			else
-				last->next = kt;
-			kt->next = NULL;
-			kt->kaddr = tdaddr;
-			if (tid == dumptid)
-				kt->pcb = dumppcb;
-			else if (cpu_stopped(oncpu))
-				kt->pcb = cpu_pcb_addr(oncpu);
-			else
-				kt->pcb = pcb;
-			kt->tid = tid;
-			kt->pid = pid;
-			kt->paddr = paddr;
-			kt->cpu = oncpu;
-			last = kt;
-			tdaddr = tdnext;
-		}
+		kgdb_thr_add_proc(paddr, cpu_pcb_addr);
 		paddr = pnext;
 	}
 }
@@ -168,15 +212,6 @@ kgdb_thr_init(CORE_ADDR (*cpu_pcb_addr) (u_int))
 		free(kt);
 	}
 	last = NULL;
-
-	addr = kgdb_lookup("allproc");
-	if (addr == 0)
-		return (NULL);
-	try {
-		paddr = read_memory_typed_address (addr, ptr_type);
-	} catch (const gdb_exception_error &e) {
-		return (NULL);
-	}
 
 	dumppcb = kgdb_lookup("dumppcb");
 	if (dumppcb == 0)
@@ -272,13 +307,49 @@ kgdb_thr_init(CORE_ADDR (*cpu_pcb_addr) (u_int))
 		}
 	}
 
-	kgdb_thr_add_procs(paddr, cpu_pcb_addr);
+	/*
+	 * Handle p_hash separately.
+	 */
+	try {
+		proc_off_p_hash = parse_and_eval_long("proc_off_p_hash");
+	} catch (const gdb_exception_error &e) {
+		try {
+			struct symbol *proc_sym =
+			    lookup_symbol_in_language ("struct proc", NULL,
+				STRUCT_DOMAIN, language_c, NULL).symbol;
+			if (proc_sym == NULL)
+				error (_("Unable to find struct proc symbol"));
+
+			proc_off_p_hash =
+			    lookup_struct_elt (SYMBOL_TYPE (proc_sym), "p_hash",
+				0).offset / 8;
+		} catch (const gdb_exception_error &e2) {
+			proc_off_p_hash = offsetof(struct proc, p_hash);
+		}
+	}
+
 	addr = kgdb_lookup("zombproc");
 	if (addr != 0) {
+		addr = kgdb_lookup("allproc");
 		try {
 			paddr = read_memory_typed_address (addr, ptr_type);
-			kgdb_thr_add_procs(paddr, cpu_pcb_addr);
+			kgdb_thr_add_procs_list(paddr, cpu_pcb_addr);
 		} catch (const gdb_exception_error &e) {
+			return (NULL);
+		}
+
+		try {
+			paddr = read_memory_typed_address (addr, ptr_type);
+			kgdb_thr_add_procs_list(paddr, cpu_pcb_addr);
+		} catch (const gdb_exception_error &e) {
+		}
+	} else {
+		addr = kgdb_lookup("pidhashtbl");
+		try {
+			addr = read_memory_typed_address (addr, ptr_type);
+			kgdb_thr_add_procs_hash(addr, cpu_pcb_addr);
+		} catch (const gdb_exception_error &e) {
+			return (NULL);
 		}
 	}
 	curkthr = kgdb_thr_lookup_tid(dumptid);

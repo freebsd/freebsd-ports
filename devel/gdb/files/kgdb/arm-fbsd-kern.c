@@ -73,12 +73,16 @@ arm_fbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
   regcache->raw_supply_unsigned(ARM_PS_REGNUM, 0);
 }
 
+#define PSR_MODE        0x0000001f      /* mode mask */
+#define PSR_USR32_MODE  0x00000010
+
 static struct trad_frame_cache *
 arm_fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
   struct trad_frame_cache *cache;
+  uint32_t psr;
   CORE_ADDR func, pc, sp;
   const char *name;
   int i;
@@ -94,10 +98,21 @@ arm_fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
 
   find_pc_partial_function (func, &name, NULL, NULL);
 
+  /* Read $PSR to determine where SP and LR are. */
+  psr = read_memory_unsigned_integer (sp, 4, byte_order);
+
   for (i = 0; i <= 12; i++)
     trad_frame_set_reg_addr (cache, ARM_A1_REGNUM + i, sp + 4 + i * 4);
-  trad_frame_set_reg_addr (cache, ARM_SP_REGNUM, sp + 14 * 4);
-  trad_frame_set_reg_addr (cache, ARM_LR_REGNUM, sp + 15 * 4);
+  if ((psr & PSR_MODE) == PSR_USR32_MODE)
+    {
+      trad_frame_set_reg_addr (cache, ARM_SP_REGNUM, sp + 14 * 4);
+      trad_frame_set_reg_addr (cache, ARM_LR_REGNUM, sp + 15 * 4);
+    }
+  else
+    {
+      trad_frame_set_reg_addr (cache, ARM_SP_REGNUM, sp + 16 * 4);
+      trad_frame_set_reg_addr (cache, ARM_LR_REGNUM, sp + 17 * 4);
+    }
   trad_frame_set_reg_addr (cache, ARM_PC_REGNUM, sp + 18 * 4);
   trad_frame_set_reg_addr (cache, ARM_PS_REGNUM, sp);
 
