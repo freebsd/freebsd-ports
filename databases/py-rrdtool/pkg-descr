@@ -1,0 +1,12 @@
+The python-rrdtool provides an interface to rrdtool, the
+wonderful graphing and logging utility. This wrapper
+implementation has worked from the scratch (without SWIG),
+and it's under LGPL.
+
+The bindings are based on the code of the original Python 2
+bindings module for rrdtool by Hye-Shik Chang and are now
+shipped with the RRDtool distribution. This project is
+maintained separately to provide a more pythonic way to
+install those bindings via PyPI.
+
+WWW: https://github.com/commx/python-rrdtool
