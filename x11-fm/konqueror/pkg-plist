@@ -307,6 +307,7 @@ share/locale/cs/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/cs/LC_MESSAGES/libkonq.mo
 share/locale/cs/LC_MESSAGES/searchbarplugin.mo
 share/locale/cs/LC_MESSAGES/uachangerplugin.mo
+share/locale/cs/LC_MESSAGES/webarchiver.mo
 share/locale/cs/LC_MESSAGES/webenginepart.mo
 share/locale/da/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/da/LC_MESSAGES/autorefresh.mo
@@ -501,6 +502,7 @@ share/locale/fi/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/fi/LC_MESSAGES/libkonq.mo
 share/locale/fi/LC_MESSAGES/searchbarplugin.mo
 share/locale/fi/LC_MESSAGES/uachangerplugin.mo
+share/locale/fi/LC_MESSAGES/webarchiver.mo
 share/locale/fi/LC_MESSAGES/webenginepart.mo
 share/locale/fr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/fr/LC_MESSAGES/autorefresh.mo
@@ -939,6 +941,7 @@ share/locale/nn/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/nn/LC_MESSAGES/libkonq.mo
 share/locale/nn/LC_MESSAGES/searchbarplugin.mo
 share/locale/nn/LC_MESSAGES/uachangerplugin.mo
+share/locale/nn/LC_MESSAGES/webarchiver.mo
 share/locale/nn/LC_MESSAGES/webenginepart.mo
 share/locale/pa/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/pa/LC_MESSAGES/autorefresh.mo
@@ -977,6 +980,7 @@ share/locale/pl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/pl/LC_MESSAGES/libkonq.mo
 share/locale/pl/LC_MESSAGES/searchbarplugin.mo
 share/locale/pl/LC_MESSAGES/uachangerplugin.mo
+share/locale/pl/LC_MESSAGES/webarchiver.mo
 share/locale/pl/LC_MESSAGES/webenginepart.mo
 share/locale/pt/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/pt/LC_MESSAGES/autorefresh.mo

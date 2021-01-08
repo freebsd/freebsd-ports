@@ -1,3 +1,3 @@
-TIMESTAMP = 1607111072
-SHA256 (KDE/release-service/20.12.0/kdeconnect-kde-20.12.0.tar.xz) = 92339009b2b41337827a6fa22b500a46ca192e6fa4cd493af13f9b9f9ad58d20
-SIZE (KDE/release-service/20.12.0/kdeconnect-kde-20.12.0.tar.xz) = 549532
+TIMESTAMP = 1610047723
+SHA256 (KDE/release-service/20.12.1/kdeconnect-kde-20.12.1.tar.xz) = fc15b7dba854b5ccc0fbaf1f7accb2c60ef89f311925c89e0c76c5e653182160
+SIZE (KDE/release-service/20.12.1/kdeconnect-kde-20.12.1.tar.xz) = 549772

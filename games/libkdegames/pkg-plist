@@ -1,4 +1,3 @@
-include/KF5/KF5KDEGames/KDE/KExtHighscore
 include/KF5/KF5KDEGames/KDE/KGameClock
 include/KF5/KF5KDEGames/KDE/KGamePopupItem
 include/KF5/KF5KDEGames/KDE/KGameRenderedItem

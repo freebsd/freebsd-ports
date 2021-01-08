@@ -1,3 +1,3 @@
-TIMESTAMP = 1607111072
-SHA256 (KDE/release-service/20.12.0/kblackbox-20.12.0.tar.xz) = 10ac9688b5857f7d672c33357b203d4854cb1fe2175cc7c713873eb008e14551
-SIZE (KDE/release-service/20.12.0/kblackbox-20.12.0.tar.xz) = 450432
+TIMESTAMP = 1610047755
+SHA256 (KDE/release-service/20.12.1/kblackbox-20.12.1.tar.xz) = 877eaf416920294c1b27ad10fd6ebf39295b34d5d19ff1f852f7771224713e00
+SIZE (KDE/release-service/20.12.1/kblackbox-20.12.1.tar.xz) = 450348

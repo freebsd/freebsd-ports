@@ -2,6 +2,7 @@ bin/kbackup
 man/ca/man1/kbackup.1.gz
 man/it/man1/kbackup.1.gz
 man/man1/kbackup.1.gz
+man/nl/man1/kbackup.1.gz
 man/sv/man1/kbackup.1.gz
 man/uk/man1/kbackup.1.gz
 share/applications/org.kde.kbackup.desktop

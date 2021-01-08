@@ -1,3 +1,3 @@
-TIMESTAMP = 1607111072
-SHA256 (KDE/release-service/20.12.0/kshisen-20.12.0.tar.xz) = cb3dbf3c8dae6aa4ea1b591cc8e5964ff53e3e5e8d5b8aaedeb1c5191cc83cc3
-SIZE (KDE/release-service/20.12.0/kshisen-20.12.0.tar.xz) = 827336
+TIMESTAMP = 1610047765
+SHA256 (KDE/release-service/20.12.1/kshisen-20.12.1.tar.xz) = bae98714504479079b379f94650ac79ed2b2de158f041088170f20608cbc96ab
+SIZE (KDE/release-service/20.12.1/kshisen-20.12.1.tar.xz) = 827284

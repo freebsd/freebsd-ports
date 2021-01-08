@@ -483,6 +483,7 @@ share/locale/pl/LC_MESSAGES/kdeconnect-kio.mo
 share/locale/pl/LC_MESSAGES/kdeconnect-nautilus-extension.mo
 share/locale/pl/LC_MESSAGES/kdeconnect-plugins.mo
 share/locale/pl/LC_MESSAGES/kdeconnect-settings.mo
+share/locale/pl/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/pl/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
 share/locale/pt/LC_MESSAGES/kdeconnect-app.mo

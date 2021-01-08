@@ -609,6 +609,7 @@ share/locale/fi/LC_MESSAGES/akonadi-filestore.mo
 share/locale/fi/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_davgroupware_resource.mo
+share/locale/fi/LC_MESSAGES/akonadi_etesync_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_ews_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_facebook_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_google_resource.mo
@@ -1223,6 +1224,7 @@ share/locale/pl/LC_MESSAGES/akonadi-filestore.mo
 share/locale/pl/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_davgroupware_resource.mo
+share/locale/pl/LC_MESSAGES/akonadi_etesync_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_ews_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_facebook_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_google_resource.mo
