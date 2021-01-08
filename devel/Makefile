@@ -708,6 +708,7 @@
     SUBDIR += ftjam
     SUBDIR += ftnchek
     SUBDIR += fuel
+    SUBDIR += functionalplus
     SUBDIR += fuzzylite
     SUBDIR += fxdiv
     SUBDIR += g-wrap

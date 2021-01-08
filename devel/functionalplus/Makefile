@@ -1,0 +1,23 @@
+# $FreeBSD$
+
+PORTNAME=	functionalplu
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.13-p0
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	C++ header-only library that helps write concise and readable C++ code
+
+LICENSE=	BSL
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cmake
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Dobiasd
+GH_PROJECT=	FunctionalPlus
+
+NO_BUILD=	yes
+NO_ARCH=	yes
+
+.include <bsd.port.mk>
