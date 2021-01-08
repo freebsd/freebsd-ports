@@ -1,6 +1,6 @@
---- electron/spec/node-spec.js.orig	2020-03-24 05:00:48 UTC
+--- electron/spec/node-spec.js.orig	2020-08-25 14:33:56 UTC
 +++ electron/spec/node-spec.js
-@@ -193,7 +193,7 @@ describe('node feature', () => {
+@@ -194,7 +194,7 @@ describe('node feature', () => {
      });
  
      describe('child_process.exec', () => {
