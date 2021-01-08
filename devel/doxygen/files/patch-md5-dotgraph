@@ -1,0 +1,23 @@
+--- src/dotgraph.cpp.orig	2020-10-19 13:24:24 UTC
++++ src/dotgraph.cpp
+@@ -16,6 +16,7 @@
+ #include "config.h"
+ #include "doxygen.h"
+ #include "index.h"
++#include <sys/types.h>
+ #include "md5.h"
+ #include "message.h"
+ #include "util.h"
+@@ -143,10 +144,8 @@ bool DotGraph::prepareDotFile()
+ 
+   QCString sigStr(33);
+   uchar md5_sig[16];
+-  // calculate md5
+-  MD5Buffer((const unsigned char*)m_theGraph.data(), m_theGraph.length(), md5_sig);
+-  // convert result to a string
+-  MD5SigToString(md5_sig, sigStr.rawData(), 33);
++  // calculate md5 and convert result to a string
++  MD5Data((const unsigned char*)m_theGraph.data(), m_theGraph.length(), sigStr.rawData());
+ 
+   // already queued files are processed again in case the output format has changed
+ 

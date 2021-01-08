@@ -3,7 +3,7 @@
 
 PORTNAME=	libdrizzle
 PORTVERSION=	0.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpadlibrarian.net/41155299/ \
 		LOCAL/bdrewery/${PORTNAME}/

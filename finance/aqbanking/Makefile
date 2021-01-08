@@ -2,6 +2,7 @@
 
 PORTNAME=	aqbanking
 PORTVERSION=	6.2.5
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/342/
 
@@ -53,6 +54,11 @@ LIB_DEPENDS+=	libktoblzcheck.so:finance/ktoblzcheck
 .if ${PORT_OPTIONS:MDOCS} && !${PORT_OPTIONS:MDOXYGEN}
 PORTDOCS=	*
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+	's|$$(top_builddir)/aqbanking6|$$(top_builddir)/*|g' \
+	${WRKSRC}/configure
 
 pre-configure-EBICS-on:
 	@(if [ ! -e ${LOCALBASE}/libdata/pkgconfig/xmlsec1-gnutls.pc ] ; then \

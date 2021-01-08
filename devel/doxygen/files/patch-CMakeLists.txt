@@ -1,10 +1,10 @@
---- CMakeLists.txt.orig	2015-06-16 17:42:32 UTC
+--- CMakeLists.txt.orig	2020-12-21 14:08:57 UTC
 +++ CMakeLists.txt
-@@ -122,7 +122,6 @@ if (win_static)
- endif()
- 
+@@ -169,7 +169,6 @@ endif()
+ include(cmake/CompilerWarnings.cmake)
+ include(cmake/Coverage.cmake)
  
 -add_subdirectory(libmd5)
- add_subdirectory(qtools)
- add_subdirectory(vhdlparser)
- add_subdirectory(src)
+ add_subdirectory(liblodepng)
+ add_subdirectory(libmscgen)
+ add_subdirectory(libversion)

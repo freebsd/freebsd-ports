@@ -22,7 +22,7 @@ lib/mlt/libmltwebvfx.so
 %%DOXYGEN%%%%DOCSDIR%%/dir_9ead2682ff8c5d072d53541a40d3c441.html
 %%DOXYGEN%%%%DOCSDIR%%/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/doxygen.css
-%%DOXYGEN%%%%DOCSDIR%%/doxygen.png
+%%DOXYGEN%%%%DOCSDIR%%/doxygen.svg
 %%DOXYGEN%%%%DOCSDIR%%/dynsections.js
 %%DOXYGEN%%%%DOCSDIR%%/effects_3d.html
 %%DOXYGEN%%%%DOCSDIR%%/effects_authoring.html
@@ -94,7 +94,7 @@ lib/mlt/libmltwebvfx.so
 %%DOXYGEN%%%%DOCSDIR%%/search/classes_2.js
 %%DOXYGEN%%%%DOCSDIR%%/search/classes_3.html
 %%DOXYGEN%%%%DOCSDIR%%/search/classes_3.js
-%%DOXYGEN%%%%DOCSDIR%%/search/close.png
+%%DOXYGEN%%%%DOCSDIR%%/search/close.svg
 %%DOXYGEN%%%%DOCSDIR%%/search/enums_0.html
 %%DOXYGEN%%%%DOCSDIR%%/search/enums_0.js
 %%DOXYGEN%%%%DOCSDIR%%/search/enumvalues_0.html
@@ -119,7 +119,7 @@ lib/mlt/libmltwebvfx.so
 %%DOXYGEN%%%%DOCSDIR%%/search/functions_6.js
 %%DOXYGEN%%%%DOCSDIR%%/search/functions_7.html
 %%DOXYGEN%%%%DOCSDIR%%/search/functions_7.js
-%%DOXYGEN%%%%DOCSDIR%%/search/mag_sel.png
+%%DOXYGEN%%%%DOCSDIR%%/search/mag_sel.svg
 %%DOXYGEN%%%%DOCSDIR%%/search/namespaces_0.html
 %%DOXYGEN%%%%DOCSDIR%%/search/namespaces_0.js
 %%DOXYGEN%%%%DOCSDIR%%/search/nomatches.html

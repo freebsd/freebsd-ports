@@ -42,7 +42,6 @@ lib/vmware-tools/modules/drivers/vmblock.ko
 lib/vmware-tools/modules/drivers/vmmemctl.ko
 libdata/pkgconfig/vmguestlib.pc
 sbin/mount_vmblock
-%%PORTDOCS%%%%DOCSDIR%%/api/html/FreeSans.ttf
 %%PORTDOCS%%%%DOCSDIR%%/api/html/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/api/html/bc_s.png
 %%PORTDOCS%%%%DOCSDIR%%/api/html/bdwn.png
@@ -81,7 +80,7 @@ sbin/mount_vmblock
 %%PORTDOCS%%%%DOCSDIR%%/api/html/dir_bff1a75f97c7ace650ee0c8d57d0aaa5.html
 %%PORTDOCS%%%%DOCSDIR%%/api/html/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/api/html/doxygen.css
-%%PORTDOCS%%%%DOCSDIR%%/api/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/api/html/doxygen.svg
 %%PORTDOCS%%%%DOCSDIR%%/api/html/dynsections.js
 %%PORTDOCS%%%%DOCSDIR%%/api/html/files.html
 %%PORTDOCS%%%%DOCSDIR%%/api/html/folderclosed.png

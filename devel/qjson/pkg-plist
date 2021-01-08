@@ -40,7 +40,6 @@ libdata/pkgconfig/QJson%%QT_SUFFIX%%.pc
 %%DOXYGEN%%%%DOCSDIR%%/dir_68267d1309a1af8e8297ef4c3efbcdba.html
 %%DOXYGEN%%%%DOCSDIR%%/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/doxygen.css
-%%DOXYGEN%%%%DOCSDIR%%/doxygen.png
 %%DOXYGEN%%%%DOCSDIR%%/dynsections.js
 %%DOXYGEN%%%%DOCSDIR%%/files.html
 %%DOXYGEN%%%%DOCSDIR%%/folderclosed.png

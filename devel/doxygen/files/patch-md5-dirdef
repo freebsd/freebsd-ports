@@ -1,11 +1,11 @@
---- src/dirdef.cpp.orig	2015-01-03 22:38:57 UTC
+--- src/dirdef.cpp.orig	2020-11-27 20:27:34 UTC
 +++ src/dirdef.cpp
 @@ -1,3 +1,4 @@
 +#include <sys/types.h>
  #include "md5.h"
  
  #include "dirdef.h"
-@@ -81,10 +82,8 @@ void DirDef::addFile(FileDef *fd)
+@@ -167,10 +168,8 @@ void DirDefImpl::sort()
  static QCString encodeDirName(const QCString &anchor)
  {
    // convert to md5 hash

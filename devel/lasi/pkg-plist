@@ -39,7 +39,6 @@ libdata/pkgconfig/lasi.pc
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/developer/html/dir_d44c64559bbebec7f509842c48db8b23.html
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/developer/html/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/developer/html/doxygen.css
-%%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/developer/html/doxygen.png
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/developer/html/drawGlyph_8cpp.html
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/developer/html/drawGlyph_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/developer/html/drawGlyph_8h_source.html
@@ -117,7 +116,6 @@ libdata/pkgconfig/lasi.pc
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/user/html/dir_d44c64559bbebec7f509842c48db8b23.html
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/user/html/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/user/html/doxygen.css
-%%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/user/html/doxygen.png
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/user/html/dynsections.js
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/user/html/files.html
 %%DOXYGEN%%%%DOCSDIR%%/libLASi-1.1.1/html/user/html/folderclosed.png

@@ -227,7 +227,6 @@ libdata/pkgconfig/fflas-ffpack.pc
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/dir_fa676cbc4d252d78f1650fb997b21154.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/doxygen.css
-%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/doxygen.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/dynsections.js
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/fflas-ffpack-config_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/fflas-ffpack_8h.html
@@ -342,7 +341,6 @@ libdata/pkgconfig/fflas-ffpack.pc
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/formula.repository
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/globals.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/globals_defs.html
-%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/globals_func.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/group___m_malgos.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/group__checker.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/group__fflas.html

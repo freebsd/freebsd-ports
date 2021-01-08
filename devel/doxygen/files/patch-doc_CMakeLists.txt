@@ -1,6 +1,6 @@
---- doc/CMakeLists.txt.orig	2017-10-31 19:36:00 UTC
+--- doc/CMakeLists.txt.orig	2020-11-14 18:13:29 UTC
 +++ doc/CMakeLists.txt
-@@ -168,7 +168,7 @@ install(FILES
+@@ -240,7 +240,7 @@ install(FILES
          "${PROJECT_BINARY_DIR}/man/doxywizard.1"
          "${PROJECT_BINARY_DIR}/man/doxysearch.1"
          "${PROJECT_BINARY_DIR}/man/doxyindexer.1"
@@ -8,4 +8,4 @@
 +        DESTINATION man/man1
  )
  
- install(FILES
+ install(CODE "if(NOT EXISTS \"${PROJECT_BINARY_DIR}/latex/doxygen_manual.pdf\")

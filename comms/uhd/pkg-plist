@@ -264,7 +264,6 @@ libdata/pkgconfig/uhd.pc
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/classuhd_1_1dict-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/classuhd_1_1dict.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/classuhd_1_1dict.js
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/html/classuhd_1_1dict.png
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/classuhd_1_1digital__filter__base-members.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/classuhd_1_1digital__filter__base.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/classuhd_1_1digital__filter__base.js
@@ -778,7 +777,7 @@ libdata/pkgconfig/uhd.pc
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/dmafifo__block__control_8hpp_source.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/doxygen.css
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/html/doxygen.png
+%%DOXYGEN%%%%DOCSDIR%%/doxygen/html/doxygen.svg
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/dpdk_8dox.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/duc__block__control_8hpp.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/duc__block__control_8hpp_source.html
@@ -1116,6 +1115,8 @@ libdata/pkgconfig/uhd.pc
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/navtreeindex13.js
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/navtreeindex14.js
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/navtreeindex15.js
+%%DOXYGEN%%%%DOCSDIR%%/doxygen/html/navtreeindex16.js
+%%DOXYGEN%%%%DOCSDIR%%/doxygen/html/navtreeindex17.js
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/navtreeindex2.js
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/navtreeindex3.js
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/navtreeindex4.js
@@ -1356,7 +1357,7 @@ libdata/pkgconfig/uhd.pc
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/classes_e.js
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/classes_f.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/classes_f.js
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/close.png
+%%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/close.svg
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/defines_0.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/defines_0.js
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/defines_1.html
@@ -1525,7 +1526,7 @@ libdata/pkgconfig/uhd.pc
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/functions_e.js
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/functions_f.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/functions_f.js
-%%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/mag_sel.png
+%%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/mag_sel.svg
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/namespaces_0.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/namespaces_0.js
 %%DOXYGEN%%%%DOCSDIR%%/doxygen/html/search/namespaces_1.html

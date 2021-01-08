@@ -1,6 +1,6 @@
---- src/definition.cpp.orig	2015-01-03 22:38:57 UTC
+--- src/definition.cpp.orig	2020-12-01 19:59:57 UTC
 +++ src/definition.cpp
-@@ -17,6 +17,7 @@
+@@ -22,6 +22,7 @@
  
  #include <ctype.h>
  #include <qregexp.h>
@@ -8,9 +8,9 @@
  #include "md5.h"
  #include <stdio.h>
  #include <stdlib.h>
-@@ -537,13 +538,11 @@ void Definition::writeDocAnchorsToTagFil
+@@ -446,13 +447,11 @@ void DefinitionImpl::writeDocAnchorsToTagFile(FTextStr
  
- bool Definition::_docsAlreadyAdded(const QCString &doc,QCString &sigList)
+ bool DefinitionImpl::_docsAlreadyAdded(const QCString &doc,QCString &sigList)
  {
 -  uchar md5_sig[16];
    QCString sigStr(33);

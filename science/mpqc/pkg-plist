@@ -1866,9 +1866,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1EAVLMMap.html
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1EAVLMMapNode-members.html
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1EAVLMMapNode.html
-%%DOXYGEN%%%%DOCSDIR%%/classsc_1_1EAVLMMapNode__coll__graph.map
-%%DOXYGEN%%%%DOCSDIR%%/classsc_1_1EAVLMMapNode__coll__graph.md5
-%%DOXYGEN%%%%DOCSDIR%%/classsc_1_1EAVLMMapNode__coll__graph.png
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1EAVLMMap_1_1iterator-members.html
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1EAVLMMap_1_1iterator.html
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1EFCOpt-members.html
@@ -1989,9 +1986,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1ForceLink.html
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1ForceLinkBase-members.html
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1ForceLinkBase.html
-%%DOXYGEN%%%%DOCSDIR%%/classsc_1_1ForceLinkBase__inherit__graph.map
-%%DOXYGEN%%%%DOCSDIR%%/classsc_1_1ForceLinkBase__inherit__graph.md5
-%%DOXYGEN%%%%DOCSDIR%%/classsc_1_1ForceLinkBase__inherit__graph.png
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1ForceLink__coll__graph.map
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1ForceLink__coll__graph.md5
 %%DOXYGEN%%%%DOCSDIR%%/classsc_1_1ForceLink__coll__graph.png
@@ -5489,7 +5483,6 @@ lib/libmpqc.so.7.1.0
 %%DOXYGEN%%%%DOCSDIR%%/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/download.html
 %%DOXYGEN%%%%DOCSDIR%%/doxygen.css
-%%DOXYGEN%%%%DOCSDIR%%/doxygen.png
 %%DOXYGEN%%%%DOCSDIR%%/dynsections.js
 %%DOXYGEN%%%%DOCSDIR%%/eavlmmap_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/edge_8h_source.html

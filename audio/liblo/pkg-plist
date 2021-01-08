@@ -37,7 +37,7 @@ libdata/pkgconfig/liblo.pc
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dir_d28a4824dc47e487b107a5db32ef43c4.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/doc.png
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
-%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
+%%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.svg
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/dynsections.js
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/example__client_8c_source.html
 %%DOXYGEN%%%%PORTDOCS%%%%DOCSDIR%%/html/example__server_8c_source.html

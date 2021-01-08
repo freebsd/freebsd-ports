@@ -3,6 +3,7 @@
 
 PORTNAME=	ktoblzcheck
 PORTVERSION=	1.53
+PORTREVISION=	1
 CATEGORIES=	finance german
 MASTER_SITES=	SF/${PORTNAME} \
 		LOCAL/jhale:bankdata

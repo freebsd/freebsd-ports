@@ -58,7 +58,7 @@ libdata/pkgconfig/libdrizzle.pc
 %%DOXYGEN%%%%DOCSDIR%%/api/html/dir_e6d885289e332b589fc0bd695d13345c.html
 %%DOXYGEN%%%%DOCSDIR%%/api/html/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/api/html/doxygen.css
-%%DOXYGEN%%%%DOCSDIR%%/api/html/doxygen.png
+%%DOXYGEN%%%%DOCSDIR%%/api/html/doxygen.svg
 %%DOXYGEN%%%%DOCSDIR%%/api/html/doxygen_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/api/html/doxygen_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/api/html/drizzle_8h.html
@@ -217,7 +217,7 @@ libdata/pkgconfig/libdrizzle.pc
 %%DOXYGEN%%%%DOCSDIR%%/dev/html/dir_e6d885289e332b589fc0bd695d13345c.html
 %%DOXYGEN%%%%DOCSDIR%%/dev/html/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/dev/html/doxygen.css
-%%DOXYGEN%%%%DOCSDIR%%/dev/html/doxygen.png
+%%DOXYGEN%%%%DOCSDIR%%/dev/html/doxygen.svg
 %%DOXYGEN%%%%DOCSDIR%%/dev/html/doxygen_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/dev/html/doxygen_8h_source.html
 %%DOXYGEN%%%%DOCSDIR%%/dev/html/drizzle_8c.html

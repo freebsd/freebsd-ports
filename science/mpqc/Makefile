@@ -3,7 +3,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	45
+PORTREVISION=	46
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -18,9 +18,10 @@ LIB_DEPENDS=	libint.so:science/libint
 RUN_DEPENDS=	wish:x11-toolkits/tk-wrapper \
 		dot:graphics/graphviz
 
+USES=		fortran gmake libtool localbase perl5 shebangfix tar:bzip2
+
 CONFLICTS_BUILD=	ga # devel/ga: it links to libarmci.so, has HAVE_ARMCI defined, and hits some bug
 
-USES=		fortran gmake libtool localbase perl5 shebangfix tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-production \
 		--enable-shared \

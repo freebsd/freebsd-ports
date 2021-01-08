@@ -3,7 +3,7 @@
 
 PORTNAME=	lv2
 PORTVERSION=	1.18.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://lv2plug.in/spec/
 
@@ -27,7 +27,10 @@ OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES
 OPTIONS_SUB=	yes
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
-			${PYTHON_PKGNAMEPREFIX}rdflib>0:textproc/py-rdflib@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}rdflib>0:textproc/py-rdflib@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR}
 DOXYGEN_CONFIGURE_ON=	--docs
 DOXYGEN_PORTDOCS=	*
 DOXYGEN_IMPLIES=	DOCS
