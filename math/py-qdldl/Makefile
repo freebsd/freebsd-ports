@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.13.2:science/py-scipy@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		compiler:c++11-lang python:3.6+
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
