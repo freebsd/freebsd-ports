@@ -2,7 +2,7 @@
 
 PORTNAME=	mage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.0
+DISTVERSION=	1.11.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -12,7 +12,7 @@ COMMENT=	Command-line make-like build tool using Go as input files
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	magefile
