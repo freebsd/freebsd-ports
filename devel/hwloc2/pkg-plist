@@ -4,7 +4,7 @@ bin/hwloc-calc
 bin/hwloc-compress-dir
 bin/hwloc-diff
 bin/hwloc-distrib
-bin/hwloc-gather-cpuid
+%%X86%%bin/hwloc-gather-cpuid
 bin/hwloc-info
 bin/hwloc-ls
 bin/hwloc-patch
@@ -42,7 +42,7 @@ man/man1/hwloc-calc.1.gz
 man/man1/hwloc-compress-dir.1.gz
 man/man1/hwloc-diff.1.gz
 man/man1/hwloc-distrib.1.gz
-man/man1/hwloc-gather-cpuid.1.gz
+%%X86%%man/man1/hwloc-gather-cpuid.1.gz
 man/man1/hwloc-info.1.gz
 man/man1/hwloc-ls.1.gz
 man/man1/hwloc-patch.1.gz

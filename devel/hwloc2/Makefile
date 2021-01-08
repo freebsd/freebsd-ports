@@ -43,8 +43,16 @@ CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
 CAIRO_USES=		xorg
 CAIRO_USE=		XORG=x11
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+PLIST_SUB=	X86="@comment "
+.else
+PLIST_SUB=	X86=""
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/doxygen-doc/html/* ${STAGEDIR}${DOCSDIR}/html/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
