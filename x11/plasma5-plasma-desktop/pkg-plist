@@ -1970,6 +1970,7 @@ share/locale/hu/LC_MESSAGES/kcm_activities5.mo
 share/locale/hu/LC_MESSAGES/kcm_autostart.mo
 share/locale/hu/LC_MESSAGES/kcm_baloofile.mo
 share/locale/hu/LC_MESSAGES/kcm_desktoppaths.mo
+share/locale/hu/LC_MESSAGES/kcm_keys.mo
 share/locale/hu/LC_MESSAGES/kcm_launchfeedback.mo
 share/locale/hu/LC_MESSAGES/kcm_nightcolor.mo
 share/locale/hu/LC_MESSAGES/kcm_notifications.mo
@@ -1977,6 +1978,7 @@ share/locale/hu/LC_MESSAGES/kcm_search.mo
 share/locale/hu/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/hu/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/hu/LC_MESSAGES/kcm_touchpad.mo
+share/locale/hu/LC_MESSAGES/kcm_users.mo
 share/locale/hu/LC_MESSAGES/kcm_workspace.mo
 share/locale/hu/LC_MESSAGES/kcmaccess.mo
 share/locale/hu/LC_MESSAGES/kcmformats.mo
@@ -1986,6 +1988,7 @@ share/locale/hu/LC_MESSAGES/kcmmouse.mo
 share/locale/hu/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/hu/LC_MESSAGES/kcmsmserver.mo
 share/locale/hu/LC_MESSAGES/knetattach5.mo
+share/locale/hu/LC_MESSAGES/org.kde.plasma.emojier.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo

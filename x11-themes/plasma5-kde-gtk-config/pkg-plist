@@ -4,4 +4,5 @@ lib/kconf_update_bin/gtk_theme
 lib/libexec/gtk3_preview
 %%QT_PLUGINDIR%%/kf5/kded/gtkconfig.so
 share/kconf_update/gtkconfig.upd
+share/kconf_update/remove_window_decorations_from_gtk_css.sh
 share/themes/Breeze/window_decorations.css
