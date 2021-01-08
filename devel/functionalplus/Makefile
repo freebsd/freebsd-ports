@@ -11,7 +11,7 @@ COMMENT=	C++ header-only library that helps write concise and readable C++ code
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake compiler:c++14-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Dobiasd
