@@ -542,3 +542,4 @@
 %%TLS%%%%PYTHON_SITELIBDIR%%/datadog_tls-1.6.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
 %%TLS%%%%PYTHON_SITELIBDIR%%/datadog_tls-1.6.0-py%%PYTHON_VER%%.egg-info/requires.txt
 %%TLS%%%%PYTHON_SITELIBDIR%%/datadog_tls-1.6.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+@dir(%%USER%%,%%GROUP%%,0750) %%ETCDIR%%/conf.d
