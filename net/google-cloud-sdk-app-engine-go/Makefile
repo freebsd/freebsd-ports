@@ -22,7 +22,7 @@ USES=		go
 
 do-build:
 	(cd ${WRKDIR}/platform/google_appengine/goroot-1.9/src && \
-		${SETENV} ${MAKE_ENV} \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} \
 		GOROOT_BOOTSTRAP=${LOCALBASE}/go \
 		${SH} make.bash); \
 	(cd ${WRKDIR}/platform/google_appengine/goroot-1.9/bin && \
