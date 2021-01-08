@@ -19,7 +19,7 @@ PLIST_FILES=	${DOCSDIR}/README \
 		bin/pyshop2packages.sh
 
 do-build:
-	@cd ${WRKSRC} ; ${ENV} GOPATH=${WRKSRC} go build -ldflags="-s -w" -o gocheese go.cypherpunks.ru/gocheese/v2
+	@cd ${WRKSRC} ; ${ENV} GOPATH=${WRKSRC} GO111MODULE=off go build -ldflags="-s -w" -o gocheese go.cypherpunks.ru/gocheese/v2
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
