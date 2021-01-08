@@ -2,18 +2,17 @@
 
 PORTNAME=	pulseaudio-module-xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4
-PORTREVISION=	1
+DISTVERSION=	0.5
 CATEGORIES=	audio
 DIST_SUBDIR=	xrdp
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	c63041f.patch:-p1
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	PulseAudio module which enables xrdp to use audio redirection
 
-LICENSE=	APACHE20
+LICENSE=	LGPL21
+LICNSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${NONEXISTENT}:audio/pulseaudio:configure
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio
