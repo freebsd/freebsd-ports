@@ -165,6 +165,7 @@ man/man1/openssl-enc.1.gz
 man/man1/openssl-engine.1.gz
 man/man1/openssl-errstr.1.gz
 man/man1/openssl-fipsinstall.1.gz
+man/man1/openssl-format-options.1.gz
 man/man1/openssl-gendsa.1.gz
 man/man1/openssl-genpkey.1.gz
 man/man1/openssl-genrsa.1.gz
@@ -172,8 +173,10 @@ man/man1/openssl-info.1.gz
 man/man1/openssl-kdf.1.gz
 man/man1/openssl-list.1.gz
 man/man1/openssl-mac.1.gz
+man/man1/openssl-namedisplay-options.1.gz
 man/man1/openssl-nseq.1.gz
 man/man1/openssl-ocsp.1.gz
+man/man1/openssl-passphrase-options.1.gz
 man/man1/openssl-passwd.1.gz
 man/man1/openssl-pkcs12.1.gz
 man/man1/openssl-pkcs7.1.gz
@@ -197,6 +200,7 @@ man/man1/openssl-spkac.1.gz
 man/man1/openssl-srp.1.gz
 man/man1/openssl-storeutl.1.gz
 man/man1/openssl-ts.1.gz
+man/man1/openssl-verification-options.1.gz
 man/man1/openssl-verify.1.gz
 man/man1/openssl-version.1.gz
 man/man1/openssl-x509.1.gz
@@ -384,6 +388,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/EVP_PKEY_fromdata.3.gz
 %%MAN3%%man/man3/EVP_PKEY_gen.3.gz
 %%MAN3%%man/man3/EVP_PKEY_get_default_digest_nid.3.gz
+%%MAN3%%man/man3/EVP_PKEY_get_group_name.3.gz
 %%MAN3%%man/man3/EVP_PKEY_gettable_params.3.gz
 %%MAN3%%man/man3/EVP_PKEY_is_a.3.gz
 %%MAN3%%man/man3/EVP_PKEY_meth_get_count.3.gz
@@ -752,7 +757,6 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/X509_verify.3.gz
 %%MAN3%%man/man3/X509_verify_cert.3.gz
 %%MAN3%%man/man3/X509v3_get_ext_by_NID.3.gz
-%%MAN3%%man/man3/d2i_DHparams.3.gz
 %%MAN3%%man/man3/d2i_PKCS8PrivateKey_bio.3.gz
 %%MAN3%%man/man3/d2i_PrivateKey.3.gz
 %%MAN3%%man/man3/d2i_RSAPrivateKey.3.gz
@@ -776,7 +780,8 @@ man/man5/x509v3_config.5.gz
 %%MAN3%%man/man7/EVP_KDF-SS.7.gz
 %%MAN3%%man/man7/EVP_KDF-SSHKDF.7.gz
 %%MAN3%%man/man7/EVP_KDF-TLS1_PRF.7.gz
-%%MAN3%%man/man7/EVP_KDF-X942.7.gz
+%%MAN3%%man/man7/EVP_KDF-X942-ASN1.7.gz
+%%MAN3%%man/man7/EVP_KDF-X942-CONCAT.7.gz
 %%MAN3%%man/man7/EVP_KDF-X963.7.gz
 %%MAN3%%man/man7/EVP_KEM-RSA.7.gz
 %%MAN3%%man/man7/EVP_KEYEXCH-DH.7.gz
@@ -814,6 +819,7 @@ man/man5/x509v3_config.5.gz
 %%MAN3%%man/man7/EVP_RAND-CTR-DRBG.7.gz
 %%MAN3%%man/man7/EVP_RAND-HASH-DRBG.7.gz
 %%MAN3%%man/man7/EVP_RAND-HMAC-DRBG.7.gz
+%%MAN3%%man/man7/EVP_RAND-SEED-SRC.7.gz
 %%MAN3%%man/man7/EVP_RAND-TEST-RAND.7.gz
 %%MAN3%%man/man7/EVP_RAND.7.gz
 %%MAN3%%man/man7/EVP_SIGNATURE-DSA.7.gz
@@ -834,11 +840,12 @@ man/man5/x509v3_config.5.gz
 %%MAN3%%man/man7/ct.7.gz
 %%MAN3%%man/man7/des_modes.7.gz
 %%MAN3%%man/man7/evp.7.gz
-%%MAN3%%man/man7/%%OPENSSLDIR%%-core.h.7.gz
-%%MAN3%%man/man7/%%OPENSSLDIR%%-core_dispatch.h.7.gz
-%%MAN3%%man/man7/%%OPENSSLDIR%%-core_names.h.7.gz
-%%MAN3%%man/man7/%%OPENSSLDIR%%-env.7.gz
-%%MAN3%%man/man7/%%OPENSSLDIR%%_user_macros.7.gz
+%%MAN3%%man/man7/openssl-core.h.7.gz
+%%MAN3%%man/man7/openssl-core_dispatch.h.7.gz
+%%MAN3%%man/man7/openssl-core_names.h.7.gz
+%%MAN3%%man/man7/openssl-env.7.gz
+%%MAN3%%man/man7/openssl-glossary.7.gz
+%%MAN3%%man/man7/openssl_user_macros.7.gz
 %%MAN3%%man/man7/ossl_store-file.7.gz
 %%MAN3%%man/man7/ossl_store.7.gz
 %%MAN3%%man/man7/passphrase-encoding.7.gz
