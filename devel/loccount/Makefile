@@ -25,7 +25,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} loccount loccount.1
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GMAKE} loccount loccount.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-${GL_COMMIT}-${GL_COMMIT} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
