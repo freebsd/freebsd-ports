@@ -248,7 +248,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Adelaide.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Brisbane.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Broken_Hill.pm
-%%SITE_PERL%%/DateTime/TimeZone/Australia/Currie.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Darwin.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Eucla.pm
 %%SITE_PERL%%/DateTime/TimeZone/Australia/Hobart.pm
