@@ -108,12 +108,14 @@ GO_TESTFLAGS+=	-mod=vendor
 GO_WRKSRC=	${WRKSRC}
 GO_ENV+=	GOPATH="" \
 		GOBIN="${GO_WRKDIR_BIN}" \
+		GO111MODULE=on \
 		GOPROXY=off \
 		GO_NO_VENDOR_CHECKS=1
 .else
 GO_WRKSRC=	${WRKDIR}/src/${GO_PKGNAME}
 GO_ENV+=	GOPATH="${WRKDIR}" \
-		GOBIN=""
+		GOBIN="" \
+		GO111MODULE=off
 .endif
 
 GO_PORT?=	lang/go
