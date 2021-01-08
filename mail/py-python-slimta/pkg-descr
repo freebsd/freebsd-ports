@@ -1,0 +1,7 @@
+The python-slimta project is a Python library offering the building blocks
+necessary to create a full-featured MTA. An MTA built with python-slimta can
+incorporate any protocol or policy - custom or built-in. An MTA built with
+python-slimta can integrate with other Python libraries and take advantage
+of Python’s great community.
+
+WWW: https://www.slimta.org/
