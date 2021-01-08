@@ -2,11 +2,12 @@
 
 PORTNAME=	beebeep
 DISTVERSIONPREFIX=code-
-DISTVERSION=	5.8.2
+DISTVERSION=	5.8.4
 CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/Sources/
 # Weird SVN-versioned directory in the source zip
-WRKSRC=		${WRKDIR}/${PORTNAME}-code-r1352
+SVNREVISION=	1476
+WRKSRC=		${WRKDIR}/${PORTNAME}-code-r$(SVNREVISION)
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Secure office (Local-area-network) chat
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		compiler:c++17-lang pkgconfig \
 		qmake qt:5 zip
-USE_QT=		core gui multimedia network widgets x11extras \
+USE_QT=		core gui multimedia network printsupport widgets x11extras xml \
 		buildtools_build linguist_build
 
 do-install:
