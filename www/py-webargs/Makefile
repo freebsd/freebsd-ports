@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webargs
-PORTVERSION=	6.1.1
+PORTVERSION=	7.0.1
 CATEGORIES=	www devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,21 +19,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=4.5.2:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask>=0.12.2:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}falcon>=2.0:www/py-falcon@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django*>=1.11.16:www/py-django22@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}django*>=1.11.16:www/py-django22@${PY_FLAVOR} \
+	 	${PYTHON_PKGNAMEPREFIX}pyramid>0:www/py-pyramid@${PY_FLAVOR}
 
-# To be updated
-# TEST_DEPENDS+= 	${PYTHON_PKGNAMEPREFIX}pyramid>=1.9.1:www/py-pyramid@${PY_FLAVOR}
-# To be ported
-# TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}webapp2>=3.0.0b1:www/py-webapp2@${PY_FLAVOR}
-#			${PYTHON_PKGNAMEPREFIX}webtest_aiohttp>=2.0.0:www/py-webtest_aiohttp@${PY_FLAVOR}
-
-# Supports 2/3 but marshmallow 3.x is Python 3 only
-# Requires a marshmallow2 (2.x) port
-USES=		python:3.5+
+USES=		python:3.6+
 USE_GITHUB=	yes # tests not packaged with PyPI sdist
-USE_PYTHON=	autoplist concurrent distutils
-
 GH_ACCOUNT=	marshmallow-code
+USE_PYTHON=	autoplist concurrent distutils
 
 TEST_ENV=	PYTHONPATH=${WRKSRC}/src
 
@@ -41,10 +33,9 @@ NO_ARCH=	yes
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs -o addopts= \
-		--ignore-glob='*webapp2*' \
-		--ignore-glob='*pyramid*' \
 		--ignore-glob='*test_bottleparser*' \
-		--ignore-glob='*test_aiohttpparser*'
+		--ignore-glob='*test_aiohttpparser*' \
+		--ignore-glob="*test_tornadoparser*"
 
 .include <bsd.port.pre.mk>
 
