@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi-addon-pvr-hts
-PORTVERSION=	8.1.2
+PORTVERSION=	8.1.3
 DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	multimedia
 
