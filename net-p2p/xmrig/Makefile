@@ -4,6 +4,7 @@
 PORTNAME=	xmrig
 PORTVERSION=	6.7.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -31,7 +32,7 @@ OPTIONS_DEFAULT=	HWLOC MICROHTTPD
 HWLOC_DESC=		Portable hardware locality
 MICROHTTPD_DESC=	Build with libmicrohttpd support
 
-HWLOC_LIB_DEPENDS+=		libhwloc.so:devel/hwloc
+HWLOC_LIB_DEPENDS+=		libhwloc.so.15:devel/hwloc2
 HWLOC_CMAKE_OFF=		-DWITH_HWLOC=OFF
 MICROHTTPD_LIB_DEPENDS+=	libmicrohttpd.so:www/libmicrohttpd \
 				libuv.so:devel/libuv
