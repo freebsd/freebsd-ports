@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.hedgewars.org/download/releases/ \
 		http://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-server
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # cabal.mk has different default from bsd.port.mk
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,7 +16,7 @@ COMMENT=	Server part of free Worms-like turn based strategy game
 
 LICENSE=	GPLv2
 
-USES=		cabal tar:bzip2
+USES=		cabal:nodefault tar:bzip2
 
 WRKSRC_SUBDIR=	gameServer
 
