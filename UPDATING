@@ -10,7 +10,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: pi@FreeBSD.org
 
   The VPOPMAIL option was removed, because it was dropped upstream,
-  so please check your config bevor upgrading.
+  so please check your config before upgrading.
 
 20210106:
   AFFECTS: sysutils/graylog
