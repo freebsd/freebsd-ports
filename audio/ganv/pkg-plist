@@ -25,5 +25,5 @@ include/ganv-1/ganv/widget.h
 include/ganv-1/ganv/wrap.hpp
 lib/libganv-1.so
 lib/libganv-1.so.1
-lib/libganv-1.so.1.6.0
+lib/libganv-1.so.1.8.0
 libdata/pkgconfig/ganv-1.pc

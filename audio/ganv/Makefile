@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ganv
-PORTVERSION=	1.6.0
+PORTVERSION=	1.8.0
 CATEGORIES=	audio
 MASTER_SITES=	https://download.drobilla.net/
 
@@ -20,6 +20,6 @@ USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 libsig
 USE_LDCONFIG=	yes
 
 post-install:
-	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/ganv_bench lib/libganv-1.so.1.6.0
+	@cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/ganv_bench lib/libganv-1.so.${PORTVERSION}
 
 .include <bsd.port.mk>
