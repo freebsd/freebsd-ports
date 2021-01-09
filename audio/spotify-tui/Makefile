@@ -2,8 +2,7 @@
 
 PORTNAME=	spotify-tui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0
-PORTREVISION=	3
+DISTVERSION=	0.23.0
 CATEGORIES=	audio
 
 MAINTAINER=	vulcan@wired.sh
@@ -17,18 +16,18 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Rigellute
 USE_XORG=	xcb
 
-CARGO_CRATES=	addr2line-0.13.0 \
+CARGO_CRATES=	addr2line-0.14.0 \
 		adler-0.2.3 \
 		aho-corasick-0.7.13 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.32 \
+		anyhow-1.0.37 \
 		arc-swap-0.4.7 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.1 \
 		atty-0.2.14 \
 		autocfg-0.1.7 \
 		autocfg-1.0.0 \
-		backtrace-0.3.51 \
+		backtrace-0.3.55 \
 		base64-0.10.1 \
 		base64-0.11.0 \
 		base64-0.12.3 \
@@ -42,6 +41,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		cassowary-0.3.0 \
 		cc-1.0.58 \
 		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
 		chrono-0.4.13 \
 		clap-2.33.3 \
 		clipboard-0.5.0 \
@@ -52,9 +52,8 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		core-foundation-0.7.0 \
 		core-foundation-sys-0.7.0 \
 		crossbeam-utils-0.7.2 \
-		crossterm-0.17.7 \
-		crossterm-0.18.0 \
-		crossterm_winapi-0.6.1 \
+		crossterm-0.18.2 \
+		crossterm_winapi-0.6.2 \
 		darling-0.9.0 \
 		darling_core-0.9.0 \
 		darling_macro-0.9.0 \
@@ -85,7 +84,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		futures-task-0.3.5 \
 		futures-util-0.3.5 \
 		getrandom-0.1.14 \
-		gimli-0.22.0 \
+		gimli-0.23.0 \
 		h2-0.2.6 \
 		hashbrown-0.8.1 \
 		hermit-abi-0.1.15 \
@@ -108,7 +107,6 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		lazy_static-1.4.0 \
 		libc-0.2.73 \
 		linked-hash-map-0.5.3 \
-		lock_api-0.3.4 \
 		lock_api-0.4.1 \
 		log-0.4.11 \
 		malloc_buf-0.0.6 \
@@ -132,14 +130,12 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		objc-0.2.7 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
-		object-0.20.0 \
+		object-0.22.0 \
 		once_cell-1.4.0 \
 		openssl-0.10.30 \
 		openssl-probe-0.1.2 \
 		openssl-sys-0.9.58 \
-		parking_lot-0.10.2 \
 		parking_lot-0.11.0 \
-		parking_lot_core-0.7.2 \
 		parking_lot_core-0.8.0 \
 		percent-encoding-1.0.1 \
 		percent-encoding-2.1.0 \
@@ -187,11 +183,11 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		scopeguard-1.1.0 \
 		security-framework-0.4.4 \
 		security-framework-sys-0.4.3 \
-		serde-1.0.116 \
-		serde_derive-1.0.116 \
-		serde_json-1.0.57 \
+		serde-1.0.117 \
+		serde_derive-1.0.117 \
+		serde_json-1.0.61 \
 		serde_urlencoded-0.6.1 \
-		serde_yaml-0.8.13 \
+		serde_yaml-0.8.15 \
 		signal-hook-0.1.16 \
 		signal-hook-registry-1.2.0 \
 		slab-0.4.2 \
@@ -210,8 +206,8 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		thread_local-1.0.1 \
 		time-0.1.43 \
 		tinyvec-0.3.3 \
-		tokio-0.2.22 \
-		tokio-macros-0.2.5 \
+		tokio-0.2.23 \
+		tokio-macros-0.2.6 \
 		tokio-socks-0.2.2 \
 		tokio-tls-0.3.1 \
 		tokio-util-0.3.1 \
@@ -219,7 +215,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		tracing-0.1.17 \
 		tracing-core-0.1.11 \
 		try-lock-0.2.3 \
-		tui-0.12.0 \
+		tui-0.13.0 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.13 \
@@ -253,7 +249,7 @@ CARGO_CRATES=	addr2line-0.13.0 \
 		ws2_32-sys-0.2.1 \
 		x11-clipboard-0.3.3 \
 		xcb-0.8.2 \
-		yaml-rust-0.4.4
+		yaml-rust-0.4.5
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
