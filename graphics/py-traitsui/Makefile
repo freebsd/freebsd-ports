@@ -29,7 +29,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traits>0:devel/py-traits@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configobj>0:devel/py-configobj@${PY_FLAVOR}
-py27_TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 # Those requirements (except for pip + coverage) were extracted from etstool.py
 
 USES=		python:3.6+
@@ -37,9 +36,9 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-# Support for the wxPython toolkit is also available, but only for Python 2.
+# Support fro the wxPython toolkit is also available, but
 # Python 3 needs wxPython 4 which isn't ported, yet. So we use only Qt5 for a
-# while to make the port useful for Python 2 and 3.
+# while to make the port useful for Python 3.
 OPTIONS_DEFINE=	QT5
 OPTIONS_DEFAULT=QT5
 
