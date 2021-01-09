@@ -12035,6 +12035,8 @@
 %%WWWDIR%%/db/migrate/20201214113729_add_custom_mapping_columns_to_http_integrations.rb
 %%WWWDIR%%/db/migrate/20201215084652_delete_mock_deployment_service_records.rb
 %%WWWDIR%%/db/migrate/20201215132151_change_unique_index_on_security_findings.rb
+%%WWWDIR%%/db/migrate/20201217111448_change_pages_deployment_size_to_bigint.rb
+%%WWWDIR%%/db/migrate/20201222151823_update_trusted_apps_to_confidential.rb
 %%WWWDIR%%/db/optional_migrations/composite_primary_keys.rb
 %%WWWDIR%%/db/post_migrate/20190102152410_delete_inconsistent_internal_id_records2.rb
 %%WWWDIR%%/db/post_migrate/20190115054215_migrate_delete_container_repository_worker.rb
@@ -12401,6 +12403,7 @@
 %%WWWDIR%%/db/post_migrate/20201130103926_schedule_populate_dismissed_state_for_vulnerabilities.rb
 %%WWWDIR%%/db/post_migrate/20201203123201_remove_orphan_service_hooks.rb
 %%WWWDIR%%/db/post_migrate/20201207151651_truncate_security_findings_table_2.rb
+%%WWWDIR%%/db/post_migrate/20201217112249_change_pages_deployment_size_to_bigint_cleanup.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/schema_migrations/20181228175414
 %%WWWDIR%%/db/schema_migrations/20190102152410
@@ -14064,6 +14067,9 @@
 %%WWWDIR%%/db/schema_migrations/20201214113729
 %%WWWDIR%%/db/schema_migrations/20201215084652
 %%WWWDIR%%/db/schema_migrations/20201215132151
+%%WWWDIR%%/db/schema_migrations/20201217111448
+%%WWWDIR%%/db/schema_migrations/20201217112249
+%%WWWDIR%%/db/schema_migrations/20201222151823
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/db/structure.sql
 %%WWWDIR%%/doc/.vale/gitlab/Acronyms.yml
@@ -30618,6 +30624,7 @@
 %%WWWDIR%%/spec/support/shared_contexts/issuable/merge_request_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/issuable/project_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/json_response_shared_context.rb
+%%WWWDIR%%/spec/support/shared_contexts/lib/container_registry/tags_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/lib/gitlab/git_access_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_contexts/lib/gitlab/import_export/project/rake_task_object_storage_shared_context.rb
 %%WWWDIR%%/spec/support/shared_contexts/lib/gitlab/import_export/relation_tree_restorer_shared_context.rb
@@ -31740,6 +31747,8 @@
 %%WWWDIR%%/workhorse/internal/redis/keywatcher_test.go
 %%WWWDIR%%/workhorse/internal/redis/redis.go
 %%WWWDIR%%/workhorse/internal/redis/redis_test.go
+%%WWWDIR%%/workhorse/internal/rejectmethods/middleware.go
+%%WWWDIR%%/workhorse/internal/rejectmethods/middleware_test.go
 %%WWWDIR%%/workhorse/internal/secret/jwt.go
 %%WWWDIR%%/workhorse/internal/secret/roundtripper.go
 %%WWWDIR%%/workhorse/internal/secret/secret.go

@@ -13,6 +13,9 @@ COMMENT=	Ohai profiles your system and emits JSON
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Please use sysutils/rubygem-ohai instead
+EXPIRATION_DATE=	2021-01-31
+
 RUN_DEPENDS=	rubygem-chef-config12<14.0:sysutils/rubygem-chef-config12 \
 		rubygem-ffi>=1.9:devel/rubygem-ffi \
 		rubygem-ffi-yajl>=2.2:devel/rubygem-ffi-yajl \

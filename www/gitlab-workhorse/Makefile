@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gitlab-workhorse
-PORTVERSION?=	8.58.0
+PORTVERSION?=	8.58.2
 PORTREVISION?=	0
 CATEGORIES=	www
 
@@ -21,7 +21,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-workhorse/tags
-GL_COMMIT?=	2a3bc8abcac36ebb7ec09683edb101c50ef91976
+GL_COMMIT?=	82771e31648f912b1c617f5360a0d5a54041bf34
 
 # for go dependencies
 USE_GITHUB=	nodefault
