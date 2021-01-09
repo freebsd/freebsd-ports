@@ -1,0 +1,60 @@
+--- klystron/Makefile.orig	2021-01-08 20:34:24 UTC
++++ klystron/Makefile
+@@ -1,7 +1,8 @@
++MAKE ?= make
+ TARGET=engine
+ VPATH=src:src
+ ECHO = echo
+-CFG = debug
++CFG = release
+ REV = cp -f
+ MACHINE =
+ 
+@@ -27,9 +28,10 @@ lib_SRC = $(notdir ${wildcard src/lib/*.c})
+ lib_DEP = $(patsubst %.c, deps/lib_$(CFG)_%.d, ${lib_SRC})
+ lib_OBJ = $(patsubst %.c, objs.$(CFG)/lib_%.o, ${lib_SRC})
+ 
+-CC = gcc -shared -std=gnu99 -Wno-strict-aliasing
+-CDEP = gcc -E -std=gnu99
++CC ?= gcc
+ 
++CDEP = $(CC) -shared -E -std=gnu99
++
+ ifndef CFLAGS
+ CFLAGS = $(MACHINE) -ftree-vectorize
+ endif
+@@ -41,10 +43,10 @@ ifeq ($(CFG),debug)
+ 	CFLAGS += -O3 -g -Wall ${INCLUDEFLAGS} -DDEBUG -fno-inline
+ else
+ 	ifeq ($(CFG),profile)
+-		CFLAGS += -O3 -pg -Wall ${INCLUDEFLAGS}
++		CFLAGS += -pg -Wall ${INCLUDEFLAGS}
+ 	else
+ 		ifeq ($(CFG),release)
+-			CFLAGS += -O3 -Wall ${INCLUDEFLAGS} -s
++			CFLAGS += -Wall ${INCLUDEFLAGS}
+ 		else
+ 			ifeq ($(CFG),size)
+ 				CFLAGS += -Os -Wall ${INCLUDEFLAGS} -s -ffast-math -fomit-frame-pointer -DREDUCESIZE
+@@ -73,7 +75,7 @@ build: Makefile
+ 	$(Q)echo '"' >> ./src/version.h
+ 	$(Q)echo '#define KLYSTRON_VERSION_STRING "klystron " KLYSTRON_REVISION' >> ./src/version.h
+ 	$(Q)echo '#endif' >> ./src/version.h
+-	make all CFG=$(CFG)
++	$(MAKE) all CFG=$(CFG)
+ 
+ all: bin.$(CFG)/lib${TARGET}_snd.a bin.$(CFG)/lib${TARGET}_gfx.a bin.$(CFG)/lib${TARGET}_util.a bin.$(CFG)/lib${TARGET}_gui.a tools
+ 
+@@ -208,10 +210,10 @@ ifneq ($(MAKECMDGOALS),clean)
+ endif
+ 
+ tools/bin/makebundle.exe: tools/makebundle/*.c
+-	make -C tools/makebundle
++	$(MAKE) -C tools/makebundle
+ 
+ ifdef COMSPEC
+ tools/bin/editor.exe: tools/editor/src/*
+-	make -C tools/editor
++	$(MAKE) -C tools/editor
+ 	cp tools/editor/bin.$(CFG)/editor.exe tools/bin/editor.exe
+ endif

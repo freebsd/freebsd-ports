@@ -364,6 +364,7 @@
     SUBDIR += kexis
     SUBDIR += kid3-kf5
     SUBDIR += kid3-qt5
+    SUBDIR += klystrack
     SUBDIR += kmix
     SUBDIR += komposter
     SUBDIR += ksmp3play

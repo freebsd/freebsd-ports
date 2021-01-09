@@ -1,0 +1,14 @@
+--- klystron/tools/makebundle/Makefile.orig	2021-01-08 17:05:12 UTC
++++ klystron/tools/makebundle/Makefile
+@@ -1,3 +1,4 @@
++CC ?= gcc
+ TARGET = ../bin/makebundle.exe
+ 
+ ifdef COMSPEC
+@@ -8,4 +9,4 @@ endif
+ 
+ $(TARGET): makebundle.c ../../src/util/bundle.h
+ 	@mkdir -p ../bin
+-	gcc -o $(TARGET) -D_XOPEN_SOURCE makebundle.c -std=c99 -I ../../src $(SDL) -Wall -O3
+\ No newline at end of file
++	$(CC) -o $(TARGET) -D_XOPEN_SOURCE makebundle.c -std=c99 -I ../../src $(SDL) -Wall

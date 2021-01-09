@@ -1,0 +1,79 @@
+--- Makefile.orig	2021-01-08 17:05:12 UTC
++++ Makefile
+@@ -1,7 +1,8 @@
++MAKE ?= make
+ TARGET := klystrack
+ KLYSTRON=klystron
+ ECHO := echo
+-CFG := debug
++CFG := release
+ EXE := bin.$(CFG)/$(TARGET)
+ MACHINE :=
+ NSIS := C:/program\ files\ \(x86\)/nsis/makensis.exe -V2 -NOCD
+@@ -10,7 +11,7 @@ MAKEBUNDLE := $(KLYSTRON)/tools/bin/makebundle.exe
+ UPLOAD := cmd.exe /c upload.bat
+ DLLS := zip/data/SDL2_image.dll zip/data/SDL2.dll
+ EXT := .c
+-CC := gcc
++CC ?= gcc
+ CDEP := $(CC) -E -MM
+ ARCHIVE := klystrack
+ INSTALLER := klystrack.exe
+@@ -69,10 +70,10 @@ ifeq ($(CFG),debug)
+  CFLAGS += -g -Wall -DDEBUG -fno-inline
+ else
+  ifeq ($(CFG),profile)
+-  CFLAGS += -O3 -pg -Wall
++  CFLAGS += -pg -Wall
+  else
+   ifeq ($(CFG),release)
+-   CFLAGS += -O3 -Wall -s
++   CFLAGS += -Wall
+    ifdef COMSPEC
+ 	 CFLAGS += -mwindows
+    endif
+@@ -136,8 +137,8 @@ endef
+ 
+ build: Makefile src/version.h src/version_number.h
+ 	$(Q)touch src/version
+-	$(Q)$(MAKE) -C $(KLYSTRON) CFG=$(CFG) EXTFLAGS="$(EXTFLAGS)"
+-	$(Q)$(MAKE) all CFG=$(CFG) EXTFLAGS="$(EXTFLAGS)"
++	$(Q)$(MAKE_ENV) $(MAKE) -C $(KLYSTRON) CFG=$(CFG) EXTFLAGS="$(EXTFLAGS)"
++	$(Q)$(MAKE_ENV) $(MAKE) all CFG=$(CFG) EXTFLAGS="$(EXTFLAGS)"
+ 
+ src/version.h: src/version
+ 	$(Q)echo '#ifndef VERSION_H' > ./src/version.h
+@@ -173,8 +174,8 @@ endif
+ all: $(EXE) $(THEMES)
+ 
+ zip: doc/* $(THEMES) $(DLLS) examples/instruments/* examples/songs/* $(DLLS)
+-	$(Q)$(MAKE) -C $(KLYSTRON) CFG=release EXTFLAGS="$(EXTFLAGS)"
+-	$(Q)$(MAKE) build CFG=release
++	$(Q)$(MAKE_ENV) $(MAKE) -C $(KLYSTRON) CFG=release EXTFLAGS="$(EXTFLAGS)"
++	$(Q)$(MAKE_ENV) $(MAKE) build CFG=release
+ 	$(Q)mkdir -p zip/data/res
+ 	$(Q)mkdir -p zip/data/examples/songs
+ 	$(Q)mkdir -p zip/data/examples/songs/n00bstar-examples
+@@ -221,18 +222,18 @@ release: bin.release/$(TARGET)
+ 	@$(ECHO) "Building release -->"
+ 
+ $(DESTDIR)$(BINDIR)/$(TARGET): $(EXE)
+-	install -D -m 755 $< $@
++	install -s -m 755 $< $@
+ 
+ $(DESTDIR)$(RES_PATH)/res/%: res/%
+-	install -D -m 644 $< $@
++	install -m 644 $< $@
+ 
+ $(DESTDIR)$(RES_PATH)/key/%: key/%
+-	install -D -m 644 $< $@
++	install -m 644 $< $@
+ 
+ install: $(EXE:bin.$(CFG)/%=$(DESTDIR)$(BINDIR)/%) $(RESOURCES:res/%=$(DESTDIR)$(RES_PATH)/res/%) $(KEYS:key/%=$(DESTDIR)$(RES_PATH)/key/%)
+ 
+ #bin.release/$(TARGET):
+-#	$(Q)make CFG=release
++#	$(Q)$(MAKE) CFG=release
+ 
+ ifneq ($(MAKECMDGOALS),clean)
+ -include $(DEPS)
