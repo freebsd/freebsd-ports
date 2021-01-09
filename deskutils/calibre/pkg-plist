@@ -1212,7 +1212,6 @@ lib/calibre/calibre/srv/pool.py
 lib/calibre/calibre/srv/pre_activated.py
 lib/calibre/calibre/srv/render_book.py
 lib/calibre/calibre/srv/routes.py
-lib/calibre/calibre/srv/sendfile.py
 lib/calibre/calibre/srv/standalone.py
 lib/calibre/calibre/srv/tests/__init__.py
 lib/calibre/calibre/srv/tests/ajax.py
