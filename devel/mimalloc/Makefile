@@ -21,4 +21,7 @@ GH_ACCOUNT=	microsoft
 
 LDFLAGS_i386+=	-latomic
 
+# ci pipeline creates transient tags
+PORTSCOUT=	ignore:1
+
 .include <bsd.port.mk>
