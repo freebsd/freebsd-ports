@@ -54,6 +54,8 @@ DEFAULTPM_DESC=	Default process manager
 DGFORKER_DESC=	Make gforker the default process manager
 DHYDRA_DESC=	Make hydra the default process manager
 
+CONFIGURE_ENV=	ac_cv_header_level_zero_ze_api_h=no \
+		ac_cv_lib_ze_loader_zeInit=no
 CONFIGURE_ARGS=	--enable-fast="" --with-hwloc-prefix=${LOCALBASE} \
 		--with-libfabric=${LOCALBASE} \
 		pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
