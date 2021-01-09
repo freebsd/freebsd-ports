@@ -29,7 +29,7 @@ libdata/pkgconfig/dbusmenu-qt%%QTVER_SUFFIX%%.pc
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/dir_bfdfdb37b8860f4c12feb9409a2ed5dd.html
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/doc.png
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/doxygen.css
-%%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/doxygen.png
+%%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/doxygen.svg
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/dynsections.js
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/files.html
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/folderclosed.png
@@ -62,7 +62,7 @@ libdata/pkgconfig/dbusmenu-qt%%QTVER_SUFFIX%%.pc
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/all_6.js
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/classes_0.html
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/classes_0.js
-%%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/close.png
+%%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/close.svg
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/functions_0.html
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/functions_0.js
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/functions_1.html
@@ -77,7 +77,7 @@ libdata/pkgconfig/dbusmenu-qt%%QTVER_SUFFIX%%.pc
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/functions_5.js
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/functions_6.html
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/functions_6.js
-%%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/mag_sel.png
+%%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/mag_sel.svg
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/nomatches.html
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/pages_0.html
 %%DOXYGEN%%%%DOCSDIR%%%%QTVER_SUFFIX%%/search/pages_0.js

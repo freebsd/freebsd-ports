@@ -63,9 +63,6 @@ libdata/pkgconfig/accounts-qt5.pc
 %%DOCS%%share/doc/accounts-qt/html/classAccounts_1_1ServiceType-members.html
 %%DOCS%%share/doc/accounts-qt/html/classAccounts_1_1ServiceType.html
 %%DOCS%%share/doc/accounts-qt/html/classAccounts_1_1ServiceType.js
-%%DOCS%%share/doc/accounts-qt/html/classAccounts_1_1Watch-members.html
-%%DOCS%%share/doc/accounts-qt/html/classAccounts_1_1Watch.html
-%%DOCS%%share/doc/accounts-qt/html/classAccounts_1_1Watch.js
 %%DOCS%%share/doc/accounts-qt/html/classes.html
 %%DOCS%%share/doc/accounts-qt/html/closed.png
 %%DOCS%%share/doc/accounts-qt/html/deprecated.html
@@ -75,7 +72,7 @@ libdata/pkgconfig/accounts-qt5.pc
 %%DOCS%%share/doc/accounts-qt/html/dir_e68e8157741866f444e17edd764ebbae.html
 %%DOCS%%share/doc/accounts-qt/html/doc.png
 %%DOCS%%share/doc/accounts-qt/html/doxygen.css
-%%DOCS%%share/doc/accounts-qt/html/doxygen.png
+%%DOCS%%share/doc/accounts-qt/html/doxygen.svg
 %%DOCS%%share/doc/accounts-qt/html/dynsections.js
 %%DOCS%%share/doc/accounts-qt/html/error_8cpp_source.html
 %%DOCS%%share/doc/accounts-qt/html/error_8h_source.html

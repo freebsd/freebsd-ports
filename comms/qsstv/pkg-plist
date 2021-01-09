@@ -92,7 +92,7 @@ share/applications/qsstv.desktop
 %%PORTDOCS%%%%DOCSDIR%%/manual/credits.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/doc.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/doubletone.png
-%%PORTDOCS%%%%DOCSDIR%%/manual/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/doxygen.svg
 %%PORTDOCS%%%%DOCSDIR%%/manual/dynsections.js
 %%PORTDOCS%%%%DOCSDIR%%/manual/edit.png
 %%PORTDOCS%%%%DOCSDIR%%/manual/editor.html

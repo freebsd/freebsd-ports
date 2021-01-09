@@ -118,6 +118,12 @@ PKGNAMESUFFIX=	${RUBY_VER:C/\.//}
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300109
+PLIST_SUB+=	EXTRADOC=""
+.else
+PLIST_SUB+=	EXTRADOC="@comment "
+.endif
+
 INSTALLED_SCRIPTS=	erb irb rdoc ri ruby
 INSTALLED_MANUALS=	erb irb ri ruby
 

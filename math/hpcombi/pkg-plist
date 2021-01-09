@@ -23,7 +23,7 @@
 %%DOXYGEN%%%%DOCSDIR%%/dir_ca46913aaf8d188a338900ab830ae328.html
 %%DOXYGEN%%%%DOCSDIR%%/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/doxygen.css
-%%DOXYGEN%%%%DOCSDIR%%/doxygen.png
+%%DOXYGEN%%%%DOCSDIR%%/doxygen.svg
 %%DOXYGEN%%%%DOCSDIR%%/dynsections.js
 %%DOXYGEN%%%%DOCSDIR%%/epu_8hpp.html
 %%DOXYGEN%%%%DOCSDIR%%/epu_8hpp_source.html
@@ -173,7 +173,7 @@
 %%DOXYGEN%%%%DOCSDIR%%/search/classes_7.js
 %%DOXYGEN%%%%DOCSDIR%%/search/classes_8.html
 %%DOXYGEN%%%%DOCSDIR%%/search/classes_8.js
-%%DOXYGEN%%%%DOCSDIR%%/search/close.png
+%%DOXYGEN%%%%DOCSDIR%%/search/close.svg
 %%DOXYGEN%%%%DOCSDIR%%/search/defines_0.html
 %%DOXYGEN%%%%DOCSDIR%%/search/defines_0.js
 %%DOXYGEN%%%%DOCSDIR%%/search/defines_1.html
@@ -240,7 +240,7 @@
 %%DOXYGEN%%%%DOCSDIR%%/search/functions_e.js
 %%DOXYGEN%%%%DOCSDIR%%/search/functions_f.html
 %%DOXYGEN%%%%DOCSDIR%%/search/functions_f.js
-%%DOXYGEN%%%%DOCSDIR%%/search/mag_sel.png
+%%DOXYGEN%%%%DOCSDIR%%/search/mag_sel.svg
 %%DOXYGEN%%%%DOCSDIR%%/search/namespaces_0.html
 %%DOXYGEN%%%%DOCSDIR%%/search/namespaces_0.js
 %%DOXYGEN%%%%DOCSDIR%%/search/namespaces_1.html
@@ -321,7 +321,6 @@
 %%DOXYGEN%%%%DOCSDIR%%/structHPCombi_1_1Vect16.png
 %%DOXYGEN%%%%DOCSDIR%%/structHPCombi_1_1VectGeneric-members.html
 %%DOXYGEN%%%%DOCSDIR%%/structHPCombi_1_1VectGeneric.html
-%%DOXYGEN%%%%DOCSDIR%%/structHPCombi_1_1VectGeneric.png
 %%DOXYGEN%%%%DOCSDIR%%/structHPCombi_1_1power__helper_1_1Monoid-members.html
 %%DOXYGEN%%%%DOCSDIR%%/structHPCombi_1_1power__helper_1_1Monoid.html
 %%DOXYGEN%%%%DOCSDIR%%/structHPCombi_1_1power__helper_1_1Monoid_3_01Perm16_01_4-members.html

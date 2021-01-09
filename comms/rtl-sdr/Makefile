@@ -3,6 +3,7 @@
 
 PORTNAME=	rtl-sdr
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
