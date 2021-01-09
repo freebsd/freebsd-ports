@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	imhex
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	editors
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	c++10:lang/gcc10 \
 		glm>0:math/glm \
 		nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libcapstone.so:devel/capstone4 \
+		libfreetype.so:print/freetype2 \
 		libglfw.so:graphics/glfw \
 		libstdc++.so:lang/gcc10 \
 		libtre.so:textproc/libtre
@@ -26,8 +27,9 @@ USE_XORG=	x11 xcb xau xdmcp
 USE_GITHUB=	yes
 GH_ACCOUNT=	WerWolv
 GH_PROJECT=	ImHex
-GH_TAGNAME=	v1.5.0
+GH_TAGNAME=	v${PORTVERSION}
 
+CC=	${LOCALBASE}/bin/gcc10
 CXX=	${LOCALBASE}/bin/c++10
 
 PLIST_FILES=	bin/imhex
