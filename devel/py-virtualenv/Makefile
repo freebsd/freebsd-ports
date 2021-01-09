@@ -17,9 +17,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 DOCS_BUILD_DEPENDS=	${PY_SPHINX} \
 			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}towncrier>0:textproc/py-towncrier@${PY_FLAVOR}
-.if ${FLAVOR:U:Mpy27}
-DOCS_BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathlib2>0:devel/py-pathlib2@${PY_FLAVOR}
-.endif
 DOCS_BINARY_ALIAS=	towncrier=towncrier-${PYTHON_VER}
 DOCS_PORTDOCS=	*
 DOCS_VARS=	PYDISTUTILS_BUILD_TARGET="build build_sphinx"
@@ -37,7 +34,7 @@ OPTIONS_DEFINE=	DOCS
 
 PYDISTUTILS_BUILDARGS=	-c ${WRKSRC}/docs
 
-USES=		python
+USES=		python:3.6+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 

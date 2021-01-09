@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE PSFL
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		python	# Actually, 2.7,3.4-3.8
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

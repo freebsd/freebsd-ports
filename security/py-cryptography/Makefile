@@ -28,7 +28,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography-vectors>=${PORTVERSION}:securi
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 
 # Python 2.7, 3.5-3.8
-USES=		compiler:env python ssl
+USES=		compiler:env python:3.6+ ssl
 USE_PYTHON=	autoplist concurrent distutils
 
 CFLAGS+=	-I${OPENSSLINC}

@@ -14,7 +14,7 @@ COMMENT=	Fast and featureful directory iterator
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 USE_LOCALE=	en_US.UTF-8

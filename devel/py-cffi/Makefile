@@ -17,7 +17,7 @@ LIB_DEPENDS=	libffi.so:devel/libffi
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycparser>=0:devel/py-pycparser@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		compiler:c11 localbase python
+USES=		compiler:c11 localbase python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>

@@ -13,7 +13,7 @@ COMMENT=	Python Documentation Utilities
 LICENSE=	BSD2CLAUSE GPLv3+ PD PSFL
 LICENSE_COMB=	multi
 
-USES=		python
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
