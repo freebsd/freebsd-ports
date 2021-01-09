@@ -37,7 +37,7 @@ tracd_listen=${tracd_listen:-"0.0.0.0"}
 tracd_port=${tracd_port:-"80"}
 tracd_pidfile=${tracd_pidfile:-"/var/run/tracd.pid"}
 tracd_envdir=${tracd_envdir:-"/home/trac"}
-tracd_env=${tracd_env:-""}
+tracd_tracenv=${tracd_tracenv:-""}
 tracd_args=${tracd_args:-""}
 
 load_rc_config ${name}
@@ -48,10 +48,10 @@ command_args="${command_args} --pidfile=${tracd_pidfile} ${tracd_args}"
 required_dirs=${tracd_envdir}
 pidfile=${tracd_pidfile}
 
-if [ -z "${tracd_env}" ]; then
+if [ -z "${tracd_tracenv}" ]; then
 	_trac_env="--env-parent-dir ${tracd_envdir}"
 else
-	_trac_env="${tracd_envdir}/${tracd_env}"
+	_trac_env="${tracd_envdir}/${tracd_tracenv}"
 	command_args="${command_args} --single-env"
 fi
 
