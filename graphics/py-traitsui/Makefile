@@ -36,7 +36,7 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-# Support fro the wxPython toolkit is also available, but
+# Support for the wxPython toolkit is also available, but
 # Python 3 needs wxPython 4 which isn't ported, yet. So we use only Qt5 for a
 # while to make the port useful for Python 3.
 OPTIONS_DEFINE=	QT5
