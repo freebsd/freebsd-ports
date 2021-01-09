@@ -10,6 +10,7 @@ etc/PROFTPD-MIB.txt
 @sample etc/proftpd.conf.sample
 @sample etc/proftpd/dhparams.pem.sample
 @sample etc/proftpd/blacklist.dat.sample
+include/proftpd/acconfig.h
 include/proftpd/ascii.h
 include/proftpd/auth.h
 include/proftpd/bindings.h
@@ -29,6 +30,7 @@ include/proftpd/dirtree.h
 include/proftpd/display.h
 include/proftpd/encode.h
 include/proftpd/env.h
+include/proftpd/error.h
 include/proftpd/event.h
 include/proftpd/expr.h
 include/proftpd/feat.h
@@ -40,6 +42,7 @@ include/proftpd/hanson-tpl.h
 include/proftpd/help.h
 include/proftpd/ident.h
 include/proftpd/inet.h
+include/proftpd/jot.h
 include/proftpd/json.h
 include/proftpd/lastlog.h
 include/proftpd/libsupp.h
@@ -59,7 +62,9 @@ include/proftpd/modules.h
 include/proftpd/netacl.h
 include/proftpd/netaddr.h
 include/proftpd/netio.h
+include/proftpd/openbsd-blowfish.h
 include/proftpd/options.h
+include/proftpd/os.h
 include/proftpd/parser.h
 include/proftpd/pidfile.h
 include/proftpd/pool.h
@@ -67,6 +72,7 @@ include/proftpd/pr-syslog.h
 include/proftpd/privs.h
 include/proftpd/proctitle.h
 include/proftpd/proftpd.h
+include/proftpd/random.h
 include/proftpd/redis.h
 include/proftpd/regexp.h
 include/proftpd/response.h

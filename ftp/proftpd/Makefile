@@ -26,7 +26,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 .endif
 
-PROFTPD_VERSION=	1.3.6d
+PROFTPD_VERSION=	1.3.7a
 
 .if defined(_BUILDING_PROFTPD_MODULE)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
@@ -202,7 +202,8 @@ post-configure:
 
 .if defined(_BUILDING_PROFTPD_MODULE)
 pre-build:
-	@cd ${WRKSRC} && ${MAKE} include/buildstamp.h
+	@cd ${WRKSRC} && ${MAKE_CMD} include/buildstamp.h
+
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/proftpd

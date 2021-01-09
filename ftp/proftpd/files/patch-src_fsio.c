@@ -1,6 +1,6 @@
---- src/fsio.c.orig	2017-04-10 02:31:02 UTC
+--- src/fsio.c.orig	2020-07-21 17:25:51 UTC
 +++ src/fsio.c
-@@ -69,6 +69,10 @@ static size_t copy_iter_count = 0;
+@@ -70,6 +70,10 @@ static size_t copy_iter_count = 0;
  # define NFS_SUPER_MAGIC	0x6969
  #endif
  
@@ -11,7 +11,7 @@
  typedef struct fsopendir fsopendir_t;
  
  struct fsopendir {
-@@ -1041,7 +1045,30 @@ static int sys_fsetxattr(pool *p, pr_fh_
+@@ -1109,7 +1113,30 @@ static int sys_fsetxattr(pool *p, pr_fh_t *fh, int fd,
    return res;
  }
  
