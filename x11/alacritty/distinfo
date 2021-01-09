@@ -1,4 +1,4 @@
-TIMESTAMP = 1610107481
+TIMESTAMP = 1610192375
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.4.tar.gz) = d9fe5e32de01730eb1f6b7f5b51c17e03e2325bf40a74f754f04f130043affff
 SIZE (rust/crates/ab_glyph_rasterizer-0.1.4.tar.gz) = 6641
 SHA256 (rust/crates/adler32-1.2.0.tar.gz) = aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234
@@ -397,5 +397,5 @@ SHA256 (rust/crates/xml-rs-0.8.3.tar.gz) = b07db065a5cf61a7e4ba64f29e67db906fb17
 SIZE (rust/crates/xml-rs-0.8.3.tar.gz) = 52547
 SHA256 (rust/crates/yaml-rust-0.4.4.tar.gz) = 39f0c922f1a334134dc2f7a8b67dc5d25f0735263feec974345ff706bcf20b0d
 SIZE (rust/crates/yaml-rust-0.4.4.tar.gz) = 48359
-SHA256 (alacritty-alacritty-v0.7.0_GH0.tar.gz) = b9b7e96ebc1725962de628dac7d7bc0766ff9aea5f4c09f399e95823369d5882
-SIZE (alacritty-alacritty-v0.7.0_GH0.tar.gz) = 1412109
+SHA256 (alacritty-alacritty-v0.7.1_GH0.tar.gz) = 90dc5cd49bf0bb01a3202de2170ba376f9530aa265a939f6b3af3d30f8361f50
+SIZE (alacritty-alacritty-v0.7.1_GH0.tar.gz) = 1412177
