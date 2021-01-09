@@ -1,5 +1,5 @@
---- desktop/applications/azpainter.desktop.orig	2020-10-24 15:00:00 UTC
-+++ desktop/applications/azpainter.desktop
+--- desktop/azpainter.desktop.orig	2020-12-04 15:00:00 UTC
++++ desktop/azpainter.desktop
 @@ -5,5 +5,10 @@ Exec=azpainter %f
  Icon=azpainter
  Terminal=false
