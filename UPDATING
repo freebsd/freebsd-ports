@@ -579,7 +579,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: brnrd@FreeBSD.org
 
   The ports now add sample configuration files to /usr/local/etc/mysql. You
-  must merge your client configation with the conf.d/client.cnf and your
+  must merge your client configuration with the conf.d/client.cnf and your
   server configuration with conf.d/server.cnf.
 
 20200518:
@@ -1048,7 +1048,7 @@ you update your ports collection, before attempting any port upgrades.
   are too limiting and omit the Samba supplimentary libraries, which do
   have Python bindings to the default Python 3.x version. With the update
   of the default Python3 version you also need to rebuild all the
-  supplimentary Samba libraries and samba410 itself.
+  supplementary Samba libraries and samba410 itself.
 
   For portmaster users it would be enough to run:
 
