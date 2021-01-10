@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphViz2
-PORTVERSION=	2.64
+PORTVERSION=	2.65
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETJ
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	dot:graphics/graphviz \
 		p5-Data-Section-Simple>=0.02:devel/p5-Data-Section-Simple \
 		p5-File-Which>=1.21:sysutils/p5-File-Which \
-		p5-Graph>=0.9706,1:math/p5-Graph \
+		p5-Graph>=0.9716,1:math/p5-Graph \
 		p5-IPC-Run3>=0.048:devel/p5-IPC-Run3 \
 		p5-Moo>=2.001001:devel/p5-Moo \
 		p5-Type-Tiny>=1.000005:devel/p5-Type-Tiny
