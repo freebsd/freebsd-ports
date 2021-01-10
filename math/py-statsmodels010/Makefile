@@ -13,6 +13,9 @@ COMMENT=	Complement to SciPy for statistical computations
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Use math/py-statsmodels instead
+EXPIRATION_DATE=2021-01-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.24:lang/cython@${PY_FLAVOR} \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	${PYNUMPY} \
