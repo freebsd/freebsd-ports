@@ -1,6 +1,6 @@
-TIMESTAMP = 1589916073
-SHA256 (adnanh-webhook-2.7.0_GH0.tar.gz) = 2ae866294e9ef4a3ecbcad06355b00a8fb2bcdd674644ce69ebfbfc6c75fdbd5
-SIZE (adnanh-webhook-2.7.0_GH0.tar.gz) = 1652898
+TIMESTAMP = 1607248417
+SHA256 (adnanh-webhook-2.8.0_GH0.tar.gz) = c521558083f96bcefef16575a6f3f98ac79c0160fd0073be5e76d6645e068398
+SIZE (adnanh-webhook-2.8.0_GH0.tar.gz) = 1657141
 SHA256 (clbanning-mxj-v1.8.4_GH0.tar.gz) = 335fa9d17855c8540eca83fd8ecacc5979570fe15be04f7c1154f0b71f2c39c7
 SIZE (clbanning-mxj-v1.8.4_GH0.tar.gz) = 1091271
 SHA256 (dustin-go-humanize-v1.0.0_GH0.tar.gz) = e4540bd50ac855143b4f2e509313079c50cf5d8774f09cc10dbca5ae9803d8ba

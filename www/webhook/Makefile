@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webhook
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.0
 CATEGORIES=	www
 
 MAINTAINER=	stb@lassitu.de
@@ -10,8 +10,7 @@ COMMENT=	Easily create HTTP endpoints (hooks) to execute shell commands
 LICENSE=	APACHE20 BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
-USES=		gmake go:modules
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	adnanh
 GH_TUPLE=	\
