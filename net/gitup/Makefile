@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitup
-DISTVERSION=	0.88
+DISTVERSION=	0.89
 CATEGORIES=	net
 
 MAINTAINER=	ed.arrakis@gmail.com
