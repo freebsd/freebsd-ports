@@ -136,6 +136,7 @@
     SUBDIR += alt-ergo
     SUBDIR += amath
     SUBDIR += ambit
+    SUBDIR += amgcl
     SUBDIR += analitza
     SUBDIR += ann
     SUBDIR += antic
