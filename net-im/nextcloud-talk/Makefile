@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	talk
-PORTVERSION=	10.0.5
+PORTVERSION=	10.1.1
 CATEGORIES=	net-im www
 MASTER_SITES=	https://github.com/${PKGNAMEPREFIX:S/-//}/${DISTNAME:C/-.*//}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	nextcloud-
