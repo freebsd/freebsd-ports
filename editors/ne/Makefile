@@ -3,6 +3,7 @@
 
 PORTNAME=	ne
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.di.unimi.it/
 
@@ -12,7 +13,9 @@ COMMENT=	Nice and powerful editor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake makeinfo perl5
+LIB_DEPENDS=	libgnuregex.so:devel/libgnuregex
+
+USES=		gmake localbase makeinfo perl5
 USE_PERL5=	build
 USE_CSTD=	c99
 
