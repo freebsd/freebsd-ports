@@ -46,6 +46,17 @@ scim_anthy_prefs.cpp:98:9: error: cannot initialize a member subobject of type '
          false,
      },
      {
+@@ -215,8 +220,8 @@ BoolConfigData config_bool_common [] =
+     },
+     {
+         NULL,
+-        "",
+-        "",
++        (bool)"",
++        (bool)"",
+         NULL,
+         NULL,
+         NULL,
 @@ -269,6 +274,7 @@ IntConfigData config_int_common [] =
          0,
          0,
