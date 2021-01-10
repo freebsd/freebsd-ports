@@ -30,8 +30,6 @@ GH_TAGNAME=	18b629b
 
 NO_ARCH=	yes
 
-py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enum34>=1.0.4,<2:devel/py-enum34@${PY_FLAVOR}
-
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -k 'not test_HTTPConnection_with_custom_context' test
 
