@@ -13,8 +13,6 @@ COMMENT=	Add .env support to your django/flask apps
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PY_TYPING}
-
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
