@@ -14,12 +14,10 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.14.0:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0.10.3:net/py-netifaces@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tabulate>=0.7.2:devel/py-tabulate@${PY_FLAVOR} \
-		${PY_IPADDRESS}
+		${PYTHON_PKGNAMEPREFIX}tabulate>=0.7.2:devel/py-tabulate@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.14.0:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0.10.3:net/py-netifaces@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tabulate>=0.7.2:devel/py-tabulate@${PY_FLAVOR} \
-		${PY_IPADDRESS}
+		${PYTHON_PKGNAMEPREFIX}tabulate>=0.7.2:devel/py-tabulate@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
