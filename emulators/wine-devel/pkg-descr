@@ -16,6 +16,6 @@ If you receive a message of "Did you reconfigure your kernel with
     machdep.max_ldt_segment="2048"
 to /boot/loader.conf and reboot.
 
-WWW: http://www.winehq.org/
+WWW: https://www.winehq.org
 
 Gerald Pfeifer <gerald@FreeBSD.org>
