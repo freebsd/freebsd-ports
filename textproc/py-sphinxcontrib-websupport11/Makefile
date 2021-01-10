@@ -13,6 +13,9 @@ COMMENT=	Sphinx API for Web Apps
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use textproc/py-sphinxcontrib-websupport instead
+EXPIRATION_DATE=2021-01-31
+
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
