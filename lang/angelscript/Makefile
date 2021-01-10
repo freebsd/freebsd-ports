@@ -12,7 +12,6 @@ COMMENT=	AngelCode Scripting Library
 
 LICENSE=	ZLIB
 
-BROKEN_aarch64=	Does not build: invokes x86 asm
 BROKEN_riscv64=	Does not build: invokes x86 asm
 BROKEN_sparc64=	Does not build: invokes x86 asm
 
