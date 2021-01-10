@@ -14,8 +14,6 @@ COMMENT=	Backported and Experimental Type Hints for Python 3.5+
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PY_TYPING}
-
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 

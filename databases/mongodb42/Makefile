@@ -23,7 +23,6 @@ ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	"Only ported to amd64 and aarch64 on FreeBSD. Upstream supports arm64, ppc64le, s390x and x86-64."
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
-		${PY_TYPING} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${LOCALBASE}/bin/ar:devel/binutils

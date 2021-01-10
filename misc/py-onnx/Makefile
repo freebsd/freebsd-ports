@@ -17,7 +17,6 @@ BUILD_DEPENDS=	cmake:devel/cmake \
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-		${PY_TYPING} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		compiler:c11 python:3.6+

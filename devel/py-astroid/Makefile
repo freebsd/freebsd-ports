@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lazy-object-proxy>=1.4:devel/py-lazy-object-proxy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.12<2:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typed-ast>=1.4.0<1.5:devel/py-typed-ast@${PY_FLAVOR} \
-		${PY_TYPING} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>=1.11<2:devel/py-wrapt@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
