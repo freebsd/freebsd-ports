@@ -1970,6 +1970,7 @@
     SUBDIR += rubygem-mousetrap-rails
     SUBDIR += rubygem-multipart-post
     SUBDIR += rubygem-nanoc
+    SUBDIR += rubygem-nanoc-core
     SUBDIR += rubygem-nested_form
     SUBDIR += rubygem-net-http
     SUBDIR += rubygem-net-http-digest_auth
