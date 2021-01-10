@@ -2,6 +2,7 @@
 
 PORTNAME=	openmpi
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
@@ -15,7 +16,7 @@ BROKEN_armv6=		fails to package: pkg-static: mca_patcher_overwrite.la: No such f
 BROKEN_armv7=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
 BROKEN_sparc64=		fails to compile on sparc64
 
-LIB_DEPENDS=	libhwloc.so:devel/hwloc2 \
+LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2 \
 		libltdl.so:devel/libltdl \
 		libevent.so:devel/libevent \
 		libmunge.so:security/munge
@@ -57,12 +58,15 @@ MANPREFIX=	${PREFIX}/${MPIDIR}
 SHEBANG_FILES=	ompi/mca/common/monitoring/profile2mat.pl \
 		ompi/mca/common/monitoring/aggregate_profile.pl
 
-OPTIONS_DEFINE=	DEBUG IPV6 SLURM TORQUE
+OPTIONS_DEFINE=	AVX DEBUG IPV6 SLURM TORQUE
+AVX_DESC=	Enable AVX instructions
 TORQUE_DESC=	Enable Torque support
 SLURM_DESC=	Enable SLURM support
 OPTIONS_DEFAULT=	SLURM
 OPTIONS_EXCLUDE_i386=	SLURM
 OPTIONS_SUB=	yes
+
+AVX_CONFIGURE_OFF=	--enable-mca-no-build=op-avx
 
 DEBUG_CONFIGURE_ENABLE=	debug
 DEBUG_INSTALL_TARGET_OFF=	install-strip

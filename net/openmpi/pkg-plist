@@ -225,8 +225,8 @@ libdata/pkgconfig/pmix.pc
 %%MPIDIR%%/lib/openmpi/mca_odls_pspawn.so
 %%MPIDIR%%/lib/openmpi/mca_oob_tcp.la
 %%MPIDIR%%/lib/openmpi/mca_oob_tcp.so
-%%MPIDIR%%/lib/openmpi/mca_op_avx.la
-%%MPIDIR%%/lib/openmpi/mca_op_avx.so
+%%AVX%%%%MPIDIR%%/lib/openmpi/mca_op_avx.la
+%%AVX%%%%MPIDIR%%/lib/openmpi/mca_op_avx.so
 %%MPIDIR%%/lib/openmpi/mca_osc_monitoring.la
 %%MPIDIR%%/lib/openmpi/mca_osc_monitoring.so
 %%MPIDIR%%/lib/openmpi/mca_osc_pt2pt.la
