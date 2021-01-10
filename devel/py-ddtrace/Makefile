@@ -16,11 +16,9 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.Apache
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.BSD3
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=4:devel/py-setuptools_scm@${PY_FLAVOR}
-RUN_DEPENDS=	${PY_ENUM34} \
-		${PYTHON_PKGNAMEPREFIX}intervaltree>=0:devel/py-intervaltree@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}intervaltree>=0:devel/py-intervaltree@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3,1:devel/py-protobuf@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tenacity>=5:devel/py-tenacity@${PY_FLAVOR} \
-		${PY_TYPING}
+		${PYTHON_PKGNAMEPREFIX}tenacity>=5:devel/py-tenacity@${PY_FLAVOR}
 
 USES=		compiler:c11 python:3.6+
 USE_PYTHON=	autoplist concurrent cython distutils
@@ -31,16 +29,10 @@ OPENTRACING_DESC=	OpenTracing support
 
 OPENTRACING_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}opentracing>=2.0.0:devel/py-opentracing@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}funcsigs>=0:devel/py-funcsigs@${PY_FLAVOR}
-.endif
-
 post-patch:
 	@${RM} ${WRKSRC}/ddtrace/profiling/collector/stack.c
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/ddtrace/vendor/*/*.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
