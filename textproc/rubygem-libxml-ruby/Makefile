@@ -12,8 +12,8 @@ COMMENT=	Ruby bindings for the GNOME Libxml2 toolkit
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		gem gnome
 USE_GNOME=	libxml2
 USE_RUBY=	yes
-USES=		gem gnome
 
 .include <bsd.port.mk>
