@@ -926,6 +926,7 @@
     SUBDIR += rubygem-globalid-rails50
     SUBDIR += rubygem-globalid-rails52
     SUBDIR += rubygem-globalid-rails60
+    SUBDIR += rubygem-globalid-rails61
     SUBDIR += rubygem-her
     SUBDIR += rubygem-hiredis
     SUBDIR += rubygem-influxdb
