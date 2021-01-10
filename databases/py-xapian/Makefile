@@ -19,23 +19,26 @@ BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
 USES=		compiler:c++11-lang libtool python:3.6+ tar:xz
+USE_PYTHON=	flavors
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--docdir=${DOCSDIR} \
 		--enable-shared \
 		--enable-static \
+		--with-python3 \
 		--without-csharp \
 		--without-java \
 		--without-lua \
 		--without-perl \
 		--without-php \
 		--without-php7 \
+		--without-python \
 		--without-ruby \
 		--without-tcl
+CONFIGURE_ENV=	PYTHON3=${PYTHON_CMD}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++11
-USE_PYTHON=	flavors
 
 PORTDOCS=	*
 
@@ -47,22 +50,10 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	${PY_SPHINX}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} > 3000
-CONFIGURE_ARGS+=--with-python3 \
-		--without-python
-CONFIGURE_ENV+=	PYTHON3=${PYTHON_CMD}
-.else
-CONFIGURE_ARGS+=--with-python \
-		--without-python3
-CONFIGURE_ENV+=	PYTHON2=${PYTHON_CMD}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's| all-local||; s| install-data-local install-dist_exampledataDATA||' ${WRKSRC}/python/Makefile.in ${WRKSRC}/python3/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
