@@ -1,0 +1,4 @@
+An easy way to determine which directories on the users computer you should use
+to save data, caches and logs. A port of Python's 'Appdirs' to R.
+
+WWW: https://github.com/hadley/rappdirs
