@@ -12,8 +12,6 @@ COMMENT=	Fast and tasty cookies handling
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PY_PATHLIB}
-
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
