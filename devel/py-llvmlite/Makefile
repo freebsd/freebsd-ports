@@ -13,10 +13,8 @@ COMMENT=	Lightweight LLVM python binding for writing JIT compilers
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PY_ENUM34} \
-		llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
-RUN_DEPENDS=	${PY_ENUM34} \
-		llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 
 USES=		compiler:c++11-lib python:3.6+ fortran
 USE_PYTHON=	distutils autoplist

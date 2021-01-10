@@ -17,8 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cligj>=0.4:devel/py-cligj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}munch>0:devel/py-munch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Shapely>0:devel/py-shapely@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gdal>0:graphics/py-gdal@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}attrs>=18.2:devel/py-attrs@${PY_FLAVOR} \
-		${PY_ENUM34}
+		${PYTHON_PKGNAMEPREFIX}attrs>=18.2:devel/py-attrs@${PY_FLAVOR}
 LIB_DEPENDS+=	libgdal.so:graphics/gdal
 
 USES=		compiler:c++11-lang python:3.6+

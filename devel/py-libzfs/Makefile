@@ -11,8 +11,6 @@ COMMENT=	Python libzfs bindings
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	${PY_ENUM34}
-
 USE_GITHUB=     yes
 GH_ACCOUNT=	freenas
 GH_PROJECT=	py-libzfs

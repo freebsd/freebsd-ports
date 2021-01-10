@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@$
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defcon>=0.6.0:x11-fonts/py-defcon@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cu2qu>=1.6.4:x11-fonts/py-cu2qu@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}compreffor>=0.4.5:x11-fonts/py-compreffor@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}booleanOperations>=0.8.0:x11-fonts/py-booleanOperations@${PY_FLAVOR} \
-		${PY_ENUM34}
+		${PYTHON_PKGNAMEPREFIX}booleanOperations>=0.8.0:x11-fonts/py-booleanOperations@${PY_FLAVOR}
 
 USES=		python:3.6+ zip
 USE_PYTHON=	autoplist distutils

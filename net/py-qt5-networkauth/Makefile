@@ -6,9 +6,6 @@ CATEGORIES=	net devel python
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for the Qt5 toolkit, QtNetworkAuth module
 
-BUILD_DEPENDS=	${PY_ENUM34}
-RUN_DEPENDS=	${PY_ENUM34}
-
 CONFIGURE_ARGS=	--enable QtNetworkAuth
 PYQT_DIST=	yes
 

@@ -13,7 +13,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	librdkafka.so:net/librdkafka
-RUN_DEPENDS=	${PY_ENUM34}
 
 USES=		localbase python:3.6+
 USE_PYTHON=	autoplist distutils
