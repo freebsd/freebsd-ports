@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nanoc
-PORTVERSION=	4.7.14
+PORTVERSION=	4.11.19
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,14 +12,20 @@ COMMENT=	Simple but flexible static site generator
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-cri>=2.3:devel/rubygem-cri \
-		rubygem-ddplugin>=1.0:devel/rubygem-ddplugin \
-		rubygem-hamster>=3.0:devel/rubygem-hamster \
-		rubygem-ref>=2.0:devel/rubygem-ref \
+RUN_DEPENDS=	rubygem-addressable>=2.7:www/rubygem-addressable \
+		rubygem-colored>=1.2:textproc/rubygem-colored \
+		rubygem-nanoc-checking>=1.0:www/rubygem-nanoc-checking \
+		rubygem-nanoc-cli=4.11.19:www/rubygem-nanoc-cli \
+		rubygem-nanoc-core=4.11.19:www/rubygem-nanoc-core \
+		rubygem-nanoc-deploying>=1.0:www/rubygem-nanoc-deploying \
+		rubygem-parallel>=1.12:sysutils/rubygem-parallel \
+		rubygem-tty-command>=0.8:devel/rubygem-tty-command \
+		rubygem-tty-which>=0.4:devel/rubygem-tty-which
+
+USES=		gem
+USE_RUBY=	yes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
-USES=		gem
 
 PLIST_FILES=	bin/nanoc
 
