@@ -1892,11 +1892,6 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/shiny/3dMVM_validator_shiny/stat_functions.R
 %%DATADIR%%/shiny/3dMVM_validator_shiny/ui.R
 %%DATADIR%%/shiny/ClustExp_ShinyTemplate/afni_funk.R
-%%DATADIR%%/shiny/ClustExp_ShinyTemplate/data/disco_ttest_GroupTable.csv
-%%DATADIR%%/shiny/ClustExp_ShinyTemplate/data/disco_ttest_StatInfo.csv
-%%DATADIR%%/shiny/ClustExp_ShinyTemplate/data/disco_ttest_p_uncor_0.005_clusters.csv
-%%DATADIR%%/shiny/ClustExp_ShinyTemplate/data/disco_ttest_p_uncor_0.005_mean.csv
-%%DATADIR%%/shiny/ClustExp_ShinyTemplate/data/disco_ttest_p_uncor_0.005_peak.csv
 %%DATADIR%%/shiny/ClustExp_ShinyTemplate/global.R
 %%DATADIR%%/shiny/ClustExp_ShinyTemplate/lib_Rafni.R
 %%DATADIR%%/shiny/ClustExp_ShinyTemplate/server.R
