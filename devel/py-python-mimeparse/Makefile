@@ -19,6 +19,6 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 do-test:
-	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} python${PYTHON_VER} mimeparse_test.py
+	cd ${WRKSRC} && ${PYTHON_CMD} mimeparse_test.py
 
 .include <bsd.port.mk>
