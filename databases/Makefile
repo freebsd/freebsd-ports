@@ -874,6 +874,7 @@
     SUBDIR += rubygem-activerecord50
     SUBDIR += rubygem-activerecord52
     SUBDIR += rubygem-activerecord60
+    SUBDIR += rubygem-activerecord61
     SUBDIR += rubygem-after_commit_queue
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
