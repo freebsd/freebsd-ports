@@ -27,6 +27,9 @@ ICONS=		carton.ico carton.png
 
 OPTIONS_DEFINE=	DOCS
 
+# ci pipeline creates transient tags
+PORTSCOUT=	ignore:1
+
 post-install:
 .for f in ${ICONS}
 	${INSTALL_DATA} ${WRKSRC}/resources/pictures/${f} \
