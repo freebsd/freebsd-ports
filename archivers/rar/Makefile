@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rar
-PORTVERSION=	6.0.b2
+PORTVERSION=	6.0.0
 PORTEPOCH=	3
 CATEGORIES=	archivers
 MASTER_SITES=	https://rarlab.com/rar/
