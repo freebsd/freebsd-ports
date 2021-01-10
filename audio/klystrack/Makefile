@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-USES=		desktop-file-utils dos2unix gmake localbase:ldconfig sdl
+USES=		compiler:c11 desktop-file-utils dos2unix gmake localbase:ldconfig \
+		sdl
 DOS2UNIX_FILES=	klystron/Makefile klystron/tools/editor/Makefile \
 		klystron/tools/makebundle/Makefile Makefile player/Makefile \
 		scancode-tool/Makefile
