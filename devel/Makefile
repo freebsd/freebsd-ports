@@ -6627,6 +6627,7 @@
     SUBDIR += rubygem-un
     SUBDIR += rubygem-unicode
     SUBDIR += rubygem-unicode-display_width
+    SUBDIR += rubygem-unicode-display_width1
     SUBDIR += rubygem-unicode_utils
     SUBDIR += rubygem-unleash
     SUBDIR += rubygem-useragent
