@@ -21,7 +21,6 @@ RUN_DEPENDS=	gdal>=1.11:graphics/gdal \
 		${PYTHON_PKGNAMEPREFIX}click>=4.0<8:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click-plugins>=0:devel/py-click-plugins@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cligj>=0.5:devel/py-cligj@${PY_FLAVOR} \
-		${PY_ENUM34} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}snuggs>=1.4.1:math/py-snuggs@${PY_FLAVOR}
 
