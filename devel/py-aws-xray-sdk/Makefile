@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.11.3:devel/py-botocore@${PY_FLAVOR} \
-		${PY_ENUM34} \
 		${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpickle>=0:devel/py-jsonpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>=0:devel/py-wrapt@${PY_FLAVOR}
