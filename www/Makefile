@@ -1970,6 +1970,7 @@
     SUBDIR += rubygem-mousetrap-rails
     SUBDIR += rubygem-multipart-post
     SUBDIR += rubygem-nanoc
+    SUBDIR += rubygem-nanoc-checking
     SUBDIR += rubygem-nanoc-cli
     SUBDIR += rubygem-nanoc-core
     SUBDIR += rubygem-nanoc-deploying
