@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	gobgp
-PORTVERSION=	2.17.0
+PORTVERSION=	2.23.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 DIST_SUBDIR=	gobgp
 
-MAINTAINER=	nork@ninth-nine.com
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	BGP implementation in Go
 
 LICENSE=	APACHE20
@@ -23,16 +23,18 @@ PLIST_FILES=	bin/gobgp libexec/gobgpd
 GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		coreos:go-systemd:95778dfbb74e:coreos_go_systemd/vendor/github.com/coreos/go-systemd \
-		davecgh:go-spew:v1.1.0:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgryski:go-farm:ac7624ea8da3:dgryski_go_farm/vendor/github.com/dgryski/go-farm \
 		eapache:channels:v1.1.0:eapache_channels/vendor/github.com/eapache/channels \
-		eapache:queue:v1.0.2:eapache_queue/vendor/github.com/eapache/queue \
+		eapache:queue:v1.1.0:eapache_queue/vendor/github.com/eapache/queue \
 		fsnotify:fsnotify:v1.4.2:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
-		go-yaml:yaml:25c4ec802a7d:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:net:3b0461eec859:golang_net/vendor/golang.org/x/net \
+		go-test:deep:v1.0.6:go_test_deep/vendor/github.com/go-test/deep \
+		go-yaml:yaml:913338de1bd2:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
+		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		golang:net:3c3fba18258b:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.0.0:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:97732733099d:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
+		golang:sys:85ca7c5b95cd:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:09f6ed296fc6:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		grpc:grpc-go:v1.5.1:grpc_grpc_go/vendor/google.golang.org/grpc \
@@ -40,8 +42,8 @@ GH_TUPLE=	\
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jessevdk:go-flags:v1.3.0:jessevdk_go_flags/vendor/github.com/jessevdk/go-flags \
 		k-sone:critbitgo:48c9e1530131:k_sone_critbitgo/vendor/github.com/k-sone/critbitgo \
-		kr:pretty:v0.1.0:kr_pretty/vendor/github.com/kr/pretty \
-		kr:text:v0.1.0:kr_text/vendor/github.com/kr/text \
+		kr:pretty:v0.2.0:kr_pretty/vendor/github.com/kr/pretty \
+		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		magiconair:properties:v1.7.3:magiconair_properties/vendor/github.com/magiconair/properties \
 		mitchellh:mapstructure:d0303fe80992:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		pelletier:go-buffruneio:v0.2.0:pelletier_go_buffruneio/vendor/github.com/pelletier/go-buffruneio \
@@ -54,7 +56,7 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:0efa5202c046:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.0:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.0.0:spf13_viper/vendor/github.com/spf13/viper \
-		stretchr:testify:v1.1.4:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.6.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		vishvananda:netlink:a95659537721:vishvananda_netlink/vendor/github.com/vishvananda/netlink \
 		vishvananda:netns:86bef332bfc3:vishvananda_netns/vendor/github.com/vishvananda/netns
 OPTIONS_DEFINE=	BASH ZSH
