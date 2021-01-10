@@ -1,6 +1,7 @@
 include/entt/config/config.h
 include/entt/config/version.h
 include/entt/core/algorithm.hpp
+include/entt/core/any.hpp
 include/entt/core/attribute.h
 include/entt/core/family.hpp
 include/entt/core/fwd.hpp
@@ -10,14 +11,14 @@ include/entt/core/monostate.hpp
 include/entt/core/type_info.hpp
 include/entt/core/type_traits.hpp
 include/entt/core/utility.hpp
-include/entt/entity/actor.hpp
 include/entt/entity/entity.hpp
 include/entt/entity/fwd.hpp
 include/entt/entity/group.hpp
 include/entt/entity/handle.hpp
 include/entt/entity/helper.hpp
 include/entt/entity/observer.hpp
-include/entt/entity/pool.hpp
+include/entt/entity/organizer.hpp
+include/entt/entity/poly_storage.hpp
 include/entt/entity/registry.hpp
 include/entt/entity/runtime_view.hpp
 include/entt/entity/snapshot.hpp
@@ -25,9 +26,11 @@ include/entt/entity/sparse_set.hpp
 include/entt/entity/storage.hpp
 include/entt/entity/utility.hpp
 include/entt/entity/view.hpp
+include/entt/entity/view_pack.hpp
 include/entt/entt.hpp
 include/entt/fwd.hpp
 include/entt/locator/locator.hpp
+include/entt/meta/adl_pointer.hpp
 include/entt/meta/container.hpp
 include/entt/meta/ctx.hpp
 include/entt/meta/factory.hpp
@@ -39,6 +42,7 @@ include/entt/meta/range.hpp
 include/entt/meta/resolve.hpp
 include/entt/meta/type_traits.hpp
 include/entt/platform/android-ndk-r17.hpp
+include/entt/poly/poly.hpp
 include/entt/process/process.hpp
 include/entt/process/scheduler.hpp
 include/entt/resource/cache.hpp
