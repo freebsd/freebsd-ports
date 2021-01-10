@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	terragrunt
-PORTVERSION=	0.26.7
+PORTVERSION=	0.27.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -18,14 +18,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gruntwork-io
 
 GH_TUPLE=	\
-		Azure:azure-sdk-for-go:v38.1.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
-		Azure:go-autorest:5bd9621f41a0:azure_go_autorest_date/vendor/github.com/Azure/go-autorest \
-		Azure:go-autorest:aff029487b89:azure_go_autorest_adal \
-		Azure:go-autorest:autorest/v0.9.3:azure_go_autorest_autorest \
-		Azure:go-autorest:b965d219bd9d:azure_go_autorest_auth \
-		Azure:go-autorest:cc407fb4f94c:azure_go_autorest_cli \
-		Azure:go-autorest:logger/v0.1.0:azure_go_autorest_logger \
-		Azure:go-autorest:tracing/v0.5.0:azure_go_autorest_tracing \
+		Azure:azure-sdk-for-go:v46.0.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
+		Azure:go-autorest:0529470822b5:azure_go_autorest_auth \
+		Azure:go-autorest:5bd9621f41a0:azure_go_autorest_to \
+		Azure:go-autorest:8ac76a649a39:azure_go_autorest_cli \
+		Azure:go-autorest:autorest/v0.11.5:azure_go_autorest_autorest \
+		Azure:go-autorest:b3a0b30a7423:azure_go_autorest_date \
+		Azure:go-autorest:cbf46deb11b5:azure_go_autorest_adal \
+		Azure:go-autorest:logger/v0.2.0:azure_go_autorest_logger \
+		Azure:go-autorest:tracing/v0.6.0:azure_go_autorest_tracing \
+		Azure:go-autorest:v14.2.0:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		agext:levenshtein:v1.2.2:agext_levenshtein/vendor/github.com/agext/levenshtein \
 		apparentlymart:go-cidr:v1.0.1:apparentlymart_go_cidr/vendor/github.com/apparentlymart/go-cidr \
 		apparentlymart:go-textseg:v1.0.0:apparentlymart_go_textseg/vendor/github.com/apparentlymart/go-textseg \
@@ -46,7 +48,7 @@ GH_TUPLE=	\
 		go-errors:errors:d98b870cc4e0:go_errors_errors/vendor/github.com/go-errors/errors \
 		go-ini:ini:v1.44.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
-		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
@@ -69,7 +71,8 @@ GH_TUPLE=	\
 		googleapis:google-cloud-go:v0.65.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		goware:prefixer:395022866408:goware_prefixer/vendor/github.com/goware/prefixer \
 		grpc:grpc-go:v1.31.1:grpc_grpc_go/vendor/google.golang.org/grpc \
-		gruntwork-io:terratest:v0.26.1:gruntwork_io_terratest/vendor/github.com/gruntwork-io/terratest \
+		gruntwork-io:gruntwork-cli:v0.7.0:gruntwork_io_gruntwork_cli/vendor/github.com/gruntwork-io/gruntwork-cli \
+		gruntwork-io:terratest:v0.30.26:gruntwork_io_terratest/vendor/github.com/gruntwork-io/terratest \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
 		hashicorp:go-getter:9813cbd4eb02:hashicorp_go_getter/vendor/github.com/hashicorp/go-getter \
@@ -122,6 +125,10 @@ post-extract:
 	@${RLN} ${WRKSRC_azure_go_autorest_auth}/autorest/azure/auth ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/azure/auth
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/azure/cli
 	@${RLN} ${WRKSRC_azure_go_autorest_cli}/autorest/azure/cli ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/azure/cli
+	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/date
+	@${RLN} ${WRKSRC_azure_go_autorest_date}/autorest/date ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/date
+	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/to
+	@${RLN} ${WRKSRC_azure_go_autorest_to}/autorest/to ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/to
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/logger
 	@${RLN} ${WRKSRC_azure_go_autorest_logger}/logger ${WRKSRC}/vendor/github.com/Azure/go-autorest/logger
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/tracing
