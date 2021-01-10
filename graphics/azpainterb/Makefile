@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azpainterb
-DISTVERSION=	1.1.3b2
+PORTVERSION=	1.1.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://azsky2.html.xdomain.jp/arc/
 
@@ -21,7 +21,7 @@ USE_XORG=	x11 xext xi
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}" CC="${CC}"
 
-PORTDOCS=	AUTHORS ChangeLog README README_ja manual_ja.html
+PORTDOCS=	AUTHORS ChangeLog ReadMe_en ReadMe_ja manual_ja.html
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
