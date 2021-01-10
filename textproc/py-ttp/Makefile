@@ -18,11 +18,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} > 3000
 post-patch:
 	@${RM} ${WRKSRC}/ttp/utils/load_python_exec_py2.py
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
