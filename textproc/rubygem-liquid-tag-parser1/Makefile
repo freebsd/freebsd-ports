@@ -3,7 +3,7 @@
 
 PORTNAME=	liquid-tag-parser
 PORTVERSION=	1.9.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	1
@@ -14,7 +14,7 @@ COMMENT=	Parse liquid tags easily
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-extras>=0.3<1:devel/rubygem-extras \
-		rubygem-liquid>=3.0<5.0:textproc/rubygem-liquid
+		rubygem-liquid4>=3.0<5.0:textproc/rubygem-liquid4
 
 USES=		gem
 USE_RUBY=	yes
