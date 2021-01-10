@@ -1971,6 +1971,7 @@
     SUBDIR += rubygem-multipart-post
     SUBDIR += rubygem-nanoc
     SUBDIR += rubygem-nanoc-core
+    SUBDIR += rubygem-nanoc-deploying
     SUBDIR += rubygem-nested_form
     SUBDIR += rubygem-net-http
     SUBDIR += rubygem-net-http-digest_auth
