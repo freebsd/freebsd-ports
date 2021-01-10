@@ -20,4 +20,9 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	TELEGRAM
+TELEGRAM_DESC=	Telegram support
+
+TELEGRAM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
+
 .include <bsd.port.mk>
