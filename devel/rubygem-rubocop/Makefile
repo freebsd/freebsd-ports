@@ -2,6 +2,7 @@
 
 PORTNAME=	rubocop
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
 		rubygem-rexml>=0:textproc/rubygem-rexml \
 		rubygem-rubocop-ast>=1.2.0<2.0:devel/rubygem-rubocop-ast \
 		rubygem-ruby-progressbar>=1.7<2:devel/rubygem-ruby-progressbar \
-		rubygem-unicode-display_width>=1.4.0<2.0:devel/rubygem-unicode-display_width
+		rubygem-unicode-display_width1>=1.4.0<2.0:devel/rubygem-unicode-display_width1
 
 USES=		gem
 USE_RUBY=	yes
