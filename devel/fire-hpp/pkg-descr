@@ -1,0 +1,4 @@
+Fire for C++, inspired by python-fire, is a single header library that creates
+a command line interface from a function signature.
+
+WWW: https://github.com/kongaskristjan/fire-hpp

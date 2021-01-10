@@ -644,6 +644,7 @@
     SUBDIR += fc++
     SUBDIR += fhist
     SUBDIR += fifechan
+    SUBDIR += fire-hpp
     SUBDIR += firmware-utils
     SUBDIR += fistgen
     SUBDIR += flang

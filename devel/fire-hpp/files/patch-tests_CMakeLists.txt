@@ -1,0 +1,23 @@
+- https://gitlab.kitware.com/cmake/cmake/-/issues/21686
+- https://github.com/kongaskristjan/fire-hpp/issues/11
+
+--- tests/CMakeLists.txt.orig	2021-01-10 21:55:57 UTC
++++ tests/CMakeLists.txt
+@@ -6,7 +6,7 @@ if(${CMAKE_VERSION} VERSION_GREATER "3.11.0")
+     include(GoogleTest)
+ 
+     enable_testing()
+-
++if (FALSE)
+     FetchContent_Declare(
+             googletest
+             GIT_REPOSITORY https://github.com/google/googletest.git
+@@ -18,7 +18,7 @@ if(${CMAKE_VERSION} VERSION_GREATER "3.11.0")
+         FetchContent_Populate(googletest)
+         add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR} EXCLUDE_FROM_ALL)
+     endif()
+-
++endif()
+     add_executable(run_tests tests.cpp)
+     target_link_libraries(run_tests fire-hpp gtest gtest_main)
+     gtest_discover_tests(run_tests)
