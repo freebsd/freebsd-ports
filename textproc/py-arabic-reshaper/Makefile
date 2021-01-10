@@ -3,9 +3,10 @@
 
 PORTNAME=	arabic-reshaper
 PORTVERSION=	2.1.1
-DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	arabic_reshaper-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reconstruct Arabic sentences to be used in applications that do not support Arabic
@@ -19,9 +20,5 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-GH_ACCOUNT=	mpcabd
-GH_PROJECT=	python-arabic-reshaper
-USE_GITHUB=	yes
 
 .include <bsd.port.mk>
