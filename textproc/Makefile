@@ -1686,6 +1686,7 @@
     SUBDIR += rubygem-sassc-rails-rails50
     SUBDIR += rubygem-sassc-rails-rails52
     SUBDIR += rubygem-sassc-rails-rails60
+    SUBDIR += rubygem-sassc-rails-rails61
     SUBDIR += rubygem-sassc22
     SUBDIR += rubygem-sax-machine
     SUBDIR += rubygem-scss_lint
