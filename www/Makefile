@@ -1809,6 +1809,7 @@
     SUBDIR += rubygem-actionpack50
     SUBDIR += rubygem-actionpack52
     SUBDIR += rubygem-actionpack60
+    SUBDIR += rubygem-actionpack61
     SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-activeresource4
     SUBDIR += rubygem-acts-as-taggable-on
