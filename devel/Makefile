@@ -6198,6 +6198,7 @@
     SUBDIR += rubygem-jbuilder-rails50
     SUBDIR += rubygem-jbuilder-rails52
     SUBDIR += rubygem-jbuilder-rails60
+    SUBDIR += rubygem-jbuilder-rails61
     SUBDIR += rubygem-jekyll-coffeescript
     SUBDIR += rubygem-jenkins_api_client
     SUBDIR += rubygem-jeweler
