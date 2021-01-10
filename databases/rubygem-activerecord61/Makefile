@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord
-PORTVERSION=	6.1.0
+PORTVERSION=	6.1.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
