@@ -1,0 +1,7 @@
+include/mswstr/mswstr.h
+include/mswstr/winnls.h
+include/mswstr/wintypes.h
+lib/libmswstr.a
+lib/libmswstr.so
+lib/libmswstr.so.0
+lib/libmswstr.so.0.0.1

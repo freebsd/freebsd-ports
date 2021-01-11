@@ -1,0 +1,14 @@
+When using Microsoft Jet 4 Databases, index fields are created using
+the DBLCMapStringW function (check MSDN library for documentation of
+this function).
+Jet 4 driver itself loads this function from mswstr.dll on Microsoft
+Windows. The library contains static translation tables (as opposed to
+LCMapStringW API) in order to have consistent translations across all
+Windows Versions.
+
+Libraries that try to read and parse mdb file indices like
+databases/mdbtools should work on every platform and therefore a
+platform independent version of this library is needed. This is an
+attempt to port the library to Posix-systems.
+
+WWW: https://github.com/leecher1337/libmswstr
