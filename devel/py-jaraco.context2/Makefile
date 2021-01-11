@@ -27,12 +27,6 @@ POST_PLIST=	trim-jaraco-namespace
 # jaraco.context 3.0.0+ requires Python 3.6+
 PORTSCOUT=	limit:^2\.
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}contextlib2>=0:devel/py-contextlib2@${PY_FLAVOR}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/jaraco.apt/d; /yg.lockfile/d' ${WRKSRC}/setup.cfg
 
@@ -44,4 +38,4 @@ post-install:
 trim-jaraco-namespace:
 	@${REINPLACE_CMD} '/jaraco\/__init__\./d; /jaraco\/__pycache__\/__init__\./d' ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

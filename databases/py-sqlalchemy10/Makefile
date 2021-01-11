@@ -40,14 +40,10 @@ SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_F
 PORTDOCS=		*
 PORTEXAMPLES=		*
 
-.include <bsd.port.pre.mk>
-
 pre-build:
-.if ${PYTHON_REL} >= 3000
 	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/lib
 	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/doc
 	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/examples
-.endif
 
 # C extensions are not supported with all versions of Python, so ignore
 # errors here if there are no .so files to strip.
@@ -63,9 +59,7 @@ post-install-EXAMPLES-on:
 	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 do-test:
-.if ${PYTHON_REL} >= 3000
 	${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/test
-.endif
 	@(cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

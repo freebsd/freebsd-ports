@@ -23,14 +23,4 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 PORTSCOUT=	limit:^2\.
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.os>=0.1:devel/py-backports.os@${PY_FLAVOR}
-.endif
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}scandir>=1.5:sysutils/py-scandir@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

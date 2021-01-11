@@ -30,10 +30,4 @@ post-install:
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}future>=0:devel/py-future@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

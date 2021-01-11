@@ -12,15 +12,11 @@ COMMENT=	Toolkit for storing files and attachments in web applications
 
 LICENSE=	MIT
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0:textproc/py-anyascii@${PY_FLAVOR}
+
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 3300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}anyascii>=0:textproc/py-anyascii@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -27,16 +27,10 @@ USE_PYTHON=	autoplist distutils flavors
 
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3400
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pathlib2>=0:devel/py-pathlib2@${PY_FLAVOR}
-.endif
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/xmlsec*.so
 
 do-test:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/pytest-${PYTHON_VER} tests
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

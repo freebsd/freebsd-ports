@@ -22,11 +22,4 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_BUILDARGS=	--with-upstream-urllib3
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3400
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

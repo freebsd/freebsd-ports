@@ -26,14 +26,4 @@ NO_ARCH=	yes
 # cmd2 0.9.0.1+ requires Python 3.4+
 PORTSCOUT=	limit:^0\.8
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}subprocess32>=0:devel/py-subprocess32@${PY_FLAVOR}
-.endif
-
-.if ${PYTHON_REL} < 3500
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}contextlib2>=0:devel/py-contextlib2@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

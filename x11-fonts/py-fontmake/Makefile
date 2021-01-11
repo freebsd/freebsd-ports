@@ -19,19 +19,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cu2qu>=1.6.5:x11-fonts/py-cu2qu@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}ufo2ft>=2.5.0:x11-fonts/py-ufo2ft@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}MutatorMath>=2.1.2:math/py-MutatorMath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defcon>=0.6.0:x11-fonts/py-defcon@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}booleanOperations>=0.8.1:x11-fonts/py-booleanOperations@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}booleanOperations>=0.8.1:x11-fonts/py-booleanOperations@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}fonttools>=3.32.0:print/py-fonttools@${PY_FLAVOR}
 
 USES=		python:3.6+ zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3600
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fonttools3>=3.32.0:print/py-fonttools3@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fonttools>=3.32.0:print/py-fonttools@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
