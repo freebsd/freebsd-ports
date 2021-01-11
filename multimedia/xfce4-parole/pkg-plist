@@ -11,16 +11,14 @@ lib/parole-0/parole-mpris2.so
 lib/parole-0/parole-notify.so
 lib/parole-0/tray-icon.so
 share/applications/org.xfce.Parole.desktop
-share/icons/hicolor/128x128/apps/parole.png
+share/icons/hicolor/128x128/apps/org.xfce.parole.png
+share/icons/hicolor/16x16/apps/org.xfce.parole.png
 share/icons/hicolor/16x16/apps/parole-extension-symbolic.svg
 share/icons/hicolor/16x16/apps/parole-extension.png
-share/icons/hicolor/16x16/apps/parole.png
-share/icons/hicolor/24x24/apps/parole.png
-share/icons/hicolor/32x32/apps/parole.png
+share/icons/hicolor/24x24/apps/org.xfce.parole.png
+share/icons/hicolor/48x48/apps/org.xfce.parole.png
 share/icons/hicolor/48x48/apps/parole-extension.png
-share/icons/hicolor/48x48/apps/parole.png
-share/icons/hicolor/64x64/apps/parole.png
-share/icons/hicolor/scalable/apps/parole.svg
+share/icons/hicolor/scalable/apps/org.xfce.parole.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/be/LC_MESSAGES/parole.mo
@@ -33,6 +31,7 @@ share/icons/hicolor/scalable/apps/parole.svg
 %%NLS%%share/locale/en_AU/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/es/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/et/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/parole.mo
@@ -41,6 +40,7 @@ share/icons/hicolor/scalable/apps/parole.svg
 %%NLS%%share/locale/hr/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/hy_AM/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/hye/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/id/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/ie/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/is/LC_MESSAGES/parole.mo
