@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	skalibs
-PORTVERSION=	2.9.2.1
+PORTVERSION=	2.10.0.0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
