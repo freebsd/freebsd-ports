@@ -1,17 +1,23 @@
---- Makefile.orig	2019-03-28 20:48:16 UTC
+--- Makefile.orig	2019-10-08 19:10:51 UTC
 +++ Makefile
-@@ -20,11 +20,11 @@ LDFLAGS_gdb := $(LDFLAGS_shared)
+@@ -20,11 +20,16 @@ LDFLAGS_gdb := $(LDFLAGS_shared)
  
  COMPTIMEPLACE := -D'COMPILATION_TIME_PLACE="$(shell echo `date` $(HOSTNAME):`pwd`)"'
  
 -CXXFLAGS_common := -pipe -std=c++11 -Wall -Wextra -fopenmp $(COMPTIMEPLACE)
 -CXXFLAGS_main := -O3 $(CXXFLAGS_common)
-+CXXFLAGS_common := -std=c++11 -Wall -Wextra -fopenmp $(COMPTIMEPLACE)
-+CXXFLAGS_main += $(CXXFLAGS_common)
- CXXFLAGS_gdb :=  -O0 -g $(CXXFLAGS_common)
+-CXXFLAGS_gdb :=  -O0 -g $(CXXFLAGS_common)
++# Defaults, overridden by make arguments or environment
++CXXFLAGS ?= -pipe -O3 -Wall -Wextra
++CFLAGS ?= -pipe -O3 -Wall -Wextra
  
 -CFLAGS := -O3 -pipe -Wall -Wextra $(CFLAGS)
-+CFLAGS += -Wall -Wextra
++# Unconditionally set essential flags
++CXXFLAGS_common := -std=c++11 -fopenmp $(COMPTIMEPLACE)
++CXXFLAGS_main += $(CXXFLAGS_common)
++
++# -O or -O2 should work fine with gdb as well
++CXXFLAGS_gdb :=  -O0 -g $(CXXFLAGS_common)
  
  
  ##########################################################################################################
