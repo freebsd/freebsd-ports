@@ -2,7 +2,7 @@
 
 PORTNAME=	cloudquery
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.7
+DISTVERSION=	0.7.10
 CATEGORIES=	net
 
 MAINTAINER=	nc@FreeBSD.org
@@ -35,12 +35,14 @@ GH_TUPLE=	\
 		denisenkom:go-mssqldb:06a60b6afbbc:denisenkom_go_mssqldb/vendor/github.com/denisenkom/go-mssqldb \
 		dimchansky:utfbom:v1.1.0:dimchansky_utfbom/vendor/github.com/dimchansky/utfbom \
 		form3tech-oss:jwt-go:v3.2.2:form3tech_oss_jwt_go/vendor/github.com/form3tech-oss/jwt-go \
+		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-gorm:gorm:v1.20.9:go_gorm_gorm/vendor/gorm.io/gorm \
 		go-gorm:mysql:v1.0.2:go_gorm_mysql/vendor/gorm.io/driver/mysql \
 		go-gorm:postgres:v1.0.2:go_gorm_postgres/vendor/gorm.io/driver/postgres \
 		go-gorm:sqlite:v1.1.3:go_gorm_sqlite/vendor/gorm.io/driver/sqlite \
 		go-gorm:sqlserver:v1.0.4:go_gorm_sqlserver/vendor/gorm.io/driver/sqlserver \
 		go-inf:inf:v0.9.1:go_inf_inf/vendor/gopkg.in/inf.v0 \
+		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-logr:logr:v0.2.0:go_logr_logr/vendor/github.com/go-logr/logr \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:eeeca48fe776:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
@@ -66,6 +68,7 @@ GH_TUPLE=	\
 		googleapis:google-api-go-client:v0.35.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.65.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		grpc:grpc-go:v1.31.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		iancoleman:strcase:v0.1.2:iancoleman_strcase/vendor/github.com/iancoleman/strcase \
 		imdario:mergo:v0.3.5:imdario_mergo/vendor/github.com/imdario/mergo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
@@ -89,6 +92,7 @@ GH_TUPLE=	\
 		kubernetes:client-go:v0.19.0:kubernetes_client_go/vendor/k8s.io/client-go \
 		kubernetes:klog:v2.2.0:kubernetes_klog/vendor/k8s.io/klog/v2 \
 		kubernetes:utils:d5654de09c73:kubernetes_utils/vendor/k8s.io/utils \
+		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mattn:go-sqlite3:v1.14.3:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
@@ -99,12 +103,18 @@ GH_TUPLE=	\
 		okta:okta-sdk-golang:v2.2.1:okta_okta_sdk_golang_v2/vendor/github.com/okta/okta-sdk-golang/v2 \
 		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		patrickmn:go-cache:5633e0862627:patrickmn_go_cache/vendor/github.com/patrickmn/go-cache \
+		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
 		shopspring:decimal:v1.2.0:shopspring_decimal/vendor/github.com/shopspring/decimal \
+		spf13:afero:v1.2.2:spf13_afero/vendor/github.com/spf13/afero \
+		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.1.1:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
+		spf13:viper:v1.7.0:spf13_viper/vendor/github.com/spf13/viper \
 		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
+		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.5.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.10.0:uber_go_zap/vendor/go.uber.org/zap
