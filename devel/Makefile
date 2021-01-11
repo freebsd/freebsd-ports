@@ -41,6 +41,7 @@
     SUBDIR += R-cran-ellipsis
     SUBDIR += R-cran-evaluate
     SUBDIR += R-cran-fansi
+    SUBDIR += R-cran-filelock
     SUBDIR += R-cran-foreach
     SUBDIR += R-cran-gbRd
     SUBDIR += R-cran-gbm
