@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	10.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
 		https://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
@@ -58,6 +58,8 @@ CMAKE_ARGS+=	-DLLVM_ENABLE_Z3_SOLVER=OFF
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
 		-DPYTHON_INCLUDE_DIR=${PYTHON_INCLUDEDIR} \
 		-DPYTHON_LIBRARY=${LOCALBASE}/lib/lib${PYTHON_VERSION}${PYTHON_ABIVER}.so
+# LLVM likes to pick up ${LOCALBASE}/lib/libtinfo.so.*
+CMAKE_ARGS+=	-DLLVM_ENABLE_TERMINFO=OFF
 
 # Disable assertions.  They should be disabled by cmake, but USES=cmake
 # overrides -DCMAKE_*_FLAGS_RELEASE.
@@ -133,7 +135,12 @@ LLD_LINK_DESC=		Link ld.lld as ld to clang uses it
 LLD_LINK_IMPLIES=	LLD
 LLDB_BUILD_DEPENDS=	swig:devel/swig
 LLDB_CMAKE_ON=		-DLUA_INCLUDE_DIR=${LOCALBASE}/include/lua${LUA_VER_STR} \
-			-DLUA_LIBRARY=${LOCALBASE}/lib/liblua-${LUA_VER}.so
+			-DLUA_LIBRARY=${LOCALBASE}/lib/liblua-${LUA_VER}.so \
+			-DCURSES_INCLUDE_PATH=/usr/include \
+			-DCURSES_CURSES_LIBRARY=/usr/lib/libcurses.so \
+			-DCURSES_FORM_LIBRARY=/usr/lib/libform.so \
+			-DCURSES_NCURSES_LIBRARY=/usr/lib/libncurses.so \
+			-DPANEL_LIBRARIES=/usr/lib/libpanel.so
 LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
 LLDB_EXTRA_PATCHES=	${PATCHDIR}/lldb
