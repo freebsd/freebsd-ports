@@ -2,6 +2,7 @@
 
 PORTNAME=		canu
 DISTVERSION=		2.1
+PORTREVISION=		1
 CATEGORIES=		biology java perl5
 # Github auto-generated tarballs lack submodules
 MASTER_SITES=		https://github.com/marbl/canu/releases/download/v2.1/
@@ -19,7 +20,7 @@ NOT_FOR_ARCHS_REASON=	__int128 is not supported on this target
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
-USES=		compiler:openmp gmake perl5
+USES=		compiler:c++11-lang gmake localbase perl5
 USE_JAVA=	yes
 
 JAVA_RUN=	yes
@@ -29,13 +30,6 @@ WRKSRC_SUBDIR=	src
 # Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
 # using a separate install target.
 MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
-
-.include <bsd.port.pre.mk>
-
-# GCC 4.2.1 (still base compiler on some 2nd tier platforms) cannot build canu
-.if ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-USE_GCC=	yes
-.endif
 
 pre-configure:
 	@${REINPLACE_CMD} \
@@ -62,4 +56,4 @@ do-install:
 	(cd ${WRKSRC}/build && \
 		${COPYTREE_SHARE} "lib share" ${STAGEDIR}${PREFIX})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
