@@ -36,7 +36,7 @@ procname="%%PREFIX%%/bin/quasselcore"
 pidfile="/var/run/${name}.pid"
 
 command="/usr/sbin/daemon"
-command_args="-p ${pidfile} ${procname} ${quasselcore_args}"
+command_args="-cf -p ${pidfile} ${procname} ${quasselcore_args}"
 
 start_precmd="${name}_prestart"
 stop_postcmd="${name}_poststop"
