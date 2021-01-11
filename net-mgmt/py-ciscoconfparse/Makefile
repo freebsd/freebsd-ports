@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ciscoconfparse
-DISTVERSION=	1.5.22
+DISTVERSION=	1.5.24
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,20 +23,10 @@ USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipaddr>=2.1.11:devel/py-ipaddr@${PY_FLAVOR}
-.endif
-
 do-test:
-.if ${PYTHON_REL} < 3200
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs
-.else
 	# Skip the L4Object_asa_{lt01,lt02,range} tests as "models_asa" is broken in
 	# Python 3
 	# See also: https://github.com/mpenning/ciscoconfparse/issues/14
 	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -k 'not _asa_lt and not _asa_range'
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
