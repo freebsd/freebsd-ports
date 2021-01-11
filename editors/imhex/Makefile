@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	imhex
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	editors
 
 MAINTAINER=	nobutaka@FreeBSD.org
