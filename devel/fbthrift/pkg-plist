@@ -228,8 +228,6 @@ include/thrift/lib/cpp2/protocol/nimble/Encoder.h
 include/thrift/lib/cpp2/protocol/nimble/NimbleTypes.h
 include/thrift/lib/cpp2/protocol/nimble/Vectorization.h
 include/thrift/lib/cpp2/protocol/nimble/test/BufferingEncoderDecoderBenchmarksCommon.h
-include/thrift/lib/cpp2/reflection/container_traits.h
-include/thrift/lib/cpp2/reflection/container_traits_folly.h
 include/thrift/lib/cpp2/reflection/debug.h
 include/thrift/lib/cpp2/reflection/demo/json_print.h
 include/thrift/lib/cpp2/reflection/diff.h
@@ -252,7 +250,6 @@ include/thrift/lib/cpp2/reflection/internal/pretty_print-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/reflection-inl-post.h
 include/thrift/lib/cpp2/reflection/internal/reflection-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/test_helpers.h
-include/thrift/lib/cpp2/reflection/internal/traits_test_helpers-inl.h
 include/thrift/lib/cpp2/reflection/legacy_reflection.h
 include/thrift/lib/cpp2/reflection/merge.h
 include/thrift/lib/cpp2/reflection/populator.h
@@ -260,7 +257,6 @@ include/thrift/lib/cpp2/reflection/pretty_print.h
 include/thrift/lib/cpp2/reflection/reflection.h
 include/thrift/lib/cpp2/reflection/serializer.h
 include/thrift/lib/cpp2/reflection/testing.h
-include/thrift/lib/cpp2/reflection/traits_test_helpers.h
 include/thrift/lib/cpp2/reflection/variant.h
 include/thrift/lib/cpp2/security/FizzPeeker.h
 include/thrift/lib/cpp2/security/SSLUtil.h
