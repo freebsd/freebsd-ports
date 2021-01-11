@@ -18,7 +18,7 @@ LICENSE_NAME_SSPLv1=	Server Side Public License Version 1
 LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE-Community.txt
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	"Only supported on amd64 and aarch64 (i386 deprecated in v3)"
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
@@ -65,8 +65,8 @@ SUB_LIST+=	LEGACY_LIMITS="@comment " MODERN_LIMITS=""
 SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 .endif
 
-.if ${ARCH} == aarch64
-EXTRA_PATCHES=	${FILESDIR}/aarch64
+.if ${ARCH} == aarch64 || ${ARCH} == powerpc64le
+EXTRA_PATCHES=	${FILESDIR}/${ARCH}
 .endif
 
 ALL_TARGET=	core
@@ -74,6 +74,9 @@ ALL_TARGET=	core
 PORTSCOUT=	limitw:1,even
 
 CPE_PRODUCT=	mongodb
+
+pre-patch:
+	${MV} ${WRKSRC}/src/third_party/wiredtiger/src/checksum/power8/crc32.sx ${WRKSRC}/src/third_party/wiredtiger/src/checksum/power8/crc32.S
 
 post-install:
 .for f in mongo mongod mongos
