@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	upp
-DISTVERSION=	14429
+DISTVERSION=	15260
 CATEGORIES=	devel x11-toolkits
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2020.1/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2020.2/
 DISTNAME=	${PORTNAME}-posix-${PORTVERSION}
 
 MAINTAINER=	m.sund@arcor.de
@@ -13,7 +13,6 @@ COMMENT=	Ultimate++, a BSD-licensed, cross-platform, C/C++ RAD suite
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/uppsrc/Core/Copying
 
-BROKEN=		fails to link
 BROKEN_powerpc=		Does not compile on ${ARCH}: error Unknown CPU architecture
 BROKEN_powerpc64=	Does not compile on ${ARCH}: error Unknown CPU architecture
 BROKEN_sparc64=		Does not compile on ${ARCH}
@@ -75,7 +74,7 @@ post-patch: .SILENT
 		/^OutDir_/s|-Linux|| ; \
 		s|-ldl|-lexecinfo|' \
 		${WRKSRC}/Makefile \
-		${WRKSRC}/uMakefile
+		${WRKSRC}/umkMakefile
 	${REINPLACE_CMD} -i '' -E '/^OutDir_/s|-Gui|| ; \
 		s/[[:blank:]]?`pkg-config --(cflags|libs) (freetype2|xcb|expat|xinerama|xrender|xft|xdmcp|xext)`//g' \
 		${WRKSRC}/Makefile
@@ -92,12 +91,17 @@ do-build-IDE-on:
 
 do-build-UMK-on:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
-		${MAKE_FLAGS} uMakefile ${_MAKE_JOBS} OutFile="umk")
+		${MAKE_FLAGS} umkMakefile ${_MAKE_JOBS} OutFile="umk")
 
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR} \
 		"-not ( -type d -empty ) -o -name '*.orig'")
-	(cd ${STAGEDIR}${DATADIR} && ${RMDIR} uppsrc/ide/SrcUpdater uppsrc/Web)
+	(cd ${STAGEDIR}${DATADIR} && ${RMDIR} uppsrc/ide/SrcUpdater uppsrc/Web \
+		bazaar/plugin/sundials/src/nvector/mpiplusx \
+		bazaar/plugin/sundials/src/nvector/openmp \
+		bazaar/plugin/sundials/src/nvector/parallel \
+		bazaar/plugin/sundials/src/nvector/pthreads \
+		bazaar/plugin/sundials/src/sunlinsol/klu)
 
 do-install-IDE-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/theide ${STAGEDIR}${PREFIX}/bin
