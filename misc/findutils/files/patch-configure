@@ -1,7 +1,7 @@
---- configure.orig	Sun Nov  5 17:53:42 2006
-+++ configure	Sun Nov  5 18:02:59 2006
-@@ -16231,6 +16231,15 @@
- 
+--- configure.orig	2021-01-09 16:35:30 UTC
++++ configure
+@@ -16276,6 +16276,15 @@ $as_echo "$gl_cv_type_wctrans_t" >&6; }
+   fi
  
  
 +  if test $ac_use_included_regex = yes; then
@@ -15,4 +15,4 @@
 +  fi
  
  
-   { echo "$as_me:$LINENO: checking for C/C++ restrict keyword" >&5
+ 

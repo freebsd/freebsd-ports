@@ -1,5 +1,3 @@
-TIMESTAMP = 1567957854
-SHA256 (findutils-4.7.0.tar.xz) = c5fefbdf9858f7e4feb86f036e1247a54c79fc2d8e4b7064d5aaa1f47dfa789a
-SIZE (findutils-4.7.0.tar.xz) = 1895048
-SHA256 (findutils-4.7.0.tar.xz.sig) = 2f620e6d941e241fac52344a89149ab1ffeefb0fb9e42174e17a508d59a31d0f
-SIZE (findutils-4.7.0.tar.xz.sig) = 488
+TIMESTAMP = 1610289044
+SHA256 (findutils-4.8.0.tar.xz) = 57127b7e97d91282c6ace556378d5455a9509898297e46e10443016ea1387164
+SIZE (findutils-4.8.0.tar.xz) = 1983096

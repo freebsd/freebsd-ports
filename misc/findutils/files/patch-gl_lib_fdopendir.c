@@ -1,6 +1,6 @@
---- gl/lib/fdopendir.c.orig	2012-12-15 14:42:45.000000000 +0100
-+++ gl/lib/fdopendir.c	2013-02-02 17:11:52.000000000 +0100
-@@ -182,9 +182,11 @@
+--- gl/lib/fdopendir.c.orig	2021-01-01 18:54:11 UTC
++++ gl/lib/fdopendir.c
+@@ -227,9 +227,11 @@ fd_clone_opendir (int fd, struct saved_cwd const *cwd)
  
  # include <errno.h>
  # include <sys/stat.h>

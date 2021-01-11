@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	findutils
-PORTVERSION=	4.7.0
+PORTVERSION=	4.8.0
 CATEGORIES=	misc
 MASTER_SITES=	GNU
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	GNU find utilities
@@ -14,22 +12,20 @@ COMMENT=	GNU find utilities
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		charsetfix cpe gmake tar:xz
+USES=		charsetfix cpe gmake localbase tar:xz
+CPE_VENDOR=	gnu
 
-SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--program-prefix=g --localstatedir=${LOCALSTATEDIR}
+
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 INFO=		find find-maint
 
-CPE_VENDOR=	gnu
-
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-NLS_CONFIGURE_ENABLE=	nls
+
 NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 LOCALSTATEDIR?=	/var/db
 
