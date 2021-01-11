@@ -39,15 +39,15 @@ include/tcl%%TCL_VER%%/tclOO.h
 include/tcl%%TCL_VER%%/tclOODecls.h
 include/tcl%%TCL_VER%%/tclTomMath.h
 include/tcl%%TCL_VER%%/tclTomMathDecls.h
-lib/tcl%%TCL_VER%%/http-2.9.1.tm
+lib/tcl%%TCL_VER%%/http-2.9.5.tm
 lib/tcl%%TCL_VER%%/http1.0/http.tcl
 lib/tcl%%TCL_VER%%/http1.0/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/msgcat-1.6.1.tm
 lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
 lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
-lib/tcl%%TCL_VER%%/platform-1.0.14.tm
+lib/tcl%%TCL_VER%%/platform-1.0.15.tm
 lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
-lib/tcl%%TCL_VER%%/tcltest-2.5.1.tm
+lib/tcl%%TCL_VER%%/tcltest-2.5.3.tm
 lib/tcl%%TCL_VER%%/auto.tcl
 lib/tcl%%TCL_VER%%/clock.tcl
 lib/tcl%%TCL_VER%%/encoding/ascii.enc
@@ -354,6 +354,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_CreateAliasObj.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_CreateChannel.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_CreateChannelHandler.tcl86.3.gz
+%%TCLMAN%%man/man3/Tcl_CreateChild.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_CreateCloseHandler.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_CreateCommand.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_CreateEncoding.tcl86.3.gz
@@ -528,6 +529,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_GetChannelOption.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetChannelThread.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetChannelType.tcl86.3.gz
+%%TCLMAN%%man/man3/Tcl_GetChild.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetCharLength.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetClassAsObject.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetCommandFromObj.tcl86.3.gz
@@ -584,6 +586,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TCLMAN%%man/man3/Tcl_GetObjResult.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetObjType.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetOpenFile.tcl86.3.gz
+%%TCLMAN%%man/man3/Tcl_GetParent.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetPathType.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetRange.tcl86.3.gz
 %%TCLMAN%%man/man3/Tcl_GetRegExpFromObj.tcl86.3.gz
@@ -1260,6 +1263,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/North_Dakota/Beulah
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/North_Dakota/Center
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/North_Dakota/New_Salem
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Nuuk
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Ojinaga
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Panama
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/America/Pangnirtung

@@ -341,6 +341,7 @@ lib/tk%%TK_VER%%/xmfbox.tcl
 %%TKMAN%%man/man3/Tk_GetHWND.tk86.3.gz
 %%TKMAN%%man/man3/Tk_GetImage.tk86.3.gz
 %%TKMAN%%man/man3/Tk_GetImageMasterData.tk86.3.gz
+%%TKMAN%%man/man3/Tk_GetImageModelData.tk86.3.gz
 %%TKMAN%%man/man3/Tk_GetItemTypes.tk86.3.gz
 %%TKMAN%%man/man3/Tk_GetJoinStyle.tk86.3.gz
 %%TKMAN%%man/man3/Tk_GetJustify.tk86.3.gz

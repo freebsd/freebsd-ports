@@ -46,10 +46,10 @@ PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}${TCL_VERSION}
 WRKSRC=		${PATCH_WRKSRC}/unix
 
 ALL_TARGET=	all
-INSTALL_TARGET=	install-strip install-libraries install-modules
+INSTALL_TARGET=	install-strip install-libraries install-private-headers
 TEST_TARGET=	test-tcl
 
-TCL_VERSION=	8.6.10
+TCL_VERSION=	8.6.11
 TCL_VER=	${TCL_VERSION:R}
 TCL_RC=
 SHORT_TCL_VER=	${TCL_VER:S/.//}

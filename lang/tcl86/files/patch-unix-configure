@@ -1,6 +1,6 @@
---- unix/configure.orig	2018-10-09 18:52:36 UTC
+--- unix/configure.orig	2020-12-11 19:22:34 UTC
 +++ unix/configure
-@@ -7534,15 +7534,11 @@ fi
+@@ -7528,15 +7528,11 @@ fi
  		LDFLAGS="$LDFLAGS $PTHREAD_LIBS"
  fi
  
