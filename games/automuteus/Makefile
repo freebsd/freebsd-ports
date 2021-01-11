@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	automuteus
-DISTVERSION=	6.9.2
+DISTVERSION=	6.10.1
 CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
@@ -31,12 +31,12 @@ GH_TUPLE=	\
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		georgysavva:scany:v0.2.7:georgysavva_scany/vendor/github.com/georgysavva/scany \
-		go-redis:redis:v8.4.4:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
+		go-redis:redis:v8.4.8:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:crypto:0c6587e931a9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:f9fddec55a1e:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
+		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		googollee:go-socket.io:v1.4.4:googollee_go_socket_io/vendor/github.com/googollee/go-socket.io \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
