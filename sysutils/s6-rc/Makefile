@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	s6-rc
-PORTVERSION=	0.5.1.2
+PORTVERSION=	0.5.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -12,12 +12,12 @@ COMMENT=	Skarnet.org service manager
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	execline>=2.5.1.0:lang/execline \
-		skalibs>=2.8.0.0:devel/skalibs \
-		s6>=2.8.0.0:sysutils/s6
-RUN_DEPENDS=	execline>=2.5.1.0:lang/execline \
-		skalibs>=2.8.0.0:devel/skalibs \
-		s6>=2.8.0.0:sysutils/s6
+BUILD_DEPENDS=	execline>=2.7.0.0:lang/execline \
+		skalibs>=2.10.0.0:devel/skalibs \
+		s6>=2.10.0.0:sysutils/s6
+RUN_DEPENDS=	execline>=2.7.0.0:lang/execline \
+		skalibs>=2.10.0.0:devel/skalibs \
+		s6>=2.10.0.0:sysutils/s6
 LIB_DEPENDS=	libs6.so:sysutils/s6 \
 		libskarnet.so:devel/skalibs
 
