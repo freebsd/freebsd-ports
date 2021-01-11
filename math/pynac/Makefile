@@ -3,7 +3,7 @@
 
 PORTNAME=	pynac
 PORTVERSION=	0.7.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math python
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTNAME}/
 
@@ -14,6 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgmp.so:math/gmp		\
 		libntl.so:math/ntl		\
+		libmpfr.so:math/mpfr		\
 		libflint.so:math/flint2		\
 		libSingular.so:math/singular
 
