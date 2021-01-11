@@ -44,6 +44,7 @@ bin/s6-svdt-clear
 bin/s6-svlisten
 bin/s6-svlisten1
 bin/s6-svok
+bin/s6-svperms
 bin/s6-svscan
 bin/s6-svscanboot
 bin/s6-svscanctl
@@ -51,6 +52,7 @@ bin/s6-svstat
 bin/s6-svwait
 bin/s6-tai64n
 bin/s6-tai64nlocal
+bin/s6-usertree-maker
 bin/s6lockd
 bin/ucspilogd
 @sample %%ETCDIR%%/s6-svscan-log/run.sample
@@ -66,8 +68,8 @@ include/s6/s6-supervise.h
 include/s6/s6.h
 include/s6/s6lock.h
 lib/libs6.so
-lib/libs6.so.2.9
-lib/libs6.so.2.9.1.0
+lib/libs6.so.2.10
+lib/libs6.so.2.10.0.0
 lib/s6/libs6.a
 libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -124,6 +126,7 @@ libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/s6-svlisten.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svlisten1.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svok.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-svperms.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svscan-1.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svscan-not-1.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-svscan.html
@@ -132,6 +135,7 @@ libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/s6-svwait.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-tai64n.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-tai64nlocal.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-usertree-maker.html
 %%PORTDOCS%%%%DOCSDIR%%/scandir.html
 %%PORTDOCS%%%%DOCSDIR%%/servicedir.html
 %%PORTDOCS%%%%DOCSDIR%%/socket-activation.html
