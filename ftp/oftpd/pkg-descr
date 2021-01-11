@@ -6,4 +6,4 @@ directory change code, so that it can run efficiently as a threaded server, and
 its own directory listing code (most FTP servers execute the system "ls"
 command to list files).
 
-WWW: http://www.time-travellers.org/oftpd/
+WWW: https://www.time-travellers.org/oftpd/
