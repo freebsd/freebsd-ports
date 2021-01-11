@@ -4,6 +4,7 @@ PORTNAME=	synergy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13.0
 DISTVERSIONSUFFIX=	-stable
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 
@@ -13,10 +14,9 @@ COMMENT=	Mouse and keyboard sharing utility
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libdns_sd.so:net/mDNSResponder
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake compiler:c++14-lang cpe qt:5 ssl xorg
+USES=		cmake compiler:c++14-lang cpe localbase:ldflags qt:5 ssl xorg
 CPE_VENDOR=	synergy-foss
 USE_XORG=	ice xtst x11 sm xext xinerama xrandr xi
 USE_QT=		core network widgets buildtools_build linguisttools_build qmake_build
@@ -30,15 +30,19 @@ CONFLICTS=	synergy-1
 
 CMAKE_ARGS=	-DSYNERGY_REVISION:STRING=${PORTVERSION:S/.//g}0000 # it expects a 8-digit hash
 
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-LDFLAGS+=	-ldns_sd
-
-#MAKE_JOBS_UNSAFE=yes
-
 PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
 		synergy.conf.example-advanced
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=			AVAHI_LIBDNS EXAMPLES
+OPTIONS_DEFAULT=		AVAHI_LIBDNS
+
+AVAHI_LIBDNS_DESC=		Use libdns from avahi to avoid conflicts with KDE/Gnome
+AVAHI_LIBDNS_USES=		pkgconfig
+AVAHI_LIBDNS_CFLAGS=		`pkg-config --cflags avahi-compat-libdns_sd`
+AVAHI_LIBDNS_LDFLAGS=		`pkg-config --libs avahi-compat-libdns_sd`
+AVAHI_LIBDNS_LIB_DEPENDS=	libdns_sd.so:net/avahi-libdns
+AVAHI_LIBDNS_LDFLAGS_OFF=	-ldns_sd
+AVAHI_LIBDNS_LIB_DEPENDS_OFF=	libdns_sd.so:net/mDNSResponder
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|return "/etc"|return "${PREFIX}/etc"|' \
