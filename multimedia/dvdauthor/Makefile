@@ -48,7 +48,8 @@ GRAPHICSMAGICK_CONFIGURE_WITH=	graphicsmagick
 GRAPHICSMAGICK_LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick
 IMAGEMAGICK6_CONFIGURE_WITH=	imagemagick
 IMAGEMAGICK6_LIB_DEPENDS=	libMagickCore-6.so:graphics/ImageMagick6
-MANPAGES_BUILD_DEPENDS=		docbook2man:textproc/docbook-utils
+MANPAGES_BUILD_DEPENDS=		docbook2man:textproc/docbook-utils \
+				docbook-sgml>0:textproc/docbook-sgml
 NTSC_CONFIGURE_ON=		--enable-default-video-format=NTSC
 PAL_CONFIGURE_ON=		--enable-default-video-format=PAL
 
