@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	timescaledb
-PORTVERSION=	1.7.4
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	databases
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -37,6 +36,6 @@ SSL_USES=		ssl
 TSL_CMAKE_BOOL_OFF=	APACHE_ONLY
 
 CMAKE_OFF=	REGRESS_CHECKS
-WANT_PGSQL=	server
+WANT_PGSQL=	lib server
 
 .include <bsd.port.mk>
