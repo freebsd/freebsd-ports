@@ -3,6 +3,7 @@
 
 PORTNAME=	libtasn1
 PORTVERSION=	4.16.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	GNU \
 		GNUPG/gnutls/${PORTNAME}
@@ -14,7 +15,7 @@ LICENSE=	LGPL21+ GPLv3
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe libtool pathfix pkgconfig
+USES=		cpe libtool pathfix pkgconfig compiler
 USE_CSTD=	c99
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -29,8 +30,15 @@ DOCS=		AUTHORS NEWS README.md THANKS doc/TODO \
 		doc/libtasn1.html doc/libtasn1.pdf doc/libtasn1.ps
 INFO=		libtasn1
 
+.include <bsd.port.pre.mk>
+
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=252548
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 100
+CFLAGS:=		${CFLAGS:C/-O[2-9]/-O1/g}
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
