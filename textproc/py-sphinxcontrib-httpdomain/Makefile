@@ -10,9 +10,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Sphinx domain for HTTP APIs
 
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	${PY_SPHINX}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
