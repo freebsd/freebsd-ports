@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	spread-sheet-widget
-PORTVERSION=	0.3
+PORTVERSION=	0.7
 CATEGORIES=	devel
 MASTER_SITES=	GNU_ALPHA/ssw
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Library for Gtk+ which provides a widget for tabular data
+COMMENT=	SSW is a library for Gtk+ which provides a widget for tabular data
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake gnome libtool makeinfo pkgconfig
-USE_GNOME=	atk glib20 gtk30
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

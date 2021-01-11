@@ -1,6 +1,7 @@
 include/ssw-axis-model.h
 include/ssw-sheet-axis.h
 include/ssw-sheet.h
+include/ssw-virtual-model.h
 lib/libspread-sheet-widget.a
 lib/libspread-sheet-widget.so
 lib/libspread-sheet-widget.so.0
