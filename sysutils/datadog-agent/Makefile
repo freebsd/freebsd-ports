@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	datadog-agent
-DISTVERSION=	7.23.1
-PORTREVISION=	1
+DISTVERSION=	7.24.1
 CATEGORIES=	sysutils net www
 
 MAINTAINER=	uros@gruber.si
@@ -11,8 +10,7 @@ COMMENT=	Datadog Agent: collect metrics and events from your systems and apps
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake>=3.18:devel/cmake \
-		go>=1.15:lang/go \
+BUILD_DEPENDS=	cmake>=3.12:devel/cmake \
 		go-bindata>0:devel/go-bindata
 
 USES=		go:modules python:3.7+
@@ -21,12 +19,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	datadog
 GH_TUPLE=	\
-		DataDog:agent-payload:v4.44.0:datadog_agent_payload/vendor/github.com/DataDog/agent-payload \
+		DataDog:agent-payload:v4.46.0:datadog_agent_payload/vendor/github.com/DataDog/agent-payload \
 		DataDog:cast:1ee8c8bd14a3:datadog_cast/vendor/github.com/spf13/cast \
 		DataDog:datadog-go:v3.5.0:datadog_datadog_go/vendor/github.com/DataDog/datadog-go \
 		DataDog:datadog-operator:9c71245c6822:datadog_datadog_operator/vendor/github.com/DataDog/datadog-operator \
 		DataDog:dd-trace-go:v1.23.1:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
-		DataDog:ebpf:7a8f7d072a50:datadog_ebpf/vendor/github.com/DataDog/ebpf \
+		DataDog:ebpf:a91a2d800994:datadog_ebpf/vendor/github.com/DataDog/ebpf \
 		DataDog:gobpf:5f8313cb4d71:datadog_gobpf/vendor/github.com/iovisor/gobpf \
 		DataDog:gohai:e17d616e422a:datadog_gohai/vendor/github.com/DataDog/gohai \
 		DataDog:gopsutil:1b53412ef321:datadog_gopsutil/vendor/github.com/DataDog/gopsutil \
@@ -47,6 +45,7 @@ GH_TUPLE=	\
 		alecthomas:participle:v0.4.4:alecthomas_participle/vendor/github.com/alecthomas/participle \
 		alecthomas:repr:d37bc2a10ba1:alecthomas_repr/vendor/github.com/alecthomas/repr \
 		armon:go-metrics:v0.3.0:armon_go_metrics/vendor/github.com/armon/go-metrics \
+		avast:retry-go:v2.7.0:avast_retry_go/vendor/github.com/avast/retry-go \
 		aws:aws-sdk-go:v1.30.5:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beevik:ntp:v0.3.0:beevik_ntp/vendor/github.com/beevik/ntp \
 		benesch:cgosymbolizer:bec6fe6e597b:benesch_cgosymbolizer/vendor/github.com/benesch/cgosymbolizer \
@@ -65,6 +64,7 @@ GH_TUPLE=	\
 		cloudfoundry:garden:061eda450ad9:cloudfoundry_garden/vendor/code.cloudfoundry.org/garden \
 		cloudfoundry:lager:v2.0.0:cloudfoundry_lager/vendor/code.cloudfoundry.org/lager \
 		cloudfoundry:tlsconfig:bbe0f8da39b3:cloudfoundry_tlsconfig/vendor/code.cloudfoundry.org/tlsconfig \
+		cobaugh:osrelease:a93a0a55a249:cobaugh_osrelease/vendor/github.com/cobaugh/osrelease \
 		containerd:cgroups:b44481373989:containerd_cgroups/vendor/github.com/containerd/cgroups \
 		containerd:containerd:v1.2.13:containerd_containerd/vendor/github.com/containerd/containerd \
 		containerd:continuity:0f16d7a0959c:containerd_continuity/vendor/github.com/containerd/continuity \
@@ -92,7 +92,7 @@ GH_TUPLE=	\
 		evanphx:json-patch:v4.5.0:evanphx_json_patch/vendor/github.com/evanphx/json-patch \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
 		florianl:go-conntrack:v0.2.0:florianl_go_conntrack/vendor/github.com/florianl/go-conntrack \
-		florianl:go-tc:v0.1.0:florianl_go_tc/vendor/github.com/florianl/go-tc \
+		florianl:go-tc:v0.2.0:florianl_go_tc/vendor/github.com/florianl/go-tc \
 		freddierice:go-losetup:fc9adea44124:freddierice_go_losetup/vendor/github.com/freddierice/go-losetup \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		ghodss:yaml:25d852aebe32:ghodss_yaml/vendor/github.com/ghodss/yaml \
@@ -141,7 +141,7 @@ GH_TUPLE=	\
 		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
 		hashicorp:go-hclog:v0.12.0:hashicorp_go_hclog/vendor/github.com/hashicorp/go-hclog \
 		hashicorp:go-immutable-radix:v1.1.0:hashicorp_go_immutable_radix/vendor/github.com/hashicorp/go-immutable-radix \
-		hashicorp:go-multierror:v1.0.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
+		hashicorp:go-multierror:v1.1.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		hashicorp:go-rootcerts:v1.0.2:hashicorp_go_rootcerts/vendor/github.com/hashicorp/go-rootcerts \
 		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
@@ -191,6 +191,7 @@ GH_TUPLE=	\
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		mitchellh:reflectwalk:v1.0.0:mitchellh_reflectwalk/vendor/github.com/mitchellh/reflectwalk \
+		moby:moby:v17.12.0-ce:moby_moby/vendor/github.com/docker/docker \
 		moby:sys:mountinfo/v0.1.3:moby_sys_mountinfo/vendor/github.com/moby/sys \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
@@ -232,10 +233,12 @@ GH_TUPLE=	\
 		tinylib:msgp:v1.1.2:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		twmb:murmur3:v1.1.3:twmb_murmur3/vendor/github.com/twmb/murmur3 \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
+		uber-go:automaxprocs:v1.2.0:uber_go_automaxprocs/vendor/go.uber.org/automaxprocs \
 		uber-go:multierr:v1.5.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.14.1:uber_go_zap/vendor/go.uber.org/zap \
 		ulikunitz:xz:v0.5.7:ulikunitz_xz/vendor/github.com/ulikunitz/xz \
 		urfave:negroni:v1.0.0:urfave_negroni/vendor/github.com/urfave/negroni \
+		vishvananda:netlink:v1.1.0:vishvananda_netlink \
 		vishvananda:netns:0a2b9b5464df:vishvananda_netns/vendor/github.com/vishvananda/netns \
 		vito:go-sse:v1.0.0:vito_go_sse/vendor/github.com/vito/go-sse \
 		vmihailenco:msgpack:v4.3.11:vmihailenco_msgpack_v4/vendor/github.com/vmihailenco/msgpack/v4 \
