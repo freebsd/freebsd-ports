@@ -3,7 +3,7 @@
 
 PORTNAME=	mprime
 PORTVERSION=	29.8b3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math benchmarks net
 MASTER_SITES=	http://www.mersenne.org/ftp_root/gimps/ \
 		ftp://mersenne.org/gimps/
@@ -20,7 +20,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 ONLY_FOR_ARCHS=	amd64 i386
 
 LIB_DEPENDS=	libcurl.so:ftp/curl					\
-		libhwloc.so:devel/hwloc					\
+		libhwloc.so.15:devel/hwloc2				\
 		libgmp.so:math/gmp
 
 USES=		zip

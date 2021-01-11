@@ -1,5 +1,5 @@
---- linux/makebsd.bak	2019-04-22 22:05:22.000000000 +0300
-+++ linux/makebsd	2019-05-14 23:41:22.010249000 +0300
+--- linux/makebsd.orig	2019-04-23 03:05:22 UTC
++++ linux/makebsd
 @@ -7,13 +7,13 @@
  #
  
