@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	raylib
-DISTVERSION=	3.0.0
-PORTREVISION=	2
+DISTVERSION=	3.5.0
 CATEGORIES=	devel education
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -24,15 +23,7 @@ USE_XORG=	ice sm x11 xcursor xext xi xinerama xrandr xxf86vm
 CMAKE_ON=	SHARED USE_EXTERNAL_GLFW
 CMAKE_OFF=	BUILD_EXAMPLES BUILD_GAMES STATIC
 
-PLIST_FILES=	include/physac.h \
-		include/raylib.h \
-		include/raymath.h \
-		lib/cmake/raylib/raylib-config-version.cmake \
-		lib/cmake/raylib/raylib-config.cmake \
-		lib/libraylib.so \
-		lib/libraylib.so.${DISTVERSION} \
-		lib/libraylib.so.301 \
-		libdata/pkgconfig/raylib.pc
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 post-extract:
 # Remove bundled files.

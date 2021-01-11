@@ -1,0 +1,11 @@
+include/physac.h
+include/raylib.h
+include/raymath.h
+include/raudio.h
+include/rlgl.h
+lib/cmake/raylib/raylib-config-version.cmake
+lib/cmake/raylib/raylib-config.cmake
+lib/libraylib.so
+lib/libraylib.so.%%DISTVERSION%%
+lib/libraylib.so.351
+libdata/pkgconfig/raylib.pc
