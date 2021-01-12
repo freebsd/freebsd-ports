@@ -70,6 +70,8 @@ CONFIGURE_ARGS=	--enable-fast="" --with-hwloc-prefix=${LOCALBASE} \
 		LIBS="-L${LOCALBASE}/lib -lepoll-shim -ljson-c -lm"	\
 		BASH_SHELL=${LOCALBASE}/bin/bash
 
+CFLAGS_powerpc64=	-D__BIG_ENDIAN
+
 .include <bsd.port.options.mk>
 
 .for pm in ${OPTIONS_GROUP_PM}
