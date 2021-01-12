@@ -12,7 +12,7 @@ COMMENT=	Creates and packs custom FreeBSD installation images
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpcspe powerpc64 powerpc64le
 
 RUN_DEPENDS=	p5-YAML>=0:textproc/p5-YAML
 
