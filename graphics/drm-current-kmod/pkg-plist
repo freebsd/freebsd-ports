@@ -4,8 +4,6 @@
 /%%KMODDIR%%/linuxkpi_gplv2.ko
 /%%KMODDIR%%/radeonkms.ko
 /%%KMODDIR%%/ttm.ko
-%%VBOXVIDEO%%/%%KMODDIR%%/vboxvideo.ko
-%%VMWGFX%%/%%KMODDIR%%/vmwgfx.ko
 %%SOURCE%%%%KMODSRC%%/Makefile
 %%SOURCE%%%%KMODSRC%%/kconfig.mk
 %%SOURCE%%%%KMODSRC%%/amd/Makefile
@@ -2229,9 +2227,6 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/linux/zlib.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/media/cec-notifier.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/dummy/include/video/of_videomode.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/acpi/acpi.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/acpi/acpi_bus.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/acpi/video.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/barrier.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/cpufeature.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/cpufeatures.h
@@ -2242,13 +2237,11 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/processor.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/required-features.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/set_memory.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/acpi.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/agp_backend.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/anon_inodefs.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/anon_inodes.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/ascii85.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/atomic.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/bitfield.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/capability.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/circ_buf.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/compiler.h
@@ -2263,7 +2256,6 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/fb.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/firmware.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/fwnode.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/gcd.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/genalloc.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/gpio/consumer.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/hash.h
@@ -2337,7 +2329,6 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/video/mipi_display.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/video/vga.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/video/videomode.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_acpi.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_anon_inodefs.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_anon_inodes.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_compat.c
