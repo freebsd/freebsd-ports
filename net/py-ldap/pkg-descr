@@ -9,4 +9,4 @@ Some cool things people have done with ldapmodule
      * Michael Stroeder's web2ldap (previously ldap-client-cgi.py).
      * LDAP support for Zope (see also Zope)
 
-WWW: http://www.python-ldap.org/
+WWW: https://www.python-ldap.org
