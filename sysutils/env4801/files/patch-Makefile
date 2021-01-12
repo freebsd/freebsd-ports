@@ -1,0 +1,11 @@
+--- Makefile.orig	2021-01-12 14:27:18 UTC
++++ Makefile
+@@ -2,7 +2,7 @@ PROG=	env4801
+ 
+ WARNS?=	3
+ 
+-NO_MAN=	sorry
++MAN=
+ 
+ #CFLAGS += -fno-builtin-ffs
+ 
