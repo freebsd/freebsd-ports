@@ -1581,6 +1581,7 @@ lib/php/arcanist/support/lib/extract-symbols.php
 lib/php/arcanist/support/lib/rebuild-map.php
 lib/php/arcanist/support/shell/hooks/bash-completion.sh
 lib/php/arcanist/support/shell/rules/.keep
+lib/php/arcanist/support/shell/rules/bash-rules.sh
 lib/php/arcanist/support/shell/templates/bash-template.sh
 lib/php/arcanist/support/unit/cat.php
 lib/php/arcanist/support/unit/echo.php
