@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doomsday
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.0
 CATEGORIES=	games
 MASTER_SITES=	SF/deng/Doomsday%20Engine/${PORTVERSION}
 
@@ -35,7 +35,9 @@ post-patch:
 	# Removing (three) non-ascii bytes from the beginning of the file
 	@${REINPLACE_CMD} '1s,^...,,' \
 		${WRKSRC}/apps/client/src/client/cl_sound.cpp
-	@${REINPLACE_CMD} -E 's|(DENG_DISTRIB_DIR /usr)|\1/local|' \
+	@${REINPLACE_CMD} -E -e 's|(DENG_DISTRIB_DIR /usr)|\1/local|' \
+		-e 's|python3|${PYTHON_VERSION}|' \
 		${WRKSRC}/cmake/Config.cmake
+	@cd ${WRKSRC} && ${FIND} . -name '*.orig' -delete
 
 .include <bsd.port.mk>
