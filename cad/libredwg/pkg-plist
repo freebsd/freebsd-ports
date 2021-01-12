@@ -1,5 +1,6 @@
 bin/dwg2SVG
 bin/dwg2dxf
+bin/dwgadd
 bin/dwgbmp
 bin/dwgfilter
 bin/dwggrep
@@ -14,10 +15,11 @@ include/dwg_api.h
 lib/libredwg.a
 lib/libredwg.so
 lib/libredwg.so.0
-lib/libredwg.so.0.0.11
+lib/libredwg.so.0.0.12
 libdata/pkgconfig/libredwg.pc
 man/man1/dwg2SVG.1.gz
 man/man1/dwg2dxf.1.gz
+man/man1/dwgadd.1.gz
 man/man1/dwgbmp.1.gz
 man/man1/dwgfilter.1.gz
 man/man1/dwggrep.1.gz
@@ -27,3 +29,11 @@ man/man1/dwgrewrite.1.gz
 man/man1/dwgwrite.1.gz
 man/man1/dxf2dwg.1.gz
 man/man1/dxfwrite.1.gz
+man/man5/dwgadd.5.gz
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/LibreDWG.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_LibreDWG.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_LibreDWG.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_LibreDWG.so.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_LibreDWG.so.0.0.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/__pycache__/LibreDWG.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/__pycache__/LibreDWG.cpython-%%PYTHON_SUFFIX%%.pyc
