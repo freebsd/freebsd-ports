@@ -11,7 +11,7 @@ COMMENT=	Full-featured atomic-scale first-principles simulation software
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64
 
 BUILD_DEPENDS=	gm4:devel/m4	\
 		${PYNUMPY}	\
