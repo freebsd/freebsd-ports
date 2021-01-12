@@ -26,7 +26,7 @@ MAKE_ARGS=	CC="${CC}" \
 		NE_GLOBAL_DIR="${DATADIR}"
 ALL_TARGET=	ne
 
-LDFLAGS+=	-lgnuregex
+LDFLAGS+=	-lgnuregex -L${LOCALBASE}/lib
 
 BUILD_WRKSRC=	${WRKSRC}/src
 INFO=		ne
@@ -38,8 +38,6 @@ OPTIONS_DEFINE=		DEBUG DOCS
 DEBUG_MAKE_ARGS=	NE_DEBUG=1
 
 post-patch:
-	@${FIND} ${BUILD_WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|"regex\.h"|<gnu/regex.h>|g'
 	@${REINPLACE_CMD} -e \
 		's|-O3|| ; \
 		/[[:space:]]regex.o/d ; \
