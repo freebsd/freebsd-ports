@@ -23,8 +23,8 @@ RUN_DEPENDS=	gnome-icon-theme>=0:misc/gnome-icon-theme \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		gvfs>0:devel/gvfs
 
-USES=		desktop-file-utils gettext gnome meson pkgconfig python:3.5+ \
-		shared-mime-info shebangfix xorg
+USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig \
+		python:3.5+ shared-mime-info shebangfix xorg
 
 SHEBANG_FILES=	generate_additional_file makepot
 SHEBANG_GLOB=	*.py
