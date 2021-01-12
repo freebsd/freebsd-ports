@@ -13,6 +13,8 @@ COMMENT=	Standalone Djvu viewer and plugin based on Qt toolkit
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_riscv64=		fails to build: ./npsdk/prcpucfg.h:751:2: Unknown CPU architecture
+
 LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
 		libtiff.so:graphics/tiff
 
