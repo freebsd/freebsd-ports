@@ -2,6 +2,7 @@ bin/gogglesmm
 %%ALSA%%lib/gogglesmm/libgap_alsa.so
 lib/gogglesmm/libgap_oss.so
 %%PULSEAUDIO%%lib/gogglesmm/libgap_pulse.so
+%%SNDIO%%lib/gogglesmm/libgap_sndio.so
 lib/gogglesmm/libgap_wav.so
 man/man1/gogglesmm.1.gz
 share/applications/gogglesmm.desktop
@@ -16,6 +17,7 @@ share/icons/hicolor/scalable/apps/gogglesmm.svg
 %%NLS%%share/locale/es/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/gogglesmm.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gogglesmm.mo
 share/metainfo/gogglesmm.appdata.xml
