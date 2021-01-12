@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	exaile
-DISTVERSION=	4.1.0-alpha1
-PORTREVISION=	2
+DISTVERSION=	4.1.0-rc1
 CATEGORIES=	audio
 
 MAINTAINER=	rm@FreeBSD.org
