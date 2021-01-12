@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	Log-Log4perl-Appender-RabbitMQ
-PORTVERSION=	0.200001
+PORTVERSION=	0.200002
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ABRAXXA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module which allows logging to RabbitMQ via log4perl
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
