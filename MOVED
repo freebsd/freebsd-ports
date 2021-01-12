@@ -16013,3 +16013,5 @@ graphics/py-pillow6|graphics/py-pillow|2021-01-02|Uses Python 2.7 which is EOLed
 www/wt3|www/wt|2021-01-03|Has expired: Upstream end of life, switch to www/wt instead
 archivers/ecm|archivers/cmdpack|2021-01-04|ECM is now included in cmdpack
 math/qhull5|math/qhull|2021-01-04|Has expired: Legacy version of port no longer required by math/octave
+devel/py-typing||2021-01-12|Python 2 only, backport of Python 3
+net/py-ipaddress||2021-01-12|Uses Python 2.7 which is EOLed upstream

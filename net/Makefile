@@ -1017,7 +1017,6 @@
     SUBDIR += py-httpstat
     SUBDIR += py-ifaddr
     SUBDIR += py-impacket
-    SUBDIR += py-ipaddress
     SUBDIR += py-iplib
     SUBDIR += py-iptools
     SUBDIR += py-kafka-python
