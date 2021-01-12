@@ -27,6 +27,7 @@ man/man3/gdbm.3.gz
 %%NLS%%share/locale/ja/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gdbm.mo
