@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 FLAVORS=	x128 x64 x64sc xcbm2 xcbm5x0 xpet xplus4 xscpu64 xvic
 FLAVOR?=	${FLAVORS:[2]}
 
-USES=		gmake
+USES=		compiler:c11 gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
