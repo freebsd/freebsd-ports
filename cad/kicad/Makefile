@@ -61,12 +61,6 @@ DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_ALL_TARGET=	all doxygen-docs
 DOXYGEN_PORTDOCS=	doxygen
 
-# The CheckCXXSymbolExists module has been shipped with CMake since 3.0 times.
-# The ancient implementation that this bundled module uses, no longer works
-# because it uses CMake internals that have gone away in 3.11.
-post-extract:
-	${RM} ${WRKSRC}/CMakeModules/CheckCXXSymbolExists.cmake
-
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/share/kicad|${DATADIR}|'		\
 		-e 's|/usr/local|${PREFIX}|'				\
