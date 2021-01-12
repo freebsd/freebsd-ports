@@ -69,7 +69,7 @@ FREI0R_CONFIGURE_ENABLE=frei0r
 
 GDK_LIB_DEPENDS=	libexif.so:graphics/libexif \
 			libfontconfig.so:x11-fonts/fontconfig
-GDK_USE=		GNOME=gdkpixbuf2,gtk20,pango
+GDK_USE=		GNOME=gdkpixbuf2,pango
 GDK_CONFIGURE_ENABLE=	gdk
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
