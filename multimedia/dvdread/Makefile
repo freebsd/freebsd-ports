@@ -17,6 +17,7 @@ LIB_DEPENDS=	libdvdcss.so:multimedia/libdvdcss \
 		libdvdread.so:multimedia/libdvdread
 
 USES=		localbase:ldflags
+USE_CSTD=	c99
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xrgtn
