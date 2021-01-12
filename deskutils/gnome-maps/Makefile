@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-maps
-PORTVERSION=	3.38.2
+PORTVERSION=	3.38.3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
