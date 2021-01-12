@@ -35,8 +35,8 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	cinnamon-session:x11/cinnamon-session
 
-USES=		gettext-tools gnome localbase meson pkgconfig python:3.5+,build \
-		shebangfix xorg
+USES=		compiler:c11 gettext-tools gnome localbase meson pkgconfig \
+		python:3.5+,build shebangfix xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libgnomekbd librsvg2
 USE_XORG=	x11 xext xfixes xi xtst
 
