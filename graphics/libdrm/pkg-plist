@@ -64,10 +64,7 @@ libdata/pkgconfig/libkms.pc
 %%MANPAGES%%man/man3/drmAvailable.3.gz
 %%MANPAGES%%man/man3/drmHandleEvent.3.gz
 %%MANPAGES%%man/man3/drmModeGetResources.3.gz
-%%MANPAGES%%man/man7/drm-gem.7.gz
 %%MANPAGES%%man/man7/drm-kms.7.gz
 %%MANPAGES%%man/man7/drm-memory.7.gz
-%%MANPAGES%%man/man7/drm-mm.7.gz
-%%MANPAGES%%man/man7/drm-ttm.7.gz
 %%MANPAGES%%man/man7/drm.7.gz
 %%RADEON_DRIVERS%%%%DATADIR%%/amdgpu.ids

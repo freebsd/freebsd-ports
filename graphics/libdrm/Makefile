@@ -30,8 +30,7 @@ TESTS_DESC=	Install test programs (which are always built)
 OPTIONS_DEFAULT+=	MANPAGES
 .endif
 
-MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
-MANPAGES_USE=		GNOME=libxslt:build
+MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 MANPAGES_MESON_TRUE=	man-pages
 
 TESTS_MESON_TRUE=	install-test-programs
