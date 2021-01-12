@@ -31,8 +31,8 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 RUN_DEPENDS=	zenity>=3.0.0:x11/zenity \
 		xkeyboard-config>0:x11/xkeyboard-config
 
-USES=		autoreconf:build gettext-tools gl gmake gnome libtool pathfix pkgconfig \
-		xorg
+USES=		autoreconf:build compiler:c11 gettext-tools gl gmake gnome \
+		libtool localbase pathfix pkgconfig xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
@@ -49,8 +49,6 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-maintainer-flags=no
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
 INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.cinnamon.muffin.gschema.xml
