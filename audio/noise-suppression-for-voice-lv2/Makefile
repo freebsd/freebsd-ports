@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
-USES=		cmake  compiler:c11
+USES=		cmake compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	werman
 
