@@ -2,8 +2,8 @@
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.14-11528 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-gbf6f43ec3
+DISTVERSION=	0.0.14-11536 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g838cbe184
 CATEGORIES=	emulators
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,12 +26,12 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.8.0-rc1-28-g8961cf8:hidapi/3rdparty/hidapi \
-		RPCS3:llvm-mirror:cb7748dfa0d:llvm/llvm \
+		RPCS3:llvm-mirror:716bb292ba3:llvm/llvm \
 		Cyan4973:xxHash:v0.8.0:xxHash/3rdparty/xxHash \
 		FNA-XNA:FAudio:20.05:FAudio/3rdparty/FAudio \
 		google:flatbuffers:v1.11.0:flatbuffers/3rdparty/flatbuffers \
 		jbeder:yaml-cpp:yaml-cpp-0.6.3-30-g6a211f0:yamlcpp/3rdparty/yaml-cpp \
-		kobalicek:asmjit:fc251c9:asmjit/asmjit \
+		kobalicek:asmjit:723f585:asmjit/asmjit \
 		KhronosGroup:SPIRV-Headers:1.5.3.reservations1:spirv_headers/Vulkan/spirv-headers \
 		KhronosGroup:SPIRV-Tools:v2020.4:spirv_tools/Vulkan/spirv-tools \
 		KhronosGroup:glslang:8.13.3743-225-g517f39ee:glslang/Vulkan/glslang \
