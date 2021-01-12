@@ -23,12 +23,6 @@ USE_PYTHON=	distutils autoplist
 
 PYDISTUTILS_CONFIGUREARGS=	--zmq=${LOCALBASE}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VER} == 3.3
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}asyncio>0:devel/py-asyncio@${PY_FLAVOR}
-.endif
-
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build_ext --inplace
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
@@ -37,4 +31,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zmq/backend/cython/*.so
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/zmq/devices/*.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -37,10 +37,4 @@ do-test:
 		--ignore-glob='*test_aiohttpparser*' \
 		--ignore-glob="*test_tornadoparser*"
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_VER} < 3
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.1.0:devel/py-simplejson@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

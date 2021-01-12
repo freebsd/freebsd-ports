@@ -62,15 +62,11 @@ SERIALIZATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0.6.1:devel/py-msgpac
 TWISTED_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}twisted>=12.1.0:devel/py-twisted@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}zope.interface>=3.6.0:devel/py-zope.interface@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${PYTHON_VER} > 3.0
 OPTIONS_MULTI_BACKENDS:=	${OPTIONS_MULTI_BACKENDS:NASYNCIO}
 COMPLETE_OPTIONS_LIST:=		${COMPLETE_OPTIONS_LIST:NASYNCIO}
 PORT_OPTIONS:=			${PORT_OPTIONS:NASYNCIO}
-.elif ${PORT_OPTIONS:MASYNCIO}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}trollius>=2.0:devel/py-trollius@${PY_FLAVOR}
-.endif
 
 do-test:
 .if ${PORT_OPTIONS:MASYNCIO}
@@ -80,4 +76,4 @@ do-test:
 	@cd ${WRKSRC} && USE_TWISTED=1 ${PYTHON_CMD} -m twisted.trial ${WRKSRC}/autobahn
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
