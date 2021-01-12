@@ -509,6 +509,7 @@
 %%WWWDIR%%/src/libs/abraham/twitteroauth/tests/video.mp4
 %%WWWDIR%%/src/libs/autoload.php
 %%WWWDIR%%/src/libs/composer/ClassLoader.php
+%%WWWDIR%%/src/libs/composer/InstalledVersions.php
 %%WWWDIR%%/src/libs/composer/LICENSE
 %%WWWDIR%%/src/libs/composer/autoload_classmap.php
 %%WWWDIR%%/src/libs/composer/autoload_files.php
@@ -517,6 +518,8 @@
 %%WWWDIR%%/src/libs/composer/autoload_real.php
 %%WWWDIR%%/src/libs/composer/autoload_static.php
 %%WWWDIR%%/src/libs/composer/installed.json
+%%WWWDIR%%/src/libs/composer/installed.php
+%%WWWDIR%%/src/libs/composer/platform_check.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Client.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/ClientBuilder.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Elasticsearch/Common/EmptyLogger.php
