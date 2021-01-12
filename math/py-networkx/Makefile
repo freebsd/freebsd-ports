@@ -14,8 +14,6 @@ COMMENT=	Tools for complex networks
 LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}decorator>=4.1.0:devel/py-decorator@${PY_FLAVOR}
-
-#		${PY_SPHINX} \
 #		${PYTHON_PKGNAMEPREFIX}docutils>=0.12:textproc/py-docutils@${PY_FLAVOR}
 
 USES=		python:3.6+ shebangfix zip

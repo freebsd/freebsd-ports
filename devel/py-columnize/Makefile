@@ -19,12 +19,6 @@ RUN_DEPENDS=	${MY_DEPENDS}
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
 
-.include <bsd.port.pre.mk>
+EXTRA_PATCHES=      ${FILESDIR}/extra-patch-____pkginfo____.py
 
-.if ${PYTHON_MAJOR_VER} == "3"
-EXTRA_PATCHES+=      ${FILESDIR}/extra-patch-____pkginfo____.py
-.else
-MY_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.shutil_get_terminal_size>=1.0:devel/py-backports.shutil_get_terminal_size@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

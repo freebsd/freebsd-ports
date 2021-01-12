@@ -30,14 +30,7 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_MAJOR_VER} < 3
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}contextlib2>0:devel/py-contextlib2@${PY_FLAVOR}
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}graphviz>=0:graphics/py-graphviz@${PY_FLAVOR}
-.endif
-
 post-patch:
 	${RM} ${WRKSRC}/test/__init__.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

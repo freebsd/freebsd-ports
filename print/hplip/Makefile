@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcupsimage.so:print/cups \
 		libdbus-1.so:devel/dbus
 RUN_DEPENDS=	cups-filters>=0:print/cups-filters \
-		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 
 CONFLICTS_INSTALL=	hpijs-[0-9]*
 
@@ -68,12 +69,6 @@ X11_USE=		PYQT=core_run,dbussupport_run,gui_run,widgets_run
 XSANE_DESC=		Install XSane for scanning (implies SCAN)
 XSANE_IMPLIES=		SCAN
 XSANE_RUN_DEPENDS=	xsane:graphics/xsane
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_MAJOR_VER} >= 3
-RUN_DEPENDS+=  ${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldld||g;' \
@@ -136,4 +131,4 @@ post-install-SCAN-on:
 	${MV} ${STAGEDIR}${PREFIX}/etc/sane.d/dll.conf \
 		${STAGEDIR}${PREFIX}/etc/sane.d/dll.d/hpaio
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
