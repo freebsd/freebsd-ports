@@ -793,7 +793,6 @@ libdata/pkgconfig/tinfow.pc
 %%MANPAGES%%man/man3/setcchar.3x.gz
 %%MANPAGES%%man/man3/setscrreg.3x.gz
 %%MANPAGES%%man/man3/setsyx.3x.gz
-%%MANPAGES%%man/man3/setterm.3x.gz
 %%MANPAGES%%man/man3/setupterm.3x.gz
 %%MANPAGES%%man/man3/show_panel.3x.gz
 %%MANPAGES%%man/man3/slk_attr.3x.gz
@@ -863,7 +862,6 @@ libdata/pkgconfig/tinfow.pc
 %%MANPAGES%%man/man3/tigetstr_sp.3x.gz
 %%MANPAGES%%man/man3/timeout.3x.gz
 %%MANPAGES%%man/man3/tiparm.3x.gz
-%%MANPAGES%%man/man3/tiparm_sp.3x.gz
 %%MANPAGES%%man/man3/top_panel.3x.gz
 %%MANPAGES%%man/man3/top_row.3x.gz
 %%MANPAGES%%man/man3/touchline.3x.gz
@@ -1690,7 +1688,6 @@ libdata/pkgconfig/tinfow.pc
 %%MANPAGES%%share/man/man3/setcchar.3x.gz
 %%MANPAGES%%share/man/man3/setscrreg.3x.gz
 %%MANPAGES%%share/man/man3/setsyx.3x.gz
-%%MANPAGES%%share/man/man3/setterm.3x.gz
 %%MANPAGES%%share/man/man3/setupterm.3x.gz
 %%MANPAGES%%share/man/man3/show_panel.3x.gz
 %%MANPAGES%%share/man/man3/slk_attr.3x.gz
@@ -1760,7 +1757,6 @@ libdata/pkgconfig/tinfow.pc
 %%MANPAGES%%share/man/man3/tigetstr_sp.3x.gz
 %%MANPAGES%%share/man/man3/timeout.3x.gz
 %%MANPAGES%%share/man/man3/tiparm.3x.gz
-%%MANPAGES%%share/man/man3/tiparm_sp.3x.gz
 %%MANPAGES%%share/man/man3/top_panel.3x.gz
 %%MANPAGES%%share/man/man3/top_row.3x.gz
 %%MANPAGES%%share/man/man3/touchline.3x.gz
