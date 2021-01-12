@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	Spreadsheet-ReadSXC
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CORION
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extract OpenOffice 1.x spreadsheet data
 
 BUILD_DEPENDS=	p5-Archive-Zip>=1.34:archivers/p5-Archive-Zip \
