@@ -1,6 +1,6 @@
---- Imakefile.orig	Thu Sep  5 04:32:58 1996
-+++ Imakefile	Sun Nov 28 18:14:34 2004
-@@ -14,13 +15,13 @@
+--- Imakefile.orig	1996-09-05 02:32:58 UTC
++++ Imakefile
+@@ -14,13 +14,13 @@ XCOMM Imakefile for widget demo programs
      HDOC = hdoc
  #endif
  #ifdef AlphaArchitecture
@@ -17,7 +17,7 @@
  SYS_LIBRARIES = -lm
  CDEBUGFLAGS = 
  
-@@ -28,6 +29,9 @@
+@@ -28,6 +28,9 @@ WIDGET = SciPlot
  PROGRAMS = sciplot realtime
  TARFILE = sciplot
  
@@ -27,7 +27,7 @@
  SRCS = SciPlot.c SciPlotUtil.c xyplot.c realtime.c
  HDRS = SciPlot.h SciPlotP.h SciPlotUtil.h
  OBJS = $(SRCS:.c=.o)
-@@ -54,7 +58,7 @@
+@@ -54,7 +57,7 @@ XCOMM Definitions for generating the documentation
  	$(HDOC) $*.hdoc > $*.html
  
  
@@ -36,14 +36,14 @@
  
  NormalProgramTarget(sciplot,$(PLOTOBJS),$(MOTIFDEPS),$(MOTIFLIBS),$(SYS_LIBRARIES))
  NormalProgramTarget(realtime,$(RTOBJS),$(MOTIFDEPS),$(MOTIFLIBS),$(SYS_LIBRARIES))
-@@ -79,9 +83,16 @@
+@@ -79,9 +82,16 @@ taz:	$(SRCS)
  	tar cfv $(TARFILE).tar $(TARFILES)
  	compress $(TARFILE).tar
  
 +libs:	$(PLOTOBJS)
 +	$(AR) $(LIBNAME).a $(WIDGET).o $(WIDGET)Util.o
 +	$(RANLIB) $(LIBNAME).a
-+	$(CC) $(SHLIBLDFLAGS) -o $(SONAME).$(SONUM) $(WIDGET).o $(WIDGET)Util.o	\
++	$(CC) $(SHLIBLDFLAGS) -o $(SONAME).$(SONUM) -Wl,-soname,${SONAME} $(WIDGET).o $(WIDGET)Util.o	\
 +		$(LDFLAGS) $(MOTIFLIBS) $(LDLIBS)
 +
  # Dependencies:
