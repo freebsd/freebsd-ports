@@ -26,7 +26,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lxml2
 MAKE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 		XMLLINT="${LOCALBASE}/bin/xmllint"
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
