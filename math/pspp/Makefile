@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pspp
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.4.1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -16,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	texinfo>0:print/texinfo
 LIB_DEPENDS=	libgslcblas.so:math/gsl
 
-USES=		cpe charsetfix gettext-tools gmake gnome iconv localbase libtool \
-		perl5 pkgconfig readline
+USES=		cpe charsetfix gettext-tools gmake gnome iconv localbase	\
+		libtool perl5 pkgconfig python:3.7+,build readline
 
 CPE_VENDOR=	gnu
 USE_GNOME=	libxml2
@@ -28,6 +27,7 @@ MAKE_ARGS=	MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 		XMLLINT="${LOCALBASE}/bin/xmllint"
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+TEST_TARGET=	check
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
@@ -36,17 +36,18 @@ PORTEXAMPLES=	*
 INFO=		pspp pspp-dev
 
 OPTIONS_DEFINE=		DOCS EXAMPLES GUI NLS PGSQL
+OPTIONS_DEFAULT=	GUI
 OPTIONS_SUB=		yes
 
 GUI_LIB_DEPENDS=	libgladeui-2.so:devel/glade \
 			libspread-sheet-widget.so:devel/spread-sheet-widget
-GUI_RUN_DEPENDS=	yelp:x11/yelp
-GUI_USES=		desktop-file-utils
-GUI_USE=		gnome=gtk30,gtksourceview3
+GUI_USES=		desktop-file-utils shared-mime-info
+GUI_USE=		gnome=cairo,gtk30,gtksourceview3,pango pkgconfig
 GUI_VARS=		INSTALLS_ICONS=yes
-GUI_CONFIGURE_WITH=	cairo gui gui-tools
+GUI_CONFIGURE_WITH=	cairo gui
 GUI_INSTALL_TARGET=	install-icons install-ext-icons
 
+NLS_BUILD_DEPENDS=	appstream-glib>0:devel/appstream-glib
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_OFF=	--disable-nls
 NLS_MAKE_ARGS_OFF=	POFILES=""
@@ -54,16 +55,9 @@ NLS_MAKE_ARGS_OFF=	POFILES=""
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	libpq
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|: $$(INSTALL_DATA_HOOKS)|:|g' ${WRKSRC}/Makefile.in
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/pspp-mode.el \
-		${STAGEDIR}${PREFIX}/share/emacs/site-lisp
-
-post-install-GUI-on:
-	${RM} -r ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/mimetypes
+pre-configure-GUI-off:
+	${REINPLACE_CMD} -e '/language=Glade/d;/j src\/ui\/gui/d'	\
+			${WRKSRC}/Makefile.in
 
 post-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \

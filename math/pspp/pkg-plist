@@ -1,45 +1,30 @@
 bin/pspp
 bin/pspp-convert
 bin/pspp-dump-sav
+bin/pspp-output
 %%GUI%%bin/psppire
-%%GUI%%lib/glade/modules/libglade-psppire.a
-%%GUI%%lib/glade/modules/libglade-psppire.so
-%%GUI%%lib/glade/modules/libglade-psppire.so.0
-%%GUI%%lib/glade/modules/libglade-psppire.so.0.0.0
-lib/pspp/libpspp.a
-lib/pspp/libpspp.so
 lib/pspp/libpspp-%%VERSION%%.so
+lib/pspp/libpspp-core-%%VERSION%%.so
 lib/pspp/libpspp-core.a
 lib/pspp/libpspp-core.so
-lib/pspp/libpspp-core-%%VERSION%%.so
-man/man1/pspp.1.gz
-man/man1/psppire.1.gz
+lib/pspp/libpspp.a
+lib/pspp/libpspp.so
 man/man1/pspp-convert.1.gz
 man/man1/pspp-dump-sav.1.gz
-%%GUI%%share/appdata/pspp.appdata.xml
-%%GUI%%share/applications/pspp.desktop
+man/man1/pspp-output.1.gz
+man/man1/pspp.1.gz
+man/man1/psppire.1.gz
+%%GUI%%share/applications/org.fsf.pspp.desktop
 %%PORTDOCS%%%%DOCSDIR%%/pspp.xml
-share/emacs/site-lisp/pspp-mode.el
-%%GUI%%share/glade/catalogs/psppire.xml
-%%GUI%%share/glade/pixmaps/hicolor/16x16/actions/widget-psppire-psppire-acr.png
-%%GUI%%share/glade/pixmaps/hicolor/16x16/actions/widget-psppire-psppire-dialog.png
-%%GUI%%share/glade/pixmaps/hicolor/16x16/actions/widget-psppire-psppire-keypad.png
-%%GUI%%share/glade/pixmaps/hicolor/16x16/actions/widget-psppire-psppire-selector.png
-%%GUI%%share/glade/pixmaps/hicolor/22x22/actions/widget-psppire-psppire-acr.png
-%%GUI%%share/glade/pixmaps/hicolor/22x22/actions/widget-psppire-psppire-dialog.png
-%%GUI%%share/glade/pixmaps/hicolor/22x22/actions/widget-psppire-psppire-keypad.png
-%%GUI%%share/glade/pixmaps/hicolor/22x22/actions/widget-psppire-psppire-selector.png
 %%GUI%%share/icons/hicolor/16x16/apps/pspp.png
 %%GUI%%share/icons/hicolor/16x16/mimetypes/application-x-spss-por.png
 %%GUI%%share/icons/hicolor/16x16/mimetypes/application-x-spss-sav.png
 %%GUI%%share/icons/hicolor/16x16/mimetypes/application-x-spss-sps.png
 %%GUI%%share/icons/hicolor/16x16/mimetypes/application-x-spss-zsav.png
-%%GUI%%share/icons/hicolor/22x22/apps/pspp.png
 %%GUI%%share/icons/hicolor/22x22/mimetypes/application-x-spss-por.png
 %%GUI%%share/icons/hicolor/22x22/mimetypes/application-x-spss-sav.png
 %%GUI%%share/icons/hicolor/22x22/mimetypes/application-x-spss-sps.png
 %%GUI%%share/icons/hicolor/22x22/mimetypes/application-x-spss-zsav.png
-%%GUI%%share/icons/hicolor/24x24/apps/pspp.png
 %%GUI%%share/icons/hicolor/24x24/mimetypes/application-x-spss-por.png
 %%GUI%%share/icons/hicolor/24x24/mimetypes/application-x-spss-sav.png
 %%GUI%%share/icons/hicolor/24x24/mimetypes/application-x-spss-sps.png
@@ -64,7 +49,6 @@ share/emacs/site-lisp/pspp-mode.el
 %%NLS%%share/locale/cs/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/de/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/el/LC_MESSAGES/pspp.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/pspp.mo
@@ -79,6 +63,8 @@ share/emacs/site-lisp/pspp-mode.el
 %%NLS%%share/locale/tr/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pspp.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pspp.mo
+%%GUI%%share/metainfo/org.fsf.pspp.metainfo.xml
+%%GUI%%share/mime/packages/pspp.xml
 %%GUI%%%%DATADIR%%/aggregate.ui
 %%GUI%%%%DATADIR%%/autorecode.ui
 %%GUI%%%%DATADIR%%/barchart.ui
@@ -132,12 +118,17 @@ share/emacs/site-lisp/pspp-mode.el
 %%GUI%%%%DATADIR%%/split-file.ui
 %%GUI%%%%DATADIR%%/syntax-editor.ui
 %%GUI%%%%DATADIR%%/t-test.ui
-%%GUI%%%%DATADIR%%/transpose.ui
 %%GUI%%%%DATADIR%%/text-data-import.ui
+%%GUI%%%%DATADIR%%/transpose.ui
 %%GUI%%%%DATADIR%%/univariate.ui
 %%GUI%%%%DATADIR%%/val-labs-dialog.ui
 %%GUI%%%%DATADIR%%/var-type-dialog.ui
 %%GUI%%%%DATADIR%%/variable-info.ui
 %%GUI%%%%DATADIR%%/weight.ui
-@comment @dir %%DATADIR%%/actions
-@comment @dir %%DATADIR%%/categories
+%%GUI%%@dir %%DATADIR%%/actions
+%%GUI%%@dir %%DATADIR%%/categories
+%%GUI%%@dir share/icons/hicolor/22x22/apps
+%%GUI%%@dir share/icons/hicolor/24x24/apps
+%%GUI%%@dir share/icons/hicolor/96x96/apps
+%%GUI%%@dir share/icons/hicolor/96x96/mimetypes
+%%GUI%%@dir share/icons/hicolor/scalable/mimetypes
