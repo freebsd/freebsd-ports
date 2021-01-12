@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cdogs-sdl
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	games
 
 MAINTAINER=	swills@FreeBSD.org
@@ -21,7 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cxong
 CMAKE_ARGS=	-DCDOGS_DATA_DIR=${DATADIR}/
 
-BINARY_ALIAS=	python=${PYTHON_VERSION}
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 # Fix with clang11
 CFLAGS+=	-fcommon
