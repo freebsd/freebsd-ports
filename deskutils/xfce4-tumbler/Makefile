@@ -18,8 +18,8 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gettext-tools gmake gnome libtool localbase:ldflags pathfix \
-		pkgconfig tar:bzip2 xfce
+USES=		compiler:c11 gettext-tools gmake gnome libtool \
+		localbase:ldflags pathfix pkgconfig tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 glib20 intltool libgsf librsvg2
 USE_LDCONFIG=	yes
 
