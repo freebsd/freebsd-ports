@@ -1577,6 +1577,7 @@ man/man1/octopus.1.gz
 %%DATADIR%%/testsuite/periodic_systems/10-berkeleygw.test
 %%DATADIR%%/testsuite/periodic_systems/11-silicon_force.01-gs.inp
 %%DATADIR%%/testsuite/periodic_systems/11-silicon_force.02-nlcc.inp
+%%DATADIR%%/testsuite/periodic_systems/11-silicon_force.03-nosym.inp
 %%DATADIR%%/testsuite/periodic_systems/11-silicon_force.test
 %%DATADIR%%/testsuite/periodic_systems/12-boron_nitride.01-gs.inp
 %%DATADIR%%/testsuite/periodic_systems/12-boron_nitride.02-gs_gamma.inp
