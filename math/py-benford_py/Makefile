@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	benford_py
-DISTVERSION=	0.3.1
+DISTVERSION=	0.3.2
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,8 @@ USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
+
+post-extract: # https://github.com/milcent/benford_py/issues/48
+	${TOUCH} ${WRKSRC}/README-pypi.md
 
 .include <bsd.port.mk>
