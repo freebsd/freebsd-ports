@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtrabackup
-DISTVERSION=	2.4.20
+DISTVERSION=	2.4.21
 CATEGORIES=	databases
 MASTER_SITES=	https://www.percona.com/downloads/Percona-XtraBackup-${PORTVERSION:R}/Percona-XtraBackup-${PORTVERSION}/source/tarball/:xtrabackup \
 		https://ftp.osuosl.org/pub/blfs/conglomeration/boost/:boost SF/boost/boost/1.59.0/:boost
@@ -13,7 +13,7 @@ MAINTAINER=	samm@FreeBSD.org
 COMMENT=	OpenSource version of InnoDB backup with support of Percona extensions
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=		fails to compile: cannot combine with previous 'type-name' declaration specifier
 BROKEN_armv7=		fails to compile: cannot combine with previous 'type-name' declaration specifier
