@@ -13,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 BROKEN_armv6=	fails to compile: Error: undefined identifier _jmp_buf, did you mean alias jmp_buf?
 BROKEN_armv7=	fails to compile: Error: undefined identifier _jmp_buf, did you mean alias jmp_buf?
 BROKEN_i386=	function core.bitop.bsf (uint v) is not callable using argument types (ulong)
+BROKEN_riscv64=	fails to compile: unable to get target for 'riscv64-portbld-freebsd13.0', see -version and -mtriple.
 
 LLVM_VERSION=	10
 BUILD_DEPENDS=	llvm70>0:devel/llvm70 \
