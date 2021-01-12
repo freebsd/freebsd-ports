@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapp
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
