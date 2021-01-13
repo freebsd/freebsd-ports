@@ -11,7 +11,8 @@ COMMENT=	Better top(1) - interactive process viewer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf libtool localbase ncurses pkgconfig python:build shebangfix
+USES=		autoreconf compiler:c11 libtool localbase ncurses pkgconfig \
+		python:build shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	htop-dev
