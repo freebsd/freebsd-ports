@@ -26,6 +26,11 @@ PLIST_SUB+=	PDFVIEW=""
 USES+=		ghostscript
 .endif
 
+post-patch:
+# Fix the build with -fno-common (for Clang 11 and GCC 10)
+	@${REINPLACE_CMD} -e '/serverConnection/s,^,extern ,' \
+		${WRKSRC}/Inspector/ContentViewers/ImageViewer/Resizer.h
+
 pre-configure:
 	${RM} -r ${WRKSRC}/GWMetadata
 
