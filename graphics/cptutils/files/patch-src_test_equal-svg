@@ -1,0 +1,11 @@
+--- src/test/equal-svg.orig	2017-03-03 19:51:28 UTC
++++ src/test/equal-svg
+@@ -14,7 +14,7 @@ CSV2='/tmp/equal-svg-2.csv'
+ 
+ create_filtered_csv()
+ {
+-    $XML2 < $1 | \
++    cat < $1 | \
+ 	grep -v created | \
+ 	grep -v creator | \
+ 	grep -v '\@id' | \
