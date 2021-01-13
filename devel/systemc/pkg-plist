@@ -241,7 +241,7 @@ include/tlm_utils/peq_with_get.h
 include/tlm_utils/simple_initiator_socket.h
 include/tlm_utils/simple_target_socket.h
 include/tlm_utils/tlm_quantumkeeper.h
-lib/libsystemc-2.3.3.so
+lib/libsystemc-2.3.4.so
 lib/libsystemc.a
 lib/libsystemc.so
 libdata/pkgconfig/systemc.pc
