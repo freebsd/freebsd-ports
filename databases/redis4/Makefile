@@ -5,7 +5,7 @@ PORTNAME=	redis4
 PORTVERSION=	4.0.14
 PORTREVISION=	2
 CATEGORIES=	databases
-MASTER_SITES=	http://download.redis.io/releases/
+MASTER_SITES=	https://download.redis.io/releases/
 DISTNAME=	redis-${PORTVERSION}
 
 MAINTAINER=	osa@FreeBSD.org

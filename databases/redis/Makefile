@@ -4,7 +4,7 @@
 PORTNAME=	redis
 PORTVERSION=	6.0.10
 CATEGORIES=	databases
-MASTER_SITES=	http://download.redis.io/releases/
+MASTER_SITES=	https://download.redis.io/releases/
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
