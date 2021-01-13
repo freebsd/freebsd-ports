@@ -2,7 +2,7 @@
 
 PORTNAME=	ustreamer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2
+DISTVERSION=	3.3
 CATEGORIES=	multimedia net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,10 @@ CFLAGS+=	-DWITH_PTHREAD_NP=0 # src/threading.h:101:4: error: thread_get_name() n
 
 INSTALL_TARGET=	install-strip
 
-PLIST_FILES=	bin/ustreamer
+PLIST_FILES=	bin/ustreamer \
+		bin/ustreamer-dump \
+		man1/ustreamer-dump.1.gz \
+		man1/ustreamer.1.gz
 
 BROKEN_FreeBSD_11=	error: thread_get_name() not implemented, you can disable it using WITH_PTHREAD_NP=0
 
