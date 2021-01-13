@@ -12,6 +12,8 @@ COMMENT=	Tracker for making C64/NES/Amiga-style chiptunes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: menu_
+
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 USES=		compiler:c11 desktop-file-utils dos2unix gmake localbase:ldconfig \
