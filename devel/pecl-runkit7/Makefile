@@ -9,6 +9,6 @@ COMMENT=	Extension to replace, rename, and remove user functions and classes
 
 LICENSE=	PHP301
 
-USES=		php:pecl
+USES=		compiler:c11 php:pecl
 
 .include <bsd.port.mk>
