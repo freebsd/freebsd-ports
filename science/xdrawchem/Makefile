@@ -1,25 +1,25 @@
 # $FreeBSD$
 
 PORTNAME=	xdrawchem
-DISTVERSION=	1.10.2-1
-PORTREVISION=	4
+DISTVERSION=	1.11.0-2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Two-dimensional molecule drawing program
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/doc/GPL.txt
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libopenbabel.so:science/openbabel
 
 USES=		compiler:c++11-lang gl qmake qt:5
-USE_GITHUB=	yes
-GH_ACCOUNT=	bryanherger
-USE_QT=		core gui network printsupport widgets xml buildtools_build
+USE_QT=		core gui network printsupport svg widgets xml buildtools_build
 USE_GL=		gl
 
-WRKSRC_SUBDIR=	${PORTNAME}-qt5
+USE_GITLAB=	yes
+GL_SITE=	https://salsa.debian.org
+GL_ACCOUNT=	georgesk
+GL_COMMIT=	a3f74c34eb09fa72ee16848ec6901049ca5309d5
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|'	\
