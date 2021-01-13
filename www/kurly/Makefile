@@ -12,6 +12,9 @@ COMMENT=	Alternative implementation of curl written in Golang
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream is gone
+EXPIRATION_DATE=	2021-01-27
+
 USES=		go
 
 USE_GITLAB=	yes
