@@ -16,6 +16,7 @@ TEST_DEPENDS=	p5-HTTP-Daemon>=0:www/p5-HTTP-Daemon \
 		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
 USES=		charsetfix cpe iconv localbase pkgconfig tar:lz
+USE_CSTD=	c99
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 OPTIONS_SUB=	yes
