@@ -3,7 +3,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	4.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	4

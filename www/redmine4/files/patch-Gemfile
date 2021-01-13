@@ -21,6 +21,15 @@
  gem "rbpdf", "~> 1.20.0"
  
  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+@@ -22,7 +22,7 @@ gem 'tzinfo-data', platforms: [:mingw, :x64_mingw, :ms
+ 
+ # Optional gem for LDAP authentication
+ group :ldap do
+-  gem "net-ldap", "~> 0.16.0"
++  gem "net-ldap", "~> 0.17.0"
+ end
+ 
+ # Optional gem for OpenID authentication
 @@ -31,66 +31,6 @@ group :openid do
    gem "rack-openid"
  end
