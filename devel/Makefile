@@ -369,6 +369,7 @@
     SUBDIR += codesearch-py
     SUBDIR += codeworker
     SUBDIR += collada-dom
+    SUBDIR += color
     SUBDIR += colorgcc
     SUBDIR += colormake
     SUBDIR += commit-patch

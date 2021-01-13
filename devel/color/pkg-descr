@@ -1,0 +1,22 @@
+Key features:
+* No virtual functions
+* Minimal memory footprint
+* Ability to copy array/vector of colors with memcpy, memmove and initialize
+  with memset.
+* Conversions from/to different models ( and its formats ).
+* Headers only
+     One file to include to start the fun
+     By using del or rm it is reducible in to only two of them.
+* No third parties
+* No additional binaries
+* Out of the box ready
+     No need to recompile or start some install process.
+* Color models:
+  * GRAY,
+  * RGB, CMY, CMYK,
+  * HSI, HSL, HSV, HWB,
+  * YIQ, YUV(BT.601, BT.709), YCgCo, YPbPr(BT.601, BT.709, BT.2020),
+  * XYZ(sRGB, D65, 2deg), LAB( CIE, Hunter), LUV, LMS (von Kries D65,
+    von Kries E, BFD, MCAT02), xyY, LabCH, LuvCH
+
+WWW: https://github.com/dmilos/color
