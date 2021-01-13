@@ -4,6 +4,7 @@ PORTNAME=	please
 DISTVERSIONPREFIX=	v
 DISTVERSION=	15.12.0
 CATEGORIES=	devel
+PKGNAMESUFFIX=	.build
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	High-performance extensible build system for reproducible builds
