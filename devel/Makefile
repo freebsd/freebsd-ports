@@ -1157,6 +1157,7 @@
     SUBDIR += libdwarf
     SUBDIR += libe
     SUBDIR += libedit
+    SUBDIR += libegit2
     SUBDIR += libeio
     SUBDIR += libelf
     SUBDIR += libepoll-shim

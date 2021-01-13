@@ -1,0 +1,78 @@
+From de3c48d72ec7064e7f0522877fe759c729df0c50 Mon Sep 17 00:00:00 2001
+From: Maxim Cournoyer <maxim.cournoyer@gmail.com>
+Date: Wed, 25 Mar 2020 11:32:18 -0400
+Subject: [PATCH] Allow using a system provided libgit2 library
+
+Setting the USE_SYSTEM_LIBGIT2 Make or CMake variable (through the
+BUILD_OPTIONS variable) to any value enables using the system library.
+The default behavior of using a bundled copy of libgit2 is unchanged.
+--- CMakeLists.txt.orig	2020-05-15 17:59:08 UTC
++++ CMakeLists.txt
+@@ -7,9 +7,14 @@ set(BUILD_SHARED_LIBS OFF CACHE BOOL "shared" FORCE)
+ set(BUILD_CLAR OFF CACHE BOOL "clar" FORCE)
+ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DEGIT_DEBUG")
+ 
+-add_subdirectory(libgit2)
++if(USE_SYSTEM_LIBGIT2)
++  find_package(PkgConfig REQUIRED)
++  pkg_check_modules(git2 REQUIRED IMPORTED_TARGET libgit2)
++else()
++  add_subdirectory(libgit2)
++  find_library(git2 libgit2.a)
++endif()
+ 
+-find_library(git2 libgit2.a)
+ add_subdirectory(src)
+ 
+ enable_testing()
+ CMakeLists.txt     |  9 +++++++--
+ Makefile           | 11 +++++++++++
+ src/CMakeLists.txt |  9 +++++++--
+ 3 files changed, 25 insertions(+), 4 deletions(-)
+
+--- Makefile.orig	2020-05-15 17:59:08 UTC
++++ Makefile
+@@ -13,6 +13,13 @@ ifeq ($(UNAME),MSYS)
+ 	BUILD_OPTIONS+= -G "MSYS Makefiles"
+ endif
+ 
++# If the variable USE_SYSTEM_LIBGIT2 is set to *any* value, use the
++# system provided libgit2 library.
++USE_SYSTEM_LIBGIT2? := \
++	$(if $(or $(USE_SYSTEM_LIBGIT2),\
++	 	  $(findstring USE_SYSTEM_LIBGIT2,$(BUILD_OPTIONS))),\
++		true)
++
+ ifeq "$(TRAVIS)" "true"
+ ## Makefile for Travis ###################################################
+ #
+@@ -87,7 +94,11 @@ submodule-update:
+ 	@git submodule update
+ 
+ libgit2:
++ifeq ($(USE_SYSTEM_LIBGIT2?),)
+ 	@git submodule update --init
++else
++	@echo "Using the system provided libgit2 library"
++endif
+ 
+ CLEAN  = $(ELCS) $(PKG)-autoloads.el build
+ 
+--- src/CMakeLists.txt.orig	2020-05-15 17:59:08 UTC
++++ src/CMakeLists.txt
+@@ -13,8 +13,13 @@ if(WIN32)
+   set_target_properties(egit2 PROPERTIES PREFIX lib)
+ endif(WIN32)
+ 
+-target_link_libraries(egit2 git2)
+-target_include_directories(egit2 SYSTEM PRIVATE "${libgit2_SOURCE_DIR}/include")
++if(USE_SYSTEM_LIBGIT2)
++  target_link_libraries(egit2 PRIVATE PkgConfig::git2)
++else()
++  target_link_libraries(egit2 git2)
++  target_include_directories(
++    egit2 SYSTEM PRIVATE "${libgit2_SOURCE_DIR}/include")
++endif()
+ 
+ if(CMAKE_COMPILER_IS_GNUCC)
+   target_compile_options(egit2 PRIVATE -Wall -Wextra)
