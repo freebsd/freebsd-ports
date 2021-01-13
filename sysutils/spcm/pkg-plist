@@ -46,6 +46,7 @@ sbin/cluster-change-primary-group
 sbin/cluster-change-uid
 sbin/cluster-check-cron-updates
 sbin/cluster-create-pw-age
+sbin/cluster-dhcp-cleanup
 sbin/cluster-diagnostics
 sbin/cluster-dist-file
 sbin/cluster-enable-autologout
@@ -103,6 +104,7 @@ sbin/cluster-user-cleanup
 sbin/cluster-useradd
 sbin/cluster-usermod
 sbin/cluster-users
+sbin/cluster-wip-checkout
 sbin/cluster-wip-update
 sbin/compute-node-set-arc-max
 sbin/ganglia-web-setup

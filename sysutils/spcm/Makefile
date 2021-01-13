@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spcm
-DISTVERSION=	0.5.0
+DISTVERSION=	0.5.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
