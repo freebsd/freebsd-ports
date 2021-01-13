@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	chroma
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	games
 MASTER_SITES=	http://www.level7.org.uk/chroma/download/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Abstract puzzle game
