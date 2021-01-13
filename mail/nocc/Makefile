@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nocc
-PORTVERSION=	1.9.9
+PORTVERSION=	1.9.10
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/NOCC/${PORTVERSION}
 
@@ -15,17 +15,19 @@ USES=		php:web
 
 OPTIONS_DEFINE=	DOCS
 
-USE_PHP=	ctype iconv imap mbstring pcre session
+USE_PHP=	ctype iconv imap mbstring openssl pcre session
 
 SUB_FILES=	pkg-message
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 NOCCCOMP=	.htaccess favicon.ico robots.txt \
-		action.php common.php contacts.php contacts_manager.php \
+		action.php ckeditor.php ckeditor5.php common.php \
+		contacts.php contacts_manager.php \
 		delete.php down_mail.php download.php get_img.php \
 		help.php index.php logout.php rss.php send.php \
-		ckeditor classes config html js lang themes utils
+		ckeditor5 classes config html htmlpurifier js lang \
+		themes utils
 
 PORTDOCS=	*
 
