@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	milter-greylist
-PORTVERSION=	4.6.3
+PORTVERSION=	4.6.4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/ \
 		http://fossies.org/unix/privat/
@@ -12,9 +12,9 @@ COMMENT=	Easy-to-use greylist milter for sendmail and postfix
 
 LICENSE=	BSD3CLAUSE
 
-MAKE_JOBS_UNSAFE=	yes
-
 USES=		tar:tgz
+
+MAKE_JOBS_UNSAFE=	yes
 
 ##
 # Use the following quirks to choose which sendmail to use (ports or system):
