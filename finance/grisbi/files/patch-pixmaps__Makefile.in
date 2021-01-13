@@ -1,11 +1,11 @@
---- pixmaps/Makefile.in.orig	2019-01-26 06:00:37 UTC
+--- pixmaps/Makefile.in.orig	2020-12-21 13:13:38 UTC
 +++ pixmaps/Makefile.in
-@@ -403,7 +403,7 @@ top_build_prefix = @top_build_prefix@
+@@ -406,7 +406,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = flags
 -grisbi_pixmapsdir = $(datadir)/pixmaps/$(PACKAGE)
 +grisbi_pixmapsdir = $(pkgdatadir)/pixmaps
  grisbi_pixmaps_DATA = \
- 	grisbi-logo.png \
- 	grisbi-32.png \
+ 	grisbi.svg \
+ 	gsb-amount-32.png \
