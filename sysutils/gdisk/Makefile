@@ -14,7 +14,7 @@ COMMENT=	GPT fdisk
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libuuid.so:misc/e2fsprogs-libuuid
