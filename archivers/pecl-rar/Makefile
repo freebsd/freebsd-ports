@@ -10,7 +10,7 @@ COMMENT=	PECL extension to create and read RAR files
 
 LICENSE=	PHP301
 
-USES=		php:pecl
+USES=		compiler:c11 php:pecl
 USE_PHP=	spl:build
 
 CONFIGURE_ARGS=	--enable-rar
