@@ -1,11 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	gcc-arm-embedded
-# This is typo (2030 instead of 2020), buit I don't want to bump EPOCH
-PORTVERSION=	9.3.20300529
-PORTREVISION=	2
+PORTVERSION=	10.2.20201211
 CATEGORIES=	devel
-MASTER_SITES=	https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/
+MASTER_SITES=	https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/10-2020q4/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
 
 MAINTAINER=	lev@FreeBSD.org
@@ -50,8 +48,8 @@ GNU_CONFIGURE=	yes
 PATCH_WRKSRC=	${WRKDIR}/${ORIGINAL_PACKAGE_NAME}
 BUILD_WRKSRC=	${WRKDIR}
 
-GCC_VERSION=		9.3.1
-FULL_VERSION=		9-2020-q2-update
+GCC_VERSION=		10.2.1
+FULL_VERSION=		10-2020-q4-major
 TARGET=			arm-none-eabi
 ORIGINAL_PACKAGE_NAME=	gcc-${TARGET}-${FULL_VERSION}
 

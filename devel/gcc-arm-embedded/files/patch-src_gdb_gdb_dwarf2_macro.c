@@ -1,6 +1,6 @@
---- src/gdb/gdb/dwarf2read.c.orig	2019-10-26 00:03:38 UTC
-+++ src/gdb/gdb/dwarf2read.c
-@@ -24621,7 +24621,7 @@ dwarf_decode_macro_bytes (struct dwarf2_cu *cu,
+--- src/gdb/gdb/dwarf2/macro.c.orig	2021-01-11 21:34:03.097341000 +0300
++++ src/gdb/gdb/dwarf2/macro.c	2021-01-11 21:37:13.156194000 +0300
+@@ -678,7 +678,7 @@
  	  }
  	  break;
  
@@ -9,7 +9,7 @@
  	  if (!section_is_gnu)
  	    {
  	      unsigned int bytes_read;
-@@ -24802,7 +24802,7 @@ dwarf_decode_macros (struct dwarf2_cu *cu, unsigned in
+@@ -823,7 +823,7 @@
  	  mac_ptr += offset_size;
  	  break;
  
