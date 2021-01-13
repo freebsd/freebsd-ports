@@ -25,8 +25,8 @@ CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	ac_cv_fc_compiler_nag=no
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-USE_PERL5=	build
 USES=		fortran gmake pathfix perl5 tar:bzip2
+USE_PERL5=	build
 
 PORTDOCS=	COPYRIGHT INSTALL README
 
@@ -36,6 +36,13 @@ OPENMPI_CONFIGURE_ON=	--with-mpi=${LOCALBASE}/mpi/openmpi
 OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 OPENMPI3_CONFIGURE_ON=	--with-mpi=${LOCALBASE}/mpi/openmpi3
 OPENMPI3_LIB_DEPENDS=	libmpi.so:net/openmpi3
+
+.include <bsd.port.pre.mk>
+
+.if ${GCC_DEFAULT} >= 10
+# workaround for Type mismatch between actual argument at (1) and actual argument at (2) (INTEGER(8)/CHARACTER(*)).
+FCFLAGS+=	-fallow-argument-mismatch
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/$$(INSTALL.*$$(PREFIX)/ s|$$(PREFIX)|$$(DESTDIR)&|' ${WRKSRC}/Makefile.in

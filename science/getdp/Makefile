@@ -20,6 +20,13 @@ USES=		fortran tar:tgz cmake
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.pre.mk>
+
+.if ${GCC_DEFAULT} >= 10
+# workaround for Rank mismatch in argument 'lines' at (1) (rank-1 and scalar)
+FFLAGS+=	-fallow-argument-mismatch
+.endif
+
 do-test:
 	cd ${WRKSRC}/demos && yes "" | ${STAGEDIR}${PREFIX}/bin/${PORTNAME} magnet.pro -solve MagSta_phi
 

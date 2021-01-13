@@ -55,6 +55,11 @@ CFLAGS+=	-fpic
 FFLAGS+=	-fpic
 .endif
 
+.if ${GCC_DEFAULT} >= 10
+# workaround for Missing actual argument for argument '_formal_15' at (1)
+FFLAGS+=	-fallow-argument-mismatch
+.endif
+
 pre-build:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%CC%%+${CC}+g ; \
 	s+%%BLAS_LIBS%%+${BLASLIB}+ ; \

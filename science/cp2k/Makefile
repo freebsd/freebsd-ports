@@ -66,6 +66,10 @@ pre-configure:
 	fi
 .endif
 
+.if ${GCC_DEFAULT} >= 10
+BROKEN=		fails to build with GCC 10: Element of assumed-shape or pointer array as actual argument at (1) cannot correspond to actual argument at (2)
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -i '' 's|LIBS.*=.*|& ${LDFLAGS}|; s|^FCFLAGS.*=.*|& -I${LOCALBASE}/include|; s| -march=native||' ${WRKSRC}/arch/FreeBSD-*
 

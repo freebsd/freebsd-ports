@@ -129,6 +129,13 @@ CONFIGURE_ARGS+=	--without-openmp
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${GCC_DEFAULT} >= 10
+# workaround for Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
+FFLAGS+=	-fallow-argument-mismatch
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/local,${LOCALBASE},' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's, gfortran, ${FC},' ${WRKSRC}/modules/dynamic_link/src/scripts/configure

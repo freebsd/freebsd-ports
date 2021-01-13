@@ -32,8 +32,14 @@ GH_TAGNAME=	29e7f39
 
 PLIST_FILES=	lib/libretro/parallel_n64_libretro.so
 
+.include <bsd.port.pre.mk>
+
+.if ${GCC_DEFAULT} >= 10
+BROKEN=		fails to link: ./mupen64plus-core/src/dd/dd_disk.o:(.bss+0xc): multiple definition of `CUR_BLOCK'
+.endif
+
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
 	${INSTALL_LIB} ${WRKSRC}/parallel_n64_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

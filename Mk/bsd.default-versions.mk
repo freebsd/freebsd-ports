@@ -53,7 +53,7 @@ GCC_DEFAULT?=		8
 .elif ${ARCH} == "powerpc64le"
 GCC_DEFAULT?=		10
 .else
-GCC_DEFAULT?=		9
+GCC_DEFAULT?=		10
 .endif
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl

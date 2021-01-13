@@ -31,7 +31,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .if ${ARCH} == i386 && ${CHOSEN_COMPILER_TYPE} == clang
 # gsm0610_rpe.c:81:10: error: invalid operand for instruction
-USE_GCC=	yes
+USE_GCC=	9
 .endif
 
 post-patch:

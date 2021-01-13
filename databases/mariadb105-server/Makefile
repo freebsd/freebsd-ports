@@ -212,7 +212,7 @@ PLIST_SUB+=	WSREP="@comment "
 .endif
 
 .if ${ARCH} == i386
-USE_GCC=	yes
+USE_GCC=	9
 CFLAGS+=	-DHAVE_GCC_C11_ATOMICS -latomic -DUSE_NEW_READLINE_INTERFACE
 CXXFLAGS+=	-fpermissive
 .endif
