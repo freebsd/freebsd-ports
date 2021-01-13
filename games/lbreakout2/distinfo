@@ -1,2 +1,5 @@
+TIMESTAMP = 1610490449
 SHA256 (lbreakout2-2.6.5.tar.gz) = 9104d6175553da3442dc6a5fc407a669e2f5aff3eedc5d30409eb003b7a78d6f
 SIZE (lbreakout2-2.6.5.tar.gz) = 3491519
+SHA256 (lbreakout2.png) = 8941051e9a43104625cc271c2ea9c8f2c4f0065f4ac54f66415798e9c79fbc5e
+SIZE (lbreakout2.png) = 1673
