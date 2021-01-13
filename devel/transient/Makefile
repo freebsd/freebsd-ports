@@ -1,0 +1,42 @@
+# $FreeBSD$
+
+PORTNAME=	transient
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.0-75
+DISTVERSIONSUFFIX=	-g7811dcf
+CATEGORIES=	devel elisp
+PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
+
+MAINTAINER=	yasu@utahime.org
+COMMENT=	Emacs key and popup interface for complex keybindings
+
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		emacs gmake makeinfo
+USE_GITHUB=	yes
+GH_ACCOUNT=	magit
+
+ALL_TARGET=	lisp info
+
+NO_ARCH=	yes
+
+INFO=		transient
+
+PORTDOCS=	CHANGELOG README.md
+
+OPTIONS_DEFINE=	DOCS
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/lisp/*.el* \
+		${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.info \
+		${STAGEDIR}${PREFIX}/${INFO_PATH}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/CHANGELOG ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

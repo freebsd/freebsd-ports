@@ -6855,6 +6855,7 @@
     SUBDIR += tpasm
     SUBDIR += tradcpp
     SUBDIR += transwarp
+    SUBDIR += transient
     SUBDIR += treepy.el
     SUBDIR += trellis
     SUBDIR += trio
