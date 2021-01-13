@@ -1,4 +1,4 @@
---- src/Makefile.orig	2019-09-25 10:40:18 UTC
+--- src/Makefile.orig	2019-11-29 16:35:59 UTC
 +++ src/Makefile
 @@ -29,7 +29,7 @@ endif
  WARN=-Wall -W -Wno-missing-field-initializers
@@ -15,11 +15,11 @@
  FINAL_LIBS=-lm
 -DEBUG=-g -ggdb
  
- ifeq ($(uname_S),SunOS)
- 	# SunOS
-@@ -94,6 +93,11 @@ ifeq ($(uname_S),Darwin)
- 	# Darwin
- 	FINAL_LIBS+= -ldl
+ # Linux ARM needs -latomic at linking time
+ ifneq (,$(filter aarch64 armv,$(uname_M)))
+@@ -105,6 +104,11 @@ ifeq ($(uname_S),Darwin)
+ 	OPENSSL_CFLAGS=-I/usr/local/opt/openssl/include
+ 	OPENSSL_LDFLAGS=-L/usr/local/opt/openssl/lib
  else
 +ifeq ($(uname_S),FreeBSD)
 +        # FreeBSD
@@ -29,7 +29,7 @@
  ifeq ($(uname_S),AIX)
          # AIX
          FINAL_LDFLAGS+= -Wl,-bexpall
-@@ -120,6 +124,7 @@ else
+@@ -131,6 +135,7 @@ else
  	# All the other OSes (notably Linux)
  	FINAL_LDFLAGS+= -rdynamic
  	FINAL_LIBS+=-ldl -pthread -lrt

@@ -843,6 +843,7 @@
     SUBDIR += redis
     SUBDIR += redis-devel
     SUBDIR += redis4
+    SUBDIR += redis5
     SUBDIR += redis_exporter
     SUBDIR += redisdesktopmanager
     SUBDIR += retcl

@@ -1,4 +1,4 @@
---- src/mkreleasehdr.sh.orig	2019-09-25 10:40:18 UTC
+--- src/mkreleasehdr.sh.orig	2019-11-22 16:54:22 UTC
 +++ src/mkreleasehdr.sh
 @@ -1,6 +1,6 @@
  #!/bin/sh
@@ -8,4 +8,4 @@
 +GIT_DIRTY="0"
  BUILD_ID=`uname -n`"-"`date +%s`
  if [ -n "$SOURCE_DATE_EPOCH" ]; then
-   BUILD_ID=$(date -u -d "@$SOURCE_DATE_EPOCH" +%s 2>/dev/null || date -u -r "$SOURCE_DATE_EPOCH" +%s 2>/dev/null || date -u %s)
+   BUILD_ID=$(date -u -d "@$SOURCE_DATE_EPOCH" +%s 2>/dev/null || date -u -r "$SOURCE_DATE_EPOCH" +%s 2>/dev/null || date -u +%s)

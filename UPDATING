@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210113:
+  AFFECTS: users of databases/redis[-devel]
+  AUTHOR: osa@FreeBSD.org
+
+  The databases/redis port has been updated to the recent stable release.
+  Users wanting to stay on v5.x can replace databases/redis with
+  databases/redis5 with one of the following commands:
+
+  # pkg install databases/redis5
+    or
+  # portmaster -o databases/redis5 databases/redis
+    or
+  # portupgrade -o databases/redis5 databases/redis
+
 20210106:
   AFFECTS: mail/dovecot
   AUTHOR: pi@FreeBSD.org

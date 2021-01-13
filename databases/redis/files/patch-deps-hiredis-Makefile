@@ -1,6 +1,6 @@
---- deps/hiredis/Makefile.orig	2019-09-25 10:40:18 UTC
+--- deps/hiredis/Makefile.orig	2019-11-29 16:35:59 UTC
 +++ deps/hiredis/Makefile
-@@ -15,7 +15,7 @@ HIREDIS_PATCH=$(shell grep HIREDIS_PATCH hiredis.h | a
+@@ -21,7 +21,7 @@ HIREDIS_PATCH=$(shell grep HIREDIS_PATCH hiredis.h | a
  HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h | awk '{print $$3}')
  
  # Installation related variables and target
@@ -9,33 +9,32 @@
  INCLUDE_PATH?=include/hiredis
  LIBRARY_PATH?=lib
  PKGCONF_PATH?=pkgconfig
-@@ -38,10 +38,10 @@ export REDIS_TEST_CONFIG
+@@ -44,10 +44,8 @@ export REDIS_TEST_CONFIG
  # Fallback to gcc when $CC is not in $PATH.
- CC:=$(shell sh -c 'type $(CC) >/dev/null 2>/dev/null && echo $(CC) || echo gcc')
- CXX:=$(shell sh -c 'type $(CXX) >/dev/null 2>/dev/null && echo $(CXX) || echo g++')
+ CC:=$(shell sh -c 'type $${CC%% *} >/dev/null 2>/dev/null && echo $(CC) || echo gcc')
+ CXX:=$(shell sh -c 'type $${CXX%% *} >/dev/null 2>/dev/null && echo $(CXX) || echo g++')
 -OPTIMIZATION?=-O3
-+#OPTIMIZATION?=-O3
- WARNINGS=-Wall -W -Wstrict-prototypes -Wwrite-strings
+ WARNINGS=-Wall -W -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers
 -DEBUG_FLAGS?= -g -ggdb
--REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS) $(ARCH)
-+#DEBUG_FLAGS?= -g -ggdb
+-REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CPPFLAGS) $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS)
 +REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS)
- REAL_LDFLAGS=$(LDFLAGS) $(ARCH)
+ REAL_LDFLAGS=$(LDFLAGS)
  
  DYLIBSUFFIX=so
-@@ -59,6 +59,15 @@ ifeq ($(uname_S),SunOS)
+@@ -82,6 +80,16 @@ endif
+ ifeq ($(uname_S),SunOS)
    REAL_LDFLAGS+= -ldl -lnsl -lsocket
    DYLIB_MAKE_CMD=$(CC) -G -o $(DYLIBNAME) -h $(DYLIB_MINOR_NAME) $(LDFLAGS)
-   INSTALL= cp -r
 +endif
 +ifeq ($(uname_S),FreeBSD)
 +  CFLAGS?=$(CFLAGS)
-+  CCLINK?=-pthread
++  CCLINK?=pthread
 +  LDFLAGS?=-L. -Wl,-rpath,.
 +  DYLIBNAME?=libhiredis.so
 +  DYLIB_MAKE_CMD?=$(CC) -o ${DYLIBNAME} ${OBJ}
 +  STLIBNAME?=libhiredis.a
 +  STLIB_MAKE_CMD?=ar rcs ${STLIBNAME} ${OBJ}
++  SSL_LDFLAGS+=	${OPENSSL_LDFLAGS}
  endif
  ifeq ($(uname_S),Darwin)
    DYLIBSUFFIX=dylib

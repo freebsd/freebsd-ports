@@ -3,7 +3,7 @@
 
 PORTNAME=	redis4
 PORTVERSION=	4.0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 DISTNAME=	redis-${PORTVERSION}
@@ -58,7 +58,7 @@ USES+=		tcl:build
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
 
-CONFLICTS?=	redis-5.* redis-devel-5.*
+CONFLICTS?=	redis-6.* redis5-5.* redis-devel-6.*
 
 USES+=		gmake
 MAKE_ENV=	"V=yo"
