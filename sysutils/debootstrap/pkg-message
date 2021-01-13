@@ -2,9 +2,13 @@
 { type: install
   message: <<EOM
 To successfully create an installation of Debian or Ubuntu
-debootstrap requires the following kernel modules loaded:
+debootstrap requires the following kernel modules to be loaded:
 
-fdescfs linprocfs linsysfs tmpfs
+linux64 fdescfs linprocfs linsysfs tmpfs
+
+To install Ubuntu Bionic into /compat/ubuntu, use:
+
+debootstrap --no-check-gpg bionic /compat/ubuntu
 EOM
 }
 ]

@@ -1,6 +1,6 @@
---- functions.orig	2019-07-06 11:22:30 UTC
+--- functions.orig	2020-03-14 00:53:38 UTC
 +++ functions
-@@ -1139,6 +1139,7 @@ setup_proc () {
+@@ -1157,6 +1157,7 @@ setup_proc () {
  	case "$HOST_OS" in
  	    *freebsd*)
  		umount_on_exit /dev
@@ -8,7 +8,7 @@
  		umount_on_exit /proc
  		umount "$TARGET/proc" 2>/dev/null || true
  		if [ "$HOST_OS" = kfreebsd ]; then
-@@ -1224,7 +1225,8 @@ setup_dynamic_devices () {
+@@ -1242,7 +1243,8 @@ setup_dynamic_devices () {
  	    kfreebsd*)
  		in_target mount -t devfs devfs /dev ;;
  	    freebsd)

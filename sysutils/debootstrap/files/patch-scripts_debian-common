@@ -1,6 +1,6 @@
---- scripts/gutsy.orig	2020-03-13 02:04:21 UTC
-+++ scripts/gutsy
-@@ -242,10 +242,21 @@ echo \"Warning: Fake initctl called, doing nothing\"" 
+--- scripts/debian-common.orig	2021-01-12 21:19:09 UTC
++++ scripts/debian-common
+@@ -200,10 +200,21 @@ echo \"Warning: Fake start-stop-daemon called, doing n
  		predep=$(without "$(without "$(resolve_deps $predep)" "$required")" "$done_predeps")
  		# XXX: progress is tricky due to how dpkg_progress works
  		# -- cjwatson 2009-07-29
@@ -22,17 +22,3 @@
  	done
  
  	if [ -n "$base" ]; then
-@@ -256,10 +267,13 @@ echo \"Warning: Fake initctl called, doing nothing\"" 
- 
- 		info CONFBASE "Configuring the base system..."
- 
-+		# This step sometimes fails due to some missing functionality in Linuxulator.  Just ignore it.
-+		set +e
- 		smallyes '' |
- 			(repeatn 5 in_target_failmsg CONF_BASE_FAIL_FIVE "Failure while configuring base packages.  This will be re-attempted up to five times." "" \
- 			dpkg --status-fd 8 --force-confold --skip-same-version --configure -a 8>&1 1>&7 || echo EXITCODE $?) |
- 			dpkg_progress $baseprog $bases CONFBASE "Configuring base system" CONFIGURING
-+		set -e
- 	fi
- 
- 	if [ -x "$TARGET/sbin/initctl.REAL" ]; then
