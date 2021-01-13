@@ -1,6 +1,6 @@
-TIMESTAMP = 1610430423
-SHA256 (cloudquery-cloudquery-v0.8.1_GH0.tar.gz) = cd64d1fb583604f4a4a7aa0ae2976cbb2409dbbc018abc3ec098306cf161fd9c
-SIZE (cloudquery-cloudquery-v0.8.1_GH0.tar.gz) = 155456
+TIMESTAMP = 1610503567
+SHA256 (cloudquery-cloudquery-v0.8.2_GH0.tar.gz) = 6a8c798e7fb8b8331b262c3260cf6aca6c747f2074a90e82eb335f825e3a6965
+SIZE (cloudquery-cloudquery-v0.8.2_GH0.tar.gz) = 155616
 SHA256 (Azure-azure-sdk-for-go-v49.0.0_GH0.tar.gz) = 33ef1526e54efe4dd8c2e720a676e5d991bedf5d35b39795e22e4de97fc4ee9c
 SIZE (Azure-azure-sdk-for-go-v49.0.0_GH0.tar.gz) = 31443658
 SHA256 (Azure-go-autorest-446f41b7d65b_GH0.tar.gz) = 883e2603529a907a3da25d5e2389ab6473a80e6d79daf0d9ffc6385494e0da0a
