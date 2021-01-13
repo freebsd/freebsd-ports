@@ -1,0 +1,8 @@
+gomi is a simple trash tool that works on CLI, written in Go.
+
+The concept of the trashcan does not exist in command-line interface, CLI.
+If you have deleted an important file by mistake with the rm(1) command,
+it would be difficult to restore in Unix-like systems. Now, gomi makes it
+easy to restore deleted files by providing trashcan for the CLI.
+
+WWW: https://github.com/b4b4r07/gomi
