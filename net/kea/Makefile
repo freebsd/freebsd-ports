@@ -18,7 +18,7 @@ LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
 USES=		autoreconf compiler:c++11-lang iconv libtool pathfix ssl cpe
 
 # ISC releases things like 1.4.0-P1, which our versioning doesn't like
-ISCVERSION=	1.8.1
+ISCVERSION=	1.8.2
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -44,11 +44,11 @@ PORTDOCS=	AUTHORS COPYING ChangeLog README \
 OPTIONS_DEFINE=	DOCS MYSQL PGSQL
 OPTIONS_SUB=	yes
 MYSQL_USES=	mysql
-MYSQL_CONFIGURE_ON=	--with-dhcp-mysql=${LOCALBASE}/bin/mysql_config
-MYSQL_CONFIGURE_OFF=	--without-dhcp-mysql
+MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
+MYSQL_CONFIGURE_OFF=	--without-mysql
 PGSQL_USES=	pgsql
 WANT_PGSQL=	client
-PGSQL_CONFIGURE_ON=	--with-dhcp-pgsql=${LOCALBASE}/bin/pg_config
-PGSQL_CONFIGURE_OFF=	--without-dhcp-pgsql
+PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}/bin/pg_config
+PGSQL_CONFIGURE_OFF=	--without-pgsql
 
 .include <bsd.port.mk>

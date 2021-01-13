@@ -453,8 +453,8 @@ lib/libkea-exceptions.so.0
 lib/libkea-exceptions.so.0.2.1
 lib/libkea-hooks.a
 lib/libkea-hooks.so
-lib/libkea-hooks.so.16
-lib/libkea-hooks.so.16.0.0
+lib/libkea-hooks.so.17
+lib/libkea-hooks.so.17.0.0
 lib/libkea-http.a
 lib/libkea-http.so
 lib/libkea-http.so.7
