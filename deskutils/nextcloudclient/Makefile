@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.0.3
+PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	mr@FreeBSD.org
@@ -22,6 +21,7 @@ USE_QT=		buildtools_build concurrent core dbus declarative graphicaleffects \
 		quickcontrols2 sql svg webchannel webengine webkit \
 		widgets xml
 CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=OFF \
+		-DBUILD_UPDATER:BOOL=OFF \
 		-DCMAKE_INSTALL_MANDIR:STRING=man \
 		-DWITH_STACK_PROTECTOR:BOOL=OFF
 USE_LDCONFIG=	yes
