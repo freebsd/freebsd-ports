@@ -3967,6 +3967,7 @@
     SUBDIR += plasma5-khotkeys
     SUBDIR += plasma5-kwrited
     SUBDIR += plasma5-plasma-sdk
+    SUBDIR += please
     SUBDIR += pmccabe
     SUBDIR += pmd
     SUBDIR += pmdk
