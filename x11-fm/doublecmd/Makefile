@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTVERSION=	0.9.10
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -17,17 +16,16 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		dos2unix desktop-file-utils fpc gnome lazarus:flavors xorg
+gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
 
-PORTDOCS=	*
+USES=		dos2unix desktop-file-utils fpc gnome lazarus:flavors xorg
+DOS2UNIX_FILES=	src/dmhelpmanager.pas components/multithreadprocs/mtpcpu.pas
 
 USE_FPC=	cairo chm fcl-base fcl-db fcl-image fcl-json fcl-registry \
 		fcl-xml iconvenc pasjpeg rtl-extra x11 regexpr
 USE_GNOME=	cairo glib20
 USE_XORG=	x11
-DOS2UNIX_FILES=	src/dmhelpmanager.pas components/multithreadprocs/mtpcpu.pas
-
-PLIST=		${WRKDIR}/pkg-plist
 
 LAZARUS_PROJECT_FILES=	components/chsdet/chsdet.lpk
 LAZARUS_PROJECT_FILES+=	components/CmdLine/cmdbox.lpk
@@ -42,15 +40,28 @@ LAZARUS_PROJECT_FILES+=	components/synunihighlighter/synuni.lpk
 LAZBUILD_ARGS=	-d --pcp=${WRKSRC}/tmppcp
 MAKE_ENV+=	LDVER=ld.bfd # for DragonFly
 
-HELPVERSION=	0.6.0
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-DOCSRC=		${WRKDIR}/${PORTNAME}-help-${HELPVERSION}
-
-gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
+PLIST=		${WRKDIR}/pkg-plist
+PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS DEBUG
+OPTIONS_DEFAULT=	WCX_CPIO \
+			WCX_DEB \
+			WCX_RPM \
+			WCX_UNRAR \
+			WCX_ZIP \
+			WDX_AUDIOINFO \
+			WDX_RPM \
+			WDX_DEB \
+			WDX_SCRIPTS \
+			WDX_TEXTLINE \
+			WDX_XPI \
+			WFX_FTP \
+			WFX_SAMBA \
+			DSX_LOCATE
+
 OPTIONS_GROUP=		WCX WDX WFX WLX DSX
+OPTIONS_GROUP_DSX=	DSX_LOCATE
 OPTIONS_GROUP_WCX=	WCX_CPIO \
 			WCX_DEB \
 			WCX_RPM \
@@ -66,7 +77,6 @@ OPTIONS_GROUP_WDX=	WDX_AUDIOINFO \
 OPTIONS_GROUP_WFX=	WFX_FTP \
 			WFX_SAMBA
 OPTIONS_GROUP_WLX=	WLX_MPLAYER
-OPTIONS_GROUP_DSX=	DSX_LOCATE
 
 WCX_DESC=	Packer plugins to work with archives
 WCX_CPIO_DESC=	CPIO format support
@@ -93,21 +103,6 @@ WLX_MPLAYER_DESC=	Use MPlayer for multimedia files
 
 DSX_DESC=	Search plugins
 DSX_LOCATE_DESC=	Support locate command
-
-OPTIONS_DEFAULT=	WCX_CPIO \
-			WCX_DEB \
-			WCX_RPM \
-			WCX_UNRAR \
-			WCX_ZIP \
-			WDX_AUDIOINFO \
-			WDX_RPM \
-			WDX_DEB \
-			WDX_SCRIPTS \
-			WDX_TEXTLINE \
-			WDX_XPI \
-			WFX_FTP \
-			WFX_SAMBA \
-			DSX_LOCATE
 
 WCX_UNRAR_LIB_DEPENDS=	libunrar.so.5:archivers/libunrar5
 WFX_SAMBA_USES=		samba:lib
@@ -181,6 +176,9 @@ LAZARUS_PROJECT_FILES+=		plugins/dsx/DSXLocate/src/DSXLocate.lpi
 .endif
 
 LAZARUS_PROJECT_FILES+=		src/doublecmd.lpi
+
+DOCSRC=		${WRKDIR}/${PORTNAME}-help-${HELPVERSION}
+HELPVERSION=	0.6.0
 
 pre-patch:
 	${TR} '\r' '\n' < ${WRKSRC}/src/uGlobsPaths.pas > ${WRKSRC}/src/uGlobsPaths.pas.unix
