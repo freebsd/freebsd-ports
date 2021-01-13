@@ -22,6 +22,7 @@ include/libmolsketch/actions/itemgrouptypeaction.h
 include/libmolsketch/actions/itemtypeaction.h
 include/libmolsketch/actions/itemtypeselectionaction.h
 include/libmolsketch/actions/itemtypewidget.h
+include/libmolsketch/actions/lineupaction.h
 include/libmolsketch/actions/linewidthaction.h
 include/libmolsketch/actions/mechanismarrowaction.h
 include/libmolsketch/actions/multiaction.h
@@ -46,6 +47,7 @@ include/libmolsketch/coordinatemodel.h
 include/libmolsketch/coordinatetableview.h
 include/libmolsketch/electronsystem.h
 include/libmolsketch/element.h
+include/libmolsketch/elementalignment.h
 include/libmolsketch/fileio.h
 include/libmolsketch/fontchooser.h
 include/libmolsketch/frame.h
@@ -56,15 +58,14 @@ include/libmolsketch/helptextemptydock.h
 include/libmolsketch/helptextonemptylabel.h
 include/libmolsketch/librarymodel.h
 include/libmolsketch/libraryview.h
-include/libmolsketch/lineupaction.h
 include/libmolsketch/lonepair.h
 include/libmolsketch/math2d.h
-include/libmolsketch/mimemolecule.h
 include/libmolsketch/molecule.h
 include/libmolsketch/moleculemodelitem.h
 include/libmolsketch/moleculepopup.h
 include/libmolsketch/molscene.h
 include/libmolsketch/molview.h
+include/libmolsketch/neighboralignment.h
 include/libmolsketch/propertiesdock.h
 include/libmolsketch/propertieswidget.h
 include/libmolsketch/qtversionmacros.h

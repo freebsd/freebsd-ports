@@ -3,7 +3,7 @@
 
 PORTNAME=	gchemutils
 PORTVERSION=	0.14.16
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	SAVANNAH/${PORTNAME}/${PORTVERSION:R}
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
@@ -62,8 +62,9 @@ PLIST_SUB+=	GNUMERIC=""
 PLIST_SUB+=	GNUMERIC="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/libs/gcp/Makefile.in
+pre-configure:
+	${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/libs/gcp/Makefile.in
+	${REINPLACE_CMD} -e 's|openbabel-2.0|openbabel-3|' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*

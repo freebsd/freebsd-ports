@@ -2,7 +2,7 @@
 
 PORTNAME=	xdrawchem
 DISTVERSION=	1.10.2-1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +20,10 @@ USE_QT=		core gui network printsupport widgets xml buildtools_build
 USE_GL=		gl
 
 WRKSRC_SUBDIR=	${PORTNAME}-qt5
+
+pre-configure:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|'	\
+		${WRKSRC}/xdrawchem.pro
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
