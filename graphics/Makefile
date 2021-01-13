@@ -235,7 +235,6 @@
     SUBDIR += geoserver
     SUBDIR += gexiv2
     SUBDIR += giblib
-    SUBDIR += gif2png
     SUBDIR += giflib
     SUBDIR += gifmerge
     SUBDIR += gifsicle
