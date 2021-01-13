@@ -27,6 +27,8 @@ RUN_DEPENDS=	dash.el${EMACS_PKGNAMESUFFIX}>=2.14.1:devel/dash.el@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
 
+CONFLICTS_INSTALL=	magit-devel-emacs*
+
 INFO=		magit
 PORTDOCS=	AUTHORS.md
 NO_ARCH=	yes
