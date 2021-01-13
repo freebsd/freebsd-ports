@@ -1,0 +1,61 @@
+--- configure.ac.orig	2020-07-07 14:26:13 UTC
++++ configure.ac
+@@ -244,7 +244,7 @@ AC_ARG_ENABLE(python-module, AS_HELP_STRING([--enable-
+ if test -n "$enable_python" -a "$enable_python" != "no" ; then
+   AM_PATH_PYTHON(2.3.5)
+   AM_CHECK_PYTHON_HEADERS(,[AC_MSG_ERROR(could not find Python headers)])
+-  py_prefix=`$PYTHON -c "import sys; print sys.prefix"`
++  py_prefix=`$PYTHON -c "import sys; print (sys.prefix)"`
+   PYTHON_INCLUDES="-I${py_prefix}/include/python${PYTHON_VERSION}"
+ 
+   PKG_CHECK_MODULES(PYGTK, pygobject-2.0 pygtk-2.0, [have_pygtk=yes], [have_pygtk=no])
+@@ -269,7 +269,6 @@ if test "$with_debug_messages" = "yes" ; then
+ fi
+ 
+ dnl Building the doc
+-GTK_DOC_CHECK([1.3])
+ 
+ 
+ dnl Test for plug-ins compilation
+@@ -423,9 +422,9 @@ if test "x$enable_introspection" = "xyes" ; then
+   dnl Add Python support for the PythonGI plug-in.
+   AM_PATH_PYTHON(2.3)
+   AM_CHECK_PYTHON_HEADERS(,[AC_MSG_ERROR(could not find Python headers)])
+-  PYTHON_INCLUDES="`python-config --cflags`"
++  PYTHON_INCLUDES="`${PYTHON}-config --cflags`"
+   AC_SUBST(PYTHON_INCLUDES)
+-  PYTHON_LIBS="`python-config --libs`"
++  PYTHON_LIBS="`${PYTHON}-config --libs`"
+   AC_SUBST(PYTHON_LIBS)
+ 
+   AC_MSG_CHECKING(for pygobject overrides directory)
+@@ -434,9 +433,10 @@ if test "x$enable_introspection" = "xyes" ; then
+   if test "x$overrides_dir" = "x" ; then
+     overrides_dir="${pyexecdir}/gi/overrides"
+   fi
+-  if ! test -w $overrides_dir ; then
+-    overrides_dir=${libdir}/python$PYTHON_VERSION/dist-packages/gi/overrides
+-  fi
++  # Do not test -w $overrides_dir to allow build as non-root
++  #if ! test -w $overrides_dir ; then
++  #  overrides_dir=${libdir}/python$PYTHON_VERSION/dist-packages/gi/overrides
++  #fi
+   AC_MSG_RESULT($overrides_dir)
+ else
+   overrides_dir=${libdir}/python$PYTHON_VERSION/dist-packages/gi/overrides
+@@ -446,12 +446,12 @@ AM_CONDITIONAL([WITH_GOBJECT_INTROSPECTION], [test "x$
+ dnl AC_PROG_CC set the CC variable and detect if we use the GNU compiler
+ dnl We now append some various CFLAGS depending on platform and choice
+ dnl of the user.
+-AC_ARG_WITH(strict-cflags, AS_HELP_STRING([--with-strict-cflags], [if set or absent some correctness cflags are appended to the CFLAGS variable. Appended values dependent on the platform and code branch (default on Unix for development is Wall Wno-unused W Werror ansi pedantic-errors).]), [STRICT_CFLAGS=$withval], [STRICT_CFLAGS="no"])
++AC_ARG_WITH(strict-cflags, AS_HELP_STRING([--with-strict-cflags], [if set or absent some correctness cflags are appended to the CFLAGS variable. Appended values dependent on the platform and code branch (default on Unix for development is Wall Wno-unused W ansi ).]), [STRICT_CFLAGS=$withval], [STRICT_CFLAGS="no"])
+ flags='Wall W ansi'
+ flags_cpp='Wall W ansi'
+ if test "$GCC" = "yes" -a "$STRICT_CFLAGS" = "yes"; then
+-  flags=$flags' Werror Wpedantic std=c99'
+-  flags_cpp=$flags_cpp' Werror Wpedantic'
++  flags=$flags' std=c99'
++  flags_cpp=$flags_cpp' '
+ fi
+ for fl in $flags ; do
+   case " $CFLAGS " in
