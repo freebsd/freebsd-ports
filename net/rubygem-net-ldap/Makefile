@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	net-ldap
-PORTVERSION=	0.16.1
+PORTVERSION=	0.17.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,10 +12,9 @@ COMMENT=	Pure Ruby LDAP support library with most client features
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.rdoc
 
-NO_ARCH=	yes
+USES=		gem
 USE_RUBY=	yes
-USES=		gem shebangfix
-SHEBANG_FILES=	script/generate-fixture-ca \
-		script/changelog
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
