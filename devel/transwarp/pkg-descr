@@ -1,0 +1,5 @@
+transwarp is a header-only C++ library for task concurrency. It allows you to
+easily create a graph of tasks where every task can be executed asynchronously.
+transwarp is written in C++17 and only depends on the standard library.
+
+WWW: https://github.com/bloomen/transwarp
