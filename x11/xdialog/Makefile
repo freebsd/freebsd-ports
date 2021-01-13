@@ -14,7 +14,7 @@ COMMENT=	Drop in replacement for the "dialog" or "cdialog" programs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		localbase tar:bzip2
+USES=		gnome localbase pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk2
