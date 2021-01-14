@@ -9,8 +9,6 @@ PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Simple CAD program
 
-BROKEN=		fails to patch
-
 USES=		dos2unix fpc lazarus:flavors tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	zamtmn
