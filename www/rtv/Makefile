@@ -11,6 +11,9 @@ COMMENT=	Commandline client for reddit
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Abandoned, use www/py-ttrv or www/py-tuir instead
+EXPIRATION_DATE=2021-02-14
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}kitchen>=1.2.4:devel/py-kitchen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1:www/py-requests@${PY_FLAVOR} \
