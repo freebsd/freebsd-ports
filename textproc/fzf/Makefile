@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	fzf
-PORTVERSION=	0.24.2
+PORTVERSION=	0.25.0
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Blazing fast command-line fuzzy finder
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler go:modules
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	junegunn
+COMMIT_ID=	8c533e3 
 GH_TUPLE=	\
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
 		gdamore:tcell:v1.4.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
@@ -28,7 +29,7 @@ GH_TUPLE=	\
 		mattn:go-shellwords:v1.0.10:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords \
 		saracen:walker:v0.1.1:saracen_walker/vendor/github.com/saracen/walker
 
-GO_BUILDFLAGS=	-ldflags="-X main.revision=e3e76fa -w"
+GO_BUILDFLAGS=	-ldflags="-X main.revision=${COMMIT_ID} -s -w"
 
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/fzf man/man1/fzf.1.gz
