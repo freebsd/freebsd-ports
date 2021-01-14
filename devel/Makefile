@@ -1572,6 +1572,7 @@
     SUBDIR += nsync
     SUBDIR += nuitka
     SUBDIR += obby
+    SUBDIR += objconv
     SUBDIR += objecthash
     SUBDIR += ocaml-annexlib
     SUBDIR += ocaml-calendar
