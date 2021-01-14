@@ -2,16 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gimp-data-extras
-PORTVERSION=	2.0.2
-PORTREVISION=	7
+PORTVERSION=	2.0.4
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
-		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
-		http://ftp.gwdg.de/pub/misc/grafik/gimp/%SUBDIR%/ \
-		ftp://ftp.fh-heilbronn.de/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		http://www.mirrorservice.org/sites/ftp.gimp.org/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	gimp/extras/
+MASTER_SITES=	GIMP/gimp/extras/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of additional brushes and patterns files for GIMP
