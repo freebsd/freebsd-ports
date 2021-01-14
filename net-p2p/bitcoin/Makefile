@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.20.1
-PORTREVISION?=	1
+PORTVERSION=	0.21.0
+PORTREVISION?=	0
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://bitcoincore.org/bin/bitcoin-core-${PORTVERSION}/ \
 		LOCAL/swills:icon
@@ -73,11 +73,12 @@ QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 WALLET_CONFIGURE_OFF=	--disable-wallet
 WALLET_CONFIGURE_ON=	--enable-wallet \
 			--with-incompatible-bdb \
+			--with-sqlite=yes \
 			BDB_CFLAGS=-I${BDB_INCLUDE_DIR} \
 			BDB_LIBS="-L${BDB_LIB_DIR} \
 				-Wl,-rpath=${BDB_LIB_DIR} \
 				-l${BDB_LIB_CXX_NAME}"
-WALLET_USES=		bdb:5+
+WALLET_USES=		bdb:5+ sqlite:3
 
 ZMQ_CONFIGURE_ENABLE=	zmq
 ZMQ_BUILD_DEPENDS=	libzmq4>0:net/libzmq4
