@@ -772,6 +772,7 @@
     SUBDIR += p5-Feed-Find
     SUBDIR += p5-Feersum
     SUBDIR += p5-File-Mork
+    SUBDIR += p5-Firefox-Marionette
     SUBDIR += p5-Flea
     SUBDIR += p5-Flickr-API
     SUBDIR += p5-Flickr-Upload
