@@ -1560,12 +1560,14 @@ lib/php/arcanist/src/xsprintf/ArcanistTerminalStringInterface.php
 lib/php/arcanist/src/xsprintf/PhutilCommandString.php
 lib/php/arcanist/src/xsprintf/PhutilTerminalString.php
 lib/php/arcanist/src/xsprintf/__tests__/PhutilCsprintfTestCase.php
+lib/php/arcanist/src/xsprintf/__tests__/PhutilGitsprintfTestCase.php
 lib/php/arcanist/src/xsprintf/__tests__/PhutilHgsprintfTestCase.php
 lib/php/arcanist/src/xsprintf/__tests__/PhutilPregsprintfTestCase.php
 lib/php/arcanist/src/xsprintf/__tests__/PhutilTsprintfTestCase.php
 lib/php/arcanist/src/xsprintf/__tests__/PhutilUrisprintfTestCase.php
 lib/php/arcanist/src/xsprintf/csprintf.php
 lib/php/arcanist/src/xsprintf/exception/XsprintfUnknownConversionException.php
+lib/php/arcanist/src/xsprintf/gitsprintf.php
 lib/php/arcanist/src/xsprintf/hgsprintf.php
 lib/php/arcanist/src/xsprintf/jsprintf.php
 lib/php/arcanist/src/xsprintf/ldapsprintf.php
