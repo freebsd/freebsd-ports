@@ -42,7 +42,7 @@ OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	${RUN_DEPENDS} \
-			${PY_SPHINX} \
+			${PYTHON_PKGNAMEPREFIX}sphinx>=1.2,1:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}repoze.sphinx.autointerface>0:devel/py-repoze.sphinx.autointerface@${PY_FLAVOR} \
 

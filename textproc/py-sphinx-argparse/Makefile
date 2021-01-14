@@ -11,7 +11,7 @@ COMMENT=	Sphinx extension that automatically documents argparse
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PY_SPHINX}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.2.0,1:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils

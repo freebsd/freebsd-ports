@@ -22,7 +22,7 @@ USES=		autoreconf:build compiler:c++11-lang gettext localbase python:3.6+
 USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=		DOCS
-DOCS_BUILD_DEPENDS=	${PY_SPHINX}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.6,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_USES=		gmake
 PORTDOCS=		*
 

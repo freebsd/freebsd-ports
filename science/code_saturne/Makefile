@@ -91,7 +91,7 @@ USE_TEX=	tex:build
 BUILD_DEPENDS+=	fig2dev:print/fig2dev		\
 		doxygen:devel/doxygen		\
 		dot:graphics/graphviz		\
-		${PY_SPHINX}
+		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 BINARY_ALIAS+=	sphinx-build=sphinx-build-${PYTHON_VER}
 ALL_TARGET=	all pdf
 DOCS=		AUTHORS ChangeLog README

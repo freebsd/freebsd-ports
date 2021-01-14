@@ -27,7 +27,7 @@ USES=		compiler:c++11-lang localbase python:3.6+
 USE_PYTHON=	cython distutils
 
 OPTIONS_DEFINE=		DOCS
-DOCS_BUILD_DEPENDS=	${PY_SPHINX}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_USES=		gmake
 PORTDOCS=		*
 

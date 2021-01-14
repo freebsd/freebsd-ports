@@ -54,7 +54,7 @@ SHEBANG_FILES=	src/pip/__init__.py
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pypa-docs-theme>=g20180622:textproc/py-pypa-docs-theme@${PY_FLAVOR} \
-			${PY_SPHINX}
+			${PYTHON_PKGNAMEPREFIX}sphinx>=2.4.3,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_PORTDOCS=		*
 DOCS_VARS=		PYDISTUTILS_BUILD_TARGET=build_sphinx \
 			PYDISTUTILS_BUILDARGS="-n --all-files --fresh-env"

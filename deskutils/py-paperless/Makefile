@@ -66,7 +66,7 @@ IMAGICK6_X11_DESC=	ImageMagick6 with X11 support
 IMAGICK7_NOX11_DESC=	ImageMagick7 without X11 support
 IMAGICK7_X11_DESC=	ImageMagick7 with X11 support
 
-DOCS_BUILD_DEPENDS=	${PY_SPHINX}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.8.3,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_USES=		gmake
 
 IMAGICK6_X11_RUN_DEPENDS=	convert:graphics/ImageMagick6

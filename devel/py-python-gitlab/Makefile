@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	AUTOCOMPLETE DOCS YAML
 AUTOCOMPLETE_DESC=	Autocompletion via argcomplete
 AUTOCOMPLETE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=1.10.0<2:devel/py-argcomplete@${PY_FLAVOR}
 
-DOCS_BUILD_DEPENDS=	${PY_SPHINX} \
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.7.6,1:textproc/py-sphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 DOCS_PORTDOCS=	*
 DOCS_VARS=	PYDISTUTILS_BUILD_TARGET=build_sphinx \

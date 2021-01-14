@@ -69,7 +69,7 @@ CLANG_PORTDOCS=		clang
 PLIST_FILES+=		share/toolchains/llvm${LLVM_SUFFIX}.mk
 SUB_FILES+=		xtoolchain.mk
 CLANG_USE=		GNOME=libxml2
-DOCS_BUILD_DEPENDS=	${PY_SPHINX} \
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR}
 DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
 			-DSPHINX_EXECUTABLE=${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} \

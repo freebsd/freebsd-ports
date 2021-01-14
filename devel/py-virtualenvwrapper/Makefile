@@ -25,7 +25,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	${PY_SPHINX} \
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinxcontrib-bitbucket>=1.0:textproc/py-sphinxcontrib-bitbucket@${PY_FLAVOR}
 DOCS_VARS=		PYDISTUTILS_BUILD_TARGET+=build_sphinx \
 			PYDISTUTILS_BUILDARGS="-a -E"
