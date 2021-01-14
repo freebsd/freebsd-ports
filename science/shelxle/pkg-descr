@@ -1,0 +1,13 @@
+ShelXle is a graphical user interface for SHELXL, currently the most widely used
+program for small-molecule structure refinement. It combines an editor with
+syntax highlighting for the SHELXL-associated .ins (input) and .res (output)
+files with an interactive graphical display for visualization of a
+three-dimensional structure including the electron density (Fo) and difference
+density (Fo-Fc) maps. Special features of ShelXle include intuitive atom
+(re-)naming, a strongly coupled editor, structure visualization in various mono
+and stereo modes, and a novel way of displaying disorder extending over special
+positions. ShelXle is completely compatible with all features of SHELXL and is
+written entirely in C++ using the Qt and FFTW libraries. It is available at no
+cost for Windows, Linux and Mac-OS X and as source code.
+
+WWW: https://www.shelxle.org/shelx/eingabe.php

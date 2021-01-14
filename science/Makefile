@@ -317,6 +317,7 @@
     SUBDIR += rubygem-ruby-netcdf
     SUBDIR += scidavis
     SUBDIR += segyio
+    SUBDIR += shelxle
     SUBDIR += siesta
     SUBDIR += sigrok-cli
     SUBDIR += sigrok-firmware
