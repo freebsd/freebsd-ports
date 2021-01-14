@@ -5,7 +5,7 @@ PORTNAME=	please
 PORTVERSION=	2.7
 CATEGORIES=	security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Execute a command as root
 
 LICENSE=	BSD2CLAUSE
