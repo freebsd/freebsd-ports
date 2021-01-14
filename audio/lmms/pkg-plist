@@ -237,12 +237,16 @@ lib/lmms/libaudiofileprocessor.so
 lib/lmms/libbassbooster.so
 lib/lmms/libbitcrush.so
 lib/lmms/libbitinvader.so
+lib/lmms/libcarlabase.so
+lib/lmms/libcarlapatchbay.so
+lib/lmms/libcarlarack.so
 lib/lmms/libcrossovereq.so
 lib/lmms/libdelay.so
 lib/lmms/libdualfilter.so
 lib/lmms/libdynamicsprocessor.so
 lib/lmms/libeq.so
 lib/lmms/libflanger.so
+lib/lmms/libgigplayer.so
 lib/lmms/libhydrogenimport.so
 lib/lmms/libkicker.so
 lib/lmms/libladspabrowser.so

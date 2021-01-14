@@ -3,8 +3,7 @@
 
 PORTNAME=	lmms
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
-PORTREVISION=	2
+DISTVERSION=	1.2.2
 PORTEPOCH=	2
 CATEGORIES=	audio
 
@@ -24,7 +23,10 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libogg.so:audio/libogg \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
-		libfltk.so:x11-toolkits/fltk
+		libfltk.so:x11-toolkits/fltk \
+		libcarla_utils.so:audio/carla \
+		libQt5Xml.so:textproc/qt5-xml \
+		libQt5X11Extras.so:x11/qt5-x11extras
 RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:audio/caps-plugins \
 		${LOCALBASE}/lib/ladspa/cmt.so:audio/cmt \
 		${LOCALBASE}/share/ladspa/rdf/swh-plugins.rdf:audio/swhplugins \
@@ -78,6 +80,8 @@ post-patch-OSS-off:
 		${WRKSRC}/CMakeLists.txt
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions && \
+		${INSTALL_DATA} ${WRKSRC}/doc/bash-completion/lmms ${STAGEDIR}${PREFIX}/share/bash-completion/completions/
 	@${RLN} ${STAGEDIR}${DATADIR}/themes/default/icon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/lmms.png
 
