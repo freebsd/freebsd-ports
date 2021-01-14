@@ -38,7 +38,8 @@ OPTIONS_GROUP_SPARSE=	CXSPARSE EIGENSPARSE SUITESPARSE
 CUSTOM_BLAS_DESC=	Handcoded BLAS routines instead of Eigen
 CUSTOM_BLAS_CMAKE_BOOL=	CUSTOM_BLAS
 
-DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx18
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 DOCS_USES=		python:build
 DOCS_CMAKE_BOOL=	BUILD_DOCUMENTATION
 
