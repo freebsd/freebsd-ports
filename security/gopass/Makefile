@@ -7,7 +7,7 @@ DISTVERSION=	1.8.6
 PORTREVISION=	2
 CATEGORIES=	security
 
-MAINTAINER=	sascha@root-login.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rewrite of the pass password manager in Go
 
 LICENSE=	MIT

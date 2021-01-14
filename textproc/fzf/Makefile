@@ -5,7 +5,7 @@ PORTNAME=	fzf
 PORTVERSION=	0.24.2
 CATEGORIES=	textproc
 
-MAINTAINER=	sascha@root-login.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blazing fast command-line fuzzy finder
 
 LICENSE=	MIT

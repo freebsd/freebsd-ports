@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.5
 CATEGORIES=	security
 
-MAINTAINER=	sascha@root-login.org
+MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Pure BASH/ZSH Lets Encrypt client
 
 LICENSE=	MIT
