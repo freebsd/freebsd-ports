@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	crispy-doom
-PORTVERSION=	5.9.2
+PORTVERSION=	5.10.0
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	games
 
@@ -27,7 +27,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fabiangreffrath
 
 post-patch:
-	${REINPLACE_CMD} "s|python|${PYTHON_VERSION}|" ${WRKSRC}/configure.ac
+	${REINPLACE_CMD} "s|python3|${PYTHON_VERSION}|" ${WRKSRC}/configure.ac
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/crispy-*
