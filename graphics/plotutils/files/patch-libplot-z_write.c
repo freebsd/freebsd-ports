@@ -1,6 +1,6 @@
---- libplot/z_write.c.orig	2008-07-16 02:54:10.000000000 +0200
-+++ libplot/z_write.c	2012-04-27 19:12:55.000000000 +0200
-@@ -164,7 +164,7 @@
+--- libplot/z_write.c.orig	2008-07-16 00:54:10 UTC
++++ libplot/z_write.c
+@@ -164,7 +164,7 @@ _pl_z_maybe_output_image (S___(Plotter *_plotter))
      }
  
    /* cleanup after libpng errors (error handler does a longjmp) */
@@ -9,7 +9,7 @@
      {
        png_destroy_write_struct (&png_ptr, (png_info **)NULL);
        return -1;
-@@ -444,7 +444,7 @@
+@@ -444,7 +444,7 @@ _our_error_fn_stdio (png_struct *png_ptr, const char *
  #endif
      }
  
@@ -18,7 +18,7 @@
  }
  
  static void 
-@@ -515,7 +515,7 @@
+@@ -515,7 +515,7 @@ _our_error_fn_stream (png_struct *png_ptr, const char 
  #endif
      }
  

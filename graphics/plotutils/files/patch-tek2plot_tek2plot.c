@@ -9,10 +9,9 @@
 # Date:    Sat, 08 Nov 2008 11:11:49 GMT
 #######################################################################
 
-diff -ur tek2plot/tek2plot.c tek2plot/tek2plot.c
---- tek2plot/tek2plot.c 2008-07-16 04:00:16.000000000 +0000
-+++ tek2plot/tek2plot.c	2008-11-08 11:04:49.000000000 +0000
-@@ -559,7 +559,7 @@
+--- tek2plot/tek2plot.c.orig	2009-07-30 04:29:14 UTC
++++ tek2plot/tek2plot.c
+@@ -559,7 +559,7 @@ getpoint (int *xcoor, int *ycoor, FILE *in_stream, int
    int temp_three = 0;
  
    /* following variables are saved from point to point */
@@ -21,7 +20,7 @@ diff -ur tek2plot/tek2plot.c tek2plot/tek2plot.c
    static bool margin_reset = false;
  
    int byte_read, type;
-@@ -709,10 +709,12 @@
+@@ -709,10 +709,12 @@ getpoint (int *xcoor, int *ycoor, FILE *in_stream, int
  	    lo_y = got_lo_y ? lo_y : saved_lo_y;	      
  	    hi_x = got_hi_x ? hi_x : saved_hi_x;
  	    hi_y = got_hi_y ? hi_y : saved_hi_y;
