@@ -1,4 +1,4 @@
---- scripts/debian-common.orig	2021-01-12 21:19:09 UTC
+--- scripts/debian-common.orig	2020-03-13 02:04:21 UTC
 +++ scripts/debian-common
 @@ -200,10 +200,21 @@ echo \"Warning: Fake start-stop-daemon called, doing n
  		predep=$(without "$(without "$(resolve_deps $predep)" "$required")" "$done_predeps")
@@ -22,3 +22,16 @@
  	done
  
  	if [ -n "$base" ]; then
+@@ -222,6 +233,12 @@ echo \"Warning: Fake start-stop-daemon called, doing n
+ 
+ 	mv "$TARGET/sbin/start-stop-daemon.REAL" "$TARGET/sbin/start-stop-daemon"
+ 	rm -f "$TARGET/usr/sbin/policy-rc.d"
++
++	echo \
++"# Workaround for Linuxulator missing mremap(2) support; without it,
++# apt(8) fails like this:
++# E: Dynamic MMap ran out of room. Please increase the size of APT::Cache-Start.
++APT::Cache-Start 251658240;" >> "$TARGET/etc/apt/apt.conf.d/00freebsd"
+ 
+ 	progress $bases $bases CONFBASE "Configuring base system"
+ 	info BASESUCCESS "Base system installed successfully."

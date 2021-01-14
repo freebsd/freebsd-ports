@@ -36,3 +36,16 @@
  	fi
  
  	if [ -x "$TARGET/sbin/initctl.REAL" ]; then
+@@ -267,6 +281,12 @@ echo \"Warning: Fake initctl called, doing nothing\"" 
+ 	fi
+ 	mv "$TARGET/sbin/start-stop-daemon.REAL" "$TARGET/sbin/start-stop-daemon"
+ 	rm -f "$TARGET/usr/sbin/policy-rc.d"
++
++	echo \
++"# Workaround for Linuxulator missing mremap(2) support; without it,
++# apt(8) fails like this:
++# E: Dynamic MMap ran out of room. Please increase the size of APT::Cache-Start.
++APT::Cache-Start 251658240;" >> "$TARGET/etc/apt/apt.conf.d/00freebsd"
+ 
+ 	progress $bases $bases CONFBASE "Configuring base system"
+ 	info BASESUCCESS "Base system installed successfully."
