@@ -1740,6 +1740,7 @@
     SUBDIR += py-tornado4
     SUBDIR += py-tornado6
     SUBDIR += py-treq
+    SUBDIR += py-ttrv
     SUBDIR += py-tuir
     SUBDIR += py-turbogears2
     SUBDIR += py-tvdb_api
