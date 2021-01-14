@@ -7,6 +7,9 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.org/:weights # bogus URL to make the framework happy, the fetch uses Git URL below
 DISTFILES=	${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}:weights
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	2651f56ea60cc72c533fcd090679200899c2f54f.patch:-p1 # patch adding #include <QPainterPath>
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel(R) Open Image Denoise library
 
