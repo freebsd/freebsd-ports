@@ -2,7 +2,7 @@
 
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.4
+DISTVERSION=	0.3.5
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -37,7 +37,7 @@ GH_TUPLE=	\
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		btcsuite:btcd:v0.20.1-beta:btcsuite_btcd/vendor/github.com/btcsuite/btcd \
 		census-instrumentation:opencensus-go:v0.22.4:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
-		cespare:xxhash:v2.1.1:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
+		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		cheekybits:genny:v1.0.0:cheekybits_genny/vendor/github.com/cheekybits/genny \
 		coreos:go-semver:v0.3.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -72,7 +72,7 @@ GH_TUPLE=	\
 		ipfs:go-ipfs-util:v0.0.2:ipfs_go_ipfs_util/vendor/github.com/ipfs/go-ipfs-util \
 		ipfs:go-ipns:v0.0.2:ipfs_go_ipns/vendor/github.com/ipfs/go-ipns \
 		ipfs:go-log:v1.0.4:ipfs_go_log/vendor/github.com/ipfs/go-log \
-		ipfs:go-log:v2.1.1:ipfs_go_log_1/vendor/github.com/ipfs/go-log/v2 \
+		ipfs:go-log:v2.1.1:ipfs_go_log_v2/vendor/github.com/ipfs/go-log/v2 \
 		jackpal:go-nat-pmp:v1.0.2:jackpal_go_nat_pmp/vendor/github.com/jackpal/go-nat-pmp \
 		jbenet:go-temp-err-catcher:v0.1.0:jbenet_go_temp_err_catcher/vendor/github.com/jbenet/go-temp-err-catcher \
 		jbenet:goprocess:v0.1.4:jbenet_goprocess/vendor/github.com/jbenet/goprocess \
@@ -160,6 +160,7 @@ GH_TUPLE=	\
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.10.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.1.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		protocolbuffers:protobuf-go:v1.23.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rcrowley:go-metrics:10cdbea86bc0:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
 		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spacemonkeygo:spacelog:2296661a0572:spacemonkeygo_spacelog/vendor/github.com/spacemonkeygo/spacelog \
@@ -177,8 +178,7 @@ GH_TUPLE=	\
 		whyrusleeping:mdns:b9b60ed33aa9:whyrusleeping_mdns/vendor/github.com/whyrusleeping/mdns \
 		whyrusleeping:multiaddr-filter:e903e4adabd7:whyrusleeping_multiaddr_filter/vendor/github.com/whyrusleeping/multiaddr-filter \
 		whyrusleeping:timecache:cfcb2f1abfee:whyrusleeping_timecache/vendor/github.com/whyrusleeping/timecache \
-		yggdrasil-network:yggdrasil-go:760d9a7fd5ee:yggdrasil_network_yggdrasil_go/vendor/github.com/yggdrasil-network/yggdrasil-go \
-		protocolbuffers:protobuf-go:v1.23.0:google_golang_protobuf/vendor/google.golang.org/protobuf
+		yggdrasil-network:yggdrasil-go:760d9a7fd5ee:yggdrasil_network_yggdrasil_go/vendor/github.com/yggdrasil-network/yggdrasil-go
 
 post-build:
 	cd ${WRKSRC} && \
