@@ -2,7 +2,7 @@
 
 PORTNAME=	getmail6
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.12
+DISTVERSION=	6.14
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,8 +15,6 @@ LICENSE_FILE=	${WRKSRC}/docs/COPYING
 USES=		python:3.6+
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
-
-CONFLICTS=	getmail
 
 NO_ARCH=	yes
 NO_BUILD=	yes
