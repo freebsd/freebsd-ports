@@ -2,8 +2,7 @@
 
 PORTNAME=	tokei
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.1.1
-PORTREVISION=	1
+DISTVERSION=	12.1.2
 CATEGORIES=	devel
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -18,8 +17,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	XAMPPRocky
 
-CARGO_CRATES=	ahash-0.3.8 \
-		aho-corasick-0.7.15 \
+CARGO_CRATES=	aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
 		arrayref-0.3.6 \
 		arrayvec-0.4.12 \
@@ -42,8 +40,6 @@ CARGO_CRATES=	ahash-0.3.8 \
 		chrono-tz-0.5.2 \
 		clap-2.33.3 \
 		cloudabi-0.1.0 \
-		const-random-0.1.8 \
-		const-random-macro-0.1.8 \
 		const_fn-0.4.2 \
 		constant_time_eq-0.1.5 \
 		crossbeam-channel-0.5.0 \
@@ -51,7 +47,7 @@ CARGO_CRATES=	ahash-0.3.8 \
 		crossbeam-epoch-0.9.1 \
 		crossbeam-utils-0.7.2 \
 		crossbeam-utils-0.8.0 \
-		dashmap-3.11.10 \
+		dashmap-4.0.1 \
 		deunicode-0.4.3 \
 		digest-0.8.1 \
 		dirs-3.0.1 \
@@ -66,7 +62,7 @@ CARGO_CRATES=	ahash-0.3.8 \
 		generic-array-0.12.3 \
 		getrandom-0.1.14 \
 		getrandom-0.2.0 \
-		git2-0.13.14 \
+		git2-0.13.15 \
 		globset-0.4.5 \
 		globwalk-0.8.1 \
 		grep-matcher-0.1.4 \
@@ -83,7 +79,7 @@ CARGO_CRATES=	ahash-0.3.8 \
 		jobserver-0.1.21 \
 		lazy_static-1.4.0 \
 		libc-0.2.71 \
-		libgit2-sys-0.12.16+1.1.0 \
+		libgit2-sys-0.12.17+1.1.0 \
 		libz-sys-1.1.0 \
 		linked-hash-map-0.5.3 \
 		lock_api-0.4.0 \
@@ -110,7 +106,6 @@ CARGO_CRATES=	ahash-0.3.8 \
 		pest_meta-2.1.3 \
 		pkg-config-0.3.17 \
 		ppv-lite86-0.2.8 \
-		proc-macro-hack-0.5.16 \
 		proc-macro2-1.0.18 \
 		quote-1.0.7 \
 		rand-0.7.3 \
@@ -125,8 +120,8 @@ CARGO_CRATES=	ahash-0.3.8 \
 		rayon-core-1.9.0 \
 		redox_syscall-0.1.56 \
 		redox_users-0.3.4 \
-		regex-1.4.2 \
-		regex-syntax-0.6.21 \
+		regex-1.4.3 \
+		regex-syntax-0.6.22 \
 		remove_dir_all-0.5.3 \
 		rust-argon2-0.7.0 \
 		ryu-1.0.5 \
@@ -136,14 +131,14 @@ CARGO_CRATES=	ahash-0.3.8 \
 		serde_cbor-0.11.1 \
 		serde_derive-1.0.118 \
 		serde_json-1.0.61 \
-		serde_yaml-0.8.14 \
+		serde_yaml-0.8.15 \
 		sha-1-0.8.2 \
 		slug-0.1.4 \
 		smallvec-1.4.0 \
 		strsim-0.8.0 \
 		syn-1.0.33 \
 		tempfile-3.1.0 \
-		tera-1.6.0 \
+		tera-1.6.1 \
 		term_size-0.3.2 \
 		termcolor-1.1.0 \
 		textwrap-0.11.0 \
@@ -172,7 +167,7 @@ CARGO_CRATES=	ahash-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		yaml-rust-0.4.4
+		yaml-rust-0.4.5
 # enable all output serialization formats
 CARGO_FEATURES=	all
 
