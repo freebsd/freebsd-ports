@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES+=		pkgconfig tar:bzip2
 
 .if !defined(SLAVEPORT)
-USES+=		python:build waf
+USES+=		python:build,3.6+ waf
 USE_LDCONFIG=	yes
 
 OPTIONS_GROUP=		DOCS
@@ -28,7 +28,7 @@ OPTIONS_SUB=		yes
 COMPLEX_DESC=			Compile with C99 complex.h
 COMPLEX_CONFIGURE_ENABLE=	complex
 
-DOCS_BUILD_DEPENDS=		${PY_SPHINX}
+DOCS_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_CONFIGURE_ENABLE=		sphinx
 DOCS_BINARY_ALIAS=		sphinx-build=sphinx-build-${PYTHON_VER}
 
