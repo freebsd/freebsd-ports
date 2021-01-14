@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	sccache
-DISTVERSION=	0.2.14
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.15
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -28,17 +29,25 @@ PORTDOCS=	README.md
 
 CARGO_FEATURES=	all
 
-CARGO_CRATES=	addr2line-0.14.0 \
+CARGO_CRATES=	addr2line-0.14.1 \
 		adler-0.2.3 \
 		aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.36 \
+		anyhow-1.0.37 \
 		ar-0.8.0 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.2 \
 		ascii-0.8.7 \
 		assert_cmd-1.0.2 \
+		async-channel-1.5.1 \
+		async-executor-1.4.0 \
+		async-global-executor-1.4.3 \
+		async-io-1.3.1 \
+		async-mutex-1.4.0 \
+		async-std-1.8.0 \
+		async-task-4.0.3 \
 		async-trait-0.1.42 \
+		atomic-waker-1.0.0 \
 		atty-0.2.14 \
 		autocfg-0.1.7 \
 		autocfg-1.0.1 \
@@ -53,6 +62,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		blake2b_simd-0.5.11 \
 		blake3-0.3.7 \
 		block-buffer-0.9.0 \
+		blocking-1.0.2 \
 		boxfnonce-0.1.1 \
 		buf_redux-0.8.4 \
 		bufstream-0.1.4 \
@@ -60,7 +70,8 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		byteorder-1.3.4 \
 		bytes-0.4.12 \
 		bytes-0.5.6 \
-		bytes-0.6.0 \
+		bytes-1.0.0 \
+		cache-padded-1.1.1 \
 		case-0.1.0 \
 		cc-1.0.66 \
 		cfg-if-0.1.10 \
@@ -69,7 +80,8 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		chunked_transfer-0.3.1 \
 		clap-2.33.3 \
 		cloudabi-0.0.3 \
-		combine-4.4.0 \
+		combine-4.5.2 \
+		concurrent-queue-1.2.2 \
 		conhash-0.4.0 \
 		constant_time_eq-0.1.5 \
 		cookie-0.12.0 \
@@ -96,13 +108,15 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		dirs-1.0.5 \
 		dirs-sys-0.3.5 \
 		doc-comment-0.3.3 \
-		dtoa-0.4.6 \
+		dtoa-0.4.7 \
 		either-1.6.1 \
 		encoding_rs-0.8.26 \
 		env_logger-0.8.2 \
 		error-chain-0.12.4 \
+		event-listener-2.5.1 \
 		failure-0.1.8 \
 		failure_derive-0.1.8 \
+		fastrand-1.4.0 \
 		filetime-0.2.13 \
 		flate2-1.0.19 \
 		float-cmp-0.8.0 \
@@ -114,21 +128,23 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		futures-0.1.30 \
-		futures-0.3.8 \
-		futures-channel-0.3.8 \
-		futures-core-0.3.8 \
+		futures-0.3.9 \
+		futures-channel-0.3.9 \
+		futures-core-0.3.9 \
 		futures-cpupool-0.1.8 \
-		futures-executor-0.3.8 \
-		futures-io-0.3.8 \
-		futures-macro-0.3.8 \
-		futures-sink-0.3.8 \
-		futures-task-0.3.8 \
-		futures-util-0.3.8 \
+		futures-executor-0.3.9 \
+		futures-io-0.3.9 \
+		futures-lite-1.11.3 \
+		futures-macro-0.3.9 \
+		futures-sink-0.3.9 \
+		futures-task-0.3.9 \
+		futures-util-0.3.9 \
 		generic-array-0.14.4 \
 		getopts-0.2.21 \
-		getrandom-0.1.15 \
+		getrandom-0.1.16 \
 		gimli-0.23.0 \
 		glob-0.3.0 \
+		gloo-timers-0.2.1 \
 		h2-0.1.26 \
 		hashbrown-0.9.1 \
 		hermit-abi-0.1.17 \
@@ -143,16 +159,19 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		idna-0.1.5 \
 		idna-0.2.0 \
 		indexmap-1.6.1 \
+		instant-0.1.9 \
 		iovec-0.1.4 \
 		itertools-0.9.0 \
-		itoa-0.4.6 \
+		itertools-0.10.0 \
+		itoa-0.4.7 \
 		jobserver-0.1.21 \
 		js-sys-0.3.46 \
 		jsonwebtoken-7.2.0 \
 		kernel32-sys-0.2.2 \
+		kv-log-macro-1.0.7 \
 		language-tags-0.2.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.81 \
+		libc-0.2.82 \
 		libmount-0.1.15 \
 		linked-hash-map-0.5.3 \
 		local-encoding-0.2.0 \
@@ -172,18 +191,17 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		mime_guess-2.0.3 \
 		miniz_oxide-0.4.3 \
 		mio-0.6.23 \
-		mio-0.7.6 \
 		mio-named-pipes-0.1.7 \
 		mio-uds-0.6.8 \
 		miow-0.2.2 \
 		miow-0.3.6 \
 		multipart-0.15.4 \
-		native-tls-0.2.6 \
+		native-tls-0.2.7 \
+		nb-connect-1.0.2 \
 		net2-0.2.37 \
 		nix-0.14.1 \
 		nix-0.19.1 \
 		normalize-line-endings-0.3.0 \
-		ntapi-0.3.6 \
 		num-bigint-0.2.6 \
 		num-integer-0.1.44 \
 		num-traits-0.1.43 \
@@ -193,9 +211,10 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		object-0.22.0 \
 		once_cell-1.5.2 \
 		opaque-debug-0.3.0 \
-		openssl-0.10.31 \
+		openssl-0.10.32 \
 		openssl-probe-0.1.2 \
-		openssl-sys-0.9.59 \
+		openssl-sys-0.9.60 \
+		parking-2.0.0 \
 		parking_lot-0.9.0 \
 		parking_lot_core-0.6.2 \
 		pem-0.8.2 \
@@ -205,16 +224,15 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		phf_codegen-0.7.24 \
 		phf_generator-0.7.24 \
 		phf_shared-0.7.24 \
-		pin-project-1.0.2 \
-		pin-project-internal-1.0.2 \
 		pin-project-lite-0.1.11 \
-		pin-project-lite-0.2.0 \
+		pin-project-lite-0.2.1 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.19 \
+		polling-2.0.2 \
 		ppv-lite86-0.2.10 \
-		predicates-1.0.5 \
-		predicates-core-1.0.0 \
-		predicates-tree-1.0.0 \
+		predicates-1.0.6 \
+		predicates-core-1.0.1 \
+		predicates-tree-1.0.1 \
 		proc-macro-hack-0.5.19 \
 		proc-macro-nested-0.1.6 \
 		proc-macro2-1.0.24 \
@@ -240,7 +258,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		rand_pcg-0.1.2 \
 		rand_xorshift-0.1.1 \
 		rdrand-0.4.0 \
-		redis-0.18.0 \
+		redis-0.17.0 \
 		redox_syscall-0.1.57 \
 		redox_users-0.3.5 \
 		regex-1.4.2 \
@@ -265,7 +283,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		semver-parser-0.7.0 \
 		serde-1.0.118 \
 		serde_derive-1.0.118 \
-		serde_json-1.0.60 \
+		serde_json-1.0.61 \
 		serde_urlencoded-0.5.5 \
 		sha-1-0.9.2 \
 		sha1-0.6.0 \
@@ -283,7 +301,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		strsim-0.8.0 \
 		subtle-2.4.0 \
 		syn-0.11.11 \
-		syn-1.0.55 \
+		syn-1.0.58 \
 		synom-0.11.3 \
 		synstructure-0.12.4 \
 		syslog-5.0.0 \
@@ -293,9 +311,9 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		term-0.5.2 \
 		termcolor-1.1.2 \
 		textwrap-0.11.0 \
-		thiserror-1.0.22 \
-		thiserror-impl-1.0.22 \
-		thread_local-1.0.1 \
+		thiserror-1.0.23 \
+		thiserror-impl-1.0.23 \
+		thread_local-1.1.0 \
 		threadpool-1.8.1 \
 		time-0.1.44 \
 		tiny_http-0.6.2 \
@@ -303,7 +321,6 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		tinyvec_macros-0.1.0 \
 		tokio-0.1.22 \
 		tokio-0.2.24 \
-		tokio-0.3.6 \
 		tokio-buf-0.1.1 \
 		tokio-codec-0.1.2 \
 		tokio-compat-0.1.6 \
@@ -323,7 +340,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		tokio-timer-0.2.13 \
 		tokio-udp-0.1.6 \
 		tokio-uds-0.2.7 \
-		tokio-util-0.4.0 \
+		tokio-util-0.3.1 \
 		toml-0.5.8 \
 		tower-0.1.1 \
 		tower-buffer-0.1.2 \
@@ -358,6 +375,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		uuid-0.7.4 \
 		uuid-0.8.1 \
 		vcpkg-0.2.11 \
+		vec-arena-1.0.0 \
 		vec_map-0.8.2 \
 		version-compare-0.0.11 \
 		version_check-0.1.5 \
@@ -365,16 +383,19 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		void-1.0.2 \
 		vte-0.3.3 \
 		wait-timeout-0.2.0 \
+		waker-fn-1.1.0 \
 		walkdir-2.3.1 \
 		want-0.2.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.69 \
 		wasm-bindgen-backend-0.2.69 \
+		wasm-bindgen-futures-0.4.19 \
 		wasm-bindgen-macro-0.2.69 \
 		wasm-bindgen-macro-support-0.2.69 \
 		wasm-bindgen-shared-0.2.69 \
 		web-sys-0.3.46 \
+		wepoll-sys-3.0.1 \
 		which-4.0.2 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
