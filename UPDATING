@@ -5,6 +5,26 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210114:
+  AFFECTS: users of net-im/matterircd
+  AUTHOR: norrland@nullbyte.se
+
+  Commandline switches
+
+  Switched to viper for cmdline parsing, which does not support "short" flags.
+  You'll need to use --flag instead of -flag. Eg ./matterircd --debug
+  Bridge specific configuration is now only in configuration file. This means
+  the following flags have been removed: -restrict,-mmteam,-mmserver,
+  -mminsecure,-mmskiptlsverify.
+  You can set those in matterircd.toml, see the example file.
+
+  Config changes
+
+  BlacklistUser feature for slack has been renamed to DenyUsers.
+  JoinMpImOnTalk feature has been renamed to JoinDM and is available for
+  slack/mattermost
+  JoinInclude, JoinExclude now support regexp (see matterircd.toml.example)
+
 20210113:
   AFFECTS: users of databases/redis[-devel]
   AUTHOR: osa@FreeBSD.org
