@@ -314,10 +314,10 @@ include/rdkit/RDGeneral/utils.h
 include/rdkit/RDGeneral/versions.h
 include/rdkit/RDStreams/streams.h
 include/rdkit/RingDecomposerLib.h
-include/rdkit/SimDivPickers/DistPicker.h
-include/rdkit/SimDivPickers/HierarchicalClusterPicker.h
-include/rdkit/SimDivPickers/LeaderPicker.h
-include/rdkit/SimDivPickers/MaxMinPicker.h
+%%LITTLE_ENDIAN%%include/rdkit/SimDivPickers/DistPicker.h
+%%LITTLE_ENDIAN%%include/rdkit/SimDivPickers/HierarchicalClusterPicker.h
+%%LITTLE_ENDIAN%%include/rdkit/SimDivPickers/LeaderPicker.h
+%%LITTLE_ENDIAN%%include/rdkit/SimDivPickers/MaxMinPicker.h
 lib/cmake/rdkit/rdkit-config-version.cmake
 lib/cmake/rdkit/rdkit-config.cmake
 lib/cmake/rdkit/rdkit-targets-%%CMAKE_BUILD_TYPE%%.cmake
