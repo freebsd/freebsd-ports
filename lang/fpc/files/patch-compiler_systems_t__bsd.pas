@@ -17,7 +17,7 @@
 +  begin
 +    LdProgram:=GetEnvPChar('FPC_LDPATH');
 +    if not FileExists(LdProgram,True) then
-+      LdProgram:=GetEnvPChar('LOCALBASE')+'/bin/ld.bfd';
++      LdProgram:='%%FPC_LDPATH%%';
 +  end;
    if target_info.system in (systems_openbsd+[system_x86_64_dragonfly]) then
      LdProgram:='ld.bfd';

@@ -4,7 +4,7 @@ PORTNAME=	lazarus
 PORTVERSION=	2.0.10
 DISTVERSIONSUFFIX=	-2
 PKGNAMESUFFIX?=  -gtk2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
 		LOCAL/acm/freepascal
@@ -18,12 +18,13 @@ CONFLICTS?=	${PORTNAME}-qt5-*
 BUILD_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
 		fpcres:lang/fpc-utils
 RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
+		gmake:devel/gmake \
 		fpcres:lang/fpc-utils \
 		${LOCALBASE}/share/fpc-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc-source
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USES=		desktop-file-utils fpc gettext gmake iconv shared-mime-info xorg
+USES=		desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
 USE_FPC?=	chm cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-net \
 		fcl-registry fcl-res fcl-web fcl-xml fppkg gtk2 ibase iconvenc mysql \
 		numlib odbc opengl openssl oracle pasjpeg postgres regexpr rtl-extra \
@@ -38,7 +39,7 @@ DATADIR?=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=		GDB
 GDB_DESC=		Install a newest version  of gdb
-OPTIONS_DEFAULT=	GTK2 GDB
+OPTIONS_DEFAULT=	GDB
 
 .include <bsd.port.options.mk>
 
