@@ -1,4 +1,12 @@
 bin/freeplane
+%%DATADIR%%/doc/api/org/freeplane/api/LengthUnit.html
+%%DATADIR%%/doc/api/org/freeplane/api/NodeGeometry.html
+%%DATADIR%%/doc/api/org/freeplane/api/NodeGeometryRO.html
+%%DATADIR%%/doc/api/org/freeplane/api/NodeShape.html
+%%DATADIR%%/doc/api/org/freeplane/api/PhysicalUnit.html
+%%DATADIR%%/doc/api/org/freeplane/api/Quantity.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.NodeGeometry.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.NodeGeometryRO.html
 %%DATADIR%%/core/org.freeplane.core/META-INF/MANIFEST.MF
 %%DATADIR%%/core/org.freeplane.core/lib/SimplyHTML-0.17.9.jar
 %%DATADIR%%/core/org.freeplane.core/lib/annotations-16.0.1.jar
