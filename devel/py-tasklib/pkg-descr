@@ -1,0 +1,4 @@
+tasklib is a Python library for interacting with taskwarrior databases, using a
+queryset API similar to that of Django's ORM.
+
+WWW: https://pypi.org/project/tasklib/
