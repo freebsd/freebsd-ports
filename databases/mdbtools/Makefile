@@ -1,8 +1,8 @@
-# Created by: Anders Nordby <anders@fix.no>
 # $FreeBSD$
 
 PORTNAME=	mdbtools
-DISTVERSION=	0.8.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.1
 CATEGORIES=	databases
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -10,38 +10,38 @@ COMMENT=	Utilities and libraries to export data from MS Access databases (.mdb)
 
 LICENSE=	GPLv2
 
-# To build man-pages
-BUILD_DEPENDS=	gawk:lang/gawk \
+BUILD_DEPENDS=	bash-completion>=0:shells/bash-completion \
+		flex:textproc/flex \
+		gawk:lang/gawk \
 		txt2man:textproc/txt2man
-LIB_DEPENDS=	libodbc.so:databases/unixODBC
-# TODO  libmswstr: https://github.com/leecher1337/libmswstr
-#LIB_DEPENDS+=	libmswstr.so:databases/libmswstr
+LIB_DEPENDS=	libodbcinst.so:databases/unixODBC
+RUN_DEPENDS=	bash-completion>=0:shells/bash-completion
 
-USES=		autoreconf bison gettext-runtime gnome iconv libtool pathfix \
+USES=		autoreconf bison gnome iconv libtool pathfix \
 		pkgconfig readline
-USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	mdbtools
 USE_GNOME=	glib20
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
-		--enable-gtk-doc \
 		--with-unixodbc=${LOCALBASE}
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	cyberemissary
-
-OPTIONS_DEFINE=	DOCS GNOME
-OPTIONS_SUB=	yes
 
 INSTALL_TARGET=	install-strip
 
-DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO
+CPPFLAGS+=	-I${WRKSRC}/include
 
-GNOME_CONFIGURE_ENABLE=	gmdb2
-GNOME_USE=		GNOME=gconf2 \
-			GNOME=gdkpixbuf2 \
-			GNOME=gnomeprefix \
-			GNOME=intltool \
-			GNOME=libgnomeui
+OPTIONS_DEFINE=		DOCS MANPAGES LIBMSWSTR NLS
+OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=		yes
+
+LIBMSWSTR_DESC=	Read and parse JET 4 mdb file indices
+
+LIBMSWSTR_LIB_DEPENDS=	libmswstr.so:databases/libmswstr
+LIBMSWSTR_CONFIGURE_ENV_OFF=	ac_cv_lib_mswstr_DBLCMapStringW=no
+NLS_USES=	gettext
+
+DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
