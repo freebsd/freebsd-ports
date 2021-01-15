@@ -1421,6 +1421,7 @@
     SUBDIR += py-sphinxcontrib-serializinghtml
     SUBDIR += py-sphinxcontrib-websupport
     SUBDIR += py-sphinxcontrib-websupport11
+    SUBDIR += py-spylls
     SUBDIR += py-stemming
     SUBDIR += py-tabletext
     SUBDIR += py-tablib
