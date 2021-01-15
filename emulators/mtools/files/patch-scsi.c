@@ -1,6 +1,6 @@
---- scsi.c.orig	Tue Mar 16 03:11:18 1999
-+++ scsi.c	Sat Feb 26 00:48:35 2000
-@@ -49,7 +49,7 @@
+--- scsi.c.orig	2018-12-02 16:23:26 UTC
++++ scsi.c
+@@ -62,7 +62,7 @@
  #include <sys/scsicmd.h>
  #endif
  
@@ -9,16 +9,16 @@
  #include <camlib.h>
  #endif
  
-@@ -64,7 +64,7 @@
- 
- int scsi_open(const char *name, int flag, int mode, void **extra_data)
+@@ -82,7 +82,7 @@ int scsi_max_length(void)
+ int scsi_open(const char *name, int flag UNUSEDP, int mode UNUSEDP,
+ 	      void **extra_data UNUSEDP)
  {
 -#if (defined(OS_freebsd)) && (__FreeBSD__ >= 2)
 +#if (defined(OS_freebsd)) && (__FreeBSD__ >= 3)
      struct cam_device *cam_dev;
      cam_dev = cam_open_device(name, O_RDWR);
      *extra_data = (void *) cam_dev;
-@@ -224,7 +224,7 @@
+@@ -245,7 +245,7 @@ int scsi_cmd(int fd, unsigned char *cdb, int cmdlen, s
          }
          
          return 0;
@@ -27,4 +27,3 @@
  #define MSG_SIMPLE_Q_TAG 0x20 /* O/O */
        union ccb *ccb;
        int flags;
-

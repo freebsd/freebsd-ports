@@ -1,6 +1,6 @@
---- mtools.texi.orig	2009-02-20 05:48:30.000000000 +0900
-+++ mtools.texi	2009-02-20 22:04:41.000000000 +0900
-@@ -36,7 +36,7 @@
+--- mtools.texi.orig	2020-11-26 23:02:51 UTC
++++ mtools.texi
+@@ -39,7 +39,7 @@ mtools - utilities to access DOS disks in Unix.
  
  @dircategory DOS
  @direntry
