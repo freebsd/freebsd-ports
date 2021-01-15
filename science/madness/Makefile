@@ -2,7 +2,7 @@
 
 PORTNAME=	madness
 DISTVERSION=	0.10.1.20180823
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,6 @@ BUILD_DEPENDS=	libsysinfo>0:devel/libsysinfo
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
 		libmpich.so:net/mpich \
-		libtbb.so:devel/tbb \
 		libtcmalloc.so:devel/google-perftools \
 		libxc.so:science/libxc
 
@@ -26,5 +25,12 @@ GH_TAGNAME=	ebb3fd7
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DLAPACK_LIBRARIES:STRING="-L${LOCALBASE}/lib -llapack -lblas -L${LOCALBASE}/lib/gcc${GCC_DEFAULT} -lgcc_s" -DPYTHON_EXECUTABLE=${PYTHON_CMD}
+
+OPTIONS_DEFINE=		TBB
+#OPTIONS_DEFAULT=	TBB # oneTBB support needs to be fixed: https://github.com/m-a-d-n-e-s-s/madness/issues/366
+
+TBB_DESC=		Enables use of Intel Thread Building Blocks
+TBB_CMAKE_BOOL=		ENABLE_TBB
+TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
 
 .include <bsd.port.mk>
