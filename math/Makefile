@@ -194,6 +194,7 @@
     SUBDIR += clp
     SUBDIR += clrng
     SUBDIR += cm
+    SUBDIR += cmh
     SUBDIR += cminpack
     SUBDIR += cmlib
     SUBDIR += cocoalib
