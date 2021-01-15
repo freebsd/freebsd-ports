@@ -8,7 +8,7 @@ Benefits over cron(8):
 - no overlapping job runs possible
 - filtering by ISO week and day of year
 - no centralized daemon required (no fuzzing with multiple
-  users/permissions)    
+  users/permissions)
 - can easily disable jobs or force their execution
   instantly
 - have custom logs
