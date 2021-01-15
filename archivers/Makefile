@@ -36,6 +36,7 @@
     SUBDIR += grzip
     SUBDIR += gtar
     SUBDIR += gzip
+    SUBDIR += gzip-hpp
     SUBDIR += gzrecover
     SUBDIR += ha
     SUBDIR += hlextract
