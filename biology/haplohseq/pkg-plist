@@ -8,4 +8,3 @@ bin/haplohseq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/ldmap.py.orig
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/simple_phaser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/simple_phaser.py.orig
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/example/example_output
