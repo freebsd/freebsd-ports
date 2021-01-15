@@ -257,6 +257,7 @@
     SUBDIR += zoo
     SUBDIR += zopfli
     SUBDIR += zstd
+    SUBDIR += zstr
     SUBDIR += zutils
 
 .include <bsd.port.subdir.mk>

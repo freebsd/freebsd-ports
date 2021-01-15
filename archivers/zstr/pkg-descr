@@ -1,0 +1,10 @@
+The zstr C++ header-only library enables the use of C++ standard iostreams to
+access ZLib-compressed streams.
+
+For input access (decompression), the compression format is auto-detected, and
+multiple concatenated compressed streams are decompressed seamlessly.
+
+For output access (compression), the only parameter exposed by this API is the
+compression level.
+
+WWW: https://github.com/mateidavid/zstr
