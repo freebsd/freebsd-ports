@@ -58,10 +58,13 @@ CONFIGURE_ARGS+=--enable-debug-messages
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mamd64*}
+.if ${ARCH:Mamd64*} || ${ARCH:Mpowerpc64*}
 BUILD_DEPENDS+=	abinit:science/abinit
 RUN_DEPENDS+=	abinit:science/abinit
 CONFIGURE_ARGS+=--with-abinit
+PLIST_SUB+=	AB=""
+.else
+PLIST_SUB+=	AB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNLS}

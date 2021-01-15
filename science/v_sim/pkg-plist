@@ -8,11 +8,11 @@ lib/libv_sim-3.so.8.0.0
 %%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/v_sim.cpython-37.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/v_sim.cpython-37.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/v_sim.py
-lib/v_sim/plug-ins/libabinit.a
-lib/v_sim/plug-ins/libabinit.la
-lib/v_sim/plug-ins/libabinit.so
-lib/v_sim/plug-ins/libabinit.so.8
-lib/v_sim/plug-ins/libabinit.so.8.0.0
+%%AB%%lib/v_sim/plug-ins/libabinit.a
+%%AB%%lib/v_sim/plug-ins/libabinit.la
+%%AB%%lib/v_sim/plug-ins/libabinit.so
+%%AB%%lib/v_sim/plug-ins/libabinit.so.8
+%%AB%%lib/v_sim/plug-ins/libabinit.so.8.0.0
 lib/v_sim/plug-ins/libarchives.a
 lib/v_sim/plug-ins/libarchives.la
 lib/v_sim/plug-ins/libarchives.so
@@ -56,7 +56,7 @@ man/man1/v_sim.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/licence.fr.txt
 %%PORTDOCS%%%%DOCSDIR%%/pot2surf_help
 %%PORTDOCS%%%%DOCSDIR%%/readme
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ab_silicon.in
+%%AB%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ab_silicon.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aluminium.d3
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cinchonidine.xsf.bz2
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cinchonidine.yaml
@@ -96,7 +96,7 @@ share/icons/hicolor/48x48/apps/v_sim.png
 share/icons/hicolor/scalable/apps/v_sim.svg
 %%NLS%%share/locale/fr/LC_MESSAGES/v_sim.mo
 share/pixmaps/v_sim.xpm
-%%DATADIR%%/pixmaps/abinit.png
+%%AB%%%%DATADIR%%/pixmaps/abinit.png
 %%DATADIR%%/pixmaps/archives.png
 %%DATADIR%%/pixmaps/axes-angles.png
 %%DATADIR%%/pixmaps/axes-box.png
