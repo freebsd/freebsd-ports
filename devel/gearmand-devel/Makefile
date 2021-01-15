@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gearman C Server and Library
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs \
-		${PY_SPHINX}
+		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libboost_program_options.so:devel/boost-libs
@@ -22,7 +22,7 @@ CONFLICTS=	p5-Gearman-Server-1.* gearmand-1.0.*
 USERS=		gearmand
 GROUPS=		gearmand
 
-USES=		compiler:c++11-lang pathfix perl5 gmake gperf libtool python:build
+USES=		compiler:c++11-lang pathfix perl5 gmake gperf libtool python:build,3.6+
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
