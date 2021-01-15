@@ -30,7 +30,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USES=		cmake gnome jpeg
 USE_GITHUB=	yes
 GH_ACCOUNT=	YafaRay
-GH_PROJECT=	Core
+GH_PROJECT=	libYafaRay
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
