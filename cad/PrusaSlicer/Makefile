@@ -1,10 +1,9 @@
 # $FreeBSD$
 
-PORTNAME=		PrusaSlicer
-DISTVERSIONPREFIX=	version_
-DISTVERSION=		2.2.0
-PORTREVISION=		9
-CATEGORIES=		cad
+PORTNAME=	PrusaSlicer
+DISTVERSIONPREFIX=version_
+DISTVERSION=	2.3.0
+CATEGORIES=	cad
 
 MAINTAINER=	teodorsigaev@gmail.com
 COMMENT=	Slicing application for 3D printers
@@ -20,42 +19,21 @@ LIB_DEPENDS=	libtbb.so:devel/tbb \
 		libexpat.so:textproc/expat2 \
 		libopenvdb.so:misc/openvdb \
 		libgmp.so:math/gmp \
-		libmpfr.so:math/mpfr
+		libmpfr.so:math/mpfr \
+		libdbus-1.so:devel/dbus \
+		libpng.so:graphics/png
 BUILD_DEPENDS=	cereal>=1.2.2:devel/cereal \
-		googletest>=1.7:devel/googletest \
-		boost-libs>=1.64:devel/boost-libs \
-		wx31-gtk3>=3.1:x11-toolkits/wxgtk31 \
-		cmake>=3.2:devel/cmake \
-		ninja>=1.8.2:devel/ninja \
-		openvdb>=6.1.0:misc/openvdb \
-		gmp>=6.1.2:math/gmp \
-		mpfr>=4.0.2:math/mpfr \
-		qt5-buildtools>=0:devel/qt5-buildtools
+		cgal>=5.0.2:math/cgal
 
-USES=		cmake eigen:3 gettext gl iconv pkgconfig
-
-CMAKE_ARGS+=	-DwxWidgets_CONFIG_EXECUTABLE=${LOCALBASE}/bin/wxgtk3u-3.1-config \
-		-DCGAL_DIR=${WRKSRC}/CGAL/lib/cmake/CGAL
-CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
-
+USES=		cmake desktop-file-utils eigen:3 gettext gl iconv pkgconfig
+CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
+		-DSLIC3R_GTK=3 \
+		-DSLIC3R_FHS=1
 USE_GITHUB=	yes
 GH_ACCOUNT=	prusa3d
-GH_TUPLE=	CGAL:cgal:releases/CGAL-5.0.2:cgal
 USE_WX=		3.1
 USE_GL=		gl glu glew
 
-post-patch:
-	${REINPLACE_CMD} -e 's,%%WRKSRC%%,${WRKSRC},' \
-		${WRKSRC}/CMakeLists.txt
-
-pre-configure:
-	cd ${WRKSRC_cgal} && \
-	${CMAKE_BIN} -E remove CGALConfig-installation-dirs.cmake && \
-	${MKDIR} build && cd build && \
-	${CMAKE_BIN} -DCMAKE_INSTALL_PREFIX=${WRKSRC}/CGAL \
-		-DCMAKE_PREFIX_PATH=${WRKSRC}/CGAL \
-		-DCMAKE_MODULE_PATH=${WRKSRC}/cmake/modules \
-		-DCMAKE_BUILD_TYPE=Release .. && \
-	${BSDMAKE} all install
+PORTDATA=	*
 
 .include <bsd.port.mk>

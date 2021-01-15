@@ -1,11 +1,30 @@
---- CMakeLists.txt.orig	2020-03-21 10:55:51 UTC
+--- CMakeLists.txt.orig	2021-01-11 13:01:51 UTC
 +++ CMakeLists.txt
-@@ -3,6 +3,8 @@ project(PrusaSlicer)
+@@ -3,6 +3,7 @@ project(PrusaSlicer)
  
  include("version.inc")
  include(GNUInstallDirs)
-+include_directories(BEFORE SYSTEM "%%WRKSRC%%/CGAL/include")
 +add_compile_options(-DNDEBUG)
  
  set(SLIC3R_RESOURCES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/resources")
  file(TO_NATIVE_PATH "${SLIC3R_RESOURCES_DIR}" SLIC3R_RESOURCES_DIR_WIN)
+@@ -154,7 +155,7 @@ if (APPLE)
+     endif ()
+ endif ()
+ 
+-if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
++if (CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
+     find_package(PkgConfig REQUIRED)
+ 
+     if (CMAKE_VERSION VERSION_LESS "3.1")
+@@ -513,8 +514,8 @@ elseif (SLIC3R_FHS)
+     # CMAKE_INSTALL_FULL_DATAROOTDIR: read-only architecture-independent data root (share)
+     set(SLIC3R_FHS_RESOURCES "${CMAKE_INSTALL_FULL_DATAROOTDIR}/PrusaSlicer")
+     install(DIRECTORY "${SLIC3R_RESOURCES_DIR}/" DESTINATION "${SLIC3R_FHS_RESOURCES}")
+-    install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION ${SLIC3R_FHS_RESOURCES}/applications)
+-    install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION ${SLIC3R_FHS_RESOURCES}/applications)
++    install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION share/applications)
++    install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION share/applications)
+ else ()
+     install(FILES src/platform/unix/PrusaSlicer.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/resources/applications)
+     install(FILES src/platform/unix/PrusaGcodeviewer.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/resources/applications)
