@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		autoreconf gl libtool openal pkgconfig
+USES=		autoreconf compiler:c++11-lang gl libtool openal pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	electronoora
 GH_TAGNAME=	f75eeb7
