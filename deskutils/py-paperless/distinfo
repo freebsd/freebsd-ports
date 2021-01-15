@@ -1,5 +1,7 @@
-TIMESTAMP = 1606774296
+TIMESTAMP = 1610652602
 SHA256 (the-paperless-project-paperless-2.7.0_GH0.tar.gz) = 478823e12ea874dc0acd7f6ce038d221849cfcb797f0d6de57624bacdaa02839
 SIZE (the-paperless-project-paperless-2.7.0_GH0.tar.gz) = 4038688
 SHA256 (b122931185fb.patch) = 32076da28ca955c8b4db522478936aa76ef55033b8cb9ed6937ed37a393a1327
 SIZE (b122931185fb.patch) = 1449
+SHA256 (b131c97d1d85.patch) = 42816d1c16f7f40c746c654be0ff6e80c75dcb17ea2220df0b43334696b4548d
+SIZE (b131c97d1d85.patch) = 1049

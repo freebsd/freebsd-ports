@@ -479,10 +479,13 @@ man/man7/paperless.7.gz
 %%WWWDIR%%/static/djangoql/css/syntax_help.css
 %%WWWDIR%%/static/djangoql/img/completion_example.png
 %%WWWDIR%%/static/djangoql/img/completion_example_scaled.png
+%%WWWDIR%%/static/djangoql/img/loading.gif
 %%WWWDIR%%/static/djangoql/js/completion.js
 %%WWWDIR%%/static/djangoql/js/completion_admin.js
 %%WWWDIR%%/static/djangoql/js/completion_admin_toggle.js
+%%WWWDIR%%/static/djangoql/js/completion_admin_toggle_off.js
 %%WWWDIR%%/static/djangoql/js/lib/lexer.js
+%%WWWDIR%%/static/djangoql/js/lib/LRUCache.js
 %%WWWDIR%%/static/documents/img/gif.png
 %%WWWDIR%%/static/documents/img/image.png
 %%WWWDIR%%/static/documents/img/jpg.png
