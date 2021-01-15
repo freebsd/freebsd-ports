@@ -561,6 +561,7 @@
     SUBDIR += mypaint
     SUBDIR += mypaint-brushes
     SUBDIR += mypaint-brushes2
+    SUBDIR += nanort
     SUBDIR += nanosvg
     SUBDIR += netpbm
     SUBDIR += nip2
