@@ -10,9 +10,9 @@ COMMENT=	CAN bus reverse engineering and capture tool
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PY_SPHINX}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang gmake python:build qmake qt:5
+USES=		compiler:c++11-lang gmake python:build,3.6+ qmake qt:5
 USE_QT=		buildtools_build core gui help printsupport serialbus \
 		serialport websockets-qml widgets
 
