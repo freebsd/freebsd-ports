@@ -1,6 +1,41 @@
---- makefile.orig	2020-10-27 02:00:36.000000000 +0100
-+++ makefile	2020-12-26 00:03:58.094364000 +0100
-@@ -419,15 +419,15 @@
+--- makefile.orig	2020-10-27 01:00:36 UTC
++++ makefile
+@@ -319,6 +319,9 @@ endif
+ ifeq ($(firstword $(filter ppc64,$(UNAME))),ppc64)
+ ARCHITECTURE := _x64
+ endif
++ifeq ($(firstword $(filter powerpc64,$(UNAME))),powerpc64)
++ARCHITECTURE := _x64
++endif
+ ifeq ($(firstword $(filter ppc64le,$(UNAME))),ppc64le)
+ ARCHITECTURE := _x64
+ endif
+@@ -399,6 +402,13 @@ ifndef FORCE_DRC_C_BACKEND
+ endif
+ endif
+ 
++# powerpc has inline assembly support but no DRC
++ifeq ($(findstring powerpc,$(UNAME)),powerpc)
++ifndef FORCE_DRC_C_BACKEND
++	FORCE_DRC_C_BACKEND := 1
++endif
++endif
++
+ # Autodetect BIGENDIAN
+ # MacOSX
+ ifndef BIGENDIAN
+@@ -416,18 +426,26 @@ endif
+ ifneq (,$(findstring s390x,$(UNAME)))
+ BIGENDIAN := 1
+ endif
++# FreeBSD
++ifneq (,$(findstring powerpc,$(UNAME)))
++ifneq (,$(findstring powerpc64le,$(UNAME)))
++BIGENDIAN := 0
++else
++BIGENDIAN := 1
++endif
++endif
  endif # BIGENDIAN
  
  ifndef PYTHON_EXECUTABLE
@@ -21,7 +56,7 @@
  endif
  
  #-------------------------------------------------
-@@ -558,19 +558,19 @@
+@@ -558,19 +576,19 @@ endif
  ifdef OVERRIDE_CC
  PARAMS += --CC='$(OVERRIDE_CC)'
  ifndef CROSS_BUILD
