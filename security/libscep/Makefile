@@ -15,12 +15,12 @@ LICENSE_FILE=	${WRKSRC}/README.md
 BUILD_DEPENDS=	check>=0.12.0:devel/check \
 		curl>=7.64:ftp/curl \
 		uriparser>=0.9.1:net/uriparser \
-		${PY_SPHINX}
+		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 RUN_DEPENDS=	check>=0.12.0:devel/check \
 		curl>=7.64:ftp/curl \
 		uriparser>=0.9.1:net/uriparser
 
-USES=		cmake:noninja gmake ssl pkgconfig libtool python:build
+USES=		cmake:noninja gmake ssl pkgconfig libtool python:build,3.6+
 USE_LDCONFIG=	yes
 USE_GCC=	yes
 USE_GITHUB=	yes
