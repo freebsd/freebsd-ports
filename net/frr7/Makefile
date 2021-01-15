@@ -21,7 +21,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 .if defined(PYTHONTOOLS)
 RUN_DEPENDS=	frr-reload:net/frr7
 
-USES=	python:run shebangfix
+USES=	python:run,3.6+ shebangfix
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/frr|${ETCDIR}|g' \
@@ -39,7 +39,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libyang.so:net/libyang
 
 USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
-		makeinfo python:build readline shebangfix
+		makeinfo python:build,3.6+ readline shebangfix
 
 BINARY_ALIAS=	python=${PYTHON_VERSION}
 
@@ -99,7 +99,7 @@ CONFIGURE_ARGS=	--enable-user=frr \
 		--disable-vrrpd \
 		--with-vtysh-pager=cat
 
-MANPAGES_BUILD_DEPENDS=		${PY_SPHINX}
+MANPAGES_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 MANPAGES_CONFIGURE_OFF=		--disable-doc
 CONFIGROLLBACKS_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 CONFIGROLLBACKS_CONFIGURE_ENABLE=	config-rollbacks
