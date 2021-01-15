@@ -13,7 +13,7 @@ COMMENT=	Device driver for PT1/PT2 ISDB-S/T tuner cards
 
 LICENSE=	GPLv3
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 
 USES=		kmod shebangfix
 SHEBANG_FILES=	tools/recptx.pl
