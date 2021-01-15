@@ -2,6 +2,7 @@
 
 PORTNAME=	stress-ng
 PORTVERSION=	0.12.01
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://kernel.ubuntu.com/~cking/tarballs/stress-ng/
 
@@ -13,11 +14,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 
+LIB_DEPENDS=	libinotify.so:devel/libinotify
+
 USES=		compiler:c11 gmake tar:xz
 
 ALL_TARGET=	# empty
 
 PLIST_FILES=	bin/stress-ng man/man1/stress-ng.1.gz
+
+CFLAGS	+=	-I${LOCALBASE}/include
+LDFLAGS	+=	-L${LOCALBASE}/lib -linotify
 
 post-patch:
 	${REINPLACE_CMD} -e \
