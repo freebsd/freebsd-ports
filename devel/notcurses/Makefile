@@ -2,7 +2,7 @@
 
 PORTNAME=	notcurses
 DISTVERSIONPREFIX=	v
-DISTVERSION=	${ABIVERSION}.1.4
+DISTVERSION=	${ABIVERSION}.1.5
 CATEGORIES=	devel
 
 MAINTAINER=	nickblack@linux.com
@@ -15,7 +15,8 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libqrcodegen.so:graphics/qr-code-generator \
 		libunistring.so:devel/libunistring
 
-USES=		cmake:noninja compiler:c++17-lang localbase ncurses:port pkgconfig
+USES=		cmake:noninja compiler:c++17-lang localbase ncurses:port pkgconfig \
+		readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	dankamongmen
 USE_LDCONFIG=	yes
