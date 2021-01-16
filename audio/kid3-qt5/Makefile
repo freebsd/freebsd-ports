@@ -4,7 +4,7 @@ PORTNAME=	kid3
 PORTVERSION=	3.8.4
 PORTREVISION?=	0
 CATEGORIES=	audio kde
-MASTER_SITES=	SF
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	-${SLAVE}
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gnome pkgconfig qt:5
+USES=		cmake compiler:c++11-lang desktop-file-utils gnome \
+		pkgconfig qt:5 tar:xz
 USE_GNOME=	libxslt:build
 USE_LDCONFIG=	yes
 USE_QT=		core dbus gui multimedia network xml widgets \
