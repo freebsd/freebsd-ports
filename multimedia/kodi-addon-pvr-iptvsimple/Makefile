@@ -17,7 +17,7 @@ LIB_DEPENDS=	libp8-platform.so:devel/p8-platform \
 		libpugixml.so:textproc/pugixml
 RUN_DEPENDS=	kodi:multimedia/kodi
 
-USES=		cmake:noninja
+USES=		cmake:noninja compiler:c++14-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kodi-pvr
