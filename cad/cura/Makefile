@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	Cura
-DISTVERSION=	4.8
-PORTREVISION=	2
+DISTVERSION=	4.8.0
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	cad
 DIST_SUBDIR=	Ultimaker
@@ -21,24 +21,29 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf@${PY_FLAVOR} \
 		qt5-graphicaleffects>0:graphics/qt5-graphicaleffects \
 		qt5-quickcontrols>0:x11-toolkits/qt5-quickcontrols \
 		qt5-quickcontrols2>0:x11-toolkits/qt5-quickcontrols2 \
-		Uranium>0:cad/uranium \
-		libCharon>0:net/libcharon \
-		CuraEngine>0,1:cad/cura-engine \
-		fdm_materials>0,1:cad/fdm_materials \
-		${PYTHON_PKGNAMEPREFIX}trimesh>0:devel/py-trimesh@${PY_FLAVOR}
+		Uranium>=${DISTVERSION}:cad/uranium \
+		libCharon>=${DISTVERSION}:net/libcharon \
+		CuraEngine>=${DISTVERSION}:cad/cura-engine \
+		fdm_materials>=${DISTVERSION}:cad/fdm_materials \
+		${PYTHON_PKGNAMEPREFIX}trimesh>0:devel/py-trimesh@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pynest2d>=${DISTVERSION}:devel/py-pynest2d@${PY_FLAVOR}
+
 LIB_DEPENDS=	libArcus.so:net/libarcus \
 		libSavitar.so:devel/libsavitar
 
 USES=		cmake gettext shebangfix python:3.5+ pyqt:5 \
 		desktop-file-utils shared-mime-info
 USE_PYQT=	gui widgets qml
-CMAKE_ARGS+=	-DURANIUM_SCRIPTS_DIR:STRING="${LOCALBASE}/share/uranium/scripts"
+CMAKE_ARGS+=	-DURANIUM_SCRIPTS_DIR:STRING="${LOCALBASE}/share/uranium/scripts" \
+	-DCURA_VERSION=${DISTVERSION}
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
+GH_TAGNAME=	58bae31
 NO_ARCH=	yes
+SHEBANG_FILES=	cura_app.py
 
-post-patch:
-	${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
-		${WRKSRC}/cura_app.py
+pre-configure:
+	${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
