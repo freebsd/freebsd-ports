@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2017-05-31 05:57:25 UTC
+--- CMakeLists.txt.orig	2019-12-06 16:20:37 UTC
 +++ CMakeLists.txt
-@@ -10,8 +10,6 @@ if (NOT WITHOUT_OPENCV)
+@@ -11,8 +11,6 @@ if (NOT WITHOUT_OPENCV)
    find_package (OpenCV)
  endif ()
  
@@ -9,7 +9,7 @@
  include(FindPkgConfig)
  option (WITHOUT_GAVL "Disable plugins dependent upon gavl" OFF)
  if (PKG_CONFIG_FOUND AND NOT WITHOUT_GAVL)
-@@ -45,16 +43,8 @@ set (FREI0R_1_1_DEF ${CMAKE_SOURCE_DIR}/msvc/frei0r_1_
+@@ -38,16 +36,8 @@ set (FREI0R_1_1_DEF "${CMAKE_SOURCE_DIR}/msvc/frei0r_1
  # --- custom targets: ---
  INCLUDE( cmake/modules/TargetDistclean.cmake OPTIONAL)
  
@@ -23,13 +23,13 @@
 -# Generate frei0r.pc and install it.
  set (prefix "${CMAKE_INSTALL_PREFIX}")
  set (exec_prefix "${CMAKE_INSTALL_PREFIX}")
- set (libdir "${CMAKE_INSTALL_PREFIX}/lib")
+ set (libdir "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
 -set (includedir "${CMAKE_INSTALL_PREFIX}/include")
 -configure_file ("frei0r.pc.in" "frei0r.pc" @ONLY)
--install (FILES "${CMAKE_CURRENT_BINARY_DIR}/frei0r.pc" DESTINATION lib/pkgconfig)
---- src/filter/CMakeLists.txt.orig	2017-05-31 05:57:25 UTC
+-install (FILES "${CMAKE_CURRENT_BINARY_DIR}/frei0r.pc" DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
+--- src/filter/CMakeLists.txt.orig	2019-12-06 16:20:37 UTC
 +++ src/filter/CMakeLists.txt
-@@ -8,89 +8,3 @@ if (${OpenCV_FOUND})
+@@ -8,92 +8,3 @@ if (${OpenCV_FOUND})
      add_subdirectory (facebl0r)
      add_subdirectory (facedetect)
  endif (${OpenCV_FOUND})
@@ -67,6 +67,7 @@
 -add_subdirectory (distort0r)
 -add_subdirectory (dither)
 -add_subdirectory (edgeglow)
+-add_subdirectory (elastic_scale)
 -add_subdirectory (emboss)
 -add_subdirectory (equaliz0r)
 -add_subdirectory (flippo)
@@ -90,10 +91,12 @@
 -endif ()
 -add_subdirectory (ndvi)
 -add_subdirectory (nervous)
+-add_subdirectory (normaliz0r)
 -add_subdirectory (nosync0r)
 -add_subdirectory (perspective)
 -add_subdirectory (pixeliz0r)
 -add_subdirectory (posterize)
+-add_subdirectory (premultiply)
 -add_subdirectory (primaries)
 -add_subdirectory (RGB)
 -add_subdirectory (rgbnoise)

@@ -52,6 +52,7 @@ lib/frei0r-1/dither.so
 lib/frei0r-1/divide.so
 lib/frei0r-1/dodge.so
 lib/frei0r-1/edgeglow.so
+lib/frei0r-1/elastic_scale.so
 lib/frei0r-1/emboss.so
 lib/frei0r-1/equaliz0r.so
 lib/frei0r-1/flippo.so
@@ -80,6 +81,7 @@ lib/frei0r-1/multiply.so
 lib/frei0r-1/ndvi.so
 lib/frei0r-1/nervous.so
 lib/frei0r-1/nois0r.so
+lib/frei0r-1/normaliz0r.so
 lib/frei0r-1/nosync0r.so
 lib/frei0r-1/onecol0r.so
 lib/frei0r-1/overlay.so
@@ -90,6 +92,7 @@ lib/frei0r-1/plasma.so
 lib/frei0r-1/posterize.so
 lib/frei0r-1/pr0be.so
 lib/frei0r-1/pr0file.so
+lib/frei0r-1/premultiply.so
 lib/frei0r-1/primaries.so
 lib/frei0r-1/rgbnoise.so
 lib/frei0r-1/rgbsplit0r.so
