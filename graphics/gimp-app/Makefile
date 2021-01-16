@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gimp-app
-PORTVERSION=	2.10.20
-PORTREVISION=	16
+PORTVERSION=	2.10.22
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	GIMP/gimp/v${PORTVERSION:R}
@@ -132,7 +131,8 @@ SIMD_CONFIGURE_OFF=	--disable-mmx \
 WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
-WMF_LIB_DEPENDS=	libwmf.so:graphics/libwmf
+WMF_LIB_DEPENDS=	libwmf.so:graphics/libwmf \
+			libexpat.so:textproc/expat2
 WMF_CONFIGURE_WITH=	wmf
 
 .endif
