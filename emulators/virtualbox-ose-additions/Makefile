@@ -34,6 +34,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-alsa \
 			--disable-docs \
 			--disable-libvpx \
+			--disable-opengl \
 			--disable-pulse \
 			--disable-python \
 			--disable-sdl-ttf \
