@@ -1,3 +1,3 @@
-TIMESTAMP = 1601033723
-SHA256 (angr-archinfo-v9.0.4446_GH0.tar.gz) = af9b1cc0792b0d6b505788bc28b7e543d74388eb9a1abac750e82de13749e437
-SIZE (angr-archinfo-v9.0.4446_GH0.tar.gz) = 49124
+TIMESTAMP = 1610804750
+SHA256 (angr-archinfo-v9.0.5405_GH0.tar.gz) = 4de7bfca3d2e7ef4f80eaec13b7910c44f16ac184fa128971b8f6c7d6ca6a6ec
+SIZE (angr-archinfo-v9.0.5405_GH0.tar.gz) = 50412
