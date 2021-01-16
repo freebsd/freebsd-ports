@@ -2,6 +2,7 @@
 
 PORTNAME=	automuteus
 DISTVERSION=	6.10.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
@@ -11,12 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-USE_RC_SUBR=	${PORTNAME}
-SUB_FILES=	pkg-message
-
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-GO_TARGET=	.:${PORTNAME}
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	denverquane
 
@@ -64,10 +59,21 @@ GH_TUPLE=	\
 		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify
 
-PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}/config.txt
+USE_RC_SUBR=	${PORTNAME}
+
+GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_TARGET=	.:${PORTNAME}
+
+SUB_FILES=	pkg-message
+PLIST_FILES=	bin/${PORTNAME} \
+		"@sample etc/${PORTNAME}/config.txt.sample" \
+		"@dir /var/log/automuteus" \
+		/var/log/${PORTNAME}/logs.txt
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/automuteus
-	@${CP} ${FILESDIR}/config.txt ${STAGEDIR}${PREFIX}/etc/automuteus
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${CP} ${FILESDIR}/config.txt ${STAGEDIR}${ETCDIR}/config.txt.sample
+	@${MKDIR} ${STAGEDIR}/var/log/${PORTNAME}
+	@${TOUCH} ${STAGEDIR}/var/log/${PORTNAME}/logs.txt
 
 .include <bsd.port.mk>

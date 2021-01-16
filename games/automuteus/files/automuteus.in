@@ -19,11 +19,12 @@ load_rc_config $name
 
 : ${automuteus_enable:="NO"}
 : ${automuteus_conf:="%%PREFIX%%/etc/automuteus/config.txt"}
-: ${automuteus_log:="/var/log/automuteus.log"}
+: ${automuteus_log:="/var/log/automuteus"}
 
 command="%%PREFIX%%/bin/automuteus"
 pidfile=/var/run/${name}.pid
 start_cmd="automuteus_start"
+stop_cmd="automuteus_stop"
 
 automuteus_start()
 {
@@ -31,9 +32,14 @@ automuteus_start()
 	/usr/sbin/daemon \
 		-p ${pidfile} \
 		/usr/bin/env \
-		"CONFIG_FILE=${automuteus_conf}" \
+		"CONFIG_PATH=${automuteus_conf}" \
 		"LOG_PATH=${automuteus_log}" \
 		${command}
+}
+
+automuteus_stop()
+{
+	kill `cat ${pidfile}`
 }
 
 run_rc_command "$1"
