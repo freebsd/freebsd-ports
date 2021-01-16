@@ -232,6 +232,7 @@
     SUBDIR += dune-grid
     SUBDIR += dune-istl
     SUBDIR += dune-localfunctions
+    SUBDIR += dune-metagrid
     SUBDIR += dune-pdelab
     SUBDIR += dune-spgrid
     SUBDIR += dune-typetree
