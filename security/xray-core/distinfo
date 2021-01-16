@@ -1,6 +1,6 @@
-TIMESTAMP = 1610383415
-SHA256 (xtls-Xray-core-v1.2.1_GH0.tar.gz) = eebea67d9176cc016d21de2d8123b0a6ab795ec82af2c6b8d7467212841bdc56
-SIZE (xtls-Xray-core-v1.2.1_GH0.tar.gz) = 471948
+TIMESTAMP = 1610817556
+SHA256 (xtls-Xray-core-v1.2.2_GH0.tar.gz) = b9b38bc69e660d3a6d0545efea4d0891ee81a2d55c83a6fa893cbd680a071023
+SIZE (xtls-Xray-core-v1.2.2_GH0.tar.gz) = 473460
 SHA256 (cheekybits-genny-v1.0.0_GH0.tar.gz) = 6982bf513333fb3ee3e6e0633500a3800fb6a3d6beb9e6c6084a96c85a49dd73
 SIZE (cheekybits-genny-v1.0.0_GH0.tar.gz) = 15585
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
