@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffdec
-DISTVERSION=	11.3.0
+DISTVERSION=	12.0.1
 CATEGORIES=	multimedia java
 MASTER_SITES=	https://github.com/jindrapetrik/jpexs-decompiler/releases/download/version${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
