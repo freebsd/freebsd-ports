@@ -2,7 +2,7 @@
 
 PORTNAME=	gammy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.61
+DISTVERSION=	0.9.62
 CATEGORIES=	accessibility
 
 MAINTAINER=	me@igalic.co
@@ -16,7 +16,7 @@ GH_ACCOUNT=	Fushko
 USE_GL=		gl
 USE_QT=		core dbus gui widgets \
 		buildtools_build qmake_build
-USE_XORG=	x11 xxf86vm
+USE_XORG=	x11 xext xxf86vm
 
 PLIST_FILES=	bin/gammy
 
