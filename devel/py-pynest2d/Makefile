@@ -2,6 +2,7 @@
 
 PORTNAME=	pynest2d
 DISTVERSION=	4.8.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,6 +19,7 @@ LIB_DEPENDS=	libpolyclipping.so:graphics/polyclipping \
 		libnlopt.so:math/nlopt
 
 USES=		python:3.6+ cmake compiler:c++11-lang pyqt:5 pkgconfig
+USE_PYTHON=	flavors
 
 USE_GITHUB=	yes
 GH_TUPLE=	Ultimaker:pynest2d:d31a381
