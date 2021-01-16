@@ -1,0 +1,11 @@
+iniconfig is a small and simple INI-file parser module having a unique set of
+features:
+
+* maintains order of sections and entries
+* supports multi-line values with or without line-continuations
+* supports "#" comments everywhere
+* raises errors with proper line-numbers
+* no bells and whistles like automatic substitutions
+* iniconfig raises an Error if two sections have the same name.
+
+WWW: https://pypi.org/project/iniconfig/
