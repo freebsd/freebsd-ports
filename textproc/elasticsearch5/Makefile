@@ -14,6 +14,9 @@ COMMENT=	Full-text search engine for Java
 
 LICENSE=	APACHE20
 
+DEPRECATED=	End of life since release of 7.3.0
+EXPIRATION_DATE=	2021-03-31
+
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	bash>0:shells/bash \
 		jna>0:devel/jna

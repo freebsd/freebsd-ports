@@ -12,6 +12,9 @@ COMMENT=	Server-side data ingest and transfomation tool
 
 LICENSE=	APACHE20
 
+DEPRECATED=	End of life since release of 7.3.0
+EXPIRATION_DATE=	2021-03-31
+
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
 CONFLICTS=	logstash-[0-9]*

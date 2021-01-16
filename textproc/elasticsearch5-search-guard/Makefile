@@ -14,6 +14,9 @@ COMMENT=	Elasticsearch Search Guard plugin
 
 LICENSE=	APACHE20
 
+DEPRECATED=	textproc/elasticsearch5 is scheduled for removal
+EXPIRATION_DATE=	2021-03-31
+
 RUN_DEPENDS:=	elasticsearch5>=${DISTVERSION}:textproc/elasticsearch5
 
 NO_ARCH=	yes
