@@ -226,6 +226,7 @@
     SUBDIR += dsdp
     SUBDIR += dune-alugrid
     SUBDIR += dune-common
+    SUBDIR += dune-curvedgeometry
     SUBDIR += dune-functions
     SUBDIR += dune-geometry
     SUBDIR += dune-grid

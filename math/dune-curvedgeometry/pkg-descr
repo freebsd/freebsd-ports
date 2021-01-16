@@ -1,0 +1,9 @@
+dune-curvedgeometry is a module of the DUNE Numerics framework for solving
+partial differential equations (PDEs) with grid-based methods.
+
+The CurvedGeometry is a Geometry parametrized by a local-to-global mapping that
+is interpolated into a local basis. In the Traits type the local basis in
+encoded by a LocalFiniteElement Cache type, that allows to construct a local
+FiniteElement and with this also the local basis.
+
+WWW: https://www.dune-project.org/
