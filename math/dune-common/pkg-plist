@@ -202,5 +202,4 @@ share/dune/cmake/scripts/index.rst.in
 share/dune/cmake/scripts/main77.cc.in
 share/dune/cmake/scripts/module_library.cc.in
 share/dune/cmake/scripts/pyversion.py
-share/dune/cmake/scripts/run-in-dune-env.sh.in
 share/dune/cmake/scripts/sphinx_cmake_dune.py
