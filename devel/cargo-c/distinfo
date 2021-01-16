@@ -1,6 +1,6 @@
-TIMESTAMP = 1608546341
-SHA256 (rust/crates/cargo-c-0.7.0+cargo-0.49.tar.gz) = e88e3f34e0139e5ee65f741122c875c4755ad1c135fd3447e22223fbb0798f35
-SIZE (rust/crates/cargo-c-0.7.0+cargo-0.49.tar.gz) = 28605
+TIMESTAMP = 1610793270
+SHA256 (rust/crates/cargo-c-0.7.1+cargo-0.49.tar.gz) = 50f22116159cffb7aabf09ee337bfb9c940523ea21e1881d365e19735eade8ba
+SIZE (rust/crates/cargo-c-0.7.1+cargo-0.49.tar.gz) = 28594
 SHA256 (rust/crates/adler-0.2.3.tar.gz) = ee2a4ec343196209d6594e19543ae87a39f96d5534d7174822a3ad825dd6ed7e
 SIZE (rust/crates/adler-0.2.3.tar.gz) = 12168
 SHA256 (rust/crates/aho-corasick-0.7.15.tar.gz) = 7404febffaa47dac81aa44dba71523c9d069b1bdc50a77db41195149e17f68e5
