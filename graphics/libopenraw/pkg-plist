@@ -19,11 +19,11 @@ include/libopenraw-%%VER%%/libopenraw/types.h
 %%GNOME%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libopenraw_pixbuf.so
 lib/libopenraw.a
 lib/libopenraw.so
-lib/libopenraw.so.8
-lib/libopenraw.so.8.0.3
+lib/libopenraw.so.9
+lib/libopenraw.so.9.0.0
 %%GNOME%%lib/libopenrawgnome.a
 %%GNOME%%lib/libopenrawgnome.so
-%%GNOME%%lib/libopenrawgnome.so.8
-%%GNOME%%lib/libopenrawgnome.so.8.0.3
+%%GNOME%%lib/libopenrawgnome.so.9
+%%GNOME%%lib/libopenrawgnome.so.9.0.0
 libdata/pkgconfig/libopenraw-%%VER%%.pc
 %%GNOME%%libdata/pkgconfig/libopenraw-gnome-%%VER%%.pc
