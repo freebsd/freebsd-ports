@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	makeself
-PORTVERSION=	2.4.2
-DISTVERSIONPREFIX=	release-
+PORTVERSION=	2.4.3
 CATEGORIES=	archivers
+MASTER_SITES=	https://github.com/megastep/makeself/releases/download/release-${PORTVERSION}/
+EXTRACT_SUFX=	.run
 
 MAINTAINER=	ed.arrakis@gmail.com
 COMMENT=	Neat script to make self-extracting archives
@@ -12,8 +13,9 @@ COMMENT=	Neat script to make self-extracting archives
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	megastep
+EXTRACT_CMD=	${SH}
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	--nox11 --target ${WRKSRC}
 
 NO_ARCH=	yes
 NO_BUILD=	yes
