@@ -12,7 +12,6 @@ www/glpi/plugins/fusioninventory/ajax/deploygroup_results.php
 www/glpi/plugins/fusioninventory/ajax/deploypackage_form.php
 www/glpi/plugins/fusioninventory/ajax/deployuser.logged.in.php
 www/glpi/plugins/fusioninventory/ajax/dropdownCredentials.php
-www/glpi/plugins/fusioninventory/ajax/dropdown_taskjob.php
 www/glpi/plugins/fusioninventory/ajax/dropdownactionlist.php
 www/glpi/plugins/fusioninventory/ajax/dropdownactionselection.php
 www/glpi/plugins/fusioninventory/ajax/dropdownactiontype.php
@@ -72,7 +71,6 @@ www/glpi/plugins/fusioninventory/front/credential.form.php
 www/glpi/plugins/fusioninventory/front/credential.php
 www/glpi/plugins/fusioninventory/front/credentialip.form.php
 www/glpi/plugins/fusioninventory/front/credentialip.php
-www/glpi/plugins/fusioninventory/front/deployfile.clean.php
 www/glpi/plugins/fusioninventory/front/deploygroup.form.php
 www/glpi/plugins/fusioninventory/front/deploygroup.php
 www/glpi/plugins/fusioninventory/front/deploymirror.form.php
@@ -129,7 +127,6 @@ www/glpi/plugins/fusioninventory/front/timeslot.php
 www/glpi/plugins/fusioninventory/front/timeslotentry.form.php
 www/glpi/plugins/fusioninventory/front/unmanaged.form.php
 www/glpi/plugins/fusioninventory/front/unmanaged.php
-www/glpi/plugins/fusioninventory/fusioninventory.xml
 www/glpi/plugins/fusioninventory/hook.php
 www/glpi/plugins/fusioninventory/inc/agent.class.php
 www/glpi/plugins/fusioninventory/inc/agentmodule.class.php
@@ -1652,8 +1649,6 @@ www/glpi/plugins/fusioninventory/lib/plusbutton.min.js
 www/glpi/plugins/fusioninventory/lib/pretty_json.php
 www/glpi/plugins/fusioninventory/lib/timeslot.js
 www/glpi/plugins/fusioninventory/lib/timeslot.min.js
-www/glpi/plugins/fusioninventory/locales/cs_CZ.mo
-www/glpi/plugins/fusioninventory/locales/cs_CZ.po
 www/glpi/plugins/fusioninventory/locales/de_DE.mo
 www/glpi/plugins/fusioninventory/locales/de_DE.po
 www/glpi/plugins/fusioninventory/locales/en_GB.mo
@@ -1684,8 +1679,6 @@ www/glpi/plugins/fusioninventory/locales/sl_SI.mo
 www/glpi/plugins/fusioninventory/locales/sl_SI.po
 www/glpi/plugins/fusioninventory/locales/tr_TR.mo
 www/glpi/plugins/fusioninventory/locales/tr_TR.po
-www/glpi/plugins/fusioninventory/locales/uk_UA.mo
-www/glpi/plugins/fusioninventory/locales/uk_UA.po
 www/glpi/plugins/fusioninventory/locales/zh_TW.mo
 www/glpi/plugins/fusioninventory/locales/zh_TW.po
 www/glpi/plugins/fusioninventory/phpunit/0_Install/BootstrapTest.php
@@ -1719,7 +1712,6 @@ www/glpi/plugins/fusioninventory/phpunit/1_Unit/AgentTest.php
 www/glpi/plugins/fusioninventory/phpunit/1_Unit/ComputerLogTest.php
 www/glpi/plugins/fusioninventory/phpunit/1_Unit/ComputerTransformationTest.php
 www/glpi/plugins/fusioninventory/phpunit/1_Unit/ComputerUpdateTest.php
-www/glpi/plugins/fusioninventory/phpunit/1_Unit/DeleteLinkedObjectsTest.php
 www/glpi/plugins/fusioninventory/phpunit/1_Unit/FormatConvertDataTest.php
 www/glpi/plugins/fusioninventory/phpunit/1_Unit/NetworkEquipmentTransformationTest.php
 www/glpi/plugins/fusioninventory/phpunit/1_Unit/NetworkEquipmentUpdateDiscoveryTest.php
@@ -1738,7 +1730,6 @@ www/glpi/plugins/fusioninventory/phpunit/2_Integration/ComputerLicenseTest.php
 www/glpi/plugins/fusioninventory/phpunit/2_Integration/ComputerMonitorTest.php
 www/glpi/plugins/fusioninventory/phpunit/2_Integration/ComputerPeripheralTest.php
 www/glpi/plugins/fusioninventory/phpunit/2_Integration/ComputerPrinterTest.php
-www/glpi/plugins/fusioninventory/phpunit/2_Integration/DevicesLocksTest.php
 www/glpi/plugins/fusioninventory/phpunit/2_Integration/NetworkEquipmentLLDPTest.php
 www/glpi/plugins/fusioninventory/phpunit/2_Integration/RestURLTest.php
 www/glpi/plugins/fusioninventory/phpunit/2_Integration/RuleEntityTest.php
@@ -1856,8 +1847,6 @@ www/glpi/plugins/fusioninventory/pics/fingerprint-bad.png
 www/glpi/plugins/fusioninventory/pics/fingerprint-good.png
 www/glpi/plugins/fusioninventory/pics/fond_form_off.png
 www/glpi/plugins/fusioninventory/pics/fusioninventory_icon.png
-www/glpi/plugins/fusioninventory/pics/fusioninventory_logo.png
-www/glpi/plugins/fusioninventory/pics/fusioninventory_logo_square.png
 www/glpi/plugins/fusioninventory/pics/general_inventory.png
 www/glpi/plugins/fusioninventory/pics/icon_InventoryComputerESX.png
 www/glpi/plugins/fusioninventory/pics/icon_collect.png
@@ -1874,7 +1863,6 @@ www/glpi/plugins/fusioninventory/pics/menu_authentification.png
 www/glpi/plugins/fusioninventory/pics/menu_authentification_1.png
 www/glpi/plugins/fusioninventory/pics/menu_blacklist.png
 www/glpi/plugins/fusioninventory/pics/menu_checkintegrity.png
-www/glpi/plugins/fusioninventory/pics/menu_cleanfiles.png
 www/glpi/plugins/fusioninventory/pics/menu_credentialips.png
 www/glpi/plugins/fusioninventory/pics/menu_credentials.png
 www/glpi/plugins/fusioninventory/pics/menu_deploy_status.png
@@ -1956,11 +1944,6 @@ www/glpi/plugins/fusioninventory/report/computer_last_inventory.php
 www/glpi/plugins/fusioninventory/report/not_queried_recently.php
 www/glpi/plugins/fusioninventory/report/ports_date_connections.php
 www/glpi/plugins/fusioninventory/report/switch_ports.history.php
-www/glpi/plugins/fusioninventory/screenshots/0.90-central.png
-www/glpi/plugins/fusioninventory/screenshots/0.90-deploypackage.png
-www/glpi/plugins/fusioninventory/screenshots/0.90-monitoring.png
-www/glpi/plugins/fusioninventory/screenshots/0.90-rules.png
-www/glpi/plugins/fusioninventory/screenshots/0.90-tasks.png
 www/glpi/plugins/fusioninventory/scripts/.htaccess
 www/glpi/plugins/fusioninventory/scripts/cleanup_repository.php
 www/glpi/plugins/fusioninventory/scripts/cli_install.php

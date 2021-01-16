@@ -3,17 +3,16 @@
 
 PORTNAME=	server
 PORTVERSION=	${GLPI_VER}.${FUNV_VER}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	glpi-plugins-fusioninventory-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Plugin of glpi to get information of networking devices
 
 LICENSE=	AGPLv3
 
-RUN_DEPENDS=	glpi>=0.90:www/glpi
+RUN_DEPENDS=	glpi>=9.5:www/glpi
 
 USES=		gettext php shebangfix
 USE_GITHUB=	yes
@@ -22,8 +21,8 @@ GH_PROJECT=	fusioninventory-for-glpi
 GH_TAGNAME=	glpi090+${FUNV_VER}
 USE_PHP=	fileinfo simplexml
 
-GLPI_VER=	0.90
-FUNV_VER=	1.3
+GLPI_VER=	9.5.0
+FUNV_VER=	1.0
 NO_BUILD=	yes
 NO_ARCH=	yes
 
