@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	dune-metagrid
-DISTVERSIONPREFIX=	v
 DISTVERSION=	g20180822
 CATEGORIES=	math
 
@@ -11,8 +10,6 @@ COMMENT=	DUNE framework: module implementing a variety of DUNE meta grids
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	openmpi>0:net/openmpi \
-		vc>0:devel/vc
 LIB_DEPENDS=	libdunealugrid.so:math/dune-alugrid \
 		libdunecommon.so:math/dune-common \
 		libdunegrid.so:math/dune-grid
