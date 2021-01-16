@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: slimta
+# REQUIRE: DAEMON FILESYSTEMS NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable slimta.
+#
+# slimta_enable="YES"
+
+. /etc/rc.subr
+
+name="slimta"
+rcvar="slimta_enable"
+
+load_rc_config $name
+
+: ${slimta_enable:="NO"}
+: ${slimta_conf:="%%PREFIX%%/etc/slimta/slimta.yaml"}
+
+procname="%%PREFIX%%/bin/slimta"
+pidfile=/var/run/${name}.pid
+command_interpreter="%%PYTHON_CMD%%"
+command="/usr/sbin/daemon"
+command_args="-p $pidfile $procname -c $slimta_conf"
+
+run_rc_command "$1"

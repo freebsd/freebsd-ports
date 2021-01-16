@@ -1,0 +1,5 @@
+The slimta project is a traditional application built on top of the
+python-slimta library. It allows a more "out-of-the-box" MTA that offers
+all the useful, built-in features needed for a normal mail system setup.
+
+WWW: https://www.slimta.org/
