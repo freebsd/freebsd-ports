@@ -11,6 +11,7 @@ share/dbus-1/services/io.github.Qalculate.SearchProvider.service
 %%DOCSDIR%%/html/figures/edit-function-simplified.png
 %%DOCSDIR%%/html/figures/edit-function.png
 %%DOCSDIR%%/html/figures/edit-matrix.png
+%%DOCSDIR%%/html/figures/edit-unit-relation.png
 %%DOCSDIR%%/html/figures/edit-unit.png
 %%DOCSDIR%%/html/figures/edit-variable.png
 %%DOCSDIR%%/html/figures/function-manager.png
@@ -31,6 +32,7 @@ share/dbus-1/services/io.github.Qalculate.SearchProvider.service
 %%DOCSDIR%%/html/qalculate-definitions-functions.html
 %%DOCSDIR%%/html/qalculate-definitions-units.html
 %%DOCSDIR%%/html/qalculate-definitions-variables.html
+%%DOCSDIR%%/html/qalculate-examples.html
 %%DOCSDIR%%/html/qalculate-expressions.html
 %%DOCSDIR%%/html/qalculate-functions.html
 %%DOCSDIR%%/html/qalculate-interval-arithmetic.html
@@ -50,7 +52,10 @@ share/icons/hicolor/32x32/apps/qalculate.png
 share/icons/hicolor/48x48/apps/qalculate.png
 share/icons/hicolor/64x64/apps/qalculate.png
 share/icons/hicolor/scalable/apps/qalculate.svg
+%%NLS%%share/locale/es/LC_MESSAGES/qalculate-gtk.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/qalculate-gtk.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/qalculate-gtk.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/qalculate-gtk.mo
 share/metainfo/qalculate-gtk.appdata.xml
