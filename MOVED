@@ -16015,3 +16015,4 @@ math/qhull5|math/qhull|2021-01-04|Has expired: Legacy version of port no longer 
 devel/py-typing||2021-01-12|Python 2 only, backport of Python 3
 net/py-ipaddress||2021-01-12|Uses Python 2.7 which is EOLed upstream
 graphics/gif2png||2021-01-13|Has expired: Uses Python 2.7 which is EOLed upstream
+lang/harbour||2021-01-15|BROKEN, needs ancient version of openssl, upstream will not fix it

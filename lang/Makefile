@@ -126,7 +126,6 @@
     SUBDIR += guile1
     SUBDIR += guile2
     SUBDIR += halide
-    SUBDIR += harbour
     SUBDIR += haskell-mode.el
     SUBDIR += hermes
     SUBDIR += hla
