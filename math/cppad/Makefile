@@ -10,7 +10,7 @@ COMMENT=	C++ Algorithmic Differentiation package
 
 LICENSE=	EPL
 
-USES=		cmake eigen:3,run
+USES=		cmake compiler:c++11-lang eigen:3,run
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
 GH_PROJECT=	CppAD
