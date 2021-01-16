@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bjam:devel/boost-jam
 
-USES=		python:test shebangfix tar:bzip2
+USES=		compiler:c++11-lang python:test shebangfix tar:bzip2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	boostorg
@@ -25,12 +25,12 @@ SHEBANG_GLOB=	*.py
 SUB_FILES=	pkg-message
 
 do-build:
-	@cd ${WRKSRC} && ./bootstrap.sh
+	@cd ${WRKSRC} && CXXFLAGS="${CXXFLAGS}" CXX="${CXX}" ./bootstrap.sh
 
 do-install:
-	cd ${WRKSRC} && ./b2 toolset=clang install --prefix=${STAGEDIR}${PREFIX}
+	cd ${WRKSRC} && ./b2 toolset=${CHOSEN_COMPILER_TYPE} install --prefix=${STAGEDIR}${PREFIX}
 
 do-test: # test target fails: https://github.com/boostorg/build/issues/698
-	cd ${WRKSRC} && ./b2 toolset=clang test --prefix=${STAGEDIR}${PREFIX}
+	cd ${WRKSRC} && ./b2 toolset=${CHOSEN_COMPILER_TYPE} test --prefix=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
