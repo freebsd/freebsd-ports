@@ -1,3 +1,4 @@
+# Remove after FreeBSD 12.1 EOL
 cmp(1) Capsicum error if stdin closed
 https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=234885
 
