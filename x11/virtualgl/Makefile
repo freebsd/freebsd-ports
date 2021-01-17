@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualgl
 PORTVERSION=	2.6.3
+PORTREVISION=	1
 CATEGORIES=	x11 graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	VirtualGL-${PORTVERSION}
@@ -14,7 +15,6 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libturbojpeg.so:graphics/libjpeg-turbo \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 
-BROKEN=		fails to build
 ONLY_FOR_ARCHS=	amd64 i386
 
 CMAKE_INSTALL_PREFIX=	${LOCALBASE}/VirtualGL

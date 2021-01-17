@@ -1,6 +1,6 @@
---- server/fakerconfig.cpp	2019-10-20 16:29:00.000000000 -0500
-+++ server/fakerconfig.cpp	2020-04-14 10:37:51.384994000 -0500
-@@ -97,7 +97,7 @@
+--- server/fakerconfig.cpp.orig	2019-10-20 21:29:00 UTC
++++ server/fakerconfig.cpp
+@@ -97,7 +97,7 @@ FakerConfig *fconfig_getinstance(void)
  			if((addr = shmat(fconfig_shmid, 0, 0)) == (void *)-1) THROW_UNIX();
  			if(!addr)
  				THROW("Could not attach to config structure in shared memory");
