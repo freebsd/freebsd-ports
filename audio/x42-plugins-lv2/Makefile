@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x42-plugins
-DISTVERSION=	20200714 # the version is published here: http://gareus.org/misc/x42-plugins.php
-PORTREVISION=	1
+DISTVERSION=	20210114 # the version is published here: http://gareus.org/misc/x42-plugins.php
 CATEGORIES=	audio
 MASTER_SITES=	http://gareus.org/misc/x42-plugins/
 PKGNAMESUFFIX=	-lv2
@@ -28,7 +27,7 @@ LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 USES=		compiler:c++11-lang gl gmake gnome localbase pkgconfig tar:xz \
 		shebangfix xorg
 USE_GITHUB=	nodefault
-GH_TUPLE=	x42:convoLV2:f814f1e:x/convoLV2zita4
+GH_TUPLE=	x42:convoLV2:ff291a3:x/convoLV2zita4
 USE_GNOME=	glib20 pango cairo
 USE_XORG=	x11
 USE_GL=		glu gl
@@ -47,8 +46,6 @@ SSE_MAKE_ARGS=	PORT_SIMD_FLAGS="-msse -msse2 -mfpmath=sse"
 post-patch:
 	@${REINPLACE_CMD} 's| -O3||' \
 		${WRKSRC}/*.lv2/Makefile
-	@${REINPLACE_CMD} 's|$$(mandir)/man1|$$(MANDIR)|' \
-		${WRKSRC}/sisco.lv2/Makefile
 	@cd ${WRKSRC} && ${RM} -r convoLV2 && ${MV} convoLV2zita4 convoLV2
 	@${REINPLACE_CMD} 's| -msse -msse2 -mfpmath=sse| $$(PORT_SIMD_FLAGS)|' \
 		${WRKSRC}/*.lv2/Makefile ${WRKSRC}/convoLV2/Makefile
