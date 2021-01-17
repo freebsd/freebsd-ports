@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	xed
-PORTVERSION=	2.6.2
-PORTREVISION=	1
-CATEGORIES=	editors
+PORTVERSION=	2.8.4
+CATEGORIES=	editors gnome
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Small and lightweight graphical text editor
+COMMENT=	Small but powerful graphical text editor
 
 LICENSE=	GPLv2+
 
@@ -17,13 +16,15 @@ BUILD_DEPENDS=	intltool-merge:textproc/intltool \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libpeas-1.0.so:devel/libpeas \
 		libxapp.so:x11/xapp
-RUN_DEPENDS=	${LOCALBASE}/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml:devel/gsettings-desktop-schemas
+RUN_DEPENDS=	${LOCALBASE}/share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml:devel/gsettings-desktop-schemas \
+		${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR} \
+		yelp:x11/yelp
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome meson \
-		pkgconfig xorg
+		pkgconfig python:3.6+,run xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview3 \
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview4 \
 		introspection pango
 USE_LDCONFIG=	yes
 USE_XORG=	x11
@@ -32,9 +33,12 @@ GLIB_SCHEMAS=	org.x.editor.gschema.xml \
 		org.x.editor.plugins.time.gschema.xml \
 		org.x.editor.plugins.wordcompletion.gschema.xml
 
-OPTIONS_DEFINE=	GSPELL
+OPTIONS_DEFINE=	DOCS GSPELL
 OPTIONS_DEFAULT=	GSPELL
 GSPELL_DESC=	Spell checking support via gspell
+
+DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+DOCS_MESON_ON=		-Ddocs=true
 
 GSPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell
 GSPELL_MESON_OFF=	-Denable_spell=false

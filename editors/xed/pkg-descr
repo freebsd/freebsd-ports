@@ -2,4 +2,15 @@ xed is a small and lightweight text editor, which supports most standard
 editing features, plus several not typically found in one's average text
 editor (plugins being the most notable of these).
 
+Although new features are always under development, currently xed has:
+
+  * Complete support for UTF-8 text
+  * Syntax highlighting for many languages
+  * Support for editing remote files
+  * Search and replace
+  * Printing and print previewing support
+  * File revert
+  * Complete preferences interface
+  * Configurable Python-based plugin system
+
 WWW: https://github.com/linuxmint/xed
