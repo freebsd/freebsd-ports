@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	neochat
-DISTVERSION=	1.0
+DISTVERSION=	1.0.1
 CATEGORIES=	net-im
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
 LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libqt5keychain.so:security/qtkeychain
-BUILD_DEPENDS=	libquotient>=0.6.2:net-im/libquotient \
+BUILD_DEPENDS=	libquotient>=0.6.4:net-im/libquotient \
 		kquickimageeditor>=0.1.2:graphics/kquickimageeditor
 # Quotient is a static lib
 RUN_DEPENDS=	kquickimageeditor>=0.1.2:graphics/kquickimageeditor
