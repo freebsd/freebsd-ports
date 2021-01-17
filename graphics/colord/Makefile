@@ -13,8 +13,7 @@ COMMENT=	Manage color profiles to accurately color input/output devices
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	spotread:graphics/argyllcms
-LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
-		libdbus-1.so:devel/dbus \
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		liblcms2.so:graphics/lcms2
 RUN_DEPENDS=	spotread:graphics/argyllcms
 
@@ -41,11 +40,15 @@ INSTALL_TARGET=	install-strip
 GLIB_SCHEMAS=	org.freedesktop.ColorHelper.gschema.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	MANPAGES PPROFILES VALA
-OPTIONS_DEFAULT=VALA
+OPTIONS_DEFINE=	POLKIT MANPAGES PPROFILES VALA
+OPTIONS_DEFAULT=POLKIT VALA
 
 PPROFILES_DESC=	Build extra print profiles (long build time)
+POLKIT_DESC=	Build with Polkit support
 VALA_DESC=	Build Vala language bindings
+
+POLKIT_LIB_DEPENDS=		libpolkit-gobject-1.so:sysutils/polkit
+POLKIT_CONFIGURE_ENABLE=	polkit
 
 MANPAGES_BUILD_DEPENDS=		docbook2html:textproc/docbook-utils \
 				docbook-sgml>0:textproc/docbook-sgml
