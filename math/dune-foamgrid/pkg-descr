@@ -1,0 +1,9 @@
+dune-foamgrid is a module of the DUNE Numerics framework for solving partial
+differential equations (PDEs) with grid-based methods.
+
+dune-foamgrid implements one- and two-dimensional simplex grids, which can be
+embedded in Euclidean spaces of arbitrary dimension. As a special feature,
+FoamGrid does not require the grids to be manifolds and grid can add/remove
+elements art run-time.
+
+WWW: https://www.dune-project.org/

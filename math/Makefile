@@ -228,6 +228,7 @@
     SUBDIR += dune-common
     SUBDIR += dune-curvedgeometry
     SUBDIR += dune-fem
+    SUBDIR += dune-foamgrid
     SUBDIR += dune-functions
     SUBDIR += dune-geometry
     SUBDIR += dune-grid
