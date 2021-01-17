@@ -11,7 +11,7 @@ DISTNAME=	waveplay-20010924
 MAINTAINER=	yshd@na.rim.or.jp
 COMMENT=	Simple wav file player
 
-ONLY_FOR_ARCHS=	i386 amd64 powerpc64
+ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc64le
 PLIST_FILES=	bin/waveplay \
 		man/ja/man1/waveplay.1.gz \
 		man/man1/waveplay.1.gz
