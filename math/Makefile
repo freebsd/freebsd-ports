@@ -240,6 +240,7 @@
     SUBDIR += dune-spgrid
     SUBDIR += dune-typetree
     SUBDIR += dune-uggrid
+    SUBDIR += dune-vtk
     SUBDIR += e-antic
     SUBDIR += eclib
     SUBDIR += ecos
