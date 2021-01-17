@@ -26,6 +26,8 @@
 #			Default to "${mysql_dbdir}/${hostname}.pid".
 # mysql_args (str):	Custom additional arguments to be passed
 #			to mysqld_safe (default empty).
+# mysql_startup_timeout (int): How much time, in seconds, should
+#			we wait for mysqld to start (default 900).
 #
 
 . /etc/rc.subr
@@ -59,7 +61,7 @@ start_precmd="${name}_prestart"
 start_postcmd="${name}_poststart"
 mysql_install_db="${procname}"
 mysql_install_db_args="${mysql_extra} --basedir=%%PREFIX%% --datadir=${mysql_dbdir} --user=${mysql_user} --initialize"
-service_startup_timeout=900
+: ${mysql_startup_timeout=900}
 startup_sleep=1
 sst_progress_file=${mysql_dbdir}/sst_in_progress
 extra_commands="bootstrap"
@@ -94,7 +96,7 @@ mysql_prestart()
 
 mysql_poststart()
 {
-	local timeout=${service_startup_timeout}
+	local timeout=${mysql_startup_timeout}
 	while [ ! -f "${pidfile}" -a ${timeout} -gt 0 ]; do
 		if test -e $sst_progress_file && [ $startup_sleep -ne 100 ]; then
 			check_startmsgs && echo "SST in progress, setting sleep higher"
