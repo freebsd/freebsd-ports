@@ -59,12 +59,12 @@ bin/javaservicewrapper
 %%DATADIR%%/test/filter.conf
 %%DATADIR%%/test/growinglogoutput
 %%DATADIR%%/test/growinglogoutput.conf
-%%DATADIR%%/test/hugeclasspathenvmaxsize
-%%DATADIR%%/test/hugeclasspathenvmaxsize-path.conf
-%%DATADIR%%/test/hugeclasspathenvmaxsize.conf
-%%DATADIR%%/test/hugeclasspathenvoversize
-%%DATADIR%%/test/hugeclasspathenvoversize-path.conf
-%%DATADIR%%/test/hugeclasspathenvoversize.conf
+%%JS_ENGINE%% %%DATADIR%%/test/hugeclasspathenvmaxsize
+%%JS_ENGINE%% %%DATADIR%%/test/hugeclasspathenvmaxsize-path.conf
+%%JS_ENGINE%% %%DATADIR%%/test/hugeclasspathenvmaxsize.conf
+%%JS_ENGINE%% %%DATADIR%%/test/hugeclasspathenvoversize
+%%JS_ENGINE%% %%DATADIR%%/test/hugeclasspathenvoversize-path.conf
+%%JS_ENGINE%% %%DATADIR%%/test/hugeclasspathenvoversize.conf
 %%DATADIR%%/test/hugeclasspathmaxsize
 %%DATADIR%%/test/hugeclasspathmaxsize.conf
 %%DATADIR%%/test/hugeclasspathoversize
@@ -149,6 +149,10 @@ bin/javaservicewrapper
 %%DATADIR%%/test/simplewrapperlistener.conf
 %%DATADIR%%/test/slowstop
 %%DATADIR%%/test/slowstop.conf
+%%DATADIR%%/test/startstopstopandreturnwhilestarting
+%%DATADIR%%/test/startstopstopandreturnwhilestarting.conf
+%%DATADIR%%/test/startstopstopwhilestarting
+%%DATADIR%%/test/startstopstopwhilestarting.conf
 %%DATADIR%%/test/stopwhilestarting
 %%DATADIR%%/test/stopwhilestarting.conf
 %%DATADIR%%/test/stopwhilestartingforcestop
