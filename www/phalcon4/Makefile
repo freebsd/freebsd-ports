@@ -12,7 +12,7 @@ COMMENT=	Phalcon PHP Framework written in C-language
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64
+ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 CONFLICTS_INSTALL=	${PKGNAMEPREFIX}phalcon
 
