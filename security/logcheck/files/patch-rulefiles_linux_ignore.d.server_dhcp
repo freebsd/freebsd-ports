@@ -1,0 +1,22 @@
+--- rulefiles/linux/ignore.d.server/dhcp.orig	2017-01-14 11:42:45 UTC
++++ rulefiles/linux/ignore.d.server/dhcp
+@@ -10,13 +10,13 @@
+ ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPACK on [.0-9]{7,15} to [:[:alnum:]]+ (\([\(\)._[:alnum:]-]+\) )?via [._[:alnum:]-]+$
+ ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCP(NAK|RELEASE|INFORM) (on|from) ([.0-9]{7,15}|[:[:alnum:].]+)$
+ #Added for dhcp 3
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPDISCOVER from [:[:alnum:]]+ (\([._[:alnum:]-]+\) |)via [._[:alnum:]-]+(: load balance to peer [._[:alnum:]-]+)?$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPOFFER on [.0-9]{7,15} to [:[:alnum:]]+ (\([._[:alnum:]-]+\) |)via [._[:alnum:]-]+$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPREQUEST for [.0-9]{7,15} (\([.0-9]{7,15}\) |)from [:[:alnum:]]+ (\([._[:alnum:]-]+\) )?via [._[:alnum:]-]+(: load balance to peer [._[:alnum:]-]+\.?|: lease owned by peer\.?|: wrong network\.?|: lease [.0-9]{7,15} unavailable\.?)?$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPACK on [.0-9]{7,15} to [:[:alnum:]]+ (\([._[:alnum:]-]+\) |)via [._[:alnum:]-]+$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPNAK on [.0-9]{7,15} to [:[:alnum:]]+ (\([._[:alnum:]-]+\) |)via [._[:alnum:]-]+$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPDISCOVER from [:[:alnum:]]+ (\([._[:alnum:]-]+\) )?via [._[:alnum:]-]+(: load balance to peer [._[:alnum:]-]+)?$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPOFFER on [.0-9]{7,15} to [:[:alnum:]]+ (\([._[:alnum:]-]+\) )?via [._[:alnum:]-]+$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPREQUEST for [.0-9]{7,15} (\([.0-9]{7,15}\) )?from [:[:alnum:]]+ (\([._[:alnum:]-]+\) )?via [._[:alnum:]-]+(: load balance to peer [._[:alnum:]-]+\.?|: lease owned by peer\.?|: wrong network\.?|: lease [.0-9]{7,15} unavailable\.?)?$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPACK on [.0-9]{7,15} to [:[:alnum:]]+ (\([._[:alnum:]-]+\) )?via [._[:alnum:]-]+$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPNAK on [.0-9]{7,15} to [:[:alnum:]]+ (\([._[:alnum:]-]+\) )?via [._[:alnum:]-]+$
+ ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPINFORM from [.0-9]{7,15} via [._[:alnum:]-]+$
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPRELEASE of [.0-9]{7,15} from [:[:alnum:]]+ (\([._[:alnum:]-]+\) |)via [._[:alnum:]-]+ \((not |)found\)$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPRELEASE of [.0-9]{7,15} from [:[:alnum:]]+ (\([._[:alnum:]-]+\) )?via [._[:alnum:]-]+ \((not )?found\)$
+ ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: DHCPACK to [.0-9]{7,15}( \(([:[:xdigit:]]+|<no client hardware address>)\) via [._[:alnum:]-]+)?$
+ ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: ((balancing|balanced) )?pool [0-9a-f]{6,7} [.0-9]{7,15}/[:[:alnum:]]+ ? total [:[:alnum:]]+  free [:[:alnum:]]+  backup [:[:alnum:]]+  lts [:[:alnum:]-]+.*(  max-(own \(\+/-\)[[:digit:]]+|misbal [[:digit:]]+))?$
+ ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhcpd[[[:digit:]]+]: ICMP Echo reply while lease [.[:digit:]]{7,15} valid\.$

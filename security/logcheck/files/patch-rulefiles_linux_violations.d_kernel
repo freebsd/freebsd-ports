@@ -1,0 +1,6 @@
+--- rulefiles/linux/violations.d/kernel.orig	2015-12-10 18:14:10 UTC
++++ rulefiles/linux/violations.d/kernel
+@@ -1,2 +1,2 @@
+-^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [[:alnum:]]+: media error \(bad sector\): status=0x[[:xdigit:]]+ { DriveReady SeekComplete Error }$
++^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? [[:alnum:]]+: media error \(bad sector\): status=0x[[:xdigit:]]+ \{ DriveReady SeekComplete Error \}$
+ ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ kernel:( \[ *[[:digit:]]+\.[[:digit:]]+\])? end_request: I/O error, dev [[:alnum:]]+, sector [[:digit:]]+

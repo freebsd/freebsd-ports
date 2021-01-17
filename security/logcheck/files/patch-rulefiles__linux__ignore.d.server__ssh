@@ -1,5 +1,14 @@
---- rulefiles/linux/ignore.d.server/ssh.orig	2017-01-25 21:08:04 UTC
+--- rulefiles/linux/ignore.d.server/ssh.orig	2019-03-01 22:27:31 UTC
 +++ rulefiles/linux/ignore.d.server/ssh
+@@ -14,7 +14,7 @@
+ ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Postponed keyboard-interactive(/pam)? for (invalid user )?[^[:space:]]+ from [^[:space:]]+ port [[:digit:]]+( (ssh|ssh2)( \[preauth\])?)?$
+ ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Received disconnect from [:.[:xdigit:]]+: [12]: Timeout, server not responding\.$
+ ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Received disconnect from [:.[:xdigit:]]+(: | port [[:digit:]]+:)11: (disconnected by user|Closed due to user request\.)$
+-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Received disconnect from [:[:xdigit:].]+: [[:digit:]]+: .{0,256} \[preauth\]$
++^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Received disconnect from [:[:xdigit:].]+: [[:digit:]]+: .{0,255} \[preauth\]$
+ ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Received disconnect from [:[:xdigit:].]+: [[:digit:]]+: Client disconnect$
+ ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Received disconnect from [:[:xdigit:].]+: [[:digit:]]+: Disconnect requested by Windows SSH Client\.$
+ ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Disconnected from [:[:xdigit:].]+ port [[:digit:]]+$
 @@ -27,8 +27,8 @@
  ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: \(pam_unix\) check pass; user unknown$
  ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: \(pam_unix\) bad username \[[^]]+\]$
