@@ -2,7 +2,7 @@
 
 PORTNAME=	avldrums
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
+DISTVERSION=	0.4.2
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -18,7 +18,7 @@ USES=		gl gmake gnome pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	x42
 GH_PROJECT=	${PORTNAME}.lv2
-GH_TUPLE=	x42:robtk:bad6354:robtk/robtk
+GH_TUPLE=	x42:robtk:52e7789d1f013491d484cfe1a1adb2bde293e7a1:x42_robtk/robtk
 USE_GL=		gl glu
 USE_GNOME=	glib20 pango cairo
 USE_XORG=	x11
