@@ -1,6 +1,6 @@
-TIMESTAMP = 1607299991
-SHA256 (warrensbox-terraform-switcher-0.9.934_GH0.tar.gz) = ffb2b5ba8f7e1a6e3cbbea743c64dd09534aa88ad3d224cbcbb177beff6f29ee
-SIZE (warrensbox-terraform-switcher-0.9.934_GH0.tar.gz) = 1545088
+TIMESTAMP = 1610769495
+SHA256 (warrensbox-terraform-switcher-0.10.958_GH0.tar.gz) = 9923752a2e6a1c5ed8a058830ab82f3d73791168617d9c20417ce16611711586
+SIZE (warrensbox-terraform-switcher-0.10.958_GH0.tar.gz) = 1546049
 SHA256 (Masterminds-semver-v1.5.0_GH0.tar.gz) = c9140eddfb03dc862f826e7761561260b9a840afa7519cc0919e89a43b5be5ba
 SIZE (Masterminds-semver-v1.5.0_GH0.tar.gz) = 21188
 SHA256 (agext-levenshtein-v1.2.2_GH0.tar.gz) = b238bfd1dce6da173913c27cf2e172d58a55e7e6b7fc11736c7e45bd1af4818f
