@@ -1,0 +1,8 @@
+dune-fem is a module of the DUNE Numerics framework for solving partial
+differential equations (PDEs) with grid-based methods.
+
+dune-fem is a Distributed and Unified Numerics Environment module which defines
+interfaces for implementing discretization methods like Finite Element Methods
+(FEM) and Finite Volume Methods (FV) and Discontinuous Galerkin Methods (DG).
+
+WWW: https://www.dune-project.org/

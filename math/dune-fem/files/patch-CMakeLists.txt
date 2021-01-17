@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2018-08-20 20:54:13 UTC
++++ CMakeLists.txt
+@@ -27,7 +27,10 @@ dune_project()
+ include(DuneMPI)
+ 
+ #add sub_directories
+-dune_add_subdirs(dune lib doc cmake/modules)
++dune_add_subdirs(dune lib cmake/modules)
++if (FREEBSD_INSTALL_DOCS)
++dune_add_subdirs(doc)
++endif()
+ 
+ # finalize the dune project, e.g. generating config.h etc.
+ finalize_dune_project(GENERATE_CONFIG_H_CMAKE)
