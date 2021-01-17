@@ -3,7 +3,7 @@
 PORTNAME=	dune-pdelab
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.6.0rc2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,15 +19,19 @@ DUNE_DEPENDS=	dune-common>0:math/dune-common \
 		dune-geometry>0:math/dune-geometry \
 		dune-localfunctions>0:math/dune-localfunctions \
 		dune-typetree>0:math/dune-typetree
-BUILD_DEPENDS=	${DUNE_DEPENDS}
-LIB_DEPENDS=	libugL.so:math/dune-uggrid \
+BUILD_DEPENDS=	${DUNE_DEPENDS} \
+		${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
+LIB_DEPENDS=	libarpack.so:math/arpack-ng \
+		libdunealugrid.so:math/dune-alugrid \
+		libugL.so:math/dune-uggrid \
 		libgmp.so:math/gmp \
 		libmetis.so:math/metis \
 		libopenblas.so:math/openblas \
 		libsuitesparseconfig.so:math/suitesparse \
 		libsuperlu.so:math/superlu \
 		libtbb.so:devel/tbb
-RUN_DEPENDS=	${DUNE_DEPENDS}
+RUN_DEPENDS=	${DUNE_DEPENDS} \
+		${LOCALBASE}/mpi/openmpi/lib/libmpi.so:net/openmpi
 
 USES=		cmake compiler:c++17-lang fortran pkgconfig
 USE_GITLAB=	yes
