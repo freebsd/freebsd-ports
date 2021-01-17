@@ -16,8 +16,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	adoptware
 
-USES=		autoreconf gl gmake localbase:ldflags libtool:keepla	\
-		pkgconfig sdl xorg # .la needed for plugin loading
+USES=		autoreconf compiler:c++11-lang gl gmake localbase:ldflags \
+		libtool:keepla pkgconfig sdl xorg # .la needed for plugin loading
 USE_XORG=	ice sm
 USE_GL=		gl glu
 USE_SDL=	image mixer sdl
