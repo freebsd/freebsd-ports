@@ -1,0 +1,24 @@
+--- garb/CMakeLists.txt.orig	2021-01-08 11:51:42 UTC
++++ garb/CMakeLists.txt
+@@ -32,11 +32,13 @@ target_link_libraries(garbd gcs4garb gcomm gcache
+   ${Boost_PROGRAM_OPTIONS_LIBRARIES})
+ 
+ install(TARGETS garbd DESTINATION bin)
+-install(FILES
+-  ${CMAKE_CURRENT_SOURCE_DIR}/files/garb.cnf
+-  ${CMAKE_CURRENT_SOURCE_DIR}/files/garb.service
+-  ${CMAKE_CURRENT_SOURCE_DIR}/files/garb-systemd
+-  DESTINATION share)
+-install(FILES
+-  ${CMAKE_SOURCE_DIR}/man/garbd.8
+-  DESTINATION man/man8)
++if (NOT CMAKE_SYSTEM MATCHES ".*BSD")
++  install(FILES
++    ${CMAKE_CURRENT_SOURCE_DIR}/files/garb.cnf
++    ${CMAKE_CURRENT_SOURCE_DIR}/files/garb.service
++    ${CMAKE_CURRENT_SOURCE_DIR}/files/garb-systemd
++    DESTINATION share)
++  install(FILES
++    ${CMAKE_SOURCE_DIR}/man/garbd.8
++    DESTINATION man/man8)
++endif()
