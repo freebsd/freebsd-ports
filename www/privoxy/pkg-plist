@@ -1,6 +1,7 @@
 %%PRIVOXY_TOOLS%%bin/privoxy-log-parser.pl
 %%PRIVOXY_TOOLS%%bin/privoxy-regression-test.pl
 %%PRIVOXY_TOOLS%%bin/uagen.pl
+%%PRIVOXY_TOOLS%%bin/url-pattern-translator.pl
 sbin/privoxy
 man/man1/privoxy.1.gz
 etc/privoxy/default.action
