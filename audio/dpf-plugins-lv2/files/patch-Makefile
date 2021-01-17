@@ -1,6 +1,6 @@
---- Makefile.orig	2019-02-28 06:54:29 UTC
+--- Makefile.orig	2021-01-15 11:38:19 UTC
 +++ Makefile
-@@ -113,13 +113,13 @@ clean:
+@@ -117,13 +117,13 @@ clean:
  # --------------------------------------------------------------
  
  install:
@@ -14,5 +14,5 @@
 -	install -m 644 bin/*-ladspa.* $(DESTDIR)$(PREFIX)/lib/ladspa/
 +	#install -m 644 bin/*-ladspa.* $(DESTDIR)$(PREFIX)/lib/ladspa/
  	install -m 644 bin/*-dssi.*   $(DESTDIR)$(PREFIX)/lib/dssi/
- 	install -m 644 bin/*-vst.*    $(DESTDIR)$(PREFIX)/lib/vst/
- 
+ ifeq ($(MACOS),true)
+ 	cp -r bin/*.vst               $(DESTDIR)$(PREFIX)/lib/vst/

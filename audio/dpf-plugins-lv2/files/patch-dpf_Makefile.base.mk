@@ -1,11 +1,11 @@
---- dpf/Makefile.base.mk.orig	2019-02-28 18:07:46 UTC
+--- dpf/Makefile.base.mk.orig	2021-01-15 11:38:19 UTC
 +++ dpf/Makefile.base.mk
-@@ -90,7 +90,7 @@ endif
- # Set build and link flags
+@@ -136,7 +136,7 @@ BASE_FLAGS = -Wall -Wextra -pipe -MD -MP
+ BASE_OPTS  = -O3 -ffast-math -fdata-sections -ffunction-sections
  
- BASE_FLAGS = -Wall -Wextra -pipe -MD -MP
--BASE_OPTS  = -O3 -ffast-math -mtune=generic -msse -msse2 -fdata-sections -ffunction-sections
-+BASE_OPTS  = -O3 -ffast-math $(SIMD_FLAGS) -fdata-sections -ffunction-sections
+ ifeq ($(CPU_I386_OR_X86_64),true)
+-BASE_OPTS += -mtune=generic -msse -msse2 -mfpmath=sse
++BASE_OPTS += $(SIMD_FLAGS)
+ endif
  
- ifeq ($(MACOS),true)
- # MacOS linker flags
+ ifeq ($(CPU_ARM),true)
