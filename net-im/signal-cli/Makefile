@@ -2,7 +2,7 @@
 
 PORTNAME=	signal-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
+DISTVERSION=	0.7.3
 CATEGORIES=	net-im java
 MASTER_SITES=	https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.0/:_jackson_annotations \
 		https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.9/:_jackson_core \
@@ -17,7 +17,7 @@ MASTER_SITES=	https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/ja
 		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-posix/3.0.58/:_jnr_posix \
 		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-unixsocket/0.33/:_jnr_unixsocket \
 		https://repo.maven.apache.org/maven2/com/github/jnr/jnr-x86asm/1.0.2/:_jnr_x86asm \
-		https://repo.maven.apache.org/maven2/com/github/turasa/signal-service-java/2.15.3_unofficial_15/:_signal_service_java \
+		https://repo.maven.apache.org/maven2/com/github/turasa/signal-service-java/2.15.3_unofficial_16/:_signal_service_java \
 		https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-javalite/3.10.0/:_protobuf_javalite \
 		https://repo.maven.apache.org/maven2/com/googlecode/libphonenumber/libphonenumber/8.12.6/:_libphonenumber \
 		https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/4.6.0/:_okhttp \
@@ -69,7 +69,7 @@ DISTFILES=	annotations-13.0.jar:_annotations \
 		protobuf-javalite-3.10.0.jar:_protobuf_javalite \
 		signal-metadata-java-0.1.2.jar:_signal_metadata_java \
 		signal-protocol-java-2.8.1.jar:_signal_protocol_java \
-		signal-service-java-2.15.3_unofficial_15.jar:_signal_service_java \
+		signal-service-java-2.15.3_unofficial_16.jar:_signal_service_java \
 		slf4j-api-1.7.30.jar:_slf4j_api \
 		slf4j-simple-1.7.30.jar:_slf4j_simple \
 		threetenbp-1.3.6.jar:_threetenbp \
