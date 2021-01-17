@@ -9,6 +9,12 @@
 #
 # i2pd_enable="YES"
 #
+# By default, it writes logs to /var/log/i2pd/i2pd.log not using syslogd.
+# You may change log file name with i2pd_logfile variable in /etc/rc.conf, or
+# if you prefer it send logs to syslogd then add the following to /etc/rc.conf:
+#
+# i2pd_logfile="syslog:warn"	# for flags: --log syslog --loglevel warn
+#
 
 . /etc/rc.subr
 
@@ -22,12 +28,18 @@ load_rc_config ${name}
 : ${i2pd_group="%%GROUP%%"}
 : ${i2pd_pidfile="/var/run/${name}/${name}.pid"}
 : ${i2pd_datadir="/var/db/${name}"}
-: ${i2pd_logfile="/var/log/${name}/${name}.log"}
+
+case "$i2pd_logfile" in
+  syslog)	log="--log syslog" ;;
+  syslog:*)	log="--log syslog --loglevel ${i2pd_logfile#syslog:}" ;;
+  *)		: ${i2pd_logfile="/var/log/${name}/${name}.log"}
+		log="--log file --logfile ${i2pd_logfile}" ;;
+esac
 
 required_dirs=${i2pd_datadir}
 pidfile=${i2pd_pidfile}
 command="%%PREFIX%%/bin/${name}"
-command_args="--pidfile ${i2pd_pidfile} --service --datadir ${i2pd_datadir} --log file --logfile ${i2pd_logfile} --daemon"
+command_args="--pidfile ${i2pd_pidfile} --service --datadir ${i2pd_datadir} --daemon $log"
 extra_commands="reload"
 reload_cmd="pkill -1 -F ${i2pd_pidfile} -x i2pd"
 
