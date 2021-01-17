@@ -206,7 +206,6 @@ lib/webmin/acl/lang/mt.auto
 lib/webmin/acl/lang/nl
 lib/webmin/acl/lang/nl.auto
 lib/webmin/acl/lang/no
-lib/webmin/acl/lang/no.auto
 lib/webmin/acl/lang/pl
 lib/webmin/acl/lang/pl.auto
 lib/webmin/acl/lang/pt
@@ -911,6 +910,7 @@ lib/webmin/ajaxterm/config.info
 lib/webmin/ajaxterm/config.info.ar
 lib/webmin/ajaxterm/config.info.ca
 lib/webmin/ajaxterm/config.info.de
+lib/webmin/ajaxterm/config.info.fr
 lib/webmin/ajaxterm/config.info.hu
 lib/webmin/ajaxterm/config.info.ms
 lib/webmin/ajaxterm/config.info.nl
@@ -932,7 +932,7 @@ lib/webmin/ajaxterm/lang/es.auto
 lib/webmin/ajaxterm/lang/eu.auto
 lib/webmin/ajaxterm/lang/fa.auto
 lib/webmin/ajaxterm/lang/fi.auto
-lib/webmin/ajaxterm/lang/fr.auto
+lib/webmin/ajaxterm/lang/fr
 lib/webmin/ajaxterm/lang/he.auto
 lib/webmin/ajaxterm/lang/hr.auto
 lib/webmin/ajaxterm/lang/hu
@@ -1228,7 +1228,6 @@ lib/webmin/apache/lang/fa
 lib/webmin/apache/lang/fa.auto
 lib/webmin/apache/lang/fi.auto
 lib/webmin/apache/lang/fr
-lib/webmin/apache/lang/fr.auto
 lib/webmin/apache/lang/he.auto
 lib/webmin/apache/lang/hr
 lib/webmin/apache/lang/hr.auto
@@ -1248,7 +1247,6 @@ lib/webmin/apache/lang/mt.auto
 lib/webmin/apache/lang/nl
 lib/webmin/apache/lang/nl.auto
 lib/webmin/apache/lang/no
-lib/webmin/apache/lang/no.auto
 lib/webmin/apache/lang/pl
 lib/webmin/apache/lang/pl.auto
 lib/webmin/apache/lang/pt
@@ -1458,6 +1456,7 @@ lib/webmin/at/CHANGELOG
 lib/webmin/at/acl_security.pl
 lib/webmin/at/at-lib.pl
 lib/webmin/at/backup_config.pl
+lib/webmin/at/bootup.cgi
 lib/webmin/at/cgi_args.pl
 lib/webmin/at/config-coherent-linux
 lib/webmin/at/config-corel-linux
@@ -1519,12 +1518,16 @@ lib/webmin/at/lang/af.auto
 lib/webmin/at/lang/ar.auto
 lib/webmin/at/lang/be.auto
 lib/webmin/at/lang/bg
+lib/webmin/at/lang/bg.auto
 lib/webmin/at/lang/ca
+lib/webmin/at/lang/ca.auto
 lib/webmin/at/lang/cs
 lib/webmin/at/lang/cs.auto
 lib/webmin/at/lang/da.auto
 lib/webmin/at/lang/de
+lib/webmin/at/lang/de.auto
 lib/webmin/at/lang/el
+lib/webmin/at/lang/el.auto
 lib/webmin/at/lang/en
 lib/webmin/at/lang/es
 lib/webmin/at/lang/es.auto
@@ -1539,20 +1542,25 @@ lib/webmin/at/lang/hr.auto
 lib/webmin/at/lang/hu
 lib/webmin/at/lang/hu.auto
 lib/webmin/at/lang/it
+lib/webmin/at/lang/it.auto
 lib/webmin/at/lang/ja.auto
 lib/webmin/at/lang/ko.auto
 lib/webmin/at/lang/lt.auto
 lib/webmin/at/lang/lv.auto
 lib/webmin/at/lang/ms
+lib/webmin/at/lang/ms.auto
 lib/webmin/at/lang/mt.auto
 lib/webmin/at/lang/nl
+lib/webmin/at/lang/nl.auto
 lib/webmin/at/lang/no
 lib/webmin/at/lang/pl
+lib/webmin/at/lang/pl.auto
 lib/webmin/at/lang/pt.auto
 lib/webmin/at/lang/pt_BR
 lib/webmin/at/lang/pt_BR.auto
 lib/webmin/at/lang/ro.auto
 lib/webmin/at/lang/ru
+lib/webmin/at/lang/ru.auto
 lib/webmin/at/lang/sk
 lib/webmin/at/lang/sk.auto
 lib/webmin/at/lang/sl.auto
@@ -1659,6 +1667,8 @@ lib/webmin/at/openserver-lib.pl
 lib/webmin/at/rbac-mapping
 lib/webmin/at/save_allow.cgi
 lib/webmin/at/solaris-lib.pl
+lib/webmin/at/start.cgi
+lib/webmin/at/stop.cgi
 lib/webmin/authentic-theme/401.cgi
 lib/webmin/authentic-theme/403.cgi
 lib/webmin/authentic-theme/404.cgi
@@ -1672,6 +1682,8 @@ lib/webmin/authentic-theme/authentic-lib.pl
 lib/webmin/authentic-theme/authentic.pl
 lib/webmin/authentic-theme/buttons.pl
 lib/webmin/authentic-theme/config
+lib/webmin/authentic-theme/config.cgi
+lib/webmin/authentic-theme/config_save.cgi
 lib/webmin/authentic-theme/extensions/csf.min.js
 lib/webmin/authentic-theme/extensions/csf/csf-lib.pl
 lib/webmin/authentic-theme/extensions/csf/csf.min.css
@@ -1779,6 +1791,7 @@ lib/webmin/authentic-theme/help/file-manager.eu.auto.html
 lib/webmin/authentic-theme/help/file-manager.fa.auto.html
 lib/webmin/authentic-theme/help/file-manager.fi.auto.html
 lib/webmin/authentic-theme/help/file-manager.fr.auto.html
+lib/webmin/authentic-theme/help/file-manager.fr.html
 lib/webmin/authentic-theme/help/file-manager.he.auto.html
 lib/webmin/authentic-theme/help/file-manager.hr.auto.html
 lib/webmin/authentic-theme/help/file-manager.html
@@ -1821,6 +1834,7 @@ lib/webmin/authentic-theme/help/locale.eu.auto.html
 lib/webmin/authentic-theme/help/locale.fa.auto.html
 lib/webmin/authentic-theme/help/locale.fi.auto.html
 lib/webmin/authentic-theme/help/locale.fr.auto.html
+lib/webmin/authentic-theme/help/locale.fr.html
 lib/webmin/authentic-theme/help/locale.he.auto.html
 lib/webmin/authentic-theme/help/locale.hr.auto.html
 lib/webmin/authentic-theme/help/locale.html
@@ -2817,6 +2831,7 @@ lib/webmin/authentic-theme/lang/he.auto
 lib/webmin/authentic-theme/lang/hr.auto
 lib/webmin/authentic-theme/lang/hu.auto
 lib/webmin/authentic-theme/lang/it
+lib/webmin/authentic-theme/lang/it.auto
 lib/webmin/authentic-theme/lang/ja
 lib/webmin/authentic-theme/lang/ja.auto
 lib/webmin/authentic-theme/lang/ko.auto
@@ -2841,6 +2856,7 @@ lib/webmin/authentic-theme/lang/ru.auto
 lib/webmin/authentic-theme/lang/sk.auto
 lib/webmin/authentic-theme/lang/sl.auto
 lib/webmin/authentic-theme/lang/sv
+lib/webmin/authentic-theme/lang/sv.auto
 lib/webmin/authentic-theme/lang/th.auto
 lib/webmin/authentic-theme/lang/tr.auto
 lib/webmin/authentic-theme/lang/uk.auto
@@ -2851,8 +2867,22 @@ lib/webmin/authentic-theme/lang/zh.auto
 lib/webmin/authentic-theme/lang/zh_TW.auto
 lib/webmin/authentic-theme/lib/Async.pm
 lib/webmin/authentic-theme/lib/File/BaseDir.pm
+lib/webmin/authentic-theme/lib/File/Basename.pm
+lib/webmin/authentic-theme/lib/File/Copy.pm
+lib/webmin/authentic-theme/lib/File/Find.pm
 lib/webmin/authentic-theme/lib/File/Grep.pm
 lib/webmin/authentic-theme/lib/File/MimeInfo.pm
+lib/webmin/authentic-theme/lib/File/Path.pm
+lib/webmin/authentic-theme/lib/File/Spec.pm
+lib/webmin/authentic-theme/lib/File/Spec/AmigaOS.pm
+lib/webmin/authentic-theme/lib/File/Spec/Cygwin.pm
+lib/webmin/authentic-theme/lib/File/Spec/Epoc.pm
+lib/webmin/authentic-theme/lib/File/Spec/Functions.pm
+lib/webmin/authentic-theme/lib/File/Spec/Mac.pm
+lib/webmin/authentic-theme/lib/File/Spec/OS2.pm
+lib/webmin/authentic-theme/lib/File/Spec/Unix.pm
+lib/webmin/authentic-theme/lib/File/Spec/VMS.pm
+lib/webmin/authentic-theme/lib/File/Spec/Win32.pm
 lib/webmin/authentic-theme/navigation.pl
 lib/webmin/authentic-theme/pam_login.cgi
 lib/webmin/authentic-theme/password_form.cgi
@@ -2872,17 +2902,11 @@ lib/webmin/authentic-theme/stats.cgi
 lib/webmin/authentic-theme/sysinfo.cgi
 lib/webmin/authentic-theme/theme-update.sh
 lib/webmin/authentic-theme/theme.info
+lib/webmin/authentic-theme/theme.info.no
+lib/webmin/authentic-theme/uconfig.cgi
+lib/webmin/authentic-theme/uconfig_save.cgi
 lib/webmin/authentic-theme/unauthenticated/css/bundle.min.css
 lib/webmin/authentic-theme/unauthenticated/css/bundle.min.css.gz
-lib/webmin/authentic-theme/unauthenticated/css/font-arial.min.css
-lib/webmin/authentic-theme/unauthenticated/css/font-helvetica-neue.min.css
-lib/webmin/authentic-theme/unauthenticated/css/font-open-sans-condensed.min.css
-lib/webmin/authentic-theme/unauthenticated/css/font-open-sans.min.css
-lib/webmin/authentic-theme/unauthenticated/css/font-sans-serif.min.css
-lib/webmin/authentic-theme/unauthenticated/css/font-segoe-ui.min.css
-lib/webmin/authentic-theme/unauthenticated/css/font-system-default.min.css
-lib/webmin/authentic-theme/unauthenticated/css/font-tahoma.min.css
-lib/webmin/authentic-theme/unauthenticated/css/font-trebuchet-ms.min.css
 lib/webmin/authentic-theme/unauthenticated/css/fonts-roboto.min.css
 lib/webmin/authentic-theme/unauthenticated/css/fonts-roboto.min.css.gz
 lib/webmin/authentic-theme/unauthenticated/css/high-contrast.min.css
@@ -3030,31 +3054,21 @@ lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/asn.1/asn.1.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/asterisk/asterisk.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/brainfuck/brainfuck.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/clike/clike.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/clike/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/clojure/clojure.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/clojure/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/cmake/cmake.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/cobol/cobol.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/coffeescript/coffeescript.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/commonlisp/commonlisp.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/crystal/crystal.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/css/css.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/css/gss_test.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/css/less_test.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/css/scss_test.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/css/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/cypher/cypher.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/cypher/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/d/d.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/d/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/dart/dart.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/diff/diff.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/django/django.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/dockerfile/dockerfile.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/dockerfile/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/dtd/dtd.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/dylan/dylan.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/dylan/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/ebnf/ebnf.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/ecl/ecl.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/eiffel/eiffel.js
@@ -3066,12 +3080,10 @@ lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/forth/forth.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/fortran/fortran.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/gas/gas.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/gfm/gfm.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/gfm/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/gherkin/gherkin.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/go/go.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/groovy/groovy.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/haml/haml.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/haml/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/handlebars/handlebars.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/haskell-literate/haskell-literate.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/haskell/haskell.js
@@ -3081,24 +3093,18 @@ lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/htmlmixed/htmlmixe
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/http/http.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/idl/idl.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/javascript/javascript.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/javascript/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/jinja2/jinja2.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/jsx/jsx.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/jsx/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/julia/julia.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/livescript/livescript.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/lua/lua.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/markdown/markdown.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/markdown/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/mathematica/mathematica.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/mbox/mbox.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/mirc/mirc.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/mllike/mllike.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/modelica/modelica.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/mscgen/mscgen.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/mscgen/mscgen_test.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/mscgen/msgenny_test.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/mscgen/xu_test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/mumps/mumps.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/nginx/nginx.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/nsis/nsis.js
@@ -3109,47 +3115,35 @@ lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/pascal/pascal.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/pegjs/pegjs.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/perl/perl.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/php/php.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/php/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/pig/pig.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/powershell/powershell.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/powershell/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/properties/properties.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/protobuf/protobuf.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/pug/pug.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/puppet/puppet.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/python/python.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/python/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/q/q.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/r/r.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/rst/rst.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/ruby/ruby.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/ruby/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/rust/rust.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/rust/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/sas/sas.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/sass/sass.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/sass/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/scheme/scheme.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/shell/shell.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/shell/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/sieve/sieve.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/slim/slim.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/slim/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/smalltalk/smalltalk.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/smarty/smarty.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/solr/solr.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/soy/soy.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/soy/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/sparql/sparql.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/spreadsheet/spreadsheet.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/sql/sql.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/stex/stex.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/stex/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/stylus/stylus.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/swift/swift.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/swift/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/tcl/tcl.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/textile/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/textile/textile.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/tiddlywiki/tiddlywiki.css
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/tiddlywiki/tiddlywiki.js
@@ -3165,22 +3159,18 @@ lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/twig/twig.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/vb/vb.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/vbscript/vbscript.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/velocity/velocity.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/verilog/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/verilog/verilog.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/vhdl/vhdl.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/vue/vue.js
+lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/wast/wast.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/webidl/webidl.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/xml/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/xml/xml.js
-lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/xquery/test.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/xquery/xquery.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/yacas/yacas.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/yaml-frontmatter/yaml-frontmatter.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/yaml/yaml.js
 lib/webmin/authentic-theme/unauthenticated/js/codemirror/mode/z80/z80.js
 lib/webmin/authentic-theme/unauthenticated/js/defaults.js
-lib/webmin/authentic-theme/unauthenticated/js/detector.min.js
-lib/webmin/authentic-theme/unauthenticated/js/detector.min.js.gz
 lib/webmin/authentic-theme/unauthenticated/js/jquery.fancytree.min.js
 lib/webmin/authentic-theme/unauthenticated/js/jquery.fancytree.min.js.gz
 lib/webmin/authentic-theme/unauthenticated/js/jquery.jspanel.min.js
@@ -5117,7 +5107,6 @@ lib/webmin/bind8/lang/fa
 lib/webmin/bind8/lang/fa.auto
 lib/webmin/bind8/lang/fi.auto
 lib/webmin/bind8/lang/fr
-lib/webmin/bind8/lang/fr.auto
 lib/webmin/bind8/lang/he.auto
 lib/webmin/bind8/lang/hr.auto
 lib/webmin/bind8/lang/hu
@@ -5136,7 +5125,6 @@ lib/webmin/bind8/lang/mt.auto
 lib/webmin/bind8/lang/nl
 lib/webmin/bind8/lang/nl.auto
 lib/webmin/bind8/lang/no
-lib/webmin/bind8/lang/no.auto
 lib/webmin/bind8/lang/pl
 lib/webmin/bind8/lang/pl.auto
 lib/webmin/bind8/lang/pt
@@ -6617,6 +6605,7 @@ lib/webmin/cluster-copy/config
 lib/webmin/cluster-copy/config.info
 lib/webmin/cluster-copy/config.info.ca
 lib/webmin/cluster-copy/config.info.de
+lib/webmin/cluster-copy/config.info.fr
 lib/webmin/cluster-copy/config.info.hu
 lib/webmin/cluster-copy/config.info.ms
 lib/webmin/cluster-copy/config.info.nl
@@ -6686,7 +6675,6 @@ lib/webmin/cluster-copy/lang/eu.auto
 lib/webmin/cluster-copy/lang/fa.auto
 lib/webmin/cluster-copy/lang/fi.auto
 lib/webmin/cluster-copy/lang/fr
-lib/webmin/cluster-copy/lang/fr.auto
 lib/webmin/cluster-copy/lang/he.auto
 lib/webmin/cluster-copy/lang/hr
 lib/webmin/cluster-copy/lang/hu
@@ -6864,7 +6852,6 @@ lib/webmin/cluster-cron/lang/eu.auto
 lib/webmin/cluster-cron/lang/fa.auto
 lib/webmin/cluster-cron/lang/fi.auto
 lib/webmin/cluster-cron/lang/fr
-lib/webmin/cluster-cron/lang/fr.auto
 lib/webmin/cluster-cron/lang/he.auto
 lib/webmin/cluster-cron/lang/hr
 lib/webmin/cluster-cron/lang/hr.auto
@@ -6880,7 +6867,6 @@ lib/webmin/cluster-cron/lang/mt.auto
 lib/webmin/cluster-cron/lang/nl
 lib/webmin/cluster-cron/lang/nl.auto
 lib/webmin/cluster-cron/lang/no
-lib/webmin/cluster-cron/lang/no.auto
 lib/webmin/cluster-cron/lang/pl
 lib/webmin/cluster-cron/lang/pl.auto
 lib/webmin/cluster-cron/lang/pt.auto
@@ -7194,7 +7180,6 @@ lib/webmin/cluster-shell/lang/eu.auto
 lib/webmin/cluster-shell/lang/fa.auto
 lib/webmin/cluster-shell/lang/fi.auto
 lib/webmin/cluster-shell/lang/fr
-lib/webmin/cluster-shell/lang/fr.auto
 lib/webmin/cluster-shell/lang/he.auto
 lib/webmin/cluster-shell/lang/hr
 lib/webmin/cluster-shell/lang/hr.auto
@@ -7610,7 +7595,6 @@ lib/webmin/cluster-software/lang/eu.auto
 lib/webmin/cluster-software/lang/fa.auto
 lib/webmin/cluster-software/lang/fi.auto
 lib/webmin/cluster-software/lang/fr
-lib/webmin/cluster-software/lang/fr.auto
 lib/webmin/cluster-software/lang/he.auto
 lib/webmin/cluster-software/lang/hr
 lib/webmin/cluster-software/lang/hr.auto
@@ -8016,7 +8000,6 @@ lib/webmin/cluster-usermin/lang/eu.auto
 lib/webmin/cluster-usermin/lang/fa.auto
 lib/webmin/cluster-usermin/lang/fi.auto
 lib/webmin/cluster-usermin/lang/fr
-lib/webmin/cluster-usermin/lang/fr.auto
 lib/webmin/cluster-usermin/lang/he.auto
 lib/webmin/cluster-usermin/lang/hr
 lib/webmin/cluster-usermin/lang/hr.auto
@@ -8225,7 +8208,6 @@ lib/webmin/cluster-webmin/lang/eu.auto
 lib/webmin/cluster-webmin/lang/fa.auto
 lib/webmin/cluster-webmin/lang/fi.auto
 lib/webmin/cluster-webmin/lang/fr
-lib/webmin/cluster-webmin/lang/fr.auto
 lib/webmin/cluster-webmin/lang/he.auto
 lib/webmin/cluster-webmin/lang/hr
 lib/webmin/cluster-webmin/lang/hr.auto
@@ -8434,7 +8416,6 @@ lib/webmin/cpan/lang/eu.auto
 lib/webmin/cpan/lang/fa.auto
 lib/webmin/cpan/lang/fi.auto
 lib/webmin/cpan/lang/fr
-lib/webmin/cpan/lang/fr.auto
 lib/webmin/cpan/lang/he.auto
 lib/webmin/cpan/lang/hr
 lib/webmin/cpan/lang/hr.auto
@@ -8454,7 +8435,6 @@ lib/webmin/cpan/lang/mt.auto
 lib/webmin/cpan/lang/nl
 lib/webmin/cpan/lang/nl.auto
 lib/webmin/cpan/lang/no
-lib/webmin/cpan/lang/no.auto
 lib/webmin/cpan/lang/pl
 lib/webmin/cpan/lang/pl.auto
 lib/webmin/cpan/lang/pt.auto
@@ -8776,7 +8756,6 @@ lib/webmin/cron/lang/mt.auto
 lib/webmin/cron/lang/nl
 lib/webmin/cron/lang/nl.auto
 lib/webmin/cron/lang/no
-lib/webmin/cron/lang/no.auto
 lib/webmin/cron/lang/pl
 lib/webmin/cron/lang/pl.auto
 lib/webmin/cron/lang/pt
@@ -10168,7 +10147,6 @@ lib/webmin/custom/lang/eu.auto
 lib/webmin/custom/lang/fa.auto
 lib/webmin/custom/lang/fi.auto
 lib/webmin/custom/lang/fr
-lib/webmin/custom/lang/fr.auto
 lib/webmin/custom/lang/he.auto
 lib/webmin/custom/lang/hr
 lib/webmin/custom/lang/hr.auto
@@ -10188,7 +10166,6 @@ lib/webmin/custom/lang/mt.auto
 lib/webmin/custom/lang/nl
 lib/webmin/custom/lang/nl.auto
 lib/webmin/custom/lang/no
-lib/webmin/custom/lang/no.auto
 lib/webmin/custom/lang/pl
 lib/webmin/custom/lang/pl.auto
 lib/webmin/custom/lang/pt
@@ -11487,6 +11464,7 @@ lib/webmin/dhcpd/lookup_group.cgi
 lib/webmin/dhcpd/lookup_host.cgi
 lib/webmin/dhcpd/lookup_shared.cgi
 lib/webmin/dhcpd/lookup_subnet.cgi
+lib/webmin/dhcpd/mac-vendor.txt
 lib/webmin/dhcpd/module.info
 lib/webmin/dhcpd/module.info.af
 lib/webmin/dhcpd/module.info.af.auto
@@ -13041,6 +13019,7 @@ lib/webmin/fail2ban/config-syno-linux
 lib/webmin/fail2ban/config.info
 lib/webmin/fail2ban/config.info.ca
 lib/webmin/fail2ban/config.info.de
+lib/webmin/fail2ban/config.info.fr
 lib/webmin/fail2ban/config.info.ms
 lib/webmin/fail2ban/config.info.no
 lib/webmin/fail2ban/config.info.pl
@@ -13133,7 +13112,6 @@ lib/webmin/fail2ban/lang/ms.auto
 lib/webmin/fail2ban/lang/mt.auto
 lib/webmin/fail2ban/lang/nl.auto
 lib/webmin/fail2ban/lang/no
-lib/webmin/fail2ban/lang/no.auto
 lib/webmin/fail2ban/lang/pl
 lib/webmin/fail2ban/lang/pl.auto
 lib/webmin/fail2ban/lang/pt.auto
@@ -13256,6 +13234,7 @@ lib/webmin/fdisk/config.info
 lib/webmin/fdisk/config.info.bg
 lib/webmin/fdisk/config.info.ca
 lib/webmin/fdisk/config.info.de
+lib/webmin/fdisk/config.info.fr
 lib/webmin/fdisk/config.info.nl
 lib/webmin/fdisk/config.info.no
 lib/webmin/fdisk/defaultacl
@@ -13920,7 +13899,6 @@ lib/webmin/fdisk/lang/eu.auto
 lib/webmin/fdisk/lang/fa.auto
 lib/webmin/fdisk/lang/fi.auto
 lib/webmin/fdisk/lang/fr
-lib/webmin/fdisk/lang/fr.auto
 lib/webmin/fdisk/lang/he.auto
 lib/webmin/fdisk/lang/hr.auto
 lib/webmin/fdisk/lang/hu
@@ -13937,7 +13915,6 @@ lib/webmin/fdisk/lang/mt.auto
 lib/webmin/fdisk/lang/nl
 lib/webmin/fdisk/lang/nl.auto
 lib/webmin/fdisk/lang/no
-lib/webmin/fdisk/lang/no.auto
 lib/webmin/fdisk/lang/pl
 lib/webmin/fdisk/lang/pl.auto
 lib/webmin/fdisk/lang/pt
@@ -14263,6 +14240,7 @@ lib/webmin/filemin/config.info
 lib/webmin/filemin/config.info.ar
 lib/webmin/filemin/config.info.ca
 lib/webmin/filemin/config.info.de
+lib/webmin/filemin/config.info.fr
 lib/webmin/filemin/copy.cgi
 lib/webmin/filemin/create_file.cgi
 lib/webmin/filemin/create_folder.cgi
@@ -14563,7 +14541,7 @@ lib/webmin/filemin/lang/es.auto
 lib/webmin/filemin/lang/eu.auto
 lib/webmin/filemin/lang/fa.auto
 lib/webmin/filemin/lang/fi.auto
-lib/webmin/filemin/lang/fr.auto
+lib/webmin/filemin/lang/fr
 lib/webmin/filemin/lang/he.auto
 lib/webmin/filemin/lang/hr.auto
 lib/webmin/filemin/lang/hu.auto
@@ -14576,7 +14554,6 @@ lib/webmin/filemin/lang/ms.auto
 lib/webmin/filemin/lang/mt.auto
 lib/webmin/filemin/lang/nl.auto
 lib/webmin/filemin/lang/no
-lib/webmin/filemin/lang/no.auto
 lib/webmin/filemin/lang/pl.auto
 lib/webmin/filemin/lang/pt.auto
 lib/webmin/filemin/lang/pt_BR.auto
@@ -15789,6 +15766,7 @@ lib/webmin/firewalld/config
 lib/webmin/firewalld/config.info
 lib/webmin/firewalld/config.info.ca
 lib/webmin/firewalld/config.info.de
+lib/webmin/firewalld/config.info.fr
 lib/webmin/firewalld/config.info.no
 lib/webmin/firewalld/config.info.pl
 lib/webmin/firewalld/create_zone.cgi
@@ -15830,7 +15808,6 @@ lib/webmin/firewalld/lang/ms.auto
 lib/webmin/firewalld/lang/mt.auto
 lib/webmin/firewalld/lang/nl.auto
 lib/webmin/firewalld/lang/no
-lib/webmin/firewalld/lang/no.auto
 lib/webmin/firewalld/lang/pl
 lib/webmin/firewalld/lang/pl.auto
 lib/webmin/firewalld/lang/pt.auto
@@ -18689,7 +18666,6 @@ lib/webmin/fsdump/lang/mt.auto
 lib/webmin/fsdump/lang/nl
 lib/webmin/fsdump/lang/nl.auto
 lib/webmin/fsdump/lang/no
-lib/webmin/fsdump/lang/no.auto
 lib/webmin/fsdump/lang/pl
 lib/webmin/fsdump/lang/pl.auto
 lib/webmin/fsdump/lang/pt.auto
@@ -20794,7 +20770,6 @@ lib/webmin/htaccess-htpasswd/lang/fa.auto
 lib/webmin/htaccess-htpasswd/lang/fi
 lib/webmin/htaccess-htpasswd/lang/fi.auto
 lib/webmin/htaccess-htpasswd/lang/fr
-lib/webmin/htaccess-htpasswd/lang/fr.auto
 lib/webmin/htaccess-htpasswd/lang/he.auto
 lib/webmin/htaccess-htpasswd/lang/hr.auto
 lib/webmin/htaccess-htpasswd/lang/hu
@@ -21728,7 +21703,6 @@ lib/webmin/init/lang/mt.auto
 lib/webmin/init/lang/nl
 lib/webmin/init/lang/nl.auto
 lib/webmin/init/lang/no
-lib/webmin/init/lang/no.auto
 lib/webmin/init/lang/pl
 lib/webmin/init/lang/pl.auto
 lib/webmin/init/lang/pt
@@ -22869,6 +22843,7 @@ lib/webmin/iscsi-client/config-suse-linux
 lib/webmin/iscsi-client/config.info
 lib/webmin/iscsi-client/config.info.ca
 lib/webmin/iscsi-client/config.info.de
+lib/webmin/iscsi-client/config.info.fr
 lib/webmin/iscsi-client/config.info.no
 lib/webmin/iscsi-client/delete_conns.cgi
 lib/webmin/iscsi-client/delete_ifaces.cgi
@@ -24737,6 +24712,7 @@ lib/webmin/lang/hu.auto
 lib/webmin/lang/it
 lib/webmin/lang/it.auto
 lib/webmin/lang/ja
+lib/webmin/lang/ja.auto
 lib/webmin/lang/ko
 lib/webmin/lang/ko.auto
 lib/webmin/lang/lt
@@ -25588,7 +25564,6 @@ lib/webmin/ldap-server/lang/mt.auto
 lib/webmin/ldap-server/lang/nl
 lib/webmin/ldap-server/lang/nl.auto
 lib/webmin/ldap-server/lang/no
-lib/webmin/ldap-server/lang/no.auto
 lib/webmin/ldap-server/lang/pl.auto
 lib/webmin/ldap-server/lang/pt.auto
 lib/webmin/ldap-server/lang/pt_BR
@@ -25912,9 +25887,11 @@ lib/webmin/ldap-useradmin/lang/ar.auto
 lib/webmin/ldap-useradmin/lang/be.auto
 lib/webmin/ldap-useradmin/lang/bg.auto
 lib/webmin/ldap-useradmin/lang/ca
+lib/webmin/ldap-useradmin/lang/ca.auto
 lib/webmin/ldap-useradmin/lang/cs.auto
 lib/webmin/ldap-useradmin/lang/da.auto
 lib/webmin/ldap-useradmin/lang/de
+lib/webmin/ldap-useradmin/lang/de.auto
 lib/webmin/ldap-useradmin/lang/el.auto
 lib/webmin/ldap-useradmin/lang/en
 lib/webmin/ldap-useradmin/lang/es
@@ -26528,7 +26505,6 @@ lib/webmin/lpadmin/lang/eu.auto
 lib/webmin/lpadmin/lang/fa.auto
 lib/webmin/lpadmin/lang/fi.auto
 lib/webmin/lpadmin/lang/fr
-lib/webmin/lpadmin/lang/fr.auto
 lib/webmin/lpadmin/lang/he.auto
 lib/webmin/lpadmin/lang/hr.auto
 lib/webmin/lpadmin/lang/hu
@@ -26682,6 +26658,7 @@ lib/webmin/lvm/config
 lib/webmin/lvm/config.info
 lib/webmin/lvm/config.info.ca
 lib/webmin/lvm/config.info.de
+lib/webmin/lvm/config.info.fr
 lib/webmin/lvm/config.info.ms
 lib/webmin/lvm/config.info.nl
 lib/webmin/lvm/config.info.no
@@ -26716,7 +26693,6 @@ lib/webmin/lvm/lang/eu.auto
 lib/webmin/lvm/lang/fa.auto
 lib/webmin/lvm/lang/fi.auto
 lib/webmin/lvm/lang/fr
-lib/webmin/lvm/lang/fr.auto
 lib/webmin/lvm/lang/he.auto
 lib/webmin/lvm/lang/hr.auto
 lib/webmin/lvm/lang/hu.auto
@@ -26730,7 +26706,6 @@ lib/webmin/lvm/lang/mt.auto
 lib/webmin/lvm/lang/nl
 lib/webmin/lvm/lang/nl.auto
 lib/webmin/lvm/lang/no
-lib/webmin/lvm/lang/no.auto
 lib/webmin/lvm/lang/pl.auto
 lib/webmin/lvm/lang/pt.auto
 lib/webmin/lvm/lang/pt_BR.auto
@@ -26855,6 +26830,7 @@ lib/webmin/mailboxes/config.info.cs
 lib/webmin/mailboxes/config.info.de
 lib/webmin/mailboxes/config.info.el
 lib/webmin/mailboxes/config.info.fi
+lib/webmin/mailboxes/config.info.fr
 lib/webmin/mailboxes/config.info.hu
 lib/webmin/mailboxes/config.info.it
 lib/webmin/mailboxes/config.info.ja
@@ -26884,10 +26860,12 @@ lib/webmin/mailboxes/lang/ar.auto
 lib/webmin/mailboxes/lang/be.auto
 lib/webmin/mailboxes/lang/bg.auto
 lib/webmin/mailboxes/lang/ca
+lib/webmin/mailboxes/lang/ca.auto
 lib/webmin/mailboxes/lang/cs
 lib/webmin/mailboxes/lang/cs.auto
 lib/webmin/mailboxes/lang/da.auto
 lib/webmin/mailboxes/lang/de
+lib/webmin/mailboxes/lang/de.auto
 lib/webmin/mailboxes/lang/el
 lib/webmin/mailboxes/lang/el.auto
 lib/webmin/mailboxes/lang/en
@@ -26898,7 +26876,6 @@ lib/webmin/mailboxes/lang/fa.auto
 lib/webmin/mailboxes/lang/fi
 lib/webmin/mailboxes/lang/fi.auto
 lib/webmin/mailboxes/lang/fr
-lib/webmin/mailboxes/lang/fr.auto
 lib/webmin/mailboxes/lang/he.auto
 lib/webmin/mailboxes/lang/hr.auto
 lib/webmin/mailboxes/lang/hu
@@ -27570,7 +27547,6 @@ lib/webmin/man/lang/mt.auto
 lib/webmin/man/lang/nl
 lib/webmin/man/lang/nl.auto
 lib/webmin/man/lang/no
-lib/webmin/man/lang/no.auto
 lib/webmin/man/lang/pl
 lib/webmin/man/lang/pl.auto
 lib/webmin/man/lang/pt.auto
@@ -28487,6 +28463,7 @@ lib/webmin/mount/help/linux_noexec.ur.auto.html
 lib/webmin/mount/help/linux_noexec.vi.auto.html
 lib/webmin/mount/help/linux_noexec.zh.auto.html
 lib/webmin/mount/help/linux_noexec.zh_TW.auto.html
+lib/webmin/mount/help/linux_nofail.html
 lib/webmin/mount/help/linux_nosuid.af.auto.html
 lib/webmin/mount/help/linux_nosuid.ar.auto.html
 lib/webmin/mount/help/linux_nosuid.be.auto.html
@@ -30964,7 +30941,6 @@ lib/webmin/net/lang/fa
 lib/webmin/net/lang/fa.auto
 lib/webmin/net/lang/fi.auto
 lib/webmin/net/lang/fr
-lib/webmin/net/lang/fr.auto
 lib/webmin/net/lang/he.auto
 lib/webmin/net/lang/hr.auto
 lib/webmin/net/lang/hu
@@ -30982,7 +30958,6 @@ lib/webmin/net/lang/mt.auto
 lib/webmin/net/lang/nl
 lib/webmin/net/lang/nl.auto
 lib/webmin/net/lang/no
-lib/webmin/net/lang/no.auto
 lib/webmin/net/lang/pl
 lib/webmin/net/lang/pl.auto
 lib/webmin/net/lang/pt
@@ -31160,6 +31135,7 @@ lib/webmin/nis/config.info.ca
 lib/webmin/nis/config.info.cs
 lib/webmin/nis/config.info.de
 lib/webmin/nis/config.info.es
+lib/webmin/nis/config.info.fr
 lib/webmin/nis/config.info.hu
 lib/webmin/nis/config.info.nl
 lib/webmin/nis/config.info.no
@@ -31214,7 +31190,6 @@ lib/webmin/nis/lang/eu.auto
 lib/webmin/nis/lang/fa.auto
 lib/webmin/nis/lang/fi.auto
 lib/webmin/nis/lang/fr
-lib/webmin/nis/lang/fr.auto
 lib/webmin/nis/lang/he.auto
 lib/webmin/nis/lang/hr.auto
 lib/webmin/nis/lang/hu
@@ -31632,7 +31607,6 @@ lib/webmin/package-updates/lang/mt.auto
 lib/webmin/package-updates/lang/nl
 lib/webmin/package-updates/lang/nl.auto
 lib/webmin/package-updates/lang/no
-lib/webmin/package-updates/lang/no.auto
 lib/webmin/package-updates/lang/pl
 lib/webmin/package-updates/lang/pl.auto
 lib/webmin/package-updates/lang/pt.auto
@@ -32495,7 +32469,6 @@ lib/webmin/phpini/lang/eu.auto
 lib/webmin/phpini/lang/fa.auto
 lib/webmin/phpini/lang/fi.auto
 lib/webmin/phpini/lang/fr
-lib/webmin/phpini/lang/fr.auto
 lib/webmin/phpini/lang/he.auto
 lib/webmin/phpini/lang/hr.auto
 lib/webmin/phpini/lang/hu
@@ -32512,7 +32485,6 @@ lib/webmin/phpini/lang/mt.auto
 lib/webmin/phpini/lang/nl
 lib/webmin/phpini/lang/nl.auto
 lib/webmin/phpini/lang/no
-lib/webmin/phpini/lang/no.auto
 lib/webmin/phpini/lang/pl
 lib/webmin/phpini/lang/pl.auto
 lib/webmin/phpini/lang/pt.auto
@@ -39430,7 +39402,6 @@ lib/webmin/postfix/lang/mt.auto
 lib/webmin/postfix/lang/nl
 lib/webmin/postfix/lang/nl.auto
 lib/webmin/postfix/lang/no
-lib/webmin/postfix/lang/no.auto
 lib/webmin/postfix/lang/pl
 lib/webmin/postfix/lang/pl.auto
 lib/webmin/postfix/lang/pt.auto
@@ -40377,7 +40348,6 @@ lib/webmin/postgresql/lang/eu.auto
 lib/webmin/postgresql/lang/fa.auto
 lib/webmin/postgresql/lang/fi.auto
 lib/webmin/postgresql/lang/fr
-lib/webmin/postgresql/lang/fr.auto
 lib/webmin/postgresql/lang/he.auto
 lib/webmin/postgresql/lang/hr.auto
 lib/webmin/postgresql/lang/hu
@@ -40395,7 +40365,6 @@ lib/webmin/postgresql/lang/mt.auto
 lib/webmin/postgresql/lang/nl
 lib/webmin/postgresql/lang/nl.auto
 lib/webmin/postgresql/lang/no
-lib/webmin/postgresql/lang/no.auto
 lib/webmin/postgresql/lang/pl
 lib/webmin/postgresql/lang/pl.auto
 lib/webmin/postgresql/lang/pt
@@ -44902,7 +44871,6 @@ lib/webmin/samba/lang/mt.auto
 lib/webmin/samba/lang/nl
 lib/webmin/samba/lang/nl.auto
 lib/webmin/samba/lang/no
-lib/webmin/samba/lang/no.auto
 lib/webmin/samba/lang/pl
 lib/webmin/samba/lang/pl.auto
 lib/webmin/samba/lang/pt.auto
@@ -47337,7 +47305,6 @@ lib/webmin/shell/lang/eu.auto
 lib/webmin/shell/lang/fa.auto
 lib/webmin/shell/lang/fi.auto
 lib/webmin/shell/lang/fr
-lib/webmin/shell/lang/fr.auto
 lib/webmin/shell/lang/he.auto
 lib/webmin/shell/lang/hr.auto
 lib/webmin/shell/lang/hu
@@ -47356,7 +47323,6 @@ lib/webmin/shell/lang/mt.auto
 lib/webmin/shell/lang/nl
 lib/webmin/shell/lang/nl.auto
 lib/webmin/shell/lang/no
-lib/webmin/shell/lang/no.auto
 lib/webmin/shell/lang/pl
 lib/webmin/shell/lang/pl.auto
 lib/webmin/shell/lang/pt.auto
@@ -49949,7 +49915,6 @@ lib/webmin/software/lang/mt.auto
 lib/webmin/software/lang/nl
 lib/webmin/software/lang/nl.auto
 lib/webmin/software/lang/no
-lib/webmin/software/lang/no.auto
 lib/webmin/software/lang/pl
 lib/webmin/software/lang/pl.auto
 lib/webmin/software/lang/pt
@@ -50168,7 +50133,6 @@ lib/webmin/spam/lang/mt.auto
 lib/webmin/spam/lang/nl
 lib/webmin/spam/lang/nl.auto
 lib/webmin/spam/lang/no
-lib/webmin/spam/lang/no.auto
 lib/webmin/spam/lang/pl.auto
 lib/webmin/spam/lang/pt.auto
 lib/webmin/spam/lang/pt_BR.auto
@@ -51753,7 +51717,6 @@ lib/webmin/sshd/lang/fa
 lib/webmin/sshd/lang/fa.auto
 lib/webmin/sshd/lang/fi.auto
 lib/webmin/sshd/lang/fr
-lib/webmin/sshd/lang/fr.auto
 lib/webmin/sshd/lang/he.auto
 lib/webmin/sshd/lang/hr.auto
 lib/webmin/sshd/lang/hu
@@ -51969,6 +51932,7 @@ lib/webmin/status/lang/cs
 lib/webmin/status/lang/cs.auto
 lib/webmin/status/lang/da.auto
 lib/webmin/status/lang/de
+lib/webmin/status/lang/de.auto
 lib/webmin/status/lang/el.auto
 lib/webmin/status/lang/en
 lib/webmin/status/lang/es
@@ -51978,7 +51942,6 @@ lib/webmin/status/lang/fa
 lib/webmin/status/lang/fa.auto
 lib/webmin/status/lang/fi.auto
 lib/webmin/status/lang/fr
-lib/webmin/status/lang/fr.auto
 lib/webmin/status/lang/he.auto
 lib/webmin/status/lang/hr.auto
 lib/webmin/status/lang/hu
@@ -51997,7 +51960,6 @@ lib/webmin/status/lang/mt.auto
 lib/webmin/status/lang/nl
 lib/webmin/status/lang/nl.auto
 lib/webmin/status/lang/no
-lib/webmin/status/lang/no.auto
 lib/webmin/status/lang/pl
 lib/webmin/status/lang/pl.auto
 lib/webmin/status/lang/pt.auto
@@ -53050,7 +53012,6 @@ lib/webmin/system-status/lang/ms.auto
 lib/webmin/system-status/lang/mt.auto
 lib/webmin/system-status/lang/nl.auto
 lib/webmin/system-status/lang/no
-lib/webmin/system-status/lang/no.auto
 lib/webmin/system-status/lang/pl
 lib/webmin/system-status/lang/pl.auto
 lib/webmin/system-status/lang/pt.auto
@@ -53268,7 +53229,6 @@ lib/webmin/tcpwrappers/lang/eu.auto
 lib/webmin/tcpwrappers/lang/fa.auto
 lib/webmin/tcpwrappers/lang/fi.auto
 lib/webmin/tcpwrappers/lang/fr
-lib/webmin/tcpwrappers/lang/fr.auto
 lib/webmin/tcpwrappers/lang/he.auto
 lib/webmin/tcpwrappers/lang/hr.auto
 lib/webmin/tcpwrappers/lang/hu
@@ -53768,7 +53728,6 @@ lib/webmin/time/lang/fa
 lib/webmin/time/lang/fa.auto
 lib/webmin/time/lang/fi.auto
 lib/webmin/time/lang/fr
-lib/webmin/time/lang/fr.auto
 lib/webmin/time/lang/he.auto
 lib/webmin/time/lang/hr.auto
 lib/webmin/time/lang/hu
@@ -53931,7 +53890,6 @@ lib/webmin/tunnel/lang/eu.auto
 lib/webmin/tunnel/lang/fa.auto
 lib/webmin/tunnel/lang/fi.auto
 lib/webmin/tunnel/lang/fr
-lib/webmin/tunnel/lang/fr.auto
 lib/webmin/tunnel/lang/he.auto
 lib/webmin/tunnel/lang/hr.auto
 lib/webmin/tunnel/lang/hu
@@ -53949,7 +53907,6 @@ lib/webmin/tunnel/lang/mt.auto
 lib/webmin/tunnel/lang/nl
 lib/webmin/tunnel/lang/nl.auto
 lib/webmin/tunnel/lang/no
-lib/webmin/tunnel/lang/no.auto
 lib/webmin/tunnel/lang/pl.auto
 lib/webmin/tunnel/lang/pt.auto
 lib/webmin/tunnel/lang/pt_BR.auto
@@ -54087,7 +54044,6 @@ lib/webmin/updown/lang/fa.auto
 lib/webmin/updown/lang/fi
 lib/webmin/updown/lang/fi.auto
 lib/webmin/updown/lang/fr
-lib/webmin/updown/lang/fr.auto
 lib/webmin/updown/lang/he.auto
 lib/webmin/updown/lang/hr.auto
 lib/webmin/updown/lang/hu
@@ -56503,6 +56459,7 @@ lib/webmin/usermin/config.info.de
 lib/webmin/usermin/config.info.es
 lib/webmin/usermin/config.info.fa
 lib/webmin/usermin/config.info.fi
+lib/webmin/usermin/config.info.fr
 lib/webmin/usermin/config.info.hu
 lib/webmin/usermin/config.info.it
 lib/webmin/usermin/config.info.ja
@@ -56600,7 +56557,6 @@ lib/webmin/usermin/lang/fa
 lib/webmin/usermin/lang/fa.auto
 lib/webmin/usermin/lang/fi.auto
 lib/webmin/usermin/lang/fr
-lib/webmin/usermin/lang/fr.auto
 lib/webmin/usermin/lang/he.auto
 lib/webmin/usermin/lang/hr.auto
 lib/webmin/usermin/lang/hu
@@ -57213,7 +57169,7 @@ lib/webmin/webmin/help/twofactor.es.auto.html
 lib/webmin/webmin/help/twofactor.eu.auto.html
 lib/webmin/webmin/help/twofactor.fa.auto.html
 lib/webmin/webmin/help/twofactor.fi.auto.html
-lib/webmin/webmin/help/twofactor.fr.auto.html
+lib/webmin/webmin/help/twofactor.fr.html
 lib/webmin/webmin/help/twofactor.he.auto.html
 lib/webmin/webmin/help/twofactor.hr.auto.html
 lib/webmin/webmin/help/twofactor.html
@@ -57492,7 +57448,6 @@ lib/webmin/webmincron/lang/mt.auto
 lib/webmin/webmincron/lang/nl
 lib/webmin/webmincron/lang/nl.auto
 lib/webmin/webmincron/lang/no
-lib/webmin/webmincron/lang/no.auto
 lib/webmin/webmincron/lang/pl
 lib/webmin/webmincron/lang/pl.auto
 lib/webmin/webmincron/lang/pt.auto
@@ -57654,7 +57609,6 @@ lib/webmin/webminlog/lang/mt.auto
 lib/webmin/webminlog/lang/nl
 lib/webmin/webminlog/lang/nl.auto
 lib/webmin/webminlog/lang/no
-lib/webmin/webminlog/lang/no.auto
 lib/webmin/webminlog/lang/pl
 lib/webmin/webminlog/lang/pl.auto
 lib/webmin/webminlog/lang/pt.auto
