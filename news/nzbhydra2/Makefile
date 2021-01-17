@@ -12,7 +12,7 @@ COMMENT=	Usenet meta search
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 powerpc64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 USES=		python:3.5+ shebangfix zip
 USE_JAVA=	yes
