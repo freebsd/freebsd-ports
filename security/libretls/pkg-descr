@@ -1,0 +1,8 @@
+LibreTLS is a port of libtls from LibreSSL to OpenSSL. libtls is "a new TLS
+library, designed to make it easier to write foolproof applications".
+
+libtls provides an excellent new API, but LibreSSL can be difficult to install
+on systems which already use OpenSSL. LibreTLS aims to make the libtls API more
+easily and widely available.
+
+WWW: https://git.causal.agency/libretls/about/
