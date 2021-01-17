@@ -4,6 +4,8 @@ bin/bastille
 %%DATADIR%%/clone.sh
 %%DATADIR%%/cmd.sh
 %%DATADIR%%/colors.pre.sh
+%%DATADIR%%/common.sh
+%%DATADIR%%/config.sh
 %%DATADIR%%/console.sh
 %%DATADIR%%/convert.sh
 %%DATADIR%%/cp.sh
@@ -25,6 +27,11 @@ bin/bastille
 %%DATADIR%%/stop.sh
 %%DATADIR%%/sysrc.sh
 %%DATADIR%%/template.sh
+%%DATADIR%%/templates/default/base/Bastillefile
+%%DATADIR%%/templates/default/empty/Bastillefile
+%%DATADIR%%/templates/default/thick/Bastillefile
+%%DATADIR%%/templates/default/thin/Bastillefile
+%%DATADIR%%/templates/default/vnet/Bastillefile
 %%DATADIR%%/top.sh
 %%DATADIR%%/umount.sh
 %%DATADIR%%/update.sh
