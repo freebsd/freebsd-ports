@@ -16016,3 +16016,6 @@ devel/py-typing||2021-01-12|Python 2 only, backport of Python 3
 net/py-ipaddress||2021-01-12|Uses Python 2.7 which is EOLed upstream
 graphics/gif2png||2021-01-13|Has expired: Uses Python 2.7 which is EOLed upstream
 lang/harbour||2021-01-15|BROKEN, needs ancient version of openssl, upstream will not fix it
+net-im/telegram|net-im/telegram-cli|2021-01-17|Has expired: Upstream unmaintained; please migrate to net-im/telegram-cli
+science/dlpoly-classic||2021-01-17|Has expired: MASTERSITE gone; possibly replaced by https://gitlab.com/DL_POLY_Classic/dl_poly ?
+security/py-gtts-token|audio/py-gtts|2021-01-17|Has expired: Obsolete, please use audio/py-gtts instead

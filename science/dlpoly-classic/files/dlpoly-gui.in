@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ $# != 1 ]; then
-    printf "Usage: $0 file\n"
-    exit 1
-fi
-
-java -jar %%DATADIR%%/GUI.jar
-

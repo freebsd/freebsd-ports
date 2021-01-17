@@ -1,7 +1,0 @@
-TIMESTAMP = 1482845149
-SHA256 (vysheng-tg-1.4.1.g20161227-6547c0b_GH0.tar.gz) = 1e70d800d46e92ab71360db4fee8b63512d682986aa4d8d90adf49219ec17928
-SIZE (vysheng-tg-1.4.1.g20161227-6547c0b_GH0.tar.gz) = 307276
-SHA256 (vysheng-tgl-ffb04ca_GH0.tar.gz) = 2a2aafe6366e3a4c7df2af916c015fa0c0200094e785e69396ca6ff0ef612cd4
-SIZE (vysheng-tgl-ffb04ca_GH0.tar.gz) = 240798
-SHA256 (vysheng-tl-parser-36bf190_GH0.tar.gz) = 9c4222cfc39f1f58061678c2a22dac5d2391e2594d4ec00e5ab9a7c12e606789
-SIZE (vysheng-tl-parser-36bf190_GH0.tar.gz) = 66898
