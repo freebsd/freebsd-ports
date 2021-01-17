@@ -3,7 +3,7 @@
 
 PORTNAME=	quassel
 PORTVERSION=	0.13.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -33,8 +33,7 @@ OPTIONS_SUB=		yes
 CLIENT_DESC=		Quassel client (for use with core)
 CLIENT_CMAKE_BOOL=	WANT_QTCLIENT
 CLIENT_USE=		qt=dbus,gui,phonon4,webkit,widgets openldap=yes
-CLIENT_LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt \
-			libsnore-qt5.so:devel/snorenotify
+CLIENT_LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt
 
 CORE_DESC=		Quassel core server (for use with client)
 CORE_CMAKE_BOOL=	WANT_CORE
