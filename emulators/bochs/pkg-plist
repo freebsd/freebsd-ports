@@ -15,7 +15,7 @@ man/man5/bochsrc.5.gz
 %%DATADIR%%/VGABIOS-lgpl-latest-cirrus
 %%DATADIR%%/VGABIOS-lgpl-latest-cirrus-debug
 %%DATADIR%%/VGABIOS-lgpl-latest-debug
-%%DATADIR%%/bios.bin-1.7.5
+%%DATADIR%%/bios.bin-1.13.0
 %%DATADIR%%/keymaps/sdl-pc-de.map
 %%DATADIR%%/keymaps/sdl-pc-us.map
 %%DATADIR%%/keymaps/sdl2-pc-de.map
@@ -31,10 +31,10 @@ man/man5/bochsrc.5.gz
 %%DATADIR%%/keymaps/x11-pc-si.map
 %%DATADIR%%/keymaps/x11-pc-uk.map
 %%DATADIR%%/keymaps/x11-pc-us.map
+%%DATADIR%%/vgabios-cirrus.bin-1.13.0
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/biossums.txt
 %%PORTDOCS%%%%DOCSDIR%%/bochsrc-sample.txt
 %%PORTDOCS%%%%DOCSDIR%%/cpu_configurability.txt
 %%PORTDOCS%%%%DOCSDIR%%/enh_dbg_user_man.txt
