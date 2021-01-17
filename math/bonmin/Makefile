@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/Bonmin/LICENSE
 LIB_DEPENDS=	libCbc.so:math/coinmp \
 		libipopt.so:math/ipopt
 
-USES=		blaslapack:netlib gmake libtool pkgconfig
+USES=		blaslapack:netlib compiler:c++11-lang gmake libtool pkgconfig
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
