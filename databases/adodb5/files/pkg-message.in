@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-This version supports only PHP version 5 and higher.
+This version supports only PHP version 5.3 and higher.
 
 You can add the ADOdb path (%%DATADIR%%)
 into the "include_path=" directive in your php.ini
