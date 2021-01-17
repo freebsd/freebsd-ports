@@ -5,18 +5,19 @@ PORTNAME=	ssamtse
 PORTVERSION=	1.07b1
 PORTREVISION=	1
 CATEGORIES=	games linux
-MASTER_SITES=	http://home.coc-ag.de/dressler-ro/liflg/files/final/ \
+MASTER_SITES=	https://files.holarse-linuxgaming.de/native/Spiele/Serious%20Sam%20The%20Second%20Encounter/Installer/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${PORTNAME:S|ssam|serious.sam.|}_${PORTVERSION:S|b|beta|}-english-2.run
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Serious Sam: The Second Encounter for Linux
 
 OPTIONS_DEFINE=	VORBIS DOCS
 OPTIONS_DEFAULT=	VORBIS
 
 USES=		linux
+STRIP=
 USE_LINUX=	xorglibs
 NO_BUILD=	yes
 RESTRICTED=	Redistribution is limited, see license
@@ -52,6 +53,7 @@ do-extract:
 post-patch:
 	@${REINPLACE_CMD} -e "s|^\(GAMEDIR=\).*|\1\"${DATADIR}\"|" \
 		-e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/${PORTNAME}
+	${BRANDELF} -t Linux ${WRKSRC}/Data/Bin/ssam_*
 
 do-install:
 .if !exists(${CDROM_MOUNT}/Install/Mods/SecondEncounterTbn.tex)
@@ -85,7 +87,6 @@ do-install:
 	@cd ${WRKSRC}/Data && \
 		${FIND} Bin -type f -exec \
 			${INSTALL_PROGRAM} "${WRKSRC}/Data/{}" "${STAGEDIR}${DATADIR}/{}" \;
-	${BRANDELF} -t Linux ${STAGEDIR}${DATADIR}/Bin/ssam_*
 	${INSTALL_DATA} ${WRKSRC}/ModExt.txt ${STAGEDIR}${DATADIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MVORBIS}
@@ -100,13 +101,15 @@ do-install:
 		>${WRKDIR}/tmp.txt; ${MV} ${WRKDIR}/tmp.txt '{}'" \;
 	@${ECHO} SERIOUS_MHZ=2000 > ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 .if !exists(${PREFIX}/etc/${PORTNAME}.conf)
-	${INSTALL_DATA} ${PREFIX}/etc/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} -p ${WRKSRC}/README.liflg ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS:NREADME.liflg}
-	${LN} -sf ${DATADIR}/Help/${i} ${STAGEDIR}${DOCSDIR}/${i}
+	# NOTE:  check-plist fails on symbolic links, so make hard links for
+	#        installation.
+	${LN} -f ${STAGEDIR}${DATADIR}/Help/${i} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
 .endif
 

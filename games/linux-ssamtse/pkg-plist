@@ -47,9 +47,9 @@ bin/ssamtse
 %%DATADIR%%/Demos/auto-demoMP0002.dem
 %%DATADIR%%/Demos/auto-demoMP0002.ini
 %%DATADIR%%/Demos/auto-demoMP0002Tbn.tex
+%%DATADIR%%/Help/Notes_1_04.txt
 %%DATADIR%%/Help/ShellSymbols.txt
 %%DATADIR%%/Help/changes.txt
-%%DATADIR%%/Help/Notes_1_04.txt
 %%DATADIR%%/Levels/TechTest.tbn
 %%DATADIR%%/Levels/TechTest.wld
 %%DATADIR%%/Levels/TechTestTbn.tex
@@ -181,3 +181,4 @@ bin/ssamtse
 %%DATADIR%%/Worlds/TemplatesSE/StatuesGothic.wld
 %%DATADIR%%/Worlds/TemplatesSE/StatuesSouthAmerica.tbn
 %%DATADIR%%/Worlds/TemplatesSE/StatuesSouthAmerica.wld
+@dir %%DATADIR%%/Levels/LevelsMP
