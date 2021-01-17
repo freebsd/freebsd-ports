@@ -6,8 +6,9 @@ PORTVERSION=	${UTVERSION}
 PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	games linux
-MASTER_SITES=	http://liflg.holarse-linuxgaming.de/files/final/:p436 \
-		http://www.utpg.org/patches/:p451
+MASTER_SITES=	https://gitlab.com/XenGi/oldgames/raw/master/ut/:p436 \
+		https://files.holarse-linuxgaming.de/mirrors/liflg.org/final/:p436 \
+		https://gitlab.com/XenGi/oldgames/raw/master/ut/:p451
 DISTFILES=	${PATCH436FILES} \
 		${PATCH451FILES}
 DIST_SUBDIR=	${PORTNAME}
@@ -19,7 +20,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 USES=		linux
 USE_LINUX=	xorglibs sdl12
 NO_BUILD=	yes
-MANUAL_PACKAGE_BUILD=	Requires CD
 RESTRICTED=	Redistribution is limited, see license
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
