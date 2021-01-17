@@ -70,6 +70,7 @@
 %%DATADIR%%/overlays/draws.dtbo
 %%DATADIR%%/overlays/dwc-otg.dtbo
 %%DATADIR%%/overlays/dwc2.dtbo
+%%DATADIR%%/overlays/edt-ft5406.dtbo
 %%DATADIR%%/overlays/enc28j60-spi2.dtbo
 %%DATADIR%%/overlays/enc28j60.dtbo
 %%DATADIR%%/overlays/exc3000.dtbo
@@ -232,6 +233,7 @@
 %%DATADIR%%/overlays/upstream-pi4.dtbo
 %%DATADIR%%/overlays/upstream.dtbo
 %%DATADIR%%/overlays/vc4-fkms-v3d.dtbo
+%%DATADIR%%/overlays/vc4-kms-dsi-7inch.dtbo
 %%DATADIR%%/overlays/vc4-kms-kippah-7inch.dtbo
 %%DATADIR%%/overlays/vc4-kms-v3d-pi4.dtbo
 %%DATADIR%%/overlays/vc4-kms-v3d.dtbo
