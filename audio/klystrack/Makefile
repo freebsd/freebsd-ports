@@ -12,15 +12,13 @@ COMMENT=	Tracker for making C64/NES/Amiga-style chiptunes
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: menu_
-
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
 USES=		compiler:c11 desktop-file-utils dos2unix gmake localbase:ldconfig \
 		sdl
 DOS2UNIX_FILES=	klystron/Makefile klystron/tools/editor/Makefile \
 		klystron/tools/makebundle/Makefile Makefile player/Makefile \
-		scancode-tool/Makefile
+		scancode-tool/Makefile klystron/src/gui/menu.h
 USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	kometbomb
