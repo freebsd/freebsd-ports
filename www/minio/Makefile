@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2021-01-08T21-18-21Z
-COMMIT_ID=	51dad1d1301166aaf0d08a78ca67bc01f1168f42
+GHTAG=		RELEASE.2021-01-16T02-19-44Z
+COMMIT_ID=	7090bcc8e0cd31e44a6ee33cf8a9f83922159c6d
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -71,7 +71,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		golang:sys:f84b799fce68:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
-		golang:tools:bf155c11ec6f:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:e2f9c7f1fc8e:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		gomodule:redigo:v1.8.3:gomodule_redigo/vendor/github.com/gomodule/redigo \
 		google:go-genproto:24fa4b261c55:google_go_genproto/vendor/google.golang.org/genproto \
@@ -117,7 +117,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:highwayhash:v1.0.0:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:3baf9ea06f7c:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:minio-go:8dddba43079f:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
 		minio:selfupdate:v0.3.1:minio_selfupdate/vendor/github.com/minio/selfupdate \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:simdjson-go:v0.1.5:minio_simdjson_go/vendor/github.com/minio/simdjson-go \
@@ -160,7 +160,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		tidwall:match:v1.0.1:tidwall_match/vendor/github.com/tidwall/match \
 		tidwall:pretty:v1.0.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		tidwall:sjson:v1.0.4:tidwall_sjson/vendor/github.com/tidwall/sjson \
-		tinylib:msgp:v1.1.3:tinylib_msgp/vendor/github.com/tinylib/msgp \
+		tinylib:msgp:v1.1.5:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		uber-go:atomic:v1.5.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.3.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:tools:2cfd321de3ee:uber_go_tools/vendor/go.uber.org/tools \
