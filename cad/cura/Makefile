@@ -2,7 +2,7 @@
 
 PORTNAME=	Cura
 DISTVERSION=	4.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	cad
 DIST_SUBDIR=	Ultimaker
@@ -45,5 +45,9 @@ SHEBANG_FILES=	cura_app.py
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|' \
 		${WRKSRC}/CMakeLists.txt
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
+		${WRKSRC}/cura_app.py
 
 .include <bsd.port.mk>
