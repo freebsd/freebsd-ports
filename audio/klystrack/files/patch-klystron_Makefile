@@ -1,42 +1,42 @@
---- klystron/Makefile.orig	2021-01-08 20:34:24 UTC
+--- klystron/Makefile.orig	2021-01-18 12:22:06 UTC
 +++ klystron/Makefile
-@@ -1,7 +1,8 @@
-+MAKE ?= make
+@@ -1,9 +1,10 @@
  TARGET=engine
  VPATH=src:src
  ECHO = echo
 -CFG = debug
-+CFG = release
++CFG ?= debug
  REV = cp -f
  MACHINE =
++CC ?= gcc
  
-@@ -27,9 +28,10 @@ lib_SRC = $(notdir ${wildcard src/lib/*.c})
+ include common.mk
+ 
+@@ -27,8 +28,8 @@ lib_SRC = $(notdir ${wildcard src/lib/*.c})
  lib_DEP = $(patsubst %.c, deps/lib_$(CFG)_%.d, ${lib_SRC})
  lib_OBJ = $(patsubst %.c, objs.$(CFG)/lib_%.o, ${lib_SRC})
  
 -CC = gcc -shared -std=gnu99 -Wno-strict-aliasing
 -CDEP = gcc -E -std=gnu99
-+CC ?= gcc
++CC := $(CC) -std=gnu99 -Wno-strict-aliasing
++CDEP := $(CC) -E -std=gnu99
  
-+CDEP = $(CC) -shared -E -std=gnu99
-+
  ifndef CFLAGS
  CFLAGS = $(MACHINE) -ftree-vectorize
- endif
-@@ -41,10 +43,10 @@ ifeq ($(CFG),debug)
- 	CFLAGS += -O3 -g -Wall ${INCLUDEFLAGS} -DDEBUG -fno-inline
- else
- 	ifeq ($(CFG),profile)
--		CFLAGS += -O3 -pg -Wall ${INCLUDEFLAGS}
-+		CFLAGS += -pg -Wall ${INCLUDEFLAGS}
+@@ -44,10 +45,10 @@ else
+ 		CFLAGS += -O3 -pg -Wall ${INCLUDEFLAGS}
  	else
  		ifeq ($(CFG),release)
 -			CFLAGS += -O3 -Wall ${INCLUDEFLAGS} -s
 +			CFLAGS += -Wall ${INCLUDEFLAGS}
  		else
  			ifeq ($(CFG),size)
- 				CFLAGS += -Os -Wall ${INCLUDEFLAGS} -s -ffast-math -fomit-frame-pointer -DREDUCESIZE
-@@ -73,7 +75,7 @@ build: Makefile
+-				CFLAGS += -Os -Wall ${INCLUDEFLAGS} -s -ffast-math -fomit-frame-pointer -DREDUCESIZE
++				CFLAGS += -Os -Wall ${INCLUDEFLAGS} -ffast-math -fomit-frame-pointer -DREDUCESIZE
+ 			else
+ 				@$(ECHO) "Invalid configuration "$(CFG)" specified."
+ 				@$(ECHO) "You must specify a configuration when "
+@@ -73,7 +74,7 @@ build: Makefile
  	$(Q)echo '"' >> ./src/version.h
  	$(Q)echo '#define KLYSTRON_VERSION_STRING "klystron " KLYSTRON_REVISION' >> ./src/version.h
  	$(Q)echo '#endif' >> ./src/version.h
@@ -45,12 +45,21 @@
  
  all: bin.$(CFG)/lib${TARGET}_snd.a bin.$(CFG)/lib${TARGET}_gfx.a bin.$(CFG)/lib${TARGET}_util.a bin.$(CFG)/lib${TARGET}_gui.a tools
  
-@@ -208,10 +210,10 @@ ifneq ($(MAKECMDGOALS),clean)
+@@ -121,7 +122,7 @@ endif
+ bin.$(CFG)/ksnd.dll: objs.$(CFG)/lib_ksnd.o ${snd_OBJ} src/lib/ksnd.def | inform
+ 	$(MSG) "Linking ksnd.dll..."
+ 	$(Q)mkdir -p bin.$(CFG)
+-	$(Q)$(CC) -shared -o $@ objs.$(CFG)/lib_ksnd.o src/lib/ksnd.def ${snd_OBJ} $(CFLAGS) $(INCLUDEFLAGS) -DDLLEXPORT -Wl,--out-implib,bin.$(CFG)/libksnd.a
++	$(Q)$(CC) -o $@ objs.$(CFG)/lib_ksnd.o src/lib/ksnd.def ${snd_OBJ} $(CFLAGS) $(INCLUDEFLAGS) -DDLLEXPORT -Wl,--out-implib,bin.$(CFG)/libksnd.a
+ ifdef COMSPEC
+ 	$(MSG) "Building ksnd.lib..."
+ 	@-lib /DEF:src/lib/ksnd.def /OUT:bin.$(CFG)/ksnd.lib
+@@ -208,10 +209,10 @@ ifneq ($(MAKECMDGOALS),clean)
  endif
  
  tools/bin/makebundle.exe: tools/makebundle/*.c
 -	make -C tools/makebundle
-+	$(MAKE) -C tools/makebundle
++	$(MAKE_ENV) $(MAKE) -C tools/makebundle
  
  ifdef COMSPEC
  tools/bin/editor.exe: tools/editor/src/*

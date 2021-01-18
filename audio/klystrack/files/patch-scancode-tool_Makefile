@@ -1,8 +1,0 @@
---- scancode-tool/Makefile.orig	2021-01-08 16:47:36 UTC
-+++ scancode-tool/Makefile
-@@ -1,4 +1,4 @@
--CC = gcc -s -Ic:/MinGW/include/SDL2
-+CC ?= gcc
- EXE = scancode.exe
- 
- $(EXE): scancode.c

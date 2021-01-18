@@ -4,6 +4,7 @@
 PORTNAME=	klystrack
 DISTVERSION=	1.7.6-make-fix-12
 DISTVERSIONSUFFIX=	-gfe6e746
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -14,19 +15,23 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-USES=		compiler:c11 desktop-file-utils dos2unix gmake localbase:ldconfig \
-		sdl
-DOS2UNIX_FILES=	klystron/Makefile klystron/tools/editor/Makefile \
+USES=		compiler:c11 desktop-file-utils dos2unix gmake \
+		localbase:ldconfig sdl
+DOS2UNIX_FILES=	klystron/common.mk klystron/Makefile klystron/src/gui/menu.h \
+		klystron/tools/editor/Makefile \
 		klystron/tools/makebundle/Makefile Makefile player/Makefile \
-		scancode-tool/Makefile klystron/src/gui/menu.h
+		scancode-tool/Makefile
 USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	kometbomb
 GH_TUPLE=	kometbomb:klystron:1074324:klystron/klystron
 USE_SDL=	gfx2 image2 mixer2 sdl2 ttf2
 
-MAKE_ENV+=	V=1
+MAKE_ENV+=	CFG=release \
+		V=1
 ALL_TARGET=	build
+
+CFLAGS+=	-fPIC
 
 OPTIONS_DEFINE=	EXAMPLES
 
