@@ -60,7 +60,7 @@ include/aubio/vecutils.h
 lib/libaubio.a
 lib/libaubio.so
 lib/libaubio.so.5
-lib/libaubio.so.5.3.7
+lib/libaubio.so.5.4.8
 libdata/pkgconfig/aubio.pc
 %%MANPAGES%%man/man1/aubio.1.gz
 %%MANPAGES%%man/man1/aubiocut.1.gz

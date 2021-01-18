@@ -1,9 +1,9 @@
 Hunks 1 & 2: Enable manpages, doxygen, and sphinx documentation separately
 Hunks 3 & 4: Install docs in more standard locations
 
---- wscript.orig	2018-09-23 08:16:59 UTC
+--- wscript.orig	2019-01-09 22:40:04 UTC
 +++ wscript
-@@ -96,9 +96,15 @@ def options(ctx):
+@@ -97,9 +97,15 @@ def options(ctx):
              help_str = 'compile with source_wavwrite (default)',
              help_disable_str = 'do not compile source_wavwrite')
  
@@ -22,7 +22,7 @@ Hunks 3 & 4: Install docs in more standard locations
  
      add_option_enable_disable(ctx, 'tests', default = True,
              help_str = 'build tests (true)',
-@@ -462,19 +468,21 @@ def configure(ctx):
+@@ -475,19 +481,21 @@ def configure(ctx):
      if (ctx.options.enable_double == True):
          ctx.define('HAVE_AUBIO_DOUBLE', 1)
  
@@ -45,21 +45,40 @@ Hunks 3 & 4: Install docs in more standard locations
          # check if sphinx-build is installed, optional
          try:
            ctx.find_program('sphinx-build', var='SPHINX')
-@@ -536,7 +544,7 @@ def doxygen(bld):
-                 source = 'doc/web.cfg',
-                 target = '../doc/web/html/index.html',
-                 cwd = 'doc')
--        bld.install_files( '${DATAROOTDIR}' + '/doc/libaubio-doc',
-+        bld.install_files( '${DATAROOTDIR}' + '/doc/aubio',
-                 bld.path.ant_glob('doc/web/html/**'),
-                 cwd = bld.path.find_dir ('doc/web'),
-                 relative_trick = True)
-@@ -550,7 +558,7 @@ def sphinx(bld):
-                 rule = '${SPHINX} -b html -D release=${VERSION} -D version=${VERSION} -a -q `dirname ${SRC}` `dirname ${TGT}`',
-                 source = 'doc/conf.py',
-                 target = '../doc/_build/html/index.html')
--        bld.install_files( '${DATAROOTDIR}' + '/doc/libaubio-doc/sphinx',
-+        bld.install_files( '${DATAROOTDIR}' + '/doc/aubio/sphinx',
-                 bld.path.ant_glob('doc/_build/html/**'),
-                 cwd = bld.path.find_dir('doc/_build/html'),
-                 relative_trick = True)
+@@ -557,24 +565,17 @@ def doxygen(bld):
+                 target = bld.path.find_or_declare('api/index.html'),
+                 cwd = bld.path.find_dir('doc'))
+         # evaluate nodes lazily to prevent build directory traversal warnings
+-        bld.install_files('${DATAROOTDIR}/doc/libaubio-doc/api',
++        bld.install_files('${DATAROOTDIR}/doc/aubio/api',
+                 bld.path.find_or_declare('api').ant_glob('**/*',
+                     generator=True), cwd=bld.path.find_or_declare('api'),
+                 relative_trick=True)
+ 
+ def sphinx(bld):
+     # build documentation from source files using sphinx-build
+-    try:
+-        import aubio
+-        has_aubio = True
+-    except ImportError:
+-        from waflib import Logs
+-        Logs.pprint('YELLOW', "Sphinx manual: install aubio first")
+-        has_aubio = False
+-    if bld.env['SPHINX'] and has_aubio:
++    if bld.env['SPHINX']:
+         bld.env.VERSION = VERSION
+         rule = '${SPHINX} -b html -D release=${VERSION}' \
+-                ' -D version=${VERSION} -W -a -q' \
++                ' -D version=${VERSION} -a -q' \
+                 ' -d %s ' % os.path.join(os.path.abspath(out), 'doctrees')
+         rule += ' . %s' % os.path.join(os.path.abspath(out), 'manual')
+         bld( name = 'sphinx', rule = rule,
+@@ -582,7 +583,7 @@ def sphinx(bld):
+                 source = bld.path.find_dir('doc').ant_glob('*.rst'),
+                 target = bld.path.find_or_declare('manual/index.html'))
+         # evaluate nodes lazily to prevent build directory traversal warnings
+-        bld.install_files('${DATAROOTDIR}/doc/libaubio-doc/manual',
++        bld.install_files('${DATAROOTDIR}/doc/aubio/manual',
+                 bld.path.find_or_declare('manual').ant_glob('**/*',
+                     generator=True), cwd=bld.path.find_or_declare('manual'),
+                 relative_trick=True)
