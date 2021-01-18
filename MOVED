@@ -16019,3 +16019,4 @@ lang/harbour||2021-01-15|BROKEN, needs ancient version of openssl, upstream will
 net-im/telegram|net-im/telegram-cli|2021-01-17|Has expired: Upstream unmaintained; please migrate to net-im/telegram-cli
 science/dlpoly-classic||2021-01-17|Has expired: MASTERSITE gone; possibly replaced by https://gitlab.com/DL_POLY_Classic/dl_poly ?
 security/py-gtts-token|audio/py-gtts|2021-01-17|Has expired: Obsolete, please use audio/py-gtts instead
+graphics/qt-avif-image-plugin|graphics/kf5-kimageformats|2021-01-18|Part of kimageformats since KDE Frameworks 5.78.0
