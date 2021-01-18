@@ -5,6 +5,7 @@
 
     SUBDIR += 3270font
     SUBDIR += Hasklig
+    SUBDIR += agave
     SUBDIR += alef
     SUBDIR += alegreya
     SUBDIR += alegreya-sans

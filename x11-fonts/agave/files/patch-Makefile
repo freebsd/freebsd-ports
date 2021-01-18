@@ -1,0 +1,5 @@
+--- Makefile.orig	2021-01-18 14:49:17 UTC
++++ Makefile
+@@ -0,0 +1,2 @@
++all:
++	-sh ./build

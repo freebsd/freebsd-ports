@@ -1,0 +1,16 @@
+Agave was an attempt at making a small, monospaced, outline font that would be
+geometrically regular and simple. The endeavor was motivated by a deep adoration
+of old-school console bitmap fonts, of Consolas, of Pragmata Pro, as well as a
+novice's curiosity for typographical design.
+
+When it came to establishing a "simple" design scheme, the natural inclination
+was to separate the glyph design concerns into that of "frame" and "trait". By
+frame, we refer to the naive geometric extent of a glyph and its parts. And by
+trait, we mean, for example, the "way" in which a stroke curves, or the
+relationship between one part of a glyph and another.
+
+Adhering to personal tastes, bone-deep laziness, and the quirky spirit of old
+computer terminal fonts, the delineations of frame and trait amounted to two
+mathematical patterns: the power of two and the golden ratio.
+
+WWW: https://b.agaric.net/page/agave
