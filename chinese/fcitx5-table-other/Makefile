@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx5-table-other
-DISTVERSION=	5.0.1
+DISTVERSION=	5.0.2
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng300@gmail.com
