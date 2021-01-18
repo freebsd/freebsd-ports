@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vm
-DISTVERSION=	0.10.0
+DISTVERSION=	0.12.0
 CATEGORIES=	audio
 MASTER_SITES=	https://gitlab.com/OpenMusicKontrollers/vm.lv2/repository/archive.tar.gz?ref=${PORTVERSION}&dummy=/
 PKGNAMESUFFIX=	-lv2
@@ -22,7 +22,7 @@ LIB_DEPENDS=	liblilv-0.so:audio/lilv \
 
 USES=		compiler:c++11-lib gl meson pkgconfig localbase xorg
 USE_XORG=	x11 xext
-USE_GL=		gl glu
+USE_GL=		gl glew glu
 
 post-extract:
 	@${MV} ${WRKDIR}/vm* ${WRKDIR}/${PORTNAME}-${PORTVERSION}
