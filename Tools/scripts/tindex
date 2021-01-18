@@ -15,6 +15,7 @@
 # --------------------------------------------------------
 # Change these!
 
+GIT=/usr/local/bin/git
 SVN=/usr/local/bin/svn
 
 # Address for success/failure reports
@@ -34,6 +35,7 @@ export OUTDIR=${BASEDIR}/out
 # Target architecture if not set in the environment
 if [ "${ARCH}" = "" ]; then
 	export ARCH=i386
+	export MACHINE_ARCH=i386
 fi
 
 # --------------------------------------------------------
@@ -120,9 +122,8 @@ OSVERSION11=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR
 ${SVN} -q up ${SRCDIR12}/sys/sys
 OSVERSION12=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR12}/sys/sys/param.h)
 
-${SVN} -q up ${SRCDIR13}/sys/sys
-OSVERSION13=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR12}/sys/sys/param.h)
-
+${GIT} -C ${SRCDIR13} pull --rebase -q
+OSVERSION13=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR13}/sys/sys/param.h)
 
 cd ${PORTSDIR}
 rm -f INDEX-11 INDEX-11.bz2 INDEX-12 INDEX-12.bz2 INDEX-13 INDEX-13.bz2
