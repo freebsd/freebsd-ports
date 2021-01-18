@@ -3,6 +3,7 @@
 
 PORTNAME=	kzip
 DISTVERSION=	20200115
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://static.jonof.id.au/dl/kenutils/
 DISTNAME=	kzipmix-${DISTVERSION}-bsd-static
@@ -10,12 +11,12 @@ DISTNAME=	kzipmix-${DISTVERSION}-bsd-static
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	PKZIP-compatible compressor focusing on space over speed
 
+LICENSE=		KZIP
+LICENSE_NAME=	KZIP License
+LICENSE_FILE=   ${FILESDIR}/license.txt
+LICENSE_PERMS=	pkg-mirror no-dist-sell no-pkg-sell auto-accept
+
 ONLY_FOR_ARCHS=	amd64 i386
-
-LICENSE_PERMS=no-pkg-mirror
-
-NO_CDROM=	License does not allow redistribution
-RESTRICTED=	${NO_CDROM}
 
 NO_BUILD=	yes
 

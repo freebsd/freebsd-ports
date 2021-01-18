@@ -116,7 +116,7 @@ jmf-*-alljava.zip	java/jmf		Redistribution of pre-compiled binaries is not permi
 jre-8*-i586.tar.gz	java/linux-oracle-jre18	License does not allow distribution with fee
 jta-*.zip		java/jta		See the license
 komodo-*		editors/komodo-edit	Distribution not permitted
-kzip-*			archivers/kzip		License does not allow redistribution
+kzip-*			archivers/kzip		License does not allow commercial redistribution
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so binaries should not be distributed.  Contains crypto code from OpenSSL
 ladder.tar		games/ladder		Possible copyright problems
 lha-1.14i-ac*		archivers/lha-ac	No redistribution allowed

@@ -1,0 +1,11 @@
+KZIP license:
+
+ - The command line versions of KZIP.EXE is free for use, as are the Mac and Linux ports.
+ - You may use KZIP-compressed content for non-commercial or commercial purposes.
+ - Redistributing, repackaging, or reusing the KZIP executable is permitted for non-commercial projects that are distributed freely.
+ - For commercial requests (such as bundling with a commercial product), please write to my business partner, David Blake[1].
+ - When bundling, my credit (both my name and website) must be clearly displayed in some reasonable fashion that can be seen by an average user. 
+
+More details available here : http://advsys.net/ken/utils.htm#pngoutkziplicense
+
+[1] http://www.ardfry.com/Contact.html
