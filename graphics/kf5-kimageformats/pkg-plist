@@ -1,3 +1,4 @@
+%%AVIF%%%%QT_PLUGINDIR%%/imageformats/kimg_avif.so
 %%QT_PLUGINDIR%%/imageformats/kimg_eps.so
 %%OPENEXR%%%%QT_PLUGINDIR%%/imageformats/kimg_exr.so
 %%QT_PLUGINDIR%%/imageformats/kimg_hdr.so
@@ -10,6 +11,7 @@
 %%QT_PLUGINDIR%%/imageformats/kimg_rgb.so
 %%QT_PLUGINDIR%%/imageformats/kimg_tga.so
 %%QT_PLUGINDIR%%/imageformats/kimg_xcf.so
+%%AVIF%%share/kservices5/qimageioplugins/avif.desktop
 share/kservices5/qimageioplugins/dds.desktop
 share/kservices5/qimageioplugins/eps.desktop
 %%OPENEXR%%share/kservices5/qimageioplugins/exr.desktop
