@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sherlock
-DISTVERSION=	0.24.0
+DISTVERSION=	0.26.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -22,6 +22,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMusicKontrollers
 GH_PROJECT=	sherlock.lv2
 USE_XORG=	x11 xext
-USE_GL=		gl glu
+USE_GL=		gl glew glu
 
 .include <bsd.port.mk>
