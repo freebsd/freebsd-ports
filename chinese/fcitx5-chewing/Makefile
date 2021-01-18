@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx5-chewing
-DISTVERSION=	5.0.2
+DISTVERSION=	5.0.3
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng300@gmail.com
