@@ -3,7 +3,7 @@ bin/fcitx5-migrator
 bin/kbd-layout-viewer5
 lib/libFcitx5Migrator.so
 lib/libFcitx5Migrator.so.5
-lib/libFcitx5Migrator.so.5.0.1
+lib/libFcitx5Migrator.so.%%VER%%
 %%QT_PLUGINDIR%%/kcms/kcm_fcitx5.so
 share/applications/kbd-layout-viewer5.desktop
 share/kpackage/kcms/org.fcitx.fcitx5.kcm/contents/ui/AddIMPage.qml
