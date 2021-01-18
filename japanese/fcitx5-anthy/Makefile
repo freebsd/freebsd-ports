@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx5-anthy
-DISTVERSION=	5.0.1
+DISTVERSION=	5.0.2
 CATEGORIES=	japanese textproc
 
 MAINTAINER=	khng300@gmail.com
