@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx5-qt
-DISTVERSION=	5.0.1
+DISTVERSION=	5.0.2
 CATEGORIES=	textproc
 
 MAINTAINER=	khng300@gmail.com
@@ -17,6 +17,8 @@ LIB_DEPENDS=	libFcitx5Utils.so:textproc/fcitx5 \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c++17-lang gettext-tools cmake kde:5 pkgconfig qt:5 xorg
+
+PLIST_SUB=	VER=${PORTVERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fcitx
