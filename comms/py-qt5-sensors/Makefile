@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sensors
+PORTREVISION=	1
 CATEGORIES=	comms devel python
 
 MAINTAINER=	kde@FreeBSD.org

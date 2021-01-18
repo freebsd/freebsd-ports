@@ -2,6 +2,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${PYQT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	https://pypi.python.org/packages/source/P/PyQtWebEngine/
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
