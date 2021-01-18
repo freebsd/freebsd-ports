@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wyrmsun
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
@@ -19,6 +19,7 @@ GH_ACCOUNT=	Andrettin
 GH_PROJECT=	Wyrmsun
 
 USES=		cmake gnome
+INSTALL_TARGET=	install
 INSTALLS_ICONS=	yes
 NO_ARCH=	yes
 
