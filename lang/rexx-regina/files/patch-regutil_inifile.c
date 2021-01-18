@@ -1,4 +1,4 @@
---- regutil/inifile.c.orig	2014-10-25 01:36:33 UTC
+--- regutil/inifile.c.orig	2019-10-06 06:09:42 UTC
 +++ regutil/inifile.c
 @@ -31,6 +31,7 @@
  #include <ctype.h>

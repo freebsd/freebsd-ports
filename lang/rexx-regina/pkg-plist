@@ -9,6 +9,7 @@ lib/Regina-REXX/addons/librxtest1.so
 lib/Regina-REXX/addons/librxtest2.so
 lib/libregina.a
 lib/libregina.so
+libdata/pkgconfig/libregina.pc
 man/man1/regina.1.gz
 man/man1/rexx.1.gz
 man/man1/regina-config.1.gz

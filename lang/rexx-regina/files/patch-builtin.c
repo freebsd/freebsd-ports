@@ -1,6 +1,6 @@
---- builtin.c.orig	2015-03-31 04:38:58 UTC
+--- builtin.c.orig	2019-10-06 06:19:40 UTC
 +++ builtin.c
-@@ -1039,7 +1039,7 @@ streng *std_time( tsd_t *TSD, cparamboxp
+@@ -1037,7 +1037,7 @@ streng *std_time( tsd_t *TSD, cparamboxptr parms )
           break ;
  
        case 'L':
@@ -9,7 +9,7 @@
           break ;
  
        case 'M':
-@@ -1068,7 +1068,7 @@ streng *std_time( tsd_t *TSD, cparamboxp
+@@ -1066,7 +1066,7 @@ streng *std_time( tsd_t *TSD, cparamboxptr parms )
  
        case 'T':
           rnow = mktime( &tmdata );
@@ -18,7 +18,7 @@
           break ;
  
        default:
-@@ -1308,7 +1308,7 @@ streng *std_date( tsd_t *TSD, cparamboxp
+@@ -1302,7 +1302,7 @@ streng *std_date( tsd_t *TSD, cparamboxptr parms )
        case 'T':
           tmdata.tm_year -= 1900;
           rnow = mktime( &tmdata );
