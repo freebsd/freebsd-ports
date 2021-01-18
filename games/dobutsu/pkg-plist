@@ -1,0 +1,4 @@
+bin/dobutsu
+libexec/dobutsu
+%%DATADIR%%/dobutsu.tb.xz
+share/man/man6/dobutsu.6.gz

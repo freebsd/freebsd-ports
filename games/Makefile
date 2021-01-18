@@ -192,6 +192,7 @@
     SUBDIR += digger-vgl
     SUBDIR += divide-and-succeed
     SUBDIR += dmjava
+    SUBDIR += dobutsu
     SUBDIR += dodgindiamond2
     SUBDIR += domination
     SUBDIR += dontspace
