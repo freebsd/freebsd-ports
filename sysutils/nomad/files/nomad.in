@@ -39,6 +39,7 @@ load_rc_config $name
 pidfile=/var/run/nomad.pid
 procname="%%PREFIX%%/bin/nomad"
 command="/usr/sbin/daemon"
+extra_commands="reload"
 nomad_command="/usr/bin/env ${nomad_env} ${procname} agent -data-dir=${nomad_dir} ${nomad_args}"
 command_args="-f -t ${name} -p ${pidfile} ${nomad_command}"
 

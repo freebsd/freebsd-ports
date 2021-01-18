@@ -2,7 +2,7 @@
 
 PORTNAME=	nomad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.9
+DISTVERSION=	1.0.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@FreeBSD.org
@@ -10,9 +10,6 @@ COMMENT=	Cluster manager and scheduler
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	On i386: go compiler crashes: https://github.com/golang/go/issues/23763
 
 USES=		go
 USE_GITHUB=	yes
