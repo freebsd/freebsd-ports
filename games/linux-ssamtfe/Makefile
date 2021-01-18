@@ -5,7 +5,7 @@ PORTNAME=	ssamtfe
 PORTVERSION=	1.05b3
 PORTREVISION=	1
 CATEGORIES=	games linux
-MASTER_SITES=	http://home.coc-ag.de/dressler-ro/liflg/files/final/ \
+MASTER_SITES=	https://files.holarse-linuxgaming.de/native/Spiele/Serious%20Sam%20The%20First%20Encounter/Installer/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 PKGNAMEPREFIX=	linux-
 DISTFILES=	${PORTNAME:S|ssam|serious.sam.|}_${PORTVERSION:S|b|beta|}-english-2.run
@@ -13,19 +13,16 @@ DISTFILES=	${PORTNAME:S|ssam|serious.sam.|}_${PORTVERSION:S|b|beta|}-english-2.r
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serious Sam: The First Encounter
 
-OPTIONS_DEFINE=	VORBIS DOCS
-OPTIONS_DEFAULT=	VORBIS
-
 USES=		linux
+STRIP=
 USE_LINUX=	xorglibs
 NO_BUILD=	yes
 RESTRICTED=	Redistribution is limited, see license
 PORTDOCS=	README.liflg ShellSymbols.txt changes.txt notes.txt
 SUB_FILES=	pkg-message
 
-.if !defined(CDROM_MOUNT)
-IGNORE=		${PKGNAME} requires CDROM_MOUNT set to mount point of CD
-.endif
+OPTIONS_DEFINE=	VORBIS DOCS
+OPTIONS_DEFAULT=	VORBIS
 
 .include <bsd.port.options.mk>
 
