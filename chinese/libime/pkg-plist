@@ -51,13 +51,13 @@ lib/cmake/LibIMETable/LibIMETableTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibIMETable/LibIMETableTargets.cmake
 lib/libIMECore.so
 lib/libIMECore.so.0
-lib/libIMECore.so.1.0.3
+lib/libIMECore.so.%%VER%%
 lib/libIMEPinyin.so
 lib/libIMEPinyin.so.0
-lib/libIMEPinyin.so.1.0.3
+lib/libIMEPinyin.so.%%VER%%
 lib/libIMETable.so
 lib/libIMETable.so.0
-lib/libIMETable.so.1.0.3
+lib/libIMETable.so.%%VER%%
 lib/libime/zh_CN.lm
 lib/libime/zh_CN.lm.predict
 %%DATADIR%%/cj.main.dict

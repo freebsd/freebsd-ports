@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libime
-DISTVERSION=	1.0.2-4
+DISTVERSION=	1.0.3
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/data/:opengram_lm,opengram_dict,table_dict
 DISTFILES=	${OPENGRAM_LM_TAR}:opengram_lm \
@@ -18,18 +18,22 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libFcitx5Utils.so:textproc/fcitx5
 
+USES=		compiler:c++17-lang cmake kde:5
+
+PLIST_SUB=	VER=${PORTVERSION} VER_MAJOR=${PORTVERSION:R:R}
+
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	fcitx
-GH_TAGNAME=	e2e48ed
 GH_TUPLE=	kpu:kenlm:01c49fe:kenlm/src/libime/core/kenlm
-
-USES=		compiler:c++17-lang cmake kde:5
 
 USE_KDE=	ecm
 
 CMAKE_OFF=	ENABLE_TEST
 MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE
 
+# These must follow data/CMakeLists.txt
 OPENGRAM_LM_TAR=	lm_sc.3gm.arpa-20140820.tar.bz2
 OPENGRAM_DICT_TAR=	dict.utf8-20200715.tar.xz
 TABLE_DICT_TAR=		table.tar.gz
