@@ -1,6 +1,6 @@
---- configure.orig	2015-01-18 20:33:40 UTC
+--- configure.orig	2019-10-06 06:19:40 UTC
 +++ configure
-@@ -3490,13 +3490,22 @@ case "$target" in
+@@ -3521,13 +3521,22 @@ case "$target" in
           osis64bit=yes
        fi
        ;;
@@ -25,7 +25,7 @@
     *nto-qnx*)
        ;;
     *qnx*)
-@@ -6256,6 +6265,10 @@ rm -f core conftest.err conftest.$ac_objext \
+@@ -6286,6 +6295,10 @@ rm -f core conftest.err conftest.$ac_objext \
                 ;;
              *linux*)
                 ;;
@@ -36,7 +36,7 @@
              *freebsd*)
                 THREADING_COMPILE="-pthread -D_REENTRANT -DPOSIX -DREGINA_REENTRANT"
                 THREADING_LINK="-pthread"
-@@ -8679,7 +8692,14 @@ case "$target" in
+@@ -8710,7 +8723,14 @@ case "$target" in
                  SHLPRE="lib"
                  SHL_LD="ld -assert pure-text -o ${SHLPRE}${SHLFILE}${SHLPST} "'$('SHOFILES')'
                  ;;
@@ -52,7 +52,7 @@
                  if test "$ac_cv_prog_CC" = "gcc" -o "$ac_cv_prog_CC" = "g++" -o "$ac_cv_prog_CC" = "clang"; then
                     LD_RXLIB_A1="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
                     LD_RXLIB_A2="$ac_cv_prog_CC -shared ${LDFLAGS} -o \$(@)"
-@@ -9429,7 +9449,7 @@ $as_echo_n "checking OS distribution name... " >&6; }
+@@ -9460,7 +9480,7 @@ $as_echo_n "checking OS distribution name... " >&6; }
  $as_echo "$MYDISTRO" >&6; }
  else
     case "$target" in

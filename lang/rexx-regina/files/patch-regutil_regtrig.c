@@ -1,6 +1,6 @@
---- regutil/regtrig.c.orig	2014-06-22 03:53:33 UTC
+--- regutil/regtrig.c.orig	2019-10-06 06:09:42 UTC
 +++ regutil/regtrig.c
-@@ -124,7 +124,7 @@ static void FormatResult(double res, uns
+@@ -124,7 +124,7 @@ static void FormatResult(double res, unsigned long pre
    }
    else
                                         /* format the result          */

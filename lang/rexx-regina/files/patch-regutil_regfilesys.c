@@ -1,4 +1,4 @@
---- regutil/regfilesys.c.orig	2015-04-04 08:16:55 UTC
+--- regutil/regfilesys.c.orig	2019-10-06 06:19:40 UTC
 +++ regutil/regfilesys.c
 @@ -27,6 +27,8 @@
  #endif

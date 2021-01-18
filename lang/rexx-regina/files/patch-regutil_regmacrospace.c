@@ -1,4 +1,4 @@
---- regutil/regmacrospace.c.orig	2009-10-07 07:51:51 UTC
+--- regutil/regmacrospace.c.orig	2019-10-06 06:09:42 UTC
 +++ regutil/regmacrospace.c
 @@ -59,7 +59,7 @@ rxfunc(sysaddrexxmacro)
        flags = RXMACRO_SEARCH_AFTER;

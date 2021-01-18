@@ -1,6 +1,6 @@
---- regutil/regutil.c.orig	2014-10-19 04:07:12 UTC
+--- regutil/regutil.c.orig	2019-10-06 06:09:42 UTC
 +++ regutil/regutil.c
-@@ -183,6 +183,8 @@ extern void *getRexxUtilFunctionAddress(
+@@ -183,6 +183,8 @@ extern void *getRexxUtilFunctionAddress( char *name )
  }
  #endif
  
