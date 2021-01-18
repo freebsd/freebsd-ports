@@ -2,11 +2,11 @@
 
 PORTNAME=	czmq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.1
+DISTVERSION=	4.2.1
 CATEGORIES=	net
 PKGNAMESUFFIX=	4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	High-level C Binding for ZeroMQ (Version 4)
 
 LICENSE=	MPL20
@@ -30,11 +30,7 @@ SHEBANG_FILES=	doc/mkman mkdoc \
 
 CONFLICTS_INSTALL=	czmq-3.*
 
-# uuid_CFLAGS and uuid_LIBS required
-# to avoid conflicts with misc/e2fsprogs-libuuid
-CONFIGURE_ARGS=	uuid_CFLAGS="-I/usr/include ${CFLAGS}" \
-		uuid_LIBS="-lc" \
-		--with-libzmq=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-libzmq=${LOCALBASE} \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
 		--enable-drafts="yes" \
 		--with-docs="yes"
