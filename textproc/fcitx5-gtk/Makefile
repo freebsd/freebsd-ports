@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx5-gtk
-DISTVERSION=	5.0.1
+DISTVERSION=	5.0.3
 CATEGORIES=	textproc
 
 MAINTAINER=	khng300@gmail.com
@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c++17-lang gettext-tools cmake gnome kde:5 pkgconfig xorg
+
+PLIST_SUB=	VER=${PORTVERSION}
 
 USE_LDCONFIG=	yes
 
