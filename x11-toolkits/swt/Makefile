@@ -3,6 +3,7 @@
 
 PORTNAME=	swt
 DISTVERSION=	4.11
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	http://archive.eclipse.org/eclipse/downloads/drops4/R-${DISTVERSION}-201903070500/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-gtk-linux-x86_64
@@ -23,7 +24,7 @@ USE_JAVA=	yes
 USE_XORG=	xtst
 JAVA_OS=	native
 
-SWT_VERSION=	411
+SWT_VERSION=	4924r25
 
 MAKEFILE=	make_freebsd.mak
 MAKE_ENV=	SWT_VERSION=${SWT_VERSION}
@@ -45,7 +46,6 @@ WEBKIT_MAKE_ENV_OFF=	BUILD_WEBKIT2EXTENSION=no
 
 post-extract:
 	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo "*.zip")
-	@${RM} ${WRKSRC}/*.o ${WRKSRC}/*.so ${WRKSRC}/*.jar
 	@${CP} ${FILESDIR}/build.xml ${WRKSRC}/build.xml
 	@${CP} ${WRKSRC}/make_linux.mak ${WRKSRC}/make_freebsd.mak
 
