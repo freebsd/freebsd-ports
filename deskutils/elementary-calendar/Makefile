@@ -2,6 +2,7 @@
 
 PORTNAME=	elementary-calendar
 DISTVERSION=	5.1.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	nc@FreeBSD.org
