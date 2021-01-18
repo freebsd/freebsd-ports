@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	xviewer
-PORTVERSION=	2.6.2
-PORTREVISION=	1
-CATEGORIES=	graphics
+PORTVERSION=	2.8.3
+CATEGORIES=	graphics gnome
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast and functional image viewer
@@ -18,7 +17,9 @@ BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/gtk-doc.m4:textproc/gtk-doc \
 		itstool:textproc/itstool \
 		${LOCALBASE}/share/aclocal/yelp.m4:textproc/yelp-tools
 LIB_DEPENDS=	libcinnamon-desktop.so:x11/cinnamon-desktop \
+		libxapp.so:x11/xapp \
 		libpeas-1.0.so:devel/libpeas
+RUN_DEPENDS=	yelp:x11/yelp
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils gettext-tools \
 		gmake gnome libtool localbase pkgconfig xorg
@@ -49,9 +50,5 @@ LIBRSVG2_CONFIGURE_OFF=	--without-librsvg
 
 XMP_LIB_DEPENDS=	libexempi.so:textproc/exempi
 XMP_CONFIGURE_OFF=	--without-xmp
-
-post-patch:
-	@${REINPLACE_CMD} -e '/CINNAMON_DESKTOP_REQUIRED/s,3\.2\.0,2.4.2,' \
-		${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
