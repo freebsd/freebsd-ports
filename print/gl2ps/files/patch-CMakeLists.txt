@@ -1,18 +1,18 @@
---- CMakeLists.txt.orig	2017-04-03 23:09:28 UTC
+--- CMakeLists.txt.orig	2020-04-07 18:12:36 UTC
 +++ CMakeLists.txt
-@@ -79,10 +79,9 @@ endif(NOT HAVE_VSNPRINTF)
+@@ -94,10 +94,9 @@ endif()
  find_package(OpenGL)
  if(OPENGL_FOUND)
    list(APPEND EXTERNAL_INCLUDES ${OPENGL_INCLUDE_DIR})
 -  list(APPEND EXTERNAL_LIBRARIES ${OPENGL_LIBRARIES})
 +  list(APPEND EXTERNAL_LIBRARIES ${OPENGL_gl_LIBRARY})
- endif(OPENGL_FOUND)
+ endif()
  
 -find_package(GLUT)
  if(GLUT_FOUND)
    list(APPEND EXTERNAL_INCLUDES ${GLUT_INCLUDE_DIR})
    list(APPEND EXTERNAL_LIBRARIES ${GLUT_LIBRARIES})
-@@ -138,8 +137,7 @@ endif(WIN32)
+@@ -164,8 +163,7 @@ endif()
  
  install(FILES gl2ps.h DESTINATION include)
  install(FILES ${CMAKE_SOURCE_DIR}/README.txt DESTINATION ${GL2PS_DOC})
@@ -22,11 +22,11 @@
  install(FILES ${CMAKE_SOURCE_DIR}/gl2psTest.c DESTINATION ${GL2PS_DOC})
  install(FILES ${CMAKE_SOURCE_DIR}/gl2psTestSimple.c DESTINATION ${GL2PS_DOC})
  
-@@ -150,7 +148,6 @@ if(GLUT_FOUND)
+@@ -176,7 +174,6 @@ if(GLUT_FOUND)
    target_link_libraries(gl2psTestSimple lib ${EXTERNAL_LIBRARIES})
- endif(GLUT_FOUND)
+ endif()
  
 -find_package(LATEX)
  if(PDFLATEX_COMPILER)
-   add_custom_command(OUTPUT gl2ps.pdf DEPENDS gl2ps.tex 
+   add_custom_command(OUTPUT gl2ps.pdf DEPENDS gl2ps.tex
                       COMMAND ${PDFLATEX_COMPILER} ARGS ${CMAKE_SOURCE_DIR}/gl2ps.tex

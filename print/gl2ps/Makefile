@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gl2ps
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.2
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.geuz.org/gl2ps/src/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 USES=		cmake gl tar:tgz
 USE_GL=		gl
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
+PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
