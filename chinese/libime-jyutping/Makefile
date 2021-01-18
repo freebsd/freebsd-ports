@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libime-jyutping
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/data/:dict,model
 DISTFILES=	${DICT_TAR}:dict \
@@ -22,18 +22,22 @@ LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libFcitx5Core.so:textproc/fcitx5
 RUN_DEPENDS=	${LOCALBASE}/lib/fcitx5/punctuation.so:chinese/fcitx5-chinese-addons
 
+USES=		compiler:c++17-lang cmake gettext-tools kde:5 localbase
+
+PLIST_SUB=	VER=${PORTVERSION}
+
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	fcitx
 
-USES=		compiler:c++17-lang cmake gettext-tools kde:5 localbase
-
 USE_KDE=	ecm
-USE_LDCONFIG=	yes
 
 CMAKE_ON=	ENABLE_ENGINE
 CMAKE_OFF=	ENABLE_TEST ENABLE_DOC
 MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE
 
+# These must follow data/CMakeLists.txt
 DICT_TAR=	jyutping-dict-20180104.tar.xz
 MODEL_TAR=	jyutping-model-20180103.tar.xz
 
