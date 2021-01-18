@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcb-imdkit
-DISTVERSION=	1.0.1
+DISTVERSION=	1.0.2
 CATEGORIES=	x11 textproc
 
 MAINTAINER=	khng300@gmail.com
@@ -15,6 +15,8 @@ LIB_DEPENDS=	libxcb-util.so:x11/xcb-util \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 
 USES=		compiler:c11 cmake pkgconfig kde:5 xorg
+
+PLIST_SUB=	VER=${PORTVERSION}
 
 CMAKE_ON=	SYSTEM_USE_UTHASH
 

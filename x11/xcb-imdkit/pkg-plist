@@ -1,6 +1,7 @@
 include/xcb-imdkit/encoding.h
 include/xcb-imdkit/imclient.h
 include/xcb-imdkit/imdkit.h
+include/xcb-imdkit/xcbimdkit_export.h
 include/xcb-imdkit/ximcommon.h
 include/xcb-imdkit/ximproto-gen.h
 include/xcb-imdkit/ximproto.h
@@ -10,5 +11,5 @@ lib/cmake/XCBImdkit/XCBImdkitLibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/XCBImdkit/XCBImdkitLibraryTargets.cmake
 lib/libxcb-imdkit.so
 lib/libxcb-imdkit.so.1
-lib/libxcb-imdkit.so.1.0.1
+lib/libxcb-imdkit.so.%%VER%%
 libdata/pkgconfig/xcb-imdkit.pc
