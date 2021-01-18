@@ -10,6 +10,7 @@ include/KF5/KIOCore/KDirNotify
 include/KF5/KIOCore/KDiskFreeSpaceInfo
 include/KF5/KIOCore/KFileItem
 include/KF5/KIOCore/KFileItemListProperties
+include/KF5/KIOCore/KIO/AskUserActionInterface
 include/KF5/KIOCore/KIO/AuthInfo
 include/KF5/KIOCore/KIO/BatchRenameJob
 include/KF5/KIOCore/KIO/ChmodJob
@@ -71,6 +72,7 @@ include/KF5/KIOCore/kdirnotify.h
 include/KF5/KIOCore/kdiskfreespaceinfo.h
 include/KF5/KIOCore/kfileitem.h
 include/KF5/KIOCore/kfileitemlistproperties.h
+include/KF5/KIOCore/kio/askuseractioninterface.h
 include/KF5/KIOCore/kio/authinfo.h
 include/KF5/KIOCore/kio/batchrenamejob.h
 include/KF5/KIOCore/kio/chmodjob.h

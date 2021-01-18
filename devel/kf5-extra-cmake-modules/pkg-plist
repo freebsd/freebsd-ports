@@ -36,6 +36,7 @@ share/ECM/find-modules/FindWaylandProtocols.cmake
 share/ECM/find-modules/FindWaylandScanner.cmake
 share/ECM/find-modules/FindX11_XCB.cmake
 share/ECM/find-modules/FindXCB.cmake
+share/ECM/find-modules/Findepoxy.cmake
 share/ECM/find-modules/GeneratePythonBindingUmbrellaModule.cmake
 share/ECM/find-modules/Qt5Ruleset.py
 share/ECM/find-modules/local.properties.cmake

@@ -12,3 +12,4 @@ lib/cmake/KF5QuickCharts/KF5QuickChartsTargets.cmake
 %%QT_QMLDIR%%/org/kde/quickcharts/controls/styles/org.kde.desktop/Theme.qml
 %%QT_QMLDIR%%/org/kde/quickcharts/libQuickCharts.so
 %%QT_QMLDIR%%/org/kde/quickcharts/qmldir
+share/qlogging-categories5/kquickcharts.categories

@@ -7,6 +7,7 @@ include/KF5/KNewStuff3/KNS3/Entry
 include/KF5/KNewStuff3/KNS3/KMoreTools
 include/KF5/KNewStuff3/KNS3/KMoreToolsMenuFactory
 include/KF5/KNewStuff3/KNS3/KMoreToolsPresets
+include/KF5/KNewStuff3/KNS3/QtQuickDialogWrapper
 include/KF5/KNewStuff3/KNS3/UploadDialog
 include/KF5/KNewStuff3/KNSCore/Author
 include/KF5/KNewStuff3/KNSCore/Cache
@@ -34,6 +35,7 @@ include/KF5/KNewStuff3/kns3/kmoretoolsmenufactory.h
 include/KF5/KNewStuff3/kns3/kmoretoolspresets.h
 include/KF5/KNewStuff3/kns3/knewstuff_export.h
 include/KF5/KNewStuff3/kns3/knewstuffaction.h
+include/KF5/KNewStuff3/kns3/qtquickdialogwrapper.h
 include/KF5/KNewStuff3/kns3/uploaddialog.h
 include/KF5/KNewStuff3/knscore/author.h
 include/KF5/KNewStuff3/knscore/cache.h

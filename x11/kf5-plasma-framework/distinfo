@@ -1,5 +1,3 @@
-TIMESTAMP = 1608396465
-SHA256 (KDE/frameworks/5.77.0/plasma-framework-5.77.0.tar.xz) = 11678e5274d10a4ca3730a2441c8b555eb527d2a66606bd35fa1f15f667ae985
-SIZE (KDE/frameworks/5.77.0/plasma-framework-5.77.0.tar.xz) = 3152748
-SHA256 (KDE/frameworks/5.77.0/b1364fa601866792ecf69cf61b8ab48732150857.diff) = caf1b3e2b81fdfce6d67917c28f4c4fac92e710d4dfb92cde583262b1c98a7e8
-SIZE (KDE/frameworks/5.77.0/b1364fa601866792ecf69cf61b8ab48732150857.diff) = 20985
+TIMESTAMP = 1609690747
+SHA256 (KDE/frameworks/5.78.0/plasma-framework-5.78.0.tar.xz) = 46aee1e872728af5ec5c28c604494bbcdf01c32c19f9fe2593b749bbeb698481
+SIZE (KDE/frameworks/5.78.0/plasma-framework-5.78.0.tar.xz) = 3154276

@@ -1,5 +1,3 @@
-TIMESTAMP = 1608395909
-SHA256 (KDE/frameworks/5.77.0/knewstuff-5.77.0.tar.xz) = d031fe85c8870d1fd99d7a0252f06169d078be803bd6a70338403b624c7b70bc
-SIZE (KDE/frameworks/5.77.0/knewstuff-5.77.0.tar.xz) = 1143780
-SHA256 (KDE/frameworks/5.77.0/243ea6155b28457c8b1441fee8ab1037828d21ba.diff) = 137ec1a4987b1366a8d7188917c12b779e1fae6d56d5923a34ce7c700f698122
-SIZE (KDE/frameworks/5.77.0/243ea6155b28457c8b1441fee8ab1037828d21ba.diff) = 3659
+TIMESTAMP = 1609690702
+SHA256 (KDE/frameworks/5.78.0/knewstuff-5.78.0.tar.xz) = d5b0abd5d4ff67e1f4fb921b710d1251569bfc2e19788d9ce7843b498f9a61b9
+SIZE (KDE/frameworks/5.78.0/knewstuff-5.78.0.tar.xz) = 1144588
