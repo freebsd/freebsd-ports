@@ -1,3 +1,3 @@
-TIMESTAMP = 1602789028
-SHA256 (botocore-1.18.16.tar.gz) = f0616d2c719691b94470307cee8adf89ceb1657b7b6f9aa1bf61f9de5543dbbb
-SIZE (botocore-1.18.16.tar.gz) = 6930500
+TIMESTAMP = 1611000894
+SHA256 (botocore-1.19.56.tar.gz) = 01496e4c2c06aab79689f2c345a0e2cceb5fe1da7858a7e7df189bcf97703223
+SIZE (botocore-1.19.56.tar.gz) = 7390812
