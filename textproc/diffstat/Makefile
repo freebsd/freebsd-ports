@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	diffstat
-PORTVERSION=	1.63
+PORTVERSION=	1.64
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://invisible-mirror.net/archives/${PORTNAME}/ \
 		ftp://ftp.invisible-island.net/${PORTNAME}/
