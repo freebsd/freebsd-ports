@@ -167,7 +167,7 @@ CARGO_CRATES=	aes-0.3.2 \
 		lazycell-1.2.1 \
 		libc-0.2.65 \
 		libloading-0.5.2 \
-		linked-hash-map-0.5.2 \
+		linked-hash-map-0.5.3 \
 		local-encoding-0.2.0 \
 		lock_api-0.1.5 \
 		lock_api-0.3.4 \
@@ -319,6 +319,7 @@ CARGO_CRATES=	aes-0.3.2 \
 		serde-1.0.102 \
 		serde_derive-1.0.102 \
 		serde_json-1.0.41 \
+		serde_repr-0.1.6 \
 		sha-1-0.8.1 \
 		sha2-0.7.1 \
 		sha2-0.8.0 \
@@ -339,7 +340,7 @@ CARGO_CRATES=	aes-0.3.2 \
 		strsim-0.8.0 \
 		strsim-0.9.2 \
 		subtle-1.0.0 \
-		subtle-2.1.0 \
+		subtle-2.3.0 \
 		syn-0.15.26 \
 		syn-1.0.40 \
 		synstructure-0.10.1 \
