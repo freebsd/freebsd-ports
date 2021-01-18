@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fcitx5
-DISTVERSION=	5.0.3-31
+DISTVERSION=	5.0.4
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/data/:dict
 DISTFILES=	${SPELL_EN_DICT_TAR}:dict
@@ -28,6 +28,8 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 
 # gettext-tools for both build-time hard requirement and Fcitx5 helper shell scripts
 USES=		cmake compiler:c++17-lang gettext-runtime gettext-tools:build,run gl gnome kde:5 pkgconfig
+
+PLIST_SUB=	VER=${PORTVERSION}
 
 CONFLICTS=	zh-fcitx
 
@@ -67,9 +69,9 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fcitx
-GH_TAGNAME=	49c79b4
 
-SPELL_EN_DICT_VER=	20121020 # This must follow src/modules/spell/dict/CMakeLists.txt0
+# These must follow src/modules/spell/dict/CMakeLists.txt
+SPELL_EN_DICT_VER=	20121020
 SPELL_EN_DICT_TAR=	en_dict-${SPELL_EN_DICT_VER}.tar.gz
 
 post-extract:

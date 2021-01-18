@@ -136,6 +136,7 @@ lib/fcitx5/classicui.so
 lib/fcitx5/clipboard.so
 lib/fcitx5/dbus.so
 lib/fcitx5/dbusfrontend.so
+lib/fcitx5/fcitx4frontend.so
 lib/fcitx5/ibusfrontend.so
 lib/fcitx5/imselector.so
 lib/fcitx5/kimpanel.so
@@ -153,14 +154,14 @@ lib/fcitx5/waylandim.so
 lib/fcitx5/xcb.so
 lib/fcitx5/xim.so
 lib/libFcitx5Config.so
-lib/libFcitx5Config.so.5.0.4
+lib/libFcitx5Config.so.%%VER%%
 lib/libFcitx5Config.so.6
 lib/libFcitx5Core.so
-lib/libFcitx5Core.so.5.0.4
+lib/libFcitx5Core.so.%%VER%%
 lib/libFcitx5Core.so.7
 lib/libFcitx5Utils.so
 lib/libFcitx5Utils.so.2
-lib/libFcitx5Utils.so.5.0.4
+lib/libFcitx5Utils.so.%%VER%%
 libdata/pkgconfig/Fcitx5Config.pc
 libdata/pkgconfig/Fcitx5Core.pc
 libdata/pkgconfig/Fcitx5Module.pc
@@ -172,6 +173,7 @@ share/dbus-1/services/org.fcitx.Fcitx5.service
 %%DATADIR%%/addon/clipboard.conf
 %%DATADIR%%/addon/dbus.conf
 %%DATADIR%%/addon/dbusfrontend.conf
+%%DATADIR%%/addon/fcitx4frontend.conf
 %%DATADIR%%/addon/ibusfrontend.conf
 %%DATADIR%%/addon/imselector.conf
 %%DATADIR%%/addon/keyboard.conf
