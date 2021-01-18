@@ -1,6 +1,20 @@
---- CMakeLists.txt.orig	2018-08-25 14:45:11 UTC
+--- CMakeLists.txt.orig	2020-05-13 05:15:56 UTC
 +++ CMakeLists.txt
-@@ -104,8 +104,8 @@ AutodetectHostArchitecture()
+@@ -88,11 +88,13 @@ endif()
+ # ==============================================================================
+ # Check that submodule have been initialized and updated
+ # ==============================================================================
++if (FALSE)
+ if (NOT EXISTS ${PROJECT_SOURCE_DIR}/dependencies/cereal/include)
+   message(FATAL_ERROR
+     "\n submodule(s) are missing, please update your repository:\n"
+     "  > git submodule update -i\n")
+ endif()
++endif()
+ 
+ # ==============================================================================
+ # Additional cmake find modules
+@@ -103,8 +105,8 @@ include(OptimizeForArchitecture)
  OptimizeForArchitecture()
  
  if (UNIX AND NOT OpenMVG_BUILD_COVERAGE)
@@ -11,7 +25,7 @@
  endif ()
  
  # ==============================================================================
-@@ -257,7 +257,7 @@ endif()
+@@ -260,7 +262,7 @@ endif()
  # - external by default if CERES_DIR_HINTS or find_package found a valid Ceres
  # - internal if ceres not found (ceres-solver+cxsparse+miniglog)
  # ==============================================================================
