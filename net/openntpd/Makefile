@@ -2,7 +2,7 @@
 
 PORTNAME=	openntpd
 PORTVERSION=	6.8p1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	net
 MASTER_SITES=	OPENBSD/OpenNTPD
@@ -14,7 +14,7 @@ LICENSE=	ISCL
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		ssl
+USES=		localbase ssl
 
 CONFLICTS=	ntp ntp-devel ntpsec
 
@@ -40,11 +40,13 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-# Requires libtls from LibreSSL
+# When using LibreSSL use its own libtls, but when using OpenSSL
+# use libtls from libretls.
 .if ${SSL_DEFAULT:Mlibressl*}
-CPPFLAGS+=		-I${OPENSSLINC}
-LDFLAGS+=		-L${OPENSSLLIB}
-.else # SSL_DEFAULT
+#	/* empty */
+
+# Drop after FreeBSD 11 EOL: requires libtls from LibreSSL
+.elif ${SSL_DEFAULT:Mbase} && exists(/usr/include/openssl/ssl23.h)
 BUILD_DEPENDS+=		${NONEXISTENT}:security/libressl:stage
 CPPFLAGS+=		-I${WRKDIR}/libressl/include
 LDFLAGS+=		-L${WRKDIR}/libressl/lib
@@ -54,6 +56,9 @@ LDFLAGS+=		-L${WRKDIR}/libressl/lib
 pre-configure:
 	@cd `${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl`${PREFIX} \
 	    && ${FIND} . ! -name *.so\* | ${CPIO} -dump ${WRKDIR}/libressl >/dev/null 2>&1
+
+.else
+LIB_DEPENDS+=	libtls.so:security/libretls
 .endif # SSL_DEFAULT
 
 .include <bsd.port.post.mk>
