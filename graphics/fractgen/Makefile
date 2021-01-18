@@ -19,6 +19,8 @@ USE_QT=		core xml widgets printsupport \
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/man
 
 post-patch:
-		$(REINPLACE_CMD) 's+%%PREFIX%%+$(PREFIX)+' $(WRKSRC)/src/*.cc
+		# We patch **in** %%PREFIX%% (see patch-src_fractgen.cc) and now we
+		# can replace it with the real prefix that we wanted to use.
+		$(REINPLACE_CMD) 's+%%PREFIX%%+$(PREFIX)+' $(WRKSRC)/src/fractgen.cc
 
 .include <bsd.port.mk>
