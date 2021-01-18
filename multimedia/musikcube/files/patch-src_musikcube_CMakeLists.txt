@@ -1,0 +1,11 @@
+--- src/musikcube/CMakeLists.txt.orig	2021-01-17 23:53:19 UTC
++++ src/musikcube/CMakeLists.txt
+@@ -83,7 +83,7 @@ set_target_properties(musikcube PROPERTIES LINK_FLAGS 
+ 
+ if (CMAKE_SYSTEM_NAME MATCHES "Linux" OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+     find_package(PkgConfig)
+-    pkg_check_modules(NCURSES REQUIRED ncursesw panelw)
++    pkg_check_modules(NCURSES ncursesw panelw)
+     target_link_libraries(musikcube ${musikcube_LINK_LIBS} ${NCURSES_LIBRARIES} musikcore)
+ else()
+     target_link_libraries(musikcube ${musikcube_LINK_LIBS} curses panel musikcore)
