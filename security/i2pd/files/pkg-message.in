@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+You may want to increase default i2pd bandwidth limit by adding
+setting "bandwidth" parameter to "X" in %%ETCDIR%%/i2pd.conf
+EOM
+}
+]
