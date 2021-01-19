@@ -1,0 +1,9 @@
+--- src/Makefile.bsd.orig	2021-01-18 22:40:40 UTC
++++ src/Makefile.bsd
+@@ -1,5 +1,5 @@
+ AR := ar
+-CXX := g++
++CXX := c++
+ LIBS := $(LIBS) -L/usr/local/lib
+ 
+ ifndef WITHOUT_UNICODE

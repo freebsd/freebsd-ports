@@ -253,6 +253,7 @@
     SUBDIR += falconseye
     SUBDIR += fargoal
     SUBDIR += fbg2
+    SUBDIR += fheroes2
     SUBDIR += fightorperish
     SUBDIR += fillets-ng
     SUBDIR += filters
