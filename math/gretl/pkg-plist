@@ -112,6 +112,7 @@ lib/gretl-gtk2/panurc.so
 %%GUI%%lib/gretl-gtk2/pca.so
 lib/gretl-gtk2/poisson.so
 %%GUI%%lib/gretl-gtk2/progress_bar.so
+lib/gretl-gtk2/purebin.so
 lib/gretl-gtk2/quantreg.so
 lib/gretl-gtk2/range-mean.so
 lib/gretl-gtk2/regls.so
@@ -129,8 +130,8 @@ lib/gretl-gtk2/vif.so
 %%GUI%%lib/gretl-gtk2/xlsx_import.so
 %%GUI%%lib/gretl-gtk2/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.36
-lib/libgretl-1.0.so.36.0.0
+lib/libgretl-1.0.so.37
+lib/libgretl-1.0.so.37.0.0
 libdata/pkgconfig/gretl.pc
 man/man1/gretl.1.gz
 %%GUI%%share/appdata/gretl.appdata.xml
