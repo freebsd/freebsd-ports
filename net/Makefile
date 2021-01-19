@@ -79,6 +79,7 @@
     SUBDIR += cf
     SUBDIR += charm
     SUBDIR += chrony
+    SUBDIR += chrony-lite
     SUBDIR += citrix_ica
     SUBDIR += cjdns
     SUBDIR += clash
