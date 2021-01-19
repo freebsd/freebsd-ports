@@ -66,7 +66,7 @@
     SUBDIR += libpar2
     SUBDIR += librtfcomp
     SUBDIR += libunrar
-    SUBDIR += libunrar5
+    SUBDIR += libunrar6
     SUBDIR += libzip
     SUBDIR += linux-c7-lz4
     SUBDIR += lizard

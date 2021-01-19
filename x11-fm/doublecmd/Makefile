@@ -3,7 +3,7 @@
 
 PORTNAME=	doublecmd
 PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -105,7 +105,7 @@ WLX_MPLAYER_DESC=	Use MPlayer for multimedia files
 DSX_DESC=	Search plugins
 DSX_LOCATE_DESC=	Support locate command
 
-WCX_UNRAR_LIB_DEPENDS=	libunrar.so.5:archivers/libunrar5
+WCX_UNRAR_LIB_DEPENDS=	libunrar.so.6:archivers/libunrar6
 WFX_SAMBA_USES=		samba:lib
 WLX_MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 

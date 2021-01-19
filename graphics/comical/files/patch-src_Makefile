@@ -4,7 +4,7 @@
 -INCLUDE = -I../unrar -I../unzip
 -CFLAGS = -O2 -Wall -pipe
 -CPPFLAGS = `wx-config --cxxflags` $(CFLAGS) -D_UNIX $(INCLUDE)
-+INCLUDE = -I${LOCALBASE}/include/libunrar5 -I${LOCALBASE}/include/minizip
++INCLUDE = -I${LOCALBASE}/include/libunrar6 -I${LOCALBASE}/include/minizip
 +CFLAGS += -Wall -Wno-unused-local-typedef -pipe ${CXXFLAGS}
 +CPPFLAGS += `${WX_CONFIG} --cxxflags` $(CFLAGS) -D_UNIX -DwxUSE_UNICODE $(INCLUDE)
  

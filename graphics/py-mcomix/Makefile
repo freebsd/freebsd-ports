@@ -3,6 +3,7 @@
 
 PORTNAME=	mcomix
 PORTVERSION=	1.2.1g20201223
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -31,7 +32,7 @@ OPTIONS_DEFINE=	RAR
 OPTIONS_DEFAULT=RAR
 
 RAR_DESC=	RAR (.cbr) comic book archives support
-RAR_RUN_DEPENDS=${LOCALBASE}/lib/libunrar.so.5:archivers/libunrar5
+RAR_RUN_DEPENDS=${LOCALBASE}/lib/libunrar.so.6:archivers/libunrar6
 
 post-patch:
 	@${REINPLACE_CMD} "s|^VERSION =.*|VERSION = '${PORTVERSION}'|" \

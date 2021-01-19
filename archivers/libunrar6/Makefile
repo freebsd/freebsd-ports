@@ -1,7 +1,7 @@
 # $FreeBSD$
 
-PORTNAME=	libunrar5
-PORTVERSION=	5.9.4
+PORTNAME=	libunrar6
+PORTVERSION=	6.0.3
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-${PORTVERSION}
@@ -24,10 +24,10 @@ MAKE_ARGS=	AR="${AR}" \
 		CXXFLAGS="${CXXFLAGS} -fPIC" \
 		LDFLAGS="-Wl,-soname,${SONAME} -pthread ${LDFLAGS}" \
 		STRIP="${STRIP_CMD}"
-SONAME=		libunrar.so.5
+SONAME=		libunrar.so.6
 WRKSRC=		${WRKDIR}/unrar
 
-CONFLICTS_INSTALL=	libunrar-3* libunrar4-4*
+CONFLICTS_INSTALL=	libunrar-3*
 
 OPTIONS_DEFINE=		OPENSSL_AES
 OPTIONS_DEFAULT=	OPENSSL_AES
@@ -40,13 +40,13 @@ OPENSSL_AES_USES=	ssl
 PLIST_FILES=	lib/libunrar.a \
 		lib/libunrar.so \
 		lib/${SONAME} \
-		include/libunrar5/dll.hpp
+		include/${PORTNAME}/dll.hpp
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libunrar.a ${STAGEDIR}${PREFIX}/lib/libunrar.a
 	${INSTALL_LIB} ${WRKSRC}/libunrar.so ${STAGEDIR}${PREFIX}/lib/${SONAME}
 	${RLN} ${STAGEDIR}${PREFIX}/lib/${SONAME} ${STAGEDIR}${PREFIX}/lib/${SONAME:R}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/libunrar5
-	${INSTALL_DATA} ${WRKSRC}/dll.hpp ${STAGEDIR}${PREFIX}/include/libunrar5/dll.hpp
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/dll.hpp ${STAGEDIR}${PREFIX}/include/${PORTNAME}/dll.hpp
 
 .include <bsd.port.mk>
