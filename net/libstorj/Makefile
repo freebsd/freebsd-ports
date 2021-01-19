@@ -16,6 +16,7 @@ BROKEN_armv6=		fails to build: invokes x86 assembler
 BROKEN_armv7=		fails to build: invokes x86 assembler
 BROKEN_mips=		fails to build: invokes x86 assembler
 BROKEN_mips64=		fails to build: invokes x86 assembler
+BROKEN_riscv64=		fails to build: invokes x86 assembler
 
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libuv.so:devel/libuv \
