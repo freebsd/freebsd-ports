@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	deutex
-PORTVERSION=	5.2.1
+PORTVERSION=	5.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers games
 
