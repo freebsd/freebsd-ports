@@ -1,0 +1,4 @@
+Biosoup is a c++ collection of header only data structures used for storage and
+logging in bioinformatics tools.
+
+WWW: https://github.com/rvaser/biosoup

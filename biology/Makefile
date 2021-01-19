@@ -13,6 +13,7 @@
     SUBDIR += bioawk
     SUBDIR += biococoa
     SUBDIR += bioparser
+    SUBDIR += biosoup
     SUBDIR += bolt-lmm
     SUBDIR += bowtie
     SUBDIR += bowtie2
