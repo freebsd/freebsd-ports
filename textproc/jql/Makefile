@@ -2,8 +2,7 @@
 
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.0
-PORTREVISION=	1
+DISTVERSION=	2.9.2
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +18,7 @@ GH_ACCOUNT=	yamafaktory
 
 CARGO_CRATES=	ansi_term-0.11.0 \
 		ansi_term-0.12.1 \
-		anyhow-1.0.36 \
+		anyhow-1.0.38 \
 		arrayref-0.3.5 \
 		async-attributes-1.1.1 \
 		async-channel-1.5.1 \
@@ -115,7 +114,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		serde-1.0.100 \
 		serde_cbor-0.11.1 \
 		serde_derive-1.0.82 \
-		serde_json-1.0.60 \
+		serde_json-1.0.61 \
 		sha-1-0.7.0 \
 		signal-hook-0.1.16 \
 		signal-hook-registry-1.2.2 \
