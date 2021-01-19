@@ -2,6 +2,7 @@
 
 PORTNAME=	midifile
 PORTVERSION=	g20200602
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +26,7 @@ EXECUTABLES=	80off asciimidi binasc createmidifile createmidifile2 drumtab durat
 
 do-install: # https://github.com/craigsapp/midifile/issues/83
 .for e in ${EXECUTABLES}
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${e} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${e} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${e}
 .endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/midifile
 .for h in Binasc.h MidiEvent.h MidiEventList.h MidiFile.h MidiMessage.h Options.h
