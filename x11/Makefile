@@ -70,6 +70,7 @@
     SUBDIR += florence
     SUBDIR += flruler
     SUBDIR += fnott
+    SUBDIR += foot
     SUBDIR += fpc-x11
     SUBDIR += fstobdf
     SUBDIR += fuzzel

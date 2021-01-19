@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+Some features require adjusting termcap(5) e.g.,
+
+  $ export TERMCAP="${TERM}:bw:hs:ds=\E]2;\E\\:fs=\E\\:kb=\177:ts=\E]2;:vb=\E]555\E\\:tc=${TERM}:"
+
+or providing a separate entry for "foot --term=foot" e.g.,
+
+  $ cat >>/etc/termcap
+  foot|foot terminal emulator:\
+	  :bw:hs:\
+	  :ds=\E]2;\E\\:fs=\E\\:kb=\177:ts=\E]2;:vb=\E]555\E\\:\
+	  :tc=xterm-256color:
+EOM
+}
+]
