@@ -3,8 +3,7 @@
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
-DISTVERSION=	3_16_2
-PORTREVISION=	1
+DISTVERSION=	3_16_3
 CATEGORIES=	graphics geography
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -99,22 +98,19 @@ RUN_DEPENDS=	astyle:devel/astyle \
 USES=		bison cmake compiler:features cpe desktop-file-utils \
 		fortran gl gmake gnome pgsql pyqt:5 python:3.6+ qca qt:5 \
 		shebangfix sqlite:3
-USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
-USE_GNOME=	libxml2
 USE_GL=		gl
+USE_GNOME=	libxml2
+INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
+USE_PYQT=	core gui network qml quick quickwidgets qscintilla2 \
+		pysip sip sql svg webkit_run webkitwidgets_run xml
 USE_QT=		3d buildtools_build core concurrent dbus declarative \
 		designer doc gamepad gui linguist_build location \
 		network printsupport qmake_build script serialport \
 		sql sql-pgsql sql-sqlite3 svg testlib uitools \
 		webengine widgets webkit xml
-USE_PYQT=	core gui network qml quick quickwidgets qscintilla2 \
-		pysip sip sql svg webkit_run webkitwidgets_run xml
-
-CONFLICTS_INSTALL=	qgis-ltr
-
-INSTALLS_ICONS=	yes
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
@@ -129,6 +125,12 @@ CMAKE_ON=	BUILD_TESTING ENABLE_TESTS USE_OPENCL WITH_3D WITH_ASTYLE \
 		WITH_BINDINGS WITH_CUSTOM_WIDGETS WITH_INTERNAL_MDAL \
 		WITH_POSTGRESQL
 CMAKE_OFF=	WITH_GLOBE WITH_QWTPOLAR
+
+CONFLICTS_INSTALL=	qgis-ltr
+
+SUB_FILES=	pkg-message
+
+PLIST_SUB=	DISTVERSION=${PORTVERSION}
 
 .if !defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-Wno-dev
@@ -147,10 +149,6 @@ GRASS_RUN_DEPENDS=	${GRASS_BUILD_DEPENDS}
 GRASS_CMAKE_BOOL=	WITH_GRASS7
 SERVER_LIB_DEPENDS=	libfcgi.so:www/fcgi
 SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS WITH_QSPATIALITE
-
-SUB_FILES=	pkg-message
-
-PLIST_SUB=	DISTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
