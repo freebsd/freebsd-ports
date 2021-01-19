@@ -1,3 +1,3 @@
-TIMESTAMP = 1606245571
-SHA256 (canonical-cloud-init-20.4_GH0.tar.gz) = 15c26e74d0c8135230a4087c60b0aced7b909949a6bf4fce31351bd0f6702559
-SIZE (canonical-cloud-init-20.4_GH0.tar.gz) = 1240893
+TIMESTAMP = 1611086699
+SHA256 (canonical-cloud-init-20.4.1_GH0.tar.gz) = 76187a5b1cdda31fe46e993b70e9a3ef5759f5d3cf84eb08520ea19ea80ebcad
+SIZE (canonical-cloud-init-20.4.1_GH0.tar.gz) = 1240251
