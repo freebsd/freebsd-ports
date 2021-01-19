@@ -2,7 +2,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	6.19.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	6
 
@@ -12,6 +12,9 @@ COMMENT=	Configuration management framework written in Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# rubygem-ruby-augeas add again see PR252339, it breaks the installation for some users
+# puppet7 does not have it anymore, so users can do a migration to next major version
+# without breaking their setup
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0:devel/rubygem-concurrent-ruby \
 		rubygem-deep_merge>=1.0:devel/rubygem-deep_merge \
 		rubygem-fast_gettext1>=1.1:devel/rubygem-fast_gettext1 \
@@ -21,7 +24,8 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0:devel/rubygem-concurrent-ruby \
 		rubygem-locale>=2.1:devel/rubygem-locale \
 		rubygem-multi_json>=1.10:devel/rubygem-multi_json \
 		rubygem-puppet-resource_api>=0:devel/rubygem-puppet-resource_api \
-		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
+		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet \
+		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas
 
 USES=		cpe
 CPE_VENDOR=	puppetlabs
