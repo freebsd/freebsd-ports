@@ -2,8 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.10
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	misc
 
 MAINTAINER=	vulcan@wired.sh
@@ -46,6 +45,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		char_reader-0.1.0 \
 		chrono-0.4.19 \
 		clap-2.33.3 \
+		cli-log-0.1.0 \
 		clipboard-win-4.0.3 \
 		cloudabi-0.0.3 \
 		color_quant-1.1.0 \
@@ -70,9 +70,8 @@ CARGO_CRATES=	adler-0.2.3 \
 		csv-core-0.1.10 \
 		custom_error-1.8.0 \
 		deflate-0.8.6 \
-		deser-hjson-0.1.4 \
+		deser-hjson-0.1.7 \
 		directories-2.0.2 \
-		dirs-2.0.2 \
 		dirs-sys-0.3.5 \
 		either-1.6.1 \
 		error-code-2.0.2 \
@@ -174,7 +173,6 @@ CARGO_CRATES=	adler-0.2.3 \
 		serde_json-1.0.60 \
 		signal-hook-0.1.16 \
 		signal-hook-registry-1.2.2 \
-		simplelog-0.7.6 \
 		siphasher-0.3.3 \
 		smallvec-1.5.1 \
 		socket2-0.3.19 \
@@ -185,7 +183,6 @@ CARGO_CRATES=	adler-0.2.3 \
 		syn-1.0.55 \
 		syntect-4.5.0 \
 		tempfile-3.1.0 \
-		term-0.6.1 \
 		termimad-0.9.2 \
 		terminal-clipboard-0.1.1 \
 		textwrap-0.11.0 \
@@ -199,7 +196,6 @@ CARGO_CRATES=	adler-0.2.3 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.8 \
 		umask-1.0.0 \
-		unescape-0.1.0 \
 		unicode-bidi-0.3.4 \
 		unicode-normalization-0.1.16 \
 		unicode-width-0.1.8 \
