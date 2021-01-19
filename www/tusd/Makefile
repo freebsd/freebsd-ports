@@ -2,7 +2,7 @@
 
 PORTNAME=	tusd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.5.0
 PORTREVISION=	2
 CATEGORIES=	www
 
@@ -23,18 +23,20 @@ GH_TUPLE=	\
 		bmizerany:pat:6226ea591a40:bmizerany_pat/vendor/github.com/bmizerany/pat \
 		census-instrumentation:opencensus-go:v0.21.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.5.0:golang_appengine/vendor/google.golang.org/appengine \
 		golang:mock:v1.3.1:golang_mock/vendor/github.com/golang/mock \
 		golang:net:f4e77d36d62c:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0f29369cfe45:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:protobuf:v1.3.5:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:ecd444e8653b:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
-		google:go-genproto:fb225487d101:google_go_genproto/vendor/google.golang.org/genproto \
-		googleapis:gax-go:v2.0.4:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
+		google:go-genproto:24fa4b261c55:google_go_genproto/vendor/google.golang.org/genproto \
+		googleapis:gax-go:v2.0.4:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.6.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.40.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
-		grpc:grpc-go:v1.20.1:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc-ecosystem:go-grpc-middleware:v1.1.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
+		grpc:grpc-go:v1.28.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		h2non:gock:v1.0.14:h2non_gock/vendor/gopkg.in/h2non/gock.v1 \
 		h2non:parth:b4df798d6542:h2non_parth/vendor/github.com/h2non/parth \
 		hashicorp:golang-lru:v0.5.1:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
@@ -42,11 +44,11 @@ GH_TUPLE=	\
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		prometheus:client_golang:v1.0.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
-		prometheus:client_model:fd36f4220a90:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.4.1:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.0.2:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		sethgrid:pester:68a33a018ad0:sethgrid_pester/vendor/github.com/sethgrid/pester \
-		stretchr:testify:v1.3.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		vimeo:go-util:v1.2.0:vimeo_go_util/vendor/github.com/vimeo/go-util
 
 GO_TARGET=	./cmd/tusd
