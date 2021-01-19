@@ -148,6 +148,7 @@
     SUBDIR += pyfasta
     SUBDIR += python-nexus
     SUBDIR += rainbow
+    SUBDIR += rampler
     SUBDIR += recombine
     SUBDIR += ruby-bio
     SUBDIR += rubygem-bio

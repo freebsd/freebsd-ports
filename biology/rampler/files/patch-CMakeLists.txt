@@ -1,0 +1,31 @@
+--- CMakeLists.txt.orig	2021-01-19 09:45:19 UTC
++++ CMakeLists.txt
+@@ -13,19 +13,20 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DI
+ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
+ 
+-if (NOT TARGET bioparser)
+-  add_subdirectory(vendor/bioparser EXCLUDE_FROM_ALL)
+-endif ()
+-if (NOT TARGET biosoup)
+-  add_subdirectory(vendor/bioparser/vendor/biosoup EXCLUDE_FROM_ALL)
+-endif ()
++#if (NOT TARGET bioparser)
++#  add_subdirectory(vendor/bioparser EXCLUDE_FROM_ALL)
++#endif ()
++#if (NOT TARGET biosoup)
++#  add_subdirectory(vendor/bioparser/vendor/biosoup EXCLUDE_FROM_ALL)
++#endif ()
+ 
+ add_executable(${PROJECT_NAME}
+   src/main.cpp
+   src/sampler.cpp)
+ target_link_libraries(${PROJECT_NAME}
+-  bioparser
+-  biosoup)
++  #bioparser
++  #biosoup
++)
+ target_compile_definitions(${PROJECT_NAME} PRIVATE
+   RAMPLER_VERSION="v${PROJECT_VERSION}")
+ 

@@ -1,0 +1,5 @@
+Rampler is a standalone module for sampling genomic sequences. It supports two
+modes, random subsampling of sequencing data to a desired depth (given the
+reference length) and file splitting to desired size in bytes.
+
+WWW: https://github.com/rvaser/rampler
