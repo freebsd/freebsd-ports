@@ -9,6 +9,8 @@ COMMENT=	Libretro port of UAE
 
 LICENSE=	GPLv2
 
+BROKEN_riscv64=		fails to compile: ./sources/src/machdep/maccess.h:51:14: unrecognized instruction mnemonic
+
 USES=		compiler:c++11-lib gmake gl
 USE_LDCONFIG=	yes
 USE_GL=		gl
