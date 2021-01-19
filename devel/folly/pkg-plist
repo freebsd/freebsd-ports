@@ -680,6 +680,7 @@ include/folly/synchronization/AtomicUtil-inl.h
 include/folly/synchronization/AtomicUtil.h
 include/folly/synchronization/Baton.h
 include/folly/synchronization/CallOnce.h
+include/folly/synchronization/DelayedInit.h
 include/folly/synchronization/DistributedMutex-inl.h
 include/folly/synchronization/DistributedMutex.h
 include/folly/synchronization/DistributedMutexSpecializations.h
