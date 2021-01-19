@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2021-01-19 01:04:22 UTC
++++ CMakeLists.txt
+@@ -62,7 +62,7 @@ set(HDRS
+     include/Options.h
+ )
+ 
+-add_library(midifile STATIC ${SRCS} ${HDRS})
++add_library(midifile ${SRCS} ${HDRS})
+ 
+ ##############################
+ ##

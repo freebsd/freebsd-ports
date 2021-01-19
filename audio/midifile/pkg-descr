@@ -1,0 +1,13 @@
+C++ library for parsing and weiring standard MIDI Files.
+
+Features
+* Event timestamps can be converted between absolute or delta tick values with
+  the MidiFile::deltaTicks and MidiFile::absoluteTicks functions
+* In absolute tick mode, messages can be inserted into tracks in any order and
+  later sorted by timestamp with the MidiFile::sortTracks function
+* Multi-track files can be converted to a single track in a reversible process
+* Event performance times in seconds can be calculated from tick times and tempo
+  meta messages with the MidiFile::doTimeAnalysis function
+* Durations of notes can be extracted using the MidiFile::linkNotePairs function
+
+WWW: https://midifile.sapp.org/
