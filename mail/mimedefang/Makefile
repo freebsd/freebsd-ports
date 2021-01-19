@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.83
-PORTREVISION=	3
+PORTVERSION=	2.84
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/ \
 		http://fossies.org/linux/misc/
@@ -24,13 +23,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5 shebangfix
 perl_OLD_CMD=	perl
 GNU_CONFIGURE=	yes
-
-MIMEDEFANG_USER?=	mailnull
-MIMEDEFANG_GROUP?=	mailnull
-SPOOLDIR?=		/var/spool/MIMEDefang
-QUARANTINEDIR?=		/var/spool/MD-Quarantine
-
-CONFIGURE_ENV+=		PERL=${PERL}
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
 			--with-confsubdir=mimedefang \
 			--with-user=${MIMEDEFANG_USER} \
@@ -38,6 +30,7 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
 			--with-quarantinedir=${QUARANTINEDIR} \
 			--with-ipheader \
 			--prefix=${PREFIX}
+CONFIGURE_ENV+=		PERL=${PERL}
 
 SUB_FILES=	pkg-message
 
@@ -46,9 +39,13 @@ PLIST_SUB+=	USER="${MIMEDEFANG_USER}" \
 		MIMEDEFANG_RUNDIR="${SPOOLDIR}" \
 		MIMEDEFANG_QUARANTINEDIR="${QUARANTINEDIR}"
 
+MIMEDEFANG_USER?=	mailnull
+MIMEDEFANG_GROUP?=	mailnull
+SPOOLDIR?=		/var/spool/MIMEDefang
+QUARANTINEDIR?=		/var/spool/MD-Quarantine
 CONFIG_FILES=	mimedefang-filter sa-mimedefang.cf mimedefang-ip-key
 
-OPTIONS_DEFINE=	CLAMAV EXAMPLES DOCS
+OPTIONS_DEFINE=	CLAMAV DOCS EXAMPLES
 OPTIONS_DEFAULT=	CLAMAV
 
 CLAMAV_DESC=	Enable Clamav
@@ -72,15 +69,14 @@ pre-install:
 post-install:
 	@${REINPLACE_CMD} -e 's,%%CHMOD%%,${CHMOD},g' ${WRKSRC}/examples/init-script
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/init-script ${STAGEDIR}${PREFIX}/etc/rc.d/mimedefang
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}/
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples/ && ${INSTALL_DATA} stream-by-domain-filter \
 		suggested-minimum-filter-for-windows-clients README ${STAGEDIR}${EXAMPLESDIR}/
-.endif
 
 .include <bsd.port.mk>

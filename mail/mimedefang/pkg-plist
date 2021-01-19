@@ -1,8 +1,8 @@
-bin/mimedefang-multiplexor
-bin/mimedefang
-bin/mimedefang.pl
-bin/mimedefang-util
 bin/md-mx-ctrl
+bin/mimedefang
+bin/mimedefang-multiplexor
+bin/mimedefang-util
+bin/mimedefang.pl
 bin/watch-mimedefang
 bin/watch-multiple-mimedefangs.tcl
 etc/rc.d/mimedefang
@@ -16,19 +16,19 @@ man/man8/mimedefang.8.gz
 man/man8/mimedefang.pl.8.gz
 man/man8/watch-mimedefang.8.gz
 man/man8/watch-multiple-mimedefangs.8.gz
-@sample %%ETCDIR%%/mimedefang-ip-key.sample
 @sample %%ETCDIR%%/mimedefang-filter.sample
+@sample %%ETCDIR%%/mimedefang-ip-key.sample
 @sample %%ETCDIR%%/sa-mimedefang.cf.sample
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.SPAMASSASSIN
-%%PORTDOCS%%%%DOCSDIR%%/README.SOPHIE
+%%PORTDOCS%%%%DOCSDIR%%/README.IRIX
 %%PORTDOCS%%%%DOCSDIR%%/README.NONROOT
 %%PORTDOCS%%%%DOCSDIR%%/README.SECURITY
+%%PORTDOCS%%%%DOCSDIR%%/README.SOPHIE
+%%PORTDOCS%%%%DOCSDIR%%/README.SPAMASSASSIN
 %%PORTDOCS%%%%DOCSDIR%%/README.TRU64
-%%PORTDOCS%%%%DOCSDIR%%/README.IRIX
 %%PORTDOCS%%%%DOCSDIR%%/README.VEXIRA
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stream-by-domain-filter
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/suggested-minimum-filter-for-windows-clients
-@dir(%%USER%%,%%GROUP%%,710) %%MIMEDEFANG_RUNDIR%%
 @dir(%%USER%%,%%GROUP%%,700) %%MIMEDEFANG_QUARANTINEDIR%%
+@dir(%%USER%%,%%GROUP%%,710) %%MIMEDEFANG_RUNDIR%%
