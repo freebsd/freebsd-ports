@@ -12,6 +12,8 @@ DISTNAME=	firefox-${PORTVERSION}esr.source
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Standalone JavaScript based from Mozilla 52-esr
 
+BROKEN_riscv64=		fails to build: psutil/_psutil_bsd.c:1849:26: incomplete definition of type 'struct inpcb'
+
 BUILD_DEPENDS=	autoconf-2.13:devel/autoconf213
 LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libffi.so:devel/libffi \
