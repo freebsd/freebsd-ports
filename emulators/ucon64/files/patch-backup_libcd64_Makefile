@@ -1,0 +1,19 @@
+Remove some hardcoded optimization/warnings flags.  This will become obsolete
+with the next release.
+
+--- backup/libcd64/Makefile.orig	2020-12-26 22:52:19 UTC
++++ backup/libcd64/Makefile
+@@ -1,11 +1,11 @@
+ CC=gcc
+ 
+ # I think we only use gnu99 instead of c99 due to va_args extensions.
+-CFLAGS+=-I. -Wall -W -Wno-format-truncation -std=gnu99
++CFLAGS+=-I. -Wall -W -std=gnu99
+ ifdef DEBUG
+ CFLAGS+=-pg -g -pedantic -ansi -DDEBUG
+ else
+-CFLAGS+=-O6 -funroll-loops -fexpensive-optimizations
++CFLAGS+=-funroll-loops
+ endif
+ 
+ ifndef DJGPP
