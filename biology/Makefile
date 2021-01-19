@@ -164,6 +164,7 @@
     SUBDIR += sim4
     SUBDIR += slclust
     SUBDIR += smithwaterman
+    SUBDIR += spoa
     SUBDIR += stacks
     SUBDIR += star
     SUBDIR += stringtie

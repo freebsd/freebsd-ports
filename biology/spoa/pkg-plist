@@ -1,0 +1,8 @@
+bin/spoa
+include/spoa/alignment_engine.hpp
+include/spoa/architectures.hpp
+include/spoa/graph.hpp
+include/spoa/spoa.hpp
+lib/libspoa.so
+lib/libspoa.so.7.0.0
+libdata/pkgconfig/spoa-1.pc

@@ -1,0 +1,107 @@
+--- CMakeLists.txt.orig	2021-01-15 03:44:02 UTC
++++ CMakeLists.txt
+@@ -44,9 +44,10 @@ if (spoa_use_simde OR
+   endif ()
+ endif ()
+ 
+-if (NOT TARGET cereal)
+-  add_subdirectory(vendor/cereal EXCLUDE_FROM_ALL)
+-endif ()
++#if (NOT TARGET cereal)
++#  add_subdirectory(vendor/cereal EXCLUDE_FROM_ALL)
++#endif ()
++find_package(cereal REQUIRED)
+ 
+ add_library(${PROJECT_NAME}
+   src/alignment_engine.cpp
+@@ -55,8 +56,8 @@ add_library(${PROJECT_NAME}
+   src/dispatcher.cpp)
+ target_include_directories(${PROJECT_NAME} PUBLIC
+   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/vendor/simde>
+-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/vendor/cpu_features/include>
++  #$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/vendor/simde>
++  #$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/vendor/cpu_features/include>
+   $<INSTALL_INTERFACE:include>)
+ target_link_libraries(${PROJECT_NAME}
+   cereal)
+@@ -65,9 +66,9 @@ if (BUILD_SHARED_LIBS)
+ endif ()
+ 
+ if (spoa_generate_dispatch)
+-  if (NOT TARGET cpu_features)
+-    add_subdirectory(vendor/cpu_features EXCLUDE_FROM_ALL)
+-  endif ()
++  #if (NOT TARGET cpu_features)
++  #  add_subdirectory(vendor/cpu_features EXCLUDE_FROM_ALL)
++  #endif ()
+ 
+   list(APPEND ARCHITECTURES avx2 sse4.1 sse2)
+   foreach(arch IN LISTS ARCHITECTURES)
+@@ -92,8 +93,8 @@ if (spoa_generate_dispatch)
+     ${PROJECT_NAME}_sse4.1
+     ${PROJECT_NAME}_sse2)
+ 
+-  target_link_libraries(${PROJECT_NAME}
+-    cpu_features)
++  #target_link_libraries(${PROJECT_NAME}
++  #  cpu_features)
+ endif ()
+ 
+ include(GNUInstallDirs)
+@@ -110,18 +111,19 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/spoa-1.pc
+ 
+ option(spoa_build_executable "Build spoa standalone tool" OFF)
+ if (spoa_build_executable)
+-  if (NOT TARGET biosoup)
+-    add_subdirectory(vendor/bioparser/vendor/biosoup EXCLUDE_FROM_ALL)
+-  endif ()
+-  if (NOT TARGET bioparser)
+-    add_subdirectory(vendor/bioparser EXCLUDE_FROM_ALL)
+-  endif ()
++  #if (NOT TARGET biosoup)
++  #  add_subdirectory(vendor/bioparser/vendor/biosoup EXCLUDE_FROM_ALL)
++  #endif ()
++  #if (NOT TARGET bioparser)
++  #  add_subdirectory(vendor/bioparser EXCLUDE_FROM_ALL)
++  #endif ()
+   add_executable(${PROJECT_NAME}_exe
+     src/main.cpp)
+   target_link_libraries(${PROJECT_NAME}_exe
+     ${PROJECT_NAME}
+-    bioparser
+-    biosoup)
++    #bioparser
++    #biosoup
++  )
+   target_compile_definitions(${PROJECT_NAME}_exe PRIVATE
+     SPOA_VERSION="v${PROJECT_VERSION}")
+   set_property(TARGET ${PROJECT_NAME}_exe PROPERTY
+@@ -134,19 +136,19 @@ endif ()
+ option(spoa_build_tests "Build spoa unit tests" OFF)
+ if (spoa_build_tests)
+   find_package(GTest REQUIRED)
+-  if (NOT TARGET biosoup)
+-    add_subdirectory(vendor/bioparser/vendor/biosoup EXCLUDE_FROM_ALL)
+-  endif ()
+-  if (NOT TARGET bioparser)
+-    add_subdirectory(vendor/bioparser EXCLUDE_FROM_ALL)
+-  endif ()
++  #if (NOT TARGET biosoup)
++  #  add_subdirectory(vendor/bioparser/vendor/biosoup EXCLUDE_FROM_ALL)
++  #endif ()
++  #if (NOT TARGET bioparser)
++  #  add_subdirectory(vendor/bioparser EXCLUDE_FROM_ALL)
++  #endif ()
+   include_directories(${PROJECT_SOURCE_DIR}/src)
+   add_executable(${PROJECT_NAME}_test
+     test/spoa_test.cpp)
+   target_link_libraries(${PROJECT_NAME}_test
+     ${PROJECT_NAME}
+-    bioparser
+-    biosoup
++    #bioparser
++    #biosoup
+     GTest::Main)
+   target_compile_definitions(${PROJECT_NAME}_test PRIVATE
+     SPOA_DATA_PATH="${PROJECT_SOURCE_DIR}/test/data/sample.fastq.gz")
