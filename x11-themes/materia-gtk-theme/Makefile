@@ -2,7 +2,7 @@
 
 PORTNAME=	materia-gtk-theme
 DISTVERSIONPREFIX=	v
-DISTVERSION=	20200320
+DISTVERSION=	20200916
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,21 +11,20 @@ COMMENT=	Material Design theme for GNOME/GTK+ based desktop environments
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	sassc:textproc/sassc
 RUN_DEPENDS=	gtk-murrine-engine>0:x11-themes/gtk-murrine-engine \
 		gnome-themes-extra>0:x11-themes/gnome-themes-extra
 
-USES=		shebangfix
+USES=		gnome meson
+USE_GNOME=	gtk30
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nana-4
 GH_PROJECT=	materia-theme
 
 NO_ARCH=	yes
-NO_BUILD=	yes
 
 PORTDOCS=	COPYING README.md
-SHEBANG_FILES=	install.sh
 
 OPTIONS_DEFINE=	DOCS GNOMESHELL
 OPTIONS_DEFAULT=	GNOMESHELL
@@ -40,11 +39,11 @@ GNOMESHELL_DESC=		Add Gnome-Shell theme version
 GNOMESHELL_BUILD_DEPENDS=	gnome-shell:x11/gnome-shell
 GNOMESHELL_PORTDOCS=		gnome-shell.README.md
 
-do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes
-	${WRKSRC}/install.sh --dest ${STAGEDIR}${PREFIX}/share/themes
-	@${MV} ${WRKSRC}/src/gnome-shell/README.md \
+post-extract:
+	@${CP} ${WRKSRC}/src/gnome-shell/README.md \
 		${WRKSRC}/gnome-shell.README.md
+
+post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/share/themes/*/COPYING
 	@${RM} ${STAGEDIR}${PREFIX}/share/themes/*/gnome-shell/README.md
 
