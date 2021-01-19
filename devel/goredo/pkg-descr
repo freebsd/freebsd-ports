@@ -1,0 +1,5 @@
+This is pure Go implementation of DJB's redo build system proposal. Originally
+it was just a rewrite of redo-c, but later most features of apenwarr/redo were
+also implemented.
+
+WWW: http://www.goredo.cypherpunks.ru/

@@ -871,6 +871,7 @@
     SUBDIR += google-styleguide
     SUBDIR += googletest
     SUBDIR += goprotobuf
+    SUBDIR += goredo
     SUBDIR += gorm
     SUBDIR += goswagger
     SUBDIR += got
