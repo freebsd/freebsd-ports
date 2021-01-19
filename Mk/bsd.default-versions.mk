@@ -50,8 +50,6 @@ FPC_DEFAULT?=		3.2.0
 # Possible values: 8, 9 (powerpcspe was dropped with GCC 9), 10
 .if ${ARCH} == "powerpcspe"
 GCC_DEFAULT?=		8
-.elif ${ARCH} == "powerpc64le"
-GCC_DEFAULT?=		10
 .else
 GCC_DEFAULT?=		10
 .endif

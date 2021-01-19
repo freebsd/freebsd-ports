@@ -2,7 +2,7 @@
 # MAINTAINER: portmgr@FreeBSD.org
 # $FreeBSD$
 
-set -o pipefail
+#set -o pipefail
 
 if [ -z "${STAGEDIR}" -o -z "${PREFIX}" -o -z "${LOCALBASE}" ]; then
 	echo "STAGEDIR, PREFIX, LOCALBASE required in environment." >&2
@@ -688,7 +688,7 @@ proxydeps() {
 				fi
 			else
 				err "${file} is linked to ${dep_file} that does not belong to any package"
-				rc=1
+				#rc=1
 			fi
 			already="${already} ${dep_file}"
 		done <<-EOT
