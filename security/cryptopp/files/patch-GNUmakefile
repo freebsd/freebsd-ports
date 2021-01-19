@@ -2,9 +2,9 @@ We need to export the CRYPTOPP_DISABLE_ASM flag if cryptopp was not built
 with SIMD support. Certain functions prototypes are guarded by this
 flag and build failures will arise in other ports if not set appropriately.
 
---- GNUmakefile.orig	2019-04-28 23:36:50 UTC
+--- GNUmakefile.orig	2021-01-01 17:22:45 UTC
 +++ GNUmakefile
-@@ -57,7 +57,7 @@ ifeq ($(SYSTEMX),)
+@@ -71,7 +71,7 @@ ifeq ($(SYSTEMX),)
    SYSTEMX := $(shell uname -s 2>/dev/null)
  endif
  
@@ -13,7 +13,7 @@ flag and build failures will arise in other ports if not set appropriately.
  IS_HURD := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c -E "GNU|Hurd")
  IS_MINGW := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c "MinGW")
  IS_CYGWIN := $(shell echo "$(SYSTEMX)" | $(GREP) -i -c "Cygwin")
-@@ -742,7 +742,7 @@ endif
+@@ -795,7 +795,7 @@ endif
  
  # Use -pthread whenever it is available. See http://www.hpl.hp.com/techreports/2004/HPL-2004-209.pdf
  #   http://stackoverflow.com/questions/2127797/gcc-significance-of-pthread-flag-when-compiling
@@ -22,8 +22,8 @@ flag and build failures will arise in other ports if not set appropriately.
   ifeq ($(XLC_COMPILER),1)
    ifeq ($(findstring -qthreaded,$(CXXFLAGS)),)
     TPROG = TestPrograms/test_pthreads.cxx
-@@ -1341,7 +1341,7 @@ libcryptopp.pc:
- 	@echo 'Version: 8.2' >> libcryptopp.pc
+@@ -1450,7 +1450,7 @@ libcryptopp.pc:
+ 	@echo 'Version: 8.4' >> libcryptopp.pc
  	@echo 'URL: https://cryptopp.com/' >> libcryptopp.pc
  	@echo '' >> libcryptopp.pc
 -	@echo 'Cflags: -I$${includedir}' >> libcryptopp.pc
