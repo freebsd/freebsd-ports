@@ -3,7 +3,7 @@
 
 PORTNAME=	handbrake
 DISTVERSION=	1.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 DIST_SUBDIR=	${PORTNAME}
 
@@ -117,9 +117,11 @@ X11_USE=	gstreamer1=gdkpixbuf,libav \
 # considered good in FreeBSD.  Instead, we will provide the downloaded files.
 post-extract: .SILENT
 	${MKDIR} ${WRKSRC}/download
-.for f in ${CONTRIB_FILES}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSRC}/download
-.endfor
+
+pre-configure:
+	cd ${DISTDIR}/${DIST_SUBDIR} && \
+	    ${INSTALL_DATA} ${CONTRIB_FILES} \
+	    ${WRKSRC}/download
 # Install version information.
 	${CP} ${FILESDIR}/version.txt ${WRKSRC}
 # Following patches reduces warnings with clang.

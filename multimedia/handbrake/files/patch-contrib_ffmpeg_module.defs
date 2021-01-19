@@ -1,6 +1,10 @@
---- contrib/ffmpeg/module.defs.orig	2019-11-09 20:44:32 UTC
+--- contrib/ffmpeg/module.defs.orig	2020-06-13 14:05:35 UTC
 +++ contrib/ffmpeg/module.defs
-@@ -60,7 +60,7 @@ FFMPEG.CONFIGURE.extra = \
+@@ -57,10 +57,11 @@ FFMPEG.CONFIGURE.extra = \
+     --disable-decoder=*_crystalhd \
+     --enable-libdav1d \
+     --enable-decoder=libdav1d \
++    --pkg-config-flags=--static \
      --cc="$(FFMPEG.GCC.gcc)" \
      --extra-ldflags="$(call fn.ARGS,FFMPEG.GCC,*archs *sysroot *minver ?extra) -L$(call fn.ABSOLUTE,$(CONTRIB.build/)lib)"
  
