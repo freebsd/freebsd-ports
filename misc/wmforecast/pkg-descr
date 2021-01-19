@@ -1,0 +1,6 @@
+Wmforecast is a weather dockapp for Window Maker. It displays the current
+temperature and an icon representing the current conditions.
+A balloon tooltip displays forecast information.
+The weather information comes from the Yahoo Weather API.
+
+WWW: https://wmforecast.friedcheese.org/

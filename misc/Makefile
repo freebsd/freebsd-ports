@@ -521,6 +521,7 @@
     SUBDIR += with
     SUBDIR += wmScoreBoard
     SUBDIR += wmcalendar
+    SUBDIR += wmforecast
     SUBDIR += wmjulia
     SUBDIR += wmpal
     SUBDIR += wmtunlo

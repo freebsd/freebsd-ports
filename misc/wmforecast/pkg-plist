@@ -1,0 +1,15 @@
+bin/wmforecast
+man/man1/wmforecast.1.gz
+share/applications/wmforecast.desktop
+share/icons/hicolor/48x48/apps/wmforecast.png
+share/icons/hicolor/scalable/apps/wmforecast.svg
+%%DATADIR%%/dialog-error.png
+%%DATADIR%%/weather-clear-night.png
+%%DATADIR%%/weather-clear.png
+%%DATADIR%%/weather-few-clouds-night.png
+%%DATADIR%%/weather-few-clouds.png
+%%DATADIR%%/weather-fog.png
+%%DATADIR%%/weather-overcast.png
+%%DATADIR%%/weather-showers.png
+%%DATADIR%%/weather-snow.png
+%%DATADIR%%/weather-storm.png
