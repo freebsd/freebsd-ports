@@ -10,12 +10,14 @@ COMMENT=	Command line interface tool to manage tags in music files
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_riscv64=		fails to link: cannot open /nxb-bin/usr/lib/clang/11.0.0/lib/freebsd/libclang_rt.ubsan_standalone-riscv64.a: No such file or directory
+
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kAworu
 
-USES=		pkgconfig cmake iconv
+USES=		cmake compiler:c++11-lang iconv pkgconfig
 PLIST_FILES=	bin/tagutil \
 		man/man1/tagutil.1.gz
 
@@ -37,9 +39,9 @@ OGG_LIB_DEPENDS=\
 	libvorbisfile.so:audio/libvorbis \
 	libogg.so:audio/libogg
 OGG_CMAKE_OFF=	-DWITHOUT_OGGVORBIS=yes
-.if exists(/usr/lib/libc++.so) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
-TAGLIB_BROKEN=		ld: undefined reference to symbol '__cxa_demangle@@CXXABI_1.3' (try adding -lcxxrt)
-.endif
+#.if exists(/usr/lib/libc++.so) && ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
+#TAGLIB_BROKEN=		ld: undefined reference to symbol '__cxa_demangle@@CXXABI_1.3' (try adding -lcxxrt)
+#.endif
 TAGLIB_LIB_DEPENDS=	libtag_c.so:audio/taglib
 TAGLIB_CMAKE_OFF=	-DWITHOUT_TAGLIB=yes
 
