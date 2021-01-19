@@ -1,0 +1,4 @@
+Bioparser is a C++ header only parsing library for several formats in
+bioinformatics (FASTA/Q, MHAP/PAF/SAM), with support for zlib compressed files.
+
+WWW: https://github.com/rvaser/bioparser
