@@ -29,6 +29,7 @@
     SUBDIR += ddocent
     SUBDIR += diamond
     SUBDIR += dsr-pdb
+    SUBDIR += edlib
     SUBDIR += emboss
     SUBDIR += exonerate
     SUBDIR += fasta
