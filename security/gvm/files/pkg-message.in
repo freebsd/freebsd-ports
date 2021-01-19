@@ -43,10 +43,11 @@ Basic instructions for configure your gvm infraestruture are following:
 
   Create certificates
 
-  # su -m gvm -c "gvm-manage-certs -s"
+  # su -m gvm -c "gvm-manage-certs -a"
 
-  Sync gvmd Data, SCAP and CERT
+  Sync gvmd Data, SCAP, CERT and NVT
 
+  # su -m gvm -c "greenbone-nvt-sync"
   # su -m gvm -c "greenbone-feed-sync --type GVMD_DATA"
   # su -m gvm -c "greenbone-feed-sync --type SCAP"
   # su -m gvm -c "greenbone-feed-sync --type CERT"
