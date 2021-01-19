@@ -11,9 +11,10 @@ COMMENT=	Free, open-source, cross-platform bioinformatics toolkit
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	bash:shells/bash
-
 BROKEN_aarch64=	Fails to build: invokes x86 asm
+BROKEN_riscv64=	Fails to build: invokes x86 asm
+
+RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ugeneunipro
