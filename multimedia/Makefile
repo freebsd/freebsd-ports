@@ -249,6 +249,7 @@
     SUBDIR += mediainfo
     SUBDIR += mencoder
     SUBDIR += mimms
+    SUBDIR += minisatip
     SUBDIR += minitube
     SUBDIR += mjpegtools
     SUBDIR += mkclean
