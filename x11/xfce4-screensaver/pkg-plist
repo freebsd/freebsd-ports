@@ -2,7 +2,7 @@ bin/xfce4-screensaver
 bin/xfce4-screensaver-command
 bin/xfce4-screensaver-configure
 bin/xfce4-screensaver-preferences
-%%PAM%%etc/pam.d/xfce-screensaver
+%%PAM%%@sample etc/pam.d/xfce4-screensaver.sample
 etc/xdg/autostart/xfce4-screensaver.desktop
 etc/xdg/menus/xfce4-screensavers.menu
 libexec/xfce4-screensaver-dialog
