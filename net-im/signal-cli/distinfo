@@ -1,4 +1,4 @@
-TIMESTAMP = 1610889203
+TIMESTAMP = 1611074398
 SHA256 (annotations-13.0.jar) = ace2a10dc8e2d5fd34925ecac03e4988b2c0f851650c94b8cef49ba1bd111478
 SIZE (annotations-13.0.jar) = 17536
 SHA256 (argparse4j-0.8.1.jar) = 98cb5468cac609f3bc07856f2e34088f50dc114181237c48d20ca69c3265d044
@@ -71,5 +71,5 @@ SHA256 (zkgroup-java-0.7.0.jar) = d0099eedd60d6f7d4df5b288175e5d585228ed88977899
 SIZE (zkgroup-java-0.7.0.jar) = 316995
 SHA256 (jffi-1.2.23-native.jar) = 38cd5c33c4310d173b9345348e3a09528051b8e67f00e8477140c45062034a25
 SIZE (jffi-1.2.23-native.jar) = 795222
-SHA256 (AsamK-signal-cli-v0.7.3_GH0.tar.gz) = b3f868197f0187b8c3cce01043263441660102cd75728857389e11f8c2d17f4e
-SIZE (AsamK-signal-cli-v0.7.3_GH0.tar.gz) = 167976
+SHA256 (AsamK-signal-cli-v0.7.4_GH0.tar.gz) = ed0dc2466c1951bbe71d023e3e6d0ef465e48d4b9138dbd646588284ba6727d6
+SIZE (AsamK-signal-cli-v0.7.4_GH0.tar.gz) = 168485
