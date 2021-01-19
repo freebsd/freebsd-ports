@@ -2,6 +2,7 @@
 
 PORTNAME=	musikcube
 DISTVERSION=	0.96.4
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,22 +24,11 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libtag.so:audio/taglib \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake:noninja compiler:c++14-lang pkgconfig ssl
+USES=		cmake:noninja compiler:c++14-lang ncurses:port pkgconfig ssl # ncurses:port was changed to base by bug#249572, but this caused it to abort (bug#252817) and was reverted
 
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	clangen
-
-CMAKE_ARGS=	-DNCURSES_LIBRARIES="cursesw;tinfow;panelw"
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1300079
-USES+=		ncurses
-.else
-USES+=		ncurses:port
-CFLAGS+=	-I${LOCALBASE}/include/ncurses
-.endif
 
 .include <bsd.port.mk>
