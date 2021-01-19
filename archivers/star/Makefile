@@ -14,6 +14,8 @@ LICENSE=	CDDL GPLv2
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/CDDL.Schily.txt
 
+BROKEN_riscv64=		fails to configure in autoconf: checking whether the C compiler (riscv64-freebsd-clang) works... no
+
 USES=		gmake gettext iconv tar:bzip2
 BINARY_WRAPPERS=	gm4
 
