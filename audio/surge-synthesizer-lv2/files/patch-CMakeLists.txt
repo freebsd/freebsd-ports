@@ -1,28 +1,23 @@
---- CMakeLists.txt.orig	2020-07-29 20:38:54 UTC
+--- CMakeLists.txt.orig	2021-01-17 13:26:30 UTC
 +++ CMakeLists.txt
-@@ -83,7 +83,7 @@ if( CXX_STD_FS )
- else()
-   if( UNIX AND NOT APPLE )
-     set (CMAKE_REQUIRED_FLAGS "-std=c++11")
--    set (CMAKE_REQUIRED_LIBRARIES "stdc++fs")
-+    #set (CMAKE_REQUIRED_LIBRARIES "stdc++fs")
-   endif()
-   CHECK_CXX_SYMBOL_EXISTS(std::experimental::filesystem::path::preferred_separator "experimental/filesystem" CXX_EXP_STD_FS)
-   if( UNIX AND NOT APPLE )
-@@ -461,7 +461,7 @@ elseif( UNIX AND NOT APPLE )
+@@ -143,7 +143,7 @@ add_dependencies( surge-shared git-info )
  
-   set(OS_LINK_LIBRARIES_NOGUI
-     pthread
--    stdc++fs
-+    #stdc++fs
-     gcc_s
-     gcc
-     dl
-@@ -936,7 +936,6 @@ if( BUILD_HEADLESS )
-     endif()
-     target_link_libraries(surge-headless
-       PRIVATE
--      stdc++fs
-       Threads::Threads
-       )
-   endif()
+ # Set up external packages
+ list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
+-find_package(LibMidiFile ${PACKAGE_OPTIONS})
++#find_package(LibMidiFile ${PACKAGE_OPTIONS})
+ 
+ # Things we can build
+ set( BUILD_HEADLESS true )
+@@ -1486,9 +1486,9 @@ endif()
+ # become linters and stuff. The code will run on macos in the pipeline. I suppose
+ # you could run it locally to, but really, you should know what you are doing if you
+ # do that. And I'll document it so you can know that when I use it earnest in 1.9
+-add_custom_target(code-quality-pipeline-checks)
++#add_custom_target(code-quality-pipeline-checks)
+ 
+ # Check 1: The extra content is properly specified.
+-add_dependencies(code-quality-pipeline-checks download-extra-content)
++#add_dependencies(code-quality-pipeline-checks download-extra-content)
+ 
+ # Coming in 1.9: CLang Format checks and others
