@@ -12,6 +12,8 @@ COMMENT=	Sensor support library from Prelude SIEM
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_riscv64=		fails to configure: Easybindings require a C++ compiler, but none were found.
+
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libgnutls.so:security/gnutls \
 		libgcrypt.so:security/libgcrypt
