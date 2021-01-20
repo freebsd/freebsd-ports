@@ -26,23 +26,3 @@
  
  # Build TBB
  set(TBB_BUILD_STATIC ON CACHE BOOL " " FORCE)
-@@ -75,8 +75,8 @@ set(TBB_BUILD_TBBMALLOC OFF CACHE BOOL "
- set(TBB_BUILD_TBBMALLOC_PROXY OFF CACHE BOOL " " FORCE)
- set(TBB_BUILD_TESTS OFF CACHE BOOL " " FORCE)
- 
--add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/ext/tbb ext_build/tbb)
--set_property(TARGET tbb_static tbb_def_files PROPERTY FOLDER "dependencies")
-+#add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/ext/tbb ext_build/tbb)
-+#set_property(TARGET tbb_static tbb_def_files PROPERTY FOLDER "dependencies")
- 
- # Compile instant meshes with various compiler warnings turned on
- if(MSVC)
-@@ -173,7 +173,7 @@ add_executable(InstantMeshes MACOSX_BUND
-   ${EXTRA_SOURCE})
- 
- add_definitions(${NANOGUI_EXTRA_DEFS})
--target_link_libraries(InstantMeshes tbb_static nanogui ${NANOGUI_EXTRA_LIBS})
-+target_link_libraries(InstantMeshes tbb nanogui ${NANOGUI_EXTRA_LIBS})
- 
- set_target_properties(InstantMeshes PROPERTIES OUTPUT_NAME "Instant Meshes")
- 
