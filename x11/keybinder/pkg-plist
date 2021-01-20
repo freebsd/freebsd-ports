@@ -25,7 +25,6 @@ share/gir-1.0/Keybinder-0.0.gir
 %%PORTDOCS%%share/gtk-doc/html/keybinder/keybinder.devhelp2
 %%PORTDOCS%%share/gtk-doc/html/keybinder/left-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/keybinder/left.png
-%%PORTDOCS%%share/gtk-doc/html/keybinder/object-tree.html
 %%PORTDOCS%%share/gtk-doc/html/keybinder/right-insensitive.png
 %%PORTDOCS%%share/gtk-doc/html/keybinder/right.png
 %%PORTDOCS%%share/gtk-doc/html/keybinder/style.css

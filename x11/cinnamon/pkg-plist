@@ -593,14 +593,14 @@ share/desktop-directories/cinnamon-utility.directory
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StScrollable.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StTable.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StTextureCache.html
+%%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StTheme.html
+%%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StThemeContext.html
+%%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StThemeNode.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StWidget.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/StWidgetAccessible.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/annotation-glossary.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/api-index-full.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/base.html
-%%PORTDOCS%%share/gtk-doc/html/cinnamon-st/cinnamon-st-st-theme-context.html
-%%PORTDOCS%%share/gtk-doc/html/cinnamon-st/cinnamon-st-st-theme-node.html
-%%PORTDOCS%%share/gtk-doc/html/cinnamon-st/cinnamon-st-st-theme.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/cinnamon-st.devhelp2
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/containers.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-st/deprecated-api-index.html
@@ -647,6 +647,7 @@ share/desktop-directories/cinnamon-utility.directory
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonGenericContainer.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonGlobal.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonGtkEmbed.html
+%%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonRecorder.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonSlicer.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonStack.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/CinnamonTrayIcon.html
@@ -661,7 +662,6 @@ share/desktop-directories/cinnamon-utility.directory
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/ch04.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/ch05.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/ch06.html
-%%PORTDOCS%%share/gtk-doc/html/cinnamon/cinnamon-cinnamon-recorder.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/cinnamon-cinnamon-util.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/cinnamon.devhelp2
 %%PORTDOCS%%share/gtk-doc/html/cinnamon/deprecated-api-index.html
