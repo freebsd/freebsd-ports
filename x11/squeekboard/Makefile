@@ -2,8 +2,7 @@
 
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.1
-PORTREVISION=	2
+DISTVERSION=	1.12.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -28,8 +27,9 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gnomedesktop3 gtk30
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_COMMIT=	4049e663072ccd8be3143efccd7b03370890647e
+GL_COMMIT=	fefebf7f6e8c86b0577b8f4fd5b16f5755723724
 MAKE_ENV=	${CARGO_ENV}
+MESON_ARGS=	-Dstrict=false
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-entry \
 		bin/${PORTNAME}-test-layout \
@@ -40,9 +40,9 @@ CARGO_CRATES=	atk-0.7.0 \
 		bitflags-1.2.1 \
 		cairo-rs-0.7.1 \
 		cairo-sys-rs-0.9.2 \
-		cc-1.0.65 \
+		cc-1.0.66 \
 		clap-2.33.3 \
-		dtoa-0.4.6 \
+		dtoa-0.4.7 \
 		fragile-0.3.0 \
 		gdk-0.11.0 \
 		gdk-pixbuf-0.7.0 \
@@ -56,21 +56,21 @@ CARGO_CRATES=	atk-0.7.0 \
 		gtk-0.7.0 \
 		gtk-sys-0.9.2 \
 		lazy_static-1.4.0 \
-		libc-0.2.80 \
-		linked-hash-map-0.5.3 \
+		libc-0.2.82 \
+		linked-hash-map-0.5.4 \
 		maplit-1.0.2 \
 		memmap-0.7.0 \
 		pango-0.7.0 \
 		pango-sys-0.9.1 \
 		pkg-config-0.3.19 \
 		proc-macro2-1.0.24 \
-		quote-1.0.7 \
+		quote-1.0.8 \
 		regex-1.3.9 \
-		regex-syntax-0.6.21 \
-		serde-1.0.117 \
-		serde_derive-1.0.117 \
-		serde_yaml-0.8.14 \
-		syn-1.0.48 \
+		regex-syntax-0.6.22 \
+		serde-1.0.118 \
+		serde_derive-1.0.118 \
+		serde_yaml-0.8.15 \
+		syn-1.0.58 \
 		textwrap-0.11.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
@@ -78,7 +78,7 @@ CARGO_CRATES=	atk-0.7.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		xkbcommon-0.4.0 \
-		yaml-rust-0.4.4
+		yaml-rust-0.4.5
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
@@ -87,12 +87,8 @@ CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 
 post-patch:
 # Add --verbose after each cargo subcommand
-# Recognize --release even if not passed as 1st argument
-# Don't use BSD realpath(1) against non-existing files
 	@${REINPLACE_CMD} -e '/^cargo/s/"$$@"/--verbose &/' \
-		${"${CARGO_BUILD_ARGS:M--release}":?-e '/^BINARY_DIR/s/debug/release/':} \
-		-e '/OUT_PATH=/s,=.*,=$$PWD/$$1,' \
-		${WRKSRC}/cargo*.sh
+		${WRKSRC}/cargo.sh
 
 post-configure:
 # Provide preprocessed Cargo.toml for USES=cargo
