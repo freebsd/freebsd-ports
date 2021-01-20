@@ -3,7 +3,7 @@
 
 PORTNAME=	libdvdcss
 DISTVERSION=	1.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.videolan.org/pub/${PORTNAME}/${DISTVERSION}/
 
@@ -26,6 +26,8 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOXYGEN DOCS
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_CONFIGURE_ENABLE=	doc
+DOXYGEN_USES=		gmake
 
 post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
