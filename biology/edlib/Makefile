@@ -10,7 +10,7 @@ COMMENT=	Fast C++ library for sequence alignment using edit distance
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake compiler:c++14-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
