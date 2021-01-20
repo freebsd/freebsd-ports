@@ -38,7 +38,6 @@ share/gir-1.0/DbusmenuGtk3-%%VERSION%%.gir
 %%PORTDOCS%%%%DOCSDIR%%libdbusmenu-glib/libdbusmenu-glib-DbusmenuServer.html
 %%PORTDOCS%%%%DOCSDIR%%libdbusmenu-glib/libdbusmenu-glib-Types.html
 %%PORTDOCS%%%%DOCSDIR%%libdbusmenu-glib/libdbusmenu-glib.devhelp2
-%%PORTDOCS%%%%DOCSDIR%%libdbusmenu-glib/object-tree.html
 %%PORTDOCS%%%%DOCSDIR%%libdbusmenu-glib/right-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%libdbusmenu-glib/right.png
 %%PORTDOCS%%%%DOCSDIR%%libdbusmenu-glib/style.css
@@ -57,7 +56,6 @@ share/gir-1.0/DbusmenuGtk3-%%VERSION%%.gir
 %%PORTDOCS%%%%DOCSDIR%%libdbusmenu-gtk/libdbusmenu-gtk-menuitem.html
 %%PORTDOCS%%%%DOCSDIR%%libdbusmenu-gtk/libdbusmenu-gtk-parser.html
 %%PORTDOCS%%%%DOCSDIR%%libdbusmenu-gtk/libdbusmenu-gtk.devhelp2
-%%PORTDOCS%%%%DOCSDIR%%libdbusmenu-gtk/object-tree.html
 %%PORTDOCS%%%%DOCSDIR%%libdbusmenu-gtk/right-insensitive.png
 %%PORTDOCS%%%%DOCSDIR%%libdbusmenu-gtk/right.png
 %%PORTDOCS%%%%DOCSDIR%%libdbusmenu-gtk/style.css

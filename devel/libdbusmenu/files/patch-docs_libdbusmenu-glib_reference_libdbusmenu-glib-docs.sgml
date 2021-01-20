@@ -1,0 +1,13 @@
+--- docs/libdbusmenu-glib/reference/libdbusmenu-glib-docs.sgml.orig	2016-02-27 18:58:43 UTC
++++ docs/libdbusmenu-glib/reference/libdbusmenu-glib-docs.sgml
+@@ -18,10 +18,6 @@
+     <xi:include href="xml/types.xml"/>
+ 
+   </chapter>
+-  <chapter id="object-tree">
+-    <title>Object Hierarchy</title>
+-     <xi:include href="xml/tree_index.sgml"/>
+-  </chapter>
+   <index id="api-index-full">
+     <title>API Index</title>
+     <xi:include href="xml/api-index-full.xml"><xi:fallback /></xi:include>
