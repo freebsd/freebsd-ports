@@ -19,29 +19,36 @@ LIB_DEPENDS=	libjansson.so:devel/jansson \
 		liblz4.so:archivers/liblz4 \
 		libyaml.so:textproc/libyaml
 
-USES=		autoreconf cpe gmake iconv:translit libtool pathfix pkgconfig
-
-CONFLICTS_INSTALL=	libhtp
-
-USE_LDCONFIG=	yes
-USE_RC_SUBR=	${PORTNAME}
-PLIST_SUB=	PORTVERSION=${DISTVERSION:C/-/_/g}
-
-GNU_CONFIGURE=	yes
+USES=		autoreconf cpe gmake iconv:translit libtool localbase \
+		pathfix pkgconfig
 
 CPE_VENDOR=	openinfosecfoundation
 
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	${PORTNAME}
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-gccprotect \
+		--enable-bundled-htp \
+	        --disable-gccmarch-native
+
 INSTALL_TARGET=		install-strip
 TEST_TARGET=		check
+
+CONFLICTS_INSTALL=	libhtp
+
+SUB_FILES=	pkg-message
+PLIST_SUB=	PORTVERSION=${DISTVERSION:C/-/_/g}
 
 OPTIONS_DEFINE=		GEOIP IPFW NETMAP NSS PORTS_PCAP PRELUDE \
 			PYTHON REDIS TESTS
 OPTIONS_DEFINE_amd64=	HYPERSCAN
 OPTIONS_DEFAULT=	IPFW NETMAP PYTHON
-OPTIONS_SUB=		yes
 
 OPTIONS_RADIO=		SCRIPTS
 OPTIONS_RADIO_SCRIPTS=	LUA LUAJIT
+
+OPTIONS_SUB=		yes
 
 GEOIP_DESC=		GeoIP support
 HYPERSCAN_DESC=		Hyperscan support
@@ -61,71 +68,41 @@ GEOIP_LIB_DEPENDS=		libmaxminddb.so:net/libmaxminddb
 GEOIP_CONFIGURE_ON=		--enable-geoip
 
 HYPERSCAN_LIB_DEPENDS=		libhs.so:devel/hyperscan
-HYPERSCAN_CONFIGURE_ON=		--with-libhs-includes=${LOCALBASE}/include \
-				--with-libhs-libraries=${LOCALBASE}/lib
 
 IPFW_CONFIGURE_ON=		--enable-ipfw
-
-LUA_USES=			lua:51
-LUA_CONFIGURE_ON=		--enable-lua \
-				--with-liblua-includes=${LUA_INCDIR} \
-				--with-liblua-libraries=${LUA_LIBDIR}
 
 LUAJIT_LIB_DEPENDS=		libluajit-5.1.so:lang/luajit
 LUAJIT_CONFIGURE_ON=		--enable-luajit
 
-NSS_LIB_DEPENDS=		libnss3.so:security/nss \
-				libnspr4.so:devel/nspr
-NSS_CONFIGURE_OFF=		--disable-nss --disable-nspr
-NSS_CONFIGURE_ON=		--with-libnss-includes=${LOCALBASE}/include/nss/nss \
-				--with-libnss-libraries=${LOCALBASE}/lib \
-				--with-libnspr-libraries=${LOCALBASE}/lib \
-				--with-libnspr-includes=${LOCALBASE}/include/nspr
+LUA_USES=			lua:51
+LUA_CONFIGURE_ON=		--enable-lua \
 
 NETMAP_CONFIGURE_ENABLE=	netmap
 
+NSS_LIB_DEPENDS=		libnss3.so:security/nss \
+				libnspr4.so:devel/nspr
+NSS_CONFIGURE_OFF=		--disable-nss --disable-nspr
+
 PORTS_PCAP_LIB_DEPENDS=		libpcap.so.1:net/libpcap
-PORTS_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
-				--with-libpcap-libraries=${LOCALBASE}/lib
-PORTS_PCAP_CONFIGURE_OFF=	--with-libpcap-includes=/usr/include \
-				--with-libpcap-libraries=/usr/lib
 
 PRELUDE_LIB_DEPENDS=		libprelude.so:security/libprelude \
 				libgnutls.so:security/gnutls \
 				libgcrypt.so:security/libgcrypt \
 				libgpg-error.so:security/libgpg-error \
 				libltdl.so:devel/libltdl
-PRELUDE_CONFIGURE_ENABLE=	prelude
 PRELUDE_CONFIGURE_ON=		--with-libprelude-prefix=${LOCALBASE}
+PRELUDE_CONFIGURE_ENABLE=	prelude
 
+PYTHON_BUILD_DEPENDS=		${PYTHON_RUN_DEPENDS}
+PYTHON_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 PYTHON_USES=			python
 PYTHON_USE=			PYTHON=py3kplist
 PYTHON_CONFIGURE_ENABLE=	python
-PYTHON_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
-PYTHON_BUILD_DEPENDS=		${PYTHON_RUN_DEPENDS}
 
 REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
 REDIS_CONFIGURE_ON=		--enable-hiredis \
-				--with-libhiredis-includes=${LOCALBASE}/include \
-				--with-libhiredis-libraries=${LOCALBASE}/lib
 
 TESTS_CONFIGURE_ENABLE=		unittests
-
-SUB_FILES=	pkg-message
-
-CONFIGURE_ARGS+=--enable-gccprotect \
-		--enable-bundled-htp \
-		--with-libjansson-includes=${LOCALBASE}/include \
-		--with-libjansson-libraries=${LOCALBASE}/lib \
-		--with-libpcre-includes=${LOCALBASE}/include \
-		--with-libpcre-libraries=${LOCALBASE}/lib \
-		--with-libyaml-includes=${LOCALBASE}/include \
-		--with-libyaml-libraries=${LOCALBASE}/lib \
-		--with-libnet-includes=${LOCALBASE}/include \
-		--with-libnet-libraries=${LOCALBASE}/lib \
-		--with-libhtp-includes=${LOCALBASE}/include/ \
-		--with-libhtp-libraries=${LOCALBASE}/lib \
-	        --disable-gccmarch-native
 
 pre-patch:
 	@${CP} ${FILESDIR}/ax_check_compile_flag.m4 ${WRKSRC}/m4
