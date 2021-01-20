@@ -16,8 +16,6 @@ COMMENT=	Epic tactical turn-based roguelike adventure
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_riscv64=		fails to build: src/luajit2/src/lj_arch.h:55:2: No support for this architecture (yet)
-
 BUILD_DEPENDS=	premake4:devel/premake4
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libpng.so:graphics/png
@@ -42,7 +40,7 @@ LDFLAGS_i386=	-Wl,-znotext
 
 pre-build:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/premake4.lua
-.if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*}
+.if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*} || ${ARCH} == riscv64
 	(cd ${WRKSRC} && premake4 --lua=default gmake)
 .else
 	(cd ${WRKSRC} && premake4 gmake)
