@@ -1,0 +1,159 @@
+commit f48008ba21c0
+Author: Paul Adenot <paul@paul.cx>
+Date:   Tue Jan 19 07:04:00 2021 -0800
+
+    Bug 1687487 - Update libcubeb to 4a83932. r=kinetik
+---
+ media/libcubeb/moz.yaml             |  2 +-
+ media/libcubeb/src/cubeb_oss.c      | 43 ++++++++++++++++++++++++++++++-------
+ media/libcubeb/src/cubeb_wasapi.cpp | 24 ++++++++++-----------
+ 3 files changed, 48 insertions(+), 21 deletions(-)
+
+diff --git media/libcubeb/moz.yaml media/libcubeb/moz.yaml
+index c90f95e09a0a..c2eea799d1bf 100644
+--- media/libcubeb/moz.yaml
++++ media/libcubeb/moz.yaml
+@@ -19,5 +19,5 @@ origin:
+   license: "ISC"
+ 
+   # update.sh will update this value
+-  release: "85f1cf48dffd749dd32798681955155e1a1a6ff5 (2020-12-07 08:11:33 +0000)"
++  release: "4a83932caee16c9ee404b39144620fcbcc7a842f (2021-01-19 16:05:14 +0100)"
+ 
+diff --git media/libcubeb/src/cubeb_oss.c media/libcubeb/src/cubeb_oss.c
+index 32a4bf6de482..8c44c9e8d08a 100644
+--- media/libcubeb/src/cubeb_oss.c
++++ media/libcubeb/src/cubeb_oss.c
+@@ -781,6 +781,28 @@ oss_put_play_frames(cubeb_stream * s, unsigned int nframes)
+   return 0;
+ }
+ 
++static int
++oss_wait_playfd_for_space(cubeb_stream * s)
++{
++  /* For non-duplex stream we have to wait until we have space in the
++   * buffer */
++  int rate = s->play.info.sample_rate;
++  struct pollfd pfd;
++
++  pfd.events = POLLOUT|POLLHUP;
++  pfd.revents = 0;
++  pfd.fd = s->play.fd;
++
++  if (poll(&pfd, 1, s->nfr * 1000 + rate - 1 / rate) == -1) {
++    return CUBEB_ERROR;
++  }
++
++  if (pfd.revents & POLLHUP) {
++    return CUBEB_ERROR;
++  }
++  return 0;
++}
++
+ /* 1 - Stopped by cubeb_stream_stop, otherwise 0 */
+ static int
+ oss_audio_loop(cubeb_stream * s, cubeb_state *new_state)
+@@ -873,26 +895,31 @@ oss_audio_loop(cubeb_stream * s, cubeb_state *new_state)
+       goto breakdown;
+     }
+ 
+-    audio_buf_info bi;
+     if (play_on) {
+-      if (ioctl(s->play.fd, SNDCTL_DSP_GETOSPACE, &bi)) {
+-        state = CUBEB_STATE_ERROR;
+-        goto breakdown;
+-      }
+       /*
+        * In duplex mode, playback direction drives recording direction to
+        * prevent building up latencies.
+        */
++
++      if (oss_wait_playfd_for_space(s) != 0) {
++        state = CUBEB_STATE_ERROR;
++        goto breakdown;
++      }
++
++      audio_buf_info bi;
++      if (ioctl(s->play.fd, SNDCTL_DSP_GETOSPACE, &bi)) {
++        state = CUBEB_STATE_ERROR;
++        goto breakdown;
++      }
+       nfr = bi.fragsize * bi.fragments / s->play.frame_size;
+       if (nfr > s->bufframes) {
+         nfr = s->bufframes;
+       }
++    } else {
++      nfr = s->nfr;
+     }
+ 
+     if (record_on) {
+-      if (nfr == 0) {
+-        nfr = s->nfr;
+-      }
+       if (oss_get_rec_frames(s, nfr) == CUBEB_ERROR) {
+         state = CUBEB_STATE_ERROR;
+         goto breakdown;
+diff --git media/libcubeb/src/cubeb_wasapi.cpp media/libcubeb/src/cubeb_wasapi.cpp
+index 30a6d06c7e20..b7b337ce7829 100644
+--- media/libcubeb/src/cubeb_wasapi.cpp
++++ media/libcubeb/src/cubeb_wasapi.cpp
+@@ -778,12 +778,6 @@ hns_to_frames(cubeb_stream * stm, REFERENCE_TIME hns)
+   return hns_to_frames(get_rate(stm), hns);
+ }
+ 
+-REFERENCE_TIME
+-frames_to_hns(cubeb_stream * stm, uint32_t frames)
+-{
+-  return std::ceil(frames * 10000000.0 / get_rate(stm));
+-}
+-
+ REFERENCE_TIME
+ frames_to_hns(uint32_t rate, uint32_t frames)
+ {
+@@ -1834,7 +1828,8 @@ initialize_iaudioclient2(com_ptr<IAudioClient> & audio_client)
+   return CUBEB_OK;
+ }
+ 
+-static bool
++// Not static to suppress a warning.
++/* static */ bool
+ initialize_iaudioclient3(com_ptr<IAudioClient> & audio_client,
+                          cubeb_stream * stm,
+                          const com_heap_ptr<WAVEFORMATEX> & mix_format,
+@@ -2185,7 +2180,7 @@ int setup_wasapi_stream_one_side(cubeb_stream * stm,
+ 
+ void wasapi_find_matching_output_device(cubeb_stream * stm) {
+   HRESULT hr;
+-  cubeb_device_info * input_device;
++  cubeb_device_info * input_device = nullptr;
+   cubeb_device_collection collection;
+ 
+   // Only try to match to an output device if the input device is a bluetooth
+@@ -2207,6 +2202,9 @@ void wasapi_find_matching_output_device(cubeb_stream * stm) {
+   }
+ 
+   int rv = wasapi_enumerate_devices(stm->context, (cubeb_device_type)(CUBEB_DEVICE_TYPE_INPUT|CUBEB_DEVICE_TYPE_OUTPUT), &collection);
++  if (rv != CUBEB_OK) {
++    return;
++  }
+ 
+   // Find the input device, and then find the output device with the same group
+   // id and the same rate.
+@@ -2220,11 +2218,13 @@ void wasapi_find_matching_output_device(cubeb_stream * stm) {
+ 
+   for (uint32_t i = 0; i < collection.count; i++) {
+     cubeb_device_info dev = collection.device[i];
+-    if (dev.type == CUBEB_DEVICE_TYPE_OUTPUT &&
+-        dev.group_id && !strcmp(dev.group_id, input_device->group_id) &&
++    if (dev.type == CUBEB_DEVICE_TYPE_OUTPUT && dev.group_id && input_device &&
++        !strcmp(dev.group_id, input_device->group_id) &&
+         dev.default_rate == input_device->default_rate) {
+-      LOG("Found matching device for %s: %s", input_device->friendly_name, dev.friendly_name);
+-      stm->output_device_id = utf8_to_wstr(reinterpret_cast<char const *>(dev.devid));
++      LOG("Found matching device for %s: %s", input_device->friendly_name,
++          dev.friendly_name);
++      stm->output_device_id =
++          utf8_to_wstr(reinterpret_cast<char const *>(dev.devid));
+     }
+   }
+ 
