@@ -1,0 +1,8 @@
+sprop is a simple X property utility. Less is more.
+
+The sprop utility prints the value of the property atom of the window with the
+given xid, or alternatively sets it to value if given. It doesn't have the same
+arguments as xprop and can only interact with atoms which are strings.
+An example of using this utility could be replacing xprop in surf's config.h.
+
+WWW: https://tools.suckless.org/x/sprop
