@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	turnserver
-PORTVERSION=	4.5.1.1
-PORTREVISION=	2
+PORTVERSION=	4.5.2
 CATEGORIES=	net
 MASTER_SITES=	http://turnserver.open-sys.org/downloads/extradocs/:xdocs \
 		http://coturn.net/turnserver/extradocs/:xdocs
@@ -17,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-USES=		gettext-runtime perl5 shebangfix ssl
+USES=		gettext-runtime perl5 pkgconfig shebangfix ssl
 SHEBANG_FILES=	examples/scripts/restapi/shared_secret_maintainer.pl
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread TURN_DISABLE_RPATH=1
