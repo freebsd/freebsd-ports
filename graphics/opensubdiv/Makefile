@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 CMAKE_ON=	NO_CUDA NO_DX NO_OMP
 
 OPTIONS_DEFINE=		DOCS EXAMPLES OPENCL PTEX TBB TEST TUTORIALS
-OPTIONS_DEFAULT=	TBB
+#OPTIONS_DEFAULT=	TBB -- off until onetbb support is available
 OPTIONS_SUB=		yes
 
 DOCS_CMAKE_BOOL_OFF=	NO_DOC
@@ -53,6 +53,7 @@ PTEX_LIB_DEPENDS=	libPtex.so:graphics/ptex
 TBB_DESC=		Intel threading building blocks
 TBB_CMAKE_BOOL_OFF=	NO_TBB
 TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
+TBB_BROKEN=		not available until transition to onetbb is complete
 
 TEST_CMAKE_BOOL_OFF=	NO_REGRESSION NO_TESTS NO_GL_TESTS
 TEST_LIB_DEPENDS=	libglfw.so:graphics/glfw
