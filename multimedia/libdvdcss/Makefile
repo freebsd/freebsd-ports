@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	libdvdcss
-PORTVERSION=	1.4.2
+DISTVERSION=	1.4.2
+PORTREVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.videolan.org/pub/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	https://download.videolan.org/pub/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Portable abstraction library for DVD decryption
@@ -12,9 +13,10 @@ COMMENT=	Portable abstraction library for DVD decryption
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		libtool pathfix tar:bzip2
+
 RESTRICTED=	CSS code may violate the DMCA
 
-USES=		gmake libtool pathfix tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
@@ -24,6 +26,8 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOXYGEN DOCS
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_CONFIGURE_ENABLE=	doc
+DOXYGEN_USES=		gmake
 
 post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
