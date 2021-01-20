@@ -4,7 +4,7 @@
 PORTNAME=	openrct2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl \
 		libfreetype.so:print/freetype2 \
 		libicuuc.so:devel/icu \
-		libbenchmark.so:devel/grpc \
+		libbenchmark.so:devel/benchmark \
 		libduktape.so:lang/duktape-lib
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gnome gl iconv \
