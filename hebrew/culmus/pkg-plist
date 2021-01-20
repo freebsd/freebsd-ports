@@ -8,10 +8,10 @@
 %%FONTSDIR%%/AharoniCLM-BookOblique.afm
 %%FONTSDIR%%/CaladingsCLM.pfa
 %%FONTSDIR%%/CaladingsCLM.afm
-%%FONTSDIR%%/DavidCLM-Bold.ttf
-%%FONTSDIR%%/DavidCLM-BoldItalic.ttf
-%%FONTSDIR%%/DavidCLM-Medium.ttf
-%%FONTSDIR%%/DavidCLM-MediumItalic.ttf
+%%FONTSDIR%%/DavidCLM-Bold.otf
+%%FONTSDIR%%/DavidCLM-BoldItalic.otf
+%%FONTSDIR%%/DavidCLM-Medium.otf
+%%FONTSDIR%%/DavidCLM-MediumItalic.otf
 %%FONTSDIR%%/DrugulinCLM-Bold.pfa
 %%FONTSDIR%%/DrugulinCLM-Bold.afm
 %%FONTSDIR%%/DrugulinCLM-BoldItalic.pfa
