@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bioparser>0:biology/bioparser \
 		${LOCALBASE}/include/biosoup/nucleic_acid.hpp:biology/biosoup
 
-USES=		cmake localbase
+USES=		cmake compiler:c++11-lang localbase
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
