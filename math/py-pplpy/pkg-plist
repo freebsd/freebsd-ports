@@ -3,6 +3,8 @@
 %%PYTHON_SITELIBDIR%%/ppl/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ppl/bit_arrays.pxd
 %%PYTHON_SITELIBDIR%%/ppl/bit_arrays.so
+%%PYTHON_SITELIBDIR%%/ppl/congruence.pxd
+%%PYTHON_SITELIBDIR%%/ppl/congruence.so
 %%PYTHON_SITELIBDIR%%/ppl/constraint.pxd
 %%PYTHON_SITELIBDIR%%/ppl/constraint.so
 %%PYTHON_SITELIBDIR%%/ppl/generator.pxd
