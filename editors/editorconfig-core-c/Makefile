@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	editorconfig-core-c
-PORTVERSION=	0.12.2
+PORTVERSION=	0.12.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	doxygen:devel/doxygen
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		cmake
 

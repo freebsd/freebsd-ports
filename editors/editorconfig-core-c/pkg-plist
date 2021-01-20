@@ -6,6 +6,10 @@ lib/libeditorconfig.so
 lib/libeditorconfig.so.%%SHLIB_MAJOR%%
 lib/libeditorconfig.so.%%SHLIB_VER%%
 lib/libeditorconfig_static.a
+lib/cmake/EditorConfig/EditorConfigConfig.cmake
+lib/cmake/EditorConfig/EditorConfigConfigVersion.cmake
+lib/cmake/EditorConfig/EditorConfigTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/EditorConfig/EditorConfigTargets.cmake
 libdata/pkgconfig/editorconfig.pc
 man/man1/editorconfig.1.gz
 man/man3/editorconfig.h.3.gz
