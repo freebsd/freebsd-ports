@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hwloc
-PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTVERSION=	2.4.0
 CATEGORIES=	devel
 MASTER_SITES=	https://download.open-mpi.org/release/hwloc/v${PORTVERSION:R}/ \
 		http://icl.cs.utk.edu/open-mpi/software/hwloc/v${PORTVERSION:R}/downloads/
