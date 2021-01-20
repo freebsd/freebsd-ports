@@ -10,8 +10,8 @@ COMMENT=	${${FLAVOR}_COMMENT}
 
 LICENSE=	GPLv2
 
-FLAVORS=	x128 x64 x64sc xcbm2 xcbm5x0 xpet xplus4 xscpu64 xvic
-FLAVOR?=	${FLAVORS:[2]}
+FLAVORS=	x64 x128 x64sc xcbm2 xcbm5x0 xpet xplus4 xscpu64 xvic
+FLAVOR?=	${FLAVORS:[1]}
 
 USES=		compiler:c11 gmake
 
