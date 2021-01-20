@@ -48,6 +48,7 @@
     SUBDIR += doulos
     SUBDIR += doulos-compact
     SUBDIR += droid-fonts-ttf
+    SUBDIR += dseg
     SUBDIR += encodings
     SUBDIR += exo
     SUBDIR += fantasque-sans-mono
