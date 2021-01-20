@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bingrep
-PORTVERSION=	0.8.4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8.5
 CATEGORIES=	devel
 
 MAINTAINER=	ed.arrakis@gmail.com
@@ -16,7 +17,7 @@ GH_ACCOUNT=	m4b
 
 CARGO_CRATES=	aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
-		anyhow-1.0.37 \
+		anyhow-1.0.38 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.2 \
 		atty-0.2.14 \
@@ -40,15 +41,15 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		fuchsia-cprng-0.1.1 \
 		getrandom-0.1.16 \
 		glob-0.3.0 \
-		goblin-0.3.0 \
+		goblin-0.3.1 \
 		heck-0.3.2 \
-		hermit-abi-0.1.17 \
+		hermit-abi-0.1.18 \
 		hexplay-0.2.1 \
-		humantime-2.0.1 \
+		humantime-2.1.0 \
 		itoa-0.4.7 \
 		lazy_static-1.4.0 \
 		libc-0.2.82 \
-		log-0.4.11 \
+		log-0.4.13 \
 		memchr-2.3.4 \
 		memrange-0.1.3 \
 		metagoblin-0.4.0 \
@@ -74,7 +75,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		ryu-1.0.5 \
 		scroll-0.10.2 \
 		scroll_derive-0.10.4 \
-		serde-1.0.118 \
+		serde-1.0.119 \
 		strsim-0.8.0 \
 		structopt-0.3.21 \
 		structopt-derive-0.4.14 \
