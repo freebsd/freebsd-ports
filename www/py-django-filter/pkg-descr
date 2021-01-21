@@ -1,3 +1,4 @@
-A generic system for filtering Django QuerySets based on user selections.
+Django-filter is a reusable Django application allowing users to declaratively
+add dynamic QuerySet filtering from URL parameters.
 
 WWW: https://github.com/carltongibson/django-filter
