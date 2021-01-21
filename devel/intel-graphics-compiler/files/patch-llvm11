@@ -1,3 +1,40 @@
+https://github.com/intel/intel-graphics-compiler/issues/155
+
+In file included from IGC/VectorCompiler/lib/GenXOpts/CMPacketize/GenXPacketize.cpp:38:
+In file included from IGC/VectorCompiler/lib/GenXOpts/CMPacketize/PacketBuilder.h:40:
+IGC/WrapperLLVM/include/llvmWrapper/Support/Alignment.h:99:16: error: no viable conversion from returned value of type 'llvm::MaybeAlign' to function return type 'IGCLLVM::Align' (aka 'llvm::Align')
+        return Val.getAlign();
+               ^~~~~~~~~~~~~~
+IGC/VectorCompiler/lib/GenXOpts/CMPacketize/GenXPacketize.cpp:279:37: note: in instantiation of function template specialization 'IGCLLVM::getAlign<llvm::Function, 0>' requested here
+  ClonedFunc->setAlignment(IGCLLVM::getAlign(*F));
+                                    ^
+/usr/local/llvm11/include/llvm/Support/Alignment.h:71:13: note: candidate constructor not viable: no known conversion from 'llvm::MaybeAlign' to 'const llvm::Align &' for 1st argument
+  constexpr Align(const Align &Other) = default;
+            ^
+/usr/local/llvm11/include/llvm/Support/Alignment.h:72:13: note: candidate constructor not viable: no known conversion from 'llvm::MaybeAlign' to 'llvm::Align &&' for 1st argument
+  constexpr Align(Align &&Other) = default;
+            ^
+/usr/local/llvm11/include/llvm/Support/Alignment.h:109:13: note: candidate constructor not viable: no known conversion from 'llvm::MaybeAlign' to 'llvm::Align::LogValue' for 1st argument
+  constexpr Align(LogValue CA) : ShiftValue(CA.Log) {}
+            ^
+/usr/local/llvm11/include/llvm/Support/Alignment.h:76:12: note: explicit constructor is not a candidate
+  explicit Align(uint64_t Value) {
+           ^
+IGC/Compiler/CISACodeGen/ResolveGAS.cpp:83:28: error: use of undeclared identifier 'AAResultsWrapperPass'
+            AU.addRequired<AAResultsWrapperPass>();
+                           ^
+IGC/Compiler/CISACodeGen/ResolveGAS.cpp:735:5: error: unknown type name 'AliasAnalysis'
+    AliasAnalysis* AA = &getAnalysis<AAResultsWrapperPass>().getAAResults();
+    ^
+IGC/Compiler/CISACodeGen/ResolveGAS.cpp:735:38: error: use of undeclared identifier 'AAResultsWrapperPass'
+    AliasAnalysis* AA = &getAnalysis<AAResultsWrapperPass>().getAAResults();
+                                     ^
+IGC/Compiler/CISACodeGen/ResolveGAS.cpp:810:27: error: use of undeclared identifier 'MemoryLocation'; did you mean 'TempDILocation'?
+            if (AA->alias(MemoryLocation::get(SI), MemoryLocation::get(LI))) {
+                          ^~~~~~~~~~~~~~
+IGC/Compiler/CISACodeGen/ResolveGAS.cpp:810:52: error: use of undeclared identifier 'MemoryLocation'; did you mean 'TempDILocation'?
+            if (AA->alias(MemoryLocation::get(SI), MemoryLocation::get(LI))) {
+                                                   ^~~~~~~~~~~~~~
 IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp:2148:16: error: call to 'invertCondition' is ambiguous
         Mask = invertCondition(Mask);
                ^~~~~~~~~~~~~~~
@@ -17,6 +54,16 @@ IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp:462:37: error: no
       NewVec1, NewVec2, ShuffleVec->getMask(), ShuffleVec->getName() + ".tpm");
                         ~~~~~~~~~~  ^
 
+--- IGC/Compiler/CISACodeGen/ResolveGAS.cpp.orig	2020-12-24 13:04:21 UTC
++++ IGC/Compiler/CISACodeGen/ResolveGAS.cpp
+@@ -37,6 +37,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #include <llvm/ADT/DenseSet.h>
+ #include <llvm/ADT/SmallVector.h>
+ #include <llvm/ADT/PostOrderIterator.h>
++#include <llvm/Analysis/AliasAnalysis.h>
+ #include <llvm/Analysis/LoopInfo.h>
+ #include <llvm/IR/IRBuilder.h>
+ #include <llvm/IR/NoFolder.h>
 --- IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp.orig	2020-12-24 13:04:21 UTC
 +++ IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp
 @@ -2145,7 +2145,7 @@ static bool mergeToWrRegion(SelectInst *SI) {
@@ -51,3 +98,17 @@ IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp:462:37: error: no
    NewShuffleVec->insertAfter(ShuffleVec);
  
    auto CastToOldTy =
+--- IGC/VectorCompiler/lib/GenXOpts/CMPacketize/GenXPacketize.cpp.orig	2020-12-24 13:04:21 UTC
++++ IGC/VectorCompiler/lib/GenXOpts/CMPacketize/GenXPacketize.cpp
+@@ -276,7 +276,11 @@ Function *GenXPacketize::vectorizeSIMTFunction(Functio
+                        VecFName + Suffix[Width / 8], F->getParent());
+   ClonedFunc->setCallingConv(F->getCallingConv());
+   ClonedFunc->setAttributes(F->getAttributes());
++#if LLVM_VERSION_MAJOR < 11
+   ClonedFunc->setAlignment(IGCLLVM::getAlign(*F));
++#else
++  ClonedFunc->setAlignment(F->getAlign());
++#endif
+ 
+   // then use CloneFunctionInto
+   ValueToValueMapTy ArgMap;
