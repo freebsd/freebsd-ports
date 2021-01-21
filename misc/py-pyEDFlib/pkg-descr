@@ -1,0 +1,10 @@
+pyEDFlib is a python library to read/write EDF+/BDF+ files based on EDFlib.
+
+EDF means European Data Format and was first published by Kemp in 1992. In 2003,
+an improved version of the file protocol named EDF+ has been published, also
+by Kemp.
+
+The EDF/EDF+ format saves all data in the 16 bit format. A version which saves
+all data in the 24 bit format was introduces by the company BioSemi.
+
+WWW: https://github.com/holgern/pyedflib
