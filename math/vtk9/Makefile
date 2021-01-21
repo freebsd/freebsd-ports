@@ -2,8 +2,9 @@
 
 PORTNAME=	vtk
 DISTVERSION=	9.0.1
+PORTREVISION=	1
 CATEGORIES=	math graphics
-MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
+MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
@@ -25,7 +26,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS \
 		VTK_INSTALL_NO_DOCUMENTATION VTK_USE_SYSTEM_EXPAT VTK_USE_SYSTEM_TIFF \
 		VTK_USE_SYSTEM_PNG VTK_USE_SYSTEM_JPEG VTK_USE_SYSTEM_FREETYPE VTK_USE_SYSTEM_ZLIB \
 		Module_vtkTestingCore Module_vtkTestingRendering
-CMAKE_ARGS+=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
+CMAKE_ARGS=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DVTK_INSTALL_ARCHIVE_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DVTK_INSTALL_QT_DIR=/${QT_LIBDIR_REL}/plugins/designer \
 		-DSTAGEDIR=${STAGEDIR}
@@ -36,8 +37,8 @@ DOCSDIR=	${PREFIX}/share/doc/vtk-${VTK_SHORT_VER}
 DATADIR=	${PREFIX}/share/vtk-${VTK_SHORT_VER}
 
 # Options
-OPTIONS_DEFINE=	DESIGNER DOCS OSMESA QT5 EXAMPLES
-OPTIONS_DEFAULT=	MPI QT5
+OPTIONS_DEFINE=	DESIGNER DOCS OSMESA PYTHON QT5 EXAMPLES
+OPTIONS_DEFAULT=	MPI PYTHON QT5 # vtk python binding is needed by other packages, and is unfortunately is unseparable. It is a candidate to be a subpackage.
 OSMESA_DESC=	Use Mesa for off-screen rendering
 DESIGNER_DESC=	Build the Qt Designer plugin
 OPTIONS_SUB=	yes
@@ -57,6 +58,10 @@ $g_DESC=	Build the $g group
 .for w in ${VTK_WRAPS}
 $w_DESC=	$w wrapping
 .endfor
+
+PYTHON_USES=		python:3.6+
+PYTHON_CMAKE_BOOL=	VTK_WRAP_PYTHON
+PYTHON_CMAKE_ON=	-DVTK_PYTHON_VERSION=${PYTHON_MAJOR_VER}
 
 QT5_USES=		qt:5
 QT5_USE=		QT=core,gui,sql,uiplugin,widgets,x11extras,qmake_build,buildtools_build
