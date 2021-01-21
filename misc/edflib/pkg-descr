@@ -1,0 +1,14 @@
+EDFlib is a programming library for C/C++ to read/write EDF+/BDF+ files.
+It also reads old-type EDF/BDF files.
+EDF means European Data Format. BDF is the 24-bits version of EDF.
+
+Features:
+* supports reading and writing of 16-bit (EDF) and 24-bit (BDF) resolution
+* supports annotations (events)
+* strives for strict standard compliance, generated files adheres
+  to the standard
+* API supports wide range of sample formats
+* supports multiple annotation channels
+* supports wide range of samplerate combinations
+
+WWW: https://www.teuniz.net/edflib/
