@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-fonts
-DISTVERSION=	0.0.0.20210108
+DISTVERSION=	0.0.0.20210120
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -16,7 +16,6 @@ RUN_DEPENDS=	Andika>0:x11-fonts/andika \
 		alegreya-sans>0:x11-fonts/alegreya-sans \
 		anonymous-pro>0:x11-fonts/anonymous-pro \
 		b612>0:x11-fonts/b612 \
-		cantarell-fonts>0:x11-fonts/cantarell-fonts \
 		comfortaa-ttf>0:x11-fonts/comfortaa-ttf \
 		comic-neue>0:x11-fonts/comic-neue \
 		courier-prime>.:x11-fonts/courier-prime \
@@ -41,7 +40,7 @@ USES=		fonts
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	fonts
-GH_TAGNAME=	b2510dc2a308ed4d217d0c8fea7881c4ff5eb42e
+GH_TAGNAME=	88b06a0c39a81a8b6e5ecf7f1ba2ff9273d29167
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -63,7 +62,6 @@ EXCLUSIONS=	apache/arimo \
 		ofl/anonymouspro \
 		ofl/b612 \
 		ofl/b612mono \
-		ofl/cantarell \
 		ofl/comfortaa \
 		ofl/comicneue \
 		ofl/courierprime \
@@ -77,9 +75,11 @@ EXCLUSIONS=	apache/arimo \
 		ofl/lato \
 		ofl/montserrat \
 		ofl/montserratalternates \
-		ofl/notosans \
-		ofl/notosanstamil \
-		ofl/notoserif \
+		ofl/notonastaliqurdu \
+		ofl/notomusic* \
+		ofl/notosans* \
+		ofl/notoserif* \
+		ofl/nototraditionalnushu \
 		ofl/sourcecodepro \
 		ofl/sourcesanspro \
 		ofl/sourceserifpro \

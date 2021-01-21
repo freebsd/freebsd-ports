@@ -21,6 +21,8 @@
 %%FONTSDIR%%/AdventPro-SemiBold.ttf
 %%FONTSDIR%%/AdventPro-Thin.ttf
 %%FONTSDIR%%/AguafinaScript-Regular.ttf
+%%FONTSDIR%%/AkayaKanadaka-Regular.ttf
+%%FONTSDIR%%/AkayaTelivigala-Regular.ttf
 %%FONTSDIR%%/Akronim-Regular.ttf
 %%FONTSDIR%%/AksaraBaliGalang-Regular.ttf
 %%FONTSDIR%%/Aladin-Regular.ttf
@@ -548,6 +550,10 @@
 %%FONTSDIR%%/Cambay-Regular.ttf
 %%FONTSDIR%%/Cambo-Regular.ttf
 %%FONTSDIR%%/Candal.ttf
+%%FONTSDIR%%/Cantarell-Bold.ttf
+%%FONTSDIR%%/Cantarell-BoldOblique.ttf
+%%FONTSDIR%%/Cantarell-Oblique.ttf
+%%FONTSDIR%%/Cantarell-Regular.ttf
 %%FONTSDIR%%/CantataOne-Regular.ttf
 %%FONTSDIR%%/CantoraOne-Regular.ttf
 %%FONTSDIR%%/Capriola-Regular.ttf
@@ -615,6 +621,7 @@
 %%FONTSDIR%%/ChelseaMarket-Regular.ttf
 %%FONTSDIR%%/Chenla.ttf
 %%FONTSDIR%%/CherryBomb-Regular.ttf
+%%FONTSDIR%%/CherryBombOne-Regular.ttf
 %%FONTSDIR%%/CherryCreamSoda-Regular.ttf
 %%FONTSDIR%%/CherrySwash-Bold.ttf
 %%FONTSDIR%%/CherrySwash-Regular.ttf
@@ -2890,6 +2897,7 @@
 %%FONTSDIR%%/Redressed-Regular.ttf
 %%FONTSDIR%%/ReemKufi-Regular.ttf
 %%FONTSDIR%%/ReenieBeanie.ttf
+%%FONTSDIR%%/ReggaeOne-Regular.ttf
 %%FONTSDIR%%/Revalia-Regular.ttf
 %%FONTSDIR%%/RhodiumLibre-Regular.ttf
 %%FONTSDIR%%/Ribeye-Regular.ttf
@@ -3639,6 +3647,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/adventpro/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/aguafinascript/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/aguafinascript/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/akayakanadaka/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/akayakanadaka/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/akayatelivigala/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/akayatelivigala/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/akronim/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/akronim/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/aksarabaligalang/DESCRIPTION.en_us.html
@@ -4033,6 +4045,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/cambo/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/candal/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/candal/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/cantarell/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/cantarell/FONTLOG.txt
+%%PORTDOCS%%%%DOCSDIR%%/cantarell/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/cantataone/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/cantataone/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/cantataone/OFL.txt
@@ -4089,6 +4104,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/chenla/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/cherrybomb/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/cherrybomb/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/cherrybombone/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/cherrybombone/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/cherrycreamsoda/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/cherrycreamsoda/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/cherryswash/DESCRIPTION.en_us.html
@@ -5454,6 +5471,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/reemkufi/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/reeniebeanie/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/reeniebeanie/OFL.txt
+%%PORTDOCS%%%%DOCSDIR%%/reggaeone/DESCRIPTION.en_us.html
+%%PORTDOCS%%%%DOCSDIR%%/reggaeone/OFL.txt
 %%PORTDOCS%%%%DOCSDIR%%/revalia/DESCRIPTION.en_us.html
 %%PORTDOCS%%%%DOCSDIR%%/revalia/FONTLOG.txt
 %%PORTDOCS%%%%DOCSDIR%%/revalia/OFL.txt
