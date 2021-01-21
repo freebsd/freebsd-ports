@@ -1,11 +1,12 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
 
-PORTNAME=	Sablot
+PORTNAME=	sablotron
 PORTVERSION=	1.0.3
 PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/sablotron/sablotron-${PORTVERSION}
+DISTNAME=	Sablot-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML toolkit implementing XSLT 1.0, XPath 1.0 and DOM Level2
@@ -25,10 +26,10 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DEBUGGER DISABLE_META DOCS DOCUMENT_ERRORS DOM
 
-DEBUGGER_DESC=		Enable debugger
-DISABLE_META_DESC=	Do not output the META html tag
+DEBUGGER_DESC=		Build with XSLT debugger
+DISABLE_META_DESC=	Do not output the META HTML tag
 DOCUMENT_ERRORS_DESC=	Allow document errors
-DOM_DESC=		Use DOM
+DOM_DESC=		Build with the DOM interface
 
 OPTIONS_DEFAULT=	DOM DOCUMENT_ERRORS
 
