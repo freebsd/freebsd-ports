@@ -14,6 +14,9 @@ COMMENT=	Joystick support for Kodi
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Depends on deprecated multimedia/kodi-devel
+EXPIRATION_DATE=2021-02-28
+
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/joystick.h:devel/evdev-proto \
 		kodi-devel>=19.0.a20201006:multimedia/kodi-devel
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \

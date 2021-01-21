@@ -14,6 +14,9 @@ COMMENT=	Adaptive stream support for Kodi
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
+DEPRECATED=	Depends on deprecated multimedia/kodi-devel
+EXPIRATION_DATE=2021-02-28
+
 BUILD_DEPENDS=	kodi-devel>=19.0.a20200727:multimedia/kodi-devel
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 RUN_DEPENDS=	kodi-devel>=19.0.a20200727:multimedia/kodi-devel

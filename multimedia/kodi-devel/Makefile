@@ -11,6 +11,9 @@ COMMENT=	Award winning media center application
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Deprecated. Please use multimedia/kodi instead.
+EXPIRATION_DATE=2021-02-28
+
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	flatbuffers>=0:devel/flatbuffers \

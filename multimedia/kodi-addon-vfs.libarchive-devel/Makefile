@@ -13,6 +13,9 @@ COMMENT=	VFS addon for Kodi to access archives directly
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Depends on deprecated multimedia/kodi-devel
+EXPIRATION_DATE=2021-02-28
+
 BUILD_DEPENDS=	kodi-devel>=19.0.a20201006:multimedia/kodi-devel
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		liblzo2.so:archivers/lzo2
