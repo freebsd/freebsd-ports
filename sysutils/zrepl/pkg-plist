@@ -1,12 +1,15 @@
 bin/zrepl
 @sample %%ETCDIR%%/zrepl.yml.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hooks/template.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grafana-prometheus-zrepl-0.1.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grafana-prometheus-zrepl.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/local.yml
 @sample %%EXAMPLESDIR%%/newsyslog.conf etc/newsyslog.conf.d/zrepl.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pull.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pull_ssh.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/push.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstart_backup_to_external_disk.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstart_continuous_server_backup_receiver.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstart_continuous_server_backup_sender.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sink.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/snap.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/source.yml
