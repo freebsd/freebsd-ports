@@ -13,6 +13,9 @@ COMMENT=	Subtitle editor with video preview
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	outdated, depends on deprecated library www/gtkhtml3
+EXPIRATION_DATE=	2021-03-31
+
 LIB_DEPENDS=	libenchant.so:textproc/enchant \
 		libgtkspell.so:textproc/gtkspell
 
