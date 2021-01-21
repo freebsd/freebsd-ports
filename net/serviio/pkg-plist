@@ -54,4 +54,5 @@
 @sample %%ETCDIR%%/console-log4j.properties.sample
 @sample %%ETCDIR%%/log4j.xml.sample
 @sample %%ETCDIR%%/profiles.xml.sample
+@sample %%ETCDIR%%/serviio.jks.sample
 sbin/serviiod

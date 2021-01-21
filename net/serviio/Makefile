@@ -3,7 +3,7 @@
 
 PORTNAME=	serviio
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	https://download.serviio.org/releases/
 EXTRACT_SUFX=	-linux.tar.gz
@@ -39,6 +39,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config/$f.xml \
 		${STAGEDIR}${ETCDIR}/$f.xml.sample
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/config/serviio.jks \
+		${STAGEDIR}${ETCDIR}/serviio.jks.sample
 	${INSTALL_DATA} ${FILESDIR}/console-log4j.properties	\
 		${STAGEDIR}${ETCDIR}/console-log4j.properties.sample
 	${INSTALL_SCRIPT} ${WRKDIR}/serviiod ${STAGEDIR}${PREFIX}/sbin
