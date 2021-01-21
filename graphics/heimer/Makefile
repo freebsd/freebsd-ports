@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	heimer
-DISTVERSION=	1.21.0
+DISTVERSION=	2.2.0
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ed.arrakis@gmail.com
 COMMENT=	Simple mind map, diagram, and note-taking tool
 
 LICENSE=	CC-BY-SA-3.0 GPLv3+
@@ -19,13 +19,26 @@ USE_QT=		core gui svg widgets xml buildtools_build linguisttools_build \
 		qmake_build testlib_build
 TEST_TARGET=	test
 
-OPTIONS_DEFINE=	EXAMPLES
+PORTDOCS=	README.md
+PORTEXAMPLES=	examples/*.alz
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+EXAMPLES_PLIST_FILES=	\
+	${EXAMPLESDIR}/Company.alz \
+	${EXAMPLESDIR}/Family.alz \
+	${EXAMPLESDIR}/Heimer.alz \
+	${EXAMPLESDIR}/Large.alz
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+
+do-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/heimer
-
-post-install-EXAMPLES-on:
-	cd ${WRKSRC}/examples && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
