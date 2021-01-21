@@ -1,0 +1,20 @@
+--- misc/ncurses-config.in.orig	2021-01-20 15:29:14 UTC
++++ misc/ncurses-config.in
+@@ -151,7 +151,7 @@ while [ $# -gt 0 ]; do
+ 		if [ "x@WITH_OVERWRITE@" = xno ]; then
+ 			INCS="$INCS -I${includesubdir}"
+ 		fi
+-		if [ "${includedir}" != /usr/include ]; then
++		if [ "${includedir}" != %%PREFIX%%/include ]; then
+ 			INCS="$INCS -I${includedir}"
+ 		fi
+ 		sed -e 's,^[ ]*,,' -e 's, [ ]*, ,g' -e 's,[ ]*$,,' <<-ENDECHO
+@@ -229,7 +229,7 @@ ENDECHO
+ 		INCS=
+ 		if [ "x@WITH_OVERWRITE@" = xno ]; then
+ 			INCS="${includesubdir}"
+-		elif [ "${includedir}" != /usr/include ]; then
++		elif [ "${includedir}" != %%PREFIX%%/include ]; then
+ 			INCS="${includedir}"
+ 		fi
+ 		echo $INCS
