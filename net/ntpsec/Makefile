@@ -3,6 +3,7 @@
 PORTNAME=	ntpsec
 DISTVERSIONPREFIX=	NTPsec_
 DISTVERSION=	1_2_0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,9 +15,10 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 
 USES=		bison gettext-runtime pkgconfig python shebangfix ssl waf
-SHEBANG_FILES=	${WRKSRC}/ntpclients/ntp*.py
 USE_GITHUB=	yes
+USE_LDCONFIG=	${PREFIX}/lib/ntp
 
+SHEBANG_FILES=	${WRKSRC}/ntpclients/ntp*.py
 python_OLD_CMD=	@PYSHEBANG@
 
 CONFLICTS=	ntp ntp-devel openntpd
