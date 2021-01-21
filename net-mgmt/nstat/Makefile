@@ -11,7 +11,9 @@ COMMENT=	Replacement for bw/netstat/vmstat/pcm-memory.x
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	pcm.x:sysutils/intel-pcm
+RUN_DEPENDS=	${RUN_DEPENDS_${ARCH}}
+RUN_DEPENDS_i386=	pcm.x:sysutils/intel-pcm
+RUN_DEPENDS_amd64=	pcm.x:sysutils/intel-pcm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gallatin
