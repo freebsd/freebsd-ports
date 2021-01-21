@@ -2,6 +2,7 @@ include/mtx.hpp
 include/mtx/common.hpp
 include/mtx/errors.hpp
 include/mtx/events.hpp
+include/mtx/events/account_data/fully_read.hpp
 include/mtx/events/aliases.hpp
 include/mtx/events/avatar.hpp
 include/mtx/events/canonical_alias.hpp
@@ -10,6 +11,9 @@ include/mtx/events/common.hpp
 include/mtx/events/create.hpp
 include/mtx/events/encrypted.hpp
 include/mtx/events/encryption.hpp
+include/mtx/events/ephemeral/receipt.hpp
+include/mtx/events/ephemeral/typing.hpp
+include/mtx/events/event_type.hpp
 include/mtx/events/guest_access.hpp
 include/mtx/events/history_visibility.hpp
 include/mtx/events/join_rules.hpp
@@ -22,6 +26,7 @@ include/mtx/events/messages/notice.hpp
 include/mtx/events/messages/text.hpp
 include/mtx/events/messages/video.hpp
 include/mtx/events/name.hpp
+include/mtx/events/nheko_extensions/hidden_events.hpp
 include/mtx/events/pinned_events.hpp
 include/mtx/events/power_levels.hpp
 include/mtx/events/presence.hpp
@@ -30,7 +35,11 @@ include/mtx/events/redaction.hpp
 include/mtx/events/tag.hpp
 include/mtx/events/tombstone.hpp
 include/mtx/events/topic.hpp
+include/mtx/events/unknown.hpp
+include/mtx/events/voip.hpp
+include/mtx/events_impl.hpp
 include/mtx/identifiers.hpp
+include/mtx/lightweight_error.hpp
 include/mtx/log.hpp
 include/mtx/pushrules.hpp
 include/mtx/requests.hpp
@@ -45,16 +54,20 @@ include/mtx/responses/media.hpp
 include/mtx/responses/messages.hpp
 include/mtx/responses/notifications.hpp
 include/mtx/responses/profile.hpp
+include/mtx/responses/public_rooms.hpp
 include/mtx/responses/register.hpp
 include/mtx/responses/sync.hpp
+include/mtx/responses/turn_server.hpp
 include/mtx/responses/version.hpp
 include/mtx/responses/well-known.hpp
+include/mtx/secret_storage.hpp
 include/mtx/user_interactive.hpp
 include/mtxclient/crypto/client.hpp
 include/mtxclient/crypto/objects.hpp
 include/mtxclient/crypto/types.hpp
 include/mtxclient/crypto/utils.hpp
 include/mtxclient/http/client.hpp
+include/mtxclient/http/client_impl.hpp
 include/mtxclient/http/errors.hpp
 include/mtxclient/http/session.hpp
 include/mtxclient/utils.hpp
@@ -63,4 +76,4 @@ lib/cmake/MatrixClient/MatrixClientConfigVersion.cmake
 lib/cmake/MatrixClient/MatrixClientTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/MatrixClient/MatrixClientTargets.cmake
 lib/libmatrix_client.so
-lib/libmatrix_client.so.0.3.1
+lib/libmatrix_client.so.%%SOVER%%

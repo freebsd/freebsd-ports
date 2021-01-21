@@ -2,8 +2,7 @@
 
 PORTNAME=	nheko
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.7.2
-PORTREVISION=	3
+DISTVERSION=	0.8.0
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -15,18 +14,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	nlohmann-json>=3:devel/nlohmann-json
 # All those boost-libs are pulled in through mtxclient, which
 # links to them but stage-qa still complains.
-LIB_DEPENDS=	liblmdb.so:databases/lmdb \
-		libfmt.so:devel/libfmt \
-		libmatrix_client.so:net-im/mtxclient \
-		libsodium.so:security/libsodium \
-		libolm.so:security/olm \
-		libcmark.so:textproc/cmark \
-		libboost_date_time.so:devel/boost-libs \
+LIB_DEPENDS=	\
 		libboost_chrono.so:devel/boost-libs \
+		libboost_date_time.so:devel/boost-libs \
 		libboost_iostreams.so:devel/boost-libs \
 		libboost_regex.so:devel/boost-libs \
 		libboost_system.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs \
+		libcmark.so:textproc/cmark \
+		libfmt.so:devel/libfmt \
+		liblmdb.so:databases/lmdb \
+		libmatrix_client.so:net-im/mtxclient \
+		libolm.so:security/olm \
+		libqt5keychain.so:security/qtkeychain \
 		libspdlog.so:devel/spdlog
 
 USES=		cmake compiler:c++17-lang pkgconfig \
