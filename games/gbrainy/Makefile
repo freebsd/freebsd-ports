@@ -13,6 +13,9 @@ COMMENT=	Brain teaser game and trainer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	outdated, depends on deprecated library www/gtkhtml3
+EXPIRATION_DATE=	2021-03-31
+
 BUILD_DEPENDS=	mautil:devel/mono-addins \
 		${LOCALBASE}/bin/bash:shells/bash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
