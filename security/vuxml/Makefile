@@ -50,6 +50,9 @@ do-test:
 	@${CP} ${.CURDIR}/vuln.xml ${WRKDIR}/test
 	@cd ${.CURDIR} && make validate PKGDIR=${WRKDIR}/test
 
+vuln-flat.xml: vuln.xml
+	xmllint -noent ${.ALLSRC} > ${.TARGET}
+
 validate: tidy
 	@${SH} ${FILESDIR}/validate.sh "${VUXML_FILE}"
 	@${ECHO_MSG} Checking if tidy differs...
