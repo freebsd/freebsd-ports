@@ -1,0 +1,97 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: %%PORTNAME%%
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
+#
+# Add these following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# %%PORTNAME%%_enable (bool):         Set it to YES to enable keycloak on startup.
+#                                 Default: NO
+# %%PORTNAME%%_host_config (string):  Choose the host config if running in domain mode (host-master, host-slave).
+#                                 Default: host-master
+# %%PORTNAME%%_mode (string):         Choose the desired operating mode (standalone, standalone-ha, domain).
+#                                 Default: standalone
+# %%PORTNAME%%_user (string):         User account to run with.
+#                                 Default: www
+# %%PORTNAME%%_flags (string):        Additional flags for the startup script.
+#
+
+. /etc/rc.subr
+
+name=%%PORTNAME%%
+rcvar=%%PORTNAME%%_enable
+desc="Identity and access management solution"
+
+load_rc_config $name
+
+: ${%%PORTNAME%%_enable:=NO}
+: ${%%PORTNAME%%_host_config:="host-master"}
+: ${%%PORTNAME%%_mode:=standalone}
+: ${%%PORTNAME%%_user:=%%USER%%}
+: ${%%PORTNAME%%_group:=%%GROUP%%}
+: ${%%PORTNAME%%_flags:=""}
+
+pidfile=%%RUN_DIR%%/%%PORTNAME%%.pid
+command=/usr/sbin/daemon
+command_args="-u ${%%PORTNAME%%_user} -o %%LOG_DIR%%/%%PORTNAME%%.out -t %%PORTNAME%% -R 60 -P ${pidfile}"
+
+start_cmd="%%PORTNAME%%_start"
+stop_cmd="%%PORTNAME%%_stop"
+
+%%PORTNAME%%_start()
+{
+        local %%PORTNAME%%_startscript
+
+        if [ ${%%PORTNAME%%_mode} = "domain" ]; then
+		%%PORTNAME%%_flags="--host-config=${%%PORTNAME%%_host_config} ${%%PORTNAME%%_flags}"
+                %%PORTNAME%%_startscript=domain.sh
+	elif [ ${%%PORTNAME%%_mode} = "standalone-ha" ]; then
+		%%PORTNAME%%_flags="--server-config=standalone-ha.xml ${%%PORTNAME%%_flags}"
+                %%PORTNAME%%_startscript=standalone.sh
+	else
+                %%PORTNAME%%_startscript=standalone.sh
+        fi
+
+	if [ ! -d "%%LOG_DIR%%" ]; then
+		install -d -o ${%%PORTNAME%%_user} %%LOG_DIR%%
+	fi
+	if [ ! -d "%%RUN_DIR%%" ]; then
+		install -d -o ${%%PORTNAME%%_user} %%RUN_DIR%%
+	fi
+
+	chown -R ${%%PORTNAME%%_user} %%LOG_DIR%%
+	chown -R ${%%PORTNAME%%_user} %%JAVASHAREDIR%%/%%PORTNAME%%/domain
+	chown -R ${%%PORTNAME%%_user} %%JAVASHAREDIR%%/%%PORTNAME%%/standalone
+
+	echo "Starting %%PORTNAME%%."
+        ${command} ${command_args} \
+                %%JAVASHAREDIR%%/%%PORTNAME%%/bin/${%%PORTNAME%%_startscript} \
+                ${%%PORTNAME%%_flags}
+}
+
+%%PORTNAME%%_stop()
+{
+    local pid_daemon
+    local pid_child
+
+    echo "Stopping %%PORTNAME%%."
+
+    pid_daemon=$(check_pidfile ${pidfile} ${command})
+    if [ ! -z "${pid_daemon}" ]; then
+        kill -TERM ${pid_daemon}
+    fi
+
+
+    pid_child=$(pgrep -U ${%%PORTNAME%%_user} -f %%JAVASHAREDIR%%/%%PORTNAME%%/jboss-modules.jar)
+    if [ ! -z "${pid_child}" ]; then
+        kill -TERM ${pid_child}
+    fi
+
+    wait_for_pids ${pid_daemon} ${pid_child}
+}
+
+run_rc_command "$1"
