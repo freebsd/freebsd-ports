@@ -74,10 +74,12 @@ share/locale/el/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/en_GB/LC_MESSAGES/diff_ext.mo
 share/locale/en_GB/LC_MESSAGES/kdiff3.mo
 share/locale/en_GB/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+share/locale/el/LC_MESSAGES/diff_ext.mo
 share/locale/eo/LC_MESSAGES/kdiff3.mo
 share/locale/es/LC_MESSAGES/diff_ext.mo
 share/locale/es/LC_MESSAGES/kdiff3.mo
 share/locale/es/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+share/locale/et/LC_MESSAGES/diff_ext.mo
 share/locale/et/LC_MESSAGES/kdiff3.mo
 share/locale/et/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/eu/LC_MESSAGES/diff_ext.mo
