@@ -5,7 +5,7 @@ PORTNAME=	qemu
 PORTVERSION=	4.2.1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
-PKGNAMESUFFIX=	42
+PKGNAMESUFFIX?=	42
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER?=	bofh@FreeBSD.org
@@ -21,11 +21,13 @@ LIB_DEPENDS?=	libnettle.so:security/nettle \
 		libpcre2-8.so:devel/pcre2 \
 		libfdt.so:sysutils/dtc
 
+.if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t perl5 \
 		pkgconfig python:build tar:xz xorg
 USE_XORG=	pixman
 USE_GNOME=	cairo glib20 libxml2
+.endif
 
 USE_PERL5=	build
 
@@ -103,9 +105,11 @@ VDE_LIB_DEPENDS=	libvdeplug.so:net/vde2
 X11_CONFIGURE_ENABLE=	sdl
 X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
 X11_USES=	sdl
+.if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
 X86_TARGETS_USE_OFF=	XORG=pixman,x11
 X86_TARGETS_USES_OFF=	xorg
 INSTALLS_ICONS=		yes
+.endif
 
 PORTDOCS?=	docs interop/.buildinfo interop/* qemu-doc.html qemu-doc.txt qemu-ga-ref.html qemu-ga-ref.txt \
 	       	qemu-qmp-ref.html qemu-qmp-ref.txt specs/.buildinfo specs/*
