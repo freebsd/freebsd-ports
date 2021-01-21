@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	django-cors-headers
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj31-
@@ -12,7 +12,7 @@ COMMENT=	Handles server headers required for Cross-Origin Resource Sharing
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django31>=2.0:www/py-django31@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django31>=2.2:www/py-django31@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
