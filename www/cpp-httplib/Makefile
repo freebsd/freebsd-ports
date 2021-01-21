@@ -26,14 +26,22 @@ PLIST_FILES=	include/httplib.h \
 		lib/cmake/httplib/httplibConfigVersion.cmake \
 		lib/cmake/httplib/httplibTargets.cmake
 
-OPTIONS_DEFINE=		BROTLI SSL
-OPTIONS_DEFAULT=	BROTLI SSL
+OSVERSION!=	awk '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${CROSS_SYSROOT}/usr/include/sys/param.h # needed for options, so including bsd.port.options.mk is impossible
+
+OPTIONS_DEFINE=		BROTLI
+OPTIONS_DEFAULT=	BROTLI
+.if ${OSVERSION} >= 1200000
+OPTIONS_DEFINE+=	SSL # fails on 11: Found unsuitable version "1.0.2u", but required is at least "1.1.1"
+OPTIONS_DEFAULT+=	SSL
+.endif
 
 BROTLI_CMAKE_BOOL=	HTTPLIB_REQUIRE_BROTLI HTTPLIB_USE_BROTLI_IF_AVAILABLE
 BROTLI_BUILD_DEPENDS=	brotli>0:archivers/brotli
 BROTLI_RUN_DEPENDS=	brotli>0:archivers/brotli
 
+.if ${OSVERSION} >= 1200000
 SSL_USES=		ssl
 SSL_CMAKE_BOOL=		HTTPLIB_REQUIRE_OPENSSL HTTPLIB_USE_OPENSSL_IF_AVAILABLE
+.endif
 
 .include <bsd.port.mk>
