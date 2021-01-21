@@ -1,6 +1,6 @@
-TIMESTAMP = 1608652728
-SHA256 (tomwright-dasel-v1.10.0_GH0.tar.gz) = aa11c72a411cee897184a9fc3a227878307ffb3b2fe8b5ba5ac47e08ea8d9e9d
-SIZE (tomwright-dasel-v1.10.0_GH0.tar.gz) = 2689590
+TIMESTAMP = 1611246360
+SHA256 (tomwright-dasel-v1.12.2_GH0.tar.gz) = e0f6f9e43265ee385d8bea08c662e7d985fdc8169fd88589c27e6019e6c37a31
+SIZE (tomwright-dasel-v1.12.2_GH0.tar.gz) = 2922845
 SHA256 (clbanning-mxj-e937bdee5a3e_GH0.tar.gz) = dbf6c8c7110b9bffc4dec175aac439b1d25120f1002e656d0d030d3ddf57abdd
 SIZE (clbanning-mxj-e937bdee5a3e_GH0.tar.gz) = 1096313
 SHA256 (go-yaml-yaml-v2.2.2_GH0.tar.gz) = 42c3e4ef9eca2860d22b3c6c5582c6c13fb4b417e5ebc1acc56ee5e2c4ddcaff
