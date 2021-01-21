@@ -1,6 +1,7 @@
 bin/cutelyst-wsgi2
 bin/cutelyst2
 include/cutelyst2-qt5/Cutelyst/Action
+include/cutelyst2-qt5/Cutelyst/ActionChain
 include/cutelyst2-qt5/Cutelyst/Application
 include/cutelyst2-qt5/Cutelyst/Component
 include/cutelyst2-qt5/Cutelyst/Context
@@ -94,6 +95,7 @@ include/cutelyst2-qt5/Cutelyst/Upload
 include/cutelyst2-qt5/Cutelyst/View
 include/cutelyst2-qt5/Cutelyst/WSGI/wsgi.h
 include/cutelyst2-qt5/Cutelyst/action.h
+include/cutelyst2-qt5/Cutelyst/actionchain.h
 include/cutelyst2-qt5/Cutelyst/application.h
 include/cutelyst2-qt5/Cutelyst/async.h
 include/cutelyst2-qt5/Cutelyst/component.h
