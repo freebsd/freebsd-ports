@@ -1,0 +1,10 @@
+bin/oauth2-proxy
+@owner www
+@group www
+@mode 600
+@sample %%ETCDIR%%.cfg.sample
+@mode
+@dir /var/log/oauth2-proxy
+@dir /var/run/oauth2-proxy
+@owner
+@group

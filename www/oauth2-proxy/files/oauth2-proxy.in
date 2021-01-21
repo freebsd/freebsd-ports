@@ -1,0 +1,79 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: oauth2_proxy
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
+#
+# Add these following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# oauth2_proxy_enable (bool):         Set it to YES to enable keycloak on startup.
+#                                 Default: NO
+# oauth2_proxy_user (string):         User account to run with.
+#                                 Default: www
+# oauth2_proxy_flags (string):        Additional flags for the startup script.
+#
+
+. /etc/rc.subr
+
+name=oauth2_proxy
+rcvar=oauth2_proxy_enable
+desc="OAuth 2.0 proxy server"
+
+load_rc_config $name
+
+: ${oauth2_proxy_enable:=NO}
+: ${oauth2_proxy_user:=%%USER%%}
+: ${oauth2_proxy_group:=%%GROUP%%}
+: ${oauth2_proxy_flags:=""}
+: ${oauth2_proxy_restart:=60}
+
+pidfile=%%RUN_DIR%%/%%PORTNAME%%.pid
+command=/usr/sbin/daemon
+command_args="-u ${oauth2_proxy_user} -o %%LOG_DIR%%/%%PORTNAME%%.out -t %%PORTNAME%% -R ${oauth2_proxy_restart} -P ${pidfile}"
+
+start_cmd="oauth2_proxy_start"
+stop_cmd="oauth2_proxy_stop"
+
+oauth2_proxy_start()
+{
+	if [ ! -d "%%LOG_DIR%%" ]; then
+		install -d -o ${oauth2_proxy_user} %%LOG_DIR%%
+	fi
+	if [ ! -d "%%RUN_DIR%%" ]; then
+		install -d -o ${oauth2_proxy_user} %%RUN_DIR%%
+	fi
+
+	chown -R ${oauth2_proxy_user} %%LOG_DIR%%
+
+	echo "Starting %%PORTNAME%%."
+        ${command} ${command_args} \
+                %%PREFIX%%/bin/%%PORTNAME%% \
+                --config %%PREFIX%%/etc/%%PORTNAME%%.cfg \
+                ${oauth2_proxy_flags}
+}
+
+oauth2_proxy_stop()
+{
+    local pid_daemon
+    local pid_child
+
+    echo "Stopping %%PORTNAME%%."
+
+    pid_daemon=$(check_pidfile ${pidfile} ${command})
+    if [ ! -z "${pid_daemon}" ]; then
+        kill -TERM ${pid_daemon}
+    fi
+
+
+    pid_child=$(pgrep -U ${oauth2_proxy_user} -f %%PREFIX%%/bin/%%PORTNAME%%)
+    if [ ! -z "${pid_child}" ]; then
+        kill -TERM ${pid_child}
+    fi
+
+    wait_for_pids ${pid_daemon} ${pid_child}
+}
+
+run_rc_command "$1"

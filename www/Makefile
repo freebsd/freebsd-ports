@@ -468,6 +468,7 @@
     SUBDIR += npm-node12
     SUBDIR += npm-node14
     SUBDIR += nspluginwrapper
+    SUBDIR += oauth2-proxy
     SUBDIR += obhttpd
     SUBDIR += oneshot
     SUBDIR += onionbalance
