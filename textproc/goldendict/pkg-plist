@@ -19,8 +19,10 @@ share/pixmaps/goldendict.png
 %%DATADIR%%/locale/fa_IR.qm
 %%DATADIR%%/locale/fi_FI.qm
 %%DATADIR%%/locale/fr_FR.qm
+%%DATADIR%%/locale/ie_001.qm
 %%DATADIR%%/locale/it_IT.qm
 %%DATADIR%%/locale/ja_JP.qm
+%%DATADIR%%/locale/jb_JB.qm
 %%DATADIR%%/locale/ko_KR.qm
 %%DATADIR%%/locale/lt_LT.qm
 %%DATADIR%%/locale/mk_MK.qm
