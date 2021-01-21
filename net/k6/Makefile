@@ -2,7 +2,7 @@
 
 PORTNAME=	k6
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29.0
+DISTVERSION=	0.30.0
 CATEGORIES=	net
 
 MAINTAINER=	vulcan@wired.sh
@@ -24,9 +24,9 @@ GH_TUPLE=	Azure:go-ntlmssp:4a21cbd618b4:azure_go_ntlmssp/vendor/github.com/Azure
 		andybalholm:brotli:71eb68cc467c:andybalholm_brotli/vendor/github.com/andybalholm/brotli \
 		andybalholm:cascadia:v1.0.0:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
 		daaku:go.zipexe:a5fe2436ffcb:daaku_go_zipexe/vendor/github.com/daaku/go.zipexe \
-		davecgh:go-spew:v1.1.0:davecgh_go_spew_1/vendor/github.com/davecgh/go-spew \
-		dlclark:regexp2:346446b5b182:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
-		dop251:goja:e21ccf39bfce:dop251_goja/vendor/github.com/dop251/goja \
+		davecgh:go-spew:v1.1.0:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		dlclark:regexp2:a2a8dda75c91:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
+		dop251:goja:952c20e23c35:dop251_goja/vendor/github.com/dop251/goja \
 		dustin:go-humanize:bb3d318650d4:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		eapache:go-resiliency:v1.1.0:eapache_go_resiliency/vendor/github.com/eapache/go-resiliency \
 		eapache:go-xerial-snappy:bb955e01b934:eapache_go_xerial_snappy/vendor/github.com/eapache/go-xerial-snappy \
@@ -39,14 +39,14 @@ GH_TUPLE=	Azure:go-ntlmssp:4a21cbd618b4:azure_go_ntlmssp/vendor/github.com/Azure
 		go-playground:assert:v1.2.1:go_playground_assert/vendor/gopkg.in/go-playground/assert.v1 \
 		go-playground:validator:v8.18.2:go_playground_validator/vendor/gopkg.in/go-playground/validator.v8 \
 		go-sourcemap:sourcemap:v2.1.3:go_sourcemap_sourcemap/vendor/github.com/go-sourcemap/sourcemap \
-		go-yaml:yaml:v2.1.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:c7dcf104e3a7:golang_crypto/vendor/golang.org/x/crypto \
+		go-yaml:yaml:v2.1.1:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:gddo:af0f2af80721:golang_gddo/vendor/github.com/golang/gddo \
-		golang:net:351d144fa1fc:golang_net/vendor/golang.org/x/net \
+		golang:net:a5fa9d4b7c91:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:553a64147049:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:fe76b779f299:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.0:golang_text_1/vendor/golang.org/x/text \
+		golang:sys:fdedc70b468f:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.0:golang_text/vendor/golang.org/x/text \
 		golang:time:6dc17368e09b:golang_time/vendor/golang.org/x/time \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.1:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -101,7 +101,7 @@ GH_TUPLE=	Azure:go-ntlmssp:4a21cbd618b4:azure_go_ntlmssp/vendor/github.com/Azure
 		zyedidia:highlight:201131ce5cf5:zyedidia_highlight/vendor/github.com/zyedidia/highlight
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
-_BUILD_HASH=	d9bced3
+_BUILD_HASH=	2193de0
 
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
