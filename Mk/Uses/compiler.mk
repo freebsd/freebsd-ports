@@ -171,8 +171,11 @@ CHOSEN_COMPILER_TYPE=	gcc
 .endif
 .endif
 
-.if ${_COMPILER_ARGS:Mc++17-lang}
-.if !${COMPILER_FEATURES:Mc++17}
+.if (${_COMPILER_ARGS:Mc++17-lang} && !${COMPILER_FEATURES:Mc++17}) || \
+(${_COMPILER_ARGS:Mc++14-lang} && !${COMPILER_FEATURES:Mc++14}) || \
+(${_COMPILER_ARGS:Mc++11-lang} && !${COMPILER_FEATURES:Mc++11}) || \
+(${_COMPILER_ARGS:Mc++0x} && !${COMPILER_FEATURES:Mc++0x}) || \
+(${_COMPILER_ARGS:Mc11} && !${COMPILER_FEATURES:Mc11})
 .if (defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc) || (${ARCH} != amd64 && ${ARCH} != i386) # clang not always supported on Tier-2
 USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
@@ -183,100 +186,11 @@ CC=	clang
 CXX=	clang++
 CHOSEN_COMPILER_TYPE=	clang
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang60:devel/llvm60
-CPP=	${LOCALBASE}/bin/clang-cpp60
-CC=	${LOCALBASE}/bin/clang60
-CXX=	${LOCALBASE}/bin/clang++60
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang10:devel/llvm10
+CPP=	${LOCALBASE}/bin/clang-cpp10
+CC=	${LOCALBASE}/bin/clang10
+CXX=	${LOCALBASE}/bin/clang++10
 CHOSEN_COMPILER_TYPE=	clang
-.endif
-.endif
-.endif
-.endif
-
-.if ${_COMPILER_ARGS:Mc++14-lang}
-.if !${COMPILER_FEATURES:Mc++14}
-.if (defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc) || (${ARCH} != amd64 && ${ARCH} != i386) # clang not always supported on Tier-2
-USE_GCC=	yes
-CHOSEN_COMPILER_TYPE=	gcc
-.elif ${COMPILER_TYPE} == gcc
-.if ${ALT_COMPILER_TYPE} == clang
-CPP=	clang-cpp
-CC=	clang
-CXX=	clang++
-CHOSEN_COMPILER_TYPE=	clang
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang60:devel/llvm60
-CPP=	${LOCALBASE}/bin/clang-cpp60
-CC=	${LOCALBASE}/bin/clang60
-CXX=	${LOCALBASE}/bin/clang++60
-CHOSEN_COMPILER_TYPE=	clang
-.endif
-.endif
-.endif
-.endif
-
-.if ${_COMPILER_ARGS:Mc++11-lang}
-.if !${COMPILER_FEATURES:Mc++11}
-.if (defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc) || (${ARCH} != amd64 && ${ARCH} != i386) # clang not always supported on Tier-2
-USE_GCC=	yes
-CHOSEN_COMPILER_TYPE=	gcc
-.elif ${COMPILER_TYPE} == gcc
-.if ${ALT_COMPILER_TYPE} == clang
-CPP=	clang-cpp
-CC=	clang
-CXX=	clang++
-CHOSEN_COMPILER_TYPE=	clang
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang60:devel/llvm60
-CPP=	${LOCALBASE}/bin/clang-cpp60
-CC=	${LOCALBASE}/bin/clang60
-CXX=	${LOCALBASE}/bin/clang++60
-CHOSEN_COMPILER_TYPE=	clang
-.endif
-.endif
-.endif
-.endif
-
-.if ${_COMPILER_ARGS:Mc++0x}
-.if !${COMPILER_FEATURES:Mc++0x}
-.if (defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc) || (${ARCH} != amd64 && ${ARCH} != i386) # clang not always supported on Tier-2
-USE_GCC=	yes
-CHOSEN_COMPILER_TYPE=	gcc
-.elif ${COMPILER_TYPE} == gcc
-.if ${ALT_COMPILER_TYPE} == clang
-CPP=	clang-cpp
-CC=	clang
-CXX=	clang++
-CHOSEN_COMPILER_TYPE=	clang
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang60:devel/llvm60
-CHOSEN_COMPILER_TYPE=	clang
-CPP=	${LOCALBASE}/bin/clang-cpp60
-CC=	${LOCALBASE}/bin/clang60
-CXX=	${LOCALBASE}/bin/clang++60
-.endif
-.endif
-.endif
-.endif
-
-.if ${_COMPILER_ARGS:Mc11}
-.if !${COMPILER_FEATURES:Mc11}
-.if (defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc) || (${ARCH} != amd64 && ${ARCH} != i386) # clang not always supported on Tier-2
-USE_GCC=	yes
-CHOSEN_COMPILER_TYPE=	gcc
-.elif ${COMPILER_TYPE} == gcc
-.if ${ALT_COMPILER_TYPE} == clang
-CPP=	clang-cpp
-CC=	clang
-CXX=	clang++
-CHOSEN_COMPILER_TYPE=	clang
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/bin/clang60:devel/llvm60
-CHOSEN_COMPILER_TYPE=	clang
-CPP=	${LOCALBASE}/bin/clang-cpp60
-CC=	${LOCALBASE}/bin/clang60
-CXX=	${LOCALBASE}/bin/clang++60
-.endif
 .endif
 .endif
 .endif
