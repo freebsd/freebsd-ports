@@ -10,16 +10,23 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}_source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple CD catalog for GNOME
 
-BUILD_DEPENDS=	sqlite3>=3.0:databases/sqlite3
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
+DEPRECATED=	Unmaintained and dead upstream (12+ years) depends on \
+		deprecated libraries as www/gtkhtml3.
+
+EXPIRATION_DATE=2021-02-12
+
+BUILD_DEPENDS=	sqlite3>=3.0:databases/sqlite3
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 USES=		gettext gmake gnome localbase mono pathfix pkgconfig tar:bzip2
 USE_GNOME=	gnomeprefix intlhack libgnome gnomesharp20
 GCONF_SCHEMAS=	cdcollect.schemas
+
+GNU_CONFIGURE=	yes
+
 NO_ARCH=	yes
 
 post-extract:
