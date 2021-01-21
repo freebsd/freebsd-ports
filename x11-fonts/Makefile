@@ -21,6 +21,7 @@
     SUBDIR += artwiz-fonts
     SUBDIR += averiagwf
     SUBDIR += b612
+    SUBDIR += bdf2sfd
     SUBDIR += bdfresize
     SUBDIR += bdftopcf
     SUBDIR += bitstream-vera
