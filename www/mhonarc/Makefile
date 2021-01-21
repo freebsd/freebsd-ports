@@ -2,17 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	mhonarc
-PORTVERSION=	2.6.18
-PORTREVISION=	2
+PORTVERSION=	2.6.24
 CATEGORIES=	www mail
-MASTER_SITES=	http://www.mhonarc.org/release/MHonArc/tar/ \
-		http://www.oac.uci.edu/indiv/ehood/tar/
-DISTNAME=	MHonArc-${PORTVERSION}
 
 MAINTAINER=	kerndtr@kerndt.com
 COMMENT=	WWW front end for mail archives
 
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		tar:bzip2 perl5
+USE_GITHUB=	YES
+GH_ACCOUNT=	sympa-community
+GH_PROJECT=	MHonArc
+
 NO_BUILD=	yes
 NO_ARCH=	yes
 
