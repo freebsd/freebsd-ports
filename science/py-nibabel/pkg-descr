@@ -1,0 +1,11 @@
+This package provides read +/- write access to some common medical and
+neuroimaging file formats, including: ANALYZE (plain, SPM99, SPM2 and later),
+GIFTI, NIfTI1, NIfTI2, CIFTI-2, MINC1, MINC2, AFNI BRIK/HEAD, MGH and ECAT as
+well as Philips PAR/REC. We can read and write FreeSurfer geometry, annotation
+and morphometry files. There is some very limited support for DICOM. NiBabel is
+the successor of PyNIfTI.
+
+The various image format classes give full or selective access to header (meta)
+information and access to the image data is made available via NumPy arrays.
+
+WWW: https://nipy.org/nibabel/
