@@ -14,8 +14,10 @@ bin/idevicenotificationproxy
 bin/idevicepair
 bin/ideviceprovision
 bin/idevicescreenshot
+bin/idevicesetlocation
 bin/idevicesyslog
 include/libimobiledevice/afc.h
+include/libimobiledevice/companion_proxy.h
 include/libimobiledevice/debugserver.h
 include/libimobiledevice/diagnostics_relay.h
 include/libimobiledevice/file_relay.h
@@ -26,10 +28,12 @@ include/libimobiledevice/libimobiledevice.h
 include/libimobiledevice/lockdown.h
 include/libimobiledevice/misagent.h
 include/libimobiledevice/mobile_image_mounter.h
+include/libimobiledevice/mobileactivation.h
 include/libimobiledevice/mobilebackup.h
 include/libimobiledevice/mobilebackup2.h
 include/libimobiledevice/mobilesync.h
 include/libimobiledevice/notification_proxy.h
+include/libimobiledevice/preboard.h
 include/libimobiledevice/property_list_service.h
 include/libimobiledevice/restore.h
 include/libimobiledevice/sbservices.h
@@ -37,10 +41,10 @@ include/libimobiledevice/screenshotr.h
 include/libimobiledevice/service.h
 include/libimobiledevice/syslog_relay.h
 include/libimobiledevice/webinspector.h
-lib/libimobiledevice.a
-lib/libimobiledevice.so
-lib/libimobiledevice.so.6
-lib/libimobiledevice.so.6.0.0
+lib/libimobiledevice-1.0.a
+lib/libimobiledevice-1.0.so
+lib/libimobiledevice-1.0.so.6
+lib/libimobiledevice-1.0.so.6.0.0
 libdata/pkgconfig/libimobiledevice-1.0.pc
 man/man1/idevice_id.1.gz
 man/man1/idevicebackup.1.gz
@@ -58,4 +62,5 @@ man/man1/idevicenotificationproxy.1.gz
 man/man1/idevicepair.1.gz
 man/man1/ideviceprovision.1.gz
 man/man1/idevicescreenshot.1.gz
+man/man1/idevicesetlocation.1.gz
 man/man1/idevicesyslog.1.gz

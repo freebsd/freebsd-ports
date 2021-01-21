@@ -3,7 +3,7 @@
 
 PORTNAME=	clementine
 DISTVERSION=	1.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-player
 
@@ -167,9 +167,9 @@ GOOGLE_DRIVE_CMAKE_ON=	-DENABLE_GOOGLE_DRIVE=ON
 GOOGLE_DRIVE_CMAKE_OFF=	-DENABLE_GOOGLE_DRIVE=OFF
 
 GPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod \
-			libplist.so:devel/libplist \
-			libusbmuxd.so:comms/libusbmuxd \
-			libimobiledevice.so:comms/libimobiledevice
+			libplist-2.0.so:devel/libplist \
+			libusbmuxd-2.0.so:comms/libusbmuxd \
+			libimobiledevice-1.0.so:comms/libimobiledevice
 GPOD_CMAKE_ON=		-DENABLE_LIBGPOD=ON
 GPOD_CMAKE_OFF=		-DENABLE_LIBGPOD=OFF
 

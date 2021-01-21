@@ -3,6 +3,7 @@
 
 PORTNAME=	forked-daapd
 DISTVERSION=	27.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/ejurgensen/forked-daapd/releases/download/${DISTVERSION}/
 
@@ -23,7 +24,7 @@ LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libjson-c.so:devel/json-c \
 		libinotify.so:devel/libinotify \
 		libmxml.so:textproc/mxml \
-		libplist.so:devel/libplist \
+		libplist-2.0.so:devel/libplist \
 		libsodium.so:security/libsodium \
 		libunistring.so:devel/libunistring \
 		libwebsockets.so:net/libwebsockets

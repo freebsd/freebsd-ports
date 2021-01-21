@@ -1,17 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	libusbmuxd
-PORTVERSION=	1.0.10
+PORTVERSION=	2.0.2
 CATEGORIES=	comms
-MASTER_SITES=	http://www.libimobiledevice.org/downloads/
+MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Communication interface library for usbmuxd
 
-LICENSE=	LGPL21 LGPL3
-LICENSE_COMB=	dual
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libplist.so:devel/libplist
+LIB_DEPENDS=	libplist-2.0.so:devel/libplist
 
 CONFLICTS_INSTALL=usbmuxd-1.0.[6-8]
 
@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS README
+PORTDOCS=	AUTHORS README.md
 
 OPTIONS_DEFINE=	DOCS INOTIFY
 

@@ -2,6 +2,7 @@
 
 PORTNAME=	kodi
 DISTVERSION=	19.0RC1
+PORTREVISION=	1
 CATEGORIES=	multimedia java
 
 MAINTAINER=	yzrh@noema.org
@@ -122,7 +123,7 @@ SSE4_2_DESC=	Use SSE4.2 optimized routines
 AVX_DESC=	Use AVX optimized routines
 AVX2_DESC=	Use AVX2 optimized routines
 
-AIRPLAY_LIB_DEPENDS=	libplist.so:devel/libplist \
+AIRPLAY_LIB_DEPENDS=	libplist-2.0.so:devel/libplist \
 			libshairplay.so:audio/shairplay
 AIRPLAY_CMAKE_BOOL=	ENABLE_PLIST \
 			ENABLE_AIRTUNES

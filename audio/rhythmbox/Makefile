@@ -3,7 +3,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	3.4.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -65,8 +65,8 @@ GRILO_RUN_DEPENDS=	grilo-plugins>=0.3.2:net/grilo-plugins
 IPOD_DESC=		iPod support
 IPOD_CONFIGURE_WITH=	ipod
 IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod \
-			libplist.so:devel/libplist \
-			libimobiledevice.so:comms/libimobiledevice
+			libplist-2.0.so:devel/libplist \
+			libimobiledevice-1.0.so:comms/libimobiledevice
 LIRC_CONFIGURE_ENABLE=	lirc
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 MTP_CONFIGURE_WITH=	mtp

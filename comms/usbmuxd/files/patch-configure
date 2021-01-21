@@ -1,0 +1,13 @@
+Remove bash-ism from configure script
+
+--- configure.orig	2021-01-21 13:11:33 UTC
++++ configure
+@@ -16412,7 +16412,7 @@ $as_echo "#define HAVE_LIBIMOBILEDEVICE 1" >>confdefs.
+ 
+ 
+     CACHED_CFLAGS="$CFLAGS"
+-    CFLAGS+=" $libimobiledevice_CFLAGS"
++    CFLAGS="$CFLAGS $libimobiledevice_CFLAGS"
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for enum idevice_connection_type" >&5
+ $as_echo_n "checking for enum idevice_connection_type... " >&6; }
+ if ${ac_cv_enum_idevice_connection_type+:} false; then :

@@ -137,6 +137,7 @@
     SUBDIR += py-adafruit-ampy
     SUBDIR += py-esptool
     SUBDIR += py-hidapi
+    SUBDIR += py-libimobiledevice
     SUBDIR += py-lirc
     SUBDIR += py-pyserial
     SUBDIR += py-qt5-sensors

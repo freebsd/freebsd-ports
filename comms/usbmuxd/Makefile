@@ -1,35 +1,37 @@
 # $FreeBSD$
 
 PORTNAME=	usbmuxd
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	comms
-MASTER_SITES=	http://www.libimobiledevice.org/downloads/
+MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Daemon for multiplexing connections over USB to iPhone/iPod Touch
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPLv2
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
 
-LIB_DEPENDS=	libplist.so:devel/libplist \
-		libimobiledevice.so:comms/libimobiledevice
+LIB_DEPENDS=	libplist-2.0.so:devel/libplist \
+		libimobiledevice-1.0.so:comms/libimobiledevice
 
-USES=		autoreconf cpe libtool pathfix pkgconfig tar:bzip2
+USES=		autoreconf cpe libtool localbase pathfix pkgconfig tar:bzip2
 CPE_VENDOR=	nikias_bassen
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-systemd
 
-PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
+PLIST_FILES=	man/man8/${PORTNAME}.8.gz \
 		sbin/${PORTNAME}
 
-PORTDOCS=	AUTHORS NEWS README
+PORTDOCS=	AUTHORS NEWS README.md
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 # TODO: add devd(8) rule.
 	@${REINPLACE_CMD} \
-		-e '/*cygwin*/ s,),|dragonfly*|*bsd*),' \
+		-e '/darwin*/ s,),|dragonfly*|*bsd*),' \
 		${WRKSRC}/configure.ac
 
 post-install:

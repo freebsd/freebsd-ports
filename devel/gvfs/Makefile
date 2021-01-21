@@ -3,7 +3,7 @@
 
 PORTNAME=	gvfs
 PORTVERSION=	1.46.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgudev-1.0.so:devel/libgudev \
 		libudisks2.so:sysutils/libudisks \
 		libsecret-1.so:security/libsecret
-		
+
 RUN_DEPENDS=	bsdisks>0:sysutils/bsdisks
 PORTSCOUT=	limitw:1,even
 
@@ -59,8 +59,8 @@ BLURAY_DESC=		Blu-ray metadata support
 FUSE_USES=		fuse:3
 FUSE_MESON_TRUE=	fuse
 
-AFC_LIB_DEPENDS=	libimobiledevice.so:comms/libimobiledevice \
-			libplist.so:devel/libplist
+AFC_LIB_DEPENDS=	libimobiledevice-1.0.so:comms/libimobiledevice \
+			libplist-2.0.so:devel/libplist
 AFC_MESON_TRUE=		afc
 
 GOA_LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts
@@ -88,4 +88,3 @@ NFS_LIB_DEPENDS=	libnfs.so:net/libnfs
 NFS_MESON_TRUE=		nfs
 
 .include <bsd.port.mk>
-

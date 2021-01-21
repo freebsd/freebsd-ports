@@ -4,7 +4,7 @@ PORTNAME=	amarok
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.70
 PKGVERSIONSUFFIX=	-g${GH_TAGNAME}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -60,8 +60,8 @@ OPTIONS_SUB=		yes
 
 IPOD_DESC=		Apple iPod support
 IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod \
-			libimobiledevice.so:comms/libimobiledevice \
-			libplist.so:devel/libplist
+			libimobiledevice-1.0.so:comms/libimobiledevice \
+			libplist-2.0.so:devel/libplist
 IPOD_USE=		GNOME=gdkpixbuf2,glib20
 IPOD_USES=		gnome
 IPOD_CMAKE_BOOL=	WITH_IPOD

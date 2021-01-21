@@ -13724,7 +13724,6 @@ biology/pycogent||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 biology/unanimity||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 cad/pythoncad||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 chinese/bg5pdf||2020-01-27|Has expired: Unmaintained, uses EOLed python27
-comms/py-libimobiledevice||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 converters/py-bcode||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 converters/py-iconv||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 databases/gadfly||2020-01-27|Has expired: Unmaintained, uses EOLed python27
@@ -14441,7 +14440,6 @@ textproc/py-ltxml||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 x11-toolkits/flowcanvas||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 audio/py-vorbis||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 databases/py-cdb||2020-03-20|Has expired: Unmaintained, uses EOLed python27
-devel/py-libplist||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 devel/py-mwlib||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 graphics/py-soya3d||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 irc/py-supybot||2020-03-20|Has expired: Unmaintained, uses EOLed python27
