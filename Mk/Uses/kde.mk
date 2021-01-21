@@ -150,14 +150,18 @@ CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH="${LOCALBASE}"
 
 # We set KDE_INSTALL_USE_QT_SYS_PATHS to install mkspecs files, plugins and
 # imports to the Qt 5 install directory.
-CMAKE_ARGS+=	-DBUILD_TESTING:BOOL=OFF \
-		-DCMAKE_MODULE_PATH="${LOCALBASE};${KDE_PREFIX}" \
+CMAKE_ARGS+=	-DCMAKE_MODULE_PATH="${LOCALBASE};${KDE_PREFIX}" \
 		-DCMAKE_INSTALL_PREFIX="${KDE_PREFIX}" \
 		-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=true
 
 # Set man-page installation prefix.
 CMAKE_ARGS+=	-DKDE_INSTALL_MANDIR:PATH="${KDE_PREFIX}/man" \
 		-DMAN_INSTALL_DIR:PATH="${KDE_PREFIX}/man"
+
+# Disable autotests unless TEST_TARGET is defined.
+.    if !defined(TEST_TARGET)
+CMAKE_ARGS+=	-DBUILD_TESTING:BOOL=false
+.    endif
 # ==============================================================================
 
 # === SET UP PLIST_SUB =========================================================
