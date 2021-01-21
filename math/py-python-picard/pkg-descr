@@ -1,0 +1,6 @@
+Picard is a library to run the Preconditioned ICA for Real Data (PICARD)
+algorithm and its orthogonal version (PICARD-O). These algorithms show fast
+convergence even on real data for which sources independence do not perfectly
+hold.
+
+WWW: https://pierreablin.github.io/picard/

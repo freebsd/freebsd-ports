@@ -840,6 +840,7 @@
     SUBDIR += py-python-fcl
     SUBDIR += py-python-igraph
     SUBDIR += py-python-louvain
+    SUBDIR += py-python-picard
     SUBDIR += py-pyvtk
     SUBDIR += py-qdldl
     SUBDIR += py-quadprog
