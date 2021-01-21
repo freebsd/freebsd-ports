@@ -230,6 +230,7 @@
     SUBDIR += py-chainer-chemistry
     SUBDIR += py-chempy
     SUBDIR += py-coards
+    SUBDIR += py-dipy
     SUBDIR += py-dlib
     SUBDIR += py-eccodes
     SUBDIR += py-esda
