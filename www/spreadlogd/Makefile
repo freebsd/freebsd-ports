@@ -7,18 +7,17 @@ CATEGORIES=	www net
 MASTER_SITES=	http://www.lethargy.org/mod_log_spread/
 
 MAINTAINER=	portmaster@bsdforge.com
-COMMENT=	The backend of mod_log_spread
+COMMENT=	Backend for mod_log_spread
 
 LICENSE=	ART10
 
-LIB_DEPENDS=	libspread.so:net/spread
+LIB_DEPENDS=	libgnuregex.so:devel/libgnuregex \
+		libspread.so:net/spread
 
 MAKEFILE=	makefile
-
 USE_RC_SUBR=	spreadlogd
 
 PLIST_FILES=	sbin/spreadlogd etc/spreadlogd.conf.sample
-
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
@@ -28,7 +27,10 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spreadlogd ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL} ${WRKSRC}/spreadlogd.conf ${STAGEDIR}${PREFIX}/etc/spreadlogd.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/spreadlogd.conf \
+		${STAGEDIR}${PREFIX}/etc/spreadlogd.conf.sample
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
