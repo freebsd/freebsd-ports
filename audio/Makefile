@@ -80,6 +80,7 @@
     SUBDIR += cdplay
     SUBDIR += celt
     SUBDIR += checkmate
+    SUBDIR += cheesecutter
     SUBDIR += chordpack
     SUBDIR += chromaprint
     SUBDIR += clementine-player

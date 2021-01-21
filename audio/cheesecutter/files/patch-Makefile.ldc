@@ -1,0 +1,25 @@
+--- Makefile.ldc.orig	2021-01-21 17:07:49 UTC
++++ Makefile.ldc
+@@ -1,5 +1,7 @@
+ # make install DESTDIR=/home/yamo/devel/cc2/snap/parts/ccutter/install
+ 
++PREFIX?=/usr
++EXAMPLESDIR?=/usr/share/examples/ccutter
+ LIBS=-L-ldl -L-lstdc++
+ COMFLAGS=-O2
+ VERSION=$(shell cat Version)
+@@ -38,10 +40,10 @@ c64: $(C64OBJS)
+ install: all
+ 	strip ccutter$(EXE)
+ 	strip ct2util$(EXE)
+-	cp ccutter$(EXE) $(DESTDIR)
+-	cp ct2util$(EXE) $(DESTDIR)
+-	mkdir $(DESTDIR)/example_tunes
+-	cp -r tunes/* $(DESTDIR)/example_tunes
++	cp ccutter$(EXE) $(DESTDIR)$(PREFIX)/bin
++	cp ct2util$(EXE) $(DESTDIR)$(PREFIX)/bin
++	mkdir -p $(DESTDIR)/$(EXAMPLESDIR)/example_tunes
++	cp -r tunes/* $(DESTDIR)/$(EXAMPLESDIR)/example_tunes
+ 
+ # release version with additional optimizations
+ release: DFLAGS += -frelease -fno-bounds-check

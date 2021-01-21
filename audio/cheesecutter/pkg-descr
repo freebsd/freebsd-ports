@@ -1,0 +1,5 @@
+CheeseCutter is a tracker for composing music for the SID chip. It uses
+the reSID engine for SID emulation. The packed files can be played on a
+real C64.
+
+WWW: https://github.com/theyamo/CheeseCutter
