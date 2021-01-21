@@ -13,6 +13,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lightweight HTML rendering/printing/editing engine
 
+DEPRECATED=	Obsolete by upstream, doesn't build with recent versions of pango
+EXPIRATION_DATE=2021-03-31
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:misc/gnome-icon-theme
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
