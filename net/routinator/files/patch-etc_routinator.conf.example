@@ -1,0 +1,21 @@
+--- etc/routinator.conf.example.orig	2020-12-09 20:29:45 UTC
++++ etc/routinator.conf.example
+@@ -19,7 +19,7 @@
+ #
+ # This setting is mandatory.
+ #
+-repository-dir = "..."
++repository-dir = "/var/routinator"
+ 
+ # Trust Anchor Locator (TAL) directory
+ #
+@@ -31,7 +31,8 @@ repository-dir = "..."
+ #
+ # This setting is mandatory.
+ #
+-tal-dir = "..."
++# tal-dir = "tals"
++tal-dir = "/var/routinator/tals"
+ 
+ # Local exceptions files
+ #

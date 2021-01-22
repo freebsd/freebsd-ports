@@ -33,6 +33,14 @@ check_init() {
 		echo
 		exit 1
 	fi
+	if [ ! -d ${wrkdir} ]; then
+		echo
+		echo -n "Need to create repository ${wrkdir}"
+		echo  "and populate with tals, "
+		echo "see man routinator"
+		echo
+		exit 1
+	fi
 }
 
 run_rc_command "$1"

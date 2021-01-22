@@ -2,9 +2,11 @@
 { type: install
   message: <<EOM
 
-  Before running the server, the TALS need to be populated and initialized
+  Before running the server, the repository needs to be created, populated with TALS and initialized
   To do so, run 
 
+    sudo mkdir -p /var/routinator
+    sudo chown %%GROUPS%%:%%USERS%% /var/routinator
     sudo -u %%USERS%% -g %%GROUPS%% routinator -c %%ETCDIR%%/routinator.conf init
 
   and rerun as needed e.g.:
