@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	automuteus
-DISTVERSION=	6.10.1
-PORTREVISION=	1
+DISTVERSION=	6.11.0
 CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
@@ -19,9 +18,10 @@ GH_TUPLE=	\
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		automuteus:discordgo:v0.22.1:automuteus_discordgo/vendor/github.com/bwmarrin/discordgo \
 		automuteus:galactus:v1.2.2:automuteus_galactus/vendor/github.com/automuteus/galactus \
-		automuteus:utils:v0.0.6:automuteus_utils/vendor/github.com/automuteus/utils \
+		automuteus:utils:v0.0.9:automuteus_utils/vendor/github.com/automuteus/utils \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bsm:redislock:v0.7.0:bsm_redislock/vendor/github.com/bsm/redislock \
+		bwmarrin:discordgo:v0.22.1:bwmarrin_discordgo \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
@@ -59,6 +59,7 @@ GH_TUPLE=	\
 		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify
 
+
 USE_RC_SUBR=	${PORTNAME}
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
@@ -69,6 +70,10 @@ PLIST_FILES=	bin/${PORTNAME} \
 		"@sample etc/${PORTNAME}/config.txt.sample" \
 		"@dir /var/log/automuteus" \
 		/var/log/${PORTNAME}/logs.txt
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/vendor/github.com/bwmarrin
+	@${RLN} ${WRKSRC_automuteus_discordgo} ${WRKSRC}/vendor/github.com/bwmarrin/discordgo
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
