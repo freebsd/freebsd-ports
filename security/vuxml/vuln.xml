@@ -76,6 +76,33 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="13c54e6d-5c45-11eb-b4e2-001b217b3468">
+    <topic>nokogiri -- Security vulnerability</topic>
+    <affects>
+      <package>
+	<name>rubygem-nokogiri</name>
+	<name>rubygem-nokogiri18</name>
+	<range><lt>1.11.0.rc3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nokogiri reports:</p>
+	<blockquote cite="https://nokogiri.org/CHANGELOG.html">
+	  <p>In Nokogiri versions &lt;= 1.11.0.rc3, XML Schemas parsed by Nokogiri::XML::Schema were trusted by default, allowing external resources to be accessed over the network, potentially enabling XXE or SSRF attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://nokogiri.org/CHANGELOG.html</url>
+      <cvename>CVE-2020-26247</cvename>
+    </references>
+    <dates>
+      <discovery>2021-01-FIXME</discovery>
+      <entry>2021-01-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b5cf6e5-5b51-11eb-95ac-7f9491278677">
     <topic>dnsmasq -- DNS cache poisoning, and DNSSEC buffer overflow, vulnerabilities</topic>
     <affects>
