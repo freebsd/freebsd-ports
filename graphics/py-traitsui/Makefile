@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	traitsui
-PORTVERSION=	6.1.3
-PORTREVISION=	1
+PORTVERSION=	7.1.1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,9 +17,8 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/image_LICENSE_Nuvola.txt
 LICENSE_FILE_EPL=	${WRKSRC}/image_LICENSE_Eclipse.txt
 # See ${WRKSRC}/image_LICENSE.txt for per file license information
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>0:devel/py-traits@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyface>=6.0.0:devel/py-pyface@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>=6.0.0:devel/py-traits@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyface>=7.1.0:devel/py-pyface@${PY_FLAVOR}
 # The requirements are defined in traitsui/__init__.py
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
