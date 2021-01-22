@@ -2,20 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	lemon
-PORTVERSION=	1.69
+PORTVERSION=	3.34
 CATEGORIES=	devel
 MASTER_SITES=	http://tx97.net/pub/distfiles/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://bsdforge.com/projects/source/devel/lemon/
 
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	LALR(1) parser generator. Similar in function to yacc and bison
+
+LICENSE=	PD
 
 USES=	tar:bzip2
 MAKEFILE=	/dev/null
 ALL_TARGET=	${PORTNAME}
 
 post-patch:
-	${REINPLACE_CMD} -e 's| = pathsearch(.*| = "${DATADIR}/lempar.c";|' \
+	${REINPLACE_CMD} -e 's|toFree = tpltname = pathsearch(.*|tpltname = "${DATADIR}/lempar.c";|' \
 		${WRKSRC}/lemon.c
 
 do-install:
