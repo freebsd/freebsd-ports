@@ -1,6 +1,6 @@
---- man/Makefile.in.orig	2009-04-30 16:45:57.000000000 -0400
-+++ man/Makefile.in	2011-07-02 12:20:12.000000000 -0400
-@@ -539,7 +539,7 @@
+--- man/Makefile.in.orig	2009-04-30 20:45:57 UTC
++++ man/Makefile.in
+@@ -539,7 +539,7 @@ view: $(man_MANS)
  
  dist_win: $(man_MANS)
  	groff -Tascii -man $(man_MANS) > Manpage

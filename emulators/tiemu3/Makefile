@@ -3,7 +3,7 @@
 
 PORTNAME=	tiemu3
 PORTVERSION=	3.03
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	emulators
 MASTER_SITES=	SF/gtktiemu/tiemu-linux/TIEmu%20${DISTVERSION}
 DISTNAME=	tiemu-${DISTVERSION}
@@ -12,18 +12,23 @@ EXTRACT_SUFX=	-nogdb.tar.gz
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	TI89(ti)/92(+)/V200 hand-helds emulator
 
-LIB_DEPENDS=	libticalcs2.so:comms/libticalcs2 \
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libticables2.so:comms/libticables2 \
+		libticalcs2.so:comms/libticalcs2 \
+		libticonv.so:converters/libticonv \
 		libtifiles2.so:devel/libtifiles2
 
-USES=		gmake gnome groff libtool pkgconfig sdl
-GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 libglade2
+USES=		gmake gnome groff libtool localbase pkgconfig sdl
+USE_GNOME=	cairo gdkpixbuf2 gtk20 libglade2
 USE_SDL=	sdl
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gdb --without-kde
+
+LDFLAGS+=	-Wl,-E
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
