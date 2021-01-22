@@ -70,9 +70,7 @@
 %%PERL5_MAN3%%/Workflow::Validator::MatchesDateFormat.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/Changes
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/doc/configuration.txt
-%%PORTDOCS%%%%DOCSDIR%%/doc/developing.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/overview.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ticket/App/Action/TicketComment.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ticket/App/Action/TicketCreate.pm

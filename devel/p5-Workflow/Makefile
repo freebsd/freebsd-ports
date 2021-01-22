@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Workflow
-PORTVERSION=	1.48
+PORTVERSION=	1.49
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -49,7 +49,7 @@ post-install:
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/ && ${CP} -R README Changes TODO doc ${STAGEDIR}${DOCSDIR}/)
+	@(cd ${WRKSRC}/ && ${CP} -R README Changes doc ${STAGEDIR}${DOCSDIR}/)
 	@${ECHO_MSG} "===> Docs are installed in ${DOCSDIR}."
 
 post-install-EXAMPLES-on:
