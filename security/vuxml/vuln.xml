@@ -60,8 +60,9 @@ QUICK GUIDE TO ADDING A NEW ENTRY
 6. profit!
 
 Additional tests can be done this way:
- $ pkg audit -f ./vuln.xml py26-django-1.6
- $ pkg audit -f ./vuln.xml py27-django-1.6.1
+ $ make vuln-flat.xml
+ $ pkg audit -f ./vuln-flat.xml py26-django-1.6
+ $ pkg audit -f ./vuln-flat.xml py27-django-1.6.1
 
 Extensive documentation of the format and help with writing and verifying
 a new entry is available in The Porter's Handbook at:
