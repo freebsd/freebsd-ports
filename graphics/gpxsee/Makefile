@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpxsee
-DISTVERSION=	7.20
+DISTVERSION=	7.32
 CATEGORIES=	graphics geography
 
 MAINTAINER=	sikmir@gmail.com
@@ -39,7 +39,8 @@ do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gpxsee ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DATADIR}/csv
 	${INSTALL_DATA} ${WRKSRC}/pkg/csv/* ${STAGEDIR}${DATADIR}/csv
-	${INSTALL_DATA} ${WRKSRC}/icons/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/64x64/apps
+	${INSTALL_DATA} ${WRKSRC}/icons/app/hicolor/64x64/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/64x64/apps
 	${INSTALL_DATA} ${WRKSRC}/pkg/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
 	${INSTALL_DATA} ${WRKSRC}/pkg/${PORTNAME}.xml ${STAGEDIR}${PREFIX}/share/mime/packages

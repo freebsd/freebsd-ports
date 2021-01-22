@@ -16,6 +16,8 @@ share/applications/gpxsee.desktop
 %%NLS%%%%DATADIR%%/translations/gpxsee_es.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_fi.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_fr.qm
+%%NLS%%%%DATADIR%%/translations/gpxsee_hu.qm
+%%NLS%%%%DATADIR%%/translations/gpxsee_it.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_nb.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_pl.qm
 %%NLS%%%%DATADIR%%/translations/gpxsee_pt_BR.qm
@@ -25,4 +27,4 @@ share/applications/gpxsee.desktop
 %%NLS%%%%DATADIR%%/translations/gpxsee_uk.qm
 share/metainfo/gpxsee.appdata.xml
 share/mime/packages/gpxsee.xml
-share/pixmaps/gpxsee.png
+share/icons/hicolor/64x64/apps/gpxsee.png
