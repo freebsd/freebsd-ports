@@ -1,6 +1,6 @@
---- src/vs/workbench/services/extensions/node/proxyResolver.ts.orig	2020-04-16 15:59:11 UTC
+--- src/vs/workbench/services/extensions/node/proxyResolver.ts.orig	2020-12-16 14:57:12 UTC
 +++ src/vs/workbench/services/extensions/node/proxyResolver.ts
-@@ -486,7 +486,7 @@ async function readCaCertificates() {
+@@ -487,7 +487,7 @@ async function readCaCertificates() {
  	if (process.platform === 'darwin') {
  		return readMacCaCertificates();
  	}
