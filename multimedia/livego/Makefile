@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	livego
-DISTVERSION=	0.0.14
+DISTVERSION=	0.0.15
 CATEGORIES=	multimedia
 
 MAINTAINER=	nc@FreeBSD.org

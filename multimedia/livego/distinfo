@@ -1,6 +1,6 @@
-TIMESTAMP = 1609109584
-SHA256 (gwuhaolin-livego-0.0.14_GH0.tar.gz) = 75977536065358bf25a2cca0a73d011e1f993df504e1a398e7950a5786d1d030
-SIZE (gwuhaolin-livego-0.0.14_GH0.tar.gz) = 74492
+TIMESTAMP = 1611343160
+SHA256 (gwuhaolin-livego-0.0.15_GH0.tar.gz) = f1beb250dbbcfb578c32e37f862379aacf804570a8ce602b1a7a9f4d53d1304d
+SIZE (gwuhaolin-livego-0.0.15_GH0.tar.gz) = 74659
 SHA256 (auth0-go-jwt-middleware-36081240882b_GH0.tar.gz) = ab5a31dffaac4998b2c9544f80ab718c5bc12c046557c0cf00518d9fecf1d884
 SIZE (auth0-go-jwt-middleware-36081240882b_GH0.tar.gz) = 8211
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
