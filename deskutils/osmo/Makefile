@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	osmo
-PORTVERSION=	0.4.2
-PORTREVISION=	11
+PORTVERSION=	0.4.4
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}-pim/${PORTNAME}-pim/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ed.arrakis@gmail.com
 COMMENT=	Personal organizer
 
 LICENSE=	GPLv2+
@@ -19,6 +18,7 @@ LIB_DEPENDS=	libical.so:devel/libical \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 		libgspell-1.so:textproc/gspell \
 		libicui18n.so:devel/icu \
+		libenchant-2.so:textproc/enchant2 \
 		libsoup-2.4.so:devel/libsoup
 
 USES=		compiler:c++11-lang gettext gmake gnome libarchive pkgconfig \
