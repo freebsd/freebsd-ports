@@ -1,0 +1,20 @@
+--- content/gpu/BUILD.gn.orig	2020-05-26 07:48:23 UTC
++++ content/gpu/BUILD.gn
+@@ -96,7 +96,7 @@ target(link_target_type, "gpu_sources") {
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     deps += [ "//services/service_manager/zygote" ]
+   }
+ 
+@@ -130,7 +130,7 @@ target(link_target_type, "gpu_sources") {
+ 
+   # Use DRI on desktop Linux builds.
+   if (current_cpu != "s390x" && current_cpu != "ppc64" && is_desktop_linux &&
+-      (!is_chromecast || is_cast_desktop_build)) {
++      (!is_chromecast || is_cast_desktop_build) && !is_bsd) {
+     configs += [ "//build/config/linux/dri" ]
+   }
+ }

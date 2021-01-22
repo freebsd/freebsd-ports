@@ -16019,3 +16019,4 @@ science/dlpoly-classic||2021-01-17|Has expired: MASTERSITE gone; possibly replac
 security/py-gtts-token|audio/py-gtts|2021-01-17|Has expired: Obsolete, please use audio/py-gtts instead
 graphics/qt-avif-image-plugin|graphics/kf5-kimageformats|2021-01-18|Part of kimageformats since KDE Frameworks 5.78.0
 archivers/libunrar5|archivers/libunrar6|2021-01-19|Renamed to match current major version of libunrar
+devel/electron7|devel/electron9|2021-01-21|EOLed upstream, switch to newer major version

@@ -1,0 +1,14 @@
+--- services/service_manager/public/cpp/service_executable/BUILD.gn.orig	2020-05-26 07:48:34 UTC
++++ services/service_manager/public/cpp/service_executable/BUILD.gn
+@@ -29,6 +29,11 @@ source_set("support") {
+       "//sandbox/linux:seccomp_bpf",
+     ]
+   }
++  if (is_bsd) {
++    deps -= [
++      "//sandbox/linux:seccomp_bpf"
++    ]
++  }
+ }
+ 
+ source_set("switches") {

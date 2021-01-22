@@ -1,0 +1,20 @@
+--- third_party/usrsctp/BUILD.gn.orig	2020-05-26 07:49:07 UTC
++++ third_party/usrsctp/BUILD.gn
+@@ -121,11 +121,16 @@ static_library("usrsctp") {
+     "-UINET6",
+   ]
+ 
+-  if (is_linux || is_android) {
++  if ((is_linux && !is_bsd) || is_android ) {
+     defines += [
+       "__Userspace_os_Linux",
+       "_GNU_SOURCE",
+     ]
++  } else if (is_bsd) {
++    defines += [
++      "__Userspace_os_FreeBSD",
++    ]
++    cflags += [ "-U__FreeBSD__" ]
+   } else if (is_mac || is_ios) {
+     defines += [
+       "HAVE_SA_LEN",

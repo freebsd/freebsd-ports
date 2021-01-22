@@ -1,0 +1,29 @@
+--- electron/BUILD.gn.orig	2020-12-11 21:16:23 UTC
++++ electron/BUILD.gn
+@@ -442,7 +442,7 @@ source_set("electron_lib") {
+       "*\bviews/*",
+     ]
+   }
+-  if (!is_mas_build) {
++  if (!is_mas_build && !is_bsd) {
+     deps += [ "//components/crash/core/app" ]
+   }
+ 
+@@ -462,7 +462,7 @@ source_set("electron_lib") {
+     ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     deps += [ "//components/crash/content/browser" ]
+   }
+ 
+@@ -1080,7 +1080,7 @@ if (is_mac) {
+       ":electron_app_manifest",
+       ":electron_lib",
+       ":packed_resources",
+-      "//components/crash/core/app",
++      # "//components/crash/core/app",
+       "//content:sandbox_helper_win",
+       "//electron/buildflags",
+       "//ui/strings",

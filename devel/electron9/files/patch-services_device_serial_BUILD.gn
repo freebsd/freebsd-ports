@@ -1,0 +1,11 @@
+--- services/device/serial/BUILD.gn.orig	2020-05-26 07:48:34 UTC
++++ services/device/serial/BUILD.gn
+@@ -4,7 +4,7 @@
+ 
+ import("//build/config/features.gni")
+ 
+-if (is_win || (is_linux && use_udev) || is_mac) {
++if (is_win || (is_linux && use_udev) || is_mac || is_bsd) {
+   config("platform_support") {
+     visibility = [ ":serial" ]
+     if (is_win) {
