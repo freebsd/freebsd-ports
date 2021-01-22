@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	Cairo
-PORTVERSION=	1.108
+PORTVERSION=	1.109
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN \
 		SF/gtk2-perl/${PORTNAME}/${PORTVERSION}
 MASTER_SITE_SUBDIR=	CPAN:XAOC
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl bindings to the cairo graphics library
 
 LICENSE=	LGPL21
