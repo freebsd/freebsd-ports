@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	youtube_dlc
-DISTVERSION=	2020.11.11-3
+DISTVERSION=	2021.01.16
 CATEGORIES=	www
 
 # Implicit approval to commit trivial version updates.
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gmake python shebangfix
 SHEBANG_GLOB=	devscripts/*.py
 USE_GITHUB=	yes
-GH_ACCOUNT=	blackjack4494
-GH_PROJECT=	yt-dlc
+GH_ACCOUNT=	pukkandan
+GH_PROJECT=	yt-dlp
 
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}
 NO_ARCH=	yes

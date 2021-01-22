@@ -1,6 +1,6 @@
---- youtube_dlc/__init__.py.orig	2020-10-24 05:32:48 UTC
+--- youtube_dlc/__init__.py.orig	2021-01-16 18:54:52 UTC
 +++ youtube_dlc/__init__.py
-@@ -36,7 +36,6 @@ from .utils import (
+@@ -39,7 +39,6 @@ from .utils import (
      write_string,
      render_table,
  )
@@ -8,7 +8,7 @@
  from .downloader import (
      FileDownloader,
  )
-@@ -452,17 +451,13 @@ def _real_main(argv=None):
+@@ -499,17 +498,13 @@ def _real_main(argv=None):
      }
  
      with YoutubeDL(ydl_opts) as ydl:
