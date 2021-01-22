@@ -385,6 +385,7 @@
     SUBDIR += py-gluonnlp
     SUBDIR += py-huepy
     SUBDIR += py-kartograph
+    SUBDIR += py-mffpy
     SUBDIR += py-molequeue
     SUBDIR += py-mxnet
     SUBDIR += py-onnx

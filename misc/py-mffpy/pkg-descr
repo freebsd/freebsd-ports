@@ -1,0 +1,4 @@
+mffpy is a lean reader for EGI's MFF file format. These files are directories
+containing several files of mostly xml files, but also binary files.
+
+WWW: https://github.com/BEL-Public/mffpy/
