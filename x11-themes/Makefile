@@ -159,5 +159,6 @@
     SUBDIR += wallpapers-freebsd-kde
     SUBDIR += xcursor-themes
     SUBDIR += xfce-icons-elementary
+    SUBDIR += yaru-gtk-themes
 
 .include <bsd.port.subdir.mk>
