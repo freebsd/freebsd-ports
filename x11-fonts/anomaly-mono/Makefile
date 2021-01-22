@@ -4,7 +4,7 @@ PORTNAME=	anomaly-mono
 DISTVERSION=	g20200110
 CATEGORIES=	x11-fonts
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Retrofuturism inspired monospaced programming font
 
 LICENSE=	OFL11

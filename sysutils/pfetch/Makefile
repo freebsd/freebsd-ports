@@ -4,7 +4,7 @@ PORTNAME=	pfetch
 DISTVERSION=	0.6.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Pretty system information tool written in POSIX sh
 
 LICENSE=	MIT

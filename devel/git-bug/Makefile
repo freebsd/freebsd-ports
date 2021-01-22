@@ -5,7 +5,7 @@ DISTVERSION=	0.7.1
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Distributed, offline-first bug tracker embedded in git, with bridges
 
 LICENSE=	GPLv3

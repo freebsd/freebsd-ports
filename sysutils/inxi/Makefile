@@ -4,7 +4,7 @@ PORTNAME=	inxi
 DISTVERSION=	3.1.07-1
 CATEGORIES=	sysutils
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Full featured CLI system information tool
 
 LICENSE=	GPLv3

@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Disk Usage/Free Utility
 
 LICENSE=	MIT

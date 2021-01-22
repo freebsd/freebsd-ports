@@ -5,7 +5,7 @@ DISTVERSION=	0.1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Ansible module to set sysvars in rc.conf
 
 LICENSE=	MIT

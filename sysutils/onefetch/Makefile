@@ -6,7 +6,7 @@ DISTVERSION=	2.7.3
 PORTREVISION=	1
 CATEGORIES=	sysutils devel
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Git repository summary on your terminal
 
 LICENSE=	MIT

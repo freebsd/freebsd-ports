@@ -5,7 +5,7 @@ DISTVERSION=	2.1.4
 PORTREVISION=	3
 CATEGORIES=	net security
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Cross-platform subdomain enumerator
 
 LICENSE=	GPLv3

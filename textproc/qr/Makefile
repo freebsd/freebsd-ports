@@ -4,7 +4,7 @@ PORTNAME=	qr
 DISTVERSION=	g20200216
 CATEGORIES=	textproc graphics
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Generate textual QR codes using terminal
 
 LICENSE=	UNLICENSE

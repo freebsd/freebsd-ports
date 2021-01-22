@@ -6,7 +6,7 @@ DISTVERSION=	2.4.0
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	CLI tool for saving complete web pages as a single HTML file
 
 LICENSE=	UNLICENSE

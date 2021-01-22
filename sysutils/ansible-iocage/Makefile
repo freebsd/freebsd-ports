@@ -5,7 +5,7 @@ DISTVERSION=	0.1
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Ansible module for iocage
 
 LICENSE=	MIT

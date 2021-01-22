@@ -4,7 +4,7 @@ PORTNAME=	jtc
 DISTVERSION=	1.76
 CATEGORIES=	textproc
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	CLI tool to extract, manipulate and transform JSON
 
 LICENSE=	MIT

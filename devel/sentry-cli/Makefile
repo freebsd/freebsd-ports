@@ -5,7 +5,7 @@ DISTVERSION=	1.58.0
 PORTREVISION=	3
 CATEGORIES=	devel
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Command line utility to work with Sentry
 
 LICENSE=	BSD3CLAUSE

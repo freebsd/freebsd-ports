@@ -4,7 +4,7 @@ PORTNAME=	komanda-cli
 DISTVERSION=	g20190920
 CATEGORIES=	irc
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Komanda command-line IRC client
 
 LICENSE=	BSD3CLAUSE

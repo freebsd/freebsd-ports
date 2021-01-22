@@ -6,7 +6,7 @@ DISTVERSION=	0.10.1
 PORTREVISION=	3
 CATEGORIES=	devel
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Command-line tool collection to assist development
 
 LICENSE=	GPLv3

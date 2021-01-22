@@ -6,7 +6,7 @@ DISTVERSION=	0.1.0
 PORTREVISION=	2
 CATEGORIES=	dns net
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Command-line DNS client
 
 LICENSE=	EUPL

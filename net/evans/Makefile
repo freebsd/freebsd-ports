@@ -4,7 +4,7 @@ PORTNAME=	evans
 DISTVERSION=	0.9.1
 CATEGORIES=	net
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	More expressive universal gRPC client
 
 LICENSE=	MIT

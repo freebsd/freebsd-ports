@@ -4,7 +4,7 @@ PORTNAME=	tut
 DISTVERSION=	0.0.17
 CATEGORIES=	net-im
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	TUI for Mastodon
 
 LICENSE=	MIT

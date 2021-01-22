@@ -4,7 +4,7 @@ PORTNAME=	6cord
 DISTVERSION=	9.6
 CATEGORIES=	net-im
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Terminal-driven Discord client
 
 LICENSE=	MPL20

@@ -4,7 +4,7 @@ PORTNAME=	birch
 DISTVERSION=	g20200327
 CATEGORIES=	irc
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	IRC client written in bash
 
 LICENSE=	MIT

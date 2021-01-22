@@ -5,7 +5,7 @@ PORTVERSION=	2.0.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Modern and intuitive terminal-based text editor
 
 LICENSE=	MIT

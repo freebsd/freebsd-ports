@@ -6,7 +6,7 @@ DISTVERSION=	0.5.1
 PORTREVISION=	3
 CATEGORIES=	devel
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Quickly generate Rust project templates from existing git repositories
 
 LICENSE=	APACHE20 MIT

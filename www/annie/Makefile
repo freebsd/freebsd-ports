@@ -4,7 +4,7 @@ PORTNAME=	annie
 DISTVERSION=	0.10.3
 CATEGORIES=	www
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Fast, simple and clean video downloader
 
 LICENSE=	MIT

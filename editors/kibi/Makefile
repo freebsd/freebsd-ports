@@ -6,7 +6,7 @@ DISTVERSION=	0.2.1
 PORTREVISION=	3
 CATEGORIES=	editors
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Tiny text editor written in Rust
 
 LICENSE=	BSD2CLAUSE

@@ -4,7 +4,7 @@ PORTNAME=	cbonsai
 DISTVERSION=	g20210105
 CATEGORIES=	graphics
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Bonsai tree generator, written in C using ncurses
 
 LICENSE=	GPLv1

@@ -4,7 +4,7 @@ PORTNAME=	cordless
 DISTVERSION=	2020-10-24
 CATEGORIES=	net-im
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Discord TUI client
 
 LICENSE=	BSD3CLAUSE

@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.1
 CATEGORIES=	net
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Adblocker using automatically generated hosts file
 
 LICENSE=	MIT

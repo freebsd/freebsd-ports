@@ -6,7 +6,7 @@ DISTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	x11
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Lightweight overlay volume (or anything) bar for the X Window System
 
 LICENSE=	GPLv3

@@ -6,7 +6,7 @@ DISTVERSION=	1.3.0
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Simple terminal image viewer written in Rust
 
 LICENSE=	MIT

@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.1
 CATEGORIES=	audio
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Listen to SomaFM in your terminal
 
 LICENSE=	MIT

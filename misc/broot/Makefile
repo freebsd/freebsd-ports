@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
 CATEGORIES=	misc
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Quick and easy new way to see and navigate directory trees
 
 LICENSE=	MIT

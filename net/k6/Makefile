@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.30.0
 CATEGORIES=	net
 
-MAINTAINER=	vulcan@wired.sh
+MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Modern load testing tool, using Go and Javascript
 
 LICENSE=	AGPLv3
