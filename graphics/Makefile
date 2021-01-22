@@ -846,6 +846,7 @@
     SUBDIR += py-img2pdf
     SUBDIR += py-leather
     SUBDIR += py-mapclassify
+    SUBDIR += py-mayavi
     SUBDIR += py-mcomix
     SUBDIR += py-mgwr
     SUBDIR += py-ming
