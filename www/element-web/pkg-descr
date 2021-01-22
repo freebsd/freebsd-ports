@@ -1,0 +1,9 @@
+Element (formerly known as Vector and Riot) is a Matrix web client built
+using the Matrix React SDK.
+
+Element is officially supported on the web in modern versions of Chrome,
+Firefox, and Safari. Other browsers may work, however, official support is
+not provided. For accessing Element on an Android or iOS device, check out
+element-android and element-ios - element-web does not support mobile devices.
+
+WWW: https://github.com/vector-im/element-web

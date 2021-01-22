@@ -1,0 +1,8 @@
+[
+{ type: upgrade
+  maximum_version: 1.7.2
+  message: "Project was renamed to element, this also changes the install path to %%WWWDIR%%"
+}
+{ type: install
+  message: "Please serve files in %%WWWDIR%% with a webserver of your choice. (eg. www/nginx)"
+]

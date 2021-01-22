@@ -124,6 +124,7 @@
     SUBDIR += edbrowse
     SUBDIR += eden
     SUBDIR += efront
+    SUBDIR += element-web
     SUBDIR += elgg
     SUBDIR += elinks
     SUBDIR += elixir-html_entities
@@ -1792,7 +1793,6 @@
     SUBDIR += resin3
     SUBDIR += restbed
     SUBDIR += retawq
-    SUBDIR += riot-web
     SUBDIR += rss-bridge
     SUBDIR += rsskit
     SUBDIR += rssroll

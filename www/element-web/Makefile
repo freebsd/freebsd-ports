@@ -1,11 +1,12 @@
 # $FreeBSD$
 
-PORTNAME=	riot
+PORTNAME=	element
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
+DISTVERSION=	1.7.5
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/vector-im/riot-web/releases/download/${DISTVERSIONFULL}/
+MASTER_SITES=	https://github.com/vector-im/element-web/releases/download/${DISTVERSIONFULL}/
 PKGNAMESUFFIX=	-web
+DISTNAME=	riot-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	ports@xanderio.de
 COMMENT=	Glossy Matrix collaboration client for the web
@@ -14,6 +15,7 @@ LICENSE=	APACHE20
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
