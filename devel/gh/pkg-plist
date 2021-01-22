@@ -15,6 +15,7 @@
 %%MANPAGES%%man/man1/gh-config-get.1.gz
 %%MANPAGES%%man/man1/gh-config-set.1.gz
 %%MANPAGES%%man/man1/gh-config.1.gz
+%%MANPAGES%%man/man1/gh-gist-clone.1.gz
 %%MANPAGES%%man/man1/gh-gist-create.1.gz
 %%MANPAGES%%man/man1/gh-gist-delete.1.gz
 %%MANPAGES%%man/man1/gh-gist-edit.1.gz
@@ -22,6 +23,7 @@
 %%MANPAGES%%man/man1/gh-gist-view.1.gz
 %%MANPAGES%%man/man1/gh-gist.1.gz
 %%MANPAGES%%man/man1/gh-issue-close.1.gz
+%%MANPAGES%%man/man1/gh-issue-comment.1.gz
 %%MANPAGES%%man/man1/gh-issue-create.1.gz
 %%MANPAGES%%man/man1/gh-issue-list.1.gz
 %%MANPAGES%%man/man1/gh-issue-reopen.1.gz
@@ -31,6 +33,7 @@
 %%MANPAGES%%man/man1/gh-pr-checkout.1.gz
 %%MANPAGES%%man/man1/gh-pr-checks.1.gz
 %%MANPAGES%%man/man1/gh-pr-close.1.gz
+%%MANPAGES%%man/man1/gh-pr-comment.1.gz
 %%MANPAGES%%man/man1/gh-pr-create.1.gz
 %%MANPAGES%%man/man1/gh-pr-diff.1.gz
 %%MANPAGES%%man/man1/gh-pr-list.1.gz
