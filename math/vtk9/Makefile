@@ -2,7 +2,7 @@
 
 PORTNAME=	vtk
 DISTVERSION=	9.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -62,6 +62,7 @@ $w_DESC=	$w wrapping
 PYTHON_USES=		python:3.6+
 PYTHON_CMAKE_BOOL=	VTK_WRAP_PYTHON
 PYTHON_CMAKE_ON=	-DVTK_PYTHON_VERSION=${PYTHON_MAJOR_VER}
+PYTHON_VARS=		SUB_FILES=PKG-INFO SUB_LIST=PORTVERSION=${PORTVERSION}
 
 QT5_USES=		qt:5
 QT5_USE=		QT=core,gui,sql,uiplugin,widgets,x11extras,qmake_build,buildtools_build
@@ -125,6 +126,10 @@ USE_GL=		gl glu
 .endif
 
 CONFLICTS=	vtk6 vtk8
+
+do-install-PYTHON-on: # cmake doesn't install pip's .egg-info: https://gitlab.kitware.com/vtk/vtk/-/issues/18087
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/vtk-${DISTVERSION}-py${PYTHON_VER}.egg-info
+	@${INSTALL_DATA} ${WRKDIR}/PKG-INFO ${STAGEDIR}${PYTHON_SITELIBDIR}/vtk-${DISTVERSION}-py${PYTHON_VER}.egg-info
 
 post-install: # autoplist: thousands of files, complex dependencies on options
 	@cd ${STAGEDIR}${PREFIX} && \
