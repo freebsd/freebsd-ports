@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netaddr
-PORTVERSION=	0.7.19
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,15 +20,21 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+PORTDOCS=	AUTHORS CHANGELOG README.rst
+
 OPTIONS_DEFINE=	DOCS
 
-PORTDOCS=	AUTHORS CHANGELOG README.md
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3700
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>0:devel/py-importlib-resources@${PY_FLAVOR}
+.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
