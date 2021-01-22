@@ -55,6 +55,7 @@ share/man/man3/khttp_printf.3.gz
 share/man/man3/khttp_putc.3.gz
 share/man/man3/khttp_puts.3.gz
 share/man/man3/khttp_template.3.gz
+share/man/man3/khttp_templatex.3.gz
 share/man/man3/khttp_urlabs.3.gz
 share/man/man3/khttp_urldecode.3.gz
 share/man/man3/khttp_urlencode.3.gz
