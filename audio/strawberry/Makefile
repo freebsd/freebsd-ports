@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	strawberry
-DISTVERSION=	0.8.4
+DISTVERSION=	0.8.5
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://files.jkvinge.net/packages/strawberry/
@@ -68,7 +68,9 @@ AUDIOCD_CMAKE_BOOL=	ENABLE_AUDIOCD
 AUDIOCD_LIB_DEPENDS=	libcdio.so:sysutils/libcdio
 
 IPOD_CMAKE_BOOL=	ENABLE_LIBGPOD
-IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod
+IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod \
+			libimobiledevice-1.0.so:comms/libimobiledevice \
+			libplist-2.0.so:devel/libplist
 
 MTPDEV_CMAKE_BOOL=	ENABLE_LIBMTP
 MTPDEV_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
