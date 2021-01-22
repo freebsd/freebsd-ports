@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyface
-PORTVERSION=	6.1.2
-PORTREVISION=	1
+DISTVERSION=	7.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,9 @@ LICENSE_FILE_EPL=	${WRKSRC}/image_LICENSE_Eclipse.txt
 LICENSE_FILE_LGPL3=	${WRKSRC}/image_LICENSE_OOo.txt
 #See file ${WRKSRC}/image_LICENSE.txt for files with non BSD3CLAUSE licenses
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traits>0:devel/py-traits@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-metadata@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.1.0:devel/py-importlib-resources@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traits>=6:devel/py-traits@${PY_FLAVOR}
 # The requirements are defined in pyface/__init__.py
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
