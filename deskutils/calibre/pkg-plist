@@ -59,6 +59,7 @@ lib/calibre/calibre/db/cli/main.py
 lib/calibre/calibre/db/cli/tests.py
 lib/calibre/calibre/db/cli/utils.py
 lib/calibre/calibre/db/copy_to_library.py
+lib/calibre/calibre/db/covers.py
 lib/calibre/calibre/db/delete_service.py
 lib/calibre/calibre/db/errors.py
 lib/calibre/calibre/db/fields.py
@@ -372,6 +373,7 @@ lib/calibre/calibre/ebooks/metadata/sources/test.py
 lib/calibre/calibre/ebooks/metadata/sources/update.py
 lib/calibre/calibre/ebooks/metadata/sources/worker.py
 lib/calibre/calibre/ebooks/metadata/tag_mapper.py
+lib/calibre/calibre/ebooks/metadata/test_author_sort.py
 lib/calibre/calibre/ebooks/metadata/toc.py
 lib/calibre/calibre/ebooks/metadata/topaz.py
 lib/calibre/calibre/ebooks/metadata/txt.py
@@ -823,6 +825,7 @@ lib/calibre/calibre/gui2/dialogs/smartdevice.py
 lib/calibre/calibre/gui2/dialogs/smartdevice_ui.py
 lib/calibre/calibre/gui2/dialogs/tag_categories.py
 lib/calibre/calibre/gui2/dialogs/tag_categories_ui.py
+lib/calibre/calibre/gui2/dialogs/template_dialog_box_layout.py
 lib/calibre/calibre/gui2/dialogs/tag_editor.py
 lib/calibre/calibre/gui2/dialogs/tag_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/tag_list_editor.py
@@ -1326,6 +1329,7 @@ lib/calibre/calibre/utils/run_tests.py
 lib/calibre/calibre/utils/search_query_parser.py
 lib/calibre/calibre/utils/search_query_parser_test.py
 lib/calibre/calibre/utils/serialize.py
+lib/calibre/calibre/utils/seven_zip.py
 lib/calibre/calibre/utils/shared_file.py
 lib/calibre/calibre/utils/short_uuid.py
 lib/calibre/calibre/utils/smartypants.py
