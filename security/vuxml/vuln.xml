@@ -77,6 +77,123 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4ed0e43c-5cef-11eb-bafd-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>88.0.4324.96</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/01/stable-channel-update-for-desktop_19.html">
+	  <p>This release contains 36 security fixes, including:</p>
+	  <ul>
+	    <li>[1137179] Critical CVE-2021-21117: Insufficient policy
+	      enforcement in Cryptohome. Reported by Rory McNamara on
+	      2020-10-10</li>
+	    <li>[1161357] High CVE-2021-21118: Insufficient data validation in
+	      V8. Reported by Tyler Nighswander (@tylerni7) of Theori on
+	      2020-12-23</li>
+	    <li>[1160534] High CVE-2021-21119: Use after free in Media. Reported
+	      by Anonymous on 2020-12-20</li>
+	    <li>[1160602] High CVE-2021-21120: Use after free in WebSQL.
+	      Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Alpha
+	      Lab on 2020-12-21</li>
+	    <li>[1161143] High CVE-2021-21121: Use after free in Omnibox.
+	      Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2020-12-22</li>
+	    <li>[1162131] High CVE-2021-21122: Use after free in Blink. Reported
+	      by Renata Hodovan on 2020-12-28</li>
+	    <li>[1137247] High CVE-2021-21123: Insufficient data validation in
+	      File System API. Reported by Maciej Pulikowski on 2020-10-11</li>
+	    <li>[1131346] High CVE-2021-21124: Potential user after free in
+	      Speech Recognizer. Reported by Chaoyang Ding(@V4kst1z) from
+	      Codesafe Team of Legendsec at Qi'anxin Group on 2020-09-23</li>
+	    <li>[1152327] High CVE-2021-21125: Insufficient policy enforcement
+	      in File System API. Reported by Ron Masas (Imperva) on
+	      2020-11-24</li>
+	    <li>[1163228] High CVE-2020-16044: Use after free in WebRTC.
+	      Reported by Ned Williamson of Project Zero on 2021-01-05</li>
+	    <li>[1108126] Medium CVE-2021-21126: Insufficient policy enforcement
+	      in extensions. Reported by David Erceg on 2020-07-22</li>
+	    <li>[1115590] Medium CVE-2021-21127: Insufficient policy enforcement
+	      in extensions. Reported by Jasminder Pal Singh, Web Services Point
+	      WSP, Kotkapura on 2020-08-12</li>
+	    <li>[1138877] Medium CVE-2021-21128: Heap buffer overflow in Blink.
+	      Reported by Liang Dong on 2020-10-15</li>
+	    <li>[1140403] Medium CVE-2021-21129: Insufficient policy enforcement
+	      in File System API. Reported by Maciej Pulikowski on
+	      2020-10-20</li>
+	    <li>[1140410] Medium CVE-2021-21130: Insufficient policy enforcement
+	      in File System API. Reported by Maciej Pulikowski on
+	      2020-10-20</li>
+	    <li>[1140417] Medium CVE-2021-21131: Insufficient policy enforcement
+	      in File System API. Reported by Maciej Pulikowski on
+	      2020-10-20</li>
+	    <li>[1128206] Medium CVE-2021-21132: Inappropriate implementation in
+	      DevTools. Reported by David Erceg on 2020-09-15</li>
+	    <li>[1157743] Medium CVE-2021-21133: Insufficient policy enforcement
+	      in Downloads. Reported by wester0x01
+	      (https://twitter.com/wester0x01) on 2020-12-11</li>
+	    <li>[1157800] Medium CVE-2021-21134: Incorrect security UI in Page
+	      Info. Reported by wester0x01 (https://twitter.com/wester0x01) on
+	      2020-12-11</li>
+	    <li>[1157818] Medium CVE-2021-21135: Inappropriate implementation in
+	      Performance API. Reported by ndevtk on 2020-12-11</li>
+	    <li>[1038002] Low CVE-2021-21136: Insufficient policy enforcement in
+	      WebView. Reported by Shiv Sahni, Movnavinothan V and Imdad
+	      Mohammed on 2019-12-27</li>
+	    <li>[1093791] Low CVE-2021-21137: Inappropriate implementation in
+	      DevTools. Reported by bobblybear on 2020-06-11</li>
+	    <li>[1122487] Low CVE-2021-21138: Use after free in DevTools.
+	      Reported by Weipeng Jiang (@Krace) from Codesafe Team of Legendsec
+	      at Qi'anxin Group on 2020-08-27</li>
+	    <li>[1136327] Low CVE-2021-21140: Uninitialized Use in USB. Reported
+	      by David Manouchehri on 2020-10-08</li>
+	    <li>[1140435] Low CVE-2021-21141: Insufficient policy enforcement in
+	      File System API. Reported by Maciej Pulikowski on 2020-10-20</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-16044</cvename>
+      <cvename>CVE-2021-21117</cvename>
+      <cvename>CVE-2021-21118</cvename>
+      <cvename>CVE-2021-21119</cvename>
+      <cvename>CVE-2021-21120</cvename>
+      <cvename>CVE-2021-21121</cvename>
+      <cvename>CVE-2021-21122</cvename>
+      <cvename>CVE-2021-21123</cvename>
+      <cvename>CVE-2021-21124</cvename>
+      <cvename>CVE-2021-21125</cvename>
+      <cvename>CVE-2021-21126</cvename>
+      <cvename>CVE-2021-21127</cvename>
+      <cvename>CVE-2021-21128</cvename>
+      <cvename>CVE-2021-21129</cvename>
+      <cvename>CVE-2021-21130</cvename>
+      <cvename>CVE-2021-21131</cvename>
+      <cvename>CVE-2021-21132</cvename>
+      <cvename>CVE-2021-21133</cvename>
+      <cvename>CVE-2021-21134</cvename>
+      <cvename>CVE-2021-21135</cvename>
+      <cvename>CVE-2021-21136</cvename>
+      <cvename>CVE-2021-21137</cvename>
+      <cvename>CVE-2021-21138</cvename>
+      <cvename>CVE-2021-21139</cvename>
+      <cvename>CVE-2021-21140</cvename>
+      <cvename>CVE-2021-21141</cvename>
+      <url>https://chromereleases.googleblog.com/2021/01/stable-channel-update-for-desktop_19.html</url>
+    </references>
+    <dates>
+      <discovery>2021-01-19</discovery>
+      <entry>2021-01-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="35aef72c-5c8e-11eb-8309-4ccc6adda413">
     <topic>chocolate-doom -- Arbitrary code execution</topic>
     <affects>
