@@ -2,7 +2,7 @@
 
 PORTNAME=	snuffleupagus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
+DISTVERSION=	0.7.0
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -12,7 +12,7 @@ COMMENT=	Security module for PHP 7+
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		localbase:ldflags php:ext
 USE_GITHUB=	yes
