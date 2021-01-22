@@ -77,6 +77,40 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="35aef72c-5c8e-11eb-8309-4ccc6adda413">
+    <topic>chocolate-doom -- Arbitrary code execution</topic>
+    <affects>
+      <package>
+	<name>chocolate-doom</name>
+	<range><lt>3.0.1</lt></range>
+      </package>
+      <package>
+        <name>crispy-doom</name>
+        <range><lt>5.9.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michal Dardas from LogicalTrust reports:</p>
+	<blockquote cite="https://github.com/chocolate-doom/chocolate-doom/issues/1293">
+	  <p>
+            The server in Chocolate Doom 3.0.0 and Crispy Doom 5.8.0 doesn't validate
+            the user-controlled num_players value, leading to a buffer overflow. A
+            malicious user can overwrite the server's stack.
+          </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/chocolate-doom/chocolate-doom/issues/1293</url>
+      <cvename>CVE-2020-14983</cvename>
+    </references>
+    <dates>
+      <discovery>2020-06-22</discovery>
+      <entry>2021-01-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="13c54e6d-5c45-11eb-b4e2-001b217b3468">
     <topic>nokogiri -- Security vulnerability</topic>
     <affects>
