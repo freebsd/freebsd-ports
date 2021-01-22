@@ -8,7 +8,7 @@ CATEGORIES=		biology
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Toolset for genome set arithmetic such as intersect, union
 
-LICENSE=	GPLv2
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	bash:shells/bash
