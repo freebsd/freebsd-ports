@@ -25,6 +25,7 @@ bin/xaos
 %%NLS%%share/XaoS/i18n/XaoS_ru.qm
 %%NLS%%share/XaoS/i18n/XaoS_sk.qm
 %%NLS%%share/XaoS/i18n/XaoS_sv.qm
+%%NLS%%share/XaoS/i18n/XaoS_vi.qm
 %%TUTORIAL%%share/XaoS/tutorial/3dtutor.xaf
 %%TUTORIAL%%share/XaoS/tutorial/Bclosing.xaf
 %%TUTORIAL%%share/XaoS/tutorial/Bintro.xaf
