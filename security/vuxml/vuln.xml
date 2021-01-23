@@ -77,6 +77,39 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="387bbade-5d1d-11eb-bf20-4437e6ad11c4">
+    <topic>mutt -- denial of service</topic>
+    <affects>
+      <package>
+	<name>mutt</name>
+	<range><lt>2.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tavis Ormandy reports:</p>
+	<blockquote cite="https://gitlab.com/muttmua/mutt/-/issues/323">
+	  <p>
+	    rfc822.c in Mutt through 2.0.4 allows remote attackers to cause a
+	    denial of service (mailbox unavailability) by sending email messages
+	    with sequences of semicolon characters in RFC822 address fields
+	    (aka terminators of empty groups). A small email message from the
+	    attacker can cause large memory consumption, and the victim
+	    may then be unable to see email messages from other persons.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+    <url>https://gitlab.com/muttmua/mutt/-/issues/323</url>
+    <cvename>CVE-2021-3181</cvename>
+    </references>
+    <dates>
+      <discovery>2021-01-17</discovery>
+      <entry>2021-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31344707-5d87-11eb-929d-d4c9ef517024">
     <topic>MySQL -- Multiple vulnerabilities</topic>
     <affects>
