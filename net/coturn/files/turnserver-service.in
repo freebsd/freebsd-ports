@@ -15,7 +15,7 @@
 name="turnserver"
 rcvar="${name}_enable"
 command="%%PREFIX%%/bin/${name}"
-pidfile="/var/run/prosody/${name}.pid"
+pidfile="/var/run/${name}.pid"
 required_files="%%PREFIX%%/etc/${name}.conf"
 
 load_rc_config ${name}
