@@ -1,11 +1,11 @@
---- ogg123/Makefile.in.orig	2010-03-26 07:07:18 UTC
+--- ogg123/Makefile.in.orig	2021-01-21 09:14:18 UTC
 +++ ogg123/Makefile.in
-@@ -633,7 +633,7 @@ info: info-am
+@@ -816,7 +816,7 @@ info: info-am
  
  info-am:
  
 -install-data-am: install-docDATA install-man
 +install-data-am: install-man
  
- install-exec-am: install-binPROGRAMS
+ install-dvi: install-dvi-am
  

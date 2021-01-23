@@ -1,6 +1,6 @@
---- ogg123/vorbis_comments.c.orig	2010-01-27 04:14:11 UTC
+--- ogg123/vorbis_comments.c.orig	2021-01-07 23:31:25 UTC
 +++ ogg123/vorbis_comments.c
-@@ -72,7 +72,7 @@ char *lookup_comment_prettyprint (char *
+@@ -74,7 +74,7 @@ char *lookup_comment_prettyprint (const char *comment,
  
    /* Use default formatting */
    j = strcspn(comment, "=");

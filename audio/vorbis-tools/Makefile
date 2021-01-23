@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vorbis-tools
-PORTVERSION=	1.4.0
-PORTREVISION=	10
+PORTVERSION=	1.4.2
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
@@ -18,6 +17,8 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libcurl.so:ftp/curl \
 		libFLAC.so:audio/flac \
 		libkate.so:multimedia/libkate \
+		libogg.so:audio/libogg \
+		libopusfile.so:audio/opusfile \
 		libspeex.so:audio/speex \
 		libvorbis.so:audio/libvorbis
 
