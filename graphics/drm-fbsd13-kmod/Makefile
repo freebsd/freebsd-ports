@@ -1,7 +1,7 @@
 # Created by: Johannes Dieterich <jmd@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	drm-current-kmod
+PORTNAME=	drm-fbsd13-kmod
 PORTVERSION=	5.4.62.g20210122
 CATEGORIES=	graphics kld
 
