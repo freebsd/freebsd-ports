@@ -37,7 +37,7 @@ PLIST_SUB=	TILE38_USER=${USERS} \
 		TILE38_RUNDIR=${TILE38_RUNDIR}
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build.sh
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ./build.sh
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${TILE38_DBDIR} ${STAGEDIR}${TILE38_RUNDIR}
