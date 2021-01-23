@@ -2,7 +2,7 @@
 
 PORTNAME=	dosbox-staging
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.75.2
+DISTVERSION=	0.76.0
 CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libopusfile.so:audio/opusfile \
 		libpng.so:graphics/png
 
-USES=		autoreconf compiler:c++11-lang gl pkgconfig sdl
+USES=		autoreconf compiler:c++14-lang gl pkgconfig sdl
 
 USE_GL=		gl
 USE_SDL=	sdl2 net2
@@ -22,11 +22,15 @@ USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-pthread
 
-OPTIONS_DEFINE=	ALSA DOCS
+OPTIONS_DEFINE=	ALSA DOCS FLUIDSYNTH
+OPTIONS_DEFAULT=	FLUIDSYNTH
 
 ALSA_DESC=		ALSA midi support
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ENABLE=	alsa-midi
+
+FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:audio/fluidsynth
+FLUIDSYNTH_CONFIGURE_ENABLE=	fluidsynth
 
 PORTDOCS=	NEWS README README.md
 
