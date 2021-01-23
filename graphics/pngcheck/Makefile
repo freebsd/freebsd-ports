@@ -2,26 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	pngcheck
-PORTVERSION=	2.3.0
-PORTREVISION=	2
+PORTVERSION=	3.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	SF/png-mng/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://www.libpng.org/pub/png/src/ \
+		https://www.cyberbotx.com/pngcheck/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Checks the integrity of PNG images
 
-LICENSE=	MIT GPLv2+
+LICENSE=	GPLv2+ MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/gpl/COPYING
 
 MAKEFILE=	Makefile.unx
 MAKE_ARGS=	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS} -DUSE_ZLIB" LIBS="-lz"
 
+PLIST_FILES=	bin/png-fix-IDAT-windowsize \
+		bin/pngcheck \
+		bin/pngsplit
 PORTDOCS=	CHANGELOG README
-
-PLIST_FILES=	bin/pngcheck \
-		bin/pngsplit \
-		bin/png-fix-IDAT-windowsize
 
 OPTIONS_DEFINE=	DOCS
 
