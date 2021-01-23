@@ -6,10 +6,13 @@ PORTVERSION=	2.1.6
 PORTEPOCH=	1
 CATEGORIES=	security www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbeis@xs4all.nl
 COMMENT=	Web and CGI vulnerability scanner with SSL support
 
 LICENSE=	GPLv2
+
+USES=		perl5 shebangfix
+USE_PERL5=	run
 
 GH_ACCOUNT=	sullo
 USE_GITHUB=	yes
@@ -22,8 +25,6 @@ SSLEAY_RUN_DEPENDS=	p5-Net-SSLeay>0:security/p5-Net-SSLeay
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USES=		perl5 shebangfix
-USE_PERL5=	run
 SHEBANG_FILES=	nikto.pl
 WRKSRC_SUBDIR=	program
 
