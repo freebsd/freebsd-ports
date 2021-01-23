@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-server
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	net
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -64,7 +64,8 @@ GUACENC_CONFIGURE_WITH=		libavcodec libavutil libswscale
 GUACENC_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 GUACENC_CFLAGS=		-Wno-error=deprecated
 GUACLOG_CONFIGURE_ENABLE=	guaclog
-KUBERNETES_CONFIGURE_WITH=	kubernetes pango terminal
+KUBERNETES_CONFIGURE_ENABLE=	kubernetes
+KUBERNETES_CONFIGURE_WITH=	pango terminal
 KUBERNETES_LIB_DEPENDS=		libwebsockets.so:net/libwebsockets
 KUBERNETES_USE=			GNOME=pango
 NLS_USES=		gettext-runtime
@@ -87,7 +88,8 @@ WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
 post-patch:
-	@${REINPLACE_CMD} 's/-Werror//' ${WRKSRC}/src/libguac/Makefile.am
+	@${REINPLACE_CMD} 's/-Werror//' ${WRKSRC}/src/libguac/Makefile.am \
+		${WRKSRC}/src/protocols/vnc/Makefile.am
 	@${REINPLACE_CMD} 's|/etc/ssl|${PREFIX}/etc/ssl|g ; \
 			 s|/etc/guacamole|${ETCDIR}|g' \
 			 ${WRKSRC}/src/guacd/man/guacd.conf.5.in

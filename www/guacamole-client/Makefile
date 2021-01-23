@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	guacamole-client
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	www java
 MASTER_SITES+=	https://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo \
 		http://sourceforge.net/projects/distfiles/files/${PORTNAME}/:repo
@@ -60,7 +60,7 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/guacamole/target/guacamole-${DISTVERSIONFULL}.war \
 			${STAGEDIR}${DATADIR}/guacamole.war
 .for i in ${AUTH_EXTENSION}
-		${INSTALL_DATA} ${WRKSRC}/extensions/guacamole-auth-$i/target/guacamole-auth-$i-${DISTVERSIONFULL}.tar.gz \
+		${INSTALL_DATA} ${WRKSRC}/extensions/guacamole-auth-$i/target/guacamole-auth-$i-*.tar.gz \
 			${STAGEDIR}/${DATADIR}/guacamole-auth-$i.tar.gz
 .endfor
 		${INSTALL_DATA} ${WRKSRC}/extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-dist/target/guacamole-auth-jdbc-${DISTVERSIONFULL}.tar.gz \
