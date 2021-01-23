@@ -1,5 +1,5 @@
+%%EMACS_VERSION_SITE_LISPDIR%%/slime/.github/workflows/ci.yml
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/.gitref
-%%EMACS_VERSION_SITE_LISPDIR%%/slime/.travis.yml
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/bridge.el
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/bridge.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/inferior-slime.el
@@ -10,6 +10,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/slime-autodoc.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/slime-banner.el
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/slime-banner.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/slime-buffer-streams.el
+%%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/slime-buffer-streams.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/slime-c-p-c.el
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/slime-c-p-c.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/slime-cl-indent.el
@@ -82,6 +84,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/slime-xref-browser.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/swank-arglists.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/swank-asdf.lisp
+%%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/swank-buffer-streams.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/swank-c-p-c.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/swank-clipboard.lisp
 %%EMACS_VERSION_SITE_LISPDIR%%/slime/contrib/swank-fancy-inspector.lisp
