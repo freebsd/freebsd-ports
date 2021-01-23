@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnome-tweaks
-PORTVERSION=	3.34.0
-PORTREVISION=	1
+PORTVERSION=	3.34.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -12,23 +11,22 @@ COMMENT=	Allows to tweak some hidden settings in GNOME3
 
 LICENSE=	GPLv3+ CC0-1.0
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSES/GPL-3.0
 LICENSE_FILE_CC0-1.0=	${WRKSRC}/LICENSES/CC0-1.0
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSES/GPL-3.0
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		gnome-shell>=3.28:x11/gnome-shell
 
-PORTSCOUT=	limitw:1,even
-
-NO_ARCH=	yes
 USES=		gettext gnome localbase meson pkgconfig \
 		python:3.4+ shebangfix tar:xz
 USE_GNOME=	gtk30 pygobject3 nautilus3
-INSTALLS_ICONS=	yes
 SHEBANG_FILES=	gnome-tweaks \
 		gnome-tweak-tool-lid-inhibitor \
 		meson-postinstall.py
+
+NO_ARCH=	yes
+PORTSCOUT=	limitw:1,even
 
 # generates .py[co] files for installed modules
 # if that's not done, ${PYTHON_SITELIBDIR}/gps will be polluted
