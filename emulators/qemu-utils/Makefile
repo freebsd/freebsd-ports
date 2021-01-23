@@ -5,8 +5,6 @@ PKGNAMESUFFIX=	-utils
 MAINTAINER=	ken@FreeBSD.org
 COMMENT=	QEMU userland utilities
 
-BROKEN=		fails to patch
-
 HAS_CONFIGURE=	yes
 USES=		compiler:c11 cpe gettext-runtime gmake gnome perl5 pkgconfig \
 		python:build tar:xz
@@ -18,7 +16,7 @@ OPTIONS_SLAVE=	DOCS
 OPTIONS_EXCLUDE=	SAMBA X11 GTK3 OPENGL GNUTLS SASL JPEG PNG CURL \
 		CDROM_DMA PCAP USBREDIR GNS3 X86_TARGETS \
 		STATIC_LINK NCURSES VDE
-MASTERDIR=	${.CURDIR}/../qemu
+MASTERDIR=	${.CURDIR}/../qemu42
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 EXTRA_PATCHES=	${.CURDIR}/files/patch-configure
