@@ -17,4 +17,4 @@ small kernels written in assembly. Instead of providing code for every
 bridged function call, which unnecessarily results in code bloat, only a
 couple of instructions are used to invoke every possible call.
 
-WWW: http://www.dyncall.org
+WWW: https://www.dyncall.org
