@@ -16,6 +16,11 @@ include/core/profiler.hpp
 include/core/python_ngcore.hpp
 include/core/ranges.hpp
 include/core/signal.hpp
+include/core/simd.hpp
+include/core/simd_avx.hpp
+include/core/simd_avx512.hpp
+include/core/simd_generic.hpp
+include/core/simd_sse.hpp
 include/core/symboltable.hpp
 include/core/table.hpp
 include/core/taskmanager.hpp
@@ -59,7 +64,6 @@ include/general/netgenout.hpp
 include/general/ngarray.hpp
 include/general/ngbitarray.hpp
 include/general/ngpython.hpp
-include/general/ngsimd.hpp
 include/general/optmem.hpp
 include/general/parthreads.hpp
 include/general/seti.hpp
