@@ -4,7 +4,7 @@ include/eog-%%VERSION%%/eog/eog-application.h
 include/eog-%%VERSION%%/eog/eog-clipboard-handler.h
 include/eog-%%VERSION%%/eog/eog-debug.h
 include/eog-%%VERSION%%/eog/eog-enums.h
-%%EXIF%%include/eog-%%VERSION%%/eog/eog-exif-util.h
+include/eog-%%VERSION%%/eog/eog-exif-util.h
 include/eog-%%VERSION%%/eog/eog-file-chooser.h
 include/eog-%%VERSION%%/eog/eog-image-save-info.h
 include/eog-%%VERSION%%/eog/eog-image.h
@@ -27,9 +27,9 @@ lib/eog/libeog.so
 lib/eog/plugins/fullscreen.plugin
 lib/eog/plugins/libfullscreen.so
 lib/eog/plugins/libreload.so
-%%EXIF%%lib/eog/plugins/libstatusbar-date.so
+lib/eog/plugins/libstatusbar-date.so
 lib/eog/plugins/reload.plugin
-%%EXIF%%lib/eog/plugins/statusbar-date.plugin
+lib/eog/plugins/statusbar-date.plugin
 libdata/pkgconfig/eog.pc
 share/GConf/gsettings/eog.convert
 %%DATADIR%%/gir-1.0/Eog-%%VERSION%%.gir
