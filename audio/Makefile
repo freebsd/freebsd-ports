@@ -805,6 +805,7 @@
     SUBDIR += teamspeak3-server
     SUBDIR += tempest_for_eliza
     SUBDIR += thunar-media-tags-plugin
+    SUBDIR += tiatracker
     SUBDIR += timely-lv2
     SUBDIR += timemachine
     SUBDIR += timidity

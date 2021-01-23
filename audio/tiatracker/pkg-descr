@@ -1,0 +1,7 @@
+TIATracker is a tool for making Atari VCS music on the PC and a new
+sound routine for the VCS. It features ADSR envelopes, up to 7 melodic
+and 15 percussion instruments, customizable pitch guides for optimizing
+the number of in-tune notes, a size-optimized and configurable replayer
+routine and much more.
+
+WWW: https://bitbucket.org/kylearan/tiatracker/src/master/

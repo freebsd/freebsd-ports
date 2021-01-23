@@ -1,0 +1,8 @@
+bin/TIATracker
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Dok Sae - Speedtest.ttt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glafouk - Beside.ttt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/glafouk - Miniblast.ttt
+%%PORTDOCS%%%%DOCSDIR%%/TIATracker_Revision.odp
+%%PORTDOCS%%%%DOCSDIR%%/TIATracker_manual.odt
+%%PORTDOCS%%%%DOCSDIR%%/TIATracker_manual.pdf
+share/pixmaps/tt_icon.png
