@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	graywolf
-DISTVERSION=	0.1.6-3
-DISTVERSIONSUFFIX=	-g6c5e24f
-PORTREVISION=	1
+DISTVERSION=	0.1.6-4
+DISTVERSIONSUFFIX=	-gf47937b
 CATEGORIES=	cad
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
@@ -17,15 +16,22 @@ LICENSE=	GPLv2
 BROKEN_aarch64=	Fails to link: missing sbrk
 
 LIB_DEPENDS=	libgsl.so:math/gsl
+TEST_DEPENDS=	bash:shells/bash \
+		rsync:net/rsync
 
-USES=		cmake compiler:c11 pkgconfig xorg
-USE_GITHUB=	yes
-GH_ACCOUNT=	rubund
+USES=		cmake compiler:c11 pkgconfig shebangfix xorg
 USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	rubund
+
+SHEBANG_GLOB=	*.sh
 
 USE_GCC=	any # lots of obviously incorrect C where clang fails, which gcc nevertheless magically finds a way to compile
 
 CFLAGS+=	-fcommon
+
+TEST_TARGET=	test # most tests crash
 
 .include <bsd.port.mk>
