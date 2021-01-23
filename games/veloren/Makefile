@@ -1,6 +1,7 @@
 PORTNAME=	veloren
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/jbeich
 
@@ -18,7 +19,8 @@ BUILD_DEPENDS=	glslang>0:graphics/glslang \
 		shaderc>0:graphics/shaderc \
 		spirv-tools>0:graphics/spirv-tools \
 		libxkbcommon>0:x11/libxkbcommon
-LIB_DEPENDS=	libasound.so:audio/alsa-lib
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libudev.so:devel/libudev-devd
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
 		${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
