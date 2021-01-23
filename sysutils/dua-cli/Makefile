@@ -2,7 +2,7 @@
 
 PORTNAME=	dua-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.9
+DISTVERSION=	2.10.10
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Byron
 
 CARGO_CRATES=	ansi_term-0.11.0 \
-		anyhow-1.0.37 \
+		anyhow-1.0.38 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
@@ -37,7 +37,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		crossterm-0.18.2 \
 		crossterm_winapi-0.6.2 \
 		crosstermion-0.6.0 \
-		ctor-0.1.17 \
+		ctor-0.1.18 \
 		difference-2.0.0 \
 		either-1.6.1 \
 		filesize-0.2.0 \
@@ -45,15 +45,15 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		glob-0.3.0 \
 		hashbrown-0.9.1 \
 		heck-0.3.2 \
-		hermit-abi-0.1.17 \
+		hermit-abi-0.1.18 \
 		indexmap-1.6.1 \
 		instant-0.1.9 \
 		itertools-0.10.0 \
 		jwalk-0.6.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.81 \
+		libc-0.2.82 \
 		lock_api-0.4.2 \
-		log-0.4.11 \
+		log-0.4.13 \
 		memoffset-0.6.1 \
 		mio-0.7.7 \
 		miow-0.3.6 \
@@ -74,11 +74,12 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		rayon-1.5.0 \
 		rayon-core-1.9.0 \
 		redox_syscall-0.1.57 \
-		redox_termios-0.1.1 \
+		redox_syscall-0.2.4 \
+		redox_termios-0.1.2 \
 		scopeguard-1.1.0 \
 		signal-hook-0.1.17 \
 		signal-hook-registry-1.3.0 \
-		smallvec-1.6.0 \
+		smallvec-1.6.1 \
 		socket2-0.3.19 \
 		strsim-0.10.0 \
 		syn-1.0.58 \
