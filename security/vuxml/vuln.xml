@@ -77,6 +77,92 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="31344707-5d87-11eb-929d-d4c9ef517024">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql56-client</name>
+	<range><lt>5.6.51</lt></range>
+      </package>
+      <package>
+	<name>mysql57-client</name>
+	<range><lt>5.7.33</lt></range>
+      </package>
+      <package>
+	<name>mysql80-client</name>
+	<range><lt>8.0.23</lt></range>
+      </package>
+      <package>
+	<name>mysql56-server</name>
+	<range><lt>5.6.51</lt></range>
+      </package>
+      <package>
+	<name>mysql57-server</name>
+	<range><lt>5.7.33</lt></range>
+      </package>
+      <package>
+	<name>mysql80-server</name>
+	<range><lt>8.0.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujan2021.html#AppendixMSQL">
+	  <p>This Critical Patch Update contains 34 new security patches for
+	    Oracle MySQL Server and 4 for MySQL Client. </p>
+	  <p>The highest CVSS v3.1 Base Score of vulnerabilities affecting Oracle
+	    MySQL is 6.8.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.oracle.com/security-alerts/cpujan2021.html#AppendixMSQL</url>
+      <url>CVE-2021-2046</url>
+      <url>CVE-2021-2020</url>
+      <url>CVE-2021-2024</url>
+      <url>CVE-2021-2011</url>
+      <url>CVE-2021-2006</url>
+      <url>CVE-2021-2048</url>
+      <url>CVE-2021-2028</url>
+      <url>CVE-2021-2122</url>
+      <url>CVE-2021-2058</url>
+      <url>CVE-2021-2001</url>
+      <url>CVE-2021-2016</url>
+      <url>CVE-2021-2021</url>
+      <url>CVE-2021-2030</url>
+      <url>CVE-2021-2031</url>
+      <url>CVE-2021-2036</url>
+      <url>CVE-2021-2055</url>
+      <url>CVE-2021-2060</url>
+      <url>CVE-2021-2070</url>
+      <url>CVE-2021-2076</url>
+      <url>CVE-2021-2065</url>
+      <url>CVE-2021-2014</url>
+      <url>CVE-2021-2002</url>
+      <url>CVE-2021-2012</url>
+      <url>CVE-2021-2009</url>
+      <url>CVE-2021-2072</url>
+      <url>CVE-2021-2081</url>
+      <url>CVE-2021-2022</url>
+      <url>CVE-2021-2038</url>
+      <url>CVE-2021-2061</url>
+      <url>CVE-2021-2056</url>
+      <url>CVE-2021-2087</url>
+      <url>CVE-2021-2088</url>
+      <url>CVE-2021-2032</url>
+      <url>CVE-2021-2010</url>
+      <url>CVE-2021-1998</url>
+      <url>CVE-2021-2007</url>
+      <url>CVE-2021-2019</url>
+      <url>CVE-2021-2042</url>
+    </references>
+    <dates>
+      <discovery>2021-01-FIXME</discovery>
+      <entry>2021-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4ed0e43c-5cef-11eb-bafd-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
