@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutt
-DISTVERSION=	2.0.4
+DISTVERSION=	2.0.5
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
@@ -192,7 +192,7 @@ QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv \
 .include <bsd.port.options.mk>
 
 VVV_PATCH_VERSION=	1.13.0
-GREETING_PATCH_VERSION=	2.0.1
+GREETING_PATCH_VERSION=	2.0.5
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${MANPREFIX}/man/man5
