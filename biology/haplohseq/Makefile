@@ -2,7 +2,7 @@
 
 PORTNAME=	haplohseq
 DISTVERSION=	0.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -26,9 +26,16 @@ MAKE_ENV=	STRIP=${STRIP}
 
 SUB_FILES=	haplohseq-example
 
+pre-configure:
+	@${REINPLACE_CMD} \
+		-e 's|/bin/bash|/bin/sh|' \
+		-e 's|python|mkdir example_output; ${PYTHON_CMD}|' \
+		-e 's|\.\./haplohseq|haplohseq|' \
+		${WRKSRC}/example/example_run.sh
+
 post-install-EXAMPLES-on:
 	${INSTALL_SCRIPT} ${WRKDIR}/haplohseq-example ${STAGEDIR}${PREFIX}/bin
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "example ldmap scripts" ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC} && ${RM} example/*.orig scripts/*.orig && ${COPYTREE_SHARE} "example ldmap scripts" ${STAGEDIR}${EXAMPLESDIR})
 
 do-test:
 	@(cd ${WRKSRC}/build/test && ${FILESDIR}/run-tests)
