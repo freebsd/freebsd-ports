@@ -1,3 +1,13 @@
-TIMESTAMP = 1596476102
-SHA256 (videlec-e-antic-0.1.8_GH0.tar.gz) = 7c7c7693f86d8bb6d849d903cdb6796491d845a9fd79e8a3c9166edbf2436bc0
-SIZE (videlec-e-antic-0.1.8_GH0.tar.gz) = 127960
+TIMESTAMP = 1611416419
+SHA256 (flatsurf-e-antic-1.0.0-rc.12_GH0.tar.gz) = df42a10a2381cebf401d920258db6ad2599a0e64bd4866c8b6df41128df48e28
+SIZE (flatsurf-e-antic-1.0.0-rc.12_GH0.tar.gz) = 122879
+SHA256 (catchorg-Catch2-ff349a5_GH0.tar.gz) = 45983da4c511bc6ed68e391178ead52b0b40c5e8ad7ea5f3fc8c376432d1b6b7
+SIZE (catchorg-Catch2-ff349a5_GH0.tar.gz) = 655437
+SHA256 (USCiLab-cereal-51cbda5_GH0.tar.gz) = efa214cfc850a4a2360baf4419b88c93be2a08b09ff5f9bac604a18498b83cfb
+SIZE (USCiLab-cereal-51cbda5_GH0.tar.gz) = 335754
+SHA256 (wbhart-flint2-ae7ec89_GH0.tar.gz) = b31afe615382f2174b19a951d89602787a0314d8ae0602be8a2987c7861d5aca
+SIZE (wbhart-flint2-ae7ec89_GH0.tar.gz) = 4526427
+SHA256 (flatsurf-unique-factory-0000f42_GH0.tar.gz) = 69c9ee22e36ff871709403f4715f9acff3b9cfa5e6b715ec1e21543bb8f32419
+SIZE (flatsurf-unique-factory-0000f42_GH0.tar.gz) = 8247
+SHA256 (flatsurf-antic-f4e8a60_GH0.tar.gz) = e3dc2b4caf4c80f83c2e391ff6b8bce2c4b3694028a4fe7b07696411be0a07e4
+SIZE (flatsurf-antic-f4e8a60_GH0.tar.gz) = 73895
