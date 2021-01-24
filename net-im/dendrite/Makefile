@@ -2,7 +2,7 @@
 
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.5
+DISTVERSION=	0.3.6
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -131,7 +131,7 @@ GH_TUPLE=	\
 		matrix-org:go-http-js-libp2p:783164aeeda4:matrix_org_go_http_js_libp2p/vendor/github.com/matrix-org/go-http-js-libp2p \
 		matrix-org:go-sqlite3-js:bc8506ccbcf3:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:7dd5e2a05bcd:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:eb6a8903f9fb:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:gomatrixserverlib:b1c67ac867cc:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
 		matrix-org:naffka:bcdd62999a91:matrix_org_naffka/vendor/github.com/matrix-org/naffka \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.2:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
