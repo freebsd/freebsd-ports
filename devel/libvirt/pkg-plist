@@ -192,6 +192,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Skylake-Server-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Server-noTSX-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Server.xml
+%%DATADIR%%/cpu_map/x86_Snowridge.xml
 %%DATADIR%%/cpu_map/x86_Westmere-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Westmere.xml
 %%DATADIR%%/cpu_map/x86_athlon.xml
