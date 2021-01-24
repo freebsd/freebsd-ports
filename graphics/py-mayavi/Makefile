@@ -33,7 +33,7 @@ RUN_DEPENDS=	vtk9>0:math/vtk9 \
 		${PYTHON_PKGNAMEPREFIX}traits>=4.6.0:devel/py-traits@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitsui>=6.0.0:graphics/py-traitsui@${PY_FLAVOR}
 
-USES=		python shebangfix
+USES=		python:3.6+ shebangfix
 USE_PYTHON=	noflavors distutils concurrent autoplist # noflavors to force python to be of the same version as in vtk9, which always has default python version
 
 USE_WX=		3.0+
