@@ -3,6 +3,7 @@
 
 PORTNAME=	hackrf
 PORTVERSION=	g${GIT_SRC_DATE}
+PORTREVISION=	1
 CATEGORIES=	comms devel hamradio science security
 PKGNAMESUFFIX=  -devel
 
@@ -10,6 +11,9 @@ MAINTAINER=	mr@freebsd.org
 COMMENT=	Low cost open source hardware software radio platform
 
 LICENSE=	GPLv2
+
+LIB_DEPENDS=    libfftw3.so:math/fftw3 \
+                libfftw3f.so:math/fftw3-float
 
 CONFLICTS=	hackrf
 
