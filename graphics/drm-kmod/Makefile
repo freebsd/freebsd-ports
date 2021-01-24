@@ -3,6 +3,7 @@
 
 PORTNAME=	drm-kmod
 PORTVERSION=	g20190710
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -22,7 +23,9 @@ RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-fbsd11.2-kmod
 RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-fbsd12.0-kmod
 .elif ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300108
 IGNORE=		not supported on older 13, no kernel support
-.elif ${OSVERSION} >= 1300108
+.elif ${OSVERSION} >= 1300108 && ${OSVERSION} < 1400000
+RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-fbsd13-kmod
+.elif ${OSVERSION} >= 1400000
 RUN_DEPENDS=	${KMODDIR}/drm.ko:graphics/drm-current-kmod
 .else
 IGNORE=		not supported for this configuration

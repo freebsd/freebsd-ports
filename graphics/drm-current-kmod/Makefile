@@ -19,6 +19,7 @@ RUN_DEPENDS=	gpu-firmware-kmod>=g20200914:graphics/gpu-firmware-kmod
 CONFLICTS_INSTALL=	drm-devel-kmod \
 			drm-fbsd11.2-kmod \
 			drm-fbsd12.0-kmod \
+			drm-fbsd13-kmod \
 			drm-legacy-kmod
 
 OPTIONS_DEFINE=	DEBUG SOURCE
