@@ -11,6 +11,9 @@ COMMENT=	Github-flavored Markdown for the py-markdown module
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	No longer maintained by upstream, please use textproc/py-cmarkgfm instead
+EXPIRATION_DATE=	2021-01-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>0,<3:textproc/py-markdown@${PY_FLAVOR}
 
 USES=		python:3.6+
