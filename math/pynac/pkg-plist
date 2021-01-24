@@ -45,8 +45,7 @@ include/pynac/useries-flint.h
 include/pynac/useries.h
 include/pynac/version.h
 include/pynac/wildcard.h
-lib/libpynac.a
 lib/libpynac.so
 lib/libpynac.so.18
-lib/libpynac.so.18.3.4
+lib/libpynac.so.18.3.5
 libdata/pkgconfig/pynac.pc
