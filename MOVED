@@ -16020,3 +16020,7 @@ graphics/qt-avif-image-plugin|graphics/kf5-kimageformats|2021-01-18|Part of kima
 archivers/libunrar5|archivers/libunrar6|2021-01-19|Renamed to match current major version of libunrar
 devel/electron7|devel/electron9|2021-01-21|EOLed upstream, switch to newer major version
 www/riot-web|www/element-web|2021-01-22|Project renamed
+sysutils/bareos16-client|sysutils/bareos18-client|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
+sysutils/bareos16-client-static|sysutils/bareos18-client-static|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
+sysutils/bareos16-server|sysutils/bareos18-server|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
+www/bareos16-webui|www/bareos18-webui|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
