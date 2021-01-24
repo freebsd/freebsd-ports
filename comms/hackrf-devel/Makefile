@@ -2,24 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	hackrf
-PORTVERSION=	2017.02.1
+PORTVERSION=	g${GIT_SRC_DATE}
 CATEGORIES=	comms devel hamradio science security
+PKGNAMESUFFIX=  -devel
 
-MAINTAINER=	cederom@tlen.pl
+MAINTAINER=	mr@freebsd.org
 COMMENT=	Low cost open source hardware software radio platform
 
 LICENSE=	GPLv2
 
-CONFLICTS=	hackrf-devel
+CONFLICTS=	hackrf
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	mossmann
-GH_TAGNAME=	31a37bd
+GH_TAGNAME=	${GIT_SRC_HASH}
 
 USES=		cmake
 CMAKE_SOURCE_PATH=	${WRKSRC}/host
 CMAKE_ARGS=	-DLIBUSB_LIBRARIES=/usr/lib/libusb.so
 
 USE_LDCONFIG=	yes
+
+.include "Makefile.git_rev"
 
 .include <bsd.port.mk>
