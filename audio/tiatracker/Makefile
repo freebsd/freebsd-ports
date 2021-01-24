@@ -4,6 +4,7 @@
 PORTNAME=	tiatracker
 PORTVERSION=	1.3
 DISTVERSIONSUFFIX=	.orig
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
@@ -35,12 +36,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|\(TIATracker_manual.pdf\)|${DOCSDIR}/\1|" \
+	@${REINPLACE_CMD} \
+		-e "s|\(TIATracker_manual.pdf\)|${DOCSDIR}/\1|" \
+		-e "s|\(keymap.cfg\)|${ETCDIR}/\1|" \
 		${WRKSRC}/mainwindow.cpp
 
 do-install:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DOCSDIR} \
+		${STAGEDIR}${ETCDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/TIATracker ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/data/keymap.cfg ${STAGEDIR}${ETCDIR}/keymap.cfg.sample
 	${INSTALL_DATA} ${WRKSRC}/songs/*.ttt ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/graphics/tt_icon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps

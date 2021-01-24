@@ -1,4 +1,5 @@
 bin/TIATracker
+@sample %%ETCDIR%%/keymap.cfg.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Dok Sae - Speedtest.ttt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/glafouk - Beside.ttt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/glafouk - Miniblast.ttt
