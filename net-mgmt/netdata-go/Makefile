@@ -2,7 +2,7 @@
 
 PORTNAME=	netdata-go
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.2
+DISTVERSION=	0.27.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	driesm.michiels@gmail.com
@@ -23,22 +23,25 @@ GH_TUPLE=	\
 		axiomhq:hyperloglog:a4c4c47bc57f:axiomhq_hyperloglog/vendor/github.com/axiomhq/hyperloglog \
 		blang:semver:v4.0.0:blang_semver_v4/vendor/github.com/blang/semver \
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
+		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		cloudflare:cfssl:v1.4.1:cloudflare_cfssl/vendor/github.com/cloudflare/cfssl \
 		coreos:go-systemd:408310d1ce37:coreos_go_systemd_v22/vendor/github.com/coreos/go-systemd/v22 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgryski:go-metro:280f6062b5bc:dgryski_go_metro/vendor/github.com/dgryski/go-metro \
+		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-check:check:8fa46927fb4f:go_check_check/vendor/gopkg.in/check.v1 \
 		go-ini:ini:v1.57.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
+		go-redis:redis:v8.4.0:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		godbus:dbus:v5.0.3:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		gofrs:flock:v0.8.0:gofrs_flock/vendor/github.com/gofrs/flock \
-		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:83d349e8ac1a:golang_net/vendor/golang.org/x/net \
-		golang:sys:b77594299b42:golang_sys/vendor/golang.org/x/sys \
-		golang:xerrors:1b5146add898:golang_xerrors/vendor/golang.org/x/xerrors \
+		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:a7d1128ccaa0:golang_net/vendor/golang.org/x/net \
+		golang:sys:fdedc70b468f:golang_sys/vendor/golang.org/x/sys \
+		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:certificate-transparency-go:v1.0.21:google_certificate_transparency_go/vendor/github.com/google/certificate-transparency-go \
 		google:uuid:6a5e28554805:google_uuid/vendor/github.com/google/uuid \
 		ilyam8:hashstructure:v1.1.0:ilyam8_hashstructure/vendor/github.com/ilyam8/hashstructure \
@@ -51,11 +54,12 @@ GH_TUPLE=	\
 		miekg:dns:v1.1.29:miekg_dns/vendor/github.com/miekg/dns \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		niemeyer:pretty:a10e7caefd8e:niemeyer_pretty/vendor/github.com/niemeyer/pretty \
+		open-telemetry:opentelemetry-go:v0.14.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		prometheus:common:v0.10.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:prometheus:v2.5.0:prometheus_prometheus/vendor/github.com/prometheus/prometheus \
 		smartystreets:goconvey:v1.6.4:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
-		stretchr:testify:v1.6.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		tomasen:fcgi_client:2bb3d819fd19:tomasen_fcgi_client/vendor/github.com/tomasen/fcgi_client \
 		valyala:fastjson:v1.5.4:valyala_fastjson/vendor/github.com/valyala/fastjson \
 		vmware:govmomi:v0.22.2:vmware_govmomi/vendor/github.com/vmware/govmomi
