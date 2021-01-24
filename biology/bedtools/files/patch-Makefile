@@ -1,33 +1,36 @@
---- Makefile.orig	2019-09-07 21:14:56 UTC
+--- Makefile.orig	2021-01-23 19:33:26 UTC
 +++ Makefile
-@@ -4,7 +4,7 @@
+@@ -4,7 +4,8 @@
  # (c) 2009 Aaron Quinlan
  # ==========================
  
 -SHELL := /bin/bash -e
++# Use sh for portability and avoid bash extensions in shell commands
 +SHELL := /bin/sh -e
  
  VERSION_FILE=./src/utils/version/version_git.h
  RELEASED_VERSION_FILE=./src/utils/version/version_release.txt
-@@ -20,7 +20,7 @@ OBJ_DIR	= obj
+@@ -21,7 +22,8 @@ OBJ_DIR	= obj
  BIN_DIR	= bin
  SRC_DIR	= src
  
 -CXX     = g++
++# Default if not provided via the environment or make args
 +CXX     ?= g++
  
  ifeq ($(DEBUG),1)
  BT_CPPFLAGS = -DDEBUG -D_DEBUG -D_FILE_OFFSET_BITS=64 -DWITH_HTS_CB_API $(INCLUDES)
-@@ -40,7 +40,7 @@ endif
+@@ -41,7 +43,8 @@ endif
  BT_LDFLAGS =
  BT_LIBS    = -lz -lm -lbz2 -llzma -lpthread
  
 -prefix ?= /usr/local
++# Default if not provided via the environment or make args
 +PREFIX ?= /usr/local
  
  SUBDIRS = $(SRC_DIR)/annotateBed \
  		  $(SRC_DIR)/bamToBed \
-@@ -183,9 +183,9 @@ $(BIN_DIR)/intersectBed: | $(BIN_DIR)
+@@ -197,9 +200,9 @@ $(BIN_DIR)/intersectBed: | $(BIN_DIR)
  .PHONY: all
  
  install: all
