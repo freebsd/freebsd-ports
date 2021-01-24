@@ -2,8 +2,7 @@
 
 PORTNAME=	vuls
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.9.0-92
-DISTVERSIONSUFFIX=	-g101c44c
+DISTVERSION=		0.13.7
 CATEGORIES=	security
 
 MAINTAINER=	iscandr@gmail.com
@@ -12,16 +11,12 @@ COMMENT=	Agentless vulnerability scanner
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		unfetchable
-
 RUN_DEPENDS=	${LOCALBASE}/bin/go-cve-dictionary:security/go-cve-dictionary
 
-USES=	go:modules
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	future-architect
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${PORTNAME}
-
 GH_TUPLE=	\
 		Azure:azure-sdk-for-go:v43.3.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:go-autorest:5bd9621f41a0:azure_go_autorest_date/vendor/github.com/Azure/go-autorest \
@@ -33,7 +28,6 @@ GH_TUPLE=	\
 		Masterminds:semver:v3.1.0:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		RackSec:srslog:a4725f04ec91:racksec_srslog/vendor/github.com/RackSec/srslog \
 		VividCortex:ewma:v1.1.1:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
-		VividCortex:ewma:v1.1.1:vividcortex_ewma_1/vendor/gopkg.in/VividCortex/ewma.v1 \
 		aquasecurity:bolt-fixtures:c0f517aea2ed:aquasecurity_bolt_fixtures/vendor/github.com/aquasecurity/bolt-fixtures \
 		aquasecurity:fanal:6de62ef86882:aquasecurity_fanal/vendor/github.com/aquasecurity/fanal \
 		aquasecurity:go-dep-parser:ea223f0ef24b:aquasecurity_go_dep_parser/vendor/github.com/aquasecurity/go-dep-parser \
@@ -45,22 +39,21 @@ GH_TUPLE=	\
 		briandowns:spinner:ac46072a5a91:briandowns_spinner/vendor/github.com/briandowns/spinner \
 		caarlos0:env:v6.0.0:caarlos0_env_v6/vendor/github.com/caarlos0/env/v6 \
 		cenkalti:backoff:v2.2.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
-		cheggaaa:pb:v1.0.28:cheggaaa_pb_1/vendor/gopkg.in/cheggaaa/pb.v1 \
-		cheggaaa:pb:v2.0.7:cheggaaa_pb/vendor/github.com/cheggaaa/pb \
-		cheggaaa:pb:v2.0.7:cheggaaa_pb_2/vendor/gopkg.in/cheggaaa/pb.v2 \
-		cheggaaa:pb:v3.0.3:cheggaaa_pb_v3 \
+		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
+		cheggaaa:pb:v1.0.28:cheggaaa_pb/vendor/gopkg.in/cheggaaa/pb.v1 \
+		cheggaaa:pb:v3.0.5:cheggaaa_pb_v3/vendor/github.com/cheggaaa/pb \
 		d4l3k:messagediff:7e0a312ae40b:d4l3k_messagediff/vendor/github.com/d4l3k/messagediff \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
+		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		dominikh:go-tools:v0.0.1-2019.2.3:dominikh_go_tools/vendor/honnef.co/go/tools \
 		emersion:go-sasl:7bfe0ed36a21:emersion_go_sasl/vendor/github.com/emersion/go-sasl \
 		emersion:go-smtp:v0.13.0:emersion_go_smtp/vendor/github.com/emersion/go-smtp \
 		etcd-io:bbolt:v1.3.5:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
-		fatih:color:v1.7.0:fatih_color_1/vendor/gopkg.in/fatih/color.v1 \
-		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
+		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
-		go-redis:redis:v6.15.9:go_redis_redis/vendor/github.com/go-redis/redis \
+		go-redis:redis:v8.4.0:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-stack:stack:v1.8.0:go_stack_stack/vendor/github.com/go-stack/stack \
 		go-yaml:yaml:eeeca48fe776:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
@@ -100,11 +93,11 @@ GH_TUPLE=	\
 		knqyf263:go-cpe:659663f6eca2:knqyf263_go_cpe/vendor/github.com/knqyf263/go-cpe \
 		knqyf263:go-deb-version:09fca494f03d:knqyf263_go_deb_version/vendor/github.com/knqyf263/go-deb-version \
 		knqyf263:go-rpm-version:74609b86c936:knqyf263_go_rpm_version/vendor/github.com/knqyf263/go-rpm-version \
-		knqyf263:gost:v0.1.4:knqyf263_gost/vendor/github.com/knqyf263/gost \
+		knqyf263:gost:v0.1.7:knqyf263_gost/vendor/github.com/knqyf263/gost \
 		konsorten:go-windows-terminal-sequences:v1.0.3:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
-		kotakanbe:go-cve-dictionary:v0.5.0:kotakanbe_go_cve_dictionary/vendor/github.com/kotakanbe/go-cve-dictionary \
+		kotakanbe:go-cve-dictionary:v0.5.5:kotakanbe_go_cve_dictionary/vendor/github.com/kotakanbe/go-cve-dictionary \
 		kotakanbe:go-pingscanner:v0.1.0:kotakanbe_go_pingscanner/vendor/github.com/kotakanbe/go-pingscanner \
-		kotakanbe:goval-dictionary:v0.2.14:kotakanbe_goval_dictionary/vendor/github.com/kotakanbe/goval-dictionary \
+		kotakanbe:goval-dictionary:v0.2.15:kotakanbe_goval_dictionary/vendor/github.com/kotakanbe/goval-dictionary \
 		kotakanbe:logrus-prefixed-formatter:928f7356cb96:kotakanbe_logrus_prefixed_formatter/vendor/github.com/kotakanbe/logrus-prefixed-formatter \
 		kubernetes:utils:6e3d28b6ed19:kubernetes_utils/vendor/k8s.io/utils \
 		labstack:gommon:v0.3.0:labstack_gommon/vendor/github.com/labstack/gommon \
@@ -114,17 +107,17 @@ GH_TUPLE=	\
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty_1/vendor/github.com/mattn/go-isatty \
 		mattn:go-isatty:v0.0.6:mattn_go_isatty/vendor/gopkg.in/mattn/go-isatty.v0 \
-		mattn:go-runewidth:v0.0.4:mattn_go_runewidth_1/vendor/gopkg.in/mattn/go-runewidth.v0 \
 		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mattn:go-sqlite3:v2.0.3:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mgutz:ansi:9520e82c474b:mgutz_ansi/vendor/github.com/mgutz/ansi \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		moul:http2curl:v1.0.0:moul_http2curl/vendor/moul.io/http2curl \
-		mozqnet:go-exploitdb:v0.1.0:mozqnet_go_exploitdb/vendor/github.com/mozqnet/go-exploitdb \
+		mozqnet:go-exploitdb:v0.1.2:mozqnet_go_exploitdb/vendor/github.com/mozqnet/go-exploitdb \
 		nlopes:slack:v0.6.0:nlopes_slack/vendor/github.com/nlopes/slack \
 		nsf:termbox-go:38ba6e5628f1:nsf_termbox_go/vendor/github.com/nsf/termbox-go \
 		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
+		open-telemetry:opentelemetry-go:v0.14.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
 		parnurzeal:gorequest:v0.2.16:parnurzeal_gorequest/vendor/github.com/parnurzeal/gorequest \
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
@@ -142,7 +135,7 @@ GH_TUPLE=	\
 		stretchr:objx:v0.3.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
-		takuzoo3868:go-msfdb:v0.1.1:takuzoo3868_go_msfdb/vendor/github.com/takuzoo3868/go-msfdb \
+		takuzoo3868:go-msfdb:v0.1.3:takuzoo3868_go_msfdb/vendor/github.com/takuzoo3868/go-msfdb \
 		uber-go:atomic:v1.5.1:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.4.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:tools:2cfd321de3ee:uber_go_tools/vendor/go.uber.org/tools \
@@ -166,26 +159,6 @@ post-extract:
 	@${RLN} ${WRKSRC_azure_go_autorest_logger}/logger ${WRKSRC}/vendor/github.com/Azure/go-autorest/logger
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/tracing
 	@${RLN} ${WRKSRC_azure_go_autorest_tracing}/tracing ${WRKSRC}/vendor/github.com/Azure/go-autorest/tracing
-	@${RM} -r ${WRKSRC}/vendor/github.com/cheggaaa/pb/v3
-	@${RLN} ${WRKSRC_cheggaaa_pb_v3}/v3 ${WRKSRC}/vendor/github.com/cheggaaa/pb/v3
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|"gopkg.in/cheggaaa/pb.v2/termutil"|"github.com/cheggaaa/pb/termutil"|' \
-		${WRKSRC}/vendor/github.com/cheggaaa/pb/pb.go
-	@${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|' \
-		${WRKSRC}/subcmds/configtest.go \
-		${WRKSRC}/subcmds/report.go \
-		${WRKSRC}/subcmds/scan.go
-	@${REINPLACE_CMD} -e 's|gopkg.in/mattn/go-runewidth.v0|github.com/mattn/go-runewidth|' \
-		${WRKSRC}/vendor/github.com/cheggaaa/pb/util.go
-	@${REINPLACE_CMD} -e 's|gopkg.in/mattn/go-colorable.v0|github.com/mattn/go-colorable|' \
-		${WRKSRC}/vendor/github.com/cheggaaa/pb/pb.go
-	@${REINPLACE_CMD} -e 's|gopkg.in/mattn/go-isatty.v0|github.com/mattn/go-isatty|' \
-		${WRKSRC}/vendor/github.com/cheggaaa/pb/pb.go
-	@${REINPLACE_CMD} -e 's|gopkg.in/fatih/color.v1|github.com/fatih/color|' \
-		${WRKSRC}/vendor/github.com/cheggaaa/pb/template.go
-	@${REINPLACE_CMD} -e 's|gopkg.in/VividCortex/ewma.v1|github.com/VividCortex/ewma|' \
-		${WRKSRC}/vendor/github.com/cheggaaa/pb/speed.go
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
