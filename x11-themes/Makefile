@@ -33,6 +33,7 @@
     SUBDIR += emerald-themes
     SUBDIR += flat-remix-gtk-themes
     SUBDIR += flat-remix-icon-themes
+    SUBDIR += flatery-icon-themes
     SUBDIR += fluxbox-tenr-styles-pack
     SUBDIR += freebsd-8k-wallpapers
     SUBDIR += freebsd-8k-wallpapers-kde
