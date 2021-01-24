@@ -18,6 +18,7 @@ RUN_DEPENDS=	gpu-firmware-kmod>=g20180319:graphics/gpu-firmware-kmod
 
 CONFLICTS_INSTALL=	drm-devel-kmod \
 			drm-fbsd12.0-kmod \
+			drm-fbsd13-kmod \
 			drm-current-kmod \
 			drm-legacy-kmod
 
@@ -32,7 +33,7 @@ GH_TAGNAME=	d7d433d
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1200000
 IGNORE=		only supported on FreeBSD 11.
 .endif
 
