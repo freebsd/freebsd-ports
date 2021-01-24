@@ -1,4 +1,5 @@
 bin/modulemd-validator
+include/modulemd-2.0/modulemd-build-config.h
 include/modulemd-2.0/modulemd-buildopts.h
 include/modulemd-2.0/modulemd-component-module.h
 include/modulemd-2.0/modulemd-component-rpm.h
@@ -15,6 +16,8 @@ include/modulemd-2.0/modulemd-module-stream-v1.h
 include/modulemd-2.0/modulemd-module-stream-v2.h
 include/modulemd-2.0/modulemd-module-stream.h
 include/modulemd-2.0/modulemd-module.h
+include/modulemd-2.0/modulemd-obsoletes.h
+include/modulemd-2.0/modulemd-packager-v3.h
 include/modulemd-2.0/modulemd-profile.h
 include/modulemd-2.0/modulemd-rpm-map-entry.h
 include/modulemd-2.0/modulemd-service-level.h
@@ -25,7 +28,7 @@ include/modulemd-2.0/modulemd.h
 lib/girepository-1.0/Modulemd-2.0.typelib
 lib/libmodulemd.so
 lib/libmodulemd.so.2
-lib/libmodulemd.so.2.9.4
+lib/libmodulemd.so.2.12.0
 libdata/pkgconfig/modulemd-2.0.pc
 man/man1/modulemd-validator.1.gz
 share/gir-1.0/Modulemd-2.0.gir
