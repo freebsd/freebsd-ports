@@ -7,14 +7,11 @@ include/muParserDef.h
 include/muParserError.h
 include/muParserFixes.h
 include/muParserInt.h
-include/muParserStack.h
 include/muParserTemplateMagic.h
 include/muParserTest.h
 include/muParserToken.h
 include/muParserTokenReader.h
 lib/libmuparser.so
 lib/libmuparser.so.2
-lib/libmuparser.so.2.2.4
+lib/libmuparser.so.2.3.2
 libdata/pkgconfig/muparser.pc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1.cpp
