@@ -71,22 +71,22 @@ use POSIX;
 use File::Find;
 use Cwd 'abs_path';
 
-my $portsdir    = $ENV{PORTSDIR}        ? $ENV{PORTSDIR}        : '/usr/ports';
-my $versiondir  = $ENV{VERSIONDIR}      ? $ENV{VERSIONDIR}      : '/var/db/chkversion';
-my $svnblame    = $ENV{SVNBLAME}        ? 1                     : 0;
-my $allports    = $ENV{ALLPORTS}        ? 1                     : 0;
+my $portsdir    = $ENV{PORTSDIR}        // '/usr/ports';
+my $versiondir  = $ENV{VERSIONDIR}      // '/var/db/chkversion';
+my $svnblame    = exists $ENV{SVNBLAME};
+my $allports    = exists $ENV{ALLPORTS};
 
-my $watchre     = $ENV{WATCH_REGEX}     ? $ENV{WATCH_REGEX}     : '';
-my $watchmre    = $ENV{WATCHM_REGEX}    ? $ENV{WATCHM_REGEX}    : '';
-my $returnpath  = $ENV{RETURNPATH}      ? $ENV{RETURNPATH}      : '';
-my $h_from      = $ENV{HEADER_FROM}     ? $ENV{HEADER_FROM}     : "$ENV{USER}\@$ENV{HOST}";
-my $h_replyto   = $ENV{HEADER_REPLYTO}  ? $ENV{HEADER_REPLYTO}  : $h_from;
-my $rcpt_watch  = $ENV{RCPT_WATCH}      ? $ENV{RCPT_WATCH}      : '';
-my $rcpt_watchm = $ENV{RCPT_WATCHM}     ? $ENV{RCPT_WATCHM}     : '';
-my $rcpt_orig   = $ENV{RCPT_ORIGIN}     ? $ENV{RCPT_ORIGIN}     : '';
-my $rcpt_vers   = $ENV{RCPT_VERSION}    ? $ENV{RCPT_VERSION}    : '';
-my $cc_author   = $ENV{CC_AUTHOR}       ? 1                     : 0;
-my $cc_mntnr    = $ENV{CC_MAINTAINER}   ? 1                     : 0;
+my $watchre     = $ENV{WATCH_REGEX}     // '';
+my $watchmre    = $ENV{WATCHM_REGEX}    // '';
+my $returnpath  = $ENV{RETURNPATH}      // '';
+my $h_from      = $ENV{HEADER_FROM}     // $ENV{USER} . '@' . ($ENV{HOST} // `/bin/hostname`);
+my $h_replyto   = $ENV{HEADER_REPLYTO}  // $h_from;
+my $rcpt_watch  = $ENV{RCPT_WATCH}      // '';
+my $rcpt_watchm = $ENV{RCPT_WATCHM}     // '';
+my $rcpt_orig   = $ENV{RCPT_ORIGIN}     // '';
+my $rcpt_vers   = $ENV{RCPT_VERSION}    // '';
+my $cc_author   = exists $ENV{CC_AUTHOR};
+my $cc_mntnr    = exists $ENV{CC_MAINTAINER};
 
 my $make        = '/usr/bin/make';
 my $svn         = '/usr/local/bin/svn';
@@ -219,6 +219,7 @@ while (<VERSIONS>) {
 
         my $result = $newversion eq $oldversion ? '=' : readfrom '',
           $pkg_version, '-t', $newversion, $oldversion;
+        $result //= '';
 
         $watched{$origin} = "$version -> $pkgname{$origin}"
           if ($watch_re && $result ne '=' && $origin =~ /^(?:$watch_re)$/o);
