@@ -3,7 +3,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE=	GPLv2
 
 NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc
 NOT_FOR_ARCHS_REASON=	ARG_MAX is too small for Code_Aster on 32 bits systems
+BROKEN=	${PYTHON_CMD}-config should honor --embed
 
 #-----------------------------------------------------------------------
 # You may define these options:
@@ -38,7 +39,8 @@ BUILD_DEPENDS+=	astk-serveur>0:cad/astk-serveur	\
 		bash:shells/bash				\
 		getopt>0:misc/getopt				\
 		xterm:x11/xterm					\
-		${PYNUMPY}
+		${PYNUMPY}	\
+		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 #		pylupdate5:textproc/py-qt5-xml
 LIB_DEPENDS+=	libhdf5.so:science/hdf5				\
 		libscotch.so:cad/scotch				\
@@ -48,12 +50,10 @@ LIB_DEPENDS+=	libhdf5.so:science/hdf5				\
 RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
 		astk-serveur>0:cad/astk-serveur			\
 		xterm:x11/xterm					\
+		${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 
 USES=		bison fortran gettext python:3.6+ qt:5 tk
-# Note 1: compile fine with clang but segfault when sharing args between C and Fortran
-# Note 2: tfel/mfront must be compiled with the same compiler, else it does not link
-USE_GCC=	yes
 USE_BINUTILS=	yes
 USE_QT=		linguisttools_build
 
@@ -268,6 +268,7 @@ pre-configure:
 			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "PYTHON_INCLUDE = '${PYTHON_INCLUDEDIR}'"	>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_PYTHON = '${PYTHONBASE}'"		>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "PYTHON_EXE = '${PYTHON_CMD}'"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_SCOTCH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_METIS = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "HOME_GMSH = '${LOCALBASE}'"		>> ${WRKSRC}/setup.cfg
@@ -281,7 +282,7 @@ pre-configure:
 	${ECHO_CMD} "CC='${CC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "gcc='${CC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "CXX='${CXX}'"				>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "LD='${LD}'"				>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "LD='${FC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "F90='${FC}'"				>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "MATHLIB='${lib_math} ${LDFLAGS} -lgfortran -lm -lkvm'"		\
 		>> ${WRKSRC}/setup.cfg
