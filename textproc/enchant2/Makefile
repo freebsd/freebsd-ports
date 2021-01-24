@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enchant
-PORTVERSION=	2.2.3
-PORTREVISION=	4
+PORTVERSION=	2.2.15
 CATEGORIES=	textproc gnome
 MASTER_SITES=	https://github.com/AbiWord/enchant/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	2
@@ -47,6 +46,8 @@ HUNSPELL_CONFIGURE_ON=	--with-hunspell-dir=${LOCALBASE}/share/hunspell
 ZEMBEREK_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 			libdbus-glib-1.so:devel/dbus-glib
 ZEMBEREK_CONFIGURE_WITH=	zemberek
+
+PLIST_SUB+=	LIBVERSION="${PORTVERSION}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|MKDIRPROG-mkdir|MKDIRPROG-mkdir -p|g' \
