@@ -17,6 +17,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils cython cython_run
 
+.include <bsd.port.pre.mk>
 
 # TODO: Adjust this check once python-dtrace handles installed dtrace headers
 # (https://reviews.freebsd.org/D27884).
@@ -30,4 +31,4 @@ IGNORE=	requires kernel source files in SRC_BASE=${SRC_BASE}
 #do-test:
 #	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
