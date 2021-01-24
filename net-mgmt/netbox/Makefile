@@ -2,7 +2,7 @@
 
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.11
+DISTVERSION=	2.10.3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	kai@FreeBSD.org
@@ -24,27 +24,27 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj31-django-tables2
 # - www/py-dj31-djangorestframework (in conjunction with www/py-dj31-drf-yasg)
 #
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django31>=3.1<3.2:www/py-django31@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django31>=3.1.3<3.2:www/py-django31@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj31-django-cacheops>=5.1.0<5.2:www/py-dj31-django-cacheops@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj31-django-cors-headers>=3.4.0<3.6:www/py-dj31-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj31-django-debug-toolbar>=2.2<4:www/py-dj31-django-debug-toolbar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj31-django-filter>=2.3.0<2.5:www/py-dj31-django-filter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj31-django-cors-headers>=3.5.0<3.6:www/py-dj31-django-cors-headers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj31-django-debug-toolbar>=3.1.1<4:www/py-dj31-django-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj31-django-filter>=2.4.0<2.5:www/py-dj31-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj31-django-mptt>=0.11.0<0.12:www/py-dj31-django-mptt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj31-django-prometheus>=2.0.0<2.2:www/py-dj31-django-prometheus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj31-django-prometheus>=2.1.0<2.2:www/py-dj31-django-prometheus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj31-django-rq>=2.3.2<2.5:devel/py-dj31-django-rq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj31-django-tables2>=2.3.1<2.4:www/py-dj31-django-tables2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj31-django-tables2>=2.3.3<2.4:www/py-dj31-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj31-django-taggit>=1.3.0<2:www/py-dj31-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj31-django-timezone-field>=4.0<5:www/py-dj31-django-timezone-field@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj31-djangorestframework>=3.11.0<3.13.0:www/py-dj31-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj31-drf-yasg>=1.17.1<1.21:www/py-dj31-drf-yasg@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj31-djangorestframework>=3.12.2<3.13.0:www/py-dj31-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj31-drf-yasg>=1.20.0<1.21:www/py-dj31-drf-yasg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.11.2<3:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=2.6.11<3.5:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.7.19<1:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycryptodome>=3.9.8<4:security/py-pycryptodome@${PY_FLAVOR} \
 		${PY_PILLOW} \
-		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.8.5<3:databases/py-psycopg2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.3.1<2:graphics/py-svgwrite@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psycopg2>=2.8.6<3:databases/py-psycopg2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}svgwrite>=1.4<2:graphics/py-svgwrite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.3.1<6:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=19.9.0<21:www/py-gunicorn@${PY_FLAVOR}
 
