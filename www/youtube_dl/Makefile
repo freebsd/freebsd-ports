@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2021.01.16
+PORTVERSION=	2021.01.24.1
 CATEGORIES=	www
 MASTER_SITES=	https://yt-dl.org/downloads/${PORTVERSION}/
 DISTNAME=	youtube-dl-${PORTVERSION}
