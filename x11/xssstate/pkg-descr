@@ -1,0 +1,5 @@
+xssstate is a simple tool to retrieve the X screensaver extension state.
+It could show the idle time of X11, the current state whether on, off, or
+disabled, and also the required time for screensaver activation.
+
+WWW: https://tools.suckless.org/x/xssstate
