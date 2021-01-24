@@ -11,6 +11,7 @@ include/helib/EvalMap.h
 include/helib/FHE.h
 include/helib/IndexMap.h
 include/helib/IndexSet.h
+include/helib/JsonWrapper.h
 include/helib/Matrix.h
 include/helib/NumbTh.h
 include/helib/PAlgebra.h
@@ -25,7 +26,6 @@ include/helib/apiAttributes.h
 include/helib/assertions.h
 include/helib/binaryArith.h
 include/helib/binaryCompare.h
-include/helib/binio.h
 include/helib/bluestein.h
 include/helib/debugging.h
 include/helib/exceptions.h
@@ -58,7 +58,7 @@ include/helib/version.h
 include/helib/zeroValue.h
 include/helib/zzX.h
 lib/libhelib.so
-lib/libhelib.so.1.3.1
+lib/libhelib.so.2.0.0
 share/cmake/helib/helibConfig.cmake
 share/cmake/helib/helibConfigVersion.cmake
 share/cmake/helib/helibTargets-%%CMAKE_BUILD_TYPE%%.cmake
