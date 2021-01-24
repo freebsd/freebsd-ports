@@ -13,7 +13,7 @@ COMMENT=	Fast MP3 encoder kit
 LICENSE=		LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		iconv libtool
+USES=		gmake iconv libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest
