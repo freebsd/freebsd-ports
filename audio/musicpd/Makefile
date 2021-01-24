@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.22.3
-PORTREVISION=	3
+PORTVERSION=	0.22.4
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -17,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libicudata.so:devel/icu
 
-USES=		compiler:c++17-lang gnome localbase:ldflags meson pkgconfig \
+USES=		compiler:c++17-lang localbase:ldflags meson pkgconfig \
 		python:build tar:xz
 
 USE_GNOME=	glib20
