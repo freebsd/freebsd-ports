@@ -209,6 +209,7 @@
     SUBDIR += convertall
     SUBDIR += coq
     SUBDIR += couenne
+    SUBDIR += coxeter3
     SUBDIR += cppad
     SUBDIR += crlibm
     SUBDIR += cryptominisat

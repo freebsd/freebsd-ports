@@ -1,0 +1,18 @@
+Coxeter is a computer program for the study of combinatorial aspects of Coxeter
+group theory, particularly those related to the Bruhat ordering and
+Kazhdan-Lusztig polynomials.
+
+ The main capabilities of the program are the following :
+
+    Reduced expression and normal form computations;
+    Bruhat ordering;
+    Ordinary Kazhdan-Lusztig polynomials;
+    Kazhdan-Lusztig polynomials with unequal parameters;
+    Inverse Kazhdan-Lusztig polynomials;
+    Cells and W-graphs.
+
+Note: this port is specially crafted to be used with SageMath, with patches from
+Sage.
+
+WWW: http://math.univ-lyon1.fr/~ducloux/coxeter/coxeter3/english/coxeter3_e.html
+WWW: https://github.com/tscrim/coxeter
