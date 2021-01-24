@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gef
-DISTVERSION=	2020.06
+DISTVERSION=	2021.01
 CATEGORIES=	security python
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	gdb>7.7:devel/gdb
 
-USES=		python:run
+USES=		python:run,3.6+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hugsy
