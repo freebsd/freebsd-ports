@@ -4,11 +4,12 @@
 PORTNAME=	dnsmasq
 DISTVERSION=	2.83
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	dns
-MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
+MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/ \
 		LOCAL/mandree/
+PATCH_STRIP=	-p1
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
