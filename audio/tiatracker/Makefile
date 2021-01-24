@@ -14,7 +14,7 @@ COMMENT=	Music tracker for making Atari VCS 2600
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		dos2unix gl qmake qt:5 sdl tar:xz
+USES=		compiler:c++11-lang dos2unix gl qmake qt:5 sdl tar:xz
 DOS2UNIX_GLOB=	*.c *.cpp *.h *.k65 *.pro
 USE_GL=		gl
 USE_QT=		core gui widgets buildtools_build
