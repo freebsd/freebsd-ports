@@ -1,4 +1,8 @@
 lib/xfce4/panel/plugins/libgenmon.so
+share/icons/hicolor/128x128/apps/org.xfce.genmon.png
+share/icons/hicolor/16x16/apps/org.xfce.genmon.png
+share/icons/hicolor/48x48/apps/org.xfce.genmon.png
+share/icons/hicolor/scalable/apps/org.xfce.genmon.svg
 %%NLS%%share/locale/am/LC_MESSAGES/xfce4-genmon-plugin.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-genmon-plugin.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-genmon-plugin.mo
