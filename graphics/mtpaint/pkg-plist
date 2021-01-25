@@ -10,6 +10,7 @@ share/applications/mtpaint.desktop
 %%NLS%%share/locale/it/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/mtpaint.mo
+%%NLS%%share/locale/kab/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/mtpaint.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/mtpaint.mo
