@@ -947,6 +947,7 @@
     SUBDIR += rubygem-pg0
     SUBDIR += rubygem-pg018
     SUBDIR += rubygem-pg_array_parser
+    SUBDIR += rubygem-pg_query
     SUBDIR += rubygem-pghero
     SUBDIR += rubygem-pghero-rails5
     SUBDIR += rubygem-pghero-rails50
