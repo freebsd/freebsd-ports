@@ -2,7 +2,7 @@
 
 PORTNAME=	lego
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.3
+DISTVERSION=	4.2.0
 CATEGORIES=	security
 
 MAINTAINER=	matt@matthoran.com
@@ -41,7 +41,7 @@ GH_TUPLE=	\
 		census-instrumentation:opencensus-go:v0.22.3:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		census-instrumentation:opencensus-proto:v0.2.1:census_instrumentation_opencensus_proto/vendor/github.com/census-instrumentation/opencensus-proto \
 		cloudflare:cloudflare-go:v0.13.2:cloudflare_cloudflare_go/vendor/github.com/cloudflare/cloudflare-go \
-		cpu:goacmedns:v0.0.3:cpu_goacmedns/vendor/github.com/cpu/goacmedns \
+		cpu:goacmedns:v0.1.1:cpu_goacmedns/vendor/github.com/cpu/goacmedns \
 		cpuguy83:go-md2man:f79a8a8ca69d:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
@@ -76,7 +76,7 @@ GH_TUPLE=	\
 		grpc-ecosystem:grpc-gateway:v1.8.5:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
 		grpc:grpc-go:v1.27.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
-		hashicorp:go-retryablehttp:v0.6.7:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
+		hashicorp:go-retryablehttp:v0.6.6:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
 		iij:doapi:0bbf12d6d7df:iij_doapi/vendor/github.com/iij/doapi \
 		jmespath:go-jmespath:v0.3.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		json-iterator:go:v1.1.7:json_iterator_go/vendor/github.com/json-iterator/go \
@@ -115,7 +115,7 @@ GH_TUPLE=	\
 		transip:gotransip:v6.2.0:transip_gotransip_v6/vendor/github.com/transip/gotransip/v6 \
 		uber-go:ratelimit:c15da0234277:uber_go_ratelimit/vendor/go.uber.org/ratelimit \
 		urfave:cli:v1.22.4:urfave_cli/vendor/github.com/urfave/cli \
-		vultr:govultr:v0.5.0:vultr_govultr/vendor/github.com/vultr/govultr
+		vultr:govultr:v2.0.0:vultr_govultr_v2/vendor/github.com/vultr/govultr/v2
 
 SAMPLE_FILES=	deploy.sh.sample lego.sh.sample
 SUB_FILES=	${SAMPLE_FILES} 604.lego pkg-message
