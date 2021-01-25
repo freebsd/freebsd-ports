@@ -28,6 +28,7 @@ PLIST_FILES=	bin/stud \
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	incomplete definition of type 'struct ssl_ctx_st'
 BROKEN_FreeBSD_13=	incomplete definition of type 'struct ssl_ctx_st'
+BROKEN_FreeBSD_14=	incomplete definition of type 'struct ssl_ctx_st'
 .endif
 
 post-install:
