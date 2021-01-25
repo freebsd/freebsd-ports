@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-DISTVERSION=	3.34.0
-PORTREVISION=	0
+DISTVERSION=	3.34.1
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	https://www.sqlite.org/2020/ http://www2.sqlite.org/2020/ http://www3.sqlite.org/2020/
+MASTER_SITES=	https://www.sqlite.org/2021/ https://www2.sqlite.org/2021/ https://www3.sqlite.org/2021/
 DISTNAME=	sqlite-autoconf-${PORTVERSION:C/\.([[:digit:]])[[:>:]]/0\1/g:S/.//g}00
 
 MAINTAINER=	pavelivolkov@gmail.com
