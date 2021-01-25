@@ -12,8 +12,7 @@
 <xsl:output
   method="xml"
   encoding="utf-8"
-  doctype-system="http://www.vuxml.org/dtd/vuxml-1/vuxml-11.dtd"
-  doctype-public="-//vuxml.org//DTD VuXML 1.1//EN"
+  omit-xml-declaration="yes"
   indent="yes"
   />
 
@@ -24,6 +23,27 @@ result in more namespace declarations than we wish.
 -->
 
 <xsl:template match="/">
+	<xsl:text disable-output-escaping="yes"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE vuxml PUBLIC "-//vuxml.org//DTD VuXML 1.1//EN" "http://www.vuxml.org/dtd/vuxml-1/vuxml-11.dtd" [
+<!ENTITY vuln-2003 SYSTEM "vuln-2003.xml">
+<!ENTITY vuln-2004 SYSTEM "vuln-2004.xml">
+<!ENTITY vuln-2005 SYSTEM "vuln-2005.xml">
+<!ENTITY vuln-2006 SYSTEM "vuln-2006.xml">
+<!ENTITY vuln-2007 SYSTEM "vuln-2007.xml">
+<!ENTITY vuln-2008 SYSTEM "vuln-2008.xml">
+<!ENTITY vuln-2009 SYSTEM "vuln-2009.xml">
+<!ENTITY vuln-2010 SYSTEM "vuln-2010.xml">
+<!ENTITY vuln-2011 SYSTEM "vuln-2011.xml">
+<!ENTITY vuln-2012 SYSTEM "vuln-2012.xml">
+<!ENTITY vuln-2013 SYSTEM "vuln-2013.xml">
+<!ENTITY vuln-2014 SYSTEM "vuln-2014.xml">
+<!ENTITY vuln-2015 SYSTEM "vuln-2015.xml">
+<!ENTITY vuln-2016 SYSTEM "vuln-2016.xml">
+<!ENTITY vuln-2017 SYSTEM "vuln-2017.xml">
+<!ENTITY vuln-2018 SYSTEM "vuln-2018.xml">
+<!ENTITY vuln-2019 SYSTEM "vuln-2019.xml">
+]>
+]]></xsl:text>
   <xsl:apply-templates />
 </xsl:template>
 
@@ -54,6 +74,7 @@ don't have <modified>).  Insert an empty line between <vuln> elements.
       <xsl:text disable-output-escaping="yes">&#10;</xsl:text>
     </xsl:for-each>
   </xsl:element>
+<xsl:text>&#10;</xsl:text>
 </xsl:template>
 
 <!--

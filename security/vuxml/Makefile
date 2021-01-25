@@ -31,6 +31,11 @@ WRKSRC=		${WRKDIR}
 dir_DTD=	share/xml/dtd/vuxml
 
 VUXML_FILE?=	${PKGDIR}/vuln.xml
+VUXML_FLAT_FILE?=	${PKGDIR}/vuln-flat.xml
+
+post-clean:
+	@${RM} "${VUXML_FILE}.tidy"
+	@${RM} "${VUXML_FLAT_FILE}"
 
 do-extract:
 	@${RM} -r ${WRKDIR}
@@ -54,9 +59,9 @@ vuln-flat.xml: vuln.xml
 	xmllint -noent ${.ALLSRC} > ${.TARGET}
 
 validate: tidy
-	@${SH} ${FILESDIR}/validate.sh "${VUXML_FILE}"
+	@${SH} ${FILESDIR}/validate.sh "${VUXML_FLAT_FILE}"
 	@${ECHO_MSG} Checking if tidy differs...
-	@if ${DIFF} -u "${VUXML_FILE}" "${VUXML_FILE}.tidy"; \
+	@if ${DIFF} -u "${VUXML_FLAT_FILE}" "${VUXML_FILE}.tidy"; \
 	then \
 		${ECHO_MSG} ... seems okay; \
 		${RM} "${VUXML_FILE}.tidy"; \
@@ -64,8 +69,8 @@ validate: tidy
 		return 1; \
 	fi
 	@${ECHO_MSG} Checking for space/tab...
-	@unexpand "${VUXML_FILE}" | ${SED} -E 's,[[:space:]]*$$,,g' > "${VUXML_FILE}.unexpanded"
-	@if ${DIFF} -u "${VUXML_FILE}" "${VUXML_FILE}.unexpanded"; \
+	@unexpand "${VUXML_FLAT_FILE}" | ${SED} -E 's,[[:space:]]*$$,,g' > "${VUXML_FILE}.unexpanded"
+	@if ${DIFF} -u "${VUXML_FLAT_FILE}" "${VUXML_FILE}.unexpanded"; \
 	then \
 		${ECHO_MSG} ... seems okay; \
 		${RM} "${VUXML_FILE}.unexpanded"; \
@@ -74,15 +79,15 @@ validate: tidy
 		${ECHO_CMD} Consider using ${VUXML_FILE}.unexpanded for final commit; \
 		return 1; \
 	fi
-	${PYTHON_CMD} ${FILESDIR}/extra-validation.py ${VUXML_FILE}
+	${PYTHON_CMD} ${FILESDIR}/extra-validation.py ${VUXML_FLAT_FILE}
 
-tidy: vuln.xml
+tidy: vuln-flat.xml
 	@if [ ! -e ${LOCALBASE}/share/xml/dtd/vuxml/catalog.xml ]; \
 	then \
 		echo "Please install the VuXML port prior to running make validate/tidy."; \
 		exit 1; \
 	fi
-	${SH} ${FILESDIR}/tidy.sh "${FILESDIR}/tidy.xsl" "${VUXML_FILE}" > "${VUXML_FILE}.tidy"
+	${SH} ${FILESDIR}/tidy.sh "${FILESDIR}/tidy.xsl" "${VUXML_FLAT_FILE}" > "${VUXML_FILE}.tidy"
 
 newentry:
 	@${SH} ${FILESDIR}/newentry.sh "${VUXML_FILE}"
