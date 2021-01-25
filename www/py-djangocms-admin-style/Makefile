@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	djangocms-admin-style
-DISTVERSION=	1.5.0
+DISTVERSION=	2.0.2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ COMMENT=	Pretty CSS styles for the django CMS admin interface
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=1.11:www/py-django22@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django22>=2.2:www/py-django22@${PY_FLAVOR}
 
 USES=		python:3.5+
 USE_PYTHON=	distutils autoplist
