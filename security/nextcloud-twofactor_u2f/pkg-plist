@@ -1,3 +1,4 @@
+%%WWWDIR%%/.php_cs.dist
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/README.md
 %%WWWDIR%%/appinfo/autoload.php
@@ -199,6 +200,7 @@
 %%WWWDIR%%/templates/personal.php
 %%WWWDIR%%/vendor/autoload.php
 %%WWWDIR%%/vendor/composer/ClassLoader.php
+%%WWWDIR%%/vendor/composer/InstalledVersions.php
 %%WWWDIR%%/vendor/composer/LICENSE
 %%WWWDIR%%/vendor/composer/autoload_classmap.php
 %%WWWDIR%%/vendor/composer/autoload_namespaces.php
@@ -206,6 +208,8 @@
 %%WWWDIR%%/vendor/composer/autoload_real.php
 %%WWWDIR%%/vendor/composer/autoload_static.php
 %%WWWDIR%%/vendor/composer/installed.json
+%%WWWDIR%%/vendor/composer/installed.php
+%%WWWDIR%%/vendor/composer/platform_check.php
 %%WWWDIR%%/vendor/paragonie/random_compat/LICENSE
 %%WWWDIR%%/vendor/paragonie/random_compat/build-phar.sh
 %%WWWDIR%%/vendor/paragonie/random_compat/composer.json
