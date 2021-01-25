@@ -1,7 +1,7 @@
---- cargo-crates/rusty_v8-0.15.0/build/toolchain/gcc_toolchain.gni.orig	2020-09-11 17:42:05 UTC
-+++ cargo-crates/rusty_v8-0.15.0/build/toolchain/gcc_toolchain.gni
-@@ -36,6 +36,11 @@ if ((is_linux || is_chromeos) && target_os == "android
-   enable_resource_allowlist_generation = false
+--- cargo-crates/rusty_v8-0.16.0/build/toolchain/gcc_toolchain.gni.orig	2021-01-19 00:12:27 UTC
++++ cargo-crates/rusty_v8-0.16.0/build/toolchain/gcc_toolchain.gni
+@@ -50,6 +50,11 @@ if (enable_resource_allowlist_generation) {
+       "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }
  
 +declare_args() {
@@ -12,7 +12,7 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -590,14 +595,25 @@ template("clang_toolchain") {
+@@ -626,13 +631,23 @@ template("clang_toolchain") {
    }
  
    gcc_toolchain(target_name) {
@@ -23,7 +23,6 @@
 -    readelf = "${toolprefix}readelf"
 -    ar = "${prefix}/llvm-ar"
 -    nm = "${toolprefix}nm"
--    dwp = "${toolprefix}dwp"
 +    if (is_bsd) {
 +      prefix = "%%LOCALBASE%%/bin"
 +      cc = "cc"
@@ -32,7 +31,6 @@
 +      readelf = "readelf"
 +      ar = "${prefix}/ar"
 +      nm = "${toolprefix}nm"
-+      dwp = "${toolprefix}dwp"
 +    } else {
 +      prefix = rebase_path("$clang_base_path/bin", root_build_dir)
 +      cc = "$prefix/clang"
@@ -41,7 +39,6 @@
 +      readelf = "${toolprefix}readelf"
 +      ar = "${prefix}/llvm-ar"
 +      nm = "${toolprefix}nm"
-+      dwp = "${toolprefix}dwp"
 +    }
  
      forward_variables_from(invoker,

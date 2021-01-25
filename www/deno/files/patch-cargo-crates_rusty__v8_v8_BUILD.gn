@@ -1,6 +1,6 @@
---- cargo-crates/rusty_v8-0.15.0/v8/BUILD.gn.orig	2020-10-07 12:10:28 UTC
-+++ cargo-crates/rusty_v8-0.15.0/v8/BUILD.gn
-@@ -4069,7 +4069,7 @@ v8_component("v8_libbase") {
+--- cargo-crates/rusty_v8-0.16.0/./v8/BUILD.gn.orig	2021-01-19 00:12:40 UTC
++++ cargo-crates/rusty_v8-0.16.0/./v8/BUILD.gn
+@@ -4209,7 +4209,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -9,7 +9,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -4089,6 +4089,12 @@ v8_component("v8_libbase") {
+@@ -4219,6 +4219,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]
@@ -19,10 +19,10 @@
 +      "src/base/platform/platform-freebsd.cc",
 +    ]
 +    libs = [ "rt", "execinfo" ]
-   } else if (is_android) {
-     if (current_toolchain == host_toolchain) {
-       libs = [
-@@ -4508,6 +4514,7 @@ if (current_toolchain == v8_snapshot_toolchain) {
+   } else if (current_os == "aix") {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",
+@@ -4698,6 +4704,7 @@ if (current_toolchain == v8_snapshot_toolchain) {
        "src/snapshot/mksnapshot.cc",
        "src/snapshot/snapshot-empty.cc",
      ]
