@@ -321,8 +321,8 @@ Notes:
 	<range><lt>3.0.1</lt></range>
       </package>
       <package>
-        <name>crispy-doom</name>
-        <range><lt>5.9.0</lt></range>
+	<name>crispy-doom</name>
+	<range><lt>5.9.0</lt></range>
       </package>
     </affects>
     <description>
@@ -330,10 +330,10 @@ Notes:
 	<p>Michal Dardas from LogicalTrust reports:</p>
 	<blockquote cite="https://github.com/chocolate-doom/chocolate-doom/issues/1293">
 	  <p>
-            The server in Chocolate Doom 3.0.0 and Crispy Doom 5.8.0 doesn't validate
-            the user-controlled num_players value, leading to a buffer overflow. A
-            malicious user can overwrite the server's stack.
-          </p>
+	    The server in Chocolate Doom 3.0.0 and Crispy Doom 5.8.0 doesn't validate
+	    the user-controlled num_players value, leading to a buffer overflow. A
+	    malicious user can overwrite the server's stack.
+	  </p>
 	</blockquote>
       </body>
     </description>
@@ -14127,25 +14127,24 @@ whitespace)
     </dates>
   </vuln>
 
-  &vuln-2019;
-  &vuln-2018;
-  &vuln-2017;
-  &vuln-2016;
-  &vuln-2015;
-  &vuln-2014;
-  &vuln-2013;
-  &vuln-2012;
-  &vuln-2011;
-  &vuln-2010;
-  &vuln-2009;
-  &vuln-2008;
-  &vuln-2007;
-  &vuln-2006;
-  &vuln-2005;
-  &vuln-2004;
-  &vuln-2003;
-
-</vuxml><!-- EOF -->
+&vuln-2019;
+&vuln-2018;
+&vuln-2017;
+&vuln-2016;
+&vuln-2015;
+&vuln-2014;
+&vuln-2013;
+&vuln-2012;
+&vuln-2011;
+&vuln-2010;
+&vuln-2009;
+&vuln-2008;
+&vuln-2007;
+&vuln-2006;
+&vuln-2005;
+&vuln-2004;
+&vuln-2003;</vuxml>
+<!-- EOF -->
 <!-- Note:  Please add new entries to the beginning of this file. -->
 <!-- ex: set ts=8 tw=80 sw=2: -->
 <!-- vim: set softtabstop=2 noexpandtab: -->
