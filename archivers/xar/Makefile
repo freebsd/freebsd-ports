@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	checking for OpenSSL_add_all_ciphers in -lcrypto... no
 BROKEN_FreeBSD_13=	checking for OpenSSL_add_all_ciphers in -lcrypto... no
+BROKEN_FreeBSD_14=	checking for OpenSSL_add_all_ciphers in -lcrypto... no
 .endif
 
 post-install:
