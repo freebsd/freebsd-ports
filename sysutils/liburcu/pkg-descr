@@ -6,4 +6,4 @@ given data structure to live at the same time, and by
 monitoring the data structure accesses to detect grace
 periods after which memory reclamation is possible.
 
-WWW: http://lttng.org/urcu
+WWW: http://liburcu.org/
