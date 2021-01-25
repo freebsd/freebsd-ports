@@ -22,6 +22,7 @@ USE_RC_SUBR=	bbftpd
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	error: incomplete definition of type 'struct rsa_st'
 BROKEN_FreeBSD_13=	error: incomplete definition of type 'struct rsa_st'
+BROKEN_FreeBSD_14=	error: incomplete definition of type 'struct rsa_st'
 .endif
 
 do-configure:
