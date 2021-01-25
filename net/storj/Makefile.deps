@@ -28,14 +28,14 @@ GH_TUPLE=	\
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:6afb5195e5aa:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:protobuf:v1.4.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:6e8e738ad208:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:4d22bbb62b3c:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.2:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:ca5a22157cba:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:cb27e3aa2013:google_go_genproto/vendor/google.golang.org/genproto \
 		google:pprof:1ebb73c60ed3:google_pprof/vendor/github.com/google/pprof \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.20.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
@@ -70,6 +70,7 @@ GH_TUPLE=	\
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		shopspring:decimal:v1.2.0:shopspring_decimal/vendor/github.com/shopspring/decimal \
 		spacemonkeygo:monkit:v3.0.7:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
 		spacemonkeygo:spacelog:2296661a0572:spacemonkeygo_spacelog/vendor/github.com/spacemonkeygo/spacelog \
@@ -79,11 +80,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:78f4e59925c3:storj_common/vendor/storj.io/common \
+		storj:common:e8500e1c37a0:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.16:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:80778fc3f91b:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:6fbb1e924f51:storj_private/vendor/storj.io/private \
-		storj:uplink:v1.4.3:storj_uplink/vendor/storj.io/uplink \
+		storj:private:8d9c4e216479:storj_private/vendor/storj.io/private \
+		storj:uplink:v1.4.4:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v70.15.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
