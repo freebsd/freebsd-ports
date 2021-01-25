@@ -238,4 +238,3 @@ makesum:
 .endif
 
 .include <bsd.port.post.mk>
-RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
