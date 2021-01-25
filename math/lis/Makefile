@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lis
-DISTVERSION=	2.0.29
+DISTVERSION=	2.0.30
 CATEGORIES=	math
 MASTER_SITES=	https://www.ssisc.org/lis/dl/
 
@@ -15,6 +15,7 @@ USES=		gmake libtool zip
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
 USE_LDCONFIG=	yes
+
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	EXAMPLES MPI OPENMPI
