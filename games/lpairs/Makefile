@@ -34,9 +34,9 @@ NLS_CONFIGURE_ENABLE=	nls
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's|games/lpairs|lpairs|' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|games/lpairs|lpairs|' ${WRKSRC}/configure.in
 .if ${CHOSEN_COMPILER_TYPE} == gcc
-	${REINPLACE_CMD} -e 's|-Wno-unused-result||' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|-Wno-unused-result||' ${WRKSRC}/configure.in
 .endif
 
 post-install:
