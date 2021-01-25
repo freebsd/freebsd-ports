@@ -70,6 +70,7 @@ check:
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	OpenSSL version 1.1.0 or greater is currently not supported
 BROKEN_FreeBSD_13=	OpenSSL version 1.1.0 or greater is currently not supported
+BROKEN_FreeBSD_14=	OpenSSL version 1.1.0 or greater is currently not supported
 .endif
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
