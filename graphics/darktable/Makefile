@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	3.2.1
-PORTREVISION=	6
+PORTVERSION=	3.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -31,7 +30,7 @@ LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
 		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gl gnome jpeg \
+USES=		cmake compiler:c++14-lang desktop-file-utils gl gnome jpeg \
 		pkgconfig shebangfix sqlite tar:xz xorg
 USE_GL=		glu
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
@@ -50,12 +49,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.rc/~rc/}
 
-OPTIONS_DEFINE=		DOCS GEO GPHOTO GRAPHMAGICK LIBSECRET LUA NLS OPENEXR \
-			OPENJPEG PRINT TOOLS WEBP
+OPTIONS_DEFINE=		DOCS GEO GPHOTO GRAPHMAGICK LIBAVIF LIBSECRET LUA \
+			NLS OPENEXR OPENJPEG PRINT TOOLS WEBP
 OPTIONS_DEFAULT=	GEO GPHOTO LUA OPENEXR OPENJPEG PRINT WEBP
 OPTIONS_SUB=		yes
 
 GEO_DESC=		Support geotagging
+LIBAVIF_DESC=		Support encoding and decoding .avif files
 LIBSECRET_DESC=		Support libsecret as password backend
 
 GEO_LIB_DEPENDS=	libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
@@ -66,6 +66,9 @@ GPHOTO_CMAKE_OFF=	-DUSE_CAMERA_SUPPORT:BOOL=OFF
 
 GRAPHMAGICK_LIB_DEPENDS=libGraphicsMagick.so:graphics/GraphicsMagick
 GRAPHMAGICK_CMAKE_OFF=	-DUSE_GRAPHICSMAGICK:BOOL=OFF
+
+LIBAVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
+LIBAVIF_CMAKE_OFF=	-DUSE_LIBAVIF:BOOL=OFF
 
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_CMAKE_OFF=	-DUSE_LIBSECRET:BOOL=OFF
@@ -98,6 +101,14 @@ WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CMAKE_OFF=		-DUSE_WEBP:BOOL=OFF
 
 .include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD || ${ARCH} == "i386"
+LLVM_DEFAULT=	10
+BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
+CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
+CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
+.endif
 
 # work around CMAKE/CCACHE flaw (cmake stomps over ccache)
 .if "${WITH_CCACHE_BUILD}" == "yes" && !defined(NO_CCACHE)

@@ -7,6 +7,7 @@ bin/darktable-generate-cache
 bin/darktable-rs-identify
 lib/darktable/libdarktable.so
 lib/darktable/plugins/imageio/format/libcopy.so
+%%LIBAVIF%%lib/darktable/plugins/imageio/format/libavif.so
 %%OPENEXR%%lib/darktable/plugins/imageio/format/libexr.so
 %%OPENJPEG%%lib/darktable/plugins/imageio/format/libj2k.so
 lib/darktable/plugins/imageio/format/libjpeg.so
@@ -32,6 +33,7 @@ lib/darktable/plugins/libbloom.so
 lib/darktable/plugins/libborders.so
 lib/darktable/plugins/libcacorrect.so
 lib/darktable/plugins/libchannelmixer.so
+lib/darktable/plugins/libchannelmixerrgb.so
 lib/darktable/plugins/libclahe.so
 lib/darktable/plugins/libclipping.so
 lib/darktable/plugins/libcolisa.so
@@ -123,13 +125,13 @@ lib/darktable/plugins/lighttable/libimport.so
 lib/darktable/plugins/lighttable/liblighttable_mode.so
 %%GPHOTO%%lib/darktable/plugins/lighttable/liblive_view.so
 %%GEO%%lib/darktable/plugins/lighttable/liblocation.so
+%%GEO%%lib/darktable/plugins/lighttable/libmap_locations.so
 %%GEO%%lib/darktable/plugins/lighttable/libmap_settings.so
 lib/darktable/plugins/lighttable/libmasks.so
 lib/darktable/plugins/lighttable/libmetadata.so
 lib/darktable/plugins/lighttable/libmetadata_view.so
 lib/darktable/plugins/lighttable/libmodule_toolbox.so
 lib/darktable/plugins/lighttable/libmodulegroups.so
-lib/darktable/plugins/lighttable/libmodulelist.so
 lib/darktable/plugins/lighttable/libnavigation.so
 %%PRINT%%lib/darktable/plugins/lighttable/libprint_settings.so
 lib/darktable/plugins/lighttable/libratings.so
@@ -203,6 +205,7 @@ share/applications/darktable.desktop
 %%DATADIR%%/kernels/lut3d.cl
 %%DATADIR%%/kernels/negadoctor.cl
 %%DATADIR%%/kernels/nlmeans.cl
+%%DATADIR%%/kernels/noise_generator.h
 %%DATADIR%%/kernels/programs.conf
 %%DATADIR%%/kernels/retouch.cl
 %%DATADIR%%/kernels/rgb_norms.h
@@ -215,6 +218,7 @@ share/applications/darktable.desktop
 %%LUA%%%%DATADIR%%/luarc
 %%DATADIR%%/noiseprofiles.json
 %%DATADIR%%/pixmaps/dt_logo_128x128.png
+%%DATADIR%%/pixmaps/dt_text.svg
 %%DATADIR%%/pixmaps/idbutton-1.png
 %%DATADIR%%/pixmaps/idbutton-1.svg
 %%DATADIR%%/pixmaps/idbutton-2.png
@@ -392,12 +396,17 @@ share/icons/hicolor/scalable/apps/darktable-1.svg
 share/icons/hicolor/scalable/apps/darktable-2.svg
 share/icons/hicolor/scalable/apps/darktable-3.svg
 share/icons/hicolor/scalable/apps/darktable.svg
+%%NLS%%share/locale/af/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/de/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/es/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/he/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/it/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/darktable.mo
