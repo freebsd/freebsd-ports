@@ -34,6 +34,7 @@ LDFLAGS+=	-L${OPENSSLLIB}
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	incomplete definition of type 'struct ssl_st'
 BROKEN_FreeBSD_13=	incomplete definition of type 'struct ssl_st'
+BROKEN_FreeBSD_14=	incomplete definition of type 'struct ssl_st'
 .endif
 
 pre-configure:
