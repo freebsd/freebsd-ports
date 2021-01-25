@@ -68,6 +68,9 @@
 %%ASDF_PATHNAME%%/resource.lisp
 %%ASDF_PATHNAME%%/sockcl.lisp
 %%ASDF_PATHNAME%%/socket.c
+%%ASDF_PATHNAME%%/tests/core-protocol.lisp
+%%ASDF_PATHNAME%%/tests/package.lisp
+%%ASDF_PATHNAME%%/tests/util.lisp
 %%ASDF_PATHNAME%%/text.lisp
 %%ASDF_PATHNAME%%/translate.lisp
 %%ASDF_REGISTRY%%/clx.asd
