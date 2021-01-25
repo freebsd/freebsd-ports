@@ -1,6 +1,5 @@
 bin/gphoto2-config
 bin/gphoto2-port-config
-include/gphoto2/gphoto2
 include/gphoto2/gphoto2-abilities-list.h
 include/gphoto2/gphoto2-camera.h
 include/gphoto2/gphoto2-context.h
@@ -27,12 +26,15 @@ lib/libgphoto2/%%VERSION%%/canon.so
 lib/libgphoto2/%%VERSION%%/digigr8.so
 lib/libgphoto2/%%VERSION%%/dimagev.so
 lib/libgphoto2/%%VERSION%%/directory.so
+lib/libgphoto2/%%VERSION%%/docupen.so
 lib/libgphoto2/%%VERSION%%/jl2005a.so
 lib/libgphoto2/%%VERSION%%/jl2005c.so
 lib/libgphoto2/%%VERSION%%/kodak_dc240.so
+lib/libgphoto2/%%VERSION%%/lumix.so
 lib/libgphoto2/%%VERSION%%/mars.so
 lib/libgphoto2/%%VERSION%%/pentax.so
 lib/libgphoto2/%%VERSION%%/ptp2.so
+lib/libgphoto2/%%VERSION%%/ricoh_g3.so
 lib/libgphoto2/%%VERSION%%/sierra.so
 lib/libgphoto2/%%VERSION%%/sonix.so
 lib/libgphoto2/%%VERSION%%/sq905.so
@@ -46,8 +48,6 @@ lib/libgphoto2_port.so.12.0.0
 lib/libgphoto2_port/%%VERSION_PORT%%/disk.so
 lib/libgphoto2_port/%%VERSION_PORT%%/ptpip.so
 lib/libgphoto2_port/%%VERSION_PORT%%/usb1.so
-lib/libgphoto2_port/%%VERSION_PORT%%/usbdiskdirect.so
-lib/libgphoto2_port/%%VERSION_PORT%%/usbscsi.so
 libdata/pkgconfig/libgphoto2.pc
 libdata/pkgconfig/libgphoto2_port.pc
 man/man3/libgphoto2.3.gz
