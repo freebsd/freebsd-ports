@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgphoto2
-PORTVERSION=	2.5.23
-PORTREVISION=	1
+PORTVERSION=	2.5.26
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/libgphoto/${PORTVERSION}
 
@@ -13,10 +12,12 @@ COMMENT=	Universal digital camera control library
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libltdl.so:devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl \
+		libcurl.so:ftp/curl
 
-USES=		gmake iconv libtool localbase pathfix pkgconfig tar:bzip2
+USES=		gmake gnome iconv libtool localbase pathfix pkgconfig tar:bzip2
 USE_CSTD=	gnu89
+USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LTDLINCL="-I${LOCALBASE}/include" \
@@ -34,8 +35,8 @@ PATHFIX_MAKEFILEIN=	Makefile.in \
 
 PLIST_SUB=	VERSION="${PORTVERSION}" VERSION_PORT=0.12.0
 
-OPTIONS_DEFINE=		DOCS GD JPEG LIBEXIF NLS XML
-OPTIONS_DEFAULT=	GD JPEG LIBEXIF XML
+OPTIONS_DEFINE=		DOCS GD JPEG LIBEXIF NLS
+OPTIONS_DEFAULT=	GD JPEG LIBEXIF
 OPTIONS_SUB=		yes
 
 GD_LIB_DEPENDS=		libgd.so:graphics/gd
@@ -46,9 +47,6 @@ LIBEXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
 LIBEXIF_CONFIGURE_OFF=	--with-libexif=no
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-XML_USE=		GNOME=libxml2
-XML_USES=		gnome
-XML_CONFIGURE_OFF=	--with-libxml-2.0=no
 
 post-patch:
 .for i in configure libgphoto2_port/configure
