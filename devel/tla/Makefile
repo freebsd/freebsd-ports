@@ -41,6 +41,7 @@ OPTIONS_DEFINE=	DOCS
 .if ${SSL_DEFAULT} == base
 BROKEN_FreeBSD_12=	could not find library containing SSL_library_init
 BROKEN_FreeBSD_13=	could not find library containing SSL_library_init
+BROKEN_FreeBSD_14=	could not find library containing SSL_library_init
 .endif
 
 pre-patch:
