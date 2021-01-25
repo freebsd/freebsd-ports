@@ -3,6 +3,7 @@
 
 PORTNAME=	ndpi
 PORTVERSION=	3.4.d20201222
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -12,7 +13,9 @@ COMMENT=	NTOP-maintained superset of the popular OpenDPI library
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjson-c.so:devel/json-c
+LIB_DEPENDS=	libjson-c.so:devel/json-c \
+		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
 
 USES=		autoreconf compiler:c++11-lang libtool localbase:ldflags pathfix \
 		pkgconfig

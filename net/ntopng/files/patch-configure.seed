@@ -1,4 +1,4 @@
---- configure.seed.orig	2020-11-02 21:27:19 UTC
+--- configure.seed.orig	2021-01-22 10:38:16 UTC
 +++ configure.seed
 @@ -4,7 +4,7 @@ dnl> Do not add anything above
  
@@ -44,6 +44,15 @@
  SHORT_MACHINE=`uname -m | cut -b1-3`
  
  GIT_RELEASE="@GIT_RELEASE@"
+@@ -233,7 +208,7 @@ else
+   fi
+ fi
+ 
+-AC_CHECK_LIB([gcrypt], [gcry_cipher_checktag], [LDFLAGS="${LDFLAGS} -lgcrypt"])
++AC_CHECK_LIB([gcrypt], [gcry_cipher_checktag], [LDFLAGS="${LDFLAGS} -lgcrypt -lgpg-error"])
+ 
+ AC_MSG_CHECKING(for ntopng professional edition)
+ 
 @@ -678,16 +653,6 @@ AC_DEFINE_UNQUOTED(_CRT_SECURE_NO_WARNINGS, 1, [Disabl
  GMAKE=`which gmake`
  if test x$GMAKE = x; then

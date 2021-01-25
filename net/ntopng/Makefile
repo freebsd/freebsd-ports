@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ntopng
-PORTVERSION=	4.2.d20201228
+PORTVERSION=	4.2.d20210122
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -20,7 +20,9 @@ LIB_DEPENDS=	librrd.so:databases/rrdtool \
 		libsodium.so:security/libsodium \
 		libmaxminddb.so:net/libmaxminddb \
 		libexpat.so:textproc/expat2 \
-		libzstd.so:archivers/zstd
+		libzstd.so:archivers/zstd \
+		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
 BUILD_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf compiler:c++11-lang cpe gmake libtool localbase \
@@ -38,7 +40,7 @@ PLIST_SUB=	NTOPNGUSER="${USERS}" NTOPNGROUP="${GROUPS}"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ntop
-GH_TAGNAME=	d2f4f8f
+GH_TAGNAME=	e91b1b5
 
 CPE_VENDOR=	ntop
 
