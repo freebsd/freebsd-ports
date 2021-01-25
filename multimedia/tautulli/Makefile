@@ -9,7 +9,7 @@ CATEGORIES=	multimedia python
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Monitoring, analytics, and notifications for Plex Media Server
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
@@ -36,26 +36,24 @@ GROUPS=		tautulli
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}/data ${STAGEDIR}${WWWDIR}/lib \
-		${STAGEDIR}${WWWDIR}/plexpy
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "data lib plexpy" ${STAGEDIR}${WWWDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/Tautulli.py ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "data lib plexpy" ${STAGEDIR}${WWWDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/Tautulli.py ${STAGEDIR}${WWWDIR}/
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG.md ${STAGEDIR}${WWWDIR}/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-	${RLN} ${STAGEDIR}${DOCSDIR}/CHANGELOG.md ${STAGEDIR}${WWWDIR}/CHANGELOG.md
 
 post-install:
-	${FIND} -s ${STAGEDIR}${WWWDIR} -type d -empty -delete
-	${FIND} -s ${STAGEDIR} -not -type d | ${SORT} | \
+	@${FIND} -s ${STAGEDIR}${WWWDIR} -type d -empty -delete
+	@${FIND} -s ${STAGEDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
