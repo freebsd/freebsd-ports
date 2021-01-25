@@ -13,6 +13,8 @@ COMMENT=	Python binding generator for C++ libraries
 LICENSE=	GPLv2 LGPL21 LGPL3
 LICENSE_COMB=	multi
 
+BROKEN_riscv64=		fails to compile: __threading_support:135:3: Unsupported architecture
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		git>0:devel/git
 LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_DEFAULT} \
