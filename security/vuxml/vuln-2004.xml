@@ -8246,6 +8246,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <modified>2004-05-05</modified>
     </dates>
   </vuln>
+
   <vuln vid="bfb36941-84fa-11d8-a41f-0020ed76ef5a">
     <topic>Incorrect cross-realm trust handling in Heimdal</topic>
     <affects>

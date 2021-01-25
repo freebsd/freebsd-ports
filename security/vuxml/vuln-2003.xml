@@ -169,7 +169,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-   <vuln vid="ebdf65c7-2ca6-11d8-9355-0020ed76ef5a">
+  <vuln vid="ebdf65c7-2ca6-11d8-9355-0020ed76ef5a">
     <topic>qpopper format string vulnerability</topic>
     <affects>
       <package>

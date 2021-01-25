@@ -97,7 +97,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
-<vuln vid="d6540411-9e10-11ea-9e83-0cc47ac16c9d">
+  <vuln vid="d6540411-9e10-11ea-9e83-0cc47ac16c9d">
     <topic>qmail -- 64 bit integer overflows with possible remote code execution on large SMTP requests</topic>
     <affects>
       <package>
