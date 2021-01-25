@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sratom
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.8
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
