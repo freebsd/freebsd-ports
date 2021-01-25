@@ -3,3 +3,7 @@ include/osmpbf/fileformat.pb.h
 include/osmpbf/osmformat.pb.h
 include/osmpbf/osmpbf.h
 lib/libosmpbf.a
+lib/libosmpbf.so
+lib/libosmpbf.so.1
+lib/libosmpbf.so.1.5.0
+man/man1/osmpbf-outline.1.gz

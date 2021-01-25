@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	libosmpbf
-PORTVERSION=	1.3.3
+PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	16
 CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library for handling binary OpenStreetMap data
 
 LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING.osmpbf
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
