@@ -4,7 +4,9 @@ PORTNAME=	meek
 DISTVERSION=	0.35.0
 CATEGORIES=	security
 MASTER_SITES=	https://gitweb.torproject.org/pluggable-transports/meek.git/snapshot/ \
-DISTFILES=	${PORTNAME}-v${DISTVERSION}.tar.gz \
+		https://gitweb.torproject.org/pluggable-transports/goptlib.git/snapshot/:goptlib
+DISTFILES=	${PORTNAME}-${DISTVERSION}.tar.gz \
+		goptlib-${GOPTLIBVERSION}.tar.gz:goptlib
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Pluggable transport proxy that relays through third-party server
@@ -12,10 +14,10 @@ COMMENT=	Pluggable transport proxy that relays through third-party server
 LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		go: git.torproject.org/pluggable-transports/goptlib.git@v1.1.0: Get "https://proxy.golang.org/git.torproject.org/pluggable-transports/goptlib.git/@v/v1.1.0.mod": dial tcp 172.217.17.113:443: connect: can't assign requested address
+USES=		go:modules
+USE_GITHUB=	nodefault
 
-USES=		go
-
+GOPTLIBVERSION=	0.7
 GO_TARGET=	./meek-client \
 		./meek-server
 GH_TUPLE=	\
@@ -33,8 +35,8 @@ PLIST_FILES=	bin/meek-client \
 SUB_FILES=	pkg-message
 
 post-patch:
-	@${MKDIR} ${WRKDIR}/src/git.torproject.org/pluggable-transports
-	@${LN} -s ${WRKSRC} ${WRKDIR}/src/git.torproject.org/pluggable-transports/${PORTNAME}
+	@${MKDIR} ${WRKSRC}/vendor/git.torproject.org/pluggable-transports
+	@${LN} -s ${WRKDIR}/goptlib-${GOPTLIBVERSION} ${WRKSRC}/vendor/git.torproject.org/pluggable-transports/goptlib.git
 
 do-test:
 .for t in ${GO_TARGET}
