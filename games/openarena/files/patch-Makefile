@@ -11,6 +11,16 @@
  
  ifeq ($(COMPILE_PLATFORM),mingw32)
    ifeq ($(COMPILE_ARCH),i386)
+@@ -70,6 +74,9 @@
+ ifeq ($(COMPILE_ARCH),powerpc64)
+   COMPILE_ARCH=ppc64
+ endif
++ifeq ($(COMPILE_ARCH),powerpc64le)
++  COMPILE_ARCH=ppc64le
++endif
+
+ ifndef ARCH
+ ARCH=$(COMPILE_ARCH)
 @@ -205,6 +209,8 @@ ifneq ($(BUILD_CLIENT),0)
      OPENAL_LIBS=$(shell pkg-config --silence-errors --libs openal)
      SDL_CFLAGS=$(shell pkg-config --silence-errors --cflags sdl|sed 's/-Dmain=SDL_main//')
@@ -81,7 +91,7 @@
    else
      CLIENT_LIBS += -lspeex -lspeexdsp
    endif
-@@ -1564,7 +1573,7 @@ ifeq ($(HAVE_VM_COMPILED),true)
+@@ -1564,9 +1576,12 @@
    ifeq ($(ARCH),ppc)
      Q3OBJ += $(B)/client/vm_powerpc.o $(B)/client/vm_powerpc_asm.o
    endif
@@ -89,13 +99,21 @@
 +  ifeq ($(COMPILE_ARCH),ppc64)
      Q3OBJ += $(B)/client/vm_powerpc.o $(B)/client/vm_powerpc_asm.o
    endif
++  ifeq ($(COMPILE_ARCH),ppc64le)
++    Q3OBJ += $(B)/client/vm_powerpc.o $(B)/client/vm_powerpc_asm.o
++  endif
    ifeq ($(ARCH),sparc)
-@@ -1732,7 +1741,7 @@ ifeq ($(HAVE_VM_COMPILED),true)
+     Q3OBJ += $(B)/client/vm_sparc.o
+   endif
+@@ -1732,7 +1747,10 @@
    ifeq ($(ARCH),ppc)
      Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
    endif
 -  ifeq ($(ARCH),ppc64)
 +  ifeq ($(COMPILE_ARCH),ppc64)
++    Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
++  endif
++  ifeq ($(COMPILE_ARCH),ppc64le)
      Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
    endif
    ifeq ($(ARCH),sparc)
