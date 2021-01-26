@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2020f
+DISTVERSION=	2021a
 CATEGORIES=	misc
 MASTER_SITES=	https://data.iana.org/time-zones/releases/ \
 		ftp://ftp.iana.org/tz/releases/
