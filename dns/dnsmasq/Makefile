@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.83
+DISTVERSION=	2.84
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
-PORTREVISION=	1
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	dns
 MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/ \
@@ -104,6 +104,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${_intllibs} ${ICONV_LIB}
 
 post-patch:
 	${REINPLACE_CMD} -e '/^lua_/s/lua5\.2/lua-${LUA_VER}/' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's/2\.84rc2/2.84/' ${WRKSRC}/VERSION
 
 pre-configure: pretty-print-config
 .if ${PORT_OPTIONS:MIDN}
