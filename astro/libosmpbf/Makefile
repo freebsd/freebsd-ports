@@ -4,6 +4,7 @@
 PORTNAME=	libosmpbf
 PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
