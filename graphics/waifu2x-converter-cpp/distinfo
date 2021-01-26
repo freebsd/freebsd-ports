@@ -1,9 +1,3 @@
-TIMESTAMP = 1575647090
-SHA256 (DeadSix27-waifu2x-converter-cpp-v5.3.3_GH0.tar.gz) = 036d82bb4ec2e4a098b084e5f82f21d3a274c6c16e60e7d5dd44478f2cb463ed
-SIZE (DeadSix27-waifu2x-converter-cpp-v5.3.3_GH0.tar.gz) = 12531204
-SHA256 (858fed6eac1d.patch) = bc1e9c80fbf5b59a4e1630ddc561b839ce66315c4e0a8228b2fea765dce90a09
-SIZE (858fed6eac1d.patch) = 4160
-SHA256 (318c254dde60.patch) = 0197c91a6faadd46b439e6620fe4c59bf7ba6ab489903cde0baa0a75bbf1ce70
-SIZE (318c254dde60.patch) = 3518
-SHA256 (728310bb4630.patch) = 67bbb72aea3e24865ffc6a3e628f961fb524a18322ccd28395c73d066b3cf983
-SIZE (728310bb4630.patch) = 2587
+TIMESTAMP = 1608489566
+SHA256 (DeadSix27-waifu2x-converter-cpp-v5.3.4_GH0.tar.gz) = 93e1dca78657c48f9c497a71b9e9d11e88ffadcc20fac27f9c48cdba7f132b51
+SIZE (DeadSix27-waifu2x-converter-cpp-v5.3.4_GH0.tar.gz) = 12532169
