@@ -418,15 +418,20 @@
  
      if ((fProt & RTMEM_PROT_NONE) == RTMEM_PROT_NONE)
          ProtectionFlags = VM_PROT_NONE;
-@@ -826,6 +885,7 @@ DECLHIDDEN(int) rtR0MemObjNativeProtect(PRTR0MEMOBJINT
+@@ -825,7 +884,12 @@ DECLHIDDEN(int) rtR0MemObjNativeProtect(PRTR0MEMOBJINT
+     if ((fProt & RTMEM_PROT_EXEC) == RTMEM_PROT_EXEC)
          ProtectionFlags |= VM_PROT_EXECUTE;
  
++#if __FreeBSD_version >= 1300135
++    int krc = vm_map_protect(pVmMap, AddrStart, AddrEnd, ProtectionFlags, 0, VM_MAP_PROTECT_SET_PROT);
++#else
      int krc = vm_map_protect(pVmMap, AddrStart, AddrEnd, ProtectionFlags, FALSE);
++#endif
 +    IPRT_FREEBSD_RESTORE_EFL_AC();
      if (krc == KERN_SUCCESS)
          return VINF_SUCCESS;
  
-@@ -850,11 +910,19 @@ DECLHIDDEN(RTHCPHYS) rtR0MemObjNativeGetPagePhysAddr(P
+@@ -850,11 +914,19 @@ DECLHIDDEN(RTHCPHYS) rtR0MemObjNativeGetPagePhysAddr(P
  
              vm_offset_t pb = (vm_offset_t)pMemFreeBSD->Core.pv + ptoa(iPage);
  
@@ -450,7 +455,7 @@
          }
  
          case RTR0MEMOBJTYPE_MAPPING:
-@@ -863,11 +931,15 @@ DECLHIDDEN(RTHCPHYS) rtR0MemObjNativeGetPagePhysAddr(P
+@@ -863,11 +935,15 @@ DECLHIDDEN(RTHCPHYS) rtR0MemObjNativeGetPagePhysAddr(P
  
              if (pMemFreeBSD->Core.u.Mapping.R0Process != NIL_RTR0PROCESS)
              {
@@ -467,7 +472,7 @@
              }
              return vtophys(pb);
          }
-@@ -877,6 +949,7 @@ DECLHIDDEN(RTHCPHYS) rtR0MemObjNativeGetPagePhysAddr(P
+@@ -877,6 +953,7 @@ DECLHIDDEN(RTHCPHYS) rtR0MemObjNativeGetPagePhysAddr(P
          case RTR0MEMOBJTYPE_PHYS_NC:
          {
              RTHCPHYS addr;
@@ -475,7 +480,7 @@
  #if __FreeBSD_version >= 1000030
              VM_OBJECT_WLOCK(pMemFreeBSD->pObject);
  #else
-@@ -888,6 +961,7 @@ DECLHIDDEN(RTHCPHYS) rtR0MemObjNativeGetPagePhysAddr(P
+@@ -888,6 +965,7 @@ DECLHIDDEN(RTHCPHYS) rtR0MemObjNativeGetPagePhysAddr(P
  #else
              VM_OBJECT_UNLOCK(pMemFreeBSD->pObject);
  #endif
