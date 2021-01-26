@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	help2man
-PORTVERSION=	1.47.16
+PORTVERSION=	1.47.17
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
@@ -30,7 +30,7 @@ NLS_USES=		gettext
 NLS_VARS=		CONFIGURE_FAIL_MESSAGE="Rebuild lang/${PERL_PORT} and devel/p5-Locale-gettext manually before contacting maintainer."
 NLS_VARS_OFF=		NO_ARCH=yes
 
-.for lang in de es fr pl pt_BR sv ta uk zh_CN
+.for lang in de es fr pl pt_BR sr sv ta uk zh_CN
 NLS_INFO+=		help2man-${lang}
 .endfor
 
