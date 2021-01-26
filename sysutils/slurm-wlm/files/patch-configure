@@ -1,6 +1,60 @@
---- configure.orig	2020-11-30 15:56:36 UTC
+--- configure.orig	2020-03-26 21:44:05 UTC
 +++ configure
-@@ -24075,8 +24075,24 @@ fi
+@@ -20744,25 +20744,19 @@ HDF5 support is being disabled (equivalent to --with-h
+         with_hdf5="no"
+         with_hdf5_fortran="no"
+     else
+-                HDF5_SHOW=$(eval $H5CC -show)
++	    HDF5_SHOW=`$PKG_CONFIG --cflags hdf5 --libs hdf5`
+ 
+-                HDF5_CC=$(eval $H5CC -show | $AWK '{print $1}')
+-        if test "$HDF5_CC" = "ccache"; then
+-            HDF5_CC=$(eval $H5CC -show | $AWK '{print $2}')
+-        fi
++                HDF5_CC=$CC
+ 
++                HDF5_VERSION=`$GREP 'HDF5 Version:' %%LOCALBASE%%/lib/libhdf5.settings \
++            | $AWK '{print $3}'`
+ 
+-                HDF5_VERSION=$(eval $H5CC -showconfig | $GREP 'HDF5 Version:' \
+-            | $AWK '{print $3}')
++            HDF5_tmp_flags=`$GREP 'FLAGS\|Extra libraries:' %%LOCALBASE%%/lib/libhdf5.settings \
++            | $AWK -F: '{printf("%s "), $2}' `
+ 
+-                                                                                HDF5_tmp_flags=$(eval $H5CC -showconfig \
+-            | $GREP 'FLAGS\|Extra libraries:' \
+-            | $AWK -F: '{printf("%s "), $2}' )
++                HDF5_tmp_inst=`$GREP 'Installation point:' %%LOCALBASE%%/lib/libhdf5.settings \
++            | $AWK '{print $NF}' `
+ 
+-                HDF5_tmp_inst=$(eval $H5CC -showconfig \
+-            | $GREP 'Installation point:' \
+-            | $AWK '{print $NF}' )
+-
+                 HDF5_CPPFLAGS="-I${HDF5_tmp_inst}/include"
+ 
+                 for arg in $HDF5_SHOW $HDF5_tmp_flags ; do
+@@ -20907,7 +20901,7 @@ $as_echo "$H5FC" >&6; }
+             with_hdf5_fortran="yes"
+ 
+ 
+-                        for arg in `$H5FC -show`
++                        for arg in `$PKG_CONFIG --cflags hdf5_fortran --libs hdf5_fortran`
+             do
+               case "$arg" in #(
+                 -I*) echo $HDF5_FFLAGS | $GREP -e "$arg" >/dev/null \
+@@ -20967,9 +20961,8 @@ fi
+ # because slurm uses the 1.8 API. By defining this CPP macro we get
+ # the 1.8 API.
+ 
+-$as_echo "#define H5_NO_DEPRECATED_SYMBOLS 1" >>confdefs.h
++# Remove on FreeBSD ports because we use 1.12 with 1.10 API
+ 
+-
+ #
+ # Handle user hints
+ #
+@@ -24075,8 +24068,24 @@ fi
  
  
  	x_ac_lua_pkg_name="lua"
@@ -27,7 +81,7 @@
      { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"lua5.3\""; } >&5
    ($PKG_CONFIG --exists --print-errors "lua5.3") 2>&5
    ac_status=$?
-@@ -24125,6 +24141,8 @@ else
+@@ -24125,6 +24134,8 @@ else
    x_ac_lua_pkg_name=lua-5.1
  else
    x_ac_lua_pkg_name="lua >= 5.1"

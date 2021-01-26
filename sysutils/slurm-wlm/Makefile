@@ -2,7 +2,7 @@
 
 PORTNAME=	slurm
 DISTVERSION=	20.02.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://download.schedmd.com/slurm/
 PKGNAMESUFFIX=	-wlm
@@ -21,8 +21,8 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libmunge.so:security/munge \
 		liblz4.so:archivers/liblz4
 
-USES=		compiler:c11 gmake gnome libtool lua pkgconfig python:build \
-		readline:port shebangfix ssl tar:bz2
+USES=		compiler:c11 gmake gnome libtool localbase lua pkgconfig \
+		python:build readline:port shebangfix ssl tar:bz2
 USE_LDCONFIG=	yes
 USE_PERL5=	configure
 USE_RC_SUBR=	slurmctld slurmd
@@ -63,6 +63,7 @@ GUI_CONFIGURE_ENABLE=	glibtest gtktest x11
 HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 			libsz.so:science/szip
 HDF5_CONFIGURE_WITH=	hdf5
+HDF5_CONFIGURE_ENV=	H5CC=${LOCALBASE}/bin/h5cc
 
 HWLOC_LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2
 HWLOC_CONFIGURE_WITH=	hwloc
@@ -96,7 +97,7 @@ pre-configure-GUI-off:
 pre-configure:
 	@${CP} ${FILESDIR}/pty.h ${WRKSRC}/slurm
 	@${REINPLACE_CMD} -e 's|sched_setaffinity|cpuset_setaffinity|g' \
-		${WRKSRC}/configure
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/configure
 
 	@${REINPLACE_CMD} -e 's|"/proc|"/compat/linux/proc|g' \
 		-e 's|(/proc)|(/compat/linux/proc)|g' \
