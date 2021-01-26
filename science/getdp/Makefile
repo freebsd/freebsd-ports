@@ -30,4 +30,4 @@ FFLAGS+=	-fallow-argument-mismatch
 do-test:
 	cd ${WRKSRC}/demos && yes "" | ${STAGEDIR}${PREFIX}/bin/${PORTNAME} magnet.pro -solve MagSta_phi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
