@@ -46,7 +46,6 @@ include/google/protobuf/generated_message_table_driven.h
 include/google/protobuf/generated_message_util.h
 include/google/protobuf/has_bits.h
 include/google/protobuf/implicit_weak_message.h
-include/google/protobuf/inlined_string_field.h
 include/google/protobuf/io/coded_stream.h
 include/google/protobuf/io/gzip_stream.h
 include/google/protobuf/io/io_win32.h
@@ -83,7 +82,6 @@ include/google/protobuf/stubs/bytestream.h
 include/google/protobuf/stubs/callback.h
 include/google/protobuf/stubs/casts.h
 include/google/protobuf/stubs/common.h
-include/google/protobuf/stubs/fastmem.h
 include/google/protobuf/stubs/hash.h
 include/google/protobuf/stubs/logging.h
 include/google/protobuf/stubs/macros.h
@@ -117,15 +115,15 @@ include/google/protobuf/wrappers.pb.h
 include/google/protobuf/wrappers.proto
 lib/libprotobuf-lite.a
 lib/libprotobuf-lite.so
-lib/libprotobuf-lite.so.24
-lib/libprotobuf-lite.so.24.0.0
+lib/libprotobuf-lite.so.25
+lib/libprotobuf-lite.so.25.0.0
 lib/libprotobuf.a
 lib/libprotobuf.so
-lib/libprotobuf.so.24
-lib/libprotobuf.so.24.0.0
+lib/libprotobuf.so.25
+lib/libprotobuf.so.25.0.0
 lib/libprotoc.a
 lib/libprotoc.so
-lib/libprotoc.so.24
-lib/libprotoc.so.24.0.0
+lib/libprotoc.so.25
+lib/libprotoc.so.25.0.0
 libdata/pkgconfig/protobuf-lite.pc
 libdata/pkgconfig/protobuf.pc
