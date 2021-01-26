@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-spanner-admin-instance-v1
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
