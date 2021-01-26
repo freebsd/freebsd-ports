@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	readline
-PORTVERSION=	8.0.${PATCHLEVEL}
-PORTREVISION=	1
+PORTVERSION=	8.1.${PATCHLEVEL}
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -22,20 +21,25 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 INFO=		history readline rluserman
+PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 PORTDOCS=	CHANGES INSTALL README
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
-CPE_UPDATE=	${PATCHLEVEL}
 
 OPTIONS_DEFINE=	DOCS
 
-PATCHES=	1 2 3 4
+# https://ftp.gnu.org/gnu/readline/readline-8.1-patches/
+#PATCHES=	1
+.if defined(PATCHES)
+CPE_UPDATE=	${PATCHLEVEL}
 PATCHLEVEL=	${PATCHES:O:[-1]}
-#PATCHLEVEL=	0
 .for patch in ${PATCHES}
 PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
 .endfor
+.else
+PATCHLEVEL=	0
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/rlconf.h
@@ -44,6 +48,6 @@ post-patch:
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libhistory.so.8.0 ${STAGEDIR}${PREFIX}/lib/libreadline.so.8.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libhistory.so ${STAGEDIR}${PREFIX}/lib/libreadline.so
 
 .include <bsd.port.mk>
