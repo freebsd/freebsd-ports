@@ -77,6 +77,39 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fb67567a-5d95-11eb-a955-08002728f74c">
+    <topic>pysaml2 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py36-pysaml2</name>
+	<name>py37-pysaml2</name>
+	<name>py38-pysaml2</name>
+	<name>py39-pysaml2</name>
+	<range><lt>6.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>pysaml2 Releases:</p>
+	<blockquote cite="https://github.com/IdentityPython/pysaml2/releases">
+	  <p>Fix processing of invalid SAML XML documents - CVE-2021-21238</p>
+	  <p>Fix unspecified xmlsec1 key-type preference - CVE-2021-21239</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/IdentityPython/pysaml2/releases</url>
+      <url>https://github.com/IdentityPython/pysaml2/security/advisories/GHSA-f4g9-h89h-jgv9</url>
+      <url>https://github.com/IdentityPython/pysaml2/security/advisories/GHSA-5p3x-r448-pc62</url>
+      <cvename>CVE-2021-21238</cvename>
+      <cvename>CVE-2021-21239</cvename>
+    </references>
+    <dates>
+      <discovery>2021-01-20</discovery>
+      <entry>2021-01-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="425f2143-8876-4b0a-af84-e0238c5c2062">
     <topic>jenkins -- Arbitrary file read vulnerability in workspace browsers</topic>
     <affects>
