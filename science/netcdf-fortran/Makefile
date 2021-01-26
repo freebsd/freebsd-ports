@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf-fortran
-PORTVERSION=	4.5.2
+PORTVERSION=	4.5.3
 CATEGORIES=	science
 MASTER_SITES=	https://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_NAME=	University Corporation for Atmospheric Research/Unidata
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	netcdf>=4.6.0:science/netcdf
+BUILD_DEPENDS=	netcdf>=4.7.4:science/netcdf
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
 USES=		fortran gmake libtool localbase makeinfo pathfix

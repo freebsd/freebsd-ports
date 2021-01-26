@@ -4,6 +4,7 @@ include/netcdf.mod
 include/netcdf4_f03.mod
 include/netcdf4_nc_interfaces.mod
 include/netcdf4_nf_interfaces.mod
+include/netcdf_f03.mod
 include/netcdf_fortv2_c_interfaces.mod
 include/netcdf_nc_data.mod
 include/netcdf_nc_interfaces.mod
@@ -11,6 +12,7 @@ include/netcdf_nf_data.mod
 include/netcdf_nf_interfaces.mod
 include/typesizes.mod
 lib/libnetcdff.a
+lib/libnetcdff.settings
 lib/libnetcdff.so
 lib/libnetcdff.so.7
 lib/libnetcdff.so.7.0.0
