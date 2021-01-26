@@ -1,0 +1,10 @@
+Amfora aims to be the best looking Gemini
+client with the most features... all in
+the terminal. It does not support Gopher
+or other non-Web protocols - check out
+Bombadillo for that.
+
+It fully passes Sean Conman's client torture
+test, as well as the Egsam one.
+
+WWW: https://github.com/makeworld-the-better-one/amfora

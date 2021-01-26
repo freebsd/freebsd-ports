@@ -20,6 +20,7 @@
     SUBDIR += adguardhome
     SUBDIR += adzap
     SUBDIR += alef-webfont
+    SUBDIR += amfora
     SUBDIR += amphetadesk
     SUBDIR += analog
     SUBDIR += annie
