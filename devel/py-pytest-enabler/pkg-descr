@@ -1,0 +1,4 @@
+The 'enabler' plugin allows configuration of plugins if present, but omits the
+settings if the plugin is not present.
+
+WWW: https://github.com/jaraco/pytest-enabler
