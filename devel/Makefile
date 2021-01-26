@@ -4655,6 +4655,7 @@
     SUBDIR += py-nanotime
     SUBDIR += py-natsort
     SUBDIR += py-natural
+    SUBDIR += py-nbclassic
     SUBDIR += py-nbclient
     SUBDIR += py-nbconvert
     SUBDIR += py-nbdime
