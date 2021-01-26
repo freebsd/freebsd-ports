@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	deface
-PORTVERSION=	1.5.3
+PORTVERSION=	1.6.0
 CATEGORIES=	devel rubygems www
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-nokogiri>=1.6:textproc/rubygem-nokogiri \
 		rubygem-polyglot>=0:devel/rubygem-polyglot \
-		rubygem-rails4>=4.1:www/rubygem-rails4 \
+		rubygem-rails60>=5.2:www/rubygem-rails60 \
 		rubygem-rainbow>=2.1.0:devel/rubygem-rainbow
 
 USES=		gem
