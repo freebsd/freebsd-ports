@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	capybara
-PORTVERSION=	3.34.0
+PORTVERSION=	3.35.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-nokogiri>=1.8<2:textproc/rubygem-nokogiri \
 		rubygem-rack>=1.6.0:www/rubygem-rack \
 		rubygem-rack-test>=0.6.3:www/rubygem-rack-test \
-		rubygem-regexp_parser>=1.5<2:textproc/rubygem-regexp_parser \
+		rubygem-regexp_parser>=1.5<3.0:textproc/rubygem-regexp_parser \
 		rubygem-xpath>=3.2<4:devel/rubygem-xpath
 
 USES=		gem
