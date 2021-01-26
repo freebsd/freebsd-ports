@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webdrivers
-PORTVERSION=	4.4.2
+PORTVERSION=	4.5.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
