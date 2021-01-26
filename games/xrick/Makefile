@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.bigorno.net/xrick/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of Rick Dangerous
 
+BROKEN_FreeBSD_13=	duplicate symbol: IMG_SPLASH
+BROKEN_FreeBSD_14=	duplicate symbol: IMG_SPLASH
+
 RESTRICTED=	Copyright status of the graphics and sounds is uncertain
 USES=		gmake jpeg sdl tar:tgz
 USE_SDL=	sdl
