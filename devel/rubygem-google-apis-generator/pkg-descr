@@ -1,0 +1,5 @@
+This library includes common base classes and dependencies used by legacy REST
+clients for Google APIs.
+
+WWW: https://github.com/googleapis/google-api-ruby-client
+WWW: https://github.com/googleapis/google-api-ruby-client/tree/master/google-apis-generator

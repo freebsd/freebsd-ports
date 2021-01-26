@@ -6147,6 +6147,7 @@
     SUBDIR += rubygem-google-api-client
     SUBDIR += rubygem-google-apis-core
     SUBDIR += rubygem-google-apis-discovery_v1
+    SUBDIR += rubygem-google-apis-generator
     SUBDIR += rubygem-google-gax
     SUBDIR += rubygem-google-protobuf
     SUBDIR += rubygem-google-protobuf38
