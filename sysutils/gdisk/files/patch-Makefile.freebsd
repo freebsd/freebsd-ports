@@ -1,8 +1,8 @@
---- Makefile.freebsd.orig	2020-02-17 22:34:11 UTC
+--- Makefile.freebsd.orig	2021-01-13 22:14:27 UTC
 +++ Makefile.freebsd
 @@ -1,8 +1,8 @@
--CC=gcc
--CXX=g++
+-CC=clang
+-CXX=clang++
 +CC?=gcc
 +CXX?=g++
  CFLAGS+=-D_FILE_OFFSET_BITS=64
