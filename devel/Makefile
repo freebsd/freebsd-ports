@@ -4300,6 +4300,7 @@
     SUBDIR += py-curio
     SUBDIR += py-cursive
     SUBDIR += py-curtsies
+    SUBDIR += py-cwcwidth
     SUBDIR += py-cxx
     SUBDIR += py-cycler
     SUBDIR += py-cymem
@@ -6861,8 +6862,8 @@
     SUBDIR += tortoisehg
     SUBDIR += tpasm
     SUBDIR += tradcpp
-    SUBDIR += transwarp
     SUBDIR += transient
+    SUBDIR += transwarp
     SUBDIR += treepy.el
     SUBDIR += trellis
     SUBDIR += trio
