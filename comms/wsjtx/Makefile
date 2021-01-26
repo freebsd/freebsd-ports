@@ -67,4 +67,4 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
