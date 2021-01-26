@@ -2,6 +2,7 @@
 
 PORTNAME=	gmt
 DISTVERSION=	6.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	lbartoletti@FreeBSD.org

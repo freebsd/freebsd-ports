@@ -3,6 +3,7 @@
 
 PORTNAME=	netcdf-cxx
 PORTVERSION=	4.3.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
