@@ -1,0 +1,49 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: nfs_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# nfs_exporter_enable (bool):            Set to NO by default.
+#               Set it to YES to enable nfs-exporter.
+# nfs_exporter_args (string):            Set extra arguments to pass to nfs-exporter
+#               Default is "".
+# nfs_exporter_user (string):            Set user that nfs_exporter will run under
+#               Default is "root".
+# nfs_exporter_group (string):           Set group that nfs_exporter will run under
+#               Default is "wheel".
+
+. /etc/rc.subr
+
+name=nfs_exporter
+desc="NFS prometheus exporter"
+rcvar=nfs_exporter_enable
+
+load_rc_config $name
+
+: ${nfs_exporter_enable:=NO}
+: ${nfs_exporter_args:=""}
+: ${nfs_exporter_user:=root}
+: ${nfs_exporter_group:=wheel}
+
+pidfile=/var/run/nfs_exporter.pid
+command=/usr/sbin/daemon
+procname=%%PREFIX%%/bin/nfs-exporter
+command_args="-f -p ${pidfile} /usr/bin/env ${procname} ${nfs_exporter_args}"
+
+start_precmd=nfs_exporter_startprecmd
+
+nfs_exporter_startprecmd()
+{
+    if [ -e ${pidfile} ]; then
+        chown ${nfs_exporter_user}:${nfs_exporter_group} ${pidfile};
+    else
+        install -o ${nfs_exporter_user} -g ${nfs_exporter_group} /dev/null ${pidfile};
+    fi
+}
+
+run_rc_command "$1"

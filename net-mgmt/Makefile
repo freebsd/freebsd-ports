@@ -189,6 +189,7 @@
     SUBDIR += networkmgr
     SUBDIR += netxms
     SUBDIR += nfdump
+    SUBDIR += nfs-exporter
     SUBDIR += nfsen
     SUBDIR += ng_ipacct
     SUBDIR += nitpicker

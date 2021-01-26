@@ -1,0 +1,6 @@
+FreeBSD NFS statistics exporter for Prometheus
+
+The is a Prometheus exporter for FreeBSD's NFS statistics.  Currently only the
+server statistics are supported; client stats will come later.
+
+WWW: https://github.com/Axcient/freebsd-nfs-exporter
