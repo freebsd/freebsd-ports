@@ -24,7 +24,6 @@ USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	EXAMPLES GFLAGS GLOG
 OPTIONS_DEFAULT=GFLAGS GLOG
-#OPTIONS_SUB=	yes
 GFLAGS_DESC=	Use gflags to change command line flags
 GLOG_DESC=	Use glog for logging
 
