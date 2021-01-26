@@ -12,8 +12,8 @@ include/fido/rs256.h
 include/fido/types.h
 lib/libfido2.a
 lib/libfido2.so
-lib/libfido2.so.1
 lib/libfido2.so.%%PORTVERSION%%
+lib/libfido2.so.1
 libdata/pkgconfig/libfido2.pc
 man/man1/fido2-assert.1.gz
 man/man1/fido2-cred.1.gz
@@ -106,6 +106,8 @@ man/man3/fido_cred_aaguid_len.3.gz
 man/man3/fido_cred_aaguid_ptr.3.gz
 man/man3/fido_cred_authdata_len.3.gz
 man/man3/fido_cred_authdata_ptr.3.gz
+man/man3/fido_cred_authdata_raw_len.3.gz
+man/man3/fido_cred_authdata_raw_ptr.3.gz
 man/man3/fido_cred_clientdata_hash_len.3.gz
 man/man3/fido_cred_clientdata_hash_ptr.3.gz
 man/man3/fido_cred_display_name.3.gz
@@ -136,6 +138,7 @@ man/man3/fido_cred_set_uv.3.gz
 man/man3/fido_cred_set_x509.3.gz
 man/man3/fido_cred_sig_len.3.gz
 man/man3/fido_cred_sig_ptr.3.gz
+man/man3/fido_cred_sigcount.3.gz
 man/man3/fido_cred_type.3.gz
 man/man3/fido_cred_user_id_len.3.gz
 man/man3/fido_cred_user_id_ptr.3.gz
@@ -173,6 +176,8 @@ man/man3/fido_dev_get_assert.3.gz
 man/man3/fido_dev_get_cbor_info.3.gz
 man/man3/fido_dev_get_retry_count.3.gz
 man/man3/fido_dev_get_touch_begin.3.gz
+man/man3/fido_dev_get_touch_status.3.gz
+man/man3/fido_dev_get_uv_retry_count.3.gz
 man/man3/fido_dev_info_free.3.gz
 man/man3/fido_dev_info_manifest.3.gz
 man/man3/fido_dev_info_manufacturer_string.3.gz
@@ -193,6 +198,7 @@ man/man3/fido_dev_reset.3.gz
 man/man3/fido_dev_set_io_functions.3.gz
 man/man3/fido_dev_set_pin.3.gz
 man/man3/fido_dev_supports_cred_prot.3.gz
+man/man3/fido_dev_supports_credman.3.gz
 man/man3/fido_dev_supports_pin.3.gz
 man/man3/fido_init.3.gz
 man/man3/fido_strerr.3.gz
@@ -292,6 +298,8 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_aaguid_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_authdata_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_authdata_ptr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_authdata_raw_len.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_authdata_raw_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_clientdata_hash_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_clientdata_hash_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_display_name.html
@@ -322,6 +330,7 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_set_x509.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_sig_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_sig_ptr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_sigcount.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_type.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_user_id_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_user_id_ptr.html
@@ -359,6 +368,8 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_get_cbor_info.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_get_retry_count.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_get_touch_begin.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_get_touch_status.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_get_uv_retry_count.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_info_free.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_info_manifest.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_info_manufacturer_string.html
@@ -379,6 +390,7 @@ man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_io_functions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_set_pin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_supports_cred_prot.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_supports_credman.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_dev_supports_pin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_init.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_strerr.html

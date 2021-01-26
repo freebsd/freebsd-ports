@@ -1,3 +1,3 @@
-TIMESTAMP = 1599375996
-SHA256 (libfido2-1.5.0.tar.gz) = 5990f923c9390fe1e6a00ba5d1d1f74030e7344b855e971d9fb7223e70ff3122
-SIZE (libfido2-1.5.0.tar.gz) = 407259
+TIMESTAMP = 1611665329
+SHA256 (libfido2-1.6.0.tar.gz) = 6aed47aafd22be49c38f9281fb88ccd08c98678d9b8c39cdc87d1bb3ea2c63e4
+SIZE (libfido2-1.6.0.tar.gz) = 413904
