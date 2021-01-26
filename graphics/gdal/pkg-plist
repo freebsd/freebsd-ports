@@ -1,5 +1,6 @@
 bin/gdal-config
 bin/gdal_contour
+bin/gdal_create
 bin/gdal_grid
 bin/gdal_rasterize
 bin/gdal_translate
@@ -13,7 +14,6 @@ bin/gdallocationinfo
 bin/gdalmanage
 bin/gdalmdiminfo
 bin/gdalmdimtranslate
-bin/gdalserver
 bin/gdalsrsinfo
 bin/gdaltindex
 bin/gdaltransform
@@ -188,6 +188,11 @@ libdata/pkgconfig/gdal.pc
 %%DATADIR%%/seed_2d.dgn
 %%DATADIR%%/seed_3d.dgn
 %%DATADIR%%/stateplane.csv
+%%DATADIR%%/template_tiles.mapml
+%%DATADIR%%/tms_LINZAntarticaMapTileGrid.json
+%%DATADIR%%/tms_MapML_APSTILE.json
+%%DATADIR%%/tms_MapML_CBMTILE.json
+%%DATADIR%%/tms_NZTM2000.json
 %%DATADIR%%/trailer.dxf
 %%DATADIR%%/vdv452.xml
 %%DATADIR%%/vdv452.xsd

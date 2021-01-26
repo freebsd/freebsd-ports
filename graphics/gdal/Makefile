@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdal
-PORTVERSION=	3.1.4
-PORTREVISION=	5
+PORTVERSION=	3.2.1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -36,11 +35,12 @@ EXR_DESC=	EXR support via OpenEXR library
 PCRE_DESC=	Regular expression support for SQLite
 TILEDB_DESC=	TileDB support
 
-USES=		compiler:c++11-lang gmake iconv jpeg localbase pkgconfig ssl tar:xz
+USES=		compiler:c++14-lang gmake iconv jpeg localbase pkgconfig ssl tar:xz
 
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
 		--enable-static=yes \
+		--with-cpp14 \
 		--with-crypto=yes \
 		--with-geotiff=yes \
 		--with-gif=yes \
@@ -62,7 +62,7 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	${ICONV_LIB}
 MAKE_JOBS_UNSAFE=	yes
 MAKEFILE=	GNUmakefile
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
