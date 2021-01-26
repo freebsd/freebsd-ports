@@ -1,12 +1,13 @@
 # Created by: alexander smishlajev
 # $FreeBSD$
 
-PORTNAME=	DecoratorTools
+PORTNAME=	decoratortools
 PORTVERSION=	1.8
 PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	DecoratorTools-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class, function, and metaclass decorators
