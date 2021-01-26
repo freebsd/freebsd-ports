@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	netcdf
-PORTVERSION=	4.7.3
+PORTVERSION=	4.7.4
 DISTVERSIONPREFIX=	c-
 CATEGORIES=	science
 MASTER_SITES=	https://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
@@ -18,12 +18,6 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libhdf5.so:science/hdf5
 
-CONFLICTS_INSTALL=	hdf-4.[0-9]* netcdf-3.[0-9]* netcdf3-3.[0-9]*
-
-OPTIONS_DEFINE=	DOCS DOXYGEN SZIP
-OPTIONS_DEFAULT=SZIP
-SZIP_DESC=	SZIP support (required if HDF5 was built with SZIP)
-
 USES=		gmake libtool localbase ncurses pathfix pkgconfig:run
 
 CONFIGURE_ARGS=	--disable-filter-testing \
@@ -34,10 +28,16 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	hdf-4.[0-9]* netcdf-3.[0-9]* netcdf3-3.[0-9]*
+
+OPTIONS_DEFINE=	DOCS DOXYGEN SZIP
+OPTIONS_DEFAULT=SZIP
+OPTIONS_SUB=	yes
+DOXYGEN_IMPLIES=DOCS
+SZIP_DESC=	SZIP support (required if HDF5 was built with SZIP)
+
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENABLE=	doxygen
-DOXYGEN_IMPLIES=	DOCS
-DOXYGEN_PORTDOCS=	*
 SZIP_LIB_DEPENDS=	libsz.so:science/szip
 SZIP_LIBS=		-lsz
 
