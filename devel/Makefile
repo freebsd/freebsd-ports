@@ -4556,6 +4556,7 @@
     SUBDIR += py-jsonschema
     SUBDIR += py-jsonsir
     SUBDIR += py-jupyter-packaging
+    SUBDIR += py-jupyter-server
     SUBDIR += py-jupyter-telemetry
     SUBDIR += py-jupyter_client
     SUBDIR += py-jupyter_console
