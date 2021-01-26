@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	web-console
-PORTVERSION=	4.0.1
+PORTVERSION=	4.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails60
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Debugging tool for your Ruby on Rails applications
 
 LICENSE=	MIT
