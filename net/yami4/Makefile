@@ -13,6 +13,9 @@ COMMENT=	Messaging library for distributed systems
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
 
+BROKEN_FreeBSD_13=	unknown type name 'sem_t'
+BROKEN_FreeBSD_14=	unknown type name 'sem_t'
+
 USES=		compiler:c++11-lang zip
 
 MAKE_ARGS=	COMPILER="${CXX}" OPTIONS="${CXXFLAGS}"
