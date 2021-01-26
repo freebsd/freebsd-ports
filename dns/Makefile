@@ -210,6 +210,7 @@
     SUBDIR += rpsl2acl
     SUBDIR += rubygem-dnsruby
     SUBDIR += rubygem-gitlab-net-dns
+    SUBDIR += rubygem-google-apis-dns_v1
     SUBDIR += rubygem-google-cloud-dns
     SUBDIR += rubygem-idn-ruby
     SUBDIR += rubygem-net-dns
