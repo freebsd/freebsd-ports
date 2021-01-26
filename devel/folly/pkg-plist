@@ -13,6 +13,7 @@ include/folly/CancellationToken-inl.h
 include/folly/CancellationToken.h
 include/folly/Chrono.h
 include/folly/ClockGettimeWrappers.h
+include/folly/CompiledFormat.h
 include/folly/ConcurrentBitSet.h
 include/folly/ConcurrentSkipList-inl.h
 include/folly/ConcurrentSkipList.h
