@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Gtk2-GladeXML
-PORTVERSION=	1.007
-PORTREVISION=	6
+PORTVERSION=	1.008
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,9 +20,9 @@ BUILD_DEPENDS=	p5-Glib>=1.00:devel/p5-Glib \
 RUN_DEPENDS=	p5-Glib>=1.00:devel/p5-Glib \
 		p5-Gtk2>=1.060:x11-toolkits/p5-Gtk2
 
-USE_GNOME=	libglade2
-
 USES=		gnome perl5
+
+USE_GNOME=	libglade2
 USE_PERL5=	configure
 
 .include <bsd.port.mk>
