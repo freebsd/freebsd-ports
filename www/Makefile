@@ -1741,6 +1741,7 @@
     SUBDIR += py-textile
     SUBDIR += py-tornado
     SUBDIR += py-tornado4
+    SUBDIR += py-tornado5
     SUBDIR += py-tornado6
     SUBDIR += py-treq
     SUBDIR += py-ttrv
