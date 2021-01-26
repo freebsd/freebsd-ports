@@ -12,4 +12,4 @@ The ASDF format has the following features:
   serialized automatically
 - ASDF can be extended to serialize custom data types
 
-WWW: https://github.com/spacetelescope/asdf
+WWW: https://github.com/asdf-format/asdf
