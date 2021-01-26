@@ -10,6 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server browser for many popular 3D action games
 
+BROKEN_FreeBSD_13=	duplicate symbol: current_server_filter
+BROKEN_FreeBSD_14=	duplicate symbol: current_server_filter
+
 RUN_DEPENDS=	qstat:games/qstat
 
 USES=		gettext gmake gnome pkgconfig xorg
