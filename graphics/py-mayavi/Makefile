@@ -3,6 +3,7 @@
 
 PORTNAME=	mayavi
 DISTVERSION=	4.7.2
+PORTREVISION=	1
 CATEGORIES=	graphics science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +23,8 @@ LICENSE_FILE_APACHE11=		${WRKSRC}/LICENSE_COLORBREWER.txt
 
 BUILD_DEPENDS=	vtk9>0:math/vtk9 \
 		${PYNUMPY} \
-		${PY_SPHINX}
+		${PY_SPHINX} \
+		sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 RUN_DEPENDS=	vtk9>0:math/vtk9 \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}apptools>0:devel/py-apptools@${PY_FLAVOR} \
@@ -34,7 +36,7 @@ RUN_DEPENDS=	vtk9>0:math/vtk9 \
 		${PYTHON_PKGNAMEPREFIX}traitsui>=6.0.0:graphics/py-traitsui@${PY_FLAVOR}
 
 USES=		python:3.6+ shebangfix
-USE_PYTHON=	noflavors distutils concurrent autoplist # noflavors to force python to be of the same version as in vtk9, which always has default python version
+USE_PYTHON=	noflavors distutils autoplist # noflavors to force python to be of the same version as in vtk9, which always has default python version
 
 USE_WX=		3.0+
 WX_COMPS=	python:run
