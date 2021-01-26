@@ -56,6 +56,7 @@
     SUBDIR += fanwood
     SUBDIR += farsifonts
     SUBDIR += fcft
+    SUBDIR += ferrite-core
     SUBDIR += fifteen
     SUBDIR += fira
     SUBDIR += firacode
