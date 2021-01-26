@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	flamethrower
-DISTVERSIONPREFIX=v
 PORTVERSION=	0.11.0
+DISTVERSIONPREFIX=v
 CATEGORIES=	dns
 
 MAINTAINER=	pcarboni@gmail.com
@@ -22,12 +22,13 @@ USES=		cmake compiler:c++17-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	DNS-OARC
 
-INSTALL_TARGET=
-TEST_TARGET=	${BUILD_WRKSRC}/tests
 CMAKE_ON=	DOH_ENABLE
 PLIST_FILES=	bin/flame
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/flame ${STAGEDIR}${PREFIX}/bin
+
+do-test:
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${TEST_ENV} ./tests
 
 .include <bsd.port.mk>
