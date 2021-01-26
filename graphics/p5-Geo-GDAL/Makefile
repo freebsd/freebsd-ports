@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-GDAL
-PORTVERSION=	3.1.4
+PORTVERSION=	3.2.1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -18,9 +18,9 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE.TXT
 BUILD_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny
 LIB_DEPENDS=	libgdal.so:graphics/gdal
 
-USES=		compiler:c++11-lang perl5 tar:xz
+USES=		compiler:c++14-lang perl5 tar:xz
 
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++14
 WRKSRC_SUBDIR=	swig/perl
 
 post-patch:
