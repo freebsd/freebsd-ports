@@ -2402,8 +2402,7 @@
 %%WWWDIR%%/plugins/note/note.js
 %%WWWDIR%%/plugins/nsfw/init.js
 %%WWWDIR%%/plugins/nsfw/init.php
-%%WWWDIR%%/plugins/search_sphinx/init.php
-%%WWWDIR%%/plugins/search_sphinx/sphinxapi.php
+%%WWWDIR%%/plugins/scored_oldest_first/init.php
 %%WWWDIR%%/plugins/share/init.php
 %%WWWDIR%%/plugins/share/share.css
 %%WWWDIR%%/plugins/share/share.js
@@ -2771,7 +2770,6 @@
 @dir %%WWWDIR%%/plugins/toggle_sidebar
 @dir %%WWWDIR%%/plugins/shorten_expanded
 @dir %%WWWDIR%%/plugins/share
-@dir %%WWWDIR%%/plugins/search_sphinx
 @dir %%WWWDIR%%/plugins/nsfw
 @dir %%WWWDIR%%/plugins/note
 @dir %%WWWDIR%%/plugins/no_url_hashes
