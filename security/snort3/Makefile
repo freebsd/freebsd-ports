@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	snort
-DISTVERSION=	3.0.3-6
+DISTVERSION=	3.1.0.0
 PORTEPOCH=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	3
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libdnet.so:net/libdnet \
 		libpcap.so:net/libpcap \
-		libhwloc.so:devel/hwloc \
+		libhwloc.so:devel/hwloc2 \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libdaq.so:net/libdaq
 
