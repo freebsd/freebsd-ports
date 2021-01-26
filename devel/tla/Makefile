@@ -11,8 +11,7 @@ MASTER_SITES=	GNU/gnu-arch \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Original arch source control management CLI written in C
 
-BROKEN_SSL=	openssl
-BROKEN_SSL_REASON_openssl=	incomplete definition of type 'struct X509_name_entry_st'
+LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	gpatch:devel/patch \
 		gdiff:textproc/diffutils \
@@ -22,6 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		gmake pkgconfig ssl
 HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
+TEST_TARGET=	test
 
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -29,26 +29,13 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-gnu-diff gdiff \
 		--with-gnu-diff3 gdiff3 \
 		--with-gnu-tar gtar
+CONFIGURE_ENV=	ne_cv_libsfor_SSL_library_init=yes
 
 ORIGWRKSRC=	${WRKDIR}/${DISTNAME}/src
 PATCH_WRKSRC=	${ORIGWRKSRC}/..
 WRKSRC=		${ORIGWRKSRC}/=build
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	could not find library containing SSL_library_init
-BROKEN_FreeBSD_13=	could not find library containing SSL_library_init
-BROKEN_FreeBSD_14=	could not find library containing SSL_library_init
-.endif
-
-pre-patch:
-	${MKDIR} ${WRKSRC}
-
-test:
-	cd ${WRKSRC} ; ${MAKE_CMD} test
 
 pre-install:
 	${RM} -r ${ORIGWRKSRC}/docs-tla/PLUGIN \
@@ -63,4 +50,4 @@ do-install:
 	cd ${ORIGWRKSRC}/docs-tla && ${FIND} . -name '*.html' | \
 		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
