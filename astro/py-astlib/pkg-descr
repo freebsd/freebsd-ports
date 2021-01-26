@@ -4,4 +4,5 @@ coordinate conversions, and manipulating FITS images with World Coordinate
 System (WCS) information through PyWCSTools - a simple wrapping of WCSTools by
 Jessica Mink. PyWCSTools is distributed (and developed) as part of astLib.
 
-WWW: https://sourceforge.net/projects/astlib/
+WWW: https://astlib.readthedocs.io/en/latest/
+WWW: https://github.com/mattyowl/astLib
