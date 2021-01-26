@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cfitsio
-PORTVERSION=	3.470
-PORTREVISION=	1
+PORTVERSION=	3.490
 CATEGORIES=	astro
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -18,8 +17,6 @@ COMMENT=	Library for reading and writing files in FITS data format
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libf2c.so:lang/f2c
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		localbase pkgconfig
 
 ALL_TARGET=	libcfitsio.a shared
@@ -30,8 +27,10 @@ USE_LDCONFIG=	yes
 PLIST_SUB=	SHLIB_MAJOR=${SHLIB_MAJOR} \
 		SHLIB_MINOR=${SHLIB_MINOR}
 
-SHLIB_MAJOR=	8
+SHLIB_MAJOR=	9
 SHLIB_MINOR=	${PORTVERSION:S|0$||}
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/*.[chl] ${WRKSRC}/zlib/*.h
