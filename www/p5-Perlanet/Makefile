@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Perlanet
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -18,6 +18,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CHI>=0:devel/p5-CHI \
 		p5-DateTime>=0:devel/p5-DateTime \
+		p5-DateTime-Format-Strptime>=0:devel/p5-DateTime-Format-Strptime \
 		p5-HTML-Scrubber>=0:www/p5-HTML-Scrubber \
 		p5-HTML-Tidy>=0:textproc/p5-HTML-Tidy \
 		p5-Moose>=0:devel/p5-Moose \
