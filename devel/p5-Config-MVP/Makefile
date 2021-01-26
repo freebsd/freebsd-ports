@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-MVP
-PORTVERSION=	2.200011
+PORTVERSION=	2.200012
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Load>=0.17:devel/p5-Class-Load \
 		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable \
-		p5-Module-Runtime>=0:devel/p5-Module-Runtime \
 		p5-Moose>=0.91:devel/p5-Moose \
 		p5-MooseX-OneArgNew>=0:devel/p5-MooseX-OneArgNew \
 		p5-Params-Util>=0:devel/p5-Params-Util \
@@ -28,8 +27,9 @@ RUN_DEPENDS=	p5-Class-Load>=0.17:devel/p5-Class-Load \
 		p5-Try-Tiny>=0:lang/p5-Try-Tiny
 TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
