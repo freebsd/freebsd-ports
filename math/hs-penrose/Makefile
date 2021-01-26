@@ -140,4 +140,4 @@ USE_CABAL=	MonadRandom-0.5.1.2 \
 BROKEN=		fails to build with GCC 10: cabal: Missing dependency on a foreign library: Missing (or bad) C library: gfortran
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
