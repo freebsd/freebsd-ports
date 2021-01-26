@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zstd
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	1.4.8
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/facebook/zstd/releases/download/v${PORTVERSION}/
 
