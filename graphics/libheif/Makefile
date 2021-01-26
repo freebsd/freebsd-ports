@@ -3,7 +3,7 @@
 PORTNAME=		libheif
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.6.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		graphics
 
 MAINTAINER=		freebsd@sebastiansteinmetz.ch
@@ -19,6 +19,7 @@ USE_GITHUB=		yes
 GH_ACCOUNT=		strukturag
 GH_PROJECT=		libheif
 GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--disable-go
 USE_LDCONFIG=		yes
 SHEBANG_GLOB=		*.sh
 INSTALL_TARGET=		install-strip
@@ -31,7 +32,11 @@ EXAMPLES_DESC=	Install example programs (heif-convert, heif-enc, heif-info, heif
 LIBDE265_DESC=	Use libde265 (support for HEVC decoding)
 X265_DESC=	Use x265 (support for HEVC encoding)
 
+JPEG_USES=		jpeg
+LIBDE265_LIB_DEPENDS=	libde265.so:multimedia/libde265
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
 THREADS_CONFIGURE_OFF=	--disable-multithreading
+X265_LIB_DEPENDS=	libx265.so:multimedia/x265
 
 .include <bsd.port.options.mk>
 
@@ -40,23 +45,18 @@ LICENSE+=		GPLv3+
 LICENSE_COMB=		multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/examples/COPYING
 USES+=			shared-mime-info
-CONFIGURE_ARGS+=	--disable-go
 .endif
 
-.if ${PORT_OPTIONS:MJPEG}
-USES+=			jpeg
-.endif
+post-patch-JPEG-off:
+	@${REINPLACE_CMD} -e '/AC_CHECK_/ s|jpeg|ignore&|g' ${WRKSRC}/configure.ac
 
-.if ${PORT_OPTIONS:MLIBDE265}
-LIB_DEPENDS+=		libde265.so:multimedia/libde265
-.endif
+post-patch-LIBDE265-off:
+	@${REINPLACE_CMD} -e '/PKG_CHECK_MODULES/ s|libde265|ignore&|g' ${WRKSRC}/configure.ac
 
-.if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=		libpng.so:graphics/png
-.endif
+post-patch-PNG-off:
+	@${REINPLACE_CMD} -e '/PKG_CHECK_MODULES/ s|png|ignore&|g' ${WRKSRC}/configure.ac
 
-.if ${PORT_OPTIONS:MX265}
-LIB_DEPENDS+=		libx265.so:multimedia/x265
-.endif
+post-patch-X265-off:
+	@${REINPLACE_CMD} -e '/PKG_CHECK_MODULES/ s|x265|ignore&|g' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
