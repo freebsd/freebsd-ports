@@ -77,6 +77,37 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="425f2143-8876-4b0a-af84-e0238c5c2062">
+    <topic>jenkins -- Arbitrary file read vulnerability in workspace browsers</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.276</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.263.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2021-01-26/">
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-2197 / CVE-2021-21615</h5>
+	  <p>Arbitrary file read vulnerability in workspace browsers</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.jenkins.io/security/advisory/2021-01-26/</url>
+    </references>
+    <dates>
+      <discovery>2021-01-26</discovery>
+      <entry>2021-01-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="387bbade-5d1d-11eb-bf20-4437e6ad11c4">
     <topic>mutt -- denial of service</topic>
     <affects>
