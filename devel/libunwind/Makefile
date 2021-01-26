@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	libunwind
-PORTVERSION=	20200331	# This is the release date on SAVANNAH
-PORTREVISION=	1
+PORTVERSION=	20201110	# This is the release date on https://download.savannah.gnu.org/releases/libunwind/
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH \
 		https://github.com/libunwind/libunwind/releases/download/v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-1.4.0
+DISTNAME=	${PORTNAME}-1.5.0
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic stack unwinding library
@@ -30,7 +29,7 @@ PLIST_SUB=	ARCH=${ARCH:S|i386|x86|:S|amd64|x86_64|:C|powerpc64.*|ppc64|}
 
 .include <bsd.port.pre.mk>
 
-.if ! ${ARCH:Mpowerpc64*}
+.if !${ARCH:Mpowerpc64*}
 PLIST_SUB+=	COREDUMP=""
 .else
 PLIST_SUB+=	COREDUMP="@comment "
