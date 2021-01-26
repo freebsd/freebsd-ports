@@ -1,26 +1,30 @@
 <alloca.h> is implicitly included by <stdlib.h> on Linux
 
-In file included from visa/iga/IGAExe/assemble.cpp:27:
-In file included from visa/iga/IGAExe/iga_main.hpp:29:
-visa/iga/IGAExe/fatal.hpp:33:10: fatal error: 'alloca.h' file not found
-#include <alloca.h>
-         ^~~~~~~~~~
+In file included from visa/iga/IGAExe/iga_main.cpp:26:
+In file included from visa/iga/IGAExe/iga_main.hpp:33:
+In file included from visa/iga/IGAExe/../IGALibrary/api/igax.hpp:40:
+/usr/include/malloc.h:3:2: error: "<malloc.h> has been replaced by <stdlib.h>"
+#error "<malloc.h> has been replaced by <stdlib.h>"
+ ^
 
 visa/iga/IGALibrary/strings.cpp:41:10: fatal error: 'alloca.h' file not found
 #include <alloca.h> /* for alloca */
          ^~~~~~~~~~
 
---- visa/iga/IGAExe/fatal.hpp.orig	2019-11-27 01:05:20 UTC
-+++ visa/iga/IGAExe/fatal.hpp
-@@ -30,7 +30,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- #include <Windows.h>
- #include <malloc.h>
- #else
--#include <alloca.h>
-+#include <stdlib.h>
- #endif
- #ifdef _MSC_VER
- #define VSCPRINTF(PAT,VA) \
+--- visa/iga/IGALibrary/api/igax.hpp.orig	2021-01-16 00:15:28 UTC
++++ visa/iga/IGALibrary/api/igax.hpp
+@@ -34,10 +34,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #include "iga_bxml_ops.hpp"
+ 
+ #include <cstdarg>
++#include <cstdlib>
+ #include <cstring>
+ #include <exception>
+ #include <iomanip>
+-#include <malloc.h>
+ #include <ostream>
+ #include <sstream>
+ #include <string>
 --- visa/iga/IGALibrary/strings.cpp.orig	2019-11-27 01:05:20 UTC
 +++ visa/iga/IGALibrary/strings.cpp
 @@ -38,7 +38,7 @@ using namespace iga;
