@@ -13,7 +13,7 @@
  .LP
  .fi
  .ft B
-@@ -36,6 +36,9 @@ void csv_free(struct csv_parser *\fIp\fB
+@@ -36,6 +36,9 @@ void csv_free(struct csv_parser *\fIp\fB);
  
  unsigned char csv_get_delim(struct csv_parser *\fIp\fB);
  unsigned char csv_get_quote(struct csv_parser *\fIp\fB);
@@ -23,7 +23,7 @@
  void csv_set_space_func(struct csv_parser *\fIp\fB, int (*\fIf\fB)(unsigned char));
  void csv_set_term_func(struct csv_parser *\fIp\fB, int (*\fIf\fB)(unsigned char));
  
-@@ -75,7 +78,7 @@ The idea behind parsing with \fBlibcsv\f
+@@ -75,7 +78,7 @@ The idea behind parsing with \fBlibcsv\fP is straight-
  end-of-row events.  \fBcsv_parse()\fP parses the data provided calling the
  user-defined callback functions as it reads fields and rows.
  When complete, \fBcsv_fini()\fP is called to finish processing the current
@@ -32,7 +32,7 @@
  \fBcsv_free()\fP is then called to free the parser object.
  \fBcsv_error()\fP and \fBcsv_strerror()\fP provide information about errors
  encountered by the functions.
-@@ -147,8 +150,8 @@ Multiple options can be specified by OR-
+@@ -147,8 +150,8 @@ Multiple options can be specified by OR-ing them toget
  .RE
  
  By default \fIcb2\fP is not called when rows that do not contain any fields
@@ -43,7 +43,7 @@
  be parsed properly while at the same time being able to parse files with rows
  terminated by multiple characters from resulting in blank rows after
  each actual row of data (for example, processing a text CSV file
-@@ -178,7 +181,7 @@ functions may be called many times durin
+@@ -178,7 +181,7 @@ functions may be called many times during a single cal
  depending on the amount of data being processed in a given call.
  .PP
  \fBcsv_parse()\fP returns the number of bytes processed, on a successful
@@ -52,7 +52,7 @@
  An error can occur, for example, if there is insufficient memory
  to store the contents of the current field in the entry buffer.
  An error can also occur if malformed data is encountered while running
-@@ -192,7 +195,7 @@ of the error. \fBcsv_error()\fP takes a 
+@@ -192,7 +195,7 @@ of the error. \fBcsv_error()\fP takes a single argumen
  .PP
  .RS
  .TP
@@ -61,7 +61,7 @@
  .TP
  \fBCSV_ENOMEM\fP\ \ \ There was not enough memory while attempting to increase the entry buffer for the current field
  .TP
-@@ -210,7 +213,7 @@ to call the \fBcsv_fini()\fP function.  
+@@ -210,7 +213,7 @@ to call the \fBcsv_fini()\fP function.  This function 
  function with any remaining data in the entry buffer (if there is
  any) and call the \fIcb2\fP function unless we are already at the end of a row
  (the last byte processed was a newline character for example).
@@ -76,7 +76,7 @@
  means to change the characters that the parser will consider the delimiter
 -and quote characters respetively, cast to unsigned char.  \fBcsv_get_delim()\fP  and \fBcsv_get_delim()\fP
 +and quote characters respetively, cast to unsigned char.  \fBcsv_get_delim()\fP
-+and \fBcsv_set_delim()\fP
++and \fBcsv_get_quote()\fP
  return the current delimiter and quote characters respectively.  When
  \fBcsv_init()\fP is called the delimiter is set to \fBCSV_COMMA\fP and the quote
  to \fBCSV_QUOTE\fP.  Note that the rest of the CSV conventions still apply
@@ -87,7 +87,7 @@
  character.
  Additionally, the \fBcsv_set_space_func()\fP and \fBcsv_set_term_func()\fP
  allow a user-defined function to be provided which will be used determine
-@@ -333,7 +337,7 @@ reflect the most common usage of the for
+@@ -333,7 +337,7 @@ reflect the most common usage of the format, namely:
  .PP
  .RS
  .TP
@@ -96,7 +96,7 @@
  .TP
  Rows are delimited by newline sequences (see below).
  .TP
-@@ -385,7 +389,7 @@ will be interpreted as 3 fields, equival
+@@ -385,7 +389,7 @@ will be interpreted as 3 fields, equivalent to:
  RFC 4180 limits the allowable characters in a CSV field, \fBlibcsv\fP
  allows any character to be present in a field provided it adheres
  to the conventions mentioned above.  This makes it possible to
@@ -105,7 +105,7 @@
  .PP
  RFC 4180 states that a Carriage Return plus Linefeed combination is
  used to delimit records, \fBlibcsv\fP allows any combination of Carriage
-@@ -409,7 +413,7 @@ would be parsed equivalently to the corr
+@@ -409,7 +413,7 @@ would be parsed equivalently to the correct form:
  .fi
  This is often desirable as there are some applications that do
  not adhere to the specifications previously discussed.  However,
@@ -114,7 +114,7 @@
  when a comma or newline is the next non-space character following
  a quote such as:
  .nf
-@@ -420,7 +424,7 @@ This could either be parsed as a single 
+@@ -420,7 +424,7 @@ This could either be parsed as a single field containi
  
  \fBSally said "Hello", Wally said "Goodbye"\fP
  
@@ -123,7 +123,7 @@
  
  .fi
  \fBSally said "Hello\fP
-@@ -431,7 +435,7 @@ Since the data is malformed, there is no
+@@ -431,7 +435,7 @@ Since the data is malformed, there is no way to know i
  before the comma is meant to be a literal quote or if it signifies
  the end of the field.  This is of course not an issue for properly
  formed data as all quotes must be escaped.  \fBlibcsv\fP will parse this
@@ -132,3 +132,9 @@
  
  \fBlibcsv\fP provides a strict mode that will return with a parse error
  if a quote is seen inside a non-quoted field or if a non-escaped
+@@ -566,4 +570,4 @@ Written by Robert Gamble.
+ Please send questions, comments, bugs, etc. to:
+ .PP
+ .ti +8
+-rgamble@users.sourceforge.net
++rgamble99@gmail.com
