@@ -12,23 +12,24 @@ DISTNAME=	parallel-netcdf-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library providing high-performance I/O
 
+USES=		fortran gmake pathfix perl5 tar:bzip2
+USE_PERL5=	build
+
+CFLAGS+=	-fPIC
+CONFIGURE_ARGS=	ac_cv_fc_compiler_nag=no
+GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
+
+PORTDOCS=	COPYRIGHT INSTALL README
+
+CONFLICTS_INSTALL=	hdf-4.*
+
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SINGLE=	MPI
 OPTIONS_SINGLE_MPI=	OPENMPI OPENMPI3 MPICH
 OPTIONS_DEFAULT=OPENMPI
 OPENMPI_DESC=	Parallel processing support via Open MPI (current)
 OPENMPI3_DESC=	Parallel processing support via Open MPI 3.x
-
-CONFLICTS_INSTALL=	hdf-4.*
-
-CFLAGS+=	-fPIC
-CONFIGURE_ARGS=	ac_cv_fc_compiler_nag=no
-GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
-USES=		fortran gmake pathfix perl5 tar:bzip2
-USE_PERL5=	build
-
-PORTDOCS=	COPYRIGHT INSTALL README
 
 MPICH_CONFIGURE_ON=	--with-mpi=${LOCALBASE}
 MPICH_LIB_DEPENDS=	libmpich.so:net/mpich
