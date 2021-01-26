@@ -1,6 +1,6 @@
---- tests/thread/Makefile.in.orig	2020-03-10 17:55:52 UTC
+--- tests/thread/Makefile.in.orig	2020-12-09 19:04:24 UTC
 +++ tests/thread/Makefile.in
-@@ -362,13 +362,13 @@ top_srcdir = @top_srcdir@
+@@ -316,13 +316,13 @@ top_srcdir = @top_srcdir@
  #
  AM_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/tests/unit/tut -I$(top_builddir)/capi
  
