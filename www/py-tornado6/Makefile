@@ -13,6 +13,9 @@ COMMENT=	Python Web Server from FriendFeed
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Use www/py-tornado instead
+EXPIRATION_DATE=2021-01-31
+
 USES=		dos2unix python:3.5+
 USE_PYTHON=	autoplist concurrent distutils
 
