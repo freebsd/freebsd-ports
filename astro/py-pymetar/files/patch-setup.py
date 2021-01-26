@@ -7,7 +7,7 @@
 -    data_files=[("share/doc/pymetar-%s" % pymetar.__version__,
 -                 ['README.md', 'COPYING', 'THANKS']),
 -                ("share/man/man1", ['pymetar.1'])],
-+    data_files=[("man/man1", ['pymetar.1'])],
++    data_files=[("share/man/man1", ['pymetar.1'])],
      classifiers=(
      "Programming Language :: Python :: 3",
      "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)", 

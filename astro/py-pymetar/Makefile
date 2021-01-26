@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymetar
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	astro python geography
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		python:3.5+ shebangfix
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
