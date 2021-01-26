@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	http
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	www
 DISTNAME=	pecl_${PORTNAME}-${PORTVERSION}
 
@@ -21,7 +21,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf2@${
 RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/raphf.so:devel/pecl-raphf2@${PHP_FLAVOR} \
 		${LOCALBASE}/lib/php/${PHP_EXT_DIR}/propro.so:devel/pecl-propro2@${PHP_FLAVOR}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libevent.so:devel/libevent
+		libevent.so:devel/libevent \
+		libicudata.so:devel/icu
 
 USES=		php:pecl
 USE_PHP=	zlib:build
