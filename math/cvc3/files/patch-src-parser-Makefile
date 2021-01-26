@@ -1,0 +1,35 @@
+--- src/parser/Makefile.orig	2010-06-16 17:55:52 UTC
++++ src/parser/Makefile
+@@ -38,7 +38,7 @@ parsePL_defs.h: parsePL.cpp
+ parsePL.cpp:    PL.y
+ 		$(YACC) $(YFLAGS) -o parsePL.cpp -p PL --debug -v PL.y
+ 		@if [ -f parsePL.cpp.h ]; then mv parsePL.cpp.h parsePL.hpp; fi
+-		@mv parsePL.hpp parsePL_defs.h
++		@cp parsePL.hpp parsePL_defs.h
+ 
+ lexLisp.cpp:    Lisp.lex parseLisp_defs.h
+ 		$(LEX) $(LFLAGS) -I -PLisp -olexLisp.cpp Lisp.lex
+@@ -48,7 +48,7 @@ parseLisp_defs.h: parseLisp.cpp
+ parseLisp.cpp:  Lisp.y
+ 		$(YACC) $(YFLAGS) -o parseLisp.cpp -p Lisp --debug -v Lisp.y
+ 		@if [ -f parseLisp.cpp.h ]; then mv parseLisp.cpp.h parseLisp.hpp; fi
+-		@mv parseLisp.hpp parseLisp_defs.h
++		@cp parseLisp.hpp parseLisp_defs.h
+ 
+ lexsmtlib.cpp:  smtlib.lex parsesmtlib_defs.h
+ 		$(LEX) $(LFLAGS) -I -Psmtlib -olexsmtlib.cpp smtlib.lex
+@@ -58,7 +58,7 @@ parsesmtlib_defs.h: parsesmtlib.cpp
+ parsesmtlib.cpp: smtlib.y
+ 		$(YACC) $(YFLAGS) -o parsesmtlib.cpp -p smtlib --debug -v smtlib.y
+ 		@if [ -f parsesmtlib.cpp.h ]; then mv parsesmtlib.cpp.h parsesmtlib.hpp; fi
+-		@mv parsesmtlib.hpp parsesmtlib_defs.h
++		@cp parsesmtlib.hpp parsesmtlib_defs.h
+ 
+ lexsmtlib2.cpp:  smtlib2.lex parsesmtlib2_defs.h
+ 		$(LEX) $(LFLAGS) -I -Psmtlib2 -olexsmtlib2.cpp smtlib2.lex
+@@ -68,4 +68,4 @@ parsesmtlib2_defs.h: parsesmtlib2.cpp
+ parsesmtlib2.cpp: smtlib2.y
+ 		$(YACC) $(YFLAGS) -o parsesmtlib2.cpp -p smtlib2 --debug -v smtlib2.y
+ 		@if [ -f parsesmtlib2.cpp.h ]; then mv parsesmtlib2.cpp.h parsesmtlib2.hpp; fi
+-		@mv parsesmtlib2.hpp parsesmtlib2_defs.h
++		@cp parsesmtlib2.hpp parsesmtlib2_defs.h

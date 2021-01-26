@@ -11,3 +11,11 @@
  FLEX=@LEX@
  YACC=@YACC@
  
+@@ -104,7 +104,6 @@ $(O_D)%.o: %.s
+ 
+ %.cxx: %.y
+ 	$(YACC) -d -o $@ $<
+-	mv $(basename $@).hxx $(basename $@).h
+ 
+ %.i: %.cxx
+ 	$(CC) -c $(CXXFLAGS) $(CXXFLAGS_) -E -o $(notdir $@) $<

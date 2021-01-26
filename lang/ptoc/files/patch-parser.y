@@ -1,5 +1,5 @@
---- parser.y.orig	2010-05-20 18:31:37.000000000 +0400
-+++ parser.y	2010-05-20 18:38:46.000000000 +0400
+--- parser.y.orig	2008-03-04 11:25:16 UTC
++++ parser.y
 @@ -1,4 +1,4 @@
 -%{
 +%code requires {
@@ -17,7 +17,7 @@
  static int zzcnv_table[] = {
  #define DEF_TOKEN(mnem, cat, cls, yacc) yacc,
  #include "token.dpp"
-@@ -21,7 +25,7 @@
+@@ -21,7 +25,7 @@ void zzerror(char* text) 
      error(curr_token, "syntax error: %s", text); 
  }
  
@@ -26,7 +26,7 @@
  
  
  %union {
-@@ -281,23 +285,27 @@
+@@ -281,24 +285,28 @@ input_file { 
      $2->attrib(ctx_program); 
      $2->translate(ctx_program); 
  } 
@@ -50,21 +50,22 @@
  { 
      $$ = new module_node($1, $2, $3, $4, $5, $6);
  }
--
 +;
  
+-
  /* Turbo Pascal specific */
  
-@@ -309,38 +317,46 @@
+ unit: UNIT IDENT ';' INTERFACE unit_decl_list IMPLEMENTATION unit_def_list END '.'
+@@ -309,38 +317,46 @@ unit: UNIT IDENT ';' INTERFACE unit_decl_list IMPLEMEN
      { $$ = new unit_node(NULL, NULL, NULL, $1, $2, $3, $4, NULL, $5, $6); }
  | INTERFACE unit_decl_list IMPLEMENTATION unit_def_list compoundst '.'
      { $$ = new unit_node(NULL, NULL, NULL, $1, $2, $3, $4, $5, NULL, $6); }
 +	;
  
  unit_def_list: decl_part_list 
--
 +	;
  
+-
  prog_param_list: { $$ = NULL; } 
      | '(' ident_list ')' { $$ = new import_list_node($1, $2, $3); }
 +	;
@@ -104,7 +105,7 @@
  
  /*
  //=============================================================================
-@@ -397,15 +413,20 @@
+@@ -397,15 +413,20 @@ statement: { $$ = new empty_node(curr_token->prev_rele
      | ICONST ':' statement { $$ = new label_node($1, $2, $3); }
      | IDENT ':' statement { $$ = new label_node($1, $2, $3); }
      | compoundst { $$ = $1; }
@@ -125,7 +126,7 @@
  
  case_list: case_items
           | case_items otherwise sequence
-@@ -419,20 +440,26 @@
+@@ -419,20 +440,26 @@ case_list: case_items
  	         $$ = new case_node(NULL, $2, $3);
               }
  	   }
@@ -152,7 +153,7 @@
  
  /*
  //=============================================================================
-@@ -481,6 +508,7 @@
+@@ -481,6 +508,7 @@ expr: simple_expr
     | expr OR expr  { $$ = new op_node(tn_or, $1, $2, $3); } 
     | expr XOR expr { $$ = new op_node(tn_xor, $1, $2, $3); } 
  
@@ -160,7 +161,7 @@
     | expr GT expr { $$ = new op_node(tn_gt, $1, $2, $3); } 
     | expr LT expr { $$ = new op_node(tn_lt, $1, $2, $3); } 
     | expr LE expr { $$ = new op_node(tn_le, $1, $2, $3); } 
-@@ -488,6 +516,7 @@
+@@ -488,6 +516,7 @@ expr: simple_expr
     | expr EQ expr { $$ = new op_node(tn_eq, $1, $2, $3); } 
     | expr NE expr { $$ = new op_node(tn_ne, $1, $2, $3); } 
     | expr IN expr { $$ = new op_node(tn_in, $1, $2, $3); } 
@@ -168,7 +169,7 @@
  
  simple_expr: primary
     | PLUS simple_expr %prec UPLUS {
-@@ -498,6 +527,7 @@
+@@ -498,6 +527,7 @@ simple_expr: primary
       { $$ = new op_node(tn_not, NULL, $1, $2); }
     | '@' primary { $$ = new address_node($1, $2); }
     | AND primary %prec ADDRESS { $$ = new address_node($1, $2); }
@@ -176,7 +177,7 @@
   
  primary: constant 
     | '(' expr_list ')' { $$ = new expr_group_node($1, $2, $3); }
-@@ -506,6 +536,7 @@
+@@ -506,6 +536,7 @@ primary: constant 
     | primary '^' { $$ = new deref_expr_node($1, $2); }
     | primary '[' expr_list ']' { $$ = new idx_expr_node($1, $2, $3, $4); }
     | LOOPHOLE '(' type ',' expr ')' { $$ = new loophole_node($1, $2, $3, $4, $5, $6); }
@@ -184,7 +185,7 @@
  
  constant: record_constant
          | ICONST { $$ = new integer_node($1); }
-@@ -513,41 +544,49 @@
+@@ -513,42 +544,50 @@ constant: record_constant
          | SCONST { $$ = new string_node($1); }
          | '[' set_elem_list ']' { $$ = new set_node($1, $2, $3); }
          | IDENT { $$ = new atom_expr_node($1); }
@@ -207,9 +208,9 @@
 +;
  
  act_param: expr | { $$ = new skipped_node(curr_token->prev_relevant()); }
--
 +;
  
+-
  record_constant: '(' field_init_list ')' { 
      $$ = new record_constant_node($1, $2, $3); 
  }
@@ -220,25 +221,26 @@
 +;
     
  field_init_item: IDENT ':' expr { $$ = new field_init_node($1, $2, $3); }
--
 +;
  
+-
  expr_group: '(' expr_list ')' { $$ = new expr_group_node($1, $2, $3); }
--
 +;
  
+-
  write_list: write_param | write_param ',' write_list { $1->next = $3; $$ = $1; }
 +;
  
  write_param: expr  { $$ = new write_param_node($1); }
      | expr ':' expr { $$ = new write_param_node($1, $2, $3); }
      | expr ':' expr ':' expr { $$ = new write_param_node($1, $2, $3, $4, $5); }
--
 +;
  
+-
  /*
  //=============================================================================
-@@ -590,31 +629,40 @@
+ // Declaration syntax:
+@@ -590,31 +629,40 @@ write_param: expr  { $$ = new write_param_node($1); }
  
  label_decl_part: LABEL label_list ';' 
      { $$ = new label_decl_part_node($1, $2, $3); }
@@ -279,7 +281,7 @@
  
  var_decl_list: { $$ = NULL; }
       | var_decl
-@@ -630,29 +678,33 @@
+@@ -630,29 +678,33 @@ var_decl_list: { $$ = NULL; }
  	 $1->next = $5; $$ = $1; 
         }
       | var_decl ';' var_decl_list { $1->next = $3; $$ = $1; }
@@ -314,7 +316,7 @@
  
  proc_def: 
        PROCEDURE IDENT formal_params ';' block ';' 
-@@ -671,135 +723,166 @@
+@@ -671,135 +723,166 @@ proc_def: 
                 { $$ = new proc_def_node($1, NULL, NULL, $2, $3, $4, $5, $6, $7, $8, $9, $10); } 
      | FUNCTION IDENT ';' FAR ';' block ';' 
                 { $$ = new proc_def_node($1, NULL, NULL, $2, NULL, NULL, NULL, $3, $4, $5, $6, $7); } 
@@ -324,9 +326,9 @@
      | SCOPE qualifiers { $$ = new token_list($1, $2); }
      | IDENT { $$ = new token_list($1); }
      | SCOPE { $$ = new token_list($1); }
--
 +;
  
+-
  formal_params: { $$ = NULL; } 
      | '(' formal_param_list ')' { $$ = new param_list_node($1, $2, $3); }
 +;
@@ -344,10 +346,10 @@
 +;
  
  param_type: simple_type | conformant_array_type
--
--
 +;
  
+-
+-
  /* Types definition */ 
  
  type: simple_type | array_type | record_type | object_type | set_type | file_type 
@@ -428,9 +430,9 @@
    | proc_fwd_decl object_methods { $1->next = $2; $$ = $1; }
    | proc_spec object_methods { $1->next = $2; $$ = $1; }
 -  
--
 +;
  
+-
  file_type: packed FIL OF type { $$ = new file_tpd_node($1, $2, $3, $4); }
 +;
  
@@ -452,9 +454,9 @@
  
  index_spec: simple_type { $$ = new type_index_node($1); }
      | expr DOTS expr { $$ = new range_index_node($1, $2, $3); }
--
 +;
  
+-
  field_list: 
      fixed_part variant_part     
          { $$ = new field_list_node($1, $2); }
@@ -473,9 +475,9 @@
  
  selector: IDENT ':' type { $$ = new selector_node($1, $2, $3); }
          | type { $$ = new selector_node(NULL, NULL, $1); }
--
 +;
  
+-
  variant_list: variant
          | variant ';' { $$ = $1; }
          | variant ';' variant_list { $1->next = $3; $$ = $1; }

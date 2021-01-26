@@ -1,6 +1,6 @@
---- tpexpr.cxx.old	Sat Feb 12 17:24:29 2000
-+++ tpexpr.cxx	Sat Feb 12 17:24:41 2000
-@@ -170,7 +170,7 @@
+--- tpexpr.cxx.orig	2001-04-04 15:56:02 UTC
++++ tpexpr.cxx
+@@ -170,7 +170,7 @@ void array_tp::insert_dimensions(expr_node* e, array_t
      if (!e->is_parameter() && (base == 0 || base == 1)) {
  	t->prepend(dprintf("items(%.*s", n, "****************"));
  	t->copy(e->f_tkn, e->l_tkn);

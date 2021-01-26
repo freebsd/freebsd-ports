@@ -1,6 +1,6 @@
---- main.cxx.orig	Thu Sep 23 23:35:38 1999
-+++ main.cxx	Sat Oct 21 04:11:00 2000
-@@ -326,8 +326,8 @@
+--- main.cxx.orig	2002-10-24 15:38:50 UTC
++++ main.cxx
+@@ -345,8 +345,8 @@ int main(int argc, char* argv[]) 
      compile_system_library = TRUE;
  #ifdef PREFIX
      token::input(turbo_pascal 
