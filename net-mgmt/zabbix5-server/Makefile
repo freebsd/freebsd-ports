@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix5
-PORTVERSION=	5.0.6
+DISTVERSION=	5.0.8
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${PORTVERSION:R}/
+MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
 PKGNAMESUFFIX?=	-server
-DISTNAME=	zabbix-${PORTVERSION}
+DISTNAME=	zabbix-${DISTVERSION}
 
 MAINTAINER=	pg@pakhom.spb.ru
 COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//}) LTS
@@ -49,7 +49,7 @@ PLIST_FILES+=	bin/zabbix_js
 PLIST_SUB+=	SERVER="@comment "
 .endif
 
-PLIST_SUB+=	ZABBIX_BUILD=${ZABBIX_BUILD} PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	ZABBIX_BUILD=${ZABBIX_BUILD} DISTVERSION=${DISTVERSION}
 SUB_LIST=	ZABBIX_BUILD=${ZABBIX_BUILD}
 
 MAKE_ARGS+=	ARCH=freebsd
