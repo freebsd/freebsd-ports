@@ -12,6 +12,8 @@ COMMENT?=	Software MIDI player
 
 LICENSE=	GPLv2+
 
+BROKEN_riscv64=	fails to compile: needs FP_X_INV from empty sys/riscv/include/ieeefp.h
+
 LIB_DEPENDS=	libarc.so:archivers/libarc
 .if !defined(PKGNAMESUFFIX)
 LIB_DEPENDS+=	libvorbis.so:audio/libvorbis \

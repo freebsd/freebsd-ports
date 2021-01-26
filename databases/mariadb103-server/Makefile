@@ -21,6 +21,8 @@ COMMENT?=	Multithreaded SQL database (server)
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_riscv64=	fails to compile: needs FP_X_INV from empty sys/riscv/include/ieeefp.h
+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
