@@ -6390,6 +6390,7 @@
     SUBDIR += rubygem-pry
     SUBDIR += rubygem-pry-byebug
     SUBDIR += rubygem-pry-rails
+    SUBDIR += rubygem-pry-remote
     SUBDIR += rubygem-pry-remote-em
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-puppet-resource_api
