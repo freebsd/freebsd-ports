@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	shelxle
-DISTVERSION=	1.0.1205
+DISTVERSION=	1.0.1215
 CATEGORIES=	science # chemistry
 MASTER_SITES=	SF/${PORTNAME}/code/
 
