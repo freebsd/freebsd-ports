@@ -62,4 +62,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/mk && ${MV} ${STAGEDIR}${PREFIX}/*.mk ${STAGEDIR}${PREFIX}/share/mk
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libGridXC.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
