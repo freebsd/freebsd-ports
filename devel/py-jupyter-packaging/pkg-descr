@@ -1,0 +1,4 @@
+jupyter-packaging provides tools to help build and install Jupyter Python
+packages.
+
+WWW: https://github.com/jupyter/jupyter-packaging
