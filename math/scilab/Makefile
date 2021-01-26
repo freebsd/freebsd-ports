@@ -174,4 +174,4 @@ post-install:
 	@# toolbox uninstaller otherwise if 3rd party toolboxes are used
 	@${FIND} ${STAGEDIR}${DATADIR}/modules -type d -empty -delete
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
