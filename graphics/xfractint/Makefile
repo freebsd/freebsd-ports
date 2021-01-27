@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.fractint.org/ftp/current/linux/ \
 MAINTAINER=	onemda@gmail.com
 COMMENT=	Unix port of FractInt
 
+BROKEN_FreeBSD_13=	duplicate symbol: b_const
+BROKEN_FreeBSD_14=	duplicate symbol: b_const
+
 USES=		gmake xorg
 USE_XORG=	x11 xft
 
