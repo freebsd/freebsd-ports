@@ -588,5 +588,5 @@ lib/libarmadillo.so.10.1.1
 libdata/pkgconfig/armadillo.pc
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
-share/Armadillo/CMake/ArmadilloLibraryDepends-release.cmake
+share/Armadillo/CMake/ArmadilloLibraryDepends-%%CMAKE_BUILD_TYPE%%.cmake
 share/Armadillo/CMake/ArmadilloLibraryDepends.cmake
