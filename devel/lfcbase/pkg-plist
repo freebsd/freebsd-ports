@@ -11,6 +11,7 @@ include/lfcbase/Datetime.h
 include/lfcbase/Directory.h
 include/lfcbase/Exception.h
 include/lfcbase/File.h
+include/lfcbase/GraphT.h
 include/lfcbase/GetLongOpt.h
 include/lfcbase/GetOpt.h
 include/lfcbase/Host.h
