@@ -2,7 +2,11 @@
 
 PORTNAME=	kcompletion
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits kde kde-frameworks
+
+PATCH_SITES=	https://invent.kde.org/frameworks/kcompletion/commit/
+PATCHFILES=	7acda936f06193e9fc85ae5cf9ccc8d65971f657.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 text completion helpers and widgets

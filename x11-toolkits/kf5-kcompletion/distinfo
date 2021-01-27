@@ -1,3 +1,5 @@
-TIMESTAMP = 1609679259
+TIMESTAMP = 1611726893
 SHA256 (KDE/frameworks/5.78.0/kcompletion-5.78.0.tar.xz) = a73972651b5230c8df2d5d7b463d48004b8fd6672bda164e834eec5345113fa9
 SIZE (KDE/frameworks/5.78.0/kcompletion-5.78.0.tar.xz) = 121480
+SHA256 (KDE/frameworks/5.78.0/7acda936f06193e9fc85ae5cf9ccc8d65971f657.diff) = a3c590ed718e6ab11d91d32ebc82c35ec7753671dc3188e819ddb5b414fbfbaa
+SIZE (KDE/frameworks/5.78.0/7acda936f06193e9fc85ae5cf9ccc8d65971f657.diff) = 714
