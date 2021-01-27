@@ -1,0 +1,81 @@
+diff -Naur modules/hdf5/Makefile.am modules/hdf5/Makefile.am
+--- modules/hdf5/Makefile.am
++++ modules/hdf5/Makefile.am
+@@ -103,8 +103,7 @@
+     -DH5Gopen_vers=2 \
+     -DH5Tget_array_dims_vers=2 \
+     -DH5Acreate_vers=2 \
+-    -DH5Rdereference_vers=2 \
+-    -DNO_DEPRECATED_SYMBOLS
++    -DH5Rdereference_vers=2
+ 
+ 
+ libscihdf5_la_CPPFLAGS = \
+diff -Naur modules/hdf5/Makefile.in modules/hdf5/Makefile.in
+--- modules/hdf5/Makefile.in
++++ modules/hdf5/Makefile.in
+@@ -788,8 +788,7 @@
+     -DH5Gopen_vers=2 \
+     -DH5Tget_array_dims_vers=2 \
+     -DH5Acreate_vers=2 \
+-    -DH5Rdereference_vers=2 \
+-    -DNO_DEPRECATED_SYMBOLS
++    -DH5Rdereference_vers=2
+ 
+ libscihdf5_la_CPPFLAGS = \
+     -I$(srcdir)/includes/ \
+diff -Naur modules/hdf5/includes/HDF5Objects.h modules/hdf5/includes/HDF5Objects.h
+--- modules/hdf5/includes/HDF5Objects.h
++++ modules/hdf5/includes/HDF5Objects.h
+@@ -16,14 +16,12 @@
+ #ifndef __HDF5OBJECTS_H__
+ #define __HDF5OBJECTS_H__
+ 
+-#define H5_NO_DEPRECATED_SYMBOLS
+ #undef H5_USE_16_API
++#define H5_USE_18_API
+ 
+-#define H5Eset_auto_vers 2
+ #include <hdf5.h>
+ #include <hdf5_hl.h>
+ 
+-#undef H5_NO_DEPRECATED_SYMBOLS
+ 
+ //#define __HDF5OBJECTS_DEBUG__
+ //#define __HDF5ERROR_PRINT__
+diff -Naur modules/hdf5/sci_gateway/cpp/sci_hdf5_listvar_v3.cpp modules/hdf5/sci_gateway/cpp/sci_hdf5_listvar_v3.cpp
+--- modules/hdf5/sci_gateway/cpp/sci_hdf5_listvar_v3.cpp
++++ modules/hdf5/sci_gateway/cpp/sci_hdf5_listvar_v3.cpp
+@@ -13,6 +13,8 @@
+ *
+ */
+ 
++#define H5_USE_18_API
++
+ #include <vector>
+ #include "function.hxx"
+ #include "string.hxx"
+diff -Naur modules/hdf5/src/c/h5_readDataFromFile.c modules/hdf5/src/c/h5_readDataFromFile.c
+--- modules/hdf5/src/c/h5_readDataFromFile.c
++++ modules/hdf5/src/c/h5_readDataFromFile.c
+@@ -13,7 +13,7 @@
+ *
+ */
+ 
+-#define H5_NO_DEPRECATED_SYMBOLS
++#define H5_USE_18_API
+ 
+ #ifndef _MSC_VER
+ #include <sys/time.h>
+diff -Naur modules/hdf5/src/c/h5_readDataFromFile_v1.c modules/hdf5/src/c/h5_readDataFromFile_v1.c
+--- modules/hdf5/src/c/h5_readDataFromFile_v1.c
++++ modules/hdf5/src/c/h5_readDataFromFile_v1.c
+@@ -13,7 +13,7 @@
+ *
+ */
+ 
+-#define H5_NO_DEPRECATED_SYMBOLS
++#define H5_USE_18_API
+ 
+ #ifndef _MSC_VER
+ #include <sys/time.h>
