@@ -1,6 +1,6 @@
---- components/policy/resources/policy_templates.json.orig	2020-11-13 06:36:41 UTC
+--- components/policy/resources/policy_templates.json.orig	2021-01-18 21:28:55 UTC
 +++ components/policy/resources/policy_templates.json
-@@ -1198,7 +1198,7 @@
+@@ -1217,7 +1217,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -9,7 +9,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1224,7 +1224,7 @@
+@@ -1243,7 +1243,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -18,7 +18,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -1245,7 +1245,7 @@
+@@ -1264,7 +1264,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -27,7 +27,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -4285,7 +4285,7 @@
+@@ -4406,7 +4406,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'string',
        'schema': { 'type': 'string' },
@@ -36,7 +36,7 @@
        'features': {
          'dynamic_refresh': False,
          'per_profile': False,
-@@ -4341,7 +4341,7 @@
+@@ -4462,7 +4462,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -45,7 +45,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -8423,7 +8423,7 @@
+@@ -8644,7 +8644,7 @@
        'owners': ['file://src/net/cert/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -54,7 +54,7 @@
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -9998,7 +9998,7 @@
+@@ -10221,7 +10221,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },
@@ -63,7 +63,7 @@
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
-@@ -10733,7 +10733,7 @@
+@@ -10957,7 +10957,7 @@
        'owners': ['file://components/policy/resources/OWNERS'],
        'type': 'main',
        'schema': { 'type': 'boolean' },

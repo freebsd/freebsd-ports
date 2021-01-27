@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_view.cc.orig	2020-11-13 06:36:38 UTC
+--- chrome/browser/ui/views/frame/browser_view.cc.orig	2021-01-18 21:28:51 UTC
 +++ chrome/browser/ui/views/frame/browser_view.cc
-@@ -1474,7 +1474,7 @@ void BrowserView::ToolbarSizeChanged(bool is_animating
+@@ -1506,7 +1506,7 @@ void BrowserView::ToolbarSizeChanged(bool is_animating
  void BrowserView::TabDraggingStatusChanged(bool is_dragging) {
    // TODO(crbug.com/1110266): Remove explicit OS_CHROMEOS check once OS_LINUX
    // CrOS cleanup is done.
@@ -9,7 +9,7 @@
    contents_web_view_->SetFastResize(is_dragging);
    if (!is_dragging) {
      // When tab dragging is ended, we need to make sure the web contents get
-@@ -1854,7 +1854,7 @@ void BrowserView::UserChangedTheme(BrowserThemeChangeT
+@@ -1887,7 +1887,7 @@ void BrowserView::UserChangedTheme(BrowserThemeChangeT
    const bool should_use_native_frame = frame_->ShouldUseNativeFrame();
  
    bool must_regenerate_frame;

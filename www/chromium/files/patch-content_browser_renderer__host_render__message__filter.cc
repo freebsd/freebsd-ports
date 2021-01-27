@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_message_filter.cc.orig	2020-11-13 06:36:42 UTC
+--- content/browser/renderer_host/render_message_filter.cc.orig	2021-01-18 21:28:57 UTC
 +++ content/browser/renderer_host/render_message_filter.cc
-@@ -70,7 +70,7 @@
+@@ -69,7 +69,7 @@
  #if defined(OS_MAC)
  #include "ui/accelerated_widget_mac/window_resize_helper_mac.h"
  #endif
@@ -9,8 +9,8 @@
  #include "base/linux_util.h"
  #include "base/threading/platform_thread.h"
  #endif
-@@ -117,7 +117,7 @@ void RenderMessageFilter::GenerateRoutingID(
-   std::move(callback).Run(render_widget_helper_->GetNextRoutingID());
+@@ -126,7 +126,7 @@ void RenderMessageFilter::GenerateFrameRoutingID(
+   std::move(callback).Run(routing_id, frame_token, devtools_frame_token);
  }
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
@@ -18,7 +18,7 @@
  void RenderMessageFilter::SetThreadPriorityOnFileThread(
      base::PlatformThreadId ns_tid,
      base::ThreadPriority priority) {
-@@ -138,7 +138,7 @@ void RenderMessageFilter::SetThreadPriorityOnFileThrea
+@@ -147,7 +147,7 @@ void RenderMessageFilter::SetThreadPriorityOnFileThrea
  }
  #endif
  

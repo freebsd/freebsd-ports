@@ -1,6 +1,6 @@
---- ui/views/focus/focus_manager.cc.orig	2020-11-16 15:06:05 UTC
+--- ui/views/focus/focus_manager.cc.orig	2021-01-18 21:29:49 UTC
 +++ ui/views/focus/focus_manager.cc
-@@ -622,7 +622,7 @@ bool FocusManager::RedirectAcceleratorToBubbleAnchorWi
+@@ -621,7 +621,7 @@ bool FocusManager::RedirectAcceleratorToBubbleAnchorWi
    if (!focus_manager->IsAcceleratorRegistered(accelerator))
      return false;
  
@@ -9,7 +9,7 @@
    // Processing an accelerator can delete things. Because we
    // need these objects afterwards on Linux, save widget_ as weak pointer and
    // save the close_on_deactivate property value of widget_delegate in a
-@@ -637,7 +637,7 @@ bool FocusManager::RedirectAcceleratorToBubbleAnchorWi
+@@ -636,7 +636,7 @@ bool FocusManager::RedirectAcceleratorToBubbleAnchorWi
    const bool accelerator_processed =
        focus_manager->ProcessAccelerator(accelerator);
  

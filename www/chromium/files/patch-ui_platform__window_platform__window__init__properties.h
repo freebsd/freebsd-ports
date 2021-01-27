@@ -1,4 +1,4 @@
---- ui/platform_window/platform_window_init_properties.h.orig	2020-11-13 06:37:06 UTC
+--- ui/platform_window/platform_window_init_properties.h.orig	2021-01-18 21:29:48 UTC
 +++ ui/platform_window/platform_window_init_properties.h
 @@ -41,7 +41,7 @@ enum class PlatformWindowOpacity {
  
@@ -9,7 +9,7 @@
  class X11ExtensionDelegate;
  #endif
  
-@@ -82,7 +82,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
+@@ -83,7 +83,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
  
    WorkspaceExtensionDelegate* workspace_extension_delegate = nullptr;
  

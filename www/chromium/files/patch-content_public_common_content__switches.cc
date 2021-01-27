@@ -1,6 +1,6 @@
---- content/public/common/content_switches.cc.orig	2020-11-13 06:36:43 UTC
+--- content/public/common/content_switches.cc.orig	2021-01-18 21:28:57 UTC
 +++ content/public/common/content_switches.cc
-@@ -905,7 +905,7 @@ const char kWebXrRuntimeWMR[] = "windows-mixed-reality
+@@ -895,7 +895,7 @@ const char kWebXrRuntimeWMR[] = "windows-mixed-reality
  const char kDisableAcceleratedVideoDecode[] =
      "disable-accelerated-video-decode";
  
@@ -9,7 +9,7 @@
  // Enables hardware acceleration of video decoding on linux. (defaults to off)
  const char kEnableAcceleratedVideoDecode[] = "enable-accelerated-video-decode";
  #endif
-@@ -969,7 +969,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
+@@ -959,7 +959,7 @@ const char kEnableAggressiveDOMStorageFlushing[] =
  // Enable indication that browser is controlled by automation.
  const char kEnableAutomation[] = "enable-automation";
  

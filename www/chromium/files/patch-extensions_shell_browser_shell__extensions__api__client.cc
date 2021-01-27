@@ -1,20 +1,20 @@
---- extensions/shell/browser/shell_extensions_api_client.cc.orig	2020-11-13 06:36:43 UTC
+--- extensions/shell/browser/shell_extensions_api_client.cc.orig	2021-01-18 21:28:59 UTC
 +++ extensions/shell/browser/shell_extensions_api_client.cc
-@@ -16,7 +16,7 @@
- #include "extensions/shell/browser/shell_virtual_keyboard_delegate.h"
- #include "extensions/shell/browser/shell_web_view_guest_delegate.h"
+@@ -19,7 +19,7 @@
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  #include "extensions/shell/browser/api/file_system/shell_file_system_delegate.h"
  #endif
  
-@@ -52,7 +52,7 @@ ShellExtensionsAPIClient::CreateDisplayInfoProvider() 
-   return std::make_unique<ShellDisplayInfoProvider>();
- }
+@@ -57,7 +57,7 @@ ShellExtensionsAPIClient::CreateDisplayInfoProvider() 
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  FileSystemDelegate* ShellExtensionsAPIClient::GetFileSystemDelegate() {
    if (!file_system_delegate_)
      file_system_delegate_ = std::make_unique<ShellFileSystemDelegate>();

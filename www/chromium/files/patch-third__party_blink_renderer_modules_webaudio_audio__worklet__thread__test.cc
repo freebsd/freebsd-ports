@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/webaudio/audio_worklet_thread_test.cc.orig	2020-11-13 06:36:48 UTC
+--- third_party/blink/renderer/modules/webaudio/audio_worklet_thread_test.cc.orig	2021-01-18 21:29:05 UTC
 +++ third_party/blink/renderer/modules/webaudio/audio_worklet_thread_test.cc
-@@ -373,8 +373,8 @@ class AudioWorkletThreadPriorityTest
+@@ -431,8 +431,8 @@ class AudioWorkletThreadPriorityTest
          base::PlatformThread::GetCurrentThreadPriority();
  
      // TODO(crbug.com/1022888): The worklet thread priority is always NORMAL

@@ -1,6 +1,6 @@
---- chrome/common/BUILD.gn.orig	2020-11-13 06:36:38 UTC
+--- chrome/common/BUILD.gn.orig	2021-01-18 21:28:52 UTC
 +++ chrome/common/BUILD.gn
-@@ -250,6 +250,10 @@
+@@ -247,6 +247,10 @@ static_library("common") {
      public_deps += [ "//ppapi/shared_impl" ]
    }
  
@@ -10,8 +10,8 @@
 +
    if (enable_extensions) {
      sources += [
-       "cast_messages.cc",
-@@ -487,7 +491,7 @@
+       "extensions/api/commands/commands_handler.cc",
+@@ -480,13 +484,21 @@ static_library("common") {
      public_deps += [ "//chrome/common/safe_browsing" ]
    }
  
@@ -20,7 +20,6 @@
      sources += [
        "auto_start_linux.cc",
        "auto_start_linux.h",
-@@ -496,6 +500,14 @@
        "multi_process_lock_linux.cc",
      ]
      deps += [ "//sandbox/linux:sandbox_services" ]

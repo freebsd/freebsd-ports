@@ -1,6 +1,6 @@
---- ui/compositor/compositor_observer.h.orig	2020-11-13 06:37:05 UTC
+--- ui/compositor/compositor_observer.h.orig	2021-01-18 21:29:48 UTC
 +++ ui/compositor/compositor_observer.h
-@@ -42,11 +42,11 @@ class COMPOSITOR_EXPORT CompositorObserver {
+@@ -43,11 +43,11 @@ class COMPOSITOR_EXPORT CompositorObserver {
    // Called when a child of the compositor is resizing.
    virtual void OnCompositingChildResizing(Compositor* compositor) {}
  

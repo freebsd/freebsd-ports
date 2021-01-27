@@ -1,6 +1,6 @@
---- content/public/common/content_switches.h.orig	2020-11-13 06:36:43 UTC
+--- content/public/common/content_switches.h.orig	2021-01-18 21:28:57 UTC
 +++ content/public/common/content_switches.h
-@@ -248,7 +248,7 @@ CONTENT_EXPORT extern const char kWebXrRuntimeOrientat
+@@ -245,7 +245,7 @@ CONTENT_EXPORT extern const char kWebXrRuntimeOrientat
  CONTENT_EXPORT extern const char kWebXrRuntimeOpenXr[];
  CONTENT_EXPORT extern const char kWebXrRuntimeWMR[];
  
@@ -9,7 +9,7 @@
  CONTENT_EXPORT extern const char kEnableAcceleratedVideoDecode[];
  #endif
  CONTENT_EXPORT extern const char kDisableAcceleratedVideoDecode[];
-@@ -269,7 +269,7 @@ CONTENT_EXPORT extern const char kRemoteDebuggingSocke
+@@ -266,7 +266,7 @@ CONTENT_EXPORT extern const char kRemoteDebuggingSocke
  CONTENT_EXPORT extern const char kRendererWaitForJavaDebugger[];
  #endif
  

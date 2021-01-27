@@ -1,6 +1,6 @@
---- net/proxy_resolution/configured_proxy_resolution_service.cc.orig	2020-11-13 06:36:46 UTC
+--- net/proxy_resolution/configured_proxy_resolution_service.cc.orig	2021-01-18 21:29:02 UTC
 +++ net/proxy_resolution/configured_proxy_resolution_service.cc
-@@ -46,7 +46,7 @@
+@@ -47,7 +47,7 @@
  #elif defined(OS_MAC)
  #include "net/proxy_resolution/proxy_config_service_mac.h"
  #include "net/proxy_resolution/proxy_resolver_mac.h"
@@ -9,7 +9,7 @@
  #include "net/proxy_resolution/proxy_config_service_linux.h"
  #elif defined(OS_ANDROID)
  #include "net/proxy_resolution/proxy_config_service_android.h"
-@@ -60,7 +60,7 @@ namespace net {
+@@ -61,7 +61,7 @@ namespace net {
  namespace {
  
  #if defined(OS_WIN) || defined(OS_APPLE) || \

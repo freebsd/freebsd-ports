@@ -1,6 +1,6 @@
---- weblayer/app/content_main_delegate_impl.cc.orig	2020-11-13 06:37:06 UTC
+--- weblayer/app/content_main_delegate_impl.cc.orig	2021-01-18 21:29:49 UTC
 +++ weblayer/app/content_main_delegate_impl.cc
-@@ -225,7 +225,7 @@ bool ContentMainDelegateImpl::ShouldCreateFeatureList(
+@@ -221,7 +221,7 @@ bool ContentMainDelegateImpl::ShouldCreateFeatureList(
  
  void ContentMainDelegateImpl::PreSandboxStartup() {
  #if defined(ARCH_CPU_ARM_FAMILY) && \

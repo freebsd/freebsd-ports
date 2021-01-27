@@ -1,6 +1,6 @@
---- base/process/process_util_unittest.cc.orig	2020-11-13 06:36:34 UTC
+--- base/process/process_util_unittest.cc.orig	2021-01-18 21:28:45 UTC
 +++ base/process/process_util_unittest.cc
-@@ -1307,11 +1307,11 @@ std::string TestLaunchProcess(const CommandLine& cmdli
+@@ -1308,11 +1308,11 @@ std::string TestLaunchProcess(const CommandLine& cmdli
    options.fds_to_remap.emplace_back(fds[1], STDOUT_FILENO);
  #endif  // defined(OS_WIN)
  

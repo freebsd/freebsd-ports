@@ -1,8 +1,8 @@
---- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2020-11-13 06:36:44 UTC
+--- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2021-01-18 21:29:00 UTC
 +++ media/mojo/mojom/video_frame_mojom_traits.cc
 @@ -21,9 +21,9 @@
  #include "ui/gfx/mojom/color_space_mojom_traits.h"
- #include "ui/gl/mojom/hdr_metadata_mojom_traits.h"
+ #include "ui/gfx/mojom/hdr_metadata_mojom_traits.h"
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)

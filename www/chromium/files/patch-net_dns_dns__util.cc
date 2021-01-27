@@ -1,8 +1,8 @@
---- net/dns/dns_util.cc.orig	2020-11-13 06:36:45 UTC
+--- net/dns/dns_util.cc.orig	2021-01-18 21:29:02 UTC
 +++ net/dns/dns_util.cc
-@@ -39,6 +39,8 @@ const uint16_t kFlagNamePointer = 0xc000;
- 
- }  // namespace
+@@ -28,6 +28,8 @@
+ #include "net/third_party/uri_template/uri_template.h"
+ #include "url/url_canon.h"
  
 +#include <sys/socket.h>
 +

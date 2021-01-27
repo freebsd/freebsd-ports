@@ -1,4 +1,4 @@
---- gpu/command_buffer/tests/webgpu_test.cc.orig	2020-11-13 06:36:44 UTC
+--- gpu/command_buffer/tests/webgpu_test.cc.orig	2021-01-18 21:28:59 UTC
 +++ gpu/command_buffer/tests/webgpu_test.cc
 @@ -51,8 +51,8 @@ bool WebGPUTest::WebGPUSupported() const {
  
@@ -11,8 +11,8 @@
      BUILDFLAG(USE_DAWN)
    return true;
  #else
-@@ -63,7 +63,7 @@ bool WebGPUTest::WebGPUSharedImageSupported() const {
- void WebGPUTest::SetUp() {
+@@ -67,7 +67,7 @@ void WebGPUTest::SetUp() {
+ 
    gpu::GpuPreferences gpu_preferences;
    gpu_preferences.enable_webgpu = true;
 -#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && BUILDFLAG(USE_DAWN)

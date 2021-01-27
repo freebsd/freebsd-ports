@@ -1,22 +1,6 @@
---- components/crash/content/browser/BUILD.gn.orig	2020-11-13 06:36:40 UTC
+--- components/crash/content/browser/BUILD.gn.orig	2021-01-18 21:28:55 UTC
 +++ components/crash/content/browser/BUILD.gn
-@@ -35,7 +35,7 @@ source_set("browser") {
-     "//content/public/common",
-   ]
- 
--  if (is_linux || is_chromeos || is_android) {
-+  if ((is_linux || is_chromeos || is_android) && !is_bsd) {
-     set_sources_assignment_filter([])
- 
-     # Want this file on both Linux and Android.
-@@ -49,13 +49,13 @@ source_set("browser") {
-     deps += [ "//third_party/crashpad/crashpad/client" ]
-   }
- 
--  if (!is_android) {
-+  if (!is_android && !is_bsd) {
-     deps += [ "//third_party/breakpad:client" ]
-   }
+@@ -33,7 +33,7 @@ source_set("browser") {
  
    # This is not in the GYP build but this target includes breakpad client
    # headers, so add the dependency here.
@@ -25,3 +9,12 @@
      configs += [ "//third_party/breakpad:client_config" ]
      public_configs = [ "//third_party/breakpad:client_config" ]
    }
+@@ -53,7 +53,7 @@ source_set("browser") {
+       "//components/crash/android:jni_headers",
+       "//mojo/public/cpp/bindings",
+     ]
+-  } else {
++  } else if (!is_bsd) {
+     deps += [ "//third_party/breakpad:client" ]
+   }
+ }

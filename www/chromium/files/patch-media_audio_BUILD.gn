@@ -1,6 +1,6 @@
---- media/audio/BUILD.gn.orig	2020-11-13 06:36:44 UTC
+--- media/audio/BUILD.gn.orig	2021-01-18 21:29:00 UTC
 +++ media/audio/BUILD.gn
-@@ -236,7 +236,7 @@ source_set("audio") {
+@@ -238,7 +238,7 @@ source_set("audio") {
      ]
    }
  
@@ -9,7 +9,7 @@
      sources += [ "linux/audio_manager_linux.cc" ]
    }
  
-@@ -299,6 +299,17 @@ source_set("audio") {
+@@ -303,6 +303,17 @@ source_set("audio") {
      } else {
        deps += [ ":libpulse_stubs" ]
      }

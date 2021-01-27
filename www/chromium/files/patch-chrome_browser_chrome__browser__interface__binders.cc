@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2020-11-13 06:36:36 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2021-01-18 21:28:49 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
-@@ -128,7 +128,7 @@
+@@ -135,7 +135,7 @@
  #include "media/mojo/mojom/speech_recognition_service.mojom.h"
  #endif
  
@@ -9,7 +9,7 @@
      defined(OS_CHROMEOS)
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
-@@ -733,7 +733,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -775,7 +775,7 @@ void PopulateChromeWebUIFrameBinders(
    }
  #endif
  

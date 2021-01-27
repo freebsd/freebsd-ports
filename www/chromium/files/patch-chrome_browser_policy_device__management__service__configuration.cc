@@ -1,4 +1,4 @@
---- chrome/browser/policy/device_management_service_configuration.cc.orig	2020-11-16 14:22:12 UTC
+--- chrome/browser/policy/device_management_service_configuration.cc.orig	2021-01-18 21:28:50 UTC
 +++ chrome/browser/policy/device_management_service_configuration.cc
 @@ -18,7 +18,7 @@
  #endif
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/connectors/common.h"
  #include "chrome/browser/enterprise/connectors/connectors_manager.h"
  #endif
-@@ -86,7 +86,7 @@ std::string DeviceManagementServiceConfiguration::GetR
+@@ -95,7 +95,7 @@ DeviceManagementServiceConfiguration::GetEncryptedRepo
  std::string
  DeviceManagementServiceConfiguration::GetReportingConnectorServerUrl() {
  #if defined(OS_WIN) || defined(OS_MAC) || \

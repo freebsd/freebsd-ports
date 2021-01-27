@@ -1,6 +1,6 @@
---- sandbox/policy/BUILD.gn.orig	2020-11-13 06:36:46 UTC
+--- sandbox/policy/BUILD.gn.orig	2021-01-18 21:29:02 UTC
 +++ sandbox/policy/BUILD.gn
-@@ -27,7 +27,7 @@ component("policy") {
+@@ -29,7 +29,7 @@ component("policy") {
      "//sandbox:common",
    ]
    public_deps = []

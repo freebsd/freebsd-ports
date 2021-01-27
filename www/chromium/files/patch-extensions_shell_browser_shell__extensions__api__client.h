@@ -1,19 +1,20 @@
---- extensions/shell/browser/shell_extensions_api_client.h.orig	2020-11-13 06:36:43 UTC
+--- extensions/shell/browser/shell_extensions_api_client.h.orig	2021-01-18 21:28:59 UTC
 +++ extensions/shell/browser/shell_extensions_api_client.h
-@@ -33,14 +33,14 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
-       content::BrowserContext* browser_context) const override;
-   std::unique_ptr<DisplayInfoProvider> CreateDisplayInfoProvider()
+@@ -36,7 +36,7 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
        const override;
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    FileSystemDelegate* GetFileSystemDelegate() override;
  #endif
    MessagingDelegate* GetMessagingDelegate() override;
-   FeedbackPrivateDelegate* GetFeedbackPrivateDelegate() override;
- 
+@@ -45,7 +45,7 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
   private:
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    std::unique_ptr<FileSystemDelegate> file_system_delegate_;
  #endif
    std::unique_ptr<MessagingDelegate> messaging_delegate_;

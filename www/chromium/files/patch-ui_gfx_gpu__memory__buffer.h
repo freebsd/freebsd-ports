@@ -1,4 +1,4 @@
---- ui/gfx/gpu_memory_buffer.h.orig	2020-11-13 06:37:06 UTC
+--- ui/gfx/gpu_memory_buffer.h.orig	2021-01-18 21:29:48 UTC
 +++ ui/gfx/gpu_memory_buffer.h
 @@ -15,7 +15,7 @@
  #include "ui/gfx/geometry/rect.h"
@@ -17,4 +17,4 @@
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    NativePixmapHandle native_pixmap_handle;
  #elif defined(OS_MAC)
-   ScopedRefCountedIOSurfaceMachPort mach_port;
+   gfx::ScopedIOSurface io_surface;

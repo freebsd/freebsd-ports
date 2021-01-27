@@ -1,6 +1,6 @@
---- content/browser/web_contents/web_contents_view_aura.cc.orig	2020-11-16 14:34:56 UTC
+--- content/browser/web_contents/web_contents_view_aura.cc.orig	2021-01-18 21:28:57 UTC
 +++ content/browser/web_contents/web_contents_view_aura.cc
-@@ -1211,7 +1211,7 @@ void WebContentsViewAura::OnMouseEvent(ui::MouseEvent*
+@@ -1198,7 +1198,7 @@ void WebContentsViewAura::OnMouseEvent(ui::MouseEvent*
      // Linux window managers like to handle raise-on-click themselves.  If we
      // raise-on-click manually, this may override user settings that prevent
      // focus-stealing.

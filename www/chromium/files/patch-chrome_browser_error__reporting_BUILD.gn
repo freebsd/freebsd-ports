@@ -1,0 +1,42 @@
+--- chrome/browser/error_reporting/BUILD.gn.orig	2021-01-19 12:11:56 UTC
++++ chrome/browser/error_reporting/BUILD.gn
+@@ -22,6 +22,13 @@ static_library("error_reporting") {
+     "//services/network:network_service",
+     "//services/network/public/cpp",
+   ]
++
++  if (is_bsd) {
++    deps -= [
++      "//components/crash/content/browser/error_reporting",
++      "//components/crash/core/app",
++    ]
++  }
+ }
+ 
+ source_set("test_support") {
+@@ -35,6 +42,12 @@ source_set("test_support") {
+     "//base",
+     "//components/crash/content/browser/error_reporting:mock_crash_endpoint",
+   ]
++
++  if (is_bsd) {
++    deps -= [
++      "//components/crash/content/browser/error_reporting:mock_crash_endpoint",
++    ]
++  }
+ }
+ 
+ source_set("unit_test") {
+@@ -52,4 +65,12 @@ source_set("unit_test") {
+     "//net:test_support",
+     "//testing/gtest",
+   ]
++
++  if (is_bsd) {
++    deps -= [
++      "//components/crash/content/browser/error_reporting",
++      "//components/crash/content/browser/error_reporting:mock_crash_endpoint",
++      "//components/crash/core/app",
++    ]
++  }
+ }

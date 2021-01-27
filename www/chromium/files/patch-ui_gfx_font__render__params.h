@@ -1,6 +1,6 @@
---- ui/gfx/font_render_params.h.orig	2020-11-13 06:37:06 UTC
+--- ui/gfx/font_render_params.h.orig	2021-01-18 21:29:48 UTC
 +++ ui/gfx/font_render_params.h
-@@ -111,7 +111,7 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
+@@ -109,7 +109,7 @@ GFX_EXPORT FontRenderParams GetFontRenderParams(
      const FontRenderParamsQuery& query,
      std::string* family_out);
  
@@ -9,7 +9,7 @@
  // Clears GetFontRenderParams()'s cache. Intended to be called by tests that are
  // changing Fontconfig's configuration.
  GFX_EXPORT void ClearFontRenderParamsCacheForTest();
-@@ -120,7 +120,7 @@ GFX_EXPORT void ClearFontRenderParamsCacheForTest();
+@@ -118,7 +118,7 @@ GFX_EXPORT void ClearFontRenderParamsCacheForTest();
  // Gets the device scale factor to query the FontRenderParams.
  GFX_EXPORT float GetFontRenderParamsDeviceScaleFactor();
  
