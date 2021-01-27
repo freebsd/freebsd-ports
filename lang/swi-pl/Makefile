@@ -3,6 +3,7 @@
 
 PORTNAME=	swi-pl
 DISTVERSION=	8.2.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.swi-prolog.org/download/stable/src/
 DISTNAME=	swipl-${DISTVERSION}
@@ -16,23 +17,25 @@ BROKEN_i386=	fails to link: libswipl.so: undefined reference to __atomic_compare
 BROKEN_mips=	fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
 BROKEN_mips64=	fails to link: libswipl.so: undefined reference to '__sync_sub_and_fetch_4'
 
-LIB_DEPENDS=	libgmp.so:math/gmp \
-		libodbc.so:databases/unixODBC \
-		libpcre.so:devel/pcre \
+LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libossp-uuid.so:misc/ossp-uuid \
 		libyaml.so:textproc/libyaml
 
 USES=		compiler:c11 libedit cmake libarchive pathfix pkgconfig \
-		readline shebangfix ssl
+		shebangfix ssl
 USE_XORG=	ice sm x11 xext xft xinerama xpm xt
 
-OPTIONS_DEFINE=		TCMALLOC EXAMPLES XPCE
-OPTIONS_DEFAULT=	XPCE TCMALLOC
+OPTIONS_DEFINE=		DOCS TCMALLOC EXAMPLES XPCE GMP THREADED ODBC
+OPTIONS_DEFAULT=	XPCE TCMALLOC GMP THREADED ODBC
 OPTIONS_SUB=    	yes
 
-CMAKE_ARGS=	-DSWIPL_PACKAGES_JAVA=OFF -DBUILD_TESTING=OFF -DINSTALL_DOCUMENTATION=OFF
+MAKE_ENV=	XDG_DATA_DIRS=/dummy
+CMAKE_ARGS=	-DSWIPL_PACKAGES_JAVA=OFF -DBUILD_TESTING=OFF
 
-TCMALLOC_DESC=		Use tcmalloc instead of default malloc
+DOCS_CMAKE_ON=	-DINSTALL_DOCUMENTATION=ON
+DOCS_CMAKE_OFF=	-DINSTALL_DOCUMENTATION=OFF
+
+TCMALLOC_DESC=		Use tcmalloc instead of default freebsd jemalloc
 TCMALLOC_CMAKE_ON=	-DUSE_TCMALLOC=ON
 TCMALLOC_CMAKE_OFF=	-DUSE_TCMALLOC=OFF
 TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
@@ -44,6 +47,20 @@ XPCE_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libjpeg.so:graphics/jpeg-turbo
 XCPE_USES=		jpeg xorg
+
+GMP_DESC=		Enable bignum and rational numbers
+GMP_CMAKE_ON=		-DUSE_GMP=ON
+GMP_CMAKE_OFF=		-DUSE_GMP=OFF
+GMP_LIB_DEPENDS=	libgmp.so:math/gmp
+
+THREADED_DESC=		Enable support for Prolog threads
+THREADED_CMAKE_ON=	-DMULTI_THREADED=ON
+THREADED_CMAKE_OFF=	-DMULTI_THREADED=OFF
+
+ODBC_DESC=		Enable ODBC and CQL packages
+ODBC_CMAKE_ON=		-DSWIPL_PACKAGES_ODBC=ON
+ODBC_CMAKE_OFF=		-DSWIPL_PACKAGES_ODBC=OFF
+ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 .include <bsd.port.options.mk>
 
