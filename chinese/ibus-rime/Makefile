@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-rime
-DISTVERSION=	1.4.0-14
-PORTREVISION=	1
+DISTVERSION=	1.5.0
 CATEGORIES=	chinese
 
 MAINTAINER=	khng300@gmail.com
@@ -25,7 +24,6 @@ INSTALLS_ICONS=		yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rime
-GH_TAGNAME=	bfabe67
 
 _SCHEMA_DEPENDS=	\
 	${LOCALBASE}/share/rime-data/luna_pinyin.schema.yaml:chinese/rime-luna-pinyin	\
