@@ -10,6 +10,9 @@ MASTER_SITES=	XCONTRIB/games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple board game for X Window System
 
+BROKEN_FreeBSD_13=	duplicate symbol: app_context
+BROKEN_FreeBSD_14=	duplicate symbol: app_context
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		imake:noman xorg
 USE_XORG=	x11 xext xaw xmu xt sm ice
