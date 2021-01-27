@@ -11,7 +11,7 @@
 +    int width, height;		/* Size of window. */
 +    int scale;
 +    Boolean debug;
-+
+ 
 +    /* Base info: */
 +    int basewait;		/* Number of milliseconds to wait between */
 +				/* moving base. */
@@ -73,7 +73,7 @@
 +#define defaultback	app_data.defaultback
 +#define vaderfont	app_data.vaderfont
 +#endif
- 
++
  /*
   * Actual vaders definitions.
   */
@@ -85,7 +85,7 @@
  ext int level;
  
  ext Display *dpy;
-@@ -111,30 +178,17 @@ ext int basesleft;
+@@ -111,54 +178,31 @@ ext int basesleft;
  
  /* Base info: */
  
@@ -96,7 +96,8 @@
  
 -ext Pixel basepixel;
 -ext Pixel buildingpixel;
- ext Boolean basedestroyed;	/* TRUE if the base is non-existant */
+-ext Boolean basedestroyed;	/* TRUE if the base is non-existant */
++extern Boolean basedestroyed;	/* TRUE if the base is non-existant */
  
  /* Vader info: */
  
@@ -115,8 +116,12 @@
 -				/* moving spacers. */
  ext int spacerappear;		/* same, but for the interval between appearances */
  
- ext Boolean spacer_shown;    	/* Currnet_Spacer is something */
-@@ -144,21 +198,11 @@ ext int spacer_counter;		/* number of cy
+-ext Boolean spacer_shown;    	/* Currnet_Spacer is something */
+-ext int spacer_counter;		/* number of cycles to create a spacer */
++extern Boolean spacer_shown;    	/* Currnet_Spacer is something */
++extern int spacer_counter;		/* number of cycles to create a spacer */
+ 
+ /* Shot info. */
  
  ext XtIntervalId shottimerid;
  ext XtIntervalId vshottimerid;
@@ -128,8 +133,10 @@
 -				/* once. */
 -ext int maxvshots;		/* How many shots are allowed to exist at */
 -				/* once. */
- ext int numshots;		/* how many shots (from the base) there are right now. */
- ext int numvshots;		/* how many shots (from vaders) there are right now. */
+-ext int numshots;		/* how many shots (from the base) there are right now. */
+-ext int numvshots;		/* how many shots (from vaders) there are right now. */
++extern int numshots;		/* how many shots (from the base) there are right now. */
++extern int numvshots;		/* how many shots (from vaders) there are right now. */
  
  /* Score info */
  

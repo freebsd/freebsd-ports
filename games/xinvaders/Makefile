@@ -3,15 +3,13 @@
 
 PORTNAME=	xinvaders
 PORTVERSION=	2.1.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SUNSITE/games/arcade/invaders
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shoot-em-up them nasty little bugs
 
-BROKEN_FreeBSD_13=	duplicate symbol: basedestroyed
-BROKEN_FreeBSD_14=	duplicate symbol: basedestroyed
 NO_CDROM=	don't sell for profit
 
 USES=		gettext xorg
