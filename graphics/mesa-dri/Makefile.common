@@ -27,9 +27,6 @@ DISTFILES=	mesa-${MESADISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	x11@FreeBSD.org
 
-NOT_FOR_ARCHS=sparc64
-NOT_FOR_ARCHS_REASON=not supported on sparc64
-
 COMPONENT=	${PORTNAME:tl:C/^lib//:C/mesa-//}
 
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs \
