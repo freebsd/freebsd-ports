@@ -52,7 +52,8 @@
 #  chown -R ports /var/db/chkversion
 # and enter something like
 #
-#  SVNBLAME=yes
+#  BLAME=yes (git specific)
+#  SVNBLAME=yes   # XXX: SVN specific
 #  ALLPORTS=yes
 #  RCPT_ORIGIN=you@domain.example
 #  RCPT_VERSION=you@domain.example
@@ -60,6 +61,10 @@
 #
 # into `crontab -u ports -e', or run the script by hand if you can spare the time.
 #
+# If the environment variable BLAME is set and the ports tree is checked
+# out by git, every entry is listed with a record of the last git commit.
+#
+# XXX: SVN specific:
 # If the environment variable SVNBLAME is set and the ports tree is checked
 # out by SVN, every entry is listed with a record of the last SVN commit.
 #
@@ -78,7 +83,8 @@ use POSIX;
 
 my $portsdir    = $ENV{PORTSDIR}        // '/usr/ports';
 my $versiondir  = $ENV{VERSIONDIR}      // '/var/db/chkversion';
-my $svnblame    = exists $ENV{SVNBLAME};
+my $svnblame    = exists $ENV{SVNBLAME};  # XXX: SVN specific
+my $blame       = exists $ENV{BLAME};
 my $allports    = exists $ENV{ALLPORTS};
 
 my $watch_re    = $ENV{WATCH_REGEX}     // '';
@@ -94,7 +100,8 @@ my $cc_author   = exists $ENV{CC_AUTHOR};
 my $cc_mntnr    = exists $ENV{CC_MAINTAINER};
 
 my $make        = '/usr/bin/make';
-my $svn         = '/usr/local/bin/svn';
+my $svn         = '/usr/local/bin/svn';  # XXX: SVN specific
+my $git         = '/usr/local/bin/git';
 my $sendmail    = '/usr/sbin/sendmail';
 my $pkg         = first { -x $_ } ($ENV{PKG} // '', '/usr/local/sbin/pkg', '/usr/sbin/pkg');
 
@@ -126,7 +133,7 @@ sub readfrom($dir, @cmd) {
     return wantarray ? @childout : $childout[0];
 }
 
-foreach (qw(ARCH OPSYS OSREL OSVERSION UID)) {
+for (qw(ARCH OPSYS OSREL OSVERSION UID)) {
     my @cachedenv = readfrom($portsdir, $make, "-V$_");
     $ENV{$_} = $cachedenv[0];
 }
@@ -142,7 +149,9 @@ sub wanted() {
     return unless -d;
 
     # Skip directories we shouldn't descend into
-    if (/^.svn$/
+    # if (/^.git$/
+    if (/^\.git$/
+        || /^\.svn$/   # XXX: SVN specific
         || $File::Find::name =~ m"^$portsdir/(?:Mk|Templates|Tools|distfiles|packages)$"os
         || $File::Find::name =~ m"^$portsdir/[^/]+/pkg$"os)
     {
@@ -172,10 +181,10 @@ if ($allports) {
 else {
     my @categories = split ' ' => readfrom($portsdir, $make, '-VSUBDIR');
 
-    foreach my $category (@categories) {
+    for my $category (@categories) {
         next unless -f "$portsdir/$category/Makefile";
         my @ports = split ' ' => readfrom("$portsdir/$category", $make, '-VSUBDIR');
-        foreach (map "$category/$_", @ports) {
+        for (map "$category/$_", @ports) {
             next unless -f "$portsdir/$_/Makefile";
 
             my @makevar = readfrom "$portsdir/$_", $make, qw(-VPKGORIGIN -VPKGNAME -VMAINTAINER -VMASTERDIR);
@@ -249,7 +258,7 @@ if (!$useindex) {
     rename $versionfile, "$versionfile.bak";
 
     open my $VERSIONS, '>', $versionfile;
-    foreach (sort keys %pkgname) {
+    for (sort keys %pkgname) {
         print $VERSIONS "$_\t$pkgname{$_}\t$pkgmntnr{$_}\n";
     }
     close $VERSIONS;
@@ -271,7 +280,7 @@ sub parsemakefile($portdir) {
 
 sub getauthors($ports) {
     my %author;
-    foreach my $origin (keys %{$ports}) {
+    for my $origin (keys %{$ports}) {
         if (!$revision{$origin}) {
             my ($r, $d, $a) = parsemakefile "$portsdir/$origin";
             push @{$revision{$origin}}, $r;
@@ -291,9 +300,14 @@ sub getauthors($ports) {
 
 # Gets the Makefile log starting from the last known rev for a port
 sub printlog($fh, $portdir, $rev) {
-    if ($svnblame && -d "$portsdir/.svn") {
+    if ($blame && -d "$portsdir/.git") {
+        my @log = readfrom $portdir, $git, 'log', "${rev}^..HEAD", 'Makefile';
+        print $fh "   | $_\n" for @log;
+    }
+    # XXX: SVN specific:
+    elsif ($svnblame && -d "$portsdir/.svn") {
         my @svnlog = readfrom $portdir, $svn, 'log', ($rev ? "-r$rev" : ''), 'Makefile';
-        foreach (@svnlog) {
+        for (@svnlog) {
             my $in_log = /^-{20,}$/ ... /^(-{20,}|={70,})$/;
             print $fh "   | $_\n"
               if ($in_log && $in_log ne 1 && $in_log !~ /E0$/);
@@ -301,9 +315,13 @@ sub printlog($fh, $portdir, $rev) {
     }
 }
 
+# Git version:
+# sub printlog($fh, $portdir, $rev) {
+# }
+
 sub blame($fh, $ports) {
     if (%{$ports}) {
-        foreach my $origin (sort keys %{$ports}) {
+        for my $origin (sort keys %{$ports}) {
             print $fh "- *$origin* <$pkgmntnr{$origin}>: $ports->{$origin}\n";
             printlog $fh, "$portsdir/$origin", $revision{$origin}[0];
             if ($masterdir{$origin} ne "$portsdir/$origin") {
@@ -328,13 +346,13 @@ sub template($from, $rcpt, $replyto, $starttime, $ports) {
     my %author = getauthors $ports;
 
     if ($cc_author) {
-        foreach (map @{$author{$_} ? $author{$_} : []}, keys %{$ports}) {
+        for (map @{$author{$_} ? $author{$_} : []}, keys %{$ports}) {
             $cclist{"$_\@FreeBSD.org"} = 1
                 if $_;
         }
     }
     if ($cc_mntnr) {
-        foreach (map $pkgmntnr{$_}, keys %{$ports}) {
+        for (map $pkgmntnr{$_}, keys %{$ports}) {
             $cclist{$_} = 1
                 if $_;
         }
