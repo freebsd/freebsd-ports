@@ -35,7 +35,7 @@ int             pthread_getname_np(pthread_t, char *, size_t);
      if(pthread_getname_np(tid,desc,ARRAYNUMBER(desc))==0){
 +      return desc;
 +      }
-+#elif defined(__FreeBSD__) && (__FreeBSD_version >= 1300098)
++#elif defined(__FreeBSD__) && ((__FreeBSD_version >= 1201518 && __FreeBSD_version < 1300000) || (__FreeBSD_version >= 1300098))
 +    FXchar desc[256];
 +    if(pthread_getname_np((pthread_t)tid,desc,ARRAYNUMBER(desc))==0){
        return desc;
