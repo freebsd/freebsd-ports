@@ -8,7 +8,7 @@ GH_TUPLE=	\
 		alicebob:miniredis:v2.13.3:alicebob_miniredis/vendor/github.com/alicebob/miniredis/v2 \
 		apache:thrift:v0.12.0:apache_thrift/vendor/github.com/apache/thrift \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
-		btcsuite:btcutil:4031bdc69ded:btcsuite_btcutil/vendor/github.com/btcsuite/btcutil \
+		btcsuite:btcutil:a53e38424cce:btcsuite_btcutil/vendor/github.com/btcsuite/btcutil \
 		calebcase:tmpfile:v1.0.2:calebcase_tmpfile/vendor/github.com/calebcase/tmpfile \
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cheggaaa:pb:v3.0.5:cheggaaa_pb/vendor/github.com/cheggaaa/pb/v3 \
@@ -24,13 +24,14 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-migrate:migrate:v4.7.0:golang_migrate_migrate/vendor/github.com/golang-migrate/migrate/v4 \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:5c72a883971a:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:eec23a3978ad:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:6afb5195e5aa:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.1:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:6e8e738ad208:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:4d22bbb62b3c:golang_sys/vendor/golang.org/x/sys \
+		golang:sync:09787c993a3a:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:59c308dcf3cc:golang_sys/vendor/golang.org/x/sys \
+		golang:term:f5c789dd3221:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
@@ -56,6 +57,7 @@ GH_TUPLE=	\
 		jackc:pgservicefile:2b9c44734f2b:jackc_pgservicefile/vendor/github.com/jackc/pgservicefile \
 		jackc:pgtype:v1.5.0:jackc_pgtype/vendor/github.com/jackc/pgtype \
 		jackc:pgx:v4.9.0:jackc_pgx/vendor/github.com/jackc/pgx/v4 \
+		jinzhu:now:v1.1.1:jinzhu_now/vendor/github.com/jinzhu/now \
 		jtolds:monkit-hw:141a0da276b3:jtolds_monkit_hw/vendor/github.com/jtolds/monkit-hw/v2 \
 		jtolds:tracetagger:v2.0.0-rc5:jtolds_tracetagger/vendor/github.com/jtolds/tracetagger/v2 \
 		lib:pq:v1.3.0:lib_pq/vendor/github.com/lib/pq \
@@ -80,11 +82,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:e8500e1c37a0:storj_common/vendor/storj.io/common \
+		storj:common:07a5dc68dc1c:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.16:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:80778fc3f91b:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:private:8d9c4e216479:storj_private/vendor/storj.io/private \
-		storj:uplink:v1.4.4:storj_uplink/vendor/storj.io/uplink \
+		storj:private:2ba1ef686d1f:storj_private/vendor/storj.io/private \
+		storj:uplink:v1.4.5:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v70.15.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
