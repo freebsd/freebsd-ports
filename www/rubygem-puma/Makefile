@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	puma
-PORTVERSION=	3.12.1
+PORTVERSION=	5.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,11 +12,11 @@ COMMENT=	Fast, multithreaded and highly concurrent ruby web server
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gem shebangfix ssl
+RUN_DEPENDS=	rubygem-nio4r>=2<3:devel/rubygem-nio4r
+
+USES=		gem ssl
 USE_RUBY=	yes
 
 PLIST_FILES=	bin/puma bin/pumactl
-
-SHEBANG_FILES=	tools/jungle/init.d/run-puma
 
 .include <bsd.port.mk>
