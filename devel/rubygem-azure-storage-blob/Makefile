@@ -3,6 +3,7 @@
 
 PORTNAME=	azure-storage-blob
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ COMMENT=	Microsoft Azure Storage Blob Client Library for Ruby
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-azure-storage-common>=2.0<3:devel/rubygem-azure-storage-common \
-		rubygem-nokogiri>=1.10.4<1.11:textproc/rubygem-nokogiri
+		rubygem-nokogiri>=1.11.0.rc2<1.12:textproc/rubygem-nokogiri
 
 USES=		gem
 USE_RUBY=	yes
