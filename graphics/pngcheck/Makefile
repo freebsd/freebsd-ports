@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pngcheck
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libpng.org/pub/png/src/ \
 		https://www.cyberbotx.com/pngcheck/
