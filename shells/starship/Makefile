@@ -13,6 +13,8 @@ COMMENT=	Cross-shell prompt for astronauts
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	conflicting types for 'get_cpu_speed' in the sys-info-rs crate, see https://github.com/FillZpp/sys-info-rs/issues/80
+
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
 
