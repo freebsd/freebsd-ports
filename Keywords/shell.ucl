@@ -10,7 +10,7 @@
 actions: [file]
 post-install-lua: <<EOD
   shell_path = pkg.prefixed_path("%@")
-  shell = io.open("/etc/shells", "r+")
+  shell = assert(io.open("/etc/shells", "r+"))
   while true do
     line = shell:read()
     if line == nil then break end
@@ -20,14 +20,14 @@ post-install-lua: <<EOD
       return
     end
   end
-  shell:write(shell_path .. "\n")
-  shell:close()
+  assert(shell:write(shell_path .. "\n"))
+  assert(shell:close())
 EOD
 pre-deinstall-lua: <<EOD
   shell_path = pkg.prefixed_path("%@")
   shellsbuf = ""
   shells_path = "/etc/shells"
-  shell = io.open(shells_path, "r+")
+  shell = assert(io.open(shells_path, "r+"))
   found = false
   while true do
     line = shell:read()
@@ -38,10 +38,10 @@ pre-deinstall-lua: <<EOD
       shellsbuf = shellsbuf .. line .. "\n"
     end
   end
-  shell:close()
+  assert(shell:close())
   if found then
-    shell = io.open(shells_path, "w+")
-    shell:write(shellsbuf)
-    shell:close()
+    shell = assert(io.open(shells_path, "w+"))
+    assert(shell:write(shellsbuf))
+    assert(shell:close())
   end
 EOD
