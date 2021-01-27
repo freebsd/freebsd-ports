@@ -14,7 +14,7 @@ COMMENT=	Fdisk, a partition tables manipulator, from util-linux
 
 WRKSRC=		${WRKDIR}/util-linux-${PORTVERSION}/fdisk
 USES=		tar:bzip2
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 powerpc64le
 
 pre-patch:
 	@${CP} ${FILESDIR}/linuxfdisk-Makefile ${WRKSRC}/Makefile
