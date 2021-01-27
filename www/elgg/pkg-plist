@@ -12062,8 +12062,12 @@
 %%WWWDIR%%/vendor/composer/autoload_real.php
 %%WWWDIR%%/vendor/composer/autoload_static.php
 %%WWWDIR%%/vendor/composer/installed.json
+%%WWWDIR%%/vendor/composer/installers/.github/workflows/continuous-integration.yml
+%%WWWDIR%%/vendor/composer/installers/.github/workflows/lint.yml
+%%WWWDIR%%/vendor/composer/installers/.github/workflows/phpstan.yml
 %%WWWDIR%%/vendor/composer/installers/LICENSE
 %%WWWDIR%%/vendor/composer/installers/composer.json
+%%WWWDIR%%/vendor/composer/installers/phpstan.neon.dist
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/AglInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/AimeosInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/AnnotateCmsInstaller.php
@@ -12132,6 +12136,7 @@
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/Plugin.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PortoInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PrestashopInstaller.php
+%%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/ProcessWireInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PuppetInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PxcmsInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/RadPHPInstaller.php
@@ -12143,6 +12148,7 @@
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/ShopwareInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/SilverStripeInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/SiteDirectInstaller.php
+%%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/StarbugInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/SyDESInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/SyliusInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/Symfony1Installer.php
@@ -17739,6 +17745,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-ctype/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-ctype/README.md
 %%WWWDIR%%/vendor/symfony/polyfill-ctype/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-ctype/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-ctype/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
@@ -17747,6 +17754,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-php72/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php72/Php72.php
