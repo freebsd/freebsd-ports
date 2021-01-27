@@ -1,8 +1,8 @@
---- ext/nokogiri/extconf.rb.orig	2017-09-20 14:58:44 UTC
+--- ext/nokogiri/extconf.rb.orig	2021-01-21 20:37:43 UTC
 +++ ext/nokogiri/extconf.rb
-@@ -658,6 +658,43 @@ have_func('xmlRelaxNGSetValidStructuredE
- have_func('xmlSchemaSetValidStructuredErrors')
- have_func('xmlSchemaSetParserStructuredErrors')
+@@ -819,6 +819,43 @@ unless using_system_libraries?
+   end
+ end
  
 +$INSTALLFILES = [
 +  ['html_document.h', '$(archdir)'],

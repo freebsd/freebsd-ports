@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nokogiri
-PORTVERSION=	1.10.10
+PORTVERSION=	1.11.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,8 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 # Do not add mini_portile2 to RUN_DEPENDS. Read ext/nokogiri/extconf.rb
 # and https://lists.freebsd.org/pipermail/svn-ports-all/2019-March/209423.html
-RUN_DEPENDS=	rubygem-pkg-config>=1.1.7:devel/rubygem-pkg-config
+RUN_DEPENDS=	rubygem-pkg-config>=1.1.7:devel/rubygem-pkg-config  \
+		rubygem-racc>=1.4<2:devel/rubygem-racc
 
 USES=		gem gnome pkgconfig gettext-runtime
 USE_GNOME=	libxml2 libxslt
