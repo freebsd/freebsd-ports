@@ -231,6 +231,8 @@
 %%WWWDIR%%/app/views/dashboard.properties.edit.php
 %%WWWDIR%%/app/views/dashboard.sharing.edit.php
 %%WWWDIR%%/app/views/hostmacros.list.php
+%%WWWDIR%%/app/views/js/administration.image.list.js.php
+%%WWWDIR%%/app/views/js/administration.user.list.js.php
 %%WWWDIR%%/app/views/js/administration.authentication.edit.js.php
 %%WWWDIR%%/app/views/js/administration.autoreg.edit.js.php
 %%WWWDIR%%/app/views/js/administration.housekeeping.edit.js.php
@@ -253,6 +255,7 @@
 %%WWWDIR%%/app/views/js/monitoring.host.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.latest.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.problem.view.js.php
+%%WWWDIR%%/app/views/js/monitoring.map.view.js.php
 %%WWWDIR%%/app/views/js/popup.acknowledge.edit.js.php
 %%WWWDIR%%/app/views/js/popup.discovery.check.js.php
 %%WWWDIR%%/app/views/js/popup.itemtestedit.view.js.php
@@ -261,7 +264,9 @@
 %%WWWDIR%%/app/views/js/popup.mediatype.message.js.php
 %%WWWDIR%%/app/views/js/popup.mediatypetest.edit.js.php
 %%WWWDIR%%/app/views/js/popup.triggerwizard.js.php
+%%WWWDIR%%/app/views/js/popup.triggerexpr.js.php
 %%WWWDIR%%/app/views/js/reports.auditlog.list.js.php
+%%WWWDIR%%/app/views/js/report.services.js.php
 %%WWWDIR%%/app/views/layout.csv.php
 %%WWWDIR%%/app/views/layout.htmlpage.php
 %%WWWDIR%%/app/views/layout.javascript.php
@@ -517,8 +522,6 @@
 %%WWWDIR%%/include/classes/html/CColHeader.php
 %%WWWDIR%%/include/classes/html/CCollapsibleUiWidget.php
 %%WWWDIR%%/include/classes/html/CColor.php
-%%WWWDIR%%/include/classes/html/CComboBox.php
-%%WWWDIR%%/include/classes/html/CComboItem.php
 %%WWWDIR%%/include/classes/html/CDashboardWidgetMap.php
 %%WWWDIR%%/include/classes/html/CDateSelector.php
 %%WWWDIR%%/include/classes/html/CDiv.php
@@ -536,6 +539,7 @@
 %%WWWDIR%%/include/classes/html/CLabel.php
 %%WWWDIR%%/include/classes/html/CLink.php
 %%WWWDIR%%/include/classes/html/CLinkAction.php
+%%WWWDIR%%/include/classes/html/CListBoxItem.php
 %%WWWDIR%%/include/classes/html/CList.php
 %%WWWDIR%%/include/classes/html/CListBox.php
 %%WWWDIR%%/include/classes/html/CListItem.php
@@ -766,7 +770,6 @@
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldApplication.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldCheckBox.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldCheckBoxList.php
-%%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldComboBox.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldDatePicker.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldGraphDataSet.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldGraphOverride.php
@@ -790,7 +793,8 @@
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldTags.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldTextBox.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldUrl.php
-%%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldWidgetListComboBox.php
+%%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldSelect.php
+%%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldWidgetSelect.php
 %%WWWDIR%%/include/classes/widgets/forms/CWidgetForm.php
 %%WWWDIR%%/include/classes/widgets/forms/CWidgetFormActionLog.php
 %%WWWDIR%%/include/classes/widgets/forms/CWidgetFormClock.php
@@ -955,6 +959,9 @@
 %%WWWDIR%%/include/views/js/monitoring.slides.js.php
 %%WWWDIR%%/include/views/js/monitoring.sysmap.edit.js.php
 %%WWWDIR%%/include/views/js/monitoring.sysmaps.js.php
+%%WWWDIR%%/include/views/js/monitoring.history.js.php
+%%WWWDIR%%/include/views/js/monitoring.hostscreen.js.php
+%%WWWDIR%%/include/views/js/monitoring.screen.constructor.edit.js.php
 %%WWWDIR%%/include/views/monitoring.history.php
 %%WWWDIR%%/include/views/monitoring.hostscreen.php
 %%WWWDIR%%/include/views/monitoring.overview.items.php
@@ -1031,6 +1038,10 @@
 %%WWWDIR%%/js/pages/popup.condition.common.js
 %%WWWDIR%%/js/pages/popup.operation.common.js
 %%WWWDIR%%/js/pages/setup.js
+%%WWWDIR%%/js/pages/monitoring.overview.js
+%%WWWDIR%%/js/pages/report2.js
+%%WWWDIR%%/js/pages/report4.js
+%%WWWDIR%%/js/pages/srv_status.js
 %%WWWDIR%%/js/servercheck.js
 %%WWWDIR%%/js/textareaflexible.js
 %%WWWDIR%%/js/vector/class.svg.canvas.js

@@ -7,5 +7,5 @@ sbin/zabbix_java/lib/slf4j-api-1.6.1.jar
 sbin/zabbix_java/lib/android-json-4.3_r3.1.jar
 @sample sbin/zabbix_java/settings.sh.sample
 sbin/zabbix_java/startup.sh
-sbin/zabbix_java/bin/zabbix-java-gateway-%%PORTVERSION%%.jar
+sbin/zabbix_java/bin/zabbix-java-gateway-%%DISTVERSION%%.jar
 @dir(zabbix,zabbix,755) /var/run/zabbix
