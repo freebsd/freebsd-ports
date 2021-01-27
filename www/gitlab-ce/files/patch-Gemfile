@@ -1,15 +1,15 @@
---- Gemfile.orig	2020-12-21 11:32:42 UTC
+--- Gemfile.orig	2021-01-21 15:00:14 UTC
 +++ Gemfile
-@@ -18,7 +18,7 @@ gem 'default_value_for', '~> 3.3.0'
+@@ -15,7 +15,7 @@ gem 'default_value_for', '~> 3.3.0'
  # Supported DBs
  gem 'pg', '~> 1.1'
  
 -gem 'rugged', '~> 0.28'
 +gem 'rugged', '~> 1.0'
- gem 'grape-path-helpers', '~> 1.5'
+ gem 'grape-path-helpers', '~> 1.6.1'
  
  gem 'faraday', '~> 1.0'
-@@ -27,7 +27,7 @@ gem 'marginalia', '~> 1.9.0'
+@@ -24,7 +24,7 @@ gem 'marginalia', '~> 1.10.0'
  # Authentication libraries
  gem 'devise', '~> 4.7.2'
  # TODO: verify ARM compile issue on 3.1.13+ version (see https://gitlab.com/gitlab-org/gitlab/-/merge_requests/18828)
@@ -18,7 +18,16 @@
  gem 'doorkeeper', '~> 5.3.0'
  gem 'doorkeeper-openid_connect', '~> 1.7.4'
  gem 'omniauth', '~> 1.8'
-@@ -97,7 +97,6 @@ gem 'graphql', '~> 1.11.4'
+@@ -78,7 +78,7 @@ gem 'gpgme', '~> 2.0.19'
+ # GitLab fork with several improvements to original library. For full list of changes
+ # see https://github.com/intridea/omniauth-ldap/compare/master...gitlabhq:master
+ gem 'gitlab_omniauth-ldap', '~> 2.1.1', require: 'omniauth-ldap'
+-gem 'net-ldap', '~> 0.16.3'
++gem 'net-ldap', '~> 0.16'
+ 
+ # API
+ gem 'grape', '~> 1.5.1'
+@@ -92,7 +92,6 @@ gem 'graphql', '~> 1.11.4'
  # https://gitlab.com/gitlab-org/gitlab/issues/31747
  gem 'graphiql-rails', '~> 1.4.10'
  gem 'apollo_upload_server', '~> 2.0.2'
@@ -26,7 +35,7 @@
  gem 'graphlient', '~> 0.4.0' # Used by BulkImport feature (group::import)
  
  gem 'hashie'
-@@ -152,7 +151,7 @@ gem 'github-markup', '~> 1.7.0', require: 'github/mark
+@@ -147,7 +146,7 @@ gem 'github-markup', '~> 1.7.0', require: 'github/mark
  gem 'commonmarker', '~> 0.21'
  gem 'kramdown', '~> 2.3.0'
  gem 'RedCloth', '~> 4.3.2'
@@ -35,7 +44,7 @@
  gem 'org-ruby', '~> 0.9.12'
  gem 'creole', '~> 0.5.0'
  gem 'wikicloth', '0.8.1'
-@@ -239,7 +238,7 @@ gem 'redis-rails', '~> 5.0.2'
+@@ -234,7 +233,7 @@ gem 'redis-rails', '~> 5.0.2'
  gem 'discordrb-webhooks-blackst0ne', '~> 3.3', require: false
  
  # HipChat integration
@@ -43,8 +52,14 @@
 +gem 'hipchat', '~> 1.6.0'
  
  # Jira integration
- gem 'jira-ruby', '~> 2.0.0'
-@@ -335,95 +334,6 @@ group :metrics do
+ gem 'jira-ruby', '~> 2.1.4'
+@@ -326,101 +325,11 @@ gem 'snowplow-tracker', '~> 0.6.1'
+ # Metrics
+ group :metrics do
+   gem 'method_source', '~> 1.0', require: false
+-  gem 'webrick', '~> 1.6.1', require: false
++  gem 'webrick', '~> 1.6', require: false
+ 
    # Prometheus
    gem 'prometheus-client-mmap', '~> 0.12.0'
    gem 'raindrops', '~> 0.18'
@@ -66,14 +81,15 @@
 -group :development, :test do
 -  gem 'deprecation_toolkit', '~> 1.5.1', require: false
 -  gem 'bullet', '~> 6.1.0'
--  gem 'pry-byebug', '~> 3.9.0', platform: :mri
+-  gem 'gitlab-pry-byebug', platform: :mri, require: ['pry-byebug', 'pry-byebug/pry_remote_ext']
 -  gem 'pry-rails', '~> 0.3.9'
+-  gem 'pry-remote'
 -
 -  gem 'awesome_print', require: false
 -
 -  gem 'database_cleaner', '~> 1.7.0'
--  gem 'factory_bot_rails', '~> 5.1.0'
--  gem 'rspec-rails', '~> 4.0.0'
+-  gem 'factory_bot_rails', '~> 6.1.0'
+-  gem 'rspec-rails', '~> 4.0.1'
 -
 -  # Prevent occasions where minitest is not bundled in packaged versions of ruby (see #3826)
 -  gem 'minitest', '~> 5.11.0'
@@ -84,7 +100,7 @@
 -  gem 'spring', '~> 2.1.0'
 -  gem 'spring-commands-rspec', '~> 1.0.4'
 -
--  gem 'gitlab-styles', '~> 5.3.0', require: false
+-  gem 'gitlab-styles', '~> 6.0.0', require: false
 -
 -  gem 'scss_lint', '~> 0.59.0', require: false
 -  gem 'haml_lint', '~> 0.36.0', require: false
@@ -122,7 +138,7 @@
 -  gem 'rspec_profiling', '~> 0.0.6'
 -  gem 'rspec-parameterized', require: false
 -
--  gem 'capybara', '~> 3.33.0'
+-  gem 'capybara', '~> 3.34.0'
 -  gem 'capybara-screenshot', '~> 1.0.22'
 -  gem 'selenium-webdriver', '~> 3.142'
 -
