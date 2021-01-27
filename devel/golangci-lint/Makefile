@@ -2,7 +2,7 @@
 
 PORTNAME=	golangci-lint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.35.2
+DISTVERSION=	1.36.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -26,6 +26,7 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		denis-tingajkin:go-header:v0.4.2:denis_tingajkin_go_header/vendor/github.com/denis-tingajkin/go-header \
 		dominikh:go-tools:v0.0.1-2020.1.6:dominikh_go_tools/vendor/honnef.co/go/tools \
+		esimonov:ifshort:v1.0.0:esimonov_ifshort/vendor/github.com/esimonov/ifshort \
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-critic:go-critic:v0.5.3:go_critic_go_critic/vendor/github.com/go-critic/go-critic \
@@ -89,7 +90,7 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		mvdan:lint:adc824a0674b:mvdan_lint/vendor/mvdan.cc/lint \
 		mvdan:unparam:b37ab49443f7:mvdan_unparam/vendor/mvdan.cc/unparam \
 		nakabonne:nestif:v0.3.0:nakabonne_nestif/vendor/github.com/nakabonne/nestif \
-		nbutton23:zxcvbn-go:ae427f1e4c1d:nbutton23_zxcvbn_go/vendor/github.com/nbutton23/zxcvbn-go \
+		nbutton23:zxcvbn-go:e56b841a3c88:nbutton23_zxcvbn_go/vendor/github.com/nbutton23/zxcvbn-go \
 		nishanths:exhaustive:v0.1.0:nishanths_exhaustive/vendor/github.com/nishanths/exhaustive \
 		nishanths:predeclared:v0.2.1:nishanths_predeclared/vendor/github.com/nishanths/predeclared \
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
@@ -101,7 +102,7 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		quasilyte:regex:30656e2c4a95:quasilyte_regex_syntax/vendor/github.com/quasilyte/regex \
 		ryancurrah:gomodguard:v1.2.0:ryancurrah_gomodguard/vendor/github.com/ryancurrah/gomodguard \
 		ryanrolds:sqlclosecheck:v0.3.0:ryanrolds_sqlclosecheck/vendor/github.com/ryanrolds/sqlclosecheck \
-		securego:gosec:v2.5.0:securego_gosec_v2/vendor/github.com/securego/gosec/v2 \
+		securego:gosec:v2.6.1:securego_gosec_v2/vendor/github.com/securego/gosec/v2 \
 		shazow:go-diff:b6b7b6733b8c:shazow_go_diff/vendor/github.com/shazow/go-diff \
 		shirou:gopsutil:e4ec7b275ada:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
 		shirou:w32:bb4de0191aa4:shirou_w32/vendor/github.com/shirou/w32 \
@@ -116,21 +117,20 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
 		ssgreg:nlreturn:v2.1.0:ssgreg_nlreturn_v2/vendor/github.com/ssgreg/nlreturn/v2 \
 		stretchr:objx:v0.1.1:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		tdakkota:asciicheck:d7f85be797a2:tdakkota_asciicheck/vendor/github.com/tdakkota/asciicheck \
-		tetafro:godot:v1.3.2:tetafro_godot/vendor/github.com/tetafro/godot \
+		tetafro:godot:v1.4.3:tetafro_godot/vendor/github.com/tetafro/godot \
 		timakin:bodyclose:f7f2e9bca95e:timakin_bodyclose/vendor/github.com/timakin/bodyclose \
 		tomarrell:wrapcheck:df9e8bcb914d:tomarrell_wrapcheck/vendor/github.com/tomarrell/wrapcheck \
-		tommy-muehle:go-mnd:16041ac3fe65:tommy_muehle_go_mnd/vendor/github.com/tommy-muehle/go-mnd \
+		tommy-muehle:go-mnd:v2.3.1:tommy_muehle_go_mnd_v2/vendor/github.com/tommy-muehle/go-mnd/v2 \
 		ultraware:funlen:v0.0.3:ultraware_funlen/vendor/github.com/ultraware/funlen \
 		ultraware:whitespace:v0.0.4:ultraware_whitespace/vendor/github.com/ultraware/whitespace \
 		uudashr:gocognit:v1.0.1:uudashr_gocognit/vendor/github.com/uudashr/gocognit \
 		valyala:bytebufferpool:v1.0.0:valyala_bytebufferpool/vendor/github.com/valyala/bytebufferpool \
 		valyala:quicktemplate:v1.6.3:valyala_quicktemplate/vendor/github.com/valyala/quicktemplate
-
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_COMMIT=	1da5701
+_BUILD_COMMIT=	6c25d06
 _BUILD_DATE=	$$(date -u "+%Y-%m-%dT%H:%M:%SZ")
 
 GO_TARGET=	./cmd/${PORTNAME}
