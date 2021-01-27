@@ -188,7 +188,7 @@ CXXFLAGS+=	-Wno-c++11-narrowing
 
 # Plugin innodb_memcached requires -fcommon to avoid duplicate symbol linker
 # error with llmv11.
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300109
+.if (${OPSYS} == FreeBSD && ${OSVERSION} >= 1300109) || ${CHOSEN_COMPILER_TYPE} == gcc
 CFLAGS+=	-fcommon
 .endif
 
