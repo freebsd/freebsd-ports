@@ -2,34 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	powder
-PORTVERSION=	115
-PORTREVISION=	3
+PORTVERSION=	118
 CATEGORIES=	games
 MASTER_SITES=	http://www.zincland.com/powder/release/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical dungeon crawling game
 
+LICENSE=	POWDER
+LICENSE_NAME=	THE POWDER LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
+LICENSE_PERMS=	dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
+
 USES=		gmake sdl
 USE_SDL=	sdl
 USE_CXXSTD=	c++98
-MAKE_JOBS_UNSAFE=yes
-
-BUILD_WRKSRC=	${WRKSRC}/port/linux
 
 PLIST_FILES=	bin/powder
-PORTDOCS=	README.TXT LICENSE.TXT CREDITS.TXT
+PORTDOCS=	README.TXT CREDITS.TXT
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|bin/bash|bin/sh|' \
-		${WRKSRC}/rooms/buildrooms.bash \
-		${WRKSRC}/gfx/rebuild.sh
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' \
-		${BUILD_WRKSRC}/Makefile
+do-build:
+	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${SH} buildall.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/powder ${STAGEDIR}${PREFIX}/bin/
