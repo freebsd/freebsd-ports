@@ -11,6 +11,9 @@ MASTER_SITES=	http://people.debian.org/~godisch/wmwork/ \
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Dockapp that keeps track of time you have spent on something
 
+BROKEN_FreeBSD_13=	duplicate symbol: display
+BROKEN_FreeBSD_14=	duplicate symbol: display
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USES=		gmake xorg
