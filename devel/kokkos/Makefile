@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kokkos
-DISTVERSION=	3.3.00
+DISTVERSION=	3.3.01
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
