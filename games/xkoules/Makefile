@@ -18,6 +18,9 @@ COMMENT=	Fast action arcade-style game for X Window
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	duplicate symbol: controls
+BROKEN_FreeBSD_14=	duplicate symbol: controls
+
 WRKSRC=		${WRKDIR}/${PORTNAME:S/x//}${PORTVERSION}
 
 USES=		imake xorg
