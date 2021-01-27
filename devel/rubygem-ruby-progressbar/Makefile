@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ruby-progressbar
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -13,8 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 CONFLICTS_INSTALL=	${RUBY_PKGNAMEPREFIX}progressbar-*
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+USE_RUBY=	yes
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
