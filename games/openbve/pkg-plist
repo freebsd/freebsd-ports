@@ -428,6 +428,8 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Compatibility/UchiboV1/TunEntS.png
 %%DATADIR%%/Data/Compatibility/UchiboV1/TunSL.csv
 %%DATADIR%%/Data/Compatibility/UchiboV1/TunSR.csv
+%%DATADIR%%/Data/Compatibility/UchiboV1/WallGL.csv
+%%DATADIR%%/Data/Compatibility/UchiboV1/WallGR.csv
 %%DATADIR%%/Data/Compatibility/UchiboV1/concrete.png
 %%DATADIR%%/Data/Compatibility/UchiboV1/mt.png
 %%DATADIR%%/Data/Compatibility/UchiboV1/slab.png
@@ -437,10 +439,18 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Compatibility/Windscreen/Day/drop2.png
 %%DATADIR%%/Data/Compatibility/Windscreen/Day/drop3.png
 %%DATADIR%%/Data/Compatibility/Windscreen/Day/drop4.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Day/flake1.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Day/flake2.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Day/flake3.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Day/flake4.png
 %%DATADIR%%/Data/Compatibility/Windscreen/Night/drop1.png
 %%DATADIR%%/Data/Compatibility/Windscreen/Night/drop2.png
 %%DATADIR%%/Data/Compatibility/Windscreen/Night/drop3.png
 %%DATADIR%%/Data/Compatibility/Windscreen/Night/drop4.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Night/flake1.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Night/flake2.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Night/flake3.png
+%%DATADIR%%/Data/Compatibility/Windscreen/Night/flake4.png
 %%DATADIR%%/Data/Compatibility/exterior.csv
 %%DATADIR%%/Data/Compatibility/needle_hour.png
 %%DATADIR%%/Data/Compatibility/needle_minute.png
