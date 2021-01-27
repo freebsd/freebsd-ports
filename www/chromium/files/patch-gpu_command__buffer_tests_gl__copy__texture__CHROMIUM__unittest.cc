@@ -1,4 +1,4 @@
---- gpu/command_buffer/tests/gl_copy_texture_CHROMIUM_unittest.cc.orig	2020-11-13 06:36:44 UTC
+--- gpu/command_buffer/tests/gl_copy_texture_CHROMIUM_unittest.cc.orig	2021-01-18 21:28:59 UTC
 +++ gpu/command_buffer/tests/gl_copy_texture_CHROMIUM_unittest.cc
 @@ -258,7 +258,7 @@ void getExpectedColorAndMask(GLenum src_internal_forma
  
@@ -9,7 +9,7 @@
        // The alpha channel values for LUMINANCE_ALPHA source don't work OK
        // on Mac or Linux, so skip comparison of those, see crbug.com/926579
        setColor(1, 1, 1, src_internal_format != GL_LUMINANCE_ALPHA,
-@@ -643,8 +643,8 @@ class GLCopyTextureCHROMIUMES3Test : public GLCopyText
+@@ -637,8 +637,8 @@ class GLCopyTextureCHROMIUMES3Test : public GLCopyText
  
    bool ShouldSkipNorm16() const {
      DCHECK(!ShouldSkipTest());
@@ -20,7 +20,7 @@
      (defined(ARCH_CPU_X86) || defined(ARCH_CPU_X86_64))
      // Make sure it's tested; it is safe to assume that the flag is always true
      // on desktop.
-@@ -656,7 +656,7 @@ class GLCopyTextureCHROMIUMES3Test : public GLCopyText
+@@ -650,7 +650,7 @@ class GLCopyTextureCHROMIUMES3Test : public GLCopyText
  
    bool ShouldSkipRGBA16ToRGB10A2() const {
      DCHECK(!ShouldSkipTest());

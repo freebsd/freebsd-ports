@@ -1,6 +1,6 @@
---- BUILD.gn.orig	2020-11-13 06:36:33 UTC
+--- BUILD.gn.orig	2021-01-18 21:28:44 UTC
 +++ BUILD.gn
-@@ -422,7 +422,7 @@ group("gn_all") {
+@@ -424,7 +424,7 @@ group("gn_all") {
      ]
    }
  
@@ -9,7 +9,7 @@
      deps += [
        "//third_party/breakpad:breakpad_unittests",
        "//third_party/breakpad:core-2-minidump",
-@@ -463,8 +463,6 @@ group("gn_all") {
+@@ -467,8 +467,6 @@ group("gn_all") {
        "//net:disk_cache_memory_test",
        "//net:quic_client",
        "//net:quic_server",
@@ -18,7 +18,7 @@
        "//testing:empty_main",
      ]
  
-@@ -519,10 +517,6 @@ group("gn_all") {
+@@ -523,10 +521,6 @@ group("gn_all") {
          "//chrome/test:load_library_perf_tests",
          "//chrome/test:sync_performance_tests",
          "//chrome/test/chromedriver:chromedriver",
@@ -29,7 +29,7 @@
          "//media/cast:generate_barcode_video",
          "//media/cast:generate_timecode_audio",
          "//net:crash_cache",
-@@ -582,10 +576,6 @@ group("gn_all") {
+@@ -586,10 +580,6 @@ group("gn_all") {
        "//mojo:mojo_perftests",
        "//services/service_manager/public/cpp",
        "//testing/gmock:gmock_main",
@@ -40,7 +40,7 @@
      ]
  
      if (!is_android) {
-@@ -663,7 +653,7 @@ group("gn_all") {
+@@ -667,7 +657,7 @@ group("gn_all") {
          host_os == "win") {
        deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
      }
@@ -49,16 +49,16 @@
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -678,7 +668,7 @@ group("gn_all") {
+@@ -682,7 +672,7 @@ group("gn_all") {
      }
    }
  
--  if (is_mac || is_win || is_android || (is_linux && !is_chromeos)) {
-+  if (is_mac || is_win || is_android || (is_linux && !is_chromeos && !is_bsd)) {
+-  if (is_mac || is_win || is_android || is_linux || is_chromeos) {
++  if (is_mac || is_win || is_android || (is_linux && !is_bsd) || is_chromeos) {
      deps += [
        "//third_party/crashpad/crashpad:crashpad_tests",
        "//third_party/crashpad/crashpad/handler:crashpad_handler",
-@@ -797,7 +787,6 @@ group("gn_all") {
+@@ -802,7 +792,6 @@ group("gn_all") {
        "//chrome/browser/vr:vr_common_perftests",
        "//chrome/browser/vr:vr_common_unittests",
        "//chrome/browser/vr:vr_pixeltests",
@@ -84,7 +84,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1296,9 +1285,6 @@ group("chromium_builder_perf") {
+@@ -1320,9 +1309,6 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

@@ -1,6 +1,6 @@
---- chrome/browser/BUILD.gn.orig	2020-11-13 06:36:36 UTC
+--- chrome/browser/BUILD.gn.orig	2021-01-18 21:28:49 UTC
 +++ chrome/browser/BUILD.gn
-@@ -4999,7 +4999,7 @@ static_library("browser") {
+@@ -5161,7 +5161,7 @@ static_library("browser") {
      ]
    }
  

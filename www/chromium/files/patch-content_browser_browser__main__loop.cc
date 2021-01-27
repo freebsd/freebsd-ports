@@ -1,6 +1,6 @@
---- content/browser/browser_main_loop.cc.orig	2020-11-13 06:36:42 UTC
+--- content/browser/browser_main_loop.cc.orig	2021-01-18 21:28:57 UTC
 +++ content/browser/browser_main_loop.cc
-@@ -367,7 +367,7 @@ std::unique_ptr<base::MemoryPressureMonitor> CreateMem
+@@ -366,7 +366,7 @@ std::unique_ptr<base::MemoryPressureMonitor> CreateMem
    if (chromeos::switches::MemoryPressureHandlingEnabled())
      monitor = std::make_unique<util::MultiSourceMemoryPressureMonitor>();
  #elif defined(OS_MAC) || defined(OS_WIN) || defined(OS_FUCHSIA) || \

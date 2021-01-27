@@ -1,4 +1,4 @@
---- base/allocator/allocator_shim_unittest.cc.orig	2020-11-13 06:36:34 UTC
+--- base/allocator/allocator_shim_unittest.cc.orig	2021-01-18 21:28:44 UTC
 +++ base/allocator/allocator_shim_unittest.cc
 @@ -367,7 +367,7 @@ TEST_F(AllocatorShimTest, InterceptLibcSymbols) {
  
@@ -36,12 +36,12 @@
  
  #if !defined(OS_WIN)
    free(posix_memalign_ptr);
-@@ -595,7 +595,7 @@ static size_t GetAllocatedSize(void* ptr) {
- static size_t GetAllocatedSize(void* ptr) {
+@@ -595,7 +595,7 @@ static size_t GetUsableSize(void* ptr) {
+ static size_t GetUsableSize(void* ptr) {
    return malloc_size(ptr);
  }
 -#elif defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#elif defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
- static size_t GetAllocatedSize(void* ptr) {
+ static size_t GetUsableSize(void* ptr) {
    return malloc_usable_size(ptr);
  }

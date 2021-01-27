@@ -1,6 +1,6 @@
---- net/base/network_change_notifier.cc.orig	2020-11-13 06:36:45 UTC
+--- net/base/network_change_notifier.cc.orig	2021-01-18 21:29:01 UTC
 +++ net/base/network_change_notifier.cc
-@@ -36,7 +36,7 @@
+@@ -35,7 +35,7 @@
  #include "net/base/network_change_notifier_linux.h"
  #elif defined(OS_APPLE)
  #include "net/base/network_change_notifier_mac.h"

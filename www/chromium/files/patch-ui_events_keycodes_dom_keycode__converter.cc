@@ -1,6 +1,6 @@
---- ui/events/keycodes/dom/keycode_converter.cc.orig	2020-11-13 06:37:05 UTC
+--- ui/events/keycodes/dom/keycode_converter.cc.orig	2021-01-18 21:29:48 UTC
 +++ ui/events/keycodes/dom/keycode_converter.cc
-@@ -20,7 +20,7 @@ namespace {
+@@ -24,7 +24,7 @@ namespace {
  #if defined(OS_WIN)
  #define DOM_CODE(usb, evdev, xkb, win, mac, code, id) \
    { usb, win, code }

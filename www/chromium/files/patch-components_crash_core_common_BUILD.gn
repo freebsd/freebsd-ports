@@ -1,4 +1,4 @@
---- components/crash/core/common/BUILD.gn.orig	2020-11-13 06:36:40 UTC
+--- components/crash/core/common/BUILD.gn.orig	2021-01-18 21:28:55 UTC
 +++ components/crash/core/common/BUILD.gn
 @@ -7,7 +7,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
  
@@ -29,7 +29,7 @@
    } else {
      include_dirs = [ "//third_party/breakpad/breakpad/src" ]
  
-@@ -184,7 +186,7 @@ source_set("unit_tests") {
+@@ -185,7 +187,7 @@ source_set("unit_tests") {
      sources += [ "crash_key_breakpad_ios_unittest.cc" ]
      deps += [ "//third_party/breakpad:client" ]
      include_dirs = [ "//third_party/breakpad/breakpad/src/" ]

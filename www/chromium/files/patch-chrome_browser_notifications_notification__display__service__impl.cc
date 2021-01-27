@@ -1,4 +1,4 @@
---- chrome/browser/notifications/notification_display_service_impl.cc.orig	2020-11-13 06:36:37 UTC
+--- chrome/browser/notifications/notification_display_service_impl.cc.orig	2021-01-18 21:28:50 UTC
 +++ chrome/browser/notifications/notification_display_service_impl.cc
 @@ -29,7 +29,7 @@
  #include "chrome/browser/extensions/api/notifications/extension_notification_handler.h"
@@ -9,7 +9,7 @@
      defined(OS_WIN)
  #include "chrome/browser/send_tab_to_self/desktop_notification_handler.h"
  #include "chrome/browser/sharing/sharing_notification_handler.h"
-@@ -57,7 +57,7 @@ NotificationDisplayServiceImpl* NotificationDisplaySer
+@@ -63,7 +63,7 @@ NotificationDisplayServiceImpl* NotificationDisplaySer
  // static
  void NotificationDisplayServiceImpl::RegisterProfilePrefs(
      user_prefs::PrefRegistrySyncable* registry) {
@@ -18,7 +18,7 @@
    registry->RegisterBooleanPref(prefs::kAllowNativeNotifications, true);
  #endif
  }
-@@ -72,7 +72,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
+@@ -78,7 +78,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
      AddNotificationHandler(NotificationHandler::Type::WEB_PERSISTENT,
                             std::make_unique<PersistentNotificationHandler>());
  

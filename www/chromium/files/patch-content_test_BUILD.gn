@@ -1,6 +1,6 @@
---- content/test/BUILD.gn.orig	2020-11-13 06:36:43 UTC
+--- content/test/BUILD.gn.orig	2021-01-18 21:28:58 UTC
 +++ content/test/BUILD.gn
-@@ -1402,10 +1402,12 @@ test("content_browsertests") {
+@@ -1443,10 +1443,12 @@ test("content_browsertests") {
    }
  
    if (is_linux || is_chromeos) {
@@ -14,10 +14,10 @@
 +        "../browser/zygote_host/zygote_browsertest.cc",
 +      ]
 +    }
-     deps += [
-       "//services/service_manager/tests:interfaces",
-       "//ui/gfx:test_support",
-@@ -1625,7 +1627,7 @@ static_library("run_all_unittests") {
+     deps += [ "//ui/gfx:test_support" ]
+ 
+     if (use_atk) {
+@@ -1685,7 +1687,7 @@ static_library("run_all_unittests") {
      ":test_support",
      "//base/test:test_support",
    ]
@@ -26,3 +26,12 @@
      deps += [ "//content/common:set_process_title_linux" ]
    }
  }
+@@ -2510,7 +2512,7 @@ test("content_unittests") {
+     deps += [ "//ui/gfx/x" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [ "../common/set_process_title_linux_unittest.cc" ]
+     deps += [ "//content/common:set_process_title_linux" ]
+   }

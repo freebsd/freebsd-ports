@@ -1,6 +1,6 @@
---- chrome/test/base/chrome_test_launcher.cc.orig	2020-11-13 06:36:38 UTC
+--- chrome/test/base/chrome_test_launcher.cc.orig	2021-01-18 21:28:52 UTC
 +++ chrome/test/base/chrome_test_launcher.cc
-@@ -61,7 +61,7 @@
+@@ -60,7 +60,7 @@
  #endif
  
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/first_run/scoped_relaunch_chrome_browser_override.h"
  #include "chrome/browser/upgrade_detector/installed_version_poller.h"
  #include "testing/gtest/include/gtest/gtest.h"
-@@ -79,7 +79,7 @@ int ChromeTestSuiteRunner::RunTestSuite(int argc, char
+@@ -75,7 +75,7 @@ int ChromeTestSuiteRunner::RunTestSuite(int argc, char
    content::ContentTestSuiteBase::RegisterInProcessThreads();
  #endif
  #if defined(OS_WIN) || defined(OS_MAC) || \
@@ -18,7 +18,7 @@
    InstalledVersionPoller::ScopedDisableForTesting disable_polling(
        InstalledVersionPoller::MakeScopedDisableForTesting());
  #endif
-@@ -201,7 +201,7 @@ int LaunchChromeTests(size_t parallel_jobs,
+@@ -198,7 +198,7 @@ int LaunchChromeTests(size_t parallel_jobs,
    if (command_line.HasSwitch(switches::kLaunchAsBrowser))
      sampling_profiler = std::make_unique<MainThreadStackSamplingProfiler>();
  
@@ -27,7 +27,7 @@
    ChromeCrashReporterClient::Create();
  #elif defined(OS_WIN)
    // We leak this pointer intentionally. The crash client needs to outlive
-@@ -229,7 +229,7 @@ int LaunchChromeTests(size_t parallel_jobs,
+@@ -226,7 +226,7 @@ int LaunchChromeTests(size_t parallel_jobs,
    }
  
  #if defined(OS_WIN) || defined(OS_MAC) || \

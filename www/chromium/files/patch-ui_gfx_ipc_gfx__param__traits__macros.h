@@ -1,4 +1,4 @@
---- ui/gfx/ipc/gfx_param_traits_macros.h.orig	2020-11-13 06:37:06 UTC
+--- ui/gfx/ipc/gfx_param_traits_macros.h.orig	2021-01-18 21:29:48 UTC
 +++ ui/gfx/ipc/gfx_param_traits_macros.h
 @@ -18,7 +18,7 @@
  #include "ui/gfx/selection_bound.h"
@@ -17,7 +17,7 @@
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    IPC_STRUCT_TRAITS_MEMBER(native_pixmap_handle)
  #elif defined(OS_APPLE)
-   IPC_STRUCT_TRAITS_MEMBER(mach_port)
+   IPC_STRUCT_TRAITS_MEMBER(io_surface)
 @@ -63,12 +63,12 @@ IPC_STRUCT_TRAITS_BEGIN(gfx::GpuMemoryBufferId)
    IPC_STRUCT_TRAITS_MEMBER(id)
  IPC_STRUCT_TRAITS_END()

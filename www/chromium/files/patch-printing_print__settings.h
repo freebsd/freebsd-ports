@@ -1,6 +1,6 @@
---- printing/print_settings.h.orig	2020-11-13 06:36:46 UTC
+--- printing/print_settings.h.orig	2021-01-18 21:29:02 UTC
 +++ printing/print_settings.h
-@@ -19,11 +19,11 @@
+@@ -20,11 +20,11 @@
  #include "ui/gfx/geometry/rect.h"
  #include "ui/gfx/geometry/size.h"
  
@@ -14,7 +14,7 @@
  
  namespace printing {
  
-@@ -80,9 +80,9 @@ class PRINTING_EXPORT PrintSettings {
+@@ -81,9 +81,9 @@ class PRINTING_EXPORT PrintSettings {
      }
    };
  
@@ -26,7 +26,7 @@
  
    PrintSettings();
    PrintSettings(const PrintSettings&) = delete;
-@@ -221,12 +221,12 @@ class PRINTING_EXPORT PrintSettings {
+@@ -222,12 +222,12 @@ class PRINTING_EXPORT PrintSettings {
      pages_per_sheet_ = pages_per_sheet;
    }
  
@@ -39,9 +39,9 @@
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
- #if defined(OS_CHROMEOS)
+ #if BUILDFLAG(IS_ASH)
    void set_send_user_info(bool send_user_info) {
-@@ -320,10 +320,10 @@ class PRINTING_EXPORT PrintSettings {
+@@ -321,10 +321,10 @@ class PRINTING_EXPORT PrintSettings {
    // Number of pages per sheet.
    int pages_per_sheet_;
  
@@ -52,5 +52,5 @@
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
- #if defined(OS_CHROMEOS)
+ #if BUILDFLAG(IS_ASH)
    // Whether to send user info.

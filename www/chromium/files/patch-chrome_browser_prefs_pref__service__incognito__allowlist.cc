@@ -1,6 +1,6 @@
---- chrome/browser/prefs/pref_service_incognito_allowlist.cc.orig	2020-11-13 06:36:37 UTC
+--- chrome/browser/prefs/pref_service_incognito_allowlist.cc.orig	2021-01-18 21:28:50 UTC
 +++ chrome/browser/prefs/pref_service_incognito_allowlist.cc
-@@ -135,7 +135,7 @@ const char* const kPersistentPrefNames[] = {
+@@ -136,7 +136,7 @@ const char* const kPersistentPrefNames[] = {
      prefs::kShowFullscreenToolbar,
  #endif
  

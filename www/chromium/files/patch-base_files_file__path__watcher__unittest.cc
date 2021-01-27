@@ -1,6 +1,6 @@
---- base/files/file_path_watcher_unittest.cc.orig	2020-11-13 06:36:34 UTC
+--- base/files/file_path_watcher_unittest.cc.orig	2021-01-18 21:28:44 UTC
 +++ base/files/file_path_watcher_unittest.cc
-@@ -425,12 +425,12 @@ TEST_F(FilePathWatcherTest, WatchDirectory) {
+@@ -438,12 +438,12 @@ TEST_F(FilePathWatcherTest, WatchDirectory) {
    VLOG(1) << "Waiting for file1 creation";
    ASSERT_TRUE(WaitForEvents());
  
@@ -15,7 +15,7 @@
  
    ASSERT_TRUE(base::DeleteFile(file1));
    VLOG(1) << "Waiting for file1 deletion";
-@@ -632,7 +632,7 @@ TEST_F(FilePathWatcherTest, FileAttributesChanged) {
+@@ -650,7 +650,7 @@ TEST_F(FilePathWatcherTest, FileAttributesChanged) {
    ASSERT_TRUE(WaitForEvents());
  }
  
@@ -24,7 +24,7 @@
  
  // Verify that creating a symlink is caught.
  TEST_F(FilePathWatcherTest, CreateLink) {
-@@ -790,7 +790,7 @@ TEST_F(FilePathWatcherTest, LinkedDirectoryPart3) {
+@@ -816,7 +816,7 @@ TEST_F(FilePathWatcherTest, LinkedDirectoryPart3) {
    ASSERT_TRUE(WaitForEvents());
  }
  
@@ -33,7 +33,7 @@
  
  enum Permission {
    Read,
-@@ -798,7 +798,7 @@ enum Permission {
+@@ -824,7 +824,7 @@ enum Permission {
    Execute
  };
  
@@ -42,7 +42,7 @@
  bool ChangeFilePermissions(const FilePath& path, Permission perm, bool allow) {
    struct stat stat_buf;
  
-@@ -827,9 +827,9 @@ bool ChangeFilePermissions(const FilePath& path, Permi
+@@ -853,9 +853,9 @@ bool ChangeFilePermissions(const FilePath& path, Permi
    }
    return chmod(path.value().c_str(), stat_buf.st_mode) == 0;
  }
@@ -54,12 +54,12 @@
  // Linux implementation of FilePathWatcher doesn't catch attribute changes.
  // http://crbug.com/78043
  // Windows implementation of FilePathWatcher catches attribute changes that
-@@ -864,7 +864,7 @@ TEST_F(FilePathWatcherTest, DirAttributesChanged) {
+@@ -891,7 +891,7 @@ TEST_F(FilePathWatcherTest, DirAttributesChanged) {
    ASSERT_TRUE(ChangeFilePermissions(test_dir1, Execute, true));
  }
  
 -#endif  // OS_APPLE
 +#endif  // OS_APPLE || OS_BSD
- }  // namespace
  
- }  // namespace base
+ #if defined(OS_MAC)
+ 

@@ -1,4 +1,4 @@
---- media/base/video_frame.cc.orig	2020-11-13 06:36:44 UTC
+--- media/base/video_frame.cc.orig	2021-01-18 21:29:00 UTC
 +++ media/base/video_frame.cc
 @@ -60,7 +60,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
@@ -36,16 +36,16 @@
  
  // static
  bool VideoFrame::IsValidConfig(VideoPixelFormat format,
-@@ -607,7 +607,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
-   }
- 
+@@ -612,7 +612,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
+   for (size_t i = 0; i < num_planes; ++i)
+     planes[i].stride = gpu_memory_buffer->stride(i);
    uint64_t modifier = gfx::NativePixmapHandle::kNoModifier;
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    if (gpu_memory_buffer->GetType() == gfx::NATIVE_PIXMAP) {
      const auto gmb_handle = gpu_memory_buffer->CloneHandle();
      if (gmb_handle.is_null() ||
-@@ -645,7 +645,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
+@@ -657,7 +657,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
    return frame;
  }
  
@@ -54,7 +54,7 @@
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -847,7 +847,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
+@@ -858,7 +858,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
      }
    }
  
@@ -63,7 +63,7 @@
    DCHECK(frame->dmabuf_fds_);
    // If there are any |dmabuf_fds_| plugged in, we should refer them too.
    wrapping_frame->dmabuf_fds_ = frame->dmabuf_fds_;
-@@ -1190,7 +1190,7 @@ VideoFrame::mailbox_holder(size_t texture_index) const
+@@ -1198,7 +1198,7 @@ VideoFrame::mailbox_holder(size_t texture_index) const
                          : mailbox_holders_[texture_index];
  }
  
@@ -72,7 +72,7 @@
  const std::vector<base::ScopedFD>& VideoFrame::DmabufFds() const {
    DCHECK_EQ(storage_type_, STORAGE_DMABUFS);
  
-@@ -1273,7 +1273,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
+@@ -1281,7 +1281,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
        storage_type_(storage_type),
        visible_rect_(Intersection(visible_rect, gfx::Rect(layout.coded_size()))),
        natural_size_(natural_size),

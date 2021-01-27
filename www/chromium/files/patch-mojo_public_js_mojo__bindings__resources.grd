@@ -1,11 +1,11 @@
---- mojo/public/js/mojo_bindings_resources.grd.orig	2020-11-13 06:36:45 UTC
+--- mojo/public/js/mojo_bindings_resources.grd.orig	2021-01-18 21:29:01 UTC
 +++ mojo/public/js/mojo_bindings_resources.grd
-@@ -59,7 +59,7 @@
-           file="${root_gen_dir}/mojo/public/mojom/base/text_direction.mojom-lite.js"
+@@ -80,7 +80,7 @@
            use_base_dir="false"
+           resource_path="mojo/mojo/public/mojom/base/text_direction.mojom-lite.js"
            type="BINDATA" />
 -      <if expr="is_win or is_macosx or is_linux or is_android">
 +      <if expr="is_win or is_macosx or is_posix or is_android">
-         <include name="IDR_MOJO_TIME_MOJOM_HTML"
-             file="${root_gen_dir}/mojo/public/mojom/base/time.mojom.html"
+         <include name="IDR_MOJO_PROCESS_ID_MOJOM_WEBUI_JS"
+             file="${root_gen_dir}/mojom-webui/mojo/public/mojom/base/process_id.mojom-webui.js"
              use_base_dir="false"

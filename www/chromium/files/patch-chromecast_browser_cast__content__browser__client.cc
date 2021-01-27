@@ -1,7 +1,7 @@
---- chromecast/browser/cast_content_browser_client.cc.orig	2020-11-13 06:36:40 UTC
+--- chromecast/browser/cast_content_browser_client.cc.orig	2021-01-18 21:28:54 UTC
 +++ chromecast/browser/cast_content_browser_client.cc
 @@ -130,9 +130,9 @@
- #include "chromecast/external_mojo/broker_service/broker_service.h"
+ #include "chromecast/external_mojo/broker_service/broker_service.h"  // nogncheck
  #endif
  
 -#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(USE_OZONE)
@@ -12,7 +12,7 @@
  
  #if BUILDFLAG(ENABLE_CAST_RENDERER)
  #include "base/sequenced_task_runner.h"
-@@ -472,7 +472,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
+@@ -471,7 +471,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
                                            switches::kAudioOutputChannels));
      }
    } else if (process_type == switches::kGpuProcess) {

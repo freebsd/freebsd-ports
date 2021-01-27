@@ -1,4 +1,4 @@
---- base/files/file_path_watcher_stub.cc.orig	2020-11-13 06:36:34 UTC
+--- base/files/file_path_watcher_stub.cc.orig	2021-01-18 21:28:44 UTC
 +++ base/files/file_path_watcher_stub.cc
 @@ -1,14 +1,15 @@
 -// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -22,17 +22,17 @@
  
 @@ -22,12 +23,29 @@ class FilePathWatcherImpl : public FilePathWatcher::Pl
    bool Watch(const FilePath& path,
-              bool recursive,
+              Type type,
               const FilePathWatcher::Callback& callback) override {
 +#if defined(OS_BSD)
 +    DCHECK(!impl_.get());
-+    if (recursive) {
++    if (type == Type::kRecursive) {
 +      return false;
 +    } else {
 +      impl_ = std::make_unique<FilePathWatcherKQueue>();
 +    }
 +    DCHECK(impl_.get());
-+    return impl_->Watch(path, recursive, callback);
++    return impl_->Watch(path, type, callback);
 +#else
      return false;
 +#endif

@@ -1,6 +1,6 @@
---- services/network/public/cpp/cert_verifier/cert_verifier_creation.cc.orig	2020-11-13 06:36:46 UTC
+--- services/network/public/cpp/cert_verifier/cert_verifier_creation.cc.orig	2021-01-18 21:29:02 UTC
 +++ services/network/public/cpp/cert_verifier/cert_verifier_creation.cc
-@@ -70,7 +70,7 @@ scoped_refptr<net::CertVerifyProc> CreateCertVerifyPro
+@@ -71,7 +71,7 @@ scoped_refptr<net::CertVerifyProc> CreateCertVerifyPro
  
  bool IsUsingCertNetFetcher() {
  #if defined(OS_ANDROID) || defined(OS_FUCHSIA) || defined(OS_CHROMEOS) || \

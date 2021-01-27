@@ -1,6 +1,6 @@
---- chrome/common/features.gni.orig	2020-11-13 06:36:38 UTC
+--- chrome/common/features.gni.orig	2021-01-18 21:28:52 UTC
 +++ chrome/common/features.gni
-@@ -51,7 +51,7 @@ declare_args() {
+@@ -52,7 +52,7 @@ declare_args() {
    enable_one_click_signin =
        is_win || is_mac || (is_linux && !is_chromeos && !is_chromecast)
  

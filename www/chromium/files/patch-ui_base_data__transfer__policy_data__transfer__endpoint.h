@@ -1,14 +1,14 @@
---- ui/base/clipboard/clipboard_data_endpoint.h.orig	2020-11-16 14:59:26 UTC
-+++ ui/base/clipboard/clipboard_data_endpoint.h
-@@ -15,9 +15,9 @@ namespace ui {
- // destination trying to read the clipboard data.
- // Whenever a new format is supported, a new enum should be added.
+--- ui/base/data_transfer_policy/data_transfer_endpoint.h.orig	2021-01-19 11:52:05 UTC
++++ ui/base/data_transfer_policy/data_transfer_endpoint.h
+@@ -17,9 +17,9 @@ namespace ui {
  enum class EndpointType {
+   kDefault = 0,  // This type shouldn't be used if any of the following types is
+                  // a better match.
 -#if defined(OS_CHROMEOS) || (OS_LINUX) || (OS_FUCHSIA)
 +#if defined(OS_CHROMEOS) || (OS_LINUX) || (OS_FUCHSIA) || defined(OS_BSD)
-   kGuestOs = 0,  // Guest OS: PluginVM, Crostini.
+   kGuestOs = 1,  // Guest OS: PluginVM, Crostini.
 -#endif           // defined(OS_CHROMEOS) || (OS_LINUX) || (OS_FUCHSIA)
 +#endif           // defined(OS_CHROMEOS) || (OS_LINUX) || (OS_FUCHSIA) || defined(OS_BSD)
  #if defined(OS_CHROMEOS)
-   kArc = 1,               // ARC.
+   kArc = 2,               // ARC.
  #endif                    // defined(OS_CHROMEOS)

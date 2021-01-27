@@ -1,6 +1,15 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2020-11-13 06:36:38 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2021-01-18 21:28:51 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -246,12 +246,12 @@
+@@ -241,7 +241,7 @@
+ #include "chrome/browser/ui/webui/app_launcher_page_ui.h"
+ #endif
+ 
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+ #include "chrome/browser/ui/webui/webui_js_exception/webui_js_exception_ui.h"
+ #endif
+ 
+@@ -262,12 +262,12 @@
  #include "chrome/browser/ui/webui/conflicts/conflicts_ui.h"
  #endif
  
@@ -15,7 +24,7 @@
      defined(OS_ANDROID)
  #include "chrome/browser/ui/webui/sandbox/sandbox_internals_ui.h"
  #endif
-@@ -425,7 +425,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -473,7 +473,7 @@ bool IsAboutUI(const GURL& url) {
  #if !defined(OS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif
@@ -24,7 +33,16 @@
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if defined(OS_CHROMEOS)
-@@ -816,7 +816,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -808,7 +808,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+   }
+ #endif  // !defined(OFFICIAL_BUILD)
+ #endif  // defined(OS_CHROMEOS)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   if (url.host_piece() == chrome::kChromeUIWebUIJsExceptionHost)
+     return &NewWebUI<WebUIJsExceptionUI>;
+ #endif
+@@ -876,7 +876,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -33,7 +51,7 @@
      defined(USE_AURA)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
      return &NewWebUI<ConstrainedWebDialogUI>;
-@@ -865,19 +865,19 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -920,19 +920,19 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
      return &NewWebUI<media_router::MediaRouterInternalsUI>;
    }
  #endif

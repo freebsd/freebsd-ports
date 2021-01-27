@@ -1,6 +1,6 @@
---- content/shell/BUILD.gn.orig	2020-11-13 06:36:43 UTC
+--- content/shell/BUILD.gn.orig	2021-01-18 21:28:58 UTC
 +++ content/shell/BUILD.gn
-@@ -94,7 +94,7 @@ static_library("content_shell_app") {
+@@ -86,7 +86,7 @@ static_library("content_shell_app") {
        "//content/web_test:web_test_renderer",
      ]
    }
@@ -9,7 +9,7 @@
      deps += [
        "//components/crash/core/app",
        "//components/crash/core/app:test_support",
-@@ -253,7 +253,7 @@ static_library("content_shell_lib") {
+@@ -266,7 +266,7 @@ static_library("content_shell_lib") {
  
    if (is_fuchsia) {
      deps += [ "//third_party/fuchsia-sdk/sdk/fidl/fuchsia.ui.policy" ]
@@ -18,7 +18,7 @@
      deps += [
        "//components/crash/content/browser",
        "//components/crash/core/app",
-@@ -505,7 +505,7 @@ if (is_android) {
+@@ -517,7 +517,7 @@ if (is_android) {
        }
      }
  
@@ -27,7 +27,7 @@
        data_deps +=
            [ "//third_party/crashpad/crashpad/handler:crashpad_handler" ]
      }
-@@ -789,7 +789,7 @@ group("content_shell_crash_test") {
+@@ -801,7 +801,7 @@ group("content_shell_crash_test") {
        mac_bin_path + "otool",
      ]
    }
@@ -36,7 +36,7 @@
      data += [
        "//components/crash/content/tools/generate_breakpad_symbols.py",
        "//components/crash/content/tools/dmp2minidump.py",
-@@ -798,7 +798,7 @@ group("content_shell_crash_test") {
+@@ -810,7 +810,7 @@ group("content_shell_crash_test") {
    if (is_win) {
      data_deps += [ "//build/win:copy_cdb_to_output" ]
    }

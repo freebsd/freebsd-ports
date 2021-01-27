@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2020-11-13 06:36:38 UTC
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view.cc.orig	2021-01-18 21:28:51 UTC
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view.cc
 @@ -49,7 +49,7 @@
  #include "ui/views/window/vector_icons/vector_icons.h"
@@ -18,7 +18,7 @@
    return FrameButtonStyle::kMdButton;
  #else
    return FrameButtonStyle::kImageButton;
-@@ -657,7 +657,7 @@ gfx::Rect OpaqueBrowserFrameView::IconBounds() const {
+@@ -659,7 +659,7 @@ gfx::Rect OpaqueBrowserFrameView::IconBounds() const {
  }
  
  void OpaqueBrowserFrameView::WindowIconPressed() {

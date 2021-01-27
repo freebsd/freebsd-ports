@@ -1,15 +1,6 @@
---- printing/print_settings_conversion.cc.orig	2020-11-16 14:49:24 UTC
+--- printing/print_settings_conversion.cc.orig	2021-01-18 21:29:02 UTC
 +++ printing/print_settings_conversion.cc
-@@ -182,7 +182,7 @@ std::unique_ptr<PrintSettings> PrintSettingsFromJobSet
-     return nullptr;
-   }
- 
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
-   base::Optional<int> dpi_horizontal =
-       job_settings.FindIntKey(kSettingDpiHorizontal);
-   base::Optional<int> dpi_vertical =
-@@ -212,14 +212,14 @@ std::unique_ptr<PrintSettings> PrintSettingsFromJobSet
+@@ -211,14 +211,14 @@ std::unique_ptr<PrintSettings> PrintSettingsFromJobSet
  #endif
    }
  
@@ -24,5 +15,5 @@
 -#endif  // defined(OS_CHROMEOS) || (defined(OS_LINUX) && defined(USE_CUPS))
 +#endif  // defined(OS_CHROMEOS) || ((defined(OS_LINUX) || defined(OS_BSD)) && defined(USE_CUPS))
  
- #if defined(OS_CHROMEOS)
+ #if BUILDFLAG(IS_ASH)
    bool send_user_info =

@@ -1,4 +1,4 @@
---- base/system/sys_info_unittest.cc.orig	2020-11-16 14:01:04 UTC
+--- base/system/sys_info_unittest.cc.orig	2021-01-18 21:28:45 UTC
 +++ base/system/sys_info_unittest.cc
 @@ -50,13 +50,13 @@ TEST_F(SysInfoTest, AmountOfMem) {
    EXPECT_GE(SysInfo::AmountOfVirtualMemory(), 0);
@@ -24,18 +24,18 @@
 -#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
 +#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSDD)
  
- #if defined(OS_FUCHSIA)
- // TODO(crbug.com/851734): Implementation depends on statvfs, which is not
-@@ -117,7 +117,7 @@ TEST_F(SysInfoTest, MAYBE_AmountOfTotalDiskSpace) {
-   EXPECT_GT(SysInfo::AmountOfTotalDiskSpace(tmp_path), 0) << tmp_path.value();
+ TEST_F(SysInfoTest, AmountOfFreeDiskSpace) {
+   // We aren't actually testing that it's correct, just that it's sane.
+@@ -137,7 +137,7 @@ TEST_F(SysInfoTest, NestedVolumesAmountOfTotalDiskSpac
  }
+ #endif  // defined(OS_FUCHSIA)
  
 -#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 +#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) || \
      defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
  TEST_F(SysInfoTest, OperatingSystemVersionNumbers) {
    int32_t os_major_version = -1;
-@@ -178,7 +178,7 @@ TEST_F(SysInfoTest, GetHardwareInfo) {
+@@ -198,7 +198,7 @@ TEST_F(SysInfoTest, GetHardwareInfo) {
    EXPECT_TRUE(IsStringUTF8(hardware_info->model));
    bool empty_result_expected =
  #if defined(OS_ANDROID) || defined(OS_APPLE) || defined(OS_WIN) || \

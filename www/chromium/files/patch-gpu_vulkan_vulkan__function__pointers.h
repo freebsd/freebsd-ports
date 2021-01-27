@@ -1,6 +1,6 @@
---- gpu/vulkan/vulkan_function_pointers.h.orig	2020-11-13 06:36:44 UTC
+--- gpu/vulkan/vulkan_function_pointers.h.orig	2021-01-18 21:28:59 UTC
 +++ gpu/vulkan/vulkan_function_pointers.h
-@@ -236,10 +236,10 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
+@@ -235,10 +235,10 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
        vkGetAndroidHardwareBufferPropertiesANDROID;
  #endif  // defined(OS_ANDROID)
  
@@ -13,7 +13,7 @@
  
  #if defined(OS_WIN)
    VulkanFunction<PFN_vkGetSemaphoreWin32HandleKHR> vkGetSemaphoreWin32HandleKHR;
-@@ -247,10 +247,10 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
+@@ -246,10 +246,10 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
        vkImportSemaphoreWin32HandleKHR;
  #endif  // defined(OS_WIN)
  
@@ -26,7 +26,7 @@
  
  #if defined(OS_WIN)
    VulkanFunction<PFN_vkGetMemoryWin32HandleKHR> vkGetMemoryWin32HandleKHR;
-@@ -955,7 +955,7 @@ ALWAYS_INLINE VkResult vkGetAndroidHardwareBufferPrope
+@@ -954,7 +954,7 @@ ALWAYS_INLINE VkResult vkGetAndroidHardwareBufferPrope
  }
  #endif  // defined(OS_ANDROID)
  
@@ -35,7 +35,7 @@
  ALWAYS_INLINE VkResult
  vkGetSemaphoreFdKHR(VkDevice device,
                      const VkSemaphoreGetFdInfoKHR* pGetFdInfo,
-@@ -969,7 +969,7 @@ ALWAYS_INLINE VkResult vkImportSemaphoreFdKHR(
+@@ -968,7 +968,7 @@ ALWAYS_INLINE VkResult vkImportSemaphoreFdKHR(
    return gpu::GetVulkanFunctionPointers()->vkImportSemaphoreFdKHR(
        device, pImportSemaphoreFdInfo);
  }
@@ -44,7 +44,7 @@
  
  #if defined(OS_WIN)
  ALWAYS_INLINE VkResult vkGetSemaphoreWin32HandleKHR(
-@@ -988,7 +988,7 @@ vkImportSemaphoreWin32HandleKHR(VkDevice device,
+@@ -987,7 +987,7 @@ vkImportSemaphoreWin32HandleKHR(VkDevice device,
  }
  #endif  // defined(OS_WIN)
  
@@ -53,7 +53,7 @@
  ALWAYS_INLINE VkResult vkGetMemoryFdKHR(VkDevice device,
                                          const VkMemoryGetFdInfoKHR* pGetFdInfo,
                                          int* pFd) {
-@@ -1003,7 +1003,7 @@ vkGetMemoryFdPropertiesKHR(VkDevice device,
+@@ -1002,7 +1002,7 @@ vkGetMemoryFdPropertiesKHR(VkDevice device,
    return gpu::GetVulkanFunctionPointers()->vkGetMemoryFdPropertiesKHR(
        device, handleType, fd, pMemoryFdProperties);
  }
@@ -62,7 +62,7 @@
  
  #if defined(OS_WIN)
  ALWAYS_INLINE VkResult vkGetMemoryWin32HandleKHR(
-@@ -1083,4 +1083,4 @@ ALWAYS_INLINE VkResult vkQueuePresentKHR(VkQueue queue
+@@ -1082,4 +1082,4 @@ ALWAYS_INLINE VkResult vkQueuePresentKHR(VkQueue queue
                                                               pPresentInfo);
  }
  

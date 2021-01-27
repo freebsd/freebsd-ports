@@ -1,6 +1,6 @@
---- base/trace_event/process_memory_dump.cc.orig	2020-11-13 06:36:34 UTC
+--- base/trace_event/process_memory_dump.cc.orig	2021-01-18 21:28:45 UTC
 +++ base/trace_event/process_memory_dump.cc
-@@ -95,7 +95,7 @@ size_t ProcessMemoryDump::CountResidentBytes(void* sta
+@@ -100,7 +100,7 @@ size_t ProcessMemoryDump::CountResidentBytes(void* sta
  #if defined(OS_WIN)
    std::unique_ptr<PSAPI_WORKING_SET_EX_INFORMATION[]> vec(
        new PSAPI_WORKING_SET_EX_INFORMATION[max_vec_size]);
