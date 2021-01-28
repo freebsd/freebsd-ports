@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	redeclipse
-PORTVERSION=	1.6.0
+PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -18,10 +17,9 @@ BROKEN_sparc64=	does not build on sparc64
 RUN_DEPENDS=	redeclipse-data>=${PORTVERSION}:games/redeclipse-data
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	red-eclipse
 GH_PROJECT=	base
 
-USES=		gmake
+USES=		gmake pkgconfig
 BUILD_WRKSRC=	${WRKSRC}/src
 
 SUB_FILES=	${PLIST_FILES:Mbin/*:T}
