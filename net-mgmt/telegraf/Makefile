@@ -3,7 +3,7 @@
 
 PORTNAME=	telegraf
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.17.0
+DISTVERSION=	1.17.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -18,6 +18,25 @@ USES=		go:modules
 USE_RC_SUBR=	telegraf
 
 USE_GITHUB=	yes
+
+GO_BUILDFLAGS=	-ldflags "-X main.goos=freebsd -X main.goarch=${ARCH} -X main.version=${DISTVERSION}"
+GO_TARGET=	./cmd/telegraf
+
+SUB_FILES=	telegraf
+SUB_LIST=	TELEGRAF_USER=${TELEGRAF_USER} \
+		TELEGRAF_GROUP=${TELEGRAF_GROUP} \
+		TELEGRAF_LOGDIR=${TELEGRAF_LOGDIR}
+PLIST_SUB=	TELEGRAF_USER=${TELEGRAF_USER} \
+		TELEGRAF_GROUP=${TELEGRAF_GROUP} \
+		TELEGRAF_LOGDIR=${TELEGRAF_LOGDIR}
+
+TELEGRAF_USER=	telegraf
+TELEGRAF_GROUP=	telegraf
+
+USERS=		${TELEGRAF_USER}
+GROUPS=		${TELEGRAF_GROUP}
+
+TELEGRAF_LOGDIR=/var/log/${PORTNAME}
 
 GH_ACCOUNT=	influxdata
 GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT_DEFAULT}
@@ -42,7 +61,7 @@ GH_TUPLE=	\
 		Mellanox:rdmamap:7c3c4763a6ee:mellanox_rdmamap/vendor/github.com/Mellanox/rdmamap \
 		Microsoft:ApplicationInsights-Go:v0.4.2:microsoft_applicationinsights_go/vendor/github.com/Microsoft/ApplicationInsights-Go \
 		Microsoft:go-winio:v0.4.9:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
-		Shopify:sarama:v1.27.1:shopify_sarama/vendor/github.com/Shopify/sarama \
+		Shopify:sarama:v1.27.2:shopify_sarama/vendor/github.com/Shopify/sarama \
 		StackExchange:wmi:5d049714c4a6:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		aerospike:aerospike-client-go:v1.27.0:aerospike_aerospike_client_go/vendor/github.com/aerospike/aerospike-client-go \
 		alecthomas:units:c3de453c63f4:alecthomas_units/vendor/github.com/alecthomas/units \
@@ -75,7 +94,6 @@ GH_TUPLE=	\
 		dgrijalva:jwt-go:v4.0.0-preview1:dgrijalva_jwt_go_v4/vendor/github.com/dgrijalva/jwt-go/v4 \
 		dimchansky:utfbom:v1.1.0:dimchansky_utfbom/vendor/github.com/dimchansky/utfbom \
 		docker:distribution:edc3ab29cdff:docker_distribution/vendor/github.com/docker/distribution \
-		moby:moby:bd33bbf0497b:docker_docker/vendor/github.com/docker/docker \
 		docker:go-connections:v0.3.0:docker_go_connections/vendor/github.com/docker/go-connections \
 		docker:go-units:v0.3.3:docker_go_units/vendor/github.com/docker/go-units \
 		docker:libnetwork:d7b61745d166:docker_libnetwork/vendor/github.com/docker/libnetwork \
@@ -88,13 +106,13 @@ GH_TUPLE=	\
 		fatih:pool:v2.0.0:fatih_pool/vendor/gopkg.in/fatih/pool.v2 \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/gopkg.in/fsnotify.v1 \
 		ghodss:yaml:25d852aebe32:ghodss_yaml/vendor/github.com/ghodss/yaml \
-		glinton:ping:5ac87da8cd96:glinton_ping/vendor/github.com/glinton/ping \
 		go-asn1-ber:asn1-ber:f715ec2f112d:go_asn1_ber_asn1_ber/vendor/gopkg.in/asn1-ber.v1 \
 		go-inf:inf:v0.9.1:go_inf_inf/vendor/gopkg.in/inf.v0 \
 		go-ldap:ldap:v3.1.0:go_ldap_ldap/vendor/gopkg.in/ldap.v3 \
 		go-logfmt:logfmt:v0.4.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
 		go-mgo:mgo:9856a29383ce:go_mgo_mgo/vendor/gopkg.in/mgo.v2 \
 		go-ole:go-ole:v1.2.1:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
+		go-ping:ping:3300c582a663:go_ping_ping/vendor/github.com/go-ping/ping \
 		go-redis:redis:v6.15.9:go_redis_redis/vendor/github.com/go-redis/redis \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-tomb:tomb:d5d1b5820637:go_tomb_tomb_1/vendor/gopkg.in/tomb.v2 \
@@ -104,7 +122,7 @@ GH_TUPLE=	\
 		goburrow:modbus:v0.1.0:goburrow_modbus/vendor/github.com/goburrow/modbus \
 		goburrow:serial:v0.1.0:goburrow_serial/vendor/github.com/goburrow/serial \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
-		gofrs:uuid:v2.1.0:gofrs_uuid_2/vendor/github.com/gofrs/uuid \
+		gofrs:uuid:v2.1.0:gofrs_uuid_1/vendor/github.com/gofrs/uuid \
 		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/satori/go.uuid \
 		gogo:protobuf:65acae22fc9d:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.5:golang_appengine/vendor/google.golang.org/appengine \
@@ -139,6 +157,7 @@ GH_TUPLE=	\
 		rethinkdb:rethinkdb-go:v3.0.5:gorethink_gorethink/vendor/gopkg.in/gorethink/gorethink.v3 \
 		gorilla:context:v1.1.1:gorilla_context/vendor/github.com/gorilla/context \
 		gorilla:mux:v1.6.2:gorilla_mux/vendor/github.com/gorilla/mux \
+		gosnmp:gosnmp:v1.29.0:gosnmp_gosnmp/vendor/github.com/gosnmp/gosnmp \
 		gotestyourself:gotest.tools:v2.2.0:gotestyourself_gotest_tools/vendor/gotest.tools \
 		grpc-ecosystem:grpc-gateway:v1.16.0:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
 		grpc:grpc-go:v1.33.1:grpc_grpc_go/vendor/google.golang.org/grpc \
@@ -189,6 +208,7 @@ GH_TUPLE=	\
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:go-testing-interface:v1.0.0:mitchellh_go_testing_interface/vendor/github.com/mitchellh/go-testing-interface \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
+		moby:moby:bd33bbf0497b:docker_docker/vendor/github.com/docker/docker \
 		morikuni:aec:v1.0.0:morikuni_aec/vendor/github.com/morikuni/aec \
 		multiplay:go-ts3:v1.0.0:multiplay_go_ts3/vendor/github.com/multiplay/go-ts3 \
 		naoina:go-stringutil:v0.1.0:naoina_go_stringutil/vendor/github.com/naoina/go-stringutil \
@@ -197,8 +217,8 @@ GH_TUPLE=	\
 		nats-io:nats.go:v1.9.1:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.1.3:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
-		newrelic:newrelic-telemetry-sdk-go:v0.2.0:newrelic_newrelic_telemetry_sdk_go/vendor/github.com/newrelic/newrelic-telemetry-sdk-go \
-		nsqio:go-nsq:v1.0.7:nsqio_go_nsq/vendor/github.com/nsqio/go-nsq \
+		newrelic:newrelic-telemetry-sdk-go:v0.5.1:newrelic_newrelic_telemetry_sdk_go/vendor/github.com/newrelic/newrelic-telemetry-sdk-go \
+		nsqio:go-nsq:v1.0.8:nsqio_go_nsq/vendor/github.com/nsqio/go-nsq \
 		olivere:elastic:v5.0.70:olivere_elastic/vendor/gopkg.in/olivere/elastic.v5 \
 		openconfig:gnmi:33a1865c3029:openconfig_gnmi/vendor/github.com/openconfig/gnmi \
 		opencontainers:go-digest:v1.0.0-rc1:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
@@ -232,7 +252,7 @@ GH_TUPLE=	\
 		tidwall:pretty:v1.0.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		vishvananda:netlink:b2de5d10e38e:vishvananda_netlink/vendor/github.com/vishvananda/netlink \
 		vishvananda:netns:13995c7128cc:vishvananda_netns/vendor/github.com/vishvananda/netns \
-		vjeantet:grok:v1.0.0:vjeantet_grok/vendor/github.com/vjeantet/grok \
+		vjeantet:grok:v1.0.1:vjeantet_grok/vendor/github.com/vjeantet/grok \
 		vmware:govmomi:v0.19.0:vmware_govmomi/vendor/github.com/vmware/govmomi \
 		wavefronthq:wavefront-sdk-go:v0.9.2:wavefronthq_wavefront_sdk_go/vendor/github.com/wavefronthq/wavefront-sdk-go \
 		WireGuard:wireguard-go:v0.0.20200121:WireGuard_wireguard_go/vendor/golang.zx2c4.com/wireguard \
@@ -246,25 +266,6 @@ GH_TUPLE=	\
 GL_TUPLE=	cznic:libc:b3aa1596bd495d3feff88f563519b18c92b399ce:cznic_libc/vendor/modernc.org/libc \
 		cznic:memory:456baf95175317ca2a91a541bfaba19151a9d817:cznic_memory/vendor/modernc.org/memory \
 		cznic:sqlite:91fc7a88e5cbcb745d181771500efedfd798f2e3:cznic_sqlite/vendor/modernc.org/sqlite
-
-GO_BUILDFLAGS=	-ldflags "-X main.goos=freebsd -X main.goarch=${ARCH} -X main.version=${DISTVERSION}"
-GO_TARGET=	./cmd/telegraf
-
-SUB_FILES=	telegraf
-SUB_LIST=	TELEGRAF_USER=${TELEGRAF_USER} \
-		TELEGRAF_GROUP=${TELEGRAF_GROUP} \
-		TELEGRAF_LOGDIR=${TELEGRAF_LOGDIR}
-PLIST_SUB=	TELEGRAF_USER=${TELEGRAF_USER} \
-		TELEGRAF_GROUP=${TELEGRAF_GROUP} \
-		TELEGRAF_LOGDIR=${TELEGRAF_LOGDIR}
-
-TELEGRAF_USER=	telegraf
-TELEGRAF_GROUP=	telegraf
-
-USERS=		${TELEGRAF_USER}
-GROUPS=		${TELEGRAF_GROUP}
-
-TELEGRAF_LOGDIR=/var/log/${PORTNAME}
 
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/cloud.google.com/go/datastore
