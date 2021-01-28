@@ -16022,3 +16022,11 @@ sysutils/bareos16-client|sysutils/bareos18-client|2021-01-24|Has expired: Unmain
 sysutils/bareos16-client-static|sysutils/bareos18-client-static|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
 sysutils/bareos16-server|sysutils/bareos18-server|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
 www/bareos16-webui|www/bareos18-webui|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
+www/sogo4|www/sogo|2021-01-28|Has expired: Unmaintained, please migrate to a newer version of sogo
+www/sogo4-activesync|www/sogo-activesync|2021-01-28|Has expired: Unmaintained, please migrate to a newer version of sogo
+security/py-rekall_lib||2021-01-28|Has expired: Unmaintained upstream
+devel/py-rekall-efilter||2021-01-28|Has expired: Unmaintained upstream
+security/py-rekall|security/py-volatility3|2021-01-28|Has expired: Unmaintained upstream, use security/py-volatility3 instead
+security/py-rekall-core||2021-01-28|Has expired: Unmaintained upstream
+www/kurly||2021-01-28|Has expired: Upstream is gone
+security/regripper||2021-01-28|Has expired: Upstream repo disappeared

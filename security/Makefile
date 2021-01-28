@@ -976,9 +976,6 @@
     SUBDIR += py-python3-saml
     SUBDIR += py-pyvex
     SUBDIR += py-pywinrm
-    SUBDIR += py-rekall
-    SUBDIR += py-rekall-core
-    SUBDIR += py-rekall_lib
     SUBDIR += py-requests-credssp
     SUBDIR += py-requests-kerberos
     SUBDIR += py-ropper
@@ -1040,7 +1037,6 @@
     SUBDIR += razorback-virusTotal
     SUBDIR += razorback-yaraNugget
     SUBDIR += rcracki_mt
-    SUBDIR += regripper
     SUBDIR += reop
     SUBDIR += retranslator
     SUBDIR += revealrk
