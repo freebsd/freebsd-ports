@@ -77,6 +77,37 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="13ca36b8-6141-11eb-8a36-7085c2fb2c14">
+    <topic>pngcheck -- Buffer-overrun vulnerability</topic>
+    <affects>
+      <package>
+	<name>pngcheck</name>
+	<range><lt>3.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The libpng project reports:</p>
+	<blockquote cite="http://www.libpng.org/pub/png/apps/pngcheck.html">
+	  <p>pngcheck versions 3.0.0 and earlier have a pair of buffer-overrun
+	    bugs related to the sPLT and PPLT chunks (the latter is a MNG-only
+	    chunk, but it gets noticed even in PNG files if the -s option is used).
+	    Both bugs are fixed in version 3.0.1, released on 24 January 2021.
+	    Again, while all known vulnerabilities are fixed in this version,
+	    the code is quite crufty, so it would be safest to assume there are
+	    still some problems hidden in there. As always, use at your own risk.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.libpng.org/pub/png/apps/pngcheck.html</url>
+    </references>
+    <dates>
+      <discovery>2021-01-24</discovery>
+      <entry>2021-01-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f3cf4b33-6013-11eb-9a0e-206a8a720317">
     <topic>sudo -- Multiple vulnerabilities</topic>
     <affects>
