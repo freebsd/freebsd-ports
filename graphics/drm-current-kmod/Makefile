@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drm-current-kmod
-PORTVERSION=	5.4.62.g20210118
+PORTVERSION=	5.4.62.g20210128
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -16,11 +16,7 @@ ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64, i386,
 
 RUN_DEPENDS=	gpu-firmware-kmod>=g20200914:graphics/gpu-firmware-kmod
 
-CONFLICTS_INSTALL=	drm-devel-kmod \
-			drm-fbsd11.2-kmod \
-			drm-fbsd12.0-kmod \
-			drm-fbsd13-kmod \
-			drm-legacy-kmod
+CONFLICTS_INSTALL=	drm-devel-kmod
 
 OPTIONS_DEFINE=	DEBUG SOURCE
 
@@ -35,11 +31,11 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod
-GH_TAGNAME=	drm_v5.4.62_9
+GH_TAGNAME=	drm_v5.4.92_1
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300128
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
 IGNORE=		not supported on older CURRENT, no kernel support
 .endif
 .if ${OPSYS} != FreeBSD
