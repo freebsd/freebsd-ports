@@ -344,7 +344,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/skyline.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/song-util.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/song.scm
-%%DATADIR%%/%%DISTVERSION%%/scm/standalone.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/stencil.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/tablature.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/time-signature-settings.scm

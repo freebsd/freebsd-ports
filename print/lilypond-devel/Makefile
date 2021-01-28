@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lilypond
-DISTVERSION=	2.21.82
+DISTVERSION=	2.23.0
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -50,8 +50,7 @@ ALL_TARGET=	all
 
 BINARY_ALIAS=	python=${PYTHON_VERSION}
 
-INFO=		internals \
-				lilypond-changes \
+INFO=		lilypond-changes \
 				lilypond-contributor \
 				lilypond-essay \
 				lilypond-extending \
@@ -60,7 +59,6 @@ INFO=		internals \
 				lilypond-notation \
 				lilypond-snippets \
 				lilypond-usage \
-				lilypond-web \
 				music-glossary
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
