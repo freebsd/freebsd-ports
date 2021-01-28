@@ -1,5 +1,3 @@
-TIMESTAMP = 1565487894
-SHA256 (starfighter/starfighter-icons.tar.gz) = 34a0b92f6b9d256aa1f201a72c00306212921de4921f2a37969cad73222ad6fc
-SIZE (starfighter/starfighter-icons.tar.gz) = 38812
-SHA256 (starfighter/pr-starfighter-starfighter-v2.0.0.2_GH0.tar.gz) = 100562f2e12530ff4e360898ec5aace7f2c99806a9cba68d02466e82f8c1ae83
-SIZE (starfighter/pr-starfighter-starfighter-v2.0.0.2_GH0.tar.gz) = 50152978
+TIMESTAMP = 1611786453
+SHA256 (pr-starfighter-starfighter-v2.4_GH0.tar.gz) = d0757da7657253316053acf37dabf8e54607420d66a4d7cc2a9fc0d4b4d54074
+SIZE (pr-starfighter-starfighter-v2.4_GH0.tar.gz) = 50221089
