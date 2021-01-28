@@ -66,6 +66,10 @@ share/icons/hicolor/48x48/apps/org.inkscape.Inkscape.png
 %%DATADIR%%/examples/tref.svg
 %%DATADIR%%/examples/turbulence_filters.svg
 %%DATADIR%%/extensions/.pylintrc
+%%DATADIR%%/extensions/.pytest_cache/CACHEDIR.TAG
+%%DATADIR%%/extensions/.pytest_cache/README.md
+%%DATADIR%%/extensions/.pytest_cache/v/cache/nodeids
+%%DATADIR%%/extensions/.pytest_cache/v/cache/stepwise
 %%DATADIR%%/extensions/LICENSE.txt
 %%DATADIR%%/extensions/MANIFEST.in
 %%DATADIR%%/extensions/Poly3DObjects/cube.obj
@@ -2775,3 +2779,10 @@ share/icons/hicolor/48x48/apps/org.inkscape.Inkscape.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/inkscape.mo
 share/metainfo/org.inkscape.Inkscape.appdata.xml
+@dir %%DATADIR%%/extensions/__pycache__
+@dir %%DATADIR%%/extensions/barcode/__pycache__
+@dir %%DATADIR%%/extensions/ink2canvas_lib/__pycache__
+@dir %%DATADIR%%/extensions/inkex/__pycache__
+@dir %%DATADIR%%/extensions/inkex/deprecated-simple/__pycache__
+@dir %%DATADIR%%/extensions/inkex/elements/__pycache__
+@dir %%DATADIR%%/extensions/inkex/tester/__pycache__

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	inkscape
-PORTVERSION=	1.0.1
-PORTREVISION=	5
+PORTVERSION=	1.0.2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
@@ -52,7 +51,7 @@ USE_GNOME=	gtkmm30 libxml2 libxslt
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}_2020-09-07_3bc2e813f5
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}_2021-01-15_e86c870879
 
 INSTALLS_ICONS=	yes
 
@@ -114,10 +113,6 @@ post-patch:
 	# Third entry in the table of interpreters is basename of executable
 	@${REINPLACE_CMD} -e 's|"python3"|"${PYTHON_VERSION}"|g' \
 		${WRKSRC}/src/extension/implementation/script.cpp
-	@${REINPLACE_CMD} -e 's|web-set-att|web_set_att|g' \
-		${WRKSRC}/po/*.po
-	@${REINPLACE_CMD} -e 's|web-transmit-att|web_transmit_att|g' \
-		${WRKSRC}/po/*.po
 	@${TOUCH} ${WRKSRC}/share/extensions/gcodetools_check_for_updates.inx.h
 
 .include <bsd.port.mk>
