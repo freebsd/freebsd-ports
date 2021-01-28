@@ -8,23 +8,50 @@
 # to enable this service:
 #
 # prometheus_enable (bool)
-#     Set to NO by default
 #     Set it to YES to enable prometheus
+#     Set to NO by default
 # prometheus_user (string)
-#     Set user to run prometheus
+#     Set user that prometheus will run under
 #     Default is "%%PROMETHEUS_USER%%"
 # prometheus_group (string)
-#     Set group to run prometheus
+#     Set group that own prometheus files
 #     Default is "%%PROMETHEUS_GROUP%%"
-# prometheus_data_dir (string)
-#     Set dir to run prometheus in
-#     Default is "%%PROMETHEUS_DB_DIR%%"
+# prometheus_config (string)
+#     Set full path to config file
+#     Default is "%%PREFIX%%/etc/prometheus.yml"
+# prometheus_pidfile (string)
+#     Set full path to pid file
+#     Default is "/var/run/prometheus.pid"
+# prometheus_syslog_output_enable (bool)
+#     Set it to NO to disable syslog output
+#     Set to YES by default
+# prometheus_syslog_output_tag (str)
+#     Set syslog tag if syslog enabled
+#     Default is "prometheus"
+# prometheus_syslog_output_priority (string)
+#     Set syslog priority if syslog enabled
+#     Default is "info"
+# prometheus_syslog_output_facility (string)
+#     Set syslog facility if syslog enabled
+#     Default is "daemon"
 # prometheus_consoles (string)
 #     Set dir that contains Prometheus consoles
 #     Default is "%%PROMETHEUS_CONSOLES_DIR%%"
 # prometheus_console_libraries (string)
 #     Set dir containing Prometheus console libraries
 #     Default is "%%PROMETHEUS_CONSOLE_LIBRARIES_DIR%%"
+# prometheus_data_dir (string)
+#     Set dir to run prometheus in
+#     Default is "%%PROMETHEUS_DB_DIR%%"
+# prometheus_loglevel (string)
+#     Set one of [debug, info, warn, error]
+#     Default is "info"
+# prometheus_logformat (string)
+#     Set one of [logfmt, json]
+#     Default is "logfmt"
+# prometheus_env (string)
+#     Set environment variables used with prometheus
+#     Default is ""
 # prometheus_args (string)
 #     Set additional command line arguments
 #     Default is ""
@@ -40,67 +67,75 @@ load_rc_config $name
 : ${prometheus_user:="%%PROMETHEUS_USER%%"}
 : ${prometheus_group:="%%PROMETHEUS_GROUP%%"}
 : ${prometheus_config:="%%PREFIX%%/etc/prometheus.yml"}
-: ${prometheus_data_dir:="%%PROMETHEUS_DB_DIR%%"}
+: ${prometheus_pidfile:="/var/run/prometheus.pid"}
+: ${prometheus_syslog_output_enable:="YES"}
 : ${prometheus_consoles_dir:="%%PROMETHEUS_CONSOLES_DIR%%"}
 : ${prometheus_console_libraries_dir:="%%PROMETHEUS_CONSOLE_LIBRARIES_DIR%%"}
-: ${prometheus_args:=""}
+: ${prometheus_data_dir:="%%PROMETHEUS_DB_DIR%%"}
+: ${prometheus_loglevel:="info"}
+: ${prometheus_logformat:="logfmt"}
 
-pidfile="/var/run/${name}.pid"
+if checkyesno prometheus_syslog_output_enable; then
+	if [ -n "${prometheus_syslog_output_tag}" ]; then
+		prometheus_syslog_output_flags="-T ${prometheus_syslog_output_tag}"
+	else
+		prometheus_syslog_output_flags="-T ${name}"
+	fi
+	if [ -n "${prometheus_syslog_output_priority}" ]; then
+		prometheus_syslog_output_flags="${prometheus_syslog_output_flags} -s ${prometheus_syslog_output_priority}"
+	fi
+	if [ -n "${prometheus_syslog_output_facility}" ]; then
+		prometheus_syslog_output_flags="${prometheus_syslog_output_flags} -l ${prometheus_syslog_output_facility}"
+	fi
+fi
+
+pidfile="${prometheus_pidfile}"
 required_files="${prometheus_config}"
+
+procname="%%PREFIX%%/bin/prometheus"
 command="/usr/sbin/daemon"
-procname="%%PREFIX%%/bin/${name}"
-sig_reload="HUP"
+command_args="-f ${prometheus_syslog_output_flags} -p ${pidfile} -t ${name} \
+	/usr/bin/env ${prometheus_env} ${procname} \
+	--config.file=${prometheus_config} \
+	--web.console.templates=${prometheus_consoles_dir} \
+	--web.console.libraries=${prometheus_console_libraries_dir} \
+	--storage.tsdb.path=${prometheus_data_dir} \
+	--log.level=${prometheus_loglevel} \
+	--log.format=${prometheus_logformat} \
+	${prometheus_args}"
+
+start_precmd="prometheus_start_precmd"
 extra_commands="reload"
-command_args="-p ${pidfile} -m 3 -T ${name} \
-                /usr/bin/env ${procname} \
-                --config.file=${prometheus_config} \
-                --storage.tsdb.path=${prometheus_data_dir} \
-                --web.console.templates=${prometheus_consoles_dir} \
-                --web.console.libraries=${prometheus_console_libraries_dir} \
-                ${prometheus_args}"
 
-start_precmd=prometheus_startprecmd
-
-# This checks for the existence of a prometheus 1.x data dir at the
+# This checks for the existence of a prometheus 1.x data at the
 # $prometheus_data_dir location. If one is found, Prometheus will not start.
-prometheus_check_data_dir_version()
+prometheus_check_data_version()
 {
-    local data_dir_version_file="${prometheus_data_dir}/VERSION"
+	local _version
+	local _version_file="${prometheus_data_dir}/VERSION"
 
-    if [ -f "${data_dir_version_file}" ]; then
-        local data_dir_version="0"
+	if [ -f "${_version_file}" ]; then
+		read _version < "${_version_file}"
 
-        read data_dir_version < "${data_dir_version_file}"
-
-        if [ "${data_dir_version}" = "1" ]; then
-            return 1
-        fi
-    fi
+		if [ "${_version}" = "1" ]; then
+			return 1
+		fi
+	fi
 }
 
-prometheus_startprecmd()
+prometheus_start_precmd()
 {
-    if [ ! -e ${pidfile} ]; then
-        install \
-            -o ${prometheus_user} \
-            -g ${prometheus_group} \
-            /dev/null ${pidfile};
-    fi
-    if [ ! -d ${prometheus_data_dir} ]; then
-        install \
-            -d \
-            -o ${prometheus_user} \
-            -g ${prometheus_group} \
-            -m 750 \
-            ${prometheus_data_dir}
-    else
-        # The directory already existed. Ensure it's not a prometheus 1.x
-        # data dir.
-        if ! prometheus_check_data_dir_version; then
-            err 1 "Found net-mgmt/prometheus1 data dir, refusing to start."
-        fi
-    fi
+	if [ ! -e "${pidfile}" ]; then
+		install -m 0600 -o "${prometheus_user}" -g "${prometheus_group}" /dev/null "${pidfile}"
+	fi
+	if [ ! -d "${prometheus_data_dir}" ]; then
+		install -d -m 750 -o "${prometheus_user}" -g "${prometheus_group}" "${prometheus_data_dir}"
+	else
+		# Ensure it's not a prometheus 1.x data
+		if [ ! prometheus_check_data_version ]; then
+			err 1 "Found \"net-mgmt/prometheus1\" data, refusing to start."
+		fi
+	fi
 }
 
-load_rc_config $name
 run_rc_command "$1"
