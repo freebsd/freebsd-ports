@@ -1,8 +1,8 @@
---- code/libs/renderdoc/renderdoc_app.h.orig	2020-01-28 14:50:19 UTC
+--- code/libs/renderdoc/renderdoc_app.h.orig	2021-01-27 17:07:03 UTC
 +++ code/libs/renderdoc/renderdoc_app.h
-@@ -39,6 +39,8 @@
+@@ -43,6 +43,8 @@
  #define RENDERDOC_CC
- #elif defined(__APPLE__)
+ #elif defined(SCP_SOLARIS)
  #define RENDERDOC_CC
 +#elif defined(__FreeBSD__)
 +#define RENDERDOC_CC
