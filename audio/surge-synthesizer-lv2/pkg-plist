@@ -4,6 +4,99 @@ lib/lv2/Surge.lv2/Surge_ui.ttl
 lib/lv2/Surge.lv2/manifest.ttl
 lib/vst/Surge.so
 %%DATADIR%%/configuration.xml
+%%DATADIR%%/modulator_presets/Envelope/1 Bar Fade In.modpreset
+%%DATADIR%%/modulator_presets/Envelope/16th Note Delay.modpreset
+%%DATADIR%%/modulator_presets/Envelope/4th Note Delay.modpreset
+%%DATADIR%%/modulator_presets/Envelope/8th Note Delay.modpreset
+%%DATADIR%%/modulator_presets/Envelope/Basic ADSR.modpreset
+%%DATADIR%%/modulator_presets/LFO/8th Note S&H.modpreset
+%%DATADIR%%/modulator_presets/LFO/Delayed Vibrato.modpreset
+%%DATADIR%%/modulator_presets/LFO/Noise.modpreset
+%%DATADIR%%/modulator_presets/LFO/Noisy Transient.modpreset
+%%DATADIR%%/modulator_presets/LFO/Slow Poly Random.modpreset
+%%DATADIR%%/modulator_presets/LFO/Utility/Random Fade Bipolar.modpreset
+%%DATADIR%%/modulator_presets/LFO/Utility/Random Fade Unipolar.modpreset
+%%DATADIR%%/modulator_presets/LFO/Utility/Random Value Bipolar.modpreset
+%%DATADIR%%/modulator_presets/LFO/Utility/Random Value Unipolar.modpreset
+%%DATADIR%%/modulator_presets/MSEG/1 Chords/1 Major.modpreset
+%%DATADIR%%/modulator_presets/MSEG/1 Chords/10 Half-Diminished 7th.modpreset
+%%DATADIR%%/modulator_presets/MSEG/1 Chords/11 Diminished 7th.modpreset
+%%DATADIR%%/modulator_presets/MSEG/1 Chords/2 Minor.modpreset
+%%DATADIR%%/modulator_presets/MSEG/1 Chords/3 Diminished.modpreset
+%%DATADIR%%/modulator_presets/MSEG/1 Chords/4 Augmented.modpreset
+%%DATADIR%%/modulator_presets/MSEG/1 Chords/5 Suspended 2nd.modpreset
+%%DATADIR%%/modulator_presets/MSEG/1 Chords/6 Suspended 4th.modpreset
+%%DATADIR%%/modulator_presets/MSEG/1 Chords/7 Major 7th.modpreset
+%%DATADIR%%/modulator_presets/MSEG/1 Chords/8 Minor 7th.modpreset
+%%DATADIR%%/modulator_presets/MSEG/1 Chords/9 Dominant 7th.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/1 Chromatic.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/10 Locrian.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/11 Phrygian Dominant.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/12 Double Harmonic Major.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/13 Double Harmonic Minor.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/14 Whole Tone.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/15 Major Pentatonic.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/16 Minor Pentatonic.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/17 Blues.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/2 Major.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/3 Natural Minor.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/4 Harmonic Minor.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/5 Melodic Minor.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/6 Lydian.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/7 Mixolydian.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/8 Dorian.modpreset
+%%DATADIR%%/modulator_presets/MSEG/2 Scales/9 Phrygian.modpreset
+%%DATADIR%%/modulator_presets/MSEG/3 Asymmetric LFO/10 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/3 Asymmetric LFO/12 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/3 Asymmetric LFO/4 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/3 Asymmetric LFO/5 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/3 Asymmetric LFO/6 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/3 Asymmetric LFO/7 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/3 Asymmetric LFO/8 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/3 Asymmetric LFO/9 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/4 Unipolar LFO/5 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/4 Unipolar LFO/7 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/4 Unipolar LFO/9 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/4 Unipolar LFO/Sidechain.modpreset
+%%DATADIR%%/modulator_presets/MSEG/5 Looped Envelope/10 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/5 Looped Envelope/12 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/5 Looped Envelope/5 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/5 Looped Envelope/6 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/5 Looped Envelope/7 Segments.modpreset
+%%DATADIR%%/modulator_presets/MSEG/5 Looped Envelope/Warble.modpreset
+%%DATADIR%%/modulator_presets/MSEG/6 AR Envelope/A - Bezier, R - Linear.modpreset
+%%DATADIR%%/modulator_presets/MSEG/6 AR Envelope/A - Brownian, R - Linear.modpreset
+%%DATADIR%%/modulator_presets/MSEG/6 AR Envelope/A - Bump, R - Linear.modpreset
+%%DATADIR%%/modulator_presets/MSEG/6 AR Envelope/A - Linear, R - Linear 1.modpreset
+%%DATADIR%%/modulator_presets/MSEG/6 AR Envelope/A - Linear, R - Linear 2.modpreset
+%%DATADIR%%/modulator_presets/MSEG/6 AR Envelope/A - S-Curve, R - Linear.modpreset
+%%DATADIR%%/modulator_presets/MSEG/6 AR Envelope/A - Saw, R - Linear.modpreset
+%%DATADIR%%/modulator_presets/MSEG/6 AR Envelope/A - Sine, R - Linear.modpreset
+%%DATADIR%%/modulator_presets/MSEG/6 AR Envelope/A - Smooth Stairs, R - Linear.modpreset
+%%DATADIR%%/modulator_presets/MSEG/6 AR Envelope/A - Square, R - Linear.modpreset
+%%DATADIR%%/modulator_presets/MSEG/6 AR Envelope/A - Stairs, R - Linear.modpreset
+%%DATADIR%%/modulator_presets/MSEG/6 AR Envelope/A - Triangle, R - Linear.modpreset
+%%DATADIR%%/modulator_presets/MSEG/7 Rhythmic/5 Segments 1.modpreset
+%%DATADIR%%/modulator_presets/MSEG/7 Rhythmic/5 Segments 2.modpreset
+%%DATADIR%%/modulator_presets/MSEG/7 Rhythmic/7 Segments 1.modpreset
+%%DATADIR%%/modulator_presets/MSEG/7 Rhythmic/7 Segments 2.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Melodic/Erratic Motion.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Melodic/In Trance.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Melodic/Major Arpeggio.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Melodic/Major Steps.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Melodic/Minor Arpeggio.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Melodic/Minor Jumps.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Melodic/The Lick.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Rhythmic/Trance Gate 1.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Rhythmic/Trance Gate 2.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Rhythmic/Trance Gate 3.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Rhythmic/Trance Gate 4.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Rhythmic/Trance Gate 5.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Rhythmic/Trance Gate 6.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Rhythmic/Trance Gate 7.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Waveforms/Quantized Ramp.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Waveforms/Quantized Saw.modpreset
+%%DATADIR%%/modulator_presets/Step Seq/Waveforms/Quantized Triangle.modpreset
 %%DATADIR%%/paramdocumentation.xml
 %%DATADIR%%/patchbrowser/patchbrowser_init.sql
 %%DATADIR%%/patches_3rdparty/Argitoth/Drums/Kick.fxp
@@ -137,7 +230,7 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Damon Armani/Arps/Cinematic RTM.fxp
 %%DATADIR%%/patches_3rdparty/Damon Armani/Arps/Dark & Rhythmic.fxp
 %%DATADIR%%/patches_3rdparty/Damon Armani/Arps/Lush Style.fxp
-%%DATADIR%%/patches_3rdparty/Damon Armani/Arps/Metalic Arp.fxp
+%%DATADIR%%/patches_3rdparty/Damon Armani/Arps/Metallic Arp.fxp
 %%DATADIR%%/patches_3rdparty/Damon Armani/Arps/Scratched Arp.fxp
 %%DATADIR%%/patches_3rdparty/Damon Armani/Arps/Transparent.fxp
 %%DATADIR%%/patches_3rdparty/Damon Armani/Basses/Analog Magic.fxp
@@ -821,16 +914,37 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/Sunny.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/TransHarmonics (1-3-5).fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Keys/X-Wave Minimalism.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Shredder.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/Classic.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/FM2.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/FM3.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/S&H Noise.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/Sine.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/WT.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Oscillators/Window.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Pluck 1.fxp
-%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Pluck 2.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Freerunaway.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Hammer-On Hammer-Off.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Journey To The Center Of The Surge.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Lovely Lead.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Lucky Woman.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Monosynths Forever.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Mountaintops.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Riffing For Peace.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Saw Swarm.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Shredder 1.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Shredder 2.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Shredder 3.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Sines Of Our Times.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Stories In One Voice.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/Warm One.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Leads/With One Voice.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Bass Sawari.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Bright Attack.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Bright Pizzicato.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Bright Res Body.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Bright Short.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Bright String Glide.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Long FM.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Muted Bass.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Orch Hit Short.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Porta Mod.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Resonant Body Pizz.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Sawari Pizz.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Short Glide Res Body.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Short Glide.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Plucks/Wooden Pizz.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/End Credits X-Fade.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/Quartertone And The Pitch.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Sequences/Silk Sequences.fxp
@@ -863,6 +977,7 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 7.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 8.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/String Machines/String Machine 9.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge 1.8.1 JL Presets Update Notes.txt
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/Beginnings (1-3-7).fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/Bell Keys 1 (1-3-5).fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-3X81Z/Bell Keys 2 (1-5-6).fxp
@@ -898,6 +1013,13 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/Sine-Classic-WT.fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/That Morning (Variant).fxp
 %%DATADIR%%/patches_3rdparty/Jacky Ligon/Surge-XFS/Y87 (Variant).fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/Classic.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/FM2.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/FM3.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/S&H Noise.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/Sine.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/WT.fxp
+%%DATADIR%%/patches_3rdparty/Jacky Ligon/Templates/Window.fxp
 %%DATADIR%%/patches_3rdparty/Kuniklo/Arps/Calc.fxp
 %%DATADIR%%/patches_3rdparty/Kuniklo/Arps/Chording.fxp
 %%DATADIR%%/patches_3rdparty/Kuniklo/Basses/Big Moog.fxp
@@ -996,6 +1118,7 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Luna/MPE/Expressive Keys 3.fxp
 %%DATADIR%%/patches_3rdparty/Luna/MPE/FM Trumpet.fxp
 %%DATADIR%%/patches_3rdparty/Luna/MPE/Lap Harp.fxp
+%%DATADIR%%/patches_3rdparty/Luna/MPE/Paraphonic Cutoff Warp.fxp
 %%DATADIR%%/patches_3rdparty/Luna/MPE/Unstable Warp.fxp
 %%DATADIR%%/patches_3rdparty/Luna/Pads/Chord Disintegrator.fxp
 %%DATADIR%%/patches_3rdparty/Luna/Pads/String Pad.fxp
@@ -1251,17 +1374,42 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/Rozzer/Rhythms/Disco!.fxp
 %%DATADIR%%/patches_3rdparty/Rozzer/Rhythms/Sync Alarm!.fxp
 %%DATADIR%%/patches_3rdparty/Rozzer/Rhythms/Twisted.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Basses/Bass MW.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Basses/Body Bass.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Basses/Evil Mono Bass.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Basses/FM Bass Lead.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Basses/Sequenced Psy Bass.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Basses/Wet Bass.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Leads/FM Flute.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Leads/Hoove.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Leads/Naggy Bee Lead.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Pads/Analog Pad.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Pads/Cold Seq Pad.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Pads/Out There.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Pads/Trance Pad 1.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Pads/Trance Pad 2.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Plucks/Playing With Filters.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Plucks/Techno Stab.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Plucks/Trance Pluck.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Plucks/VA Morph Wheel.fxp
+%%DATADIR%%/patches_3rdparty/Stefan Singer/Plucks/Velo VA.fxp
+%%DATADIR%%/patches_3rdparty/TNMG/Basses/Abomination.fxp
+%%DATADIR%%/patches_3rdparty/TNMG/Basses/Analog Foundation.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Basses/Artificial Intelligence.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Basses/Modern Solutions.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Basses/Rude Individual.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Basses/Vacuum.fxp
+%%DATADIR%%/patches_3rdparty/TNMG/Bells/Mystical Creature.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Chords/Dust Mote.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Drums/Clap - Noise Layer.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Drums/Hi-Hat - Phase Noise.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Drums/Kick - Ampere.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Drums/Kick - Arcade.fxp
+%%DATADIR%%/patches_3rdparty/TNMG/Drums/Kick - Bold Sine.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Drums/Kick - Classic.fxp
+%%DATADIR%%/patches_3rdparty/TNMG/Drums/Kick - In Your Face.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Drums/Kick - Transistor.fxp
+%%DATADIR%%/patches_3rdparty/TNMG/Drums/Snare - Basic Drive.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Drums/Snare - Classic.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Drums/Snare - Synthetic.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/FX/Noisy Record.fxp
@@ -1270,6 +1418,7 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/TNMG/Pads/Ambient Occlusion.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Pads/Cryo Chamber.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Pads/Digital Domain.fxp
+%%DATADIR%%/patches_3rdparty/TNMG/Pads/In Motion.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Pads/Motion Picture.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Pads/Nebulae.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Pads/Negative Space.fxp
@@ -1284,12 +1433,14 @@ lib/vst/Surge.so
 %%DATADIR%%/patches_3rdparty/TNMG/Plucks/Ghost Notes.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Plucks/Millennium.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Plucks/Retro Wave.fxp
+%%DATADIR%%/patches_3rdparty/TNMG/Plucks/Suppressor.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Polysynths/Synth Basics.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Sequences/Mid Layer.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Sequences/One Note IDM.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Soundscapes/Andromeda.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Soundscapes/Chaos Theory.fxp
 %%DATADIR%%/patches_3rdparty/TNMG/Soundscapes/Memescape.fxp
+%%DATADIR%%/patches_3rdparty/TNMG/Vox/Surge Synthesizer.fxp
 %%DATADIR%%/patches_3rdparty/Vincent Zauhar/Basses/AI's Revenge.fxp
 %%DATADIR%%/patches_3rdparty/Vincent Zauhar/Basses/Electro.fxp
 %%DATADIR%%/patches_3rdparty/Vincent Zauhar/Basses/Electronic Monster.fxp
@@ -2429,11 +2580,17 @@ lib/vst/Surge.so
 %%DATADIR%%/tuning-library/SCL/SD4 60-15.scl
 %%DATADIR%%/tuning-library/SCL/SD4 64-16.scl
 %%DATADIR%%/tuning-library/Surge Virtual Instrument Microtuning Library Documentation.txt
+%%DATADIR%%/wavetables/Basic/Sine HQ.wav
+%%DATADIR%%/wavetables/Basic/Sine Octaves HQ.wav
 %%DATADIR%%/wavetables/Basic/Sine Octaves.wt
+%%DATADIR%%/wavetables/Basic/Sine To Sawtooth HQ.wav
 %%DATADIR%%/wavetables/Basic/Sine To Sawtooth.wt
+%%DATADIR%%/wavetables/Basic/Sine To Square HQ.wav
 %%DATADIR%%/wavetables/Basic/Sine To Square.wt
 %%DATADIR%%/wavetables/Basic/Sine.wt
+%%DATADIR%%/wavetables/Basic/Tri-Saw HQ.wav
 %%DATADIR%%/wavetables/Basic/Tri-Saw.wt
+%%DATADIR%%/wavetables/Basic/Triangle HQ.wav
 %%DATADIR%%/wavetables/Basic/Triangle.wt
 %%DATADIR%%/wavetables/Generated/Circle.wt
 %%DATADIR%%/wavetables/Generated/Cosine Inverse Power.wt
@@ -2467,18 +2624,18 @@ lib/vst/Surge.so
 %%DATADIR%%/wavetables/Generated/Sawtooth Window.wt
 %%DATADIR%%/wavetables/Generated/Several Formants.wt
 %%DATADIR%%/wavetables/Generated/Sine FB.wt
-%%DATADIR%%/wavetables/Generated/Sine FM 2x Hi-res.wt
+%%DATADIR%%/wavetables/Generated/Sine FM 2x HQ.wt
 %%DATADIR%%/wavetables/Generated/Sine FM 2x.wt
-%%DATADIR%%/wavetables/Generated/Sine FM 3x Hi-res.wt
+%%DATADIR%%/wavetables/Generated/Sine FM 3x HQ.wt
 %%DATADIR%%/wavetables/Generated/Sine FM 3x.wt
-%%DATADIR%%/wavetables/Generated/Sine Half Hi-res.wt
+%%DATADIR%%/wavetables/Generated/Sine Half HQ.wt
 %%DATADIR%%/wavetables/Generated/Sine Half.wt
-%%DATADIR%%/wavetables/Generated/Sine Inverse Power 1024.wt
+%%DATADIR%%/wavetables/Generated/Sine Inverse Power HQ.wt
 %%DATADIR%%/wavetables/Generated/Sine Inverse Power.wt
 %%DATADIR%%/wavetables/Generated/Sine One Harmonic.wt
-%%DATADIR%%/wavetables/Generated/Sine PD Hi-res.wt
+%%DATADIR%%/wavetables/Generated/Sine PD HQ.wt
 %%DATADIR%%/wavetables/Generated/Sine PD.wt
-%%DATADIR%%/wavetables/Generated/Sine Power Hi-res.wt
+%%DATADIR%%/wavetables/Generated/Sine Power HQ.wt
 %%DATADIR%%/wavetables/Generated/Sine Power.wt
 %%DATADIR%%/wavetables/Generated/Sine Quantitized 1.wt
 %%DATADIR%%/wavetables/Generated/Sine Quantitized 2.wt
@@ -2486,12 +2643,12 @@ lib/vst/Surge.so
 %%DATADIR%%/wavetables/Generated/Sine Sync Windowed.wt
 %%DATADIR%%/wavetables/Generated/Sine Two Harmonics.wt
 %%DATADIR%%/wavetables/Generated/Sine Windowed FM.wt
-%%DATADIR%%/wavetables/Generated/Sine Windowed Hi-res.wt
+%%DATADIR%%/wavetables/Generated/Sine Windowed HQ.wt
 %%DATADIR%%/wavetables/Generated/Sine Windowed Octaves.wt
 %%DATADIR%%/wavetables/Generated/Sine Windowed Primes.wt
 %%DATADIR%%/wavetables/Generated/Sine Windowed.wt
 %%DATADIR%%/wavetables/Generated/Square ATC.wav
-%%DATADIR%%/wavetables/Generated/Square Windowed Hi-res.wt
+%%DATADIR%%/wavetables/Generated/Square Windowed HQ.wt
 %%DATADIR%%/wavetables/Generated/Square Windowed.wt
 %%DATADIR%%/wavetables/Generated/Sweepy.wt
 %%DATADIR%%/wavetables/Generated/Triangle Primary.wt
@@ -2971,6 +3128,23 @@ lib/vst/Surge.so
 %%DATADIR%%/wavetables_3rdparty/Layzer/Vocal/Vocal 7.wt
 %%DATADIR%%/wavetables_3rdparty/Layzer/Vocal/Vocal 8.wt
 %%DATADIR%%/wavetables_3rdparty/Layzer/Vocal/Vocal 9.wt
+%%DATADIR%%/wavetables_3rdparty/TNMG/Chemical Reaction.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Digital Movement.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/FM Scream Redux.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Glitch Voice.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Growl Spectrum.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Humanoid.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Machine Learning.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Noise Calibration.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Phase Relations.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Pulse Spikes.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Shape Shifter.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Spectra Voice.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Spectral Mirror.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Surge Synthesizer.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Wave Collection.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Wave Crush.wav
+%%DATADIR%%/wavetables_3rdparty/TNMG/Xenharmonic.wav
 %%DATADIR%%/wavetables_3rdparty/Venus Theory/Acid/VT Acid 1.wav
 %%DATADIR%%/wavetables_3rdparty/Venus Theory/Acid/VT Acid 2.wav
 %%DATADIR%%/wavetables_3rdparty/Venus Theory/Acid/VT Acid 3.wav

@@ -1,6 +1,6 @@
-TIMESTAMP = 1611020480
-SHA256 (surge-synthesizer-surge-release_1.8.0_GH0.tar.gz) = 93bfbd36113a1227f1ef41d0619093171448dde9cf491e8b347b3384d742ae9e
-SIZE (surge-synthesizer-surge-release_1.8.0_GH0.tar.gz) = 103429362
+TIMESTAMP = 1611867062
+SHA256 (surge-synthesizer-surge-release_1.8.1_GH0.tar.gz) = 3b97cc674142a68297903f70328dbb41cc168ba12867291713f5fcf7fb8ad0a8
+SIZE (surge-synthesizer-surge-release_1.8.1_GH0.tar.gz) = 105350374
 SHA256 (surge-synthesizer-vst3sdk-10287bc37bbb34324b8097369e2ec4eb73a51d65_GH0.tar.gz) = b1eb4d7a5fc714ebb058c77bf7250254ee310a6ffd2b77ef702a12ab4bf9ec10
 SIZE (surge-synthesizer-vst3sdk-10287bc37bbb34324b8097369e2ec4eb73a51d65_GH0.tar.gz) = 266390
 SHA256 (surge-synthesizer-vstgui-8abd688c76edfb7215413080960649a532a6755c_GH0.tar.gz) = 37f0319469a657d7bc620a2e153b37f940f289216952150dab9de64ddf2a4f23
