@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	liquidsfz
-DISTVERSION=	0.2.2
+DISTVERSION=	0.2.3
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +29,7 @@ PLIST_FILES=	bin/liquidsfz \
 		include/liquidsfz.hh \
 		lib/libliquidsfz.so \
 		lib/libliquidsfz.so.2 \
-		lib/libliquidsfz.so.2.0.2 \
+		lib/libliquidsfz.so.2.0.3 \
 		lib/lv2/liquidsfz.lv2/liquidsfz.ttl \
 		lib/lv2/liquidsfz.lv2/liquidsfz_lv2.so \
 		lib/lv2/liquidsfz.lv2/manifest.ttl \
