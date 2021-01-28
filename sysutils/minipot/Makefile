@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minipot
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
