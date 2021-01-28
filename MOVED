@@ -14416,7 +14416,6 @@ deskutils/syncthing-gtk||2020-03-07|Has expired: Old, uses EOLed python27
 x11-wm/compiz-fusion||2020-03-07|Has expired: Old, uses EOLed python27
 x11/run_scaled||2020-03-07|Has expired: Old, uses EOLed python27
 databases/pgworksheet||2020-03-07|Has expired: Old, uses EOLed python27
-x11-fonts/font-manager||2020-03-07|Has expired: Old, uses EOLed python27
 x11-toolkits/py-gtksourceview||2020-03-07|Has expired: Old, uses EOLed python27
 devel/py-hgsubversion||2020-03-08|Has expired: Unmaintained, uses EOLed python27
 devel/py-gamin||2020-03-08|Has expired: Old, uses EOLed python27
