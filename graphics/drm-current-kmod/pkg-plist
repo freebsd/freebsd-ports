@@ -2230,7 +2230,6 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/barrier.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/cpufeature.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/cpufeatures.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/fpu/api.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/iosf_mbi.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/mtrr.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/asm/pgtable.h
@@ -2276,7 +2275,6 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/kconfig.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/kernel.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/kobject.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/llist.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/mm.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/mmu_context.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/mmu_notifier.h
@@ -2306,7 +2304,6 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/sched.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/sched/mm.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/seqlock.h
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/shrinker.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/sort.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/stackdepot.h
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/include/linux/stop_machine.h
@@ -2339,7 +2336,6 @@
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_interval_tree.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_irq.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_kmod_gplv2.c
-%%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_llist.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_mtrr.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_notifier.c
 %%SOURCE%%%%KMODSRC%%/linuxkpi/gplv2/src/linux_page.c

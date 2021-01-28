@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	drm-current-kmod
-PORTVERSION=	5.4.62.g20210128
+PORTVERSION=	5.4.92.g20210128
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -35,9 +35,9 @@ GH_TAGNAME=	drm_v5.4.92_1
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
-IGNORE=		not supported on older CURRENT, no kernel support
-.endif
+#.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
+#IGNORE=		not supported on older CURRENT, no kernel support
+#.endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD (missing linuxkpi functionality)
 .endif
