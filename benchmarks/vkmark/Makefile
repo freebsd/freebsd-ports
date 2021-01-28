@@ -3,7 +3,11 @@
 PORTNAME=	vkmark
 DISTVERSION=	2017.08-21
 DISTVERSIONSUFFIX=	-ge8c0720
+PORTREVISION=	1
 CATEGORIES=	benchmarks
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	27fa846e34ed.patch:-p1 # https://github.com/vkmark/vkmark/pull/29
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Vulkan benchmark
@@ -21,10 +25,10 @@ USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	DRM WAYLAND X11
 OPTIONS_DEFAULT=DRM WAYLAND X11
-OPTIONS_EXCLUDE=DRM # not supported yet
 OPTIONS_SUB=	yes
 
 DRM_DESC=		KMS console support
+DRM_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan_intel.h:graphics/mesa-dri
 DRM_LIB_DEPENDS=	libdrm.so:graphics/libdrm
 DRM_USES=		gl
 DRM_USE=		GL=gbm
