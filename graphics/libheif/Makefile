@@ -16,7 +16,6 @@ LIB_DEPENDS=	libdav1d.so:multimedia/dav1d
 
 USES=			cmake compiler:c++11-lang gettext-runtime gnome localbase:ldflags pkgconfig
 USE_GNOME=		gdkpixbuf2 glib20
-GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
 
 CMAKE_OFF=		WITH_EXAMPLES
