@@ -439,6 +439,8 @@ bin/MBA
 bin/MBA.R
 bin/MakeColorMap
 bin/MapIcosahedron
+bin/PTA
+bin/PTA.R
 bin/ParseName
 bin/RBA
 bin/RBA.R
