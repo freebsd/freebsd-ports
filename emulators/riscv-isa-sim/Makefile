@@ -10,7 +10,7 @@ COMMENT=	Spike, a RISC-V ISA Simulator
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=	amd64 powerpc64le
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 USES=	compiler:c++11-lang gmake shebangfix
 
