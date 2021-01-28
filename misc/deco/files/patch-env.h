@@ -2,7 +2,7 @@
 +++ env.h
 @@ -1,4 +1,4 @@
 -char **EnvVector;
-+static char **EnvVector;
++extern char **EnvVector;
  void EnvInit (char **env);
  char *EnvGet (char *name);
  void EnvPut (char *name, char *value);
