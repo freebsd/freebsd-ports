@@ -3,7 +3,7 @@
 
 PORTNAME=	ffuf
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.1
 CATEGORIES=	security www
 
 MAINTAINER=	0xdutra@gmail.com
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=	go:modules
 
 USE_GITHUB=	yes
+GH_TUPLE=	pelletier:go-toml:v1.8.1:pelletier_go_toml/vendor/github.com/pelletier/go-toml
 
 PLIST_FILES=	bin/${PORTNAME}
 
