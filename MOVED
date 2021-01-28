@@ -15979,7 +15979,6 @@ games/freera||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Pyth
 games/glob2||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 games/marsnomercy||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 games/netpanzer||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
-games/pingus||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 graphics/goxel||2021-01-02|Has expired: Uses Python 2.7 version of scons, and Python 2.7 which is EOLed upstream
 graphics/sk1libs||2021-01-02|Has expired: Uses Python 2.7 which is EOLed upstream
 graphics/uniconvertor||2021-01-02|Has expired: Uses deprecated version of python

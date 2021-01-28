@@ -741,6 +741,7 @@
     SUBDIR += phlipple
     SUBDIR += picmi
     SUBDIR += pinball
+    SUBDIR += pingus
     SUBDIR += pink-pony
     SUBDIR += pioneer
     SUBDIR += pioneers
