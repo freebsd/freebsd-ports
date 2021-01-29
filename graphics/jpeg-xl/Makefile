@@ -2,8 +2,7 @@
 
 PORTNAME=	jpeg-xl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2
-PORTREVISION=	2
+DISTVERSION=	0.3
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,12 +20,12 @@ USE_GITHUB=	nodefault
 USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GH_TUPLE=	barmco:skcms:6437475:skcms/third_party/skcms \
-		google:highway:311c183:highway/third_party/highway \
+		google:highway:v0.7.0:highway/third_party/highway \
 		lvandeve:lodepng:48e5364:lodepng/third_party/lodepng \
 		webmproject:sjpeg:868ab55:sjpeg/third_party/sjpeg \
 		${NULL}
 GL_ACCOUNT=	wg1
-GL_COMMIT=	31c71b0f61123a40789b0b8f54feb70e5995420e
+GL_COMMIT=	35ad23dd611199ed63a8c198a7e6a2dab40ec0b8
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS
 CMAKE_OFF=	JPEGXL_WARNINGS_AS_ERRORS ${BENCHMARK FUZZERS TCMALLOC:L:S/^/JPEGXL_ENABLE_/}
 CMAKE_OFF+=	${OpenGL GLUT:L:S/^/CMAKE_DISABLE_FIND_PACKAGE_/} # sjpeg
