@@ -1,0 +1,14 @@
+Kongress is a conference companion application. Its purpose is to help
+participants to organize their visit or online participation in a
+conference. It contains the following features:
+- A collection of conferences
+- The scheduled talks
+- Start/end time of each talk (in various timezones)
+- List of favorites and warning on overlapping favorites
+- Reminders before the beginning of the talk
+
+The primary target user-base of Kongress is people attending a
+conference with a Linux mobile phone. It also works on desktop,
+leveraging the convergence capabilities of Kirigami.
+
+WWW: https://apps.kde.org/en/kongress

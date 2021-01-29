@@ -136,6 +136,7 @@
     SUBDIR += kmail
     SUBDIR += kmail-account-wizard
     SUBDIR += knotes
+    SUBDIR += kongress
     SUBDIR += kontact
     SUBDIR += korganizer
     SUBDIR += kruler
