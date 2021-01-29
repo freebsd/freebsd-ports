@@ -1,14 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	fuzzel
-DISTVERSION=	1.4.2
+DISTVERSION=	1.5.0
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
-
-PATCH_SITES=	https://codeberg.org/dnkl/${PORTNAME}/commit/
-PATCHFILES+=	902f8209cfe2.patch:-p1 # memfd_create
-PATCHFILES+=	452c0161f66c.patch:-p1 # _POSIX_C_SOURCE
-PATCHFILES+=	544c78f0bfdf.patch:-p1 # epoll-shim
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Application launcher for wlroots-based Wayland compositors
@@ -25,7 +20,6 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 gnome meson pkgconfig xorg
-USE_GNOME=	cairo librsvg2
 USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
@@ -37,6 +31,18 @@ PLIST_FILES=	bin/${PORTNAME} \
 # prompt.c:45:21: error: suggest braces around initialization of subobject [-Werror,-Wmissing-braces]
 CFLAGS+=	-Wno-error=missing-braces
 .endif
+
+OPTIONS_DEFINE=	CAIRO LIBRSVG2 PNG
+OPTIONS_DEFAULT=CAIRO LIBRSVG2 PNG
+
+CAIRO_USE=		GNOME=cairo
+CAIRO_MESON_ENABLED=	enable-cairo
+
+LIBRSVG2_USE=		GNOME=librsvg2
+LIBRSVG2_MESON_ENABLED=	enable-svg
+
+PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_MESON_ENABLED=	enable-png
 
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},g' \
