@@ -77,6 +77,36 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5d91370b-61fd-11eb-b87a-901b0ef719ab">
+    <topic>FreeBSD -- Xen guests can triger backend Out Of Memory</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>12.2</ge><lt>12.2_3</lt></range>
+	<range><ge>12.1</ge><lt>12.1_13</lt></range>
+	<range><ge>11.4</ge><lt>11.4_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Some OSes (including Linux, FreeBSD, and NetBSD) are processing watch
+	events using a single thread.  If the events are received faster than
+	the thread is able to handle, they will get queued.</p>
+	<p>As the queue is unbound, a guest may be able to trigger a OOM in
+	the backend.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-29568</cvename>
+      <freebsdsa>SA-21:02.xenoom</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-01-29</discovery>
+      <entry>2021-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a9c6e9be-61fb-11eb-b87a-901b0ef719ab">
     <topic>FreeBSD -- Uninitialized kernel stack leaks in several file systems</topic>
     <affects>
