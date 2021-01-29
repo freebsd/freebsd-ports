@@ -1,4 +1,4 @@
---- src/wayland-server.c.orig	2020-02-11 23:46:03 UTC
+--- src/wayland-server.c.orig	2020-12-21 10:17:10 UTC
 +++ src/wayland-server.c
 @@ -25,6 +25,8 @@
  
@@ -9,13 +9,17 @@
  #include <stdbool.h>
  #include <stdlib.h>
  #include <stdint.h>
-@@ -44,6 +46,11 @@
+@@ -44,6 +46,15 @@
  #include <sys/file.h>
  #include <sys/stat.h>
  
 +#ifdef HAVE_SYS_UCRED_H
-+#include <sys/types.h>
++#include <sys/param.h>
 +#include <sys/ucred.h>
++#ifndef SOL_LOCAL
++/* DragonFly or FreeBSD < 12.2 */
++#define SOL_LOCAL 0
++#endif
 +#endif
 +
  #include "wayland-util.h"
@@ -35,13 +39,17 @@
  	int error;
  	struct wl_priv_signal resource_created_signal;
  };
-@@ -315,7 +328,13 @@ wl_resource_post_error(struct wl_resource *resource,
+@@ -315,7 +328,17 @@ wl_resource_post_error(struct wl_resource *resource,
  static void
  destroy_client_with_error(struct wl_client *client, const char *reason)
  {
 +#ifdef HAVE_SYS_UCRED_H
 +	/* FreeBSD */
++#if defined(__FreeBSD__) && __FreeBSD_version >= 1300030
++	wl_log("%s (pid %u)\n", reason, client->xucred.cr_pid);
++#else
 +	wl_log("%s\n", reason);
++#endif
 +#else
 +	/* Linux */
  	wl_log("%s (pid %u)\n", reason, client->ucred.pid);
@@ -49,7 +57,7 @@
  	wl_client_destroy(client);
  }
  
-@@ -529,10 +548,20 @@ wl_client_create(struct wl_display *display, int fd)
+@@ -529,10 +552,20 @@ wl_client_create(struct wl_display *display, int fd)
  	if (!client->source)
  		goto err_client;
  
@@ -62,7 +70,7 @@
 +#elif defined(LOCAL_PEERCRED)
 +	/* FreeBSD */
 +	len = sizeof client->xucred;
-+	if (getsockopt(fd, SOL_SOCKET, LOCAL_PEERCRED,
++	if (getsockopt(fd, SOL_LOCAL, LOCAL_PEERCRED,
 +		       &client->xucred, &len) < 0 ||
 +		       client->xucred.cr_version != XUCRED_VERSION)
 +		goto err_source;
@@ -70,14 +78,19 @@
  
  	client->connection = wl_connection_create(fd);
  	if (client->connection == NULL)
-@@ -586,12 +615,23 @@ WL_EXPORT void
+@@ -586,12 +619,28 @@ WL_EXPORT void
  wl_client_get_credentials(struct wl_client *client,
  			  pid_t *pid, uid_t *uid, gid_t *gid)
  {
 +#ifdef HAVE_SYS_UCRED_H
-+	/* FreeBSD */
++	/* DragonFly or FreeBSD */
  	if (pid)
-+		*pid = 0; /* FIXME: not defined on FreeBSD */
++#if defined(__FreeBSD__) && __FreeBSD_version >= 1300030
++		/* Since https://cgit.freebsd.org/src/commit/?id=c5afec6e895a */
++		*pid = client->xucred.cr_pid;
++#else
++		*pid = 0;
++#endif
 +	if (uid)
 +		*uid = client->xucred.cr_uid;
 +	if (gid)
