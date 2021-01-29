@@ -3,6 +3,7 @@
 
 PORTNAME=	drm-current-kmod
 PORTVERSION=	5.4.92.g20210128
+PORTREVISION=	1
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -19,8 +20,6 @@ RUN_DEPENDS=	gpu-firmware-kmod>=g20200914:graphics/gpu-firmware-kmod
 CONFLICTS_INSTALL=	drm-devel-kmod
 
 OPTIONS_DEFINE=	DEBUG SOURCE
-
-OPTIONS_DEFAULT=	SOURCE
 
 SOURCE_DESC=	Install kernel module sources
 

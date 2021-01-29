@@ -3,6 +3,7 @@
 
 PORTNAME=	drm-devel-kmod
 PORTVERSION=	5.4.92.g20210128
+PORTREVISION=	1
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
