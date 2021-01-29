@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	atompaw
-DISTVERSION=	4.1.0.6
-PORTREVISION=	1
+DISTVERSION=	4.1.1.0
 CATEGORIES=	science
 MASTER_SITES=	http://users.wfu.edu/natalie/papers/pwpaw/
 
@@ -23,7 +22,6 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
 
 PLIST_FILES=	bin/atompaw \
-		bin/graphatom \
-		lib/libatompaw.a
+		bin/graphatom
 
 .include <bsd.port.mk>
