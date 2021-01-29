@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	abella
-DISTVERSION=	2.0.6
+DISTVERSION=	2.0.7
 CATEGORIES=	math
 MASTER_SITES=	http://abella-prover.org/distributions/
 
