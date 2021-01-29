@@ -1,6 +1,6 @@
-TIMESTAMP = 1606212613
-SHA256 (wtfutil-wtf-v0.34.0_GH0.tar.gz) = 5fccf617851940362b5ab2d10051917ce5ab8ba3de94897f2cea47176e9e2e29
-SIZE (wtfutil-wtf-v0.34.0_GH0.tar.gz) = 2258143
+TIMESTAMP = 1611561730
+SHA256 (wtfutil-wtf-v0.35.0_GH0.tar.gz) = 9fcf24d41ff9a96aa257d59322c1d4577ebf1101ccdfd792a0c5c4d93bb0c6d3
+SIZE (wtfutil-wtf-v0.35.0_GH0.tar.gz) = 2263860
 SHA256 (AlecAivazis-survey-v1.7.1_GH0.tar.gz) = 5856e883e2a69df86e6e080586591d746e1a88438338e419ddd1ff55843e6cc6
 SIZE (AlecAivazis-survey-v1.7.1_GH0.tar.gz) = 980032
 SHA256 (Azure-go-autorest-v11.1.2_GH0.tar.gz) = d80b612306ad7f416fc21791ef02173e5bc6fc38d304ea8b8950e2c3adeeaa6c
