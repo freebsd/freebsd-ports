@@ -1,0 +1,40 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: web2ldap
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable web2ldap:
+# web2ldap_enable="NO"
+#
+# web2ldap_enable (bool):	Set to YES to enable web2ldap
+#				Default: NO
+# web2ldap_user (str):		web2ldap daemon user
+#				Default: nobody
+# web2ldap_group (str):		web2ldap daemon group
+#				Default: nogroup
+. /etc/rc.subr
+
+name="web2ldap"
+rcvar=web2ldap_enable
+
+: ${web2ldap_enable:="NO"}
+: ${web2ldap_user:="nobody"}
+: ${web2ldap_group:="nogroup"}
+
+# daemon
+pidfile="/var/run/${name}.pid"
+command=/usr/sbin/daemon
+procname="daemon"
+command_args=" -c -f -P ${pidfile} %%PREFIX%%/bin/${name}"
+start_precmd="web2ldap_precmd"
+
+web2ldap_precmd()
+{
+    install -o ${web2ldap_user} /dev/null ${pidfile}
+}
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,0 +1,21 @@
+[
+{ type: install
+  message: <<EOM
+Run:
+
+  service web2ldap onestart
+
+to start the standalone version of web2ldap. By default it only accepts
+connections from localhost, this can be changed by editing configuration
+option ``access_allowed'' in the file:
+
+  %%ETCDIR%%/web2ldapcnf/__init__.py
+
+For configuration suggestions on installing the WSGI version of web2ldap using
+apache *instead of the standalone version*, please look at the enclosed
+documentation in:
+
+  https://fossies.org/linux/web2ldap/etc/apache2/sample-mod_wsgi.conf
+EOM
+}
+]
