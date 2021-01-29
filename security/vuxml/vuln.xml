@@ -77,6 +77,44 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a9c6e9be-61fb-11eb-b87a-901b0ef719ab">
+    <topic>FreeBSD -- Uninitialized kernel stack leaks in several file systems</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>12.2</ge><lt>12.2_3</lt></range>
+	<range><ge>12.1</ge><lt>12.1_13</lt></range>
+	<range><ge>11.4</ge><lt>11.4_7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Several file systems were not properly initializing the d_off field
+	of the dirent structures returned by VOP_READDIR. In particular,
+	tmpfs(5), smbfs(5), autofs(5) and mqueuefs(5) were failing to do so.
+	As a result, eight uninitialized kernel stack bytes may be leaked to
+	userspace by these file systems. This problem is not present in
+	FreeBSD 11.</p>
+	<p>Additionally, msdosfs(5) was failing to zero-fill a pair of padding
+	fields in the dirent structure, resulting in a leak of three
+	uninitialized bytes.</p>
+	<h1>Impact:</h1>
+	<p>Kernel stack disclosures may leak sensitive information which could
+	be used to compromise the security of the system.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-25578</cvename>
+      <cvename>CVE-2020-25579</cvename>
+      <freebsdsa>SA-21:01.fsdisclosure</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-01-29</discovery>
+      <entry>2021-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="13ca36b8-6141-11eb-8a36-7085c2fb2c14">
     <topic>pngcheck -- Buffer-overrun vulnerability</topic>
     <affects>
