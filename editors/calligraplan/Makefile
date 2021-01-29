@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	calligraplan
-DISTVERSION=	3.2.2
-PORTREVISION=	2
+DISTVERSION=	3.3.0
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/calligra/${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -24,6 +23,6 @@ USE_QT=		concurrent core dbus gui network printsupport widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm x11 xext
 
-PLIST_SUB+=	SHLIB_VER=17.0.0
+PLIST_SUB+=	SHLIB_VER=18.0.0 SHLIB_SHORT=18
 
 .include <bsd.port.mk>
