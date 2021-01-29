@@ -1,0 +1,19 @@
+A fast, lightweight and minimalistic Wayland terminal emulator.
+
+Features:
+- Fast
+- Lightweight, in dependencies, on-disk and in-memory
+- Wayland native
+- DE agnostic
+- User configurable font fallback
+- On-the-fly font resize
+- On-the-fly DPI font size adjustment
+- Scrollback search
+- Color emoji support
+- Server/daemon mode
+- IME (via text-input-v3)
+- Multi-seat
+- Synchronized Updates
+- Sixel image support
+
+WWW: https://codeberg.org/dnkl/foot
