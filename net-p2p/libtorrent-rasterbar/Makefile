@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-DISTVERSION=	1.2.10
+DISTVERSION=	1.2.12
 CATEGORIES=	net-p2p
-MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/libtorrent-${DISTVERSION}/
+MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library implementing a BitTorrent client
@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 LDFLAGS+=	${ICONV_LIB}
 
 SHLIB_VER=	10
-PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}"
+PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}" SO_VER="${DISTVERSION}"
 
 DOCFILES=	AUTHORS ChangeLog
 PORTDOCS=	${DOCFILES} docs/*
