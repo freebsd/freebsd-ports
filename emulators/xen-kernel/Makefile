@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xen
-PORTVERSION=	4.14.0
+PORTVERSION=	4.14.1
 PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
@@ -25,8 +25,8 @@ STRIP=		#
 PLIST_FILES=	/boot/xen \
 		lib/debug/boot/xen.debug
 
-# Fix build with clang 11
-EXTRA_PATCHES+= ${PATCHDIR}/0001-x86-use-constant-flags-for-section-.init.rodata.patch:-p1
+# Propagate module command line passed by the loader.
+EXTRA_PATCHES+= ${PATCHDIR}/0001-x86-pvh-pass-module-command-line-to-dom0.patch:-p1
 
 .include <bsd.port.options.mk>
 

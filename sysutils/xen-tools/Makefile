@@ -2,8 +2,8 @@
 
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
-PORTVERSION=	4.14.0
-PORTREVISION=	1
+PORTVERSION=	4.14.1
+PORTREVISION=	0
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -57,9 +57,6 @@ ALL_TARGET=		tools
 DOCS_ALL_TARGET=	docs
 INSTALL_TARGET=		install-tools
 DOCS_INSTALL_TARGET=	install-docs
-
-# Fix build with clang 11
-EXTRA_PATCHES+= ${PATCHDIR}/0001-x86-use-constant-flags-for-section-.init.rodata.patch:-p1
 
 .include <bsd.port.options.mk>
 

@@ -1,0 +1,54 @@
+From ddc03f91858b21a1641909d1a1f55604be627d82 Mon Sep 17 00:00:00 2001
+From: Roger Pau Monne <roger.pau@citrix.com>
+Date: Fri, 29 Jan 2021 09:59:03 +0100
+Subject: [PATCH] x86/pvh: pass module command line to dom0
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Both the multiboot and the HVM start info structures allow passing a
+string together with a module. Implement the missing support in
+pvh_load_kernel so that module strings found in the multiboot
+structure are forwarded to dom0.
+
+Fixes: 62ba982424 ('x86: parse Dom0 kernel for PVHv2')
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+---
+NB: str cannot be made const because __hvm_copy buf parameter (that
+maps to str in the added code) is bi-directional depending on the
+flags passed to the function.
+---
+ xen/arch/x86/hvm/dom0_build.c | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+
+diff --git a/xen/arch/x86/hvm/dom0_build.c b/xen/arch/x86/hvm/dom0_build.c
+index 12a82c9d7c..28c29d2669 100644
+--- a/xen/arch/x86/hvm/dom0_build.c
++++ b/xen/arch/x86/hvm/dom0_build.c
+@@ -617,7 +617,22 @@ static int __init pvh_load_kernel(struct domain *d, const module_t *image,
+ 
+         mod.paddr = last_addr;
+         mod.size = initrd->mod_end;
+-        last_addr += ROUNDUP(initrd->mod_end, PAGE_SIZE);
++        last_addr += ROUNDUP(initrd->mod_end, elf_64bit(&elf) ? 8 : 4);
++        if ( initrd->string )
++        {
++            char *str = __va(initrd->string);
++            unsigned int len = strlen(str) + 1;
++
++            rc = hvm_copy_to_guest_phys(last_addr, str, len, v);
++            if ( rc )
++            {
++                printk("Unable to copy module command line\n");
++                return rc;
++            }
++            mod.cmdline_paddr = last_addr;
++            last_addr += len;
++        }
++        last_addr = ROUNDUP(last_addr, PAGE_SIZE);
+     }
+ 
+     /* Free temporary buffers. */
+-- 
+2.29.2
+
