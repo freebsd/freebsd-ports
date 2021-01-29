@@ -98,6 +98,7 @@ sbin/auto-pkgsrc-dir
 sbin/auto-pkgsrc-prefix
 sbin/auto-pkgsrc-remote-x11
 sbin/auto-pkgsrc-setup
+sbin/auto-pkgsrc-wip-checkout
 sbin/auto-ports-branch
 sbin/auto-ports-checkout
 sbin/auto-ports-setup
