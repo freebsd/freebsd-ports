@@ -19,7 +19,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libfcft.so:x11-fonts/fcft \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c11 gnome meson pkgconfig xorg
+USES=		compiler:c11 meson pkgconfig xorg
 USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
@@ -35,9 +35,11 @@ CFLAGS+=	-Wno-error=missing-braces
 OPTIONS_DEFINE=	CAIRO LIBRSVG2 PNG
 OPTIONS_DEFAULT=CAIRO LIBRSVG2 PNG
 
+CAIRO_USES=		gnome
 CAIRO_USE=		GNOME=cairo
 CAIRO_MESON_ENABLED=	enable-cairo
 
+LIBRSVG2_USES=		gnome
 LIBRSVG2_USE=		GNOME=librsvg2
 LIBRSVG2_MESON_ENABLED=	enable-svg
 
