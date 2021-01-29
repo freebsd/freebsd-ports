@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	wayfire
-DISTVERSION=	0.6.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.7.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wf-config>=0.6.0<0.7.0:devel/wf-config \
+		wf-config>=0.7.0<0.8.0:devel/wf-config \
 		${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
 		wayland-protocols>=1.12:graphics/wayland-protocols \
 		glm>=0.9.8:math/glm \

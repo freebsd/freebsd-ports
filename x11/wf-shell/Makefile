@@ -2,7 +2,7 @@
 
 PORTNAME=	wf-shell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.7.0
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols \
-		wf-config>=0.6.0:devel/wf-config \
+		wf-config>=0.7.0:devel/wf-config \
 		wayfire>0:x11-wm/wayfire
 LIB_DEPENDS=	libinotify.so:devel/libinotify \
 		libwf-config.so:devel/wf-config \
@@ -33,5 +33,10 @@ OPTIONS_DEFAULT=PULSEAUDIO
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_MESON_ENABLED=	pulse
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
+		${WRKSRC}/src/dock/toplevel-icon.cpp \
+		${WRKSRC}/src/panel/widgets/window-list/toplevel.cpp
 
 .include <bsd.port.mk>
