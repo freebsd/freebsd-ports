@@ -1,5 +1,5 @@
-TIMESTAMP = 1609937385
-SHA256 (graylog/graylog-4.0.1.tgz) = 4b1c7b5a67a0b3cd84838d9cf977efe2ec653d0b8d458800df6d20deb336e5f9
-SIZE (graylog/graylog-4.0.1.tgz) = 163263748
-SHA256 (graylog-integrations/graylog-integrations-plugins-4.0.1.tgz) = 2d1031fe5310e92908f8764281d8e99dc66d10e73c2f008185795c18fec3436f
-SIZE (graylog-integrations/graylog-integrations-plugins-4.0.1.tgz) = 29070372
+TIMESTAMP = 1611784001
+SHA256 (graylog/graylog-4.0.2.tgz) = 3608eb4d51530b1822a36a7f4ac37e9e0d8c793c1bea0d4b8586adf6fed99e03
+SIZE (graylog/graylog-4.0.2.tgz) = 163286730
+SHA256 (graylog-integrations/graylog-integrations-plugins-4.0.2.tgz) = 5ee83e45989249c695c74ea7e3e7baa259734c6098b899d7361125379ce338b6
+SIZE (graylog-integrations/graylog-integrations-plugins-4.0.2.tgz) = 29070917
