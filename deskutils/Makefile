@@ -29,6 +29,7 @@
     SUBDIR += calendar
     SUBDIR += calendar-data
     SUBDIR += calibre
+    SUBDIR += calindori
     SUBDIR += cartotheque
     SUBDIR += cfiles
     SUBDIR += charmtimetracker
