@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xplanet
-PORTVERSION=	1.3.0
-PORTREVISION=	12
+PORTVERSION=	1.3.1
 CATEGORIES=	astro geography
 MASTER_SITES=	SF
 
@@ -11,8 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draw pictures of the earth textured by an image
 
 GNU_CONFIGURE=	yes
-USES=		iconv localbase xorg
-USE_XORG=	xt xscrnsaver
+USES=		iconv:wchar_t localbase xorg
+USE_XORG=	x11 xext xt xscrnsaver
 CONFIGURE_ARGS=	--with-map-extension=jpg
 CPPFLAGS+=	-I${LOCALBASE}/include/netpbm
 LIBS+=		-lm
