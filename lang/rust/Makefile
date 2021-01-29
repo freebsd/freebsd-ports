@@ -32,8 +32,7 @@ ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 
 BUILD_DEPENDS=	cmake:devel/cmake \
 		libgit2>=1.0.0:devel/libgit2 \
-		ninja:devel/ninja \
-		bash>0:shells/bash
+		ninja:devel/ninja
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
@@ -187,51 +186,21 @@ do-configure:
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} x.py dist --jobs=${MAKE_JOBS_NUMBER} \
-			library/std src/librustc cargo clippy rustfmt src
-	${RM} -rf ${WRKSRC}/build/tmp/dist
-
-COMPONENTS=	rustc-${PORTVERSION}-${_RUST_TARGET} \
-		rust-std-${PORTVERSION}-${_RUST_TARGET} \
-		cargo-${PORTVERSION}-${_RUST_TARGET} \
-		clippy-${PORTVERSION}-${_RUST_TARGET} \
-		rustfmt-${PORTVERSION}-${_RUST_TARGET}
-
-.if ${PORT_OPTIONS:MSOURCES}
-COMPONENTS+=	rust-src-${PORTVERSION}
-.endif
-
-.if ${PORT_OPTIONS:MWASM}
-COMPONENTS+=	rust-std-${PORTVERSION}-wasm32-unknown-unknown
-.endif
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} x.py build --jobs=${MAKE_JOBS_NUMBER}
 
 do-install:
-	@${RM} -r ${WRKSRC}/_extractdist
-.for _c in ${COMPONENTS}
-	${MKDIR} ${WRKSRC}/_extractdist
-	cd ${WRKSRC}/_extractdist && ${TAR} xf \
-		${WRKSRC}/build/dist/${_c}.tar.xz
-	${REINPLACE_CMD} 's|/bin/bash|${LOCALBASE}/bin/bash|' \
-		${WRKSRC}/_extractdist/${_c}/install.sh
-	cd ${WRKSRC}/_extractdist/${_c} && \
-		${LOCALBASE}/bin/bash ./install.sh \
-		--prefix="${STAGEDIR}${PREFIX}" \
-		--mandir="${STAGEDIR}${PREFIX}/share/man"
-	@${RM} -r ${WRKSRC}/_extractdist
-.endfor
-
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} x.py install --jobs=${MAKE_JOBS_NUMBER}
 # We autogenerate the plist file.  We do that, instead of the
 # regular pkg-plist, because several libraries have a computed
 # filename based on the absolute path of the source files.  As it
 # is user-specific, we cannot know their filename in advance.
-post-install:
-	# cleanup
 	@${RM} -r ${STAGEDIR}${DOCSDIR}/*.old \
+		${STAGEDIR}${DOCSDIR}/html/.lock \
+		${STAGEDIR}${DOCSDIR}/html/.stamp \
 		${STAGEDIR}${PREFIX}/lib/rustlib/install.log \
-		${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh \
-		${STAGEDIR}${PREFIX}/lib/rustlib/rust-installer-version \
-		${STAGEDIR}${PREFIX}/lib/rustlib/components \
-		${STAGEDIR}${PREFIX}/lib/rustlib/manifest-*
+		${STAGEDIR}${PREFIX}/lib/rustlib/manifest-* \
+		${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
 	@${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/lib -exec ${FILE} -i {} + | \
 		${AWK} -F: '/executable|sharedlib/ { print $$1 }' | ${XARGS} ${STRIP_CMD}
 	@${FIND} ${STAGEDIR}${PREFIX} -not -type d | \
