@@ -352,7 +352,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/EVP_ASYM_CIPHER_free.3.gz
 %%MAN3%%man/man3/EVP_BytesToKey.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_CTX_get_cipher_data.3.gz
-%%MAN3%%man/man3/EVP_CIPHER_CTX_get_iv.3.gz
+%%MAN3%%man/man3/EVP_CIPHER_CTX_get_original_iv.3.gz
 %%MAN3%%man/man3/EVP_CIPHER_meth_new.3.gz
 %%MAN3%%man/man3/EVP_DigestInit.3.gz
 %%MAN3%%man/man3/EVP_DigestSignInit.3.gz
@@ -388,6 +388,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/EVP_PKEY_fromdata.3.gz
 %%MAN3%%man/man3/EVP_PKEY_gen.3.gz
 %%MAN3%%man/man3/EVP_PKEY_get_default_digest_nid.3.gz
+%%MAN3%%man/man3/EVP_PKEY_get_field_type.3.gz
 %%MAN3%%man/man3/EVP_PKEY_get_group_name.3.gz
 %%MAN3%%man/man3/EVP_PKEY_gettable_params.3.gz
 %%MAN3%%man/man3/EVP_PKEY_is_a.3.gz
@@ -398,6 +399,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/EVP_PKEY_set1_RSA.3.gz
 %%MAN3%%man/man3/EVP_PKEY_set1_encoded_public_key.3.gz
 %%MAN3%%man/man3/EVP_PKEY_set_type.3.gz
+%%MAN3%%man/man3/EVP_PKEY_settable_params.3.gz
 %%MAN3%%man/man3/EVP_PKEY_sign.3.gz
 %%MAN3%%man/man3/EVP_PKEY_size.3.gz
 %%MAN3%%man/man3/EVP_PKEY_supports_digest_nid.3.gz
@@ -483,6 +485,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/OSSL_ENCODER_CTX.3.gz
 %%MAN3%%man/man3/OSSL_ENCODER_CTX_new_by_EVP_PKEY.3.gz
 %%MAN3%%man/man3/OSSL_ENCODER_to_bio.3.gz
+%%MAN3%%man/man3/OSSL_HTTP_REQ_CTX.3.gz
 %%MAN3%%man/man3/OSSL_HTTP_transfer.3.gz
 %%MAN3%%man/man3/OSSL_LIB_CTX.3.gz
 %%MAN3%%man/man3/OSSL_PARAM.3.gz
@@ -683,6 +686,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/SSL_get_shared_sigalgs.3.gz
 %%MAN3%%man/man3/SSL_get_verify_result.3.gz
 %%MAN3%%man/man3/SSL_get_version.3.gz
+%%MAN3%%man/man3/SSL_group_to_name.3.gz
 %%MAN3%%man/man3/SSL_in_init.3.gz
 %%MAN3%%man/man3/SSL_key_update.3.gz
 %%MAN3%%man/man3/SSL_library_init.3.gz
@@ -756,6 +760,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/X509_sign.3.gz
 %%MAN3%%man/man3/X509_verify.3.gz
 %%MAN3%%man/man3/X509_verify_cert.3.gz
+%%MAN3%%man/man3/X509V3_set_ctx.3.gz
 %%MAN3%%man/man3/X509v3_get_ext_by_NID.3.gz
 %%MAN3%%man/man3/d2i_PKCS8PrivateKey_bio.3.gz
 %%MAN3%%man/man3/d2i_PrivateKey.3.gz
@@ -845,6 +850,7 @@ man/man5/x509v3_config.5.gz
 %%MAN3%%man/man7/openssl-core_names.h.7.gz
 %%MAN3%%man/man7/openssl-env.7.gz
 %%MAN3%%man/man7/openssl-glossary.7.gz
+%%MAN3%%man/man7/openssl-threads.7.gz
 %%MAN3%%man/man7/openssl_user_macros.7.gz
 %%MAN3%%man/man7/ossl_store-file.7.gz
 %%MAN3%%man/man7/ossl_store.7.gz
