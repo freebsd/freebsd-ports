@@ -22,15 +22,6 @@
          ARCH="X86_64"
          AS="${AS-nasm}"
          AS_EXT=".asm"
-@@ -839,7 +833,7 @@ case $host_cpu in
-             AS="${AS-${CC}}"
-         fi
-         ;;
--    aarch64)
-+    aarch64|arm64)
-         ARCH="AARCH64"
-         stack_alignment=16
-         if [ "$SYS" = MACOSX ] ; then
 @@ -952,7 +946,7 @@ if cc_check '' '' '' '__attribute__((force_align_arg_p
      fi
  fi

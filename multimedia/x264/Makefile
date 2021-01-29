@@ -34,7 +34,7 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS?=	libx264.so:multimedia/libx264
 
 X264_BUILD=	161
-X264_REV=	3020
+X264_REV=	3039
 X264_GITVER=	${GL_COMMIT:C/^(.{7}).*/\1/}
 
 USES?=		pkgconfig
@@ -43,7 +43,7 @@ USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
-GL_COMMIT=	d198931a63049db1f2c92d96c34904c69fde8117
+GL_COMMIT=	544c61f082194728d0391fb280a6e138ba320a96
 HAS_CONFIGURE=	yes
 SHEBANG_FILES=	configure
 PLIST_FILES?=	bin/x264
