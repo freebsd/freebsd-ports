@@ -529,6 +529,7 @@
     SUBDIR += qmail-tls
     SUBDIR += qmailadmin
     SUBDIR += qmailanalog
+    SUBDIR += qmailmrtg7
     SUBDIR += qmhandle
     SUBDIR += qpopper
     SUBDIR += qsf
