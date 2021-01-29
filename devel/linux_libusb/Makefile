@@ -31,9 +31,9 @@ CFLAGS:=	${CFLAGS:N-march=*}
 CFLAGS+=	-I${WRKDIR}/${DISTNAME}/include
 SSP_CFLAGS?=	-fstack-protector # XXX -strong isn't supported by GCC < 4.9
 MAKE_ARGS+=	LIBUSB_GLOBAL_INCLUDE_FILE=libusb_global_linux.h
-MAKE_ARGS+=	NO_WERROR=yes
 MAKE_ARGS+=	WITHOUT_PROFILE=yes
 MAKE_ARGS+=	WITHOUT_SSP=yes
+MAKE_ARGS+=	WITHOUT_WERROR=yes
 MAKE_ARGS+=	__MAKE_CONF=""
 MAKE_ENV+=	LDADD="-lrt"
 
@@ -43,6 +43,10 @@ FSVNPATH?=	http://svn.freebsd.org/base/head
 FSVNDIR=	lib/libusb
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300134
+MAKE_ARGS+=	NO_WERROR=yes
+.endif
 
 .if ${ARCH} == amd64
 PLIST_FILES+=	usr/lib/libusb.so.3 \
