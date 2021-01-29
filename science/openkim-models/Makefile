@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openkim-models
-DISTVERSION=	2019-07-25
+DISTVERSION=	2021-01-28
 CATEGORIES=	science
 MASTER_SITES=	https://s3.openkim.org/archives/collection/
 
