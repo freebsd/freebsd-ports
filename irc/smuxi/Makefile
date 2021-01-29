@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.smuxi.org/jaws/data/files/
 MAINTAINER=	fox@FreeBSD.org
 COMMENT=	Smart MUltipleXed Irc
 
-LICENSE=	LGPL21
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/log4net.pc:devel/log4net \
