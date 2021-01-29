@@ -1,5 +1,13 @@
 Adjust includes in various places.
 
+level_zero/tools/source/metrics/linux/os_metric_enumeration_imp_linux.cpp:14:10: fatal error: 'sys/sysmacros.h' file not found
+#include <sys/sysmacros.h>
+         ^~~~~~~~~~~~~~~~~
+In file included from level_zero/tools/source/sysman/linux/os_sysman_imp.h:12:
+level_zero/tools/source/sysman/linux/fs_access.h:19:10: fatal error: 'sys/sysmacros.h' file not found
+#include <sys/sysmacros.h>
+         ^~~~~~~~~~~~~~~~~
+
 core/os_interface/linux/drm_neo.cpp:21:10: fatal error: 'linux/limits.h' file not found
 #include <linux/limits.h>
          ^~~~~~~~~~~~~~~~
@@ -15,6 +23,28 @@ runtime/tbx/tbx_sockets_imp.cpp:107:9: error: unknown type name 'sockaddr_in'; d
 struct sockaddr {
        ^
 
+--- level_zero/tools/source/metrics/linux/os_metric_enumeration_imp_linux.cpp.orig	2021-01-20 18:22:07 UTC
++++ level_zero/tools/source/metrics/linux/os_metric_enumeration_imp_linux.cpp
+@@ -11,7 +11,9 @@
+ #include "level_zero/tools/source/metrics/metric_enumeration_imp.h"
+ 
+ #include <sys/stat.h>
++#if defined(__linux__)
+ #include <sys/sysmacros.h>
++#endif
+ 
+ namespace L0 {
+ 
+--- level_zero/tools/source/sysman/linux/fs_access.h.orig	2020-03-27 09:53:58 UTC
++++ level_zero/tools/source/sysman/linux/fs_access.h
+@@ -16,7 +16,6 @@
+ #include <sstream>
+ #include <string>
+ #include <sys/stat.h>
+-#include <sys/sysmacros.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+ #include <vector>
 --- shared/source/os_interface/linux/drm_neo.cpp.orig	2020-04-17 18:43:38 UTC
 +++ shared/source/os_interface/linux/drm_neo.cpp
 @@ -19,9 +19,9 @@
