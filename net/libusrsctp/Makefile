@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libusrsctp
-DISTVERSION=	0.9.4.0
+DISTVERSION=	0.9.5.0
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,8 +21,8 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 PLIST_FILES=	include/usrsctp.h \
 		lib/libusrsctp.so \
-		lib/libusrsctp.so.1 \
-		lib/libusrsctp.so.1.0.0 \
+		lib/libusrsctp.so.2 \
+		lib/libusrsctp.so.2.0.0 \
 		libdata/pkgconfig/usrsctp.pc
 
 CFLAGS+=	-Wno-error
