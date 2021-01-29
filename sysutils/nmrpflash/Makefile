@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nmrpflash
-DISTVERSION=	0.9.15-rc3
+DISTVERSION=	0.9.15
 CATEGORIES=	sysutils
 
 MAINTAINER=	se@FreeBSD.org
