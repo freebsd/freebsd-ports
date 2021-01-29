@@ -1,33 +1,20 @@
---- src/makefile.orig	2017-03-30 18:12:23 UTC
+--- src/makefile.orig	2020-12-21 10:56:19 UTC
 +++ src/makefile
-@@ -13,7 +13,7 @@
- # See src/gui-qt/highlight.pro for the Qt GUI compilation options
+@@ -36,7 +36,7 @@ GUI_QT_DIR=./gui-qt/
+ INCLUDE_DIR=./include/
  
- #CXX=clang++
--CXX=g++
-+CXX?=c++
+ # try to detect Lua versioning scheme
+-LUA_PKG_NAME=lua5.3
++LUA_PKG_NAME=lua-$(LUA_VER)
+ LUA_TEST=$(shell pkg-config --exists ${LUA_PKG_NAME}; echo $$?)
  
- # was: qmake-qt5
- QMAKE=qmake
-@@ -39,10 +39,10 @@ INCLUDE_DIR=./include/
- # If Lua 5.2 is not default on your system yet you have to
- # use lua5.1 in the pkg-config calls
- 
--LUA_CFLAGS=$(shell pkg-config --cflags lua)
-+LUA_CFLAGS=$(shell pkg-config --cflags lua-$(LUA_VER))
- 
- # default lua lib
--LUA_LIBS=$(shell pkg-config --libs lua)
-+LUA_LIBS=$(shell pkg-config --libs lua-$(LUA_VER))
- 
- # luajit lib
- # LUA_LIBS=$(shell pkg-config --libs luajit)
-@@ -73,7 +73,7 @@ LDFLAGS = -ldl
+ ifeq (${LUA_TEST},1)
+@@ -75,7 +75,7 @@ LDFLAGS = -ldl
  #LDFLAGS = ${LDFLAGS} -s
  #LDFLAGS= -Wl,--as-needed
  
 -CXX_COMPILE=${CXX} ${CFLAGS} -c -I ${INCLUDE_DIR} ${LUA_CFLAGS}
-+CXX_COMPILE=${CXX} ${CFLAGS} -c -I ${INCLUDE_DIR} -I%%LOCALBASE%%/include ${LUA_CFLAGS}
++CXX_COMPILE=${CXX} ${CFLAGS} -c -I ${INCLUDE_DIR} -I${LOCALBASE}/include ${LUA_CFLAGS}
  
  # Data directories (data dir, configuration file dir)
  CXX_DIR=-DHL_DATA_DIR=\"${HL_DATA_DIR}\" -DHL_CONFIG_DIR=\"${HL_CONFIG_DIR}\"

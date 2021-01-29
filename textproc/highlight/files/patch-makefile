@@ -1,4 +1,4 @@
---- makefile.orig	2017-03-30 18:12:23 UTC
+--- makefile.orig	2020-12-21 10:56:19 UTC
 +++ makefile
 @@ -4,10 +4,10 @@
  # Installation directories:
@@ -16,14 +16,14 @@
 @@ -16,7 +16,7 @@ data_dir = ${PREFIX}/share/highlight/
  bin_dir = ${PREFIX}/bin/
  
- # Location of the highlight man page:
--man_dir = ${PREFIX}/share/man/man1/
-+man_dir = ${PREFIX}/man/man1/
+ # Location of the highlight man pages:
+-man_dir = ${PREFIX}/share/man/
++man_dir = ${PREFIX}/man/
  
  # Location of the highlight documentation:
  doc_dir = ${PREFIX}/share/doc/highlight/
 @@ -25,8 +25,8 @@ doc_dir = ${PREFIX}/share/doc/highlight/
- examples_dir = ${doc_dir}examples/
+ examples_dir = ${doc_dir}extras/
  
  # Location of the highlight config files:
 -conf_dir = /etc/highlight/
