@@ -16029,3 +16029,6 @@ security/py-rekall-core||2021-01-28|Has expired: Unmaintained upstream
 www/kurly||2021-01-28|Has expired: Upstream is gone
 security/regripper||2021-01-28|Has expired: Upstream repo disappeared
 ftp/bbftp||2021-01-30|Was split into client and server ports, install as needed
+graphics/opencv-core|graphics/opencv|2021-01-30|Reintegrated into a simple, maintainable port
+graphics/py-opencv|graphics/opencv|2021-01-30|Reintegrated into a simple, maintainable port
+graphics/opencv-java|graphics/opencv|2021-01-30|Reintegrated into a simple, maintainable port

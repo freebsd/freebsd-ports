@@ -380,8 +380,7 @@ gst_neon_PLIST_FILES=	${GST_LIB_DIR}/libgstneonhttpsrc.so
 gst_ogg_LIB_DEPENDS=	libogg.so:audio/libogg
 
 # opencv
-gst_opencv_LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
-			libopencv_highgui.so:graphics/opencv
+gst_opencv_LIB_DEPENDS=		libopencv_highgui.so:graphics/opencv
 gst_opencv_GST_PLUGIN_DIR=	gst-libs/gst/opencv ext/opencv
 gst_opencv_PLIST_FILES=		#
 gst_opencv_USES=	compiler:c++11-lib

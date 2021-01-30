@@ -3,6 +3,7 @@
 PORTNAME=	actiona
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.10.1
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/property_tree/ini_parser.hpp:devel/boost-libs
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
-		libopencv_core.so:graphics/opencv-core \
-		libopencv_video.so:graphics/opencv
+		libopencv_core.so:graphics/opencv
 
 USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig qmake \
 		gnome qt:5 shared-mime-info xorg
@@ -25,6 +25,8 @@ USE_QT=		concurrent core dbus gui multimedia network script scripttools speech s
 USE_GNOME=	gdkpixbuf2 glib20
 USE_GL=		gl
 USE_XORG=	x11 xtst
+
+QMAKE_ARGS=	PKGCONFIG_OPENCV=opencv4
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

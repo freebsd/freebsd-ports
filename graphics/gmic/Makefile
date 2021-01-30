@@ -2,7 +2,7 @@
 
 PORTNAME=	gmic
 DISTVERSION=	2.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://gmic.eu/files/source/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -21,8 +21,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libGraphicsMagick++.so:graphics/GraphicsMagick \
 		libIlmImf.so:graphics/openexr \
 		libImath.so:graphics/ilmbase \
-		libopencv_core.so:graphics/opencv-core \
-		libopencv_video.so:graphics/opencv \
+		libopencv_core.so:graphics/opencv \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 

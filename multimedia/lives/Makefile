@@ -3,7 +3,7 @@
 
 PORTNAME=	lives
 DISTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://lives-video.com/releases/
 DISTNAME=	LiVES-${PORTVERSION}
@@ -123,7 +123,7 @@ OGM_DESC=			Use ogmtools for manipulating with OGM files
 OGM_RUN_DEPENDS=		ogmmerge:multimedia/ogmtools
 OPENCV_CONFIGURE_OFF=		--disable-opencv
 OPENCV_LIB_DEPENDS=		libopencv_calib3d.so:graphics/opencv \
-				libopencv_core.so:graphics/opencv-core
+				libopencv_core.so:graphics/opencv
 SCHROEDINGER_CONFIGURE_OFF=	--disable-dirac
 SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:multimedia/schroedinger
 SSWF_DESC=			Use sswf for manipulating with Flash movies

@@ -2,7 +2,7 @@
 
 PORTNAME=	visp
 DISTVERSION=	3.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc
 MASTER_SITES=	http://gforge.inria.fr/frs/download.php/latestfile/475/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libgsl.so:math/gsl \
 		liblapack.so:math/lapack \
 		libopenblas.so:math/openblas \
-		libopencv_core.so:graphics/opencv-core \
+		libopencv_core.so:graphics/opencv \
 		libopencv_videoio.so:graphics/opencv \
 		libpcl_common.so:graphics/pcl-pointclouds \
 		libqhull.so:math/qhull \

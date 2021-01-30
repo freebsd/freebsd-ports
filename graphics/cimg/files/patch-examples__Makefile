@@ -1,4 +1,4 @@
---- examples/Makefile.orig	2020-06-10 08:03:38 UTC
+--- examples/Makefile.orig	2020-11-23 20:31:46 UTC
 +++ examples/Makefile
 @@ -89,7 +89,7 @@ VERSION2 = $(shell grep 'cimg_version\ ' ../CImg.h | t
  VERSION3 = $(shell grep 'cimg_version\ ' ../CImg.h | tail -c2 | head -c1)
@@ -30,6 +30,18 @@
  endif
  ifdef IS_ICPC
  OPT_CFLAGS = -fast
+@@ -172,9 +172,9 @@ endif
+ 
+ # Flags to enable OpenCV support.
+ OPENCV_DEFINE = -Dcimg_use_opencv
+-OPENCV_INCDIR = $(shell pkg-config opencv --cflags || echo -I/usr/include/opencv) -I/usr/include/opencv
++OPENCV_INCDIR = $(shell pkg-config opencv4 --cflags || echo -I/usr/include/opencv) -I/usr/include/opencv
+ OPENCV_CFLAGS = $(OPENCV_DEFINE) $(OPENCV_INCDIR)
+-OPENCV_LIBS = $(shell pkg-config opencv --libs || echo -lopencv_core -lopencv_highgui)
++OPENCV_LIBS = $(shell pkg-config opencv4 --libs || echo -lopencv_core -lopencv_highgui)
+ 
+ # Flags used to disable display capablities of CImg
+ NODISPLAY_CFLAGS = -Dcimg_display=0
 @@ -224,7 +224,7 @@ JPEG_LIBS = -ljpeg
  TIFF_DEFINE = -Dcimg_use_tiff
  TIFF_INCDIR =

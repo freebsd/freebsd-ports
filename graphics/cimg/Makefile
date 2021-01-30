@@ -4,7 +4,7 @@
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v.
 DISTVERSION=	2.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 
@@ -55,8 +55,7 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl			\
 		libIlmImf.so:graphics/openexr		\
 		libgimp-2.0.so:graphics/gimp-app	\
 		libfftw3.so:math/fftw3			\
-		libopencv_video.so:graphics/opencv	\
-		libopencv_core.so:graphics/opencv-core	\
+		libopencv_core.so:graphics/opencv	\
 		libGraphicsMagick.so:graphics/GraphicsMagick
 USES+=		jpeg
 ALL_TARGET=	Mlinux

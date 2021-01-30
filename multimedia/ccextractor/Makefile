@@ -3,7 +3,7 @@
 PORTNAME=	ccextractor
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.85
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	multimedia
 
 MAINTAINER=	oz@nixil.net
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libgmp.so:math/gmp \
 		libgnutls.so:security/gnutls \
 		libogg.so:audio/libogg \
-		libopencv_core.so:graphics/opencv-core \
+		libopencv_core.so:graphics/opencv \
 		libpng.so:graphics/png \
 		libschroedinger-1.0.so:multimedia/schroedinger \
 		libtheoraenc.so:multimedia/libtheora \

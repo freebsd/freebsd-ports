@@ -3,7 +3,7 @@
 PORTNAME=	chilitags
 DISTVERSION=	2.0.0-169
 DISTVERSIONSUFFIX=	-g0d9854f
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,8 +12,7 @@ COMMENT=	Robust fiducial markers for augmented reality and robotics
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
-LIB_DEPENDS=	libopencv_imgproc.so:graphics/opencv-core \
-		libopencv_video.so:graphics/opencv
+LIB_DEPENDS=	libopencv_video.so:graphics/opencv
 
 USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes

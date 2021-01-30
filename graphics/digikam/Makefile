@@ -2,7 +2,7 @@
 
 PORTNAME=	digikam
 DISTVERSION=	7.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/digikam/${PORTVERSION}
@@ -24,8 +24,7 @@ LIB_DEPENDS=	libKF5Sane.so:graphics/libksane \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
 		liblqr-1.so:graphics/liblqr-1 \
-		libopencv_video.so:graphics/opencv \
-		libopencv_core.so:graphics/opencv-core \
+		libopencv_core.so:graphics/opencv \
 		libpgf.so:graphics/libpgf \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \

@@ -2,7 +2,7 @@
 
 PORTNAME=	mxnet
 DISTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,7 +39,7 @@ CPP_USES=		python:build
 CPP_VARS=		BINARY_ALIAS=python=${PYTHON_CMD}
 
 OPENCV_CMAKE_BOOL=	USE_OPENCV
-OPENCV_LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
+OPENCV_LIB_DEPENDS=	libopencv_core.so:graphics/opencv \
 			libopencv_videoio.so:graphics/opencv
 
 .include <bsd.port.pre.mk>

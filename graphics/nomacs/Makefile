@@ -3,7 +3,7 @@
 PORTNAME=	nomacs
 PORTVERSION=	3.16
 DISTVERSIONSUFFIX=	.224
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/nomacs/nomacs/commit/
@@ -16,7 +16,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libopencv_highgui.so:graphics/opencv \
-		libopencv_core.so:graphics/opencv-core \
+		libopencv_core.so:graphics/opencv \
 		liblcms2.so:graphics/lcms2 \
 		libquazip1-qt5.so:archivers/quazip
 

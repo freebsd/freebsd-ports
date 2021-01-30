@@ -4,7 +4,7 @@
 PORTNAME=	frei0r
 PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	plugins-
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics
 MASTER_SITES?=	https://files.dyne.org/frei0r/releases/
 
@@ -32,7 +32,7 @@ USES+=		localbase
 PORTREVISION=	0
 COMMENT=	Frei0r OpenCV plugins
 PKGNAMESUFFIX=	-plugins-opencv
-LIB_DEPENDS+=	libopencv_core.so:graphics/opencv-core \
+LIB_DEPENDS+=	libopencv_core.so:graphics/opencv \
 		libopencv_video.so:graphics/opencv
 FREI0R_PLUGINS=	facebl0r facedetect
 

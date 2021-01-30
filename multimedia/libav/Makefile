@@ -15,8 +15,7 @@ BROKEN_aarch64=		fails to link: can't create dynamic relocation R_AARCH64_ABS64 
 BROKEN_armv6=		fails to compile: cc: warning: joined argument expects additional value: -mcpu=
 
 BUILD_DEPENDS=	yasm:devel/yasm
-LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
-		libgmp.so:math/gmp \
+LIB_DEPENDS=	libgmp.so:math/gmp \
 		libvdpau.so:multimedia/libvdpau \
 		libhogweed.so:security/nettle
 
@@ -43,11 +42,11 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--cc="${CC}"
 
 OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB BZIP2 CDIO FAAC FDK_AAC DC1394 DOCS FREETYPE \
-		FREI0R GNUTLS GSM ILBC JACK LAME OPENCV OPENJPEG OPENSSL \
+		FREI0R GNUTLS GSM ILBC JACK LAME OPENJPEG OPENSSL \
 		OPUS PULSEAUDIO RTMP SCHROEDINGER SDL SPEEX THEORA V4L VAAPI \
 		VDPAU VO_AACENC VO_AMRWBENC VORBIS VPX WAVPACK WEBP X11GRAB \
 		X264 XVID ZLIB
-OPTIONS_DEFAULT=BZIP2 FREETYPE FREI0R GNUTLS OPENCV SCHROEDINGER \
+OPTIONS_DEFAULT=BZIP2 FREETYPE FREI0R GNUTLS SCHROEDINGER \
 		THEORA VAAPI VDPAU VO_AACENC VORBIS VPX X264 XVID ZLIB
 
 FDK_AAC_DESC=	AAC audio encoding via Fraunhofer FDK
@@ -105,9 +104,6 @@ JACK_CONFIGURE_OFF=		--disable-indev=jack
 
 LAME_LIB_DEPENDS=		libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=		libmp3lame
-
-OPENCV_LIB_DEPENDS=		libopencv_video.so:graphics/opencv
-OPENCV_CONFIGURE_ENABLE=	libopencv
 
 OPENJPEG_LIB_DEPENDS=		libopenjpeg.so:graphics/openjpeg15
 OPENJPEG_CONFIGURE_ENABLE=	libopenjpeg

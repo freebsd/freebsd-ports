@@ -3,6 +3,7 @@
 PORTNAME=	waifu2x-converter-cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.3.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,10 +15,9 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/include/picojson_LICENSE.txt
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/CL/opencl.h:devel/opencl
-LIB_DEPENDS=	libopencv_imgcodecs.so:graphics/opencv \
-		libopencv_imgproc.so:graphics/opencv-core
+LIB_DEPENDS=	libopencv_imgcodecs.so:graphics/opencv
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake compiler:c++17-lang localbase:ldflags
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	DeadSix27

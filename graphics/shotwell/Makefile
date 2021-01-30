@@ -3,7 +3,7 @@
 
 PORTNAME=	shotwell
 PORTVERSION=	0.30.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 
@@ -57,7 +57,7 @@ OPENMP_DESC=	libraw uses OpenMP (implies GCC)
 
 FACED_CONFIGURE_ON=	-Dface-detection=true
 FACED_CONFIGURE_OFF=	-Dface-detection=false
-FACED_LIB_DEPENDS=	libopencv_core.so:graphics/opencv-core \
+FACED_LIB_DEPENDS=	libopencv_core.so:graphics/opencv \
 			libopencv_photo.so:graphics/opencv
 OPENMP_USES=		compiler:openmp
 OPENMP_USES_OFF=	compiler:c++11-lib
