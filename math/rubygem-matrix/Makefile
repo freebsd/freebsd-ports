@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	matrix
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	math rubygems
 MASTER_SITES=	RG
 
