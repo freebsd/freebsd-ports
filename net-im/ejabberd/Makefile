@@ -1,13 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ejabberd
-PORTVERSION=	20.12
+PORTVERSION=	21.01
 CATEGORIES=	net-im
-
-# To be removed in the next update
-# See https://github.com/processone/ejabberd/pull/3452
-PATCH_SITES=	https://github.com/processone/ejabberd/commit/
-PATCHFILES=	2f3063def69c1d120262f6dd7a26ce59b6e6569c.patch:-p1
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
@@ -104,34 +99,35 @@ SUB_LIST=	${SUBS} \
 SHEBANG_FILES=	${WRKSRC}/ejabberdctl.template
 
 BASE64URL_VER=	1.0.1
-CACHE_TAB_VER=	1.0.26
-EIMP_VER=	1.0.18
+CACHE_TAB_VER=	1.0.27
+EIMP_VER=	1.0.19
+EJABBERD_PO_VER=	0.0.0
 EPAM_VER=	1.0.10
 EREDIS_VER=	1.0.8
-ESIP_VER=	1.0.39
+ESIP_VER=	1.0.41
 EZLIB_VER=	1.0.9
-FAST_TLS_VER=	1.1.10
+FAST_TLS_VER=	1.1.11
 FAST_XML_VER=	1.1.45
-FAST_YAML_VER=	1.0.29
+FAST_YAML_VER=	1.0.30
 GOLDRUSH_VER=	0.1.9
 IDNA_VER=	6.0.0
 JIFFY_VER=	1.0.5
 JOSE_VER=	1.9.0
 LAGER_VER=	3.6.10
 LUERL_VER=	0.3
-MQTREE_VER=	1.0.11
-P1_ACME_VER=	1.0.10
+MQTREE_VER=	1.0.12
+P1_ACME_VER=	1.0.11
 P1_MYSQL_VER=	1.0.17
 P1_OAUTH2_VER=	0.6.8
 P1_PGSQL_VER=	1.1.10
 P1_UTILS_VER=	1.0.21
 PKIX_VER=	1.0.7
-SQLITE3_VER=	1.1.9
+SQLITE3_VER=	1.1.11
 STRINGPREP_VER=	1.0.24
-STUN_VER=	1.0.40
+STUN_VER=	1.0.42
 UNICODE_UTIL_COMPAT_VER=	0.4.1
-XMPP_VER=	1.5.1
-YCONF_VER=	1.0.9
+XMPP_VER=	1.5.2
+YCONF_VER=	1.0.10
 
 OPTIONS_SUB=		yes
 SIP_DESC=	SIP support
@@ -156,6 +152,7 @@ SQLITE_CONFIGURE_ENABLE=sqlite
 SQLITE_GH_TUPLE=	processone:erlang-sqlite3:${SQLITE3_VER}:sqlite3/deps/sqlite3
 TOOLS_CONFIGURE_ENABLE=	tools
 TOOLS_GH_TUPLE=	rvirding:luerl:v${LUERL_VER}:luerl/deps/luerl
+TOOLS_GH_TUPLE+=processone:ejabberd-po:9d6085d:ejabberdpo/deps/ejabberd_po
 FULLXML_CONFIGURE_ENABLE=	full-xml
 SQLITE_USES=		sqlite
 DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=yes
