@@ -13,7 +13,7 @@ COMMENT=	Microsoft Azure Storage Blob Client Library for Ruby
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-azure-storage-common>=2.0<3:devel/rubygem-azure-storage-common \
-		rubygem-nokogiri>=1.11.0.rc2<1.12:textproc/rubygem-nokogiri
+		rubygem-nokogiri>=1.11.0<1.12:textproc/rubygem-nokogiri
 
 USES=		gem
 USE_RUBY=	yes
