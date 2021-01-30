@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apsw
-PORTVERSION=	3.33.0
+PORTVERSION=	3.34.0
 DISTVERSIONSUFFIX=	-r1
 CATEGORIES=	databases python
 MASTER_SITES=	https://github.com/rogerbinns/apsw/releases/download/${PORTVERSION}${DISTVERSIONSUFFIX}/
