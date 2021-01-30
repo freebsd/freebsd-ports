@@ -3,3 +3,7 @@ interface to LDAP directories with tightly integrated browsing and
 editing capabilities. It is entirely written in Java with the help
 of the JFC (SwingSet) and JNDI class libraries. It connects to LDAP
 v2 and v3 servers.
+
+WWW: https://web.archive.org/web/20041019084702/http://www.iit.edu/~gawojar/ldap/
+WWW: https://web.archive.org/web/20081218031210/http://www.mcs.anl.gov/~gawor/ldap/
+WWW: https://web.archive.org/web/20090224235755/http://ldapmanager.com/en/
