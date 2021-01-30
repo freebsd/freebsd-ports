@@ -250,6 +250,7 @@ include/grpcpp/support/stub_options.h
 include/grpcpp/support/sync_stream.h
 include/grpcpp/support/time.h
 include/grpcpp/support/validate_service_config.h
+include/grpcpp/xds_server_builder.h
 lib/cmake/grpc/gRPCConfig.cmake
 lib/cmake/grpc/gRPCConfigVersion.cmake
 lib/cmake/grpc/gRPCTargets-%%CMAKE_BUILD_TYPE%%.cmake
