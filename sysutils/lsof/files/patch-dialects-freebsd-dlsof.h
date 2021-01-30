@@ -1,40 +1,15 @@
---- dialects/freebsd/dlsof.h.orig	2019-05-08 07:32:25 UTC
+--- dialects/freebsd/dlsof.h.orig	2020-11-10 19:00:21 UTC
 +++ dialects/freebsd/dlsof.h
-@@ -38,6 +38,7 @@
- #if	!defined(FREEBSD_LSOF_H)
- #define	FREEBSD_LSOF_H	1
+@@ -559,7 +559,7 @@ typedef	u_long		KA_T;
+  * Global storage definitions (including their structure definitions)
+  */
  
-+#include <stddef.h>
- #include <stdlib.h>
- #include <dirent.h>
- #include <nlist.h>
-@@ -45,6 +46,12 @@
- #include <signal.h>
- #include <unistd.h>
+-struct file * Cfp;
++extern struct file * Cfp;
  
-+#if    FREEBSDV>=13000
-+/* This header is a huge mess.  Please don't support EOL FreeBSD releases. */
-+#define        _KERNEL 1
-+#include <sys/_lock.h>
-+#undef _KERNEL
-+#endif         /* FREEBSDV>=13000 */
- # if	FREEBSDV>=4000
- #  if	FREEBSDV>=5000
- #   if	FREEBSDV<6020
-@@ -105,6 +112,12 @@ typedef	struct device	*device_t;
- 
- #include <sys/conf.h>
- 
-+/* 
-+ * include <stdbool.h> for refcount(9)
-+ */
-+#include <stdbool.h>
-+ 
-+
- #  if	defined(HAS_VM_MEMATTR_T)
- #undef	vm_memattr_t
- #  endif	/* defined(HAS_VM_MEMATTR_T) */
-@@ -652,9 +665,15 @@ struct sfile {
+ # if	FREEBSDV>=2000
+ extern kvm_t *Kd;
+@@ -663,9 +663,15 @@ struct sfile {
   */
  
  struct	namecache {
