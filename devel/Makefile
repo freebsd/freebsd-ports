@@ -5916,7 +5916,6 @@
     SUBDIR += rubygem-bootsnap
     SUBDIR += rubygem-bootsnap14
     SUBDIR += rubygem-bootstrap_form
-    SUBDIR += rubygem-brpoplpush-redis_script
     SUBDIR += rubygem-bson
     SUBDIR += rubygem-buftok
     SUBDIR += rubygem-bugspots
