@@ -3,7 +3,7 @@
 
 PORTNAME?=	gitlab-ce
 PORTVERSION?=	13.8.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	www devel
 
 MAINTAINER?=	mfechner@FreeBSD.org
@@ -240,7 +240,7 @@ MY_DEPENDS=	git>=2.29:devel/git \
 	rubygem-json>=2.3.0<2.4:devel/rubygem-json \
 	rubygem-json-schema>=2.8.0<2.9:devel/rubygem-json-schema \
 	rubygem-json_schemer>=0.2.12<0.3:devel/rubygem-json_schemer \
-	rubygem-oj>=3.10.6<3.11:devel/rubygem-oj \
+	rubygem-oj310>=3.10.6<3.11:devel/rubygem-oj310 \
 	rubygem-multi_json114>=1.14.1<1.15:devel/rubygem-multi_json114 \
 	rubygem-yajl-ruby>=1.4.1<1.5:devel/rubygem-yajl-ruby \
 	rubygem-webauthn>=2.3<3:security/rubygem-webauthn \
