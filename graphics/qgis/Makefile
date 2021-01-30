@@ -97,7 +97,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 
 ### Fortran is needed by numpy, GRASS, etc.
 USES=		bison cmake compiler:features cpe desktop-file-utils \
-		fortran gl gmake gnome pgsql pyqt:5 python:3.6+ qca qt:5 \
+		fortran gl gmake gnome pgsql pyqt:5 python:3.7+ qca qt:5 \
 		shebangfix sqlite:3
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}

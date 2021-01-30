@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}patsy>=0.5:math/py-patsy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.1:science/py-scipy@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
+USES=		python:3.7+ shebangfix
 USE_PYTHON=	autoplist concurrent cython distutils
 
 SHEBANG_GLOB=	*.py

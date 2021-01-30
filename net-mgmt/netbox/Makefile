@@ -48,7 +48,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django31>=3.1.3<3.2:www/py-django31@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.3.1<6:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>=19.9.0<21:www/py-gunicorn@${PY_FLAVOR}
 
-USES=		pgsql:9.6+ python:3.6+
+USES=		pgsql:9.6+ python:3.7+
 USE_GITHUB=	yes
 GH_ACCOUNT=	netbox-community
 

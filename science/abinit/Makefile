@@ -35,7 +35,7 @@ TEST_DEPENDS=	${PYNUMPY}	\
 		libyaml>0:textproc/libyaml
 
 USES=		autoreconf:build blaslapack:netlib fortran gmake gnome localbase:ldflags	\
-		python:3.6+ shebangfix
+		python:3.7+ shebangfix
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
 SHEBANG_FILES=	config/scripts/* doc/tutorial/paral_gspw_assets/abinit.sub.*
