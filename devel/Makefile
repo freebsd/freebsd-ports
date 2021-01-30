@@ -6337,6 +6337,7 @@
     SUBDIR += rubygem-oci
     SUBDIR += rubygem-octopress-hooks
     SUBDIR += rubygem-oj
+    SUBDIR += rubygem-oj310
     SUBDIR += rubygem-omniauth_crowd
     SUBDIR += rubygem-open3
     SUBDIR += rubygem-open3_backport
