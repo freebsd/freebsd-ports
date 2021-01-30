@@ -1,4 +1,4 @@
-TIMESTAMP = 1611057685
+TIMESTAMP = 1611920528
 SHA256 (rust/crates/adler-0.2.3.tar.gz) = ee2a4ec343196209d6594e19543ae87a39f96d5534d7174822a3ad825dd6ed7e
 SIZE (rust/crates/adler-0.2.3.tar.gz) = 12168
 SHA256 (rust/crates/adler32-1.2.0.tar.gz) = aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234
@@ -405,5 +405,5 @@ SHA256 (rust/crates/xml-rs-0.8.3.tar.gz) = b07db065a5cf61a7e4ba64f29e67db906fb17
 SIZE (rust/crates/xml-rs-0.8.3.tar.gz) = 52547
 SHA256 (rust/crates/yaml-rust-0.4.4.tar.gz) = 39f0c922f1a334134dc2f7a8b67dc5d25f0735263feec974345ff706bcf20b0d
 SIZE (rust/crates/yaml-rust-0.4.4.tar.gz) = 48359
-SHA256 (canop-broot-v1.2.0_GH0.tar.gz) = 87758fd6bc4bc3db32d6a557b84db28fa527be2102ecf9c465cb5a0393af428f
-SIZE (canop-broot-v1.2.0_GH0.tar.gz) = 6255425
+SHA256 (canop-broot-v1.2.1_GH0.tar.gz) = 5be09d67bea864bbb2d1ce50e854c17490bbf42e2544a987a1c91b9ddbf75f41
+SIZE (canop-broot-v1.2.1_GH0.tar.gz) = 6255181
