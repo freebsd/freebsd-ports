@@ -42,8 +42,8 @@ GAV1_LIB_DEPENDS=	libgav1.so:multimedia/libgav1
 GAV1_CMAKE_BOOL=	AVIF_CODEC_LIBGAV1
 
 LIBYUV_DESC=		Colorspace conversion via libyuv
+LIBYUV_BUILD_DEPENDS=	libyuv>=0.0.1755:graphics/libyuv
 LIBYUV_LIB_DEPENDS=	libyuv.so:graphics/libyuv
-LIBYUV_BROKEN=		libyuv >= 1755 is required, see https://chromium.googlesource.com/libyuv/libyuv/+/d426247a3bf6%5E!/
 
 PIXBUF_USES=		gnome
 PIXBUF_USE=		GNOME=gdkpixbuf2

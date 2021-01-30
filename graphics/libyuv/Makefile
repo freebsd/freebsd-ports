@@ -11,9 +11,10 @@
 #  -> #define LIBYUV_VERSION 1741
 
 PORTNAME=	libyuv
-DISTVERSION=	0.0.1741
+DISTVERSION=	0.0.1767
 CATEGORIES=	graphics
-MASTER_SITES=	LOCAL/mikael/libyuv/:libyuv
+MASTER_SITES=	LOCAL/mikael/libyuv/:libyuv \
+		LOCAL/tcberner/libyuv/:libyuv
 DISTFILES=	libyuv-${LIBYUV_HASH}.tar.gz:libyuv
 
 MAINTAINER=	corsmith@gmail.com
@@ -26,7 +27,7 @@ USE_LDCONFIG=	yes
 SUB_FILES=	libyuv.pc
 SUB_LIST=	DISTVERSION=${DISTVERSION}
 
-LIBYUV_HASH=	6afd9becdf58822b1da6770598d8597c583ccfad
+LIBYUV_HASH=	f014dbd87ab06258569ad10a4cb6f84a8a7f7dd2
 
 # sha256 changes everytime you download the archive, need to host it on freefall
 # To download the distfile: as mikael: make MAINTAINER_MODE=yes fetch
