@@ -1,0 +1,5 @@
+Key-value stores with automatic pruning. Caches can limit either
+their total size or the age of the oldest object (or both),
+automatically pruning objects to maintain the constraints.
+
+WWW: https://cran.r-project.org/web/packages/cachem/
