@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-apis-core
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +19,8 @@ RUN_DEPENDS=	rubygem-addressable>=2.5.1<3:www/rubygem-addressable \
 		rubygem-representable>=3.0<4:textproc/rubygem-representable \
 		rubygem-retriable>=2.0<4.0:devel/rubygem-retriable \
 		rubygem-rexml>=0:textproc/rubygem-rexml \
-		rubygem-signet>=0.14<1:security/rubygem-signet
+		rubygem-signet>=0.14<1:security/rubygem-signet \
+		rubygem-webrick>=0:www/rubygem-webrick
 
 USES=		gem
 USE_RUBY=	yes
