@@ -1,0 +1,7 @@
+bin/bbftpd
+man/man1/bbftpd.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/ports
+%%PORTDOCS%%%%DOCSDIR%%/stats

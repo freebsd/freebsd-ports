@@ -6,7 +6,8 @@
     SUBDIR += R-cran-RCurl
     SUBDIR += R-cran-curl
     SUBDIR += axel
-    SUBDIR += bbftp
+    SUBDIR += bbftp-client
+    SUBDIR += bbftp-server
     SUBDIR += bftpd
     SUBDIR += bsdftpd-ssl
     SUBDIR += cmdftp
