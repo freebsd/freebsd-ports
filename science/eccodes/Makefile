@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	eccodes
-PORTVERSION=	2.19.1
+PORTVERSION=	2.20.0
 DISTVERSIONSUFFIX=	-Source
-PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/45757960/ \
 		LOCAL/sunpoet
