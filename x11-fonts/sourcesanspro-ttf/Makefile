@@ -3,9 +3,10 @@
 
 PORTNAME=	sourcesanspro
 PORTVERSION=	3.028
-DISTVERSIONSUFFIX=	R
+MASTER_SITES=	https://github.com/adobe-fonts/source-sans-pro/releases/download/${PORTVERSION}R/
 CATEGORIES=	x11-fonts
 PKGNAMESUFFIX=	-ttf
+DISTNAME=	source-sans-${PORTVERSION:R}v${PORTVERSION:E}R
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of fonts by Adobe designed for user interfaces
@@ -13,9 +14,7 @@ COMMENT=	Set of fonts by Adobe designed for user interfaces
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-PORTSCOUT=	skipv:variable-fonts
-
-USES=		fonts
+USES=		fonts zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -23,9 +22,7 @@ NO_BUILD=	yes
 FONTNAME=	SourceSansPro
 SUB_FILES=	pkg-message
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	adobe-fonts
-GH_PROJECT=	source-sans-pro
+PORTSCOUT=	skipv:variable-fonts
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}
