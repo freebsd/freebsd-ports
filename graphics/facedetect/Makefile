@@ -4,7 +4,7 @@
 PORTNAME=	facedetect
 PORTVERSION=	0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -13,7 +13,7 @@ COMMENT=	Simple face detector for batch processing
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cv2.so:graphics/py-opencv@${PY_FLAVOR}
+RUN_DEPENDS=	opencv>0:graphics/opencv
 
 USES=		python:3.6+,run shebangfix
 USE_GITHUB=	yes

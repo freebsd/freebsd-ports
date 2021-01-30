@@ -2,7 +2,7 @@
 
 PORTNAME=	xpra
 PORTVERSION=	4.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -84,7 +84,7 @@ SWSCALE_LIB_DEPENDS=		libswscale.so:multimedia/ffmpeg
 SWSCALE_VARS=			XPRA_OPTIONS+=csc_swscale
 VPX_LIB_DEPENDS=		libvpx.so:multimedia/libvpx
 VPX_VARS=			XPRA_OPTIONS+=vpx
-WEBCAM_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}opencv>2:graphics/py-opencv@${PY_FLAVOR}
+WEBCAM_RUN_DEPENDS=		opencv>2:graphics/opencv
 WEBCAM_VARS=			XPRA_OPTIONS+=webcam
 X264_LIB_DEPENDS=		libx264.so:multimedia/libx264
 X264_VARS=			XPRA_OPTIONS+=enc_x264
