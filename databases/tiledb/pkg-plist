@@ -12,6 +12,7 @@ include/tiledb/domain.h
 include/tiledb/exception.h
 include/tiledb/filter.h
 include/tiledb/filter_list.h
+include/tiledb/fragment_info.h
 include/tiledb/group.h
 include/tiledb/object.h
 include/tiledb/object_iter.h
