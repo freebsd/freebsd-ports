@@ -1,0 +1,11 @@
+--- configure.orig	2021-01-21 14:33:24 UTC
++++ configure
+@@ -13533,7 +13533,7 @@ $as_echo "#define PNG_ARM_NEON_OPT 0" >>confdefs.h
+ $as_echo "#define PNG_MIPS_MSA_OPT 0" >>confdefs.h
+ 
+               ;;
+-            i?86|x86_64)
++            i?86|x86_64|amd64)
+               enable_intel_sse=yes
+ 
+ $as_echo "#define PNG_INTEL_SSE_OPT 1" >>confdefs.h
