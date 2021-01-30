@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asciidoc
-PORTVERSION=	9.0.4
-PORTREVISION=	1
+PORTVERSION=	9.0.5
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/asciidoc/asciidoc-py3/releases/download/${PORTVERSION}/
 
