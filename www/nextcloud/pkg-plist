@@ -5263,6 +5263,8 @@
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/fr.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/gl.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/gl.json
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/he.js
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/he.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/hr.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/hr.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/hu.js
@@ -5275,10 +5277,14 @@
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/ja.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/ko.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/ko.json
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/lt_LT.js
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/lt_LT.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/nb.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/nb.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/nl.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/nl.json
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/oc.js
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/oc.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/pl.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/pl.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/pt_BR.js
@@ -5297,6 +5303,8 @@
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/sv.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/tr.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/tr.json
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/uk.js
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/uk.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/zh_CN.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/zh_TW.js
@@ -5341,6 +5349,8 @@
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/en_GB.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/es.js
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/es.json
+%%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/eu.js
+%%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/eu.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/fr.js
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/fr.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/gl.js
@@ -5375,6 +5385,8 @@
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/tr.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/zh_TW.js
+%%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/lib/AppInfo/Application.php
 %%WWWDIR%%/apps-pkg/cloud_federation_api/lib/Capabilities.php
 %%WWWDIR%%/apps-pkg/cloud_federation_api/lib/Config.php
@@ -5669,6 +5681,8 @@
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/pl.json
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/pt_BR.js
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/pt_BR.json
+%%WWWDIR%%/apps-pkg/contactsinteraction/l10n/sc.js
+%%WWWDIR%%/apps-pkg/contactsinteraction/l10n/sc.json
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/sk.js
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/sk.json
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/sl.js
@@ -5677,6 +5691,8 @@
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/tr.json
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/contactsinteraction/l10n/zh_TW.js
+%%WWWDIR%%/apps-pkg/contactsinteraction/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/contactsinteraction/lib/AddressBook.php
 %%WWWDIR%%/apps-pkg/contactsinteraction/lib/AddressBookProvider.php
 %%WWWDIR%%/apps-pkg/contactsinteraction/lib/AppInfo/Application.php
@@ -5738,6 +5754,8 @@
 %%WWWDIR%%/apps-pkg/dashboard/l10n/el.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/es.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/es.json
+%%WWWDIR%%/apps-pkg/dashboard/l10n/eu.js
+%%WWWDIR%%/apps-pkg/dashboard/l10n/eu.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/fa.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/fa.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/fi.js
@@ -8159,6 +8177,8 @@
 %%WWWDIR%%/apps-pkg/files_rightclick/l10n/ro.json
 %%WWWDIR%%/apps-pkg/files_rightclick/l10n/ru.js
 %%WWWDIR%%/apps-pkg/files_rightclick/l10n/ru.json
+%%WWWDIR%%/apps-pkg/files_rightclick/l10n/sc.js
+%%WWWDIR%%/apps-pkg/files_rightclick/l10n/sc.json
 %%WWWDIR%%/apps-pkg/files_rightclick/l10n/si_LK.js
 %%WWWDIR%%/apps-pkg/files_rightclick/l10n/si_LK.json
 %%WWWDIR%%/apps-pkg/files_rightclick/l10n/sk.js
@@ -8946,6 +8966,8 @@
 %%WWWDIR%%/apps-pkg/files_versions/l10n/ro.json
 %%WWWDIR%%/apps-pkg/files_versions/l10n/ru.js
 %%WWWDIR%%/apps-pkg/files_versions/l10n/ru.json
+%%WWWDIR%%/apps-pkg/files_versions/l10n/sc.js
+%%WWWDIR%%/apps-pkg/files_versions/l10n/sc.json
 %%WWWDIR%%/apps-pkg/files_versions/l10n/si_LK.js
 %%WWWDIR%%/apps-pkg/files_versions/l10n/si_LK.json
 %%WWWDIR%%/apps-pkg/files_versions/l10n/sk.js
@@ -9499,6 +9521,8 @@
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/fr.json
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/gl.js
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/gl.json
+%%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/he.js
+%%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/he.json
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/hr.js
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/hr.json
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/it.js
@@ -10679,6 +10703,10 @@
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/nl.json
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/pl.js
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/pl.json
+%%WWWDIR%%/apps-pkg/provisioning_api/l10n/pt_BR.js
+%%WWWDIR%%/apps-pkg/provisioning_api/l10n/pt_BR.json
+%%WWWDIR%%/apps-pkg/provisioning_api/l10n/sc.js
+%%WWWDIR%%/apps-pkg/provisioning_api/l10n/sc.json
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/sk.js
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/sk.json
 %%WWWDIR%%/apps-pkg/provisioning_api/l10n/sl.js
@@ -10755,6 +10783,8 @@
 %%WWWDIR%%/apps-pkg/recommendations/l10n/ko.json
 %%WWWDIR%%/apps-pkg/recommendations/l10n/lt_LT.js
 %%WWWDIR%%/apps-pkg/recommendations/l10n/lt_LT.json
+%%WWWDIR%%/apps-pkg/recommendations/l10n/lv.js
+%%WWWDIR%%/apps-pkg/recommendations/l10n/lv.json
 %%WWWDIR%%/apps-pkg/recommendations/l10n/mk.js
 %%WWWDIR%%/apps-pkg/recommendations/l10n/mk.json
 %%WWWDIR%%/apps-pkg/recommendations/l10n/nb.js
@@ -12740,6 +12770,8 @@
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/fr.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/gl.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/gl.json
+%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/he.js
+%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/he.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/hr.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/hr.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/hu.js
@@ -13441,6 +13473,8 @@
 %%WWWDIR%%/apps-pkg/user_status/l10n/fr.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/gl.js
 %%WWWDIR%%/apps-pkg/user_status/l10n/gl.json
+%%WWWDIR%%/apps-pkg/user_status/l10n/he.js
+%%WWWDIR%%/apps-pkg/user_status/l10n/he.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/hr.js
 %%WWWDIR%%/apps-pkg/user_status/l10n/hr.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/is.js
@@ -13740,6 +13774,8 @@
 %%WWWDIR%%/apps-pkg/weather_status/l10n/el.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/es.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/es.json
+%%WWWDIR%%/apps-pkg/weather_status/l10n/fi.js
+%%WWWDIR%%/apps-pkg/weather_status/l10n/fi.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/fr.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/fr.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/gl.js
@@ -15058,6 +15094,8 @@
 %%WWWDIR%%/core/l10n/nb.json
 %%WWWDIR%%/core/l10n/nl.js
 %%WWWDIR%%/core/l10n/nl.json
+%%WWWDIR%%/core/l10n/oc.js
+%%WWWDIR%%/core/l10n/oc.json
 %%WWWDIR%%/core/l10n/pl.js
 %%WWWDIR%%/core/l10n/pl.json
 %%WWWDIR%%/core/l10n/pt_BR.js
