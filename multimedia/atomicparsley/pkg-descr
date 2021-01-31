@@ -6,4 +6,4 @@ setting metadata into MPEG-4 files supporting these styles of metadata:
     * ISO copyright notices at movie & track level for MPEG-4
     * uuid private user extension text & file embedding for MPEG-4
 
-WWW: http://atomicparsley.sourceforge.net/
+WWW: https://github.com/wez/atomicparsley
