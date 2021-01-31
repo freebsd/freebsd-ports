@@ -6,7 +6,7 @@ DISTVERSIONSUFFIX=	-gd0be33c
 CATEGORIES=	devel comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure-python implementation of ADB and Fastboot protocols
 
 LICENSE=	APACHE20

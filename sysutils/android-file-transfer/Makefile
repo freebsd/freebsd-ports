@@ -6,7 +6,7 @@ DISTVERSION=	4.2
 PORTREVISION?=	0
 CATEGORIES=	sysutils
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Android MTP client with minimalistic UI
 
 LICENSE=	GPLv3+

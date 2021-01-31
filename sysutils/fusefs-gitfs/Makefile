@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils devel
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Version controlled file system
 
 LICENSE=	APACHE20

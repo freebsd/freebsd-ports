@@ -6,7 +6,7 @@ DISTVERSION=	7.1.2_r17
 PORTREVISION=	9
 CATEGORIES=	devel
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Android simpleperf tool
 
 LICENSE=	APACHE20
