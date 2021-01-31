@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2019-12-06 16:20:37 UTC
+--- CMakeLists.txt.orig	2020-12-09 06:02:41 UTC
 +++ CMakeLists.txt
 @@ -11,8 +11,6 @@ if (NOT WITHOUT_OPENCV)
    find_package (OpenCV)
@@ -27,9 +27,9 @@
 -set (includedir "${CMAKE_INSTALL_PREFIX}/include")
 -configure_file ("frei0r.pc.in" "frei0r.pc" @ONLY)
 -install (FILES "${CMAKE_CURRENT_BINARY_DIR}/frei0r.pc" DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
---- src/filter/CMakeLists.txt.orig	2019-12-06 16:20:37 UTC
+--- src/filter/CMakeLists.txt.orig	2020-12-09 06:02:41 UTC
 +++ src/filter/CMakeLists.txt
-@@ -8,92 +8,3 @@ if (${OpenCV_FOUND})
+@@ -8,93 +8,3 @@ if (${OpenCV_FOUND})
      add_subdirectory (facebl0r)
      add_subdirectory (facedetect)
  endif (${OpenCV_FOUND})
@@ -40,6 +40,7 @@
 -endif (${Cairo_FOUND})
 -
 -add_subdirectory (3dflippo)
+-add_subdirectory (aech0r)
 -add_subdirectory (alpha0ps)
 -add_subdirectory (balanc0r)
 -add_subdirectory (baltan)

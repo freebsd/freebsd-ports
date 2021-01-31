@@ -7,6 +7,7 @@ lib/frei0r-1/R.so
 lib/frei0r-1/RGB.so
 lib/frei0r-1/addition.so
 lib/frei0r-1/addition_alpha.so
+lib/frei0r-1/aech0r.so
 lib/frei0r-1/alpha0ps.so
 lib/frei0r-1/alphaatop.so
 lib/frei0r-1/alphagrad.so
