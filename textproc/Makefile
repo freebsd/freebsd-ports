@@ -1453,6 +1453,7 @@
     SUBDIR += py-xlwt
     SUBDIR += py-xml-default-dict
     SUBDIR += py-xmldiff
+    SUBDIR += py-xmlschema
     SUBDIR += py-yapf
     SUBDIR += py-zope.i18nmessageid
     SUBDIR += py-zope.structuredtext
