@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	llfuse
-PORTVERSION=	1.3.6
+PORTVERSION=	1.3.8
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,10 +11,10 @@ COMMENT=	Python bindings for low-level FUSE API
 
 LICENSE=	LGPL20+
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}contextlib2>0:devel/py-contextlib2@${PY_FLAVOR}
+py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}contextlib2>0:devel/py-contextlib2@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang fuse pkgconfig python:3.6+ tar:bz2
-USE_PYTHON=	autoplist distutils
+USES=		compiler:c++11-lang fuse pkgconfig python:3.6+
+USE_PYTHON=	distutils autoplist
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/llfuse*.so
