@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qutebrowser
-DISTVERSION=	1.14.1
+DISTVERSION=	2.0.1
 CATEGORIES=	www
 MASTER_SITES=	CHEESESHOP
 
@@ -10,18 +10,16 @@ COMMENT=	Keyboard-focused browser with a minimal GUI
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=0:devel/py-attrs@${PY_FLAVOR} \
+RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}colorama>=0:devel/py-colorama@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cssutils>=0:www/py-cssutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markupsafe>=0:textproc/py-markupsafe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyPEG2>=0:textproc/py-pyPEG2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip@${PY_FLAVOR} \
 		${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 
-USES=		desktop-file-utils python:3.5+ pyqt:5 qt:5
+USES=		desktop-file-utils python:3.6+ pyqt:5 qt:5
 USE_PYQT=	core opengl printsupport sql widgets qml
 USE_QT=		sql-sqlite3
 USE_PYTHON=	distutils autoplist noflavors
@@ -43,8 +41,18 @@ WEBENGINE_DESC=		WebEngine webpage renderer support
 WEBKIT_USE=	PYQT=webkit,webkitwidgets
 WEBENGINE_USE=	PYQT=webengine,webchannel
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3700
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dataclasses>0:devel/py-dataclasses@${PY_FLAVOR}
+.endif
+
+.if ${PYTHON_REL} < 3900
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>0:devel/py-importlib-resources@${PY_FLAVOR}
+.endif
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/org.qutebrowser.qutebrowser.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}-${PYTHON_VER}.desktop
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
