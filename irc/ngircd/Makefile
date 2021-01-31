@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ngircd
-PORTVERSION=	25
-PORTREVISION=	1
+PORTVERSION=	26.1
 PORTEPOCH=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://arthur.barton.de/pub/${PORTNAME}/ \
-		http://ngircd.mirror.3rz.org/pub/${PORTNAME}/
+MASTER_SITES=	https://ngircd.barton.de/pub/ngircd/ \
+		https://ngircd.mirror.3rz.de/pub/ngircd/
 
 MAINTAINER=	fgsch@lodoss.net
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
