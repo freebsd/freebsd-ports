@@ -25,7 +25,7 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
 .if !exists(/usr/include/omp.h)
-# XXX ports/199603: LLVM openmp in base doesn't support aarch64, armv6, armv7 yet
+# XXX ports/199603: LLVM openmp in base doesn't support armv6, armv7 yet
 OPENMP=		gcc-
 .endif
 
