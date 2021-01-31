@@ -4086,7 +4086,6 @@
     SUBDIR += py-attrs
     SUBDIR += py-autoflake
     SUBDIR += py-automaton
-    SUBDIR += py-automaton1
     SUBDIR += py-autoprop
     SUBDIR += py-avro
     SUBDIR += py-aws-sam-translator
