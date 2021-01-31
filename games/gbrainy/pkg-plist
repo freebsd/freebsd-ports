@@ -38,6 +38,7 @@ share/icons/hicolor/scalable/apps/gbrainy.svg
 share/locale/af/LC_MESSAGES/gbrainy.mo
 share/locale/ar/LC_MESSAGES/gbrainy.mo
 share/locale/ast/LC_MESSAGES/gbrainy.mo
+share/locale/bs/LC_MESSAGES/gbrainy.mo
 share/locale/ca/LC_MESSAGES/gbrainy.mo
 share/locale/ca@valencia/LC_MESSAGES/gbrainy.mo
 share/locale/cs/LC_MESSAGES/gbrainy.mo
@@ -58,9 +59,9 @@ share/locale/id/LC_MESSAGES/gbrainy.mo
 share/locale/it/LC_MESSAGES/gbrainy.mo
 share/locale/ko/LC_MESSAGES/gbrainy.mo
 share/locale/lv/LC_MESSAGES/gbrainy.mo
-share/locale/oc/LC_MESSAGES/gbrainy.mo
 share/locale/nb/LC_MESSAGES/gbrainy.mo
 share/locale/nl/LC_MESSAGES/gbrainy.mo
+share/locale/oc/LC_MESSAGES/gbrainy.mo
 share/locale/pl/LC_MESSAGES/gbrainy.mo
 share/locale/pt/LC_MESSAGES/gbrainy.mo
 share/locale/pt_BR/LC_MESSAGES/gbrainy.mo
@@ -81,6 +82,7 @@ share/locale/vi/LC_MESSAGES/gbrainy.mo
 share/locale/zh_CN/LC_MESSAGES/gbrainy.mo
 share/locale/zh_HK/LC_MESSAGES/gbrainy.mo
 share/locale/zh_TW/LC_MESSAGES/gbrainy.mo
+share/metainfo/gbrainy.appdata.xml
 share/pixmaps/gbrainy.png
 share/pixmaps/gbrainy.svg
 share/pixmaps/gbrainy16.png

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2013-09-15 18:26:13 UTC
+--- Makefile.in.orig	2021-01-31 04:07:09 UTC
 +++ Makefile.in
-@@ -378,8 +378,7 @@ SUBDIRS = \
+@@ -385,8 +385,7 @@ SUBDIRS = \
  	tests		\
  	data		\
  	tools		\
