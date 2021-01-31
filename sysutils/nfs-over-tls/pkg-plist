@@ -1,0 +1,6 @@
+sbin/rpc.tlsclntd
+sbin/rpc.tlsservd
+share/man/man8/rpc.tlsclntd.8.gz
+share/man/man8/rpc.tlsservd.8.gz
+etc/rc.d/tlsclntd
+etc/rc.d/tlsservd
