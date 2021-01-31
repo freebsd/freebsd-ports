@@ -1054,6 +1054,7 @@
     SUBDIR += py-pygeoip
     SUBDIR += py-pyicap
     SUBDIR += py-pynamecheap
+    SUBDIR += py-pynmsg
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pyroute2
