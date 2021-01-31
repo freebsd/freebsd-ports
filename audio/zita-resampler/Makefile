@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	zita-resampler
-PORTVERSION=	1.6.2
-PORTREVISION=	2
+DISTVERSION=	1.8.0
 CATEGORIES=	audio
-MASTER_SITES=	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/
+MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	C++ library for resampling audio signals
 
 LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/../COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake tar:bzip2
-WRKSRC_SUBDIR=	source
+USES=		cmake tar:bzip2
+USE_LDCONFIG=	yes
+
+CXXFLAGS_amd64+=	-DENABLE_SSE2
 
 .include <bsd.port.mk>
