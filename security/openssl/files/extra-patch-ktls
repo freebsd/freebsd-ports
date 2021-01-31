@@ -1,8 +1,8 @@
 diff --git CHANGES CHANGES
-index 7ea3d2b823..514cf091a3 100644
+index 37dd60b726..4d61c1dadb 100644
 --- CHANGES
 +++ CHANGES
-@@ -354,6 +354,11 @@
+@@ -390,6 +390,11 @@
       necessary to configure just to create a source distribution.
       [Richard Levitte]
  
@@ -153,7 +153,7 @@ index 335dfabc61..80ef348d92 100644
      return sock;
  }
 diff --git crypto/bio/bss_conn.c crypto/bio/bss_conn.c
-index 807a82b23b..f75bf37adb 100644
+index 807a82b23b..d478644280 100644
 --- crypto/bio/bss_conn.c
 +++ crypto/bio/bss_conn.c
 @@ -11,6 +11,7 @@
@@ -206,32 +206,24 @@ index 807a82b23b..f75bf37adb 100644
      BIO_clear_retry_flags(b);
      if (ret <= 0) {
          if (BIO_sock_should_retry(ret))
-@@ -361,6 +379,13 @@ static long conn_ctrl(BIO *b, int cmd, long num, void *ptr)
+@@ -361,6 +379,9 @@ static long conn_ctrl(BIO *b, int cmd, long num, void *ptr)
      const char **pptr = NULL;
      long ret = 1;
      BIO_CONNECT *data;
 +# ifndef OPENSSL_NO_KTLS
-+#  ifdef __FreeBSD__
-+    struct tls_enable *crypto_info;
-+#  else
-+    struct tls12_crypto_info_aes_gcm_128 *crypto_info;
-+#  endif
++    ktls_crypto_info_t *crypto_info;
 +# endif
  
      data = (BIO_CONNECT *)b->ptr;
  
-@@ -520,6 +545,31 @@ static long conn_ctrl(BIO *b, int cmd, long num, void *ptr)
+@@ -520,6 +541,27 @@ static long conn_ctrl(BIO *b, int cmd, long num, void *ptr)
      case BIO_CTRL_EOF:
          ret = (b->flags & BIO_FLAGS_IN_EOF) != 0 ? 1 : 0;
          break;
 +# ifndef OPENSSL_NO_KTLS
 +    case BIO_CTRL_SET_KTLS:
-+#  ifdef __FreeBSD__
-+        crypto_info = (struct tls_enable *)ptr;
-+#  else
-+        crypto_info = (struct tls12_crypto_info_aes_gcm_128 *)ptr;
-+#  endif
-+        ret = ktls_start(b->num, crypto_info, sizeof(*crypto_info), num);
++        crypto_info = (ktls_crypto_info_t *)ptr;
++        ret = ktls_start(b->num, crypto_info, num);
 +        if (ret)
 +            BIO_set_ktls_flag(b, num);
 +        break;
@@ -253,7 +245,7 @@ index 807a82b23b..f75bf37adb 100644
          ret = 0;
          break;
 diff --git crypto/bio/bss_sock.c crypto/bio/bss_sock.c
-index 6251f3d46a..7d582b5549 100644
+index 6251f3d46a..a1fc23c7c9 100644
 --- crypto/bio/bss_sock.c
 +++ crypto/bio/bss_sock.c
 @@ -11,6 +11,7 @@
@@ -319,35 +311,24 @@ index 6251f3d46a..7d582b5549 100644
      BIO_clear_retry_flags(b);
      if (ret <= 0) {
          if (BIO_sock_should_retry(ret))
-@@ -126,6 +153,14 @@ static long sock_ctrl(BIO *b, int cmd, long num, void *ptr)
+@@ -126,6 +153,9 @@ static long sock_ctrl(BIO *b, int cmd, long num, void *ptr)
  {
      long ret = 1;
      int *ip;
 +# ifndef OPENSSL_NO_KTLS
-+    size_t crypto_info_len;
-+#  ifdef __FreeBSD__
-+    struct tls_enable *crypto_info;
-+#  else
-+    struct tls_crypto_info_all *crypto_info;
-+#  endif
++    ktls_crypto_info_t *crypto_info;
 +# endif
  
      switch (cmd) {
      case BIO_C_SET_FD:
-@@ -153,6 +188,33 @@ static long sock_ctrl(BIO *b, int cmd, long num, void *ptr)
+@@ -153,6 +183,27 @@ static long sock_ctrl(BIO *b, int cmd, long num, void *ptr)
      case BIO_CTRL_FLUSH:
          ret = 1;
          break;
 +# ifndef OPENSSL_NO_KTLS
 +    case BIO_CTRL_SET_KTLS:
-+#  ifdef __FreeBSD__
-+        crypto_info = (struct tls_enable *)ptr;
-+        crypto_info_len = sizeof(*crypto_info);
-+#  else
-+        crypto_info = (struct tls_crypto_info_all *)ptr;
-+        crypto_info_len = crypto_info->tls_crypto_info_len;
-+#  endif
-+        ret = ktls_start(b->num, crypto_info, crypto_info_len, num);
++        crypto_info = (ktls_crypto_info_t *)ptr;
++        ret = ktls_start(b->num, crypto_info, num);
 +        if (ret)
 +            BIO_set_ktls_flag(b, num);
 +        break;
@@ -369,10 +350,10 @@ index 6251f3d46a..7d582b5549 100644
          ret = (b->flags & BIO_FLAGS_IN_EOF) != 0 ? 1 : 0;
          break;
 diff --git crypto/err/openssl.txt crypto/err/openssl.txt
-index 0b5873ebbc..a4dcacab59 100644
+index 815460b24f..d547c45913 100644
 --- crypto/err/openssl.txt
 +++ crypto/err/openssl.txt
-@@ -1317,6 +1317,7 @@ SSL_F_SSL_RENEGOTIATE:516:SSL_renegotiate
+@@ -1318,6 +1318,7 @@ SSL_F_SSL_RENEGOTIATE:516:SSL_renegotiate
  SSL_F_SSL_RENEGOTIATE_ABBREVIATED:546:SSL_renegotiate_abbreviated
  SSL_F_SSL_SCAN_CLIENTHELLO_TLSEXT:320:*
  SSL_F_SSL_SCAN_SERVERHELLO_TLSEXT:321:*
@@ -684,10 +665,10 @@ index c343b27629..521b5fa219 100644
 +#endif
 diff --git include/internal/ktls.h include/internal/ktls.h
 new file mode 100644
-index 0000000000..3baa63f781
+index 0000000000..9032c0ed61
 --- /dev/null
 +++ include/internal/ktls.h
-@@ -0,0 +1,432 @@
+@@ -0,0 +1,403 @@
 +/*
 + * Copyright 2018 The OpenSSL Project Authors. All Rights Reserved.
 + *
@@ -756,15 +737,14 @@ index 0000000000..3baa63f781
 + * as using TLS.  If successful, then data received for this socket will
 + * be authenticated and decrypted using the tls_en provided here.
 + */
-+static ossl_inline int ktls_start(int fd,
-+                                  void *tls_en,
-+                                  size_t len, int is_tx)
++static ossl_inline int ktls_start(int fd, ktls_crypto_info_t *tls_en, int is_tx)
 +{
 +    if (is_tx)
 +        return setsockopt(fd, IPPROTO_TCP, TCP_TXTLS_ENABLE,
-+                          tls_en, len) ? 0 : 1;
++                          tls_en, sizeof(*tls_en)) ? 0 : 1;
 +#   ifndef OPENSSL_NO_KTLS_RX
-+    return setsockopt(fd, IPPROTO_TCP, TCP_RXTLS_ENABLE, tls_en, len) ? 0 : 1;
++    return setsockopt(fd, IPPROTO_TCP, TCP_RXTLS_ENABLE, tls_en,
++                      sizeof(*tls_en)) ? 0 : 1;
 +#   else
 +    return 0;
 +#   endif
@@ -971,11 +951,11 @@ index 0000000000..3baa63f781
 + * If successful, then data received using this socket will be decrypted,
 + * authenticated and decapsulated using the crypto_info provided here.
 + */
-+static ossl_inline int ktls_start(int fd, void *crypto_info,
-+                                  size_t len, int is_tx)
++static ossl_inline int ktls_start(int fd, ktls_crypto_info_t *crypto_info,
++                                  int is_tx)
 +{
 +    return setsockopt(fd, SOL_TLS, is_tx ? TLS_TX : TLS_RX,
-+                      crypto_info, len) ? 0 : 1;
++                      crypto_info, crypto_info->tls_crypto_info_len) ? 0 : 1;
 +}
 +
 +/*
@@ -1090,34 +1070,6 @@ index 0000000000..3baa63f781
 +#   endif /* OPENSSL_NO_KTLS_RX */
 +
 +#  endif /* OPENSSL_SYS_LINUX */
-+# else /* OPENSSL_NO_KTLS */
-+/* Dummy functions here */
-+static ossl_inline int ktls_enable(int fd)
-+{
-+    return 0;
-+}
-+
-+static ossl_inline int ktls_start(int fd, void *crypto_info,
-+                                  size_t len, int is_tx)
-+{
-+    return 0;
-+}
-+
-+static ossl_inline int ktls_send_ctrl_message(int fd, unsigned char record_type,
-+                                              const void *data, size_t length)
-+{
-+    return -1;
-+}
-+
-+static ossl_inline int ktls_read_record(int fd, void *data, size_t length)
-+{
-+    return -1;
-+}
-+
-+static ossl_inline ossl_ssize_t ktls_sendfile(int s, int fd, off_t off, size_t size, int flags)
-+{
-+    return -1;
-+}
 +# endif /* OPENSSL_NO_KTLS */
 +#endif /* HEADER_INTERNAL_KTLS */
 diff --git include/openssl/bio.h include/openssl/bio.h
@@ -1478,7 +1430,7 @@ index 0000000000..7123ecac00
 +
 +#endif /* OPENSSL_SYS_LINUX */
 diff --git ssl/record/rec_layer_s3.c ssl/record/rec_layer_s3.c
-index b2a7a47eb0..0c4af1981b 100644
+index b2a7a47eb0..f53c402006 100644
 --- ssl/record/rec_layer_s3.c
 +++ ssl/record/rec_layer_s3.c
 @@ -268,11 +268,15 @@ int ssl3_read_n(SSL *s, size_t n, size_t max, int extend, int clearold,
@@ -1617,21 +1569,21 @@ index b2a7a47eb0..0c4af1981b 100644
              SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DO_SSL3_WRITE,
                       ERR_R_INTERNAL_ERROR);
              goto err;
+-        }
+-
+-        /* Get a pointer to the start of this record excluding header */
+-        recordstart = WPACKET_get_curr(thispkt) - len;
 +            }
-+
+ 
+-        SSL3_RECORD_set_data(thiswr, recordstart);
+-        SSL3_RECORD_reset_input(thiswr);
+-        SSL3_RECORD_set_length(thiswr, len);
 +            /* Get a pointer to the start of this record excluding header */
 +            recordstart = WPACKET_get_curr(thispkt) - len;
 +            SSL3_RECORD_set_data(thiswr, recordstart);
 +            SSL3_RECORD_reset_input(thiswr);
 +            SSL3_RECORD_set_length(thiswr, len);
-         }
--
--        /* Get a pointer to the start of this record excluding header */
--        recordstart = WPACKET_get_curr(thispkt) - len;
--
--        SSL3_RECORD_set_data(thiswr, recordstart);
--        SSL3_RECORD_reset_input(thiswr);
--        SSL3_RECORD_set_length(thiswr, len);
++        }
      }
  
      if (s->statem.enc_write_state == ENC_WRITE_STATE_WRITE_PLAIN_ALERTS) {
@@ -1705,7 +1657,7 @@ index b2a7a47eb0..0c4af1981b 100644
          /* now let's set up wb */
          SSL3_BUFFER_set_left(&s->rlayer.wbuf[j],
                               prefix_len + SSL3_RECORD_get_length(thiswr));
-@@ -1150,6 +1190,21 @@ int ssl3_write_pending(SSL *s, int type, const unsigned char *buf, size_t len,
+@@ -1150,6 +1190,17 @@ int ssl3_write_pending(SSL *s, int type, const unsigned char *buf, size_t len,
          clear_sys_error();
          if (s->wbio != NULL) {
              s->rwstate = SSL_WRITING;
@@ -1718,15 +1670,28 @@ index b2a7a47eb0..0c4af1981b 100644
 +                i = BIO_flush(s->wbio);
 +                if (i <= 0)
 +                    return i;
-+            }
-+
-+            if (BIO_get_ktls_send(s->wbio)
-+                && type != SSL3_RT_APPLICATION_DATA) {
 +                BIO_set_ktls_ctrl_msg(s->wbio, type);
 +            }
              /* TODO(size_t): Convert this call */
              i = BIO_write(s->wbio, (char *)
                            &(SSL3_BUFFER_get_buf(&wb[currbuf])
+@@ -1162,7 +1213,15 @@ int ssl3_write_pending(SSL *s, int type, const unsigned char *buf, size_t len,
+                      SSL_R_BIO_NOT_SET);
+             i = -1;
+         }
+-        if (i > 0 && tmpwrit == SSL3_BUFFER_get_left(&wb[currbuf])) {
++
++	/*
++	 * When an empty fragment is sent on a connection using KTLS,
++	 * it is sent as a write of zero bytes.  If this zero byte
++	 * write succeeds, i will be 0 rather than a non-zero value.
++	 * Treat i == 0 as success rather than an error for zero byte
++	 * writes to permit this case.
++	 */
++        if (i >= 0 && tmpwrit == SSL3_BUFFER_get_left(&wb[currbuf])) {
+             SSL3_BUFFER_set_left(&wb[currbuf], 0);
+             SSL3_BUFFER_add_offset(&wb[currbuf], tmpwrit);
+             if (currbuf + 1 < s->rlayer.numwpipes)
 diff --git ssl/record/record.h ssl/record/record.h
 index af56206e07..10fdde71a8 100644
 --- ssl/record/record.h
@@ -1940,7 +1905,7 @@ index 4b12ed1485..0561678c33 100644
      {ERR_PACK(ERR_LIB_SSL, SSL_F_SSL_SESSION_NEW, 0), "SSL_SESSION_new"},
      {ERR_PACK(ERR_LIB_SSL, SSL_F_SSL_SESSION_PRINT_FP, 0),
 diff --git ssl/ssl_lib.c ssl/ssl_lib.c
-index b1df374817..bd31aaf27b 100644
+index 98057921f8..382f4b6d7b 100644
 --- ssl/ssl_lib.c
 +++ ssl/ssl_lib.c
 @@ -11,6 +11,7 @@
