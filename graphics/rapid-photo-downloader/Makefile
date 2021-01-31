@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rapid-photo-downloader
-DISTVERSION=	0.9.24
-PORTREVISION=	2
+DISTVERSION=	0.9.26
 CATEGORIES=	graphics
 MASTER_SITES=	https://launchpad.net/rapid/pyqt/${PORTVERSION}/+download/
 
@@ -35,7 +34,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>0:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
 		exiftool:graphics/p5-Image-ExifTool
 
-USES=		desktop-file-utils gettext pyqt:5 python:3.4+ qt:5
+USES=		desktop-file-utils gettext pyqt:5 python:3.6+ qt:5
 USE_PYTHON=	autoplist distutils noflavors
 USE_QT=		imageformats_run
 USE_PYQT=	core gui network sip widgets

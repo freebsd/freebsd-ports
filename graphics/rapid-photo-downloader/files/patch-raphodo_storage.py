@@ -1,4 +1,4 @@
---- raphodo/storage.py.orig	2020-05-03 17:31:45 UTC
+--- raphodo/storage.py.orig	2020-12-24 23:41:26 UTC
 +++ raphodo/storage.py
 @@ -69,10 +69,9 @@ import xdg
  import gi
@@ -39,7 +39,7 @@
      cmd = shlex.split('xdg-mime query default inode/directory')
      try:
          desktop_file = subprocess.check_output(cmd, universal_newlines=True)  # type: str
-@@ -1064,259 +1063,6 @@ class CameraHotplug(QObject):
+@@ -1075,264 +1074,6 @@ class CameraHotplug(QObject):
              if emit_remove:
                  logging.info("Hotplug: %s has been removed", name)
                  self.cameraRemoved.emit()
@@ -219,11 +219,16 @@
 -        """
 -
 -        object_path = '/org/freedesktop/UDisks2/block_devices/{}'.format(
--            os.path.split(device_path)[1])
+-            os.path.split(device_path)[1]
+-        )
 -        obj = self.udisks.get_object(object_path)
--        icon_names = self.get_icon_names(obj)
--        can_eject = self.get_can_eject(obj)
--        return (icon_names, can_eject)
+-        if obj is None:
+-            icon_names = []
+-            can_eject = False
+-        else:
+-            icon_names = self.get_icon_names(obj)
+-            can_eject = self.get_can_eject(obj)
+-        return icon_names, can_eject
 -
 -    @pyqtSlot(str)
 -    def unmount_volume(self, mount_point: str) -> None:
