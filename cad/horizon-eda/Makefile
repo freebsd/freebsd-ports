@@ -2,8 +2,7 @@
 
 PORTNAME=	horizon-eda
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
-PORTREVISION=	2
+DISTVERSION=	1.4.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,11 +28,13 @@ USE_GITHUB=	yes
 GH_PROJECT=	horizon
 USE_GNOME=	atkmm gdkpixbuf2 gtkmm30 librsvg2
 
+MAKE_ARGS=	DEBUGFLAGS= OPTIMIZE=
+
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 INSTALLS_ICONS=	yes
 
-post-install:
-	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} horizon-imp horizon-eda
+post-install: # https://github.com/horizon-eda/horizon/issues/558
+	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} horizon-eda
 
 .include <bsd.port.mk>
