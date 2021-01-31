@@ -13,6 +13,7 @@ include/ncnn/layer_type.h
 include/ncnn/layer_type_enum.h
 include/ncnn/mat.h
 include/ncnn/modelbin.h
+include/ncnn/ncnn_export.h
 include/ncnn/net.h
 include/ncnn/option.h
 include/ncnn/paramdict.h
