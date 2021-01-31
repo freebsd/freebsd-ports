@@ -18,7 +18,7 @@ BROKEN_sparc64=	cannot build: coredump: illegal instruction
 
 USES=		cpe pkgconfig shebangfix tar:tgz terminfo
 
-SNAPSHOT=		20210123
+SNAPSHOT=		20210130
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--datadir=${PREFIX}/share/misc \
 			--disable-home-terminfo \
