@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libofx
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -26,6 +26,7 @@ CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
