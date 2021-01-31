@@ -1,27 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=	websockify
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.0
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	noVNC-websockify implementation.
+COMMENT=	Websockify implementation for noVNC
 
-LICENSE=	LGPL3 MPL20 BSD2CLAUSE BSD3CLAUSE MIT
-LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_FILE_LGPL3=	${WRKSRC}/docs/LICENSE.LGPL-3
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	novnc>0:www/novnc
+RUN_DEPENDS=	novnc>0:www/novnc \
+		${PYNUMPY}
 
-USES=		shebangfix python
+USES=		python shebangfix python
+
 SHEBANG_FILES=	run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	novnc
 GH_PROJECT=	websockify
-GH_TAGNAME=	1f132f9
 
 NO_BUILD=	yes
 NO_ARCH=	yes
