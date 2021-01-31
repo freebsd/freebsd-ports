@@ -10,7 +10,7 @@ COMMENT=	Command line program for reading parsing and setting MP4/M4A metadata
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lib
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	wez
 PLIST_FILES=	bin/AtomicParsley
