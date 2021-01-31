@@ -1,0 +1,6 @@
+An 'SCSS' compiler, powered by the 'LibSass' library. With this, R
+developers can use variables, inheritance, and functions to generate
+dynamic style sheets. The package uses the 'Sass CSS' extension
+language, which is stable, powerful, and CSS compatible.
+
+WWW: https://cran.r-project.org/web/packages/sass/
