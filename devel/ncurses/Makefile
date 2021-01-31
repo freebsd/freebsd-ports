@@ -3,7 +3,6 @@
 
 PORTNAME=	ncurses
 DISTVERSION=	6.2-${SNAPSHOT}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/current/ \
 		https://invisible-mirror.net/archives/ncurses/current/
@@ -19,7 +18,7 @@ BROKEN_sparc64=	cannot build: coredump: illegal instruction
 
 USES=		cpe pkgconfig shebangfix tar:tgz terminfo
 
-SNAPSHOT=		20210116
+SNAPSHOT=		20210123
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--datadir=${PREFIX}/share/misc \
 			--disable-home-terminfo \
