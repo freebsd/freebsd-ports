@@ -5,7 +5,7 @@ DISTVERSION=	2.0.0
 PORTREVISION=	1
 CATEGORIES=	math
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nonlinear least squares minimizer
 
 LICENSE=	BSD3CLAUSE
