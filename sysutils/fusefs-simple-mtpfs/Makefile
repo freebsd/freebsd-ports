@@ -6,7 +6,7 @@ DISTVERSION=	0.4.0
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple MTP fuse filesystem driver
 
 LICENSE=	GPLv2+

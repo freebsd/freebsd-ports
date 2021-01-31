@@ -6,7 +6,7 @@ PORTVERSION=	1.1.18
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Media Transfer Protocol (MTP) library
 
 LICENSE=	LGPL21+

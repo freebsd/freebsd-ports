@@ -23,7 +23,7 @@ PATCHFILES=	1b5524282981.patch:-p1 \
 		723148059ce2.patch:-p1 \
 		${NULL}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Better shell for Android devices
 
 LICENSE=	BSD3CLAUSE
