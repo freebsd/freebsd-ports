@@ -1,3 +1,15 @@
-TIMESTAMP = 1591457299
+TIMESTAMP = 1611397336
 SHA256 (meek-0.35.0.tar.gz) = 9e3493da0a092d4d49ae9c4589d78462e230f9e19b4d5d0fec88542f7b1a5e72
 SIZE (meek-0.35.0.tar.gz) = 61736
+SHA256 (goptlib-0.7.tar.gz) = 71f29f7bb7a989e23533bab6544879c7ca9370b695aba891c1e9c91a10ae5c02
+SIZE (goptlib-0.7.tar.gz) = 25835
+SHA256 (golang-crypto-4b2356b1ed79_GH0.tar.gz) = c881b4149829d6e249674bed9ff03d61811aeaf7c66708b36599f595a5a31d08
+SIZE (golang-crypto-4b2356b1ed79_GH0.tar.gz) = 1728742
+SHA256 (golang-net-ff2c4b7c35a0_GH0.tar.gz) = 0fb9448f6194b35e765516f8a7867f2b61abfa6c90e616f20eeac697765ed83f
+SIZE (golang-net-ff2c4b7c35a0_GH0.tar.gz) = 1174436
+SHA256 (golang-sys-593003d681fa_GH0.tar.gz) = 10a694507471f41b86b417d38c717306786783ab59f65abfecd56759423b5472
+SIZE (golang-sys-593003d681fa_GH0.tar.gz) = 1051033
+SHA256 (golang-text-v0.3.0_GH0.tar.gz) = 8f4c9a048345befc7beccd09267737ee1f55c7b35e5ff80f344ec9e0aa90febb
+SIZE (golang-text-v0.3.0_GH0.tar.gz) = 6102619
+SHA256 (refraction-networking-utls-43c36d3c1f57_GH0.tar.gz) = ad3d597fc9d3d57637de5085a59b07dda87faca0ff2ef70d50df6b4065d801b3
+SIZE (refraction-networking-utls-43c36d3c1f57_GH0.tar.gz) = 526322
