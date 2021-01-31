@@ -2,7 +2,7 @@
 
 PORTNAME=	oragono
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.0
+DISTVERSION=	2.5.0
 CATEGORIES=	irc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,25 +21,25 @@ GH_TUPLE=	\
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-test:deep:v1.0.6:go_test_deep/vendor/github.com/go-test/deep \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:5c72a883971a:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:be1d3432aa8f:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
+		golang:crypto:9e8e0b390897:golang_crypto/vendor/golang.org/x/crypto \
+		golang:sys:4d91cf3a1aaf:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		goshuirc:irc-go:57fd157327ac:goshuirc_irc_go/vendor/github.com/goshuirc/irc-go \
+		goshuirc:irc-go:ec778d0252a5:goshuirc_irc_go/vendor/github.com/goshuirc/irc-go \
 		onsi:ginkgo:v1.12.0:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		onsi:gomega:v1.9.0:onsi_gomega/vendor/github.com/onsi/gomega \
-		oragono:confusables:fe1cf31a24b0:oragono_confusables/vendor/github.com/oragono/confusables \
+		oragono:confusables:4ab98ab61fb1:oragono_confusables/vendor/github.com/oragono/confusables \
 		oragono:go-ident:830550b1d775:oragono_go_ident/vendor/github.com/oragono/go-ident \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		tidwall:btree:400434d76274:tidwall_btree/vendor/github.com/tidwall/btree \
-		tidwall:buntdb:v1.1.2:tidwall_buntdb/vendor/github.com/tidwall/buntdb \
-		tidwall:gjson:v1.3.4:tidwall_gjson/vendor/github.com/tidwall/gjson \
+		tidwall:btree:v0.2.2:tidwall_btree/vendor/github.com/tidwall/btree \
+		tidwall:buntdb:v1.1.4:tidwall_buntdb/vendor/github.com/tidwall/buntdb \
+		tidwall:gjson:v1.6.1:tidwall_gjson/vendor/github.com/tidwall/gjson \
 		tidwall:grect:ba9a043346eb:tidwall_grect/vendor/github.com/tidwall/grect \
 		tidwall:match:v1.0.1:tidwall_match/vendor/github.com/tidwall/match \
-		tidwall:pretty:v1.0.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
-		tidwall:rtree:6cd427091e0e:tidwall_rtree/vendor/github.com/tidwall/rtree \
+		tidwall:pretty:v1.0.2:tidwall_pretty/vendor/github.com/tidwall/pretty \
+		tidwall:rtree:32188eeb08a8:tidwall_rtree/vendor/github.com/tidwall/rtree \
 		tidwall:tinyqueue:1e39f5511563:tidwall_tinyqueue/vendor/github.com/tidwall/tinyqueue \
-		toorop:go-dkim:76378ae5207e:toorop_go_dkim/vendor/github.com/toorop/go-dkim
+		toorop:go-dkim:e1cd1a0a5208:toorop_go_dkim/vendor/github.com/toorop/go-dkim
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
