@@ -51,15 +51,6 @@ share/icons/hicolor/16x16/apps/pcbnew.png
 share/icons/hicolor/16x16/mimetypes/application-x-kicad-pcb.png
 share/icons/hicolor/16x16/mimetypes/application-x-kicad-project.png
 share/icons/hicolor/16x16/mimetypes/application-x-kicad-schematic.png
-share/icons/hicolor/22x22/apps/bitmap2component.png
-share/icons/hicolor/22x22/apps/eeschema.png
-share/icons/hicolor/22x22/apps/gerbview.png
-share/icons/hicolor/22x22/apps/kicad.png
-share/icons/hicolor/22x22/apps/pcbcalculator.png
-share/icons/hicolor/22x22/apps/pcbnew.png
-share/icons/hicolor/22x22/mimetypes/application-x-kicad-pcb.png
-share/icons/hicolor/22x22/mimetypes/application-x-kicad-project.png
-share/icons/hicolor/22x22/mimetypes/application-x-kicad-schematic.png
 share/icons/hicolor/24x24/apps/bitmap2component.png
 share/icons/hicolor/24x24/apps/eeschema.png
 share/icons/hicolor/24x24/apps/gerbview.png
@@ -138,8 +129,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.kicad_pcb
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.kicad_pro
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.kicad_sch
-%%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.pro
-%%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.sch
 %%DATADIR%%/demos/flat_hierarchy/fp-lib-table
 %%DATADIR%%/demos/flat_hierarchy/libs/3d_shapes/adjustable_rx2v4.wrl
 %%DATADIR%%/demos/flat_hierarchy/libs/flat_hierarchy_schlib.kicad_sym
@@ -231,6 +220,15 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.kicad_sch
 %%DATADIR%%/demos/sonde xilinx/sonde_xilinx_schlib.kicad_sym
 %%DATADIR%%/demos/sonde xilinx/sym-lib-table
+%%DATADIR%%/demos/stickhub/3dmodels/APHB1608.step
+%%DATADIR%%/demos/stickhub/3dmodels/Crystal_SMD_4P_2520.step
+%%DATADIR%%/demos/stickhub/3dmodels/JST_SH_SM04B-SRSS-TB.STEP
+%%DATADIR%%/demos/stickhub/3dmodels/TDFN-8_1.5x2mm_Fused-Lead_MO-252-W2015D.step
+%%DATADIR%%/demos/stickhub/LICENSE.md
+%%DATADIR%%/demos/stickhub/README.md
+%%DATADIR%%/demos/stickhub/StickHub.kicad_pcb
+%%DATADIR%%/demos/stickhub/StickHub.kicad_pro
+%%DATADIR%%/demos/stickhub/StickHub.kicad_sch
 %%DATADIR%%/demos/test_pads_inside_pads/sym-lib-table
 %%DATADIR%%/demos/test_pads_inside_pads/test_pads_inside_pads.kicad_pcb
 %%DATADIR%%/demos/test_pads_inside_pads/test_pads_inside_pads.kicad_pro
