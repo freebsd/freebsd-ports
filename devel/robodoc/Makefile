@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	robodoc
-PORTVERSION=	4.99.43
+PORTVERSION=	4.99.44
 CATEGORIES=	devel
 MASTER_SITES=	http://rfsber.home.xs4all.nl/Robo/archives/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Code reference program similar to cxref that produces HTML
 
 LICENSE=	GPLv3+
