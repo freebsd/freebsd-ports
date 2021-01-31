@@ -16034,3 +16034,4 @@ graphics/opencv-java|graphics/opencv|2021-01-30|Reintegrated into a simple, main
 devel/py-automaton1|devel/py-automaton|2021-01-31|Has expired: Use devel/py-automaton instead
 devel/py-jaraco.functools2|devel/py-jaraco.functools|2021-01-31|Has expired: Use devel/py-jaraco.functools instead
 math/py-statsmodels010|math/py-statsmodels|2021-01-31|Has expired: Use math/py-statsmodels instead
+www/py-tornado6|www/py-tornado|2021-01-31|Has expired: Use www/py-tornado instead
