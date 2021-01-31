@@ -49,7 +49,6 @@ BAD_GST_ALL_PLUGINS+= \
 		nas \
 		neon \
 		ofa \
-		opencv \
 		opus \
 		resindvd \
 		rsvg \
@@ -414,13 +413,6 @@ gst_ogg_EXTRA_LIBS+=	-lgstriff-${VERSION}
 gst_ogg_PLIST_FILES=	${GST_LIB_DIR}/libgstogg.la \
 		${GST_LIB_DIR}/libgstogg.so
 gst_ogg_DIST=	base
-
-# opencv
-gst_opencv_LIB_DEPENDS+=libopencv_highgui.so:graphics/opencv
-gst_opencv_CONFIGURE_ENV+=	OPENCV_CFLAGS="-I${LOCALBASE}/include/opencv"
-gst_opencv_PLIST_FILES= ${GST_LIB_DIR}/libgstopencv.la \
-			${GST_LIB_DIR}/libgstopencv.so
-gst_opencv_DIST=	bad
 
 # opus
 gst_opus_LIB_DEPENDS+=	libopus.so:audio/opus

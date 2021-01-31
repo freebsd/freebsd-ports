@@ -93,7 +93,6 @@ _GSTREAMER_PLUGINS= \
 		musepack \
 		neon \
 		ogg \
-		opencv \
 		opus \
 		pango \
 		pulse \
@@ -162,6 +161,7 @@ _GSTREAMER_PLUGINS+= \
 		modplug \
 		mpg123 \
 		mplex \
+		opencv \
 		openexr \
 		openh264 \
 		openjpeg \

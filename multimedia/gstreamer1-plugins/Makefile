@@ -142,6 +142,9 @@ post-patch:
 # Fix dependency on neon-0.31
 	${REINPLACE_CMD} -e '/neon/s|0.30.99|0.31.99|g' \
 		${WRKSRC}/configure
+# Fix build against OpenCV 4.5.1
+	 ${REINPLACE_CMD} '/opencv/s|4\.2\.0|4.6.0|g' \
+		 ${WRKSRC}/configure
 
 .endif
 .if ${DIST} != ugly
