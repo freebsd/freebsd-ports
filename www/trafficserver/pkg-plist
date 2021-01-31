@@ -146,6 +146,7 @@ libexec/trafficserver/remap_purge.so
 libexec/trafficserver/remap_stats.so
 libexec/trafficserver/s3_auth.so
 libexec/trafficserver/server_push_preload.so
+libexec/trafficserver/slice.so
 libexec/trafficserver/ssl_cert_loader.so
 libexec/trafficserver/sslheaders.so
 libexec/trafficserver/stale_while_revalidate.so
