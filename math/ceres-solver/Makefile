@@ -67,9 +67,6 @@ TEST_IMPLIES=		GFLAGS
 
 LAPACK_DESC=		Linear Algebra PACKage
 LAPACK_CMAKE_BOOL=	LAPACK
-# Avoid conflict with Ceres threading by using single-threaded BLAS library.
-# BLASLIB from USES=blaslapack cannot be used as it's multi-threaded.
-# https://github.com/xianyi/OpenBLAS/wiki/faq#multi-threaded
 ATLAS_USES=		blaslapack:atlas
 ATLAS_CMAKE_ON=		-DBLA_VENDOR:STRING="ATLAS" \
 			-DBLAS_LIBRARIES:FILEPATH="${LOCALBASE}/lib/libcblas.so" \
