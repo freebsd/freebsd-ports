@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2021-01-16T02-19-44Z
-COMMIT_ID=	7090bcc8e0cd31e44a6ee33cf8a9f83922159c6d
+GHTAG=		RELEASE.2021-01-30T00-20-58Z
+COMMIT_ID=	c82aef0a565439d27e01b7d7cfd779d6c329e028
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -71,7 +71,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		golang:sys:f84b799fce68:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
-		golang:tools:e2f9c7f1fc8e:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:e0d201561e39:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		gomodule:redigo:v1.8.3:gomodule_redigo/vendor/github.com/gomodule/redigo \
 		google:go-genproto:24fa4b261c55:google_go_genproto/vendor/google.golang.org/genproto \
@@ -101,8 +101,9 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		jcmturner:rpc:v1.1.0:jcmturner_rpc/vendor/gopkg.in/jcmturner/rpc.v1 \
 		josharian:intern:v1.0.0:josharian_intern/vendor/github.com/josharian/intern \
 		json-iterator:go:v1.1.10:json_iterator_go/vendor/github.com/json-iterator/go \
-		klauspost:compress:v1.11.3:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.11.7:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.3.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
+		klauspost:cpuid:v2.0.3:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \
 		klauspost:pgzip:v1.2.5:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
 		klauspost:readahead:v1.3.1:klauspost_readahead/vendor/github.com/klauspost/readahead \
 		klauspost:reedsolomon:v1.9.9:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
@@ -117,14 +118,14 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:highwayhash:v1.0.0:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:8dddba43079f:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:minio-go:c40722862654:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
 		minio:selfupdate:v0.3.1:minio_selfupdate/vendor/github.com/minio/selfupdate \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
-		minio:simdjson-go:v0.1.5:minio_simdjson_go/vendor/github.com/minio/simdjson-go \
+		minio:simdjson-go:v0.2.0:minio_simdjson_go/vendor/github.com/minio/simdjson-go \
 		minio:sio:v0.2.1:minio_sio/vendor/github.com/minio/sio \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		mmcloughlin:avo:443f81d77104:mmcloughlin_avo/vendor/github.com/mmcloughlin/avo \
+		mmcloughlin:avo:5d2f697d268f:mmcloughlin_avo/vendor/github.com/mmcloughlin/avo \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		montanaflynn:stats:v0.5.0:montanaflynn_stats/vendor/github.com/montanaflynn/stats \
@@ -156,11 +157,11 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
 		square:go-jose:v2.3.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		streadway:amqp:v1.0.0:streadway_amqp/vendor/github.com/streadway/amqp \
-		tidwall:gjson:v1.3.5:tidwall_gjson/vendor/github.com/tidwall/gjson \
-		tidwall:match:v1.0.1:tidwall_match/vendor/github.com/tidwall/match \
-		tidwall:pretty:v1.0.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
+		tidwall:gjson:v1.6.7:tidwall_gjson/vendor/github.com/tidwall/gjson \
+		tidwall:match:v1.0.3:tidwall_match/vendor/github.com/tidwall/match \
+		tidwall:pretty:v1.0.2:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		tidwall:sjson:v1.0.4:tidwall_sjson/vendor/github.com/tidwall/sjson \
-		tinylib:msgp:v1.1.5:tinylib_msgp/vendor/github.com/tinylib/msgp \
+		tinylib:msgp:v1.1.3:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		uber-go:atomic:v1.5.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.3.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:tools:2cfd321de3ee:uber_go_tools/vendor/go.uber.org/tools \

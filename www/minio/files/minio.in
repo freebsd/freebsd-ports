@@ -51,8 +51,8 @@ load_rc_config ${name}
 start_precmd="minio_start_precmd"
 
 if checkyesno minio_syslog_enable; then
-    if [ -n "${minio_syslog_output_tag}" ]; then
-        minio_syslog_output_flags="-T ${minio_syslog_output_tag}"
+    if [ -n "${minio_syslog_tag}" ]; then
+        minio_syslog_output_flags="-T ${minio_syslog_tag}"
     else
         minio_syslog_output_flags="-T ${name}"
     fi
