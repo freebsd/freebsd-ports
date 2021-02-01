@@ -1,0 +1,4 @@
+The Parallel Hashmap is a set of excellent hash map implementations, as well as
+a btree alternative to std::map and std::set
+
+WWW: https://github.com/greg7mdp/parallel-hashmap
