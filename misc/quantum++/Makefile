@@ -21,4 +21,9 @@ GH_PROJECT=	qpp
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+do-test:
+	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} unit_tests && \
+		ctest
+
 .include <bsd.port.mk>
