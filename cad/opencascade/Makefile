@@ -109,8 +109,6 @@ pre-everything::
 	@${ECHO_MSG} "Warning: to build OpenCascade, you should have at least"
 	@${ECHO_MSG} "2.6 Gb of free disk space in build area!"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "Warning: OpenCascade must be deinstalled before rebuilding it!"
-	@${ECHO_MSG}
 
 pre-patch:
 	${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|' \

@@ -28237,6 +28237,7 @@ lib/libTKernel.so.%%VER%%
 %%DOXYGEN%%%%DOCSDIR%%/html/documentation_test_image.svg
 %%DOXYGEN%%%%DOCSDIR%%/html/doxygen.css
 %%DOXYGEN%%%%DOCSDIR%%/html/doxygen.png
+%%DOXYGEN%%%%DOCSDIR%%/html/doxygen.svg
 %%DOXYGEN%%%%DOCSDIR%%/html/draw_image001.png
 %%DOXYGEN%%%%DOCSDIR%%/html/draw_image002.png
 %%DOXYGEN%%%%DOCSDIR%%/html/draw_image003.png
@@ -28395,6 +28396,7 @@ lib/libTKernel.so.%%VER%%
 %%DOXYGEN%%%%DOCSDIR%%/html/navtree.js
 %%DOXYGEN%%%%DOCSDIR%%/html/navtreedata.js
 %%DOXYGEN%%%%DOCSDIR%%/html/navtreeindex0.js
+%%DOXYGEN%%%%DOCSDIR%%/html/navtreeindex10.js
 %%DOXYGEN%%%%DOCSDIR%%/html/navtreeindex1.js
 %%DOXYGEN%%%%DOCSDIR%%/html/navtreeindex2.js
 %%DOXYGEN%%%%DOCSDIR%%/html/navtreeindex3.js
@@ -28403,6 +28405,7 @@ lib/libTKernel.so.%%VER%%
 %%DOXYGEN%%%%DOCSDIR%%/html/navtreeindex6.js
 %%DOXYGEN%%%%DOCSDIR%%/html/navtreeindex7.js
 %%DOXYGEN%%%%DOCSDIR%%/html/navtreeindex8.js
+%%DOXYGEN%%%%DOCSDIR%%/html/navtreeindex9.js
 %%DOXYGEN%%%%DOCSDIR%%/html/ocaf_functionmechanism_wp_image003.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ocaf_functionmechanism_wp_image005.png
 %%DOXYGEN%%%%DOCSDIR%%/html/ocaf_image003.svg
