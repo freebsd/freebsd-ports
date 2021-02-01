@@ -1,0 +1,14 @@
+--- es-app/CMakeLists.txt.orig	2020-11-29 16:39:56 UTC
++++ es-app/CMakeLists.txt
+@@ -143,9 +143,10 @@ endif()
+ #-------------------------------------------------------------------------------
+ # set up CPack install stuff so `make install` does something useful
+ 
++include(GNUInstallDirs)
+ install(TARGETS emulationstation
+     RUNTIME
+-    DESTINATION bin)
++    DESTINATION "${CMAKE_INSTALL_BINDIR}")
+ 
+ INCLUDE(InstallRequiredSystemLibraries)
+ 

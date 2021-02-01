@@ -2,8 +2,7 @@
 
 PORTNAME=	emulationstation
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.1
-PORTREVISION=	4
+DISTVERSION=	2.9.4
 CATEGORIES=	emulators
 
 MAINTAINER=	freebsd@coombscloud.com
@@ -14,6 +13,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/opensans_license.txt
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.md
 
+BUILD_DEPENDS=	${LOCALBASE}/include/rapidjson/document.h:devel/rapidjson
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libboost_filesystem.so:devel/boost-libs \
 		libboost_locale.so:devel/boost-libs \
@@ -31,11 +31,24 @@ GH_PROJECT=	EmulationStation
 USE_GL=		gl glu
 USE_SDL=	sdl2
 
-PLIST_FILES=	bin/emulationstation
 PORTDOCS=	CREDITS.md DEVNOTES.md GAMELISTS.md README.md SYSTEMS.md \
 		THEMES.md
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<pugixml/src/pugixml.hpp>|<pugixml.hpp>|g' \
+		${WRKSRC}/es-app/src/CollectionSystemManager.cpp \
+		${WRKSRC}/es-app/src/Gamelist.cpp \
+		${WRKSRC}/es-app/src/MetaData.cpp \
+		${WRKSRC}/es-app/src/SystemData.cpp \
+		${WRKSRC}/es-app/src/scrapers/GamesDBJSONScraper.cpp \
+		${WRKSRC}/es-app/src/scrapers/ScreenScraper.cpp \
+		${WRKSRC}/es-core/src/InputConfig.cpp \
+		${WRKSRC}/es-core/src/InputManager.cpp \
+		${WRKSRC}/es-core/src/MameNames.cpp \
+		${WRKSRC}/es-core/src/Settings.cpp \
+		${WRKSRC}/es-core/src/ThemeData.cpp
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
