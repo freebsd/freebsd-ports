@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	onnx
-DISTVERSION=	1.8.0
-PORTREVISION=	1
+DISTVERSION=	1.8.1
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,15 +12,19 @@ COMMENT=	Open Neural Network eXchange
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake \
+BUILD_DEPENDS=	bash:shells/bash \
+		cmake:devel/cmake \
+		protoc-gen-mypy:devel/py-mypy-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-runner>=0:devel/py-pytest-runner@${PY_FLAVOR}
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.2.1:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		compiler:c11 python:3.6+
+USES=		compiler:c11 python:3.6+ shebangfix
 USE_PYTHON=	distutils concurrent autoplist
+
+SHEBANG_FILES=	tools/protoc-gen-mypy.sh.in
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 

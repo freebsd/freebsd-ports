@@ -1,6 +1,6 @@
---- setup.py.orig	2019-09-25 20:37:27 UTC
+--- setup.py.orig	2021-01-29 23:31:55 UTC
 +++ setup.py
-@@ -53,11 +53,12 @@ COVERAGE = bool(os.getenv('COVERAGE'))
+@@ -56,11 +56,12 @@ COVERAGE = bool(os.getenv('COVERAGE'))
  # Version
  ################################################################################
  
