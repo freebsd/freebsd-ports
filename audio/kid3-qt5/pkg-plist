@@ -1,9 +1,7 @@
 bin/kid3%%QT_SUFX%%
 %%CLI%%bin/kid3-cli
 lib/libkid3-core.so
-lib/libkid3-core.so.%%SHLIB_VER%%
 lib/libkid3-gui.so
-lib/libkid3-gui.so.%%SHLIB_VER%%
 %%ACOUSTID%%lib/kid3/libacoustidimport.so
 lib/kid3/libamazonimport.so
 lib/kid3/libdiscogsimport.so
