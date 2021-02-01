@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	chamfer
-DISTVERSION=	s20201229
+DISTVERSION=	s20210130
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -31,7 +31,7 @@ USE_GITHUB=	yes
 USE_XORG=	xcb
 GH_ACCOUNT=	jaelpark
 GH_PROJECT=	${PORTNAME}wm
-GH_TAGNAME=	cbdfd30
+GH_TAGNAME=	5f22b1d
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
