@@ -1,6 +1,19 @@
 --- bbftpd_crypt.c.orig	2004-06-30 17:38:50 UTC
 +++ bbftpd_crypt.c
-@@ -84,8 +84,13 @@ void sendcrypt() 
+@@ -73,19 +73,25 @@ void sendcrypt() 
+     unsigned char    pubexponent[NBITSINKEY] ;
+     int        lenkey ;
+     int        lenexpo ;
++    BIGNUM *e = BN_new();
+     
+     /*
+     ** Ask for the private and public Key
+     */
+-    if ( (myrsa = RSA_generate_key(NBITSINKEY,3,NULL,NULL)) == NULL) {
++    if (e == NULL || (BN_set_word(e,3) && RSA_generate_key_ex(myrsa,NBITSINKEY,e,NULL)) == 0) {
+         syslog(BBFTPD_ERR,"%s",ERR_error_string(ERR_get_error(),NULL) ) ;
+         exit(1) ;
+     }
      /*
      ** Now extract the public key in order to send it
      */

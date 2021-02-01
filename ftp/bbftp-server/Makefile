@@ -23,6 +23,8 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e '/^#include/s,malloc,stdlib,' \
 		${WRKSRC}/bbftpd_cd.c ${WRKSRC}/bbftpd_statfs.c
+	@${REINPLACE_CMD} -e '/with_ssl\/lib\/libcrypto/s,\.a,.so,' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bbftpd ${STAGEDIR}${PREFIX}/bin
