@@ -26,7 +26,6 @@ include/chemps2/Irreps.h
 include/chemps2/Lapack.h
 include/chemps2/MPIchemps2.h
 include/chemps2/Molden.h
-include/chemps2/MyHDF5.h
 include/chemps2/Options.h
 include/chemps2/Problem.h
 include/chemps2/Sobject.h
