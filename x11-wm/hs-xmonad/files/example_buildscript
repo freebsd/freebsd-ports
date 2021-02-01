@@ -10,6 +10,7 @@ CFG_DIR=$HOME/.xmonad
 
 # build the config
 cd $CFG_DIR
+cabal new-clean || true
 cabal new-configure --enable-optimization --enable-executable-stripping
 cabal new-build
 
