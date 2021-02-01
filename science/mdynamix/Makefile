@@ -34,4 +34,4 @@ do-install:
 FFLAGS+=	-fallow-argument-mismatch
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
