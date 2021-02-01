@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-partitions
-PORTVERSION=	1.417.0
+PORTVERSION=	1.418.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
