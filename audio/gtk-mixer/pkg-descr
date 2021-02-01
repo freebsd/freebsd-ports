@@ -1,0 +1,14 @@
+GTK-Mixer is GTK based volume control tool ("mixer").
+
+GUI from xfce4-mixer: https://gitlab.xfce.org/apps/xfce4-mixer but
+xfce4 and gstreamer does not used.
+
+Features
+- plugins for support different sound backens
+- change system default sound card
+- set volume per line/channel
+- enable/disable lines (mute/unmute)
+- detect sound cards connect/disconnect
+- detect default sound card change
+
+WWW: https://github.com/rozhuk-im/gtk-mixer

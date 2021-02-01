@@ -315,6 +315,7 @@
     SUBDIR += gstreamer1-plugins-wavpack
     SUBDIR += gstreamer1-plugins-webrtcdsp
     SUBDIR += gtick
+    SUBDIR += gtk-mixer
     SUBDIR += gtkguitune
     SUBDIR += gtkpod
     SUBDIR += gtmixer
