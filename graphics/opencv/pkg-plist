@@ -729,4 +729,4 @@ libdata/pkgconfig/opencv4.pc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/config.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/load_config_py2.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/load_config_py3.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/python-%%PYTHON_VER%%/cv2.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/cv2/python-%%PYTHON_VER%%/cv2%%PYTHON_EXT_SUFFIX%%.so
