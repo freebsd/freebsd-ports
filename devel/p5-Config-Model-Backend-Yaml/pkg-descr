@@ -1,0 +1,5 @@
+Config::Model::Backend::Yaml is used directly by Config::Model to read or write
+the content of a configuration tree written with YAML syntax in Config::Model
+configuration tree.
+
+WWW: https://metacpan.org/release/Config-Model-Backend-Yaml
