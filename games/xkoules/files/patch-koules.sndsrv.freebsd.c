@@ -1,5 +1,5 @@
---- ./koules.sndsrv.freebsd.c.orig	1998-03-04 19:59:19.000000000 +0100
-+++ ./koules.sndsrv.freebsd.c	2014-03-30 03:11:00.579428909 +0200
+--- koules.sndsrv.freebsd.c.orig	1998-03-04 18:59:19 UTC
++++ koules.sndsrv.freebsd.c
 @@ -14,7 +14,7 @@
  #include <unistd.h>
  #include <fcntl.h>

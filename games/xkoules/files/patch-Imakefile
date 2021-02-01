@@ -1,6 +1,6 @@
---- ./Imakefile.orig	1998-03-04 19:59:19.000000000 +0100
-+++ ./Imakefile	2014-03-30 03:11:00.569385664 +0200
-@@ -56,7 +56,7 @@
+--- Imakefile.orig	1998-03-04 18:59:19 UTC
++++ Imakefile
+@@ -56,7 +56,7 @@ INSTALLSOUND = True
  
  DEFINES = -DONLYANSI -DSOUND $(JOYSTICK1) $(NET) $(MITSHM1) $(HAVEUSLEEP1) $(SYSDEFS) $(JOYSTICK) -Ixlib\
  	$(NAMEDEF) $(ASMDEF)\
@@ -9,7 +9,7 @@
  	-DSOUNDDIR=\"$(SOUNDDIR)\" \
  	-DSOUNDDEV=\"$(SOUNDDEV)\"
  #endif
-@@ -84,9 +84,6 @@
+@@ -84,9 +84,6 @@ all::xkoules $(SOUNDSERVER)
  all::xkoules
  #endif
  
@@ -19,7 +19,7 @@
  ComplexProgramTarget(xkoules)
  
  
-@@ -97,19 +94,15 @@
+@@ -97,19 +94,15 @@ NormalProgramTarget($(SOUNDSERVER), $(SOUNDSERVER).o,,
  install:: $(PROGRAMS) $(SOUNDSERVER)
  	@echo "Koules directory is " $(KOULESDIR)
  	@:
@@ -43,7 +43,7 @@
  		echo "Copying sound files into directory " $(SOUNDDIR); \
  		cd ./sounds; set -x;					\
  		for file in *.raw; do                                   \
-@@ -125,19 +118,15 @@
+@@ -125,19 +118,15 @@ install:: $(PROGRAMS) $(SOUNDSERVER)
  install:: $(PROGRAMS) $(SOUNDSERVER)
  	@echo "Koules directory is " $(KOULESDIR)
  	@:
@@ -67,7 +67,7 @@
  		echo "Copying sound files into directory " $(SOUNDDIR); \
  		cd ./sounds; set -x;					\
  		for file in *.raw; do                                   \
-@@ -155,19 +144,15 @@
+@@ -155,19 +144,15 @@ install:: $(PROGRAMS) $(SOUNDSERVER)
  install:: $(PROGRAMS) $(SOUNDSERVER)
  	@echo "Koules directory is " $(KOULESDIR)
  	@:

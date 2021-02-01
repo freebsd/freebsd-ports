@@ -1,6 +1,6 @@
---- ./xlib/inlstring.h.orig	1998-03-04 19:59:19.000000000 +0100
-+++ ./xlib/inlstring.h	2014-03-30 03:11:00.579428909 +0200
-@@ -238,12 +238,12 @@
+--- xlib/inlstring.h.orig	1998-03-04 18:59:19 UTC
++++ xlib/inlstring.h
+@@ -238,12 +238,12 @@ extern          __memcpyasm_regargs_aligned ();		/* nu
  static INLINE void *
  __memcpy_aligndest (void *dest, const void *src, int n)
  {
@@ -19,7 +19,7 @@
  				"
  				:
  				:"b"            (dest), "d" (src), "c" (n)
-@@ -255,13 +255,13 @@
+@@ -255,13 +255,13 @@ __memcpy_aligndest (void *dest, const void *src, int n
  static INLINE void *
  __memcpy_destaligned (void *dest, const void *src, int n)
  {
@@ -40,7 +40,7 @@
  				"
  				:
  				:"b"            (dest), "d" (src), "c" (n)
-@@ -273,13 +273,13 @@
+@@ -273,13 +273,13 @@ __memcpy_destaligned (void *dest, const void *src, int
  static INLINE void *
  __memcpy_balanced (void *dest, const void *src, int n)
  {

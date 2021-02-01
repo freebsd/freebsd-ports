@@ -1,5 +1,5 @@
---- ./Iconfig.orig	1998-03-04 21:29:05.000000000 +0100
-+++ ./Iconfig	2014-03-30 03:11:00.569385664 +0200
+--- Iconfig.orig	1998-03-04 20:29:05 UTC
++++ Iconfig
 @@ -34,9 +34,9 @@
    recomended for linux*/
  /*#define I386ASSEMBLY*/
