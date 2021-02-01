@@ -33,4 +33,4 @@ PLIST_FILES=	bin/kzip
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kzip-static ${STAGEDIR}${PREFIX}/bin/kzip
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
