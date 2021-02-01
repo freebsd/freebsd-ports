@@ -13,10 +13,10 @@ COMMENT=	LaTeX Document Processing Framework
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PY_PILLOW}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
 
 USES=		python:3.5+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USE_TEX=	base:run
 
 NO_ARCH=	yes
