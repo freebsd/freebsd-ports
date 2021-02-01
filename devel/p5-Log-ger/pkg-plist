@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Log/ger/Filter/Code.pm
 %%SITE_PERL%%/Log/ger/Format.pm
 %%SITE_PERL%%/Log/ger/Format/Default.pm
+%%SITE_PERL%%/Log/ger/Format/MultilevelLog.pm
 %%SITE_PERL%%/Log/ger/Format/None.pm
 %%SITE_PERL%%/Log/ger/Heavy.pm
 %%SITE_PERL%%/Log/ger/Layout.pm
@@ -18,6 +19,7 @@
 %%PERL5_MAN3%%/Log::ger::Filter::Code.3.gz
 %%PERL5_MAN3%%/Log::ger::Format.3.gz
 %%PERL5_MAN3%%/Log::ger::Format::Default.3.gz
+%%PERL5_MAN3%%/Log::ger::Format::MultilevelLog.3.gz
 %%PERL5_MAN3%%/Log::ger::Format::None.3.gz
 %%PERL5_MAN3%%/Log::ger::Heavy.3.gz
 %%PERL5_MAN3%%/Log::ger::Layout.3.gz
