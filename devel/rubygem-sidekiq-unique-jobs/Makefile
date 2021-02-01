@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sidekiq-unique-jobs
-PORTVERSION=	7.0.0
-PORTREVISION=	1
+PORTVERSION=	7.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
