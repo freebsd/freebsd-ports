@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libextractor
-PORTVERSION=	1.9
-PORTREVISION=	2
+PORTVERSION=	1.11
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -36,35 +35,38 @@ INFO=		libextractor
 
 OPTIONS_DEFINE=		EXIV2 FFMPEG FLAC GIF GSF GSTREAMER MPEG2 MP4 \
 			NLS RPM SMF TIDY VORBIS
+
 OPTIONS_DEFAULT=	EXIV2 FFMPEG FLAC GIF GSF GSTREAMER MPEG2 MP4 \
 			RPM SMF TIDY VORBIS
+
 OPTIONS_SUB=		yes
+
+GSF_DESC=		GSF (OLE2 (MS office) support)
+RPM_DESC=		RPM package format support
+SMF_DESC=		Standard MIDI file support via LibSMF
 
 EXIV2_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 EXIV2_CONFIGURE_ENV=	EXIV2_H="<exiv2/image.hpp>"
 EXIV2_CONFIGURE_ENV_OFF=	EXIV2_H=""
-FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
-FLAC_CONFIGURE_ENV_OFF=ac_cv_lib_FLAC_FLAC__stream_decoder_init_stream=no
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ENABLE=	ffmpeg
+FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
+FLAC_CONFIGURE_ENV_OFF=ac_cv_lib_FLAC_FLAC__stream_decoder_init_stream=no
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CONFIGURE_ENV_OFF=	ac_cv_lib_gif_DGifOpen=no
-GSF_DESC=		GSF (OLE2 (MS office) support)
 GSF_USE=		gnome=libgsf
 GSF_CONFIGURE_ENV_OFF=	ac_cv_lib_gsf_1_gsf_init=no
 GSTREAMER_USE=		gstreamer1=yes
 GSTREAMER_CONFIGURE_WITH=	gstreamer
-MPEG2_LIB_DEPENDS=	libmpeg2.so:multimedia/libmpeg2
-MPEG2_CONFIGURE_ENV_OFF=	ac_cv_lib_mpeg2_mpeg2_init=no
 MP4_LIB_DEPENDS=	libmp4v2.so:multimedia/mp4v2
 MP4_CONFIGURE_ENV_OFF=	ac_cv_lib_mp4v2_MP4ReadProvider=no
+MPEG2_LIB_DEPENDS=	libmpeg2.so:multimedia/libmpeg2
+MPEG2_CONFIGURE_ENV_OFF=	ac_cv_lib_mpeg2_mpeg2_init=no
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-RPM_DESC=		RPM package format support
 RPM_LIB_DEPENDS=	librpm.so:archivers/rpm4
 RPM_CONFIGURE_ENV=	ac_cv_lib_rpm_rpmReadPackageFile=yes
 RPM_CONFIGURE_ENV_OFF=	ac_cv_lib_rpm_rpmReadPackageFile=no
-SMF_DESC=		Standard MIDI file support via LibSMF
 SMF_LIB_DEPENDS=	libsmf.so:audio/libsmf
 SMF_CONFIGURE_ENV_OFF=	ac_cv_lib_smf_smf_load_from_memory=no
 TIDY_LIB_DEPENDS=	libtidy.so:www/tidy-lib

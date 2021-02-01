@@ -3,7 +3,7 @@ include/extractor.h
 lib/libextractor.a
 lib/libextractor.so
 lib/libextractor.so.3
-lib/libextractor.so.3.1.7
+lib/libextractor.so.3.1.8
 lib/libextractor/libextractor_archive.a
 lib/libextractor/libextractor_archive.so
 lib/libextractor/libextractor_deb.a
@@ -77,6 +77,7 @@ lib/libextractor_common.so.1.0.0
 libdata/pkgconfig/libextractor.pc
 man/man1/extract.1.gz
 man/man3/libextractor.3.gz
+%%NLS%%share/locale/da/LC_MESSAGES/libextractor.mo
 %%NLS%%share/locale/de/LC_MESSAGES/libextractor.mo
 %%NLS%%share/locale/es/LC_MESSAGES/libextractor.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libextractor.mo
@@ -84,6 +85,7 @@ man/man3/libextractor.3.gz
 %%NLS%%share/locale/it/LC_MESSAGES/libextractor.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libextractor.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libextractor.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/libextractor.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/libextractor.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/libextractor.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/libextractor.mo
