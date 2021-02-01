@@ -3,7 +3,7 @@
 
 PORTNAME=	jekyll
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 		rubygem-pathutil>=0.9<1:devel/rubygem-pathutil \
 		rubygem-rouge>=3.0<4:textproc/rubygem-rouge \
 		rubygem-safe_yaml>=1.0<2:devel/rubygem-safe_yaml \
-		rubygem-terminal-table>=2.0<3:textproc/rubygem-terminal-table
+		rubygem-terminal-table>=2.0:textproc/rubygem-terminal-table
 
 USES=		gem
 USE_RUBY=	yes
