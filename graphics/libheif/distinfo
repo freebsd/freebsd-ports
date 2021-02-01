@@ -1,3 +1,5 @@
-TIMESTAMP = 1611791342
+TIMESTAMP = 1612196414
 SHA256 (strukturag-libheif-v1.10.0_GH0.tar.gz) = 317a44bf157ba297638ab5a258040ef6ec4895d620cd58f52195f3f89c9eea28
 SIZE (strukturag-libheif-v1.10.0_GH0.tar.gz) = 1243656
+SHA256 (b7caef96e012f6e516fee2e50a836b07b7c5a8fc.patch) = f836dbbfc237205b9cadd178324f0de2321d906846bfeff5a7027f839cf0659a
+SIZE (b7caef96e012f6e516fee2e50a836b07b7c5a8fc.patch) = 1172
