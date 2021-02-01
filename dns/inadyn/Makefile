@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	inadyn
-PORTVERSION=	2.7
+PORTVERSION=	2.8.1
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/troglobit/${PORTNAME}/releases/download/v${PORTVERSION}/
 

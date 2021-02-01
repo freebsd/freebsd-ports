@@ -4,10 +4,14 @@ although your IP might be changing. It checks periodically whether the IP
 address stored by the DNS server is the real current IP address of the machine
 that is running INADYN.
 
-INADYN supports the following dynamic DNS services:
- - dyndns.org (in all three flavors: dynamic, static, custom)
- - freedns.afraid.org
- - no-ip.com
- - zoneedit.com
+List of some of the natively supported DDNS providers:
+
+ freedns.afraid.org, www.nsupdate.info, duckdns.org, freemyip.com,
+ www.loopia.com, www.dyndns.org, dyn.com, www.noip.com, www.easydns.com,
+ www.dnsomatic.com, dns.he.net, www.tunnelbroker.net, www.sitelutions.com,
+ www.dnsexit.com, www.zoneedit.com, www.changeip.com, www.dhis.org,
+ www.namecheap.com, domains.google, www.ovh.com, giradns.com, www.duiadns.net,
+ ddnss.de, dynv6.com, spdyn.de, www.cloudxns.net, www.pubyun.com www.dnspod.cn,
+ www.dynu.com, www.selfhost.de, connect.yandex.ru, www.cloudflare.com
 
 WWW: https://troglobit.com/projects/inadyn/

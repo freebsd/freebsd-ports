@@ -11,5 +11,9 @@ sbin/inadyn
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/freedns.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/freemyip.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/inadyn.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cloudflare-ipv4-ipv6.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cloudflare-ipv4-only.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cloudflare-ipv6-only.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/duckdns.conf
 @dir(inadyn,inadyn,) /var/cache/inadyn
 @dir(inadyn,inadyn,) /var/run/inadyn
