@@ -69,7 +69,6 @@
     SUBDIR += phex
     SUBDIR += py-libtorrent-rasterbar
     SUBDIR += py-transmission-rpc
-    SUBDIR += py-transmissionrpc
     SUBDIR += py-tremc
     SUBDIR += py-vertex
     SUBDIR += qbittorrent

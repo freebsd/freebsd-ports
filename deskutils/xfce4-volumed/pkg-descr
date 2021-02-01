@@ -1,5 +1,0 @@
-This daemon is responsible of making the volume up/down and mute keys of the
-keyboard work automatically, and uses the Xfce mixer's defined card and track
-for chosing which track to act on.
-
-WWW: https://launchpad.net/xfce4-volumed/

@@ -436,7 +436,6 @@
     SUBDIR += xfce4-clipman-plugin
     SUBDIR += xfce4-conf
     SUBDIR += xfce4-dashboard
-    SUBDIR += xfce4-embed-plugin
     SUBDIR += xfce4-goodies
     SUBDIR += xfce4-screensaver
     SUBDIR += xfce4-screenshooter-plugin

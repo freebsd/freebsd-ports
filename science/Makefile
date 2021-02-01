@@ -352,7 +352,6 @@
     SUBDIR += wxmacmolplt
     SUBDIR += xcrysden
     SUBDIR += xdrawchem
-    SUBDIR += xfce4-equake-plugin
     SUBDIR += xtb
     SUBDIR += yoda
 

@@ -1277,7 +1277,6 @@
     SUBDIR += py-gambit-elasticsearch
     SUBDIR += py-genshi
     SUBDIR += py-gensim
-    SUBDIR += py-gfm
     SUBDIR += py-googletrans
     SUBDIR += py-grako
     SUBDIR += py-guess-language

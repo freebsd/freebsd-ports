@@ -16034,3 +16034,14 @@ devel/py-automaton1|devel/py-automaton|2021-01-31|Has expired: Use devel/py-auto
 devel/py-jaraco.functools2|devel/py-jaraco.functools|2021-01-31|Has expired: Use devel/py-jaraco.functools instead
 math/py-statsmodels010|math/py-statsmodels|2021-01-31|Has expired: Use math/py-statsmodels instead
 www/py-tornado6|www/py-tornado|2021-01-31|Has expired: Use www/py-tornado instead
+deskutils/orage||2021-02-01|Has expired: Unsupported upstream, cannot work with XFCE 4.16
+sysutils/rubygem-chef-config12|sysutils/rubygem-chef-config|2021-02-01|Has expired
+mail/openwebmail||2021-02-01|Has expired: Does not use modern Perl syntax and no development activity since 2006
+sysutils/rubygem-ohai8|sysutils/rubygem-ohai|2021-02-01|Has expired
+deskutils/xfce4-volumed||2021-02-01|Has expired: Unsupported upstream, cannot work with XFCE 4.16
+sysutils/rubygem-chef12|sysutils/rubygem-chef|2021-02-01|Has expired: Please use sysutils/rubygem-chef instead
+x11/xfce4-embed-plugin||2021-02-01|Has expired: Unsupported upstream, cannot work with XFCE 4.16
+net-p2p/py-transmissionrpc|net-p2p/py-transmission-rpc|2021-02-01|Has expired: Unmaintained and dead upstream, use net-p2p/py-transmission-rpc instead
+science/xfce4-equake-plugin||2021-02-01|Has expired: Unsupported upstream, cannot work with XFCE 4.16
+sysutils/xfce4-kbdleds-plugin||2021-02-01|Has expired: Unsupported upstream, cannot work with XFCE 4.16
+textproc/py-gfm|textproc/py-cmarkgfm|2021-02-01|Has expired: No longer maintained by upstream, please use textproc/py-cmarkgfm instead
