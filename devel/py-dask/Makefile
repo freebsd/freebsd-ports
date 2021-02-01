@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dask
-PORTVERSION=	2.30.0
+PORTVERSION=	2021.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,7 +36,7 @@ BAG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=0.2.2:devel/py-cloudpickle@
 			${PYTHON_PKGNAMEPREFIX}toolz>=0.8.2:devel/py-toolz@${PY_FLAVOR}
 DATAFRAME_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0.6.0:devel/py-fsspec@${PY_FLAVOR} \
 			${PYNUMPY} \
-			${PYTHON_PKGNAMEPREFIX}pandas>=0.23.0,1:math/py-pandas@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pandas>=0.25.0,1:math/py-pandas@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}partd>=0.3.10:databases/py-partd@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}toolz>=0.8.2:devel/py-toolz@${PY_FLAVOR}
 DELAYED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=0.2.2:devel/py-cloudpickle@${PY_FLAVOR} \
