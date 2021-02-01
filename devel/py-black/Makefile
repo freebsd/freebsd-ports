@@ -2,6 +2,7 @@
 
 PORTNAME=	black
 PORTVERSION=	20.8b1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,11 +28,14 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	D
+OPTIONS_DEFINE=	COLORAMA D
+OPTIONS_DEFAULT=COLORAMA
+COLORAMA_DESC=	Color support
 D_DESC=		Blackd HTTP server
 
-D_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.3.2:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}aiohttp_cors>=0:www/py-aiohttp_cors@${PY_FLAVOR}
+COLORAMA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0.4.3:devel/py-colorama@${PY_FLAVOR}
+D_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}aiohttp>=3.3.2:www/py-aiohttp@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}aiohttp_cors>=0:www/py-aiohttp_cors@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
