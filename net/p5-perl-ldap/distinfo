@@ -1,2 +1,3 @@
-SHA256 (perl-ldap-0.65.tar.gz) = 5f57dd261dc16ebf942a272ddafe69526598df71151a51916edc37a4f2f23834
-SIZE (perl-ldap-0.65.tar.gz) = 311145
+TIMESTAMP = 1609695470
+SHA256 (perl-ldap-0.68.tar.gz) = e2f389fe3e7a9e4b61488692919ad723b98f3b479b5288f610daa8c27995b351
+SIZE (perl-ldap-0.68.tar.gz) = 318199
