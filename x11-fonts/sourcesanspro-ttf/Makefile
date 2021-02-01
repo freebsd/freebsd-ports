@@ -18,6 +18,7 @@ USES=		fonts zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 FONTNAME=	SourceSansPro
 SUB_FILES=	pkg-message
