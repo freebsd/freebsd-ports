@@ -109,7 +109,9 @@ seafile_start() {
 	check_required_before;
 	validate_already_running;
 	prepare_env;
-	test_config;
+# test_config broke in 8.0.x, commenting until this is fixed.
+# https://forum.seafile.com/t/seafile-controller-t-functionality-broken-on-8-x/13738
+#	test_config;
 
 	echo "Starting seafile server, please wait ..."
 

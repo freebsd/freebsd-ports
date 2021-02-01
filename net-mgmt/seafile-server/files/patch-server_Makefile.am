@@ -1,9 +1,9 @@
---- server/Makefile.am.orig	2020-02-09 00:56:37 UTC
+--- server/Makefile.am.orig	2021-01-23 07:40:16 UTC
 +++ server/Makefile.am
-@@ -73,7 +73,7 @@ seaf_server_SOURCES = \
+@@ -77,7 +77,7 @@ seaf_server_SOURCES = \
+ 	../common/block-tx-utils.c
  
- seaf_server_LDADD = @CCNET_LIBS@ \
- 	$(top_builddir)/lib/libseafile_common.la \
+ seaf_server_LDADD = $(top_builddir)/lib/libseafile_common.la \
 -	@GLIB2_LIBS@ @GOBJECT_LIBS@ @SSL_LIBS@ @LIB_RT@ @LIB_UUID@ -lsqlite3 @LIBEVENT_LIBS@ -levhtp \
 +	@ONIGURUMA_LIBS@ @GLIB2_LIBS@ @GOBJECT_LIBS@ @SSL_LIBS@ @LIB_RT@ @LIB_UUID@ -lsqlite3 @LIBEVENT_LIBS@ @LIBEVHTP_LIBS@ \
  	$(top_builddir)/common/cdc/libcdc.la \

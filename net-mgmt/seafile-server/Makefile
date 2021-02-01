@@ -4,7 +4,6 @@ PORTNAME=	seafile-server
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${SEAFILE_VER}
 DISTVERSIONSUFFIX=	-server
-PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ultima@FreeBSD.org
@@ -19,7 +18,6 @@ LIB_DEPENDS=	libsearpc.so:devel/libsearpc \
 		libzdb.so:databases/libzdb \
 		libcurl.so:ftp/curl \
 		libinotify.so:devel/libinotify \
-		libccnet.so:net-mgmt/ccnet-server \
 		libevent.so:devel/libevent \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson \
@@ -79,7 +77,7 @@ post-patch:
 	${REINPLACE_CMD} 's/python3\.[0-9]/${PYTHON_VERSION}/g; s/python3 /${PYTHON_VERSION} / ; \
 			s/PYTHON=python3/PYTHON=${PYTHON_VERSION}/' \
 		${WRKSRC}/controller/seafile-controller.c ${WRKSRC}/scripts/reset-admin.sh \
-		${WRKSRC}/scripts/upgrade/upgrade_7.0_7.1.sh \
+		${WRKSRC}/scripts/upgrade/upgrade_[7-9].[0-9]_[7-9].[0-9].sh \
 		${WRKSRC}/scripts/seahub.sh ${WRKSRC}/scripts/setup-seafile.sh \
 		${WRKSRC}/scripts/setup-seafile-mysql.sh \
 		${WRKSRC}/scripts/setup-seafile-mysql.py
@@ -127,7 +125,7 @@ post-install:
 		${COPYTREE_SHARE} "sql upgrade/sql" ${STAGEDIR}${PREFIX}/${SEAFILE_SERVER})
 
 makesum-all:
-.for PORT in net-mgmt/ccnet-server net-mgmt/seafile-server www/py-seafdav www/py-seafobj www/seahub
+.for PORT in net-mgmt/seafile-server www/py-seafdav www/py-seafobj www/seahub
 	${MAKE} -C "${PORTSDIR}/${PORT}" makesum
 .endfor
 
