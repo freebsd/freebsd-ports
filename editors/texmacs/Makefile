@@ -14,6 +14,9 @@ COMMENT=	WYSIWYG scientific text editor
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	assigning to 'bool' from incompatible type 'nullptr_t'
+BROKEN_FreeBSD_14=	assigning to 'bool' from incompatible type 'nullptr_t'
+
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libguile.so:lang/guile \
 		libgmp.so:math/gmp
