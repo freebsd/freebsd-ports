@@ -60,8 +60,6 @@ CXXFLAGS+=	-Wno-inconsistent-missing-override
 CPPFLAGS+=	-DCATA_NO_CPP11_STRING_CONVERSIONS
 .endif
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|--mode=|-m | ; \
