@@ -1,0 +1,4 @@
+Regexp::Stringify is an alternative to Perl's default stringification of Regexp
+object (i.e.:"$re") and has some features/options.
+
+WWW: https://metacpan.org/release/Regexp-Stringify

@@ -3118,6 +3118,7 @@
     SUBDIR += p5-Regexp-Pattern-Perl
     SUBDIR += p5-Regexp-RegGrp
     SUBDIR += p5-Regexp-Shellish
+    SUBDIR += p5-Regexp-Stringify
     SUBDIR += p5-Regexp-Subst-Parallel
     SUBDIR += p5-Regexp-Trie
     SUBDIR += p5-Religion
