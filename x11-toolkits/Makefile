@@ -99,6 +99,7 @@
     SUBDIR += nanogui
     SUBDIR += neXtaw
     SUBDIR += ntk
+    SUBDIR += nuklear
     SUBDIR += ocaml-lablgtk2
     SUBDIR += ocaml-labltk
     SUBDIR += open-motif
