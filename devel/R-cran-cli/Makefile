@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cli
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,9 +12,7 @@ COMMENT=	Helpers for Developing Command Line Interfaces
 LICENSE=	MIT
 
 CRAN_DEPENDS=	R-cran-assertthat>0:math/R-cran-assertthat \
-		R-cran-crayon>=1.3.4:devel/R-cran-crayon \
-		R-cran-glue>0:devel/R-cran-glue \
-		R-cran-fansi>0:devel/R-cran-fansi
+		R-cran-glue>0:devel/R-cran-glue
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
