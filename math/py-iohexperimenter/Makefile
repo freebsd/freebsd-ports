@@ -3,6 +3,7 @@
 
 PORTNAME=	iohexperimenter
 PORTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ COMMENT=	Experimenter for Iterative Optimization Heuristic
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-xRUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY}
 
 USES=		compiler:c++14-lang dos2unix python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
