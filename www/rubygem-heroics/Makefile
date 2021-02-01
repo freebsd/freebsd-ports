@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	heroics
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
