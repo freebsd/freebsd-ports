@@ -25,12 +25,6 @@ USES=		compiler:c11 meson pkgconfig xorg
 USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-# XXX Drop after FreeBSD 12.1 EOL
-.if exists(/usr/lib/clang/8.0.1)
-# notification.c:545:13: error: suggest braces around initialization of subobject [-Werror,-Wmissing-braces]
-CFLAGS+=	-Wno-error=missing-braces
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},g' \
 		${WRKSRC}/xdg.c

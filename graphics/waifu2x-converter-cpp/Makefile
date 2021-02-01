@@ -30,11 +30,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		lib/libw2xc.so
 PORTDATA=	*
 
-.if exists(/usr/lib/libc++fs.a)
-# XXX Remove after FreeBSD 12.1 EOL
-CMAKE_ARGS+=	-DFILE_SYSTEM_LIB:STRING=c++fs
-.endif
-
 OPTIONS_DEFINE=	SIMD
 OPTIONS_DEFAULT=SIMD
 

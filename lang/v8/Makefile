@@ -47,13 +47,6 @@ BUILD_DEPENDS=	binutils>0:devel/binutils \
 		libunwind>0:devel/libunwind
 LIB_DEPENDS=	libicudata.so:devel/icu
 
-.include <bsd.port.options.mk>
-
-# clang10+ is required, this conditionnal can be dropped when 12.1 is EOL
-.if ${OSVERSION} >= 1200000 && ${OSVERSION} < 1201515
-BUILD_DEPENDS+=	llvm10>0:devel/llvm10
-.endif
-
 USES=		pkgconfig ninja python:3.5+,build tar:xz
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
@@ -143,10 +136,6 @@ post-patch:
 	${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
 		${WRKSRC}/build/toolchain/gcc_toolchain.gni \
 		${WRKSRC}/buildtools/third_party/libc++/BUILD.gn
-# clang10+ is required, this conditionnal can be dropped when 12.1 is EOL
-.if ${OSVERSION} >= 1200000 && ${OSVERSION} < 1201515
-	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extrapatch-clang10
-.endif
 
 # google sucks, this file is needed but absent in the build* archive
 # https://github.com/klzgrad/naiveproxy/blob/master/src/build/config/gclient_args.gni

@@ -26,10 +26,4 @@ USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MESON_ARGS=	-Dterminfo=false
 
-# XXX Drop after FreeBSD 12.1 EOL
-.if exists(/usr/lib/clang/8.0.1)
-# prompt.c:45:21: error: suggest braces around initialization of subobject [-Werror,-Wmissing-braces]
-CFLAGS+=	-Wno-error=missing-braces
-.endif
-
 .include <bsd.port.mk>

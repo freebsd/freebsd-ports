@@ -17,13 +17,6 @@ BUILD_DEPENDS=	binutils>0:devel/binutils \
 		gn:devel/gn \
 		libunwind>0:devel/libunwind
 
-.include <bsd.port.options.mk>
-
-# clang10+ is required, this conditional can be dropped when 12.1 is EOL
-.if (${OSVERSION} >= 1200000 && ${OSVERSION} < 1201515)
-BUILD_DEPENDS+=	llvm10>0:devel/llvm10
-.endif
-
 USES=	cargo ninja pkgconfig:build python:3.5+,build
 
 USE_GITHUB=	yes
@@ -387,10 +380,6 @@ post-patch:
 	${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
 		${WRKSRC}/cargo-crates/rusty_v8-${RUSTY_VERS}/build/toolchain/gcc_toolchain.gni \
 		${WRKSRC}/cargo-crates/rusty_v8-${RUSTY_VERS}/buildtools/third_party/libc++/BUILD.gn
-# clang10+ is required, this conditional can be dropped when 12.1 is EOL
-.if (${OSVERSION} >= 1200000 && ${OSVERSION} < 1201515)
-	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extrapatch-clang10
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/target/release/deno ${STAGEDIR}${LOCALBASE}/bin

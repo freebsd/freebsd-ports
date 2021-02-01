@@ -26,12 +26,6 @@ PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz \
 		share/zsh/site-functions/_${PORTNAME}
 
-# XXX Drop after FreeBSD 12.1 EOL
-.if exists(/usr/lib/clang/8.0.1)
-# prompt.c:45:21: error: suggest braces around initialization of subobject [-Werror,-Wmissing-braces]
-CFLAGS+=	-Wno-error=missing-braces
-.endif
-
 OPTIONS_DEFINE=	CAIRO LIBRSVG2 PNG
 OPTIONS_DEFAULT=CAIRO LIBRSVG2 PNG
 
