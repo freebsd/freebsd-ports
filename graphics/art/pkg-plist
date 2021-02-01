@@ -38,6 +38,7 @@ share/ART/dcpprofiles/Canon PowerShot S110.dcp
 share/ART/dcpprofiles/FUJIFILM FinePix F600EXR.dcp
 share/ART/dcpprofiles/FUJIFILM GFX 50R.dcp
 share/ART/dcpprofiles/FUJIFILM X-A5.dcp
+share/ART/dcpprofiles/FUJIFILM X-A7.dcp
 share/ART/dcpprofiles/FUJIFILM X-E3.dcp
 share/ART/dcpprofiles/FUJIFILM X-H1.dcp
 share/ART/dcpprofiles/FUJIFILM X-PRO3.dcp
@@ -79,6 +80,7 @@ share/ART/dcpprofiles/NIKON D850.dcp
 share/ART/dcpprofiles/NIKON Z 5.dcp
 share/ART/dcpprofiles/NIKON Z 50.dcp
 share/ART/dcpprofiles/NIKON Z 6.dcp
+share/ART/dcpprofiles/NIKON Z 6_2.dcp
 share/ART/dcpprofiles/NIKON Z 7.dcp
 share/ART/dcpprofiles/Nikon D200.dcp
 share/ART/dcpprofiles/Nikon D3000.dcp
@@ -87,6 +89,7 @@ share/ART/dcpprofiles/Nikon D3S.dcp
 share/ART/dcpprofiles/Nikon D5100.dcp
 share/ART/dcpprofiles/Nikon D7000.dcp
 share/ART/dcpprofiles/OLYMPUS E-510.dcp
+share/ART/dcpprofiles/OLYMPUS E-M1.dcp
 share/ART/dcpprofiles/OLYMPUS E-M10.dcp
 share/ART/dcpprofiles/OLYMPUS E-M1MarkII.dcp
 share/ART/dcpprofiles/OLYMPUS E-M5MARKII.dcp
@@ -122,10 +125,12 @@ share/ART/dcpprofiles/SONY ILCE-6000.dcp
 share/ART/dcpprofiles/SONY ILCE-6400.dcp
 share/ART/dcpprofiles/SONY ILCE-6500.dcp
 share/ART/dcpprofiles/SONY ILCE-6600.dcp
+share/ART/dcpprofiles/SONY ILCE-7C.dcp
 share/ART/dcpprofiles/SONY ILCE-7M2.dcp
 share/ART/dcpprofiles/SONY ILCE-7M3.dcp
 share/ART/dcpprofiles/SONY ILCE-7RM3.dcp
 share/ART/dcpprofiles/SONY ILCE-7RM4.dcp
+share/ART/dcpprofiles/SONY ILCE-7SM3.dcp
 share/ART/dcpprofiles/SONY ILCE-9.dcp
 share/ART/dcpprofiles/SONY SLT-A99V.dcp
 share/ART/dcpprofiles/Sony DSLR-A700.dcp
@@ -422,6 +427,7 @@ share/ART/images/panel-to-left.svg
 share/ART/images/panel-to-right.svg
 share/ART/images/panel-to-top.svg
 share/ART/images/paste.svg
+share/ART/images/pen-ocra-small.svg
 share/ART/images/perspective-aspect-horizontal-small.svg
 share/ART/images/perspective-aspect-vertical-small.svg
 share/ART/images/perspective-horizontal-left-small.svg
