@@ -14,14 +14,18 @@ COMMENT=	Statistical language model based input method engine
 LICENSE=	LGPL21 CDDL
 LICENSE_COMB=	dual
 
+NOT_FOR_ARCHS=		riscv64
+NOT_FOR_ARCHS_REASON=	./config.h:119:3: can not detect the endianness!
+
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+
+USES=		gmake iconv perl5 pkgconfig python:2.7 scons:python2 shebangfix
 
 USE_GITHUB=	yes
 GH_TAGNAME=	a8bd811
 
 MAKE_ARGS+=	--prefix=${PREFIX}
 USE_LDCONFIG=	yes
-USES=		gmake iconv perl5 pkgconfig python:2.7 scons:python2 shebangfix
 USE_PERL5=	build
 SHEBANG_FILES=	python/*.py
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
