@@ -13,6 +13,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		cups.c:42:12: error: incomplete definition of type 'struct _ipp_s'
+DEPRECATED=	Google Cloud Print has been shut down by Google as of December 31, 2020
+EXPIRATION_DATE=2021-02-28
 
 LIB_DEPENDS=	libcups.so:print/cups \
 		libavahi-client.so:net/avahi-app \
