@@ -147,10 +147,10 @@ include/ntk/FL/win32.H
 include/ntk/FL/x.H
 lib/libntk.so
 lib/libntk.so.1
-lib/libntk.so.%%SHLIB_VER%%
+lib/libntk.so.1.3.1001
 lib/libntk_images.so
 lib/libntk_images.so.1
-lib/libntk_images.so.%%SHLIB_VER%%
+lib/libntk_images.so.1.3.1001
 libdata/pkgconfig/ntk.pc
 libdata/pkgconfig/ntk_gl.pc
 libdata/pkgconfig/ntk_images.pc

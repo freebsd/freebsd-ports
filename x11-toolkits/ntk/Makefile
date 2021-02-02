@@ -2,8 +2,7 @@
 
 PORTNAME=	ntk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1000-2
-DISTVERSIONSUFFIX=	-gdae1771
+DISTVERSION=	1.3.1001
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,7 +43,7 @@ post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/bin/ntk-chtheme \
 		${STAGEDIR}${PREFIX}/bin/ntk-fluid \
-		${STAGEDIR}${PREFIX}/lib/libntk.so.${PORTVERSION:R} \
-		${STAGEDIR}${PREFIX}/lib/libntk_images.so.${PORTVERSION:R}
+		${STAGEDIR}${PREFIX}/lib/libntk.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libntk_images.so.${PORTVERSION}
 
 .include <bsd.port.mk>
