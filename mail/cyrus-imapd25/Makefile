@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_armv6=		fails to build: ./tools/config2header: Error code 1
 BROKEN_armv7=		fails to build: ./tools/config2header: Error code 1
+BROKEN_riscv64=		fails to build: lib/imapopts.c: Error 1
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libpcre.so:devel/pcre
@@ -22,9 +23,8 @@ LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 CONFLICTS_INSTALL=	cyrus-imapd-2.[^5].* cyrus-imapd2[^5]-2.[^5].* \
 			cyrus-imapd3*
 
-USE_RC_SUBR=	imapd
-
 USES=		cpe libtool perl5 ssl
+USE_RC_SUBR=	imapd
 GNU_CONFIGURE=	yes
 CYRUS_PREFIX=	${PREFIX}/cyrus
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
