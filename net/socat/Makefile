@@ -3,6 +3,7 @@
 
 PORTNAME=	socat
 PORTVERSION=	1.7.4.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		LOCAL/ehaupt

@@ -8,11 +8,15 @@
 # with [instancename].  instancename can be any alnum and is case insensitive
 # (will internally be converted to upper case).
 
-#[ntp4]
+#[http4]
 # Default socat_daemonuser=nobody won't be able to open sockets with port numbers
 # below 1024.
 #daemonuser=root
-#flags="UDP4-RECVFROM:123,fork,bind=192.0.2.20 UDP4-SENDTO:169.254.0.53:123"
+#flags="TCP4-LISTEN:80,fork,bind=192.0.2.3 TCP4:169.254.0.1:80"
+
+#[ntp4]
+#daemonuser=root
+#flags="UDP4-RECVFROM:123,fork,bind=192.0.2.3 UDP4-SENDTO:169.254.0.53:123"
 
 #[ntp6]
 #daemonuser=root
