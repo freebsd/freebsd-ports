@@ -1,0 +1,7 @@
+bin/qrouter
+%%DATADIR%%/console.tcl
+%%DATADIR%%/qrouter.so
+%%DATADIR%%/qrouter.tcl
+%%DATADIR%%/qrouterexec
+%%DATADIR%%/qrouternullg
+%%DATADIR%%/tkcon.tcl
