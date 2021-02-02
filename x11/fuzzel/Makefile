@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fuzzel
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
