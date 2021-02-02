@@ -960,8 +960,8 @@ include/wine/windows/windows.foundation.idl
 %%STAGING%%include/wine/windows/windows.globalization.h
 %%STAGING%%include/wine/windows/windows.globalization.idl
 include/wine/windows/windows.h
-%%STAGING%%include/wine/windows/windows.media.speechsynthesis.h
-%%STAGING%%include/wine/windows/windows.media.speechsynthesis.idl
+include/wine/windows/windows.media.speechsynthesis.h
+include/wine/windows/windows.media.speechsynthesis.idl
 %%STAGING%%include/wine/windows/windows.system.h
 %%STAGING%%include/wine/windows/windows.system.idl
 %%STAGING%%include/wine/windows/windows.system.userprofile.h
