@@ -16047,3 +16047,6 @@ sysutils/xfce4-kbdleds-plugin||2021-02-01|Has expired: Unsupported upstream, can
 textproc/py-gfm|textproc/py-cmarkgfm|2021-02-01|Has expired: No longer maintained by upstream, please use textproc/py-cmarkgfm instead
 devel/godep||2021-02-02|Has expired: Unmaintained and dead upstream
 security/titus||2021-02-02|Has expired: Development has officially ceased
+www/p5-RT-Authen-ExternalAuth||2021-02-02|Removed, part of RT44
+www/p5-RT-Extension-QuickAssign||2021-02-02|Removed, only compatible with expired RT42
+www/p5-RT-Extension-SLA||2021-02-02|Removed, only compatible with expired RT42

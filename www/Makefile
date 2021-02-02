@@ -1108,15 +1108,12 @@
     SUBDIR += p5-REST-Client
     SUBDIR += p5-REST-Google-Apps-Provisioning
     SUBDIR += p5-RPC-ExtDirect
-    SUBDIR += p5-RT-Authen-ExternalAuth
     SUBDIR += p5-RT-Client-REST
     SUBDIR += p5-RT-Extension-CommandByMail
     SUBDIR += p5-RT-Extension-Gravatar
     SUBDIR += p5-RT-Extension-LDAPImport
     SUBDIR += p5-RT-Extension-MandatoryOnTransition
-    SUBDIR += p5-RT-Extension-QuickAssign
     SUBDIR += p5-RT-Extension-RepeatTicket
-    SUBDIR += p5-RT-Extension-SLA
     SUBDIR += p5-RTx-Calendar
     SUBDIR += p5-Reaction
     SUBDIR += p5-Reddit
