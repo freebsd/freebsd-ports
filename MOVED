@@ -16050,3 +16050,15 @@ security/titus||2021-02-02|Has expired: Development has officially ceased
 www/p5-RT-Authen-ExternalAuth||2021-02-02|Removed, part of RT44
 www/p5-RT-Extension-QuickAssign||2021-02-02|Removed, only compatible with expired RT42
 www/p5-RT-Extension-SLA||2021-02-02|Removed, only compatible with expired RT42
+www/p5-RT-Extension-CommandByMail@rt42||2021-02-02|Removed, currently only supported with www/rt44
+www/p5-RT-Extension-CommandByMail@rt44|www/p5-RT-Extension-CommandByMail|2021-02-02|Unflavor, currently only supported with www/rt44
+www/p5-RT-Extension-Gravatar@rt42||2021-02-02|Removed, currently only supported with www/rt44
+www/p5-RT-Extension-Gravatar@rt44|www/p5-RT-Extension-Gravatar|2021-02-02|Unflavor, currently only supported with www/rt44
+www/p5-RT-Extension-LDAPImport@rt42||2021-02-02|Removed, currently only supported with www/rt44
+www/p5-RT-Extension-LDAPImport@rt44|www/p5-RT-Extension-LDAPImport|2021-02-02|Unflavor, currently only supported with www/rt44
+www/p5-RT-Extension-MandatoryOnTransition@rt42||2021-02-02|Removed, currently only supported with www/rt44
+www/p5-RT-Extension-MandatoryOnTransition@rt44|www/p5-RT-Extension-MandataryOnTransition|2021-02-02|Unflavor, currently only supported with www/rt44
+www/p5-RT-Extension-RepeatTicket@rt42||2021-02-02|Removed, currently only supported with www/rt44
+www/p5-RT-Extension-RepeatTicket@rt44|www/p5-RT-Extension-RepeatTicket|2021-02-02|Unflavor, currently only supported with www/rt44
+www/p5-RTx-Calendar@rt42||2021-02-02|Removed, currently only supported with www/rt44
+www/p5-RTx-Calendar@rt44|www/p5-RTx-Calendar|2021-02-02|Unflavor, currently only supported with www/rt44

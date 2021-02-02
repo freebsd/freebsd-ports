@@ -3,8 +3,10 @@
 
 PORTNAME=	RT-Extension-RepeatTicket
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RT Extension to repeat tickets base on a schedule
@@ -16,28 +18,16 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/rt:www/rt${RT_VER} \
 RUN_DEPENDS=	${LOCALBASE}/bin/rt:www/rt${RT_VER} \
 		p5-DateTime-Event-ICal>0:devel/p5-DateTime-Event-ICal
 
-FLAVORS=	rt44 rt42
-FLAVOR?=	${FLAVORS:[1]}
-rt42_PKGNAMEPREFIX=	p5-RT42-
-rt42_CONFLICTS_INSTALL=	rt44
-rt44_PKGNAMEPREFIX=	p5-RT44-
-rt44_CONFLICTS_INSTALL=	rt42
-
 USES=		perl5
 USE_PERL5=	configure
 
-.if ${FLAVOR} == rt44
-RT_VER=		44
-.elif ${FLAVOR} == rt42
-RT_VER=		42
-.endif
-
 NO_ARCH=	yes
 
+RT_VER=		44
 PLIST_SUB=	RTHOME=share/rt${RT_VER}
 
 # Note: You can install using an arbitrary $PREFIX but only if it
-# matches the $PREFIX used to install www/rt{42,44}.  Hence ignore
+# matches the $PREFIX used to install www/rt44.  Hence ignore
 # $PREFIX in the environment and inherit settings from RT.pm
 do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
