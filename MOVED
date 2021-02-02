@@ -16045,3 +16045,5 @@ net-p2p/py-transmissionrpc|net-p2p/py-transmission-rpc|2021-02-01|Has expired: U
 science/xfce4-equake-plugin||2021-02-01|Has expired: Unsupported upstream, cannot work with XFCE 4.16
 sysutils/xfce4-kbdleds-plugin||2021-02-01|Has expired: Unsupported upstream, cannot work with XFCE 4.16
 textproc/py-gfm|textproc/py-cmarkgfm|2021-02-01|Has expired: No longer maintained by upstream, please use textproc/py-cmarkgfm instead
+devel/godep||2021-02-02|Has expired: Unmaintained and dead upstream
+security/titus||2021-02-02|Has expired: Development has officially ceased

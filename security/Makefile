@@ -1260,7 +1260,6 @@
     SUBDIR += tinc
     SUBDIR += tinc-devel
     SUBDIR += tinyca
-    SUBDIR += titus
     SUBDIR += tls-check
     SUBDIR += tlswrap
     SUBDIR += tor
