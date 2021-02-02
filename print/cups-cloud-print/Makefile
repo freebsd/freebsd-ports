@@ -11,6 +11,9 @@ COMMENT=	Print using Google Cloud Print
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Google Cloud Print has been shut down by Google as of December 31, 2020
+EXPIRATION_DATE=2021-02-28
+
 BUILD_DEPENDS=	cups-config:print/cups
 RUN_DEPENDS=	cancel:print/cups \
 		bash:shells/bash \
