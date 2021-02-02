@@ -1,0 +1,9 @@
+Python (3.x and 2.x) high-level interface and ctypes-based bindings
+for PulseAudio (libpulse), mostly focused on mixer-like controls and
+introspection-related operations (as opposed to e.g. submitting sound
+samples to play, player-like client).
+
+Originally forked from pulsemixer project, which had this code
+bundled.
+
+WWW: https://pypi.python.org/pypi/pulsectl
