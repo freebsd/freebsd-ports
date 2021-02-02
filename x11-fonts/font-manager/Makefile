@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	font-manager
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	x11-fonts gnome
 
 MAINTAINER=	ehaupt@FreeBSD.org
