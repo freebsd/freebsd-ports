@@ -1,5 +1,6 @@
 bin/dwg2SVG
 bin/dwg2dxf
+%%PSLIB%%bin/dwg2ps
 bin/dwgadd
 bin/dwgbmp
 bin/dwgfilter
@@ -19,6 +20,7 @@ lib/libredwg.so.0.0.12
 libdata/pkgconfig/libredwg.pc
 man/man1/dwg2SVG.1.gz
 man/man1/dwg2dxf.1.gz
+%%PSLIB%%man/man1/dwg2ps.1.gz
 man/man1/dwgadd.1.gz
 man/man1/dwgbmp.1.gz
 man/man1/dwgfilter.1.gz

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libredwg
-PORTVERSION=	0.12
+PORTVERSION=	0.12.1
 CATEGORIES=	cad devel
 MASTER_SITES=	GNU
 
@@ -35,7 +35,6 @@ PCRE_CONFIGURE_ENV_OFF=	ac_cv_lib_pcre2_8_pcre2_config_8=no
 PSLIB_LIB_DEPENDS=	libps.so:print/pslib
 PSLIB_USES=		localbase
 PSLIB_CONFIGURE_ENV_OFF=	ac_cv_lib_ps_PS_open_file=no
-PSLIB_PLIST_FILES=	bin/dwg2ps man/man1/dwg2ps.1.gz
 
 PYTHON_BUILD_DEPENDS=	swig:devel/swig
 PYTHON_USES=		gettext-runtime python:3.6+ shebangfix
