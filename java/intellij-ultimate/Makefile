@@ -4,7 +4,7 @@
 # Based on the java/intellij port
 
 PORTNAME=	intellij-ultimate
-PORTVERSION=	2020.1
+PORTVERSION=	2020.3.2
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cf.jetbrains.com/idea/
 DISTNAME=	ideaIU-${PORTVERSION}-no-jbr
@@ -23,29 +23,28 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier
 USES=		python:run shebangfix
 
 USE_JAVA=	yes
-JAVA_VERSION=	8+
+JAVA_VERSION=	11+
 
 SHEBANG_FILES=	bin/printenv.py bin/restart.py \
 		plugins/spy-js/server/node_modules/node-uuid/benchmark/bench.sh \
 		plugins/spy-js/server/proxy-nix.sh \
 		plugins/spy-js/server/proxy-osx.sh
 
+CONFLICTS=	intellij-20*
+
 NO_ARCH=	yes
 NO_ARCH_IGNORE=	libjansi.so
 NO_BUILD=	yes
-
-WRKSRC=		${WRKDIR}/idea-IU-201.6668.121
-
 SUB_FILES=	idea idea.desktop pkg-message
-CONFLICTS=	intellij-20*
+
+WRKSRC=		${WRKDIR}/idea-IU-203.7148.57
 
 do-install:
 # Linux/Windows/OS X only so remove them
 	@${RM} -r ${WRKSRC}/bin/fsnotifier \
-		${WRKSRC}/bin/fsnotifier-arm \
 		${WRKSRC}/bin/fsnotifier64 \
 		${WRKSRC}/lib/pty4j-native/ \
-		${WRKSRC}/plugins/android/lib/libwebp/ \
+		${WRKSRC}/plugins/webp/lib/libwebp/ \
 		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/linux32/ \
 		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/linux64/ \
 		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/osx/ \
