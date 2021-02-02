@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxls
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	math devel
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 
