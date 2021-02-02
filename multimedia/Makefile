@@ -358,6 +358,7 @@
     SUBDIR += quodlibet
     SUBDIR += quvi
     SUBDIR += quvi09
+    SUBDIR += qwinff
     SUBDIR += rage
     SUBDIR += rav1e
     SUBDIR += recmpeg
