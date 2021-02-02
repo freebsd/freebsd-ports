@@ -2,7 +2,7 @@
 
 PORTNAME=	dnscontrol
 DISTVERSIONPREFIX=v
-DISTVERSION=	3.5.1
+DISTVERSION=	3.6.0
 CATEGORIES=	dns
 
 MAINTAINER=	decke@FreeBSD.org
@@ -29,17 +29,20 @@ GH_TUPLE=	\
 		Azure:go-autorest:tracing/v0.6.0:azure_go_autorest_tracing \
 		Azure:go-autorest:v14.2.0:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		DisposaBoy:JsonConfigReader:99cf318d67e7:disposaboy_jsonconfigreader/vendor/github.com/DisposaBoy/JsonConfigReader \
+		GeertJohan:go.rice:v1.0.2:geertjohan_go_rice/vendor/github.com/GeertJohan/go.rice \
 		PuerkitoBio:goquery:v1.6.0:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
 		TomOnTime:utfutil:0b0178852c8f:tomontime_utfutil/vendor/github.com/TomOnTime/utfutil \
 		andreyvit:diff:c7f18ee00883:andreyvit_diff/vendor/github.com/andreyvit/diff \
 		andybalholm:cascadia:v1.2.0:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
 		aws:aws-sdk-go:v1.36.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		babolivier:go-doh-client:a76cff4cb8b6:babolivier_go_doh_client/vendor/github.com/babolivier/go-doh-client \
+		bhendo:go-powershell:219e7fb4e41e:bhendo_go_powershell/vendor/github.com/bhendo/go-powershell \
 		billputer:go-namecheap:0c7adb0710f8:billputer_go_namecheap/vendor/github.com/billputer/go-namecheap \
 		boombuler:barcode:6c824513bacc:boombuler_barcode/vendor/github.com/boombuler/barcode \
 		cenkalti:backoff:v2.2.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
 		census-instrumentation:opencensus-go:v0.22.5:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
+		daaku:go.zipexe:v1.0.0:daaku_go_zipexe/vendor/github.com/daaku/go.zipexe \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		digitalocean:godo:v1.54.0:digitalocean_godo/vendor/github.com/digitalocean/godo \
 		dimchansky:utfbom:v1.1.1:dimchansky_utfbom/vendor/github.com/dimchansky/utfbom \
@@ -49,7 +52,6 @@ GH_TUPLE=	\
 		form3tech-oss:jwt-go:v3.2.2:form3tech_oss_jwt_go/vendor/github.com/form3tech-oss/jwt-go \
 		frankban:quicktest:v1.11.2:frankban_quicktest/vendor/github.com/frankban/quicktest \
 		go-acme:lego:v2.7.2:go_acme_lego/vendor/github.com/go-acme/lego \
-		go-check:check:8fa46927fb4f:go_check_check/vendor/gopkg.in/check.v1 \
 		go-gandi:go-gandi:0d8a64b9cc09:go_gandi_go_gandi/vendor/github.com/go-gandi/go-gandi \
 		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-sourcemap:sourcemap:v1.0.5:go_sourcemap_sourcemap/vendor/gopkg.in/sourcemap.v1 \
@@ -61,7 +63,7 @@ GH_TUPLE=	\
 		golang:crypto:c8d3bf9c5392:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mod:v0.4.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:c7110b5ffcbb:golang_net/vendor/golang.org/x/net \
+		golang:net:6772e930b67b:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:0b49973bad19:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.2:golang_snappy/vendor/github.com/golang/snappy \
@@ -88,20 +90,21 @@ GH_TUPLE=	\
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		hashicorp:vault:api/v1.0.4:hashicorp_vault_api/vendor/github.com/hashicorp/vault \
 		hashicorp:vault:sdk/v0.1.13:hashicorp_vault_sdk \
-		hexonet:go-sdk:v3.5.0:hexonet_go_sdk/vendor/github.com/hexonet/go-sdk \
+		hexonet:go-sdk:v3.5.1:hexonet_go_sdk/vendor/github.com/hexonet/go-sdk \
 		jarcoal:httpmock:v1.0.4:jarcoal_httpmock/vendor/github.com/jarcoal/httpmock \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
+		juju:errors:3fe23663418f:juju_errors/vendor/github.com/juju/errors \
+		juju:testing:2be42bba85f3:juju_testing/vendor/github.com/juju/testing \
 		kolo:xmlrpc:38db28db192b:kolo_xmlrpc/vendor/github.com/kolo/xmlrpc \
-		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		miekg:dns:v1.1.35:miekg_dns/vendor/github.com/miekg/dns \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:mapstructure:v1.4.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		mittwald:go-powerdns:v0.5.2:mittwald_go_powerdns/vendor/github.com/mittwald/go-powerdns \
 		mjibson:esc:v0.2.0:mjibson_esc/vendor/github.com/mjibson/esc \
 		namedotcom:go:08470befbe04:namedotcom_go/vendor/github.com/namedotcom/go \
-		niemeyer:pretty:a10e7caefd8e:niemeyer_pretty/vendor/github.com/niemeyer/pretty \
 		nrdcg:goinwx:v0.8.1:nrdcg_goinwx/vendor/github.com/nrdcg/goinwx \
 		ns1:ns1-go:c563826f4cbe:ns1_ns1_go/vendor/gopkg.in/ns1/ns1-go.v2 \
+		oracle:oci-go-sdk:v32.0.0:oracle_oci_go_sdk_v32/vendor/github.com/oracle/oci-go-sdk/v32 \
 		ovh:go-ovh:ba5adb4cf014:ovh_go_ovh/vendor/github.com/ovh/go-ovh \
 		philhug:opensrs-go:9dfa7433020d:philhug_opensrs_go/vendor/github.com/philhug/opensrs-go \
 		pierrec:lz4:v2.6.0:pierrec_lz4/vendor/github.com/pierrec/lz4 \
@@ -122,7 +125,8 @@ GH_TUPLE=	\
 		tdewolff:parse:v2.3.4:tdewolff_parse/vendor/github.com/tdewolff/parse \
 		tdewolff:test:v1.0.6:tdewolff_test/vendor/github.com/tdewolff/test \
 		urfave:cli:v2.3.0:urfave_cli_v2/vendor/github.com/urfave/cli/v2 \
-		vultr:govultr:v1.0.0:vultr_govultr/vendor/github.com/vultr/govultr
+		vultr:govultr:v1.0.0:vultr_govultr/vendor/github.com/vultr/govultr \
+		xddxdd:ottoext:439879ee6281:xddxdd_ottoext/vendor/github.com/xddxdd/ottoext
 
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest
