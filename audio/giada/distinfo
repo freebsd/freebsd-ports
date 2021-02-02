@@ -1,7 +1,7 @@
-TIMESTAMP = 1601454842
-SHA256 (monocasual-giada-v0.16.4_GH0.tar.gz) = a425151ff571d4b0e79a3faaa6dd872c8f2693ffcada975b282365c865130b38
-SIZE (monocasual-giada-v0.16.4_GH0.tar.gz) = 474303
-SHA256 (nlohmann-json-bde5712_GH0.tar.gz) = 4032f98d302bebeea03769599c5f07ac750547718f0d50145f3f4abfc047bfd1
-SIZE (nlohmann-json-bde5712_GH0.tar.gz) = 119014037
+TIMESTAMP = 1612283126
+SHA256 (monocasual-giada-v0.17.1_GH0.tar.gz) = ab88b224e619d02d880a1af5a32699ab7baf9d40cd3852c2befd3f51bc94eee4
+SIZE (monocasual-giada-v0.17.1_GH0.tar.gz) = 373284
+SHA256 (nlohmann-json-db78ac1d7716f56fc9f1b030b715f872f93964e4_GH0.tar.gz) = 048aa963b1d551b99c8a4c05d8e666d50c282ba745623ac1c98c6c3300af38cf
+SIZE (nlohmann-json-db78ac1d7716f56fc9f1b030b715f872f93964e4_GH0.tar.gz) = 6883371
 SHA256 (monocasual-rtaudio-5386a90_GH0.tar.gz) = 6b0241315ea640f93764b0198d3a0f63d43c21ed977c6503ae215b6f04bff9c2
 SIZE (monocasual-rtaudio-5386a90_GH0.tar.gz) = 227980
