@@ -45,10 +45,9 @@ load_rc_config $name
 : ${get_iplayer_bind_port=9370}
 
 get_iplayer_logfile="${get_iplayer_logfile:+"-o $get_iplayer_logfile"}"
+get_iplayer_env="HOME='${get_iplayer_chdir}'"
 
 command=/usr/sbin/daemon
-export HOME="$get_iplayer_chdir"
-cd "$HOME" || exit 1
 command_args="-f ${get_iplayer_logfile} -u ${name} -p /var/run/${name}/${name}.pid %%WWWDIR%%/${name}.cgi -p ${get_iplayer_bind_port} -l ${get_iplayer_listen_address} --getiplayer %%WWWDIR%%/${name} ${get_iplayer_flags}"
 get_iplayer_flags="" # This is needed to stop the flags being applied to the 'daemon' program.
 procname=/usr/local/bin/perl
