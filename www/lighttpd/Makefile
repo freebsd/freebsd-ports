@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.58
+PORTVERSION=	1.4.59
 CATEGORIES?=	www
 MASTER_SITES?=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -37,7 +37,7 @@ USE_RC_SUBR=	lighttpd
 REQUIRE=	LOGIN
 
 OPTIONS_DEFINE=	ATTR DBI DOCS GDBM IPV6 KRB5 LIBEV LUA MAXMINDDB MEMCACHED \
-		MYSQL NETTLE LDAP SPAWNFCGI VALGRIND WEBDAV
+		MYSQL NETTLE LDAP SPAWNFCGI VALGRIND WEBDAV ZSTD
 OPTIONS_GROUP=	SSL
 OPTIONS_GROUP_SSL=	OPENSSL GNUTLS MBEDTLS NSS WOLFSSL
 
@@ -58,6 +58,7 @@ NETTLE_DESC=	Crypto support from Nettle
 SPAWNFCGI_DESC=	Depend on spawn-fcgi utility
 VALGRIND_DESC=	valgrind support
 WEBDAV_DESC=	WebDAV support
+ZSTD_DESC=	mod_deflate support for zstd (Zstandard)
 
 ATTR_CONFIGURE_WITH=	attr
 DBI_CONFIGURE_WITH=	dbi=${LOCALBASE}
@@ -109,6 +110,8 @@ WEBDAV_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 WEBDAV_CONFIGURE_WITH=	webdav-props webdav-locks
 WOLFSSL_CONFIGURE_WITH=	wolfssl=${LOCALBASE}
 WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
+ZSTD_CONFIGURE_WITH=	zstd
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 LIGHTTPD_CONF_FILES=	lighttpd.conf modules.conf
 
