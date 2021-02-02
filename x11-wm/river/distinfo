@@ -1,11 +1,11 @@
-TIMESTAMP = 1612113861
-SHA256 (ifreund-river-s20210131-5e09b85_GH0.tar.gz) = f74a07632d0aab7bdab9a4ee4bea82a7e022decaf7bf44aadb69c1dc70988d80
-SIZE (ifreund-river-s20210131-5e09b85_GH0.tar.gz) = 98642
+TIMESTAMP = 1612224846
+SHA256 (ifreund-river-s20210202-7029a5c_GH0.tar.gz) = 1ebfcb079b09f37aa415fc341c9edd8f5f6160c4e9e48e0f203b83bf021bd190
+SIZE (ifreund-river-s20210202-7029a5c_GH0.tar.gz) = 99132
 SHA256 (ifreund-zig-pixman-7847fd1_GH0.tar.gz) = d2f5eef6d8566565c25f0df08aac7d537f303f6ab2b7e7a2aca3a556df60053c
 SIZE (ifreund-zig-pixman-7847fd1_GH0.tar.gz) = 6548
 SHA256 (ifreund-zig-wayland-6880196_GH0.tar.gz) = ee7a703ce4d8f49addb03f5ecf64f7b03591c18338082ddbfab2bcecb9aaafda
 SIZE (ifreund-zig-wayland-6880196_GH0.tar.gz) = 53175
 SHA256 (ifreund-zig-xkbcommon-9e4d41f_GH0.tar.gz) = 3af5c9a448cf311d9cc819c8fd1dba114fbd7a4407f4174f95e4c82bb37f447b
 SIZE (ifreund-zig-xkbcommon-9e4d41f_GH0.tar.gz) = 19025
-SHA256 (swaywm-zig-wlroots-4db6b92_GH0.tar.gz) = fc0a6f2ebfe4e17670ba31b35474bc57f213017d7f5648addf8c568ce4feb8eb
-SIZE (swaywm-zig-wlroots-4db6b92_GH0.tar.gz) = 32035
+SHA256 (swaywm-zig-wlroots-5bc7fcf_GH0.tar.gz) = c95d76b99383d781df4cee1d05e0c5dace6b2873ac46aa47eb8405ca33039e3e
+SIZE (swaywm-zig-wlroots-5bc7fcf_GH0.tar.gz) = 32108
