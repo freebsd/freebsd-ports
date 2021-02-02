@@ -1,5 +1,5 @@
---- Makefile.FREEBSD.orig	Thu Aug 16 14:22:12 2001
-+++ Makefile.FREEBSD	Thu Aug 16 14:21:42 2001
+--- Makefile.FREEBSD.orig	2000-10-08 20:38:46 UTC
++++ Makefile.FREEBSD
 @@ -1,15 +1,13 @@
 -CC = gcc
  OS = -DFREEBSD
@@ -19,7 +19,7 @@
  
  OBJS =	wmcube.o \
  	../wmgeneral/wmgeneral.o \
-@@ -20,7 +18,7 @@
+@@ -20,7 +18,7 @@ OBJS =	wmcube.o \
  	$(CC) $(CFLAGS) $(INCDIR) -c $< -o $*.o
  
  wmcube: $(OBJS)

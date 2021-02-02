@@ -15,8 +15,9 @@ COMMENT=	Window Maker dockapp that displays cpu load and a realtime 3D object
 LICENSE=	GPLv2
 
 USES=		xorg
-USE_XORG=	xpm
+USE_XORG=	x11 xext xpm
 
+CFLAGS+=	-fcommon
 OPTIONS_DEFINE=	DOCS
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 MAKEFILE=	Makefile.FREEBSD
