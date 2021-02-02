@@ -2,6 +2,7 @@
 
 PORTNAME=	qrouter
 DISTVERSION=	1.4.83
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/${PORTNAME}/archive/
 
@@ -11,19 +12,15 @@ COMMENT=	Tool to generate metal layers and vias
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-BUILD_DEPENDS=	tk87>0:x11-toolkits/tk87 \
-		tcl87>0:lang/tcl87
-
-USES=		gmake localbase tar:tgz xorg
-USE_XORG=	xt
+USES=		gmake localbase tar:tgz xorg tk:87
+USE_XORG=	ice sm x11 xt
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR}
 
-CFLAGS+=	-I${LOCALBASE}/include/tk8.7 -I${LOCALBASE}/include/tcl8.7
-
-PLIST_FILES=	bin/${PORTNAME}
-
-post-stage:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+post-install:
+.for f in qrouter.so qrouterexec qrouternullg
+	@${STRIP_CMD} ${STAGEDIR}/${DATADIR}/${f}
+.endfor
 
 .include <bsd.port.mk>
