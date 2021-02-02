@@ -1,6 +1,15 @@
 [
 { type: install
   message: <<EOM
+
+Please note that dma is now also available in FreeBSD's base, currently under 
+/usr/libexec/dma, and with config files in /etc/mail/dma.
+
+These may not track the same version of dma.  Users are encouraged to check
+releases notes to see which best suits their needs.
+
+===
+
 To enable dma please edit /etc/mail/mailer.conf to replace all lines
 referring to another MTA with the following:
 
@@ -8,7 +17,11 @@ sendmail	%%PREFIX%%/libexec/dma
 send-mail	%%PREFIX%%/libexec/dma
 mailq		%%PREFIX%%/libexec/dma
 
-If you not need sendmail anymore, please add in your rc.conf:
+If you do not need sendmail anymore, please add in your rc.conf:
+
+sendmail_enable="NONE"
+
+or, for more granular control:
 
 sendmail_enable="NO"
 sendmail_submit_enable="NO"
