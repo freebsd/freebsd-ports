@@ -20,6 +20,9 @@ LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+NOT_FOR_ARCHS=		riscv64
+NOT_FOR_ARCHS_REASON=	unsupported platform
+
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libffi.so:devel/libffi \
 		libpng.so:graphics/png
