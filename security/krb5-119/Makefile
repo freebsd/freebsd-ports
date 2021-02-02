@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.17.2
+PORTVERSION=		1.19
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
-PKGNAMESUFFIX=		-117
+PKGNAMESUFFIX=		-119
 .endif
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
@@ -15,9 +15,6 @@ PATCH_DIST_STRIP=	-p2
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		MIT implementation of RFC 4120 network authentication service
 
-DEPRECATED=             EOL one year after the release of krb5 1.19
-EXPIRATION_DATE=        2022-02-01
-
 LICENSE=		MIT
 
 CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[3-6]-[0-9]* \
@@ -25,13 +22,13 @@ CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-11[3-6]-[0-9]* \
 CONFLICTS_BUILD=	boringssl-*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
-USE_PERL5=		build
-USE_LDCONFIG=		yes
+USES=			compiler:c++11-lang cpe gmake gettext-runtime \
+			gssapi:bootstrap,mit libtool:build localbase \
+			perl5 pkgconfig ssl
 USE_CSTD=		gnu99
+USE_LDCONFIG=		yes
+USE_PERL5=		build
 GNU_CONFIGURE=		yes
-USES=			cpe gmake localbase perl5 libtool:build \
-			gssapi:bootstrap,mit pkgconfig ssl \
-			gettext-runtime
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
 			--disable-rpath --localstatedir="${PREFIX}/var" \
 			--runstatedir="${PREFIX}/var/run"
