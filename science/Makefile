@@ -339,6 +339,7 @@
     SUBDIR += szip
     SUBDIR += teem
     SUBDIR += tfel
+    SUBDIR += thermofun
     SUBDIR += tfel-edf
     SUBDIR += tinker
     SUBDIR += udunits
