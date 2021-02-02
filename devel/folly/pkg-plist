@@ -15,6 +15,7 @@ include/folly/Chrono.h
 include/folly/ClockGettimeWrappers.h
 include/folly/CompiledFormat.h
 include/folly/ConcurrentBitSet.h
+include/folly/ConcurrentLazy.h
 include/folly/ConcurrentSkipList-inl.h
 include/folly/ConcurrentSkipList.h
 include/folly/ConstexprMath.h
