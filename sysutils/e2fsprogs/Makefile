@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.45.6
-PORTREVISION?=	5
+PORTVERSION=	1.45.7
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
 
@@ -213,19 +213,16 @@ _CHECK_JOBS=${_MAKE_JOBS}
 _CHECK_JOBS=
 .endif
 
+_checkaddargs=
 .if ${PORT_OPTIONS:MBASHTESTS}
 _CHECK_SHELL=${SHELL}
+_checkaddargs+=--eval SHELL:=${BASH_CMD}
 .else
 _CHECK_SHELL=${LOCALBASE}/bin/bash
 .endif
 
-_checkaddargs=
 .if !defined(TMPDIR)
 _checkaddargs+=TMPDIR=${WRKDIR}/tmp
-.endif
-
-.if ${PORT_OPTIONS:MBASHTESTS}
-_checkaddargs+=--eval SHELL:=${BASH_CMD}
 .endif
 
 .if ${PORT_OPTIONS:MSLOWTESTS}

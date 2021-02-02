@@ -1,0 +1,11 @@
+--- lib/support/Makefile.in.orig	2021-01-29 05:51:02 UTC
++++ lib/support/Makefile.in
+@@ -44,7 +44,7 @@ LIBDIR= support
+ @MAKEFILE_LIBRARY@
+ @MAKEFILE_PROFILE@
+ 
+-COMPILE_ET=	_ET_DIR_OVERRIDE=$(srcdir)/../et ../et/compile_et
++COMPILE_ET=	/usr/bin/env _ET_DIR_OVERRIDE=$(srcdir)/../et ../et/compile_et
+ 
+ .c.o:
+ 	$(E) "	CC $<"

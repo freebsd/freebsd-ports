@@ -1,6 +1,6 @@
---- misc/Makefile.in.orig	2020-01-06 23:10:17 UTC
+--- misc/Makefile.in.orig	2021-01-29 05:51:02 UTC
 +++ misc/Makefile.in
-@@ -34,17 +34,17 @@ INSTALL = @INSTALL@
+@@ -35,17 +35,17 @@ MKDIR_P = @MKDIR_P@
  
  SPROGS=		mke2fs badblocks tune2fs dumpe2fs $(BLKID_PROG) logsave \
  			$(E2IMAGE_PROG) @FSCK_PROG@ e2undo
@@ -23,7 +23,7 @@
  UMANPAGES+=	@FUSE_CMT@ fuse2fs.1
  
  LPROGS=		@E2INITRD_PROG@
-@@ -147,14 +147,14 @@ profiled:
+@@ -148,14 +148,14 @@ profiled:
  
  mke2fs.conf: $(srcdir)/mke2fs.conf.in
  	if test -f $(srcdir)/mke2fs.conf.custom.in ; then \
@@ -41,7 +41,7 @@
  		>  default_profile.c
  findsuper: findsuper.o
  	$(E) "	LD $@"
-@@ -605,34 +605,9 @@ install: all $(SMANPAGES) $(UMANPAGES) installdirs
+@@ -606,34 +606,9 @@ install: all $(SMANPAGES) $(UMANPAGES) installdirs
  		(cd $(DESTDIR)$(man5dir); \
  			$(LN) $(LINK_INSTALL_FLAGS) ext4.5 $$i.5); \
  	done
