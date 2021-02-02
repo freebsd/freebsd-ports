@@ -1,5 +1,14 @@
---- lib/Smokeping.pm.orig	2018-02-02 21:14:55 UTC
+--- lib/Smokeping.pm.orig	2021-02-01 12:05:21 UTC
 +++ lib/Smokeping.pm
+@@ -1889,7 +1889,7 @@ sub check_alerts {
+                 $gotalert = $match unless $gotalert;
+             my $edgetrigger = $alert->{edgetrigger} eq 'yes';
+             my $what;
+-            if ($edgetrigger and $prevmatch != $match) {
++            if ($edgetrigger and ($prevmatch ? 0 : 1 ) != ($match ? 0 : 1)) {
+                 $what = ($prevmatch == 0 ? "was raised" : "was cleared");
+             }
+             if (not $edgetrigger and $match) {
 @@ -4306,7 +4306,7 @@ sub main (;$) {
          if(defined $opt{'check'}) { verify_cfg($cfgfile); exit 0; }
          if($opt{reload})  { 

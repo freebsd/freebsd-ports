@@ -3,7 +3,7 @@
 
 PORTNAME=	smokeping
 PORTVERSION=	2.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	rodrigo@FreeBSD.org
