@@ -77,6 +77,41 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="66d1c277-652a-11eb-bb3f-001b217b3468">
+    <topic>Gitlab -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>13.8.0</ge><lt>13.8.2</lt></range>
+	<range><ge>13.7.0</ge><lt>13.7.6</lt></range>
+	<range><ge>11.8</ge><lt>13.6.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/blog/2021/02/01/security-release-gitlab-13-8-2-released/">
+	  <p>Stored XSS in merge request</p>
+	  <p>Stored XSS in epic's pages</p>
+	  <p>Sensitive GraphQL variables exposed in structured log</p>
+	  <p>Guest user can see tag names in private projects</p>
+	  <p>Information disclosure via error message</p>
+	  <p>DNS rebinding protection bypass</p>
+	  <p>Validate existence of private project</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://about.gitlab.com/blog/2021/02/01/security-release-gitlab-13-8-2-released/</url>
+      <cvename>CVE-2021-22172</cvename>
+      <cvename>CVE-2021-22169</cvename>
+    </references>
+    <dates>
+      <discovery>2021-02-01</discovery>
+      <entry>2021-02-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8ec7d426-055d-46bc-8f5a-a9d73a5a71ab">
     <topic>minio -- Server Side Request Forgery</topic>
     <affects>
