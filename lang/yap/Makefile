@@ -12,6 +12,8 @@ MASTER_SITES=	https://mirrors.dotsrc.org/mirrors/exherbo/	\
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High-performance Prolog compiler
 
+BROKEN_riscv64=		fails to build: procedure chr_translate/2 is undefined, called from context  prolog:once/1
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 PORTSCOUT=	limit:^6\.2\.
@@ -24,11 +26,11 @@ DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/texi2html:textproc/texi2html \
 			${LOCALBASE}/bin/texi2pdf:print/texinfo
 DOCS_INSTALL_TARGET=	install install_docs
 
+USES=		gmake localbase readline
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-max-performance \
 		--disable-myddas
-USES=		gmake localbase readline
 
 DOCSDIR=	${PREFIX}/share/doc/Yap
 DATADIR=	${PREFIX}/share/Yap
