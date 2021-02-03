@@ -4,6 +4,6 @@ include/re2/set.h
 include/re2/stringpiece.h
 lib/libre2.a
 lib/libre2.so
-lib/libre2.so.6
-lib/libre2.so.6.0.0
+lib/libre2.so.10
+lib/libre2.so.10.0.0
 libdata/pkgconfig/re2.pc
