@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ruqola
-DISTVERSION=	1.2.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.3.0
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -24,5 +25,7 @@ USE_QT=		concurrent core dbus declarative declarative gui multimedia \
 		buildtools_build qmake_build
 USE_GITHUB=	yes
 GH_ACCOUNT=	KDE
+
+PLIST_SUB=	SO_VER=${DISTVERSION} 
 
 .include <bsd.port.mk>
