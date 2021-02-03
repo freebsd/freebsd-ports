@@ -16,9 +16,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/cstdint.hpp:devel/boost-libs
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		librevenge-0.0.so:textproc/librevenge
 
+USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:xz
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--disable-werror --without-docs
