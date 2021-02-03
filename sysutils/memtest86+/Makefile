@@ -17,7 +17,7 @@ USES=	gmake
 ALL_TARGET=	all
 PORTDOCS=	*
 
-USE_GCC=	4.8
+USE_GCC=	4.8:build
 
 # Please provide absolute path below (cannot be root)
 BOOT_DIR?=	/boot/opt
@@ -75,4 +75,3 @@ do-install:
 .endif
 
 .include <bsd.port.mk>
-RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
