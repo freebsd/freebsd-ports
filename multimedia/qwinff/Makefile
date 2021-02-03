@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		sox:audio/sox
 
-USES=		cmake:noninja qt:5
+USES=		cmake:noninja compiler:c++11-lang qt:5
 USE_GITHUB=	yes
 USE_QT=		core gui linguisttools network widgets buildtools_build \
 		qmake_build
