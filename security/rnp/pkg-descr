@@ -1,0 +1,12 @@
+RNP is a set of OpenPGP (RFC4880) tools that works on Linux, macOS,
+Windows and *BSD built with C++.
+
+rnpkeys allow to generate, import, export, and list keys.
+
+rnp is used to perform encryption, decryption, signing and signature
+checks.
+
+librnp is the library used by RNP for all OpenPGP functions, useful
+for developers to build against, different from GPGME.
+
+WWW: http://example.com

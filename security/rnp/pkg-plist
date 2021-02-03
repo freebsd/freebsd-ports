@@ -1,0 +1,13 @@
+bin/rnp
+bin/rnpkeys
+include/rnp-0/rnp/rnp.h
+include/rnp-0/rnp/rnp_err.h
+include/rnp-0/rnp/rnp_export.h
+lib/cmake/rnp/rnp-config-version.cmake
+lib/cmake/rnp/rnp-config.cmake
+lib/cmake/rnp/rnp-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/rnp/rnp-targets.cmake
+lib/librnp-0.so
+lib/librnp-0.so.0
+lib/librnp-0.so.0.14.0
+libdata/pkgconfig/librnp-0.pc
