@@ -24,7 +24,7 @@ MAKEFILE=	Makefile.linux
 
 PORTDOCS=	*
 PORTDATA=	*
-PLIST_FILES=	bin/wizznic man/man6/wizznic.6.gz
+PLIST_FILES=	bin/wizznic share/man/man6/wizznic.6.gz
 
 DESKTOP_ENTRIES="Wizznic!" "" "${DATADIR}/packs/001_wizznic/icon.png" \
 		"${PORTNAME}" "Game;LogicGame;" false
@@ -38,7 +38,7 @@ OPENGL_MAKE_ENV_OFF=	WITH_OPENGL=false
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wizznic ${STAGEDIR}${PREFIX}/bin
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "data packs" ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/wizznic.6 ${STAGEDIR}${MAN6PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/doc/wizznic.6 ${STAGEDIR}${MAN6PREFIX}/share/man/man6
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

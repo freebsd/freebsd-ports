@@ -14,7 +14,7 @@
  #note: some systems use /usr/local/share/man, others use /usr/local/man
  #packagers should set the variable accordingly
 -MANDIR = /usr/share/man/
-+MANDIR = ${PREFIX}/man/
++MANDIR = ${PREFIX}/share/man/
  
  #Add the PER_USER_FILES define if the DATADIR is set
  ifneq ($(DATADIR),)
