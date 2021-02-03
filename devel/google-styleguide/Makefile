@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	styleguide
-PORTVERSION=	20201111
+PORTVERSION=	20210129
 CATEGORIES=	devel
 PKGNAMEPREFIX=	google-
 
@@ -19,7 +19,7 @@ USES=		python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	d5b5104
+GH_TAGNAME=	6e239d7
 
 NO_ARCH=	yes
 NO_BUILD=	yes

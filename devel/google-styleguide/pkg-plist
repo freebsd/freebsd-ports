@@ -22,6 +22,7 @@ bin/cpplint_unittest.py
 %%PORTDOCS%%%%DOCSDIR%%/pyguide.md
 %%PORTDOCS%%%%DOCSDIR%%/shellguide.md
 %%PORTDOCS%%%%DOCSDIR%%/styleguide.css
+%%PORTDOCS%%%%DOCSDIR%%/tsguide.html
 %%PORTDOCS%%%%DOCSDIR%%/xmlstyle.html
 %%DATADIR%%/Rguide.xml
 %%DATADIR%%/cppguide.xml
