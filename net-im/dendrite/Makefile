@@ -2,7 +2,7 @@
 
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.6
+DISTVERSION=	0.3.8
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -50,11 +50,11 @@ GH_TUPLE=	\
 		go-macaroon:macaroon:v2.1.0:go_macaroon_macaroon/vendor/gopkg.in/macaroon.v2 \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:c1f2f97bffc9:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:eec23a3978ad:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:3c3fba18258b:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:f84b799fce68:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:b64e53b001e4:golang_sys/vendor/golang.org/x/sys \
 		golang:text:929e72ca90de:golang_text/vendor/golang.org/x/text \
 		gologme:log:v1.2.0:gologme_log/vendor/github.com/gologme/log \
 		google:gopacket:v1.1.18:google_gopacket/vendor/github.com/google/gopacket \
@@ -131,7 +131,7 @@ GH_TUPLE=	\
 		matrix-org:go-http-js-libp2p:783164aeeda4:matrix_org_go_http_js_libp2p/vendor/github.com/matrix-org/go-http-js-libp2p \
 		matrix-org:go-sqlite3-js:bc8506ccbcf3:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:7dd5e2a05bcd:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:b1c67ac867cc:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:gomatrixserverlib:c803b6ee2b68:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
 		matrix-org:naffka:bcdd62999a91:matrix_org_naffka/vendor/github.com/matrix-org/naffka \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.2:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
@@ -165,10 +165,10 @@ GH_TUPLE=	\
 		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spacemonkeygo:spacelog:2296661a0572:spacemonkeygo_spacelog/vendor/github.com/spacemonkeygo/spacelog \
 		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
-		tidwall:gjson:v1.6.3:tidwall_gjson/vendor/github.com/tidwall/gjson \
-		tidwall:match:v1.0.2:tidwall_match/vendor/github.com/tidwall/match \
+		tidwall:gjson:v1.6.7:tidwall_gjson/vendor/github.com/tidwall/gjson \
+		tidwall:match:v1.0.3:tidwall_match/vendor/github.com/tidwall/match \
 		tidwall:pretty:v1.0.2:tidwall_pretty/vendor/github.com/tidwall/pretty \
-		tidwall:sjson:v1.1.2:tidwall_sjson/vendor/github.com/tidwall/sjson \
+		tidwall:sjson:v1.1.4:tidwall_sjson/vendor/github.com/tidwall/sjson \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.5.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.15.0:uber_go_zap/vendor/go.uber.org/zap \
