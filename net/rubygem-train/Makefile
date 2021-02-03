@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	train
-PORTVERSION=	3.4.8
+PORTVERSION=	3.4.9
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
