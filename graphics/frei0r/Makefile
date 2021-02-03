@@ -65,6 +65,15 @@ PLIST_FILES+=	lib/frei0r-1/${FILE}.so
 . endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == gcc
+# work around regression seen in GCC 10 but not in GCC 9:
+# src/filter/elastic_scale/elastic_scale.cpp:152: error: ISO C++ forbids initialization of member 'm_transformationCalculations'
+CFLAGS+=	-Wno-error
+CXXFLAGS+=	-Wno-error
+.endif
+
+.include <bsd.port.post.mk>
 
 .endif # !defined(BUILDING_FREI0R_METAPORT)
