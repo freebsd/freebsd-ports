@@ -1,0 +1,5 @@
+PyDecor aims to make function decoration easy and straightforward, so that
+developers can stop worrying about closures and syntax in triply nested
+functions and instead get down to decorating.
+
+WWW: https://github.com/mplanchard/pydecor
