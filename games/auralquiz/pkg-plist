@@ -1,4 +1,4 @@
 bin/auralquiz
-man/man6/auralquiz.6.gz
-share/icons/hicolor/64x64/apps/auralquiz.png
 share/applications/auralquiz.desktop
+share/icons/hicolor/64x64/apps/auralquiz.png
+share/man/man6/auralquiz.6.gz
