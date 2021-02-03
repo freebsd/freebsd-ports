@@ -1,0 +1,20 @@
+Fennel is a programming language that brings together the speed,
+simplicity, and reach of Lua with the flexibility of a lisp syntax and
+macro system.
+
+- Full Lua compatibility: Easily call any Lua function or library from
+  Fennel and vice-versa.
+
+- Zero overhead: Compiled code should be just as or more efficient than
+  hand-written Lua.
+
+- Compile-time macros: Ship compiled code with no runtime dependency on
+  Fennel.
+
+- Embeddable: Fennel is a one-file library as well as an
+  executable. Embed it in other programs to support runtime
+  extensibility and interactive development.
+
+Anywhere you can run Lua code, you can run Fennel code.
+
+WWW: https://fennel-lang.org/

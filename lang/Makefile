@@ -70,6 +70,7 @@
     SUBDIR += f2c
     SUBDIR += fasm
     SUBDIR += ferite
+    SUBDIR += fennel
     SUBDIR += ficl
     SUBDIR += fpc
     SUBDIR += fpc-base

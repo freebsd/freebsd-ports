@@ -1,0 +1,27 @@
+# $FreeBSD$
+
+PORTNAME=	fennel
+DISTVERSION=	0.8.0
+CATEGORIES=	lang
+MASTER_SITES=	https://git.sr.ht/~technomancy/${PORTNAME}/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
+
+MAINTAINER=	jrm@FreeBSD.org
+COMMENT=	Lisp that compiles to Lua
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		gmake lua:build
+
+MAKE_ENV=	LUA=${LUA_CMD} \
+		LUA_INCLUDE_DIR=${LUA_INCDIR} \
+		STATIC_LUA_LIB=${LUA_LIBDIR}/liblua-${LUA_VER}.a
+
+ALL_TARGET=	${PORTNAME}-bin
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}view.lua ${STAGEDIR}${LUA_LIBDIR}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-bin ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
