@@ -1,5 +1,3 @@
-TIMESTAMP = 1611042654
-SHA256 (rvaser-bioparser-3.0.12_GH0.tar.gz) = 00672e3dfa4946c37df8818d283742b51f21c8a0c70ddac543b241d6ba54dbcb
-SIZE (rvaser-bioparser-3.0.12_GH0.tar.gz) = 1013329
-SHA256 (rvaser-biosoup-e2b39f1_GH0.tar.gz) = fe122e65d1691ca781584d8bb42538c5904852ccbb1ec48bc13aa2652b0f9ddc
-SIZE (rvaser-biosoup-e2b39f1_GH0.tar.gz) = 6979
+TIMESTAMP = 1612378926
+SHA256 (rvaser-bioparser-3.0.12-2-g700e82a_GH0.tar.gz) = f2f1e68081ce7f1559ac0e3cb5748b6917ddeb7aa67b8a4c7a11092cfdcb7a4e
+SIZE (rvaser-bioparser-3.0.12-2-g700e82a_GH0.tar.gz) = 1013702

@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bioparser
-DISTVERSION=	3.0.12
+DISTVERSION=	3.0.12-2
+DISTVERSIONSUFFIX=	-g700e82a
 CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,19 +17,11 @@ USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rvaser
-GH_TUPLE=	rvaser:biosoup:e2b39f1:biosoup/vendor/biosoup
 
+CMAKE_OFF=	bioparser_build_tests
+
+NO_BUILD=	yes
 NO_ARCH=	yes
-
-PLIST_FILES=	include/${PORTNAME}/fasta_parser.hpp \
-		include/${PORTNAME}/fastq_parser.hpp \
-		include/${PORTNAME}/mhap_parser.hpp \
-		include/${PORTNAME}/paf_parser.hpp \
-		include/${PORTNAME}/parser.hpp \
-		include/${PORTNAME}/sam_parser.hpp
-
-do-install:
-	cd ${WRKSRC}/include && ${COPYTREE_SHARE} ${PORTNAME} ${STAGEDIR}${PREFIX}/include
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \

@@ -1,0 +1,9 @@
+include/bioparser/fasta_parser.hpp
+include/bioparser/fastq_parser.hpp
+include/bioparser/mhap_parser.hpp
+include/bioparser/paf_parser.hpp
+include/bioparser/parser.hpp
+include/bioparser/sam_parser.hpp
+lib/cmake/bioparser/bioparserConfig.cmake
+lib/cmake/bioparser/bioparserConfigVersion.cmake
+lib/cmake/bioparser/bioparserTargets.cmake
