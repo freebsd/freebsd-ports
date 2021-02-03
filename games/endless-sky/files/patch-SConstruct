@@ -18,15 +18,6 @@
  
  # Install the desktop file:
  env.Install("$DESTDIR$PREFIX/share/applications", "endless-sky.desktop")
-@@ -87,7 +87,7 @@ if env.get("PREFIX").startswith("/usr/"):
- 
- # Install the man page.
- env.Command(
--	"$DESTDIR$PREFIX/share/man/man6/endless-sky.6.gz",
-+	"$DESTDIR$PREFIX/man/man6/endless-sky.6.gz",
- 	"endless-sky.6",
- 	"gzip -c $SOURCE > $TARGET")
- 
 @@ -100,11 +100,11 @@ def RecursiveInstall(env, target, source):
  			RecursiveInstall(env, os.path.join(target, name), node.abspath)
  		else:
