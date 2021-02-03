@@ -26,6 +26,8 @@ lib/mysql/libmysqlharness.so
 lib/mysql/libmysqlharness.so.1
 lib/mysql/libmysqlharness_stdx.so
 lib/mysql/libmysqlharness_stdx.so.1
+lib/mysql/libmysqlharness_tls.so
+lib/mysql/libmysqlharness_tls.so.1
 lib/mysql/libmysqlrouter.so
 lib/mysql/libmysqlrouter.so.1
 lib/mysql/libmysqlrouter_http.so
@@ -42,12 +44,12 @@ lib/mysql/mysqlrouter/http_server.so
 lib/mysql/mysqlrouter/io.so
 lib/mysql/mysqlrouter/keepalive.so
 lib/mysql/mysqlrouter/metadata_cache.so
-lib/mysql/mysqlrouter/mysql_protocol.so
 lib/mysql/mysqlrouter/rest_api.so
 lib/mysql/mysqlrouter/rest_metadata_cache.so
 lib/mysql/mysqlrouter/rest_router.so
 lib/mysql/mysqlrouter/rest_routing.so
 lib/mysql/mysqlrouter/router_protobuf.so
+lib/mysql/mysqlrouter/router_openssl.so
 lib/mysql/mysqlrouter/routing.so
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth.so
@@ -64,6 +66,8 @@ lib/mysql/plugin/component_mysqlbackup.so
 lib/mysql/plugin/component_mysqlx_global_reset.so
 lib/mysql/plugin/component_pfs_example.so
 lib/mysql/plugin/component_pfs_example_component_population.so
+lib/mysql/plugin/component_query_attributes.so
+lib/mysql/plugin/component_reference_cache.so
 lib/mysql/plugin/component_test_audit_api_message.so
 lib/mysql/plugin/component_test_backup_lock_service.so
 lib/mysql/plugin/component_test_component_deinit.so
@@ -124,6 +128,7 @@ lib/mysql/plugin/libtest_sql_processlist.so
 lib/mysql/plugin/libtest_sql_replication.so
 lib/mysql/plugin/libtest_sql_reset_connection.so
 lib/mysql/plugin/libtest_sql_shutdown.so
+lib/mysql/plugin/libtest_sql_sleep_is_connected.so
 lib/mysql/plugin/libtest_sql_sqlmode.so
 lib/mysql/plugin/libtest_sql_stmt.so
 lib/mysql/plugin/libtest_sql_stored_procedures_functions.so

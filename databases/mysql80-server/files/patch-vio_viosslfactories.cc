@@ -1,14 +1,14 @@
 --- vio/viosslfactories.cc.orig	2019-09-20 08:30:51 UTC
 +++ vio/viosslfactories.cc
-@@ -38,6 +38,7 @@
+@@ -40,6 +40,7 @@
+ #include "vio/vio_priv.h"
  
- #ifdef HAVE_OPENSSL
  #include <openssl/dh.h>
 +#include <openssl/crypto.h>
  
- #define TLS_VERSION_OPTION_SIZE 256
- #define SSL_CIPHER_LIST_SIZE 4096
-@@ -420,6 +421,7 @@ void ssl_start() {
+ #if OPENSSL_VERSION_NUMBER < 0x10002000L
+ #include <openssl/ec.h>
+@@ -472,6 +473,7 @@ void ssl_start() {
    }
  }
  
@@ -16,7 +16,7 @@
  /**
    Set fips mode in openssl library,
    When we set fips mode ON/STRICT, it will perform following operations:
-@@ -473,6 +475,7 @@ EXIT:
+@@ -525,12 +527,13 @@ EXIT:
    @returns openssl current fips mode
  */
  uint get_fips_mode() { return FIPS_mode(); }
@@ -24,3 +24,37 @@
  
  long process_tls_version(const char *tls_version) {
    const char *separator = ",";
+   char *token, *lasts = nullptr;
+ 
+-#ifdef HAVE_TLSv13
++#if defined(HAVE_TLSv13) && !defined(LIBRESSL_VERSION_NUMBER)
+   const char *tls_version_name_list[] = {"TLSv1", "TLSv1.1", "TLSv1.2",
+                                          "TLSv1.3"};
+   const char ctx_flag_default[] = "TLSv1,TLSv1.1,TLSv1.2,TLSv1.3";
+@@ -609,7 +612,7 @@ static struct st_VioSSLFd *new_VioSSLFd(
+   ssl_ctx_options = (ssl_ctx_options | ssl_ctx_flags) &
+                     (SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3 | SSL_OP_NO_TLSv1 |
+                      SSL_OP_NO_TLSv1_1 | SSL_OP_NO_TLSv1_2
+-#ifdef HAVE_TLSv13
++#if defined(HAVE_TLSv13) && !defined(LIBRESSL_VERSION_NUMBER)
+                      | SSL_OP_NO_TLSv1_3
+ #endif /* HAVE_TLSv13 */
+                      | SSL_OP_NO_TICKET);
+@@ -618,7 +621,7 @@ static struct st_VioSSLFd *new_VioSSLFd(
+     return nullptr;
+ 
+   if (!(ssl_fd->ssl_context = SSL_CTX_new(is_client ?
+-#ifdef HAVE_TLSv13
++#if defined(HAVE_TLSv13) && !defined(LIBRESSL_VERSION_NUMBER)
+                                                     TLS_client_method()
+                                                     : TLS_server_method()
+ #else  /* HAVE_TLSv13 */
+@@ -633,7 +636,7 @@ static struct st_VioSSLFd *new_VioSSLFd(
+     return nullptr;
+   }
+ 
+-#ifdef HAVE_TLSv13
++#if defined(HAVE_TLSv13) && !defined(LIBRESSL_VERSION_NUMBER)
+   /*
+     Set OpenSSL TLS v1.3 ciphersuites.
+     Note that an empty list is permissible.
