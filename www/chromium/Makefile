@@ -3,6 +3,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	88.0.4324.96
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		LOCAL/rene/chromium/:fonts
