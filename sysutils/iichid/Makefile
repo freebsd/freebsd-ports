@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iichid
-DISTVERSION=	0.0.3
+DISTVERSION=	0.0.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	wulf@FreeBSD.org
@@ -12,6 +12,8 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 IGNORE_FreeBSD_11=	Requires FreeBSD 12.1 or later
+IGNORE_FreeBSD_13=	Is a part of base system
+IGNORE_FreeBSD_14=	Is a part of base system
 ONLY_FOR_ARCHS=		aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	I2C transport requires architecture supporting ACPI
 
@@ -20,9 +22,6 @@ USES=	kmod uidfix
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	wulf7
-
-# Strip -Werror from sys/conf/kmod.mk
-MAKE_ENV=	WERROR=""
 
 PLIST_FILES=	${KMODDIR}/iichid.ko
 
