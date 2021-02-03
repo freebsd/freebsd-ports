@@ -2318,6 +2318,7 @@ share/locale/pl/LC_MESSAGES/kdevclazy.mo
 share/locale/pl/LC_MESSAGES/kdevcmake.mo
 share/locale/pl/LC_MESSAGES/kdevcmakebuilder.mo
 share/locale/pl/LC_MESSAGES/kdevcodeutils.mo
+share/locale/pl/LC_MESSAGES/kdevcompileanalyzercommon.mo
 share/locale/pl/LC_MESSAGES/kdevcontextbrowser.mo
 share/locale/pl/LC_MESSAGES/kdevcppcheck.mo
 share/locale/pl/LC_MESSAGES/kdevcustombuildsystem.mo
