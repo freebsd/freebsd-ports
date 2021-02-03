@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmtp
-PORTVERSION=	1.3.10
+PORTVERSION=	1.3.11
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/gMTP-${PORTVERSION}/
 
@@ -9,17 +9,26 @@ MAINTAINER=	freebsd-ports-local@be-well.ilk.org
 COMMENT=	Media Transfer Protocol (MTP) GUI client
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
 		libid3tag.so:audio/libid3tag \
 		libFLAC.so:audio/flac \
 		libvorbis.so:audio/libvorbis
 
-GNU_CONFIGURE=	yes
-USES=		gmake gnome localbase pkgconfig
+USES=		dos2unix gmake gnome localbase pkgconfig
+DOS2UNIX_FILES=	COPYING
 USE_GNOME=	cairo gdkpixbuf2 glib20
 
-PORTDOCS=	AUTHORS COPYING ChangeLog README
+GNU_CONFIGURE=	yes
+
+# PR: 244712
+# Workaround to fix linking with Clang >= 11 and GCC >= 10 which both set
+# -fno-common by default. Upstream seems to have resolved this issue, so this
+# line should be removed when updating to the next release.
+CFLAGS+=	-fcommon
+
+PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_RADIO=	GTK
