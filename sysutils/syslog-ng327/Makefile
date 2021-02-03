@@ -13,6 +13,9 @@ PKGNAMESUFFIX=	327
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
 
+DEPRECATED=		Not officially supported by upstream
+EXPIRATION_DATE=	2021-03-31
+
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
