@@ -6,8 +6,8 @@ Author: Peter Pentchev <roam@FreeBSD.org>
 Forwarded: no
 Last-Update: 2010-12-19
 
---- ares.h.orig
-+++ ares.h
+--- include/ares.h.orig
++++ include/ares.h
 @@ -260,6 +260,14 @@
    int nsort;
  };
@@ -32,8 +32,8 @@ Last-Update: 2010-12-19
  #ifdef  __cplusplus
  }
  #endif
---- ares_init.c.orig	2013-02-17 11:44:02.000000000 -0500
-+++ ares_init.c	2013-05-15 13:43:31.000000000 -0400
+--- src/lib/ares_init.c.orig	2013-02-17 11:44:02.000000000 -0500
++++ src/lib/ares_init.c	2013-05-15 13:43:31.000000000 -0400
 @@ -1875,6 +1875,36 @@
  }
  #endif  /* !WIN32 & !WATT32 & !ANDROID & !__ANDROID__ */
