@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	okteta
-DISTVERSION=	0.26.4
-PORTEPOCH=	1
+DISTVERSION=	0.26.5
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
 
@@ -15,7 +14,7 @@ USE_KDE=	attica auth bookmarks codecs completion crash \
 		config configwidgets coreaddons dbusaddons doctools \
 		ecm i18n iconthemes itemviews jobwidgets kcmutils kio \
 		newstuff parts service solid sonnet textwidgets \
-		widgetsaddons xmlgui
+		widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative designer gui network printsupport  \
 		script scripttools widgets xml \
 		buildtools_build qmake_build
