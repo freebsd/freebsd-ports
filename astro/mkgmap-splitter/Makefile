@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	splitter
-PORTVERSION=	r597
+PORTVERSION=	r598
 CATEGORIES=	astro converters java
 MASTER_SITES=	http://www.mkgmap.org.uk/download/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 PKGNAMEPREFIX=	mkgmap-
 
 MAINTAINER=	amdmi3@FreeBSD.org
