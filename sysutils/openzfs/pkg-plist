@@ -53,6 +53,7 @@ etc/zfs/zpool.d/w_proc
 etc/zfs/zpool.d/w_ucor
 include/libspl/assert.h
 include/libspl/atomic.h
+include/libspl/fcntl.h
 include/libspl/ia32/sys/asm_linkage.h
 include/libspl/libdevinfo.h
 include/libspl/libgen.h
@@ -76,6 +77,7 @@ include/libspl/sys/debug.h
 include/libspl/sys/dkio.h
 include/libspl/sys/dklabel.h
 include/libspl/sys/dktp/fdisk.h
+include/libspl/sys/fcntl.h
 include/libspl/sys/feature_tests.h
 include/libspl/sys/file.h
 include/libspl/sys/int_limits.h
@@ -500,6 +502,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/runfiles/linux.run
 %%TESTS%%share/zfs/runfiles/longevity.run
 %%TESTS%%share/zfs/runfiles/perf-regression.run
+%%TESTS%%share/zfs/runfiles/sanity.run
 %%TESTS%%share/zfs/runfiles/sunos.run
 %%TESTS%%share/zfs/test-runner/bin/test-runner.py
 %%TESTS%%share/zfs/test-runner/bin/zts-report.py
@@ -842,6 +845,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_crypt_combos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_dryrun.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_encrypted.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_nomount.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_create/zfs_create_verbose.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_destroy/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_destroy/setup.ksh
@@ -1167,6 +1171,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_008_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_009_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_010_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_dryrun_output.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_attach/attach-o_ashift.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_attach/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_attach/setup.ksh
@@ -1212,6 +1217,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_draid_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_draid_003_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_draid_004_pos.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_dryrun_output.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_encrypted.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_features_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_create/zpool_create_features_002_pos.ksh
@@ -1389,6 +1395,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split.cfg
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_cliargs.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_devices.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_dryrun_output.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_encryption.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_indirect.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_split/zpool_split_props.ksh
@@ -1779,6 +1786,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/inuse/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/io/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/io/io.cfg
+%%TESTS%%share/zfs/zfs-tests/tests/functional/io/io_uring.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/io/libaio.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/io/mmap.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/io/posixaio.ksh
@@ -2063,6 +2071,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/removal/removal_with_snapshot.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/removal/removal_with_write.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/removal/removal_with_zdb.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/removal/remove_attach_mirror.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/removal/remove_expanded.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/removal/remove_indirect.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/removal/remove_mirror.ksh
