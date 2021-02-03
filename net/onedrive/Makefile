@@ -3,7 +3,7 @@
 PORTNAME=	onedrive
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	hiroo.ono+freebsd@gmail.com
@@ -34,8 +34,10 @@ NOTIFY_USES=		gnome
 NOTIFY_USE=		GNOME=glib20,gdkpixbuf2
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 
-COMPLETION_DESC=	Install completion for BASH, FISH and ZSH
+COMPLETION_DESC=		Install completion for BASH, FISH and ZSH
 COMPLETION_CONFIGURE_ENABLE=	completions
+COMPLETION_BUILD_DEPENDS=	bash-completion>0:shells/bash-completion
+COMPLETION_RUN_DEPENDS=		bash-completion>0:shells/bash-completion
 
 ONEDRIVE_LOGDIR=	/var/log/${PORTNAME}
 
