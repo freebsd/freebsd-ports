@@ -1,10 +1,16 @@
-TIMESTAMP = 1603703932
+TIMESTAMP = 1612365374
 SHA256 (libreoffice/libreoffice-6.4.7.2.tar.xz) = 034dd79a60cfff60c7d353130fe2cc8e6a1aabeab50d89e4570ae95f33296644
 SIZE (libreoffice/libreoffice-6.4.7.2.tar.xz) = 232364676
 SHA256 (libreoffice/libreoffice-help-6.4.7.2.tar.xz) = a126803900bca3bfd4d3efe2d3204fad828d86b2a52b05fcf7cb618a6cbb10b6
 SIZE (libreoffice/libreoffice-help-6.4.7.2.tar.xz) = 88296892
 SHA256 (libreoffice/884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf) = 884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc
 SIZE (libreoffice/884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf) = 207544
+SHA256 (libreoffice/mdds-1.5.0.tar.bz2) = 144d6debd7be32726f332eac14ef9f17e2d3cf89cb3250eb31a7127e0789680d
+SIZE (libreoffice/mdds-1.5.0.tar.bz2) = 346888
+SHA256 (libreoffice/liborcus-0.15.3.tar.gz) = 0dd26f3f2e611c51df9ee02d6dbf08887989eaa417b73f6877cd0d94df795fc2
+SIZE (libreoffice/liborcus-0.15.3.tar.gz) = 2602283
+SHA256 (libreoffice/libetonyek-0.1.9.tar.xz) = e61677e8799ce6e55b25afc11aa5339113f6a49cff031f336e32fa58635b1a4a
+SIZE (libreoffice/libetonyek-0.1.9.tar.xz) = 1477064
 SHA256 (libreoffice/libreoffice-dictionaries-6.4.7.2.tar.xz) = 3718c44d5ec5fc1d011ddf5b9bbbef384f1bdc695338e8459d6e403da2539bb7
 SIZE (libreoffice/libreoffice-dictionaries-6.4.7.2.tar.xz) = 45951948
 SHA256 (libreoffice/libreoffice-translations-6.4.7.2.tar.xz) = b13088a98be1f6e7e177331db3d723419bfeb11ae16516334f0fbb853ae40ab1
