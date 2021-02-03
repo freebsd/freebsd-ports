@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	webmock
-PORTVERSION=	3.11.1
+PORTVERSION=	3.11.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
