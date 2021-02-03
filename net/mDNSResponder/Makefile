@@ -12,11 +12,6 @@ COMMENT=	Bonjour (zero-configuration networking) by Apple
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual
 
-# lib/libdns_sd.so.1 sbin/mdnsd
-CONFLICTS_INSTALL=	avahi-libdns openmdns
-
-OPTIONS_DEFINE=	IPV6
-
 USES=		compiler:c11 cpe gmake
 
 ALL_TARGET=	all dnsextd
@@ -34,6 +29,11 @@ EXTRA_BIN=	mDNSClientPosix mDNSNetMonitor mDNSProxyResponderPosix mDNSResponderP
 EXTRA_MAN1=	dns-sd.1
 EXTRA_MAN8=	dnsextd.8 mDNSResponderPosix.8
 EXTRA_SBIN=	dnsextd
+
+# lib/libdns_sd.so.1 sbin/mdnsd
+CONFLICTS_INSTALL=	avahi-libdns openmdns
+
+OPTIONS_DEFINE=	IPV6
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS_DEBUG/ s|-Os|${CFLAGS}|' ${WRKSRC}/mDNSPosix/Makefile
