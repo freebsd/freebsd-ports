@@ -77,6 +77,54 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="479fdfda-6659-11eb-83e2-e09467587c17">
+    <topic>www/chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>88.0.4324.146</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/02/stable-channel-update-for-desktop.html">
+	  <p>This update include 6 security fixes:</p>
+	  <ul>
+	    <li>1169317] Critical CVE-2021-21142: Use after free in Payments.
+	      Reported by Khalil Zhani on 2021-01-21</li>
+	    <li>[1163504] High CVE-2021-21143: Heap buffer overflow in
+	      Extensions. Reported by Allen Parker and Alex Morgan of MU on
+	      2021-01-06</li>
+	    <li>[1163845] High CVE-2021-21144: Heap buffer overflow in Tab
+	      Groups. Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2021-01-07</li>
+	    <li>[1154965] High CVE-2021-21145: Use after free in Fonts. Reported
+	      by Anonymous on 2020-12-03</li>
+	    <li>[1161705] High CVE-2021-21146: Use after free in Navigation.
+	      Reported by Alison Huffman and Choongwoo Han of Microsoft Browser
+	      Vulnerability Research on 2020-12-24</li>
+	    <li>[1162942] Medium CVE-2021-21147: Inappropriate implementation in
+	      Skia. Reported by Roman Starkov on 2021-01-04</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21142</cvename>
+      <cvename>CVE-2021-21143</cvename>
+      <cvename>CVE-2021-21144</cvename>
+      <cvename>CVE-2021-21145</cvename>
+      <cvename>CVE-2021-21146</cvename>
+      <cvename>CVE-2021-21147</cvename>
+      <url>https://chromereleases.googleblog.com/2021/02/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2021-02-02</discovery>
+      <entry>2021-02-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="66d1c277-652a-11eb-bb3f-001b217b3468">
     <topic>Gitlab -- Multiple vulnerabilities</topic>
     <affects>
