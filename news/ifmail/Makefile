@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/README
 
 LIB_DEPENDS=	libgnuregex.so.6:devel/libgnuregex
 
-USES=		shebangfix
+USES=		shebangfix localbase:ldflags
 USERS=		ifmail
 CFLAGS+=	-DHAS_STDARG_H -Wall
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" OWNER=${UID} GROUP=$$(id -g)
