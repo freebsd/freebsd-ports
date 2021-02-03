@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	fennel
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.1
 CATEGORIES=	lang
 MASTER_SITES=	https://git.sr.ht/~technomancy/${PORTNAME}/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
+#MASTER_SITES=	https://fennel-lang.org/downloads/
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Lisp that compiles to Lua
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gmake lua:build
 
 MAKE_ENV=	LUA=${LUA_CMD} \
+		LUA_DIR=${LOCALBASE} \
 		LUA_INCLUDE_DIR=${LUA_INCDIR} \
 		STATIC_LUA_LIB=${LUA_LIBDIR}/liblua-${LUA_VER}.a
 
