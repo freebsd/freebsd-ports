@@ -1,0 +1,10 @@
+catalogue is a tiny, zero-dependencies library that makes it easy to add
+function (or object) registries to your code. Function registries are helpful
+when you have objects that need to be both easily serializable and fully
+customizable. Instead of passing a function into your object, you pass in an
+identifier name, which the object can use to lookup the function from the
+registry. This makes the object easy to serialize, because the name is a simple
+string. If you instead saved the function, you'd have to use Pickle for
+serialization, which has many drawbacks.
+
+WWW: https://github.com/explosion/catalogue
