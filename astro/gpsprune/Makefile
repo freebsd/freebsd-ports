@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpsprune
-PORTVERSION=	20.1
+PORTVERSION=	20.2
 CATEGORIES=	astro java
 MASTER_SITES=	http://activityworkshop.net/software/${PORTNAME}/ \
 		http://mirror.amdmi3.ru/distfiles/
