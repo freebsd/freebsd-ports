@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fastqc
-DISTVERSION=	0.11.8
+DISTVERSION=	0.11.9
 CATEGORIES=	biology java perl5
 MASTER_SITES=	https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 DISTNAME=	${PORTNAME}_v${DISTVERSIONPREFIX}${DISTVERSION}
