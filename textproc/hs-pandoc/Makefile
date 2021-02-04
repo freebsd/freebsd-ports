@@ -158,7 +158,7 @@ OPTIONS_SUB=	yes
 post-extract:
 	${RM} ${WRKSRC}/cabal.project
 
-post-install-EMBED_DATA-OFF:
+post-install-EMBED_DATA-off:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/pandoc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
