@@ -22,12 +22,12 @@
 #			USES=python:3.6+	# Supports Python 3.6 or later
 #			USES=python:3.6-3.9	# Supports Python 3.6 to 3.9
 #			USES=python:-3.8	# Supports Python up to 3.8
-#			USES=python		# Supports any/all Python versions
+#			USES=python		# Supports 3.6+
 #
 # NOTE:	<version-spec> should be as specific as possible, matching the versions
 #	upstream declares support for, without being incorrect. In particular,
-#	USES=python *without* a <version-spec> means any and all past or future
-#	versions, including unreleased versions, which is probably incorrect.
+#	USES=python *without* a <version-spec> means 3.6+,
+#	including unreleased versions, which is probably incorrect.
 #
 #	Not specifying a <version-spec> should only be used when a more specific
 #	<version-spec> cannot be specified due to syntax limitations, for
@@ -333,6 +333,10 @@ DEV_ERROR+=		"USES=python:3 is no longer supported, use USES=python:3.6+ or an a
 .endif  # ${_PYTHON_ARGS} == 2.7
 
 _PYTHON_VERSION:=	${PYTHON_DEFAULT}
+
+.if empty(_PYTHON_ARGS)
+_PYTHON_ARGS=	3.6+
+.endif
 
 # Validate Python version whether it meets the version restriction.
 _PYTHON_VERSION_CHECK:=		${_PYTHON_ARGS:C/^([1-9]\.[0-9])$/\1-\1/}
