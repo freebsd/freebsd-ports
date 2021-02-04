@@ -40,8 +40,8 @@ X86_ASM_DESC= Enable x86 assembly code
 
 .if ${PORT_OPTIONS:MOPENGL}
 USES+=		gl jpeg xorg
-USE_GL=		yes
-USE_XORG+=	xxf86vm
+USE_GL+=	gl
+USE_XORG+=	x11 xext xxf86dga xxf86vm
 ALL_TARGET+=	glx
 PLIST_SUB+=	GLX=""
 .else
@@ -78,7 +78,7 @@ MAKE_ENV+=	USE_${f}=NO
 
 .if ${PORT_OPTIONS:MX11}
 USES+=		xorg
-USE_XORG+=	xxf86dga
+USE_XORG+=	x11 xext
 ALL_TARGET+=	x11
 PLIST_SUB+=	X11=""
 .else
