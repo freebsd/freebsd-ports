@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	repeater
-PORTVERSION=	0.14
+PORTVERSION=	0.17
 CATEGORIES=	net
-MASTER_SITES=	http://newestvision.com/freebsd/pkg/
+MASTER_SITES=	https://freebsd.newestvision.com/ports/distfiles/
 DISTNAME=	repeater${PORTVERSION:C/\.//}
 
 MAINTAINER=	oleg@newestvision.com
