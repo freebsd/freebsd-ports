@@ -43,7 +43,7 @@ USE_GNOME=	cairo dconf gdkpixbuf2 gnomeprefix glib20 gtk30 intltool \
 USE_XORG=	ice sm x11 xcb xcomposite xcursor xdamage xext xfixes xi xinerama \
 		xkbfile xrandr xrender xtst
 
-USE_GL=		egl gl
+USE_GL=		egl gbm gl
 
 USE_LDCONFIG=	yes
 
