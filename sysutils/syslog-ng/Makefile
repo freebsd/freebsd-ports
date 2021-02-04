@@ -3,12 +3,16 @@
 
 PORTNAME=	syslog-ng
 DISTVERSION=	3.30.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
+
+LICENSE=	GPLv2+ LGPL21+
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
