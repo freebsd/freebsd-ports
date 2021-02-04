@@ -215,10 +215,10 @@ _CHECK_JOBS=
 
 _checkaddargs=
 .if ${PORT_OPTIONS:MBASHTESTS}
-_CHECK_SHELL=${SHELL}
+_CHECK_SHELL=${LOCALBASE}/bin/bash
 _checkaddargs+=--eval SHELL:=${BASH_CMD}
 .else
-_CHECK_SHELL=${LOCALBASE}/bin/bash
+_CHECK_SHELL=${SH}
 .endif
 
 .if !defined(TMPDIR)
@@ -234,7 +234,7 @@ _check_timeout=180
 .endif
 
 .if ${PORT_OPTIONS:MLIBUNWIND}
-_staticlibs+=${LOCALBASE}/lib/libunwind.a /usr/lib/liblzma.a
+_staticlibs+=${LOCALBASE}/lib/libunwind.a /usr/lib/liblzma.a /usr/lib/libmd.a
 .endif
 
 post-build:
