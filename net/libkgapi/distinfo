@@ -1,3 +1,3 @@
-TIMESTAMP = 1610047900
-SHA256 (KDE/release-service/20.12.1/libkgapi-20.12.1.tar.xz) = 0df9a24e68d50f67e171ff5c6404891956c7fe675351bda8f8ab2a84ffa2a833
-SIZE (KDE/release-service/20.12.1/libkgapi-20.12.1.tar.xz) = 246024
+TIMESTAMP = 1612330845
+SHA256 (KDE/release-service/20.12.2/libkgapi-20.12.2.tar.xz) = d1161dc2a0b4cd93251894a6dc320273038da71e09b733545956f61e0fd04af9
+SIZE (KDE/release-service/20.12.2/libkgapi-20.12.2.tar.xz) = 246020

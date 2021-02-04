@@ -1,3 +1,3 @@
-TIMESTAMP = 1610047917
-SHA256 (KDE/release-service/20.12.1/zeroconf-ioslave-20.12.1.tar.xz) = 5ad187609b0c93f3f405113c50cd1afdb54517f0ffe9b3ed50db439c1f26a9d3
-SIZE (KDE/release-service/20.12.1/zeroconf-ioslave-20.12.1.tar.xz) = 43216
+TIMESTAMP = 1612330849
+SHA256 (KDE/release-service/20.12.2/zeroconf-ioslave-20.12.2.tar.xz) = d3fa1c23f04cc574aaa1795396cc3016caa0b72e8e1900361bca73ce378a167b
+SIZE (KDE/release-service/20.12.2/zeroconf-ioslave-20.12.2.tar.xz) = 43332
