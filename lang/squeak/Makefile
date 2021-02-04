@@ -3,7 +3,7 @@
 
 PORTNAME=	squeak
 PORTVERSION=	4.10.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang
 MASTER_SITES=	http://www.squeakvm.org/unix/release/:vmsrc \
 		http://ftp.squeak.org/${IMAGE_VERSION}/:src \
@@ -36,7 +36,6 @@ USE_GNOME=	cairo pango
 USE_GL=		gl
 HAS_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
-USE_GSTREAMER=	yes
 
 VM_VERSION=	${PORTVERSION}.${SVN_VERSION}
 SVN_VERSION=	2614
