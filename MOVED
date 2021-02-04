@@ -16114,7 +16114,6 @@ graphics/gstreamer-plugins-sdl||2021-02-04|Replaced by gstreamer1
 graphics/gstreamer-plugins-soup|graphics/gstreamer-plugins-soup|2021-02-04|Replaced by gstreamer1
 multimedia/gstreamer-ffmpeg|multimedia/gstreamer1-libav|2021-02-04|Replaced by gstreamer1
 multimedia/gstreamer-plugins-all|multimedia-gstreamer1-plugins-all|2021-02-04|Replaced by gstreamer1
-multimedia/gstreamer-plugins-all|multimedia-gstreamer1-plugins-all|2021-02-04|Replaced by gstreamer1
 multimedia/gstreamer-plugins-annodex||2021-02-04|Replaced by gstreamer1
 multimedia/gstreamer-plugins-bad|multimedia-gstreamer1-plugins-bad|2021-02-04|Replaced by gstreamer1
 multimedia/gstreamer-plugins-bz2||2021-02-04|Replaced by gstreamer1
