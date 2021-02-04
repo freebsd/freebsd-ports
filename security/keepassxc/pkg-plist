@@ -31,6 +31,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svg
 %%DATADIR%%/translations/keepassx_et.qm
 %%DATADIR%%/translations/keepassx_fi.qm
 %%DATADIR%%/translations/keepassx_fr.qm
+%%DATADIR%%/translations/keepassx_hr_HR.qm
 %%DATADIR%%/translations/keepassx_hu.qm
 %%DATADIR%%/translations/keepassx_id.qm
 %%DATADIR%%/translations/keepassx_it.qm
@@ -45,6 +46,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svg
 %%DATADIR%%/translations/keepassx_ro.qm
 %%DATADIR%%/translations/keepassx_ru.qm
 %%DATADIR%%/translations/keepassx_sk.qm
+%%DATADIR%%/translations/keepassx_sl_SI.qm
 %%DATADIR%%/translations/keepassx_sv.qm
 %%DATADIR%%/translations/keepassx_th.qm
 %%DATADIR%%/translations/keepassx_tr.qm
