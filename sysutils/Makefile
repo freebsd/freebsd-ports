@@ -466,8 +466,6 @@
     SUBDIR += gsh
     SUBDIR += gsmartcontrol
     SUBDIR += gstopd
-    SUBDIR += gstreamer-plugins-cdio
-    SUBDIR += gstreamer-plugins-hal
     SUBDIR += gstreamer1-plugins-cdio
     SUBDIR += gtk-imonc
     SUBDIR += hal

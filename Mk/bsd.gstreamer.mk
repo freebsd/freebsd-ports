@@ -17,9 +17,6 @@ Gstreamer_Pre_Include=		bsd.gstreamer.mk
 
 # Ports can use the following:
 #
-# For Gstreamer 0.10:
-#   USE_GSTREAMER=	lame faac ffmpeg
-#
 # For Gstreamer 1.x the same rules apply but instead of 
 #   USE_GSTREAMER=, USE_GSTREAMER1= is used.
 #
@@ -42,16 +39,8 @@ Gstreamer_Pre_Include=		bsd.gstreamer.mk
 #	USE_GSTREAMER=yes will always add a dependency to
 #		gstreamer-plugins
 #
-#	The use of WANT_GSTREAMER=yes should be discouraged.
-#
 # "Normal" dependencies and variables
 #
-
-GSTREAMER_PORT=		${PORTSDIR}/multimedia/gstreamer-plugins
-_GST_LIB_BASE=		${LOCALBASE}/lib/gstreamer-${GST_VERSION}
-GST_VERSION=		0.10
-GST_MINOR_VERSION=	.0
-GST_SHLIB_VERSION=	1
 
 GSTREAMER1_PORT=	${PORTSDIR}/multimedia/gstreamer1-plugins
 _GST1_LIB_BASE=		${LOCALBASE}/lib/gstreamer-${GST1_VERSION}
@@ -111,32 +100,6 @@ _GSTREAMER_PLUGINS= \
 		vorbis \
 		wavpack \
 		x264
-
-# plugins only in 0.10
-.if defined(USE_GSTREAMER)
-_GSTREAMER_PLUGINS+= \
-		annodex \
-		bz2 \
-		cdaudio \
-		dvd \
-		ffmpeg \
-		fluendo-mp3 \
-		fluendo-mpegdemux \
-		gconf \
-		gio \
-		gnomevfs \
-		hal \
-		libpng \
-		mad \
-		mp3 \
-		nas \
-		schroedinger \
-		spc \
-		sdl \
-		vdpau \
-		vp8 \
-		xvid
-.endif # USE_GSTREAMER
 
 # plugins only in 1.0
 .if defined(USE_GSTREAMER1)
@@ -216,9 +179,6 @@ amrwbdec_IMPL=		ugly
 bs2b_DEPENDS=	audio/gstreamer-plugins-bs2b
 bs2b_IMPL=	bad
 
-cdaudio_DEPENDS=	audio/gstreamer-plugins-cdaudio
-cdaudio_IMPL=		bad
-
 cdparanoia_DEPENDS=	audio/gstreamer-plugins-cdparanoia
 cdparanoia_IMPL=	#
 
@@ -236,9 +196,6 @@ flac_IMPL=	good
 
 flite_DEPENDS=	audio/gstreamer-plugins-flite
 flite_IMPL=	bad
-
-fluendo-mp3_DEPENDS=	audio/gstreamer-plugins-fluendo-mp3
-fluendo_IMPL=		#
 
 gme_DEPENDS=	audio/gstreamer-plugins-gme
 gme_IMPL=	bad
@@ -261,23 +218,14 @@ lame_IMPL=	ugly
 lv2_DEPENDS=	audio/gstreamer-plugins-lv2
 lv2_IMPL=	bad
 
-mad_DEPENDS=	audio/gstreamer-plugins-mad
-mad_IMPL=	ugly
-
 modplug_DEPENDS=	audio/gstreamer-plugins-modplug
 modplug_IMPL=		bad
-
-mp3_DEPENDS=	audio/gstreamer-plugins-mp3
-mp3_IMPL=	#
 
 mpg123_DEPENDS=	audio/gstreamer-plugins-mpg123
 mpg123_IMPL=	ugly
 
 musepack_DEPENDS=	audio/gstreamer-plugins-musepack
 musepack_IMPL=		bad
-
-nas_DEPENDS=	audio/gstreamer-plugins-nas
-nas_IMPL=	bad
 
 neon_DEPENDS=	www/gstreamer-plugins-neon
 neon_IMPL=	bad
@@ -306,9 +254,6 @@ sndfile_IMPL=		bad
 soundtouch_DEPENDS=	audio/gstreamer-plugins-soundtouch
 soundtouch_IMPL=	bad
 
-spc_DEPENDS=	audio/gstreamer-plugins-spc
-spc_IMPL=	bad
-
 speex_DEPENDS=	audio/gstreamer-plugins-speex
 speex_IMPL=	good
 
@@ -334,18 +279,6 @@ spandsp_IMPL=		bad
 
 #-- devel plugin section --------------------------------------------------#
 
-gconf_DEPENDS=	devel/gstreamer-plugins-gconf
-gconf_IMPL=	good
-
-gio_DEPENDS=	devel/gstreamer-plugins-gio
-gio_IMPL=	#
-
-gnomevfs_DEPENDS=	devel/gstreamer-plugins-gnomevfs
-gnomevfs_IMPL=		#
-
-sdl_DEPENDS=	devel/gstreamer-plugins-sdl
-sdl_IMPL=	bad
-
 soup_DEPENDS=	devel/gstreamer-plugins-soup
 soup_IMPL=	good
 
@@ -358,9 +291,6 @@ curl_IMPL=	bad
 
 aalib_DEPENDS=	graphics/gstreamer-plugins-aalib
 aalib_IMPL=	good
-
-annodex_DEPENDS=	multimedia/gstreamer-plugins-annodex
-annodex_IMPL=		good
 
 aom_DEPENDS=	multimedia/gstreamer-plugins-aom
 aom_IMPL=	bad
@@ -385,9 +315,6 @@ kms_IMPL=	bad
 
 libcaca_DEPENDS=	graphics/gstreamer-plugins-libcaca
 libcaca_IMPL=		good
-
-libpng_DEPENDS=	graphics/gstreamer-plugins-libpng
-libpng_IMPL=	good
 
 libvisual_DEPENDS=	graphics/gstreamer-plugins-libvisual
 libvisual_IMPL=		#
@@ -424,9 +351,6 @@ zbar_IMPL=	bad
 bad_DEPENDS=	multimedia/gstreamer-plugins-bad
 bad_IMPL=	#
 
-bz2_DEPENDS=	multimedia/gstreamer-plugins-bz2
-bz2_IMPL=	bad
-
 dash_DEPENDS=	multimedia/gstreamer-plugins-dash
 dash_IMPL=	bad
 
@@ -438,15 +362,6 @@ editing-services_GST_PREFIX=	gstreamer1-
 editing-services_GST_SUFX=	# empty
 editing-services_GST_VERSION=	1.0.0
 editing-services_IMPL=		#
-
-ffmpeg_DEPENDS=	multimedia/gstreamer-ffmpeg
-ffmpeg_GST_PREFIX=	gstreamer-
-ffmpeg_GST_SUFX=	# empty
-ffmpeg_GST_VERSION=	0.10.0
-ffmpeg_IMPL=		#
-
-fluendo-mpegdemux_DEPENDS=	multimedia/gstreamer-plugins-fluendo-mpegdemux
-fluendo-mpegdemux_IMPL=		#
 
 dts_DEPENDS=	multimedia/gstreamer-plugins-dts
 dts_IMPL=	bad
@@ -512,9 +427,6 @@ v4l2_IMPL=	good
 vaapi_DEPENDS=	multimedia/gstreamer-vaapi
 vaapi_IMPL=	bad
 
-vp8_DEPENDS=	multimedia/gstreamer-plugins-vp8
-vp8_IMPL=	bad
-
 vpx_DEPENDS=	multimedia/gstreamer-plugins-vpx
 vpx_IMPL=	good
 
@@ -524,27 +436,17 @@ vulkan_IMPL=	bad
 resindvd_DEPENDS=	multimedia/gstreamer-plugins-resindvd
 resindvd_IMPL=		bad
 
-schroedinger_DEPENDS=	multimedia/gstreamer-plugins-schroedinger
-schroedinger_IMPL=	bad
-
 theora_DEPENDS=	multimedia/gstreamer-plugins-theora
 theora_IMPL=	#
 
 ugly_DEPENDS=	multimedia/gstreamer-plugins-ugly
 ugly_IMPL=	#
 
-vdpau_DEPENDS=	multimedia/gstreamer-plugins-vdpau
-vdpau_IMPL=	bad
-
 x264_DEPENDS=	multimedia/gstreamer-plugins-x264
 x264_IMPL=	ugly
 
 x265_DEPENDS=	multimedia/gstreamer-plugins-x265
 x265_IMPL=	bad
-
-xvid_DEPENDS=	multimedia/gstreamer-plugins-xvid
-xvid_IMPL=	bad
-
 
 #-- Net Plugins Section ---------------------------------------------------#
 

@@ -296,15 +296,6 @@
     SUBDIR += graphviz
     SUBDIR += grx
     SUBDIR += gscan2pdf
-    SUBDIR += gstreamer-plugins-aalib
-    SUBDIR += gstreamer-plugins-cairo
-    SUBDIR += gstreamer-plugins-gdkpixbuf
-    SUBDIR += gstreamer-plugins-gl
-    SUBDIR += gstreamer-plugins-jpeg
-    SUBDIR += gstreamer-plugins-libcaca
-    SUBDIR += gstreamer-plugins-libpng
-    SUBDIR += gstreamer-plugins-libvisual
-    SUBDIR += gstreamer-plugins-opencv
     SUBDIR += gstreamer1-plugins-aalib
     SUBDIR += gstreamer1-plugins-cairo
     SUBDIR += gstreamer1-plugins-gdkpixbuf

@@ -1958,7 +1958,7 @@ DEV_WARNING+=	"Using USE_XORG alone is deprecated, please use USES=xorg"
 _USES_POST+=	xorg
 .endif
 
-.if defined(WANT_GSTREAMER) || defined(USE_GSTREAMER) || defined(USE_GSTREAMER1)
+.if defined(USE_GSTREAMER1)
 .include "${PORTSDIR}/Mk/bsd.gstreamer.mk"
 .endif
 

@@ -890,11 +890,6 @@
     SUBDIR += grv
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsoap
-    SUBDIR += gstreamer-plugins-gconf
-    SUBDIR += gstreamer-plugins-gio
-    SUBDIR += gstreamer-plugins-gnomevfs
-    SUBDIR += gstreamer-plugins-sdl
-    SUBDIR += gstreamer-plugins-soup
     SUBDIR += gstreamer1-plugins-soup
     SUBDIR += gtgt
     SUBDIR += gtranslator
