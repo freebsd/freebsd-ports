@@ -16143,3 +16143,4 @@ sysutils/gstreamer-plugins-cdio|sysutils/gstreamer1-plugins-cdio|2021-02-04|Repl
 sysutils/gstreamer-plugins-hal||2021-02-04|Replaced by gstreamer1
 www/gstreamer-plugins-neon|www/gstreamer1-plugins-neon|2021-02-04|Replaced by gstreamer1
 x11-toolkits/gstreamer-plugins-pango|x11-toolkits/gstreamer1-plugins-pango|2021-02-04|Replaced by gstreamer1
+x11-themes/gnome-themes-extras|x11-themes/gnome-themes-extra|2021-02-04|Gnome2 desktop has been removed long ago

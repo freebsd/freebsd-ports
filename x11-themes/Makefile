@@ -59,7 +59,6 @@
     SUBDIR += gnome-icons-ximian-south
     SUBDIR += gnome-themes
     SUBDIR += gnome-themes-extra
-    SUBDIR += gnome-themes-extras
     SUBDIR += greybird-theme
     SUBDIR += gtk-E17-theme
     SUBDIR += gtk-aluminumalloy-cryogenic-theme
