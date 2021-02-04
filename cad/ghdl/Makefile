@@ -3,8 +3,11 @@
 
 PORTNAME=	ghdl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.37
+DISTVERSION=	1.0.0
 CATEGORIES=	cad
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES=	38025814efbba57d7527f37b16847b114815ab62.patch:-p1 # fixes https://github.com/ghdl/ghdl/issues/1627
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GNU VHDL simulator
@@ -15,10 +18,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
+TEST_DEPENDS=	bash:shells/bash
 
 USES=		ada:run gmake shebangfix
-SHEBANG_FILES=	libraries/vendors/config.sh
-SHEBANG_GLOB=	testsuite.sh
+SHEBANG_FILES=	testsuite/testsuite.sh
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
