@@ -3,7 +3,7 @@
 
 PORTNAME=	ocamlgraph
 PORTVERSION=	1.8.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/ocamlgraph/
@@ -31,20 +31,15 @@ PLIST_SUB=	OCAMLGRAPHDIR="${OCAML_LDLIBS}"
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	GUI DOCS
-OPTIONS_DEFAULT=GUI
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
-GUI_DESC=		Include GUI user programs: viewer and editor
-GUI_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
-GUI_RUN_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2
-GUI_CONFIGURE_OFF=	LABLGTK2=no
 
 DOCS_ALL_TARGET=	doc
 
 post-patch-DOCS-on:
 	@${REINPLACE_CMD} -e '/VIEWER_DIR. doc/d' ${WRKSRC}/Makefile.in
 
-post-patch-GUI-off:
+post-patch:
 	# Override auto-detection
 	@${REINPLACE_CMD} -Ee 's/(LABLGTK2)=yes/\1=no/' ${WRKSRC}/configure
 

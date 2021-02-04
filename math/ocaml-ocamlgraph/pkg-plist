@@ -1,9 +1,3 @@
-%%GUI%%bin/graph-viewer.byte
-%%GUI%%bin/graph-viewer.opt
-%%GUI%%bin/graph-viewer
-%%GUI%%bin/graph-editor.byte
-%%GUI%%bin/graph-editor.opt
-%%GUI%%bin/graph-editor
 %%OCAMLGRAPHDIR%%/META
 %%OCAMLGRAPHDIR%%/builder.mli
 %%OCAMLGRAPHDIR%%/classic.mli
@@ -52,25 +46,4 @@
 %%OCAMLGRAPHDIR%%/topological.mli
 %%OCAMLGRAPHDIR%%/traverse.mli
 %%OCAMLGRAPHDIR%%/util.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/dGraphContainer.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/dGraphModel.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/dGraphRandModel.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/dGraphSubTree.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/dGraphTreeLayout.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/dGraphTreeModel.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/dGraphView.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/dGraphViewItem.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/dgraph.cmi
-%%GUI%%%%OCAMLGRAPHDIR%%/dgraph.cmo
-%%GUI%%%%OCAMLGRAPHDIR%%/dgraph.cmx
-%%GUI%%%%OCAMLGRAPHDIR%%/dgraph.o
-%%GUI%%%%OCAMLGRAPHDIR%%/viewGraph_core.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/viewGraph_select.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/viewGraph_utils.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/viewgraph.cmi
-%%GUI%%%%OCAMLGRAPHDIR%%/viewgraph.cmo
-%%GUI%%%%OCAMLGRAPHDIR%%/viewgraph.cmx
-%%GUI%%%%OCAMLGRAPHDIR%%/viewgraph.o
-%%GUI%%%%OCAMLGRAPHDIR%%/xDot.mli
-%%GUI%%%%OCAMLGRAPHDIR%%/xDotDraw.mli
-@comment @dir %%OCAML_SITELIBDIR%%
+@dir %%OCAML_SITELIBDIR%%
