@@ -9,4 +9,4 @@ checks.
 librnp is the library used by RNP for all OpenPGP functions, useful
 for developers to build against, different from GPGME.
 
-WWW: http://example.com
+WWW: https://www.rnpgp.com/
