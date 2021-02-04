@@ -70,7 +70,7 @@ MAKE_ENV+=	USE_SDL_VIDEO=1
 .  else
 USES+=		gl xorg
 USE_GL=		gl
-USE_XORG=	x11 xxf86dga
+USE_XORG=	x11 xxf86dga xxf86vm
 .  endif
 # Vorbis
 .  if ${PORT_OPTIONS:MVORBIS}
