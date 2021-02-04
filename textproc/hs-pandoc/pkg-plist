@@ -21,7 +21,6 @@ man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/dzslides/template.html
 %%NO_EMBED_DATA%%%%DATADIR%%/data/epub.css
 %%NO_EMBED_DATA%%%%DATADIR%%/data/init.lua
-%%NO_EMBED_DATA%%%%DATADIR%%/data/jats.csl
 %%NO_EMBED_DATA%%%%DATADIR%%/data/odt/Configurations2/accelerator/current.xml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/odt/META-INF/manifest.xml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/odt/Thumbnails/thumbnail.png
