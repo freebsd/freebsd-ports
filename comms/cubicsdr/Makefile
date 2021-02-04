@@ -12,17 +12,15 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${LOCALBASE}/lib/libEGL.so:graphics/mesa-libs \
 		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
 LIB_DEPENDS=	libSoapySDR.so:misc/soapysdr \
 		libliquid.so:comms/liquid-dsp \
 		libpulse.so:audio/pulseaudio \
-		libhamlib.so:comms/hamlib \
-		libEGL.so:graphics/mesa-libs
+		libhamlib.so:comms/hamlib
 
 USES=		cmake compiler:c++0x gl python
 USE_WX=		3.1
-USE_GL+=	glu
+USE_GL+=	egl glu
 
 OPTIONS_DEFINE=	HAMLIB
 HAMLIB_DESC=	Support rig control via hamlib
