@@ -2,20 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	calc
-PORTVERSION=	2.12.7.2
-PORTREVISION=	1
+PORTVERSION=	2.12.7.6
 CATEGORIES=	math
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	Arbitrary precision calculator
+COMMENT=	Interactive CLI arbitrary-precision calculator
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING-LGPL
 
 USES=		gmake tar:bzip2 readline
-
 USE_GITHUB=	yes
-USE_LDCONFIG=	yes
 GH_ACCOUNT=	lcn2
 
 MAKE_JOBS_UNSAFE=	yes
@@ -28,11 +25,10 @@ TEST_TARGET=	check
 OPTIONS_DEFINE=	FULL HELP
 OPTIONS_DEFAULT=FULL HELP
 OPTIONS_SUB=	yes
-FULL_DESC=	Install all functions, scripts, and headers
+FULL_DESC=	Install all funcs/scripts/headers (OFF: just basic calculator)
 HELP_DESC=	Install calc help files
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/calc \
-		${STAGEDIR}${PREFIX}/lib/lib*.so
+	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/calc lib/lib*.so
 
 .include <bsd.port.mk>
