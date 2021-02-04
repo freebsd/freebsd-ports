@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2020-08-20 05:32:18 UTC
+--- CMakeLists.txt.orig	2021-02-04 06:38:35 UTC
 +++ CMakeLists.txt
 @@ -8,7 +8,8 @@ if ( ${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR} 
  endif()
@@ -30,12 +30,12 @@
      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
      message(STATUS "Using  -std=c++14.")
  elseif(COMPILER_SUPPORTS_CXX11)
-@@ -114,14 +119,14 @@ if(WIN32)
+@@ -114,14 +119,15 @@ if(WIN32)
  endif()
  
  INSTALL(FILES
 -    "${CMAKE_SOURCE_DIR}/COPYING"
-     "${CMAKE_SOURCE_DIR}/Readme.md"
+     "${CMAKE_SOURCE_DIR}/README.md"
 -    "${CMAKE_SOURCE_DIR}/mapconfig.xml"
 -    "${CMAKE_SOURCE_DIR}/mapconfig_for_cars.xml"
 -    "${CMAKE_SOURCE_DIR}/mapconfig_for_bicycles.xml"
@@ -43,12 +43,12 @@
 -    DESTINATION "${SHARE_DIR}")
 +    DESTINATION "${DOC_DIR}")
  
--
 +FOREACH(i mapconfig.xml mapconfig_for_cars.xml mapconfig_for_bicycles.xml mapconfig_for_pedestrian.xml)
 +    INSTALL(FILES
 +        "${CMAKE_SOURCE_DIR}/${i}"
 +        RENAME ${i}.sample
 +        DESTINATION "${ETC_DIR}")
 +ENDFOREACH()
+ 
  #INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
  #TARGET_LINK_LIBRARIES( osm2pgrouting ${Boost_LIBRARIES} )
