@@ -2,7 +2,7 @@
 
 PORTNAME=	node
 DISTVERSIONPREFIX=	v
-DISTVERSION=	15.7.0
+DISTVERSION=	15.8.0
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${DISTVERSION}/
 
@@ -54,6 +54,7 @@ CONFLICTS_INSTALL=	node10-[0-9]* node12-[0-9]* node14-[0-9]*
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--without-npm \
 		--shared-brotli \
+		--shared-cares \
 		--shared-libuv \
 		--shared-nghttp2 \
 		--shared-zlib
@@ -70,10 +71,12 @@ MAKE_ENV+=	CC.host=${CC} CFLAGS.host="${CFLAGS}" \
 		LINK.host=${CXX} LDFLAGS.host="${LDFLAGS}"
 
 BUILD_DEPENDS+=	brotli>=1.0.9,1:archivers/brotli \
+		c-ares>=1.17.1:dns/c-ares \
 		libuv>=1.40.0:devel/libuv \
 		libnghttp2>=1.42.0:www/libnghttp2 \
 		objdump:devel/binutils
 LIB_DEPENDS+=	libbrotlidec.so:archivers/brotli \
+		libcares.so:dns/c-ares \
 		libuv.so:devel/libuv \
 		libnghttp2.so:www/libnghttp2
 
