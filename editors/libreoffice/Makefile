@@ -1,5 +1,5 @@
 # $FreeBSD$
-PORTREVISION=	1
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -34,10 +34,9 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
 		libltdl.so:devel/libltdl \
-		liborcus-0.15.so:devel/liborcus \
+		liborcus-0.16.so:devel/liborcus \
 		libplds4.so:devel/nspr \
 		libcurl.so:ftp/curl \
-		libcairo.so:graphics/cairo \
 		libgraphite2.so:graphics/graphite2 \
 		liblcms2.so:graphics/lcms2 \
 		libcdr-0.1.so:graphics/libcdr01 \
@@ -76,8 +75,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libvisio-0.1.so:textproc/libvisio01 \
 		libwpd-0.10.so:textproc/libwpd010 \
 		libwps-0.4.so:textproc/libwps \
-		libxml2.so:textproc/libxml2 \
-		libxslt.so:textproc/libxslt \
 		libmythes-1.2.so:textproc/mythes \
 		libraptor2.so:textproc/raptor2 \
 		librdf.so:textproc/redland \
@@ -93,9 +90,9 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
-DISTFILES+=	884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf:ext
+DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
-DISTFILES+=	skia-m85-e684c6daef6bfb774a325a069eda1f76ca6ac26c.tar.xz:src
+DISTFILES+=	skia-m88-59bafeeaa7de9eb753e3778c414e01dcf013dcd8.tar.xz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -111,14 +108,14 @@ INSTALL_TARGET=	distro-pack-install
 SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
+USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
+		gettext-runtime gl gmake gnome jpeg mysql:client perl5 pkgconfig \
+		pkgconfig python:3.6+ shebangfix shared-mime-info ssl tar:xz xorg
 USE_GL=		gl glew glu
-USE_GNOME=	glib20
+USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
-USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
-		gettext-runtime gl gmake gnome jpeg mysql:client perl5 pkgconfig \
-		pkgconfig python:3.5+ shebangfix shared-mime-info ssl tar:xz xorg
 
 OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 JAVA KF5 MMEDIA PGSQL QT5 SDK TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS MMEDIA QT5
@@ -290,10 +287,6 @@ EXTRA_PATCHES+=	${FILESDIR}/powerpc64
 CONFIGURE_ARGS+=	--disable-skia
 .endif
 
-.if ${PORT_OPTIONS:MGTK3}
-WARNING=	"GTK3 visual style is incomplete yet, build at your own risk"
-.endif
-
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-unused-parameter -Wno-unused-local-typedefs
 .else
@@ -319,7 +312,7 @@ post-install:
 	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s bin lib man -not -type d >> ${TMPPLIST}
-.for subdir in appdata application-registry applications bash-completion icons mime mime-info
+.for subdir in applications bash-completion icons metainfo mime
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s share/${subdir} -not -type d >> ${TMPPLIST}
 .endfor
