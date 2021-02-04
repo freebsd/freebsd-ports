@@ -16,9 +16,8 @@ options { chain_hostnames(off); flush_lines(0); threaded(yes); };
 #
 # sources
 #
-source src { unix-dgram("/var/run/log" flags(syslog-protocol));
-	     file("/dev/klog" flags(kernel) program_override("kernel: "));
-	     internal(); };
+source src { system();
+	     udp(); internal(); };
 
 #
 # destinations
