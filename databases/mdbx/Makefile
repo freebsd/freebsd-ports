@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdbx
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
@@ -17,19 +17,20 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		gmake
-
-PLIST_SUB=	VERSION=${PORTVERSION}
-MAKEFILE=	GNUmakefile
-NO_WRKSUBDIR=	yes
-USE_LDCONFIG=	yes
-
-CFLAGS+=	-Wall -Werror -Wextra -Wpedantic -ffunction-sections \
-		-fPIC -fvisibility=hidden -std=gnu11 -pthread -Wno-error=attributes
-MAKE_ARGS=	mdbx tools
-
 # No USE_GITHUB, we want the amalgamated build.
 GH_ACCOUNT=	erthink
 GH_PROJECT=	libmdbx
+USE_LDCONFIG=	yes
+
+MAKEFILE=	GNUmakefile
+MAKE_ARGS=	mdbx tools
+
+CFLAGS+=	-Wall -Werror -Wextra -Wpedantic -ffunction-sections \
+		-fPIC -fvisibility=hidden -std=gnu11 -pthread -Wno-error=attributes
+
+NO_WRKSUBDIR=	yes
+
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-install:
 	${LN} -sf libmdbx.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libmdbx.so

@@ -14,7 +14,7 @@
    esac
  endef
 -SO_SUFFIX  := $(shell $(uname2sosuffix))
-+SO_SUFFIX  := so.0.9.2
++SO_SUFFIX  := so.0.9.3
  
  HEADERS    := mdbx.h mdbx.h++
  LIBRARIES  := libmdbx.a libmdbx.$(SO_SUFFIX)
