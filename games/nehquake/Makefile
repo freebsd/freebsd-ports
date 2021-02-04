@@ -13,7 +13,7 @@ COMMENT=	Quake engine designed for playing Nehahra
 
 USES=		gl gmake dos2unix tar:bzip2 xorg
 USE_GL=		gl
-USE_XORG=	xxf86dga
+USE_XORG=	xxf86dga xxf86vm
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS SDL X86_ASM
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS SDL X86_ASM
