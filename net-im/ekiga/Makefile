@@ -39,9 +39,8 @@ EVOLUTION_DESC=	Evolution data server support
 GNOMEHELP_DESC=	Build Ekiga help files
 
 #OPTIONS_GROUP=	EXP
-#OPTIONS_GROUP_EXP=	GSTREAMER XCAP LOUDMOUTH
+#OPTIONS_GROUP_EXP=	XCAP LOUDMOUTH
 EXP_DESC=	Experimental features
-GSTREAMER_DESC=	Gstreamer support
 XCAP_DESC=	Remote contact storage via HTTP in xml format
 LOUDMOUTH_DESC=	XMPP (jabber) support
 
@@ -51,14 +50,7 @@ LOUDMOUTH_DESC=	XMPP (jabber) support
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
-CONFIGURE_ARGS+=--disable-kde --disable-kab
-
-.if ${PORT_OPTIONS:MGSTREAMER}
-CONFIGURE_ARGS+=--enable-gstreamer
-USE_GSTREAMER=	yes
-.else
-CONFIGURE_ARGS+=--disable-gstreamer
-.endif
+CONFIGURE_ARGS+=--disable-kde --disable-kab --disable-gstreamer
 
 .if ${PORT_OPTIONS:MXCAP}
 CONFIGURE_ARGS+=--enable-xcap
