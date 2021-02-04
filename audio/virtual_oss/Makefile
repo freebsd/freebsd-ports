@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	virtual_oss
-PORTVERSION=	1.2.6
-PORTREVISION=	5
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.7
 CATEGORIES=	audio
-MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
-		http://home.selasky.org/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Virtual OSS multi device mixer application
@@ -18,10 +16,13 @@ LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 USES=		tar:bzip2 uidfix
 USE_RC_SUBR=	virtual_oss
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	hselasky
+
 SUB_LIST+=	LIBSAMPLERATE="${LOCALBASE}/lib/libsamplerate.so:"
 
-OPTIONS_DEFINE=	BLUETOOTH BT_SPEAKER DEBUG EQUALIZER HTTPD
-OPTIONS_DEFAULT=BLUETOOTH EQUALIZER
+OPTIONS_DEFINE=	BLUETOOTH BT_SPEAKER COMMAND DEBUG EQUALIZER HTTPD
+OPTIONS_DEFAULT=BLUETOOTH COMMAND EQUALIZER
 
 MAKE_ARGS=	HAVE_CUSE="YES"
 
@@ -32,6 +33,11 @@ BT_SPEAKER_DESC=	Build with bluetooth speaker utility
 BT_SPEAKER_PLIST_FILES= sbin/virtual_bt_speaker \
 			man/man8/virtual_bt_speaker.8.gz
 BT_SPEAKER_MAKE_ARGS=	HAVE_BLUETOOTH_SPEAKER="YES"
+
+COMMAND_DESC=		Build with command utility
+COMMAND_MAKE_ARGS=	HAVE_COMMAND="YES"
+COMMAND_PLIST_FILES=	sbin/virtual_oss_cmd \
+			man/man8/virtual_oss_cmd.8.gz
 
 DEBUG_MAKE_ARGS=	HAVE_DEBUG="YES"
 
