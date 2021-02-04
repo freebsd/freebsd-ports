@@ -3,7 +3,7 @@
 
 PORTNAME=	lablgtk2
 PORTVERSION=	2.18.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	ocaml-
 
@@ -21,17 +21,8 @@ USE_OCAML_CAMLP4=	yes
 USE_OCAML_LDCONFIG=	yes
 USE_OCAML_WASH=		yes
 
-OPTIONS_DEFINE=		GLADE GNOMECANVAS GNOMEUI GTKGLAREA GTKSOURCEVIEW2 \
-			GTKSPELL LIBRSVG2 DOCS EXAMPLES
-OPTIONS_DEFAULT=	GLADE GNOMECANVAS GNOMEUI GTKGLAREA GTKSOURCEVIEW2 \
-			GTKSPELL LIBRSVG2
-
-GNOMECANVAS_DESC=	GnomeCanvas support
-GNOMEUI_DESC=		GNOME 2 UI support
-GTKGLAREA_DESC=		GtkGLArea support
-GTKSOURCEVIEW2_DESC=	GtkSourceView 2 support
-GTKSPELL_DESC=		GtkSpell support
-#GNOMEPANEL_DESC=	GNOME Panel support
+OPTIONS_DEFINE=		LIBRSVG2 DOCS EXAMPLES
+OPTIONS_DEFAULT=	LIBRSVG2
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	all opt
@@ -42,7 +33,9 @@ GH_ACCOUNT=	garrigue
 GH_PROJECT=	lablgtk
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libdir=${PREFIX}/${OCAML_LIBDIR} \
-		--without-gtksourceview
+		--without-gtksourceview --without-gnomeui \
+		--without-panel --without-gtkspell --without-gl \
+		--without-gtksourceview2 --without-glade --without-gnomecanvas
 CONFIGURE_ENV=	CAMLP4O="camlp4 pa_o.cmo pa_op.cmo pr_dump.cmo"
 
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
@@ -59,70 +52,12 @@ EXAMPLESDIR=	${OCAML_EXAMPLESDIR}/${PORTNAME}
 PORTEXAMPLES=	*
 .endif
 
-.if ${PORT_OPTIONS:MGTKGLAREA}
-CONFIGURE_ARGS+=	--with-gl
-BUILD_DEPENDS+=	lablgl:graphics/ocaml-lablgl
-RUN_DEPENDS+=	lablgl:graphics/ocaml-lablgl
-LIB_DEPENDS+=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2
-EXAMPLES_SUBDIRS+=	GL
-.else
-CONFIGURE_ARGS+=	--without-gl
-.endif
-
-.if ${PORT_OPTIONS:MGLADE}
-CONFIGURE_ARGS+=	--with-glade
-USE_GNOME+=	libglade2
-PLIST_SUB+=	GLADE=""
-EXAMPLES_SUBDIRS+=	glade
-.else
-CONFIGURE_ARGS+=	--without-glade
-PLIST_SUB+=	GLADE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGNOMEUI}
-CONFIGURE_ARGS+=	--with-gnomeui
-USE_GNOME+=	libgnomeui
-.else
-CONFIGURE_ARGS+=	--without-gnomeui
-.endif
-
-.if ${PORT_OPTIONS:MGNOMECANVAS}
-CONFIGURE_ARGS+=	--with-gnomecanvas
-USE_GNOME+=	libgnomecanvas
-EXAMPLES_SUBDIRS+=	canvas
-.else
-CONFIGURE_ARGS+=	--without-gnomecanvas
-.endif
-
 .if ${PORT_OPTIONS:MLIBRSVG2}
 CONFIGURE_ARGS+=	--with-rsvg
 USE_GNOME+=	librsvg2
 EXAMPLES_SUBDIRS+=	rsvg
 .else
 CONFIGURE_ARGS+=	--without-rsvg
-.endif
-
-#.if ${PORT_OPTIONS:MGNOMEPANEL}
-#CONFIGURE_ARGS+=	--with-panel
-#USE_GNOME+=	gnomepanel
-#EXAMPLES_SUBDIRS+=	panel
-#.else
-CONFIGURE_ARGS+=	--without-panel
-#.endif
-
-.if ${PORT_OPTIONS:MGTKSOURCEVIEW2}
-CONFIGURE_ARGS+=	--with-gtksourceview2
-USE_GNOME+=	gtksourceview2
-EXAMPLES_SUBDIRS+=	sourceview
-.else
-CONFIGURE_ARGS+=	--without-gtksourceview2
-.endif
-
-.if ${PORT_OPTIONS:MGTKSPELL}
-LIB_DEPENDS+=	libgtkspell.so:textproc/gtkspell
-CONFIGURE_ARGS+=	--with-gtkspell
-.else
-CONFIGURE_ARGS+=	--without-gtkspell
 .endif
 
 post-patch:
