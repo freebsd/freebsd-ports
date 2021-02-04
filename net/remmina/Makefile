@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	remmina
-DISTVERSION=	1.4.10
+DISTVERSION=	1.4.11
 CATEGORIES=	net gnome
 
 MAINTAINER=	woodsb02@FreeBSD.org
@@ -12,6 +12,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+		libpcre2-8.so:devel/pcre2 \
 		libsodium.so:security/libsodium \
 		libsoup-2.4.so:devel/libsoup
 
@@ -27,7 +28,7 @@ USES=		cmake compiler:c11 desktop-file-utils gettext gnome localbase:ldflags pat
 USE_GITLAB=	yes
 GL_ACCOUNT=	Remmina
 GL_PROJECT=	Remmina
-GL_COMMIT=	7ebc497062de66881b71bbe7f54dabfda0129ac2
+GL_COMMIT=	d848e92df4d19145a10b7872bf85994d5fbf340d
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_XORG=	ice sm x11 xext xkbfile

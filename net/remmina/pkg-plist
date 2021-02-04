@@ -128,6 +128,7 @@ share/icons/hicolor/scalable/panel/remmina-panel.svg
 %%NLS%%share/locale/ko/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/my/LC_MESSAGES/remmina.mo
@@ -167,6 +168,7 @@ share/mime/packages/remmina-mime.xml
 %%WWW%%%%DATADIR%%/res/www-js.js
 %%DATADIR%%/theme/3024 Day.colors
 %%DATADIR%%/theme/3024 Night.colors
+%%DATADIR%%/theme/Adventure.colors
 %%DATADIR%%/theme/AdventureTime.colors
 %%DATADIR%%/theme/Afterglow.colors
 %%DATADIR%%/theme/AlienBlood.colors
@@ -176,14 +178,19 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/AtelierSulphurpool.colors
 %%DATADIR%%/theme/Atom.colors
 %%DATADIR%%/theme/AtomOneLight.colors
+%%DATADIR%%/theme/Aurora.colors
+%%DATADIR%%/theme/Banana Blueberry.colors
 %%DATADIR%%/theme/Batman.colors
 %%DATADIR%%/theme/Belafonte Day.colors
 %%DATADIR%%/theme/Belafonte Night.colors
 %%DATADIR%%/theme/BirdsOfParadise.colors
 %%DATADIR%%/theme/Blazer.colors
+%%DATADIR%%/theme/Blue Matrix.colors
+%%DATADIR%%/theme/BlueBerryPie.colors
 %%DATADIR%%/theme/BlulocoDark.colors
 %%DATADIR%%/theme/BlulocoLight.colors
 %%DATADIR%%/theme/Borland.colors
+%%DATADIR%%/theme/Breeze.colors
 %%DATADIR%%/theme/Bright Lights.colors
 %%DATADIR%%/theme/Broadcast.colors
 %%DATADIR%%/theme/Brogrammer.colors
@@ -205,12 +212,18 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Cobalt Neon.colors
 %%DATADIR%%/theme/Cobalt2.colors
 %%DATADIR%%/theme/CrayonPonyFish.colors
+%%DATADIR%%/theme/Cyberdyne.colors
 %%DATADIR%%/theme/Dark Pastel.colors
 %%DATADIR%%/theme/Dark+.colors
 %%DATADIR%%/theme/Darkside.colors
 %%DATADIR%%/theme/Desert.colors
 %%DATADIR%%/theme/DimmedMonokai.colors
+%%DATADIR%%/theme/Django.colors
+%%DATADIR%%/theme/DjangoRebornAgain.colors
+%%DATADIR%%/theme/DjangoSmooth.colors
+%%DATADIR%%/theme/DoomOne.colors
 %%DATADIR%%/theme/DotGov.colors
+%%DATADIR%%/theme/Dracula+.colors
 %%DATADIR%%/theme/Dracula.colors
 %%DATADIR%%/theme/Duotone Dark.colors
 %%DATADIR%%/theme/ENCOM.colors
@@ -237,11 +250,14 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Grape.colors
 %%DATADIR%%/theme/Grass.colors
 %%DATADIR%%/theme/Gruvbox Dark.colors
+%%DATADIR%%/theme/Gruvbox Light.colors
+%%DATADIR%%/theme/Guezwhoz.colors
 %%DATADIR%%/theme/Hacktober.colors
 %%DATADIR%%/theme/Hardcore.colors
 %%DATADIR%%/theme/Harper.colors
 %%DATADIR%%/theme/Highway.colors
 %%DATADIR%%/theme/Hipster Green.colors
+%%DATADIR%%/theme/Hivacruz.colors
 %%DATADIR%%/theme/Homebrew.colors
 %%DATADIR%%/theme/Hopscotch.256.colors
 %%DATADIR%%/theme/Hopscotch.colors
@@ -256,7 +272,9 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/JetBrains Darcula.colors
 %%DATADIR%%/theme/Kibble.colors
 %%DATADIR%%/theme/Kolorit.colors
+%%DATADIR%%/theme/Konsolas.colors
 %%DATADIR%%/theme/Lab Fox.colors
+%%DATADIR%%/theme/Laser.colors
 %%DATADIR%%/theme/Later This Evening.colors
 %%DATADIR%%/theme/Lavandula.colors
 %%DATADIR%%/theme/LiquidCarbon.colors
@@ -265,9 +283,11 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Man Page.colors
 %%DATADIR%%/theme/Material.colors
 %%DATADIR%%/theme/MaterialDark.colors
+%%DATADIR%%/theme/MaterialDarker.colors
 %%DATADIR%%/theme/MaterialOcean.colors
 %%DATADIR%%/theme/Mathias.colors
 %%DATADIR%%/theme/Medallion.colors
+%%DATADIR%%/theme/Mirage.colors
 %%DATADIR%%/theme/Misterioso.colors
 %%DATADIR%%/theme/Molokai.colors
 %%DATADIR%%/theme/MonaLisa.colors
@@ -289,6 +309,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/OneHalfDark.colors
 %%DATADIR%%/theme/OneHalfLight.colors
 %%DATADIR%%/theme/Operator Mono Dark.colors
+%%DATADIR%%/theme/Overnight Slumber.colors
 %%DATADIR%%/theme/Pandora.colors
 %%DATADIR%%/theme/Paraiso Dark.colors
 %%DATADIR%%/theme/Parasio Dark.colors
@@ -297,21 +318,27 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/PencilLight.colors
 %%DATADIR%%/theme/Piatto Light.colors
 %%DATADIR%%/theme/Pnevma.colors
+%%DATADIR%%/theme/Popping and Locking.colors
 %%DATADIR%%/theme/Pro Light.colors
 %%DATADIR%%/theme/Pro.colors
 %%DATADIR%%/theme/Purple Rain.colors
+%%DATADIR%%/theme/Rapture.colors
 %%DATADIR%%/theme/Red Alert.colors
 %%DATADIR%%/theme/Red Planet.colors
 %%DATADIR%%/theme/Red Sands.colors
 %%DATADIR%%/theme/Relaxed.colors
 %%DATADIR%%/theme/Rippedcasts.colors
+%%DATADIR%%/theme/Rouge 2.colors
 %%DATADIR%%/theme/Royal.colors
 %%DATADIR%%/theme/Ryuuko.colors
+%%DATADIR%%/theme/Sakura.colors
+%%DATADIR%%/theme/Scarlet Protocol.colors
 %%DATADIR%%/theme/SeaShells.colors
 %%DATADIR%%/theme/Seafoam Pastel.colors
 %%DATADIR%%/theme/Seti.colors
 %%DATADIR%%/theme/Shaman.colors
 %%DATADIR%%/theme/Slate.colors
+%%DATADIR%%/theme/SleepyHollow.colors
 %%DATADIR%%/theme/Smyck.colors
 %%DATADIR%%/theme/Snazzy.colors
 %%DATADIR%%/theme/SoftServer.colors
@@ -336,6 +363,8 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Terminal Basic.colors
 %%DATADIR%%/theme/Thayer Bright.colors
 %%DATADIR%%/theme/The Hulk.colors
+%%DATADIR%%/theme/Tinacious Design (Dark).colors
+%%DATADIR%%/theme/Tinacious Design (Light).colors
 %%DATADIR%%/theme/Tomorrow Night Blue.colors
 %%DATADIR%%/theme/Tomorrow Night Bright.colors
 %%DATADIR%%/theme/Tomorrow Night Burns.colors
@@ -363,15 +392,20 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/theme/Zenburn.colors
 %%DATADIR%%/theme/ayu.colors
 %%DATADIR%%/theme/ayu_light.colors
+%%DATADIR%%/theme/coffee_theme.colors
 %%DATADIR%%/theme/cyberpunk.colors
 %%DATADIR%%/theme/deep.colors
 %%DATADIR%%/theme/idea.colors
 %%DATADIR%%/theme/idleToes.colors
+%%DATADIR%%/theme/jubi.colors
 %%DATADIR%%/theme/lovelace.colors
 %%DATADIR%%/theme/midnight-in-mojave.colors
+%%DATADIR%%/theme/nord.colors
 %%DATADIR%%/theme/primary.colors
 %%DATADIR%%/theme/purplepeter.colors
 %%DATADIR%%/theme/rebecca.colors
+%%DATADIR%%/theme/shades-of-purple.colors
+%%DATADIR%%/theme/synthwave-everything.colors
 %%DATADIR%%/theme/synthwave.colors
 %%DATADIR%%/ui/remmina_about.glade
 %%DATADIR%%/ui/remmina_key_chooser.glade
@@ -379,6 +413,7 @@ share/mime/packages/remmina-mime.xml
 %%DATADIR%%/ui/remmina_mpc.glade
 %%DATADIR%%/ui/remmina_news.glade
 %%DATADIR%%/ui/remmina_preferences.glade
+%%DATADIR%%/ui/remmina_search.glade
 %%DATADIR%%/ui/remmina_snap_info_dialog.glade
 %%DATADIR%%/ui/remmina_spinner.glade
 %%DATADIR%%/ui/remmina_string_list.glade
