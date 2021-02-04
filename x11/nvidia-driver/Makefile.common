@@ -1,5 +1,6 @@
 # $FreeBSD$
 
+# LICENSE_FILE is set in the consumer ports because its location varies
 LICENSE=	NVIDIA
 LICENSE_NAME=	License For Customer Use of NVIDIA Software
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept

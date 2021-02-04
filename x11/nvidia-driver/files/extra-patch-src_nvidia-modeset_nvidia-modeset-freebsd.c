@@ -16,11 +16,16 @@
  #endif
  
  
-@@ -250,7 +252,7 @@ struct nvkms_ref_ptr {
+@@ -252,7 +254,12 @@ struct nvkms_ref_ptr {
  
  struct nvkms_ref_ptr* NVKMS_API_CALL nvkms_alloc_ref_ptr(void *ptr)
  {
 -    struct nvkms_ref_ptr *ref_ptr = nvkms_alloc(sizeof(*ref_ptr), NV_FALSE);
++    /*
++     * Initialize memory to avoid spurious "lock re-initialization" errors.
++     * A little more detail can be found in the PR 201340 starting around
++     * comment #50.
++     */
 +    struct nvkms_ref_ptr *ref_ptr = nvkms_alloc(sizeof(*ref_ptr), NV_TRUE);
      if (ref_ptr) {
          mtx_init(&ref_ptr->lock, "nvkms-ref-ptr-lock", NULL, MTX_SPIN);

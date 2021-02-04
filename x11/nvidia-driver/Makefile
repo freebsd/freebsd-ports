@@ -68,9 +68,6 @@ NVSRC=		nvidia
 .endif
 
 .if ${NVVERSION} >= 358.009
-# Initialize memory allocations to avoid spurious "lock re-initialization"
-# errors.  A little more detail can be found in bug 201340 starting around
-# comment #50.
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_nvidia-modeset_nvidia-modeset-freebsd.c
 .endif
 
