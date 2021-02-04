@@ -3,7 +3,7 @@
 
 PORTNAME=	forked-daapd
 DISTVERSION=	27.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/ejurgensen/forked-daapd/releases/download/${DISTVERSION}/
 
