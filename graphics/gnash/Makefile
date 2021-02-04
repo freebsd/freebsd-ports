@@ -30,7 +30,6 @@ USES=		cpe tar:bzip2 compiler:c++11-lang autoreconf gmake libtool \
 		pkgconfig jpeg gnome gl desktop-file-utils xorg
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
-WANT_GSTREAMER=	yes
 USE_GNOME=	atk gconf2 gtk20 libxml2 pango
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
 USE_GL=		egl
@@ -58,9 +57,8 @@ PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
-OPTIONS_DEFINE=	CYGNAL VAAPI DOCS NLS
-OPTIONS_SINGLE=	MEDIA RENDERER
-OPTIONS_SINGLE_MEDIA=	FFMPEG GSTREAMER
+OPTIONS_DEFINE=	CYGNAL VAAPI DOCS NLS FFMPEG
+OPTIONS_SINGLE=	RENDERER
 OPTIONS_SINGLE_RENDERER=AGG OPENGL CAIRO
 OPTIONS_DEFAULT=AGG FFMPEG VAAPI
 
@@ -71,7 +69,6 @@ AGG_DESC=	AGG renderer
 OPENGL_DESC=	OpenGL renderer (experimental)
 CAIRO_DESC=	Cairo renderer
 FFMPEG_DESC=	ffmpeg media handler
-GSTREAMER_DESC=	GStreamer media handler
 VAAPI_DESC=	VAAPI support (requires FFMPEG)
 
 CYGNAL_CONFIGURE_ENABLE=	cygnal
@@ -141,7 +138,7 @@ CONFIGURE_ARGS+=	--enable-device=egl,x11
 #
 # Media handler options processing
 #
-.if ${PORT_OPTIONS:MFFMPEG} && empty(PORT_OPTIONS:MGSTREAMER)
+.if ${PORT_OPTIONS:MFFMPEG}
 LIB_DEPENDS+=		libavcodec.so:multimedia/ffmpeg \
 			libtheora.so:multimedia/libtheora \
 			libogg.so:audio/libogg \
@@ -152,11 +149,6 @@ CONFIGURE_ARGS+=	--enable-media=ffmpeg \
 USES+=			sdl
 USE_SDL+=		sdl
 MAKE_ARGS+=		INCLUDES="-I${LOCALBASE}/include/ffmpeg"
-.elif ${PORT_OPTIONS:MGSTREAMER} && empty(PORT_OPTIONS:MFFMPEG)
-USE_GSTREAMER=		ffmpeg mad vorbis
-CONFIGURE_ARGS+=	--enable-media=gst
-USES+=			sdl
-USE_SDL+=		sdl
 .else
 CONFIGURE_ARGS+=	--enable-media=none
 IGNORE=			can't be built with multiple media handlers enabled. Please rerun 'make config' and leave one or none of them (ffmpeg|gstreamer)
