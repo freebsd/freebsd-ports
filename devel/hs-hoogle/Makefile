@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hoogle
-PORTVERSION=	5.0.17.15
-PORTREVISION=	2
+PORTVERSION=	5.0.18.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,7 +14,7 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 USES=		cabal
 
-USE_CABAL=	ListLike-4.7 \
+USE_CABAL=	ListLike-4.7.3 \
 		QuickCheck-2.14_1 \
 		aeson-1.5.1.0 \
 		appar-0.1.8 \
