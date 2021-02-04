@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	routinator
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -34,7 +34,7 @@ OPTIONS_SUB=	yes
 CARGO_CRATES=	addr2line-0.14.0 \
 		adler-0.2.3 \
 		ansi_term-0.11.0 \
-		arc-swap-1.0.0 \
+		arc-swap-1.2.0 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.2 \
 		atty-0.2.14 \
