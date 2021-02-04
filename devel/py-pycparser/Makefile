@@ -13,7 +13,7 @@ COMMENT=	C parser in Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python
+USES=		python:2.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

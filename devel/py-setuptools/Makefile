@@ -17,7 +17,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-USES=		python zip
+USES=		python:2.7+ zip
 USE_PYTHON=	allflavors autoplist concurrent distutils
 
 PYDISTUTILS_SETUP=	${PYSETUP}

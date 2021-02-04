@@ -13,7 +13,7 @@ COMMENT=	Clean single-source support for Python 3 and 2
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python
+USES=		python:2.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

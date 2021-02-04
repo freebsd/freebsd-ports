@@ -20,7 +20,7 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 PORTSCOUT=	ignore:1
 
-USES=		compiler:c11 python tar:xz
+USES=		compiler:c11 python:2.7+ tar:xz
 USE_PYTHON=	autoplist distutils allflavors
 
 DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo

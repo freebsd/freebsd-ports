@@ -15,7 +15,7 @@ COMMENT=	Implements XML/HTML/XHTML Markup safe string for Python
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		python
+USES=		python:2.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

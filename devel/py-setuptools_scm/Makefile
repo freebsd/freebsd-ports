@@ -18,7 +18,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		git:devel/git \
 		${PY_MERCURIAL}
 
-USES=		python
+USES=		python:2.7+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webencodings>0:converters/py-webencodings@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python
+USES=		python:2.7+
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>
