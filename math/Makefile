@@ -976,7 +976,6 @@
     SUBDIR += wavelib
     SUBDIR += wcalc
     SUBDIR += wfmath
-    SUBDIR += why3
     SUBDIR += wxmaxima
     SUBDIR += xblas
     SUBDIR += xfce4-calculator-plugin
