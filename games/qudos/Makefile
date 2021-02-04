@@ -63,8 +63,9 @@ PLIST_SUB+=	${mod}="@comment "
 .endfor
 
 .if ${PORT_OPTIONS:MGLX} || ${PORT_OPTIONS:MSDLGL}
-USES+=		gl jpeg
+USES+=		gl jpeg xorg
 USE_GL=		glu
+USE_XORG=	xxf86vm
 LIB_DEPENDS+=	libpng.so:graphics/png
 .endif
 
