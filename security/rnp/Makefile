@@ -16,10 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS_OCB_Patent=	dist-mirror dist-sell pkg-mirror pkg-sell \
 				auto-accept
 
+BROKEN=		Not yet diagnosed pkg-fallout errors in configure phase, local builds succeed
+
 LIB_DEPENDS=	libbotan-2.so:security/botan2 \
 		libjson-c.so:devel/json-c
 
-USES=		cmake
+USES=		cmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	rnpgp
 
