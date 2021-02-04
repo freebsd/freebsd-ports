@@ -3,7 +3,7 @@
 
 PORTNAME=	alt-ergo
 PORTVERSION=	0.95.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://alt-ergo.ocamlpro.com/http/alt-ergo-${PORTVERSION}/
 
@@ -27,19 +27,6 @@ USE_OCAML=	yes
 ALL_TARGET=	opt pack xpack META
 INSTALL_TARGET=	install install-pack-opt install-pack-byte
 
-OPTIONS_DEFINE=	GUI
-OPTIONS_DEFAULT=GUI
-OPTIONS_SUB=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGUI}
-BUILD_DEPENDS +=	lablgtk2:x11-toolkits/ocaml-lablgtk2
-RUN_DEPENDS+=		lablgtk2:x11-toolkits/ocaml-lablgtk2
-ALL_TARGET+=		gui
-INSTALL_TARGET+=	install-gui
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '\|^# installation|,\|^# documentation|{ \
 		\|cp -f.*$$(BINDIR)|s|cp -f|${INSTALL_SCRIPT}|; \
@@ -49,14 +36,5 @@ post-patch:
 			${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk2)@\1site-lib/\2@' \
 		${WRKSRC}/configure
-
-.if ${PORT_OPTIONS:MGUI}
-pre-configure:
-	@(if [ ! -e ${LOCALBASE}/${OCAML_SITELIBDIR}/lablgtk2/lablgtksourceview2.cmxa ] ; then \
-	${ECHO_MSG} "==> The WITH_GUI option for ${PKGNAME} requires" ; \
-	${ECHO_MSG} "==> x11-toolkits/ocaml-lablgtk2 to be built" ; \
-	${ECHO_MSG} "==> WITH_GTKSOURCEVIEW2" ; \
-	exit 1; fi)
-.endif
 
 .include <bsd.port.mk>

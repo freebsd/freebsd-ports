@@ -1,5 +1,4 @@
 bin/alt-ergo
-%%GUI%%bin/altgr-ergo
 lib/ocaml/alt-ergo/META
 lib/ocaml/alt-ergo/altErgo.cmi
 lib/ocaml/alt-ergo/altErgo.cmo
