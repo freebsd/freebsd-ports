@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	soci
-PORTVERSION=	3.2.2
-PORTREVISION=	18
+DISTVERSION=	4.0.1
 CATEGORIES=	databases
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	C++ Database Access Library
@@ -13,9 +11,13 @@ COMMENT=	C++ Database Access Library
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-USES=		cmake compiler:c++11-lang zip
-CMAKE_ARGS+=	-DWITH_ORACLE:BOOL=OFF
+USES=		cmake compiler:c++11-lang
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	SOCI
+
+CMAKE_OFF=	WITH_ORACLE
 
 SUB_FILES=	pkg-message
 
