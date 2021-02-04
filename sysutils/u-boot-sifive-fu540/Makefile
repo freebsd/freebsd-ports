@@ -2,6 +2,8 @@
 
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
+U_BOOT_SLAVE_PORTREVISION_2020.10=	1
+
 MODEL=		sifive-fu540
 BOARD_CONFIG=	sifive_fu540_defconfig
 FAMILY=		sifive
