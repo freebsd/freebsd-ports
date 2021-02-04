@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210204:
+  AFFECTS: users of www/unit
+  AUTHOR: osa@FreeBSD.org
+
+  The default location for NGINX Unit's state directory has changed.  It
+  was moved from /usr/local/libexec/unit to /var/db/unit in order to
+  avoid write operations on /usr/local filesystem.
+
 20210124:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org
