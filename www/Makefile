@@ -476,8 +476,6 @@
     SUBDIR += onionbalance
     SUBDIR += onionshare
     SUBDIR += opencart
-    SUBDIR += opera
-    SUBDIR += opera-linuxplugins
     SUBDIR += orangehrm
     SUBDIR += osrm-backend
     SUBDIR += osticket
