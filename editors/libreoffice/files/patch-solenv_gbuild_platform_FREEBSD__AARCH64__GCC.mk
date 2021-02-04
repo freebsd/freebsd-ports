@@ -1,6 +1,9 @@
---- solenv/gbuild/platform/FREEBSD_AARCH64_GCC.mk.orig	2020-04-07 17:58:54.600930000 +0200
-+++ solenv/gbuild/platform/FREEBSD_AARCH64_GCC.mk	2020-04-07 18:01:04.452566000 +0200
-@@ -0,0 +1,14 @@
+--- solenv/gbuild/platform/FREEBSD_AARCH64_GCC.mk.orig	2020-11-22 14:05:28 UTC
++++ solenv/gbuild/platform/FREEBSD_AARCH64_GCC.mk
+@@ -12,3 +12,17 @@
+ include $(GBUILDDIR)/platform/unxgcc.mk
+ 
+ # vim: set noet sw=4:
 +# -*- Mode: makefile-gmake; tab-width: 4; indent-tabs-mode: t -*-
 +#
 +# This file is part of the LibreOffice project.

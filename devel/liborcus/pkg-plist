@@ -62,6 +62,7 @@ include/liborcus-%%VERSION%%/orcus/tokens.hpp
 include/liborcus-%%VERSION%%/orcus/types.hpp
 include/liborcus-%%VERSION%%/orcus/xml_namespace.hpp
 include/liborcus-%%VERSION%%/orcus/xml_structure_tree.hpp
+include/liborcus-%%VERSION%%/orcus/xml_writer.hpp
 include/liborcus-%%VERSION%%/orcus/yaml_document_tree.hpp
 include/liborcus-%%VERSION%%/orcus/yaml_parser.hpp
 include/liborcus-%%VERSION%%/orcus/yaml_parser_base.hpp

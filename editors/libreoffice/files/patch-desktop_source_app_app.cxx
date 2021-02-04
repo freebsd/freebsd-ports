@@ -1,6 +1,6 @@
---- desktop/source/app/app.cxx.orig
+--- desktop/source/app/app.cxx.orig	2020-11-22 14:05:28 UTC
 +++ desktop/source/app/app.cxx
-@@ -564,6 +564,7 @@ void Desktop::InitFinished()
+@@ -524,6 +524,7 @@ void Desktop::InitFinished()
  
  void Desktop::DeInit()
  {
@@ -8,7 +8,7 @@
      try {
          // instead of removing of the configManager just let it commit all the changes
          utl::ConfigManager::storeConfigItems();
-@@ -580,7 +581,9 @@ void Desktop::DeInit()
+@@ -540,7 +541,9 @@ void Desktop::DeInit()
          // clear lockfile
          m_xLockfile.reset();
  

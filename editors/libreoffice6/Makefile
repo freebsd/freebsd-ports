@@ -1,5 +1,5 @@
 # $FreeBSD$
-PORTREVISION=	2
+PORTREVISION=	3
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		gperf>=3.1:devel/gperf \
-		mdds>=1.5:devel/mdds \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
@@ -34,15 +33,12 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
 		libltdl.so:devel/libltdl \
-		liborcus-0.15.so:devel/liborcus \
 		libplds4.so:devel/nspr \
 		libcurl.so:ftp/curl \
-		libcairo.so:graphics/cairo \
 		libgraphite2.so:graphics/graphite2 \
 		liblcms2.so:graphics/lcms2 \
 		libcdr-0.1.so:graphics/libcdr01 \
 		libepoxy.so:graphics/libepoxy \
-		libetonyek-0.1.so:graphics/libetonyek01 \
 		libfreehand-0.1.so:graphics/libfreehand \
 		libgltf-0.0.so:graphics/libgltf \
 		libwpg-0.3.so:graphics/libwpg03 \
@@ -50,7 +46,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
 		libqrcodegencpp.so:graphics/qr-code-generator \
-		libCoinMP.so:math/coinmp \
 		liblpsolve55.so:math/lp_solve \
 		libcmis-0.5.so:net/libcmis \
 		libfreetype.so:print/freetype2 \
@@ -77,8 +72,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libvisio-0.1.so:textproc/libvisio01 \
 		libwpd-0.10.so:textproc/libwpd010 \
 		libwps-0.4.so:textproc/libwps \
-		libxml2.so:textproc/libxml2 \
-		libxslt.so:textproc/libxslt \
 		libmythes-1.2.so:textproc/mythes \
 		libraptor2.so:textproc/raptor2 \
 		librdf.so:textproc/redland \
@@ -95,6 +88,9 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
 DISTFILES+=	884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf:ext
+DISTFILES+=	mdds-1.5.0.tar.bz2:src
+DISTFILES+=	liborcus-0.15.3.tar.gz:src
+DISTFILES+=	libetonyek-0.1.9.tar.xz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -112,6 +108,7 @@ SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
 USE_GL=		gl glew glu
+USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
@@ -119,7 +116,7 @@ USES=		autoreconf:build bison compiler:c++14-lang cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome jpeg mysql:client perl5 pkgconfig \
 		pkgconfig python shebangfix shared-mime-info ssl tar:xz xorg
 
-OPTIONS_DEFINE=	CUPS DOCS GNOME GTK3 I18N JAVA KF5 MMEDIA PGSQL QT5 SDK TEST WEBDAV
+OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 I18N JAVA KF5 MMEDIA PGSQL QT5 SDK TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS MMEDIA QT5
 
 .if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mssl=*}
@@ -127,6 +124,7 @@ OPTIONS_DEFAULT=	CUPS MMEDIA QT5
 OPTIONS_EXCLUDE_FreeBSD_11+=	QT5
 .endif
 
+COINMP_DESC=	Enable CoinMP (deprecated) math solver
 GTK3_DESC=	GTK+ 3 GUI toolkit support (incomplete visual style)
 I18N_DESC=	Build i18n resources
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
@@ -137,6 +135,10 @@ QT5_DESC=	Qt5 GUI toolkit support (default visual style)
 SDK_DESC=	Build with SDK
 TEST_DESC=	Run all regression tests
 WEBDAV_DESC=	Enable WebDAV protocol
+
+COINMP_CONFIGURE_ENABLE=	coinmp
+COINMP_CONFIGURE_ON=	--with-system-coinmp
+COINMP_LIB_DEPENDS=	libCoinMP.so:math/coinmp
 
 CUPS_CONFIGURE_ENABLE=	cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
@@ -255,6 +257,9 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-libxml \
 		--with-system-ucpp \
 		--with-system-zlib \
+		--with-system-mdds=no \
+		--with-system-orcus=no \
+		--with-system-libetonyek=no \
 		--with-vendor="FreeBSD ports" \
 		--without-fonts \
 		--without-myspell-dicts

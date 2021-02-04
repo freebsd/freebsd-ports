@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdds
-PORTVERSION=	1.5.0
+PORTVERSION=	1.7.0
 CATEGORIES=	devel
 MASTER_SITES=	https://kohei.us/files/mdds/src/
 

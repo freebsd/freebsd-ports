@@ -1,6 +1,6 @@
---- officecfg/registry/schema/org/openoffice/Office/Common.xcs.orig	2019-02-05 07:46:26.552858000 +0800
-+++ officecfg/registry/schema/org/openoffice/Office/Common.xcs	2019-02-05 07:46:11.129854000 +0800
-@@ -5316,7 +5316,7 @@
+--- officecfg/registry/schema/org/openoffice/Office/Common.xcs.orig	2020-11-22 14:05:28 UTC
++++ officecfg/registry/schema/org/openoffice/Office/Common.xcs
+@@ -5480,7 +5480,7 @@
          <info>
            <desc>Special font for rendering of emojis</desc>
          </info>

@@ -1,6 +1,6 @@
---- sal/osl/unx/uunxapi.cxx.bak	2019-03-23 22:42:30.703590000 -0500
-+++ sal/osl/unx/uunxapi.cxx	2019-03-23 22:46:37.905090000 -0500
-@@ -563,14 +563,22 @@
+--- sal/osl/unx/uunxapi.cxx.orig	2020-11-22 14:05:28 UTC
++++ sal/osl/unx/uunxapi.cxx
+@@ -595,14 +595,22 @@ std::string UnixErrnoString(int nErrno)
          case EBFONT:
              return "EBFONT";
  #endif
