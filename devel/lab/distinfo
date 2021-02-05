@@ -1,6 +1,6 @@
-TIMESTAMP = 1610484600
-SHA256 (zaquestion-lab-v0.18.0_GH0.tar.gz) = b34b08cb20d16f541eb3bf428e0224b4905ee40bda9394e7da4df756ba1aa109
-SIZE (zaquestion-lab-v0.18.0_GH0.tar.gz) = 145452
+TIMESTAMP = 1612136268
+SHA256 (zaquestion-lab-v0.19.0_GH0.tar.gz) = 7d8c3c88ac944b50137200ef565a42029e590bc66edb8eecf74ceb7aa0c0b908
+SIZE (zaquestion-lab-v0.19.0_GH0.tar.gz) = 149889
 SHA256 (Microsoft-go-winio-v0.4.15_GH0.tar.gz) = d476a5a4022dc371a3e35d8c98e3f5fcba9d3707c8707b654000cd4547538e31
 SIZE (Microsoft-go-winio-v0.4.15_GH0.tar.gz) = 84313
 SHA256 (acarl005-stripansi-5a71ef0e047d_GH0.tar.gz) = 832ad7232c573cec3eece91af4cdf40d2d06bca94e026dd7d5add0f44f802f0f
