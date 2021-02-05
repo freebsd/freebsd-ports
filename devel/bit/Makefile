@@ -2,7 +2,7 @@
 
 PORTNAME=	bit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.11
+DISTVERSION=	0.9.12
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -15,8 +15,9 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	chriswalz
 GH_TUPLE=	\
-		AlecAivazis:survey:v2.1.1:alecaivazis_survey/vendor/github.com/AlecAivazis/survey/v2 \
+		AlecAivazis:survey:v2.2.2:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
 		apex:log:v1.9.0:apex_log/vendor/github.com/apex/log \
+		bradfitz:iter:e8f45d346db8:bradfitz_iter/vendor/github.com/bradfitz/iter \
 		c-bata:go-prompt:v0.2.5:c_bata_go_prompt/vendor/github.com/c-bata/go-prompt \
 		c4milo:unpackit:4ed373e9ef1c:c4milo_unpackit/vendor/github.com/c4milo/unpackit \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -26,10 +27,13 @@ GH_TUPLE=	\
 		golang:sys:af09f7315aff:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:go-github:v17.0.0:google_go_github/vendor/github.com/google/go-github \
-		google:go-github:v32.1.0:google_go_github_1/vendor/github.com/google/go-github/v32 \
+		google:go-github:v32.1.0:google_go_github_v32/vendor/github.com/google/go-github/v32 \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
+		gosuri:uilive:v0.0.4:gosuri_uilive/vendor/github.com/gosuri/uilive \
+		gosuri:uiprogress:v0.0.1:gosuri_uiprogress/vendor/github.com/gosuri/uiprogress \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:v1.0.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
+		hooklift:assert:v0.1.0:hooklift_assert/vendor/github.com/hooklift/assert \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		klauspost:compress:v1.4.1:klauspost_compress/vendor/github.com/klauspost/compress \
@@ -40,11 +44,11 @@ GH_TUPLE=	\
 		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mattn:go-tty:v0.0.3:mattn_go_tty/vendor/github.com/mattn/go-tty \
 		mgutz:ansi:9520e82c474b:mgutz_ansi/vendor/github.com/mgutz/ansi \
-		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
+		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
 		pkg:term:v1.1.0:pkg_term/vendor/github.com/pkg/term \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		posener:complete:v2.0.1-alpha.12:posener_complete/vendor/github.com/posener/complete/v2 \
-		posener:script:v1.0.4:posener_script/vendor/github.com/posener/script \
+		posener:complete:v2.0.1-alpha.13:posener_complete_v2/vendor/github.com/posener/complete/v2 \
+		posener:script:v1.1.5:posener_script/vendor/github.com/posener/script \
 		rs:zerolog:v1.20.0:rs_zerolog/vendor/github.com/rs/zerolog \
 		spf13:cobra:v1.1.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
