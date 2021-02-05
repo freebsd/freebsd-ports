@@ -11,9 +11,9 @@
 # or `x11/nvidia-driver-304').
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	440.100
+DISTVERSION?=	460.39
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -47,9 +47,7 @@ SUB_FILES+=	pkg-deinstall pkg-install
 SUB_PATCHES=	extra-patch-src-Makefile \
 		extra-patch-src-nv-freebsd.h \
 		extra-patch-src-nv-misc.h \
-		extra-patch-src-nvidia_ctl.c \
 		extra-patch-src-nvidia_dev.c \
-		extra-patch-src-nvidia_linux.c \
 		extra-patch-src-nvidia_pci.c
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
@@ -67,8 +65,15 @@ NVSRC=		.
 NVSRC=		nvidia
 .endif
 
-.if ${NVVERSION} >= 358.009
+.if ${NVVERSION} < 460.039
+.  if ${NVVERSION} >= 358.009
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_nvidia-modeset_nvidia-modeset-freebsd.c
+.  endif
+SUB_PATCHES+=	extra-patch-src-nvidia_ctl.c \
+		extra-patch-src-nvidia_linux.c
+.else
+EXTRA_PATCHES+=	${FILESDIR}/460-patch-lib-libGLX_nvidia-Makefile
+SUB_PATCHES+=	460-patch-src-nvidia_linux.c
 .endif
 
 OPTIONS_DEFINE=	ACPI_PM LINUX WBINVD DOCS
@@ -99,7 +104,7 @@ EXTRA_PATCHES+=	${WRKDIR}/${p}
 
 post-patch: .SILENT
 # We should support -CURRENT: kill the check (first #if __FreeBSD_version)
-	linenum=$$(${SED} -ne '/^#if __FreeBSD_version/ {=; q;}' \
+	linenum=$$(${SED} -ne '/^#if __FreeBSD_version/ { = ; q ; }' \
 		${WRKSRC}/src/${NVSRC}/nv-freebsd.h) ; ${REINPLACE_CMD} \
 		-e "$$linenum,+2d" ${WRKSRC}/src/${NVSRC}/nv-freebsd.h
 # Adjust Linux headers #include's after FreeBSD src r246085
@@ -213,6 +218,10 @@ post-install: .SILENT
 	${INSTALL_SCRIPT} ${WRKSRC}/obj/nvidia-bug-report.sh \
 		${STAGEDIR}${PREFIX}/bin
 # pkg-plist is already overbloated, so use these hacks instead of PLIST_SUB's
+.if ${NVVERSION:R} < 460
+	${REINPLACE_CMD} -e '/libnvidia-glvkspirv\.so/d ; \
+		/nvidia_icd\.json/d ; /nvidia_layers\.json/d' ${TMPPLIST}
+.endif
 .if ${NVVERSION} >= 304.128 && ${NVVERSION} < 310.019 || ${NVVERSION} >= 361.016
 	${REINPLACE_CMD} -E '/libvdpau(_trace)?\.so/d' ${TMPPLIST}
 .endif

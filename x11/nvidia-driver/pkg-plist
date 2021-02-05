@@ -37,6 +37,8 @@ lib/libnvidia-glcore.so
 lib/libnvidia-glcore.so.1
 lib/libnvidia-glsi.so
 lib/libnvidia-glsi.so.1
+lib/libnvidia-glvkspirv.so
+lib/libnvidia-glvkspirv.so.1
 lib/libnvidia-ml.so
 lib/libnvidia-ml.so.1
 lib/libnvidia-tls.so
@@ -79,6 +81,8 @@ lib32/vdpau/libvdpau_nvidia.so.1
 man/man1/nvidia-smi.1.gz
 @comment share/egl/egl_external_platform.d/10_nvidia_wayland.json
 share/glvnd/egl_vendor.d/10_nvidia.json
+share/vulkan/icd.d/nvidia_icd.json
+share/vulkan/implicit_layer.d/nvidia_layers.json
 %%MODULESDIR%%/drivers/nvidia_drv.so
 %%MODULESDIR%%/extensions/.nvidia/libglx.so
 %%MODULESDIR%%/extensions/.nvidia/libglx.so.1

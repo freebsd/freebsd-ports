@@ -1,0 +1,27 @@
+--- lib/libGLX_nvidia/Makefile.orig
++++ lib/libGLX_nvidia/Makefile
+@@ -16,18 +16,18 @@ EXTRADEPS=	nvidia-application-profiles-rc nvidia_icd.j
+ # look for this file.
+ 
+ nvidia_icd.json:
+-	@mkdir -p ${VKICD_PATH}
++	@mkdir -p ${DESTDIR}${VKICD_PATH}
+ 	@${INSTALL} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \
+ 		${NVIDIA_ROOT}/nvidia_icd.json \
+-		${VKICD_PATH}
+-	@sed -i '' -e "s/__NV_VK_ICD__/lib${LIB}.so/" ${VKICD_PATH}/nvidia_icd.json
++		${DESTDIR}${VKICD_PATH}
++	@sed -i '' -e "s/__NV_VK_ICD__/lib${LIB}.so/" ${DESTDIR}${VKICD_PATH}/nvidia_icd.json
+ 
+ nvidia_layers.json:
+-	@mkdir -p ${VKLAYERS_PATH}
++	@mkdir -p ${DESTDIR}${VKLAYERS_PATH}
+ 	@${INSTALL} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \
+ 		${NVIDIA_ROOT}/nvidia_layers.json \
+-		${VKLAYERS_PATH}
+-	@sed -i '' -e "s/__NV_VK_ICD__/lib${LIB}.so/" ${VKLAYERS_PATH}/nvidia_layers.json
++		${DESTDIR}${VKLAYERS_PATH}
++	@sed -i '' -e "s/__NV_VK_ICD__/lib${LIB}.so/" ${DESTDIR}${VKLAYERS_PATH}/nvidia_layers.json
+ 
+ 
+ nvidia-application-profiles-rc:
