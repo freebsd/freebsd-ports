@@ -3,7 +3,7 @@
 
 PORTNAME=	morla
 PORTVERSION=	0.16.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -24,9 +24,9 @@ XULRUNNER_DESC=	Xulrunner as JavaScript engine
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-gconf=auto
+CONFIGURE_ARGS=	--with-gconf=auto --with-gtkhtml=none
 USES=		gettext gnome libtool pkgconfig
-USE_GNOME=	gconf2 libgtkhtml libxslt
+USE_GNOME=	gconf2 libxslt
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 DESKTOP_ENTRIES="morla" \
