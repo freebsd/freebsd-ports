@@ -4,8 +4,8 @@
  #ifndef _BLD_vmalloc
  #define _BLD_vmalloc	1
  #endif
-+#if defined(__FreeBSD__) && defined(__aarch64__)
-+/* No sbrk on FreeBSD/AArch64 */
++#if defined(__FreeBSD__) && (defined(__aarch64__) || defined(__riscv))
++/* No sbrk on FreeBSD/AArch64 or FreeBSD/RISC-V */
 +#define _BLD_INSTRUMENT	1
 +#endif
  #ifdef _WIN32
