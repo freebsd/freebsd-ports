@@ -1,0 +1,14 @@
+--- makefile.orig	2020-12-13 08:55:50 UTC
++++ makefile
+@@ -24,8 +24,9 @@ metadata.yaml:
+ 	echo "footer: Version $(VERSION)" >> $@
+ 	git log -1 --format=format:'date: %aI' 2>/dev/null | cut -f 1 -d T >> $@
+ 	echo "..." >> $@
+-nvimpager.1: nvimpager.md metadata.yaml
+-	pandoc --standalone --to man --output $@ $^
++nvimpager.1: nvimpager.md
++	#pandoc --standalone --to man --output $@ $^
++	cp $^ $@
+ 
+ test:
+ 	@$(BUSTED) test

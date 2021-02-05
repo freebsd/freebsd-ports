@@ -1,0 +1,17 @@
+Using neovim as a pager to view man pages, git diffs, whatnot with neovim's
+syntax highlighting and mouse support.
+
+The script also has a "cat mode" which will not start up the neovim interface
+but instead print a highlighted version of the file to the terminal. Like cat
+with neovim syntax highlighting! If the input has less lines than the terminal
+cat mode is activated automatically so nvimpager behaves similar to less -F.
+Pager mode and cat mode can be enforced with the options -p and -c
+respectively.
+
+Nvimpager comes with a small set of command line options but you can also use
+all of neovim's command line options. Use nvimpager -h to see the help text.
+The configuration is separated from the users config for neovim. The main
+config file is ~/.config/nvimpager/init.vim. See the manpage for further
+explanation.
+
+WWW: https://github.com/lucc/nvimpager

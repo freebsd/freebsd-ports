@@ -767,6 +767,7 @@
     SUBDIR += nut
     SUBDIR += nut-devel
     SUBDIR += nvclock
+    SUBDIR += nvimpager
     SUBDIR += nvme-cli
     SUBDIR += nvramtool
     SUBDIR += oak

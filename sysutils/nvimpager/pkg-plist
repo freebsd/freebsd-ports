@@ -1,0 +1,4 @@
+bin/nvimpager
+share/man/man1/nvimpager.1.gz
+%%DATADIR%%/runtime/lua/nvimpager.lua
+share/zsh/site-functions/_nvimpager
