@@ -118,7 +118,6 @@
     SUBDIR += p5-Gtk2-Ex-Simple-List
     SUBDIR += p5-Gtk2-Ex-Utils
     SUBDIR += p5-Gtk2-GladeXML
-    SUBDIR += p5-Gtk2-Html2
     SUBDIR += p5-Gtk2-ImageView
     SUBDIR += p5-Gtk2-PathButtonBar
     SUBDIR += p5-Gtk2-TrayIcon
