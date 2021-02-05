@@ -863,7 +863,6 @@
 %%WWWDIR%%/libs/jqplot/plugins/jqplot.categoryAxisRenderer.js
 %%WWWDIR%%/libs/upgradephp/README
 %%WWWDIR%%/libs/upgradephp/upgrade.php
-%%WWWDIR%%/matomo.js
 %%WWWDIR%%/matomo.php
 %%WWWDIR%%/misc/How to install Matomo.html
 %%WWWDIR%%/misc/composer/build-xhprof.sh
@@ -989,7 +988,6 @@
 %%WWWDIR%%/node_modules/visibilityjs/lib/visibility.timers.js
 %%WWWDIR%%/offline-service-worker.js
 %%WWWDIR%%/package-lock.json
-%%WWWDIR%%/piwik.js
 %%WWWDIR%%/piwik.php
 %%WWWDIR%%/plugins/API/API.php
 %%WWWDIR%%/plugins/API/Controller.php
@@ -8672,6 +8670,8 @@
 %%WWWDIR%%/vendor/wikimedia/less.php/lib/Less/Visitor/processExtends.php
 %%WWWDIR%%/vendor/wikimedia/less.php/lib/Less/Visitor/toCSS.php
 %%WWWDIR%%/vendor/wikimedia/less.php/lib/Less/VisitorReplacing.php
+@(%%WWWOWN%%,%%WWWGRP%%,664) %%WWWDIR%%/piwik.js
+@(%%WWWOWN%%,%%WWWGRP%%,664) %%WWWDIR%%/matomo.js
 @dir %%WWWDIR%%/plugins/Contents/screenshots
 @dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp
 @dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp/cache
