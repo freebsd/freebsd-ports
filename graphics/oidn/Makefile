@@ -2,13 +2,10 @@
 
 PORTNAME=	oidn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.4
+DISTVERSION=	1.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.org/:weights # bogus URL to make the framework happy, the fetch uses Git URL below
 DISTFILES=	${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}:weights
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	2651f56ea60cc72c533fcd090679200899c2f54f.patch:-p1 # patch adding #include <QPainterPath>
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel(R) Open Image Denoise library
@@ -25,22 +22,27 @@ BUILD_DEPENDS=	ispc>=1.14.1:devel/ispc
 LIB_DEPENDS=	libtbb.so:devel/tbb
 
 USES=		cmake:noninja compiler:c++11-lang python:build
-USE_GITHUB=	yes
-GH_ACCOUNT=	OpenImageDenoise
-GH_TUPLE=	\
-		OpenImageDenoise:mkl-dnn:603620ba45185e7d91fe112b69287e7d86c64353:m/mkl-dnn
-#		OpenImageDenoise:oidn-weights:08092e46a1961b13b70e48ad80fa19b452bd4c01:w/weights # replaced with git clone in post-fetch because it needs git-lfs
-
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
+USE_GITHUB=	yes
+GH_ACCOUNT=	OpenImageDenoise
+GH_TUPLE=	OpenImageDenoise:mkl-dnn:eb3e967:m/mkl-dnn
 
-CMAKE_ARGS+=	-DTBB_ROOT:STRING=${LOCALBASE} -DTBB_INCLUDE_DIR:STRING=${LOCALBASE}/include -DPYTHON_EXECUTABLE:STRING=${PYTHON_CMD}
+CMAKE_ARGS=	-DTBB_ROOT:STRING=${LOCALBASE} -DTBB_INCLUDE_DIR:STRING=${LOCALBASE}/include -DPYTHON_EXECUTABLE:STRING=${PYTHON_CMD}
+
+PLIST_SUB=	VER="${PORTVERSION}"
+
+OPTIONS_DEFINE=		APPS DOCS
+OPTIONS_DEFAULT=	APPS
+OPTIONS_SUB=		yes
+
+APPS_DESC=		Build example and test apps
+APPS_CMAKE_BOOL=	OIDN_APPS
 
 DOCSDIR=	share/doc/${GH_ACCOUNT}
 
 WEIGHTS_GIT_URL=	https://github.com/OpenImageDenoise/oidn-weights.git
-WEIGHTS_GIT_HASH=	08092e46a1961b13b70e48ad80fa19b452bd4c01
+WEIGHTS_GIT_HASH=	59bad6bb6344f8fb8205772df3f795c2dc72e23b
 
 pre-fetch:
 	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}" ]; then \
