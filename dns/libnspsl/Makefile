@@ -7,7 +7,7 @@ CATEGORIES=	dns
 MASTER_SITES=	https://download.netsurf-browser.org/libs/releases/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	NetSurf public suffix list handling
 
 LICENSE=	MIT
