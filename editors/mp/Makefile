@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mp
-DISTVERSION=	5.45
+DISTVERSION=	5.46
 CATEGORIES=	editors
 
 MAINTAINER=	jhale@FreeBSD.org
