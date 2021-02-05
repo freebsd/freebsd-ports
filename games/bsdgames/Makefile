@@ -17,45 +17,21 @@ USES=		ncurses tar:xz uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	pianojockl
 
-CONFLICTS=	hangman-[0-9]*
+MAKE_ARGS=	BINGRP=${BINGRP}
+MAKE_ENV=	WITHOUT_WERROR=yes
 
 CFLAGS+=	-fcommon
-MAKE_ENV=	NO_WERROR=1
-MAKE_ARGS=	BINGRP=${BINGRP}
 
-# contain /usr/share/games
-SHAREPATH_FILES=atc/atc.6 \
-		atc/pathnames.h \
-		boggle/boggle/bog.h \
-		boggle/boggle/boggle.6 \
-		cribbage/cribbage.6 \
-		cribbage/pathnames.h \
-		fish/pathnames.h \
-		larn/pathnames.h \
-		quiz/datfiles/index \
-		quiz/pathnames.h \
-		quiz/quiz.6 \
-		wump/pathnames.h
+CONFLICTS=	hangman-[0-9]*
 
-# contain /usr/games/*
-GAMESPATH_FILES=backgammon/backgammon/backgammon.6 \
-		backgammon/common_source/init.c \
-		canfield/canfield/canfield.6 \
-		cribbage/cribbage.6 \
-		hunt/hunt/hunt.6 \
-		hunt/huntd/huntd.6 \
-		phantasia/pathnames.h \
-		wargames/wargames.sh
+INFO=		wump
+INFO_PATH=	share/games
 
-post-patch:
-	@for f in ${SHAREPATH_FILES}; do \
-		${REINPLACE_CMD} -e 's|/usr/share/games|${PREFIX}/share/games|g' \
-			${WRKSRC}/$${f}; \
-	done
-	@for f in ${GAMESPATH_FILES}; do \
-		${REINPLACE_CMD} -e 's|/usr/games|${PREFIX}/bin|g' \
-			${WRKSRC}/$${f}; \
-	done
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300134
+MAKE_ARGS+=	NO_WERROR=yes
+.endif
 
 pre-install:
 .for d in atc larn quiz.db boggle
@@ -75,4 +51,4 @@ post-install:
 	@${TOUCH} ${STAGEDIR}/var/games/atc_score
 	@${FIND} ${STAGEDIR}/var/games -type f -exec ${MV} {} {}.sample \;
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

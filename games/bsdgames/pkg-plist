@@ -118,7 +118,6 @@ share/games/quiz.db/spell
 share/games/quiz.db/state
 share/games/quiz.db/trek
 share/games/quiz.db/ucc
-share/games/wump.info
 @sample(,games,0664) /var/games/atc_score.sample
 @sample(,games,0664) /var/games/battlestar.log.sample
 @sample(,games,0664) /var/games/cfscores.sample
