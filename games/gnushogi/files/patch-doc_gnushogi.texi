@@ -1,5 +1,5 @@
---- doc/gnushogi.texi.orig	2014-02-17 21:26:59.000000000 +0100
-+++ doc/gnushogi.texi	2014-02-19 20:38:54.000000000 +0100
+--- doc/gnushogi.texi.orig	2014-02-17 20:26:59 UTC
++++ doc/gnushogi.texi
 @@ -3,6 +3,10 @@
  @c % **  Start of header.
  @setfilename gnushogi.info
