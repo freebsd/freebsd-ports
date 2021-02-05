@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	inxi
-DISTVERSION=	3.2.02-2
+DISTVERSION=	3.3.00-1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
