@@ -1,4 +1,4 @@
---- res/xsetup.sh.orig	2019-11-13 13:46:11 UTC
+--- res/xsetup.sh.orig	2020-02-03 07:51:05 UTC
 +++ res/xsetup.sh
 @@ -55,8 +55,8 @@ esac
  [ -f $HOME/.xprofile ] && . $HOME/.xprofile
