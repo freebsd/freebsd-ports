@@ -287,8 +287,8 @@ share/applications/visualvm.desktop
 %%DATADIR%%/visualvm/lib/deployed/jdk16/windows/profilerinterface.map
 %%DATADIR%%/visualvm/lib/jfluid-server-15.jar
 %%DATADIR%%/visualvm/lib/jfluid-server.jar
-%%DATADIR%%/visualvm/modules/ext/common-7.1.0-SNAPSHOT.jar
-%%DATADIR%%/visualvm/modules/ext/flightrecorder-7.1.0-SNAPSHOT.jar
+%%DATADIR%%/visualvm/modules/ext/common-7.1.1.jar
+%%DATADIR%%/visualvm/modules/ext/flightrecorder-7.1.1.jar
 %%DATADIR%%/visualvm/modules/ext/stagent.jar
 %%DATADIR%%/visualvm/modules/locale/org-netbeans-core-windows_visualvm.jar
 %%DATADIR%%/visualvm/modules/locale/org-netbeans-core_visualvm.jar
