@@ -1,0 +1,10 @@
+include/decimal.hh
+include/mpdecimal.h
+lib/libmpdec++.a
+lib/libmpdec++.so
+lib/libmpdec++.so.3
+lib/libmpdec++.so.2.5.1
+lib/libmpdec.a
+lib/libmpdec.so
+lib/libmpdec.so.3
+lib/libmpdec.so.2.5.1

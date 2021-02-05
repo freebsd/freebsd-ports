@@ -420,6 +420,7 @@
     SUBDIR += moab
     SUBDIR += moo
     SUBDIR += mpc
+    SUBDIR += mpdecimal
     SUBDIR += mpexpr
     SUBDIR += mpfi
     SUBDIR += mpfr

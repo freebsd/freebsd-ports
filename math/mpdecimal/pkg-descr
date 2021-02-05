@@ -1,0 +1,16 @@
+libmpdec is a complete C implementation of the General Decimal Arithmetic
+Specification.  The specification, written by Mike Cowlishaw from IBM,
+defines a general purpose arbitrary precision data type together with
+rigorously specified functions and rounding behavior.  As described in the
+scope section of the specification, libmpdec will - with minor restrictions -
+also conform to the IEEE 754-2008 Standard for Floating-Point Arithmetic,
+provided that the appropriate context parameters are set.
+
+libmpdec++ is a complete C++ implementation of the General Decimal Arithmetic
+Specification. libmpdec++ is mostly a header library around libmpdec.  The
+library frees users from manual memory management and has an easy API with
+inline operators.  libmpdec++ has a thread local context for inline operators
+and other functions that use the implicit context.
+
+
+WWW: https://www.bytereef.org/mpdecimal/index.html
