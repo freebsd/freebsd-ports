@@ -18,4 +18,9 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 GH_ACCOUNT=	mortie
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
 
+.if !exists(/usr/include/omp.h)
+# XXX ports/199603: LLVM openmp in base doesn't support armv6, armv7 yet
+USE_GCC=	yes
+.endif
+
 .include "${MASTERDIR}/Makefile"
