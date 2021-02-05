@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libunit
-PORTVERSION=	1.22.0
+PORTVERSION=	${UNIT_VERSION}
 MASTER_SITES?=	https://unit.nginx.org/download/
 DISTNAME=	unit-${PORTVERSION}
 
@@ -43,4 +43,5 @@ do-build:
 do-install:
 	${MAKE} -C ${WRKSRC} libunit-install DESTDIR=${STAGEDIR}
 
+.include "../../www/unit/version.mk"
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	unit
-PORTVERSION=	1.22.0
+PORTVERSION=	${UNIT_VERSION}
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
@@ -121,4 +121,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules
 .endif
 
+.include "../../www/unit/version.mk"
 .include <bsd.port.mk>
