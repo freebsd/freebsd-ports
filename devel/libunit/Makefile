@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libunit
-PORTVERSION=	1.21.0
-PORTREVISION=	1
+PORTVERSION=	1.22.0
 MASTER_SITES?=	https://unit.nginx.org/download/
 DISTNAME=	unit-${PORTVERSION}
 
