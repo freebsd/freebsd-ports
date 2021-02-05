@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fusefs-libs3
-DISTVERSION=	3.10.1
-PORTREVISION=	1
+DISTVERSION=	3.10.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/libfuse/libfuse/releases/download/fuse-${DISTVERSION}/
 DISTNAME=	fuse-${DISTVERSION}
