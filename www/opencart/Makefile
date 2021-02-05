@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencart
-PORTVERSION=	3.0.3.2
-PORTREVISION=	1
+PORTVERSION=	3.0.3.7
 CATEGORIES=	www misc
 MASTER_SITES=	https://github.com/opencart/opencart/releases/download/${PORTVERSION}/
 
