@@ -5,7 +5,7 @@
  if (CMAKE_SYSTEM_NAME MATCHES "Linux" OR CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
      find_package(PkgConfig)
 -    pkg_check_modules(NCURSES REQUIRED ncursesw panelw)
-+    pkg_check_modules(NCURSES REQUIRED ncurses panel)
++    pkg_check_modules(NCURSES ncurses panel)
      target_link_libraries(musikcube ${musikcube_LINK_LIBS} ${NCURSES_LIBRARIES} musikcore)
  elseif (CMAKE_SYSTEM_NAME MATCHES "Darwin")
      if (${LINK_STATICALLY} MATCHES "true")
