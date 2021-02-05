@@ -1,5 +1,5 @@
---- router/src/http/src/tls_server_context.cc.orig	2019-09-20 08:30:51 UTC
-+++ router/src/http/src/tls_server_context.cc
+--- router/src/harness/src/tls_server_context.cc.orig	2019-09-20 08:30:51 UTC
++++ router/src/harness/src/tls_server_context.cc
 @@ -166,7 +166,8 @@ void TlsServerContext::init_tmp_dh(const std::string &
      }
  

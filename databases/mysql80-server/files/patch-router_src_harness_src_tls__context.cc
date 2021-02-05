@@ -1,5 +1,5 @@
---- router/src/http/src/tls_context.cc.orig	2019-09-20 08:30:51 UTC
-+++ router/src/http/src/tls_context.cc
+--- router/src/harness/src/tls_context.cc.orig	2019-09-20 08:30:51 UTC
++++ router/src/harness/src/tls_context.cc
 @@ -91,7 +91,7 @@ static constexpr int o11x_version(TlsVersion version) 
        return TLS1_1_VERSION;
      case TlsVersion::TLS_1_2:

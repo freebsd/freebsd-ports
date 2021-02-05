@@ -33,3 +33,30 @@
    }
    return(dh);
  }
+@@ -503,7 +501,7 @@ new_VioSSLFd(const char *key_file, const char *cert_fi
+   struct st_VioSSLFd *ssl_fd;
+   /* MySQL 5.7 supports TLS up to v1.2, explicitly disable TLSv1.3. */
+   long ssl_ctx_options= SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3
+-#ifdef HAVE_TLSv13
++#if defined(HAVE_TLSv13) && !defined(LIBRESSL_VERSION_NUMBER)
+                         | SSL_OP_NO_TLSv1_3
+ #endif /* HAVE_TLSv13 */
+                         ;
+@@ -536,7 +534,7 @@ new_VioSSLFd(const char *key_file, const char *cert_fi
+                     SSL_OP_NO_TLSv1 |
+                     SSL_OP_NO_TLSv1_1
+                     | SSL_OP_NO_TLSv1_2
+-#ifdef HAVE_TLSv13
++#if defined(HAVE_TLSv13) && !defined(LIBRESSL_VERSION_NUMBER)
+                     | SSL_OP_NO_TLSv1_3
+ #endif /* HAVE_TLSv13 */
+                     | SSL_OP_NO_TICKET
+@@ -559,7 +557,7 @@ new_VioSSLFd(const char *key_file, const char *cert_fi
+ 
+   SSL_CTX_set_options(ssl_fd->ssl_context, ssl_ctx_options);
+ 
+-#ifdef HAVE_TLSv13
++#if defined(HAVE_TLSv13) && !defined(LIBRESSL_VERSION_NUMBER)
+   /*
+     MySQL 5.7 doesn't support TLSv1.3 - set empty TLSv1.3 ciphersuites.
+   */
