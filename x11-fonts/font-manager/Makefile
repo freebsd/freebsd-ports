@@ -38,6 +38,9 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext-runtime
 NLS_MESON_TRUE=	enable-nls
 
+# flatpak specific changes only
+PORTSCOUT=	skipv:0.8.4-1
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s|\(find_installation.*\)python3|\1${PYTHON_CMD}|" \
