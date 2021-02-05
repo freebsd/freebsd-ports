@@ -22,4 +22,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+# depends on https://pypi.org/project/hidraw which uses <linux/hidraw.h>
+PORTSCOUT=	skipv:1.5.0
+
 .include <bsd.port.mk>
