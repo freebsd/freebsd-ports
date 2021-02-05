@@ -2,7 +2,7 @@
 
 PORTNAME=	pmenu
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.3
+DISTVERSION=	2.2.0
 CATEGORIES=	x11
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		localbase xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	phillbush
-USE_XORG=	x11 xext xft xinerama
+USE_XORG=	x11 xext xft xinerama xrender
 
 MAKE_ARGS=	FREETYPEINC="${LOCALBASE}/include/freetype2" \
 		PREFIX="${PREFIX}"
