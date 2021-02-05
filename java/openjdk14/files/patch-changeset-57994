@@ -1,0 +1,43 @@
+changeset:   57994:6925fca95959
+user:        qpzhang
+date:        Tue Feb 04 21:27:10 2020 +0800
+summary:     8238380: java.base/unix/native/libjava/childproc.c "multiple definition" link errors with GCC10
+
+diff -r 8f6ffa575f63 -r 6925fca95959 src/java.base/unix/native/libjava/childproc.c
+--- src/java.base/unix/native/libjava/childproc.c	Tue Feb 11 11:17:37 2020 +0800
++++ src/java.base/unix/native/libjava/childproc.c	Tue Feb 04 21:27:10 2020 +0800
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2013, 2019, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2013, 2020, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -34,6 +34,7 @@
+ 
+ #include "childproc.h"
+ 
++const char * const *parentPathv;
+ 
+ ssize_t
+ restartableWrite(int fd, const void *buf, size_t count)
+diff -r 8f6ffa575f63 -r 6925fca95959 src/java.base/unix/native/libjava/childproc.h
+--- src/java.base/unix/native/libjava/childproc.h	Tue Feb 11 11:17:37 2020 +0800
++++ src/java.base/unix/native/libjava/childproc.h	Tue Feb 04 21:27:10 2020 +0800
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2013, 2015, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2013, 2020, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -126,7 +126,7 @@
+  * The cached and split version of the JDK's effective PATH.
+  * (We don't support putenv("PATH=...") in native code)
+  */
+-const char * const *parentPathv;
++extern const char * const *parentPathv;
+ 
+ ssize_t restartableWrite(int fd, const void *buf, size_t count);
+ int restartableDup2(int fd_from, int fd_to);
+
