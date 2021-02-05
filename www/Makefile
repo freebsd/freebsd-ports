@@ -287,6 +287,7 @@
     SUBDIR += kf5-kjsembed
     SUBDIR += kiwix-tools
     SUBDIR += kohana
+    SUBDIR += lagrange
     SUBDIR += larbin
     SUBDIR += libapreq2
     SUBDIR += libdom
