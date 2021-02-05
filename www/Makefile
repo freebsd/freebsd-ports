@@ -2158,7 +2158,6 @@
     SUBDIR += suphp
     SUBDIR += surf
     SUBDIR += swiggle
-    SUBDIR += syndigator
     SUBDIR += tclhttpd
     SUBDIR += tclwebtest
     SUBDIR += tdiary
