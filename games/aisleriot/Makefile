@@ -23,11 +23,15 @@ CONFLICTS_INSTALL=	sol-[0-9]*
 PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext meson gnome pkgconfig \
-		xorg
+		python:build,3.6+ shebangfix xorg
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
 USE_XORG=	x11
 
 MESON_ARGS=	-Dtheme_kde=false
+SHEBANG_FILES=	data/icons/meson_updateiconcache.py \
+		data/meson_desktopfile.py \
+		src/lib/meson_compileschemas.py \
+		src/meson_gconf.py
 
 GLIB_SCHEMAS=	org.gnome.Patience.WindowState.gschema.xml
 
