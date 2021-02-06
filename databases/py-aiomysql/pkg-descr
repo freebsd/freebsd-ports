@@ -1,0 +1,10 @@
+aiomysql is a "driver" for accessing a MySQL database from the asyncio
+(PEP-3156/tulip) framework. It depends on and reuses most parts of PyMySQL .
+aiomysql tries to be like awesome aiopg library and preserve same api, look and
+feel.
+
+Internally aiomysql is copy of PyMySQL, underlying io calls switched to async,
+basically yield from and asyncio.coroutine added in proper places)). sqlalchemy
+support ported from aiopg.
+
+WWW: https://github.com/aio-libs/aiomysql
