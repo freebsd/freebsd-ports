@@ -10825,6 +10825,7 @@
 %%WWWDIR%%/config/routes/sherlock.rb
 %%WWWDIR%%/config/routes/sidekiq.rb
 %%WWWDIR%%/config/routes/snippets.rb
+%%WWWDIR%%/config/routes/unmatched_project.rb
 %%WWWDIR%%/config/routes/uploads.rb
 %%WWWDIR%%/config/routes/user.rb
 %%WWWDIR%%/config/routes/wiki.rb
@@ -31071,6 +31072,7 @@
 %%WWWDIR%%/spec/support/matchers/pagination_matcher.rb
 %%WWWDIR%%/spec/support/matchers/policy_matchers.rb
 %%WWWDIR%%/spec/support/matchers/query_matcher.rb
+%%WWWDIR%%/spec/support/matchers/route_to_route_not_found_matcher.rb
 %%WWWDIR%%/spec/support/matchers/satisfy_matchers.rb
 %%WWWDIR%%/spec/support/matchers/schema_matcher.rb
 %%WWWDIR%%/spec/support/matchers/security_header_matcher.rb
