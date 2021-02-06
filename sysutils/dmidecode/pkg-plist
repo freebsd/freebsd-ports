@@ -1,8 +1,4 @@
 etc/periodic/daily/dmidecode
-%%X86%%man/man8/biosdecode.8.gz
-man/man8/dmidecode.8.gz
-%%X86%%man/man8/ownership.8.gz
-%%X86%%man/man8/vpddecode.8.gz
 %%X86%%sbin/biosdecode
 sbin/dmidecode
 %%X86%%sbin/ownership
@@ -10,3 +6,7 @@ sbin/dmidecode
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%X86%%share/man/man8/biosdecode.8.gz
+share/man/man8/dmidecode.8.gz
+%%X86%%share/man/man8/ownership.8.gz
+%%X86%%share/man/man8/vpddecode.8.gz

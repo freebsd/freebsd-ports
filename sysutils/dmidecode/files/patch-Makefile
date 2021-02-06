@@ -21,8 +21,7 @@
 -prefix  = /usr/local
 +prefix  = $(PREFIX)
  sbindir = $(prefix)/sbin
--mandir  = $(prefix)/share/man
-+mandir  = $(MANPREFIX)/man
+ mandir  = $(prefix)/share/man
  man8dir = $(mandir)/man8
  docdir  = $(prefix)/share/doc/dmidecode
  
