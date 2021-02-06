@@ -1202,6 +1202,7 @@ wine-proton/lib/wine/fakedlls/msvcp100.dll
 wine-proton/lib/wine/fakedlls/msvcp110.dll
 wine-proton/lib/wine/fakedlls/msvcp120_app.dll
 wine-proton/lib/wine/fakedlls/msvcp120.dll
+wine-proton/lib/wine/fakedlls/msvcp140_1.dll
 wine-proton/lib/wine/fakedlls/msvcp140.dll
 wine-proton/lib/wine/fakedlls/msvcp60.dll
 wine-proton/lib/wine/fakedlls/msvcp70.dll
@@ -1868,6 +1869,7 @@ wine-proton/lib/wine/msvcp100.dll.so
 wine-proton/lib/wine/msvcp110.dll.so
 wine-proton/lib/wine/msvcp120_app.dll.so
 wine-proton/lib/wine/msvcp120.dll.so
+wine-proton/lib/wine/msvcp140_1.dll.so
 wine-proton/lib/wine/msvcp140.dll.so
 wine-proton/lib/wine/msvcp60.dll.so
 wine-proton/lib/wine/msvcp70.dll.so

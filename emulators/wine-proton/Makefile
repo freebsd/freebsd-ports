@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine-proton
-DISTVERSION=	5.13-2
+DISTVERSION=	5.13-4
 CATEGORIES=	emulators
 
 MAINTAINER=	iwtcex@gmail.com
@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
-		prelink:sysutils/prelink
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 LIB_DEPENDS=	libFAudio.so:audio/faudio \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -25,12 +24,12 @@ LIB_DEPENDS=	libFAudio.so:audio/faudio \
 		libvulkan.so:graphics/vulkan-loader \
 		libxml2.so:textproc/libxml2
 
-USES=		bison desktop-file-utils gettext-runtime gl gmake jpeg localbase openal pkgconfig sdl shebangfix tar:xz xorg
+USES=		bison desktop-file-utils gettext-runtime gl gmake gnome jpeg localbase openal pkgconfig sdl shebangfix tar:xz xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ValveSoftware
 GH_PROJECT=	wine
-GH_TAGNAME=	d6646652a2f5f85d51fab5df3383f04bef713a18
+GH_TAGNAME=	7f9f4285c2dfb81234c01996f6d33fae07701629
 
 USE_GCC=	yes
 USE_GL=		glu
