@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-bigtable-v2
-PORTVERSION=	0.1.4
+PORTVERSION=	0.2.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
