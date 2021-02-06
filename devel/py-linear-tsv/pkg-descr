@@ -1,0 +1,11 @@
+Linear TSV is a line-oriented, portable tabular data format. Tabular data --
+rows of tuples, each of the same length -- is commonly stored as CSV and is the
+lingua franca of spreadsheets, databases and analysis tools.
+
+CSV is almost but not quite line-oriented, because newlines are quoted, not
+escaped. In the TSV format presented here, escape codes are used for newlines
+and tabs in field data, allowing naive filtering with line-oriented shell tools
+like sort, fgrep and cut to work as expected. In all of its details, the format
+derives from the TEXT serialization mode of Postgres and MySQL.
+
+WWW: https://github.com/solidsnack/tsv
