@@ -77,6 +77,34 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3e01aad2-680e-11eb-83e2-e09467587c17">
+    <topic>chromium -- heap buffer overflow in V8</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>88.0.4324.150</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/02/stable-channel-update-for-desktop_4.html">
+	  <p>[1170176] High CVE-2021-21148: Heap buffer overflow in V8.
+	    Reported by Mattias Buelens on 2021-01-24. Google is aware of
+	    reports that an exploit for CVE-2021-21148 exists in the wild.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21148</cvename>
+      <url>https://chromereleases.googleblog.com/2021/02/stable-channel-update-for-desktop_4.html</url>
+    </references>
+    <dates>
+      <discovery>2021-02-04</discovery>
+      <entry>2021-02-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="479fdfda-6659-11eb-83e2-e09467587c17">
     <topic>www/chromium -- multiple vulnerabilities</topic>
     <affects>
