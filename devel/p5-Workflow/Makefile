@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Workflow
-PORTVERSION=	1.50
+PORTVERSION=	1.51
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -41,17 +41,12 @@ USE_PERL5=	modbuild
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} struct/\* ${STAGEDIR}${DATADIR}/)
 	@${ECHO_MSG} "===> SQL data structures installed in ${DATADIR}."
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/ && ${CP} -R README Changes doc ${STAGEDIR}${DOCSDIR}/)
-	@${ECHO_MSG} "===> Docs are installed in ${DOCSDIR}."
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
