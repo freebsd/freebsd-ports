@@ -115,7 +115,6 @@ man/man6/sol.6.gz
 %%DATADIR%%/sounds/slide.ogg
 %%DATADIR%%/sounds/splat.ogg
 %%DATADIR%%/sounds/victory.ogg
-share/metainfo/sol.appdata.xml
 share/applications/sol.desktop
 share/help/C/aisleriot/accordion.xml
 share/help/C/aisleriot/agnes.xml
@@ -240,6 +239,8 @@ share/help/ca/aisleriot/eight_off.xml
 share/help/ca/aisleriot/elevator.xml
 share/help/ca/aisleriot/eliminator.xml
 share/help/ca/aisleriot/escalator.xml
+share/help/ca/aisleriot/figures/camelot-goal.png
+share/help/ca/aisleriot/figures/clock-rules.png
 share/help/ca/aisleriot/first_law.xml
 share/help/ca/aisleriot/fortress.xml
 share/help/ca/aisleriot/fortunes.xml
@@ -333,6 +334,8 @@ share/help/cs/aisleriot/eight_off.xml
 share/help/cs/aisleriot/elevator.xml
 share/help/cs/aisleriot/eliminator.xml
 share/help/cs/aisleriot/escalator.xml
+share/help/cs/aisleriot/figures/camelot-goal.png
+share/help/cs/aisleriot/figures/clock-rules.png
 share/help/cs/aisleriot/first_law.xml
 share/help/cs/aisleriot/fortress.xml
 share/help/cs/aisleriot/fortunes.xml
@@ -426,6 +429,8 @@ share/help/de/aisleriot/eight_off.xml
 share/help/de/aisleriot/elevator.xml
 share/help/de/aisleriot/eliminator.xml
 share/help/de/aisleriot/escalator.xml
+share/help/de/aisleriot/figures/camelot-goal.png
+share/help/de/aisleriot/figures/clock-rules.png
 share/help/de/aisleriot/first_law.xml
 share/help/de/aisleriot/fortress.xml
 share/help/de/aisleriot/fortunes.xml
@@ -519,6 +524,8 @@ share/help/el/aisleriot/eight_off.xml
 share/help/el/aisleriot/elevator.xml
 share/help/el/aisleriot/eliminator.xml
 share/help/el/aisleriot/escalator.xml
+share/help/el/aisleriot/figures/camelot-goal.png
+share/help/el/aisleriot/figures/clock-rules.png
 share/help/el/aisleriot/first_law.xml
 share/help/el/aisleriot/fortress.xml
 share/help/el/aisleriot/fortunes.xml
@@ -612,6 +619,8 @@ share/help/en_GB/aisleriot/eight_off.xml
 share/help/en_GB/aisleriot/elevator.xml
 share/help/en_GB/aisleriot/eliminator.xml
 share/help/en_GB/aisleriot/escalator.xml
+share/help/en_GB/aisleriot/figures/camelot-goal.png
+share/help/en_GB/aisleriot/figures/clock-rules.png
 share/help/en_GB/aisleriot/first_law.xml
 share/help/en_GB/aisleriot/fortress.xml
 share/help/en_GB/aisleriot/fortunes.xml
@@ -705,6 +714,8 @@ share/help/es/aisleriot/eight_off.xml
 share/help/es/aisleriot/elevator.xml
 share/help/es/aisleriot/eliminator.xml
 share/help/es/aisleriot/escalator.xml
+share/help/es/aisleriot/figures/camelot-goal.png
+share/help/es/aisleriot/figures/clock-rules.png
 share/help/es/aisleriot/first_law.xml
 share/help/es/aisleriot/fortress.xml
 share/help/es/aisleriot/fortunes.xml
@@ -798,6 +809,8 @@ share/help/eu/aisleriot/eight_off.xml
 share/help/eu/aisleriot/elevator.xml
 share/help/eu/aisleriot/eliminator.xml
 share/help/eu/aisleriot/escalator.xml
+share/help/eu/aisleriot/figures/camelot-goal.png
+share/help/eu/aisleriot/figures/clock-rules.png
 share/help/eu/aisleriot/first_law.xml
 share/help/eu/aisleriot/fortress.xml
 share/help/eu/aisleriot/fortunes.xml
@@ -891,6 +904,8 @@ share/help/fr/aisleriot/eight_off.xml
 share/help/fr/aisleriot/elevator.xml
 share/help/fr/aisleriot/eliminator.xml
 share/help/fr/aisleriot/escalator.xml
+share/help/fr/aisleriot/figures/camelot-goal.png
+share/help/fr/aisleriot/figures/clock-rules.png
 share/help/fr/aisleriot/first_law.xml
 share/help/fr/aisleriot/fortress.xml
 share/help/fr/aisleriot/fortunes.xml
@@ -984,6 +999,8 @@ share/help/gl/aisleriot/eight_off.xml
 share/help/gl/aisleriot/elevator.xml
 share/help/gl/aisleriot/eliminator.xml
 share/help/gl/aisleriot/escalator.xml
+share/help/gl/aisleriot/figures/camelot-goal.png
+share/help/gl/aisleriot/figures/clock-rules.png
 share/help/gl/aisleriot/first_law.xml
 share/help/gl/aisleriot/fortress.xml
 share/help/gl/aisleriot/fortunes.xml
@@ -1077,6 +1094,8 @@ share/help/hu/aisleriot/eight_off.xml
 share/help/hu/aisleriot/elevator.xml
 share/help/hu/aisleriot/eliminator.xml
 share/help/hu/aisleriot/escalator.xml
+share/help/hu/aisleriot/figures/camelot-goal.png
+share/help/hu/aisleriot/figures/clock-rules.png
 share/help/hu/aisleriot/first_law.xml
 share/help/hu/aisleriot/fortress.xml
 share/help/hu/aisleriot/fortunes.xml
@@ -1142,6 +1161,101 @@ share/help/hu/aisleriot/will_o_the_wisp.xml
 share/help/hu/aisleriot/yield.xml
 share/help/hu/aisleriot/yukon.xml
 share/help/hu/aisleriot/zebra.xml
+share/help/id/aisleriot/accordion.xml
+share/help/id/aisleriot/agnes.xml
+share/help/id/aisleriot/athena.xml
+share/help/id/aisleriot/auld_lang_syne.xml
+share/help/id/aisleriot/aunt_mary.xml
+share/help/id/aisleriot/backbone.xml
+share/help/id/aisleriot/bakers_dozen.xml
+share/help/id/aisleriot/bakers_game.xml
+share/help/id/aisleriot/bear_river.xml
+share/help/id/aisleriot/beleaguered_castle.xml
+share/help/id/aisleriot/block_ten.xml
+share/help/id/aisleriot/bristol.xml
+share/help/id/aisleriot/camelot.xml
+share/help/id/aisleriot/canfield.xml
+share/help/id/aisleriot/carpet.xml
+share/help/id/aisleriot/chessboard.xml
+share/help/id/aisleriot/clock.xml
+share/help/id/aisleriot/cover.xml
+share/help/id/aisleriot/cruel.xml
+share/help/id/aisleriot/definitions.xml
+share/help/id/aisleriot/diamond_mine.xml
+share/help/id/aisleriot/doublets.xml
+share/help/id/aisleriot/eagle-wing.xml
+share/help/id/aisleriot/easthaven.xml
+share/help/id/aisleriot/eight_off.xml
+share/help/id/aisleriot/elevator.xml
+share/help/id/aisleriot/eliminator.xml
+share/help/id/aisleriot/escalator.xml
+share/help/id/aisleriot/figures/camelot-goal.png
+share/help/id/aisleriot/figures/clock-rules.png
+share/help/id/aisleriot/first_law.xml
+share/help/id/aisleriot/fortress.xml
+share/help/id/aisleriot/fortunes.xml
+share/help/id/aisleriot/forty_thieves.xml
+share/help/id/aisleriot/fourteen.xml
+share/help/id/aisleriot/freecell.xml
+share/help/id/aisleriot/gaps.xml
+share/help/id/aisleriot/gay_gordons.xml
+share/help/id/aisleriot/giant.xml
+share/help/id/aisleriot/glenwood.xml
+share/help/id/aisleriot/gold_mine.xml
+share/help/id/aisleriot/golf.xml
+share/help/id/aisleriot/gypsy.xml
+share/help/id/aisleriot/hamilton.xml
+share/help/id/aisleriot/helsinki.xml
+share/help/id/aisleriot/hopscotch.xml
+share/help/id/aisleriot/index.docbook
+share/help/id/aisleriot/isabel.xml
+share/help/id/aisleriot/jamestown.xml
+share/help/id/aisleriot/jumbo.xml
+share/help/id/aisleriot/kansas.xml
+share/help/id/aisleriot/king_albert.xml
+share/help/id/aisleriot/kings_audience.xml
+share/help/id/aisleriot/klondike.xml
+share/help/id/aisleriot/labyrinth.xml
+share/help/id/aisleriot/lady_jane.xml
+share/help/id/aisleriot/legal.xml
+share/help/id/aisleriot/maze.xml
+share/help/id/aisleriot/monte_carlo.xml
+share/help/id/aisleriot/napoleons_tomb.xml
+share/help/id/aisleriot/neighbor.xml
+share/help/id/aisleriot/odessa.xml
+share/help/id/aisleriot/osmosis.xml
+share/help/id/aisleriot/peek.xml
+share/help/id/aisleriot/pileon.xml
+share/help/id/aisleriot/plait.xml
+share/help/id/aisleriot/poker.xml
+share/help/id/aisleriot/quatorze.xml
+share/help/id/aisleriot/royal_east.xml
+share/help/id/aisleriot/saratoga.xml
+share/help/id/aisleriot/scorpion.xml
+share/help/id/aisleriot/scuffle.xml
+share/help/id/aisleriot/seahaven.xml
+share/help/id/aisleriot/sir_tommy.xml
+share/help/id/aisleriot/spider.xml
+share/help/id/aisleriot/spider_three_decks.xml
+share/help/id/aisleriot/spiderette.xml
+share/help/id/aisleriot/straight_up.xml
+share/help/id/aisleriot/streets_and_alleys.xml
+share/help/id/aisleriot/ten_across.xml
+share/help/id/aisleriot/terrace.xml
+share/help/id/aisleriot/thieves.xml
+share/help/id/aisleriot/thirteen.xml
+share/help/id/aisleriot/thumb_and_pouch.xml
+share/help/id/aisleriot/treize.xml
+share/help/id/aisleriot/triple_peaks.xml
+share/help/id/aisleriot/union_square.xml
+share/help/id/aisleriot/valentine.xml
+share/help/id/aisleriot/wall.xml
+share/help/id/aisleriot/westhaven.xml
+share/help/id/aisleriot/whitehead.xml
+share/help/id/aisleriot/will_o_the_wisp.xml
+share/help/id/aisleriot/yield.xml
+share/help/id/aisleriot/yukon.xml
+share/help/id/aisleriot/zebra.xml
 share/help/oc/aisleriot/accordion.xml
 share/help/oc/aisleriot/agnes.xml
 share/help/oc/aisleriot/athena.xml
@@ -1170,6 +1284,8 @@ share/help/oc/aisleriot/eight_off.xml
 share/help/oc/aisleriot/elevator.xml
 share/help/oc/aisleriot/eliminator.xml
 share/help/oc/aisleriot/escalator.xml
+share/help/oc/aisleriot/figures/camelot-goal.png
+share/help/oc/aisleriot/figures/clock-rules.png
 share/help/oc/aisleriot/first_law.xml
 share/help/oc/aisleriot/fortress.xml
 share/help/oc/aisleriot/fortunes.xml
@@ -1263,6 +1379,8 @@ share/help/pt_BR/aisleriot/eight_off.xml
 share/help/pt_BR/aisleriot/elevator.xml
 share/help/pt_BR/aisleriot/eliminator.xml
 share/help/pt_BR/aisleriot/escalator.xml
+share/help/pt_BR/aisleriot/figures/camelot-goal.png
+share/help/pt_BR/aisleriot/figures/clock-rules.png
 share/help/pt_BR/aisleriot/first_law.xml
 share/help/pt_BR/aisleriot/fortress.xml
 share/help/pt_BR/aisleriot/fortunes.xml
@@ -1356,6 +1474,8 @@ share/help/ru/aisleriot/eight_off.xml
 share/help/ru/aisleriot/elevator.xml
 share/help/ru/aisleriot/eliminator.xml
 share/help/ru/aisleriot/escalator.xml
+share/help/ru/aisleriot/figures/camelot-goal.png
+share/help/ru/aisleriot/figures/clock-rules.png
 share/help/ru/aisleriot/first_law.xml
 share/help/ru/aisleriot/fortress.xml
 share/help/ru/aisleriot/fortunes.xml
@@ -1449,6 +1569,8 @@ share/help/sl/aisleriot/eight_off.xml
 share/help/sl/aisleriot/elevator.xml
 share/help/sl/aisleriot/eliminator.xml
 share/help/sl/aisleriot/escalator.xml
+share/help/sl/aisleriot/figures/camelot-goal.png
+share/help/sl/aisleriot/figures/clock-rules.png
 share/help/sl/aisleriot/first_law.xml
 share/help/sl/aisleriot/fortress.xml
 share/help/sl/aisleriot/fortunes.xml
@@ -1542,6 +1664,8 @@ share/help/sr/aisleriot/eight_off.xml
 share/help/sr/aisleriot/elevator.xml
 share/help/sr/aisleriot/eliminator.xml
 share/help/sr/aisleriot/escalator.xml
+share/help/sr/aisleriot/figures/camelot-goal.png
+share/help/sr/aisleriot/figures/clock-rules.png
 share/help/sr/aisleriot/first_law.xml
 share/help/sr/aisleriot/fortress.xml
 share/help/sr/aisleriot/fortunes.xml
@@ -1635,6 +1759,8 @@ share/help/sr@latin/aisleriot/eight_off.xml
 share/help/sr@latin/aisleriot/elevator.xml
 share/help/sr@latin/aisleriot/eliminator.xml
 share/help/sr@latin/aisleriot/escalator.xml
+share/help/sr@latin/aisleriot/figures/camelot-goal.png
+share/help/sr@latin/aisleriot/figures/clock-rules.png
 share/help/sr@latin/aisleriot/first_law.xml
 share/help/sr@latin/aisleriot/fortress.xml
 share/help/sr@latin/aisleriot/fortunes.xml
@@ -1728,6 +1854,8 @@ share/help/sv/aisleriot/eight_off.xml
 share/help/sv/aisleriot/elevator.xml
 share/help/sv/aisleriot/eliminator.xml
 share/help/sv/aisleriot/escalator.xml
+share/help/sv/aisleriot/figures/camelot-goal.png
+share/help/sv/aisleriot/figures/clock-rules.png
 share/help/sv/aisleriot/first_law.xml
 share/help/sv/aisleriot/fortress.xml
 share/help/sv/aisleriot/fortunes.xml
@@ -1793,6 +1921,101 @@ share/help/sv/aisleriot/will_o_the_wisp.xml
 share/help/sv/aisleriot/yield.xml
 share/help/sv/aisleriot/yukon.xml
 share/help/sv/aisleriot/zebra.xml
+share/help/uk/aisleriot/accordion.xml
+share/help/uk/aisleriot/agnes.xml
+share/help/uk/aisleriot/athena.xml
+share/help/uk/aisleriot/auld_lang_syne.xml
+share/help/uk/aisleriot/aunt_mary.xml
+share/help/uk/aisleriot/backbone.xml
+share/help/uk/aisleriot/bakers_dozen.xml
+share/help/uk/aisleriot/bakers_game.xml
+share/help/uk/aisleriot/bear_river.xml
+share/help/uk/aisleriot/beleaguered_castle.xml
+share/help/uk/aisleriot/block_ten.xml
+share/help/uk/aisleriot/bristol.xml
+share/help/uk/aisleriot/camelot.xml
+share/help/uk/aisleriot/canfield.xml
+share/help/uk/aisleriot/carpet.xml
+share/help/uk/aisleriot/chessboard.xml
+share/help/uk/aisleriot/clock.xml
+share/help/uk/aisleriot/cover.xml
+share/help/uk/aisleriot/cruel.xml
+share/help/uk/aisleriot/definitions.xml
+share/help/uk/aisleriot/diamond_mine.xml
+share/help/uk/aisleriot/doublets.xml
+share/help/uk/aisleriot/eagle-wing.xml
+share/help/uk/aisleriot/easthaven.xml
+share/help/uk/aisleriot/eight_off.xml
+share/help/uk/aisleriot/elevator.xml
+share/help/uk/aisleriot/eliminator.xml
+share/help/uk/aisleriot/escalator.xml
+share/help/uk/aisleriot/figures/camelot-goal.png
+share/help/uk/aisleriot/figures/clock-rules.png
+share/help/uk/aisleriot/first_law.xml
+share/help/uk/aisleriot/fortress.xml
+share/help/uk/aisleriot/fortunes.xml
+share/help/uk/aisleriot/forty_thieves.xml
+share/help/uk/aisleriot/fourteen.xml
+share/help/uk/aisleriot/freecell.xml
+share/help/uk/aisleriot/gaps.xml
+share/help/uk/aisleriot/gay_gordons.xml
+share/help/uk/aisleriot/giant.xml
+share/help/uk/aisleriot/glenwood.xml
+share/help/uk/aisleriot/gold_mine.xml
+share/help/uk/aisleriot/golf.xml
+share/help/uk/aisleriot/gypsy.xml
+share/help/uk/aisleriot/hamilton.xml
+share/help/uk/aisleriot/helsinki.xml
+share/help/uk/aisleriot/hopscotch.xml
+share/help/uk/aisleriot/index.docbook
+share/help/uk/aisleriot/isabel.xml
+share/help/uk/aisleriot/jamestown.xml
+share/help/uk/aisleriot/jumbo.xml
+share/help/uk/aisleriot/kansas.xml
+share/help/uk/aisleriot/king_albert.xml
+share/help/uk/aisleriot/kings_audience.xml
+share/help/uk/aisleriot/klondike.xml
+share/help/uk/aisleriot/labyrinth.xml
+share/help/uk/aisleriot/lady_jane.xml
+share/help/uk/aisleriot/legal.xml
+share/help/uk/aisleriot/maze.xml
+share/help/uk/aisleriot/monte_carlo.xml
+share/help/uk/aisleriot/napoleons_tomb.xml
+share/help/uk/aisleriot/neighbor.xml
+share/help/uk/aisleriot/odessa.xml
+share/help/uk/aisleriot/osmosis.xml
+share/help/uk/aisleriot/peek.xml
+share/help/uk/aisleriot/pileon.xml
+share/help/uk/aisleriot/plait.xml
+share/help/uk/aisleriot/poker.xml
+share/help/uk/aisleriot/quatorze.xml
+share/help/uk/aisleriot/royal_east.xml
+share/help/uk/aisleriot/saratoga.xml
+share/help/uk/aisleriot/scorpion.xml
+share/help/uk/aisleriot/scuffle.xml
+share/help/uk/aisleriot/seahaven.xml
+share/help/uk/aisleriot/sir_tommy.xml
+share/help/uk/aisleriot/spider.xml
+share/help/uk/aisleriot/spider_three_decks.xml
+share/help/uk/aisleriot/spiderette.xml
+share/help/uk/aisleriot/straight_up.xml
+share/help/uk/aisleriot/streets_and_alleys.xml
+share/help/uk/aisleriot/ten_across.xml
+share/help/uk/aisleriot/terrace.xml
+share/help/uk/aisleriot/thieves.xml
+share/help/uk/aisleriot/thirteen.xml
+share/help/uk/aisleriot/thumb_and_pouch.xml
+share/help/uk/aisleriot/treize.xml
+share/help/uk/aisleriot/triple_peaks.xml
+share/help/uk/aisleriot/union_square.xml
+share/help/uk/aisleriot/valentine.xml
+share/help/uk/aisleriot/wall.xml
+share/help/uk/aisleriot/westhaven.xml
+share/help/uk/aisleriot/whitehead.xml
+share/help/uk/aisleriot/will_o_the_wisp.xml
+share/help/uk/aisleriot/yield.xml
+share/help/uk/aisleriot/yukon.xml
+share/help/uk/aisleriot/zebra.xml
 share/help/zh_CN/aisleriot/accordion.xml
 share/help/zh_CN/aisleriot/agnes.xml
 share/help/zh_CN/aisleriot/athena.xml
@@ -1821,6 +2044,8 @@ share/help/zh_CN/aisleriot/eight_off.xml
 share/help/zh_CN/aisleriot/elevator.xml
 share/help/zh_CN/aisleriot/eliminator.xml
 share/help/zh_CN/aisleriot/escalator.xml
+share/help/zh_CN/aisleriot/figures/camelot-goal.png
+share/help/zh_CN/aisleriot/figures/clock-rules.png
 share/help/zh_CN/aisleriot/first_law.xml
 share/help/zh_CN/aisleriot/fortress.xml
 share/help/zh_CN/aisleriot/fortunes.xml
@@ -1988,21 +2213,4 @@ share/locale/xh/LC_MESSAGES/aisleriot.mo
 share/locale/zh_CN/LC_MESSAGES/aisleriot.mo
 share/locale/zh_HK/LC_MESSAGES/aisleriot.mo
 share/locale/zh_TW/LC_MESSAGES/aisleriot.mo
-@dir share/help/ca/aisleriot/figures
-@dir share/help/cs/aisleriot/figures
-@dir share/help/de/aisleriot/figures
-@dir share/help/el/aisleriot/figures
-@dir share/help/en_GB/aisleriot/figures
-@dir share/help/es/aisleriot/figures
-@dir share/help/eu/aisleriot/figures
-@dir share/help/fr/aisleriot/figures
-@dir share/help/gl/aisleriot/figures
-@dir share/help/hu/aisleriot/figures
-@dir share/help/oc/aisleriot/figures
-@dir share/help/pt_BR/aisleriot/figures
-@dir share/help/ru/aisleriot/figures
-@dir share/help/sl/aisleriot/figures
-@dir share/help/sr/aisleriot/figures
-@dir share/help/sr@latin/aisleriot/figures
-@dir share/help/sv/aisleriot/figures
-@dir share/help/zh_CN/aisleriot/figures
+share/metainfo/sol.metainfo.xml

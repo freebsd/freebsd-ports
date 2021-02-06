@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	aisleriot
-PORTVERSION=	3.22.9
-PORTREVISION=	1
+PORTVERSION=	3.22.14
 CATEGORIES=	games gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/archive/${PORTVERSION}/
 DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of patience games written in guile scheme
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		bash:shells/bash
@@ -21,17 +22,13 @@ LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
 CONFLICTS_INSTALL=	sol-[0-9]*
 PORTSCOUT=	limitw:1,even
 
-USES=		desktop-file-utils gettext gmake gnome pathfix pkgconfig \
-		tar:xz xorg
-USE_GNOME=	cairo gconf2 gtk30 intlhack librsvg2 libxml2:build
+USES=		desktop-file-utils gettext meson gnome pkgconfig \
+		xorg
+USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
 USE_XORG=	x11
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-card-theme-formats=svg
-# work around because configure needs bash
-CONFIGURE_SHELL=${LOCALBASE}/bin/bash
+MESON_ARGS=	-Dtheme_kde=false
 
-GCONF_SCHEMAS=	aisleriot.schemas
 GLIB_SCHEMAS=	org.gnome.Patience.WindowState.gschema.xml
 
 INSTALLS_ICONS=	yes
