@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gbrainy
+PORTREVISION=	1
 DISTVERSION=	2.4.3
 PORTEPOCH=	2
 CATEGORIES=	games
@@ -12,14 +13,12 @@ COMMENT=	Brain teaser game and trainer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	mautil:devel/mono-addins \
-		gtk-sharp30>0:x11-toolkits/gtk-sharp30 \
+BUILD_DEPENDS=	gtk-sharp30>0:x11-toolkits/gtk-sharp30 \
 		itstool:textproc/itstool
-RUN_DEPENDS=	mautil:devel/mono-addins \
-		bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		gettext gmake gnome mono pathfix pkgconfig shebangfix
-USE_GNOME=	gtksharp20 gnomesharp20 intltool
+USE_GNOME=	intltool
 
 SHEBANG_FILES=	src/Clients/Classical/gbrainy.in
 
