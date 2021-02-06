@@ -887,6 +887,7 @@
     SUBDIR += grcov
     SUBDIR += grex
     SUBDIR += grpc
+    SUBDIR += grpc134
     SUBDIR += grv
     SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsoap

@@ -1,13 +1,13 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME?=	gitlab-ce
-PORTVERSION?=	13.8.1
-PORTREVISION?=	1
+PORTNAME=	gitlab-ce
+PORTVERSION=	13.8.1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
-MAINTAINER?=	mfechner@FreeBSD.org
-COMMENT?=	Web GUI for managing git repositories
+MAINTAINER=	mfechner@FreeBSD.org
+COMMENT=	Web GUI for managing git repositories
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -219,7 +219,7 @@ MY_DEPENDS=	git>=2.29:devel/git \
 	rubygem-ed25519>=1.2<2.0:security/rubygem-ed25519 \
 	rubygem-bcrypt_pbkdf>=1.0<2.0:security/rubygem-bcrypt_pbkdf \
 	rubygem-gitaly>=13.8.0.pre.rc2<13.9.0:net/rubygem-gitaly \
-	rubygem-grpc>=1.30.2<1.31:net/rubygem-grpc \
+	rubygem-grpc130>=1.30.2<1.31:net/rubygem-grpc130 \
 	rubygem-google-protobuf>=3.12<4:devel/rubygem-google-protobuf \
 	rubygem-toml-rb10>=1.0.0<1.1.0:www/rubygem-toml-rb10 \
 	rubygem-flipper017>=0.17.1<0.18.0:devel/rubygem-flipper017 \
