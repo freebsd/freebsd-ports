@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octicons
-PORTVERSION=	11.2.0
+PORTVERSION=	11.3.0
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
