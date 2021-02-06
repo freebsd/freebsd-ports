@@ -1,3 +1,3 @@
-TIMESTAMP = 1611665641
-SHA256 (rubygem/google-cloud-logging-v2-0.3.1.gem) = 649166d2fc584a30c8749e08727b2cc171a93049236260058cbd20faf08e21f4
-SIZE (rubygem/google-cloud-logging-v2-0.3.1.gem) = 77312
+TIMESTAMP = 1612519705
+SHA256 (rubygem/google-cloud-logging-v2-0.4.0.gem) = 28bfc75a7325d4154f8885b687d3f29ff242807563e40c1769b172e1fc369701
+SIZE (rubygem/google-cloud-logging-v2-0.4.0.gem) = 78848
