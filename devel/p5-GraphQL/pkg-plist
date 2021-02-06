@@ -8,6 +8,7 @@
 %%SITE_PERL%%/GraphQL/Language/Grammar.pm
 %%SITE_PERL%%/GraphQL/Language/Parser.pm
 %%SITE_PERL%%/GraphQL/Language/Receiver.pm
+%%SITE_PERL%%/GraphQL/MaybeTypeCheck.pm
 %%SITE_PERL%%/GraphQL/Plugin/Convert.pm
 %%SITE_PERL%%/GraphQL/Plugin/Convert/Test.pm
 %%SITE_PERL%%/GraphQL/Plugin/Type.pm
@@ -49,6 +50,7 @@
 %%PERL5_MAN3%%/GraphQL::Language::Grammar.3.gz
 %%PERL5_MAN3%%/GraphQL::Language::Parser.3.gz
 %%PERL5_MAN3%%/GraphQL::Language::Receiver.3.gz
+%%PERL5_MAN3%%/GraphQL::MaybeTypeCheck.3.gz
 %%PERL5_MAN3%%/GraphQL::Plugin::Convert.3.gz
 %%PERL5_MAN3%%/GraphQL::Plugin::Convert::Test.3.gz
 %%PERL5_MAN3%%/GraphQL::Plugin::Type.3.gz
