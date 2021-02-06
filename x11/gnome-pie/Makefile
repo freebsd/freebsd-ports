@@ -4,7 +4,7 @@
 PORTNAME=	gnome-pie
 PORTVERSION=	0.5.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libbamf3.so:sysutils/bamf \
 
 USES=		cmake gnome pkgconfig xorg
 USE_GITHUB=	yes
-USE_GNOME=	cairo gconf2 gnomemenus3 gtk30 librsvg2 libwnck3
+USE_GNOME=	cairo gnomemenus3 gtk30 librsvg2 libwnck3
 USE_XORG=	xtst
 
 DOCS_CMAKE_ON=	-DINSTALL_DOCS:BOOL=ON
