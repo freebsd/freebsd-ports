@@ -18,8 +18,8 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libprotobuf.so:devel/protobuf
 
-USES=		compiler:c++11-lib cpe gmake libtool localbase:ldflags pathfix \
-		pkgconfig ssl tar:bzip2
+USES=		autoreconf compiler:c++11-lib cpe gmake libtool localbase:ldflags \
+		pathfix pkgconfig ssl tar:bzip2
 
 USE_LDCONFIG=	YES
 USE_RC_SUBR=	pdns
