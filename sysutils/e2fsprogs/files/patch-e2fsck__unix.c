@@ -2,7 +2,7 @@
 // remove the #define _XOPEN_SOURCE 600
 // It would hide all non-POSIX declarations, including SIGINFO.
 
---- e2fsck/unix.c.orig	2021-01-29 05:51:02 UTC
+--- e2fsck/unix.c.orig	2021-01-29 22:02:31 UTC
 +++ e2fsck/unix.c
 @@ -9,8 +9,6 @@
   * %End-Header%
@@ -65,7 +65,7 @@
  static void signal_progress_off(int sig EXT2FS_ATTR((unused)))
  {
  	e2fsck_t ctx = e2fsck_global_ctx;
-@@ -1111,6 +1138,10 @@ static errcode_t PRS(int argc, char *argv[], e2fsck_t 
+@@ -1120,6 +1147,10 @@ static errcode_t PRS(int argc, char *argv[], e2fsck_t 
  	sigaction(SIGUSR1, &sa, 0);
  	sa.sa_handler = signal_progress_off;
  	sigaction(SIGUSR2, &sa, 0);
