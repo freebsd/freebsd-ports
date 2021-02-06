@@ -1,11 +1,12 @@
 # $FreeBSD$
 
 # This port opens too many files during build, more than the default setting.
-# Its build is known to succeed with MAX_FILES_RStudio=4096 in poudriere.conf
+# Its build is known to succeed with MAX_FILES_RStudio=4096 and MAX_FILES_RStudio_server=4096 in poudriere.conf
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.1093
+PORTREVISION=	1
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
@@ -31,7 +32,11 @@ LIB_DEPENDS=	libR.so:math/R \
 		libinotify.so:devel/libinotify \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake desktop-file-utils fortran localbase:ldflags pkgconfig qt:5 shared-mime-info ssl
+FLAVORS=	desktop server
+FLAVOR?=	${FLAVORS:[1]}
+server_PKGNAMESUFFIX=	-server
+
+USES=		cmake fortran localbase:ldflags pkgconfig qt:5 ssl
 USE_QT=		core dbus declarative gui location network opengl printsupport quickcontrols sensors \
 		sql svg webchannel webengine webkit widgets xml xmlpatterns buildtools_build qmake_build
 USE_JAVA=	yes
@@ -44,8 +49,7 @@ GH_TUPLE=	rstudio:r2d3:v0.2.0:r2d3/dependencies/common/r2d3 \
 		rstudio:rsconnect:03c379b:rsconnect/dependencies/common/rsconnect \
 		trestletech:plumber:v0.4.6:plumber/dependencies/common/plumber
 
-CMAKE_ARGS=	-DRSTUDIO_TARGET=Desktop \
-		-DFREEBSD_RSTUDIO_VERSION:STRING=${PORTVERSION} \
+CMAKE_ARGS=	-DFREEBSD_RSTUDIO_VERSION:STRING=${PORTVERSION} \
 		-DFREEBSD_LIBDIR:STRING=${PREFIX}/lib
 CMAKE_ARGS+=	-DQT_QMAKE_EXECUTABLE:STRING=${QMAKE}
 CMAKE_ARGS+=	-DRSTUDIO_BOOST_SIGNALS_VERSION=2
@@ -57,6 +61,23 @@ MAKE_ENV=	HOME=${WRKDIR} \
 
 GWT_VERSION=	2.8.1
 GIN_VERSION=	2.1.2
+
+.if ${FLAVOR:U} == desktop
+USES+=		desktop-file-utils shared-mime-info
+CMAKE_ARGS+=	-DRSTUDIO_TARGET=Desktop
+INSTALL_SUBDIR=	${PORTNAME:tl}
+EXECUTABLE=	${PORTNAME:tl}
+.endif
+
+.if ${FLAVOR:U} == server
+COMMENT+=	(web UI version)
+USES+=		shebangfix
+SHEBANG_FILES=	src/cpp/server/extras/admin/rstudio-server.in
+CMAKE_ARGS+=	-DRSTUDIO_TARGET=Server
+INSTALL_SUBDIR=	${PORTNAME:tl}-server
+EXECUTABLE=	rserver
+RUN_DEPENDS+=	bash:shells/bash
+.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/dependencies/common/dictionaries && ${MV} ${WRKDIR}/en_* ${WRKSRC}/dependencies/common/dictionaries/
@@ -92,14 +113,16 @@ post-install:
 	  echo "fi"; \
 	  echo ""; \
 	  echo "# workaround for the problem that RStudio passes /lib with LD_LIBRARY_PATH that causes the /lib/libgcc_s.so.1 conflict with gcc"; \
-	  echo "LD_PRELOAD=${PREFIX}/lib/gcc${GCC_DEFAULT}/libgcc_s.so JAVA_HOME=${JAVA_HOME} ${PREFIX}/lib/rstudio/bin/rstudio \"$$"@"\"" \
-	) > ${STAGEDIR}${PREFIX}/bin/rstudio
-	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/rstudio
-	@${REINPLACE_CMD} -e 's|^Exec=.*/rstudio|Exec=${PREFIX}/bin/rstudio|' ${STAGEDIR}${PREFIX}/share/applications/rstudio.desktop
+	  echo "LD_PRELOAD=${PREFIX}/lib/gcc${GCC_DEFAULT}/libgcc_s.so JAVA_HOME=${JAVA_HOME} ${PREFIX}/lib/${INSTALL_SUBDIR}/bin/${EXECUTABLE} \"$$"@"\"" \
+	) > ${STAGEDIR}${PREFIX}/bin/${EXECUTABLE}
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${EXECUTABLE}
+.if ${FLAVOR:U} == desktop
+	@${REINPLACE_CMD} -e 's|^Exec=.*/rstudio|Exec=${PREFIX}/bin/${EXECUTABLE}|' ${STAGEDIR}${PREFIX}/share/applications/${EXECUTABLE}.desktop
+.endif
 	# Some functions expect the pandoc symlink.
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/rstudio/bin/pandoc
-	@cd ${STAGEDIR}${PREFIX}/lib/rstudio/bin/pandoc && ${LN} -s ../../../../bin/pandoc
-	# There is a variability in .js file names due to the use of random numbers, so we use the automatic plist.
-	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh makeplist | ${GREP} -v ^\/ | ${SED} -e 's|%%WWWDIR%%|www/rstudio|' > ${TMPPLIST}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${INSTALL_SUBDIR}/bin/pandoc
+	@cd ${STAGEDIR}${PREFIX}/lib/${INSTALL_SUBDIR}/bin/pandoc && ${LN} -s ../../../../bin/pandoc
+	# There is a variability in .js file names due to use of random numbers, so we use the automatic plist.
+	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh makeplist | ${GREP} -v ^\/ | ${SED} -e 's|%%WWWDIR%%|www/rstudio| ; s|%%CMAKE_BUILD_TYPE%%|${CMAKE_BUILD_TYPE:tl}|' > ${TMPPLIST}
 
 .include <bsd.port.mk>

@@ -10,6 +10,15 @@ proc /proc procfs rw 0 0
 
 and then run this command as root:
 # mount /proc
+
+In order to run RStudio Server please run:
+$ sudo rserver --server-daemonize 0 --server-user nobody
+
+and then navigate to http://localhost:8787/ in your browser.
+
+The rc script will be added later to start RStudio Server as
+a service.
+
 EOM
 }
 ]
