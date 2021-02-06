@@ -69,8 +69,8 @@
     SUBDIR += expect
     SUBDIR += f2c
     SUBDIR += fasm
-    SUBDIR += ferite
     SUBDIR += fennel
+    SUBDIR += ferite
     SUBDIR += ficl
     SUBDIR += fpc
     SUBDIR += fpc-base
