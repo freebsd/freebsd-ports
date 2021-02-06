@@ -1,0 +1,19 @@
+--- mailnag-config.orig	2020-12-30 17:29:49 UTC
++++ mailnag-config
+@@ -25,6 +25,7 @@ import os
+ import subprocess
+ import logging
+ from gi.repository import Gtk
++from setproctitle import setproctitle
+ 
+ from Mailnag.common.utils import fix_cwd, init_logging
+ 
+@@ -80,7 +81,7 @@ class App(Gtk.Application):
+ 
+ 
+ def main():
+-	set_procname("mailnag-config")
++	setproctitle("mailnag-config")
+ 	init_logging(enable_stdout = True, enable_syslog = False, log_level = LOG_LEVEL)
+ 	app = App()
+ 	app.run(None)

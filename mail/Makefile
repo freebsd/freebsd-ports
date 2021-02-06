@@ -497,6 +497,7 @@
     SUBDIR += py-fuglu
     SUBDIR += py-mail-parser
     SUBDIR += py-mailmanclient
+    SUBDIR += py-mailnag
     SUBDIR += py-managesieve3
     SUBDIR += py-milter
     SUBDIR += py-notmuch
