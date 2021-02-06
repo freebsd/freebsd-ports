@@ -33,7 +33,6 @@ CONFIGURE_ARGS+=	--enable-scalar \
 MPICC?=			${LOCALBASE}/mpi/openmpi/bin/mpicc
 MPICXX?=		${LOCALBASE}/mpi/openmpi/bin/mpic++
 
-DOXYGEN_BROKEN=		fails to build
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
 OPENMPI_CONFIGURE_ENABLE=	parform
@@ -42,9 +41,6 @@ OPENMPI_CONFIGURE_ENV+=	MPICC="${MPICC}" MPICXX="${MPICXX}"
 
 OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi \
 			libgcc_s.so.1:lang/gcc9
-
-post-patch:
-	@${REINPLACE_CMD} -e 's| -O3||' ${WRKSRC}/configure.ac
 
 post-build-DOXYGEN-on:
 	(cd ${WRKSRC}/doc/manual; ${MAKE_CMD} html pdf)
