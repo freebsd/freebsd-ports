@@ -3,9 +3,8 @@
 
 PORTNAME=	libaec
 PORTVERSION=	1.0.4
-DISTVERSIONPREFIX=	v
 CATEGORIES=	science
-MASTER_SITES=	https://gitlab.dkrz.de/k202009/libaec/-/archive/v${PORTVERSION}/
+MASTER_SITES=	https://gitlab.dkrz.de/k202009/libaec/uploads/ea0b7d197a950b0c110da8dfdecbb71f/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Adaptive entropy coding library
@@ -13,7 +12,7 @@ COMMENT=	Adaptive entropy coding library
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
-USES=		autoreconf libtool tar:bz2
+USES=		libtool
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
