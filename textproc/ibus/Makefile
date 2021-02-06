@@ -3,7 +3,7 @@
 
 PORTNAME=	ibus
 PORTVERSION=	1.5.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -85,7 +85,7 @@ GCONF_USE=		GNOME=gconf2
 GCONF_CONFIGURE_ENABLE=	gconf
 GCONF_VARS=		GCONF_SCHEMAS=ibus.schemas
 
-DCONF_USE=		GNOME=dconf,gconf2
+DCONF_USE=		GNOME=dconf
 DCONF_CONFIGURE_ENABLE=	dconf
 DCONF_VARS=		GLIB_SCHEMAS=org.freedesktop.ibus.gschema.xml
 
