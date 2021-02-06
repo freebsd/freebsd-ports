@@ -50,6 +50,8 @@ post-patch:	.SILENT
 		${WRKSRC}/doc/nvidia-settings.desktop
 	${REINPLACE_CMD} -e 's|/usr/share/nvidia/|${LOCALBASE}/share/doc/NVIDIA_GLX-1.0/|' \
 		${WRKSRC}/src/gtk+-2.x/ctkappprofile.c
+	${REINPLACE_CMD} -e 's,notdir $$(1)).h:,& | $$$$(OUTPUTDIR),' \
+		${WRKSRC}/src/Makefile
 
 post-install:	.SILENT
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnvidia-gtk2.so.${PORTVERSION}
