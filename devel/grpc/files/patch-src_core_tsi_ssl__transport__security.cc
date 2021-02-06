@@ -1,14 +1,5 @@
 --- src/core/tsi/ssl_transport_security.cc.orig	2020-12-01 19:24:28 UTC
 +++ src/core/tsi/ssl_transport_security.cc
-@@ -19,7 +19,7 @@
- #include <grpc/support/port_platform.h>
- 
- #include "src/core/tsi/ssl_transport_security.h"
--
-+#include <sys/socket.h>
- #include <limits.h>
- #include <string.h>
- 
 @@ -70,11 +70,10 @@ extern "C" {
  #define TSI_SSL_MAX_PROTECTED_FRAME_SIZE_LOWER_BOUND 1024
  #define TSI_SSL_HANDSHAKER_OUTGOING_BUFFER_INITIAL_SIZE 1024
