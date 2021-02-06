@@ -28,4 +28,9 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	CCHARDET
+CCHARDET_DESC=	Character encoding detection via cchardet
+
+CCHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cchardet>=0.3.5:textproc/py-cchardet@${PY_FLAVOR}
+
 .include <bsd.port.mk>
