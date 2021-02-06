@@ -1,5 +1,5 @@
---- src/%%NVSRC%%/nvidia_linux.c.orig	2017-09-14 20:46:30 UTC
-+++ src/%%NVSRC%%/nvidia_linux.c
+--- src/nvidia/nvidia_linux.c.orig	2021-01-21 21:50:34 UTC
++++ src/nvidia/nvidia_linux.c
 @@ -35,21 +35,16 @@ int linux_ioctl_nvidia(
      struct linux_ioctl_args *args
  )

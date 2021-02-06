@@ -13,7 +13,7 @@
 PORTNAME=	nvidia-driver
 DISTVERSION?=	460.39
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -72,8 +72,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_nvidia-modeset_nvidia-modeset-freebs
 SUB_PATCHES+=	extra-patch-src-nvidia_ctl.c \
 		extra-patch-src-nvidia_linux.c
 .else
-EXTRA_PATCHES+=	${FILESDIR}/460-patch-lib-libGLX_nvidia-Makefile
-SUB_PATCHES+=	460-patch-src-nvidia_linux.c
+EXTRA_PATCHES+=	${FILESDIR}/460-patch-lib-libGLX_nvidia-Makefile \
+		${FILESDIR}/460-patch-src-nvidia-nvidia_ctl.c \
+		${FILESDIR}/460-patch-src-nvidia-nvidia_linux.c
 .endif
 
 OPTIONS_DEFINE=	ACPI_PM LINUX WBINVD DOCS
