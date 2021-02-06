@@ -1577,6 +1577,7 @@
     SUBDIR += rubygem-gitlab-grit
     SUBDIR += rubygem-gitlab-markup
     SUBDIR += rubygem-google-cloud-translate
+    SUBDIR += rubygem-google-cloud-translate-v2
     SUBDIR += rubygem-heredoc_unindent
     SUBDIR += rubygem-hikidoc
     SUBDIR += rubygem-html-pipeline
