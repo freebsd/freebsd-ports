@@ -68,10 +68,15 @@ share/osinfo/install-script/redhat.com/rhel-kickstart-desktop.xml
 share/osinfo/install-script/redhat.com/rhel-kickstart-jeos.xml
 share/osinfo/install-script/ubuntu.com/ubuntu-preseed-desktop.xml
 share/osinfo/install-script/ubuntu.com/ubuntu-preseed-jeos.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.10.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.11.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.12.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.13.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.8.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.9.xml
 share/osinfo/os/altlinux.org/alt-8.0.xml
 share/osinfo/os/altlinux.org/alt-8.1.xml
 share/osinfo/os/altlinux.org/alt-8.2.xml
@@ -622,6 +627,7 @@ share/osinfo/os/redhat.com/rhel-8.0.xml
 share/osinfo/os/redhat.com/rhel-8.1.xml
 share/osinfo/os/redhat.com/rhel-8.2.xml
 share/osinfo/os/redhat.com/rhel-8.3.xml
+share/osinfo/os/redhat.com/rhel-8.4.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
