@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -150,14 +150,13 @@ WITHOUT_CPU_CFLAGS=	true
 CPE_PRODUCT=	${PORTNAME:S|apache-||}
 CPE_VENDOR=	apache
 
-OPTIONS_DEFINE=		CRASHDUMP CUPS DBGUTIL DEBUG GNOME GNOMEVFS MMEDIA \
+OPTIONS_DEFINE=		CRASHDUMP CUPS DBGUTIL DEBUG GNOME MMEDIA \
 			MYSQL PDFIMPORT REPORT_BUILDER SDK WIKI_PUBLISHER
 OPTIONS_DEFAULT=	CUPS GNOME MMEDIA WIKI_PUBLISHER
 CRASHDUMP_DESC=		Enable crashdumps, you also need to set WITH_DEBUG_PORTS+=${PKGORIGIN}
 DBGUTIL_DESC=		Enable assertions, object counting. (non-production)
 DEBUG_DESC=		Compile with -O0, you also need to set WITH_DEBUG_PORTS+=${PKGORIGIN}
-GNOME_DESC=		GConf + screensaver presentation control via DBUS
-GNOMEVFS_DESC=		Use GNOME Virtual File System instead of gio
+GNOME_DESC=		Screensaver presentation control via DBUS
 MMEDIA_DESC=		Multimedia backend for impress
 MYSQL_DESC=		Build MySQL Connector extension
 PDFIMPORT_DESC=		Build and install PDF import extension
@@ -174,15 +173,9 @@ DBGUTIL_CONFIGURE_ENABLE=	dbgutil
 
 DEBUG_CONFIGURE_ENABLE=		debug
 
-GNOME_CONFIGURE_ENABLE=		dbus gconf lockdown
+GNOME_CONFIGURE_ENABLE=		dbus lockdown
 GNOME_LIB_DEPENDS=		libdbus-1.so:devel/dbus \
 				libdbus-glib-1.so:devel/dbus-glib
-GNOME_USE=			GNOME=gconf2
-
-GNOMEVFS_CONFIGURE_ENABLE=	gnome-vfs
-GNOMEVFS_CONFIGURE_OFF=		--enable-gio
-GNOMEVFS_CONFIGURE_ON=		--disable-gio
-GNOMEVFS_USE=			GNOME=gnomevfs2
 
 MMEDIA_CONFIGURE_ENABLE=	gstreamer
 MMEDIA_USE=			GSTREAMER1=yes
@@ -280,6 +273,8 @@ SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR} \
 		PRINSTALLATION_BASEDIR=${PRINSTALLATION_BASEDIR}
 
 CONFIGURE_ARGS+=							\
+			--enable-gio					\
+			--without-gconf					\
 			--with-unix-wrapper=${EXECBASE}			\
 			--with-alloc=system				\
 			--with-ant-home=${LOCALBASE}/share/java/apache-ant \
