@@ -43,6 +43,7 @@ restart_cmd="restart_gitlab"
 : ${gitlab_workhorse_addr:="127.0.0.1:8181"}
 : ${gitlab_mail_room_enable:="NO"}
 : ${gitlab_allow_conflicts:="NO"}
+: ${gitlab_wait:="120"}
 
 load_rc_config $name
 
@@ -218,18 +219,19 @@ check_pids(){
 ## Called when we have started the two processes and are waiting for their pid files.
 wait_for_pids(){
   # We are sleeping a bit here mostly because sidekiq is slow at writing its pid
-  i=0;
+  i=0
   while [ ! -f $web_server_pid_path ] || [ ! -f $sidekiq_pid_path ] || [ ! -f $gitlab_workhorse_pid_path ] || { [ "$mail_room_enabled" = true ] && [ ! -f $mail_room_pid_path ]; } || { [ "$gitlab_pages_enabled" = true ] && [ ! -f $gitlab_pages_pid_path ]; } || { [ "$gitaly_enabled" = true ] && [ ! -f $gitaly_pid_path ]; }; do
-    sleep 0.1;
-    i=$((i+1))
-    if [ $((i%10)) = 0 ]; then
-      echo -n "."
-    elif [ $((i)) = 601 ]; then
-      echo "Waited 60s for the processes to write their pids, something probably went wrong."
+    echo -n "."
+    if [ $((i)) = "$gitlab_wait" ]; then
+      echo
+      echo "Waited ${i}s for the processes to write their pids, something probably went wrong."
       exit 1;
     fi
+    sleep 1
+    i=$((i+1))
   done
   echo
+  echo "Started in ${i}s."
 }
 
 # We use the pids in so many parts of the script it makes sense to always check them.
