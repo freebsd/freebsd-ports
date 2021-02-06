@@ -78,7 +78,7 @@ _USE_GNOME_ALL+= atk cairo \
 		gnomevfs2 gtk-update-icon-cache gtk20 gtkhtml3 \
 		gtksharp20 gtksourceview2 gvfs libartlgpl2 libbonobo \
 		libbonoboui libglade2 libgnome \
-		libgnomecanvas libgnomekbd \
+		libgnomecanvas \
 		libgnomeui libgsf libidl librsvg2 libwnck \
 		libxml2 libxslt \
 		orbit2 pango pangox-compat \
@@ -88,7 +88,7 @@ _USE_GNOME_ALL+= atk cairo \
 _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 		gnomemenus3 gsound gtk30 gtkhtml4 gtksourceview3 \
 		gtksourceview4 libgda5 \
-		libgda5-ui libwnck3 metacity nautilus3 \
+		libgda5-ui libgnomekbd libwnck3 metacity nautilus3 \
 		pygobject3 vte3
 
 # C++ bindings
