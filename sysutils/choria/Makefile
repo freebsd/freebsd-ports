@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	choria
-PORTVERSION=	0.19.0
+PORTVERSION=	0.20.2
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -45,14 +45,12 @@ GH_TUPLE=	\
 		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		cheekybits:genny:v1.0.0:cheekybits_genny/vendor/github.com/cheekybits/genny \
-		choria-io:go-updater:v0.0.3:choria_io_go_updater/vendor/github.com/choria-io/go-updater \
-		choria-io:provisioning-agent:v0.8.0:choria_io_provisioning_agent/vendor/github.com/choria-io/provisioning-agent \
+		choria-io:provisioning-agent:ac3a9cf4a41b:choria_io_provisioning_agent/vendor/github.com/choria-io/provisioning-agent \
 		cloudevents:sdk-go:v1.2.0:cloudevents_sdk_go/vendor/github.com/cloudevents/sdk-go \
 		dgrijalva:jwt-go:dc14462fd587:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		dominikh:go-tools:v0.0.1-2019.2.3:dominikh_go_tools/vendor/honnef.co/go/tools \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
-		fatih:structtag:v1.2.0:fatih_structtag/vendor/github.com/fatih/structtag \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
 		go-errors:errors:v1.0.1:go_errors_errors/vendor/github.com/go-errors/errors \
@@ -68,13 +66,13 @@ GH_TUPLE=	\
 		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
 		golang:net:c7110b5ffcbb:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:8ad439b19e0f:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:22da62e12c0c:golang_sys/vendor/golang.org/x/sys \
 		golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:89c76fbcd5d1:golang_time/vendor/golang.org/x/time \
-		golang:tools:d93e913c1a58:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
-		google:go-cmp:v0.4.0:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-cmp:v0.5.4:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
 		gosuri:uilive:v0.0.3:gosuri_uilive/vendor/github.com/gosuri/uilive \
@@ -83,6 +81,7 @@ GH_TUPLE=	\
 		huandu:xstrings:v1.3.0:huandu_xstrings/vendor/github.com/huandu/xstrings \
 		imdario:mergo:v0.3.8:imdario_mergo/vendor/github.com/imdario/mergo \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
+		klauspost:compress:v1.11.7:klauspost_compress/vendor/github.com/klauspost/compress \
 		lightstep:tracecontext.go:1757c391b1ac:lightstep_tracecontext_go/vendor/github.com/lightstep/tracecontext.go \
 		looplab:fsm:v0.2.0:looplab_fsm/vendor/github.com/looplab/fsm \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
@@ -96,31 +95,31 @@ GH_TUPLE=	\
 		mitchellh:copystructure:v1.0.0:mitchellh_copystructure/vendor/github.com/mitchellh/copystructure \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:go-wordwrap:v1.0.0:mitchellh_go_wordwrap/vendor/github.com/mitchellh/go-wordwrap \
-		mitchellh:mapstructure:v1.4.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
+		mitchellh:mapstructure:v1.4.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		mitchellh:reflectwalk:v1.0.0:mitchellh_reflectwalk/vendor/github.com/mitchellh/reflectwalk \
 		moby:moby:v1.13.1:moby_moby/vendor/github.com/docker/docker \
 		nats-io:cliprompts:372d79b36768:nats_io_cliprompts_v2/vendor/github.com/nats-io/cliprompts \
 		nats-io:jsm.go:v0.0.20:nats_io_jsm_go/vendor/github.com/nats-io/jsm.go \
-		nats-io:jwt:18c5cc45d263:nats_io_jwt_v2 \
+		nats-io:jwt:1c24d462becc:nats_io_jwt_v2 \
 		nats-io:jwt:v1.2.2:nats_io_jwt/vendor/github.com/nats-io/jwt \
-		nats-io:nats-server:b88cbe2e0df3:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
-		nats-io:nats.go:a35836eca1a8:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nats-server:c9e0eb6c3a0e:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats.go:5b4924938a9a:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.2.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nsc:40dcea882554:nats_io_nsc/vendor/github.com/nats-io/nsc \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		nats-io:stan.go:v0.7.0:nats_io_stan_go/vendor/github.com/nats-io/stan.go \
-		nxadm:tail:v1.4.4:nxadm_tail/vendor/github.com/nxadm/tail \
+		nxadm:tail:v1.4.6:nxadm_tail/vendor/github.com/nxadm/tail \
 		oleiade:reflections:0e86b3c98b2f:oleiade_reflections/vendor/github.com/oleiade/reflections \
 		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
-		onsi:ginkgo:v1.14.2:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
-		onsi:gomega:v1.10.4:onsi_gomega/vendor/github.com/onsi/gomega \
-		open-policy-agent:opa:v0.25.2:open_policy_agent_opa/vendor/github.com/open-policy-agent/opa \
+		onsi:ginkgo:v1.15.0:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
+		onsi:gomega:v1.10.5:onsi_gomega/vendor/github.com/onsi/gomega \
+		open-policy-agent:opa:v0.26.0:open_policy_agent_opa/vendor/github.com/open-policy-agent/opa \
 		opencontainers:runc:8779fa57eb4a:opencontainers_runc/vendor/github.com/opencontainers/runc \
 		patrickmn:go-cache:v2.1.0:patrickmn_go_cache/vendor/github.com/patrickmn/go-cache \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		prometheus:client_golang:v1.8.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_golang:v1.9.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
-		prometheus:common:v0.14.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:common:v0.15.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.2.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.24.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rcrowley:go-metrics:10cdbea86bc0:rcrowley_go_metrics/vendor/github.com/rcrowley/go-metrics \
@@ -128,8 +127,8 @@ GH_TUPLE=	\
 		rsc:goversion:v1.2.0:rsc_goversion/vendor/rsc.io/goversion \
 		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		tadglines:go-pkgs:1f86682992f1:tadglines_go_pkgs/vendor/github.com/tadglines/go-pkgs \
-		tidwall:gjson:v1.6.4:tidwall_gjson/vendor/github.com/tidwall/gjson \
-		tidwall:match:v1.0.1:tidwall_match/vendor/github.com/tidwall/match \
+		tidwall:gjson:v1.6.7:tidwall_gjson/vendor/github.com/tidwall/gjson \
+		tidwall:match:v1.0.3:tidwall_match/vendor/github.com/tidwall/match \
 		tidwall:pretty:v1.0.2:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.3.0:uber_go_multierr/vendor/go.uber.org/multierr \
@@ -146,6 +145,10 @@ post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/nats-io/jwt/v2
 	@${RLN} ${WRKSRC_nats_io_jwt_v2}/v2 ${WRKSRC}/vendor/github.com/nats-io/jwt/v2
 
+# Missing dependency
+GH_TUPLE+=	choria-io:go-updater:v0.0.3:choria_io_go_updater/vendor/github.com/choria-io/go-updater \
+		fatih:structtag:v1.2.0:fatih_structtag/vendor/github.com/fatih/structtag
+
 post-patch:
 	${REINPLACE_CMD} -e 's/{{cpkg_name}}/choria-broker/' \
 		${WRKSRC}/packager/templates/debian/global/broker.conf
@@ -160,5 +163,10 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/choria
 	${INSTALL_DATA} ${WRKSRC}/packager/templates/debian/global/broker.conf ${STAGEDIR}${PREFIX}/etc/choria/broker.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/packager/templates/debian/global/server.conf ${STAGEDIR}${PREFIX}/etc/choria/server.conf.sample
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/choria
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${STAGEDIR}${PREFIX}/bin/choria completion --zsh > ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_choria
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	${STAGEDIR}${PREFIX}/bin/choria completion --bash > ${STAGEDIR}${PREFIX}/etc/bash_completion.d/choria
 
 .include <bsd.port.mk>
