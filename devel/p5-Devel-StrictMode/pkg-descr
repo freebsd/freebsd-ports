@@ -1,0 +1,5 @@
+This module provides you with a constant STRICT which you can
+use to determine whether additional strict (but slow) runtime
+tests are executed by your code.
+
+WWW: https://metacpan.org/release/Devel-StrictMode

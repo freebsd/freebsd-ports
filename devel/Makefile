@@ -2273,6 +2273,7 @@
     SUBDIR += p5-Devel-StackTrace-AsHTML
     SUBDIR += p5-Devel-StackTrace-WithLexicals
     SUBDIR += p5-Devel-StealthDebug
+    SUBDIR += p5-Devel-StrictMode
     SUBDIR += p5-Devel-Symdump
     SUBDIR += p5-Devel-Timer
     SUBDIR += p5-Devel-Trace
