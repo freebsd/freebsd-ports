@@ -4,7 +4,7 @@
 
 PORTNAME=	ekiga
 PORTVERSION=	4.0.1
-PORTREVISION=	30
+PORTREVISION=	31
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -32,8 +32,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-I${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	LDAP NOTIFY EVOLUTION GCONF DBUS AVAHI GNOMEHELP
-OPTIONS_DEFAULT=NOTIFY DBUS GCONF AVAHI
+OPTIONS_DEFINE=	LDAP NOTIFY EVOLUTION DBUS AVAHI GNOMEHELP
+OPTIONS_DEFAULT=NOTIFY DBUS AVAHI
 
 EVOLUTION_DESC=	Evolution data server support
 GNOMEHELP_DESC=	Build Ekiga help files
@@ -50,7 +50,8 @@ LOUDMOUTH_DESC=	XMPP (jabber) support
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
-CONFIGURE_ARGS+=--disable-kde --disable-kab --disable-gstreamer
+CONFIGURE_ARGS+=--disable-kde --disable-kab --disable-gstreamer \
+		--disable-gconf
 
 .if ${PORT_OPTIONS:MXCAP}
 CONFIGURE_ARGS+=--enable-xcap
@@ -100,16 +101,6 @@ PLIST_SUB+=	DBUS=""
 .else
 CONFIGURE_ARGS+=--disable-dbus --disable-dbus-service
 PLIST_SUB+=	DBUS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGCONF}
-USE_GNOME+=	gconf2
-CONFIGURE_ARGS+=--enable-gconf
-GCONF_SCHEMAS=	ekiga.schemas
-PLIST_SUB+=	GCONF="@comment "
-.else
-CONFIGURE_ARGS+=--disable-gconf
-PLIST_SUB+=	GCONF=""
 .endif
 
 .if ${PORT_OPTIONS:MEVOLUTION}
