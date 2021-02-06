@@ -16147,3 +16147,4 @@ math/why3||2021-02-04|Depends on deprecated gnome2 library, very outdated and un
 www/syndigator||2021-02-05|Abandon upstream, does not work with recent perl5 use deprecated Gnome2 libraries
 x11-toolkits/p5-Gtk2-Html2||2021-02-05|Deprecated upstream, not depended on, dpeends on deprecated Gnome2 libraries
 www/libgtkhtml||2021-02-05|Deprecated upstream, not depended on
+net/twitux||2021-02-06|Does not work with actually twitter
