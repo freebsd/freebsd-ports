@@ -6,7 +6,7 @@ PORTVERSION=	4.1.0
 CATEGORIES=	devel www
 MASTER_SITES=	https://kore.io/releases/
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web application framework for writing web APIs in C
 
 LICENSE=	ISCL
