@@ -214,7 +214,7 @@ _rpki-client:*:270:
 signaling:*:271:
 gvm:*:272:
 seaweedfs:*:273:
-# free: 274
+usbmuxd:*:274:
 haclient:*:275:
 frontbase:*:276:
 # free: 277

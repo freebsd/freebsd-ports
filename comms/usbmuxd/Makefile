@@ -2,6 +2,7 @@
 
 PORTNAME=	usbmuxd
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -18,24 +19,32 @@ LIB_DEPENDS=	libplist-2.0.so:devel/libplist \
 
 USES=		autoreconf cpe libtool localbase pathfix pkgconfig tar:bzip2
 CPE_VENDOR=	nikias_bassen
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-systemd
 
-PLIST_FILES=	man/man8/${PORTNAME}.8.gz \
-		sbin/${PORTNAME}
+SUB_LIST=	USERS=${USERS} \
+		GROUPS=${GROUPS}
 
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
+
+PLIST_FILES=	man/man8/${PORTNAME}.8.gz \
+		"@(${USERS},${GROUPS},) sbin/${PORTNAME}"
 PORTDOCS=	AUTHORS NEWS README.md
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DEVD DOCS
+OPTIONS_DEFAULT=	DEVD
 
-post-patch:
-# TODO: add devd(8) rule.
-	@${REINPLACE_CMD} \
-		-e '/darwin*/ s,),|dragonfly*|*bsd*),' \
-		${WRKSRC}/configure.ac
+DEVD_SUB_FILES=		${PORTNAME}.conf
+DEVD_PLIST_FILES=	etc/devd/${PORTNAME}.conf
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+
+post-install-DEVD-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/devd
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.conf ${STAGEDIR}${PREFIX}/etc/devd
 
 .include <bsd.port.mk>

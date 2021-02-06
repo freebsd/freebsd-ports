@@ -219,7 +219,7 @@ _rpki-client:*:270:270::0:0:rpki-client user:/nonexistent:/usr/sbin/nologin
 signaling:*:271:271::0:0:Signaling server:/nonexistent:/usr/sbin/nologin
 gvm:*:272:272::0:0:Greenbone Vulnerability Management:/nonexistent:/usr/sbin/nologin
 seaweedfs:*:273:273::0:0:seaweedfs user:/var/db/seaweedfs:/usr/sbin/nologin
-# free: 274
+usbmuxd:*:274:274::0:0:USB multiplexing daemon:/nonexistent:/usr/sbin/nologin
 hacluster:*:275:275::0:0:Heartbeat cluster user:/nonexistent:/usr/sbin/nologin
 frontbase:*:276:276::0:0:FrontBase Daemon:/usr/local/FrontBase/Databases:/bin/sh
 # free: 277

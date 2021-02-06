@@ -1,0 +1,28 @@
+# $FreeBSD$
+#
+# This entry starts the Apple mobile device muxer 'usbmuxd' upon device attach
+# of a matching Apple product including iPhone, iPad, and iPod. It also allows
+# members of the '%%GROUPS%%' group to access the devices.
+#
+# Multiple devices may be attached simultaneously. The muxer will stop upon
+# detach of the last matching device.
+
+notify 100 {
+	match "system"		"USB";
+	match "subsystem"	"DEVICE";
+	match "type"		"ATTACH";
+	match "vendor"		"0x05ac";
+	match "product"		"(0x12[9a][0-9a-f]|0x8600)";
+	action "chgrp %%GROUPS%% /dev/$cdev; chmod g+rw /dev/$cdev";
+	action "%%PREFIX%%/sbin/usbmuxd -U %%USERS%% -z";
+};
+
+notify 100 {
+        match "system"          "USB";
+        match "subsystem"       "DEVICE";
+        match "type"            "DETACH";
+        match "vendor"          "0x05ac";
+	match "product"         "(0x12[9a][0-9a-f]|0x8600)";
+	action "%%PREFIX%%/sbin/usbmuxd -x";
+};
+
