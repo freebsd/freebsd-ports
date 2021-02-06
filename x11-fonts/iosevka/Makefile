@@ -2,7 +2,7 @@
 
 PORTNAME=	iosevka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.0-beta.2
+DISTVERSION=	5.0.0-rc.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/be5invis/Iosevka/releases/download/${DISTVERSIONFULL}/
 
@@ -40,6 +40,8 @@ _STYLES=\
 	LUCIDA		yes	-ss13-		Monospace,\ Lucida\ Style\
 	JETBRAINSMONO	yes	-ss14-		Monospace,\ JetBrains\ Mono\ Style\
 	IMBPLEXMONO	yes	-ss15-		Monospace,\ IMB\ Plex\ Mono\ Style\
+	PTMONO		yes	-ss16-		Monospace,\ PT\ Mono\ Style\
+	RECURSIVEMONO	yes	-ss17-		Monospace,\ Recursive\ Mono\ Style\
 	AILE		no	-aile-		Quasi-proportional,\ Sans-serif\ (Aile)\
 	ETOILE		no	-etoile-	Quasi-proportional,\ Slab-serif\ (Etoile)\
 
