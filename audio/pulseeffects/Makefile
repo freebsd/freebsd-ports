@@ -3,7 +3,7 @@
 PORTNAME=	pulseeffects
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.6.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 
 MAINTAINER=	daniel@shafer.cc
@@ -44,7 +44,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 USES=		compiler:c++17-lang desktop-file-utils libtool \
 		localbase:ldflags gettext gnome meson ninja pathfix pkgconfig \
 		python:3.6+ shebangfix
-USE_GNOME=	cairo gconf2 gtkmm30 libsigc++20 pygobject3
+USE_GNOME=	cairo gtkmm30 libsigc++20 pygobject3
 USE_GSTREAMER1=	bad bs2b good ladspa lv2 pulse webrtcdsp
 USE_LDCONFIG=	yes
 
