@@ -20,7 +20,7 @@ SSP_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	grehan-freebsd
 USES=		bison gmake
-USE_GCC=	yes
+USE_GCC=	yes:build
 PLIST_FILES=	sbin/grub-bhyve
 MAKE_JOBS_UNSAFE=	yes
 CONFIGURE_ARGS=	--with-platform=emu CC=${CC} LEX=${LOCALBASE}/bin/flex \
@@ -38,5 +38,3 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/grub-core/grub-emu ${STAGEDIR}${LOCALBASE}/sbin/grub-bhyve
 
 .include <bsd.port.mk>
-
-RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
