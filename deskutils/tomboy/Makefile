@@ -11,6 +11,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Personal note taking system for the GNOME desktop
 
+DEPRECATED=	Unmaintained and dead upstream, depends on deprecated libraries \
+		such as www/gtkhtml3. Upstream project is now called tomboy-ng.
+EXPIRATION_DATE=2021-03-31
+
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
