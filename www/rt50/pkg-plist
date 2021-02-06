@@ -116,6 +116,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/CustomRoles.pm
 %%SITE_PERL%%/RT/Dashboard.pm
 %%SITE_PERL%%/RT/Dashboard/Mailer.pm
+%%SITE_PERL%%/RT/Dashboard/SelfService.pm
 %%SITE_PERL%%/RT/Dashboards.pm
 %%SITE_PERL%%/RT/Date.pm
 %%SITE_PERL%%/RT/DependencyWalker.pm
@@ -206,12 +207,16 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/REST2/Middleware/ErrorAsJSON.pm
 %%SITE_PERL%%/RT/REST2/Middleware/Log.pm
 %%SITE_PERL%%/RT/REST2/Resource.pm
+%%SITE_PERL%%/RT/REST2/Resource/Article.pm
+%%SITE_PERL%%/RT/REST2/Resource/Articles.pm
 %%SITE_PERL%%/RT/REST2/Resource/Asset.pm
 %%SITE_PERL%%/RT/REST2/Resource/Assets.pm
 %%SITE_PERL%%/RT/REST2/Resource/Attachment.pm
 %%SITE_PERL%%/RT/REST2/Resource/Attachments.pm
 %%SITE_PERL%%/RT/REST2/Resource/Catalog.pm
 %%SITE_PERL%%/RT/REST2/Resource/Catalogs.pm
+%%SITE_PERL%%/RT/REST2/Resource/Class.pm
+%%SITE_PERL%%/RT/REST2/Resource/Classes.pm
 %%SITE_PERL%%/RT/REST2/Resource/Collection.pm
 %%SITE_PERL%%/RT/REST2/Resource/Collection/ProcessPOSTasGET.pm
 %%SITE_PERL%%/RT/REST2/Resource/Collection/QueryByJSON.pm
@@ -430,6 +435,11 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/images/general-status-chart.png
 %%PORTDOCS%%%%DOCSDIR%%/images/global-lifecycle-group-rights.png
 %%PORTDOCS%%%%DOCSDIR%%/images/lifecycle-choices.png
+%%PORTDOCS%%%%DOCSDIR%%/images/lifecycle-ui-actions.png
+%%PORTDOCS%%%%DOCSDIR%%/images/lifecycle-ui-advanced.png
+%%PORTDOCS%%%%DOCSDIR%%/images/lifecycle-ui-mappings.png
+%%PORTDOCS%%%%DOCSDIR%%/images/lifecycle-ui-modify.png
+%%PORTDOCS%%%%DOCSDIR%%/images/lifecycle-ui-rights.png
 %%PORTDOCS%%%%DOCSDIR%%/images/order-history-example.png
 %%PORTDOCS%%%%DOCSDIR%%/images/queue-created-started-chart.png
 %%PORTDOCS%%%%DOCSDIR%%/images/quote-selection-highlighted.png
@@ -808,6 +818,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Global/GroupRights.html
 %%DATADIR%%/html/Admin/Global/MyRT.html
 %%DATADIR%%/html/Admin/Global/Scrips.html
+%%DATADIR%%/html/Admin/Global/SelfServiceHomePage.html
 %%DATADIR%%/html/Admin/Global/Template.html
 %%DATADIR%%/html/Admin/Global/Templates.html
 %%DATADIR%%/html/Admin/Global/Topics.html
@@ -1119,8 +1130,12 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/SelectTimezone
 %%DATADIR%%/html/Elements/SelectUsers
 %%DATADIR%%/html/Elements/SelectWatcherType
+%%DATADIR%%/html/Elements/SelfServiceNewestArticles
+%%DATADIR%%/html/Elements/SelfServiceShowArticles
+%%DATADIR%%/html/Elements/SelfServiceTopArticles
 %%DATADIR%%/html/Elements/SetupSessionCookie
 %%DATADIR%%/html/Elements/ShortcutHelp
+%%DATADIR%%/html/Elements/ShowArticleCustomFields
 %%DATADIR%%/html/Elements/ShowCustomDateRanges
 %%DATADIR%%/html/Elements/ShowCustomFieldBinary
 %%DATADIR%%/html/Elements/ShowCustomFieldCustomGroupings
@@ -1189,6 +1204,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Helpers/ShortcutHelp
 %%DATADIR%%/html/Helpers/ShowSimplifiedRecipients
 %%DATADIR%%/html/Helpers/SpawnLinkedTicket
+%%DATADIR%%/html/Helpers/TextDiff
 %%DATADIR%%/html/Helpers/TicketAttachments
 %%DATADIR%%/html/Helpers/TicketHistory
 %%DATADIR%%/html/Helpers/TicketHistoryPage
@@ -1334,8 +1350,10 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/CustomFieldValues
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Users
 %%DATADIR%%/html/SelfService/Helpers/ShortcutHelp
+%%DATADIR%%/html/SelfService/Helpers/TextDiff
 %%DATADIR%%/html/SelfService/Helpers/Upload/Add
 %%DATADIR%%/html/SelfService/Helpers/Upload/Delete
+%%DATADIR%%/html/SelfService/Open.html
 %%DATADIR%%/html/SelfService/Prefs.html
 %%DATADIR%%/html/SelfService/Search/Results.tsv
 %%DATADIR%%/html/SelfService/Transaction/Display.html
@@ -1428,6 +1446,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Widgets/Form/Code
 %%DATADIR%%/html/Widgets/Form/CustomDateRanges
 %%DATADIR%%/html/Widgets/Form/Integer
+%%DATADIR%%/html/Widgets/Form/JSON
 %%DATADIR%%/html/Widgets/Form/MultilineString
 %%DATADIR%%/html/Widgets/Form/Select
 %%DATADIR%%/html/Widgets/Form/String

@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rt
-DISTVERSION=	5.0.0
-PORTREVISION=	1
+DISTVERSION=	5.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	50
