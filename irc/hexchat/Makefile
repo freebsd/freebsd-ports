@@ -3,6 +3,7 @@
 
 PORTNAME=	hexchat
 PORTVERSION=	2.14.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	irc gnome
 
@@ -56,7 +57,6 @@ CANBERRA_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 CANBERRA_MESON_TRUE=	with-libcanberra
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 DBUS_MESON_TRUE=	with-dbus
-DBUS_USE=		GNOME=gconf2
 FISHLIM_MESON_TRUE=	with-fishlim
 LUA_MESON_ON=		-Dwith-lua=lua-${LUA_VER}
 LUA_MESON_OFF=		-Dwith-lua=false
