@@ -4,8 +4,6 @@ bin/gnash-gtk-launcher
 bin/gtk-gnash
 bin/gprocessor
 bin/rtmpget
-%%GSTREAMER%%bin/findmicrophones
-%%GSTREAMER%%bin/findwebcams
 %%CYGNAL%%bin/cygnal
 %%CYGNAL%%bin/flvdumper
 %%CYGNAL%%bin/soldumper
