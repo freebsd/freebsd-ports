@@ -2,6 +2,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.22.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -12,19 +13,15 @@ COMMENT=	Remote-controllable music daemon
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 		libicudata.so:devel/icu
 
 USES=		compiler:c++17-lang localbase:ldflags meson pkgconfig \
 		python:build tar:xz
 
-USE_GNOME=	glib20
-
 USE_RC_SUBR=	${PORTNAME}
 MESON_ARGS=	-Dauto_features=disabled \
 		-Dbzip2=enabled \
-		-Ddocumentation=enabled \
 		-Dhttpd=true \
 		-Dicu=enabled \
 		-Doss=enabled \
@@ -36,7 +33,9 @@ PORTDOCS=	AUTHORS README.md NEWS
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS ID3TAG IPV6 ISO9660 SQLITE3 \
+OPTIONS_SUB=	yes
+
+OPTIONS_DEFINE=	DOCS ID3TAG IPV6 ISO9660 MANPAGES SQLITE3 \
 		PROXYDB VORBISENC ZZIP
 
 OPTIONS_RADIO=	RESAMPLER ZEROCONF
@@ -78,8 +77,11 @@ WILDMIDI_DESC=	WildMIDI support (MIDI files)
 YAJL_DESC=	JSON support via libyajl
 ZZIP_DESC=	Support for zzip archives
 
-OPTIONS_DEFAULT=CURL FFMPEG FLAC ID3TAG LAME OPUS \
+OPTIONS_DEFAULT=CURL FFMPEG FLAC ID3TAG LAME MANPAGES OPUS \
 		PLAYLISTS PROXYDB SNDFILE VORBIS VORBISENC
+
+MANPAGES_MESON_ENABLED=	documentation
+MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/bin/sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
 
 # Decoder plugins
 ADPLUG_MESON_ENABLED=	adplug
@@ -196,7 +198,7 @@ SOUNDCLOUD_IMPLIES=	CURL YAJL
 TIDAL_MESON_ENABLED=	tidal
 TIDAL_IMPLIES=		CURL YAJL
 
-# Misc library suppore
+# Misc library support
 AVAHI_MESON_ON=		-Dzeroconf=avahi
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 MDNSRESPONDER_MESON_ON=		-Dzeroconf=bonjour
@@ -259,10 +261,12 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/_build/mpd \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+.if ${PORT_OPTIONS:MMANPAGES}
 	${INSTALL_MAN} ${WRKSRC}/_build/doc/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/_build/doc/${PORTNAME}.conf.5 \
 		${STAGEDIR}${PREFIX}/man/man5
+.endif
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
