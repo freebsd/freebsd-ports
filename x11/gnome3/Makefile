@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome3
 PORTVERSION=	3.36
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	x11 gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -27,7 +27,6 @@ RUN_DEPENDS?=	dconf-editor:devel/dconf-editor \
 		sushi>=0:x11-fm/sushi \
 		nautilus>=3.0.0:x11-fm/nautilus \
 		${LOCALBASE}/share/fonts/bitstream-vera/Vera.ttf:x11-fonts/bitstream-vera \
-		${LOCALBASE}/share/hal/fdi/information/10freedesktop/10-camera-ptp.fdi:sysutils/hal-info \
 		yelp>=3.0.0:x11/yelp \
 		zenity>=3.0.0:x11/zenity \
 		seahorse>=3.0.0:security/seahorse \
