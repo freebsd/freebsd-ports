@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapp
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -35,7 +35,7 @@ PORTSCOUT=	limit:^[0-9.]+$$	# ignore master.mint* tags
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
-DOCS_MESON_TRUE=	docs
+DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+DOCS_MESON_ON=		-Ddocs=true
 
 .include <bsd.port.mk>
