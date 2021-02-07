@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pioneers
-PORTVERSION=	15.5
-PORTREVISION=	2
+PORTVERSION=	15.6
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/pio/Source
 
@@ -15,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
+		libcanberra.so:audio/libcanberra \
 		libnotify.so:devel/libnotify
 RUN_DEPENDS=	yelp:x11/yelp
 
