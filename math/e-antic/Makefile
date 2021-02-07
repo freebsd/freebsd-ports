@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e-antic
-DISTVERSION=	1.0.0-rc.12
+DISTVERSION=	1.0.0-rc.13
 #MASTER_SITES=	https://www.labri.fr/perso/vdelecro/e-antic/
 CATEGORIES=	math
 
@@ -15,6 +15,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 LIB_DEPENDS=	libarb.so:math/arb		\
 		libgmp.so:math/gmp		\
+		libmpfr.so:math/mpfr		\
 		libantic.so:math/antic		\
 		libflint.so:math/flint2		\
 		libbenchmark.so:devel/benchmark	\
@@ -42,7 +43,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
-PLIST_SUB=	VER=1.0.0rc12
+PLIST_SUB=	VER=1.0.0rc13
 
 post-extract:
 	${CP} -R ${WRKDIR}/antic-${ANTIC_TAG}/* ${WRKSRC}/libeantic/upstream/antic/

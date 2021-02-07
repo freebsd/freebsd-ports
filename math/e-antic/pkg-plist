@@ -16,11 +16,11 @@ lib/libeanticxx.a
 lib/libeanticxx.so
 lib/libeanticxx.so.1
 lib/libeanticxx.so.1.0.0
-%%PYTHON_SITELIBDIR%%/pyeantic-1.0.0rc12-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/pyeantic-1.0.0rc12-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/pyeantic-1.0.0rc12-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/pyeantic-1.0.0rc12-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/pyeantic-1.0.0rc12-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/pyeantic-%%VER%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/pyeantic-%%VER%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/pyeantic-%%VER%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/pyeantic-%%VER%%-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/pyeantic-%%VER%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/pyeantic/__init__.py
 %%PYTHON_SITELIBDIR%%/pyeantic/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pyeantic/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
