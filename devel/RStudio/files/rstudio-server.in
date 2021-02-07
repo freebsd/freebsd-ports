@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# $FreeBSD: head/net/dhcpd/files/dhcpd.in 470842 2018-05-25 14:04:06Z tz $
+#
+# PROVIDE: rstudio-server
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable rstudio_server:
+# rstudio_server_enable : set to "YES" to enable theb daemon, default is "NO"
+# rstudio_server_flags  : any extra flags, default is ""
+
+. /etc/rc.subr
+
+name=rstudio_server
+rcvar=rstudio_server_enable
+
+load_rc_config $name
+
+rstudio_server_enable=${rstudio_server_enable:-"NO"}
+rstudio_server_flags=${rstudio_server_flags:-""}
+
+procname=%%PREFIX%%/lib/rstudio-server/bin/rserver
+command=%%PREFIX%%/lib/rstudio-server/bin/rserver
+command_args="--server-user %%USER%% ${rstudio_server_flags}"
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+	# workaround for https://github.com/rstudio/rstudio/issues/8917
+	killall rsession rworkspaces 2>/dev/null # process list is taken from src/cpp/server/extras/admin/rstudio-server.in
+}
+
+run_rc_command "$1"

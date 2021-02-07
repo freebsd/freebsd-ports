@@ -6,7 +6,7 @@
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.1093
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
@@ -36,9 +36,7 @@ FLAVORS=	desktop server
 FLAVOR?=	${FLAVORS:[1]}
 server_PKGNAMESUFFIX=	-server
 
-USES=		cmake fortran localbase:ldflags pkgconfig qt:5 ssl
-USE_QT=		core dbus declarative gui location network opengl printsupport quickcontrols sensors \
-		sql svg webchannel webengine webkit widgets xml xmlpatterns buildtools_build qmake_build
+USES=		cmake fortran localbase:ldflags pkgconfig ssl
 USE_JAVA=	yes
 JAVA_VERSION=	8
 JAVA_BUILD=	yes
@@ -63,7 +61,10 @@ GWT_VERSION=	2.8.1
 GIN_VERSION=	2.1.2
 
 .if ${FLAVOR:U} == desktop
-USES+=		desktop-file-utils shared-mime-info
+COMMENT+=	(desktop UI version)
+USES+=		desktop-file-utils qt:5 shared-mime-info
+USE_QT=		core dbus declarative gui location network opengl printsupport quickcontrols sensors \
+		sql svg webchannel webengine webkit widgets xml xmlpatterns buildtools_build qmake_build
 CMAKE_ARGS+=	-DRSTUDIO_TARGET=Desktop
 INSTALL_SUBDIR=	${PORTNAME:tl}
 EXECUTABLE=	${PORTNAME:tl}
@@ -71,12 +72,12 @@ EXECUTABLE=	${PORTNAME:tl}
 
 .if ${FLAVOR:U} == server
 COMMENT+=	(web UI version)
-USES+=		shebangfix
-SHEBANG_FILES=	src/cpp/server/extras/admin/rstudio-server.in
 CMAKE_ARGS+=	-DRSTUDIO_TARGET=Server
 INSTALL_SUBDIR=	${PORTNAME:tl}-server
 EXECUTABLE=	rserver
-RUN_DEPENDS+=	bash:shells/bash
+USER=		nobody
+SUB_LIST=	USER=${USER}
+USE_RC_SUBR=	${PORTNAME:tl}-server
 .endif
 
 post-extract:
@@ -117,7 +118,10 @@ post-install:
 	) > ${STAGEDIR}${PREFIX}/bin/${EXECUTABLE}
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${EXECUTABLE}
 .if ${FLAVOR:U} == desktop
-	@${REINPLACE_CMD} -e 's|^Exec=.*/rstudio|Exec=${PREFIX}/bin/${EXECUTABLE}|' ${STAGEDIR}${PREFIX}/share/applications/${EXECUTABLE}.desktop
+	${REINPLACE_CMD} -e 's|^Exec=.*/rstudio|Exec=${PREFIX}/bin/${EXECUTABLE}|' ${STAGEDIR}${PREFIX}/share/applications/${EXECUTABLE}.desktop
+.endif
+.if ${FLAVOR:U} == server
+	${RM} ${STAGEDIR}${LOCALBASE}/lib/${INSTALL_SUBDIR}/bin/rstudio-server # not compatible with FreeBSD
 .endif
 	# Some functions expect the pandoc symlink.
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${INSTALL_SUBDIR}/bin/pandoc
