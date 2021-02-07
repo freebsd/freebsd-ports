@@ -240,7 +240,7 @@ bin/grass%%VER%%
 %%GRASS_INST_DIR%%/bin/r.surf.gauss
 %%GRASS_INST_DIR%%/bin/r.surf.idw
 %%GRASS_INST_DIR%%/bin/r.surf.random
-%%WOSBRK%%%%GRASS_INST_DIR%%/bin/r.terraflow
+%%GRASS_INST_DIR%%/bin/r.terraflow
 %%GRASS_INST_DIR%%/bin/r.texture
 %%GRASS_INST_DIR%%/bin/r.thin
 %%GRASS_INST_DIR%%/bin/r.tile

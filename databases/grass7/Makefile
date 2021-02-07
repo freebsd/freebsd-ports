@@ -3,7 +3,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	7.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	https://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -134,12 +134,6 @@ ZSTD_CONFIGURE_WITH=	zstd
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "aarch64" || ${ARCH} == "riscv64"
-PLIST_SUB+=	WOSBRK="@comment "
-.else
-PLIST_SUB+=	WOSBRK=""
-.endif
 
 .if ${ARCH} == "i386" && ${OSVERSION} < 1200000
 # clang 7.x and 8.x do not build properly on 11i386
