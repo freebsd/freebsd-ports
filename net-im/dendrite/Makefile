@@ -3,7 +3,13 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.9
+PORTREVISION=	1
 CATEGORIES=	net-im
+
+# To be removed in the next update
+# See https://github.com/matrix-org/dendrite/pull/1753
+PATCH_SITES=    https://github.com/matrix-org/${PORTNAME}/commit/
+PATCHFILES=     02e6d89cc2bde930be36323e626ce54643d56a7f.patch:-p1
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Matrix protocol homeserver
