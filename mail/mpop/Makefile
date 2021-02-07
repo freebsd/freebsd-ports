@@ -35,7 +35,7 @@ LIBSECRET_DESC=		GNOME password management
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_CONFIGURE_WITH=	libsecret
 LIBTLS_DESC=		SSL/TLS support via libtls
-LIBTLS_LIB_DEPENDS=	libtls.so:security/libressl
+LIBTLS_LIB_DEPENDS=	libtls.so:security/${"${SSL_DEFAULT:Mlibressl*}":?libressl:libretls}
 LIBTLS_CONFIGURE_ON=	--with-tls=libtls
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
