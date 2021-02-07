@@ -2,7 +2,7 @@
 
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.10.3
+DISTVERSION?=	1.11
 PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
@@ -28,7 +28,8 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
 GH_TUPLE?=	hrydgard:glslang:8.13.3559-76-gd0850f87:glslang/ext/glslang \
-		hrydgard:${PORTNAME}-lang:1c64b8f:lang/assets/lang \
+		hrydgard:miniupnp:miniupnpd_2_1-354-g7e229dd:miniupnp/ext/miniupnp \
+		hrydgard:${PORTNAME}-lang:567b225:lang/assets/lang \
 		KhronosGroup:SPIRV-Cross:2019-05-20-60-ga1f7c8dc:SPIRV/ext/SPIRV-Cross \
 		Kingcom:armips:v0.10.0-28-g7885552:armips/ext/armips
 
@@ -41,7 +42,7 @@ USE_GL=		gl glew glu
 CMAKE_ON=	USE_SYSTEM_FFMPEG USE_SYSTEM_LIBZIP USE_SYSTEM_SNAPPY USE_WAYLAND_WSI
 CMAKE_OFF=	USE_DISCORD
 SUB_FILES=	pkg-message
-PORTDATA=	assets ${PORTNAME}
+PORTDATA=	assets
 
 DESKTOP_ENTRIES="PPSSPP" \
 		"" \
@@ -50,7 +51,7 @@ DESKTOP_ENTRIES="PPSSPP" \
 		"Game;Emulator;" \
 		""
 
-OPTIONS_DEFINE=	OLDJOY VULKAN
+OPTIONS_DEFINE=	VULKAN
 OPTIONS_DEFAULT=VULKAN
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	LIBRETRO QT5 SDL
@@ -61,8 +62,6 @@ LIBRETRO_DESC=	libretro core for games/retroarch
 LIBRETRO_CMAKE_BOOL=	LIBRETRO
 LIBRETRO_PLIST_FILES=	lib/libretro/${PORTNAME}_libretro.so
 LIBRETRO_VARS=	CONFLICTS_INSTALL= DESKTOP_ENTRIES= PLIST= PORTDATA= PKGMESSAGE= SUB_FILES=
-OLDJOY_DESC=	Old joystick support with fixed button mappings (deprecated)
-OLDJOY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-old-joy
 QT5_USES=	qt:5 sdl
 QT5_USE=	QT=qmake_build,buildtools_build,linguisttools_build,gui,multimedia,opengl,widgets
 QT5_USE+=	SDL=sdl2 # audio, joystick
@@ -85,21 +84,10 @@ post-patch:
 		${WRKSRC}/git-version.cmake
 
 do-install-QT5-on do-install-SDL-on:
-# cmake doesn't pack assets into the app unlike qmake
-	(cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} \
-		"${PORTDATA:N${PORTNAME}}" ${STAGEDIR}${DATADIR})
-# Install the app alongside assets to avoid warnings with GetExeDirectory()
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${EXENAME} \
-		${STAGEDIR}${DATADIR}/${PORTNAME}
-	${LN} -sf ../${DATADIR_REL}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-
+	${MV} ${STAGEDIR}${PREFIX}/bin/${EXENAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${_DISTDIR}/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1
-	(cd ${WRKSRC}/icons && ${COPYTREE_SHARE} \
-		"hicolor" ${STAGEDIR}${PREFIX}/share/icons)
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/icons/icon-512.svg \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/${PORTNAME}.svg
 
 do-install-LIBRETRO-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${LIBRETRO_PLIST_FILES:H}

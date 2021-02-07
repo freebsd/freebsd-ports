@@ -2,11 +2,10 @@
 { type: install
   message: <<EOM
 Known issues:
-- %%DATADIR%%/assets/gamecontrollerdb.txt cannot be used
-  as is because SDL_JoystickGetGUID is a stub on FreeBSD. Create the
-  file using controllermap (or antimicro) then check with testgamecontroller
-  it's detected (pay attention to guid). If you have trouble making it
-  work try OLDJOY option for v1.3 behavior.
+- Default assignment of joystick buttons requires evdev-based driver e.g.,
+  hgame(4) on FreeBSD >= 13.0, sysutils/iichid or multimedia/webcamd.
+  If your joystick isn't detected consider defining SDL_GAMECONTROLLERCONFIG
+  in environ(7) after generating the entry via controllermap (or antimicro).
 EOM
 }
 ]
