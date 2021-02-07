@@ -135,6 +135,7 @@
 %%ETCDIR%%/ignore.d.server/sympa
 %%ETCDIR%%/ignore.d.server/syslogd
 %%ETCDIR%%/ignore.d.server/systemd
+%%ETCDIR%%/ignore.d.server/systemd-logind
 %%ETCDIR%%/ignore.d.server/systemd-timesyncd
 %%ETCDIR%%/ignore.d.server/teapop
 %%ETCDIR%%/ignore.d.server/telnetd
