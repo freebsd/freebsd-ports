@@ -6,9 +6,7 @@ bin/cluster-file-servers
 bin/cluster-head-check
 bin/cluster-io-nodes
 bin/cluster-node-status
-@mode 6555
 bin/cluster-passwd
-@mode
 bin/cluster-pfs-nodes
 bin/cluster-pw-check
 bin/cluster-raid-nodes
@@ -63,7 +61,7 @@ sbin/cluster-lock-local-pw
 sbin/cluster-lock-user
 sbin/cluster-lowest-uid
 sbin/cluster-munge-enable
-sbin/cluster-node-admin
+sbin/cluster-node-manager
 sbin/cluster-passwd-expiration
 sbin/cluster-passwd-user-expiration
 sbin/cluster-ports-update
@@ -75,7 +73,7 @@ sbin/cluster-remove-from-known-hosts
 sbin/cluster-remove-user
 sbin/cluster-restore-user
 sbin/cluster-run
-sbin/cluster-services-menu
+sbin/cluster-services-manager
 sbin/cluster-set-compute-memory-limits
 sbin/cluster-set-default-nfs-mounts
 sbin/cluster-setup
@@ -98,11 +96,11 @@ sbin/cluster-unlock-local-pw
 sbin/cluster-unlock-user
 sbin/cluster-update-backup-nodes
 sbin/cluster-update-file-servers
-sbin/cluster-update-menu
+sbin/cluster-update-manager
 sbin/cluster-update-vis-nodes
 sbin/cluster-upgrade
-sbin/cluster-user-admin
 sbin/cluster-user-cleanup
+sbin/cluster-user-manager
 sbin/cluster-useradd
 sbin/cluster-usermod
 sbin/cluster-users
