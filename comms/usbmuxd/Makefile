@@ -2,7 +2,7 @@
 
 PORTNAME=	usbmuxd
 DISTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -30,7 +30,7 @@ USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
 PLIST_FILES=	man/man8/${PORTNAME}.8.gz \
-		"@(${USERS},${GROUPS},) sbin/${PORTNAME}"
+		sbin/${PORTNAME}
 PORTDOCS=	AUTHORS NEWS README.md
 
 OPTIONS_DEFINE=		DEVD DOCS
