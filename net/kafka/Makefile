@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kafka
-PORTVERSION=	2.6.0
-PORTREVISION=	1
+PORTVERSION=	2.7.0
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}_2.13-${PORTVERSION}
@@ -36,7 +35,7 @@ KAFKA_BINS=	connect-distributed.sh connect-mirror-maker.sh \
 		kafka-console-consumer.sh kafka-console-producer.sh \
 		kafka-consumer-groups.sh kafka-consumer-perf-test.sh \
 		kafka-delegation-tokens.sh kafka-delete-records.sh \
-		kafka-dump-log.sh kafka-leader-election.sh \
+		kafka-dump-log.sh kafka-leader-election.sh kafka-features.sh \
 		kafka-log-dirs.sh kafka-mirror-maker.sh \
 		kafka-preferred-replica-election.sh kafka-producer-perf-test.sh \
 		kafka-reassign-partitions.sh kafka-replica-verification.sh \
