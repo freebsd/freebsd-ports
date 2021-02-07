@@ -1,5 +1,6 @@
---- third_party/zlib/cpu_features.c.orig	2020-11-13 06:37:04 UTC
+--- third_party/zlib/cpu_features.c.orig	2020-07-07 21:58:18 UTC
 +++ third_party/zlib/cpu_features.c
+
 @@ -31,11 +31,20 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
  
  #ifndef CPU_NO_SIMD
@@ -23,6 +24,15 @@
  #include <cpu-features.h>
  #elif defined(ARMV8_OS_LINUX)
  #include <asm/hwcap.h>
+@@ -56,7 +65,7 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
+ static void _cpu_check_features(void);
+ #endif
+ 
+-#if defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_LINUX) || defined(ARMV8_OS_MACOS) || defined(ARMV8_OS_FUCHSIA) || defined(X86_NOT_WINDOWS)
++#if defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_FREEBSD) || defined(ARMV8_OS_LINUX) || defined(ARMV8_OS_MACOS) || defined(ARMV8_OS_FUCHSIA) || defined(X86_NOT_WINDOWS)
+ #if !defined(ARMV8_OS_MACOS)
+ // _cpu_check_features() doesn't need to do anything on mac/arm since all
+ // features are known at build time, so don't call it.
 @@ -123,6 +132,13 @@ static void _cpu_check_features(void)
  #elif defined(ARMV8_OS_WINDOWS)
      arm_cpu_enable_crc32 = IsProcessorFeaturePresent(PF_ARM_V8_CRC32_INSTRUCTIONS_AVAILABLE);
