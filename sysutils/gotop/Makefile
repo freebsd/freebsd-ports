@@ -2,7 +2,7 @@
 
 PORTNAME=	gotop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.0
+DISTVERSION=	4.1.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,24 +20,29 @@ GH_TUPLE=	\
 		VictoriaMetrics:metrics:v1.11.2:victoriametrics_metrics/vendor/github.com/VictoriaMetrics/metrics \
 		VividCortex:ewma:v1.1.1:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
 		cloudfoundry-attic:jibber_jabber:bcc4c8345a21:cloudfoundry_attic_jibber_jabber/vendor/github.com/cloudfoundry-attic/jibber_jabber \
+		cloudfoundry:jibber_jabber:bcc4c8345a21:cloudfoundry_jibber_jabber/vendor/github.com/cloudfoundry/jibber_jabber \
 		davecgh:go-spew:v1.1.0:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		distatus:battery:v0.9.0:distatus_battery/vendor/github.com/distatus/battery \
+		distatus:battery:v0.10.0:distatus_battery/vendor/github.com/distatus/battery \
 		gizak:termui:v3.1.0:gizak_termui_v3/vendor/github.com/gizak/termui \
 		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
-		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:sys:a7d97aace0b0:golang_sys/vendor/golang.org/x/sys \
+		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		golang:sys:b64e53b001e4:golang_sys/vendor/golang.org/x/sys \
+		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
 		mattn:go-runewidth:v0.0.4:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mitchellh:go-wordwrap:ad45545899c7:mitchellh_go_wordwrap/vendor/github.com/mitchellh/go-wordwrap \
 		nsf:termbox-go:38ba6e5628f1:nsf_termbox_go/vendor/github.com/nsf/termbox-go \
+		onsi:ginkgo:v1.14.2:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
+		onsi:gomega:v1.10.4:onsi_gomega/vendor/github.com/onsi/gomega \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		shibukawa:configdir:e180dbdc8da0:shibukawa_configdir/vendor/github.com/shibukawa/configdir \
-		shirou:gopsutil:v2.20.3:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
+		shirou:gopsutil:v3.20.12:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
 		shurcooL:httpfs:8d4bc4ba7749:shurcool_httpfs/vendor/github.com/shurcooL/httpfs \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
- 		valyala:fastrand:v1.0.0:valyala_fastrand/vendor/github.com/valyala/fastrand \
- 		valyala:histogram:v1.0.1:valyala_histogram/vendor/github.com/valyala/histogram \
-		xxxserxxx:lingo:5858cf2e409d:xxxserxxx_lingo/vendor/github.com/jdkeke142/lingo-toml \
- 		xxxserxxx:opflag:v1.0.5:xxxserxxx_opflag/vendor/github.com/xxxserxxx/opflag
+		valyala:fastrand:v1.0.0:valyala_fastrand/vendor/github.com/valyala/fastrand \
+		valyala:histogram:v1.0.1:valyala_histogram/vendor/github.com/valyala/histogram \
+		xxxserxxx:lingo:1a343cae68e0:xxxserxxx_lingo/vendor/github.com/xxxserxxx/lingo \
+		xxxserxxx:opflag:v1.0.5:xxxserxxx_opflag/vendor/github.com/xxxserxxx/opflag
+
 GL_TUPLE=	https://gitlab.howett.net:go:plist:3b63eb3a43b59c776909681ed1fcb412b47d3c9a:go_plist/vendor/howett.net/plist
 
 GO_TARGET=	./cmd/gotop/
