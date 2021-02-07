@@ -77,6 +77,35 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cdb10765-6879-11eb-a7d8-08002734b9ed">
+    <topic>gitea -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.13.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea Team reports for release 1.13.2:</p>
+	<blockquote cite="https://blog.gitea.io/2021/02/gitea-1.13.2-is-released/">
+	  <ul>
+	    <li>Prevent panic on fuzzer provided string</li>
+	    <li>Add secure/httpOnly attributes to the lang cookie</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.13.2</url>
+      <freebsdpr>ports/253295</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2021-01-07</discovery>
+      <entry>2021-02-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e01aad2-680e-11eb-83e2-e09467587c17">
     <topic>chromium -- heap buffer overflow in V8</topic>
     <affects>
