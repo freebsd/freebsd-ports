@@ -3,8 +3,11 @@
 
 PORTNAME=	qjackctl
 DISTVERSIONPREFIX=	qjackctl_
-DISTVERSION=	0_9_0
+DISTVERSION=	0_9_1
 CATEGORIES=	audio
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	275c36a3cbad51d337f7afc5d420efc80ab19d70.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Qt interface for JACK Audio Connection Kit
@@ -16,11 +19,12 @@ LIB_DEPENDS=	libjack.so:audio/jack
 
 USES=		autoreconf compiler:c++11-lib gl gmake localbase pkgconfig qt:5
 GNU_CONFIGURE=	yes
-USE_GITHUB=	yes
-GH_ACCOUNT=	rncbc
 USE_QT=		core gui network widgets x11extras xml buildtools_build linguisttools_build qmake_build
 USE_GL=		gl
 USE_CXXSTD=	c++11
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	rncbc
 
 BINARY_ALIAS=	qmake=${QMAKE}
 

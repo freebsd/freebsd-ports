@@ -1,3 +1,5 @@
-TIMESTAMP = 1608426545
-SHA256 (rncbc-qjackctl-qjackctl_0_9_0_GH0.tar.gz) = 869f763891962261efe4aa292ec8a8202fa8f5ebd3d50d45f6265daeb462835a
-SIZE (rncbc-qjackctl-qjackctl_0_9_0_GH0.tar.gz) = 1020016
+TIMESTAMP = 1612734569
+SHA256 (rncbc-qjackctl-qjackctl_0_9_1_GH0.tar.gz) = 365842b04c8b79a3295b7573a282e4ab2d1bc9833573ac10c777c8e397b648b9
+SIZE (rncbc-qjackctl-qjackctl_0_9_1_GH0.tar.gz) = 1024220
+SHA256 (275c36a3cbad51d337f7afc5d420efc80ab19d70.patch) = 6ebcda2e62533b0f92e431c7082f29d615e8d1e1e5357ea91170b37363619247
+SIZE (275c36a3cbad51d337f7afc5d420efc80ab19d70.patch) = 632
