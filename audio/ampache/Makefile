@@ -1,0 +1,46 @@
+# Created by: Philippe Audeoud <jadawin@tuxaco.net>
+# $FreeBSD$
+
+PORTNAME=	ampache
+PORTVERSION=	4.3.0
+DISTVERSIONSUFFIX=	_all
+CATEGORIES=	audio www
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
+PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
+
+MAINTAINER=	crees@FreeBSD.org
+COMMENT=	Web-based Audio file manager
+
+LICENSE=	AGPLv3+
+
+USES=		zip gettext php:flavors mysql
+USE_PHP=	pdo pdo_mysql hash session json intl simplexml curl dom xml
+
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+SUB_FILES=	500.ampache-cron
+PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
+
+OPTIONS_DEFINE=	DOCS
+
+post-patch:
+.for h in channel play rest
+	${REINPLACE_CMD} 's,[[:space:]]*RewriteRule [^[:space:]]*[[:space:]],&/ampache,'	\
+		${WRKSRC}/$h/.htaccess.dist
+.endfor
+	${REINPLACE_CMD} 's,^;web_path = "",web_path = "/${PORTNAME}",'	\
+		${WRKSRC}/config/ampache.cfg.php.dist
+
+do-build:
+	${MKDIR} ${WRKSRC}/src
+
+do-install:
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} '-not -regex ^./man.*')
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} '-not -regex ^./docs.* -a -not -name *.bak')
+	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
+	${INSTALL_SCRIPT} ${WRKDIR}/500.ampache-cron ${STAGEDIR}${PREFIX}/etc/periodic/daily/
+
+.include <bsd.port.mk>

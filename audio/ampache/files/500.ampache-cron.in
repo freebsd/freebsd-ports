@@ -1,0 +1,27 @@
+#!/bin/sh -
+#
+# $FreeBSD$
+#
+
+if [ -r /etc/defaults/periodic.conf ]; then
+	. /etc/defaults/periodic.conf
+	source_periodic_confs
+fi
+
+rc=0
+
+case "${daily_ampache_gc_enable:-no}" in
+[Nn][Oo])
+	;;
+*)
+	phpcmd=%%LOCALBASE%%/bin/php
+	cronscript=%%WWWDIR%%/bin/cron.inc
+
+	if ! $phpcmd $cronscript >/dev/null 2>&1 ; then
+		echo 'ampache cron script failed- try running it manually'
+		rc=2
+	fi
+	;;
+esac
+
+exit $rc
