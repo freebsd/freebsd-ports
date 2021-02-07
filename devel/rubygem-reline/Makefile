@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	reline
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
