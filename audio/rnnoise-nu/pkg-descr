@@ -1,3 +1,5 @@
-RNNoise is a noise suppression library based on a recurrent neural network.
+RNNoise-nu is a noise suppression library based on a recurrent neural network.
 
-WWW: https://github.com/xiph/rnnoise
+Its a fork of the rnnoise library with altered/generalized functionality.
+
+WWW: https://github.com/GregorR/rnnoise-nu
