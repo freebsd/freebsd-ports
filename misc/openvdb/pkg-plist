@@ -146,5 +146,5 @@ lib/cmake/OpenVDB/OpenVDBMayaSetup.cmake
 lib/cmake/OpenVDB/OpenVDBUtils.cmake
 lib/libopenvdb.so
 lib/libopenvdb.so.8.0
-lib/libopenvdb.so.8.0.0
+lib/libopenvdb.so.8.0.1
 %%PYTHON%%%%PYTHON_LIBDIR%%/pyopenvdb.so
