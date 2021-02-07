@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rhythmbox
-PORTVERSION=	3.4.2
-PORTREVISION=	8
+PORTVERSION=	3.4.4
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,12 +21,12 @@ LIB_DEPENDS=	libmusicbrainz5.so:audio/libmusicbrainz5 \
 		libtotem-plparser.so:multimedia/totem-pl-parser \
 		libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
-		libhal.so:sysutils/hal \
 		libsoup-2.4.so:devel/libsoup \
 		libcheck.so:devel/check \
 		libpeas-1.0.so:devel/libpeas \
 		libjson-glib-1.0.so:devel/json-glib \
 		libsecret-1.so:security/libsecret \
+		libgudev-1.0.so:devel/libgudev \
 		libtdb.so:databases/tdb
 
 USES=		desktop-file-utils gmake gnome libtool localbase \
@@ -40,7 +39,6 @@ USE_GSTREAMER1=	flac lame jpeg cdparanoia vorbis
 CONFIGURE_ARGS=	--enable-vala \
 		--enable-visualizer=no \
 		--with-python=yes \
-		--disable-browser-plugin \
 		--with-libsecret=yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
@@ -79,13 +77,5 @@ NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_USES=		python:3.3+
 PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libpeas>=0:devel/py-libpeas@${PY_FLAVOR}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|{MOZILLA_PLUGINDIR|{MOZILLA_PLUGINDIR}|g' \
-		${WRKSRC}/configure
-
-# rbzeitgeist plugin needs py3-zeitgeist
-post-install:
-	@${RM} -r ${STAGEDIR}${PREFIX}/lib/rhythmbox/plugins/rbzeitgeist
 
 .include <bsd.port.mk>
