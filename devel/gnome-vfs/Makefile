@@ -3,7 +3,7 @@
 
 PORTNAME=	gnome-vfs
 PORTVERSION=	2.24.4
-PORTREVISION?=	11
+PORTREVISION?=	12
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -30,8 +30,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-openssl \
 		--disable-gnutls \
 		--disable-howl \
-		--with-hal-mount=/sbin/mount \
-		--with-hal-umount=/sbin/umount \
+		--disable-hal \
 		ac_cv_header_sys_inotify_h=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -43,8 +42,8 @@ GCONF_SCHEMAS=	desktop_default_applications.schemas \
 		desktop_gnome_url_handlers.schemas system_dns_sd.schemas \
 		system_http_proxy.schemas system_smb.schemas
 
-OPTIONS_DEFINE=	SAMBA MDNS HAL
-OPTIONS_DEFAULT=SAMBA MDNS HAL
+OPTIONS_DEFINE=	SAMBA MDNS
+OPTIONS_DEFAULT=SAMBA MDNS
 SAMBA_DESC=	Enable SMB volume support
 MDNS_DESC=	Enable Bonjour/Rendezvous support
 
@@ -56,13 +55,6 @@ USES+=		fam
 
 .if exists(${LOCALBASE}/lib/libkrb5.so)
 LIB_DEPENDS+=	libkrb5.so:security/heimdal
-.endif
-
-.if ${PORT_OPTIONS:MHAL}
-CONFIGURE_ARGS+=--enable-hal
-LIB_DEPENDS+=	libhal.so:sysutils/hal
-.else
-CONFIGURE_ARGS+=--disable-hal
 .endif
 
 .if ${PORT_OPTIONS:MSAMBA}
