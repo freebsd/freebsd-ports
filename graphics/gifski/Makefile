@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gifski
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.3
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,10 +36,10 @@ CARGO_CRATES=	adler-0.2.3 \
 		crossbeam-channel-0.5.0 \
 		crossbeam-utils-0.8.1 \
 		dunce-1.0.1 \
-		fallible_collections-0.3.1 \
+		fallible_collections-0.4.0 \
 		ffmpeg-next-4.3.8 \
 		ffmpeg-sys-next-4.3.5 \
-		flate2-1.0.19 \
+		flate2-1.0.20 \
 		gif-0.11.1 \
 		gif-dispose-3.1.1 \
 		gifsicle-1.92.4 \
@@ -47,13 +47,13 @@ CARGO_CRATES=	adler-0.2.3 \
 		hashbrown-0.9.1 \
 		hermit-abi-0.1.18 \
 		imagequant-3.0.3+sys2.14.0 \
-		imagequant-sys-3.0.2+sys2.14.0 \
+		imagequant-sys-3.0.3+sys2.14.0 \
 		imgref-1.7.1 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.82 \
+		libc-0.2.84 \
 		libloading-0.5.2 \
-		lodepng-3.4.2 \
+		lodepng-3.4.3 \
 		memchr-2.3.4 \
 		miniz_oxide-0.4.3 \
 		natord-1.0.9 \
@@ -68,7 +68,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		quote-1.0.8 \
 		regex-1.4.3 \
 		regex-syntax-0.6.22 \
-		resize-0.5.5 \
+		resize-0.6.1 \
 		rgb-0.8.25 \
 		rustc-hash-1.1.0 \
 		shlex-0.1.1 \
@@ -81,7 +81,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		vec_map-0.8.2 \
 		version_check-0.9.2 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
-		weezl-0.1.3 \
+		weezl-0.1.4 \
 		wild-2.0.4 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
