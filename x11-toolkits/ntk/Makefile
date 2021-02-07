@@ -11,6 +11,8 @@ COMMENT=	Fork of FLTK 1.3.0 which adds graphics rendering via Cairo, etc
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		the upstream based on the 'non' project is gone along with this GH project for it, 3 depending ports' upstreams have been notified via GH issues
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
