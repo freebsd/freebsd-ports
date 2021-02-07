@@ -1888,7 +1888,6 @@
     SUBDIR += xlreader
     SUBDIR += xml-commons
     SUBDIR += xml-format
-    SUBDIR += xml-i18n-tools
     SUBDIR += xml-lite.el
     SUBDIR += xml2rfc
     SUBDIR += xmlada
