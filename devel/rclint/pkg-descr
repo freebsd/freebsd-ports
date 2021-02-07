@@ -3,3 +3,5 @@ Long have there been calls for an rc analog to portlint.
 This script allows people to make a quick pre-commit check of rc files.
 
 Try using the -v flag if the error messages are too terse.
+
+WWW: https://github.com/crees/rclint
