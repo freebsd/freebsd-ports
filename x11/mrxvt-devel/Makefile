@@ -15,10 +15,12 @@ LICENSE=	GPLv2
 
 CONFLICTS=	mrxvt-0.4.*
 USES=		shebangfix xorg
-USE_XORG=	x11
+USE_XORG=	ice x11 sm xpm xrender
 GNU_CONFIGURE=	yes
 
-SHEBANG_FILES=  ${WRKSRC}/share/scripts/mrxvtset.pl
+LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig
+
+SHEBANG_FILES=	${WRKSRC}/share/scripts/mrxvtset.pl
 
 SUB_FILES+=	pkg-message
 
@@ -44,6 +46,7 @@ FRILLS_DESC=		Internal borders and smart resizing
 
 CONFIGURE_ARGS+=	--enable-utempter
 CONFIGURE_ARGS+=	--disable-lastlog
+CFLAGS+=		-fcommon
 
 .if ${PORT_OPTIONS:MJAPANESE}
 CONFIGURE_ARGS+=	--enable-xim --enable-cjk --with-encoding=eucj
