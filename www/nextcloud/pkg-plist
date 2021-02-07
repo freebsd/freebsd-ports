@@ -4892,6 +4892,8 @@
 %%WWWDIR%%/apps-pkg/accessibility/l10n/nl.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/nn_NO.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/nn_NO.json
+%%WWWDIR%%/apps-pkg/accessibility/l10n/oc.js
+%%WWWDIR%%/apps-pkg/accessibility/l10n/oc.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/pl.js
 %%WWWDIR%%/apps-pkg/accessibility/l10n/pl.json
 %%WWWDIR%%/apps-pkg/accessibility/l10n/pt_BR.js
@@ -5307,6 +5309,8 @@
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/uk.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/admin_audit/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/admin_audit/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/admin_audit/lib/Actions/Action.php
@@ -5385,6 +5389,8 @@
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/tr.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/cloud_federation_api/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/cloud_federation_api/lib/AppInfo/Application.php
@@ -5691,6 +5697,8 @@
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/tr.json
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/contactsinteraction/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/contactsinteraction/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/contactsinteraction/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/contactsinteraction/lib/AddressBook.php
@@ -5772,12 +5780,16 @@
 %%WWWDIR%%/apps-pkg/dashboard/l10n/hu.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/it.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/it.json
+%%WWWDIR%%/apps-pkg/dashboard/l10n/ja.js
+%%WWWDIR%%/apps-pkg/dashboard/l10n/ja.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/lt_LT.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/lt_LT.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/mk.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/mk.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/nl.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/nl.json
+%%WWWDIR%%/apps-pkg/dashboard/l10n/oc.js
+%%WWWDIR%%/apps-pkg/dashboard/l10n/oc.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/pl.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/pl.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/pt_BR.js
@@ -5796,6 +5808,8 @@
 %%WWWDIR%%/apps-pkg/dashboard/l10n/tr.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/dashboard/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/dashboard/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/dashboard/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/dashboard/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/dashboard/lib/Controller/DashboardController.php
@@ -5952,6 +5966,8 @@
 %%WWWDIR%%/apps-pkg/dav/l10n/uk.json
 %%WWWDIR%%/apps-pkg/dav/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/dav/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/dav/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/dav/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/dav/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/dav/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/dav/lib/AppInfo/Application.php
@@ -6597,6 +6613,8 @@
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/uk.json
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/federatedfilesharing/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/federatedfilesharing/lib/AddressHandler.php
@@ -6781,6 +6799,8 @@
 %%WWWDIR%%/apps-pkg/federation/l10n/vi.json
 %%WWWDIR%%/apps-pkg/federation/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/federation/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/federation/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/federation/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/federation/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/federation/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/federation/lib/AppInfo/Application.php
@@ -9549,6 +9569,8 @@
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/tr.json
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/lookup_server_connector/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/lookup_server_connector/lib/AppInfo/Application.php
 %%WWWDIR%%/apps-pkg/lookup_server_connector/lib/BackgroundJobs/RetryJob.php
 %%WWWDIR%%/apps-pkg/lookup_server_connector/lib/UpdateLookupServer.php
@@ -9691,6 +9713,8 @@
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/vi.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/nextcloud_announcements/lib/AppInfo/Application.php
@@ -10054,6 +10078,8 @@
 %%WWWDIR%%/apps-pkg/oauth2/l10n/vi.json
 %%WWWDIR%%/apps-pkg/oauth2/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/oauth2/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/oauth2/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/oauth2/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/oauth2/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/oauth2/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/oauth2/lib/Controller/LoginRedirectorController.php
@@ -11222,6 +11248,8 @@
 %%WWWDIR%%/apps-pkg/settings/l10n/nb.json
 %%WWWDIR%%/apps-pkg/settings/l10n/nl.js
 %%WWWDIR%%/apps-pkg/settings/l10n/nl.json
+%%WWWDIR%%/apps-pkg/settings/l10n/oc.js
+%%WWWDIR%%/apps-pkg/settings/l10n/oc.json
 %%WWWDIR%%/apps-pkg/settings/l10n/pl.js
 %%WWWDIR%%/apps-pkg/settings/l10n/pl.json
 %%WWWDIR%%/apps-pkg/settings/l10n/pt_BR.js
@@ -12497,6 +12525,8 @@
 %%WWWDIR%%/apps-pkg/text/l10n/uk.json
 %%WWWDIR%%/apps-pkg/text/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/text/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/text/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/text/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/text/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/text/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/text/lib/AppInfo/Application.php
@@ -12671,6 +12701,8 @@
 %%WWWDIR%%/apps-pkg/theming/l10n/vi.json
 %%WWWDIR%%/apps-pkg/theming/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/theming/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/theming/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/theming/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/theming/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/theming/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/theming/lib/AppInfo/Application.php
@@ -12824,6 +12856,8 @@
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/uk.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/twofactor_backupcodes/lib/Activity/Provider.php
@@ -13022,6 +13056,8 @@
 %%WWWDIR%%/apps-pkg/updatenotification/l10n/vi.json
 %%WWWDIR%%/apps-pkg/updatenotification/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/updatenotification/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/updatenotification/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/updatenotification/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/updatenotification/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/updatenotification/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/updatenotification/lib/AppInfo/Application.php
@@ -13481,6 +13517,8 @@
 %%WWWDIR%%/apps-pkg/user_status/l10n/is.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/it.js
 %%WWWDIR%%/apps-pkg/user_status/l10n/it.json
+%%WWWDIR%%/apps-pkg/user_status/l10n/ja.js
+%%WWWDIR%%/apps-pkg/user_status/l10n/ja.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/ko.js
 %%WWWDIR%%/apps-pkg/user_status/l10n/ko.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/lt_LT.js
@@ -13507,6 +13545,8 @@
 %%WWWDIR%%/apps-pkg/user_status/l10n/tr.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/user_status/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/user_status/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/user_status/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/user_status/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/user_status/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/user_status/lib/AppInfo/Application.php
@@ -13788,6 +13828,8 @@
 %%WWWDIR%%/apps-pkg/weather_status/l10n/is.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/it.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/it.json
+%%WWWDIR%%/apps-pkg/weather_status/l10n/ja.js
+%%WWWDIR%%/apps-pkg/weather_status/l10n/ja.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/lt_LT.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/lt_LT.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/mk.js
@@ -13800,6 +13842,8 @@
 %%WWWDIR%%/apps-pkg/weather_status/l10n/pt_BR.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/ru.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/ru.json
+%%WWWDIR%%/apps-pkg/weather_status/l10n/sk.js
+%%WWWDIR%%/apps-pkg/weather_status/l10n/sk.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/sl.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/sl.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/sr.js
@@ -13810,6 +13854,10 @@
 %%WWWDIR%%/apps-pkg/weather_status/l10n/tr.json
 %%WWWDIR%%/apps-pkg/weather_status/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/weather_status/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/weather_status/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/weather_status/l10n/zh_HK.json
+%%WWWDIR%%/apps-pkg/weather_status/l10n/zh_TW.js
+%%WWWDIR%%/apps-pkg/weather_status/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/weather_status/lib/AppInfo/Application.php
 %%WWWDIR%%/apps-pkg/weather_status/lib/Capabilities.php
 %%WWWDIR%%/apps-pkg/weather_status/lib/Controller/WeatherStatusController.php
@@ -13962,6 +14010,8 @@
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/tr.json
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/zh_CN.js
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/zh_CN.json
+%%WWWDIR%%/apps-pkg/workflowengine/l10n/zh_HK.js
+%%WWWDIR%%/apps-pkg/workflowengine/l10n/zh_HK.json
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/zh_TW.js
 %%WWWDIR%%/apps-pkg/workflowengine/l10n/zh_TW.json
 %%WWWDIR%%/apps-pkg/workflowengine/lib/AppInfo/Application.php
@@ -15124,6 +15174,8 @@
 %%WWWDIR%%/core/l10n/vi.json
 %%WWWDIR%%/core/l10n/zh_CN.js
 %%WWWDIR%%/core/l10n/zh_CN.json
+%%WWWDIR%%/core/l10n/zh_HK.js
+%%WWWDIR%%/core/l10n/zh_HK.json
 %%WWWDIR%%/core/l10n/zh_TW.js
 %%WWWDIR%%/core/l10n/zh_TW.json
 %%WWWDIR%%/core/register_command.php
