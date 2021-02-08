@@ -16150,3 +16150,5 @@ net/twitux||2021-02-06|Does not work with actually twitter
 net-mgmt/ccnet-server||2021-02-07|Removed
 x11-toolkits/c++-gtk-utils||2021-02-07|Abandoned library not depended on
 textproc/xml-i18n-tools|textproc/intltool|2021-02-07|Has been replaced by intltools long ago
+sysutils/hal||2021-02-08|Has been abandonned upstream long ago, replacement have now hit the ports tree almost everywhere
+sysutils/hal-info||2021-02-08|Has no use without hal which has been removed
