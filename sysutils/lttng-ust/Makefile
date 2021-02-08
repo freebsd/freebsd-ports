@@ -22,6 +22,8 @@ USES=		autoreconf libtool localbase pathfix python \
 	    shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+# XXX: build fails if cmake is detected, see PR 253327
+CONFIGURE_ENV=	ac_cv_prog_HAVE_CMAKE=no
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
