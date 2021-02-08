@@ -18,7 +18,7 @@ PATCHFILES=	03eaa9779f2c9c7b0acf0521a5547036bdec2245.patch:-p1 \
 		18a058576d118dec428d81c7e2e3369d9ec939d0.patch:-p1 \
 		42b8c93b2b7c2a57a74580531c73ab736e95336a.patch:-p1
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Framework for defining and tracking users
 
 LICENSE=	GPLv2
