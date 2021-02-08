@@ -4,13 +4,13 @@ bin/rtgplot
 bin/rtgpoll
 contrib/README
 contrib/rtgtargmkr-with-modules-0.2.tar.gz
-%%ETCDIR%%/rtg.conf.sample
-%%ETCDIR%%/rtgtargmkr.pl
-%%ETCDIR%%/routers.sample
-%%ETCDIR%%/createdb
 %%ETCDIR%%/BER.pm
 %%ETCDIR%%/SNMP_Session.pm
 %%ETCDIR%%/SNMP_util.pm
+%%ETCDIR%%/createdb
+@sample %%ETCDIR%%/routers.sample
+@sample %%ETCDIR%%/rtg.conf.sample
+%%ETCDIR%%/rtgtargmkr.pl
 include/common.h
 include/rtg.h
 include/rtgplot.h
