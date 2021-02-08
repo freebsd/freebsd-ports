@@ -1,5 +1,5 @@
---- thirdparty/google_analytics/ganalytics.cpp.orig	2020-10-28 09:58:53 UTC
-+++ thirdparty/google_analytics/ganalytics.cpp
+--- thirdparty/qt-google-analytics/ganalytics.cpp.orig	2021-01-27 17:12:14 UTC
++++ thirdparty/qt-google-analytics/ganalytics.cpp
 @@ -381,7 +381,7 @@ QString GAnalytics::Private::getSystemInfo()
              .arg(QAndroidJniObject::getStaticObjectField<jstring>("android/os/Build", "ID").toString())
              .arg(QAndroidJniObject::getStaticObjectField<jstring>("android/os/Build", "BRAND").toString());

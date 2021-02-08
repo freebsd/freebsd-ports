@@ -3,16 +3,14 @@
 
 PORTNAME=	musescore
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5
-PORTREVISION=	2
+DISTVERSION=	3.6.1
 CATEGORIES=	audio
-# DISTNAME=	MuseScore-${DISTVERSION}
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Free music composition & notation software
 
 LICENSE=	GPLv2
-# LICENSE_FILE=	LICENSE.GPL
+LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
 LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libsndfile.so:audio/libsndfile \
@@ -36,15 +34,13 @@ GH_PROJECT=	MuseScore
 # so hope that scanning the parent dir finds new ones.
 #
 # Note needs PORTVERSION:R once there is a .minor version
-DATADIR=	${PREFIX}/share/mscore-${PORTVERSION}
+DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
 
 ALL_TARGET=	lrelease manpages all
-CMAKE_ARGS+=	-DUSE_SYSTEM_FREETYPE="ON" \
-		-DBUILD_PORTMIDI=OFF \
-		-DBUILD_PCH=OFF \
-		-DDOWNLOAD_SOUNDFONT=OFF
-# Musescore upcases the build type anyway
-CMAKE_BUILD_TYPE=	RELEASE
+
+CMAKE_OFF=	BUILD_PORTMIDI BUILD_PCH MSCORE_UNSTABLE
+CMAKE_ON=	USE_SYSTEM_FREETYPE
+CMAKE_BUILD_TYPE=	release
 
 # WebEngine is only available on i386/amd64, amd ppc64 starting FreeBSD 13.0.
 # If enabled on arches that don't have WebEngine, the build breaks.
@@ -71,21 +67,5 @@ WEBENGINE_CMAKE_BOOL=	BUILD_WEBENGINE
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS+=	-Wno-inconsistent-missing-override
 .endif
-
-post-extract:
-	@${RM} -r ${WRKSRC}/thirdparty/freetype
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "CMakeLists.txt" -print0 | ${XARGS} -0 \
-		${REINPLACE_CMD} -e \
-		'/RELEASE/s|-O2 ||; \
-		 /COMPILE_FLAGS/s|-g ||; \
-		 s|share/man|man|; \
-		 /COMPILE_FLAGS/s|$${PCH_INCLUDE} |-include $${PROJECT_BINARY_DIR}/all.h |'
-	@${REINPLACE_CMD} -e \
-		's|<errno.h>|<cerrno>| ; \
-		 s|<limits.h>|<climits>| ; \
-		 s|<math.h>|<cmath>| ; \
-		 s|<stdio.h>|<cstdio>|' ${WRKSRC}/all.h
 
 .include <bsd.port.post.mk>

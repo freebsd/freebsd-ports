@@ -3,9 +3,75 @@ loops in Ninja. I don't see much value in the PCH here, so
 just zero them out. (Neither do I understand how ninja ends
 up with the dependency loop; make handles this without complaint)
 
---- CMakeLists.txt.orig	2020-01-25 12:18:16 UTC
+--- CMakeLists.txt.orig	2021-01-27 17:12:14 UTC
 +++ CMakeLists.txt
-@@ -750,8 +750,8 @@ precompiled_header(QT_INCLUDES all ${BUILD_PCH})
+@@ -276,7 +276,7 @@ endif (${CMAKE_CXX_COMPILER_ID} MATCHES "GNU")
+ 
+ if (NOT MSVC)
+    set(CMAKE_CXX_FLAGS_DEBUG   "-g")
+-   set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG -DQT_NO_DEBUG")
++   set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG -DQT_NO_DEBUG")
+ endif (NOT MSVC)
+ 
+ if (APPLE)
+@@ -629,6 +629,38 @@ else(APPLE)
+       set_target_properties(oggdll PROPERTIES IMPORTED_IMPLIB ${OGG_LIBRARY})
+    else (MINGW OR MSVC)
+       set(SNDFILE_LIB sndfile)
++      message(STATUS "Looking for support libraries")
++      PKGCONFIG1(sndfile 1.0 SNDFILE_INCDIR SNDFILE_LIBDIR SNDFILE_LIB SNDFILE_CPP)
++      PKGCONFIG1(ogg 1.0 OGG_INCDIR OGG_LIBDIR OGG_LIB OGG_CPP)
++      PKGCONFIG1(vorbis 1.0 VORBIS_INCDIR VORBIS_LIBDIR VORBIS_LIB VORBIS_CPP)
++      message(STATUS "sndfile=${SNDFILE_LIBDIR} ogg=${OGG_LIBDIR} vorbis=${VORBIS_LIBDIR}")
++      if (SNDFILE_LIB)
++        find_library(_l sndfile PATHS ${SNDFILE_LIBDIR})
++        if (_l)
++          add_library(sndfile UNKNOWN IMPORTED)
++          set_target_properties(sndfile PROPERTIES
++            IMPORTED_LOCATION ${_l}
++            INTERFACE_INCLUDE_DIRECTORIES ${SNDFILE_INCDIR})
++        endif()
++      endif()
++      if (OGG_LIB)
++        find_library(_l ogg PATHS ${OGG_LIBDIR})
++        if (_l)
++          add_library(ogg UNKNOWN IMPORTED)
++          set_target_properties(ogg PROPERTIES
++            IMPORTED_LOCATION ${_l}
++            INTERFACE_INCLUDE_DIRECTORIES ${OGG_INCDIR})
++        endif()
++      endif()
++      if (VORBIS_LIB)
++        find_library(_l vorbis PATHS ${VORBIS_LIBDIR})
++        if (_l)
++          add_library(vorbis UNKNOWN IMPORTED)
++          set_target_properties(vorbis PROPERTIES
++            IMPORTED_LOCATION ${_l}
++            INTERFACE_INCLUDE_DIRECTORIES ${VORBIS_INCDIR})
++        endif()
++      endif()
+    endif (MINGW OR MSVC)
+    set(OGG_LIB ogg)
+ 
+@@ -733,7 +765,7 @@ if (NOT MINGW AND NOT MSVC AND NOT APPLE)
+             )
+     endif (GZIP_EXECUTABLE AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+     # Install man pages in either compressed or uncompressed form
+-    install( FILES ${MAN_BUILD} DESTINATION share/man/man1 COMPONENT doc)
++    install( FILES ${MAN_BUILD} DESTINATION man/man1 COMPONENT doc)
+     # Create symlink alias for man pages so `man musescore` = `man mscore`
+     find_program( LN_EXECUTABLE ln DOC "A tool for creating symbolic link aliases (optional)." )
+     if (LN_EXECUTABLE)
+@@ -744,7 +776,7 @@ if (NOT MINGW AND NOT MSVC AND NOT APPLE)
+             COMMAND ${LN_EXECUTABLE} -sf "${MAN_FULL_NAME}" "${MAN_FULL_ALIAS}"
+             COMMAND echo 'Symlink alias: ${MAN_FULL_ALIAS} -> ${MAN_FULL_NAME}'
+             )
+-        install( FILES ${PROJECT_BINARY_DIR}/${MAN_FULL_ALIAS} DESTINATION share/man/man1 COMPONENT doc)
++        install( FILES ${PROJECT_BINARY_DIR}/${MAN_FULL_ALIAS} DESTINATION man/man1 COMPONENT doc)
+      else (LN_EXECUTABLE)
+          message(STATUS "'ln' not found (it is optional). No symlink aliases will be created.")
+      endif (LN_EXECUTABLE)
+@@ -771,8 +803,8 @@ precompiled_header(QT_INCLUDES all ${BUILD_PCH})
  # MSVC does not require these targets, as all.h is not copied and the
  #   PCH generation is done per-project
  if (NOT MSVC)

@@ -1,0 +1,18 @@
+--- mtest/CMakeLists.txt.orig	2021-01-27 17:12:14 UTC
++++ mtest/CMakeLists.txt
+@@ -144,12 +144,12 @@ set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} ${Qt5W
+ string(REPLACE ";" ";-I" INC "${QT_INCLUDES}")
+ 
+ if (APPLE AND (CMAKE_VERSION VERSION_LESS "3.5.0"))
+-      set(TESTUTILS_COMPILE_FLAGS "-include all.h -D TESTROOT=\\\\\"${PROJECT_SOURCE_DIR}\\\\\" -g -Wall -Wextra")
++      set(TESTUTILS_COMPILE_FLAGS "-include all.h -D TESTROOT=\\\\\"${PROJECT_SOURCE_DIR}\\\\\" -Wall -Wextra")
+ else (APPLE AND (CMAKE_VERSION VERSION_LESS "3.5.0"))
+       if (MSVC)
+-            set(TESTUTILS_COMPILE_FLAGS "${PCH_INCLUDE}  /D TESTROOT=\\\"${PROJECT_SOURCE_DIR}\\\"")
++            set(TESTUTILS_COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h  /D TESTROOT=\\\"${PROJECT_SOURCE_DIR}\\\"")
+       else (MSVC)
+-            set(TESTUTILS_COMPILE_FLAGS "-include all.h -D TESTROOT=\\\"${PROJECT_SOURCE_DIR}\\\" -g -Wall -Wextra")
++            set(TESTUTILS_COMPILE_FLAGS "-include all.h -D TESTROOT=\\\"${PROJECT_SOURCE_DIR}\\\" -Wall -Wextra")
+       endif (MSVC)
+ endif (APPLE AND (CMAKE_VERSION VERSION_LESS "3.5.0"))
+ 

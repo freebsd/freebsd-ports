@@ -1,0 +1,11 @@
+--- libmscore/CMakeLists.txt.orig	2021-01-27 17:12:14 UTC
++++ libmscore/CMakeLists.txt
+@@ -127,7 +127,7 @@ if (NOT MSVC)
+    set_target_properties (
+       libmscore
+       PROPERTIES
+-         COMPILE_FLAGS "-g ${PCH_INCLUDE} -Wall -Wextra -Winvalid-pch -Woverloaded-virtual ${COVERAGE_OPTIONS}"
++         COMPILE_FLAGS "-include ${PROJECT_BINARY_DIR}/all.h -Wall -Wextra -Winvalid-pch -Woverloaded-virtual ${COVERAGE_OPTIONS}"
+       )
+ else (NOT MSVC)
+    set_target_properties (
