@@ -2310,6 +2310,7 @@
     SUBDIR += yourls
     SUBDIR += youtube_dl
     SUBDIR += youtube_dlc
+    SUBDIR += yt-dlp
     SUBDIR += ytdl
     SUBDIR += yuicompressor
     SUBDIR += zend-framework
