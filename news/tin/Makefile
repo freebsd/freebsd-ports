@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tin
-PORTVERSION=	2.4.4
-PORTREVISION=	3
+PORTVERSION=	2.4.5
 CATEGORIES+=	news
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/v${PORTVERSION:R}/ \
@@ -65,7 +64,7 @@ CONFIGURE_ARGS+=--with-nntp-default-server=news \
 		--with-libdir=${PREFIX}/news/lib \
 		--with-defaults-dir=${PREFIX}/etc \
 		--with-editor=${TIN_EDITOR} \
-		--with-pcre=yes \
+		--with-pcre=${PREFIX}/lib \
 		--with-screen=${TIN_SCREEN} \
 		--enable-break-long-lines \
 		${ICONV_CONFIGURE_ARG} \
