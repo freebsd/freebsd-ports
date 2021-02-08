@@ -1,3 +1,3 @@
-TIMESTAMP = 1597737237
-SHA256 (openvswitch-2.14.0.tar.gz) = 4171e52a8c0ffe160c1daa6687219d902a2a6969b296d223d8dac980ab99a260
-SIZE (openvswitch-2.14.0.tar.gz) = 7359886
+TIMESTAMP = 1612827476
+SHA256 (openvswitch-2.14.1.tar.gz) = 180b6d42c0ab4b26f21f58b8bf3b3376203d7475aa7a8ef151365514c35088fe
+SIZE (openvswitch-2.14.1.tar.gz) = 7388751

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	openvswitch
-DISTVERSION=	2.14.0
+DISTVERSION=	2.14.1
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Production quality, multilayer virtual switch
 
 LICENSE=	APACHE20
