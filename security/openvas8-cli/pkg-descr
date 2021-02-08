@@ -1,8 +1,0 @@
-The Open Vulnerability Assessment System (OpenVAS) is a framework of several
-services and tools offering a comprehensive and powerful vulnerability
-scanning and vulnerability management solution.
-
-This package contains a command-line tool to control the OpenVAS Manager and
-a Nagios plugin.
-
-WWW: https://www.openvas.org/

@@ -16153,3 +16153,15 @@ textproc/xml-i18n-tools|textproc/intltool|2021-02-07|Has been replaced by intlto
 sysutils/hal||2021-02-08|Has been abandonned upstream long ago, replacement have now hit the ports tree almost everywhere
 sysutils/hal-info||2021-02-08|Has no use without hal which has been removed
 devel/electron9|devel/electron11|2021-02-08|VSCode update requires a newer major version
+security/openvas8|security/gvm|2021-02-08|Has expired: End of life, please migrate to security/gvm port
+security/openvas8-cli||2021-02-08|Has expired: End of life
+security/openvas8-libraries|security/gvm-libs|2021-02-08|Has expired: End of life, please migrate to security/gvm-libs port
+security/openvas8-manager|security/gvmd|2021-02-08|Has expired: End of life, please migrate to security/gvmd port
+security/openvas8-scanner|security/openvas|2021-02-08|Has expired: End of life, please migrate to security/openvas port
+security/openvas9|security/gvm|2021-02-08|Has expired: End of life, please migrate to security/gvm port
+security/openvas9-cli||2021-02-08|Has expired: End of life
+security/openvas9-libraries|security/gvm-libs|2021-02-08|Has expired: End of life, please migrate to security/gvm-libs port
+security/openvas9-manager|security/gvmd|2021-02-08|Has expired: End of life, please migrate to security/gvmd port
+security/openvas9-scanner|security/openvas|2021-02-08|Has expired: End of life, please migrate to security/openvas port
+security/greenbone-security-assistant8|security/greenbone-security-assistant|2021-02-08|Has expired: End of life, please migrate to new version of greenbone-security-assistant
+security/greenbone-security-assistant9|security/greenbone-security-assistant|2021-02-08|Has expired: End of life, please migrate to new version of greenbone-security-assistant
