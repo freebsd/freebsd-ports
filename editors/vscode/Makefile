@@ -1,12 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	vscode
-DISTVERSION=	1.52.1
-PORTREVISION=	2
+DISTVERSION=	1.53.0
 CATEGORIES=	editors
-MASTER_SITES=	https://nodejs.org/dist/v${NODE_VER}/:node_headers \
+MASTER_SITES=	https://registry.npmjs.org/esbuild-freebsd-64/-/:esbuild_binary \
+		https://nodejs.org/dist/v${NODE_VER}/:node_headers \
 		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
-DISTFILES=	node-v${NODE_VER}-headers${EXTRACT_SUFX}:node_headers \
+DISTFILES=	esbuild-freebsd-64-${ESBUILD_VER}.tgz:esbuild_binary \
+		node-v${NODE_VER}-headers${EXTRACT_SUFX}:node_headers \
 		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
 		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache
 DIST_SUBDIR=	${PORTNAME}
@@ -50,6 +51,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libsecret-1.so:security/libsecret \
 		libnss3.so:security/nss \
 		libexpat.so:textproc/expat2 \
+		libxkbcommon.so:x11/libxkbcommon \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
 		xdg-open:devel/xdg-utils \
@@ -63,7 +65,7 @@ USES=		desktop-file-utils gl gmake gnome jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	ea3859d4ba2f3e577a159bc91e3074c5d85c0523
+SOURCE_COMMIT_HASH=	8490d3dde47c57ba65ec40dd192d014fd2113496
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -75,8 +77,10 @@ USE_GNOME=	atk cairo pango gdkpixbuf2 gtk30 libxml2 libxslt
 USE_LDCONFIG=	${DATADIR}
 
 # See ${WRKSRC}/remote/.yarnrc for NODE_VER
-NODE_VER=	12.14.1
+NODE_VER=	12.18.3
 NODE_VER_MAJOR=	${NODE_VER:C/\..*$//}
+# See ${WRKSRC}/build/package.json for ESBUILD_VER
+ESBUILD_VER=	0.8.30
 
 SHEBANG_REGEX=	./(extensions|resources|scripts|src)/.*\.sh$$
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
@@ -95,7 +99,7 @@ MAKE_ENV+=	PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/pw-browsers \
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
-ELECTRON_DIR=	${.CURDIR}/../../devel/electron9
+ELECTRON_DIR=	${.CURDIR}/../../devel/electron11
 .include	"${ELECTRON_DIR}/Makefile.version"
 
 pre-everything::
@@ -106,6 +110,12 @@ pre-everything::
 	@${ECHO_MSG} "line to poudriere.conf:"
 	@${ECHO_MSG} "MAX_FILES_${PORTNAME}=4096"
 	@${ECHO_MSG} ""
+
+post-extract:
+	# setup download cache for esbuild binary
+	${MKDIR} ${WRKDIR}/.cache/esbuild/bin
+	${MV} ${WRKDIR}/package/bin/esbuild \
+		${WRKDIR}/.cache/esbuild/bin/esbuild-freebsd-64@${ESBUILD_VER}
 
 post-patch:
 	# force use of electron version matching port one
@@ -205,6 +215,7 @@ do-install:
 .for f in chromedriver mksnapshot v8_context_snapshot_generator
 	${RM} ${STAGEDIR}${DATADIR}/${f}
 .endfor
+	${RM} -r ${STAGEDIR}${DATADIR}/gen
 	${RM} -r ${STAGEDIR}${DATADIR}/node_headers
 	${RM} -r ${STAGEDIR}${DATADIR}/resources/completions
 	${RLN} ${STAGEDIR}${DATADIR}/bin/code-oss ${STAGEDIR}${PREFIX}/bin
