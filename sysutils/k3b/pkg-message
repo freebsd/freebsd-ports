@@ -31,11 +31,7 @@
 3. Create a directory on a partition, which has enough disk space to hold a CDs
    or DVDs content (usually below /usr). Enter this directory in Settings->
    Configure K3b...->Misc.
-4. You must configure devel/kf5-solid appropriately:
-   a. Either use the (default) HAL backend, and enable HAL in /etc/rc.conf via
-      # sysrc hald_enable="YES"
-   b. *or* use the (experimental) BSDISKS backend.
-5. Last but not the least, you need to set cdrecord parameters in K3b's
+4. Last but not the least, you need to set cdrecord parameters in K3b's
    "Settings --> Configure k3b... --> Programs --> User Parameters" to
    match your device as seen by `cdrecord -scanbus' (e.g. dev=3,0,0)
 EOM
