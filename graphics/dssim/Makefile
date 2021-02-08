@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dssim
-DISTVERSION=	2.11.5
+DISTVERSION=	3.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -17,6 +17,7 @@ USES=		cargo
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler-0.2.3 \
+		ahash-0.4.7 \
 		arrayvec-0.5.2 \
 		autocfg-1.0.1 \
 		bytemuck-1.4.1 \
@@ -28,14 +29,16 @@ CARGO_CRATES=	adler-0.2.3 \
 		crossbeam-deque-0.8.0 \
 		crossbeam-epoch-0.9.1 \
 		crossbeam-utils-0.8.1 \
-		dssim-core-2.11.5 \
+		dssim-core-3.0.0 \
 		dunce-1.0.1 \
 		either-1.6.1 \
+		fallible_collections-0.4.0 \
 		flate2-1.0.19 \
 		foreign-types-0.5.0 \
 		foreign-types-macros-0.2.1 \
 		foreign-types-shared-0.3.0 \
 		getopts-0.2.21 \
+		hashbrown-0.9.1 \
 		hermit-abi-0.1.17 \
 		imgref-1.7.1 \
 		itertools-0.10.0 \
@@ -43,9 +46,9 @@ CARGO_CRATES=	adler-0.2.3 \
 		lazy_static-1.4.0 \
 		lcms2-5.4.0 \
 		lcms2-sys-3.1.5 \
-		libc-0.2.82 \
+		libc-0.2.84 \
 		load_image-2.12.1 \
-		lodepng-3.2.2 \
+		lodepng-3.4.3 \
 		memoffset-0.6.1 \
 		miniz_oxide-0.4.3 \
 		mozjpeg-0.8.21 \

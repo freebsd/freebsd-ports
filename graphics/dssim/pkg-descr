@@ -5,8 +5,17 @@ Comparison is done in L*a*b* color space (D65 white point, sRGB gamma)
 using a multi-scale variant of the SSIM algorithm.
 
 Features:
-- Supports alpha channel
-- Supports gamma correction
-- No OpenCV or MATLAB needed: uses safe Rust without external dependencies
+- Improved algorithm
+    - Compares at multiple weighed resolutions, and scaling is done in
+      linear-light RGB. It's sensitive to distortions of various sizes
+      and blends colors correctly to detect e.g. chroma subsampling errors.
+    - Uses L*a*b* color space for the SSIM algorithm. It measures
+      brightness and color much better than metrics from average of
+      RGB channels.
+- Supports alpha channel.
+- Supports images with color profiles.
+- Takes advantage of multi-core CPUs.
+- Can be used as a library in C, Rust, and WASM.
+- No OpenCV or MATLAB needed.
 
 WWW: https://kornel.ski/dssim
