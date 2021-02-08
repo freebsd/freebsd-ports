@@ -1,5 +1,7 @@
 etc/periodic/daily/500.ampache-cron
 man/man1/ampache.1.gz
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%PORTDOCS%%%%DOCSDIR%%/ACKNOWLEDGEMENTS.md
 %%PORTDOCS%%%%DOCSDIR%%/API-JSON-methods.md
 %%PORTDOCS%%%%DOCSDIR%%/API-XML-methods.md
@@ -7326,8 +7328,8 @@ man/man1/ampache.1.gz
 @dir %%WWWDIR%%/scripts/tests/lib/vendor/symfony/finder/Iterator
 @dir %%WWWDIR%%/scripts/tests/lib/vendor/tightenco/collect/src/Illuminate/Support
 @dir %%WWWDIR%%/scripts/tests/lib/vendor/tightenco/collect/tests/Support
+@dir %%WWWDIR%%/config
 @sample %%WWWDIR%%/channel/.htaccess.dist %%WWWDIR%%/channel/.htaccess
 @sample %%WWWDIR%%/play/.htaccess.dist %%WWWDIR%%/play/.htaccess
 @sample %%WWWDIR%%/rest/.htaccess.dist %%WWWDIR%%/rest/.htaccess
 @sample %%WWWDIR%%/config/registration_agreement.php.dist %%WWWDIR%%/config/registration_agreement.php
-@postexec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%
