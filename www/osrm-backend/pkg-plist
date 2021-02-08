@@ -92,6 +92,7 @@ include/osrm/util/typedefs.hpp
 share/osrm/profiles/bicycle.lua
 share/osrm/profiles/car.lua
 share/osrm/profiles/debug_example.lua
+share/osrm/profiles/debug_way.lua
 share/osrm/profiles/examples/postgis.lua
 share/osrm/profiles/foot.lua
 share/osrm/profiles/%%LUA_LIBDIR%%/access.lua
