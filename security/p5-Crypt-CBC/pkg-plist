@@ -1,2 +1,8 @@
 %%PERL5_MAN3%%/Crypt::CBC.3.gz
 %%SITE_PERL%%/Crypt/CBC.pm
+%%SITE_PERL%%/Crypt/CBC/PBKDF.pm
+%%SITE_PERL%%/Crypt/CBC/PBKDF/none.pm
+%%SITE_PERL%%/Crypt/CBC/PBKDF/opensslv1.pm
+%%SITE_PERL%%/Crypt/CBC/PBKDF/opensslv2.pm
+%%SITE_PERL%%/Crypt/CBC/PBKDF/pbkdf2.pm
+%%SITE_PERL%%/Crypt/CBC/PBKDF/randomiv.pm
