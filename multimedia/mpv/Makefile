@@ -4,7 +4,7 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.33.0
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://waf.io/:waf
@@ -49,7 +49,7 @@ CONFIGURE_ARGS=	--docdir="${EXAMPLESDIR}" \
 		--disable-vapoursynth \
 		--enable-libmpv-shared
 
-OPTIONS_DEFINE=		ARCHIVE DOCS LCMS2 LUAJIT MANPAGES TEST UCHARDET EXAMPLES ZIMG
+OPTIONS_DEFINE=		ARCHIVE DOCS LCMS2 LUAJIT MANPAGES MUJS TEST UCHARDET EXAMPLES ZIMG
 OPTIONS_DEFAULT=	ARCHIVE DVDNAV MANPAGES OPENGL UCHARDET \
 			V4L VAAPI VDPAU VULKAN WAYLAND X11 YTDL
 OPTIONS_GROUP=		IN VO AO
@@ -60,6 +60,7 @@ OPTIONS_SUB=		yes
 
 DVDNAV_DESC=		DVD menu navigation
 LUAJIT_DESC=		Use LuaJIT instead of Lua scripting language support
+MUJS_DESC=		Use MuJS for Javascript language support
 SIXEL_DESC=		Sixel graphics support
 UCHARDET_DESC=		Guess subtitle encoding via uchardet
 VULKAN_DESC=		Vulkan output support
@@ -106,6 +107,10 @@ LUAJIT_CONFIGURE_OFF=		--lua=${LUA_VER_STR}fbsd
 
 MANPAGES_BUILD_DEPENDS=		rst2man:textproc/py-docutils
 MANPAGES_CONFIGURE_OFF=		--disable-manpage
+
+MUJS_LIB_DEPENDS=		libmujs.so:lang/mujs
+MUJS_CONFIGURE_ON=		--enable-javascript
+MUJS_CONFIGURE_OFF=		--disable-javascript
 
 OPENAL_CONFIGURE_ENABLE=	openal
 OPENAL_USES=			openal
