@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Filesys/ZFS.pm
+%%SITE_PERL%%/Filesys/zfstat.pl
+%%PERL5_MAN3%%/Filesys::ZFS.3.gz

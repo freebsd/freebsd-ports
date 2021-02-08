@@ -1,0 +1,4 @@
+Filesys::ZFS is a simple interface to zfs and zpool commands for
+managing ZFS file systems.
+
+WWW: https://metacpan.org/pod/Filesys::ZFS
