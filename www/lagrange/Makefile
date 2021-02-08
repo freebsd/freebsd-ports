@@ -23,4 +23,10 @@ USE_SDL=	sdl2
 
 OPENSSL_LDFLAGS=	-lssl -lcrypto
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1200085 && ${SSL_DEFAULT} == base
+BROKEN=		requires at least OpenSSL version 1.1.1 to build
+.endif
+
+.include <bsd.port.post.mk>
