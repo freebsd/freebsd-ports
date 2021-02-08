@@ -1203,7 +1203,6 @@
 %%WWWDIR%%/sql/schema.sql
 %%WWWDIR%%/sql/update.sql
 %%WWWDIR%%/stat_details.php
-%%WWWDIR%%/themes/curve/csshover3.htc
 %%WWWDIR%%/themes/curve/images/backdrop.png
 %%WWWDIR%%/themes/curve/images/button_bg.gif
 %%WWWDIR%%/themes/curve/images/button_bg_anim.gif
