@@ -3,6 +3,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	3.4.4
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -68,8 +69,7 @@ IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod \
 LIRC_CONFIGURE_ENABLE=	lirc
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 MTP_CONFIGURE_WITH=	mtp
-MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
-			libhal.so:sysutils/hal
+MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 NOTIFY_CONFIGURE_ENABLE=	libnotify
