@@ -1,7 +1,7 @@
-arm_control=0x200
 arm_64bit=1
 dtoverlay=disable-bt
 dtoverlay=mmc
 device_tree_address=0x4000
 kernel=u-boot.bin
 armstub=armstub8-gic.bin
+hdmi_safe=1

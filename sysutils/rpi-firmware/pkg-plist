@@ -191,6 +191,8 @@
 %%DATADIR%%/overlays/sc16is752-spi1.dtbo
 %%DATADIR%%/overlays/sdhost.dtbo
 %%DATADIR%%/overlays/sdio.dtbo
+%%DATADIR%%/overlays/seeed-can-fd-hat-v1.dtbo
+%%DATADIR%%/overlays/seeed-can-fd-hat-v2.dtbo
 %%DATADIR%%/overlays/sh1106-spi.dtbo
 %%DATADIR%%/overlays/smi-dev.dtbo
 %%DATADIR%%/overlays/smi-nand.dtbo
@@ -242,6 +244,7 @@
 %%DATADIR%%/overlays/w1-gpio.dtbo
 %%DATADIR%%/overlays/w5500.dtbo
 %%DATADIR%%/overlays/wittypi.dtbo
+%%DATADIR%%/overlays/wm8960-soundcard.dtbo
 %%DATADIR%%/start.elf
 %%DATADIR%%/start4.elf
 %%DATADIR%%/start4cd.elf
