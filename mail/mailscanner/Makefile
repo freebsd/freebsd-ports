@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	MailScanner
-PORTVERSION=	5.1.2
-PORTREVISION=	3
+DISTVERSION=	5.3.4-3
+DISTVERSIONSUFFIX= .nix
 CATEGORIES=	mail
-MASTER_SITES=	https://s3.amazonaws.com/msv5/release/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${PATCHLEVEL}.nix
+MASTER_SITES=	https://github.com/MailScanner/v5/releases/download/${DISTVERSION}/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Powerful virus/spam scanning framework for mail gateways
@@ -58,13 +57,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 CONFLICTS=	MailScanner-devel-[0-9]*
 
-PATCHLEVEL=	1
-
 USES=		perl5 shebangfix
 SHEBANG_GLOB=	* usr/lib/MailScanner/init/* usr/lib/MailScanner/wrapper/* \
 		usr/sbin/* usr/share/MailScanner/perl/MailScanner/*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C,-[0-9]+,,}
 SUB_FILES=	MailScanner.8 pkg-message pkg-install
 SUB_LIST=	DATADIR=${DATADIR} \
 		PERL=${PERL} \
@@ -128,7 +125,8 @@ USE_RC_SUBR=	mailscanner mta
 
 post-patch:
 	${REINPLACE_CMD} -e 's,\$$(mktemp),$$(mktemp -t tmp),' \
-		${WRKSRC}/usr/lib/MailScanner/wrapper/*-wrapper
+	    ${WRKSRC}/usr/lib/MailScanner/wrapper/bitdefender-wrapper \
+	    ${WRKSRC}/usr/lib/MailScanner/wrapper/clamav-wrapper
 
 do-build:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
@@ -162,7 +160,7 @@ do-build:
 
 do-install:
 	(cd ${WRKSRC}/usr/sbin && ${COPYTREE_BIN} . ${STAGEDIR}/${PREFIX}/sbin)
-	${LN} -sf ${PREFIX}/sbin/MailScanner ${STAGEDIR}${PREFIX}/sbin/mailscanner
+	${RLN} ${STAGEDIR}${PREFIX}/sbin/MailScanner ${STAGEDIR}${PREFIX}/sbin/mailscanner
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/MailScanner \
 		${STAGEDIR}${PREFIX}/etc/MailScanner/conf.d \
 		${STAGEDIR}${PREFIX}/etc/MailScanner/rules

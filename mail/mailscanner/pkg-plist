@@ -88,6 +88,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/ca/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/ca/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/ca/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/ca/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/ca/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/ca/inline.sig.html.sample
 @sample %%DATADIR%%/reports/ca/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/ca/inline.spam.warning.txt.sample
@@ -116,6 +118,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/cy+en/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/cy+en/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/cy+en/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/cy+en/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/cy+en/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/cy+en/inline.sig.html.sample
 @sample %%DATADIR%%/reports/cy+en/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/cy+en/inline.spam.warning.txt.sample
@@ -144,6 +148,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/cz/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/cz/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/cz/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/cz/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/cz/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/cz/inline.sig.html.sample
 @sample %%DATADIR%%/reports/cz/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/cz/inline.spam.warning.txt.sample
@@ -172,6 +178,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/de/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/de/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/de/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/de/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/de/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/de/inline.sig.html.sample
 @sample %%DATADIR%%/reports/de/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/de/inline.spam.warning.txt.sample
@@ -200,6 +208,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/dk/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/dk/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/dk/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/dk/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/dk/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/dk/inline.sig.html.sample
 @sample %%DATADIR%%/reports/dk/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/dk/inline.spam.warning.txt.sample
@@ -228,6 +238,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/en/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/en/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/en/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/en/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/en/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/en/inline.sig.html.sample
 @sample %%DATADIR%%/reports/en/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/en/inline.spam.warning.txt.sample
@@ -256,6 +268,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/en_uk/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/en_uk/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/en_uk/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/en_uk/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/en_uk/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/en_uk/inline.sig.html.sample
 @sample %%DATADIR%%/reports/en_uk/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/en_uk/inline.spam.warning.txt.sample
@@ -284,6 +298,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/es/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/es/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/es/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/es/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/es/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/es/inline.sig.html.sample
 @sample %%DATADIR%%/reports/es/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/es/inline.spam.warning.txt.sample
@@ -312,6 +328,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/fr/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/fr/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/fr/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/fr/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/fr/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/fr/inline.sig.html.sample
 @sample %%DATADIR%%/reports/fr/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/fr/inline.spam.warning.txt.sample
@@ -340,6 +358,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/hu/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/hu/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/hu/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/hu/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/hu/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/hu/inline.sig.html.sample
 @sample %%DATADIR%%/reports/hu/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/hu/inline.spam.warning.txt.sample
@@ -368,6 +388,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/it/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/it/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/it/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/it/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/it/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/it/inline.sig.html.sample
 @sample %%DATADIR%%/reports/it/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/it/inline.spam.warning.txt.sample
@@ -396,6 +418,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/nl/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/nl/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/nl/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/nl/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/nl/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/nl/inline.sig.html.sample
 @sample %%DATADIR%%/reports/nl/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/nl/inline.spam.warning.txt.sample
@@ -424,6 +448,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/pt_br/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/pt_br/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/pt_br/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/pt_br/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/pt_br/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/pt_br/inline.sig.html.sample
 @sample %%DATADIR%%/reports/pt_br/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/pt_br/inline.spam.warning.txt.sample
@@ -452,6 +478,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/ro/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/ro/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/ro/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/ro/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/ro/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/ro/inline.sig.html.sample
 @sample %%DATADIR%%/reports/ro/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/ro/inline.spam.warning.txt.sample
@@ -480,6 +508,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/se/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/se/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/se/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/se/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/se/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/se/inline.sig.html.sample
 @sample %%DATADIR%%/reports/se/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/se/inline.spam.warning.txt.sample
@@ -508,6 +538,8 @@ sbin/ms-upgrade-conf
 @sample %%DATADIR%%/reports/sk/deleted.size.message.txt.sample
 @sample %%DATADIR%%/reports/sk/deleted.virus.message.txt.sample
 @sample %%DATADIR%%/reports/sk/disinfected.report.txt.sample
+@sample %%DATADIR%%/reports/sk/inline.external.warning.html.sample
+@sample %%DATADIR%%/reports/sk/inline.external.warning.txt.sample
 @sample %%DATADIR%%/reports/sk/inline.sig.html.sample
 @sample %%DATADIR%%/reports/sk/inline.sig.txt.sample
 @sample %%DATADIR%%/reports/sk/inline.spam.warning.txt.sample
@@ -542,11 +574,14 @@ lib/MailScanner/wrapper/clamav-autoupdate
 lib/MailScanner/wrapper/clamav-wrapper
 lib/MailScanner/wrapper/drweb-wrapper
 lib/MailScanner/wrapper/esets-wrapper
+lib/MailScanner/wrapper/esets-wrapper-README
+lib/MailScanner/wrapper/f-prot-6-autoupdate
 lib/MailScanner/wrapper/f-secure-autoupdate
 lib/MailScanner/wrapper/f-secure-wrapper
 lib/MailScanner/wrapper/generic-autoupdate
 lib/MailScanner/wrapper/generic-wrapper
 lib/MailScanner/wrapper/kaspersky-wrapper
+lib/MailScanner/wrapper/kse-autoupdate
 lib/MailScanner/systemd/ms-milter
 lib/MailScanner/systemd/ms-systemd
 lib/MailScanner/wrapper/sophos-autoupdate

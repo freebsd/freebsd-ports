@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+# $FreeBSD$
+#
 # mta - start multiple MTA instances, e.g. for MailScanner
 
 # PROVIDE: mta mail
@@ -62,13 +64,14 @@ PATH=$PATH:/sbin:/usr/sbin; export PATH
 
 name="mta"
 rcvar=mta_enable
+desc="MailScanner MTA start script"
 
 _mta_rc_script="%%PREFIX%%/etc/rc.d/mta"
 
 load_rc_config $name
 
-: ${mta_enable="NO"}
-: ${mta_type="sendmail"}
+: ${mta_enable:=NO}
+: ${mta_type:=sendmail}
 
 case "${mta_type}" in
 
@@ -100,10 +103,10 @@ if [ -n "${2}" -o -n "$profile" ]; then
 	export profile
 	if [ "x${mta_profiles}" != "x" ]; then
 		eval mta_configfile=\${mta_${profile}_configfile}
-		[ "x${mta_configfile}" = "x" ] && {
+		if [ -z "${mta_configfile}" ]; then
 			echo "You must define a configuration file (mta_${profile}_configfile)"
 			exit 1
-		}
+		fi
 		eval mta_enable=\${mta_${profile}_enable:-YES}
 		eval mta_flags=\${mta_${profile}_flags:-${mta_flags}}
 		eval mta_configfile=\${mta_${profile}_configfile:-${mta_configfile}}

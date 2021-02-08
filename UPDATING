@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210208:
+  AFFECTS: users of mail/mailscanner
+  AUTHOR: crees@FreeBSD.org
+
+  The clamavmodule has finally been removed after a long deprecation
+  period.  Please remove all references to it in your mailscanner.conf as
+  it will now count as a syntax error and may stop MailScanner starting!
+
 20210204:
   AFFECTS: users of www/unit
   AUTHOR: osa@FreeBSD.org

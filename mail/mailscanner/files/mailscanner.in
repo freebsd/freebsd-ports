@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# $FreeBSD$
+
 # PROVIDE: mailscanner
 # REQUIRE: mta
 # KEYWORD: shutdown
@@ -20,10 +22,11 @@
 
 name="mailscanner"
 rcvar=mailscanner_enable
+desc="Virus and spam filter"
 
 load_rc_config $name
 
-: ${mailscanner_enable="NO"}
+: ${mailscanner_enable:="NO"}
 
 required_files=${mailscanner_configfile:-"%%PREFIX%%/etc/MailScanner/MailScanner.conf"}
 pidfile=${mailscanner_pidfile:-"/var/run/MailScanner.pid"}
