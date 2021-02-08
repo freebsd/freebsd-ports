@@ -58,6 +58,7 @@ bin/yate-config
 @sample %%ETCDIR%%/tdmcard.conf.sample
 @sample %%ETCDIR%%/tonegen.conf.sample
 @sample %%ETCDIR%%/users.conf.sample
+@sample %%ETCDIR%%/wiresniff.conf.sample
 @sample %%ETCDIR%%/wpcard.conf.sample
 @sample %%ETCDIR%%/yate-qt4.conf.sample
 @sample %%ETCDIR%%/yate.conf.sample
@@ -84,6 +85,7 @@ include/yate/yateversn.h
 include/yate/yateasn.h
 include/yate/yateradio.h
 include/yate/yatescript.h
+include/yate/yatewiresniff.h
 lib/libyate.so.%%VERSION%%
 lib/libyate.so
 lib/libyatescript.so.%%VERSION%%
@@ -186,6 +188,8 @@ lib/yate/ilbcwebrtc.yate
 lib/yate/isaccodec.yate
 lib/yate/speexcodec.yate
 lib/yate/zlibcompress.yate
+lib/yate/g722webrtc.yate
+lib/yate/wiresniff.yate
 libdata/pkgconfig/yate.pc
 man/man8/yate.8.gz
 man/man8/yate-config.8.gz
@@ -201,6 +205,9 @@ man/man8/yate-config.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/messages.html
 %%PORTDOCS%%%%DOCSDIR%%/api/index.html
+%%PORTDOCS%%%%DOCSDIR%%/api/structTelEngine_1_1TokenDict64-members.html
+%%PORTDOCS%%%%DOCSDIR%%/api/structTelEngine_1_1TokenDict64.html
+%%PORTDOCS%%%%DOCSDIR%%/api/yatewiresniff_8h_source.html
 %%DATADIR%%/data/snmp_mib.conf
 %%DATADIR%%/data/NULL-TEAM-MIB.txt
 %%DATADIR%%/data/YATE-MIB.txt
