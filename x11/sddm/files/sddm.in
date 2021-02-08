@@ -2,7 +2,7 @@
 # $FreeBSD$
 #
 # PROVIDE: sddm
-# REQUIRE: LOGIN cleanvar moused syscons dbus hald
+# REQUIRE: LOGIN cleanvar moused syscons dbus
 # KEYWORD: shutdown
 #
 # Add the following to /etc/rc.conf to start SDDM at boot time:
@@ -35,19 +35,6 @@ sddm_start()
 		sleep 1
 		iter=$((${iter} + 1))
 	done
-
-	if checkyesno hald_enable; then
-		if [ ! -x %%LOCALBASE%%/sbin/hald ]; then
-			err 1 "Hald does not seem to be installed."
-		fi
-
-		iter=0
-		while [ ${iter} -lt 60 ] &&
-			! pgrep -f "^%%LOCALBASE%%/sbin/hald" > /dev/null; do
-			sleep 1
-			iter=$((${iter} + 1))
-		done
-	fi
 
 	LANG=${sddm_lang}.UTF-8 ${command} ${sddm_flags} ) &
 }
