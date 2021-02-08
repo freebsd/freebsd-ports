@@ -22,7 +22,7 @@ SHEBANG_FILES=	${WRKSRC}/scripts/*.sh \
 		${WRKSRC}/scripts/xeditor \
 		${WRKSRC}/scripts/find_file_by_chksum.py
 
-OPTIONS_DEFINE=	AVFS HAL INOTIFY LUA SSL XFT
+OPTIONS_DEFINE=	AVFS INOTIFY LUA SSL XFT
 OPTIONS_DEFAULT=	AVFS INOTIFY SSL XFT
 OPTIONS_EXCLUDE_DragonFly=	AVFS
 
@@ -30,12 +30,6 @@ INOTIFY_DESC=	Monitor directory changes via libinotify
 AVFS_DESC=	Use AVFS library to access archives
 
 AVFS_LIB_DEPENDS=	libavfs.so:sysutils/avfs
-
-HAL_LIB_DEPENDS=	libhal-storage.so:sysutils/hal \
-			libdbus-glib-1.so:devel/dbus-glib \
-			libdbus-1.so:devel/dbus
-HAL_USE=	gnome=glib20 xorg=sm,ice
-HAL_USES=	gettext-runtime gnome
 
 INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
 
