@@ -8,7 +8,7 @@ CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
 
-MAINTAINER=	marcus@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Audio player for GNOME
 
 LICENSE=	GPLv2+
