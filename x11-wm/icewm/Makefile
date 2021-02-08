@@ -3,6 +3,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
@@ -23,10 +24,7 @@ USE_GNOME=	glib20
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xcomposite xdamage xext xfixes xpm xrender
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-icesound=oss \
-		--with-cfgdir=${DATADIR} \
-		--with-libdir=${DATADIR} \
-		--with-docdir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--with-icesound=oss
 SHEBANG_FILES=	contrib/icewm-menu-xrandr
 
 OPTIONS_DEFINE=		BEASTIE DOCS IMLIB2 NLS SVG XFT XINERAMA XRANDR
