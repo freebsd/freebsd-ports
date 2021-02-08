@@ -2,7 +2,7 @@
 
 PORTNAME=	revive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -15,12 +15,12 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	mgechev
 GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
-		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
+		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		fatih:structtag:v1.2.0:fatih_structtag/vendor/github.com/fatih/structtag \
-		golang:sys:33540a1f6037:golang_sys/vendor/golang.org/x/sys \
-		golang:tools:807dcd883420:golang_tools/vendor/golang.org/x/tools \
-		mattn:go-colorable:v0.1.4:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.11:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		golang:sys:b64e53b001e4:golang_sys/vendor/golang.org/x/sys \
+		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
+		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mgechev:dots:c36f7dcfbb81:mgechev_dots/vendor/github.com/mgechev/dots \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
@@ -41,8 +41,5 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
-
-do-test:
-	@cd ${GO_WRKSRC} && ${SETENV} ${GO_ENV} ${GO_CMD} test ./...
 
 .include <bsd.port.mk>
