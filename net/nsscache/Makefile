@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nsscache
-PORTVERSION=	0.39
+PORTVERSION=	0.41
 DISTVERSIONPREFIX=	version/
 CATEGORIES=	net python
 
