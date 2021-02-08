@@ -500,7 +500,7 @@ messagebus:*:556:
 pulse-rt:*:557:
 avahi:*:558:
 tacacs:*:559:
-haldaemon:*:560:
+# free: 560
 distcc:*:561:
 polkit:*:562:
 pulse:*:563:
