@@ -160,11 +160,6 @@ webcamd_start_devd()
 
 webcamd_start()
 {
-  # Check if we should attach to the "hald" service
-  if checkyesno hald_enable ; then
-    command_args="$command_args -H"
-  fi
-
   # If this rc.d script was invoked by devd
   if [ "$devd_device" ]; then
     # Then start the device ugenX.X, as provied in the argv $2, $3
