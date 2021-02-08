@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: dtlogin
-# REQUIRE: LOGIN dbus hald dtspc
+# REQUIRE: LOGIN dbus dtspc
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable slim:
