@@ -21,11 +21,10 @@ MAKE_JOBS_UNSAFE=	yes
 USES=			kmod libedit pkgconfig uidfix
 USE_RC_SUBR=		cx88d
 
-OPTIONS_DEFINE=	DEBUG LINUX_COMPAT HAL
+OPTIONS_DEFINE=	DEBUG LINUX_COMPAT
 
 DEBUG_DESC=		Enable debugging and verbose driver output
 LINUX_COMPAT_DESC=	Support for Linux DVB and radio API
-HAL_DESC=		Register Linux DVB devices with HAL
 
 OPTIONS_DEFAULT=	LINUX_COMPAT
 
@@ -38,11 +37,6 @@ MAKE_ARGS+=	DIAGNOSTIC=0x7f -DDEBUG
 .if ${PORT_OPTIONS:MLINUX_COMPAT}
 BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:multimedia/v4l_compat
 MAKE_ARGS+=	-D WITH_LINUX_COMPAT
-.if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	libhal.so:sysutils/hal \
-		libdbus-1.so:devel/dbus
-MAKE_ARGS+=	-D WITH_HAL
-.endif
 .endif
 
 MAKE_ARGS+=	-D CX88_USE_IIC
