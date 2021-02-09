@@ -1091,6 +1091,7 @@
     SUBDIR += rhc
     SUBDIR += riak-cs
     SUBDIR += rinse
+    SUBDIR += rmlint
     SUBDIR += rocr
     SUBDIR += roct
     SUBDIR += rovclock
