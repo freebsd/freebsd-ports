@@ -51,6 +51,7 @@ bin/domination-SwingGUI
 %%DATADIR%%/help/mainmenu.gif
 %%DATADIR%%/help/newgame.gif
 %%DATADIR%%/help/rules.htm
+%%DATADIR%%/help/rules_uk.htm
 %%DATADIR%%/help/server.gif
 %%DATADIR%%/help/server2.gif
 %%DATADIR%%/help/splash.jpg
@@ -65,7 +66,7 @@ bin/domination-SwingGUI
 %%DATADIR%%/help/swing_translation2.htm
 %%DATADIR%%/help/top.htm
 %%DATADIR%%/lib/Grasshopper.jar
-%%DATADIR%%/lib/LobbyCore.jar
+%%DATADIR%%/lib/LobbyClient.jar
 %%DATADIR%%/lib/SwingME.jar
 %%DATADIR%%/lib/TranslationTool.jar
 %%DATADIR%%/lib/httpcore-4.1.2.jar
