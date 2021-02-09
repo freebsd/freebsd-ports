@@ -21,6 +21,17 @@ you update your ports collection, before attempting any port upgrades.
   was moved from /usr/local/libexec/unit to /var/db/unit in order to
   avoid write operations on /usr/local filesystem.
 
+20210130:
+  AFFECTS: users of graphics/opencv-core
+  AUTHOR: tcberner@FreeBSD.org
+
+  graphics/opencv-core has been reintegrated into graphics/opencv.
+  So there is no longer a circular dependency
+     opencv-core -> ffmpeg -> opencv
+
+  If you experience problems updating the packages, try
+      pkg delete -f opencv-core
+
 20210124:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org
