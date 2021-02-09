@@ -92,6 +92,7 @@
     SUBDIR += cegui
     SUBDIR += cenon
     SUBDIR += cfdg
+    SUBDIR += chafa
     SUBDIR += charls
     SUBDIR += cimg
     SUBDIR += clutter
