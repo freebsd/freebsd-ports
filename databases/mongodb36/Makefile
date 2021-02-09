@@ -2,7 +2,7 @@
 
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	3.6.21
+DISTVERSION=	3.6.22
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -31,7 +31,6 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USES=		compiler:c++14-lang cpe python:3.5+,build scons shebangfix
 USE_RC_SUBR=	mongod
 
-CONFLICTS_BUILD=	mongo-cxx-driver
 CONFLICTS_INSTALL=	mongodb4[024]
 
 SHEBANG_FILES=	src/mongo/installer/compass/install_compass.in
