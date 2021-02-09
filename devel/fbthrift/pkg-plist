@@ -33,6 +33,7 @@ include/thrift/lib/cpp/concurrency/Mutex-impl.h
 include/thrift/lib/cpp/concurrency/Mutex-portability.h
 include/thrift/lib/cpp/concurrency/Mutex.h
 include/thrift/lib/cpp/concurrency/PosixThreadFactory.h
+include/thrift/lib/cpp/concurrency/SFQThreadManager.h
 include/thrift/lib/cpp/concurrency/Thread.h
 include/thrift/lib/cpp/concurrency/ThreadManager.h
 include/thrift/lib/cpp/concurrency/TimerManager.h
@@ -159,6 +160,7 @@ include/thrift/lib/cpp2/frozen/Frozen.h
 include/thrift/lib/cpp2/frozen/FrozenAssociative-inl.h
 include/thrift/lib/cpp2/frozen/FrozenBool-inl.h
 include/thrift/lib/cpp2/frozen/FrozenEnum-inl.h
+include/thrift/lib/cpp2/frozen/FrozenFixedSizeString-inl.h
 include/thrift/lib/cpp2/frozen/FrozenHashTable-inl.h
 include/thrift/lib/cpp2/frozen/FrozenIntegral-inl.h
 include/thrift/lib/cpp2/frozen/FrozenMacros.h
@@ -370,6 +372,7 @@ include/thrift/lib/cpp2/util/DebugString.h
 include/thrift/lib/cpp2/util/Ewma.h
 include/thrift/lib/cpp2/util/EwmaRate.h
 include/thrift/lib/cpp2/util/Frozen2ViewHelpers.h
+include/thrift/lib/cpp2/util/ManagedStringView.h
 include/thrift/lib/cpp2/util/ScopedServerInterfaceThread-inl.h
 include/thrift/lib/cpp2/util/ScopedServerInterfaceThread.h
 include/thrift/lib/cpp2/util/ScopedServerThread.h
@@ -395,6 +398,20 @@ include/thrift/lib/py3/test/stream/server.h
 include/thrift/lib/py3/types.h
 include/thrift/lib/thrift/RpcMetadata_extra.h
 include/thrift/lib/thrift/SerializableDynamic.h
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade.h 
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade.tcc
+include/thrift/lib/thrift/gen-cpp2/RocketUpgradeAsyncClient.h
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_constants.h
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_custom_protocol.h
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_data.h
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_for_each_field.h
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_metadata.h
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_types.h
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_types.tcc
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_types_custom_protocol.h
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_visit_by_thrift_field_metadata.h
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_visit_union.h
+include/thrift/lib/thrift/gen-cpp2/RocketUpgrade_visitation.h
 include/thrift/lib/thrift/gen-cpp2/RpcMetadata_constants.h
 include/thrift/lib/thrift/gen-cpp2/RpcMetadata_data.h
 include/thrift/lib/thrift/gen-cpp2/RpcMetadata_for_each_field.h
@@ -456,6 +473,7 @@ lib/libconcurrency.so
 lib/libconcurrency.so.1.0.0
 lib/libmustache_lib.so
 lib/libmustache_lib.so.1.0.0
+lib/librocketupgrade.so
 lib/librpcmetadata.so
 lib/librpcmetadata.so.1.0.0
 lib/libthrift-core.so
