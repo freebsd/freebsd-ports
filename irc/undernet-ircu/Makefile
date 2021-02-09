@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	undernet-ircu
-PORTVERSION=	2.10.12.18
+PORTVERSION=	2.10.12.19
 CATEGORIES=	irc net
-MASTER_SITES=	SF/${PORTNAME}/ircu/ircu${PORTVERSION} \
+MASTER_SITES=	https://github.com/UndernetIRC/ircu2/releases/download/u${PORTVERSION}/ \
 		ftp://ftpmirror.uk/freebsd-ports/undernet-ircu/
 DISTNAME=	ircu${PORTVERSION}
 
@@ -17,46 +17,50 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
 BROKEN_riscv64=		Fails to compile: undefined reference to .mcount
 
+USE_GCC=	any
+USE_RC_SUBR=	undernet
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-dpath=${PREFIX}/etc/ --with-symlink=no
+
 CONFLICTS=	ircd-hybrid-7.[0-9]*
+
+SUB_FILES=	pkg-message
 
 USERS=		undernet
 GROUPS=		${USERS}
 
-GNU_CONFIGURE=	yes
-USE_RC_SUBR=	undernet
-SUB_FILES=	pkg-message
-PORTDOCS=	*
 PLIST_FILES=	bin/undernet-convert-conf \
 		bin/undernet-umkpasswd \
 		etc/ircd.conf.sample \
 		sbin/ircd
-
-CONFIGURE_ARGS+=	--with-dpath=${PREFIX}/etc/ --with-symlink=no
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS IPV6 POLL DEBUG ASSERTS PEDANTIC WARNINGS \
 		INLINES DEVPOLL KQUEUE EPOLL LEAKDETECT
 OPTIONS_DEFAULT=ASSERTS INLINES DEVPOLL KQUEUE EPOLL
-POLL_DESC=	Force poll to be used even if not a sys call
-ASSERTS_DESC=	Enable assertion checking
-PEDANTIC_DESC=	Enable pedantic warnings
-WARNINGS_DESC=	Enable warnings (add -Wall to CFLAGS)
-INLINES_DESC=	Enable inlining for a few critical functions
-DEVPOLL_DESC=	Enable the /dev/poll-based engine
-KQUEUE_DESC=	Enable the kqueue-based engine
-EPOLL_DESC=	Enable the epoll-based engine
-LEAKDETECT_DESC=	Turn on the leak detector (reqs patched boehm)
 
-IPV6_CONFIGURE_WITH=		ipv6
-POLL_CONFIGURE_ENABLE=		poll
-DEBUG_CONFIGURE_ENABLE=		debug
-EPOLL_CONFIGURE_ENABLE=		epoll
-KQUEUE_CONFIGURE_ENABLE=	kqueue
+ASSERTS_DESC=	Enable assertion checking
+DEVPOLL_DESC=	Enable the /dev/poll-based engine
+EPOLL_DESC=	Enable the epoll-based engine
+INLINES_DESC=	Enable inlining for a few critical functions
+KQUEUE_DESC=	Enable the kqueue-based engine
+LEAKDETECT_DESC=	Turn on the leak detector (reqs patched boehm)
+PEDANTIC_DESC=	Enable pedantic warnings
+POLL_DESC=	Force poll to be used even if not a sys call
+WARNINGS_DESC=	Enable warnings (add -Wall to CFLAGS)
+
 ASSERTS_CONFIGURE_ENABLE=	asserts
-INLINES_CONFIGURE_ENABLE=	inlines
+DEBUG_CONFIGURE_ENABLE=		debug
 DEVPOLL_CONFIGURE_ENABLE=	devpoll
-PEDANTIC_CONFIGURE_ENABLE=	pedantic
-WARNINGS_CONFIGURE_ENABLE=	warnings
+EPOLL_CONFIGURE_ENABLE=		epoll
+INLINES_CONFIGURE_ENABLE=	inlines
+IPV6_CONFIGURE_WITH=		ipv6
+KQUEUE_CONFIGURE_ENABLE=	kqueue
 LEAKDETECT_CONFIGURE_WITH=	leak-detect
+PEDANTIC_CONFIGURE_ENABLE=	pedantic
+POLL_CONFIGURE_ENABLE=		poll
+WARNINGS_CONFIGURE_ENABLE=	warnings
 
 .if !defined(NO_PROFILE)
 CONFIGURE_ARGS+=	--enable-profile
