@@ -500,7 +500,8 @@ messagebus:*:556:
 pulse-rt:*:557:
 avahi:*:558:
 tacacs:*:559:
-# free: 560
+# Unused since hald has been removed from the ports tree
+# haldaemon:*:560:
 distcc:*:561:
 polkit:*:562:
 pulse:*:563:
