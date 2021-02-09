@@ -94,6 +94,7 @@ share/applications/worker.desktop
 %%DATADIR%%/scripts/cd2mp3.sh
 %%DATADIR%%/scripts/cd2ogg.sh
 %%DATADIR%%/scripts/cd2wav.sh
+%%DATADIR%%/scripts/cdi_get_current_vc_branch.sh
 %%DATADIR%%/scripts/displaywrapper_worker
 %%DATADIR%%/scripts/find_file_by_chksum.py
 %%DATADIR%%/scripts/git_changed_files.sh
