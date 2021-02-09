@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-taskmanager
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
