@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pikopixel
-DISTVERSION=	1.0-b9e
+DISTVERSION=	1.0-b10
 PORTEPOCH=	1
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://twilightedge.com/downloads/
