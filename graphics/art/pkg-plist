@@ -11,6 +11,7 @@ share/ART/dcpprofiles/CANON EOS R.dcp
 share/ART/dcpprofiles/CANON EOS R5.dcp
 share/ART/dcpprofiles/CANON EOS R6.dcp
 share/ART/dcpprofiles/CANON EOS RP.dcp
+share/ART/dcpprofiles/CANON EOS-1D X MARK III.dcp
 share/ART/dcpprofiles/CANON POWERSHOT G1 X MARK II.dcp
 share/ART/dcpprofiles/Canon EOS 100D.dcp
 share/ART/dcpprofiles/Canon EOS 1300D.dcp
@@ -67,6 +68,7 @@ share/ART/dcpprofiles/NIKON D5600.dcp
 share/ART/dcpprofiles/NIKON D600.dcp
 share/ART/dcpprofiles/NIKON D610.dcp
 share/ART/dcpprofiles/NIKON D700.dcp
+share/ART/dcpprofiles/NIKON D7000.dcp
 share/ART/dcpprofiles/NIKON D70s.dcp
 share/ART/dcpprofiles/NIKON D7100.dcp
 share/ART/dcpprofiles/NIKON D7200.dcp
@@ -87,7 +89,6 @@ share/ART/dcpprofiles/Nikon D3000.dcp
 share/ART/dcpprofiles/Nikon D3100.dcp
 share/ART/dcpprofiles/Nikon D3S.dcp
 share/ART/dcpprofiles/Nikon D5100.dcp
-share/ART/dcpprofiles/Nikon D7000.dcp
 share/ART/dcpprofiles/OLYMPUS E-510.dcp
 share/ART/dcpprofiles/OLYMPUS E-M1.dcp
 share/ART/dcpprofiles/OLYMPUS E-M10.dcp
@@ -97,6 +98,7 @@ share/ART/dcpprofiles/Olympus E-1.dcp
 share/ART/dcpprofiles/Olympus E-520.dcp
 share/ART/dcpprofiles/Olympus E-P2.dcp
 share/ART/dcpprofiles/Olympus XZ-1.dcp
+share/ART/dcpprofiles/PANASONIC DMC-LX100.dcp
 share/ART/dcpprofiles/PENTAX K-5 II.dcp
 share/ART/dcpprofiles/PENTAX K-5.dcp
 share/ART/dcpprofiles/PENTAX K-50.dcp
@@ -563,6 +565,8 @@ share/ART/images/wb-tungsten.svg
 share/ART/images/wb-water-small.svg
 share/ART/images/wb-water.svg
 share/ART/images/window-add.svg
+share/ART/languages/Catala
+share/ART/languages/Espanol
 share/ART/languages/Francais
 share/ART/languages/LICENSE
 share/ART/languages/Nederlands
@@ -575,6 +579,7 @@ share/ART/profiles/Noise Reduction High.arp
 share/ART/profiles/Noise Reduction Low.arp
 share/ART/profiles/Sharpening.arp
 share/ART/profiles/Simple Film Curve.arp
+share/ART/profiles/Standard Film Curve.arp
 share/ART/rt.json
 share/ART/sounds/BatchComplete.wav
 share/ART/sounds/Empty.wav
