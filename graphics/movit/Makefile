@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	movit
-PORTVERSION=	1.6.2
-PORTREVISION=	3
+PORTVERSION=	1.6.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://${PORTNAME}.sesse.net/
 

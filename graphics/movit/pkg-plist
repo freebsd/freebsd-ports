@@ -47,7 +47,7 @@ include/movit/ycbcr_input.h
 lib/libmovit.a
 lib/libmovit.so
 lib/libmovit.so.8
-lib/libmovit.so.8.0.2
+lib/libmovit.so.8.0.3
 libdata/pkgconfig/movit.pc
 %%DATADIR%%/alpha_division_effect.frag
 %%DATADIR%%/alpha_multiplication_effect.frag
