@@ -35,3 +35,5 @@ share/metainfo/rpcs3.appdata.xml
 %%DATADIR%%/Icons/ui/square.png
 %%DATADIR%%/Icons/ui/start.png
 %%DATADIR%%/Icons/ui/triangle.png
+%%DATADIR%%/git/README.md
+%%DATADIR%%/git/commits.lst
