@@ -5,6 +5,9 @@ DISTVERSION=	1.6.3
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
+PATCH_SITES=	https://codeberg.org/dnkl/${PORTNAME}/commit/
+PATCHFILES+=	bdc5810ff45e.patch:-p1 # -Dterminfo=disabled
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Fast, lightweight and minimalistic Wayland terminal emulator
 
@@ -24,7 +27,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 USES=		compiler:c11 meson pkgconfig xorg
 USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MESON_ARGS=	-Dterminfo=false
+MESON_ARGS=	-Dterminfo=disabled
 
 # XXX Drop after FreeBSD 12.1 EOL
 .if exists(/usr/lib/clang/8.0.1)
