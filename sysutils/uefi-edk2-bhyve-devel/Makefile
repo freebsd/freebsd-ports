@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${BASH_CMD}:shells/bash \
 
 USES=		gmake \
 		python:2.7,build
-USE_GCC=	yes
+USE_GCC=	yes:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	uefi-edk2
@@ -77,4 +77,3 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/uefi-firmware/BHYVE_UEFI_VARS${PLIST_SUFFIX}-devel.fd
 
 .include <bsd.port.mk>
-RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
