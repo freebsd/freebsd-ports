@@ -15,12 +15,3 @@
  LOCAL_CPPFLAGS += -I.
  
  all: demo-tracelog
-@@ -31,7 +27,7 @@ demo-tracelog.o: demo-tracelog.c
- 
- demo-tracelog: demo-tracelog.o
- 	$(CC) $(LDFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(AM_CFLAGS) \
--		-o $@ $< $(LIBS)
-+		-o $@ demo-tracelog.o $(LIBS)
- 
- .PHONY: clean
- clean:

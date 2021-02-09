@@ -69,7 +69,13 @@ lib/liblttng-ust.so
 lib/liblttng-ust.so.0
 lib/liblttng-ust.so.0.0.0
 libdata/pkgconfig/lttng-ust.pc
+man/man1/lttng-gen-tp.1.gz
 man/man3/do_tracepoint.3.gz
+man/man3/lttng-ust-cyg-profile.3.gz
+man/man3/lttng-ust-dl.3.gz
+man/man3/lttng-ust.3.gz
+man/man3/tracef.3.gz
+man/man3/tracelog.3.gz
 man/man3/tracepoint.3.gz
 man/man3/tracepoint_enabled.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

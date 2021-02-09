@@ -1,6 +1,6 @@
 --- doc/examples/hello-static-lib/Makefile.orig	2016-08-08 21:25:36 UTC
 +++ doc/examples/hello-static-lib/Makefile
-@@ -14,19 +14,15 @@
+@@ -14,13 +14,9 @@
  #
  # This makefile is purposefully kept simple to support GNU and BSD make.
  
@@ -16,10 +16,3 @@
  
  all: hello
  
- lttng-ust-provider-hello.o: tp.c ust_tests_hello.h
- 	$(CC) $(CPPFLAGS) $(LOCAL_CPPFLAGS) $(CFLAGS) $(AM_CPPFLAGS) \
--		$(AM_CFLAGS) -c -o $@ $<
-+		$(AM_CFLAGS) -c -o $@ tp.c
- 
- lttng-ust-provider-hello.a: lttng-ust-provider-hello.o
- 	ar -rc $@ lttng-ust-provider-hello.o
