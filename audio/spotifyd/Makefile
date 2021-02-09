@@ -6,7 +6,7 @@ DISTVERSION=	0.2.24
 PORTREVISION=	12
 CATEGORIES=	audio
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Spotify daemon
 
 LICENSE=	GPLv3
