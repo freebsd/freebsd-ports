@@ -3,6 +3,7 @@
 
 PORTNAME=	chafa
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://hpjansson.org/chafa/releases/ \
 		https://github.com/hpjansson/chafa/releases/download/${PORTVERSION}/
@@ -23,8 +24,11 @@ USES=		gettext-runtime gnome libtool tar:xz
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}/html
 
 INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/${PORTNAME}.1 \
