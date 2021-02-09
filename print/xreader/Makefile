@@ -3,6 +3,7 @@
 
 PORTNAME=	xreader
 PORTVERSION=	2.8.3
+PORTREVISION=	1
 CATEGORIES=	print gnome
 
 MAINTAINER=	danfe@FreeBSD.org
