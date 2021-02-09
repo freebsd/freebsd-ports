@@ -12,6 +12,9 @@ COMMENT=	Themed widget set for Tk
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.terms
 
+DEPRECATED=	The Tile widget set is part of Tk 8.5 and above, see TIP 248
+EXPIRATION_DATE=2021-03-26
+
 USES=		autoreconf tk:tea
 
 CONFIGURE_ENV+=	TCL_INCLUDEDIR="${TCL_INCLUDEDIR}" \
