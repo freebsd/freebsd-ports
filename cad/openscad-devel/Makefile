@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openscad
-PORTVERSION=	2020.01.04
-PORTREVISION=	5
+PORTVERSION=	2021.02.09
 #PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
@@ -39,7 +38,7 @@ USE_GL=		gl glu glew
 USE_GNOME=	glib20 libxml2
 USE_QT=		buildtools_build core concurrent_build dbus gui multimedia widgets
 USE_XORG=	x11
-GH_TAGNAME=	552643c03e90ff47ae905c06f1d1afbbdb808966
+GH_TAGNAME=	63a7c77740030c63d646eb0684ba6947eecb0db7
 QMAKE_ARGS=	CONFIG+="experimental" VERSION=${PORTVERSION}
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
 LDFLAGS+=	-Wl,--as-needed

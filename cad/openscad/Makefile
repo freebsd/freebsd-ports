@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	openscad
-PORTVERSION=	2019.05.10
-PORTREVISION=	9
+PORTVERSION=	2021.01.01
 #PORTREVISION=	1
 CATEGORIES=	cad
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	b6c170cc5dd1.patch:-p1 \
-		15acf6700674.patch:-p1 \
-		9c4d5ae7ab05.patch:-p1 \
-		07a56df933a3.patch:-p1
+#PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+#PATCHFILES+=	b6c170cc5dd1.patch:-p1 \
+#		15acf6700674.patch:-p1 \
+#		9c4d5ae7ab05.patch:-p1 \
+#		07a56df933a3.patch:-p1
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Programmer's solid 3D CAD modeller #'
@@ -32,7 +31,7 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdouble-conversion.so:devel/double-conversion
 
-CONFLICTS=	openscad
+#CONFLICTS=	openscad-devel
 
 USES=		bison compiler:c++14-lang desktop-file-utils eigen:3 gettext \
 		gl gnome pkgconfig qmake qt:5 shared-mime-info xorg
@@ -41,7 +40,7 @@ USE_GL=		gl glu glew
 USE_GNOME=	glib20 libxml2
 USE_QT=		buildtools_build core concurrent_build dbus gui multimedia widgets
 USE_XORG=	x11
-GH_TAGNAME=	0f6d569b57112b79f657a82b0809dc420fbff163
+GH_TAGNAME=	41f58fe57c03457a3a8b4dc541ef5654ec3e8c78
 QMAKE_ARGS=	CONFIG+="experimental" VERSION=${PORTVERSION}
 # Avoid overlinking: kvm, procstat, boost(thread, system), Qt5(concurrent, network, printsupport)
 LDFLAGS+=	-Wl,--as-needed

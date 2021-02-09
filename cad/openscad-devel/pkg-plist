@@ -111,10 +111,12 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/locale/de/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/es/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/fr/LC_MESSAGES/openscad.mo
+%%DATADIR%%/locale/hy/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/pl/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/ru/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/uk/LC_MESSAGES/openscad.mo
 %%DATADIR%%/locale/zh_CN/LC_MESSAGES/openscad.mo
+%%DATADIR%%/locale/zh_TW/LC_MESSAGES/openscad.mo
 %%DATADIR%%/templates/difference.json
 %%DATADIR%%/templates/for.json
 %%DATADIR%%/templates/function.json
