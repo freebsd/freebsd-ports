@@ -226,4 +226,5 @@ lib/cmake/proxygen/proxygen-config.cmake
 lib/cmake/proxygen/proxygen-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/proxygen/proxygen-targets.cmake
 lib/libproxygen.so
+lib/libproxygencurl.so
 lib/libproxygenhttpserver.so
