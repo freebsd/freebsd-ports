@@ -17,7 +17,9 @@ man/man5/isns_config.5.gz
 man/man8/isnsadm.8.gz
 man/man8/isnsd.8.gz
 man/man8/isnsdd.8.gz
+man/man8/isnssetup.8.gz
 sbin/isnsadm
 sbin/isnsd
 sbin/isnsdd
+sbin/isnssetup
 @dir /var/db/isns
