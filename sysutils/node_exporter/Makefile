@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	node_exporter
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -41,6 +41,9 @@ LD_FLAG_STRING=	-s \
 GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
 
 OPTIONS_DEFINE=	DOCS
+
+# This Makefile includes the GH_TUPLE section.
+.include "Makefile.modules"
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
