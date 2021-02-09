@@ -780,6 +780,8 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_object_range_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_object_range_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_objset_id.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_recover.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zdb/zdb_recover_2.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs/zfs_001_neg.ksh
@@ -1254,6 +1256,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/zpool_export.cfg
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/zpool_export.kshlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/zpool_export_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/zpool_export_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_export/zpool_export_003_neg.ksh
@@ -2020,6 +2023,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid_spare2.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_draid_spare3.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_mirror.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_raidz.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_raidz1.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_raidz2.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/redundancy/redundancy_raidz3.ksh
@@ -2316,6 +2320,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_003_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_encrypted.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_send_encrypted.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/vdev_zaps/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/vdev_zaps/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/vdev_zaps/vdev_zaps.kshlib
