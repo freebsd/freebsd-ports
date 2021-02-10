@@ -10,6 +10,9 @@ MASTER_SITES=	http://people.redhat.com/jakub/prelink/
 MAINTAINER=	damjan.jov@gmail.com
 COMMENT=	ELF prelinking utility to speed up dynamic linking
 
+DEPRECATED=	Have no users in the ports tree
+EXPIRATION_DATE=2021-03-10
+
 LIB_DEPENDS=	libargp.so:devel/argp-standalone
 
 USES=		autoreconf gmake tar:bzip2 libtool
