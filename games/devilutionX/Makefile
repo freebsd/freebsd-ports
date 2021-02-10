@@ -2,7 +2,7 @@
 
 PORTNAME=	devilutionX
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -20,7 +20,6 @@ USES=		cmake compiler:c++11-lang dos2unix sdl
 DOS2UNIX_GLOB=	*.c *.h CMakeLists.txt
 USE_GITHUB=	yes
 GH_ACCOUNT=	diasurgical
-GH_TAGNAME=	298092b
 USE_SDL=	mixer2 sdl2 ttf2
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_SHAREDIR:PATH=${PREFIX}/share \
