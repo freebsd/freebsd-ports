@@ -4,6 +4,7 @@ PORTNAME=	rmlint
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.10.1-11
 DISTVERSIONSUFFIX=	-ga726d0cb
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jockl@pianojockl.org
@@ -12,8 +13,7 @@ COMMENT=	Remove duplicates and other lint from your filesystem
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
-LIB_DEPENDS=	libelf.so:devel/libelf \
-		libjson-glib-1.0.so:devel/json-glib
+LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib
 
 USES=		gnome pkgconfig python:build scons
 USE_GITHUB=	yes
