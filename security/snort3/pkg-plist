@@ -134,6 +134,7 @@ include/snort/network_inspectors/rna/rna_fingerprint.h
 include/snort/network_inspectors/rna/rna_fingerprint_tcp.h
 include/snort/network_inspectors/rna/rna_fingerprint_udp.h
 include/snort/network_inspectors/rna/rna_fingerprint_ua.h
+include/snort/network_inspectors/rna/rna_flow.h
 include/snort/network_inspectors/rna/rna_inspector.h
 include/snort/network_inspectors/rna/rna_logger.h
 include/snort/network_inspectors/rna/rna_name.h
