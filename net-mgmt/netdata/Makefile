@@ -78,7 +78,6 @@ FREEIPMI_LIB_DEPENDS=		libfreeipmi.so:sysutils/freeipmi
 GOPLUGIN_DESC=		Enable the go collector plugin
 GOPLUGIN_RUN_DEPENDS=	${LOCALBASE}/libexec/netdata/plugins.d/god.plugin:net-mgmt/netdata-go
 
-LTO_DESC=		Use Link-Time Optimization
 LTO_CONFIGURE_ENABLE=	lto
 LTO_USES=		compiler:c11
 

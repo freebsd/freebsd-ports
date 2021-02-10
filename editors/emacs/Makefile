@@ -128,7 +128,6 @@ GRAPHICS_DESC=		Graphics support
 GSETTINGS_DESC=		GSettings API for application settings
 HARFBUZZ_DESC=		HarfBuzz for text shaping
 KQUEUE_DESC=		File notification via kqueue
-#LTO_DESC=		Enable link-time optimization
 M17N_DESC=		M17N support for text-shaping [implies XFT]
 MAGICK_DESC=		ImageMagick image processing support (deprecated)
 MAILUTILS_DESC=		Mail framework via GNU Mailutils

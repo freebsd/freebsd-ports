@@ -307,6 +307,7 @@ LITE_DESC?=		Reduced features or memory footprint
 LIVEMEDIA_DESC?=	Multimedia streaming support via liveMedia
 LQR_DESC?=		Liquid Rescale support
 LSOF_DESC?=		LiSt Open Files utility support
+LTO_DESC?=		Use Link-Time Optimization
 LUA_DESC?=		Lua scripting language support
 LZ4_DESC?=		LZ4 compression support
 LZMA_DESC?=		LZMA compression support
