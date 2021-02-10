@@ -151,8 +151,9 @@ qt-3d_LIB=		libQt${_QT_LIBVER}3DCore.so
 qt-assistant_PORT=	devel/${_QT_RELNAME}-assistant
 qt-assistant_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/assistant
 
+# Always build with *this* version's buildtools
 qt-buildtools_PORT=	devel/${_QT_RELNAME}-buildtools
-qt-buildtools_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/moc
+qt-buildtools_PATH=	${_QT_RELNAME}-buildtools>=${_QT_VERSION}
 
 qt-charts_PORT=		x11-toolkits/${_QT_RELNAME}-charts
 qt-charts_LIB=		libQt${_QT_LIBVER}Charts.so
@@ -256,8 +257,9 @@ qt-qdoc-data_PATH=	${LOCALBASE}/${QT_DOCDIR_REL}/global/config.qdocconf
 qt-qev_PORT=		x11/${_QT_RELNAME}-qev
 qt-qev_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/qev
 
+# Always build with *this* version's qmake
 qt-qmake_PORT=		devel/${_QT_RELNAME}-qmake
-qt-qmake_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/qmake
+qt-qmake_PATH=		${_QT_RELNAME}-qmake>=${_QT_VERSION}
 
 qt-quick3d_PORT=	x11-toolkits/${_QT_RELNAME}-quick3d
 qt-quick3d_LIB=		libQt${_QT_LIBVER}Quick3D.so
