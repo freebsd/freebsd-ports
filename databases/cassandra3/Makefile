@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cassandra
-DISTVERSION=	3.11.9
+DISTVERSION=	3.11.10
 CATEGORIES=	databases java
 MASTER_SITES=	LOCAL/rene:repo
 PKGNAMESUFFIX=	3
@@ -29,7 +29,7 @@ USE_RC_SUBR=	cassandra
 USE_GITHUB=	yes
 GH_ACCOUNT=	polo-language
 GH_PROJECT=	cassandra
-GH_TAGNAME=	c6f6387
+GH_TAGNAME=	62fe1f7
 
 TEST_TARGET=	test
 
