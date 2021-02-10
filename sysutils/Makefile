@@ -1483,6 +1483,7 @@
     SUBDIR += wmflame
     SUBDIR += wmmemfree
     SUBDIR += wmmemload
+    SUBDIR += wmscript
     SUBDIR += wmtop
     SUBDIR += wmupmon
     SUBDIR += worldtools

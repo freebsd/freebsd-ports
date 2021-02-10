@@ -1,0 +1,8 @@
+WMScript is a system monitoring dock app for Window Maker.
+It allows you to specify a command and have the numeric result of that command
+displayed in the dock app's window. You may specify up to 5 things to monitor
+and the interval is configurable.
+This combines to make it a very flexible tool for system monitoring.
+It is based on WMiNet, and the look is the same.
+
+WWW: http://freshmeat.sourceforge.net/projects/wmscript

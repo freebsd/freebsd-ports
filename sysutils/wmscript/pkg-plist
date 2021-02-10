@@ -1,0 +1,4 @@
+bin/wmscript
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/HINTS
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmscriptrc.example
