@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymongo
-PORTVERSION=	3.11.2
+PORTVERSION=	3.11.3
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,4 +16,9 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	py[0-9][0-9]-pymongo28
+
+post-install:
+	        ${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/bson/_cbson.so
+	        ${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pymongo/_cmessage.so
+
 .include <bsd.port.mk>
