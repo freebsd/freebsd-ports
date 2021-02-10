@@ -191,6 +191,7 @@
     SUBDIR += linux-sublime
     SUBDIR += linux-sublime3
     SUBDIR += madedit
+    SUBDIR += marker
     SUBDIR += mg
     SUBDIR += mg-static
     SUBDIR += micro
