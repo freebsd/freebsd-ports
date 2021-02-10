@@ -11,22 +11,24 @@ MASTER_SITES=	http://people.debian.org/~godisch/wmwork/ \
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Dockapp that keeps track of time you have spent on something
 
-BROKEN_FreeBSD_13=	duplicate symbol: display
-BROKEN_FreeBSD_14=	duplicate symbol: display
+LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-
-USES=		gmake xorg
-USE_XORG=	xpm
+USES=		gmake localbase xorg
+USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
+WRKSRC_SUBDIR=	src
 
 PLIST_FILES=	bin/wmwork man/man1/wmwork.1.gz
+PORTDOCS=	CHANGES README
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmwork ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/wmwork.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/../,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
