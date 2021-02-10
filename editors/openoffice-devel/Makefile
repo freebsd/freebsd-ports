@@ -274,7 +274,8 @@ SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR} \
 
 CONFIGURE_ARGS+=							\
 			--enable-gio					\
-			--without-gconf					\
+			--disable-gnome-vfs				\
+			--disable-gconf					\
 			--with-unix-wrapper=${EXECBASE}			\
 			--with-alloc=system				\
 			--with-ant-home=${LOCALBASE}/share/java/apache-ant \
