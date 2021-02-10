@@ -2,21 +2,21 @@
 
 PORTNAME=	notcurses
 DISTVERSIONPREFIX=	v
-DISTVERSION=	${ABIVERSION}.1.7
+DISTVERSION=	${ABIVERSION}.2.1
 CATEGORIES=	devel
 
 MAINTAINER=	nickblack@linux.com
 COMMENT=	TUI library for modern terminal emulators
 
-LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libqrcodegen.so:graphics/qr-code-generator \
 		libunistring.so:devel/libunistring
 
-USES=		cmake:noninja compiler:c++17-lang localbase ncurses:port pkgconfig \
-		readline
+USES=		cmake:noninja compiler:c++17-lang localbase \
+		ncurses:port pkgconfig readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	dankamongmen
 USE_LDCONFIG=	yes

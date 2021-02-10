@@ -1,9 +1,9 @@
 bin/ncls
 bin/ncneofetch
 bin/ncplayer
+bin/nctetris
 bin/notcurses-demo
 bin/notcurses-input
-bin/notcurses-tetris
 include/ncpp/Cell.hh
 include/ncpp/CellStyle.hh
 include/ncpp/Direct.hh
@@ -19,6 +19,7 @@ include/ncpp/Palette256.hh
 include/ncpp/Pile.hh
 include/ncpp/Plane.hh
 include/ncpp/Plot.hh
+include/ncpp/Progbar.hh
 include/ncpp/Reader.hh
 include/ncpp/Reel.hh
 include/ncpp/Root.hh
@@ -42,6 +43,8 @@ lib/cmake/Notcurses++/Notcurses++Config.cmake
 lib/cmake/Notcurses++/Notcurses++ConfigVersion.cmake
 lib/cmake/Notcurses/NotcursesConfig.cmake
 lib/cmake/Notcurses/NotcursesConfigVersion.cmake
+lib/cmake/NotcursesCore/NotcursesCoreConfig.cmake
+lib/cmake/NotcursesCore/NotcursesCoreConfigVersion.cmake
 lib/libnotcurses++.a
 lib/libnotcurses++.so
 lib/libnotcurses++.so.%%ABI_VER%%
@@ -60,16 +63,16 @@ libdata/pkgconfig/notcurses.pc
 %%MANPAGES%%share/man/man1/ncls.1.gz
 %%MANPAGES%%share/man/man1/ncneofetch.1.gz
 %%MANPAGES%%share/man/man1/ncplayer.1.gz
+%%MANPAGES%%share/man/man1/nctetris.1.gz
 %%MANPAGES%%share/man/man1/notcurses-demo.1.gz
 %%MANPAGES%%share/man/man1/notcurses-input.1.gz
 %%MANPAGES%%share/man/man1/notcurses-tester.1.gz
-%%MANPAGES%%share/man/man1/notcurses-tetris.1.gz
 %%MANPAGES%%share/man/man3/notcurses.3.gz
 %%MANPAGES%%share/man/man3/notcurses_capabilities.3.gz
 %%MANPAGES%%share/man/man3/notcurses_cell.3.gz
 %%MANPAGES%%share/man/man3/notcurses_channels.3.gz
 %%MANPAGES%%share/man/man3/notcurses_core.3.gz
-%%MANPAGES%%share/man/man3/notcurses_directmode.3.gz
+%%MANPAGES%%share/man/man3/notcurses_direct.3.gz
 %%MANPAGES%%share/man/man3/notcurses_fade.3.gz
 %%MANPAGES%%share/man/man3/notcurses_fds.3.gz
 %%MANPAGES%%share/man/man3/notcurses_init.3.gz
