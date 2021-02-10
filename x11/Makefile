@@ -90,6 +90,7 @@
     SUBDIR += grabc
     SUBDIR += grim
     SUBDIR += gromit
+    SUBDIR += gromit-mpx
     SUBDIR += gskrab
     SUBDIR += gstreamer1-plugins-x
     SUBDIR += gstreamer1-plugins-ximagesrc
