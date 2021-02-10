@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
 CATEGORIES=	games
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Neo Cowsay written in Go
 
 LICENSE=	ART10 GPLv1+

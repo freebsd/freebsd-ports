@@ -4,7 +4,7 @@ PORTNAME=	heimer
 DISTVERSION=	2.2.0
 CATEGORIES=	graphics
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple mind map, diagram, and note-taking tool
 
 LICENSE=	CC-BY-SA-3.0 GPLv3+

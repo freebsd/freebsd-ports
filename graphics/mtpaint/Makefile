@@ -5,7 +5,7 @@ PORTNAME=	mtpaint
 PORTVERSION=	3.50.03
 CATEGORIES=	graphics
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple painting program
 
 LICENSE=	GPLv3

@@ -6,7 +6,7 @@ PORTVERSION=	2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Show a scrolling 'Matrix' like screen
 
 LICENSE=	GPLv3+

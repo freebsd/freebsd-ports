@@ -4,7 +4,7 @@ PORTNAME=	gitup
 DISTVERSION=	0.90
 CATEGORIES=	net
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Minimalist, dependency-free program to clone/pull git repositories
 
 LICENSE=	BSD2CLAUSE

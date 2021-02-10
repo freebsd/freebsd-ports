@@ -4,7 +4,7 @@ PORTNAME=	cxxmatrix
 DISTVERSION=	g20201128
 CATEGORIES=	misc
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	C++ Matrix: The Matrix Reloaded in Terminals
 
 LICENSE=	MIT

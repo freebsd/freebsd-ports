@@ -5,7 +5,7 @@ DISTVERSION=	g20190913
 PORTREVISION=	2
 CATEGORIES=	editors
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Terminal frontend for xi-editor
 
 LICENSE=	MIT

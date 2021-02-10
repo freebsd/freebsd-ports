@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1-g20210119
 CATEGORIES=	games
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Open source re-implementation of Diablo 2
 
 LICENSE=	GPLv3

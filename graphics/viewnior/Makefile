@@ -6,7 +6,7 @@ PORTVERSION=	1.7
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	graphics
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Fast and simple image viewer
 
 LICENSE=	GPLv3

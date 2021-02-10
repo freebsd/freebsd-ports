@@ -5,7 +5,7 @@ PORTVERSION=	1.1.0
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Diablo I engine for modern operating systems
 
 LICENSE=	UNLICENSE
@@ -20,6 +20,7 @@ USES=		cmake compiler:c++11-lang dos2unix sdl
 DOS2UNIX_GLOB=	*.c *.h CMakeLists.txt
 USE_GITHUB=	yes
 GH_ACCOUNT=	diasurgical
+GH_TAGNAME=	298092b
 USE_SDL=	mixer2 sdl2 ttf2
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_SHAREDIR:PATH=${PREFIX}/share \

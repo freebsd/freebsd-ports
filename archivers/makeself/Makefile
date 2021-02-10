@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/megastep/makeself/releases/download/release-${PORTVERSION}/
 EXTRACT_SUFX=	.run
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Neat script to make self-extracting archives
 
 LICENSE=	GPLv2

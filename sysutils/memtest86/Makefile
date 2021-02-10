@@ -6,7 +6,7 @@ PORTVERSION=	4.3.7
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.memtest86.com/downloads/
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Stand alone memory test for x86 architecture computers
 
 NO_WRKSUBDIR=	yes

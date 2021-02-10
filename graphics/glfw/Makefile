@@ -6,7 +6,7 @@ PORTVERSION=	3.3.2
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	ed.arrakis@gmail.com
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
