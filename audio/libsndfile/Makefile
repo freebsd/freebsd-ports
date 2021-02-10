@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libsndfile
-DISTVERSION=	1.0.30
+DISTVERSION=	1.0.31
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/erikd/${PORTNAME}/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
@@ -39,13 +39,9 @@ EXTERNAL_LIB_DEPENDS=	libFLAC.so:audio/flac \
 			libopus.so:audio/opus \
 			libvorbis.so:audio/libvorbis
 
-MANPAGES_CMAKE_ON=	-DINSTALL_MANPAGES:BOOL=ON
-MANPAGES_CMAKE_OFF=	-DINSTALL_MANPAGES:BOOL=OFF
-
+MANPAGES_CMAKE_BOOL=	INSTALL_MANPAGES
 STATIC_CMAKE_OFF=	-DBUILD_SHARED_LIBS:BOOL=ON
-
-TEST_CMAKE_ON=	-DBUILD_TESTING:BOOL=ON
-TEST_CMAKE_OFF=	-DBUILD_TESTING:BOOL=OFF
+TEST_CMAKE_BOOL=	BUILD_TESTING
 
 .include <bsd.port.options.mk>
 
