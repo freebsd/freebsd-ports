@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi-addon-pvr-iptvsimple
-PORTVERSION=	7.3.0
+PORTVERSION=	7.4.2
 DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	multimedia
 

@@ -1,9 +1,11 @@
 lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so
 lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so.19.0
-lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so.7.3.0
+lib/kodi/addons/pvr.iptvsimple/pvr.iptvsimple.so.7.4.2
 share/kodi/addons/pvr.iptvsimple/addon.xml
 share/kodi/addons/pvr.iptvsimple/changelog.txt
 share/kodi/addons/pvr.iptvsimple/icon.png
+share/kodi/addons/pvr.iptvsimple/resources/data/channelGroups/customRadioGroups-example.xml
+share/kodi/addons/pvr.iptvsimple/resources/data/channelGroups/customTVGroups-example.xml
 share/kodi/addons/pvr.iptvsimple/resources/data/genres.xml
 share/kodi/addons/pvr.iptvsimple/resources/data/genres/genreTextMappings/Rytec-UK-Ireland.xml
 share/kodi/addons/pvr.iptvsimple/resources/data/genres/kodiDvbGenres.xml
