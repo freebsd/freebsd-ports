@@ -77,6 +77,34 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="06a5abd4-6bc2-11eb-b292-90e2baa3bafc">
+    <topic>mod_dav_svn -- server crash</topic>
+    <affects>
+      <package>
+	<name>www/mod_dav_svn</name>
+	<range><ge>1.9.0</ge><le>1.10.6</le></range>
+	<range><ge>1.11.0</ge><le>1.14.0</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion project reports:</p>
+	<blockquote cite="https://subversion.apache.org/security/CVE-2020-17525-advisory.txt">
+	  <p>Subversion's mod_authz_svn module will crash if the server is using
+            in-repository authz rules with the AuthzSVNReposRelativeAccessFile
+            option and a client sends a request for a non-existing repository URL.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://subversion.apache.org/security/CVE-2020-17525-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2021-01-29</discovery>
+      <entry>2021-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cdb10765-6879-11eb-a7d8-08002734b9ed">
     <topic>gitea -- multiple vulnerabilities</topic>
     <affects>
