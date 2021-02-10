@@ -81,7 +81,7 @@ Notes:
     <topic>mod_dav_svn -- server crash</topic>
     <affects>
       <package>
-	<name>www/mod_dav_svn</name>
+	<name>mod_dav_svn</name>
 	<range><ge>1.9.0</ge><le>1.10.6</le></range>
 	<range><ge>1.11.0</ge><le>1.14.0</le></range>
       </package>
