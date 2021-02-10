@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	realsr-ncnn-vulkan
-DISTVERSION=	20200818
+DISTVERSION=	20210210
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,8 +18,8 @@ LIB_DEPENDS=	libwebp.so:graphics/webp \
 USES=		cmake compiler:${OPENMP}c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	nihui
-GH_TUPLE=	KhronosGroup:glslang:8.13.3743-39-gd39b8afc:glslang/src/ncnn/glslang \
-		Tencent:ncnn:20200727:ncnn/src/ncnn
+GH_TUPLE=	KhronosGroup:glslang:11.1.0-44-g4afd6917:glslang/src/ncnn/glslang \
+		Tencent:ncnn:20210124-35-g9fd4d371:ncnn/src/ncnn
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 CMAKE_ON=	USE_SYSTEM_WEBP
 PLIST_FILES=	bin/${PORTNAME}
