@@ -5,7 +5,7 @@ DISTVERSION=	1.4
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	On-screen annotation tool
+COMMENT=	Desktop annotation tool, multi-pointer port of Gromit
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
