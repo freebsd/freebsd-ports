@@ -1,5 +1,11 @@
-rmlint is an "extremely fast tool to remove duplicates and other lint
-from your filesystem."
+rmlint finds space waste and other broken things on your filesystem and
+offers to remove it. It is able to find:
 
-WWW: https://rmlint.rtfd.org/
-WWW: https://github.com/sahib/rmlint
+- Duplicate files & directories
+- Nonstripped Binaries
+- Broken symlinks
+- Empty files
+- Recursive empty directories
+- Files with broken user or group id.
+
+WWW: https://rmlint.readthedocs.io/en/latest/
