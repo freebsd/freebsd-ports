@@ -240,6 +240,10 @@ MOZ_OPTIONS+=	--enable-libproxy
 MOZ_OPTIONS+=	--disable-libproxy
 .endif
 
+.if ${PORT_OPTIONS:MLTO}
+MOZ_OPTIONS+=	--enable-lto=cross
+.endif
+
 .if ${PORT_OPTIONS:MALSA}
 BUILD_DEPENDS+=	${LOCALBASE}/include/alsa/asoundlib.h:audio/alsa-lib
 MOZ_OPTIONS+=	--enable-alsa
