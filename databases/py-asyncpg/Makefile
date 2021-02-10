@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asyncpg
-PORTVERSION=	0.21.0
+PORTVERSION=	0.22.0
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,8 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	PKG-INFO README.rst
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/asyncpg/protocol/protocol*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/asyncpg/protocol/protocol.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/asyncpg/pgproto/pgproto.so
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
