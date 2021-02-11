@@ -4,7 +4,7 @@ bin/rime_patch
 include/rime_api.h
 include/rime_levers_api.h
 lib/librime.so
-lib/librime.so.%%VER%%
 lib/librime.so.1
+lib/librime.so.%%VER%%
 libdata/pkgconfig/rime.pc
 share/cmake/rime/RimeConfig.cmake
