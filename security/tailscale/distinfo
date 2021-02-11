@@ -1,6 +1,6 @@
-TIMESTAMP = 1612598378
-SHA256 (tailscale-tailscale-v1.4.2_GH0.tar.gz) = 26eb568be715ddbe02fdbd762179fb5d7920a30d59273c8f8d2967d1e29a000b
-SIZE (tailscale-tailscale-v1.4.2_GH0.tar.gz) = 485372
+TIMESTAMP = 1613029876
+SHA256 (tailscale-tailscale-v1.4.4_GH0.tar.gz) = 5312c6d075a32049912e0932a89269869def9ac8ea9d0fdccc6b41db60fc2d4c
+SIZE (tailscale-tailscale-v1.4.4_GH0.tar.gz) = 488201
 SHA256 (apenwarr-fixconsole-5a9f6489cc29_GH0.tar.gz) = 60a7c20f3c7253049c70bcef2d5cfbc4f33eea5250e7f820eb48748b0a505418
 SIZE (apenwarr-fixconsole-5a9f6489cc29_GH0.tar.gz) = 6349
 SHA256 (go4org-unsafe-assume-no-moving-gc-1025295fd063_GH0.tar.gz) = 0ebdd7ce2be9c52bf10cdf508b4f7d2dd41347916f71656087712758614a9aca
