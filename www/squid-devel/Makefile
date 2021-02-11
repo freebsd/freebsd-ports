@@ -1,21 +1,24 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	5.0.3
+PORTVERSION=	5.0.5
 CATEGORIES=	www
-MASTER_SITES=	http://www.squid-cache.org/Versions/v5/ \
-		http://www2.us.squid-cache.org/Versions/v5/ \
-		http://www1.at.squid-cache.org/Versions/v5/ \
-		http://www.eu.squid-cache.org/Versions/v5/ \
-		http://www1.jp.squid-cache.org/Versions/v5/
+MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/v5/ \
+		http://ca.squid-cache.org/Versions/v5/ \
+		http://www1.il.squid-cache.org/Versions/v5/ \
+		http://www1.jp.squid-cache.org/Versions/v5/ \
+		http://www2.gr.squid-cache.org/Versions/v5/ \
+		http://ca2.squid-cache.org/Versions/v5/ \
+		http://www.squid-cache.org/Versions/v5/
 PKGNAMESUFFIX=	-devel
 
-PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
-		http://www2.us.squid-cache.org/%SUBDIR%/ \
-		http://www1.at.squid-cache.org/%SUBDIR%/ \
-		http://www.eu.squid-cache.org/%SUBDIR%/ \
+PATCH_SITES=	http://www2.pl.squid-cache.org/%SUBDIR%/ \
+		http://ca.squid-cache.org/%SUBDIR%/ \
+		http://www1.il.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
-		http://master.squid-cache.org/~amosjeffries/patches/:nosid
+		http://www2.gr.squid-cache.org/%SUBDIR%/ \
+		http://ca2.squid-cache.org/%SUBDIR%/ \
+		http://www.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v5/changesets
 
 MAINTAINER=	timp87@gmail.com
