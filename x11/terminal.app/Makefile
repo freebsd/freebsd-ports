@@ -14,13 +14,14 @@ COMMENT=	Terminal Emulator for GNUstep
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_13=	duplicate symbol: TerminalWindowNoMoreActiveWindowsNotification
-BROKEN_FreeBSD_14=	duplicate symbol: TerminalWindowNoMoreActiveWindowsNotification
-
 USES=		gnustep iconv
 USE_GNUSTEP=	back build
 
 MAKE_ARGS+=	Terminal_TOOL_LIBS='${ICONV_LIB} -lutil'
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,^NSString \*,extern &,' \
+		${WRKSRC}/TerminalWindow.h
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Terminal.app/Terminal
