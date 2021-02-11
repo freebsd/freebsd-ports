@@ -279,28 +279,6 @@
 +	if ((p=strchr(c, ':')) != 0)    return (p);
 +	return (0);
 +}
---- courier_auth_config.h.orig	2016-09-04 23:37:40 UTC
-+++ courier_auth_config.h
-@@ -125,6 +125,9 @@
- /* Define to 1 if you have the `opendir' function. */
- #define HAVE_OPENDIR 1
- 
-+/* Whether -lvpopmail has the open_smtp_relay() function */
-+/* #undef HAVE_OPEN_SMTP_RELAY */
-+
- /* Define to 1 if you have the <Pam/pam_appl.h> header file. */
- /* #undef HAVE_PAM_PAM_APPL_H */
- 
-@@ -227,6 +230,9 @@
- 
- /* Define to the shared archive member specification, say "(shr.o)". */
- /* #undef LT_SHARED_LIB_MEMBER */
-+
-+/* Whether -lvpopmail has the vset_lastauth() function */
-+/* #undef HAVE_VSET_LASTAUTH */
- 
- /* Whether we must a prototype for crypt() */
- #define NEED_CRYPT_PROTOTYPE 0
 --- courier_auth_config.h.in.orig	2017-07-02 14:41:47 UTC
 +++ courier_auth_config.h.in
 @@ -124,6 +124,9 @@
