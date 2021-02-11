@@ -167,6 +167,7 @@
     SUBDIR += telepathy-qt
     SUBDIR += telepathy-salut
     SUBDIR += telepathy-sofiasip
+    SUBDIR += tg_owt
     SUBDIR += tkabber
     SUBDIR += tkabber-plugins
     SUBDIR += toot

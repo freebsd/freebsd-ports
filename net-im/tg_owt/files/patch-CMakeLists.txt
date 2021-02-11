@@ -1,0 +1,46 @@
+--- CMakeLists.txt.orig	2021-02-03 11:42:41 UTC
++++ CMakeLists.txt
+@@ -54,7 +54,6 @@ include(cmake/libopenh264.cmake)
+ include(cmake/libpffft.cmake)
+ include(cmake/librnnoise.cmake)
+ include(cmake/libsrtp.cmake)
+-include(cmake/libusrsctp.cmake)
+ include(cmake/libvpx.cmake)
+ include(cmake/libwebrtcbuild.cmake)
+ include(cmake/libyuv.cmake)
+@@ -88,7 +87,6 @@ if (is_x86 OR is_x64)
+         tg_owt::libpffft
+         tg_owt::librnnoise
+         tg_owt::libsrtp
+-        tg_owt::libusrsctp
+         tg_owt::libvpx
+         tg_owt::libvpx_mmx
+         tg_owt::libvpx_sse2
+@@ -137,6 +135,7 @@ endif()
+ link_openssl(tg_owt)
+ link_ffmpeg(tg_owt)
+ link_opus(tg_owt)
++link_usrsctp(tg_owt)
+ 
+ if (UNIX AND NOT APPLE)
+     link_libalsa(tg_owt)
+@@ -145,6 +144,11 @@ if (UNIX AND NOT APPLE)
+     link_x11(tg_owt)
+ endif()
+ 
++target_include_directories(tg_owt BEFORE PRIVATE $<TARGET_PROPERTY:tg_owt::libabsl,INTERFACE_INCLUDE_DIRECTORIES>)
++target_include_directories(tg_owt BEFORE PRIVATE $<TARGET_PROPERTY:tg_owt::libvpx,INTERFACE_INCLUDE_DIRECTORIES>)
++target_include_directories(tg_owt BEFORE PRIVATE $<TARGET_PROPERTY:tg_owt::libyuv,INTERFACE_INCLUDE_DIRECTORIES>)
++target_include_directories(tg_owt BEFORE PRIVATE "src")
++
+ function(add_sublibrary postfix)
+     add_library(tg_owt_${postfix} OBJECT)
+     init_feature_target(tg_owt_${postfix} ${postfix})
+@@ -2188,7 +2192,6 @@ set(export_targets
+     libpffft
+     librnnoise
+     libsrtp
+-    libusrsctp
+     libvpx
+     ${vpx_export}
+     libwebrtcbuild
