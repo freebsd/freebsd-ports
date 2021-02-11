@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpie
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,7 +20,6 @@ USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	jakubroztocil
 
 NO_ARCH=	yes
 
