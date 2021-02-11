@@ -1,0 +1,28 @@
+WezTerm is a GPU-accelerated cross-platform terminal emulator and
+multiplexer written by @wez and implemented in Rust.
+
+- Multiplex terminal panes, tabs and windows on local and remote
+  hosts, with native mouse and scrollback
+- Ligatures, Color Emoji and font fallback, with true color and
+  dynamic color schemes
+- Hyperlinks
+- Searchable Scrollback (use mouse wheel and Shift-PageUp and Shift
+  PageDown to navigate, Ctrl-Shift-F to activate search mode)
+- xterm style selection of text with mouse; paste selection via
+  Shift-Insert (bracketed paste is supported!)
+- SGR style mouse reporting (works in vim and tmux)
+- Render underline, double-underline, italic, bold, strikethrough
+  (most other terminal emulators do not support as many render
+  attributes)
+- Configuration via a file with hot reloading
+- Multiple Windows (Hotkey: Super-N)
+- Splits/Panes (currently only in the nightly builds)
+- Tabs (Hotkey: Super-T, next/prev: Super-[ and Super-], go-to: Super-[1-9])
+- SSH client with native tabs
+- Connect to serial ports for embedded/Arduino work
+- Connect to a local multiplexer server over unix domain sockets
+- Connect to a remote multiplexer using SSH or TLS over TCP/IP
+- iTerm2 compatible image protocol support, and built-in imgcat command
+- Sixel graphics support
+
+WWW: https://wezfurlong.org/wezterm/

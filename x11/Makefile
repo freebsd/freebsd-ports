@@ -357,6 +357,7 @@
     SUBDIR += wdisplays
     SUBDIR += wdm
     SUBDIR += wev
+    SUBDIR += wezterm
     SUBDIR += wf-shell
     SUBDIR += wl-clipboard
     SUBDIR += wlogout
