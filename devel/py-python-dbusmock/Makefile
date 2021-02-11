@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-dbusmock
-PORTVERSION=	0.18.3
+PORTVERSION=	0.22.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,8 @@ USE_GNOME=	pygobject3
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+do-test:
+	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m unittest
 
 .include <bsd.port.mk>
