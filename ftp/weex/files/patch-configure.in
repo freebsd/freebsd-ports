@@ -1,4 +1,4 @@
---- configure.in.orig	2014-09-19 21:34:27 UTC
+--- configure.in.orig	2017-02-08 14:01:12 UTC
 +++ configure.in
 @@ -1,5 +1,6 @@
  dnl Process this file with autoconf to produce a configure script.
@@ -22,9 +22,9 @@
  AC_CHECK_LIB(socket,socket)
  AC_CHECK_LIB(nsl,gethostbyname)
  AC_CHECK_LIB([crypto],[CRYPTO_new_ex_data],
--    AC_CHECK_LIB([ssl],[SSL_library_init], 
-+    AC_CHECK_LIB([ssl],[SSL_new], 
- 	[LIBS="$LIBS -lssl -lcrypto"; CFLAGS="$CFLAGS -DUSE_SSL=1"], [])
+-    AC_CHECK_LIB([ssl],[OPENSSL_init_ssl], 
++    AC_CHECK_LIB([ssl],[SSL_new],
+ 	[LIBS="$LIBS -lssl -lcrypto"; CFLAGS="$CFLAGS -DUSE_SSL=1"], AC_MSG_ERROR([OpenSSL is not installed]))
      )
  
 @@ -79,5 +80,5 @@ if test x$CC = xgcc; then

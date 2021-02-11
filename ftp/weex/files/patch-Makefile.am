@@ -4,5 +4,5 @@
  AUTOMAKE_OPTIONS=foreign
  
 -SUBDIRS=po intl src doc man debian
-+SUBDIRS=po src doc man debian
++SUBDIRS=po src doc man
  EXTRA_DIST=weex-2.6.1.spec
