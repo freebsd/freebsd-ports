@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTNAME=	functionalplu
+PORTNAME=	functionalplus
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.13-p0
 CATEGORIES=	devel
