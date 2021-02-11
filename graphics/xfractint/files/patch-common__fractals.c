@@ -1,6 +1,6 @@
---- common/fractals.c.orig	2011-05-08 11:47:58.000000000 -0500
-+++ common/fractals.c	2012-03-10 16:33:40.000000000 -0500
-@@ -43,7 +43,7 @@
+--- common/fractals.c.orig	2015-01-19 18:35:16 UTC
++++ common/fractals.c
+@@ -43,7 +43,7 @@ an appropriate setup, per_image, per_pixel, and orbit 
  #include <alloc.h>
  #elif defined(__APPLE__)
  #include <malloc/malloc.h>
@@ -9,3 +9,12 @@
  #include <malloc.h>
  #endif
    /* see Fractint.c for a description of the "include"  hierarchy */
+@@ -3437,7 +3437,7 @@ MandelbrotMix4fpFractal(void) /* from formula by Jim M
+ #undef K
+ #undef L
+ 
+-double b_const;
++extern double b_const;
+ 
+ int DivideBrot5Setup(void)
+ {

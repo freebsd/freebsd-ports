@@ -16,13 +16,10 @@ MASTER_SITE_SUBDIR=	VinePlus/1.1/JG-0.9.1/sources
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Falling ball puzzle game for X
 
-BROKEN_FreeBSD_13=	duplicate symbol: act
-BROKEN_FreeBSD_14=	duplicate symbol: act
-
 WRKSRC=		${WRKDIR}/xrot
 
 USES=		imake xorg
-USE_XORG=	xpm
+USE_XORG=	x11 xext xpm
 ALL_TARGET=	xrot
 CFLAGS+=	-Wno-return-type
 

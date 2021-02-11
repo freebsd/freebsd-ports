@@ -1,6 +1,15 @@
---- game.c.orig	2013-10-18 03:58:23.000000000 +1100
-+++ game.c	2013-10-18 04:00:19.000000000 +1100
-@@ -59,7 +59,6 @@
+--- game.c.orig	2001-01-01 18:42:51 UTC
++++ game.c
+@@ -28,7 +28,7 @@
+ 
+ // Radar
+ 
+-radarStruct radar;
++extern radarStruct radar;
+ 
+ // Pixmaps
+ Pixmap *tile;
+@@ -59,7 +59,6 @@ extern bool ENDMAP;
  extern int mapResult;
  extern bool crashed;
  extern aiStruct AI;
