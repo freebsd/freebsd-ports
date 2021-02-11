@@ -488,6 +488,8 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		zstd-safe-3.0.0+zstd.1.4.8 \
 		zstd-sys-1.4.19+zstd.1.4.8
 CARGO_USE_GITHUB=	yes
+# XXX https://github.com/rust-lang/cargo/issues/4101
+CARGO_INSTALL_PATH=	${PLIST_FILES:Mbin/*:T}
 
 pre-patch:
 # Adjust whitespace for CARGO_USE_GITHUB regex
@@ -505,11 +507,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/"python3"/"${PYTHON_CMD:T}"/' \
 		${WRKSRC}/cargo-crates/xcb-*/build.rs
 
-do-install:
-# XXX https://github.com/rust-lang/cargo/issues/4101
-	${INSTALL_PROGRAM} ${PLIST_FILES:Mbin/*:T:S,^,${CARGO_TARGET_DIR}/${\
-		"${CARGO_BUILD_ARGS:M--release}":?release:debug}/,} \
-		${STAGEDIR}${PREFIX}/bin
+post-install:
 # Install assets similar to ci/deploy.sh
 .for f in ${PORTNAME}.desktop ${PORTNAME}.appdata.xml \
 	icon/terminal.png icon/${PORTNAME}-icon.svg shell-integration/${PORTNAME}.sh
