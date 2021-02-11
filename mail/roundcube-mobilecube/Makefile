@@ -18,6 +18,7 @@ THEME_VERSION?=	3.1.0
 THEME_BUILD?=	030110A
 
 USES=		php:flavors zip
+IGNORE_WITH_PHP=80
 NO_BUILD=	yes
 NO_ARCH=	yes
 

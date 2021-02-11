@@ -30,6 +30,7 @@ NO_ARCH=	yes
 
 USES=		php:flavors tar:bz2
 USE_PHP=	simplexml sockets curl
+IGNORE_WITH_PHP=80
 
 WWWDIR=		${PREFIX}/www/roundcube/plugins/carddav
 
