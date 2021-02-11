@@ -2,29 +2,38 @@
 # $FreeBSD$
 
 PORTNAME=	watch
-DISTVERSION=	3.3.16
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.3.17
 CATEGORIES=	misc
-MASTER_SITES=	SF/procps-ng/Production \
-		LOCAL/ehaupt
 PKGNAMEPREFIX=	gnu-
-DISTNAME=	procps-ng-${DISTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	GNU watch command
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
-USES=		autoreconf gettext gmake libtool localbase:ldflags ncurses \
-		pkgconfig tar:xz
+USES=		autoreconf gmake libtool localbase:ldflags ncurses pkgconfig \
+		tar:xz
 USE_CSTD=	gnu99
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.com
+GL_ACCOUNT=	procps-ng
+GL_PROJECT=	procps
+GL_COMMIT=	19a508ea121c0c4ac6d0224575a036de745eaaf8
+GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	UNICODE
-OPTIONS_DEFAULT=UNICODE
+ALL_TARGET=	watch
 
+PLIST_FILES=	bin/${PKGBASE} \
+		man/man1/gnu-watch.1.gz
+
+OPTIONS_DEFINE=		NLS UNICODE
+OPTIONS_DEFAULT=	UNICODE
+
+NLS_USES=			gettext
+NLS_CONFIGURE_OFF=		--disable-nls
+NLS_LDFLAGS=			-lintl
 UNICODE_CONFIGURE_ENABLE=	watch8bit
-
-PLIST_FILES=	bin/${PKGBASE} man/man1/gnu-watch.1.gz
 
 post-patch:
 	${REINPLACE_CMD} 's/ncursesw/${NCURSES_IMPL}/g' ${WRKSRC}/configure.ac
