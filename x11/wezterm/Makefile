@@ -10,6 +10,8 @@ COMMENT=	GPU-accelerated terminal emulator and multiplexer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_i386=	https://github.com/wez/wezterm/issues/474
+
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libwayland-egl.so:graphics/wayland \
 		libssh2.so:security/libssh2 \
