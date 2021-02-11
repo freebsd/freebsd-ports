@@ -17,7 +17,7 @@
 +SDL_LDFLAGS := $(shell ${SDL_CONFIG} --libs)
  
 -CFLAGS := -Wall -g2 $(SDL_CFLAGS) -lGLU -lSDL_image -DDATADIR=\"$(SHAREDIR)\"
-+CFLAGS += -Wall $(SDL_CFLAGS) -DDATADIR=\"$(SHAREDIR)\"
++CFLAGS += -Wall -fcommon $(SDL_CFLAGS) -DDATADIR=\"$(SHAREDIR)\"
  
  #       -DPLAYER_XY_DEBUG
  #	-DMAP_DEBUG

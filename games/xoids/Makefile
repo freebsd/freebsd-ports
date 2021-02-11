@@ -10,13 +10,12 @@ MASTER_SITES=	XCONTRIB/games
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window Asteroids style game with full color pixmaps
 
-BROKEN_FreeBSD_13=	duplicate symbol: Big_O
-BROKEN_FreeBSD_14=	duplicate symbol: Big_O
 NOT_FOR_ARCHS=		mips64
 NOT_FOR_ARCHS_REASON=	unknown architecture
 
 USES=		imake xorg
-USE_XORG=	xpm
+USE_XORG=	x11 xpm
+CFLAGS+=	-fcommon
 
 PLIST_FILES=	bin/xoids \
 		man/man6/xoids.6.gz
