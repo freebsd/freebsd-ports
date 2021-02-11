@@ -29,6 +29,14 @@
 #		you want to run Squid in reverse proxy setups or if you want
 #		Squid to listen on a "privileged" port < 1024.
 #
+# squid_group:	The group id that should be used to run the Squid master
+#		process. Default: squid
+#		Note that it affects squid pid dir also, where SHM files
+#		may be stored on some OS (see r391555)
+#
+# squid_maxwait:	Seconds to wait for squid PID file
+#		Default: 10
+#
 # squid_pidfile:
 #		The name (including the full path) of the Squid
 #		master process' PID file.
@@ -74,7 +82,9 @@ squid_load_rc_config()
 	: ${squid_enable:=NO}
 	: ${squid_program:=%%PREFIX%%/sbin/squid}
 	: ${squid_pidfile:=/var/run/squid/squid.pid}
+	: ${squid_maxwait:=10}
 	: ${squid_user:=squid}
+	: ${squid_group:=squid}
 
 	required_args="-f ${squid_conf}"
 	required_dirs=$chdir
@@ -87,6 +97,13 @@ squid_load_rc_config()
 
 squid_prestart()
 {
+	# create piddir if it's missing (for example if /var/run is tmpfs)
+	squid_piddir=${pidfile%/*}
+	if [ ! -d "${squid_piddir}" ]; then
+		echo "Creating PID directory ${squid_piddir}"
+		mkdir ${squid_piddir} && chown ${squid_user}:${squid_group} ${squid_piddir} && chmod 750 ${squid_piddir}|| return $?
+	fi
+
 	# setup KRB5_KTNAME:
 	squid_krb5_ktname=${squid_krb5_ktname:-"NONE"}
 	if [ "${squid_krb5_ktname}" != "NONE" ]; then
@@ -137,8 +154,15 @@ squid_getpid()
 	# retrieve the PID of the Squid master process explicitly here
 	# in case rc.subr was unable to determine it:
 	if [ -z "$rc_pid" ]; then
+		squid_secs=0
 		while ! [ -f ${pidfile} ]; do
+			if [ ${squid_maxwait} -le ${squid_secs} ]; then
+				echo "give up waiting for pidfile"
+				break
+			fi
 			sleep 1
+			echo -n "."
+			: $(( squid_secs+=1 ))
 		done
 		read _pid _junk <${pidfile}
 		[ -z "${_pid}" ] || pid=${_pid}

@@ -80,12 +80,3 @@
  #include <netinet/ip_compat.h>
  #endif
  #if HAVE_IP_FIL_H
-@@ -42749,7 +42756,7 @@ _ACEOF
- 
- 
- fi
--ac_fn_cxx_check_member "$LINENO" "struct natlookup" "nl_realipaddr.in6" "ac_cv_member_struct_natlookup_nl_realipaddr_in6" "
-+ac_fn_cxx_check_member "$LINENO" "struct natlookup" "nl_realipaddr.in6" "ac_cv_member_struct_natlookup_nl_realipaddr_in6__" "
- #if USE_SOLARIS_IPFILTER_MINOR_T_HACK
- #define minor_t fubar
- #endif
