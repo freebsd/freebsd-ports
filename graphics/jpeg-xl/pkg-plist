@@ -1,5 +1,7 @@
 bin/cjxl
 bin/djxl
+include/jxl/butteraugli.h
+include/jxl/butteraugli_cxx.h
 include/jxl/codestream_header.h
 include/jxl/color_encoding.h
 include/jxl/decode.h
@@ -17,11 +19,11 @@ include/jxl/types.h
 lib/libjxl.a
 lib/libjxl.so
 lib/libjxl.so.0
-lib/libjxl.so.0.3.0
+lib/libjxl.so.0.3.1
 lib/libjxl_threads.a
 lib/libjxl_threads.so
 lib/libjxl_threads.so.0
-lib/libjxl_threads.so.0.3.0
+lib/libjxl_threads.so.0.3.1
 libdata/pkgconfig/libjxl.pc
 libdata/pkgconfig/libjxl_threads.pc
 %%GIMP%%libexec/gimp/2.2/plug-ins/file-jxl/file-jxl
