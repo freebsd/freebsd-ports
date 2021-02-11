@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdatrie
-PORTVERSION=	0.2.12
+PORTVERSION=	0.2.13
 CATEGORIES=	devel
 MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
 
@@ -18,9 +18,6 @@ USE_LDCONFIG=	yes
 
 LDFLAGS+=	${ICONV_LIB}
 
-PORTDOCS=	README.migration
 INSTALL_TARGET=	install-strip
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
