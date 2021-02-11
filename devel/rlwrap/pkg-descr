@@ -3,4 +3,4 @@ editing of keyboard input for any other command.  Input history is remembered
 across invocations, separately for each command; history completion and search
 work as in bash and completion word lists can be specified on the command line.
 
-WWW: http://utopia.knoware.nl/~hlub/uck/rlwrap/
+WWW: https://github.com/hanslub42/rlwrap
