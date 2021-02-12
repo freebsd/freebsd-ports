@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sql-workbench
-PORTVERSION=	127
+PORTVERSION=	129
 CATEGORIES=	databases java
 MASTER_SITES=	http://www.sql-workbench.net/ \
 	http://www.sql-workbench.net/archive/
