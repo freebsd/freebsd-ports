@@ -3,6 +3,7 @@
 
 PORTNAME=	glib-networking
 PORTVERSION=	2.66.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -17,7 +18,6 @@ BUILD_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		libp11-kit.so:security/p11-kit \
-		libdbus-1.so:devel/dbus \
 		libproxy.so:net/libproxy
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
