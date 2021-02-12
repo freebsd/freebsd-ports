@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	txt2tags
-PORTVERSION=	3.6
+PORTVERSION=	3.7
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
