@@ -1130,7 +1130,6 @@ bin/phplist
 %%WWWDIR%%/lists/admin/PHPMailer6/composer.json
 %%WWWDIR%%/lists/admin/PHPMailer6/get_oauth_token.php
 %%WWWDIR%%/lists/admin/PHPMailer6/language/phpmailer.lang-af.php
-%%WWWDIR%%/lists/admin/PHPMailer6/language/phpmailer.lang-am.php
 %%WWWDIR%%/lists/admin/PHPMailer6/language/phpmailer.lang-ar.php
 %%WWWDIR%%/lists/admin/PHPMailer6/language/phpmailer.lang-az.php
 %%WWWDIR%%/lists/admin/PHPMailer6/language/phpmailer.lang-ba.php
@@ -1154,6 +1153,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/PHPMailer6/language/phpmailer.lang-hi.php
 %%WWWDIR%%/lists/admin/PHPMailer6/language/phpmailer.lang-hr.php
 %%WWWDIR%%/lists/admin/PHPMailer6/language/phpmailer.lang-hu.php
+%%WWWDIR%%/lists/admin/PHPMailer6/language/phpmailer.lang-hy.php
 %%WWWDIR%%/lists/admin/PHPMailer6/language/phpmailer.lang-id.php
 %%WWWDIR%%/lists/admin/PHPMailer6/language/phpmailer.lang-it.php
 %%WWWDIR%%/lists/admin/PHPMailer6/language/phpmailer.lang-ja.php
@@ -2448,7 +2448,6 @@ bin/phplist
 %%WWWDIR%%/lists/admin/processqueue.php
 %%WWWDIR%%/lists/admin/readtestmail.php
 %%WWWDIR%%/lists/admin/reconcileusers.php
-%%WWWDIR%%/lists/admin/redirecttoupdater.php
 %%WWWDIR%%/lists/admin/reindex.php
 %%WWWDIR%%/lists/admin/rsslib.php
 %%WWWDIR%%/lists/admin/runcommand.php
@@ -2932,6 +2931,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/ui/phplist-ui-bootlist/publicpagetop.php
 %%WWWDIR%%/lists/admin/ui/phplist-ui-bootlist/README.md
 %%WWWDIR%%/lists/admin/ui/phplist-ui-bootlist/theme_info
+%%WWWDIR%%/lists/admin/update.php
 %%WWWDIR%%/lists/admin/updateLib.php
 %%WWWDIR%%/lists/admin/updatetlds.php
 %%WWWDIR%%/lists/admin/updatetranslation.php
@@ -2990,7 +2990,10 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/composer/ca-bundle/src/CaBundle.php
 %%WWWDIR%%/lists/base/vendor/composer/ClassLoader.php
 %%WWWDIR%%/lists/base/vendor/composer/installed.json
+%%WWWDIR%%/lists/base/vendor/composer/installed.php
+%%WWWDIR%%/lists/base/vendor/composer/InstalledVersions.php
 %%WWWDIR%%/lists/base/vendor/composer/LICENSE
+%%WWWDIR%%/lists/base/vendor/composer/platform_check.php
 %%WWWDIR%%/lists/base/vendor/doctrine/annotations/CHANGELOG.md
 %%WWWDIR%%/lists/base/vendor/doctrine/annotations/composer.json
 %%WWWDIR%%/lists/base/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Attribute.php
@@ -5068,6 +5071,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/monolog/monolog/CHANGELOG.md
 %%WWWDIR%%/lists/base/vendor/monolog/monolog/composer.json
 %%WWWDIR%%/lists/base/vendor/monolog/monolog/LICENSE
+%%WWWDIR%%/lists/base/vendor/monolog/monolog/phpstan.neon.dist
 %%WWWDIR%%/lists/base/vendor/monolog/monolog/README.md
 %%WWWDIR%%/lists/base/vendor/monolog/monolog/src/Monolog/ErrorHandler.php
 %%WWWDIR%%/lists/base/vendor/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php
@@ -5589,6 +5593,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/LICENSE
 %%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/Mbstring.php
 %%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/README.md
+%%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/Resources/mb_convert_variables.php8
 %%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
 %%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
@@ -5817,7 +5822,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/Fixtures/coverage/tests/CoversDefaultClassTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/Fixtures/coverage/tests/CoversNothingTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/Fixtures/coverage/tests/CoversTest.php
-%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/Fixtures/coverage/tests/SutNotFindTest.php
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/Fixtures/coverage/tests/SutNotFoundTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/OnlyExpectingDeprecationSkippedTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/ProcessIsolationTest.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/TextUI/Command.php
@@ -8864,6 +8869,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.az.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.be.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.bg.xlf
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.bs.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ca.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.cs.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.da.xlf
@@ -8899,6 +8905,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ru.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sk.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sl.xlf
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sq.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Cyrl.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Latn.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sv.xlf
@@ -8907,6 +8914,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.uk.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.vi.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.zh_CN.xlf
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.zh_TW.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/ReversedTransformer.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/SubmitButton.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Form/SubmitButtonBuilder.php
@@ -11277,6 +11285,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.es.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.eu.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.fa.xlf
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.fi.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.fr.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.gl.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.he.xlf
@@ -11299,6 +11308,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.ru.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.sk.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.sl.xlf
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.sq.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.sr_Cyrl.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.sr_Latn.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.sv.xlf
@@ -11308,6 +11318,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.uk.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.vi.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.zh_CN.xlf
+%%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Resources/translations/security.zh_TW.xlf
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Role/Role.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Role/RoleHierarchy.php
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Role/RoleHierarchyInterface.php
