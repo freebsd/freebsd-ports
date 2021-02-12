@@ -4,13 +4,14 @@ PORTNAME=	wezterm
 DISTVERSION=	20210203-095643-70a364eb
 CATEGORIES=	x11
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	578b59ad3322.patch:-p1 # https://github.com/wez/wezterm/issues/474
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GPU-accelerated terminal emulator and multiplexer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
-
-BROKEN_i386=	https://github.com/wez/wezterm/issues/474
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libwayland-egl.so:graphics/wayland \

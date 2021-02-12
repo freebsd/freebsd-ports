@@ -903,3 +903,5 @@ SHA256 (wez-client-toolkit-9b80c17400aa245f2bceadd496f57c2bb8908e95_GH0.tar.gz) 
 SIZE (wez-client-toolkit-9b80c17400aa245f2bceadd496f57c2bb8908e95_GH0.tar.gz) = 122918
 SHA256 (wez-xkbcommon-rs-01a0a0cd5663405e6e4abb1ad3add9add1496f58_GH0.tar.gz) = eb10bd039e6326f2d947fbafe6d261695bbf2abb2dfb844362dd300af2525f45
 SIZE (wez-xkbcommon-rs-01a0a0cd5663405e6e4abb1ad3add9add1496f58_GH0.tar.gz) = 58305
+SHA256 (578b59ad3322.patch) = ab8f18caf4d867b0898eed68d57b66db539f50b68ff3c56724fb6cff451dfa9e
+SIZE (578b59ad3322.patch) = 2124
