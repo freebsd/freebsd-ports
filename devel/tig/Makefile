@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tig
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jonas/tig/releases/download/${DISTNAME}/
 
@@ -22,7 +22,7 @@ MAKE_ARGS=	V=1
 INSTALL_TARGET=	install install-doc-man
 
 PLIST_FILES=	bin/tig \
-		etc/tigrc \
+		'@sample etc/tigrc.sample' \
 		man/man1/tig.1.gz \
 		man/man5/tigrc.5.gz \
 		man/man7/tigmanual.7.gz
@@ -35,6 +35,7 @@ GIT_RUN_DEPENDS=	git:devel/git
 GIT_VARS_OFF=	PKGMESSAGE="${.CURDIR}/pkg-message-git"
 
 post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/tigrc ${STAGEDIR}${PREFIX}/etc/tigrc.sample
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tig
 
 do-test:
