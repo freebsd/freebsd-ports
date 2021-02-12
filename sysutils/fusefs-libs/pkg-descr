@@ -2,4 +2,4 @@ FUSE makes it possible to implement a filesystem in a userspace program.
 Features include: simple yet comprehensive API, secure mounting by non-root
 users, support for FreeBSD kernels, multi-threaded operation.
 
-WWW: https://sourceforge.net/projects/fuse/
+WWW: https://github.com/libfuse/libfuse
