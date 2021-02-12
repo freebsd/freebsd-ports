@@ -2,7 +2,7 @@
 
 PORTNAME=	ezdxf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.2
+DISTVERSION=	0.15.2
 CATEGORIES=	cad
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,8 +24,6 @@ USE_PYTHON=	concurrent distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozman
 GH_PROJECT=	ezdxf
-
-NO_ARCH=	yes
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -m pytest -rs -v
