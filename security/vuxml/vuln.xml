@@ -77,6 +77,40 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1020d401-6d2d-11eb-ab0b-001b217b3468">
+    <topic>Gitlab -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>13.8.0</ge><lt>13.8.4</lt></range>
+	<range><ge>13.7.0</ge><lt>13.7.7</lt></range>
+	<range><ge>10.5</ge><lt>13.6.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2021/02/11/security-release-gitlab-13-8-4-released/">
+	  <p>Improper Certificate Validation for Fortinet OTP</p>
+	  <p>Denial of Service Attack on gitlab-shell</p>
+	  <p>Resource exhaustion due to pending jobs</p>
+	  <p>Confidential issue titles were exposed</p>
+	  <p>Improper access control allowed demoted project members to access authored merge requests</p>
+	  <p>Improper access control allowed unauthorized users to access analytic pages</p>
+	  <p>Unauthenticated CI lint API may lead to information disclosure and SSRF</p>
+	  <p>Prometheus integration in Gitlab may lead to SSRF</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://about.gitlab.com/releases/2021/02/11/security-release-gitlab-13-8-4-released/</url>
+    </references>
+    <dates>
+      <discovery>2021-02-11</discovery>
+      <entry>2021-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3003ba60-6cec-11eb-8815-040e3c1b8a02">
     <topic>oauth2-proxy -- domain whitelist could be used as redirect</topic>
     <affects>
