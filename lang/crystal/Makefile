@@ -1,16 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=		crystal
-DISTVERSION=		0.35.1
-PORTREVISION=		1
+DISTVERSION=		0.36.1
 CATEGORIES=		lang
 MASTER_SITES=		https://unrelentingtech.s3.dualstack.eu-west-1.amazonaws.com/crystal/:bootstrap
 DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
 DIST_SUBDIR=		${PORTNAME}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
-PATCHFILES+=	9401.patch:-p1 # https://github.com/crystal-lang/crystal/pull/9401
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Language with Ruby-like syntax and static type checking
