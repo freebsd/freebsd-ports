@@ -3,7 +3,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	2.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LGPL
 BUILD_DEPENDS=	valac:lang/vala
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libsoup-2.4.so:devel/libsoup \
+		libdbus-1.so:devel/dbus \
 		libjson-glib-1.0.so:devel/json-glib \
 		libicutu.so:devel/icu
 
