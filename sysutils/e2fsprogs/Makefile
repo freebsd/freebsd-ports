@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.46.0
+PORTVERSION=	1.46.1
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -42,7 +42,7 @@ CONFIGURE_ARGS?=--disable-fsck \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib -Wl,--rpath -Wl,${LOCALBASE}/lib/e2fsprogs'
 CONFIGURE_ENV?=	LIBS='-Wl,--as-needed ${LIBS} -lexecinfo -lelf'
 # apparently HAVE_PTHREAD_H checks go missing if the FUSEFS option is unset, force it:
-CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include -DHAVE_PTHREAD_H # -D_EXT2_USE_C_VERSIONS
+CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
 MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
