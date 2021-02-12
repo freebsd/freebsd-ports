@@ -9,6 +9,7 @@ lib/ddnet/fake_server
 lib/ddnet/map_convert_07
 lib/ddnet/map_diff
 lib/ddnet/map_extract
+lib/ddnet/map_optimize
 lib/ddnet/map_replace_image
 lib/ddnet/map_resave
 lib/ddnet/packetgen
