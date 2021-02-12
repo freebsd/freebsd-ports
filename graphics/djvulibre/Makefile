@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.27
-PORTREVISION=	2
+PORTVERSION=	3.5.28
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	DjVu base libraries and utilities
 
 LICENSE=	GPLv2+
