@@ -77,6 +77,33 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3003ba60-6cec-11eb-8815-040e3c1b8a02">
+    <topic>oauth2-proxy -- domain whitelist could be used as redirect</topic>
+    <affects>
+      <package>
+	<name>oauth2-proxy</name>
+	<range><lt>7.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2021-21291">
+	  <p>In OAuth2 Proxy before version 7.0.0, for users that use the
+	     whitelist domain feature, a domain that ended in a similar way to
+	     the intended domain could have been allowed as a redirect.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2021-21291</url>
+    </references>
+    <dates>
+      <discovery>2021-02-02</discovery>
+      <entry>2021-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="06a5abd4-6bc2-11eb-b292-90e2baa3bafc">
     <topic>mod_dav_svn -- server crash</topic>
     <affects>
@@ -90,9 +117,9 @@ Notes:
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Subversion project reports:</p>
 	<blockquote cite="https://subversion.apache.org/security/CVE-2020-17525-advisory.txt">
-	  <p>Subversion's mod_authz_svn module will crash if the server is using
-            in-repository authz rules with the AuthzSVNReposRelativeAccessFile
-            option and a client sends a request for a non-existing repository URL.</p>
+	<p>Subversion's mod_authz_svn module will crash if the server is using
+	   in-repository authz rules with the AuthzSVNReposRelativeAccessFile
+	   option and a client sends a request for a non-existing repository URL.</p>
 	</blockquote>
       </body>
     </description>
