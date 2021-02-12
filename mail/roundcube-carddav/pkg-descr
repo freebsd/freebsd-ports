@@ -3,4 +3,6 @@ owncloud, davical, a Google addressbook or a davmail server.  RCMCardDAV
 supports autodiscovery of your addressbook url via well-known URLs so you can
 just point it to your servers base url.
 
-WWW: http://www.benjamin-schieder.de/carddav.html
+This port comes with Composer dependencies vendored in.
+
+WWW: https://github.com/mstilkerich/rcmcarddav

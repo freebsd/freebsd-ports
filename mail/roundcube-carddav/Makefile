@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	carddav
-PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTVERSION=	4.0.4
+PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	https://github.com/blind-coder/rcmcarddav/releases/download/v${PORTVERSION}/
+MASTER_SITES=	LOCAL/gahr https://people.freebsd.org/~gahr/
 PKGNAMEPREFIX=	roundcube-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-vendor
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Roundcube CardDAV plugin
@@ -17,19 +18,12 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.0:mail/roundcube@${PHP_FLAVOR}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USES=		php:flavors tar:bz2
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-# Cannot use USE_GITHUB, as the original tarball doesn't come with the bundled
-# sabre library.
-#USE_GITHUB=	yes
-#GH_ACCOUNT=	blind-coder
-#GH_PROJECT=	rcmcarddav
-
-USES=		php:flavors tar:bz2
-USE_PHP=	simplexml sockets curl
+USE_PHP=	curl dom simplexml sockets tokenizer xml xmlreader xmlwriter
 IGNORE_WITH_PHP=80
 
 WWWDIR=		${PREFIX}/www/roundcube/plugins/carddav
