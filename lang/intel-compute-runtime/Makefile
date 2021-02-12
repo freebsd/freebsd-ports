@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	compute-runtime
-DISTVERSION=	21.05.18936
+DISTVERSION=	21.06.18993
 CATEGORIES=	lang
 PKGNAMEPREFIX=	intel-
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	2a423820aaa4.patch:-p1 # https://github.com/intel/compute-runtime/pull/361
-PATCHFILES+=	6a80177dbf86.patch:-p1 7a91ef844a98.patch:-p1 # NEO_BUILD_DEBUG_SYMBOLS_PACKAGE
+PATCHFILES+=	7a91ef844a98.patch:-p1 # NEO_BUILD_DEBUG_SYMBOLS_PACKAGE
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	OpenCL implementation for Intel HD 5000 (Gen8) or newer
