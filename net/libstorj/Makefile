@@ -32,6 +32,7 @@ GH_ACCOUNT=	Storj
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes  # ./storjtests.h:10:10: fatal error: 'mockbridgeinfo.json.h' file not found
 
 #CFLAGS+=	-I. -I${LOCALBASE}/include
 #LDFLAGS+=	-L. -L${LOCALBASE}/lib
