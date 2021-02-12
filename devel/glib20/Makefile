@@ -80,6 +80,10 @@ post-patch:
 	@${REINPLACE_CMD} -e '/inotify_init1/d' \
 		-e '/inotify.h/d' \
 		${WRKSRC}/meson.build
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/gio/xdgmime/xdgmime.c \
+		${WRKSRC}/glib/gutils.c \
+		${WRKSRC}/glib/tests/utils.c
 
 CODEGENDIR=	${PREFIX}/share/glib-2.0/codegen
 

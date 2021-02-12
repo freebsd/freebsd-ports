@@ -1,11 +1,11 @@
---- gio/xdgmime/xdgmime.c.orig	Mon Nov  8 22:25:27 2004
-+++ gio/xdgmime/xdgmime.c	Sat Nov 13 10:27:22 2004
-@@ -204,7 +204,7 @@
- 
+--- gio/xdgmime/xdgmime.c.orig	2020-12-17 11:47:11 UTC
++++ gio/xdgmime/xdgmime.c
+@@ -235,7 +235,7 @@ xdg_init_dirs (void)
    xdg_data_dirs = getenv ("XDG_DATA_DIRS");
+ 
    if (xdg_data_dirs == NULL)
 -    xdg_data_dirs = "/usr/local/share/:/usr/share/";
-+    xdg_data_dirs = "/usr/local/share/";
++    xdg_data_dirs = "%%LOCALBASE%%/share/";
  
-   ptr = xdg_data_dirs;
- 
+   /* Work out how many dirs we’re dealing with. */
+   if (xdg_data_home != NULL || home != NULL)
