@@ -2,17 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	RetroArch
-PORTVERSION=	1.8.5
-PORTREVISIION=	1
+PORTVERSION=	1.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	27a9997279c14c6727390d4254c2377561cb8a19.patch:-p1
-PATCHFILES+=	c53f8ba96b024c0e01b7060d9a76cf93268b519a.patch:-p1
 PATCHFILES+=	618c83d4ca1b8144377747076e28ac962e492392.patch:-p1
-PATCHFILES+=	f9ae48c3f687cf652a4ef73b5f991ac74c7c5d17.patch:-p1
-PATCHFILES+=	f646fea03fdecc62af5ffe983f51e2c7ea8bc786.patch:-p1
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Cross-platform entertainment system based on libretro API
@@ -29,12 +24,14 @@ RUN_DEPENDS=	retroarch-assets<=0:games/retroarch-assets
 
 USES=		compiler:c++11-lib gmake pkgconfig python:3.6+ shebangfix ssl
 
-OPTIONS_DEFINE=	CACA FFMPEG OSS JACK PULSEAUDIO ALSA SDL OPENGL OPENAL V4L FREETYPE WAYLAND UDEV QT X11
+OPTIONS_DEFINE=	CACA FFMPEG OSS JACK PULSEAUDIO ALSA SDL OPENGL OPENAL V4L FREETYPE WAYLAND UDEV QT X11 DOCS
 OPTIONS_DEFAULT=FFMPEG OSS PULSEAUDIO SDL OPENGL OPENAL V4L FREETYPE WAYLAND UDEV QT X11
 FFMPEG_DESC=	On-the-fly recording of gameplay with libavcodec
 WAYLAND_DESC=	Wayland display support
 UDEV_DESC=	udev device hotplug support
 QT_DESC=	Qt based desktop-style GUI
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
 
 CACA_LIB_DEPENDS=	libcaca.so:graphics/libcaca
 CACA_CONFIGURE_ENABLE=	caca
