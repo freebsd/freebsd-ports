@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210210:
+  AFFECTS: users of audio/spotifyd
+  AUTHOR: rodrigo@FreeBSD.org
+
+  The configuration format for audio/spotifyd is now TOML, make
+  sure to update your configuration file after upgrading the port.
+  Look at the sample configuration file for a working example.
+  https://github.com/Spotifyd/spotifyd/blob/master/docs/src/config/File.md
+
 20210208:
   AFFECTS: users of mail/mailscanner
   AUTHOR: crees@FreeBSD.org
