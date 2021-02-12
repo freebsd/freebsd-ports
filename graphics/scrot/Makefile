@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scrot
-DISTVERSION=	1.4
+DISTVERSION=	1.5
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -24,12 +24,8 @@ GNU_CONFIGURE=	yes
 USE_XORG=	x11 xfixes xcomposite
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
-PORTDOCS=	AUTHORS CONTRIBUTING.md ChangeLog README
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
