@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	doas
-PORTVERSION=	6.3p2
+PORTVERSION=	6.3p4
 CATEGORIES=	security
 
 MAINTAINER=	jsmith@resonatingmedia.com
@@ -25,7 +25,8 @@ PLIST_FILES=	bin/doas \
 		bin/vidoas \
 		etc/doas.conf.sample \
 		man/man5/doas.conf.5.gz \
-		man/man1/doas.1.gz
+		man/man1/doas.1.gz \
+		man/man8/vidoas.8.gz
 
 # These are upstream's default paths that are set for the GLOBAL_PATH variable
 # in doas.h since the 6.1 release. Those paths are then used for target user's
@@ -41,6 +42,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vidoas ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doas.1.final ${STAGEDIR}${MAN1PREFIX}/man/man1/doas.1
 	${INSTALL_MAN} ${WRKSRC}/doas.conf.5.final ${STAGEDIR}${MAN5PREFIX}/man/man5/doas.conf.5
+	${INSTALL_MAN} ${WRKSRC}/vidoas.8.final ${STAGEDIR}${MAN5PREFIX}/man/man8/vidoas.8
 	${INSTALL_DATA} ${WRKSRC}/doas.conf.sample ${STAGEDIR}${PREFIX}/etc/doas.conf.sample
 
 .include <bsd.port.mk>
