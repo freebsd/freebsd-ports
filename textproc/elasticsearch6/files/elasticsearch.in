@@ -3,8 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: elasticsearch
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
 # KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable elasticsearch:
