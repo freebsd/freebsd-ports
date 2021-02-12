@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gitlab-shell
-PORTVERSION?=	13.15.0
+PORTVERSION?=	13.15.1
 PORTREVISION?=	0
 CATEGORIES=	devel
 
@@ -20,7 +20,7 @@ ALL_TARGET=	build
 USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT?=	99d0bbe8ab3e9fa8368ac6efd24b2e961d2fe8e3
+GL_COMMIT?=	b82018ac61b724a195ab06a79d3e5d9811b0a2e7
 
 USERS=		git
 GROUPS=		git
@@ -31,7 +31,6 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	nodefault
 # generated with: make gomod-deps
 # 36dd
-# Make sure you have here the path .../go/vendor/... and not .../vendor/...
 GH_TUPLE=	\
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \

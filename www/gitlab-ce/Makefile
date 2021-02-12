@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	gitlab-ce
-PORTVERSION?=	13.8.3
-PORTREVISION?=	1
+PORTVERSION?=	13.8.4
+PORTREVISION?=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -19,9 +19,9 @@ MY_DEPENDS=	git>=2.29:devel/git \
 	gitlab-elasticsearch-indexer>=2.8.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=13.8.0:net/gitlab-agent \
 	gitlab-pages>=1.34.0:www/gitlab-pages \
-	gitlab-shell>=13.15.0:devel/gitlab-shell \
+	gitlab-shell>=13.15.1:devel/gitlab-shell \
 	gitlab-workhorse>=8.59.0:www/gitlab-workhorse \
-	redis>=3.2.12:databases/redis \
+	redis>=4.0.0:databases/redis \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
@@ -265,7 +265,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 GL_PROJECT?=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT?=	02529530a3dd71b017421bfc33ee2cc31c346ec8
+GL_COMMIT?=	9fb9cbf50c31dc9d99fe3d6fd04782fbfc4216c0
 
 USERS=	git
 GROUPS=	git

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	13.8.3
+DISTVERSION=	13.8.4
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -43,7 +43,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	69edebe195b73af0f19af9b1879085c4da6d069c
+GL_COMMIT=	d55841b9552e1e0d4fa20c46d89dde5dcd1c7bd7
 
 # for go dependencies
 USE_GITHUB=	nodefault

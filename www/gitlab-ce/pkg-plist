@@ -7564,6 +7564,7 @@
 %%WWWDIR%%/app/services/bulk_update_integration_service.rb
 %%WWWDIR%%/app/services/chat_names/authorize_user_service.rb
 %%WWWDIR%%/app/services/chat_names/find_user_service.rb
+%%WWWDIR%%/app/services/ci/abort_project_pipelines_service.rb
 %%WWWDIR%%/app/services/ci/append_build_trace_service.rb
 %%WWWDIR%%/app/services/ci/archive_trace_service.rb
 %%WWWDIR%%/app/services/ci/build_report_result_service.rb
@@ -10284,6 +10285,7 @@
 %%WWWDIR%%/config/environments/production.rb
 %%WWWDIR%%/config/environments/test.rb
 %%WWWDIR%%/config/feature_categories.yml
+%%WWWDIR%%/config/feature_flags/development/abort_deleted_project_pipelines.yml
 %%WWWDIR%%/config/feature_flags/development/add_issues_button.yml
 %%WWWDIR%%/config/feature_flags/development/additional_snowplow_tracking.yml
 %%WWWDIR%%/config/feature_flags/development/ajax_new_deploy_token.yml
@@ -12035,6 +12037,8 @@
 %%WWWDIR%%/db/migrate/20201005092709_remove_compliance_frameworks_group_id_fk.rb
 %%WWWDIR%%/db/migrate/20201005092753_add_framework_id_to_project_framework_settings.rb
 %%WWWDIR%%/db/migrate/20201006014605_add_automatic_purchased_storage_allocation_to_application_settings.rb
+%%WWWDIR%%/db/migrate/20201007033527_add_daily_invites_to_plan_limits.rb
+%%WWWDIR%%/db/migrate/20201007033723_insert_daily_invites_plan_limits.rb
 %%WWWDIR%%/db/migrate/20201007115209_add_lock_version_to_ci_build_trace_chunk.rb
 %%WWWDIR%%/db/migrate/20201008011523_add_ci_jwt_signing_key_to_application_settings.rb
 %%WWWDIR%%/db/migrate/20201008011937_add_text_limit_to_application_settings_encrypted_ci_jwt_signing_key_iv.rb
@@ -14078,6 +14082,8 @@
 %%WWWDIR%%/db/schema_migrations/20201005094331
 %%WWWDIR%%/db/schema_migrations/20201005153955
 %%WWWDIR%%/db/schema_migrations/20201006014605
+%%WWWDIR%%/db/schema_migrations/20201007033527
+%%WWWDIR%%/db/schema_migrations/20201007033723
 %%WWWDIR%%/db/schema_migrations/20201007115209
 %%WWWDIR%%/db/schema_migrations/20201008011523
 %%WWWDIR%%/db/schema_migrations/20201008011937
@@ -28798,6 +28804,7 @@
 %%WWWDIR%%/spec/migrations/generate_ci_jwt_signing_key_spec.rb
 %%WWWDIR%%/spec/migrations/generate_lets_encrypt_private_key_spec.rb
 %%WWWDIR%%/spec/migrations/generate_missing_routes_for_bots_spec.rb
+%%WWWDIR%%/spec/migrations/insert_daily_invites_plan_limits_spec.rb
 %%WWWDIR%%/spec/migrations/insert_project_feature_flags_plan_limits_spec.rb
 %%WWWDIR%%/spec/migrations/insert_project_hooks_plan_limits_spec.rb
 %%WWWDIR%%/spec/migrations/migrate_all_merge_request_user_mentions_to_db_spec.rb
@@ -30208,6 +30215,7 @@
 %%WWWDIR%%/spec/services/bulk_update_integration_service_spec.rb
 %%WWWDIR%%/spec/services/chat_names/authorize_user_service_spec.rb
 %%WWWDIR%%/spec/services/chat_names/find_user_service_spec.rb
+%%WWWDIR%%/spec/services/ci/abort_project_pipelines_service_spec.rb
 %%WWWDIR%%/spec/services/ci/append_build_trace_service_spec.rb
 %%WWWDIR%%/spec/services/ci/archive_trace_service_spec.rb
 %%WWWDIR%%/spec/services/ci/build_report_result_service_spec.rb
@@ -31440,6 +31448,7 @@
 %%WWWDIR%%/spec/support/shared_examples/requests/api/labels_api_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/requests/api/logging_application_context_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/requests/api/members_shared_examples.rb
+%%WWWDIR%%/spec/support/shared_examples/requests/api/merge_requests_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/requests/api/milestones_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/requests/api/multiple_and_scoped_issue_boards_shared_examples.rb
 %%WWWDIR%%/spec/support/shared_examples/requests/api/notes_shared_examples.rb
