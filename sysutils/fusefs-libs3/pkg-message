@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Install the fuse kernel module to use this port.
+Install the FUSE kernel module (kldload fusefs) to use this port.
 EOM
 }
 ]
