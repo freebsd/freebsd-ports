@@ -1,3 +1,3 @@
-TIMESTAMP = 1609332820
-SHA256 (bsddb3-6.2.9.tar.gz) = 70d05ec8dc568f42e70fc919a442e0daadc2a905a1cfb7ca77f549d49d6e7801
-SIZE (bsddb3-6.2.9.tar.gz) = 230475
+TIMESTAMP = 1613155635
+SHA256 (berkeleydb-18.1.2.tar.gz) = b617a8f8562a36e5a395beb93e07a0905dd5e68e7ba2e87916a740db9126470e
+SIZE (berkeleydb-18.1.2.tar.gz) = 168233

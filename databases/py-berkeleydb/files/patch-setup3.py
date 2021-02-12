@@ -1,19 +1,18 @@
---- setup3.py.orig	2016-02-08 21:18:47 UTC
+--- setup3.py.orig	2020-12-07 19:17:41 UTC
 +++ setup3.py
-@@ -81,11 +81,7 @@ if (sys.version_info[0] < 3) and (sys.ve
-             category=DeprecationWarning)
+@@ -41,10 +41,7 @@ import sys
+ import glob
  
  
 -try :
 -  from setuptools import setup, Extension
--except :
+-except Exception:
 -  from distutils.core import setup, Extension
--
 +from distutils.core import setup, Extension
+ 
  from distutils.dep_util import newer
  import distutils.ccompiler
- 
-@@ -288,8 +284,8 @@ if os.name == 'posix':
+@@ -258,8 +255,8 @@ if os.name == 'posix':
          incdir = os.path.join(BERKELEYDB_DIR, 'include')
      if not libdir:
          libdir = os.path.join(BERKELEYDB_DIR, 'lib')
@@ -24,9 +23,9 @@
      else:
          if debug: print("LIBS already contains '-ldb' not adding our own", "'-l"+dblib+"'")
          libname = []
-@@ -328,7 +324,7 @@ if os.name == 'posix':
+@@ -298,7 +295,7 @@ if os.name == 'posix':
  
-     # read db.h to figure out what version of Berkeley DB this is
+     # read db.h to figure out what version of Oracle Berkeley DB this is
      ver = None
 -    with open(os.path.join(incdir, 'db.h'), 'r') as f :
 +    with open('%%BDB_INCLUDE_DIR%%/db.h', 'r') as f :
