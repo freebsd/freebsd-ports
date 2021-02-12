@@ -3,6 +3,7 @@
 
 PORTNAME=	json-glib
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -25,6 +26,8 @@ MESON_ARGS=	-Dgtk_doc=disabled
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
+DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
+DOCS_MESON_ENABLED=	gtk_doc
 GIR_DESC=	Build introspection data
 GIR_USE=	gnome=introspection
 GIR_MESON_ENABLED=	introspection
