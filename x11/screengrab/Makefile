@@ -10,10 +10,11 @@ COMMENT=	Screen dump utility
 
 LICENSE=	LGPL21+
 
-USES=		lxqt tar:xz cmake xorg qt:5 gnome kde:5
+USES=		cmake compiler:c++11-lang gnome kde:5 lxqt qt:5 tar:xz xorg
 USE_LXQT=	qtxdg
 USE_XORG=	x11 xcb sm ice xext
 USE_KDE=	windowsystem
 USE_QT=		buildtools qmake core dbus xml svg widgets gui x11extras network
 USE_GNOME=	glib20
+
 .include <bsd.port.mk>
