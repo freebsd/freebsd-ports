@@ -15,6 +15,7 @@ share/icons/hicolor/64x64/apps/smtube.png
 %%DATADIR%%/translations/smtube_en.qm
 %%DATADIR%%/translations/smtube_en_GB.qm
 %%DATADIR%%/translations/smtube_es.qm
+%%DATADIR%%/translations/smtube_es_ES.qm
 %%DATADIR%%/translations/smtube_eu.qm
 %%DATADIR%%/translations/smtube_fr.qm
 %%DATADIR%%/translations/smtube_gl.qm
