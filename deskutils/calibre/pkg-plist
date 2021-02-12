@@ -1081,6 +1081,7 @@ lib/calibre/calibre/gui2/tweak_book/editor/widget.py
 lib/calibre/calibre/gui2/tweak_book/file_list.py
 lib/calibre/calibre/gui2/tweak_book/function_replace.py
 lib/calibre/calibre/gui2/tweak_book/job.py
+lib/calibre/calibre/gui2/tweak_book/jump_to_class.py
 lib/calibre/calibre/gui2/tweak_book/live_css.py
 lib/calibre/calibre/gui2/tweak_book/main.py
 lib/calibre/calibre/gui2/tweak_book/manage_fonts.py
@@ -1711,6 +1712,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/snippets.png
 %%DATADIR%%/images/sort.png
 %%DATADIR%%/images/spell-check.png
+%%DATADIR%%/images/split.png
 %%DATADIR%%/images/store.png
 %%DATADIR%%/images/subset-fonts.png
 %%DATADIR%%/images/swap.png
