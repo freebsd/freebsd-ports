@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Workflow
-PORTVERSION=	1.51
+PORTVERSION=	1.52
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -37,7 +37,7 @@ TEST_DEPENDS=	p5-DBD-Mock>=0.10:databases/p5-DBD-Mock \
 		p5-Test-Pod-Coverage>=1.08:devel/p5-Test-Pod-Coverage
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
 NO_ARCH=	yes
 
