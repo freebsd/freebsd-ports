@@ -1,12 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	foot
-DISTVERSION=	1.6.3
+DISTVERSION=	1.6.4
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
-
-PATCH_SITES=	https://codeberg.org/dnkl/${PORTNAME}/commit/
-PATCHFILES+=	bdc5810ff45e.patch:-p1 # -Dterminfo=disabled
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Fast, lightweight and minimalistic Wayland terminal emulator
