@@ -25,6 +25,24 @@
 #		this will then set default values for MASTER_SITES and DIST_SUBDIR
 #		as well as CPE_VENDOR and LICENSE.
 #
+# KDE_INVENT	If the port does not have a regular release, and should
+#		be fetched from KDE Invent (a GitLab instance) it can set
+#		KDE_INVENT to 3 space-separated values:
+#		* a full 40-character commit hash
+#		* a category name inside KDE Invent
+#		* a repository name inside KDE Invent
+#		Default values for category and name are:
+#		* the first item in CATEGORIES that is not "kde"; this
+#		  is useful when the FreeBSD ports category and the KDE
+#		  category are the same (which happens sometimes)
+#		* PORTNAME, often the FreeBSD port name is the same
+#		  as the upstream name and it will not need to be specified.
+#		Sometimes `KDE_INVENT=<hash>` will do and often
+#		`KDE_INVENT=<hash> <category>` is enough.
+#
+#		Setting KDE_INVENT is the equivalent of a handful of USE_GITLAB
+#		and related settings.
+#
 # MAINTAINER:	kde@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_KDE_MK)
@@ -91,6 +109,32 @@ IGNORE?=	cannot be installed: multiple kde-<...> categories specified via CATEGO
 .        endif
 .      endif
 .    endfor
+
+# Doing source-selection if the sources are on KDE invent
+.    if defined(KDE_INVENT)
+_invent_hash=		${KDE_INVENT:[1]}
+_invent_category=	${KDE_INVENT:[2]}
+_invent_name=		${KDE_INVENT:[3]}
+
+# Fill in default values if bits are missing
+.      if empty(_invent_category)
+_invent_category=	${CATEGORIES:Nkde:[1]}
+.      endif
+.      if empty(_invent_name)
+_invent_name=		${PORTNAME}
+.      endif
+
+# If valid, use it for GitLab
+.      if empty(_invent_hash) || empty(_invent_category) || empty(_invent_name)
+IGNORE?=		invalid KDE_INVENT value '${KDE_INVENT}'
+.      else
+USE_GITLAB=		yes
+GL_SITE=		https://invent.kde.org
+GL_ACCOUNT=		${_invent_category}
+GL_PROJECT=		${_invent_name}
+GL_COMMIT=		${_invent_hash}
+.      endif
+.    endif
 
 .    if defined(_KDE_CATEGORY)
 # KDE is normally licensed under the LGPL 2.0.
