@@ -133,6 +133,7 @@
     SUBDIR += gxine
     SUBDIR += handbrake
     SUBDIR += harvid
+    SUBDIR += hypnotix
     SUBDIR += imagination
     SUBDIR += intel-media-sdk
     SUBDIR += iriverter
