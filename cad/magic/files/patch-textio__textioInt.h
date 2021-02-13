@@ -1,6 +1,6 @@
---- textio/textioInt.h.orig	2006-04-11 07:03:13.000000000 +0900
-+++ textio/textioInt.h	2012-01-17 02:37:35.000000000 +0900
-@@ -41,7 +41,7 @@
+--- textio/textioInt.h.orig	2020-05-24 07:00:08 UTC
++++ textio/textioInt.h
+@@ -41,7 +41,7 @@ typedef struct {
  #define TX_CMD_PROMPT	":"
  
  /* all of the state associated with a tty terminal */

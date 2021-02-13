@@ -1,6 +1,14 @@
---- textio/txInput.c.orig	2012-01-17 02:40:11.000000000 +0900
-+++ textio/txInput.c	2012-01-17 02:45:26.000000000 +0900
-@@ -1204,14 +1204,14 @@
+--- textio/txInput.c.orig	2020-05-24 07:00:08 UTC
++++ textio/txInput.c
+@@ -28,6 +28,7 @@ static char rcsid[] __attribute__ ((unused)) = "$Heade
+ #include <unistd.h>
+ #include <ctype.h>
+ #include <dirent.h>
++#include <termios.h>
+ 
+ 
+ #include "utils/magsgtty.h"
+@@ -1205,14 +1206,14 @@ TxGetLine(dest, maxChars)
   * ----------------------------------------------------------------------------
   */
  
@@ -18,7 +26,7 @@
  }
  
  #else
-@@ -1244,14 +1244,14 @@
+@@ -1245,14 +1246,14 @@ txGetTermState(buf)
  
  void
  txSetTermState(buf)
@@ -37,7 +45,7 @@
  #else
      /* set the current terminal characteristics */
      (void) ioctl(fileno(stdin), TIOCSETN, (char *) &(buf->tx_i_sgtty) );
-@@ -1279,13 +1279,13 @@
+@@ -1280,13 +1281,13 @@ txSetTermState(buf)
  
  void
  txInitTermRec(buf)
@@ -54,9 +62,9 @@
      buf->c_lflag = ISIG;    /* raw: no echo and no processing, allow signals */
      buf->c_cc[ VMIN ] = 1;
      buf->c_cc[ VTIME ] = 0;
-@@ -1300,8 +1300,8 @@
+@@ -1301,8 +1302,8 @@ txInitTermRec(buf)
  
- 
+ 
  
 -#if defined(SYSV) || defined(CYGWIN)
 -struct termio closeTermState;
@@ -65,7 +73,7 @@
  #else
  static txTermState closeTermState;
  #endif /* SYSV */
-@@ -1327,8 +1327,8 @@
+@@ -1328,8 +1329,8 @@ static bool haveCloseState = FALSE;
  void
  txSaveTerm()
  {
@@ -76,7 +84,7 @@
      txEraseChar = closeTermState.c_cc[VERASE];
      txKillChar =  closeTermState.c_cc[VKILL];
      TxEOFChar = closeTermState.c_cc[VEOF];
-@@ -1368,8 +1368,8 @@
+@@ -1369,8 +1370,8 @@ txSaveTerm()
  void
  TxSetTerminal()
  {

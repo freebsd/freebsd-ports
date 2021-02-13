@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	magic
-PORTVERSION=	7.5.240
-PORTREVISION=	2
+DISTVERSION=	8.3.125
 CATEGORIES=	cad
-MASTER_SITES=	http://opencircuitdesign.com/magic/archive/ \
-		http://fossies.org/linux/misc/
+MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Interactive editor for VLSI layouts
@@ -14,21 +12,30 @@ COMMENT=	Interactive editor for VLSI layouts
 LICENSE=	MIT
 LICENSE_FILE=	${FILESDIR}/license.txt
 
-LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt
+LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake gl tk:tea tar:tgz xorg
-USE_XORG=	ice xext xi xmu
-USE_GL=		gl
+USES=		gmake gnome gl localbase python:3.6+,build shebangfix tk:tea tar:tgz xorg
+USE_GNOME=	cairo
+USE_XORG=	ice x11 xext xi xmu
+USE_GL=		gl glu
+
+SHEBANG_FILES=	scripts/preproc.py tcltk/magic.sh.in tcltk/ext2sim.sh.in tcltk/ext2spice.sh.in
+
 CONFIGURE_ARGS=	--with-opengl
 CONFIGURE_WRKSRC=	${WRKSRC}/scripts
+
 ALL_TARGET=	tcllibrary
 
+CFLAGS+=	-Wno-return-type # workaround for https://github.com/RTimothyEdwards/magic/issues/67
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 DESKTOP_ENTRIES="Magic" "" "" "${PORTNAME}" "" ""
 
-PORTSCOUT=	limit:^7\.
+PORTSCOUT=	limit:^8\.
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -41,14 +48,15 @@ post-patch:
 		 s|-l/usr/X11R6/include|-I${LOCALBASE}/include|g' \
 	    ${CONFIGURE_WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
-		'/CFLAGS/s| -pg | |' ${WRKSRC}/tcltk/Makefile
-	@${REINPLACE_CMD} -e \
 		's|^#!.*|#!${TCLSH}|' ${WRKSRC}/tcltk/strip_reflibs.tcl
 	@${REINPLACE_CMD} -e \
 		's|^#!.*|#!${WISH}|' ${WRKSRC}/tcltk/tkshell.tcl
 
 pre-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS} database/database.h)
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} database/database.h
+
+post-install:
+	@cd ${STAGEDIR}${PREFIX}/lib/magic/tcl && ${STRIP_CMD} magicexec magicdnull tclmagic.so
 
 .include <bsd.port.mk>
