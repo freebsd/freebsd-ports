@@ -7,6 +7,9 @@ CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/swell-foop/-/commit/
+PATCHFILES=	a366bf649c032c56f52138d14e2b96b4a48525de.diff:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome swell-foop
 
