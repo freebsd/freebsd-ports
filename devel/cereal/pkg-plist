@@ -85,4 +85,6 @@ include/cereal/types/valarray.hpp
 include/cereal/types/variant.hpp
 include/cereal/types/vector.hpp
 include/cereal/version.hpp
-share/cmake/cereal/cereal-config.cmake
+lib/cmake/cereal/cerealConfig.cmake
+lib/cmake/cereal/cerealConfigVersion.cmake
+lib/cmake/cereal/cerealTargets.cmake
