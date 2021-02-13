@@ -59,6 +59,7 @@ share/mime/packages/org.zrythm.Zrythm-mime.xml
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/audition2.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/automate.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/bus.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/carousel-horizontal.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/category.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/chord-pad.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/cursor-move.svg
@@ -89,6 +90,8 @@ share/mime/packages/org.zrythm.Zrythm-mime.xml
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/fade-out.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/fader.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/favorite.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/file-music-line.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/folder-music-line.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/info.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/insert-silence.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/instrument.svg
@@ -115,6 +118,8 @@ share/mime/packages/org.zrythm.Zrythm-mime.xml
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/pencil.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/phase-invert.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/piano-roll.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/plugin-line.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/plugin-solid.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/power.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/preset-a.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/preset-ab.svg
@@ -128,6 +133,7 @@ share/mime/packages/org.zrythm.Zrythm-mime.xml
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/random-2dice.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/remove-range.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/remove.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/roadmap.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/snap-to-grid.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/solo.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/actions/split.svg
@@ -146,7 +152,10 @@ share/mime/packages/org.zrythm.Zrythm-mime.xml
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/apps/zrythm-splash-png.xcf
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/apps/zrythm-splash.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/apps/zrythm.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/devices/connector.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/devices/hdd.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/devices/metronome.svg
+%%DATADIR%%/themes/icons/zrythm-dark/scalable/devices/midi-logo.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/devices/plug.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/devices/sd-card.svg
 %%DATADIR%%/themes/icons/zrythm-dark/scalable/devices/speaker.svg
