@@ -1,15 +1,14 @@
-# Created by: Alex Dupre <ale@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	tomcat
-PORTVERSION=	9.0.43
+PORTVERSION=	10.0.2
 CATEGORIES=	www java
-MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/([0-9])(.*)/\1/}/v${PORTVERSION}/bin
-PKGNAMESUFFIX=	9
+MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/([0-9]+)(.*)/\1/}/v${PORTVERSION}/bin
+PKGNAMESUFFIX=	10
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	vvd@unislabs.com
-COMMENT=	Open-source Java web server by Apache, 9.0.x branch
+COMMENT=	Open-source Java web server by Apache, 10.0.x branch
 
 LICENSE=	APACHE20
 
