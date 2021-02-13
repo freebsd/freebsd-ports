@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bdf2sfd
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	ehaupt@FreeBSD.org
