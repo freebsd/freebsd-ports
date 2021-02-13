@@ -3,7 +3,6 @@
 %%DATADIR%%/Autofac.Extensions.DependencyInjection.dll
 %%DATADIR%%/Autofac.dll
 %%DATADIR%%/BencodeNET.dll
-%%DATADIR%%/CloudflareSolverRe.dll
 %%DATADIR%%/CommandLine.dll
 %%DATADIR%%/Content/animate.css
 %%DATADIR%%/Content/apple-touch-icon-114x114.png
@@ -61,7 +60,6 @@
 %%DATADIR%%/Definitions/1337x.yml
 %%DATADIR%%/Definitions/1ptbar.yml
 %%DATADIR%%/Definitions/2fast4you.yml
-%%DATADIR%%/Definitions/32pages.yml
 %%DATADIR%%/Definitions/3changtrai.yml
 %%DATADIR%%/Definitions/3dtorrents.yml
 %%DATADIR%%/Definitions/3evils.yml
@@ -78,14 +76,13 @@
 %%DATADIR%%/Definitions/aither.yml
 %%DATADIR%%/Definitions/amigosshare.yml
 %%DATADIR%%/Definitions/animeclipse.yml
+%%DATADIR%%/Definitions/animeworld.yml
 %%DATADIR%%/Definitions/anirena.yml
 %%DATADIR%%/Definitions/anisource.yml
 %%DATADIR%%/Definitions/arabafenice.yml
 %%DATADIR%%/Definitions/arabp2p.yml
 %%DATADIR%%/Definitions/arenabg.yml
-%%DATADIR%%/Definitions/asgaard.yml
 %%DATADIR%%/Definitions/asiancinema.yml
-%%DATADIR%%/Definitions/ast4u.yml
 %%DATADIR%%/Definitions/asylumshare.yml
 %%DATADIR%%/Definitions/audiobookbay.yml
 %%DATADIR%%/Definitions/audiobooktorrents.yml
@@ -116,7 +113,6 @@
 %%DATADIR%%/Definitions/btdb.yml
 %%DATADIR%%/Definitions/btdigg.yml
 %%DATADIR%%/Definitions/btetree.yml
-%%DATADIR%%/Definitions/btgigs.yml
 %%DATADIR%%/Definitions/btnext.yml
 %%DATADIR%%/Definitions/btschool.yml
 %%DATADIR%%/Definitions/btsow.yml
@@ -138,7 +134,6 @@
 %%DATADIR%%/Definitions/classix.yml
 %%DATADIR%%/Definitions/concen.yml
 %%DATADIR%%/Definitions/concertos.yml
-%%DATADIR%%/Definitions/cooltorrent.yml
 %%DATADIR%%/Definitions/cpabien.yml
 %%DATADIR%%/Definitions/cpasbienclone.yml
 %%DATADIR%%/Definitions/crazyhd.yml
@@ -173,10 +168,10 @@
 %%DATADIR%%/Definitions/erzsebetpl.yml
 %%DATADIR%%/Definitions/esharenet.yml
 %%DATADIR%%/Definitions/estone.yml
-%%DATADIR%%/Definitions/ethor.yml
 %%DATADIR%%/Definitions/ettv.yml
 %%DATADIR%%/Definitions/exkinoray.yml
 %%DATADIR%%/Definitions/extratorrent-cd.yml
+%%DATADIR%%/Definitions/extratorrent-it.yml
 %%DATADIR%%/Definitions/extremebits.yml
 %%DATADIR%%/Definitions/extremetorrents.yml
 %%DATADIR%%/Definitions/extremlymtorrents.yml
@@ -259,19 +254,17 @@
 %%DATADIR%%/Definitions/karagarga.yml
 %%DATADIR%%/Definitions/keepfriends.yml
 %%DATADIR%%/Definitions/kickasstorrent-kathow.yml
-%%DATADIR%%/Definitions/kickasstorrent.yml
 %%DATADIR%%/Definitions/kickasstorrents-to.yml
 %%DATADIR%%/Definitions/kinonavse100.yml
 %%DATADIR%%/Definitions/kinorun.yml
 %%DATADIR%%/Definitions/kinozal.yml
-%%DATADIR%%/Definitions/korsar.yml
 %%DATADIR%%/Definitions/lastfiles.yml
 %%DATADIR%%/Definitions/latinop2p.yml
-%%DATADIR%%/Definitions/leaguehd.yml
 %%DATADIR%%/Definitions/learnflakes.yml
 %%DATADIR%%/Definitions/lechaudron.yml
 %%DATADIR%%/Definitions/legacyhd.yml
 %%DATADIR%%/Definitions/legittorrents.yml
+%%DATADIR%%/Definitions/lemonhd.yml
 %%DATADIR%%/Definitions/lepornoinfo.yml
 %%DATADIR%%/Definitions/lesaloon.yml
 %%DATADIR%%/Definitions/libranet.yml
@@ -283,9 +276,9 @@
 %%DATADIR%%/Definitions/madsrevolution.yml
 %%DATADIR%%/Definitions/magico.yml
 %%DATADIR%%/Definitions/magnet4you.yml
-%%DATADIR%%/Definitions/magnetdl.yml
 %%DATADIR%%/Definitions/majomparade.yml
 %%DATADIR%%/Definitions/marinetracker.yml
+%%DATADIR%%/Definitions/mesevilag.yml
 %%DATADIR%%/Definitions/metaltracker.yml
 %%DATADIR%%/Definitions/microbit.yml
 %%DATADIR%%/Definitions/mixtapetorrent.yml
@@ -313,6 +306,7 @@
 %%DATADIR%%/Definitions/nitro.yml
 %%DATADIR%%/Definitions/nntt.yml
 %%DATADIR%%/Definitions/noname-club.yml
+%%DATADIR%%/Definitions/noname-clubl.yml
 %%DATADIR%%/Definitions/nyaa-pantsu.yml
 %%DATADIR%%/Definitions/nyaasi.yml
 %%DATADIR%%/Definitions/omgwtftrackr.yml
@@ -350,6 +344,7 @@
 %%DATADIR%%/Definitions/pthome.yml
 %%DATADIR%%/Definitions/ptmsg.yml
 %%DATADIR%%/Definitions/ptsbao.yml
+%%DATADIR%%/Definitions/pttime.yml
 %%DATADIR%%/Definitions/puntotorrent.yml
 %%DATADIR%%/Definitions/purovicio.yml
 %%DATADIR%%/Definitions/pussytorrents.yml
@@ -380,7 +375,6 @@
 %%DATADIR%%/Definitions/selezen.yml
 %%DATADIR%%/Definitions/sexypics.yml
 %%DATADIR%%/Definitions/shareisland.yml
-%%DATADIR%%/Definitions/shareuniversity.yml
 %%DATADIR%%/Definitions/sharewood.yml
 %%DATADIR%%/Definitions/shellife.yml
 %%DATADIR%%/Definitions/shokweb.yml
@@ -392,7 +386,6 @@
 %%DATADIR%%/Definitions/snowpt.yml
 %%DATADIR%%/Definitions/sosulki.yml
 %%DATADIR%%/Definitions/soulvoice.yml
-%%DATADIR%%/Definitions/spacetorrent.yml
 %%DATADIR%%/Definitions/speedmasterhd.yml
 %%DATADIR%%/Definitions/speedtorrentreloaded.yml
 %%DATADIR%%/Definitions/spiritofrevolution.yml
@@ -401,14 +394,12 @@
 %%DATADIR%%/Definitions/springsunday.yml
 %%DATADIR%%/Definitions/sukebei-pantsu.yml
 %%DATADIR%%/Definitions/sukebeinyaasi.yml
-%%DATADIR%%/Definitions/takeabyte.yml
 %%DATADIR%%/Definitions/tapochek.yml
 %%DATADIR%%/Definitions/tasmanit.yml
 %%DATADIR%%/Definitions/teamhd.yml
 %%DATADIR%%/Definitions/teamos.yml
 %%DATADIR%%/Definitions/tekno3d.yml
 %%DATADIR%%/Definitions/tellytorrent.yml
-%%DATADIR%%/Definitions/tenyardtracker.yml
 %%DATADIR%%/Definitions/theaudioscene.yml
 %%DATADIR%%/Definitions/theempire.yml
 %%DATADIR%%/Definitions/thefallingangels.yml
@@ -447,8 +438,8 @@
 %%DATADIR%%/Definitions/torrentlt.yml
 %%DATADIR%%/Definitions/torrentoyunindir.yml
 %%DATADIR%%/Definitions/torrentparadise.yml
+%%DATADIR%%/Definitions/torrentproject.yml
 %%DATADIR%%/Definitions/torrentproject2.yml
-%%DATADIR%%/Definitions/torrentquest.yml
 %%DATADIR%%/Definitions/torrentsectorcrew.yml
 %%DATADIR%%/Definitions/torrentslocal.yml
 %%DATADIR%%/Definitions/torrentsurf.yml
@@ -486,7 +477,6 @@
 %%DATADIR%%/Definitions/woot.yml
 %%DATADIR%%/Definitions/x-ite.me.yml
 %%DATADIR%%/Definitions/xbytes2.yml
-%%DATADIR%%/Definitions/xfsub.yml
 %%DATADIR%%/Definitions/xwtclassics.yml
 %%DATADIR%%/Definitions/xwtorrents.yml
 %%DATADIR%%/Definitions/xxxadulttorrent.yml
@@ -502,6 +492,7 @@
 %%DATADIR%%/Definitions/zetorrents.yml
 %%DATADIR%%/Definitions/zooqle.yml
 %%DATADIR%%/Definitions/ztracker.yml
+%%DATADIR%%/FlareSolverrSharp.dll
 %%DATADIR%%/ICSharpCode.SharpZipLib.dll
 %%DATADIR%%/Jackett.Common.dll
 %%DATADIR%%/Jackett.Common.pdb
@@ -512,7 +503,6 @@
 %%DATADIR%%/JackettUpdater.exe
 %%DATADIR%%/JackettUpdater.exe.config
 %%DATADIR%%/JackettUpdater.pdb
-%%DATADIR%%/Jint.dll
 %%DATADIR%%/LICENSE
 %%DATADIR%%/Microsoft.AspNetCore.Antiforgery.dll
 %%DATADIR%%/Microsoft.AspNetCore.Authentication.Abstractions.dll
