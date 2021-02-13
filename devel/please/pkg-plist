@@ -1,0 +1,8 @@
+bin/build_langserver
+bin/jarcat
+bin/please
+bin/please_go_filter
+bin/please_go_install
+bin/please_go_test
+bin/please_pex
+bin/please_sandbox

@@ -2,7 +2,7 @@
 
 PORTNAME=	please
 DISTVERSIONPREFIX=	v
-DISTVERSION=	15.13.0
+DISTVERSION=	15.15.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	.build
 
@@ -98,12 +98,9 @@ GH_TUPLE=	StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/Sta
 		thought-machine:go-flags:v1.5.0:thought_machine_go_flags/vendor/github.com/thought-machine/go-flags \
 		tsenart:deadcode:210d2dc333e9:tsenart_deadcode/vendor/github.com/tsenart/deadcode \
 		ulikunitz:xz:v0.5.6:ulikunitz_xz/vendor/github.com/ulikunitz/xz
-PLIST_FILES=	bin/build_langserver \
-		bin/jarcat \
-		bin/please \
-		bin/please_go_filter \
-		bin/please_go_test \
-		bin/please_pex \
+
+INSTALL_FILES=	bin/build_langserver bin/jarcat bin/please bin/please_go_filter \
+		bin/please_go_install bin/please_go_test bin/please_pex \
 		bin/please_sandbox
 
 post-extract:
@@ -114,13 +111,14 @@ do-build:
 	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o build_langserver tools/build_langserver/langserver_main.go
 	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o jarcat tools/jarcat/main.go
 	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_go_filter tools/please_go_filter/please_go_filter.go
+	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_go_install tools/please_go_install/main.go
 	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_go_test tools/please_go_test/plz_go_test_main.go
 	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_pex tools/please_pex/pex_main.go
 	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o release_signer tools/release_signer/main.go
 	cd ${WRKSRC} ; ${SETENV} ${CC} ${CFLAGS} -o please_sandbox tools/sandbox/main.c
 
 do-install:
-.for FILE in ${PLIST_FILES}
+.for FILE in ${INSTALL_FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE:C,bin/,,} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 
