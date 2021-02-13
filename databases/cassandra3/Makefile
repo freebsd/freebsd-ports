@@ -3,7 +3,7 @@
 PORTNAME=	cassandra
 DISTVERSION=	3.11.10
 CATEGORIES=	databases java
-MASTER_SITES=	LOCAL/rene:repo
+MASTER_SITES=	LOCAL/nc:repo
 PKGNAMESUFFIX=	3
 DISTFILES=	apache-${PORTNAME}-${DISTVERSION}-repo.tar.gz:repo
 
