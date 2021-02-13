@@ -11,6 +11,7 @@
     SUBDIR += ant-dracula-theme
     SUBDIR += arc-gruvbox-theme
     SUBDIR += audacious-skins
+    SUBDIR += canta-gtk-themes
     SUBDIR += classiclooks
     SUBDIR += claws-mail-themes
     SUBDIR += clearlooks
