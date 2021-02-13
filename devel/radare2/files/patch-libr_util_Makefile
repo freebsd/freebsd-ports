@@ -1,6 +1,6 @@
---- libr/util/Makefile.orig	2019-08-14 18:53:09 UTC
+--- libr/util/Makefile.orig	2021-02-13 20:27:05 UTC
 +++ libr/util/Makefile
-@@ -51,7 +51,7 @@ endif
+@@ -52,7 +52,7 @@ endif
  endif
  
  # FreeBSD 10.0 ships with backtrace(3) in -lexecinfo
