@@ -40,15 +40,15 @@ Library selection is handled by libglvnd and/or libmap.conf.
  endif
  
  _xa = get_option('gallium-xa')
---- src/amd/vulkan/meson.build.orig	2020-06-03 10:34:22 UTC
+--- src/amd/vulkan/meson.build.orig	2021-02-12 19:12:01 UTC
 +++ src/amd/vulkan/meson.build
-@@ -149,7 +149,7 @@ if with_platform_android
+@@ -159,7 +159,7 @@ if with_llvm and with_ld_version_script
  endif
  
  libvulkan_radeon = shared_library(
 -  'vulkan_radeon',
 +  'vulkan_radeon' + get_option('egl-lib-suffix'),
-   [libradv_files, radv_entrypoints, radv_extensions_c, amd_vk_format_table_c, sha1_h],
+   [libradv_files, radv_entrypoints, amd_vk_format_table_c, sha1_h],
    include_directories : [
      inc_include, inc_src, inc_mapi, inc_mesa, inc_gallium, inc_gallium_aux, inc_amd, inc_amd_common, inc_amd_common_llvm, inc_compiler, inc_util, inc_vulkan_wsi,
 --- src/egl/meson.build.orig	2020-12-03 22:36:27 UTC
