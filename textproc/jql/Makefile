@@ -2,7 +2,7 @@
 
 PORTNAME=	jql
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.2
+DISTVERSION=	2.9.3
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,12 +22,13 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		arrayref-0.3.5 \
 		async-attributes-1.1.1 \
 		async-channel-1.5.1 \
-		async-executor-1.3.0 \
-		async-global-executor-1.4.3 \
-		async-io-1.1.10 \
+		async-executor-1.4.0 \
+		async-global-executor-2.0.2 \
+		async-io-1.3.1 \
+		async-lock-2.3.0 \
 		async-mutex-1.4.0 \
 		async-process-1.0.1 \
-		async-std-1.8.0 \
+		async-std-1.9.0 \
 		async-task-4.0.3 \
 		atomic-waker-1.0.0 \
 		atty-0.2.11 \
@@ -48,7 +49,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		colored_json-2.1.0 \
 		concurrent-queue-1.2.2 \
 		const_fn-0.4.3 \
-		criterion-0.3.3 \
+		criterion-0.3.4 \
 		criterion-plot-0.4.3 \
 		crossbeam-channel-0.5.0 \
 		crossbeam-deque-0.8.0 \
@@ -73,6 +74,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		indexmap-1.6.0 \
 		instant-0.1.8 \
 		itertools-0.9.0 \
+		itertools-0.10.0 \
 		itoa-0.4.3 \
 		js-sys-0.3.45 \
 		kv-log-macro-1.0.7 \
@@ -83,7 +85,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		memchr-2.3.4 \
 		memoffset-0.5.6 \
 		nb-connect-1.0.2 \
-		num-traits-0.2.6 \
+		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
 		once_cell-1.4.1 \
 		oorandom-11.1.0 \
@@ -95,7 +97,9 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		pin-project-lite-0.1.11 \
 		pin-project-lite-0.2.0 \
 		pin-utils-0.1.0 \
-		plotters-0.2.12 \
+		plotters-0.3.0 \
+		plotters-backend-0.3.0 \
+		plotters-svg-0.3.0 \
 		polling-2.0.2 \
 		proc-macro2-0.4.24 \
 		proc-macro2-1.0.24 \
