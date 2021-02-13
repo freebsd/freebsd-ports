@@ -7,7 +7,10 @@ CATEGORIES=	games
 MAINTAINER=	menelkir@itroll.org
 COMMENT=	Fast MegaDrive/MegaCD/32X emulator
 
-LICENSE=	PD
+LICENSE=	MAME-License
+LICENSE_NAME=	MAME license
+LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	all archs except x86 report error: unsupported arch
