@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-cloud-sdk
-PORTVERSION=	325.0.0
+PORTVERSION=	327.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
@@ -35,6 +35,7 @@ ZSH_PLIST_FILES=	share/zsh/site-functions/_gcloud
 post-extract:
 	@${RM} -r \
 		${WRKSRC}/bin/anthoscli \
+		${WRKSRC}/bin/kuberun \
 		${WRKSRC}/install.bat \
 		${WRKSRC}/platform/gsutil/third_party/crcmod/docs/source/make.bat \
 		${WRKSRC}/platform/gsutil/third_party/rsa/doc/make.bat \
