@@ -1,5 +1,5 @@
-TIMESTAMP = 1599177005
-SHA256 (radareorg-cutter-v1.12.0_GH0.tar.gz) = 868213d2ea0b4a29b9b03c9b605c2b2155c4c03b62735a9bd376a0dadcb4fe1b
-SIZE (radareorg-cutter-v1.12.0_GH0.tar.gz) = 2323732
-SHA256 (radareorg-cutter-translations-d576ccc_GH0.tar.gz) = 9d9702fe014bda84532f7b13bda57a8e2c61c7538ea2595e67f81033c7e06d5b
-SIZE (radareorg-cutter-translations-d576ccc_GH0.tar.gz) = 554221
+TIMESTAMP = 1613252970
+SHA256 (radareorg-r2cutter-0.1.1_GH0.tar.gz) = b1e161c2625b48e700883ce57238f6927807aae9b1489a2402d2c05ecc5a7263
+SIZE (radareorg-r2cutter-0.1.1_GH0.tar.gz) = 2408826
+SHA256 (radareorg-cutter-translations-8e1d24b_GH0.tar.gz) = 01d9a6a6ba5a537a1991e733a7a4959176db986710cd872373a1d0249f2729b8
+SIZE (radareorg-cutter-translations-8e1d24b_GH0.tar.gz) = 502893
