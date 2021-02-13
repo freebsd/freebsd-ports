@@ -10,12 +10,12 @@ COMMENT=	Enhanced port of Genesis Plus
 LICENSE=	GPGX
 LICENSE_NAME=	GPGX
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-LICENSE_PERMS=  dist-mirror pkg-mirror auto-accept
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 USES=		compiler:c++11-lib gmake
 USE_LDCONFIG=	yes
 
-NO_CDROM=       Commercial users must seek permission from copyright holders.
+NO_CDROM=	Commercial users must seek permission from copyright holders.
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
