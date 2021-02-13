@@ -1,4 +1,5 @@
 bin/scribus
+lib/scribus/plugins/gettext/libMARKDOWNimplugin.so
 lib/scribus/plugins/gettext/libcsvim.so
 lib/scribus/plugins/gettext/libdocim.so
 lib/scribus/plugins/gettext/libdocximplugin.so
@@ -29,6 +30,7 @@ lib/scribus/plugins/libimportpct.so
 lib/scribus/plugins/libimportpdf.so
 lib/scribus/plugins/libimportpm.so
 lib/scribus/plugins/libimportpub.so
+lib/scribus/plugins/libimportqxp.so
 lib/scribus/plugins/libimportshape.so
 lib/scribus/plugins/libimportsml.so
 lib/scribus/plugins/libimportsvm.so
@@ -38,6 +40,7 @@ lib/scribus/plugins/libimportwpg.so
 lib/scribus/plugins/libimportxar.so
 lib/scribus/plugins/libimportxfig.so
 lib/scribus/plugins/libimportxps.so
+lib/scribus/plugins/libimportzmf.so
 lib/scribus/plugins/liblenseffects.so
 lib/scribus/plugins/libmeshdistortion.so
 lib/scribus/plugins/liboodrawimp.so
@@ -54,6 +57,7 @@ lib/scribus/plugins/libscribus13format.so
 lib/scribus/plugins/libscribus150format.so
 lib/scribus/plugins/libscribusexportpixmap.so
 lib/scribus/plugins/libscribusshortwords.so
+lib/scribus/plugins/libscriptplugin.so
 lib/scribus/plugins/libshapeplugin.so
 lib/scribus/plugins/libsmoothpath.so
 lib/scribus/plugins/libsubdivide.so
@@ -503,6 +507,7 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/de/readme-os2.html
 %%PORTDOCS%%%%DOCSDIR%%/de/readme-win32.html
 %%PORTDOCS%%%%DOCSDIR%%/de/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/de/readme_needs_update_please_keep it_in.html
 %%PORTDOCS%%%%DOCSDIR%%/de/%%CMAKE_BUILD_TYPE%%s.html
 %%PORTDOCS%%%%DOCSDIR%%/de/resources.html
 %%PORTDOCS%%%%DOCSDIR%%/de/scribus-svg.html
@@ -527,11 +532,13 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-page.html
 %%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-select.html
 %%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-setobjprop.html
+%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-styles.html
 %%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-textframes.html
 %%PORTDOCS%%%%DOCSDIR%%/de/scripterapi.html
 %%PORTDOCS%%%%DOCSDIR%%/de/settings1.html
 %%PORTDOCS%%%%DOCSDIR%%/de/short-words.html
 %%PORTDOCS%%%%DOCSDIR%%/de/specs.html
+%%PORTDOCS%%%%DOCSDIR%%/de/specs_needs_update_please_keep it_in.html
 %%PORTDOCS%%%%DOCSDIR%%/de/toolbox.html
 %%PORTDOCS%%%%DOCSDIR%%/de/toolbox1.html
 %%PORTDOCS%%%%DOCSDIR%%/de/toolbox12.html
@@ -1127,6 +1134,7 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-pdfannotations.html
 %%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-select.html
 %%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-setobjprop.html
+%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-styles.html
 %%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-textframes.html
 %%PORTDOCS%%%%DOCSDIR%%/en/scripterapi.html
 %%PORTDOCS%%%%DOCSDIR%%/en/settings1.html
@@ -1623,6 +1631,7 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-page.html
 %%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-select.html
 %%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-setobjprop.html
+%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-styles.html
 %%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-textframes.html
 %%PORTDOCS%%%%DOCSDIR%%/it/scripterapi.html
 %%PORTDOCS%%%%DOCSDIR%%/it/settings1.html
@@ -1650,6 +1659,124 @@ share/applications/scribus.desktop
 %%PORTDOCS%%%%DOCSDIR%%/it/translation_howto.html
 %%PORTDOCS%%%%DOCSDIR%%/it/tutorials.html
 %%PORTDOCS%%%%DOCSDIR%%/it/workspace1.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/DropShadows.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/EditingShapes.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/SearchReplace.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/TextProp.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/WwFill.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/WwFrames.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/WwImages.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/WwLines.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/WwRenderframes.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/WwShapes.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/WwStyles.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/WwText.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/about1.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/about2.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/add_colors.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/bugreport.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/cli.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/cms.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/collect4output.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/color1.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/color2.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/color3.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/color4.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/color5.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/color6.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/color7a.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/color7b.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/color7c.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/color8.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/color_editing.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/colorwheel.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/config.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/configfiles.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/contributions.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/createlinks.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/docinfo.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/editorial.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/faq1.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/fileproblems.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/fonts1.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/fonts2.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/hyphenator.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/importbitmap1.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/importclipart.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/importhints.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/importhints1.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/importhints2.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/importhints3.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/importhints4.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/importoutput.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/install4.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/keys.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/layers.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/mailing_lists.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/manual.css
+%%PORTDOCS%%%%DOCSDIR%%/ru/menu.xml
+%%PORTDOCS%%%%DOCSDIR%%/ru/moncal.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/mouse.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/multiple_transform.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/pagenumber.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/pagetemplate1.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/pdf_form.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/pdfexport1.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/pdfexport2.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/pdfexport3.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/pdfexport4.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/pdfexport_image.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/pdflavor.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/pdfx3.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/print1.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/print2.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/psd.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/qsg.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/readme-haiku.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/readme-win32.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/renderframes.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scribus-svg.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripter-extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripter-faq.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripter1.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripter2.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-ImageExport.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-PDFfile.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-Printer.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-color.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-constants.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-dialogs.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-font.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-getobjprop.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-images.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-layer.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-lines.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-manobj.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-masterpages.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-object.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-page.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-pdfannotations.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-select.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-setobjprop.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-styles.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-textframes.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/settings1.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/short-words.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/specs.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/toolbox12.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/toolbox13.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/toolbox15.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/toolbox19.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/toolbox20.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/toolbox5.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/toolbox8.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/toolbox9.html
+%%PORTDOCS%%%%DOCSDIR%%/ru/topten.html
 share/icons/hicolor/1024x1024/apps/scribus.png
 share/icons/hicolor/128x128/apps/scribus.png
 share/icons/hicolor/16x16/apps/scribus.png
@@ -1671,6 +1798,9 @@ share/pixmaps/scribus.png
 %%DATADIR%%/dicts/hyph/README_hyph_da_DK.txt
 %%DATADIR%%/dicts/hyph/README_hyph_de_CH.txt
 %%DATADIR%%/dicts/hyph/README_hyph_de_DE.txt
+%%DATADIR%%/dicts/hyph/README_hyph_en_GB.txt
+%%DATADIR%%/dicts/hyph/README_hyph_en_US.txt
+%%DATADIR%%/dicts/hyph/README_hyph_fr.txt
 %%DATADIR%%/dicts/hyph/README_hyph_ia.txt
 %%DATADIR%%/dicts/hyph/README_hyph_ml_IN.txt
 %%DATADIR%%/dicts/hyph/README_hyph_nb_NO.txt
@@ -1698,6 +1828,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/dicts/hyph/hyph_de_CH.dic
 %%DATADIR%%/dicts/hyph/hyph_el.dic
 %%DATADIR%%/dicts/hyph/hyph_en_GB.dic
+%%DATADIR%%/dicts/hyph/hyph_en_US.dic
 %%DATADIR%%/dicts/hyph/hyph_eo.dic
 %%DATADIR%%/dicts/hyph/hyph_es.dic
 %%DATADIR%%/dicts/hyph/hyph_fi.dic
@@ -2682,6 +2813,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/loremipsum/fi.xml
 %%DATADIR%%/loremipsum/fr.xml
 %%DATADIR%%/loremipsum/he.xml
+%%DATADIR%%/loremipsum/hr.xml
 %%DATADIR%%/loremipsum/hu.xml
 %%DATADIR%%/loremipsum/it.xml
 %%DATADIR%%/loremipsum/ja.xml
@@ -2926,8 +3058,10 @@ share/pixmaps/scribus.png
 %%DATADIR%%/templates/textbased/textbasedtn.png
 %%DATADIR%%/translations/scribus.af.qm
 %%DATADIR%%/translations/scribus.ar.qm
+%%DATADIR%%/translations/scribus.az.qm
 %%DATADIR%%/translations/scribus.be.qm
 %%DATADIR%%/translations/scribus.bg.qm
+%%DATADIR%%/translations/scribus.bn_IN.qm
 %%DATADIR%%/translations/scribus.br.qm
 %%DATADIR%%/translations/scribus.ca.qm
 %%DATADIR%%/translations/scribus.cs_CZ.qm
@@ -2962,6 +3096,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/translations/scribus.lt_LT.qm
 %%DATADIR%%/translations/scribus.ml.qm
 %%DATADIR%%/translations/scribus.mn_MN.qm
+%%DATADIR%%/translations/scribus.ms_MY.qm
 %%DATADIR%%/translations/scribus.nb_NO.qm
 %%DATADIR%%/translations/scribus.nl.qm
 %%DATADIR%%/translations/scribus.oc.qm
@@ -3221,18 +3356,10 @@ share/pixmaps/scribus.png
 %%DATADIR%%/icons/1_5_1_dark/wordsOnly.png
 %%DATADIR%%/icons/1_5_1_dark/zeichen.png
 %%DATADIR%%/icons/1_5_1_dark/zeichen.xpm
-%%DATADIR%%/loremipsum/hr.xml
 %%DATADIR%%/profiles/ISOcoated_v2_300_bas.icc
 %%DATADIR%%/profiles/ISOcoated_v2_300_bas.txt
 %%DATADIR%%/profiles/sRGB_icc22.icm
 %%DATADIR%%/profiles/sRGB_icc22.txt
-%%PORTDOCS%%%%DOCSDIR%%/de/scripterapi-styles.html
-%%PORTDOCS%%%%DOCSDIR%%/en/scripterapi-styles.html
-%%PORTDOCS%%%%DOCSDIR%%/it/scripterapi-styles.html
-%%DATADIR%%/dicts/hyph/README_hyph_en_GB.txt
-%%DATADIR%%/dicts/hyph/README_hyph_en_US.txt
-%%DATADIR%%/dicts/hyph/README_hyph_fr.txt
-%%DATADIR%%/dicts/hyph/hyph_en_US.dic
 %%DATADIR%%/icons/1_5_0/zeichen.xpm
 %%DATADIR%%/icons/1_5_1/zeichen.png
 %%DATADIR%%/icons/1_5_1/zeichen.xpm
@@ -3383,159 +3510,34 @@ share/pixmaps/scribus.png
 %%DATADIR%%/icons/1_5_1_dark/22/delete-table-columns.png
 %%DATADIR%%/icons/1_5_1_dark/22/delete-table-rows.png
 %%DATADIR%%/icons/1_5_1_dark/22/dialog-error.png
- lib/scribus/plugins/gettext/libMARKDOWNimplugin.so
- lib/scribus/plugins/libscriptplugin.so
- %%PORTDOCS%%%%DOCSDIR%%/de/readme_needs_update_please_keep it_in.html
- %%PORTDOCS%%%%DOCSDIR%%/de/specs_needs_update_please_keep it_in.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/DropShadows.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/EditingShapes.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/SearchReplace.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/TextProp.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/WwFill.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/WwFrames.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/WwImages.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/WwLines.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/WwRenderframes.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/WwShapes.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/WwStyles.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/WwText.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/about1.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/about2.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/add_colors.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/bugreport.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/cli.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/cms.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/collect4output.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/color1.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/color2.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/color3.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/color4.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/color5.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/color6.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/color7a.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/color7b.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/color7c.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/color8.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/color_editing.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/colorwheel.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/config.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/configfiles.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/contributions.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/createlinks.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/docinfo.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/documentation.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/editorial.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/faq1.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/fileproblems.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/fonts1.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/fonts2.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/hyphenator.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/importbitmap1.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/importclipart.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/importhints.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/importhints1.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/importhints2.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/importhints3.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/importhints4.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/importoutput.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/install4.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/keys.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/layers.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/mailing_lists.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/manual.css
- %%PORTDOCS%%%%DOCSDIR%%/ru/menu.xml
- %%PORTDOCS%%%%DOCSDIR%%/ru/moncal.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/mouse.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/multiple_transform.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/pagenumber.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/pagetemplate1.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/pdf_form.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/pdfexport1.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/pdfexport2.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/pdfexport3.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/pdfexport4.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/pdfexport_image.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/pdflavor.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/pdfx3.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/print1.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/print2.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/psd.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/qsg.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/readme-haiku.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/readme-win32.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/readme.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/renderframes.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scribus-svg.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripter-extensions.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripter-faq.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripter1.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripter2.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-ImageExport.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-PDFfile.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-Printer.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-color.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-constants.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-dialogs.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-doc.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-extensions.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-font.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-getobjprop.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-images.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-layer.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-lines.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-manobj.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-masterpages.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-object.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-page.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-pdfannotations.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-select.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-setobjprop.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-styles.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi-textframes.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/scripterapi.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/settings1.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/short-words.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/specs.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/toolbox12.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/toolbox13.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/toolbox15.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/toolbox19.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/toolbox20.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/toolbox5.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/toolbox8.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/toolbox9.html
- %%PORTDOCS%%%%DOCSDIR%%/ru/topten.html
- %%DATADIR%%/icons/1_5_1/fill-rule-even-odd.png
- %%DATADIR%%/icons/1_5_1/fill-rule-nonzero.png
- %%DATADIR%%/icons/1_5_1/round-corners.png
- %%DATADIR%%/samples/3columnA4.py
- %%DATADIR%%/samples/3columnUSLTR.py
- %%DATADIR%%/samples/Calender.py
- %%DATADIR%%/samples/ExtractText.py
- %%DATADIR%%/samples/Sample1.py
- %%DATADIR%%/samples/boilerplate.py
- %%DATADIR%%/samples/golden-mean.py
- %%DATADIR%%/samples/legende.py
- %%DATADIR%%/samples/moins_10_pourcent_group.py
- %%DATADIR%%/samples/plus_10_pourcent_group.py
- %%DATADIR%%/samples/pochette_cd.py
- %%DATADIR%%/samples/quote.py
- %%DATADIR%%/samples/sample_db_usage.py
- %%DATADIR%%/samples/trait_de_coupe.py
- %%DATADIR%%/samples/wordcount.py
- %%DATADIR%%/scripts/Align_image_in_frame.py
- %%DATADIR%%/scripts/Autoquote.py
- %%DATADIR%%/scripts/Autoquote2.py
- %%DATADIR%%/scripts/CalendarWizard.py
- %%DATADIR%%/scripts/Caption.py
- %%DATADIR%%/scripts/ColorChart.py
- %%DATADIR%%/scripts/DirectImageImport.py
- %%DATADIR%%/scripts/FontSample.py
- %%DATADIR%%/scripts/InfoBox.py
- %%DATADIR%%/scripts/Ligatursatz.py
- %%DATADIR%%/scripts/color2csv.py
- %%DATADIR%%/scripts/csv2color.py
- %%DATADIR%%/scripts/importcsv2table.py
- %%DATADIR%%/translations/scribus.az.qm
- %%DATADIR%%/translations/scribus.bn_IN.qm
- %%DATADIR%%/translations/scribus.ms_MY.qm
+%%DATADIR%%/icons/1_5_1/fill-rule-even-odd.png
+%%DATADIR%%/icons/1_5_1/fill-rule-nonzero.png
+%%DATADIR%%/icons/1_5_1/round-corners.png
+%%DATADIR%%/samples/3columnA4.py
+%%DATADIR%%/samples/3columnUSLTR.py
+%%DATADIR%%/samples/Calender.py
+%%DATADIR%%/samples/ExtractText.py
+%%DATADIR%%/samples/Sample1.py
+%%DATADIR%%/samples/boilerplate.py
+%%DATADIR%%/samples/golden-mean.py
+%%DATADIR%%/samples/legende.py
+%%DATADIR%%/samples/moins_10_pourcent_group.py
+%%DATADIR%%/samples/plus_10_pourcent_group.py
+%%DATADIR%%/samples/pochette_cd.py
+%%DATADIR%%/samples/quote.py
+%%DATADIR%%/samples/sample_db_usage.py
+%%DATADIR%%/samples/trait_de_coupe.py
+%%DATADIR%%/samples/wordcount.py
+%%DATADIR%%/scripts/Align_image_in_frame.py
+%%DATADIR%%/scripts/Autoquote.py
+%%DATADIR%%/scripts/Autoquote2.py
+%%DATADIR%%/scripts/CalendarWizard.py
+%%DATADIR%%/scripts/Caption.py
+%%DATADIR%%/scripts/ColorChart.py
+%%DATADIR%%/scripts/DirectImageImport.py
+%%DATADIR%%/scripts/FontSample.py
+%%DATADIR%%/scripts/InfoBox.py
+%%DATADIR%%/scripts/Ligatursatz.py
+%%DATADIR%%/scripts/color2csv.py
+%%DATADIR%%/scripts/csv2color.py
+%%DATADIR%%/scripts/importcsv2table.py
