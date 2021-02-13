@@ -1,0 +1,26 @@
+From 92f0fe9e0dc3cf7ab6e8cc94d7962df83d0ddbec Mon Sep 17 00:00:00 2001
+From: Bart Van Assche <bvanassche@acm.org>
+Date: Mon, 4 Jan 2021 12:21:59 -0800
+Subject: [PATCH] libsnmp: Fix asn_parse_nlength()
+
+Handle length zero correctly.
+
+Fixes: https://github.com/net-snmp/net-snmp/issues/253
+Fixes: a9850f4445cf ("asn parse: add NULL checks, check length lengths")
+---
+ snmplib/asn1.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/snmplib/asn1.c b/snmplib/asn1.c
+index e983500e7..33c272768 100644
+--- snmplib/asn1.c
++++ snmplib/asn1.c
+@@ -345,7 +345,7 @@ asn_parse_nlength(u_char *pkt, size_t pkt_len, u_long *data_len)
+          * long length; first byte is length of length (after masking high bit)
+          */
+         len_len = (int) ((*pkt & ~0x80) + 1);
+-        if ((int) pkt_len <= len_len )
++        if (pkt_len < len_len)
+             return NULL;           /* still too short for length and data */
+ 
+         /* now we know we have enough data to parse length */
