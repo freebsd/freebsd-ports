@@ -2,7 +2,7 @@
 
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.2
+DISTVERSION=	3.11.3
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +26,7 @@ GH_TUPLE=	\
 		caffix:eventbus:4c5f3ce94295:caffix_eventbus/vendor/github.com/caffix/eventbus \
 		caffix:pipeline:41730a0744af:caffix_pipeline/vendor/github.com/caffix/pipeline \
 		caffix:queue:1d2e72b64fa0:caffix_queue/vendor/github.com/caffix/queue \
-		caffix:service:354b1fdf7f24:caffix_service/vendor/github.com/caffix/service \
+		caffix:service:bfa33e78ab27:caffix_service/vendor/github.com/caffix/service \
 		caffix:stringset:37e95a70826c:caffix_stringset/vendor/github.com/caffix/stringset \
 		cayleygraph:cayley:v0.7.7:cayleygraph_cayley/vendor/github.com/cayleygraph/cayley \
 		cayleygraph:quad:v1.2.4:cayleygraph_quad/vendor/github.com/cayleygraph/quad \
