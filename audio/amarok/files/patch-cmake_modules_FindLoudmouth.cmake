@@ -1,6 +1,6 @@
---- cmake/modules/FindLoudmouth.cmake.orig	2018-11-19 18:18:20.197436000 +0100
-+++ cmake/modules/FindLoudmouth.cmake	2018-11-19 18:25:49.793954000 +0100
-@@ -13,14 +13,6 @@
+--- cmake/modules/FindLoudmouth.cmake.orig	2021-02-13 22:39:45 UTC
++++ cmake/modules/FindLoudmouth.cmake
+@@ -13,13 +13,6 @@ if (LOUDMOUTH_INCLUDE_DIRS AND LOUDMOUTH_LIBRARIES)
    set(LOUDMOUTH_FOUND TRUE)
  
  else ()
@@ -11,16 +11,15 @@
 -    pkg_search_module(LOUDMOUTH loudmouth-1.0)
 -  
 -  else()
--
+ 
      find_path(LOUDMOUTH_INCLUDE_DIRS loudmouth/loudmouth.h /usr/include/loudmouth-1.0
        ${_LOUDMOUTHIncDir}
-     )
-@@ -30,8 +22,6 @@
+@@ -29,8 +22,6 @@ else ()
+       PATHS
        ${_LOUDMOUTHLinkDir}
      )
- 
--  endif()
 -
+-  endif()
+ 
    if (LOUDMOUTH_INCLUDE_DIRS AND LOUDMOUTH_LIBRARIES)
      set(LOUDMOUTH_FOUND TRUE)
-   else ()
