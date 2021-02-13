@@ -2,9 +2,7 @@
 
 PORTNAME=	amarok
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.70
-PKGVERSIONSUFFIX=	-g${GH_TAGNAME}
-PORTREVISION=	3
+DISTVERSION=	2.9.71
 CATEGORIES=	audio kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -39,11 +37,9 @@ USE_KDE=	archive auth attica bookmarks codecs config configwidgets \
 USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	MYSQL_DIR=${LOCALBASE}
+KDE_INVENT=	3e11ccdd1417e70486eaaa84d8475182eec44c20 multimedia
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	kde
-GH_TAGNAME=	0aa6ae0c77
+CONFIGURE_ENV=	MYSQL_DIR=${LOCALBASE}
 
 SHEBANG_FILES=	src/kconf_update/amarok-2.4.1-tokens_syntax_update.pl
 CMAKE_ARGS=	-DOPENSSL_ROOT_DIR=${OPENSSLBASE}

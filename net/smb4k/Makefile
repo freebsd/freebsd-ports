@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smb4k
-DISTVERSION=	3.0.4
+DISTVERSION=	3.0.7
 CATEGORIES=	net kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,9 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rsync:net/rsync
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 samba tar:bzip2
-USE_GITHUB=	yes
-GH_ACCOUNT=	KDE
-
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons ecm i18n iconthemes jobwidgets kio notifications \
 		plasma-framework service solid wallet widgetsaddons \
@@ -23,5 +20,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 USE_QT=		concurrent core dbus declarative gui network printsupport \
 		testlib widgets xml \
 		buildtools_build qmake_build
+
+KDE_INVENT=	1a7856954c88bc49e5f1b8b071c209ac6c3d6b45 network
 
 .include <bsd.port.mk>

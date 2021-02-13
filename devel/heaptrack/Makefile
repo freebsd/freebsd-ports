@@ -2,9 +2,7 @@
 
 PORTNAME=	heaptrack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0-179
-DISTVERSIONSUFFIX=	-gb0f8f2d
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	devel kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,13 +17,13 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 
 USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 \
 		localbase  qt:5 tar:xz
-USE_GITHUB=	yes
-GH_ACCOUNT=	KDE
 USE_KDE=	auth auth codecs completion config config \
 		configwidgets coreaddons ecm i18n itemmodels \
 		jobwidgets kio kio service threadweaver \
 		widgetsaddons windowsystem
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools_build qmake_build
+
+KDE_INVENT=	bc9e3744bcc47de978673d1e382f4125a1ab5fa8 sdk
 
 .include <bsd.port.mk>

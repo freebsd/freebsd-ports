@@ -1,9 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kooka
-DISTVERSION=	0.61-296
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-g22e3bcd
+DISTVERSION=	0.61-323
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 
@@ -17,13 +15,13 @@ LIB_DEPENDS=	libpaper.so:print/libpaper \
 		libtiff.so:graphics/tiff
 
 USES=		cmake compiler:c++11-lang kde:5 pkgconfig qt:5
-USE_GITHUB=	yes
-GH_ACCOUNT=	KDE
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons \
 		ecm i18n iconthemes itemviews jobwidgets kio service solid sonnet \
 		textwidgets widgetsaddons xmlgui
 USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools_build qmake_build
+
+KDE_INVENT=	3ed25fb9a1a62b88240a4f0f403b1ad49cf0adeb
 
 PORTSCOUT=	limit:^0\.
 
