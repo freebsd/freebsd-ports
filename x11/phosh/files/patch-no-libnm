@@ -59,35 +59,25 @@ meson.build:134:0: ERROR: Dependency "libnm" not found, tried pkgconfig
    'wwaninfo.c',
    'wwaninfo.h',
    phosh_settings_sources,
---- src/panel.c.orig	2020-10-28 08:27:41 UTC
-+++ src/panel.c
-@@ -15,7 +15,6 @@
- #include "config.h"
- 
+--- src/shell.c.orig	2021-02-09 20:00:21 UTC
++++ src/shell.c
+@@ -29,7 +29,6 @@
+ #include "background-manager.h"
  #include "bt-info.h"
+ #include "bt-manager.h"
 -#include "connectivity-info.h"
  #include "docked-info.h"
- #include "panel.h"
- #include "shell.h"
-@@ -379,7 +378,6 @@ phosh_panel_class_init (PhoshPanelClass *klass)
-       NULL, G_TYPE_NONE, 0);
- 
-   g_type_ensure (PHOSH_TYPE_BT_INFO);
--  g_type_ensure (PHOSH_TYPE_CONNECTIVITY_INFO);
-   g_type_ensure (PHOSH_TYPE_DOCKED_INFO);
-   g_type_ensure (PHOSH_TYPE_SETTINGS);
- 
---- src/shell.c.orig	2020-09-18 11:42:34 UTC
-+++ src/shell.c
-@@ -48,7 +48,6 @@
- #include "session.h"
- #include "system-prompter.h"
+ #include "docked-manager.h"
+ #include "fader.h"
+@@ -62,7 +61,6 @@
+ #include "torch-manager.h"
+ #include "torch-info.h"
  #include "util.h"
 -#include "wifiinfo.h"
  #include "wwaninfo.h"
  #include "wwan/phosh-wwan-ofono.h"
  #include "wwan/phosh-wwan-mm.h"
-@@ -90,7 +89,6 @@ typedef struct
+@@ -105,7 +103,6 @@ typedef struct
    PhoshIdleManager *idle_manager;
    PhoshOskManager  *osk_manager;
    PhoshToplevelManager *toplevel_manager;
@@ -95,7 +85,7 @@ meson.build:134:0: ERROR: Dependency "libnm" not found, tried pkgconfig
    PhoshPolkitAuthAgent *polkit_auth_agent;
    PhoshScreenSaverManager *screen_saver_manager;
    PhoshNotifyManager *notify_manager;
-@@ -344,7 +342,6 @@ phosh_shell_dispose (GObject *object)
+@@ -351,7 +348,6 @@ phosh_shell_dispose (GObject *object)
    g_clear_object (&priv->notify_manager);
    g_clear_object (&priv->screen_saver_manager);
    g_clear_object (&priv->polkit_auth_agent);
@@ -103,15 +93,23 @@ meson.build:134:0: ERROR: Dependency "libnm" not found, tried pkgconfig
    g_clear_object (&priv->toplevel_manager);
    g_clear_object (&priv->osk_manager);
    g_clear_object (&priv->idle_manager);
-@@ -494,7 +491,6 @@ static void
- type_setup (void)
+@@ -510,7 +506,6 @@ type_setup (void)
  {
-   phosh_battery_info_get_type();
--  phosh_wifi_info_get_type();
-   phosh_wwan_info_get_type();
+   g_type_ensure (PHOSH_TYPE_BATTERY_INFO);
+   g_type_ensure (PHOSH_TYPE_BT_INFO);
+-  g_type_ensure (PHOSH_TYPE_CONNECTIVITY_INFO);
+   g_type_ensure (PHOSH_TYPE_DOCKED_INFO);
+   g_type_ensure (PHOSH_TYPE_FEEDBACK_INFO);
+   g_type_ensure (PHOSH_TYPE_MEDIA_PLAYER);
+@@ -518,7 +513,6 @@ type_setup (void)
+   g_type_ensure (PHOSH_TYPE_ROTATE_INFO);
+   g_type_ensure (PHOSH_TYPE_SETTINGS);
+   g_type_ensure (PHOSH_TYPE_TORCH_INFO);
+-  g_type_ensure (PHOSH_TYPE_WIFI_INFO);
+   g_type_ensure (PHOSH_TYPE_WWAN_INFO);
  }
  
-@@ -784,21 +780,6 @@ phosh_shell_get_monitor_manager (PhoshShell *self)
+@@ -869,21 +863,6 @@ phosh_shell_get_monitor_manager (PhoshShell *self)
    return priv->monitor_manager;
  }
  
