@@ -74,6 +74,7 @@ lib/libroutino.so.0.0.0
 %%WWWDIR%%/translations/translation.de.txt
 %%WWWDIR%%/translations/translation.en.txt
 %%WWWDIR%%/translations/translation.es.txt
+%%WWWDIR%%/translations/translation.fi.txt
 %%WWWDIR%%/translations/translation.fr.txt
 %%WWWDIR%%/translations/translation.hu.txt
 %%WWWDIR%%/translations/translation.it.txt
@@ -950,6 +951,7 @@ lib/libroutino.so.0.0.0
 %%WWWDIR%%/%%WWWDIR%%/router.html.de
 %%WWWDIR%%/%%WWWDIR%%/router.html.en
 %%WWWDIR%%/%%WWWDIR%%/router.html.es
+%%WWWDIR%%/%%WWWDIR%%/router.html.fi
 %%WWWDIR%%/%%WWWDIR%%/router.html.fr
 %%WWWDIR%%/%%WWWDIR%%/router.html.hu
 %%WWWDIR%%/%%WWWDIR%%/router.html.it
@@ -971,6 +973,7 @@ lib/libroutino.so.0.0.0
 %%WWWDIR%%/%%WWWDIR%%/visualiser.html.de
 %%WWWDIR%%/%%WWWDIR%%/visualiser.html.en
 %%WWWDIR%%/%%WWWDIR%%/visualiser.html.es
+%%WWWDIR%%/%%WWWDIR%%/visualiser.html.fi
 %%WWWDIR%%/%%WWWDIR%%/visualiser.html.fr
 %%WWWDIR%%/%%WWWDIR%%/visualiser.html.hu
 %%WWWDIR%%/%%WWWDIR%%/visualiser.html.it

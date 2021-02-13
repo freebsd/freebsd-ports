@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	routino
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 CATEGORIES=	astro
 MASTER_SITES=	http://www.routino.org/download/
 
