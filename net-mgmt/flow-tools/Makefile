@@ -4,7 +4,7 @@
 PORTNAME=	flow-tools
 PORTVERSION=	0.68.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -13,15 +13,13 @@ COMMENT=	Suite of tools and library to work with netflow data
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man
-
 USES=		autoreconf libtool:keepla python:patch shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	flow_capture flow_fanout
 
 GH_ACCOUNT=	5u623l20
-GH_TAGNAME=	6e7c849
+GH_TAGNAME=	2ca53f5
 
 SHEBANG_FILES=	bin/flow-*
 GNU_CONFIGURE=	yes
@@ -58,5 +56,11 @@ post-patch:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/lib/libft.so.0.0.0
+
+post-stage:
+.for f in asn.sym filter.cfg ip-prot.sym ip-type.sym map.cfg mask.cfg stat.cfg \
+	tag.cfg tag.sym tcp-port.sym xlate.cfg
+	@${MV} ${STAGEDIR}${ETCDIR}/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
+.endfor
 
 .include <bsd.port.post.mk>
