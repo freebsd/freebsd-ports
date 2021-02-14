@@ -4,11 +4,12 @@
 PORTNAME=	pnpids
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.344
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Database of IDs used in Plug and Play devices
+COMMENT=	Database of IDs used in PCI, PNP and USB devices
 
 LICENSE=	GPLv2+ MIT
 LICENSE_COMB=	dual
@@ -16,14 +17,18 @@ LICENSE_COMB=	dual
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	${DATADIR}/pnp.ids
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vcrhonek
 GH_PROJECT=	hwdata
 
+_ID_FILES=	pci.ids pnp.ids usb.ids
+PLIST_FILES=	${_ID_FILES:C,^,${DATADIR}/,}
+
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/pnp.ids ${STAGEDIR}${DATADIR}/
+.for _id_file in ${_ID_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${_id_file} ${STAGEDIR}${DATADIR}/
+.endfor
 
 .include <bsd.port.mk>
