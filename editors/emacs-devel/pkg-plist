@@ -195,6 +195,7 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs.service
 %%DATADIR%%/%%EMACS_VER%%/etc/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/enriched.txt
+%%DATADIR%%/%%EMACS_VER%%/etc/facemenu-removal.txt
 %%DATADIR%%/%%EMACS_VER%%/etc/forms/README
 %%DATADIR%%/%%EMACS_VER%%/etc/forms/forms-d2.dat
 %%DATADIR%%/%%EMACS_VER%%/etc/forms/forms-d2.el
