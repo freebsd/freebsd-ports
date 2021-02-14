@@ -35,9 +35,11 @@ PORTSCOUT=	limitw:1,even
 _LIBVERSION=	0.6600.7
 PLIST_SUB=	LIBVERSION=${_LIBVERSION}
 
-OPTIONS_DEFINE=		DEBUG MANPAGES NLS
+OPTIONS_DEFINE=	DEBUG FAM_ALTBACKEND MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=		yes
+
+FAM_ALTBACKEND_DESC=	Alternate file monitor backend
 
 MANPAGES_BUILD_DEPENDS=	docbook-xml>4.1.2:textproc/docbook-xml \
 			docbook-xsl>0:textproc/docbook-xsl
@@ -59,6 +61,15 @@ MESON_ARGS+=	-Diconv=external
 .if ${ARCH} == powerpc64
 EXTRA_PATCHES=	${FILESDIR}/extra-arch-powerpc64
 .endif
+
+pre-configure-FAM_ALTBACKEND-on:
+	@${REINPLACE_CMD} -e 's|kqueue-helper.c|kqueue_fnm.c|g ; \
+		s|.*kqueue-missing.c.*||g ; \
+		s|.*dep-list.c.*||g' \
+		${WRKSRC}/gio/kqueue/meson.build
+	@${CP} -f ${FILESDIR}/gkqueuefilemonitor.c ${WRKSRC}/gio/kqueue/gkqueuefilemonitor.c
+	@${CP} ${FILESDIR}/kqueue_fnm.c ${WRKSRC}/gio/kqueue/kqueue_fnm.c
+	@${CP} ${FILESDIR}/kqueue_fnm.h ${WRKSRC}/gio/kqueue/kqueue_fnm.h
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
