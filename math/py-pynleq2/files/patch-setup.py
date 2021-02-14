@@ -20,8 +20,8 @@
          Extension('pynleq2.nleq2', [os.path.join('nleq2', f)
 -                                    for f in ('nleq2.pyf',) + sources])
 +                                    for f in ('nleq2.pyf',)]
-+                                   , libraries=['ff', 'flang', 'execinfo']
-+                                   , library_dirs=['../.fbuild', '/usr/local/flang/lib'])
++                                   , libraries=['ff', 'execinfo']
++                                   , library_dirs=['../.fbuild'])
      ]
  
  PYNLEQ2_RELEASE_VERSION = os.environ.get('PYNLEQ2_RELEASE_VERSION', '')

@@ -1,5 +1,5 @@
-TIMESTAMP = 1524415019
+TIMESTAMP = 1589502332
 SHA256 (pynleq2-0.0.2.tar.gz) = b9be75bb7def34cd7a82aed87b70f6c3c9f4602cbe9e8d4fcf43a4aae241112d
 SIZE (pynleq2-0.0.2.tar.gz) = 6219
-SHA256 (PySCeS-pysces-0.9.6_GH0.tar.gz) = 0888488fa9a8d11c4885e084af0c5825d9c37d1fb8a133899a657d79bc503fa4
-SIZE (PySCeS-pysces-0.9.6_GH0.tar.gz) = 2673710
+SHA256 (PySCeS-pysces-0.9.8_GH0.tar.gz) = a97af5afe50fe994e84d33455ded5821f694d809f6a36adc9b486bb209d58a72
+SIZE (PySCeS-pysces-0.9.8_GH0.tar.gz) = 2655864
