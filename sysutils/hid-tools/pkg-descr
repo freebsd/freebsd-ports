@@ -1,0 +1,16 @@
+hid-tools is a set of tools to interact with the kernel's HID subsystem.
+
+hid-recorder prints the HID Report Descriptor from a /dev/hidraw device
+node and any HID reports coming from that device.  The output format can
+be used with hid-replay for debugging.
+
+hid-replay takes the output from hid-recorder and replays it through a
+virtual HID device that looks exactly like the one recorded.
+
+hid-decode takes a HID Report Descriptor and prints a human-readable
+version of it.  hid-decode takes binary report descriptors, strings of
+bytes, and other formats.
+
+hid-tools requires hidraw.ko driver to be loaded in to kernel.
+
+WWW: https://gitlab.freedesktop.org/libevdev/hid-tools

@@ -482,6 +482,7 @@
     SUBDIR += hexyl
     SUBDIR += hfsexplorer
     SUBDIR += hfsutils
+    SUBDIR += hid-tools
     SUBDIR += highlnk
     SUBDIR += hilite
     SUBDIR += host-setup
