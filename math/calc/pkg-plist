@@ -365,6 +365,7 @@ man/man1/calc.1.gz
 %%HELP%%%%DATADIR%%/help/ptest
 %%HELP%%%%DATADIR%%/help/push
 %%HELP%%%%DATADIR%%/help/putenv
+%%HELP%%%%DATADIR%%/help/question
 %%HELP%%%%DATADIR%%/help/quo
 %%HELP%%%%DATADIR%%/help/quomod
 %%HELP%%%%DATADIR%%/help/rand
