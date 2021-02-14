@@ -13,13 +13,13 @@ ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	bash:shells/bash \
 		nasm:devel/nasm \
-		gcc${GCC_DEFAULT}:lang/gcc${GCC_DEFAULT} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.7:databases/py-sqlite3@${PY_FLAVOR}
 
 FLAVORS=	x86_64 i386
 
 USES=		gmake \
 		python:3.4+,build
+USE_GCC=	yes:build
 
 x86_64_PKGNAMESUFFIX=	-x86_64
 i386_PKGNAMESUFFIX=	-i386
