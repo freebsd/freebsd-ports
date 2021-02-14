@@ -3,8 +3,7 @@
 
 PORTNAME=	dcmtk
 DISTVERSIONPREFIX=	${PORTNAME:tu}-
-DISTVERSION=	3.6.5
-PORTREVISION=	3
+DISTVERSION=	3.6.6
 CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,5 +28,7 @@ CMAKE_OFF=	DCMTK_WITH_DOXYGEN
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
+
+TEST_TARGET=	test test-exhaustive
 
 .include <bsd.port.mk>
