@@ -16164,3 +16164,4 @@ security/openvas9-manager|security/gvmd|2021-02-08|Has expired: End of life, ple
 security/openvas9-scanner|security/openvas|2021-02-08|Has expired: End of life, please migrate to security/openvas port
 security/greenbone-security-assistant8|security/greenbone-security-assistant|2021-02-08|Has expired: End of life, please migrate to new version of greenbone-security-assistant
 security/greenbone-security-assistant9|security/greenbone-security-assistant|2021-02-08|Has expired: End of life, please migrate to new version of greenbone-security-assistant
+misc/pnpids|misc/hwdata|2021-02-14|Rename package to upstreams name

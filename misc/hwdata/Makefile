@@ -1,26 +1,24 @@
 # Created by: Ting-Wei Lan <lantw44@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	pnpids
+PORTNAME=	hwdata
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.344
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	misc
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Database of IDs used in PCI, PNP and USB devices
 
 LICENSE=	GPLv2+ MIT
 LICENSE_COMB=	dual
 
-NO_ARCH=	yes
-NO_BUILD=	yes
-
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	vcrhonek
-GH_PROJECT=	hwdata
+
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 _ID_FILES=	pci.ids pnp.ids usb.ids
 PLIST_FILES=	${_ID_FILES:C,^,${DATADIR}/,}
