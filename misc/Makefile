@@ -35,7 +35,6 @@
     SUBDIR += bsod
     SUBDIR += buffer
     SUBDIR += cave
-    SUBDIR += cdcollect
     SUBDIR += cheat
     SUBDIR += chef
     SUBDIR += chmlib

@@ -16165,3 +16165,5 @@ security/openvas9-scanner|security/openvas|2021-02-08|Has expired: End of life, 
 security/greenbone-security-assistant8|security/greenbone-security-assistant|2021-02-08|Has expired: End of life, please migrate to new version of greenbone-security-assistant
 security/greenbone-security-assistant9|security/greenbone-security-assistant|2021-02-08|Has expired: End of life, please migrate to new version of greenbone-security-assistant
 misc/pnpids|misc/hwdata|2021-02-14|Rename package to upstreams name
+misc/cdcollect||2021-02-14|Has expired: Unmaintained and dead upstream (12+ years) depends on  deprecated libraries as www/gtkhtml3
+security/krb5-116|security/krb5-118|2021-02-14|Has expired: EOL one year after the release of krb5 1.18
