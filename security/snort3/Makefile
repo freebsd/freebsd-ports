@@ -58,7 +58,7 @@ CONFLICTS=	snort-2*
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc64*}
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit-openresty
 .else
 LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
