@@ -7,7 +7,7 @@
 -	install(CODE "execute_process(COMMAND gzip ${man})")
 -	set_source_files_properties(${man}.gz PROPERTIES GENERATED TRUE)
 -	install(FILES ${man}.gz DESTINATION share/man/man1)
-+	install(FILES ${man} DESTINATION man/man1)
++	install(FILES ${man} DESTINATION share/man/man1)
  
  	set(k ${kst_dir}/src/kst)
  #	install(FILES ${k}/kstplugin.desktop

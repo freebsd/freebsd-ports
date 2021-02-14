@@ -69,7 +69,6 @@ lib/libkst2math.so.%%SHLIB_VER%%
 lib/libkst2widgets.so
 lib/libkst2widgets.so.2
 lib/libkst2widgets.so.%%SHLIB_VER%%
-man/man1/kst2.1.gz
 share/applications/kst2.desktop
 share/icons/hicolor/128x128/apps/kst.png
 share/icons/hicolor/128x128/mimetypes/application-x-kst.png
@@ -81,4 +80,5 @@ share/icons/hicolor/64x64/apps/kst.png
 share/icons/hicolor/64x64/mimetypes/application-x-kst.png
 share/icons/hicolor/scalable/apps/kst.svg
 share/icons/hicolor/scalable/mimetypes/application-x-kst.svg
+share/man/man1/kst2.1.gz
 share/mime/packages/x-kst.xml

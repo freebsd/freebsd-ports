@@ -3,7 +3,6 @@
 
 PORTNAME=	kst
 DISTVERSION=	${KST_VERSION}.${KST_DATE}
-PORTREVISION=	5
 CATEGORIES=	science
 
 MAINTAINER=	makc@FreeBSD.org
@@ -18,24 +17,21 @@ LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LGPL
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libtiff.so:graphics/tiff
 
-KST_VERSION=	2.0.8
-KST_DATE=	20190325
-
-USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig \
+USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 pkgconfig \
 		qt:5 shared-mime-info
 USE_QT=		concurrent core gui network printsupport svg widgets xml \
 		buildtools_build linguisttools_build qmake_build
 USE_LDCONFIG=	yes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	KDE
-GH_PROJECT=	kst-plot
-GH_TAGNAME=	35c35e1
+KST_VERSION=	2.0.8
+KST_DATE=	20210124
+KST_COMMIT=	38eddb53
+KDE_INVENT=	38eddb5322a1d557f9d86ea95d456d76272941e3 graphics kst-plot
 
 CMAKE_ARGS=	-Dkst_install_prefix=${PREFIX} \
 		-Dkst_pch=off \
 		-Dkst_version_string=${KST_VERSION} \
-		-Dkst_revision="${GH_TAGNAME} ${KST_DATE}" \
+		-Dkst_revision="${KST_COMMIT} ${KST_DATE}" \
 		-DCMAKE_DISABLE_FIND_PACKAGE_Getdata=ON \
 		-Dkst_qt5=on
 
