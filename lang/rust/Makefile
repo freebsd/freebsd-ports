@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION?=	1.49.0
+PORTVERSION?=	1.50.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -31,17 +31,12 @@ ONLY_FOR_ARCHS?=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 
 BUILD_DEPENDS=	cmake:devel/cmake \
-		libgit2>=1.0.0:devel/libgit2 \
 		ninja:devel/ninja
-LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libgit2.so:devel/libgit2 \
-		libssh2.so:security/libssh2
+LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		pkgconfig python:3.6+,build ssl tar:xz
 
 MAKE_ENV=	DESTDIR=${STAGEDIR} \
-		LIBGIT2_SYS_USE_PKG_CONFIG=1 \
-		LIBSSH2_SYS_USE_PKG_CONFIG=1 \
 		OPENSSL_DIR="${OPENSSLBASE}" \
 		RUST_BACKTRACE=1
 TEST_ENV=	${MAKE_ENV} \
@@ -69,8 +64,8 @@ WASM_VARS=		_RUST_BUILD_WASM=true \
 WASM_VARS_OFF=		_RUST_BUILD_WASM=false
 
 # See WRKSRC/src/stage0.txt for the date and version values.
-BOOTSTRAPS_DATE?=		2020-11-19
-RUST_BOOTSTRAP_VERSION?=	1.48.0
+BOOTSTRAPS_DATE?=		2020-12-31
+RUST_BOOTSTRAP_VERSION?=	1.49.0
 
 BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
 BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
@@ -101,8 +96,9 @@ BUILD_DEPENDS+=	gcc9:lang/gcc9
 USE_GCC=	yes
 .endif
 
-.if ${ARCH} == aarch64 && ${OSVERSION} < 1200502
-IGNORE=	fails to run due to a bug in rtld, update to 12-STABLE r342847 or 13-CURRENT r342113
+# remove when 11.4 is EOL
+.if ${ARCH} == aarch64 && ${OSVERSION} < 1202000
+IGNORE=	fails to run due to a bug in rtld, update to 12.2-RELEASE or newer
 .endif
 
 .ifdef QEMU_EMULATING
@@ -124,8 +120,7 @@ do-configure:
 		${SH} ${SCRIPTSDIR}/rust-compat11-canary.sh
 .for _component in cargo rust-std rustc
 	@cd ${WRKDIR}/${_component}-*-${OPSYS:tl} && \
-		${SH} install.sh --prefix=${WRKDIR}/bootstrap \
-		--verbose
+		${SH} install.sh --prefix=${WRKDIR}/bootstrap --verbose
 .endfor
 	@${ECHO_CMD} '[build]' > ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'vendor=true' >> ${WRKSRC}/config.toml

@@ -78,7 +78,7 @@ BUNDLE_LIBS=	yes
 
 BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 				rust-cbindgen>=0.15.0:devel/rust-cbindgen \
-				${RUST_DEFAULT}>=1.43:lang/${RUST_DEFAULT} \
+				${RUST_DEFAULT}>=1.50:lang/${RUST_DEFAULT} \
 				node:www/node
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 MOZ_EXPORT+=	${CONFIGURE_ENV} \

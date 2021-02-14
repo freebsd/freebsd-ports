@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racer
-DISTVERSION=	2.1.36
-PORTREVISION=	2
+DISTVERSION=	2.1.41
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
@@ -18,17 +17,21 @@ USES=		cargo
 CARGO_CRATES=	aho-corasick-0.7.10 \
 		annotate-snippets-0.8.0 \
 		ansi_term-0.11.0 \
+		arrayvec-0.5.1 \
 		atty-0.2.14 \
 		autocfg-1.0.0 \
 		bitflags-1.2.1 \
 		block-buffer-0.7.3 \
+		block-buffer-0.9.0 \
 		block-padding-0.1.5 \
 		byte-tools-0.3.1 \
 		byteorder-1.3.4 \
 		cc-1.0.53 \
 		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
 		clap-2.33.0 \
-		cloudabi-0.0.3 \
+		cloudabi-0.1.0 \
+		cpuid-bool-0.1.2 \
 		crossbeam-deque-0.7.3 \
 		crossbeam-epoch-0.8.2 \
 		crossbeam-queue-0.1.2 \
@@ -36,43 +39,45 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		crossbeam-utils-0.7.2 \
 		derive_more-0.99.5 \
 		digest-0.8.1 \
+		digest-0.9.0 \
 		either-1.5.3 \
 		ena-0.14.0 \
 		env_logger-0.7.1 \
 		fake-simd-0.1.2 \
 		generic-array-0.12.3 \
+		generic-array-0.14.4 \
 		getopts-0.2.21 \
 		getrandom-0.1.14 \
+		hashbrown-0.8.2 \
 		hermit-abi-0.1.10 \
 		humantime-1.3.0 \
 		humantime-2.0.0 \
-		indexmap-1.3.2 \
+		indexmap-1.5.2 \
+		instant-0.1.7 \
 		itoa-0.4.5 \
 		jobserver-0.1.21 \
 		lazy_static-1.4.0 \
 		lazycell-1.2.1 \
-		libc-0.2.68 \
-		lock_api-0.3.4 \
+		libc-0.2.77 \
+		lock_api-0.4.1 \
 		log-0.4.8 \
 		maybe-uninit-2.0.0 \
 		md-5-0.8.0 \
-		measureme-0.7.1 \
+		md-5-0.9.1 \
+		measureme-9.0.0 \
 		memchr-2.3.3 \
-		memmap-0.7.0 \
 		memoffset-0.5.4 \
 		num_cpus-1.12.0 \
-		once_cell-1.4.0 \
 		opaque-debug-0.2.3 \
-		parking_lot-0.9.0 \
-		parking_lot-0.10.2 \
-		parking_lot_core-0.6.2 \
-		parking_lot_core-0.7.2 \
+		opaque-debug-0.3.0 \
+		parking_lot-0.11.0 \
+		parking_lot_core-0.8.0 \
 		ppv-lite86-0.2.6 \
 		proc-macro2-1.0.10 \
 		psm-0.1.8 \
 		quick-error-1.2.3 \
 		quote-1.0.3 \
-		racer-2.1.35 \
+		racer-2.1.40 \
 		racer-cargo-metadata-0.1.1 \
 		racer-interner-0.1.0 \
 		racer-testutils-0.1.0 \
@@ -85,55 +90,54 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		regex-syntax-0.6.17 \
 		remove_dir_all-0.5.2 \
 		rls-span-0.5.2 \
-		rustc-ap-rustc_arena-664.0.0 \
-		rustc-ap-rustc_arena-669.0.0 \
-		rustc-ap-rustc_ast-664.0.0 \
-		rustc-ap-rustc_ast-669.0.0 \
-		rustc-ap-rustc_ast_pretty-664.0.0 \
-		rustc-ap-rustc_ast_pretty-669.0.0 \
-		rustc-ap-rustc_data_structures-664.0.0 \
-		rustc-ap-rustc_data_structures-669.0.0 \
-		rustc-ap-rustc_errors-664.0.0 \
-		rustc-ap-rustc_errors-669.0.0 \
-		rustc-ap-rustc_feature-664.0.0 \
-		rustc-ap-rustc_feature-669.0.0 \
-		rustc-ap-rustc_fs_util-664.0.0 \
-		rustc-ap-rustc_fs_util-669.0.0 \
-		rustc-ap-rustc_graphviz-664.0.0 \
-		rustc-ap-rustc_graphviz-669.0.0 \
-		rustc-ap-rustc_index-664.0.0 \
-		rustc-ap-rustc_index-669.0.0 \
-		rustc-ap-rustc_lexer-664.0.0 \
-		rustc-ap-rustc_lexer-669.0.0 \
-		rustc-ap-rustc_macros-664.0.0 \
-		rustc-ap-rustc_macros-669.0.0 \
-		rustc-ap-rustc_parse-664.0.0 \
-		rustc-ap-rustc_parse-669.0.0 \
-		rustc-ap-rustc_serialize-664.0.0 \
-		rustc-ap-rustc_serialize-669.0.0 \
-		rustc-ap-rustc_session-664.0.0 \
-		rustc-ap-rustc_session-669.0.0 \
-		rustc-ap-rustc_span-664.0.0 \
-		rustc-ap-rustc_span-669.0.0 \
-		rustc-ap-rustc_target-664.0.0 \
-		rustc-ap-rustc_target-669.0.0 \
+		rustc-ap-rustc_arena-686.0.0 \
+		rustc-ap-rustc_arena-691.0.0 \
+		rustc-ap-rustc_ast-686.0.0 \
+		rustc-ap-rustc_ast-691.0.0 \
+		rustc-ap-rustc_ast_pretty-686.0.0 \
+		rustc-ap-rustc_ast_pretty-691.0.0 \
+		rustc-ap-rustc_data_structures-686.0.0 \
+		rustc-ap-rustc_data_structures-691.0.0 \
+		rustc-ap-rustc_errors-686.0.0 \
+		rustc-ap-rustc_errors-691.0.0 \
+		rustc-ap-rustc_feature-686.0.0 \
+		rustc-ap-rustc_feature-691.0.0 \
+		rustc-ap-rustc_fs_util-686.0.0 \
+		rustc-ap-rustc_fs_util-691.0.0 \
+		rustc-ap-rustc_graphviz-686.0.0 \
+		rustc-ap-rustc_graphviz-691.0.0 \
+		rustc-ap-rustc_index-686.0.0 \
+		rustc-ap-rustc_index-691.0.0 \
+		rustc-ap-rustc_lexer-686.0.0 \
+		rustc-ap-rustc_lexer-691.0.0 \
+		rustc-ap-rustc_lint_defs-691.0.0 \
+		rustc-ap-rustc_macros-686.0.0 \
+		rustc-ap-rustc_macros-691.0.0 \
+		rustc-ap-rustc_parse-686.0.0 \
+		rustc-ap-rustc_parse-691.0.0 \
+		rustc-ap-rustc_serialize-686.0.0 \
+		rustc-ap-rustc_serialize-691.0.0 \
+		rustc-ap-rustc_session-686.0.0 \
+		rustc-ap-rustc_session-691.0.0 \
+		rustc-ap-rustc_span-686.0.0 \
+		rustc-ap-rustc_span-691.0.0 \
+		rustc-ap-rustc_target-686.0.0 \
+		rustc-ap-rustc_target-691.0.0 \
 		rustc-hash-1.1.0 \
 		rustc-rayon-0.3.0 \
 		rustc-rayon-core-0.3.0 \
-		rustc_version-0.2.3 \
 		ryu-1.0.3 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
-		semver-0.9.0 \
-		semver-parser-0.7.0 \
 		serde-1.0.105 \
 		serde_derive-1.0.105 \
 		serde_json-1.0.50 \
 		sha-1-0.8.2 \
-		smallvec-0.6.13 \
-		smallvec-1.2.0 \
+		sha-1-0.9.2 \
+		sha2-0.9.2 \
+		smallvec-1.4.2 \
 		stable_deref_trait-1.1.1 \
-		stacker-0.1.9 \
+		stacker-0.1.12 \
 		strsim-0.8.0 \
 		syn-1.0.17 \
 		synstructure-0.12.3 \
@@ -142,11 +146,15 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		termize-0.1.1 \
 		textwrap-0.11.0 \
 		thread_local-1.0.1 \
+		tracing-0.1.19 \
+		tracing-attributes-0.1.11 \
+		tracing-core-0.1.15 \
 		typenum-1.12.0 \
 		unicode-normalization-0.1.12 \
 		unicode-width-0.1.7 \
 		unicode-xid-0.2.0 \
 		vec_map-0.8.1 \
+		version_check-0.9.2 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \

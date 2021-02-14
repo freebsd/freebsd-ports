@@ -2,7 +2,7 @@
 
 PORTNAME=	findomain
 DISTVERSION=	2.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net security
 
 MAINTAINER=	lcook@FreeBSD.org

@@ -2,6 +2,7 @@
 
 PORTNAME=	gifski
 DISTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
