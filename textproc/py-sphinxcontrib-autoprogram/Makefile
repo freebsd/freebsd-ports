@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	sphinxcontrib-autoprogram
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.7
 CATEGORIES=	textproc
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -14,14 +15,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=1.2,1:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
-USE_GITHUB=	yes
-GH_ACCOUNT=	sphinx-contrib
-GH_PROJECT=	autoprogram
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.2,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_PORTDOCS=		*
