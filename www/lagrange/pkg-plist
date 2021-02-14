@@ -1,5 +1,5 @@
 bin/lagrange
-share/applications/fi.skyjake.lagrange.desktop
-share/icons/hicolor/256x256/apps/fi.skyjake.lagrange.png
 %%DATADIR%%/resources.lgr
+share/applications/fi.skyjake.Lagrange.desktop
+share/icons/hicolor/256x256/apps/fi.skyjake.Lagrange.png
 share/metainfo/fi.skyjake.Lagrange.appdata.xml
