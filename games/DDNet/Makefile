@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DDNet
-PORTVERSION=	15.3
+PORTVERSION=	15.3.1
 CATEGORIES=	games
 MASTER_SITES=	https://ddnet.tw/downloads/
 
