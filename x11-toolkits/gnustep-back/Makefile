@@ -2,7 +2,7 @@
 
 PORTNAME=	gnustep-back
 DISTVERSIONPREFIX=	back-
-DISTVERSION=	0_27_0
+DISTVERSION=	0_28_0
 CATEGORIES=	x11-toolkits gnustep
 
 MAINTAINER=	ports@FreeBSD.org

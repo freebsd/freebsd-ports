@@ -3,6 +3,7 @@
 
 PORTNAME=	pikopixel
 DISTVERSION=	1.0-b10
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://twilightedge.com/downloads/

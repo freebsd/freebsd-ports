@@ -3,7 +3,7 @@
 
 PORTNAME=	cenon
 PORTVERSION=	4.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://www.cenon.zone/download/source/
