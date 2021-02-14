@@ -75,6 +75,12 @@ WAYLAND_USES=		xorg
 WAYLAND_USE=		XORG=xcb
 WAYLAND_CMAKE_BOOL_OFF=	DISABLE_WAYLAND
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*}
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -i.prefix 's,/usr/local,${PREFIX},g' \
 		${WRKSRC:H}/doc/${PORTNAME}.1 \
