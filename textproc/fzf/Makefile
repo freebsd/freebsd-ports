@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fzf
-PORTVERSION=	0.25.0
+PORTVERSION=	0.25.1
 CATEGORIES=	textproc
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	junegunn
-COMMIT_ID=	8c533e3 
+COMMIT_ID=	6654239
 GH_TUPLE=	\
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
 		gdamore:tcell:v1.4.0:gdamore_tcell/vendor/github.com/gdamore/tcell \
