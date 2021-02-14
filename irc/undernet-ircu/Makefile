@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=		Fails to compile: undefined reference to .mcount
 BROKEN_riscv64=		Fails to compile: undefined reference to .mcount
 
-USE_GCC=	any
+USE_GCC=	yes
 USE_RC_SUBR=	undernet
 
 GNU_CONFIGURE=	yes
