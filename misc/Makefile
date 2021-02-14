@@ -173,6 +173,7 @@
     SUBDIR += hotkeys
     SUBDIR += hs-hascard
     SUBDIR += hulgalugha
+    SUBDIR += hwdata
     SUBDIR += hxtools
     SUBDIR += ignition-fuel-tools
     SUBDIR += iio-oscilloscope
@@ -361,7 +362,6 @@
     SUBDIR += php80-calendar
     SUBDIR += pinfo
     SUBDIR += pipe
-    SUBDIR += pnpids
     SUBDIR += posixtestsuite
     SUBDIR += proxyper
     SUBDIR += pspresent
