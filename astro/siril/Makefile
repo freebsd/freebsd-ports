@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	siril
-DISTVERSION=	0.99.6
-PORTREVISION=	4
+DISTVERSION=	0.99.8.1
 CATEGORIES=	astro graphics
 MASTER_SITES=	https://free-astro.org/download/
 
@@ -24,6 +23,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
 		libgsl.so:math/gsl \
+		libjson-glib-1.0.so:devel/json-glib \
 		liblcms2.so:graphics/lcms2 \
 		libopencv_core.so:graphics/opencv \
 		libpng.so:graphics/png \
@@ -34,8 +34,6 @@ LIB_DEPENDS+=	libopencv_photo.so:graphics/opencv # for some reason, configure fa
 USES=		compiler:c++11-lang desktop-file-utils gettext \
 		gnome meson pkgconfig jpeg shared-mime-info tar:bz2
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 intltool pango
-
-NO_WRKSUBDIR=	yes
 
 INSTALLS_ICONS=	yes
 
