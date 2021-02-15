@@ -1,0 +1,76 @@
+commit 89e72841a8f5
+Author: Greg V <greg@unrelenting.technology>
+Date:   Thu Jan 14 22:16:53 2021 +0000
+
+    Bug 1686713 - Fix mozglue/misc/Uptime build on *BSD
+---
+ mozglue/misc/Uptime.cpp | 28 +++++++++++++++++-----------
+ 1 file changed, 17 insertions(+), 11 deletions(-)
+
+diff --git mozglue/misc/Uptime.cpp mozglue/misc/Uptime.cpp
+index bded4017ec13..0e953101994d 100644
+--- mozglue/misc/Uptime.cpp
++++ mozglue/misc/Uptime.cpp
+@@ -43,9 +43,7 @@ Maybe<uint64_t> NowIncludingSuspendMs() {
+   return Some(clock_gettime_nsec_np(CLOCK_MONOTONIC_RAW) / kNSperMS);
+ }
+ 
+-#endif  // macOS
+-
+-#if defined(XP_WIN)
++#elif defined(XP_WIN)
+ 
+ // Number of hundreds of nanoseconds in a millisecond
+ static constexpr uint64_t kHNSperMS = 10000;
+@@ -77,11 +75,23 @@ Maybe<uint64_t> NowIncludingSuspendMs() {
+   pQueryInterruptTime(&interrupt_time);
+   return Some(interrupt_time / kHNSperMS);
+ }
+-#endif  // XP_WIN
+ 
+-#if defined(XP_LINUX)  // including Android
++#else
++
+ #  include <time.h>
+ 
++#  ifdef CLOCK_UPTIME  // FreeBSD, OpenBSD
++#    define CLOCK_EXCLUDING_SUSPEND CLOCK_UPTIME
++#  else
++#    define CLOCK_EXCLUDING_SUSPEND CLOCK_MONOTONIC
++#  endif
++
++#  ifdef CLOCK_BOOTTIME  // Linux (including Android), OpenBSD (== MONOTONIC)
++#    define CLOCK_INCLUDING_SUSPEND CLOCK_BOOTTIME
++#  else
++#    define CLOCK_INCLUDING_SUSPEND CLOCK_MONOTONIC
++#  endif
++
+ // Number of nanoseconds in a millisecond.
+ static constexpr uint64_t kNSperMS = 1000000;
+ 
+@@ -92,23 +102,19 @@ uint64_t TimespecToMilliseconds(struct timespec aTs) {
+ Maybe<uint64_t> NowExcludingSuspendMs() {
+   struct timespec ts = {0};
+ 
+-  if (clock_gettime(CLOCK_MONOTONIC, &ts)) {
++  if (clock_gettime(CLOCK_EXCLUDING_SUSPEND, &ts)) {
+     return Nothing();
+   }
+   return Some(TimespecToMilliseconds(ts));
+ }
+ 
+ Maybe<uint64_t> NowIncludingSuspendMs() {
+-#  ifndef CLOCK_BOOTTIME
+-  return Nothing();
+-#  else
+   struct timespec ts = {0};
+ 
+-  if (clock_gettime(CLOCK_BOOTTIME, &ts)) {
++  if (clock_gettime(CLOCK_INCLUDING_SUSPEND, &ts)) {
+     return Nothing();
+   }
+   return Some(TimespecToMilliseconds(ts));
+-#  endif
+ }
+ 
+ #endif  // XP_LINUX

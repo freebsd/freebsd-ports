@@ -9,7 +9,6 @@ Some features found on Windows, macOS and Linux are not implemented:
 - Process sandboxing (requires Capsicum backend)
 - Reduced memory usage (requires mozjemalloc)
 - Crash Reporter (requires Google Breakpad and reproducible builds)
-- Gamepad API (requires libusbhid backend)
 - WebVR (requires open source runtime)
 - TCP fast open
 - `about:networking` (requires link state notification)
@@ -29,6 +28,11 @@ To force a specific backend open `about:config` page and create
 Microphone selection only works in `oss`, `pulse`, `pulse-rust` backends.
 Other backends are limited to `default` which is usually `/dev/dsp`,
 so use virtual_oss to reroute microphones from non-default devices.
+
+## Gamepad API
+
+Requires evdev(4) joystick support. On FreeBSD 13.0 enable hgame(4)
+while older versions can use sysutils/iichid or multimedia/webcamd.
 
 ## smb:// issues
 Network group, machine, and share browsing does not work correctly.
