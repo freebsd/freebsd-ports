@@ -2,7 +2,7 @@
 
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.11.1
+DISTVERSION?=	1.11.2
 PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
@@ -29,7 +29,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
 GH_TUPLE?=	hrydgard:glslang:8.13.3559-76-gd0850f87:glslang/ext/glslang \
 		hrydgard:miniupnp:miniupnpd_2_1-354-g7e229dd:miniupnp/ext/miniupnp \
-		hrydgard:${PORTNAME}-lang:adef2ae:lang/assets/lang \
+		hrydgard:${PORTNAME}-lang:6bd5b4b:lang/assets/lang \
 		KhronosGroup:SPIRV-Cross:2019-05-20-60-ga1f7c8dc:SPIRV/ext/SPIRV-Cross \
 		Kingcom:armips:v0.10.0-28-g7885552:armips/ext/armips
 
