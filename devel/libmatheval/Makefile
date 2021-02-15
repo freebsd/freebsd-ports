@@ -3,7 +3,7 @@
 
 PORTNAME=	libmatheval
 PORTVERSION=	1.1.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel math
 MASTER_SITES=	GNU
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	flex>=2.5.39_1:textproc/flex
-LIB_DEPENDS=	libguile.so:lang/guile
+LIB_DEPENDS=	libguile.so:lang/guile1
 
 USES=		libtool localbase makeinfo pathfix
 GNU_CONFIGURE=	yes
