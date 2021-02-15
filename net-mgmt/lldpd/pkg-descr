@@ -15,4 +15,4 @@ real physical devices, not on bridges, vlans, etc. However, vlans can
 be mapped on the bonding device. You can bridge vlan but not add vlans
 on bridges. More complex setups may give false results.
 
-WWW: http://vincentbernat.github.io/lldpd/
+WWW: https://lldpd.github.io/
