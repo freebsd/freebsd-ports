@@ -327,6 +327,7 @@
     SUBDIR += sketchy
     SUBDIR += slib
     SUBDIR += slib-guile
+    SUBDIR += slib-guile1
     SUBDIR += slib-guile2
     SUBDIR += slisp
     SUBDIR += smalltalk
