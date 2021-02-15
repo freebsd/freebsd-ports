@@ -3,53 +3,57 @@
 #    $MCom: ports/lang/guile/Makefile,v 1.1 2006/09/12 14:57:06 ahze Exp $
 
 PORTNAME=	guile
-PORTVERSION=	1.8.8
-PORTREVISION=	4
+PORTVERSION=	3.0.5
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
-LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
+LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libltdl.so:devel/libltdl \
-		libgmp.so:math/gmp
+LIB_DEPENDS=	libffi.so:devel/libffi \
+		libgmp.so:math/gmp \
+		libltdl.so:devel/libltdl \
+		libunistring.so:devel/libunistring
 
-CONFLICTS_INSTALL=	guile2-[0-9]*
-
-USES=		autoreconf gmake libtool makeinfo ncurses pathfix
+USES=		charsetfix compiler:c11 gmake iconv libtool makeinfo pathfix pkgconfig \
+	readline tar:lz
 USE_LDCONFIG=	yes
+
+CONFLICTS_INSTALL=	guile1-[0-9]* guile2-[0-9]*
+
+MAKE_JOBS_UNSAFE=	yes
+
 GNU_CONFIGURE=	yes
-CFLAGS+=	-fwrapv
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
-PORTSCOUT=	limit:^1\.
+
+INFO=		guile r5rs
 
 PLIST_SUB=	GUILE_VER=${PORTVERSION:R}
 
-REINPLACE_FILES=	libguile/smob.c libguile/filesys.c libguile/gc.c \
-			libguile/mallocs.c libguile/eval.c libguile/gc-malloc.c \
-			libguile/ports.c libguile/gc-mark.c libguile/gc_os_dep.c
-
-INFO=		goops guile-tut guile r5rs
-
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	NLS THREADS
+OPTIONS_DEFAULT=NLS THREADS
 OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext
-NLS_USES_OFF=		gettext-tools
+NLS_USES=	gettext
 
-post-extract:
-	@${FIND} ${WRKSRC}/doc -name "*.info*" -delete
+THREADS_CONFIGURE_WITH=	threads
+THREADS_LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded
+THREADS_LIB_DEPENDS_OFF=	libgc.so:devel/boehm-gc
 
 post-patch:
-	@cd ${WRKSRC} ; \
-	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
-	@${REINPLACE_CMD} -e 's|$$(libdir)|$$(libdir)data|g' ${WRKSRC}/Makefile.am
-	@${TOUCH} ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|sys/time.h sys/timeb.h|sys/time.h |g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-i -e|-i.bak -e|' \
+		${WRKSRC}/libguile/Makefile.in
+
+post-patch-THREADS-on:
+	@${REINPLACE_CMD} -e 's|bdw-gc|bdw-gc-threaded|g' ${WRKSRC}/configure
+
+post-install:
+	${FIND} ${STAGEDIR}${PREFIX}/lib/guile/${PORTVERSION:R}/ccache/ -type f -name '*\.go' -exec ${STRIP_CMD} {} \;
 
 .include <bsd.port.mk>
