@@ -1,0 +1,12 @@
+--- src/meson.build.orig	2020-11-28 01:56:42 UTC
++++ src/meson.build
+@@ -88,7 +88,7 @@ pkgmod.generate(libfontconfig,
+   version: fc_version,
+   variables: [
+     'sysconfdir=@0@'.format(join_paths(prefix, get_option('sysconfdir'))),
+-    'localstatedir=@0@'.format(join_paths(prefix, get_option('localstatedir'))),
++    'localstatedir=/var',
+     'confdir=${sysconfdir}/fonts',
+-    'cachedir=${localstatedir}/cache/fontconfig',
++    'cachedir=/var/db/fontconfig',
+   ])

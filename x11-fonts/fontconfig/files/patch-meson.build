@@ -1,0 +1,36 @@
+--- meson.build.orig	2020-11-28 02:38:31 UTC
++++ meson.build
+@@ -212,19 +212,19 @@ else
+     conf.set_quoted('FC_DEFAULT_FONTS', '<dir>/System/Library/Fonts</dir> <dir>/Library/Fonts</dir> <dir>~/Library/Fonts</dir> <dir>/System/Library/Assets/com_apple_MobileAsset_Font3</dir> <dir>/System/Library/Assets/com_apple_MobileAsset_Font4</dir>')
+     fonts_conf.set('FC_DEFAULT_FONTS', '<dir>/System/Library/Fonts</dir> <dir>/Library/Fonts</dir> <dir>~/Library/Fonts</dir> <dir>/System/Library/Assets/com_apple_MobileAsset_Font3</dir> <dir>/System/Library/Assets/com_apple_MobileAsset_Font4</dir>')
+   else
+-    conf.set_quoted('FC_DEFAULT_FONTS', '<dir>/usr/share/fonts</dir>')
+-    fonts_conf.set('FC_DEFAULT_FONTS', '<dir>/usr/share/fonts</dir>')
++    conf.set_quoted('FC_DEFAULT_FONTS', '<dir>%%FCDEFAULTFONTS%%</dir> <dir>%%FCADDFONTS%%</dir>')
++    fonts_conf.set('FC_DEFAULT_FONTS', '<dir>%%FCDEFAULTFONTS%%</dir> <dir>%%FCADDFONTS%%</dir>')
+   endif
+-  fc_cachedir = join_paths(prefix, get_option('localstatedir'), 'cache', meson.project_name())
++  fc_cachedir = '/var/db/fontconfig'
+   thread_dep = dependency('threads')
+   conf.set('HAVE_PTHREAD', 1)
+   deps += [thread_dep]
+ endif
+ 
+-fc_templatedir = join_paths(prefix, get_option('datadir'), 'fontconfig/conf.avail')
++fc_templatedir = join_paths(prefix, get_option('sysconfdir'), 'fonts/conf.avail')
+ fc_baseconfigdir = join_paths(prefix, get_option('sysconfdir'), 'fonts')
+ fc_configdir = join_paths(fc_baseconfigdir, 'conf.d')
+-fc_xmldir = join_paths(prefix, get_option('datadir'), 'xml/fontconfig')
++fc_xmldir = join_paths(prefix, get_option('sysconfdir'), 'fonts')
+ 
+ 
+ conf.set_quoted('CONFIGDIR', fc_configdir)
+@@ -361,7 +361,7 @@ configure_file(output: 'fonts.conf',
+   install: true)
+ 
+ install_data('fonts.dtd',
+-  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'xml/fontconfig')
++  install_dir: join_paths(get_option('prefix'), get_option('sysconfdir'), 'fonts')
+ )
+ 
+ fc_headers = [

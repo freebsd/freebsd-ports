@@ -1,0 +1,33 @@
+--- conf.d/meson.build.orig	2020-11-28 01:56:42 UTC
++++ conf.d/meson.build
+@@ -37,7 +37,7 @@ conf_files = [
+   '90-synthetic.conf',
+ ]
+ 
+-preferred_hinting = 'slight'
++preferred_hinting = '%%FCPREFERREDHINTING%%'
+ 
+ conf_links = [
+   '10-hinting-@0@.conf'.format(preferred_hinting),
+@@ -59,10 +59,10 @@ conf_links = [
+   '90-synthetic.conf',
+ ]
+ 
+-install_data(conf_files, install_dir: join_paths(get_option('datadir'), 'fontconfig/conf.avail'))
++install_data(conf_files, install_dir: join_paths(get_option('sysconfdir'), 'fonts/conf.avail'))
+ 
+ meson.add_install_script('link_confs.py',
+-  join_paths(get_option('prefix'), get_option('datadir'), 'fontconfig/conf.avail'),
++  join_paths(get_option('prefix'), get_option('sysconfdir'), 'fonts/conf.avail'),
+   join_paths(get_option('sysconfdir'), 'fonts', 'conf.d'),
+   conf_links,
+ )
+@@ -79,7 +79,7 @@ endforeach
+ custom_target('35-lang-normalize.conf',
+   output: '35-lang-normalize.conf',
+   command: [find_program('write-35-lang-normalize-conf.py'), ','.join(orths), '@OUTPUT@'],
+-  install_dir: join_paths(get_option('datadir'), 'fontconfig/conf.avail'),
++  install_dir: join_paths(get_option('sysconfdir'), 'fonts/conf.avail'),
+   install: true)
+ 
+ # README

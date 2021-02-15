@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.13.92
-PORTREVISION?=	2
-PORTEPOCH?=	1
+DISTVERSION=	2.13.93
+PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://www.freedesktop.org/software/fontconfig/release/
 
@@ -14,76 +13,66 @@ COMMENT=	XML-based font configuration API for X Windows
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gperf tar:xz
-
-.if !defined(REFERENCE_PORT)
-
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2
 
-USES+=		cpe gmake libtool pathfix pkgconfig
+USES=		cpe gperf meson pkgconfig python:3.6+,build shebangfix tar:xz
 CPE_VENDOR=	fontconfig_project
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.d \
-		--with-templatedir=${PREFIX}/etc/fonts/conf.avail \
-		--with-xmldir=${PREFIX}/etc/fonts \
-		--with-expat-includes=${LOCALBASE}/include \
-		--with-expat-lib=${LOCALBASE}/lib \
-		--with-default-hinting=${PREFERRED_HINTING} \
-		--with-default-fonts=${PREFIX}/share/fonts \
-		--with-add-fonts=${LOCALBASE}/lib/X11/fonts \
-		--with-cache-dir=/var/db/fontconfig \
-		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
-		--disable-docs
 
-# D6155: static linked library linking added to support statically linked
-# 	 applications, e.g. x11/xforward static option
-CONFIGURE_ARGS+=	--enable-static
+SHEBANG_FILES=	conf.d/link_confs.py \
+		conf.d/write-35-lang-normalize-conf.py \
+		fc-case/fc-case.py \
+		fc-lang/fc-lang.py
 
-PKGINSTALL=	${WRKDIR}/pkg-install
-INSTALL_TARGET=install-strip
+TEST_TARGET=	test
+
+# Custom configuration variables
+FCDEFAULTFONTS=	${PREFIX}/share/fonts
+FCADDFONTS=	${LOCALBASE}/lib/X11/fonts
+
+# To avoid circular depdency docs (including manpages) needs to be disabled as
+# they depend on textproc/docbook-utils which requires fontconfig
+MESON_ARGS=	-Ddefault_library=both -Ddoc=disabled
 
 PLIST_SUB=	PREFERRED_HINTING=${PREFERRED_HINTING}
-PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
 
-OPTIONS_DEFINE=	DOCS NLS NO_BITMAPS
-OPTIONS_DEFAULT=HINTING_SLIGHT
+OPTIONS_DEFINE=	NLS BITMAPS TEST
+OPTIONS_DEFAULT=BITMAPS HINTING_SLIGHT
 OPTIONS_SUB=	yes
 
-NO_BITMAPS_DESC=	Reject bitmap fonts by default
-
 OPTIONS_SINGLE=	HINTING
-HINTING_DESC=	Preferred pixel hinting configuration
 .for opt in NONE SLIGHT MEDIUM FULL
 OPTIONS_SINGLE_HINTING+=	HINTING_${opt}
 HINTING_${opt}_DESC=	${opt:tl}
 HINTING_${opt}_VARS=	PREFERRED_HINTING=${opt:tl}
 .endfor
 
-NLS_USES=		gettext
-NLS_CONFIGURE_ENABLE=	nls
+BITMAPS_DESC=	Enable bitmap fonts by default
+HINTING_DESC=	Preferred pixel hinting configuration
 
-post-patch-NO_BITMAPS-on:
-	@${REINPLACE_CMD} -i '.bitmaps.bak' -e \
-		'/^CONF_LINKS =/s|$$|\${.newline}	70-no-bitmaps.conf \\|' \
-		${WRKSRC}/conf.d/Makefile.in
+NLS_USES=		gettext-tools
+NLS_MESON_ENABLED=	nls
+
+TEST_MESON_ENABLED=	tests
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%FCDEFAULTFONTS%%|${FCDEFAULTFONTS}|g' \
+	    ${PATCH_WRKSRC}/meson.build
+	@${REINPLACE_CMD} -e 's|%%FCADDFONTS%%|${FCADDFONTS}|g' \
+	    ${PATCH_WRKSRC}/meson.build
+	@${REINPLACE_CMD} -e 's|%%FCPREFERREDHINTING%%|${PREFERRED_HINTING}|g' \
+	    ${PATCH_WRKSRC}/conf.d/meson.build
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/fc-*/*.1 \
-		${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/*.5 \
-		${STAGEDIR}${PREFIX}/man/man5
-	${INSTALL_DATA} ${WRKSRC}/fonts.conf \
-		${STAGEDIR}${PREFIX}/etc/fonts/fonts.conf.sample
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|' < ${FILESDIR}/pkg-install.in \
-		> ${PKGINSTALL}
+	${MV} ${STAGEDIR}${PREFIX}/etc/fonts/fonts.conf ${STAGEDIR}${PREFIX}/etc/fonts/fonts.conf.sample
+	@${MKDIR} ${STAGEDIR}/var/db/fontconfig
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
+post-install-BITMAPS-off:
+	${RLN} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail/70-no-bitmaps.conf ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/70-no-bitmaps.conf
+
+post-install-BITMAPS-on:
+	${RM} ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/70-no-bitmaps.conf
+	${RLN} ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail/70-yes-bitmaps.conf ${STAGEDIR}${PREFIX}/etc/fonts/conf.d/70-yes-bitmaps.conf
 
 .include <bsd.port.mk>
-
-.endif
