@@ -6,16 +6,24 @@ EXE_NAME=xmonad-config
 # xmonad tells us how it want resulting executable to be named
 output_file=$1; shift
 
-CFG_DIR=$HOME/.xmonad
+CFG_DIR="$HOME/.xmonad"
+
+if [ ! -f "$HOME/.cabal/config" ]; then
+cabal new-update
+fi
 
 # build the config
 cd $CFG_DIR
-cabal new-clean || true
 cabal new-configure --enable-optimization --enable-executable-stripping
 cabal new-build
 
 if [ "$output_file" != "" ]; then
 # move resulting binary where it was requested to reside
-find $CFG_DIR/dist-newstyle -type f -perm +111 -name $EXE_NAME \
-     -exec mv '{}' $output_file ';'
+res=`find $CFG_DIR/dist-newstyle -type f -perm +111 -name $EXE_NAME`
+if [ "$res" == "" ]; then
+    return 1
+fi
+# use "mv" to be able to replace a running executable
+mv -f "$res" "$output_file"
+cp "$output_file" "$res"
 fi
