@@ -343,7 +343,6 @@
     SUBDIR += squeak
     SUBDIR += squirrel
     SUBDIR += swi-pl
-    SUBDIR += tauthon
     SUBDIR += tcbasic
     SUBDIR += tcc
     SUBDIR += tcl-manual
