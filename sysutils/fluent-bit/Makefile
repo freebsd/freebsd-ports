@@ -3,7 +3,7 @@
 
 PORTNAME=	fluent-bit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.9
+DISTVERSION=	1.7.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -18,12 +18,13 @@ BROKEN_riscv64=		fails to build: No support for this architecture (yet)
 USE_GITHUB=	yes
 GH_ACCOUNT=	fluent
 
-USES=		cmake:noninja compiler:c11 gmake bison compiler
+USES=		cmake:noninja compiler:c11 gmake bison
 
 OPTIONS_DEFINE=		SSL PGSQL
 OPTIONS_DEFAULT=	SSL
 
-CMAKE_ARGS=		-DFLB_DEBUG=Off -DFLB_TRACE=Off -DFLB_CORO_STACK_SIZE=24576
+LDFLAGS=		-lexecinfo
+CMAKE_ARGS=		-DFLB_DEBUG=Off -DFLB_TRACE=Off
 
 SSL_USES=		ssl
 SSL_CMAKE_ON=		-DFLB_TLS=On
