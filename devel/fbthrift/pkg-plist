@@ -156,6 +156,7 @@ include/thrift/lib/cpp2/async/tests/util/TestSinkService.h
 include/thrift/lib/cpp2/async/tests/util/TestStreamService.h
 include/thrift/lib/cpp2/async/tests/util/Util.h
 include/thrift/lib/cpp2/detail/meta.h
+include/thrift/lib/cpp2/frozen/FixedSizeStringHash.h
 include/thrift/lib/cpp2/frozen/Frozen.h
 include/thrift/lib/cpp2/frozen/FrozenAssociative-inl.h
 include/thrift/lib/cpp2/frozen/FrozenBool-inl.h
@@ -474,6 +475,7 @@ lib/libconcurrency.so.1.0.0
 lib/libmustache_lib.so
 lib/libmustache_lib.so.1.0.0
 lib/librocketupgrade.so
+lib/librocketupgrade.so.1.0.0
 lib/librpcmetadata.so
 lib/librpcmetadata.so.1.0.0
 lib/libthrift-core.so
