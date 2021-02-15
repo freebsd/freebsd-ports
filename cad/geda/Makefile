@@ -4,7 +4,7 @@
 PORTNAME=	geda
 PORTVERSION=	1.8.2
 DISTVERSIONPREFIX=gaf-
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://ftp.geda-project.org/${PORTNAME}-gaf/stable/v${PORTVERSION:R}/${PORTVERSION}/
@@ -19,7 +19,7 @@ BROKEN=		ld: error: ../src/.libs/libgeda.so: undefined reference to g_input_stre
 .endif
 
 LIB_DEPENDS=	libstroke.so:devel/libstroke \
-		libguile.so:lang/guile
+		libguile.so:lang/guile1
 RUN_DEPENDS=	gawk:lang/gawk\
 
 USES=		desktop-file-utils gettext gmake gnome libtool pathfix perl5 \
