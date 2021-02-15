@@ -9,6 +9,7 @@ MAINTAINER=	khng300@gmail.com
 COMMENT=	Rime Input Method Engine, the core library
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libcapnp.so:devel/capnproto \
