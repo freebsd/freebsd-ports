@@ -3,16 +3,16 @@
 
 PORTNAME=	fmars
 PORTVERSION=	0.0.207
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://corewar.co.uk/janeczek/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fast Memory Array Redcode Simulator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	guile:lang/guile
+BUILD_DEPENDS=	guile:lang/guile1
 
 USES=		gmake tar:bzip2
 ALL_TARGET=	x${PORTNAME}
