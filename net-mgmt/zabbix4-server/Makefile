@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix4
-PORTVERSION=	4.0.27
+PORTVERSION=	4.0.28
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${PORTVERSION:R}/
