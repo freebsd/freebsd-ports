@@ -3,6 +3,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	4.4.3
+PORTREVISION=	1
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -35,8 +36,8 @@ USE_RC_SUBR=	mongod
 
 CONFLICTS_INSTALL=	mongodb36 mongodb4[02]
 
-OPTIONS_DEFINE=	SASL SSL
-OPTIONS_DEFAULT=SASL SSL
+OPTIONS_DEFINE=	LTO SASL SSL
+OPTIONS_DEFAULT=LTO SASL SSL
 
 python_OLD_CMD=	@python_interpreter@
 MAKE_ARGS=	--use-system-zlib \
@@ -52,6 +53,8 @@ MAKE_ARGS=	--use-system-zlib \
 
 USERS=		mongodb
 GROUPS=		mongodb
+
+LTO_MAKE_ARGS=	--lto=on
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
