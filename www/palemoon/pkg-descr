@@ -1,0 +1,17 @@
+Pale Moon(TM) offers you a browsing experience in a browser completely built
+from its own, independently developed source that has been forked off from
+Firefox/Mozilla code a number of years ago, with carefully selected features
+and optimizations to improve the browser's stability and user experience, while
+offering full customization and a growing collection of extensions and themes
+to make the browser truly your own.
+
+Some of the main features:
+- Based on the Unified XUL Platform (UXP) containing our own optimized layout
+  and rendering engine (Goanna).
+- Safe: Forked from mature Mozilla code and regularly updated with the latest
+  security patches.
+- Secure: Additional security features and security-aware development
+- Zero ads; no telemetry, spyware or data gathering
+- Familiar, efficient, fully customizable interface
+
+WWW: https://www.palemoon.org/

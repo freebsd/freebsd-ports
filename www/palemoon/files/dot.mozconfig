@@ -1,0 +1,31 @@
+# Standard build options for Pale Moon
+# See http://developer.palemoon.org/build/linux/
+
+# The 'configure' ports step replaces %%VAR%% with content of Makefile's VAR
+# and appends lines to this file.
+
+mk_add_options MOZ_OBJDIR=%%PM_BUILD_DIR%%
+
+ac_add_options --enable-application=palemoon
+ac_add_options --enable-optimize="-w %%PM_OPTIMIZE%%"
+ac_add_options --enable-default-toolkit=cairo-gtk3
+ac_add_options --enable-strip
+ac_add_options --enable-devtools
+ac_add_options --disable-eme
+ac_add_options --disable-webrtc
+ac_add_options --disable-gamepad
+ac_add_options --disable-tests
+ac_add_options --disable-debug
+ac_add_options --disable-necko-wifi
+ac_add_options --disable-updater
+ac_add_options --with-pthreads
+ac_add_options --enable-phoenix-extensions
+
+ac_add_options --enable-official-branding
+export MOZILLA_OFFICIAL=1
+
+# Don't bother compressing, mach's package is just intermediate file
+export MOZ_PKG_FORMAT=TAR
+
+# Below this line, build options depending on port options, as well as make and
+# build flags, will be appended.
