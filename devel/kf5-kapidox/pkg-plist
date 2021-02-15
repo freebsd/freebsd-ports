@@ -25,6 +25,7 @@ bin/kapidox_generate
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/ako.webmanifest
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/ako.webmanifest.license
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/css/bg.png
+%%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/css/customdoxygen.css
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/default_product.png
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/favicon.ico
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/frameworks.css
@@ -39,6 +40,7 @@ bin/kapidox_generate
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/icons/bad.png
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/icons/ok.png
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/icons/warning.png
+%%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/js/main.js
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/js/notetip.js
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/js/search.js
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/js/subgroup.js

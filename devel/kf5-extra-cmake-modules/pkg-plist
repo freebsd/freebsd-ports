@@ -48,10 +48,13 @@ share/ECM/kde-modules/KDECMakeSettings.cmake
 share/ECM/kde-modules/KDEClangFormat.cmake
 share/ECM/kde-modules/KDECompilerSettings.cmake
 share/ECM/kde-modules/KDEFrameworkCompilerSettings.cmake
+share/ECM/kde-modules/KDEGitCommitHooks.cmake
 share/ECM/kde-modules/KDEInstallDirs.cmake
 share/ECM/kde-modules/KDEPackageAppTemplates.cmake
 share/ECM/kde-modules/appstreamtest.cmake
 share/ECM/kde-modules/clang-format.cmake
+share/ECM/kde-modules/kde-git-commit-hooks/clang-format.sh
+share/ECM/kde-modules/kde-git-commit-hooks/pre-commit.in
 share/ECM/kde-modules/prefix.sh.cmake
 share/ECM/modules/CheckAtomic.cmake
 share/ECM/modules/ECMAddAppIcon.cmake

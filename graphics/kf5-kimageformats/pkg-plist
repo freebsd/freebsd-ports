@@ -11,6 +11,8 @@
 %%QT_PLUGINDIR%%/imageformats/kimg_rgb.so
 %%QT_PLUGINDIR%%/imageformats/kimg_tga.so
 %%QT_PLUGINDIR%%/imageformats/kimg_xcf.so
+%%QT_PLUGINDIR%%/imageformats/kimg_ani.so
+share/kservices5/qimageioplugins/ani.desktop
 %%AVIF%%share/kservices5/qimageioplugins/avif.desktop
 share/kservices5/qimageioplugins/dds.desktop
 share/kservices5/qimageioplugins/eps.desktop
