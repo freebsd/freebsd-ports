@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gifski
-DISTVERSION=	1.3.3
-PORTREVISION=	1
+DISTVERSION=	1.4.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,29 +46,29 @@ CARGO_CRATES=	adler-0.2.3 \
 		glob-0.3.0 \
 		hashbrown-0.9.1 \
 		hermit-abi-0.1.18 \
-		imagequant-3.0.3+sys2.14.0 \
-		imagequant-sys-3.0.3+sys2.14.0 \
+		imagequant-3.0.4-alpha.2 \
+		imagequant-sys-3.0.4-alpha.2 \
 		imgref-1.7.1 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.84 \
+		libc-0.2.86 \
 		libloading-0.5.2 \
-		lodepng-3.4.3 \
+		lodepng-3.4.4 \
 		memchr-2.3.4 \
 		miniz_oxide-0.4.3 \
 		natord-1.0.9 \
 		nom-5.1.2 \
 		num_cpus-1.13.0 \
-		openmp-sys-1.0.0 \
+		openmp-sys-1.2.0-alpha.1 \
 		pbr-1.0.4 \
 		peeking_take_while-0.1.2 \
 		pkg-config-0.3.19 \
 		proc-macro2-1.0.24 \
 		quick-error-2.0.0 \
-		quote-1.0.8 \
+		quote-1.0.9 \
 		regex-1.4.3 \
 		regex-syntax-0.6.22 \
-		resize-0.6.1 \
+		resize-0.6.2 \
 		rgb-0.8.25 \
 		rustc-hash-1.1.0 \
 		shlex-0.1.1 \
