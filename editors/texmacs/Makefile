@@ -3,12 +3,12 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.99.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors print
 MASTER_SITES=	http://www.texmacs.org/Download/ftp/tmftp/source/
 DISTNAME=	TeXmacs-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofhs@FreeBSD.org
 COMMENT=	WYSIWYG scientific text editor
 
 LICENSE=	GPLv3
@@ -18,7 +18,7 @@ BROKEN_FreeBSD_13=	assigning to 'bool' from incompatible type 'nullptr_t'
 BROKEN_FreeBSD_14=	assigning to 'bool' from incompatible type 'nullptr_t'
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
-		libguile.so:lang/guile \
+		libguile.so:lang/guile1 \
 		libgmp.so:math/gmp
 RUN_DEPENDS=	fig2dev:print/transfig
 
