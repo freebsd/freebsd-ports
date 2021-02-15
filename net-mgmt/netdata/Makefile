@@ -3,8 +3,7 @@
 
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.28.0
-PORTREVISION=	1
+DISTVERSION=	1.29.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -23,63 +22,54 @@ RUN_DEPENDS=	bash:shells/bash \
 
 USES=		autoreconf cpe gmake pathfix pkgconfig:both python shebangfix \
 		ssl
+USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_GLOB=	*
 
-NETDATA_CACHE=	/var/cache/${PORTNAME}
-NETDATA_LOG=	/var/log/${PORTNAME}
-NETDATA_PERST=	/var/db/${PORTNAME}
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-unit-tests
-CPPFLAGS+=	-D_WANT_VMMETER
 INSTALL_TARGET=	install-strip
+CPPFLAGS+=	-D_WANT_VMMETER
 
+SUB_FILES=	${PORTNAME}.conf.sample
 SUB_LIST=	NETDATA_CACHE=${NETDATA_CACHE} \
 		NETDATA_LOG=${NETDATA_LOG} \
 		NETDATA_PERST=${NETDATA_PERST}
+
+USERS=		netdata
+GROUPS=		netdata
 
 PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
 		NETDATA_LOG=${NETDATA_LOG} \
 		NETDATA_PERST=${NETDATA_PERST}
 
-USE_RC_SUBR=	${PORTNAME}
-SUB_FILES=	${PORTNAME}.conf.sample
-
-USERS=		netdata
-GROUPS=		netdata
-
 OPTIONS_DEFINE=		CLOUD CUPS DBENGINE FREEIPMI GOPLUGIN LTO
-OPTIONS_SUB=		YES
 OPTIONS_DEFAULT=	DBENGINE
 OPTIONS_DEFAULT_FreeBSD_12=	LTO
 OPTIONS_DEFAULT_FreeBSD_13=	LTO
 OPTIONS_DEFAULT_FreeBSD_14=	LTO
 OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${OPSYS}_${OSREL:R}}
+OPTIONS_SUB=		YES
 
 CLOUD_DESC=		Enable cloud functionality
+CUPS_DESC=		Enable support for cups
+DBENGINE_DESC=			Enable support for database engine
+FREEIPMI_DESC=			Enable support for freeipmi
+GOPLUGIN_DESC=		Enable the go collector plugin
+
 CLOUD_CONFIGURE_OFF=	--disable-cloud
 CLOUD_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-web_gui_index.html \
 			${FILESDIR}/extra-patch-web_gui_main.js
-
-CUPS_DESC=		Enable support for cups
-CUPS_CONFIGURE_ENABLE=	plugin-cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
-
-DBENGINE_DESC=			Enable support for database engine
-DBENGINE_CONFIGURE_ENABLE=	dbengine
+CUPS_CONFIGURE_ENABLE=	plugin-cups
 DBENGINE_LIB_DEPENDS=		libJudy.so:devel/judy \
 				liblz4.so:archivers/liblz4
-
-FREEIPMI_DESC=			Enable support for freeipmi
-FREEIPMI_CONFIGURE_ENABLE=	plugin-freeipmi
+DBENGINE_CONFIGURE_ENABLE=	dbengine
 FREEIPMI_LIB_DEPENDS=		libfreeipmi.so:sysutils/freeipmi
-
-GOPLUGIN_DESC=		Enable the go collector plugin
+FREEIPMI_CONFIGURE_ENABLE=	plugin-freeipmi
 GOPLUGIN_RUN_DEPENDS=	${LOCALBASE}/libexec/netdata/plugins.d/god.plugin:net-mgmt/netdata-go
-
-LTO_CONFIGURE_ENABLE=	lto
 LTO_USES=		compiler:c11
+LTO_CONFIGURE_ENABLE=	lto
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MLTO} && ${OPSYS}_${OSREL:R} == FreeBSD_11
@@ -89,6 +79,10 @@ BROKEN=		Link-Time Optimization breaks compilation on FreeBSD 11
 .if ${PORT_OPTIONS:MLTO} && ${ARCH:Mpowerpc*}
 USE_GCC=	yes
 .endif
+
+NETDATA_CACHE=	/var/cache/${PORTNAME}
+NETDATA_LOG=	/var/log/${PORTNAME}
+NETDATA_PERST=	/var/db/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%NETDATA_CACHE%%|${NETDATA_CACHE}|g' \

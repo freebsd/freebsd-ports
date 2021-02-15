@@ -1,5 +1,6 @@
 %%ETCDIR%%/.opt-out-from-anonymous-statistics
 %%ETCDIR%%/edit-config
+@sample(netdata,netdata,0640) %%ETCDIR%%/netdata.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/apps_groups.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/aws_kinesis.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/charts.d.conf.sample
@@ -312,8 +313,8 @@ libexec/netdata/python.d/uwsgi.chart.py
 libexec/netdata/python.d/varnish.chart.py
 libexec/netdata/python.d/w1sensor.chart.py
 libexec/netdata/python.d/web_log.chart.py
-sbin/netdata-claim.sh
 sbin/netdata
+sbin/netdata-claim.sh
 sbin/netdatacli
 @mode 4640
 @owner netdata
@@ -403,11 +404,11 @@ sbin/netdatacli
 %%DATADIR%%/web/lib/pako-1.0.6.min.js
 %%DATADIR%%/web/lib/perfect-scrollbar-0.6.15.min.js
 %%DATADIR%%/web/lib/tableExport-1.6.0.min.js
-%%DATADIR%%/web/old/index.html
 %%DATADIR%%/web/main.css
 %%DATADIR%%/web/main.js
 %%DATADIR%%/web/netdata-swagger.json
 %%DATADIR%%/web/netdata-swagger.yaml
+%%DATADIR%%/web/old/index.html
 %%DATADIR%%/web/refresh-badges.js
 %%DATADIR%%/web/robots.txt
 %%DATADIR%%/web/sitemap.xml
@@ -417,8 +418,6 @@ sbin/netdatacli
 @mode
 @owner
 @group
-@sample(netdata,netdata,0640) %%ETCDIR%%/netdata.conf.sample
-@dir(netdata,netdata,0750) %%ETCDIR%%
 @dir(netdata,netdata,0750) %%ETCDIR%%/charts.d
 @dir(netdata,netdata,0750) %%ETCDIR%%/custom-plugins.d
 @dir(netdata,netdata,0750) %%ETCDIR%%/go.d
@@ -427,8 +426,9 @@ sbin/netdatacli
 @dir(netdata,netdata,0750) %%ETCDIR%%/python.d
 @dir(netdata,netdata,0750) %%ETCDIR%%/ssl
 @dir(netdata,netdata,0750) %%ETCDIR%%/statsd.d
-@dir(netdata,netdata,0750) %%DATADIR%%
+@dir(netdata,netdata,0750) %%ETCDIR%%
 @dir(netdata,netdata,0750) %%DATADIR%%/web
+@dir(netdata,netdata,0750) %%DATADIR%%
 @dir(netdata,netdata,0750) %%NETDATA_CACHE%%
 @dir(netdata,netdata,0750) %%NETDATA_PERST%%
 @dir(netdata,netdata,0750) %%NETDATA_LOG%%
