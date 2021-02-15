@@ -3,7 +3,7 @@
 
 PORTNAME=	denemo
 PORTVERSION=	2.0.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libaubio.so:audio/aubio \
 		libsndfile.so:audio/libsndfile \
 		libportaudio.so:audio/portaudio \
 		librubberband.so:audio/rubberband \
-		libguile.so:lang/guile \
+		libguile.so:lang/guile1 \
 		libfftw3.so:math/fftw3
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
