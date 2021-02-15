@@ -5,6 +5,7 @@ lib/cmake/kImageAnnotator/kImageAnnotator-targets.cmake
 lib/cmake/kImageAnnotator/kImageAnnotatorConfig-version.cmake
 lib/cmake/kImageAnnotator/kImageAnnotatorConfig.cmake
 lib/libkImageAnnotator.so
+lib/libkImageAnnotator.so.0
 lib/libkImageAnnotator.so.%%SHLIB_VER%%
 %%DATADIR%%/translations/kImageAnnotator_cs.qm
 %%DATADIR%%/translations/kImageAnnotator_da.qm
@@ -23,6 +24,7 @@ lib/libkImageAnnotator.so.%%SHLIB_VER%%
 %%DATADIR%%/translations/kImageAnnotator_no.qm
 %%DATADIR%%/translations/kImageAnnotator_pl.qm
 %%DATADIR%%/translations/kImageAnnotator_pt.qm
+%%DATADIR%%/translations/kImageAnnotator_pt_BR.qm
 %%DATADIR%%/translations/kImageAnnotator_ru.qm
 %%DATADIR%%/translations/kImageAnnotator_sv.qm
 %%DATADIR%%/translations/kImageAnnotator_tr.qm
