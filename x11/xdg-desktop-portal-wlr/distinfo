@@ -1,9 +1,3 @@
-TIMESTAMP = 1588688317
-SHA256 (emersion-xdg-desktop-portal-wlr-v0.1.0_GH0.tar.gz) = 69d67c236f4bd498323af509d44ec4a1b826da337f7ee64bbfbdb98bfda8e541
-SIZE (emersion-xdg-desktop-portal-wlr-v0.1.0_GH0.tar.gz) = 20600
-SHA256 (7b7d927caedd.patch) = bf34ad41b5b5446582968bbe1eebd1d09eb0137a2f1cafd84b8db19ad1698c0d
-SIZE (7b7d927caedd.patch) = 2640
-SHA256 (4dbeaf3a0601.patch) = 75e3ff77b4110e83b072fc0dcdd019d6a7b74df147c76f955b67aa9c4178a0ba
-SIZE (4dbeaf3a0601.patch) = 1877
-SHA256 (a3e203584a1c.patch) = e69d5974c36bd5988852a8d13583b1c3768720e54eab4d5d8b8bcba2d7ed9fb7
-SIZE (a3e203584a1c.patch) = 2072
+TIMESTAMP = 1613380949
+SHA256 (emersion-xdg-desktop-portal-wlr-v0.2.0_GH0.tar.gz) = 316f5df3a70331c2fa5476e33acf92349e56eb0514d245b942fcf3122ba32df6
+SIZE (emersion-xdg-desktop-portal-wlr-v0.2.0_GH0.tar.gz) = 22260
