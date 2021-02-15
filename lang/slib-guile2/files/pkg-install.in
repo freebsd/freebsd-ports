@@ -2,7 +2,7 @@
 
 case "$2" in
 "POST-INSTALL")
-	ln -shf %%LOCALBASE%%/share/slib %%LOCALBASE%%/share/guile/2.0/slib
-	env GUILE_IMPLEMENTATION_PATH=%%LOCALBASE%%/share/guile/2.0 %%LOCALBASE%%/bin/guile -q -l %%LOCALBASE%%/share/slib/guile-2.init -c "(use-modules (ice-9 slib))(require 'new-catalog)"
+	ln -shf %%LOCALBASE%%/share/slib %%LOCALBASE%%/share/guile/2.2/slib
+	env GUILE_IMPLEMENTATION_PATH=%%LOCALBASE%%/share/guile/2.2 GUILE_AUTO_COMPILE=0 %%LOCALBASE%%/bin/guile -q -l %%LOCALBASE%%/share/slib/guile-2.init -c "(use-modules (ice-9 slib))(require 'new-catalog)"
 	;;
 esac

@@ -2,7 +2,7 @@
 
 case "$2" in
 "POST-DEINSTALL")
-	rm -f %%LOCALBASE%%/share/guile/2.0/slib
-	rm -f %%LOCALBASE%%/share/guile/2.0/slibcat
+	rm -f %%LOCALBASE%%/share/guile/2.2/slib
+	rm -f %%LOCALBASE%%/share/guile/2.2/slibcat
 	;;
 esac
