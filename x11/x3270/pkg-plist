@@ -25,17 +25,14 @@ etc/x3270/ibm_hosts
 %%X3270%%%%FONTSDIR%%/3270gt8.pcf.gz
 %%X3270%%%%FONTSDIR%%/3270h.pcf.gz
 @comment %%FONTSDIR%%/fonts.dir
-man/man1/b3270.man.gz
-man/man1/c3270.man.gz
-man/man1/pr3287.man.gz
-man/man1/s3270.man.gz
-man/man1/tcl3270.man.gz
-%%X3270%%man/man1/x3270-script.man.gz
-%%X3270%%man/man1/x3270.man.gz
-%%X3270%%man/man1/x3270if.man.gz
-man/man5/ibm_hosts.man.gz
+man/man1/b3270.1.gz
+man/man1/c3270.1.gz
+man/man1/pr3287.1.gz
+man/man1/s3270.1.gz
+man/man1/tcl3270.1.gz
+%%X3270%%man/man1/x3270-script.1.gz
+%%X3270%%man/man1/x3270.1.gz
+%%X3270%%man/man1/x3270if.1.gz
+man/man5/ibm_hosts.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%DBCS%%%%PORTDOCS%%%%DOCSDIR%%/README.dbcs
-%%DBCS%%etc/x3270/icudt28l_ibm-1027_P100-1995.cnv
-%%DBCS%%etc/x3270/icudt28l_ibm-300_P110-1997.cnv
-%%DBCS%%etc/x3270/icudt28l_ibm-837_P100-2000.cn

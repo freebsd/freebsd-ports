@@ -3,7 +3,7 @@
 
 PORTNAME?=	x3270
 PORTVERSION=	4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	x11 net
 MASTER_SITES=	http://x3270.bgp.nu/download/04.00/
 DISTFILES=	suite3270-${PORTVERSION}ga14-src.tgz
@@ -35,7 +35,9 @@ WRKSRC=		${WRKDIR}/suite3270-${PORTVERSION}
 
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES MDBCS
+OPTIONS_DEFINE=	DOCS EXAMPLES DBCS
+
+DBCS_DESC=	EBCDIC double-byte character set support
 
 .include <bsd.port.options.mk>
 
@@ -55,7 +57,7 @@ PLIST_SUB+=	X3270="@comment "
 .endif
 
 # EBCDIC double-byte character set support is disabled by default
-.if ${PORT_OPTIONS:MDBCS}
+.if ${PORT_OPTIONS:DBCS}
 CONFIGURE_ARGS+=	--enable-dbcs
 PLIST_SUB+=	DBCS=""
 .else
@@ -63,16 +65,19 @@ PLIST_SUB+=	DBCS="@comment "
 .endif
 
 post-install:
-.for m in b3270/b3270.man c3270/c3270.man pr3287/pr3287.man s3270/s3270.man \
-    tcl3270/tcl3270.man x3270/x3270-script.man x3270/x3270.man \
-    x3270if/x3270if.man
-	@(cd ${WRKSRC} ; ${INSTALL_MAN} ${m} ${STAGEDIR}${MAN1PREFIX}/man/man1/)
+.for m in b3270 c3270 pr3287 s3270 tcl3270
+	@(cd ${WRKSRC} ; ${INSTALL_MAN} ${m}/${m}.man ${STAGEDIR}${MAN1PREFIX}/man/man1/${m}.1)
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/c3270/ibm_hosts.man ${STAGEDIR}${MAN5PREFIX}/man/man5/
+.if ! defined(C3270)
+	${INSTALL_MAN} ${WRKSRC}/x3270/x3270.man ${STAGEDIR}${MAN5PREFIX}/man/man1/x3270.1
+	${INSTALL_MAN} ${WRKSRC}/x3270if/x3270if.man ${STAGEDIR}${MAN5PREFIX}/man/man1/x3270if.1
+	${INSTALL_MAN} ${WRKSRC}/x3270/x3270-script.man ${STAGEDIR}${MAN5PREFIX}/man/man1/x3270-script.1
+.endif
+	${INSTALL_MAN} ${WRKSRC}/c3270/ibm_hosts.man ${STAGEDIR}${MAN5PREFIX}/man/man5/ibm_hosts.5
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/x3270/README ${STAGEDIR}${DOCSDIR}
-.if ${PORT_OPTIONS:MDBCS}
+.if ${PORT_OPTIONS:DBCS}
 	${INSTALL_DATA} ${WRKSRC}/x3270/README.dbcs ${STAGEDIR}${DOCSDIR}
 .endif
 
