@@ -4259,14 +4259,3 @@ share/projectM/presets/presets_yin/yin - 210 - Beat it.milk
 share/projectM/presets/presets_yin/yin - 220 - Enter the silence.milk
 share/projectM/presets/presets_yin/yin - 230 - First impression.milk
 share/projectM/presets/presets_yin/yin - Beat Detective 007 demo.milk
-share/projectM/presets/tests/100-square.milk
-share/projectM/presets/tests/101-per_frame.milk
-share/projectM/presets/tests/102-per_frame3.milk
-share/projectM/presets/tests/103-multiple-eqn.milk
-share/projectM/presets/tests/104-continued-eqn.milk
-share/projectM/presets/tests/105-per_frame_init.milk
-share/projectM/presets/tests/110-per_pixel.milk
-share/projectM/presets/tests/200-wave.milk
-share/projectM/presets/tests/201-wavecode.milk
-share/projectM/presets/tests/300-beatdetect-bassmidtreb.milk
-share/projectM/presets/tests/README.md
