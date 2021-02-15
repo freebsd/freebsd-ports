@@ -15,6 +15,7 @@ COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
 LICENSE=	GPLv2 BSD2CLAUSE
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils
 LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libfribidi.so:converters/fribidi \
 		libfontconfig.so:x11-fonts/fontconfig \
