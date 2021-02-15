@@ -151,7 +151,7 @@
    else
      CLIENT_LIBS += -lspeex
    endif
-@@ -1442,6 +1457,9 @@ ifeq ($(HAVE_VM_COMPILED),true)
+@@ -1442,12 +1461,18 @@
    ifeq ($(ARCH),x86_64)
      Q3OBJ += $(B)/client/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
    endif
@@ -161,7 +161,16 @@
    ifeq ($(ARCH),ppc)
      Q3OBJ += $(B)/client/vm_powerpc.o $(B)/client/vm_powerpc_asm.o
    endif
-@@ -1591,6 +1609,9 @@ ifeq ($(HAVE_VM_COMPILED),true)
+   ifeq ($(ARCH),ppc64)
+     Q3OBJ += $(B)/client/vm_powerpc.o $(B)/client/vm_powerpc_asm.o
+   endif
++  ifeq ($(ARCH),ppc64le)
++    Q3OBJ += $(B)/client/vm_powerpc.o $(B)/client/vm_powerpc_asm.o
++  endif
+   ifeq ($(ARCH),sparc)
+     Q3OBJ += $(B)/client/vm_sparc.o
+   endif
+@@ -1591,10 +1616,16 @@
    ifeq ($(ARCH),x86_64)
      Q3DOBJ += $(B)/ded/vm_x86_64.o $(B)/ded/vm_x86_64_assembler.o
    endif
@@ -171,3 +180,10 @@
    ifeq ($(ARCH),ppc)
      Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
    endif
+   ifeq ($(ARCH),ppc64)
+     Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
+   endif
++  ifeq ($(ARCH),ppc64le)
++    Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
++  endif
+   ifeq ($(ARCH),sparc)
