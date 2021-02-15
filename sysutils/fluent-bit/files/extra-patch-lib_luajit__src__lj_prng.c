@@ -1,5 +1,5 @@
---- lib/luajit-2.1.0-dd5032e/src/lj_prng.c.orig	2020-10-31 04:27:35.000000000 +0100
-+++ lib/luajit-2.1.0-dd5032e/src/lj_prng.c	2020-11-02 21:47:49.484698000 +0100
+--- lib/luajit-2.1.0-1e66d0f/src/lj_prng.c.orig	2020-10-31 04:27:35.000000000 +0100
++++ lib/luajit-2.1.0-1e66d0f/src/lj_prng.c	2020-11-02 21:47:49.484698000 +0100
 @@ -116,7 +116,7 @@
  #define LJ_TARGET_HAS_GETENTROPY	1
  #endif
