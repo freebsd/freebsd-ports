@@ -725,7 +725,6 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%ARCH_LIB%%/CORE/regnodes.h
 %%ARCH_LIB%%/CORE/sbox32_hash.h
 %%ARCH_LIB%%/CORE/scope.h
-%%ARCH_LIB%%/CORE/stadtx_hash.h
 %%ARCH_LIB%%/CORE/sv.h
 %%ARCH_LIB%%/CORE/thread.h
 %%ARCH_LIB%%/CORE/time64.h
