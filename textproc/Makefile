@@ -1808,6 +1808,7 @@
     SUBDIR += texi2db
     SUBDIR += texi2html
     SUBDIR += texi2mdoc
+    SUBDIR += textnote
     SUBDIR += textogif
     SUBDIR += textql
     SUBDIR += the_silver_searcher

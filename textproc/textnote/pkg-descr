@@ -1,0 +1,11 @@
+textnote is a command line tool for quickly creating and managing daily plain
+text notes. It is designed for ease of use to encourage the practice of daily,
+organized note taking. textnote intentionally facilitates only the management
+(creation, opening, organizing, and consolidated archiving) of notes, following
+the philosophy that notes are best written in a text editor and not via a CLI.
+
+All note files are stored locally on the file system in a single directory.
+Notes can easily be synced to a remote server or cloud service if so desired by
+ensuring the application directory is remotely synced.
+
+WWW: https://github.com/dkaslovsky/textnote#installation
