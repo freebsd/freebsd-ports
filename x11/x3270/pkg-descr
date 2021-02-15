@@ -1,3 +1,8 @@
-3270 terminal emulator under X.
+3270 terminal emulator under X or console.
 
-WWW: http://x3270.bgp.nu/
+It can be used to communicate with any IBM host that supports 3270-style
+connections over TELNET.  It can also communicate with hosts that use
+line-by-line ASCII mode to do initial login negotiation before switching to
+full-screen 3270 mode.
+
+WWW: https://x3270.miraheze.org/wiki/Main_Page
