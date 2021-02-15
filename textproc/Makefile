@@ -1876,6 +1876,7 @@
     SUBDIR += wv2
     SUBDIR += xalan-c
     SUBDIR += xalan-j
+    SUBDIR += xenv
     SUBDIR += xerces-c3
     SUBDIR += xerces-j
     SUBDIR += xfce4-dict-plugin

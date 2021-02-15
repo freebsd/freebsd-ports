@@ -1,0 +1,6 @@
+Xenv is a text preprocessor that expands references to environment
+variables in the input text to their actual values.  Environment variables
+are referenced using POSIX-compatible shell syntax.  Text is read from the
+standard input and expanded text goes to the standard output.
+
+WWW: https://gnu.org.ua/software/xenv/
