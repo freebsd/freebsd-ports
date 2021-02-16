@@ -1,0 +1,6 @@
+Nagios plugin to check various UPS systems
+
+Instead of one plugin per UPS manufacturer, this plugin should
+cover many at once.
+
+WWW: https://labs.consol.de/nagios/check_ups_health/
