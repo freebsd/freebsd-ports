@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cde
-DISTVERSION=	2.3.1
-PORTREVISION=	2
+DISTVERSION=	2.3.2
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 
@@ -13,7 +12,6 @@ LICENSE=	LGPL21
 
 BROKEN_mips64=		fails to build: ./config/imake/imake: No such file or directory
 BROKEN_powerpc64=	fails to build: ./config/imake/imake: No such file or directory
-BROKEN_FreeBSD_13=	fails to build: flex scanner jammed
 
 BUILD_DEPENDS=	ksh93:shells/ksh93			\
 		bdftopcf:x11-fonts/bdftopcf		\
@@ -21,25 +19,27 @@ BUILD_DEPENDS=	ksh93:shells/ksh93			\
 		biconv:converters/iconv			\
 		${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig \
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2
-RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig \
+RUN_DEPENDS=	ksh93:shells/ksh93			\
+		${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig \
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
 		xrdb:x11/xrdb \
 		xset:x11/xset
 
 USES=		iconv:wchar_t jpeg motif perl5 shebangfix tcl:86 xorg
-SHEBANG_LANG=	pl ksh tcl
+SHEBANG_LANG=	pl
 SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate \
 		programs/dtdocbook/doc2sdl/docbook.tcl \
 		programs/dtdocbook/doc2sdl/dtdocbook
 USE_LDCONFIG=	${PREFIX}/dt/lib
-USE_RC_SUBR=	dtcms dtspc dtlogin
+USE_RC_SUBR=	dtcms dtlogin
 USE_XORG=	ice sm x11 xau xdmcp xext xinerama xmu xscrnsaver xt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 ALL_TARGET=	World
-MAKE_ARGS+=	PERL=${PERL}
+MAKE_ARGS+=	PERL=${PERL} "LOCAL_LDFLAGS=${LDFLAGS}"
 MAKE_JOBS_UNSAFE=yes
 SUB_FILES=	pkg-message
+LDFLAGS+=	-z muldefs #--allow-multiple-definition
 
 post-patch:
 	@if [ -f /usr/include/iconv.h ]; then \
@@ -104,13 +104,6 @@ post-patch:
 		${WRKSRC}/programs/dtmail/libDtMail/Common/FileShare.C \
 		${WRKSRC}/programs/dtmail/libDtMail/RFC/RFCMailBox.C
 
-# The docs say not necessary, but unreliable without
-#	@${MKDIR} ${WRKSRC}/imports/x11/include
-#	@${LN} -s ${LOCALBASE}/include/X11 ${WRKSRC}/imports/x11/include
-#	@${LN} -s ${LOCALBASE}/include/Xm ${WRKSRC}/imports/x11/include
-#	@${LN} -s ${LOCALBASE}/include/fontconfig ${WRKSRC}/imports/x11/include
-#	@${LN} -s ${LOCALBASE}/include/freetype2 ${WRKSRC}/imports/x11/include
-
 do-install:
 	cd ${WRKSRC}/admin/IntegTools/dbTools && \
 		./installCDE -s ${WRKSRC} -destdir ${STAGEDIR}
@@ -123,9 +116,5 @@ do-install:
 
 post-install:
 	${FIND} ${STAGEDIR}/${PREFIX}/dt -type f -exec ${SH} -c '${STRIP_CMD} {} > /dev/null 2>&1' \;
-
-#	Documented switches don't actually produce desired effect!
-#	./installCDE -s ${WRKSRC} -pI ${STAGEDIR}${PREFIX}/dt \
-#		   -pV ${STAGEDIR}/var -pC ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>

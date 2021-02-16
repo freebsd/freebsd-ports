@@ -1,0 +1,18 @@
+There really is no need to run make clean on newly extracted sources
+
+--- Makefile.orig	2021-02-11 09:31:32.955339000 +0000
++++ Makefile	2021-02-11 09:31:55.051680000 +0000
+@@ -51,13 +51,10 @@
+ 	;; esac;
+ 	@date
+ 	@echo ""
+-	cd $(IMAKESRC) && $(MAKE) $(FLAGS) clean
+ 	$(MAKE) $(MFLAGS) Makefile.boot
+ 	$(MAKE_CMD) $(MFLAGS) VerifyOS
+ 	$(MAKE_CMD) $(MFLAGS) Makefiles
+ 	$(MAKE_CMD) $(MFLAGS) Makefiles.doc
+-	$(MAKE_CMD) $(MFLAGS) clean
+-	$(MAKE_CMD) $(MFLAGS) clean.doc
+ 	$(MAKE_CMD) $(MFLAGS) includes
+ 	$(MAKE_CMD) $(MFLAGS) includes.doc
+ 	$(MAKE_CMD) $(MFLAGS) depend
