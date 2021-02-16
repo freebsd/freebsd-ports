@@ -17,7 +17,6 @@ PLIST_SUB+=		SVN115="" SVNLTS="@comment "
 LIB_DEPENDS+=		libsvn_client-1.so:devel/subversion
 OPTIONS_NAME=		devel_subversion
 MASTERDIR=		${.CURDIR}/../../devel/subversion
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-python-bindings
 .include		"${MASTERDIR}/Makefile.common"
 .elif ${WITH_SUBVERSION_VER} == LTS
 PKGNAMESUFFIX:=		${PKGNAMESUFFIX}-lts

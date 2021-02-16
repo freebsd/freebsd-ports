@@ -11,7 +11,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/py3c.h:devel/py3c
 USES=		python:2.7+
 USE_PYTHON=	flavors py3kplist
 
-PORTREVISION_114=	1
+# There is bug in python bindings Makefile
+MAKE_JOBS_UNSAFE=yes
+
+PORTREVISION_114=	2
 PORTREVISION_LTS=	0
 
 SVN_BUILD_BINDINGS=	yes
