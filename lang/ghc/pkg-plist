@@ -3562,6 +3562,8 @@ lib/ghc-%%GHC_VERSION%%/include/ghcautoconf.h
 lib/ghc-%%GHC_VERSION%%/include/ghcconfig.h
 lib/ghc-%%GHC_VERSION%%/include/ghcplatform.h
 lib/ghc-%%GHC_VERSION%%/include/ghcversion.h
+%%NODYNAMIC%%lib/ghc-%%GHC_VERSION%%/include/ffi.h
+%%NODYNAMIC%%lib/ghc-%%GHC_VERSION%%/include/ffitarget.h
 lib/ghc-%%GHC_VERSION%%/include/rts/Adjustor.h
 lib/ghc-%%GHC_VERSION%%/include/rts/BlockSignals.h
 lib/ghc-%%GHC_VERSION%%/include/rts/Bytecodes.h
@@ -3926,6 +3928,12 @@ lib/ghc-%%GHC_VERSION%%/rts/libHSrts_thr_debug.a
 %%DYNAMIC%%lib/ghc-%%GHC_VERSION%%/rts/libHSrts_thr_l-ghc%%GHC_VERSION%%.so
 lib/ghc-%%GHC_VERSION%%/rts/libHSrts_thr_l.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/rts/libHSrts_thr_p.a
+%%NODYNAMIC%%lib/ghc-%%GHC_VERSION%%/rts/libCffi.a
+%%NODYNAMIC%%lib/ghc-%%GHC_VERSION%%/rts/libCffi_debug.a
+%%NODYNAMIC%%lib/ghc-%%GHC_VERSION%%/rts/libCffi_l.a
+%%NODYNAMIC%%lib/ghc-%%GHC_VERSION%%/rts/libCffi_thr.a
+%%NODYNAMIC%%lib/ghc-%%GHC_VERSION%%/rts/libCffi_thr_debug.a
+%%NODYNAMIC%%lib/ghc-%%GHC_VERSION%%/rts/libCffi_thr_l.a
 lib/ghc-%%GHC_VERSION%%/settings
 %%DYNAMIC%%lib/ghc-%%GHC_VERSION%%/stm-2.5.0.0/Control/Concurrent/STM.dyn_hi
 lib/ghc-%%GHC_VERSION%%/stm-2.5.0.0/Control/Concurrent/STM.hi
@@ -6814,10 +6822,12 @@ lib/ghc-%%GHC_VERSION%%/xhtml-3000.2.2.1/libHSxhtml-3000.2.2.1.a
 %%PORTDOCS%%%%DOCSDIR%%/html/users_guide/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/html/users_guide/8.10.1-notes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/users_guide/8.10.2-notes.html
+%%PORTDOCS%%%%DOCSDIR%%/html/users_guide/8.10.3-notes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/users_guide/%%GHC_VERSION%%-notes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/users_guide/_images/prof_scc.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/users_guide/_sources/8.10.1-notes.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/users_guide/_sources/8.10.2-notes.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/users_guide/_sources/8.10.3-notes.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/users_guide/_sources/%%GHC_VERSION%%-notes.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/users_guide/_sources/bugs.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/users_guide/_sources/codegens.rst.txt
