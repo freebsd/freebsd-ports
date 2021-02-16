@@ -1,0 +1,88 @@
+--- subversion/bindings/swig/python/delta.py.orig	2021-02-16 20:11:05.736625279 +0300
++++ subversion/bindings/swig/python/delta.py	2021-02-16 20:11:44.107466700 +0300
+@@ -23,7 +23,7 @@
+ 
+ _dll_paths = _dll_paths()
+ try:
+-    from . import _delta
++    import _delta
+ finally:
+     _dll_path = None
+     for _dll_path in _dll_paths:
+--- subversion/bindings/swig/python/repos.py.orig	2021-02-16 20:11:06.031355733 +0300
++++ subversion/bindings/swig/python/repos.py	2021-02-16 20:11:44.286529247 +0300
+@@ -23,7 +23,7 @@
+ 
+ _dll_paths = _dll_paths()
+ try:
+-    from . import _repos
++    import _repos
+ finally:
+     _dll_path = None
+     for _dll_path in _dll_paths:
+--- subversion/bindings/swig/python/fs.py.orig	2021-02-16 20:11:05.882632103 +0300
++++ subversion/bindings/swig/python/fs.py	2021-02-16 20:11:44.196670628 +0300
+@@ -23,7 +23,7 @@
+ 
+ _dll_paths = _dll_paths()
+ try:
+-    from . import _fs
++    import _fs
+ finally:
+     _dll_path = None
+     for _dll_path in _dll_paths:
+--- subversion/bindings/swig/python/wc.py.orig	2021-02-16 20:11:06.111168973 +0300
++++ subversion/bindings/swig/python/wc.py	2021-02-16 20:11:44.333457705 +0300
+@@ -23,7 +23,7 @@
+ 
+ _dll_paths = _dll_paths()
+ try:
+-    from . import _wc
++    import _wc
+ finally:
+     _dll_path = None
+     for _dll_path in _dll_paths:
+--- subversion/bindings/swig/python/diff.py.orig	2021-02-16 20:11:05.808584237 +0300
++++ subversion/bindings/swig/python/diff.py	2021-02-16 20:11:44.150540556 +0300
+@@ -23,7 +23,7 @@
+ 
+ _dll_paths = _dll_paths()
+ try:
+-    from . import _diff
++    import _diff
+ finally:
+     _dll_path = None
+     for _dll_path in _dll_paths:
+--- subversion/bindings/swig/python/ra.py.orig	2021-02-16 20:11:05.958069705 +0300
++++ subversion/bindings/swig/python/ra.py	2021-02-16 20:11:44.243403216 +0300
+@@ -23,7 +23,7 @@
+ 
+ _dll_paths = _dll_paths()
+ try:
+-    from . import _ra
++    import _ra
+ finally:
+     _dll_path = None
+     for _dll_path in _dll_paths:
+--- subversion/bindings/swig/python/core.py.orig	2021-02-16 20:11:05.660359793 +0300
++++ subversion/bindings/swig/python/core.py	2021-02-16 20:11:44.051767828 +0300
+@@ -23,7 +23,7 @@
+ 
+ _dll_paths = _dll_paths()
+ try:
+-    from . import _core
++    import _core
+ finally:
+     _dll_path = None
+     for _dll_path in _dll_paths:
+--- subversion/bindings/swig/python/client.py.orig	2021-02-16 20:11:05.564881495 +0300
++++ subversion/bindings/swig/python/client.py	2021-02-16 20:11:27.133585748 +0300
+@@ -23,7 +23,7 @@
+ 
+ _dll_paths = _dll_paths()
+ try:
+-    from . import _client
++    import _client
+ finally:
+     _dll_path = None
+     for _dll_path in _dll_paths:

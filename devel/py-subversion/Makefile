@@ -2,7 +2,6 @@
 # $FreeBSD$
 
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PORTREVISION=	0
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Python bindings for version control system
@@ -12,7 +11,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/py3c.h:devel/py3c
 USES=		python:2.7+
 USE_PYTHON=	flavors py3kplist
 
-PORTREVISION_114=	0
+PORTREVISION_114=	1
 PORTREVISION_LTS=	0
 
 SVN_BUILD_BINDINGS=	yes
