@@ -23,7 +23,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libzip.so:archivers/libzip \
 		libzmq.so:net/libzmq4
 
-USES=		compiler:c++17-lang gmake gnome localbase pkgconfig python:build sqlite
+USES=		gmake gnome localbase pkgconfig python:build sqlite # compiler:c++17-lang
 USE_GITHUB=	yes
 GH_PROJECT=	horizon
 USE_GNOME=	atkmm gdkpixbuf2 gtkmm30 librsvg2
@@ -33,6 +33,12 @@ MAKE_ARGS=	DEBUGFLAGS= OPTIMIZE=
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 INSTALLS_ICONS=	yes
+
+LLVM_VER=	10 # workaround for bug#253551
+BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
+CPP=		clang-cpp${LLVM_VER}
+CC=		clang${LLVM_VER}
+CXX=		clang++${LLVM_VER}
 
 post-install: # https://github.com/horizon-eda/horizon/issues/558
 	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} horizon-eda
