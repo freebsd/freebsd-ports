@@ -164,6 +164,7 @@
     SUBDIR += pkfonts400
     SUBDIR += pkfonts600
     SUBDIR += pnm2ppa
+    SUBDIR += posterazor
     SUBDIR += print-manager
     SUBDIR += ps2eps
     SUBDIR += pscal

@@ -1,0 +1,8 @@
+PosteRazor cuts a raster image into pieces which can afterwards be
+printed out and assembled to a poster.
+
+As input, the PosteRazor takes a raster image. The resulting poster is
+saved as a multipage PDF document. An easy to use, wizard like user
+interface guides through 5 steps.
+
+WWW: https://github.com/aportale/posterazor
