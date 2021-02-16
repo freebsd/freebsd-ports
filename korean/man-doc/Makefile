@@ -13,6 +13,11 @@ DISTNAME=	ko-man-doc-${PORTVERSION}
 MAINTAINER=	hyun@caffeinated.codes
 COMMENT=	Korean online manual pages
 
+# If this port is ever resurrected, please make sure issues 212125,
+# 217826 and 218176 are addressed
+DEPRECATED=	Poor quality, severely outdated and undermaintained
+EXPIRATION_DATE=2021-03-02
+
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:japanese/groff
 
 post-patch:
