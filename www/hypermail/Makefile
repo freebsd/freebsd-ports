@@ -4,7 +4,7 @@
 PORTNAME=	hypermail
 PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www mail
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -22,7 +22,6 @@ GH_ACCOUNT=	hypermail-project
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-htmldir=${STAGEDIR}${PREFIX}/share/doc/hypermail \
-		--without-gdbm \
 		--with-external-pcre=${LOCALBASE}/bin/pcre-config \
 		--enable-system-libtrio
 
@@ -30,7 +29,14 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -L${LOCALBASE}/lib"
 
 MAKE_ARGS=	INSTALL_PROG=${INSTALL}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS GDBM
+OPTIONS_DEFAULT=	GDBM
+
+GDBM_DESC=	Support incremental updates
+
+GDBM_CONFIGURE_WITH=	-with-gdbm=${LOCALBASE}
+GDBM_CONFIGURE_OFF=	--without-gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/hypermail \
