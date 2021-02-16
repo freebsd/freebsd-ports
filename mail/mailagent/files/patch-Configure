@@ -1,0 +1,11 @@
+--- Configure.orig	2020-04-09 14:16:46 UTC
++++ Configure
+@@ -7923,7 +7923,7 @@ EOT
+ file=revision.h
+ echo " "
+ echo "Generating $file..." >&4
+-bin/svn-revision . $file
++echo '#define REVISION 0' > $file
+ 
+ : add special variables
+ $test -f $src/patchlevel.h && \

@@ -6,11 +6,4 @@ messages containing some commands.  The mailagent is not usually
 invoked manually but is rather called via the filter program, which is
 in turn invoked by sendmail.
 
-Most portion of this package is written in Perl and version 5.01M or
-higher is known to work nicely.
-
-You are advised to setup the path variable in your mailagent configuration
-to include the directory containing perl5 before /usr/bin to avoid getting
-a lot of warning message although they are harmless.
-
-See the man page for the detailed information.
+WWW: https://github.com/rmanfredi/mailagent
