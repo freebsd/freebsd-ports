@@ -24,6 +24,10 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	VORBIS DOCS
 OPTIONS_DEFAULT=	VORBIS
 
+.if !defined(CDROM_MOUNT)
+IGNORE=		${PKGNAME} requires CDROM_MOUNT set to mount point of CD
+.endif
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVORBIS}
