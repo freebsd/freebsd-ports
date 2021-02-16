@@ -77,6 +77,50 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="96a21236-707b-11eb-96d8-d4c9ef517024">
+    <topic>OpenSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1j,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20210216.txt">
+	  <p>Null pointer deref in X509_issuer_and_serial_hash()
+	    CVE-2021-23841<br/>(Moderate) The OpenSSL public API function
+	    X509_issuer_and_serial_hash() attempts to create a unique hash
+	    value based on the issuer and serial number data contained within
+	    an X509 certificate. However it fails to correctly handle any errors
+	    that may occur while parsing the issuer field (which might occur if
+	    the issuer field is maliciously constructed). This may subsequently
+	    result in a NULL pointer deref and a crash leading to a potential
+	    denial of service attack.</p>
+	  <p>Integer overflow in CipherUpdate CVE-2021-23840<br/>(Low)
+	    Calls to EVP_CipherUpdate, EVP_EncryptUpdate and EVP_DecryptUpdate
+	    may overflow the output length argument in some cases where the
+	    input length is close to the maximum permissable length for an
+	    integer on the platform. In such cases the return value from the
+	    function call will be 1 (indicating success), but the output length
+	    value will be negative. This could cause applications to behave
+	    incorrectly or crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.openssl.org/news/secadv/20210216.txt</url>
+      <cvename>CVE-2021-23841</cvename>
+      <cvename>CVE-2021-23840</cvename>
+      <cvename>CVE-2021-23839</cvename>
+    </references>
+    <dates>
+      <discovery>2021-02-16</discovery>
+      <entry>2021-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="98044aba-6d72-11eb-aed7-1b1b8a70cc8b">
     <topic>openexr, ilmbase -- security fixes related to reading corrupted input files</topic>
     <affects>
