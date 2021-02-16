@@ -1,4 +1,4 @@
---- Makefile.in.orig	2016-02-14 00:52:59 UTC
+--- Makefile.in.orig	2020-09-06 18:28:04 UTC
 +++ Makefile.in
 @@ -7,11 +7,8 @@
  
@@ -12,7 +12,7 @@
  
  # generate version strings
  VERSION:=$(shell cat VERSION)
-@@ -197,16 +194,13 @@ aprsc.8 : % : %.in VERSION Makefile
+@@ -217,17 +214,14 @@ aprsc.8 : % : %.in VERSION Makefile
  
  .PHONY:	install install-deb
  install: all
@@ -22,9 +22,11 @@
 -	$(INSTALL_DIR) $(DESTDIR)/opt/aprsc/web
 -	$(INSTALL_PROGRAM) aprsc $(DESTDIR)$(SBINDIR)/aprsc
 -	$(INSTALL_PROGRAM) aprsc_munin $(DESTDIR)$(SBINDIR)/aprsc_munin
+-	$(INSTALL_PROGRAM) aprsc-prepare-chroot.sh $(DESTDIR)$(SBINDIR)/aprsc-prepare-chroot.sh
 +	$(INSTALL_DIR) $(DESTDIR)$(PREFIX)/etc/aprsc/web
 +	$(INSTALL_PROGRAM) aprsc $(DESTDIR)$(PREFIX)$(SBINDIR)/aprsc
 +	$(INSTALL_PROGRAM) aprsc_munin $(DESTDIR)$(PREFIX)$(SBINDIR)/aprsc_munin
++	$(INSTALL_PROGRAM) aprsc-prepare-chroot.sh $(DESTDIR)$(PREFIX)$(SBINDIR)/aprsc-prepare-chroot.sh
  	$(INSTALL_DATA) aprsc.8 $(DESTDIR)$(MANDIR)/man8/aprsc.8
 -	$(INSTALL_DATA) $(subst src/,,$(WEBFILES)) $(DESTDIR)/opt/aprsc/web
 +	$(INSTALL_DATA) $(subst src/,,$(WEBFILES)) $(DESTDIR)$(PREFIX)/etc/aprsc/web

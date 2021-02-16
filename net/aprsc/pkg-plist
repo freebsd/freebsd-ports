@@ -29,3 +29,4 @@
 man/man8/aprsc.8.gz
 sbin/aprsc
 sbin/aprsc_munin
+sbin/aprsc-prepare-chroot.sh
