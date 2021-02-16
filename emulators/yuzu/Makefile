@@ -2,7 +2,7 @@
 
 PORTNAME=	yuzu
 PORTVERSION=	s20201218
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -44,7 +44,7 @@ GH_TUPLE=	DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 		citra-emu:ext-soundtouch:060181e:soundtouch/externals/soundtouch \
 		herumi:xbyak:v5.96:xbyak/externals/xbyak \
 		nih-at:libzip:rel-1-5-2-93-g89bd6d63:libzip/externals/libzip/libzip \
-		kinetiknz:cubeb:cubeb-0.2-1291-g5c2cf26:cubeb/externals/cubeb \
+		kinetiknz:cubeb:cubeb-0.2-1298-g8d53747:cubeb/externals/cubeb \
 		benhoyt:inih:r52:inih/externals/inih/inih
 
 USES=		cmake compiler:c++17-lang localbase:ldflags sdl ssl
