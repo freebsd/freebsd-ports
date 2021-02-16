@@ -12,6 +12,9 @@ COMMENT=	PC/PC-Compatible low-level emulator striving for accuracy
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: CGACONST
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: CGACONST
+
 USES=		autoreconf compiler gl gmake openal pkgconfig sdl zip
 USE_GL=		gl
 USE_SDL=	sdl2
