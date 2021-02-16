@@ -13,6 +13,9 @@ COMMENT=	Play cute bunnies jumping on each other's heads #'
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: endscore_reached
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: endscore_reached
+
 USES=		compiler:c11 gettext-tools gmake sdl shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/menu/jumpnbump_menu.py.pre
 USE_SDL=	sdl2 mixer2 net2
