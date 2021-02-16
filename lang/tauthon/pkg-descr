@@ -1,0 +1,22 @@
+Tauthon is a backward-compatible fork of Python's 2.7.18 interpreter with new
+syntax, builtins, and libraries backported from Python 3.x.
+
+Python code and C-extensions targeting Python 2.7 or below are expected to run
+unmodified on Tauthon and produce the same output. But with Tauthon, that code
+can now use some of the new features from Python 3.x.
+
+This is not an official Python release. Because of its new features, while
+preserving 2.7 compatibility, Tauthon reports 2.8 as its major/minor versions.
+
+Non-exhaustive list of new features:
+- Function Annotations
+- Keyword-Only Arguments
+- "async" and "await" Syntax
+- Argument-less "super"
+- New Metaclass Syntax
+- "nonlocal"
+- "yield from" Syntax
+- "concurrent.futures" Module
+- UTF-8 as the default source encoding
+
+WWW: https://github.com/naftaliharris/tauthon

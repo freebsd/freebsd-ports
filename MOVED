@@ -16166,5 +16166,4 @@ security/greenbone-security-assistant9|security/greenbone-security-assistant|202
 misc/pnpids|misc/hwdata|2021-02-14|Rename package to upstreams name
 misc/cdcollect||2021-02-14|Has expired: Unmaintained and dead upstream (12+ years) depends on  deprecated libraries as www/gtkhtml3
 security/krb5-116|security/krb5-118|2021-02-14|Has expired: EOL one year after the release of krb5 1.18
-lang/tauthon||2021-02-15|Dead upstream, incompatible with python 2 and python 3
 www/palemoon||2021-02-15|Depends on expired version of python
