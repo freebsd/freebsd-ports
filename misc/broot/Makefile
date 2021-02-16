@@ -2,8 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.3
-PORTREVISION=	1
+DISTVERSION=	1.2.4
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -19,6 +18,7 @@ RUN_DEPENDS=	git:devel/git
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	canop
+
 CARGO_CRATES=	adler-0.2.3 \
 		adler32-1.2.0 \
 		aho-corasick-0.7.15 \
@@ -65,7 +65,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		csv-core-0.1.10 \
 		custom_error-1.8.0 \
 		deflate-0.8.6 \
-		deser-hjson-0.1.8 \
+		deser-hjson-0.1.12 \
 		directories-2.0.2 \
 		dirs-sys-0.3.5 \
 		either-1.6.1 \
