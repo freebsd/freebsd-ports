@@ -13,6 +13,9 @@ COMMENT=	Nagios event broker module
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: g_mainthread_id
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: g_mainthread_id
+
 USES=		compiler:c++11-lang
 
 GNU_CONFIGURE=	yes
