@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sentry-cli
-DISTVERSION=	1.61.0
-PORTREVISION=	1
+DISTVERSION=	1.62.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -104,12 +103,11 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		fuchsia-cprng-0.1.1 \
 		generic-array-0.12.3 \
 		getrandom-0.1.15 \
-		gimli-0.22.0 \
 		gimli-0.23.0 \
 		git2-0.13.12 \
 		glob-0.3.0 \
 		globset-0.4.6 \
-		goblin-0.2.3 \
+		goblin-0.3.4 \
 		hashbrown-0.7.2 \
 		hashbrown-0.9.1 \
 		heck-0.3.1 \
@@ -259,9 +257,9 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		stable_deref_trait-1.2.0 \
 		string_cache-0.8.1 \
 		strsim-0.8.0 \
-		symbolic-8.0.0 \
-		symbolic-common-8.0.0 \
-		symbolic-debuginfo-8.0.0 \
+		symbolic-8.0.3 \
+		symbolic-common-8.0.3 \
+		symbolic-debuginfo-8.0.3 \
 		syn-0.15.44 \
 		syn-1.0.54 \
 		synstructure-0.12.4 \
@@ -301,7 +299,6 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasmparser-0.59.0 \
-		wasmparser-0.68.0 \
 		which-3.1.1 \
 		winapi-0.2.8 \
 		winapi-0.3.9 \
