@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openfire
-PORTVERSION=	4.6.1
+PORTVERSION=	4.6.2
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	https://github.com/igniterealtime/${PORTNAME}/releases/download/v${PORTVERSION}/ \
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	mvn:devel/maven
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS TEST
 OPTIONS_SINGLE=	MAVEN
 OPTIONS_SINGLE_MAVEN=	LOCAL_M2 ONLINE_M2
 MAVEN_DESC=	Source of Maven build plugins
@@ -49,12 +49,19 @@ MVN_TARGET=	package
 ##
 .include <bsd.port.options.mk>
 ##
+
+.if ${PORT_OPTIONS:MTEST}
+MVN_OPTS=	-DskipTests=false
+.else
+MVN_OPTS=	-DskipTests=true
+.endif
+
 .if ${PORT_OPTIONS:MLOCAL_M2}
-MVN_OPTS=	-o -Dmaven.repo.local=${WRKDIR}/m2
+MVN_OPTS+=	-o -Dmaven.repo.local=${WRKDIR}/m2
 .endif
 
 .if ${PORT_OPTIONS:MONLINE_M2}
-MVN_OPTS=	-U
+MVN_OPTS+=	-U
 .endif
 
 do-build:
