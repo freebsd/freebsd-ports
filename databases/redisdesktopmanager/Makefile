@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	redisdesktopmanager
-PORTVERSION=	2020.7
+PORTVERSION=	2021.2
 CATEGORIES=	databases
 
 MAINTAINER=	swills@FreeBSD.org
