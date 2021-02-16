@@ -1,0 +1,43 @@
+Do not invasively check for BPF (Ethernet check queries presence
+of /dev/bpfX): we know that FreeBSD has BPF and ports can be *built*
+inside infrastructure that has no such /dev entries; like a jail
+without devfs configured to unhide BPF devices.
+
+The presence of the net/bpf.h is checked in configure earlier,
+so sanity checks for the build environment will still be present.
+
+Macro HAVE_BSD_BPF won't be defined after this modification,
+but as of libdnet-1.13 it is not used at all inside libdnet's code.
+
+FreeBSD PR: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238523
+Origin: rea@FreeBSD.org
+--- configure.ac.old	2019-06-30 21:36:25.906488000 +0300
++++ configure.ac	2019-06-30 21:39:21.116185000 +0300
+@@ -203,7 +203,6 @@
+ AC_REPLACE_FUNCS(err strlcat strlcpy strsep)
+ 
+ dnl Checks for other system-specific jonks.
+-AC_DNET_BSD_BPF
+ AC_DNET_RAWIP_HOST_OFFLEN
+ 
+ dnl Check for arp interface.
+@@ -219,18 +218,7 @@
+ 	(exit 1); exit 1;
+ fi
+ 
+-dnl Check for Ethernet interface.
+-if test "$ac_cv_dnet_bsd_bpf" = yes ; then
+-	AC_LIBOBJ([eth])
+-else
+-	echo "|------------------------------------------|"
+-	echo "|No suitable Ethernet interface found. Most|"
+-	echo "|probably you are not running the FreeBSD  |"
+-	echo "|OS. Please consider using this version    |"
+-	echo "|of libdnet  with the FreeBSD system       |"
+-	echo "|------------------------------------------|"
+-	(exit 1); exit 1;
+-fi
++AC_LIBOBJ([eth])
+ 
+ dnl Check for firewall interface.
+ if test "$ac_cv_header_net_pfvar_h" = yes ; then
