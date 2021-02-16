@@ -13,6 +13,7 @@ bin/faust2caqt
 bin/faust2caqtios
 bin/faust2csound
 bin/faust2csvplot
+bin/faust2dplug
 bin/faust2dssi
 bin/faust2dummy
 bin/faust2dummymem
@@ -69,6 +70,7 @@ bin/faust2svg
 bin/faust2svgviewer
 bin/faust2teensy
 bin/faust2unity
+bin/faust2vcvrack
 bin/faust2vst
 bin/faust2vsti
 bin/faust2w32max6
@@ -112,11 +114,13 @@ include/faust/dsp/dsp-adapter.h
 include/faust/dsp/dsp-bench.h
 include/faust/dsp/dsp-checker.h
 include/faust/dsp/dsp-combiner.h
+include/faust/dsp/dsp-compute-adapter.h
 include/faust/dsp/dsp-optimizer.h
 include/faust/dsp/dsp-tools.h
 include/faust/dsp/dsp.h
 include/faust/dsp/fastmath.cpp
 include/faust/dsp/faust-dynamic-engine.cpp
+include/faust/dsp/faust-dynamic-engine.cpp.orig
 include/faust/dsp/faust-dynamic-engine.h
 include/faust/dsp/faust-engine.h
 include/faust/dsp/faust-poly-engine.h
@@ -127,6 +131,7 @@ include/faust/dsp/libfaust.h
 include/faust/dsp/llvm-c-dsp.h
 include/faust/dsp/llvm-dsp-adapter.h
 include/faust/dsp/llvm-dsp-multi.h
+include/faust/dsp/llvm-dsp-multifun.h
 include/faust/dsp/llvm-dsp.h
 include/faust/dsp/llvm-machine-dsp.h
 include/faust/dsp/one-sample-dsp.h
@@ -140,6 +145,7 @@ include/faust/dsp/soul-cpp-dsp.h
 include/faust/dsp/soulpatch-dsp.h
 include/faust/dsp/sound-player.h
 include/faust/dsp/timed-dsp.h
+include/faust/dsp/timed-dsp.h.orig
 include/faust/dsp/wasm-dsp-imp.h
 include/faust/dsp/wasm-dsp.h
 include/faust/gui/APIUI.h
@@ -149,6 +155,7 @@ include/faust/gui/CInterface.h
 include/faust/gui/ControlUI.h
 include/faust/gui/DecoratorUI.h
 include/faust/gui/Esp32ControlUI.h
+include/faust/gui/Esp32Reader.h
 include/faust/gui/Esp32SensorUI.h
 include/faust/gui/FUI.h
 include/faust/gui/GTKUI.h
@@ -162,6 +169,7 @@ include/faust/gui/JuceOSCUI.h
 include/faust/gui/JuceParameterUI.h
 include/faust/gui/JuceReader.h
 include/faust/gui/JuceStateUI.h
+include/faust/gui/LayoutUI.h
 include/faust/gui/LibsndfileReader.h
 include/faust/gui/MapUI.h
 include/faust/gui/MemoryReader.h
@@ -204,6 +212,7 @@ include/faust/midi/RtMidi.cpp
 include/faust/midi/RtMidi.h
 include/faust/midi/bela-midi.h
 include/faust/midi/esp32-midi.h
+include/faust/midi/gramophone-midi.h
 include/faust/midi/iplug2-midi.h
 include/faust/midi/jack-midi.h
 include/faust/midi/juce-midi.h
@@ -335,6 +344,7 @@ lib/libOSCFaust.a
 %%DATADIR%%/basics.lib
 %%DATADIR%%/bela.cpp
 %%DATADIR%%/bench.cpp
+%%DATADIR%%/bench.d
 %%DATADIR%%/c-jack-gtk.c
 %%DATADIR%%/ca-qt.cpp
 %%DATADIR%%/compressors.lib
@@ -358,6 +368,11 @@ lib/libOSCFaust.a
 %%DATADIR%%/esp32/drivers/ac101/AC101.h
 %%DATADIR%%/esp32/drivers/ac101/CMakeLists.txt
 %%DATADIR%%/esp32/drivers/ac101/component.mk
+%%DATADIR%%/esp32/drivers/es8388/CMakeLists.txt
+%%DATADIR%%/esp32/drivers/es8388/adf_structs.h
+%%DATADIR%%/esp32/drivers/es8388/component.mk
+%%DATADIR%%/esp32/drivers/es8388/es8388.cpp
+%%DATADIR%%/esp32/drivers/es8388/es8388.h
 %%DATADIR%%/esp32/drivers/wm8978/CMakeLists.txt
 %%DATADIR%%/esp32/drivers/wm8978/README.md
 %%DATADIR%%/esp32/drivers/wm8978/WM8978.cpp
@@ -365,6 +380,17 @@ lib/libOSCFaust.a
 %%DATADIR%%/esp32/drivers/wm8978/component.mk
 %%DATADIR%%/esp32/esp32.cpp
 %%DATADIR%%/esp32/esp32.h
+%%DATADIR%%/esp32/gramo-bt-midi/CMakeLists.txt
+%%DATADIR%%/esp32/gramo-bt-midi/Makefile
+%%DATADIR%%/esp32/gramo-bt-midi/components/blemidi/CMakeLists.txt
+%%DATADIR%%/esp32/gramo-bt-midi/components/blemidi/README.md
+%%DATADIR%%/esp32/gramo-bt-midi/components/blemidi/blemidi.c
+%%DATADIR%%/esp32/gramo-bt-midi/components/blemidi/component.mk
+%%DATADIR%%/esp32/gramo-bt-midi/components/blemidi/include/blemidi.h
+%%DATADIR%%/esp32/gramo-bt-midi/main/CMakeLists.txt
+%%DATADIR%%/esp32/gramo-bt-midi/main/component.mk
+%%DATADIR%%/esp32/gramo-bt-midi/sdkconfig
+%%DATADIR%%/esp32/gramo-bt-midi/sdkconfig-bt
 %%DATADIR%%/esp32/gramophone-multi.cpp
 %%DATADIR%%/esp32/gramophone.cpp
 %%DATADIR%%/esp32/volume.dsp
@@ -373,6 +399,7 @@ lib/libOSCFaust.a
 %%DATADIR%%/faustui.js
 %%DATADIR%%/faustvst.cpp
 %%DATADIR%%/faustvstqt.h
+%%DATADIR%%/fds.lib
 %%DATADIR%%/filter.lib
 %%DATADIR%%/filters.lib
 %%DATADIR%%/gen-json.cpp
@@ -576,12 +603,16 @@ lib/libOSCFaust.a
 %%DATADIR%%/maxmsp.lib
 %%DATADIR%%/mi.lib
 %%DATADIR%%/minimal-bench.cpp
+%%DATADIR%%/minimal-dplug.d
+%%DATADIR%%/minimal-effect.c
 %%DATADIR%%/minimal-effect.cpp
 %%DATADIR%%/minimal-jack.rs
+%%DATADIR%%/minimal-params.d
 %%DATADIR%%/minimal-portaudio.rs
 %%DATADIR%%/minimal-static.cpp
 %%DATADIR%%/minimal.c
 %%DATADIR%%/minimal.cpp
+%%DATADIR%%/minimal.d
 %%DATADIR%%/minimal.rs
 %%DATADIR%%/misceffects.lib
 %%DATADIR%%/module.cpp
@@ -685,6 +716,7 @@ lib/libOSCFaust.a
 %%DATADIR%%/pure.c
 %%DATADIR%%/pure.cpp
 %%DATADIR%%/puredata.cpp
+%%DATADIR%%/quantizers.lib
 %%DATADIR%%/ra-qt.cpp
 %%DATADIR%%/reducemaps.lib
 %%DATADIR%%/reverbs.lib
@@ -768,8 +800,13 @@ lib/libOSCFaust.a
 %%DATADIR%%/unity/unity.cpp
 %%DATADIR%%/unity/unityplugin.cpp
 %%DATADIR%%/vaeffects.lib
+%%DATADIR%%/vcvrack/README.md
+%%DATADIR%%/vcvrack/template/Makefile
+%%DATADIR%%/vcvrack/template/res/FaustModule.svg
+%%DATADIR%%/vcvrack/template/src/FaustModule.cpp
 %%DATADIR%%/version.lib
 %%DATADIR%%/vst.cpp
+%%DATADIR%%/wdmodels.lib
 %%DATADIR%%/webaudio.lib
 %%DATADIR%%/webaudio/ExportLib.js
 %%DATADIR%%/webaudio/README.md

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	faust
-DISTVERSION=	2.27.2
+DISTVERSION=	2.30.5
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,14 +12,15 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libLLVM-${LLVM_VERSION:C/([1-9])([0-9])/\1/}.so:devel/llvm${LLVM_VERSION}
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++11-lang cmake ncurses python pkgconfig shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	\
-		grame-cncm:faustlibraries:cde57d76dd8c4b124998a5490164e4b58ae9495f:grame_cncm_faustlibraries/libraries \
-		google:oboe:f644b60eaf0deea5b9c7af443e28d42c4995b59e:google_oboe/architecture/android/app/oboe \
-		google:oboe:f644b60eaf0deea5b9c7af443e28d42c4995b59e:google_oboe/architecture/smartKeyboard/android/app/oboe \
+		grame-cncm:faustlibraries:41b6ba7:grame_cncm_faustlibraries/libraries \
+		google:oboe:5eb2ea6:google_oboe/architecture/android/app/oboe \
+		google:oboe:5eb2ea6:google_oboe/architecture/smartKeyboard/android/app/oboe
 
 SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench tools/sound2faust/sound2reader
 
