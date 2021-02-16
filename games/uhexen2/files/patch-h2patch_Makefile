@@ -1,0 +1,17 @@
+--- h2patch/Makefile.orig	2021-02-11 09:31:42 UTC
++++ h2patch/Makefile
+@@ -10,11 +10,11 @@ LIBS_DIR:=$(UHEXEN2_TOP)/libs
+ OSLIBS:=$(UHEXEN2_TOP)/oslibs
+ 
+ CC ?= gcc
+-ifeq ($(origin CC),default)
++#ifeq ($(origin CC),default)
+ # refuse the stupid 'cc' default of make
+ # which not necessarily exist everywhere
+-CC  = gcc
+-endif
++#CC  = gcc
++#endif
+ LINKER = $(CC)
+ 
+ CPUFLAGS=
