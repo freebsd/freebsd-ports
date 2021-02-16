@@ -11,6 +11,9 @@ COMMENT=	RAID5 geom class
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_FreeBSD_13=	g_raid5.c:1567:2: error: too few arguments to function call, expected at least 3, have 1
+BROKEN_FreeBSD_14=	g_raid5.c:1567:2: error: too few arguments to function call, expected at least 3, have 1
+
 MAINVERSION=1.3
 VERSIONDATE=20140711.62
 
