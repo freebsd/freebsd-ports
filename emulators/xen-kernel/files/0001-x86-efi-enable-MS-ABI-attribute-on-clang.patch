@@ -1,0 +1,38 @@
+From 92f5ffa58d188c9f9a9f1bcdccb6d6348d9df612 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Roger=20Pau=20Monn=C3=A9?= <roger.pau@citrix.com>
+Date: Thu, 4 Feb 2021 14:02:32 +0100
+Subject: [PATCH] x86/efi: enable MS ABI attribute on clang
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Or else the EFI service calls will use the wrong calling convention.
+
+The __ms_abi__ attribute is available on all supported versions of
+clang. Add a specific Clang check because the GCC version reported by
+Clang is below the required 4.4 to use the __ms_abi__ attribute.
+
+Signed-off-by: Roger Pau Monné <roger.pau@citrix.com>
+Acked-by: Andrew Cooper <andrew.cooper3@citrix.com>
+Reviewed-by: Ian Jackson <iwj@xenproject.org>
+Release-Acked-by: Ian Jackson <iwj@xenproject.org>
+---
+ xen/include/asm-x86/x86_64/efibind.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/xen/include/asm-x86/x86_64/efibind.h b/xen/include/asm-x86/x86_64/efibind.h
+index b013db175d..ddcfae07ec 100644
+--- a/xen/include/asm-x86/x86_64/efibind.h
++++ b/xen/include/asm-x86/x86_64/efibind.h
+@@ -172,7 +172,7 @@ typedef uint64_t   UINTN;
+ #ifndef EFIAPI                  // Forces EFI calling conventions reguardless of compiler options
+     #ifdef _MSC_EXTENSIONS
+         #define EFIAPI __cdecl  // Force C calling convention for Microsoft C compiler
+-    #elif __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 4)
++    #elif __clang__ || __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 4)
+         #define EFIAPI __attribute__((__ms_abi__))  // Force Microsoft ABI
+     #else
+         #define EFIAPI          // Substitute expresion to force C calling convention
+-- 
+2.30.1
+

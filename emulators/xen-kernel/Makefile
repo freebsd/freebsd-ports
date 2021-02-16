@@ -2,7 +2,7 @@
 
 PORTNAME=	xen
 PORTVERSION=	4.14.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -27,6 +27,9 @@ PLIST_FILES=	/boot/xen \
 
 # Propagate module command line passed by the loader.
 EXTRA_PATCHES+= ${PATCHDIR}/0001-x86-pvh-pass-module-command-line-to-dom0.patch:-p1
+
+# Fix EFI BS call ABI.
+EXTRA_PATCHES+= ${PATCHDIR}/0001-x86-efi-enable-MS-ABI-attribute-on-clang.patch:-p1
 
 .include <bsd.port.options.mk>
 
