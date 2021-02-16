@@ -13,6 +13,9 @@ COMMENT=	PC/PC-Compatible low-level emulator striving for accuracy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: CGACONST
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: CGACONST
+
 USES=		autoreconf compiler gl gmake localbase:ldflags openal pkgconfig sdl zip
 USE_GL=		gl
 USE_SDL=	sdl2
