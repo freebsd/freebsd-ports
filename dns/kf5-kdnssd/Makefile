@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kdnssd
-DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+DISTVERSION=	5.79.1
 CATEGORIES=	dns kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
