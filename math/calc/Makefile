@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	calc
-PORTVERSION=	2.12.8.0
+PORTVERSION=	2.12.8.1
 CATEGORIES=	math
 
 MAINTAINER=	adamw@FreeBSD.org
