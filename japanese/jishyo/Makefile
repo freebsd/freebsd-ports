@@ -13,6 +13,9 @@ COMMENT=	English to Japanese dictionary for GNUstep
 
 LICENSE=	GPLv2+
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: DicDir
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: DicDir
+
 PORTSCOUT=	skipv:0.2
 
 USES=		gnustep
