@@ -36,6 +36,10 @@ status_cmd="print_status"
 start_cmd="start_gitlab"
 stop_cmd="stop_gitlab"
 restart_cmd="restart_gitlab"
+service_args="$@"
+restart_precmd=${name}_init
+start_precmd=${name}_init
+stop_precmd=${name}_init
 
 : ${gitlab_enable:="NO"}
 : ${gitlab_authBackend:="http://127.0.0.1:8080"}
@@ -72,17 +76,17 @@ socket_path="$app_root/tmp/sockets"
 rails_socket="$socket_path/gitlab.socket"
 web_server_pid_path="$pid_path/$use_web_server.pid"
 if checkyesno gitlab_mail_room_enable; then
-	mail_room_enabled=true
+  mail_room_enabled=true
 else
-	mail_room_enabled=false
+  mail_room_enabled=false
 fi
 mail_room_pid_path="$pid_path/mail_room.pid"
 gitlab_workhorse_dir=$(cd $app_root/../gitlab-workhorse 2> /dev/null && pwd)
 gitlab_workhorse_pid_path="$pid_path/gitlab-workhorse.pid"
 if checkyesno gitlab_workhorse_tcp; then
-        gitlab_workhorse_listen="-listenNetwork tcp -listenAddr $gitlab_workhorse_addr"
+  gitlab_workhorse_listen="-listenNetwork tcp -listenAddr $gitlab_workhorse_addr"
 else
-        gitlab_workhorse_listen="-listenNetwork unix -listenAddr $socket_path/gitlab-workhorse.socket"
+  gitlab_workhorse_listen="-listenNetwork unix -listenAddr $socket_path/gitlab-workhorse.socket"
 fi
 gitlab_workhorse_options="-listenUmask 0 $gitlab_workhorse_listen -authBackend $gitlab_authBackend -authSocket $rails_socket -documentRoot $app_root/public"
 gitlab_workhorse_log="$app_root/log/gitlab-workhorse.log"
@@ -97,72 +101,6 @@ gitaly_dir="%%PREFIX%%/share/gitaly"
 gitaly_pid_path="$pid_path/gitaly.pid"
 gitaly_log="$app_root/log/gitaly.log"
 
-# Read configuration variable file if it is present
-test -f /etc/default/gitlab && . /etc/default/gitlab
-
-# Check if other colliding packages are installed
-if `/usr/sbin/pkg -N info -e gogs` && [ $? -eq 0 ]; then
-  echo "WARNING: Gitlab cannot run together with gogs as both of them modify .ssh/authorized_keys"
-  if checkyesno gitlab_allow_conflicts; then
-    echo "but start as overwritten"
-  else
-    echo "you can overwrite this with: sysrc gitlab_allow_conflicts=YES"
-    exit 1
-  fi
-fi
-if `/usr/sbin/pkg -N info -e "gitolite*"` && [ $? -eq 0 ]; then
-  echo "WARNING: Gitlab cannot run together with gitolite as both of them modify .ssh/authorized_keys"
-  if checkyesno gitlab_allow_conflicts; then
-    echo "but start as overwritten"
-  else
-    echo "you can overwrite this with: sysrc gitlab_allow_conflicts=YES"
-    exit 1
-  fi
-fi
-if `/usr/sbin/pkg -N info -e "*gitosis*"` && [ $? -eq 0 ]; then
-  echo "WARNING: Gitlab cannot run together with py-gitosis as both of them modify .ssh/authorized_keys"
-  if checkyesno gitlab_allow_conflicts; then
-    echo "but start as overwritten"
-  else
-    echo "you can overwrite this with: sysrc gitlab_allow_conflicts=YES"
-    exit 1
-  fi
-fi
-if `/usr/sbin/pkg -N info -e gitea` && [ $? -eq 0 ]; then
-  echo "WARNING: Gitlab cannot run together with gitea as both of them modify .ssh/authorized_keys"
-  if checkyesno gitlab_allow_conflicts; then
-    echo "but start as overwritten"
-  else
-    echo "you can overwrite this with: sysrc gitlab_allow_conflicts=YES"
-    exit 1
-  fi
-fi
-
-# Switch to the app_user if it is not he/she who is running the script.
-if [ "$USER" != "$app_user" ]; then
-  # Regenerate the Gemfile.lock for all related products
-  # echo "Regenerate Gitlab Gemfile.lock"
-  rm -f "${app_root}"/Gemfile.lock
-  if ! su -l root -c "cd ${app_root} && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
-    echo "Could not create Gemfile.lock for gitlab, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
-    exit 1
-  fi
-  chown git "${app_root}"/Gemfile.lock
-  # echo "Regenerate Gitaly Gemfile.lock"
-  rm -f "${gitaly_dir}"/ruby/Gemfile.lock
-  if ! su -l root -c "cd ${gitaly_dir}/ruby && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
-    echo "Could not create Gemfile.lock for gitaly, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
-    exit 1
-  fi
-
-  eval su - "$app_user" -c $(echo \")%%LOCALBASE%%/etc/rc.d/gitlab "$@"$(echo \"); exit;
-fi
-
-# Switch to the gitlab path, exit on failure.
-if ! cd "$app_root" ; then
-  echo "Failed to cd into $app_root, exiting!";  exit 1
-fi
-
 if [ -z "$SIDEKIQ_WORKERS" ]; then
   sidekiq_pid_path="$pid_path/sidekiq.pid"
 else
@@ -170,7 +108,6 @@ else
 fi
 
 ### Init Script functions
-
 ## Gets the pids from the files
 check_pids(){
   if ! mkdir -p "$pid_path"; then
@@ -216,6 +153,79 @@ check_pids(){
   fi
 }
 
+
+gitlab_init(){
+  # Read configuration variable file if it is present
+  test -f /etc/default/gitlab && . /etc/default/gitlab
+
+  # Check if other colliding packages are installed
+  if `/usr/sbin/pkg -N info -e gogs` && [ $? -eq 0 ]; then
+    echo "WARNING: Gitlab cannot run together with gogs as both of them modify .ssh/authorized_keys"
+    if checkyesno gitlab_allow_conflicts; then
+      echo "but start as overwritten"
+    else
+      echo "you can overwrite this with: sysrc gitlab_allow_conflicts=YES"
+      exit 1
+    fi
+  fi
+  if `/usr/sbin/pkg -N info -e "gitolite*"` && [ $? -eq 0 ]; then
+    echo "WARNING: Gitlab cannot run together with gitolite as both of them modify .ssh/authorized_keys"
+    if checkyesno gitlab_allow_conflicts; then
+      echo "but start as overwritten"
+    else
+      echo "you can overwrite this with: sysrc gitlab_allow_conflicts=YES"
+      exit 1
+    fi
+  fi
+  if `/usr/sbin/pkg -N info -e "*gitosis*"` && [ $? -eq 0 ]; then
+    echo "WARNING: Gitlab cannot run together with py-gitosis as both of them modify .ssh/authorized_keys"
+    if checkyesno gitlab_allow_conflicts; then
+      echo "but start as overwritten"
+    else
+      echo "you can overwrite this with: sysrc gitlab_allow_conflicts=YES"
+      exit 1
+    fi
+  fi
+  if `/usr/sbin/pkg -N info -e gitea` && [ $? -eq 0 ]; then
+    echo "WARNING: Gitlab cannot run together with gitea as both of them modify .ssh/authorized_keys"
+    if checkyesno gitlab_allow_conflicts; then
+      echo "but start as overwritten"
+    else
+      echo "you can overwrite this with: sysrc gitlab_allow_conflicts=YES"
+      exit 1
+    fi
+  fi
+
+  # Switch to the app_user if it is not he/she who is running the script.
+  if [ "$USER" != "$app_user" ]; then
+    # Regenerate the Gemfile.lock for all related products
+    # echo "Regenerate Gitlab Gemfile.lock"
+    rm -f "${app_root}"/Gemfile.lock
+    if ! su -l root -c "cd ${app_root} && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
+      echo "Could not create Gemfile.lock for gitlab, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
+      exit 1
+    fi
+    chown git "${app_root}"/Gemfile.lock
+    # echo "Regenerate Gitaly Gemfile.lock"
+    rm -f "${gitaly_dir}"/ruby/Gemfile.lock
+    if ! su -l root -c "cd ${gitaly_dir}/ruby && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
+      echo "Could not create Gemfile.lock for gitaly, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
+      exit 1
+    fi
+
+    eval su - "$app_user" -c $(echo \")%%LOCALBASE%%/etc/rc.d/gitlab "${service_args}"$(echo \"); exit;
+  fi
+
+  # Switch to the gitlab path, exit on failure.
+  if ! cd "$app_root" ; then
+    echo "Failed to cd into $app_root, exiting!";  exit 1
+  fi
+
+  # We use the pids in so many parts of the script it makes sense to always check them.
+  # Only after start() is run should the pids change. Sidekiq sets its own pid.
+  check_pids
+}
+
 ## Called when we have started the two processes and are waiting for their pid files.
 wait_for_pids(){
   # We are sleeping a bit here mostly because sidekiq is slow at writing its pid
@@ -225,19 +235,14 @@ wait_for_pids(){
     if [ $((i)) = "$gitlab_wait" ]; then
       echo
       echo "Waited ${i}s for the processes to write their pids, something probably went wrong."
-      exit 1;
-    fi
-    sleep 1
-    i=$((i+1))
+	  exit 1;
+	fi
+	sleep 1
+	i=$((i+1))
   done
   echo
   echo "Started in ${i}s."
 }
-
-# We use the pids in so many parts of the script it makes sense to always check them.
-# Only after start() is run should the pids change. Sidekiq sets its own pid.
-check_pids
-
 
 ## Checks whether the different parts of the service are already running or not.
 check_status(){
@@ -317,7 +322,7 @@ check_stale_pids(){
   if [ "$hpid" != "0" ] && [ "$gitlab_workhorse_status" != "0" ]; then
     echo "Removing stale GitLab Workhorse pid. This is most likely caused by GitLab Workhorse crashing the last time it ran."
     if ! rm "$gitlab_workhorse_pid_path"; then
-      echo "Unable to remove stale pid, exiting"
+       echo "Unable to remove stale pid, exiting"
       exit 1
     fi
   fi
@@ -401,7 +406,7 @@ start_gitlab() {
     # the PATH.
     $app_root/bin/daemon_with_pidfile $gitlab_workhorse_pid_path  \
       /usr/bin/env PATH=$gitlab_workhorse_dir:$PATH \
-        gitlab-workhorse $gitlab_workhorse_options \
+      gitlab-workhorse $gitlab_workhorse_options \
       >> $gitlab_workhorse_log 2>&1 &
   fi
 
@@ -419,7 +424,7 @@ start_gitlab() {
       echo "The GitLab Pages is already running with pid $gppid, not restarting"
     else
       $app_root/bin/daemon_with_pidfile $gitlab_pages_pid_path  \
-          $gitlab_pages_dir/gitlab-pages $gitlab_pages_options \
+        $gitlab_pages_dir/gitlab-pages $gitlab_pages_options \
         >> $gitlab_pages_log 2>&1 &
     fi
   fi
@@ -572,7 +577,6 @@ restart_gitlab(){
   fi
   start_gitlab
 }
-
 
 run_rc_command "$1"
 

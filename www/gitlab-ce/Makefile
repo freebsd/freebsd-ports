@@ -3,7 +3,7 @@
 
 PORTNAME?=	gitlab-ce
 PORTVERSION?=	13.8.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
