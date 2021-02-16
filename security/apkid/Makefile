@@ -24,8 +24,6 @@ USE_PYTHON=	distutils
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yara>0:security/py-yara@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yara>0:security/py-yara@${PY_FLAVOR}
 
-PY_YARA_VER=	4.0.2	# Version of security/py-yara
-
 PLIST_SUB=	VER=${PORTVERSION}
 NO_ARCH=	yes
 
