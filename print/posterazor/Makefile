@@ -5,7 +5,6 @@ PORTNAME=	posterazor
 PORTVERSION=	1.9.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	print graphics
-MASTER_SITES=	LOCAL/ehaupt:extras
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Cuts an image into pieces which can be printed out as a poster
