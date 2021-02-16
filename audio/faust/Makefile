@@ -2,96 +2,54 @@
 # $FreeBSD$
 
 PORTNAME=	faust
-DISTVERSION=	2.5.23
-PORTREVISION=	4
+DISTVERSION=	2.27.2
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Functional programming language for realtime audio signal processing
 
-BROKEN=		Doesn't build with libmicrohttpd 0.9.71 - PR: 250101
-
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-LIB_DEPENDS=	libLLVM-${LLVM_VERSION:C/([1-9])([0-9])/\1.\2/}.so:devel/llvm${LLVM_VERSION}
+LIB_DEPENDS=	libLLVM-${LLVM_VERSION:C/([1-9])([0-9])/\1/}.so:devel/llvm${LLVM_VERSION}
 
-USES=		compiler:c++11-lang gmake ncurses python pkgconfig shebangfix
+USES=		compiler:c++11-lang cmake ncurses python pkgconfig shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
-GH_TUPLE=	grame-cncm:faustlibraries:f889fe1:libs/libraries \
-		ThatOtherPerson:xxd:cd8ecce:xxd/xxd-replacement
-USE_CXXSTD=	c++11
-SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench
-LLVM_VERSION=	60
-MAKE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
+GH_TUPLE=	\
+		grame-cncm:faustlibraries:cde57d76dd8c4b124998a5490164e4b58ae9495f:grame_cncm_faustlibraries/libraries \
+		google:oboe:f644b60eaf0deea5b9c7af443e28d42c4995b59e:google_oboe/architecture/android/app/oboe \
+		google:oboe:f644b60eaf0deea5b9c7af443e28d42c4995b59e:google_oboe/architecture/smartKeyboard/android/app/oboe \
 
-OPTIONS_DEFINE=		HIGHLIGHT HTTPD_LIB
-OPTIONS_DEFAULT=	HIGHLIGHT HTTPD_LIB
+SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench tools/sound2faust/sound2reader
+
+LLVM_VERSION=	${LLVM_DEFAULT}
+
+CMAKE_SOURCE_PATH=	${WRKSRC}/build
+CMAKE_ARGS=	-DLLVM_BACKEND=COMPILER -DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
+
+CXXFLAGS+=	-DCPP_BUILD -DOCPP_BUILD # enable backends
+LDFLAGS+=	-lexecinfo
+
+OPTIONS_DEFINE=		EXAMPLES HIGHLIGHT HTTPD_LIB
+OPTIONS_DEFAULT=	HIGHLIGHT
 OPTIONS_SUB=		yes
+
+EXAMPLES_CMAKE_BOOL=	FREEBSD_INSTALL_EXAMPLES
 
 HIGHLIGHT_DESC=		Syntax highlighting in Kate, gedit, Highlight, vim
 HTTPD_LIB_DESC=		Build httpd support library
 
 HTTPD_LIB_ALL_TARGET=	all httpd
 HTTPD_LIB_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
+HTTPD_LIB_BROKEN=	TODO fix after change to cmake
 
-# Fix of the upstream bug https://github.com/grame-cncm/faust/issues/76 will kill most of the patches.
-post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|make -C|$$(MAKE) -C| ; s|share/man|man|g' \
-		${WRKSRC}/Makefile \
-		${WRKSRC}/architecture/osclib/Makefile
-	@${REINPLACE_CMD} -i '' -e 's| -O1|| ; s|-o faust|-lexecinfo -o faust|' \
-		${WRKSRC}/compiler/Makefile.unix
-	@${RM} -r ${WRKSRC}/architecture/osclib/oscpack/ip/win32
-	@${REINPLACE_CMD} -i '' -e 's|__linux__|__FreeBSD__|' \
-		${WRKSRC}/architecture/faust/dsp/timed-dsp.h
-	@${REINPLACE_CMD} -i '' -e 's|jack_midi_reset_buffer|jack_midi_clear_buffer|' \
-		${WRKSRC}/architecture/faust/gui/ControlUI.h \
-		${WRKSRC}/architecture/faust/midi/jack-midi.h
-	@${REINPLACE_CMD} -i '' -e "s|CXX='g++'|CXX='clang++'|" \
-		${WRKSRC}/benchmark/Makefile
-	@${REINPLACE_CMD} -i '' -e 's|CXX=g++|CXX=clang++|' \
-		${WRKSRC}/tools/faust2appls/faust2* \
-		${WRKSRC}/tools/dx72faust/Makefile \
-		${WRKSRC}/tools/physicalModeling/mesh2faust/vega/Makefile-headers/Makefile-header.*
-	@${REINPLACE_CMD} -i '' -e 's|g++|clang++|' \
-		${WRKSRC}/embedded/faustcsound/Makefile \
-		${WRKSRC}/embedded/faustremote/Makefile \
-		${WRKSRC}/embedded/faustremote/RemoteClient/Example/Makefile \
-		${WRKSRC}/embedded/faustremote/RemoteClient/Example/Makefile \
-		${WRKSRC}/embedded/faustremote/RemoteClient/SimpleExample/Makefile_Linux \
-		${WRKSRC}/embedded/faustremote/RemoteServer/Makefile \
-		${WRKSRC}/run_test_cpp.sh \
-		${WRKSRC}/tests/impulse-tests/faust2* \
-		${WRKSRC}/tests/impulse-tests/install.sh \
-		${WRKSRC}/tools/benchmark/faustbench \
-		${WRKSRC}/tools/faust2appls/faust2ros \
-		${WRKSRC}/tools/faust2appls/faust2rosgtk \
-		${WRKSRC}/tools/faust2appls/faust2vst \
-		${WRKSRC}/tools/faust2appls/faust2vsti \
-		${WRKSRC}/tools/faust2appls/faust2w32max6 \
-		${WRKSRC}/tools/faust2appls/faust2w32msp \
-		${WRKSRC}/tools/faust2appls/faust2w32puredata \
-		${WRKSRC}/tools/faust2appls/faust2w32vst \
-		${WRKSRC}/tools/physicalModeling/mesh2faust/vega/libraries/glui/Makefile \
-		${WRKSRC}/tools/physicalModeling/mesh2faust/vega/libraries/glui/glui-2.35/src/makefile
-	@${GREP} -rl llvm-config ${WRKSRC} | \
-		${XARGS} -L 1 ${REINPLACE_CMD} -i '' -e "s|llvm-config|llvm-config${LLVM_VERSION}|"
-	@${REINPLACE_CMD} -i '' -e "s|LLVM_VERSION), 4.0.0))|LLVM_VERSION), $$(llvm-config${LLVM_VERSION} --version)))|" \
-		${WRKSRC}/compiler/Makefile.unix
-	@${REINPLACE_CMD} -i '' "s|^CC|#CC|; s|^CFLAGS|#CFLAGS|" \
-		${WRKSRC}/xxd-replacement/Makefile
-	@${REINPLACE_CMD} -i '' "s|xxd|${WRKSRC}/xxd-replacement/xxd|" \
-		${WRKSRC}/compiler/Makefile.unix \
-		${WRKSRC}/architecture/httpdlib/src/Makefile
-
-pre-build:
-	cd ${WRKSRC}/xxd-replacement && ${MAKE_CMD}
+PORTEXAMPLES=		*
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/faust
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/faust # https://github.com/grame-cncm/faust/issues/135
+	@${FIND} ${STAGEDIR} -name android | ${XARGS} ${RM} -r
 
 post-install-HIGHLIGHT-on:
 	# 1) kate
