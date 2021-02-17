@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cucumber-create-meta
-PORTVERSION=	2.0.4
+PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,8 +12,8 @@ COMMENT=	Produce the meta message for Cucumber Ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-cucumber-messages>=13.1.0<14:devel/rubygem-cucumber-messages \
-		rubygem-sys-uname>=1.2.1<2:sysutils/rubygem-sys-uname
+RUN_DEPENDS=	rubygem-cucumber-messages>=14.0.1<15:devel/rubygem-cucumber-messages \
+		rubygem-sys-uname>=1.2.2<2:sysutils/rubygem-sys-uname
 
 USES=		gem
 USE_RUBY=	yes
