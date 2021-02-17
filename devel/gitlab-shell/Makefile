@@ -3,15 +3,13 @@
 
 PORTNAME?=	gitlab-shell
 PORTVERSION?=	13.15.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
 
 MAINTAINER?=	mfechner@FreeBSD.org
 COMMENT?=	GitLab Shell handles git commands for GitLab
 
 LICENSE=	MIT
-
-BUILD_DEPENDS=	rubygem-bundler>=2.1.4<2.1.5,1:sysutils/rubygem-bundler
 
 USES=		gmake go:modules,no_targets
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
