@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sys-uptime
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,9 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides uptime and boot time information
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-ffi>=1.0.0:devel/rubygem-ffi
+RUN_DEPENDS=	rubygem-ffi>=1.1<2:devel/rubygem-ffi
 
 USES=		gem
 USE_RUBY=	yes
