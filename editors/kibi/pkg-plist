@@ -6,3 +6,4 @@ bin/kibi
 %%SYNTAX%%%%DATADIR%%/syntax.d/python.ini
 %%SYNTAX%%%%DATADIR%%/syntax.d/rust.ini
 %%SYNTAX%%%%DATADIR%%/syntax.d/toml.ini
+%%SYNTAX%%%%DATADIR%%/syntax.d/v.ini
