@@ -2,7 +2,7 @@
 
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.169
+DISTVERSION=	1.2.170
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ValidationLayers
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-22-gfaa570a:headers/external/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-29-g75b30a6:headers/external/spirv-headers
 CMAKE_OFF=	BUILD_TESTS
 CMAKE_ON=	BUILD_LAYER_SUPPORT_FILES
 CMAKE_ARGS=	-DGLSLANG_INSTALL_DIR:PATH="${LOCALBASE}" \
