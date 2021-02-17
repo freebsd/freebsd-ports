@@ -11,6 +11,9 @@ DISTNAME=	NehQuake-bjp-bin-src.linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake engine designed for playing Nehahra
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: sb_lines
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: sb_lines
+
 USES=		gl gmake dos2unix tar:bzip2 xorg
 USE_GL=		gl
 USE_XORG=	xxf86dga xxf86vm
