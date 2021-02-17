@@ -13,6 +13,8 @@ COMMENT=	Synchronous multi-master replication engine
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_13=	galerautils/src/gu_int128.h:163:20: error: use of undeclared identifier '__bswap64_var'
+BROKEN_FreeBSD_14=	galerautils/src/gu_int128.h:163:20: error: use of undeclared identifier '__bswap64_var'
 BROKEN_riscv64=		fails to compile: gu_int128.h: use of undeclared identifier '__bswap64_var'
 NOT_FOR_ARCHS=		i386
 # On i386 older versions of clang produce:
