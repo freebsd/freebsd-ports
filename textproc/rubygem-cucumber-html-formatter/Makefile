@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cucumber-html-formatter
-PORTVERSION=	9.0.0
+PORTVERSION=	12.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ COMMENT=	HTML formatter for Cucumber
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-cucumber-messages>=13.0.1<14:devel/rubygem-cucumber-messages
+RUN_DEPENDS=	rubygem-cucumber-messages>=14.0.1<15:devel/rubygem-cucumber-messages
 
 USES=		gem
 USE_RUBY=	yes
