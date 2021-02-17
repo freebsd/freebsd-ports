@@ -21,6 +21,7 @@
 %%SITE_PERL%%/Pithub/Orgs/Teams.pm
 %%SITE_PERL%%/Pithub/PullRequests.pm
 %%SITE_PERL%%/Pithub/PullRequests/Comments.pm
+%%SITE_PERL%%/Pithub/PullRequests/Reviewers.pm
 %%SITE_PERL%%/Pithub/Repos.pm
 %%SITE_PERL%%/Pithub/Repos/Collaborators.pm
 %%SITE_PERL%%/Pithub/Repos/Commits.pm
@@ -66,6 +67,7 @@
 %%PERL5_MAN3%%/Pithub::Orgs::Teams.3.gz
 %%PERL5_MAN3%%/Pithub::PullRequests.3.gz
 %%PERL5_MAN3%%/Pithub::PullRequests::Comments.3.gz
+%%PERL5_MAN3%%/Pithub::PullRequests::Reviewers.3.gz
 %%PERL5_MAN3%%/Pithub::Repos.3.gz
 %%PERL5_MAN3%%/Pithub::Repos::Collaborators.3.gz
 %%PERL5_MAN3%%/Pithub::Repos::Commits.3.gz
