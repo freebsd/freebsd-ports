@@ -12,9 +12,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	LRU Cache in Memory through a tie interface
 
-INSTALL_TARGET=	pure_install
 USES=		perl5 shebangfix
 USE_PERL5=	configure
+
+INSTALL_TARGET=	pure_install
+NO_ARCH=	yes
 
 SHEBANG_FILES=	tie-cache-bench.pl
 
