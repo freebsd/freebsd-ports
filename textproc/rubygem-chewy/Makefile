@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chewy
-PORTVERSION=	5.2.0
+PORTVERSION=	6.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-activesupport60>=4.0:devel/rubygem-activesupport60 \
-		rubygem-elasticsearch>=2.0.0:textproc/rubygem-elasticsearch \
+		rubygem-elasticsearch>=6.3.0:textproc/rubygem-elasticsearch \
 		rubygem-elasticsearch-dsl>=0:textproc/rubygem-elasticsearch-dsl
 
 USES=		gem
