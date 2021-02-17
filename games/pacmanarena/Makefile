@@ -17,6 +17,9 @@ COMMENT=	Pacman clone in full 3D with a few surprises
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: keyboard_map
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: keyboard_map
+
 WRKSRC=		${WRKDIR}/${PORTNAME:S/arena//}
 
 USES=		gnome sdl
