@@ -25,7 +25,6 @@ SS_DESC=	Sockets support - required for any network programs
 NDBM_DESC=	Support for NDBM-databases
 NO_WRKSUBDIR=	yes
 EXTRACT_AFTER_ARGS=--exclude md5\* --exclude regex.h --exclude reg????*.c
-CFLAGS+=	-Werror
 MAKE_ARGS=	VPATH=${WRKSRC} MODULES=${MODULES:Q}
 MAKEFILE=	${FILESDIR}/BSDmakefile
 MAKE_ENV=	MKDIR=${MKDIR:Q} STAGEDIR=${STAGEDIR:Q}
