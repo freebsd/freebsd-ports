@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	youtube_dlc
-DISTVERSION=	2021.02.09
+DISTVERSION=	2021.02.15
 CATEGORIES=	www
 
 # Implicit approval to commit trivial version updates.
@@ -21,7 +21,7 @@ MAKE_ARGS=	PYTHON=${PYTHON_CMD}
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=		FFMPEG MANPAGES RTMPDUMP SYMLINK
-OPTIONS_DEFAULT=	RTMPDUMP
+OPTIONS_DEFAULT=	FFMPEG RTMPDUMP
 OPTIONS_SUB=	yes
 
 RTMPDUMP_DESC=	Use rtmpdump to download rtmp video streams
