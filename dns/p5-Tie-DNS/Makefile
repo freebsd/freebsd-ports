@@ -13,6 +13,7 @@ COMMENT=	Tie interface to Net::DNS
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
@@ -20,13 +21,14 @@ RUN_DEPENDS=	p5-Net-DNS>=0:dns/p5-Net-DNS \
 TEST_DEPENDS=	p5-Test-CheckManifest>=0:devel/p5-Test-CheckManifest \
 		p5-Test-Perl-Critic>=0:textproc/p5-Test-Perl-Critic
 
-OPTIONS_DEFINE=	EXAMPLES
+USES=		perl5 shebangfix
+USE_PERL5=	configure
 
 NO_ARCH=	yes
-USE_PERL5=	configure
-USES=		perl5 shebangfix
 
 SHEBANG_FILES=	eg/*.pl
+
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
