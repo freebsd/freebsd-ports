@@ -2,6 +2,7 @@ bin/release
 %%SITE_PERL%%/Module/Release.pm
 %%SITE_PERL%%/Module/Release/Kwalitee.pm
 %%SITE_PERL%%/Module/Release/MANIFEST.pm
+%%SITE_PERL%%/Module/Release/MetaCPAN.pm
 %%SITE_PERL%%/Module/Release/PAUSE.pm
 %%SITE_PERL%%/Module/Release/Prereq.pm
 %%SITE_PERL%%/Module/Release/SVN.pm
@@ -10,6 +11,7 @@ bin/release
 %%PERL5_MAN3%%/Module::Release.3.gz
 %%PERL5_MAN3%%/Module::Release::Kwalitee.3.gz
 %%PERL5_MAN3%%/Module::Release::MANIFEST.3.gz
+%%PERL5_MAN3%%/Module::Release::MetaCPAN.3.gz
 %%PERL5_MAN3%%/Module::Release::PAUSE.3.gz
 %%PERL5_MAN3%%/Module::Release::Prereq.3.gz
 %%PERL5_MAN3%%/Module::Release::SVN.3.gz
