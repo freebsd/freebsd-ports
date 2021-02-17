@@ -11,7 +11,7 @@ COMMENT=	Decoder implementation of the JBIG2 image compression format
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf libtool
+USES=		libtool
 
 CONFIGURE_ENV=	ac_cv_func_getopt_long=yes
 GNU_CONFIGURE=	yes
@@ -28,8 +28,5 @@ PNG_LIB_DEPENDS=	libpng.so:graphics/png
 post-patch:
 	@${RM} ${WRKSRC}/getopt* ${WRKSRC}/sha1.h
 	@${REINPLACE_CMD} -E 's|SHA1_Final\( *([^,]+), *([^\)]+)\)|SHA1_Final(\2, \1)|' ${WRKSRC}/jbig2dec.c ${WRKSRC}/sha1.c
-
-pre-configure:
-	@cd ${WRKSRC}/ && ${SH} autogen.sh
 
 .include <bsd.port.mk>

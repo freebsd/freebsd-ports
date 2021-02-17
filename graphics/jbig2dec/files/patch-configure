@@ -1,0 +1,23 @@
+--- configure.orig	2020-09-10 16:29:32 UTC
++++ configure
+@@ -13599,20 +13599,6 @@ if test "x$ac_cv_func_getopt_long" = xyes; then :
+ 
+ $as_echo "#define HAVE_GETOPT_LONG /**/" >>confdefs.h
+ 
+-else
+-
+-	case " $LIBOBJS " in
+-  *" getopt.$ac_objext "* ) ;;
+-  *) LIBOBJS="$LIBOBJS getopt.$ac_objext"
+- ;;
+-esac
+-
+-	case " $LIBOBJS " in
+-  *" getopt1.$ac_objext "* ) ;;
+-  *) LIBOBJS="$LIBOBJS getopt1.$ac_objext"
+- ;;
+-esac
+-
+ 
+ fi
+ 
