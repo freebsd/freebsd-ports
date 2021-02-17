@@ -7,7 +7,7 @@ DISTVERSION=	0.17.0
 PORTREVISION=	5
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	timp87@gmail.com
 COMMENT=	Port of "Jagged Alliance 2" using SDL
 
 LICENSE=		PD SFI-SCLA
