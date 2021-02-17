@@ -14,6 +14,9 @@ LICENSE=	BSD3CLAUSE LGPL21
 LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: glist_reloadingabstraction
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: glist_reloadingabstraction
+
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		dejavu>0:x11-fonts/dejavu
 
