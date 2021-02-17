@@ -1,0 +1,5 @@
+RequirementsLib provides a simple layer for building and interacting with
+requirements in both the Pipfile format and the requirements.txt format. This
+library was originally built for converting between these formats in Pipenv.
+
+WWW: https://github.com/sarugaku/requirementslib

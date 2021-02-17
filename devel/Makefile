@@ -5023,6 +5023,7 @@
     SUBDIR += py-repoze.xmliter
     SUBDIR += py-represent
     SUBDIR += py-requestsexceptions
+    SUBDIR += py-requirementslib
     SUBDIR += py-resolver
     SUBDIR += py-resource
     SUBDIR += py-responses
