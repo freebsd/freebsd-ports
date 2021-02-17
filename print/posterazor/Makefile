@@ -12,7 +12,7 @@ COMMENT=	Cuts an image into pieces which can be printed out as a poster
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		dos2unix gl localbase:ldflags qmake qt:5
+USES=		compiler:c++11-lang dos2unix gl localbase:ldflags qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	ehaupt
 USE_GL=		gl
