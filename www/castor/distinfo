@@ -1,6 +1,6 @@
 TIMESTAMP = 1602348616
-SHA256 (castor-0.8.16.tar.gz) = 50414f498c3b6232efb00e883043854517290b842e0501c1d1eccfaf78be9ae3
-SIZE (castor-0.8.16.tar.gz) = 92128
+SHA256 (castor-0.8.16.tar.gz) = 9a72ed66a10abd9d6fb44c02349f6c4035ff7d89397eb928c90f1465c3cccf7d
+SIZE (castor-0.8.16.tar.gz) = 92279
 SHA256 (rust/crates/aho-corasick-0.7.13.tar.gz) = 043164d8ba5c4c3035fec9bbee8647c0261d788f3474306f93bb65901cae0e86
 SIZE (rust/crates/aho-corasick-0.7.13.tar.gz) = 111381
 SHA256 (rust/crates/ansi-parser-0.6.5.tar.gz) = 761ac675f1638a6a49e26f6ac3a4067ca3fefa8029816ae4ef8d3fa3d06a5194

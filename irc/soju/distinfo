@@ -1,6 +1,6 @@
 TIMESTAMP = 1608214453
-SHA256 (142a8aa629fc.tar.gz) = e4207bf970ca3bee03c7e71759af7dbe8f937fcf7a34a541af10ea2c7109a216
-SIZE (142a8aa629fc.tar.gz) = 3112
+SHA256 (142a8aa629fc.tar.gz) = 20ce2e87df7c3d55486b7be98694c8cf3b9ca626b2785f470e723f291d880fa1
+SIZE (142a8aa629fc.tar.gz) = 3118
 SHA256 (emersion-soju-0.0.20201214-0ddc0de_GH0.tar.gz) = 8466d19f82f26c9deb58912692885964d16b46d0aea3ea7c68f7aa381bbb9e0a
 SIZE (emersion-soju-0.0.20201214-0ddc0de_GH0.tar.gz) = 69092
 SHA256 (emersion-go-sasl-7bfe0ed36a21_GH0.tar.gz) = 81a37103a797ba674f0d023c98165ec84a45799971d8834e345077d084abbbb7
