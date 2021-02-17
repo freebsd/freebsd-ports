@@ -1,9 +1,9 @@
-TIMESTAMP = 1591552627
-SHA256 (decke-smtprelay-v1.4.0_GH0.tar.gz) = 2cd1e425acd8b6ba88a7c25739623e36e223355aa475f8de5122a4b3af4a67ed
-SIZE (decke-smtprelay-v1.4.0_GH0.tar.gz) = 10726
+TIMESTAMP = 1613588806
+SHA256 (decke-smtprelay-v1.5.0_GH0.tar.gz) = d3cd6d3385a6a4ded0fec75dc794cb3dc70a23bfbc61989c28a9911a34e6af37
+SIZE (decke-smtprelay-v1.5.0_GH0.tar.gz) = 13508
 SHA256 (chrj-smtpd-v0.2.0_GH0.tar.gz) = 1632bcf0d078de8f167e08a41724b3d3e9a5c235dfdbfc4fe4ca858b14350c54
 SIZE (chrj-smtpd-v0.2.0_GH0.tar.gz) = 17494
-SHA256 (golang-crypto-70a84ac30bf9_GH0.tar.gz) = 715165cbb952e6f78f59379404fb3d9b0db2f077b65173b2fea0d5a3b950cf89
-SIZE (golang-crypto-70a84ac30bf9_GH0.tar.gz) = 1729991
+SHA256 (golang-crypto-eec23a3978ad_GH0.tar.gz) = bd882536660d6b65619c9d9b9334e9a5c55557613e56e1b485323a2293dfa2f8
+SIZE (golang-crypto-eec23a3978ad_GH0.tar.gz) = 1725798
 SHA256 (vharitonsky-iniflags-a33cd0b5f3de_GH0.tar.gz) = d60f3292be138071158e47e794c2ba93ea9dfc866c44e6472833e2d8566024aa
 SIZE (vharitonsky-iniflags-a33cd0b5f3de_GH0.tar.gz) = 7498
