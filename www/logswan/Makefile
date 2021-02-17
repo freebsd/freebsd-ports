@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	logswan
-PORTVERSION=	2.1.8
+DISTVERSION=	2.1.10
 CATEGORIES=	www
+MASTER_SITES=	https://github.com/fcambus/logswan/releases/download/${DISTVERSION}/
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Fast Web log analyzer
@@ -14,8 +15,6 @@ LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libmaxminddb.so:net/libmaxminddb
 
 USES=		cmake compiler:c11
-USE_GITHUB=	yes
-GH_ACCOUNT=	fcambus
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
