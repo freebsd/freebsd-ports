@@ -59,7 +59,7 @@ MODULES+=	${SELECTED_OPTIONS:NDOCS:tl}
 
 # XXX This should not be necessary:
 .if ${ARCH} != i386
-PLIST_SUB+=	SQL_ORACLE=@comment
+PLIST_SUB+=	SQL_ORACLE="@comment "
 .endif
 
 do-configure:
