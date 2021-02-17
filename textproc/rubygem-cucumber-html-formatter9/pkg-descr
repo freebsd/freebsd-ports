@@ -1,0 +1,6 @@
+Cucumber HTML Formatter is a cross-platform formatter that produces a HTML
+report for Cucumber runs. It is built on top of cucumber-react and works with
+any Cucumber implementation with a protobuf formatter that outputs cucumber
+messages.
+
+WWW: https://github.com/cucumber/cucumber/tree/master/html-formatter/ruby
