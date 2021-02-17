@@ -10,6 +10,9 @@ EXTRACT_SUFX=	-source.tar.gz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Reimplementation of LK Avalon's Robbo for the Atari XE/XL
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: K_direction
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: K_direction
+
 USES=		gmake sdl
 USE_SDL=	sdl ttf mixer image
 
