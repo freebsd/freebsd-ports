@@ -8,7 +8,10 @@ MASTER_SITES=	SF
 DISTNAME=	ninvaders-${PORTVERSION}
 
 MAINTAINER=	mich@FreeBSD.org
-COMMENT=	The nInvaders game is a Space Invaders clone for ncurses
+COMMENT=	Space Invaders clone for ncurses
+
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: alienBlock
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: alienBlock
 
 USES=		ncurses
 
