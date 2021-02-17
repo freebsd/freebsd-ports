@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-apis-storage_v1
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
