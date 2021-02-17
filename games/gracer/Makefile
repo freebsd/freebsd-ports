@@ -13,6 +13,9 @@ COMMENT=	3D motor sport simulator
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: GrBreak
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: GrBreak
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png
