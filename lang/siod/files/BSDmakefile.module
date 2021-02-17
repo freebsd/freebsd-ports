@@ -10,9 +10,14 @@ regex_CFLAGS=	-isystem ${LOCALBASE}/include
 regex_LDADD=	-L${LOCALBASE}/lib -lgnuregex
 sql_sybase_CFLAGS=-isystem ${LOCALBASE}/include
 sql_sybase_LDADD=-L${LOCALBASE}/lib -lct
+sql_oracle_CFLAGS=-isystem ${LOCALBASE}/oracle8-client/rdbms/demo
+sql_oracle_LDADD=-L${LOCALBASE}/oracle8-client/lib -lclntsh
 
 CFLAGS+=	-DHAVE_SYS_PARAM_H ${%%MODULE%%_CFLAGS}
 LDADD=		${%%MODULE%%_LDADD}
+.if "%%MODULE%%" == "sql_oracle"
+LD_FATAL_WARNINGS=no	# Oracle client 8 only provides static library
+.endif
 
 SRCS=	%%MODULE%%.c
 
