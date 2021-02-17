@@ -17,4 +17,6 @@ RUN_DEPENDS=	p5-NetAddr-IP>=4.049:net-mgmt/p5-NetAddr-IP
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
