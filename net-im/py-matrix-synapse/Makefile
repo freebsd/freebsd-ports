@@ -3,7 +3,7 @@
 
 PORTNAME=	matrix-synapse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.25.0
+DISTVERSION=	1.26.0
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -74,7 +74,6 @@ PLIST_FILES=	"@sample ${ETCDIR}/log.config.sample"
 DOCS=		README.rst UPGRADE.rst CHANGES.md docs/postgres.md
 PORTDOCS=	${DOCS:T}
 
-
 OPTIONS_DEFINE=		DOCS LDAP OIDC  PGSQL REDIS SQLITE URLPREVIEW
 OPTIONS_DEFAULT=	PGSQL SQLITE
 
@@ -84,7 +83,7 @@ URLPREVIEW_DESC=	Add dependencies necessary for URL previews
 
 LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matrix-synapse-ldap3>=0.1:net/py-matrix-synapse-ldap3@${PY_FLAVOR}
 OIDC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}authlib>=0.14.0:security/py-authlib@${PY_FLAVOR}
-PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>2.7:databases/py-psycopg2@${PY_FLAVOR}
+PGSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>2.8:databases/py-psycopg2@${PY_FLAVOR}
 REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>=0:databases/py-hiredis@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}txredisapi>=0:databases/py-txredisapi@${PY_FLAVOR}
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
