@@ -1,3 +1,3 @@
-TIMESTAMP = 1612519201
-SHA256 (rubygem/aws-sdk-athena-1.34.0.gem) = bd9b10df259fcebbe02b7a2559938ba3ee28cd7aad4afe8d9c1c3402065197da
-SIZE (rubygem/aws-sdk-athena-1.34.0.gem) = 36864
+TIMESTAMP = 1613478483
+SHA256 (rubygem/aws-sdk-athena-1.35.0.gem) = 76b50a89e4a72a3be05f6e30a9208ab53c93247ae50b1cc2983783612564ab52
+SIZE (rubygem/aws-sdk-athena-1.35.0.gem) = 38400
