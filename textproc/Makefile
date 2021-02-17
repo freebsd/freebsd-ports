@@ -436,6 +436,7 @@
     SUBDIR += markdownfmt
     SUBDIR += markdownpart
     SUBDIR += mathml-xsd
+    SUBDIR += md4c
     SUBDIR += mdbook
     SUBDIR += mdocml
     SUBDIR += meld
