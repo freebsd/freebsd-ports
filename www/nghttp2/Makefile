@@ -20,7 +20,7 @@ OPTIONS_DEFAULT=APP HPACK
 OPTIONS_SUB=	yes
 APP_DESC=	Build h2load, nghttp, nghttpd and nghttpx
 
-USES=		autoreconf compiler:c++14-lang gmake libtool localbase pathfix pkgconfig ssl tar:xz
+USES=		compiler:c++14-lang gmake libtool localbase pathfix pkgconfig ssl tar:xz
 
 CONFIGURE_ARGS=	--disable-python-bindings --with-jemalloc
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
@@ -55,8 +55,8 @@ HPACK_CONFIGURE_ENABLE=	hpack-tools
 HPACK_LIB_DEPENDS=	libjansson.so:devel/jansson
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| lib||' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|$$[({]top_builddir[})]/lib/libnghttp2.la|-lnghttp2|' ${WRKSRC}/*/Makefile.am
+	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| lib||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$[({]top_builddir[})]/lib/libnghttp2.la|-lnghttp2|' ${WRKSRC}/*/Makefile.in
 	@${REINPLACE_CMD} -e '1d' ${WRKSRC}/script/fetch-ocsp-response
 
 # lib/libnghttp2.* are not available until configure phase
