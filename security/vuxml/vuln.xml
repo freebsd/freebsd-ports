@@ -77,6 +77,49 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8e670b85-706e-11eb-abb2-08002728f74c">
+    <topic>Rails -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-activerecord52</name>
+	<range><lt>5.2.4.5</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack60</name>
+	<name>rubygem-activerecord60</name>
+	<range><lt>6.0.3.5</lt></range>
+      </package>
+      <package>
+	<name>rubygem-actionpack61</name>
+	<name>rubygem-activerecord61</name>
+	<range><lt>6.1.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ruby on Rails blog:</p>
+	<blockquote cite="https://weblog.rubyonrails.org/2021/2/10/Rails-5-2-4-5-6-0-3-5-and-6-1-2-1-have-been-released/">
+	  <p>Rails version 5.2.4.5, 6.0.3.5 and 6.1.2.1 have been released! Those
+	    version are security releases and addresses two issues:</p>
+	  <p>CVE-2021-22880: Possible DoS Vulnerability in Active Record PostgreSQL adapter.</p>
+	  <p>CVE-2021-22881: Possible Open Redirect in Host Authorization Middleware.</p>
+	  <p></p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://weblog.rubyonrails.org/2021/2/10/Rails-5-2-4-5-6-0-3-5-and-6-1-2-1-have-been-released/</url>
+      <url>https://discuss.rubyonrails.org/t/cve-2021-22880-possible-dos-vulnerability-in-active-record-postgresql-adapter/77129</url>
+      <url>https://discuss.rubyonrails.org/t/cve-2021-22881-possible-open-redirect-in-host-authorization-middleware/77130</url>
+      <cvename>CVE-2021-22880</cvename>
+      <cvename>CVE-2021-22881</cvename>
+    </references>
+    <dates>
+      <discovery>2021-02-10</discovery>
+      <entry>2021-02-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="48514901-711d-11eb-9846-e09467587c17">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
