@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt-glib
-PORTVERSION=	3.0.0
+PORTVERSION=	4.0.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
 
@@ -13,15 +13,19 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libvirt.so:devel/libvirt
 
-OPTIONS_DEFINE=	VALA
+USES=		gettext gmake gnome libtool meson pathfix pkgconfig \
+		python:3.6+ tar:xz
+
+OPTIONS_DEFINE=	DOCS VALA
+OPTIONS_DEFAULT=	DOCS VALA
 OPTIONS_SUB=	yes
+DOCS_MESON_ENABLED=	docs
+DOCS_BUILD_DEPENDS=	gtk-doc>=0:textproc/gtk-doc
 VALA_DESC=	Vala binding
-VALA_CONFIGURE_ENABLE=	vala
+VALA_MESON_ENABLED=	vala
 VALA_BUILD_DEPENDS=	valac:lang/vala
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-introspection
-USES=		gettext gmake gnome libtool pathfix pkgconfig python
+MESON_ARGS+=	-Dintrospection=enabled
 USE_LDCONFIG=	yes
 USE_GNOME=	intlhack introspection libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include
