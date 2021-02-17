@@ -1,6 +1,6 @@
-TIMESTAMP = 1613399336
-SHA256 (dkaslovsky-textnote-v1.0.0_GH0.tar.gz) = a59c6c1a830ea9417e118d5bd260ade24f482145b1a216a78fcfa38391b80aa6
-SIZE (dkaslovsky-textnote-v1.0.0_GH0.tar.gz) = 42600
+TIMESTAMP = 1613562869
+SHA256 (dkaslovsky-textnote-v1.1.0_GH0.tar.gz) = cbccbddecb93b5e831446a1afa998f553ce339bd26864a727d41e6ab1f924e77
+SIZE (dkaslovsky-textnote-v1.1.0_GH0.tar.gz) = 43687
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
