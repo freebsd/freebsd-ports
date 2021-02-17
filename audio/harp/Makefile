@@ -9,6 +9,9 @@ COMMENT=	Minimalist audio player
 
 LICENSE=	GPLv3
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: h
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: h
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	heckendorfc
 
