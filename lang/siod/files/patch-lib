@@ -1609,7 +1609,7 @@
  {return(closure(listn(3,
  		      NIL,
 --- slibu.c	2014-03-25 06:32:41.000000000 -0400
-+++ slibu.c	2021-02-15 21:10:45.383193000 -0500
++++ slibu.c	2021-02-17 13:41:42.696837000 -0500
 @@ -21,4 +21,8 @@
  #include <stdarg.h>
  
@@ -1687,7 +1687,12 @@
 +static LISP ldecode_pwent(const struct passwd *p)
  {return(symalist(
  		 "name",strcons(strlen(p->pw_name),p->pw_name),
-@@ -188,11 +193,12 @@
+@@ -186,13 +191,17 @@
+ #endif
+ 		 "shell",strcons(strlen(p->pw_shell),p->pw_shell),
++#if defined(BSD)
++		 "change", flocons(p->pw_change),
++#endif
  		 NULL));}
  
 -static char *strfield(char *name,LISP alist)
@@ -1704,14 +1709,14 @@
 +static long longfield(const char *name, LISP alist)
  {LISP value,key = rintern(name);
   if NULLP(value = assq(key,alist))
-@@ -200,5 +206,5 @@
+@@ -200,5 +209,5 @@
   return(get_c_long(cdr(value)));}
   
 -void lencode_pwent(LISP alist,struct passwd *p)
 +static void lencode_pwent(LISP alist, struct passwd *p)
  {p->pw_name = strfield("name",alist);
   p->pw_passwd = strfield("passwd",alist);
-@@ -217,6 +223,7 @@
+@@ -217,6 +226,7 @@
  #endif
   p->pw_shell = strfield("shell",alist);}
 +#endif
@@ -1720,62 +1725,62 @@
 +static LISP lgetpwuid(LISP luid)
  {int iflag;
   uid_t uid;
-@@ -230,5 +237,5 @@
+@@ -230,5 +240,5 @@
   return(result);}
  
 -LISP lgetpwnam(LISP nam)
 +static LISP lgetpwnam(LISP nam)
  {int iflag;
   struct passwd *p;
-@@ -240,5 +247,5 @@
+@@ -240,5 +250,5 @@
   return(result);}
  
 -LISP lgetpwent(void)
 +static LISP lgetpwent(void)
  {int iflag;
   LISP result = NIL;
-@@ -250,5 +257,5 @@
+@@ -250,5 +260,5 @@
   return(result);}
  
 -LISP lsetpwent(void)
 +static LISP lsetpwent(void)
  {int iflag = no_interrupt(1);
   setpwent();
-@@ -256,5 +263,5 @@
+@@ -256,5 +266,5 @@
   return(NIL);}
  
 -LISP lendpwent(void)
 +static LISP lendpwent(void)
  {int iflag = no_interrupt(1);
   endpwent();
-@@ -262,5 +269,5 @@
+@@ -262,5 +272,5 @@
   return(NIL);}
  
 -LISP lsetuid(LISP n)
 +static LISP lsetuid(LISP n)
  {uid_t uid;
   uid = (uid_t) get_c_long(n);
-@@ -270,5 +277,5 @@
+@@ -270,5 +280,5 @@
     return(NIL);}
  
 -LISP lseteuid(LISP n)
 +static LISP lseteuid(LISP n)
  {uid_t uid;
   uid = (uid_t) get_c_long(n);
-@@ -278,5 +285,5 @@
+@@ -278,5 +288,5 @@
     return(NIL);}
  
 -LISP lgeteuid(void)
 +static LISP lgeteuid(void)
  {return(flocons(geteuid()));}
  
-@@ -289,4 +296,5 @@
+@@ -289,4 +299,5 @@
  #endif
  
 +#if !defined(BSD)
  LISP lputpwent(LISP alist,LISP file)
  {int iflag = no_interrupt(1);
-@@ -297,8 +305,9 @@
+@@ -297,8 +308,9 @@
   no_interrupt(iflag);
   return(NIL);}
 +#endif
@@ -1788,56 +1793,56 @@
 + const char *acc = get_c_string(lacc), *p;
   int amode = 0,iflag = no_interrupt(1),retval;
   for(p=acc;*p;++p)
-@@ -325,5 +334,5 @@
+@@ -325,5 +337,5 @@
     return(NIL);}
  
 -LISP lsymlink(LISP p1,LISP p2)
 +static LISP lsymlink(LISP p1, LISP p2)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -333,5 +342,5 @@
+@@ -333,5 +345,5 @@
   return(NIL);}
  
 -LISP llink(LISP p1,LISP p2)
 +static LISP llink(LISP p1, LISP p2)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -341,5 +350,5 @@
+@@ -341,5 +353,5 @@
   return(NIL);}
  
 -LISP lunlink(LISP p)
 +static LISP lunlink(LISP p)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -349,5 +358,5 @@
+@@ -349,5 +361,5 @@
   return(NIL);}
  
 -LISP lrmdir(LISP p)
 +static LISP lrmdir(LISP p)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -357,5 +366,5 @@
+@@ -357,5 +369,5 @@
   return(NIL);}
  
 -LISP lmkdir(LISP p,LISP m)
 +static LISP lmkdir(LISP p, LISP m)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -365,5 +374,5 @@
+@@ -365,5 +377,5 @@
   return(NIL);}
  
 -LISP lreadlink(LISP p)
 +static LISP lreadlink(LISP p)
  {long iflag;
   char buff[PATH_MAX+1];
-@@ -375,5 +384,5 @@
+@@ -375,5 +387,5 @@
   return(strcons(size,buff));}
  
 -LISP lrename(LISP p1,LISP p2)
 +static LISP lrename(LISP p1, LISP p2)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -385,15 +394,15 @@
+@@ -385,15 +397,15 @@
  #endif
  
 -LISP lrandom(LISP n)
@@ -1856,21 +1861,21 @@
 +static LISP lsrandom(LISP n)
  {long seed;
   seed = get_c_long(n);
-@@ -401,5 +410,5 @@
+@@ -401,5 +413,5 @@
   srand(seed);
  #endif
 -#if defined(__osf__) || defined(linux)
 +#if defined(__osf__) || defined(linux) || defined(BSD)
   srandom(seed);
  #endif
-@@ -408,5 +417,5 @@
+@@ -408,5 +420,5 @@
  #ifdef unix
  
 -LISP lfork(void)
 +static LISP lfork(void)
  {int iflag;
   pid_t pid;
-@@ -423,6 +432,7 @@
+@@ -423,6 +435,7 @@
  #endif
  
 -char **list2char(LISP *safe,LISP v)
@@ -1880,35 +1885,35 @@
 + const char *tmp;
   long j,n;
   LISP l;
-@@ -438,5 +448,5 @@
+@@ -438,5 +451,5 @@
  #ifdef unix
  
 -LISP lexec(LISP path,LISP args,LISP env)
 +static LISP lexec(LISP path, LISP args, LISP env)
  {int iflag;
   char **argv = NULL, **envp = NULL;
-@@ -453,5 +463,5 @@
+@@ -453,5 +466,5 @@
   return(err("exec",llast_c_errmsg(-1)));}
  
 -LISP lnice(LISP val)
 +static LISP lnice(LISP val)
  {int iflag,n;
   n = get_c_long(val);
-@@ -490,5 +500,5 @@
+@@ -490,5 +503,5 @@
  #ifdef unix
  
 -LISP lwait(LISP lpid,LISP loptions)
 +static LISP lwait(LISP lpid, LISP loptions)
  {pid_t pid,ret;
   int iflag,status = 0,options;
-@@ -515,5 +525,5 @@
+@@ -515,5 +528,5 @@
     return(cons(flocons(ret),cons(flocons(status),NIL)));}
  
 -LISP lkill(LISP pid,LISP sig)
 +static LISP lkill(LISP pid, LISP sig)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -527,12 +537,12 @@
+@@ -527,12 +540,12 @@
  #endif
  
 -LISP lgetpid(void)
@@ -1924,7 +1929,7 @@
 +static LISP lgetgrgid(LISP n)
  {gid_t gid;
   struct group *gr;
-@@ -552,13 +562,13 @@
+@@ -552,13 +565,13 @@
  
  #ifndef WIN32
 -LISP lgetppid(void)
@@ -1941,14 +1946,14 @@
 +static LISP lexit(LISP val)
  {int iflag = no_interrupt(1);
   exit(get_c_long(val));
-@@ -566,5 +576,5 @@
+@@ -566,5 +579,5 @@
   return(NIL);}
  
 -LISP ltrunc(LISP x)
 +static LISP ltrunc(LISP x)
  {long i;
   if NFLONUMP(x) err("wta to trunc",x);
-@@ -573,10 +583,11 @@
+@@ -573,10 +586,11 @@
  
  #ifdef unix
 -LISP lputenv(LISP lstr)
@@ -1963,7 +1968,7 @@
 + cpy = must_malloc(strlen(orig)+1);
   strcpy(cpy,orig);
    if (putenv(cpy))
-@@ -586,28 +597,31 @@
+@@ -586,28 +600,31 @@
  #endif
  
 -MD5_CTX * get_md5_ctx(LISP a)
@@ -2006,7 +2011,7 @@
 +			 buffer, dim);
      return(NIL);}
   else if NULLP(len)
-@@ -616,10 +630,10 @@
+@@ -616,16 +633,16 @@
     {n = get_c_long(len);
      if ((n < 0) || (n > dim)) err("invalid length for string",len);}
 - MD5Update(get_md5_ctx(ctx),(unsigned char *)buffer,n);
@@ -2020,56 +2025,71 @@
 + MD5Final(get_string_data(result),
  	  get_md5_ctx(ctx));
   return(result);}
-@@ -662,5 +676,5 @@
+ 
+-#if defined(__osf__) || defined(sun)
++#if defined(__osf__) || defined(sun) || defined(BSD) || defined(linux)
+ 
+-void handle_sigxcpu(int sig)
++static void handle_sigxcpu(int sig __unused)
+ {struct rlimit x;
+  if (getrlimit(RLIMIT_CPU,&x))
+@@ -640,5 +657,5 @@
+    err("cpu limit exceded",NIL);}
+ 
+-LISP cpu_usage_limits(LISP soft,LISP hard)
++static LISP cpu_usage_limits(LISP soft, LISP hard)
+ {struct rlimit x;
+  if (NULLP(soft) && NULLP(hard))
+@@ -662,5 +679,5 @@
  static int handle_sigalrm_flag = 0;
  
 -void handle_sigalrm(int sig)
 +static void handle_sigalrm(int sig __unused)
  {if (nointerrupt == 1)
    {if (handle_sigalrm_flag)
-@@ -673,5 +687,5 @@
+@@ -673,5 +690,5 @@
     err("alarm signal",NIL);}
  
 -LISP lalarm(LISP seconds,LISP flag)
 +static LISP lalarm(LISP seconds, LISP flag)
  {long iflag;
   int retval;
-@@ -686,5 +700,5 @@
+@@ -686,5 +703,5 @@
  
  
 -#if defined(__osf__) || defined(SUN5) || defined(linux)
 +#if defined(__osf__) || defined(SUN5) || defined(linux) || defined(BSD)
  
  #define TV_FRAC(x) (((double)x.tv_usec) * 1.0e-6)
-@@ -694,5 +708,5 @@
+@@ -694,5 +711,5 @@
  #endif
  
 -LISP current_resource_usage(LISP kind)
 +static LISP current_resource_usage(LISP kind)
  {struct rusage u;
   int code;
-@@ -729,5 +743,5 @@
+@@ -729,5 +746,5 @@
  #ifdef unix
  
 -LISP l_opendir(LISP name)
 +static LISP l_opendir(LISP name)
  {long iflag;
   LISP value;
-@@ -742,5 +756,5 @@
+@@ -742,5 +759,5 @@
   return(value);}
  
 -DIR *get_opendir(LISP v,long oflag)
 +static DIR *get_opendir(LISP v, long oflag)
  {if NTYPEP(v,tc_opendir) err("not an opendir",v);
   if NULLP(CAR(v))
-@@ -749,5 +763,5 @@
+@@ -749,5 +766,5 @@
   return((DIR *)CAR(v));}
  
 -LISP l_closedir(LISP v)
 +static LISP l_closedir(LISP v)
  {long iflag,old_errno;
   DIR *d;
-@@ -761,10 +775,10 @@
+@@ -761,10 +778,10 @@
   return(NIL);}
  
 -void  opendir_gc_free(LISP v)
@@ -2082,28 +2102,28 @@
 +static LISP l_readdir(LISP v)
  {long iflag,namlen;
   DIR *d;
-@@ -782,5 +796,5 @@
+@@ -782,5 +799,5 @@
   return(strcons(namlen,r->d_name));}
  
 -void opendir_prin1(LISP ptr,struct gen_printio *f)
 +static void opendir_prin1(LISP ptr, struct gen_printio *f)
  {char buffer[256];
   sprintf(buffer,"#<OPENDIR %p>",get_opendir(ptr,0));
-@@ -879,5 +893,5 @@
+@@ -879,5 +896,5 @@
  #endif
  
 -LISP file_times(LISP fname)
 +static LISP file_times(LISP fname)
  {struct stat st;
   int iflag,ret;
-@@ -894,5 +908,5 @@
+@@ -894,5 +911,5 @@
  
  #if defined(unix)
 -LISP decode_st_moden(mode_t mode)
 +static LISP decode_st_moden(mode_t mode)
  {LISP ret = NIL;
   if (mode & S_ISUID) ret = cons(cintern("SUID"),ret);
-@@ -952,8 +966,8 @@
+@@ -952,8 +969,8 @@
  #endif
  
 -LISP decode_st_mode(LISP value)
@@ -2114,14 +2134,14 @@
 +static LISP decode_stat(struct stat *s)
  {return(symalist("dev",flocons(s->st_dev),
  		 "ino",flocons(s->st_ino),
-@@ -978,5 +992,5 @@
+@@ -978,5 +995,5 @@
  	      
  
 -LISP g_stat(LISP fname,int (*fcn)(const char *,struct stat *))
 +static LISP g_stat(LISP fname, int (*fcn)(const char *, struct stat *))
  {struct stat st;
   int iflag,ret;
-@@ -989,8 +1003,8 @@
+@@ -989,8 +1006,8 @@
     return(decode_stat(&st));}
  
 -LISP l_stat(LISP fname)
@@ -2132,21 +2152,21 @@
 +static LISP l_fstat(LISP f)
  {struct stat st;
   int iflag,ret;
-@@ -1004,5 +1018,5 @@
+@@ -1004,5 +1021,5 @@
  
  #ifdef unix
 -LISP l_lstat(LISP fname)
 +static LISP l_lstat(LISP fname)
  {return(g_stat(fname,lstat));}
  #endif
-@@ -1022,5 +1036,5 @@
+@@ -1022,5 +1039,5 @@
  #if defined(unix) || defined(WIN32)
  
 -LISP l_chmod(LISP path,LISP mode)
 +static LISP l_chmod(LISP path, LISP mode)
  {if (chmod(get_c_string(path),get_c_long(mode)))
     return(err("chmod",llast_c_errmsg(-1)));
-@@ -1030,8 +1044,17 @@
+@@ -1030,8 +1047,17 @@
  #endif
  
 +#if defined(unix) || defined(WIN32)
@@ -2165,28 +2185,28 @@
 +static LISP lutime(LISP fname, LISP mod, LISP ac)
  {struct utimbuf x;
   x.modtime = get_c_long(mod);
-@@ -1043,5 +1066,5 @@
+@@ -1043,5 +1069,5 @@
  
  
 -LISP lfchmod(LISP file,LISP mode)
 +static LISP lfchmod(LISP file, LISP mode)
  {if (fchmod(fileno(get_c_file(file,NULL)),get_c_long(mode)))
     return(err("fchmod",llast_c_errmsg(-1)));
-@@ -1061,5 +1084,5 @@
+@@ -1061,5 +1087,5 @@
  				 NULL)));}
  
 -int get_fd(LISP ptr)
 +static int get_fd(LISP ptr)
  {if TYPEP(ptr,tc_c_file)
     return(fileno(get_c_file(ptr,NULL)));
-@@ -1067,5 +1090,5 @@
+@@ -1067,5 +1093,5 @@
     return(get_c_long(ptr));}
  
 -LISP gsetlk(int op,LISP lfd,LISP ltype,LISP whence,LISP start,LISP len)
 +static LISP gsetlk(int op, LISP lfd, LISP ltype, LISP whence, LISP start, LISP len)
  {struct flock f;
   int fd = get_fd(lfd);
-@@ -1084,11 +1107,11 @@
+@@ -1084,11 +1110,11 @@
     return(listn(2,flocons(f.l_type),flocons(f.l_pid)));}
  
 -LISP lF_SETLK(LISP fd,LISP ltype,LISP whence,LISP start,LISP len)
@@ -2201,28 +2221,28 @@
 +static LISP lF_GETLK(LISP fd, LISP ltype, LISP whence, LISP start, LISP len)
  {return(gsetlk(F_GETLK,fd,ltype,whence,start,len));}
  
-@@ -1097,5 +1120,5 @@
+@@ -1097,5 +1123,5 @@
  #endif
  
 -LISP delete_file(LISP fname)
 +static LISP delete_file(LISP fname)
  {int iflag,ret;
   iflag = no_interrupt(1);
-@@ -1111,5 +1134,5 @@
+@@ -1111,5 +1137,5 @@
     return(NIL);}
  
 -LISP utime2str(LISP u)
 +static LISP utime2str(LISP u)
  {time_t bt;
   struct tm *btm;
-@@ -1218,5 +1241,5 @@
+@@ -1218,5 +1244,5 @@
  #endif
  
 -LISP lgetenv(LISP var)
 +static LISP lgetenv(LISP var)
  {char *str;
   if ((str = getenv(get_c_string(var))))
-@@ -1225,8 +1248,8 @@
+@@ -1225,8 +1251,8 @@
     return(NIL);}
  
 -LISP unix_time(void)
@@ -2233,21 +2253,21 @@
 +static LISP unix_ctime(LISP value)
  {time_t b;
   char *buff,*p;
-@@ -1241,5 +1264,5 @@
+@@ -1241,5 +1267,5 @@
     return(NIL);}
  
 -LISP http_date(LISP value)
 +static LISP http_date(LISP value)
       /* returns the internet standard RFC 1123 format */
  {time_t b;
-@@ -1320,5 +1343,5 @@
+@@ -1320,5 +1346,5 @@
  #endif
  
 -LISP lsleep(LISP ns)
 +static LISP lsleep(LISP ns)
  {double val = get_c_double(ns);
  #ifdef unix
-@@ -1333,7 +1356,8 @@
+@@ -1333,7 +1359,8 @@
   return(NIL);}
  
 -LISP url_encode(LISP in)
@@ -2258,14 +2278,14 @@
 + char *r;
   LISP out;
   for(p=str,spaces=0,specials=0,regulars=0;(c = *p);++p)
-@@ -1344,5 +1368,5 @@
+@@ -1344,5 +1371,5 @@
     return(in);
   out = strcons(spaces + regulars + specials * 3,NULL);
 - for(p=str,r=get_c_string(out);(c = *p);++p)
 + for (p = str, r = get_string_data(out); (c = *p); ++p)
     if (c == ' ')
       *r++ = '+';
-@@ -1352,10 +1376,11 @@
+@@ -1352,10 +1379,11 @@
     else
       *r++ = c;
 - *r = 0;
@@ -2280,14 +2300,14 @@
 + char *r;
   LISP out;
   for(p=str,pluses=0,specials=0,regulars=0;(c = *p);++p)
-@@ -1371,5 +1396,5 @@
+@@ -1371,5 +1399,5 @@
     return(in);
   out = strcons(regulars + pluses + specials,NULL);
 - for(p=str,r=get_c_string(out);(c = *p);++p)
 + for (p = str, r = get_string_data(out); (c = *p); ++p)
     if (c == '+')
       *r++ = ' ';
-@@ -1386,7 +1411,8 @@
+@@ -1386,7 +1414,8 @@
   return(out);}
  
 -LISP html_encode(LISP in)
@@ -2298,14 +2318,14 @@
 + char *ptr;
   LISP out;
   switch(TYPE(in))
-@@ -1411,5 +1437,5 @@
+@@ -1411,5 +1440,5 @@
   if (n == m) return(in);
   out = strcons(m,NULL);
 - for(j=0,ptr=get_c_string(out);j < n; ++j)
 + for(j = 0, ptr = get_string_data(out); j < n; ++j)
     switch(str[j])
       {case '>':
-@@ -1429,11 +1455,11 @@
+@@ -1429,11 +1458,11 @@
   return(out);}
  
 -LISP html_decode(LISP in)
@@ -2320,7 +2340,7 @@
 + size_t n;
   char buffer[2048],*ptr;
   f = get_c_file(file,stdin);
-@@ -1451,11 +1477,12 @@
+@@ -1451,11 +1480,12 @@
   return(NIL);}
  
 -LISP readline(LISP file)
@@ -2336,42 +2356,42 @@
 + if ((ptr = strchr(start, '\n')) != NULL)
     {*ptr = 0;
      /* we also change the dim, because otherwise our equal? function
-@@ -1470,5 +1497,5 @@
+@@ -1470,5 +1500,5 @@
  #ifndef WIN32
  
 -LISP l_chown(LISP path,LISP uid,LISP gid)
 +static LISP l_chown(LISP path, LISP uid, LISP gid)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -1481,5 +1508,5 @@
+@@ -1481,5 +1511,5 @@
  
  #if defined(unix) && !defined(linux)
 -LISP l_lchown(LISP path,LISP uid,LISP gid)
 +static LISP l_lchown(LISP path, LISP uid, LISP gid)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -1493,5 +1520,5 @@
+@@ -1493,5 +1523,5 @@
  #ifdef unix
  
 -LISP popen_l(LISP name,LISP how)
 +static LISP popen_l(LISP name, LISP how)
  {return(fopen_cg(popen,
  		 get_c_string(name),
-@@ -1504,5 +1531,5 @@
+@@ -1504,5 +1534,5 @@
  	 So beware.
  	 */
 -LISP pclose_l(LISP ptr)
 +static LISP pclose_l(LISP ptr)
  {FILE *f = get_c_file(ptr,NULL);
   long iflag = no_interrupt(1);
-@@ -1520,5 +1547,5 @@
+@@ -1520,5 +1550,5 @@
  #endif
  
 -LISP so_init_name(LISP fname,LISP iname)
 +static LISP so_init_name(LISP fname, LISP iname)
  {LISP init_name;
   if NNULLP(iname)
-@@ -1533,6 +1560,6 @@
+@@ -1533,6 +1563,6 @@
   return(intern(init_name));}
  
 -LISP so_ext(LISP fname)
@@ -2380,7 +2400,7 @@
 +{const char *ext = ".so";
   LISP lext;
  #if defined(hpux)
-@@ -1551,9 +1578,9 @@
+@@ -1551,9 +1581,9 @@
     return(string_append(listn(2,fname,lext)));}
  
 -LISP load_so(LISP fname,LISP iname)
@@ -2392,21 +2412,21 @@
 +#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi) || defined(BSD)
   void *handle;
  #endif
-@@ -1576,5 +1603,5 @@
+@@ -1576,5 +1606,5 @@
      put_st(get_c_string(fname));
      put_st("\n");}
 -#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi)
 +#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi) || defined(BSD)
  #if !defined(__osf__)
   /* Observed bug: values of LD_LIBRARY_PATH established with putenv
-@@ -1637,5 +1664,5 @@
+@@ -1637,5 +1667,5 @@
   return(init_name);}
  
 -LISP require_so(LISP fname)
 +static LISP require_so(LISP fname)
  {LISP init_name;
   init_name = so_init_name(fname,NIL);
-@@ -1647,9 +1674,9 @@
+@@ -1647,9 +1677,9 @@
     return(NIL);}
  
 -LISP siod_lib_l(void)
@@ -2418,14 +2438,14 @@
 +static LISP ccall_catch_1(LISP (*fcn)(void *), void *arg)
  {LISP val;
   val = (*fcn)(arg);
-@@ -1669,5 +1696,5 @@
+@@ -1669,5 +1699,5 @@
   return(ccall_catch_1(fcn,arg));}
  
 -LISP decode_tm(struct tm *t)
 +static LISP decode_tm(struct tm *t)
  {return(symalist("sec",flocons(t->tm_sec),
  		 "min",flocons(t->tm_min),
-@@ -1685,8 +1712,8 @@
+@@ -1685,8 +1715,8 @@
  		 NULL));}
  
 -LISP symalist(char *arg,...)
@@ -2436,35 +2456,35 @@
 + const char *key;
   if (!arg) return(NIL);
   va_start(args,arg);
-@@ -1694,5 +1721,5 @@
+@@ -1694,5 +1724,5 @@
   result = cons(cons(cintern(arg),val),NIL);
   l = result;
 - while((key = va_arg(args,char *)))
 + while((key = va_arg(args, const char *)))
     {val = va_arg(args,LISP);
      CDR(l) = cons(cons(cintern(key),val),NIL);
-@@ -1701,5 +1728,5 @@
+@@ -1701,5 +1731,5 @@
   return(result);}
  
 -void encode_tm(LISP alist,struct tm *t)
 +static void encode_tm(LISP alist, struct tm *t)
  {LISP val;
   val = cdr(assq(cintern("sec"),alist));
-@@ -1727,5 +1754,5 @@
+@@ -1727,5 +1757,5 @@
  }
  
 -LISP llocaltime(LISP value)
 +static LISP llocaltime(LISP value)
  {time_t b;
   struct tm *t;
-@@ -1739,5 +1766,5 @@
+@@ -1739,5 +1769,5 @@
     return(err("localtime",llast_c_errmsg(-1)));}
  
 -LISP lgmtime(LISP value)
 +static LISP lgmtime(LISP value)
  {time_t b;
   struct tm *t;
-@@ -1752,10 +1779,10 @@
+@@ -1752,10 +1782,10 @@
  
  #if defined(unix) || defined(WIN32)
 -LISP ltzset(void)
@@ -2477,7 +2497,7 @@
 +static LISP lmktime(LISP alist)
  {struct tm tm;
   time_t t;
-@@ -1764,7 +1791,7 @@
+@@ -1764,7 +1794,7 @@
   return(flocons((double)t));}
  
 -#if defined(__osf__) || defined(SUN5) || defined(linux)
@@ -2487,42 +2507,42 @@
 +static LISP lstrptime(LISP str,LISP fmt,LISP in)
  {struct tm tm;
   encode_tm(in,&tm);
-@@ -1785,5 +1812,5 @@
+@@ -1785,5 +1815,5 @@
  #ifdef unix
  
 -LISP lstrftime(LISP fmt,LISP in)
 +static LISP lstrftime(LISP fmt, LISP in)
  {struct tm tm;
   time_t b;
-@@ -1805,5 +1832,5 @@
+@@ -1805,5 +1835,5 @@
  #endif
  
 -LISP lchdir(LISP dir)
 +static LISP lchdir(LISP dir)
  {long iflag;
  #ifdef unix
-@@ -1811,5 +1838,5 @@
+@@ -1811,5 +1841,5 @@
   int fd;
  #endif
 - char *path;
 + const char *path;
   switch(TYPE(dir))
     {case tc_c_file:
-@@ -1844,5 +1871,5 @@
+@@ -1844,5 +1874,5 @@
  
  #ifdef unix
 -LISP lgetpass(LISP lprompt)
 +static LISP lgetpass(LISP lprompt)
  {long iflag;
   char *result;
-@@ -1857,5 +1884,5 @@
+@@ -1857,5 +1887,5 @@
  
  #ifdef unix
 -LISP lpipe(void)
 +static LISP lpipe(void)
  {int filedes[2];
   long iflag;
-@@ -1886,9 +1913,9 @@
+@@ -1886,9 +1916,9 @@
  #define CTYPE_ULONG  10
  
 -LISP err_large_index(LISP ind)
@@ -2535,7 +2555,7 @@
 +{const void *data;
   long size,i;
   data = get_c_string_dim(dat,&size);
-@@ -1898,46 +1925,46 @@
+@@ -1898,46 +1928,46 @@
     {case CTYPE_FLOAT:
        if (((i+1) * (int) sizeof(float)) > size) err_large_index(ind);
 -      return(flocons(((float *)data)[i]));
@@ -2597,7 +2617,7 @@
 + (void)get_c_string_dim(dat, &size);
   switch(get_c_long(ctype))
     {case CTYPE_FLOAT:
-@@ -1981,7 +2008,7 @@
+@@ -1981,7 +2011,7 @@
   return(NIL);}
  
 -
@@ -2608,7 +2628,7 @@
 + const char *p2;
   if ((strcmp(value,"(repl)") == 0) ||
       (strcmp(value,"repl") == 0))
-@@ -1994,12 +2021,12 @@
+@@ -1994,12 +2024,12 @@
  	*p1 = 0;
  	strcat(tmpbuff,"\")");
 -    return(repl_c_string(tmpbuff,0,0,0));}
@@ -2625,7 +2645,7 @@
 + char *iargv1;
   LISP l;
   iargv[0] = "";
-@@ -2008,14 +2035,15 @@
+@@ -2008,14 +2038,15 @@
       {while(*start)
  	{if (!(end = strstr(start,",-"))) end = &start[strlen(start)];
 -	 iargv[1] = (char *) malloc(end-start+1);
@@ -2649,14 +2669,14 @@
 +	   mainflag = atol(iargv1 + 2);
  	 else
  	   process_cla(2,iargv,1);
-@@ -2064,5 +2092,5 @@
+@@ -2064,5 +2095,5 @@
  #define BOOTSTRAP_EXE_FILE_SIZE_LIMIT 1000000
  
 -long position_script(FILE *f,char *buff,size_t bufflen)
 +static long position_script(FILE *f, char *buff, size_t bufflen)
  /* This recognizes #!/ sequence. Exersize: compute the probability
     of the sequence showing up in a file of N random bytes. */
-@@ -2131,10 +2159,10 @@
+@@ -2131,10 +2162,10 @@
   if (pos < 0) return;
   nargc = argc + ((*flagbuff) ? 2 : 1);
 - nargv = (char **) malloc(sizeof(char *) * nargc);
@@ -2670,34 +2690,34 @@
 + nargv[j] = malloc(strlen(offbuff)+strlen(argv[0])+2);
   sprintf(nargv[j],"%s%c%s",offbuff,VLOAD_OFFSET_HACK_CHAR,argv[0]);
   j++;
-@@ -2144,5 +2172,5 @@
+@@ -2144,5 +2175,5 @@
   }
  
 -LISP lposition_script(LISP lfile)
 +static LISP lposition_script(LISP lfile)
  {FILE *f;
   long iflag,pos;
-@@ -2157,5 +2185,5 @@
+@@ -2157,5 +2188,5 @@
   return(cons(flocons(pos),strcons(-1,flbuff)));}
  
 -void __stdcall siod_init(int argc,char **argv)
 +void __stdcall siod_init(int argc, const char **argv)
  {process_cla(argc,argv,0);
   init_storage();
-@@ -2166,5 +2194,5 @@
+@@ -2166,5 +2197,5 @@
  void __stdcall init_slibu(void)
  {long j;
 -#if defined(unix)
 +#if defined(unix) && !defined(BSD)
   char *tmp1,*tmp2;
  #endif
-@@ -2179,4 +2207,5 @@
+@@ -2179,4 +2210,5 @@
   set_print_hooks(tc_opendir,opendir_prin1);
   init_subr_2("chmod",l_chmod);
 + init_subr_2("lchmod", l_lchmod);
  #endif
  
-@@ -2212,5 +2241,7 @@
+@@ -2212,5 +2244,7 @@
   init_subr_1("setpwfile",lsetpwfile);
  #endif
 +#if !defined(BSD)
@@ -2705,21 +2725,25 @@
 +#endif
   init_subr_2("access-problem?",laccess_problem);
   init_subr_3("utime",lutime);
-@@ -2246,5 +2277,5 @@
+@@ -2243,8 +2277,8 @@
+  init_subr_3("md5-update",md5_update);
+  init_subr_1("md5-final",md5_final);
+-#if defined(__osf__) || defined(sun)
++#if defined(__osf__) || defined(sun) || defined(BSD) || defined(linux)
   init_subr_2("cpu-usage-limits",cpu_usage_limits);
  #endif
 -#if defined(__osf__) || defined(SUN5) || defined(linux)
 +#if defined(__osf__) || defined(SUN5) || defined(linux) || defined(BSD)
   init_subr_1("current-resource-usage",current_resource_usage);
  #endif
-@@ -2320,5 +2351,5 @@
+@@ -2320,5 +2354,5 @@
   init_subr_0("siod-lib",siod_lib_l);
  
 -#ifdef unix
 +#if defined(unix) && !defined(BSD)
   if ((!(tmp1 = getenv(ld_library_path_env))) ||
       (!strstr(tmp1,siod_lib)))
-@@ -2351,5 +2382,5 @@
+@@ -2351,5 +2385,5 @@
   init_subr_0("rld-pathnames",rld_pathnames);
  #endif
 -#if defined(__osf__) || defined(SUN5) || defined(linux)
