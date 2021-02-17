@@ -1,0 +1,97 @@
+--- statfs.c	2014-03-25 04:10:42.000000000 -0400
++++ statfs.c	2021-02-17 12:25:44.681462000 -0500
+@@ -4,9 +4,15 @@
+ 
+ #include <stdio.h>
++#ifdef HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
+ #include <sys/mount.h>
++#ifndef BSD
+ #include <sys/fs_types.h>
++#endif
+ #include <fstab.h>
+ #include "siod.h"
+ 
++#ifndef BSD
+ #define MNT_NUMTYPES	128
+ /*
+@@ -14,16 +20,28 @@
+  */
+ extern char *mnt_names[];
++#endif
+ 
+-LISP lstatfs(LISP path)
++static LISP lstatfs(LISP path)
+ {long iflag;
+  struct statfs s;
+  iflag = no_interrupt(1);
+- if (statfs(get_c_string(path),&s,sizeof(s)))
++ if (statfs(get_c_string(path), &s
++#ifndef BSD
++    ,sizeof(s)
++#endif
++   ))
+    return(err("statfs",llast_c_errmsg(-1)));
++
+  no_interrupt(iflag);
+- return(symalist("type",(((s.f_type >= 0) && (s.f_type < MNT_NUMTYPES) &&
++ return(symalist("type",
++#ifdef BSD
++		 s.f_fstypename[0] != '\0'
++		 	 ? rintern(s.f_fstypename)
++#else
++		 ((s.f_type >= 0) && (s.f_type < MNT_NUMTYPES) &&
+ 			  mnt_names[s.f_type])
+ 			 ? rintern(mnt_names[s.f_type])
+-			 : flocons(s.f_type)),
++#endif
++			 : flocons(s.f_type),
+ 		 "bsize",flocons(s.f_bsize),
+ 		 "blocks",flocons(s.f_blocks),
+@@ -34,8 +52,16 @@
+ 		 "mntonname",strcons(-1,s.f_mntonname),
+ 		 "mntfromname",strcons(-1,s.f_mntfromname),
++#ifdef BSD
++		 "syncwrites", flocons(s.f_syncwrites),
++		 "asyncwrites", flocons(s.f_asyncwrites),
++		 "syncreads", flocons(s.f_syncreads),
++		 "asyncreads", flocons(s.f_asyncreads),
++		 "namemax", flocons(s.f_namemax),
++#endif
++		/* TODO: Add decoding of f_flags */
+ 		 NULL));}
+ 
+ 
+-static LISP decode_fstab(struct fstab *p)
++static LISP decode_fstab(const struct fstab *p)
+ {if (p)
+    return(symalist("spec",strcons(-1,p->fs_spec),
+@@ -50,5 +76,5 @@
+    return(NIL);}
+ 
+-LISP lgetfsent(void)
++static LISP lgetfsent(void)
+ {long iflag;
+  LISP result;
+@@ -58,5 +84,5 @@
+  return(result);}
+ 
+-LISP lsetfsent(void)
++static LISP lsetfsent(void)
+ {long iflag;
+  LISP result;
+@@ -66,5 +92,5 @@
+  return(result);}
+ 
+-LISP lendfsent(void)
++static LISP lendfsent(void)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -73,4 +99,6 @@
+  return(NIL);}
+ 
++void init_statfs(void); /* The sole symbol exported from a SIOD-module */
++
+ void init_statfs(void)
+ {init_subr_1("statfs",lstatfs);

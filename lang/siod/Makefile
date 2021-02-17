@@ -18,12 +18,14 @@ USES=		uidfix tar:tgz dos2unix
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/siod
 
 DOS2UNIX_FILES=	sql_oracle.c ss.c
-OPTIONS_DEFINE=	SQL_SYBASE GD NDBM REGEX SS DOCS
+OPTIONS_DEFINE=	SQL_SYBASE GD NDBM REGEX SS STATFS DOCS
 OPTIONS_DEFINE_i386=SQL_ORACLE	# oracle-client port only available for i386
 OPTIONS_DEFAULT=NDBM REGEX SS
+SQL_ORACLE_DESC=Build Oracle client-module (i386 only)
 SQL_SYBASE_DESC=Build Sybase (and MS-SQL) client-module (using FreeTDS)
 SS_DESC=	Sockets support - required for any network programs
 NDBM_DESC=	Support for NDBM-databases
+STATFS_DESC=	Module giving access to statfs(2) 
 NO_WRKSUBDIR=	yes
 EXTRACT_AFTER_ARGS=--exclude md5\* --exclude regex.h --exclude reg????*.c
 MAKE_ARGS=	VPATH=${WRKSRC} MODULES=${MODULES:Q}
@@ -33,7 +35,7 @@ MAKE_ENV+=	MAN1PREFIX=${MAN1PREFIX} PREFIX=${PREFIX:Q}
 MAKE_ENV+=	INSTALL_MAN=${INSTALL_MAN:Q} INSTALL_SCRIPT=${INSTALL_SCRIPT:Q}
 MAKE_ENV+=	INSTALL_DATA=${INSTALL_DATA:Q}
 
-MODULES=	tar parser_pratt
+MODULES=	statfs tar parser_pratt
 
 SQL_SYBASE_LIB_DEPENDS=	libct.so:databases/freetds	# Or freetds-devel
 GD_LIB_DEPENDS=		libgd.so:graphics/gd	# Or ukrainian/gd
@@ -54,6 +56,11 @@ post-build:
 
 .include <bsd.port.options.mk>
 MODULES+=	${SELECTED_OPTIONS:NDOCS:tl}
+
+# XXX This should not be necessary:
+.if ${ARCH} != i386
+PLIST_SUB+=	SQL_ORACLE=@comment
+.endif
 
 do-configure:
 	${MKDIR} ${WRKSRC}/lib

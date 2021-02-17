@@ -36,6 +36,7 @@ lib/siod/sql_msql.scm
 %%GD%%lib/siod/gd.so
 %%NDBM%%lib/siod/ndbm.so
 %%SS%%lib/siod/ss.so
+lib/siod/statfs.so
 lib/siod/tar.so
 %%SQL_ORACLE%%lib/siod/sql_oracle.so
 %%SQL_SYBASE%%lib/siod/sql_sybase.so
