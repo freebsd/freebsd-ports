@@ -11,6 +11,9 @@ COMMENT=	Free online multiplayer real-time roguelike game
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: p_name
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: p_name
+
 ALL_TARGET=	mangclient mangband
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
