@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerdns
-DISTVERSION=	4.4.0
-PORTREVISION=	1
+DISTVERSION=	4.4.1
 CATEGORIES=	dns
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${DISTVERSION}
@@ -18,10 +17,9 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libprotobuf.so:devel/protobuf
 
-USES=		autoreconf compiler:c++11-lib cpe gmake libtool localbase:ldflags \
-		pathfix pkgconfig ssl tar:bzip2
+USES=		autoreconf compiler:c++11-lib cpe gmake libtool \
+		localbase:ldflags pathfix pkgconfig ssl tar:bzip2
 
-USE_LDCONFIG=	YES
 USE_RC_SUBR=	pdns
 USE_SUBMAKE=	YES
 
@@ -34,10 +32,12 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-modules="" \
 		--with-protobuf
 
-INSTALL_TARGET=	install-strip
-SCRIPTS_ENV=	CURDIR2="${.CURDIR}" DISTNAME="${DISTNAME}" MKDIR="${MKDIR}" \
+SCRIPTS_ENV=	CURDIR2="${.CURDIR}" \
+		DISTNAME="${DISTNAME}" \
+		MKDIR="${MKDIR}" \
 		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}" \
 		WRKDIRPREFIX="${WRKDIRPREFIX}"
+INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
 
 USERS=		pdns
