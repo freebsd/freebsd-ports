@@ -1,4 +1,4 @@
-TIMESTAMP = 1611425017
+TIMESTAMP = 1613578368
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
 SIZE (rust/crates/ansi_term-0.11.0.tar.gz) = 17087
 SHA256 (rust/crates/anyhow-1.0.38.tar.gz) = afddf7f520a80dbf76e6f50a35bca42a2331ef227a28b3b6dc5c2e2338d114b1
@@ -167,5 +167,5 @@ SHA256 (rust/crates/winapi-util-0.1.5.tar.gz) = 70ec6ce85bb158151cae5e5c87f95a8e
 SIZE (rust/crates/winapi-util-0.1.5.tar.gz) = 10164
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SHA256 (Byron-dua-cli-v2.10.10_GH0.tar.gz) = d4d04250c64d5ec272a32dc8813f3b28e46240a1a5ebaf52a89f9f08586f0508
-SIZE (Byron-dua-cli-v2.10.10_GH0.tar.gz) = 61708
+SHA256 (Byron-dua-cli-v2.11.0_GH0.tar.gz) = f3593f35bf967f7438e121e4ca62592b8ed987a6dd2f881ae127f31a24e62c0b
+SIZE (Byron-dua-cli-v2.11.0_GH0.tar.gz) = 62270
