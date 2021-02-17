@@ -8,6 +8,9 @@ CATEGORIES=	databases
 MAINTAINER=	frederic.hardy@mageekbox.net
 COMMENT=	Tcpdump clone specifically for MySQL
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: decoded_len
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: decoded_len
+
 WRKSRC_SUBDIR=	${PORTNAME}
 
 PLIST_FILES=	bin/mysqlsniffer
