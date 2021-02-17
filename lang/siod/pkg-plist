@@ -28,7 +28,7 @@ lib/siod/parser_pratt.scm
 lib/siod/pop3.scm
 lib/siod/selfdoc.scm
 lib/siod/sample.c
-lib/siod/siod.html
+%%PORTDOCS%%%%DOCSDIR%%/siod.html
 lib/siod/piechart.scm
 lib/siod/cgi.scm
 lib/siod/ftp.scm

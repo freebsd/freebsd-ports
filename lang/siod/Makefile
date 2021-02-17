@@ -15,10 +15,10 @@ LICENSE=	LGPL21	# Declared inside slib.c
 
 USES=		uidfix tar:tgz dos2unix
 
-USE_LDCONFIG=	${PREFIX}/lib/siod
+USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/siod
 
 DOS2UNIX_FILES=	sql_oracle.c ss.c
-OPTIONS_DEFINE=	SQL_SYBASE GD NDBM REGEX SS
+OPTIONS_DEFINE=	SQL_SYBASE GD NDBM REGEX SS DOCS
 OPTIONS_DEFAULT=NDBM REGEX SS
 SQL_SYBASE_DESC=Build Sybase (and MS-SQL) client-module (using FreeTDS)
 SS_DESC=	Sockets support - required for any network programs
@@ -51,7 +51,7 @@ post-build:
 	${MAKE} -C ${WRKSRC} -f makefile build_driver
 
 .include <bsd.port.options.mk>
-MODULES+=	${SELECTED_OPTIONS:tl}
+MODULES+=	${SELECTED_OPTIONS:NDOCS:tl}
 
 do-configure:
 	${MKDIR} ${WRKSRC}/lib
@@ -66,5 +66,12 @@ do-configure:
 	${SED} "s,%%PROG%%,$s,g" ${FILESDIR}/BSDmakefile.prog >	\
 	    ${WRKSRC}/$s/BSDmakefile
 .endfor
+
+post-install-DOCS-off:
+	${RM} ${STAGEDIR}${PREFIX}/lib/siod/siod.html
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MV} ${STAGEDIR}${PREFIX}/lib/siod/siod.html ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
