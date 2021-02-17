@@ -41,7 +41,8 @@ OPTIONS_SUB=	yes
 
 .if "${PREFIX}" != "/usr/local"
 post-patch:
-	${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' ${WRKSRC}/slib.c
+	${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' ${WRKSRC}/slib.c \
+		${WRKSRC}/*.man
 .endif
 
 post-build:
