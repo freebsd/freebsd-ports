@@ -1,6 +1,6 @@
---- Makefile.am.orig	2016-11-27 01:56:36 UTC
-+++ Makefile.am
-@@ -20,8 +20,7 @@
+--- Makefile.in.orig	2021-02-02 11:37:05 UTC
++++ Makefile.in
+@@ -448,8 +448,7 @@ top_srcdir = @top_srcdir@
  # LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
@@ -8,14 +8,14 @@
 -	doc contrib script
 +SUBDIRS = lib
  
+ 
  # Now with python setuptools, make uninstall will leave many files we
- # cannot easily remove (e.g., easy-install.pth).  Disable it for
-@@ -30,7 +29,7 @@ AM_DISTCHECK_CONFIGURE_FLAGS = --disable
- 
+@@ -457,7 +456,7 @@ SUBDIRS = lib third-party src examples python tests in
+ # distcheck rule.
+ AM_DISTCHECK_CONFIGURE_FLAGS = --disable-python-bindings
  ACLOCAL_AMFLAGS = -I m4
- 
 -dist_doc_DATA = README.rst
 +dist_doc_DATA =
- 
  EXTRA_DIST = nghttpx.conf.sample proxy.pac.sample android-config android-make \
  	Dockerfile.android \
+ 	cmakeconfig.h.in \
