@@ -742,8 +742,8 @@
     SUBDIR += py-alembic
     SUBDIR += py-apsw
     SUBDIR += py-asyncpg
-    SUBDIR += py-bsddb3
     SUBDIR += py-berkeleydb
+    SUBDIR += py-bsddb3
     SUBDIR += py-carbon
     SUBDIR += py-cassandra-driver
     SUBDIR += py-couchdb
