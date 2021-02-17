@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	google-apis-dns_v1
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
