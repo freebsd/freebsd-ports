@@ -2,7 +2,7 @@
 
 PORTNAME=	glab
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.0
+DISTVERSION=	1.15.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -23,16 +23,18 @@ GH_TUPLE=	AlecAivazis:survey:v2.2.7:alecaivazis_survey_v2/vendor/github.com/Alec
 		alecthomas:chroma:v0.7.3:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
 		alecthomas:colour:60882d9e2721:alecthomas_colour/vendor/github.com/alecthomas/colour \
 		alecthomas:repr:117648cd9897:alecthomas_repr/vendor/github.com/alecthomas/repr \
+		briandowns:spinner:v1.12.0:briandowns_spinner/vendor/github.com/briandowns/spinner \
 		charmbracelet:glamour:1246d13c1684:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
+		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
 		gdamore:tcell:v2.1.0:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
-		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:appengine:v1.6.1:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:a7d1128ccaa0:golang_net/vendor/golang.org/x/net \
@@ -51,7 +53,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.2.7:alecaivazis_survey_v2/vendor/github.com/Alec
 		hashicorp:go-retryablehttp:v0.6.4:hashicorp_go_retryablehttp/vendor/github.com/hashicorp/go-retryablehttp \
 		hashicorp:go-version:v1.2.1:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
-		jarcoal:httpmock:v1.0.7:jarcoal_httpmock/vendor/github.com/jarcoal/httpmock \
+		jarcoal:httpmock:v1.0.8:jarcoal_httpmock/vendor/github.com/jarcoal/httpmock \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		lucasb-eyer:go-colorful:v1.0.3:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		lunixbochs:vtclean:v1.0.0:lunixbochs_vtclean/vendor/github.com/lunixbochs/vtclean \
@@ -74,12 +76,11 @@ GH_TUPLE=	AlecAivazis:survey:v2.2.7:alecaivazis_survey_v2/vendor/github.com/Alec
 		sergi:go-diff:v1.0.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
-		spf13:cobra:v1.1.1:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.1.3:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		tcnksm:go-gitconfig:v0.1.2:tcnksm_go_gitconfig/vendor/github.com/tcnksm/go-gitconfig \
-		tidwall:pretty:v1.0.2:tidwall_pretty/vendor/github.com/tidwall/pretty \
-		xanzy:go-gitlab:v0.42.0:xanzy_go_gitlab/vendor/github.com/xanzy/go-gitlab \
+		tidwall:pretty:v1.0.5:tidwall_pretty/vendor/github.com/tidwall/pretty \
+		xanzy:go-gitlab:v0.44.0:xanzy_go_gitlab/vendor/github.com/xanzy/go-gitlab \
 		yuin:goldmark:v1.2.0:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 _BUILD_VERSION=	${DISTVERSION}
