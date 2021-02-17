@@ -26,6 +26,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PeterMosmans
 GH_TAGNAME=	c9ba19c
 
+BROKEN_FreeBSD_13=	eng_cryptodev.c:250:19: error: use of undeclared identifier 'CRIOGET'
+BROKEN_FreeBSD_14=	eng_cryptodev.c:250:19: error: use of undeclared identifier 'CRIOGET'
 .if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 BROKEN_i386=	ld: error: unknown argument: -Bforcearchive
 .endif
