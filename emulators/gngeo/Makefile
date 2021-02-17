@@ -13,6 +13,8 @@ COMMENT=	NeoGeo emulator
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: current_fix
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: current_fix
 BROKEN_i386=	unknown argument: '-frerun-loop-opt'
 
 USES=		autoreconf compiler:features gl gmake sdl
