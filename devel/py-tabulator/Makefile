@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tabulator
-PORTVERSION=	1.53.1
-PORTREVISION=	1
+PORTVERSION=	1.53.2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,6 +34,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	CCHARDET
 CCHARDET_DESC=	Character encoding detection via cchardet
 
-CCHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cchardet>=1.0:textproc/py-cchardet@${PY_FLAVOR}
+CCHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cchardet>=2.0:textproc/py-cchardet@${PY_FLAVOR}
 
 .include <bsd.port.mk>
