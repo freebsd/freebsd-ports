@@ -1,0 +1,5 @@
+Azure Key Vault Keys Client Library provides cryptographic key management. It
+can be used to create, store, and control access to the keys used to encrypt
+your data.
+
+WWW: https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/keyvault/azure-keyvault-keys

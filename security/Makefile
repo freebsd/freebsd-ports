@@ -847,6 +847,7 @@
     SUBDIR += py-asyncssh
     SUBDIR += py-authlib
     SUBDIR += py-azure-keyvault-certificates
+    SUBDIR += py-azure-keyvault-keys
     SUBDIR += py-bcrypt
     SUBDIR += py-btchip-python
     SUBDIR += py-cerealizer
