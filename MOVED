@@ -16170,3 +16170,4 @@ www/palemoon||2021-02-15|Depends on expired version of python
 www/rtv||2021-02-17|Has expired: Abandoned, use www/py-ttrv or www/py-tuir instead
 textproc/py-sphinxcontrib-websupport11|textproc/py-sphinxcontrib-websupport|2021-02-17|Has expired: Use textproc/py-sphinxcontrib-websupport instead
 textproc/py-sphinx18|textproc/py-sphinx|2021-02-17|Has expired: Old version, use textproc/py-sphinx instead
+audio/herrie||2021-02-17|Removed

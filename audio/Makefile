@@ -295,7 +295,6 @@
     SUBDIR += gxplugins-lv2
     SUBDIR += harp
     SUBDIR += headsetcontrol
-    SUBDIR += herrie
     SUBDIR += hexter
     SUBDIR += hpsjam
     SUBDIR += hts_engine-API
