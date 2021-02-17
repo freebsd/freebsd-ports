@@ -1,0 +1,16 @@
+LIB=		siod
+MK_PROFILE=	no
+SHLIB_MAJOR=	3
+SHLIB_MINOR=	6
+
+WARNS=	7
+
+SRCS=	slib.c sliba.c trace.c slibu.c
+INCS=	siod.h
+CFLAGS+=-DHAVE_SYS_PARAM_H
+LDADD=	-lmd -lm -lcrypt
+
+LIBDIR=	${PREFIX}/lib
+INCSDIR=${PREFIX}/include
+
+.include <bsd.lib.mk>

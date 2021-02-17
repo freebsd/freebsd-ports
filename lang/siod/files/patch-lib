@@ -1,0 +1,2728 @@
+--- siod.h	2014-03-25 04:10:42.000000000 -0400
++++ siod.h	2021-02-15 20:59:39.714149000 -0500
+@@ -20,5 +20,5 @@
+ 		struct obj * cdr;} cons;
+ 	struct {double data;} flonum;
+-	struct {char *pname;
++	struct {const char *pname;
+ 		struct obj * vcell;} symbol;
+ 	struct {char *name;
+@@ -41,5 +41,5 @@
+  	struct {char *name;
+  		struct obj * (*f)(struct obj **, struct obj **);} subrm;
+-	struct {char *name;
++	struct {const char *name;
+ 		struct obj * (*f)(void *,...);} subr;
+ 	struct {struct obj *env;
+@@ -151,5 +151,5 @@
+ struct gen_printio
+ {int (*putc_fcn)(int,void *);
+- int (*puts_fcn)(char *,void *);
++ int (*puts_fcn)(const char *, void *);
+  void *cb_argument;};
+ 
+@@ -160,10 +160,10 @@
+ 
+ struct repl_hooks
+-{void (*repl_puts)(char *);
++{void (*repl_puts)(const char *);
+  LISP (*repl_read)(void);
+  LISP (*repl_eval)(LISP);
+  void (*repl_print)(LISP);};
+ 
+-void __stdcall process_cla(int argc,char **argv,int warnflag);
++void __stdcall process_cla(int argc, const char **argv, int warnflag);
+ void __stdcall print_welcome(void);
+ void __stdcall print_hs_1(void);
+@@ -172,6 +172,6 @@
+ LISP get_eof_val(void);
+ long repl_driver(long want_sigint,long want_init,struct repl_hooks *);
+-void set_stdout_hooks(void (*puts_f)(char *));
+-void set_repl_hooks(void (*puts_f)(char *),
++void set_stdout_hooks(void (*puts_f)(const char *));
++void set_repl_hooks(void (*puts_f)(const char *),
+ 		    LISP (*read_f)(void),
+ 		    LISP (*eval_f)(LISP),
+@@ -180,7 +180,8 @@
+ LISP err(const char *message, LISP x);
+ LISP errswitch(void);
+-char *get_c_string(LISP x);
+-char *get_c_string_dim(LISP x,long *);
+-char *try_get_c_string(LISP x);
++void *get_string_data(LISP x);
++const char *get_c_string(LISP x);
++const char *get_c_string_dim(LISP x, long *);
++const char *try_get_c_string(LISP x);
+ long get_c_long(LISP x);
+ double get_c_double(LISP x);
+@@ -204,30 +205,30 @@
+ LISP eq(LISP x,LISP y);
+ LISP eql(LISP x,LISP y);
+-LISP symcons(char *pname,LISP vcell);
++LISP symcons(const char *pname, LISP vcell);
+ LISP symbolp(LISP x);
+ LISP symbol_boundp(LISP x,LISP env);
+ LISP symbol_value(LISP x,LISP env);
+-LISP cintern(char *name);
+-LISP rintern(char *name);
+-LISP subrcons(long type, char *name, SUBR_FUNC f);
++LISP cintern(const char *name);
++LISP rintern(const char *name);
++LISP subrcons(long type, const char *name, SUBR_FUNC f);
+ LISP closure(LISP env,LISP code);
+ void gc_protect(LISP *location);
+ void gc_protect_n(LISP *location,long n);
+-void gc_protect_sym(LISP *location,char *st);
++void gc_protect_sym(LISP *location, const char *st);
+ 
+ void __stdcall init_storage(void);
+ void __stdcall init_slibu(void);
+ 
+-void init_subr(char *name, long type, SUBR_FUNC fcn);
+-void init_subr_0(char *name, LISP (*fcn)(void));
+-void init_subr_1(char *name, LISP (*fcn)(LISP));
+-void init_subr_2(char *name, LISP (*fcn)(LISP,LISP));
+-void init_subr_2n(char *name, LISP (*fcn)(LISP,LISP));
+-void init_subr_3(char *name, LISP (*fcn)(LISP,LISP,LISP));
+-void init_subr_4(char *name, LISP (*fcn)(LISP,LISP,LISP,LISP));
+-void init_subr_5(char *name, LISP (*fcn)(LISP,LISP,LISP,LISP,LISP));
+-void init_lsubr(char *name, LISP (*fcn)(LISP));
+-void init_fsubr(char *name, LISP (*fcn)(LISP,LISP));
+-void init_msubr(char *name, LISP (*fcn)(LISP *,LISP *));
++void init_subr(const char *name, long type, SUBR_FUNC fcn);
++void init_subr_0(const char *name, LISP (*fcn)(void));
++void init_subr_1(const char *name, LISP (*fcn)(LISP));
++void init_subr_2(const char *name, LISP (*fcn)(LISP, LISP));
++void init_subr_2n(const char *name, LISP (*fcn)(LISP, LISP));
++void init_subr_3(const char *name, LISP (*fcn)(LISP, LISP, LISP));
++void init_subr_4(const char *name, LISP (*fcn)(LISP, LISP, LISP, LISP));
++void init_subr_5(const char *name, LISP (*fcn)(LISP, LISP, LISP, LISP, LISP));
++void init_lsubr(const char *name, LISP (*fcn)(LISP));
++void init_fsubr(const char *name, LISP (*fcn)(LISP, LISP));
++void init_msubr(const char *name, LISP (*fcn)(LISP *, LISP *));
+ 
+ LISP assq(LISP x,LISP alist);
+@@ -256,5 +257,5 @@
+ 		    LISP (*fcn2)(char *,long, int *));
+ LISP apropos(LISP);
+-LISP vload(char *fname,long cflag,long rflag);
++LISP vload(const char *fname, long cflag, long rflag);
+ LISP load(LISP fname,LISP cflag,LISP rflag);
+ LISP require(LISP fname);
+@@ -293,5 +294,6 @@
+ void __stdcall init_trace(void);
+ long __stdcall repl_c_string(char *,long want_sigint,long want_init,long want_print);
+-char * __stdcall siod_version(void);
++long __stdcall repl_c_string01(const char *, long want_sigint, long want_init, long want_print);
++const char * __stdcall siod_version(void);
+ LISP nreverse(LISP);
+ LISP number2string(LISP,LISP,LISP,LISP);
+@@ -316,8 +318,8 @@
+ LISP lapply(LISP fcn,LISP args);
+ LISP mallocl(void *lplace,long size);
+-void gput_st(struct gen_printio *,char *);
+-void put_st(char *st);
++void gput_st(struct gen_printio *, const char *);
++void put_st(const char *st);
+ LISP listn(long n, ...);
+-char *must_malloc(unsigned long size);
++void *must_malloc(unsigned long size);
+ LISP lstrbreakup(LISP str,LISP lmarker);
+ LISP lstrunbreakup(LISP elems,LISP lmarker);
+@@ -356,5 +358,5 @@
+ 
+ 
+-LISP symalist(char *item,...);
++LISP symalist(const char *item, ...);
+ 
+ LISP encode_st_mode(LISP l);
+@@ -363,5 +365,5 @@
+ int __stdcall siod_main(int argc,char **argv, char **env);
+ void __stdcall siod_shuffle_args(int *pargc,char ***pargv);
+-void __stdcall siod_init(int argc,char **argv);
++void __stdcall siod_init(int argc, const char **argv);
+ 
+ #if defined(WIN32) && defined(_WINDOWS_)
+--- siodp.h	2014-03-25 04:10:42.000000000 -0400
++++ siodp.h	2021-02-15 14:47:39.214446000 -0500
+@@ -18,5 +18,5 @@
+ 
+ extern long siod_verbose_level;
+-extern char *siod_lib;
++extern const char *siod_lib;
+ extern long nointerrupt;
+ extern long interrupt_differed;
+@@ -81,7 +81,7 @@
+ 
+ #define STACK_CHECK(_ptr) \
+-  if (((char *) (_ptr)) < stack_limit_ptr) err_stack((char *) _ptr);
++  if (((char *) (_ptr)) < stack_limit_ptr) err_stack(_ptr);
+ 
+-void err_stack(char *);
++void err_stack(LISP *);
+ 
+ #if defined(VMS) && defined(VAX)
+@@ -95,9 +95,9 @@
+ void err_ctrl_c(void);
+ double myruntime(void);
+-void fput_st(FILE *f,char *st);
+-void put_st(char *st);
+-void grepl_puts(char *,void (*)(char *));
++void fput_st(FILE *f, const char *st);
++void put_st(const char *st);
++void grepl_puts(const char *, void (*)(const char *));
+ void gc_fatal_error(void);
+-LISP gen_intern(char *name,long copyp);
++LISP gen_intern(const char *name, long copyp);
+ void scan_registers(void);
+ void init_storage_1(void);
+@@ -136,5 +136,5 @@
+ LISP leval_quote(LISP args,LISP env);
+ LISP leval_tenv(LISP args,LISP env);
+-int flush_ws(struct gen_readio *f,char *eoferr);
++int flush_ws(struct gen_readio *f, const char *eoferr);
+ int f_getc(FILE *f);
+ void f_ungetc(int c, FILE *f);
+@@ -164,6 +164,6 @@
+ void file_gc_free(LISP ptr);
+ void file_prin1(LISP ptr,struct gen_printio *f);
+-LISP fopen_c(char *name,char *how);
+-LISP fopen_cg(FILE *(*)(const char *,const char *),char *,char *);
++LISP fopen_c(const char *name, const char *how);
++LISP fopen_cg(FILE *(*)(const char *, const char *), const char *, const char *);
+ LISP fopen_l(LISP name,LISP how);
+ LISP fclose_l(LISP p);
+--- slib.c	2014-03-25 04:40:18.000000000 -0400
++++ slib.c	2021-02-15 20:55:35.681648000 -0500
+@@ -77,8 +77,12 @@
+ #include <errno.h>
+ 
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
++
+ #include "siod.h"
+ #include "siodp.h"
+ 
+-#ifdef linux
++#if defined(linux) || defined(BSD)
+ #define sprintf_s snprintf
+ #endif
+@@ -90,57 +94,57 @@
+ 	NIL);}
+ 
+-char * __stdcall siod_version(void)
++const char * __stdcall siod_version(void)
+ {return("3.6.2 12-MAY-07");}
+ 
+-long nheaps = 2;
+-LISP *heaps;
++static long nheaps = 2;
++static LISP *heaps;
+ LISP heap,heap_end,heap_org;
+-long heap_size = 5000;
+-long old_heap_used;
+-long gc_status_flag = 1;
+-char *init_file = (char *) NULL;
++static long heap_size = 5000;
++static long old_heap_used;
++static long gc_status_flag = 1;
++static const char *init_file = NULL;
+ char *tkbuffer = NULL;
+-long gc_kind_copying = 0;
+-long gc_cells_allocated = 0;
+-double gc_time_taken;
+-LISP *stack_start_ptr = NULL;
+-LISP freelist;
+-jmp_buf errjmp;
++static long gc_kind_copying = 0;
++static long gc_cells_allocated = 0;
++static double gc_time_taken;
++static LISP *stack_start_ptr = NULL;
++static LISP freelist;
++static jmp_buf errjmp;
+ long errjmp_ok = 0;
+ long nointerrupt = 1;
+ long interrupt_differed = 0;
+-LISP oblistvar = NIL;
++static LISP oblistvar = NIL;
+ LISP sym_t = NIL;
+-LISP eof_val = NIL;
+-LISP sym_errobj = NIL;
+-LISP sym_catchall = NIL;
+-LISP sym_progn = NIL;
+-LISP sym_lambda = NIL;
+-LISP sym_quote = NIL;
+-LISP sym_dot = NIL;
+-LISP sym_after_gc = NIL;
+-LISP sym_eval_history_ptr = NIL;
++static LISP eof_val = NIL;
++static LISP sym_errobj = NIL;
++static LISP sym_catchall = NIL;
++static LISP sym_progn = NIL;
++static LISP sym_lambda = NIL;
++static LISP sym_quote = NIL;
++static LISP sym_dot = NIL;
++static LISP sym_after_gc = NIL;
++static LISP sym_eval_history_ptr = NIL;
+ LISP unbound_marker = NIL;
+-LISP *obarray;
+-long obarray_dim = 100;
++static LISP *obarray;
++static long obarray_dim = 100;
+ struct catch_frame *catch_framep = (struct catch_frame *) NULL;
+-void (*repl_puts)(char *) = NULL;
+-LISP (*repl_read)(void) = NULL;
+-LISP (*repl_eval)(LISP) = NULL;
+-void (*repl_print)(LISP) = NULL;
+-void (*stdout_puts)(char *) = NULL;
+-LISP *inums;
+-long inums_dim = 256;
+-struct user_type_hooks *user_types = NULL;
+-long user_tc_next = tc_user_min;
+-struct gc_protected *protected_registers = NULL;
+-jmp_buf save_regs_gc_mark;
+-double gc_rt;
+-long gc_cells_collected;
+-char *user_ch_readm = "";
+-char *user_te_readm = "";
+-LISP (*user_readm)(int, struct gen_readio *) = NULL;
+-LISP (*user_readt)(char *,long, int *) = NULL;
+-void (*fatal_exit_hook)(void) = NULL;
++static void (*repl_puts)(const char *) = NULL;
++static LISP (*repl_read)(void) = NULL;
++static LISP (*repl_eval)(LISP) = NULL;
++static void (*repl_print)(LISP) = NULL;
++static void (*stdout_puts)(const char *) = NULL;
++static LISP *inums;
++static long inums_dim = 256;
++static struct user_type_hooks *user_types = NULL;
++static long user_tc_next = tc_user_min;
++static struct gc_protected *protected_registers = NULL;
++static jmp_buf save_regs_gc_mark;
++static double gc_rt;
++static long gc_cells_collected;
++static const char *user_ch_readm = "";
++static const char *user_te_readm = "";
++static LISP (*user_readm)(int, struct gen_readio *) = NULL;
++static LISP (*user_readt)(char *, long, int *) = NULL;
++static void (*fatal_exit_hook)(void) = NULL;
+ #ifdef THINK_C
+ int ipoll_counter = 0;
+@@ -148,5 +152,5 @@
+ 
+ char *stack_limit_ptr = NULL;
+-long stack_size = 
++static long stack_size = 
+ #ifdef THINK_C
+   10000;
+@@ -170,10 +174,10 @@
+ #endif
+ 
+-char *siod_lib = SIOD_LIB_DEFAULT;
++const char *siod_lib = SIOD_LIB_DEFAULT;
+ 
+-void __stdcall process_cla(int argc,char **argv,int warnflag)
++void __stdcall process_cla(int argc, const char **argv, int warnflag)
+ {int k;
+  char *ptr;
+- static siod_lib_set = 0;
++ static int siod_lib_set = 0;
+  char msgbuff[256];
+ #if !defined(vms)
+@@ -288,5 +292,5 @@
+  return(x);}
+ 
+-void handle_sigfpe(int sig SIG_restargs)
++void handle_sigfpe(int sig SIG_restargs __unused)
+ {
+ #ifdef WIN32
+@@ -296,5 +300,5 @@
+  err("floating point exception",NIL);}
+ 
+-void handle_sigint(int sig SIG_restargs)
++void handle_sigint(int sig SIG_restargs __unused)
+ {signal(SIGINT,handle_sigint);
+ #if defined(WIN32)
+@@ -364,12 +368,12 @@
+  return(rv);}
+ 
+-static void ignore_puts(char *st)
++static void ignore_puts(const char *st __unused)
+ {}
+ 
+-static void noprompt_puts(char *st)
++static void noprompt_puts(const char *st)
+ {if (strcmp(st,"> ") != 0)
+    put_st(st);}
+ 
+-static char *repl_c_string_arg = NULL;
++static const char *repl_c_string_arg = NULL;
+ static char *repl_c_string_out = NULL;
+ static long repl_c_string_flag = 0;
+@@ -386,5 +390,5 @@
+  return(read_from_string(s));}
+ 
+-static void ignore_print(LISP x)
++static void ignore_print(LISP x __unused)
+ {repl_c_string_flag = 1;}
+ 
+@@ -397,5 +401,5 @@
+  char *end;};
+ 
+-static int rcsp_puts(char *from,void *cb)
++static int rcsp_puts(const char *from, void *cb)
+ {long fromlen,intolen,cplen;
+  struct rcsp_puts *p = (struct rcsp_puts *) cb;
+@@ -421,16 +425,11 @@
+  repl_c_string_flag = 1;}
+ 
+-long __stdcall repl_c_string(char *str,
+-		   long want_sigint,long want_init,long want_print)
++long __stdcall repl_c_string01(const char *str,
++		   long want_sigint, long want_init, long want_print)
+ {struct repl_hooks h;
+  long retval;
+  h.repl_read = repl_c_string_read;
+  h.repl_eval = NULL;
+- if (want_print > 1)
+-   {h.repl_puts = ignore_puts;
+-    h.repl_print = repl_c_string_print;
+-    repl_c_string_print_len = want_print;
+-    repl_c_string_out = str;}
+- else if (want_print)
++ if (want_print)
+    {h.repl_puts = noprompt_puts;
+     h.repl_print = not_ignore_print;
+@@ -452,4 +451,25 @@
+   return(2);}
+ 
++long __stdcall repl_c_string(char *str,
++		   long want_sigint, long want_init, long want_print)
++{struct repl_hooks h;
++ long retval;
++ h.repl_read = repl_c_string_read;
++ h.repl_eval = NULL;
++
++ h.repl_puts = ignore_puts;
++ h.repl_print = repl_c_string_print;
++ repl_c_string_print_len = want_print;
++ repl_c_string_out = str;
++ repl_c_string_arg = str;
++ repl_c_string_flag = 0;
++ retval = repl_driver(want_sigint, want_init, &h);
++ if (retval != 0)
++   return(retval);
++ else if (repl_c_string_flag == 1)
++   return(0);
++ else
++  return(2);}
++
+ #ifdef unix
+ #include <sys/types.h>
+@@ -511,11 +531,11 @@
+ #endif
+ 
+-#if defined(SUN5) || defined(linux)
++#if defined(SUN5) || defined(linux) || defined(BSD)
+ 
+-#if defined(linux)
++#if defined(linux) || defined(BSD)
+ #include <sys/time.h>
+ #endif
+ 
+-double myrealtime(void)
++static double myrealtime(void)
+ {struct timeval x;
+  if (gettimeofday(&x,NULL))
+@@ -532,5 +552,5 @@
+ #endif
+ 
+-#if !defined(__osf__) & !defined(VMS) & !defined(SUN5) & !defined(WIN32) &!defined(linux)
++#if !defined(__osf__) & !defined(VMS) & !defined(SUN5) & !defined(WIN32) &!defined(linux) && !defined(BSD)
+ double myrealtime(void)
+ {time_t x;
+@@ -539,5 +559,5 @@
+ #endif
+ 
+-void set_repl_hooks(void (*puts_f)(char *),
++void set_repl_hooks(void (*puts_f)(const char *),
+ 		    LISP (*read_f)(void),
+ 		    LISP (*eval_f)(LISP),
+@@ -548,13 +568,13 @@
+  repl_print = print_f;}
+ 
+-void set_stdout_hooks(void (*puts_f)(char *))
++void set_stdout_hooks(void (*puts_f)(const char *))
+ {
+   stdout_puts = puts_f;
+ }
+ 
+-void gput_st(struct gen_printio *f,char *st)
++void gput_st(struct gen_printio *f, const char *st)
+ {PUTS_FCN(st,f);}
+ 
+-void fput_st(FILE *f,char *st)
++void fput_st(FILE *f, const char *st)
+ {long flag;
+  flag = no_interrupt(1);
+@@ -562,9 +582,9 @@
+  no_interrupt(flag);}
+ 
+-int fputs_fcn(char *st,void *cb)
++static int fputs_fcn(const char *st, void *cb)
+ {fput_st((FILE *)cb,st);
+  return(1);}
+ 
+-void put_st(char *st)
++void put_st(const char *st)
+ {
+   if (stdout_puts == NULL)
+@@ -574,10 +594,10 @@
+ }
+      
+-void grepl_puts(char *st,void (*repl_puts)(char *))
+-{if (repl_puts == NULL)
++void grepl_puts(const char *st, void (*_repl_puts)(const char *))
++{if (_repl_puts == NULL)
+    {put_st(st);
+     fflush(stdout);}
+  else
+-   (*repl_puts)(st);}
++   (_repl_puts)(st);}
+      
+ long repl(struct repl_hooks *h)
+@@ -691,7 +711,7 @@
+ {return(err("BUG. Reached impossible case",NIL));}
+ 
+-void err_stack(char *ptr)
++void err_stack(LISP *l)
+      /* The user could be given an option to continue here */
+-{err("the currently assigned stack limit has been exceded",NIL);}
++{err("the currently assigned stack limit has been exceded", *l);}
+ 
+ LISP stack_limit(LISP amount,LISP silent)
+@@ -707,5 +727,5 @@
+    return(flocons(stack_size));}
+ 
+-char *try_get_c_string(LISP x)
++const char *try_get_c_string(LISP x)
+ {if TYPEP(x,tc_symbol)
+    return(PNAME(x));
+@@ -715,5 +735,13 @@
+    return(NULL);}
+ 
+-char *get_c_string(LISP x)
++void *get_string_data(LISP x)
++{switch (TYPE(x))
++   {case tc_string:
++    case tc_byte_array:
++      return(x->storage_as.string.data);}
++ err("Neither a string nor a byte array", x);
++ return(NULL);}
++
++const char *get_c_string(LISP x)
+ {if TYPEP(x,tc_symbol)
+    return(PNAME(x));
+@@ -724,5 +752,5 @@
+  return(NULL);}
+ 
+-char *get_c_string_dim(LISP x,long *len)
++const char *get_c_string_dim(LISP x, long *len)
+ {switch(TYPE(x))
+    {case tc_symbol:
+@@ -836,5 +864,5 @@
+     return(flocons(FLONM(x)/FLONM(y)));}}
+ 
+-LISP lllabs(LISP x)
++static LISP lllabs(LISP x)
+ {double v;
+  if NFLONUMP(x) err("wta to abs",x);
+@@ -845,5 +873,5 @@
+    return(x);}
+ 
+-LISP lsqrt(LISP x)
++static LISP lsqrt(LISP x)
+ {if NFLONUMP(x) err("wta to sqrt",x);
+  return(flocons(sqrt(FLONM(x))));}
+@@ -861,5 +889,5 @@
+  return(NIL);}
+ 
+-LISP greaterEp(LISP x,LISP y)
++static LISP greaterEp(LISP x, LISP y)
+ {if NFLONUMP(x) err("wta(1st) to greaterp",x);
+  if NFLONUMP(y) err("wta(2nd) to greaterp",y);
+@@ -867,5 +895,5 @@
+  return(NIL);}
+ 
+-LISP lessEp(LISP x,LISP y)
++static LISP lessEp(LISP x, LISP y)
+ {if NFLONUMP(x) err("wta(1st) to lessp",x);
+  if NFLONUMP(y) err("wta(2nd) to lessp",y);
+@@ -873,5 +901,5 @@
+  return(NIL);}
+ 
+-LISP lmax(LISP x,LISP y)
++static LISP lmax(LISP x, LISP y)
+ {if NULLP(y) return(x);
+  if NFLONUMP(x) err("wta(1st) to max",x);
+@@ -879,5 +907,5 @@
+  return((FLONM(x) > FLONM(y)) ? x : y);}
+ 
+-LISP lmin(LISP x,LISP y)
++static LISP lmin(LISP x, LISP y)
+ {if NULLP(y) return(x);
+  if NFLONUMP(x) err("wta(1st) to min",x);
+@@ -895,5 +923,5 @@
+  return(NIL);}
+ 
+-LISP symcons(char *pname,LISP vcell)
++LISP symcons(const char *pname, LISP vcell)
+ {LISP z;
+  NEWCELL(z,tc_symbol);
+@@ -905,5 +933,5 @@
+ {if SYMBOLP(x) return(sym_t); else return(NIL);}
+ 
+-LISP err_ubv(LISP v)
++static LISP err_ubv(LISP v)
+ {return(err("unbound variable",v));}
+ 
+@@ -926,13 +954,13 @@
+ 
+ 
+-char *must_malloc(unsigned long size)
+-{char *tmp;
+- tmp = (char *) malloc((size) ? size : 1);
+- if (tmp == (char *)NULL) err("failed to allocate storage from system",NIL);
++void *must_malloc(unsigned long size)
++{void *tmp;
++ tmp = malloc((size) ? size : 1);
++ if (tmp == NULL) err("failed to allocate storage from system", NIL);
+  return(tmp);}
+ 
+-LISP gen_intern(char *name,long copyp)
++LISP gen_intern(const char *name, long copyp)
+ {LISP l,sym,sl;
+- char *cname;
++ const char *cname;
+  long hash=0,n,c,flag;
+  flag = no_interrupt(1);
+@@ -950,6 +978,6 @@
+       return(CAR(l));}
+  if (copyp == 1)
+-   {cname = (char *) must_malloc(strlen(name)+1);
+-    strcpy(cname,name);}
++   {char *_cname = must_malloc(strlen(name)+1);
++    strcpy(_cname, name); cname = _cname;}
+  else
+    cname = name;
+@@ -960,8 +988,8 @@
+  return(sym);}
+ 
+-LISP cintern(char *name)
++LISP cintern(const char *name)
+ {return(gen_intern(name,0));}
+ 
+-LISP rintern(char *name)
++LISP rintern(const char *name)
+ {return(gen_intern(name,1));}
+ 
+@@ -969,5 +997,5 @@
+ {return(rintern(get_c_string(name)));}
+ 
+-LISP subrcons(long type, char *name, SUBR_FUNC f)
++LISP subrcons(long type, const char *name, SUBR_FUNC f)
+ {LISP z;
+  NEWCELL(z,type);
+@@ -988,5 +1016,5 @@
+ void gc_protect_n(LISP *location,long n)
+ {struct gc_protected *reg;
+- reg = (struct gc_protected *) must_malloc(sizeof(struct gc_protected));
++ reg = must_malloc(sizeof(struct gc_protected));
+  (*reg).location = location;
+  (*reg).length = n;
+@@ -994,5 +1022,5 @@
+   protected_registers = reg;}
+ 
+-void gc_protect_sym(LISP *location,char *st)
++void gc_protect_sym(LISP *location, const char *st)
+ {*location = cintern(st);
+  gc_protect(location);}
+@@ -1021,20 +1049,20 @@
+ {LISP ptr;
+  long j;
+- tkbuffer = (char *) must_malloc(TKBUFFERN+1);
++ tkbuffer = must_malloc(TKBUFFERN+1);
+  if (((gc_kind_copying == 1) && (nheaps != 2)) || (nheaps < 1))
+    err("invalid number of heaps",NIL);
+- heaps = (LISP *) must_malloc(sizeof(LISP) * nheaps);
++ heaps = must_malloc(sizeof(LISP) * nheaps);
+  for(j=0;j<nheaps;++j) heaps[j] = NULL;
+- heaps[0] = (LISP) must_malloc(sizeof(struct obj)*heap_size);
++ heaps[0] = must_malloc(sizeof(struct obj)*heap_size);
+  heap = heaps[0];
+  heap_org = heap;
+  heap_end = heap + heap_size;
+  if (gc_kind_copying == 1)
+-   heaps[1] = (LISP) must_malloc(sizeof(struct obj)*heap_size);
++   heaps[1] = must_malloc(sizeof(struct obj)*heap_size);
+  else
+    freelist = NIL;
+  gc_protect(&oblistvar);
+  if (obarray_dim > 1)
+-   {obarray = (LISP *) must_malloc(sizeof(LISP) * obarray_dim);
++   {obarray = must_malloc(sizeof(LISP) * obarray_dim);
+     for(j=0;j<obarray_dim;++j)
+       obarray[j] = NIL;
+@@ -1062,5 +1090,5 @@
+  setvar(sym_eval_history_ptr,NIL,NIL);
+  if (inums_dim > 0)
+-   {inums = (LISP *) must_malloc(sizeof(LISP) * inums_dim);
++   {inums = must_malloc(sizeof(LISP) * inums_dim);
+     for(j=0;j<inums_dim;++j)
+       {NEWCELL(ptr,tc_flonum);
+@@ -1069,35 +1097,35 @@
+     gc_protect_n(inums,inums_dim);}}
+  
+-void init_subr(char *name, long type, SUBR_FUNC fcn)
++void init_subr(const char *name, long type, SUBR_FUNC fcn)
+ {setvar(cintern(name),subrcons(type,name,fcn),NIL);}
+ 
+-void init_subr_0(char *name, LISP (*fcn)(void))
++void init_subr_0(const char *name, LISP (*fcn)(void))
+ {init_subr(name,tc_subr_0,(SUBR_FUNC)fcn);}
+ 
+-void init_subr_1(char *name, LISP (*fcn)(LISP))
++void init_subr_1(const char *name, LISP (*fcn)(LISP))
+ {init_subr(name,tc_subr_1,(SUBR_FUNC)fcn);}
+ 
+-void init_subr_2(char *name, LISP (*fcn)(LISP,LISP))
++void init_subr_2(const char *name, LISP (*fcn)(LISP, LISP))
+ {init_subr(name,tc_subr_2,(SUBR_FUNC)fcn);}
+ 
+-void init_subr_2n(char *name, LISP (*fcn)(LISP,LISP))
++void init_subr_2n(const char *name, LISP (*fcn)(LISP, LISP))
+ {init_subr(name,tc_subr_2n,(SUBR_FUNC)fcn);}
+ 
+-void init_subr_3(char *name, LISP (*fcn)(LISP,LISP,LISP))
++void init_subr_3(const char *name, LISP (*fcn)(LISP, LISP, LISP))
+ {init_subr(name,tc_subr_3,(SUBR_FUNC)fcn);}
+ 
+-void init_subr_4(char *name, LISP (*fcn)(LISP,LISP,LISP,LISP))
++void init_subr_4(const char *name, LISP (*fcn)(LISP, LISP, LISP, LISP))
+ {init_subr(name,tc_subr_4,(SUBR_FUNC)fcn);}
+ 
+-void init_subr_5(char *name, LISP (*fcn)(LISP,LISP,LISP,LISP,LISP))
++void init_subr_5(const char *name, LISP (*fcn)(LISP, LISP, LISP, LISP, LISP))
+ {init_subr(name,tc_subr_5,(SUBR_FUNC)fcn);}
+ 
+-void init_lsubr(char *name, LISP (*fcn)(LISP))
++void init_lsubr(const char *name, LISP (*fcn)(LISP))
+ {init_subr(name,tc_lsubr,(SUBR_FUNC)fcn);}
+ 
+-void init_fsubr(char *name, LISP (*fcn)(LISP,LISP))
++void init_fsubr(const char *name, LISP (*fcn)(LISP, LISP))
+ {init_subr(name,tc_fsubr,(SUBR_FUNC)fcn);}
+ 
+-void init_msubr(char *name, LISP (*fcn)(LISP *,LISP *))
++void init_msubr(const char *name, LISP (*fcn)(LISP *, LISP *))
+ {init_subr(name,tc_msubr,(SUBR_FUNC)fcn);}
+ 
+@@ -1116,5 +1144,5 @@
+  if (user_types == NULL)
+    {n = sizeof(struct user_type_hooks) * tc_table_dim;
+-    user_types = (struct user_type_hooks *) must_malloc(n);
++    user_types = must_malloc(n);
+     memset(user_types,0,n);}
+  if ((type >= 0) && (type < tc_table_dim))
+@@ -1274,5 +1302,5 @@
+ 	  put_st(msgbuff);
+ 	}
+-      heaps[j] = (LISP) must_malloc(sizeof(struct obj)*heap_size);
++      heaps[j] = must_malloc(sizeof(struct obj)*heap_size);
+       ptr = heaps[j];
+       end = heaps[j] + heap_size;
+@@ -1323,5 +1351,5 @@
+  setjmp(save_regs_gc_mark);
+  mark_locations((LISP *) save_regs_gc_mark,
+-		(LISP *) (((char *) save_regs_gc_mark) + sizeof(save_regs_gc_mark)));
++		(LISP *)(void *)(((char *)save_regs_gc_mark) + sizeof(save_regs_gc_mark)));
+  mark_protected_registers();
+  mark_locations((LISP *) stack_start_ptr,
+@@ -1443,5 +1471,5 @@
+       end = org + heap_size;
+       for(ptr=org; ptr < end; ++ptr)
+-	if (((*ptr).gc_mark == 0))
++	if ((*ptr).gc_mark == 0)
+ 	  {switch((*ptr).type)
+ 	     {case tc_free_cell:
+@@ -1485,6 +1513,6 @@
+  errjmp_ok = 0;
+  old_status_flag = gc_status_flag;
+- if NNULLP(args)
+-   if NULLP(car(args)) gc_status_flag = 0; else gc_status_flag = 1;
++ if NNULLP(args) {
++   if NULLP(car(args)) gc_status_flag = 0; else gc_status_flag = 1; }
+  gc_mark_and_sweep();
+  gc_status_flag = old_status_flag;
+@@ -1507,6 +1535,6 @@
+ LISP gc_status(LISP args)
+ {long n,m;
+- if NNULLP(args) 
+-   if NULLP(car(args)) gc_status_flag = 0; else gc_status_flag = 1;
++ if NNULLP(args) {
++   if NULLP(car(args)) gc_status_flag = 0; else gc_status_flag = 1;}
+  if (gc_kind_copying == 1)
+    {if (gc_status_flag)
+@@ -1928,5 +1956,5 @@
+  return(sym_t);}
+ 
+-LISP letstar_macro(LISP form)
++static LISP letstar_macro(LISP form)
+ {LISP bindings = cadr(form);
+  if (NNULLP(bindings) && NNULLP(cdr(bindings)))
+@@ -1939,5 +1967,5 @@
+  return(form);}
+ 
+-LISP letrec_macro(LISP form)
++static LISP letrec_macro(LISP form)
+ {LISP letb,setb,l;
+  for(letb=NIL,setb=cddr(form),l=cadr(form);NNULLP(l);l=cdr(l))
+@@ -1968,8 +1996,8 @@
+  return(form);}
+    
+-LISP leval_quote(LISP args,LISP env)
++LISP leval_quote(LISP args, LISP env __unused)
+ {return(car(args));}
+ 
+-LISP leval_tenv(LISP args,LISP env)
++LISP leval_tenv(LISP args __unused, LISP env)
+ {return(env);}
+ 
+@@ -1999,5 +2027,5 @@
+  p->prin1 = fcn;}
+ 
+-char *subr_kind_str(long n)
++static const char *subr_kind_str(long n)
+ {switch(n)
+    {case tc_subr_0: return("subr_0");
+@@ -2082,5 +2110,5 @@
+  return(NIL);}
+ 
+-LISP lprin1(LISP exp,LISP lf)
++static LISP lprin1(LISP exp, LISP lf)
+ {FILE *f = get_c_file(lf,stdout);
+  lprin1f(exp,f);
+@@ -2114,10 +2142,10 @@
+ {ungetc(c,f);}
+ 
+-int flush_ws(struct gen_readio *f,char *eoferr)
++int flush_ws(struct gen_readio *f, const char *eoferr)
+ {int c,commentp;
+  commentp = 0;
+  while(1)
+    {c = GETC_FCN(f);
+-    if (c == EOF) if (eoferr) err(eoferr,NIL); else return(c);
++    if (c == EOF) { if (eoferr) err(eoferr, NIL); else return(c);}
+     if (commentp) {if (c == '\n') commentp = 0;}
+     else if (c == ';') commentp = 1;
+@@ -2149,5 +2177,6 @@
+ {int c,j;
+  char *p,*buffer=tkbuffer;
+- STACK_CHECK(&f);
++ const char *pc;
++
+  p = buffer;
+  c = flush_ws(f,"end of file inside read");
+@@ -2165,13 +2194,13 @@
+       switch(c)
+ 	{case '@':
+-	   p = "+internal-comma-atsign";
++	   pc = "+internal-comma-atsign";
+ 	   break;
+ 	 case '.':
+-	   p = "+internal-comma-dot";
++	   pc = "+internal-comma-dot";
+ 	   break;
+ 	 default:
+-	   p = "+internal-comma";
++	   pc = "+internal-comma";
+ 	   UNGETC_FCN(c,f);}
+-      return(cons(cintern(p),lreadr(f)));
++      return(cons(cintern(pc), lreadr(f)));
+     case '"':
+       return(lreadstring(f));
+@@ -2238,5 +2267,5 @@
+ LISP apropos(LISP matchl)
+ {LISP result = NIL,l,ml;
+- char *pname;
++ const char *pname;
+  for(l=oblistvar;CONSP(l);l=CDR(l))
+    {pname = get_c_string(CAR(l));
+@@ -2248,5 +2277,6 @@
+  return(result);}
+ 
+-LISP fopen_cg(FILE *(*fcn)(const char *,const char *),char *name,char *how)
++LISP fopen_cg(FILE *(*fcn)(const char *, const char *),
++    const char *name, const char *how)
+ {LISP sym;
+  long flag;
+@@ -2260,10 +2290,10 @@
+     SAFE_STRCAT(errmsg,name);
+     err(errmsg,llast_c_errmsg(-1));}
+- sym->storage_as.c_file.name = (char *) must_malloc(strlen(name)+1);
++ sym->storage_as.c_file.name = must_malloc(strlen(name)+1);
+  strcpy(sym->storage_as.c_file.name,name);
+  no_interrupt(flag);
+  return(sym);}
+ 
+-LISP fopen_c(char *name,char *how)
++LISP fopen_c(const char *name, const char *how)
+ {return(fopen_cg(fopen,name,how));}
+ 
+@@ -2286,10 +2316,11 @@
+  return(NIL);}
+ 
+-LISP vload(char *ofname,long cflag,long rflag)
++LISP vload(const char *ofname, long cflag, long rflag)
+ {LISP form,result,tail,lf,reader = NIL;
+  FILE *f;
+  int c;
+- long j,len;
+- char buffer[512],*key = "parser:",*start,*end,*ftype=".scm",*fname;
++ size_t j, len;
++ char buffer[512], *start, *end;
++ const char *key = "parser:", *ftype = ".scm", *fname;
+  if ((start = strchr(ofname,VLOAD_OFFSET_HACK_CHAR)))
+   {len = atol(ofname);
+@@ -2386,5 +2417,5 @@
+ 
+ LISP save_forms(LISP fname,LISP forms,LISP how)
+-{char *cname,*chow = NULL;
++{const char *cname, *chow = NULL;
+  LISP l,lf;
+  FILE *f;
+@@ -2487,5 +2518,5 @@
+ 
+ LISP parse_number(LISP x)
+-{char *c;
++{const char *c;
+  c = get_c_string(x);
+  return(flocons(atof(c)));}
+@@ -2525,9 +2556,9 @@
+ {return((siod_verbose_level >= level) ? 1 : 0);}
+ 
+-LISP lruntime(void)
++static LISP lruntime(void)
+ {return(cons(flocons(myruntime()),
+ 	     cons(flocons(gc_time_taken),NIL)));}
+ 
+-LISP lrealtime(void)
++static LISP lrealtime(void)
+ {return(flocons(myrealtime()));}
+ 
+@@ -2538,5 +2569,5 @@
+ {return(car(cdr(x)));}
+ 
+-LISP cdar(LISP x)
++static LISP cdar(LISP x)
+ {return(cdr(car(x)));}
+ 
+@@ -2544,5 +2575,5 @@
+ {return(cdr(cdr(x)));}
+ 
+-LISP lrand(LISP m)
++static LISP lrand(LISP m)
+ {long res;
+  res = rand();
+@@ -2552,5 +2583,5 @@
+    return(flocons(res % get_c_long(m)));}
+ 
+-LISP lsrand(LISP s)
++static LISP lsrand(LISP s)
+ {srand(get_c_long(s));
+  return(NIL);}
+@@ -2583,5 +2614,5 @@
+  return(cintern(errmsg));}
+ 
+-LISP lllast_c_errmsg(void)
++static LISP lllast_c_errmsg(void)
+ {return(llast_c_errmsg(-1));}
+ 
+@@ -2611,5 +2642,5 @@
+  return(s1);}
+ 
+-static LISP parser_read(LISP ignore)
++static LISP parser_read(LISP ignore __unused)
+ {return(leval(cintern("read"),NIL));}
+ 
+--- sliba.c	2014-03-25 04:10:42.000000000 -0400
++++ sliba.c	2021-02-15 15:48:21.022022000 -0500
+@@ -16,4 +16,8 @@
+ #include <math.h>
+ 
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
++
+ #include "siod.h"
+ #include "siodp.h"
+@@ -184,9 +188,9 @@
+  return(i);}
+ 
+-void rfs_ungetc(unsigned char c,unsigned char **p)
++void rfs_ungetc(unsigned char c __unused, unsigned char **p)
+ {*p = *p - 1;}
+ 
+ LISP read_from_string(LISP x)
+-{char *p;
++{const char *p;
+  struct gen_readio s;
+  p = get_c_string(x);
+@@ -196,5 +200,5 @@
+  return(readtl(&s));}
+ 
+-int pts_puts(char *from,void *cb)
++static int pts_puts(const char *from, void *cb)
+ {LISP into;
+  size_t fromlen,intolen,intosize,fitsize;
+@@ -210,8 +214,8 @@
+  return(1);}
+ 
+-LISP err_wta_str(LISP exp)
++static LISP err_wta_str(LISP exp)
+ {return(err("not a string",exp));}
+ 
+-LISP print_to_string(LISP exp,LISP str,LISP nostart)
++static LISP print_to_string(LISP exp, LISP str, LISP nostart)
+ {struct gen_printio s;
+  if NTYPEP(str,tc_string) err_wta_str(str);
+@@ -390,8 +394,9 @@
+  return(s);}
+ 
+-LISP bytes_append(LISP args)
++static LISP bytes_append(LISP args)
+ {long size,n,j;
+  LISP l,s;
+- char *data,*ptr;
++ char *data;
++ const char *ptr;
+  size = 0;
+  for(l=args;NNULLP(l);l=cdr(l))
+@@ -408,5 +413,5 @@
+ LISP substring(LISP str,LISP start,LISP end)
+ {long s,e,n;
+- char *data;
++ const char *data;
+  data = get_c_string_dim(str,&n);
+  s = get_c_long(start);
+@@ -420,5 +425,5 @@
+ 
+ LISP string_search(LISP token,LISP str)
+-{char *s1,*s2,*ptr;
++{const char *s1, *s2, *ptr;
+  s1 = get_c_string(str);
+  s2 = get_c_string(token);
+@@ -432,5 +437,5 @@
+ 
+ LISP string_trim(LISP str)
+-{char *start,*end;
++{const char *start, *end;
+  start = get_c_string(str);
+  while(*start && IS_TRIM_SPACE(*start)) ++start;
+@@ -440,5 +445,5 @@
+ 
+ LISP string_trim_left(LISP str)
+-{char *start,*end;
++{const char *start, *end;
+  start = get_c_string(str);
+  while(*start && IS_TRIM_SPACE(*start)) ++start;
+@@ -447,5 +452,5 @@
+ 
+ LISP string_trim_right(LISP str)
+-{char *start,*end;
++{const char *start, *end;
+  start = get_c_string(str);
+  end = &start[strlen(start)];
+@@ -455,10 +460,11 @@
+ LISP string_upcase(LISP str)
+ {LISP result;
+- char *s1,*s2;
++ const char *s1;
++ char *s2;
+  long j,n;
+  s1 = get_c_string(str);
+  n = strlen(s1);
+  result = strcons(n,s1);
+- s2 = get_c_string(result);
++ s2 = get_string_data(result);
+  for(j=0;j<n;++j) s2[j] = toupper(s2[j]);
+  return(result);}
+@@ -466,10 +472,11 @@
+ LISP string_downcase(LISP str)
+ {LISP result;
+- char *s1,*s2;
++ const char *s1;
++ char *s2;
+  long j,n;
+  s1 = get_c_string(str);
+  n = strlen(s1);
+  result = strcons(n,s1);
+- s2 = get_c_string(result);
++ s2 = get_string_data(result);
+  for(j=0;j<n;++j) s2[j] = tolower(s2[j]);
+  return(result);}
+@@ -544,5 +551,4 @@
+     case 'x': case 'X':
+       {
+-	int c, j;
+ 	char buf[33] ;
+ 	buf[0]='0' ;
+@@ -570,5 +576,5 @@
+ long c_sxhash(LISP obj,long n)
+ {long hash;
+- unsigned char *s;
++ const unsigned char *s;
+  LISP tmp;
+  struct user_type_hooks *p;
+@@ -585,5 +591,5 @@
+       return(hash);
+     case tc_symbol:
+-      for(hash=0,s=(unsigned char *)PNAME(obj);*s;++s)
++      for(hash=0, s = (const unsigned char *)PNAME(obj); *s; ++s)
+ 	hash = HASH_COMBINE(hash,*s,n);
+       return(hash);
+@@ -597,5 +603,5 @@
+     case tc_fsubr:
+     case tc_msubr:
+-      for(hash=0,s=(unsigned char *) obj->storage_as.subr.name;*s;++s)
++      for(hash=0, s = (const unsigned char *)obj->storage_as.subr.name; *s; ++s)
+ 	hash = HASH_COMBINE(hash,*s,n);
+       return(hash);
+@@ -750,5 +756,5 @@
+  return(err("improper list to assoc",alist));}
+ 
+-LISP assv(LISP x,LISP alist)
++static LISP assv(LISP x, LISP alist)
+ {LISP l,tmp;
+  for(l=alist;CONSP(l);l=CDR(l))
+@@ -1054,5 +1060,5 @@
+ {FILE *f;
+  long flag;
+- char *data;
++ const char *data;
+  long dim,len;
+  f = get_c_file(file,stdout);
+@@ -1066,5 +1072,5 @@
+  return(NIL);}
+ 
+-LISP lfflush(LISP file)
++static LISP lfflush(LISP file)
+ {FILE *f;
+  long flag;
+@@ -1079,5 +1085,5 @@
+  return(flocons(strlen(string->storage_as.string.data)));}
+ 
+-LISP string_dim(LISP string)
++static LISP string_dim(LISP string)
+ {if NTYPEP(string,tc_string) err_wta_str(string);
+  return(flocons((double)string->storage_as.string.dim));}
+@@ -1113,5 +1119,5 @@
+ {char buffer[1000];
+  double y;
+- long base,width,prec;
++ int base, width, prec;
+  if NFLONUMP(x) err("wta",x);
+  y = FLONM(x);
+@@ -1156,5 +1162,5 @@
+ 
+ LISP string2number(LISP x,LISP b)
+-{char *str;
++{const char *str;
+  long base,value = 0;
+  double result;
+@@ -1181,5 +1187,5 @@
+  return(flocons(result));}
+ 
+-LISP lstrcmp(LISP s1,LISP s2)
++static LISP lstrcmp(LISP s1, LISP s2)
+ {return(flocons(strcmp(get_c_string(s1),get_c_string(s2))));}
+ 
+@@ -1191,7 +1197,8 @@
+    err_wta_str(s);}
+ 
+-LISP lstrcpy(LISP dest,LISP src)
++static LISP lstrcpy(LISP dest, LISP src)
+ {long ddim,slen;
+- char *d,*s;
++ char *d;
++ const char *s;
+  chk_string(dest,&d,&ddim);
+  s = get_c_string(src);
+@@ -1203,7 +1210,8 @@
+  return(NIL);}
+ 
+-LISP lstrcat(LISP dest,LISP src)
++static LISP lstrcat(LISP dest, LISP src)
+ {long ddim,dlen,slen;
+- char *d,*s;
++ char *d;
++ const char *s;
+  chk_string(dest,&d,&ddim);
+  s = get_c_string(src);
+@@ -1217,5 +1225,5 @@
+ 
+ LISP lstrbreakup(LISP str,LISP lmarker)
+-{char *start,*end,*marker;
++{const char *start, *end, *marker;
+  size_t k;
+  LISP result = NIL;
+@@ -1238,8 +1246,8 @@
+  return(string_append(nreverse(result)));}
+ 
+-LISP stringp(LISP x)
++static LISP stringp(LISP x)
+ {return(TYPEP(x,tc_string) ? sym_t : NIL);}
+ 
+-static char *base64_encode_table = "\
++static const char *base64_encode_table = "\
+ ABCDEFGHIJKLMNOPQRSTUVWXYZ\
+ abcdefghijklmnopqrstuvwxyz\
+@@ -1250,8 +1258,8 @@
+ static void init_base64_table(void)
+ {int j;
+- base64_decode_table = (char *) malloc(256);
++ base64_decode_table = malloc(256);
+  memset(base64_decode_table,-1,256);
+  for(j=0;j<65;++j)
+-   base64_decode_table[base64_encode_table[j]] = j;}
++   base64_decode_table[(int)base64_encode_table[j]] = j;}
+ 
+ #define BITMSK(N) ((1 << (N)) - 1)
+@@ -1262,7 +1270,8 @@
+ #define ITEM4(X)   X & BITMSK(6)
+ 
+-LISP base64encode(LISP in)
+-{char *s,*t = base64_encode_table;
+- unsigned char *p1,*p2;
++static LISP base64encode(LISP in)
++{const char *s, *t = base64_encode_table;
++ const unsigned char *p1;
++ unsigned char *p2;
+  LISP out;
+  long j,m,n,chunks,leftover;
+@@ -1272,6 +1281,6 @@
+  m = (chunks + ((leftover) ? 1 : 0)) * 4;
+  out = strcons(m,NULL);
+- p2 = (unsigned char *) get_c_string(out);
+- for(j=0,p1=(unsigned char *)s;j<chunks;++j,p1 += 3)
++ p2 = (unsigned char *)get_string_data(out);
++ for(j=0, p1=(const unsigned char *)s; j < chunks; ++j, p1 += 3)
+    {*p2++ = t[ITEM1(p1[0])];
+     *p2++ = t[ITEM2(p1[0],p1[1])];
+@@ -1297,8 +1306,9 @@
+  return(out);}
+ 
+-LISP base64decode(LISP in)
+-{char *s,*t = base64_decode_table;
++static LISP base64decode(LISP in)
++{const char *s, *t = base64_decode_table;
+  LISP out;
+- unsigned char *p1,*p2;
++ const unsigned char *p1;
++ unsigned char *p2;
+  long j,m,n,chunks,leftover,item1,item2,item3,item4;
+  s = get_c_string(in);
+@@ -1317,6 +1327,6 @@
+  m = (chunks * 3) + leftover;
+  out = strcons(m,NULL);
+- p2 = (unsigned char *) get_c_string(out);
+- for(j=0,p1=(unsigned char *)s;j<chunks;++j,p1 += 4)
++ p2 = (unsigned char *)get_string_data(out);
++ for(j = 0, p1 = (const unsigned char *)s; j < chunks; ++j, p1 += 4)
+    {if ((item1 = t[p1[0]]) & ~BITMSK(6)) return(NIL);
+     if ((item2 = t[p1[1]]) & ~BITMSK(6)) return(NIL);
+@@ -1354,5 +1364,5 @@
+  return(err("improper list to memq",il));}
+ 
+-LISP member(LISP x,LISP il)
++static LISP member(LISP x, LISP il)
+ {LISP l,tmp;
+  for(l=il;CONSP(l);l=CDR(l))
+@@ -1363,5 +1373,5 @@
+  return(err("improper list to member",il));}
+ 
+-LISP memv(LISP x,LISP il)
++static LISP memv(LISP x, LISP il)
+ {LISP l,tmp;
+  for(l=il;CONSP(l);l=CDR(l))
+@@ -1396,5 +1406,5 @@
+    return(NIL);}
+ 
+-LISP larg_default(LISP li,LISP x,LISP dval)
++static LISP larg_default(LISP li, LISP x, LISP dval)
+ {LISP l = li,elem;
+  long j=0,n = get_c_long(x);
+@@ -1410,7 +1420,7 @@
+  return(dval);}
+ 
+-LISP lkey_default(LISP li,LISP key,LISP dval)
++static LISP lkey_default(LISP li, LISP key, LISP dval)
+ {LISP l = li,elem;
+- char *ckey,*celem;
++ const char *ckey, *celem;
+  long n;
+  ckey = get_c_string(key);
+@@ -1425,8 +1435,8 @@
+ 
+ 
+-LISP llist(LISP l)
++static LISP llist(LISP l)
+ {return(l);}
+ 
+-LISP writes1(FILE *f,LISP l)
++static LISP writes1(FILE *f, LISP l)
+ {LISP v;
+  STACK_CHECK(&v);
+@@ -1446,5 +1456,5 @@
+  return(NIL);}
+ 
+-LISP writes(LISP args)
++static LISP writes(LISP args)
+ {return(writes1(get_c_file(car(args),stdout),cdr(args)));}
+ 
+@@ -1463,9 +1473,10 @@
+  STACK_CHECK(&l);
+  if NULLP(l) err("list is empty",l);
+- if CONSP(l)
++ if CONSP(l) {
+    if NULLP(CDR(l))
+      return(NIL);
+    else
+      return(cons(CAR(l),butlast(CDR(l))));
++ }
+  return(err("not a list",l));}
+ 
+@@ -1501,5 +1512,5 @@
+       return(lapply(fcn,cons(a1,cons(a2,NIL))));}}
+ 
+-LISP lqsort(LISP l,LISP f,LISP g)
++static LISP lqsort(LISP l, LISP f, LISP g)
+      /* this is a stupid recursive qsort */
+ {int j,n;
+@@ -1524,5 +1535,5 @@
+ 		   lqsort(notless,f,g))));}
+ 
+-LISP string_lessp(LISP s1,LISP s2)
++static LISP string_lessp(LISP s1, LISP s2)
+ {if (strcmp(get_c_string(s1),get_c_string(s2)) < 0)
+    return(sym_t);
+@@ -1530,5 +1541,5 @@
+    return(NIL);}
+ 
+-LISP benchmark_funcall1(LISP ln,LISP f,LISP a1)
++static LISP benchmark_funcall1(LISP ln, LISP f, LISP a1)
+ {long j,n;
+  LISP value = NIL;
+@@ -1538,5 +1549,5 @@
+  return(value);}
+ 
+-LISP benchmark_funcall2(LISP l)
++static LISP benchmark_funcall2(LISP l)
+ {long j,n;
+  LISP ln = car(l);LISP f = car(cdr(l)); LISP a1 = car(cdr(cdr(l)));
+@@ -1548,5 +1559,5 @@
+  return(value);}
+ 
+-LISP benchmark_eval(LISP ln,LISP exp,LISP env)
++static LISP benchmark_eval(LISP ln, LISP exp, LISP env)
+ {long j,n;
+  LISP value = NIL;
+@@ -1556,5 +1567,5 @@
+  return(value);}
+ 
+-LISP mapcar1(LISP fcn,LISP in)
++static LISP mapcar1(LISP fcn, LISP in)
+ {LISP res,ptr,l;
+  if NULLP(in) return(NIL);
+@@ -1564,5 +1575,5 @@
+  return(res);}
+ 
+-LISP mapcar2(LISP fcn,LISP in1,LISP in2)
++static LISP mapcar2(LISP fcn, LISP in1, LISP in2)
+ {LISP res,ptr,l1,l2;
+  if (NULLP(in1) || NULLP(in2)) return(NIL);
+@@ -1572,5 +1583,5 @@
+  return(res);}
+ 
+-LISP mapcar(LISP l)
++static LISP mapcar(LISP l)
+ {LISP fcn = car(l);
+  switch(get_c_long(llength(l)))
+@@ -1582,10 +1593,10 @@
+       return(err("mapcar case not handled",l));}}
+ 
+-LISP lfmod(LISP x,LISP y)
++static LISP lfmod(LISP x, LISP y)
+ {if NFLONUMP(x) err("wta(1st) to fmod",x);
+  if NFLONUMP(y) err("wta(2nd) to fmod",y);
+  return(flocons(fmod(FLONM(x),FLONM(y))));}
+ 
+-LISP lsubset(LISP fcn,LISP l)
++static LISP lsubset(LISP fcn, LISP l)
+ {LISP result = NIL,v;
+  for(v=l;CONSP(v);v=CDR(v))
+@@ -1594,5 +1605,5 @@
+  return(nreverse(result));}
+ 
+-LISP ass(LISP x,LISP alist,LISP fcn)
++static LISP ass(LISP x, LISP alist, LISP fcn)
+ {LISP l,tmp;
+  for(l=alist;CONSP(l);l=CDR(l))
+@@ -1603,5 +1614,5 @@
+  return(err("improper list to ass",alist));}
+ 
+-LISP append2(LISP l1,LISP l2)
++static LISP append2(LISP l1, LISP l2)
+ {long n;
+  LISP result = NIL,p1,p2;
+@@ -1612,5 +1623,5 @@
+  return(result);}
+ 
+-LISP append(LISP l)
++static LISP append(LISP l)
+ {STACK_CHECK(&l);
+  INTERRUPT_CHECK();
+@@ -1635,7 +1646,6 @@
+  return(result);}
+ 
+-
+-LISP fast_load(LISP lfname,LISP noeval)
+-{char *fname;
++static LISP fast_load(LISP lfname, LISP noeval)
++{const char *fname;
+  LISP stream;
+  LISP result = NIL,form;
+@@ -1667,6 +1677,7 @@
+    sprintf(&outstr[j*2],"%02X",data[j]);}
+ 
+-LISP fast_save(LISP fname,LISP forms,LISP nohash,LISP comment,LISP fmode)
+-{char *cname,msgbuff[100],databuff[50];
++static LISP fast_save(LISP fname, LISP forms, LISP nohash, LISP comment, LISP fmode)
++{const char *cname;
++ char msgbuff[100], databuff[50];
+  LISP stream,l;
+  FILE *f;
+@@ -1687,5 +1698,5 @@
+  sprintf(msgbuff,"# Siod Binary Object Save File\n");
+  fput_st(f,msgbuff);
+- sprintf(msgbuff,"# sizeof(long) = %d\n# sizeof(double) = %d\n",
++ sprintf(msgbuff, "# sizeof(long) = %zu\n# sizeof(double) = %zu\n",
+ 	 sizeof(long),sizeof(double));
+  fput_st(f,msgbuff);
+@@ -1703,5 +1714,5 @@
+  return(NIL);}
+ 
+-void swrite1(LISP stream,LISP data)
++static void swrite1(LISP stream, LISP data)
+ {FILE *f = get_c_file(stream,stdout);
+  switch TYPE(data)
+@@ -1730,5 +1741,5 @@
+    return(value);}
+ 
+-LISP swrite(LISP stream,LISP table,LISP data)
++static LISP swrite(LISP stream, LISP table, LISP data)
+ {long j,k,m,n;
+  switch(TYPE(data))
+@@ -1753,44 +1764,44 @@
+  return(NIL);}
+ 
+-LISP lpow(LISP x,LISP y)
++static LISP lpow(LISP x, LISP y)
+ {if NFLONUMP(x) err("wta(1st) to pow",x);
+  if NFLONUMP(y) err("wta(2nd) to pow",y);
+  return(flocons(pow(FLONM(x),FLONM(y))));}
+ 
+-LISP lexp(LISP x)
++static LISP lexp(LISP x)
+ {return(flocons(exp(get_c_double(x))));}
+ 
+-LISP llog(LISP x)
++static LISP llog(LISP x)
+ {return(flocons(log(get_c_double(x))));}
+ 
+-LISP lsin(LISP x)
++static LISP lsin(LISP x)
+ {return(flocons(sin(get_c_double(x))));}
+ 
+-LISP lcos(LISP x)
++static LISP lcos(LISP x)
+ {return(flocons(cos(get_c_double(x))));}
+ 
+-LISP ltan(LISP x)
++static LISP ltan(LISP x)
+ {return(flocons(tan(get_c_double(x))));}
+ 
+-LISP lasin(LISP x)
++static LISP lasin(LISP x)
+ {return(flocons(asin(get_c_double(x))));}
+ 
+-LISP lacos(LISP x)
++static LISP lacos(LISP x)
+ {return(flocons(acos(get_c_double(x))));}
+ 
+-LISP latan(LISP x)
++static LISP latan(LISP x)
+ {return(flocons(atan(get_c_double(x))));}
+ 
+-LISP latan2(LISP x,LISP y)
++static LISP latan2(LISP x, LISP y)
+ {return(flocons(atan2(get_c_double(x),get_c_double(y))));}
+ 
+-LISP hexstr(LISP a)
+-{unsigned char *in;
++static LISP hexstr(LISP a)
++{const unsigned char *in;
+  char *out;
+  LISP result;
+  long j,dim;
+- in = (unsigned char *) get_c_string_dim(a,&dim);
++ in = (const unsigned char *)get_c_string_dim(a, &dim);
+  result = strcons(dim*2,NULL);
+- for(out=get_c_string(result),j=0;j<dim;++j,out += 2)
++ for (out = get_string_data(result), j = 0; j < dim; ++j, out += 2)
+    sprintf(out,"%02x",in[j]);
+  return(result);}
+@@ -1803,6 +1814,6 @@
+  return(0);}
+ 
+-LISP hexstr2bytes(LISP a)
+-{char *in;
++static LISP hexstr2bytes(LISP a)
++{const char *in;
+  unsigned char *out;
+  LISP result;
+@@ -1811,10 +1822,10 @@
+  dim = strlen(in) / 2; 
+  result = arcons(tc_byte_array,dim,0);
+- out = (unsigned char *) result->storage_as.string.data;
++ out = (unsigned char *)get_string_data(result);
+  for(j=0;j<dim;++j)
+    out[j] = xdigitvalue(in[j*2]) * 16 + xdigitvalue(in[j*2+1]);
+  return(result);}
+ 
+-LISP getprop(LISP plist,LISP key)
++static LISP getprop(LISP plist, LISP key)
+ {LISP l;
+  for(l=cdr(plist);NNULLP(l);l=cddr(l))
+@@ -1825,12 +1836,12 @@
+  return(NIL);}
+ 
+-LISP setprop(LISP plist,LISP key,LISP value)
++static LISP setprop(LISP plist __unused, LISP key __unused, LISP value __unused)
+ {err("not implemented",NIL);
+  return(NIL);}
+ 
+-LISP putprop(LISP plist,LISP value,LISP key)
++static LISP putprop(LISP plist, LISP value, LISP key)
+ {return(setprop(plist,key,value));}
+ 
+-LISP ltypeof(LISP obj)
++static LISP ltypeof(LISP obj)
+ {long x;
+  x = TYPE(obj);
+@@ -1884,5 +1895,5 @@
+ {return(cdr(cdr(cdr(x))));}
+ 
+-LISP ash(LISP value,LISP n)
++static LISP ash(LISP value, LISP n)
+ {long m,k;
+  m = get_c_long(value);
+@@ -1894,17 +1905,17 @@
+  return(flocons(m));}
+ 
+-LISP bitand(LISP a,LISP b)
++static LISP bitand(LISP a, LISP b)
+ {return(flocons(get_c_long(a) & get_c_long(b)));}
+ 
+-LISP bitor(LISP a,LISP b)
++static LISP bitor(LISP a, LISP b)
+ {return(flocons(get_c_long(a) | get_c_long(b)));}
+ 
+-LISP bitxor(LISP a,LISP b)
++static LISP bitxor(LISP a, LISP b)
+ {return(flocons(get_c_long(a) ^ get_c_long(b)));}
+ 
+-LISP bitnot(LISP a)
++static LISP bitnot(LISP a)
+ {return(flocons(~get_c_long(a)));}
+ 
+-LISP leval_prog1(LISP args,LISP env)
++static LISP leval_prog1(LISP args, LISP env)
+ {LISP retval,l;
+  retval = leval(car(args),env);
+@@ -1913,5 +1924,5 @@
+  return(retval);}
+ 
+-LISP leval_cond(LISP *pform,LISP *penv)
++static LISP leval_cond(LISP *pform, LISP *penv)
+ {LISP args,env,clause,value,next;
+  args = cdr(*pform);
+@@ -1957,12 +1968,12 @@
+  return(sym_t);}
+ 
+-LISP lstrspn(LISP str1,LISP str2)
++static LISP lstrspn(LISP str1, LISP str2)
+ {return(flocons(strspn(get_c_string(str1),get_c_string(str2))));}
+ 
+-LISP lstrcspn(LISP str1,LISP str2)
++static LISP lstrcspn(LISP str1, LISP str2)
+ {return(flocons(strcspn(get_c_string(str1),get_c_string(str2))));}
+ 
+-LISP substring_equal(LISP str1,LISP str2,LISP start,LISP end)
+-{char *cstr1,*cstr2;
++static LISP substring_equal(LISP str1, LISP str2, LISP start, LISP end)
++{const char *cstr1, *cstr2;
+  long len1,n,s,e;
+  cstr1 = get_c_string_dim(str1,&len1);
+@@ -1988,6 +1999,6 @@
+ #endif
+ 
+-LISP substring_equalcase(LISP str1,LISP str2,LISP start,LISP end)
+-{char *cstr1,*cstr2;
++static LISP substring_equalcase(LISP str1, LISP str2, LISP start, LISP end)
++{const char *cstr1, *cstr2;
+  long len1,n,s,e;
+  cstr1 = get_c_string_dim(str1,&len1);
+@@ -1999,5 +2010,5 @@
+  return((strncasecmp(cstr1,&cstr2[s],e-s) == 0) ? a_true_value() : NIL);}
+ 
+-LISP set_eval_history(LISP len,LISP circ)
++static LISP set_eval_history(LISP len, LISP circ)
+ {LISP data;
+  data = NULLP(len) ? len : make_list(len,NIL);
+@@ -2008,5 +2019,5 @@
+  return(len);}
+ 
+-static LISP parser_fasl(LISP ignore)
++static LISP parser_fasl(LISP ignore __unused)
+ {return(closure(listn(3,
+ 		      NIL,
+--- slibu.c	2014-03-25 06:32:41.000000000 -0400
++++ slibu.c	2021-02-15 21:10:45.383193000 -0500
+@@ -21,4 +21,8 @@
+ #include <stdarg.h>
+ 
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
++
+ #if defined(unix)
+ #include <unistd.h>
+@@ -51,5 +55,5 @@
+ #endif
+ 
+-#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi)
++#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi) || defined(BSD)
+ #include <dlfcn.h>
+ #endif
+@@ -98,5 +102,5 @@
+ #include "siod.h"
+ #include "siodp.h"
+-#include "md5.h"
++#include <md5.h>
+ 
+ static void init_slibu_version(void)
+@@ -106,8 +110,10 @@
+ 
+ 
+-LISP sym_channels = NIL;
+-long tc_opendir = 0;
++static LISP sym_channels = NIL;
++static long tc_opendir = 0;
+ 
+-char *ld_library_path_env = "LD_LIBRARY_PATH";
++#if defined(unix) && !defined(BSD)
++static const char *ld_library_path_env = "LD_LIBRARY_PATH";
++#endif
+ 
+ #ifdef VMS
+@@ -119,5 +125,5 @@
+ #endif
+ 
+-LISP lsystem(LISP args)
++static LISP lsystem(LISP args)
+ {int retval;
+  long iflag;
+@@ -131,8 +137,8 @@
+ 
+ #ifndef WIN32
+-LISP lgetuid(void)
++static LISP lgetuid(void)
+ {return(flocons(getuid()));}
+ 
+-LISP lgetgid(void)
++static LISP lgetgid(void)
+ {return(flocons(getgid()));}
+ #endif
+@@ -140,5 +146,5 @@
+ #ifdef unix
+ 
+-LISP lcrypt(LISP key,LISP salt)
++static LISP lcrypt(LISP key, LISP salt)
+ {char *result;
+  if ((result = crypt(get_c_string(key),get_c_string(salt))))
+@@ -156,5 +162,5 @@
+ #endif
+ 
+-LISP lgetcwd(void)
++static LISP lgetcwd(void)
+ {char path[PATH_MAX+1];
+  if (getcwd(path,sizeof(path)))
+@@ -167,6 +173,5 @@
+ #ifdef unix
+ 
+-
+-LISP ldecode_pwent(struct passwd *p)
++static LISP ldecode_pwent(const struct passwd *p)
+ {return(symalist(
+ 		 "name",strcons(strlen(p->pw_name),p->pw_name),
+@@ -188,11 +193,12 @@
+ 		 NULL));}
+ 
+-static char *strfield(char *name,LISP alist)
++#if !defined(BSD)
++static char *strfield(const char *name, LISP alist)
+ {LISP value,key = rintern(name);
+  if NULLP(value = assq(key,alist))
+-   return("");
+- return(get_c_string(cdr(value)));}
++   return(NULL);
++ return(get_string_data(cdr(value)));}
+ 
+-static long longfield(char *name,LISP alist)
++static long longfield(const char *name, LISP alist)
+ {LISP value,key = rintern(name);
+  if NULLP(value = assq(key,alist))
+@@ -200,5 +206,5 @@
+  return(get_c_long(cdr(value)));}
+  
+-void lencode_pwent(LISP alist,struct passwd *p)
++static void lencode_pwent(LISP alist, struct passwd *p)
+ {p->pw_name = strfield("name",alist);
+  p->pw_passwd = strfield("passwd",alist);
+@@ -217,6 +223,7 @@
+ #endif
+  p->pw_shell = strfield("shell",alist);}
++#endif
+ 
+-LISP lgetpwuid(LISP luid)
++static LISP lgetpwuid(LISP luid)
+ {int iflag;
+  uid_t uid;
+@@ -230,5 +237,5 @@
+  return(result);}
+ 
+-LISP lgetpwnam(LISP nam)
++static LISP lgetpwnam(LISP nam)
+ {int iflag;
+  struct passwd *p;
+@@ -240,5 +247,5 @@
+  return(result);}
+ 
+-LISP lgetpwent(void)
++static LISP lgetpwent(void)
+ {int iflag;
+  LISP result = NIL;
+@@ -250,5 +257,5 @@
+  return(result);}
+ 
+-LISP lsetpwent(void)
++static LISP lsetpwent(void)
+ {int iflag = no_interrupt(1);
+  setpwent();
+@@ -256,5 +263,5 @@
+  return(NIL);}
+ 
+-LISP lendpwent(void)
++static LISP lendpwent(void)
+ {int iflag = no_interrupt(1);
+  endpwent();
+@@ -262,5 +269,5 @@
+  return(NIL);}
+ 
+-LISP lsetuid(LISP n)
++static LISP lsetuid(LISP n)
+ {uid_t uid;
+  uid = (uid_t) get_c_long(n);
+@@ -270,5 +277,5 @@
+    return(NIL);}
+ 
+-LISP lseteuid(LISP n)
++static LISP lseteuid(LISP n)
+ {uid_t uid;
+  uid = (uid_t) get_c_long(n);
+@@ -278,5 +285,5 @@
+    return(NIL);}
+ 
+-LISP lgeteuid(void)
++static LISP lgeteuid(void)
+ {return(flocons(geteuid()));}
+ 
+@@ -289,4 +296,5 @@
+ #endif
+ 
++#if !defined(BSD)
+ LISP lputpwent(LISP alist,LISP file)
+ {int iflag = no_interrupt(1);
+@@ -297,8 +305,9 @@
+  no_interrupt(iflag);
+  return(NIL);}
++#endif
+ 
+-LISP laccess_problem(LISP lfname,LISP lacc)
+-{char *fname = get_c_string(lfname);
+- char *acc = get_c_string(lacc),*p;
++static LISP laccess_problem(LISP lfname, LISP lacc)
++{const char *fname = get_c_string(lfname);
++ const char *acc = get_c_string(lacc), *p;
+  int amode = 0,iflag = no_interrupt(1),retval;
+  for(p=acc;*p;++p)
+@@ -325,5 +334,5 @@
+    return(NIL);}
+ 
+-LISP lsymlink(LISP p1,LISP p2)
++static LISP lsymlink(LISP p1, LISP p2)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -333,5 +342,5 @@
+  return(NIL);}
+ 
+-LISP llink(LISP p1,LISP p2)
++static LISP llink(LISP p1, LISP p2)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -341,5 +350,5 @@
+  return(NIL);}
+ 
+-LISP lunlink(LISP p)
++static LISP lunlink(LISP p)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -349,5 +358,5 @@
+  return(NIL);}
+ 
+-LISP lrmdir(LISP p)
++static LISP lrmdir(LISP p)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -357,5 +366,5 @@
+  return(NIL);}
+ 
+-LISP lmkdir(LISP p,LISP m)
++static LISP lmkdir(LISP p, LISP m)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -365,5 +374,5 @@
+  return(NIL);}
+ 
+-LISP lreadlink(LISP p)
++static LISP lreadlink(LISP p)
+ {long iflag;
+  char buff[PATH_MAX+1];
+@@ -375,5 +384,5 @@
+  return(strcons(size,buff));}
+ 
+-LISP lrename(LISP p1,LISP p2)
++static LISP lrename(LISP p1, LISP p2)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -385,15 +394,15 @@
+ #endif
+ 
+-LISP lrandom(LISP n)
++static LISP lrandom(LISP n)
+ {int res;
+ #if defined(hpux) || defined(vms) || defined(sun) || defined(sgi) || defined(WIN32)
+  res = rand();
+ #endif
+-#if defined(__osf__) || defined(linux)
++#if defined(__osf__) || defined(linux) || defined(BSD)
+  res = random();
+ #endif
+  return(flocons(NNULLP(n) ? res % get_c_long(n) : res));}
+ 
+-LISP lsrandom(LISP n)
++static LISP lsrandom(LISP n)
+ {long seed;
+  seed = get_c_long(n);
+@@ -401,5 +410,5 @@
+  srand(seed);
+ #endif
+-#if defined(__osf__) || defined(linux)
++#if defined(__osf__) || defined(linux) || defined(BSD)
+  srandom(seed);
+ #endif
+@@ -408,5 +417,5 @@
+ #ifdef unix
+ 
+-LISP lfork(void)
++static LISP lfork(void)
+ {int iflag;
+  pid_t pid;
+@@ -423,6 +432,7 @@
+ #endif
+ 
+-char **list2char(LISP *safe,LISP v)
+-{char **x,*tmp;
++static char **list2char(LISP *safe, LISP v)
++{char **x;
++ const char *tmp;
+  long j,n;
+  LISP l;
+@@ -438,5 +448,5 @@
+ #ifdef unix
+ 
+-LISP lexec(LISP path,LISP args,LISP env)
++static LISP lexec(LISP path, LISP args, LISP env)
+ {int iflag;
+  char **argv = NULL, **envp = NULL;
+@@ -453,5 +463,5 @@
+  return(err("exec",llast_c_errmsg(-1)));}
+ 
+-LISP lnice(LISP val)
++static LISP lnice(LISP val)
+ {int iflag,n;
+  n = get_c_long(val);
+@@ -490,5 +500,5 @@
+ #ifdef unix
+ 
+-LISP lwait(LISP lpid,LISP loptions)
++static LISP lwait(LISP lpid, LISP loptions)
+ {pid_t pid,ret;
+  int iflag,status = 0,options;
+@@ -515,5 +525,5 @@
+    return(cons(flocons(ret),cons(flocons(status),NIL)));}
+ 
+-LISP lkill(LISP pid,LISP sig)
++static LISP lkill(LISP pid, LISP sig)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -527,12 +537,12 @@
+ #endif
+ 
+-LISP lgetpid(void)
++static LISP lgetpid(void)
+ {return(flocons(getpid()));}
+ 
+ #ifdef unix
+-LISP lgetpgrp(void)
++static LISP lgetpgrp(void)
+ {return(flocons(getpgrp()));}
+ 
+-LISP lgetgrgid(LISP n)
++static LISP lgetgrgid(LISP n)
+ {gid_t gid;
+  struct group *gr;
+@@ -552,13 +562,13 @@
+ 
+ #ifndef WIN32
+-LISP lgetppid(void)
++static LISP lgetppid(void)
+ {return(flocons(getppid()));}
+ #endif
+ 
+-LISP lmemref_byte(LISP addr)
++static LISP lmemref_byte(LISP addr)
+ {unsigned char *ptr = (unsigned char *) get_c_long(addr);
+  return(flocons(*ptr));}
+ 
+-LISP lexit(LISP val)
++static LISP lexit(LISP val)
+ {int iflag = no_interrupt(1);
+  exit(get_c_long(val));
+@@ -566,5 +576,5 @@
+  return(NIL);}
+ 
+-LISP ltrunc(LISP x)
++static LISP ltrunc(LISP x)
+ {long i;
+  if NFLONUMP(x) err("wta to trunc",x);
+@@ -573,10 +583,11 @@
+ 
+ #ifdef unix
+-LISP lputenv(LISP lstr)
+-{char *orig,*cpy;
++static LISP lputenv(LISP lstr)
++{const char *orig;
++ char *cpy;
+  orig = get_c_string(lstr);
+  /* unix putenv keeps a pointer to the string we pass,
+     therefore we must make a fresh copy, which is memory leaky. */
+- cpy = (char *) must_malloc(strlen(orig)+1);
++ cpy = must_malloc(strlen(orig)+1);
+  strcpy(cpy,orig);
+   if (putenv(cpy))
+@@ -586,28 +597,31 @@
+ #endif
+ 
+-MD5_CTX * get_md5_ctx(LISP a)
++static MD5_CTX * get_md5_ctx(LISP a)
+ {if (TYPEP(a,tc_byte_array) &&
+      (a->storage_as.string.dim == sizeof(MD5_CTX)))
+-   return((MD5_CTX *)a->storage_as.string.data);
++   return((MD5_CTX *)(void *)a->storage_as.string.data);
+  else
+    {err("not an MD5_CTX array",a);
+     return(NULL);}}
+ 
+-LISP md5_init(void)
++static LISP md5_init(void)
+ {LISP a = arcons(tc_byte_array,sizeof(MD5_CTX),1);
+  MD5Init(get_md5_ctx(a));
+  return(a);}
+ 
+-void md5_update_from_file(MD5_CTX *ctx,FILE *f,unsigned char *buff,long dim)
++static void md5_update_from_file(MD5_CTX *ctx, FILE *f, void *buff, long dim)
+ {size_t len;
+- while((len = fread(buff,sizeof(buff[0]),dim,f)))
+-   MD5Update(ctx,buff,len);}
+-
+-LISP md5_update(LISP ctx,LISP str,LISP len)
+-{char *buffer; long dim,n;
+- buffer = get_c_string_dim(str,&dim);
++ while((len = fread(buff, 1, dim, f)))
++   MD5Update(ctx, buff, len);
++ if (!feof(f))
++   err("fread", llast_c_errmsg(-1));}
++
++static LISP md5_update(LISP ctx, LISP str, LISP len)
++{void *buffer; long dim, n;
++ buffer = get_string_data(str);
++ dim = str->storage_as.string.dim;
+  if TYPEP(len,tc_c_file)
+    {md5_update_from_file(get_md5_ctx(ctx), get_c_file(len,NULL),
+-			 (unsigned char *)buffer,dim);
++			 buffer, dim);
+     return(NIL);}
+  else if NULLP(len)
+@@ -616,10 +630,10 @@
+    {n = get_c_long(len);
+     if ((n < 0) || (n > dim)) err("invalid length for string",len);}
+- MD5Update(get_md5_ctx(ctx),(unsigned char *)buffer,n);
++ MD5Update(get_md5_ctx(ctx), buffer, n);
+  return(NIL);}
+ 
+-LISP md5_final(LISP ctx)
++static LISP md5_final(LISP ctx)
+ {LISP result = arcons(tc_byte_array,16,0);
+- MD5Final((unsigned char *) result->storage_as.string.data,
++ MD5Final(get_string_data(result),
+ 	  get_md5_ctx(ctx));
+  return(result);}
+@@ -662,5 +676,5 @@
+ static int handle_sigalrm_flag = 0;
+ 
+-void handle_sigalrm(int sig)
++static void handle_sigalrm(int sig __unused)
+ {if (nointerrupt == 1)
+   {if (handle_sigalrm_flag)
+@@ -673,5 +687,5 @@
+    err("alarm signal",NIL);}
+ 
+-LISP lalarm(LISP seconds,LISP flag)
++static LISP lalarm(LISP seconds, LISP flag)
+ {long iflag;
+  int retval;
+@@ -686,5 +700,5 @@
+ 
+ 
+-#if defined(__osf__) || defined(SUN5) || defined(linux)
++#if defined(__osf__) || defined(SUN5) || defined(linux) || defined(BSD)
+ 
+ #define TV_FRAC(x) (((double)x.tv_usec) * 1.0e-6)
+@@ -694,5 +708,5 @@
+ #endif
+ 
+-LISP current_resource_usage(LISP kind)
++static LISP current_resource_usage(LISP kind)
+ {struct rusage u;
+  int code;
+@@ -729,5 +743,5 @@
+ #ifdef unix
+ 
+-LISP l_opendir(LISP name)
++static LISP l_opendir(LISP name)
+ {long iflag;
+  LISP value;
+@@ -742,5 +756,5 @@
+  return(value);}
+ 
+-DIR *get_opendir(LISP v,long oflag)
++static DIR *get_opendir(LISP v, long oflag)
+ {if NTYPEP(v,tc_opendir) err("not an opendir",v);
+  if NULLP(CAR(v))
+@@ -749,5 +763,5 @@
+  return((DIR *)CAR(v));}
+ 
+-LISP l_closedir(LISP v)
++static LISP l_closedir(LISP v)
+ {long iflag,old_errno;
+  DIR *d;
+@@ -761,10 +775,10 @@
+  return(NIL);}
+ 
+-void  opendir_gc_free(LISP v)
++static void  opendir_gc_free(LISP v)
+ {DIR *d;
+  if ((d = get_opendir(v,0)))
+    closedir(d);}
+ 
+-LISP l_readdir(LISP v)
++static LISP l_readdir(LISP v)
+ {long iflag,namlen;
+  DIR *d;
+@@ -782,5 +796,5 @@
+  return(strcons(namlen,r->d_name));}
+ 
+-void opendir_prin1(LISP ptr,struct gen_printio *f)
++static void opendir_prin1(LISP ptr, struct gen_printio *f)
+ {char buffer[256];
+  sprintf(buffer,"#<OPENDIR %p>",get_opendir(ptr,0));
+@@ -879,5 +893,5 @@
+ #endif
+ 
+-LISP file_times(LISP fname)
++static LISP file_times(LISP fname)
+ {struct stat st;
+  int iflag,ret;
+@@ -894,5 +908,5 @@
+ 
+ #if defined(unix)
+-LISP decode_st_moden(mode_t mode)
++static LISP decode_st_moden(mode_t mode)
+ {LISP ret = NIL;
+  if (mode & S_ISUID) ret = cons(cintern("SUID"),ret);
+@@ -952,8 +966,8 @@
+ #endif
+ 
+-LISP decode_st_mode(LISP value)
++static LISP decode_st_mode(LISP value)
+ {return(decode_st_moden(get_c_long(value)));}
+ 
+-LISP decode_stat(struct stat *s)
++static LISP decode_stat(struct stat *s)
+ {return(symalist("dev",flocons(s->st_dev),
+ 		 "ino",flocons(s->st_ino),
+@@ -978,5 +992,5 @@
+ 	      
+ 
+-LISP g_stat(LISP fname,int (*fcn)(const char *,struct stat *))
++static LISP g_stat(LISP fname, int (*fcn)(const char *, struct stat *))
+ {struct stat st;
+  int iflag,ret;
+@@ -989,8 +1003,8 @@
+    return(decode_stat(&st));}
+ 
+-LISP l_stat(LISP fname)
++static LISP l_stat(LISP fname)
+ {return(g_stat(fname,stat));}
+ 
+-LISP l_fstat(LISP f)
++static LISP l_fstat(LISP f)
+ {struct stat st;
+  int iflag,ret;
+@@ -1004,5 +1018,5 @@
+ 
+ #ifdef unix
+-LISP l_lstat(LISP fname)
++static LISP l_lstat(LISP fname)
+ {return(g_stat(fname,lstat));}
+ #endif
+@@ -1022,5 +1036,5 @@
+ #if defined(unix) || defined(WIN32)
+ 
+-LISP l_chmod(LISP path,LISP mode)
++static LISP l_chmod(LISP path, LISP mode)
+ {if (chmod(get_c_string(path),get_c_long(mode)))
+    return(err("chmod",llast_c_errmsg(-1)));
+@@ -1030,8 +1044,17 @@
+ #endif
+ 
++#if defined(unix) || defined(WIN32)
++
++static LISP l_lchmod(LISP path, LISP mode)
++{if (lchmod(get_c_string(path), get_c_long(mode)))
++   return(err("lchmod", llast_c_errmsg(-1)));
++ else
++   return(NIL);}
++
++#endif
+ 
+ #ifdef unix
+ 
+-LISP lutime(LISP fname,LISP mod,LISP ac)
++static LISP lutime(LISP fname, LISP mod, LISP ac)
+ {struct utimbuf x;
+  x.modtime = get_c_long(mod);
+@@ -1043,5 +1066,5 @@
+ 
+ 
+-LISP lfchmod(LISP file,LISP mode)
++static LISP lfchmod(LISP file, LISP mode)
+ {if (fchmod(fileno(get_c_file(file,NULL)),get_c_long(mode)))
+    return(err("fchmod",llast_c_errmsg(-1)));
+@@ -1061,5 +1084,5 @@
+ 				 NULL)));}
+ 
+-int get_fd(LISP ptr)
++static int get_fd(LISP ptr)
+ {if TYPEP(ptr,tc_c_file)
+    return(fileno(get_c_file(ptr,NULL)));
+@@ -1067,5 +1090,5 @@
+    return(get_c_long(ptr));}
+ 
+-LISP gsetlk(int op,LISP lfd,LISP ltype,LISP whence,LISP start,LISP len)
++static LISP gsetlk(int op, LISP lfd, LISP ltype, LISP whence, LISP start, LISP len)
+ {struct flock f;
+  int fd = get_fd(lfd);
+@@ -1084,11 +1107,11 @@
+    return(listn(2,flocons(f.l_type),flocons(f.l_pid)));}
+ 
+-LISP lF_SETLK(LISP fd,LISP ltype,LISP whence,LISP start,LISP len)
++static LISP lF_SETLK(LISP fd, LISP ltype, LISP whence, LISP start, LISP len)
+ {return(gsetlk(F_SETLK,fd,ltype,whence,start,len));}
+ 
+-LISP lF_SETLKW(LISP fd,LISP ltype,LISP whence,LISP start,LISP len)
++static LISP lF_SETLKW(LISP fd, LISP ltype, LISP whence, LISP start, LISP len)
+ {return(gsetlk(F_SETLKW,fd,ltype,whence,start,len));}
+ 
+-LISP lF_GETLK(LISP fd,LISP ltype,LISP whence,LISP start,LISP len)
++static LISP lF_GETLK(LISP fd, LISP ltype, LISP whence, LISP start, LISP len)
+ {return(gsetlk(F_GETLK,fd,ltype,whence,start,len));}
+ 
+@@ -1097,5 +1120,5 @@
+ #endif
+ 
+-LISP delete_file(LISP fname)
++static LISP delete_file(LISP fname)
+ {int iflag,ret;
+  iflag = no_interrupt(1);
+@@ -1111,5 +1134,5 @@
+    return(NIL);}
+ 
+-LISP utime2str(LISP u)
++static LISP utime2str(LISP u)
+ {time_t bt;
+  struct tm *btm;
+@@ -1218,5 +1241,5 @@
+ #endif
+ 
+-LISP lgetenv(LISP var)
++static LISP lgetenv(LISP var)
+ {char *str;
+  if ((str = getenv(get_c_string(var))))
+@@ -1225,8 +1248,8 @@
+    return(NIL);}
+ 
+-LISP unix_time(void)
++static LISP unix_time(void)
+ {return(flocons((double)time(NULL)));}
+ 
+-LISP unix_ctime(LISP value)
++static LISP unix_ctime(LISP value)
+ {time_t b;
+  char *buff,*p;
+@@ -1241,5 +1264,5 @@
+    return(NIL);}
+ 
+-LISP http_date(LISP value)
++static LISP http_date(LISP value)
+      /* returns the internet standard RFC 1123 format */
+ {time_t b;
+@@ -1320,5 +1343,5 @@
+ #endif
+ 
+-LISP lsleep(LISP ns)
++static LISP lsleep(LISP ns)
+ {double val = get_c_double(ns);
+ #ifdef unix
+@@ -1333,7 +1356,8 @@
+  return(NIL);}
+ 
+-LISP url_encode(LISP in)
++static LISP url_encode(LISP in)
+ {int spaces=0,specials=0,regulars=0,c;
+- char *str = get_c_string(in),*p,*r;
++ const char *str = get_c_string(in), *p;
++ char *r;
+  LISP out;
+  for(p=str,spaces=0,specials=0,regulars=0;(c = *p);++p)
+@@ -1344,5 +1368,5 @@
+    return(in);
+  out = strcons(spaces + regulars + specials * 3,NULL);
+- for(p=str,r=get_c_string(out);(c = *p);++p)
++ for (p = str, r = get_string_data(out); (c = *p); ++p)
+    if (c == ' ')
+      *r++ = '+';
+@@ -1352,10 +1376,11 @@
+    else
+      *r++ = c;
+- *r = 0;
++ *r = '\0';
+  return(out);}
+ 
+-LISP url_decode(LISP in)
++static LISP url_decode(LISP in)
+ {int pluses=0,specials=0,regulars=0,c,j;
+- char *str = get_c_string(in),*p,*r;
++ const char *str = get_c_string(in), *p;
++ char *r;
+  LISP out;
+  for(p=str,pluses=0,specials=0,regulars=0;(c = *p);++p)
+@@ -1371,5 +1396,5 @@
+    return(in);
+  out = strcons(regulars + pluses + specials,NULL);
+- for(p=str,r=get_c_string(out);(c = *p);++p)
++ for (p = str, r = get_string_data(out); (c = *p); ++p)
+    if (c == '+')
+      *r++ = ' ';
+@@ -1386,7 +1411,8 @@
+  return(out);}
+ 
+-LISP html_encode(LISP in)
++static LISP html_encode(LISP in)
+ {long j,n,m;
+- char *str,*ptr;
++ const char *str;
++ char *ptr;
+  LISP out;
+  switch(TYPE(in))
+@@ -1411,5 +1437,5 @@
+  if (n == m) return(in);
+  out = strcons(m,NULL);
+- for(j=0,ptr=get_c_string(out);j < n; ++j)
++ for(j = 0, ptr = get_string_data(out); j < n; ++j)
+    switch(str[j])
+      {case '>':
+@@ -1429,11 +1455,11 @@
+  return(out);}
+ 
+-LISP html_decode(LISP in)
++static LISP html_decode(LISP in)
+ {return(in);}
+ 
+-LISP lgets(LISP file,LISP buffn)
++static LISP lgets(LISP file, LISP buffn)
+ {FILE *f;
+  int iflag;
+- long n;
++ size_t n;
+  char buffer[2048],*ptr;
+  f = get_c_file(file,stdin);
+@@ -1451,11 +1477,12 @@
+  return(NIL);}
+ 
+-LISP readline(LISP file)
++static LISP readline(LISP file)
+ {LISP result;
+- char *start,*ptr;
++ const char *start;
++ char *ptr;
+  result = lgets(file,NIL);
+  if NULLP(result) return(NIL);
+  start = get_c_string(result);
+- if ((ptr = strchr(start,'\n')))
++ if ((ptr = strchr(start, '\n')) != NULL)
+    {*ptr = 0;
+     /* we also change the dim, because otherwise our equal? function
+@@ -1470,5 +1497,5 @@
+ #ifndef WIN32
+ 
+-LISP l_chown(LISP path,LISP uid,LISP gid)
++static LISP l_chown(LISP path, LISP uid, LISP gid)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -1481,5 +1508,5 @@
+ 
+ #if defined(unix) && !defined(linux)
+-LISP l_lchown(LISP path,LISP uid,LISP gid)
++static LISP l_lchown(LISP path, LISP uid, LISP gid)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -1493,5 +1520,5 @@
+ #ifdef unix
+ 
+-LISP popen_l(LISP name,LISP how)
++static LISP popen_l(LISP name, LISP how)
+ {return(fopen_cg(popen,
+ 		 get_c_string(name),
+@@ -1504,5 +1531,5 @@
+ 	 So beware.
+ 	 */
+-LISP pclose_l(LISP ptr)
++static LISP pclose_l(LISP ptr)
+ {FILE *f = get_c_file(ptr,NULL);
+  long iflag = no_interrupt(1);
+@@ -1520,5 +1547,5 @@
+ #endif
+ 
+-LISP so_init_name(LISP fname,LISP iname)
++static LISP so_init_name(LISP fname, LISP iname)
+ {LISP init_name;
+  if NNULLP(iname)
+@@ -1533,6 +1560,6 @@
+  return(intern(init_name));}
+ 
+-LISP so_ext(LISP fname)
+-{char *ext = ".so";
++static LISP so_ext(LISP fname)
++{const char *ext = ".so";
+  LISP lext;
+ #if defined(hpux)
+@@ -1551,9 +1578,9 @@
+    return(string_append(listn(2,fname,lext)));}
+ 
+-LISP load_so(LISP fname,LISP iname)
++static LISP load_so(LISP fname, LISP iname)
+      /* note: error cases can leak memory in this procedure. */
+ {LISP init_name;
+  void (*fcn)(void) = NULL;
+-#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi)
++#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi) || defined(BSD)
+  void *handle;
+ #endif
+@@ -1576,5 +1603,5 @@
+     put_st(get_c_string(fname));
+     put_st("\n");}
+-#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi)
++#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi) || defined(BSD)
+ #if !defined(__osf__)
+  /* Observed bug: values of LD_LIBRARY_PATH established with putenv
+@@ -1637,5 +1664,5 @@
+  return(init_name);}
+ 
+-LISP require_so(LISP fname)
++static LISP require_so(LISP fname)
+ {LISP init_name;
+  init_name = so_init_name(fname,NIL);
+@@ -1647,9 +1674,9 @@
+    return(NIL);}
+ 
+-LISP siod_lib_l(void)
++static LISP siod_lib_l(void)
+ {return(rintern(siod_lib));}
+ 
+ 
+-LISP ccall_catch_1(LISP (*fcn)(void *),void *arg)
++static LISP ccall_catch_1(LISP (*fcn)(void *), void *arg)
+ {LISP val;
+  val = (*fcn)(arg);
+@@ -1669,5 +1696,5 @@
+  return(ccall_catch_1(fcn,arg));}
+ 
+-LISP decode_tm(struct tm *t)
++static LISP decode_tm(struct tm *t)
+ {return(symalist("sec",flocons(t->tm_sec),
+ 		 "min",flocons(t->tm_min),
+@@ -1685,8 +1712,8 @@
+ 		 NULL));}
+ 
+-LISP symalist(char *arg,...)
++LISP symalist(const char *arg, ...)
+ {va_list args;
+  LISP result,l,val;
+- char *key;
++ const char *key;
+  if (!arg) return(NIL);
+  va_start(args,arg);
+@@ -1694,5 +1721,5 @@
+  result = cons(cons(cintern(arg),val),NIL);
+  l = result;
+- while((key = va_arg(args,char *)))
++ while((key = va_arg(args, const char *)))
+    {val = va_arg(args,LISP);
+     CDR(l) = cons(cons(cintern(key),val),NIL);
+@@ -1701,5 +1728,5 @@
+  return(result);}
+ 
+-void encode_tm(LISP alist,struct tm *t)
++static void encode_tm(LISP alist, struct tm *t)
+ {LISP val;
+  val = cdr(assq(cintern("sec"),alist));
+@@ -1727,5 +1754,5 @@
+ }
+ 
+-LISP llocaltime(LISP value)
++static LISP llocaltime(LISP value)
+ {time_t b;
+  struct tm *t;
+@@ -1739,5 +1766,5 @@
+    return(err("localtime",llast_c_errmsg(-1)));}
+ 
+-LISP lgmtime(LISP value)
++static LISP lgmtime(LISP value)
+ {time_t b;
+  struct tm *t;
+@@ -1752,10 +1779,10 @@
+ 
+ #if defined(unix) || defined(WIN32)
+-LISP ltzset(void)
++static LISP ltzset(void)
+ {tzset();
+  return(NIL);}
+ #endif
+ 
+-LISP lmktime(LISP alist)
++static LISP lmktime(LISP alist)
+ {struct tm tm;
+  time_t t;
+@@ -1764,7 +1791,7 @@
+  return(flocons((double)t));}
+ 
+-#if defined(__osf__) || defined(SUN5) || defined(linux)
++#if defined(__osf__) || defined(SUN5) || defined(linux) || defined(BSD)
+ 
+-LISP lstrptime(LISP str,LISP fmt,LISP in)
++static LISP lstrptime(LISP str,LISP fmt,LISP in)
+ {struct tm tm;
+  encode_tm(in,&tm);
+@@ -1785,5 +1812,5 @@
+ #ifdef unix
+ 
+-LISP lstrftime(LISP fmt,LISP in)
++static LISP lstrftime(LISP fmt, LISP in)
+ {struct tm tm;
+  time_t b;
+@@ -1805,5 +1832,5 @@
+ #endif
+ 
+-LISP lchdir(LISP dir)
++static LISP lchdir(LISP dir)
+ {long iflag;
+ #ifdef unix
+@@ -1811,5 +1838,5 @@
+  int fd;
+ #endif
+- char *path;
++ const char *path;
+  switch(TYPE(dir))
+    {case tc_c_file:
+@@ -1844,5 +1871,5 @@
+ 
+ #ifdef unix
+-LISP lgetpass(LISP lprompt)
++static LISP lgetpass(LISP lprompt)
+ {long iflag;
+  char *result;
+@@ -1857,5 +1884,5 @@
+ 
+ #ifdef unix
+-LISP lpipe(void)
++static LISP lpipe(void)
+ {int filedes[2];
+  long iflag;
+@@ -1886,9 +1913,9 @@
+ #define CTYPE_ULONG  10
+ 
+-LISP err_large_index(LISP ind)
++static LISP err_large_index(LISP ind)
+ {return(err("index too large",ind));}
+ 
+-LISP datref(LISP dat,LISP ctype,LISP ind)
+-{char *data;
++static LISP datref(LISP dat, LISP ctype, LISP ind)
++{const void *data;
+  long size,i;
+  data = get_c_string_dim(dat,&size);
+@@ -1898,46 +1925,46 @@
+    {case CTYPE_FLOAT:
+       if (((i+1) * (int) sizeof(float)) > size) err_large_index(ind);
+-      return(flocons(((float *)data)[i]));
++      return(flocons(((const float *)data)[i]));
+     case CTYPE_DOUBLE:
+       if (((i+1) * (int) sizeof(double)) > size) err_large_index(ind);
+-      return(flocons(((double *)data)[i]));
++      return(flocons(((const double *)data)[i]));
+     case CTYPE_LONG:
+       if (((i+1) * (int) sizeof(long)) > size) err_large_index(ind);
+-      return(flocons(((long *)data)[i]));
++      return(flocons(((const long *)data)[i]));
+     case CTYPE_SHORT:
+       if (((i+1) * (int) sizeof(short)) > size) err_large_index(ind);
+-      return(flocons(((short *)data)[i]));
++      return(flocons(((const short *)data)[i]));
+     case CTYPE_CHAR:
+       if (((i+1) * (int) sizeof(char)) > size) err_large_index(ind);
+-      return(flocons(((char *)data)[i]));
++      return(flocons(((const char *)data)[i]));
+     case CTYPE_INT:
+       if (((i+1) * (int) sizeof(int)) > size) err_large_index(ind);
+-      return(flocons(((int *)data)[i]));
++      return(flocons(((const int *)data)[i]));
+     case CTYPE_ULONG:
+       if (((i+1) * (int) sizeof(unsigned long)) > size) err_large_index(ind);
+-      return(flocons(((unsigned long *)data)[i]));
++      return(flocons(((const unsigned long *)data)[i]));
+     case CTYPE_USHORT:
+       if (((i+1) * (int) sizeof(unsigned short)) > size) err_large_index(ind);
+-      return(flocons(((unsigned short *)data)[i]));
++      return(flocons(((const unsigned short *)data)[i]));
+     case CTYPE_UCHAR:
+       if (((i+1) * (int) sizeof(unsigned char)) > size) err_large_index(ind);
+-      return(flocons(((unsigned char *)data)[i]));
++      return(flocons(((const unsigned char *)data)[i]));
+     case CTYPE_UINT:
+       if (((i+1) * (int) sizeof(unsigned int)) > size) err_large_index(ind);
+-      return(flocons(((unsigned int *)data)[i]));
++      return(flocons(((const unsigned int *)data)[i]));
+     default:
+       return(err("unknown CTYPE",ctype));}}
+ 
+-LISP sdatref(LISP spec,LISP dat)
++static LISP sdatref(LISP spec, LISP dat)
+ {return(datref(dat,car(spec),cdr(spec)));}
+ 
+-LISP mkdatref(LISP ctype,LISP ind)
++static LISP mkdatref(LISP ctype, LISP ind)
+ {return(closure(cons(ctype,ind),
+ 		leval(cintern("sdatref"),NIL)));}
+ 
+-LISP datlength(LISP dat,LISP ctype)
+-{char *data;
++static LISP datlength(LISP dat, LISP ctype)
++{
+  long size;
+- data = get_c_string_dim(dat,&size);
++ (void)get_c_string_dim(dat, &size);
+  switch(get_c_long(ctype))
+    {case CTYPE_FLOAT:
+@@ -1981,7 +2008,7 @@
+  return(NIL);}
+ 
+-
+-static int htqs_arg(char *value)
+-{char tmpbuff[1024],*p1,*p2;
++static int htqs_arg(const char *value)
++{char tmpbuff[1024], *p1;
++ const char *p2;
+  if ((strcmp(value,"(repl)") == 0) ||
+      (strcmp(value,"repl") == 0))
+@@ -1994,12 +2021,12 @@
+ 	*p1 = 0;
+ 	strcat(tmpbuff,"\")");
+-    return(repl_c_string(tmpbuff,0,0,0));}
++    return(repl_c_string01(tmpbuff, 0, 0, 0));}
+  else
+-   return(repl_c_string(value,0,0,0));}
+-
++   return(repl_c_string01(value, 0, 0, 0));}
+ 
+ int __stdcall siod_main(int argc,char **argv, char **env)
+ {int j,retval = 0,iargc,mainflag = 0,text_plain_flag = 0;
+- char *iargv[2],*start,*end;
++ const char *iargv[2], *start, *end;
++ char *iargv1;
+  LISP l;
+  iargv[0] = "";
+@@ -2008,14 +2035,15 @@
+      {while(*start)
+ 	{if (!(end = strstr(start,",-"))) end = &start[strlen(start)];
+-	 iargv[1] = (char *) malloc(end-start+1);
+-	 memcpy(iargv[1],start,end-start);
+-	 iargv[1][end-start] = 0;
+-	 if ((strncmp(iargv[1],"-v",2) == 0) &&
+-	     (atol(&iargv[1][2]) > 0) &&
+-	     (iargv[1][2] != '0'))
++	 iargv1 = malloc(end-start+1);
++	 iargv[1] = iargv1;
++	 memcpy(iargv1, start, end - start);
++	 iargv1[end - start] = 0;
++	 if ((strncmp(iargv1, "-v", 2) == 0) &&
++	     (atol(iargv1 + 2) > 0) &&
++	     (iargv1[2] != '0'))
+ 	   {put_st("Content-type: text/plain\r\n\r\n");
+ 	    text_plain_flag = 1;}
+-	 if ((strncmp(iargv[1],"-m",2) == 0))
+-	   mainflag = atol(&iargv[1][2]);
++	 if ((strncmp(iargv1, "-m", 2) == 0))
++	   mainflag = atol(iargv1 + 2);
+ 	 else
+ 	   process_cla(2,iargv,1);
+@@ -2064,5 +2092,5 @@
+ #define BOOTSTRAP_EXE_FILE_SIZE_LIMIT 1000000
+ 
+-long position_script(FILE *f,char *buff,size_t bufflen)
++static long position_script(FILE *f, char *buff, size_t bufflen)
+ /* This recognizes #!/ sequence. Exersize: compute the probability
+    of the sequence showing up in a file of N random bytes. */
+@@ -2131,10 +2159,10 @@
+  if (pos < 0) return;
+  nargc = argc + ((*flagbuff) ? 2 : 1);
+- nargv = (char **) malloc(sizeof(char *) * nargc);
++ nargv = malloc(sizeof(char *) * nargc);
+  j = 0;
+- nargv[j++] = "siod.exe";
++ nargv[j++] = argv[0];
+  if (*flagbuff) nargv[j++] = strdup(flagbuff);
+  sprintf(offbuff,"%ld",pos);
+- nargv[j] = (char *) malloc(strlen(offbuff)+strlen(argv[0])+2);
++ nargv[j] = malloc(strlen(offbuff)+strlen(argv[0])+2);
+  sprintf(nargv[j],"%s%c%s",offbuff,VLOAD_OFFSET_HACK_CHAR,argv[0]);
+  j++;
+@@ -2144,5 +2172,5 @@
+  }
+ 
+-LISP lposition_script(LISP lfile)
++static LISP lposition_script(LISP lfile)
+ {FILE *f;
+  long iflag,pos;
+@@ -2157,5 +2185,5 @@
+  return(cons(flocons(pos),strcons(-1,flbuff)));}
+ 
+-void __stdcall siod_init(int argc,char **argv)
++void __stdcall siod_init(int argc, const char **argv)
+ {process_cla(argc,argv,0);
+  init_storage();
+@@ -2166,5 +2194,5 @@
+ void __stdcall init_slibu(void)
+ {long j;
+-#if defined(unix)
++#if defined(unix) && !defined(BSD)
+  char *tmp1,*tmp2;
+ #endif
+@@ -2179,4 +2207,5 @@
+  set_print_hooks(tc_opendir,opendir_prin1);
+  init_subr_2("chmod",l_chmod);
++ init_subr_2("lchmod", l_lchmod);
+ #endif
+ 
+@@ -2212,5 +2241,7 @@
+  init_subr_1("setpwfile",lsetpwfile);
+ #endif
++#if !defined(BSD)
+  init_subr_2("putpwent",lputpwent);
++#endif
+  init_subr_2("access-problem?",laccess_problem);
+  init_subr_3("utime",lutime);
+@@ -2246,5 +2277,5 @@
+  init_subr_2("cpu-usage-limits",cpu_usage_limits);
+ #endif
+-#if defined(__osf__) || defined(SUN5) || defined(linux)
++#if defined(__osf__) || defined(SUN5) || defined(linux) || defined(BSD)
+  init_subr_1("current-resource-usage",current_resource_usage);
+ #endif
+@@ -2320,5 +2351,5 @@
+  init_subr_0("siod-lib",siod_lib_l);
+ 
+-#ifdef unix
++#if defined(unix) && !defined(BSD)
+  if ((!(tmp1 = getenv(ld_library_path_env))) ||
+      (!strstr(tmp1,siod_lib)))
+@@ -2351,5 +2382,5 @@
+  init_subr_0("rld-pathnames",rld_pathnames);
+ #endif
+-#if defined(__osf__) || defined(SUN5) || defined(linux)
++#if defined(__osf__) || defined(SUN5) || defined(linux) || defined(BSD)
+  init_subr_3("strptime",lstrptime);
+ #endif

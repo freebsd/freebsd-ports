@@ -1,0 +1,21 @@
+SHLIB_NAME=	%%MODULE%%.so
+MK_PROFILE=	no
+
+WARNS=	7
+
+# Some modules have dependencies installed by other ports:
+gd_CFLAGS=	-isystem ${LOCALBASE}/include
+gd_LDADD=	-L${LOCALBASE}/lib -lgd
+regex_CFLAGS=	-isystem ${LOCALBASE}/include
+regex_LDADD=	-L${LOCALBASE}/lib -lgnuregex
+sql_sybase_CFLAGS=-isystem ${LOCALBASE}/include
+sql_sybase_LDADD=-L${LOCALBASE}/lib -lct
+
+CFLAGS+=	-DHAVE_SYS_PARAM_H ${%%MODULE%%_CFLAGS}
+LDADD=		${%%MODULE%%_LDADD}
+
+SRCS=	%%MODULE%%.c
+
+LIBDIR=	${PREFIX}/lib/siod
+
+.include <bsd.lib.mk>

@@ -1,0 +1,332 @@
+--- ss.h	2014-03-25 04:10:42.000000000 -0400
++++ ss.h	2021-02-15 21:54:42.171506000 -0500
+@@ -16,11 +16,2 @@
+   (--(p)->ocnt < 0 ? ss_flsbuf((int)(c),(p)) : \
+    (int)(*(p)->optr++ = (unsigned char)(c)))
+-
+-
+-LISP s_open(LISP lhost,LISP lport,LISP aflag);
+-LISP s_close(LISP s);
+-int ss_filbuf(struct sock_stream *ss);
+-int ss_flsbuf(int c,struct sock_stream *ss);
+-struct sock_stream *get_ss(LISP s,long openchk);
+-void ss_force(struct sock_stream *ss);
+-LISP s_accept(LISP s,LISP tmo);
+--- ss.c	2014-03-25 04:25:34.000000000 -0400
++++ ss.c	2021-02-15 21:51:58.557028000 -0500
+@@ -72,5 +72,5 @@
+ static long tc_sock_stream = 0;
+ 
+-LISP lgetproto(LISP lproto)
++static LISP lgetproto(LISP lproto)
+ {long iflag,j;
+  LISP result = NIL;
+@@ -84,5 +84,5 @@
+  return(nreverse(result));}
+ 
+-LISP lgetservice(LISP lport,LISP lproto)
++static LISP lgetservice(LISP lport,LISP lproto)
+ {long iflag,j;
+  LISP result = NIL;
+@@ -98,5 +98,5 @@
+  return(nreverse(result));}
+ 
+-LISP s_open(LISP lhost,LISP lport,LISP aflag)
++static LISP s_open(LISP lhost,LISP lport,LISP aflag)
+      /* to make these "easy" we have over-encapsulated things
+ 	a bit. at some point rework things, but for now the
+@@ -107,5 +107,5 @@
+  short port;
+  LISP s;
+- char *hname;
++ const char *hname;
+  struct sockaddr_in local, remote;
+  struct hostent *hostinfo;
+@@ -187,5 +187,5 @@
+  return(s);}
+ 
+-LISP gethostbyaddr_l(LISP addr)
++static LISP gethostbyaddr_l(LISP addr)
+ {struct hostent *hostinfo;
+  unsigned int x;
+@@ -196,5 +196,5 @@
+  return(strcons(strlen(hostinfo->h_name),hostinfo->h_name));}
+ 
+-LISP decode_hostent(struct hostent *p)
++static LISP decode_hostent(struct hostent *p)
+ {LISP name;
+  LISP aliases = NIL,addr_list = NIL,addr;
+@@ -215,5 +215,5 @@
+ 	      cons(cintern("addrtype"),flocons(p->h_addrtype))));}
+ 
+-LISP gethostbyname_l(LISP name)
++static LISP gethostbyname_l(LISP name)
+ {struct hostent *hostinfo;
+  if (!(hostinfo = gethostbyname(get_c_string(name))))
+@@ -221,5 +221,5 @@
+  return(decode_hostent(hostinfo));}
+ 
+-LISP inet_addr_l(LISP str)
++static LISP inet_addr_l(LISP str)
+ {unsigned int x;
+  double g;
+@@ -228,5 +228,5 @@
+       if (str->storage_as.string.dim != 4)
+ 	err("address must be 4 bytes",str);
+-      x = *((int *)str->storage_as.string.data);
++      x = *((unsigned int *)(void *)str->storage_as.string.data);
+       break;
+     default:
+@@ -240,5 +240,5 @@
+    return(NIL);}
+ 
+-LISP inet_ntoa_l(LISP str)
++static LISP inet_ntoa_l(LISP str)
+ {char buff[50];
+  unsigned int x;
+@@ -284,5 +284,7 @@
+ #endif
+ 
+-LISP s_accept(LISP as,LISP tmo)
++static struct sock_stream *get_ss(LISP s, long openchk);
++
++static LISP s_accept(LISP as, LISP tmo)
+ {struct sock_stream *ss;
+  int iflag,sd;
+@@ -320,12 +322,12 @@
+  return(s);}
+ 
+-struct sock_stream *get_ss(LISP s,long openchk)
++static struct sock_stream *get_ss(LISP s, long openchk)
+ {if NTYPEP(s,tc_sock_stream)
+    err("not a socket stream",s);
+  if (openchk && !s->storage_as.string.dim)
+    err("socket is closed",s);
+- return((struct sock_stream *) s->storage_as.string.data);}
++ return((struct sock_stream *)(void *)s->storage_as.string.data);}
+ 
+-LISP s_close(LISP s)
++static LISP s_close(LISP s)
+ {struct sock_stream *ss;
+  int iflag,sd;
+@@ -344,5 +346,5 @@
+ 
+ 
+-LISP s_shutdown(LISP s,LISP flag)
++static LISP s_shutdown(LISP s, LISP flag)
+ {struct sock_stream *ss;
+  int iflag,sd,how;
+@@ -363,5 +365,5 @@
+  return(NIL);}
+ 
+-int ss_filbuf(struct sock_stream *ss)
++static int ss_filbuf(struct sock_stream *ss)
+ {int status;
+  ss->icnt = 0;
+@@ -388,5 +390,5 @@
+ }
+ 
+-void ss_force(struct sock_stream *ss)
++static void ss_force(struct sock_stream *ss)
+ {int status,size,j;
+  size = ss->bufsiz - ((ss->ocnt > 0) ? ss->ocnt : 0);
+@@ -399,5 +401,5 @@
+ 	 sent_zero();}
+  
+-int ss_flsbuf(int c,struct sock_stream *ss)
++static int ss_flsbuf(int c, struct sock_stream *ss)
+ {ss_force(ss);
+  --(ss)->ocnt;
+@@ -405,5 +407,5 @@
+  return(c);}
+  
+-LISP s_getc(LISP s)
++static LISP s_getc(LISP s)
+ {struct sock_stream *ss = get_ss(s,1);
+  int c,iflag;
+@@ -413,8 +415,8 @@
+  return((c == EOF) ? NIL : flocons(c));}
+ 
+-LISP s_icnt(LISP s)
++static LISP s_icnt(LISP s)
+ {return(flocons(get_ss(s,1)->icnt));}
+ 
+-LISP s_putc(LISP lc,LISP s)
++static LISP s_putc(LISP lc,LISP s)
+ {struct sock_stream *ss = get_ss(s,1);
+  int c = get_c_long(lc),iflag;
+@@ -424,7 +426,7 @@
+  return(NIL);}
+ 
+-LISP s_puts(LISP str,LISP s)
++static LISP s_puts(LISP str,LISP s)
+ {struct sock_stream *ss = get_ss(s,1);
+- char *data = get_c_string(str);
++ const char *data = get_c_string(str);
+  int c,iflag;
+  iflag = no_interrupt(1);
+@@ -433,7 +435,7 @@
+  return(NIL);}
+ 
+-LISP s_write(LISP string,LISP file)
++static LISP s_write(LISP string,LISP file)
+ {long flag;
+- char *data;
++ const char *data;
+  struct sock_stream *ss = get_ss(file,1);
+  long j,dim,len,status;
+@@ -457,5 +459,5 @@
+  return(NIL);}
+ 
+-LISP s_drain(LISP s)
++static LISP s_drain(LISP s)
+ {struct sock_stream *ss = get_ss(s,1);
+  int c,iflag;
+@@ -465,7 +467,8 @@
+  return(NIL);}
+ 
+-LISP s_gets(LISP str,LISP s)
++static LISP s_gets(LISP str,LISP s)
+ {struct sock_stream *ss;
+- int c,iflag,j;
++ int c, iflag;
++ size_t j;
+  char buffer[4096];
+  if NULLP(s)
+@@ -490,5 +493,5 @@
+  return(strcons(j,buffer));}
+ 
+-LISP s_read(LISP size,LISP file)
++static LISP s_read(LISP size, LISP file)
+ {long flag,n,ret,m,maxlen;
+  char *buffer;
+@@ -508,5 +511,6 @@
+     case tc_cons:
+       s = car(size);
+-      buffer = get_c_string_dim(s,&maxlen);
++      buffer = get_string_data(s);
++      maxlen = s->storage_as.string.dim;
+       n = get_c_long(cadr(size));
+       if (n > maxlen)
+@@ -516,5 +520,5 @@
+     default:
+       n = get_c_long(size);
+-      buffer = (char *) must_malloc(n+1);
++      buffer = must_malloc(n+1);
+       buffer[n] = 0;
+       m = 1;}
+@@ -547,5 +551,5 @@
+ 
+ 
+-LISP s_force_output(LISP s)
++static LISP s_force_output(LISP s)
+ {struct sock_stream *ss = get_ss(s,1);
+  int iflag;
+@@ -555,5 +559,5 @@
+  return(NIL);}
+ 
+-void ss_gc_free(LISP s)
++static void ss_gc_free(LISP s)
+ {struct sock_stream *ss;
+  ss = get_ss(s,0);
+@@ -564,10 +568,11 @@
+     free(ss);}}
+ 
+-void ss_prin1(LISP s,struct gen_printio *f)
++static void ss_prin1(LISP s,struct gen_printio *f)
+ {char buff[512];
+  unsigned char *p;
+  struct sock_stream *ss;
+  struct sockaddr_in a;
+- size_t len,j;
++ size_t j;
++ socklen_t len;
+  ss = get_ss(s,0);
+  if (s->storage_as.string.dim)
+@@ -590,8 +595,8 @@
+ #ifndef WIN32
+ 
+-LISP l_getname(int (*fcn)(int fn, struct sockaddr *,size_t *),char *msg,LISP s)
++static LISP l_getname(int (*fcn)(int fn, struct sockaddr *, socklen_t *), const char *msg, LISP s)
+ {struct sock_stream *ss = get_ss(s,1);
+  struct sockaddr_in a;
+- size_t len;
++ socklen_t len;
+  char buff[512];
+  unsigned char *p;
+@@ -602,11 +607,11 @@
+  sprintf(buff,"%d.%d.%d.%d:%d",(int)p[0],(int)p[1],(int)p[2],(int)p[3],
+ 	 (int)ntohs(a.sin_port));
+- printf("buff is %d long\n",strlen(buff));
++ printf("buff is %zu long\n", strlen(buff));
+  return(strcons(-1,buff));}
+ 
+-LISP l_getsockname(LISP s)
++static LISP l_getsockname(LISP s)
+ {return(l_getname(getsockname,"getsockname",s));}
+ 
+-LISP l_getpeername(LISP s)
++static LISP l_getpeername(LISP s)
+ {return(l_getname(getpeername,"getpeername",s));}
+ 
+@@ -618,5 +623,5 @@
+ 
+ 
+-LISP l_getsockname(LISP s)
++static LISP l_getsockname(LISP s)
+ {struct sock_stream *ss = get_ss(s,1);
+  struct sockaddr_in a;
+@@ -632,5 +637,5 @@
+  return(strcons(-1,buff));}
+ 
+-LISP l_getpeername(LISP s)
++static LISP l_getpeername(LISP s)
+ {struct sock_stream *ss = get_ss(s,1);
+  struct sockaddr_in a;
+@@ -646,10 +651,7 @@
+  return(strcons(-1,buff));}
+ 
+-
+-
+ #endif
+-     
+ 
+-int ss_getc_fcn(struct sock_stream *ss)
++static int ss_getc_fcn(struct sock_stream *ss)
+ {int c,iflag;
+  iflag = no_interrupt(1);
+@@ -658,5 +660,5 @@
+  return(c);}
+ 
+-void ss_ungetc_fcn(int c,struct sock_stream *ss)
++static void ss_ungetc_fcn(int c,struct sock_stream *ss)
+ {int iflag;
+  if (c == EOF) return;
+@@ -668,5 +670,5 @@
+  no_interrupt(iflag);}
+  
+-LISP s_read_sexp(LISP s)
++static LISP s_read_sexp(LISP s)
+ {struct gen_readio r;
+  r.getc_fcn = (int (*)(void *)) ss_getc_fcn;
+@@ -675,5 +677,5 @@
+  return(readtl(&r));}
+ 
+-LISP lgethostname(void)
++static LISP lgethostname(void)
+ {char buff[256];
+  if (gethostname(buff,sizeof(buff)))
+@@ -684,5 +686,5 @@
+ #if defined(unix)
+ 
+-LISP lgethostid(void)
++static LISP lgethostid(void)
+ {return(flocons(gethostid()));}
+ 
+@@ -701,4 +703,6 @@
+ #endif
+ 
++void init_ss(void); /* Our sole exported symbol */
++
+ void init_ss(void)
+ {long j;

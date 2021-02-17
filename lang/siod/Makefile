@@ -2,31 +2,69 @@
 # $FreeBSD$
 
 PORTNAME=	siod
-PORTVERSION=	3.4
+PORTVERSION=	3.6.2
 CATEGORIES=	lang scheme
-MASTER_SITES=	LOCAL/jkoshy
+MASTER_SITES=	http://people.delphiforums.com/gjc/
 DISTNAME=	siod
-EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}	# Upstream aren't versioned :(
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Small footprint implementation of the Scheme programming language
 
-BROKEN_aarch64=		fails to link: ld: error: unable to find library -lm
-BROKEN_armv6=		fails to link: final link failed: Nonrepresentable section on output
-BROKEN_armv7=		fails to link: ld: siod: hidden symbol `__aeabi_uidivmod' in /usr/lib/libgcc.a(aeabi_uidivmod.o) is referenced by DSO
-BROKEN_mips64=		fails to link: final link failed: Nonrepresentable section on output
-BROKEN_riscv64=		fails to link: ld: error: unable to find library -lm
+LICENSE=	LGPL21	# Declared inside slib.c
 
-USE_LDCONFIG=	yes
-LLD_UNSAFE=	yes
+USES=		uidfix tar:tgz dos2unix
 
+USE_LDCONFIG=	${PREFIX}/lib/siod
+
+DOS2UNIX_FILES=	sql_oracle.c ss.c
+OPTIONS_DEFINE=	SQL_SYBASE GD NDBM REGEX SS
+OPTIONS_DEFAULT=NDBM REGEX SS
+SQL_SYBASE_DESC=Build Sybase (and MS-SQL) client-module (using FreeTDS)
+SS_DESC=	Sockets support - required for any network programs
+NDBM_DESC=	Support for NDBM-databases
 NO_WRKSUBDIR=	yes
-MAKEFILE=	makefile
-ALL_TARGET=	freebsd
-MAKE_ENV=	LD_LIBRARY_PATH=.
-MAKE_JOBS_UNSAFE=	yes
+EXTRACT_AFTER_ARGS=--exclude md5\* --exclude regex.h --exclude reg????*.c
+CFLAGS+=	-Werror
+MAKE_ARGS=	VPATH=${WRKSRC} MODULES=${MODULES:Q}
+MAKEFILE=	${FILESDIR}/BSDmakefile
+MAKE_ENV=	MKDIR=${MKDIR:Q} STAGEDIR=${STAGEDIR:Q}
+MAKE_ENV+=	MAN1PREFIX=${MAN1PREFIX} PREFIX=${PREFIX:Q}
+MAKE_ENV+=	INSTALL_MAN=${INSTALL_MAN:Q} INSTALL_SCRIPT=${INSTALL_SCRIPT:Q}
+MAKE_ENV+=	INSTALL_DATA=${INSTALL_DATA:Q}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/siod
+MODULES=	tar parser_pratt
+
+SQL_SYBASE_LIB_DEPENDS=	libct.so:databases/freetds	# Or freetds-devel
+GD_LIB_DEPENDS=		libgd.so:graphics/gd	# Or ukrainian/gd
+REGEX_LIB_DEPENDS=	libgnuregex.so:devel/libgnuregex
+OPTIONS_SUB=	yes
+
+.if "${PREFIX}" != "/usr/local"
+post-patch:
+	${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' ${WRKSRC}/slib.c
+.endif
+
+post-build:
+	${REINPLACE_CMD} -e 's|\./siod|env LD_LIBRARY_PATH=lib siod/siod|g' \
+		-e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/makefile
+	${MAKE} -C ${WRKSRC} -f makefile build_driver
+
+.include <bsd.port.options.mk>
+MODULES+=	${SELECTED_OPTIONS:tl}
+
+do-configure:
+	${MKDIR} ${WRKSRC}/lib
+	${LN} -sf ${FILESDIR}/BSDmakefile.lib ${WRKSRC}/lib/BSDmakefile
+.for s in ${MODULES}
+	${MKDIR} ${WRKSRC}/$s
+	${SED} "s,%%MODULE%%,$s,g" ${FILESDIR}/BSDmakefile.module > \
+	    ${WRKSRC}/$s/BSDmakefile
+.endfor
+.for s in siod sample
+	${MKDIR} ${WRKSRC}/$s
+	${SED} "s,%%PROG%%,$s,g" ${FILESDIR}/BSDmakefile.prog >	\
+	    ${WRKSRC}/$s/BSDmakefile
+.endfor
 
 .include <bsd.port.mk>

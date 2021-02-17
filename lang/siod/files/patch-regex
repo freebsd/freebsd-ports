@@ -1,0 +1,85 @@
+--- regex.c	2014-03-25 04:31:33.000000000 -0400
++++ regex.c	2021-02-15 22:12:33.365564000 -0500
+@@ -4,6 +4,9 @@
+    author:  george j. carrette
+  */
+ 
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -15,5 +18,5 @@
+ #include <sys/types.h>
+ #endif
+-#if defined(linux)
++#if defined(linux) || defined(BSD)
+ #include <regex.h>
+ #else
+@@ -27,5 +30,5 @@
+ 	NIL);}
+ 
+-long tc_regex = 0;
++static long tc_regex = 0;
+ 
+ struct tc_regex
+@@ -35,11 +38,12 @@
+  regmatch_t *m;};
+ 
+-struct tc_regex *get_tc_regex(LISP ptr)
++static struct tc_regex *get_tc_regex(LISP ptr)
+ {if NTYPEP(ptr,tc_regex) err("not a regular expression",ptr);
+- return((struct tc_regex *)ptr->storage_as.string.data);}
++ return((struct tc_regex *)(void *)ptr->storage_as.string.data);}
+ 
+-LISP regcomp_l(LISP pattern,LISP flags)
++static LISP regcomp_l(LISP pattern,LISP flags)
+ {long iflag,iflags;
+- char *str,errbuff[1024];
++ const char *str;
++ char errbuff[1024];
+  int error;
+  LISP result;
+@@ -69,10 +73,10 @@
+  return(result);}
+  
+-LISP regerror_l(LISP code,LISP ptr)
++static LISP regerror_l(LISP code,LISP ptr)
+ {char errbuff[1024];
+  regerror(get_c_long(code),get_tc_regex(ptr)->r,errbuff,sizeof(errbuff));
+  return(strcons(strlen(errbuff),errbuff));}
+ 
+-LISP regexec_l(LISP ptr,LISP str,LISP eflags)
++static LISP regexec_l(LISP ptr,LISP str,LISP eflags)
+ {size_t j;
+  int error;
+@@ -92,7 +96,7 @@
+  return(nreverse(result));}
+ 
+-void regex_gc_free(LISP ptr)
++static void regex_gc_free(LISP ptr)
+ {struct tc_regex *h;
+-  if ((h = (struct tc_regex *)ptr->storage_as.string.data))
++  if ((h = (struct tc_regex *)(void *)ptr->storage_as.string.data))
+    {if ((h->compflag) && h->r)
+       regfree(h->r);
+@@ -106,9 +110,9 @@
+     ptr->storage_as.string.data = NULL;}}
+ 
+-void regex_prin1(LISP ptr,struct gen_printio *f)
++static void regex_prin1(LISP ptr,struct gen_printio *f)
+ {char buffer[256];
+  regex_t *p;
+  p = get_tc_regex(ptr)->r;
+- sprintf(buffer,"#<REGEX %p nsub=%d",
++ sprintf(buffer, "#<REGEX %p nsub=%zu",
+ 	 p,p->re_nsub);
+  gput_st(f,buffer);
+@@ -120,4 +124,6 @@
+   gput_st(f,">");}
+ 
++void init_regex(void);	/* The sole symbol exported from a module */
++
+ void init_regex(void)
+ {long j;

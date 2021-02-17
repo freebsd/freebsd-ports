@@ -1,0 +1,173 @@
+--- ndbm.c	2014-03-25 04:10:42.000000000 -0400
++++ ndbm.c	2021-02-16 21:28:56.638550000 -0500
+@@ -7,5 +7,9 @@
+ #include <sys/types.h>
+ #endif
+-
++#ifdef dbm_pagfno
++#include <fcntl.h>
++#undef dbm_pagfno
++#define dbm_pagfno dbm_dirfno
++#endif
+ 
+ static void init_ndbm_version(void)
+@@ -14,11 +18,11 @@
+ 	NIL);}
+ 
+-long tc_dbm = 0;
++static long tc_dbm = 0;
+ 
+-DBM *get_DBM(LISP ptr,int errflg)
++static DBM *get_DBM(LISP ptr,int errflg)
+ {DBM *p;
+  if (NTYPEP(ptr,tc_dbm))
+    err("not a DBM",ptr);
+- if ((p = (DBM *) ptr->storage_as.string.data))
++ if ((p = (DBM *)(void *)ptr->storage_as.string.data))
+    return(p);
+  else if (errflg)
+@@ -26,8 +30,8 @@
+  return(NULL);}
+ 
+-LISP ldbm_open(LISP lfname,LISP lflags,LISP lmode)
++static LISP ldbm_open(LISP lfname,LISP lflags,LISP lmode)
+ {mode_t mode;
+  int flags;
+- char *fname;
++ const char *fname;
+  long iflag;
+  LISP result;
+@@ -45,5 +49,5 @@
+  return(result);}
+ 
+-LISP ldbm_close(LISP ldbm)
++static LISP ldbm_close(LISP ldbm)
+ {long iflag;
+  DBM *db;
+@@ -64,14 +68,11 @@
+     return(result);}}
+ 
+-LISP ldbm_fetch(LISP ldbm,LISP lkey)
++static LISP ldbm_fetch(LISP ldbm, LISP lkey)
+ {long iflag;
+  DBM *db;
+- char *key;
+- long keysize;
+  datum dat1,dat2;
+  db = get_DBM(ldbm,1);
+- key = get_c_string_dim(lkey,&keysize);
+- dat1.dptr = key;
+- dat1.dsize = keysize;
++ dat1.dptr = get_string_data(lkey);
++ dat1.dsize = lkey->storage_as.string.dim;
+  iflag = no_interrupt(1);
+  dat2 = dbm_fetch(db,dat1);
+@@ -79,5 +80,5 @@
+  return(cons_from_datum(&dat2));}
+ 
+-LISP ldbm_firstkey(LISP ldbm)
++static LISP ldbm_firstkey(LISP ldbm)
+ {long iflag;
+  DBM *db;
+@@ -89,5 +90,5 @@
+  return(cons_from_datum(&dat));}
+ 
+-LISP ldbm_nextkey(LISP ldbm)
++static LISP ldbm_nextkey(LISP ldbm)
+ {long iflag;
+  DBM *db;
+@@ -99,14 +100,11 @@
+  return(cons_from_datum(&dat));}
+ 
+-LISP ldbm_delete(LISP ldbm,LISP lkey)
++static LISP ldbm_delete(LISP ldbm, LISP lkey)
+ {long iflag,status;
+  DBM *db;
+- char *key;
+- long keysize;
+  datum dat;
+  db = get_DBM(ldbm,1);
+- key = get_c_string_dim(lkey,&keysize);
+- dat.dptr = key;
+- dat.dsize = keysize;
++ dat.dptr = get_string_data(lkey);
++ dat.dsize = lkey->storage_as.string.dim;
+  iflag = no_interrupt(1);
+  status = dbm_delete(db,dat);
+@@ -116,19 +114,15 @@
+  return(NIL);}
+ 
+-LISP ldbm_store(LISP ldb,LISP lkey,LISP ldata,LISP lflags)
++static LISP ldbm_store(LISP ldb, LISP lkey, LISP ldata, LISP lflags)
+ {long iflag,status;
+  DBM *db;
+- char *key,*data;
+- long keysize,datasize;
+  datum dat1,dat2;
+  int flags;
+  db = get_DBM(ldb,1);
+- key = get_c_string_dim(lkey,&keysize);
+- data = get_c_string_dim(ldata,&datasize);
+  flags = NULLP(lflags) ? 0 : get_c_long(lflags);
+- dat1.dptr = key;
+- dat1.dsize = keysize;
+- dat2.dptr = data;
+- dat2.dsize = datasize;
++ dat1.dptr = get_string_data(lkey);
++ dat1.dsize = lkey->storage_as.string.dim;
++ dat2.dptr = get_string_data(ldata);
++ dat2.dsize = ldata->storage_as.string.dim;
+  iflag = no_interrupt(1);
+  status = dbm_store(db,dat1,dat2,flags);
+@@ -141,11 +135,11 @@
+    return(a_true_value());}
+ 
+-LISP ldbm_dirfno(LISP ldb)
++static LISP ldbm_dirfno(LISP ldb)
+ {return(flocons(dbm_dirfno(get_DBM(ldb,1))));}
+ 
+-LISP ldbm_pagfno(LISP ldb)
++static LISP ldbm_pagfno(LISP ldb)
+ {return(flocons(dbm_pagfno(get_DBM(ldb,1))));}
+ 
+-void dbm_gc_free(LISP ptr)
++static void dbm_gc_free(LISP ptr)
+ {DBM *p;
+  if ((p = get_DBM(ptr,0)))
+@@ -153,5 +147,5 @@
+  ptr->storage_as.string.data = NULL;}
+ 
+-void dbm_prin1(LISP ptr,struct gen_printio *f)
++static void dbm_prin1(LISP ptr,struct gen_printio *f)
+ {char buff[256];
+  DBM *p;
+@@ -160,10 +154,26 @@
+  gput_st(f,buff);}
+ 
+-LISP ldbm_rdonly(LISP ldb)
+-{return((dbm_rdonly(get_DBM(ldb,1))) ? a_true_value() : NIL);}
++static LISP ldbm_rdonly(LISP ldb)
++{
++#ifdef dbm_pagfno
++	/*
++	 * On BSD, for example, ndbm is emulated using db,
++	 * and does not provide dbm_rdonly(). We emulate
++	 * it by looking at the database's file-descriptor.
++	 * XXX Untested!
++	 */
++	int fd = dbm_dirfno(get_DBM(ldb, 1));
++	return (fcntl(fd, F_GETFL) & O_ACCMODE) == O_RDONLY ?
++	    a_true_value() : NIL;
++#else
++	return((dbm_rdonly(get_DBM(ldb,1))) ? a_true_value() : NIL);
++#endif
++}
+ 
+-LISP ldbm_error(LISP ldb)
++static LISP ldbm_error(LISP ldb)
+ {return((dbm_error(get_DBM(ldb,1))) ? a_true_value() : NIL);}
+ 
++void init_ndbm(void);	/* init_FOO is the only symbol exported by a module */
++
+ void init_ndbm(void)
+ {long j;
