@@ -16145,6 +16145,7 @@ www/syndigator||2021-02-05|Abandon upstream, does not work with recent perl5 use
 x11-toolkits/p5-Gtk2-Html2||2021-02-05|Deprecated upstream, not depended on, dpeends on deprecated Gnome2 libraries
 www/libgtkhtml||2021-02-05|Deprecated upstream, not depended on
 net/twitux||2021-02-06|Does not work with actually twitter
+devel/grpc_old|devel/grpc|2021-02-06|Added by accident in r564200 and removed in r564203
 net-mgmt/ccnet-server||2021-02-07|Removed
 x11-toolkits/c++-gtk-utils||2021-02-07|Abandoned library not depended on
 textproc/xml-i18n-tools|textproc/intltool|2021-02-07|Has been replaced by intltools long ago
