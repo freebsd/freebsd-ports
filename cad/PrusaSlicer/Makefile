@@ -3,7 +3,7 @@
 PORTNAME=	PrusaSlicer
 DISTVERSIONPREFIX=version_
 DISTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 
 MAINTAINER=	teodorsigaev@gmail.com
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libtbb.so:devel/tbb \
 		libmpfr.so:math/mpfr \
 		libdbus-1.so:devel/dbus \
 		libpng.so:graphics/png
-BUILD_DEPENDS=	cereal>=1.2.2:devel/cereal \
+BUILD_DEPENDS=	cereal>=1.3.0.10:devel/cereal \
 		cgal>=5.0.2:math/cgal
 
 USES=		cmake desktop-file-utils eigen:3 gettext gl iconv pkgconfig
