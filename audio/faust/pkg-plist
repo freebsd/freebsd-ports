@@ -203,6 +203,7 @@ include/faust/gui/ValueConverter.h
 include/faust/gui/WaveReader.h
 include/faust/gui/console.h
 include/faust/gui/httpdUI.h
+%%HTTPD_LIB%%include/faust/gui/jsonfaustui.h
 include/faust/gui/meta.h
 include/faust/gui/mspUI.h
 include/faust/gui/qrcodegen.h
@@ -232,7 +233,11 @@ include/faust/unity/AudioPluginInterface.h
 include/faust/vst/faust.h
 include/faust/vst/voice.h
 include/faust/vst/vstui.h
+lib/libfaust.so
+lib/libfaust.so.2
+lib/libfaust.so.2.30.5
 lib/ios-libsndfile.a
+%%HTTPD_LIB%%lib/libHTTPDFaust.a
 lib/libOSCFaust.a
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp

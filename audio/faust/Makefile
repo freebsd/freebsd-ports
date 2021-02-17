@@ -3,6 +3,7 @@
 
 PORTNAME=	faust
 DISTVERSION=	2.30.5
+PORTREVISION=	1
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +12,7 @@ COMMENT=	Functional programming language for realtime audio signal processing
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-LIB_DEPENDS=	libLLVM-${LLVM_VERSION:C/([1-9])([0-9])/\1/}.so:devel/llvm${LLVM_VERSION}
+LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++11-lang cmake ncurses python pkgconfig shebangfix
@@ -24,16 +25,21 @@ GH_TUPLE=	\
 
 SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench tools/sound2faust/sound2reader
 
-LLVM_VERSION=	${LLVM_DEFAULT}
+LLVM_VERSION=	11 # earlier versions lack dump() function(s) that cause unresolved symbols in libfaust.so
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
-CMAKE_ARGS=	-DLLVM_BACKEND=COMPILER -DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
+CMAKE_ON=	INCLUDE_DYNAMIC # only installs headers and not libs by default: https://github.com/grame-cncm/faust/issues/553
+CMAKE_ON+=	LLVM_BUILD CPP_BUILD OCPP_BUILD # enable backends
+CMAKE_ARGS=	-DLLVM_BACKEND=DYNAMIC -DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VERSION} \
+		-DC_BACKEND=DYNAMIC \
+		-DCPP_BACKEND=DYNAMIC
 
-CXXFLAGS+=	-DCPP_BUILD -DOCPP_BUILD # enable backends
+CXXFLAGS+=	-I${WRKSRC}/compiler/generator/cpp # fatal error: 'cpp_code_container.hh' file not found WHEN INCLUDE_STATIC=TRUE
+CXXFLAGS+=	`llvm-config${LLVM_VERSION} --cflags` -DLLVM_${LLVM_VERSION}0 # for the llvm backend
 LDFLAGS+=	-lexecinfo
 
 OPTIONS_DEFINE=		EXAMPLES HIGHLIGHT HTTPD_LIB
-OPTIONS_DEFAULT=	HIGHLIGHT
+OPTIONS_DEFAULT=	HIGHLIGHT HTTPD_LIB
 OPTIONS_SUB=		yes
 
 EXAMPLES_CMAKE_BOOL=	FREEBSD_INSTALL_EXAMPLES
@@ -41,9 +47,8 @@ EXAMPLES_CMAKE_BOOL=	FREEBSD_INSTALL_EXAMPLES
 HIGHLIGHT_DESC=		Syntax highlighting in Kate, gedit, Highlight, vim
 HTTPD_LIB_DESC=		Build httpd support library
 
-HTTPD_LIB_ALL_TARGET=	all httpd
+HTTPD_CMAKE_BOOL=	INCLUDE_HTTP
 HTTPD_LIB_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
-HTTPD_LIB_BROKEN=	TODO fix after change to cmake
 
 PORTEXAMPLES=		*
 
