@@ -1,5 +1,5 @@
 --- statfs.c	2014-03-25 04:10:42.000000000 -0400
-+++ statfs.c	2021-02-17 12:25:44.681462000 -0500
++++ statfs.c	2021-02-17 16:39:52.652229000 -0500
 @@ -4,9 +4,15 @@
  
  #include <stdio.h>
@@ -16,12 +16,67 @@
 +#ifndef BSD
  #define MNT_NUMTYPES	128
  /*
-@@ -14,16 +20,28 @@
+@@ -14,16 +20,83 @@
   */
  extern char *mnt_names[];
 +#endif
  
 -LISP lstatfs(LISP path)
++#ifdef BSD
++static LISP decode_fstat_flags(uint64_t flags)
++{
++#define FLAGCODE(name) { #name, MNT_ ## name }
++	struct {
++		const char	*name;
++		uint64_t	 flag;
++	} flagcodes[] = {
++	/* Flags listed in statfs(2). Keep sorted for consistency */
++		FLAGCODE(ACLS),
++		FLAGCODE(ASYNC),
++		FLAGCODE(DEFEXPORTED),
++		FLAGCODE(EXKERB),
++		FLAGCODE(EXPORTANON),
++		FLAGCODE(EXPORTED),
++		FLAGCODE(EXPUBLIC),
++		FLAGCODE(EXRDONLY),
++		FLAGCODE(GJOURNAL),
++		FLAGCODE(LOCAL),
++		FLAGCODE(MULTILABEL),
++		FLAGCODE(NOATIME),
++		FLAGCODE(NOCLUSTERR),
++		FLAGCODE(NOCLUSTERW),
++		FLAGCODE(NOEXEC),
++		FLAGCODE(NOSUID),
++		FLAGCODE(NOSYMFOLLOW),
++		FLAGCODE(QUOTA),
++		FLAGCODE(RDONLY),
++		FLAGCODE(ROOTFS),
++		FLAGCODE(SOFTDEP),
++		FLAGCODE(SUIDDIR),
++		FLAGCODE(SYNCHRONOUS),
++		FLAGCODE(UNION),
++		FLAGCODE(USER)
++	};
++#undef FLAGCODE
++	unsigned u;
++	LISP result = NULL, val, l;
++
++	for (u = 0; u < sizeof(flagcodes) / sizeof(flagcodes[0]); u++) {
++		if (!(flags & flagcodes[u].flag))
++			continue;
++		val = cintern(flagcodes[u].name);
++		if (result == NULL) {
++			l = result = cons(val, NULL);
++			continue;
++		}
++		CDR(l) = cons(val, NULL);
++		l = CDR(l);
++	}
++	return result;
++}
++#endif /* BSD */
++	
++
 +static LISP lstatfs(LISP path)
  {long iflag;
   struct statfs s;
@@ -49,7 +104,7 @@
 +			 : flocons(s.f_type),
  		 "bsize",flocons(s.f_bsize),
  		 "blocks",flocons(s.f_blocks),
-@@ -34,8 +52,16 @@
+@@ -34,8 +107,18 @@
  		 "mntonname",strcons(-1,s.f_mntonname),
  		 "mntfromname",strcons(-1,s.f_mntfromname),
 +#ifdef BSD
@@ -58,8 +113,10 @@
 +		 "syncreads", flocons(s.f_syncreads),
 +		 "asyncreads", flocons(s.f_asyncreads),
 +		 "namemax", flocons(s.f_namemax),
++		 "fsid", flocons(((uint64_t)s.f_fsid.val[0] << 32) +
++		     s.f_fsid.val[1]),
++		 "flags", decode_fstat_flags(s.f_flags),
 +#endif
-+		/* TODO: Add decoding of f_flags */
  		 NULL));}
  
  
@@ -67,28 +124,28 @@
 +static LISP decode_fstab(const struct fstab *p)
  {if (p)
     return(symalist("spec",strcons(-1,p->fs_spec),
-@@ -50,5 +76,5 @@
+@@ -50,5 +133,5 @@
     return(NIL);}
  
 -LISP lgetfsent(void)
 +static LISP lgetfsent(void)
  {long iflag;
   LISP result;
-@@ -58,5 +84,5 @@
+@@ -58,5 +141,5 @@
   return(result);}
  
 -LISP lsetfsent(void)
 +static LISP lsetfsent(void)
  {long iflag;
   LISP result;
-@@ -66,5 +92,5 @@
+@@ -66,5 +149,5 @@
   return(result);}
  
 -LISP lendfsent(void)
 +static LISP lendfsent(void)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -73,4 +99,6 @@
+@@ -73,4 +156,6 @@
   return(NIL);}
  
 +void init_statfs(void); /* The sole symbol exported from a SIOD-module */
