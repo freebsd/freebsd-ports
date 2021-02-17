@@ -16,6 +16,9 @@ COMMENT=	Improved NQ engine with ZQuake and FuhQuake graphical effects
 
 LICENSE=	GPLv2+
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: com_searchpaths
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: com_searchpaths
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
 WRKSRC=		${WRKDIR}/src
