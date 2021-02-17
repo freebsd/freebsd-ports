@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		compiler:c++11-lang gmake gnome jpeg libtool localbase:ldflags \
-		pathfix pkgconfig
+		pathfix pkgconfig python:build
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	saned
