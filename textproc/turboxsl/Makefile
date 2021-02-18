@@ -11,6 +11,8 @@ COMMENT=	Fast, multithreaded XML+XSLT transformation library
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: xsl_a_NaN
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: xsl_a_NaN
 ONLY_FOR_ARCHS=		amd64 powerpc64 powerpc64le sparc64
 
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
