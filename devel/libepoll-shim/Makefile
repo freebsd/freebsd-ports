@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libepoll-shim
-PORTVERSION=	0.0.20201229
+PORTVERSION=	0.0.20210213
 CATEGORIES=	devel
 
 MAINTAINER=	x11@FreeBSD.org
@@ -16,7 +16,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	jiixyj
 GH_PROJECT=	epoll-shim
-GH_TAGNAME=	1c27d2d
+GH_TAGNAME=	c8491d3
 PLIST_SUB=	SHIM_EVENTFD="${exists(/usr/include/sys/eventfd.h):?@comment :}"
 
 do-test:
