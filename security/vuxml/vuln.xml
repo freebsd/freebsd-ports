@@ -77,6 +77,186 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1bb2826b-7229-11eb-8386-001999f8d30b">
+    <topic>asterisk -- Remote Crash Vulnerability in PJSIP channel driver</topic>
+    <affects>
+      <package>
+	<name>asterisk13</name>
+	<range><lt>13.38.2</lt></range>
+      </package>
+      <package>
+	<name>asterisk16</name>
+	<range><lt>16.16.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>18.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories">
+	  <p>Given a scenario where an outgoing call is placed from
+	  Asterisk to a remote SIP server it is possible for a crash
+	  to occur.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-26906</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2021-005.html</url>
+    </references>
+    <dates>
+      <discovery>2021-02-08</discovery>
+      <entry>2021-02-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ca21f5e7-7228-11eb-8386-001999f8d30b">
+    <topic>asterisk -- An unsuspecting user could crash Asterisk with multiple hold/unhold requests</topic>
+    <affects>
+      <package>
+	<name>asterisk16</name>
+	<range><ge>16.16.0</ge><lt>16.16.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><ge>18.2.0</ge><lt>18.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories">
+	  <p>Due to a signedness comparison mismatch, an authenticated
+	  WebRTC client could cause a stack overflow and Asterisk
+	  crash by sending multiple hold/unhold requests in quick
+	  succession.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-26714</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2021-004.html</url>
+    </references>
+    <dates>
+      <discovery>2021-02-11</discovery>
+      <entry>2021-02-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5d8ef725-7228-11eb-8386-001999f8d30b">
+    <topic>asterisk -- Remote attacker could prematurely tear down SRTP calls</topic>
+    <affects>
+      <package>
+	<name>asterisk13</name>
+	<range><ge>13.38.1</ge><lt>13.38.2</lt></range>
+      </package>
+      <package>
+	<name>asterisk16</name>
+	<range><ge>16.16.0</ge><lt>16.16.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><ge>18.2.0</ge><lt>18.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories">
+	  <p>An unauthenticated remote attacker could replay SRTP
+	  packets which could cause an Asterisk instance configured
+	  without strict RTP validation to tear down calls
+	  prematurely.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-26712</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2021-003.html</url>
+    </references>
+    <dates>
+      <discovery>2021-02-18</discovery>
+      <entry>2021-02-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e3894955-7227-11eb-8386-001999f8d30b">
+    <topic>asterisk -- Remote crash possible when negotiating T.38</topic>
+    <affects>
+      <package>
+	<name>asterisk16</name>
+	<range><ge>16.15.0</ge><lt>16.16.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><ge>18.1.0</ge><lt>18.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories">
+	  <p>When re-negotiating for T.38 if the initial remote
+	  response was delayed just enough Asterisk would send both
+	  audio and T.38 in the SDP. If this happened, and the
+	  remote responded with a declined T.38 stream then Asterisk
+	  would crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-26717</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2021-002.html</url>
+    </references>
+    <dates>
+      <discovery>2021-02-05</discovery>
+      <entry>2021-02-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b330db5f-7225-11eb-8386-001999f8d30b">
+    <topic>asterisk -- Remote crash in res_pjsip_diversion</topic>
+    <affects>
+      <package>
+	<name>asterisk13</name>
+	<range><ge>13.38.1</ge><lt>13.38.2</lt></range>
+      </package>
+      <package>
+	<name>asterisk16</name>
+	<range><ge>16.15.1</ge><lt>16.16.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><ge>18.1.1</ge><lt>18.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories">
+	  <p>If a registered user is tricked into dialing a malicious
+	  number that sends lots of 181 responses to Asterisk, each
+	  one will cause a 181 to be sent back to the original
+	  caller with an increasing number of entries in the
+	  "Supported" header. Eventually the number of entries in
+	  the header exceeds the size of the entry array and causes
+	  a crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-35776</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2021-001.html</url>
+    </references>
+    <dates>
+      <discovery>2021-01-04</discovery>
+      <entry>2021-02-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8e670b85-706e-11eb-abb2-08002728f74c">
     <topic>Rails -- multiple vulnerabilities</topic>
     <affects>
