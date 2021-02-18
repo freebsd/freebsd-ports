@@ -46,9 +46,12 @@ lib/liblammps.so.0
 libdata/pkgconfig/liblammps.pc
 man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Ag_u3.eam
+%%DATADIR%%/potentials/Al_Batra_2019.agni
 %%DATADIR%%/potentials/AlCu.adp
 %%DATADIR%%/potentials/AlCu.bop.table
 %%DATADIR%%/potentials/AlCu.eam.alloy
+%%DATADIR%%/potentials/Cu_Huan_2019_fp1.agni
+%%DATADIR%%/potentials/Cu_Huan_2019_fp2.agni
 %%DATADIR%%/potentials/AlCuH.bop.table
 %%DATADIR%%/potentials/AlFe_mm.eam.fs
 %%DATADIR%%/potentials/AlO.eam.alloy
@@ -159,6 +162,8 @@ man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Ni_smf7.eam
 %%DATADIR%%/potentials/Ni_u3.eam
 %%DATADIR%%/potentials/Pd_u3.eam
+%%DATADIR%%/potentials/PdHHe.eam.he
+%%DATADIR%%/potentials/Pt_Chapman_2020.agni
 %%DATADIR%%/potentials/Pt_u3.eam
 %%DATADIR%%/potentials/README
 %%DATADIR%%/potentials/README.reax
