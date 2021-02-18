@@ -3,7 +3,7 @@
 
 PORTNAME=	telegraf
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.17.2
+DISTVERSION=	1.17.3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -153,7 +153,7 @@ GH_TUPLE=	\
 		googleapis:google-cloud-go:datastore/v1.1.0:googleapis_google_cloud_go_datastore \
 		googleapis:google-cloud-go:pubsub/v1.2.0:googleapis_google_cloud_go_pubsub \
 		googleapis:google-cloud-go:v0.53.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
-		gopcua:opcua:v0.1.12:gopcua_opcua/vendor/github.com/gopcua/opcua \
+		gopcua:opcua:v0.1.13:gopcua_opcua/vendor/github.com/gopcua/opcua \
 		rethinkdb:rethinkdb-go:v3.0.5:gorethink_gorethink/vendor/gopkg.in/gorethink/gorethink.v3 \
 		gorilla:context:v1.1.1:gorilla_context/vendor/github.com/gorilla/context \
 		gorilla:mux:v1.6.2:gorilla_mux/vendor/github.com/gorilla/mux \
