@@ -183,6 +183,10 @@ Notes:
 	<name>openssl</name>
 	<range><lt>1.1.1j,1</lt></range>
       </package>
+      <package>
+	<name>openssl-devel</name>
+	<range><lt>3.0.0a12</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -217,6 +221,7 @@ Notes:
     <dates>
       <discovery>2021-02-16</discovery>
       <entry>2021-02-16</entry>
+      <modified>2021-02-18</modified>
     </dates>
   </vuln>
 
