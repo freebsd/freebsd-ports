@@ -2,15 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	knocker
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	security net
 MASTER_SITES=	SF
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Simple and easy to use TCP only port scanner (Console version)
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: knocker_core_last_hostip
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: knocker_core_last_hostip
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		autoreconf
 
 GNU_CONFIGURE=	yes
 
