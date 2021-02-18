@@ -69,6 +69,7 @@ lib/csound/plugins64-6.0/libbeosc.so
 lib/csound/plugins64-6.0/libcellular.so
 %%CHUA%%lib/csound/plugins64-6.0/libchua.so
 lib/csound/plugins64-6.0/libcontrol.so
+%%COUNTER%%lib/csound/plugins64-6.0/libcounter.so
 lib/csound/plugins64-6.0/libcs_date.so
 lib/csound/plugins64-6.0/libdoppler.so
 %%DSSI%%lib/csound/plugins64-6.0/libdssi4cs.so
@@ -94,7 +95,7 @@ lib/csound/plugins64-6.0/libmixer.so
 %%PADSYNTH%%lib/csound/plugins64-6.0/libpadsynth.so
 %%PLATEREV%%lib/csound/plugins64-6.0/libplaterev.so
 lib/csound/plugins64-6.0/libpvsops.so
-lib/csound/plugins64-6.0/libpy.so
+%%PYTHON%%lib/csound/plugins64-6.0/libpy.so
 lib/csound/plugins64-6.0/libquadbezier.so
 %%JACK%%lib/csound/plugins64-6.0/librtjack.so
 %%PORTAUDIO%%lib/csound/plugins64-6.0/librtpa.so
@@ -106,6 +107,7 @@ lib/csound/plugins64-6.0/libscugens.so
 lib/csound/plugins64-6.0/libsignalflowgraph.so
 %%STACK%%lib/csound/plugins64-6.0/libstackops.so
 lib/csound/plugins64-6.0/libstdutil.so
+lib/csound/plugins64-6.0/libsterrain.so
 %%STK%%lib/csound/plugins64-6.0/libstkops.so
 lib/csound/plugins64-6.0/libsystem_call.so
 lib/csound/plugins64-6.0/liburandom.so
@@ -118,10 +120,9 @@ lib/libcsnd6.so.6.0
 lib/libcsound64.so
 lib/libcsound64.so.6
 lib/libcsound64.so.6.0
-%%LUA%%lib/luaCsnd6.so
-%%PYTHON_SITELIBDIR%%/_csnd6.so
-%%PYTHON_SITELIBDIR%%/csnd6.py
-%%PYTHON_SITELIBDIR%%/ctcsound.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_csnd6.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/csnd6.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/ctcsound.py
 share/cmake/Csound/FindCsound.cmake
 %%NLS%%share/locale/de/LC_MESSAGES/csound6.mo
 %%NLS%%share/locale/en_US/LC_MESSAGES/csound6.mo
@@ -130,3 +131,11 @@ share/cmake/Csound/FindCsound.cmake
 %%NLS%%share/locale/fr/LC_MESSAGES/csound6.mo
 %%NLS%%share/locale/it/LC_MESSAGES/csound6.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/csound6.mo
+share/samples/README
+share/samples/hrtf-44100-left.dat
+share/samples/hrtf-44100-right.dat
+share/samples/hrtf-48000-left.dat
+share/samples/hrtf-48000-right.dat
+share/samples/hrtf-96000-left.dat
+share/samples/hrtf-96000-right.dat
+share/samples/sf_GMbank.sf2
