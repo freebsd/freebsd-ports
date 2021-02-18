@@ -18,6 +18,9 @@ COMMENT=	Japanese input method, binary part
 LICENSE=	MIT
 LICENSE_FILE=	${FILESDIR}/COPYING
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: hs_point
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: hs_point
+
 LIB_DEPENDS=	libsj3lib.so:japanese/sj3-lib
 
 USES=		imake
