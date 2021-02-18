@@ -9,6 +9,9 @@ MASTER_SITES=	http://vento.pi.tu-berlin.de/ppm2fli/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities to merge PPM files into animated FLI and backwards
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: Xorigin
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: Xorigin
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's|^C|#C|g ; \
 		 s|gcc |\$${CC} |g' ${WRKSRC}/Makefile

@@ -13,6 +13,9 @@ COMMENT=	Simple console menu program
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: BG
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: BG
+
 LIB_DEPENDS=	libslang.so:devel/libslang2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
