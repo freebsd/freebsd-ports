@@ -13,6 +13,9 @@ COMMENT=	Internet Routing Registry database server
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}/COPYRIGHT
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: error_buf
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: error_buf
+
 RUN_DEPENDS=	wget:ftp/wget
 
 USES=		shebangfix

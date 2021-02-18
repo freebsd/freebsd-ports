@@ -12,9 +12,13 @@ COMMENT=	Virtual PC Simulator
 
 LICENSE=	BSD2CLAUSE
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: vpc
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: vpc
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	non-portable
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USES=		tar:tbz
 PLIST_FILES=	bin/vpcs man/man1/vpcs.1.gz
 
