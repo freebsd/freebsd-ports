@@ -4,6 +4,7 @@
 PORTNAME=	libscep
 PORTVERSION=	0.08
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	svysh.fbsd@gmail.com
@@ -21,13 +22,12 @@ RUN_DEPENDS=	check>=0.12.0:devel/check \
 		uriparser>=0.9.1:net/uriparser
 
 USES=		cmake:noninja gmake ssl pkgconfig libtool python:build,3.6+
-USE_LDCONFIG=	yes
-USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
+USE_LDCONFIG=	yes
 
-CMAKE_OFF=	BUILD_CLI
 CMAKE_ARGS+=	-DCHECK_INSTALL_DIR=${PREFIX}
+CMAKE_OFF=	BUILD_CLI
 
 PLIST_FILES=	include/scep.h \
 		lib/libscep.so \
