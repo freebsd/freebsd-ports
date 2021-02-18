@@ -11,6 +11,7 @@ share/icons/hicolor/48x48/apps/lazpaint.png
 %%DATADIR%%/i18n/lazpaint.kab.po
 %%DATADIR%%/i18n/lazpaint.lv.po
 %%DATADIR%%/i18n/lazpaint.nl.po
+%%DATADIR%%/i18n/lazpaint.pl.po
 %%DATADIR%%/i18n/lazpaint.po
 %%DATADIR%%/i18n/lazpaint.pt_BR.po
 %%DATADIR%%/i18n/lazpaint.ru.po

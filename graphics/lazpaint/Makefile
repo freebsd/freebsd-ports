@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lazpaint
-PORTVERSION=	7.1.2
-PORTREVISION=	2
+PORTVERSION=	7.1.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -23,8 +22,8 @@ DOS2UNIX_REGEX=	.*\.([txt]|pas|lpi|txt)
 USE_GITHUB=	yes
 GH_ACCOUNT=	bgrabitmap
 GH_PROJECT=	lazpaint
-GH_TUPLE=	bgrabitmap:bgracontrols:a0a5a40:bgracontrols/bgracontrols \
-		bgrabitmap:bgrabitmap:1ea4cb9:bgrabitmap/bgrabitmapnew
+GH_TUPLE=	bgrabitmap:bgracontrols:95fc0d2:bgracontrols/bgracontrols \
+		bgrabitmap:bgrabitmap:ace7e0e:bgrabitmap/bgrabitmapnew
 
 USE_FPC_gtk2=	cairo
 USE_GNOME_gtk2=	cairo
@@ -51,7 +50,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lazpaint/release/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
-	${INSTALL_DATA} ${WRKSRC}/lazpaint/release/debian/linux32/usr/share/pixmaps/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png
+	${INSTALL_DATA} ${WRKSRC}/resources/icon/48x48.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/lazpaint/release/bin && ${COPYTREE_SHARE} "i18n models" ${STAGEDIR}${DATADIR}
 
