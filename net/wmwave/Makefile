@@ -11,6 +11,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	benjsc@FreeBSD.org
 COMMENT=	Display 802.11 status in the WindowMaker Dock
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: display
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: display
+
 USES=		xorg
 USE_XORG=	xpm
 
