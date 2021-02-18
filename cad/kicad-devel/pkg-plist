@@ -226,9 +226,11 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/stickhub/3dmodels/TDFN-8_1.5x2mm_Fused-Lead_MO-252-W2015D.step
 %%DATADIR%%/demos/stickhub/LICENSE.md
 %%DATADIR%%/demos/stickhub/README.md
+%%DATADIR%%/demos/stickhub/RobotProtos.kicad_sym
 %%DATADIR%%/demos/stickhub/StickHub.kicad_pcb
 %%DATADIR%%/demos/stickhub/StickHub.kicad_pro
 %%DATADIR%%/demos/stickhub/StickHub.kicad_sch
+%%DATADIR%%/demos/stickhub/sym-lib-table
 %%DATADIR%%/demos/test_pads_inside_pads/sym-lib-table
 %%DATADIR%%/demos/test_pads_inside_pads/test_pads_inside_pads.kicad_pcb
 %%DATADIR%%/demos/test_pads_inside_pads/test_pads_inside_pads.kicad_pro
