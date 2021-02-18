@@ -1,85 +1,93 @@
 # $FreeBSD$
 
 PORTNAME=	uefi-edk2-bhyve
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2
-PORTREVISION=	1
-PORTEPOCH=	1
+PORTVERSION=	g20210214
+PORTEPOCH=	2
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT?=	UEFI-EDK2 firmware for bhyve
+MAINTAINER=	bcran@FreeBSD.org
+COMMENT=	UEFI EDK2 firmware for bhyve
 
-LICENSE=	BSD2CLAUSE
+LICENSE=	BSD2CLAUSE+PATENT
+LICENSE_GROUPS=	FSF OSI COPYFREE
+LICENSE_NAME=	BSD-2-Clause Plus Patent License
+LICENSE_FILE=	${WRKSRC}/License.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	bhyve firmware has only been ported to X64
 
-BUILD_DEPENDS=	bash:shells/bash \
-		nasm:devel/nasm \
-		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY_FLAVOR}
+BUILD_DEPENDS=	nasm:devel/nasm \
+		bash:shells/bash
 
 USES=		gmake \
-		python:2.7,build
-USE_GCC=	4.8:build
+		python:3.7+,build
+USE_GCC=	yes:build
 USE_GITHUB=	yes
-GH_ACCOUNT=	freebsd
-GH_PROJECT=	uefi-edk2
-GH_TAGNAME=	aa8d718
+GH_ACCOUNT=	tianocore
+GH_PROJECT=	edk2
+GH_TAGNAME=	2e1e8c35f3178df95d79da81ac6deec242da74c2
+GH_TUPLE=	ucb-bar:berkeley-softfloat-3:master:softfloat/ArmPkg/Library/ArmSoftFloatLib/berkeley-softfloat-3 \
+		google:brotli:v1.0.7-17-g666c328:brotli/MdeModulePkg/Library/BrotliCustomDecompressLib/brotli \
+		openssl:openssl:OpenSSL_1_1_1g:openssl/CryptoPkg/Library/OpensslLib/openssl \
+		kkos:oniguruma:v6.9.4_mark1:oniguruma/MdeModulePkg/Universal/RegularExpressionDxe/oniguruma \
+		akheron:jansson:v2.13.1:jansson/RedfishPkg/Library/JsonLib/jansson \
 
-PLIST_FILES=	${PREFIX}/share/uefi-firmware/BHYVE_UEFI${PLIST_SUFFIX}.fd
+BINARY_ALIAS=	make=${LOCALBASE}/bin/gmake \
+		gcc=${LOCALBASE}/bin/gcc${GCC_DEFAULT} \
+		gcc-ar=${LOCALBASE}/bin/gcc-ar${GCC_DEFAULT} \
+		g++=${LOCALBASE}/bin/g++${GCC_DEFAULT} \
+		python3=${PYTHON_CMD} python=${PYTHON_CMD}
 
-OPTIONS_DEFINE=	DEBUG
+PLAT_ARCH=	X64
+PLAT_FILE=	OvmfPkg/Bhyve/BhyveX64.dsc
+PLAT_RESULT=	BhyveX64/${PLAT_TARGET}_GCC5/FV/BHYVE.fd
+PLAT_RESULT_CODE=	BhyveX64/${PLAT_TARGET}_GCC5/FV/BHYVE_CODE.fd
+PLAT_RESULT_VARS=	BhyveX64/${PLAT_TARGET}_GCC5/FV/BHYVE_VARS.fd
 
-DEBUG_VARS=	uefi_target=DEBUG
-DEBUG_VARS_OFF=	uefi_target=RELEASE
+PLIST_FILES=	${PREFIX}/share/uefi-firmware/BHYVE_UEFI.fd      \
+		${PREFIX}/share/uefi-firmware/BHYVE_UEFI_CODE.fd \
+		${PREFIX}/share/uefi-firmware/BHYVE_UEFI_VARS.fd
 
-MAKE_ARGS+=	AS=${LOCALBASE}/bin/as \
-		AR=${LOCALBASE}/bin/ar \
-		LD=${LOCALBASE}/bin/ld \
-		OBJCOPY=${LOCALBASE}/bin/objcopy \
-		CC=${LOCALBASE}/bin/gcc48 \
-		CXX=${LOCALBASE}/bin/g++48
+OPTIONS_DEFINE=	DEBUG HTTP_BOOT
+OPTIONS_DEFAULT=	HTTP_BOOT
 
-BUILD_ARGS=-DDEBUG_ON_SERIAL_PORT=TRUE -D FD_SIZE_2MB
+DEBUG_DESC=	Build a debug configuration
+HTTP_BOOT_DESC=	Build with HTTP(S) boot support
 
-.include <bsd.port.options.mk>
+DEBUG_VARS=	PLAT_TARGET=DEBUG
+DEBUG_VARS_OFF=	PLAT_TARGET=RELEASE
+HTTP_BOOT_VARS=	PLAT_ARGS+=-DHTTP_BOOT_ENABLE=TRUE
 
-.if defined(WITH_CSM)
-PLIST_SUFFIX=	_CSM
-BUILD_ARGS+=	-DCSM_ENABLE=TRUE
-.endif
+PLAT_ARGS+=	-DDEBUG_ON_SERIAL_PORT=TRUE
 
+# Emulate source edk2/edksetup.sh
+MAKE_ENV+=	WORKSPACE=${WRKDIR} \
+		PACKAGES_PATH=${WRKDIR}/edk2-${GH_TAGNAME} \
+		CONF_PATH=${WRKDIR}/edk2-${GH_TAGNAME}/Conf \
+		EDK_TOOLS_PATH=${WRKDIR}/edk2-${GH_TAGNAME}/BaseTools \
+		PATH=${WRKDIR}/edk2-${GH_TAGNAME}/BaseTools/BinWrappers/PosixLike:${PATH} \
+		PYTHON_COMMAND=python3 \
+		PYTHONHASHSEED=1
+
+# We can't have two submodule with the same origin in GH_TUPLE
 post-extract:
-	@${REINPLACE_CMD} -e 's|python|${PYTHON_CMD}|' ${WRKSRC}/BaseTools/Tests/GNUmakefile \
-							${WRKSRC}/BaseTools/BinWrappers/PosixLike/*
+	(cd ${WRKDIR}/edk2-${GH_TAGNAME}/MdeModulePkg/Library/BrotliCustomDecompressLib/brotli && tar cf - * | tar xf - -C ../../../../BaseTools/Source/C/BrotliCompress/brotli)
 
 do-build:
-	unset ARCH; unset MAKEFLAGS; ${MAKE_CMD} ${MAKE_ARGS} -C ${BUILD_WRKSRC}/BaseTools
-	${MKDIR} ${BUILD_WRKSRC}/Build;
-	${LN} -sf ${LOCALBASE}/bin/gcc48 ${BUILD_WRKSRC}/Build/gcc
-	${LN} -sf ${LOCALBASE}/bin/ld ${BUILD_WRKSRC}/Build/ld
-	${LN} -sf ${LOCALBASE}/bin/gmake ${BUILD_WRKSRC}/Build/make
-	${LN} -sf ${LOCALBASE}/bin/ar ${BUILD_WRKSRC}/Build/ar
-	${LN} -sf ${LOCALBASE}/bin/objcopy ${BUILD_WRKSRC}/Build/objcopy
-	${LN} -sf ${LOCALBASE}/bin/nasm ${BUILD_WRKSRC}/Build/nasm
-.if defined(WITH_CSM)
-	bash -c " \
-		cd ${BUILD_WRKSRC}; \
-		source edksetup.sh;\
-		unset ARCH; unset MAKEFLAGS; \
-	        ${MAKE_CMD} ${MAKE_ARGS} GCC48_BIN=${BUILD_WRKSRC}/Build/ -C ${BUILD_WRKSRC}/BhyvePkg/Csm/BhyveCsm16/"
-.endif
-	bash -c " \
-		cd ${BUILD_WRKSRC}; \
-		source edksetup.sh;\
-		unset ARCH; unset MAKEFLAGS; \
-		export GCC48_BIN=${BUILD_WRKSRC}/Build/; \
-		build -t GCC48 -a X64 -b ${UEFI_TARGET} -p BhyvePkg/BhyvePkgX64.dsc ${BUILD_ARGS} \
-	"
+	# This is normaly done during source edksetup.sh
+	(cp ${WRKDIR}/edk2-${GH_TAGNAME}/BaseTools/Conf/build_rule.template ${WRKDIR}/edk2-${GH_TAGNAME}/Conf/build_rule.txt)
+	(cp ${WRKDIR}/edk2-${GH_TAGNAME}/BaseTools/Conf/tools_def.template ${WRKDIR}/edk2-${GH_TAGNAME}/Conf/tools_def.txt)
+	(cp ${WRKDIR}/edk2-${GH_TAGNAME}/BaseTools/Conf/target.template ${WRKDIR}/edk2-${GH_TAGNAME}/Conf/target.txt)
+	# Build the basetools
+	(cd ${WRKDIR} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C edk2-${GH_TAGNAME}/BaseTools -j ${MAKE_JOBS_NUMBER} ${_MAKE_JOBS})
+	# Build EDK2
+	(cd ${WRKDIR}/edk2-${GH_TAGNAME} && ${SETENV} ${MAKE_ENV} BaseTools/BinWrappers/PosixLike/build -a ${PLAT_ARCH} -p ${PLAT_FILE} -n ${MAKE_JOBS_NUMBER} -t GCC5 -b ${PLAT_TARGET} ${PLAT_ARGS})
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/uefi-firmware/
-	${INSTALL} ${BUILD_WRKSRC}/Build/BhyveX64/${UEFI_TARGET}_GCC48/FV/BHYVE.fd \
-		${STAGEDIR}${PREFIX}/share/uefi-firmware/BHYVE_UEFI${PLIST_SUFFIX}.fd
+	${MKDIR} ${STAGEDIR}/${PREFIX}/share/uefi-firmware/
+	${INSTALL_DATA} ${WRKDIR}/Build/${PLAT_RESULT_CODE} ${STAGEDIR}/${PREFIX}/share/uefi-firmware/BHYVE_UEFI.fd
+	${INSTALL_DATA} ${WRKDIR}/Build/${PLAT_RESULT_CODE} ${STAGEDIR}/${PREFIX}/share/uefi-firmware/BHYVE_UEFI_CODE.fd
+	${INSTALL_DATA} ${WRKDIR}/Build/${PLAT_RESULT_VARS} ${STAGEDIR}/${PREFIX}/share/uefi-firmware/BHYVE_UEFI_VARS.fd
 
 .include <bsd.port.mk>

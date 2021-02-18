@@ -16172,3 +16172,4 @@ www/rtv||2021-02-17|Has expired: Abandoned, use www/py-ttrv or www/py-tuir inste
 textproc/py-sphinxcontrib-websupport11|textproc/py-sphinxcontrib-websupport|2021-02-17|Has expired: Use textproc/py-sphinxcontrib-websupport instead
 textproc/py-sphinx18|textproc/py-sphinx|2021-02-17|Has expired: Old version, use textproc/py-sphinx instead
 audio/herrie||2021-02-17|Removed
+sysutils/uefi-edk2-bhyve-devel|sysutils/uefi-edk2-bhyve|2021-02-17|Development version no longer necessary

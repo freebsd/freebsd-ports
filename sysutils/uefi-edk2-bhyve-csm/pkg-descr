@@ -1,4 +1,4 @@
-UEFI EDK2 firmware for bhyve.
+UEFI EDK2 firmware for bhyve with CSM (16-bit BIOS) support.
 
 From https://github.com/tianocore/tianocore/wiki/UEFI :
 "The Unified Extensible Firmware Interface, or UEFI, specifies the
@@ -11,7 +11,12 @@ UEFI and UEFI Platform Initialization (PI) specifications."
 
 It's open source under the BSD-2-Clause-Patent license.
 
-This port provides a version of EDK2 for use with VMs running
-operating systems which have UEFI support.
+This port provides an EDK2 firmware build for x86_64 with 'CSM' support.
+CSM is the Compatibility Support Module, compatibility code to allow
+operating systems which expect a 16-bit BIOS, and which don't know
+about UEFI, to boot.
 
-WWW: https://github.com/tianocore/edk2/tree/master/OvmfPkg/Bhyve
+This CSM port provides an older version of EDK2 for use with VMs
+running operating systems which don't have UEFI support.
+
+WWW: https://github.com/freebsd/uefi-edk2/tree/bhyve/UDK2014.SP1
