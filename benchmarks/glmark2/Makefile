@@ -3,7 +3,11 @@
 
 PORTNAME=	glmark2
 PORTVERSION=	2021.02
+PORTREVISION=	1
 CATEGORIES=	benchmarks
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	bd2c4ca8360a.patch:-p1 # https://github.com/glmark2/glmark2/issues/147
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Benchmark for OpenGL (ES) 2.0
@@ -22,10 +26,8 @@ PORTDOCS=	NEWS
 OPTIONS_DEFINE=	DOCS
 OPTIONS_MULTI=	PLATFORM
 OPTIONS_MULTI_PLATFORM=	DRM WAYLAND X11
-OPTIONS_DEFAULT=DRM X11
+OPTIONS_DEFAULT=DRM WAYLAND X11
 OPTIONS_SUB=	yes
-
-WAYLAND_BROKEN=	../src/native-state-wayland.cpp:26:10: fatal error: 'linux/input.h' file not found
 
 PLATFORM_DESC=		Window systems
 
@@ -35,7 +37,8 @@ DRM_LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 DRM_USE=		GL=gbm
 DRM_VARS=		PLATFORMS+="drm-gl drm-glesv2"
 
-WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.12:graphics/wayland-protocols
+WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
+			wayland-protocols>=1.12:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
 WAYLAND_VARS=		PLATFORMS+="wayland-gl wayland-glesv2"
 

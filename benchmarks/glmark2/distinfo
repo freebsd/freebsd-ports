@@ -1,3 +1,5 @@
 TIMESTAMP = 1613396420
 SHA256 (glmark2-glmark2-2021.02_GH0.tar.gz) = bebadb78c13aea5e88ed892e5563101ccb745b75f1dc86a8fc7229f00d78cbf1
 SIZE (glmark2-glmark2-2021.02_GH0.tar.gz) = 9369477
+SHA256 (bd2c4ca8360a.patch) = 0b32388e82fb35faddf1502d32680a61203bb32e4ee4d4d65f60b78ac244e73f
+SIZE (bd2c4ca8360a.patch) = 3777
