@@ -10,6 +10,9 @@ MASTER_SITES=	SUNSITE/apps/www/mirroring
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Download web sites without user interaction by following links
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: pszServerRoot
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: pszServerRoot
+
 USES=		tar:tgz
 ALL_TARGET=
 
