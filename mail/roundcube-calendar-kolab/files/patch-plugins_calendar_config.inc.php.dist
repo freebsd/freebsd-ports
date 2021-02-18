@@ -1,0 +1,16 @@
+--- plugins/calendar/config.inc.php.dist.orig	2021-02-18 09:45:46 UTC
++++ plugins/calendar/config.inc.php.dist
+@@ -25,6 +25,13 @@
+  +-------------------------------------------------------------------------+
+ */
+ 
++/*
++ * In order to initialise the calendar database tables, on first setup it
++ * is necessary to run (for example, if you are using MySQL):
++ *
++ * # mysql roundcubemail < %%WWWDIR%%/calendar/drivers/database/SQL/mysql.initial.sql
++ */
++
+ // backend type (database, kolab)
+ $config['calendar_driver'] = "database";
+ 

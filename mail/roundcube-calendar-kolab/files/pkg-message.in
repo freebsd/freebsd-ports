@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+Configuration is at %%WWWDIR%%/calendar/config.inc.php,
+and the instructions for initialising the database are there too.
+
+You will also need to enable the plugin in Roundcube's config.inc.php:
+
+  $config['plugins'] = array(
+    (...)
+    'calendar',
+  );
+EOM
+}
+]

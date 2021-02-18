@@ -1,0 +1,6 @@
+Roundcube calendar plugin, by Kolab.
+
+This plugin currently supports a local database as well as a Kolab groupware
+server as backends for calendar and event storage.
+
+WWW: https://docs.kolab.org/webmail-user-guide/roundcubemail/_plugins/calendar/index.html
