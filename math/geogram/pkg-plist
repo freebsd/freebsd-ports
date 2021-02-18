@@ -212,7 +212,6 @@ include/geogram1/geogram/third_party/stb_image/stb_image.h
 include/geogram1/geogram/third_party/stb_image/stb_image_write.h
 include/geogram1/geogram/third_party/tetgen/tetgen.h
 include/geogram1/geogram/third_party/triangle/triangle.h
-include/geogram1/geogram/third_party/xatlas/OLD/xatlas.h
 include/geogram1/geogram/third_party/xatlas/xatlas.h
 include/geogram1/geogram/third_party/zlib/crc32.h
 include/geogram1/geogram/third_party/zlib/deflate.h
@@ -336,13 +335,13 @@ include/geogram1/geogram_gfx/third_party/imgui_lua_bindings/imgui_iterator.h
 lib/cmake/modules/FindGeogram.cmake
 lib/libgeogram.so
 lib/libgeogram.so.1
-lib/libgeogram.so.1.7.5
+lib/libgeogram.so.1.7.6
 lib/libgeogram_gfx.so
 lib/libgeogram_gfx.so.1
-lib/libgeogram_gfx.so.1.7.5
+lib/libgeogram_gfx.so.1.7.6
 lib/libgeogram_num_3rdparty.so
 lib/libgeogram_num_3rdparty.so.1
-lib/libgeogram_num_3rdparty.so.1.7.5
+lib/libgeogram_num_3rdparty.so.1.7.6
 libdata/pkgconfig/geogram1.pc
 libdata/pkgconfig/geogram_gfx1.pc
 @dir include/geogram1/geogram_gfx/gui/colormaps
