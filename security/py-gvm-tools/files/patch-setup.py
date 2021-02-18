@@ -4,7 +4,7 @@
  from setuptools import setup
  
  packages = \
--['gvmtools', 'scripts', 'tests']
+-['gvmtools', 'scripts', 'tests', 'tests.scripts']
 +['gvmtools', 'scripts']
  
  package_data = \

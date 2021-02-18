@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gvm-tools
-DISTVERSION=	20.10.1
+DISTVERSION=	21.1.0
 CATEGORIES=	security python
 MASTER_SITES=   CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE=	GPLv3+
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-gvm>=0:security/py-python-gvm@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
