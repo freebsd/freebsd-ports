@@ -11,6 +11,9 @@ DISTNAME=	heyu-${PORTVERSION}
 MAINTAINER=	mstowe@chicago.us.mensa.org
 COMMENT=	Control a CM11A interface from the command line
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: newsb
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: newsb
+
 CONFLICTS=	heyu-[0-9]*
 
 ALL_TARGET=	all
