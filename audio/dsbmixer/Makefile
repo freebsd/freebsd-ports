@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbmixer
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	audio
 
 MAINTAINER=	mk@nic-nac-project.org
