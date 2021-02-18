@@ -1,8 +1,8 @@
 Add the override-cache-ttl feature.
 
---- bin/named/config.c.orig	2021-01-11 13:23:31 UTC
+--- bin/named/config.c.orig	2021-02-04 11:35:16 UTC
 +++ bin/named/config.c
-@@ -179,6 +179,7 @@ options {\n\
+@@ -180,6 +180,7 @@ options {\n\
  	notify-source *;\n\
  	notify-source-v6 *;\n\
  	nsec3-test-zone no;\n\
@@ -10,7 +10,7 @@ Add the override-cache-ttl feature.
  	provide-ixfr true;\n\
  	qname-minimization relaxed;\n\
  	query-source address *;\n\
---- bin/named/server.c.orig	2021-01-11 13:23:31 UTC
+--- bin/named/server.c.orig	2021-02-04 11:35:16 UTC
 +++ bin/named/server.c
 @@ -4347,6 +4347,11 @@ configure_view(dns_view_t *view, dns_viewlist_t *viewl
  	}
@@ -24,7 +24,7 @@ Add the override-cache-ttl feature.
  	result = named_config_get(maps, "max-cache-ttl", &obj);
  	INSIST(result == ISC_R_SUCCESS);
  	view->maxcachettl = cfg_obj_asduration(obj);
---- lib/dns/include/dns/view.h.orig	2021-01-11 13:23:31 UTC
+--- lib/dns/include/dns/view.h.orig	2021-02-04 11:35:16 UTC
 +++ lib/dns/include/dns/view.h
 @@ -152,6 +152,7 @@ struct dns_view {
  	bool		      requestnsid;
@@ -34,9 +34,9 @@ Add the override-cache-ttl feature.
  	dns_ttl_t	      maxncachettl;
  	dns_ttl_t	      mincachettl;
  	dns_ttl_t	      minncachettl;
---- lib/dns/resolver.c.orig	2021-01-11 13:23:31 UTC
+--- lib/dns/resolver.c.orig	2021-02-04 11:35:16 UTC
 +++ lib/dns/resolver.c
-@@ -6281,6 +6281,12 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_mes
+@@ -6478,6 +6478,12 @@ cache_name(fetchctx_t *fctx, dns_name_t *name, dns_mes
  		}
  
  		/*
@@ -49,9 +49,9 @@ Add the override-cache-ttl feature.
  		 * Enforce the configure maximum cache TTL.
  		 */
  		if (rdataset->ttl > res->view->maxcachettl) {
---- lib/isccfg/namedconf.c.orig	2021-01-11 13:23:31 UTC
+--- lib/isccfg/namedconf.c.orig	2021-02-04 11:35:16 UTC
 +++ lib/isccfg/namedconf.c
-@@ -2023,6 +2023,7 @@ static cfg_clausedef_t view_clauses[] = {
+@@ -2047,6 +2047,7 @@ static cfg_clausedef_t view_clauses[] = {
  #endif /* ifdef HAVE_LMDB */
  	{ "max-acache-size", &cfg_type_sizenodefault, CFG_CLAUSEFLAG_OBSOLETE },
  	{ "max-cache-size", &cfg_type_sizeorpercent, 0 },
