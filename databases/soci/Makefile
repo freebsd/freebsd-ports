@@ -5,7 +5,7 @@ PORTNAME=	soci
 DISTVERSION=	4.0.1
 CATEGORIES=	databases
 
-MAINTAINER=	jlaffaye@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Database Access Library
 
 LICENSE=	BSL

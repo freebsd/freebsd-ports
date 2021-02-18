@@ -7,7 +7,7 @@ CATEGORIES=	www python
 MASTER_SITES=	http://python.ca/scgi/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jlaffaye@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python server implementation of the Simple Common Gateway Protocol
 
 LICENSE=	MIT

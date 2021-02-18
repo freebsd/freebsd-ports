@@ -6,7 +6,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8
 CATEGORIES=	x11
 
-MAINTAINER=	jlaffaye@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X11 BackGround Setter using Imlib2
 
 LICENSE=	MIT

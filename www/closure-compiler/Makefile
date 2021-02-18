@@ -7,7 +7,7 @@ CATEGORIES=	www java
 MASTER_SITES=	http://dl.google.com/closure-compiler/
 DISTNAME=	compiler-${PORTVERSION}
 
-MAINTAINER=	jlaffaye@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Closure Compiler
 
 LICENSE=	APACHE20
