@@ -19,8 +19,8 @@ LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 		libtinyxml.so:textproc/tinyxml \
 		liblz4.so:archivers/liblz4
 
-USES=		cmake compiler:c++11-lang gettext-tools gl gnome \
-		libarchive localbase pkgconfig sqlite xorg
+USES=		cmake gettext-tools gl gnome libarchive localbase pkgconfig \
+		sqlite xorg
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 GH_ACCOUNT=	${GH_PROJECT}
@@ -43,6 +43,14 @@ OPTIONS_SUB=		yes
 
 DOCS_CMAKE_ON=	-DOCPN_BUNDLE_DOCS:STRING="ON"
 DOCS_CMAKE_OFF=	-DOCPN_BUNDLE_DOCS:STRING="OFF"
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*}
+USES+=	compiler:gcc-c++11-lib
+.else
+USES+=	compiler:c++11-lang
+.endif
 
 .include <bsd.port.pre.mk>
 
