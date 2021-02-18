@@ -9,14 +9,13 @@ MASTER_SITES=	http://www.ktools.org/dist/oak/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	System Log Reporting Tool
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: gX
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: gX
-
 USE_RC_SUBR=	oak
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	oak
 PLIST_FILES=	bin/oak
+
+CFLAGS+=	-fcommon
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/oak ${STAGEDIR}${PREFIX}/bin
