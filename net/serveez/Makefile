@@ -13,6 +13,9 @@ COMMENT=	Server framework
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: guile_global_error
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: guile_global_error
+
 LIB_DEPENDS=	libguile.so:lang/guile
 
 USES=		tar:xz libtool
