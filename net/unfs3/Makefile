@@ -13,6 +13,9 @@ COMMENT=	User-space implementation of the NFSv3 server specification
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: export_path
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: export_path
+
 USES=		autoreconf
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
