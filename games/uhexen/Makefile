@@ -10,6 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/U-hexen%20version%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another port of Hexen, popular game from Raven Software
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: mouse_scale_factor
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: mouse_scale_factor
 BROKEN_powerpc=		fails to compile
 BROKEN_powerpc64=	fails to compile: m_misc.o: undefined reference to 'ShortSwap'
 
