@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libebml
-DISTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 CATEGORIES=	textproc
 MASTER_SITES=	https://dl.matroska.org/downloads/libebml/
 
