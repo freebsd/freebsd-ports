@@ -3,6 +3,7 @@
 PORTNAME=	tailscale
 PORTVERSION=	1.4.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -42,6 +43,9 @@ USE_RC_SUBR=	tailscaled
 
 GO_TARGET=	./cmd/tailscale \
 		./cmd/tailscaled
+GO_BUILDFLAGS=	-tags xversion -ldflags "\
+		-X tailscale.com/version.Long=${PORTVERSION} \
+		-X tailscale.com/version.Short=${PORTVERSION}"
 
 PLIST_FILES=	bin/tailscale  \
 		bin/tailscaled
