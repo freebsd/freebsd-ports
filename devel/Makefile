@@ -521,6 +521,7 @@
     SUBDIR += dwarf2json
     SUBDIR += dwarfdump
     SUBDIR += dwarves
+    SUBDIR += dwz
     SUBDIR += dxa65
     SUBDIR += dyncall
     SUBDIR += e00compr
