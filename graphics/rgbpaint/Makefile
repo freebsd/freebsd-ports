@@ -12,6 +12,9 @@ COMMENT=	Very basic painting program
 
 LICENSE=	GPLv2+
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: brcosa_pal
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: brcosa_pal
+
 USES=		gettext gnome pkgconfig tar:bzip2
 USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes
