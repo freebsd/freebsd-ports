@@ -12,10 +12,11 @@ COMMENT=	QEMU CPU Emulator - development version
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 powerpc powerpc64
+ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64 powerpc64le
 IGNORE_FreeBSD_11=	Unable to produce Position Independent Code
 
-BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+		bash:shells/bash
 LIB_DEPENDS=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
