@@ -2,7 +2,7 @@
 
 PORTNAME=	swappy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,11 +18,16 @@ GH_ACCOUNT=	jtheoof
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/${PORTNAME}.desktop \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
-		share/locale/en/LC_MESSAGES/${PORTNAME}.mo
+		share/locale/de/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/en/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/pt_BR/LC_MESSAGES/${PORTNAME}.mo \
+		share/locale/tr/LC_MESSAGES/${PORTNAME}.mo \
+		${NULL}
+
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	CLIPBOARD ICONSFONT MANPAGES NOTIFY
-OPTIONS_DEFAULT=CLIPBOARD ICONSFONT MANPAGES NOTIFY
+OPTIONS_DEFINE=	CLIPBOARD ICONSFONT MANPAGES
+OPTIONS_DEFAULT=CLIPBOARD ICONSFONT MANPAGES
 
 CLIPBOARD_DESC=		Copy to clipboard support
 CLIPBOARD_RUN_DEPENDS=	wl-copy:x11/wl-clipboard
@@ -33,9 +38,6 @@ ICONSFONT_RUN_DEPENDS=	font-awesome>0:x11-fonts/font-awesome
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
-
-NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
-NOTIFY_MESON_ENABLED=	libnotify
 
 post-patch:
 # Extract (snapshot) version from the port instead of meson.build
