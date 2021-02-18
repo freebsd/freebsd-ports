@@ -4630,6 +4630,7 @@
     SUBDIR += py-meliae
     SUBDIR += py-memory-profiler
     SUBDIR += py-microversion-parse
+    SUBDIR += py-milc
     SUBDIR += py-minidump
     SUBDIR += py-minimongo
     SUBDIR += py-minio
