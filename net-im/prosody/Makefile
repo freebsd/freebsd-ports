@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prosody
-PORTVERSION=	0.11.7
+PORTVERSION=	0.11.8
 CATEGORIES=	net-im
 MASTER_SITES=	https://prosody.im/downloads/source/
 
@@ -45,10 +45,7 @@ GROUPS=		${USERS}
 USE_RC_SUBR=	prosody
 SUB_FILES=	pkg-deinstall
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS} LUA_PREFIX=${LUA_PREFIX} LUA_CMD=${LUA_CMD}
-PLIST_SUB=	PROSODY_USER=${USERS} \
-		PROSODY_USER_regex=\b${USERS}\b \
-		PROSODY_GROUP=${GROUPS} \
-		PROSODY_GROUP_regex=\b${GROUPS}\b
+PLIST_SUB=	PROSODY_USER=${USERS} PROSODY_GROUP=${GROUPS}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/prosody/util/*.so
