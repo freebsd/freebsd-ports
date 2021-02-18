@@ -3,12 +3,15 @@
 
 PORTNAME=	sipsak
 PORTVERSION=	0.9.6
-DISTFILES=	sipsak-0.9.6-1.tar.gz
 CATEGORIES=	net
 MASTER_SITES=	BERLIOS
+DISTFILES=	sipsak-0.9.6-1.tar.gz
 
 MAINTAINER=	jesusr@FreeBSD.org
 COMMENT=	Small command line tool for SIP testing
+
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: address
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: address
 
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
