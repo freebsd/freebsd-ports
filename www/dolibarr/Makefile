@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dolibarr
-DISTVERSION=	12.0.4
+DISTVERSION=	13.0.0
 CATEGORIES=	www finance
 
 MAINTAINER=	acm@FreeBSD.org
