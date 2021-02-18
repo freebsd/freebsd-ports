@@ -9,6 +9,9 @@ MASTER_SITES=	http://tomenet.eu/downloads/
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Online multiplayer rogue-like role-playing game
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: lite_later
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: lite_later
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKEFILE=	makefile
 
