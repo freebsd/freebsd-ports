@@ -14,7 +14,7 @@ BUILD_DEPENDS=	scdoc:textproc/scdoc
 
 USES=		go:modules,no_targets
 USE_GITHUB=	nodefault
-GH_TUPLE=	ProtonMail:crypto:71bec3603bf3:protonmail_crypto/vendor/golang.org/x/crypto \
+GH_TUPLE=	ProtonMail:go-crypto:71bec3603bf3:protonmail_crypto/vendor/golang.org/x/crypto \
 		creack:pty:v1.1.10:creack_pty/vendor/github.com/creack/pty \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
