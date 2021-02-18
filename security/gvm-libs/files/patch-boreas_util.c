@@ -1,6 +1,6 @@
---- boreas/util.c	2020-12-30 23:52:07.849996000 -0500
-+++ boreas/util.c	2020-12-31 01:36:37.600382000 -0500
-@@ -21,12 +21,20 @@
+--- boreas/util.c	2021-02-01 10:20:11.000000000 -0500
++++ boreas/util.c	2021-02-18 13:25:46.406205000 -0500
+@@ -21,13 +21,20 @@
  
  #include "../base/networking.h" /* for range_t */
  
@@ -10,6 +10,7 @@
  #include <errno.h>
  #include <glib.h>
  #include <ifaddrs.h> /* for getifaddrs() */
+-#include <linux/sockios.h>
  #include <net/ethernet.h>
  #include <net/if.h>           /* for if_nametoindex() */
 -#include <netpacket/packet.h> /* for sockaddr_ll */
@@ -21,8 +22,8 @@
 +#endif
  #include <stdlib.h>
  #include <string.h>
- #include <sys/socket.h>
-@@ -109,22 +117,22 @@
+ #include <sys/ioctl.h>
+@@ -111,22 +118,22 @@
      {
        for (ifa = ifaddr; ifa != NULL; ifa = ifa->ifa_next)
          {
@@ -51,7 +52,7 @@
                  }
              }
          }
-@@ -508,7 +516,7 @@
+@@ -516,7 +523,7 @@
        break;
      case ARPV4:
        {
@@ -60,3 +61,12 @@
          if (soc < 0)
            {
              g_warning ("%s: failed to open ARPV4 socket: %s", __func__,
+@@ -628,7 +635,7 @@
+ so_sndbuf_empty (int soc, int *err)
+ {
+   int cur_so_sendbuf = -1;
+-  if (ioctl (soc, SIOCOUTQ, &cur_so_sendbuf) == -1)
++  if (ioctl (soc, TIOCOUTQ, &cur_so_sendbuf) == -1)
+     {
+       g_warning ("%s: ioctl error: %s", __func__, strerror (errno));
+       *err = -1;

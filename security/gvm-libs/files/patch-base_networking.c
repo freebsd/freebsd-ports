@@ -1,6 +1,6 @@
---- base/networking.c	2020-12-30 23:53:55.170376000 -0500
-+++ base/networking.c	2020-12-31 00:06:29.941646000 -0500
-@@ -30,28 +30,30 @@
+--- base/networking.c	2021-02-01 10:20:11.000000000 -0500
++++ base/networking.c	2021-02-18 12:05:06.746722000 -0500
+@@ -30,18 +30,15 @@
  #include <errno.h>     /* for errno, EAFNOSUPPORT */
  #include <glib/gstdio.h>
  #include <ifaddrs.h>    /* for ifaddrs, freeifaddrs, getifaddrs */
@@ -17,11 +17,11 @@
 -#include <netinet/in.h>
 -#define s6_addr32 __u6_addr.__u6_addr32
 -#endif
-+//#ifdef __FreeBSD__
-+//#include <netinet/in.h>
-+//#define s6_addr32 __u6_addr.__u6_addr32
-+//#endif
- 
+-
+ #undef G_LOG_DOMAIN
+ /**
+  * @brief GLib log domain.
+@@ -51,13 +48,13 @@
  /* Global variables */
  
  /* Source interface name eg. eth1. */
@@ -38,7 +38,7 @@
  
  /* Source Interface/Address related functions. */
  
-@@ -244,10 +246,19 @@
+@@ -250,10 +247,19 @@
    if (ip4 == NULL || ip6 == NULL)
      return;
  
@@ -62,7 +62,7 @@
  }
  
  /**
-@@ -262,7 +273,7 @@
+@@ -268,7 +274,7 @@
    if (!addr6)
      return;
    if (IN6_IS_ADDR_V4MAPPED (addr6))
@@ -71,7 +71,7 @@
    else
      inet_ntop (AF_INET6, addr6, str, INET6_ADDRSTRLEN);
  }
-@@ -808,11 +819,11 @@
+@@ -814,11 +820,11 @@
        if (IN6_IS_ADDR_V4MAPPED (&addr6))
          {
            /* addr is 0.0.0.0 */

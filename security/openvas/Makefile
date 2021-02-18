@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvas
-DISTVERSION=	20.8.0
-PORTREVISION=	1
+DISTVERSION=	20.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -32,6 +31,8 @@ USE_GNOME=	glib20
 
 USERS=		gvm
 GROUPS=		${USERS}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-scanner-${DISTVERSION}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/ospd

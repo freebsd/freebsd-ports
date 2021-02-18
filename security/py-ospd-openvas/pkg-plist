@@ -1,4 +1,10 @@
 bin/ospd-openvas
+%%PYTHON_SITELIBDIR%%/ospd_openvas-20.8.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/ospd_openvas-20.8.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/ospd_openvas-20.8.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/ospd_openvas-20.8.1-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/ospd_openvas-20.8.1-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/ospd_openvas-20.8.1-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__init__.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/__init__.cpython-37.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/__init__.cpython-37.pyc
