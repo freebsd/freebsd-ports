@@ -1,0 +1,6 @@
+Dotty Dict is a wrapper around builtin dictionary. Provides quick access to
+deeply nested keys and values with dot notation. Dotty Dict expose dictionary
+public API as proxy to dict implemented underneath and should work with all
+dict-like objects which are instances of Mapping.
+
+WWW: https://github.com/pawelzny/dotty_dict
