@@ -1,10 +1,23 @@
 Bozohttpd is a small and secure HTTP version 1.1 server. Its main feature
 is the lack of features, reducing the code size and improving verifiability.
+This is also the minimal web server that is shipped by default in NetBSD.
 
-It supports CGI/1.1, HTTP/1.1, HTTP/1.0, HTTP/0.9, ~user translations,
+It supports SSL, CGI/1.1, HTTP/1.1, HTTP/1.0, HTTP/0.9, ~user translations,
 virtual hosting support, as well as multiple IP-based servers on a single
-machine. It is capable of services pages via the IPv6 protocol. It has no
-configuration file by design. Recently added features are htpasswd, SSL,
-and dynamic redirection, that can be easily disabled.
+machine. It is capable of serving pages via the IPv6 protocol. It has no
+configuration file by design. Many features are enabled with CLI options.
+
+For extra security, unused features can be excluded when you build the port:
+
+    o Support for blacklistd(8) to avoid DoS abuse
+    o Common Gateway Interface (CGI) support (-C, -c, -E, -e)
+    o Optional daemon mode (-b)
+    o Debug support (-d)
+    o Automatic directory index if index.html is missing (-X)
+    o Dynamic content based on file suffixes (-C, -M)
+    o Basic authentication with .htpasswd files
+    o SSL/TLS for HTTPS requests (-Z, -z)
+    o Lua scripts for dynamic content (-L)
+    o Optional /~user transformation (-e, -p, -u)
 
 WWW: http://www.eterna.com.au/bozohttpd/

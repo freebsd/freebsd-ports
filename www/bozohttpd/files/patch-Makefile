@@ -1,53 +1,45 @@
---- Makefile.orig
+--- Makefile.orig	2020-10-15 04:35:06 UTC
 +++ Makefile
-@@ -19,30 +19,34 @@
+@@ -14,7 +14,7 @@
+ #	NO_SSL_SUPPORT		/* don't support ssl (https) */
+ #	DO_HTPASSWD		/* support .htpasswd files */
+ #	NO_LUA_SUPPORT		/* don't support Lua for dynamic content */
+-#	NO_BLOCKLIST_SUPPORT	/* don't support blocklist */
++#	NO_BLACKLIST_SUPPORT	/* don't support blacklist */
+ #
+ # other system specific defines:
+ #	HAVE_NBUTIL_H		/* netbsd compat is in <nbutil.h>
+@@ -24,20 +24,17 @@
+ # for setting CFLAGS relevant to your make, eg
  #   % make COPTS="-DDO_HTPASSWD"
  
- COPTS+=	-DDO_HTPASSWD
--PROG=	httpd
--MAN=	httpd.8
--BUILDSYMLINKS+=bozohttpd.8 httpd.8
-+PROG=	bozohttpd
-+MAN=	bozohttpd.8
-+#BUILDSYMLINKS+=bozohttpd.8
+-COPTS+=	-DDO_HTPASSWD
+ PROG=	bozohttpd
+-LINKS=	${BINDIR}/bozohttpd ${BINDIR}/httpd
+ MAN=	bozohttpd.8
+-MLINKS+=bozohttpd.8 httpd.8
  SRCS=	bozohttpd.c ssl-bozo.c auth-bozo.c cgi-bozo.c daemon-bozo.c \
- 	tilde-luzah-bozo.c dir-index-bozo.c content-bozo.c
+ 	tilde-luzah-bozo.c dir-index-bozo.c content-bozo.c lua-bozo.c
  SRCS+=	main.c
  
--LDADD=	-lcrypt
-+LDADD=	-lcrypt -lcrypto -lssl
- DPADD=	${LIBCRYPT}
- 
- WARNS?=	4
-+NO_WERROR=1
-+ 
-+BINDIR=$(PREFIX)/libexec
-+MANDIR=$(PREFIX)/man/man
- 
--.include <bsd.own.mk>
+-LDADD=	-lblocklist -lcrypt -llua -lm
+-DPADD=	${LIBBLOCKLIST} ${LIBCRYPT} ${LIBLUA} ${LIBM}
 -
--.if ${MKCRYPTO} != "no"
+ WARNS?=	4
+ 
++BINDIR=$(PREFIX)/bin
++MANDIR=$(PREFIX)/man/man
++
+ .if defined(.OS.MAKE)
+ OPSYS=	${.OS.MAKE}
+ .else
+@@ -48,9 +45,6 @@ OPSYS:=	${:!uname -s!:S/-//g:S/\///g}
+ CPPFLAGS+=	-DHAVE_NBUTIL_H
+ LDADD+=		-lnbutil
+ .endif
 -
 -LDADD+=	-lssl -lcrypto
 -DPADD+=	${LIBSSL} ${LIBCRYPTO}
--
--.else
--
--COPTS+=	-DNO_SSL_SUPPORT
--
--.endif
-+#.include <bsd.own.mk>
-+#
-+#.if ${PORT_OPTIONS:MSSL}
-+#
-+#LDADD+=	-lssl -lcrypto
-+#DPADD+=	${LIBSSL} ${LIBCRYPTO}
-+#
-+#.else
-+#
-+#COPTS+=	-DNO_SSL_SUPPORT
-+#
-+#.endif
  
  #
  # Build release things.

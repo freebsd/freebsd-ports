@@ -25,6 +25,6 @@ load_rc_config $name
 : ${bozohttpd_enable="NO"}
 : ${bozohttpd_flags="-b -t /var/empty -U nobody /"}
 
-command=%%PREFIX%%/libexec/${name}
+command=%%PREFIX%%/bin/${name}
 
 run_rc_command "$1"
