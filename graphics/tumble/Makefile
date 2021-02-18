@@ -12,7 +12,9 @@ COMMENT=	Creates a PDF file from image files
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NOT_FOR_ARCHS=	powerpc sparc64
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: blank_handler
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: blank_handler
+NOT_FOR_ARCHS=		powerpc sparc64
 NOT_FOR_ARCHS_REASON=	Only works on little endian systems
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
