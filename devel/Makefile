@@ -4835,6 +4835,7 @@
     SUBDIR += py-proselint
     SUBDIR += py-proto-plus
     SUBDIR += py-protobuf
+    SUBDIR += py-proxmoxer
     SUBDIR += py-ptable
     SUBDIR += py-ptpython
     SUBDIR += py-ptvsd
