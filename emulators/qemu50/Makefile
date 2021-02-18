@@ -15,7 +15,7 @@ COMMENT=	QEMU CPU Emulator - 5.0.X branch
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libnettle.so:security/nettle \
 		libfontconfig.so:x11-fonts/fontconfig \
