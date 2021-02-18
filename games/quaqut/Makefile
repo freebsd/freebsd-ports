@@ -9,6 +9,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20C%20sources/${PORTNAME}-${PORTVERSION
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Queries information from Unreal Tournament 2004 game servers
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: quaqut
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: quaqut
+
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 PORTDOCS=	AUTHORS COPYING ChangeLog README
