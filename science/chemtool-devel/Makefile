@@ -12,6 +12,9 @@ DISTNAME=	ct17a15
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing organic molecules easily and store them (developer version)
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: babelin
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: babelin
+
 LIB_DEPENDS=	libEMF.so:graphics/libemf
 RUN_DEPENDS=	fig2dev:print/fig2dev
 
