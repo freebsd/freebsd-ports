@@ -76,8 +76,8 @@ lib/avkys/submodules/VideoCapture/libv4l2sys.so
 lib/avkys/submodules/VideoCapture/libv4lutils.so
 lib/libavkys.so
 lib/libavkys.so.8
-lib/libavkys.so.8.7
-lib/libavkys.so.8.7.1
+lib/libavkys.so.8.8
+lib/libavkys.so.8.8.0
 %%QT_QMLDIR%%/AkQml/libAkQml.so
 %%QT_QMLDIR%%/AkQml/qmldir
 man/man1/webcamoid.1.gz

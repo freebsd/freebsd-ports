@@ -1,29 +1,30 @@
---- libAvKys/Plugins/VideoCapture/src/v4l2sys/src/capturev4l2.cpp.orig	2019-09-30 15:37:45 UTC
+--- libAvKys/Plugins/VideoCapture/src/v4l2sys/src/capturev4l2.cpp.orig	2021-02-15 15:25:23 UTC
 +++ libAvKys/Plugins/VideoCapture/src/v4l2sys/src/capturev4l2.cpp
-@@ -237,18 +237,22 @@ CaptureV4L2::CaptureV4L2(QObject *parent):
-     Capture(parent)
+@@ -727,6 +727,7 @@ void CaptureV4L2::reset()
+ CaptureV4L2Private::CaptureV4L2Private(CaptureV4L2 *self):
+     self(self)
  {
-     this->d = new CaptureV4L2Private(this);
 +#if !defined(FREEBSD_BUG224011_VIDEO0)
-     this->d->m_fsWatcher = new QFileSystemWatcher({"/dev"}, this);
-     QObject::connect(this->d->m_fsWatcher,
+     this->m_fsWatcher = new QFileSystemWatcher({"/dev"}, self);
+     QObject::connect(this->m_fsWatcher,
                       &QFileSystemWatcher::directoryChanged,
+@@ -734,12 +735,15 @@ CaptureV4L2Private::CaptureV4L2Private(CaptureV4L2 *se
                       [this] () {
-                          this->d->updateDevices();
-                      });
+         this->updateDevices();
+     });
 +#endif
-     this->d->updateDevices();
+     this->updateDevices();
  }
  
- CaptureV4L2::~CaptureV4L2()
+ CaptureV4L2Private::~CaptureV4L2Private()
  {
 +#if !defined(FREEBSD_BUG224011_VIDEO0)
-     delete this->d->m_fsWatcher;
+     delete this->m_fsWatcher;
 +#endif
-     delete this->d;
  }
  
-@@ -1145,11 +1149,13 @@ void CaptureV4L2Private::updateDevices()
+ QVariantList CaptureV4L2Private::capsFps(int fd,
+@@ -1385,11 +1389,13 @@ void CaptureV4L2Private::updateDevices()
      this->m_devicesCaps = devicesCaps;
  
      if (this->m_devices != devices) {
