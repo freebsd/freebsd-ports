@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210219:
+  AFFECTS: users of games/mangband
+  AUTHOR: adridg@FreeBSD.org
+
+  The client has updated from 1.1.3 (which has a single public server
+  left) to the current 1.5.3 (which has more public servers). If you
+  update, you can NOT connect to the old server any more. Remember
+  to finish your game before updating.
+
 20210210:
   AFFECTS: users of audio/spotifyd
   AUTHOR: rodrigo@FreeBSD.org

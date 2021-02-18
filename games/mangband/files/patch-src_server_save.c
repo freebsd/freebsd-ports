@@ -1,6 +1,6 @@
---- server/save.c.orig	2016-05-31 18:05:21 UTC
-+++ server/save.c
-@@ -941,7 +941,7 @@ bool save_player(int Ind)
+--- src/server/save.c.orig	2021-02-18 22:20:24 UTC
++++ src/server/save.c
+@@ -1109,7 +1109,7 @@ bool save_player(player_type *p_ptr)
  #ifdef VERIFY_SAVEFILE
  
  		/* Lock on savefile */
