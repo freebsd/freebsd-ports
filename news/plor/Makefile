@@ -10,6 +10,11 @@ MASTER_SITES=	SUNSITE/system/bbs/mail
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alpha-release reader for reading SOUP and QWK packets
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: area_name
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: area_name
+DEPRECATED=		listed as "Alpha-release" but last update in 2001; unmaintained
+EXPIRATION_DATE=	2021-04-18
+
 RUN_DEPENDS=	zip:archivers/zip
 
 GNU_CONFIGURE=	yes
