@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	cargo-c
-DISTVERSION=	0.7.2
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	+cargo-0.50
+DISTVERSION=	0.7.3
+DISTVERSIONSUFFIX=	+cargo-0.51
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
@@ -34,11 +33,11 @@ CARGO_CRATES=	adler-0.2.3 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
 		bitmaps-2.1.0 \
-		bstr-0.2.14 \
+		bstr-0.2.15 \
 		bytesize-1.0.1 \
-		cargo-0.50.0 \
+		cargo-0.51.0 \
 		cargo-platform-0.1.1 \
-		cbindgen-0.16.0 \
+		cbindgen-0.17.0 \
 		cc-1.0.66 \
 		cfg-if-1.0.0 \
 		clap-2.33.3 \
@@ -51,10 +50,10 @@ CARGO_CRATES=	adler-0.2.3 \
 		crossbeam-utils-0.8.1 \
 		crypto-hash-0.3.4 \
 		curl-0.4.34 \
-		curl-sys-0.4.39+curl-7.74.0 \
-		env_logger-0.8.2 \
+		curl-sys-0.4.40+curl-7.75.0 \
+		env_logger-0.8.3 \
 		filetime-0.2.14 \
-		flate2-1.0.19 \
+		flate2-1.0.20 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -72,7 +71,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		hex-0.4.2 \
 		home-0.5.3 \
 		humantime-2.1.0 \
-		idna-0.2.0 \
+		idna-0.2.2 \
 		ignore-0.4.17 \
 		im-rc-15.0.0 \
 		indexmap-1.6.1 \
@@ -80,10 +79,10 @@ CARGO_CRATES=	adler-0.2.3 \
 		jobserver-0.1.21 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.84 \
+		libc-0.2.86 \
 		libgit2-sys-0.12.18+1.1.0 \
-		libnghttp2-sys-0.1.5+1.42.0 \
-		libssh2-sys-0.2.20 \
+		libnghttp2-sys-0.1.6+1.43.0 \
+		libssh2-sys-0.2.21 \
 		libz-sys-1.1.2 \
 		log-0.4.14 \
 		matches-0.1.8 \
@@ -103,14 +102,14 @@ CARGO_CRATES=	adler-0.2.3 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.24 \
-		quote-1.0.8 \
+		quote-1.0.9 \
 		rand-0.8.3 \
 		rand_chacha-0.3.0 \
 		rand_core-0.5.1 \
-		rand_core-0.6.1 \
+		rand_core-0.6.2 \
 		rand_hc-0.3.0 \
 		rand_xoshiro-0.4.0 \
-		redox_syscall-0.2.4 \
+		redox_syscall-0.2.5 \
 		regex-1.4.3 \
 		regex-syntax-0.6.22 \
 		remove_dir_all-0.5.3 \
@@ -121,12 +120,12 @@ CARGO_CRATES=	adler-0.2.3 \
 		schannel-0.1.19 \
 		semver-0.10.0 \
 		semver-parser-0.7.0 \
-		serde-1.0.121 \
-		serde_derive-1.0.121 \
+		serde-1.0.123 \
+		serde_derive-1.0.123 \
 		serde_ignored-0.1.2 \
-		serde_json-1.0.61 \
+		serde_json-1.0.62 \
 		shell-escape-0.1.5 \
-		sized-chunks-0.6.2 \
+		sized-chunks-0.6.4 \
 		socket2-0.3.19 \
 		strip-ansi-escapes-0.1.0 \
 		strsim-0.8.0 \
@@ -137,13 +136,13 @@ CARGO_CRATES=	adler-0.2.3 \
 		tempfile-3.2.0 \
 		termcolor-1.1.2 \
 		textwrap-0.11.0 \
-		thread_local-1.1.2 \
+		thread_local-1.1.3 \
 		tinyvec-1.1.1 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.8 \
 		typenum-1.12.0 \
 		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.16 \
+		unicode-normalization-0.1.17 \
 		unicode-segmentation-1.7.1 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
