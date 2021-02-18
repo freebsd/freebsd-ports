@@ -12,6 +12,9 @@ COMMENT=	Advanced AES file encryption tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: ROUNDS
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: ROUNDS
+
 USES=		tar:tgz
 GNU_CONFIGURE=	yes
 

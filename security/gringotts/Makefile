@@ -13,6 +13,9 @@ COMMENT=	GTK application to securely store sensitive data
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: clip_xpm
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: clip_xpm
+
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libgringotts.so:security/libgringotts
 
