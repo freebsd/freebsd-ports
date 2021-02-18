@@ -138,6 +138,7 @@
     SUBDIR += plasma5-plasma-workspace-wallpapers
     SUBDIR += plata-theme
     SUBDIR += pop-gtk-themes
+    SUBDIR += pop-icon-theme
     SUBDIR += qgnomeplatform
     SUBDIR += qt5-style-plugins
     SUBDIR += qtcurve
