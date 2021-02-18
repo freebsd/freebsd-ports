@@ -94,6 +94,7 @@ include/openssl/pkcs12.h
 include/openssl/pkcs12err.h
 include/openssl/pkcs7.h
 include/openssl/pkcs7err.h
+include/openssl/proverr.h
 include/openssl/provider.h
 include/openssl/rand.h
 include/openssl/randerr.h
@@ -218,6 +219,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/ASN1_TIME_set.3.gz
 %%MAN3%%man/man3/ASN1_TYPE_get.3.gz
 %%MAN3%%man/man3/ASN1_generate_nconf.3.gz
+%%MAN3%%man/man3/ASN1_item_sign.3.gz
 %%MAN3%%man/man3/ASYNC_WAIT_CTX_new.3.gz
 %%MAN3%%man/man3/ASYNC_start_job.3.gz
 %%MAN3%%man/man3/BF_encrypt.3.gz
@@ -479,11 +481,11 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/OSSL_CRMF_pbmp_new.3.gz
 %%MAN3%%man/man3/OSSL_DECODER.3.gz
 %%MAN3%%man/man3/OSSL_DECODER_CTX.3.gz
-%%MAN3%%man/man3/OSSL_DECODER_CTX_new_by_EVP_PKEY.3.gz
+%%MAN3%%man/man3/OSSL_DECODER_CTX_new_for_pkey.3.gz
 %%MAN3%%man/man3/OSSL_DECODER_from_bio.3.gz
 %%MAN3%%man/man3/OSSL_ENCODER.3.gz
 %%MAN3%%man/man3/OSSL_ENCODER_CTX.3.gz
-%%MAN3%%man/man3/OSSL_ENCODER_CTX_new_by_EVP_PKEY.3.gz
+%%MAN3%%man/man3/OSSL_ENCODER_CTX_new_for_pkey.3.gz
 %%MAN3%%man/man3/OSSL_ENCODER_to_bio.3.gz
 %%MAN3%%man/man3/OSSL_HTTP_REQ_CTX.3.gz
 %%MAN3%%man/man3/OSSL_HTTP_transfer.3.gz
