@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Before finishing the setup of QMK by running `qmk setup`, it is advised to
+install the python3 package first:
+
+    pkg install python3
+
+The reason for this is that the qmk_firmware scripts which are downloaded
+during the setup expect python3 to be installed (instead of %%PYTHON_CMD%%).
+EOM
+}
+]

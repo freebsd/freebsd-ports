@@ -1,0 +1,9 @@
+A program to help users work with QMK keyboard firmware.
+
+Features:
+- Interact with your qmk_firmware tree from any location
+- Use qmk clone to pull down anyone's qmk_firmware fork
+- Setup your build environment with qmk setup
+- Check that your environment is correctly setup with qmk doctor
+
+WWW: https://github.com/qmk/qmk_cli

@@ -1032,6 +1032,7 @@
     SUBDIR += py-pywatchman
     SUBDIR += py-pyznap
     SUBDIR += py-queuelib
+    SUBDIR += py-qmk
     SUBDIR += py-ranger
     SUBDIR += py-rdiff-backup
     SUBDIR += py-resolve-march-native
