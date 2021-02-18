@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Simple and easy to use TCP only port scanner (Console version)
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: knocker_core_last_hostip
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: knocker_core_last_hostip
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/knocker \
