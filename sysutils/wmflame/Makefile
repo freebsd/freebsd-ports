@@ -13,6 +13,9 @@ COMMENT=	Dockapp that shows the load average as a flame
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: Root
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: Root
+
 USES=		gmake xorg
 USE_XORG=	x11 xpm
 
