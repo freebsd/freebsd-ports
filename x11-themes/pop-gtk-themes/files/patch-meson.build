@@ -1,0 +1,7 @@
+--- meson.build.orig	2020-11-17 17:47:54 UTC
++++ meson.build
+@@ -6,4 +6,3 @@ project('Pop',
+ 
+ subdir('gnome-shell')
+ subdir('gtk')
+-subdir('sounds')
