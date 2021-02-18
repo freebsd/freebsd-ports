@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webauthn
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ COMMENT=	WebAuthn ruby server library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-android_key_attestation>=0.3.0:security/rubygem-android_key_attestation \
+RUN_DEPENDS=	rubygem-android_key_attestation>=0.3.0<0.4:security/rubygem-android_key_attestation \
 		rubygem-awrence>=1.1<2:devel/rubygem-awrence \
 		rubygem-bindata>=2.4<3:devel/rubygem-bindata \
 		rubygem-cbor>=0.5.9<0.6:devel/rubygem-cbor \
