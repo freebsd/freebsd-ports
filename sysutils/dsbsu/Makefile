@@ -1,9 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	dsbsu
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://freeshell.de/~mk/download/
 
 MAINTAINER=	mk@nic-nac-project.org
 COMMENT=	Qt frontend to su(1)
@@ -15,7 +14,8 @@ USES=		compiler:c++11-lang gl qmake qt:5 tar:tgz xorg
 USE_GL=		gl
 USE_QT=		buildtools_build core gui linguisttools_build widgets
 
-PLIST_FILES=	bin/dsbsu share/applications/dsbsu.desktop \
-		${DATADIR}/dsbsu_de.qm
+USE_GITHUB=	yes
+GH_ACCOUNT=	mrclksr
+GH_PROJECT=	DSBSu
 
 .include <bsd.port.mk>
