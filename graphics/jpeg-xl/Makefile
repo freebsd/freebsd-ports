@@ -45,7 +45,6 @@ GIMP_LIB_DEPENDS=	libgegl-0.4.so:graphics/gegl \
 
 JPEG_USES=		jpeg
 JPEG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_JPEG
-JPEG_BROKEN_OFF=	https://gitlab.com/wg1/jpeg-xl/-/issues/65
 
 OPENEXR_LIB_DEPENDS=	libHalf.so:graphics/ilmbase \
 			libIlmImf.so:graphics/openexr
