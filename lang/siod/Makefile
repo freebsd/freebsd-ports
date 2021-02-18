@@ -17,7 +17,7 @@ USES=		uidfix tar:tgz dos2unix
 
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/siod
 
-DOS2UNIX_FILES=	sql_oracle.c ss.c
+DOS2UNIX_FILES=	sql_oracle.c ss.c siod.scm
 OPTIONS_DEFINE=	SQL_SYBASE GD NDBM REGEX SS STATFS DOCS
 OPTIONS_DEFINE_i386=SQL_ORACLE	# oracle-client port only available for i386
 OPTIONS_DEFAULT=NDBM REGEX SS

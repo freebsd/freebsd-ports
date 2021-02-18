@@ -1,5 +1,5 @@
---- statfs.c	2014-03-25 04:10:42.000000000 -0400
-+++ statfs.c	2021-02-17 16:39:52.652229000 -0500
+--- siod-2014/statfs.c	2014-03-25 04:10:42.000000000 -0400
++++ work/siod-3.6.2/statfs.c	2021-02-17 22:30:00.996673000 -0500
 @@ -4,9 +4,15 @@
  
  #include <stdio.h>
@@ -16,7 +16,7 @@
 +#ifndef BSD
  #define MNT_NUMTYPES	128
  /*
-@@ -14,16 +20,83 @@
+@@ -14,16 +20,87 @@
   */
  extern char *mnt_names[];
 +#endif
@@ -82,8 +82,12 @@
   struct statfs s;
   iflag = no_interrupt(1);
 - if (statfs(get_c_string(path),&s,sizeof(s)))
-+ if (statfs(get_c_string(path), &s
-+#ifndef BSD
++ if (TYPE(path) == tc_c_file) {
++   int fd = fileno(path->storage_as.c_file.f);
++   if (fstatfs(fd, &s))
++     return(err("fstatfs", llast_c_errmsg(-1)));
++ } else if (statfs(get_c_string(path), &s
++#if !defined(BSD) && !defined(linux)
 +    ,sizeof(s)
 +#endif
 +   ))
@@ -104,7 +108,7 @@
 +			 : flocons(s.f_type),
  		 "bsize",flocons(s.f_bsize),
  		 "blocks",flocons(s.f_blocks),
-@@ -34,8 +107,18 @@
+@@ -34,8 +111,18 @@
  		 "mntonname",strcons(-1,s.f_mntonname),
  		 "mntfromname",strcons(-1,s.f_mntfromname),
 +#ifdef BSD
@@ -124,28 +128,28 @@
 +static LISP decode_fstab(const struct fstab *p)
  {if (p)
     return(symalist("spec",strcons(-1,p->fs_spec),
-@@ -50,5 +133,5 @@
+@@ -50,5 +137,5 @@
     return(NIL);}
  
 -LISP lgetfsent(void)
 +static LISP lgetfsent(void)
  {long iflag;
   LISP result;
-@@ -58,5 +141,5 @@
+@@ -58,5 +145,5 @@
   return(result);}
  
 -LISP lsetfsent(void)
 +static LISP lsetfsent(void)
  {long iflag;
   LISP result;
-@@ -66,5 +149,5 @@
+@@ -66,5 +153,5 @@
   return(result);}
  
 -LISP lendfsent(void)
 +static LISP lendfsent(void)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -73,4 +156,6 @@
+@@ -73,4 +160,6 @@
   return(NIL);}
  
 +void init_statfs(void); /* The sole symbol exported from a SIOD-module */
