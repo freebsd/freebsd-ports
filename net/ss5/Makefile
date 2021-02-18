@@ -13,6 +13,9 @@ COMMENT=	SOCKS v4/v5 application layer gateway with many features
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: ACMutex
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: ACMutex
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]+//}
 
 USES=		ssl
