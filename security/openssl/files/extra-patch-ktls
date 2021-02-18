@@ -1,8 +1,8 @@
 diff --git CHANGES CHANGES
-index 37dd60b726..4d61c1dadb 100644
+index 1ab64b35c9..a4a63a9bea 100644
 --- CHANGES
 +++ CHANGES
-@@ -390,6 +390,11 @@
+@@ -427,6 +427,11 @@
       necessary to configure just to create a source distribution.
       [Richard Levitte]
  
@@ -15,7 +15,7 @@ index 37dd60b726..4d61c1dadb 100644
  
    *) Timing vulnerability in DSA signature generation
 diff --git Configure Configure
-index 1d73d06e1b..29e655da96 100755
+index b286dd0678..f66f6bb3b1 100755
 --- Configure
 +++ Configure
 @@ -341,6 +341,7 @@ my @dtls = qw(dtls1 dtls1_2);
@@ -69,10 +69,10 @@ index 1d73d06e1b..29e655da96 100755
  # do this late because some of them depend on %disabled.
  
 diff --git INSTALL INSTALL
-index f5118428b3..be84f2aa8e 100644
+index f3ac727183..f6f754fd5e 100644
 --- INSTALL
 +++ INSTALL
-@@ -262,6 +262,15 @@
+@@ -263,6 +263,15 @@
                     Don't build the AFALG engine. This option will be forced if
                     on a platform that does not support AFALG.
  
@@ -350,7 +350,7 @@ index 6251f3d46a..a1fc23c7c9 100644
          ret = (b->flags & BIO_FLAGS_IN_EOF) != 0 ? 1 : 0;
          break;
 diff --git crypto/err/openssl.txt crypto/err/openssl.txt
-index 815460b24f..d547c45913 100644
+index 7e1776375d..b22e8a735c 100644
 --- crypto/err/openssl.txt
 +++ crypto/err/openssl.txt
 @@ -1318,6 +1318,7 @@ SSL_F_SSL_RENEGOTIATE:516:SSL_renegotiate
@@ -518,7 +518,7 @@ index 13e56f0c57..247a39fc03 100644
  
  Copyright 2017-2019 The OpenSSL Project Authors. All Rights Reserved.
 diff --git doc/man3/SSL_write.pod doc/man3/SSL_write.pod
-index 5e3ce1e7e4..20c7953deb 100644
+index 5e3ce1e7e4..9b271d8e65 100644
 --- doc/man3/SSL_write.pod
 +++ doc/man3/SSL_write.pod
 @@ -2,12 +2,13 @@
@@ -551,7 +551,7 @@ index 5e3ce1e7e4..20c7953deb 100644
  =head1 NOTES
  
  In the paragraphs below a "write function" is defined as one of either
-@@ -104,17 +113,35 @@ You should instead call SSL_get_error() to find out if it's retryable.
+@@ -104,17 +113,36 @@ You should instead call SSL_get_error() to find out if it's retryable.
  
  =back
  
@@ -562,7 +562,8 @@ index 5e3ce1e7e4..20c7953deb 100644
 +=item Z<>>= 0
 +
 +The write operation was successful, the return value is the number
-+of bytes of the file written to the TLS/SSL connection.
++of bytes of the file written to the TLS/SSL connection. The return
++value can be less than B<size> for a partial write.
 +
 +=item E<lt> 0
 +
@@ -665,10 +666,10 @@ index c343b27629..521b5fa219 100644
 +#endif
 diff --git include/internal/ktls.h include/internal/ktls.h
 new file mode 100644
-index 0000000000..9032c0ed61
+index 0000000000..622d7be76d
 --- /dev/null
 +++ include/internal/ktls.h
-@@ -0,0 +1,403 @@
+@@ -0,0 +1,400 @@
 +/*
 + * Copyright 2018 The OpenSSL Project Authors. All Rights Reserved.
 + *
@@ -863,15 +864,12 @@ index 0000000000..9032c0ed61
 +static ossl_inline ossl_ssize_t ktls_sendfile(int s, int fd, off_t off,
 +                                              size_t size, int flags)
 +{
-+    off_t sbytes;
++    off_t sbytes = 0;
 +    int ret;
 +
 +    ret = sendfile(fd, s, off, size, NULL, &sbytes, flags);
-+    if (ret == -1) {
-+	    if (errno == EAGAIN && sbytes != 0)
-+		    return sbytes;
-+	    return -1;
-+    }
++    if (ret == -1 && sbytes == 0)
++        return -1;
 +    return sbytes;
 +}
 +
@@ -2084,7 +2082,7 @@ index 98057921f8..382f4b6d7b 100644
  
  void SSL_set_record_padding_callback_arg(SSL *ssl, void *arg)
 diff --git ssl/ssl_local.h ssl/ssl_local.h
-index 8ddbde7729..dc430fe40b 100644
+index 8c3542a542..c10e7d52ce 100644
 --- ssl/ssl_local.h
 +++ ssl/ssl_local.h
 @@ -34,6 +34,8 @@
@@ -2096,7 +2094,7 @@ index 8ddbde7729..dc430fe40b 100644
  
  # ifdef OPENSSL_BUILD_SHLIBSSL
  #  undef OPENSSL_EXTERN
-@@ -2618,6 +2620,17 @@ __owur int ssl_log_secret(SSL *ssl, const char *label,
+@@ -2617,6 +2619,17 @@ __owur int ssl_log_secret(SSL *ssl, const char *label,
  #define EARLY_EXPORTER_SECRET_LABEL "EARLY_EXPORTER_SECRET"
  #define EXPORTER_SECRET_LABEL "EXPORTER_SECRET"
  
@@ -2468,7 +2466,7 @@ index b8fb07f210..d9f050ee34 100644
      return ret;
  }
 diff --git test/build.info test/build.info
-index 56ac14eabd..e8454e2e03 100644
+index bc3dae81f9..e5ccaab5ba 100644
 --- test/build.info
 +++ test/build.info
 @@ -544,7 +544,7 @@ INCLUDE_MAIN___test_libtestutil_OLB = /INCLUDE=MAIN
@@ -2494,7 +2492,7 @@ index 5490885309..3478e540ed 100644
  plan tests => 1;
  
 diff --git test/sslapitest.c test/sslapitest.c
-index ad1824c68d..f6a61cab4e 100644
+index 4a27ee1ba2..f846bcb4ee 100644
 --- test/sslapitest.c
 +++ test/sslapitest.c
 @@ -7,6 +7,7 @@
@@ -2929,7 +2927,7 @@ index ad1824c68d..f6a61cab4e 100644
  static int test_large_message_tls(void)
  {
      return execute_test_large_message(TLS_server_method(), TLS_client_method(),
-@@ -6691,6 +7097,12 @@ int setup_tests(void)
+@@ -6747,6 +7153,12 @@ int setup_tests(void)
          return 0;
      }
  
