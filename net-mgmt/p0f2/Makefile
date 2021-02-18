@@ -10,6 +10,9 @@ DISTNAME=	p0f-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passive OS fingerprinting tool
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: file_cksum
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: file_cksum
+
 CONFLICTS=	p0f-3.*
 
 USES=		gmake tar:tgz

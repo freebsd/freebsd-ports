@@ -13,6 +13,9 @@ COMMENT=	GNU console based Jabber client
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: cin
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: cin
+
 LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth \
 		libguile-2.2.so:lang/guile2 \
 		libgc-threaded.so:devel/boehm-gc-threaded
