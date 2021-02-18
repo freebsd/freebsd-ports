@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.16.0/build/config/freetype/freetype.gni.orig	2020-06-26 16:27:54 UTC
-+++ cargo-crates/rusty_v8-0.16.0/build/config/freetype/freetype.gni
+--- cargo-crates/rusty_v8-0.17.0/build/config/freetype/freetype.gni.orig	2020-06-26 16:27:54 UTC
++++ cargo-crates/rusty_v8-0.17.0/build/config/freetype/freetype.gni
 @@ -10,5 +10,5 @@ declare_args() {
    # than version 2.7.1 and have color bitmap support compiled in. WARNING:
    # System FreeType configurations other than as described WILL INTRODUCE TEXT

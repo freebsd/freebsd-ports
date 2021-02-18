@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.16.0/build/config/compiler/BUILD.gn.orig   2021-01-19 00:12:27 UTC
-+++ cargo-crates/rusty_v8-0.16.0/build/config/compiler/BUILD.gn
+--- cargo-crates/rusty_v8-0.17.0/build/config/compiler/BUILD.gn.orig   2021-01-19 00:12:27 UTC
++++ cargo-crates/rusty_v8-0.17.0/build/config/compiler/BUILD.gn
 @@ -129,7 +129,7 @@ declare_args() {
    #
    # TODO(crbug.com/977230): Enabling this when 'use_xcode_clang' is true may

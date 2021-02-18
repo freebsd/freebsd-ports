@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.16.0/v8/src/api/api.cc.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/rusty_v8-0.16.0/v8/src/api/api.cc
+--- cargo-crates/rusty_v8-0.17.0/v8/src/api/api.cc.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/rusty_v8-0.17.0/v8/src/api/api.cc
 @@ -5674,7 +5674,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }

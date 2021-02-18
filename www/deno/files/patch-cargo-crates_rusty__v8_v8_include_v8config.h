@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.16.0/v8/include/v8config.h.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/rusty_v8-0.16.0/v8/include/v8config.h
+--- cargo-crates/rusty_v8-0.17.0/v8/include/v8config.h.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/rusty_v8-0.17.0/v8/include/v8config.h
 @@ -273,7 +273,18 @@
  # define V8_HAS_ATTRIBUTE_WARN_UNUSED_RESULT \
      (__has_attribute(warn_unused_result))

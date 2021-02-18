@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.16.0/v8/src/base/platform/platform-posix.cc.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/rusty_v8-0.16.0/v8/src/base/platform/platform-posix.cc
+--- cargo-crates/rusty_v8-0.17.0/v8/src/base/platform/platform-posix.cc.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/rusty_v8-0.17.0/v8/src/base/platform/platform-posix.cc
 @@ -433,7 +433,7 @@ bool OS::DiscardSystemPages(void* address, size_t size
  
  // static

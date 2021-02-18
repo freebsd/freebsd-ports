@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.16.0/build/linux/chrome.map.orig	2020-06-26 16:27:54 UTC
-+++ cargo-crates/rusty_v8-0.16.0/build/linux/chrome.map
+--- cargo-crates/rusty_v8-0.17.0/build/linux/chrome.map.orig	2020-06-26 16:27:54 UTC
++++ cargo-crates/rusty_v8-0.17.0/build/linux/chrome.map
 @@ -1,4 +1,7 @@
  {
 +local:

@@ -1,5 +1,5 @@
---- cargo-crates/ring-0.16.19/src/cpu.rs.orig	2020-11-30 21:30:03.000000000 +0100
-+++ cargo-crates/ring-0.16.19/src/cpu.rs	2020-12-09 09:53:52.469225000 +0100
+--- cargo-crates/ring-0.16.20/src/cpu.rs.orig	2020-11-30 21:30:03.000000000 +0100
++++ cargo-crates/ring-0.16.20/src/cpu.rs	2020-12-09 09:53:52.469225000 +0100
 @@ -31,7 +31,7 @@ pub(crate) fn features() -> Features {
          target_arch = "x86_64",
          all(

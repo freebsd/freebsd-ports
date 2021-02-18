@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.16.0/build/config/sysroot.gni.orig	2020-06-26 16:27:54 UTC
-+++ cargo-crates/rusty_v8-0.16.0/build/config/sysroot.gni
+--- cargo-crates/rusty_v8-0.17.0/build/config/sysroot.gni.orig	2020-06-26 16:27:54 UTC
++++ cargo-crates/rusty_v8-0.17.0/build/config/sysroot.gni
 @@ -21,9 +21,9 @@ declare_args() {
  
    # Controls default is_linux sysroot. If set to true, and sysroot
