@@ -10,6 +10,9 @@ COMMENT=	Network sniffer that logs DNS replies for use in passive DNS setups
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: config
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: config
+
 LIB_DEPENDS=	libldns.so:dns/ldns
 
 USES=		autoreconf gmake libtool
