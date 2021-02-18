@@ -12,6 +12,9 @@ COMMENT=	Incoming mail monitor dockapp with a similar look to wmcpuload
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: application
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: application
+
 USES=		gmake gnome localbase:ldflags pkgconfig ssl tar:bzip2 xorg
 USE_XORG=	xpm
 USE_GNOME=	gtk20
