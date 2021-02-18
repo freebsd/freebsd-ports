@@ -5774,6 +5774,7 @@
 %%WWWDIR%%/core/modules/image/tests/src/FunctionalJavascript/ImageAdminStylesTest.php
 %%WWWDIR%%/core/modules/image/tests/src/FunctionalJavascript/ImageFieldTestBase.php
 %%WWWDIR%%/core/modules/image/tests/src/FunctionalJavascript/ImageFieldValidateTest.php
+%%WWWDIR%%/core/modules/image/tests/src/FunctionalJavascript/ImageFieldWidgetMultipleTest.php
 %%WWWDIR%%/core/modules/image/tests/src/FunctionalJavascript/QuickEditImageEditorTestTrait.php
 %%WWWDIR%%/core/modules/image/tests/src/FunctionalJavascript/QuickEditImageTest.php
 %%WWWDIR%%/core/modules/image/tests/src/Kernel/ImageFieldCreationTrait.php
@@ -13266,6 +13267,7 @@
 %%WWWDIR%%/core/scripts/css/postcss-build.js
 %%WWWDIR%%/core/scripts/css/postcss-watch.js
 %%WWWDIR%%/core/scripts/db-tools.php
+%%WWWDIR%%/core/scripts/dev/commit-code-check.sh
 %%WWWDIR%%/core/scripts/drupal
 %%WWWDIR%%/core/scripts/drupal.sh
 %%WWWDIR%%/core/scripts/dump-database-d6.sh
@@ -13692,6 +13694,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Field/FieldItemTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Field/FieldMissingTypeTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Field/FieldSettingsTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Field/MapBaseFieldTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/DirectoryTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileCopyTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/File/FileDeleteRecursiveTest.php
@@ -14631,6 +14634,8 @@
 %%WWWDIR%%/core/tests/fixtures/files/sql-2.sql
 %%WWWDIR%%/core/tests/fixtures/files/translations/drupal-8.0.0-beta2.hu.po
 %%WWWDIR%%/core/tests/fixtures/files/translations/drupal-8.0.0.de.po
+%%WWWDIR%%/core/tests/fixtures/files/translations/drupal-8.0.0.fr____CA.po
+%%WWWDIR%%/core/tests/fixtures/files/translations/drupal-8.0.x.fr-CA.po
 %%WWWDIR%%/core/tests/fixtures/test_stable/test_stable.info.yml
 %%WWWDIR%%/core/tests/fixtures/test_stable/test_stable.theme
 %%WWWDIR%%/core/themes/bartik/README.txt
@@ -16090,8 +16095,12 @@
 %%WWWDIR%%/vendor/composer/autoload_static.php
 %%WWWDIR%%/vendor/composer/include_paths.php
 %%WWWDIR%%/vendor/composer/installed.json
+%%WWWDIR%%/vendor/composer/installers/.github/workflows/continuous-integration.yml
+%%WWWDIR%%/vendor/composer/installers/.github/workflows/lint.yml
+%%WWWDIR%%/vendor/composer/installers/.github/workflows/phpstan.yml
 %%WWWDIR%%/vendor/composer/installers/LICENSE
 %%WWWDIR%%/vendor/composer/installers/composer.json
+%%WWWDIR%%/vendor/composer/installers/phpstan.neon.dist
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/AglInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/AimeosInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/AnnotateCmsInstaller.php
@@ -16160,6 +16169,7 @@
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/Plugin.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PortoInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PrestashopInstaller.php
+%%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/ProcessWireInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PuppetInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/PxcmsInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/RadPHPInstaller.php
@@ -16171,6 +16181,7 @@
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/ShopwareInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/SilverStripeInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/SiteDirectInstaller.php
+%%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/StarbugInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/SyDESInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/SyliusInstaller.php
 %%WWWDIR%%/vendor/composer/installers/src/Composer/Installers/Symfony1Installer.php
@@ -16912,6 +16923,9 @@
 %%WWWDIR%%/vendor/paragonie/random_compat/other/build_phar.php
 %%WWWDIR%%/vendor/paragonie/random_compat/psalm-autoload.php
 %%WWWDIR%%/vendor/paragonie/random_compat/psalm.xml
+%%WWWDIR%%/vendor/pear/archive_tar/.github/FUNDING.yml
+%%WWWDIR%%/vendor/pear/archive_tar/.github/dependabot.yml
+%%WWWDIR%%/vendor/pear/archive_tar/.github/workflows/build.yml
 %%WWWDIR%%/vendor/pear/archive_tar/.gitignore
 %%WWWDIR%%/vendor/pear/archive_tar/.travis.yml
 %%WWWDIR%%/vendor/pear/archive_tar/Archive/Tar.php
