@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}_0.4-1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical logo interpreter
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: my_turtle
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: my_turtle
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.4
 
 USES=		gmake gnome pathfix pkgconfig

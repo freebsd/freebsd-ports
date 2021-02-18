@@ -13,6 +13,9 @@ COMMENT=	Shakespeare programming language
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: cast
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: cast
+
 USES=		bison gmake
 
 ALL_EXAMPLES=	Makefile fibonacci.spl fibonacci2.spl guess.spl hello.spl \
