@@ -3,16 +3,13 @@
 
 PORTNAME=	golddig
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.NetBSD.org/~chuck/gz/
 DISTNAME=	${PORTNAME}C${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Getting the Gold and Avoiding Death
-
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: background
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: background
 
 USES=		xorg
 USE_XORG=	x11
