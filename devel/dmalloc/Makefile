@@ -2,45 +2,46 @@
 # $FreeBSD$
 
 PORTNAME=	dmalloc
-PORTVERSION=	5.5.2
-PORTREVISION=	1
+DISTVERSION=	5.6.5
 CATEGORIES=	devel
-# Version 5.5.2 is only available at this URL
 MASTER_SITES=	http://dmalloc.com/releases/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Portable debug memory allocation library
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-threads --enable-shlib
-GNU_CONFIGURE_PREFIX=	"${STAGEDIR}${PREFIX}"
-CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_DATA}"
-CFLAGS=		-fPIC
-USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
+LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+USES=		tar:tgz
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+GNU_CONFIGURE_PREFIX=	"${STAGEDIR}${PREFIX}"
+CONFIGURE_ARGS=	--enable-threads --enable-shlib
+CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_DATA}"
+
+MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	all heavy
 INSTALL_TARGET=	install
 
+CFLAGS+=	-fPIC
+
 OPTIONS_DEFINE=	DOCS
 
+DOCS_BUILD_DEPENDS=	makeinfo:print/texinfo \
+			texi2html:textproc/texi2html
 DOCS_INSTALL_TARGET=	installdocs
+DOCS_INFO=	dmalloc
 
 post-install:
-	${CHMOD} 755 ${STAGEDIR}${PREFIX}/bin/dmalloc
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dmalloc
 	@(cd ${STAGEDIR}${PREFIX}/lib; \
-		${CHMOD} 644 libdmalloc.so.1; \
 		${STRIP_CMD} libdmalloc.so.1; \
 		${LN} -sf libdmalloc.so.1 libdmalloc.so; \
-		${CHMOD} 644 libdmallocxx.so.1; \
 		${STRIP_CMD} libdmallocxx.so.1; \
 		${LN} -sf libdmallocxx.so.1 libdmallocxx.so; \
-		${CHMOD} 644 libdmallocth.so.1; \
 		${STRIP_CMD} libdmallocth.so.1; \
 		${LN} -sf libdmallocth.so.1 libdmallocth.so; \
-		${CHMOD} 644 libdmallocthcxx.so.1; \
 		${STRIP_CMD} libdmallocthcxx.so.1; \
 		${LN} -sf libdmallocthcxx.so.1 libdmallocthcxx.so)
 
