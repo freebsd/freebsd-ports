@@ -3,13 +3,15 @@
   message: <<EOM
 bareos webui was installed
 
-Please note that everything has been installed in %%WWWDIR%%. You can
-look bareos-webui installation/configuration instructions at:
+Please note that everything has been installed in %%WWWDIR%% and 
+%%ETCDIRWEBUI%%. You can look bareos-webui installation/configuration 
+instructions at:
 
 https://docs.bareos.org/IntroductionAndTutorial/InstallingBareosWebui.html
 
-1) Configuration files (webserver and webui) are stored at %%ETCDIR%%
-2) This install some bareos-dir configuration samples at %%PREFIX%%/etc/bareos.
+1) Configuration files are stored at %%ETCDIRWEBUI%%
+2) Some webserver configuration samples are installed at %%ETCDIRWEBUI%%
+3) This install some bareos-dir configuration samples at %%PREFIX%%/etc/bareos.
    Don't forget change permissions to user/group used by bareos-dir on server 
    where it is installed
 EOM

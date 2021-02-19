@@ -1,18 +1,17 @@
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
-%%ETCDIR%%/apache-bareos-webui.conf
+%%ETCDIRWEBUI%%/apache-bareos-webui.conf
 @sample(,www,640) %%ETCDIR%%/bareos-dir.d/console/admin.conf.sample
 @sample(,www,640) %%ETCDIR%%/bareos-dir.d/profile/webui-admin.conf.sample
 @sample(,www,640) %%ETCDIR%%/bareos-dir.d/profile/webui-limited.conf.sample
 @sample(,www,640) %%ETCDIR%%/bareos-dir.d/profile/webui-readonly.conf.sample
-@(,www,640) %%ETCDIR%%/configuration.ini
-@(,www,640) %%ETCDIR%%/directors.ini
-%%ETCDIR%%/nginx-bareos-webui.conf
+@(,www,640) %%ETCDIRWEBUI%%/configuration.ini
+@(,www,640) %%ETCDIRWEBUI%%/directors.ini
+%%ETCDIRWEBUI%%/nginx-bareos-webui.conf
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/config/application.config.php
 %%WWWDIR%%/config/autoload/README.md
 %%WWWDIR%%/config/autoload/global.php
-%%WWWDIR%%/config/autoload/global.php.in
 %%WWWDIR%%/init_autoloader.php
 %%WWWDIR%%/module/Application/Module.php
 %%WWWDIR%%/module/Application/autoload_classmap.php
@@ -64,9 +63,7 @@
 %%WWWDIR%%/module/Application/view/layout/install.phtml
 %%WWWDIR%%/module/Application/view/layout/json.phtml
 %%WWWDIR%%/module/Application/view/layout/layout.phtml
-%%WWWDIR%%/module/Application/view/layout/layout.phtml.in
 %%WWWDIR%%/module/Application/view/layout/login.phtml
-%%WWWDIR%%/module/Application/view/layout/login.phtml.in
 %%WWWDIR%%/module/Application/view/partial/breadcrumb.phtml
 %%WWWDIR%%/module/Application/view/partial/paginator.phtml
 %%WWWDIR%%/module/Auth/Module.php
