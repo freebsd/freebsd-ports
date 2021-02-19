@@ -13,6 +13,7 @@ DISTNAME=	dcl-${PORTVERSION}-C
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	Scientific graphic library for geoscience
 
+BROKEN=			fails to fetch from mastersite (newest release is 7.4.0 of 2020611)
 BROKEN_armv6=		fails to link: final link failed: Nonrepresentable section on output
 BROKEN_armv7=		fails to link: final link failed: Nonrepresentable section on output
 
