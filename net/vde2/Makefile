@@ -3,7 +3,7 @@
 
 PORTNAME=	vde2
 PORTVERSION=	2.3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	SF/vde/${PORTNAME}/${PORTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	User-mode virtual ethernet infrastructure
 LICENSE=	BSD3CLAUSE GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libpcap.so:net/libpcap
+LIB_DEPENDS=	libpcap.so.1:net/libpcap
 
 USES=		gmake libtool pathfix shebangfix ssl
 USE_LDCONFIG=	yes
