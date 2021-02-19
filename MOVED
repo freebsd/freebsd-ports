@@ -16173,3 +16173,4 @@ textproc/py-sphinxcontrib-websupport11|textproc/py-sphinxcontrib-websupport|2021
 textproc/py-sphinx18|textproc/py-sphinx|2021-02-17|Has expired: Old version, use textproc/py-sphinx instead
 audio/herrie||2021-02-17|Removed
 sysutils/uefi-edk2-bhyve-devel|sysutils/uefi-edk2-bhyve|2021-02-17|Development version no longer necessary
+graphics/py-graph-core|graphics/py-pygraph|2021-02-19|Is outdated and broken with python3, use graphics/py-pygraph instead

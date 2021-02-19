@@ -1,0 +1,8 @@
+Pygraph aims to be an easy-to-use and functional graph library that
+doesn't sacrifice advanced capabilities or usability in the process.
+
+By implementing the library in pure Python, it can be installed without
+any dependencies aside from the Python core, enabling maximum ease of
+use.
+
+WWW: https://github.com/jciskey/pygraph
