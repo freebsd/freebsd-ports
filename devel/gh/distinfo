@@ -1,6 +1,6 @@
-TIMESTAMP = 1611320258
-SHA256 (cli-cli-v1.5.0_GH0.tar.gz) = 49c42a3b951b67e29bc66e054fedb90ac2519f7e1bfc5c367e82cb173e4bb056
-SIZE (cli-cli-v1.5.0_GH0.tar.gz) = 396453
+TIMESTAMP = 1613643215
+SHA256 (cli-cli-v1.6.0_GH0.tar.gz) = 1b7a9c74f476310e2b22c46ee6a036dd73a628326bc3dc80b07014d99cc80689
+SIZE (cli-cli-v1.6.0_GH0.tar.gz) = 419225
 SHA256 (AlecAivazis-survey-v2.2.7_GH0.tar.gz) = ccb13a9f19d40d2ca74584dcfd8515fc76a4f4ddc96a3bd214222bab829303e3
 SIZE (AlecAivazis-survey-v2.2.7_GH0.tar.gz) = 1566851
 SHA256 (MakeNowJust-heredoc-v1.0.0_GH0.tar.gz) = 3703d1c9e659c274c5e2d712e4d66f60620e03513fc380b1d3acafb3ca037400

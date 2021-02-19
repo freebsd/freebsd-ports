@@ -25,6 +25,8 @@
 %%MANPAGES%%man/man1/gh-issue-close.1.gz
 %%MANPAGES%%man/man1/gh-issue-comment.1.gz
 %%MANPAGES%%man/man1/gh-issue-create.1.gz
+%%MANPAGES%%man/man1/gh-issue-delete.1.gz
+%%MANPAGES%%man/man1/gh-issue-edit.1.gz
 %%MANPAGES%%man/man1/gh-issue-list.1.gz
 %%MANPAGES%%man/man1/gh-issue-reopen.1.gz
 %%MANPAGES%%man/man1/gh-issue-status.1.gz
@@ -36,6 +38,7 @@
 %%MANPAGES%%man/man1/gh-pr-comment.1.gz
 %%MANPAGES%%man/man1/gh-pr-create.1.gz
 %%MANPAGES%%man/man1/gh-pr-diff.1.gz
+%%MANPAGES%%man/man1/gh-pr-edit.1.gz
 %%MANPAGES%%man/man1/gh-pr-list.1.gz
 %%MANPAGES%%man/man1/gh-pr-merge.1.gz
 %%MANPAGES%%man/man1/gh-pr-ready.1.gz
@@ -60,5 +63,8 @@
 %%MANPAGES%%man/man1/gh-secret-remove.1.gz
 %%MANPAGES%%man/man1/gh-secret-set.1.gz
 %%MANPAGES%%man/man1/gh-secret.1.gz
+%%MANPAGES%%man/man1/gh-ssh-key-add.1.gz
+%%MANPAGES%%man/man1/gh-ssh-key-list.1.gz
+%%MANPAGES%%man/man1/gh-ssh-key.1.gz
 %%MANPAGES%%man/man1/gh.1.gz
 bin/gh
