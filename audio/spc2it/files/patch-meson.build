@@ -1,0 +1,11 @@
+--- meson.build.orig	2021-02-19 18:21:16 UTC
++++ meson.build
+@@ -19,7 +19,7 @@ if target_machine.system() == 'windows'
+ 		'-static',
+ 	]
+ endif
+-if target_machine.system() == 'linux'
++if target_machine.system() == 'linux' or target_machine.system() == 'freebsd'
+ 	spc2it_ldflags += [
+ 		'-lm',
+ 	]
