@@ -16,4 +16,4 @@ Differences from 1.2 stream
 
 - It drops all support for databases prior to PostgreSQL version 8.3.
 
-WWW: http://www.slony.info/
+WWW: https://www.slony.info/
