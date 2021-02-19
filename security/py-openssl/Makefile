@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssl
-PORTVERSION=	19.1.0
+PORTVERSION=	20.0.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,7 +35,7 @@ CPE_PRODUCT=	py${PORTNAME}
 #   a internet connection
 # * test_set_verify_callback_exception: Fails on *BSD systems, see also
 #   https://github.com/pyca/pyopenssl/issues/656 for further details
-# 
+#
 # The system clock must be in sync otherwise the test "test_verify_with_time"
 # will fail.
 do-test:
