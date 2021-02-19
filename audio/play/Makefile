@@ -14,6 +14,8 @@ CONFLICTS=	sox-[0-9]*
 
 USES=		uidfix
 MAKE_ARGS=	CFLAGS="${CFLAGS}" MANDIR="${PREFIX}/man/ja/man" BINDIR="${PREFIX}/bin"
+# XXX PIE static libraries are not supported by base system /usr/share/mk
+MAKE_ARGS+=	WITHOUT_PIE=true
 
 PLIST_FILES=	bin/play man/ja/man1/play.1.gz
 
