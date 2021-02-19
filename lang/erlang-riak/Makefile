@@ -10,6 +10,9 @@ DIST_SUBDIR=	erlang
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Custom erlang from Basho to be used with riak2
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: erts_allctr_wrappers
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: erts_allctr_wrappers
+
 WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
 
 ERL_RELEASE=	R16B02-basho5
