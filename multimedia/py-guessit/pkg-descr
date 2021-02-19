@@ -5,4 +5,4 @@ It has a very powerful filename matcher that allows to guess a lot of metadata
 from a video using only its filename. This matcher works with both movies and
 tv shows episodes.
 
-WWW: https://guessit.readthedocs.io/en/latest/
+WWW: https://doc.guessit.io/
