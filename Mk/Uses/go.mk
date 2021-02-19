@@ -19,6 +19,11 @@
 #
 # You can set the following variables to control the process.
 #
+# GO_MODULE
+#	The name of the module as specified by "module" directive in go.mod.
+#	In most cases, this is the only requred variable for ports that
+#	use Go modules.
+#
 # GO_PKGNAME
 #	The name of the package when building in GOPATH mode.  This
 #	is the directory that will be created in ${GOPATH}/src.  If not set
@@ -93,6 +98,9 @@ CGO_LDFLAGS+=	-L${LOCALBASE}/lib
 GOARM?=		${ARCH:C/armv//}
 .endif
 
+GO_GOPROXY?=	https://proxy.golang.org
+GO_GOSUMDB?=	sum.golang.org
+
 # Read-only variables
 
 GO_CMD=		${LOCALBASE}/bin/go
@@ -105,15 +113,33 @@ GO_ENV+=	CGO_ENABLED=${CGO_ENABLED} \
 .if ${go_ARGS:Mmodules}
 GO_BUILDFLAGS+=	-mod=vendor
 GO_TESTFLAGS+=	-mod=vendor
+GO_GOPATH=	${DISTDIR}/go/${PKGORIGIN:S,/,_,g}
 GO_WRKSRC=	${WRKSRC}
-GO_ENV+=	GOPATH="" \
+GO_ENV+=	GOPATH="${GO_GOPATH}" \
 		GOBIN="${GO_WRKDIR_BIN}" \
 		GO111MODULE=on \
-		GOPROXY=off \
-		GO_NO_VENDOR_CHECKS=1
+		GOFLAGS=-modcacherw \
+		GOSUMDB=${GO_GOSUMDB}
+.  if defined(GO_MODULE)
+GO_MODNAME=	${GO_MODULE:C/^([^@]*)(@([^@]*)?)/\1/}
+GO_MODVERSION=	${GO_MODULE:C/^([^@]*)(@([^@]*)?)/\2/:M@*:S/^@//:S/^$/${DISTVERSIONFULL}/}
+GO_MODFILE=	${GO_MODVERSION}.mod
+GO_DISTFILE=	${GO_MODVERSION}.zip
+DIST_SUBDIR=	go/${PKGORIGIN:S,/,_,g}/${DISTNAME}
+MASTER_SITES=	${GO_GOPROXY}/${GO_MODNAME}/@v/
+DISTFILES=	${GO_MODFILE} ${GO_DISTFILE}
+EXTRACT_ONLY=	${GO_DISTFILE}
+WRKSRC=		${WRKDIR}/${GO_MODNAME}@${GO_MODVERSION}
+FETCH_DEPENDS+=	${GO_CMD}:${GO_PORT} \
+		ca_root_nss>0:security/ca_root_nss
+USES+=		zip
+.  else
+GO_ENV+=	GO_NO_VENDOR_CHECKS=1
+.  endif
 .else
+GO_GOPATH=	${WRKDIR}
 GO_WRKSRC=	${WRKDIR}/src/${GO_PKGNAME}
-GO_ENV+=	GOPATH="${WRKDIR}" \
+GO_ENV+=	GOPATH="${GO_GOPATH}" \
 		GOBIN="" \
 		GO111MODULE=off
 .endif
@@ -131,10 +157,23 @@ _USES_POST+=	go
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_GO_POST_MK)
 _INCLUDE_USES_GO_POST_MK=	yes
 
-.if !target(post-extract) && empty(go_ARGS)
+.if !target(post-fetch) && ${go_ARGS:Mmodules} && defined(GO_MODULE)
+post-fetch:
+	@${ECHO_MSG} "===> Fetching ${GO_MODNAME} dependencies";
+	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
+		${RLN} ${GO_MODFILE} go.mod; \
+		${SETENV} ${GO_ENV} ${GO_CMD} mod download -x)
+.endif
+
+.if !target(post-extract)
+.  if empty(go_ARGS)
 post-extract:
 	@${MKDIR} ${GO_WRKSRC:H}
 	@${LN} -sf ${WRKSRC} ${GO_WRKSRC}
+.  elif ${go_ARGS:Mmodules} && defined(GO_MODULE)
+post-extract:
+	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} ${GO_CMD} mod vendor)
+.  endif 
 .endif
 
 .if !target(do-build) && empty(go_ARGS:Mno_targets)
@@ -146,7 +185,7 @@ do-build:
 		pkg=$$(${ECHO_CMD} $${t} | \
 			${SED} -Ee 's/^([^:]*).*$$/\1/' -e 's/^${PORTNAME}$$/./'); \
 		${ECHO_MSG} "===>  Building $${out} from $${pkg}"; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} build ${GO_BUILDFLAGS} \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} build ${GO_BUILDFLAGS} \
 			-o ${GO_WRKDIR_BIN}/$${out} \
 			$${pkg}; \
 	done)
@@ -176,9 +215,21 @@ do-test:
 	done)
 .endif
 
+.if ${go_ARGS:Mmodules} && defined(GO_MODULE)
+gomod-clean:
+	@${ECHO_MSG} "===>  Cleaning Go module cache"
+	@${SETENV} ${GO_ENV} ${GO_CMD} clean -modcache
+
+# Hook up to distclean
+.if !target(post-clean) && !make(clean)
+post-clean: gomod-clean
+	@${RM} -r ${GO_GOPATH}
+.endif
+.endif
+
 # Helper targets for port maintainers
 
-.if ${go_ARGS:Mmodules}
+.if ${go_ARGS:Mmodules} && !defined(GO_MODULE)
 _MODULES2TUPLE_CMD=	modules2tuple
 gomod-vendor-deps:
 	@if ! type ${GO_CMD} > /dev/null 2>&1; then \
@@ -189,11 +240,11 @@ gomod-vendor-deps:
 	fi
 
 gomod-vendor: gomod-vendor-deps patch
-	@cd ${WRKSRC}; ${SETENV} GOPATH=${WRKDIR}/.gopath GOFLAGS=-modcacherw ${GO_CMD} mod vendor; \
+	@cd ${WRKSRC}; ${SETENV} ${GO_ENV} ${GO_CMD} mod vendor; \
 	[ -r vendor/modules.txt ] && ${_MODULES2TUPLE_CMD} vendor/modules.txt
 
 gomod-vendor-diff: gomod-vendor-deps patch
-	@cd ${WRKSRC}; ${SETENV} GOPATH=${WRKDIR}/.gopath GOFLAGS=-modcacherw ${GO_CMD} mod vendor; \
+	@cd ${WRKSRC}; ${SETENV} ${GO_ENV} ${GO_CMD} mod vendor; \
 	[ -r vendor/modules.txt ] && ${_MODULES2TUPLE_CMD} vendor/modules.txt | ${SED} 's|GH_TUPLE=|	|; s| \\$$||' | ${GREP} -v '		\\' > ${WRKDIR}/GH_TUPLE-new.txt && \
 	echo ${GH_TUPLE} | ${TR} -s " " "\n" | ${SED} "s|^|		|" > ${WRKDIR}/GH_TUPLE-old.txt && \
 	${DIFF} ${WRKDIR}/GH_TUPLE-old.txt ${WRKDIR}/GH_TUPLE-new.txt || exit 0
