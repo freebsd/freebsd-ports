@@ -71,7 +71,7 @@ LIBRSVG2_DEFAULT?=	legacy
 .endif
 # Possible values: c7
 LINUX_DEFAULT?=		c7
-# Possible values: 60, 70, 80, 90, 10, 11, -devel (to be used when non-base compiler is required)
+# Possible values: 70, 80, 90, 10, 11, -devel (to be used when non-base compiler is required)
 # Please give notice to the Graphics Team (x11@FreeBSD.org) in advance before 
 # bumping the LLVM version.
 LLVM_DEFAULT?=		90
