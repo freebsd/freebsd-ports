@@ -2,14 +2,8 @@
 
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.9
-PORTREVISION=	1
+DISTVERSION=	0.3.10
 CATEGORIES=	net-im
-
-# To be removed in the next update
-# See https://github.com/matrix-org/dendrite/pull/1753
-PATCH_SITES=    https://github.com/matrix-org/${PORTNAME}/commit/
-PATCHFILES=     02e6d89cc2bde930be36323e626ce54643d56a7f.patch:-p1
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Matrix protocol homeserver
@@ -137,7 +131,7 @@ GH_TUPLE=	\
 		matrix-org:go-http-js-libp2p:783164aeeda4:matrix_org_go_http_js_libp2p/vendor/github.com/matrix-org/go-http-js-libp2p \
 		matrix-org:go-sqlite3-js:bc8506ccbcf3:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:7dd5e2a05bcd:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:dd4d53729ead:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:gomatrixserverlib:bab1f2be20d0:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
 		matrix-org:naffka:bcdd62999a91:matrix_org_naffka/vendor/github.com/matrix-org/naffka \
 		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-sqlite3:v1.14.2:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
