@@ -10,7 +10,7 @@
 -NOOBJ=		yes
 -NOPROFILE=	yes
 +MK_PROFILE=	no
-+NO_WERROR=	yes
++MK_ASSERT_DEBUG=no
  
  LIBDIR=		${ORACLE_HOME}/lib
  
