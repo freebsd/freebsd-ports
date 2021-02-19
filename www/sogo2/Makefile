@@ -13,6 +13,9 @@ COMMENT=		Groupware server with a focus on scalability and open standards
 
 LICENSE=		GPLv2
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: SOGoMailCoreInfoKeys
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: SOGoMailCoreInfoKeys
+
 LIB_DEPENDS=		libmemcached.so:databases/libmemcached \
 			libcurl.so:ftp/curl \
 			libDOM.so:devel/sope2

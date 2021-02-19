@@ -13,6 +13,9 @@ COMMENT=	2D action/RPG space game
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: nglActiveTexture
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: nglActiveTexture
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libvorbisfile.so:audio/libvorbis \
