@@ -14,6 +14,9 @@ COMMENT=	DynDNS client
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: saved_attributes
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: saved_attributes
+
 PORTDOCS=	README
 PLIST_FILES=	sbin/${PORTNAME} \
 		"@sample(,,600) %%ETCDIR%%/${PORTNAME}.conf.sample" \
@@ -30,15 +33,15 @@ BROKEN_FreeBSD_12=	undefined symbol: BIO_set_conn_ip
 BROKEN_FreeBSD_13=	undefined symbol: BIO_set_conn_ip
 .endif
 
-.if ${PORT_OPTIONS:MRCNG}
-USE_RC_SUBR=	${PORTNAME}
-.endif
-
 .if ${PORT_OPTIONS:MOPENSSL}
 USES+=		ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 MAKE_ENV+=	"USE_SOCKET_SSL=yes"
+.endif
+
+.if ${PORT_OPTIONS:MRCNG}
+USE_RC_SUBR=	${PORTNAME}
 .endif
 
 post-extract:
