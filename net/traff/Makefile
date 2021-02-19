@@ -10,10 +10,13 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	daniel@freebsd.ro
 COMMENT=	Libpcab based fast traffic accounting program
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: conf_file
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: conf_file
+
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:devel/argp-standalone
 
-USE_RC_SUBR=	traff
 USES=		gmake
+USE_RC_SUBR=	traff
 GNU_CONFIGURE=	yes
 
 LIBS+=		-L${LOCALBASE}/lib -largp
