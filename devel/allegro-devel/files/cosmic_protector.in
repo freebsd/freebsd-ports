@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# # $FreeBSD$
-#
-
-cd "%%EXAMPLESDIR%%/demos/cosmic_protector"
-exec ./cosmic_protector "${@}"

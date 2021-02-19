@@ -130,7 +130,7 @@
     SUBDIR += aixlog
     SUBDIR += ald
     SUBDIR += allegro
-    SUBDIR += allegro-devel
+    SUBDIR += allegro5
     SUBDIR += alog
     SUBDIR += amd64-gcc
     SUBDIR += amd64-xtoolchain-gcc

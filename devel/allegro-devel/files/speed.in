@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# # $FreeBSD$
-#
-
-cd "%%EXAMPLESDIR%%/demos/speed"
-exec ./speed "${@}"
