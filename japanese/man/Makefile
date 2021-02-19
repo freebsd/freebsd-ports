@@ -29,6 +29,8 @@ SHEBANG_FILES=	catman/catman.perl makewhatis/makewhatis.perl
 
 # Fix build with clang11
 CFLAGS+=	-fcommon
+# XXX PIE static libraries currently not supported by base system /usr/share/mk
+MAKE_ARGS+=	WITHOUT_PIE=true
 
 post-patch:
 .for file in	apropos/apropos.sh catman/catman.perl \
