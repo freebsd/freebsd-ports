@@ -14,6 +14,9 @@ LICENSE=	BSD2CLAUSE
 BROKEN_FreeBSD_13=	g_raid5.c:1567:2: error: too few arguments to function call, expected at least 3, have 1
 BROKEN_FreeBSD_14=	g_raid5.c:1567:2: error: too few arguments to function call, expected at least 3, have 1
 
+DEPRECATED=Module contains subtile errors and is obsolete by ZFS raidz. Consider migrating to ZFS.
+EXPIRATION_DATE=2021-08-19
+
 MAINVERSION=1.3
 VERSIONDATE=20140711.62
 
