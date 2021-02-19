@@ -17,8 +17,6 @@ BUILD_DEPENDS=	xsltproc:textproc/libxslt
 RUN_DEPENDS=	libtool:devel/libtool
 LIB_DEPENDS=	libgc.so:devel/boehm-gc
 
-ONLY_FOR_ARCHS=		amd64 i386
-
 DOCSDIR=	lib/${PORTNAME}
 USES=		gmake libtool:build tar:bzip2
 GNU_CONFIGURE=	yes
@@ -28,7 +26,14 @@ USE_GCC=	any
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DOCS
+THREADS_DESC=	Build thread support (Must have pthread installed)
+
+OPTIONS_DEFINE=	DOCS THREADS
+OPTIONS_DEFAULT=DOCS
+
+OPTIONS_SUB=	yes
+
+THREADS_CONFIGURE_ON=	--enable-threads=pthreads
 
 post-patch:
 	@${REINPLACE_CMD} 's/dir=@/dir=$${DESTDIR}@/' \
@@ -42,6 +47,12 @@ post-patch:
 BITS=		32
 .else
 BITS=		64
+.endif
+
+.if ${ARCH} == "powerpc64"
+# .if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
+CFLAGS+=	-fnested-functions
+# .endif
 .endif
 
 .include <bsd.port.post.mk>
