@@ -15,6 +15,7 @@
     SUBDIR += bitlbee-steam
     SUBDIR += bnc
     SUBDIR += bopm
+    SUBDIR += catgirl
     SUBDIR += cgiirc
     SUBDIR += ctrlproxy
     SUBDIR += cwirc
