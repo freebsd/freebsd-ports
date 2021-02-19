@@ -78,6 +78,7 @@
     SUBDIR += blender-doc
     SUBDIR += bmeps
     SUBDIR += bmp2html
+    SUBDIR += bonzomatic
     SUBDIR += box
     SUBDIR += bsd-plotutils
     SUBDIR += c-a-i-r
