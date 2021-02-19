@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sonarqube
-DISTVERSION=	8.6.1.40680
+DISTVERSION=	8.7.0.41497
 PORTREVISION=	0
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
@@ -27,7 +27,9 @@ COMMENT=	Web-based continuous code inspection tool
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	jna>0:devel/jna
+RUN_DEPENDS=	bash:shells/bash \
+		jna>0:devel/jna
 
 USES=		shebangfix zip
 CPE_VENDOR=	sonarsource
@@ -53,7 +55,7 @@ TEMP_DIR=	${DBBASE_DIR}/temp
 
 SONARCSHARP_VER=	8.17.0.26580
 SONARJAVA_VER=		6.12.0.24852
-SONARJAVASCRIPT_VER=	7.1.0.14721
+SONARJAVASCRIPT_VER=	7.2.0.14938
 SONARPHP_VER=		3.15.0.7197
 SONARPYTHON_VER=	3.2.0.7856
 SONARVBNET_VER=		8.17.0.26580
@@ -95,6 +97,7 @@ PLIST_SUB=	APP_NAME=${APP_NAME} \
 
 post-extract:
 	${RM} -r ${WRKSRC}/bin ${WRKSRC}/lib/jsw ${WRKSRC}/conf/wrapper.conf
+	${RM} ${WRKSRC}/elasticsearch/lib/jna*.jar
 	${MV} ${WRKSRC}/conf/sonar.properties ${WRKSRC}/conf/sonar.properties.sample
 .for plugin in sonar-csharp-plugin \
     sonar-java-plugin \
@@ -123,6 +126,8 @@ do-install:
 .for dir in conf elasticsearch extensions lib web
 	cd ${WRKSRC}; ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/${APP_DIR} "! -name *\.orig"
 .endfor
+	 ${LN} -s ${JAVASHAREDIR}/classes/jna.jar \
+		${STAGEDIR}${PREFIX}/${APP_DIR}/elasticsearch/lib/jna.jar
 
 gen-plist:
 	${ECHO} '@sample ${APP_DIR}/conf/sonar.properties.sample' >${PLIST}.new
@@ -132,7 +137,7 @@ gen-plist:
 	${ECHO} '@dir %%APP_DIR%%/elasticsearch/plugins' >>${PLIST}.new
 #	${ECHO} '@dir(sonarqube,sonarqube,755) %%APP_DIR%%/extensions' >>${PLIST}.new
 .for dir in conf elasticsearch lib web
-	${FIND} ${STAGEDIR}${PREFIX}/${APP_DIR}/${dir} -type f |  \
+	${FIND} ${STAGEDIR}${PREFIX}/${APP_DIR}/${dir} -type f -o -type l |  \
 	    ${SED} -e "s:${STAGEDIR}${PREFIX}/::g ; \
 		s:${JAR_VERSION}:%%JAR_VERSION%%:g ; \
 		s:sonar-csharp-plugin-[0-9.]*.jar:sonar-csharp-plugin-%%SONARCSHARP_VER%%.jar:g ; \
