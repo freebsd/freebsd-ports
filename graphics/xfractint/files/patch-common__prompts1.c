@@ -1,5 +1,5 @@
---- common/prompts1.c.orig	2011-05-07 15:32:26.000000000 -0500
-+++ common/prompts1.c	2012-03-10 17:02:06.000000000 -0500
+--- common/prompts1.c.orig	2014-05-03 13:12:35 UTC
++++ common/prompts1.c
 @@ -14,7 +14,7 @@
  #include <alloc.h>
  #elif defined(__APPLE__)

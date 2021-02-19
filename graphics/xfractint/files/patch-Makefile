@@ -1,6 +1,6 @@
---- Makefile.orig	2011-05-08 14:39:40.000000000 -0500
-+++ Makefile	2012-03-10 17:22:45.000000000 -0500
-@@ -20,7 +20,7 @@
+--- Makefile.orig	2020-08-01 23:19:09 UTC
++++ Makefile
+@@ -20,7 +20,7 @@ NCURSES =
  
  # Use Xft/fontconfig libraries
  WITHXFT = -DWITH_XFT
@@ -9,7 +9,7 @@
  # Or not
  # WITHXFT =
  # XFTHFD =
-@@ -34,7 +34,7 @@
+@@ -34,7 +34,7 @@ endif
  
  # SRCDIR should be a path to the directory that will hold fractint.hlp
  # SRCDIR should also hold the .par, .frm, etc. files
@@ -18,13 +18,14 @@
  SHRDIR = $(PREFIX)/share/xfractint
  # BINDIR is where you put your X11 binaries
  BINDIR = $(DESTDIR)/bin
-@@ -123,22 +123,18 @@
+@@ -123,24 +123,20 @@ AFLAGS = -f elf -w+orphan-labels
  #For Solaris, use CFLAGS = -I. -I/usr/openwin/include $(DEFINES) -g
  #If you have the nasm assembler on your system add -DNASM to CFLAGS
  
 -ifeq ($(AS),/usr/bin/nasm)
  
--CFLAGS = -I$(HFD) $(DEFINES) -g -DBIG_ANSI_C -DLINUX -DNASM -fno-builtin
+-CFLAGS = -I$(HFD) $(DEFINES) -DBIG_ANSI_C -DLINUX -DNASM -fno-builtin
+ #CFLAGS = -I$(HFD) $(DEFINES) -g -DBIG_ANSI_C -DLINUX -DNASM -fno-builtin
  #CFLAGS = -I. -D_CONST $(DEFINES)
  #CFLAGS = -I$(HFD) $(DEFINES) -g -DBIG_ANSI_C -DLINUX \
  #         -march=$(ARCH) -DNASM -fno-builtin
@@ -32,8 +33,9 @@
  
 -else
  
--CFLAGS = -I$(HFD) $(DEFINES) -g -DBIG_ANSI_C -DLINUX -fno-builtin
-+CFLAGS += -I$(LOCALBASE)/include -I$(HFD) $(DEFINES) -DBIG_ANSI_C -DLINUX -fno-builtin
+-CFLAGS = -I$(HFD) $(DEFINES) -DBIG_ANSI_C -DLINUX -fno-builtin
++CFLAGS = -I$(LOCALBASE)/include -I$(HFD) $(DEFINES) -DBIG_ANSI_C -DLINUX -fno-builtin
+ #CFLAGS = -I$(HFD) $(DEFINES) -g -DBIG_ANSI_C -DLINUX -fno-builtin
  #CFLAGS = -I$(HFD) $(DEFINES) -g -DBIG_ANSI_C -DLINUX \
  #         -march=$(ARCH) -fno-builtin
  #CFLAGS = -I. $(DEFINES) -g -DBIG_ANSI_C -DLINUX -Os -fno-builtin
@@ -42,24 +44,28 @@
  
  # Gcc is often the only compiler that works for this
  # For HPUX, use CC = cc -Aa -D_HPUX_SOURCE
-@@ -147,7 +143,6 @@
- # For Sun Solaris 2.x w/SparcCompilerC (cc), use CC = cc.
- # For Sun Solaris 2.x w/GNU gcc, use CC = gcc
- #CC = gcc
--CC = /usr/bin/gcc
- 
- # For HPUX, use LIBS = -L/usr/lib/X11R4 -lX11 -lm -lcurses -ltermcap
- # For AIX or OSF/1, add -lbsd
-@@ -159,11 +154,7 @@
+@@ -162,11 +158,7 @@ CC ?=
  # LIBS = -L/usr/X11R6/lib -lX11 -lm -lncurses
  # LIBS = -lX11 -lm -lcurses
  
 -ifeq ($(ARCH),athlon64)
--LIBS = -L/usr/X11R6/lib64 -lX11 -lm
+-LIBS = -L/usr/X11R6/lib64 -lX11 -lm -no-pie
 -else
--LIBS = -L/usr/X11R6/lib -lX11 -lm
+-LIBS = -L/usr/X11R6/lib -lX11 -lm -no-pie
 -endif
 +LIBS = -L${LOCALBASE}/lib -lX11 -lm
  
  ifeq ($(NCURSES),-DNCURSES)
  LIBS += -lncurses
+@@ -324,9 +316,9 @@ fractint:
+ 	rm -f unix/unixscr.o unix/video.o unix/xfcurses.o
+ 	make NCURSES=-DNCURSES ; mv xfractint fractint
+ 	rm -f common/encoder.o common/help.o common/realdos.o
+-	rm -f unix/unixscr.o unix/video.o unix/xfcurses.o	
++	rm -f unix/unixscr.o unix/video.o unix/xfcurses.o
+ 	if [ -x xfractint.x11 ] ; then mv -f xfractint.x11 xfractint ; fi
+-	
++
+ # tar: $(FILES)
+ #	tar cvfj xfractint.tar.bz2 $(FILES)
+ 

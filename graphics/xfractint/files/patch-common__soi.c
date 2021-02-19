@@ -1,5 +1,5 @@
---- common/soi.c.orig	2011-05-07 15:36:36.000000000 -0500
-+++ common/soi.c	2012-03-10 17:08:47.000000000 -0500
+--- common/soi.c.orig	2014-05-03 13:12:35 UTC
++++ common/soi.c
 @@ -15,7 +15,7 @@
  #include <string.h>
  #ifdef __APPLE__

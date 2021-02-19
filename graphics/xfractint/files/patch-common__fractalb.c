@@ -1,6 +1,6 @@
---- common/fractalb.c.orig	2011-05-07 15:31:02.000000000 -0500
-+++ common/fractalb.c	2012-03-10 16:31:30.000000000 -0500
-@@ -12,7 +12,7 @@
+--- common/fractalb.c.orig	2020-07-05 20:02:50 UTC
++++ common/fractalb.c
+@@ -12,7 +12,7 @@ fractal routines.
  #include <alloc.h>
  #elif defined(__APPLE__)
  #include <malloc/malloc.h>

@@ -1,5 +1,5 @@
---- common/miscres.c.orig	2011-05-08 10:19:52.000000000 -0500
-+++ common/miscres.c	2012-03-10 16:58:44.000000000 -0500
+--- common/miscres.c.orig	2014-05-03 13:12:35 UTC
++++ common/miscres.c
 @@ -7,7 +7,7 @@
  #include <time.h>
  #ifdef __APPLE__

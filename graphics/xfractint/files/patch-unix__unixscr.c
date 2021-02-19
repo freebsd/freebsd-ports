@@ -1,5 +1,5 @@
---- ./unix/unixscr.c.orig	2008-05-03 13:52:03.000000000 -0400
-+++ ./unix/unixscr.c	2010-01-27 13:52:46.000000000 -0500
+--- unix/unixscr.c.orig	2015-08-09 13:46:52 UTC
++++ unix/unixscr.c
 @@ -54,7 +54,7 @@
  #define FNDELAY O_NDELAY
  #endif
@@ -9,7 +9,7 @@
  # include <sys/filio.h>
  # define FNDELAY O_NONBLOCK
  #endif
-@@ -339,7 +339,7 @@
+@@ -337,7 +337,7 @@ UnixInit()
      initdacbox();
  
      if (!simple_input) {

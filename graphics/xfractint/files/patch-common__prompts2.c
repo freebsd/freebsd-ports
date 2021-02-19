@@ -1,5 +1,5 @@
---- common/prompts2.c.orig	2011-05-08 10:20:02.000000000 -0500
-+++ common/prompts2.c	2012-03-10 17:04:43.000000000 -0500
+--- common/prompts2.c.orig	2015-08-08 13:22:41 UTC
++++ common/prompts2.c
 @@ -12,7 +12,7 @@
  
  #ifdef DIRENT

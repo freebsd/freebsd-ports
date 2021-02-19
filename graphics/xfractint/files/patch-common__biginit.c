@@ -1,6 +1,6 @@
---- common/biginit.c.orig	2011-05-07 15:28:14.000000000 -0500
-+++ common/biginit.c	2012-03-10 17:13:34.000000000 -0500
-@@ -9,7 +9,7 @@
+--- common/biginit.c.orig	2017-02-04 17:11:46 UTC
++++ common/biginit.c
+@@ -9,7 +9,7 @@ is in the allocations of memory for the big numbers.
  #include <string.h>
  #ifdef __APPLE__
  #include <malloc/malloc.h>
