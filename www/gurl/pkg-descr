@@ -1,0 +1,14 @@
+command-line cURL-like tool for humans, written in go. gURL can be used
+for testing, debugging, and generally interacting with HTTP servers. It
+makes using headers and JSON a delight.
+
+A simple GET with custom header:
+$ gurl httpbin.org/get x-header:custom
+
+An automatic choice of POST, with content-type and JSON body:
+$ gurl httpbin.org/post bool=true key=value
+
+A PUT to HTTPS site from stdin:
+$ gurl PUT https://httpbin.org/put < /etc/os-release
+
+WWW: https://github.com/skunkwerks/gurl

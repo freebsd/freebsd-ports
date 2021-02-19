@@ -227,6 +227,7 @@
     SUBDIR += gtkhtml4
     SUBDIR += guacamole-client
     SUBDIR += guile-www
+    SUBDIR += gurl
     SUBDIR += gwsocket
     SUBDIR += h2o
     SUBDIR += h2o-devel
