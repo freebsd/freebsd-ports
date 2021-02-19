@@ -1,3 +1,5 @@
-TIMESTAMP = 1596826722
-SHA256 (rakyll-hey-v0.1.4_GH0.tar.gz) = 944097e62dd0bd5012d3b355d9fe2e7b7afcf13cc0b2c06151e0f4c2babfc279
-SIZE (rakyll-hey-v0.1.4_GH0.tar.gz) = 446353
+TIMESTAMP = 1613741284
+SHA256 (go/benchmarks_hey/hey-v0.1.4/v0.1.4.mod) = f1feccb468f6348d8a610d14ef3d85bda6c39027fb1914f08b4155068fef3550
+SIZE (go/benchmarks_hey/hey-v0.1.4/v0.1.4.mod) = 142
+SHA256 (go/benchmarks_hey/hey-v0.1.4/v0.1.4.zip) = 28e551e1cb37a42e41e1385cbb5cd82c53816637c14fc734404c372ac0b21cc3
+SIZE (go/benchmarks_hey/hey-v0.1.4/v0.1.4.zip) = 22220

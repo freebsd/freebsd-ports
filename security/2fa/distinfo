@@ -1,3 +1,5 @@
-TIMESTAMP = 1610882661
-SHA256 (rsc-2fa-v1.2.0_GH0.tar.gz) = d8db6b9a714c9146a4b82fd65b54f9bdda3e58380bce393f45e1ef49e4e9bee5
-SIZE (rsc-2fa-v1.2.0_GH0.tar.gz) = 6107
+TIMESTAMP = 1613742909
+SHA256 (go/security_2fa/2fa-v1.2.0/v1.2.0.mod) = 9fd91e1ad222ecc8033a8215469772435afcefa14216c60bcf2ed454f4a28911
+SIZE (go/security_2fa/2fa-v1.2.0/v1.2.0.mod) = 71
+SHA256 (go/security_2fa/2fa-v1.2.0/v1.2.0.zip) = d377568bc73a1123f654a806054ff826021971da5ad52e87595f0482c529b3c6
+SIZE (go/security_2fa/2fa-v1.2.0/v1.2.0.zip) = 5935

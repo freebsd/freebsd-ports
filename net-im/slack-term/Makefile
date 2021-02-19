@@ -3,6 +3,7 @@
 PORTNAME=	slack-term
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -13,9 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	erroneousboat
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_MODULE=	github.com/erroneousboat/slack-term
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}

@@ -1,3 +1,5 @@
-TIMESTAMP = 1584361670
-SHA256 (erroneousboat-slack-term-v0.5.0_GH0.tar.gz) = 089cf10a3959c99b73da1d5ad974f2cd076a56851ef9ffd97a77350a81e527f0
-SIZE (erroneousboat-slack-term-v0.5.0_GH0.tar.gz) = 540745
+TIMESTAMP = 1613742418
+SHA256 (go/net-im_slack-term/slack-term-v0.5.0/v0.5.0.mod) = 362578ae1e9b32d57cd201c5e9f042ea6adda3ebb80e6507fab2731432b3dcb6
+SIZE (go/net-im_slack-term/slack-term-v0.5.0/v0.5.0.mod) = 848
+SHA256 (go/net-im_slack-term/slack-term-v0.5.0/v0.5.0.zip) = ce0d3582406ca314643a044bd56a596b5cec8f8996144dc7516f3a879aa2174a
+SIZE (go/net-im_slack-term/slack-term-v0.5.0/v0.5.0.zip) = 84520

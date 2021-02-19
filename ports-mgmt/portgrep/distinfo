@@ -1,7 +1,5 @@
-TIMESTAMP = 1606136761
-SHA256 (dmgk-portgrep-v1.2.0_GH0.tar.gz) = 0fa1b7a550b97619b7ede1b83887413064542b6cdc9610d2acf8811f55945507
-SIZE (dmgk-portgrep-v1.2.0_GH0.tar.gz) = 9170
-SHA256 (golang-sys-b77594299b42_GH0.tar.gz) = 484bf05a828f18a9ea48f32b64322d6cc8e716b5cbfd455be72f445db8495b82
-SIZE (golang-sys-b77594299b42_GH0.tar.gz) = 1534631
-SHA256 (mattn-go-isatty-v0.0.12_GH0.tar.gz) = addbdc341d7685ed4cc8d2d8a8fd2bd9b784bde00d0ea99fb251039fc10c611c
-SIZE (mattn-go-isatty-v0.0.12_GH0.tar.gz) = 4548
+TIMESTAMP = 1613742771
+SHA256 (go/ports-mgmt_portgrep/portgrep-v1.2.0/v1.2.0.mod) = c142d129f227d5e14b3c84308f003dd344d3416ff19cf6d9181d6d8e042f9459
+SIZE (go/ports-mgmt_portgrep/portgrep-v1.2.0/v1.2.0.mod) = 85
+SHA256 (go/ports-mgmt_portgrep/portgrep-v1.2.0/v1.2.0.zip) = f4d9fe95e5062ce81f93dfe9f3e30cb3abe209711e47144c00a3b20f51421580
+SIZE (go/ports-mgmt_portgrep/portgrep-v1.2.0/v1.2.0.zip) = 12019

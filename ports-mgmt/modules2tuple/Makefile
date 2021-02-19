@@ -2,7 +2,8 @@
 
 PORTNAME=	modules2tuple
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.2
+DISTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -13,10 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	dmgk
-GH_TUPLE=	sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff
-
+GO_MODULE=	github.com/dmgk/modules2tuple/v2
 GO_BUILDFLAGS=	-ldflags="-s -w -X main.version=${PORTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}

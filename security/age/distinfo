@@ -1,11 +1,5 @@
-TIMESTAMP = 1610885799
-SHA256 (FiloSottile-age-v1.0.0-beta6_GH0.tar.gz) = 40cb04ecb0d36ae1007bb15339e731ba8ea86277cf704629a5d3d35744452012
-SIZE (FiloSottile-age-v1.0.0-beta6_GH0.tar.gz) = 41860
-SHA256 (FiloSottile-edwards25519-v1.0.0-alpha.2_GH0.tar.gz) = 75c1702ef9835d484434f5ce6d1255f26611c41104f8c3399b4b4a0457669b42
-SIZE (FiloSottile-edwards25519-v1.0.0-alpha.2_GH0.tar.gz) = 76004
-SHA256 (golang-crypto-0ec3e9974c59_GH0.tar.gz) = 737fd8da273ec11281d2ff8798d6847ab1be9ebfa94bbc5a7252e0b04e1373a5
-SIZE (golang-crypto-0ec3e9974c59_GH0.tar.gz) = 1727772
-SHA256 (golang-sys-97732733099d_GH0.tar.gz) = 8d60fa6ab0c2b099f2c7d6f8c0a5df177c5c524183a2a38e0e8d2d18cde53532
-SIZE (golang-sys-97732733099d_GH0.tar.gz) = 1350239
-SHA256 (sergi-go-diff-v1.1.0_GH0.tar.gz) = 3d4362670655e970366d555418f3c8d179c217c0499ef5573ab7176352229451
-SIZE (sergi-go-diff-v1.1.0_GH0.tar.gz) = 43552
+TIMESTAMP = 1613742976
+SHA256 (go/security_age/age-v1.0.0-beta6/v1.0.0-beta6.mod) = 75e1350913d9a0acbcb588f3d730d96bfcd0533f2de26276cf2054c91526e02d
+SIZE (go/security_age/age-v1.0.0-beta6/v1.0.0-beta6.mod) = 173
+SHA256 (go/security_age/age-v1.0.0-beta6/v1.0.0-beta6.zip) = 3a91003782b763f79404b99c255639d5c8347d8da29a27e477f24619edf7575f
+SIZE (go/security_age/age-v1.0.0-beta6/v1.0.0-beta6.zip) = 59760
