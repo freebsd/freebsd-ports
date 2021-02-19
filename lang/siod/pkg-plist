@@ -33,6 +33,7 @@ lib/siod/piechart.scm
 lib/siod/cgi.scm
 lib/siod/ftp.scm
 lib/siod/sql_msql.scm
+lib/siod/acct.so
 %%GD%%lib/siod/gd.so
 %%NDBM%%lib/siod/ndbm.so
 %%SS%%lib/siod/ss.so

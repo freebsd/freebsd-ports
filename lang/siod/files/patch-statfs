@@ -1,5 +1,5 @@
 --- statfs.c	2014-03-25 04:10:42.000000000 -0400
-+++ statfs.c	2021-02-17 22:30:00.996673000 -0500
++++ statfs.c	2021-02-18 18:56:33.147163000 -0500
 @@ -4,9 +4,15 @@
  
  #include <stdio.h>
@@ -16,7 +16,7 @@
 +#ifndef BSD
  #define MNT_NUMTYPES	128
  /*
-@@ -14,16 +20,87 @@
+@@ -14,16 +20,98 @@
   */
  extern char *mnt_names[];
 +#endif
@@ -80,6 +80,9 @@
 +static LISP lstatfs(LISP path)
  {long iflag;
   struct statfs s;
++#ifdef BSD
++ LISP lfsid;
++#endif
   iflag = no_interrupt(1);
 - if (statfs(get_c_string(path),&s,sizeof(s)))
 + if (TYPE(path) == tc_c_file) {
@@ -95,6 +98,14 @@
 +
   no_interrupt(iflag);
 - return(symalist("type",(((s.f_type >= 0) && (s.f_type < MNT_NUMTYPES) &&
++ if (s.f_fsid.val[0] != 0 || s.f_fsid.val[1] != 0) {
++   lfsid = strcons(sizeof(s.f_fsid) * 2, NULL);
++   unsigned u;
++   char *p = get_string_data(lfsid);
++   for (u = 0; u < sizeof(s.f_fsid); u++, p += 2)
++     sprintf(p, "%02x", ((u_char *)&s.f_fsid)[u]);
++ } else
++   lfsid = NULL;
 + return(symalist("type",
 +#ifdef BSD
 +		 s.f_fstypename[0] != '\0'
@@ -108,7 +119,7 @@
 +			 : flocons(s.f_type),
  		 "bsize",flocons(s.f_bsize),
  		 "blocks",flocons(s.f_blocks),
-@@ -34,8 +111,18 @@
+@@ -34,8 +122,17 @@
  		 "mntonname",strcons(-1,s.f_mntonname),
  		 "mntfromname",strcons(-1,s.f_mntfromname),
 +#ifdef BSD
@@ -117,9 +128,8 @@
 +		 "syncreads", flocons(s.f_syncreads),
 +		 "asyncreads", flocons(s.f_asyncreads),
 +		 "namemax", flocons(s.f_namemax),
-+		 "fsid", flocons(((uint64_t)s.f_fsid.val[0] << 32) +
-+		     s.f_fsid.val[1]),
 +		 "flags", decode_fstat_flags(s.f_flags),
++		 lfsid == NULL ? NULL : "fsid", lfsid,
 +#endif
  		 NULL));}
  
@@ -128,28 +138,28 @@
 +static LISP decode_fstab(const struct fstab *p)
  {if (p)
     return(symalist("spec",strcons(-1,p->fs_spec),
-@@ -50,5 +137,5 @@
+@@ -50,5 +147,5 @@
     return(NIL);}
  
 -LISP lgetfsent(void)
 +static LISP lgetfsent(void)
  {long iflag;
   LISP result;
-@@ -58,5 +145,5 @@
+@@ -58,5 +155,5 @@
   return(result);}
  
 -LISP lsetfsent(void)
 +static LISP lsetfsent(void)
  {long iflag;
   LISP result;
-@@ -66,5 +153,5 @@
+@@ -66,5 +163,5 @@
   return(result);}
  
 -LISP lendfsent(void)
 +static LISP lendfsent(void)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -73,4 +160,6 @@
+@@ -73,4 +170,6 @@
   return(NIL);}
  
 +void init_statfs(void); /* The sole symbol exported from a SIOD-module */

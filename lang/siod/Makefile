@@ -34,7 +34,7 @@ MAKE_ENV+=	MAN1PREFIX=${MAN1PREFIX} PREFIX=${PREFIX:Q}
 MAKE_ENV+=	INSTALL_MAN=${INSTALL_MAN:Q} INSTALL_SCRIPT=${INSTALL_SCRIPT:Q}
 MAKE_ENV+=	INSTALL_DATA=${INSTALL_DATA:Q}
 
-MODULES=	statfs tar parser_pratt
+MODULES=	acct statfs tar parser_pratt
 
 SQL_SYBASE_LIB_DEPENDS=	libct.so:databases/freetds	# Or freetds-devel
 GD_LIB_DEPENDS=		libgd.so:graphics/gd	# Or ukrainian/gd
