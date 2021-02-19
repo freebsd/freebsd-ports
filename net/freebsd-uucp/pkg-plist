@@ -62,3 +62,4 @@ libexec/uucp/uucico
 @dir(uucp,uucp,775) /var/spool/uucp/.Xqtdir
 @dir(uucp,uucp,775) /var/spool/uucp
 @dir(uucp,uucp,777) /var/spool/uucppublic
+@dir info
