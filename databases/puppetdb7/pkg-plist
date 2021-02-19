@@ -13,6 +13,7 @@ bin/puppetdb
 %%DATADIR%%/puppetdb.jar
 @group puppetdb
 @sample etc/puppetdb/bootstrap.cfg.sample
+@sample etc/puppetdb/conf.d/auth.conf.sample
 @sample etc/puppetdb/conf.d/config.ini.sample
 @sample etc/puppetdb/conf.d/database.ini.sample
 @sample etc/puppetdb/conf.d/jetty.ini.sample
