@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.xs4all.nl/~suelette/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	News caching/anti-spam/server-merging system
 
+BROKEN_FreeBSD_13=	ld: error: duplicate symbol: jmp
+BROKEN_FreeBSD_14=	ld: error: duplicate symbol: jmp
 BROKEN_aarch64=		fails to link: missing sbrk
 BROKEN_mips64=		fails to build: qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 BROKEN_riscv64=		fails to link: missing sbrk
