@@ -14,6 +14,9 @@ USES=		uidfix tar:tgz
 
 WRKSRC=		${WRKDIR}/Libphk
 
+# XXX static PIE libraries not yet supported by the base system
+MAKE_FLAGS+=	WITHOUT_PIE=true
+
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
