@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2020-04-20 22:03:58 UTC
+--- CMakeLists.txt.orig	2021-02-17 10:06:29 UTC
 +++ CMakeLists.txt
 @@ -20,13 +20,13 @@ include(ccache)
  
@@ -28,8 +28,9 @@
 @@ -47,7 +47,6 @@ add_subdirectory(share)
  
  ## install everything that was not installed from subdirectories
- install(FILES BUGS NEWS DESTINATION ${DOCDIR})
+ install(FILES NEWS DESTINATION ${DOCDIR})
 -install(FILES LICENSE DESTINATION ${LICENSEDIR})
- install(DIRECTORY scripts/ DESTINATION ${DOCDIR}/examples USE_SOURCE_PERMISSIONS)
+-install(DIRECTORY scripts/ DESTINATION ${DOCDIR}/examples USE_SOURCE_PERMISSIONS)
++install(DIRECTORY scripts/ DESTINATION /usr/local/share/examples/herbstluftwm USE_SOURCE_PERMISSIONS)
  
  # vim: et:ts=4:sw=4

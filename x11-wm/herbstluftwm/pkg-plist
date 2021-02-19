@@ -11,7 +11,6 @@ share/zsh/site-functions/_herbstclient
 %%PORTDOCS%%man/man1/herbstclient.1.gz
 %%PORTDOCS%%man/man1/herbstluftwm.1.gz
 %%PORTDOCS%%man/man7/herbstluftwm-tutorial.7.gz
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/herbstclient.html
 %%PORTDOCS%%%%DOCSDIR%%/herbstluftwm-tutorial.html
