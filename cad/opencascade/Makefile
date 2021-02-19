@@ -3,6 +3,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	7.5.0
+PORTREVISION=	1
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -19,8 +20,7 @@ BUILD_DEPENDS=	rapidjson>0:devel/rapidjson			\
 		${LOCALBASE}/lib/qt5/bin/moc:devel/qt5-buildtools
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
 		libvtksys-${VTKVER}.so:math/vtk8	\
-		libfreetype.so:print/freetype2		\
-		libtbb.so:devel/tbb
+		libfreetype.so:print/freetype2
 RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/overview/overview.md
@@ -57,13 +57,15 @@ CMAKE_ARGS+=	-DINSTALL_DIR=${OCCROOT}				\
 		-DINSTALL_DIR_SAMPLES=${OCCROOT}/samples		\
 		-DINSTALL_DIR_TESTS=${OCCROOT}/tests			\
 		-DINSTALL_TEST_CASES:BOOL=ON				\
-		-DUSE_TBB:BOOL=ON					\
+		-DUSE_TBB:BOOL=OFF					\
 		-DUSE_RAPIDJSON:BOOL=ON					\
 		-DUSE_VTK:BOOL=ON					\
 		-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-${VTKVER}/cmake/vtk-${VTKVER}
 
-#CMAKE_ARGS+=	-DUSE_EIGEN:BOOL=ON
+# TODO: TBB to be replaced by onetbb later
+#CMAKE_ARGS+=	-DUSE_EIGEN:BOOL=ON -DUSE_TBB:BOOL=ON
 #USES+=		eigen:3
+#LIB_DEPENDS+=	libtbb.so:devel/tbb
 
 USE_LDCONFIG=	yes
 

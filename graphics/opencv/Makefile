@@ -25,9 +25,9 @@ LIB_DEPENDS=	\
 		libhdf5.so:science/hdf5 \
 		libopenblas.so:math/openblas \
 		libpng16.so:graphics/png \
-		libtbb.so:devel/tbb \
 		libtiff.so:graphics/tiff \
-		libwebp.so:graphics/webp \
+		libwebp.so:graphics/webp
+#		libtbb.so:devel/tbb
 
 USES=		cmake compiler:c++14-lang eigen:3 jpeg localbase:ldflags pkgconfig python:3.6+,build
 USE_GITHUB=	yes
@@ -50,12 +50,13 @@ CMAKE_ON=	\
 		WITH_OPENEXR \
 		WITH_OPENGL \
 		WITH_PNG \
-		WITH_TBB \
 		WITH_TIFF \
 		WITH_VULKAN \
 		WITH_WEBP \
 		OPENCV_GENERATE_PKGCONFIG \
 		OPENCV_ENABLE_NONFREE
+# Disabled during tbb migration: not oneTBB-compatible
+#		WITH_TBB
 CMAKE_OFF=	OPENCV_GENERATE_SETUPVARS \
 		BUILD_opencv_python2 \
 		BUILD_TESTS

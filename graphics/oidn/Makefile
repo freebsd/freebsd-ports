@@ -3,6 +3,7 @@
 PORTNAME=	oidn
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.org/:weights # bogus URL to make the framework happy, the fetch uses Git URL below
 DISTFILES=	${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}:weights
@@ -19,7 +20,7 @@ ONLY_FOR_ARCHS_REASON=	Intel(R) MKL-DNN supports x86 64 bit platforms only (oidn
 FETCH_DEPENDS=	git:devel/git \
 		git-lfs:devel/git-lfs
 BUILD_DEPENDS=	ispc>=1.14.1:devel/ispc
-LIB_DEPENDS=	libtbb.so:devel/tbb
+LIB_DEPENDS=	libtbb.so:devel/onetbb
 
 USES=		cmake:noninja compiler:c++11-lang python:build
 USE_LDCONFIG=	yes

@@ -3,7 +3,7 @@
 
 PORTNAME=	par2cmdline-tbb
 PORTVERSION=	20100203
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	archivers
 MASTER_SITES=	http://chuchusoft.com/par2_tbb/
 DISTNAME=	par2cmdline-0.4-tbb-${PORTVERSION}
@@ -13,12 +13,15 @@ COMMENT=	Tools for using Parity v2 Archive files (tbb version)
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unmaintained upstream, does not build with oneTbb. Use archivers/par2cmdline instead
+EXPIRATION_DATE=2021-04-30
 ONLY_FOR_ARCHS=		amd64 i386
 
 LIB_DEPENDS=	libtbb.so:devel/tbb
 
-GNU_CONFIGURE=	yes
 USES=		autoreconf
+
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 

@@ -3,7 +3,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	7.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpdal_base.so:math/pdal \
 		libproj.so:graphics/proj \
 		libsvm.so:science/libsvm \
-		libtbb.so:devel/tbb \
+		libtbb.so:devel/onetbb \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS:=	swig:devel/swig
 

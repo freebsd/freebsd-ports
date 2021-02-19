@@ -3,12 +3,12 @@
 
 PORTNAME=	tbb
 PORTVERSION=	2020.3
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	Library that provides thread building blocks
+COMMENT=	Library that provides thread building blocks (legacy version)
 
 LICENSE=	APACHE20
 
@@ -16,6 +16,8 @@ ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le po
 ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
 
 USES=	compiler gmake tar:tgz
+
+CONFLICTS=	onetbb-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	oneapi-src

@@ -4,6 +4,7 @@
 PORTNAME=	embree
 PORTVERSION=	3.12.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -40,7 +41,7 @@ EXAMPLES_USE=		GL=gl,glu,glut XORG=x11,xau,xcb,xdmcp
 EXAMPLES_CMAKE_OFF=	-DEMBREE_TUTORIALS:BOOL=OFF
 
 TBB_DESC=	Use Intel TBB (optimal performance)
-TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
+TBB_LIB_DEPENDS=	libtbb.so:devel/onetbb
 TBB_VARS=	_ETS=TBB
 TBB_VARS_OFF=	_ETS=INTERNAL
 

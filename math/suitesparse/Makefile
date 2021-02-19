@@ -4,6 +4,7 @@
 PORTNAME=	suitesparse
 PORTVERSION=	5.8.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -36,7 +37,7 @@ LDFLAGS+=	-L${WRKSRC}/lib # prevent linking with shared libs from the preinstall
 
 CONFLICTS_INSTALL=	mongoose plinkseq # bin/mongoose
 
-OPTIONS_DEFINE=		DEMOS DOCS OPENMP TBB
+OPTIONS_DEFINE=		DEMOS DOCS OPENMP # TBB
 OPTIONS_EXCLUDE_aarch64=	OPENMP
 OPTIONS_RADIO=		BLAS
 OPTIONS_RADIO_BLAS=	ATLAS GOTOBLAS NETLIB OPENBLAS
@@ -61,6 +62,7 @@ DEMOS_ALL_TARGET_OFF=	library
 TBB_DESC=		Intel threading building blocks
 TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
 TBB_MAKE_ENV=		TBB="-ltbb" SPQR_CONFIG="-DHAVE_TBB"
+TBB_BROKEN=		oneTBB doesn't provide tbb/task_scheduler_init.h any more, see PR 252651
 
 MODULES=	AMD CAMD CCOLAMD CHOLMOD COLAMD CSparse CXSparse_newfiles	\
 		CXSparse GPUQREngine KLU LDL RBio SPQR UMFPACK

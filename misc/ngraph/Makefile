@@ -4,7 +4,7 @@ PORTNAME=	ngraph
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.29.0-rc.0-345
 DISTVERSIONSUFFIX=	-g58b649aa6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc # machine-learning
 PKGNAMESUFFIX=	-machine-learning-library
 
@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	onednn>0:math/onednn
-LIB_DEPENDS=	libtbb.so:devel/tbb
+LIB_DEPENDS=	libtbb.so:devel/onetbb
 
 USES=		cmake eigen:3 localbase pkgconfig
 USE_GITHUB=	yes

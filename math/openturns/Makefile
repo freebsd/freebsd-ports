@@ -3,7 +3,7 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libbonmin.so:math/bonmin \
 		libnlopt.so:math/nlopt \
 		libopt.so:math/optpp \
 		libsz.so:science/szip \
-		libtbb.so:devel/tbb
+		libtbb.so:devel/onetbb
 
 USES=		bison blaslapack:openblas cmake compiler:c++11-lang eigen:3 gnome localbase:ldflags pkgconfig
 USE_GITHUB=	yes

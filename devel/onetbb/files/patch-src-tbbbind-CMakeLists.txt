@@ -1,0 +1,11 @@
+Disable legacy hwloc lookup
+
+--- src/tbbbind/CMakeLists.txt.orig	2020-12-08 11:00:57 UTC
++++ src/tbbbind/CMakeLists.txt
+@@ -82,5 +82,5 @@ macro(tbbbind_build TBBBIND_NAME HWLOC_VERSION)
+ endmacro()
+ 
+ message(STATUS "Trying to find HWLOC (versions 2 and 1.11) to build TBBBind library")
+-tbbbind_build(tbbbind 1.11)
++#tbbbind_build(tbbbind 1.11)
+ tbbbind_build(tbbbind_2_0 2)

@@ -1619,6 +1619,7 @@
     SUBDIR += omake
     SUBDIR += omniORB
     SUBDIR += omnisharp-server
+    SUBDIR += onetbb
     SUBDIR += oniguruma
     SUBDIR += open-beagle
     SUBDIR += opencl

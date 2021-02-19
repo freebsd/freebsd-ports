@@ -86,7 +86,7 @@ RAW_LIB_DEPENDS=	libraw_r.so:graphics/libraw
 
 TBB_DESC=		Intel tbb support
 TBB_CMAKE_BOOL=		USE_TBB
-TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
+TBB_LIB_DEPENDS=	libtbb.so:devel/onetbb
 
 TEST_CMAKE_BOOL=	OIIO_BUILD_TESTS
 
