@@ -3,6 +3,7 @@
 
 PORTNAME=	gitlist
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=	https://github.com/klaussilveira/gitlist/releases/download/${DISTVERSION}/ \
 		http://freebsd.ark-ict.nl/ports/
@@ -20,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
 USES=		php:web
+USE_PHP=	ctype hash simplexml
 
 USERS?=		${WWWOWN}
 GROUPS?=	${WWWGRP}
