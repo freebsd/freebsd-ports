@@ -2,6 +2,7 @@
 
 PORTNAME=	mdl
 PORTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +13,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-kramdown>=2.3<3:textproc/rubygem-kramdown \
 		rubygem-kramdown-parser-gfm>=1.1<2:textproc/rubygem-kramdown-parser-gfm \
+		rubygem-chef-utils>=16.8.14:sysutils/rubygem-chef-utils \
 		rubygem-mixlib-cli>=2.1.1<3:devel/rubygem-mixlib-cli \
 		rubygem-mixlib-config>=2.2.1<4:devel/rubygem-mixlib-config \
 		rubygem-mixlib-shellout>=0:devel/rubygem-mixlib-shellout
