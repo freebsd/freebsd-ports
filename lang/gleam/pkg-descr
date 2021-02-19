@@ -1,0 +1,15 @@
+Gleam is a fast, friendly, and functional language for building
+type-safe, scalable systems.
+
+The Gleam compiler itself is written in rust.
+
+Gleam uses the BEAM runtime, and using the same actor-based multi-core
+concurrency, with zero runtime overhead and full inter-operability with
+Erlang, Elixir, and LFE.
+
+It has all the features you'd expect from an ML derived language,
+including algebraic data-types, immutable data structures, full type
+inference, fast compilation, generics, no nulls nor exceptions, and a
+few bonus features such as helpful error messages.
+
+WWW: https://gleam.run/

@@ -1,0 +1,250 @@
+# $FreeBSD$
+
+PORTNAME=	gleam
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.14.0
+CATEGORIES=	lang
+
+MAINTAINER=	dch@FreeBSD.org
+COMMENT=	Ml-flavoured type-safe language using Erlang's BEAM runtime
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
+RUN_DEPENDS=	rebar3:devel/rebar3
+
+USES=		cargo ssl
+USE_GITHUB=	yes
+GH_ACCOUNT=	gleam-lang
+
+CARGO_CRATES=	adler-0.2.3 \
+		aho-corasick-0.7.15 \
+		ansi_term-0.11.0 \
+		ansi_term-0.12.1 \
+		arrayvec-0.5.2 \
+		askama-0.10.5 \
+		askama_derive-0.10.5 \
+		askama_escape-0.10.1 \
+		askama_shared-0.11.1 \
+		async-trait-0.1.42 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		base64-0.13.0 \
+		bitflags-1.2.1 \
+		bitmaps-2.1.0 \
+		bitvec-0.19.4 \
+		bstr-0.2.14 \
+		bumpalo-3.6.0 \
+		byteorder-1.4.2 \
+		bytes-1.0.1 \
+		capnp-0.14.0 \
+		capnpc-0.14.2 \
+		cc-1.0.66 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		chrono-0.4.19 \
+		clap-2.33.3 \
+		codespan-0.11.0 \
+		codespan-reporting-0.11.0 \
+		core-foundation-0.9.1 \
+		core-foundation-sys-0.8.2 \
+		crc32fast-1.2.1 \
+		crossbeam-utils-0.8.1 \
+		ctor-0.1.19 \
+		ctrlc-3.1.7 \
+		data-encoding-2.3.2 \
+		der-oid-macro-0.3.0 \
+		der-parser-5.0.0 \
+		difference-2.0.0 \
+		either-1.6.1 \
+		encoding_rs-0.8.28 \
+		filetime-0.2.14 \
+		fixedbitset-0.2.0 \
+		flate2-1.0.20 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.0.0 \
+		fs_extra-1.2.0 \
+		funty-1.1.0 \
+		futures-channel-0.3.12 \
+		futures-core-0.3.12 \
+		futures-sink-0.3.12 \
+		futures-task-0.3.12 \
+		futures-util-0.3.12 \
+		getopts-0.2.21 \
+		getrandom-0.2.2 \
+		globset-0.4.6 \
+		h2-0.3.0 \
+		hashbrown-0.9.1 \
+		heck-0.3.2 \
+		hermit-abi-0.1.18 \
+		hexpm-1.2.0 \
+		http-0.2.3 \
+		http-body-0.4.0 \
+		httparse-1.3.5 \
+		httpdate-0.3.2 \
+		humansize-1.1.0 \
+		hyper-0.14.4 \
+		hyper-tls-0.5.0 \
+		idna-0.2.1 \
+		ignore-0.4.17 \
+		im-15.0.0 \
+		indexmap-1.6.1 \
+		ipnet-2.3.0 \
+		itertools-0.10.0 \
+		itoa-0.4.7 \
+		js-sys-0.3.47 \
+		lazy_static-1.4.0 \
+		lexical-core-0.7.4 \
+		libc-0.2.85 \
+		log-0.4.14 \
+		matchers-0.0.1 \
+		matches-0.1.8 \
+		memchr-2.3.4 \
+		mime-0.3.16 \
+		miniz_oxide-0.4.3 \
+		mio-0.7.7 \
+		miow-0.3.6 \
+		native-tls-0.2.7 \
+		nix-0.18.0 \
+		nom-6.1.0 \
+		ntapi-0.3.6 \
+		num-bigint-0.3.1 \
+		num-integer-0.1.44 \
+		num-traits-0.2.14 \
+		num_cpus-1.13.0 \
+		oid-registry-0.1.1 \
+		once_cell-1.5.2 \
+		openssl-0.10.32 \
+		openssl-probe-0.1.2 \
+		openssl-sys-0.9.60 \
+		output_vt100-0.1.2 \
+		percent-encoding-2.1.0 \
+		petgraph-0.5.1 \
+		pin-project-0.4.27 \
+		pin-project-1.0.5 \
+		pin-project-internal-0.4.27 \
+		pin-project-internal-1.0.5 \
+		pin-project-lite-0.2.4 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.19 \
+		ppv-lite86-0.2.10 \
+		pretty_assertions-0.6.1 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.19 \
+		proc-macro2-1.0.24 \
+		protobuf-2.22.0 \
+		protobuf-codegen-2.22.0 \
+		protobuf-codegen-pure-2.22.0 \
+		pulldown-cmark-0.8.0 \
+		quote-1.0.8 \
+		radium-0.5.3 \
+		rand-0.8.3 \
+		rand_chacha-0.3.0 \
+		rand_core-0.5.1 \
+		rand_core-0.6.2 \
+		rand_hc-0.3.0 \
+		rand_xoshiro-0.4.0 \
+		redox_syscall-0.2.4 \
+		regex-1.4.3 \
+		regex-automata-0.1.9 \
+		regex-syntax-0.6.22 \
+		remove_dir_all-0.5.3 \
+		reqwest-0.11.0 \
+		ring-0.16.20 \
+		rpassword-5.0.1 \
+		rusticata-macros-3.0.1 \
+		rustversion-1.0.4 \
+		ryu-1.0.5 \
+		same-file-1.0.6 \
+		schannel-0.1.19 \
+		security-framework-2.0.0 \
+		security-framework-sys-2.0.0 \
+		serde-1.0.123 \
+		serde_derive-1.0.123 \
+		serde_json-1.0.62 \
+		serde_urlencoded-0.7.0 \
+		sharded-slab-0.1.1 \
+		sized-chunks-0.6.2 \
+		slab-0.4.2 \
+		smallvec-1.6.1 \
+		socket2-0.3.19 \
+		spin-0.5.2 \
+		static_assertions-1.1.0 \
+		strsim-0.8.0 \
+		strsim-0.10.0 \
+		structopt-0.3.21 \
+		structopt-derive-0.4.14 \
+		strum-0.20.0 \
+		strum_macros-0.20.1 \
+		syn-1.0.60 \
+		tap-1.0.0 \
+		tar-0.4.32 \
+		tempfile-3.2.0 \
+		termcolor-1.1.2 \
+		textwrap-0.11.0 \
+		thiserror-1.0.23 \
+		thiserror-impl-1.0.23 \
+		thread_local-1.1.3 \
+		time-0.1.43 \
+		tinyvec-1.1.1 \
+		tinyvec_macros-0.1.0 \
+		tokio-1.2.0 \
+		tokio-native-tls-0.3.0 \
+		tokio-util-0.6.3 \
+		toml-0.5.8 \
+		tower-service-0.3.1 \
+		tracing-0.1.23 \
+		tracing-attributes-0.1.12 \
+		tracing-core-0.1.17 \
+		tracing-futures-0.2.4 \
+		tracing-log-0.1.1 \
+		tracing-serde-0.1.2 \
+		tracing-subscriber-0.2.15 \
+		try-lock-0.2.3 \
+		typenum-1.12.0 \
+		unicase-2.6.0 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.16 \
+		unicode-segmentation-1.7.1 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		untrusted-0.7.1 \
+		url-2.2.0 \
+		vcpkg-0.2.11 \
+		vec_map-0.8.2 \
+		version_check-0.9.2 \
+		walkdir-2.3.1 \
+		want-0.3.0 \
+		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.70 \
+		wasm-bindgen-backend-0.2.70 \
+		wasm-bindgen-futures-0.4.20 \
+		wasm-bindgen-macro-0.2.70 \
+		wasm-bindgen-macro-support-0.2.70 \
+		wasm-bindgen-shared-0.2.70 \
+		web-sys-0.3.47 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		winreg-0.7.0 \
+		wyz-0.2.0 \
+		x509-parser-0.9.0 \
+		xattr-0.2.2
+
+PLIST_FILES=	bin/gleam
+
+PORTDOCS=	README.md
+
+OPTIONS_DEFINE=	DOCS
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gleam
+
+post-install-DOCS-on:
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} README.md ${STAGEDIR}${DOCSDIR})
+
+.include <bsd.port.mk>
