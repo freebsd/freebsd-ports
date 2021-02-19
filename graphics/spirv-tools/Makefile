@@ -2,13 +2,8 @@
 
 PORTNAME=	spirv-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.6
-PORTREVISION=	1
+DISTVERSION=	2020.7
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	1bd539b9bfc4.patch:-p1 # https://github.com/KhronosGroup/SPIRV-Tools/pull/4116
-PATCHFILES+=	10d4e2792d95.patch:-p1 # https://github.com/KhronosGroup/SPIRV-Tools/pull/4128
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tools for processing SPIR-V intermediate shader language modules
