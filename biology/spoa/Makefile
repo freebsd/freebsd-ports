@@ -2,6 +2,7 @@
 
 PORTNAME=	spoa
 DISTVERSION=	4.0.7
+PORTREVISION=	2
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bioparser>0:biology/bioparser \
 		${LOCALBASE}/include/biosoup/nucleic_acid.hpp:biology/biosoup \
 		cereal>0:devel/cereal \
-		cpu_features>0:devel/cpu_features \
 		simde>0:devel/simde
+LIB_DEPENDS=	libcpu_features.so:devel/cpu_features
 RUN_DEPENDS=	cereal>0:devel/cereal
 TEST_DEPENDS=	googletest>0:devel/googletest
 

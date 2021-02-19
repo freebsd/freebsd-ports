@@ -14,7 +14,7 @@
  
  add_library(${PROJECT_NAME}
    src/alignment_engine.cpp
-@@ -55,8 +56,8 @@ add_library(${PROJECT_NAME}
+@@ -55,19 +56,19 @@ add_library(${PROJECT_NAME}
    src/dispatcher.cpp)
  target_include_directories(${PROJECT_NAME} PUBLIC
    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -24,8 +24,10 @@
 +  #$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/vendor/cpu_features/include>
    $<INSTALL_INTERFACE:include>)
  target_link_libraries(${PROJECT_NAME}
-   cereal)
-@@ -65,9 +66,9 @@ if (BUILD_SHARED_LIBS)
+-  cereal)
++  cereal::cereal)
+ if (BUILD_SHARED_LIBS)
+   set_property(TARGET ${PROJECT_NAME} PROPERTY SOVERSION "7.0.0")
  endif ()
  
  if (spoa_generate_dispatch)
@@ -38,6 +40,15 @@
  
    list(APPEND ARCHITECTURES avx2 sse4.1 sse2)
    foreach(arch IN LISTS ARCHITECTURES)
+@@ -78,7 +79,7 @@ if (spoa_generate_dispatch)
+       $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/vendor/simde>
+       $<INSTALL_INTERFACE:include>)
+     target_link_libraries(${PROJECT_NAME}_${arch}
+-      cereal)
++      cereal::cereal)
+     set_target_properties(${PROJECT_NAME}_${arch} PROPERTIES
+       COMPILE_FLAGS "-m${arch}")
+     if (BUILD_SHARED_LIBS)
 @@ -92,8 +93,8 @@ if (spoa_generate_dispatch)
      ${PROJECT_NAME}_sse4.1
      ${PROJECT_NAME}_sse2)
