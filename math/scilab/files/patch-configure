@@ -14,7 +14,7 @@
  IS_64_BITS_CPU=false
  case "$host" in
 -         x86_64-*-linux-gnu | x86_64-linux-gnu | ia64-*-linux-gnu | alpha-*-linux-gnu | alpha-*-netbsd* | x86_64-*-netbsd* | sparc64-*-netbsd*)
-+         x86_64-*-linux-gnu | x86_64-linux-gnu | ia64-*-linux-gnu | alpha-*-linux-gnu | alpha-*-netbsd* | x86_64-*-netbsd* | sparc64-*-netbsd* | amd64-*-freebsd* )
++         x86_64-*-linux-gnu | x86_64-linux-gnu | ia64-*-linux-gnu | alpha-*-linux-gnu | alpha-*-netbsd* | x86_64-*-netbsd* | sparc64-*-netbsd* | amd64-*-freebsd* | powerpc64*-*-freebsd*)
                  IS_64_BITS_CPU=true
      ;;
  esac
@@ -27,3 +27,25 @@
     ## With GNU Compiler
  
     # enable the code coverage
+@@ -13126,7 +13126,7 @@
+              ;;
+              *)
+
+-    machine=`uname -m`
++    machine=`uname -p`
+     case "$machine" in
+         i?86)
+           machine=i386
+@@ -13142,10 +13142,10 @@
+         powerpc)
+           machine=ppc
+           ;;
+-        ppc64le)
++        powerpc64le|ppc64le)
+           machine=ppc64le
+           ;;
+-        ppc64)
++        powerpc64|ppc64)
+           machine=ppc64
+           ;;
+         armv*)

@@ -1,0 +1,33 @@
+--- bin/scilab.orig	2020-02-25 10:59:42.000000000 +0100
++++ bin/scilab	2021-01-25 02:36:29.251977000 +0100
+@@ -184,7 +187,7 @@
+         OS=$(uname -s) # Retrieve the Operating System
+     fi
+     if test "${MODEL}" = ""; then
+-        MODEL=$(uname -m) # Retrieve the model
++        MODEL=$(uname -p) # Retrieve the model
+     fi
+ 
+     if test $SCIVERBOSE -ne 0; then
+@@ -622,7 +625,20 @@
+                     set_macosx_java_vm
+                     ;;
+                 *FreeBSD*)
+-                    proc=$MODEL
++                    case $MODEL in
++                        "powerpc")
++                            proc="ppc"
++                            ;;
++                        "powerpc64")
++                            proc="ppc64"
++                            ;;
++                        "powerpc64le")
++                            proc="ppc64le"
++                            ;;
++			*)
++                    	    proc=$MODEL
++			    ;;
++		    esac
+                     ;;
+                 *)
+                     echo "Could not find the Java configuration for the OS <${OS}>. Please contact us or submit a bug report with your detailed configuration http://bugzilla.scilab.org/"
