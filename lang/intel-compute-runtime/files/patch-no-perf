@@ -32,12 +32,12 @@ level_zero/tools/source/sysman/linux/pmu/pmu_imp.h:12:10: fatal error: 'linux/pe
  }
  
  LinuxEngineImp::LinuxEngineImp(OsSysman *pOsSysman, zes_engine_group_t type, uint32_t engineInstance) : engineGroup(type), engineInstance(engineInstance) {
---- level_zero/tools/source/sysman/linux/os_sysman_imp.cpp.orig	2020-09-11 07:53:58 UTC
+--- level_zero/tools/source/sysman/linux/os_sysman_imp.cpp.orig	2021-02-08 19:32:47 UTC
 +++ level_zero/tools/source/sysman/linux/os_sysman_imp.cpp
-@@ -37,8 +37,10 @@ ze_result_t LinuxSysmanImp::init() {
-     pPmt = new PlatformMonitoringTech();
-     UNRECOVERABLE_IF(nullptr == pPmt);
-     pPmt->init(myDeviceName, pFsAccess);
+@@ -42,8 +42,10 @@ ze_result_t LinuxSysmanImp::init() {
+     auto rootPciPathOfGpuDevice = getPciRootPortDirectoryPath(realRootPath);
+     PlatformMonitoringTech::create(pParentSysmanDeviceImp->deviceHandles, pFsAccess, rootPciPathOfGpuDevice, mapOfSubDeviceIdToPmtObject);
+ 
 +#ifdef __linux__
      pPmuInterface = PmuInterface::create(this);
      UNRECOVERABLE_IF(nullptr == pPmuInterface);
@@ -45,12 +45,12 @@ level_zero/tools/source/sysman/linux/pmu/pmu_imp.h:12:10: fatal error: 'linux/pe
  
      return ZE_RESULT_SUCCESS;
  }
---- level_zero/tools/source/sysman/linux/os_sysman_imp.h.orig	2020-09-11 07:53:58 UTC
+--- level_zero/tools/source/sysman/linux/os_sysman_imp.h.orig	2021-02-08 19:32:47 UTC
 +++ level_zero/tools/source/sysman/linux/os_sysman_imp.h
-@@ -13,7 +13,9 @@
- #include "level_zero/core/source/device/device.h"
+@@ -14,7 +14,9 @@
+ #include "level_zero/tools/source/sysman/linux/firmware_util/firmware_util.h"
  #include "level_zero/tools/source/sysman/linux/fs_access.h"
- #include "level_zero/tools/source/sysman/linux/pmt.h"
+ #include "level_zero/tools/source/sysman/linux/pmt/pmt.h"
 +#ifdef __linux__
  #include "level_zero/tools/source/sysman/linux/pmu/pmu_imp.h"
 +#endif
