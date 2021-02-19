@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2
 
-USES=	cmake tar:tgz
+USES=		cmake compiler:c++11-lang tar:tgz
 
 CMAKE_ARGS+=	-DTBB_STRICT:BOOL=FALSE
 
