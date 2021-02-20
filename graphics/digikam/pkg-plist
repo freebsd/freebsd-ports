@@ -233,6 +233,7 @@ lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/generic/Generic_TimeAdjust_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_Twitter_Plugin.so
 %%KVKONTAKTE%%%%QT_PLUGINDIR%%/digikam/generic/Generic_VKontakte_Plugin.so
+%%MEDIAPLAYER%%%%QT_PLUGINDIR%%/digikam/generic/Generic_VideoSlideShow_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_Wallpaper_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_YandexFotki_Plugin.so
 %%QT_PLUGINDIR%%/digikam/rawimport/RawImport_DarkTable_Plugin.so
