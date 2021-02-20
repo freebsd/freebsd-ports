@@ -1,6 +1,6 @@
---- Makefile.orig	2017-07-06 14:53:29 UTC
+--- Makefile.orig	2020-03-22 21:26:18 UTC
 +++ Makefile
-@@ -84,7 +84,7 @@ $(QLDIR)/local-projects/cl-csv:
+@@ -86,7 +86,7 @@ $(QLDIR)/local-projects/cl-csv:
  
  $(QLDIR)/setup.lisp:
  	mkdir -p $(BUILDDIR)
@@ -9,30 +9,23 @@
  	$(CL) $(CL_OPTS) --load $(BUILDDIR)/quicklisp.lisp                        \
               --load src/getenv.lisp                                               \
               --eval '(quicklisp-quickstart:install :path "$(BUILDDIR)/quicklisp" :proxy (getenv "http_proxy"))' \
-@@ -97,7 +97,7 @@ clones: $(QLDIR)/local-projects/cl-ixf \
-         $(QLDIR)/local-projects/cl-csv \
-         $(QLDIR)/local-projects/qmynd ;
+@@ -126,7 +126,9 @@ $(BUILDAPP_CCL): $(QLDIR)/setup.lisp
  
--$(LIBS): $(QLDIR)/setup.lisp clones
-+$(LIBS): $(QLDIR)/setup.lisp
- 	$(CL) $(CL_OPTS) --load $(QLDIR)/setup.lisp                 \
-              --eval '(push "$(PWD)/" asdf:*central-registry*)'      \
-              --eval '(ql:quickload "pgloader")'                     \
-@@ -113,7 +113,7 @@ $(MANIFEST): $(LIBS)
- 
- manifest: $(MANIFEST) ;
- 
--$(BUILDAPP_CCL): $(QLDIR)/setup.lisp
-+$(BUILDAPP_CCL): $(QLDIR)/setup.lisp $(LIBS)
+ $(BUILDAPP_SBCL): $(QLDIR)/setup.lisp
  	mkdir -p $(BUILDDIR)/bin
- 	$(CL) $(CL_OPTS) --load $(QLDIR)/setup.lisp               \
+-	$(CL) $(CL_OPTS) --load $(QLDIR)/setup.lisp               \
++	cd $(BUILDDIR)/quicklisp/dists/quicklisp/software/buildapp-1.5.6/ && LISP=$(CL) gmake
++	mv $(BUILDDIR)/quicklisp/dists/quicklisp/software/buildapp-1.5.6/buildapp $(BUILDDIR)/bin/buildapp.sbcl
++#$(CL) $(CL_OPTS) --load $(QLDIR)/setup.lisp               \
               --eval '(ql:quickload "buildapp")'                   \
-@@ -176,7 +176,7 @@ $(BUNDLE): $(BUNDLEDIR)
+              --eval '(buildapp:build-buildapp "$@")'              \
+              --eval '(quit)'
+@@ -199,7 +201,7 @@ $(BUNDLE): $(BUNDLEDIR) $(BUNDLEDIR)/version.sexp
  	sed -e s/%VERSION%/$(VERSION)/ < bundle/Makefile > $(BUNDLEDIR)/Makefile
  	git archive --format=tar --prefix=pgloader-$(VERSION)/ master \
  	     | tar -C $(BUNDLEDIR)/local-projects/ -xf -
 -	make QLDIR=$(BUNDLEDIR) clones
-+	make QLDIR=$(BUNDLEDIR)
++#	make QLDIR=$(BUNDLEDIR) clones
  	tar -C build/bundle 		    \
              --exclude bin   		    \
              --exclude test/sqlite           \

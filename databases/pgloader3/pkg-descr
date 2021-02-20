@@ -1,9 +1,11 @@
-Pgloader loads data into PostgreSQL using the COPY streaming protocol,and
-doing so with separate threads for reading and writing data.Asynchronous
-IO,compiled to the metal programming language.
-pgloader knows how to read data from MySQL,SQLite or dBase databases,and
-knows how to discover the schema and properly cast data types over.It also
-knows how to read CSV files in several definitions of CSV,and fixed columns
-files.
+pgloader loads data from various sources into PostgreSQL. It can transform the
+data it reads on the fly and submit raw SQL before and after the loading.
+It uses the COPY PostgreSQL protocol to stream the data into the server,
+and manages errors by filling a pair of reject.dat and reject.log files.
 
-WWW: http://pgloader.io
+Thanks to being able to load data directly from a database source, pgloader
+also supports migrations from other productions to PostgreSQL. In this mode of
+operation, pgloader handles both the schema and data parts of the migration in a
+single unmanned command, allowing to implement Continuous Migration.
+
+WWW: https://pgloader.io
