@@ -16,12 +16,12 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libglfw.so:graphics/glfw
 BUILD_DEPENDS=	${LOCALBASE}/include/stb/stb_image.h:devel/stb
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Gargaj
-GH_PROJECT=	Bonzomatic
-
 USES=		cmake gl localbase:ldflags pkgconfig xorg
 USE_GL=		gl glu glew
 USE_XORG=	x11 xext xrandr xinerama xcursor xi
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	Gargaj
+GH_PROJECT=	Bonzomatic
 
 .include <bsd.port.mk>
