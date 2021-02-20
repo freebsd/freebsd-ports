@@ -58,6 +58,7 @@
     SUBDIR += cp2k
     SUBDIR += cp2k-data
     SUBDIR += crf++
+    SUBDIR += dakota
     SUBDIR += dalton
     SUBDIR += dcl
     SUBDIR += devisor

@@ -1,0 +1,37 @@
+--- CMakeLists.txt.orig	1970-01-01 00:00:00 UTC
++++ CMakeLists.txt
+@@ -253,7 +253,9 @@ if(ENABLE_DAKOTA_DOCS)
+   add_subdirectory(docs)
+ endif()
+ 
+-add_subdirectory(examples)
++if (FREEBSD_ENABLE_EXAMPLES)
++  add_subdirectory(examples)
++endif()
+ 
+ add_subdirectory(interfaces)
+ 
+@@ -275,19 +277,23 @@ install(FILES INSTALL LICENSE COPYRIGHT README
+   DESTINATION ${DAKOTA_TOPFILES_INSTALL}
+   )
+ 
++if (FREEBSD_ENABLE_EXAMPLES)
+ install(DIRECTORY examples DESTINATION ${DAKOTA_EXAMPLES_INSTALL}
+   USE_SOURCE_PERMISSIONS
+   PATTERN "CMakeLists.txt" EXCLUDE
+   PATTERN "*.c" EXCLUDE 
+   PATTERN "*.f" EXCLUDE 
+   )
++endif()
+ 
++if (FREEBSD_INSTALL_TESTS)
+ install(DIRECTORY test DESTINATION ${DAKOTA_TEST_INSTALL}
+   PATTERN "CMakeLists.txt" EXCLUDE
+   PATTERN "*.c" EXCLUDE 
+   PATTERN "*.cpp" EXCLUDE 
+   PATTERN "*.f" EXCLUDE 
+   )
++endif()
+ 
+ # Final CPack settings (depends on DAKOTA_GIT_checkout)
+ dakota_cpack_finalize()
