@@ -1,0 +1,12 @@
+%%PYTHON_SITELIBDIR%%/term_background/__init__.py
+%%PYTHON_SITELIBDIR%%/term_background/__main__.py
+%%PYTHON_SITELIBDIR%%/term_background/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/term_background/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/term_background/__pycache__/__main__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/term_background/__pycache__/__main__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/term_background/__pycache__/version.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/term_background/__pycache__/version.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/term_background/version.py
+%%DATADIR%%/term-background.bash
+%%DATADIR%%/term-background.ksh
+%%DATADIR%%/term-background.zsh

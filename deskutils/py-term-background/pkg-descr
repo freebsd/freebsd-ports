@@ -1,0 +1,5 @@
+POSIX shell scripts to figure out if a terminal has a dark or light background.
+
+The Python module contained is part of a broader set of scripts.
+
+WWW: https://github.com/rocky/shell-term-background
