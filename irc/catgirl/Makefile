@@ -11,7 +11,7 @@ COMMENT=	TLS-only terminal IRC client
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		ncurses pkgconfig ssl
+USES=		compiler:c++11-lang ncurses pkgconfig ssl
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
