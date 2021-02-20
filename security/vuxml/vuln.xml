@@ -78,6 +78,32 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9c03845c-7398-11eb-bc0e-2cf05d620ecc">
+    <topic>raptor2 -- malformed input file can lead to a segfault</topic>
+    <affects>
+      <package>
+	<name>raptor2</name>
+	<range><lt>2.0.15_17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redland Issue Tracker reports:</p>
+	<blockquote cite="https://bugs.librdf.org/mantis/view.php?id=650">
+	  <p>due to an out of bounds array access in
+raptor_xml_writer_start_element_common.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.librdf.org/mantis/view.php?id=650</url>
+    </references>
+    <dates>
+      <discovery>2020-11-24</discovery>
+      <entry>2021-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a45d945a-cc2c-4cd7-a941-fb58fdb1b01e">
     <topic>jenkins -- Privilege escalation vulnerability in bundled Spring Security library</topic>
     <affects>
