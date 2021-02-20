@@ -3,7 +3,7 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
 DISTVERSION=	20.0.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -48,14 +48,15 @@ SCSICRYPTO_DESC=	Build LTO AME crypto plugin
 .if ${PKGNAMESUFFIX} == "-server"
 OPTIONS_GROUP=  BACKENDS
 OPTIONS_GROUP_BACKENDS= CEPHFS GFAPI RADOS
-OPTIONS_DEFINE=		MTX PYTHON NDMP NLS SCSICRYPTO
-OPTIONS_DEFAULT+=	PGSQL SCSICRYPTO
+OPTIONS_DEFINE=		MTX PYTHON LMDB NDMP NLS SCSICRYPTO
+OPTIONS_DEFAULT+=	LMDB PGSQL SCSICRYPTO
 OPTIONS_SINGLE_DATABASE=	SQLITE3 MYSQL PGSQL
 OPTIONS_SINGLE+=		DATABASE
 BACKENDS_DESC= 		Storage backends
 DATABASE_DESC=		Database support
 CEPHFS_DESC=	CEPHFS backend support
 GFAPI_DESC=	GFAPI backend support
+LMDB_DESC=	Enable faster accurate backup support
 RADOS_DESC=	RADOS backend support
 
 NDMP_CMAKE_ON=	-Dndmp=ON
@@ -114,18 +115,20 @@ CMAKE_ARGS+=	-Dtcp-wrappers=ON \
 		-Dpiddir=/var/run/bareos
 
 .if defined(WITH_CLIENT_ONLY)
+CFLAGS+=	-DMDB_DSYNC=O_SYNC -DMDB_USE_POSIX_SEM=1
+
+CMAKE_ARGS+=	-Dfd-user=root \
+		-Dfd-group=wheel \
+		-Dlmdb=ON
+.else
 LMDB_CMAKE_ON=	-Dlmdb=ON
 LMDB_CMAKE_OFF=	-Dlmdb=OFF
 LMDB_CFLAGS+=	-DMDB_DSYNC=O_SYNC -DMDB_USE_POSIX_SEM=1
 
-CMAKE_ARGS+=	-Dfd-user=root \
-		-Dfd-group=wheel
-.else
 CMAKE_ARGS+=	-Ddir-user=${BAREOS_USER} \
 		-Ddir-group=${BAREOS_GROUP} \
 		-Dsd-user=${BAREOS_USER} \
-		-Dsd-group=operator \
-		-Dlmdb=OFF
+		-Dsd-group=operator
 .endif
 
 # The user/group IDs below are registered, see

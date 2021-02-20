@@ -58,9 +58,9 @@ lib/libbareosfastlz.so.%%LIB_VERSION%%
 lib/libbareosfind.so
 lib/libbareosfind.so.20
 lib/libbareosfind.so.%%LIB_VERSION%%
-%%LMDB%%lib/libbareoslmdb.so
-%%LMDB%%lib/libbareoslmdb.so.20
-%%LMDB%%lib/libbareoslmdb.so.%%LIB_VERSION%%
+lib/libbareoslmdb.so
+lib/libbareoslmdb.so.20
+lib/libbareoslmdb.so.%%LIB_VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosfd.so
 man/man1/bconsole.1.gz
 man/man8/bareos-fd.8.gz
