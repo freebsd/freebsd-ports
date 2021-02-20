@@ -1,6 +1,5 @@
 %%V4L%%bin/zbarcam
-%%V6%%bin/zbarimg
-%%V7%%bin/zbarimg
+%%IMAGEMAGICK%%bin/zbarimg
 include/zbar.h
 include/zbar/Decoder.h
 include/zbar/Exception.h
@@ -23,8 +22,7 @@ lib/libzbar.so.0.2.0
 %%GTK2%%libdata/pkgconfig/zbar-gtk.pc
 libdata/pkgconfig/zbar.pc
 %%V4L%%man/man1/zbarcam.1.gz
-%%V6%%man/man1/zbarimg.1.gz
-%%V7%%man/man1/zbarimg.1.gz
+%%IMAGEMAGICK%%man/man1/zbarimg.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS

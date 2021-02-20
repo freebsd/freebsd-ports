@@ -3,7 +3,7 @@
 
 PORTNAME=	zbar
 PORTVERSION=	0.10
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -12,17 +12,15 @@ COMMENT=	ZBar barcode reader
 
 LICENSE=	LGPL21
 
-USES=		iconv jpeg libtool gmake pathfix pkgconfig
+USES=		iconv jpeg libtool localbase:ldflags gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--with-jpeg=yes --with-python=no --with-qt=no
 
-OPTIONS_DEFINE=	X11 V4L GTK2 DOCS
-OPTIONS_DEFAULT=X11 V7
-OPTIONS_RADIO=	IMAGEMAGICK
-OPTIONS_RADIO_IMAGEMAGICK=	V6 V7
+OPTIONS_DEFINE=	DOCS GTK2 IMAGEMAGICK V4L X11
+OPTIONS_DEFAULT=IMAGEMAGICK X11
 OPTIONS_SUB=	yes
 V4L_DESC=	Build zbarcam video scanner
 
@@ -31,17 +29,9 @@ X11_USE=	XORG=ice,sm,x11,xau,xcb,xdmcp,xext,xv
 X11_CONFIGURE_ON=	--with-x=yes
 X11_CONFIGURE_OFF=	--with-x=no --without-xshm --without-xv
 
-V6_DESC=	With ImageMagick6
-V6_LIB_DEPENDS=	libMagick++-6.so:graphics/ImageMagick6
-V6_CONFIGURE_ON=	--with-imagemagick=yes
-
-V7_DESC=	With ImageMagick7
-V7_LIB_DEPENDS=	libMagick++-7.so:graphics/ImageMagick7
-V7_CONFIGURE_ON=	--with-imagemagick=yes
-
-.if empty(VARIABLE:MV6) && empty(VARIABLE:MV7)
-CONFIGURE_ARGS+=	--with-imagemagick=no
-.endif
+IMAGEMAGICK_LIB_DEPENDS=	libMagick++-${IMAGEMAGICK_DEFAULT}.so:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
+IMAGEMAGICK_CONFIGURE_ON=	--with-imagemagick=yes
+IMAGEMAGICK_CONFIGURE_OFF=	--with-imagemagick=no
 
 # To avoid patching configure even more:
 CONFIGURE_ENV+=			ac_cv_header_wand_MagickWand_h=yes
@@ -54,9 +44,6 @@ GTK2_USES=	gnome
 GTK2_USE=	GNOME=gtk20
 GTK2_CONFIGURE_ON=	--with-gtk=yes
 GTK2_CONFIGURE_OFF=	--with-gtk=no
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} '/^install-data-am: /s/install-dist_docDATA//' \
