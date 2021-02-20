@@ -2,12 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	xkb-switch
-PORTVERSION=	1.6.0
+PORTVERSION=	1.8.5
 CATEGORIES=	x11
-
-# https://github.com/ierton/xkb-switch/pull/41
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	2075a8cdd5456c906fcd49278c1003dcb6b9f880.patch:-p1
 
 MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Switch your X keyboard layouts from the command line
@@ -27,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 PLIST_FILES=	bin/xkb-switch \
 		lib/libxkbswitch.so \
 		lib/libxkbswitch.so.1 \
-		lib/libxkbswitch.so.1.6.0 \
+		lib/libxkbswitch.so.1.8.5 \
 		man/man1/xkb-switch.1.gz
 
 PORTDOCS=	README.md
