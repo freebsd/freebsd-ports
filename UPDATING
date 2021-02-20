@@ -9,9 +9,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of math/py-mathics
   AUTHOR: thierry@FreeBSD.org
 
-  math/py-mathics has been splitted into several ports, and Mathics Core
+  math/py-mathics has been split into several ports, and Mathics Core
   only provides a rudimentary command-line shell called mathics.
-  To get the same functionnality than in 1.x, you need to install either
+  To get the same functionality as in 1.x, you need to install either
   mathicsscript or Mathics-Django.
 
 20210219:
