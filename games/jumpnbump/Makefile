@@ -7,14 +7,14 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://gitlab.com/LibreGames/jumpnbump/repository/${PORTVERSION}/archive.tar.bz2?dummy=/
 
+PATCH_SITES=	https://gitlab.com/LibreGames/jumpnbump/-/commit/
+PATCHFILES=	b72b70a4233776bdaa6a683c89af2becefd53bd6.diff:-p1
+
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Play cute bunnies jumping on each other's heads #'
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: endscore_reached
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: endscore_reached
 
 USES=		compiler:c11 gettext-tools gmake sdl shebangfix tar:bzip2
 SHEBANG_FILES=	${WRKSRC}/menu/jumpnbump_menu.py.pre
