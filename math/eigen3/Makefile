@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	eigen
-PORTVERSION=	3.3.8
+PORTVERSION=	3.3.9
 CATEGORIES=	math
 MASTER_SITES=	https://gitlab.com/libeigen/eigen/-/archive/${PORTVERSION}/
 
@@ -23,8 +23,7 @@ OPTIONS_DEFAULT=FULL
 
 FULL_DESC=	Add the support for math dependencies
 FULL_CMAKE_ON=	-DBLAS_DIR:PATH="${LOCALBASE}"
-FULL_USES=	blaslapack:openblas gl pkgconfig
-FULL_USE=	GL=gl glew glut
+FULL_USES=	blaslapack:openblas pkgconfig
 FULL_LIB_DEPENDS=	libcholmod.so:math/suitesparse	\
 			libsuperlu.so:math/superlu	\
 			libadolc.so:math/adol-c		\
