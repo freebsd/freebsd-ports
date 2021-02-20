@@ -2,8 +2,7 @@
 
 PORTNAME=	alacritty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
-PORTREVISION=	1
+DISTVERSION=	0.7.2
 CATEGORIES=	x11
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -34,7 +33,7 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.11 \
 		block-0.1.6 \
-		byteorder-1.3.4 \
+		byteorder-1.4.2 \
 		calloop-0.6.5 \
 		cc-1.0.66 \
 		cfg-if-0.1.10 \
@@ -42,7 +41,6 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		cgl-0.3.2 \
 		clap-2.33.3 \
 		clipboard-win-3.1.1 \
-		cloudabi-0.1.0 \
 		cmake-0.1.45 \
 		cocoa-0.23.0 \
 		cocoa-0.24.0 \
@@ -58,13 +56,13 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		core-graphics-types-0.1.1 \
 		core-text-19.1.0 \
 		core-video-sys-0.1.4 \
-		crc32fast-1.2.0 \
+		crc32fast-1.2.1 \
 		crossbeam-utils-0.8.1 \
 		crossfont-0.2.0 \
 		darling-0.10.2 \
 		darling_core-0.10.2 \
 		darling_macro-0.10.2 \
-		derivative-2.1.1 \
+		derivative-2.2.0 \
 		dirs-2.0.2 \
 		dirs-sys-0.3.5 \
 		dispatch-0.2.0 \
@@ -72,9 +70,9 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		downcast-rs-1.2.0 \
 		dtoa-0.4.7 \
 		dwrote-0.11.0 \
-		embed-resource-1.4.1 \
+		embed-resource-1.5.1 \
 		expat-sys-2.1.6 \
-		filetime-0.2.12 \
+		filetime-0.2.14 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-0.5.0 \
@@ -87,7 +85,7 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		fsevent-sys-2.0.1 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		getrandom-0.1.15 \
+		getrandom-0.1.16 \
 		gl_generator-0.14.0 \
 		glutin-0.26.0 \
 		glutin_egl_sys-0.1.5 \
@@ -95,11 +93,11 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		glutin_gles2_sys-0.1.5 \
 		glutin_glx_sys-0.1.7 \
 		glutin_wgl_sys-0.1.5 \
-		hermit-abi-0.1.17 \
+		hermit-abi-0.1.18 \
 		ident_case-1.0.1 \
 		inotify-0.7.1 \
-		inotify-sys-0.1.4 \
-		instant-0.1.7 \
+		inotify-sys-0.1.5 \
+		instant-0.1.9 \
 		iovec-0.1.4 \
 		itoa-0.4.7 \
 		jni-sys-0.3.0 \
@@ -108,11 +106,11 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		lazy-bytes-cast-5.0.1 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.81 \
-		libloading-0.6.4 \
-		linked-hash-map-0.5.3 \
+		libc-0.2.86 \
+		libloading-0.6.7 \
+		linked-hash-map-0.5.4 \
 		lock_api-0.4.2 \
-		log-0.4.11 \
+		log-0.4.14 \
 		malloc_buf-0.0.6 \
 		maybe-uninit-2.0.0 \
 		memchr-2.3.4 \
@@ -129,7 +127,7 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		ndk-sys-0.2.1 \
 		net2-0.2.37 \
 		nix-0.18.0 \
-		nom-6.0.1 \
+		nom-6.1.0 \
 		notify-4.0.15 \
 		num_enum-0.4.3 \
 		num_enum_derive-0.4.3 \
@@ -140,42 +138,43 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		osmesa-sys-0.1.2 \
 		owned_ttf_parser-0.6.0 \
 		parking_lot-0.11.1 \
-		parking_lot_core-0.8.0 \
+		parking_lot_core-0.8.3 \
 		percent-encoding-2.1.0 \
 		pkg-config-0.3.19 \
 		png-0.16.8 \
 		proc-macro-crate-0.1.5 \
 		proc-macro2-1.0.24 \
-		quote-1.0.8 \
+		quote-1.0.9 \
 		raw-window-handle-0.3.3 \
 		redox_syscall-0.1.57 \
+		redox_syscall-0.2.4 \
 		redox_users-0.3.5 \
 		regex-automata-0.1.9 \
-		regex-syntax-0.6.21 \
+		regex-syntax-0.6.22 \
 		rust-argon2-0.8.3 \
 		rusttype-0.9.2 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.0 \
 		scopeguard-1.1.0 \
-		serde-1.0.118 \
-		serde_derive-1.0.118 \
-		serde_json-1.0.61 \
-		serde_yaml-0.8.14 \
+		serde-1.0.123 \
+		serde_derive-1.0.123 \
+		serde_json-1.0.62 \
+		serde_yaml-0.8.17 \
 		servo-fontconfig-0.5.1 \
 		servo-fontconfig-sys-5.1.0 \
 		shared_library-0.1.9 \
 		signal-hook-0.1.17 \
 		signal-hook-registry-1.3.0 \
 		slab-0.4.2 \
-		smallvec-1.5.1 \
+		smallvec-1.6.1 \
 		smithay-client-toolkit-0.12.2 \
-		smithay-clipboard-0.6.2 \
+		smithay-clipboard-0.6.3 \
 		socket2-0.3.19 \
 		spsc-buffer-0.1.1 \
 		strsim-0.8.0 \
 		strsim-0.9.3 \
-		syn-1.0.56 \
+		syn-1.0.60 \
 		textwrap-0.11.0 \
 		thiserror-1.0.23 \
 		thiserror-impl-1.0.23 \
@@ -218,7 +217,7 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		xcursor-0.3.3 \
 		xdg-2.2.0 \
 		xml-rs-0.8.3 \
-		yaml-rust-0.4.4
+		yaml-rust-0.4.5
 CARGO_USE_GITHUB=	yes
 CARGO_INSTALL_PATH=	alacritty
 
