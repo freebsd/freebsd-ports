@@ -1,0 +1,12 @@
+This is a tokeniser or scanner portion for the Wolfram Language.
+
+As such, it also contains a full set of translation between Wolfram Language
+named characters, their Unicode/ASCII equivalents and code-points.
+
+This is used as the scanner inside Mathics but it can also be used for
+tokenizing and formatting Wolfram Language code. This library is also quite
+usefull if you need to work with Wolfram Language named character and convert
+them to various formats.
+
+WWW: https://mathics.org/
+WWW: https://github.com/Mathics3/mathics-scanner

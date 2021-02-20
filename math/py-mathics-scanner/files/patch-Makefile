@@ -1,0 +1,10 @@
+--- Makefile.orig	2021-02-06 10:47:39 UTC
++++ Makefile
+@@ -20,7 +20,6 @@ RM  ?= rm
+ all: develop
+ 
+ mathics_scanner/data/characters.json: mathics_scanner/data/named-characters.yml
+-	$(PIP) install -r requirements-dev.txt
+ 	$(PYTHON) mathics_scanner/generate/build_tables.py
+ 
+ #: build everything needed to install
