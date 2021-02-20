@@ -161,7 +161,7 @@ _INCLUDE_USES_GO_POST_MK=	yes
 post-fetch:
 	@${ECHO_MSG} "===> Fetching ${GO_MODNAME} dependencies";
 	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
-		${RLN} ${GO_MODFILE} go.mod; \
+		[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
 		${SETENV} ${GO_ENV} ${GO_CMD} mod download -x)
 .endif
 
