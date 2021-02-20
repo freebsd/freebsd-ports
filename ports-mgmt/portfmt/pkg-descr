@@ -22,4 +22,4 @@ It comes with several tools:
 
   - set-version: resets PORTREVISION, sets DISTVERSION or PORTVERSION
 
-WWW: https://github.com/t6/portfmt
+WWW: https://github.com/dmgk/portfmt
