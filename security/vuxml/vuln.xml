@@ -77,6 +77,33 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a45d945a-cc2c-4cd7-a941-fb58fdb1b01e">
+    <topic>jenkins -- Privilege escalation vulnerability in bundled Spring Security library</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.280</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2021-02-19/">
+	  <h1>Description</h1>
+	  <h5>(high) SECURITY-2195 / CVE-2021-22112</h5>
+	  <p>Privilege escalation vulnerability in bundled Spring Security library</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.jenkins.io/security/advisory/2021-02-19/</url>
+    </references>
+    <dates>
+      <discovery>2021-02-19</discovery>
+      <entry>2021-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1bb2826b-7229-11eb-8386-001999f8d30b">
     <topic>asterisk -- Remote Crash Vulnerability in PJSIP channel driver</topic>
     <affects>
