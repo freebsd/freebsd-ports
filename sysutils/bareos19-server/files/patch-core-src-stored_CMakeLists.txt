@@ -1,5 +1,5 @@
---- core/src/stored/CMakeLists.txt	2020-01-31 11:21:18.000000000 -0500
-+++ core/src/stored/CMakeLists.txt	2020-01-31 16:11:45.064779000 -0500
+--- core/src/stored/CMakeLists.txt	2020-12-11 08:44:43.000000000 -0500
++++ core/src/stored/CMakeLists.txt	2021-02-19 17:45:53.384978000 -0500
 @@ -213,23 +213,23 @@
    list(APPEND BAREOS_SD_LIBRARIES comctl32)
  endif()
@@ -8,14 +8,16 @@
 +target_link_libraries(bareos-sd stored_objects ${BAREOS_SD_LIBRARIES} ${JANSSON_LIBRARIES} ${PTHREAD_LIBRARIES})
  
  add_executable(bls ${BLSSRCS})
- target_link_libraries(bls bareos bareossd bareosfind)
+-target_link_libraries(bls bareos bareossd bareosfind)
++target_link_libraries(bls bareos bareossd bareosfind ${PTHREAD_LIBRARIES})
  
  add_executable(bextract ${BEXTRACTSRS})
 -target_link_libraries(bextract bareossd bareosfind bareos)
 +target_link_libraries(bextract bareossd bareosfind bareos ${JANSSON_LIBRARIES} ${PTHREAD_LIBRARIES})
  
  add_executable(bscan ${BSCANSRCS})
- target_link_libraries(bscan bareos bareossd bareosfind bareossql bareoscats)
+-target_link_libraries(bscan bareos bareossd bareosfind bareossql bareoscats)
++target_link_libraries(bscan bareos bareossd bareosfind bareossql bareoscats ${PTHREAD_LIBRARIES})
  
  add_executable(btape ${BTAPESRCS})
 -target_link_libraries(btape bareossd bareos)
