@@ -16,7 +16,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libglfw.so:graphics/glfw
 BUILD_DEPENDS=	${LOCALBASE}/include/stb/stb_image.h:devel/stb
 
-USES=		cmake gl localbase:ldflags pkgconfig xorg
+USES=		cmake compiler:c++11-lang gl localbase:ldflags pkgconfig xorg
 USE_GL=		gl glu glew
 USE_XORG=	x11 xext xrandr xinerama xcursor xi
 
