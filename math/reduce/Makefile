@@ -13,6 +13,7 @@ COMMENT=	Codemist Standard Lisp REDUCE general-purpose computer system
 LICENSE=	BSD2CLAUSE
 
 BROKEN_armv6=		fails to compile: redfront.h:118:12: conflicting types for '__wcwidth'
+BROKEN_i386=		fails to compile: sysv.S:832:1: changed section flags for .eh_frame, expected: 0x2
 BROKEN_powerpc64=	fails to compile: arith01.cpp: 'statuc' does not name a type
 
 BUILD_DEPENDS=	gnuplot:math/gnuplot
