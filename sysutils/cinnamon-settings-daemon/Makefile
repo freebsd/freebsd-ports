@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cinnamon-settings-daemon
-PORTVERSION=	4.8.2
+PORTVERSION=	4.8.5
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome
 
@@ -15,7 +15,8 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	cinnamon-session:x11/cinnamon-session \
-		xf86-input-wacom>0:x11-drivers/xf86-input-wacom
+		xf86-input-wacom>0:x11-drivers/xf86-input-wacom \
+		gln:sysutils/coreutils
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libpolkit-gobject-1.so:sysutils/polkit \
@@ -46,6 +47,7 @@ GH_ACCOUNT=	linuxmint
 MESON_ARGS=	-Duse_logind=disabled
 
 SHEBANG_GLOB=	*.py
+BINARY_ALIAS=	ln=gln
 
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
