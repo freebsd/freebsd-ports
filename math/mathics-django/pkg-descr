@@ -1,0 +1,12 @@
+This is the Django front-end to Mathics (math/py-mathics).
+
+Previously, it was included in the Mathics package.
+
+Features:
+
+  + Extensive online documentation
+  + Integrated graphics and MathML mathematics output
+  + Notebook-like sessions
+
+WWW: https://mathics.org/
+WWW: https://github.com/Mathics3/mathics-django

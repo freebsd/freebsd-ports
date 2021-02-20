@@ -1,0 +1,2 @@
+To run the server, type:
+%%PYTHON_CMD%% %%PYTHON_SITELIBDIR%%/mathics-django/manage.py runserver

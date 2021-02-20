@@ -402,6 +402,7 @@
     SUBDIR += mate-calc
     SUBDIR += math77
     SUBDIR += mathgl
+    SUBDIR += mathics-django
     SUBDIR += mathicsscript
     SUBDIR += mathmod
     SUBDIR += mathomatic
