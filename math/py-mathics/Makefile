@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Mathics
-PORTVERSION=	1.1.1
+PORTVERSION=	2.0.0
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,8 +24,8 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}mpmath>0:math/py-mpmath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nltk>0:textproc/py-nltk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyaml>0:textproc/py-pyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydot>0:graphics/py-pydot@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django31>0:www/py-django31@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langid>0:textproc/py-langid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR} \
@@ -42,7 +42,8 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}ipywidgets>0:devel/py-ipywidgets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycountry>0:textproc/py-pycountry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}word_cloud>0:textproc/py-wordcloud@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scikit-image>0:graphics/py-scikit-image@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mathics-scanner>0:math/py-mathics-scanner@${PY_FLAVOR}
 TEST_DEPENDS=	gmake:devel/gmake	\
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>0:devel/py-pluggy@${PY_FLAVOR}
@@ -53,11 +54,10 @@ GH_ACCOUNT=	${PORTNAME:tl}
 USES=		python:3.6+ shebangfix
 USE_PYTHON=	distutils
 SHEBANG_GLOB=	*.py
-SHEBANG_FILES=	script/dmathicsscript script/dmathicsserver
 
 MAKE_ENV+=	PYTHON=${PYTHON_CMD}
 PLIST_SUB+=	VER=${PORTVERSION}
-TEST_TARGET=	djangotest check
+TEST_TARGET=	check
 TEST_ENV=	${MAKE_ENV}
 
 do-test: install
