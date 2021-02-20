@@ -2,6 +2,7 @@
 
 PORTNAME=	dakota
 DISTVERSION=	6.13.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://dakota.sandia.gov/sites/default/files/distributions/public/
 
@@ -34,6 +35,7 @@ CMAKE_ARGS=	-DDakota_VERSION_SRC:STRING=${DISTVERSION} -DDakota_GIT_REVL:STRING=
 FFLAGS+=	-fallow-argument-mismatch
 LDFLAGS+=	-lexecinfo
 
+CONFLICTS_BUILD=	dakota # self: picks up some bundled packages from the pre-installed dakota package and then fails to install them
 CONFLICTS_INSTALL=	openblas
 
 USES_GIT=	no
@@ -62,6 +64,13 @@ do-fetch:
 .else
 DISTNAME=	${PORTNAME}-${DISTVERSION}-release-public.src-UI
 .endif
+
+OPTIONS_DEFINE=		GSL
+OPTIONS_DEFAULT=	GSL
+
+GSL_DESC=		GSL support
+GSL_CMAKE_BOOL=		DAKOTA_HAVE_GSL HAVE_QUESO # QUESO requires GSL
+GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete

@@ -2518,6 +2518,7 @@ lib/libpebbl.so
 lib/libpecos_src.so
 lib/libpecos_util.so
 lib/libpsuade.so
+lib/libqueso.so
 lib/librol.so
 lib/librol.so.13
 lib/librol.so.13.0
