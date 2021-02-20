@@ -3,7 +3,7 @@
 
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.29.1
+DISTVERSION=	1.29.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -22,14 +22,15 @@ RUN_DEPENDS=	bash:shells/bash \
 
 USES=		autoreconf cpe gmake pathfix pkgconfig:both python shebangfix \
 		ssl
+SHEBANG_GLOB=	*
+
 USE_RC_SUBR=	${PORTNAME}
 
-SHEBANG_GLOB=	*
+INSTALL_TARGET=	install-strip
+CPPFLAGS+=	-D_WANT_VMMETER
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-unit-tests
-INSTALL_TARGET=	install-strip
-CPPFLAGS+=	-D_WANT_VMMETER
 
 SUB_FILES=	${PORTNAME}.conf.sample
 SUB_LIST=	NETDATA_CACHE=${NETDATA_CACHE} \
