@@ -1,4 +1,4 @@
---- configure.orig	2021-01-05 15:32:39 UTC
+--- configure.orig	2021-01-22 20:23:00 UTC
 +++ configure
 @@ -1209,8 +1209,6 @@ HWLOC_top_builddir
  hwloclib
@@ -9,14 +9,14 @@
  VISIBILITY_CFLAGS
  BUILD_PROFILING_LIB_FALSE
  BUILD_PROFILING_LIB_TRUE
-@@ -31186,336 +31184,9 @@ if test "$NEEDSPLIB" = "yes" ; then
+@@ -31185,337 +31183,7 @@ if test "$NEEDSPLIB" = "yes" ; then
+     VISIBILITY_CFLAGS=""
  fi
  
- # json-c
-+# We use the external port devel/json-c
+-# json-c
  
 -jsonsrcdir=""
- 
+-
 -jsonlib=""
 -
 -
@@ -102,7 +102,7 @@
 -        # Remove --cache-file, --srcdir, and --disable-option-checking arguments
 -        # so they do not pile up.  Otherwise relative paths (like --srcdir=.. from
 -        # make distcheck) will be incorrect.
--        pac_sub_configure_args="--disable-werror"
+-        pac_sub_configure_args="--enable-embedded --disable-werror"
 -        pac_prev=
 -        eval "set x $ac_configure_args"
 -        shift
@@ -347,7 +347,7 @@
  # ----------------------------------------------------------------------------
  # HWLOC
  # ----------------------------------------------------------------------------
-@@ -45612,18 +45283,8 @@ the same routine with arguments of different types." "
+@@ -45612,18 +45280,8 @@ the same routine with arguments of different types." "
  fi
  
  addarg=$pac_cv_prog_f77_mismatched_args_parm
@@ -367,7 +367,7 @@
      bindings="$bindings f77"
  
  $as_echo "#define HAVE_FORTRAN_BINDING 1" >>confdefs.h
-@@ -51252,7 +50913,11 @@ $as_echo_n "checking alignment of wchar_t... " >&6; }
+@@ -51252,7 +50910,11 @@ $as_echo_n "checking alignment of wchar_t... " >&6; }
  if ${ac_cv_alignof_wchar_t+:} false; then :
    $as_echo_n "(cached) " >&6
  else
