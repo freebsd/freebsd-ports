@@ -2,8 +2,7 @@
 
 PORTNAME=	shaderc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2020.4
-PORTREVISION=	4
+DISTVERSION=	2020.5
 CATEGORIES=	graphics devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +17,7 @@ USES=		cmake compiler:c++11-lib localbase:ldflags python:3.4+,build
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	google
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.3:headers/third_party/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-32-ga3fdfe8:headers/third_party/spirv-headers
 CMAKE_ARGS=	-Dglslang_SOURCE_DIR:PATH="${LOCALBASE}/include/glslang" \
 		-DSPIRV-Headers_SOURCE_DIR:PATH="${WRKSRC}/third_party/spirv-headers"
 LDFLAGS+=	-Wl,-z,defs # glslang
