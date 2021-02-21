@@ -1,0 +1,43 @@
+--- Makefile.orig	2021-02-18 00:40:10 UTC
++++ Makefile
+@@ -15,10 +15,10 @@
+ #
+ 
+ CURLINCL = `curl-config --cflags` 
+-JANSINCL = -I/usr/local/include
++JANSINCL = -I$(LOCALBASE)/include
+ 
+ CURLLIBS = `[ ! -z "$$(curl-config --libs)" ] && curl-config --libs || curl-config --static-libs`
+-JANSLIBS = -L/usr/local/lib -ljansson
++JANSLIBS = -L$(LOCALBASE)/lib -ljansson
+ 
+ CWARN =-W -Wall -Wextra -Wcast-qual -Wpointer-arith -Wwrite-strings \
+ 	-Wmissing-prototypes  -Wbad-function-cast -Wnested-externs \
+@@ -34,7 +34,7 @@ CDEBUG = -g -O3
+ CFLAGS += $(CGPROF) $(CDEBUG) $(CWARN) $(CDEFS)
+ INCL= $(CURLINCL) $(JANSINCL)
+ # freebsd requires that -lresolv _not_ be used here
+-LIBS= $(CURLLIBS) $(JANSLIBS) -lresolv
++LIBS= $(CURLLIBS) $(JANSLIBS)
+ #LIBS= $(CURLLIBS) $(JANSLIBS)
+ 
+ TOOL = dnsdbq
+@@ -48,12 +48,12 @@ TOOL_SRC = $(TOOL).c ns_ttl.c netio.c \
+ all: $(TOOL)
+ 
+ install: all
+-	rm -f /usr/local/bin/$(TOOL)
+-	mkdir -p /usr/local/bin
+-	cp $(TOOL) /usr/local/bin/$(TOOL)
+-	rm -f /usr/local/share/man/man1/$(TOOL).1
+-	mkdir -p /usr/local/share/man/man1
+-	cp $(TOOL).man /usr/local/share/man/man1/$(TOOL).1
++	rm -f $(PREFIX)/bin/$(TOOL)
++	mkdir -p $(PREFIX)/bin
++	cp $(TOOL) $(PREFIX)/bin/$(TOOL)
++	rm -f $(PREFIX)/share/man/man1/$(TOOL).1
++	mkdir -p $(PREFIX)/share/man/man1
++	cp $(TOOL).man $(PREFIX)/share/man/man1/$(TOOL).1
+ 
+ clean:
+ 	rm -f $(TOOL)
