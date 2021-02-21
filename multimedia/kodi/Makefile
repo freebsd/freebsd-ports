@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	19.0RC1
-PORTREVISION=	2
+DISTVERSION=	19.0
 CATEGORIES=	multimedia java
 
 MAINTAINER=	yzrh@noema.org
