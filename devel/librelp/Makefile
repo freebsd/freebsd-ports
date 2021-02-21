@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librelp
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	devel
 MASTER_SITES=	http://download.rsyslog.com/librelp/
 
@@ -31,7 +31,7 @@ INSTALL_TARGET=	install-strip
 PLIST_FILES=	include/${PORTNAME}.h \
 		lib/${PORTNAME}.a \
 		lib/${PORTNAME}.so lib/${PORTNAME}.so.0 \
-		lib/${PORTNAME}.so.0.5.0 \
+		lib/${PORTNAME}.so.0.5.1 \
 		libdata/pkgconfig/relp.pc
 
 PORT_VERBS=	relp
