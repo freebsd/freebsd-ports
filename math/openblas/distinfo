@@ -1,7 +1,7 @@
-TIMESTAMP = 1606163641
+TIMESTAMP = 1608090088
 SHA256 (openblas/large.tgz) = f328d88b7fa97722f271d7d0cfea1c220e0f8e5ed5ff01d8ef1eb51d6f4243a1
 SIZE (openblas/large.tgz) = 2595
 SHA256 (openblas/timing.tgz) = 999c65f8ea8bd4eac7f1c7f3463d4946917afd20a997807300fe35d70122f3af
 SIZE (openblas/timing.tgz) = 1059485
-SHA256 (openblas/xianyi-OpenBLAS-v0.3.12_GH0.tar.gz) = 65a7d3a4010a4e3bd5c0baa41a234797cd3a1735449a4a5902129152601dc57b
-SIZE (openblas/xianyi-OpenBLAS-v0.3.12_GH0.tar.gz) = 12325103
+SHA256 (openblas/xianyi-OpenBLAS-v0.3.13_GH0.tar.gz) = 79197543b17cc314b7e43f7a33148c308b0807cd6381ee77f77e15acf3e6459e
+SIZE (openblas/xianyi-OpenBLAS-v0.3.13_GH0.tar.gz) = 12437434
