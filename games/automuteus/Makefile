@@ -59,7 +59,6 @@ GH_TUPLE=	\
 		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify
 
-
 USE_RC_SUBR=	${PORTNAME}
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
