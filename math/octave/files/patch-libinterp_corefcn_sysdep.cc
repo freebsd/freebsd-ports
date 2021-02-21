@@ -1,6 +1,6 @@
---- libinterp/corefcn/sysdep.cc.orig	2019-02-23 17:33:37 UTC
+--- libinterp/corefcn/sysdep.cc.orig	2020-11-26 18:20:44 UTC
 +++ libinterp/corefcn/sysdep.cc
-@@ -58,6 +58,10 @@ along with Octave; see the file COPYING.  If not, see
+@@ -61,6 +61,10 @@
  #  include <omp.h>
  #endif
  
@@ -11,21 +11,3 @@
  #include "cmd-edit.h"
  #include "file-ops.h"
  #include "lo-mappers.h"
-@@ -92,6 +96,7 @@ along with Octave; see the file COPYING.  If not, see
- static void
- BSD_init (void)
- {
-+#if (defined (__FreeBSD__) && !defined(__arm__))
- #  if defined (HAVE_FLOATINGPOINT_H)
-   // Disable trapping on common exceptions.
- #    if ! defined (FP_X_DNML)
-@@ -99,6 +104,9 @@ BSD_init (void)
- #    endif
-   fpsetmask (~(FP_X_OFL|FP_X_INV|FP_X_DZ|FP_X_DNML|FP_X_UFL|FP_X_IMP));
- #  endif
-+#else // FreeBSD && arm
-+  fedisableexcept(FE_ALL_EXCEPT);
-+#endif // FreeBSD && arm
- }
- #endif
- 

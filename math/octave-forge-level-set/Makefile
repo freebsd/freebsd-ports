@@ -15,6 +15,8 @@ ALL_TARGET=	oct
 USES=		compiler:c++0x
 GNU_CONFIGURE=	yes
 
+BROKEN=		does not build with octave-6.2.0
+
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}

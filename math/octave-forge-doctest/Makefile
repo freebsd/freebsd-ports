@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-doctest
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

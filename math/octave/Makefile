@@ -3,7 +3,6 @@
 
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}
-PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -36,9 +35,10 @@ LIB_DEPENDS=	libGraphicsMagick.so:graphics/GraphicsMagick \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libdrm.so:graphics/libdrm \
-		libsndfile.so:audio/libsndfile \
+		libOSMesa.so:graphics/libosmesa \
 		libsundials_arkode.so:math/sundials \
 		libportaudio.so:audio/portaudio
+#		libsndfile.so:audio/libsndfile # Commented out until this port no longer has vulnerabilities.
 
 USES=		charsetfix fortran gmake libtool perl5 pkgconfig readline \
 		tar:xz compiler:c++14-lang \
@@ -72,10 +72,10 @@ CONFIGURE_ENV=	GPERF="${LOCALBASE}/bin/gperf" \
 CONFIGURE_ARGS=	--host=${GNU_HOST} \
 		--with-blas="-L${LOCALBASE}/lib ${BLASLIB}" \
 		--with-lapack="${LAPACKLIB}" \
-		--with-sndfile \
 		--enable-shared \
 		--disable-jit \
-		--disable-openmp
+		--disable-openmp \
+		--with-osmesa
 
 INFO=		octave liboctave
 
@@ -103,7 +103,7 @@ ATLAS_USES=		blaslapack:atlas
 
 post-patch:
 	${REINPLACE_CMD} 's+"makeinfo"+"${LOCALBASE}/bin/makeinfo"+' ${WRKSRC}/libinterp/corefcn/help.cc
-	${REINPLACE_CMD} 's/"-qt$$qt_version"/"-qt=qt$$qt_version"/' ${WRKSRC}/configure
+	${REINPLACE_CMD} 's/"-qt=$$qt_version"/"-qt=qt$$qt_version"/' ${WRKSRC}/configure
 
 post-install:
 	(cd ${STAGEDIR}${DATADIR} && ${LN} -s ${PORTVERSION}/imagelib  .)

@@ -1,6 +1,6 @@
---- build-aux/find-files-with-tests.sh.orig	2018-04-30 17:03:56 UTC
+--- build-aux/find-files-with-tests.sh.orig	2020-11-26 18:20:44 UTC
 +++ build-aux/find-files-with-tests.sh
-@@ -21,7 +21,7 @@
+@@ -28,7 +28,7 @@
  set -e
  
  GREP=${GREP:-grep}

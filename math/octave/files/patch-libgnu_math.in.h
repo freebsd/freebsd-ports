@@ -1,4 +1,4 @@
---- libgnu/math.in.h.orig	2018-04-30 17:03:56 UTC
+--- libgnu/math.in.h.orig	2020-11-26 18:20:44 UTC
 +++ libgnu/math.in.h
 @@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License

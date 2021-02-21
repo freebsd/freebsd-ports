@@ -1,5 +1,4 @@
 # $FreeBSD$
 
 # Version to share with ports depending on octave
-OCTAVE_VERSION=	5.2.0
-
+OCTAVE_VERSION=	6.2.0

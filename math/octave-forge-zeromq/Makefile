@@ -3,6 +3,7 @@
 
 PORTNAME=	octave-forge-zeromq
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
