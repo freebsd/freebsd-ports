@@ -512,6 +512,7 @@
     SUBDIR += octave-forge-optim
     SUBDIR += octave-forge-optiminterp
     SUBDIR += octave-forge-outliers
+    SUBDIR += octave-forge-parallel
     SUBDIR += octave-forge-plot
     SUBDIR += octave-forge-quaternion
     SUBDIR += octave-forge-queueing
