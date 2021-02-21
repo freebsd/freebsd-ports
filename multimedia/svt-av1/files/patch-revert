@@ -1,5 +1,5 @@
-Revert https://github.com/AOMediaCodec/SVT-AV1/commit/fedc119668a4
-due to https://github.com/AOMediaCodec/SVT-AV1/issues/1613
+Revert https://gitlab.com/AOMediaCodec/SVT-AV1/-/commit/fedc119668a4
+due to https://gitlab.com/AOMediaCodec/SVT-AV1/-/issues/1613
 
 --- CMakeLists.txt.orig	2020-11-29 07:10:56 UTC
 +++ CMakeLists.txt
