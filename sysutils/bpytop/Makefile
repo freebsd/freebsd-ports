@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	bpytop
-PORTVERSION=	1.0.61
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.62
 CATEGORIES=	sysutils
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 
-USES=	python:3.5+,run shebangfix
+USES=		python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aristocratos
