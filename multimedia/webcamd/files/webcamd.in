@@ -105,6 +105,13 @@ start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 status_cmd="${name}_status"
 
+#
+# The following pidfile should not exist and
+# allows multiple instances of webcamd to be
+# started.
+#
+pidfile="/var/run/${name}.dummy.pid"
+
 webcamd_pids()
 {
   pids=$(pgrep -d ' ' $name)
