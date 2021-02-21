@@ -2,7 +2,7 @@
 
 PORTNAME=	gammy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.62
+DISTVERSION=	0.9.64
 CATEGORIES=	accessibility
 
 MAINTAINER=	me@igalic.co
@@ -18,6 +18,8 @@ USE_QT=		core dbus gui widgets \
 		buildtools_build qmake_build
 USE_XORG=	x11 xext xxf86vm
 
-PLIST_FILES=	bin/gammy
+PLIST_FILES=	bin/gammy \
+		share/applications/gammy.desktop \
+		share/pixmaps/gammy.png
 
 .include <bsd.port.mk>
