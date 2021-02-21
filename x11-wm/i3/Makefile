@@ -7,6 +7,9 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	https://i3wm.org/downloads/ \
 		http://i3wm.org/downloads/
 
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES+=	d0067077ed9f.patch:-p1 # https://github.com/i3/i3/pull/4264
+
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Improved dynamic tiling window manager
 
