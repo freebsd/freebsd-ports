@@ -1,28 +1,19 @@
---- buildsys.mk.in.orig	2018-08-08 22:36:44 UTC
+--- buildsys.mk.in.orig	2021-02-01 23:26:34 UTC
 +++ buildsys.mk.in
-@@ -180,7 +180,8 @@ depend: pre-depend ${SRCS}
- 	done; \
- 	if test x"$$regen" = x"1" -a x"$$deps" != x""; then \
- 		${DEPEND_STATUS}; \
--		if ${MAKE} $$deps && cat $$deps >.deps; then \
-+		if ${MAKE} $$deps && cat $$deps >.deps && sed 's|/[^ ]*/include/audacious/dbus.h||g' \
-+		$$deps >.deps; then \
- 			rm -f $$deps; \
- 			${DEPEND_OK}; \
- 		else \
-@@ -664,6 +665,15 @@ install: install-extra
- 		${DIR_ENTER}; \
- 		${MAKE} install || exit $$?; \
+@@ -656,6 +656,16 @@ install: install-extra
  		${DIR_LEAVE}; \
-+	done
-+
-+	for i in ${CONTRIB}; do \
+ 	done
+ 
++	for i in "" ${CONTRIB}; do \
++		test x"$$i" = x"" && continue; \
 +		${INSTALL_STATUS}; \
 +		if ${MKDIR_P} ${DESTDIR}${datarootdir}/appdata && ${INSTALL} -m 644 $$i ${DESTDIR}${datarootdir}/appdata/$$(basename $$i); then \
 +			${INSTALL_OK}; \
 +		else \
 +			${INSTALL_FAILED}; \
 +		fi \
- 	done
- 
++	done
++
  	for i in "" ${SHARED_LIB}; do \
+ 		test x"$$i" = x"" && continue; \
+ 		${INSTALL_STATUS}; \

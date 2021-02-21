@@ -26,7 +26,6 @@ lib/audacious/General/delete-files.so
 %%GTK2%%lib/audacious/General/gtkui.so
 %%GTK2%%lib/audacious/General/hotkey.so
 %%LIRC%%lib/audacious/General/lirc.so
-%%GTK2%%lib/audacious/General/lyricwiki.so
 %%QT5%%lib/audacious/General/lyricwiki-qt.so
 %%MPRIS%%lib/audacious/General/mpris2.so
 %%NOTIFY%%lib/audacious/General/notify.so
@@ -228,6 +227,8 @@ share/audacious/Skins/TinyPlayer/volume.png
 %%NLS%%share/locale/ru/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/si/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/sr_RS/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/audacious-plugins.mo
