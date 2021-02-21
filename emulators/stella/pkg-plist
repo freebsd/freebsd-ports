@@ -1,4 +1,3 @@
-/you/have/to/check/what/makeplist/gives/you
 bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/R77_readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/debugger.html
