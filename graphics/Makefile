@@ -138,6 +138,7 @@
     SUBDIR += djview4
     SUBDIR += djvulibre
     SUBDIR += dmtx-utils
+    SUBDIR += drawing
     SUBDIR += drawpile
     SUBDIR += drm-current-kmod
     SUBDIR += drm-devel-kmod

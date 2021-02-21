@@ -1,0 +1,8 @@
+A simple drawing application.
+
+This application is a basic image editor, similar to Microsoft Paint,
+but aiming at the GNOME desktop.
+
+PNG, JPEG and BMP files are supported.
+
+WWW: https://maoschanz.github.io/drawing/
