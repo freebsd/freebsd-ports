@@ -4,6 +4,7 @@ include/lowdown.h
 lib/liblowdown.a
 libdata/pkgconfig/lowdown.pc
 share/man/man1/lowdown.1.gz
+share/man/man1/lowdown-diff.1.gz
 share/man/man3/lowdown.3.gz
 share/man/man3/lowdown_buf.3.gz
 share/man/man3/lowdown_buf_diff.3.gz
