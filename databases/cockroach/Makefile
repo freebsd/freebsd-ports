@@ -39,7 +39,7 @@ post-patch:
 		${WRKSRC}/src/github.com/cockroachdb/cockroach/Makefile
 
 do-build:
-	@${SETENV} -i ${MAKE_ENV} \
+	@${SETENV} -i ${MAKE_ENV} ${GO_ENV} \
 		${MAKE_CMD} -C ${WRKSRC} buildoss
 
 do-install:
