@@ -2,7 +2,7 @@
 
 PORTNAME=	assh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.0
+DISTVERSION=	2.11.3
 CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -14,15 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	moul
-GH_TUPLE=	Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Masterminds/goutils \
+GH_TUPLE=	\
+		Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Masterminds/goutils \
 		Masterminds:semver:v1.5.0:masterminds_semver/vendor/github.com/Masterminds/semver \
 		Masterminds:sprig:v2.22.0:masterminds_sprig/vendor/github.com/Masterminds/sprig \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
 		awalterschulze:gographviz:v2.0.3:awalterschulze_gographviz/vendor/github.com/awalterschulze/gographviz \
 		bugsnag:osext:0dd3f918b21b:bugsnag_osext/vendor/github.com/bugsnag/osext \
-		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man/vendor/github.com/cpuguy83/go-md2man/v2 \
+		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		deckarep:gosx-notifier:e127226297fb:deckarep_gosx_notifier/vendor/github.com/deckarep/gosx-notifier \
-		moby:moby:v1.13.1:docker_docker/vendor/github.com/docker/docker \
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
 		docker:libcompose:v0.4.0:docker_libcompose/vendor/github.com/docker/libcompose \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
@@ -34,7 +34,7 @@ GH_TUPLE=	Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Maste
 		go-ole:go-ole:v1.2.4:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		go-playground:locales:v0.13.0:go_playground_locales/vendor/github.com/go-playground/locales \
 		go-playground:universal-translator:v0.17.0:go_playground_universal_translator/vendor/github.com/go-playground/universal-translator \
-		go-playground:validator:v10.3.0:go_playground_validator/vendor/github.com/go-playground/validator/v10 \
+		go-playground:validator:v10.3.0:go_playground_validator_v10/vendor/github.com/go-playground/validator/v10 \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:crypto:0c6587e931a9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:69a78807bb2b:golang_net/vendor/golang.org/x/net \
@@ -61,12 +61,14 @@ GH_TUPLE=	Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Maste
 		mitchellh:copystructure:v1.0.0:mitchellh_copystructure/vendor/github.com/mitchellh/copystructure \
 		mitchellh:mapstructure:v1.3.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		mitchellh:reflectwalk:v1.0.1:mitchellh_reflectwalk/vendor/github.com/mitchellh/reflectwalk \
+		moby:moby:v1.13.1:moby_moby/vendor/github.com/docker/docker \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		moul:flexyaml:f458bfa8afe2:moul_flexyaml/vendor/github.com/moul/flexyaml \
 		pelletier:go-toml:v1.8.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		russross:blackfriday:v2.0.1:russross_blackfriday/vendor/github.com/russross/blackfriday/v2 \
+		protocolbuffers:protobuf-go:v1.24.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		shirou:gopsutil:v2.20.9:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
 		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
 		smartystreets:assertions:b2de0cb4f26d:smartystreets_assertions/vendor/github.com/smartystreets/assertions \
@@ -81,9 +83,8 @@ GH_TUPLE=	Masterminds:goutils:v1.1.0:masterminds_goutils/vendor/github.com/Maste
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.5.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.16.0:uber_go_zap/vendor/go.uber.org/zap \
-		ugorji:go:v1.1.7:ugorji_go/vendor/github.com/ugorji/go/codec \
-		urfave:cli:v1.22.5:urfave_cli/vendor/github.com/urfave/cli \
-		protocolbuffers:protobuf-go:v1.24.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf
+		ugorji:go:v1.1.7:ugorji_go_codec/vendor/github.com/ugorji/go \
+		urfave:cli:v1.22.5:urfave_cli/vendor/github.com/urfave/cli
 
 PLIST_FILES=	bin/assh
 
