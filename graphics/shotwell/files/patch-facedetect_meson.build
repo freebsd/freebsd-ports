@@ -1,0 +1,10 @@
+--- facedetect/meson.build.orig	2020-11-05 20:48:33 UTC
++++ facedetect/meson.build
+@@ -1,6 +1,6 @@
+ subproject = ('facedetect')
+ add_languages('cpp')
+-facedetect_dep = dependency('opencv', version : ['>= 2.3.0'], required : true)
++facedetect_dep = dependency('opencv4', version : ['>= 4.0.0'], required : true)
+ executable('shotwell-facedetect',
+            'shotwell-facedetect.cpp',
+            dependencies : facedetect_dep,
