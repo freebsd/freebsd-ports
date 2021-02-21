@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dgd
-PORTVERSION=	1.4.22
+PORTVERSION=	1.4.23
 CATEGORIES=	net lang games
 
 MAINTAINER=	glewis@FreeBSD.org
