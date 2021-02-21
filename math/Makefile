@@ -528,6 +528,7 @@
     SUBDIR += octave-forge-splines
     SUBDIR += octave-forge-statistics
     SUBDIR += octave-forge-stk
+    SUBDIR += octave-forge-strings
     SUBDIR += octave-forge-struct
     SUBDIR += octave-forge-symband
     SUBDIR += octave-forge-symbolic
