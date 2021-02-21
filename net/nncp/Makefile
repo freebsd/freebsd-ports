@@ -16,6 +16,7 @@ USES=		go:no_targets tar:xz
 USE_RC_SUBR=	nncp-caller nncp-daemon nncp-toss
 
 MAKE_ARGS=	INFODIR=${STAGEDIR}${PREFIX}/${INFO_PATH}
+MAKE_ENV=	${GO_ENV}
 INSTALL_TARGET=	install-strip
 
 SUB_FILES=	pkg-message pkg-install pkg-deinstall
