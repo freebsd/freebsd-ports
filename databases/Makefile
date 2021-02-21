@@ -164,6 +164,7 @@
     SUBDIR += linux-c7-sqlite3
     SUBDIR += linux-oracle-instantclient-basic
     SUBDIR += linux-oracle-instantclient-sdk
+    SUBDIR += litestream
     SUBDIR += liquibase
     SUBDIR += lmdb
     SUBDIR += lua-lsqlite3

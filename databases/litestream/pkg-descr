@@ -1,0 +1,6 @@
+Litestream is a standalone streaming replication tool for SQLite. It runs as
+a background process and safely replicates changes incrementally to another
+file or S3. Litestream only communicates with SQLite through the SQLite API
+so it will not corrupt your database.
+
+WWW: https://litestream.io/

@@ -1,0 +1,2 @@
+bin/litestream
+%%ETCDIR%%/litestream.yml.sample
