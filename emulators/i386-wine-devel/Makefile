@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	i386-
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	emulators
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nc@FreeBSD.org
 COMMENT=	32-bit Microsoft Windows compatibility environment for 64-bit FreeBSD
 
 ONLY_FOR_ARCHS=	i386 amd64
