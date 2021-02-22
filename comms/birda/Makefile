@@ -11,6 +11,9 @@ COMMENT=	Bohlin's IrDA utilities, ported from NetBSD's pkgsrc
 
 USES=		uidfix
 
+# XXX Static libraries with PIE are currently unsupported.
+MAKE_ENV+=	WITHOUT_PIE=true
+
 # Fix build with clang11
 CFLAGS+=	-fcommon
 
