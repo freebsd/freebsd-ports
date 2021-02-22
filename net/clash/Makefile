@@ -2,7 +2,7 @@
 
 PORTNAME=	clash
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.5
+DISTVERSION=	1.4.0
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,19 +22,20 @@ GH_TUPLE=	\
 		go-chi:render:v1.0.1:go_chi_render/vendor/github.com/go-chi/render \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gofrs:uuid:v3.3.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
-		golang:crypto:eec23a3978ad:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:6772e930b67b:golang_net/vendor/golang.org/x/net \
+		gofrs:uuid:v4.0.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
+		golang:crypto:b8e89b74b9df:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:5f4716e94777:golang_net/vendor/golang.org/x/net \
 		golang:sync:09787c993a3a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:0d417f636930:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:8ebf48af031b:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
-		miekg:dns:v1.1.35:miekg_dns/vendor/github.com/miekg/dns \
+		magefile:mage:v1.10.0:magefile_mage/vendor/github.com/magefile/mage \
+		miekg:dns:v1.1.38:miekg_dns/vendor/github.com/miekg/dns \
 		oschwald:geoip2-golang:v1.4.0:oschwald_geoip2_golang/vendor/github.com/oschwald/geoip2-golang \
 		oschwald:maxminddb-golang:v1.6.0:oschwald_maxminddb_golang/vendor/github.com/oschwald/maxminddb-golang \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
+		sirupsen:logrus:v1.8.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic
 
 PLIST_FILES=	bin/${PORTNAME}
