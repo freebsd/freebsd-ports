@@ -1,0 +1,5 @@
+prelude.lv2 is a simple wavetable-based church organ as an LV2 plugin, similar
+to toccata.lv2 but with only 2 controls akin to crescendo pedals for flues and
+reeds.
+
+WWW: https://github.com/sfztools/prelude.lv2

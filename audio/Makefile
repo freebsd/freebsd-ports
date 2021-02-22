@@ -618,6 +618,7 @@
     SUBDIR += portaudio
     SUBDIR += praat
     SUBDIR += pragha
+    SUBDIR += prelude-lv2
     SUBDIR += protracker
     SUBDIR += pulseaudio
     SUBDIR += pulseaudio-module-sndio
