@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	polyphone
-DISTVERSION=	2.2.0.20200830
+DISTVERSION=	2.2.0.20210109
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +30,7 @@ USE_CXXSTD=	c++11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	davy7125
-GH_TAGNAME=	e69e2471
+GH_TAGNAME=	75a5e88
 
 CXXFLAGS+=	-D__UNIX_JACK__
 LIBS+=		-lssl -lcrypto
@@ -41,8 +41,5 @@ INSTALLS_ICONS=	yes
 
 post-extract: # unbundle
 	@${RM} -r ${WRKSRC}/lib/_option_qcustomplot ${WRKSRC}/lib/_option_rtmidi ${WRKSRC}/lib/_option_stk
-
-post-install:
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop  ${STAGEDIR}${PREFIX}/share/applications
 
 .include <bsd.port.mk>

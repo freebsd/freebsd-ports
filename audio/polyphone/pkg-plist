@@ -1,5 +1,5 @@
 bin/polyphone
-share/applications/polyphone.desktop
+share/applications/com.polyphone_soundfonts.polyphone.desktop
 share/icons/hicolor/512x512/apps/polyphone.png
 share/icons/hicolor/scalable/apps/polyphone.svg
 share/icons/hicolor/scalable/mimetypes/audio-x-soundfont.svg
