@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-level-set
 PORTVERSION=	0.3.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -14,8 +14,6 @@ LICENSE=	GPLv3
 ALL_TARGET=	oct
 USES=		compiler:c++0x
 GNU_CONFIGURE=	yes
-
-BROKEN=		does not build with octave-6.2.0
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
