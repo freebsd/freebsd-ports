@@ -1,4 +1,6 @@
 bin/zrythm
+bin/zrythm_gdb
+bin/zrythm_valgrind
 bin/zrythm_launch
 etc/bash_completion.d/zrythm
 share/applications/zrythm.desktop
@@ -30,6 +32,7 @@ share/locale/de/LC_MESSAGES/zrythm.mo
 share/locale/el/LC_MESSAGES/zrythm.mo
 share/locale/en_GB/LC_MESSAGES/zrythm.mo
 share/locale/es/LC_MESSAGES/zrythm.mo
+share/locale/fa/LC_MESSAGES/zrythm.mo
 share/locale/fr/LC_MESSAGES/zrythm.mo
 share/locale/gl/LC_MESSAGES/zrythm.mo
 share/locale/hi/LC_MESSAGES/zrythm.mo
