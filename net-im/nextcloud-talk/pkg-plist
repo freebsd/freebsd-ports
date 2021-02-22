@@ -18,6 +18,17 @@
 %%WWWDIR%%/img/app.svg
 %%WWWDIR%%/img/bell-outline.svg
 %%WWWDIR%%/img/bridge-bot.png
+%%WWWDIR%%/img/bridge-services/discord.svg
+%%WWWDIR%%/img/bridge-services/irc.svg
+%%WWWDIR%%/img/bridge-services/matrix.svg
+%%WWWDIR%%/img/bridge-services/mattermost.svg
+%%WWWDIR%%/img/bridge-services/msteams.svg
+%%WWWDIR%%/img/bridge-services/rocketchat.svg
+%%WWWDIR%%/img/bridge-services/slack.svg
+%%WWWDIR%%/img/bridge-services/steam.svg
+%%WWWDIR%%/img/bridge-services/telegram.svg
+%%WWWDIR%%/img/bridge-services/xmpp.svg
+%%WWWDIR%%/img/bridge-services/zulip.svg
 %%WWWDIR%%/img/changelog.svg
 %%WWWDIR%%/img/clip-add-file.svg
 %%WWWDIR%%/img/favicon-mask.svg
@@ -322,6 +333,11 @@
 %%WWWDIR%%/lib/Migration/Version10000Date20201015143852.php
 %%WWWDIR%%/lib/Migration/Version10000Date20201015150000.php
 %%WWWDIR%%/lib/Migration/Version11000Date20200922161218.php
+%%WWWDIR%%/lib/Migration/Version11000Date20201011082810.php
+%%WWWDIR%%/lib/Migration/Version11000Date20201201102528.php
+%%WWWDIR%%/lib/Migration/Version11000Date20201204110210.php
+%%WWWDIR%%/lib/Migration/Version11000Date20201209142525.php
+%%WWWDIR%%/lib/Migration/Version11000Date20201209142526.php
 %%WWWDIR%%/lib/Migration/Version2000Date20170707093535.php
 %%WWWDIR%%/lib/Migration/Version2000Date20171026140256.php
 %%WWWDIR%%/lib/Migration/Version2000Date20171026140257.php
@@ -359,6 +375,7 @@
 %%WWWDIR%%/lib/Model/Command.php
 %%WWWDIR%%/lib/Model/CommandMapper.php
 %%WWWDIR%%/lib/Model/Message.php
+%%WWWDIR%%/lib/Model/SelectHelper.php
 %%WWWDIR%%/lib/Model/Session.php
 %%WWWDIR%%/lib/Model/SessionMapper.php
 %%WWWDIR%%/lib/Notification/Listener.php
