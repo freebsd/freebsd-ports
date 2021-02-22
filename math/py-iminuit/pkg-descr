@@ -1,0 +1,8 @@
+iminuit is a Jupyter-friendly Python interface for the Minuit2 C++ library
+maintained by CERN's ROOT team.
+
+It can be used as a general robust function minimisation method, but is most
+commonly used for likelihood fits of models to data, and to get model parameter
+error estimates from likelihood profile analysis.
+
+WWW: https://github.com/scikit-hep/iminuit
