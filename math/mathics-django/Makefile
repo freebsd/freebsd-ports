@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mathics-django
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	math python
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -14,7 +14,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Mathics>0:math/py-mathics@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django31>0:www/py-django31@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}Mathics>0:math/py-mathics@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django31>0:www/py-django31@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}django31>0:www/py-django31@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USE_GITHUB=	yes
