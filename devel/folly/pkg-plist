@@ -605,6 +605,7 @@ include/folly/portability/Constexpr.h
 include/folly/portability/Dirent.h
 include/folly/portability/Event.h
 include/folly/portability/Fcntl.h
+include/folly/portability/Filesystem.h
 include/folly/portability/FmtCompile.h
 include/folly/portability/GFlags.h
 include/folly/portability/GMock.h
