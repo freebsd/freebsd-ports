@@ -789,6 +789,7 @@
     SUBDIR += timidity++-xaw
     SUBDIR += timidity++-xskin
     SUBDIR += tkeca
+    SUBDIR += toccata-lv2
     SUBDIR += toolame
     SUBDIR += tosha
     SUBDIR += traverso

@@ -1,0 +1,5 @@
+toccata.lv2 is a simple wavetable-based church organ as an LV2 plugin. It uses
+the sfizz library to load an SFZ file containing the wavetables, and create LV2
+parameters for the volume of each rank.
+
+WWW: https://github.com/sfztools/toccata.lv2
