@@ -37,10 +37,10 @@
 %%WWWDIR%%/img/reply.svg
 %%WWWDIR%%/img/toggle-view-collapse.svg
 %%WWWDIR%%/img/toggle-view-expand.svg
-%%WWWDIR%%/js/4.js
-%%WWWDIR%%/js/4.js.map
 %%WWWDIR%%/js/5.js
 %%WWWDIR%%/js/5.js.map
+%%WWWDIR%%/js/6.js
+%%WWWDIR%%/js/6.js.map
 %%WWWDIR%%/js/calendar.js
 %%WWWDIR%%/js/calendar.js.map
 %%WWWDIR%%/js/collections.js
@@ -49,6 +49,8 @@
 %%WWWDIR%%/js/dashboard.js.map
 %%WWWDIR%%/js/main.js
 %%WWWDIR%%/js/main.js.map
+%%WWWDIR%%/js/talk.js
+%%WWWDIR%%/js/talk.js.map
 %%WWWDIR%%/l10n/.gitkeep
 %%WWWDIR%%/l10n/af.js
 %%WWWDIR%%/l10n/af.json
@@ -212,8 +214,6 @@
 %%WWWDIR%%/l10n/ug.json
 %%WWWDIR%%/l10n/uk.js
 %%WWWDIR%%/l10n/uk.json
-%%WWWDIR%%/l10n/ur_PK.js
-%%WWWDIR%%/l10n/ur_PK.json
 %%WWWDIR%%/l10n/vi.js
 %%WWWDIR%%/l10n/vi.json
 %%WWWDIR%%/l10n/zh_CN.js
@@ -240,6 +240,7 @@
 %%WWWDIR%%/lib/Collaboration/Resources/ResourceProviderCard.php
 %%WWWDIR%%/lib/Command/UserExport.php
 %%WWWDIR%%/lib/Controller/AttachmentApiController.php
+%%WWWDIR%%/lib/Controller/AttachmentApiV11Controller.php
 %%WWWDIR%%/lib/Controller/AttachmentController.php
 %%WWWDIR%%/lib/Controller/BoardApiController.php
 %%WWWDIR%%/lib/Controller/BoardController.php
@@ -309,12 +310,17 @@
 %%WWWDIR%%/lib/Service/ConfigService.php
 %%WWWDIR%%/lib/Service/DefaultBoardService.php
 %%WWWDIR%%/lib/Service/FileService.php
+%%WWWDIR%%/lib/Service/FilesAppService.php
 %%WWWDIR%%/lib/Service/FullTextSearchService.php
 %%WWWDIR%%/lib/Service/IAttachmentService.php
+%%WWWDIR%%/lib/Service/ICustomAttachmentService.php
 %%WWWDIR%%/lib/Service/LabelService.php
 %%WWWDIR%%/lib/Service/OverviewService.php
 %%WWWDIR%%/lib/Service/PermissionService.php
 %%WWWDIR%%/lib/Service/StackService.php
+%%WWWDIR%%/lib/Sharing/DeckShareProvider.php
+%%WWWDIR%%/lib/Sharing/Listener.php
+%%WWWDIR%%/lib/Sharing/ShareAPIHelper.php
 %%WWWDIR%%/lib/StatusException.php
 %%WWWDIR%%/psalm.xml
 %%WWWDIR%%/relativeci.config.js
