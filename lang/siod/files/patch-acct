@@ -73,7 +73,7 @@
 +	case tc_flonum:
 +		result = _type = FLONM(type);
 +		if (result < 0)
-+			err("UTMPX cannot be negative", type);
++			err("UTMPX type cannot be negative", type);
 +		if (result != _type)
 +			err("Number too large to be a UTMPX type", type);
 +		return result;

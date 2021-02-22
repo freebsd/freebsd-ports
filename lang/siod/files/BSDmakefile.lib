@@ -14,3 +14,7 @@ LIBDIR=	${PREFIX}/lib
 INCSDIR=${PREFIX}/include
 
 .include <bsd.lib.mk>
+
+.if ${COMPILER_TYPE} == "gcc"
+CFLAGS+=	-Wno-cast-function-type
+.endif

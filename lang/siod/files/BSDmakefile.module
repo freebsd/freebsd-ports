@@ -13,6 +13,14 @@ sql_sybase_LDADD=-L${LOCALBASE}/lib -lct
 sql_oracle_CFLAGS=-isystem ${LOCALBASE}/oracle8-client/rdbms/demo
 sql_oracle_LDADD=-L${LOCALBASE}/oracle8-client/lib -lclntsh
 
+.if ${CC:Mgcc?}
+# gcc8, for example, includes ${LOCALBASE}/include before /usr/include
+# which may cause gdbm-provided ndbm.h to be included instead of the
+# base one. We don't want gdbm, because that'll introduce a stealth
+# dependency.
+ndbm_CFLAGS=	-isystem /usr/include
+.endif
+
 CFLAGS+=	-DHAVE_SYS_PARAM_H ${%%MODULE%%_CFLAGS}
 LDADD=		${%%MODULE%%_LDADD}
 .if "%%MODULE%%" == "sql_oracle"
