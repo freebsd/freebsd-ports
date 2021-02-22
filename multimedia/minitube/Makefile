@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minitube
-DISTVERSION=	3.6.7-1
-DISTVERSIONSUFFIX=	-g11ab0c5
+DISTVERSION=	3.8
 CATEGORIES=	multimedia www
 
 MAINTAINER=	yuri@FreeBSD.org
