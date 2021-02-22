@@ -1,5 +1,5 @@
---- sql_oracle.c	2014-03-25 04:10:42.000000000 -0400
-+++ sql_oracle.c	2021-02-17 11:09:57.584010000 -0500
+--- sql_oracle.c	2021-02-22 16:44:26.489963000 -0500
++++ sql_oracle.c	2021-02-22 16:51:38.962848000 -0500
 @@ -48,4 +48,5 @@
  #include <math.h>
  #include <stdarg.h>
@@ -48,14 +48,15 @@
 +static ub4 hda[HDA_SIZE/sizeof(ub4)];
  
  static long orlon_ok = 0;
-@@ -164,5 +137,5 @@
+@@ -164,26 +137,26 @@
   struct select *selects;};
  
 -static char *errmsg(long code)
 +static const char *errmsg(long code)
  {char *ptr;
   if (errmsg_str0 == NULL)
-@@ -170,20 +143,19 @@
+-   {errmsg_str0 = (char *) malloc(ORACLE_MAX_STRING+1);
++   {errmsg_str0 = malloc(ORACLE_MAX_STRING+1);
      memset(errmsg_str0,0,ORACLE_MAX_STRING+1);}
   oerhms(&lda,code,errmsg_str0,ORACLE_MAX_STRING);
 - if (ptr = strchr(errmsg_str0,'\n')) *ptr = 0;
@@ -71,32 +72,40 @@
  {return(errmsg(lda.rc));}
  
 -LISP ferr(LISP obj,char *format, ...)
-+static void ferr(LISP obj, const char *format, ...)
++static void ferr(LISP obj, const char *format, ...) __printflike(2, 3);
++
++void ferr(LISP obj, const char *format, ...)
  {va_list restargs;
-  if (errmsg_str1 == NULL)
+- if (errmsg_str1 == NULL)
 -   {errmsg_str1 = (char *) malloc((ORACLE_MAX_STRING*3)+1);
 -    memset(errmsg_str1,0,(ORACLE_MAX_STRING*3)+1);}
-+   {errmsg_str1 = malloc((ORACLE_MAX_STRING*3)+1);}
++ if (errmsg_str1 != NULL) free(errmsg_str1);
   va_start(restargs,format);
 - vsprintf(errmsg_str1,format,restargs);
-+ vsnprintf(errmsg_str1, ORACLE_MAX_STRING * 3 + 1, format,restargs);
++ vasprintf(&errmsg_str1, format, restargs);
   va_end(restargs);
   err(errmsg_str1,obj);}
-@@ -201,5 +173,5 @@
+@@ -201,5 +174,5 @@
   return(s);}
  
 -struct cda_def *allocate_cursor(void)
 +static struct cda_def *allocate_cursor(void)
  {struct cda_def *cur;
   unsigned short rc;
-@@ -213,5 +185,5 @@
+@@ -208,10 +181,10 @@
+    {rc = cur->rc;
+     free(cur);
+-    ferr(NIL,"%d cursors so far. oopen:\n%s",
++    ferr(NIL, "%ld cursors so far. oopen:\n%s",
+ 	 ncursors,errmsg(rc));}
+  ++ncursors;
   return(cur);}
  
 -void free_cursor(struct cda_def *cur)
 +static void free_cursor(struct cda_def *cur)
  {long result;
   unsigned short rc;
-@@ -221,9 +193,9 @@
+@@ -221,9 +194,9 @@
   if (result) ferr(NIL,"oclose: %s",errmsg(rc));}
  
 -LISP l_orlon(LISP username,LISP password)
@@ -110,21 +119,21 @@
 + c_password = NNULLP(password) ? get_string_data(password) : NULL;
   if (orlon_ok)
     /* calling orlon twice will corrupt your process badly. */
-@@ -231,5 +203,5 @@
+@@ -231,5 +204,5 @@
   else
     {flag = no_interrupt(1);
 -    retval = orlon(&lda,&hda,
 +    retval = orlon(&lda, (void *)&hda,
  		   c_username,strlen(c_username),
  		   c_password,(c_password) ? strlen(c_password) : -1,
-@@ -242,5 +214,5 @@
+@@ -242,5 +215,5 @@
   return(NIL);}
  
 -LISP l_ologof(void)
 +static LISP l_ologof(void)
  {long flag;
   flag = no_interrupt(1);
-@@ -254,25 +226,25 @@
+@@ -254,25 +227,25 @@
   return(NIL);}
  
 -void freeloc(void ** x)
@@ -158,14 +167,28 @@
 +static void prepare_statement(char *sql_str,struct cstatement *c)
       /* assumptions:
  	nparams gives range of params from :1 to :nparams
-@@ -282,5 +254,5 @@
+@@ -282,5 +255,5 @@
   short colnamlen;
   char colnam[ORACLE_MAX_STRING+1];
 - char *err;
 + const char *err;
   c->cursor = allocate_cursor();
   if (osql3(c->cursor,sql_str,-1))
-@@ -348,6 +320,6 @@
+@@ -315,5 +288,5 @@
+ 	 {err = cda_errmsg(c->cursor);
+ 	  release_statement(c);
+-	  ferr(NIL,"obndrn %d: %s",j,err);}}}
++	  ferr(NIL, "obndrn %ld: %s", j, err);}}}
+  else
+    c->params = NULL;
+@@ -336,5 +309,5 @@
+ 	    {err = cda_errmsg(c->cursor);
+ 	     release_statement(c);
+-	     ferr(NIL,"odsc %d: %s",j,err);}
++	     ferr(NIL, "odsc %ld: %s", j, err);}
+ 	  c->nselects = j-1;}
+        else
+@@ -348,6 +321,6 @@
  	       c->selects[j-1].etype = ORACLE_ETYPE_FLOAT;
  	       c->selects[j-1].buflen = sizeof(double);
 -	       c->selects[j-1].buf = (double *) malloc(c->selects[j-1].buflen);
@@ -174,7 +197,7 @@
 +	       *((double *)(void *)c->selects[j-1].buf) = 0.0;
  	       break;
  	     case ORACLE_ETYPE_DATE:
-@@ -355,10 +327,10 @@
+@@ -355,10 +328,10 @@
  	       c->selects[j-1].etype = ORACLE_ETYPE_DATE;
  	       c->selects[j-1].buflen = sizeof(struct oracle_date);
 -	       c->selects[j-1].buf = (char *) malloc(c->selects[j-1].buflen);
@@ -187,14 +210,21 @@
 +	       c->selects[j-1].buf = malloc(c->selects[j-1].buflen+1);
  	       c->selects[j-1].buf[0] = 0;}
  	  if (odefin(c->cursor,j,
-@@ -379,5 +351,5 @@
+@@ -372,5 +345,5 @@
+ 	    {err = cda_errmsg(c->cursor);
+ 	     release_statement(c);
+-	     ferr(NIL,"odefin %d: %s",j,err);}}}
++	     ferr(NIL, "odefin %ld: %s", j, err);}}}
+     if (c->nselects == 0)
+       {free(c->selects);
+@@ -379,5 +352,5 @@
     c->selects = NULL;}
  
 -LISP oracle_sql_prepare(LISP str)
 +static LISP oracle_sql_prepare(LISP str)
  {long iflag;
   LISP result;
-@@ -385,8 +357,8 @@
+@@ -385,8 +358,8 @@
   iflag = no_interrupt(1);
   result = extcons(sizeof(struct cstatement),extra_tc_statement);
 - c = (struct cstatement *) result->storage_as.string.data;
@@ -205,7 +235,7 @@
 + prepare_statement(get_string_data(str), c);
   no_interrupt(iflag);
   return(result);}
-@@ -397,10 +369,10 @@
+@@ -397,10 +370,10 @@
       (st->storage_as.string.dim != extra_tc_statement))
     err("not a statement",st);
 - c = (struct cstatement *)st->storage_as.string.data;
@@ -218,14 +248,14 @@
 +static LISP oracle_sql_release(LISP s)
  {long iflag;
   iflag = no_interrupt(1);
-@@ -409,5 +381,5 @@
+@@ -409,5 +382,5 @@
   return(NIL);}
  
 -LISP oracle_execute(LISP s)
 +static LISP oracle_execute(LISP s)
  {long iflag;
   struct cstatement *c;
-@@ -419,8 +391,8 @@
+@@ -419,8 +392,8 @@
   return(NIL);}
  
 -LISP oracle_nselects(LISP s)
@@ -236,14 +266,14 @@
 +static LISP oracle_select_column_name(LISP s,LISP n)
  {long j;
   struct cstatement *c;
-@@ -431,5 +403,5 @@
+@@ -431,5 +404,5 @@
   return(rintern(c->selects[j].colnam));}
  
 -char *oracle_date_to_string(struct oracle_date *d)
 +static const char *oracle_date_to_string(const struct oracle_date *d)
       /* make it look like the string returned by RDB SQL Services */
  {static char buff[100];
-@@ -440,9 +412,9 @@
+@@ -440,9 +413,9 @@
   return(buff);}
  
 -LISP oracle_select_column_value(LISP s,LISP n)
@@ -255,7 +285,7 @@
 + const char *str;
   j = get_c_long(n);
   c = get_cstatement(s);
-@@ -454,7 +426,7 @@
+@@ -454,7 +427,7 @@
   switch(sel->etype)
     {case ORACLE_ETYPE_FLOAT:
 -      return(flocons(*((double *)sel->buf)));
@@ -265,21 +295,21 @@
 +      str = oracle_date_to_string((void *)sel->buf);
        return(strcons(strlen(str),str));
      case ORACLE_ETYPE_STRING:
-@@ -463,5 +435,5 @@
+@@ -463,5 +436,5 @@
        return(errswitch());}}
  
 -LISP oracle_fetch(LISP s)
 +static LISP oracle_fetch(LISP s)
  {long iflag;
   struct cstatement *c;
-@@ -478,5 +450,5 @@
+@@ -478,5 +451,5 @@
  static void extra_gc_free(LISP ptr)
  {struct cstatement *c;
 - c = (struct cstatement *) ptr->storage_as.string.data;
 + c = (struct cstatement *)(void *)ptr->storage_as.string.data;
   release_statement(c);
   free(c);}
-@@ -487,8 +459,8 @@
+@@ -487,8 +460,8 @@
   switch(ptr->storage_as.string.dim)
     {case extra_tc_statement:
 -      c = (struct cstatement *) ptr->storage_as.string.data;
@@ -290,10 +320,14 @@
 +		c,c->cursor->rcs3 /* Is rcs3 really the cursor ID? XXX */);
        else
  	sprintf(buff,"#{SQL STATEMENT %p released}",c);
-@@ -498,4 +470,6 @@
+@@ -498,4 +471,6 @@
        errswitch();}}
  
 +void init_sql_oracle(void); /* Our sole exported symbol */
 +
  void init_sql_oracle(void)
  {long j;
+@@ -515,3 +490,2 @@
+   put_st("Enhancements (C) Copyright 1994 Mitech Corporation.\n");
+  init_sql_oracle_version();}
+-
