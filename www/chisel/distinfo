@@ -1,6 +1,6 @@
-TIMESTAMP = 1611440978
-SHA256 (jpillora-chisel-v1.7.4_GH0.tar.gz) = d45514d7737a1420d9b302ae669811126d9581505d6fea8387d4916c9ceb92a1
-SIZE (jpillora-chisel-v1.7.4_GH0.tar.gz) = 45323
+TIMESTAMP = 1613999194
+SHA256 (jpillora-chisel-v1.7.6_GH0.tar.gz) = b77d04cc5f5f4d2e6fcaa415998a6659f7dbf35fd0b06a3667016c954256484d
+SIZE (jpillora-chisel-v1.7.6_GH0.tar.gz) = 45769
 SHA256 (andrew-d-go-termutil-009166a695a2_GH0.tar.gz) = 51a01677f19e86c2307f2d48f389a071dd5bac928ca08f1dceaf83fa78acabab
 SIZE (andrew-d-go-termutil-009166a695a2_GH0.tar.gz) = 2937
 SHA256 (armon-go-socks5-e75332964ef5_GH0.tar.gz) = 37f9cad3e321c452ea54824021ecd5b6ef4222c68b25f9c8a66a0c6d8411437e
