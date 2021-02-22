@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mathicsscript
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 CATEGORIES=	math python
 
 MAINTAINER=	thierry@FreeBSD.org
