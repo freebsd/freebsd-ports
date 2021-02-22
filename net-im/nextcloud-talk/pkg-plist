@@ -42,8 +42,6 @@
 %%WWWDIR%%/js/dashboard.js.map
 %%WWWDIR%%/js/flow.js
 %%WWWDIR%%/js/flow.js.map
-%%WWWDIR%%/js/image-blurrer-worker.js
-%%WWWDIR%%/js/image-blurrer-worker.js.map
 %%WWWDIR%%/js/talk-files-sidebar.js
 %%WWWDIR%%/js/talk-files-sidebar.js.map
 %%WWWDIR%%/js/talk-public-share-auth-sidebar.js
@@ -153,8 +151,6 @@
 %%WWWDIR%%/l10n/lv.json
 %%WWWDIR%%/l10n/mk.js
 %%WWWDIR%%/l10n/mk.json
-%%WWWDIR%%/l10n/mn.js
-%%WWWDIR%%/l10n/mn.json
 %%WWWDIR%%/l10n/nb.js
 %%WWWDIR%%/l10n/nb.json
 %%WWWDIR%%/l10n/nl.js
@@ -179,12 +175,8 @@
 %%WWWDIR%%/l10n/sq.json
 %%WWWDIR%%/l10n/sr.js
 %%WWWDIR%%/l10n/sr.json
-%%WWWDIR%%/l10n/sr@latin.js
-%%WWWDIR%%/l10n/sr@latin.json
 %%WWWDIR%%/l10n/sv.js
 %%WWWDIR%%/l10n/sv.json
-%%WWWDIR%%/l10n/th.js
-%%WWWDIR%%/l10n/th.json
 %%WWWDIR%%/l10n/tr.js
 %%WWWDIR%%/l10n/tr.json
 %%WWWDIR%%/l10n/uk.js
@@ -193,6 +185,8 @@
 %%WWWDIR%%/l10n/vi.json
 %%WWWDIR%%/l10n/zh_CN.js
 %%WWWDIR%%/l10n/zh_CN.json
+%%WWWDIR%%/l10n/zh_HK.js
+%%WWWDIR%%/l10n/zh_HK.json
 %%WWWDIR%%/l10n/zh_TW.js
 %%WWWDIR%%/l10n/zh_TW.json
 %%WWWDIR%%/lib/Activity/Listener.php
