@@ -2641,6 +2641,9 @@ lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_window.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zoomheight.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zoomheight.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zoomheight.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zzdummy.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zzdummy.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/idlelib/idle_test/__pycache__/test_zzdummy.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/idlelib/idle_test/htest.py
 lib/python%%XYDOT%%/idlelib/idle_test/mock_idle.py
 lib/python%%XYDOT%%/idlelib/idle_test/mock_tk.py
@@ -2702,6 +2705,7 @@ lib/python%%XYDOT%%/idlelib/idle_test/test_undo.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_warning.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_window.py
 lib/python%%XYDOT%%/idlelib/idle_test/test_zoomheight.py
+lib/python%%XYDOT%%/idlelib/idle_test/test_zzdummy.py
 lib/python%%XYDOT%%/idlelib/iomenu.py
 lib/python%%XYDOT%%/idlelib/macosx.py
 lib/python%%XYDOT%%/idlelib/mainmenu.py
@@ -6750,6 +6754,9 @@ lib/python%%XYDOT%%/tkinter/test/test_tkinter/__init__.py
 lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/__init__.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/__init__.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/test_colorchooser.cpython-%%XY%%.opt-1.pyc
+lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/test_colorchooser.cpython-%%XY%%.opt-2.pyc
+lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/test_colorchooser.cpython-%%XY%%.pyc
 lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/test_font.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/test_font.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/test_font.cpython-%%XY%%.pyc
@@ -6777,6 +6784,7 @@ lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/test_variables.cpython
 lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-%%XY%%.opt-1.pyc
 lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-%%XY%%.opt-2.pyc
 lib/python%%XYDOT%%/tkinter/test/test_tkinter/__pycache__/test_widgets.cpython-%%XY%%.pyc
+lib/python%%XYDOT%%/tkinter/test/test_tkinter/test_colorchooser.py
 lib/python%%XYDOT%%/tkinter/test/test_tkinter/test_font.py
 lib/python%%XYDOT%%/tkinter/test/test_tkinter/test_geometry_managers.py
 lib/python%%XYDOT%%/tkinter/test/test_tkinter/test_images.py
