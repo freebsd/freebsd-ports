@@ -2,7 +2,7 @@
 
 PORTNAME=	golangci-lint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.37.0
+DISTVERSION=	1.37.1
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -24,7 +24,7 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		ashanbrown:makezero:7b7cdbb3025a:ashanbrown_makezero/vendor/github.com/ashanbrown/makezero \
 		bkielbasa:cyclop:v1.2.0:bkielbasa_cyclop/vendor/github.com/bkielbasa/cyclop \
 		bombsimon:wsl:v3.1.0:bombsimon_wsl_v3/vendor/github.com/bombsimon/wsl/v3 \
-		charithe:durationcheck:v0.0.3:charithe_durationcheck/vendor/github.com/charithe/durationcheck \
+		charithe:durationcheck:v0.0.4:charithe_durationcheck/vendor/github.com/charithe/durationcheck \
 		daixiang0:gci:v0.2.8:daixiang0_gci/vendor/github.com/daixiang0/gci \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		denis-tingajkin:go-header:v0.4.2:denis_tingajkin_go_header/vendor/github.com/denis-tingajkin/go-header \
@@ -138,7 +138,7 @@ GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/to
 		valyala:quicktemplate:v1.6.3:valyala_quicktemplate/vendor/github.com/valyala/quicktemplate
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_COMMIT=	34e5fc6
+_BUILD_COMMIT=	b39dbcd
 _BUILD_DATE=	$$(date -u "+%Y-%m-%dT%H:%M:%SZ")
 
 GO_TARGET=	./cmd/${PORTNAME}
