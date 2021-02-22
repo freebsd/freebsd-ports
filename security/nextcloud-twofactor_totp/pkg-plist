@@ -1,7 +1,7 @@
+%%WWWDIR%%/.php_cs.dist
 %%WWWDIR%%/AUTHORS.md
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/README.md
-%%WWWDIR%%/appinfo/app.php
 %%WWWDIR%%/appinfo/info.xml
 %%WWWDIR%%/appinfo/routes.php
 %%WWWDIR%%/css/settings.css
@@ -181,6 +181,7 @@
 %%WWWDIR%%/lib/Service/ITotp.php
 %%WWWDIR%%/lib/Service/Totp.php
 %%WWWDIR%%/lib/Settings/Personal.php
+%%WWWDIR%%/psalm.xml
 %%WWWDIR%%/templates/challenge.php
 %%WWWDIR%%/templates/loginsetup.php
 %%WWWDIR%%/templates/personal.php
@@ -188,7 +189,9 @@
 %%WWWDIR%%/vendor/christian-riesen/base32/LICENSE
 %%WWWDIR%%/vendor/christian-riesen/base32/README.md
 %%WWWDIR%%/vendor/christian-riesen/base32/src/Base32.php
+%%WWWDIR%%/vendor/christian-riesen/base32/src/Base32Hex.php
 %%WWWDIR%%/vendor/composer/ClassLoader.php
+%%WWWDIR%%/vendor/composer/InstalledVersions.php
 %%WWWDIR%%/vendor/composer/LICENSE
 %%WWWDIR%%/vendor/composer/autoload_classmap.php
 %%WWWDIR%%/vendor/composer/autoload_namespaces.php
@@ -196,6 +199,8 @@
 %%WWWDIR%%/vendor/composer/autoload_real.php
 %%WWWDIR%%/vendor/composer/autoload_static.php
 %%WWWDIR%%/vendor/composer/installed.json
+%%WWWDIR%%/vendor/composer/installed.php
+%%WWWDIR%%/vendor/composer/platform_check.php
 %%WWWDIR%%/vendor/rullzer/easytotp/.travis.yml
 %%WWWDIR%%/vendor/rullzer/easytotp/LICENSE
 %%WWWDIR%%/vendor/rullzer/easytotp/composer.json
