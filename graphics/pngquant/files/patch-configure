@@ -104,7 +104,7 @@ Index: configure
          cflags "$($PKG_CONFIG --cflags "$LIBNAME")"
          lflags "$($PKG_CONFIG --libs "$LIBNAME")"
          LIBRARY_FOUND_VERSION=$($PKG_CONFIG --modversion "$LIBNAME")
-@@ -241,9 +241,13 @@
+@@ -244,9 +244,13 @@
          return 0
      fi
  
@@ -121,7 +121,7 @@ Index: configure
              return 0
          fi
      done
-@@ -300,12 +304,8 @@
+@@ -303,12 +307,8 @@
  # SSE
  if [ "$SSE" = 'auto' ]; then
      SSE=0
@@ -136,7 +136,7 @@ Index: configure
  fi
  
  if [ "$SSE" -eq 1 ]; then
-@@ -328,9 +328,8 @@
+@@ -331,9 +331,8 @@
      else
          OPENMPFLAGS="-fopenmp"
      fi
@@ -148,14 +148,16 @@ Index: configure
          cflags "$OPENMPFLAGS"
          lflags "$OPENMPFLAGS"
          status "OpenMP" "yes"
-@@ -345,38 +344,35 @@
+@@ -348,7 +347,7 @@
  fi
  
  # Cocoa
 -if [[ "$OSTYPE" =~ "darwin" ]]; then
 +if echo "$OSTYPE" | grep -q "darwin"; then
-     cflags "-mmacosx-version-min=10.7"
-     lflags "-mmacosx-version-min=10.7"
+     if [ -z "${MACOSX_DEPLOYMENT_TARGET+isset}" ]; then
+         cflags "-mmacosx-version-min=10.9"
+         lflags "-mmacosx-version-min=10.9"
+@@ -356,32 +355,29 @@
  fi
  
  # pairs of possible *.h and lib*.so locations
@@ -190,16 +192,16 @@ Index: configure
      # Search Developer SDK paths, since Apple seems to have dropped the standard Unixy ones
      XCODE_CMD="xcode-select"
      XCODE_PATH=$($XCODE_CMD -p)
--    DIRS+=("$XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib")
--    DIRS+=("$XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib")
+-    DIRS+=("$XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib")
+-    DIRS+=("$XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib")
 -elif [[ "$OSTYPE" =~ "msys" ]]; then
-+    DIRS="$DIRS $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/lib"
-+    DIRS="$DIRS $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/lib"
++    DIRS="$DIRS $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib"
++    DIRS="$DIRS $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include $XCODE_PATH/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/lib"
 +elif echo "$OSTYPE" | grep -q "msys" ; then
      SOLIBSUFFIX=dll
  else
      SOLIBSUFFIX=so
-@@ -417,7 +413,7 @@
+@@ -422,7 +418,7 @@
  if echo "#include \"png.h\"
      int main(){
      return !png_create_write_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
@@ -208,7 +210,7 @@ Index: configure
      status "libpng" "custom flags"
      HAS_LIBPNG=1
  fi
-@@ -428,7 +424,7 @@
+@@ -433,7 +429,7 @@
      if [ -n "$PNGH" ]; then
          PNGH_STRING=$(pngh_string "$PNGH")
          PNGH_MAJMIN=$(pngh_majmin "$PNGH")
@@ -217,7 +219,7 @@ Index: configure
              LIBPNGA=$(find_f "$LIBPNG_DIR" "libpng${PNGH_MAJMIN}.a")
              if [ -z "$LIBPNGA" ]; then
                  LIBPNGA=$(find_f "$LIBPNG_DIR" "libpng.a")
-@@ -447,14 +443,19 @@
+@@ -452,14 +448,19 @@
      if find_pkgconfig libpng; then
          HAS_LIBPNG=1
      else
@@ -242,7 +244,7 @@ Index: configure
                      if [ -n "$LIBPNGSO" ]; then
                          cflags "-I${PNGH%/*}"
                          lflags "-L${LIBPNGSO%/*} -lpng${PNGH_MAJMIN}"
-@@ -468,7 +469,7 @@
+@@ -473,7 +474,7 @@
      fi
  fi
  if [ "$HAS_LIBPNG" -eq 0 ]; then
@@ -251,7 +253,7 @@ Index: configure
          LIBPNG_CMD='`brew install libpng`'
      else
          LIBPNG_CMD='`apt-get install libpng16-dev` or `apt-get install libpng-dev` or `yum install libpng-devel`'
-@@ -535,6 +536,6 @@
+@@ -542,6 +543,6 @@
  SOLIBSUFFIX = $SOLIBSUFFIX
  STATICLIBDEPS = $STATICLIBDEPS
  LIQSRCDIR = $LIQSRCDIR
