@@ -193,7 +193,6 @@ include/isc/quota.h
 include/isc/radix.h
 include/isc/random.h
 include/isc/ratelimiter.h
-include/isc/readline.h
 include/isc/refcount.h
 include/isc/regex.h
 include/isc/region.h
@@ -266,19 +265,19 @@ include/pk11/site.h
 include/pkcs11/pkcs11.h
 lib/bind/filter-aaaa.so
 lib/libbind9.so
-lib/libbind9-9.17.9.so
+lib/libbind9-9.17.10.so
 lib/libdns.so
-lib/libdns-9.17.9.so
+lib/libdns-9.17.10.so
 lib/libirs.so
-lib/libirs-9.17.9.so
+lib/libirs-9.17.10.so
 lib/libisc.so
-lib/libisc-9.17.9.so
+lib/libisc-9.17.10.so
 lib/libisccc.so
-lib/libisccc-9.17.9.so
+lib/libisccc-9.17.10.so
 lib/libisccfg.so
-lib/libisccfg-9.17.9.so
+lib/libisccfg-9.17.10.so
 lib/libns.so
-lib/libns-9.17.9.so
+lib/libns-9.17.10.so
 @comment lib/named/filter-aaaa.so
 @comment man/man1/arpaname.1.gz
 @comment man/man1/delv.1.gz
