@@ -1,21 +1,23 @@
 MIX is Donald Knuth's mythical computer as described in his monumental work
-The Art Of Computer Programming. As any of its real counterparts, the MIX
+The Art of Computer Programming. As any of its real counterparts, the MIX
 features registers, memory cells, an overflow toggle, comparison flags,
-input-output devices, and a set of binary instructions executable by its
-virtual CPU. You can programme the MIX using an assembly language called
-MIXAL, the MIX Assembly Language.
+input-output devices, and a set of binary instructions executable by its virtual
+CPU. You can program the MIX using an assembly language called MIXAL, the MIX
+Assembly Language.
 
-The MIX Development Kit offers an emulation of MIX and MIXAL. The current
-version of MDK includes the following applications:
+MDK (MIX Development Kit) offers an emulation of MIX and MIXAL. The current
+version MDK includes the following applications:
 
-   - mixasm A MIXAL compiler, which translates your source files into binary
+   - mixasm: A MIXAL compiler, which translates your source files into binary
      ones, executable by the MIX virtual machine.
-   - mixvm A MIX virtual machine which is able to run and debug compiled MIXAL
+   - mixvm: A MIX virtual machine which is able to run and debug compiled MIXAL
      programs, using a command line interface with readline's line editting
      capabilities.
-   - gmixvm A MIX virtual machine with a GTK+ GUI which allows you running and
+   - gmixvm: A MIX virtual machine with a GTK+ GUI which allows you running and
      debugging your MIXAL programs through a nice graphical interface.
-   - mixvm.el An elisp program which allows you to run mixvm within an Emacs
+   - mixguile: A Guile interpreter with an embedded MIX virtual machine,
+     manipulable through a library of Scheme functions.
+   - mixvm.el: An elisp program which allows you to run mixvm within an Emacs
      GUD window, simultaneously viewing your MIXAL source file in another
      buffer.
 
