@@ -59,14 +59,17 @@ share/icons/hicolor/scalable/apps/org.xfce.PanelProfiles.svg
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-panel-profiles.mo
 share/man/man1/xfce4-panel-profiles.1.gz
 share/metainfo/org.xfce.PanelProfiles.appdata.xml
+%%DATADIR%%/layouts/Cupertino.tar.bz2
 %%DATADIR%%/layouts/GNOME 2.tar.bz2
-%%DATADIR%%/layouts/openSUSE Leap 15.x.tar.bz2
+%%DATADIR%%/layouts/Redmond 7.tar.bz2
 %%DATADIR%%/layouts/Redmond.tar.bz2
 %%DATADIR%%/layouts/Xfce 4.12.tar.bz2
 %%DATADIR%%/layouts/Xfce 4.14.tar.bz2
+%%DATADIR%%/layouts/Xfce 4.16.tar.bz2
 %%DATADIR%%/layouts/Xubuntu 12.04 (Precise).tar.bz2
 %%DATADIR%%/layouts/Xubuntu 14.04 (Trusty).tar.bz2
 %%DATADIR%%/layouts/Xubuntu 18.04 (Bionic).tar.bz2
+%%DATADIR%%/layouts/openSUSE Leap 15.x.tar.bz2
 %%DATADIR%%/locale
 %%DATADIR%%/xfce4-panel-profiles/info.py
 %%DATADIR%%/xfce4-panel-profiles/panelconfig.py

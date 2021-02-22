@@ -1,6 +1,6 @@
---- Makefile.in.in.orig	2020-12-29 03:32:25 UTC
+--- Makefile.in.in.orig	2021-02-21 22:44:32 UTC
 +++ Makefile.in.in
-@@ -69,17 +69,20 @@ install: all xfce4-panel-profiles.1
+@@ -72,9 +72,6 @@ install: all xfce4-panel-profiles.1
  	install -d $(DESTDIR)/$(PREFIX)/share/metainfo
  	install data/metainfo/*.xml $(DESTDIR)/$(PREFIX)/share/metainfo
  
@@ -9,15 +9,10 @@
 -
  	install -d $(DESTDIR)/$(MANDIR)/man1
  	install xfce4-panel-profiles.1 $(DESTDIR)/$(MANDIR)/man1
- 	
--	install -d $(DESTDIR)/$(PREFIX)/share/icons/hicolor/{128x128,48x48,16x16,scalable}/apps
-+	install -d $(DESTDIR)/$(PREFIX)/share/icons/hicolor/128x128/apps
- 	install data/icons/128x128/org.xfce.PanelProfiles.png $(DESTDIR)/$(PREFIX)/share/icons/hicolor/128x128/apps
-+	install -d $(DESTDIR)/$(PREFIX)/share/icons/hicolor/48x48/apps
+ 
+@@ -86,6 +83,9 @@ install: all xfce4-panel-profiles.1
  	install data/icons/48x48/org.xfce.PanelProfiles.png $(DESTDIR)/$(PREFIX)/share/icons/hicolor/48x48/apps
-+	install -d $(DESTDIR)/$(PREFIX)/share/icons/hicolor/16x16/apps
  	install data/icons/16x16/org.xfce.PanelProfiles.png $(DESTDIR)/$(PREFIX)/share/icons/hicolor/16x16/apps
-+	install -d $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable/apps
  	install data/icons/scalable/org.xfce.PanelProfiles.svg $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable/apps
 +
 +install-locale: install
