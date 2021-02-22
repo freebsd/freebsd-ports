@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymatgen
-DISTVERSION=	2021.2.14
+DISTVERSION=	2021.2.16
 CATEGORIES=	science python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,5 +33,11 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		compiler:c++11-lang python:3.7+
 USE_PYTHON=	distutils cython concurrent autoplist
+
+post-install:
+	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME} && ${STRIP_CMD} \
+		optimization/linear_assignment.so \
+		optimization/neighbors.so \
+		util/coord_cython.so
 
 .include <bsd.port.mk>
