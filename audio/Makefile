@@ -468,6 +468,7 @@
     SUBDIR += midipp
     SUBDIR += mikmod
     SUBDIR += milkytracker
+    SUBDIR += miniaudio
     SUBDIR += minimp3
     SUBDIR += mio2jack
     SUBDIR += mixer.app

@@ -1,0 +1,5 @@
+miniaudio is a single file audio playback and capture library written in C.
+Written from scratch, it has no external dependencies with the exception of
+the C standard library and necessary platform-specific backends.
+
+WWW: https://miniaud.io/
