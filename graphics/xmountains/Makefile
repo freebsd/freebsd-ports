@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	xmountains
-PORTVERSION=	2.9
+PORTVERSION=	2.10
 CATEGORIES=	graphics x11
-MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/archive.raspbian.org/raspbian/pool/main/x/xmountains/ \
-		ftp://ftp.unicamp.br/pub/debian/pool/main/x/xmountains/
+MASTER_SITES=	https://ftp.mirrorservice.org/sites/archive.raspbian.org/raspbian/pool/main/x/xmountains/ \
+		https://ftp.unicamp.br/pub/debian/pool/main/x/xmountains/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	X11 based fractal landscape generator
 
-NO_WRKSUBDIR=	yes
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		xorg
 USE_XORG=	xbitmaps x11
@@ -25,7 +25,9 @@ post-extract:
 	@${LN} -sf ${PORTNAME}.man ${WRKSRC}/${PORTNAME}.6
 
 do-build:
-	(cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} *.c -lX11 -lm -o ${PORTNAME})
+	(cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} \
+		calcalt.c random.c  artist.c global.c xmountains.c X_graphics.c print_alg.c \
+		-lX11 -lm -o ${PORTNAME})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
