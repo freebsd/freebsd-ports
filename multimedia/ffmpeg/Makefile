@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg
-PORTVERSION=	4.3.1
-PORTREVISION=	10
+PORTVERSION=	4.3.2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
