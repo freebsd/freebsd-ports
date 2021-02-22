@@ -1,5 +1,5 @@
-TIMESTAMP = 1607123619
-SHA256 (zerotier-ZeroTierOne-1.6.2_GH0.tar.gz) = c8087b26c1191d36fda004b42cdfed31042cafd8586e49015586eef786f2c9a5
-SIZE (zerotier-ZeroTierOne-1.6.2_GH0.tar.gz) = 16020599
+TIMESTAMP = 1613823499
+SHA256 (zerotier-ZeroTierOne-1.6.4_GH0.tar.gz) = 0f45a4050cdfea1018634c88b6c302cbbfcc3f7f93cb94bed840a15e3ffa55ba
+SIZE (zerotier-ZeroTierOne-1.6.4_GH0.tar.gz) = 16021448
 SHA256 (1304.patch) = 1a08361de186440d9a76292e3080090ed3a7430cb0db7f303097391936e2c7c4
 SIZE (1304.patch) = 5238

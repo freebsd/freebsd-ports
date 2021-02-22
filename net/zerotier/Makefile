@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zerotier
-DISTVERSION=	1.6.2
+DISTVERSION=	1.6.4
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/zerotier/zerotierone/pull/
