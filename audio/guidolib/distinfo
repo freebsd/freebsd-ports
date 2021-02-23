@@ -1,5 +1,3 @@
-TIMESTAMP = 1535704701
-SHA256 (grame-cncm-guidolib-v164-61-gbcd5705d_GH0.tar.gz) = 2a8edde89e6c1edb64ee8bc430e86524dc89979671912e4f0faefdb6a2e3ae15
-SIZE (grame-cncm-guidolib-v164-61-gbcd5705d_GH0.tar.gz) = 24893281
-SHA256 (713a205a6e57.patch) = e79f461b1fbf56af5f8cd8f46b7d3bd664fd507d22e54d425fd03c7f7a9adbae
-SIZE (713a205a6e57.patch) = 1624
+TIMESTAMP = 1614055636
+SHA256 (grame-cncm-guidolib-v168_GH0.tar.gz) = ff4abd38b419e54a53f90522349e440c60c49cd1f8d17e73e9b4e0c78aa66070
+SIZE (grame-cncm-guidolib-v168_GH0.tar.gz) = 42637630

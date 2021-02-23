@@ -1,0 +1,11 @@
+--- build/Makefile.orig	2021-02-23 05:12:20 UTC
++++ build/Makefile
+@@ -39,7 +39,7 @@ basic : $(PROJ)
+ all : $(PROJ)
+ 	$(MAKE) basic
+ 	$(MAKE) Qt
+-	$(MAKE) wasm
++	#$(MAKE) wasm
+ 	
+ $(PROJ) : $(BUILDDIR)
+ 	cd $(BUILDDIR) && cmake $(CMAKEOPT) .. -G $(GENERATOR)
