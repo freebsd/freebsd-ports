@@ -1,6 +1,7 @@
 bin/dunst
 bin/dunstctl
+@sample %%ETCDIR%%/dunstrc.sample
 man/man1/dunst.1.gz
 man/man1/dunstctl.1.gz
+man/man5/dunst.5.gz
 share/dbus-1/services/org.knopwob.dunst.service
-%%DATADIR%%/dunstrc
