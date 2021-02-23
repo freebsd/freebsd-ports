@@ -2498,6 +2498,7 @@ lib/libdakota_src_fortran.so
 lib/libdakota_surrogates.so
 lib/libdakota_util.so
 lib/libddace.so
+lib/libdemo_tpl.so
 lib/libdfftpack.so
 lib/libdream.so
 lib/libeutils.so
@@ -2510,6 +2511,9 @@ lib/liblhs.so
 lib/liblhs_mod.so
 lib/liblhs_mods.so
 lib/libmoga.so
+lib/libmuqUtilities.so
+lib/libmuqModeling.so
+lib/libmuqSamplingAlgorithms.so
 lib/libncsuopt.so
 lib/libnidr.so
 lib/libnomad.so
@@ -2518,7 +2522,7 @@ lib/libpebbl.so
 lib/libpecos_src.so
 lib/libpecos_util.so
 lib/libpsuade.so
-lib/libqueso.so
+%%GSL%%lib/libqueso.so
 lib/librol.so
 lib/librol.so.13
 lib/librol.so.13.0

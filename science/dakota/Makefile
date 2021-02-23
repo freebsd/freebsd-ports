@@ -2,7 +2,7 @@
 
 PORTNAME=	dakota
 DISTVERSION=	6.13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://dakota.sandia.gov/sites/default/files/distributions/public/
 
@@ -29,6 +29,13 @@ SHEBANG_FILES=	interfaces/Python/mpitile \
 
 CMAKE_ON=	Boost_NO_BOOST_CMAKE \
 		DAKOTA_GIT_checkout
+#CMAKE_ON+=	HAVE_C3 # causes "duplicate include" error
+#CMAKE_ON+=	DAKOTA_DL_SOLVER # fails to compile: error: declaration of anonymous class must be a definition
+#CMAKE_ON+=	HAVE_NOWPAC # installs files into $PORTSDIR
+CMAKE_ON+=	HAVE_DREAM HAVE_ADAPTIVE_SAMPLING HAVE_OPTPP DAKOTA_HOPS HAVE_ACRO \
+		HAVE_JEGA HAVE_NOMAD HAVE_NPSOL HAVE_NL2SOL HAVE_DOT HAVE_SURFPACK \
+		HAVE_CONMIN HAVE_DDACE HAVE_FSUDACE HAVE_PSUADE HAVE_ROL HAVE_DEMO_TPL # enable some methods that aren't enabled by default, see the list @ src/DakotaIterator.cpp
+
 CMAKE_OFF=	DAKOTA_ENABLE_TESTS
 CMAKE_ARGS=	-DDakota_VERSION_SRC:STRING=${DISTVERSION} -DDakota_GIT_REVL:STRING=${GIT_HASH} -DDakota_RELEASE_DATE:${STRING}=20201116
 
@@ -65,12 +72,22 @@ do-fetch:
 DISTNAME=	${PORTNAME}-${DISTVERSION}-release-public.src-UI
 .endif
 
-OPTIONS_DEFINE=		GSL
-OPTIONS_DEFAULT=	GSL
+OPTIONS_DEFINE=		GSL GUI HDF5
+OPTIONS_DEFAULT=	GSL HDF5
+OPTIONS_SUB=		yes
 
 GSL_DESC=		GSL support
-GSL_CMAKE_BOOL=		DAKOTA_HAVE_GSL HAVE_QUESO # QUESO requires GSL
+GSL_CMAKE_BOOL=		DAKOTA_HAVE_GSL HAVE_QUESO HAVE_QUESO_GPMSA # QUESO requires GSL
 GSL_LIB_DEPENDS=	libgsl.so:math/gsl
+
+HDF5_CMAKE_BOOL=	DAKOTA_HAVE_HDF5 \
+			HAVE_MUQ # MUQ module requires HDF5
+HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+			libsz.so:science/szip
+
+GUI_DESC=		Build the Dakota/Motif Graphics package
+GUI_CMAKE_BOOL=		HAVE_X_GRAPHICS
+GUI_BROKEN=		error: non-void function 'SciPlotListReturnPtr' should return a value
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
@@ -79,6 +96,10 @@ post-extract:
 post-install:
 	# remove eigen3 that Dakota installs
 	cd ${STAGEDIR}${PREFIX} && ${RM} -r include/eigen3 share/eigen3
+	# install libraries that it fails to install
+.for l in libmuqUtilities.so libmuqModeling.so libmuqSamplingAlgorithms.so
+	${INSTALL_LIB} ${BUILD_WRKSRC}/packages/external/muq2/lib/${l} ${STAGEDIR}${PREFIX}/lib
+.endfor
 
 do-test: # from Additional Test Suites @ https://dakota.sandia.gov/content/additional-test-suites (many tests are known to fail)
 	# minimal set of fast-running tests that should NOT FAIL (may DIFF, depending on platform / compiler)
