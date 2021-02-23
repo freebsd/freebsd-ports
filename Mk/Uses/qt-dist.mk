@@ -196,11 +196,9 @@ QT_DEFINES?=		# For qconfig.h flags (without "QT_" prefix).
 QT_CONFIG?=		# For *.pri files QT_CONFIG flags.
 .  if ${QT_DEFINES}
 QMAKE_ARGS+=		DEFINES+="${QT_DEFINES:O:u:C/^([^-])/QT_\1/:C/^-/QT_NO_/:O}"
-.    if ${QT_DEFINES:N-*}
-# Use a script to cleanup qconfig-modules.h (see qt-post-install).
-PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
-.    endif
 .  endif #  ${QT_DEFINES}
+PKGDEINSTALL=		${WRKDIR}/pkg-install
+PKGINSTALL=		${WRKDIR}/pkg-deinstall
 .  if ${QT_CONFIG:N-*}
 QMAKE_ARGS+=		QT_CONFIG+="${QT_CONFIG:N-*:O:u}"
 .  endif
@@ -346,17 +344,55 @@ qt5-pre-configure:
 .      endfor
 .    endif
 
+.    if ${QT_DEFINES:N-*}
+# There **are** defines, so we need to **add** this port to the
+# qconfig-modules.h header; make @need_add empty and comment out
+# the @need_remove lines in the script (see below in qt-post-install).
+# If there are no defines, do it the other way around.
+_sub_need_add=
+_sub_need_remove=	\#\#
+.    else
+_sub_need_add=		\#\#
+_sub_need_remove=	
+.    endif
+# Handle misc/qtchooser wrapper installation and deinstallation
+# If a port installs Qt version-specific binaries (e.g. "designer" which 
+# existed as a Qt4 application and exists as a Qt5 application and will 
+# probably be a Qt6 application) which should have a qtchooser-based wrapper, 
+# the port should set `QT_BINARIES=yes`.
+.    if defined(QT_BINARIES)
+_sub_need_bin=
+.    else
+_sub_need_bin=		\#\#
+.    endif
+.    if ${QT_MODNAME} == core
+# QtCore (e.g. devel/qt5-core) is the one that starts the header,
+# and is also the one that can clean it up when deinstalled.
+_sub_need_clean=	
+.    else
+_sub_need_clean=	\#\#
+.    endif
 post-install: qt-post-install
 qt-post-install:
-.    if ${QT_DEFINES:N-*}
-# We can't use SUB_FILES with a shared pkg-deinstall.in.
-# We need it to be a script instead of a group of @unexecs, otherwise
-# qconfig-modules.h cleanup will be run in pre-deinstall stage, which is
-# useless. This will probably be replaced by a Keywords/ script in the future.
+# We can't use SUB_FILES with the shared pkg-change.in.
+# We need it to be a script instead of a group of @unexecs.
+# Do two steps of processing -- introducing the Qt variables,
+# and replacing the @tags with comment (or nothing) characters
+# according to the port's settings -- in one sed and write
+# to pkg-change.tmp. Then split it up and minify for the
+# install and deinstall step.
 	@${SED} -e 's,%%QT_MODNAME%%,${QT_MODNAME},g' \
 		-e 's,%%QT_INCDIR%%,${QT_INCDIR},g' \
-		${PORTSDIR}/devel/${_QT_RELNAME}/${FILESDIR:T}/${PKGDEINSTALL:T}.in > \
-		${PKGDEINSTALL}
+		-e 's,@need_add,${_sub_need_add},' \
+		-e 's,@need_remove,${_sub_need_remove},' \
+		-e 's,@need_clean,${_sub_need_clean},' \
+		-e 's,@need_bin,${_sub_need_bin},' \
+		${PORTSDIR}/devel/${_QT_RELNAME}/${FILESDIR:T}/pkg-change.in > \
+		${WRKDIR}/pkg-change.tmp
+	@${SED} -e 's,@install,,' -e 's,@deinstall,##,' ${WRKDIR}/pkg-change.tmp | ${SED} -e '/##/d' > ${PKGINSTALL}
+	@${SED} -e 's,@install,##,' -e 's,@deinstall,,' ${WRKDIR}/pkg-change.tmp | ${SED} -e '/##/d' > ${PKGDEINSTALL}
+	@${REINPLACE_CMD} 's/\t//g' ${PKGINSTALL} ${PKGDEINSTALL}
+.    if ${QT_DEFINES:N-*}
 	@${MKDIR} ${STAGEDIR}${QT_INCDIR}/QtCore/modules
 	@${ECHO_CMD} -n \
 		> ${STAGEDIR}${QT_INCDIR}/QtCore/modules/qconfig-${QT_MODNAME}.h
@@ -372,8 +408,6 @@ qt-post-install:
 .      endfor
 	@${ECHO_CMD} "${PREFIX}/${QT_INCDIR_REL}/QtCore/modules/qconfig-${QT_MODNAME}.h" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@exec echo '#include <QtCore/modules/qconfig-${QT_MODNAME}.h>' >> ${PREFIX}/${QT_INCDIR_REL}/QtCore/qconfig-modules.h" \
-		>> ${TMPPLIST}
 .    endif # ${QT_DEFINES:N-*}
 .    if ${QT_CONFIG:N-*}
 	@${MKDIR} ${STAGEDIR}${QT_MKSPECDIR}/modules
@@ -383,16 +417,4 @@ qt-post-install:
 		>> ${TMPPLIST}
 .    endif # ${QT_CONFIG:N-*}
 .  endif # M5
-
-# Handle misc/qtchooser wrapper installation and deinstallation
-# If a port installs Qt version-specific binaries (e.g. "designer" which existed as a Qt4 application
-# and exists as a Qt5 application and will probably be a Qt6 application) which should have a
-# qtchooser-based wrapper, the port should set `QT_BINARIES=yes`.
-#
-# When QT_BINARIES is set to yes, compatibility symlinks (designer -> qtchooser, so that
-# qtchooser can run designer-qt5 or whatever is the selected Qt version) are installed by the port.
-.  if defined(QT_BINARIES)
-	${ECHO_CMD} '@postexec if type update-qtchooser-wrapper >/dev/null 2>&1; then update-qtchooser-wrapper; fi' >> ${TMPPLIST}
-	${ECHO_CMD} '@postunexec if type update-qtchooser-wrapper >/dev/null 2>&1; then update-qtchooser-wrapper; fi' >> ${TMPPLIST}
-.  endif
 .endif # defined(_QT_DIST_MK_INCLUDED)

@@ -1,0 +1,104 @@
+#!/bin/sh
+##
+## ### PROCESSING
+##
+## This file is processed three ways:
+## - to replace %%variables%% with the intended values
+## - to replace @tag with ## or blank as appropriate
+## - to filter out lines containing ##
+##
+## The resulting "minified" script is used as pkg-install or pkg-deinstall
+## script in the package.
+##
+## Lines with @tag at the beginning should be read as conditional;
+## multiple @tags are read as "and", so the **rest** of the line
+## only ends up in the resulting script when all the @tags are true.
+##
+## The file is formatted for 8-wide tab stops with hard tabs,
+## so that the shell-script itself can be read in column 24,
+## e.g.                 v--- here
+## take care not to insert tabs in the actual shell commands.
+##
+##
+## ### ABOUT
+##
+## A Qt module should be listed in QtCore/qconfig-modules.h only once,
+## and only if that is needed (e.g. if it has a qconfig-*.h of its own).
+## In case 1 (listed), update the target file by appending and sorting:
+##  - echo the new line and existing contents if any
+##  - .. pipe to sort -u
+##  - .. then move the sorted-uniqued output to the config-modules.h
+## In case 2 (unlisted), update the target file by deleting a line
+##
+## Removing QtCore *may* leave behind an empty file, and in that case
+## clean up the config file and directories entirely.
+##
+## A module with versionable binaries (like "designer" which might have
+## a Qt4, Qt5 and Qt6 version) can update the unversioned binary names
+## via qt-chooser.
+##
+##
+## On deinstall, we need QT_INCDIR separately, so define variables $qi and $qc
+## differently from install (which needs only $qc).
+@deinstall		qi="%%QT_INCDIR%%"
+@deinstall		qc="$qi/QtCore/qconfig-modules.h"
+@install		qc="%%QT_INCDIR%%/QtCore/qconfig-modules.h"
+			qm="%%QT_MODNAME%%"
+##
+## Distinguish the pkg step and call the relevant shell functions defined above.
+##
+			case $2 in
+@install		POST-INSTALL)
+##
+## Add the line #include qconfig-<this module>.h to the global
+## qconfig-modules.h; afterwards that global file exists.
+##
+## We might be adding to a non-existent file, which is why there
+## is the slightly-weird construction with a subshell piping to sort.
+##
+@install@need_add	{ echo "#include <QtCore/modules/qconfig-$qm.h>"
+@install@need_add		[ -f "$qc" ] && /bin/cat "$qc"
+@install@need_add	} | /usr/bin/sort -u -o "$qc.new"
+@install@need_add	/bin/mv "$qc.new" "$qc"
+##
+## This removes the line that #includes qconfig-<this module>.h
+## from the global qconfig-modules.h; afterwards, that global file exists
+## although it may be empty.
+##   (This code is identical in install- and deinstall-scripts, unconditional in deinstall)
+##
+@install@need_remove	[ \! -e "$qc" ] && touch "$qc"
+@install@need_remove	sed -i "" "/qconfig-$qm\.h/ d" "$qc"
+##
+## If there are binaries, and qtchooser is installed, update it.
+##   (This code is identical in install- and deinstall-scripts)
+##
+@install@need_bin	{ type update-qtchooser-wrapper && update-qtchooser-wrapper ; } >/dev/null 2>&1
+@install		;;
+@deinstall		POST-DEINSTALL)
+##
+## This removes the line that #includes qconfig-<this module>.h
+## from the global qconfig-modules.h; afterwards, that global file exists
+## although it may be empty.
+##   (This code is identical in install- and deinstall-scripts, unconditional in deinstall)
+##
+@deinstall		[ \! -e "$qc" ] && touch "$qc"
+@deinstall		sed -i "" "/qconfig-$qm\.h/ d" "$qc"
+##
+## When qtcore is removed, the whole config dir can go away as well.
+##
+@deinstall		[ \! -e "$qi/QtCore/qconfig.h" ] && \
+@deinstall		[ \! -s "$qc" ] && (
+@deinstall			rm -f "$qc"
+@deinstall			rmdir "$qi/QtCore"
+@deinstall			rmdir "$qi"
+@deinstall		) > /dev/null 2>&1
+##
+## If there are binaries, and qtchooser is installed, update it.
+##   (This code is identical in install- and deinstall-scripts)
+##
+@deinstall@need_bin	{ type update-qtchooser-wrapper && update-qtchooser-wrapper ; } >/dev/null 2>&1
+@deinstall		;;
+			esac
+## Avoid exit code from any of the commands-above (e.g. checking for
+## qtchooser updates) from leaking out of this script: be true.
+			:
