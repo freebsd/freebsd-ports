@@ -130,7 +130,7 @@ NODE_VER=			12.18.3
 # See ${WRKSRC}/electron/DEPS for NAN_VER
 NAN_VER=			2c4ee8a32a299eada3cd6e468bbd0a473bfea96d
 
-YARN_TIMESTAMP=	1612596580
+YARN_TIMESTAMP=	1613819499
 
 GN_ARGS+=		clang_use_chrome_plugins=false \
 			enable_hangout_services_extension=true \
