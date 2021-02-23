@@ -78,6 +78,34 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3e9624b3-e92b-4460-8a5a-93247c52c5a1">
+    <topic>zeek -- Remote crash vulnerability</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>3.0.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jon Siwek of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v3.0.13">
+	  <p>Fix ASCII Input reader's treatment of input files
+	  containing null-bytes. An input file containing null-bytes
+	  could lead to a buffer-over-read, crash Zeek, and be
+	  exploited to cause Denial of Service. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v3.0.13</url>
+    </references>
+    <dates>
+      <discovery>2021-02-10</discovery>
+      <entry>2021-02-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9c03845c-7398-11eb-bc0e-2cf05d620ecc">
     <topic>raptor2 -- malformed input file can lead to a segfault</topic>
     <affects>
