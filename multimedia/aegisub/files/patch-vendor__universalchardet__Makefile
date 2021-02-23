@@ -1,0 +1,11 @@
+--- vendor/universalchardet/Makefile.orig	2021-02-21 05:40:22 UTC
++++ vendor/universalchardet/Makefile
+@@ -1,7 +1,7 @@
+ include $(dir $(lastword $(MAKEFILE_LIST)))../../header.mk
+ 
+ universalchardet_OBJ := $(subst .cpp,.o,$(wildcard $(d)*.cpp))
+-universalchardet_CPPFLAGS := -D_X86_
++universalchardet_CPPFLAGS := -D_X86_ -D_LIBCPP_STDLIB_INCLUDE_NEXT
+ 
+ LIB += universalchardet
+ 
