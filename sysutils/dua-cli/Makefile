@@ -2,7 +2,7 @@
 
 PORTNAME=	dua-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.0
+DISTVERSION=	2.11.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -22,7 +22,6 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		bitflags-1.2.1 \
 		byte-unit-4.0.9 \
 		cassowary-0.3.0 \
-		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		clap-3.0.0-beta.2 \
 		clap_derive-3.0.0-beta.2 \
@@ -37,7 +36,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		crossterm-0.18.2 \
 		crossterm_winapi-0.6.2 \
 		crosstermion-0.6.0 \
-		ctor-0.1.18 \
+		ctor-0.1.19 \
 		difference-2.0.0 \
 		either-1.6.1 \
 		filesize-0.2.0 \
@@ -51,9 +50,9 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		itertools-0.10.0 \
 		jwalk-0.6.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.82 \
+		libc-0.2.86 \
 		lock_api-0.4.2 \
-		log-0.4.13 \
+		log-0.4.14 \
 		memoffset-0.6.1 \
 		mio-0.7.7 \
 		miow-0.3.6 \
@@ -64,17 +63,16 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		os_str_bytes-2.4.0 \
 		output_vt100-0.1.2 \
 		parking_lot-0.11.1 \
-		parking_lot_core-0.8.2 \
+		parking_lot_core-0.8.3 \
 		petgraph-0.5.1 \
 		pretty_assertions-0.6.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.24 \
-		quote-1.0.8 \
+		quote-1.0.9 \
 		rayon-1.5.0 \
 		rayon-core-1.9.0 \
-		redox_syscall-0.1.57 \
-		redox_syscall-0.2.4 \
+		redox_syscall-0.2.5 \
 		redox_termios-0.1.2 \
 		scopeguard-1.1.0 \
 		signal-hook-0.1.17 \
@@ -82,9 +80,9 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		smallvec-1.6.1 \
 		socket2-0.3.19 \
 		strsim-0.10.0 \
-		syn-1.0.58 \
+		syn-1.0.60 \
 		termcolor-1.1.2 \
-		termion-1.5.5 \
+		termion-1.5.6 \
 		textwrap-0.12.1 \
 		tui-0.14.0 \
 		tui-react-0.14.0 \
