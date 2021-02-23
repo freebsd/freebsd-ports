@@ -2,6 +2,7 @@
 
 PORTNAME=	shiboken2
 DISTVERSION=	5.15.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken2/PySide2-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ BROKEN_riscv64=		fails to compile: __threading_support:135:3: Unsupported archit
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		git>0:devel/git
-LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_DEFAULT} \
+LIB_DEPENDS=	libclang.so.${LLVM_DEFAULT:C/^([6-9])0/\1/}:devel/llvm${LLVM_DEFAULT} \
 		libxslt.so:textproc/libxslt
 
 USES=		cmake compiler:c++11-lang gnome python:3.5+ qt:5 shebangfix tar:xz
@@ -29,11 +30,11 @@ USE_QT=		buildtools_build core gui network qmake_build testlib \
 
 SHEBANG_FILES=	shiboken_tool.py
 
-CONFIGURE_ENV+=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}
 CMAKE_ARGS+=	"-DCMAKE_CXX_FLAGS=-lexecinfo" \
 		"-DCMAKE_STANDARD_LIBRARIES=-lexecinfo" \
 		"-DCMAKE_CXX_STANDARD_LIBRARIES=-lexecinfo" \
-		"-DUSE_PYTHON_VERSION=${PYTHON_VER}"
+		"-DUSE_PYTHON_VERSION=${PYTHON_VER}" \
+		"-DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}"
 
 .include <bsd.port.pre.mk>
 
