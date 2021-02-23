@@ -64,38 +64,6 @@ post-patch:
 		s|libGuidoQt.a|libGuidoQt.*|' \
 		${WRKSRC}/environments/Qt/libs/Makefile
 
-xdo-install:
-	${INSTALL_PROGRAM} \
-		${WRKSRC}/environments/Qt/apps/GuidoEditor/GuidoEditor \
-		${WRKSRC}/environments/Qt/apps/GuidoSceneComposer/GuidoSceneComposer \
-		${WRKSRC}/environments/Qt/apps/guido2image/guido2image \
-		${WRKSRC}/src/tools/build/linux/midi2proll \
-		${WRKSRC}/src/tools/build/linux/guido* \
-		${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/guido
-	${INSTALL_DATA} \
-		${WRKSRC}/src/engine/include/*.h \
-		${WRKSRC}/platforms/linux/src/Cairo*.h \
-		${WRKSRC}/environments/Qt/libs/GuidoQt/include/*.h \
-		${STAGEDIR}${PREFIX}/include/guido
-	${INSTALL_LIB} \
-		${WRKSRC}/build/libGUIDOEngine.* \
-		${WRKSRC}/environments/Qt/libs/libGuidoQt.* \
-		${STAGEDIR}${PREFIX}/lib
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fonts/guido
-	${INSTALL_DATA} \
-		${WRKSRC}/src/guido2.ttf \
-		${STAGEDIR}${PREFIX}/share/fonts/guido
-.for sz in 48 128
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${sz}x${sz}/apps
-	${INSTALL_DATA} \
-		${WRKSRC}/environments/Qt/package/debianbase/usr/share/icons/hicolor/${sz}x${sz}/apps/* \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/${sz}x${sz}/apps
-.endfor
-	${INSTALL_DATA} \
-		${WRKSRC}/environments/Qt/package/debianbase/usr/share/applications/*.desktop \
-		${STAGEDIR}${DESKTOPDIR}
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/lib/libGUIDOEngine.so.*
 	${RM} -r ${STAGEDIR}${DATADIR}/python
