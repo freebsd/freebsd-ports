@@ -62,19 +62,21 @@
 %%DATADIR%%/Definitions/2fast4you.yml
 %%DATADIR%%/Definitions/3changtrai.yml
 %%DATADIR%%/Definitions/3dtorrents.yml
-%%DATADIR%%/Definitions/3evils.yml
 %%DATADIR%%/Definitions/4thd.yml
 %%DATADIR%%/Definitions/52pt.yml
 %%DATADIR%%/Definitions/7torrents.yml
 %%DATADIR%%/Definitions/Bittorrentfiles.yml
 %%DATADIR%%/Definitions/DasUnerwartete.yml
+%%DATADIR%%/Definitions/abtorrents.yml
 %%DATADIR%%/Definitions/acgrip.yml
 %%DATADIR%%/Definitions/acgsou.yml
 %%DATADIR%%/Definitions/acidlounge.yml
+%%DATADIR%%/Definitions/acrossthetasman.yml
 %%DATADIR%%/Definitions/aftershock.yml
 %%DATADIR%%/Definitions/aidoruonline.yml
 %%DATADIR%%/Definitions/aither.yml
 %%DATADIR%%/Definitions/amigosshare.yml
+%%DATADIR%%/Definitions/anaschcc.yml
 %%DATADIR%%/Definitions/animeclipse.yml
 %%DATADIR%%/Definitions/animeworld.yml
 %%DATADIR%%/Definitions/anirena.yml
@@ -85,7 +87,6 @@
 %%DATADIR%%/Definitions/asiancinema.yml
 %%DATADIR%%/Definitions/asylumshare.yml
 %%DATADIR%%/Definitions/audiobookbay.yml
-%%DATADIR%%/Definitions/audiobooktorrents.yml
 %%DATADIR%%/Definitions/audionews.yml
 %%DATADIR%%/Definitions/backups.yml
 %%DATADIR%%/Definitions/baibako.yml
@@ -95,7 +96,6 @@
 %%DATADIR%%/Definitions/bibliotik.yml
 %%DATADIR%%/Definitions/bigfangroup.yml
 %%DATADIR%%/Definitions/bigtorrent.yml
-%%DATADIR%%/Definitions/bigtower.yml
 %%DATADIR%%/Definitions/bit-titan.yml
 %%DATADIR%%/Definitions/bithorlo.yml
 %%DATADIR%%/Definitions/bithumen.yml
@@ -132,6 +132,7 @@
 %%DATADIR%%/Definitions/cinemamovies.yml
 %%DATADIR%%/Definitions/cinematik.yml
 %%DATADIR%%/Definitions/classix.yml
+%%DATADIR%%/Definitions/coastalcrew.yml
 %%DATADIR%%/Definitions/concen.yml
 %%DATADIR%%/Definitions/concertos.yml
 %%DATADIR%%/Definitions/cpabien.yml
@@ -139,6 +140,7 @@
 %%DATADIR%%/Definitions/crazyhd.yml
 %%DATADIR%%/Definitions/crazyspirits.yml
 %%DATADIR%%/Definitions/crnaberza.yml
+%%DATADIR%%/Definitions/danishbytes.yml
 %%DATADIR%%/Definitions/dariustracker.yml
 %%DATADIR%%/Definitions/dark-shadow.yml
 %%DATADIR%%/Definitions/darktracker.yml
@@ -151,7 +153,6 @@
 %%DATADIR%%/Definitions/dimeadozen.yml
 %%DATADIR%%/Definitions/divteam.yml
 %%DATADIR%%/Definitions/dmhy.yml
-%%DATADIR%%/Definitions/documentarytorrents.yml
 %%DATADIR%%/Definitions/dragonworldreloaded.yml
 %%DATADIR%%/Definitions/dxdhd.yml
 %%DATADIR%%/Definitions/dxp.yml
@@ -179,6 +180,7 @@
 %%DATADIR%%/Definitions/eztv.yml
 %%DATADIR%%/Definitions/fanoin.yml
 %%DATADIR%%/Definitions/fantasticheaven.yml
+%%DATADIR%%/Definitions/feedurneed.yml
 %%DATADIR%%/Definitions/femdomcult.yml
 %%DATADIR%%/Definitions/filebase.yml
 %%DATADIR%%/Definitions/film-paleis.yml
@@ -189,7 +191,6 @@
 %%DATADIR%%/Definitions/fouducinema.yml
 %%DATADIR%%/Definitions/freetorrent.yml
 %%DATADIR%%/Definitions/frozenlayer.yml
-%%DATADIR%%/Definitions/fullmixmusic.yml
 %%DATADIR%%/Definitions/funkytorrents.yml
 %%DATADIR%%/Definitions/funreleases.yml
 %%DATADIR%%/Definitions/galeriens.yml
@@ -207,18 +208,17 @@
 %%DATADIR%%/Definitions/greekdiamond.yml
 %%DATADIR%%/Definitions/greekteam.yml
 %%DATADIR%%/Definitions/gtorrent.yml
-%%DATADIR%%/Definitions/hachede.yml
 %%DATADIR%%/Definitions/haidan.yml
 %%DATADIR%%/Definitions/hamsterstudio.yml
 %%DATADIR%%/Definitions/hd4fans.yml
 %%DATADIR%%/Definitions/hdarea.yml
+%%DATADIR%%/Definitions/hdatmos.yml
 %%DATADIR%%/Definitions/hdbits.yml
 %%DATADIR%%/Definitions/hdbitscom.yml
 %%DATADIR%%/Definitions/hdc.yml
 %%DATADIR%%/Definitions/hdcenter.yml
 %%DATADIR%%/Definitions/hdchina.yml
 %%DATADIR%%/Definitions/hdcity.yml
-%%DATADIR%%/Definitions/hddisk.yml
 %%DATADIR%%/Definitions/hddolby.yml
 %%DATADIR%%/Definitions/hdforever.yml
 %%DATADIR%%/Definitions/hdhome.yml
@@ -229,7 +229,6 @@
 %%DATADIR%%/Definitions/hdroute.yml
 %%DATADIR%%/Definitions/hdsky.yml
 %%DATADIR%%/Definitions/hdspain.yml
-%%DATADIR%%/Definitions/hdstreet.yml
 %%DATADIR%%/Definitions/hdtime.yml
 %%DATADIR%%/Definitions/hdtorrentsit.yml
 %%DATADIR%%/Definitions/hdturk.yml
@@ -253,8 +252,8 @@
 %%DATADIR%%/Definitions/jptv.yml
 %%DATADIR%%/Definitions/karagarga.yml
 %%DATADIR%%/Definitions/keepfriends.yml
-%%DATADIR%%/Definitions/kickasstorrent-kathow.yml
 %%DATADIR%%/Definitions/kickasstorrents-to.yml
+%%DATADIR%%/Definitions/kickasstorrents-ws.yml
 %%DATADIR%%/Definitions/kinonavse100.yml
 %%DATADIR%%/Definitions/kinorun.yml
 %%DATADIR%%/Definitions/kinozal.yml
@@ -285,7 +284,7 @@
 %%DATADIR%%/Definitions/mma-torrents.yml
 %%DATADIR%%/Definitions/mnv.yml
 %%DATADIR%%/Definitions/mononokebt.yml
-%%DATADIR%%/Definitions/monova.yml
+%%DATADIR%%/Definitions/montorrent.yml
 %%DATADIR%%/Definitions/movcr.yml
 %%DATADIR%%/Definitions/moviesdvdr.yml
 %%DATADIR%%/Definitions/moviezone.yml
@@ -312,7 +311,6 @@
 %%DATADIR%%/Definitions/omgwtftrackr.yml
 %%DATADIR%%/Definitions/onejav.yml
 %%DATADIR%%/Definitions/onlineselfeducation.yml
-%%DATADIR%%/Definitions/onlyscene.yml
 %%DATADIR%%/Definitions/oshenpt.yml
 %%DATADIR%%/Definitions/ourbits.yml
 %%DATADIR%%/Definitions/oxtorrent.yml
@@ -356,7 +354,6 @@
 %%DATADIR%%/Definitions/rainbowtracker.yml
 %%DATADIR%%/Definitions/rapidzona.yml
 %%DATADIR%%/Definitions/redstartorrent.yml
-%%DATADIR%%/Definitions/retroflix.yml
 %%DATADIR%%/Definitions/rintor.yml
 %%DATADIR%%/Definitions/rintornet.yml
 %%DATADIR%%/Definitions/riperam.yml
@@ -381,8 +378,7 @@
 %%DATADIR%%/Definitions/siambit.yml
 %%DATADIR%%/Definitions/sktorrent-org.yml
 %%DATADIR%%/Definitions/sktorrent.yml
-%%DATADIR%%/Definitions/skytorrentsclone.yml
-%%DATADIR%%/Definitions/skytorrentsclone2.yml
+%%DATADIR%%/Definitions/skytorrents-to.yml
 %%DATADIR%%/Definitions/snowpt.yml
 %%DATADIR%%/Definitions/sosulki.yml
 %%DATADIR%%/Definitions/soulvoice.yml
@@ -392,6 +388,7 @@
 %%DATADIR%%/Definitions/sporthd.yml
 %%DATADIR%%/Definitions/sportscult.yml
 %%DATADIR%%/Definitions/springsunday.yml
+%%DATADIR%%/Definitions/sugoimusic.yml
 %%DATADIR%%/Definitions/sukebei-pantsu.yml
 %%DATADIR%%/Definitions/sukebeinyaasi.yml
 %%DATADIR%%/Definitions/tapochek.yml
@@ -422,14 +419,13 @@
 %%DATADIR%%/Definitions/torrent9.yml
 %%DATADIR%%/Definitions/torrent9clone.yml
 %%DATADIR%%/Definitions/torrentbd.yml
-%%DATADIR%%/Definitions/torrentbomb.yml
 %%DATADIR%%/Definitions/torrentccf.yml
 %%DATADIR%%/Definitions/torrentdb.yml
 %%DATADIR%%/Definitions/torrentdownload.yml
 %%DATADIR%%/Definitions/torrentdownloads.yml
 %%DATADIR%%/Definitions/torrentfactory.yml
 %%DATADIR%%/Definitions/torrentfunk.yml
-%%DATADIR%%/Definitions/torrentgalaxyorg.yml
+%%DATADIR%%/Definitions/torrentgalaxy.yml
 %%DATADIR%%/Definitions/torrenthr.yml
 %%DATADIR%%/Definitions/torrenting.yml
 %%DATADIR%%/Definitions/torrentkitty.yml
@@ -450,6 +446,7 @@
 %%DATADIR%%/Definitions/totallykids.yml
 %%DATADIR%%/Definitions/totheglory.yml
 %%DATADIR%%/Definitions/totheglorycookie.yml
+%%DATADIR%%/Definitions/trackeros.yml
 %%DATADIR%%/Definitions/trancetraffic.yml
 %%DATADIR%%/Definitions/trezzor.yml
 %%DATADIR%%/Definitions/tribalmixes.yml

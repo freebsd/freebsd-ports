@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jackett
-PORTVERSION=	0.17.197
+PORTVERSION=	0.17.568
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Jackett/Jackett/releases/download/
 DISTNAME=	v${PORTVERSION}/Jackett.Binaries.Mono
@@ -19,10 +19,11 @@ USE_RC_SUBR=	jackett
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Jackett
-NOARCH=		yes
 
 USERS=		jackett
 GROUPS=		jackett
+
+NOARCH=		yes
 
 post-patch:
 	@${RM} ${WRKSRC}/install_service_macos ${WRKSRC}/install_service_systemd.sh
