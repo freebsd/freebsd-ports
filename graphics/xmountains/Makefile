@@ -26,7 +26,7 @@ post-extract:
 
 do-build:
 	(cd ${BUILD_WRKSRC} && ${CC} ${CFLAGS} \
-		calcalt.c random.c  artist.c global.c xmountains.c X_graphics.c print_alg.c \
+		calcalt.c random.c  artist.c xmountains.c X_graphics.c print_alg.c \
 		-lX11 -lm -o ${PORTNAME})
 
 do-install:
