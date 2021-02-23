@@ -12,8 +12,8 @@ CARGO_CRATES=	aes-0.3.2 \
 		atty-0.2.14 \
 		autocfg-0.1.7 \
 		autocfg-1.0.0 \
-		base64-0.10.1 \
 		base64-0.9.3 \
+		base64-0.10.1 \
 		bindgen-0.53.3 \
 		bit-set-0.5.2 \
 		bit-vec-0.6.2 \
@@ -27,7 +27,6 @@ CARGO_CRATES=	aes-0.3.2 \
 		byte-tools-0.3.1 \
 		byteorder-1.3.4 \
 		bytes-0.4.12 \
-		c_linked_list-1.1.1 \
 		cc-1.0.58 \
 		cexpr-0.4.0 \
 		cfg-if-0.1.10 \
@@ -66,8 +65,6 @@ CARGO_CRATES=	aes-0.3.2 \
 		futures-util-0.3.5 \
 		gcc-0.3.55 \
 		generic-array-0.12.3 \
-		get_if_addrs-0.5.3 \
-		get_if_addrs-sys-0.1.1 \
 		getopts-0.2.21 \
 		getrandom-0.1.14 \
 		glib-0.9.3 \
@@ -89,6 +86,8 @@ CARGO_CRATES=	aes-0.3.2 \
 		hyper-0.11.27 \
 		hyper-proxy-0.4.1 \
 		idna-0.1.5 \
+		if-addrs-0.6.5 \
+		if-addrs-sys-0.3.2 \
 		iovec-0.1.4 \
 		itoa-0.4.6 \
 		jack-0.5.7 \
@@ -102,15 +101,9 @@ CARGO_CRATES=	aes-0.3.2 \
 		libloading-0.4.3 \
 		libloading-0.5.2 \
 		libm-0.2.1 \
-		libmdns-0.2.6 \
+		libmdns-0.2.7 \
 		libpulse-sys-0.0.0 \
-		librespot-audio-0.1.2 \
-		librespot-connect-0.1.2 \
-		librespot-core-0.1.2 \
-		librespot-metadata-0.1.2 \
-		librespot-playback-0.1.2 \
-		librespot-protocol-0.1.2 \
-		librespot-tremor-0.1.0 \
+		librespot-tremor-0.2.0 \
 		linear-map-1.2.0 \
 		lock_api-0.3.4 \
 		log-0.3.9 \
