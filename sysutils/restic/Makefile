@@ -2,12 +2,12 @@
 
 PORTNAME=	restic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
+DISTVERSION=	0.12.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/restic/restic/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	gregf@hugops.pw
+MAINTAINER=	gregf@beastie.tech
 COMMENT=	Fast, secure, efficient backup program
 
 LICENSE=	BSD2CLAUSE
@@ -44,7 +44,7 @@ GH_TUPLE=	\
 		golang:oauth2:5d25da1a8d43:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:6e8e738ad208:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:8445cc04cbdf:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:da207088b7d1:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
 		golang:tools:d647fc253266:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
@@ -74,7 +74,7 @@ GH_TUPLE=	\
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pkg:profile:v1.5.0:pkg_profile/vendor/github.com/pkg/profile \
 		pkg:sftp:v1.12.0:pkg_sftp/vendor/github.com/pkg/sftp \
-		pkg:xattr:v0.4.1:pkg_xattr/vendor/github.com/pkg/xattr \
+		pkg:xattr:v0.4.2:pkg_xattr/vendor/github.com/pkg/xattr \
 		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		restic:chunker:v0.4.0:restic_chunker/vendor/github.com/restic/chunker \
 		rs:xid:v1.2.1:rs_xid/vendor/github.com/rs/xid \
