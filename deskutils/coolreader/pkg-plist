@@ -57,6 +57,7 @@ share/cr3/hyph/Turkish.pattern
 share/cr3/hyph/Ukrainian.pattern
 share/cr3/hyph/Welsh.pattern
 share/cr3/hyph/Zulu.pattern
+@comment @dir share/cr3/hyph/obsolete
 %%NLS%%share/cr3/i18n/cr3_bg.qm
 %%NLS%%share/cr3/i18n/cr3_cs.qm
 %%NLS%%share/cr3/i18n/cr3_de.qm

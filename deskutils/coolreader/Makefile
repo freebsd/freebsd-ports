@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libunibreak.so:textproc/libunibreak \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		qt:5 cmake:noninja desktop-file-utils jpeg
+USES=		qt:5 cmake:noninja pkgconfig desktop-file-utils jpeg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	buggins
