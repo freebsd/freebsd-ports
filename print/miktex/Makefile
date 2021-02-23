@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	miktex
-DISTVERSION=	20.11
+DISTVERSION=	21.2
 CATEGORIES=	print
 MASTER_SITES=	LOCAL/arrowd/miktex:bootstrap
 DISTFILES=	miktex-zzdb1-2.9.tar.lzma:bootstrap \
@@ -22,6 +22,7 @@ LICENSE_TEXT=	This is a collection of many independent packages and does not hav
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
+		libboost_locale.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
@@ -43,7 +44,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		liburiparser.so:net/uriparser \
 		libzzip.so:devel/zziplib
 
-USES=		bison cmake:noninja gmake gnome jpeg pkgconfig ssl xorg
+USES=		bison cmake:noninja gettext-tools gmake gnome jpeg pkgconfig ssl xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MiKTeX
