@@ -2,6 +2,7 @@
 
 PORTNAME=	vscode
 DISTVERSION=	1.53.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://registry.npmjs.org/esbuild-freebsd-64/-/:esbuild_binary \
 		https://nodejs.org/dist/v${NODE_VER}/:node_headers \
