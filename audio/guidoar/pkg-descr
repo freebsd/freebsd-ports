@@ -1,0 +1,6 @@
+A library providing a simple memory representation and a consistent
+way to browse and transform Guido Music Notation scores.
+It provides also a set of score level manipulation operations
+(like putting scores in sequence, in parallel, stretching etc.).
+
+WWW: https://github.com/grame-cncm/guidoar

@@ -287,6 +287,7 @@
     SUBDIR += gtkguitune
     SUBDIR += gtkpod
     SUBDIR += gtmixer
+    SUBDIR += guidoar
     SUBDIR += guidolib
     SUBDIR += guitarix-lv2
     SUBDIR += guspat
