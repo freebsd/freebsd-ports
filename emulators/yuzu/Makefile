@@ -2,7 +2,7 @@
 
 PORTNAME=	yuzu
 PORTVERSION=	s20201218
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	emulators
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -49,6 +49,7 @@ GH_TUPLE=	DarkLordZach:mbedtls:a280e60:mbedtls/externals/mbedtls \
 
 USES=		cmake compiler:c++17-lang localbase:ldflags sdl ssl
 USE_SDL=	sdl2
+CMAKE_OFF=	ENABLE_GNUTLS ENABLE_MBEDTLS
 LDFLAGS+=	-Wl,--as-needed # Qt5Network
 TEST_TARGET=	test
 
