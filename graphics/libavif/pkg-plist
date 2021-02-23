@@ -6,8 +6,8 @@ lib/cmake/libavif/libavif-config-version.cmake
 lib/cmake/libavif/libavif-config.cmake
 %%PIXBUF%%lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-avif.so
 lib/libavif.so
-lib/libavif.so.9
-lib/libavif.so.9.0.0
+lib/libavif.so.10
+lib/libavif.so.10.0.0
 libdata/pkgconfig/libavif.pc
 %%PIXBUF%%@postexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
 %%PIXBUF%%@postunexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
