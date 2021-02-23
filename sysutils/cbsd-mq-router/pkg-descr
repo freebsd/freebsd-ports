@@ -1,0 +1,4 @@
+Deliver tasks to the CBSD using beanstalkd broker. The service
+acts as an intermediate link between the broker and the CBSD.
+
+WWW: https://github.com/cbsd/cbsd-mq-router
