@@ -1,0 +1,80 @@
+r330686 | dim | 2018-03-09 10:21:22 +0100 (Fri, 09 Mar 2018) | 20 lines
+
+Pull in r326882 from upstream llvm trunk (by Sjoerd Meijer):
+
+  [ARM] Fix for PR36577
+
+  Don't PerformSHLSimplify if the given node is used by a node that
+  also uses a constant because we may get stuck in an infinite combine
+  loop.
+
+  bugzilla: https://bugs.llvm.org/show_bug.cgi?id=36577
+
+  Patch by Sam Parker.
+
+  Differential Revision: https://reviews.llvm.org/D44097
+
+This fixes a hang when compiling one particular file in java/openjdk8
+for armv6 and armv7.
+
+Reported by:	swills
+PR:		226388
+
+Index: lib/Target/ARM/ARMISelLowering.cpp
+===================================================================
+--- lib/Target/ARM/ARMISelLowering.cpp	(revision 330685)
++++ lib/Target/ARM/ARMISelLowering.cpp	(revision 330686)
+@@ -10201,7 +10201,14 @@ static SDValue PerformSHLSimplify(SDNode *N,
+     case ISD::XOR:
+     case ISD::SETCC:
+     case ARMISD::CMP:
+-      // Check that its not already using a shl.
++      // Check that the user isn't already using a constant because there
++      // aren't any instructions that support an immediate operand and a
++      // shifted operand.
++      if (isa<ConstantSDNode>(U->getOperand(0)) ||
++          isa<ConstantSDNode>(U->getOperand(1)))
++        return SDValue();
++
++      // Check that it's not already using a shift.
+       if (U->getOperand(0).getOpcode() == ISD::SHL ||
+           U->getOperand(1).getOpcode() == ISD::SHL)
+         return SDValue();
+@@ -10223,8 +10230,6 @@ static SDValue PerformSHLSimplify(SDNode *N,
+   if (!C1ShlC2 || !C2)
+     return SDValue();
+ 
+-  DEBUG(dbgs() << "Trying to simplify shl: "; N->dump());
+-
+   APInt C2Int = C2->getAPIntValue();
+   APInt C1Int = C1ShlC2->getAPIntValue();
+ 
+@@ -10238,12 +10243,12 @@ static SDValue PerformSHLSimplify(SDNode *N,
+   C1Int.lshrInPlace(C2Int);
+ 
+   // The immediates are encoded as an 8-bit value that can be rotated.
+-  unsigned Zeros = C1Int.countLeadingZeros() + C1Int.countTrailingZeros();
+-  if (C1Int.getBitWidth() - Zeros > 8)
+-    return SDValue();
++  auto LargeImm = [](const APInt &Imm) {
++    unsigned Zeros = Imm.countLeadingZeros() + Imm.countTrailingZeros();
++    return Imm.getBitWidth() - Zeros > 8;
++  };
+ 
+-  Zeros = C2Int.countLeadingZeros() + C2Int.countTrailingZeros();
+-  if (C2Int.getBitWidth() - Zeros > 8)
++  if (LargeImm(C1Int) || LargeImm(C2Int))
+     return SDValue();
+ 
+   SelectionDAG &DAG = DCI.DAG;
+@@ -10254,6 +10259,10 @@ static SDValue PerformSHLSimplify(SDNode *N,
+   // Shift left to compensate for the lshr of C1Int.
+   SDValue Res = DAG.getNode(ISD::SHL, dl, MVT::i32, BinOp, SHL.getOperand(1));
+ 
++  DEBUG(dbgs() << "Simplify shl use:\n"; SHL.getOperand(0).dump(); SHL.dump();
++        N->dump());
++  DEBUG(dbgs() << "Into:\n"; X.dump(); BinOp.dump(); Res.dump());
++
+   DAG.ReplaceAllUsesWith(SDValue(N, 0), Res);
+   return SDValue(N, 0);
+ }

@@ -1,0 +1,123 @@
+r338251 | markj | 2018-08-23 16:58:19 +0200 (Thu, 23 Aug 2018) | 29 lines
+
+Add an lld option to emit PC-relative relocations for ifunc calls.
+
+The current kernel ifunc implementation creates a PLT entry for each
+ifunc definition.  ifunc calls therefore consist of a call to the
+PLT entry followed by an indirect jump.  The jump target is written
+during boot when the kernel linker resolves R_[*]_IRELATIVE relocations.
+This implementation is defined by requirements for userland code, where
+text relocations are avoided.  This requirement is not present for the
+kernel, so the implementation has avoidable overhead (namely, an extra
+indirect jump per call).
+
+Address this for now by adding a special option to the static linker
+to inhibit PLT creation for ifuncs.  Instead, relocations to ifunc call
+sites are passed through to the output file, so the kernel linker can
+enumerate such call sites and apply PC-relative relocations directly
+to the text section.  Thus the overhead of an ifunc call becomes exactly
+the same as that of an ordinary function call.  This option is only for
+use by the kernel and will not work for regular programs.
+
+The final form of this optimization is up for debate; for now, this
+change is simple and static enough to be acceptable as an interim
+solution.
+
+Reviewed by:	emaste
+Discussed with:	arichardson, dim
+MFC after:	1 month
+Sponsored by:	The FreeBSD Foundation
+Differential Revision:	https://reviews.freebsd.org/D16748
+
+Index: tools/lld/ELF/Config.h
+===================================================================
+--- tools/lld/ELF/Config.h	(revision 338250)
++++ tools/lld/ELF/Config.h	(revision 338251)
+@@ -155,6 +155,7 @@ struct Configuration {
+   bool ZCombreloc;
+   bool ZExecstack;
+   bool ZHazardplt;
++  bool ZIfuncnoplt;
+   bool ZNocopyreloc;
+   bool ZNodelete;
+   bool ZNodlopen;
+Index: tools/lld/ELF/Driver.cpp
+===================================================================
+--- tools/lld/ELF/Driver.cpp	(revision 338250)
++++ tools/lld/ELF/Driver.cpp	(revision 338251)
+@@ -669,6 +669,7 @@ void LinkerDriver::readConfigs(opt::InputArgList &
+   Config->ZCombreloc = !hasZOption(Args, "nocombreloc");
+   Config->ZExecstack = hasZOption(Args, "execstack");
+   Config->ZHazardplt = hasZOption(Args, "hazardplt");
++  Config->ZIfuncnoplt = hasZOption(Args, "ifunc-noplt");
+   Config->ZNocopyreloc = hasZOption(Args, "nocopyreloc");
+   Config->ZNodelete = hasZOption(Args, "nodelete");
+   Config->ZNodlopen = hasZOption(Args, "nodlopen");
+Index: tools/lld/ELF/Relocations.cpp
+===================================================================
+--- tools/lld/ELF/Relocations.cpp	(revision 338250)
++++ tools/lld/ELF/Relocations.cpp	(revision 338251)
+@@ -374,6 +374,9 @@ static bool isStaticLinkTimeConstant(RelExpr E, Re
+                      R_PPC_PLT_OPD, R_TLSDESC_CALL, R_TLSDESC_PAGE, R_HINT>(E))
+     return true;
+ 
++  if (Sym.isGnuIFunc() && Config->ZIfuncnoplt)
++    return false;
++
+   // These never do, except if the entire file is position dependent or if
+   // only the low bits are used.
+   if (E == R_GOT || E == R_PLT || E == R_TLSDESC)
+@@ -921,7 +924,9 @@ static void scanRelocs(InputSectionBase &Sec, Arra
+     // Strenghten or relax a PLT access.
+     //
+     // GNU ifunc symbols must be accessed via PLT because their addresses
+-    // are determined by runtime.
++    // are determined by runtime. If the -z ifunc-noplt option is specified,
++    // we permit the optimization of ifunc calls by omitting the PLT entry
++    // and preserving relocations at ifunc call sites.
+     //
+     // On the other hand, if we know that a PLT entry will be resolved within
+     // the same ELF module, we can skip PLT access and directly jump to the
+@@ -929,7 +934,7 @@ static void scanRelocs(InputSectionBase &Sec, Arra
+     // all dynamic symbols that can be resolved within the executable will
+     // actually be resolved that way at runtime, because the main exectuable
+     // is always at the beginning of a search list. We can leverage that fact.
+-    if (Sym.isGnuIFunc())
++    if (Sym.isGnuIFunc() && !Config->ZIfuncnoplt)
+       Expr = toPlt(Expr);
+     else if (!Preemptible && Expr == R_GOT_PC && !isAbsoluteValue(Sym))
+       Expr =
+@@ -1034,6 +1039,16 @@ static void scanRelocs(InputSectionBase &Sec, Arra
+       continue;
+     }
+ 
++    // Preserve relocations against ifuncs if we were asked to do so.
++    if (Sym.isGnuIFunc() && Config->ZIfuncnoplt) {
++      if (Config->IsRela)
++        InX::RelaDyn->addReloc({Type, &Sec, Offset, false, &Sym, Addend});
++      else
++        // Preserve the existing addend.
++        InX::RelaDyn->addReloc({Type, &Sec, Offset, false, &Sym, 0});
++      continue;
++    }
++
+     // If the output being produced is position independent, the final value
+     // is still not known. In that case we still need some help from the
+     // dynamic linker. We can however do better than just copying the incoming
+Index: tools/lld/ELF/Writer.cpp
+===================================================================
+--- tools/lld/ELF/Writer.cpp	(revision 338250)
++++ tools/lld/ELF/Writer.cpp	(revision 338251)
+@@ -1400,8 +1400,11 @@ template <class ELFT> void Writer<ELFT>::finalizeS
+   applySynthetic({InX::EhFrame},
+                  [](SyntheticSection *SS) { SS->finalizeContents(); });
+ 
+-  for (Symbol *S : Symtab->getSymbols())
++  for (Symbol *S : Symtab->getSymbols()) {
+     S->IsPreemptible |= computeIsPreemptible(*S);
++    if (S->isGnuIFunc() && Config->ZIfuncnoplt)
++      S->ExportDynamic = true;
++  }
+ 
+   // Scan relocations. This must be done after every symbol is declared so that
+   // we can correctly decide if a dynamic relocation is needed.

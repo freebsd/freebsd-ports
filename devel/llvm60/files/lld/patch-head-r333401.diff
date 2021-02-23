@@ -1,0 +1,34 @@
+r333401 | emaste | 2018-05-09 13:17:01 +0200 (Wed, 09 May 2018) | 19 lines
+
+lld: Omit PT_NOTE for SHT_NOTE without SHF_ALLOC
+
+A non-alloc note section should not have a PT_NOTE program header.
+
+Found while linking ghc (Haskell compiler) with lld on FreeBSD.  Haskell
+emits a .debug-ghc-link-info note section (as the name suggests, it
+contains link info) as a SHT_NOTE section without SHF_ALLOC set.
+
+For this case ld.bfd does not emit a PT_NOTE segment for
+.debug-ghc-link-info.  lld previously emitted a PT_NOTE with p_vaddr = 0
+and FreeBSD's rtld segfaulted when trying to parse a note at address 0.
+
+LLVM PR:	https://llvm.org/pr37361
+LLVM review:	https://reviews.llvm.org/D46623
+
+PR:		226872
+Reviewed by:	dim
+Sponsored by:	The FreeBSD Foundation
+
+Index: tools/lld/ELF/Writer.cpp
+===================================================================
+--- tools/lld/ELF/Writer.cpp	(revision 333400)
++++ tools/lld/ELF/Writer.cpp	(revision 333401)
+@@ -1708,7 +1708,7 @@ template <class ELFT> std::vector<PhdrEntry *> Wri
+   // Create one PT_NOTE per a group of contiguous .note sections.
+   PhdrEntry *Note = nullptr;
+   for (OutputSection *Sec : OutputSections) {
+-    if (Sec->Type == SHT_NOTE) {
++    if (Sec->Type == SHT_NOTE && (Sec->Flags & SHF_ALLOC)) {
+       if (!Note || Sec->LMAExpr)
+         Note = AddHdr(PT_NOTE, PF_R);
+       Note->add(Sec);

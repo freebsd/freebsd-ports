@@ -1,0 +1,104 @@
+r338697 | dim | 2018-09-15 23:22:50 +0200 (Sat, 15 Sep 2018) | 21 lines
+
+Pull in r325478 from upstream clang trunk (by Ivan A. Kosarev):
+
+  [CodeGen] Initialize large arrays by copying from a global
+
+  Currently, clang compiles explicit initializers for array elements
+  into series of store instructions. For large arrays of built-in types
+  this results in bloated output code and significant amount of time
+  spent on the instruction selection phase. This patch fixes the issue
+  by initializing such arrays with global constants that store the
+  binary image of the initializer.
+
+  Differential Revision: https://reviews.llvm.org/D43181
+
+This should fix a compiler hang (and excessive memory usage) while
+building the science/rmg port.
+
+Approved by:	re (kib)
+Reported by:	yuri@tsoft.com
+See also:	https://bugs.llvm.org/show_bug.cgi?id=38798
+MFC after:	3 days
+
+Index: tools/clang/lib/CodeGen/CGExprAgg.cpp
+===================================================================
+--- tools/clang/lib/CodeGen/CGExprAgg.cpp	(revision 338696)
++++ tools/clang/lib/CodeGen/CGExprAgg.cpp	(revision 338697)
+@@ -14,6 +14,7 @@
+ #include "CodeGenFunction.h"
+ #include "CGObjCRuntime.h"
+ #include "CodeGenModule.h"
++#include "ConstantEmitter.h"
+ #include "clang/AST/ASTContext.h"
+ #include "clang/AST/DeclCXX.h"
+ #include "clang/AST/DeclTemplate.h"
+@@ -85,7 +86,7 @@ class AggExprEmitter : public StmtVisitor<AggExprE
+   void EmitMoveFromReturnSlot(const Expr *E, RValue Src);
+ 
+   void EmitArrayInit(Address DestPtr, llvm::ArrayType *AType,
+-                     QualType elementType, InitListExpr *E);
++                     QualType ArrayQTy, InitListExpr *E);
+ 
+   AggValueSlot::NeedsGCBarriers_t needsGC(QualType T) {
+     if (CGF.getLangOpts().getGC() && TypeRequiresGCollection(T))
+@@ -392,12 +393,15 @@ static bool isTrivialFiller(Expr *E) {
+ 
+ /// \brief Emit initialization of an array from an initializer list.
+ void AggExprEmitter::EmitArrayInit(Address DestPtr, llvm::ArrayType *AType,
+-                                   QualType elementType, InitListExpr *E) {
++                                   QualType ArrayQTy, InitListExpr *E) {
+   uint64_t NumInitElements = E->getNumInits();
+ 
+   uint64_t NumArrayElements = AType->getNumElements();
+   assert(NumInitElements <= NumArrayElements);
+ 
++  QualType elementType =
++      CGF.getContext().getAsArrayType(ArrayQTy)->getElementType();
++
+   // DestPtr is an array*.  Construct an elementType* by drilling
+   // down a level.
+   llvm::Value *zero = llvm::ConstantInt::get(CGF.SizeTy, 0);
+@@ -409,6 +413,29 @@ void AggExprEmitter::EmitArrayInit(Address DestPtr
+   CharUnits elementAlign =
+     DestPtr.getAlignment().alignmentOfArrayElement(elementSize);
+ 
++  // Consider initializing the array by copying from a global. For this to be
++  // more efficient than per-element initialization, the size of the elements
++  // with explicit initializers should be large enough.
++  if (NumInitElements * elementSize.getQuantity() > 16 &&
++      elementType.isTriviallyCopyableType(CGF.getContext())) {
++    CodeGen::CodeGenModule &CGM = CGF.CGM;
++    ConstantEmitter Emitter(CGM);
++    LangAS AS = ArrayQTy.getAddressSpace();
++    if (llvm::Constant *C = Emitter.tryEmitForInitializer(E, AS, ArrayQTy)) {
++      auto GV = new llvm::GlobalVariable(
++          CGM.getModule(), C->getType(),
++          CGM.isTypeConstant(ArrayQTy, /* ExcludeCtorDtor= */ true),
++          llvm::GlobalValue::PrivateLinkage, C, "constinit",
++          /* InsertBefore= */ nullptr, llvm::GlobalVariable::NotThreadLocal,
++          CGM.getContext().getTargetAddressSpace(AS));
++      Emitter.finalize(GV);
++      CharUnits Align = CGM.getContext().getTypeAlignInChars(ArrayQTy);
++      GV->setAlignment(Align.getQuantity());
++      EmitFinalDestCopy(ArrayQTy, CGF.MakeAddrLValue(GV, ArrayQTy, Align));
++      return;
++    }
++  }
++
+   // Exception safety requires us to destroy all the
+   // already-constructed members if an initializer throws.
+   // For that, we'll need an EH cleanup.
+@@ -1156,11 +1183,8 @@ void AggExprEmitter::VisitInitListExpr(InitListExp
+ 
+   // Handle initialization of an array.
+   if (E->getType()->isArrayType()) {
+-    QualType elementType =
+-        CGF.getContext().getAsArrayType(E->getType())->getElementType();
+-
+     auto AType = cast<llvm::ArrayType>(Dest.getAddress().getElementType());
+-    EmitArrayInit(Dest.getAddress(), AType, elementType, E);
++    EmitArrayInit(Dest.getAddress(), AType, E->getType(), E);
+     return;
+   }
+ 
