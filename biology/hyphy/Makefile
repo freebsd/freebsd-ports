@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hyphy
-DISTVERSION=	2.5.27
+DISTVERSION=	2.5.28
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org

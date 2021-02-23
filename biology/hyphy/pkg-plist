@@ -387,6 +387,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV_MH.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV_PROPERTIES.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MG_REV_TRIP.bf
+%%DATADIR%%/TemplateBatchFiles/libv3/models/codon/MSS.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/frequencies.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/model_functions.bf
 %%DATADIR%%/TemplateBatchFiles/libv3/models/parameters.bf
