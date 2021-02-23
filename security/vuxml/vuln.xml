@@ -78,6 +78,45 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0e38b8f8-75dd-11eb-83f2-8c164567ca3c">
+    <topic>redis -- Integer overflow on 32-bit systems</topic>
+    <affects>
+      <package>
+	<name>redis-devel</name>
+	<range><lt>6.2.0</lt></range>
+      </package>
+      <package>
+	<name>redis</name>
+	<range><lt>6.0.11</lt></range>
+      </package>
+      <package>
+	<name>redis5</name>
+	<range><lt>5.2.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redis Development team reports:</p>
+	<blockquote cite="https://github.com/redis/redis/releases/tag/6.2.0">
+	  <p>Redis 4.0 or newer uses a configurable limit for
+	  the maximum supported bulk input size. By default,
+	  it is 512MB which is a safe value for all platforms.
+	  If the limit is significantly increased, receiving a
+	  large request from a client may trigger several
+	  integer overflow scenarios, which would result with
+	  buffer overflow and heap corruption.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21309</cvename>
+    </references>
+    <dates>
+      <discovery>2021-02-22</discovery>
+      <entry>2021-02-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e9624b3-e92b-4460-8a5a-93247c52c5a1">
     <topic>zeek -- Remote crash vulnerability</topic>
     <affects>
