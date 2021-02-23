@@ -1,6 +1,13 @@
 PORTNAME=	labwc
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	2ee21e9a82d8.patch:-p1 # https://github.com/johanmalm/labwc/pull/26
+PATCHFILES+=	ad07acc13cee.patch:-p1 # https://github.com/johanmalm/labwc/pull/26
+PATCHFILES+=	c9023dd2c6af.patch:-p1 # https://github.com/johanmalm/labwc/pull/26
+PATCHFILES+=	0ca3eb8f790c.patch:-p1 # https://github.com/johanmalm/labwc/pull/26
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Openbox alternative for Wayland

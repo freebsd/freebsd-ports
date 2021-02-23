@@ -1,6 +1,6 @@
 PORTNAME=	sway
 DISTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -10,6 +10,15 @@ PATCHFILES+=	968c005760b6.patch:-p1 # https://github.com/swaywm/sway/pull/5856
 PATCHFILES+=	fdbe98512a71.patch:-p1 # https://github.com/swaywm/sway/pull/5856
 PATCHFILES+=	a52176f83035.patch:-p1 # https://github.com/swaywm/sway/pull/5856
 PATCHFILES+=	c9fe0626ca73.patch:-p1 # https://github.com/swaywm/sway/pull/5891
+PATCHFILES+=	2c76923282b1.patch:-p1 # wlroots 0.13
+PATCHFILES+=	0d72d6134f5b.patch:-p1 # wlroots 0.13
+PATCHFILES+=	a56098a24e43.patch:-p1 # wlroots 0.13
+PATCHFILES+=	53f5197c26f1.patch:-p1 # wlroots 0.13
+PATCHFILES+=	5438cc158a1b.patch:-p1 # wlroots 0.13
+PATCHFILES+=	97adba05162f.patch:-p1 # wlroots 0.13
+PATCHFILES+=	9e4f165b77d6.patch:-p1 # wlroots 0.13
+PATCHFILES+=	87100e44c57b.patch:-p1 # wlroots 0.13
+PATCHFILES+=	6370f225681c.patch:-p1 # wlroots 0.13
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	i3-compatible Wayland compositor
@@ -19,7 +28,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.14:graphics/wayland-protocols \
-		wlroots>=0.12.0<0.13.0:x11-toolkits/wlroots
+		wlroots>=0.13.0<0.14.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libevdev.so:devel/libevdev \
 		libpcre.so:devel/pcre \

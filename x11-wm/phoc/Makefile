@@ -1,7 +1,11 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
+
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	b37bf15194e6.diff:-p1 # https://source.puri.sm/Librem5/phoc/-/merge_requests/241
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Phone compositor
@@ -32,5 +36,10 @@ GLIB_SCHEMAS=	sm.puri.phoc.gschema.xml
 post-extract:
 # Avoid confusing Meson instead of forcing -Dembed-wlroots=disabled
 	@${RMDIR} ${WRKSRC}/subprojects/wlroots
+.if defined(PATCHFILES) && ${PATCHFILES:Mb37bf15194e6*}
+# Pretend to be a regular file for vendor patch to apply as is
+	@${ECHO_CMD} "Subproject commit 3d227f140e3c4af42d759477fc38e82a4c3dc4ef" \
+		>${WRKSRC}/subprojects/wlroots
+.endif
 
 .include <bsd.port.mk>
