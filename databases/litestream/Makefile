@@ -11,6 +11,8 @@ COMMENT=	Standalone streaming replication tool for SQLite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	Build error: constant 9223372036854775807 overflows int
+
 USES=		go:modules
 
 USE_GITHUB=	yes
