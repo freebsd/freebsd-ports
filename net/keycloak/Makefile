@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	keycloak
-PORTVERSION=	12.0.2
+PORTVERSION=	12.0.3
 CATEGORIES=	net java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 
@@ -38,12 +38,8 @@ JAVA_OS=	native
 JAVA_VENDOR=	openjdk oracle
 JAVA_RUN=	yes
 
-USER=		www
-GROUP=		www
-
-VAR_DIR?=	/var
-LOG_DIR?=	${VAR_DIR}/log/${PORTNAME}
-RUN_DIR?=	${VAR_DIR}/run/${PORTNAME}
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 SUB_LIST+=	GROUP=${GROUP} \
 		LOG_DIR=${LOG_DIR} \
@@ -51,9 +47,6 @@ SUB_LIST+=	GROUP=${GROUP} \
 		PORTNAME=${PORTNAME} \
 		RUN_DIR=${RUN_DIR} \
 		USER=${USER}
-
-NO_BUILD=	yes
-NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -81,6 +74,13 @@ CONFIG_FILES=	bin/.jbossclirc \
 		standalone/configuration/mgmt-users.properties \
 		standalone/configuration/standalone-ha.xml \
 		standalone/configuration/standalone.xml
+
+USER=		www
+GROUP=		www
+
+VAR_DIR?=	/var
+LOG_DIR?=	${VAR_DIR}/log/${PORTNAME}
+RUN_DIR?=	${VAR_DIR}/run/${PORTNAME}
 
 post-patch:
 .for f in ${CONFIG_FILES}
