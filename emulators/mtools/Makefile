@@ -3,6 +3,7 @@
 
 PORTNAME=	mtools
 PORTVERSION=	4.0.26
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	GNU
 
@@ -31,6 +32,7 @@ OPTIONS_DEFAULT=ICONV X11
 USES+=		iconv
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+LIB_DEPENDS+=	libiconv.so:converters/libiconv
 .else
 CONFIGURE_ENV+=	ac_cv_header_iconv_h=no
 .endif
@@ -51,6 +53,8 @@ post-patch:
 		${WRKSRC}/llong.h
 	@${REINPLACE_CMD} -e 's|/etc/mtools.conf|${PREFIX}/etc/mtools.conf|g' \
 		${WRKSRC}/mformat.c
+	@${REINPLACE_CMD} -e 's|^\(SAMPLE FILE\)$$|#\1|' \
+		${WRKSRC}/mtools.conf
 .for f in mtools.5 mtools.texi
 	@${REINPLACE_CMD} -e 's|/usr/local/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/${f}
