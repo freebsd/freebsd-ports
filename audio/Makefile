@@ -466,6 +466,7 @@
     SUBDIR += midifile
     SUBDIR += midiomatic-lv2
     SUBDIR += midipp
+    SUBDIR += midisharelight
     SUBDIR += mikmod
     SUBDIR += milkytracker
     SUBDIR += miniaudio

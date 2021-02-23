@@ -1,0 +1,22 @@
+midisharelight is a light version of MidiShare.
+
+MidiShare is a real-time operating system for musical applications. It provides
+high level services to developers and ensures platform independance.
+
+It supports:
+* High level musical events, fully structured and time stamped with a
+  millisecond resolution. These events include both the MIDI and the MIDIFile
+  typologies.
+* An efficient scheduler, in charge of delivering events at their falling dates
+  to the communication manager.
+* Inter-applications communication.
+  A communication manager routes the events to the client applications,
+  according to the connection set between them.
+* Real-time tasks, to control the real-time behavior of an application. Function
+  calls can be scheduled in the future and are automatically achieved by
+  MidiShare at interrupt level.
+* Real-time alarms. Incoming MidiShare events as well as global context changes
+  (new clients starting a session, modifications of the connections between
+  applications, etc.) can be processed in real-time by user defined alarms.
+
+WWW: http://midishare.sourceforge.net
