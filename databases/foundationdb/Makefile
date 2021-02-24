@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	foundationdb
-DISTVERSION=	6.3.9
+DISTVERSION=	6.3.10
 CATEGORIES=	databases
 
 MAINTAINER=	dch@FreeBSD.org
