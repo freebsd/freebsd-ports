@@ -4570,6 +4570,7 @@
     SUBDIR += py-jupyter_core
     SUBDIR += py-jupyterlab
     SUBDIR += py-jupyterlab-server
+    SUBDIR += py-jupyterlab-widgets
     SUBDIR += py-jupyterlab_launcher
     SUBDIR += py-kaitaistruct
     SUBDIR += py-kaptan
