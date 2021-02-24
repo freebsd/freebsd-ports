@@ -1,0 +1,4 @@
+Python protobuf compiler can be used to compile collections protobuf files and
+create a single package distribution suitable for installing with pip.
+
+WWW: https://github.com/netsaj/python-protobuf-compiler
