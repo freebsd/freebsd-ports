@@ -121,6 +121,7 @@
     SUBDIR += libccp4
     SUBDIR += libcint
     SUBDIR += libctl
+    SUBDIR += libecpint
     SUBDIR += libefp
     SUBDIR += libgeodecomp
     SUBDIR += libghemical
