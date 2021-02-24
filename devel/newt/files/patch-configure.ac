@@ -1,0 +1,29 @@
+--- configure.ac.orig	2017-03-17 10:36:31 UTC
++++ configure.ac
+@@ -2,7 +2,7 @@ AC_INIT([newt_pr.h])
+ 
+ PACKAGE=newt
+ VERSION=0.52.20
+-SONAME=0.52
++SONAME=52
+ 
+ AC_CONFIG_HEADER([config.h])
+ 
+@@ -24,7 +24,7 @@ AC_CHECK_SIZEOF([void *])
+ AC_MSG_CHECKING([for GNU ld])
+ LD=`$CC -print-prog-name=ld 2>&5`
+ 
+-if test `$LD -v 2>&1 | $ac_cv_path_GREP -c "GNU ld"` = 0; then
++if test `$LD -v 2>&1 | $ac_cv_path_GREP -c -E "GNU ld|compatible with GNU linkers"` = 0; then
+   # Not
+   GNU_LD=""
+   AC_MSG_RESULT([no])
+@@ -102,7 +102,7 @@ else
+     AC_SUBST([TCL_LIB_FLAG])
+     WHIPTCLLIB=whiptcl
+     # needed with tcl8.6
+-    CPPFLAGS="$CPPFLAGS -DUSE_INTERP_RESULT"
++    CPPFLAGS="$CPPFLAGS "
+   else
+     AC_MSG_RESULT([NOT found])
+   fi
