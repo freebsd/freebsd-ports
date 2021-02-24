@@ -16,6 +16,7 @@
 #			Do not sets it as empty or it will run as root.
 # xmrig_conf:		The configuration file XMRig uses.    
 #			Default: %%ETCDIR%%/config.json
+# xmrig_flags:		Additional runtime flags.
 
 . /etc/rc.subr
 name="%%PORTNAME%%"
@@ -25,9 +26,10 @@ load_rc_config ${name}
 : ${xmrig_enable:="NO"}
 : ${xmrig_user:="%%USERS%%"}
 : ${xmrig_conf:="%%ETCDIR%%/config.json"}
+: ${xmrig_flags:=""}
 
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/xmrig"
-command_args="-f ${procname} --config=${xmrig_conf}"
+command_args="-f ${procname} --config=${xmrig_conf} ${xmrig_flags}"
 
 run_rc_command "$1"
