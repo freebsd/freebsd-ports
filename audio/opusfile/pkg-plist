@@ -9,4 +9,5 @@ lib/libopusurl.so.0
 lib/libopusurl.so.0.4.5
 libdata/pkgconfig/opusfile.pc
 libdata/pkgconfig/opusurl.pc
+@comment %%PORTDOCS%%%%DOCSDIR%%/COPYING
 @comment Insert PLIST.doc here
