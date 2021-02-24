@@ -1,0 +1,6 @@
+Pytest-httpbin creates a pytest fixture that is dependency-injected
+into your tests. It automatically starts up a HTTP server in a
+separate thread running httpbin and provides your test with the URL
+in the fixture.
+
+WWW: https://github.com/kevin1024/pytest-httpbin
