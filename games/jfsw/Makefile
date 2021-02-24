@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jfsw
-PORTVERSION=	20201010
+PORTVERSION=	20210130
 CATEGORIES=	games
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -31,10 +31,10 @@ GH_ACCOUNT=	jonof
 GH_PROJECT=	jfbuild:build jfaudiolib:audio jfmact:mact
 # See GH listing to get current (tested) submodule hashes:
 # https://github.com/jonof/jfsw
-GH_TAGNAME=	ea58641 \
-		11d083e:build \
-		3ff144d:audio \
-		dbbf346:mact
+GH_TAGNAME=	c434002 \
+		ed8c505:build \
+		0b82be9:audio \
+		1149eb1:mact
 GH_SUBDIR=	jfbuild:build jfaudiolib:audio jfmact:mact
 
 NO_CDROM=	Must be distributed only through the Internet and free of charge
