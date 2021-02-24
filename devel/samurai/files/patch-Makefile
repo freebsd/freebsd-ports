@@ -1,11 +1,11 @@
---- Makefile.orig	2020-03-29 00:40:58 UTC
+--- Makefile.orig	2020-12-17 01:31:33 UTC
 +++ Makefile
-@@ -2,7 +2,7 @@
- 
+@@ -3,7 +3,7 @@
  PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/share/man
--ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wpedantic
-+ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra
+-ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wpedantic -Wno-unused-parameter
++ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wno-unused-parameter
  OBJ=\
  	build.o\
  	deps.o\
