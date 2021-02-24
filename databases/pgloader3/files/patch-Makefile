@@ -1,6 +1,20 @@
 --- Makefile.orig	2020-03-22 21:26:18 UTC
 +++ Makefile
-@@ -86,7 +86,7 @@ $(QLDIR)/local-projects/cl-csv:
+@@ -30,6 +30,13 @@ BUNDLEDIR  = $(BUILDDIR)/bundle/$(BUNDLENAME)
+ BUNDLE     = $(BUILDDIR)/$(BUNDLENAME).tgz
+ BUNDLETESTD= $(BUILDDIR)/bundle/test
+ 
++ifneq ($(shell getconf LONG_BIT),64)
++# Assuming 32 bit FreeBSD and setting DYNSIZE down to 1 GiB...
++# (Will be used by SBCL for its GC/heap, 32 bit systems can only
++# allocate 4 GiB max).
++DYNSIZE = 1024
++endif
++
+ ifeq ($(OS),Windows_NT)
+ EXE           = .exe
+ COMPRESS_CORE = no
+@@ -86,7 +93,7 @@ $(QLDIR)/local-projects/cl-csv:
  
  $(QLDIR)/setup.lisp:
  	mkdir -p $(BUILDDIR)
@@ -9,7 +23,7 @@
  	$(CL) $(CL_OPTS) --load $(BUILDDIR)/quicklisp.lisp                        \
               --load src/getenv.lisp                                               \
               --eval '(quicklisp-quickstart:install :path "$(BUILDDIR)/quicklisp" :proxy (getenv "http_proxy"))' \
-@@ -126,7 +126,9 @@ $(BUILDAPP_CCL): $(QLDIR)/setup.lisp
+@@ -126,7 +133,9 @@ $(BUILDAPP_CCL): $(QLDIR)/setup.lisp
  
  $(BUILDAPP_SBCL): $(QLDIR)/setup.lisp
  	mkdir -p $(BUILDDIR)/bin
@@ -20,7 +34,7 @@
               --eval '(ql:quickload "buildapp")'                   \
               --eval '(buildapp:build-buildapp "$@")'              \
               --eval '(quit)'
-@@ -199,7 +201,7 @@ $(BUNDLE): $(BUNDLEDIR) $(BUNDLEDIR)/version.sexp
+@@ -199,7 +208,7 @@ $(BUNDLE): $(BUNDLEDIR) $(BUNDLEDIR)/version.sexp
  	sed -e s/%VERSION%/$(VERSION)/ < bundle/Makefile > $(BUNDLEDIR)/Makefile
  	git archive --format=tar --prefix=pgloader-$(VERSION)/ master \
  	     | tar -C $(BUNDLEDIR)/local-projects/ -xf -
