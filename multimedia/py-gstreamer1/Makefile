@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gstreamer
-PORTVERSION=	1.16.1
+DISTVERSION=	1.16.3
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,12 +17,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gmake gnome libtool localbase pathfix pkgconfig python:3.6+ tar:xz
+USES=		gnome meson pkgconfig python:3.6+ tar:xz
 USE_GNOME=	pygobject3
 USE_PYTHON=	flavors py3kplist
 USE_GSTREAMER1=	yes
-GNU_CONFIGURE=	yes
 PLIST_SUB=	VERSION="${GST_VERSION}"
-INSTALL_TARGET=	install-strip
+BINARY_ALIAS=	python3=${PYTHON_VERSION}
+
+post-install:
+	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>

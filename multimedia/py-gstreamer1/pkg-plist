@@ -5,4 +5,4 @@ lib/gstreamer-1.0/libgstpython.so
 %%PYTHON_SITELIBDIR%%/gi/overrides/GstPbutils.py
 %%PYTHON_SITELIBDIR%%/gi/overrides/GstPbutils.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/GstPbutils.pyo
-%%PYTHON_SITELIBDIR%%/gi/overrides/_gi_gst.so
+%%PYTHON_SITELIBDIR%%/gi/overrides/_gi_gst%%PYTHON_EXT_SUFFIX%%.so
