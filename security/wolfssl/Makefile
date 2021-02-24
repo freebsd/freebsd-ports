@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-tls13-draft18
 TEST_TARGET=	check
 CFLAGS+=	-DWOLFSSL_ALT_NAMES
-PORTDOCS=	*
+
 OPTIONS_DEFINE=	DEBUG DOCS
 
 DEBUG_CONFIGURE_ON=	--enable-debug
