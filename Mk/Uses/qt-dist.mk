@@ -197,8 +197,8 @@ QT_CONFIG?=		# For *.pri files QT_CONFIG flags.
 .  if ${QT_DEFINES}
 QMAKE_ARGS+=		DEFINES+="${QT_DEFINES:O:u:C/^([^-])/QT_\1/:C/^-/QT_NO_/:O}"
 .  endif #  ${QT_DEFINES}
-PKGDEINSTALL=		${WRKDIR}/pkg-install
-PKGINSTALL=		${WRKDIR}/pkg-deinstall
+PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
+PKGINSTALL=		${WRKDIR}/pkg-install
 .  if ${QT_CONFIG:N-*}
 QMAKE_ARGS+=		QT_CONFIG+="${QT_CONFIG:N-*:O:u}"
 .  endif
@@ -391,7 +391,8 @@ qt-post-install:
 		${WRKDIR}/pkg-change.tmp
 	@${SED} -e 's,@install,,' -e 's,@deinstall,##,' ${WRKDIR}/pkg-change.tmp | ${SED} -e '/##/d' > ${PKGINSTALL}
 	@${SED} -e 's,@install,##,' -e 's,@deinstall,,' ${WRKDIR}/pkg-change.tmp | ${SED} -e '/##/d' > ${PKGDEINSTALL}
-	@${REINPLACE_CMD} 's/\t//g' ${PKGINSTALL} ${PKGDEINSTALL}
+	# Drop all leading spaces in the script, to minify
+	@${REINPLACE_CMD} 's/^  *//' ${PKGINSTALL} ${PKGDEINSTALL}
 .    if ${QT_DEFINES:N-*}
 	@${MKDIR} ${STAGEDIR}${QT_INCDIR}/QtCore/modules
 	@${ECHO_CMD} -n \
