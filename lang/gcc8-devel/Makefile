@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	8.4.1.s20210211
+PORTVERSION=	8.4.1.s20210218
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -103,7 +103,8 @@ CONFIGURE_ARGS+=--disable-nls \
 		--with-ld=${LOCALBASE}/bin/ld \
 		${ICONV_CONFIGURE_ARG} \
 		--with-pkgversion="FreeBSD Ports Collection" \
-		--with-system-zlib
+		--with-system-zlib \
+		--without-zstd
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB+=	GCC_VERSION=${GCC_VERSION} \
