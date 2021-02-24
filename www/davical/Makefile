@@ -4,6 +4,7 @@
 PORTNAME=	davical
 DISTVERSIONPREFIX=	r
 DISTVERSION=	1.1.9.3
+PORTREVISION=	1
 CATEGORIES?=	www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -27,7 +28,7 @@ GL_ACCOUNT=	davical-project
 GL_COMMIT=	55d485045f43b52ccdbedbded2bfebb33b781d57
 
 USE_PHP=	calendar curl gettext iconv pcre pdo \
-		pdo_pgsql pgsql xml
+		pdo_pgsql pgsql session xml
 
 NO_ARCH=	yes
 NO_BUILD=	yes
