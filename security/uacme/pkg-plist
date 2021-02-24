@@ -1,0 +1,10 @@
+bin/uacme
+%%UALPN%%bin/ualpn
+%%MANPAGES%%man/man1/uacme.1.gz
+%%UALPN%%%%MANPAGES%%man/man1/ualpn.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%MANPAGES%%%%PORTDOCS%%%%DOCSDIR%%/uacme.html
+%%UALPN%%%%MANPAGES%%%%PORTDOCS%%%%DOCSDIR%%/ualpn.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nsupdate.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uacme.sh
+%%UALPN%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ualpn.sh

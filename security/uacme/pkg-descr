@@ -1,0 +1,9 @@
+Lightweight client for the RFC8555 ACMEv2 protocol, written in plain
+C with minimal dependencies (libcurl and one of GnuTLS, OpenSSL or
+mbedTLS).  The ACMEv2 protocol allows a Certificate Authority (Let's
+Encrypt is a popular one) and an applicant to automate the process
+of verification and certificate issuance.  The protocol also provides
+facilities for other certificate management functions, such as
+certificate revocation.
+
+WWW: https://github.com/ndilieto/uacme
