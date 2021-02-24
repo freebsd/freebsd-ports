@@ -1,6 +1,24 @@
---- unit-tests/Makefile.orig	2020-12-02 19:06:25 UTC
+--- unit-tests/Makefile.orig	2021-02-06 18:31:52 UTC
 +++ unit-tests/Makefile
-@@ -311,12 +311,12 @@ TESTS+=		varmod-defined
+@@ -102,7 +102,7 @@ TESTS+=		depsrc-exec
+ TESTS+=		depsrc-ignore
+ TESTS+=		depsrc-made
+ TESTS+=		depsrc-make
+-TESTS+=		depsrc-meta
++#TESTS+=		depsrc-meta
+ TESTS+=		depsrc-nometa
+ TESTS+=		depsrc-nometa_cmp
+ TESTS+=		depsrc-nopath
+@@ -209,7 +209,7 @@ TESTS+=		jobs-error-nested
+ TESTS+=		jobs-error-nested-make
+ TESTS+=		lint
+ TESTS+=		make-exported
+-TESTS+=		meta-cmd-cmp
++#TESTS+=		meta-cmd-cmp
+ TESTS+=		moderrs
+ TESTS+=		modmatch
+ TESTS+=		modmisc
+@@ -339,13 +339,13 @@ TESTS+=		varmod-defined
  TESTS+=		varmod-edge
  TESTS+=		varmod-exclam-shell
  TESTS+=		varmod-extension
@@ -9,6 +27,7 @@
  TESTS+=		varmod-hash
  TESTS+=		varmod-head
  TESTS+=		varmod-ifelse
+ TESTS+=		varmod-indirect
  TESTS+=		varmod-l-name-to-value
 -TESTS+=		varmod-localtime
 +#TESTS+=		varmod-localtime
