@@ -2,7 +2,7 @@
 
 PORTNAME=	newt
 PORTVERSION=	0.52.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://releases.pagure.org/newt/
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libslang.so:devel/libslang2 \
 		libpopt.so:devel/popt
 
-USES=		gmake ncurses pathfix
+USES=		autoreconf gmake localbase ncurses pathfix
 GNU_CONFIGURE=	yes
 MAKE_ENV=	PCFLAGS="${CFLAGS}"
 USE_LDCONFIG=	yes
@@ -46,9 +46,7 @@ TCL_CPPFLAGS=		-I${TCL_INCLUDEDIR:Q}
 SOVERSION=	${PORTVERSION:R:E}
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		'/^SONAME/s|=.*|=${SOVERSION}| ; \
-		 s|-DUSE_INTERP_RESULT||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-DUSE_INTERP_RESULT||' ${WRKSRC}/configure.ac
 	@${REINPLACE_CMD} -e \
 		's|@CPP@|@CC@ -E| ; \
 		 s|-D_GNU_SOURCE|| ; \
@@ -58,7 +56,7 @@ post-patch:
 
 post-patch-PYTHON-on:
 	@${REINPLACE_CMD} -e \
-		'/PYTHONVERS/s|=.*|=${PYTHON_VERSION}|' ${WRKSRC}/configure
+		'/PYTHONVERS/s|=.*|=${PYTHON_VERSION}|' ${WRKSRC}/configure.ac
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/whiptail
