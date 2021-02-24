@@ -21,6 +21,7 @@
 %%WWWDIR%%/results/index.php
 %%WWWDIR%%/results/stats.php
 %%WWWDIR%%/results/telemetry.php
+%%WWWDIR%%/results/telemetry_db.php
 %%WWWDIR%%/results/telemetry_mysql.sql
 %%WWWDIR%%/results/telemetry_postgresql.sql
 @sample %%WWWDIR%%/results/telemetry_settings.php.sample
