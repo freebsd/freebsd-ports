@@ -2,7 +2,7 @@
 
 PORTNAME=	screego
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
+DISTVERSION=	1.2.0
 CATEGORIES=	www
 MASTER_SITES=	https://registry.yarnpkg.com/:yarn
 DISTFILES=	@babel/code-frame/-/code-frame-7.8.3.tgz:yarn \
@@ -663,6 +663,7 @@ DISTFILES=	@babel/code-frame/-/code-frame-7.8.3.tgz:yarn \
 		hmac-drbg/-/hmac-drbg-1.0.1.tgz:yarn \
 		hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz:yarn \
 		hosted-git-info/-/hosted-git-info-2.8.8.tgz:yarn \
+		hotkeys-js/-/hotkeys-js-3.8.1.tgz:yarn \
 		hpack.js/-/hpack.js-2.1.6.tgz:yarn \
 		hsl-regex/-/hsl-regex-1.0.0.tgz:yarn \
 		hsla-regex/-/hsla-regex-1.0.0.tgz:yarn \
@@ -1156,6 +1157,7 @@ DISTFILES=	@babel/code-frame/-/code-frame-7.8.3.tgz:yarn \
 		react-dev-utils/-/react-dev-utils-10.2.1.tgz:yarn \
 		react-dom/-/react-dom-16.13.1.tgz:yarn \
 		react-error-overlay/-/react-error-overlay-6.0.7.tgz:yarn \
+		react-hotkeys-hook/-/react-hotkeys-hook-3.0.3.tgz:yarn \
 		react-is/-/react-is-16.13.1.tgz:yarn \
 		react-router-dom/-/react-router-dom-5.2.0.tgz:yarn \
 		react-router/-/react-router-5.2.0.tgz:yarn \
