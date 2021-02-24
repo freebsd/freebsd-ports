@@ -5,3 +5,4 @@ lib/libuInputPlus.a
 lib/libuInputPlus.so
 lib/libuInputPlus.so.0
 lib/libuInputPlus.so.0.1.4
+libdata/pkgconfig/uInputPlus.pc
