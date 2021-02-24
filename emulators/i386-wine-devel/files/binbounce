@@ -15,6 +15,7 @@ then
   else
     export LD_32_LIBRARY_PATH="$LOCALBASE/lib32":"$LOCALBASE/lib32/wine":"$LD_32_LIBRARY_PATH":"$LOCALBASE/lib32/.libGL":/usr/lib32
     export LD_32_LIBRARY_PATH_RPATH=y
+    export WINEDLLPATH="$LOCALBASE/lib32/wine"
   fi
   export PATH="$LOCALBASE/bin32":"$PATH"
   export __BINBOUNCE_BOOTSTRAP="1"

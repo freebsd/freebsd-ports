@@ -1,9 +1,9 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
 # $FreeBSD$
 
-DISTVERSION=	5.8
+DISTVERSION=	6.2
 PORTEPOCH=	1
-MASTER_SITES=	LOCAL/salvadore/i386-wine-devel/${DIST_SUBDIR}/
+MASTER_SITES=	LOCAL/nc/i386-wine-devel/${DIST_SUBDIR}/
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PKGVERSION}
 DIST_SUBDIR=	FreeBSD:${OSREL:C/\..*//}:amd64
 
@@ -32,8 +32,8 @@ PLIST_SUB+=	NOOSREL${osrel}=""
 .endif
 .endfor
 
-.if ${OPSYS} != FreeBSD || (!(${OSVERSION} >= 1104000 && ${OSVERSION} < 1200000) && !(${OSVERSION} >= 1202000 && ${OSVERSION} < 1300000) && !(${OSVERSION} >= 1300084 && ${OSVERSION} < 1400000))
-IGNORE=		binaries compiled for FreeBSD 11.4+, 12.2+ and 13.0+ only
+.if ${OPSYS} != FreeBSD || (!(${OSVERSION} >= 1104000 && ${OSVERSION} < 1200000) && !(${OSVERSION} >= 1202000 && ${OSVERSION} < 1300000) && !(${OSVERSION} >= 1300084 && ${OSVERSION} < 1400000) && !(${OSVERSION} >= 1400005))
+IGNORE=		binaries compiled for FreeBSD 11.4+, 12.2+, 13.0+, and 14.0+ only
 .endif
 
 OPTIONS_DEFINE=	GECKO MONO
