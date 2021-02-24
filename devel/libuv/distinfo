@@ -1,3 +1,3 @@
-TIMESTAMP = 1601414344
-SHA256 (libuv-v1.40.0.tar.gz) = 61a90db95bac00adec1cc5ddc767ebbcaabc70242bd1134a7a6b1fb1d498a194
-SIZE (libuv-v1.40.0.tar.gz) = 1264008
+TIMESTAMP = 1614079011
+SHA256 (libuv-v1.41.0.tar.gz) = 1184533907e1ddad9c0dcd30a5abb0fe25288c287ff7fee303fff7b9b2d6eb6e
+SIZE (libuv-v1.41.0.tar.gz) = 1272786
