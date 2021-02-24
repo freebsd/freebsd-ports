@@ -135,6 +135,7 @@
     SUBDIR += nagios
     SUBDIR += nagios-certexp-plugin
     SUBDIR += nagios-check_bacula9
+    SUBDIR += nagios-check_bacula11
     SUBDIR += nagios-check_clamav
     SUBDIR += nagios-check_cpu_usage
     SUBDIR += nagios-check_dhcp.pl

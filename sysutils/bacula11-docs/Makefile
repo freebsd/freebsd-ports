@@ -1,15 +1,13 @@
-# Created by: Dan Langille <dan@langille.org>
 # $FreeBSD$
 
 PORTNAME=	bacula
-PORTVERSION=	9.6.7
-PORTREVISION=	1
+PORTVERSION=	11.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
-PKGNAMESUFFIX=	9-docs
+PKGNAMESUFFIX=	11-docs
 DISTNAME=	${PORTNAME}-docs-${PORTVERSION}
 
-CONFLICTS=	bacula-* bacula5-* bacula11-*
+CONFLICTS=	bacula9-*
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Bacula document set

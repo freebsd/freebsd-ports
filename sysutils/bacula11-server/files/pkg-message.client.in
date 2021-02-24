@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+NOTE:
+Sample files are installed in %%PREFIX%%/etc/bacula:
+
+  bconsole.conf.sample, bacula-fd.conf.sample
+EOM
+}
+]

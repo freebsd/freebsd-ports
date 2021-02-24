@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	bacula
-PORTVERSION=	9.6.7
-PORTREVISION=	1
+PORTVERSION=	11.0.1
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
-PKGNAMESUFFIX?=	9-server
+PKGNAMESUFFIX?=	11-server
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT?=	Network backup solution (server)
@@ -18,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES+=		libtool readline shebangfix ssl
 SHEBANG_FILES=	src/cats/make_catalog_backup.pl.in
 
-CONFLICTS?=	bacula11-server-* bacula5-server-* bacula-server-*
+CONFLICTS?=	bacula9-server-* bacula5-server-* bacula-server-*
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 
@@ -36,7 +35,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE?=	MTX NLS IPV6
 MTX_DESC=		Install mtx for control of autochanger devices
 
-.if ${PKGNAMESUFFIX} == "9-server"
+.if ${PKGNAMESUFFIX} == "11-server"
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	SQLITE3 MYSQL PGSQL
 OPTIONS_DEFAULT+=	PGSQL
@@ -44,10 +43,10 @@ OPTIONS_DEFAULT+=	PGSQL
 
 OPTIONS_SUB=		yes
 
-.if ${PKGNAMESUFFIX} == "9-client" || ${PKGNAMESUFFIX} == "9-server"  #Till end of the file
+.if ${PKGNAMESUFFIX} == "11-client" || ${PKGNAMESUFFIX} == "11-server"  #Till end of the file
 
 .if !defined(WITH_CLIENT_ONLY)
-LIB_DEPENDS+=	libbac-${PORTVERSION}.so:sysutils/bacula9-client
+LIB_DEPENDS+=	libbac-${PORTVERSION}.so:sysutils/bacula11-client
 USE_RC_SUBR?=	bacula-dir bacula-sd
 .endif
 
@@ -204,6 +203,6 @@ post-install:
 .endif
 .else
 .include "${MASTERDIR}/Makefile.common"
-.endif # 9-client and 9-server are defined
+.endif # 11-client and 11-server are defined
 
 .include <bsd.port.post.mk>
