@@ -24,6 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=1.1:devel/py-blinker@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+NO_ARCH=	yes
 
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} test_httpbin.py
