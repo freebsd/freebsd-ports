@@ -103,6 +103,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-building.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-eol.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-head.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-mirrors.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-prep.html
@@ -542,6 +543,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/manpages-resources.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/manpages-sample-structures.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/manpages-sections.html
+%%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/manpages-testing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/manpages.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/overview-doc.html
 %%DOCSDIR%%/%%DOCLANG%%/books/fdp-primer/overview.html
@@ -646,6 +648,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-sysctl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-syslog.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/configtuning-virtual-hosts.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/configuring-wine-installation.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/consoles.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/creating-cds.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/creating-dvds.html
@@ -698,6 +701,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/handbook.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/history.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/index.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/installing-wine-on-freebsd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/introduction.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ipsec.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ix01.html
@@ -792,6 +796,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-pdls.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/quotas.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/running-first-wine-program.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/scanners.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-accounting.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-advisories.html
@@ -838,6 +843,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-virtualbox.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host-xen.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/wine-in-multi-user-os-installations.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/wine-management-guis.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/wine-on-os-faq.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/wine-overview-concepts.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/wine.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-compiz-fusion.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-fonts.html
@@ -877,6 +887,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-use-posix-standards.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-verbose-logs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/distfile-survey.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/flavors-auto-lua.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/flavors-auto-php.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/flavors-auto-python.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/flavors-using.html
@@ -982,6 +993,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-display.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-dos2unix.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-drupal.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-eigen.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fakeroot.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-fam.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/uses-firebird.html

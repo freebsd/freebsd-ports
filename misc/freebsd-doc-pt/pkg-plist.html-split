@@ -103,6 +103,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-questions/trademarks.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-building.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-eol.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-head.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-mirrors.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-releng/releng-prep.html
@@ -452,6 +453,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-fetching-distribution.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-hardware.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-install-trouble.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-network.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-partitioning.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-post.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/bsdinstall-pre.html
@@ -702,6 +704,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-use-posix-standards.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-verbose-logs.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/distfile-survey.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/flavors-auto-lua.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/flavors-auto-php.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/flavors-auto-python.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/flavors-using.html
