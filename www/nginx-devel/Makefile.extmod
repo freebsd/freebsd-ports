@@ -288,7 +288,7 @@ SLOWFS_CACHE_VARS=	DSO_EXTMODS+=slowfs_cache
 
 SMALL_LIGHT_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6 \
 				libpcre.so:devel/pcre
-SMALL_LIGHT_GH_TUPLE=		dvershinin:ngx_small_light:v0.9.4:small_light
+SMALL_LIGHT_GH_TUPLE=		kawakibi:ngx_small_light:2f5e1d0:small_light
 SMALL_LIGHT_VARS=		DSO_EXTMODS+=small_light
 
 SRCACHE_GH_TUPLE=	openresty:srcache-nginx-module:v0.32:srcache

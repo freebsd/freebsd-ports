@@ -1,4 +1,4 @@
-TIMESTAMP = 1613494944
+TIMESTAMP = 1614189908
 SHA256 (nginx-1.19.7.tar.gz) = 7ae4dd020c41d3a5e1e6a8578fcc60e508e3e27e7668e845ddc87a05a775b50e
 SIZE (nginx-1.19.7.tar.gz) = 1056631
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -133,8 +133,8 @@ SHA256 (nginx-shib-nginx-http-shibboleth-2e99740_GH0.tar.gz) = 5a75aeb801331abaf
 SIZE (nginx-shib-nginx-http-shibboleth-2e99740_GH0.tar.gz) = 23241
 SHA256 (baysao-ngx_slowfs_cache-d011a18_GH0.tar.gz) = 6ae8abb01a2aff788e75ec68621cb0159148a6f73730a84b30b0bdbc6cdc1758
 SIZE (baysao-ngx_slowfs_cache-d011a18_GH0.tar.gz) = 11186
-SHA256 (dvershinin-ngx_small_light-v0.9.4_GH0.tar.gz) = 31e232726ee879087cd79f60b6210ed269eeeee97ce80d21b75101bdaf06f3d9
-SIZE (dvershinin-ngx_small_light-v0.9.4_GH0.tar.gz) = 56771
+SHA256 (kawakibi-ngx_small_light-2f5e1d0_GH0.tar.gz) = bb7b4943a2db89a6a7020850db123a9e0bea784aa6ce14261aa5f7121f96c3f4
+SIZE (kawakibi-ngx_small_light-2f5e1d0_GH0.tar.gz) = 57160
 SHA256 (openresty-srcache-nginx-module-v0.32_GH0.tar.gz) = fd80e59b672e4ff3b4e943740b3facab421c6965226b5934aed16a514baacf47
 SIZE (openresty-srcache-nginx-module-v0.32_GH0.tar.gz) = 49891
 SHA256 (kaltura-nginx-vod-module-1.25_GH0.tar.gz) = 42fd3b7f5bd4e13a7e27fcbd830153e285544c8cce37bfaea87cfce549f636d7
