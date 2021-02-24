@@ -4,6 +4,7 @@
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0-beta2
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
 
@@ -59,15 +60,6 @@ MRUBY_CMAKE_BOOL=	WITH_MRUBY
 MRUBY_USES=		bison
 MRUBY_USE=		ruby=yes
 MRUBY_VARS=		RUBY_NO_RUN_DEPENDS=yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|exec perl|exec ${LOCALBASE}/bin/perl|' \
-		${WRKSRC}/share/h2o/annotate-backtrace-symbols \
-		${WRKSRC}/share/h2o/fastcgi-cgi \
-		${WRKSRC}/share/h2o/fetch-ocsp-response \
-		${WRKSRC}/share/h2o/kill-on-close \
-		${WRKSRC}/share/h2o/setuidgid \
-		${WRKSRC}/share/h2o/start_server
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR} \
