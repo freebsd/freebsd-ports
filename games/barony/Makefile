@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	barony
-DISTVERSION=	3.3.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.3.7
 PORTREVISION=	0
 CATEGORIES=	games
 
@@ -11,6 +12,7 @@ COMMENT=	3D roguelike game
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.3.0.txt
 
+BUILD_DEPENDS=	rapidjson>=0:devel/rapidjson
 LIB_DEPENDS=	libogg.so:audio/libogg \
 		libphysfs.so:devel/physfs \
 		libpng.so:graphics/png \
@@ -26,6 +28,7 @@ USE_SDL=	sdl2 image2 net2 ttf2
 
 CMAKE_ON=	OPENAL_ENABLED DATA_DIR
 CMAKE_ARGS=	-DEDITOR_EXE_NAME:STRING="barony-editor"
+CONFIGURE_ENV=	OPTIMIZATION_LEVEL=""
 DOS2UNIX_FILES=	src/menu.cpp
 LDFLAGS+=	-Wl,--as-needed
 LDFLAGS_i386=	-Wl,-znotext
