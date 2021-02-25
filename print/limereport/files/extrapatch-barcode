@@ -1,0 +1,92 @@
+--- limereport/items/lrbarcodeitem.cpp.orig	2021-02-25 14:54:26 UTC
++++ limereport/items/lrbarcodeitem.cpp
+@@ -48,7 +48,7 @@ namespace LimeReport{
+ BarcodeItem::BarcodeItem(QObject* owner,QGraphicsItem* parent)
+     : ContentItemDesignIntf(xmlTag,owner,parent),m_designTestValue("1"), m_barcodeType(CODE128),
+       m_foregroundColor(Qt::black), m_backgroundColor(Qt::white), m_whitespace(10), m_angle(Angle0),
+-      m_barcodeWidth(0), m_securityLevel(0), m_pdf417CodeWords(928), m_inputMode(UNICODE_INPUT_MODE),
++      m_barcodeHeight(0), m_securityLevel(0), m_pdf417CodeWords(928), m_inputMode(UNICODE_INPUT_MODE),
+       m_hideText(false), m_option3(0), m_hideIfEmpty(false)
+ {}
+ 
+@@ -71,9 +71,9 @@ void BarcodeItem::paint(QPainter *ppainter, const QSty
+     bc.setWhitespace(m_whitespace);
+     bc.setFgColor(m_foregroundColor);
+     bc.setBgColor(m_backgroundColor);
+-    bc.setWidth(m_barcodeWidth);
++    bc.setHeight(m_barcodeHeight);
+     bc.setSecurityLevel(m_securityLevel);
+-    bc.setPdf417CodeWords(m_pdf417CodeWords);
++    //bc.setPdf417CodeWords(m_pdf417CodeWords);
+     bc.setHideText(m_hideText);
+     bc.setOption3(m_option3);
+ 
+@@ -214,19 +214,19 @@ void BarcodeItem::setAngle(const AngleType &angle)
+     }
+ }
+ 
+-int BarcodeItem::barcodeWidth() const
++int BarcodeItem::barcodeHeight() const
+ {
+-    return m_barcodeWidth;
++    return m_barcodeHeight;
+ }
+ 
+-void BarcodeItem::setBarcodeWidth(int barcodeWidth)
++void BarcodeItem::setBarcodeHeight(int barcodeHeight)
+ {
+-    if (m_barcodeWidth != barcodeWidth){
+-        int oldValue = m_barcodeWidth;
+-        m_barcodeWidth = barcodeWidth;
++    if (m_barcodeHeight != barcodeHeight){
++        int oldValue = m_barcodeHeight;
++        m_barcodeHeight = barcodeHeight;
+         if (!isLoading()){
+             update();
+-            notify("barcodeWidth",oldValue,m_barcodeWidth);
++            notify("barcodeHeight",oldValue,m_barcodeHeight);
+         }
+     }
+ }
+--- limereport/items/lrbarcodeitem.h.orig	2021-02-25 14:54:26 UTC
++++ limereport/items/lrbarcodeitem.h
+@@ -47,7 +47,7 @@ class BarcodeItem : public LimeReport::ContentItemDesi
+     Q_PROPERTY(QColor backgroundColor READ backgroundColor WRITE setBackgroundColor)
+     Q_PROPERTY(int whitespace READ whitespace WRITE setWhitespace)
+     Q_PROPERTY(AngleType angle READ angle WRITE setAngle)
+-    Q_PROPERTY(int barcodeWidth READ barcodeWidth WRITE setBarcodeWidth)
++    Q_PROPERTY(int barcodeHeight READ barcodeHeight WRITE setBarcodeHeight)
+     Q_PROPERTY(int securityLevel READ securityLevel WRITE setSecurityLevel)
+     Q_PROPERTY(int pdf417CodeWords READ pdf417CodeWords WRITE setPdf417CodeWords)
+     Q_PROPERTY(InputMode inputMode READ inputMode WRITE setInputMode)
+@@ -176,8 +176,8 @@ class BarcodeItem : public LimeReport::ContentItemDesi
+     void setWhitespace(int value);
+     AngleType angle() const;
+     void setAngle(const AngleType &angle);
+-    int barcodeWidth() const;
+-    void setBarcodeWidth(int barcodeWidth);
++    int barcodeHeight() const;
++    void setBarcodeHeight(int barcodeHeight);
+     int securityLevel() const;
+     void setSecurityLevel(int securityLevel);
+     int pdf417CodeWords() const;
+@@ -206,7 +206,7 @@ class BarcodeItem : public LimeReport::ContentItemDesi
+     QColor m_backgroundColor;
+     int m_whitespace;
+     AngleType m_angle;
+-    int m_barcodeWidth;
++    int m_barcodeHeight;
+     int m_securityLevel;
+     int m_pdf417CodeWords;
+     InputMode m_inputMode;
+--- limereport/objectinspector/lrobjectitemmodel.cpp.orig	2021-02-25 14:54:26 UTC
++++ limereport/objectinspector/lrobjectitemmodel.cpp
+@@ -114,7 +114,7 @@ void QObjectPropertyModel::translatePropertyName()
+     tr("shapeColor");
+     tr("layoutType");
+     tr("barcodeType");
+-    tr("barcodeWidth");
++    tr("barcodeHeight");
+     tr("foregroundColor");
+     tr("inputMode");
+     tr("pdf417CodeWords");
