@@ -78,6 +78,36 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a8654f1d-770d-11eb-b87a-901b0ef719ab">
+    <topic>FreeBSD -- login.access fails to apply rules</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>12.2</ge><lt>12.2_4</lt></range>
+	<range><ge>11.4</ge><lt>11.4_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>A regression in the login.access(5) rule processor has the effect
+	of causing rules to fail to match even when they should not. This
+	means that rules denying access may be ignored.</p>
+	<h1>Impact:</h1>
+	<p>The configuration in login.access(5) may not be applied, permitting
+	login access to users even when the system is configured to deny it.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-25580</cvename>
+      <freebsdsa>SA-21:03.pam_login_access</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-02-24</discovery>
+      <entry>2021-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0e38b8f8-75dd-11eb-83f2-8c164567ca3c">
     <topic>redis -- Integer overflow on 32-bit systems</topic>
     <affects>
