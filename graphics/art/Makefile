@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	art
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/agriggio/art/downloads/
 PKGNAMESUFFIX=	-raw-image-editor
