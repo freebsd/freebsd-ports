@@ -34,7 +34,7 @@ share/gir-1.0/UDisks-2.0.gir
 %%DOCS%%share/gtk-doc/html/udisks2/UDisksPartitionTable.html
 %%DOCS%%share/gtk-doc/html/udisks2/UDisksSwapspace.html
 %%DOCS%%share/gtk-doc/html/udisks2/annotation-glossary.html
-%%DOCS%%share/gtk-doc/html/udisks2/api-index-2.9.1.html
+%%DOCS%%share/gtk-doc/html/udisks2/api-index-2.9.2.html
 %%DOCS%%share/gtk-doc/html/udisks2/api-index-deprecated.html
 %%DOCS%%share/gtk-doc/html/udisks2/api-index.html
 %%DOCS%%share/gtk-doc/html/udisks2/ch03.html
