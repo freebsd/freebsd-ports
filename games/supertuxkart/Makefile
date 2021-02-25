@@ -1,9 +1,12 @@
 PORTNAME=	supertuxkart
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/supertuxkart/SuperTuxKart/${PORTVERSION}
 DISTNAME=	SuperTuxKart-${PORTVERSION}-src
+
+PATCH_SITES=	https://github.com/${PORTNAME}/stk-code/commit/
+PATCHFILES+=	61833c9c26da5520f.patch:-p1 # Fix compilation with latest SDL
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free 3D kart racing game
