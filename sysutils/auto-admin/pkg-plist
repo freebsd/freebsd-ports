@@ -80,6 +80,7 @@ sbin/auto-mark-install-from-source
 sbin/auto-mark-package-critical
 sbin/auto-media-format
 sbin/auto-mount-any
+sbin/auto-mount-noautos
 sbin/auto-network-restart
 sbin/auto-nfs-add-share
 sbin/auto-nfs-client-setup
