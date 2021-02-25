@@ -8,6 +8,7 @@ sbin/mailfromd
 %%NLS%%share/locale/id/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/mailfromd.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/mailfromd.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/mailfromd.mo
 %%DATADIR%%/%%VERSION%%/include/_register.mf
