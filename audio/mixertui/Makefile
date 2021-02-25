@@ -2,6 +2,7 @@
 
 PORTNAME=	mixertui
 DISTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	alfix86@gmail.com
