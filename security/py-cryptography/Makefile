@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cryptography
-PORTVERSION=	2.9.2
+PORTVERSION=	3.3.2
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,10 +43,14 @@ TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 # This has been fixed in 3.0-23-g241f8450 of security/py-cryptography and to be
 # clear: It isn't a security fix but rather a workaround to handle unnamed but
 # really named curves with OpenSSL 1.0.2t/u .
+
+# We need to keep old py-cryptography and py-openssl for 11.x release
+# due to outdated OpenSSL version in base
 .if ${OPSYS} == FreeBSD && ${SSL_DEFAULT} == "base"
 . if ${OSVERSION} >= 1103500 && ${OSVERSION} < 1200085
 # 1103500	352193 2019-09-10	11.3-STABLE got OpenSSL 1.0.2t
 # 1200085	339270 2018-10-19	12.0-STABLE got OpenSSL 1.1.1
+PORTVERSION=	2.9.2
 EXTRA_PATCHES=	${PATCHDIR}/openssl102u
 . endif
 .endif
