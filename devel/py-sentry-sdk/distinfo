@@ -1,3 +1,3 @@
-TIMESTAMP = 1608640445
-SHA256 (sentry-sdk-0.19.5.tar.gz) = 737a094e49a529dd0fdcaafa9e97cf7c3d5eb964bd229821d640bc77f3502b3f
-SIZE (sentry-sdk-0.19.5.tar.gz) = 97222
+TIMESTAMP = 1614241286
+SHA256 (sentry-sdk-0.20.3.tar.gz) = 4ae8d1ced6c67f1c8ea51d82a16721c166c489b76876c9f2c202b8a50334b237
+SIZE (sentry-sdk-0.20.3.tar.gz) = 99177
