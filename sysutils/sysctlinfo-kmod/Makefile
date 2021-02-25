@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	sysctlinfo-kmod
-DISTVERSION=	20191005
-PORTREVISION=	1
+DISTVERSION=	20210222
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
-COMMENT=	Interface to visit the sysctl MIB-tree and to get the nodes info
+COMMENT=	Kernel sysctl MIB-Tree interface
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,18 +14,14 @@ USES=		kmod
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
 GL_PROJECT=	sysctlinfo
-GL_COMMIT=	12c8b65d339becbc563d85bd2c81714b6b9226a6
+GL_COMMIT=	0e32703fcde8d29df5e1f6f21094c668c61238fe
 
 PLIST_FILES=	${KMODDIR}/sysctlinfo.ko \
 		include/sysctlinfo.h \
 		man/man3/sysctlinfo.3.gz \
 		man/man4/sysctlinfo.4.gz
 
-PORTEXAMPLES=	Makefile \
-		allinfo.c \
-		allinfobyname.c \
-		capability.c \
-		singleinfo.c
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		EXAMPLES
 OPTIONS_DEFAULT=	EXAMPLES
