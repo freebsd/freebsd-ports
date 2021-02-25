@@ -3,6 +3,7 @@
 
 PORTNAME=	librenms
 PORTVERSION=	1.70.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -13,7 +14,7 @@ COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 
 LICENSE=	GPLv3
 
-USES=		shebangfix python
+USES=		shebangfix php:mod python
 
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
