@@ -24,6 +24,16 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 USES=		compiler:c11 meson pkgconfig xorg
 USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+.if exists(/usr/bin/tic)
+PKGMESSAGE=	${NONEXISTENT}
+PLIST_FILES=	share/site-terminfo/f/${PORTNAME} \
+		share/site-terminfo/f/${PORTNAME}-direct
+post-patch:	terminfo-patch
+terminfo-patch:
+	@${REINPLACE_CMD} '/datadir/s/terminfo/site-&/' ${WRKSRC}/meson.build
+.else
 MESON_ARGS=	-Dterminfo=disabled
+.endif
 
 .include <bsd.port.mk>
