@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.29
+PORTVERSION=	3.0.31
 CATEGORIES=	www
 MASTER_SITES=	https://www.privoxy.org/sf-download-mirror/Sources/${PORTVERSION}%20(stable)/ \
 		SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
@@ -13,7 +13,7 @@ COMMENT=	Web proxy with advanced filtering capabilities
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		autoreconf cpe gmake shebangfix
+USES=		autoreconf cpe gmake shebangfix ssl
 USE_RC_SUBR=	privoxy
 
 SHEBANG_FILES=	tools/privoxy-log-parser.pl tools/privoxy-regression-test.pl \
@@ -41,7 +41,7 @@ GROUPS=		privoxy
 OPTIONS_DEFINE=	ACCEPT_FILTER BROKEN_STRPTIME BROTLI COMPRESSION DEBUG \
 		DOCS EDITOR FORCE HTTPS_INSPECTION PRIVOXY_TOOLS TOGGLE
 
-OPTIONS_DEFAULT=	ACCEPT_FILTER BROTLI EDITOR FORCE \
+OPTIONS_DEFAULT=	ACCEPT_FILTER BROTLI DOCS EDITOR FORCE \
 			HTTPS_INSPECTION TOGGLE PRIVOXY_TOOLS
 OPTIONS_SUB=	yes
 
@@ -109,7 +109,7 @@ do-install:
 .for examplefile in config match-all.action trust user.action
 	${INSTALL_DATA} ${WRKSRC}/${examplefile} ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
-	${INSTALL_MAN}  ${WRKSRC}/privoxy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN}  ${WRKSRC}/privoxy.8 ${STAGEDIR}${MAN1PREFIX}/man/man8
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/user-manual
 	${INSTALL_DATA} ${WRKSRC}/doc/webserver/user-manual/[a-z]* ${STAGEDIR}${DOCSDIR}/user-manual
 	${INSTALL_DATA} ${WRKSRC}/doc/webserver/p_doc.css ${STAGEDIR}${DOCSDIR}/user-manual

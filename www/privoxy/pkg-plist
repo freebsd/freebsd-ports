@@ -3,7 +3,7 @@
 %%PRIVOXY_TOOLS%%bin/uagen.pl
 %%PRIVOXY_TOOLS%%bin/url-pattern-translator.pl
 sbin/privoxy
-man/man1/privoxy.1.gz
+man/man8/privoxy.8.gz
 etc/privoxy/default.action
 etc/privoxy/default.filter
 etc/privoxy/regression-tests.action
@@ -23,6 +23,7 @@ etc/privoxy/templates/default
 etc/privoxy/templates/edit-actions-add-url-form
 etc/privoxy/templates/edit-actions-for-url
 etc/privoxy/templates/edit-actions-for-url-filter
+etc/privoxy/templates/edit-actions-for-url-string-filter
 etc/privoxy/templates/edit-actions-list
 etc/privoxy/templates/edit-actions-list-button
 etc/privoxy/templates/edit-actions-list-section
