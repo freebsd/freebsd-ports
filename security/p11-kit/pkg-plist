@@ -21,8 +21,8 @@ libexec/p11-kit/trust-extract-compat
 %%MANPAGES%%man/man1/trust.1.gz
 %%MANPAGES%%man/man5/pkcs11.conf.5.gz
 %%MANPAGES%%man/man8/p11-kit.8.gz
-%%BASH%%share/bash-completion/completions/p11-kit
-%%BASH%%share/bash-completion/completions/trust
+share/bash-completion/completions/p11-kit
+share/bash-completion/completions/trust
 %%DOCS%%share/gtk-doc/html/p11-kit/config-example.html
 %%DOCS%%share/gtk-doc/html/p11-kit/config-files.html
 %%DOCS%%share/gtk-doc/html/p11-kit/config.html

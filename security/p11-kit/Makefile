@@ -3,6 +3,7 @@
 
 PORTNAME=	p11-kit
 DISTVERSION=	0.23.22
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/p11-glue/p11-kit/releases/download/${DISTVERSION}/
 
@@ -15,26 +16,25 @@ COMMENT=	Library for loading and enumerating of PKCS\#11 modules
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
+		bash-completion>=0:shells/bash-completion
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
-BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
-LIB_DEPENDS=	libtasn1.so:security/libtasn1 \
-		libffi.so:devel/libffi
+LIB_DEPENDS=	libffi.so:devel/libffi \
+		libtasn1.so:security/libtasn1
 
 USES=		localbase meson pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
-MESON_ARGS=	-Dlibffi=enabled -Dtrust_module=enabled \
-		-Dtrust_paths=${LOCALBASE}/share/certs/ca-root-nss.crt \
-		-Dnls=false
+MESON_ARGS=	-Dbash_completion=enabled \
+		-Dlibffi=enabled \
+		-Dnls=false \
+		-Dtrust_module=enabled \
+		-Dtrust_paths=${LOCALBASE}/share/certs/ca-root-nss.crt
 
-OPTIONS_DEFINE=	BASH DOCS MANPAGES TEST
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		DOCS MANPAGES TEST
+OPTIONS_SUB=		yes
 MANPAGES_IMPLIES=	DOCS
-OPTIONS_DEFAULT=	BASH MANPAGES
-
-BASH_BUILD_DEPENDS=	bash-completion>=0:shells/bash-completion
-BASH_RUN_DEPENDS=	bash-completion>=0:shells/bash-completion
-BASH_MESON_ENABLED=	bash_completion
+OPTIONS_DEFAULT=	MANPAGES
 
 DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 DOCS_USES=		gnome
