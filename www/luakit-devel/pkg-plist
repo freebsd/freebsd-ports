@@ -104,6 +104,7 @@ share/doc/luakit/modules/soup.html
 share/doc/luakit/modules/styles.html
 share/doc/luakit/modules/tab_favicons.html
 share/doc/luakit/modules/tabhistory.html
+share/doc/luakit/modules/tabmenu.html
 share/doc/luakit/modules/taborder.html
 share/doc/luakit/modules/tests.%%LUA_LIBDIR%%.html
 share/doc/luakit/modules/undoclose.html
@@ -201,6 +202,7 @@ share/luakit/%%LUA_LIBDIR%%/settings_chrome.lua
 share/luakit/%%LUA_LIBDIR%%/styles.lua
 share/luakit/%%LUA_LIBDIR%%/tab_favicons.lua
 share/luakit/%%LUA_LIBDIR%%/tabhistory.lua
+share/luakit/%%LUA_LIBDIR%%/tabmenu.lua
 share/luakit/%%LUA_LIBDIR%%/taborder.lua
 share/luakit/%%LUA_LIBDIR%%/undoclose.lua
 share/luakit/%%LUA_LIBDIR%%/unique_instance.lua
