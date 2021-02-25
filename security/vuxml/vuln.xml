@@ -78,6 +78,40 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="31ad2f10-7711-11eb-b87a-901b0ef719ab">
+    <topic>FreeBSD -- jail_remove(2) fails to kill all jailed processes</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>12.2</ge><lt>12.2_4</lt></range>
+	<range><ge>11.4</ge><lt>11.4_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Due to a race condition in the jail_remove(2) implementation, it
+	may fail to kill some of the processes.</p>
+	<h1>Impact:</h1>
+	<p>A process running inside a jail can avoid being killed during jail
+	termination.  If a jail is subsequently started with the same root
+	path, a lingering jailed process may be able to exploit the window
+	during which a devfs filesystem is mounted but the jail's devfs
+	ruleset has not been applied, to access device nodes which are
+	ordinarily inaccessible.  If the process is privileged, it may be able
+	to escape the jail and gain full access to the system.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-25581</cvename>
+      <freebsdsa>SA-21:04.jail_remove</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-02-24</discovery>
+      <entry>2021-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b8c6e1e-770f-11eb-b87a-901b0ef719ab">
     <topic>FreeBSD -- Xen grant mapping error handling issues</topic>
     <affects>
