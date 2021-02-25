@@ -1,3 +1,5 @@
+- bug#232485: fix build with powerpc*
+
 --- src/libs/vmisc/debugbreak.h.orig	2020-07-11 05:51:16 UTC
 +++ src/libs/vmisc/debugbreak.h
 @@ -119,6 +119,13 @@ __inline__ static void trap_instruction(void)
