@@ -1,0 +1,4 @@
+bin/ghq
+etc/bash_completion.d/_ghq
+%%MANPAGES%%share/man/man1/ghq.1.gz
+share/zsh/site-functions/_ghq
