@@ -1,12 +1,12 @@
 This is a free port of the original SIL (SNOBOL4 Implementation Language)
 macro version of SNOBOL4 (developed at Bell Labs) with the C language as
-target.
+target.  Includes SPITBOL and BLOCKS extensions.
 
 SNOBOL4, while known primarily as a string language excels at any task
-involving symbolic manipulations.  It provides run time typing, garbage
-collection, user data types, on the fly compilation.  Its primary weakness
-is its simple syntax, and lack of "structured programming" constructs.
-However some consider the spareness of SNOBOL4 syntax a strength when
-compared to some "modern" agglomerations such as perl.
+involving symbolic manipulations.  It provides run time typing,
+garbage collection, user data types, on the fly compilation.  Its
+primary weakness is its simple syntax, and lack of structured
+programming constructs.  However some consider the spareness of
+SNOBOL4 syntax a strength when compared to some modern agglomerations.
 
 WWW: http://www.snobol4.org/
