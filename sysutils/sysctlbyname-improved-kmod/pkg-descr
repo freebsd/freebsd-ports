@@ -1,7 +1,7 @@
-Kernel module to add the sysctl.entryidinputbyname sysctl node
-to allow to implement an improved sysctlbyname(3) clone to handle:
- * a node without a level name, e.g., "security.jail.param.allow.mount."
- * a CTLTYPE_NODE with a no-NULL handler, e.g., "kern.proc.pid.<pid>"
+Kernel module to add the sysctl.objidextended_byname sysctl object
+to implement an improved sysctlbyname(3) clone to handle:
+ * a name without a level, e.g., "security.jail.param.allow.mount."
+ * a CTLTYPE_NODE with a defined handler, e.g., "kern.proc.pid.<pid>"
 The sysctlbyname_improved() function and an example are provided, too.
 
-WWW: https://gitlab.com/alfix/sysctlbyname-improved
+WWW: https://gitlab.com/alfix/sysctlbyname-improved/

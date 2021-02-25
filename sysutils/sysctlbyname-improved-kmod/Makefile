@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	sysctlbyname-improved-kmod
-DISTVERSION=	20191124
-PORTREVISION=	1
+DISTVERSION=	20210223
 CATEGORIES=	sysutils
 
 MAINTAINER=	alfix86@gmail.com
-COMMENT=	Internal sysctl node to implement an improved sysctlbyname(3) clone
+COMMENT=	Internal sysctl object to implement an improved sysctlbyname(3)
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,13 +14,11 @@ USES=		kmod
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
 GL_PROJECT=	sysctlbyname-improved
-GL_COMMIT=	522eb1f40c46a035c563f4f88594db5803ccf462
+GL_COMMIT=	1d6119756931d05cc2526308c941c979e475d3a7
 
 PLIST_FILES=	${KMODDIR}/sysctlbyname_improved.ko
 
-PORTEXAMPLES=	sysctlbyname_improved.h \
-		sysctlbyname_improved.c \
-		sysctlbyname_improved_example.c
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		EXAMPLES
 OPTIONS_DEFAULT=	EXAMPLES
