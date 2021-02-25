@@ -246,7 +246,7 @@ share/silk/twoway-silk.conf
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/silk/plugin.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/silk/plugin.pyo
 %%STATIC%%%%PYTHON%%%%PYTHON_SITELIBDIR%%/silk/pysilk.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/silk/pysilk.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/silk/pysilk%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/silk/site.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/silk/site.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/silk/site.pyo
