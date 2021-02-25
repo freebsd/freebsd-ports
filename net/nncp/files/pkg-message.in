@@ -11,7 +11,7 @@
 - %%PREFIX%%/etc/newsyslog.conf.d/nncp.conf
   log rotation configuration has been installed.
 - /var/spool/nncp is the packet spool directory.
-- Look in nncp.info how to integrate mail exchanging with Postfix.
+- Look in nncp.info how to integrate mail exchanging with Postfix/Exim.
 - Generate NNCP configuration file using the command:
 
     # umask 077

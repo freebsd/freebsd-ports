@@ -5,6 +5,7 @@ bin/nncp-cfgenc
 bin/nncp-cfgmin
 bin/nncp-cfgnew
 bin/nncp-check
+bin/nncp-cronexpr
 bin/nncp-daemon
 bin/nncp-exec
 bin/nncp-file
