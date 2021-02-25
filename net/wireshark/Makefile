@@ -60,7 +60,7 @@ PLIST_SUB+=		${x:tu}=bin/$x \
 .endif
 .endfor
 
-OPTIONS_DEFINE=		GUI RTP SNMP MAXMIND LUA DECRYPT ANDROIDDUMP SSHDUMP CISCODUMP OPUS
+OPTIONS_DEFINE=		GUI RTP SNMP MAXMIND LTO LUA DECRYPT ANDROIDDUMP SSHDUMP CISCODUMP OPUS
 
 OPTIONS_SINGLE=		GSSAPI
 
@@ -85,6 +85,7 @@ OPUS_DESC=		Build opus decoder plugin
 GUI_USES=		qt:5
 GUI_USE=	qt=core,gui,multimedia,widgets,printsupport,svg,buildtools_build,linguisttools_build,qmake_build
 
+LTO_CMAKE_BOOL=		ENABLE_LTO
 LUA_USES=		lua:51-52
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_HEIMDAL_USES=	gssapi:heimdal
