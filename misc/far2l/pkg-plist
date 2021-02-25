@@ -9,6 +9,7 @@ lib/far2l/Plugins/NetRocks/plug/NetRocks.far-plug-wide
 lib/far2l/Plugins/SimpleIndent/plug/SimpleIndent.far-plug-wide
 lib/far2l/Plugins/align/plug/align.far-plug-wide
 lib/far2l/Plugins/autowrap/plug/autowrap.far-plug-wide
+lib/far2l/Plugins/calc/plug/calc.far-plug-wide
 lib/far2l/Plugins/colorer/plug/colorer.far-plug-wide
 lib/far2l/Plugins/compare/plug/compare.far-plug-wide
 lib/far2l/Plugins/drawline/plug/drawline.far-plug-wide
@@ -37,6 +38,27 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/align/plug/AlignRus.lng
 %%DATADIR%%/Plugins/autowrap/plug/WrapEng.lng
 %%DATADIR%%/Plugins/autowrap/plug/WrapRus.lng
+%%DATADIR%%/Plugins/calc/plug/calce.hlf
+%%DATADIR%%/Plugins/calc/plug/calce.lng
+%%DATADIR%%/Plugins/calc/plug/calcr.hlf
+%%DATADIR%%/Plugins/calc/plug/calcr.lng
+%%DATADIR%%/Plugins/calc/plug/calcset.csr
+%%DATADIR%%/Plugins/calc/plug/csr.dtd
+%%DATADIR%%/Plugins/calc/plug/file_id.diz
+%%DATADIR%%/Plugins/calc/plug/readme.txt
+%%DATADIR%%/Plugins/calc/plug/units/angle.csr
+%%DATADIR%%/Plugins/calc/plug/units/area.csr
+%%DATADIR%%/Plugins/calc/plug/units/date.csr
+%%DATADIR%%/Plugins/calc/plug/units/force.csr
+%%DATADIR%%/Plugins/calc/plug/units/info.csr
+%%DATADIR%%/Plugins/calc/plug/units/length.csr
+%%DATADIR%%/Plugins/calc/plug/units/mass.csr
+%%DATADIR%%/Plugins/calc/plug/units/pressure.csr
+%%DATADIR%%/Plugins/calc/plug/units/speed.csr
+%%DATADIR%%/Plugins/calc/plug/units/temperature.csr
+%%DATADIR%%/Plugins/calc/plug/units/time.csr
+%%DATADIR%%/Plugins/calc/plug/units/volume.csr
+%%DATADIR%%/Plugins/calc/plug/user-examples.csr
 %%DATADIR%%/Plugins/colorer/base/catalog.xml
 %%DATADIR%%/Plugins/colorer/base/hrc/auto/empty.hrc
 %%DATADIR%%/Plugins/colorer/base/hrc/base/asm.hrc
@@ -467,11 +489,13 @@ share/applications/far2l.desktop
 %%DATADIR%%/Plugins/tmppanel/plug/TmpEng.lng
 %%DATADIR%%/Plugins/tmppanel/plug/TmpRus.hlf
 %%DATADIR%%/Plugins/tmppanel/plug/TmpRus.lng
+%%DATADIR%%/closewait.sh
+%%DATADIR%%/mounts.sh
 %%DATADIR%%/notify.sh
 %%DATADIR%%/open.sh
 %%DATADIR%%/ps.sh
-%%DATADIR%%/roots.sh
 %%DATADIR%%/trash.sh
+%%DATADIR%%/view.sh
 share/icons/far2l.svg
 share/icons/hicolor/1024x1024/apps/far2l.svg
 share/icons/hicolor/128x128/apps/far2l.svg
@@ -485,4 +509,5 @@ share/icons/hicolor/512x512/apps/far2l.svg
 share/icons/hicolor/64x64/apps/far2l.svg
 share/icons/hicolor/72x72/apps/far2l.svg
 share/icons/hicolor/96x96/apps/far2l.svg
+@dir lib/far2l/Plugins/calc/plug/units
 @dir %%DATADIR%%/Plugins/SimpleIndent/plug

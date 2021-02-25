@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	far2l
-PORTVERSION=	g20201021
+PORTVERSION=	g20210222
 CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -18,10 +18,10 @@ RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	elfmz
-GH_TAGNAME=	aee26c9
+GH_TAGNAME=	3129972
 
 USES=		cmake compiler:c++11-lang libarchive pkgconfig shebangfix ssl
-SHEBANG_FILES=	far2l/bootstrap/roots.sh
+SHEBANG_FILES=	far2l/bootstrap/view.sh
 
 OPTIONS_DEFINE=	NFS SFTP SMB WEBDAV WXGTK
 OPTIONS_DEFAULT=	NFS SFTP WEBDAV WXGTK
