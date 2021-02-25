@@ -37,6 +37,7 @@ share/applications/luakit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/modules/bookmarks.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/bookmarks_chrome.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/chrome.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/clear_data.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/cmdhist.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/completion.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/domain_props.html
@@ -50,6 +51,7 @@ share/applications/luakit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/modules/go_input.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/go_next_prev.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/go_up.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/gopher.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/help_chrome.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/hide_scrollbars.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/history.html
@@ -101,6 +103,7 @@ share/applications/luakit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/modules/styles.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/tab_favicons.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/tabhistory.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/tabmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/taborder.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/tests.%%LUA_LIBDIR%%.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/undoclose.html
@@ -130,6 +133,7 @@ share/applications/luakit.desktop
 %%DATADIR%%/%%LUA_LIBDIR%%/bookmarks_chrome.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/chrome.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/chrome_wm.lua
+%%DATADIR%%/%%LUA_LIBDIR%%/clear_data.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/cmdhist.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/completion.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/domain_props.lua
@@ -147,6 +151,7 @@ share/applications/luakit.desktop
 %%DATADIR%%/%%LUA_LIBDIR%%/go_input.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/go_next_prev.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/go_up.lua
+%%DATADIR%%/%%LUA_LIBDIR%%/gopher.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/help_chrome.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/hide_scrollbars.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/history.lua
@@ -196,6 +201,7 @@ share/applications/luakit.desktop
 %%DATADIR%%/%%LUA_LIBDIR%%/styles.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/tab_favicons.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/tabhistory.lua
+%%DATADIR%%/%%LUA_LIBDIR%%/tabmenu.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/taborder.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/undoclose.lua
 %%DATADIR%%/%%LUA_LIBDIR%%/unique_instance.lua
