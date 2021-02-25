@@ -1,0 +1,12 @@
+PROG=	rxp
+
+SRCS=	rxp.c infoset-print.c
+CFLAGS+=	-DCHAR_SIZE=16 -DHAVE_LIBZ
+CFLAGS+=	-Werror
+WARNS=		6
+
+BINDIR=	${PREFIX}/bin
+MANDIR=	${MANPREFIX}/man/man
+LDADD=	-L${.CURDIR:H}/lib -lrxp
+
+.include <bsd.prog.mk>

@@ -1,0 +1,1779 @@
+--- catalog_dtd.c	2003-06-24 09:15:55.000000000 -0400
++++ catalog_dtd.c	2021-02-25 15:07:41.462399000 -0500
+@@ -23,9 +23,9 @@
+  */
+ 
+-static char *xml_catalog_public_id = "-//OASIS//DTD XML Catalogs V1.0//EN";
+-static char *xml_catalog_system_id = 
++static const char *xml_catalog_public_id = "-//OASIS//DTD XML Catalogs V1.0//EN";
++static const char *xml_catalog_system_id = 
+     "http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd";
+ 
+-static char xml_catalog_dtd[] =
++static const char xml_catalog_dtd[] =
+ "<!ENTITY % pubIdChars \"CDATA\">\n"
+ "<!ENTITY % publicIdentifier \"%pubIdChars;\">\n"
+--- catalog.c	2004-10-11 08:28:31.000000000 -0400
++++ catalog.c	2021-02-25 15:07:41.463274000 -0500
+@@ -20,5 +20,5 @@ static Parser OpenXMLDocument(char *uri)
+ static void CloseXMLDocument(Parser p);
+ static int SkipElement(XBit bit, Parser p);
+-static InputSource special_opener(Entity ent, void *arg);
++static EntityOpenerProc special_opener;
+ 
+ typedef enum catalog_entry_type {
+@@ -36,5 +36,5 @@ const char *PreferName[PR_enum_count] =
+ /* An empty catalog file, returned if a file cannot be read because of
+    a resource error */
+-struct catalog_entry_file catalog_resource_error_data;
++static struct catalog_entry_file catalog_resource_error_data;
+ CatalogEntryFile catalog_resource_error = &catalog_resource_error_data;
+ 
+@@ -131,10 +131,11 @@ void FreeCatalogEntryFile(CatalogEntryFi
+  */
+ 
+-CatalogEntryFile ReadCatalogEntryFile(char *catalog_uri)
++CatalogEntryFile ReadCatalogEntryFile(const char *catalog_uri)
+ {
+     Parser p;
+     CatalogEntryFile c;
++    char *normalized;
+ 
+-    if(!(catalog_uri = NormalizeSystem8(catalog_uri)))
++    if(!(normalized = NormalizeSystem8(catalog_uri)))
+ 	return 0;
+ 
+@@ -143,5 +144,5 @@ CatalogEntryFile ReadCatalogEntryFile(ch
+ #endif
+ 
+-    if(!(p = OpenXMLDocument(catalog_uri)))
++    if(!(p = OpenXMLDocument(normalized)))
+ 	return catalog_resource_error;
+     
+@@ -166,9 +167,9 @@ CatalogEntryFile ReadCatalogEntryFile(ch
+ 	{
+ 	case XBIT_eof:
+-	    Free(catalog_uri);
++	    Free(normalized);
+ 	    CloseXMLDocument(p);
+ 	    return c;
+ 	case XBIT_error:
+-	    Free(catalog_uri);
++	    Free(normalized);
+ 	    ParserPerror(p, bit);
+ 	    FreeXBit(bit);
+@@ -183,5 +184,5 @@ CatalogEntryFile ReadCatalogEntryFile(ch
+ 	    {
+ 		c = (p->state == PS_error) ? catalog_resource_error : 0;
+-		Free(catalog_uri);
++		Free(normalized);
+ 		FreeCatalogEntryFile(c);
+ 		CloseXMLDocument(p);
+@@ -196,10 +197,10 @@ CatalogEntryFile ReadCatalogEntryFile(ch
+ }
+ 
+-struct entry_info
++static struct entry_info
+ {
+-    char *name;
++    const char *name;
+     CatalogEntryType type;
+-    char *match_attr;
+-    char *value_attr;
++    const char *match_attr;
++    const char *value_attr;
+     enum {norm_public, norm_system, norm_prefer, norm_none} norm_match;
+ } elements[] =
+@@ -217,5 +218,5 @@ struct entry_info
+     {"group", CN_group, "prefer", 0, norm_prefer},
+ };
+-int nelements = sizeof(elements) / sizeof(elements[0]);
++static int nelements = sizeof(elements) / sizeof(elements[0]);
+ 
+ static int DoElement(XBit bit, Parser p, CatalogEntryFile c, 
+@@ -469,5 +470,5 @@ static Parser OpenXMLDocument(char *uri)
+ #include "catalog_dtd.c"
+ 
+-static InputSource special_opener(Entity ent, void *arg)
++static InputSource special_opener(Entity ent, void *arg __unused)
+ {
+     if((ent->publicid && strcmp(ent->publicid, xml_catalog_public_id) == 0) ||
+@@ -607,5 +608,5 @@ void FreeCatalog(Catalog catalog)
+ 
+ /* NB not thread safe! */
+-CatalogEntryFile GetCatalogEntryFile(Catalog catalog, char *catalog_uri)
++CatalogEntryFile GetCatalogEntryFile(Catalog catalog, const char *catalog_uri)
+ {
+     int i;
+--- catalog.h	2003-08-28 12:13:19.000000000 -0400
++++ catalog.h	2021-02-25 15:07:41.463639000 -0500
+@@ -48,13 +48,13 @@ extern void FreeCatalogEntry(CatalogEntr
+ 
+ extern CatalogEntryFile catalog_resource_error;
+-extern CatalogEntryFile ReadCatalogEntryFile(char *catalog_uri);
++extern CatalogEntryFile ReadCatalogEntryFile(const char *catalog_uri);
+ extern void FreeCatalogEntryFile(CatalogEntryFile c);
+ 
+-extern CatalogEntryFile GetCatalogEntryFile(Catalog catalog, char *catalog_uri);
++extern CatalogEntryFile GetCatalogEntryFile(Catalog catalog, const char *catalog_uri);
+ 
+ extern char *ResolveExternalIdentifier(Catalog catalog, 
+ 				       const char *public, const char *system,
+ 				       Prefer prefer);
+-extern char *ResolveURI(Catalog catalog, const char *uri);
++extern const char *ResolveURI(Catalog catalog, const char *uri);
+ 
+ extern void CatalogEnable(Parser p);
+--- catutil.c	2003-06-24 11:55:27.000000000 -0400
++++ catutil.c	2021-02-25 15:07:41.464062000 -0500
+@@ -35,5 +35,5 @@ char *norm_pub(const char8 *public8, con
+ {
+     int len = public8 ? strlen(public8) : strlen16(public16);
+-    int i, j, c, in_space;
++    int i, j, in_space;
+     char *new_public;
+ 
+@@ -75,5 +75,5 @@ char *norm_pub(const char8 *public8, con
+     while(j > 0)
+     {
+-	c = new_public[j-1];
++	int c = new_public[j-1];
+ 	if(c == ' ' || c == '\t' || c == '\r' || c == '\n')
+ 	    j--;
+@@ -280,9 +280,9 @@ int percent_escape(int c, char *buf)
+ int IsPublicidUrn(const char *id)
+ {
+-#if 0
++#if 1
+     return id && strncasecmp(id, "urn:publicid:", 13) == 0;
+ #else
+     /* guess who doesn't provide strncasecmp */
+-    static char *p = "urn:publicid:";
++    static const char *p = "urn:publicid:";
+     int i;
+ 
+--- ctype16.h	2004-03-17 10:53:21.000000000 -0500
++++ ctype16.h	2021-02-25 15:07:41.464419000 -0500
+@@ -49,13 +49,13 @@ extern STD_API unsigned char xml_char_ma
+ 
+ #define is_xml_namestart(c,map) \
+-  (c < 0x10000 ? (map[c] & xml_namestart) : (map[c >> 16] & xml_nameblock))
++  ((sizeof(c) <= 2 || c < 0x10000) ? (map[c] & xml_namestart) : (map[c >> 16] & xml_nameblock))
+ 
+ #define is_xml_namechar(c,map) \
+-  (c < 0x10000 ? (map[c] & xml_namechar)  : (map[c >> 16] & xml_nameblock))
++  ((sizeof(c) <= 2 || c < 0x10000) ? (map[c] & xml_namechar)  : (map[c >> 16] & xml_nameblock))
+ 
+ /* NB whitespace map is the same for 1.0 and 1.1 */
+ 
+ #define is_xml_whitespace(c) \
+-  (c < 0x10000 && (xml_char_map[c] & xml_whitespace))
++  ((sizeof(c) <= 2 || c < 0x10000) && (xml_char_map[c] & xml_whitespace))
+ 
+ #endif
+--- dtd.c	2004-11-02 13:20:20.000000000 -0500
++++ dtd.c	2021-02-25 15:07:41.475773000 -0500
+@@ -173,12 +173,11 @@ void FreeDtd(Dtd dtd)
+  */
+ 
+-Entity NewExternalEntity(const Char *name, const char8 *publicid,
+-			  const char8 *systemid, NotationDefinition notation,
+-			  Entity parent)
++Entity NewExternalEntity(const Char *name, char8 *publicid,
++			 const char8 *systemid, NotationDefinition notation,
++			 Entity parent)
+ {
+-    if(systemid && !(systemid = strdup8(systemid)))
+-	return 0;
+-    if(publicid && !(publicid = strdup8(publicid)))
++    if(publicid && !(publicid = strdup8(publicid))) {
+ 	return 0;
++    }
+     return NewExternalEntityN(name, name ? Strlen(name) : 0, publicid,
+ 			      systemid, notation, parent);
+@@ -187,5 +186,5 @@ Entity NewExternalEntity(const Char *nam
+ /* NB doesn't copy IDs */
+ 
+-Entity NewExternalEntityN(const Char *name, int namelen, const char8 *publicid,
++Entity NewExternalEntityN(const Char *name, int namelen, char8 *publicid,
+ 			  const char8 *systemid, NotationDefinition notation,
+ 			  Entity parent)
+@@ -193,11 +192,13 @@ Entity NewExternalEntityN(const Char *na
+     Entity e;
+ 
+-    if(!(e = Malloc(sizeof(*e))))
+-	return 0;
+-    if(name && !(name = Strndup(name, namelen)))
+-	    return 0;
++    if (!(e = Malloc(sizeof(*e))))
++	return NULL;
++    if (name) {
++	if (!(e->name = Strndup(name, namelen)))
++	    return NULL;
++    } else
++    	e->name = NULL;
+ 
+     e->type = ET_external;
+-    e->name = name;
+     e->base_url = 0;
+     e->encoding = CE_unknown;
+@@ -233,10 +234,11 @@ Entity NewInternalEntityN(const Char *na
+     if(!(e = Malloc(sizeof(*e))))
+ 	return 0;
+-    if(name)
+-	if(!(name = Strndup(name, namelen)))
+-	    return 0;
++    if(name) {
++	if(!(e->name = Strndup(name, namelen)))
++	    return NULL;
++    } else
++        e->name = NULL;
+ 
+     e->type = ET_internal;
+-    e->name = name;
+     e->base_url = 0;
+     e->encoding = InternalCharacterEncoding;
+@@ -276,18 +278,19 @@ void FreeEntity(Entity e)
+ 	return;
+ 
+-    Free((void *)e->name);	/* The casts are to get rid of the const */
+-    Free((void *)e->base_url);
+-    Free((void *)e->url);
++    if (e->name)
++	Free(e->name);
++    Free(e->base_url);
++    Free(e->url);
+     
+     switch(e->type)
+     {
+     case ET_internal:
+-	Free((void *)e->text);
++	Free((void *)e->atext);
+ 	break;
+     case ET_external:
+-	Free((void *)e->systemid);
+-	Free((void *)e->publicid);
+-	Free((void *)e->version_decl);
+-	Free((void *)e->ddb_filename);
++	/* Free((void *)e->systemid); XXX const string passed by client */
++	Free(e->publicid);
++	Free(e->version_decl);
++	Free(e->ddb_filename);
+ 	break;
+     }
+@@ -416,5 +419,5 @@ ElementDefinition DefineElementN(Dtd dtd
+ {
+     ElementDefinition e;
+-    Char *t;
++    const Char *t;
+ #ifdef FOR_LT
+     RHTEntry *entry;
+@@ -448,10 +451,9 @@ ElementDefinition DefineElementN(Dtd dtd
+     name = (Char *)dtd->doctype->elements+entry->keyptr;
+ #else
+-    if(!(name = Strndup(name, namelen)))
++    if(!(e->name = Strndup(name, namelen)))
+ 	return 0;
+ #endif
+ 
+     e->tentative = 0;
+-    e->name = name;
+     e->namelen = namelen;
+     e->type = type;
+@@ -624,5 +626,5 @@ AttributeDefinition
+     DefineAttributeN(ElementDefinition element, const Char *name, int namelen,
+ 		     AttributeType type, Char **allowed_values,
+-		     DefaultType default_type, const Char *default_value,
++		     DefaultType default_type, Char *default_value,
+ 		     int declared)
+ {
+@@ -637,5 +639,5 @@ AttributeDefinition
+     static Char xml_id[] = {'x','m','l',':','i','d',0};
+     static Char xmlns[] = {'x','m','l','n','s',0};
+-    Char *t;
++    const Char *t;
+ 
+     if(!(a= Malloc(sizeof(*a))))
+@@ -670,9 +672,8 @@ AttributeDefinition
+     a->attrsum = FindAttrSpec(element->eltsum, doctype, name);
+ #else
+-    if(!(name = Strndup(name, namelen)))
++    if(!(a->name = Strndup(name, namelen)))
+ 	return 0;
+ #endif
+ 
+-    a->name = name;
+     a->namelen = namelen;
+     a->type = type;
+@@ -836,13 +837,12 @@ void FreeAttributeDefinition(AttributeDe
+ 
+ NotationDefinition DefineNotationN(Dtd dtd, const Char *name, int namelen, 
+-				  const char8 *publicid, const char8 *systemid,
++				   char8 *publicid, char8 *systemid,
+ 				   Entity parent)
+ {
+     NotationDefinition n;
+ 
+-    if(!(n = Malloc(sizeof(*n))) || !(name = Strndup(name, namelen)))
++    if(!(n = Malloc(sizeof(*n))) || !(n->name = Strndup(name, namelen)))
+ 	return 0;
+ 
+-    n->name = name;
+     n->tentative = 0;
+     n->systemid = systemid;
+@@ -870,5 +870,5 @@ NotationDefinition TentativelyDefineNota
+ 
+ NotationDefinition RedefineNotation(NotationDefinition n,
+-				  const char8 *publicid, const char8 *systemid,
++				    char8 *publicid, char8 *systemid,
+ 				    Entity parent)
+ {
+--- dtd.h	2004-11-02 12:46:07.000000000 -0500
++++ dtd.h	2021-02-25 15:07:41.465041000 -0500
+@@ -48,11 +48,11 @@ struct entity {
+     /* All entities */
+ 
+-    const Char *name;		/* The name in the entity declaration */
++    Char *name;		/* The name in the entity declaration */
+     EntityType type;		/* ET_external or ET_internal */
+-    const char8 *base_url;	/* If different from expected */
++    char8 *base_url;	/* If different from expected */
+     struct entity *next;	/* For chaining a document's entity defns */
+     CharacterEncoding encoding;	/* The character encoding of the entity */
+     Entity parent;		/* The entity in which it is defined */
+-    const char8 *url;		/* URL of entity */
++    char8 *url;		/* URL of entity */
+     int is_externally_declared;	/* True if declared outside document entity */
+     int is_internal_subset;	/* True if this is the internal subset */
+@@ -60,5 +60,8 @@ struct entity {
+     /* Internal entities */
+ 
+-    const Char *text;		/* Text of the entity */
++    union {
++	const Char *text;	/* Text of the entity */
++	Char *atext;	/* We may need to free() it, depending on type */
++    };
+     int line_offset;		/* Line offset of definition */
+     int line1_char_offset;	/* Char offset on first line */ 
+@@ -67,12 +70,12 @@ struct entity {
+     /* External entities */
+ 
+-    const char8 *systemid;	/* Declared public ID */
+-    const char8 *publicid;	/* Declared public ID */
++    const char8 *systemid;	/* Declared system ID */
++    char8 *publicid;	/* Declared public ID */
+     NotationDefinition notation; /* Binary entity's declared notation */
+     MarkupLanguage ml_decl;	/* XML, NSL or not specified */
+-    const char8 *version_decl;	/* XML declarations found in entity, if any  */
++    char8 *version_decl;	/* XML declarations found in entity, if any  */
+     CharacterEncoding encoding_decl;
+     StandaloneDeclaration standalone_decl;
+-    const char8 *ddb_filename;	/* filename in NSL declaration */
++    char8 *ddb_filename;	/* filename in NSL declaration */
+     XMLVersion xml_version;
+ };
+@@ -133,5 +136,5 @@ struct element_definition {
+     NSL_ElementSummary_I *eltsum;
+ #endif
+-    const Char *name;		/* The element name */
++    Char *name;		/* The element name */
+     int namelen;
+     int tentative;
+@@ -150,5 +153,6 @@ struct element_definition {
+     AttributeDefinition notation_attribute; /* NOTATION attribute, if it has one */
+     NSElementDefinition cached_nsdef;
+-    const Char *prefix, *local;
++    Char *prefix;
++    const Char *local;
+     int is_externally_declared;	/* True if declared outside document entity */
+     int eltnum;
+@@ -180,14 +184,15 @@ struct attribute_definition {
+     NSL_AttributeSummary attrsum;
+ #endif
+-    const Char *name;		/* The attribute name */
++    Char *name;		/* The attribute name */
+     int namelen;
+     AttributeType type;		/* The declared type */
+     Char **allowed_values;	/* List of allowed values, argv style */
+     DefaultType default_type;	/* The type of the declared default */
+-    const Char *default_value;	/* The declared default value */
++    Char *default_value;	/* The declared default value */
+     int declared;		/* Was there a declaration for this? */
+     const Char *ns_attr_prefix;	/* Prefix it defines if a namespace attr */
+     NSAttributeDefinition cached_nsdef;
+-    const Char *prefix, *local;
++    Char *prefix;
++    const Char *local;
+     int is_externally_declared;	/* True if declared outside document entity */
+     int attrnum;
+@@ -197,9 +202,9 @@ struct attribute_definition {
+ 
+ struct notation_definition {
+-    const Char *name;		/* The notation name */
++    Char *name;		/* The notation name */
+     int tentative;
+-    const char8 *systemid;	/* System identifier */
+-    const char8 *publicid;	/* Public identifier */
+-    const char8 *url;
++    char8 *systemid;	/* System identifier */
++    char8 *publicid;	/* Public identifier */
++    char8 *url;
+     Entity parent;		/* Entity that declares it (for base URL) */
+     struct notation_definition *next;
+@@ -209,5 +214,5 @@ struct notation_definition {
+ 
+ struct dtd {
+-    const Char *name;		/* The doctype name */
++    Char *name;		/* The doctype name */
+     Entity internal_part, external_part;
+     Entity entities;
+@@ -230,9 +235,9 @@ XML_API void FreeDtd(Dtd dtd);
+ 
+ XML_API Entity NewExternalEntity(const Char *name,
+-			  const char8 *publicid, const char8 *systemid,
++			  char8 *publicid, const char8 *systemid,
+ 			  NotationDefinition notation,
+ 			  Entity parent);
+ XML_API Entity NewExternalEntityN(const Char *name, int namelen,
+-			  const char8 *publicid, const char8 *systemid,
++			  char8 *publicid, const char8 *systemid,
+ 			  NotationDefinition notation,
+ 			  Entity parent);
+@@ -281,5 +286,5 @@ XML_API AttributeDefinition DefineAttrib
+ 				     AttributeType type, Char **allowed_values,
+ 				     DefaultType default_type, 
+-				     const Char *default_value,
++				     Char *default_value,
+ 					     int declared);
+ XML_API AttributeDefinition FindAttributeN(ElementDefinition element,
+@@ -295,10 +300,10 @@ XML_API void FreeAttributeDefinition(Att
+ 
+ XML_API NotationDefinition DefineNotationN(Dtd dtd, const Char *name, int namelen,
+-				 const char8 *publicid, const char8 *systemid,
++				 char8 *publicid, char8 *systemid,
+ 					   Entity parent);
+ XML_API NotationDefinition TentativelyDefineNotationN(Dtd dtd,
+ 					      const Char *name, int namelen);
+ XML_API NotationDefinition RedefineNotation(NotationDefinition n,
+-				  const char8 *publicid, const char8 *systemid,
++				  char8 *publicid, char8 *systemid,
+ 					    Entity parent);
+ XML_API NotationDefinition FindNotationN(Dtd dtd, const Char *name, int namelen);
+--- entityopener.c	2003-11-27 09:06:38.000000000 -0500
++++ entityopener.c	2021-02-25 15:07:41.465352000 -0500
+@@ -9,5 +9,5 @@
+ #include "dtd.h"
+ 
+-InputSource catalog_entity_open(Entity ent, void *arg)
++static InputSource catalog_entity_open(Entity ent, void *arg)
+ {
+     Catalog catalog = arg;
+--- http.c	2001-05-01 10:29:34.000000000 -0400
++++ http.c	2021-02-25 15:33:16.444375000 -0500
+@@ -139,5 +139,5 @@ FILE16 *http_open(const char *url,
+     int server_port;
+     char buf[100];
+-    int i;
++    unsigned u;
+     struct http_headers *hs;
+ 
+@@ -220,5 +220,7 @@ FILE16 *http_open(const char *url,
+     SetCloseUnderlying(f16, 1);
+     SetFileEncoding(f16, CE_unspecified_ascii_superset);
++#if defined(WIN32)
+     SetNormalizeLineEnd(f16, 0);
++#endif
+ 
+     /* Send the request */
+@@ -246,5 +248,5 @@ FILE16 *http_open(const char *url,
+     /* Read the status line */
+ 
+-    i = 0;
++    u = 0;
+     while(1)
+     {
+@@ -252,5 +254,5 @@ FILE16 *http_open(const char *url,
+ 	{
+ 	case '\n':
+-	    buf[i] = 0;
++	    buf[u] = 0;
+ 	    goto done_status;
+ 	case '\r':
+@@ -263,6 +265,6 @@ FILE16 *http_open(const char *url,
+ 	    return 0;
+ 	default:
+-	    if(i < sizeof(buf) - 1)
+-		buf[i++] = c;
++	    if(u < sizeof(buf) - 1)
++		buf[u++] = c;
+ 	}
+     }
+@@ -307,4 +309,5 @@ FILE16 *http_open(const char *url,
+     {
+ 	char *final_url;
++	int i;
+ 
+ 	for(i=0; i<VectorCount(hs->header); i++)
+@@ -370,5 +373,5 @@ static struct http_headers *read_headers
+ 	    if(VectorCount(text) == 0 || VectorLast(text) == LF)
+ 		goto done;
+-	    /* otherwise fall through */
++	    /* fall through */
+ 	default:
+ 	    if(!VectorPush(text, c))
+--- infoset-print.c	2004-11-03 12:17:06.000000000 -0500
++++ infoset-print.c	2021-02-25 15:33:58.693693000 -0500
+@@ -23,5 +23,5 @@ static void children(FILE16 *f, int leve
+ 		     HashTable id_table);
+ static void notations(FILE16 *f, int level, Dtd dtd);
+-static void unparsed_entities(FILE16 *f, int level, Dtd dtd, Entity docent);
++static void unparsed_entities(FILE16 *f, int level, Dtd dtd);
+ static void baseURI(FILE16 *f, int level, const char8 *uri);
+ static void standalone(FILE16 *f, int level, StandaloneDeclaration sd);
+@@ -33,11 +33,11 @@ static void element(FILE16 *f, int level
+ 		    HashTable id_table);
+ static void pi(FILE16 *f, int level, Dtd dtd, XBit bit);
+-static void cdsect(FILE16 *f, int level, Dtd dtd, XBit bit);
+-static void pcdata(FILE16 *f, int level, Dtd dtd, XBit bit);
+-static void comment(FILE16 *f, int level, Dtd dtd, XBit bit);
++static void cdsect(FILE16 *f, int level, XBit bit);
++static void pcdata(FILE16 *f, int level, XBit bit);
++static void comment(FILE16 *f, int level, XBit bit);
+ static void name(FILE16 *f, int level, 
+ 		 const Char *nsname, const Char *local, const Char *prefix);
+ static void document_element(FILE16 *f, int level, XBit bit);
+-static void character(FILE16 *f, int level, Dtd dtd, char *ecw, int c);
++static void character(FILE16 *f, int level, const char *ecw, int c);
+ static void attributes(FILE16 *f, int level, Dtd dtd, XBit bit, 
+ 		       HashTable id_table);
+@@ -46,5 +46,5 @@ static void attribute(FILE16 *f, int lev
+ static void namespace_attributes(FILE16 *f, int level, Dtd dtd, XBit bit,
+ 				 HashTable id_table);
+-static void inscope_namespaces(FILE16 *f, int level, Dtd dtd, XBit bit);
++static void inscope_namespaces(FILE16 *f, int level, XBit bit);
+ #if 0
+ static void internal_entity(FILE16 *f, int level, Entity entity);
+@@ -53,7 +53,7 @@ static void external_entity(FILE16 *f, i
+ static void unparsed_entity(FILE16 *f, int level, Entity entity);
+ 
+-static void simple(FILE16 *f, int level, char *name, const char *value);
+-static void Simple(FILE16 *f, int level, char *name, const Char *value);
+-static void pointer(FILE16 *f, int level, char *name, Char *id);
++static void simple(FILE16 *f, int level, const char *name, const char *value);
++static void Simple(FILE16 *f, int level, const char *name, const Char *value);
++static void pointer(FILE16 *f, int level, const char *name, Char *id);
+ static Char *make_id(const char *type, const Char *name, int count);
+ static void indent(FILE16 *f, int level);
+@@ -67,5 +67,5 @@ static void find_ids(Dtd dtd, XBit *bits
+ 		     int *counter);
+ 
+-struct xbit bogus_bit;
++static struct xbit bogus_bit;
+ 
+ static Char xmlns_ns[] = {'h','t','t','p',':','/','/','w','w','w','.','w', '3',
+@@ -93,5 +93,5 @@ void infoset_print(FILE16 *f, Parser p, 
+     notations(f, 1, dtd);
+ 
+-    unparsed_entities(f, 1, dtd, p->document_entity);
++    unparsed_entities(f, 1, dtd);
+ 
+     baseURI(f, 1, EntityBaseURL(p->document_entity));
+@@ -172,5 +172,5 @@ static void notations(FILE16 *f, int lev
+ }
+ 
+-static void unparsed_entities(FILE16 *f, int level, Dtd dtd, Entity docent)
++static void unparsed_entities(FILE16 *f, int level, Dtd dtd)
+ {
+     Entity e;
+@@ -280,5 +280,5 @@ static void version(FILE16 *f, int level
+ }
+ 
+-static void simple(FILE16 *f, int level, char *name, const char *value)
++static void simple(FILE16 *f, int level, const char *name, const char *value)
+ {
+     indent(f, level);
+@@ -294,5 +294,5 @@ static void simple(FILE16 *f, int level,
+ }
+ 
+-static void Simple(FILE16 *f, int level, char *name, const Char *value)
++static void Simple(FILE16 *f, int level, const char *name, const Char *value)
+ {
+     indent(f, level);
+@@ -308,5 +308,5 @@ static void Simple(FILE16 *f, int level,
+ }
+ 
+-static void pointer(FILE16 *f, int level, char *name, Char *id)
++static void pointer(FILE16 *f, int level, const char *name, Char *id)
+ {
+     indent(f, level);
+@@ -342,11 +342,11 @@ static void item(FILE16 *f, int level, D
+ 	    break;
+ 	case XBIT_cdsect:
+-	    cdsect(f, level, dtd, bit);
++	    cdsect(f, level, bit);
+ 	    break;
+ 	case XBIT_pcdata:
+-	    pcdata(f, level, dtd, bit);
++	    pcdata(f, level, bit);
+ 	    break;
+ 	case XBIT_comment:
+-	    comment(f, level, dtd, bit);
++	    comment(f, level, bit);
+ 	    break;
+ 	default:
+@@ -396,5 +396,5 @@ static void element(FILE16 *f, int level
+     namespace_attributes(f, level+1, dtd, bit, id_table);
+ 
+-    inscope_namespaces(f, level+1, dtd, bit);
++    inscope_namespaces(f, level + 1, bit);
+ 
+     baseURI(f, 1, EntityBaseURL(bit->entity)); /* XXX xml:base */
+@@ -433,5 +433,5 @@ static void pi(FILE16 *f, int level, Dtd
+ }
+ 
+-static void cdsect(FILE16 *f, int level, Dtd dtd, XBit bit)
++static void cdsect(FILE16 *f, int level, XBit bit)
+ {
+     Char *p;
+@@ -443,5 +443,5 @@ static void cdsect(FILE16 *f, int level,
+ 
+     for(p=bit->pcdata_chars; *p; p++)
+-	character(f, level, dtd, "false", *p);
++	character(f, level, "false", *p);
+ 
+ #if 0
+@@ -451,8 +451,8 @@ static void cdsect(FILE16 *f, int level,
+ }
+ 
+-static void pcdata(FILE16 *f, int level, Dtd dtd, XBit bit)
++static void pcdata(FILE16 *f, int level, XBit bit)
+ {
+     Char *p;
+-    char *ecw;
++    const char *ecw;
+ 
+     ecw = !bit->parent->element_definition->declared ? 0 :
+@@ -461,8 +461,8 @@ static void pcdata(FILE16 *f, int level,
+ 
+     for(p=bit->pcdata_chars; *p; p++)
+-	character(f, level, dtd, is_xml_whitespace(*p) ? ecw : "false", *p);
++	character(f, level, is_xml_whitespace(*p) ? ecw : "false", *p);
+ }
+ 
+-static void character(FILE16 *f, int level, Dtd dtd, char *ecw, int c)
++static void character(FILE16 *f, int level, const char *ecw, int c)
+ {
+     indent(f, level);
+@@ -478,5 +478,5 @@ static void character(FILE16 *f, int lev
+ }
+ 
+-static void comment(FILE16 *f, int level, Dtd dtd, XBit bit)
++static void comment(FILE16 *f, int level, XBit bit)
+ {
+     indent(f, level);
+@@ -615,4 +615,5 @@ static void attribute(FILE16 *f, int lev
+ 	free(token);
+ 	free(id);
++	/* FALLTHROUGH */
+     default:
+ 	simple(f, level+1, "references", 0);
+@@ -640,5 +641,5 @@ static void attribute(FILE16 *f, int lev
+ }
+ 
+-static void inscope_namespaces(FILE16 *f, int level, Dtd dtd, XBit bit)
++static void inscope_namespaces(FILE16 *f, int level, XBit bit)
+ {
+     NamespaceBinding nsb, nsb2;
+--- input.c	2005-01-14 11:10:00.000000000 -0500
++++ input.c	2021-02-25 15:07:41.467694000 -0500
+@@ -79,5 +79,5 @@ InputSource EntityOpen(Entity e)
+     else
+     {
+-	f16 = MakeFILE16FromString((char *)e->text, -1, "r");
++	f16 = MakeFILE16FromString(e->text, -1, "r");
+     }
+ 
+@@ -288,11 +288,5 @@ static void internal_reader(InputSource 
+     struct _FILE16 *f16 = (struct _FILE16 *)s->file16;
+ 
+-    if(!*(Char *)((char *)f16->handle + f16->handle2))
+-    {
+-	s->line_length = 0;
+-	return;
+-    }
+-
+-    s->line = (Char *)((char *)f16->handle + f16->handle2);
++    s->line = (void *)((char *)f16->handle + f16->handle2);
+     for(p=s->line; *p && *p != '\n'; p++)
+ 	;
+@@ -467,6 +461,4 @@ static int translate_latin(InputSource s
+     }
+ 
+-    MORE_BYTES;
+-
+     END_OF_LINE;
+ }
+@@ -495,6 +487,4 @@ static int translate_latin1(InputSource 
+     }
+ 
+-    MORE_BYTES;
+-
+     END_OF_LINE;
+ }
+--- namespaces.c	2003-06-02 12:56:35.000000000 -0400
++++ namespaces.c	2021-02-25 15:07:41.468014000 -0500
+@@ -25,5 +25,5 @@ static void FreeNSElementDefinition(NSEl
+ static void FreeNSAttributeDefinition(NSAttributeDefinition attribute);
+ 
+-NamespaceUniverse global_universe = 0;
++static NamespaceUniverse global_universe = 0;
+ 
+ int init_namespaces(void)
+@@ -139,5 +139,5 @@ static void FreeNSElementDefinition(NSEl
+ 
+     Free(element->attributes);
+-    Free((Char *)element->name); /* cast to get rid of const */
++    Free(element->name);
+     Free(element);
+ }
+@@ -182,5 +182,5 @@ NSAttributeDefinition
+ static void FreeNSAttributeDefinition(NSAttributeDefinition attribute)
+ {
+-    Free((Char *)attribute->name); /* cast to get rid of const */
++    Free(attribute->name);
+     Free(attribute);
+ }
+--- namespaces.h	2003-06-02 12:56:35.000000000 -0400
++++ namespaces.h	2021-02-25 15:07:41.468292000 -0500
+@@ -30,5 +30,5 @@ struct RXP_NAMESPACE {
+ 
+ struct ns_element_definition {
+-    const Char *name;
++    Char *name;
+     Namespace RXP_NAMESPACE;
+     Vector(NSAttributeDefinition, attributes);
+@@ -39,5 +39,5 @@ struct ns_attribute_definition {
+     Namespace RXP_NAMESPACE;
+     NSElementDefinition element;
+-    const Char *name;
++    Char *name;
+     int attrnum;
+ };
+--- nf16check.c	2003-09-02 10:02:45.000000000 -0400
++++ nf16check.c	2021-02-25 15:07:41.468701000 -0500
+@@ -7,4 +7,6 @@
+ 
+ #include <stdlib.h>
++#include <stdint.h>
++
+ #include "nf16check.h"
+ #include "nf16data.h"
+@@ -69,11 +71,11 @@ void nf16checkNoStart (NF16Checker check
+ static int recombines (unsigned int b, unsigned int f)
+ {
+-    int low  = 0;                     /* lowest inside non-checked area */
+-    int high = recombinerCount;       /* lowest outside    checked area */
++    unsigned low  = 0;                     /* lowest inside non-checked area */
++    unsigned high = recombinerCount;       /* lowest outside    checked area */
+     while (low < high) {
+-        int middle  = (low+high) / 2;  /* binary search */
+-        int middleB = recombiners[middle].base;
++        unsigned middle  = (low + high) / 2;  /* binary search */
++        unsigned middleB = recombiners[middle].base;
+         if (b == middleB) {
+-            int middleF = recombiners[middle].follow;
++            unsigned middleF = recombiners[middle].follow;
+             if (f == middleF)      return 1;
+             else if (f < middleF)  high = middle;
+@@ -106,5 +108,5 @@ static int getclass (unsigned int c)
+ }
+ 
+-
++#if 0 /* This function is broken and unused */
+ /* general check function, s is null-delimited */
+ nf16res nf16check (NF16Checker checker, char16* s)
+@@ -215,5 +217,5 @@ nf16res nf16check (NF16Checker checker, 
+     return NF16wrong;
+ }
+-
++#endif
+ 
+ /* variant of nf16check, s_length gives length of s */
+@@ -226,4 +228,5 @@ nf16res nf16checkL (NF16Checker checker,
+     int          lastclass   = checker->lastclass;
+     char16       c;
++    uint32_t     C;
+     flag         f;
+     int          class;
+@@ -243,18 +246,19 @@ nf16res nf16checkL (NF16Checker checker,
+           case loww:  /* low surrogate */
+             /* combine with high surrogate */
+-            c = ((checker->high-0xD800)<<10) + (c-0xDC00) + 0x10000;
++            C = ((checker->high-0xD800)<<10) + (c-0xDC00) + 0x10000;
++	    c = C;
+             /* check in pieces */
+-            if      (c < 0x10900)  goto GETFLAG; /* still in main table */
+-            else if (c < 0x1D000)  f = NoNo;
+-            else if (c < 0x1D800)  f = getflag(c-(0x1D000-0x10900));
+-            else if (c < 0x20000)  f = NoNo;
+-            else if (c < 0x2A6D7)  f = simp;
+-            else if (c < 0x2F800)  f = NoNo;
+-            else if (c < 0x2FA1D)  f = NOFC;
+-            else if (c ==0xE0001)  f = simp;
+-            else if (c < 0xE0020)  f = NoNo;
+-            else if (c < 0xE0080)  f = simp;
+-            else if (c < 0xE0100)  f = NoNo;
+-            else if (c < 0xE01F0)  f = simp;
++            if      (C < 0x10900)  goto GETFLAG; /* still in main table */
++            else if (C < 0x1D000)  f = NoNo;
++            else if (C < 0x1D800)  f = getflag(c-(0x1D000-0x10900));
++            else if (C < 0x20000)  f = NoNo;
++            else if (C < 0x2A6D7)  f = simp;
++            else if (C < 0x2F800)  f = NoNo;
++            else if (C < 0x2FA1D)  f = NOFC;
++            else if (C ==0xE0001)  f = simp;
++            else if (C < 0xE0020)  f = NoNo;
++            else if (C < 0xE0080)  f = simp;
++            else if (C < 0xE0100)  f = NoNo;
++            else if (C < 0xE01F0)  f = simp;
+             else                   f = NoNo;
+             goto NEWFLAG;   /* start again with switch */
+--- resolve.c	2003-08-28 12:13:12.000000000 -0400
++++ resolve.c	2021-02-25 15:07:41.469245000 -0500
+@@ -8,11 +8,11 @@
+ #include "string.h"
+ 
+-static char *res_ext(Catalog catalog, char *file,
++static char *res_ext(Catalog catalog, const char *file,
+ 		     const char *public, const char *system, Prefer prefer);
+-static char *res_uri(Catalog catalog, char *file, const char *uri);
++static const char *res_uri(Catalog catalog, const char *file, const char *uri);
+ static int entry_compare(const void *a, const void *b);
+ 
+ /* used internally to indicate failure */
+-static char *fail = "fail";
++static char *fail = (void *)-1;
+ 
+ char *ResolveExternalIdentifier(Catalog catalog, 
+@@ -35,16 +35,18 @@ char *ResolveExternalIdentifier(Catalog 
+ 	if(!(temp = UnwrapPublicidUrn(public)) ||
+ 	   !(public = NormalizePublic8(temp)))
+-	    return 0;
++	    return NULL;
+ 	Free(temp);
+     }
+     else
+ 	if(public && !(public = NormalizePublic8(public)))
+-	    return 0;
++	    return NULL;
+ 
+     if(IsPublicidUrn(system))
+     {
++	char *normalized_system;
++
+ 	if(!(temp = UnwrapPublicidUrn(system)) ||
+ 	   /* NB normalize as public because that's what it will end up as! */
+-	   !(system = NormalizePublic8(temp)))
++	   !(normalized_system = NormalizePublic8(temp)))
+ 	    return 0;
+ 	Free(temp);
+@@ -52,21 +54,18 @@ char *ResolveExternalIdentifier(Catalog 
+ 	if(public)
+ 	{
+-	    if(strcmp(public, system) == 0)
++	    if(strcmp(public, normalized_system) == 0)
+ 	    {
+-		Free((void *)system);
+-		system = 0;
++		Free(normalized_system);
+ 	    }
+ 	    else
+ 	    {
+ 		Fprintf(Stderr, "Unwrapped publicid-urn system id %s does not match public id %s, discarding\n",
+-			system, public);
+-		Free((void *)system);
+-		system = 0;
++			normalized_system, public);
++		Free(normalized_system);
+ 	    }
+ 	}
+ 	else
+ 	{
+-	    public = system;
+-	    system = 0;
++	    public = normalized_system;
+ 	}
+     }
+@@ -96,10 +95,10 @@ char *ResolveExternalIdentifier(Catalog 
+ }
+ 
+-static char *res_ext(Catalog catalog, char *file,
++static char *res_ext(Catalog catalog, const char *file,
+ 		     const char *public, const char *system, Prefer prefer)
+ {
+     int i;
+     int len, best_length, prefix_length, nmatches;
+-    char *best_value = 0, *result = 0; /* init to please gcc */
++    char *best_value = NULL, *result = NULL; /* init to please gcc */
+     CatalogEntryFile cef;
+     CatalogEntry entry;
+@@ -114,5 +113,5 @@ static char *res_ext(Catalog catalog, ch
+ 
+     if(!(cef = GetCatalogEntryFile(catalog, file)))
+-	return fail;
++	return (char *)fail;
+ 
+     if(!system)
+@@ -157,13 +156,14 @@ static char *res_ext(Catalog catalog, ch
+     if(best_length > 0)
+     {
++	char *buf;
+ 	prefix_length = strlen(best_value);
+-	if(!(result = Malloc(prefix_length + strlen(system+best_length) + 1)))
++	if(!(buf = Malloc(prefix_length + strlen(system+best_length) + 1)))
+ 	    return fail;
+-	strcpy(result, best_value);
+-	strcpy(result+prefix_length, system+best_length);
++	strcpy(buf, best_value);
++	strcpy(buf+prefix_length, system+best_length);
+ 	if(catalog_debug)
+ 	    fprintf(stderr, "best match %s (%d), returning %s\n",
+-		    best_value, prefix_length, result);
+-	return result;
++		    best_value, prefix_length, buf);
++	return buf; /* XXX anything ever frees this? */
+     }
+ 
+@@ -299,5 +299,5 @@ static char *res_ext(Catalog catalog, ch
+ }
+ 
+-char *ResolveURI(Catalog catalog, const char *uri)
++const char *ResolveURI(Catalog catalog, const char *uri)
+ {
+     int i, is_publicid_urn;
+@@ -327,5 +327,5 @@ char *ResolveURI(Catalog catalog, const 
+     for(i=0; i<VectorCount(catalog->path); i++)
+     {
+-	char *result;
++	const char *result;
+ 
+ 	if(is_publicid_urn)
+@@ -333,7 +333,7 @@ char *ResolveURI(Catalog catalog, const 
+ 	else
+ 	    result = res_uri(catalog, catalog->path[i], uri);
+-	if(result == fail)
+-	    return 0;
+-	if(result)
++	if (result == fail)
++	    return NULL;
++	if (result)
+ 	    return result;
+     }
+@@ -342,9 +342,10 @@ char *ResolveURI(Catalog catalog, const 
+ }
+ 
+-static char *res_uri(Catalog catalog, char *file, const char *uri)
++static const char *res_uri(Catalog catalog, const char *file, const char *uri)
+ {
+     int i;
+     int len, best_length, prefix_length, nmatches;
+-    char *best_value = 0, *result = 0; /* init to please gcc */
++    char *best_value = NULL;
++    const char *result = NULL; /* init to please gcc */
+     CatalogEntryFile cef;
+     CatalogEntry entry;
+@@ -395,13 +396,14 @@ static char *res_uri(Catalog catalog, ch
+     if(best_length > 0)
+     {
++	char *buf;
+ 	prefix_length = strlen(best_value);
+-	if(!(result = Malloc(prefix_length + strlen(uri+best_length) + 1)))
++	if(!(buf = Malloc(prefix_length + strlen(uri+best_length) + 1)))
+ 	    return fail;
+-	strcpy(result, best_value);
+-	strcpy(result+prefix_length, uri+best_length);
++	strcpy(buf, best_value);
++	strcpy(buf + prefix_length, uri + best_length);
+ 	if(catalog_debug)
+ 	    fprintf(stderr, "best match %s (%d), returning %s\n",
+-		    best_value, prefix_length, result);
+-	return result;
++		    best_value, prefix_length, buf);
++	return buf; /* XXX Is this ever freed? */
+     }
+ 
+@@ -468,5 +470,5 @@ static int entry_compare(const void *a, 
+ {
+     /* longest first, i.e. long < short */
+-    return strlen((*(CatalogEntry *)b)->match) - 
+-	   strlen((*(CatalogEntry *)a)->match);
++    return strlen((*(const CatalogEntry *)b)->match) - 
++	   strlen((*(const CatalogEntry *)a)->match);
+ }
+--- rxp.c	2005-01-14 11:57:49.000000000 -0500
++++ rxp.c	2021-02-25 15:07:41.469916000 -0500
+@@ -32,40 +32,39 @@
+ #include "catalog.h"
+ 
+-int attr_compare(const void *a, const void *b);
+-void print_tree(Parser p, XBit bit);
+-void print_bit(Parser p, XBit bit);
+-void print_ns_attrs(NamespaceBinding ns, int count);
+-void print_namespaces(NamespaceBinding ns);
+-void print_attrs(ElementDefinition e, Attribute a);
+-void print_text(Char *text);
+-int printable(int c);
+-void print_special(int c);
+-void print_text_bit(Char *text);
+-void dtd_cb(XBit bit, void *arg);
+-void dtd_cb2(XBit bit, void *arg);
+-void print_canonical_dtd(Parser p, const Char *name);
+-InputSource entity_open(Entity ent, void *arg);
++static int attr_compare(const void *a, const void *b);
++static void print_tree(Parser p, XBit bit);
++static void print_bit(Parser p, XBit bit);
++static void print_ns_attrs(NamespaceBinding ns, int count);
++static void print_namespaces(NamespaceBinding ns);
++static void print_attrs(Attribute a);
++static void print_text(const Char *text);
++static int printable(int c);
++static void print_special(int c);
++static void print_text_bit(Char *text);
++static void dtd_cb(XBit bit, void *arg);
++static void dtd_cb2(XBit bit, void *arg);
++static void print_canonical_dtd(Parser p, const Char *name);
+ static const char8 *minimal_uri(const char8 *uri, const char8 *base);
+ 
+-int verbose = 0, expand = 1, nsgml = 0,
++static int verbose = 0, expand = 1, nsgml = 0,
+     attr_defaults = 0, merge = 0, strict_xml = 0, tree = 0, validate = 0,
+     xml_space = 0, namespaces = 0, simple_error = 0, experiment = 0,
+     read_dtd = 0, unicode_check = 0, xml_id = 0;
+-enum {o_unspec, o_none, o_bits, o_plain, o_can1, o_can2, o_can3, o_infoset, o_diff} output_format = o_unspec;
+-char *enc_name = 0, *base_uri = 0, *my_dtd_name, *my_dtd_sysid = 0;
+-CharacterEncoding encoding = CE_unknown;
+-InputSource source = 0;
+-int need_canonical_dtd = 0;
+-int xml_version;
++static enum {o_unspec, o_none, o_bits, o_plain, o_can1, o_can2, o_can3, o_infoset, o_diff} output_format = o_unspec;
++static char *enc_name = NULL, *base_uri = NULL, *my_dtd_name, *my_dtd_sysid = NULL;
++static CharacterEncoding encoding = CE_unknown;
++static InputSource source = NULL;
++static int need_canonical_dtd = 0;
++static int xml_version;
+ 
+ #ifdef TIME_LIMIT
+-void time_exceeded(int sig);
+-int time_limit = 0;
++static void time_exceeded(int sig);
++static int time_limit = 0;
+ #endif
+ 
+ #define canonical_output (output_format >= o_can1)
+ 
+-Vector(XBit, bits);
+-Vector(XBit, dtd_bits);
++StaticVector(XBit, bits);
++StaticVector(XBit, dtd_bits);
+ 
+ int main(int argc, char **argv)
+@@ -565,5 +564,5 @@ void print_bit(Parser p, XBit bit)
+ {
+     const char *sys, *pub;
+-    char *ws[] = {"u", "d", "p"};
++    const char *ws[] = {"u", "d", "p"};
+ 
+     if(output_format == o_none && bit->type != XBIT_error)
+@@ -601,5 +600,5 @@ void print_bit(Parser p, XBit bit)
+ 	    if(xml_space)
+ 		Printf("(ws=%s) ", ws[bit->wsm]);
+-	    print_attrs(0, bit->attributes);
++	    print_attrs(bit->attributes);
+ 	    print_namespaces(bit->ns_dict);
+ 	    Printf("\n");
+@@ -614,5 +613,5 @@ void print_bit(Parser p, XBit bit)
+ 	    if(xml_space)
+ 		Printf("(ws=%s) ", ws[bit->wsm]);
+-	    print_attrs(0, bit->attributes);
++	    print_attrs(bit->attributes);
+ 	    print_namespaces(bit->ns_dict);
+ 	    Printf("\n");
+@@ -685,5 +684,5 @@ void print_bit(Parser p, XBit bit)
+ 		print_canonical_dtd(p, bit->element_definition->name);
+ 	    Printf("<%S", bit->element_definition->name);
+-	    print_attrs(bit->element_definition, bit->attributes);
++	    print_attrs(bit->attributes);
+ 	    print_ns_attrs(bit->ns_dict, bit->nsc);
+ 	    if(bit->type == XBIT_start)
+@@ -732,9 +731,9 @@ void print_bit(Parser p, XBit bit)
+ int attr_compare(const void *a, const void *b)
+ {
+-    return Strcmp((*(Attribute *)a)->definition->name,
+-		  (*(Attribute *)b)->definition->name);
++    return Strcmp((*(const Attribute *)a)->definition->name,
++		  (*(const Attribute *)b)->definition->name);
+ }
+ 
+-void print_attrs(ElementDefinition e, Attribute a)
++void print_attrs(Attribute a)
+ {
+     Attribute b;
+@@ -789,5 +788,5 @@ void dtd_cb(XBit bit, void *arg)
+ }
+ 	
+-void dtd_cb2(XBit bit, void *arg)
++void dtd_cb2(XBit bit, void *arg __unused)
+ {
+     XBit copy;
+@@ -802,7 +801,7 @@ void dtd_cb2(XBit bit, void *arg)
+ }
+ 	
+-void print_text(Char *text)
++void print_text(const Char *text)
+ {
+-    Char *pc, *last;
++    const Char *pc, *last;
+     
+     if(output_format == o_bits  || !expand)
+@@ -901,25 +900,4 @@ void print_special(int c)
+ }
+ 
+-InputSource entity_open(Entity ent, void *arg)
+-{
+-    if(ent->publicid && 
+-       strcmp(ent->publicid, "-//RMT//DTD just a test//EN") == 0)
+-    {
+-	FILE *f;
+-	FILE16 *f16;
+-
+-	if((f = fopen("/tmp/mydtd", "r")))
+-	{
+-	    if(!(f16 = MakeFILE16FromFILE(f, "r")))
+-		return 0;
+-	    SetCloseUnderlying(f16, 1);
+-
+-	    return NewInputSource(ent, f16);
+-	}
+-    }
+-
+-    return EntityOpen(ent);
+-}
+-
+ void print_ns_attrs(NamespaceBinding ns, int count)
+ {
+@@ -969,13 +947,13 @@ void print_namespaces(NamespaceBinding n
+ }
+ 
+-int notation_compare(const void *a, const void *b)
++static int notation_compare(const void *a, const void *b)
+ {
+-    return Strcmp((*(NotationDefinition *)a)->name,
+-		  (*(NotationDefinition *)b)->name);
++    return Strcmp((*(const NotationDefinition *)a)->name,
++		  (*(const NotationDefinition *)b)->name);
+ }
+ 
+-int entity_compare(const void *a, const void *b)
++static int entity_compare(const void *a, const void *b)
+ {
+-    return Strcmp((*(Entity *)a)->name, (*(Entity *)b)->name);
++    return Strcmp((*(const Entity *)a)->name, (*(const Entity *)b)->name);
+ }
+ 
+@@ -1099,5 +1077,5 @@ static const char8 *minimal_uri(const ch
+ 
+ #ifdef TIME_LIMIT
+-void time_exceeded(int sig)
++void time_exceeded(int sig __unused)
+ {
+     fprintf(stderr, "CPU time limit (%d seconds) exceeded, sorry\n", 
+--- rxputil.h	2003-11-27 09:06:57.000000000 -0500
++++ rxputil.h	2021-02-25 15:07:41.470232000 -0500
+@@ -6,4 +6,8 @@
+     type *name
+ 
++#define StaticVector(type, name) \
++    static int name##_count, name##_alloc; \
++    static type *name
++
+ #define VectorInit(v) \
+     ((v##_count) = (v##_alloc) = 0, (v) = 0)
+--- stdio16.c	2005-01-14 11:10:54.000000000 -0500
++++ stdio16.c	2021-02-25 15:32:25.156652000 -0500
+@@ -15,4 +15,5 @@
+ #include <string.h>
+ #include <stdarg.h>
++#include <err.h>
+ 
+ #ifdef FOR_LT
+@@ -63,5 +64,8 @@ typedef int CloseProc(FILE16 *file);
+ 
+ struct _FILE16 {
+-    void *handle;
++    union {
++	void *handle;
++	const void *chandle;
++    };
+     int handle2, handle3;
+     ReadProc *read;
+@@ -222,5 +226,5 @@ static int ConvertASCII(const char8 *buf
+ 	}
+ 	else
+-	    return Writeu(file, (unsigned char *)buf, count);
++	    return Writeu(file, (const unsigned char *)buf, count);
+ 
+     case CE_UTF_8:
+@@ -418,5 +422,5 @@ int Readu(FILE16 *file, unsigned char *b
+ #endif
+ 
+-int Writeu(FILE16 *file, unsigned char *buf, int count)
++int Writeu(FILE16 *file, const unsigned char *buf, int count)
+ {
+     int ret;
+@@ -548,13 +552,13 @@ CharacterEncoding GetFileEncoding(FILE16
+ }
+ 
++#if defined(WIN32)
+ void SetNormalizeLineEnd(FILE16 *file, int nle)
+ {
+-#if defined(WIN32)
+     if(nle)
+ 	file->flags |= FILE16_crlf;
+     else
+ 	file->flags &= ~FILE16_crlf;
+-#endif
+ }
++#endif
+ 
+ int Fprintf(FILE16 *file, const char *format, ...)
+@@ -596,5 +600,6 @@ int Vsprintf(void *buf, CharacterEncodin
+ {
+     int nchars;
+-    FILE16 file = {0, 0, -1, 0, StringWrite, 0, StringFlush, StringClose, FILE16_write};
++    FILE16 file = {.handle3 = -1, .write = StringWrite, .flush = StringFlush,
++        .close = StringClose, .flags = FILE16_write};
+ 
+     file.handle = buf;
+@@ -611,5 +616,6 @@ int Vsnprintf(void *buf, size_t size, Ch
+ {
+     int nchars;
+-    FILE16 file = {0, 0, -1, 0, StringWriteTrunc, 0, StringFlush, StringClose, FILE16_write};
++    FILE16 file = {.handle3 = -1, .write = StringWriteTrunc,
++        .flush = StringFlush, .close = StringClose, .flags = FILE16_write};
+ 
+     file.handle = buf;
+@@ -639,5 +645,5 @@ int Vfprintf(FILE16 *file, const char *f
+     char16 cbuf[1];
+ #endif
+-    int mflag, pflag, sflag, hflag, zflag;
++    int mflag;
+     int l, h, L, ll;
+     int nchars = 0;
+@@ -654,5 +660,5 @@ int Vfprintf(FILE16 *file, const char *f
+ 	width = 0;
+ 	prec = -1;
+-	mflag=0, pflag=0, sflag=0, hflag=0, zflag=0;
++	mflag=0;
+ 	l=0, h=0, L=0, ll=0;
+ 
+@@ -664,16 +670,4 @@ int Vfprintf(FILE16 *file, const char *f
+ 		mflag = 1;
+ 		break;
+-	    case '+':
+-		pflag = 1;
+-		break;
+-	    case ' ':
+-		sflag = 1;
+-		break;
+-	    case '#':
+-		hflag = 1;
+-		break;
+-	    case '0':
+-		zflag = 1;
+-		break;
+ 	    default:
+ 		goto flags_done;
+@@ -738,5 +732,5 @@ int Vfprintf(FILE16 *file, const char *f
+ 	}
+ 
+-	if(format - start + 1 > sizeof(fmt))
++	if (format - start + 1 > (int)sizeof(fmt))
+ 	{
+ 	  ERR("Printf: format specifier too long");
+@@ -956,5 +950,5 @@ static int FDClose(FILE16 *file)
+ }
+ 
+-static int FDFlush(FILE16 *file)
++static int FDFlush(FILE16 *file __unused)
+ {
+     return 0;
+@@ -1067,5 +1061,5 @@ static int FileFlush(FILE16 *file)
+ }
+ 
+-FILE16 *MakeFILE16FromString(void *buf, long size, const char *type)
++FILE16 *MakeFILE16FromString(const void *buf, long size, const char *type)
+ {
+     FILE16 *file;
+@@ -1080,5 +1074,5 @@ FILE16 *MakeFILE16FromString(void *buf, 
+     file->flush = StringFlush;
+ 
+-    file->handle = buf;
++    file->chandle = buf;
+     file->handle2 = 0;
+     file->handle3 = size;
+@@ -1170,5 +1164,5 @@ static int StringClose(FILE16 *file)
+ }
+ 
+-static int StringFlush(FILE16 *file)
++static int StringFlush(FILE16 *file __unused)
+ {
+     return 0;
+@@ -1268,6 +1262,8 @@ static int GzipRead(FILE16 *file, unsign
+ 
+     errorString = gzerror(f, &gzerr);
+-    if(gzerr != 0 && gzerr != Z_STREAM_END)
++    if (gzerr != 0 && gzerr != Z_STREAM_END) {
++	warnx("%s: %s", __func__, errorString);
+ 	return -1;
++    }
+     
+     return count;
+@@ -1280,14 +1276,16 @@ static int GzipWrite(FILE16 *file, const
+     const char *errorString;
+ 
+-    count = gzwrite(f, (char *)buf, count);
++    count = gzwrite(f, buf, count);
+ 
+     errorString = gzerror(f, &gzerr);
+-    if(gzerr != 0 && gzerr != Z_STREAM_END)
++    if (gzerr != 0 && gzerr != Z_STREAM_END) {
++	warnx("%s: %s", __func__, errorString);
+ 	return -1;
++    }
+     
+     return count;
+ }
+ 
+-static int GzipSeek(FILE16 *file, long offset, int ptrname)
++static int GzipSeek(FILE16 *file __unused, long offset __unused, int ptrname __unused)
+ {
+     return -1;
+@@ -1301,5 +1299,5 @@ static int GzipClose(FILE16 *file)
+ }
+ 
+-static int GzipFlush(FILE16 *file)
++static int GzipFlush(FILE16 *file __unused)
+ {
+     return 0;
+--- stdio16.h	2002-10-03 10:37:44.000000000 -0400
++++ stdio16.h	2021-02-25 15:28:59.692044000 -0500
+@@ -5,5 +5,5 @@
+ #include <stdio.h>
+ #ifdef HAVE_LIBZ
+-#include "zlib.h"
++#include <zlib.h>
+ #endif
+ #include "charset.h"
+@@ -15,5 +15,5 @@ extern STD_API FILE16 *Stdin, *Stdout, *
+ STD_API FILE16 *MakeFILE16FromFILE(FILE *f, const char *type);
+ STD_API FILE16 *MakeFILE16FromFD(int fd, const char *type);
+-STD_API FILE16 *MakeFILE16FromString(void *buf, long size, const char *type);
++STD_API FILE16 *MakeFILE16FromString(const void *buf, long size, const char *type);
+ #ifdef WIN32
+ #ifdef SOCKETS_IMPLEMENTED
+@@ -26,5 +26,5 @@ STD_API FILE16 *MakeFILE16FromGzip(gzFil
+ 
+ STD_API int Readu(FILE16 *file, unsigned char *buf, int max_count);
+-STD_API int Writeu(FILE16 *file, unsigned char *buf, int count);
++STD_API int Writeu(FILE16 *file, const unsigned char *buf, int count);
+ STD_API int Fclose(FILE16 *file);
+ STD_API int Fflush(FILE16 *file);
+@@ -38,5 +38,7 @@ STD_API void SetCloseUnderlying(FILE16 *
+ STD_API void SetFileEncoding(FILE16 *file, CharacterEncoding encoding);
+ STD_API CharacterEncoding GetFileEncoding(FILE16 *file);
++#if defined(WIN32)
+ STD_API void SetNormalizeLineEnd(FILE16 *file, int nle);
++#endif
+ 
+ STD_API int Fprintf(FILE16 *file, const char *format, ...);
+--- string16.c	2004-10-11 12:18:29.000000000 -0400
++++ string16.c	2021-02-25 15:07:41.471817000 -0500
+@@ -171,9 +171,9 @@ size_t strlen16(const char16 *s)
+ }
+ 
+-char16 *strchr16(const char16 *s, int c)
++const char16 *strchr16(const char16 *s, int c)
+ {
+     for( ; *s; s++)
+ 	if(*s == c)
+-	    return (char16 *)s;	/* Is const bogus or what? */
++	    return s;
+ 
+     return 0;
+@@ -311,5 +311,5 @@ char16 *strncat16(char16 *s1, const char
+ /* A very naive implementation */
+ 
+-char16 *strstr16(const char16 *s1, const char16 *s2)
++const char16 *strstr16(const char16 *s1, const char16 *s2)
+ {
+     int len, first;
+@@ -317,5 +317,5 @@ char16 *strstr16(const char16 *s1, const
+     first = s2[0];
+     if(first == 0)
+-	return (char16 *)s1;
++	return s1;
+ 
+     len = strlen16(s2);
+@@ -324,5 +324,5 @@ char16 *strstr16(const char16 *s1, const
+     {
+ 	if(strncmp16(s1, s2, len) == 0)
+-	    return (char16 *)s1;
++	    return s1;
+ 	else
+ 	    s1++;
+@@ -331,3 +331,2 @@ char16 *strstr16(const char16 *s1, const
+     return 0;
+ }
+-
+--- string16.h	1999-05-28 08:08:38.000000000 -0400
++++ string16.h	2021-02-25 15:07:41.472166000 -0500
+@@ -23,5 +23,5 @@ STD_API int strncasecmp8(const char8 *, 
+ 
+ STD_API char16 *strdup16(const char16 *s);
+-STD_API char16 *strchr16(const char16 *, int);
++STD_API const char16 *strchr16(const char16 *, int);
+ STD_API size_t strlen16(const char16 *);
+ STD_API int strcmp16(const char16 *, const char16 *);
+@@ -33,5 +33,5 @@ STD_API char16 *strncat16(char16 *, cons
+ STD_API int strcasecmp16(const char16 *, const char16 *);
+ STD_API int strncasecmp16(const char16 *, const char16 *, size_t);
+-STD_API char16 *strstr16(const char16 *, const char16 *);
++STD_API const char16 *strstr16(const char16 *, const char16 *);
+ 
+ STD_API void translate_latin1_utf16(const char8 *from, char16 *to);
+--- system.h	2003-05-19 20:17:27.000000000 -0400
++++ system.h	2021-02-25 15:10:55.417342000 -0500
+@@ -1,3 +1,6 @@
++#ifndef _RXP_SYSTEM_H
++#define _RXP_SYSTEM_H
+ #define HAVE_LONG_LONG
++#define HAVE_LONG_DOUBLE
+ 
+ #define SOCKETS_IMPLEMENTED
+@@ -11,2 +14,4 @@ void *Malloc(int bytes);
+ void *Realloc(void *mem, int bytes);
+ void Free(void *mem);
++
++#endif
+--- url.c	2004-06-11 07:39:17.000000000 -0400
++++ url.c	2021-02-25 15:07:41.472694000 -0500
+@@ -80,10 +80,10 @@ static int hexval(int hex);
+ /* Mapping of scheme names to opening functions */
+ 
+-struct {
+-    char *scheme; 
++static struct {
++    const char *scheme; 
+     FILE16 *(*open)(const char *, const char *, int, const char *, const char *, char **);
+ } schemes[] = {
+-    {(char *)"http", http_open},
+-    {(char *)"file", file_open},
++    {"http", http_open},
++    {"file", file_open},
+ };
+ #define NSCHEME (sizeof(schemes) / sizeof(schemes[0]))
+@@ -372,5 +372,6 @@ FILE16 *url_open(const char *url, const 
+ {
+     char *scheme, *host, *path, *m_url, *r_url;
+-    int port, i;
++    int port;
++    unsigned i;
+     FILE16 *f;
+ #ifdef HAVE_LIBZ
+@@ -464,5 +465,6 @@ FILE16 *url_open(const char *url, const 
+ 
+ static FILE16 *file_open(const char *url,
+-			 const char *host, int port, const char *path, 
++			 const char *host __unused,
++			 int port __unused, const char *path, 
+ 			 const char *type, char **redirected_url)
+ {
+@@ -554,5 +556,6 @@ static void parse_url(const char *url, 
+ 		      char **scheme, char **host, int *port, char **path)
+ {
+-    char *p, *q;
++    const char *p, *q;
++    char *r;
+     int warned = 0;
+ 
+@@ -562,5 +565,5 @@ static void parse_url(const char *url, 
+     /* Does it start with a scheme? */
+     
+-    for(p = (char *)url; *p; p++)
++    for(p = url; *p; p++)
+ 	if(*p == ':' || *p == '/')
+ 	    break;
+@@ -580,5 +583,5 @@ static void parse_url(const char *url, 
+ 	url += 2;
+ 
+-	for(p = (char *)url; *p; p++)
++	for(p = url; *p; p++)
+ 	    if(*p == '/')
+ 		break;
+@@ -610,6 +613,6 @@ static void parse_url(const char *url, 
+     /* Windoze users have a tendency to use backslashes instead of slashes */
+ 
+-    for(p=*path; *p; p++)
+-	if(*p == '\\')
++    for(r = *path; *r; r++)
++	if(*r == '\\')
+ 	{
+ 	    if(!warned)
+@@ -620,5 +623,5 @@ static void parse_url(const char *url, 
+ 	    }
+ 
+-	    *p = '/';
++	    *r = '/';
+ 	}
+ }
+--- version.c	2005-01-14 12:09:25.000000000 -0500
++++ version.c	2021-02-25 15:07:41.472934000 -0500
+@@ -1,2 +1,4 @@
+-char *rxp_version_string = 
++#include "version.h"
++
++const char *rxp_version_string = 
+     "RXP 1.4.4 Copyright Richard Tobin, LTG, HCRC, University of Edinburgh";
+--- version.h	1999-02-17 09:43:19.000000000 -0500
++++ version.h	2021-02-25 15:07:41.473163000 -0500
+@@ -1 +1 @@
+-extern char *rxp_version_string;
++extern const char *rxp_version_string;
+--- xmlparser.c	2004-11-03 08:47:31.000000000 -0500
++++ xmlparser.c	2021-02-25 15:22:16.748707000 -0500
+@@ -4,7 +4,7 @@
+ #define DEBUG_FSM 0
+ 
+-#ifndef lint
+-static char vcid[] = "$Id: xmlparser.c,v 1.131 2004/11/03 13:47:31 richard Exp $";
+-#endif /* lint */
++#include <sys/cdefs.h>
++
++__RCSID("$Id: xmlparser.c,v 1.131 2004/11/03 13:47:31 richard Exp $");
+ 
+ /* 
+@@ -140,6 +140,6 @@ enum literal_type {
+ };
+ static int parse_string(Parser p, const char8 *where, enum literal_type type, int *normalised);
+-static int parse_pi(Parser p, Entity ent);
+-static int parse_comment(Parser p, int skip, Entity ent);
++static int parse_pi(Parser p);
++static int parse_comment(Parser p, int skip);
+ static int parse_pcdata(Parser p);
+ static int parse_starttag(Parser p);
+@@ -148,5 +148,5 @@ static int process_namespace(Parser p,
+ 			     AttributeDefinition d, const Char *value);
+ static int parse_attribute(Parser p);
+-static WhiteSpaceMode process_xml_space(Parser p, const Char *value);
++static WhiteSpaceMode process_xml_space(const Char *value);
+ static int parse_endtag(Parser p);
+ static int parse_markup(Parser p);
+@@ -157,5 +157,7 @@ static int validate_final(Parser p);
+ static HashMapRetType check_id(const HashEntryStruct *id_entry, void *p);
+ static int validate_attribute(Parser p, AttributeDefinition a, ElementDefinition e, const Char *value);
++#if 0
+ static int validate_xml_lang_attribute(Parser p, ElementDefinition e, const Char *value);
++#endif
+ static int check_attribute_syntax(Parser p, AttributeDefinition a, ElementDefinition e, const Char *value, const char *message, int real_use);
+ static int check_attribute_token(Parser p, AttributeDefinition a, ElementDefinition e, const Char *value, int length, const char *message, int real_use);
+@@ -165,5 +167,5 @@ static int magically_transform_dtd(Parse
+ 
+ static struct element_definition pcdata_element;
+-const ElementDefinition Epsilon = 0, PCDataElement = &pcdata_element;
++static const ElementDefinition Epsilon = 0, PCDataElement = &pcdata_element;
+ 
+ static FSM NewFSM(void);
+@@ -1203,8 +1205,8 @@ static int parse_markup(Parser p)
+ 	{
+ 	    if(ParserGetFlag(p, ReturnComments))
+-		return parse_comment(p, 0, 0);
++		return parse_comment(p, 0);
+ 	    else
+ 	    {
+-		require(parse_comment(p, 1, 0));
++		require(parse_comment(p, 1));
+ 		/* XXX avoid recursion here */
+ 		return parse(p);
+@@ -1224,5 +1226,5 @@ static int parse_markup(Parser p)
+ 
+     case '?':
+-	return parse_pi(p, 0);
++	return parse_pi(p);
+ 
+     case BADCHAR:
+@@ -1322,5 +1324,5 @@ static int parse_endtag(Parser p)
+ static int check_qualname_syntax(Parser p, const Char *name, const char *type)
+ {
+-    Char *t;
++    const Char *t;
+ 
+     t = Strchr(name, ':'); 
+@@ -1354,5 +1356,8 @@ static int check_qualname_syntax(Parser 
+ static int parse_starttag(Parser p)
+ {
+-    int c, is_top_level = 0;
++    int c;
++#if not_yet
++    is_top_level = 0;
++#endif
+     ElementDefinition e;
+     AttributeDefinition d;
+@@ -1370,5 +1375,7 @@ static int parse_starttag(Parser p)
+ 	    require(validate_dtd(p));
+ 	}
++#if not_yet
+ 	is_top_level = 1;
++#endif
+     }
+ 
+@@ -1541,7 +1548,4 @@ static int parse_starttag(Parser p)
+ 	/* check for required attributes */
+ 
+-	AttributeDefinition d;
+-	Attribute a;
+-
+ 	for(d=NextAttributeDefinition(e, 0);
+ 	    d;
+@@ -1658,5 +1662,5 @@ static int parse_starttag(Parser p)
+ 		if(a->definition == d)
+ 		{
+-		    p->xbit.wsm = process_xml_space(p, a->value);
++		    p->xbit.wsm = process_xml_space(a->value);
+ 		    goto done;
+ 		}
+@@ -1664,5 +1668,5 @@ static int parse_starttag(Parser p)
+ 	    if(d->default_type == DT_none || d->default_type == DT_fixed)
+ 	    {
+-		p->xbit.wsm = process_xml_space(p, d->default_value);
++		p->xbit.wsm = process_xml_space(d->default_value);
+ 		goto done;
+ 	    }
+@@ -2086,9 +2090,8 @@ static int parse_attribute(Parser p)
+ }
+ 
+-static WhiteSpaceMode process_xml_space(Parser p, const Char *value)
++static WhiteSpaceMode process_xml_space(const Char *value)
+ {
+     static Char _preserve[9] = {'p','r','e','s','e','r','v','e',0};
+     static Char _default[8] = {'d','e','f','a','u','l','t',0};
+-    Char buf[9];
+     const Char *v;
+     int i;
+@@ -2102,7 +2105,5 @@ static WhiteSpaceMode process_xml_space(
+ 	if(!v[i] || is_xml_whitespace(v[i]))
+ 	    break;
+-	buf[i] = v[i];
+     }
+-    buf[i] = '\0';
+     for(; v[i]; i++)
+ 	if(!is_xml_whitespace(v[i]))
+@@ -2204,5 +2205,5 @@ static int parse_pcdata(Parser p)
+ 	    {
+ 		s->next = next + 3;
+-		require(parse_comment(p, 1, 0));
++		require(parse_comment(p, 1));
+                 NF16StartCheck(p);
+ 		buflen = s->line_length;
+@@ -2348,5 +2349,5 @@ static int parse_pcdata(Parser p)
+ /* Called after reading '<!--'.  Won't go over an entity end. */
+ 
+-static int parse_comment(Parser p, int skip, Entity ent)
++static int parse_comment(Parser p, int skip)
+ {
+     InputSource s = p->source;
+@@ -2417,5 +2418,5 @@ static int parse_comment(Parser p, int s
+ }
+ 
+-static int parse_pi(Parser p, Entity ent)
++static int parse_pi(Parser p)
+ {
+     InputSource s = p->source;
+@@ -2998,5 +2999,5 @@ static int process_xml_decl(Parser p)
+     char8 *value;
+     CharacterEncoding enc = CE_unknown;
+-    Char c;
++    int c;
+ 
+     /* 
+@@ -3322,5 +3323,5 @@ static int parse_markupdecl(Parser p)
+ 	else if(looking_at(p, "?"))
+ 	{
+-	    require(parse_pi(p, cur_ent));
++	    require(parse_pi(p));
+ 	    if(p->dtd_callback)
+ 		p->dtd_callback(&p->xbit, p->dtd_callback_arg);
+@@ -3333,5 +3334,5 @@ static int parse_markupdecl(Parser p)
+ 	    if(ParserGetFlag(p, ReturnComments))
+ 	    {
+-		require(parse_comment(p, 0, cur_ent));
++		require(parse_comment(p, 0));
+ 		if(p->dtd_callback)
+ 		    p->dtd_callback(&p->xbit, p->dtd_callback_arg);
+@@ -3341,5 +3342,5 @@ static int parse_markupdecl(Parser p)
+ 	    }
+ 	    else
+-		return parse_comment(p, 1, cur_ent);
++		return parse_comment(p, 1);
+ 	}
+ 	else if(p->state == PS_error)	/* looking_at may have set it */
+@@ -4881,5 +4882,5 @@ static HashMapRetType check_id(const Has
+     Parser p = (Parser)pp;
+ 
+-    if(!(int)hash_get_value(id_entry))
++    if (hash_get_value(id_entry) != NULL)
+ 	validity_error(p,
+ 		       "The ID %.*S was referred to but never defined",
+@@ -5351,17 +5352,19 @@ static int validate_attribute(Parser p, 
+ 	}
+ 
++#if 0
+     if(a == e->xml_lang_attribute)
+     {
+ 	require(validate_xml_lang_attribute(p, e, value));
+     }
++#endif
+ 
+     return 0;
+ }
+ 
++#if 0
+ static int validate_xml_lang_attribute(Parser p, ElementDefinition e, const Char *value)
+ {
+     /* 1.1 will allow empty xml:lang values (and maybe 1.0 will be amended
+        to), and it no longer seems worth checking anything here. */
+-#if 0
+     const Char *t;
+ 
+@@ -5404,7 +5407,7 @@ static int validate_xml_lang_attribute(P
+     /* Not a validity error since erratum 73 */
+     warn(p, "Dubious xml:lang attribute for element %S", e->name);
+-#endif
+     return 0;
+ }
++#endif
+ 
+ /* Check an attribute matches Name[s] or Nmtoken[s].
+@@ -5518,5 +5521,5 @@ static int check_attribute_token(Parser 
+ 	if(!found)
+ 	{
+-	    hash_set_value(id_entry, (void *)(a->type == AT_id));
++	    hash_set_value(id_entry, (void *)(intptr_t)(a->type == AT_id));
+ 	    if(ParserGetFlag(p, XMLNamespaces))
+ 		for(i=0; i<length; i++)
+@@ -5528,5 +5531,5 @@ static int check_attribute_token(Parser 
+ 	else if(a->type == AT_id)
+ 	{
+-	    int idinfo = (int)hash_get_value(id_entry);
++	    intptr_t idinfo = (intptr_t)hash_get_value(id_entry);
+ 	    if(idinfo & 1)
+ 	    {

@@ -1,5 +1,7 @@
 bin/rxp
 lib/librxp.a
+lib/librxp.so
+lib/librxp.so.1
 include/rxp/charset.h
 include/rxp/ctype16.h
 include/rxp/dtd.h

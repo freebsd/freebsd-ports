@@ -3,21 +3,31 @@
 
 PORTNAME=	rxp
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/richard/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Validating XML parser written in C
 
-RXP_HEADERS=	charset.h ctype16.h dtd.h hash.h input.h namespaces.h \
-		rxputil.h stdio16.h string16.h system.h url.h version.h \
-		xmlparser.h
+LICENSE=	GPLv2
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rxp ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/librxp.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/rxp.1 ${STAGEDIR}${PREFIX}/man/man1
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/rxp
-	${INSTALL_DATA} ${RXP_HEADERS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/include/rxp
+USES=	uidfix
+
+USE_LDCONFIG=	yes
+PATCH_WRKSRC=	${WRKSRC}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}
+MAKE_ARGS+=	VPATH=${PATCH_WRKSRC}
+
+do-configure:
+.for s in lib rxp
+	${MKDIR} ${WRKDIR}/$s
+	${LN} -s ${FILESDIR}/BSDmakefile.$s ${WRKDIR}/$s/Makefile
+	${PRINTF} "SUBDIR+=\t%s\n" $s >> ${WRKDIR}/Makefile
+.endfor
+	${PRINTF} "\n.include <bsd.subdir.mk>\n" >> ${WRKDIR}/Makefile
+
+post-build:
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/rxp
 
 .include <bsd.port.mk>
