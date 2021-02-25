@@ -78,6 +78,37 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bba850fd-770e-11eb-b87a-901b0ef719ab">
+    <topic>FreeBSD -- jail_attach(2) relies on the caller to change the cwd</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>12.2</ge><lt>12.2_4</lt></range>
+	<range><ge>11.4</ge><lt>11.4_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>When a process, such as jexec(8) or killall(1), calls jail_attach(2)
+	to enter a jail, the jailed root can attach to it using ptrace(2) before
+	the current working directory is changed.</p>
+	<h1>Impact:</h1>
+	<p>A process with superuser privileges running inside a jail could change
+	the root directory outside of the jail, thereby gaining full read and
+	writing access to all files and directories in the system.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-25582</cvename>
+      <freebsdsa>SA-21:05.jail_chdir</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-02-24</discovery>
+      <entry>2021-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8654f1d-770d-11eb-b87a-901b0ef719ab">
     <topic>FreeBSD -- login.access fails to apply rules</topic>
     <affects>
