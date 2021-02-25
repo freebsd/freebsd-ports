@@ -288,6 +288,10 @@ MAKE_ENV+=	verbose=1
 WARNING=	"GTK3 visual style is incomplete yet, build at your own risk"
 .endif
 
+.if ${ARCH:Mpowerpc*}
+EXTRA_PATCHES+=	${FILESDIR}/powerpc64
+.endif
+
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-unused-parameter -Wno-unused-local-typedefs
 .else

@@ -11,7 +11,6 @@ COMMENT=	Free FIX Protocol Implementation
 
 LICENSE=	GPLv3+
 
-BROKEN_powerpc64=	fails to configure: unable to find set_terminate in std or global namespace
 BROKEN_i386=	fails to build
 
 BUILD_DEPENDS=	bash:shells/bash
@@ -43,6 +42,14 @@ JAVA_USE=	java=yes
 JAVA_CONFIGURE_WITH=	java
 
 INSTALL_TARGET=install-strip
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+CXXFLAGS+=	-DENABLE_BOOST_ATOMIC_COUNT
+LIB_DEPENDS+=	libboost_system.so:devel/boost-libs
+USES+=		compiler:c++11-lang localbase
+.endif
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|^make|gmake|' \

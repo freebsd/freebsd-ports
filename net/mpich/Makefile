@@ -58,6 +58,8 @@ CONFIGURE_ARGS=	--enable-fast="" --with-hwloc-prefix=${LOCALBASE} \
 		MPICHLIB_LDFLAGS="${LDFLAGS}" LDFLAGS="" \
 		MPICHLIB_LIBS="${LIBS}" LIBS=""
 
+CFLAGS_powerpc64=	-D__BIG_ENDIAN
+
 .include <bsd.port.options.mk>
 
 .for pm in ${OPTIONS_GROUP_PM}
