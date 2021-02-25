@@ -78,6 +78,44 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5b8c6e1e-770f-11eb-b87a-901b0ef719ab">
+    <topic>FreeBSD -- Xen grant mapping error handling issues</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>12.2</ge><lt>12.2_4</lt></range>
+	<range><ge>11.4</ge><lt>11.4_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Grant mapping operations often occur in batch hypercalls, where a
+	number of operations are done in a single hypercall, the success or
+	failure of each one reported to the backend driver, and the backend
+	driver then loops over the results, performing follow-up actions
+	based on the success or failure of each operation.</p>
+	<p>Unfortunately, when running in HVM/PVH mode, the FreeBSD backend
+	drivers mishandle this: Some errors are ignored, effectively implying
+	their success from the success of related batch elements. In other
+	cases, errors resulting from one batch element lead to further batch
+	elements not being inspected, and hence successful ones to not be
+	possible to properly unmap upon error recovery.</p>
+	<h1>Impact:</h1>
+	<p>A malicious or buggy frontend driver may be able to cause resource
+	leaks in the domain running the corresponding backend driver.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-26932</cvename>
+      <freebsdsa>SA-21:06.xen</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-02-24</discovery>
+      <entry>2021-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bba850fd-770e-11eb-b87a-901b0ef719ab">
     <topic>FreeBSD -- jail_attach(2) relies on the caller to change the cwd</topic>
     <affects>
