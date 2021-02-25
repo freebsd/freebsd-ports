@@ -2,6 +2,9 @@ include/libopenshot/AudioBufferSource.h
 include/libopenshot/AudioDeviceInfo.h
 include/libopenshot/AudioReaderSource.h
 include/libopenshot/AudioResampler.h
+include/libopenshot/CVObjectDetection.h
+include/libopenshot/CVStabilization.h
+include/libopenshot/CVTracker.h
 include/libopenshot/CacheBase.h
 include/libopenshot/CacheDisk.h
 include/libopenshot/CacheMemory.h
@@ -10,6 +13,7 @@ include/libopenshot/ChunkReader.h
 include/libopenshot/ChunkWriter.h
 include/libopenshot/Clip.h
 include/libopenshot/ClipBase.h
+include/libopenshot/ClipProcessingJobs.h
 include/libopenshot/Color.h
 include/libopenshot/Coordinate.h
 include/libopenshot/CrashHandler.h
@@ -39,6 +43,7 @@ include/libopenshot/OpenShot.h
 include/libopenshot/OpenShotVersion.h
 include/libopenshot/PlayerBase.h
 include/libopenshot/Point.h
+include/libopenshot/ProcessingController.h
 include/libopenshot/Profiles.h
 include/libopenshot/Qt/AudioPlaybackThread.h
 include/libopenshot/Qt/PlayerDemo.h
@@ -57,11 +62,13 @@ include/libopenshot/RendererBase.h
 include/libopenshot/Settings.h
 include/libopenshot/TextReader.h
 include/libopenshot/Timeline.h
+include/libopenshot/TimelineBase.h
 include/libopenshot/WriterBase.h
 include/libopenshot/ZmqLogger.h
 include/libopenshot/effects/Bars.h
 include/libopenshot/effects/Blur.h
 include/libopenshot/effects/Brightness.h
+include/libopenshot/effects/Caption.h
 include/libopenshot/effects/ChromaKey.h
 include/libopenshot/effects/ColorShift.h
 include/libopenshot/effects/Crop.h
@@ -69,12 +76,24 @@ include/libopenshot/effects/Deinterlace.h
 include/libopenshot/effects/Hue.h
 include/libopenshot/effects/Mask.h
 include/libopenshot/effects/Negate.h
+include/libopenshot/effects/ObjectDetection.h
 include/libopenshot/effects/Pixelate.h
 include/libopenshot/effects/Saturation.h
 include/libopenshot/effects/Shift.h
+include/libopenshot/effects/Stabilizer.h
+include/libopenshot/effects/Tracker.h
 include/libopenshot/effects/Wave.h
+%%OPENCV%%include/libopenshot/protobuf_messages/objdetectdata.pb.h
+%%OPENCV%%include/libopenshot/protobuf_messages/stabilizedata.pb.h
+%%OPENCV%%include/libopenshot/protobuf_messages/trackerdata.pb.h
+include/libopenshot/sort_filter/Hungarian.h
+include/libopenshot/sort_filter/KalmanTracker.h
 lib/libopenshot.so
 lib/libopenshot.so.0.2.5
 lib/libopenshot.so.19
+%%OPENCV%%lib/libopenshot_protobuf.so
+%%OPENCV%%lib/libopenshot_protobuf.so.0.2.5
+%%OPENCV%%lib/libopenshot_protobuf.so.19
 %%PYTHON_SITELIBDIR%%/_openshot.so
 %%PYTHON_SITELIBDIR%%/openshot.py
+@dir include/libopenshot/protobuf_messages
