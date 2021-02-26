@@ -1,5 +1,6 @@
 @sample etc/solr.in.sh.sample
 @sample(solr,solr) /var/db/solr/solr.xml.sample
+%%JTS%%solr/server/solr-webapp/webapp/WEB-INF/lib/jts-core.jar
 solr/CHANGES.txt
 solr/LICENSE.txt
 solr/LUCENE_CHANGES.txt

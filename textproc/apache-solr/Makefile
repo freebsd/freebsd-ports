@@ -3,6 +3,7 @@
 
 PORTNAME=	apache-solr
 PORTVERSION=	8.8.0
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/lucene/solr/${PORTVERSION}
 DISTNAME=	solr-${PORTVERSION}
@@ -29,8 +30,17 @@ GROUPS=		${USERS}
 CPE_PRODUCT=	solr
 CPE_VENDOR=	apache
 
+OPTIONS_DEFINE=	JTS
+OPTIONS_SUB=	yes
+JTS_DESC=	Enable support for JTS Topology Suite
+
+JTS_RUN_DEPENDS=	jts>0:math/jts
+
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/oom_solr.sh ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/post ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/postlogs ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/solr ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_DATA} ${WRKSRC}/bin/solr.in.sh ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
 	${ECHO} 'SOLR_HOME="/var/db/solr"' >> ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
@@ -43,5 +53,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}/var/db/solr
 	${MKDIR} ${STAGEDIR}/var/log/solr
 	${INSTALL_DATA} ${WRKSRC}/server/solr/solr.xml ${STAGEDIR}/var/db/solr/solr.xml.sample
+
+do-install-JTS-on:
+	${LN} -sf ${JAVALIBDIR}/jts-core.jar ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/server/solr-webapp/webapp/WEB-INF/lib/
 
 .include <bsd.port.mk>
