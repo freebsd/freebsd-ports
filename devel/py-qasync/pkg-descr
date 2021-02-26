@@ -1,0 +1,4 @@
+qasync allows coroutines to be used in PyQt/PySide applications by providing an
+implementation of the PEP 3156 event-loop.
+
+WWW: https://github.com/CabbageDevelopment/qasync
