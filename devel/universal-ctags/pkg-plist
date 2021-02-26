@@ -4,8 +4,11 @@ bin/ureadtags
 %%MANPAGES%%man/man1/ureadtags.1.gz
 %%MANPAGES%%man/man5/utags.5.gz
 %%MANPAGES%%man/man7/uctags-client-tools.7.gz
+%%MANPAGES%%man/man7/uctags-faq.7.gz
 %%MANPAGES%%man/man7/uctags-incompatibilities.7.gz
 %%MANPAGES%%man/man7/uctags-lang-inko.7.gz
+%%MANPAGES%%man/man7/uctags-lang-julia.7.gz
 %%MANPAGES%%man/man7/uctags-lang-python.7.gz
+%%MANPAGES%%man/man7/uctags-lang-r.7.gz
 %%MANPAGES%%man/man7/uctags-lang-verilog.7.gz
 %%MANPAGES%%man/man7/uctags-optlib.7.gz
