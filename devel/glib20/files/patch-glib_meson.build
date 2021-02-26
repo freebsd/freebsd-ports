@@ -1,0 +1,11 @@
+--- glib/meson.build.orig	2021-02-18 15:31:48.638470000 -0800
++++ glib/meson.build	2021-02-18 15:32:08.983695000 -0800
+@@ -376,7 +376,7 @@
+   # intl.lib is not compatible with SAFESEH
+   link_args : [noseh_link_args, glib_link_flags, win32_ldflags],
+   include_directories : configinc,
+-  dependencies : pcre_deps + [thread_dep, librt] + libintl_deps + libiconv + platform_deps + gnulib_libm_dependency + [libsysprof_capture_dep],
++  dependencies : pcre_deps + [thread_dep, librt] + libintl_deps + libiconv + platform_deps + gnulib_libm_dependency + [libsysprof_capture_dep] + libutil,
+   c_args : glib_c_args,
+   objc_args : glib_c_args,
+ )

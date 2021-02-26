@@ -1,64 +1,45 @@
---- glib/gspawn.c	2018-09-21 12:29:23.000000000 +0300
-+++ glib/gspawn.c	2019-07-20 18:05:15.486558000 +0300
-@@ -51,6 +51,13 @@
+--- glib/gspawn.c.orig	2020-12-17 03:47:11.474608400 -0800
++++ glib/gspawn.c	2021-02-17 13:58:15.271434000 -0800
+@@ -51,6 +51,12 @@
  #include <sys/syscall.h>  /* for syscall and SYS_getdents64 */
  #endif
  
 +#ifdef __FreeBSD__
-+#include <sys/param.h>
-+#include <sys/sysctl.h>
++#include <sys/types.h>
 +#include <sys/user.h>
-+#include <sys/file.h>
++#include <libutil.h>
 +#endif
 +
  #include "gspawn.h"
  #include "gspawn-private.h"
  #include "gthread.h"
-@@ -1204,6 +1211,51 @@
+@@ -1204,6 +1210,33 @@ filename_to_fd (const char *p)
  }
  #endif
  
 +#ifdef __FreeBSD__
 +static int
-+fdwalk2(int (*func)(void *, int), void *udata, int *ret) {
-+  size_t i, bufsz = 0;
-+  struct xfile *xfbuf, *xf;
-+  int uret = 0, pid_found = 0;
-+  int mib[2] = { CTL_KERN, KERN_FILE };
-+  pid_t pid;
++fdwalk2(int (*func)(void *, int), void *udata, gint *ret)
++{
++  struct kinfo_file *kf;
++  int i, cnt;
 +
 +  if (NULL == func)
 +    return EINVAL;
 +
-+  if (sysctl (mib, nitems(mib), NULL, &bufsz, NULL, 0) == -1)
-+    return (errno);
-+  bufsz += 65536;
-+  xfbuf = alloca (bufsz);
-+  if (xfbuf == NULL)
-+    return errno;
-+  if (sysctl (mib, 2, xfbuf, &bufsz, NULL, 0) == -1)
-+    return errno;
-+  bufsz /= sizeof(struct xfile);
++  kf = kinfo_getfile(getpid(), &cnt);
++  if (kf == NULL)
++    return ENOMEM;
 +
-+  pid = getpid();
-+  for (i = 0; i < bufsz; i++) {
-+    xf = &xfbuf[i];
-+    if (pid != xf->xf_pid) {
-+      if (pid_found) {
-+        return 0;
-+      } else {
-+        continue;
-+      }
-+    }
-+    pid_found = 1;
-+    if (0 > xf->xf_fd)
++  for (i = 0; i < cnt; i++) {
++    if (0 > kf[i].kf_fd)
 +      continue;
-+    uret = func (udata, xf->xf_fd);
-+    if (uret != 0)
++    *ret = func (udata, kf[i].kf_fd);
++    if (*ret != 0)
 +      break;
-+
 +  }
 +
++  free(kf);
 +  return 0;
 +}
 +#endif
@@ -66,7 +47,7 @@
  /* This function is called between fork() and exec() and hence must be
   * async-signal-safe (see signal-safety(7)). */
  static int
-@@ -1228,6 +1280,12 @@
+@@ -1228,6 +1261,12 @@ safe_fdwalk (int (*cb)(void *data, int fd), void *data
    
  #if 0 && defined(HAVE_SYS_RESOURCE_H)
    struct rlimit rl;
