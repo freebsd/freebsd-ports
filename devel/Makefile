@@ -4700,6 +4700,7 @@
     SUBDIR += py-opster
     SUBDIR += py-optik
     SUBDIR += py-orange-canvas-core
+    SUBDIR += py-orange-widget-base
     SUBDIR += py-ordered-set
     SUBDIR += py-ordereddict
     SUBDIR += py-orderedmultidict

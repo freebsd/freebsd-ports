@@ -1,0 +1,10 @@
+This project implements the base OWBaseWidget class and utilities for use in
+Orange Canvas workflows.
+
+Provides:
+* OWBaseWidget class
+* gui module for building GUI
+* WidgetsScheme the workflow execution model/bridge
+* basic configuration for a workflow based application
+
+WWW: https://orangedatamining.com/
