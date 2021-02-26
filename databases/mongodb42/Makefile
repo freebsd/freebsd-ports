@@ -37,8 +37,8 @@ USE_RC_SUBR=	mongod
 CONFLICTS_BUILD=	mongo-cxx-driver
 CONFLICTS_INSTALL=	mongodb36 mongodb4[04]
 
-OPTIONS_DEFINE=	SASL SSL
-OPTIONS_DEFAULT=SASL SSL
+OPTIONS_DEFINE=	LTO SASL SSL
+OPTIONS_DEFAULT=LTO SASL SSL
 
 SHEBANG_FILES=	src/mongo/installer/compass/install_compass.in
 python_OLD_CMD=	@python_interpreter@
@@ -57,6 +57,9 @@ MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
 
 USERS=		mongodb
 GROUPS=		mongodb
+
+LTO_LDFLAGS=	-fuse-ld=lld
+LTO_MAKE_ARGS=	--lto=on
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
