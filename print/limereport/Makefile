@@ -11,7 +11,7 @@ COMMENT=	Multi-platform C++ report generator library written using Qt framework
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake dos2unix gl qt:5
+USES=		cmake compiler:c++11-lang dos2unix gl qt:5
 USE_QT+=	buildtools_build core gui script sql xml svg quickcontrols2 \
 		printsupport uitools network widgets declarative qmake_build
 USE_GL=		gl
