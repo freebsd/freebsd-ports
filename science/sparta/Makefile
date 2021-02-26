@@ -15,7 +15,7 @@ BUILD_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++11-lang gmake localbase
 USE_GITHUB=	yes
-GH_TAGNAME=	6Jul2020
+GH_TAGNAME=	26Feb2021
 
 CXXFLAGS+=	-DSPARTA_UNORDERED_MAP
 
