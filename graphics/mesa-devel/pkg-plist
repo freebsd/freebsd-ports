@@ -1,4 +1,4 @@
-%%VULKAN%%bin/mesa-overlay-control.py
+%%VKLAYERS%%bin/mesa-overlay-control.py
 %%COINST%%@sample etc/libmap.d/mesa%%SUFFIX%%.conf.sample
 %%NO_GLVND%%%%NO_COINST%%include/EGL/egl.h
 %%NO_GLVND%%%%NO_COINST%%include/EGL/eglext.h
@@ -50,8 +50,8 @@
 %%GLVND%%%%X11%%%%NO_COINST%%lib/libGLX_mesa%%SUFFIX%%.so
 %%GLVND%%%%X11%%lib/libGLX_mesa%%SUFFIX%%.so.0
 %%GLVND%%%%X11%%lib/libGLX_mesa%%SUFFIX%%.so.0.0.0
-%%VULKAN%%lib/libVkLayer_MESA_device_select.so
-%%VULKAN%%lib/libVkLayer_MESA_overlay.so
+%%VKLAYERS%%lib/libVkLayer_MESA_device_select.so
+%%VKLAYERS%%lib/libVkLayer_MESA_overlay.so
 %%NO_COINST%%lib/libgbm%%SUFFIX%%.so
 lib/libgbm%%SUFFIX%%.so.1
 lib/libgbm%%SUFFIX%%.so.1.0.0
@@ -76,7 +76,7 @@ lib/libglapi%%SUFFIX%%.so.0.0.0
 %%NO_GLVND%%%%NO_COINST%%libdata/pkgconfig/glesv2.pc
 share/drirc.d/00-mesa%%SUFFIX%%-defaults.conf
 %%GLVND%%%%NO_COINST%%share/glvnd/egl_vendor.d/50_mesa.json
-%%VULKAN%%share/vulkan/explicit_layer.d/VkLayer_MESA_overlay.json
+%%VKLAYERS%%share/vulkan/explicit_layer.d/VkLayer_MESA_overlay.json
 %%anv%%%%NO_COINST%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
 %%radv%%%%NO_COINST%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
-%%VULKAN%%share/vulkan/implicit_layer.d/VkLayer_MESA_device_select.json
+%%VKLAYERS%%share/vulkan/implicit_layer.d/VkLayer_MESA_device_select.json

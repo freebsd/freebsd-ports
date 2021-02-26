@@ -15,7 +15,6 @@
 # GBM clients like eglkms and wlroots fail otherwise
 libgbm.so.1 libgbm%%SUFFIX%%.so.1
 
-%%VULKAN%%# Avoid different versions of the same driver showing up as multiple GPUs
 %%anv%%%%PREFIX%%/lib/libvulkan_intel.so libvulkan_intel%%SUFFIX%%.so
 %%radv%%%%PREFIX%%/lib/libvulkan_radeon.so libvulkan_radeon%%SUFFIX%%.so
 

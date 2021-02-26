@@ -56,8 +56,8 @@ PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/}
 LDFLAGS+=	-fuse-ld=lld
 .endif
 
-OPTIONS_DEFINE=		LIBUNWIND LLVM LTO VAAPI VDPAU VULKAN WAYLAND X11 ZSTD
-OPTIONS_DEFAULT=	LIBUNWIND LLVM LTO VAAPI VDPAU VULKAN WAYLAND X11 ZSTD
+OPTIONS_DEFINE=		LIBUNWIND LLVM LTO VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
+OPTIONS_DEFAULT=	LIBUNWIND LLVM LTO VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
 OPTIONS_GROUP=		DRI GALLIUM VULKAN
 OPTIONS_GROUP_DRI=	i965
 OPTIONS_GROUP_GALLIUM=	iris r600 radeonsi
@@ -89,6 +89,10 @@ GALLIUM_DESC=		Unified OpenGL drivers
 iris_DESC=		Broadwell and newer
 r600_DESC=		R600, R700, Evergreen, Northern Islands (implies LLVM)
 radeonsi_DESC=		Southern Islands and newer (implies LLVM)
+
+VULKAN_DESC=		Vulkan drivers
+anv_DESC=		Haswell and newer
+radv_DESC=		Southern Islands and newer (implies LLVM)
 
 COINST_DESC=		Allow co-installation with another Mesa port
 COINST_VARS=		LLVM_DEFAULT=10 # chase mesa-dri
@@ -125,11 +129,10 @@ VDPAU_BUILD_DEPENDS=	libvdpau>0:multimedia/libvdpau
 VDPAU_MESON_ENABLED=	gallium-vdpau
 VDPAU_IMPLIES=		X11
 
-VULKAN_DESC=		Vulkan layers: ${VULKAN_MESON_TRUE:S/vulkan-//:S/-layer//:ts,}
-VULKAN_BUILD_DEPENDS=	glslangValidator:graphics/glslang
-VULKAN_MESON_TRUE=	vulkan-device-select-layer vulkan-overlay-layer
-anv_DESC=		Haswell and newer
-radv_DESC=		Southern Islands and newer (implies LLVM)
+VKLAYERS_DESC=		Vulkan layers: ${VKLAYERS_MESON_TRUE:S/vulkan-//:S/-layer//:ts,} (implies ${VKLAYERS_IMPLIES})
+VKLAYERS_BUILD_DEPENDS=	glslangValidator:graphics/glslang
+VKLAYERS_MESON_TRUE=	vulkan-device-select-layer vulkan-overlay-layer
+VKLAYERS_IMPLIES=	${"${PORT_OPTIONS:Mradv}":?radv:anv} # any from OPTIONS_GROUP_VULKAN
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-server.so:graphics/wayland
