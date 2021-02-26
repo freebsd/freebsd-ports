@@ -1,0 +1,17 @@
+KGeoTag is a photo geotagging program.
+
+Photos (e. g. JPEG images) contain metadata like the creation date, camera 
+information etc. Those are either stored in the so-called Exif header, 
+in an XMP sidecar file or in both. This data can also represent geographic 
+coordinates so that it's replicable where the images were taken.
+
+Most cameras don't have GPS receivers, so, most can't save coordinates when 
+taking images. A common approach is to e. g. carry a small GPS logging device 
+along, which records a track all the time. Later on, the images' dates can 
+be compared to the GPS log's points' dates to figure out where an image 
+was taken.
+
+If one knows for sure where the respective photo was taken, it's also 
+possible to assign coordinates to the images manually.
+
+WWW: https://invent.kde.org/graphics/kgeotag/

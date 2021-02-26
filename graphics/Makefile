@@ -392,6 +392,7 @@
     SUBDIR += kf5-kplotting
     SUBDIR += kf5-kquickcharts
     SUBDIR += kf5-prison
+    SUBDIR += kgeotag
     SUBDIR += kgraphviewer
     SUBDIR += kimageannotator
     SUBDIR += kimagemapeditor
