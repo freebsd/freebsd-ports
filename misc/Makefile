@@ -375,6 +375,7 @@
     SUBDIR += py-colorbrewer
     SUBDIR += py-colored
     SUBDIR += py-crudini
+    SUBDIR += py-dictdiffer
     SUBDIR += py-eemeter
     SUBDIR += py-emoji
     SUBDIR += py-fast-histogram
