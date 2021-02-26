@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	cmh
-DISTVERSION=	1.0.20200923
+DISTVERSION=	1.1.0
 CATEGORIES=	math
-#MASTER_SITES=	http://www.multiprecision.org/downloads/
+MASTER_SITES=	http://www.multiprecision.org/downloads/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Compute Igusa class polynomials
@@ -21,10 +21,6 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake libtool localbase shebangfix
 USE_LDCONFIG=	yes
-
-USE_GITLAB=	yes
-GL_SITE=	https://gitlab.inria.fr/
-GL_COMMIT=	53bba6332e8df9d30ed9bb839bd78afe6aa60153
 
 SHEBANG_FILES=	scripts/cmh-classpol.sh.in
 
