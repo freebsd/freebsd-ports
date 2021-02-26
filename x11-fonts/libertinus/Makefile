@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libertinus
-DISTVERSION=	7.031
+DISTVERSION=	7.040
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/alerque/libertinus/releases/download/v${DISTVERSION}/
 DISTNAME=	Libertinus-${DISTVERSION}
