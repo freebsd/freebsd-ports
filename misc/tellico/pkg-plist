@@ -154,6 +154,16 @@ share/doc/HTML/pt_BR/tellico/importing-exporting.docbook
 share/doc/HTML/pt_BR/tellico/index.cache.bz2
 share/doc/HTML/pt_BR/tellico/index.docbook
 share/doc/HTML/pt_BR/tellico/menus.docbook
+share/doc/HTML/ru/tellico/advanced.docbook
+share/doc/HTML/ru/tellico/configuration.docbook
+share/doc/HTML/ru/tellico/details.docbook
+share/doc/HTML/ru/tellico/faqs.docbook
+share/doc/HTML/ru/tellico/fundamentals.docbook
+share/doc/HTML/ru/tellico/hacking.docbook
+share/doc/HTML/ru/tellico/importing-exporting.docbook
+share/doc/HTML/ru/tellico/index.cache.bz2
+share/doc/HTML/ru/tellico/index.docbook
+share/doc/HTML/ru/tellico/menus.docbook
 share/doc/HTML/sv/tellico/advanced.docbook
 share/doc/HTML/sv/tellico/configuration.docbook
 share/doc/HTML/sv/tellico/details.docbook
