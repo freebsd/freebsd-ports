@@ -1,3 +1,4 @@
+%%JAVAJARDIR%%/jts-core.jar
 %%JAVAJARDIR%%/jts-app-%%VERSION%%.jar
 %%JAVAJARDIR%%/jts-core-%%VERSION%%.jar
 %%JAVAJARDIR%%/jts-io-common-%%VERSION%%.jar

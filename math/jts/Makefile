@@ -3,6 +3,7 @@
 
 PORTNAME=	jts
 DISTVERSION=	1.17.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	jts-
 CATEGORIES=	math databases java
 
@@ -75,6 +76,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/modules/${jar}-${VER}.jar	\
 		${STAGEDIR}${JAVALIBDIR}/
 .endfor
+	${RLN} ${STAGEDIR}${JAVALIBDIR}/jts-core-${VER}.jar ${STAGEDIR}${JAVALIBDIR}/jts-core.jar
 
 do-install-DOCS-on:
 .for jar in ${JARDOCFILES}
