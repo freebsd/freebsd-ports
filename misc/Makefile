@@ -419,6 +419,7 @@
     SUBDIR += py-toil
     SUBDIR += py-tqdm
     SUBDIR += py-tvm
+    SUBDIR += py-wurlitzer
     SUBDIR += py-xgboost
     SUBDIR += pyobd
     SUBDIR += qbrew
