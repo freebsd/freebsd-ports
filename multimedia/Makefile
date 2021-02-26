@@ -359,6 +359,7 @@
     SUBDIR += smplayer-themes
     SUBDIR += sms1xxx-kmod
     SUBDIR += smtube
+    SUBDIR += snapcast
     SUBDIR += snappy
     SUBDIR += spigot
     SUBDIR += spook
