@@ -1,0 +1,5 @@
+Simple Python library to perform a 3-way merge between strings, based on
+diff-match-patch.  This library performs merges at a character level, as
+opposed to most VCS systems, which opt for a line-based approach.
+
+WWW: https://github.com/spyder-ide/three-merge
