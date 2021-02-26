@@ -1,0 +1,12 @@
+--- libproxy/cmake/modules.cmk.orig	2021-02-26 18:24:03 UTC
++++ libproxy/cmake/modules.cmk
+@@ -29,7 +29,9 @@ endif()
+ ## Module definition
+ #
+ message("MODULES TO BUILD:")
++if(BUILD_CONFIG_PACRUNNER)
+ px_module(config_pacrunner         "${DBUS_FOUND}"   0       ${DBUS_LIBRARIES})
++endif()
+ px_module(config_envvar            "${ENVVAR_FOUND}" 1)
+ px_module(config_sysconfig         "${SYSCONFIG_FOUND}" 1)
+ px_module(config_gnome             "${GNOME2_FOUND}" 0)

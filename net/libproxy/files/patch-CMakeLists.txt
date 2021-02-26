@@ -2,9 +2,9 @@ As the library is only built in the master port, and therfore missing in the
 build directory for the slave ports, find it via pkg-config and link against it,
 when building a slave.
 
---- CMakeLists.txt.orig	2017-05-11 09:33:33 UTC
+--- CMakeLists.txt.orig	2020-12-29 11:30:46 UTC
 +++ CMakeLists.txt
-@@ -23,6 +23,15 @@ else()
+@@ -26,6 +26,15 @@ else()
    set(CMAKE_INSTALL_CONFIG_NAME ${CMAKE_BUILD_TYPE})
  endif()
  
@@ -20,7 +20,7 @@ when building a slave.
  include(cmake/cpack.cmk)
  include(cmake/ctest.cmk)
  include(cmake/paths.cmk)
-@@ -56,5 +65,7 @@ endif()
+@@ -44,5 +53,7 @@ endif()
  
  # Always build these
  add_subdirectory(libproxy)

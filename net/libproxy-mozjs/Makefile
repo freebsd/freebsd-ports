@@ -1,7 +1,7 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	net www
 PKGNAMESUFFIX=	-${LIBPROXY_SLAVE}
 
@@ -18,7 +18,7 @@ LIBPROXY_SLAVE=	mozjs
 MASTERDIR=	${.CURDIR}/../libproxy
 
 # See https://github.com/libproxy/libproxy/commit/2203f710988eaa3061e75b083296944e34e17d59
-DEPRECATED=	Discouraged by upstream, will be marked broken in next update
+BROKEN=		Discouraged by upstream, requires spidermonkey68
 EXPIRATION_DATE=	2021-03-31
 
 .include "${MASTERDIR}/Makefile"
