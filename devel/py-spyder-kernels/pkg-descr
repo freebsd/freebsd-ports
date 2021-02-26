@@ -1,0 +1,8 @@
+Provides Jupyter kernels for use with the consoles of Spyder,
+the Scientific Python Development Environment.
+
+These kernels can be launched either through Spyder itself or
+in an independent Python session, and allow interactive or
+file-based execution of Python code inside Spyder.
+
+WWW: https://github.com/spyder-ide/spyder-kernels

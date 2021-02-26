@@ -5099,6 +5099,7 @@
     SUBDIR += py-speaklater
     SUBDIR += py-speg
     SUBDIR += py-spyder
+    SUBDIR += py-spyder-kernels
     SUBDIR += py-squint
     SUBDIR += py-srsly
     SUBDIR += py-stackexchange
