@@ -87,8 +87,8 @@ i965_DESC=		GMA 3000 (Gen4) and newer
 
 GALLIUM_DESC=		Unified OpenGL drivers
 iris_DESC=		Broadwell and newer
-r600_DESC=		R600, R700, Evergreen, Northern Islands
-radeonsi_DESC=		Southern Islands and newer
+r600_DESC=		R600, R700, Evergreen, Northern Islands (implies LLVM)
+radeonsi_DESC=		Southern Islands and newer (implies LLVM)
 
 COINST_DESC=		Allow co-installation with another Mesa port
 COINST_VARS=		LLVM_DEFAULT=10 # chase mesa-dri
@@ -106,7 +106,7 @@ LIBUNWIND_DESC=		Use libunwind for stacktraces
 LIBUNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
 LIBUNWIND_MESON_ENABLED=	libunwind
 
-LLVM_DESC=		Build with LLVM support
+LLVM_DESC=		Build with LLVM support (see implies)
 LLVM_LIB_DEPENDS=	libLLVM-${LLVM_DEFAULT:C/^([6-9])0/\1/:S/-devel/12/}.so:devel/llvm${LLVM_DEFAULT}
 LLVM_MESON_ENABLED=	llvm
 LLVM_BINARY_ALIAS=	llvm-config=llvm-config${LLVM_DEFAULT}
@@ -116,17 +116,20 @@ ${i}_IMPLIES+=		LLVM
 
 LTO_MESON_TRUE=		b_lto
 
+VAAPI_DESC=		Hardware encoding/decoding (only r600, radeonsi)
 VAAPI_BUILD_DEPENDS=	libva>0:multimedia/libva
 VAAPI_MESON_ENABLED=	gallium-va
 
+VDPAU_DESC=		Hardware decoding (only r600, radeonsi) (implies X11)
 VDPAU_BUILD_DEPENDS=	libvdpau>0:multimedia/libvdpau
 VDPAU_MESON_ENABLED=	gallium-vdpau
+VDPAU_IMPLIES=		X11
 
 VULKAN_DESC=		Vulkan layers: ${VULKAN_MESON_TRUE:S/vulkan-//:S/-layer//:ts,}
 VULKAN_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 VULKAN_MESON_TRUE=	vulkan-device-select-layer vulkan-overlay-layer
 anv_DESC=		Haswell and newer
-radv_DESC=		Southern Islands and newer
+radv_DESC=		Southern Islands and newer (implies LLVM)
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-server.so:graphics/wayland
