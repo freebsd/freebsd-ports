@@ -1,0 +1,12 @@
+TextDistance -- python library for comparing distance between two or
+more sequences by many algorithms.
+
+Features:
+- 30+ algorithms
+- Pure python implementation
+- Simple usage
+- More than two sequences comparing
+- Some algorithms have more than one implementation in one class
+- Optional numpy usage for maximum speed
+
+WWW: https://github.com/life4/textdistance
