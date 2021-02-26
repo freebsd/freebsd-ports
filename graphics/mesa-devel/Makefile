@@ -56,12 +56,12 @@ PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/}
 LDFLAGS+=	-fuse-ld=lld
 .endif
 
-OPTIONS_DEFINE=		${OPTIONS_MULTI} LIBUNWIND LLVM LTO VAAPI VDPAU WAYLAND X11 ZSTD
-OPTIONS_DEFAULT=	${OPTIONS_MULTI} LIBUNWIND LLVM LTO VAAPI VDPAU WAYLAND X11 ZSTD
-OPTIONS_MULTI=		DRI GALLIUM VULKAN
-OPTIONS_MULTI_DRI=	i965
-OPTIONS_MULTI_GALLIUM=	iris r600 radeonsi
-OPTIONS_MULTI_VULKAN=	anv radv
+OPTIONS_DEFINE=		LIBUNWIND LLVM LTO VAAPI VDPAU VULKAN WAYLAND X11 ZSTD
+OPTIONS_DEFAULT=	LIBUNWIND LLVM LTO VAAPI VDPAU VULKAN WAYLAND X11 ZSTD
+OPTIONS_GROUP=		DRI GALLIUM VULKAN
+OPTIONS_GROUP_DRI=	i965
+OPTIONS_GROUP_GALLIUM=	iris r600 radeonsi
+OPTIONS_GROUP_VULKAN=	anv radv
 OPTIONS_EXCLUDE_DragonFly=	LIBUNWIND anv
 OPTIONS_EXCLUDE_i386=	LTO # anv: vkcube fails on vkCreateSwapchainKHR
 OPTIONS_EXCLUDE_powerpc64=	${"${/usr/bin/ld:L:tA}"==/usr/bin/ld.lld:?LTO:} # LLVM bug 47353
@@ -74,9 +74,9 @@ OPTIONS_SLAVE+=		${"${GL_DEFAULT:S/,/ /g:[1]}"==libglvnd:?GLVND:}
 OPTIONS_SUB=		yes
 
 # Convert options to -D<type>-drivers=<driver1,driver2,etc>
-.for i in ${OPTIONS_MULTI}
+.for i in ${OPTIONS_GROUP}
 MESON_ARGS+=		-D${i:tl}-drivers=${${i}_DRIVERS:ts,}
-. for j in ${OPTIONS_MULTI_${i}}
+. for j in ${OPTIONS_GROUP_${i}}
 OPTIONS_DEFAULT+=	${j}
 ${j}_VARS+=		${i}_DRIVERS+=${j:S/anv/intel/:S/radv/amd/}
 . endfor
@@ -122,7 +122,7 @@ VAAPI_MESON_ENABLED=	gallium-va
 VDPAU_BUILD_DEPENDS=	libvdpau>0:multimedia/libvdpau
 VDPAU_MESON_ENABLED=	gallium-vdpau
 
-VULKAN_DESC=		Vulkan drivers and layers
+VULKAN_DESC=		Vulkan layers: ${VULKAN_MESON_TRUE:S/vulkan-//:S/-layer//:ts,}
 VULKAN_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 VULKAN_MESON_TRUE=	vulkan-device-select-layer vulkan-overlay-layer
 anv_DESC=		Haswell and newer
