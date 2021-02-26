@@ -2,7 +2,7 @@
 
 PORTNAME=	onednn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0
+DISTVERSION=	2.1.1
 CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
