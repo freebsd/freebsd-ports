@@ -1567,7 +1567,6 @@
     SUBDIR += py-djangorestframework-csv
     SUBDIR += py-djangorestframework-filters
     SUBDIR += py-djangorestframework-xml
-    SUBDIR += py-djangorestframework311
     SUBDIR += py-draftjs-exporter
     SUBDIR += py-drf-yasg
     SUBDIR += py-dtflickr
