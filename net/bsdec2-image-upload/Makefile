@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsdec2-image-upload
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://freebsd-ec2-dist.s3.amazonaws.com/
 
@@ -17,16 +17,9 @@ USES=		compiler ssl tar:tgz uidfix
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
-# Install into ${STAGEDIR}${PREFIX}; but the build respects ${DESTDIR} so
-# all we need to give is the ${PREFIX}/bin part.
-MAKE_ARGS+=	BINDIR=${PREFIX}/bin
+# Install into ${STAGEDIR}${PREFIX}
+MAKE_ARGS+=     BINDIR=${STAGEDIR}${PREFIX}/bin
 
 PLIST_FILES=	bin/bsdec2-image-upload
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
