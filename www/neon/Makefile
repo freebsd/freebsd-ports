@@ -26,7 +26,7 @@ OPTIONS_SINGLE=		XML
 OPTIONS_SINGLE_XML=	EXPAT LIBXML2
 
 CA_BUNDLE_DESC=		Enable CA bundle for GnuTLS/OpenSSL
-LIBXML_DESC=		libxml2 XML parser support
+LIBXML2_DESC=		libxml2 XML parser support
 PROXY_DESC=		libproxy support
 XML_DESC=		XML parser library
 

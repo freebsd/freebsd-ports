@@ -37,7 +37,7 @@ do-fetch:
 		https://chromium.googlesource.com/libyuv/libyuv.git/+archive/${LIBYUV_HASH}.tar.gz
 
 . if ${USER} == ${MAINTAINER:C/@.*//}
-    scp ${DISTDIR}/libyuv-${LIBYUV_HASH} freefall.freebsd.org:public_distfiles/libyuv
+	scp ${DISTDIR}/libyuv-${LIBYUV_HASH} freefall.freebsd.org:public_distfiles/libyuv
 . endif
 .endif # defined(MAINTAINER_MODE)
 

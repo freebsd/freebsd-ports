@@ -3,7 +3,7 @@
 
 PORTNAME=	mate-dock-applet
 PORTVERSION=	20.04.0
-PORTREVSION=	1
+PORTREVISION=	1
 CATEGORIES=	x11 mate
 DIST_SUBDIR=	mate
 
@@ -27,7 +27,6 @@ USES=		python:3.7+ autoreconf gettext gmake gnome libtool localbase \
 USE_GITHUB=	yes
 GH_ACCOUNT=	ubuntu-mate
 USE_GNOME=	gtk30 libwnck3
-AUTOMAKE_ARGS= --add-missing
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk3
 INSTALLS_ICONS=	yes

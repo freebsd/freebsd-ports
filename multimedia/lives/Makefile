@@ -13,8 +13,8 @@ COMMENT=	Video editing system
 
 LICENSE=		GPLv3+ LGPL3+
 LICENSE_COMB=		multi
-LICENSE_FILE_GPLv3+=	${WRKSRC}/COPYING
-LICENSE_FILE_LGPL3+=	${WRKSRC}/COPYING.LGPL
+LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LGPL
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		analyseplugin:audio/ladspa

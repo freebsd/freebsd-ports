@@ -1558,8 +1558,6 @@ _YARNRC=		${_YARN_HOME}/yarnrc
 _YARN_CMD=		${SETENV} ${_YARN_ENV} ${_YARN_BIN} ${_YARN_FLAGS}
 _YARN_CWD=		${WRKSRC}/ui
 
-OPTIONS_DEFINE=	DOCS
-
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The limit imposed by poudriere(8) for the maximum number of files allowed to be"

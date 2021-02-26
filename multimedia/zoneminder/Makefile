@@ -52,7 +52,6 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
-PKGMESSAGE=	${MASTERDIR}/pkg-message
 
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message

@@ -12,7 +12,7 @@ MAINTAINER=	meta@FreeBSD.org
 COMMENT=	PulseAudio module which enables xrdp to use audio redirection
 
 LICENSE=	LGPL21
-LICNSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${NONEXISTENT}:audio/pulseaudio:configure
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio

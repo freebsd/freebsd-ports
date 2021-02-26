@@ -17,13 +17,12 @@ RUN_DEPENDS=	mono>0:lang/mono
 
 USE_RC_SUBR=	jackett
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Jackett
 
 USERS=		jackett
 GROUPS=		jackett
-
-NOARCH=		yes
 
 post-patch:
 	@${RM} ${WRKSRC}/install_service_macos ${WRKSRC}/install_service_systemd.sh

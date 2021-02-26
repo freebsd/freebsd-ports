@@ -9,7 +9,6 @@ MASTER_SITES=	https://github.com/ConsoleKit2/ConsoleKit2/releases/download/${POR
 PKGNAMESUFFIX=	2
 DISTNAME=	ConsoleKit2-${PORTVERSION}
 
-MAINTAINER=	desktop@FreeBSD.org
 # Support for DRM/evdev
 PATCH_SITES=	https://github.com/myfreeweb/ConsoleKit2/commit/
 PATCHFILES=	03eaa9779f2c9c7b0acf0521a5547036bdec2245.patch:-p1 \

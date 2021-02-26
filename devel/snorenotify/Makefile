@@ -10,7 +10,7 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Multi platform Qt notification framework
 
 DEPRECATED=	Unmaintained upstream
-EXPIRATION=	2021-02-18
+EXPIRATION_DATE=	2021-02-18
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LGPL-3

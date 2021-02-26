@@ -17,7 +17,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTION_DEFINE=	OPTIONAL
+OPTIONS_DEFINE=	OPTIONAL
 OPTIONAL_DESC=	Optional dependencies
 
 OPTIONAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbfread>=0:textproc/py-dbfread@${PY_FLAVOR} \

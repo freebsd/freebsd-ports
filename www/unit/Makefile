@@ -29,7 +29,6 @@ OPTIONS_RADIO+=		REGEX
 OPTIONS_RADIO_REGEX=	NOPCRE PCRE PCRE2
 
 DEBUG_DESC=	Enable debug logging
-DEVKIT_DESC=	Install headers and library
 REGEX_DESC=	Support regular expressions
 NOPCRE_DESC=	No support for Regular Expressions
 PCRE_DESC=	Regular Expressions via devel/pcre

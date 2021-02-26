@@ -5,7 +5,6 @@ PORTNAME=	nextcloudclient
 PORTVERSION=	3.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
-CATEGORIES=	deskutils
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	NextCloud Desktop Syncing Client

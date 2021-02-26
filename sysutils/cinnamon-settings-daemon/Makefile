@@ -63,7 +63,6 @@ GLIB_SCHEMAS=	org.cinnamon.settings-daemon.enums.xml \
 		org.cinnamon.settings-daemon.plugins.xrandr.gschema.xml \
 		org.cinnamon.settings-daemon.plugins.xsettings.gschema.xml
 
-OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	CUPS SMARTCARD WACOM
 OPTIONS_DEFAULT=CUPS SMARTCARD WACOM
 OPTIONS_SUB=	yes
