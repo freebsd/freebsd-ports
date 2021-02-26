@@ -2,10 +2,11 @@
 
 PORTNAME=	nq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
+DISTVERSION=	0.3.1-6
+DISTVERSIONSUFFIX=	-g8165cee
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Unix command line queue utility
 
 LICENSE=	CC0-1.0
@@ -16,7 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	leahneukirchen
 USE_PERL5=	test
 
-MAKE_ARGS=	CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" MANDIR="${PREFIX}/man"
+MAKE_ARGS=	CFLAGS="${CFLAGS}" \
+		PREFIX="${PREFIX}"
 TEST_TARGET=	check
 
 post-install:
