@@ -1,6 +1,7 @@
 bin/newsboat
 bin/podboat
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/contrib/README.md
 %%PORTDOCS%%%%DOCSDIR%%/contrib/bookmark-evernote.sh
 %%PORTDOCS%%%%DOCSDIR%%/contrib/bookmark-pinboard.sh
 %%PORTDOCS%%%%DOCSDIR%%/contrib/colorschemes/commander
@@ -16,12 +17,17 @@ bin/podboat
 %%PORTDOCS%%%%DOCSDIR%%/contrib/colorschemes/simple
 %%PORTDOCS%%%%DOCSDIR%%/contrib/colorschemes/solarized-dark
 %%PORTDOCS%%%%DOCSDIR%%/contrib/colorschemes/solarized-light
+%%PORTDOCS%%%%DOCSDIR%%/contrib/exportOPMLWithTags.py
 %%PORTDOCS%%%%DOCSDIR%%/contrib/feedgrabber.rb
 %%PORTDOCS%%%%DOCSDIR%%/contrib/getpocket.com/after_authentication.md
 %%PORTDOCS%%%%DOCSDIR%%/contrib/getpocket.com/create-pocket-user-token.sh
 %%PORTDOCS%%%%DOCSDIR%%/contrib/getpocket.com/readme.md
 %%PORTDOCS%%%%DOCSDIR%%/contrib/getpocket.com/send-to-pocket.sh
 %%PORTDOCS%%%%DOCSDIR%%/contrib/heise.rb
+%%PORTDOCS%%%%DOCSDIR%%/contrib/image-preview/README.org
+%%PORTDOCS%%%%DOCSDIR%%/contrib/image-preview/nbparser
+%%PORTDOCS%%%%DOCSDIR%%/contrib/image-preview/nbrun
+%%PORTDOCS%%%%DOCSDIR%%/contrib/image-preview/vifmimg
 %%PORTDOCS%%%%DOCSDIR%%/contrib/pinboard.pl
 %%PORTDOCS%%%%DOCSDIR%%/contrib/slashdot.rb
 %%PORTDOCS%%%%DOCSDIR%%/contrib/urls-maintenance.sh
