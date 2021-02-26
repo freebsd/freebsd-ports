@@ -262,6 +262,7 @@ include/lean_ext/library/tactic/vm_local_context.h
 include/lean_ext/library/tactic/vm_monitor.h
 include/lean_ext/library/tactic/vm_type_context.h
 include/lean_ext/library/time_task.h
+include/lean_ext/library/tlean_exporter.h
 include/lean_ext/library/trace.h
 include/lean_ext/library/type_context.h
 include/lean_ext/library/typed_expr.h
