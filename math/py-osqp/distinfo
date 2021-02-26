@@ -1,7 +1,3 @@
-TIMESTAMP = 1609975008
-SHA256 (oxfordcontrol-osqp-python-v0.6.2_GH0.tar.gz) = 7f8d4588f7173e2abb72570c27981168ae3142c8356af52a41e500695ee3d1bf
-SIZE (oxfordcontrol-osqp-python-v0.6.2_GH0.tar.gz) = 57325
-SHA256 (oxfordcontrol-osqp-0baddd3_GH0.tar.gz) = 209694548ef95e46444cbd8cbe907975bca3deb7eace6ccb714cc41862037da5
-SIZE (oxfordcontrol-osqp-0baddd3_GH0.tar.gz) = 936684
-SHA256 (oxfordcontrol-qdldl-7ab0fca_GH0.tar.gz) = 9d02ed1a10ad2e8df4de3eb70469be4f9b896a8f93a9323065af625b08cd3645
-SIZE (oxfordcontrol-qdldl-7ab0fca_GH0.tar.gz) = 22930
+TIMESTAMP = 1614319911
+SHA256 (osqp-0.6.2.post0.tar.gz) = 5f0695f26a3bef0fae91254bc283fab790dcca0064bfe0f425167f9c9e8b4cbc
+SIZE (osqp-0.6.2.post0.tar.gz) = 219981

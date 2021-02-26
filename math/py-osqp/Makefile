@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	osqp
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.2.post0
 CATEGORIES=	math python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,11 +20,6 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.6+
-USE_GITHUB=	yes
-GH_ACCOUNT=	oxfordcontrol
-GH_PROJECT=	${PORTNAME}-python
-GH_TUPLE=	oxfordcontrol:${PORTNAME}:0baddd3:s/${PORTNAME}_sources \
-		oxfordcontrol:qdldl:7ab0fca:q/${PORTNAME}_sources/lin_sys/direct/qdldl/qdldl_sources
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>
