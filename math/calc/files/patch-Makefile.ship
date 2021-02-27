@@ -1,6 +1,6 @@
---- Makefile.ship.orig	2019-11-04 23:36:46 UTC
+--- Makefile.ship.orig	2021-02-20 17:27:50 UTC
 +++ Makefile.ship
-@@ -581,7 +581,7 @@ else
+@@ -579,7 +579,7 @@ else
  #endif	/* end of skip for non-Gnu makefiles */
  
  # default INCDIR for non-macOS
@@ -9,7 +9,7 @@
  #INCDIR= /usr/local/include
  #INCDIR= /dev/env/DJDIR/include
  
-@@ -644,7 +644,7 @@ else
+@@ -642,7 +642,7 @@ else
  #endif	/* end of skip for non-Gnu makefiles */
  
  # default BINDIR for non-macOS
@@ -18,7 +18,7 @@
  #BINDIR= /usr/local/bin
  #BINDIR= /dev/env/DJDIR/bin
  
-@@ -660,7 +660,7 @@ else
+@@ -658,7 +658,7 @@ else
  #endif	/* end of skip for non-Gnu makefiles */
  
  # default LIBDIR for non-macOS
@@ -27,7 +27,7 @@
  #LIBDIR= /usr/local/lib
  #LIBDIR= /dev/env/DJDIR/lib
  
-@@ -676,7 +676,7 @@ else
+@@ -674,7 +674,7 @@ else
  #endif	/* end of skip for non-Gnu makefiles */
  
  # default CALC_SHAREDIR for non-macOS
@@ -36,7 +36,7 @@
  #CALC_SHAREDIR= /usr/local/lib/calc
  #CALC_SHAREDIR= /dev/env/DJDIR/share/calc
  
-@@ -690,7 +690,7 @@ endif
+@@ -688,7 +688,7 @@ endif
  #
  #CALC_INCDIR= /usr/local/include/calc
  #CALC_INCDIR= /dev/env/DJDIR/include/calc
@@ -45,7 +45,7 @@
  
  # By default, these values are based CALC_SHAREDIR, INCDIR, BINDIR
  # ---------------------------------------------------------------
-@@ -717,7 +717,7 @@ HELPDIR= ${CALC_SHAREDIR}/help
+@@ -715,7 +715,7 @@ HELPDIR= ${CALC_SHAREDIR}/help
  CUSTOMCALDIR= ${CALC_SHAREDIR}/custom
  CUSTOMHELPDIR= ${CALC_SHAREDIR}/custhelp
  CUSTOMINCDIR= ${CALC_INCDIR}/custom
@@ -54,7 +54,7 @@
  
  # T - top level directory under which calc will be installed
  #
-@@ -749,7 +749,7 @@ SCRIPTDIR= ${BINDIR}/cscript
+@@ -747,7 +747,7 @@ SCRIPTDIR= ${BINDIR}/cscript
  #
  # If in doubt, use T=
  #
@@ -63,7 +63,7 @@
  
  # where man pages are installed
  #
-@@ -760,7 +760,7 @@ T=
+@@ -758,7 +758,7 @@ T=
  #MANDIR=
  #MANDIR= /usr/local/man/man1
  #MANDIR= /usr/man/man1
@@ -72,7 +72,7 @@
  #MANDIR= /dev/env/DJDIR/man/man1
  #MANDIR= /usr/man/u_man/man1
  #MANDIR= /usr/contrib/man/man1
-@@ -895,11 +895,11 @@ CALCRC= ${CALC_SHAREDIR}/startup:~/.calcrc:./.calcinit
+@@ -893,11 +893,11 @@ CALCRC= ${CALC_SHAREDIR}/startup:~/.calc
  #
  # If in doubt, set USE_READLINE, READLINE_LIB and READLINE_INCLUDE to nothing.
  #
@@ -87,7 +87,7 @@
  #
  #READLINE_LIB= -lreadline
  #READLINE_EXTRAS= -lhistory -lncurses
-@@ -925,7 +925,7 @@ READLINE_EXTRAS=
+@@ -923,7 +923,7 @@ READLINE_EXTRAS=
  #READLINE_LIB= -L/usr/local/opt/readline/lib -lreadline
  #READLINE_EXTRAS= -lhistory -lncurses
  #
@@ -96,7 +96,7 @@
  #READLINE_INCLUDE= -I/usr/gnu/include
  #READLINE_INCLUDE= -I/usr/local/include
  
-@@ -936,7 +936,7 @@ READLINE_INCLUDE=
+@@ -934,7 +934,7 @@ READLINE_INCLUDE=
  #CALCPAGER= more
  #CALCPAGER= pg
  #CALCPAGER= cat
@@ -105,7 +105,16 @@
  #CALCPAGER= less.exe -ci
  
  # Debug/Optimize options for ${CC} and ${LCC}
-@@ -1384,8 +1384,8 @@ CCWERR=
+@@ -1125,7 +1125,7 @@ EXTRA_LDFLAGS=
+ # The ARCH_CFLAGS are ${CC} when compiling C files. They follow
+ # CCMISC and precede EXTRA_CFLAGS.
+ #
+-ARCH_CFLAGS= -march=native
++#ARCH_CFLAGS= -march=native
+ #ARCH_CFLAGS=
+ 
+ # COMMON_CFLAGS are the common ${CC} flags used for all programs, both
+@@ -1398,8 +1398,8 @@ CCWERR=
  CCOPT= ${DEBUG}
  CCMISC=
  #
@@ -116,7 +125,7 @@
  #
  MAKE= gmake
  #
-@@ -1734,7 +1734,7 @@ ICFLAGS= ${COMMON_CFLAGS} ${CC_STATIC}
+@@ -1748,7 +1748,7 @@ ICFLAGS= ${COMMON_CFLAGS} ${CC_STATIC}
  else
  ICFLAGS= ${COMMON_CFLAGS} ${CC_SHARE}
  endif
