@@ -3,7 +3,7 @@
 
 PORTNAME=	idutils
 PORTVERSION=	4.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 OPTIONS_DEFINE=	NLS
 
 USES=		charsetfix tar:xz uniquefiles
-# Also see files/patch-lisp_idutils.el
+# Also see patch-src_defid and patch-lisp_idutils.el
 UNIQUE_PREFIX=	g
 UNIQUE_PREFIX_FILES=	bin/gid \
 			man/man1/gid.1
