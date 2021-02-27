@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dsbmd
-PORTVERSION=	1.11.2
+PORTVERSION=	1.11.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	mk@nic-nac-project.org
