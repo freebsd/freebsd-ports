@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-runner
-PORTVERSION=	13.8.0
+PORTVERSION=	13.9.0
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -29,10 +29,10 @@ USE_GITHUB=	nodefault
 # Find tags here:
 # https://gitlab.com/gitlab-org/gitlab-runner/tags
 GL_ACCOUNT=	gitlab-org
-GL_COMMIT=	775dd39d7476642c4dbc3655b375acf93a3556bb
-GITBRANCH=	13-8-stable
+GL_COMMIT=	2ebc4dc45bd6065afa304a5bfdb846334981529e
+GITBRANCH=	13-9-stable
 # https://gitlab-runner-downloads.s3.amazonaws.com/latest/binaries/gitlab-runner-freebsd-amd64
-BUILT=		2021-01-20T13:32:53+0000
+BUILT=		2021-02-22T20:17:08+0000
 
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -46,18 +46,16 @@ GH_TUPLE=	\
 		Azure:go-autorest:v14.2.0:azure_go_autorest/vendor/github.com/Azure/go-autorest \
 		BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		Microsoft:go-winio:v0.4.12:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
-		Nvveen:Gotty:cd527374f1e5:nvveen_gotty/vendor/github.com/Nvveen/Gotty \
 		ayufan:golang-kardianos-service:0c8eb6d8fff2:ayufan_golang_kardianos_service/vendor/github.com/ayufan/golang-kardianos-service \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		bmatcuk:doublestar:v1.3.0:bmatcuk_doublestar/vendor/github.com/bmatcuk/doublestar \
+		boumenot:gocover-cobertura:v1.1.0:boumenot_gocover_cobertura/vendor/github.com/boumenot/gocover-cobertura \
 		census-instrumentation:opencensus-go:v0.22.5:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
-		containerd:continuity:004b46473808:containerd_continuity/vendor/github.com/containerd/continuity \
+		containerd:containerd:v1.4.3:containerd_containerd/vendor/github.com/containerd/containerd \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		docker:cli:336b2a5cac7f:docker_cli/vendor/github.com/docker/cli \
+		docker:cli:v20.10.2:docker_cli/vendor/github.com/docker/cli \
 		docker:distribution:v2.7.0:docker_distribution/vendor/github.com/docker/distribution \
-		docker:engine:9552f2b2fdde:docker_engine/vendor/github.com/docker/docker \
 		docker:go-connections:v0.3.0:docker_go_connections/vendor/github.com/docker/go-connections \
-		docker:go-metrics:b84716841b82:docker_go_metrics/vendor/github.com/docker/go-metrics \
 		docker:go-units:eb879ae3e2b8:docker_go_units/vendor/github.com/docker/go-units \
 		docker:machine:7b7a141da844:docker_machine/vendor/github.com/docker/machine \
 		docker:spdystream:449fdfce4d96:docker_spdystream/vendor/github.com/docker/spdystream \
@@ -67,7 +65,7 @@ GH_TUPLE=	\
 		go-inf:inf:v0.9.0:go_inf_inf/vendor/gopkg.in/inf.v0 \
 		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-yaml:yaml:eeeca48fe776:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
-		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.1.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:eec23a3978ad:golang_crypto/vendor/golang.org/x/crypto \
@@ -101,7 +99,7 @@ GH_TUPLE=	\
 		gorhill:cronexpr:f0984319b442:gorhill_cronexpr/vendor/github.com/gorhill/cronexpr \
 		gorilla:context:v1.1.1:gorilla_context/vendor/github.com/gorilla/context \
 		gorilla:mux:599cba5e7b61:gorilla_mux/vendor/github.com/gorilla/mux \
-		gorilla:websocket:v1.4.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
+		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		grpc:grpc-go:v1.34.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-cleanhttp:v0.5.1:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
@@ -121,7 +119,6 @@ GH_TUPLE=	\
 		klauspost:compress:v1.11.6:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.3.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		klauspost:pgzip:v1.2.5:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
-		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
 		kr:pty:v1.1.1:kr_pty/vendor/github.com/kr/pty \
 		kubernetes-sigs:yaml:v1.1.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
 		kubernetes:api:159aefb8556b:kubernetes_api/vendor/k8s.io/api \
@@ -139,12 +136,14 @@ GH_TUPLE=	\
 		mitchellh:gox:v1.0.1:mitchellh_gox/vendor/github.com/mitchellh/gox \
 		mitchellh:iochan:v1.0.0:mitchellh_iochan/vendor/github.com/mitchellh/iochan \
 		mitchellh:mapstructure:v1.4.0:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		moby:moby:v0.4.1:moby_moby/vendor/github.com/docker/docker-credential-helpers \
+		moby:moby:v0.4.1:moby_moby_1/vendor/github.com/docker/docker-credential-helpers \
+		moby:moby:v20.10.2:moby_moby/vendor/github.com/docker/docker \
+		moby:term:df9cb8a40635:moby_term/vendor/github.com/moby/term \
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.1:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
+		morikuni:aec:v1.0.0:morikuni_aec/vendor/github.com/morikuni/aec \
 		opencontainers:go-digest:v1.0.0-rc1:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.0.1:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
-		opencontainers:runc:c1e454b2a1bf:opencontainers_runc/vendor/github.com/opencontainers/runc \
 		pierrec:lz4:v2.0.5:pierrec_lz4/vendor/github.com/pierrec/lz4 \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
@@ -156,8 +155,8 @@ GH_TUPLE=	\
 		ryanuber:go-glob:v1.0.0:ryanuber_go_glob/vendor/github.com/ryanuber/go-glob \
 		saracen:fastzip:v0.1.5:saracen_fastzip/vendor/github.com/saracen/fastzip \
 		saracen:zipextra:7347a2ee3f10:saracen_zipextra/vendor/github.com/saracen/zipextra \
-		sirupsen:logrus:v1.5.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		spf13:pflag:4c012f6dcd95:spf13_pflag/vendor/github.com/spf13/pflag \
+		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
 		square:go-jose:v2.3.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		stretchr:objx:v0.3.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:95a9d909e987:stretchr_testify/vendor/github.com/stretchr/testify \
@@ -165,7 +164,7 @@ GH_TUPLE=	\
 		urfave:cli:v1.20.0:urfave_cli/vendor/github.com/urfave/cli
 
 GL_TUPLE=	ayufan:golang-cli-helpers:a7cf72d604cdf0af6031dd5d54a4e513abeff0d4:ayufan_golang_cli_helpers/vendor/gitlab.com/ayufan/golang-cli-helpers \
-		gitlab-org:gitlab-terminal:5af59b871b1bcc3f4b733f6db0ff3b6e8b247b92:gitlab_org_gitlab_terminal/vendor/gitlab.com/gitlab-org/gitlab-terminal
+		gitlab-org:gitlab-terminal:2a71b03b44621289b28493d8bf3eaa9f64dbb6c9:gitlab_org_gitlab_terminal/vendor/gitlab.com/gitlab-org/gitlab-terminal
 
 GO_BUILDFLAGS=	-ldflags=" \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.VERSION=${PORTVERSION} \
