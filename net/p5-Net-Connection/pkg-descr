@@ -1,0 +1,4 @@
+This module crates a object that basically serves as a means to
+store basic connection information and retrieve it.
+
+WWW: https://metacpan.org/release/Net-Connection
