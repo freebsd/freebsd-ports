@@ -1,0 +1,4 @@
+Bit-accurate C port of Fasttracker's XM replayer (SB16/WAV render mode).
+It is a direct port of the original asm/Pascal source codes.
+
+WWW: https://github.com/8bitbubsy/ft2play

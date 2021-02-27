@@ -204,6 +204,7 @@
     SUBDIR += freealut
     SUBDIR += freedesktop-sound-theme
     SUBDIR += freepats
+    SUBDIR += ft2play
     SUBDIR += funktrackergold
     SUBDIR += ganv
     SUBDIR += gbemol
