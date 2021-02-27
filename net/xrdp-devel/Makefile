@@ -3,7 +3,7 @@
 
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.15.p20201224
+DISTVERSION=	0.9.16.p20210223
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
@@ -31,7 +31,7 @@ USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
 GH_PROJECT=	xrdp librfxcodec:librfxcodec libpainter:libpainter
-GH_TAGNAME=	a033cf0 v0.1.5:librfxcodec v0.1.1:libpainter
+GH_TAGNAME=	b04fc6f v0.1.5:librfxcodec v0.1.1:libpainter
 
 CONFIGURE_ARGS=	--localstatedir=/var --enable-strict-locations \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
