@@ -78,6 +78,32 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="52bd2d59-4ab5-4bef-a599-7aac4e92238b">
+    <topic>vault -- unauthenticated license read</topic>
+    <affects>
+      <package>
+	<name>vault</name>
+	<range><lt>1.6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>vault developers report:</p>
+	<blockquote cite="https://github.com/hashicorp/vault/releases/tag/v1.6.3">
+	  <p>Limited Unauthenticated License Read: We addressed a security vulnerability that allowed for the unauthenticated reading of Vault licenses from DR Secondaries.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-27668</cvename>
+      <url>https://github.com/hashicorp/vault/releases/tag/v1.6.3</url>
+    </references>
+    <dates>
+      <discovery>2021-02-26</discovery>
+      <entry>2021-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31ad2f10-7711-11eb-b87a-901b0ef719ab">
     <topic>FreeBSD -- jail_remove(2) fails to kill all jailed processes</topic>
     <affects>
