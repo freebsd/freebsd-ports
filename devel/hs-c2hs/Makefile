@@ -11,6 +11,9 @@ COMMENT=	C->Haskell FFI tool that gives some cross-language type safety
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Was used as BUILD_DEPENDS, not useful on its own
+EXPIRATION_DATE=2021-03-27
+
 USES=		cabal
 
 USE_CABAL=	alex-3.2.5 dlist-0.8.0.7 happy-1.19.12 language-c-0.8.3 syb-0.7.1
