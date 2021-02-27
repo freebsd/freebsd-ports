@@ -1,4 +1,4 @@
---- utils/datetime_test.cpp.orig	2017-04-08 05:25:26 UTC
+--- utils/datetime_test.cpp.orig	2016-08-26 10:09:37 UTC
 +++ utils/datetime_test.cpp
 @@ -532,11 +532,11 @@ ATF_TEST_CASE_BODY(timestamp__subtractio
      ATF_REQUIRE_EQ(datetime::delta(100, 0), ts3 - ts1);
