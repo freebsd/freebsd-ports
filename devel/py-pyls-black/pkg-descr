@@ -1,0 +1,14 @@
+Black plugin for the Python Language Server.
+
+- Can either format an entire file or just the selected text
+- The code will only be formatted if it is syntactically valid
+  Python
+- Text selections are treated as if they were a separate
+  Python file. This also means that an indented block of code
+  cannot be formatted
+- Will use your project's pyproject.toml if it has one.
+
+Using pyls-black while yapf and autopep8 are installed, may
+lead to unexpected results!
+
+WWW: https://github.com/rupert/pyls-black
