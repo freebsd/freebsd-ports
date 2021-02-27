@@ -1270,6 +1270,7 @@
     SUBDIR += py-elementpath
     SUBDIR += py-empy
     SUBDIR += py-enchant
+    SUBDIR += py-enrich
     SUBDIR += py-et_xmlfile
     SUBDIR += py-fastavro
     SUBDIR += py-feedparser
