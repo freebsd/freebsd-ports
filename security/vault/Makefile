@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vault
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -18,7 +18,7 @@ GH_TUPLE=	hashicorp:${PORTNAME}:${VAULTTAG}:DEFAULT \
 		swills:vaultui:${VAULTUITAG}:vaultui
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-COMMIT_ID=	be65a227ef2e80f8588b3b13584b5c0d9238c1d7
+COMMIT_ID=	b540be4b7ec48d0dd7512c8d8df9399d6bf84d76
 GO_BUILDFLAGS=	-tags=ui \
 		-ldflags="\
 		-X github.com/hashicorp/vault/sdk/version.Version=${PORTVERSION} \
