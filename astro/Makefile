@@ -93,6 +93,8 @@
     SUBDIR += py-ro
     SUBDIR += py-sgp4
     SUBDIR += py-spacetrack
+    SUBDIR += py-spktype01
+    SUBDIR += py-spktype21
     SUBDIR += pyweather
     SUBDIR += qmapshack
     SUBDIR += readosm
