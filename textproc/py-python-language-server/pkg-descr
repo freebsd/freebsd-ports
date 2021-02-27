@@ -1,0 +1,6 @@
+An implementation of the Language Server Protocol for Python.
+
+The base language server provide Completions, Definitions,
+Hover, References, Signature Help, and Symbols.
+
+WWW: https://github.com/palantir/python-language-server
