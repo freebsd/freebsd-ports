@@ -1,3 +1,3 @@
-TIMESTAMP = 1606986062
-SHA256 (pydantic-1.7.3.tar.gz) = 213125b7e9e64713d16d988d10997dabc6a1f73f3991e1ff8e35ebb1409c7dc9
-SIZE (pydantic-1.7.3.tar.gz) = 224944
+TIMESTAMP = 1614398179
+SHA256 (pydantic-1.8.tar.gz) = 0b71ca069c16470cb00be0acaf0657eb74cbc4ff5f11b42e79647f170956cda3
+SIZE (pydantic-1.8.tar.gz) = 259293
