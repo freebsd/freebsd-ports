@@ -2,7 +2,7 @@
 
 PORTNAME=	cloudquery
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.6
+DISTVERSION=	0.9.7
 CATEGORIES=	net
 
 MAINTAINER=	nc@FreeBSD.org
@@ -18,23 +18,17 @@ GH_ACCOUNT=	${PORTNAME}
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 GH_TUPLE=	\
-		Azure:azure-sdk-for-go:v49.0.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
-		Azure:go-autorest:446f41b7d65b:azure_go_autorest_validation/vendor/github.com/Azure/go-autorest \
-		Azure:go-autorest:6afd852870d1:azure_go_autorest_auth \
-		Azure:go-autorest:autorest/v0.11.13:azure_go_autorest_autorest \
-		Azure:go-autorest:b3a0b30a7423:azure_go_autorest_date \
-		Microsoft:go-winio:v0.4.16:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
+		Microsoft:go-winio:v0.4.14:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		Nvveen:Gotty:cd527374f1e5:nvveen_gotty/vendor/github.com/Nvveen/Gotty \
 		aws:aws-lambda-go:v1.22.0:aws_aws_lambda_go/vendor/github.com/aws/aws-lambda-go \
-		aws:aws-sdk-go:v1.35.0:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		cenkalti:backoff:v3.2.2:cenkalti_backoff_v3/vendor/github.com/cenkalti/backoff/v3 \
 		containerd:continuity:180525291bb7:containerd_continuity/vendor/github.com/containerd/continuity \
 		denisenkom:go-mssqldb:06a60b6afbbc:denisenkom_go_mssqldb/vendor/github.com/denisenkom/go-mssqldb \
 		docker:go-connections:v0.4.0:docker_go_connections/vendor/github.com/docker/go-connections \
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
-		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-gorm:gorm:v1.20.9:go_gorm_gorm/vendor/gorm.io/gorm \
 		go-gorm:mysql:v1.0.2:go_gorm_mysql/vendor/gorm.io/driver/mysql \
 		go-gorm:postgres:v1.0.2:go_gorm_postgres/vendor/gorm.io/driver/postgres \
@@ -44,16 +38,14 @@ GH_TUPLE=	\
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:eeeca48fe776:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		gocarina:gocsv:67c824bc04d4:gocarina_gocsv/vendor/github.com/gocarina/gocsv \
 		golang-sql:civil:cb61b32ac6fe:golang_sql_civil/vendor/github.com/golang-sql/civil \
 		golang:crypto:9e8e0b390897:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:5f4716e94777:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:22da62e12c0c:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
-		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
+		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-genproto:cf70463f6119:google_go_genproto/vendor/google.golang.org/genproto \
-		googleapis:google-api-go-client:v0.36.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		grpc:grpc-go:v1.35.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:go-hclog:v0.14.1:hashicorp_go_hclog/vendor/github.com/hashicorp/go-hclog \
 		hashicorp:go-plugin:v1.4.0:hashicorp_go_plugin/vendor/github.com/hashicorp/go-plugin \
@@ -71,20 +63,16 @@ GH_TUPLE=	\
 		jackc:pgx:v4.9.0:jackc_pgx_v4/vendor/github.com/jackc/pgx/v4 \
 		jinzhu:inflection:v1.0.0:jinzhu_inflection/vendor/github.com/jinzhu/inflection \
 		jinzhu:now:v1.1.1:jinzhu_now/vendor/github.com/jinzhu/now \
-		kubernetes:api:v0.19.0:kubernetes_api/vendor/k8s.io/api \
-		kubernetes:apimachinery:v0.19.0:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
-		kubernetes:client-go:v0.19.0:kubernetes_client_go/vendor/k8s.io/client-go \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
 		mattn:go-colorable:v0.1.6:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mattn:go-sqlite3:v1.14.3:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mitchellh:go-testing-interface:v1.0.0:mitchellh_go_testing_interface/vendor/github.com/mitchellh/go-testing-interface \
-		mitchellh:mapstructure:v1.3.3:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
+		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		moby:term:df9cb8a40635:moby_term/vendor/github.com/moby/term \
 		neo4j:neo4j-go-driver:003230e3e54b:neo4j_neo4j_go_driver_v4/vendor/github.com/neo4j/neo4j-go-driver/v4 \
 		oklog:run:v1.0.0:oklog_run/vendor/github.com/oklog/run \
-		okta:okta-sdk-golang:v2.2.1:okta_okta_sdk_golang_v2/vendor/github.com/okta/okta-sdk-golang/v2 \
 		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		opencontainers:go-digest:v1.0.0:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.0.1:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
@@ -93,10 +81,9 @@ GH_TUPLE=	\
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
 		shopspring:decimal:v1.2.0:shopspring_decimal/vendor/github.com/shopspring/decimal \
 		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		spf13:afero:v1.2.2:spf13_afero/vendor/github.com/spf13/afero \
+		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.1.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
@@ -108,13 +95,5 @@ GH_TUPLE=	\
 		uber-go:zap:v1.10.0:uber_go_zap/vendor/go.uber.org/zap
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-extract:
-	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest
-	@${RLN} ${WRKSRC_azure_go_autorest_autorest}/autorest ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest
-	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/azure/auth
-	@${RLN} ${WRKSRC_azure_go_autorest_auth}/autorest/azure/auth ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/azure/auth
-	@${RM} -r ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/date
-	@${RLN} ${WRKSRC_azure_go_autorest_date}/autorest/date ${WRKSRC}/vendor/github.com/Azure/go-autorest/autorest/date
 
 .include <bsd.port.mk>
