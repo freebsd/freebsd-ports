@@ -3,16 +3,15 @@
 
 PORTNAME=	inspircd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.1
+DISTVERSION=	3.9.0
 CATEGORIES=	irc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	driesm.michiels@gmail.com
 COMMENT=	Modular C++ IRC daemon
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.txt
 
-# Configure script is written in perl
 USES=		compiler:c++11-lang cpe gmake localbase:ldflags perl5
 CPE_VENDOR=	inspire_ircd
 CPE_PRODUCT=	inspircd
@@ -26,12 +25,13 @@ CONFIGURE_ARGS=	--binary-dir=${PREFIX}/bin \
 		--data-dir=${_INSPIRCD_DBDIR} \
 		--disable-auto-extras \
 		--distribution-label=${OPSYS}-${PORTVERSION} \
+		--gid=nobody \
 		--log-dir=${_INSPIRCD_LOGDIR} \
 		--manual-dir=${MANPREFIX}/man/man1 \
 		--module-dir=${PREFIX}/libexec/${PORTNAME}/modules \
 		--prefix=${PREFIX}/libexec/${PORTNAME} \
-		--gid=0 \
-		--uid=0
+		--runtime-dir=${_INSPIRCD_RUNDIR} \
+		--uid=nobody
 
 MAKEFILE=	GNUmakefile
 
@@ -52,7 +52,7 @@ PLIST_SUB=	INSPIRCD_DBDIR=${_INSPIRCD_DBDIR} \
 		INSPIRCD_RUNDIR=${_INSPIRCD_RUNDIR} \
 		INSPIRCD_USER=${USERS}
 
-OPTIONS_DEFINE=		GNUTLS IPV6 LDAP MBEDTLS MYSQL OPENSSL PCRE PGSQL POSIX \
+OPTIONS_DEFINE=		GNUTLS LDAP MBEDTLS MYSQL OPENSSL PCRE PGSQL POSIX \
 			SQLITE SSLREHASH
 OPTIONS_DEFAULT=	OPENSSL POSIX
 OPTIONS_SUB=		yes

@@ -14,7 +14,10 @@ bin/inspircd-testssl
 %%ETCDIR%%/examples/codepages/latin1.conf.example
 %%ETCDIR%%/examples/codepages/rfc1459.conf.example
 %%ETCDIR%%/examples/codepages/strict-rfc1459.conf.example
+%%ETCDIR%%/examples/providers/dronebl.conf.example
+%%ETCDIR%%/examples/providers/efnet-rbl.conf.example
 %%ETCDIR%%/examples/providers/irccloud.conf.example
+%%ETCDIR%%/examples/providers/torexit.conf.example
 %%ETCDIR%%/examples/services/anope.conf.example
 %%ETCDIR%%/examples/services/atheme.conf.example
 %%ETCDIR%%/examples/services/generic.conf.example
