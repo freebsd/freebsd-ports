@@ -2,6 +2,7 @@
 
 PORTNAME=	libwraster
 PORTVERSION=	0.95.9
+PORTREVISION=	1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/source/release/
 DISTNAME=	WindowMaker-${PORTVERSION}
@@ -15,8 +16,7 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
 		libjbig.so:graphics/jbigkit \
 		libtiff.so:graphics/tiff \
-		libwebp.so:graphics/webp \
-		libMagickWand-7.so:graphics/ImageMagick7
+		libwebp.so:graphics/webp
 
 USES=		jpeg libtool localbase pathfix pkgconfig xorg
 USE_LDCONFIG=	yes
@@ -35,6 +35,20 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--enable-wmreplace \
 		--with-x
 INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	IMAGEMAGICK
+OPTIONS_DEFAULT=	IMAGEMAGICK
+
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-${IMAGEMAGICK_DEFAULT}.so:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
+IMAGEMAGICK_CONFIGURE_OFF=	--disable-magick
+
+.include <bsd.port.options.mk>
+
+post-patch-IMAGEMAGICK-on:
+.if ${IMAGEMAGICK_DEFAULT} == 6
+	@${REINPLACE_CMD} -e '/MagickWand\.h/s,MagickWand/,wand/,' \
+		${WRKSRC}/configure ${WRKSRC}/wrlib/load_magick.c
+.endif
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} config-paths.h

@@ -3,6 +3,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.95.9
+PORTREVISION=	1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/source/release/
 DISTNAME=	WindowMaker-${PORTVERSION}
@@ -17,7 +18,6 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libjbig.so:graphics/jbigkit \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp \
-		libMagickWand-7.so:graphics/ImageMagick7 \
 		libwraster.so:x11-wm/libwraster \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -51,11 +51,24 @@ PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ INSTALL \
 		INSTALL-WMAKER NEWS README README.definable-cursor \
 		README.i18n TODO The-perfect-Window-Maker-patch.txt
 
-OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	IMAGEMAGICK DOCS NLS
+OPTIONS_DEFAULT=	IMAGEMAGICK
 OPTIONS_SUB=	yes
+
+IMAGEMAGICK_LIB_DEPENDS=	libMagickWand-${IMAGEMAGICK_DEFAULT}.so:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
+IMAGEMAGICK_CONFIGURE_OFF=	--disable-magick
+
 NLS_USES=	gettext
 NLS_CONFIGURE_ENV=	LINGUAS="*"
 NLS_CONFIGURE_ENABLE=	locale
+
+.include <bsd.port.options.mk>
+
+post-patch-IMAGEMAGICK-on:
+.if ${IMAGEMAGICK_DEFAULT} == 6
+	@${REINPLACE_CMD} -e '/MagickWand\.h/s,MagickWand/,wand/,' \
+		${WRKSRC}/configure ${WRKSRC}/wrlib/load_magick.c
+.endif
 
 post-install:
 	@${MKDIR} \
