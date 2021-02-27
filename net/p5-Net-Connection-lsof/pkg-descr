@@ -1,0 +1,3 @@
+Creates Net::Connection objects using lsof.
+
+WWW: https://metacpan.org/release/Net-Connection-lsof
