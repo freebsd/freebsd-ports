@@ -62,6 +62,7 @@
     SUBDIR += R-cran-gmp
     SUBDIR += R-cran-gower
     SUBDIR += R-cran-gpclib
+    SUBDIR += R-cran-gsl
     SUBDIR += R-cran-gss
     SUBDIR += R-cran-gtable
     SUBDIR += R-cran-haven
