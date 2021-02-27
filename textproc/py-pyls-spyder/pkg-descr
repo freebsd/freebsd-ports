@@ -1,0 +1,7 @@
+Spyder extensions for the python-language-server (pyls).
+
+Provides Spyder-specific extras for the Language Server
+Protocol (LSP) on Python, such as document symbol searching
+and others.
+
+WWW: https://github.com/spyder-ide/pyls-spyder
