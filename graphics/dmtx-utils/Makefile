@@ -4,6 +4,7 @@
 PORTNAME=	dmtx-utils
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -12,12 +13,11 @@ COMMENT=	Software for reading and writing Data Matrix barcodes
 LICENSE=	LGPL21+
 
 LIB_DEPENDS=	libdmtx.so:graphics/libdmtx \
-		libMagickWand-7.so:graphics/ImageMagick7 \
-		libMagickCore-7.so:graphics/ImageMagick7
+		libMagickWand-${IMAGEMAGICK_DEFAULT}.so:graphics/ImageMagick${IMAGEMAGICK_DEFAULT}
 
 USES=		autoreconf libtool localbase tar:bzip2 pkgconfig
 
-USE_GITHUB=	YES
+USE_GITHUB=	yes
 GH_ACCOUNT=	dmtx
 
 GNU_CONFIGURE=	yes
