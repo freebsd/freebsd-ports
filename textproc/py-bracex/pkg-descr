@@ -1,0 +1,4 @@
+Bracex is a brace expanding library (a la Bash) for Python. Brace
+expanding is used to generate arbitrary strings.
+
+WWW: https://pypi.org/project/bracex/
