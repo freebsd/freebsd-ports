@@ -1,0 +1,21 @@
+Provides a enhances colorized netstat like tool that is
+capable of doing searches.
+
+The search criteria can be any of the following.
+
+ * CIDR
+ * port
+ * host
+ * PTR
+ * pctcpu
+ * pctmem
+ * Regex PTR
+ * state
+ * UID
+ * username
+ * wait channel
+
+Among other unique features it can also display the full
+command, PctMem, and PctCPU of the process with the connection.
+
+WWW: https://metacpan.org/release/Net-Connection-ncnetstat

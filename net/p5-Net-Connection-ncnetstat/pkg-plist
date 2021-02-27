@@ -1,0 +1,3 @@
+bin/ncnetstat
+%%SITE_PERL%%/Net/Connection/ncnetstat.pm
+%%PERL5_MAN3%%/Net::Connection::ncnetstat.3.gz
