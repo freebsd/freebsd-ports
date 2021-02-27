@@ -57,4 +57,9 @@ do-install:
 do-install-JTS-on:
 	${LN} -sf ${JAVALIBDIR}/jts-core.jar ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/server/solr-webapp/webapp/WEB-INF/lib/
 
+# execute this target to generate the pkg-plist
+generate-plist: patch
+	php create-plist.php ${WRKSRC} >pkg-plist
+	$(MAKE) clean
+
 .include <bsd.port.mk>
