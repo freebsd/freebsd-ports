@@ -61,10 +61,8 @@ OPTIONS_DEFAULT=	FRIBIDI HARFBUZZ PULSEAUDIO EXAMPLES GSTREAMER V4L SCIM XIM \
 			OPENSSL OPENJPEG PDF PS RAW SVG WEBP XCF OPENGL LUAJIT CXX
 OPTIONS_DEFAULT_aarch64=	LUALANG
 OPTIONS_DEFAULT_powerpc64=	LUALANG
-OPTIONS_DEFAULT_powerpc64le=	LUALANG
 OPTIONS_EXCLUDE_aarch64=	LUAJIT
 OPTIONS_EXCLUDE_powerpc64=	LUAJIT
-OPTIONS_EXCLUDE_powerpc64le=	LUAJIT
 OPTIONS_SUB=		yes
 
 HARFBUZZ_DESC=		OpenType text shaping engine
@@ -333,6 +331,11 @@ USE_GL=			egl
 
 .if (${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == aarch64)
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
+.endif
+
+.if ${ARCH} == powerpc64le
+LUAJIT_BUILD_DEPENDS=		luajit:lang/luajit-openresty
+LUAJIT_RUN_DEPENDS=		luajit:lang/luajit-openresty
 .endif
 
 post-install:
