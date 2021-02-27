@@ -1,0 +1,5 @@
+[
+{ type: install
+  message: "gid is installed as ggid to avoid conflicts with coreutils."
+}
+]

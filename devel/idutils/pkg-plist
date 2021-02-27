@@ -3,7 +3,7 @@ bin/defid
 bin/eid
 bin/fid
 bin/fnid
-bin/gid
+bin/ggid
 bin/lid
 bin/mkid
 bin/xtokid
@@ -12,7 +12,7 @@ man/man1/defid.1.gz
 man/man1/eid.1.gz
 man/man1/fid.1.gz
 man/man1/fnid.1.gz
-man/man1/gid.1.gz
+man/man1/ggid.1.gz
 man/man1/lid.1.gz
 man/man1/mkid.1.gz
 man/man1/xtokid.1.gz

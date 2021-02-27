@@ -3,20 +3,23 @@
 
 PORTNAME=	idutils
 PORTVERSION=	4.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	peterjeremy@acm.org
 COMMENT=	The classic Berkeley gid/lid tools for looking up variables in code
 
-CONFLICTS=	coreutils-[0-9]* linux-gid-[0-9]* sh-utils-[0-9]*
-
 LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	NLS
 
-USES=		charsetfix tar:xz
+USES=		charsetfix tar:xz uniquefiles
+# Also see files/patch-lisp_idutils.el
+UNIQUE_PREFIX=	g
+UNIQUE_PREFIX_FILES=	bin/gid \
+			man/man1/gid.1
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	EMACS='no'
 CPPFLAGS+=	-I${LOCALBASE}/include

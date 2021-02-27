@@ -33,8 +33,6 @@ GMP_CONFIGURE_WITH=	gmp
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-CONFLICTS=	idutils-[0-9]*
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
