@@ -3,7 +3,7 @@
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	9.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -14,16 +14,19 @@ COMMENT=	Clone of the terminal emulator rxvt modified to support Unicode
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig
+LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig
 
-USES=			cpe pkgconfig shebangfix tar:bzip2 terminfo xorg
-USE_XORG=		xpm xft xrender
+USES=			cpe perl5 pkgconfig shebangfix tar:bzip2 terminfo xorg
+USE_XORG=		x11 xft xmu xpm xrender xt
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
 LIBS+=			-lutil
 CONFIGURE_ENV=		TIC=${LOCALBASE}/bin/tic
-CONFIGURE_ARGS=		--enable-everything --with-term=rxvt	\
-			--with-terminfo=${LOCALBASE}/share/misc/terminfo.db
+CONFIGURE_ARGS=		--enable-everything --with-term=rxvt
+.if !exists(/usr/bin/tic)
+CONFIGURE_ARGS+=	--with-terminfo=${LOCALBASE}/share/misc/terminfo.db
+.endif
 CPE_VENDOR=		marc_lehmann
 
 OPTIONS_DEFINE=	PERL XIM UNICODE3 ISO14755 COMBINING RXVT_SCROLLBAR	\
@@ -58,108 +61,66 @@ OPTIONS_DEFAULT=	PERL XIM UNICODE3 ISO14755 COMBINING RXVT_SCROLLBAR	\
 			256_COLOR
 OPTIONS_EXCLUDE_armv6=	IMLOCALE_FIX
 OPTIONS_EXCLUDE_armv7=	IMLOCALE_FIX
+OPTIONS_SUB=		yes
 
 PORTDOCS1=	Changes README.FAQ README.configure
 PORTDOCS=	README.xvt ${PORTDOCS1}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIMLOCALE_FIX}
-PATCH_DEPENDS+=	p5-Encode-HanExtra>=0:chinese/p5-Encode-HanExtra \
-		p5-Encode-JIS2K>=0:converters/p5-Encode-JIS2K
-.endif
+IMLOCALE_FIX_PATCH_DEPENDS=	p5-Encode-HanExtra>=0:chinese/p5-Encode-HanExtra \
+				p5-Encode-JIS2K>=0:converters/p5-Encode-JIS2K
 
 # disable the embedded perl interpreter
-.if !${PORT_OPTIONS:MPERL}
-CONFIGURE_ARGS+=	--disable-perl
-USES+=			perl5
-USE_PERL5=		build
-PLIST_SUB+=		PERL="@comment "
-.else
-USES+=			perl5
-PLIST_SUB+=		PERL=""
-.endif
+PERL_CONFIGURE_ENABLE=	perl
+PERL_USE_OFF=		PERL5=build
 
 # disable XIM (X Input Method) protocol support
-.if !${PORT_OPTIONS:MXIM}
-CONFIGURE_ARGS+=	--disable-xim
-.endif
+XIM_CONFIGURE_ENABLE=	xim
 
 # disable support for Unicode codepoints above 65535
-.if !${PORT_OPTIONS:MUNICODE3}
-CONFIGURE_ARGS+=	--disable-unicode3
-.endif
+UNICODE3_CONFIGURE_ENABLE=	unicode3
 
 # disable support for extended ISO 14755 modes
-.if !${PORT_OPTIONS:MISO14755}
-CONFIGURE_ARGS+=	--disable-iso14755
-.endif
+ISO14755_CONFIGURE_ENABLE=	iso14755
 
 # disable automatic composition of combining characters
 # into composite characters
-.if !${PORT_OPTIONS:MCOMBINING}
-CONFIGURE_ARGS+=	--disable-combining
-.endif
+COMBINING_CONFIGURE_ENABLE=	combining
 
 # disable support for the original rxvt scrollbar
-.if !${PORT_OPTIONS:MRXVT_SCROLLBAR}
-CONFIGURE_ARGS+=	--disable-rxvt-scroll
-.endif
+RXVT_SCROLLBAR_CONFIGURE_ENABLE=	rxvt-scroll
 
 # disable support for a NeXT-like scrollbar
-.if !${PORT_OPTIONS:MNEXT_SCROLLBAR}
-CONFIGURE_ARGS+=	--disable-next-scroll
-.endif
+NEXT_SCROLLBAR_CONFIGURE_ENABLE=	next-scroll
 
 # disable support for an Xterm-like scrollbar
-.if !${PORT_OPTIONS:MXTERM_SCROLLBAR}
-CONFIGURE_ARGS+=	--disable-xterm-scroll
-.endif
+XTERM_SCROLLBAR_CONFIGURE_ENABLE=	xterm-scroll
 
 # disable any handling of the backspace key by rxvt
 # let the X server do it
-.if !${PORT_OPTIONS:MBACKSPACE_KEY}
-CONFIGURE_ARGS+=	--disable-backspace-key
-.endif
+BACKSPACE_KEY_CONFIGURE_ENABLE=	backspace-key
 
 # disable any handling of the delete key by rxvt
-.if !${PORT_OPTIONS:MDELETE_KEY}
-CONFIGURE_ARGS+=	--disable-delete-key
-.endif
+DELETE_KEY_CONFIGURE_ENABLE=	delete-key
 
 # enable scrolling via mouse wheel or buttons 4 & 5
-.if !${PORT_OPTIONS:MMOUSEWHEEL}
-CONFIGURE_ARGS+=	--disable-mousewheel
-.endif
+MOUSEWHELL_CONFIGURE_ENABLE=	mousewheel
 
 # enable smart resize
-.if !${PORT_OPTIONS:MSMART_RESIZE}
-CONFIGURE_ARGS+=	--disable-smart-resize
-.else
-CONFIGURE_ARGS+=	--enable-smart-resize
-.endif
+SMART_RESIZE_CONFIGURE_ENABLE=	smart-resize
 
 # enable integration with gdk-pixbuf for background images
-.if !${PORT_OPTIONS:MGDK_PIXBUF}
-CONFIGURE_ARGS+=	--disable-pixbuf
-.else
-USES+=			gnome
-USE_GNOME+=		gdkpixbuf2
-CONFIGURE_ARGS+=	--enable-pixbuf
-.endif
+GDK_PIXBUF_USES=	gnome
+GDK_PIXBUF_USE=		GNOME=gdkpixbuf2
+GDK_PIXBUF_CONFIGURE_ENABLE=	pixbuf
 
 # enable startup notification
-.if !${PORT_OPTIONS:MNOTIFY}
-CONFIGURE_ARGS+=	--disable-startup-notification
-.else
-CONFIGURE_ARGS+=	--enable-startup-notification
-LIB_DEPENDS+=		libstartup-notification-1.so:x11/startup-notification
-.endif
+NOTIFY_CONFIGURE_ENABLE=	startup-notification
+NOTIFY_LIB_DEPENDS=		libstartup-notification-1.so:x11/startup-notification
 
 # enable support for 256 colors
-.if ${PORT_OPTIONS:M256_COLOR}
-CONFIGURE_ARGS+=	--enable-256-color
-.endif
+256_COLOR_CONFIGURE_ARGS+=	--enable-256-color
+
+.include <bsd.port.options.mk>
 
 # compile in support for additional codeset groups
 .if ${PORT_OPTIONS:MENCODING}
@@ -194,27 +155,26 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-.if ${PORT_OPTIONS:MIMLOCALE_FIX}
-post-patch:
+post-patch-IMLOCALE_FIX-on:
 	${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-imlocale
 	cd ${WRKSRC}/src && ./gentables
-.endif
 
 pre-configure:
+.if exists(/usr/bin/tic)
+	${REINPLACE_CMD} -e "/rxvt-unicode.terminfo/d" ${WRKSRC}/doc/Makefile.in
+.endif
 	${RM} ${WRKSRC}/src/perl/kuake.orig
 
-post-build:
-.if ${PORT_OPTIONS:MDOCS}
+post-build-DOCS-on:
 	${CP} ${PORTDOCS1:S|^|${WRKSRC}/|} ${WRKSRC}/doc
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/etc/rxvt-unicode.terminfo	\
 		${STAGEDIR}${PREFIX}/share/misc/
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
 
 .include <bsd.port.mk>
