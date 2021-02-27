@@ -2,7 +2,7 @@
 
 PORTNAME=	please
 DISTVERSIONPREFIX=	v
-DISTVERSION=	15.15.0
+DISTVERSION=	15.17.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	.build
 
@@ -111,7 +111,7 @@ do-build:
 	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o build_langserver tools/build_langserver/langserver_main.go
 	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o jarcat tools/jarcat/main.go
 	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_go_filter tools/please_go_filter/please_go_filter.go
-	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_go_install tools/please_go_install/main.go
+	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_go_install tools/please_go_install/please_go_install.go
 	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_go_test tools/please_go_test/plz_go_test_main.go
 	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_pex tools/please_pex/pex_main.go
 	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o release_signer tools/release_signer/main.go
