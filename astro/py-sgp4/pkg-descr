@@ -1,0 +1,4 @@
+Python implementation of most recent version of the SGP4 satellite tracking
+algorithm.
+
+WWW: https://github.com/brandon-rhodes/python-sgp4

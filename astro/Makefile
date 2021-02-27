@@ -90,6 +90,7 @@
     SUBDIR += py-pysofa
     SUBDIR += py-pywapi
     SUBDIR += py-ro
+    SUBDIR += py-sgp4
     SUBDIR += py-spacetrack
     SUBDIR += pyweather
     SUBDIR += qmapshack
