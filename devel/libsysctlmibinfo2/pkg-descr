@@ -1,17 +1,11 @@
-The sysctlmibinfo2 library provides an API to explore the sysctl MIB and
-to get the info of an object, it depends on the sysctlinfo interface and
-sysctlbyname-improved.
+The sysctlmibinfo2 library provides an API to explore the sysctl
+MIB-Tree and to get the properties of an object, therefore it is
+useful to handle an object correctly and to build a sysctl-like
+utility.
 
-This library provides:
-
- * an API to wrap the internal sysctl nodes of sysctlinfo and
-   sysctlbyname-improved
- * a handy userland MIB object representation
- * functions to build object-list and object-tree
-
-The advantages to use sysctlmibinfo2 are:
-
- * an easy userspace API to the kernel sysctl MIB-Tree
- * building quickly a custom sysctl(8) tool
+It implements wrappers around the sysctlinfo(4) interface and
+sysctlbyname_improved to provide a more easy interface, moreover
+it defines a 'struct sysctlmif_object' and provides a convenient
+API to build data structures of sysctlmif_object.
 
 WWW: https://gitlab.com/alfix/sysctlmibinfo2/

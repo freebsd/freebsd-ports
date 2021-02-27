@@ -1,12 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	libsysctlmibinfo2
-DISTVERSION=	2.0.0
-PORTREVISION=	3
+DISTVERSION=	2.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	alfix86@gmail.com
-COMMENT=	API to get sysctl MIB info version 2
+COMMENT=	Sysctl MIB-Tree API (improved version)
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,12 +19,12 @@ USE_GITLAB=	yes
 
 GL_ACCOUNT=	alfix
 GL_PROJECT=	sysctlmibinfo2
-GL_COMMIT=	d72ac5edefc222969faa57109c5c169c2ad69306
+GL_COMMIT=	de427a99fc515c22a057998a29c92221e2581592\
 
 PLIST_FILES=	include/sysctlmibinfo2.h \
 		lib/libsysctlmibinfo2.a \
 		lib/libsysctlmibinfo2.so \
-		lib/libsysctlmibinfo2.so.2.0.0 \
+		lib/libsysctlmibinfo2.so.2.0.1 \
 		man/man3/sysctlmibinfo2.3.gz
 
 PORTEXAMPLES=	*
@@ -36,8 +35,8 @@ OPTIONS_DEFAULT=	EXAMPLES
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/sysctlmibinfo2.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libsysctlmibinfo2.a ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${WRKSRC}/libsysctlmibinfo2.so.2.0.0 ${STAGEDIR}${PREFIX}/lib
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libsysctlmibinfo2.so.2.0.0 ${STAGEDIR}${PREFIX}/lib/libsysctlmibinfo2.so
+	${INSTALL_LIB} ${WRKSRC}/libsysctlmibinfo2.so.2.0.1 ${STAGEDIR}${PREFIX}/lib
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libsysctlmibinfo2.so.2.0.1 ${STAGEDIR}${PREFIX}/lib/libsysctlmibinfo2.so
 	${INSTALL_MAN} ${WRKSRC}/sysctlmibinfo2.3.gz ${STAGEDIR}${MAN3PREFIX}/man/man3
 
 do-install-EXAMPLES-on:
