@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghc-events
-PORTVERSION=	0.13.0
+PORTVERSION=	0.15.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,6 +11,6 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
-USE_CABAL=	primitive-0.7.0.1 vector-0.12.1.2
+USE_CABAL=	primitive-0.7.1.0_2 vector-0.12.2.0
 
 .include <bsd.port.mk>
