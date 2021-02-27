@@ -83,6 +83,7 @@
     SUBDIR += py-astropy-helpers
     SUBDIR += py-ephem
     SUBDIR += py-horoscopegenerator
+    SUBDIR += py-jplephem
     SUBDIR += py-metar
     SUBDIR += py-metpy
     SUBDIR += py-pymeeus

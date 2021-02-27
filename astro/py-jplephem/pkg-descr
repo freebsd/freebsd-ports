@@ -1,0 +1,7 @@
+This package is a Python implementation of the math that standard JPL
+ephemerides use to predict raw (x,y,z) planetary positions. It is one of the
+foundations of the Skyfield astronomy library for Python (astro/py-skyfield).
+
+But you can also use jplephem standalone to generate raw vectors.
+
+WWW: https://github.com/brandon-rhodes/python-jplephem
