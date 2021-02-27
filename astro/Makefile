@@ -28,6 +28,7 @@
     SUBDIR += jday
     SUBDIR += josm
     SUBDIR += kosmindoormap
+    SUBDIR += kosmorro
     SUBDIR += kstars
     SUBDIR += libgal
     SUBDIR += libnova

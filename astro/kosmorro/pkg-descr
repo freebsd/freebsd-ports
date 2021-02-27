@@ -1,0 +1,17 @@
+A program that calculates your astronomical ephemerides.
+
+By default, it will give you the current Moon phase and, if any, the events that
+will occur today. To get the rise, culmination and set of the objects of the
+Solar system, you will need to give it your position on Earth: get your current
+coordinates (with OpenStreetMap for instance), and give them to Kosmorro by
+invoking it with the following parameters: --latitude=X --longitude=Y (replace X
+by the latitude and Y by the longitude).
+
+Kosmorro has a lot of available options. To get a list of them, run kosmorro
+--help, or read its manual with man kosmorro.
+
+Note: the first time it runs, Kosmorro will download some important files needed
+to make the computations. They are stored in a cache folder named
+~/.kosmorro-cache .
+
+WWW: http://kosmorro.space/
