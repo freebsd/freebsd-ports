@@ -95,6 +95,8 @@
     SUBDIR += py-spacetrack
     SUBDIR += py-spktype01
     SUBDIR += py-spktype21
+    SUBDIR += py-skyfield
+    SUBDIR += py-skyfield-data
     SUBDIR += pyweather
     SUBDIR += qmapshack
     SUBDIR += readosm

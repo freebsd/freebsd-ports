@@ -1,0 +1,11 @@
+%%PYTHON_SITELIBDIR%%/skyfield_data/__init__.py
+%%PYTHON_SITELIBDIR%%/skyfield_data/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/skyfield_data/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/skyfield_data/__pycache__/expiration_data.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/skyfield_data/__pycache__/expiration_data.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/skyfield_data/__pycache__/expirations.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/skyfield_data/__pycache__/expirations.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/skyfield_data/data/de421.bsp
+%%PYTHON_SITELIBDIR%%/skyfield_data/data/finals2000A.all
+%%PYTHON_SITELIBDIR%%/skyfield_data/expiration_data.py
+%%PYTHON_SITELIBDIR%%/skyfield_data/expirations.py

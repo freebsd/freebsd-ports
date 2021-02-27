@@ -1,0 +1,4 @@
+Skyfield is a pure-Python astronomy package that makes it easy to generate high
+precision research-grade positions for planets and Earth satellites.
+
+WWW: https://rhodesmill.org/skyfield/
