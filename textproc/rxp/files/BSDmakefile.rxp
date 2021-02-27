@@ -1,7 +1,7 @@
 PROG=	rxp
 
 SRCS=	rxp.c infoset-print.c
-CFLAGS+=	-DCHAR_SIZE=16 -DHAVE_LIBZ
+CFLAGS+=	-DCHAR_SIZE=${CHAR_SIZE} -DHAVE_LIBZ
 CFLAGS+=	-Werror
 WARNS=		6
 

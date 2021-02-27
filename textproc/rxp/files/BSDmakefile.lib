@@ -3,14 +3,14 @@ SHLIB_MAJOR=	1
 SHLIB_MINOR=	4
 MK_PROFILE=	no
 
-CFLAGS+=	-DCHAR_SIZE=16 -DHAVE_LIBZ
+CFLAGS+=	-DCHAR_SIZE=${CHAR_SIZE} -DHAVE_LIBZ
 CFLAGS+=	-Werror
 WARNS=		6
 LDADD=		-lz
 
 SRCS=	catalog.c catutil.c resolve.c entityopener.c xmlparser.c	\
 	url.c charset.c ctype16.c dtd.c input.c stdio16.c string16.c	\
-	system.c hash.c version.c namespaces.c http.c http.c		\
+	system.c hash.c version.c namespaces.c http.c			\
 	nf16check.c nf16data.c
 INCS=	charset.h ctype16.h dtd.h hash.h input.h namespaces.h \
 	rxputil.h stdio16.h string16.h system.h url.h version.h \
@@ -20,3 +20,7 @@ LIBDIR=	${PREFIX}/lib
 INCSDIR=${PREFIX}/include/rxp
 
 .include <bsd.lib.mk>
+
+.if ${CHAR_SIZE} == 8
+CFLAGS+=	-Wno-unused-label
+.endif
