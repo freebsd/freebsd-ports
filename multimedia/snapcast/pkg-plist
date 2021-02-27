@@ -5,6 +5,7 @@ etc/snapserver.conf
 man/man1/snapserver.1.gz
 share/snapserver/index.html
 share/snapserver/snapweb/3rd-party/libflac.js
+share/snapserver/snapweb/config.js
 share/snapserver/snapweb/favicon.ico
 share/snapserver/snapweb/index.html
 share/snapserver/snapweb/launcher-icon.png
