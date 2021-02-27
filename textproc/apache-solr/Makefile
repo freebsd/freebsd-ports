@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache-solr
-PORTVERSION=	8.8.0
-PORTREVISION=	1
+PORTVERSION=	8.8.1
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/lucene/solr/${PORTVERSION}
 DISTNAME=	solr-${PORTVERSION}
@@ -58,7 +57,7 @@ do-install-JTS-on:
 	${LN} -sf ${JAVALIBDIR}/jts-core.jar ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/server/solr-webapp/webapp/WEB-INF/lib/
 
 # execute this target to generate the pkg-plist
-generate-plist: patch
+my-generate-plist: patch
 	php create-plist.php ${WRKSRC} >pkg-plist
 	$(MAKE) clean
 
