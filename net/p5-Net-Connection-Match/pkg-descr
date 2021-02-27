@@ -1,0 +1,19 @@
+Provides a easy to use method for checking if a Net::Connection
+object mathes a series of checks.
+
+Currently can do matching based off of the following.
+
+ * CIDR
+ * Command
+ * PctCPU
+ * PctMem
+ * Ports
+ * Protocol
+ * State
+ * RegexPTR
+ * PTR
+ * UID
+ * Username
+ * WChan
+
+WWW: https://metacpan.org/release/Net-Connection-Match
