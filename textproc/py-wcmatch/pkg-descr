@@ -1,0 +1,11 @@
+Wildcard Match provides an enhanced fnmatch, glob, and pathlib library
+in order to provide file matching and globbing that more closely
+follows the features found in Bash. In some ways these libraries are
+similar to Python's builtin libraries as they provide a similar
+interface to match, filter, and glob the file system. But they also
+include a number of features found in Bash's globbing such as
+backslash escaping, brace expansion, extended glob pattern groups,
+etc. They also add a number of new useful functions as well, such as
+globmatch which functions like fnmatch, but for paths.
+
+WWW: https://pypi.org/project/wcmatch/
