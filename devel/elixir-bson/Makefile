@@ -2,14 +2,13 @@
 
 PORTNAME=	elixir-bson
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	BSON implementation in Elixir
 
 LICENSE=	MIT
-
-IGNORE=		does not build with Elixir 1.6
 
 USES=		elixir
 USE_GITHUB=	yes
