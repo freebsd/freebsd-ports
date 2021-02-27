@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2021-02-11T08-23-43Z
-COMMIT_ID=	f24d8127ab2f225df41054c331cc0585dd5fde84
+GHTAG=		RELEASE.2021-02-24T18-44-45Z
+COMMIT_ID=	c1a49be639e6e0e297e39b4001672eb08f4c8b92
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -108,7 +108,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		json-iterator:go:v1.1.10:json_iterator_go/vendor/github.com/json-iterator/go \
 		klauspost:compress:v1.11.7:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.3.1:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
-		klauspost:cpuid:v2.0.3:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \
+		klauspost:cpuid:v2.0.4:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \
 		klauspost:pgzip:v1.2.5:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
 		klauspost:readahead:v1.3.1:klauspost_readahead/vendor/github.com/klauspost/readahead \
 		klauspost:reedsolomon:v1.9.11:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
@@ -123,9 +123,9 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:highwayhash:v1.0.1:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:md5-simd:v1.1.1:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:83423dddb072:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:minio-go:v7.0.10:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
 		minio:selfupdate:v0.3.1:minio_selfupdate/vendor/github.com/minio/selfupdate \
-		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
+		minio:sha256-simd:v1.0.0:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:simdjson-go:v0.2.1:minio_simdjson_go/vendor/github.com/minio/simdjson-go \
 		minio:sio:v0.2.1:minio_sio/vendor/github.com/minio/sio \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
@@ -159,6 +159,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		ryanuber:go-glob:v1.0.0:ryanuber_go_glob/vendor/github.com/ryanuber/go-glob \
 		secure-io:sio-go:v0.3.1:secure_io_sio_go/vendor/github.com/secure-io/sio-go \
 		shirou:gopsutil:v3.20.11:shirou_gopsutil/vendor/github.com/shirou/gopsutil \
+		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spaolacci:murmur3:v1.1.0:spaolacci_murmur3/vendor/github.com/spaolacci/murmur3 \
 		square:go-jose:v2.3.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		streadway:amqp:v1.0.0:streadway_amqp/vendor/github.com/streadway/amqp \
