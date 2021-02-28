@@ -926,7 +926,6 @@ bin/phplist
 %%WWWDIR%%/lists/admin/lib.php
 %%WWWDIR%%/lists/admin/list.php
 %%WWWDIR%%/lists/admin/listbounces.php
-%%WWWDIR%%/lists/admin/locale/af/phplist.po
 %%WWWDIR%%/lists/admin/locale/ar/language_info
 %%WWWDIR%%/lists/admin/locale/ar/phplist.po
 %%WWWDIR%%/lists/admin/locale/bg/language_info
@@ -1696,6 +1695,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/Common/ExportXML.php
 %%WWWDIR%%/lists/admin/plugins/Common/FileNotFoundException.php
 %%WWWDIR%%/lists/admin/plugins/Common/FileServer.php
+%%WWWDIR%%/lists/admin/plugins/Common/FPDF.php
 %%WWWDIR%%/lists/admin/plugins/Common/FrontendTranslator.php
 %%WWWDIR%%/lists/admin/plugins/Common/HelpManager.php
 %%WWWDIR%%/lists/admin/plugins/Common/helpmanager.tpl.php
@@ -1764,6 +1764,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/images/external.png
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/images/gnu_licence.png
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/images/info.png
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/images/logo.png
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/images/no.png
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/images/page_white_php.png
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/images/pencil.png
@@ -1813,6 +1814,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/ClassLoader.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/installed.json
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/LICENSE
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/platform_check.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/container-interop/container-interop/LICENSE
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/container-interop/container-interop/src/Interop/Container/ContainerInterface.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/container-interop/container-interop/src/Interop/Container/Exception/ContainerException.php
@@ -1873,6 +1875,21 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/crossjoin/pre-mailer/src/Crossjoin/PreMailer/HtmlString.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/crossjoin/pre-mailer/src/Crossjoin/PreMailer/PreMailerAbstract.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/chart/Chart.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/courier.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/courierb.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/courierbi.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/courieri.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/helvetica.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/helveticab.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/helveticabi.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/helveticai.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/symbol.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/times.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/timesb.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/timesbi.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/timesi.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/font/zapfdingbats.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/fpdf/fpdf.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/mikehaertl/WkHtmlToPdf.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/ext/yii/CHtml.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/jasongrimes/paginator/LICENSE
@@ -2985,6 +3002,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/composer/autoload_static.php
 %%WWWDIR%%/lists/base/vendor/composer/ca-bundle/composer.json
 %%WWWDIR%%/lists/base/vendor/composer/ca-bundle/LICENSE
+%%WWWDIR%%/lists/base/vendor/composer/ca-bundle/phpstan.neon.dist
 %%WWWDIR%%/lists/base/vendor/composer/ca-bundle/README.md
 %%WWWDIR%%/lists/base/vendor/composer/ca-bundle/res/cacert.pem
 %%WWWDIR%%/lists/base/vendor/composer/ca-bundle/src/CaBundle.php
@@ -13091,6 +13109,7 @@ bin/phplist
 %%PORTDOCS%%%%DOCSDIR%%/README.commandline
 %%PORTDOCS%%%%DOCSDIR%%/README.passwords
 %%PORTDOCS%%%%DOCSDIR%%/README.repetition
+%%PORTDOCS%%%%DOCSDIR%%/README.robots
 %%PORTDOCS%%%%DOCSDIR%%/README.rssfeeds
 %%PORTDOCS%%%%DOCSDIR%%/README.security
 %%PORTDOCS%%%%DOCSDIR%%/README.usertables
