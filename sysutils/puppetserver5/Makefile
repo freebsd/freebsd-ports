@@ -11,6 +11,8 @@ COMMENT=	Puppet Server running in the JVM
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Puppet 5 has reached EOL
+EXPIRATION_DATE=2021-07-01
 BROKEN_FreeBSD_12=	Does not start. See PR 233766
 BROKEN_FreeBSD_13=	Does not start. See PR 233766
 

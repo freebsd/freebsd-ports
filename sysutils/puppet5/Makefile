@@ -13,6 +13,8 @@ COMMENT=	Configuration management framework written in Ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Puppet 5 has reached EOL
+EXPIRATION_DATE=2021-07-01
 # maybe a newer version like puppet 6.x or 7.x must be used to work with ruby 2.7
 BROKEN_RUBY27=	yes
 
