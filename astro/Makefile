@@ -87,6 +87,7 @@
     SUBDIR += py-jplephem
     SUBDIR += py-metar
     SUBDIR += py-metpy
+    SUBDIR += py-pykep
     SUBDIR += py-pymeeus
     SUBDIR += py-pymetar
     SUBDIR += py-pysofa
