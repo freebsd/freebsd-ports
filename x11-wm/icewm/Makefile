@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icewm
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 

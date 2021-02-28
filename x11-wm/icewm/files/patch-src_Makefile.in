@@ -9,7 +9,16 @@
  icesh_SOURCES = \
  	intl.h \
  	debug.h \
-@@ -960,7 +960,7 @@ icewmbg_SOURCES = \
+@@ -960,7 +960,7 @@ icewmhint_SOURCES = \
+ 	base.h \
+ 	icewmhint.cc
+ 
+-icewmhint_LDADD = libice.la $(CORE_LIBS) @LIBINTL@
++icewmhint_LDADD = libice.la $(CORE_LIBS) @LIBINTL@ @LIBICONV@
+ icewmbg_SOURCES = \
+ 	intl.h \
+ 	debug.h \
+@@ -962,7 +962,7 @@ icewmbg_SOURCES = \
  	icewmbg.cc \
  	icewmbg_prefs.h
  
@@ -18,6 +27,15 @@
  icesound_SOURCES = \
  	base.h \
  	debug.h \
+@@ -974,7 +974,7 @@ icesound_SOURCES = \
+ 	ytimer.h \
+ 	icesound.cc
+ 
+-icesound_LDADD = libice.la $(AUDIO_LIBS) $(CORE_LIBS) @LIBINTL@
++icesound_LDADD = libice.la $(AUDIO_LIBS) $(CORE_LIBS) @LIBINTL@ @LIBICONV@
+ icewm_menu_fdo_SOURCES = \
+ 	appnames.h \
+ 	base.h \
 @@ -1002,7 +1002,7 @@ icehelp_SOURCES = \
  	yrect.h \
  	icehelp.cc
