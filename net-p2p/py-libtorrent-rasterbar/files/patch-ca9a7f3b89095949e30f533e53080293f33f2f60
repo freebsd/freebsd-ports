@@ -1,0 +1,50 @@
+- patch from the upstream to fix build
+
+From ca9a7f3b89095949e30f533e53080293f33f2f60 Mon Sep 17 00:00:00 2001
+From: arvidn <arvid@libtorrent.org>
+Date: Mon, 11 Jan 2021 21:14:29 +0100
+Subject: [PATCH] Fix cxxflags and linkflags injection via environment
+ variables
+
+---
+ ChangeLog | 2 ++
+ Jamfile   | 5 ++---
+ 2 files changed, 4 insertions(+), 3 deletions(-)
+
+diff --git ../../ChangeLog ../..//ChangeLog
+index 01301258c8..aaefc2bc76 100644
+--- ../..//ChangeLog
++++ ../..//ChangeLog
+@@ -1,3 +1,5 @@
++	* Fix cxxflags and linkflags injection via environment variables
++
+ 1.2.12 released
+ 
+ 	* fix loading of DHT node ID from previous session on startup
+diff --git ../..//Jamfile ../../Jamfile
+index 21d1fc423e..44a1199484 100644
+--- ../../Jamfile
++++ ../../Jamfile
+@@ -745,8 +745,7 @@ local usage-requirements =
+ 	<toolset>msvc:<define>_SCL_SECURE_NO_DEPRECATE
+ 	<toolset>msvc:<define>_CRT_SECURE_NO_DEPRECATE
+ 
+-	<cxxflags>$(CXXFLAGS)
+-	<linkflags>$(LDFLAGS)
++	<cxxflags>"$(CXXFLAGS:J= )"
+ 	;
+ 
+ project torrent ;
+@@ -770,11 +769,11 @@ lib torrent
+ 
+ 	<conditional>@building
+ 	<conditional>@warnings
+-	<cxxflags>$(CXXFLAGS)
+ 
+ 	<tag>@tag
+ 
+ 	$(usage-requirements)
++	<linkflags>"$(LDFLAGS:J= )"
+ 
+ 	: # default build
+ 	<threading>multi

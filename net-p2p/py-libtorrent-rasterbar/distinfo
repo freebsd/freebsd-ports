@@ -1,3 +1,5 @@
-TIMESTAMP = 1599281590
-SHA256 (arvidn-libtorrent-libtorrent-1.2.10_GH0.tar.gz) = e0fedb583f1e7bdcc0eb80a9df064a1e6fb0b825d8423e64bdb0f7a35879a09e
-SIZE (arvidn-libtorrent-libtorrent-1.2.10_GH0.tar.gz) = 3586008
+TIMESTAMP = 1614539774
+SHA256 (libtorrent-rasterbar-2.0.2.tar.gz) = 3af22ea1b60e04a7cf357a3d770470ea5df15e968501782bd1414634a2b42cb7
+SIZE (libtorrent-rasterbar-2.0.2.tar.gz) = 4269533
+SHA256 (2e9a8423c8e2d3eba49165bacbae2878e25991cb.patch) = 189088dc121b6c62915b1edb76681298ccf34e0a4f628c4bee67a95b4ffceba9
+SIZE (2e9a8423c8e2d3eba49165bacbae2878e25991cb.patch) = 1422
