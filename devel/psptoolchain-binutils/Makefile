@@ -22,7 +22,7 @@ BROKEN_riscv64=		fails to package: ansidecl.h: No such file or directory
 USES=		gmake tar:bzip2 libtool
 
 HAS_CONFIGURE=	yes
-CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/:C/armv[0-9]+/arm/:S/powerpc64/powerpc/}-unknown-${OPSYS:tl}${OSREL}
+CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/:C/armv[0-9]+/arm/:C/powerpc64.*/powerpc/}-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--target="psp" \
 		--enable-install-libbfd \
