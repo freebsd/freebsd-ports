@@ -101,6 +101,16 @@ TOOLS_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 WEBP_CMAKE_OFF=		-DUSE_WEBP:BOOL=OFF
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le
+CMAKE_ARGS+=	-DUSE_OPENCL:BOOL=OFF
+CXXFLAGS+=	-DGDK_DISABLE_DEPRECATED
+PLIST_SUB+=	NO_OPENCL="@comment "
+.else
+PLIST_SUB+=	NO_OPENCL=""
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD || ${ARCH} == "i386"
