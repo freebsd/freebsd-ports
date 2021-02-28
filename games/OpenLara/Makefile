@@ -20,7 +20,7 @@ USE_SDL=	sdl2
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
-	${REINPLACE_CMD} 's/g++/${CXX} ${CXXFLAGS}/' \
+	${REINPLACE_CMD} 's|g++|${CXX} ${CXXFLAGS}|' \
 		${WRKSRC}/src/platform/sdl2/build.sh
 
 do-build:
