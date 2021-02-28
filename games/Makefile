@@ -445,6 +445,7 @@
     SUBDIR += knights
     SUBDIR += kobodeluxe
     SUBDIR += kodi-addon-game.libretro
+    SUBDIR += kodi-addon-game.libretro.beetle-psx
     SUBDIR += kolf
     SUBDIR += kollision
     SUBDIR += konquest

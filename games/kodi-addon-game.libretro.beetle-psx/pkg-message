@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+
+BIOS files required, download and save to:
+~/.kodi/userdata/addon_data/game.libretro.beetle-psx/resources/system/
+
+WWW: https://kodi.wiki/view/Game_add-ons#BIOS_requirements
+
+EOM
+}
+]
