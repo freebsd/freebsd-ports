@@ -2,9 +2,7 @@
 
 PORTNAME=	pagmo2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.15.0-102
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-gdecda188
+DISTVERSION=	2.16.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,17 +18,14 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libnlopt.so:math/nlopt \
 		libtbb.so:devel/tbb
 
-USES=		cmake compiler:c++11-lang eigen:3,build,run
+USES=		cmake compiler:c++17-lang eigen:3,build,run
 USE_GITHUB=	yes
 GH_ACCOUNT=	esa
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	PAGMO_WITH_EIGEN3 PAGMO_WITH_NLOPT PAGMO_WITH_IPOPT PAGMO_ENABLE_IPO
 
-post-install: # Workaround for https://github.com/esa/pagmo2/issues/445 breaking misc/dartsim
-	@${REINPLACE_CMD} 's|;NLOPT::header;IPOPT::header||' ${STAGEDIR}${PREFIX}/lib/cmake/pagmo/pagmo_export.cmake
-
-do-test: # tests fail to build: https://github.com/esa/pagmo2/issues/273
+do-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DPAGMO_BUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \

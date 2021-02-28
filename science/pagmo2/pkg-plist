@@ -105,9 +105,7 @@ include/pagmo/utils/hv_algos/hv_hv3d.hpp
 include/pagmo/utils/hv_algos/hv_hvwfg.hpp
 include/pagmo/utils/hypervolume.hpp
 include/pagmo/utils/multi_objective.hpp
-lib/cmake/pagmo/FindEigen3.cmake
-lib/cmake/pagmo/FindIPOPT.cmake
-lib/cmake/pagmo/FindNLOPT.cmake
+lib/cmake/pagmo/Findpagmo_IPOPT.cmake
 lib/cmake/pagmo/PagmoFindBoost.cmake
 lib/cmake/pagmo/pagmo-config-version.cmake
 lib/cmake/pagmo/pagmo-config.cmake
