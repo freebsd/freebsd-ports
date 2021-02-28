@@ -1,7 +1,11 @@
 --- etc/rc.d/wsdd.orig	2020-06-28 19:10:44 UTC
 +++ etc/rc.d/wsdd
-@@ -5,25 +5,61 @@
- # BEFORE: login
+@@ -2,28 +2,64 @@
+ 
+ # PROVIDE: wsdd
+ # REQUIRE: DAEMON samba_server
+-# BEFORE: login
++# BEFORE: LOGIN
  # KEYWORD: shutdown
  
 +# Add the following line in /etc/rc.conf to enable wsdd:
