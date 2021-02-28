@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Lazy functional language
 
+DEPRECATED=	Old, unmaintained language
+EXPIRATION_DATE=2021-03-28
+
 WRKSRC=		${WRKDIR}/src
 
 USES=		readline
