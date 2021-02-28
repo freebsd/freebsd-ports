@@ -1,0 +1,5 @@
+TIMESTAMP = 1611230780
+SHA256 (kodi-game-game.libretro.pcsx-rearmed-22.0.0.19-Matrix_GH0.tar.gz) = 56ebea334e7b61372f05ee2cba2576176eb2c42982ec839e158c7397cd5188ab
+SIZE (kodi-game-game.libretro.pcsx-rearmed-22.0.0.19-Matrix_GH0.tar.gz) = 72793
+SHA256 (libretro-pcsx_rearmed-54686ee7ccbba7220aaf69892ad3d77515478776_GH0.tar.gz) = aeb8941cb9a262d4e9f94d6491c2cfaa823df759f40b30dd624c27a36f369fa1
+SIZE (libretro-pcsx_rearmed-54686ee7ccbba7220aaf69892ad3d77515478776_GH0.tar.gz) = 2289399
