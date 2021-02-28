@@ -13,7 +13,6 @@ share/icons/hicolor/22x22/actions/kraftdice.png
 share/icons/hicolor/32x32/apps/kraft.png
 share/icons/hicolor/48x48/apps/kraft.png
 share/icons/hicolor/scalable/apps/kraft.svg
-share/icons/hicolor/scalable/apps/kraft_catalogue.svg
 %%DATADIR%%/dbinit/mysql/create_schema.sql
 %%DATADIR%%/dbinit/mysql/fill_schema_de.sql
 %%DATADIR%%/dbinit/mysql/fill_schema_en.sql
