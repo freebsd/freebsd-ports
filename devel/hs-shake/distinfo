@@ -1,6 +1,6 @@
-TIMESTAMP = 1590677121
-SHA256 (cabal/shake-0.19.tar.gz) = 6b4cae50086dac3962c1569e0792a1970cad1fd2e32e9cadfcc582688356e994
-SIZE (cabal/shake-0.19.tar.gz) = 264206
+TIMESTAMP = 1614526370
+SHA256 (cabal/shake-0.19.4.tar.gz) = 5bae8873f628113604159f650802edb249dfbe5802c4612751f680ac987d73ee
+SIZE (cabal/shake-0.19.4.tar.gz) = 267011
 SHA256 (cabal/clock-0.8/clock-0.8.tar.gz) = 08a35c5294009040f1e5eb721a21b60df7af6584092bb3d376ab1b2e57e26914
 SIZE (cabal/clock-0.8/clock-0.8.tar.gz) = 7916
 SHA256 (cabal/extra-1.7.2/extra-1.7.2.tar.gz) = ac10674d15ed65be4ca1fbb361aed305dc285e3f0787a7b968b0d3f750e6847a
