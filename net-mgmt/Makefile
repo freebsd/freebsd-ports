@@ -298,6 +298,7 @@
     SUBDIR += py-arouteserver
     SUBDIR += py-ciscoconfparse
     SUBDIR += py-dnsdiag
+    SUBDIR += py-gstat_exporter
     SUBDIR += py-ipcalc
     SUBDIR += py-ipy
     SUBDIR += py-junos-eznc

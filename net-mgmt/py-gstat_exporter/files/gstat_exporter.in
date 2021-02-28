@@ -1,0 +1,28 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# PROVIDE: gstat_exporter
+# REQUIRE: LOGIN NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable gstat_exporter:
+#
+# gstat_exporter_enable (bool):   Set to "NO" by default.
+#                                 Set it to "YES" to enable gstat_exporter_enable.
+
+. /etc/rc.subr
+
+name=gstat_exporter
+rcvar=gstat_exporter_enable
+desc="gstat_exporter daemon"
+
+load_rc_config ${name}
+
+: ${gstat_exporter_enable:=NO}
+
+pidfile="/var/run/${name}.pid"
+command_interpreter=%%PYTHON_CMD%%
+command=%%PREFIX%%/bin/${name}.py
+start_cmd="/usr/sbin/daemon -f -p ${pidfile} $command_interpreter $command"
+
+run_rc_command "$1"
