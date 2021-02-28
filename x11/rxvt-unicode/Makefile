@@ -3,7 +3,7 @@
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	9.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -103,7 +103,7 @@ BACKSPACE_KEY_CONFIGURE_ENABLE=	backspace-key
 DELETE_KEY_CONFIGURE_ENABLE=	delete-key
 
 # enable scrolling via mouse wheel or buttons 4 & 5
-MOUSEWHELL_CONFIGURE_ENABLE=	mousewheel
+MOUSEWHEEL_CONFIGURE_ENABLE=	mousewheel
 
 # enable smart resize
 SMART_RESIZE_CONFIGURE_ENABLE=	smart-resize
@@ -118,7 +118,7 @@ NOTIFY_CONFIGURE_ENABLE=	startup-notification
 NOTIFY_LIB_DEPENDS=		libstartup-notification-1.so:x11/startup-notification
 
 # enable support for 256 colors
-256_COLOR_CONFIGURE_ARGS+=	--enable-256-color
+256_COLOR_CONFIGURE_ON=	--enable-256-color
 
 .include <bsd.port.options.mk>
 

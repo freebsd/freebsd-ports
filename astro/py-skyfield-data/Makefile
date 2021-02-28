@@ -3,6 +3,7 @@
 
 PORTNAME=	skyfield-data
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	astro python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +12,7 @@ COMMENT=	Minimal data files to work with py-skyfield
 
 LICENSE=	MIT
 
-RON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}skyfield>0:astro/py-skyfield@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}skyfield>0:astro/py-skyfield@${PY_FLAVOR}
 TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 
 USE_GITHUB=	yes

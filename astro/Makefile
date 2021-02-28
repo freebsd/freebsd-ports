@@ -94,11 +94,11 @@
     SUBDIR += py-pywapi
     SUBDIR += py-ro
     SUBDIR += py-sgp4
+    SUBDIR += py-skyfield
+    SUBDIR += py-skyfield-data
     SUBDIR += py-spacetrack
     SUBDIR += py-spktype01
     SUBDIR += py-spktype21
-    SUBDIR += py-skyfield
-    SUBDIR += py-skyfield-data
     SUBDIR += pykep
     SUBDIR += pyweather
     SUBDIR += qmapshack
