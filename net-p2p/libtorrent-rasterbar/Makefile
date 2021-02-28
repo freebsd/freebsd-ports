@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-DISTVERSION=	1.2.12
+DISTVERSION=	2.0.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
 
@@ -38,7 +38,7 @@ EXAMPLES_CMAKE_BOOL=	build_examples
 LOGGING_CMAKE_BOOL=	logging
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|return "python3";|return "${PYTHON_CMD}";|' \
+	@${REINPLACE_CMD} -e 's|ret.push_back("python3");|ret.push_back("${PYTHON_CMD}");|' \
 		${WRKSRC}/test/setup_transfer.cpp
 
 post-install:
