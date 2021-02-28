@@ -1,5 +1,0 @@
-Snorenotify is a multi platform Qt notification framework. Using a plugin
-system it is possible to create notifications with many different notification
-systems on Windows, Mac OS and Unix and mobile Devices.
-
-WWW: https://github.com/KDE/snorenotify

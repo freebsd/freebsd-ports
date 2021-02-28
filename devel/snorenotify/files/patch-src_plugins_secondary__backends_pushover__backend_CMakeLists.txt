@@ -1,6 +1,0 @@
---- src/plugins/secondary_backends/pushover_backend/CMakeLists.txt.orig	2019-06-29 00:26:58 UTC
-+++ src/plugins/secondary_backends/pushover_backend/CMakeLists.txt
-@@ -1,2 +1,2 @@
--add_snore_plugin(Puhover SOURCES pushover.cpp SETTINGS_SOURCES pushoversettings.cpp TYPE SecondaryBackend)
-+add_snore_plugin(Pushover SOURCES pushover.cpp SETTINGS_SOURCES pushoversettings.cpp TYPE SecondaryBackend)
- 

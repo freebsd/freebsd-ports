@@ -16173,3 +16173,4 @@ graphics/py-graph-core|graphics/py-pygraph|2021-02-19|Is outdated and broken wit
 devel/allegro-devel|devel/allegro5|2021-02-20|Rename to better match upstream name
 www/py-djangorestframework311||2021-02-26|Removed: Used as a transitional package for www/seahub, please use www/py-djangorestframework instead
 editors/mg-static|editors/mg@static|2021-02-28|Flavored
+devel/snorenotify||2021-02-28|Has expired: Unmaintained upstream

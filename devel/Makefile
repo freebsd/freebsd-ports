@@ -6782,7 +6782,6 @@
     SUBDIR += smake
     SUBDIR += smc
     SUBDIR += smv
-    SUBDIR += snorenotify
     SUBDIR += soapui
     SUBDIR += socket_wrapper
     SUBDIR += sonar-scanner-cli
