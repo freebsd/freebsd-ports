@@ -98,6 +98,7 @@
     SUBDIR += py-spktype21
     SUBDIR += py-skyfield
     SUBDIR += py-skyfield-data
+    SUBDIR += pykep
     SUBDIR += pyweather
     SUBDIR += qmapshack
     SUBDIR += readosm
