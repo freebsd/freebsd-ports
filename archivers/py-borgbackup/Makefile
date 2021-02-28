@@ -3,6 +3,7 @@
 
 PORTNAME=	borgbackup
 DISTVERSION=	1.1.15
+PORTREVISION=	1
 CATEGORIES=	archivers python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +26,7 @@ OPTIONS_DEFINE=		FUSE
 OPTIONS_DEFAULT=	FUSE
 
 FUSE_DESC=	Support to mount locally borg backup files
-FUSE_RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/llfuse.so:devel/py-llfuse@${PY_FLAVOR}
+FUSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llfuse>0:devel/py-llfuse@${PY_FLAVOR}
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/borg/ -name "*.so" \
