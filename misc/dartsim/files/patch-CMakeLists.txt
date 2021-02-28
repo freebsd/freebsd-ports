@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2019-08-17 03:14:11 UTC
+--- CMakeLists.txt.orig	2020-10-17 21:51:02 UTC
 +++ CMakeLists.txt
+@@ -64,7 +64,7 @@ set(DART_MINOR_VERSION "9")
+ set(DART_PATCH_VERSION "5")
+ set(DART_VERSION "${DART_MAJOR_VERSION}.${DART_MINOR_VERSION}.${DART_PATCH_VERSION}")
+ set(DART_PKG_DESC "Dynamic Animation and Robotics Toolkit.")
+-set(DART_PKG_EXTERNAL_DEPS "eigen, ccd, fcl, assimp, boost")
++set(DART_PKG_EXTERNAL_DEPS "eigen3, ccd, fcl, assimp")
+ 
+ #===============================================================================
+ # Build options
 @@ -202,7 +202,7 @@ elseif(CMAKE_COMPILER_IS_GNUCXX)
    if(GCC_VERSION VERSION_LESS 5.3.1)
      message(FATAL_ERROR "The installed g++ version is ${GCC_VERSION}. ${PROJECT_NAME} requires g++ 5.3.1 or greater.")

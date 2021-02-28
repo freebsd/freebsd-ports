@@ -2,8 +2,7 @@
 
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.9.4
-PORTREVISION=	1
+DISTVERSION=	6.9.5
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +32,7 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libtinyxml2.so:textproc/tinyxml2 \
 		liburdfdom_world.so:devel/ros-urdfdom
 
-USES=		cmake compiler:c++17-lang eigen:3 gl localbase:ldflags \
+USES=		cmake compiler:c++17-lang eigen:3,build,run gl localbase:ldflags \
 		pkgconfig xorg
 USE_GITHUB=	yes
 GH_PROJECT=	dart
@@ -42,9 +41,9 @@ USE_XORG=	xi xmu
 USE_CXXSTD=	c++17 # missing in the project, it uses std::void_t (through pagmo2) which is a c++17 feature
 USE_LDCONFIG=	yes
 
-CXXFLAGS+=	-I/usr/local/include/coin # because of pagmo2 headers include <IpReturnCodes.hpp>
+CXXFLAGS+=	-I${LOCALBASE}/include/coin # because of pagmo2 headers include <IpReturnCodes.hpp>
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS # DART_VERBOSE
 
 DATADIR=	share/dart
 DOCSDIR=	${PREFIX}/share/doc/dart
