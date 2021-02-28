@@ -2,7 +2,7 @@
 
 PORTNAME=	ghq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.6
+DISTVERSION=	1.1.7
 CATEGORIES=	devel
 
 MAINTAINER=	driesm.michiels@gmail.com
