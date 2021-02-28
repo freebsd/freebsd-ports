@@ -1,0 +1,29 @@
+Description: Fix FTBFS with GCC 10.
+Author: Yavor Doganov <yavor@gnu.org>
+Debian-Bug: https://bugs.debian.org/957324
+Forwarded: https://savannah.gnu.org/bugs/index.php?58638
+Last-Update: 2020-06-21
+---
+
+--- Inspector/ContentViewers/ImageViewer/Resizer.h.orig
++++ Inspector/ContentViewers/ImageViewer/Resizer.h
+@@ -24,8 +24,6 @@
+  */
+ 
+ 
+-NSConnection *serverConnection;
+-
+ @interface ImageResizer : NSObject
+ {
+ 
+--- Inspector/ContentViewers/ImageViewer/Resizer.m.orig
++++ Inspector/ContentViewers/ImageViewer/Resizer.m
+@@ -33,6 +33,8 @@
+   do { if (GW_DEBUG_LOG) \
+     NSLog(format , ## args); } while (0)
+ 
++NSConnection *serverConnection;
++
+ @protocol ImageViewerProtocol
+ 
+ - (oneway void)setResizer:(id)anObject;
