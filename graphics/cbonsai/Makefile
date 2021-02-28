@@ -1,19 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	cbonsai
-DISTVERSION=	g20210115
+DISTVERSION=	1.0.0
 CATEGORIES=	graphics
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Bonsai tree generator, written in C using ncurses
 
-LICENSE=	GPLv1
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c11 ncurses
 USE_GITLAB=	yes
 GL_ACCOUNT=	jallbrit
-GL_COMMIT=	e1070054e5bf5c30056cd31f01e8ecc8df8f02cd
+GL_COMMIT=	41fdd6ec4c4f5b14cc33d0c3de5756b4bb0ea798
 
 MAKE_ARGS=	LDLIBS="${LDFLAGS} -lncurses -lpanel"
 ALL_TARGET=	${PORTNAME}
