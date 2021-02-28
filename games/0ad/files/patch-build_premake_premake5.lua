@@ -1,17 +1,11 @@
---- build/premake/premake5.lua.orig	2018-04-22 18:14:45 UTC
+--- build/premake/premake5.lua.orig	2021-02-06 00:32:37 UTC
 +++ build/premake/premake5.lua
-@@ -376,11 +376,11 @@ function project_add_x11_dirs()
- 		sysincludedirs {
- 			"/usr/X11R6/include/X11",
- 			"/usr/X11R6/include",
--			"/usr/local/include/X11",
--			"/usr/local/include",
-+			"%%LOCALBASE%%/include/X11",
-+			"%%LOCALBASE%%/include",
- 			"/usr/include/X11"
- 		}
--		libdirs { "/usr/X11R6/lib" }
-+		libdirs { "%%LOCALBASE%%/lib" }
- 	end
- end
+@@ -365,7 +365,7 @@ function project_set_build_flags()
  
+ 		if os.istarget("linux") or os.istarget("bsd") then
+ 			if _OPTIONS["prefer-local-libs"] then
+-				libdirs { "/usr/local/lib" }
++				libdirs { "%%LOCALBASE%%/lib" }
+ 			end
+ 
+ 			-- To use our local shared libraries, they need to be found in the

@@ -1,5 +1,5 @@
-TIMESTAMP = 1545588170
-SHA256 (0ad-0.0.23b-alpha-unix-build.tar.xz) = 01bff7641ee08cac896c54d518d7e4b01752513105558f212e3199d747512a37
-SIZE (0ad-0.0.23b-alpha-unix-build.tar.xz) = 31922812
-SHA256 (0ad-0.0.23b-alpha-unix-data.tar.xz) = e11b4ade7ede954cbbdc1fe6e2e4b25ac6b8d5a644133b640ffc9b099338a713
-SIZE (0ad-0.0.23b-alpha-unix-data.tar.xz) = 691280800
+TIMESTAMP = 1614244045
+SHA256 (0ad-0.0.24b-alpha-unix-build.tar.xz) = 325c23c9b6bfc16eb636af6a7a7bdaadbf19214b6eed0422d74cc0090bf137a8
+SIZE (0ad-0.0.24b-alpha-unix-build.tar.xz) = 75546740
+SHA256 (0ad-0.0.24b-alpha-unix-data.tar.xz) = 41f5868379749aa20b96a8fa2e60dc872ebe22047db061c7cc894462e897a32c
+SIZE (0ad-0.0.24b-alpha-unix-data.tar.xz) = 828553992

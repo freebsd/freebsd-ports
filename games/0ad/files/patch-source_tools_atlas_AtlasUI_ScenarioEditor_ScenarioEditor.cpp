@@ -1,6 +1,6 @@
---- source/tools/atlas/AtlasUI/ScenarioEditor/ScenarioEditor.cpp.orig	2018-03-13 20:20:45 UTC
+--- source/tools/atlas/AtlasUI/ScenarioEditor/ScenarioEditor.cpp.orig	2020-12-07 06:38:29 UTC
 +++ source/tools/atlas/AtlasUI/ScenarioEditor/ScenarioEditor.cpp
-@@ -723,7 +723,7 @@ bool ScenarioEditor::OpenFile(const wxString& name, co
+@@ -719,7 +719,7 @@ bool ScenarioEditor::OpenFile(const wxString& name, co
  	wxBusyInfo busy(_("Loading ") + name);
  	wxBusyCursor busyc;
  
@@ -9,7 +9,7 @@
  	qry.Post();
  	if (!qry.exists)
  		return false;
-@@ -733,7 +733,7 @@ bool ScenarioEditor::OpenFile(const wxString& name, co
+@@ -729,7 +729,7 @@ bool ScenarioEditor::OpenFile(const wxString& name, co
  	m_ToolManager.SetCurrentTool(_T(""));
  	// TODO: clear the undo buffer, etc
  
@@ -18,7 +18,7 @@
  	POST_MESSAGE(LoadMap, (map));
  
  	SetOpenFilename(name);
-@@ -786,7 +786,7 @@ void ScenarioEditor::OnImportHeightmap(wxCommandEvent&
+@@ -782,7 +782,7 @@ void ScenarioEditor::OnImportHeightmap(wxCommandEvent&
  
  	OpenFile(_T(""), _T("maps/scenarios/_default.xml"));
  
@@ -27,7 +27,7 @@
  	POST_MESSAGE(ImportHeightmap, (image));
  
  	// TODO: Make this a non-undoable command
-@@ -830,7 +830,7 @@ void ScenarioEditor::OnSave(wxCommandEvent& event)
+@@ -826,7 +826,7 @@ void ScenarioEditor::OnSave(wxCommandEvent& event)
  		// the preview units.)
  		m_ToolManager.SetCurrentTool(_T(""));
  
@@ -36,7 +36,7 @@
  		POST_MESSAGE(SaveMap, (map));
  
  		// Wait for it to finish saving
-@@ -852,7 +852,7 @@ void ScenarioEditor::OnSaveAs(wxCommandEvent& WXUNUSED
+@@ -848,7 +848,7 @@ void ScenarioEditor::OnSaveAs(wxCommandEvent& WXUNUSED
  
  		m_ToolManager.SetCurrentTool(_T(""));
  
@@ -45,12 +45,3 @@
  		POST_MESSAGE(SaveMap, (map));
  
  		SetOpenFilename(filePath);
-@@ -920,7 +920,7 @@ void ScenarioEditor::OnJavaScript(wxCommandEvent& WXUN
- 	wxString cmd = ::wxGetTextFromUser(_T(""), _("JS command"), _T(""), this);
- 	if (cmd.IsEmpty())
- 		return;
--	POST_MESSAGE(JavaScript, ((std::wstring)cmd.wc_str()));
-+	POST_MESSAGE(JavaScript, ((std::wstring)cmd.ToStdWstring()));
- }
- 
- void ScenarioEditor::OnCameraReset(wxCommandEvent& WXUNUSED(event))
