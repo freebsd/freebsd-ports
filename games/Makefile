@@ -444,6 +444,7 @@
     SUBDIR += knetwalk
     SUBDIR += knights
     SUBDIR += kobodeluxe
+    SUBDIR += kodi-addon-game.libretro
     SUBDIR += kolf
     SUBDIR += kollision
     SUBDIR += konquest

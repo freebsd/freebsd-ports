@@ -1,0 +1,6 @@
+This add-on provides a wrapper that allows Libretro cores to be loaded
+as game add-ons. Libretro cores are shared libraries that use the
+Libretro API, so the wrapper is responsible for translating function
+calls between the Libretro API and the Game API.
+
+WWW: https://github.com/kodi-game/game.libretro
