@@ -19,6 +19,7 @@
     SUBDIR += KnightCap
     SUBDIR += NBlood
     SUBDIR += OpenDiablo2
+    SUBDIR += OpenLara
     SUBDIR += OpenTomb
     SUBDIR += abbayedesmorts
     SUBDIR += abe
