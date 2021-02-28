@@ -1,0 +1,13 @@
+TIMESTAMP = 1611234477
+SHA256 (kodi-game-game.libretro.picodrive-1.97.0.19-Matrix_GH0.tar.gz) = 6685fc276a54affad89c8cbc8f980114bd750153a19e82f6f810ab47456801aa
+SIZE (kodi-game-game.libretro.picodrive-1.97.0.19-Matrix_GH0.tar.gz) = 791215
+SHA256 (libretro-picodrive-046371ad2a3842d938cc74db5a615764ca2ff4ac_GH0.tar.gz) = 101155a1a0da985a2d8a7c62967a3ee110825b68703a2519ba906d2eba7fe994
+SIZE (libretro-picodrive-046371ad2a3842d938cc74db5a615764ca2ff4ac_GH0.tar.gz) = 1573265
+SHA256 (notaz-libpicofe-76e45c3489a0c32d91744413c198f685b553f6c0_GH0.tar.gz) = a0a1c7e65f88b8fb17f0c3139a947c3677fcab848b90e24ee1cd0c6ae5ffe8c2
+SIZE (notaz-libpicofe-76e45c3489a0c32d91744413c198f685b553f6c0_GH0.tar.gz) = 86695
+SHA256 (notaz-cyclone68000-94a9d9a888e72cbfa4db12113cd113cf5e154f7f_GH0.tar.gz) = 1bd2f6558b3cf276ed6d895df303c3e8fc45e501017b10c2f96b35a73d052401
+SIZE (notaz-cyclone68000-94a9d9a888e72cbfa4db12113cd113cf5e154f7f_GH0.tar.gz) = 64417
+SHA256 (digital-sound-antiques-emu2413-a18c81927fae4963f88a4c946ca150246cb9e9be_GH0.tar.gz) = b183c44a83451cb5c8ce16f800e11a8c848b8554f6f98e909a279edc927d8db1
+SIZE (digital-sound-antiques-emu2413-a18c81927fae4963f88a4c946ca150246cb9e9be_GH0.tar.gz) = 17155
+SHA256 (lieff-minimp3-ef9e212fa29bb72d23558da21bb5694fd2d01768_GH0.tar.gz) = 1290ecb0f0d489506169bc3b886fe8323e5b27e72bf647afd13500716ac64824
+SIZE (lieff-minimp3-ef9e212fa29bb72d23558da21bb5694fd2d01768_GH0.tar.gz) = 19744364
