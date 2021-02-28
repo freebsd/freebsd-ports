@@ -13,5 +13,6 @@ For radeonkms: kld_list="radeonkms"
 
 Please ensure that all users requiring graphics are members of the
 "video" group.
+EOM
 }
 ]
