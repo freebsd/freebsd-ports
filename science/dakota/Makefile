@@ -102,11 +102,16 @@ post-install:
 .endfor
 
 do-test: # from Additional Test Suites @ https://dakota.sandia.gov/content/additional-test-suites (many tests are known to fail)
-	# minimal set of fast-running tests that should NOT FAIL (may DIFF, depending on platform / compiler)
-	cd ${WRKSRC}/test && ./dakota_test.perl
-	# test suite that should PASS on any supported platform (NO DIFF or FAIL)
-	cd ${WRKSRC}/test && ./dakota_test.perl --label-regex=AcceptanceTest
-	# run all Dakota tests active in this build (should PASS or DIFF)
-	cd ${WRKSRC}/test && ./dakota_test.perl --label-regex=dakota_
+	## minimal set of fast-running tests that should NOT FAIL (may DIFF, depending on platform / compiler)
+	#cd ${WRKSRC}/test && ./dakota_test.perl
+	## test suite that should PASS on any supported platform (NO DIFF or FAIL)
+	#cd ${WRKSRC}/test && ./dakota_test.perl --label-regex=AcceptanceTest
+	## run all Dakota tests active in this build (should PASS or DIFF)
+	#cd ${WRKSRC}/test && ./dakota_test.perl --label-regex=dakota_
+	# Tests should be this way, but this fails:
+	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DDAKOTA_ENABLE_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
+		(cd ${WRKSRC} && ctest -j 4 -L FastTest -LE Diff)
 
 .include <bsd.port.mk>
