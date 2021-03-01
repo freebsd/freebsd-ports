@@ -2,7 +2,7 @@
 
 PORTNAME=	matterircd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0
+DISTVERSION=	0.23.1
 CATEGORIES=	net-im irc
 
 MAINTAINER=	norrland@nullbyte.se
@@ -14,11 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
 
 USES=		go:modules
-
-USE_RC_SUBR=	matterircd
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	42wim
+USE_RC_SUBR=	matterircd
 
 USERS=		matterircd
 GROUPS=		matterircd
