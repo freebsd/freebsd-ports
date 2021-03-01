@@ -53,6 +53,10 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/listener-states.png
 %%PORTDOCS%%%%DOCSDIR%%/internals/lua_socket.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/lua_socket.pdf
+%%PORTDOCS%%%%DOCSDIR%%/internals/muxes.fig
+%%PORTDOCS%%%%DOCSDIR%%/internals/muxes.pdf
+%%PORTDOCS%%%%DOCSDIR%%/internals/muxes.png
+%%PORTDOCS%%%%DOCSDIR%%/internals/muxes.svg
 %%PORTDOCS%%%%DOCSDIR%%/internals/naming.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/notes-layers.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/pattern.dia
@@ -60,6 +64,10 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/polling-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/repartition-be-fe-fi.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/sequence.fig
+%%PORTDOCS%%%%DOCSDIR%%/internals/sched.fig
+%%PORTDOCS%%%%DOCSDIR%%/internals/sched.pdf
+%%PORTDOCS%%%%DOCSDIR%%/internals/sched.png
+%%PORTDOCS%%%%DOCSDIR%%/internals/sched.svg
 %%PORTDOCS%%%%DOCSDIR%%/internals/ssl_cert.dia
 %%PORTDOCS%%%%DOCSDIR%%/internals/stats-v2.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/stream-sock-states.fig
