@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hpack
-PORTVERSION=	0.34.1
+PORTVERSION=	0.34.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

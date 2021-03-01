@@ -1,6 +1,6 @@
-TIMESTAMP = 1590162160
-SHA256 (cabal/hpack-0.34.1.tar.gz) = d190ad7badbfd365ea74352e06408348ca1da58dd539c16b3699496f1eb41630
-SIZE (cabal/hpack-0.34.1.tar.gz) = 61903
+TIMESTAMP = 1614625680
+SHA256 (cabal/hpack-0.34.4.tar.gz) = 7411ed9042a94e99c0a2c8e3198c13448cc4f0dbf6c0478c7aff17aa00f05ff7
+SIZE (cabal/hpack-0.34.4.tar.gz) = 65246
 SHA256 (cabal/Glob-0.10.0/Glob-0.10.0.tar.gz) = 473355bd6ba0a97902e0edada1acbc0d76cfda77596f0188b2cc0ae34272a324
 SIZE (cabal/Glob-0.10.0/Glob-0.10.0.tar.gz) = 29500
 SHA256 (cabal/Glob-0.10.0/revision/1.cabal) = bbccaf21bff9071dcf369f55cc1a07250bdc84c432bdf4277ed53e5e2327cd7d
