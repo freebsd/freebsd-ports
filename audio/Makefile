@@ -54,7 +54,6 @@
     SUBDIR += baudline
     SUBDIR += bcg729
     SUBDIR += bchoppr-lv2
-    SUBDIR += beatslash-lv2
     SUBDIR += beep
     SUBDIR += beets
     SUBDIR += bharvestr-lv2

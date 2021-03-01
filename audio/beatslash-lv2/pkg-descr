@@ -1,7 +1,0 @@
-beatslash-lv2 is a set of plugins for live beat repeating and beat slicing.
-
-Features:
-* the beat repeater will repeat the current beat
-* the beat slicer will randomly repeat parts of a live sample
-
-WWW: https://github.com/blablack/beatslash-lv2

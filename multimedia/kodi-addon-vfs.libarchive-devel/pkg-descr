@@ -1,7 +1,0 @@
-This VFS addon for Kodi adds support for accessing files, music,
-pictures, videos, etc. in (compressed) archives directly via
-libarchive.
-
-This port is for multimedia/kodi-devel only.
-
-WWW: https://github.com/xbmc/vfs.libarchive

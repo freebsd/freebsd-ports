@@ -1,7 +1,0 @@
-lib/kodi/addons/inputstream.adaptive/inputstream.adaptive.so
-lib/kodi/addons/inputstream.adaptive/inputstream.adaptive.so.19.0
-lib/kodi/addons/inputstream.adaptive/inputstream.adaptive.so.%%SOVERSION%%
-lib/kodi/addons/inputstream.adaptive/libssd_wv.so
-share/kodi/addons/inputstream.adaptive/addon.xml
-share/kodi/addons/inputstream.adaptive/changelog.txt
-share/kodi/addons/inputstream.adaptive/resources/settings.xml

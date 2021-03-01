@@ -147,15 +147,11 @@
     SUBDIR += kf5-kmediaplayer
     SUBDIR += kmplayer
     SUBDIR += kodi
-    SUBDIR += kodi-addon-inputstream.adaptive
-    SUBDIR += kodi-addon-inputstream.adaptive-devel
     SUBDIR += kodi-addon-peripheral-joystick
-    SUBDIR += kodi-addon-peripheral.joystick-devel
+    SUBDIR += kodi-addon-peripheral-joystick
     SUBDIR += kodi-addon-pvr.hts
     SUBDIR += kodi-addon-pvr.iptvsimple
     SUBDIR += kodi-addon-screensaver.matrixtrails
-    SUBDIR += kodi-addon-vfs.libarchive-devel
-    SUBDIR += kodi-devel
     SUBDIR += kvazaar
     SUBDIR += l-smash
     SUBDIR += libaacs
