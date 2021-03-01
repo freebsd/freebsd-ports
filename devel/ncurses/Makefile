@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_sparc64=	cannot build: coredump: illegal instruction
 
-USES=		cpe pkgconfig shebangfix tar:tgz terminfo
+USES=		cpe pkgconfig shebangfix tar:tgz
 
 SNAPSHOT=		20210213
 GNU_CONFIGURE=		yes
