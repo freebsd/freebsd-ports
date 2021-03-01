@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tdiary
-PORTVERSION=	5.1.4
+PORTVERSION=	5.1.5
 CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
@@ -84,7 +84,7 @@ pre-patch:
 	@${RM} -r ${WRKSRC}/.devcontainer
 	@${RM} -r ${WRKSRC}/.github
 	@${RM} -r ${WRKSRC}/.vscode
-	@${RM} -r ${WRKSRC}/misc/lib/bundler-2.1.4
+	@${RM} -r ${WRKSRC}/misc/lib/bundler-2.2.11
 	@${RM} -r ${WRKSRC}/public
 	@${RM} -r ${WRKSRC}/spec
 	@${RM} -r ${WRKSRC}/test

@@ -1,6 +1,6 @@
---- Gemfile.orig	2020-08-29 16:59:35 UTC
+--- Gemfile.orig	2021-02-28 14:12:14 UTC
 +++ Gemfile
-@@ -6,33 +6,3 @@ gem 'fastimage'
+@@ -6,35 +6,3 @@ gem 'fastimage'
  gem 'emot'
  gem 'mail'
  gem 'rake'
@@ -25,6 +25,8 @@
 -    gem 'jasmine', '< 3'
 -    gem 'simplecov', require: false
 -    gem 'coveralls', '~> 0.8', require: false
+-    gem "rexml"
+-    gem "webrick"
 -  end
 -end
 -
