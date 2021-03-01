@@ -147,7 +147,7 @@
     SUBDIR += kf5-kmediaplayer
     SUBDIR += kmplayer
     SUBDIR += kodi
-    SUBDIR += kodi-addon-peripheral-joystick
+    SUBDIR += kodi-addon-peripheral.joystick
     SUBDIR += kodi-addon-peripheral-joystick
     SUBDIR += kodi-addon-pvr.hts
     SUBDIR += kodi-addon-pvr.iptvsimple
