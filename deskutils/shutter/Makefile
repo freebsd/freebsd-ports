@@ -12,6 +12,9 @@ COMMENT=	Screenshot tool
 LICENSE=	GPLv3 GPLv2 # the latter for some shipped cursors
 LICENSE_COMB=	multi
 
+DEPRECATED=	Upstream gone, depends on expired x11-toolkits/p5-Gnome-VFS
+EXPIRATION_DATE=2021-05-01
+
 RUN_DEPENDS=	ImageMagick6>=6.9.3.1,1:graphics/ImageMagick6 \
 		p5-File-BaseDir>=0.03:devel/p5-File-BaseDir \
 		p5-File-Copy-Recursive>=0.38_1:devel/p5-File-Copy-Recursive \
