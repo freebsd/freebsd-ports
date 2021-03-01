@@ -2,7 +2,7 @@
 
 PORTNAME=	cloudquery
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.7
+DISTVERSION=	0.10.0
 CATEGORIES=	net
 
 MAINTAINER=	nc@FreeBSD.org
@@ -24,6 +24,7 @@ GH_TUPLE=	\
 		aws:aws-lambda-go:v1.22.0:aws_aws_lambda_go/vendor/github.com/aws/aws-lambda-go \
 		cenkalti:backoff:v3.2.2:cenkalti_backoff_v3/vendor/github.com/cenkalti/backoff/v3 \
 		containerd:continuity:180525291bb7:containerd_continuity/vendor/github.com/containerd/continuity \
+		creasty:defaults:v1.5.1:creasty_defaults/vendor/github.com/creasty/defaults \
 		denisenkom:go-mssqldb:06a60b6afbbc:denisenkom_go_mssqldb/vendor/github.com/denisenkom/go-mssqldb \
 		docker:go-connections:v0.4.0:docker_go_connections/vendor/github.com/docker/go-connections \
 		docker:go-units:v0.4.0:docker_go_units/vendor/github.com/docker/go-units \
@@ -42,6 +43,7 @@ GH_TUPLE=	\
 		golang:crypto:9e8e0b390897:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:5f4716e94777:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:22da62e12c0c:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
@@ -52,6 +54,7 @@ GH_TUPLE=	\
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		hashicorp:yamux:3520598351bb:hashicorp_yamux/vendor/github.com/hashicorp/yamux \
 		iancoleman:strcase:v0.1.2:iancoleman_strcase/vendor/github.com/iancoleman/strcase \
+		imdario:mergo:v0.3.11:imdario_mergo/vendor/github.com/imdario/mergo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jackc:chunkreader:v2.0.1:jackc_chunkreader_v2/vendor/github.com/jackc/chunkreader/v2 \
 		jackc:pgconn:v1.7.0:jackc_pgconn/vendor/github.com/jackc/pgconn \
@@ -71,6 +74,7 @@ GH_TUPLE=	\
 		mitchellh:go-testing-interface:v1.0.0:mitchellh_go_testing_interface/vendor/github.com/mitchellh/go-testing-interface \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		moby:term:df9cb8a40635:moby_term/vendor/github.com/moby/term \
+		natefinch:lumberjack:v2.0.0:natefinch_lumberjack/vendor/gopkg.in/natefinch/lumberjack.v2 \
 		neo4j:neo4j-go-driver:003230e3e54b:neo4j_neo4j_go_driver_v4/vendor/github.com/neo4j/neo4j-go-driver/v4 \
 		oklog:run:v1.0.0:oklog_run/vendor/github.com/oklog/run \
 		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
@@ -81,6 +85,7 @@ GH_TUPLE=	\
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		rs:zerolog:v1.20.0:rs_zerolog/vendor/github.com/rs/zerolog \
 		shopspring:decimal:v1.2.0:shopspring_decimal/vendor/github.com/shopspring/decimal \
 		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
@@ -89,11 +94,9 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
-		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
-		uber-go:multierr:v1.5.0:uber_go_multierr/vendor/go.uber.org/multierr \
-		uber-go:zap:v1.10.0:uber_go_zap/vendor/go.uber.org/zap
+		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv
 
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
+
