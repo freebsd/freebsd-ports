@@ -332,6 +332,7 @@ share/applications/idea.desktop
 %%DATADIR%%/lib/protobuf-java-3.13.0.jar
 %%DATADIR%%/lib/proxy-vole-1.0.5-jb.2.jar
 %%DATADIR%%/lib/pty4j-0.11.1.jar
+%%DATADIR%%/lib/pty4j-native
 %%DATADIR%%/lib/purejavacomm-0.0.11.1.jar
 %%DATADIR%%/lib/qdox-2.0-M10.jar
 %%DATADIR%%/lib/rd-core-0.203.181.jar
