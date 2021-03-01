@@ -1,0 +1,72 @@
+Partially revert https://github.com/yuzu-emu/yuzu/commit/bc30a591ba72
+
+/usr/local/bin/ld: src/yuzu/CMakeFiles/yuzu.dir/about_dialog.cpp.o: in function `AboutDialog::AboutDialog(QWidget*)':
+about_dialog.cpp:(.text+0x3d3): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: src/yuzu/CMakeFiles/yuzu.dir/applets/web_browser.cpp.o: in function `QtNXWebEngineView::LoadExtractedFonts()':
+web_browser.cpp:(.text+0x14e7): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: src/yuzu/CMakeFiles/yuzu.dir/configuration/config.cpp.o: in function `Config::Initialize(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+config.cpp:(.text+0x11064): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: config.cpp:(.text+0x111cc): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: config.cpp:(.text+0x1136c): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: src/yuzu/CMakeFiles/yuzu.dir/configuration/configure_per_game.cpp.o:configure_per_game.cpp:(.text+0x1348): more undefined references to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)' follow
+/usr/local/bin/ld: src/core/libcore.a(core.cpp.o): in function `void fmt::v7::detail::format_value<char, Loader::ResultStatus>(fmt::v7::detail::buffer<char>&, Loader::ResultStatus const&, fmt::v7::detail::locale_ref)':
+core.cpp:(.text._ZN3fmt2v76detail12format_valueIcN6Loader12ResultStatusEEEvRNS1_6bufferIT_EERKT0_NS1_10locale_refE[_ZN3fmt2v76detail12format_valueIcN6Loader12ResultStatusEEEvRNS1_6bufferIT_EERKT0_NS1_10locale_refE]+0x10f): undefined reference to `std::locale fmt::v7::detail::locale_ref::get<std::locale>() const'
+/usr/local/bin/ld: src/core/libcore.a(key_manager.cpp.o): in function `Core::Crypto::KeyManager::SetKey(Core::Crypto::S128KeyType, std::array<unsigned char, 16ul>, unsigned long, unsigned long)':
+key_manager.cpp:(.text+0x6d22): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: key_manager.cpp:(.text+0x6e8f): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: key_manager.cpp:(.text+0x6fc1): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: key_manager.cpp:(.text+0x7057): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: key_manager.cpp:(.text+0x709d): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: src/core/libcore.a(key_manager.cpp.o):key_manager.cpp:(.text+0x70e3): more undefined references to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)' follow
+/usr/local/bin/ld: src/core/libcore.a(boxcat.cpp.o): in function `void fmt::v7::detail::value<fmt::v7::basic_format_context<fmt::v7::detail::buffer_appender<char>, char> >::format_custom_arg<Service::BCAT::(anonymous namespace)::DownloadResult, fmt::v7::detail::fallback_formatter<Service::BCAT::(anonymous namespace)::DownloadResult, char, void> >(void const*, fmt::v7::basic_format_parse_context<char, fmt::v7::detail::error_handler>&, fmt::v7::basic_format_context<fmt::v7::detail::buffer_appender<char>, char>&)':
+boxcat.cpp:(.text+0x4492): undefined reference to `std::locale fmt::v7::detail::locale_ref::get<std::locale>() const'
+/usr/local/bin/ld: src/core/libcore.a(boxcat.cpp.o): in function `Service::BCAT::Boxcat::Client::DownloadInternal(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, unsigned int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)':
+boxcat.cpp:(.text+0x4fc4): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: src/core/libcore.a(boxcat.cpp.o): in function `Service::BCAT::SynchronizeInternal(Service::AM::Applets::AppletManager&, std::function<std::shared_ptr<FileSys::VfsDirectory> (unsigned long)>, Service::BCAT::TitleIDVersion, Service::BCAT::ProgressServiceBackend&, std::optional<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >)':
+boxcat.cpp:(.text+0x5c80): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: boxcat.cpp:(.text+0x5d4b): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: src/core/libcore.a(boxcat.cpp.o): in function `Service::BCAT::Boxcat::GetLaunchParameter(Service::BCAT::TitleIDVersion)':
+boxcat.cpp:(.text+0x6e98): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: boxcat.cpp:(.text+0x70ac): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: src/core/libcore.a(bis_factory.cpp.o):bis_factory.cpp:(.text+0xacf): more undefined references to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)' follow
+/usr/local/bin/ld: externals/dynarmic/src/libdynarmic.a(basic_block.cpp.o): in function `void fmt::v7::detail::format_value<char, Dynarmic::IR::LocationDescriptor>(fmt::v7::detail::buffer<char>&, Dynarmic::IR::LocationDescriptor const&, fmt::v7::detail::locale_ref)':
+basic_block.cpp:(.text._ZN3fmt2v76detail12format_valueIcN8Dynarmic2IR18LocationDescriptorEEEvRNS1_6bufferIT_EERKT0_NS1_10locale_refE[_ZN3fmt2v76detail12format_valueIcN8Dynarmic2IR18LocationDescriptorEEEvRNS1_6bufferIT_EERKT0_NS1_10locale_refE]+0x10f): undefined reference to `std::locale fmt::v7::detail::locale_ref::get<std::locale>() const'
+/usr/local/bin/ld: externals/dynarmic/src/libdynarmic.a(location_descriptor.cpp.o): in function `Dynarmic::IR::operator<<(std::ostream&, Dynarmic::IR::LocationDescriptor const&)':
+location_descriptor.cpp:(.text+0x37): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: externals/dynarmic/src/libdynarmic.a(a32_emit_x64.cpp.o): in function `Dynarmic::Backend::X64::A32EmitX64::LocationDescriptorToFriendlyName[abi:cxx11](Dynarmic::IR::LocationDescriptor const&) const':
+a32_emit_x64.cpp:(.text+0x69c): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: externals/dynarmic/src/libdynarmic.a(a32_emit_x64.cpp.o): in function `Dynarmic::Backend::X64::A32EmitX64::GenFastmemFallbacks()':
+a32_emit_x64.cpp:(.text+0x4f76): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: a32_emit_x64.cpp:(.text+0x5366): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: externals/dynarmic/src/libdynarmic.a(a64_emit_x64.cpp.o): in function `Dynarmic::Backend::X64::A64EmitX64::LocationDescriptorToFriendlyName[abi:cxx11](Dynarmic::IR::LocationDescriptor const&) const':
+a64_emit_x64.cpp:(.text+0x65): undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/local/bin/ld: externals/dynarmic/src/libdynarmic.a(a64_emit_x64.cpp.o):a64_emit_x64.cpp:(.text+0x533d): more undefined references to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)' follow
+/usr/local/bin/ld: externals/dynarmic/src/libdynarmic.a(microinstruction.cpp.o): in function `void fmt::v7::detail::format_value<char, Dynarmic::IR::Opcode>(fmt::v7::detail::buffer<char>&, Dynarmic::IR::Opcode const&, fmt::v7::detail::locale_ref)':
+microinstruction.cpp:(.text._ZN3fmt2v76detail12format_valueIcN8Dynarmic2IR6OpcodeEEEvRNS1_6bufferIT_EERKT0_NS1_10locale_refE[_ZN3fmt2v76detail12format_valueIcN8Dynarmic2IR6OpcodeEEEvRNS1_6bufferIT_EERKT0_NS1_10locale_refE]+0x10f): undefined reference to `std::locale fmt::v7::detail::locale_ref::get<std::locale>() const'
+/usr/local/bin/ld: externals/dynarmic/src/libdynarmic.a(microinstruction.cpp.o): in function `void fmt::v7::detail::format_value<char, Dynarmic::IR::Type>(fmt::v7::detail::buffer<char>&, Dynarmic::IR::Type const&, fmt::v7::detail::locale_ref)':
+microinstruction.cpp:(.text._ZN3fmt2v76detail12format_valueIcN8Dynarmic2IR4TypeEEEvRNS1_6bufferIT_EERKT0_NS1_10locale_refE[_ZN3fmt2v76detail12format_valueIcN8Dynarmic2IR4TypeEEEvRNS1_6bufferIT_EERKT0_NS1_10locale_refE]+0x10f): undefined reference to `std::locale fmt::v7::detail::locale_ref::get<std::locale>() const'
+collect2: error: ld returned 1 exit status
+
+--- CMakeLists.txt.orig	2021-02-22 04:23:45 UTC
++++ CMakeLists.txt
+@@ -165,7 +165,6 @@ macro(yuzu_find_packages)
+     set(REQUIRED_LIBS
+     #    Cmake Pkg Prefix  Version     Conan Pkg
+         "Catch2            2.13        catch2/2.13.0"
+-        "fmt               7.1         fmt/7.1.2"
+     # can't use until https://github.com/bincrafters/community/issues/1173
+         #"libzip            1.5         libzip/1.5.2@bincrafters/stable"
+         "lz4               1.8         lz4/1.9.2"
+--- externals/CMakeLists.txt.orig	2021-02-22 04:23:45 UTC
++++ externals/CMakeLists.txt
+@@ -15,6 +15,10 @@ endif()
+ add_library(catch-single-include INTERFACE)
+ target_include_directories(catch-single-include INTERFACE catch/single_include)
+ 
++# libfmt
++add_subdirectory(fmt)
++add_library(fmt::fmt ALIAS fmt)
++
+ # Dynarmic
+ if (ARCHITECTURE_x86_64)
+     set(DYNARMIC_TESTS OFF)
