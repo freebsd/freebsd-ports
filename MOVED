@@ -16175,3 +16175,4 @@ www/py-djangorestframework311||2021-02-26|Removed: Used as a transitional packag
 editors/mg-static|editors/mg@static|2021-02-28|Flavored
 devel/snorenotify||2021-02-28|Has expired: Unmaintained upstream
 multimedia/kodi-addon-pvr-iptvsimple|multimedia/kodi-addon-pvr.iptvsimple|2021-03-01|Renamed to match upstream name
+multimedia/kodi-addon-pvr-hts|multimedia/kodi-addon-pvr.hts|2021-03-01|Renamed to match upstream name
