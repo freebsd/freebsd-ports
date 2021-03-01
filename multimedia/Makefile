@@ -153,6 +153,7 @@
     SUBDIR += kodi-addon-pvr.iptvsimple
     SUBDIR += kodi-addon-screensaver.biogenesis
     SUBDIR += kodi-addon-screensaver.matrixtrails
+    SUBDIR += kodi-addon-screensaver.stars
     SUBDIR += kvazaar
     SUBDIR += l-smash
     SUBDIR += libaacs
