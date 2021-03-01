@@ -2,8 +2,7 @@
 
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v
-DISTVERSION=		6.1.35
-PORTREVISION=		1
+DISTVERSION=		6.1.40
 CATEGORIES=		audio science
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -35,7 +34,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^CPPFLAGS =|CPPFLAGS +=|' \
 		${WRKSRC}/*/Makefile \
 		${WRKSRC}/external/*/Makefile
-	@${CP} ${FILESDIR}/makefile.defs.freebsd.alsa \
+	@${CP} ${WRKSRC}/makefiles/makefile.defs.freebsd.alsa \
 		${WRKSRC}/makefile.defs
 
 do-install:
