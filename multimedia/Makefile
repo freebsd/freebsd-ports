@@ -151,6 +151,7 @@
     SUBDIR += kodi-addon-peripheral.joystick
     SUBDIR += kodi-addon-pvr.hts
     SUBDIR += kodi-addon-pvr.iptvsimple
+    SUBDIR += kodi-addon-screensaver.biogenesis
     SUBDIR += kodi-addon-screensaver.matrixtrails
     SUBDIR += kvazaar
     SUBDIR += l-smash
