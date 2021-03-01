@@ -44,11 +44,6 @@ LUA_MAKE_ARGS=		USE_LUA=1 LUA_INC=${LUA_INCDIR} LUA_LIB=${LUA_LIBDIR} LUA_LIB_NA
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
-MAKE_ARGS+=	ARCH=i586
-USE_GCC=	9+
-.endif
-
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 MAKE_ARGS+=	USE_REGPARM=1
 .endif
