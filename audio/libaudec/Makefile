@@ -2,8 +2,7 @@
 
 PORTNAME=	libaudec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.4
-PORTREVISION=	1
+DISTVERSION=	0.3.4
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,6 +23,7 @@ MESON_ARGS=	-Dtests=false
 
 PLIST_FILES=	bin/audec \
 		include/audec/audec.h \
+		lib/libaudec.a \
 		lib/libaudec.so \
 		libdata/pkgconfig/audec.pc
 
