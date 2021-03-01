@@ -3,7 +3,7 @@
 
 PORTNAME=	qbittorrent
 DISTVERSION=	4.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -47,12 +47,18 @@ PLIST_SUB=		USER=${USERS} GROUP=${GROUPS}
 OPTIONS_EXCLUDE=	DBUS
 .endif
 
-OPTIONS_DEFINE=		DBUS DEBUG
+OPTIONS_DEFINE=		DBUS PYTHON DEBUG
 OPTIONS_DEFAULT=	DBUS
 
 DEBUG_CONFIGURE_ENABLE=	debug
 DBUS_CONFIGURE_ENABLE=	qt-dbus
 DBUS_USE=		qt=dbus
+
+PYTHON_DESC=		Install Python to support some plugin functionality
+PYTHON_USES=		python:3.6+,run
+
+post-patch-PYTHON-on:
+	@${REINPLACE_CMD} -e 's|"python3"|"${PYTHON_CMD}"|' ${WRKSRC}/src/base/utils/foreignapps.cpp
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbittorrent${SUFFIX}
