@@ -11,7 +11,7 @@ COMMENT=	Fische visualizer for Kodi
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	glm>=0.9.9.7:math/glm
+BUILD_DEPENDS=	glm>0:math/glm
 
 USES=		cmake localbase compiler:c++14-lang gl kodi
 USE_CXXSTD=	c++14
