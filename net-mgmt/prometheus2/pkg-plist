@@ -17,6 +17,7 @@ bin/promtool
 %%PORTDOCS%%%%DOCSDIR%%/configuration/template_examples.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/template_reference.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/unit_testing_rules.md
+%%PORTDOCS%%%%DOCSDIR%%/disabled_features.md
 %%PORTDOCS%%%%DOCSDIR%%/federation.md
 %%PORTDOCS%%%%DOCSDIR%%/getting_started.md
 %%PORTDOCS%%%%DOCSDIR%%/images/remote_integrations.png
