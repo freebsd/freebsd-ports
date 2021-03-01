@@ -1,0 +1,20 @@
+--- configure.orig	2021-03-01 12:28:26 UTC
++++ configure
+@@ -12716,7 +12716,7 @@ fi
+ set -- `echo "$vers" | tr '.' ' '`
+ 
+ v=$1
+-r=`echo "00"$2 | sed 's/.*(...)$/$1/'`
++r=`echo $2 | sed 's/.*(...)$/$1/'`
+ 
+ p=$3
+ 
+@@ -12724,7 +12724,7 @@ if test "$p" = ""
+    then p="0"
+ fi
+ 
+-p=`echo "00"$p | sed 's/.*(...)$/$1/'`
++p=`echo $p | sed 's/.*(...)$/$1/'`
+ 
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
