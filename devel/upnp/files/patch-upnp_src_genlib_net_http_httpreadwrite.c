@@ -1,10 +1,10 @@
---- upnp/src/genlib/net/http/httpreadwrite.c.orig	2020-10-03 17:28:40 UTC
+--- upnp/src/genlib/net/http/httpreadwrite.c.orig	2021-02-25 14:08:26 UTC
 +++ upnp/src/genlib/net/http/httpreadwrite.c
-@@ -55,7 +55,6 @@
- #include "uri.h"
- #include "webserver.h"
- 
--#include <alloca.h>
- #include <assert.h>
- #include <stdarg.h>
- #include <string.h>
+@@ -66,7 +66,6 @@
+ 		#define snprintf _snprintf
+ 	#endif
+ #else /* _WIN32 */
+-	#include <alloca.h>
+ 	#include <arpa/inet.h>
+ 	#include <sys/time.h>
+ 	#include <sys/types.h>
