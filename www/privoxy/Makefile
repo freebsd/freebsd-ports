@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.31
+PORTVERSION=	3.0.32
 CATEGORIES=	www
 MASTER_SITES=	https://www.privoxy.org/sf-download-mirror/Sources/${PORTVERSION}%20(stable)/ \
 		SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
