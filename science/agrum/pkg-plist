@@ -876,7 +876,7 @@ lib/cmake/aGrUM/agrum-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/aGrUM/agrum-targets.cmake
 lib/libagrum.so
 lib/libagrum.so.0
-lib/libagrum.so.0.19.1
+lib/libagrum.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-%%VERSION%%-py%%PYTHON_VER_MAJ%%.egg-info
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-%%VERSION%%.dist-info/METADATA
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum-%%VERSION%%.dist-info/WHEEL
