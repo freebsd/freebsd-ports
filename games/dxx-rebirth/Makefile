@@ -2,14 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	dxx-rebirth
-PORTVERSION=	20210126
+PORTVERSION=	20210224
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	games
 MASTER_SITES=	https://www.dxx-rebirth.com/download/dxx/rebirth/
 DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
-
-PATCH_SITES=	https://github.com/dxx-rebirth/dxx-rebirth/commit/
-PATCHFILES=	15bd145daf7993ed0a0c7c270501f0310cfe6a9f.patch:-p1
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source port of Descent and Descent 2
@@ -25,7 +22,7 @@ BUILD_DEPENDS=	as:devel/binutils
 LIB_DEPENDS=	libphysfs.so:devel/physfs \
 		libpng.so:graphics/png
 
-USES=		compiler:c++14-lang gl localbase:ldflags pkgconfig scons sdl \
+USES=		compiler:c++17-lang gl localbase:ldflags pkgconfig scons sdl \
 		tar:xz
 USE_GL=		gl glu
 USE_SDL=	image2 mixer2 sdl2
