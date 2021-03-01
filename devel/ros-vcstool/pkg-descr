@@ -1,0 +1,6 @@
+Robot Operating System (ROS) command-line tools for maintaining a workspace of
+projects from multiple version-control systems.
+
+This is the recommended replacement for devel/ros-wstool.
+
+WWW: https://wiki.ros.org/vcstool

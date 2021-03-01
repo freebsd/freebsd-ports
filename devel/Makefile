@@ -5434,6 +5434,7 @@
     SUBDIR += ros-rospkg
     SUBDIR += ros-urdfdom
     SUBDIR += ros-urdfdom_headers
+    SUBDIR += ros-vcstool
     SUBDIR += ros-vcstools
     SUBDIR += ros-wstool
     SUBDIR += roswell
