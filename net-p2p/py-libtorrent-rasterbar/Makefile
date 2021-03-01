@@ -3,6 +3,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 DISTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,8 +28,10 @@ USE_PYTHON=	distutils autoplist
 BINARY_ALIAS=	b2=${FILESDIR}/b2
 
 CFLAGS+=	-DTORRENT_DISABLE_LOGGING # undefined symbol: https://github.com/arvidn/libtorrent/issues/3331
-CFLAGS+=	-fPIC
 #LDFLAGS+=	${LOCALBASE}/lib/libboost_python${PYTHON_SUFFIX}.so ${LOCALBASE}/lib/libiconv.so # fails to link libs: https://github.com/arvidn/libtorrent/issues/3330
+
+PYDISTUTILS_BUILD_TARGET=	build_ext
+PYDISTUTILS_BUILDARGS=		--boost-link=shared # otherwise it uses the static library and fails to build the python object: can't create dynamic relocation R_X86_64_32S against local symbol in readonly segment
 
 WRKSRC_SUBDIR=	bindings/python
 
