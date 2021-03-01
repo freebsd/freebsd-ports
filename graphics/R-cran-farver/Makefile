@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	farver
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -12,6 +11,6 @@ COMMENT=	High Performance Colour Space Manipulation
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.note
 
-USES=		cran:auto-plist,compiles
+USES=		compiler:c++11-lang cran:auto-plist,compiles
 
 .include <bsd.port.mk>
