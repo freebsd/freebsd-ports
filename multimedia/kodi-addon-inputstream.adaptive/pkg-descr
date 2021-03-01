@@ -1,0 +1,10 @@
+Adaptive stream support for Kodi
+
+This addon adds support for multiple manifest types and is used by
+other addons to dynamically select the best audio/video quality/resolution
+according to available bandwith.
+
+For example, it is required by the MPEG-DASH functionality of Kodi's
+YouTube addon to support video playback in higher resolutions than 720p.
+
+WWW: https://github.com/peak3d/inputstream.adaptive

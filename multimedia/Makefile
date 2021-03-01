@@ -147,6 +147,7 @@
     SUBDIR += kf5-kmediaplayer
     SUBDIR += kmplayer
     SUBDIR += kodi
+    SUBDIR += kodi-addon-inputstream.adaptive
     SUBDIR += kodi-addon-inputstream.adaptive-devel
     SUBDIR += kodi-addon-peripheral-joystick
     SUBDIR += kodi-addon-peripheral.joystick-devel
