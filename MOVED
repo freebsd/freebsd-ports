@@ -16174,3 +16174,4 @@ devel/allegro-devel|devel/allegro5|2021-02-20|Rename to better match upstream na
 www/py-djangorestframework311||2021-02-26|Removed: Used as a transitional package for www/seahub, please use www/py-djangorestframework instead
 editors/mg-static|editors/mg@static|2021-02-28|Flavored
 devel/snorenotify||2021-02-28|Has expired: Unmaintained upstream
+multimedia/kodi-addon-pvr-iptvsimple|multimedia/kodi-addon-pvr.iptvsimple|2021-03-01|Renamed to match upstream name
