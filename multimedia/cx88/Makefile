@@ -16,6 +16,8 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c
 BUILD_DEPENDS=	${LOCALBASE}/lib/libezxml.a:textproc/ezxml \
 		libtuner>=1.1.4:multimedia/libtuner
 
+# XXX static libraries with PIE are currently unsupported
+MAKE_ARGS+=	WITHOUT_PIE=true
 MAKE_ARGS+=	LIBTUNER_LIB=${LOCALBASE}/lib/libtuner LIBTUNER_HEADER=${LOCALBASE}/include/libtuner KMODDIR=${KMODDIR} PREFIX=${STAGEDIR}${PREFIX}
 MAKE_JOBS_UNSAFE=	yes
 USES=			kmod libedit pkgconfig uidfix
