@@ -477,6 +477,7 @@ bin/Xphace
 bin/abids_json_info.py
 bin/abids_json_tool.py
 bin/abids_tool.py
+bin/adjunct_apqc_tsnr_no_mask
 bin/adjunct_apqc_tsnr_with_mask
 bin/adjunct_aw_tableize_roi_info.py
 bin/adjunct_calc_mont_dims.py
