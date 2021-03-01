@@ -16063,8 +16063,9 @@ audio/gstreamer-plugins-a52dec|audio/gstreamer1-plugins-a52dec|2021-02-04|Replac
 audio/gstreamer-plugins-amrnb|audio/gstreamer1-plugins-amrnb|2021-02-04|Replaced by gstreamer1
 audio/gstreamer-plugins-amrwbdec|audio/gstreamer1-plugins-amrwbdec|2021-02-04|Replaced by gstreamer1
 audio/gstreamer-plugins-cdaudio||2021-02-04|Replaced by gstreamer1
-audio/gstreamer-plugins-cdparanioa|audio/gstreamer1-plugins-cdparanioa|2021-02-04|Replaced by gstreamer1
+audio/gstreamer-plugins-cdparanoia|audio/gstreamer1-plugins-cdparanoia|2021-02-04|Replaced by gstreamer1
 audio/gstreamer-plugins-faac|audio/gstreamer1-plugins-faac|2021-02-04|Replaced by gstreamer1
+audio/gstreamer-plugins-faad|audio/gstreamer1-plugins-faad|2021-02-04|Replaced by gstreamer1
 audio/gstreamer-plugins-flac|audio/gstreamer1-plugins-flac|2021-02-04|Replaced by gstreamer1
 audio/gstreamer-plugins-flite|audio/gstreamer1-plugins-flite|2021-02-04|Replaced by gstreamer1
 audio/gstreamer-plugins-fluendo-mp3||2021-02-04|Replaced by gstreamer1
