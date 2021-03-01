@@ -5,5 +5,5 @@ lib/console_bridge/cmake/console_bridge-config.cmake
 lib/console_bridge/cmake/console_bridge-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/console_bridge/cmake/console_bridge-targets.cmake
 lib/libconsole_bridge.so
-lib/libconsole_bridge.so.0.4
+lib/libconsole_bridge.so.1.0
 libdata/pkgconfig/console_bridge.pc
