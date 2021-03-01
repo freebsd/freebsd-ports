@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mousepad
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	editors xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
