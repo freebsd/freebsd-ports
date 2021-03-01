@@ -36,6 +36,7 @@ ALL_TARGET=	world.opt
 STRIP=
 SSP_UNSAFE=	yes
 MAKE_JOBS_UNSAFE=	yes
+LDFLAGS_armv6=	-Wl,-znotext
 LDFLAGS_armv7=	-Wl,-znotext
 LDFLAGS_i386=	-Wl,-znotext
 
