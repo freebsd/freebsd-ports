@@ -1,6 +1,6 @@
-TIMESTAMP = 1588841486
-SHA256 (cabal/Agda-2.6.1.tar.gz) = 678f416af8f30d017825309f15fac41d239b07f66a4c40497e8435a6bdb7c129
-SIZE (cabal/Agda-2.6.1.tar.gz) = 2646289
+TIMESTAMP = 1614527277
+SHA256 (cabal/Agda-2.6.1.3.tar.gz) = bb1bc840cee95eea291bd220ea043b60153a6f7bd8198bc53be2bf3b83c8a1e7
+SIZE (cabal/Agda-2.6.1.3.tar.gz) = 2716612
 SHA256 (cabal/Cabal-3.0.2.0/Cabal-3.0.2.0.tar.gz) = 65d3d7e953388df26c748c4ca2c57175e71a71e779fe6b1a77f6639c4336ea07
 SIZE (cabal/Cabal-3.0.2.0/Cabal-3.0.2.0.tar.gz) = 758932
 SHA256 (cabal/STMonadTrans-0.4.4/STMonadTrans-0.4.4.tar.gz) = 1ae82a40060b8014981b8f4d45517f80f02456e73245030993c4c9123b827103
