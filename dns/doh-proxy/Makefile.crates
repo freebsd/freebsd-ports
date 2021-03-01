@@ -37,7 +37,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		js-sys-0.3.47 \
 		lazy_static-1.4.0 \
 		libc-0.2.86 \
-		libdoh-0.3.7 \
+		libdoh-0.3.8 \
 		lock_api-0.4.2 \
 		log-0.4.14 \
 		memchr-2.3.4 \
