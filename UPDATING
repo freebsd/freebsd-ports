@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210302:
+  AFFECTS: users of editors/emacs-devel
+  AUTHOR: jrm@FreeBSD.org
+
+  If you get the error "Symbol's value as variable is void: minor-modes",
+  rebuild the offending Emacs packages.  See
+  https://lists.gnu.org/archive/html/emacs-devel/2021-02/msg01164.html
+  for details.
+
 20210220:
   AFFECTS: users of math/py-mathics
   AUTHOR: thierry@FreeBSD.org

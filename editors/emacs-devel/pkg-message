@@ -1,0 +1,15 @@
+[
+{ type: upgrade
+  maximum_version: "28.0.50.20210302,2"
+  message: <<EOM
+If you get the error
+
+    Symbol's value as variable is void: minor-modes
+
+rebuild the offending Emacs packages.
+
+See https://lists.gnu.org/archive/html/emacs-devel/2021-02/msg01164.html
+for details.
+EOM
+}
+]
