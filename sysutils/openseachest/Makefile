@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openseachest
-PORTVERSION=	20.02.28
+PORTVERSION=	21.03.01
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -17,9 +17,9 @@ ALL_TARGET=	release
 USE_GITHUB=	yes
 GH_ACCOUNT=	Seagate
 GH_PROJECT=	openSeaChest
-GH_TUPLE=	Seagate:opensea-common:deae6bc:common/opensea-common \
-		Seagate:opensea-operations:f1e05ee:operations/opensea-operations \
-		Seagate:opensea-transport:16f85f2:transport/opensea-transport \
+GH_TUPLE=	Seagate:opensea-common:1df13e2:common/opensea-common \
+		Seagate:opensea-operations:2dd600a:operations/opensea-operations \
+		Seagate:opensea-transport:0d04cf7:transport/opensea-transport \
 		Seagate:wingetopt:1b5b5ad:wingetopt/wingetopt
 
 BUILD_WRKSRC=	${WRKSRC}/Make/gcc
