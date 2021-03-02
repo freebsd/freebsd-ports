@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	matterhorn
-PORTVERSION=	50200.10.1
+PORTVERSION=	50200.12.0
 CATEGORIES=	net-im
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	matterhorn-chat
 GH_PROJECT=	matterhorn
 
-USE_CABAL=	HTTP-4000.3.14_1 \
+USE_CABAL=	HTTP-4000.3.15_2 \
 		Hclip-3.0.0.4 \
 		QuickCheck-2.14.1 \
 		SHA-1.6.4.4 \
@@ -25,7 +25,7 @@ USE_CABAL=	HTTP-4000.3.14_1 \
 		asn1-encoding-0.9.6_1 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
-		aspell-pipe-0.4 \
+		aspell-pipe-0.6 \
 		async-2.2.2_1 \
 		attoparsec-0.13.2.4 \
 		base-compat-0.11.1 \
@@ -37,7 +37,7 @@ USE_CABAL=	HTTP-4000.3.14_1 \
 		blaze-builder-0.4.1.0 \
 		blaze-html-0.9.1.2 \
 		blaze-markup-0.8.2.7 \
-		brick-0.55_1 \
+		brick-0.59 \
 		brick-skylighting-0.3 \
 		bytestring-builder-0.10.8.2.0 \
 		cabal-doctest-1.0.8_2 \
@@ -46,6 +46,8 @@ USE_CABAL=	HTTP-4000.3.14_1 \
 		cheapskate-0.1.1.2_1 \
 		clock-0.8 \
 		colour-2.3.5 \
+		commonmark-0.1.1.4 \
+		commonmark-extensions-0.2.0.4 \
 		comonad-5.0.6_1 \
 		config-ini-0.2.4.0_1 \
 		connection-0.3.1_1 \
@@ -62,6 +64,7 @@ USE_CABAL=	HTTP-4000.3.14_1 \
 		data-default-instances-old-locale-0.0.1 \
 		distributive-0.6.2_2 \
 		dlist-0.8.0.8 \
+		emojis-0.1 \
 		entropy-0.4.1.6 \
 		extensible-exceptions-0.1.1.4 \
 		gitrev-1.3.1 \
@@ -76,7 +79,7 @@ USE_CABAL=	HTTP-4000.3.14_1 \
 		hxt-regex-xmlschema-9.2.0.3_1 \
 		hxt-unicode-9.0.2.4 \
 		integer-logarithms-1.0.3_2 \
-		mattermost-api-50200.7.0 \
+		mattermost-api-50200.10.0 \
 		megaparsec-8.0.0 \
 		memory-0.15.0_1 \
 		microlens-0.4.11.2 \
@@ -129,7 +132,7 @@ USE_CABAL=	HTTP-4000.3.14_1 \
 		uuid-1.3.13_3 \
 		uuid-types-1.0.3_3 \
 		vector-0.12.1.2 \
-		vty-5.30 \
+		vty-5.32 \
 		websockets-0.12.7.1 \
 		word-wrap-0.4.1_1 \
 		x509-1.7.5_1 \
