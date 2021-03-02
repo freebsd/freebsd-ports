@@ -11,8 +11,8 @@
 
  Or, if you're using OpenMPI:
   % cd %%PREFIX%%/share/BLACS/TESTING
-  % LD_LIBRARY_PATH=%%LOCALBASE%%/mpi/openmpi3/lib/ export LD_LIBRARY_PATH
-  % PATH=$PATH:%%LOCALBASE%%/mpi/openmpi3/bin/ export PATH
+  % LD_LIBRARY_PATH=%%LOCALBASE%%/mpi/openmpi/lib/ export LD_LIBRARY_PATH
+  % PATH=$PATH:%%LOCALBASE%%/mpi/openmpi/bin/ export PATH
   % mpirun -np 4 ./xCbtest_MPI-FreeBSD
   % mpirun -np 4 ./xFbtest_MPI-FreeBSD
 

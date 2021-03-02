@@ -29,10 +29,10 @@ OPTIONS_DEFAULT=	DOCS MPICH
 DOCS_DISTFILES=	blacs_install.ps f77blacsqref.ps lawn94.ps \
 		cblacsqref.ps  mpi_prop.ps mpiblacs_issues.ps
 
-OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
+OPENMPI_USES=	mpi:openmpi
 OPENMPI_EXTRA_PATCHES=	${FILESDIR}/Bmake.inc-openmpi.diff
 
-MPICH_LIB_DEPENDS=	libmpi.so:net/mpich
+MPICH_USES=	mpi:mpich
 MPICH_EXTRA_PATCHES=	${FILESDIR}/Bmake.inc-mpich.diff
 
 .include <bsd.port.pre.mk>

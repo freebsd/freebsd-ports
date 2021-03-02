@@ -27,11 +27,11 @@ TEST_TARGET=	check
 
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		EXAMPLES MPI
-OPTIONS_DEFAULT=	EXAMPLES MPI
+OPTIONS_DEFINE=		EXAMPLES MPICH
+OPTIONS_DEFAULT=	EXAMPLES MPICH
 OPTIONS_SUB=		yes
-MPI_LIB_DEPENDS=	libmpi.so:net/mpich
-MPI_CONFIGURE_WITH=	mpi
+MPICH_USES=		mpi:mpich
+MPICH_CONFIGURE_WITH=	mpi
 
 ASCII_TEXTS=	checkcmrg checklcg checklcg64 checklfg checkmlfg checkpmlcg	\
 		checksprng timecmrg timelcg timelcg64 timelfg timemlfg timepmlcg\
