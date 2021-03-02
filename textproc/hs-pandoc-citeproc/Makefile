@@ -10,6 +10,9 @@ COMMENT=	Supports using pandoc with citeproc
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Integrated into textproc/hs-pandoc
+EXPIRATION_DATE=2021-04-02
+
 USES=		cabal
 
 OPTIONS_DEFINE=		BIBUTILS EMBED_DATA UNICODE_COLLATION
