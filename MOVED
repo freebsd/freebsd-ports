@@ -16187,3 +16187,4 @@ dns/knot2|dns/knot3|2021-03-01|Has expired: Use knot3, it is functionally compat
 print/cups-cloud-print||2021-03-01|Has expired: Google Cloud Print has been shut down by Google as of December 31, 2020
 www/helma||2021-03-01|Has expired: Upstream is basically dead and recommends ringojs.org
 multimedia/kodi-addon-peripheral-joystick|multimedia/kodi-addon-peripheral.joystick|2021-03-01|Renamed to match upstream name
+sysutils/py-salt-2019|sysutils/py-salt|2021-03-02|Has expired: Deprecated. Please use sysutils/py-salt instead.
