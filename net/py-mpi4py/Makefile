@@ -15,24 +15,25 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 USES=		python:3.6+
 USE_PYTHON=	distutils cython autoplist concurrent
+LDFLAGS+=	${MPI_LIBS}
 
 OPTIONS_DEFINE=		DOCS MANPAGES
 OPTIONS_SINGLE=		MP
-OPTIONS_SINGLE_MP=	MPICH2 OPENMPI
+OPTIONS_SINGLE_MP=	MPICH OPENMPI
 OPTIONS_DEFAULT=	OPENMPI # the only non-failing MPI implementation
 MP_DESC=		MPI Implementation
 
-MPICH2_USES=		fortran
-MPICH2_LIB_DEPENDS=	libmpich.so:net/mpich2
-MPICH2_LDFLAGS=		${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
+MPICH_USES=		fortran mpi:mpich
+MPICH_LDFLAGS=		${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
 
-OPENMPI_LIB_DEPENDS=	libmpi.so:net/openmpi
+OPENMPI_USES=		mpi:openmpi
 
 PORTDOCS=		*
 
-do-patch-OPENMPI-on:
-	@${CP} ${FILESDIR}/mpi.cfg ${WRKSRC}/
-	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/mpi.cfg
+pre-configure:
+	${CP} ${FILESDIR}/mpi.cfg ${WRKSRC}/
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%/mpi/openmpi|${MPI_HOME}|'	\
+		${WRKSRC}/mpi.cfg
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
