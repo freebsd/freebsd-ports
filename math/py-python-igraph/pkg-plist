@@ -15,7 +15,7 @@ bin/igraph
 %%PYTHON_SITELIBDIR%%/igraph/__pycache__/summary.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/igraph/__pycache__/utils.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/igraph/__pycache__/version.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/igraph/_igraph.so
+%%PYTHON_SITELIBDIR%%/igraph/_igraph%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/igraph/app/__init__.py
 %%PYTHON_SITELIBDIR%%/igraph/app/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/igraph/app/__pycache__/shell.cpython-%%PYTHON_SUFFIX%%.pyc
