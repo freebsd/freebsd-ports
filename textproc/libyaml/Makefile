@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	https://pyyaml.org/download/libyaml/
 DISTNAME=	yaml-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	YAML 1.1 parser and emitter written in C
 
 LICENSE=	MIT
