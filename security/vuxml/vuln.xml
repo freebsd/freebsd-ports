@@ -250,7 +250,7 @@ Notes:
       </package>
       <package>
 	<name>redis5</name>
-	<range><lt>5.2.11</lt></range>
+	<range><lt>5.0.11</lt></range>
       </package>
     </affects>
     <description>
