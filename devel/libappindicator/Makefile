@@ -47,6 +47,10 @@ MAJOR_VER=	12.10.1
 SNAPSHOT_VER=	18.04.20180322.1
 PATCH_VER=	0ubuntu5
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,has_mono=true,has_mono=disabled,' \
+		${WRKSRC}/configure.ac
+
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} NOCONFIGURE=yes ${SH} ./autogen.sh
 
