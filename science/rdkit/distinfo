@@ -1,5 +1,5 @@
-TIMESTAMP = 1611380457
-SHA256 (rdkit-rdkit-Release_2020_09_4_GH0.tar.gz) = 9e734ca8f99d8be1ef2ac51efb67c393c62e88b98cfa550d6173ce3eaa87b559
-SIZE (rdkit-rdkit-Release_2020_09_4_GH0.tar.gz) = 58603189
+TIMESTAMP = 1614725230
+SHA256 (rdkit-rdkit-Release_2020_09_5_GH0.tar.gz) = 85cec9618e7ef6365b9b908ed674c073d898b6627521cc7fd8c2e05fea8a5def
+SIZE (rdkit-rdkit-Release_2020_09_5_GH0.tar.gz) = 58609591
 SHA256 (rareylab-RingDecomposerLib-v1.1.3_rdkit_GH0.tar.gz) = 944b5816712a48bbf88aa25d4300ce11871ddf6e971218eac08f90ed2192f715
 SIZE (rareylab-RingDecomposerLib-v1.1.3_rdkit_GH0.tar.gz) = 137931
