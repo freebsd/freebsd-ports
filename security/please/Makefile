@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	please
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	security
 
 MAINTAINER=	swills@FreeBSD.org
@@ -21,7 +21,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,-m 4555,-m 0555,g" ${WRKSRC}/Makefile
 
 post-install:
-	${CP} ${WRKSRC}/pam.d/please.FreeBSD \
+	${CP} ${WRKSRC}/pam.d/please.BSD \
 		${STAGEDIR}${PREFIX}/etc/pam.d/please.sample
 
 .include <bsd.port.mk>
