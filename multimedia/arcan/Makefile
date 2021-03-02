@@ -2,8 +2,11 @@
 
 PORTNAME=	arcan
 DISTVERSION=	0.6.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	347240c18313.patch:-p2 # https://github.com/letoram/arcan/pull/229
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Display Server, Multimedia Framework, Game Engine
