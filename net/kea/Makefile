@@ -2,6 +2,7 @@
 
 PORTNAME=	kea
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/-beta/b/:S/a/.a/:S/rc/.rc/}
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/${ISCVERSION}
 DISTNAME=	${PORTNAME}-${ISCVERSION}
@@ -46,9 +47,13 @@ OPTIONS_SUB=	yes
 MYSQL_USES=	mysql
 MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
 MYSQL_CONFIGURE_OFF=	--without-mysql
+MYSQL_SUB_LIST=		REQ_MYSQL=mysql
+MYSQL_SUB_LIST_OFF=	REQ_MYSQL=""
 PGSQL_USES=	pgsql
 WANT_PGSQL=	client
 PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}/bin/pg_config
 PGSQL_CONFIGURE_OFF=	--without-pgsql
+PGSQL_SUB_LIST=		REQ_PGSQL=postgresql
+PGSQL_SUB_LIST_OFF=	REQ_PGSQL=""
 
 .include <bsd.port.mk>
