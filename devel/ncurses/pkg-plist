@@ -1087,6 +1087,7 @@ share/misc/terminfo/a/abm85
 share/misc/terminfo/a/abm85e
 share/misc/terminfo/a/abm85h
 share/misc/terminfo/a/abm85h-old
+share/misc/terminfo/a/absolute
 share/misc/terminfo/a/act4
 share/misc/terminfo/a/act5
 share/misc/terminfo/a/addrinfo
@@ -2234,7 +2235,7 @@ share/misc/terminfo/l/linux-s
 share/misc/terminfo/l/linux-vt
 share/misc/terminfo/l/linux2.2
 share/misc/terminfo/l/linux2.6
-share/misc/terminfo/l/linux2.%%REL_VER%%6
+share/misc/terminfo/l/linux2.6.26
 share/misc/terminfo/l/linux3.0
 share/misc/terminfo/l/lisa
 share/misc/terminfo/l/lisaterm
@@ -2866,6 +2867,8 @@ share/misc/terminfo/s/screen4
 share/misc/terminfo/s/screen5
 share/misc/terminfo/s/screwpoint
 share/misc/terminfo/s/scrhp
+share/misc/terminfo/s/scrt
+share/misc/terminfo/s/securecrt
 share/misc/terminfo/s/sibo
 share/misc/terminfo/s/simpleterm
 share/misc/terminfo/s/simterm
@@ -3292,6 +3295,8 @@ share/misc/terminfo/v/vt220
 share/misc/terminfo/v/vt220+cvis
 share/misc/terminfo/v/vt220+cvis8
 share/misc/terminfo/v/vt220+keypad
+share/misc/terminfo/v/vt220+pcedit
+share/misc/terminfo/v/vt220+vtedit
 share/misc/terminfo/v/vt220-8
 share/misc/terminfo/v/vt220-8bit
 share/misc/terminfo/v/vt220-base
@@ -3670,6 +3675,7 @@ share/misc/terminfo/x/xterm+keypad
 share/misc/terminfo/x/xterm+meta
 share/misc/terminfo/x/xterm+noalt
 share/misc/terminfo/x/xterm+noapp
+share/misc/terminfo/x/xterm+nofkeys
 share/misc/terminfo/x/xterm+osc104
 share/misc/terminfo/x/xterm+pc+edit
 share/misc/terminfo/x/xterm+pcc0
