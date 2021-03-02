@@ -31,11 +31,14 @@ GH_ACCOUNT=	lh3
 
 PLIST_FILES=	bin/bwa bin/qualfa2fq.pl bin/xa2multi.pl man/man1/bwa.1.gz
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
 # Avoid #error in emmintrin.h
 CFLAGS+=	-msse2
+.elif ${ARCH} == powerpc64le
+CFLAGS+=	-DNO_WARN_X86_INTRINSICS
+USES+=	compiler:gcc-c++11-lib
 .endif
 
 do-install:
@@ -43,4 +46,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
