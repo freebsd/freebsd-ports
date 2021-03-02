@@ -71,7 +71,7 @@ NLS_LDFLAGS=			-lintl
 NLS_CONFIGURE_ENABLE=		nls
 
 QT5_USES=			qt:5
-QT5_USE=			QT=core,gui,widgets,x11extras
+QT5_USE=			QT=core,gui,widgets,x11extras,buildtools_build
 QT5_CONFIGURE_WITH=		qt qt5
 QT5_IMPLIES=			X11
 
