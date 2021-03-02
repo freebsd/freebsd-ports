@@ -10,7 +10,8 @@ COMMENT=	Bundle of free audio effects
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	lv2>0:audio/lv2
+BUILD_DEPENDS=	lv2>0:audio/lv2 \
+		bash:shells/bash
 
 USES=		compiler:c++11-lang gl gmake localbase pkgconfig shebangfix xorg
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
