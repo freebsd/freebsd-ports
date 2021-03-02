@@ -8,7 +8,7 @@ MASTER_SITES=	https://docs.broadcom.com/docs-and-downloads/raid-controllers/raid
 DISTNAME=	CLI_freebsd-from_the_10-2-2-1_9-5-5-1_codesets
 DIST_SUBDIR=	3dm2
 
-MAINTAINER=	jpaetzel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3ware storage controllers management CLI
 
 LICENSE=	tw_cli

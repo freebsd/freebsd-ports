@@ -9,7 +9,7 @@ MASTER_SITES=	http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/ \
 		http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
 
-MAINTAINER=	jpaetzel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time/Date applet for WindowMaker
 
 WRKSRC=		${WRKDIR}/wmtime.app/wmtime

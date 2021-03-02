@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://download.videolan.org/pub/${PORTNAME}/${DISTVERSION}/
 
-MAINTAINER=	jpaetzel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable abstraction library for DVD decryption
 
 LICENSE=	GPLv2

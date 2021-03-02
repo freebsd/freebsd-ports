@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	astro
 MASTER_SITES=	http://www.clearskyinstitute.com/xephem/
 
-MAINTAINER=	jpaetzel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive astronomical ephemeris program
 
 LIB_DEPENDS=	libpng.so:graphics/png \

@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/ \
 		http://www.tcbug.org/
 
-MAINTAINER=	jpaetzel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline client for DAV
 
 LIB_DEPENDS=	libneon.so:www/neon

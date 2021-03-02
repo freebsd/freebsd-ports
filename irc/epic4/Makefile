@@ -9,7 +9,7 @@ MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-help-20050315.tar.bz2
 
-MAINTAINER=	jpaetzel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
 LICENSE=	BSD3CLAUSE

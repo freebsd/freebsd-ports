@@ -6,7 +6,7 @@ CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP/source/p/pyinotify
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	jpaetzel@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to (lib)inotify
 
 LICENSE=	MIT
