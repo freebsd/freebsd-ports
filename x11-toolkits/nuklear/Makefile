@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nuklear
-PORTVERSION=	g20201229
+PORTVERSION=	4.06.2 # from package.json, repository not tagged
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	yuri@FreeBSD.org
