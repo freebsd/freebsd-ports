@@ -1,0 +1,20 @@
+--- purescript-ast-0.1.0.0/purescript-ast.cabal.orig	2021-03-01 18:10:23 UTC
++++ purescript-ast-0.1.0.0/purescript-ast.cabal
+@@ -65,7 +65,7 @@ library
+     ghc-options:        -Wall -O2
+     build-depends:
+         aeson >=1.0 && <1.5,
+-        base >=4.11 && <4.13,
++        base >=4.11 && <4.15,
+         base-compat >=0.6.0 && <0.11,
+         bytestring <0.11,
+         containers <0.7,
+@@ -73,7 +73,7 @@ library
+         filepath <1.5,
+         microlens >=0.4.10 && <0.5,
+         mtl >=2.1.0 && <2.3.0,
+-        protolude >=0.1.6 && <0.2.4,
++        protolude,
+         scientific >=0.3.4.9 && <0.4,
+         serialise <0.3,
+         text <1.3,

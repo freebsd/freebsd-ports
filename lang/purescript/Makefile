@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	purescript
-PORTVERSION=	0.13.8
-PORTREVISION=	3
+PORTVERSION=	0.14.0
 CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -109,6 +108,8 @@ USE_CABAL=	Glob-0.9.3 \
 		primitive-0.7.0.1 \
 		protolude-0.3.0 \
 		psqueues-0.2.7.2_1 \
+		purescript-ast-0.1.0.0 \
+		purescript-cst-0.1.0.0 \
 		random-1.1_1 \
 		regex-base-0.94.0.0_1 \
 		regex-tdfa-1.3.1.0_1 \
