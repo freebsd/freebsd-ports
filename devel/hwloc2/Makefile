@@ -1,14 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	hwloc
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	devel
 MASTER_SITES=	https://download.open-mpi.org/release/hwloc/v${PORTVERSION:R}/ \
 		http://icl.cs.utk.edu/open-mpi/software/hwloc/v${PORTVERSION:R}/downloads/
 PKGNAMESUFFIX=	2
-
-PATCH_SITES=	https://github.com/open-mpi/hwloc/commit/
-PATCHFILES=	45aaeb2010f32543cb3dd66fdfa784fad2597497.patch:-p1 # fix for https://github.com/open-mpi/hwloc/issues/442
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Portable Hardware Locality software package
@@ -30,6 +27,7 @@ CONFIGURE_ARGS=	--enable-static \
 		--disable-nvml \
 		--disable-gl
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*

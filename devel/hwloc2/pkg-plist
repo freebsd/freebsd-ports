@@ -35,7 +35,7 @@ include/hwloc/shmem.h
 lib/libhwloc.a
 lib/libhwloc.so
 lib/libhwloc.so.15
-lib/libhwloc.so.15.4.0
+lib/libhwloc.so.15.4.1
 libdata/pkgconfig/hwloc.pc
 man/man1/hwloc-annotate.1.gz
 man/man1/hwloc-bind.1.gz
