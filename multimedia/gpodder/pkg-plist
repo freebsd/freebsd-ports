@@ -125,8 +125,8 @@ bin/gpodder-migrate2tres
 %%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__pycache__/configeditor.cpython-%%PYTHON_SUFFIX%%.pyc
 %%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__pycache__/progress.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__pycache__/progress.cpython-%%PYTHON_SUFFIX%%.pyc
-%%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__pycache__/searchtree.cpython-37.opt-1.pyc
-%%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__pycache__/searchtree.cpython-37.pyc
+%%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__pycache__/searchtree.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__pycache__/searchtree.cpython-%%PYTHON_SUFFIX%%.pyc
 %%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__pycache__/tagcloud.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/__pycache__/tagcloud.cpython-%%PYTHON_SUFFIX%%.pyc
 %%GTK3%%%%PYTHON_SITELIBDIR%%/gpodder/plugins/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
