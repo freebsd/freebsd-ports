@@ -79,25 +79,25 @@ bin/kcreg
 %%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.eclipse.sisu,org.eclipse.sisu.plexus,0.3.2,Eclipse Public License 1.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.freemarker,freemarker,2.3.29,Apache Software License 2.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.infinispan.infinispan-jboss-marshalling,10.1.8.Final,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-authz-policy-common,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-client-cli-dist,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-common,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-core,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-js-adapter,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-kerberos-federation,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-ldap-federation,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-model-infinispan,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-model-jpa,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-saml-core,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-saml-core-public,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-server-spi,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-server-spi-private,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-services,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-sssd-federation,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-themes,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-wildfly-adduser,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-wildfly-extensions,12.0.3,Apache Software License 2.0.txt
-%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-wildfly-server-subsystem,12.0.3,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-authz-policy-common,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-client-cli-dist,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-common,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-core,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-js-adapter,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-kerberos-federation,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-ldap-federation,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-model-infinispan,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-model-jpa,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-saml-core,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-saml-core-public,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-server-spi,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-server-spi-private,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-services,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-sssd-federation,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-themes,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-wildfly-adduser,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-wildfly-extensions,12.0.4,Apache Software License 2.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.keycloak,keycloak-wildfly-server-subsystem,12.0.4,Apache Software License 2.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.kie,kie-api,7.11.0.Final,Apache Software License 2.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.kie,kie-ci,7.11.0.Final,Apache Software License 2.0.txt
 %%PORTDOCS%%%%DOCSDIR%%/licenses-keycloak/org.kie,kie-internal,7.11.0.Final,Apache Software License 2.0.txt
@@ -483,8 +483,8 @@ bin/kcreg
 %%JAVASHAREDIR%%/keycloak/bin/client/README-EJB-JMS.txt
 %%JAVASHAREDIR%%/keycloak/bin/client/jboss-cli-client.jar
 %%JAVASHAREDIR%%/keycloak/bin/client/jboss-client.jar
-%%JAVASHAREDIR%%/keycloak/bin/client/keycloak-admin-cli-12.0.3.jar
-%%JAVASHAREDIR%%/keycloak/bin/client/keycloak-client-registration-cli-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/bin/client/keycloak-admin-cli-12.0.4.jar
+%%JAVASHAREDIR%%/keycloak/bin/client/keycloak-client-registration-cli-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/bin/common.sh
 %%JAVASHAREDIR%%/keycloak/bin/domain.sh
 %%JAVASHAREDIR%%/keycloak/bin/elytron-tool.sh
@@ -1590,43 +1590,43 @@ bin/kcreg
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/infinispan/jboss-marshalling/main/module.xml
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/jboss/as/product/keycloak/dir/META-INF/MANIFEST.MF
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/jboss/as/product/keycloak/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-authz-policy-common/main/keycloak-authz-policy-common-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-authz-policy-common/main/keycloak-authz-policy-common-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-authz-policy-common/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-common/main/keycloak-common-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-common/main/keycloak-common-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-common/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-core/main/keycloak-core-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-core/main/keycloak-core-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-core/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-js-adapter/main/keycloak-js-adapter-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-js-adapter/main/keycloak-js-adapter-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-js-adapter/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-kerberos-federation/main/keycloak-kerberos-federation-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-kerberos-federation/main/keycloak-kerberos-federation-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-kerberos-federation/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-ldap-federation/main/keycloak-ldap-federation-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-ldap-federation/main/keycloak-ldap-federation-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-ldap-federation/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-model-infinispan/main/keycloak-model-infinispan-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-model-infinispan/main/keycloak-model-infinispan-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-model-infinispan/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-model-jpa/main/keycloak-model-jpa-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-model-jpa/main/keycloak-model-jpa-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-model-jpa/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-saml-core-public/main/keycloak-saml-core-public-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-saml-core-public/main/keycloak-saml-core-public-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-saml-core-public/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-saml-core/main/keycloak-saml-core-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-saml-core/main/keycloak-saml-core-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-saml-core/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-server-spi-private/main/keycloak-server-spi-private-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-server-spi-private/main/keycloak-server-spi-private-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-server-spi-private/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-server-spi/main/keycloak-server-spi-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-server-spi/main/keycloak-server-spi-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-server-spi/main/module.xml
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-server-subsystem/dependencies/main/module.xml
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-server-subsystem/main/module.xml
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-server-subsystem/main/server-war/WEB-INF/jboss-deployment-structure.xml
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-server-subsystem/main/server-war/WEB-INF/web.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-services/main/keycloak-services-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-services/main/keycloak-services-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-services/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-sssd-federation/main/keycloak-sssd-federation-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-sssd-federation/main/keycloak-sssd-federation-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-sssd-federation/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-wildfly-adduser/main/keycloak-wildfly-adduser-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-wildfly-adduser/main/keycloak-wildfly-adduser-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-wildfly-adduser/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-wildfly-extensions/main/keycloak-wildfly-extensions-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-wildfly-extensions/main/keycloak-wildfly-extensions-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-wildfly-extensions/main/module.xml
-%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-wildfly-server-subsystem/main/keycloak-wildfly-server-subsystem-12.0.3.jar
+%%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-wildfly-server-subsystem/main/keycloak-wildfly-server-subsystem-12.0.4.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/keycloak/keycloak-wildfly-server-subsystem/main/module.xml
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/liquibase/main/liquibase-core-3.5.5.jar
 %%JAVASHAREDIR%%/keycloak/modules/system/layers/keycloak/org/liquibase/main/module.xml
@@ -2541,12 +2541,12 @@ bin/kcreg
 %%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/@patternfly/react-icons.js.map
 %%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/@patternfly/react-styles.js
 %%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/@patternfly/react-styles.js.map
-%%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/common/_commonjsHelpers-a46c7f56.js
-%%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/common/_commonjsHelpers-a46c7f56.js.map
-%%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/common/index-13a586d2.js
-%%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/common/index-13a586d2.js.map
-%%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/common/StyleSheet-2a2392ef.js
-%%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/common/StyleSheet-2a2392ef.js.map
+%%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/common/_commonjsHelpers-a0c1554c.js
+%%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/common/_commonjsHelpers-a0c1554c.js.map
+%%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/common/index-3a303faf.js
+%%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/common/index-3a303faf.js.map
+%%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/common/StyleSheet-4aea8eab.js
+%%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/common/StyleSheet-4aea8eab.js.map
 %%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/import-map.json
 %%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/react-dom.js
 %%JAVASHAREDIR%%/keycloak/themes/keycloak/common/resources/web_modules/react-dom.js.map
