@@ -1,13 +1,39 @@
 [
 { type: install
   message: <<EOM
+Setup
+=====
+
 Before finishing the setup of QMK by running `qmk setup`, it is advised to
 install the python3 package first:
 
-    pkg install python3
+    # pkg install python3
 
 The reason for this is that the qmk_firmware scripts which are downloaded
 during the setup expect python3 to be installed (instead of %%PYTHON_CMD%%).
+
+Granting Write Permissions to USB Controllers
+=============================================
+
+Flashing images to controllers as a non-root user requires
+some additional setup:
+
+1. Add the user to the "operator" group:
+
+        # pw groupmod operator -m piotr
+
+2. Add the following ruleset to /etc/devfs.rules:
+
+        [qmk=10]
+        add path 'ttyU*' mode 0660 group operator
+
+3. Enable "qmk" ruleset:
+
+        # sysrc devfs_system_ruleset+="qmk"
+
+4. Restart the devfs service to load the new rules:
+
+        # service devfs restart
 EOM
 }
 ]
