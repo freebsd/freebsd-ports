@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	adodb
-PORTVERSION=	5.20.20
+PORTVERSION=	5.21.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases www
 PKGNAMESUFFIX=	5${PHP_PKGNAMESUFFIX}
@@ -25,12 +25,13 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 SUB_FILES=	pkg-message
 
-ADODB_SUBDIRS=	contrib datadict drivers lang pear perf session xsl
+ADODB_SUBDIRS=	datadict drivers lang pear perf session xsl
 
-OPTIONS_DEFINE=	TESTS DOCS
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-TESTS_DESC=	Install tests
+# 5.21.0 have not contains test suite
+#TESTS_DESC=	Install tests
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
@@ -41,18 +42,16 @@ do-install:
 	cd ${WRKSRC} && ${FIND} ${ADODB_SUBDIRS} -type f \
 		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DATADIR}/{} \;
 
-do-install-TESTS-on:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/tests
-	cd ${WRKSRC} && ${FIND} tests -type f \
-		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DATADIR}/{} \;
+#do-install-TESTS-on:
+#	@${MKDIR} ${STAGEDIR}${DATADIR}/tests
+#	cd ${WRKSRC} && ${FIND} tests -type f \
+#		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DATADIR}/{} \;
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/cute_icons_for_site
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${FIND} . ! -path './*/*' -type f -name '*.txt' \
-		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DOCSDIR}/{} \;
-	cd ${WRKSRC}/docs && ${FIND} . -type f \
-		-exec ${INSTALL_DATA} ${WRKSRC}/docs/{} ${STAGEDIR}${DOCSDIR}/{} \;
-	cd ${WRKSRC} && ${FIND} cute_icons_for_site -type f \
-		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DOCSDIR}/{} \;
+		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DOCSDIR} \;
+	cd ${WRKSRC} && ${FIND} docs -type f \
+		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DOCSDIR} \;
 
 .include <bsd.port.mk>
