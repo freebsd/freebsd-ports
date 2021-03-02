@@ -1,0 +1,11 @@
+@owner %%RUNDECK_USER%%
+@group %%RUNDECK_GROUP%%
+@dir %%RUNDECK_HOME%%
+@dir %%RUNDECK_HOME%%/server
+@dir %%RUNDECK_HOME%%/server/config
+%%RUNDECK_HOME%%/server/config/log4j2.properties
+@dir %%RUNDECK_HOME%%/server/lib
+@dir %%RUNDECK_LOGDIR%%
+@owner
+@group
+%%DATADIR%%/%%RUNDECK_USER%%.war
