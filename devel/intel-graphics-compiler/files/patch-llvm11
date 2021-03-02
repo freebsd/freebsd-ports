@@ -1,114 +1,98 @@
-https://github.com/intel/intel-graphics-compiler/issues/155
+IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp:158:35: error: no member named 'getVectorElementType' in 'llvm::Type'; did you mean 'getPointerElementType'?
+                ldmcs->getType()->getVectorElementType()->isFloatTy())
+                                  ^~~~~~~~~~~~~~~~~~~~
+                                  getPointerElementType
+/usr/local/llvm11/include/llvm/IR/Type.h:370:9: note: 'getPointerElementType' declared here
+  Type *getPointerElementType() const {
+        ^
+IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp:162:61: error: no member named 'getVectorNumElements' in 'llvm::Type'
+                uint ldmcsNumOfElements = ldmcs->getType()->getVectorNumElements();
+                                          ~~~~~~~~~~~~~~~~  ^
+IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp:163:75: error: no member named 'getVectorNumElements' in 'llvm::Type'
+                uint new_mcs_callNumOfElements = new_mcs_call->getType()->getVectorNumElements();
+                                                 ~~~~~~~~~~~~~~~~~~~~~~~  ^
 
-In file included from IGC/VectorCompiler/lib/GenXOpts/CMPacketize/GenXPacketize.cpp:38:
-In file included from IGC/VectorCompiler/lib/GenXOpts/CMPacketize/PacketBuilder.h:40:
-IGC/WrapperLLVM/include/llvmWrapper/Support/Alignment.h:99:16: error: no viable conversion from returned value of type 'llvm::MaybeAlign' to function return type 'IGCLLVM::Align' (aka 'llvm::Align')
-        return Val.getAlign();
-               ^~~~~~~~~~~~~~
-IGC/VectorCompiler/lib/GenXOpts/CMPacketize/GenXPacketize.cpp:279:37: note: in instantiation of function template specialization 'IGCLLVM::getAlign<llvm::Function, 0>' requested here
-  ClonedFunc->setAlignment(IGCLLVM::getAlign(*F));
-                                    ^
-/usr/local/llvm11/include/llvm/Support/Alignment.h:71:13: note: candidate constructor not viable: no known conversion from 'llvm::MaybeAlign' to 'const llvm::Align &' for 1st argument
-  constexpr Align(const Align &Other) = default;
-            ^
-/usr/local/llvm11/include/llvm/Support/Alignment.h:72:13: note: candidate constructor not viable: no known conversion from 'llvm::MaybeAlign' to 'llvm::Align &&' for 1st argument
-  constexpr Align(Align &&Other) = default;
-            ^
-/usr/local/llvm11/include/llvm/Support/Alignment.h:109:13: note: candidate constructor not viable: no known conversion from 'llvm::MaybeAlign' to 'llvm::Align::LogValue' for 1st argument
-  constexpr Align(LogValue CA) : ShiftValue(CA.Log) {}
-            ^
-/usr/local/llvm11/include/llvm/Support/Alignment.h:76:12: note: explicit constructor is not a candidate
-  explicit Align(uint64_t Value) {
-           ^
-IGC/Compiler/CISACodeGen/ResolveGAS.cpp:83:28: error: use of undeclared identifier 'AAResultsWrapperPass'
-            AU.addRequired<AAResultsWrapperPass>();
-                           ^
-IGC/Compiler/CISACodeGen/ResolveGAS.cpp:735:5: error: unknown type name 'AliasAnalysis'
-    AliasAnalysis* AA = &getAnalysis<AAResultsWrapperPass>().getAAResults();
-    ^
-IGC/Compiler/CISACodeGen/ResolveGAS.cpp:735:38: error: use of undeclared identifier 'AAResultsWrapperPass'
-    AliasAnalysis* AA = &getAnalysis<AAResultsWrapperPass>().getAAResults();
-                                     ^
-IGC/Compiler/CISACodeGen/ResolveGAS.cpp:810:27: error: use of undeclared identifier 'MemoryLocation'; did you mean 'TempDILocation'?
-            if (AA->alias(MemoryLocation::get(SI), MemoryLocation::get(LI))) {
-                          ^~~~~~~~~~~~~~
-IGC/Compiler/CISACodeGen/ResolveGAS.cpp:810:52: error: use of undeclared identifier 'MemoryLocation'; did you mean 'TempDILocation'?
-            if (AA->alias(MemoryLocation::get(SI), MemoryLocation::get(LI))) {
-                                                   ^~~~~~~~~~~~~~
-IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp:2148:16: error: call to 'invertCondition' is ambiguous
-        Mask = invertCondition(Mask);
-               ^~~~~~~~~~~~~~~
-IGC/VectorCompiler/lib/GenXCodeGen/GenXUtil.h:206:8: note: candidate function
-Value *invertCondition(Value *Condition);
-       ^
-/usr/local/llvm11/include/llvm/Transforms/Utils/Local.h:557:8: note: candidate function
-Value *invertCondition(Value *Condition);
-       ^
-IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp:2284:36: error: no viable conversion from 'llvm::ElementCount' to 'unsigned int'
-                                   IGCLLVM::getElementCount(OperandWidth),
-                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/usr/local/llvm11/include/llvm/IR/Constants.h:803:38: note: passing argument to parameter 'NumElts' here
-  static Constant *getSplat(unsigned NumElts, Constant *Elt);
-                                     ^
-IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp:462:37: error: no member named 'getMask' in 'llvm::ShuffleVectorInst'
-      NewVec1, NewVec2, ShuffleVec->getMask(), ShuffleVec->getName() + ".tpm");
-                        ~~~~~~~~~~  ^
+IGC/Compiler/Legalizer/InstPromoter.cpp:402:42: error: no member named 'getVectorNumElements' in 'llvm::Type'
+        for (unsigned i = 0; i < DestTy->getVectorNumElements(); i++)
+                                 ~~~~~~  ^
 
---- IGC/Compiler/CISACodeGen/ResolveGAS.cpp.orig	2020-12-24 13:04:21 UTC
-+++ IGC/Compiler/CISACodeGen/ResolveGAS.cpp
-@@ -37,6 +37,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- #include <llvm/ADT/DenseSet.h>
- #include <llvm/ADT/SmallVector.h>
- #include <llvm/ADT/PostOrderIterator.h>
-+#include <llvm/Analysis/AliasAnalysis.h>
- #include <llvm/Analysis/LoopInfo.h>
- #include <llvm/IR/IRBuilder.h>
- #include <llvm/IR/NoFolder.h>
---- IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp.orig	2020-12-24 13:04:21 UTC
+IGC/Compiler/Optimizer/OpenCLPasses/WIFuncs/WIFuncResolution.cpp:308:27: error: no member named 'getVectorNumElements' in 'llvm::Type'
+        Size *= DataType->getVectorNumElements();
+                ~~~~~~~~  ^
+
+IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp:2203:5: error: no matching function for call to 'RecursivelyDeleteTriviallyDeadInstructions'
+    RecursivelyDeleteTriviallyDeadInstructions(ToErase);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/llvm11/include/llvm/Transforms/Utils/Local.h:161:6: note: candidate function not viable: no known conversion from 'SmallVector<llvm::Instruction *, 8>' to 'llvm::Value *' for 1st argument
+bool RecursivelyDeleteTriviallyDeadInstructions(
+     ^
+/usr/local/llvm11/include/llvm/Transforms/Utils/Local.h:173:6: note: candidate function not viable: no known conversion from 'SmallVector<llvm::Instruction *, 8>' to 'SmallVectorImpl<llvm::WeakTrackingVH> &' for 1st argument
+void RecursivelyDeleteTriviallyDeadInstructions(
+     ^
+
+--- IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp.orig	2021-02-15 09:29:30 UTC
++++ IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp
+@@ -155,12 +155,21 @@ void ConvertMSAAPayloadTo16Bit::visitCallInst(CallInst
+             // In OGL there are uses of ldmcs other then ldms, using vec4float type.
+             // Fix them to use newly created 16bit ldmcs.
+             if (ldmcs->getType()->isVectorTy() &&
++#if LLVM_VERSION_MAJOR < 11
+                 ldmcs->getType()->getVectorElementType()->isFloatTy())
++#else
++                cast<llvm::VectorType>(ldmcs->getType())->getElementType()->isFloatTy())
++#endif
+             {
+                 m_builder->SetInsertPoint(ldmcs);
+ 
++#if LLVM_VERSION_MAJOR < 11
+                 uint ldmcsNumOfElements = ldmcs->getType()->getVectorNumElements();
+                 uint new_mcs_callNumOfElements = new_mcs_call->getType()->getVectorNumElements();
++#else
++                uint ldmcsNumOfElements = cast<llvm::VectorType>(ldmcs->getType())->getNumElements();
++                uint new_mcs_callNumOfElements = cast<llvm::VectorType>(new_mcs_call->getType())->getNumElements();
++#endif
+ 
+                 // vec of 16bit ints to vec of 32bit ints
+                 Type* new_mcs_callVecType = VectorType::get(m_builder->getInt32Ty(), new_mcs_callNumOfElements);
+--- IGC/Compiler/Legalizer/InstPromoter.cpp.orig	2021-02-08 08:48:29 UTC
++++ IGC/Compiler/Legalizer/InstPromoter.cpp
+@@ -399,7 +399,11 @@ bool InstPromoter::visitBitCastInst(BitCastInst& I) {
+             IRB->CreateBitCast(Val, VectorType::get(DestTy->getScalarType(), N));
+ 
+         std::vector<Constant*> Vals;
++#if LLVM_VERSION_MAJOR < 11
+         for (unsigned i = 0; i < DestTy->getVectorNumElements(); i++)
++#else
++        for (unsigned i = 0; i < cast<llvm::VectorType>(DestTy)->getNumElements(); i++)
++#endif
+             Vals.push_back(IRB->getInt32(i));
+ 
+         Value* Mask = ConstantVector::get(Vals);
+--- IGC/Compiler/Optimizer/OpenCLPasses/WIFuncs/WIFuncResolution.cpp.orig	2021-02-07 09:58:11 UTC
++++ IGC/Compiler/Optimizer/OpenCLPasses/WIFuncs/WIFuncResolution.cpp
+@@ -305,7 +305,11 @@ static Value* BuildLoadInst(CallInst& CI, unsigned int
+     auto Size = ElemByteSize;
+     if (DataType->isVectorTy())
+     {
++#if LLVM_VERSION_MAJOR < 11
+         Size *= DataType->getVectorNumElements();
++#else
++        Size *= cast<llvm::VectorType>(DataType)->getNumElements();
++#endif
+     }
+     unsigned int AlignedOffset = (Offset / ElemByteSize) * ElemByteSize;
+     unsigned int LoadByteSize = (Offset == AlignedOffset) ? Size : Size * 2;
+--- IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp.orig	2021-02-15 09:29:30 UTC
 +++ IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp
-@@ -2145,7 +2145,7 @@ static bool mergeToWrRegion(SelectInst *SI) {
-       Value *Mask = SI->getCondition();
-       // Invert mask if needed.
-       if (Inverted)
--        Mask = invertCondition(Mask);
-+        Mask = genx::invertCondition(Mask);
-       // Create new wrregion.
-       Region WrReg(Wr, BaleInfo());
-       WrReg.Mask = Mask;
-@@ -2280,7 +2280,7 @@ static void decomposeSdivPow2(Instruction &Sdiv,
-   Builder.SetCurrentDebugLocation(Sdiv.getDebugLoc());
+@@ -2194,7 +2194,11 @@ bool GenXPatternMatch::simplifySelect(Function *F) {
  
-   auto createConstant = [](unsigned int OperandWidth, Type *Ty, int Value) {
--    return OperandWidth != 0 ? ConstantDataVector::getSplat(
-+    return OperandWidth != 0 ? ConstantVector::getSplat(
-                                    IGCLLVM::getElementCount(OperandWidth),
-                                    ConstantInt::get(Ty, Value))
-                              : ConstantInt::get(Ty, Value);
---- IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp.orig	2020-11-21 02:52:12 UTC
-+++ IGC/VectorCompiler/lib/GenXCodeGen/GenXThreadPrivateMemory.cpp
-@@ -459,7 +459,11 @@ bool GenXThreadPrivateMemory::replaceShuffleVector(
-   Value *NewVec1 = lookForPtrReplacement(Vec1);
-   Value *NewVec2 = lookForPtrReplacement(Vec2);
-   auto NewShuffleVec = new ShuffleVectorInst(
+ bool GenXPatternMatch::clearDeadInstructions(Function &F) {
+   bool Changed = false;
 +#if LLVM_VERSION_MAJOR < 11
-       NewVec1, NewVec2, ShuffleVec->getMask(), ShuffleVec->getName() + ".tpm");
+   SmallVector<Instruction *, 8> ToErase;
 +#else
-+      NewVec1, NewVec2, ShuffleVec->getShuffleMaskForBitcode(), ShuffleVec->getName() + ".tpm");
++  SmallVector<WeakTrackingVH, 8> ToErase;
 +#endif
-   NewShuffleVec->insertAfter(ShuffleVec);
- 
-   auto CastToOldTy =
---- IGC/VectorCompiler/lib/GenXOpts/CMPacketize/GenXPacketize.cpp.orig	2020-12-24 13:04:21 UTC
-+++ IGC/VectorCompiler/lib/GenXOpts/CMPacketize/GenXPacketize.cpp
-@@ -276,7 +276,11 @@ Function *GenXPacketize::vectorizeSIMTFunction(Functio
-                        VecFName + Suffix[Width / 8], F->getParent());
-   ClonedFunc->setCallingConv(F->getCallingConv());
-   ClonedFunc->setAttributes(F->getAttributes());
-+#if LLVM_VERSION_MAJOR < 11
-   ClonedFunc->setAlignment(IGCLLVM::getAlign(*F));
-+#else
-+  ClonedFunc->setAlignment(F->getAlign());
-+#endif
- 
-   // then use CloneFunctionInto
-   ValueToValueMapTy ArgMap;
+   for (auto &Inst : instructions(F))
+     if (isInstructionTriviallyDead(&Inst))
+       ToErase.push_back(&Inst);

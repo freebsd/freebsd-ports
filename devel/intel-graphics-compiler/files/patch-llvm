@@ -5,9 +5,9 @@ Don't look for libLLVM without llvm-config or LLVM.cmake help
 CMake Error at IGC/CMakeLists.txt:3283 (message):
   [IGC] Could not find the LLVM dylib.  Aborting.
 
---- IGC/CMakeLists.txt.orig	2020-05-19 05:44:04 UTC
-+++ IGC/CMakeLists.txt
-@@ -3278,12 +3278,8 @@ if(LLVM_LINK_LLVM_DYLIB)
+--- external/llvm/llvm.cmake.orig	2021-02-15 09:29:30 UTC
++++ external/llvm/llvm.cmake
+@@ -157,12 +157,8 @@ if(LLVM_LINK_LLVM_DYLIB)
          set(IGC_BUILD__LLVM_LIBS_TO_LINK "${SET_LLVM_LIB_PATH}/libLLVM-${LLVM_VERSION_MAJOR}.so")
          message(STATUS "[IGC] Link against specified LLVM dylib ${IGC_BUILD__LLVM_LIBS_TO_LINK}")
      else()
