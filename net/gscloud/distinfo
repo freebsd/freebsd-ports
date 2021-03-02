@@ -1,6 +1,6 @@
-TIMESTAMP = 1613986529
-SHA256 (gridscale-gscloud-v0.8.0_GH0.tar.gz) = b3722f060f683ea0b5cb8e0c1ded16c0bacb989521e082fba1bee07e9e459f7d
-SIZE (gridscale-gscloud-v0.8.0_GH0.tar.gz) = 128109
+TIMESTAMP = 1614688454
+SHA256 (gridscale-gscloud-v0.9.0_GH0.tar.gz) = 12a14d7606141b71f48c29e678c988182160a9a2bbc9d533f7ff61866c619e7d
+SIZE (gridscale-gscloud-v0.9.0_GH0.tar.gz) = 128054
 SHA256 (cpuguy83-go-md2man-v2.0.0_GH0.tar.gz) = 50537880d42fc28b9c2e9aaa36b137349d43cc73d46436a499f8c928cd2fc576
 SIZE (cpuguy83-go-md2man-v2.0.0_GH0.tar.gz) = 52021
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
