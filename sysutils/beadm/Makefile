@@ -29,4 +29,3 @@ do-install:
 	  ${STAGEDIR}${MANPREFIX}/man/man8/
 
 .include <bsd.port.mk>
-

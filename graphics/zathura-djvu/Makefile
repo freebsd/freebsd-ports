@@ -30,4 +30,3 @@ pre-configure:
 		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
-

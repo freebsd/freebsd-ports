@@ -99,4 +99,3 @@ GH_TUPLE=	\
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
-
