@@ -1,19 +1,19 @@
---- requirements/optional.txt.orig	2020-09-23 07:08:04 UTC
+--- requirements/optional.txt.orig	2021-01-04 08:24:44 UTC
 +++ requirements/optional.txt
 @@ -1,25 +1,25 @@
  -r required.txt
  
  # Format support
--aeidon==1.7.0        # Subtitles
-+aeidon>=1.7.0        # Subtitles
+-aeidon==1.9        # Subtitles
++aeidon>=1.9        # Subtitles
  # Format support
  BeautifulSoup4>=4.3  # Trados
  # Encoding detection
--chardet==3.0.4              # chardet
+-chardet==4.0.0              # chardet
 +chardet>=3.0.4              # chardet
  # Tmserver backend
--cheroot==8.4.5       # tmserver
-+cheroot>=8.4.5       # tmserver
+-cheroot==8.5.1       # tmserver
++cheroot>=8.5.1       # tmserver
  # Format support
 -iniparse==0.5        # INI
 +iniparse>=0.5        # INI
@@ -22,9 +22,9 @@
 +phply>=1.2.5         # PHP
  # To provide translations for language names without need for OS package.
 -pycountry==20.7.3          # Languages
--pyenchant==3.1.1     # spellcheck
+-pyenchant==3.2.0     # spellcheck
 +pycountry>=20.7.3          # Languages
-+pyenchant>=3.1.1     # spellcheck
++pyenchant>=3.2.0     # spellcheck
  # Windows Resources (rc2po and po2rc)
 -pyparsing==2.4.7     # RC
 +pyparsing>=2.4.7     # RC
