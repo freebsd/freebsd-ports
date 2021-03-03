@@ -4,4 +4,4 @@
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/xapian/__init__.pyc
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/xapian/__init__.pyo
 %%PYTHON_SITELIBDIR%%/xapian/_xapian.a
-%%PYTHON_SITELIBDIR%%/xapian/_xapian.so
+%%PYTHON_SITELIBDIR%%/xapian/_xapian%%PYTHON_EXT_SUFFIX%%.so
