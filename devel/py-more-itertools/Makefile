@@ -19,6 +19,6 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+	cd ${WRKSRC} && ${PYTHON_CMD} -m unittest -v
 
 .include <bsd.port.mk>
