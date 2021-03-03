@@ -1,8 +1,14 @@
+%%SAMPLES%%bin/makepage
 bin/markdown
+%%SAMPLES%%bin/mkd2html
+%%SAMPLES%%bin/theme
 include/mkdio.h
 lib/libmarkdown.a
 libdata/pkgconfig/libmarkdown.pc
+%%SAMPLES%%man/man1/makepage.1.gz
 man/man1/markdown.1.gz
+%%SAMPLES%%man/man1/mkd2html.1.gz
+%%SAMPLES%%man/man1/theme.1.gz
 man/man3/markdown.3.gz
 man/man3/mkd-callbacks.3.gz
 man/man3/mkd-functions.3.gz
