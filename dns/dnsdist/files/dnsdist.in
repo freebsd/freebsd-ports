@@ -95,4 +95,13 @@ else
 	fi
 fi
 
+start_precmd=dnsdist_startprecmd
+
+dnsdist_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${dnsdist_priv_user} -g ${dnsdist_priv_group} /dev/null ${pidfile};
+        fi
+}
+
 run_rc_command "$1"
