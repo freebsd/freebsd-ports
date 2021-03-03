@@ -3,7 +3,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.14.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -20,7 +20,6 @@ LIB_DEPENDS=	libyajl.so:devel/yajl \
 		libxml2.so:textproc/libxml2
 BUILD_DEPENDS=	seabios>0:misc/seabios
 RUN_DEPENDS=	seabios>0:misc/seabios
-DOCS_BUILD_DEPENDS=markdown:textproc/markdown
 
 OPTIONS_DEFINE=		DOCS SPICE
 OPTIONS_DEFAULT=	DOCS
