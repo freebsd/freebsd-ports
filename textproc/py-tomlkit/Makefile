@@ -3,6 +3,7 @@
 
 PORTNAME=	tomlkit
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +18,8 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+post-patch:
+	@${MV} ${WRKSRC}/tests ${WRKSRC}/tomlkit
 
 .include <bsd.port.mk>
