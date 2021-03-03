@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+To complete the installation of this port, you need to copy the files
+all GTA3 files from the original GTA3 distribution to %%DATADIR%%. 
+EOM
+}
+]

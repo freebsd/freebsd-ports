@@ -825,6 +825,7 @@
     SUBDIR += r1q2
     SUBDIR += railroad-rampage
     SUBDIR += rawgl
+    SUBDIR += re3
     SUBDIR += redeclipse
     SUBDIR += redeclipse-data
     SUBDIR += redorblack
