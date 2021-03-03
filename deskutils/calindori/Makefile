@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	calindori
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	deskutils
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 

@@ -2,8 +2,7 @@ bin/calindac
 bin/calindori
 etc/xdg/autostart/org.kde.calindac.desktop
 share/applications/org.kde.calindori.desktop
-share/dbus-1/interfaces/org.kde.calindac.xml
-share/dbus-1/interfaces/org.kde.wakeupmanager.PowerManagement.xml
+share/dbus-1/services/org.kde.calindac.service
 share/icons/hicolor/scalable/apps/calindori.svg
 share/knotifications5/calindac.notifyrc
 share/locale/ca/LC_MESSAGES/calindac.qm
@@ -41,6 +40,8 @@ share/locale/nl/LC_MESSAGES/calindac.qm
 share/locale/nl/LC_MESSAGES/calindori_qt.qm
 share/locale/nn/LC_MESSAGES/calindac.qm
 share/locale/nn/LC_MESSAGES/calindori_qt.qm
+share/locale/pa/LC_MESSAGES/calindac.qm
+share/locale/pa/LC_MESSAGES/calindori_qt.qm
 share/locale/pl/LC_MESSAGES/calindac.qm
 share/locale/pl/LC_MESSAGES/calindori_qt.qm
 share/locale/pt/LC_MESSAGES/calindac.qm
