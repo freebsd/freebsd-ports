@@ -370,7 +370,7 @@ lib/mypaint/lib/__pycache__/tiledsurface.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/mypaint/lib/__pycache__/tiledsurface.cpython-%%PYTHON_SUFFIX%%.pyc
 lib/mypaint/lib/__pycache__/xml.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 lib/mypaint/lib/__pycache__/xml.cpython-%%PYTHON_SUFFIX%%.pyc
-lib/mypaint/lib/_mypaintlib.so
+lib/mypaint/lib/_mypaintlib%%PYTHON_EXT_SUFFIX%%.so
 lib/mypaint/lib/alg.py
 lib/mypaint/lib/autosave.py
 lib/mypaint/lib/brush.py
