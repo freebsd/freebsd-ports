@@ -12,9 +12,10 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python package for creating encapsulated PostScript figures
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.4+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 USE_TEX=	latex:build
 
 OPTIONS_DEFINE=	KPATHSEA T1CODE
