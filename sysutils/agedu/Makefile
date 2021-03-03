@@ -18,7 +18,4 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/agedu \
 		man/man1/agedu.1.gz
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|HOST_NAME_MAX|_POSIX_&|' ${WRKSRC}/httpd.c
-
 .include <bsd.port.mk>
