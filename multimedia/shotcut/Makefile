@@ -22,12 +22,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mltframework
 
 # Needed to be able to correctly check for updates in-app.
-FULLVERSION=	20.10.31
+FULLVERSION=	21.02.27
 
 USE_GL+=	gl
 USE_QT=		buildtools_build concurrent_build core declarative \
 		graphicaleffects_run gui multimedia network opengl \
-		printsupport quickcontrols_run sql \
+		printsupport quickcontrols2 sql \
 		sql-sqlite3_run webkit websockets widgets x11extras xml \
 		linguisttools_build
 USE_SDL=	sdl2
