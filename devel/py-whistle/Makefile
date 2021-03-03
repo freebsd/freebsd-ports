@@ -12,8 +12,9 @@ COMMENT=	Event dispatcher
 
 LICENSE=	APACHE20
 
-NO_ARCH=	yes
-USE_PYTHON=	autoplist distutils
 USES=		python:3.5+
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
