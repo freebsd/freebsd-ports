@@ -2,7 +2,7 @@
 
 PORTNAME=		ldb
 PORTVERSION=		1.5.6
-PORTREVISION=		0
+PORTREVISION=		1
 PORTEPOCH=		0
 CATEGORIES=		databases
 MASTER_SITES=		SAMBA
@@ -32,7 +32,7 @@ CONFLICTS_INSTALL=	ldb-1.1.* ldb1[2-46]-1.*
 #nopython_CONFLICTS=	ldb
 #default_CONFLICTS=	ldb-nopython
 
-USES=			compiler pkgconfig waf
+USES=			compiler gettext-runtime pkgconfig waf
 USE_LDCONFIG=		yes
 WAF_CMD=		${BUILD_WRKSRC}/buildtools/bin/waf
 CONFIGURE_LOG=		${BUILD_WRKSRC}/bin/config.log
@@ -102,11 +102,11 @@ CONFIGURE_ARGS+=	--disable-python
 USES+=			python:3.4+
 
 PLIST_FILES+=		include/pyldb.h \
-			lib/libpyldb-util.so \
-			lib/libpyldb-util.so.1 \
-			${PYTHON_SITELIBDIR}/ldb.so \
+			lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so \
+			lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so.1 \
+			${PYTHON_SITELIBDIR}/ldb${PYTHON_EXT_SUFFIX}.so \
 			${PYTHON_SITELIBDIR}/_ldb_text.py \
-			${PKGCONFIGDIR}/pyldb-util.pc
+			${PKGCONFIGDIR}/pyldb-util${PYTHON_EXT_SUFFIX}.pc
 .endif
 
 .include <bsd.port.pre.mk>
@@ -161,8 +161,8 @@ post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${lib}
 .endfor
 .if !defined(NO_PYTHON)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb*.so
 .endif
 
 .include <bsd.port.post.mk>
