@@ -34,7 +34,7 @@ USES=		desktop-file-utils fortran gettext-runtime gnome pkgconfig \
 		python:3.6+ shared-mime-info shebangfix tar:xz xorg
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30 pygobject3
-USE_PYTHON=	cython distutils
+USE_PYTHON=	cython distutils noflavors
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xkbfile xrandr xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
