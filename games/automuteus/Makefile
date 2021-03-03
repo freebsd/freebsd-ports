@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	automuteus
-DISTVERSION=	6.11.0
+DISTVERSION=	6.11.2
 CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
