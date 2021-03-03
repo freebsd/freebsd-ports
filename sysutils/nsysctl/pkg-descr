@@ -1,10 +1,15 @@
-The nsysctl utility is a sysctl(8) clone to get or set the
-kernel state supporting libxo and extra options, features:
+Utility to get and set the kernel state at runtime, features:
 
- * new options to show the properties of a state,
- * output is explicitly indicated by the options,
- * the options are not mutually exclusive,
+ * get or set the system state at runtime,
+ * handle an object up to CTL_MAXNAME levels,
+ * print the right object also with an empty level name,
+ * options to show the properties of a parameter,
+ * output explicitly indicated by the options,
+ * options not mutually exclusive,
  * output via libxo in human and machine readable formats,
- * some value is parsed to show structured output.
+ * isolated code to manage opaque values,
+ * some string value is parsed to show structured output,
+ * avoid non-primitive data types hardcode via libnv,
+ * debug without recompiling the kernel with SYSCTL_DEBUG.
 
 WWW: https://gitlab.com/alfix/nsysctl/
