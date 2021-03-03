@@ -24,7 +24,7 @@ bin/wordcloud_cli
 %%PYTHON_SITELIBDIR%%/wordcloud/__pycache__/wordcloud_cli.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/wordcloud/_version.py
 %%PYTHON_SITELIBDIR%%/wordcloud/color_from_image.py
-%%PYTHON_SITELIBDIR%%/wordcloud/query_integral_image.so
+%%PYTHON_SITELIBDIR%%/wordcloud/query_integral_image%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/wordcloud/stopwords
 %%PYTHON_SITELIBDIR%%/wordcloud/tokenization.py
 %%PYTHON_SITELIBDIR%%/wordcloud/wordcloud.py
