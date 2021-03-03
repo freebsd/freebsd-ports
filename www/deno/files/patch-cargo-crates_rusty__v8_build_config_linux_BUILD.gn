@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.17.0/build/config/linux/BUILD.gn.orig	2020-06-26 16:27:54 UTC
-+++ cargo-crates/rusty_v8-0.17.0/build/config/linux/BUILD.gn
+--- cargo-crates/rusty_v8-0.20.0/build/config/linux/BUILD.gn.orig	2020-06-26 16:27:54 UTC
++++ cargo-crates/rusty_v8-0.20.0/build/config/linux/BUILD.gn
 @@ -30,7 +30,7 @@ config("runtime_library") {
  
    if ((!(is_chromeos || chromeos_is_browser_only) ||

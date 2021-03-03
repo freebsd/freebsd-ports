@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.17.0/build/linux/unbundle/libusb.gn.orig	2020-07-22 09:52:14 UTC
-+++ cargo-crates/rusty_v8-0.17.0/build/linux/unbundle/libusb.gn
+--- cargo-crates/rusty_v8-0.20.0/build/linux/unbundle/libusb.gn.orig	2020-07-22 09:52:14 UTC
++++ cargo-crates/rusty_v8-0.20.0/build/linux/unbundle/libusb.gn
 @@ -0,0 +1,24 @@
 +# Copyright 2016 The Chromium Authors. All rights reserved.
 +# Use of this source code is governed by a BSD-style license that can be

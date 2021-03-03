@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.17.0/v8/src/base/cpu.cc.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/rusty_v8-0.17.0/v8/src/base/cpu.cc
+--- cargo-crates/rusty_v8-0.20.0/v8/src/base/cpu.cc.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/rusty_v8-0.20.0/v8/src/base/cpu.cc
 @@ -475,6 +475,7 @@ CPU::CPU()
  
  #if V8_OS_LINUX

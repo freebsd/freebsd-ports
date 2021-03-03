@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.17.0/third_party/zlib/cpu_features.c.orig	2020-09-11 17:42:11 UTC
-+++ cargo-crates/rusty_v8-0.17.0/third_party/zlib/cpu_features.c
+--- cargo-crates/rusty_v8-0.20.0/third_party/zlib/cpu_features.c.orig	2020-09-11 17:42:11 UTC
++++ cargo-crates/rusty_v8-0.20.0/third_party/zlib/cpu_features.c
 @@ -31,11 +31,20 @@ int ZLIB_INTERNAL x86_cpu_enable_simd = 0;
  
  #ifndef CPU_NO_SIMD

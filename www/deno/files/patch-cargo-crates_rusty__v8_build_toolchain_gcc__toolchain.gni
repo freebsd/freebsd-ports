@@ -1,5 +1,5 @@
---- cargo-crates/rusty_v8-0.17.0/build/toolchain/gcc_toolchain.gni.orig	2021-01-19 00:12:27 UTC
-+++ cargo-crates/rusty_v8-0.17.0/build/toolchain/gcc_toolchain.gni
+--- cargo-crates/rusty_v8-0.20.0/build/toolchain/gcc_toolchain.gni.orig	2021-01-19 00:12:27 UTC
++++ cargo-crates/rusty_v8-0.20.0/build/toolchain/gcc_toolchain.gni
 @@ -50,6 +50,11 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }

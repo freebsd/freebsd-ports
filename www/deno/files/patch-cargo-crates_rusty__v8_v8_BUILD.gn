@@ -1,14 +1,5 @@
---- cargo-crates/rusty_v8-0.17.0/./v8/BUILD.gn.orig	2021-01-19 00:12:40 UTC
-+++ cargo-crates/rusty_v8-0.17.0/./v8/BUILD.gn
-@@ -288,7 +288,7 @@ declare_args() {
- 
-   # If enabled then macro definitions that are used in externally visible
-   # header files are placed in a separate header file v8-gn.h.
--  v8_generate_external_defines_header = true
-+  v8_generate_external_defines_header = false
- 
-   # Include support for WebAssembly. If disabled, the 'WebAssembly' global
-   # will not be available, and embedder APIs to generate WebAssembly modules
+--- cargo-crates/rusty_v8-0.20.0/v8/BUILD.gn.orig	2021-01-19 00:12:40 UTC
++++ cargo-crates/rusty_v8-0.20.0/v8/BUILD.gn
 @@ -4209,7 +4209,7 @@ v8_component("v8_libbase") {
      }
    }
