@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	gitlab-shell
-PORTVERSION?=	13.15.1
-PORTREVISION?=	1
+PORTVERSION?=	13.16.1
+PORTREVISION?=	0
 CATEGORIES=	devel
 
 MAINTAINER?=	mfechner@FreeBSD.org
@@ -18,17 +18,17 @@ ALL_TARGET=	build
 USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT?=	b82018ac61b724a195ab06a79d3e5d9811b0a2e7
+GL_COMMIT?=	ce93aeae452661a0afbdadcba0377abc27646798
 
 USERS=		git
 GROUPS=		git
 
-INSTALL_TARGET=	install-strip
+#INSTALL_TARGET=	install-strip
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-deps
-# 36dd
+# 38dd
 GH_TUPLE=	\
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
@@ -36,8 +36,10 @@ GH_TUPLE=	\
 		HdrHistogram:hdrhistogram-go:3a0bb77429bd:codahale_hdrhistogram_go/vendor/github.com/codahale/hdrhistogram \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		golang:crypto:8b5274cf687f:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:6afb5195e5aa:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:86b910548bc1:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:ca5a22157cba:google_go_genproto/vendor/google.golang.org/genproto \
@@ -73,6 +75,7 @@ PLIST_FILES+=	"@dir(git,,755) ${VARLOGDIR}"
 post-patch:
 	${MV} ${WRKSRC}/config.yml.example ${WRKSRC}/config.yml.sample
 	${CP} ${WRKSRC}/config.yml.sample ${WRKSRC}/config.yml
+	${REINPLACE_CMD} -e 's|VERSION_STRING :=.*|VERSION_STRING := v${PORTVERSION}|g' ${WRKSRC}/Makefile
 
 # Build the go deps, use `pkg install modules2tuple`
 gomod-deps: patch

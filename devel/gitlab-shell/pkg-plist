@@ -15,6 +15,7 @@
 @(,,555) %%DATADIR%%/bin/gitlab-shell
 @(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-keys-check
 @(,,555) %%DATADIR%%/bin/gitlab-shell-authorized-principals-check
+@(,,555) %%DATADIR%%/bin/gitlab-sshd
 @(,,555) %%DATADIR%%/bin/install
 @sample %%DATADIR%%/config.yml.sample
 %%DATADIR%%/spec/gitlab_shell_authorized_keys_check_spec.rb
