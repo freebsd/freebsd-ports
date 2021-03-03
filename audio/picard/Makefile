@@ -37,6 +37,6 @@ PLUGINS_DESC=		Install various plugins to extend functionality
 PLUGINS_RUN_DEPENDS=	picard-plugins>=2.0:audio/picard-plugins
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/picard/util/_astrcmp.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/picard/util/_astrcmp*.so
 
 .include <bsd.port.mk>
