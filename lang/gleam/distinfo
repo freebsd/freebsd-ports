@@ -1,4 +1,4 @@
-TIMESTAMP = 1613746933
+TIMESTAMP = 1614794638
 SHA256 (rust/crates/adler-0.2.3.tar.gz) = ee2a4ec343196209d6594e19543ae87a39f96d5534d7174822a3ad825dd6ed7e
 SIZE (rust/crates/adler-0.2.3.tar.gz) = 12168
 SHA256 (rust/crates/aho-corasick-0.7.15.tar.gz) = 7404febffaa47dac81aa44dba71523c9d069b1bdc50a77db41195149e17f68e5
@@ -433,5 +433,5 @@ SHA256 (rust/crates/x509-parser-0.9.0.tar.gz) = b22c80f083d860f8e77f44762e9df8c9
 SIZE (rust/crates/x509-parser-0.9.0.tar.gz) = 58696
 SHA256 (rust/crates/xattr-0.2.2.tar.gz) = 244c3741f4240ef46274860397c7c74e50eb23624996930e484c16679633a54c
 SIZE (rust/crates/xattr-0.2.2.tar.gz) = 11750
-SHA256 (gleam-lang-gleam-v0.14.0_GH0.tar.gz) = 2795720f35994710094847990234da8d38e6e43f0810b69c6f45087547d2a4d4
-SIZE (gleam-lang-gleam-v0.14.0_GH0.tar.gz) = 248770
+SHA256 (gleam-lang-gleam-v0.14.2_GH0.tar.gz) = 8fa8b3d7fe07f3cc3f3e143d113b20d51258c3d2a7a151fa28edf3f5bb6bf53d
+SIZE (gleam-lang-gleam-v0.14.2_GH0.tar.gz) = 251720
