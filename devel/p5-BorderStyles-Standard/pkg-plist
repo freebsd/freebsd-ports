@@ -20,6 +20,7 @@
 %%SITE_PERL%%/BorderStyle/UTF8/None.pm
 %%SITE_PERL%%/BorderStyle/UTF8/SingleLine.pm
 %%SITE_PERL%%/BorderStyle/UTF8/SingleLineBold.pm
+%%SITE_PERL%%/BorderStyle/UTF8/SingleLineBoldHeader.pm
 %%SITE_PERL%%/BorderStyle/UTF8/SingleLineCurved.pm
 %%SITE_PERL%%/BorderStyle/UTF8/SingleLineHorizontalOnly.pm
 %%SITE_PERL%%/BorderStyle/UTF8/SingleLineInnerOnly.pm
@@ -50,6 +51,7 @@
 %%PERL5_MAN3%%/BorderStyle::UTF8::None.3.gz
 %%PERL5_MAN3%%/BorderStyle::UTF8::SingleLine.3.gz
 %%PERL5_MAN3%%/BorderStyle::UTF8::SingleLineBold.3.gz
+%%PERL5_MAN3%%/BorderStyle::UTF8::SingleLineBoldHeader.3.gz
 %%PERL5_MAN3%%/BorderStyle::UTF8::SingleLineCurved.3.gz
 %%PERL5_MAN3%%/BorderStyle::UTF8::SingleLineHorizontalOnly.3.gz
 %%PERL5_MAN3%%/BorderStyle::UTF8::SingleLineInnerOnly.3.gz
