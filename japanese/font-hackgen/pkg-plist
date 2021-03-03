@@ -6,11 +6,7 @@ etc/fonts/conf.d/62-fonts-hackgen.conf
 %%HACKGEN%%%%FONTSDIR%%/HackGen-Bold.ttf
 %%HACKGEN_CONS%%%%FONTSDIR%%/HackGenConsole-Regular.ttf
 %%HACKGEN_CONS%%%%FONTSDIR%%/HackGenConsole-Bold.ttf
-%%HACKGEN_CONS_PL%%%%FONTSDIR%%/HackGenConsole-Regular-forPowerline.ttf
-%%HACKGEN_CONS_PL%%%%FONTSDIR%%/HackGenConsole-Bold-forPowerline.ttf
 %%HACKGEN35%%%%FONTSDIR%%/HackGen35-Regular.ttf
 %%HACKGEN35%%%%FONTSDIR%%/HackGen35-Bold.ttf
 %%HACKGEN35_CONS%%%%FONTSDIR%%/HackGen35Console-Regular.ttf
 %%HACKGEN35_CONS%%%%FONTSDIR%%/HackGen35Console-Bold.ttf
-%%HACKGEN35_CONS_PL%%%%FONTSDIR%%/HackGen35Console-Regular-forPowerline.ttf
-%%HACKGEN35_CONS_PL%%%%FONTSDIR%%/HackGen35Console-Bold-forPowerline.ttf
