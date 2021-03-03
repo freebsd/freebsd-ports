@@ -2,7 +2,7 @@
 
 PORTNAME=	liteide
 DISTVERSIONPREFIX=	x
-DISTVERSION=	37.3
+DISTVERSION=	37.4
 CATEGORIES=	devel editors
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -15,8 +15,19 @@ USES=		dos2unix gl go:modules,no_targets,run qmake qt:5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	visualfc
-GH_TUPLE=	visualfc:gocode:8cbede95a186:visualfc_gocode \
-		visualfc:gotools:e6bcd0577ece:visualfc_gotools
+
+GH_TUPLE=	visualfc:gocode:cfcb188102ae:visualfc_gocode \
+		visualfc:gotools:eff8693b15f0:visualfc_gotools \
+		creack:pty:v1.1.9:creack_pty/vendor/github.com/creack/pty \
+		golang:mod:v0.4.1:golang_mod/vendor/golang.org/x/mod \
+		golang:sys:b64e53b001e4:golang_sys/vendor/golang.org/x/sys \
+		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
+		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
+		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		visualfc:fastmod:v1.3.7:visualfc_fastmod/vendor/github.com/visualfc/fastmod \
+		visualfc:goversion:v1.0.1:visualfc_goversion/vendor/github.com/visualfc/goversion \
+		yuin:goldmark:v1.2.1:yuin_goldmark/vendor/github.com/yuin/goldmark
+
 
 USE_GL=		gl
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
@@ -43,9 +54,12 @@ post-extract:
 	rm -r ${WRKSRC}/src/3rdparty/qjsonrpc/src/json/
 
 post-build:
-	cd ${WRKSRC_visualfc_gocode} && \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install ${GO_BUILDFLAGS}
+	${RLN} ${WRKSRC}/vendor ${WRKSRC_visualfc_gotools}
 	cd ${WRKSRC_visualfc_gotools} && \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install ${GO_BUILDFLAGS}
+	${RLN} ${WRKSRC}/vendor ${WRKSRC_visualfc_gocode}
+	${RLN} ${WRKSRC_visualfc_gotools} ${WRKSRC_visualfc_gocode}/vendor/github.com/visualfc/gotools
+	cd ${WRKSRC_visualfc_gocode} && \
 		${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} install ${GO_BUILDFLAGS}
 
 post-install:
