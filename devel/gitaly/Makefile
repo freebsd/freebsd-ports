@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitaly
-DISTVERSION=	13.8.4
+DISTVERSION=	13.9.1
 PORTREVISION=	0
 CATEGORIES=	devel
 
@@ -14,19 +14,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # define dependencies that are required for build and run under MY_DEPENDS
 MY_DEPENDS=	git>=2.29:devel/git \
 		rubygem-bundler>=2.1.4:sysutils/rubygem-bundler \
-		rubygem-rugged>=0.28:devel/rubygem-rugged \
+		rubygem-rugged>=1.0.1<1.1:devel/rubygem-rugged \
 		rubygem-github-linguist>=7.12.1<8:textproc/rubygem-github-linguist \
 		rubygem-gitlab-markup>=1.7.1<1.8.0:textproc/rubygem-gitlab-markup \
 		rubygem-activesupport60>=6.0.3.4<6.0.4:devel/rubygem-activesupport60 \
 		rubygem-rdoc>=6.1<7.0:devel/rubygem-rdoc \
-		rubygem-gitlab-gollum-lib>=4.2.7.9<4.2.8:www/rubygem-gitlab-gollum-lib \
-		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.2<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
+		rubygem-gitlab-gollum-lib>=4.2.7.10.gitlab.1<4.2.8:www/rubygem-gitlab-gollum-lib \
+		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.3.gitlab.1<0.4.5.0:www/rubygem-gitlab-gollum-rugged_adapter \
 		rubygem-grpc130>=1.30.2<1.31:net/rubygem-grpc130 \
 		rubygem-sentry-raven>=3.0<4:devel/rubygem-sentry-raven \
 		rubygem-faraday>=1.0.1<2:www/rubygem-faraday \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
-		rubygem-gitlab-labkit>=0.13.2<0.15:devel/rubygem-gitlab-labkit \
-		rubygem-licensee8>=8.9.0<8.10.0:devel/rubygem-licensee8 \
+		rubygem-gitlab-labkit>=0.15.0<0.16:devel/rubygem-gitlab-labkit \
+		rubygem-licensee>=9.14.1<9.15:devel/rubygem-licensee \
 		rubygem-google-protobuf>=3.12.0<4:devel/rubygem-google-protobuf
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 		bash>0:shells/bash \
@@ -43,7 +43,7 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	d55841b9552e1e0d4fa20c46d89dde5dcd1c7bd7
+GL_COMMIT=	4f85f046841f2fbfcf8db5d54f7957aa60977b62
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -89,7 +89,7 @@ GH_TUPLE=	\
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:google-api-go-client:v0.15.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:v0.50.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
-		grpc-ecosystem:go-grpc-middleware:v1.2.2:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
+		grpc-ecosystem:go-grpc-middleware:be4c235f9d1c:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:v1.2.0:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
 		grpc:grpc-go:v1.29.1:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:go-uuid:v1.0.2:hashicorp_go_uuid/vendor/github.com/hashicorp/go-uuid \

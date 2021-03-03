@@ -1,7 +1,7 @@
---- Makefile.orig	2021-01-21 14:54:05 UTC
+--- Makefile.orig	2021-02-19 09:28:00 UTC
 +++ Makefile
-@@ -48,7 +48,7 @@ GOCOVER_COBERTURA := ${BUILD_DIR}/bin/gocover-cobertur
- GOLANGCI_LINT_OPTIONS ?=
+@@ -49,7 +49,7 @@ GOLANGCI_LINT_OPTIONS ?=
+ GOLANGCI_LINT_CONFIG  ?= ${SOURCE_DIR}/.golangci.yml
  
  # Build information
 -BUNDLE_FLAGS    ?= $(shell test -f ${SOURCE_DIR}/../.gdk-install-root && echo --no-deployment || echo --deployment)
@@ -9,7 +9,7 @@
  GITALY_PACKAGE  := gitlab.com/gitlab-org/gitaly
  BUILD_TIME      := $(shell date +"%Y%m%d.%H%M%S")
  GITALY_VERSION  := $(shell git describe --match v* 2>/dev/null | sed 's/^v//' || cat ${SOURCE_DIR}/VERSION 2>/dev/null || echo unknown)
-@@ -173,7 +173,7 @@ all: INSTALL_DEST_DIR = ${SOURCE_DIR}
+@@ -174,7 +174,7 @@ all: INSTALL_DEST_DIR = ${SOURCE_DIR}
  all: install
  
  .PHONY: build
@@ -18,7 +18,7 @@
  	go install ${GO_LDFLAGS} -tags "${GO_BUILD_TAGS}" $(addprefix ${GITALY_PACKAGE}/cmd/, $(call find_commands))
  
  .PHONY: install
-@@ -211,7 +211,7 @@ assemble-ruby:
+@@ -212,7 +212,7 @@ assemble-ruby:
  .PHONY: binaries
  binaries: assemble
  	${Q}if [ ${ARCH} != 'x86_64' ]; then echo Incorrect architecture for build: ${ARCH}; exit 1; fi
@@ -26,8 +26,8 @@
 +	${Q}cd ${ASSEMBLY_ROOT} && sha256 bin/* | tee checksums.sha256.txt
  
  .PHONY: prepare-tests
- prepare-tests: git ${TEST_REPO} ${TEST_REPO_GIT} ${SOURCE_DIR}/.ruby-bundle
-@@ -372,8 +372,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
+ prepare-tests: git libgit2 prepare-test-repos ${SOURCE_DIR}/.ruby-bundle
+@@ -374,8 +374,7 @@ libgit2: ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a
  # step. Both Omnibus and CNG assume it is in the Gitaly root, not in
  # _build. Hence the '../' in front.
  ${SOURCE_DIR}/.ruby-bundle: ${GITALY_RUBY_DIR}/Gemfile.lock ${GITALY_RUBY_DIR}/Gemfile
@@ -37,7 +37,7 @@
  	${Q}touch $@
  
  ${SOURCE_DIR}/NOTICE: ${BUILD_DIR}/NOTICE
-@@ -403,17 +402,17 @@ ${BUILD_DIR}/go.mod: | ${BUILD_DIR}
+@@ -405,17 +404,17 @@ ${BUILD_DIR}/tools: | ${BUILD_DIR}
  # jobs of a CI pipeline, we start depending on its hash. Like this, we only
  # rebuild if the Makefile actually has changed contents.
  ${BUILD_DIR}/Makefile.sha256: Makefile | ${BUILD_DIR}
