@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	jna
-PORTVERSION=	5.5.0
+PORTVERSION=	5.6.0
 CATEGORIES=	devel java
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@markdixon.name
 COMMENT=	Java access to native shared libraries
 
 LICENSE=	LGPL21+ APACHE20
