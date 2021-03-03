@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	default_value_for
-PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTVERSION=	3.4.0
+PORTREVISION=	0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ COMMENT=	Define default values for ActiveRecord models in a declarative manner
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-RUN_DEPENDS=	rubygem-activerecord60>=3.2.0<6.1:databases/rubygem-activerecord60
+RUN_DEPENDS=	rubygem-activerecord60>=3.2.0<7:databases/rubygem-activerecord60
 
 USES=		gem
 USE_RUBY=	yes
