@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	seaweedfs
-DISTVERSION=	2.28
+DISTVERSION=	2.29
 CATEGORIES=	net sysutils
 
 MAINTAINER=	dch@FreeBSD.org
@@ -171,6 +171,7 @@ post-extract:
 	@${RLN} ${WRKSRC_googleapis_google_cloud_go_storage}/storage ${WRKSRC}/vendor/cloud.google.com/go/storage
 	@${RM} -r ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
 	@${RLN} ${WRKSRC_googleapis_gax_go_v2}/v2 ${WRKSRC}/vendor/github.com/googleapis/gax-go/v2
+
 post-build:
 .for cfg in master filer security replication notification
 	${WRKDIR}/bin/weed scaffold -config ${cfg} -output ${WRKDIR}/

@@ -1,6 +1,6 @@
-TIMESTAMP = 1614099236
-SHA256 (chrislusf-seaweedfs-2.28_GH0.tar.gz) = a4e701508c9e68b3a8a5fe2b1d92a68b23d95ad17c218e7630237b76308c368d
-SIZE (chrislusf-seaweedfs-2.28_GH0.tar.gz) = 26117915
+TIMESTAMP = 1614809326
+SHA256 (chrislusf-seaweedfs-2.29_GH0.tar.gz) = 7136342744519893dd1d52c35307dbcaaceecadd1f485e84da460c7974666bd9
+SIZE (chrislusf-seaweedfs-2.29_GH0.tar.gz) = 26119546
 SHA256 (Azure-azure-pipeline-go-v0.2.2_GH0.tar.gz) = dc0d15949088e17e74da35c3ae2730f52240ad73e25cf795f532b7282de68e2f
 SIZE (Azure-azure-pipeline-go-v0.2.2_GH0.tar.gz) = 16443
 SHA256 (Azure-azure-storage-blob-go-v0.9.0_GH0.tar.gz) = f206c84fe3689aaa8e0cd180facf3455dc9c7e374a5dee1e2e9e6b9e39ab99c7
