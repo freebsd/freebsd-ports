@@ -1,6 +1,6 @@
---- lib/tasks/gitlab/setup.rake.orig	2018-06-21 08:18:34 UTC
+--- lib/tasks/gitlab/setup.rake.orig	2021-02-19 09:35:35 UTC
 +++ lib/tasks/gitlab/setup.rake
-@@ -1,7 +1,8 @@
+@@ -3,7 +3,8 @@
  namespace :gitlab do
    desc "GitLab | Setup production application"
    task setup: :gitlab_environment do
