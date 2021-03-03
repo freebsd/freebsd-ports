@@ -78,6 +78,38 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3a469cbc-7a66-11eb-bd3f-08002728f74c">
+    <topic>jasper -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jasper</name>
+	<range><lt>2.0.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>JasPer Releases:</p>
+	<blockquote cite="https://github.com/jasper-software/jasper/releases">
+	  <p>- Fix memory-related bugs in the JPEG-2000 codec resulting from
+	    attempting to decode invalid code streams. (#264, #265)</p>
+	  <p>  This fix is associated with CVE-2021-26926 and CVE-2021-26927.</p>
+	  <p>- Fix wrong return value under some compilers (#260)</p>
+	  <p>- Fix CVE-2021-3272 heap buffer overflow in jp2_decode (#259)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/jasper-software/jasper/releases</url>
+      <cvename>CVE-2021-26926</cvename>
+      <cvename>CVE-2021-26927</cvename>
+      <cvename>CVE-2021-3272</cvename>
+    </references>
+    <dates>
+      <discovery>2021-02-07</discovery>
+      <entry>2021-03-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a1e03a3d-7be0-11eb-b392-20cf30e32f6d">
     <topic>salt -- multiple vulnerabilities</topic>
     <affects>
