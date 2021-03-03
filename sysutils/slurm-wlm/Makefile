@@ -60,7 +60,7 @@ GUI_CONFIGURE_ENABLE=	glibtest gtktest x11
 #GTK2_CONFIGURE_ENV_OFF=	ac_gtk_test=no
 #GTK2_CONFIGURE_OFF=	--disable-gtktest
 
-HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
+HDF5_LIB_DEPENDS=	libhdf5_cpp.so:science/hdf5 \
 			libsz.so:science/szip
 HDF5_CONFIGURE_WITH=	hdf5
 HDF5_CONFIGURE_ENV=	H5CC=${LOCALBASE}/bin/h5cc
