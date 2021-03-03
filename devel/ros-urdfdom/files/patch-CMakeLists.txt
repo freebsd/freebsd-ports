@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2018-11-20 07:38:15 UTC
+--- CMakeLists.txt.orig	2020-01-17 18:30:42 UTC
 +++ CMakeLists.txt
-@@ -56,7 +56,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CM
+@@ -41,7 +41,7 @@ if (NOT MSVC)
+   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+ endif()
+ 
+-find_package(console_bridge 0.3 REQUIRED)
++find_package(console_bridge REQUIRED)
+ include_directories(SYSTEM ${console_bridge_INCLUDE_DIRS})
+ link_directories(${console_bridge_LIBRARY_DIRS})
+ 
+@@ -56,7 +56,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR
  set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}")
  set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}")
  
