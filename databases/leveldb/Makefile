@@ -11,9 +11,6 @@ COMMENT=	Fast and lightweight key/value database library by Google
 
 LICENSE=	BSD3CLAUSE
 
-OPTIONS_DEFINE=	GPERFTOOLS SNAPPY
-OPTIONS_DEFAULT=SNAPPY
-
 USES=		cmake compiler:c++11-lang localbase
 
 CMAKE_OFF=	LEVELDB_BUILD_TESTS
@@ -29,6 +26,9 @@ SHLIB_MINOR=	${PORTVERSION:E}
 
 GH_ACCOUNT=	google
 USE_GITHUB=	yes
+
+OPTIONS_DEFINE=	GPERFTOOLS SNAPPY
+OPTIONS_DEFAULT=SNAPPY
 
 GPERFTOOLS_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
