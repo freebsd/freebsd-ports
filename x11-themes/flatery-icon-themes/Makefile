@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flatery-icon-themes
-DISTVERSION=	2020-11-14
+DISTVERSION=	2021-02-27
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	cbrnix
 GH_PROJECT=	Flatery
-GH_TAGNAME=	8beb69
+GH_TAGNAME=	83cb603
 NO_ARCH=	yes
 NO_BUILD=	yes
 
