@@ -78,6 +78,59 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a1e03a3d-7be0-11eb-b392-20cf30e32f6d">
+    <topic>salt -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py36-salt-2019</name>
+	<name>py37-salt-2019</name>
+	<name>py38-salt-2019</name>
+	<name>py36-salt</name>
+	<name>py37-salt</name>
+	<name>py38-salt</name>
+	<name>py39-salt</name>
+	<range><lt>2019.2.8</lt></range>
+	<range><ge>3000</ge><lt>3002.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SaltStack reports multiple security vulnerabilities in Salt</p>
+	<blockquote cite="https://saltproject.io/security_announcements/active-saltstack-cve-release-2021-feb-25/">
+	  <ul>
+	  <li>CVE-2021-3197: The Salt-API.s SSH client is vulnerable to a shell injection by including ProxyCommand in an argument, or via ssh_options provided in an API request.</li>
+	  <li>CVE-2021-25281: The Salt-API does not have eAuth credentials for the wheel_async client.</li>
+	  <li>CVE-2021-25282: The salt.wheel.pillar_roots.write method is vulnerable to directory traversal.</li>
+	  <li>CVE-2021-25283: The jinja renderer does not protect against server-side template injection attacks.</li>
+	  <li>CVE-2021-25284: webutils write passwords in cleartext to /var/log/salt/minion</li>
+	  <li>CVE-2021-3148: command injection in salt.utils.thin.gen_thin()</li>
+	  <li>CVE-2020-35662: Several places where Salt was not verifying the SSL cert by default.</li>
+	  <li>CVE-2021-3144: eauth Token can be used once after expiration.</li>
+	  <li>CVE-2020-28972: Code base not validating SSL/TLS certificate of the server, which might allow attackers to obtain sensitive information via a man-in-the-middle attack</li>
+	  <li>CVE-2020-28243: Local Privilege Escalation in the Minion.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>"https://saltproject.io/security_announcements/active-saltstack-cve-release-2021-feb-25/"</url>
+      <cvename>CVE-2021-3197</cvename>
+      <cvename>CVE-2021-25281</cvename>
+      <cvename>CVE-2021-25282</cvename>
+      <cvename>CVE-2021-25283</cvename>
+      <cvename>CVE-2021-25284</cvename>
+      <cvename>CVE-2021-3148</cvename>
+      <cvename>CVE-2020-35662</cvename>
+      <cvename>CVE-2021-3144</cvename>
+      <cvename>CVE-2020-28972</cvename>
+      <cvename>CVE-2020-28243</cvename>
+    </references>
+    <dates>
+      <discovery>2021-02-25</discovery>
+      <entry>2021-03-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="52bd2d59-4ab5-4bef-a599-7aac4e92238b">
     <topic>vault -- unauthenticated license read</topic>
     <affects>
