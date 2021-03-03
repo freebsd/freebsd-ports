@@ -20,10 +20,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-# Do not install LICENSE to DOCSDIR
-	@${REINPLACE_CMD} -e '/doc_DATA/ s| LICENSE||' ${WRKSRC}/Makefile.in
 # Rename editline.3 to libeditline.3 to avoid conflict with libedit
-	@${REINPLACE_CMD} -e 's|editline.3|lib&|' ${WRKSRC}/man/Makefile.in
 	@${MV} ${WRKSRC}/man/editline.3 ${WRKSRC}/man/libeditline.3
 
 .include <bsd.port.mk>

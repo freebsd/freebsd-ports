@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2020-02-23 17:55:51 UTC
++++ Makefile.in
+@@ -356,7 +356,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = libeditline.pc
+-doc_DATA = README.md LICENSE
++doc_DATA = README.md
+ EXTRA_DIST = README.md LICENSE ChangeLog.md INSTALL.md
+ SUBDIRS = src include man examples
+ MD5 = md5sum

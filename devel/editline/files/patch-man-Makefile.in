@@ -1,0 +1,13 @@
+Rename editline.3 to libeditline.3 to avoid conflict with libedit
+
+--- man/Makefile.in.orig	2020-02-23 17:55:52 UTC
++++ man/Makefile.in
+@@ -270,7 +270,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign
+-dist_man_MANS = editline.3
++dist_man_MANS = libeditline.3
+ all: all-am
+ 
+ .SUFFIXES:
