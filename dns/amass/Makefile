@@ -2,7 +2,7 @@
 
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.5
+DISTVERSION=	3.11.7
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,9 +23,9 @@ GH_TUPLE=	\
 		andybalholm:cascadia:v1.1.0:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
 		beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
 		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
-		caffix:eventbus:4c5f3ce94295:caffix_eventbus/vendor/github.com/caffix/eventbus \
-		caffix:pipeline:41730a0744af:caffix_pipeline/vendor/github.com/caffix/pipeline \
-		caffix:queue:1d2e72b64fa0:caffix_queue/vendor/github.com/caffix/queue \
+		caffix:eventbus:9ab42753d12d:caffix_eventbus/vendor/github.com/caffix/eventbus \
+		caffix:pipeline:503915daec5b:caffix_pipeline/vendor/github.com/caffix/pipeline \
+		caffix:queue:6e488abe1004:caffix_queue/vendor/github.com/caffix/queue \
 		caffix:service:bfa33e78ab27:caffix_service/vendor/github.com/caffix/service \
 		caffix:stringset:37e95a70826c:caffix_stringset/vendor/github.com/caffix/stringset \
 		cayleygraph:cayley:v0.7.7:cayleygraph_cayley/vendor/github.com/cayleygraph/cayley \
@@ -63,13 +63,11 @@ GH_TUPLE=	\
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
 		golang:tools:b303f430e36d:golang_tools/vendor/golang.org/x/tools \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
-		google:martian:v3.0.0:google_martian_v3/vendor/github.com/google/martian/v3 \
 		google:uuid:v1.1.3:google_uuid/vendor/github.com/google/uuid \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:v1.1.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		hidal-go:hidalgo:42e03f3b5eaa:hidal_go_hidalgo/vendor/github.com/hidal-go/hidalgo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
-		jmoiron:sqlx:v1.2.0:jmoiron_sqlx/vendor/github.com/jmoiron/sqlx \
 		joho:godotenv:v1.3.0:joho_godotenv/vendor/github.com/joho/godotenv \
 		knq:sysutil:15668db23d08:knq_sysutil \
 		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
