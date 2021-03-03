@@ -42,6 +42,6 @@
 %%PYTHON_SITELIBDIR%%/sgp4/sample_omm.xml
 %%PYTHON_SITELIBDIR%%/sgp4/tcppver.out
 %%PYTHON_SITELIBDIR%%/sgp4/tests.py
-%%PYTHON_SITELIBDIR%%/sgp4/vallado_cpp.so
+%%PYTHON_SITELIBDIR%%/sgp4/vallado_cpp%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/sgp4/wrapper.py
 %%PYTHON_SITELIBDIR%%/sgp4/wulfgar.py
