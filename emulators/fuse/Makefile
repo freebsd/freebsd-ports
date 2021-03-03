@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fuse
-PORTVERSION=	1.5.7
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -21,31 +20,37 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		compiler:c++11-lang gettext gmake gnome localbase perl5 \
 		pkgconfig xorg
 USE_PERL5=	build
-USE_GNOME=	cairo libxml2 glib20
+USE_GNOME=	libxml2 glib20
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--without-alsa --without-joystick
+CONFIGURE_ARGS+=--without-joystick # TODO needs libjsw for GTK
 
-OPTIONS_DEFINE=		AO ICONS ROMS DOCS
-OPTIONS_DEFAULT=	ICONS GTK2
-OPTIONS_SINGLE=		UI
+OPTIONS_DEFINE=		ICONS ROMS DOCS
+OPTIONS_DEFAULT=	ICONS OSS GTK3
+OPTIONS_SINGLE=		AUDIO UI
+AUDIO_DESC=		Audio output interface
 UI_DESC=		User Interface
 ROMS_DESC=		Extra ROM images (128p, 256s, Gluck, IF1, Opus, TrDOS)
+OPTIONS_SINGLE_AUDIO=	ALSA AO OSS PULSEAUDIO
 OPTIONS_SINGLE_UI=	GTK2 GTK3 SDL SVGALIB
 
 OPTIONS_SUB=		yes
-AO_CONFIGURE_WITH=	libao
+ALSA_CONFIGURE_ON=	--with-audio-driver=alsa
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+AO_CONFIGURE_ON=	--with-audio-driver=libao
 AO_LIB_DEPENDS=		libao.so:audio/libao
+OSS_CONFIGURE_ON=	--with-audio-driver=oss
+PULSEAUDIO_CONFIGURE_ON=--with-audio-driver=pulseaudio
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 ICONS_USES=		desktop-file-utils shared-mime-info
 ICONS_CONFIGURE_ENABLE=	desktop-integration
-GTK2_USE=		GNOME=gtk20
-GTK2_CONFIGURE_ON=	--with-gtk
-GTK3_USE=		GNOME=gtk30
-GTK3_CONFIGURE_ON=	--with-gtk
+GTK2_USE=		GNOME=cairo,gtk20
+GTK2_CONFIGURE_ON=	--disable-gtk3
+GTK3_USE=		GNOME=cairo,gtk30
 GTK3_CONFIGURE_ENABLE=	gtk3
 SDL_USES=		sdl
-SDL_USE=		SDL=sdl
+SDL_USE=		SDL=sdl2
 SDL_CONFIGURE_WITH=	sdl
 SDL_CONFIGURE_ON=	--without-gtk
 SVGALIB_LIB_DEPENDS=	libvga.so:graphics/svgalib

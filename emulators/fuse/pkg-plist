@@ -11,6 +11,7 @@ man/man1/fuse.1.gz
 %%DATADIR%%/keyboard.scr
 %%GTK2%%%%DATADIR%%/menu_data.ui
 %%GTK3%%%%DATADIR%%/menu_data.ui
+%%DATADIR%%/keyboard.png
 %%DATADIR%%/microdrive.bmp
 %%DATADIR%%/plus2-0.rom
 %%DATADIR%%/plus2-1.rom
