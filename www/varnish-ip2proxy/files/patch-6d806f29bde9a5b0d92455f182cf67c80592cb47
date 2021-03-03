@@ -1,0 +1,24 @@
+diff --git a/README.rst b/README.rst
+index 3753102..4fc1a57 100644
+--- README.rst
++++ README.rst
+@@ -4,7 +4,7 @@ IP2Proxy Varnish Module
+ 
+ :Author: IP2Location
+ :Date: 202--11-26
+-:Version: 1.2.0
++:Version: 1.2.1
+ :Manual section: 3
+ 
+ An Varnish module that enables the user to find the country, region,
+diff --git a/configure.ac b/configure.ac
+index 9ec9497..4b40cea 100644
+--- configure.ac
++++ configure.ac
+@@ -1,5 +1,5 @@
+ AC_PREREQ(2.64)
+-AC_INIT([libvmod-ip2proxy], [1.2.0], [support@ip2location.com], [libvmod-ip2proxy])
++AC_INIT([libvmod-ip2proxy], [1.2.1], [support@ip2location.com], [libvmod-ip2proxy])
+ AC_CONFIG_MACRO_DIR([m4])
+ AC_CONFIG_SRCDIR(src/vmod_ip2proxy.vcc)
+ AM_CONFIG_HEADER(config.h)
