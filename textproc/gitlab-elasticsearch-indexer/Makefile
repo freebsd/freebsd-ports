@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-elasticsearch-indexer
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.0
 PORTREVISION=	0
 CATEGORIES=	textproc
 
@@ -17,23 +17,24 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libicuuc.so:devel/icu
 #RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
 
-USES=		gmake go:modules,no_targets pkgconfig
-MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
+USES=		gmake go:modules pkgconfig
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-elasticsearch-indexer/-/tags
-GL_COMMIT=	723c949175a3be42c1b5e40db7fbb9f1050c5bb8
+GL_COMMIT=	b7feed9299684949050f9fa2627e43b25a01403a
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 25dd
+# 27dd
 GH_TUPLE=	\
 		aws:aws-sdk-go:v1.19.6:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		deoxxa:aws_signing_client:c20ee106809e:deoxxa_aws_signing_client/vendor/github.com/deoxxa/aws_signing_client \
+		fortytw2:leaktest:v1.3.0:fortytw2_leaktest/vendor/github.com/fortytw2/leaktest \
 		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:net:6afb5195e5aa:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sys:86b910548bc1:golang_sys/vendor/golang.org/x/sys \
@@ -55,9 +56,16 @@ GL_TUPLE=	gitlab-org:gitaly:aa1ff2a76ac14e1ad3eca35cc05ea86ef59fffbb:gitlab_org_
 		gitlab-org:labkit:0149780c759d60f61fcfe1648fb882ba7ec41f3f:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit \
 		lupine:icu:54c89d9b1ef6931b4ff61fa9f4ca645d3b86d6dc:lupine_icu/vendor/gitlab.com/lupine/icu
 
-PLIST_FILES=	bin/gitlab-elasticsearch-indexer
+_BUILD_DATE=	$$(date -u "+%Y-%m-%d-%H%M UTC")
+
+GO_BUILDFLAGS=	-ldflags "\
+		-X 'main.Version=v${PORTVERSION}' \
+		-X 'main.BuildTime=${_BUILD_DATE}'"
+GO_TARGET=	gitlab.com/gitlab-org/${PORTNAME}
+
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/gitlab-elasticsearch-indexer ${STAGEDIR}${PREFIX}/bin/gitlab-elasticsearch-indexer
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
