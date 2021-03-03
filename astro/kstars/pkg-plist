@@ -791,6 +791,7 @@ share/doc/HTML/sv/kstars/devicemanager.png
 share/doc/HTML/sv/kstars/dumpmode.docbook
 share/doc/HTML/sv/kstars/ecliptic.docbook
 share/doc/HTML/sv/kstars/ekos-align.docbook
+share/doc/HTML/sv/kstars/ekos-analyze.docbook
 share/doc/HTML/sv/kstars/ekos-capture.docbook
 share/doc/HTML/sv/kstars/ekos-fits-viewer.docbook
 share/doc/HTML/sv/kstars/ekos-focus.docbook
@@ -983,7 +984,6 @@ share/doc/HTML/uk/kstars/viewops.png
 share/doc/HTML/uk/kstars/wut.docbook
 share/doc/HTML/uk/kstars/wut.png
 share/doc/HTML/uk/kstars/zenith.docbook
-share/locale/az/LC_MESSAGES/kstars.mo
 share/icons/hicolor/128x128/apps/kstars.png
 share/icons/hicolor/16x16/apps/kstars.png
 share/icons/hicolor/32x32/apps/kstars.png
@@ -1600,6 +1600,7 @@ share/knotifications5/kstars.notifyrc
 %%DATADIR%%/wzstars.png
 share/locale/af/LC_MESSAGES/kstars.mo
 share/locale/ar/LC_MESSAGES/kstars.mo
+share/locale/az/LC_MESSAGES/kstars.mo
 share/locale/be/LC_MESSAGES/kstars.mo
 share/locale/bg/LC_MESSAGES/kstars.mo
 share/locale/bn/LC_MESSAGES/kstars.mo
