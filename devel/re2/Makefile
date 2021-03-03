@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	re2
-DISTVERSION=	20210202
+PORTVERSION=	20210202
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,17 +12,18 @@ COMMENT=	Fast C++ regex library
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++11-lang pkgconfig
+USES=		compiler:c++11-lang gmake pathfix
+
+MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" SED_INPLACE="${SED} -i ''" prefix=${PREFIX}
 USE_LDCONFIG=	yes
 
+PATHFIX_MAKEFILEIN=	Makefile
+
 GH_ACCOUNT=	google
-GH_TAGNAME=	${DISTVERSION:C|(....)(..)(..)|\1-\2-\3|}
+GH_TAGNAME=	${PORTVERSION:C|(....)(..)(..)|\1-\2-\3|}
 USE_GITHUB=	yes
 
-CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	RE2_BUILD_TESTING
-
 post-install:
-	@${CP} -a ${INSTALL_WRKSRC}/libre2.so.* ${STAGEDIR}${PREFIX}/lib/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libre2.so
 
 .include <bsd.port.mk>

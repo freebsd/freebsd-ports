@@ -2,8 +2,7 @@ include/re2/filtered_re2.h
 include/re2/re2.h
 include/re2/set.h
 include/re2/stringpiece.h
-lib/cmake/re2/re2-config-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/re2/re2-config.cmake
+lib/libre2.a
 lib/libre2.so
 lib/libre2.so.9
 lib/libre2.so.9.0.0
