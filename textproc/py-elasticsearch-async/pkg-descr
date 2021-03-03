@@ -2,5 +2,4 @@ This is an adapter for elasticsearch providing a transport layer based on
 Python's asyncio module. All API calls now return a future wrapping the
 response.
 
-WWW: https://pypi.org/project/elasticsearch-async/
 WWW: https://github.com/elastic/elasticsearch-py-async
