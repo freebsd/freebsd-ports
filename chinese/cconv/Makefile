@@ -26,8 +26,4 @@ USE_GITHUB=	yes
 CONFIGURE_ENV+=	ICONV_DIR=${ICONV_PREFIX}
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|unicode.h||; s|libcconv_la_LDFLAGS|cconv_LDFLAGS|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|UTF-TW|UTF8-TW|g' ${WRKSRC}/main.c
-
 .include <bsd.port.post.mk>

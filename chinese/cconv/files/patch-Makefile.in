@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2015-12-11 11:19:25 UTC
++++ Makefile.in
+@@ -211,7 +211,7 @@ cconv_LDFLAGS = @ICONV_LIBS@
+ lib_LTLIBRARIES = libcconv.la
+ libcconv_la_SOURCES = cconv.c unicode.c
+ libcconv_la_CFLAGS = -Wall @ICONV_INCLUDES@ @OS_TYPE@
+-include_HEADERS = cconv.h unicode.h
++include_HEADERS = cconv.h
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-am
+ 
+@@ -295,7 +295,7 @@ clean-libLTLIBRARIES:
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+ libcconv.la: $(libcconv_la_OBJECTS) $(libcconv_la_DEPENDENCIES) 
+-	$(LINK) -rpath $(libdir) $(libcconv_la_LDFLAGS) $(libcconv_la_OBJECTS) $(libcconv_la_LIBADD) $(LIBS)
++	$(LINK) -rpath $(libdir) $(cconv_LDFLAGS) $(libcconv_la_OBJECTS) $(libcconv_la_LIBADD) $(LIBS)
+ install-binPROGRAMS: $(bin_PROGRAMS)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(bindir)" || $(mkdir_p) "$(DESTDIR)$(bindir)"
