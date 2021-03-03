@@ -3,7 +3,7 @@ include/gtk-layer-shell/gtk-layer-shell.h
 lib/girepository-1.0/GtkLayerShell-0.1.typelib
 lib/libgtk-layer-shell.so
 lib/libgtk-layer-shell.so.0
-lib/libgtk-layer-shell.so.0.5.2
+lib/libgtk-layer-shell.so.0.6.0
 libdata/pkgconfig/gtk-layer-shell-0.pc
 share/gir-1.0/GtkLayerShell-0.1.gir
 %%PORTDOCS%%share/gtk-doc/html/gtk-layer-shell/api-index-full.html
