@@ -2,7 +2,7 @@
 
 PORTNAME=	coturn
 DISTVERSION=	4.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,10 +18,10 @@ USE_GITHUB=	yes
 
 SHEBANG_FILES=	examples/scripts/oauth.sh examples/scripts/restapi/shared_secret_maintainer.pl
 
+USE_RC_SUBR=	turnserver
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --enable-shared --turndbdir=/var/db/${PORTNAME}
-
-SUB_FILES=	turnserver-service
 
 DOCSDIR=	${PREFIX}/share/doc/turnserver
 EXAMPLESDIR=	${PREFIX}/share/examples/turnserver
@@ -32,7 +32,6 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/turnserver-service ${STAGEDIR}${PREFIX}/etc/rc.d/turnserver
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
 .include <bsd.port.mk>

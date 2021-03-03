@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: turnserver
+# REQUIRE: DAEMON
+# BEFORE: mail
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=turnserver
+rcvar=turnserver_enable
+desc=TURN and STUN server
+
+load_rc_config ${name}
+
+: ${turnserver_enable:="NO"}
+: ${turnserver_configfile:=%%PREFIX%%/etc/$name.conf}
+
+command="%%PREFIX%%/bin/${name}"
+required_files="%%PREFIX%%/etc/${name}.conf"
+start_precmd=find_pidfile
+stop_precmd=find_pidfile
+status_precmd=find_pidfile
+command_args="-o -c ${turnserver_configfile}"
+
+find_pidfile()
+{
+        if get_pidfile_from_conf pidfile $turnserver_configfile; then
+                pidfile="$_pidfile_from_conf"
+        else
+                pidfile="/var/run/${name}.pid"
+        fi
+}
+
+run_rc_command "$1"

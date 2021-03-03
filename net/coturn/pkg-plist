@@ -5,7 +5,6 @@ bin/turnutils_oauth
 bin/turnutils_peer
 bin/turnutils_stunclient
 bin/turnutils_uclient
-etc/rc.d/turnserver
 @sample etc/turnserver.conf.default etc/turnserver.conf
 include/turn/client/TurnMsgLib.h
 include/turn/client/ns_turn_ioaddr.h
