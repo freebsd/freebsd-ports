@@ -50,5 +50,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bsd-${ARCH:S/i386/x86/:C/armv.*/arm/:S/aarch64/arm64/}-librw_gl3_glfw-oal/Release/re3 ${STAGEDIR}${DATADIR}/
 	(cd ${WRKSRC}/gamefiles && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/)
 
-
 .include <bsd.port.mk>
