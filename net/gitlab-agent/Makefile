@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gitlab-agent
-PORTVERSION?=	13.8.0
+PORTVERSION?=	13.9.1
 PORTREVISION?=	0
 CATEGORIES=	net
 
@@ -20,7 +20,7 @@ USES=		go:modules
 USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org/cluster-integration
 # Find the commit hash here: https://gitlab.com/gitlab-org/cluster-integration/gitlab-agent/-/tags
-GL_COMMIT?=	97813ef7cb65a0b0bfe309362d6af50aa6e8ae4c
+GL_COMMIT?=	b5ed00c123f05db4ce3e22abe60a647bd6267edd
 
 # for go dependencies
 USE_GITHUB=	nodefault
@@ -73,7 +73,7 @@ GH_TUPLE=	\
 		go-openapi:strfmt:v0.19.5:go_openapi_strfmt/vendor/github.com/go-openapi/strfmt \
 		go-openapi:swag:v0.19.9:go_openapi_swag/vendor/github.com/go-openapi/swag \
 		go-openapi:validate:v0.19.10:go_openapi_validate/vendor/github.com/go-openapi/validate \
-		go-redis:redis:v8.4.4:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
+		go-redis:redis:v8.4.8:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
 		go-redis:redismock:v8.0.3:go_redis_redismock_v8/vendor/github.com/go-redis/redismock/v8 \
 		go-stack:stack:v1.8.0:go_stack_stack/vendor/github.com/go-stack/stack \
 		go-yaml:yaml:eeeca48fe776:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
@@ -84,29 +84,29 @@ GH_TUPLE=	\
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mock:1fe605df5e5f:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.4.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:ac852fbbde11:golang_net/vendor/golang.org/x/net \
+		golang:net:6772e930b67b:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:08078c50e5b5:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:09787c993a3a:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:f9fddec55a1e:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
-		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
+		golang:time:7e3f01d25324:golang_time/vendor/golang.org/x/time \
 		golang:tools:a1b87a1c0de4:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:btree:v1.0.0:google_btree/vendor/github.com/google/btree \
 		google:go-cmp:v0.5.4:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:e3217bee35cc:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:ffc7fda8c3d7:google_go_genproto/vendor/google.golang.org/genproto \
 		google:gofuzz:v1.1.0:google_gofuzz/vendor/github.com/google/gofuzz \
-		google:pprof:1bf35d6f28c2:google_pprof/vendor/github.com/google/pprof \
+		google:pprof:b9804c9f04c2:google_pprof/vendor/github.com/google/pprof \
 		googleapis:gax-go:v2.0.5:googleapis_gax_go_v2/vendor/github.com/googleapis/gax-go \
 		googleapis:gnostic:v0.4.1:googleapis_gnostic/vendor/github.com/googleapis/gnostic \
 		googleapis:google-api-go-client:v0.36.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:v0.74.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
+		googleapis:google-cloud-go:v0.75.0:googleapis_google_cloud_go/vendor/cloud.google.com/go \
 		gregjones:httpcache:9cad4c3443a7:gregjones_httpcache/vendor/github.com/gregjones/httpcache \
 		grpc-ecosystem:go-grpc-middleware:v1.2.2:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:9abf3eb82b4a:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
 		grpc:grpc-go:d8ef479ab79a:grpc_grpc_go_1/vendor/google.golang.org/grpc/examples \
-		grpc:grpc-go:v1.34.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.35.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:golang-lru:v0.5.1:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		imdario:mergo:v0.3.5:imdario_mergo/vendor/github.com/imdario/mergo \
@@ -188,7 +188,7 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.0:spf13_viper/vendor/github.com/spf13/viper \
-		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		tinylib:msgp:v1.1.0:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
@@ -198,7 +198,7 @@ GH_TUPLE=	\
 		uber:jaeger-lib:v1.5.0:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib
 
 GL_TUPLE=	gitlab-org:gitaly:89c1ee804f273c9ccc7322644b9ec1cf8e38c0a4:gitlab_org_gitaly/vendor/gitlab.com/gitlab-org/gitaly \
-		gitlab-org:labkit:fad8b52b57383bca3f30a28901a1ac757d55d5b8:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
+		gitlab-org:labkit:949268af2aa8352c644cb1cbc63cf4112972d2c9:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
 
 GO_BUILDFLAGS=	-tags="tracer_static,tracer_static_jaeger" \
 		-ldflags=" \
