@@ -108,14 +108,14 @@ BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/do
 USES+=			python:build,test
 CONFIGURE_ARGS+=	--disable-python
 .else
-USES+=			python:3.4+ gettext-runtime
+USES+=			gettext-runtime python:3.6+
 
 PLIST_FILES+=		include/pyldb.h \
-			lib/libpyldb-util.so \
-			lib/libpyldb-util.so.2 \
-			${PYTHON_SITELIBDIR}/ldb.so \
+			lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so \
+			lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so.2 \
+			${PYTHON_SITELIBDIR}/ldb${PYTHON_EXT_SUFFIX}.so \
 			${PYTHON_SITELIBDIR}/_ldb_text.py \
-			${PKGCONFIGDIR}/pyldb-util.pc
+			${PKGCONFIGDIR}/pyldb-util${PYTHON_EXT_SUFFIX}.pc
 .endif
 
 # No fancy color error messages
@@ -160,8 +160,8 @@ post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${lib}
 .endfor
 .if ${PORT_OPTIONS:MPYTHON3} && !defined(NO_PYTHON)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb*.so
 .endif
 
 .include <bsd.port.post.mk>
