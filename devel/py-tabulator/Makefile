@@ -31,9 +31,11 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	CCHARDET
-CCHARDET_DESC=	Character encoding detection via cchardet
+OPTIONS_DEFINE=	CCHARDET DATAPACKAGE
+CCHARDET_DESC=		Character encoding detection via cchardet
+DATAPACKAGE_DESC=	Data Package support
 
 CCHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cchardet>=2.0:textproc/py-cchardet@${PY_FLAVOR}
+DATAPACKAGE_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}datapackage>=1.12:devel/py-datapackage@${PY_FLAVOR}
 
 .include <bsd.port.mk>
