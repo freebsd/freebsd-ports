@@ -1,6 +1,6 @@
 include/cglm/affine-mat.h
-include/cglm/affine2d.h
 include/cglm/affine.h
+include/cglm/affine2d.h
 include/cglm/applesimd.h
 include/cglm/bezier.h
 include/cglm/box.h
@@ -87,8 +87,8 @@ include/cglm/vec3.h
 include/cglm/vec4-ext.h
 include/cglm/vec4.h
 include/cglm/version.h
-lib/cglm/cmake/cglm-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cglm/cmake/cglm.cmake
+lib/cmake/cglm/cglmConfig-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/cglm/cglmConfig.cmake
 lib/libcglm.so
 lib/libcglm.so.0
-lib/libcglm.so.0.7.9
+lib/libcglm.so.0.8.0
