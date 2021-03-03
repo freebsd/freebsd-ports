@@ -17,10 +17,21 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
 USES=		compiler:c11 cpe gmake libtool perl5 pkgconfig python \
 		shebangfix ssl
-SHEBANG_FILES=	utilities/bugtool/ovs-bugtool-ovs-ofctl-loop-over-bridges \
+SHEBANG_FILES=	ipsec/ovs-monitor-ipsec.in \
 		utilities/bugtool/ovs-bugtool-get-port-stats \
-		utilities/ovs-docker \
+		utilities/bugtool/ovs-bugtool-ovs-ofctl-loop-over-bridges \
+		utilities/bugtool/ovs-bugtool.in \
 		utilities/ovs-appctl-bashcomp.bash \
+		utilities/ovs-check-dead-ifs.in \
+		utilities/ovs-docker \
+		utilities/ovs-dpctl-top.in \
+		utilities/ovs-l3ping.in \
+		utilities/ovs-parse-backtrace.in \
+		utilities/ovs-pcap.in \
+		utilities/ovs-tcpdump.in  \
+		utilities/ovs-tcpundump.in \
+		utilities/ovs-test.in \
+		utilities/ovs-vlan-test.in \
 		vtep/ovs-vtep.in
 
 USE_LDCONFIG=	yes
