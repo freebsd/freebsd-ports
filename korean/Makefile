@@ -27,7 +27,6 @@
     SUBDIR += ko.TeX-fonts-extra
     SUBDIR += libhangul
     SUBDIR += libreoffice
-    SUBDIR += man-doc
     SUBDIR += munhwafonts-cid
     SUBDIR += nabi
     SUBDIR += nanumcoding-ttf

@@ -5405,7 +5405,6 @@
     SUBDIR += redo
     SUBDIR += regexx
     SUBDIR += regexxer
-    SUBDIR += relx
     SUBDIR += remake
     SUBDIR += remotery
     SUBDIR += replay

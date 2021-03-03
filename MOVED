@@ -16190,3 +16190,5 @@ multimedia/kodi-addon-peripheral-joystick|multimedia/kodi-addon-peripheral.joyst
 sysutils/py-salt-2019|sysutils/py-salt|2021-03-02|Has expired: Deprecated. Please use sysutils/py-salt instead.
 www/rubygem-gitlab-puma_worker_killer|www/rubygem-puma_worker_killer|2021-03-03|Obsolete, use www/rubygem-puma_worker_killer instead
 www/rubygem-gitlab-puma|www/rubygem-puma|2021-03-03|Obsolete, use www/rubygem-puma instead
+korean/man-doc||2021-03-03|Has expired: Poor quality, severely outdated and undermaintained
+devel/relx||2021-03-03|Has expired: Script removed upstream, library included in devel/rebar3
