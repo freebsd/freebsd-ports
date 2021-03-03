@@ -34,6 +34,6 @@ USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils noflavors
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}/parser/_parser.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/parser/_parser*.so
 
 .include <bsd.port.mk>
