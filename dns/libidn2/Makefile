@@ -26,10 +26,4 @@ USE_LDCONFIG=	yes
 
 INFO=		libidn2
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^TMPDIR = /d' ${WRKSRC}/Makefile.in
-
-post-configure:
-	@${REINPLACE_CMD} -e '/HAVE_SYMVER_ALIAS_SUPPORT/d' ${WRKSRC}/config.h
-
 .include <bsd.port.mk>
