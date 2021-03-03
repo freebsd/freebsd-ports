@@ -1405,6 +1405,7 @@
     SUBDIR += py-WebError
     SUBDIR += py-WebFlash
     SUBDIR += py-WebTest
+    SUBDIR += py-adblock
     SUBDIR += py-aioh2
     SUBDIR += py-aiohttp
     SUBDIR += py-aiohttp-middlewares
