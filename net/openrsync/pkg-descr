@@ -1,0 +1,8 @@
+This is an implementation of rsync with a BSD (ISC) license. It's compatible
+with a modern rsync (3.1.3 is used for testing, but any supporting protocol 27
+will do), but accepts only a subset of rsync's command-line arguments.
+
+Its officially-supported operating system is OpenBSD, but it will compile and
+run on other UNIX systems. See Portability for details.
+
+WWW: https://github.com/kristapsdz/openrsync
