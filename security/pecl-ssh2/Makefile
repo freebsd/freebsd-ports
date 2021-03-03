@@ -2,14 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	ssh2
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	security pear
-
-# https://github.com/php/pecl-networking-ssh2/pull/44/
-PATCH_SITES=	https://github.com/php/pecl-networking-ssh2/commit/
-PATCHFILES=	167a679db79a93c27b7bb367bef9e0d9abdc47d0.patch:-p1 \
-		9e6074a4eae3b4ebbe883ba1b93c9eccb9c78d02.patch:-p1 \
-		c9647c5d296e8693d0b5672f1c22945ea024ebdc.patch:-p1
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	PECL extension to the libssh2 library
