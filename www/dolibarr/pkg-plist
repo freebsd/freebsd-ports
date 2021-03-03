@@ -1086,7 +1086,7 @@
 %%WWWDIR%%/htdocs/core/modules/expensereport/mod_expensereport_sand.php
 %%WWWDIR%%/htdocs/core/modules/expensereport/modules_expensereport.php
 %%WWWDIR%%/htdocs/core/modules/export/export_csv.modules.php
-%%WWWDIR%%/htdocs/core/modules/export/export_excel2007new.modules.php
+%%WWWDIR%%/htdocs/core/modules/export/export_excel2007.modules.php
 %%WWWDIR%%/htdocs/core/modules/export/export_tsv.modules.php
 %%WWWDIR%%/htdocs/core/modules/export/index.html
 %%WWWDIR%%/htdocs/core/modules/export/modules_export.php
@@ -1634,6 +1634,7 @@
 %%WWWDIR%%/htdocs/holiday/img/edit.png
 %%WWWDIR%%/htdocs/holiday/img/index.html
 %%WWWDIR%%/htdocs/holiday/index.html
+%%WWWDIR%%/htdocs/holiday/info.php
 %%WWWDIR%%/htdocs/holiday/list.php
 %%WWWDIR%%/htdocs/holiday/month_report.php
 %%WWWDIR%%/htdocs/holiday/view_log.php
@@ -10853,6 +10854,7 @@
 %%WWWDIR%%/htdocs/public/stripe/confirm_payment.php
 %%WWWDIR%%/htdocs/public/stripe/index.php
 %%WWWDIR%%/htdocs/public/stripe/ipn.php
+%%WWWDIR%%/htdocs/public/test/badges.php
 %%WWWDIR%%/htdocs/public/test/index.html
 %%WWWDIR%%/htdocs/public/test/test_arrays.php
 %%WWWDIR%%/htdocs/public/test/test_csrf.php
@@ -13354,8 +13356,6 @@
 %%WWWDIR%%/htdocs/theme/eldy/btn.inc.php
 %%WWWDIR%%/htdocs/theme/eldy/ckeditor/config.js
 %%WWWDIR%%/htdocs/theme/eldy/ckeditor/index.html
-%%WWWDIR%%/htdocs/theme/eldy/doc/badges.php
-%%WWWDIR%%/htdocs/theme/eldy/doc/doc.css
 %%WWWDIR%%/htdocs/theme/eldy/dropdown.inc.php
 %%WWWDIR%%/htdocs/theme/eldy/global.inc.php
 %%WWWDIR%%/htdocs/theme/eldy/img/addfile.png
