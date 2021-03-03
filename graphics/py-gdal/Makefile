@@ -17,9 +17,6 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE.TXT
 
 LIB_DEPENDS=	libgdal.so:graphics/gdal
 
-OPTIONS_DEFINE=	NUMPY
-NUMPY_DESC=	Enable array support via NumPy
-
 USES=		compiler:c++14-lang python:3.6+ shebangfix tar:xz
 USE_PYTHON=	autoplist concurrent distutils
 
@@ -28,8 +25,11 @@ WRKSRC_SUBDIR=	swig/python
 
 SHEBANG_FILES=	scripts/*.py
 
-NUMPY_BUILD_DEPENDS=	${PYNUMPY}
-NUMPY_RUN_DEPENDS=	${PYNUMPY}
+OPTIONS_DEFINE=	NUMPY
+NUMPY_DESC=	Enable array support via NumPy
+
+NUMPY_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.0.0,1:math/py-numpy@${PY_FLAVOR}
+NUMPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.0.0,1:math/py-numpy@${PY_FLAVOR}
 NUMPY_USES=		fortran
 
 post-install:
