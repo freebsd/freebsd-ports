@@ -1,6 +1,0 @@
-bin/synergyc
-bin/synergys
-bin/synergyd
-man/man1/synergyc.1.gz
-man/man1/synergys.1.gz
-@sample etc/synergy.conf.sample

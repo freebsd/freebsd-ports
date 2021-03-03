@@ -16192,3 +16192,4 @@ www/rubygem-gitlab-puma_worker_killer|www/rubygem-puma_worker_killer|2021-03-03|
 www/rubygem-gitlab-puma|www/rubygem-puma|2021-03-03|Obsolete, use www/rubygem-puma instead
 korean/man-doc||2021-03-03|Has expired: Poor quality, severely outdated and undermaintained
 devel/relx||2021-03-03|Has expired: Script removed upstream, library included in devel/rebar3
+sysutils/synergy-1|sysutils/synergy|2021-03-03|Current version is 1.x.x, 2.x.x was tagged by the upstream by mistake
