@@ -79,7 +79,7 @@ CABAL_VERSION=		3.2.1.0
 HSCOLOUR_VERSION=	1.24.4
 LLVM_VERSION=		90
 # LLVM version that bootstrap compiler uses
-BOOT_LLVM_VERSION=	60
+BOOT_LLVM_VERSION=	90
 
 PLIST_SUB=		GHC_VERSION=${GHC_VERSION} CABAL_VERSION=${CABAL_VERSION}
 
@@ -101,6 +101,8 @@ CONFIGURE_ARGS+=	--enable-dtrace=0
 
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
 BOOT_GHC_VERSION=      8.6.3
+.elif ${ARCH} == aarch64 || ${ARCH:Marmv*}
+BOOT_GHC_VERSION=	8.10.4
 .else
 BOOT_GHC_VERSION=	8.6.5
 .endif
@@ -140,7 +142,8 @@ ELEVEN_SUFX=		11
 DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${BOOTSTRAPS_SUFFIX}${ELEVEN_SUFX}${EXTRACT_SUFX}:boot
 .endif # MBOOT
 
-.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7
+.if ${ARCH} == aarch64 || ${ARCH:Marmv*}
+# ghc-8.10.x on arm requires devel/llvm90
 # CONFIGURE_TARGET must to be the same as the llvm triple
 CONFIGURE_TARGET=	${ARCH}-unknown-freebsd${"${ARCH:Maarch64}" != "":?:-gnueabihf}
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-aclocal.m4
@@ -155,16 +158,15 @@ CONFIGURE_ENV+=		LLC=llc${LLVM_VERSION} \
 # LLVM versions, we have to pull in both. Luckily, this is relatively rare.
 .  if ${BOOT_LLVM_VERSION} != ${LLVM_VERSION}
 BUILD_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
-RUN_DEPENDS+=		llc${BOOT_LLVM_VERSION}:devel/llvm${BOOT_LLVM_VERSION}
 # Keep in sync with BOOT_LLVM_VERSION
-BINARY_ALIAS+=		llc-6.0=llc60 \
-			opt-6.0=opt60
+BINARY_ALIAS+=		llc-9.0=llc90 \
+			opt-9.0=opt90
 .  endif
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == powerpc64
-.  if ${OSVERSION} < 1201000
-IGNORE=	lang/ghc requires at least FreeBSD 12.1-RELEASE
+.if ${ARCH} == aarch64 || ${ARCH:Marmv*} || ${ARCH} == powerpc64
+.  if ${OSVERSION} < 1202000
+IGNORE=	lang/ghc requires at least FreeBSD 12.2-RELEASE
 .  endif
 .  ifdef QEMU_EMULATING
 IGNORE=	qemu-user-static isn't able to build lang/ghc, but it builds fine on a real hardware
