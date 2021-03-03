@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bootsnap
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
