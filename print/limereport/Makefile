@@ -37,7 +37,7 @@ ZINT_EXTRA_PATCHES=	${FILESDIR}/extrapatch-barcode
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
-WITH_DEBUG=	yes
+CMAKE_BUILD_TYPE=	Debug
 .endif
 
 .include <bsd.port.mk>
