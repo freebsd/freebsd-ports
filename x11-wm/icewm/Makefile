@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	icewm
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
 MAINTAINER=	portmaster@bsdforge.com
-COMMENT=	Window Manager designed for speed, usability and consistency
+COMMENT=	Window manager designed for speed and usability
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
