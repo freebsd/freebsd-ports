@@ -1,0 +1,11 @@
+--- configure.ac.orig	2021-03-02 19:58:06 UTC
++++ configure.ac
+@@ -816,7 +816,7 @@ if test x$enable_debug = xyes ; then
+ else
+     if test "$GCC" = yes ; then
+ 	case "`$CC --version 2>&1`" in
+-	    *LLVM*|lcc*|clang*)
++	    *LLVM*|lcc*|*clang*)
+ 		# Apple LLVM and MCST LCC falsely claim to be GCC
+ 		;;
+ 	    *)
