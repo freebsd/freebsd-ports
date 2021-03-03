@@ -1,0 +1,5 @@
+Bash Commander is a fork of GNU Bourne Again Shell. It's main feature is a
+visual two-panel mode, much like Midnight Commander and other text-mode
+visual shells.
+
+WWW: https://github.com/sergev/bash-commander

@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+By default, Bash Commander behaves exactly like traditional bash, so it's safe
+to install it as a system-wide /bin/sh. File panels are enabled only in
+interactive mode, when an environment variable COMMANDER is set.
+It is recommended to add the following lines to your ~/.bashrc script:
+
+declare -x EDITOR="le"
+declare -x VIEWER="le --read-only"
+. /usr/local/etc/bash_commander
+
+EOM
+}
+]
