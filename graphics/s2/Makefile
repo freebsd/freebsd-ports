@@ -12,6 +12,9 @@ COMMENT=	S2 Geometry Library
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	is currently 64-bit only
+
 LIB_DEPENDS=	libgtest.so:devel/googletest
 
 USES=		cmake compiler:c++11-lang localbase ssl
