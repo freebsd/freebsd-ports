@@ -28,6 +28,6 @@ pidfile=/var/run/i2pd/i2pd.pid
 command="%%PREFIX%%/bin/${name}"
 command_args="--conf ${i2pd_config} --service --datadir ${i2pd_datadir} --daemon"
 extra_commands="reload"
-reload_cmd="pkill -1 -F ${pidfile} -x i2pd"
+reload_cmd="pkill -2 -F ${pidfile} -x i2pd"
 
 run_rc_command "$1"
