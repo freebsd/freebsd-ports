@@ -57,8 +57,8 @@ post-extract:
 
 post-install:
 	${REINPLACE_CMD} -e 's|${STAGEDIR}||'	\
-		${STAGEDIR}${PREFIX}/lib/python3.7/site-packages/pyeantic/install_files.txt
-	${RM} ${STAGEDIR}${PREFIX}/lib/python3.7/site-packages/pyeantic/install_files.txt.bak
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyeantic/install_files.txt
+	${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyeantic/install_files.txt.bak
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d \
 		${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d \
