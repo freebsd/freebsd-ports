@@ -417,8 +417,6 @@
     SUBDIR += mongrel2
     SUBDIR += monolith
     SUBDIR += moodle310
-    SUBDIR += moodle35
-    SUBDIR += moodle38
     SUBDIR += moodle39
     SUBDIR += morty
     SUBDIR += mozplugger
