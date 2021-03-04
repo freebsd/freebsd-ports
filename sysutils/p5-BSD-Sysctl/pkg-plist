@@ -1,4 +1,3 @@
 %%SITE_ARCH%%/BSD/Sysctl.pm
-%%SITE_ARCH%%/BSD/bsd-sysctl.pl
 %%SITE_ARCH%%/auto/BSD/Sysctl/Sysctl.so
 %%PERL5_MAN3%%/BSD::Sysctl.3.gz

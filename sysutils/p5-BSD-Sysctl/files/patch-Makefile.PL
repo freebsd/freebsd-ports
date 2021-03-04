@@ -1,8 +1,0 @@
---- Makefile.PL.orig	2009-09-25 13:50:50.000000000 -0600
-+++ Makefile.PL	2018-03-08 13:01:25.754377000 -0700
-@@ -119,3 +119,5 @@
- T,struct_cdev	25	auto
- Q	26	FMT_64
- QU	27	FMT_U64
-+C	28	FMT_INT8
-+CU	29	FMT_UINT8
