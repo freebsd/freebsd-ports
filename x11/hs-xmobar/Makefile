@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmobar
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -31,17 +31,16 @@ UTF8_USE_CABAL=		utf8-string-1.0.1.1_3
 
 MPD_DESC=		Music Player Daemon support
 MPD_CABAL_FLAGS=	with_mpd
-MPD_USE_CABAL=		libmpd-0.9.1.0 safe-exceptions-0.1.7.0_6
+MPD_USE_CABAL=		libmpd-0.10.0.0 safe-exceptions-0.1.7.0_6
 
 INOTIFY_DESC=		inotify support (required for the Mail and MBox plugins)
 INOTIFY_CABAL_FLAGS=	with_inotify
 INOTIFY_USE_CABAL=	hinotify-0.4.1
 INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
-INOTIFY_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-hinotify.cabal
 
 DATEZONE_DESC=		Localized date support
 DATEZONE_CABAL_FLAGS=	with_datezone
-DATEZONE_USE_CABAL=	timezone-olson-0.1.9 timezone-series-0.1.9
+DATEZONE_USE_CABAL=	timezone-olson-0.2.0 timezone-series-0.1.9
 
 THREADED_DESC=		Use threaded runtime
 THREADED_CABAL_FLAGS=	with_threaded
