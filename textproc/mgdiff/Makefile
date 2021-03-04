@@ -13,6 +13,8 @@ COMMENT=	Graphical front end to the UNIX diff command
 
 LICENSE=	MIT
 
+LIB_DEPENDS=	libgnuregex.so:devel/libgnuregex
+
 USES=		imake motif xorg
 USE_XORG=	ice sm x11 xext xmu xt
 
