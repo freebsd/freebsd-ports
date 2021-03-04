@@ -51,6 +51,8 @@
 %%WWWDIR%%/js/collections.js.map
 %%WWWDIR%%/js/dashboard.js
 %%WWWDIR%%/js/dashboard.js.map
+%%WWWDIR%%/js/deck.js
+%%WWWDIR%%/js/deck.js.map
 %%WWWDIR%%/js/flow.js
 %%WWWDIR%%/js/flow.js.map
 %%WWWDIR%%/js/talk-files-sidebar.js
@@ -277,6 +279,7 @@
 %%WWWDIR%%/lib/Dashboard/TalkWidget.php
 %%WWWDIR%%/lib/DataObjects/AccountId.php
 %%WWWDIR%%/lib/DataObjects/RegisterAccountData.php
+%%WWWDIR%%/lib/Deck/DeckPluginLoader.php
 %%WWWDIR%%/lib/Events/AddEmailEvent.php
 %%WWWDIR%%/lib/Events/AddParticipantsEvent.php
 %%WWWDIR%%/lib/Events/ChatEvent.php
@@ -338,6 +341,7 @@
 %%WWWDIR%%/lib/Migration/Version11000Date20201204110210.php
 %%WWWDIR%%/lib/Migration/Version11000Date20201209142525.php
 %%WWWDIR%%/lib/Migration/Version11000Date20201209142526.php
+%%WWWDIR%%/lib/Migration/Version11001Date20210211111527.php
 %%WWWDIR%%/lib/Migration/Version2000Date20170707093535.php
 %%WWWDIR%%/lib/Migration/Version2000Date20171026140256.php
 %%WWWDIR%%/lib/Migration/Version2000Date20171026140257.php
