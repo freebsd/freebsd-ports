@@ -15,7 +15,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libcares.so:dns/c-ares
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib libtool localbase tar:bzip2
+USES=		autoreconf compiler:c++11-lib libtool localbase tar:bzip2
 INSTALL_TARGET=	install-strip
 
 .ifndef SERVER_ONLY
