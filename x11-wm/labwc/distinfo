@@ -3,3 +3,5 @@ SHA256 (johanmalm-labwc-s20210303-2738ff2_GH0.tar.gz) = 7b5e89f15134cc60f624b3eb
 SIZE (johanmalm-labwc-s20210303-2738ff2_GH0.tar.gz) = 59295
 SHA256 (53a6d4fd32cc.patch) = 77b6fb10733a4f83611bc00089cef844f78eebc346dd1c27587b296bc2256b1e
 SIZE (53a6d4fd32cc.patch) = 987
+SHA256 (3cef83d9dc77.patch) = 0f9556c4eebee1a3b8508a863660a14a3739eb72914cde89e51012ef1ea73b77
+SIZE (3cef83d9dc77.patch) = 1141

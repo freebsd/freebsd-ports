@@ -6,6 +6,7 @@ CATEGORIES=	x11-wm
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	53a6d4fd32cc.patch:-p1 # https://github.com/johanmalm/labwc/pull/19
+PATCHFILES+=	3cef83d9dc77.patch:-p1 # https://github.com/johanmalm/labwc/pull/20
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Openbox alternative for Wayland
@@ -48,10 +49,5 @@ post-patch:
 		-e 's,/usr/local,${PREFIX},' \
 		${WRKSRC}/docs/${PORTNAME}-config.5.md \
 		${WRKSRC}/src/common/dir.c
-
-post-install-MANPAGES-on:
-	@${MV} ${STAGEDIR}${PREFIX}/man/man*.1/* ${STAGEDIR}${PREFIX}/man/man1
-	@${MV} ${STAGEDIR}${PREFIX}/man/man*.5/* ${STAGEDIR}${PREFIX}/man/man5
-	@${FIND} ${STAGEDIR}${PREFIX}/man -type d -empty -delete
 
 .include <bsd.port.mk>
