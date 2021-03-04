@@ -1,0 +1,33 @@
+--- librawstudio/rs-exif.cc.orig
++++ librawstudio/rs-exif.cc
+@@ -21,6 +21,8 @@
+ #include <iomanip>
+ #include <exiv2/image.hpp>
+ #include <exiv2/exif.hpp>
++#include <exiv2/error.hpp>
++#include <exiv2/version.hpp>
+ #include "rs-exif.h"
+ #include <assert.h>
+ #include "rs-library.h"
+--- plugins/load-gdk/exiv2-colorspace.cpp.orig
++++ plugins/load-gdk/exiv2-colorspace.cpp
+@@ -22,6 +22,8 @@
+ #include <iomanip>
+ #include <exiv2/image.hpp>
+ #include <exiv2/exif.hpp>
++#include <exiv2/version.hpp>
++#include <exiv2/error.hpp>
+ #include <assert.h>
+ #include "exiv2-colorspace.h"
+ #include <math.h>
+--- plugins/meta-exiv2/exiv2-metadata.cpp.orig
++++ plugins/meta-exiv2/exiv2-metadata.cpp
+@@ -22,6 +22,8 @@
+ #include <iomanip>
+ #include <exiv2/image.hpp>
+ #include <exiv2/exif.hpp>
++#include <exiv2/version.hpp>
++#include <exiv2/error.hpp>
+ #include <assert.h>
+ #include "exiv2-metadata.h"
+ #include <math.h>
