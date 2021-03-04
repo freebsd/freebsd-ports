@@ -1,0 +1,11 @@
+--- wai-app-static.cabal.orig	2020-08-14 06:24:06 UTC
++++ wai-app-static.cabal
+@@ -48,7 +48,7 @@ library
+                    , template-haskell          >= 2.7
+                    , zlib                      >= 0.5
+                    , filepath
+-                   , wai-extra                 >= 3.0      && < 3.1
++                   , wai-extra                 >= 3.0      && < 3.2
+                    , optparse-applicative      >= 0.7
+                    , warp                      >= 3.0.11   && < 3.4
+ 
