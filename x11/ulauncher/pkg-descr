@@ -1,0 +1,5 @@
+Ulauncher is graphical application launcher written in Python and GTK.
+It offers fuzzy search, custom color themes, shortcuts and extensions,
+and fast directory browser.
+
+WWW: https://ulauncher.io/
