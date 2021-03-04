@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fheroes2
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
