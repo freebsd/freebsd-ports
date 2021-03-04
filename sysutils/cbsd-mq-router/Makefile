@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cbsd-mq-router
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -14,7 +14,6 @@ RUN_DEPENDS=	beanstalkd:net/beanstalkd
 USES=		go
 
 USE_GITHUB=	yes
-GH_TAGNAME=	1605df2
 GH_ACCOUNT=	cbsd
 GH_PROJECT=	cbsd-mq-router
 USE_RC_SUBR=	cbsd-mq-router
