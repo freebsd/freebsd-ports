@@ -1,7 +1,7 @@
 %%PHP%%lib/php/%%PHP_EXT_DIR%%/redland.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/RDF.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/Redland.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/_Redland.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/_Redland%%PYTHON_EXT_SUFFIX%%.so
 %%RUBY%%%%RUBY_ARCHLIBDIR%%/redland.so
 %%RUBY%%%%RUBY_LIBDIR%%/rdf/redland/constants.rb
 %%RUBY%%%%RUBY_LIBDIR%%/rdf/redland/convert_owl.rb
