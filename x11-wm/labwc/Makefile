@@ -4,6 +4,9 @@ PORTNAME=	labwc
 PORTVERSION=	s20210303
 CATEGORIES=	x11-wm
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	53a6d4fd32cc.patch:-p1 # https://github.com/johanmalm/labwc/pull/19
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Openbox alternative for Wayland
 
@@ -28,6 +31,7 @@ OPTIONS_DEFINE=	MANPAGES SUID X11
 OPTIONS_DEFAULT=MANPAGES SUID X11
 
 MANPAGES_BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
+MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
 			man/man5/${PORTNAME}-actions.5.gz \
 			man/man5/${PORTNAME}-config.5.gz \
@@ -43,9 +47,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
 		${WRKSRC}/docs/${PORTNAME}-config.5.md \
 		${WRKSRC}/src/common/dir.c
-
-post-patch-MANPAGES-off:
-	@${REINPLACE_CMD} "s/'pandoc/&-disabled/" ${WRKSRC}/docs/meson.build
 
 post-install-MANPAGES-on:
 	@${MV} ${STAGEDIR}${PREFIX}/man/man*.1/* ${STAGEDIR}${PREFIX}/man/man1
