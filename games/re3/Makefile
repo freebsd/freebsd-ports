@@ -7,6 +7,8 @@ CATEGORIES=	games
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Reverse-engineered GTA3 engine
 
+ONLY_FOR_ARCHS=	aarch64 armv6 armv7 amd64 i386
+
 BUILD_DEPENDS=	premake5:devel/premake5
 LIB_DEPENDS=	libglfw.so:graphics/glfw \
 		libmpg123.so:audio/mpg123 \
