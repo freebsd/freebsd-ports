@@ -78,6 +78,156 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f00b65d8-7ccb-11eb-b3be-e09467587c17">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>89.0.4389.72</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/03/stable-channel-update-for-desktop.html">
+	  <p>This release includes 47 security fixes, including the below.
+	  Google is aware of reports that an exploit for CVE-2021-21166 exists
+	  in the wild.</p>
+	  <ul>
+	    <li>[1171049] High CVE-2021-21159: Heap buffer overflow in
+	      TabStrip. Reported by Khalil Zhani on 2021-01-27</li>
+	    <li>[1170531] High CVE-2021-21160: Heap buffer overflow in
+	      WebAudio. Reported by Marcin 'Icewall' Noga of Cisco Talos on
+	      2021-01-25</li>
+	    <li>[1173702] High CVE-2021-21161: Heap buffer overflow in
+	      TabStrip. Reported by Khalil Zhani on 2021-02-02</li>
+	    <li>[1172054] High CVE-2021-21162: Use after free in WebRTC.
+	      Reported by Anonymous on 2021-01-29</li>
+	    <li>[1111239] High CVE-2021-21163: Insufficient data validation in
+	      Reader Mode. Reported by Alison Huffman, Microsoft Browser
+	      Vulnerability Research on 2020-07-30</li>
+	    <li>[1164846] High CVE-2021-21164: Insufficient data validation in
+	      Chrome for iOS. Reported by Muneaki Nishimura (nishimunea) on
+	      2021-01-11</li>
+	    <li>[1174582] High CVE-2021-21165: Object lifecycle issue in audio.
+	      Reported by Alison Huffman, Microsoft Browser Vulnerability
+	      Research on 2021-02-04</li>
+	    <li>[1177465] High CVE-2021-21166: Object lifecycle issue in audio.
+	      Reported by Alison Huffman, Microsoft Browser Vulnerability
+	      Research on 2021-02-11</li>
+	    <li>[1161144] Medium CVE-2021-21167: Use after free in bookmarks.
+	      Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2020-12-22</li>
+	    <li>[1152226] Medium CVE-2021-21168: Insufficient policy
+	      enforcement in appcache. Reported by Luan Herrera (@lbherrera_)
+	      on 2020-11-24</li>
+	    <li>[1166138] Medium CVE-2021-21169: Out of bounds memory access in
+	      V8. Reported by Bohan Liu (@P4nda20371774) and Moon Liang of
+	      Tencent Security Xuanwu Lab on 2021-01-13</li>
+	    <li>[1111646] Medium CVE-2021-21170: Incorrect security UI in
+	      Loader. Reported by David Erceg on 2020-07-31</li>
+	    <li>[1152894] Medium CVE-2021-21171: Incorrect security UI in
+	      TabStrip and Navigation. Reported by Irvan Kurniawan (sourc7) on
+	      2020-11-25</li>
+	    <li>[1150810] Medium CVE-2021-21172: Insufficient policy
+	      enforcement in File System API. Reported by Maciej Pulikowski on
+	      2020-11-19</li>
+	    <li>[1154250] Medium CVE-2021-21173: Side-channel information
+	      leakage in Network Internals. Reported by Tom Van Goethem from
+	      imec-DistriNet, KU Leuven on 2020-12-01</li>
+	    <li>[1158010] Medium CVE-2021-21174: Inappropriate implementation
+	      in Referrer. Reported by Ashish Gautam Kamble on 2020-12-11</li>
+	    <li>[1146651] Medium CVE-2021-21175: Inappropriate implementation
+	      in Site isolation. Reported by Jun Kokatsu, Microsoft Browser
+	      Vulnerability Research on 2020-11-07</li>
+	    <li>[1170584] Medium CVE-2021-21176: Inappropriate implementation
+	      in full screen mode. Reported by Luan Herrera (@lbherrera_) on
+	      2021-01-26</li>
+	    <li>[1173879] Medium CVE-2021-21177: Insufficient policy
+	      enforcement in Autofill. Reported by Abdulrahman Alqabandi,
+	      Microsoft Browser Vulnerability Research on 2021-02-03</li>
+	    <li>[1174186] Medium CVE-2021-21178: Inappropriate implementation
+	      in Compositing. Reported by Japong on 2021-02-03</li>
+	    <li>[1174943] Medium CVE-2021-21179: Use after free in Network
+	      Internals. Reported by Anonymous on 2021-02-05</li>
+	    <li>[1175507] Medium CVE-2021-21180: Use after free in tab search.
+	      Reported by Abdulrahman Alqabandi, Microsoft Browser
+	      Vulnerability Research on 2021-02-07</li>
+	    <li>[1177875] Medium CVE-2020-27844: Heap buffer overflow in
+	      OpenJPEG. Reported by Sean Campbell at Tableau on 2021-02-12</li>
+	    <li>[1182767] Medium CVE-2021-21181: Side-channel information
+	      leakage in autofill. Reported by Xu Lin (University of Illinois
+	      at Chicago), Panagiotis Ilia (University of Illinois at Chicago),
+	      Jason Polakis (University of Illinois at Chicago) on
+	      2021-02-26</li>
+	    <li>[1049265] Low CVE-2021-21182: Insufficient policy enforcement
+	      in navigations. Reported by Luan Herrera (@lbherrera_) on
+	      2020-02-05</li>
+	    <li>[1105875] Low CVE-2021-21183: Inappropriate implementation in
+	      performance APIs. Reported by Takashi Yoneuchi (@y0n3uchy) on
+	      2020-07-15</li>
+	    <li>[1131929] Low CVE-2021-21184: Inappropriate implementation in
+	      performance APIs. Reported by James Hartig on 2020-09-24</li>
+	    <li>[1100748] Low CVE-2021-21185: Insufficient policy enforcement
+	      in extensions. Reported by David Erceg on 2020-06-30</li>
+	    <li>[1153445] Low CVE-2021-21186: Insufficient policy enforcement
+	      in QR scanning. Reported by dhirajkumarnifty on 2020-11-28</li>
+	    <li>[1155516] Low CVE-2021-21187: Insufficient data validation in
+	      URL formatting. Reported by Kirtikumar Anandrao Ramchandani on
+	      2020-12-04</li>
+	    <li>[1161739] Low CVE-2021-21188: Use after free in Blink. Reported
+	      by Woojin Oh(@pwn_expoit) of STEALIEN on 2020-12-24</li>
+	    <li>[1165392] Low CVE-2021-21189: Insufficient policy enforcement
+	      in payments. Reported by Khalil Zhani on 2021-01-11</li>
+	    <li>[1166091] Low CVE-2021-21190: Uninitialized Use in PDFium.
+	      Reported by Zhou Aiting(@zhouat1) of Qihoo 360 Vulcan Team on
+	      2021-01-13</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21159</cvename>
+      <cvename>CVE-2021-21160</cvename>
+      <cvename>CVE-2021-21161</cvename>
+      <cvename>CVE-2021-21162</cvename>
+      <cvename>CVE-2021-21163</cvename>
+      <cvename>CVE-2021-21164</cvename>
+      <cvename>CVE-2021-21165</cvename>
+      <cvename>CVE-2021-21166</cvename>
+      <cvename>CVE-2021-21167</cvename>
+      <cvename>CVE-2021-21168</cvename>
+      <cvename>CVE-2021-21169</cvename>
+      <cvename>CVE-2021-21170</cvename>
+      <cvename>CVE-2021-21171</cvename>
+      <cvename>CVE-2021-21172</cvename>
+      <cvename>CVE-2021-21173</cvename>
+      <cvename>CVE-2021-21174</cvename>
+      <cvename>CVE-2021-21175</cvename>
+      <cvename>CVE-2021-21176</cvename>
+      <cvename>CVE-2021-21177</cvename>
+      <cvename>CVE-2021-21178</cvename>
+      <cvename>CVE-2021-21179</cvename>
+      <cvename>CVE-2021-21180</cvename>
+      <cvename>CVE-2021-21181</cvename>
+      <cvename>CVE-2021-21182</cvename>
+      <cvename>CVE-2021-21183</cvename>
+      <cvename>CVE-2021-21184</cvename>
+      <cvename>CVE-2021-21185</cvename>
+      <cvename>CVE-2021-21186</cvename>
+      <cvename>CVE-2021-21187</cvename>
+      <cvename>CVE-2021-21188</cvename>
+      <cvename>CVE-2021-21189</cvename>
+      <cvename>CVE-2021-21190</cvename>
+      <cvename>CVE-2020-27844</cvename>
+      <url>https://chromereleases.googleblog.com/2021/03/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2021-03-02</discovery>
+      <entry>2021-03-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3a469cbc-7a66-11eb-bd3f-08002728f74c">
     <topic>jasper -- multiple vulnerabilities</topic>
     <affects>
