@@ -1,5 +1,5 @@
-TIMESTAMP = 1612330851
-SHA256 (KDE/release-service/20.12.2/kalzium-20.12.2.tar.xz) = 8f7bbcf7f1edc70cdb75f0c8b4b5537ee3969967617c0610dc8bfadaa702af49
-SIZE (KDE/release-service/20.12.2/kalzium-20.12.2.tar.xz) = 24521960
-SHA256 (KDE/release-service/20.12.2/2b9ebd85.diff) = 7ba89a187c30c37ba82cd5991f32333788853f0cb0ddb2122280e536ff53e8eb
-SIZE (KDE/release-service/20.12.2/2b9ebd85.diff) = 10977
+TIMESTAMP = 1614706332
+SHA256 (KDE/release-service/20.12.3/kalzium-20.12.3.tar.xz) = 8233969b13f104e8388a771df2561f49fa65a6913184a0d92c7d4ec4ecdcffe4
+SIZE (KDE/release-service/20.12.3/kalzium-20.12.3.tar.xz) = 24521912
+SHA256 (KDE/release-service/20.12.3/2b9ebd85.diff) = 7ba89a187c30c37ba82cd5991f32333788853f0cb0ddb2122280e536ff53e8eb
+SIZE (KDE/release-service/20.12.3/2b9ebd85.diff) = 10977

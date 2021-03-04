@@ -339,6 +339,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/effects/tcolor.xml
 %%DATADIR%%/effects/threshold.xml
 %%DATADIR%%/effects/tracker.xml
+%%DATADIR%%/effects/typewriter.xml
 %%DATADIR%%/effects/update/frei0r.balanc0r.js
 %%DATADIR%%/effects/update/frei0r.cartoon.js
 %%DATADIR%%/effects/update/frei0r.curves.js
@@ -426,6 +427,7 @@ share/icons/hicolor/scalable/mimetypes/video-mlt-playlist.svgz
 %%DATADIR%%/transitions/region.xml
 %%DATADIR%%/transitions/slide.xml
 %%DATADIR%%/transitions/wipe.xml
+share/locale/ia/LC_MESSAGES/kdenlive.mo
 share/knotifications5/kdenlive.notifyrc
 share/knsrcfiles/kdenlive_keyboardschemes.knsrc
 share/knsrcfiles/kdenlive_renderprofiles.knsrc

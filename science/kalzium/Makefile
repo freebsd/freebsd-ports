@@ -2,7 +2,6 @@
 
 PORTNAME=	kalzium
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	science education kde kde-applications
 
 PATCH_SITES=	https://invent.kde.org/education/kalzium/commit/

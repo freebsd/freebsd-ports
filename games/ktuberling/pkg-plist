@@ -1439,9 +1439,6 @@ share/icons/hicolor/64x64/mimetypes/application-x-tuberling.png
 %%DATADIR%%/sounds/sr/usta.ogg
 %%DATADIR%%/sounds/sr/uvo.ogg
 %%DATADIR%%/sounds/sr/znacka.ogg
-%%DATADIR%%/sounds/sr@ijekavian.soundtheme
-%%DATADIR%%/sounds/sr@ijekavianlatin.soundtheme
-%%DATADIR%%/sounds/sr@latin.soundtheme
 %%DATADIR%%/sounds/sv.soundtheme
 %%DATADIR%%/sounds/sv/fluga.wav
 %%DATADIR%%/sounds/sv/glasogon.wav

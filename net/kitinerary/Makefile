@@ -2,7 +2,6 @@
 
 PORTNAME=	kitinerary
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	3
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

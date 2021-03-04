@@ -80,7 +80,6 @@ share/icons/hicolor/scalable/apps/khangman.svgz
 %%DATADIR%%/qml/sounds/wrong.wav
 %%DATADIR%%/sk.txt
 %%DATADIR%%/sl.txt
-%%DATADIR%%/sr@latin.txt
 %%DATADIR%%/sv.txt
 %%DATADIR%%/themes/khangman_bees.svg
 %%DATADIR%%/themes/khangman_desert.svg

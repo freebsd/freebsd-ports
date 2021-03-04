@@ -70,9 +70,6 @@ share/locale/zh_TW/LC_MESSAGES/lokalize.mo
 %%DATADIR%%/icons/hicolor/16x16/actions/insert_arg.png
 %%DATADIR%%/icons/hicolor/16x16/actions/insert_tag.png
 %%DATADIR%%/icons/hicolor/16x16/actions/l10n/sr/approved.png
-%%DATADIR%%/icons/hicolor/16x16/actions/l10n/sr@ijekavian/approved.png
-%%DATADIR%%/icons/hicolor/16x16/actions/l10n/sr@ijekavianlatin/approved.png
-%%DATADIR%%/icons/hicolor/16x16/actions/l10n/sr@latin/approved.png
 %%DATADIR%%/icons/hicolor/16x16/actions/msgid2msgstr.png
 %%DATADIR%%/icons/hicolor/16x16/actions/nexterror.png
 %%DATADIR%%/icons/hicolor/16x16/actions/nextfuzzy.png
@@ -93,9 +90,6 @@ share/locale/zh_TW/LC_MESSAGES/lokalize.mo
 %%DATADIR%%/icons/hicolor/22x22/actions/insert_arg.png
 %%DATADIR%%/icons/hicolor/22x22/actions/insert_tag.png
 %%DATADIR%%/icons/hicolor/22x22/actions/l10n/sr/approved.png
-%%DATADIR%%/icons/hicolor/22x22/actions/l10n/sr@ijekavian/approved.png
-%%DATADIR%%/icons/hicolor/22x22/actions/l10n/sr@ijekavianlatin/approved.png
-%%DATADIR%%/icons/hicolor/22x22/actions/l10n/sr@latin/approved.png
 %%DATADIR%%/icons/hicolor/22x22/actions/msgid2msgstr.png
 %%DATADIR%%/icons/hicolor/22x22/actions/nexterror.png
 %%DATADIR%%/icons/hicolor/22x22/actions/nextfuzzy.png
@@ -117,9 +111,6 @@ share/locale/zh_TW/LC_MESSAGES/lokalize.mo
 %%DATADIR%%/icons/hicolor/32x32/actions/insert_arg.png
 %%DATADIR%%/icons/hicolor/32x32/actions/insert_tag.png
 %%DATADIR%%/icons/hicolor/32x32/actions/l10n/sr/approved.png
-%%DATADIR%%/icons/hicolor/32x32/actions/l10n/sr@ijekavian/approved.png
-%%DATADIR%%/icons/hicolor/32x32/actions/l10n/sr@ijekavianlatin/approved.png
-%%DATADIR%%/icons/hicolor/32x32/actions/l10n/sr@latin/approved.png
 %%DATADIR%%/icons/hicolor/32x32/actions/msgid2msgstr.png
 %%DATADIR%%/icons/hicolor/32x32/actions/nexterror.png
 %%DATADIR%%/icons/hicolor/32x32/actions/nextfuzzy.png
@@ -137,14 +128,8 @@ share/locale/zh_TW/LC_MESSAGES/lokalize.mo
 %%DATADIR%%/icons/hicolor/32x32/actions/transsearch.png
 %%DATADIR%%/icons/hicolor/48x48/actions/approved.png
 %%DATADIR%%/icons/hicolor/48x48/actions/l10n/sr/approved.png
-%%DATADIR%%/icons/hicolor/48x48/actions/l10n/sr@ijekavian/approved.png
-%%DATADIR%%/icons/hicolor/48x48/actions/l10n/sr@ijekavianlatin/approved.png
-%%DATADIR%%/icons/hicolor/48x48/actions/l10n/sr@latin/approved.png
 %%DATADIR%%/icons/hicolor/scalable/actions/approved.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/l10n/sr/approved.svgz
-%%DATADIR%%/icons/hicolor/scalable/actions/l10n/sr@ijekavian/approved.svgz
-%%DATADIR%%/icons/hicolor/scalable/actions/l10n/sr@ijekavianlatin/approved.svgz
-%%DATADIR%%/icons/hicolor/scalable/actions/l10n/sr@latin/approved.svgz
 %%DATADIR%%/icons/locolor/16x16/actions/catalogmanager.png
 %%DATADIR%%/icons/locolor/16x16/actions/diff.png
 %%DATADIR%%/icons/locolor/16x16/actions/insert_arg.png
