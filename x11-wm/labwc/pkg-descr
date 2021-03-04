@@ -1,0 +1,14 @@
+Labwc is a WIP free, wlroots-based stacking compositor for Wayland.
+
+It has the following aims:
+
+- Be light-weight, small and fast
+- Have the look and feel of openbox albeit with a smaller feature set
+- Where practicable, use clients to show wall-paper, take screenshots,
+  and so on
+- Stay in keeping with wlroots and sway in terms of approach and
+  coding style
+
+It is in early development, so expect bugs and missing features.
+
+WWW: https://github.com/johanmalm/labwc
