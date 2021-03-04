@@ -43,8 +43,9 @@ SUID_VARS=		MAYBE_SUID="@(,,4755) "
 X11_MESON_ENABLED=	xwayland
 
 post-patch:
-# Respect PREFIX for system-wide config
+# Respect PREFIX for system-wide config and Openbox themes
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
+		-e 's,/usr/local,${PREFIX},' \
 		${WRKSRC}/docs/${PORTNAME}-config.5.md \
 		${WRKSRC}/src/common/dir.c
 
