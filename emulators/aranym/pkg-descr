@@ -1,0 +1,8 @@
+ARAnyM is a multiplatform virtual machine (a software layer, or an emulator) for
+running Atari ST/TT/Falcon operating systems and applications on almost any
+hardware with many host operating systems. The reason for writing ARAnyM is to
+provide Atari power users with faster and better machines. The ultimate goal is
+to create a new platform where TOS/GEM applications could continue to live
+forever.
+
+WWW: https://aranym.github.io

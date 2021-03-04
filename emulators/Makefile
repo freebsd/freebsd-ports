@@ -10,6 +10,7 @@
     SUBDIR += almostti
     SUBDIR += anese
     SUBDIR += aqemu
+    SUBDIR += aranym
     SUBDIR += atari800
     SUBDIR += bfe
     SUBDIR += bochs

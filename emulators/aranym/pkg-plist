@@ -1,0 +1,32 @@
+bin/aranym
+man/man1/aranym-jit.1.gz
+man/man1/aranym-mmu.1.gz
+man/man1/aranym.1.gz
+share/applications/aranym-jit.desktop
+share/applications/aranym-mmu.desktop
+share/applications/aranym.desktop
+%%DATADIR%%/arabridge
+%%DATADIR%%/atari/hostfs/README
+%%DATADIR%%/atari/hostfs/bdconfig.sys
+%%DATADIR%%/atari/mmusetup.cnf
+%%DATADIR%%/atari/network/README
+%%DATADIR%%/atari/network/eth0-config.sh
+%%DATADIR%%/atari/newdesk.inf
+%%DATADIR%%/atari/nfosmesa/README
+%%DATADIR%%/atari/sound/README
+%%DATADIR%%/atari/tools/README
+%%DATADIR%%/atari/tools/pc101us.kbd.bz2
+%%DATADIR%%/floppy.sh
+%%DATADIR%%/logo.bmp
+%%DATADIR%%/wm_icon.bmp
+share/icons/hicolor/32x32/apps/aranym-jit.png
+share/icons/hicolor/32x32/apps/aranym-mmu.png
+share/icons/hicolor/32x32/apps/aranym.png
+share/icons/hicolor/48x48/apps/aranym-jit.png
+share/icons/hicolor/48x48/apps/aranym-mmu.png
+share/icons/hicolor/48x48/apps/aranym.png
+share/pixmaps/aranym-jit.png
+share/pixmaps/aranym-mmu.png
+share/pixmaps/aranym.png
+@dir %%DATADIR%%/atari/nfcdrom
+@dir %%DATADIR%%/atari/nfjpeg
