@@ -42,4 +42,4 @@ include/nanogui/vscrollpanel.h
 include/nanogui/widget.h
 include/nanogui/window.h
 lib/libnanogui.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/nanogui.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/nanogui%%PYTHON_EXT_SUFFIX%%.so

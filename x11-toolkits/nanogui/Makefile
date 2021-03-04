@@ -38,7 +38,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/nanovg/src/*.h ${STAGEDIR}${PREFIX}/include/nanogui/  # bundled dependency headers aren't installed
 
 post-install-PYTHON-on:
-	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	${MV} ${STAGEDIR}${PREFIX}/lib/nanogui.so ${STAGEDIR}${PYTHON_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${MV} ${STAGEDIR}${PREFIX}/lib/nanogui*.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>
