@@ -1,7 +1,7 @@
-TIMESTAMP = 1482091356
-SHA256 (centos/audiofile-0.3.6-4.el7.i686.rpm) = ea641388c065b00c477680e658e14ada6a4353f9fbe8d04606946c92831771e7
-SIZE (centos/audiofile-0.3.6-4.el7.i686.rpm) = 159732
-SHA256 (centos/audiofile-0.3.6-4.el7.x86_64.rpm) = 9303406bb9272770f149253b19dde96b7ff3213744564ec22c20fa1560b33fe7
-SIZE (centos/audiofile-0.3.6-4.el7.x86_64.rpm) = 156376
-SHA256 (centos/audiofile-0.3.6-4.el7.src.rpm) = e7c78c58e09f009adf03d0943ca42f7c53f2cad416c6bb5fd9884233185927dc
-SIZE (centos/audiofile-0.3.6-4.el7.src.rpm) = 821857
+TIMESTAMP = 1614792119
+SHA256 (centos/audiofile-0.3.6-9.el7.i686.rpm) = 17935cadafe9464a5bece2b8812fc4438c528a73acb1dc0b06c3fceab90b4263
+SIZE (centos/audiofile-0.3.6-9.el7.i686.rpm) = 161448
+SHA256 (centos/audiofile-0.3.6-9.el7.x86_64.rpm) = 6f9d2234fe904cb40cd23aa3f55f8fb48149d23514f0ac05626945e9df368da7
+SIZE (centos/audiofile-0.3.6-9.el7.x86_64.rpm) = 157792
+SHA256 (centos/audiofile-0.3.6-9.el7.src.rpm) = 11c619d4bdfc3b64e6ed8e3c08efb279d197b621565a6606a78f8c7127366924
+SIZE (centos/audiofile-0.3.6-9.el7.src.rpm) = 830584

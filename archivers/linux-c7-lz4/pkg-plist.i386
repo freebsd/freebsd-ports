@@ -3,10 +3,10 @@ usr/bin/lz4c
 usr/bin/lz4cat
 usr/bin/unlz4
 usr/lib/liblz4.so.1
-usr/lib/liblz4.so.1.7.5
+usr/lib/liblz4.so.1.8.3
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-usr/share/licenses/lz4-1.7.5/COPYING
-usr/share/licenses/lz4-1.7.5/LICENSE
+usr/share/licenses/lz4-1.8.3/COPYING
+usr/share/licenses/lz4-1.8.3/LICENSE
 usr/share/man/man1/lz4.1.gz
 usr/share/man/man1/lz4c.1.gz
 usr/share/man/man1/lz4cat.1.gz

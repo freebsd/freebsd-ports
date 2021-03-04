@@ -3,7 +3,6 @@
 
 PORTNAME=	devtools
 PORTVERSION=	${LINUX_DIST_VER}
-PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -16,33 +15,33 @@ USE_LDCONFIG=	yes
 USE_LINUX=	libgfortran
 USE_LINUX_RPM=	yes
 
-BUVERSION=	2.27-43.base.el7_8.1
+BUVERSION=	2.27-44.base.el7
 BIN_DISTNAMES=	binutils-${BUVERSION} \
-		glibc-headers-2.17-307.el7.1 \
+		glibc-headers-2.17-323.el7_9 \
 		mpfr-3.1.1-4.el7 \
-		cpp-4.8.5-39.el7 \
-		gcc-4.8.5-39.el7 \
-		gcc-c++-4.8.5-39.el7 \
-		gcc-gfortran-4.8.5-39.el7 \
-		libstdc++-devel-4.8.5-39.el7
+		cpp-4.8.5-44.el7 \
+		gcc-4.8.5-44.el7 \
+		gcc-c++-4.8.5-44.el7 \
+		gcc-gfortran-4.8.5-44.el7 \
+		libstdc++-devel-4.8.5-44.el7
 LIB_DISTNAMES=	binutils-devel-${BUVERSION} \
-		glibc-devel-2.17-307.el7.1 \
-		glibc-static-2.17-307.el7.1 \
-		libgomp-4.8.5-39.el7 \
+		glibc-devel-2.17-323.el7_9 \
+		glibc-static-2.17-323.el7_9 \
+		libgomp-4.8.5-44.el7 \
 		libmpc-1.0.1-3.el7
 DISTFILES_amd64=${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 		${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 		${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
-		kernel-headers-3.10.0-1127.18.2.el7${EXTRACT_SUFX_amd64}:amd64
+		kernel-headers-3.10.0-1160.15.2.el7${EXTRACT_SUFX_amd64}:amd64
 DISTFILES_i386=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 		${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:i386/} \
-		kernel-headers-3.10.0-1127.18.2.el7.centos.plus${EXTRACT_SUFX_i386}:i386
+		kernel-headers-3.10.0-1160.15.2.el7.centos.plus${EXTRACT_SUFX_i386}:i386
 SRC_DISTFILES=	binutils-${BUVERSION}${SRC_SUFX}:SOURCE \
-		glibc-2.17-307.el7.1${SRC_SUFX}:SOURCE \
-		kernel-3.10.0-1127.18.2.el7${SRC_SUFX}:SOURCE \
+		glibc-2.17-323.el7_9${SRC_SUFX}:SOURCE \
+		kernel-3.10.0-1160.15.2.el7${SRC_SUFX}:SOURCE \
 		libmpc-1.0.1-3.el7${SRC_SUFX}:SOURCE \
 		mpfr-3.1.1-4.el7${SRC_SUFX}:SOURCE \
-		gcc-4.8.5-39.el7${SRC_SUFX}:SOURCE
+		gcc-4.8.5-44.el7${SRC_SUFX}:SOURCE
 
 CONFLICTS=	linux-c6-${PORTNAME}-[0-9]*
 

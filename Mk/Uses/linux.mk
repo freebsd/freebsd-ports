@@ -34,7 +34,7 @@ linux_ARGS=		${LINUX_DEFAULT}
 .endif
 
 .if ${linux_ARGS} == c7
-LINUX_DIST_VER?=	7.8.2003
+LINUX_DIST_VER?=	7.9.2009
 .else
 IGNORE=			Invalid Linux distribution: ${linux_ARGS}
 .endif
@@ -136,6 +136,7 @@ _linux_${linux_ARGS}_tk85=		linux-${linux_ARGS}-tk85>0:x11-toolkits/linux-${linu
 _linux_c7_trousers=			linux-c7-trousers>0:security/linux-c7-trousers
 _linux_${linux_ARGS}_userspace-rcu=	linux-${linux_ARGS}-userspace-rcu>0:sysutils/linux-${linux_ARGS}-userspace-rcu
 _linux_c7_wayland=			linux-c7-wayland>0:graphics/linux-c7-wayland
+_linux_c7_xcb-util=			linux-c7-xcb-util>0:x11/linux-c7-xcb-util
 _linux_c7_xorglibs=			linux-c7-xorg-libs>=7.7_7:x11/linux-c7-xorg-libs
 
 USE_LINUX?=		base

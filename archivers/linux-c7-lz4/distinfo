@@ -1,7 +1,7 @@
-TIMESTAMP = 1568988359
-SHA256 (centos/lz4-1.7.5-3.el7.i686.rpm) = 896f34ccfe1fb2c7aaf37487d2ebbbc1af2fd947af8adc9fc29e0a6ce3ad5f11
-SIZE (centos/lz4-1.7.5-3.el7.i686.rpm) = 113704
-SHA256 (centos/lz4-1.7.5-3.el7.x86_64.rpm) = e3e6cafd1c39869e3f15eca1114d9e17dc93dda42de78c090f9433352535ad7c
-SIZE (centos/lz4-1.7.5-3.el7.x86_64.rpm) = 100896
-SHA256 (centos/lz4-1.7.5-3.el7.src.rpm) = 7cb577737afa60bb42fab76aea1384cf4226953d7fa0b684b70072bc2a403f62
-SIZE (centos/lz4-1.7.5-3.el7.src.rpm) = 221196
+TIMESTAMP = 1614791855
+SHA256 (centos/lz4-1.8.3-1.el7.i686.rpm) = 9aa6b289d17ef379b36157dd536bd79eee7bfd8547e37616d841f73339163317
+SIZE (centos/lz4-1.8.3-1.el7.i686.rpm) = 98452
+SHA256 (centos/lz4-1.8.3-1.el7.x86_64.rpm) = ee9f4ea262d18561d84bc94fcfa877701b25daf46bd55f85eb75a1a914796750
+SIZE (centos/lz4-1.8.3-1.el7.x86_64.rpm) = 86572
+SHA256 (centos/lz4-1.8.3-1.el7.src.rpm) = 1aa25b0d1ab34f77e924af89ac45c827d61851a335eb973e6df687424f455a1c
+SIZE (centos/lz4-1.8.3-1.el7.src.rpm) = 337290

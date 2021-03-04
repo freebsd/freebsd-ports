@@ -1,7 +1,7 @@
-TIMESTAMP = 1530377615
-SHA256 (centos/pulseaudio-utils-10.0-5.el7.i686.rpm) = 8a2afae6887293a20e1865175b9139047328869ff4282d7c88c6c7b7259aa803
-SIZE (centos/pulseaudio-utils-10.0-5.el7.i686.rpm) = 75884
-SHA256 (centos/pulseaudio-utils-10.0-5.el7.x86_64.rpm) = ed5987715aee1d3cc9eb9d03da673eed7207339a836f6927967254823dff9164
-SIZE (centos/pulseaudio-utils-10.0-5.el7.x86_64.rpm) = 78340
-SHA256 (centos/pulseaudio-10.0-5.el7.src.rpm) = 9969ff43a836545e3bcd5098631ad2a6cf0bd359de93f53eb23d506433b8c0ae
-SIZE (centos/pulseaudio-10.0-5.el7.src.rpm) = 1659109
+TIMESTAMP = 1614799369
+SHA256 (centos/pulseaudio-utils-10.0-6.el7_9.i686.rpm) = 3b5357fcea009c7567132140bb872fbbf73c78a0625cbf39ef6002178b898413
+SIZE (centos/pulseaudio-utils-10.0-6.el7_9.i686.rpm) = 76020
+SHA256 (centos/pulseaudio-utils-10.0-6.el7_9.x86_64.rpm) = 192e0475321fe56db4e9593f45ee8e350eefc332f30d7e62d1412741c38ef09b
+SIZE (centos/pulseaudio-utils-10.0-6.el7_9.x86_64.rpm) = 78400
+SHA256 (centos/pulseaudio-10.0-6.el7_9.src.rpm) = c3f78c9d68d54b7182449f5d24d142e166ff6188e5d567efec3408214b3bd59b
+SIZE (centos/pulseaudio-10.0-6.el7_9.src.rpm) = 1660006
