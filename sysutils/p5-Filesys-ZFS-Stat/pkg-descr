@@ -1,0 +1,4 @@
+Filesys::ZFS::Stat works on top BSD::Sysctl and provides handy access
+to kstat.zfs sysctl tree.
+
+WWW: https://github.com/glebius/Filesys-ZFS-Stat
