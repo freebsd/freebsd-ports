@@ -496,7 +496,9 @@
     SUBDIR += py-flask-mail
     SUBDIR += py-flufl.bounce
     SUBDIR += py-fuglu
+    SUBDIR += py-imapclient
     SUBDIR += py-mail-parser
+    SUBDIR += py-mailsuite
     SUBDIR += py-mailmanclient
     SUBDIR += py-mailnag
     SUBDIR += py-managesieve3
