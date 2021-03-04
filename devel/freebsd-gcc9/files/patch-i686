@@ -1,0 +1,13 @@
+--- gcc/config.gcc.orig	2020-08-19 09:37:17.455916000 -0700
++++ gcc/config.gcc	2020-08-19 10:19:33.883084000 -0700
+@@ -3346,7 +3346,9 @@ arch_without_sse2=no
+ arch_without_64bit=no
+ case ${target} in
+   i386-*-freebsd*)
+-    if test $fbsd_major -ge 6; then
++    if test $fbsd_major -ge 11; then
++      arch=i686
++    elif test $fbsd_major -ge 6; then
+       arch=i486
+     else
+       arch=i386

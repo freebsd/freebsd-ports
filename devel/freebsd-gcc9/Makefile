@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc
-PORTVERSION=	9.2.0
-PORTREVISION=	1
+PORTVERSION=	9.3.0
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
 PKGNAMEPREFIX=	${TARGETARCH}-
@@ -76,6 +75,10 @@ CONFIGURE_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 . if ${COMPILER_TYPE} == clang
 MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
 . endif
+.endif
+
+.if ${TARGETARCH} == "amd64" || ${TARGETARCH} == "powerpc64"
+CONFIGURE_ARGS+=--enable-multilib
 .endif
 
 .if ${ARCH} == "aarch64"
