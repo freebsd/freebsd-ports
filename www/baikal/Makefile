@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	baikal
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fruux/Baikal/releases/download/${PORTVERSION}/
