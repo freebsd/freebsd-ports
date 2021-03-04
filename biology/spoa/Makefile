@@ -25,10 +25,16 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	rvaser
 
-CMAKE_ON=	BUILD_SHARED_LIBS spoa_optimize_for_portability spoa_build_executable spoa_use_simde spoa_use_simde_nonvec spoa_use_simde_openmp spoa_generate_dispatch
+CMAKE_ON=	BUILD_SHARED_LIBS spoa_optimize_for_portability spoa_build_executable spoa_use_simde spoa_use_simde_nonvec spoa_use_simde_openmp
 CMAKE_OFF=	spoa_optimize_for_native
 
 LDFLAGS+=	-lz -lcpu_features
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+CMAKE_ARGS+=	-Dspoa_generate_dispatch:BOOL=ON
+.endif
 
 do-test:
 	@cd ${BUILD_WRKSRC} && \
