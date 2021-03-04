@@ -26,6 +26,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.TXT
 
 BROKEN_sparc64=	Does not configure on sparc64
+BROKEN_i386=	Does not configure on i386: Could not determine External PROJ major version
 
 BUILD_DEPENDS=	${PY_NUMPY} \
 		${PYTHON_SITELIBDIR}/six.py:devel/py-six@${PY_FLAVOR}
