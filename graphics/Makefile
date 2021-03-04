@@ -56,6 +56,7 @@
     SUBDIR += aoi
     SUBDIR += apngasm
     SUBDIR += apngdis
+    SUBDIR += appleseed
     SUBDIR += argyllcms
     SUBDIR += art
     SUBDIR += asciio

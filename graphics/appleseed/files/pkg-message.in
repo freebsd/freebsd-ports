@@ -1,0 +1,6 @@
+appleseed currently requires itself to be installed under common prefix:
+%%APPHOME%%.  To run CLI or GUI version, execute the following
+commands, respectively:
+
+	%%APPHOME%%/bin/appleseed.cli
+	%%APPHOME%%/bin/appleseed.studio

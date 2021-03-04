@@ -1,0 +1,31 @@
+--- CMakeLists.txt.orig	2019-08-31 15:49:01 UTC
++++ CMakeLists.txt
+@@ -732,9 +732,16 @@ install (
+         sandbox/share
+         sandbox/stylesheets
+     DESTINATION .
++    PATTERN "cmake" EXCLUDE
+ )
+ 
+ install (
++    DIRECTORY
++        sandbox/share/cmake
++    DESTINATION ../share
++)
++
++install (
+     FILES
+         scripts/cleanmany.py
+         scripts/convertmany.py
+@@ -754,11 +761,6 @@ install (
+         sandbox/schemas/settings.xsd
+         sandbox/schemas/project.xsd
+     DESTINATION schemas
+-)
+-
+-install (
+-    CODE "FILE (MAKE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/images)"
+-    CODE "FILE (MAKE_DIRECTORY ${CMAKE_INSTALL_PREFIX}/images/autosave)"
+ )
+ 
+ if (INSTALL_HEADERS)
