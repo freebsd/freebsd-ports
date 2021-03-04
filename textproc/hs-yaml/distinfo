@@ -1,6 +1,6 @@
-TIMESTAMP = 1590165165
-SHA256 (cabal/yaml-0.11.4.0.tar.gz) = da4ec8469bb5cc43d131ffee90e89a430a65baad4caa611e91cd9b684168c96c
-SIZE (cabal/yaml-0.11.4.0.tar.gz) = 29307
+TIMESTAMP = 1614885901
+SHA256 (cabal/yaml-0.11.5.0.tar.gz) = b28e748bd69948cb1b43694d4d7c74756e060e09ca91688d0485e23f19d6cdad
+SIZE (cabal/yaml-0.11.5.0.tar.gz) = 30049
 SHA256 (cabal/aeson-1.4.7.1/aeson-1.4.7.1.tar.gz) = 07e746655fd9bec81c59927c5617877ff4fcd81d0df45c5fb8ef154fb8f40294
 SIZE (cabal/aeson-1.4.7.1/aeson-1.4.7.1.tar.gz) = 277911
 SHA256 (cabal/aeson-1.4.7.1/revision/1.cabal) = 6d8d2fd959b7122a1df9389cf4eca30420a053d67289f92cdc0dbc0dab3530ba
