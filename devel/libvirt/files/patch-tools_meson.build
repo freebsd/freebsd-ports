@@ -1,0 +1,10 @@
+--- tools/meson.build.orig	2021-03-01 10:56:13 UTC
++++ tools/meson.build
+@@ -186,6 +186,7 @@ executable(
+     tools_dep,
+     readline_dep,
+     thread_dep,
++    keycode_dep,
+   ],
+   link_args: [
+     coverage_flags,

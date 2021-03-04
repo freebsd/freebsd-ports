@@ -1,0 +1,11 @@
+--- src/util/meson.build.orig	2021-03-01 10:56:13 UTC
++++ src/util/meson.build
+@@ -168,6 +168,8 @@ foreach name : keyname_list
+   )
+ endforeach
+ 
++keycode_dep = declare_dependency(sources: keycode_gen_sources)
++
+ io_helper_sources = [
+   'iohelper.c',
+ ]

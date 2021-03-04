@@ -34,6 +34,14 @@ man/man7/virkeyname-win32.7.gz
 man/man8/libvirtd.8.gz
 man/man8/virtlockd.8.gz
 man/man8/virtlogd.8.gz
+man/man8/virtnetworkd.8.gz
+man/man8/virtproxyd.8.gz
+man/man8/virtsecretd.8.gz
+man/man8/virtstoraged.8.gz
+man/man8/virtvboxd.8.gz
+%%BHYVE%%man/man8/virtbhyved.8.gz
+%%QEMU%%man/man8/virtqemud.8.gz
+%%XEN%%man/man8/virtxend.8.gz
 @sample %%ETCDIR%%/libvirt-admin.conf.sample
 @sample %%ETCDIR%%/libvirt.conf.sample
 @sample %%ETCDIR%%/libvirtd.conf.sample
@@ -274,6 +282,7 @@ share/augeas/lenses/virtvboxd.aug
 %%NLS%%share/locale/sv/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/te/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libvirt.mo
