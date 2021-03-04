@@ -78,6 +78,39 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9e8f0766-7d21-11eb-a2be-001999f8d30b">
+    <topic>asterisk -- Crash when negotiating T.38 with a zero port</topic>
+    <affects>
+      <package>
+	<name>asterisk16</name>
+	<range><lt>16.16.2</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>18.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories">
+	  <p>When Asterisk sends a re-invite initiating T.38 faxing
+	  and the endpoint responds with a m=image line and zero
+	  port, a crash will occur in Asterisk. This is a reoccurrence
+	  of AST-2019-004.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2019-15297</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2021-006.html</url>
+    </references>
+    <dates>
+      <discovery>2021-02-20</discovery>
+      <entry>2021-03-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f00b65d8-7ccb-11eb-b3be-e09467587c17">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
