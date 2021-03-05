@@ -3,7 +3,7 @@
 
 PORTNAME=	faust
 DISTVERSION=	2.30.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,11 +28,8 @@ SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench tools/sound2faust/
 LLVM_VERSION=	11 # earlier versions lack dump() function(s) that cause unresolved symbols in libfaust.so
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
-CMAKE_ON=	INCLUDE_DYNAMIC # only installs headers and not libs by default: https://github.com/grame-cncm/faust/issues/553
-CMAKE_ON+=	LLVM_BUILD CPP_BUILD OCPP_BUILD # enable backends
-CMAKE_ARGS=	-DLLVM_BACKEND=DYNAMIC -DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VERSION} \
-		-DC_BACKEND=DYNAMIC \
-		-DCPP_BACKEND=DYNAMIC
+CMAKE_ON=	INCLUDE_DYNAMIC # only installs headers and not libs without INCLUDE_DYNAMIC or INCLUDE_STATIC: https://github.com/grame-cncm/faust/issues/553
+CMAKE_ARGS=	-C ${FILESDIR}/backends.cmake -DLLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VERSION} \
 
 CXXFLAGS+=	-I${WRKSRC}/compiler/generator/cpp # fatal error: 'cpp_code_container.hh' file not found WHEN INCLUDE_STATIC=TRUE
 CXXFLAGS+=	`llvm-config${LLVM_VERSION} --cflags` -DLLVM_${LLVM_VERSION}0 # for the llvm backend
@@ -51,6 +48,10 @@ HTTPD_CMAKE_BOOL=	INCLUDE_HTTP
 HTTPD_LIB_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 
 PORTEXAMPLES=		*
+
+xpre-configure:
+	@${MKDIR} ${CONFIGURE_WRKSRC}
+	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${CMAKE_SOURCE_PATH}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/faust
