@@ -8,6 +8,7 @@ CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	96f6fb99f271.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/630
 PATCHFILES+=	231720f8b212.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
 PATCHFILES+=	48a7bfeb4687.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
 PATCHFILES+=	2b3c4983f937.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
@@ -63,14 +64,5 @@ OPTIONS_DEFINE=	NVIDIA
 NVIDIA_DESC=		EGLStream support for glamor on Xwayland
 NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
 NVIDIA_MESON_TRUE=	xwayland_eglstream
-
-do-install:
-# XXX Prevent Meson from installing unrelated files
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/hw/xwayland/Xwayland \
-		${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${BUILD_WRKSRC}/hw/xwayland/xwayland.pc \
-		${STAGEDIR}${PREFIX}/libdata/pkgconfig
-	${INSTALL_MAN} ${BUILD_WRKSRC}/hw/xwayland/Xwayland.1 \
-		${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
