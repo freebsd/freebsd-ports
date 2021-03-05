@@ -1,0 +1,114 @@
+# $FreeBSD$
+
+LLVM_COMMANDS=	\
+		bugpoint \
+		dsymutil \
+		llc \
+		lli \
+		llvm-addr2line \
+		llvm-ar \
+		llvm-as \
+		llvm-bcanalyzer \
+		llvm-bitcode-strip \
+		llvm-cat \
+		llvm-cfi-verify \
+		llvm-config \
+		llvm-cov \
+		llvm-cvtres \
+		llvm-cxxmap \
+		llvm-diff \
+		llvm-dis \
+		llvm-dlltool \
+		llvm-dwarfdump \
+		llvm-dwp \
+		llvm-elfabi \
+		llvm-exegesis \
+		llvm-extract \
+		llvm-gsymutil \
+		llvm-ifs \
+		llvm-install-name-tool \
+		llvm-jitlink \
+		llvm-libtool-darwin \
+		llvm-link \
+		llvm-lipo \
+		llvm-mc \
+		llvm-mca \
+		llvm-ml \
+		llvm-modextract \
+		llvm-mt \
+		llvm-nm \
+		llvm-objcopy \
+		llvm-objdump \
+		llvm-opt-report \
+		llvm-pdbutil \
+		llvm-profdata \
+		llvm-profgen \
+		llvm-ranlib \
+		llvm-rc \
+		llvm-readelf \
+		llvm-readobj \
+		llvm-reduce \
+		llvm-rtdyld \
+		llvm-size \
+		llvm-split \
+		llvm-stress \
+		llvm-strings \
+		llvm-strip \
+		llvm-symbolizer \
+		llvm-tblgen \
+		llvm-undname \
+		llvm-xray \
+		opt \
+		sancov \
+		split-file
+
+CLANG_COMMANDS=	\
+		c-index-test \
+		clang \
+		clang++ \
+		clang-check \
+		clang-cpp \
+		clang-extdef-mapping \
+		clang-format \
+		clang-offload-bundler \
+		clang-offload-wrapper \
+		clang-rename \
+		clang-scan-deps \
+		diagtool \
+		hmaptool \
+		scan-build \
+		scan-view
+
+EXTRAS_COMMANDS= \
+		clangd \
+		clang-apply-replacements \
+		clang-change-namespace \
+		clang-doc \
+		clang-include-fixer \
+		clang-move \
+		clang-query \
+		clang-reorder-fields \
+		clang-tidy \
+		find-all-symbols \
+		modularize \
+		pp-trace
+
+LIT_COMMANDS=	\
+		FileCheck \
+		lit \
+		llvm-lit
+
+LLD_COMMANDS=	\
+		ld.lld \
+		ld64.lld \
+		ld64.lld.darwinnew \
+		lld \
+		lld-link \
+		wasm-ld
+
+LLDB_COMMANDS=	\
+		lldb \
+		lldb-argdumper \
+		lldb-instr \
+		lldb-server \
+		lldb-vscode

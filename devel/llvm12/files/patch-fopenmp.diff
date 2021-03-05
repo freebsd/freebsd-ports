@@ -1,0 +1,14 @@
+--- clang/lib/Driver/ToolChains/CommonArgs.cpp.orig	2017-05-10 17:18:56.000000000 +0000
++++ clang/lib/Driver/ToolChains/CommonArgs.cpp	2017-05-10 23:01:17.087686000 +0000
+@@ -441,7 +441,10 @@
+ 
+   switch (TC.getDriver().getOpenMPRuntime(Args)) {
+   case Driver::OMPRT_OMP:
+-    CmdArgs.push_back("-lomp");
++    if (TC.getTriple().getOS() != llvm::Triple::FreeBSD || TC.isCrossCompiling() || !llvm::sys::fs::exists("%%LLVM_PREFIX%%/lib/libomp.so"))
++      CmdArgs.push_back("-lomp");
++    else
++      CmdArgs.push_back("%%LLVM_PREFIX%%/lib/libomp.so");
+     break;
+   case Driver::OMPRT_GOMP:
+     CmdArgs.push_back("-lgomp");
