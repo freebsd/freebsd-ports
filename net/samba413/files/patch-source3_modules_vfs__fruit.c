@@ -50,19 +50,29 @@ Signed-off-by: Ralph Boehme <slow@samba.org>
  	}
  
  	return ai;
---- source3/modules/vfs_fruit.c.orig	2020-05-08 09:37:56 UTC
+--- source3/modules/vfs_fruit.c.orig	2021-01-26 08:16:58 UTC
 +++ source3/modules/vfs_fruit.c
-@@ -2191,9 +2191,20 @@ static ssize_t fruit_pread_meta_stream(vfs_handle_stru
- {
+@@ -2146,13 +2146,30 @@ static ssize_t fruit_pread_meta_stream(vfs_handle_stru
+ 	struct fio *fio = (struct fio *)VFS_FETCH_FSP_EXTENSION(handle, fsp);
  	ssize_t nread;
  	int ret;
 +	char *p = (char *)data;
  
+ 	if (fio->fake_fd) {
+ 		return -1;
+ 	}
+ 
  	nread = SMB_VFS_NEXT_PREAD(handle, fsp, data, n, offset);
 -	if (nread == -1 || nread == n) {
-+
-+	if (nread == -1) {
-+		return -1;
++	if (nread <= 0) {
++		/*
++		 * fruit_meta_open_stream() removes O_CREAT flag
++		 * from xattr open. This results in vfs_streams_xattr
++		 * not generating an FSP extension for the files_struct
++		 * and causes subsequent pread() of stream to return
++		 * nread=0 if pread() occurs before pwrite().
++		 */
++		return nread;
 +	}
 +
 +	if (nread == n) {

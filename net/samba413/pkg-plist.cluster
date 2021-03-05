@@ -1,0 +1,78 @@
+@comment Cluster
+bin/ctdb
+bin/ctdb_diagnostics
+bin/ltdbtool
+bin/onnode
+bin/ping_pong
+etc/ctdb/ctdb-crash-cleanup.sh
+etc/ctdb/debug_locks.sh
+etc/ctdb/debug-hung-script.sh
+etc/ctdb/events/legacy/00.ctdb.script
+etc/ctdb/events/legacy/01.reclock.script
+etc/ctdb/events/legacy/05.system.script
+etc/ctdb/events/legacy/10.interface.script
+etc/ctdb/events/notification/README
+etc/ctdb/functions
+etc/ctdb/nfs-checks.d/00.portmapper.check
+etc/ctdb/nfs-checks.d/10.status.check
+etc/ctdb/nfs-checks.d/20.nfs.check
+etc/ctdb/nfs-checks.d/30.nlockmgr.check
+etc/ctdb/nfs-checks.d/40.mountd.check
+etc/ctdb/nfs-checks.d/50.rquotad.check
+etc/ctdb/nfs-checks.d/README
+etc/ctdb/nfs-linux-kernel-callout
+etc/ctdb/notify.sh
+etc/ctdb/statd-callout
+etc/sudoers.d/ctdb
+lib/samba4/private/libctdb-event-client-samba4.so
+libexec/ctdb/ctdb_killtcp
+libexec/ctdb/ctdb_lock_helper
+libexec/ctdb/ctdb_lvs
+libexec/ctdb/ctdb_mutex_fcntl_helper
+libexec/ctdb/ctdb_natgw
+libexec/ctdb/ctdb_recovery_helper
+libexec/ctdb/ctdb_takeover_helper
+libexec/ctdb/ctdb-config
+libexec/ctdb/ctdb-event
+libexec/ctdb/ctdb-eventd
+libexec/ctdb/ctdb-path
+libexec/ctdb/smnotify
+man/man1/ctdb_diagnostics.1.gz
+man/man1/ctdb.1.gz
+man/man1/ctdbd_wrapper.1.gz
+man/man1/ctdbd.1.gz
+man/man1/ltdbtool.1.gz
+man/man1/onnode.1.gz
+man/man1/ping_pong.1.gz
+man/man5/ctdb-script.options.5.gz
+man/man5/ctdb.conf.5.gz
+man/man5/ctdb.sysconfig.5.gz
+man/man7/ctdb-statistics.7.gz
+man/man7/ctdb-tunables.7.gz
+man/man7/ctdb.7.gz
+sbin/ctdbd
+sbin/ctdbd_wrapper
+share/ctdb/events/legacy/00.ctdb.script
+share/ctdb/events/legacy/01.reclock.script
+share/ctdb/events/legacy/05.system.script
+share/ctdb/events/legacy/06.nfs.script
+share/ctdb/events/legacy/10.interface.script
+share/ctdb/events/legacy/11.natgw.script
+share/ctdb/events/legacy/11.routing.script
+share/ctdb/events/legacy/13.per_ip_routing.script
+share/ctdb/events/legacy/20.multipathd.script
+share/ctdb/events/legacy/31.clamd.script
+share/ctdb/events/legacy/40.vsftpd.script
+share/ctdb/events/legacy/41.httpd.script
+share/ctdb/events/legacy/48.netbios.script
+share/ctdb/events/legacy/49.winbind.script
+share/ctdb/events/legacy/50.samba.script
+share/ctdb/events/legacy/60.nfs.script
+share/ctdb/events/legacy/70.iscsi.script
+share/ctdb/events/legacy/91.lvs.script
+@dir /var/lib/ctdb/volatile
+@dir /var/lib/ctdb/state
+@dir /var/lib/ctdb/persistent
+@dir /var/lib/ctdb
+@dir /var/lib
+@dir /var/run/ctdb
