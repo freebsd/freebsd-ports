@@ -1,13 +1,13 @@
 https://github.com/lagadic/visp/issues/423
 
---- CMakeLists.txt.orig	2020-02-14 13:41:31 UTC
+--- CMakeLists.txt.orig	2021-03-05 01:09:20 UTC
 +++ CMakeLists.txt
-@@ -817,7 +817,7 @@ if(UNIX AND NOT ANDROID)
-     )
-     install(FILES
-       ${VISP_BINARY_DIR}/doc/man/man1/visp-config.1.gz
--      DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/man/man1
-+      DESTINATION man/man1
-       PERMISSIONS OWNER_READ GROUP_READ WORLD_READ OWNER_WRITE
-       COMPONENT dev
-     )
+@@ -230,7 +230,7 @@ else() # UNIX
+     vp_update(VISP_LIB_INSTALL_PATH       "${CMAKE_INSTALL_LIBDIR}")
+   endif()
+   vp_update(VISP_BIN_INSTALL_PATH         "${CMAKE_INSTALL_BINDIR}")
+-  vp_update(VISP_INSTALL_DATAROOTDIR      "${CMAKE_INSTALL_DATAROOTDIR}/visp-${VISP_VERSION}")
++  vp_update(VISP_INSTALL_DATAROOTDIR      "${CMAKE_INSTALL_DATAROOTDIR}/visp")
+   vp_update(VISP_3P_LIB_INSTALL_PATH      "${VISP_LIB_INSTALL_PATH}/visp/3rdparty")
+   vp_update(VISP_SAMPLES_SRC_INSTALL_PATH "${VISP_INSTALL_DATAROOTDIR}/samples")
+   vp_update(VISP_JAR_INSTALL_PATH         "${VISP_INSTALL_DATAROOTDIR}/java")

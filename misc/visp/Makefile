@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	visp
-DISTVERSION=	3.3.0
-PORTREVISION=	5
+DISTVERSION=	3.4.0
 CATEGORIES=	misc
-MASTER_SITES=	http://gforge.inria.fr/frs/download.php/latestfile/475/
+MASTER_SITES=	https://visp-doc.inria.fr/download/releases/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modular library for visual tracking and visual servoing
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libpng.so:graphics/png \
 		libv4l2.so:multimedia/libv4l
 
-USES=		cmake compiler:c++14-lang eigen:3 fortran gnome jpeg xorg
+USES=		cmake compiler:c++14-lang eigen:3 fortran gnome jpeg xorg zip
 USE_GNOME=	libxml2
 USE_XORG=	ice sm x11 xext
 USE_LDCONFIG=	yes
