@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lagrange
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	www
 MASTER_SITES=	https://git.skyjake.fi/skyjake/${PORTNAME}/releases/download/v${DISTVERSION}/
 
