@@ -3,6 +3,7 @@
 
 PORTNAME=	Horde_Log
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils www pear
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
@@ -16,6 +17,6 @@ USES=	horde
 USE_HORDE_RUN=	Horde_Constraint \
 		Horde_Exception
 
-SCRIBE_USE=	HORDE=Horde_Scribe
+SCRIBE_USE=	HORDE_RUN=Horde_Scribe
 
 .include <bsd.port.mk>
