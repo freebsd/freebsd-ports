@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	suitesparse
-PORTVERSION=	5.8.1
+PORTVERSION=	5.9.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -41,7 +40,7 @@ OPTIONS_DEFINE=		DEMOS DOCS OPENMP # TBB
 OPTIONS_EXCLUDE_aarch64=	OPENMP
 OPTIONS_RADIO=		BLAS
 OPTIONS_RADIO_BLAS=	ATLAS GOTOBLAS NETLIB OPENBLAS
-OPTIONS_DEFAULT=	OPENBLAS OPENMP TBB
+OPTIONS_DEFAULT=	OPENBLAS OPENMP # TBB
 
 ATLAS_USES=		blaslapack:atlas
 GOTOBLAS_DESC=		Goto blas implementation
@@ -62,6 +61,7 @@ DEMOS_ALL_TARGET_OFF=	library
 TBB_DESC=		Intel threading building blocks
 TBB_LIB_DEPENDS=	libtbb.so:devel/tbb
 TBB_MAKE_ENV=		TBB="-ltbb" SPQR_CONFIG="-DHAVE_TBB"
+# See https://github.com/DrTimothyAldenDavis/SuiteSparse/issues/72
 TBB_BROKEN=		oneTBB doesn't provide tbb/task_scheduler_init.h any more, see PR 252651
 
 MODULES=	AMD CAMD CCOLAMD CHOLMOD COLAMD CSparse CXSparse_newfiles	\
