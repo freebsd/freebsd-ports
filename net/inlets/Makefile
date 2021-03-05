@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	inlets
-DISTVERSION=	3.0.0
+DISTVERSION=	3.0.1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org

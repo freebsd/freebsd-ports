@@ -1,6 +1,6 @@
-TIMESTAMP = 1612735851
-SHA256 (inlets-inlets-3.0.0_GH0.tar.gz) = a58f8831c92c7edb3a868eb01d91baa4623c1b225717ffc2770d01baa664b81d
-SIZE (inlets-inlets-3.0.0_GH0.tar.gz) = 3768934
+TIMESTAMP = 1614981649
+SHA256 (inlets-inlets-3.0.1_GH0.tar.gz) = c3d23dd4da9a9cb04cea38a70f17c6120171476debc6d2e6a4bb174ea616b318
+SIZE (inlets-inlets-3.0.1_GH0.tar.gz) = 3768952
 SHA256 (beorn7-perks-v1.0.1_GH0.tar.gz) = 98db84bb0224a26094e6adba91b7ee7a1a7ace28cb648d818f8e779e6a19f825
 SIZE (beorn7-perks-v1.0.1_GH0.tar.gz) = 10867
 SHA256 (cespare-xxhash-v2.1.1_GH0.tar.gz) = 0ee31178d2c5a1249be4e26294a2f428008dc4e1ecbbfbe47f74e41026df1148
