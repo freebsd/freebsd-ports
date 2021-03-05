@@ -19,8 +19,6 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libsndfile.so:audio/libsndfile
 
-BROKEN_powerpc64=	fails to compile: invokes x86 assembly
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	rheit
 
@@ -28,7 +26,8 @@ PORTSCOUT=	limit:^.+\.[1-9]{1,3}[1-8]?$$
 
 DATADIR=	${DMDIR}/${PORTNAME}
 
-USES=		cmake gettext gnome jpeg openal pkgconfig sdl
+USES=		cmake dos2unix gettext gnome jpeg openal pkgconfig sdl
+DOS2UNIX_FILES=	src/p_spec.cpp
 USE_GNOME=	atk cairo gdkpixbuf2 gtk20 pango
 USE_SDL=	sdl2
 CMAKE_ARGS=	-DNO_FMOD:BOOL=ON
