@@ -57,6 +57,7 @@
 %%MANPAGES%%man/man1/gh-repo-clone.1.gz
 %%MANPAGES%%man/man1/gh-repo-create.1.gz
 %%MANPAGES%%man/man1/gh-repo-fork.1.gz
+%%MANPAGES%%man/man1/gh-repo-list.1.gz
 %%MANPAGES%%man/man1/gh-repo-view.1.gz
 %%MANPAGES%%man/man1/gh-repo.1.gz
 %%MANPAGES%%man/man1/gh-secret-list.1.gz
