@@ -1,3 +1,3 @@
-TIMESTAMP = 1614518572
-SHA256 (grpcio-1.36.0.tar.gz) = 70b11805bc9385fcd24e15bcdc5bd8bed463026cd2227d9fdd1ebda612ba0cd9
-SIZE (grpcio-1.36.0.tar.gz) = 21469318
+TIMESTAMP = 1614918679
+SHA256 (grpcio-1.36.1.tar.gz) = a66ea59b20f3669df0f0c6a3bd57b985e5b2d1dcf3e4c29819bb8dc232d0fd38
+SIZE (grpcio-1.36.1.tar.gz) = 21469482
