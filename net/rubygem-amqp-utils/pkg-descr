@@ -1,6 +1,7 @@
-Command line utilies for interacting with AMQP compliant queues.
-The intention is provide simple management tools that can be used to complete
-ad hoc housework on an AMQP queue.
+Command-line utilities for interacting with AMQP-compliant queues.
+The intention is provide simple management tools that can be used
+to complete ad hoc housework on an AMQP queue.
+
 In addition, simple scripts can be layered over the tools when needed.
 
 WWW: https://github.com/dougbarth/amqp-utils

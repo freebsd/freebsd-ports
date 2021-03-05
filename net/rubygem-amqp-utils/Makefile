@@ -8,7 +8,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	loic-freebsd@loicp.eu
-COMMENT=	Command line utilies for interacting with AMQP compliant queues
+COMMENT=	Command-line utilities to work with AMQP-compliant queues
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License.txt
@@ -25,7 +25,8 @@ NO_ARCH=	yes
 USE_RUBY=	yes
 USES=		gem
 
-PLIST_FILES=	bin/amqp-deleteq bin/amqp-dequeue bin/amqp-enqueue bin/amqp-peek bin/amqp-pop \
+PLIST_FILES=	bin/amqp-deleteq bin/amqp-dequeue bin/amqp-enqueue \
+		bin/amqp-peek bin/amqp-pop \
 		bin/amqp-purge bin/amqp-spy bin/amqp-statq bin/amqp-unbind \
 		bin/amqp-delexch bin/amqp-exchange
 
