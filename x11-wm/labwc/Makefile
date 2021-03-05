@@ -1,12 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	labwc
-PORTVERSION=	s20210303
+PORTVERSION=	s20210304
 CATEGORIES=	x11-wm
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	53a6d4fd32cc.patch:-p1 # https://github.com/johanmalm/labwc/pull/19
-PATCHFILES+=	3cef83d9dc77.patch:-p1 # https://github.com/johanmalm/labwc/pull/20
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Openbox alternative for Wayland
@@ -22,7 +18,7 @@ LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 
 USES=		compiler:c11 gnome meson pkgconfig xorg
 USE_GITHUB=	yes
-GH_TAGNAME=	2738ff2
+GH_TAGNAME=	db4249d
 USE_GNOME=	cairo libxml2 pango
 USE_XORG=	pixman
 GH_ACCOUNT=	johanmalm
