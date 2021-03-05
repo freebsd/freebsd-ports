@@ -2,7 +2,7 @@
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.4
+DISTVERSION=	1.2.7
 CATEGORIES=	misc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -21,8 +21,9 @@ GH_ACCOUNT=	canop
 
 CARGO_CRATES=	adler-0.2.3 \
 		adler32-1.2.0 \
+		ahash-0.7.0 \
 		aho-corasick-0.7.15 \
-		ansi_colours-1.0.1 \
+		ansi_colours-1.0.2 \
 		ansi_term-0.11.0 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.2 \
@@ -33,7 +34,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		bincode-1.3.1 \
 		bitflags-1.2.1 \
 		blake2b_simd-0.5.11 \
-		bstr-0.2.14 \
+		bstr-0.2.15 \
 		bumpalo-3.6.0 \
 		bytemuck-1.5.0 \
 		byteorder-1.4.2 \
@@ -44,9 +45,8 @@ CARGO_CRATES=	adler-0.2.3 \
 		char_reader-0.1.0 \
 		chrono-0.4.19 \
 		clap-2.33.3 \
-		cli-log-0.1.0 \
+		cli-log-1.1.0 \
 		clipboard-win-4.0.3 \
-		cloudabi-0.0.3 \
 		color_quant-1.1.0 \
 		const_fn-0.4.5 \
 		constant_time_eq-0.1.5 \
@@ -59,8 +59,8 @@ CARGO_CRATES=	adler-0.2.3 \
 		crossbeam-epoch-0.9.1 \
 		crossbeam-queue-0.3.1 \
 		crossbeam-utils-0.8.1 \
-		crossterm-0.17.7 \
-		crossterm_winapi-0.6.2 \
+		crossterm-0.19.0 \
+		crossterm_winapi-0.7.0 \
 		csv-1.1.5 \
 		csv-core-0.1.10 \
 		custom_error-1.8.0 \
@@ -86,6 +86,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		idna-0.2.1 \
 		image-0.23.13 \
 		indexmap-1.6.1 \
+		instant-0.1.9 \
 		is_executable-0.1.2 \
 		itertools-0.9.0 \
 		itertools-0.10.0 \
@@ -97,18 +98,18 @@ CARGO_CRATES=	adler-0.2.3 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		lfs-core-0.3.1 \
-		libc-0.2.85 \
+		libc-0.2.86 \
 		libgit2-sys-0.12.18+1.1.0 \
 		libz-sys-1.1.2 \
 		line-wrap-0.1.1 \
 		linked-hash-map-0.5.4 \
-		lock_api-0.3.4 \
+		lock_api-0.4.2 \
 		log-0.4.14 \
 		matches-0.1.8 \
 		memchr-2.3.4 \
 		memmap-0.7.0 \
 		memoffset-0.6.1 \
-		minimad-0.6.9 \
+		minimad-0.7.0 \
 		miniz_oxide-0.3.7 \
 		miniz_oxide-0.4.3 \
 		mio-0.7.7 \
@@ -124,8 +125,8 @@ CARGO_CRATES=	adler-0.2.3 \
 		onig_sys-69.6.0 \
 		oorandom-11.1.3 \
 		open-1.4.0 \
-		parking_lot-0.10.2 \
-		parking_lot_core-0.7.2 \
+		parking_lot-0.11.1 \
+		parking_lot_core-0.8.3 \
 		pathdiff-0.1.0 \
 		percent-encoding-2.1.0 \
 		phf-0.8.0 \
@@ -141,20 +142,20 @@ CARGO_CRATES=	adler-0.2.3 \
 		ppv-lite86-0.2.10 \
 		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.24 \
-		quote-1.0.8 \
+		quote-1.0.9 \
 		rand-0.7.3 \
 		rand-0.8.3 \
 		rand_chacha-0.2.2 \
 		rand_chacha-0.3.0 \
 		rand_core-0.5.1 \
-		rand_core-0.6.1 \
+		rand_core-0.6.2 \
 		rand_hc-0.2.0 \
 		rand_hc-0.3.0 \
 		rand_pcg-0.2.1 \
 		rayon-1.5.0 \
 		rayon-core-1.9.0 \
 		redox_syscall-0.1.57 \
-		redox_syscall-0.2.4 \
+		redox_syscall-0.2.5 \
 		redox_users-0.3.5 \
 		regex-1.4.3 \
 		regex-automata-0.1.9 \
@@ -186,8 +187,9 @@ CARGO_CRATES=	adler-0.2.3 \
 		syn-1.0.60 \
 		syntect-4.5.0 \
 		tempfile-3.2.0 \
-		termimad-0.9.5 \
-		terminal-clipboard-0.1.1 \
+		termimad-0.10.0 \
+		terminal-clipboard-0.2.1 \
+		termux-clipboard-0.1.0 \
 		textwrap-0.11.0 \
 		thiserror-1.0.23 \
 		thiserror-impl-1.0.23 \
@@ -200,13 +202,14 @@ CARGO_CRATES=	adler-0.2.3 \
 		toml-0.5.8 \
 		umask-1.0.0 \
 		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.16 \
+		unicode-normalization-0.1.17 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.1 \
 		url-2.2.0 \
 		users-0.10.0 \
 		vcpkg-0.2.11 \
 		vec_map-0.8.2 \
+		version_check-0.9.2 \
 		walkdir-2.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.2+wasi-snapshot-preview1 \
