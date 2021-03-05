@@ -8,7 +8,7 @@ CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	96f6fb99f271.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/630
+PATCHFILES+=	69cc4cd21708.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/630
 PATCHFILES+=	231720f8b212.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
 PATCHFILES+=	48a7bfeb4687.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
 PATCHFILES+=	2b3c4983f937.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
@@ -44,7 +44,9 @@ MESON_ARGS=	-D${PORTNAME}=true \
 		-Dudev_kms=false \
 		-Ddefault_font_path="${DEFAULT_FONTPATH_LIST:ts,}"
 PLIST_FILES=	bin/Xwayland \
+		"@comment lib/xorg/protocol.txt" \
 		libdata/pkgconfig/xwayland.pc \
+		"@comment man/man1/Xserver.1.gz" \
 		man/man1/Xwayland.1.gz
 
 # Keep in sync with xorg-server
