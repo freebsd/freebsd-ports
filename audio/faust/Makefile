@@ -49,10 +49,6 @@ HTTPD_LIB_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 
 PORTEXAMPLES=		*
 
-xpre-configure:
-	@${MKDIR} ${CONFIGURE_WRKSRC}
-	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} ${CMAKE_SOURCE_PATH}
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/faust
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/faust # https://github.com/grame-cncm/faust/issues/135
