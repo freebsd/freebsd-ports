@@ -8,11 +8,11 @@ include/level_zero/zet_api.h
 include/level_zero/zet_ddi.h
 lib/libze_loader.so
 lib/libze_loader.so.1
-lib/libze_loader.so.1.1.0
+lib/libze_loader.so.1.2.3
 lib/libze_tracing_layer.so
 lib/libze_tracing_layer.so.1
-lib/libze_tracing_layer.so.1.1.0
+lib/libze_tracing_layer.so.1.2.3
 lib/libze_validation_layer.so
 lib/libze_validation_layer.so.1
-lib/libze_validation_layer.so.1.1.0
+lib/libze_validation_layer.so.1.2.3
 libdata/pkgconfig/libze_loader.pc
