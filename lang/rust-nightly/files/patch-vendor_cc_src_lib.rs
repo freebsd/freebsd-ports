@@ -8,9 +8,9 @@ until LLVM can be updated to use libc++ by default.
 
 https://reviews.llvm.org/D77776
 
---- vendor/cc/src/lib.rs.orig	2020-04-14 08:55:10 UTC
+--- vendor/cc/src/lib.rs.orig	2021-03-04 20:58:54 UTC
 +++ vendor/cc/src/lib.rs
-@@ -2353,28 +2353,7 @@ impl Tool {
+@@ -2659,24 +2659,7 @@ impl Tool {
      }
  
      fn with_features(path: PathBuf, clang_driver: Option<&str>, cuda: bool) -> Self {
@@ -18,11 +18,7 @@ https://reviews.llvm.org/D77776
 -        let family = if let Some(fname) = path.file_name().and_then(|p| p.to_str()) {
 -            if fname.contains("clang-cl") {
 -                ToolFamily::Msvc { clang_cl: true }
--            } else if fname.contains("cl")
--                && !fname.contains("cloudabi")
--                && !fname.contains("uclibc")
--                && !fname.contains("clang")
--            {
+-            } else if fname.ends_with("cl") || fname == "cl.exe" {
 -                ToolFamily::Msvc { clang_cl: false }
 -            } else if fname.contains("clang") {
 -                match clang_driver {
