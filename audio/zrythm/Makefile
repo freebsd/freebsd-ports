@@ -3,6 +3,7 @@
 PORTNAME=	zrythm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0-alpha.13.0.4
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,7 +38,8 @@ LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		libsuil-0.so:audio/suil \
 		libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+RUN_DEPENDS=	bash:shells/bash \
+		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		kf5-breeze-icons>0:x11-themes/kf5-breeze-icons
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gettext-runtime gnome libtool \
