@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	free42
-DISTVERSION=	2.4.2
+DISTVERSION=	3.0.1
 CATEGORIES=	misc
 MASTER_SITES=	http://thomasokken.com/free42/upstream/
 DISTNAME=	${PORTNAME}-nologo-${DISTVERSION}
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		compiler dos2unix gmake gnome localbase pkgconfig tar:tgz xorg
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
 USE_XORG=	x11 xmu
 DOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h gtk/IntelRDFPMathLib20U1/LIBRARY/float128/architecture.h
 

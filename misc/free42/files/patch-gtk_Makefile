@@ -1,50 +1,8 @@
---- gtk/Makefile.orig	2017-11-20 03:58:50 UTC
+--- gtk/Makefile.orig	2021-03-05 01:52:42 UTC
 +++ gtk/Makefile
-@@ -15,12 +15,11 @@
- # along with this program; if not, see http://www.gnu.org/licenses/.
- ###############################################################################
- 
--CFLAGS = -MMD \
-+FLAGS_COMMON = \
-+	 -MMD \
- 	 -Wall \
- 	 -Wno-parentheses \
- 	 -Wno-write-strings \
--	 -g \
--	 -I/usr/X11R6/include \
- 	 $(shell pkg-config --cflags gtk+-2.0) \
- 	 -DVERSION="\"$(shell cat ../VERSION)\"" \
- 	 -DDECIMAL_CALL_BY_REFERENCE=1 \
-@@ -29,13 +28,14 @@ CFLAGS = -MMD \
- 	 -DDECIMAL_GLOBAL_EXCEPTION_FLAGS=1 \
- 	 -DDECIMAL_GLOBAL_EXCEPTION_FLAGS_ACCESS_FUNCTIONS=1
- 
--CXXFLAGS = $(CFLAGS) \
-+CFLAGS+= $(FLAGS_COMMON)
-+
-+CXXFLAGS+= $(FLAGS_COMMON) \
- 	 -fno-exceptions \
- 	 -fno-rtti \
- 	 -D_WCHAR_T_DEFINED
- 
--LDFLAGS = -L/usr/X11R6/lib
--LIBS = gcc111libbid.a -lXmu $(shell pkg-config --libs gtk+-2.0)
-+LIBS = gcc111libbid.a -lXmu $(shell pkg-config --libs gtk+-2.0) -lX11
- 
- ifeq "$(shell uname -s)" "Linux"
- LDFLAGS += -Wl,--hash-style=both
-@@ -118,7 +118,7 @@ clean: FORCE
- 	        readtest_lines.cc \
- 	        gcc111libbid.a \
- 		*.o *.d *.i *.ii *.s symlinks core.*
--	rm -rf IntelRDFPMathLib20U1
-+	#rm -rf IntelRDFPMathLib20U1
- 
- cleaner: FORCE
- 	rm -f `find . -type l` \
-@@ -128,7 +128,7 @@ cleaner: FORCE
- 	        readtest_lines.cc \
- 	        gcc111libbid.a \
+@@ -136,7 +136,7 @@ cleaner: FORCE
+ 		readtest_lines.cc \
+ 		gcc111libbid.a \
  		*.o *.d *.i *.ii *.s symlinks core.*
 -	rm -rf IntelRDFPMathLib20U1
 +	#rm -rf IntelRDFPMathLib20U1
