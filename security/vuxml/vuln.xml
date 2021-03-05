@@ -78,6 +78,38 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8bf856ea-7df7-11eb-9aad-001b217b3468">
+    <topic>Gitlab -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>13.9.0</ge><lt>13.9.2</lt></range>
+	<range><ge>13.8.0</ge><lt>13.8.5</lt></range>
+	<range><lt>13.7.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2021/03/04/security-release-gitlab-13-9-2-released/">
+	  <p>JWT token leak via Workhorse</p>
+	  <p>Stored XSS in wiki pages</p>
+	  <p>Group Maintainers are able to use the Group CI/CD Variables API</p>
+	  <p>Insecure storage of GitLab session keys</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://about.gitlab.com/releases/2021/03/04/security-release-gitlab-13-9-2-released/</url>
+      <cvename>CVE-2021-22185</cvename>
+      <cvename>CVE-2021-22186</cvename>
+    </references>
+    <dates>
+      <discovery>2021-03-04</discovery>
+      <entry>2021-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9e8f0766-7d21-11eb-a2be-001999f8d30b">
     <topic>asterisk -- Crash when negotiating T.38 with a zero port</topic>
     <affects>
