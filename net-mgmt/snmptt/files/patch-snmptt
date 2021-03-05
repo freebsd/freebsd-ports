@@ -1,0 +1,13 @@
+--- snmptt.orig	2021-02-19 20:24:30 UTC
++++ snmptt
+@@ -956,8 +956,8 @@ if ($daemon == 1)
+       $) = $daemon_gid;
+       $( = $);
+ 	  
+-      $> = $daemon_uid;
+-      $< = $>;
++      $< = $daemon_uid;
++      $> = $<;
+ 	  
+       if ($< != $daemon_uid || $( != $daemon_gid) {	  
+         if ($syslog_system_enable == 1) {
