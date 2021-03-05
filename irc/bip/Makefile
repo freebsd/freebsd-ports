@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	bip
-PORTVERSION=	0.8.9
+DISTVERSION=	0.9.0-rc4
 CATEGORIES=	irc
-MASTER_SITES=	https://projects.duckcorp.org/attachments/download/61/
+MASTER_SITES=	https://projects.duckcorp.org/attachments/download/97/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Simple IRC proxy with SSL support
@@ -12,14 +12,13 @@ COMMENT=	Simple IRC proxy with SSL support
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_SSL=	openssl
-
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -L${OPENSSLLIB}
 CFLAGS+=	-Wno-sign-compare -Wno-error -I${OPENSSLINC}
 USES=		cpe gmake ssl
 CPE_VENDOR=	duckcorp
 INSTALL_TARGET=	SUBDIR=src install-exec
+TEST_TARGET=	check
 
 PATCH_STRIP=	-p1
 SUB_FILES=	pkg-message
@@ -28,13 +27,6 @@ PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TODO
 EXAMPLEFILES=	bip.conf bip.vim
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	error: incomplete definition of type 'struct dh_st'
-BROKEN_FreeBSD_13=	error: incomplete definition of type 'struct dh_st'
-.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/bip.1 ${STAGEDIR}${PREFIX}/man/man1
@@ -53,4 +45,4 @@ post-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/samples/${i} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

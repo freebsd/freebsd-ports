@@ -1,2 +1,3 @@
-SHA256 (bip-0.8.9.tar.gz) = 3c950f71ef91c8b686e6835f9b722aa7ccb88d3da4ec1af19617354fd3132461
-SIZE (bip-0.8.9.tar.gz) = 256711
+TIMESTAMP = 1589770017
+SHA256 (bip-0.9.0-rc4.tar.gz) = c38c4508f17a11715cf3ed48d2cd80ac7226aadffb2aac6e41ffba9c30a2224b
+SIZE (bip-0.9.0-rc4.tar.gz) = 298508
