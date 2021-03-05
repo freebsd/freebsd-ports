@@ -1,0 +1,37 @@
+/sys is Linux-specific. FreeBSD has linsysfs(5) but not mounted by default.
+
+--- shared/source/os_interface/linux/sys_calls_linux.cpp.orig	2021-02-22 20:55:37 UTC
++++ shared/source/os_interface/linux/sys_calls_linux.cpp
+@@ -12,7 +12,11 @@
+ #include <stdio.h>
+ #include <sys/ioctl.h>
+ #include <sys/stat.h>
++#if defined(__linux__)
+ #include <sys/sysmacros.h>
++#elif defined(__DragonFly__) || defined(__FreeBSD__)
++#include <cstdlib>
++#endif
+ #include <unistd.h>
+ 
+ namespace NEO {
+@@ -36,6 +40,7 @@ int readlink(const char *path, char *buf, size_t bufsi
+ }
+ 
+ int getDevicePath(int deviceFd, char *buf, size_t &bufSize) {
++#if defined(__linux__)
+     struct stat st;
+     if (fstat(deviceFd, &st)) {
+         return -1;
+@@ -45,6 +50,12 @@ int getDevicePath(int deviceFd, char *buf, size_t &buf
+              major(st.st_rdev), minor(st.st_rdev));
+ 
+     return 0;
++#elif defined(__DragonFly__) || defined(__FreeBSD__)
++    return fdevname_r(deviceFd, buf, (int)bufSize) ? 0 : -1;
++#else
++    // Extract drmGetDeviceNameFromFd2 from libdrm
++    return -1;
++#endif
+ }
+ } // namespace SysCalls
+ } // namespace NEO
