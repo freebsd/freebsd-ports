@@ -206,6 +206,10 @@ XWIDGETS_CONFIGURE_WITH=	xwidgets
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH:Mpowerpc64*}
+USE_GCC=	yes
+.endif
+
 .if !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MGTK3} && !${PORT_OPTIONS:MXAW} && !${PORT_OPTIONS:MXAW3D}
 CONFIGURE_ARGS+=	--with-x-toolkit=no
 .endif
