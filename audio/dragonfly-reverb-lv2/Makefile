@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dragonfly-reverb
-DISTVERSION=	3.2.3
+DISTVERSION=	3.2.5
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,11 +15,14 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 
 USES=		compiler:c++11-lang gl gmake localbase pkgconfig shebangfix xorg
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
-USE_GITHUB=	yes
-GH_ACCOUNT=	michaelwillis
-GH_TUPLE=	DISTRHO:DPF:1e9e2067caa728fdb0b6d3b0001f37de721b0faa:DISTRHO_DPF/dpf
 USE_GL=		gl
 USE_XORG=	x11
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	michaelwillis
+GH_TUPLE=	DISTRHO:DPF:226f219:DISTRHO_DPF/dpf
+
+MAKE_ARGS=	LINUX=true # it fails to set it for BSD for some reason even though the code seems to intend to do this
 
 CXXFLAGS+=	-I${FILESDIR}
 
@@ -33,6 +36,8 @@ APPS_DESC=		Install apps instantiating effects in Jack sound server
 APPS_LIB_DEPENDS=	libjack.so:audio/jack
 
 VST_DESC=		Install VST plugins
+
+# project doesn't have the install target: https://github.com/michaelwillis/dragonfly-reverb/issues/80
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/lv2
