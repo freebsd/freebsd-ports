@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	emacs
-DISTVERSION=	28.0.50.20210302
-PORTREVISION=	1
+DISTVERSION=	28.0.50.20210305
 PORTEPOCH=	2
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -27,7 +26,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	20596a5
+GH_TAGNAME=	77ec2512
 
 .if ${FLAVOR:U} != nox
 USES+=		desktop-file-utils gnome xorg

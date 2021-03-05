@@ -1188,8 +1188,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/system.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/util.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/ede/util.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/inversion.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/cedet/inversion.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/mode-local.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/mode-local.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/cedet/pulse.el.gz
@@ -2924,6 +2922,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/html2text.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/info-edit.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/info-edit.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/inversion.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/inversion.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/iswitchb.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/iswitchb.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/obsolete/landmark.el.gz
