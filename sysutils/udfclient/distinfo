@@ -1,6 +1,5 @@
 TIMESTAMP = 1598543269
 SHA256 (UDFclient.0.8.11.tgz) = 4e5b102cf7f1343d86f830cb6f69fea2c196b41136bbd30ddc26cb8969eddf9d
 SIZE (UDFclient.0.8.11.tgz) = 252986
-SIZE (UDFclient.0.8.8.tgz) = 257978
 SHA256 (udfclientfs-0.6.tgz) = a115ef941ee56df3a14a3919e7225f046bef9577afbed7e873b1a868b3c0b301
 SIZE (udfclientfs-0.6.tgz) = 27648
