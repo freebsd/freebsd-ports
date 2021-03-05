@@ -1,6 +1,6 @@
 bin/xfdashboard
 bin/xfdashboard-settings
-etc/xdg/autostart/xfdashboard-autostart.desktop
+etc/xdg/autostart/org.xfce.xfdashboard-autostart.desktop
 include/xfdashboard/libxfdashboard/action-button.h
 include/xfdashboard/libxfdashboard/actor.h
 include/xfdashboard/libxfdashboard/animation.h
@@ -86,16 +86,15 @@ include/xfdashboard/libxfdashboard/windows-view.h
 include/xfdashboard/libxfdashboard/workspace-selector.h
 lib/libxfdashboard.so
 lib/libxfdashboard.so.0
-lib/libxfdashboard.so.0.800.0
+lib/libxfdashboard.so.0.800.1
 lib/xfdashboard/plugins/clock-view.so
 lib/xfdashboard/plugins/example-search-provider.so
 lib/xfdashboard/plugins/gnome-shell-search-provider.so
 lib/xfdashboard/plugins/hot-corner.so
 lib/xfdashboard/plugins/middle-click-window-close.so
 libdata/pkgconfig/libxfdashboard.pc
-share/appdata/xfdashboard.appdata.xml
-share/applications/xfdashboard-settings.desktop
-share/applications/xfdashboard.desktop
+share/applications/org.xfce.xfdashboard-settings.desktop
+share/applications/org.xfce.xfdashboard.desktop
 share/icons/hicolor/128x128/apps/org.xfce.xfdashboard.png
 share/icons/hicolor/16x16/apps/org.xfce.xfdashboard.png
 share/icons/hicolor/24x24/apps/org.xfce.xfdashboard.png
@@ -131,6 +130,7 @@ share/icons/hicolor/scalable/apps/org.xfce.xfdashboard.svg
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/xfdashboard.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfdashboard.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfdashboard.mo
+share/metainfo/org.xfce.xfdashboard.metainfo.xml
 share/themes/xfdashboard-auber/xfdashboard-1.0/animations.xml
 share/themes/xfdashboard-auber/xfdashboard-1.0/effects.xml
 share/themes/xfdashboard-auber/xfdashboard-1.0/screenshot-xfdashboard-auber.png
