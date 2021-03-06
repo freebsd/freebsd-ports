@@ -112,5 +112,5 @@ lib/cmake/pagmo/pagmo-config.cmake
 lib/cmake/pagmo/pagmo_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/pagmo/pagmo_export.cmake
 lib/libpagmo.so
-lib/libpagmo.so.6
-lib/libpagmo.so.6.0
+lib/libpagmo.so.7
+lib/libpagmo.so.7.0
