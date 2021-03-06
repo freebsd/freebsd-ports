@@ -1,0 +1,7 @@
+base-dbg.txz	84428e477434771e1707a052e1db9290699d9c004717fef664c1a8efaf8b4844	1636	base_dbg	"Base system (Debugging)"	off
+base.txz	dd0bbcbe2169efc99cba0b86f91b453ad5ce554cd923e661097436279f78d0b5	26763	base	"Base system (MANDATORY)"	on
+kernel-dbg.txz	95774e645cc6a205e244ac7df8d4dd1caada1169973cad709555834331fc834c	787	kernel_dbg	"Kernel (Debugging)"	on
+kernel.txz	5a97f0667779c0309ff22163ec3d133b34ab3dc50dbba49be83faa7d0e46287b	797	kernel	"Kernel (MANDATORY)"	on
+ports.txz	34133a707b426a828d057f56e035a12e3f347b9924aa8269befb9938f7b0b056	175426	ports	"Ports tree"	off
+src.txz	321274ab99303da35bdb78a18a0f0d7233f683de5d6847fd32cdb6bd6e1b47de	93489	src	"System source tree"	off
+tests.txz	96c348d12cf8c32a84d8fa52f961b41253ec5ef6177426aaac2233cc9be03990	6544	tests	"Test suite"	off
