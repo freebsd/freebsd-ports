@@ -1,4 +1,4 @@
---- make_freebsd.mak.orig	2019-06-16 12:13:00 UTC
+--- make_freebsd.mak.orig	2021-01-11 14:12:37 UTC
 +++ make_freebsd.mak
 @@ -12,7 +12,7 @@
  #     IBM Corporation - initial API and implementation
@@ -9,24 +9,7 @@
  
  # SWT debug flags for various SWT components.
  #SWT_WEBKIT_DEBUG = -DWEBKIT_DEBUG
-@@ -26,7 +26,6 @@
- 
- include make_common.mak
- 
--SWT_VERSION=$(maj_ver)$(min_ver)r$(rev)
- GTK_VERSION?=3.0
- 
- # Define the various shared libraries to be build.
-@@ -56,7 +55,7 @@
- # Webkit extension lib has to be put into a separate folder and is treated differently from the other libraries.
- WEBKIT_EXTENSION_LIB = lib$(WEBKIT_EXTENSION_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
- WEBEXTENSION_BASE_DIR = webkitextensions
--WEBEXTENSION_DIR = $(WEBEXTENSION_BASE_DIR)$(maj_ver)$(min_ver)r$(rev)
-+WEBEXTENSION_DIR = $(WEBEXTENSION_BASE_DIR)$(SWT_VERSION)
- 
- CAIROCFLAGS = `pkg-config --cflags cairo`
- CAIROLIBS = `pkg-config --libs-only-L cairo` -lcairo
-@@ -64,9 +63,9 @@
+@@ -64,9 +64,9 @@ CAIROLIBS = `pkg-config --libs-only-L cairo` -lcairo
  # Do not use pkg-config to get libs because it includes unnecessary dependencies (i.e. pangoxft-1.0)
  GTKCFLAGS = `pkg-config --cflags gtk+-$(GTK_VERSION) gtk+-unix-print-$(GTK_VERSION)`
  ifeq ($(GTK_VERSION), 4.0)
@@ -38,7 +21,7 @@
  endif
  
  AWT_LFLAGS = -shared ${SWT_LFLAGS} 
-@@ -75,12 +74,13 @@
+@@ -75,12 +75,13 @@ AWT_LIBS = -L$(AWT_LIB_PATH) -ljawt
  ATKCFLAGS = `pkg-config --cflags atk gtk+-$(GTK_VERSION) gtk+-unix-print-$(GTK_VERSION)`
  ATKLIBS = `pkg-config --libs-only-L atk` -latk-1.0 
  
@@ -54,7 +37,7 @@
  WEBKITCFLAGS = `pkg-config --cflags gio-2.0`
  
  WEBKIT_EXTENSION_CFLAGS=`pkg-config --cflags gtk+-3.0 webkit2gtk-web-extension-4.0`
-@@ -108,17 +108,18 @@
+@@ -108,17 +109,18 @@ CFLAGS := $(CFLAGS) \
  		$(SWT_WEBKIT_DEBUG) \
  		-DLINUX -DGTK \
  		-I$(JAVA_HOME)/include \
