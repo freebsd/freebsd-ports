@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	abi-compliance-checker
-DISTVERSION=	2.0b1
-PORTREVISION=	3
+DISTVERSION=	2.3
 CATEGORIES=	devel perl5
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,16 +20,16 @@ PORTS_BINUTILS_DESC=	Use binutils from ports
 USES=		gmake perl5 shebangfix
 USE_PERL5=	run
 
+# abi-compliance-checker release 2.3 -> 8e81982
+# vtable-dumper          release 1.2 -> 0e04246
+# abi-dumper             release 1.2 -> fdd403d
+#
 USE_GITHUB=	nodefault
-GH_TUPLE=	lvc:abi-compliance-checker:2.0b1 \
+GH_TUPLE=	lvc:abi-compliance-checker:2.3 \
 		lvc:vtable-dumper:0e04246:vdumper/vdumper \
-		lvc:abi-dumper:46aae79:adumper/adumper \
-		lvc:abi-compliance-checker:a6554a1:checker/checker
-PLIST_FILES=	bin/${PORTNAME}.pl bin/abi-dumper.pl bin/vtable-dumper
+		lvc:abi-dumper:fdd403d:adumper/adumper \
+		lvc:abi-compliance-checker:8e81982:checker/checker
 SHEBANG_FILES=	checker/*.pl adumper/*.pl
-
-PORTDATA=	*
-PORTDOCS=	*
 
 CTAGS?=		exctags
 
@@ -51,6 +50,7 @@ PICFLAG?=	-fPIC
 PICFLAG?=	-fpic
 .endif
 
+# Only vtable-dumper is a C program; the rest is all perl script
 do-build:
 	cd ${WRKSRC}/vdumper && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS}
@@ -74,9 +74,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vdumper/vtable-dumper \
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/adumper/abi-dumper.pl \
-		${STAGEDIR}${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin/abi-dumper
 	${INSTALL_SCRIPT} ${WRKSRC}/checker/${PORTNAME}.pl \
-		${STAGEDIR}${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/checker/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${DATADIR}
