@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ibus-table
-DISTVERSION=	1.12.4
+DISTVERSION=	1.12.5
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org

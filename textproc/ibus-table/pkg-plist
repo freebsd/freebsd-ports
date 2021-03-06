@@ -48,6 +48,7 @@ share/ibus/component/table.xml
 %%NLS%%share/locale/ja/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/ibus-table.mo
+%%NLS%%share/locale/si/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/ibus-table.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-table.mo
