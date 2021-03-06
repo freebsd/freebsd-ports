@@ -36,8 +36,8 @@ USE_PYTHON=	distutils cython concurrent autoplist
 
 post-install:
 	@cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME} && ${STRIP_CMD} \
-		optimization/linear_assignment.so \
-		optimization/neighbors.so \
-		util/coord_cython.so
+		optimization/linear_assignment*.so \
+		optimization/neighbors*.so \
+		util/coord_cython*.so
 
 .include <bsd.port.mk>
