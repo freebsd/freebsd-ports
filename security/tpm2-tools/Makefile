@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tpm2-tools
-DISTVERSION=	4.2.1
+DISTVERSION=	4.3.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/tpm2-software/tpm2-tools/releases/download/${DISTVERSION}/
 
