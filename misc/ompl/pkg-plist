@@ -246,11 +246,12 @@ include/ompl/util/RandomNumbers.h
 include/ompl/util/String.h
 include/ompl/util/Time.h
 lib/libompl.so
-lib/libompl.so.1.5.0
+lib/libompl.so.1.5.2
 lib/libompl.so.16
 libdata/pkgconfig/ompl.pc
 man/man1/ompl_benchmark_statistics.1.gz
 %%PLANNERARENA%%man/man1/plannerarena.1.gz
+share/ament_index/resource_index/packages/ompl
 %%DATADIR%%/cmake/omplConfig.cmake
 %%DATADIR%%/cmake/omplConfigVersion.cmake
 %%DATADIR%%/package.xml
