@@ -83,7 +83,7 @@ post-patch-B2-off:
 	@${RM} ${WRKSRC}/${PORTNAME}/backends/b2backend.py
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/duplicity/_librsync.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/duplicity/_librsync*.so
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
