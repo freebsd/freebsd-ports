@@ -19,11 +19,11 @@ include/jxl/types.h
 lib/libjxl.a
 lib/libjxl.so
 lib/libjxl.so.0
-lib/libjxl.so.0.3.2
+lib/libjxl.so.0.3.3
 lib/libjxl_threads.a
 lib/libjxl_threads.so
 lib/libjxl_threads.so.0
-lib/libjxl_threads.so.0.3.2
+lib/libjxl_threads.so.0.3.3
 libdata/pkgconfig/libjxl.pc
 libdata/pkgconfig/libjxl_threads.pc
 %%GIMP%%libexec/gimp/2.2/plug-ins/file-jxl/file-jxl
