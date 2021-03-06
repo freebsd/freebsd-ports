@@ -23,9 +23,14 @@ TEST_TARGET=	check
 INFO=		rec-mode recutils
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-OPTIONS_DEFINE=	DOCS CURL GCRYPT MDB NLS
-OPTIONS_DEFAULT=	GCRYPT
+OPTIONS_DEFINE=	BASH DOCS CURL GCRYPT MDB NLS
+OPTIONS_DEFAULT=	CURL GCRYPT MDB
 OPTIONS_SUB=	yes
+
+BASH_DESC=	Build ${PORTNAME} bash(1) builtins
+BASH_BUILD_DEPENDS=	${LOCALBASE}/include/bash/config.h:shells/bash
+BASH_CONFIGURE_ON=	--with-bash-headers=${LOCALBASE}/include/bash
+BASH_CONFIGURE_OFF=	--disable-bash-builtins
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ENV_OFF=	ac_cv_lib_curl_curl_global_init=no
@@ -36,11 +41,16 @@ GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 GCRYPT_CONFIGURE_OFF=	--disable-encryption
 
 MDB_DESC=	MS Access database (.mdb) support
+MDB_BUILD_DEPENDS=	help2man:misc/help2man
 MDB_LIB_DEPENDS=	libmdb.so:databases/mdbtools
-MDB_CONFIGURE_ENV_OFF=	ac_cv_lib_mdb_mdb_init=no
+MDB_CONFIGURE_ENV_OFF=	ac_cv_lib_mdb_mdb_get_version=no
 
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,mdb_init,mdb_get_version,' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/*.el \
