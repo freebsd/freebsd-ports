@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	loccount
-DISTVERSION=	2.10
+DISTVERSION=	2.11
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	a2x:textproc/asciidoc
 USES=		gmake go python:3.5+,build
 USE_GITLAB=	yes
 GL_ACCOUNT=	esr
-GL_COMMIT=	04df1333363ba1b579e07344e8420080cf64637d
+GL_COMMIT=	ab5e6046588c2644f922d84ea6cad7b68805bf3c
 
 GO_PKGNAME=	gitlab.com/${GL_ACCOUNT}/${PORTNAME}
 
