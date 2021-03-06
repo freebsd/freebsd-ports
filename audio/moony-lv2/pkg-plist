@@ -1,11 +1,18 @@
 lib/lv2/moony.lv2/Cousine-Regular.ttf
+lib/lv2/moony.lv2/alert-triangle.png
 lib/lv2/moony.lv2/bell.png
 lib/lv2/moony.lv2/cancel-1.png
 lib/lv2/moony.lv2/cancel.png
 lib/lv2/moony.lv2/checked.png
+lib/lv2/moony.lv2/clipboard.png
+lib/lv2/moony.lv2/copy.png
+lib/lv2/moony.lv2/delete.png
 lib/lv2/moony.lv2/download.png
 lib/lv2/moony.lv2/envelope.png
+lib/lv2/moony.lv2/eye-off.png
+lib/lv2/moony.lv2/eye.png
 lib/lv2/moony.lv2/house.png
+lib/lv2/moony.lv2/info.png
 lib/lv2/moony.lv2/layers.png
 lib/lv2/moony.lv2/lexer.lua
 lib/lv2/moony.lv2/libre-gui-exclamation-circle.png
@@ -25,6 +32,7 @@ lib/lv2/moony.lv2/plus.png
 lib/lv2/moony.lv2/presets.ttl
 lib/lv2/moony.lv2/question.png
 lib/lv2/moony.lv2/reload.png
+lib/lv2/moony.lv2/save.png
 lib/lv2/moony.lv2/screen.png
 lib/lv2/moony.lv2/settings.png
 lib/lv2/moony.lv2/sort.png

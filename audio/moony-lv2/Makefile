@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	moony
-DISTVERSION=	0.34.0
+DISTVERSION=	0.36.0
 CATEGORIES=	audio
 MASTER_SITES=	https://gitlab.com/OpenMusicKontrollers/moony.lv2/repository/archive.tar.gz?ref=${PORTVERSION}&dummy=/
 PKGNAMESUFFIX=	-lv2
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2
 
 USES=		compiler:c++11-lang gl meson pkgconfig xorg
 USE_XORG=	x11 xext
-USE_GL=		gl glu
+USE_GL=		gl glew glu
 
 post-extract:
 	@${MV} ${WRKDIR}/moony* ${WRKDIR}/${PORTNAME}-${PORTVERSION}
