@@ -2,7 +2,7 @@
 
 PORTNAME=	hermes
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2.20201216
+DISTVERSION=	0.7.2.20210305
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-javascript-engine
 
@@ -12,17 +12,15 @@ COMMENT=	JavaScript engine
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	https://github.com/facebook/hermes/issues/356
-
 LIB_DEPENDS=	libicui18n.so:devel/icu
 TEST_DEPENDS=	zip:archivers/zip
 
-USES=		cmake compiler:c++11-lang python:test
+USES=		cmake compiler:c++11-lang python:test readline
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebook
-GH_TAGNAME=	d8b83099
+GH_TAGNAME=	f69ee07
 
 CMAKE_OFF=	HERMES_ENABLE_TEST_SUITE
 
