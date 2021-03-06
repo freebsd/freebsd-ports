@@ -45,6 +45,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release verbose=1
 CPPFLAGS+=	-DU_USING_ICU_NAMESPACE=1
+CFLAGS_i386=	-msse2
 BUNDLE_LIBS=	yes
 DOS2UNIX_REGEX=	.*\.([ch]p{0,2}|make)
 BINARY_ALIAS=	python3=${PYTHON_CMD}
@@ -56,10 +57,6 @@ MAKE_ENV+=	JOBS=${_MAKE_JOBS}
 PORTDATA=	*
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == i386
-CFLAGS+=	-msse2
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
