@@ -3,6 +3,7 @@
 PORTNAME=	please
 DISTVERSIONPREFIX=	v
 DISTVERSION=	15.17.0
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	.build
 
@@ -99,27 +100,22 @@ GH_TUPLE=	StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/Sta
 		tsenart:deadcode:210d2dc333e9:tsenart_deadcode/vendor/github.com/tsenart/deadcode \
 		ulikunitz:xz:v0.5.6:ulikunitz_xz/vendor/github.com/ulikunitz/xz
 
-INSTALL_FILES=	bin/build_langserver bin/jarcat bin/please bin/please_go_filter \
-		bin/please_go_install bin/please_go_test bin/please_pex \
-		bin/please_sandbox
+GO_TARGET=	src/please.go:please \
+		tools/build_langserver/langserver_main.go:build_langserver \
+		tools/jarcat/main.go:jarcat \
+		tools/please_go_filter/please_go_filter.go:please_go_filter \
+		tools/please_go_install/please_go_install.go:please_go_install \
+		tools/please_go_test/plz_go_test_main.go:please_go_test \
+		tools/please_pex/pex_main.go:please_pex \
+		tools/release_signer/main.go:release_signer
 
 post-extract:
 	${CP} ${WRKSRC}/tools/please_go_test/plz_go_test.go ${WRKSRC}/tools/please_go_test/plz_go_test_main.go
 
-do-build:
-	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build src/please.go
-	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o build_langserver tools/build_langserver/langserver_main.go
-	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o jarcat tools/jarcat/main.go
-	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_go_filter tools/please_go_filter/please_go_filter.go
-	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_go_install tools/please_go_install/please_go_install.go
-	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_go_test tools/please_go_test/plz_go_test_main.go
-	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o please_pex tools/please_pex/pex_main.go
-	cd ${WRKSRC} ; ${SETENV} GOPROXY="off" GOCACHE=${WRKSRC}/.go-cache GOFLAGS="-mod=vendor" go build -o release_signer tools/release_signer/main.go
+post-build:
 	cd ${WRKSRC} ; ${SETENV} ${CC} ${CFLAGS} -o please_sandbox tools/sandbox/main.c
 
-do-install:
-.for FILE in ${INSTALL_FILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${FILE:C,bin/,,} ${STAGEDIR}${PREFIX}/bin/
-.endfor
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/please_sandbox ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

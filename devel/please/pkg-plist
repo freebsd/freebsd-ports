@@ -6,3 +6,4 @@ bin/please_go_install
 bin/please_go_test
 bin/please_pex
 bin/please_sandbox
+bin/release_signer
