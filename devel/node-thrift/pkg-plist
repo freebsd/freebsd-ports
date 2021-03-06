@@ -1,4 +1,5 @@
 lib/node/thrift
+lib/node_modules/thrift/CMakeLists.txt
 lib/node_modules/thrift/Makefile.am
 lib/node_modules/thrift/Makefile.in
 lib/node_modules/thrift/README.md

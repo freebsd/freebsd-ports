@@ -1,6 +1,6 @@
---- lib/cpp/src/thrift/protocol/TBinaryProtocol.tcc.orig	2015-10-13 19:19:23 UTC
+--- lib/cpp/src/thrift/protocol/TBinaryProtocol.tcc.orig	2021-02-04 23:07:31 UTC
 +++ lib/cpp/src/thrift/protocol/TBinaryProtocol.tcc
-@@ -24,6 +24,8 @@
+@@ -25,6 +25,8 @@
  
  #include <limits>
  

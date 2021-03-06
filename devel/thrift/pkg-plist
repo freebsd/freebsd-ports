@@ -1,0 +1,3 @@
+bin/thrift
+lib/cmake/thrift/ThriftConfig.cmake
+lib/cmake/thrift/ThriftConfigVersion.cmake
