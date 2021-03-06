@@ -1,0 +1,20 @@
+--- util/find-doc-nits.orig	2020-04-23 13:08:36 UTC
++++ util/find-doc-nits
+@@ -81,7 +81,7 @@ my $temp = '/tmp/docnits.txt';
+ my $OUT;
+ my $status = 0;
+ 
+-my @sections = ( 'man1', 'man3', 'man5', 'man7' );
++my @sections = ( 'man1', 'man5' );
+ my %mandatory_sections = (
+     '*' => [ 'NAME', 'DESCRIPTION', 'COPYRIGHT' ],
+     1   => [ 'SYNOPSIS', 'OPTIONS' ],
+@@ -640,7 +640,7 @@ sub check {
+         next if $target eq '';                  # Skip if links within page, or
+         next if $target =~ /::/;                #   links to a Perl module, or
+         next if $target =~ /^https?:/;          #   is a URL link, or
+-        next if $target =~ /\([1357]\)$/;       #   it has a section
++        next if $target =~ /\([15]\)$/;       #   it has a section
+         err($id, "Section missing in $target")
+     }
+     # Check for proper links to commands.
