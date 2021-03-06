@@ -1,0 +1,4 @@
+muParserx is a C++ library initially based on muParser enhanced with support for
+arrays, matrices and strings, and with a completely new parsing engine.
+
+WWW: https://beltoforion.de/en/muparserx/

@@ -438,6 +438,7 @@
     SUBDIR += mumps
     SUBDIR += mumps4
     SUBDIR += muparser
+    SUBDIR += muparserx
     SUBDIR += nanoflann
     SUBDIR += nauty
     SUBDIR += ndiff
