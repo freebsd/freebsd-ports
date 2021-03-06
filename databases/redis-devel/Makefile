@@ -96,6 +96,9 @@ PLIST_SUB+=	REDIS_USER=${USERS} \
 	REDIS_DBDIR=${REDIS_DBDIR} \
 	REDIS_RUNDIR=${REDIS_RUNDIR}
 
+post-patch:
+	${REINPLACE_CMD} '77s!malloc.h!stdlib.h!' ${WRKSRC}/src/zmalloc.h
+
 post-patch-JEMALLOC-on:
 	@${REINPLACE_CMD} '35s!Linux!FreeBSD!g' ${WRKSRC}/src/Makefile
 
