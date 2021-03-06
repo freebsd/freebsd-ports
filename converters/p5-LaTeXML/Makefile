@@ -3,6 +3,7 @@
 
 PORTNAME=	LaTeXML
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN \
 		http://dlmf.nist.gov/LaTeXML/releases/
@@ -27,6 +28,7 @@ RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-XML-LibXML>=1.62:textproc/p5-XML-LibXML \
 		p5-XML-LibXSLT>=1.58:textproc/p5-XML-LibXSLT \
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
 		p5-libwww>=0:www/p5-libwww
 
 USES=		perl5
