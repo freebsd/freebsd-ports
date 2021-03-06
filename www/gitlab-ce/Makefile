@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gitlab-ce
-PORTVERSION?=	13.9.1
+PORTVERSION?=	13.9.2
 PORTREVISION?=	0
 CATEGORIES=	www devel
 
@@ -20,7 +20,7 @@ MY_DEPENDS=	git>=2.29:devel/git \
 	gitlab-agent>=13.9.1:net/gitlab-agent \
 	gitlab-pages>=1.35.0:www/gitlab-pages \
 	gitlab-shell>=13.16.1:devel/gitlab-shell \
-	gitlab-workhorse>=8.63.0:www/gitlab-workhorse \
+	gitlab-workhorse>=8.63.2:www/gitlab-workhorse \
 	redis>=4.0.0:databases/redis \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
@@ -188,6 +188,7 @@ MY_DEPENDS=	git>=2.29:devel/git \
 	rubygem-pg_query>=1.3.0<1.4:databases/rubygem-pg_query \
 	rubygem-premailer-rails-rails60>=1.10.3<1.11.0:mail/rubygem-premailer-rails-rails60 \
 	rubygem-gitlab-labkit>=0.14.0<0.16:devel/rubygem-gitlab-labkit \
+	rubygem-thrift>=0.14.0:devel/rubygem-thrift \
 	rubygem-ruby_parser>=3.15<4.0:devel/rubygem-ruby_parser \
 	rubygem-rails-i18n-rails60>=6.0<7.0:devel/rubygem-rails-i18n-rails60 \
 	rubygem-gettext_i18n_rails>=1.8.0<1.9.0:devel/rubygem-gettext_i18n_rails \
@@ -221,7 +222,7 @@ MY_DEPENDS=	git>=2.29:devel/git \
 	rubygem-bcrypt_pbkdf>=1.0<2.0:security/rubygem-bcrypt_pbkdf \
 	rubygem-gitaly>=13.9.0.pre.rc1<13.10.0:net/rubygem-gitaly \
 	rubygem-grpc130>=1.30.2<1.31:net/rubygem-grpc130 \
-	rubygem-google-protobuf>=3.12<4:devel/rubygem-google-protobuf \
+	rubygem-google-protobuf>=3.12<3.15:devel/rubygem-google-protobuf \
 	rubygem-toml-rb10>=1.0.0<1.1.0:www/rubygem-toml-rb10 \
 	rubygem-flipper017>=0.17.1<0.18.0:devel/rubygem-flipper017 \
 	rubygem-flipper-active_record017>=0.17.1<0.18.0:databases/rubygem-flipper-active_record017 \
@@ -267,7 +268,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 GL_PROJECT?=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT?=	03979b4aaf060cae40934b2aade0bbe8a210e311
+GL_COMMIT?=	189a15a911843a9059d1f8bfd31008557bea520b
 
 USERS=	git
 GROUPS=	git

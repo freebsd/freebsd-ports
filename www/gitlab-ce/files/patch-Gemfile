@@ -1,4 +1,4 @@
---- Gemfile.orig	2021-02-19 09:35:35 UTC
+--- Gemfile.orig	2021-03-04 13:43:08 UTC
 +++ Gemfile
 @@ -26,7 +26,7 @@ gem 'marginalia', '~> 1.10.0'
  # Authentication libraries
@@ -50,10 +50,10 @@
  # LabKit: Tracing and Correlation
 -gem 'gitlab-labkit', '0.14.0'
 +gem 'gitlab-labkit', '0.15.0'
- 
- # I18n
- gem 'ruby_parser', '~> 3.15', require: false
-@@ -329,102 +328,11 @@ gem 'snowplow-tracker', '~> 0.6.1'
+ # Thrift is a dependency of gitlab-labkit, we want a version higher than 0.14.0
+ # because of https://gitlab.com/gitlab-org/gitlab/-/issues/321900
+ gem 'thrift', '>= 0.14.0'
+@@ -332,102 +331,11 @@ gem 'snowplow-tracker', '~> 0.6.1'
  # Metrics
  group :metrics do
    gem 'method_source', '~> 1.0', require: false

@@ -6488,6 +6488,7 @@
 %%WWWDIR%%/app/helpers/webpack_helper.rb
 %%WWWDIR%%/app/helpers/whats_new_helper.rb
 %%WWWDIR%%/app/helpers/wiki_helper.rb
+%%WWWDIR%%/app/helpers/wiki_page_version_helper.rb
 %%WWWDIR%%/app/helpers/workhorse_helper.rb
 %%WWWDIR%%/app/helpers/x509_helper.rb
 %%WWWDIR%%/app/mailers/abuse_report_mailer.rb
@@ -27387,6 +27388,7 @@
 %%WWWDIR%%/spec/helpers/visibility_level_helper_spec.rb
 %%WWWDIR%%/spec/helpers/whats_new_helper_spec.rb
 %%WWWDIR%%/spec/helpers/wiki_helper_spec.rb
+%%WWWDIR%%/spec/helpers/wiki_page_version_helper_spec.rb
 %%WWWDIR%%/spec/helpers/x509_helper_spec.rb
 %%WWWDIR%%/spec/initializers/100_patch_omniauth_saml_spec.rb
 %%WWWDIR%%/spec/initializers/6_validations_spec.rb
@@ -32879,6 +32881,8 @@
 %%WWWDIR%%/workhorse/internal/staticpages/servefile.go
 %%WWWDIR%%/workhorse/internal/staticpages/servefile_test.go
 %%WWWDIR%%/workhorse/internal/staticpages/static.go
+%%WWWDIR%%/workhorse/internal/staticpages/testdata/file1
+%%WWWDIR%%/workhorse/internal/staticpages/testdata/uploads/file2
 %%WWWDIR%%/workhorse/internal/testhelper/gitaly.go
 %%WWWDIR%%/workhorse/internal/testhelper/testhelper.go
 %%WWWDIR%%/workhorse/internal/upload/accelerate.go
@@ -32905,6 +32909,7 @@
 %%WWWDIR%%/workhorse/internal/upstream/roundtripper/transport.go
 %%WWWDIR%%/workhorse/internal/upstream/routes.go
 %%WWWDIR%%/workhorse/internal/upstream/upstream.go
+%%WWWDIR%%/workhorse/internal/upstream/upstream_test.go
 %%WWWDIR%%/workhorse/internal/urlprefix/urlprefix.go
 %%WWWDIR%%/workhorse/internal/utils/svg/LICENSE
 %%WWWDIR%%/workhorse/internal/utils/svg/README.md

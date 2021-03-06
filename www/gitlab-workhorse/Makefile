@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	gitlab-workhorse
-PORTVERSION?=	8.63.0
+PORTVERSION?=	8.63.2
 PORTREVISION?=	0
 CATEGORIES=	www
 
@@ -21,12 +21,12 @@ MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-workhorse/tags
-GL_COMMIT?=	290e36b39ca85d3be0d1b64504d8ebce424e09d3
+GL_COMMIT?=	d6a98839b0a1c98eea332e203a1632f8302b21e9
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 94dd
+# 93dd
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:6df5d9af221d:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -120,7 +120,6 @@ GH_TUPLE=	\
 
 GL_TUPLE=	gitlab-org:gitaly:3f5e218def93024f3aafe590c22cd1b29f744105:gitlab_org_gitaly/vendor/gitlab.com/gitlab-org/gitaly \
 		gitlab-org:labkit:f2d7fb209ecad2eaddb5fb9c4ab03eb8eaa82811:gitlab_org_labkit/vendor/gitlab.com/gitlab-org/labkit
-
 
 PLIST_FILES=	bin/gitlab-resize-image \
 		bin/gitlab-workhorse \
