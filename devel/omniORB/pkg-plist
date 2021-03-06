@@ -266,9 +266,9 @@ man/man1/omniidl.1.gz
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/_omniidlmodule.so
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/_omniidlmodule.so.4
 %%PYTHON2%%%%PYTHON_SITELIBDIR%%/_omniidlmodule.so.4.2
-%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_omniidl.so
-%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_omniidl.so.4
-%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_omniidl.so.4.2
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_omniidl%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_omniidl%%PYTHON_EXT_SUFFIX%%.so.4
+%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_omniidl%%PYTHON_EXT_SUFFIX%%.so.4.2
 %%PYTHON_SITELIBDIR%%/omniidl/__init__.py
 %%PYTHON_SITELIBDIR%%/omniidl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/omniidl/idlast.py
