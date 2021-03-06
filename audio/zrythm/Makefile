@@ -3,7 +3,7 @@
 PORTNAME=	zrythm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0-alpha.13.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,8 @@ COMMENT=	Modern music production system, also known as DAW
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	help2man:misc/help2man \
+BUILD_DEPENDS=	bash:shells/bash \
+		help2man:misc/help2man \
 		kf5-breeze-icons>0:x11-themes/kf5-breeze-icons
 LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		libavcodec.so:multimedia/ffmpeg \
@@ -38,8 +39,7 @@ LIB_DEPENDS=	libaudec.so:audio/libaudec \
 		libsuil-0.so:audio/suil \
 		libyaml.so:textproc/libyaml \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	bash:shells/bash \
-		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		kf5-breeze-icons>0:x11-themes/kf5-breeze-icons
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gettext-runtime gnome libtool \
