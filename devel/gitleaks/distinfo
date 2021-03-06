@@ -1,6 +1,6 @@
-TIMESTAMP = 1613274346
-SHA256 (zricethezav-gitleaks-v7.2.2_GH0.tar.gz) = 9eaf24ce758903b30c3ebf840ba35020b8dbb3733df9f975dae0bafc650f3fcf
-SIZE (zricethezav-gitleaks-v7.2.2_GH0.tar.gz) = 143821
+TIMESTAMP = 1615017614
+SHA256 (zricethezav-gitleaks-v7.3.0_GH0.tar.gz) = 10a0d19fef4a3839f8bf3a9d17c3aa728f5378026bca5af944963d0db92c27b5
+SIZE (zricethezav-gitleaks-v7.3.0_GH0.tar.gz) = 145056
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (emirpasic-gods-v1.12.0_GH0.tar.gz) = 889d06b5f88db9e2dae19a799a35324c4f59305aa5e966dcdb4b637e70607ff9
