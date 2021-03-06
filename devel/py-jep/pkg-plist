@@ -5,7 +5,7 @@ bin/jep
 %%PYTHON_SITELIBDIR%%/jep/jdbc.py
 %%PYTHON_SITELIBDIR%%/jep/jep-%%VERSION%%.jar
 %%PYTHON_SITELIBDIR%%/jep/jep%%PYTHON_EXT_SUFFIX%%.so
-%%PYTHON_SITELIBDIR%%/jep/libjep%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/jep/libjep.so
 %%PYTHON_SITELIBDIR%%/jep/redirect_streams.py
 %%PYTHON_SITELIBDIR%%/jep/shared_modules_hook.py
 %%PYTHON_SITELIBDIR%%/jep/version.py
