@@ -58,7 +58,7 @@ include/helib/version.h
 include/helib/zeroValue.h
 include/helib/zzX.h
 lib/libhelib.so
-lib/libhelib.so.2.0.0
+lib/libhelib.so.2.1.0
 share/cmake/helib/helibConfig.cmake
 share/cmake/helib/helibConfigVersion.cmake
 share/cmake/helib/helibTargets-%%CMAKE_BUILD_TYPE%%.cmake
