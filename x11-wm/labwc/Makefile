@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	labwc
-PORTVERSION=	s20210304
+DISTVERSION=	0.1.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +18,6 @@ LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 
 USES=		compiler:c11 gnome meson pkgconfig xorg
 USE_GITHUB=	yes
-GH_TAGNAME=	db4249d
 USE_GNOME=	cairo libxml2 pango
 USE_XORG=	pixman
 GH_ACCOUNT=	johanmalm
@@ -27,7 +26,7 @@ PLIST_FILES=	"${MAYBE_SUID}bin/${PORTNAME}"
 OPTIONS_DEFINE=	MANPAGES SUID X11
 OPTIONS_DEFAULT=MANPAGES SUID X11
 
-MANPAGES_BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
+MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
 			man/man5/${PORTNAME}-actions.5.gz \
@@ -40,10 +39,14 @@ SUID_VARS=		MAYBE_SUID="@(,,4755) "
 X11_MESON_ENABLED=	xwayland
 
 post-patch:
+# Extract (snapshot) version from the port instead of meson.build
+	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
+		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
+		${WRKSRC}/meson.build
 # Respect PREFIX for system-wide config and Openbox themes
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
 		-e 's,/usr/local,${PREFIX},' \
-		${WRKSRC}/docs/${PORTNAME}-config.5.md \
+		${WRKSRC}/docs/${PORTNAME}-config.5.scd \
 		${WRKSRC}/src/common/dir.c
 
 .include <bsd.port.mk>

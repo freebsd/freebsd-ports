@@ -1,4 +1,4 @@
-Labwc is a WIP free, wlroots-based stacking compositor for Wayland.
+Labwc is a wlroots-based stacking compositor for Wayland.
 
 It has the following aims:
 
@@ -8,7 +8,5 @@ It has the following aims:
   and so on
 - Stay in keeping with wlroots and sway in terms of approach and
   coding style
-
-It is in early development, so expect bugs and missing features.
 
 WWW: https://github.com/johanmalm/labwc
