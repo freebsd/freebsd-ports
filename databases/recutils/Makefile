@@ -18,12 +18,11 @@ USES=		charsetfix libtool makeinfo pkgconfig readline
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
 
 INFO=		rec-mode recutils
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-OPTIONS_DEFINE=	BASH DOCS CURL GCRYPT MDB NLS
+OPTIONS_DEFINE=	BASH CURL DOCS GCRYPT MDB NLS TEST
 OPTIONS_DEFAULT=	CURL GCRYPT MDB
 OPTIONS_SUB=	yes
 
@@ -47,6 +46,9 @@ MDB_CONFIGURE_ENV_OFF=	ac_cv_lib_mdb_mdb_get_version=no
 
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
+
+TEST_BUILD_DEPENDS=	${LOCALBASE}/include/check.h:devel/check
+TEST_VARS=	TEST_TARGET=check
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,mdb_init,mdb_get_version,' \
