@@ -1,0 +1,19 @@
+The programming/scripting language that incorporates the most frustrating
+combination of deficiencies and awesome power is probably the POSIX shell with
+accompanying utilities, which all exist in several variant implementations. Due
+to said power, the shell refuses to die as a scripting language. But when
+scripters are bitten by arcane grammar pitfalls, defective tutorials on the
+web, or shell functionality deficits, then 'use a real programming language
+instead' is generally the mantra.
+
+Enter modernish, a new vision on shell scripting. Modernish aims to provide a
+standard library that allows for writing robust, portable, readable, and
+powerful programs for POSIX-based shells and utilities. It can solve the shell
+language problems mentioned above, and many more. With modernish, you'd almost
+think the shell has become a modern programming language!
+
+The library builds on the POSIX 2018 Edition standard, so it should run on any
+sufficiently POSIX-compliant shell and operating system. But it also takes
+advantage of certain shell-specific enhancements if it detects them.
+
+WWW: https://github.com/modernish/modernish

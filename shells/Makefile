@@ -31,6 +31,7 @@
     SUBDIR += ksh93
     SUBDIR += ksh93-devel
     SUBDIR += mksh
+    SUBDIR += modernish
     SUBDIR += nologinmsg
     SUBDIR += ohmyzsh
     SUBDIR += oksh
