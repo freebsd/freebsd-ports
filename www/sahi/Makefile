@@ -27,11 +27,10 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=	DOCS
 OPTIONS_DEFAULT=	CHROME
 OPTIONS_SINGLE=	BROWSER
-OPTIONS_SINGLE_BROWSER=	CHROME FIREFOX OPERA
+OPTIONS_SINGLE_BROWSER=	CHROME FIREFOX
 
 CHROME_DESC=	Use Chrome as default browser
 FIREFOX_DESC=	Use Firefox as default browser
-OPERA_DESC=	Use Opera as default browser
 
 USES=		dos2unix zip
 DOS2UNIX_GLOB=	linux.xml os.properties sahi.properties
@@ -88,11 +87,6 @@ RUN_DEPENDS+=	chrome:www/chromium
 .if ${PORT_OPTIONS:MFIREFOX}
 BROWSER=	firefox
 RUN_DEPENDS+=	firefox:www/firefox
-.endif
-
-.if ${PORT_OPTIONS:MOPERA}
-BROWSER=	opera
-RUN_DEPENDS+=	opera:www/opera
 .endif
 
 .include <bsd.port.post.mk>
