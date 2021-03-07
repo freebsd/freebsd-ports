@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bfs
-DISTVERSION=	2.1
+DISTVERSION=	2.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	driesm.michiels@gmail.com
@@ -20,8 +20,6 @@ GH_ACCOUNT=	tavianator
 
 SHEBANG_FILES=	tests.sh tests/*.sh
 TEST_TARGET=	check
-PLIST_FILES=	bin/bfs \
-		share/man/man1/bfs.1.gz
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bfs

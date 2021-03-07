@@ -1,0 +1,3 @@
+bin/bfs
+share/bash-completion/completions/bfs
+share/man/man1/bfs.1.gz
