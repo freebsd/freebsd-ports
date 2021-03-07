@@ -933,6 +933,7 @@
     SUBDIR += p5-Text-Table-HTML-DataTables
     SUBDIR += p5-Text-Table-LTSV
     SUBDIR += p5-Text-Table-Manifold
+    SUBDIR += p5-Text-Table-More
     SUBDIR += p5-Text-Table-Org
     SUBDIR += p5-Text-Table-Paragraph
     SUBDIR += p5-Text-Table-TSV

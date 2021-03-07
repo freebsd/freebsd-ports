@@ -1,0 +1,5 @@
+Text::Table::More uses the simple interface of Text::Table::Tiny with support
+for more formatting options like column/row spans, border style,
+per-row/column/cell align/valign.
+
+WWW: https://metacpan.org/release/Text-Table-More
