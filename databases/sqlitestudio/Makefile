@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqlitestudio
-DISTVERSION=	3.3.0
+DISTVERSION=	3.3.1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
