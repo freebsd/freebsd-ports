@@ -1,3 +1,4 @@
 Create Ruby clients from a protocol buffer description of an API.
 
 WWW: https://github.com/googleapis/gapic-generator-ruby
+WWW: https://github.com/googleapis/gapic-generator-ruby/tree/master/gapic-common
