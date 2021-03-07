@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cadabra2
-DISTVERSION=	2.3.6.4
+DISTVERSION=	2.3.6.8
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org

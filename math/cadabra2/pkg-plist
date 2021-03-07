@@ -19,8 +19,7 @@ bin/cadabra2python
 %%PYTHON_SITELIBDIR%%/cdb/core/manip.cnb
 %%PYTHON_SITELIBDIR%%/cdb/core/solve.cnb
 %%PYTHON_SITELIBDIR%%/cdb/core/trace.cnb
-%%PYTHON_SITELIBDIR%%/cdb/gauge_theory/__init__.py
-%%PYTHON_SITELIBDIR%%/cdb/gauge_theory/instantons.py
+%%PYTHON_SITELIBDIR%%/cdb/gauge_theory/instantons.cnb
 %%PYTHON_SITELIBDIR%%/cdb/relativity/abstract.cnb
 %%PYTHON_SITELIBDIR%%/cdb/relativity/schwarzschild.cnb
 %%PYTHON_SITELIBDIR%%/cdb/sympy/solvers.cnb
