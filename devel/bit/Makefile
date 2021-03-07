@@ -2,7 +2,7 @@
 
 PORTNAME=	bit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.12
+DISTVERSION=	1.0.3
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -20,6 +20,7 @@ GH_TUPLE=	\
 		bradfitz:iter:e8f45d346db8:bradfitz_iter/vendor/github.com/bradfitz/iter \
 		c-bata:go-prompt:v0.2.5:c_bata_go_prompt/vendor/github.com/c-bata/go-prompt \
 		c4milo:unpackit:4ed373e9ef1c:c4milo_unpackit/vendor/github.com/c4milo/unpackit \
+		chriswalz:complete:v3.0.13:chriswalz_complete_v3/vendor/github.com/chriswalz/complete/v3 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dsnet:compress:v0.0.1:dsnet_compress/vendor/github.com/dsnet/compress \
 		go-yaml:yaml:a5ece683394c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
@@ -29,6 +30,7 @@ GH_TUPLE=	\
 		google:go-github:v17.0.0:google_go_github/vendor/github.com/google/go-github \
 		google:go-github:v32.1.0:google_go_github_v32/vendor/github.com/google/go-github/v32 \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
+		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
 		gosuri:uilive:v0.0.4:gosuri_uilive/vendor/github.com/gosuri/uilive \
 		gosuri:uiprogress:v0.0.1:gosuri_uiprogress/vendor/github.com/gosuri/uiprogress \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
@@ -39,6 +41,7 @@ GH_TUPLE=	\
 		klauspost:compress:v1.4.1:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v1.2.0:klauspost_cpuid/vendor/github.com/klauspost/cpuid \
 		klauspost:pgzip:v1.2.5:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
+		lithammer:fuzzysearch:v1.1.1:lithammer_fuzzysearch/vendor/github.com/lithammer/fuzzysearch \
 		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
@@ -47,17 +50,16 @@ GH_TUPLE=	\
 		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
 		pkg:term:v1.1.0:pkg_term/vendor/github.com/pkg/term \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		posener:complete:v2.0.1-alpha.13:posener_complete_v2/vendor/github.com/posener/complete/v2 \
 		posener:script:v1.1.5:posener_script/vendor/github.com/posener/script \
 		rs:zerolog:v1.20.0:rs_zerolog/vendor/github.com/rs/zerolog \
 		spf13:cobra:v1.1.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		thoas:go-funk:v0.7.0:thoas_go_funk/vendor/github.com/thoas/go-funk \
 		tj:go-update:v2.2.4:tj_go_update/vendor/github.com/tj/go-update \
 		ulikunitz:xz:v0.5.8:ulikunitz_xz/vendor/github.com/ulikunitz/xz
 
-GO_TARGET=	bit
+GO_TARGET=	.
 PLIST_FILES=	bin/bit
 SUB_FILES=	pkg-message
 
