@@ -16193,3 +16193,4 @@ sysutils/synergy-1|sysutils/synergy|2021-03-03|Current version is 1.x.x, 2.x.x w
 www/moodle35|www/moodle39|2021-03-04|Has expired: Deprecated by upstream
 www/moodle38|www/moodle39|2021-03-04|Has expired: Deprecated by upstream
 devel/llvm60|devel/llvm80|2021-03-06|Has expired: Uses Python 2.7 which is EOLed upstream
+audio/fplib||2021-03-07|Dead service since 2015
