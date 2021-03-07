@@ -1314,6 +1314,7 @@
     SUBDIR += libsavitar
     SUBDIR += libscca
     SUBDIR += libsearpc
+    SUBDIR += libserdes
     SUBDIR += libserialport
     SUBDIR += libshbuf
     SUBDIR += libshhmsg

@@ -1,0 +1,9 @@
+libserdes is a schema-based serializer/deserializer
+C/C++ library with support for Avro and the Confluent
+Platform Schema Registry.
+
+The library is aimed to be used in the streaming pipeline,
+e.g. Apache Kafka, to perform data serialization and
+deserialization with centrally managed schemas.
+
+WWW: https://github.com/confluentinc/libserdes
