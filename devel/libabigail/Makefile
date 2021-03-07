@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING-LGPLV3
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libdw.so:devel/elfutils
 
-USES=		gmake libtool localbase pkgconfig python
+USES=		compiler:c++11-lang gmake libtool localbase pkgconfig python
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cxx11=yes
