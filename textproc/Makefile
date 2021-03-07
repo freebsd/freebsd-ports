@@ -36,6 +36,7 @@
     SUBDIR += UCD
     SUBDIR += adabrowse
     SUBDIR += add-css-links
+    SUBDIR += addts
     SUBDIR += af-aspell
     SUBDIR += aft
     SUBDIR += agrep
