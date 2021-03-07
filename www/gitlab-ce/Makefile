@@ -1,9 +1,9 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME?=	gitlab-ce
-PORTVERSION?=	13.9.2
-PORTREVISION?=	0
+PORTNAME=	gitlab-ce
+PORTVERSION=	13.9.2
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -222,7 +222,7 @@ MY_DEPENDS=	git>=2.29:devel/git \
 	rubygem-bcrypt_pbkdf>=1.0<2.0:security/rubygem-bcrypt_pbkdf \
 	rubygem-gitaly>=13.9.0.pre.rc1<13.10.0:net/rubygem-gitaly \
 	rubygem-grpc130>=1.30.2<1.31:net/rubygem-grpc130 \
-	rubygem-google-protobuf>=3.12<3.15:devel/rubygem-google-protobuf \
+	rubygem-google-protobuf314>=3.12<3.15:devel/rubygem-google-protobuf314 \
 	rubygem-toml-rb10>=1.0.0<1.1.0:www/rubygem-toml-rb10 \
 	rubygem-flipper017>=0.17.1<0.18.0:devel/rubygem-flipper017 \
 	rubygem-flipper-active_record017>=0.17.1<0.18.0:databases/rubygem-flipper-active_record017 \
