@@ -1,0 +1,15 @@
+VK_EXT_external_memory_host depends on userptr, so disable on Intel until
+https://github.com/FreeBSDDesktop/kms-drm/issues/197
+
+--- rpcs3/Emu/RSX/VK/VKDMA.cpp.orig	2021-02-28 23:32:23 UTC
++++ rpcs3/Emu/RSX/VK/VKDMA.cpp
+@@ -264,7 +264,8 @@ namespace vk
+ 			true;
+ #else
+ 		// Anything running on AMDGPU kernel driver will not work due to the check for fd-backed memory allocations
+-		const bool allow_host_buffers = (vendor != driver_vendor::AMD && vendor != driver_vendor::RADV);
++		// Intel userptr on non-Linux may not work or require root
++		const bool allow_host_buffers = (vendor != driver_vendor::AMD && vendor != driver_vendor::RADV && vendor != driver_vendor::INTEL);
+ #endif
+ 		if (allow_host_buffers && g_render_device->get_external_memory_host_support())
+ 		{
