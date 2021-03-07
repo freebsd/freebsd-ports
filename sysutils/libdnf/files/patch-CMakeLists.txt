@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-06-02 09:41:46 UTC
+--- CMakeLists.txt.orig	2021-03-01 17:31:02 UTC
 +++ CMakeLists.txt
-@@ -171,15 +171,19 @@ add_subdirectory(po)
+@@ -168,15 +168,19 @@ add_subdirectory(po)
  
  
  # build docs

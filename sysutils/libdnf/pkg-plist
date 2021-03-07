@@ -16,6 +16,7 @@ include/libdnf/config.h
 include/libdnf/dnf-advisory.h
 include/libdnf/dnf-advisorypkg.h
 include/libdnf/dnf-advisoryref.h
+include/libdnf/dnf-conf.h
 include/libdnf/dnf-context.h
 include/libdnf/dnf-db.h
 include/libdnf/dnf-enums.h
