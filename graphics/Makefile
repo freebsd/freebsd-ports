@@ -850,6 +850,7 @@
     SUBDIR += py-opencolorio
     SUBDIR += py-openimageio
     SUBDIR += py-openshadinglanguage
+    SUBDIR += py-osmnet
     SUBDIR += py-photocollage
     SUBDIR += py-piexif
     SUBDIR += py-pillow
