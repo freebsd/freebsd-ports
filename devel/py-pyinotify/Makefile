@@ -3,19 +3,20 @@
 PORTNAME=	pyinotify
 PORTVERSION=	0.9.6
 CATEGORIES=	devel
-MASTER_SITES=	CHEESESHOP/source/p/pyinotify
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to (lib)inotify
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		python:3.6+
-USE_PYTHON=	distutils py3kplist
+USE_PYTHON=	autoplist concurrent distutils
 
-NO_ARCH=	YES
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
