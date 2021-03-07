@@ -167,7 +167,7 @@ post-install:
 	(cd ${STAGEDIR}${PREFIX} && \
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${PREFIX} \
 		-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/python3.7/site-packages/adblock/adblock.cpython-37m.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/adblock/adblock*.so
 # Regenerate .PLIST.pymodtemp to get all installed files from
 # ${STAGEDIR} because the file that is generated in the first place
 # contains only the EGG files as a whole.
