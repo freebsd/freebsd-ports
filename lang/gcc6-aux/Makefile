@@ -36,7 +36,6 @@ OPTIONS_GROUP_BOOTSTRAP=BOOTSTRAP
 OPTIONS_DEFAULT=	FORTRAN OBJC
 NO_OPTIONS_SORT=	yes
 
-OBJC_DESC=		Objective-C language support
 TESTSUITE_DESC=		Activate test support
 ALLSTAGES_DESC=		Build compiler with itself (twice, brings in libcc1)
 STATIC_DESC=		Link compilers and drivers statically

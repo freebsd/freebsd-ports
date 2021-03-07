@@ -21,7 +21,6 @@ PORTDOCS=	COPYRIGHT README
 PORTEXAMPLES=	examples.cc
 
 OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES
-DOXYGEN_DESC=	Build documentation with doxygen
 
 .include <bsd.port.options.mk>
 

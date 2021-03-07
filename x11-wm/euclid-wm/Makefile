@@ -18,7 +18,6 @@ GH_TAGNAME=	b6b0319
 OPTIONS_DEFINE=		XINERAMA EUCLID_MENU
 OPTIONS_SUB=		yes
 OPTIONS_DEFAULT=	XINERAMA
-XINERAMA_DESC=		X11 Xinerama extension support
 EUCLID_MENU_DESC=	Custom built menuing program (work in progress)
 
 ALL_TARGET=		noxinerama

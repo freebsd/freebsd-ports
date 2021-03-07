@@ -57,7 +57,6 @@ PDO_MYSQL_DESC=		PDO MySQL driver
 PDO_ODBC_DESC=		PDO ODBC driver
 PDO_PGSQL_DESC=		PDO PostgreSQL driver
 PDO_SQLITE_DESC=	PDO sqlite driver
-PGSQL_DESC=		PostgreSQL database support
 PHAR_DESC=		phar support
 POSIX_DESC=		POSIX-like functions
 PSPELL_DESC=		pspell support

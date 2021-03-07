@@ -64,7 +64,6 @@ MUJS_DESC=		Use MuJS for Javascript language support
 SIXEL_DESC=		Sixel graphics support
 UCHARDET_DESC=		Guess subtitle encoding via uchardet
 VULKAN_DESC=		Vulkan output support
-WAYLAND_DESC=		Wayland (graphics) support
 YTDL_DESC=		Install youtube-dl
 ZIMG_DESC=		High quality software scaling via "z" library
 IN_DESC=		Input

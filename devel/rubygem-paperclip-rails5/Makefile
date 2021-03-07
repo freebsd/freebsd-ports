@@ -29,7 +29,6 @@ OPTIONS_SINGLE=			IMAGEMAGICK
 OPTIONS_SINGLE_IMAGEMAGICK=	IMX11 IMNOX11
 OPTIONS_DEFAULT=		IMNOX11
 
-IMAGEMAGICK_DESC=	ImageMagick image processing support
 IMNOX11_DESC=		Depend on ImageMagick without X11 support
 IMX11_DESC=		Depend on ImageMagick with X11 support
 

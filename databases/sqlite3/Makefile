@@ -119,7 +119,6 @@ DBSTAT_DESC=		Enable DBSTAT Virtual Table
 
 # https://www.sqlite.org/fts3.html#tokenizer
 OPTIONS_GROUP_UNICODE=	ICU UNICODE61
-UNICODE_DESC=		Unicode support
 UNICODE61_DESC=		Unicode Version 6.1 tokenizer
 
 # https://www.sqlite.org/rtree.html

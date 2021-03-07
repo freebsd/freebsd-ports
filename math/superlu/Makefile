@@ -36,7 +36,6 @@ DOCS_EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 GOTOBLAS_DESC=		GotoBLAS blas implementation
 GOTOBLAS_USES=		blaslapack:gotoblas
 GOTOBLAS_CMAKE_ON=	-DBLA_VENDOR:STRING="Goto"
-OPENBLAS_DESC=		OpenBLAS blas implementation
 OPENBLAS_USES=		blaslapack:openblas
 OPENBLAS_CMAKE_ON=	-DBLA_VENDOR:STRING="OpenBLAS"
 REFERENCE_DESC=		Reference blas implementation

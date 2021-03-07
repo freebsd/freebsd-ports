@@ -91,7 +91,6 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_WITH=	postgres
 PGSQL_VARS=		REQUIRE+=postgresql
 
-SOCKS_DESC=		SOCKS proxy support
 SOCKS_CONFIGURE_WITH=	socks-proxy
 
 .include <bsd.port.options.mk>

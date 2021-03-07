@@ -48,7 +48,6 @@ LOCALTIME_DESC=	Use localtime instead of UTC
 LOCALTIME_CONFIGURE_ENABLE=	localtime
 
 LZO_CONFIGURE_WITH=	lzo=${LOCALBASE}
-LZO_DESC=	LZO compression support
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
 PYTHON_CONFIGURE_WITH=	python

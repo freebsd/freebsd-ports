@@ -8,7 +8,6 @@ CACHE_PURGE_DESC=		3rd party cache_purge module
 CLOJURE_DESC=			3rd party clojure module
 CT_DESC=			3rd party cert_transparency module (SSL req.)
 DEBUGLOG_DESC=			Enable debug log (--with-debug)
-DEBUG_DESC=			Build with debugging support
 DEVEL_KIT_DESC=			3rd party Nginx Development Kit module
 DRIZZLE_DESC=			3rd party drizzle module
 DSO_DESC=			Enable dynamic modules support

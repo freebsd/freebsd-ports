@@ -30,7 +30,6 @@ NANCY_DESC=	Nancy bot support
 MOUSE_DESC=	Mouse click and wheel support
 EXTERNAL_DESC=	External SSH/Telnet support
 IPLOOKUP_DESC=	IP location lookup support
-PROXY_DESC=	Proxy support
 
 NLS_USES=		gettext
 NLS_USES_OFF=	gettext-tools

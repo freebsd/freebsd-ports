@@ -88,7 +88,6 @@ CONFIGURE_ENV+=	PATH=${PREFIX}/bin:${PATH}
 .if defined(SERVER_ONLY)
 OPTIONS_DEFINE=	DTRACE LDAP INTDATE TZDATA XML DOCS
 LDAP_DESC=	Build with LDAP authentication support
-DTRACE_DESC=	Build with DTrace probes
 TZDATA_DESC=	Use internal timezone database
 XML_DESC=	Build with XML data type
 
