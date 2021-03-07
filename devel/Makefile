@@ -1092,6 +1092,7 @@
     SUBDIR += libCello
     SUBDIR += libIDL
     SUBDIR += libPropList
+    SUBDIR += libabigail
     SUBDIR += libafterbase
     SUBDIR += liballium
     SUBDIR += libantlr3c

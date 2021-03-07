@@ -1,0 +1,13 @@
+ABI Generic Analysis and Instrumentation Library
+
+This project aims at providing a C++ library for constructing, manipulating,
+serializing and de-serializing ABI-relevant artifacts. The set of artifacts
+that we are interested in is made of constructions like types, variables,
+functions and declarations of a given library or program. For a given program
+or library, this set of constructions is called an ABI corpus.
+
+Thus the project aims at providing a library to manipulate ABI corpora, compare
+them, provide detailed information about their differences and help build tools
+to infer interesting conclusions about these differences.
+
+WWW: https://sourceware.org/libabigail/
