@@ -35,8 +35,8 @@ lib/nss_sss.so.2.0.0
 lib/pam_sss.so
 %%PYTHON_SITELIBDIR%%/SSSDConfig-1.16.5-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.py
-%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/__init__.cpython-37.pyc
-%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/ipachangeconf.cpython-37.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/ipachangeconf.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/SSSDConfig/ipachangeconf.py
 %%PYTHON_SITELIBDIR%%/pyhbac.so
 %%PYTHON_SITELIBDIR%%/pysss.so
