@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ngtcp2
-PORTVERSION=	0.1.0.g20210201
+PORTVERSION=	0.1.0.g20210227
 CATEGORIES=	net
 PKGNAMEPREFIX=	lib
 
@@ -14,13 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf compiler:c++17-lang libtool pathfix pkgconfig
 
-CONFIGURE_ARGS=	--enable-lib-only
+CONFIGURE_ARGS=	--enable-lib-only --with-jemalloc
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
-GH_TAGNAME=	3c0f397
+GH_TAGNAME=	7f10d53
 USE_GITHUB=	yes
 
 post-patch:
