@@ -1,0 +1,16 @@
+PDF::Core is a pure Ruby library to render PDF documents.
+
+It supports several PDF features, such as among others:
+ * low-level annotation
+ * istream objects and stream filters
+ * NameTree
+ * object repository
+ * object serialization
+ * indirect objects
+ * page geometries
+
+It is used internally by Prawn (provided in the rubygems-prawn package),
+a Ruby PDF generation library.
+
+WWW: http://prawnpdf.org/
+WWW: https://github.com/prawnpdf/pdf-core
