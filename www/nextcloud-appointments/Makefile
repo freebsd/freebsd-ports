@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	appointments
-PORTVERSION=	1.8.7
+PORTVERSION=	1.8.10
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/raw/${GH_TAGNAME}/build/artifacts/appstore/
 PKGNAMEPREFIX=	nextcloud-
