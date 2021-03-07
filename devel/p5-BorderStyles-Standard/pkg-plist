@@ -1,5 +1,6 @@
 %%SITE_PERL%%/BorderStyle/ASCII/None.pm
 %%SITE_PERL%%/BorderStyle/ASCII/SingleLine.pm
+%%SITE_PERL%%/BorderStyle/ASCII/SingleLineDoubleAfterHeader.pm
 %%SITE_PERL%%/BorderStyle/ASCII/SingleLineHorizontalOnly.pm
 %%SITE_PERL%%/BorderStyle/ASCII/SingleLineInnerOnly.pm
 %%SITE_PERL%%/BorderStyle/ASCII/SingleLineOuterOnly.pm
@@ -22,6 +23,7 @@
 %%SITE_PERL%%/BorderStyle/UTF8/SingleLineBold.pm
 %%SITE_PERL%%/BorderStyle/UTF8/SingleLineBoldHeader.pm
 %%SITE_PERL%%/BorderStyle/UTF8/SingleLineCurved.pm
+%%SITE_PERL%%/BorderStyle/UTF8/SingleLineDoubleAfterHeader.pm
 %%SITE_PERL%%/BorderStyle/UTF8/SingleLineHorizontalOnly.pm
 %%SITE_PERL%%/BorderStyle/UTF8/SingleLineInnerOnly.pm
 %%SITE_PERL%%/BorderStyle/UTF8/SingleLineOuterOnly.pm
@@ -31,6 +33,7 @@
 %%SITE_PERL%%/BorderStyles/Standard.pm
 %%PERL5_MAN3%%/BorderStyle::ASCII::None.3.gz
 %%PERL5_MAN3%%/BorderStyle::ASCII::SingleLine.3.gz
+%%PERL5_MAN3%%/BorderStyle::ASCII::SingleLineDoubleAfterHeader.3.gz
 %%PERL5_MAN3%%/BorderStyle::ASCII::SingleLineHorizontalOnly.3.gz
 %%PERL5_MAN3%%/BorderStyle::ASCII::SingleLineInnerOnly.3.gz
 %%PERL5_MAN3%%/BorderStyle::ASCII::SingleLineOuterOnly.3.gz
@@ -53,6 +56,7 @@
 %%PERL5_MAN3%%/BorderStyle::UTF8::SingleLineBold.3.gz
 %%PERL5_MAN3%%/BorderStyle::UTF8::SingleLineBoldHeader.3.gz
 %%PERL5_MAN3%%/BorderStyle::UTF8::SingleLineCurved.3.gz
+%%PERL5_MAN3%%/BorderStyle::UTF8::SingleLineDoubleAfterHeader.3.gz
 %%PERL5_MAN3%%/BorderStyle::UTF8::SingleLineHorizontalOnly.3.gz
 %%PERL5_MAN3%%/BorderStyle::UTF8::SingleLineInnerOnly.3.gz
 %%PERL5_MAN3%%/BorderStyle::UTF8::SingleLineOuterOnly.3.gz
