@@ -1,7 +1,5 @@
-TIMESTAMP = 1607050775
-SHA256 (soreau-wayland-logout-v1.1_GH0.tar.gz) = 814765492340d52c3371f46a37f0ebae1225f2db686ff0eab57c9464b80d756f
-SIZE (soreau-wayland-logout-v1.1_GH0.tar.gz) = 17731
-SHA256 (6e0c13c8b198.patch) = e22a33f9b4b99e3450b7527fc6124c7ee1bca93f95ae89fbb56b6b4a404ed98d
-SIZE (6e0c13c8b198.patch) = 1110
-SHA256 (64eb1c3c9a4d.patch) = df379f6e150417facd1973bb2dbc435bb3212d8a2edc09277481cfc0a0f32d36
-SIZE (64eb1c3c9a4d.patch) = 818
+TIMESTAMP = 1609062245
+SHA256 (soreau-wayland-logout-v1.3_GH0.tar.gz) = dc59dd2e80c340bc77d119e5e39fb4aec956177212cb63b87fe10096a35e8ddb
+SIZE (soreau-wayland-logout-v1.3_GH0.tar.gz) = 18033
+SHA256 (soreau-wayland-logout-v1.4_GH0.tar.gz) = 092b5f04b3e05662c91ab55251b3bd8571cfaa3e347ba1200b0b84bcb32e980f
+SIZE (soreau-wayland-logout-v1.4_GH0.tar.gz) = 16878
