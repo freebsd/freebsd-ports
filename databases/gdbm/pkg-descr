@@ -5,4 +5,4 @@ provided to a programmer needing to create and manipulate a hashed database.
 This library exists in the FreeBSD base collection, but the GNU version has
 added functionality that is sometimes useful.
 
-WWW: http://www.gnu.org/software/gdbm/
+WWW: https://www.gnu.org.ua/software/gdbm/
