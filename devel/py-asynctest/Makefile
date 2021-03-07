@@ -13,8 +13,11 @@ COMMENT=	Enhance unittest for testing asyncio libraries
 LICENSE=	APACHE20
 
 USES=		python:3.5+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+do-test:
+	cd ${WRKSRC} && ${PYTHON_CMD} -m unittest -v test
 
 .include <bsd.port.mk>
