@@ -19,34 +19,24 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/weather \
 		${PYTHON_SITELIBDIR}/weather.py \
-		${PYTHON_SITELIBDIR}/${PYCACHE_DIR}${PYCACHE_FILE}.pyc \
-		${PYTHON_SITELIBDIR}/${PYCACHE_DIR}${PYCACHE_FILE}.${PYTHON_PYOEXTENSION} \
+		${PYTHON_SITELIBDIR}/__pycache__/weather.cpython-${PYTHON_SUFFIX}.pyc \
+		${PYTHON_SITELIBDIR}/__pycache__/weather.cpython-${PYTHON_SUFFIX}.${PYTHON_PYOEXTENSION} \
 		share/man/man1/weather.1.gz \
 		share/man/man5/weatherrc.5.gz
 PORTDATA=	airports places stations zctas zones
 
 SHEBANG_FILES=	weather
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 3200
-PYCACHE_DIR=	# none
-PYCACHE_FILE=	weather
-.else
-PYCACHE_DIR=	__pycache__/
-PYCACHE_FILE=	weather.cpython-${PYTHON_SUFFIX}
-.endif
-
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}/weather.py
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}/weather.py
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/ ${STAGEDIR}${PYTHON_SITELIBDIR}/${PYCACHE_DIR}
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/ ${STAGEDIR}${PYTHON_SITELIBDIR}/__pycache__/
 	${INSTALL_SCRIPT} ${WRKSRC}/weather ${STAGEDIR}${PREFIX}/bin/weather
 	${INSTALL_DATA} ${WRKSRC}/weather.py ${STAGEDIR}${PYTHON_SITELIBDIR}/
-	${INSTALL_DATA} ${WRKSRC}/${PYCACHE_DIR}${PYCACHE_FILE}.pyc ${STAGEDIR}${PYTHON_SITELIBDIR}/${PYCACHE_DIR}
-	${INSTALL_DATA} ${WRKSRC}/${PYCACHE_DIR}${PYCACHE_FILE}.${PYTHON_PYOEXTENSION} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PYCACHE_DIR}
+	${INSTALL_DATA} ${WRKSRC}/__pycache__/weather.cpython-${PYTHON_SUFFIX}.pyc ${STAGEDIR}${PYTHON_SITELIBDIR}/__pycache__/
+	${INSTALL_DATA} ${WRKSRC}/__pycache__/weather.cpython-${PYTHON_SUFFIX}.${PYTHON_PYOEXTENSION} ${STAGEDIR}${PYTHON_SITELIBDIR}/__pycache__/
 	${INSTALL_MAN} ${WRKSRC}/weather.1 ${STAGEDIR}${PREFIX}/share/man/man1/weather.1
 	${INSTALL_MAN} ${WRKSRC}/weatherrc.5 ${STAGEDIR}${PREFIX}/share/man/man5/weatherrc.5
 	${MKDIR} ${STAGEDIR}${DATADIR}/
@@ -58,4 +48,4 @@ do-install:
 	@${ECHO_MSG} "setpath = ${DATADIR}"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
