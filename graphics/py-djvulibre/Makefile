@@ -17,9 +17,6 @@ LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre
 USES=		python:3.6+ pkgconfig
 USE_PYTHON=	distutils cython autoplist
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|'python'|'${PYTHON_CMD}'|g" ${WRKSRC}/setup.py
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/djvu/*.so
 
