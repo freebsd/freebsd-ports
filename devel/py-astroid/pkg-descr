@@ -10,5 +10,4 @@ methods and attributes for different usages. They include some support for
 static inference and local name scopes. Furthermore, astroid builds partial
 trees by inspecting living objects.
 
-WWW: https://pypi.org/project/astroid/
 WWW: https://github.com/PyCQA/astroid
