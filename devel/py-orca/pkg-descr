@@ -1,0 +1,11 @@
+Orca is a Python library for task orchestration. It's designed for workflows
+like city simulation, where the data representing a model's state is so large
+that it needs to be managed outside of the task graph.
+
+The building blocks of a workflow are "steps", Python functions that can be
+assembled on the fly into linear or cyclical pipelines. Steps typically interact
+with a central data store that persists in memory while the pipeline runs.
+Derived tables and columns can be updated automatically as base data changes,
+and pipeline components are evaluated lazily to reduce unnecessary overhead.
+
+WWW: https://github.com/UDST/orca
