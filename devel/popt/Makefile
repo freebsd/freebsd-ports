@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.rpm.org/popt/releases/popt-1.x/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Getopt(3) like library with a number of enhancements, from Redhat
 
 LICENSE=	MIT
