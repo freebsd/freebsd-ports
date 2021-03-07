@@ -4,14 +4,12 @@
 %%SITE_PERL%%/Mojo/Pg/PubSub.pm
 %%SITE_PERL%%/Mojo/Pg/Results.pm
 %%SITE_PERL%%/Mojo/Pg/Transaction.pm
-%%SITE_PERL%%/SQL/Abstract/Pg.pm
 %%PERL5_MAN3%%/Mojo::Pg.3.gz
 %%PERL5_MAN3%%/Mojo::Pg::Database.3.gz
 %%PERL5_MAN3%%/Mojo::Pg::Migrations.3.gz
 %%PERL5_MAN3%%/Mojo::Pg::PubSub.3.gz
 %%PERL5_MAN3%%/Mojo::Pg::Results.3.gz
 %%PERL5_MAN3%%/Mojo::Pg::Transaction.3.gz
-%%PERL5_MAN3%%/SQL::Abstract::Pg.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/blog.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/lib/Blog.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog/lib/Blog/Controller/Posts.pm
