@@ -936,6 +936,7 @@
     SUBDIR += p5-Text-Table-More
     SUBDIR += p5-Text-Table-Org
     SUBDIR += p5-Text-Table-Paragraph
+    SUBDIR += p5-Text-Table-Sprintf
     SUBDIR += p5-Text-Table-TSV
     SUBDIR += p5-Text-Table-Tiny
     SUBDIR += p5-Text-Table-TinyColor

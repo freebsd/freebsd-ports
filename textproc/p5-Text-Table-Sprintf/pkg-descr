@@ -1,0 +1,4 @@
+Text::Table::Sprintf provides a single function, table, which formats a
+two-dimensional array of data as a simple text table.
+
+WWW: https://metacpan.org/release/Text-Table-Sprintf
