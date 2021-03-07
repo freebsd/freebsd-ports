@@ -1,0 +1,4 @@
+bin/pod2rst
+%%SITE_PERL%%/Pod/POM/View/Restructured.pm
+%%PERL5_MAN1%%/pod2rst.1.gz
+%%PERL5_MAN3%%/Pod::POM::View::Restructured.3.gz

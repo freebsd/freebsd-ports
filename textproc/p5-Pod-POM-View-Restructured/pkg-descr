@@ -1,0 +1,5 @@
+Pod::POM::View::Restructured outputs reStructuredText that is expected to be
+used with Sphinx. Verbatim sections (indented paragraphs) in the POD will be
+output with syntax highlighting for Perl code by default.
+
+WWW: https://metacpan.org/release/Pod-POM-View-Restructured

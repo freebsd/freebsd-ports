@@ -691,6 +691,7 @@
     SUBDIR += p5-Pod-MinimumVersion
     SUBDIR += p5-Pod-POM
     SUBDIR += p5-Pod-POM-View-HTML-Filter
+    SUBDIR += p5-Pod-POM-View-Restructured
     SUBDIR += p5-Pod-Parser
     SUBDIR += p5-Pod-Perldoc
     SUBDIR += p5-Pod-ProjectDocs
