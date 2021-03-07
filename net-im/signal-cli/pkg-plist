@@ -9,7 +9,6 @@ share/man/man1/signal-cli.1.gz
 %%DATADIR%%/lib/asm-tree-7.1.jar
 %%DATADIR%%/lib/asm-util-7.1.jar
 %%DATADIR%%/lib/bcprov-jdk15on-1.68.jar
-%%DATADIR%%/lib/curve25519-java-0.5.0.jar
 %%DATADIR%%/lib/dbus-java-3.2.4.jar
 %%DATADIR%%/lib/jackson-annotations-2.9.0.jar
 %%DATADIR%%/lib/jackson-core-2.9.9.jar
@@ -26,14 +25,14 @@ share/man/man1/signal-cli.1.gz
 %%DATADIR%%/lib/jnr-x86asm-1.0.2.jar
 %%DATADIR%%/lib/kotlin-stdlib-1.3.71.jar
 %%DATADIR%%/lib/kotlin-stdlib-common-1.3.71.jar
-%%DATADIR%%/lib/libphonenumber-8.12.6.jar
+%%DATADIR%%/lib/lib.jar
+%%DATADIR%%/lib/libphonenumber-8.12.17.jar
 %%DATADIR%%/lib/okhttp-4.6.0.jar
-%%DATADIR%%/lib/okio-2.6.0.jar
+%%DATADIR%%/lib/okio-jvm-2.6.0.jar
 %%DATADIR%%/lib/protobuf-javalite-3.10.0.jar
 %%DATADIR%%/lib/signal-cli-%%VERSION%%.jar
-%%DATADIR%%/lib/signal-metadata-java-0.1.2.jar
-%%DATADIR%%/lib/signal-protocol-java-2.8.1.jar
-%%DATADIR%%/lib/signal-service-java-2.15.3_unofficial_16.jar
+%%DATADIR%%/lib/signal-client-java-0.2.3.jar
+%%DATADIR%%/lib/signal-service-java-2.15.3_unofficial_19.jar
 %%DATADIR%%/lib/slf4j-api-1.7.30.jar
 %%DATADIR%%/lib/slf4j-simple-1.7.30.jar
 %%DATADIR%%/lib/threetenbp-1.3.6.jar
