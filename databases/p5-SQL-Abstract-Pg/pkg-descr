@@ -1,0 +1,4 @@
+SQL::Abstract::Pg extends SQL::Abstract with a few PostgreSQL features used by
+Mojo::Pg.
+
+WWW: https://metacpan.org/release/SQL-Abstract-Pg

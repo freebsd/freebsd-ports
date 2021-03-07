@@ -481,6 +481,7 @@
     SUBDIR += p5-SQL-Abstract-Classic
     SUBDIR += p5-SQL-Abstract-Limit
     SUBDIR += p5-SQL-Abstract-More
+    SUBDIR += p5-SQL-Abstract-Pg
     SUBDIR += p5-SQL-Abstract-Plugin-InsertMulti
     SUBDIR += p5-SQL-Interp
     SUBDIR += p5-SQL-Maker
