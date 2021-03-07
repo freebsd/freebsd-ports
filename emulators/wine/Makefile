@@ -25,8 +25,8 @@ LIB_DEPENDS=	libFAudio.so:audio/faudio \
 USES=		bison desktop-file-utils gmake localbase pkgconfig shebangfix tar:xz
 USE_GCC=	yes
 
-CONFLICTS_INSTALL=	wine-staging-[0-9]* wine-devel-[0-9]* i386-wine-[0-9]* \
-			i386-wine-staging-[0-9]* i386-wine-devel-[0-9]*
+CONFLICTS_INSTALL=	wine-devel-[0-9]* \
+			i386-wine-[0-9]* i386-wine-devel-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose \
