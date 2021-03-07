@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	o
-DISTVERSION=	2.35.0
+DISTVERSION=	2.35.1
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	xyproto
 GH_TUPLE=	\
 		atotto:clipboard:v0.1.2:atotto_clipboard/vendor/github.com/atotto/clipboard \
-		golang:sys:16f7687f5001:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:489259a85091:golang_sys/vendor/golang.org/x/sys \
 		jung-kurt:gofpdf:v1.16.2:jung_kurt_gofpdf/vendor/github.com/jung-kurt/gofpdf \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
