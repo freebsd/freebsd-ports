@@ -958,6 +958,7 @@
     SUBDIR += p5-Text-Typography
     SUBDIR += p5-Text-Unaccent
     SUBDIR += p5-Text-Unaccent-PurePerl
+    SUBDIR += p5-Text-UnicodeBox
     SUBDIR += p5-Text-VimColor
     SUBDIR += p5-Text-VisualWidth
     SUBDIR += p5-Text-WideChar-Util

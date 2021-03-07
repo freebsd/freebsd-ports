@@ -1,0 +1,16 @@
+Text::UnicodeBox is a low level box drawing interface. You'll most likely want
+to use one of the higher level modules such as Text::UnicodeBox::Table.
+
+The unicode box symbol table is a fairly robust set of symbols that allow you to
+draw lines and boxes with monospaced fonts. This module allows you to focus on
+the content of the boxes you need to draw and mostly ignore how to draw a good
+looking box with proper connections between all the lines.
+
+The low level approach is line-based. A box object is created, add_line is
+called for each line of content you'd like to render, and render is called to
+complete the box.
+
+Output is built up over time, which allows you to stream the output rather then
+buffering it and printing it in one go.
+
+WWW: https://metacpan.org/release/Text-UnicodeBox
