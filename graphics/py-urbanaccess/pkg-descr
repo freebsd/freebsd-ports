@@ -1,0 +1,12 @@
+UrbanAccess is tool for creating multi-modal graph networks for use in
+multi-scale (e.g. address level to the metropolitan level) transit accessibility
+analyses with the network analysis tool Pandana. UrbanAccess uses open data from
+General Transit Feed Specification (GTFS) data to represent disparate
+operational schedule transit networks and pedestrian OpenStreetMap (OSM) data to
+represent the pedestrian network. UrbanAccess provides a generalized,
+computationally efficient, and unified accessibility calculation framework by
+linking tools for: 1) network data acquisition, validation, and processing; 2)
+computing an integrated pedestrian and transit weighted network graph; and 3)
+network analysis using Pandana.
+
+WWW: https://github.com/UDST/urbanaccess
