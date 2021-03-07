@@ -1,0 +1,8 @@
+Text::Table::TinyBorderStyle is like Text::Table::Tiny with added support for
+using border styles. For more details about border styles, see BorderStyle
+specification. The styles are in BorderStyle::* modules. Try installing and
+using the border style modules to see what they look like.
+
+Interface, options, and format variables are the same as in Text::Table::Tiny.
+
+WWW: https://metacpan.org/release/Text-Table-TinyBorderStyle
