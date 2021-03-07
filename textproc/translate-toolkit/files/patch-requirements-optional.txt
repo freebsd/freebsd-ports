@@ -12,8 +12,8 @@
 -chardet==4.0.0              # chardet
 +chardet>=3.0.4              # chardet
  # Tmserver backend
--cheroot==8.5.1       # tmserver
-+cheroot>=8.5.1       # tmserver
+-cheroot==8.5.2       # tmserver
++cheroot>=8.5.2       # tmserver
  # Format support
 -iniparse==0.5        # INI
 +iniparse>=0.5        # INI

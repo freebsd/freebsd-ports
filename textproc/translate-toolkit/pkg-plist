@@ -8,6 +8,7 @@ share/man/man1/idml2po.1.gz
 %%INI%%share/man/man1/ini2po.1.gz
 share/man/man1/json2po.1.gz
 share/man/man1/moz2po.1.gz
+@comment share/man/man1/mozfunny2prop.1.gz
 share/man/man1/mozlang2po.1.gz
 share/man/man1/odf2xliff.1.gz
 share/man/man1/oo2po.1.gz
@@ -37,8 +38,9 @@ share/man/man1/po2txt.1.gz
 share/man/man1/po2web2py.1.gz
 share/man/man1/po2wordfast.1.gz
 share/man/man1/po2xliff.1.gz
-@comment %%YAML%%share/man/man1/po2yaml.1.gz
+%%YAML%%share/man/man1/po2yaml.1.gz
 share/man/man1/pot2po.1.gz
+@comment share/man/man1/prop2mozfunny.1.gz
 share/man/man1/prop2po.1.gz
 %%RC%%share/man/man1/rc2po.1.gz
 share/man/man1/resx2po.1.gz
@@ -51,4 +53,4 @@ share/man/man1/txt2po.1.gz
 share/man/man1/web2py2po.1.gz
 share/man/man1/xliff2odf.1.gz
 share/man/man1/xliff2oo.1.gz
-@comment %%YAML%%share/man/man1/yaml2po.1.gz
+%%YAML%%share/man/man1/yaml2po.1.gz
