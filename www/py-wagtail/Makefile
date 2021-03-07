@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wagtail
-PORTVERSION=	2.11.4
+PORTVERSION=	2.11.5
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}django22>=2.1<3.2:www/py-django22@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-modelcluster>=5.1<6.0:www/py-django-modelcluster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-taggit>=1.0<2.0:www/py-django-taggit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.2.0<5.0:www/py-django-treebeard@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django-treebeard>=4.2.0<4.5:www/py-django-treebeard@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}djangorestframework>=3.11.1,1<4.0,1:www/py-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}draftjs-exporter>=2.1.5:www/py-draftjs-exporter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.999<2:www/py-html5lib@${PY_FLAVOR} \
