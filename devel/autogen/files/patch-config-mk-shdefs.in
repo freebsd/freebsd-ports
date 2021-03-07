@@ -1,0 +1,11 @@
+--- config/mk-shdefs.in.orig	2018-08-03 21:26:38 UTC
++++ config/mk-shdefs.in
+@@ -130,7 +130,7 @@ configure() {
+ 
+ set -x
+ exec 9>&2
+-tmp=$(mktemp --suffix=.tdir -d /tmp/shdefs-XXXXXXXXX)
++tmp=$(gmktemp --suffix=.tdir -d /tmp/shdefs-XXXXXXXXX)
+ exec 2>> $tmp/mk-shdef.log
+ init $0 $1
+ mk_config

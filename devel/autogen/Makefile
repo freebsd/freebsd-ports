@@ -38,8 +38,4 @@ INFO=		autogen
 
 SHEBANG_FILES=	autoopts/tpl/*.pl
 
-post-patch:
-	@${REINPLACE_CMD} -e '/CFLAGS=/ s| -Wno-format-contains-nul||; /WARN_CFLAGS=/ s| -Werror||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|mktemp --suffix=|g&|' ${WRKSRC}/agen5/mk-stamps.sh ${WRKSRC}/build-aux/run-ag.sh ${WRKSRC}/config/mk-shdefs.in
-
 .include <bsd.port.mk>
