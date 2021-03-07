@@ -2,20 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	mosquitto
-PORTVERSION=	1.6.7
-PORTREVISION=	1
+PORTVERSION=	2.0.8
 CATEGORIES=	net
 MASTER_SITES=	http://mosquitto.org/files/source/
-
-PATCH_SITES=	https://github.com/eclipse/mosquitto/commit/
-PATCHFILES=	8a4ae28fa926589e9891674ca4424dc703ad2d88.patch:-p1
 
 MAINTAINER=	joe@thrallingpenguin.com
 COMMENT=	Open source MQTT broker
 
 LICENSE=	EPL
 
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+BUILD_DEPENDS=	xsltproc:textproc/libxslt \
+		docbook-xsl>0:textproc/docbook-xsl
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
+		libcjson.so:devel/libcjson
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 USES=		cmake ssl
@@ -30,6 +29,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 OPTIONS_DEFINE=	CARES WS
 OPTIONS_DEFAULT=	CARES
 
+CARES_DESC=	Asynchronous DNS resolution via c-ares
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 CARES_CMAKE_ON=	-DWITH_SRV:BOOL=ON
 

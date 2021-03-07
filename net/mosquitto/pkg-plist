@@ -1,3 +1,4 @@
+bin/mosquitto_ctrl
 bin/mosquitto_passwd
 bin/mosquitto_pub
 bin/mosquitto_sub
@@ -10,14 +11,18 @@ include/mosquitto.h
 include/mosquitto_broker.h
 include/mosquitto_plugin.h
 include/mosquittopp.h
+include/mqtt_protocol.h
 lib/libmosquitto.so
 lib/libmosquitto.so.1
 lib/libmosquitto.so.%%PORTVERSION%%
 lib/libmosquittopp.so
 lib/libmosquittopp.so.1
 lib/libmosquittopp.so.%%PORTVERSION%%
+lib/mosquitto_dynamic_security.so
 libdata/pkgconfig/libmosquitto.pc
 libdata/pkgconfig/libmosquittopp.pc
+man/man1/mosquitto_ctrl.1.gz
+man/man1/mosquitto_ctrl_dynsec.1.gz
 man/man1/mosquitto_passwd.1.gz
 man/man1/mosquitto_pub.1.gz
 man/man1/mosquitto_rr.1.gz
