@@ -48,6 +48,8 @@ GH_TUPLE=	coreos:go-semver:v0.2.0:coreos_go_semver/vendor/src/github.com/coreos/
 		oschwald:maxminddb-golang:1960b16a5147:oschwald_maxminddb_golang/vendor/src/github.com/oschwald/maxminddb-golang \
 		uber-go:atomic:v1.3.2:uber_go_atomic/vendor/src/go.uber.org/atomic \
 		uber-go:multierr:v1.1.0:uber_go_multierr/vendor/src/go.uber.org/multierr \
-		uber-go:zap:v1.10.0:uber_go_zap/vendor/src/go.uber.org/zap \
+		uber-go:zap:v1.10.0:uber_go_zap/vendor/src/go.uber.org/zap 
+
+MAKE_ENV=	GO111MODULE="off"
 
 .include <bsd.port.mk>
