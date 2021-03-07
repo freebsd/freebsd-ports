@@ -1,0 +1,12 @@
+geopy is a Python client for several popular geocoding web services.
+
+geopy makes it easy for Python developers to locate the coordinates of
+addresses, cities, countries, and landmarks across the globe using third-party
+geocoders and other data sources.
+
+geopy includes geocoder classes for the OpenStreetMap Nominatim, Google
+Geocoding API (V3), and many other geocoding services. The full list is
+available on the Geocoders doc section. Geocoder classes are located in
+geopy.geocoders.
+
+WWW: https://github.com/geopy/geopy
