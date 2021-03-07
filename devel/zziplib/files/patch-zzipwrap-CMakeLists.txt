@@ -1,0 +1,11 @@
+--- zzipwrap/CMakeLists.txt.orig	2021-01-04 23:05:08 UTC
++++ zzipwrap/CMakeLists.txt
+@@ -48,7 +48,7 @@ add_library(libzzipwrap ${libzzipwrap_SRCS} )
+ target_link_libraries(libzzipwrap libzzip ZLIB::ZLIB )
+ target_include_directories(libzzipwrap PRIVATE "${CMAKE_SOURCE_DIR}" "${CMAKE_BINARY_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}")
+ 
+-set_target_properties(libzzipwrap PROPERTIES OUTPUT_NAME "zzipwrap" RELEASE_POSTFIX "-${RELNUM}")
++set_target_properties(libzzipwrap PROPERTIES OUTPUT_NAME "zzipwrap")
+ SET_TARGET_PROPERTIES(libzzipwrap PROPERTIES VERSION ${VERNUM}.${FIXNUM} SOVERSION ${VERNUM})
+ set_target_properties(libzzipwrap PROPERTIES DEFINE_SYMBOL "libzzip_EXPORTS")
+ 
