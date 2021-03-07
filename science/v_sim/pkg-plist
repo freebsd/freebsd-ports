@@ -5,8 +5,8 @@ lib/libv_sim-3.la
 lib/libv_sim-3.so
 lib/libv_sim-3.so.8
 lib/libv_sim-3.so.8.0.0
-%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/v_sim.cpython-37.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/v_sim.cpython-37.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/v_sim.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/gi/overrides/__pycache__/v_sim.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/gi/overrides/v_sim.py
 %%AB%%lib/v_sim/plug-ins/libabinit.a
 %%AB%%lib/v_sim/plug-ins/libabinit.la
