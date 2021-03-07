@@ -39,9 +39,6 @@ GSSAPI_NONE_CONFIGURE_ON=	--disable-gssapi
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^en@/d' ${WRKSRC}/lib/po/LINGUAS
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/reference
 	${INSTALL_DATA} ${WRKSRC}/doc/reference/html/* ${STAGEDIR}${DOCSDIR}/reference

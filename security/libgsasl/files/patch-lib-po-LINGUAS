@@ -1,0 +1,8 @@
+--- lib/po/LINGUAS.orig	2021-01-01 16:43:18 UTC
++++ lib/po/LINGUAS
+@@ -1,5 +1,3 @@
+-en@boldquot
+-en@quot
+ da
+ de
+ eo
