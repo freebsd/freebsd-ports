@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_mgmt_iot_central
-PORTVERSION=	0.19.3
+PORTVERSION=	0.19.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
