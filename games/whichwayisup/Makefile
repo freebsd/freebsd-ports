@@ -22,7 +22,6 @@ RUN_DEPENDS=	${PYGAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		dos2unix gnome python zip
-USE_PYTHON=	py3kplist
 DOS2UNIX_REGEX=	.*.[^pt][^nt][^gf]
 INSTALLS_ICONS=	yes
 
