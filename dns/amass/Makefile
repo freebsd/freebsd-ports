@@ -2,7 +2,7 @@
 
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.7
+DISTVERSION=	3.11.8
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,6 +41,7 @@ GH_TUPLE=	\
 		dghubble:sling:v1.3.0:dghubble_sling/vendor/github.com/dghubble/sling \
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		geziyor:geziyor:cfb16fe1ee0e:geziyor_geziyor/vendor/github.com/geziyor/geziyor \
+		go-check:check:8fa46927fb4f:go_check_check/vendor/gopkg.in/check.v1 \
 		go-ini:ini:v1.62.0:go_ini_ini/vendor/github.com/go-ini/ini \
 		go-kit:kit:v0.8.0:go_kit_kit/vendor/github.com/go-kit/kit \
 		go-sql-driver:mysql:v1.4.1:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
@@ -58,10 +59,11 @@ GH_TUPLE=	\
 		golang:oauth2:08078c50e5b5:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:09787c993a3a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:f84b799fce68:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
+		golang:sys:b64e53b001e4:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
-		golang:tools:b303f430e36d:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
+		google:go-cmp:v0.5.4:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:uuid:v1.1.3:google_uuid/vendor/github.com/google/uuid \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
@@ -70,7 +72,7 @@ GH_TUPLE=	\
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		joho:godotenv:v1.3.0:joho_godotenv/vendor/github.com/joho/godotenv \
 		knq:sysutil:15668db23d08:knq_sysutil \
-		konsorten:go-windows-terminal-sequences:v1.0.2:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
+		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		layeh:gopher-json:552bb3c4c3bf:layeh_gopher_json/vendor/layeh.com/gopher-json \
 		lib:pq:v1.9.0:lib_pq/vendor/github.com/lib/pq \
 		mailru:easyjson:v0.7.0:mailru_easyjson/vendor/github.com/mailru/easyjson \
@@ -78,6 +80,7 @@ GH_TUPLE=	\
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		miekg:dns:v1.1.35:miekg_dns/vendor/github.com/miekg/dns \
+		niemeyer:pretty:a10e7caefd8e:niemeyer_pretty/vendor/github.com/niemeyer/pretty \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		prometheus:client_golang:v1.0.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
@@ -85,11 +88,11 @@ GH_TUPLE=	\
 		prometheus:procfs:v0.0.2:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rakyll:statik:v0.1.7:rakyll_statik/vendor/github.com/rakyll/statik \
-		rogpeppe:go-internal:v1.5.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
-		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		smartystreets:goconvey:v1.6.4:smartystreets_goconvey/vendor/github.com/smartystreets/goconvey \
-		spf13:cobra:v0.0.5:spf13_cobra/vendor/github.com/spf13/cobra \
+		rogpeppe:go-internal:v1.6.2:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
+		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		spf13:cobra:v1.1.3:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
+		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		temoto:robotstxt:v1.1.1:temoto_robotstxt/vendor/github.com/temoto/robotstxt \
 		tylertreat:BoomFilters:611b3dbe80e8:tylertreat_boomfilters/vendor/github.com/tylertreat/BoomFilters \
 		uber-go:ratelimit:v0.1.0:uber_go_ratelimit/vendor/go.uber.org/ratelimit \
