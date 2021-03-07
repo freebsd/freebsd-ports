@@ -901,6 +901,7 @@
     SUBDIR += py-toyplot
     SUBDIR += py-traitsui
     SUBDIR += py-urbanaccess
+    SUBDIR += py-urbansim
     SUBDIR += py-utm
     SUBDIR += py-vecrec
     SUBDIR += py-visvis
