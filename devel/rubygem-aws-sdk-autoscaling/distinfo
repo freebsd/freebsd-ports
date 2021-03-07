@@ -1,3 +1,3 @@
-TIMESTAMP = 1612519207
-SHA256 (rubygem/aws-sdk-autoscaling-1.54.0.gem) = 05f2bea81e0ef10c44c0c44397f0b02194840fab705d320152acd5b4ac7c0840
-SIZE (rubygem/aws-sdk-autoscaling-1.54.0.gem) = 118272
+TIMESTAMP = 1614794342
+SHA256 (rubygem/aws-sdk-autoscaling-1.55.0.gem) = 3d1e09894b76c18423b1d57602c7c5aa7e2d9c5f25a40920f08b11b4452cac98
+SIZE (rubygem/aws-sdk-autoscaling-1.55.0.gem) = 118784
