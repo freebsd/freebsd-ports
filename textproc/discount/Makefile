@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Orc
 
 CFLAGS+=	-fPIC
-CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--mandir=${PREFIX}/share/man --prefix=${PREFIX}
 CONFIGURE_SCRIPT=	configure.sh
 HAS_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes # libmarkdown is used before it is built
