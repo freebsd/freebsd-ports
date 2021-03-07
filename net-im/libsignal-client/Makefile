@@ -1,0 +1,226 @@
+# $FreeBSD$
+
+PORTNAME=	libsignal-client
+DISTVERSIONPREFIX=	java-
+DISTVERSION=	0.2.3
+CATEGORIES=	net-im java
+
+MAINTAINER=	0mp@FreeBSD.org
+COMMENT=	Implementation of the Signal client protocol
+
+LICENSE=	AGPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+# Rust stable is not supported currently:
+# https://github.com/signalapp/libsignal-client/issues/141
+BUILD_DEPENDS=	rust-nightly>=0:lang/rust-nightly \
+		protoc:devel/protobuf
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	signalapp
+CARGO_CRATES=	addr2line-0.13.0 \
+		adler-0.2.3 \
+		aes-0.6.0 \
+		aes-soft-0.6.3 \
+		aesni-0.10.0 \
+		anyhow-1.0.33 \
+		arrayref-0.3.6 \
+		async-trait-0.1.41 \
+		atty-0.2.14 \
+		autocfg-1.0.1 \
+		backtrace-0.3.52 \
+		base64-0.13.0 \
+		bitflags-1.2.1 \
+		block-buffer-0.9.0 \
+		block-modes-0.7.0 \
+		block-padding-0.2.1 \
+		bstr-0.2.14 \
+		bumpalo-3.4.0 \
+		byteorder-1.3.4 \
+		bytes-0.5.6 \
+		cast-0.2.3 \
+		cc-1.0.62 \
+		cesu8-1.1.0 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		chunked_transfer-1.3.0 \
+		cipher-0.2.5 \
+		clap-2.33.3 \
+		combine-4.3.2 \
+		core-foundation-0.9.1 \
+		core-foundation-sys-0.8.2 \
+		cpuid-bool-0.1.2 \
+		criterion-0.3.3 \
+		criterion-plot-0.4.3 \
+		crossbeam-channel-0.4.4 \
+		crossbeam-deque-0.7.3 \
+		crossbeam-epoch-0.8.2 \
+		crossbeam-utils-0.7.2 \
+		crypto-mac-0.9.1 \
+		cslice-0.2.0 \
+		csv-1.1.3 \
+		csv-core-0.1.10 \
+		ctr-0.6.0 \
+		curve25519-dalek-3.0.0 \
+		digest-0.9.0 \
+		either-1.6.1 \
+		error-chain-0.12.4 \
+		fixedbitset-0.2.0 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.0.0 \
+		futures-0.3.7 \
+		futures-channel-0.3.7 \
+		futures-core-0.3.7 \
+		futures-executor-0.3.7 \
+		futures-io-0.3.7 \
+		futures-macro-0.3.7 \
+		futures-sink-0.3.7 \
+		futures-task-0.3.7 \
+		futures-util-0.3.7 \
+		generic-array-0.14.4 \
+		getrandom-0.1.15 \
+		gimli-0.22.0 \
+		half-1.6.0 \
+		hashbrown-0.9.1 \
+		heck-0.3.1 \
+		hermit-abi-0.1.17 \
+		hex-0.4.2 \
+		hmac-0.9.0 \
+		idna-0.2.0 \
+		indexmap-1.6.0 \
+		itertools-0.8.2 \
+		itertools-0.9.0 \
+		itoa-0.4.6 \
+		jni-0.17.0 \
+		jni-sys-0.3.0 \
+		js-sys-0.3.45 \
+		lazy_static-1.4.0 \
+		libc-0.2.79 \
+		libloading-0.6.6 \
+		linkme-0.2.4 \
+		linkme-impl-0.2.4 \
+		log-0.4.11 \
+		matches-0.1.8 \
+		maybe-uninit-2.0.0 \
+		memchr-2.3.3 \
+		memoffset-0.5.6 \
+		miniz_oxide-0.4.3 \
+		multimap-0.8.2 \
+		native-tls-0.2.6 \
+		neon-0.7.0 \
+		neon-build-0.5.3 \
+		neon-build-0.7.0 \
+		neon-macros-0.7.0 \
+		neon-runtime-0.7.0 \
+		num-traits-0.2.12 \
+		num_cpus-1.13.0 \
+		object-0.20.0 \
+		once_cell-1.4.1 \
+		oorandom-11.1.2 \
+		opaque-debug-0.3.0 \
+		openssl-0.10.30 \
+		openssl-probe-0.1.2 \
+		openssl-sys-0.9.58 \
+		packed_simd-0.3.3 \
+		paste-1.0.4 \
+		percent-encoding-2.1.0 \
+		petgraph-0.5.1 \
+		pin-project-1.0.1 \
+		pin-project-internal-1.0.1 \
+		pin-project-lite-0.1.11 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.19 \
+		plotters-0.2.15 \
+		polyval-0.4.1 \
+		ppv-lite86-0.2.9 \
+		proc-macro-hack-0.5.19 \
+		proc-macro-nested-0.1.6 \
+		proc-macro2-1.0.24 \
+		prost-0.6.1 \
+		prost-build-0.6.1 \
+		prost-derive-0.6.1 \
+		prost-types-0.6.1 \
+		qstring-0.7.2 \
+		quote-1.0.7 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
+		rayon-1.4.1 \
+		rayon-core-1.8.1 \
+		redox_syscall-0.1.57 \
+		regex-1.4.1 \
+		regex-automata-0.1.9 \
+		regex-syntax-0.6.20 \
+		remove_dir_all-0.5.3 \
+		rustc-demangle-0.1.17 \
+		rustc_version-0.2.3 \
+		ryu-1.0.5 \
+		same-file-1.0.6 \
+		schannel-0.1.19 \
+		scopeguard-1.1.0 \
+		security-framework-2.0.0 \
+		security-framework-sys-2.0.0 \
+		semver-0.9.0 \
+		semver-parser-0.7.0 \
+		serde-1.0.117 \
+		serde_cbor-0.11.1 \
+		serde_derive-1.0.117 \
+		serde_json-1.0.59 \
+		sha2-0.9.1 \
+		slab-0.4.2 \
+		smallvec-1.4.2 \
+		static_assertions-1.1.0 \
+		subtle-2.3.0 \
+		syn-1.0.45 \
+		syn-mid-0.5.3 \
+		synstructure-0.12.4 \
+		tempfile-3.1.0 \
+		textwrap-0.11.0 \
+		tinytemplate-1.1.0 \
+		tinyvec-1.1.0 \
+		tinyvec_macros-0.1.0 \
+		typenum-1.12.0 \
+		unicode-bidi-0.3.4 \
+		unicode-normalization-0.1.16 \
+		unicode-segmentation-1.6.0 \
+		unicode-width-0.1.8 \
+		unicode-xid-0.2.1 \
+		universal-hash-0.4.0 \
+		unzip3-1.0.0 \
+		ureq-1.5.2 \
+		url-2.2.0 \
+		vcpkg-0.2.10 \
+		version_check-0.9.2 \
+		walkdir-2.3.1 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.68 \
+		wasm-bindgen-backend-0.2.68 \
+		wasm-bindgen-macro-0.2.68 \
+		wasm-bindgen-macro-support-0.2.68 \
+		wasm-bindgen-shared-0.2.68 \
+		web-sys-0.3.45 \
+		which-3.1.1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		x25519-dalek-1.1.0 \
+		zeroize-1.1.1 \
+		zeroize_derive-1.0.1
+# CARGO_BUILDDEP=no is needed to force the use of rust-nightly.
+CARGO_BUILDDEP=		no
+CARGO_BUILD_ARGS=	--package libsignal-jni
+CARGO_ENV=		CARGO_PROFILE_RELEASE_LTO=thin
+CARGO_INSTALL=		no
+USE_LDCONFIG=		yes
+
+PLIST_FILES=	lib/libsignal_jni.so
+
+do-install:
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/release/libsignal_jni.so \
+		${STAGEDIR}${PREFIX}/lib/
+
+.include <bsd.port.mk>

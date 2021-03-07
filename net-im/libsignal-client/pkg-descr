@@ -1,0 +1,6 @@
+libsignal-client is an implementation of the Signal client protocol in Rust.
+
+It is under heavy development at the moment and subject to change without
+notice. Its use outside Signal is not yet recommended.
+
+WWW: https://github.com/signalapp/libsignal-client
