@@ -48,7 +48,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
 TEST_BUILD_DEPENDS=	${LOCALBASE}/include/check.h:devel/check
-TEST_VARS=	TEST_TARGET=check
+TEST_TEST_TARGET=	check
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,mdb_init,mdb_get_version,' \

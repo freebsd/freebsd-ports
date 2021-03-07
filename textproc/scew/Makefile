@@ -24,7 +24,8 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	TEST
 
 TEST_LIB_DEPENDS=	libcheck.so:devel/check
-TEST_VARS=		TEST_TARGET=check TEST_WRKSRC=${WRKSRC}/tests
+TEST_TEST_TARGET=	check
+TEST_WRKSRC=		${WRKSRC}/tests
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/scew_print/scew_print ${STAGEDIR}${PREFIX}/bin/
