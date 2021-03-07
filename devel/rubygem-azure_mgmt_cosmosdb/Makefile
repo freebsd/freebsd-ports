@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure_mgmt_cosmosdb
-PORTVERSION=	0.23.1
+PORTVERSION=	0.24.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
