@@ -7,4 +7,4 @@ Note that this port will install this utility with a `g' prefix,
 for example gsed, but the texinfo documentation will refer to these
 utilities without the `g' prefix.
 
-WWW: http://www.gnu.org/software/sed/sed.html
+WWW: https://www.gnu.org/software/sed/sed.html
