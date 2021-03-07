@@ -1,0 +1,11 @@
+--- vendor/modules.txt.orig	2021-03-07 04:55:30 UTC
++++ vendor/modules.txt
+@@ -36,7 +36,7 @@ golang.org/x/net/context/ctxhttp
+ # golang.org/x/oauth2 v0.0.0-20201109201403-9fd604954f58
+ golang.org/x/oauth2
+ golang.org/x/oauth2/internal
+-# golang.org/x/sys v0.0.0-20201117222635-ba5294a509c7
++# golang.org/x/sys@v0.0.0-20210119212857-b64e53b001e4
+ golang.org/x/sys/internal/unsafeheader
+ golang.org/x/sys/unix
+ golang.org/x/sys/windows

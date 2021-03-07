@@ -1,5 +1,3 @@
-TIMESTAMP = 1605977365
-SHA256 (naggie-dstask-v0.23.2_GH0.tar.gz) = 30665d3f0f1e268af6eff681e331557f56273bf6ac7491b489c50725b55ef293
-SIZE (naggie-dstask-v0.23.2_GH0.tar.gz) = 2537726
-SHA256 (947deb069256bcec020756ce052ccc718e68cfb5.diff) = 74583b543ff10465c85258e3235a918ac2de387d06b2c5cbbc6bd5a2d219d8b1
-SIZE (947deb069256bcec020756ce052ccc718e68cfb5.diff) = 463671
+TIMESTAMP = 1615092691
+SHA256 (naggie-dstask-v0.24.1_GH0.tar.gz) = 35d46ade97f7b68e2bfb719b8bdb0db65e4b66b97e368849ecdecab1d58ef3d0
+SIZE (naggie-dstask-v0.24.1_GH0.tar.gz) = 3288912
