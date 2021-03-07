@@ -1,0 +1,6 @@
+Pandana is a Python library for network analysis that uses contraction
+hierarchies to calculate super-fast travel accessibility metrics and shortest
+paths. The numerical code is in C++.
+
+WWW: https://udst.github.io/pandana/
+WWW: https://github.com/UDST/pandana
