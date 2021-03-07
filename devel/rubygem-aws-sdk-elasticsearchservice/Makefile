@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	aws-sdk-elasticsearchservice
-PORTVERSION=	1.48.0
+PORTVERSION=	1.49.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
