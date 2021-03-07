@@ -3,6 +3,7 @@
 
 PORTNAME=	azure-core
 PORTVERSION=	1.11.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +25,12 @@ USES=		python:3.6+ zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	ASYNC
+OPTIONS_DEFAULT=ASYNC
+ASYNC_DESC=	Async transport support
+
+ASYNC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=0:www/py-aiohttp@${PY_FLAVOR}
 
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
