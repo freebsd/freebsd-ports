@@ -203,10 +203,6 @@ post-patch:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/prebuilt-x86_64.tar.xz ${WRKSRC}/out/docker/
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/prebuilt-arm.tar.xz ${WRKSRC}/out/docker/
 
-gomod-deps: patch
-	(cd ${WRKSRC} && go mod vendor)
-	(cd ${WRKSRC} && modules2tuple vendor/modules.txt)
-
 pre-build:
 	@cd ${WRKSRC} && go-bindata \
 		-pkg docker \

@@ -208,10 +208,6 @@ GO_TARGET=	./cmd/kas
 
 PLIST_FILES=	bin/kas
 
-gomod-deps: patch
-	(cd ${WRKSRC} && go mod vendor)
-	(cd ${WRKSRC} && modules2tuple vendor/modules.txt)
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/kas ${STAGEDIR}${PREFIX}/bin/kas
 

@@ -27,7 +27,7 @@ GROUPS=		git
 
 # for go dependencies
 USE_GITHUB=	nodefault
-# generated with: make gomod-deps
+# generated with: make gomod-vendor
 # 38dd
 GH_TUPLE=	\
 		DataDog:dd-trace-go:v1.7.0:datadog_dd_trace_go/vendor/gopkg.in/DataDog/dd-trace-go.v1 \
@@ -76,11 +76,6 @@ post-patch:
 	${MV} ${WRKSRC}/config.yml.example ${WRKSRC}/config.yml.sample
 	${CP} ${WRKSRC}/config.yml.sample ${WRKSRC}/config.yml
 	${REINPLACE_CMD} -e 's|VERSION_STRING :=.*|VERSION_STRING := v${PORTVERSION}|g' ${WRKSRC}/Makefile
-
-# Build the go deps, use `pkg install modules2tuple`
-gomod-deps: patch
-	(cd ${WRKSRC} && go mod vendor)
-	(cd ${WRKSRC} && modules2tuple vendor/modules.txt)
 
 pre-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} build)
