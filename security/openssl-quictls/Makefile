@@ -3,6 +3,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	3.0.0.a12
+PORTREVISION=	1
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	-quictls
 
@@ -29,7 +30,7 @@ USES=		cpe perl5
 USE_PERL5=	build
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PKGNAMESUFFIX:S/-//}
-GH_TAGNAME=	${PORTNAME}-3.0.0-alpha12+quic
+GH_TAGNAME=	9398922
 
 TEST_TARGET=	test
 
@@ -155,7 +156,7 @@ post-patch:
 	${REINPLACE_CMD} -Ee 's|^MANDIR=.*$$|MANDIR=$$(INSTALLTOP)/man|' \
 		-e 's|^(build\|install)_docs: .*|\1_docs: \1_man_docs|' \
 		${WRKSRC}/Configurations/unix-Makefile.tmpl
-	${REINPLACE_CMD} 's|SHLIB_VERSION=18.3|SHLIB_VERSION=${OPENSSL_SHLIBVER}|' \
+	${REINPLACE_CMD} 's|SHLIB_VERSION=81.3|SHLIB_VERSION=${OPENSSL_SHLIBVER}|' \
 		${WRKSRC}/VERSION.dat
 
 post-configure:
