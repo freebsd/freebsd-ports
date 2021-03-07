@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	jupyterlab
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.9
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,8 +17,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-packaging>=0:devel/py-jupyter-pack
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=0:devel/ipython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter_core>=0:devel/py-jupyter_core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-server>=1.2<2:devel/py-jupyter-server@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyterlab-server>=2.0<3:devel/py-jupyterlab-server@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-packaging>=0.7.3<0.8:devel/py-jupyter-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-server>=1.4<2:devel/py-jupyter-server@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab-server>=2.3<3:devel/py-jupyterlab-server@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbclassic>=0.2<1:devel/py-nbclassic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=6.1.0:www/py-tornado@${PY_FLAVOR}
