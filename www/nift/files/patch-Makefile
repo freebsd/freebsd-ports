@@ -1,6 +1,6 @@
---- Makefile.orig	2020-05-15 16:07:18 UTC
+--- Makefile.orig	2021-03-07 20:18:20 UTC
 +++ Makefile
-@@ -3,7 +3,7 @@ objects=nsm.o ConsoleColor.o DateTimeInfo.o Directory.
+@@ -3,14 +3,14 @@ objects=nsm.o ConsoleColor.o DateTimeInfo.o Directory.
  cppfiles=nsm.cpp ConsoleColor.cpp DateTimeInfo.cpp Directory.cpp Expr.cpp ExprtkFns.cpp Filename.cpp FileSystem.cpp Getline.cpp GitInfo.cpp hashtk/HashTk.cpp Lolcat.cpp LuaFns.cpp Lua.cpp NumFns.cpp Pagination.cpp Parser.cpp Path.cpp ProjectInfo.cpp Quoted.cpp StrFns.cpp SystemInfo.cpp Title.cpp TrackedInfo.cpp Variables.cpp WatchList.cpp
  
  DESTDIR?=
@@ -9,76 +9,151 @@
  BINDIR=${DESTDIR}${PREFIX}/bin
  LIBDIR=${DESTDIR}${PREFIX}/lib
  
-@@ -79,58 +79,58 @@ ifeq ($(BUNDLED),0)
+ CXX?=g++
+ CXXFLAGS+=-std=c++11 -Wall -Wextra -pedantic -O3 -Dexprtk_disable_caseinsensitivity
+ #CXXFLAGS=-std=c++11 -Wall -Wextra -Werror -pedantic -O3
+-LDFLAGS+=-pthread
++LINK+=-pthread
+ 
+ ifeq ($(OS),Windows_NT) 
+     detected_OS := Windows
+@@ -22,7 +22,7 @@ ifeq ($(CXX),clang)
+ 	ifeq ($(OS),FreeBSD) 
+ 	else
+ 		CXXFLAGS+= -Qunused-arguments -lstdc++
+-	    LDFLAGS+= -lm
++	    LINK+= -lm
+ 	endif
+ endif
+ 
+@@ -71,66 +71,66 @@ ifeq ($(BUNDLED),0)
+ 		WAS_UNBUNDLED=1
+ 		ifneq ($(LUA_VERSION),)
+     		CXXFLAGS+= -D__BUNDLED__ -D__LUA_VERSION_5_3__
+-    		LDFLAGS+= -LLua-5.3/src -llua
++    		LINK+= -LLua-5.3/src -llua
+     	else
+     		CXXFLAGS+= -D__BUNDLED__ -D__LUAJIT_VERSION_2_1__
+-			LDFLAGS+= -LLuaJIT/src -llua51
++			LINK+= -LLuaJIT/src -llua51
+     	endif
  	else ifeq ($(LUA_VERSION),x) 
  	    ifeq ($(detected_OS),FreeBSD)  # FreeBSD
  			CXXFLAGS+= -D__LUA_VERSION_x__
--	    	LINK+= -L/usr/local/lib -llua -lm -ldl  
+-	    	LDFLAGS+= -L/usr/local/lib -llua -lm -ldl  
 +	    	LINK+= -L%%LOCALBASE%%/lib -llua -lm -ldl  
  		else                                # *nix
  			CXXFLAGS+= -D__LUA_VERSION_x__
--	    	LINK+= -L/usr/local/lib -llua -ldl
+-	    	LDFLAGS+= -L/usr/local/lib -llua -ldl
 +	    	LINK+= -L%%LOCALBASE%%/lib -llua -ldl
  		endif
  	else ifeq ($(LUA_VERSION),5.4) 
  	    ifeq ($(detected_OS),FreeBSD)  # FreeBSD
  			CXXFLAGS+= -D__LUA_VERSION_5_4__
--	    	LINK+= -L/usr/local/lib -llua-5.4 -lm -ldl  
+-	    	LDFLAGS+= -L/usr/local/lib -llua-5.4 -lm -ldl  
 +	    	LINK+= -L%%LOCALBASE%%/lib -llua-5.4 -lm -ldl  
  		else                                # *nix
  			CXXFLAGS+= -D__LUA_VERSION_5_4__
--	    	LINK+= -L/usr/local/lib -llua-5.4 -ldl
+-	    	LDFLAGS+= -L/usr/local/lib -llua-5.4 -ldl
 +	    	LINK+= -L%%LOCALBASE%%/lib -llua-5.4 -ldl
  		endif
  	else ifeq ($(LUA_VERSION),5.3) 
  	    ifeq ($(detected_OS),FreeBSD)  # FreeBSD
  			CXXFLAGS+= -D__LUA_VERSION_5_3__
--	    	LINK+= -L/usr/local/lib -llua-5.3 -lm -ldl  
+-	    	LDFLAGS+= -L/usr/local/lib -llua-5.3 -lm -ldl  
 +	    	LINK+= -L%%LOCALBASE%%/lib -llua-5.3 -lm -ldl  
  		else                                # *nix
  			CXXFLAGS+= -D__LUA_VERSION_5_3__
--	    	LINK+= -L/usr/local/lib -llua-5.3 -ldl
+-	    	LDFLAGS+= -L/usr/local/lib -llua-5.3 -ldl
 +	    	LINK+= -L%%LOCALBASE%%/lib -llua-5.3 -ldl
  		endif
  	else ifeq ($(LUA_VERSION),5.2) 
  	    ifeq ($(detected_OS),FreeBSD)  # FreeBSD
  			CXXFLAGS+= -D__LUA_VERSION_5_2__
--	    	LINK+= -L/usr/local/lib -llua-5.2 -lm -ldl  
+-	    	LDFLAGS+= -L/usr/local/lib -llua-5.2 -lm -ldl  
 +	    	LINK+= -L%%LOCALBASE%%/lib -llua-5.2 -lm -ldl  
  		else                                # *nix
  			CXXFLAGS+= -D__LUA_VERSION_5_2__
--	    	LINK+= -L/usr/local/lib -llua-5.2 -ldl
+-	    	LDFLAGS+= -L/usr/local/lib -llua-5.2 -ldl
 +	    	LINK+= -L%%LOCALBASE%%/lib -llua-5.2 -ldl
  		endif
  	else ifeq ($(LUA_VERSION),5.1) 
  	    ifeq ($(detected_OS),FreeBSD)  # FreeBSD
  			CXXFLAGS+= -D__LUA_VERSION_5_1__
--	    	LINK+= -L/usr/local/lib -llua-5.1 -lm -ldl  
+-	    	LDFLAGS+= -L/usr/local/lib -llua-5.1 -lm -ldl  
 +	    	LINK+= -L%%LOCALBASE%%/lib -llua-5.1 -lm -ldl  
  		else                                # *nix
  			CXXFLAGS+= -D__LUA_VERSION_5_1__
--	    	LINK+= -L/usr/local/lib -llua-5.1 -ldl
+-	    	LDFLAGS+= -L/usr/local/lib -llua-5.1 -ldl
 +	    	LINK+= -L%%LOCALBASE%%/lib -llua-5.1 -ldl
  		endif
  	else ifeq ($(LUAJIT_VERSION),2.0)
  		ifeq ($(detected_OS),FreeBSD)  # FreeBSD
  			CXXFLAGS+= -D__LUAJIT_VERSION_2_0__
--			LINK+= -ldl -lm -L/usr/local/lib -lluajit-5.1  
+-			LDFLAGS+= -ldl -lm -L/usr/local/lib -lluajit-5.1  
 +			LINK+= -ldl -lm -L%%LOCALBASE%%/lib -lluajit-5.1  
  		else                                # *nix
  			CXXFLAGS+= -D__LUAJIT_VERSION_2_0__
--			LINK+= -ldl -L/usr/local/lib -lluajit-5.1 
+-			LDFLAGS+= -ldl -L/usr/local/lib -lluajit-5.1 
 +			LINK+= -ldl -L%%LOCALBASE%%/lib -lluajit-5.1 
  		endif
  	else
  		ifeq ($(detected_OS),FreeBSD)  # FreeBSD
  			CXXFLAGS+= -D__LUAJIT_VERSION_2_1__
--			LINK+= -ldl -lm -L/usr/local/lib -lluajit-5.1  
+-			LDFLAGS+= -ldl -lm -L/usr/local/lib -lluajit-5.1  
 +			LINK+= -ldl -lm -L%%LOCALBASE%%/lib -lluajit-5.1  
  		else                                # *nix
  			CXXFLAGS+= -D__LUAJIT_VERSION_2_1__
--			LINK+= -ldl -L/usr/local/lib -lluajit-5.1 
+-			LDFLAGS+= -ldl -L/usr/local/lib -lluajit-5.1 
 +			LINK+= -ldl -L%%LOCALBASE%%/lib -lluajit-5.1 
  		endif
  	endif
  else
+@@ -138,24 +138,24 @@ else
+ 	ifeq ($(LUA_VERSION),5.3) 
+ 		CXXFLAGS+= -D__BUNDLED__ -D__LUA_VERSION_5_3__
+ 	    ifeq ($(detected_OS),Windows)  # Windows
+-	    	LDFLAGS+= -LLua-5.3/src -llua
+-	    	#LDFLAGS+= -LLua-5.3/src -llua
++	    	LINK+= -LLua-5.3/src -llua
++	    	#LINK+= -LLua-5.3/src -llua
+ 		else ifeq ($(detected_OS),FreeBSD)  # FreeBSD
+-	    	LDFLAGS+= -LLua-5.3/src -llua -ldl -lm
++	    	LINK+= -LLua-5.3/src -llua -ldl -lm
+ 		else                                # *nix/Vercel
+-	    	LDFLAGS+= -LLua-5.3/src -llua -ldl
++	    	LINK+= -LLua-5.3/src -llua -ldl
+ 		endif
+ 	else
+ 		CXXFLAGS+= -D__BUNDLED__ -D__LUAJIT_VERSION_2_1__
+ 		ifeq ($(detected_OS),Windows)  # Windows
+-	    	LDFLAGS+= -LLuaJIT/src -llua51
+-			#LDFLAGS+= -L. -llua51
++	    	LINK+= -LLuaJIT/src -llua51
++			#LINK+= -L. -llua51
+ 		else ifeq ($(detected_OS),FreeBSD)  # FreeBSD
+-			LDFLAGS+= ./LuaJIT/src/libluajit.a -ldl -lm
+-			#LDFLAGS+= -ldl -lm -LLuaJIT/src -lluajit
++			LINK+= ./LuaJIT/src/libluajit.a -ldl -lm
++			#LINK+= -ldl -lm -LLuaJIT/src -lluajit
+ 		else                                # *nix/Vercel
+-			LDFLAGS+= ./LuaJIT/src/libluajit.a -ldl
+-			#LDFLAGS+= -ldl -LLuaJIT/src -lluajit
++			LINK+= ./LuaJIT/src/libluajit.a -ldl
++			#LINK+= -ldl -LLuaJIT/src -lluajit
+ 		endif
+ 	endif
+ endif
+@@ -220,10 +220,10 @@ HashTk.o: hashtk/HashTk.cpp hashtk/HashTk.h
+ 
+ nsm: $(objects)
+ ifeq ($(detected_OS),Windows)  # Windows
+-	$(CXX) $(CXXFLAGS) $(objects) -o nsm $(LDFLAGS)
++	$(CXX) $(CXXFLAGS) $(objects) -o nsm $(LINK)
+ 	copy nsm.exe nift.exe
+ else
+-	$(CXX) $(CXXFLAGS) $(objects) -o nsm $(LDFLAGS)
++	$(CXX) $(CXXFLAGS) $(objects) -o nsm $(LINK)
+ 	cp nsm nift
+ endif
+ 
