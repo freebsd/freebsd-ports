@@ -53,7 +53,7 @@
  # Thrift is a dependency of gitlab-labkit, we want a version higher than 0.14.0
  # because of https://gitlab.com/gitlab-org/gitlab/-/issues/321900
  gem 'thrift', '>= 0.14.0'
-@@ -332,102 +331,11 @@ gem 'snowplow-tracker', '~> 0.6.1'
+@@ -332,104 +331,13 @@ gem 'snowplow-tracker', '~> 0.6.1'
  # Metrics
  group :metrics do
    gem 'method_source', '~> 1.0', require: false
@@ -63,8 +63,8 @@
    # Prometheus
    gem 'prometheus-client-mmap', '~> 0.12.0'
    gem 'raindrops', '~> 0.18'
--end
--
+ end
+ 
 -group :development do
 -  gem 'brakeman', '~> 4.2', require: false
 -  gem 'danger', '~> 8.0.6', require: false
@@ -154,6 +154,17 @@
 -
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false
- end
- 
+-end
+-
  gem 'octokit', '~> 4.15'
+ 
+ # https://gitlab.com/gitlab-org/gitlab/issues/207207
+@@ -473,7 +381,7 @@ gem 'gitaly', '~> 13.9.0.pre.rc1'
+ 
+ gem 'grpc', '~> 1.30.2'
+ 
+-gem 'google-protobuf', '~> 3.12'
++gem 'google-protobuf', '~> 3.14.0'
+ 
+ gem 'toml-rb', '~> 1.0.0'
+ 
