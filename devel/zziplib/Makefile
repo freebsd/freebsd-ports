@@ -16,7 +16,7 @@ LICENSE_FILE_MPL11=	${WRKSRC}/docs/COPYING.MPL
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		cmake
+USES=		cmake compiler:c11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gdraheim
