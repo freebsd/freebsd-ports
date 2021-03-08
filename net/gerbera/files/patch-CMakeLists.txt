@@ -1,8 +1,10 @@
---- CMakeLists.txt.orig	2020-09-06 01:54:18 UTC
+--- CMakeLists.txt.orig	2021-03-07 21:18:59 UTC
 +++ CMakeLists.txt
-@@ -528,4 +528,4 @@ INSTALL(FILES
-         ${PROJECT_SOURCE_DIR}/config/mysql.sql
-         ${PROJECT_SOURCE_DIR}/config/sqlite3.sql
+@@ -559,6 +559,6 @@ INSTALL(FILES
+         src/database/mysql/mysql.sql
+         src/database/sqlite3/sqlite3.sql
          DESTINATION share/gerbera)
 -INSTALL(FILES ${PROJECT_SOURCE_DIR}/doc/gerbera.1 DESTINATION share/man/man1)
 +INSTALL(FILES ${PROJECT_SOURCE_DIR}/doc/gerbera.1 DESTINATION man/man1)
+ 
+ include(packaging)
