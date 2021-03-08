@@ -3,7 +3,6 @@ lib/hypnotix/common.py
 @(,,755) lib/hypnotix/hypnotix.py
 lib/hypnotix/mpv.py
 share/applications/hypnotix.desktop
-share/glib-2.0/schemas/org.x.hypnotix.gschema.xml
 %%DATADIR%%/generic_tv_logo.png
 %%DATADIR%%/hypnotix.css
 %%DATADIR%%/hypnotix.ui

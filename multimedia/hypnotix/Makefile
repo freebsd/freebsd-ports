@@ -2,6 +2,7 @@
 
 PORTNAME=	hypnotix
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	mistresssilvara@hotmail.com
@@ -17,9 +18,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>0:devel/py-gobject3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
+USES=		python:3.6+ shebangfix gnome
+USE_GNOME=	gtk30 glib20 gdkpixbuf2 pango
+GLIB_SCHEMAS=	org.x.hypnotix.gschema.xml
 
 SHEBANG_GLOB=	*.py
+INSTALLS_ICONS=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
 
