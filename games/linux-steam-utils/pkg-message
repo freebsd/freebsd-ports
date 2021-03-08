@@ -4,22 +4,34 @@
 Please note, this is an unofficial wrapper for the Steam client
 and as such it is supported on a best effort basis.
 
+Limitations:
+
+- Sandbox is disabled for the web browser component.
+- Valve Anti-Cheat doesn't work with FreeBSD < 13.
+- No controller input, no streaming, no VR.
+- No support for Linux Proton builds.
+
 Additional dependencies:
-- If you use a NVIDIA card, you need to install a suitable
+- If you use an NVIDIA card, you need to install a suitable
   x11/linux-nvidia-libs(-xxx) port.
 
-Setup:
+Steam setup:
 
 1. Create a dedicated FreeBSD non-wheel user account for Steam. Switch to it.
 2. Run `steam-install` to download the Steam bootstrap executable.
 3. Run `steam` to download updates and start Steam.
 
-Limitations:
+For the list of tested Linux games see https://github.com/shkhln/linuxulator-steam-utils/wiki/Compatibility.
 
-- Sandbox is disabled for the web browser component.
-- Valve Anti-Cheat doesn't seem to work properly.
-- No controller input, no streaming, no VR.
-- No Proton (Steam Play).
+Native Proton setup (optional, semi-experimental):
+
+1. Run `sudo pkg install wine-proton libc6-shim python3` and `lsu-pkg32 install wine-proton mesa-dri`.
+2. In Steam install Proton 5.13 (appid 1420170) and Steam Linux Runtime - Soldier (appid 1391110).
+3. Run `lsu-register-proton` to register emulators/wine-proton as a compatibility tool.
+4. Restart Steam.
+
+To enable emulators/wine-proton right click a game title in Steam,
+click Properties, click Compatibility, select emulators/wine-proton.
 EOM
 }
 ]

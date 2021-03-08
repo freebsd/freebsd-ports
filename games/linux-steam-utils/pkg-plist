@@ -1,27 +1,31 @@
+bin/lsu-pkg32
+bin/lsu-register-proton
+bin/lsu-wine-env
 bin/steam
 bin/steam-install
+steam-utils/bin/lsu-pkg32
+steam-utils/bin/lsu-register-proton
+steam-utils/bin/lsu-wine-env
 steam-utils/bin/steam
 steam-utils/bin/steam-install
 steam-utils/lib32/fakenm/libnm-glib.so.4
 steam-utils/lib32/fakepulse/libpulse.so.0
 steam-utils/lib32/fakeudev/libudev.so.0
-steam-utils/lib32/fmodfix/fmodfix.so
+steam-utils/lib32/monofix/monofix.so
 steam-utils/lib32/pathfix/pathfix.so
 @comment steam-utils/lib32/protonfix/protonfix.so
 steam-utils/lib32/steamfix/steamfix.so
 steam-utils/lib64/fakepulse/libpulse.so.0
 steam-utils/lib64/fakeudev/libudev.so.0
-steam-utils/lib64/fmodfix/fmodfix.so
+steam-utils/lib64/monofix/monofix.so
 steam-utils/lib64/pathfix/pathfix.so
 @comment steam-utils/lib64/protonfix/protonfix.so
 steam-utils/lib64/webfix/webfix.so
 steam-utils/lxbin/dbus-launch
-steam-utils/lxbin/fhelper32
-steam-utils/lxbin/fhelper64
 steam-utils/lxbin/file
 steam-utils/lxbin/file.rb
-steam-utils/lxbin/patch-steam
-steam-utils/lxbin/patch-steam.rb
+steam-utils/lxbin/lsu-proton
 @comment steam-utils/lxbin/python3
 steam-utils/lxbin/upgrade-steam-runtime
 steam-utils/lxbin/upgrade-steam-runtime.rb
+steam-utils/lxbin/xrandr
