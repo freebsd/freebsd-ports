@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	blaze
-DISTVERSION=	3.5
-PORTREVISION=	8
+DISTVERSION=	3.8
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/${BB_ACCOUNT}/${BB_PROJECT}/downloads/
 
@@ -17,10 +16,13 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 RUN_DEPENDS=	boost-libs>0:devel/boost-libs \
 		openblas>0:math/openblas
 
-USES=		cmake compiler:c++14-lang fortran localbase:ldflags
-NO_ARCH=	yes
+USES=		cmake compiler:c++14-lang fortran localbase:ldflags shebangfix
 
 BB_ACCOUNT=	${PORTNAME}-lib
 BB_PROJECT=	${PORTNAME}
+
+SHEBANG_GLOB=	run
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
