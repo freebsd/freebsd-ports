@@ -50,13 +50,13 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 # XXX: remove tar:bz2
 USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:bz2
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.17.10a0.2021.02.26
+ISCVERSION=	9.17.10a0.2021.03.08
 # XXX: Remove gitlab
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	8795b12c49d3f2f5c9c5254cbf2532a4f230f0cc
+GL_COMMIT=	77ac8db0c68c38cc776cfe9e7104aefedb532bc2
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -71,6 +71,7 @@ CONFIGURE_ARGS=	--disable-linux-caps \
 		--with-dlopen=yes \
 		--with-libxml2 \
 		--with-openssl=${OPENSSLBASE} \
+		--enable-dnsrps \
 		--with-readline=libedit
 CONFIGURE_ENV=	READLINE_CFLAGS="-L${LOCALBASE}/lib"
 ETCDIR=		${PREFIX}/etc/namedb
