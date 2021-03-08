@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	terraform-switcher
-PORTVERSION=	0.10.958
+PORTVERSION=	0.10.1010
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
