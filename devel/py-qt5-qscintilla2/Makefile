@@ -15,32 +15,28 @@ LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 DISTINFO_FILE=	${.CURDIR:H}/qscintilla2-qt5/distinfo
 DESTDIRNAME=	INSTALL_ROOT
 
-HAS_CONFIGURE=	yes
-
-USES=		python:3.5+ pyqt:5 gl qmake:no_env qt:5
+USES=		python:3.5+ pyqt:5 gl qt:5
 USE_GL=		gl
-USE_PYQT=	core gui printsupport widgets
+USE_PYQT=	core gui printsupport widgets sip_build qtbuilder
 USE_PYTHON=	concurrent flavors py3kplist
 USE_QT=		core gui printsupport widgets buildtools_build qmake_build
 
 OPTIONS_DEFINE=         DEBUG
 DEBUG_CONFIGURE_ON=     --debug --trace
 
-QSCIDIR=        ${PREFIX}/share/qt5/qsci
-CONFIGURE_ARGS= --pyqt PyQt5 -d ${PYTHONPREFIX_SITELIBDIR}/PyQt5 -v ${PYQT_SIPDIR} \
-                --apidir ${PYQT_APIDIR} --qmake ${QMAKE} --pyqt-sipdir ${PYQT_SIPDIR} \
-                --sip ${SIP} --qsci-sipdir ${PYQT_SIPDIR} --qsci-incdir ${QT_INCDIR} --qsci-libdir ${QT_LIBDIR}
 WRKSRC=         ${WRKDIR}/${DISTNAME}/Python
 ALL_TARGET=     #empty
 
-post-patch:
-	${REINPLACE_CMD} -e "s/sip-module/sip-module-${PYTHON_VER}/" ${WRKSRC}/configure.py
+post-extract:
+	${CP} ${WRKSRC}/pyproject-qt5.toml ${WRKSRC}/pyproject.toml
 
-do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${PYTHON_CMD} configure.py ${CONFIGURE_ARGS}
+do-build:
+	(cd ${WRKSRC} ; sip-build-${PYTHON_VER}  --verbose --no-make --build-dir build ; ${MAKE} -C ./build )
+
+do-install:
+	(cd ${WRKSRC} ; ${MAKE} -C ./build install INSTALL_ROOT=${STAGEDIR} )
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt5/Qsci.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt5/Qsci.abi3.so
 
 .include <bsd.port.mk>

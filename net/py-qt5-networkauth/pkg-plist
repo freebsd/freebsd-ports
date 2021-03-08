@@ -1,6 +1,6 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/QtNetworkAuth.pyi
 %%PYTHON_SITELIBDIR%%/PyQt5/QtNetworkAuth.so
-%%API%%%%PYQT_APIDIR%%/api/python/QtNetworkAuth.api
+%%API%%%%PYQT_APIDIR%%/api/python/PyQtNetworkAuth.api
 %%PYQT_SIPDIR%%/QtNetworkAuth/QtNetworkAuthmod.sip
 %%PYQT_SIPDIR%%/QtNetworkAuth/qabstractoauth.sip
 %%PYQT_SIPDIR%%/QtNetworkAuth/qabstractoauth2.sip

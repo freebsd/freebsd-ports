@@ -3,7 +3,7 @@
 
 PORTNAME=	anki
 DISTVERSION=	2.1.35
-PORTREVISION=	5
+PORTREVISION=	6
 # Don't forget to update ${_MY_BUILDHASH}
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:npmcache

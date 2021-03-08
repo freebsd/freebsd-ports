@@ -57,25 +57,27 @@ MASTER_SITES_SIP=	https://pypi.python.org/packages/source/s/sip/
 MASTER_SITES_PYQT5=	https://pypi.python.org/packages/source/P/PyQt5/
 MASTER_SITES_PYQTSIP=	https://pypi.python.org/packages/source/P/PyQt5-sip/
 MASTER_SITES_PYQTCHART=	https://pypi.python.org/packages/source/P/PyQtChart/
+MASTER_SITES_PYQTNETWORKAUTH=	https://pypi.python.org/packages/source/P/PyQtNetworkAuth/
 MASTER_SITES_PYQTBUILDER=	https://pypi.io/packages/source/P/PyQt-builder/
-#https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.11.4/QScintilla-2.11.4.tar.gz
+#https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.12.0/QScintilla_src-2.12.0.tar.gz
 MASTER_SITES_QSCI2=	RIVERBANK/QScintilla/${PORTVERSION} \
 			SF/pyqt/QScintilla2/QScintilla-${PORTVERSION} \
 			GENTOO
 
 SIP_VERSION=		5.5.0
-QSCI2_VERSION=		2.11.6
-PYQT5_VERSION=		5.15.2
+QSCI2_VERSION=		2.12.0
+PYQT5_VERSION=		5.15.3
 PYQTSIP_VERSION=	12.8.1
-PYQTBUILDER_VERSION=	1.8.0
+PYQTBUILDER_VERSION=	1.9.0
 
 SIP_DISTNAME=		sip-${SIP_VERSION}
 PYQT5_DISTNAME=		PyQt5-${PYQT5_VERSION}
 PYQTSIP_DISTNAME=	PyQt5_sip-${PYQTSIP_VERSION}
 PYQTCHART_DISTNAME=	PyQtChart-${PYQT_VERSION}
+PYQTNETWORKAUTH_DISTNAME=	PyQtNetworkAuth-${PYQT_VERSION}
 PYQTBUILDER_DISTNAME=	PyQt-builder-${PYQTBUILDER_VERSION}
 PYQT5_DISTINFO_FILE=	${.CURDIR:H:H}/devel/${PYQT_RELNAME}/distinfo
-QSCI2_DISTNAME=		QScintilla-${QSCI2_VERSION}
+QSCI2_DISTNAME=		QScintilla_src-${QSCI2_VERSION}
 PYQT5_LICENSE=		GPLv3
 
 _USE_PYQT_COMMS=	sensors serialport
