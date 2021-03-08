@@ -1,6 +1,8 @@
 [
 { type: install
   message: <<EOM
+WARNING: A UK TV licence is required to access BBC iPlayer TV content legally.
+
 You must be in the UK, or use a UK proxy, to gain access to most iPlayer content.
 
 To use the web server cgi script, you must set "get_iplayer_enable="YES" in

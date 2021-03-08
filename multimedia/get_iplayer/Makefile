@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	get_iplayer
-PORTVERSION=	3.26
+PORTVERSION=	3.27
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	multimedia net
 
 MAINTAINER=	jamie@catflap.org
-COMMENT=	Search, index, or stream archive video from BBC iPlayer
+COMMENT=	Lists and records BBC iPlayer TV and BBC Sounds radio programmes.
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -42,7 +41,7 @@ OPTIONS_DEFAULT=	FFMPEG ATOMICPARSLEY
 FFMPEG_DESC=	Enable file conversion using FFmpeg
 FFMPEG_RUN_DEPENDS=	ffmpeg>=0:multimedia/ffmpeg
 ATOMICPARSLEY_DESC=	Enable tagging of media files
-ATOMICPARSLEY_RUN_DEPENDS=	atomicparsley>=0:multimedia/atomicparsley
+ATOMICPARSLEY_RUN_DEPENDS=	AtomicParsley>=0:multimedia/atomicparsley
 
 post-patch:
 	${REINPLACE_CMD} -e "108,110c\\${.newline}	\$$opt_cmdline->{getiplayer} = \"${PREFIX}/bin/${PORTNAME}\";" \
