@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	rundeck
-DISTVERSION=	3.3.9
-DISTVERSIONSUFFIX=	20210201
+DISTVERSION=	3.3.10
+DISTVERSIONSUFFIX=	20210301
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://dl.bintray.com/rundeck/rundeck-maven/org/rundeck/rundeck/ \
 		https://download.rundeck.org/war/
