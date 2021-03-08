@@ -25,12 +25,12 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
 BUILD_DEPENDS=
 
-USES=		cmake compiler:c++11-lib libedit perl5 \
-		shebangfix
+USES=		cmake compiler:c++11-lib shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 _USES_PYTHON?=	python:build,3.6+
 USES+=		${_USES_PYTHON}
-SHEBANG_FILES=	llvm/utils/lit/lit.py \
+SHEBANG_FILES=	flang/tools/f18/flang \
+		llvm/utils/lit/lit.py \
 		llvm/utils/llvm-lit/llvm-lit.in \
 		llvm/tools/opt-viewer/optrecord.py \
 		llvm/tools/opt-viewer/opt-diff.py \
@@ -53,6 +53,8 @@ CMAKE_ARGS+=	-DLLVM_HOST_TRIPLE=${CONFIGURE_TARGET}
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
 CMAKE_ARGS+=	-DLLVM_PARALLEL_LINK_JOBS=1
 CMAKE_ARGS+=	-DLLVM_ENABLE_Z3_SOLVER=OFF
+CMAKE_ARGS+=	-DLLVM_ENABLE_LIBXML2=OFF
+CMAKE_ARGS+=	-DLLVM_ENABLE_LIBEDIT=OFF
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE=${PYTHON_CMD} \
 		-DPYTHON_INCLUDE_DIR=${PYTHON_INCLUDEDIR} \
 		-DPYTHON_LIBRARY=${LOCALBASE}/lib/lib${PYTHON_VERSION}m.so
@@ -85,6 +87,7 @@ OPTIONS_SUB=	yes
 LIB_DEPENDS=
 PLIST_DIRS=
 PLIST_FILES=
+PLIST_SUB_SED_EXCLUDE_VAL=	lib "3.0.0"
 
 CLANG_DESC=	Build clang
 CLANG_CONFLICTS_INSTALL=	clang-devel-3.[1234567]*
@@ -98,8 +101,12 @@ CLANG_SUB_LIST=		XCC=clang${LLVM_SUFFIX} \
 			XCPP=clang-cpp${LLVM_SUFFIX} \
 			XLD=ld.lld${LLVM_SUFFIX} \
 			X_COMPILER_TYPE=clang
-CLANG_USE=		GNOME=libxml2
+CLANG_USES=		perl5
+CLANG_USE=		PERL5=run
 COMPILER_RT_DESC=	Sanitizer libraries
+# An unwind.h is require to build.  I think an in-tree one should be used
+# but this seems to work as a workaround...
+COMPILER_RT_BUILD_DEPENDS=	libunwind>0:devel/libunwind
 COMPILER_RT_IMPLIES=	CLANG
 COMPILER_RT_PLIST_FILES=${_COMPILER_RT_LIBS:S|^|${_CRTLIBDIR}/|} \
 			${_COMPILER_RT_BLACKLISTS:S|^|${_CRTBLDIR}/|}
@@ -127,13 +134,15 @@ LLD_DESC=		Install lld, the LLVM linker
 LLDB_BUILD_DEPENDS=	swig:devel/swig
 LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_IMPLIES=		CLANG
-LLDB_PORTDOCS=		lldb
-LLDB_USES=		lua
+LLDB_USES=		lua:53 libedit
+LLDB_USE=		GNOME=libxml2
 LLDB_VARS=		_USES_PYTHON=python:3.6+
 MLIR_DESC=		Multi-Level Intermediate Representation
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_PORTDOCS=	openmp
 OPENMP_CONFLICTS_INSTALL=	libiomp5-devel-*
+OPENMP_USES=		perl5
+OPENMP_USE=		PERL5=build
 GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
@@ -152,7 +161,6 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-ar.1 \
 		llvm-as.1 \
 		llvm-bcanalyzer.1 \
-		llvm-build.1 \
 		llvm-config.1 \
 		llvm-cov.1 \
 		llvm-cxxfilt.1 \
@@ -174,6 +182,7 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-objdump.1 \
 		llvm-pdbutil.1 \
 		llvm-profdata.1 \
+		llvm-profgen.1 \
 		llvm-ranlib.1 \
 		llvm-readelf.1 \
 		llvm-readobj.1 \
@@ -183,7 +192,7 @@ MAN1SRCS+=	bugpoint.1 \
 		llvm-strip.1 \
 		llvm-symbolizer.1 \
 		opt.1 \
-		tblgen.1
+		xxx-tblgen.1
 
 STRIP_LIBS=	BugpointPasses.so \
 		LLVMHello.so \
@@ -280,7 +289,6 @@ PORTDOCS+=	lld
 .if ${PORT_OPTIONS:MLLDB}
 LLVM_ENABLE_PROJECTS+=	lldb
 COMMANDS+=	${LLDB_COMMANDS}
-MAN1SRCS+=	lldb.1
 .endif
 
 .if ${PORT_OPTIONS:MMLIR}

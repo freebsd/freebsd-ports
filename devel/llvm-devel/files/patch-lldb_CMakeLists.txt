@@ -1,0 +1,10 @@
+--- lldb/CMakeLists.txt.orig
++++ lldb/CMakeLists.txt
+@@ -73,7 +73,6 @@
+ 
+ add_subdirectory(source)
+ add_subdirectory(tools)
+-add_subdirectory(docs)
+ 
+ if (LLDB_ENABLE_PYTHON)
+   if(LLDB_BUILD_FRAMEWORK)
