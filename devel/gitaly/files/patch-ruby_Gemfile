@@ -1,8 +1,11 @@
---- ruby/Gemfile.orig	2021-02-19 09:28:00 UTC
+--- ruby/Gemfile.orig	2021-03-04 13:36:33 UTC
 +++ ruby/Gemfile
-@@ -21,13 +21,3 @@ gem 'licensee', '~> 9.14.1'
+@@ -19,15 +19,5 @@ gem 'gitlab-labkit', '~> 0.15.0'
+ # This version needs to be in sync with GitLab CE/EE
+ gem 'licensee', '~> 9.14.1'
  
- gem 'google-protobuf', '~> 3.12'
+-gem 'google-protobuf', '~> 3.12'
++gem 'google-protobuf', '~> 3.14.0'
  
 -group :development, :test do
 -  gem 'rubocop', '~> 0.69', require: false
