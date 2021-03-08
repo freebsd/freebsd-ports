@@ -1441,6 +1441,7 @@
     SUBDIR += log4net
     SUBDIR += log4sh
     SUBDIR += log4shib
+    SUBDIR += loguru
     SUBDIR += lokalize
     SUBDIR += loki
     SUBDIR += love

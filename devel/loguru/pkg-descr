@@ -1,0 +1,5 @@
+loguru is a logging library that produces logs that are both human-readable and
+easily greped. It can also hook into the logging process to print some of the
+more severe messages on-screen.
+
+WWW: https://github.com/emilk/loguru
