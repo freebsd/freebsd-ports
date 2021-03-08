@@ -3,6 +3,7 @@
 
 PORTNAME=	openvswitch
 DISTVERSION=	2.15.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://openvswitch.org/releases/
 
@@ -45,6 +46,10 @@ INSTALL_TARGET=install-strip
 
 SHLIB_VER=	${DISTVERSION:C/\.[0-9]*$//}
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|uuid_from_string(|uuid_from_string_ovs(|g' \
+		${WRKSRC}/*/*.c ${WRKSRC}/*/*.h
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/run/openvswitch
