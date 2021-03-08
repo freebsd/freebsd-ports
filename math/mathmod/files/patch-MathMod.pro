@@ -1,8 +1,8 @@
---- MathMod.pro.orig	2016-11-18 21:27:55 UTC
+--- MathMod.pro.orig	2021-03-08 16:59:36 UTC
 +++ MathMod.pro
-@@ -68,10 +68,10 @@ OTHER_FILES += \
-             mathmodconfig.js
- 
+@@ -64,10 +64,10 @@ OTHER_FILES     += \
+                 mathmodcollection.js \
+                 mathmodconfig.js
  # install
 -target.path    = $TARGET
 +target.path    = $$INSTALL_ROOT/$$PREFIX/bin/
