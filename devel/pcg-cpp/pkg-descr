@@ -1,0 +1,13 @@
+This code provides an implementation of the PCG family of random number
+generators, which are fast, statistically excellent, and offer a number of
+useful features.
+
+There are two kinds of generator, normal generators and extended generators.
+Extended generators provide k dimensional equidistribution and can perform party
+tricks, but generally speaking most people only need the normal generators.
+
+There are two ways to access the generators, using a convenience typedef or by
+using the underlying templates directly (similar to C++11's std::mt19937 typedef
+vs its std::mersenne_twister_engine template).
+
+WWW: https://github.com/imneme/pcg-cpp
