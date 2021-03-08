@@ -1,3 +1,4 @@
-GCC, the GNU Compiler Collection supporting C and C++ for targetting crossbuilding.
+GCC, the GNU Compiler Collection, supporting C and C++ for building the
+FreeBSD base system.
 
 WWW: http://gcc.gnu.org/

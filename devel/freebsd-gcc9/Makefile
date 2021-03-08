@@ -3,7 +3,7 @@
 PORTNAME=	gcc
 PORTVERSION=	9.3.0
 CATEGORIES=	devel
-MASTER_SITES=	GCC/releases/gcc-${DISTVERSION}
+MASTER_SITES=	GCC
 PKGNAMEPREFIX=	${TARGETARCH}-
 PKGNAMESUFFIX=	${SUFFIX}
 
@@ -13,17 +13,18 @@ COMMENT=	Cross GNU Compiler Collection for ${TARGETARCH}
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${TARGETARCH} \
+		objdump:devel/binutils
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
-BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${TARGETARCH} \
-		objdump:devel/binutils
 RUN_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${TARGETARCH}
 
 FLAVORS=	aarch64 amd64 i386 mips mips64 powerpc powerpc64 riscv64 sparc64
 TARGETARCH=	${FLAVOR}
 
-USES=	gmake iconv libtool tar:xz makeinfo compiler:c++11-lang
+USES=		compiler:c++11-lang gmake iconv libtool makeinfo tar:xz
+
 PLIST_SUB=	OPSYS=${OPSYS:tl} \
 		SUFFIX=${SUFFIX} \
 		TARGETARCH=${TARGETARCH} \
@@ -131,8 +132,8 @@ post-install:
 	# Conflicts with sys/x86/include/float.h
 	${RM} ${STAGEDIR}${PREFIX}/lib/gcc/${GCC_TARGET}/${PORTVERSION}/include/float.h
 .endif
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
-	@${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
+	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
 		${STAGEDIR}${PREFIX}/share/toolchains/${TARGETARCH}-gcc${SUFFIX}.mk
 
 .include <bsd.port.post.mk>
