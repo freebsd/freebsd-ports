@@ -1,21 +1,29 @@
---- CMakeLists.txt.orig	2020-12-12 08:00:55 UTC
+--- CMakeLists.txt.orig	2021-03-01 16:43:06 UTC
 +++ CMakeLists.txt
-@@ -68,7 +68,7 @@ if(NOT MSVC)
+@@ -68,8 +68,8 @@ if(NOT MSVC)
    if(RDK_OPTIMIZE_POPCNT)
      if(CMAKE_HOST_SYSTEM_PROCESSOR STREQUAL "aarch64")
        message("RDK_OPTIMIZE_POPCNT is not available on aarch64")
 -    elseif(CMAKE_HOST_SYSTEM_PROCESSOR STREQUAL "ppc64le")
-+    elseif(CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "^(ppc64|powerpc64)")
 -      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mpopcntb")
++    elseif(CMAKE_HOST_SYSTEM_PROCESSOR MATCHES "^(ppc64|powerpc64)")
 +      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mpopcntd")
      else()
        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mpopcnt")
-@@ -460,7 +460,7 @@ if(NOT RDK_INSTALL_INTREE)
+     endif()
+@@ -459,12 +459,14 @@ if(NOT RDK_INSTALL_INTREE)
+       COMPONENT data
        PATTERN ".svn" EXCLUDE
        )
++  if (FREEBSD_INSTALL_DOCS)
    install(DIRECTORY Docs DESTINATION
 -      ${RDKit_ShareDir}
 +      ${FREEBSD_DOCSDIR}
        COMPONENT docs
        PATTERN ".svn" EXCLUDE
        PATTERN "_build" EXCLUDE
+       )
++  endif()
+   install(DIRECTORY Contrib DESTINATION
+       ${RDKit_ShareDir}
+       COMPONENT extras
