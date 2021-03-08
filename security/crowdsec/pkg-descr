@@ -1,0 +1,6 @@
+Crowdsec is an open-source, lightweight software, detecting peers with
+aggressive behaviors to prevent them from accessing your systems. Its user
+friendly design and assistance offers a low technical barrier of entry and
+nevertheless a high security gain.
+
+WWW: https://github.com/crowdsecurity/crowdsec

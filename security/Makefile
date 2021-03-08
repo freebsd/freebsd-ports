@@ -107,6 +107,7 @@
     SUBDIR += cracklib
     SUBDIR += crackpkcs12
     SUBDIR += create-cert
+    SUBDIR += crowdsec
     SUBDIR += cryptlib
     SUBDIR += cryptopp
     SUBDIR += ct-submit
