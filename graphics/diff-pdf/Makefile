@@ -2,8 +2,7 @@
 
 PORTNAME=	diff-pdf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
-PORTREVISION=	11
+DISTVERSION=	0.5
 CATEGORIES=	graphics
 
 MAINTAINER=	uzsolt@uzsolt.hu
@@ -18,17 +17,12 @@ LIB_DEPENDS=	libpoppler.so:graphics/poppler \
 USES=		autoreconf compiler:c++11-lang gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	vslavik
-GH_TAGNAME=	6741ab9
+GH_TAGNAME=	d494f96
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 USE_GNOME=	cairo glib20
-USE_WX=		2.8+
+USE_WX=		3.0+
 
 PLIST_FILES=	bin/${PORTNAME}
-
-post-patch:
-	@${REINPLACE_CMD} '/AM_PATH_WXCONFIG/ s,3.0.0,2.8.0,' ${WRKSRC}/configure.ac
-	# Poppler 20.12 no longer installs the pc file for this private backend.
-	${REINPLACE_CMD} 's|poppler-cairo >= 0.10||g' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
