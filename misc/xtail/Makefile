@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.unicom.com/sw/xtail/ \
 		http://utenti.gufi.org/~gmarco/files/distfiles/
 
-MAINTAINER=	gmarco@gufi.org
+MAINTAINER=	gmarco@giovannelli.it
 COMMENT=	Watches the growth of files or directories
 
 HAS_CONFIGURE=	yes

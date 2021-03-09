@@ -7,7 +7,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/
 DISTNAME=	fortune-it-${PORTVERSION}
 
-MAINTAINER=	gmarco@gufi.org
+MAINTAINER=	gmarco@giovannelli.it
 COMMENT=	Funny fortune file in Italian
 
 .if exists(/usr/games/strfile)
