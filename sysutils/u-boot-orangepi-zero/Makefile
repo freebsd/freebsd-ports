@@ -1,6 +1,5 @@
 # $FreeBSD$
 
-MAINTAINER=	uboot@FreeBSD.org
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
 MODEL=		orangepi-zero
