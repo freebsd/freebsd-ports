@@ -78,6 +78,51 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2f3cd69e-7dee-11eb-b92e-0022489ad614">
+    <topic>Node.js -- February 2021 Security Releases</topic>
+    <affects>
+      <package>
+	<name>node10</name>
+	<range><lt>10.24.0</lt></range>
+      </package>
+      <package>
+	<name>node12</name>
+	<range><lt>12.21.0</lt></range>
+      </package>
+      <package>
+	<name>node14</name>
+	<range><lt>14.16.0</lt></range>
+      </package>
+      <package>
+	<name>node</name>
+	<range><lt>15.10.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Node.js reports:</p>
+	<blockquote cite="https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/">
+	  <h1>HTTP2 'unknownProtocol' cause Denial of Service by resource exhaustion (Critical) (CVE-2021-22883)</h1>
+	  <p>Affected Node.js versions are vulnerable to denial of service attacks when too many connection attempts with an 'unknownProtocol' are established. This leads to a leak of file descriptors. If a file descriptor limit is configured on the system, then the server is unable to accept new connections and prevent the process also from opening, e.g. a file. If no file descriptor limit is configured, then this lead to an excessive memory usage and cause the system to run out of memory.</p>
+	  <h1>DNS rebinding in --inspect (CVE-2021-22884)</h1>
+	  <p>Affected Node.js versions are vulnerable to a DNS rebinding attack when the whitelist includes "localhost6". When "localhost6" is not present in /etc/hosts, it is just an ordinary domain that is resolved via DNS, i.e., over network. If the attacker controls the victim's DNS server or can spoof its responses, the DNS rebinding protection can be bypassed by using the "localhost6" domain. As long as the attacker uses the "localhost6" domain, they can still apply the attack described in CVE-2018-7160.</p>
+	  <h1>OpenSSL - Integer overflow in CipherUpdate (CVE-2021-23840)</h1>
+	  <p>This is a vulnerability in OpenSSL which may be exploited through Node.js. You can read more about it in https://www.openssl.org/news/secadv/20210216.txt</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://nodejs.org/en/blog/vulnerability/february-2021-security-releases/</url>
+      <cvename>CVE-2021-22883</cvename>
+      <cvename>CVE-2021-22884</cvename>
+      <cvename>CVE-2021-23840</cvename>
+    </references>
+    <dates>
+      <discovery>2021-02-23</discovery>
+      <entry>2021-03-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8bf856ea-7df7-11eb-9aad-001b217b3468">
     <topic>Gitlab -- Multiple vulnerabilities</topic>
     <affects>
