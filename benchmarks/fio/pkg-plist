@@ -39,6 +39,8 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iometer-file-access-server.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/jesd219.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latency-profile.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libcufile-cufile.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libcufile-posix.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libiscsi.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libhdfs.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libpmem.fio
