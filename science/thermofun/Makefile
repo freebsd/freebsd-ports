@@ -2,8 +2,8 @@
 
 PORTNAME=	thermofun
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.6
-CATEGORIES=	science
+DISTVERSION=	0.3.7
+CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Code for calculating thermodynamic properties of materials
