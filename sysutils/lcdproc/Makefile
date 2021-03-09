@@ -93,6 +93,10 @@ PLIST_SUB+=	X86=""
 PLIST_SUB+=	X86="@comment "
 .endif
 
+.if ${ARCH} == powerpc64
+USE_GCC=	any
+.endif
+
 .if ${PORT_OPTIONS:MUSB}
 CONFIGURE_ARGS+=	--enable-libusb
 PLIST_SUB+=		USB=""
