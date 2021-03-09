@@ -2,7 +2,7 @@
 
 PORTNAME=	node
 DISTVERSIONPREFIX=	v
-DISTVERSION=	14.15.5
+DISTVERSION=	14.16.0
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${DISTVERSION}/
 PKGNAMESUFFIX=	14
@@ -16,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_SSL=		libressl libressl-devel
 BROKEN_SSL_REASON=	Node.js 14.x LTS requires OpenSSL 1.1.x or the BUNDLED_SSL option enabled
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
+
+USES=		compiler:c++11-lib gmake python:build pkgconfig \
+		localbase shebangfix
 
 OPTIONS_DEFINE=		BUNDLED_SSL DOCS NLS DTRACE
 OPTIONS_DEFAULT=	DTRACE
@@ -44,9 +47,6 @@ NLS_BUILD_DEPENDS=	icu>=67.1:devel/icu
 NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 
 DTRACE_CONFIGURE_ON=	--with-dtrace
-
-USES=		compiler:c++11-lib gmake python:build pkgconfig \
-		localbase shebangfix
 
 HAS_CONFIGURE=	yes
 
