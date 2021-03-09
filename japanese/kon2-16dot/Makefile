@@ -25,6 +25,9 @@ SUB_LIST=	KON16FONT=${KON16FONT} \
 
 OPTIONS_DEFINE=	DOCS
 
+# XXX Static libraries with PIE are currently unsupported.
+MAKE_ARGS+=	WITHOUT_PIE=true
+
 .include <bsd.port.pre.mk>
 
 .if !defined(KONFONT)
