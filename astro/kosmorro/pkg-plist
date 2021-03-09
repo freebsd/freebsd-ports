@@ -88,5 +88,5 @@ bin/kosmorro
 %%PYTHON_SITELIBDIR%%/test/ephemerides.py
 %%PYTHON_SITELIBDIR%%/test/events.py
 %%PYTHON_SITELIBDIR%%/test/testutils.py
-man/man1/kosmorro.1.gz
-man/man7/kosmorro.7.gz
+%%MAN%%man/man1/kosmorro.1.gz
+%%MAN%%man/man7/kosmorro.7.gz
