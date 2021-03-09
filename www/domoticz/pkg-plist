@@ -905,8 +905,8 @@ domoticz/dzVents/runtime/tests/testVariable.lua
 domoticz/dzVents/runtime/tests/testfile
 domoticz/dzVents/runtime/tests/tstData.lua
 domoticz/dzVents/runtime/todo.md
-domoticz/plugins/AwoxSMP/%%LUA_LIBDIR%%/__init__.py
-domoticz/plugins/AwoxSMP/%%LUA_LIBDIR%%/pySmartPlugSmpB16.py
+domoticz/plugins/AwoxSMP/lib/__init__.py
+domoticz/plugins/AwoxSMP/lib/pySmartPlugSmpB16.py
 domoticz/plugins/AwoxSMP/plugin.py
 domoticz/plugins/examples/BaseTemplate.py
 domoticz/plugins/examples/DenonMarantz.py

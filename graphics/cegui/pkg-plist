@@ -340,7 +340,7 @@ lib/libCEGUICommonDialogs-0.so.2.4.2
 %%OGRE%%libdata/pkgconfig/CEGUI-0-OGRE.pc
 %%OPENGL%%libdata/pkgconfig/CEGUI-0-OPENGL.pc
 %%OPENGL3%%libdata/pkgconfig/CEGUI-0-OPENGL3.pc
-%%SDL2%%%%LUA_LIBDIR%%/cegui-0.8/%%LUA_LIBDIR%%CEGUISDL2ImageCodec.so
+%%SDL2%%lib/cegui-0.8/libCEGUISDL2ImageCodec.so
 libdata/pkgconfig/CEGUI-0.pc
 share/cegui-0/animations/GameMenu.anims
 share/cegui-0/animations/example.anims

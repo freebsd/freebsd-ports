@@ -904,7 +904,7 @@ share/nvim/runtime/syntax/cuplsim.vim
 share/nvim/runtime/syntax/cvs.vim
 share/nvim/runtime/syntax/cvsrc.vim
 share/nvim/runtime/syntax/cweb.vim
-share/nvim/runtime/syntax/cyn%%LUA_LIBDIR%%.vim
+share/nvim/runtime/syntax/cynlib.vim
 share/nvim/runtime/syntax/cynpp.vim
 share/nvim/runtime/syntax/d.vim
 share/nvim/runtime/syntax/datascript.vim

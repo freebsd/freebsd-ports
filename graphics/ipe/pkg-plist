@@ -96,5 +96,5 @@ man/man1/ipetoipe.1.gz
 %%DATADIR%%/%%VERSION%%/styles/right-to-left.isy
 %%DATADIR%%/%%VERSION%%/styles/tikz-shapes.isy
 share/pixmaps/ipe.png
-%%LUA_LIBDIR%%/ipe/%%VERSION%%/ipelets/gridmaker.lua
-%%LUA_LIBDIR%%/ipe/%%VERSION%%/ipelets/selectby.lua
+lib/ipe/%%VERSION%%/ipelets/gridmaker.lua
+lib/ipe/%%VERSION%%/ipelets/selectby.lua

@@ -1,7 +1,7 @@
 include/Fcitx5/Module/fcitx-module/luaaddonloader/luaaddon_public.h
-%%LUA_LIBDIR%%/cmake/Fcitx5ModuleLuaAddonLoader/Fcitx5ModuleLuaAddonLoaderConfig.cmake
-%%LUA_LIBDIR%%/cmake/Fcitx5ModuleLuaAddonLoader/Fcitx5ModuleLuaAddonLoaderConfigVersion.cmake
-%%LUA_LIBDIR%%/fcitx5/luaaddonloader.so
+lib/cmake/Fcitx5ModuleLuaAddonLoader/Fcitx5ModuleLuaAddonLoaderConfig.cmake
+lib/cmake/Fcitx5ModuleLuaAddonLoader/Fcitx5ModuleLuaAddonLoaderConfigVersion.cmake
+lib/fcitx5/luaaddonloader.so
 share/fcitx5/addon/imeapi.conf
 share/fcitx5/addon/luaaddonloader.conf
 share/fcitx5/lua/imeapi/imeapi.lua

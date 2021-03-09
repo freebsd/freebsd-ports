@@ -5,8 +5,8 @@ bin/luac%%LUA_VER_STR%%
 %%LUA_INCDIR%%/lua.hpp
 %%LUA_INCDIR%%/luaconf.h
 %%LUA_INCDIR%%/lualib.h
-%%LUA_LIBDIR%%/liblua-%%LUA_VER%%.a
-%%LUA_LIBDIR%%/liblua-%%LUA_VER%%.so
+lib/liblua-%%LUA_VER%%.a
+lib/liblua-%%LUA_VER%%.so
 libdata/pkgconfig/lua-%%LUA_VER%%.pc
 man/man1/lua%%LUA_VER_STR%%.1.gz
 man/man1/luac%%LUA_VER_STR%%.1.gz

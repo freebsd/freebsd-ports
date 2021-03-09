@@ -5,7 +5,7 @@ lib/hexchat/plugins/checksum.so
 %%FISHLIM%%lib/hexchat/plugins/fishlim.so
 %%PERL%%lib/hexchat/plugins/perl.so
 lib/hexchat/plugins/python.so
-%%LUA%%%%LUA_LIBDIR%%/hexchat/plugins/lua.so
+%%LUA%%lib/hexchat/plugins/lua.so
 %%SYSINFO%%lib/hexchat/plugins/sysinfo.so
 libdata/pkgconfig/hexchat-plugin.pc
 man/man1/hexchat.1.gz

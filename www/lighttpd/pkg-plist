@@ -46,7 +46,7 @@ lib/lighttpd/mod_flv_streaming.so
 %%GNUTLS%%lib/lighttpd/mod_gnutls.so
 lib/lighttpd/mod_indexfile.so
 %%LUA%%lib/lighttpd/mod_magnet.so
-%%MAXMINDDB%%%%LUA_LIBDIR%%/lighttpd/mod_maxminddb.so
+%%MAXMINDDB%%lib/lighttpd/mod_maxminddb.so
 %%MYSQL%%lib/lighttpd/mod_mysql_vhost.so
 %%NSS%%lib/lighttpd/mod_nss.so
 %%OPENSSL%%lib/lighttpd/mod_openssl.so
@@ -68,7 +68,7 @@ lib/lighttpd/mod_uploadprogress.so
 lib/lighttpd/mod_userdir.so
 lib/lighttpd/mod_usertrack.so
 lib/lighttpd/mod_vhostdb.so
-%%DBI%%%%LUA_LIBDIR%%/lighttpd/mod_vhostdb_dbi.so
+%%DBI%%lib/lighttpd/mod_vhostdb_dbi.so
 %%LDAP%%lib/lighttpd/mod_vhostdb_ldap.so
 %%MYSQL%%lib/lighttpd/mod_vhostdb_mysql.so
 lib/lighttpd/mod_webdav.so

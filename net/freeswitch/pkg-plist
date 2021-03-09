@@ -107,7 +107,7 @@ lib/libfreeswitch.a
 lib/libfreeswitch.so
 lib/libfreeswitch.so.1
 lib/libfreeswitch.so.1.0.0
-%%PGSQL%%%%LUA_LIBDIR%%/freeswitch/mod/mod_pgsql.so
+%%PGSQL%%lib/freeswitch/mod/mod_pgsql.so
 libdata/pkgconfig/freeswitch.pc
 %%DATADIR%%/fonts/FreeMono.ttf
 %%DATADIR%%/fonts/FreeMonoBold.ttf
