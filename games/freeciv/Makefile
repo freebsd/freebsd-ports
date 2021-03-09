@@ -98,9 +98,6 @@ CONFLICTS=	freeciv-nox11
 PLIST_SUB+=	CLIENT=""
 .endif
 
-# Avoid annoying and too general LUA_LIBDIR=lib sub from USES=lua
-PLIST_SUB:=	${PLIST_SUB:NLUA_LIBDIR=*}
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfreeciv*.so
 
