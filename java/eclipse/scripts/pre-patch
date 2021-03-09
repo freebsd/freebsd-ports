@@ -42,6 +42,10 @@ do
 
 	NEWNAME=$(rename_arch ${D})
 	mv ${D} ${NEWNAME}
+	case ${NEWNAME} in
+	*.powerpc64)
+		cp -rf ${NEWNAME} `echo ${NEWNAME} | sed -e 's/powerpc64/powerpc64le/'`;;
+	esac
 done
 
 # Clean up binaries

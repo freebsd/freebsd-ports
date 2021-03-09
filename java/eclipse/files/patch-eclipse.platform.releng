@@ -1,6 +1,5 @@
-diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml
---- eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml.orig	2020-05-28 13:29:36.000000000 +0200
++++ eclipse.platform.releng/features/org.eclipse.platform-feature/feature.xml	2021-03-08 19:12:31.612581000 +0100
 @@ -96,9 +96,9 @@
           unpack="false"/>
  
@@ -40,7 +39,24 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.x
           download-size="0"
           install-size="0"
           version="0.0.0"
-@@ -465,9 +465,9 @@
+@@ -411,6 +411,16 @@
+          unpack="false"/>
+ 
+    <plugin
++         id="org.eclipse.core.filesystem.freebsd.powerpc64le"
++         os="freebsd"
++         arch="powerpc64le"
++         download-size="0"
++         install-size="0"
++         version="0.0.0"
++         fragment="true"
++         unpack="false"/>
++
++   <plugin
+          id="org.eclipse.core.variables"
+          download-size="0"
+          install-size="0"
+@@ -465,9 +475,9 @@
           unpack="false"/>
  
     <plugin
@@ -53,10 +69,9 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/feature.x
           download-size="0"
           install-size="0"
           version="0.0.0"
-diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml
---- eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -55,10 +55,10 @@
+--- eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml.orig	2020-05-28 13:29:36.000000000 +0200
++++ eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml	2021-03-08 19:12:49.804474000 +0100
+@@ -55,10 +55,11 @@
                </plugins>
                <excludes>
                  <plugin id="org.eclipse.platform.doc.user"/>
@@ -66,12 +81,12 @@ diff -ru eclipse.platform.releng/features/org.eclipse.platform-feature/pom.xml e
                  <plugin id="org.eclipse.core.filesystem.win32.x86_64"/>
 -                <plugin id="org.eclipse.core.filesystem.linux.ppc64le"/>
 +                <plugin id="org.eclipse.core.filesystem.freebsd.powerpc64"/>
++                <plugin id="org.eclipse.core.filesystem.freebsd.powerpc64le"/>
                  <plugin id="org.eclipse.core.resources.win32.x86_64"/>
                </excludes>
              </configuration>
-diff -ru eclipse.platform.releng/pom.xml eclipse.platform.releng/pom.xml
---- eclipse.platform.releng/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng/pom.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng/pom.xml.orig	2020-05-28 13:29:36.000000000 +0200
++++ eclipse.platform.releng/pom.xml	2021-03-08 19:05:06.938707000 +0100
 @@ -66,7 +66,9 @@
      <module>features/org.eclipse.releng.tools</module>
      <module>features/org.eclipse.sdk</module>

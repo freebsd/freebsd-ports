@@ -1,13 +1,13 @@
-diff -ru eclipse.pde.ui/ui/org.eclipse.pde.ui.templates/templates_3.5/E4Application/$pluginId$.product eclipse.pde.ui/ui/org.eclipse.pde.ui.templates/templates_3.5/E4Application/$pluginId$.product
---- eclipse.pde.ui/ui/org.eclipse.pde.ui.templates/templates_3.5/E4Application/$pluginId$.product	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.pde.ui/ui/org.eclipse.pde.ui.templates/templates_3.5/E4Application/$pluginId$.product	0000-00-00 00:00:00.000000000 +0000
-@@ -80,8 +80,8 @@
+--- eclipse.pde.ui/ui/org.eclipse.pde.ui.templates/templates_3.5/E4Application/$pluginId$.product.orig	2020-05-14 19:49:48.000000000 +0200
++++ eclipse.pde.ui/ui/org.eclipse.pde.ui.templates/templates_3.5/E4Application/$pluginId$.product	2021-03-08 19:10:46.275610000 +0100
+@@ -80,8 +80,9 @@
        <plugin id="org.eclipse.osgi.util"/>
        <plugin id="org.eclipse.swt"/>
        <plugin id="org.eclipse.swt.cocoa.macosx.x86_64" fragment="true"/>
 -      <plugin id="org.eclipse.swt.gtk.linux.ppc64" fragment="true"/>
 -      <plugin id="org.eclipse.swt.gtk.linux.x86_64" fragment="true"/>
 +      <plugin id="org.eclipse.swt.gtk.freebsd.powerpc64" fragment="true"/>
++      <plugin id="org.eclipse.swt.gtk.freebsd.powerpc64le" fragment="true"/>
 +      <plugin id="org.eclipse.swt.gtk.freebsd.amd64" fragment="true"/>
        <plugin id="org.eclipse.swt.win32.win32.x86_64" fragment="true"/>
        <plugin id="org.eclipse.urischeme"/>

@@ -1,7 +1,6 @@
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/testManifest.xml eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/testManifest.xml
---- eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/testManifest.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/testManifest.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -8,12 +8,12 @@
+--- eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/testManifest.xml.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/testManifest.xml	2021-03-08 19:15:45.372727000 +0100
+@@ -8,12 +8,16 @@
          fileName="eclipse-SDK-${BUILD_ID}-win32-x86_64.zip"></platform>
        <platform
          id="SLG264"
@@ -10,15 +9,19 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/tes
 +        name="FreeBSD (64 bit version)"
 +        fileName="eclipse-SDK-${BUILD_ID}-freebsd-gtk-amd64.tar.gz"></platform>
        <platform
++        id="SLG2PPC64BE"
++        name="FreeBSD (64 bit version for Power PC)"
++        fileName="eclipse-SDK-${BUILD_ID}-freebsd-gtk-powerpc64.tar.gz"></platform>
++      <platform
          id="SLG2PPC64LE"
 -        name="Linux (64 bit version for Power PC)"
 -        fileName="eclipse-SDK-${BUILD_ID}-linux-gtk-ppc64le.tar.gz"></platform>
-+        name="FreeBSD (64 bit version for Power PC)"
-+        fileName="eclipse-SDK-${BUILD_ID}-freebsd-gtk-powerpc64.tar.gz"></platform>
++        name="FreeBSD (64 bit little-endian version for Power PC)"
++        fileName="eclipse-SDK-${BUILD_ID}-freebsd-gtk-powerpc64le.tar.gz"></platform>
        <platform
          id="SMCC64"
          name="Mac OSX (64 bit version)"
-@@ -70,12 +70,12 @@
+@@ -70,12 +74,16 @@
          fileName="eclipse-platform-${BUILD_ID}-win32-x86_64.zip"></platform>
        <platform
          id="PLG264"
@@ -27,15 +30,19 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/tes
 +        name="FreeBSD (64 bit version)"
 +        fileName="eclipse-platform-${BUILD_ID}-freebsd-gtk-amd64.tar.gz"></platform>
        <platform
++        id="PLG2PPC64BE"
++        name="FreeBSD (64 bit version for Power PC)"
++        fileName="eclipse-platform-${BUILD_ID}-freebsd-gtk-powerpc64.tar.gz"></platform>
++      <platform
          id="PLG2PPC64LE"
 -        name="Linux (64 bit version for Power PC)"
 -        fileName="eclipse-platform-${BUILD_ID}-linux-gtk-ppc64le.tar.gz"></platform>
-+        name="FreeBSD (64 bit version for Power PC)"
-+        fileName="eclipse-platform-${BUILD_ID}-freebsd-gtk-powerpc64.tar.gz"></platform>
++        name="FreeBSD (64 bit little-endian version for Power PC)"
++        fileName="eclipse-platform-${BUILD_ID}-freebsd-gtk-powerpc64le.tar.gz"></platform>
        <platform
          id="PMCC64"
          name="Mac OSX (64 bit version)"
-@@ -150,12 +150,12 @@
+@@ -150,12 +158,16 @@
          fileName="swt-${BUILD_ID}-win32-win32-x86_64.zip"></platform>
        <platform
          id="SWTLG64"
@@ -44,17 +51,20 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse/publishingFiles/tes
 +        name="FreeBSD (64 bit version)"
 +        fileName="swt-${BUILD_ID}-gtk-freebsd-amd64.zip"></platform>
        <platform
++        id="SWTLG2PPC64BE"
++        name="FreeBSD (64 bit version for Power PC)"
++        fileName="swt-${BUILD_ID}-gtk-freebsd-powerpc64.zip"></platform>
++      <platform
          id="SWTLG2PPC64LE"
 -        name="Linux (64 bit version for Power PC)"
 -        fileName="swt-${BUILD_ID}-gtk-linux-ppc64le.zip"></platform>
-+        name="FreeBSD (64 bit version for Power PC)"
-+        fileName="swt-${BUILD_ID}-gtk-freebsd-powerpc64.zip"></platform>
++        name="FreeBSD (64 bit little-endian version for Power PC)"
++        fileName="swt-${BUILD_ID}-gtk-freebsd-powerpc64le.zip"></platform>
        <platform
          id="SWTMCC64"
          name="Mac OSX (64 bit version)"
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/pom.xml eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/pom.xml
---- eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/pom.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/pom.xml.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/pom.xml	2021-03-08 19:05:06.948454000 +0100
 @@ -138,9 +138,9 @@
            <resolver>p2</resolver>
            <environments>
@@ -67,10 +77,9 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/eclipse-junit-tests/pom.xml
              </environment>
              <environment>
                <os>win32</os>
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml
---- eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -14,8 +14,8 @@
+--- eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equinox-launchers/build.xml	2021-03-08 19:16:10.708519000 +0100
+@@ -14,8 +14,9 @@
    <target name="equinoxlaunchers">
      <property name="archiveRoot" value="launchers" />
      <buildRepos os="win32" ws="win32" arch="x86_64" archiveName="${archiveRoot}-win32.win32.x86_64.${buildId}.zip" />
@@ -78,12 +87,12 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/equinox/buildConfigs/equino
 -    <buildRepos os="linux" ws="gtk" arch="ppc64le" archiveName="${archiveRoot}-linux.gtk.ppc64le.${buildId}.tar.gz" />
 +    <buildRepos os="freebsd" ws="gtk" arch="amd64" archiveName="${archiveRoot}-freebsd.gtk.amd64.${buildId}.tar.gz" />
 +    <buildRepos os="freebsd" ws="gtk" arch="powerpc64" archiveName="${archiveRoot}-freebsd.gtk.powerpc64.${buildId}.tar.gz" />
++    <buildRepos os="freebsd" ws="gtk" arch="powerpc64le" archiveName="${archiveRoot}-freebsd.gtk.powerpc64le.${buildId}.tar.gz" />
      <buildRepos os="macosx" ws="cocoa" arch="x86_64" archiveName="${archiveRoot}-macosx.cocoa.x86_64.${buildId}.tar.gz" />
    </target>
  
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/EclipseRTOSGiStarterKit.product eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/EclipseRTOSGiStarterKit.product
---- eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/EclipseRTOSGiStarterKit.product	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/EclipseRTOSGiStarterKit.product	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/EclipseRTOSGiStarterKit.product.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/EclipseRTOSGiStarterKit.product	2021-03-08 19:05:06.949169000 +0100
 @@ -18,7 +18,7 @@
     <windowImages/>
  
@@ -93,9 +102,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/
        <macosx icon="rt.icns"/>
        <win useIco="false">
           <bmp/>
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml
---- eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/pom.xml	2021-03-08 19:05:06.949519000 +0100
 @@ -43,9 +43,9 @@
            <resolver>p2</resolver>
            <environments>
@@ -117,9 +125,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/equinox.starterkit.product/
                  <macosx>tar.gz</macosx>
                </formats>
              </configuration>
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/platform/platform.product eclipse.platform.releng.tychoeclipsebuilder/platform/platform.product
---- eclipse.platform.releng.tychoeclipsebuilder/platform/platform.product	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/platform/platform.product	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng.tychoeclipsebuilder/platform/platform.product.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/platform/platform.product	2021-03-08 19:05:06.949844000 +0100
 @@ -18,7 +18,7 @@
     <splash
        location="org.eclipse.platform" />
@@ -129,9 +136,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/platform/platform.product e
        <macosx icon="icons/Eclipse.icns"/>
        <win useIco="false">
           <bmp/>
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml
---- eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml	2021-03-08 19:05:06.950147000 +0100
 @@ -79,7 +79,7 @@
              <configuration>
                <formats>
@@ -141,9 +147,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/platform/pom.xml eclipse.pl
                  <macosx>tar.gz</macosx>
                </formats>
              </configuration>
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/platform.sdk/platform.sdk.product eclipse.platform.releng.tychoeclipsebuilder/platform.sdk/platform.sdk.product
---- eclipse.platform.releng.tychoeclipsebuilder/platform.sdk/platform.sdk.product	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/platform.sdk/platform.sdk.product	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng.tychoeclipsebuilder/platform.sdk/platform.sdk.product.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/platform.sdk/platform.sdk.product	2021-03-08 19:05:06.950497000 +0100
 @@ -18,7 +18,7 @@
     <splash
        location="org.eclipse.platform" />
@@ -153,9 +158,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/platform.sdk/platform.sdk.p
        <macosx icon="icons/Eclipse.icns"/>
        <win useIco="false">
           <bmp/>
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/pom.xml eclipse.platform.releng.tychoeclipsebuilder/pom.xml
---- eclipse.platform.releng.tychoeclipsebuilder/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/pom.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng.tychoeclipsebuilder/pom.xml.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/pom.xml	2021-03-08 19:05:06.950798000 +0100
 @@ -36,7 +36,9 @@
      <module>platform</module>
      <module>platform.sdk</module>
@@ -166,9 +170,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/pom.xml eclipse.platform.re
 +	  -->
    </modules>
  </project>
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/rcp/rcp.product eclipse.platform.releng.tychoeclipsebuilder/rcp/rcp.product
---- eclipse.platform.releng.tychoeclipsebuilder/rcp/rcp.product	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/rcp/rcp.product	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng.tychoeclipsebuilder/rcp/rcp.product.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/rcp/rcp.product	2021-03-08 19:05:06.951141000 +0100
 @@ -16,7 +16,7 @@
     </launcherArgs>
  
@@ -178,10 +181,9 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/rcp/rcp.product eclipse.pla
        <macosx icon="icons/Eclipse.icns"/>
        <win useIco="false">
           <bmp/>
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties
---- eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties	0000-00-00 00:00:00.000000000 +0000
-@@ -29,11 +29,11 @@
+--- eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties	2021-03-08 19:16:52.873764000 +0100
+@@ -29,11 +29,14 @@
  #root.win32.win32.x86=file:executables/win32.win32.x86/eclipsec.exe
  #root.win32.win32.x86_64=file:executables/win32.win32.x86_64/eclipsec.exe
  
@@ -192,14 +194,16 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/rcp.config/build.properties
  
 -root.linux.gtk.x86_64=rootfiles/linux.gtk.x86_64,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/linux/x86_64
 -root.linux.gtk.x86_64.permissions.755=eclipse
++root.freebsd.gtk.powerpc64le=rootfiles/freebsd.gtk.powerpc64le,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/freebsd/powerpc64le
++root.freebsd.gtk.powerpc64le.permissions.755=eclipse
++
 +root.freebsd.gtk.amd64=rootfiles/freebsd.gtk.x86_64,../../rt.equinox.binaries/org.eclipse.equinox.executable/bin/gtk/freebsd/amd64
 +root.freebsd.gtk.amd64.permissions.755=eclipse
  
  bin.includes = feature.properties
  
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/rcp.sdk/rcp.sdk.product eclipse.platform.releng.tychoeclipsebuilder/rcp.sdk/rcp.sdk.product
---- eclipse.platform.releng.tychoeclipsebuilder/rcp.sdk/rcp.sdk.product	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/rcp.sdk/rcp.sdk.product	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng.tychoeclipsebuilder/rcp.sdk/rcp.sdk.product.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/rcp.sdk/rcp.sdk.product	2021-03-08 19:05:06.951767000 +0100
 @@ -18,7 +18,7 @@
     <windowImages/>
  
@@ -209,9 +213,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/rcp.sdk/rcp.sdk.product ecl
        <macosx icon="icons/Eclipse.icns"/>
        <win useIco="false">
           <bmp/>
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml
---- eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml	2021-03-08 19:05:06.952089000 +0100
 @@ -77,7 +77,7 @@
              <configuration>
                <formats>
@@ -221,9 +224,8 @@ diff -ru eclipse.platform.releng.tychoeclipsebuilder/sdk/pom.xml eclipse.platfor
                  <macosx>tar.gz</macosx>
                </formats>
              </configuration>
-diff -ru eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.product eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.product
---- eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.product	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.product	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.product.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse.platform.releng.tychoeclipsebuilder/sdk/sdk.product	2021-03-08 19:05:06.952429000 +0100
 @@ -18,7 +18,7 @@
     <splash
        location="org.eclipse.platform" />

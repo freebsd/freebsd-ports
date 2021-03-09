@@ -1,6 +1,5 @@
-diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
---- eclipse-platform-parent/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse-platform-parent/pom.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse-platform-parent/pom.xml.orig	2020-06-04 12:00:14.000000000 +0200
++++ eclipse-platform-parent/pom.xml	2021-03-08 19:09:17.636105000 +0100
 @@ -80,9 +80,9 @@
        'eclipiserun-repo' repository, such as for computing .api-descriptions and
        generating API Tools reports.
@@ -13,7 +12,7 @@ diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
  
      <!--
        NOTE: this EMF and ECF URL must match exactly what is in the eclipse-sdk-prereqs.target file.
-@@ -254,14 +254,14 @@
+@@ -254,16 +254,21 @@
            </target>
            <environments>
              <environment>
@@ -31,8 +30,15 @@ diff -ru eclipse-platform-parent/pom.xml eclipse-platform-parent/pom.xml
 +              <arch>powerpc64</arch>
              </environment>
              <environment>
++              <os>freebsd</os>
++              <ws>gtk</ws>
++              <arch>powerpc64le</arch>
++            </environment>
++            <environment>
                <os>win32</os>
-@@ -626,7 +626,7 @@
+               <ws>win32</ws>
+               <arch>x86_64</arch>
+@@ -626,7 +631,7 @@
            For maintenance streams should always be "M-builds".
            Ideally, this value would be provided by the environment, see bug 489789.
          -->

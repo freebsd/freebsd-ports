@@ -4,7 +4,7 @@
 #
 cd ${WRKSRC}
 
-ARCHS="amd64 powerpc64"
+ARCHS="amd64 powerpc64 powerpc64le"
 
 # Create dummy repo for jgit
 if [ ! -d .git ]

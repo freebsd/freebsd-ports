@@ -1,6 +1,5 @@
-diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/META-INF/MANIFEST.MF eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/META-INF/MANIFEST.MF
---- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/META-INF/MANIFEST.MF.orig	2020-06-04 11:51:28.000000000 +0200
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/META-INF/MANIFEST.MF	2021-03-08 20:18:47.307541000 +0100
 @@ -2,7 +2,7 @@
  Fragment-Host: org.eclipse.swt; bundle-version="[3.0.0,4.0.0)"
  Bundle-Name: %fragmentName
@@ -22,9 +21,8 @@ diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch
  SWT-Arch: aarch64
 -Automatic-Module-Name: org.eclipse.swt.gtk.linux.aarch64
 +Automatic-Module-Name: org.eclipse.swt.gtk.freebsd.aarch64
-diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/build.xml eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/build.xml
---- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/build.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/build.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/build.xml.orig	2020-06-04 11:51:28.000000000 +0200
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/build.xml	2021-03-08 20:18:47.307863000 +0100
 @@ -1,8 +1,8 @@
  <?xml version="1.0" encoding="UTF-8"?>
 -<project name="org.eclipse.swt.gtk.linux.aarch64" default="build.jars" basedir=".">
@@ -36,9 +34,8 @@ diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch
  	<property name="swt.arch" value="aarch64" />
  	<property name="targets" value="install"/>
  	
-diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/pom.xml eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/pom.xml
---- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/pom.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/pom.xml.orig	2020-06-04 11:51:28.000000000 +0200
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch64/pom.xml	2021-03-08 20:18:47.308240000 +0100
 @@ -20,12 +20,12 @@
      <relativePath>../binaries-parent/</relativePath>
    </parent>
@@ -63,9 +60,8 @@ diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.aarch
          </property>
        </activation>
        <build>
-diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/.project eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/.project
---- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/.project	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/.project.orig	2020-06-04 11:51:28.000000000 +0200
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/.project	2021-03-08 20:18:47.308571000 +0100
 @@ -1,6 +1,6 @@
  <?xml version="1.0" encoding="UTF-8"?>
  <projectDescription>
@@ -74,9 +70,8 @@ diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64
  	<comment></comment>
  	<projects>
  	</projects>
-diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/META-INF/MANIFEST.MF eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/META-INF/MANIFEST.MF
---- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/META-INF/MANIFEST.MF.orig	2020-06-04 11:51:28.000000000 +0200
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/META-INF/MANIFEST.MF	2021-03-08 20:18:47.308897000 +0100
 @@ -2,7 +2,7 @@
  Fragment-Host: org.eclipse.swt; bundle-version="[3.0.0,4.0.0)"
  Bundle-Name: %fragmentName
@@ -99,9 +94,8 @@ diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64
 +SWT-OS: freebsd
 +SWT-Arch: amd64
 +Automatic-Module-Name: org.eclipse.swt.gtk.freebsd.amd64
-diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/build.xml eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/build.xml
---- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/build.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/build.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/build.xml.orig	2020-06-04 11:51:28.000000000 +0200
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/build.xml	2021-03-08 20:18:47.309197000 +0100
 @@ -1,9 +1,9 @@
  <?xml version="1.0" encoding="UTF-8"?>
 -<project name="org.eclipse.swt.gtk.linux.x86_64" default="build.jars" basedir=".">
@@ -115,9 +109,8 @@ diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64
  	<property name="targets" value="install"/>
  	
  	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
-diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/mvnBuildSwtJar.sh eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/mvnBuildSwtJar.sh
---- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/mvnBuildSwtJar.sh	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/mvnBuildSwtJar.sh	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/mvnBuildSwtJar.sh.orig	2020-06-04 11:51:28.000000000 +0200
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/mvnBuildSwtJar.sh	2021-03-08 20:18:47.309511000 +0100
 @@ -36,10 +36,10 @@
  
  if [ "${DEV_ECLIPSE}" != "" ]; then
@@ -132,9 +125,8 @@ diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64
  else
  	echo "Note:" 
  	echo "  Set DEV_ECLIPSE to your development eclipse folder to have the *.jar files copied into it automatically."
-diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/pom.xml eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/pom.xml
---- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/pom.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/pom.xml.orig	2020-06-04 11:51:28.000000000 +0200
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64/pom.xml	2021-03-08 20:18:47.309862000 +0100
 @@ -20,14 +20,14 @@
      <relativePath>../binaries-parent/</relativePath>
    </parent>
@@ -162,9 +154,8 @@ diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.amd64
          </property>
        </activation>
        <build>
-diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/META-INF/MANIFEST.MF eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/META-INF/MANIFEST.MF
---- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/META-INF/MANIFEST.MF	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/META-INF/MANIFEST.MF.orig	2020-06-04 11:51:28.000000000 +0200
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/META-INF/MANIFEST.MF	2021-03-08 20:18:47.310191000 +0100
 @@ -2,7 +2,7 @@
  Fragment-Host: org.eclipse.swt; bundle-version="[3.0.0,4.0.0)"
  Bundle-Name: %fragmentName
@@ -187,9 +178,8 @@ diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.power
 +SWT-OS: freebsd
 +SWT-Arch: powerpc64
 +Automatic-Module-Name: org.eclipse.swt.gtk.freebsd.powerpc64
-diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/build.xml eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/build.xml
---- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/build.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/build.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/build.xml.orig	2020-06-04 11:51:28.000000000 +0200
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/build.xml	2021-03-08 20:18:47.310494000 +0100
 @@ -1,9 +1,9 @@
  <?xml version="1.0" encoding="UTF-8"?>
 -<project name="org.eclipse.swt.gtk.linux.ppc64le" default="build.jars" basedir=".">
@@ -203,9 +193,8 @@ diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.power
  	<property name="targets" value="install"/>
  	
  	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
-diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/pom.xml eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/pom.xml
---- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/pom.xml	0000-00-00 00:00:00.000000000 +0000
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/pom.xml.orig	2020-06-04 11:51:28.000000000 +0200
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64/pom.xml	2021-03-08 20:18:47.310862000 +0100
 @@ -20,14 +20,14 @@
      <relativePath>../binaries-parent/</relativePath>
    </parent>
@@ -233,16 +222,84 @@ diff -ru eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.power
          </property>
        </activation>
        <build>
-diff -ru eclipse.platform.swt.binaries/pom.xml eclipse.platform.swt.binaries/pom.xml
---- eclipse.platform.swt.binaries/pom.xml	0000-00-00 00:00:00.000000000 +0000
-+++ eclipse.platform.swt.binaries/pom.xml	0000-00-00 00:00:00.000000000 +0000
-@@ -54,8 +54,8 @@
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64le/META-INF/MANIFEST.MF.orig	2021-03-08 20:45:12.925805000 +0100
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64le/META-INF/MANIFEST.MF	2021-03-08 20:45:58.878270000 +0100
+@@ -2,7 +2,7 @@
+ Fragment-Host: org.eclipse.swt; bundle-version="[3.0.0,4.0.0)"
+ Bundle-Name: %fragmentName
+ Bundle-Vendor: %providerName
+-Bundle-SymbolicName: org.eclipse.swt.gtk.linux.ppc64le;singleton:=true
++Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.powerpc64le;singleton:=true
+ Bundle-Version: 3.114.100.qualifier
+ Bundle-ManifestVersion: 2
+ Bundle-Localization: fragment
+@@ -26,8 +26,8 @@
+  org.eclipse.swt.internal.cairo; x-internal:=true,
+  org.eclipse.swt.internal.gtk; x-internal:=true,
+  org.eclipse.swt.internal.opengl.glx; x-internal:=true
+-Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=ppc64le))
++Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=powerpc64le))
+ SWT-WS: gtk
+-SWT-OS: linux
+-SWT-Arch: ppc64le
+-Automatic-Module-Name: org.eclipse.swt.gtk.linux.ppc64le
++SWT-OS: freebsd
++SWT-Arch: powerpc64le
++Automatic-Module-Name: org.eclipse.swt.gtk.freebsd.powerpc64le
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64le/build.xml.orig	2021-03-08 20:46:24.538852000 +0100
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64le/build.xml	2021-03-08 20:46:47.697856000 +0100
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<project name="org.eclipse.swt.gtk.linux.ppc64le" default="build.jars" basedir=".">
++<project name="org.eclipse.swt.gtk.freebsd.powerpc64le" default="build.jars" basedir=".">
+ 
+ 	<property name="swt.ws" value="gtk" />
+-	<property name="swt.os" value="linux" />
+-	<property name="swt.arch" value="ppc64le" />
++	<property name="swt.os" value="freebsd" />
++	<property name="swt.arch" value="powerpc64le" />
+ 	<property name="targets" value="install"/>
+ 	
+ 	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
+--- eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64le/pom.xml.orig	2021-03-08 20:47:06.200163000 +0100
++++ eclipse.platform.swt.binaries/bundles/org.eclipse.swt.gtk.freebsd.powerpc64le/pom.xml	2021-03-08 20:47:32.469033000 +0100
+@@ -20,14 +20,14 @@
+     <relativePath>../binaries-parent/</relativePath>
+   </parent>
+   <groupId>org.eclipse.swt</groupId>
+-  <artifactId>org.eclipse.swt.gtk.linux.ppc64le</artifactId>
++  <artifactId>org.eclipse.swt.gtk.freebsd.powerpc64le</artifactId>
+   <version>3.114.100-SNAPSHOT</version>
+   <packaging>eclipse-plugin</packaging>
+ 
+   <properties>
+-    <os>linux</os>
++    <os>freebsd</os>
+     <ws>gtk</ws>
+-    <arch>ppc64le</arch>
++    <arch>powerpc64le</arch>
+     <buildid>${buildId}</buildid>
+   </properties>
+ 
+@@ -61,7 +61,7 @@
+         <property>
+           <!-- This has to be hardcoded. Profiles are not allowed to use pom defined properties :-( -->
+           <name>native</name>
+-          <value>gtk.linux.ppc64le</value>
++          <value>gtk.freebsd.powerpc64le</value>
+         </property>
+       </activation>
+       <build>
+--- eclipse.platform.swt.binaries/pom.xml.orig	2020-06-04 11:51:28.000000000 +0200
++++ eclipse.platform.swt.binaries/pom.xml	2021-03-08 20:47:55.910881000 +0100
+@@ -54,8 +54,9 @@
  
    <modules>
      <module>bundles/org.eclipse.swt.cocoa.macosx.x86_64</module>
 -    <module>bundles/org.eclipse.swt.gtk.linux.ppc64le</module>
 -    <module>bundles/org.eclipse.swt.gtk.linux.x86_64</module>
 +    <module>bundles/org.eclipse.swt.gtk.freebsd.powerpc64</module>
++    <module>bundles/org.eclipse.swt.gtk.freebsd.powerpc64le</module>
 +    <module>bundles/org.eclipse.swt.gtk.freebsd.amd64</module>
      <module>bundles/org.eclipse.swt.win32.win32.x86_64</module>
    </modules>
