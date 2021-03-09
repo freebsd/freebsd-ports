@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-DISTVERSION=	5.9.1
+DISTVERSION=	5.9.2
 CATEGORIES=	security net-vpn
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -14,13 +14,10 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe libtool:keepla pkgconfig tar:bzip2 ssl
-USE_RC_SUBR=	strongswan
 USE_LDCONFIG=	${PREFIX}/lib/ipsec
+USE_RC_SUBR=	strongswan
 
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
-
 CONFIGURE_ARGS=	--enable-kernel-pfkey \
 		--enable-kernel-pfroute  \
 		--disable-kernel-netlink  \
@@ -41,9 +38,12 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 		--with-group=wheel  \
 		--with-lib-prefix=${PREFIX}
 
-OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE GCM IKEV1 \
-		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MEDIATION MYSQL PKI \
-		PKCS11 PYTHON SCEP SMP SQLITE SWANCTL TESTVECTOR TPM TSS2 \
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+
+OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE FARP GCM \
+		IKEV1 IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MEDIATION MYSQL \
+		PKI PKCS11 PYTHON SCEP SMP SQLITE SWANCTL TESTVECTOR TPM TSS2 \
 		UNBOUND UNITY VICI XAUTH
 OPTIONS_DEFINE_i386=	VIA
 OPTIONS_DEFAULT=	BUILTIN CURL IKEV1 PKI SWANCTL VICI
@@ -58,6 +58,7 @@ EAPAKA3GPP2_DESC=	Enable EAP AKA with 3gpp2 backend
 EAPDYNAMIC_DESC=	Enable EAP dynamic proxy module
 EAPRADIUS_DESC=		Enable EAP Radius proxy authentication
 EAPSIMFILE_DESC=	Enable EAP SIM with file backend
+FARP_DESC=	Enable farp plugin
 GCM_DESC=		Enable GCM AEAD wrapper crypto plugin
 IKEV1_DESC=	Enable IKEv1 support
 IPSECKEY_DESC=	Enable authentication with IPSECKEY resource records with DNSSEC
@@ -83,48 +84,49 @@ XAUTH_DESC=	Enable XAuth password verification
 
 # Extra options
 BUILTIN_CONFIGURE_ON=	--with-printf-hooks=builtin
-CURL_CONFIGURE_ON=	--enable-curl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-EAPAKA3GPP2_CONFIGURE_ON=	--enable-eap-aka --enable-eap-aka-3gpp2
+CURL_CONFIGURE_ON=	--enable-curl
 EAPAKA3GPP2_LIB_DEPENDS=libgmp.so:math/gmp
+EAPAKA3GPP2_CONFIGURE_ON=	--enable-eap-aka --enable-eap-aka-3gpp2
 EAPDYNAMIC_CONFIGURE_ON=--enable-eap-dynamic
 EAPRADIUS_CONFIGURE_ON=	--enable-eap-radius
 EAPSIMFILE_CONFIGURE_ON=--enable-eap-sim --enable-eap-sim-file
+FARP_CONFIGURE_ON=	--enable-farp
 GCM_CONFIGURE_ON=	--enable-gcm
 IKEV1_CONFIGURE_OFF=	--disable-ikev1
 IPSECKEY_CONFIGURE_ON=	--enable-ipseckey
 KERNELLIBIPSEC_CONFIGURE_ON=	--enable-kernel-libipsec
-LDAP_CONFIGURE_ON=	--enable-ldap
 LDAP_USE=		OPENLDAP=yes
+LDAP_CONFIGURE_ON=	--enable-ldap
 LIBC_CONFIGURE_ON=	--with-printf-hooks=glibc
 LOADTESTER_CONFIGURE_ON=--enable-load-tester
 MEDIATION_CONFIGURE_ON=	--enable-mediation
-MYSQL_CONFIGURE_ON=	--enable-mysql
 MYSQL_USES=		mysql
+MYSQL_CONFIGURE_ON=	--enable-mysql
 PKCS11_CONFIGURE_ON=	--enable-pkcs11
 PKI_CONFIGURE_OFF=	--disable-pki
 PYTHON_IMPLIES=		VICI
 PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vici>0:security/py-vici@${PY_FLAVOR}
 PYTHON_USES=		python
 SCEP_CONFIGURE_OFF=	--disable-scepclient
-SMP_CONFIGURE_ON=	--enable-smp
 SMP_LIB_DEPENDS=	libxml2.so:textproc/libxml2
-SQLITE_CONFIGURE_ON=	--enable-sqlite
+SMP_CONFIGURE_ON=	--enable-smp
 SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-SWANCTL_CONFIGURE_ON=	--enable-swanctl
+SQLITE_CONFIGURE_ON=	--enable-sqlite
 SWANCTL_IMPLIES=	VICI
+SWANCTL_CONFIGURE_ON=	--enable-swanctl
 TESTVECTOR_CONFIGURE_ON=--enable-test-vectors
 TPM_CONFIGURE_ON=	--enable-tpm
-TSS2_CONFIGURE_ON=	--enable-tss-tss2
 TSS2_LIB_DEPENDS=	libtss2-sys.so:security/tpm2-tss
-UNBOUND_CONFIGURE_ON=	--enable-unbound
+TSS2_CONFIGURE_ON=	--enable-tss-tss2
 UNBOUND_LIB_DEPENDS=	libunbound.so:dns/unbound \
 			libldns.so:dns/ldns
+UNBOUND_CONFIGURE_ON=	--enable-unbound
 UNITY_CONFIGURE_ON=	--enable-unity
 VIA_CONFIGURE_ON=	--enable-padlock
 VICI_CONFIGURE_ON=	--enable-vici
-VSTR_CONFIGURE_ON=	--with-printf-hooks=vstr
 VSTR_LIB_DEPENDS=	libvstr.so:devel/vstr
+VSTR_CONFIGURE_ON=	--with-printf-hooks=vstr
 XAUTH_CONFIGURE_ON=	--enable-xauth-eap \
 			--enable-xauth-generic \
 			--enable-xauth-pam

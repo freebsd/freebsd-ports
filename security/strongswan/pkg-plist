@@ -30,6 +30,7 @@
 %%EAPSIMFILE%%@sample %%ETCDIR%%.d/charon/eap-sim.conf.sample
 @sample %%ETCDIR%%.d/charon/eap-tls.conf.sample
 @sample %%ETCDIR%%.d/charon/eap-ttls.conf.sample
+%%FARP%%@sample %%ETCDIR%%.d/charon/farp.conf.sample
 @sample %%ETCDIR%%.d/charon/fips-prf.conf.sample
 %%GCM%%@sample %%ETCDIR%%.d/charon/gcm.conf.sample
 %%EAPAKA3GPP2%%@sample %%ETCDIR%%.d/charon/gmp.conf.sample
@@ -167,6 +168,8 @@ lib/ipsec/plugins/libstrongswan-eap-tls.la
 lib/ipsec/plugins/libstrongswan-eap-tls.so
 lib/ipsec/plugins/libstrongswan-eap-ttls.la
 lib/ipsec/plugins/libstrongswan-eap-ttls.so
+%%FARP%%lib/ipsec/plugins/libstrongswan-farp.la
+%%FARP%%lib/ipsec/plugins/libstrongswan-farp.so
 lib/ipsec/plugins/libstrongswan-fips-prf.la
 lib/ipsec/plugins/libstrongswan-fips-prf.so
 %%GCM%%lib/ipsec/plugins/libstrongswan-gcm.la
@@ -321,6 +324,7 @@ sbin/ipsec
 %%EAPSIMFILE%%%%DATADIR%%/templates/config/plugins/eap-sim.conf
 %%DATADIR%%/templates/config/plugins/eap-tls.conf
 %%DATADIR%%/templates/config/plugins/eap-ttls.conf
+%%FARP%%%%DATADIR%%/templates/config/plugins/farp.conf
 %%DATADIR%%/templates/config/plugins/fips-prf.conf
 %%GCM%%%%DATADIR%%/templates/config/plugins/gcm.conf
 %%EAPAKA3GPP2%%%%DATADIR%%/templates/config/plugins/gmp.conf
