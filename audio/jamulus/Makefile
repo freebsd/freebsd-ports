@@ -4,8 +4,6 @@ PORTNAME=	jamulus
 DISTVERSIONPREFIX=	r
 DISTVERSION=	3_6_2
 CATEGORIES=	audio
-#MASTER_SITES=	SF/llcon/${NAME}/${DISTVERSION}/ # it is unclear whether SF or GH should be used because SF doesn't have 3.6.0, but README on GH claims that it is hosted on SF
-DISTNAME=	${NAME}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Internet jam session software
@@ -20,7 +18,7 @@ USE_QT=		concurrent core gui network widgets xml buildtools_build linguisttools_
 USE_GL=		gl
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	corrados
+GH_ACCOUNT=	jamulussoftware
 
 NAME=		Jamulus
 
@@ -29,6 +27,8 @@ DESKTOP_ENTRIES=	"${NAME}" "${COMMENT}" "${NAME}" \
 
 PLIST_FILES=	bin/${NAME} \
 		share/pixmaps/jamulus.png
+
+PORTSCOUT=	limit:^r\d+_ # prevent malformatted tags, like 'latest'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${NAME} ${STAGEDIR}${PREFIX}/bin
