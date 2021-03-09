@@ -21,8 +21,8 @@ setenv XMODIFIERS @im=ibus
 setenv XIM_PROGRAM ibus-daemon
 setenv XIM_ARGS "--daemonize --xim"
 
-If you are using KDE4, you may create a shell script in $HOME/.kde4/env,
-and add following lines:
+If you are using KDE4, you may create a shell script in $HOME/.kde4/env
+($HOME/.config/plasma-workspace/env for Plasma) and add following lines:
 
 #!/bin/sh
 export XIM=ibus
@@ -45,8 +45,6 @@ textproc/ibus-kmfl		KMFL IMEngine for IBus framework
 textproc/ibus-m17n		m17n IM engine for IBus framework
 textproc/ibus-table		Table based IM framework for IBus
 textproc/ibus-typing-booster    Faster typing by context sensitive completion
-
-and QT4 input method module, textproc/ibus-qt.
 
 If ibus cannot start or the panel does not appear, please ensure
 that you are using up-to-date python.

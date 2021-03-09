@@ -56,7 +56,7 @@ include/ibus-1.0/ibusxml.h
 %%GTK3%%lib/gtk-3.0/3.0.0/immodules/im-ibus.so
 lib/libibus-1.0.so
 lib/libibus-1.0.so.5
-lib/libibus-1.0.so.5.0.523
+lib/libibus-1.0.so.5.0.524
 libdata/pkgconfig/ibus-1.0.pc
 %%GTK3%%libexec/ibus-extension-gtk3
 %%GTK3%%libexec/ibus-ui-gtk3
@@ -66,6 +66,7 @@ libdata/pkgconfig/ibus-1.0.pc
 %%ENGINE%%libexec/ibus-engine-simple
 libexec/ibus-portal
 %%EMOJI%%libexec/ibus-ui-emojier
+%%WAYLAND%%libexec/ibus-wayland
 man/man1/ibus-daemon.1.gz
 man/man1/ibus-setup.1.gz
 man/man1/ibus.1.gz
