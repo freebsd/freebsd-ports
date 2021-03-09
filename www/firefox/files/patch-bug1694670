@@ -1,0 +1,22 @@
+diff --git gfx/qcms/src/iccread.rs gfx/qcms/src/iccread.rs
+--- gfx/qcms/src/iccread.rs
++++ gfx/qcms/src/iccread.rs
+@@ -229,7 +229,7 @@
+     read_u16(mem, offset)
+ }
+ pub fn write_u32(mem: &mut [u8], offset: usize, value: u32) {
+-    if offset <= mem.len() - std::mem::size_of_val(&value) {
++    if offset > mem.len() - std::mem::size_of_val(&value) {
+         panic!("OOB");
+     }
+     let mem = mem.as_mut_ptr();
+@@ -238,7 +238,7 @@
+     }
+ }
+ pub fn write_u16(mem: &mut [u8], offset: usize, value: u16) {
+-    if offset <= mem.len() - std::mem::size_of_val(&value) {
++    if offset > mem.len() - std::mem::size_of_val(&value) {
+         panic!("OOB");
+     }
+     let mem = mem.as_mut_ptr();
+
