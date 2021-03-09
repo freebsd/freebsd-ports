@@ -41,7 +41,7 @@ OPTIONS_DEFAULT=	FFMPEG ATOMICPARSLEY
 FFMPEG_DESC=	Enable file conversion using FFmpeg
 FFMPEG_RUN_DEPENDS=	ffmpeg>=0:multimedia/ffmpeg
 ATOMICPARSLEY_DESC=	Enable tagging of media files
-ATOMICPARSLEY_RUN_DEPENDS=	AtomicParsley>=0:multimedia/atomicparsley
+ATOMICPARSLEY_RUN_DEPENDS=	atomicparsley>=0:multimedia/atomicparsley
 
 post-patch:
 	${REINPLACE_CMD} -e "108,110c\\${.newline}	\$$opt_cmdline->{getiplayer} = \"${PREFIX}/bin/${PORTNAME}\";" \
