@@ -33,7 +33,7 @@ USE_PYTHON=	autoplist distutils
 .if ${ARCH} == i386
 CFLAGS+=	-msse2 # workaround for https://github.com/biocore/scikit-bio/issues/1727
 CXXFLAGS+=	-msse2
-.elif ${ARCH} == powerpc64le
+.elif ${ARCH:Mpowerpc64*}
 CFLAGS+=	-DNO_WARN_X86_INTRINSICS
 USE_GCC=	yes
 .endif
