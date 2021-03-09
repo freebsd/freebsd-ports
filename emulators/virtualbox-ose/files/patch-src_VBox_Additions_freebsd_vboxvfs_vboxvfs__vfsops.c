@@ -1,4 +1,4 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c.orig	2020-07-09 16:50:11 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c.orig	2021-01-07 15:34:22 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vfsops.c
 @@ -1,8 +1,3 @@
 -/* $Id: vboxvfs_vfsops.c $ */
@@ -7,7 +7,7 @@
 - */
 -
  /*
-  * Copyright (C) 2008-2017 Oracle Corporation
+  * Copyright (C) 2008-2020 Oracle Corporation
   *
 @@ -14,245 +9,478 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the

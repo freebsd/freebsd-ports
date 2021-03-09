@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.2.44
-PORTREVISION=	4
+PORTVERSION=	6.1.18
 CATEGORIES=	emulators
-MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
+MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX=	-kmod
 DISTNAME=	VirtualBox-${PORTVERSION}
 
@@ -20,11 +19,11 @@ BUILD_DEPENDS=	kmk:devel/kBuild
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 
-USES=		cpe kmod tar:bzip2
+USES=		cpe compiler:c++14-lang kmod tar:bzip2
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxnet
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--build-headless
@@ -63,7 +62,8 @@ KMK_FLAGS=	HostDrivers-scripts vboxdrv-src VBoxNetFlt-src VBoxNetAdp-src
 .if ${PORT_OPTIONS:MDEBUG}
 KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-HostDrivers-Support-freebsd-Makefile
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Config.kmk \
+		${PATCHDIR}/extrapatch-src-VBox-HostDrivers-Support-freebsd-Makefile
 MAKE_ARGS+=	DEBUG_FLAGS="-O1 -g"
 .endif
 

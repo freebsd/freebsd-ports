@@ -1,14 +1,17 @@
---- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2020-05-13 19:43:53 UTC
+--- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2021-01-07 15:41:26 UTC
 +++ src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c
-@@ -46,6 +46,7 @@
+@@ -44,8 +44,10 @@
+ #include <sys/fcntl.h>
+ #include <sys/conf.h>
  #include <sys/uio.h>
++#include <sys/mutex.h>
  
  #include "../SUPDrvInternal.h"
 +#include "freebsd/the-freebsd-kernel.h"
  #include <VBox/version.h>
  #include <iprt/initterm.h>
  #include <iprt/string.h>
-@@ -57,7 +58,14 @@
+@@ -57,7 +59,14 @@
  #include <iprt/alloc.h>
  #include <iprt/err.h>
  #include <iprt/asm.h>
@@ -23,7 +26,7 @@
  #ifdef VBOX_WITH_HARDENING
  # define VBOXDRV_PERM 0600
  #else
-@@ -76,7 +84,9 @@ static d_open_t     VBoxDrvFreeBSDOpenUsr;
+@@ -76,7 +85,9 @@ static d_open_t     VBoxDrvFreeBSDOpenUsr;
  static d_open_t     VBoxDrvFreeBSDOpenSys;
  static void         vboxdrvFreeBSDDtr(void *pvData);
  static d_ioctl_t    VBoxDrvFreeBSDIOCtl;
@@ -33,7 +36,7 @@
  
  
  /*********************************************************************************************************************************
-@@ -182,6 +192,13 @@ static int VBoxDrvFreeBSDLoad(void)
+@@ -182,6 +193,13 @@ static int VBoxDrvFreeBSDLoad(void)
          rc = supdrvInitDevExt(&g_VBoxDrvFreeBSDDevExt, sizeof(SUPDRVSESSION));
          if (RT_SUCCESS(rc))
          {
@@ -47,29 +50,7 @@
              /*
               * Configure character devices. Add symbolic links for compatibility.
               */
-@@ -311,7 +328,21 @@ static int VBoxDrvFreeBSDIOCtl(struct cdev *pDev, u_lo
-     PSUPDRVSESSION pSession;
-     devfs_get_cdevpriv((void **)&pSession);
- 
-+#ifdef VBOX_WITH_EFLAGS_AC_SET_IN_VBOXDRV
-     /*
-+     * Refuse all I/O control calls if we've ever detected EFLAGS.AC being cleared.
-+     *
-+     * This isn't a problem, as there is absolutely nothing in the kernel context that
-+     * depend on user context triggering cleanups.  That would be pretty wild, right?
-+     */
-+    if (RT_UNLIKELY(g_VBoxDrvFreeBSDDevExt.cBadContextCalls > 0))
-+    {
-+        SUPR0Printf("VBoxDrvFreBSDIOCtl: EFLAGS.AC=0 detected %u times, refusing all I/O controls!\n", g_VBoxDrvFreeBSDDevExt.cBadContextCalls);
-+        return ESPIPE;
-+    }
-+#endif
-+
-+    /*
-      * Deal with the fast ioctl path first.
-      */
-     if (   (   ulCmd == SUP_IOCTL_FAST_DO_RAW_RUN
-@@ -325,6 +356,45 @@ static int VBoxDrvFreeBSDIOCtl(struct cdev *pDev, u_lo
+@@ -324,6 +342,45 @@ static int VBoxDrvFreeBSDIOCtl(struct cdev *pDev, u_lo
  
  
  /**
@@ -115,7 +96,7 @@
   * Deal with the 'slow' I/O control requests.
   *
   * @returns 0 on success, appropriate errno on failure.
-@@ -373,11 +443,10 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
+@@ -372,11 +429,10 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
           */
          SUPREQHDR Hdr;
          pvUser = *(void **)pvData;
@@ -130,7 +111,7 @@
          }
          if (RT_UNLIKELY((Hdr.fFlags & SUPREQHDR_FLAGS_MAGIC_MASK) != SUPREQHDR_FLAGS_MAGIC))
          {
-@@ -402,13 +471,12 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
+@@ -401,13 +457,12 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
              OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: failed to allocate buffer of %d bytes; ulCmd=%#lx\n", cbReq, ulCmd));
              return ENOMEM;
          }
@@ -148,7 +129,7 @@
          }
          if (Hdr.cbIn < cbReq)
              RT_BZERO((uint8_t *)pHdr + Hdr.cbIn, cbReq - Hdr.cbIn);
-@@ -436,9 +504,8 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
+@@ -435,9 +490,8 @@ static int VBoxDrvFreeBSDIOCtlSlow(PSUPDRVSESSION pSes
                  OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: too much output! %#x > %#x; uCmd=%#lx!\n", cbOut, cbReq, ulCmd));
                  cbOut = cbReq;
              }
@@ -160,7 +141,7 @@
  
              Log(("VBoxDrvFreeBSDIOCtlSlow: returns %d / %d ulCmd=%lx\n", 0, pHdr->rc, ulCmd));
  
-@@ -541,8 +608,7 @@ bool VBOXCALL  supdrvOSGetForcedAsyncTscMode(PSUPDRVDE
+@@ -540,8 +594,7 @@ bool VBOXCALL  supdrvOSGetForcedAsyncTscMode(PSUPDRVDE
  
  bool VBOXCALL  supdrvOSAreCpusOfflinedOnSuspend(void)
  {
@@ -170,7 +151,7 @@
  }
  
  
-@@ -625,11 +691,25 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
+@@ -624,11 +677,25 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
  #endif /* SUPDRV_WITH_MSR_PROBER */
  
  
@@ -196,7 +177,7 @@
  
      va_start(va, pszFormat);
      cch = RTStrPrintfV(szMsg, sizeof(szMsg), pszFormat, va);
-@@ -637,12 +717,19 @@ SUPR0DECL(int) SUPR0Printf(const char *pszFormat, ...)
+@@ -636,12 +703,19 @@ SUPR0DECL(int) SUPR0Printf(const char *pszFormat, ...)
  
      printf("%s", szMsg);
  

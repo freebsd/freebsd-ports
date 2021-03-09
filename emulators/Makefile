@@ -153,9 +153,14 @@
     SUBDIR += vice
     SUBDIR += virtualbox-ose
     SUBDIR += virtualbox-ose-additions
+    SUBDIR += virtualbox-ose-additions-legacy
     SUBDIR += virtualbox-ose-additions-nox11
+    SUBDIR += virtualbox-ose-additions-nox11-legacy
     SUBDIR += virtualbox-ose-kmod
+    SUBDIR += virtualbox-ose-kmod-legacy
+    SUBDIR += virtualbox-ose-legacy
     SUBDIR += virtualbox-ose-nox11
+    SUBDIR += virtualbox-ose-nox11-legacy
     SUBDIR += visualboyadvance-m
     SUBDIR += vmips
     SUBDIR += vmsbackup

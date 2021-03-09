@@ -1,5 +1,14 @@
---- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2020-05-13 19:37:01 UTC
+--- src/VBox/Additions/common/VBoxGuest/freebsd/Makefile.orig	2019-04-16 10:09:09 UTC
 +++ src/VBox/Additions/common/VBoxGuest/freebsd/Makefile
+@@ -25,7 +25,7 @@
+ #
+ KMOD = vboxguest
+ 
+-CFLAGS += -DRT_OS_FREEBSD -DIN_RING0 -DIN_RT_R0 -DIN_SUP_R0 -DVBOX -DRT_WITH_VBOX -Iinclude -I. -Ir0drv -w -DVBGL_VBOXGUEST -DVBOX_WITH_HGCM -DVBOX_WITH_64_BITS_GUESTS
++CFLAGS += -DRT_OS_FREEBSD -DIN_RING0 -DIN_RT_R0 -DIN_GUEST -DIN_GUEST_R0 -DIN_SUP_R0 -DVBOX -DRT_WITH_VBOX -Iinclude -I. -Ir0drv -w -DVBGL_VBOXGUEST -DVBOX_WITH_HGCM -DVBOX_WITH_64_BITS_GUESTS
+ 
+ .if (${MACHINE_ARCH} == "i386")
+  CFLAGS += -DRT_ARCH_X86
 @@ -80,6 +80,7 @@ SRCS += \
  	handletable.c \
  	handletablectx.c \
@@ -8,7 +17,7 @@
  	thread.c
  
  .PATH:	${.CURDIR}/common/string
-@@ -139,6 +140,7 @@ SRCS += \
+@@ -147,6 +148,7 @@ SRCS += \
  
  .PATH:	${.CURDIR}/r0drv
  SRCS += \

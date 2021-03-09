@@ -1,0 +1,10 @@
+--- src/VBox/Installer/freebsd/virtualbox.desktop.orig	2020-05-13 19:44:01 UTC
++++ src/VBox/Installer/freebsd/virtualbox.desktop
+@@ -7,7 +7,6 @@ GenericName=Virtual Machine
+ Type=Application
+ Exec=VirtualBox
+ TryExec=VirtualBox
+-DocPath=file://$VBOX_DOC_PATH/UserManual.pdf
+ Icon=VBox
+ Categories=Emulator;System;
+ Comment=Run several virtual systems on a single host computer

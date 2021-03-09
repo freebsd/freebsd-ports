@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.2.44
-PORTREVISION=	3
+PORTVERSION=	6.1.18
 CATEGORIES=	emulators
-MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
+MASTER_SITES=	https://download.virtualbox.com/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-additions
 DISTNAME=	VirtualBox-${PORTVERSION}
 
@@ -15,7 +14,7 @@ COMMENT=	VirtualBox additions for FreeBSD guests
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64
 USES=		compiler:c++11-lang cpe iconv kmod tar:bzip2
 USE_RC_SUBR=	vboxguest vboxservice
 
@@ -91,12 +90,6 @@ VBOX_WITH_X11=
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang
-.if ${COMPILER_FEATURES:Mlibc++}
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Additions-x11-VBoxClient-Makefile.kmk
-.endif
-.endif
-
 post-patch:
 	@${ECHO_CMD} 'VBOX_ONLY_ADDITIONS = 1' > ${WRKSRC}/LocalConfig.kmk
 	@${ECHO_CMD} 'VBOX_WITH_DRAG_AND_DROP = ${VBOX_WITH_X11}' >> \
@@ -111,13 +104,10 @@ post-patch:
 	    -e 's| -fno-merge-constants||' \
 	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
 .endif
-	@${REINPLACE_CMD} -e 's|/usr/X11|${LOCALBASE}|g' \
-	    ${WRKSRC}/src/VBox/Additions/x11/VBoxClient/display.cpp
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure \
 	    ${WRKSRC}/kBuild/header.kmk ${WRKSRC}/kBuild/units/qt4.kmk \
 	    ${WRKSRC}/kBuild/units/qt5.kmk ${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
-	    ${WRKSRC}/src/VBox/Additions/common/crOpenGL/load.c \
 	    ${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
 	    ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
 	    ${WRKSRC}/src/VBox/Additions/x11/vboxmouse/Makefile.kmk \

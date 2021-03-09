@@ -1,0 +1,26 @@
+--- src/VBox/Additions/common/VBoxGuest/freebsd/files_vboxguest.orig	2020-05-13 19:37:01 UTC
++++ src/VBox/Additions/common/VBoxGuest/freebsd/files_vboxguest
+@@ -109,6 +109,7 @@ FILES_VBOXGUEST_NOBIN=" \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/handletable.h=>common/misc/handletable.h \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/handletablectx.cpp=>common/misc/handletablectx.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/once.cpp=>common/misc/once.c \
++    ${PATH_ROOT}/src/VBox/Runtime/common/misc/term.cpp=>common/misc/term.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/thread.cpp=>common/misc/thread.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/RTAssertMsg1Weak.cpp=>common/misc/RTAssertMsg1Weak.c \
+     ${PATH_ROOT}/src/VBox/Runtime/common/misc/RTAssertMsg2.cpp=>common/misc/RTAssertMsg2.c \
+@@ -171,6 +172,7 @@ FILES_VBOXGUEST_NOBIN=" \
+     ${PATH_ROOT}/src/VBox/Runtime/generic/errvars-generic.cpp=>generic/errvars-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/generic/timer-generic.cpp=>generic/timer-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/generic/mppresent-generic.cpp=>generic/mppresent-generic.c \
++    ${PATH_ROOT}/src/VBox/Runtime/r0drv/alloc-ef-r0drv.cpp=>r0drv/alloc-ef-r0drv.c \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/alloc-r0drv.cpp=>r0drv/alloc-r0drv.c \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/alloc-r0drv.h=>r0drv/alloc-r0drv.h \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/initterm-r0drv.cpp=>r0drv/initterm-r0drv.c \
+@@ -197,6 +199,7 @@ FILES_VBOXGUEST_NOBIN=" \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/freebsd/sleepqueue-r0drv-freebsd.h=>r0drv/freebsd/sleepqueue-r0drv-freebsd.h \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/generic/semspinmutex-r0drv-generic.c=>r0drv/generic/semspinmutex-r0drv-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/generic/mpnotification-r0drv-generic.cpp=>r0drv/generic/mpnotification-r0drv-generic.c \
++    ${PATH_ROOT}/src/VBox/Runtime/r0drv/generic/threadctxhooks-r0drv-generic.cpp=>r0drv/generic/threadctxhooks-r0drv-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/generic/RTMpIsCpuWorkPending-r0drv-generic.cpp=>r0drv/generic/RTMpIsCpuWorkPending-r0drv-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/memobj-r0drv.cpp=>r0drv/memobj-r0drv.c \
+     ${PATH_ROOT}/src/VBox/Runtime/VBox/log-vbox.cpp=>VBox/log-vbox.c \

@@ -1,0 +1,67 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE:	vboxguest
+# REQUIRE:	FILESYSTEMS
+# BEFORE:	netif
+# KEYWORD:	nojail
+
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# vboxguest_enable (bool):   Set to NO by default.
+#               Set it to YES to enable vboxguest on startup
+
+. /etc/rc.subr
+
+name="vboxguest"
+rcvar=vboxguest_enable
+start_cmd="vboxguest_start"
+stop_cmd="vboxguest_stop"
+
+vboxguest_modules="vboxguest:pci/vboxguest"
+
+vboxguest_start()
+{
+	local _k _m
+
+	for _m in ${vboxguest_modules}; do
+		_k=${_m%:*}
+		_m=${_m#*:}
+		if ! kldstat -q -m ${_m}; then
+			if ! kldload ${_k} > /dev/null 2>&1; then
+				warn "Can't load ${_k} module."
+				return 1
+			fi
+		fi
+	done
+}
+
+vboxguest_stop()
+{
+	local _k _m _r
+
+	_r=
+	for _m in ${vboxguest_modules}; do
+		_r="${_m} ${_r}"
+	done
+	for _m in ${_r}; do
+		_k=${_m%:*}
+		_m=${_m#*:}
+		if kldstat -q -m ${_m}; then
+			if ! kldunload ${_k} > /dev/null 2>&1; then
+				warn "Can't unload ${_k} module."
+				return 1
+			fi
+		fi
+	done
+}
+
+load_rc_config $name
+
+: ${vboxguest_enable="NO"}
+
+run_rc_command "$1"

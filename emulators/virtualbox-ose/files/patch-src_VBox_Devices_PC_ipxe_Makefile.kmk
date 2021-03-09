@@ -1,0 +1,20 @@
+--- src/VBox/Devices/PC/ipxe/Makefile.kmk.orig	2021-01-07 15:39:44 UTC
++++ src/VBox/Devices/PC/ipxe/Makefile.kmk
+@@ -121,7 +121,7 @@ endif
+ 	-falign-loops=1 \
+ 	-Os \
+ 	-falign-functions=1 \
+-	-mpreferred-stack-boundary=2 \
++	-mstack-alignment=2 \
+ 	-mregparm=3 \
+ 	-mrtd \
+ 	-freg-struct-return \
+@@ -144,7 +144,7 @@ endif
+ 	-falign-jumps=1 \
+ 	-falign-loops=1 \
+ 	-falign-functions=1 \
+-	-mpreferred-stack-boundary=2 \
++	-mstack-alignment=2 \
+ 	-mregparm=3 \
+ 	-mrtd \
+ 	-freg-struct-return \

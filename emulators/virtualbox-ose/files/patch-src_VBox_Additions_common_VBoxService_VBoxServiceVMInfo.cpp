@@ -1,6 +1,6 @@
---- src/VBox/Additions/common/VBoxService/VBoxServiceVMInfo.cpp.orig	2017-03-08 17:15:20 UTC
+--- src/VBox/Additions/common/VBoxService/VBoxServiceVMInfo.cpp.orig	2021-01-07 15:34:20 UTC
 +++ src/VBox/Additions/common/VBoxService/VBoxServiceVMInfo.cpp
-@@ -71,8 +71,8 @@
+@@ -67,8 +67,8 @@
  # include <net/if.h>
  # include <pwd.h> /* getpwuid */
  # include <unistd.h>
@@ -11,7 +11,7 @@
  # endif
  # ifdef RT_OS_OS2
  #  include <net/if_dl.h>
-@@ -531,7 +531,7 @@ static void vgsvcVMInfoWriteFixedPropert
+@@ -528,7 +528,7 @@ static void vgsvcVMInfoWriteFixedProperties(void)
  }
  
  
@@ -20,9 +20,9 @@
  /*
   * Simple wrapper to work around compiler-specific va_list madness.
   */
-@@ -562,12 +562,6 @@ static int vgsvcVMInfoWriteUsers(void)
-     rc = VERR_NOT_IMPLEMENTED;
- # endif
+@@ -555,12 +555,6 @@ static int vgsvcVMInfoWriteUsers(void)
+ #ifdef RT_OS_WINDOWS
+     rc = VGSvcVMInfoWinWriteUsers(&g_VMInfoPropCache, &pszUserList, &cUsersInList);
  
 -#elif defined(RT_OS_FREEBSD)
 -    /** @todo FreeBSD: Port logged on user info retrieval.
@@ -33,7 +33,7 @@
  #elif defined(RT_OS_HAIKU)
      /** @todo Haiku: Port logged on user info retrieval. */
      rc = VERR_NOT_IMPLEMENTED;
-@@ -593,7 +587,7 @@ static int vgsvcVMInfoWriteUsers(void)
+@@ -586,7 +580,7 @@ static int vgsvcVMInfoWriteUsers(void)
      while (   (ut_user = getutxent())
             && RT_SUCCESS(rc))
      {
@@ -42,7 +42,7 @@
          VGSvcVerbose(4, "Found entry '%s' (type: %d, PID: %RU32)\n", ut_user->ut_user, ut_user->ut_type, ut_user->ut_pid);
  # else
          VGSvcVerbose(4, "Found entry '%s' (type: %d, PID: %RU32, session: %RU32)\n",
-@@ -628,7 +622,7 @@ static int vgsvcVMInfoWriteUsers(void)
+@@ -621,7 +615,7 @@ static int vgsvcVMInfoWriteUsers(void)
      }
  
  # ifdef VBOX_WITH_DBUS
@@ -51,7 +51,7 @@
      DBusError dbErr;
      DBusConnection *pConnection = NULL;
      int rc2 = RTDBusLoadLib();
-@@ -837,7 +831,7 @@ static int vgsvcVMInfoWriteUsers(void)
+@@ -830,7 +824,7 @@ static int vgsvcVMInfoWriteUsers(void)
      if (   fHaveLibDbus
          && dbus_error_is_set(&dbErr))
          dbus_error_free(&dbErr);
@@ -60,7 +60,7 @@
  # endif /* VBOX_WITH_DBUS */
  
      /** @todo Fedora/others: Handle systemd-loginctl. */
-@@ -874,7 +868,7 @@ static int vgsvcVMInfoWriteUsers(void)
+@@ -867,7 +861,7 @@ static int vgsvcVMInfoWriteUsers(void)
      RTMemFree(papszUsers);
  
      endutxent(); /* Close utmpx file. */

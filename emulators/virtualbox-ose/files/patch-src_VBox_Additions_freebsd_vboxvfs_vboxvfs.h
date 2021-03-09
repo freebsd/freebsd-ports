@@ -1,4 +1,4 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h.orig	2018-06-29 13:08:17 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h.orig	2021-01-07 15:34:22 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs.h
 @@ -1,8 +1,3 @@
 -/* $Id: vboxvfs.h $ */
@@ -7,9 +7,9 @@
 - */
 -
  /*
-  * Copyright (C) 2010-2017 Oracle Corporation
+  * Copyright (C) 2010-2020 Oracle Corporation
   *
-@@ -21,72 +16,413 @@
+@@ -24,72 +19,371 @@
  #define VBOXVFS_VFSNAME "vboxvfs"
  #define VBOXVFS_VERSION 1
  
@@ -78,28 +78,6 @@
 +#include "../../../../../include/iprt/err.h"
 +#include "../../../../../include/iprt/fs.h"
 +#include "../../../../../include/iprt/log.h"
-+#include "../../../../../include/iprt/mangling.h"
-+#include "../../../../../include/iprt/mem.h"
-+#include "../../../../../include/iprt/param.h"
-+#include "../../../../../include/iprt/path.h"
-+#include "../../../../../include/iprt/semaphore.h"
-+#include "../../../../../include/iprt/stdarg.h"
-+#include "../../../../../include/iprt/stdint.h"
-+#include "../../../../../include/iprt/string.h"
-+#include "../../../../../include/iprt/time.h"
-+#include "../../../../../include/iprt/types.h"
-+#include "../../../../../include/iprt/uni.h"
-+#include "../../../../../include/iprt/nocrt/limits.h"
-+#include "../../../../../include/iprt/alloc.h"
-+#include "../../../../../include/iprt/asm.h"
-+#include "../../../../../include/iprt/asm-amd64-x86.h"
-+#include "../../../../../include/iprt/asm-math.h"
-+#include "../../../../../include/iprt/assert.h"
-+#include "../../../../../include/iprt/cdefs.h"
-+#include "../../../../../include/iprt/err.h"
-+#include "../../../../../include/iprt/fs.h"
-+#include "../../../../../include/iprt/log.h"
-+#include "../../../../../include/iprt/mangling.h"
 +#include "../../../../../include/iprt/mem.h"
 +#include "../../../../../include/iprt/param.h"
 +#include "../../../../../include/iprt/path.h"
@@ -114,26 +92,6 @@
 -#include <VBox/VBoxGuestLibSharedFolders.h>
 +#else
 +
-+#include "iprt/nocrt/limits.h"
-+#include "iprt/alloc.h"
-+#include "iprt/asm.h"
-+#include "iprt/asm-amd64-x86.h"
-+#include "iprt/asm-math.h"
-+#include "iprt/assert.h"
-+#include "iprt/cdefs.h"
-+#include "iprt/err.h"
-+#include "iprt/fs.h"
-+#include "iprt/log.h"
-+#include "iprt/mem.h"
-+#include "iprt/param.h"
-+#include "iprt/path.h"
-+#include "iprt/semaphore.h"
-+#include "iprt/stdarg.h"
-+#include "iprt/stdint.h"
-+#include "iprt/string.h"
-+#include "iprt/time.h"
-+#include "iprt/types.h"
-+#include "iprt/uni.h"
 +#include "iprt/nocrt/limits.h"
 +#include "iprt/alloc.h"
 +#include "iprt/asm.h"
@@ -459,5 +417,5 @@
 +
  #endif  /* KERNEL */
  
- #endif /* !___VBOXVFS_H___ */
+ #endif /* !GA_INCLUDED_SRC_freebsd_vboxvfs_vboxvfs_h */
 -

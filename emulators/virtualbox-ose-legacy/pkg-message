@@ -1,0 +1,69 @@
+[
+{ type: install
+  message: <<EOM
+VirtualBox was installed.
+
+You need to load the vboxdrv kernel module via /boot/loader.conf:
+
+vboxdrv_load="YES"
+
+You also have to add all users to your vboxusers group in order to use vbox.
+
+% pw groupmod vboxusers -m jerry
+
+Reboot the machine to load the needed kernel modules.
+
+
+Bridging Support:
+=================
+
+For bridged networking please add the following line to your /etc/rc.conf:
+
+vboxnet_enable="YES"
+
+
+USB Support:
+============
+
+For USB support your user needs to be in the operator group and needs read
+and write permissions to the USB device.
+
+% pw groupmod operator -m jerry
+
+Add the following to /etc/devfs.rules (create if it doesn't exist):
+
+[system=10]
+add path 'usb/*' mode 0660 group operator
+
+To load these new rule add the following to /etc/rc.conf:
+
+devfs_system_ruleset="system"
+
+Then restart devfs to load the new rules:
+
+% /etc/rc.d/devfs restart
+
+
+Troubleshooting:
+================
+
+Running VirtualBox as non-root user may fail with a fatal error
+NS_ERROR_FACTORY_NOT_REGISTERED. In this case delete /tmp/.vbox-*-ipc file.
+
+If you experience "Network: write Failed: Cannot allocate memory" errors
+try to increase net.graph.maxdata in /boot/loader.conf
+
+If you are using AIO, then increase these limits (PR#168298):
+vfs.aio.max_buf_aio=8192
+vfs.aio.max_aio_queue_per_proc=65536
+vfs.aio.max_aio_per_proc=8192
+vfs.aio.max_aio_queue=65536
+To check if AIO is used use: kldstat -v | grep aio
+
+Check wiki page for known issues and troubleshooting:
+http://wiki.freebsd.org/VirtualBox
+
+Please report any problems to emulation@. Thanks!
+EOM
+}
+]

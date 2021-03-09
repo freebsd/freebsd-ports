@@ -1,6 +1,6 @@
---- include/iprt/x86.h.orig	2020-05-13 19:36:52 UTC
+--- include/iprt/x86.h.orig	2021-01-07 15:31:34 UTC
 +++ include/iprt/x86.h
-@@ -35,6 +35,16 @@
+@@ -38,6 +38,16 @@
  # pragma D depends_on library vbox-types.d
  #endif
  

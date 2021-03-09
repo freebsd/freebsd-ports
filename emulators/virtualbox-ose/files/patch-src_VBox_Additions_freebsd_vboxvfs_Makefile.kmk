@@ -1,10 +1,11 @@
---- src/VBox/Additions/freebsd/vboxvfs/Makefile.kmk.orig	2020-05-13 19:37:06 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/Makefile.kmk.orig	2021-01-07 15:34:22 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/Makefile.kmk
-@@ -33,32 +33,36 @@ vboxvfs_INCS          = \
+@@ -33,32 +33,37 @@ vboxvfs_INCS          = \
         $(vboxvfs_0_OUTDIR)
  vboxvfs_SOURCES       = \
  	vboxvfs_vfsops.c \
 -	vboxvfs_vnops.c
++	bcmp.c \
 +	vboxvfs_vnops.c \
 +	vboxvfs_prov.c
  vboxvfs_LIBS          = \

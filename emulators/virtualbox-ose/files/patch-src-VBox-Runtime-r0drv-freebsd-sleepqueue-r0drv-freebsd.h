@@ -7,9 +7,9 @@ The patch improves the situation significantly. Also, it (approximately) follows
 what tvtohz does.
 
 Submitted by:	Andriy Gapon <avg@FreeBSD.org>
---- src/VBox/Runtime/r0drv/freebsd/sleepqueue-r0drv-freebsd.h.orig	2020-05-13 19:44:32 UTC
+--- src/VBox/Runtime/r0drv/freebsd/sleepqueue-r0drv-freebsd.h.orig	2021-01-07 15:42:09 UTC
 +++ src/VBox/Runtime/r0drv/freebsd/sleepqueue-r0drv-freebsd.h
-@@ -82,6 +82,8 @@ DECLINLINE(uint32_t) rtR0SemBsdWaitUpdateTimeout(PRTR0
+@@ -84,6 +84,8 @@ DECLINLINE(uint32_t) rtR0SemBsdWaitUpdateTimeout(PRTR0
      uint64_t cTicks = ASMMultU64ByU32DivByU32(uTimeout, hz, UINT32_C(1000000000));
      if (cTicks >= INT_MAX)
          return RTSEMWAIT_FLAGS_INDEFINITE;

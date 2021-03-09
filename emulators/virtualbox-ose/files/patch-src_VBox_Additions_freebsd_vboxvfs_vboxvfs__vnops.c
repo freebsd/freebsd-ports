@@ -1,18 +1,6 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2020-07-09 16:50:11 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2021-01-07 15:34:22 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c
-@@ -1,10 +1,6 @@
--/* $Id: vboxvfs_vnops.c $ */
--/** @file
-- * Description.
-- */
--
- /*
-  * Copyright (C) 2008-2017 Oracle Corporation
-+ * Copyright (C) 2017 Mahdi Mokhtari
-  *
-  * This file is part of VirtualBox Open Source Edition (OSE), as
-  * available from http://www.virtualbox.org. This file is free software;
-@@ -14,228 +10,1347 @@
+@@ -14,228 +14,1347 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
   * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
   */

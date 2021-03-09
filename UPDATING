@@ -5,6 +5,34 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210309:
+  AFFECTS: users of emulators/virtualbox-ose
+  AUTHOR: madpilot@FreeBSD.org
+
+  emulators/virtualbox-ose has been updated to 6.1.18. This new
+  version only works on amd64 hardware.
+
+  Previous version 5.x of the virtualbox ports have been preserved
+  as emulators/virtualbox-ose-legacy and similarly named ports for
+  the other parts.
+
+  If you can't run the latest version or wish to stay with the old
+  version, please install the legacy ports.
+
+  Also the additions at present build successfully only for amd64.
+  If you need i386 additions you can fallback to the old legacy
+  ones.
+
+  NOTE: There is no support for moving saved running machine states 
+  across major updates of virtualbox. It is recommended to properly 
+  shutdown all virtual machines before upgrading. Otherwise the saved 
+  state can simply be discarded after the upgrade, if it's not 
+  important to preserve it.
+
+  It should also be possible to downgrade to the legacy ports and
+  shutdown the machine properly from the saved state and then upgrade
+  back again.
+
 20210302:
   AFFECTS: users of editors/emacs-devel
   AUTHOR: jrm@FreeBSD.org

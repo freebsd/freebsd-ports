@@ -1,0 +1,10 @@
+--- src/VBox/Debugger/Makefile.kmk.orig	2020-05-13 19:39:41 UTC
++++ src/VBox/Debugger/Makefile.kmk
+@@ -113,6 +113,7 @@ VBoxDbg_SOURCES = \
+ 	VBoxDbgBase.cpp \
+ 	VBoxDbgConsole.cpp \
+ 	VBoxDbgStatsQt.cpp
++VBoxDbg_CXXFLAGS.freebsd += -std=c++11
+ VBoxDbg_LIBS = \
+ 	$(VBOX_LIB_VMM_LAZY)
+ VBoxDbg_LDFLAGS.darwin = \

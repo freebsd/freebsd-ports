@@ -1,6 +1,6 @@
---- src/VBox/Devices/Audio/DrvHostALSAAudio.cpp.orig	2020-05-13 19:39:41 UTC
+--- src/VBox/Devices/Audio/DrvHostALSAAudio.cpp.orig	2021-01-07 15:37:12 UTC
 +++ src/VBox/Devices/Audio/DrvHostALSAAudio.cpp
-@@ -819,6 +819,7 @@ static DECLCALLBACK(int) drvHostALSAAudioStreamPlay(PP
+@@ -820,6 +820,7 @@ static DECLCALLBACK(int) drvHostAlsaAudioHA_StreamPlay
                          continue;
                      }
  
@@ -8,7 +8,7 @@
                      case -ESTRPIPE:
                      {
                          /* Stream was suspended and waiting for a recovery. */
-@@ -832,6 +833,7 @@ static DECLCALLBACK(int) drvHostALSAAudioStreamPlay(PP
+@@ -833,6 +834,7 @@ static DECLCALLBACK(int) drvHostAlsaAudioHA_StreamPlay
                          LogFlowFunc(("Resumed suspended output stream\n"));
                          continue;
                      }

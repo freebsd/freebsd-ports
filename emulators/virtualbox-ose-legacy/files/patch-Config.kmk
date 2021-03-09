@@ -1,0 +1,239 @@
+--- Config.kmk.orig	2020-07-09 16:49:46 UTC
++++ Config.kmk
+@@ -445,11 +445,11 @@ ifn1of ($(KBUILD_TARGET), win darwin)
+  # Enable OSS audio support.
+  VBOX_WITH_AUDIO_OSS = 1
+ endif
+-if1of ($(KBUILD_TARGET), linux)
++if1of ($(KBUILD_TARGET), freebsd linux)
+  # Enable ALSA audio support.
+  VBOX_WITH_AUDIO_ALSA = 1
+ endif
+-if1of ($(KBUILD_TARGET), linux)
++if1of ($(KBUILD_TARGET), freebsd linux)
+  # Enable PulseAudio audio support.
+  VBOX_WITH_AUDIO_PULSE = 1
+ endif
+@@ -464,11 +464,11 @@ VBOX_WITH_AUDIO_MMNOTIFICATION_CLIENT = 1
+ # Enable PCI passthrough support.
+ VBOX_WITH_PCI_PASSTHROUGH = 1
+ # Enable statically linked dbus support.
+-if1of ($(KBUILD_TARGET), linux solaris)
++if1of ($(KBUILD_TARGET), freebsd linux solaris)
+  VBOX_WITH_DBUS = 1
+ endif
+ # Enable building PAM modules.
+-if1of ($(KBUILD_TARGET), linux solaris)
++if1of ($(KBUILD_TARGET), freebsd linux solaris)
+  VBOX_WITH_PAM = 1
+ endif
+ # Enable internal networking.
+@@ -664,7 +664,7 @@ VBOX_WITH_TESTCASES = 1
+ VBOX_WITH_VDITOOL =
+ # Enable this to build vbox-img even if VBOX_WITH_TESTCASES is disabled
+ VBOX_WITH_VBOX_IMG =
+-if1of ($(KBUILD_TARGET).$(KBUILD_TARGET_ARCH), darwin.x86 darwin.amd64 linux.x86 linux.amd64 solaris.amd64 win.x86 win.amd64)
++if1of ($(KBUILD_TARGET).$(KBUILD_TARGET_ARCH), darwin.x86 darwin.amd64 freebsd.x86 freebsd.amd64 linux.x86 linux.amd64 solaris.amd64 win.x86 win.amd64)
+  # Enables the video capturing support.
+  VBOX_WITH_VIDEOREC = 1
+  # Enable VPX (VP8 / VP9 codec), used for video capturing.
+@@ -992,10 +992,6 @@ ifeq ($(KBUILD_TARGET),darwin)
+  VBOX_WITH_VBOXSDL=
+ endif
+ 
+-ifeq ($(KBUILD_TARGET),freebsd)
+- VBOX_WITH_DOCS=
+-endif
+-
+ ifeq ($(KBUILD_TARGET),haiku)
+  # Don't bother with SDL ttf for now.
+  VBOX_WITH_SECURELABEL=
+@@ -1155,7 +1151,7 @@ ifdef VBOX_OSE
+  VBOX_WITH_KCHMVIEWER=
+  VBOX_WITH_PLUGIN_CRYPT=
+  VBOX_WITH_DRAG_AND_DROP_PROMISES=
+- ifn1of ($(KBUILD_TARGET), linux)
++ ifn1of ($(KBUILD_TARGET), freebsd linux)
+   VBOX_WITH_DOCS=
+   VBOX_WITH_DOCS_PACKING=
+  endif
+@@ -1176,14 +1172,14 @@ ifdef VBOX_OSE
+  ifn1of ($(KBUILD_TARGET), darwin linux solaris win)
+   VBOX_WITH_INSTALLER=
+  endif
+- if1of ($(KBUILD_TARGET), win)
++ # if1of ($(KBUILD_TARGET), win)
+   # Undefine codec libraries which are not needed.
+   VBOX_WITH_LIBVPX=
+   VBOX_WITH_LIBOPUS=
+   # Disable video recording (with audio support).
+   VBOX_WITH_VIDEOREC=
+   VBOX_WITH_AUDIO_VIDEOREC=
+- endif
++ # endif
+  # branding
+  VBOX_BRAND_LICENSE_HTML             := $(PATH_ROOT)/doc/License-gpl-2.0.html
+  VBOX_BRAND_LICENSE_RTF              := $(PATH_ROOT)/doc/License-gpl-2.0.rtf
+@@ -1810,6 +1806,7 @@ ifndef VBOX_BLD_PYTHON
+  else
+   VBOX_BLD_PYTHON := $(firstword $(which python2.7$(HOSTSUFF_EXE)) $(which python2.6$(HOSTSUFF_EXE)) \
+                                  $(which python$(HOSTSUFF_EXE)) $(which python3$(HOSTSUFF_EXE)) \
++                                 $(which %%PYTHON_VERSION%%) \
+ 				   python-not-found)
+  endif
+ endif
+@@ -2550,6 +2547,10 @@ ifeq ($(KBUILD_HOST),win) ## @todo can drop this now, 
+  # This isn't important (yet) on windows, so cook the result until
+  # cygwin is feeling better.
+  VBOX_GCC_VERSION := $(int-add $(int-mul 10000, 3), $(int-mul 100, 3), 3)
++else ifeq($(KBUILD_HOST,freebsd))
++ # At a minimum, we'll be building with GCC 4.2 on FreeBSD. LLVM will always
++ # pose as GCC 4.2 anyways, so this seems safe.
++ VBOX_GCC_VERSION := $(int-add $(int-mul 10000, 4), $(int-mul 100, 2), 0)
+ else
+  # This is kind of bad, the returned string needs to be re-evaluated before use.
+  # The reason for this hack is that the windows kmk_ash cannot deal with $((1+1)).
+@@ -4218,6 +4219,7 @@ ifdef VBOX_WITH_RAW_MODE
+  TEMPLATE_VBoxRc_TOOL                = $(VBOX_GCC32_TOOL)
+  TEMPLATE_VBoxRc_CXXFLAGS            = -fno-pie -nostdinc -g $(VBOX_GCC_pipe) $(VBOX_GCC_WERR) $(VBOX_GCC_PEDANTIC_CXX) $(VBOX_GCC32_Wno-variadic-macros) -fno-exceptions $(VBOX_GCC_GC_OPT) $(VBOX_GCC_GC_FP) -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -fno-strict-aliasing $(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_fvisibility-hidden) $(VBOX_GCC_fvisibility-inlines-hidden) -fno-rtti $(VBOX_GCC_IPRT_FMT_CHECK)
+  TEMPLATE_VBoxRc_CFLAGS              = -fno-pie -nostdinc -g $(VBOX_GCC_pipe) $(VBOX_GCC_WERR) $(VBOX_GCC_PEDANTIC_C)   $(VBOX_GCC32_Wno-variadic-macros) -fno-exceptions $(VBOX_GCC_GC_OPT) $(VBOX_GCC_GC_FP) -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -fno-strict-aliasing $(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_fvisibility-hidden) $(VBOX_GCC_IPRT_FMT_CHECK)
++ TEMPLATE_VBoxRc_CXXFLAGS.freebsd    = -fno-builtin
+   ifeq ($(KBUILD_TARGET),solaris)
+    TEMPLATE_VBoxRc_LDFLAGS           = -r
+   else
+@@ -4359,6 +4361,7 @@ ifeq ($(VBOX_LDR_FMT),elf)
+ TEMPLATE_VBoxR0_TOOL                = $(VBOX_GCC_TOOL)
+ TEMPLATE_VBoxR0_CFLAGS              = -fno-pie -nostdinc -g $(VBOX_GCC_pipe) $(VBOX_GCC_WERR) $(VBOX_GCC_PEDANTIC_C)   $(VBOX_GCC_Wno-variadic-macros) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) -fno-strict-aliasing -fno-exceptions $(VBOX_GCC_fno-stack-protector) -fno-common $(VBOX_GCC_fvisibility-hidden) -std=gnu99 $(VBOX_GCC_IPRT_FMT_CHECK)
+ TEMPLATE_VBoxR0_CXXFLAGS            = -fno-pie -nostdinc -g $(VBOX_GCC_pipe) $(VBOX_GCC_WERR) $(VBOX_GCC_PEDANTIC_CXX) $(VBOX_GCC_Wno-variadic-macros) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) -fno-strict-aliasing -fno-exceptions $(VBOX_GCC_fno-stack-protector) -fno-common $(VBOX_GCC_fvisibility-inlines-hidden) $(VBOX_GCC_fvisibility-hidden) -fno-rtti $(VBOX_GCC_IPRT_FMT_CHECK)
++TEMPLATE_VBoxR0_CXXFLAGS.freebsd    = -fno-builtin
+ TEMPLATE_VBoxR0_CFLAGS.amd64        = -m64 -mno-red-zone -mcmodel=kernel -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -fno-asynchronous-unwind-tables -ffreestanding
+ TEMPLATE_VBoxR0_CXXFLAGS.amd64      = -m64 -mno-red-zone -mcmodel=kernel -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -fno-asynchronous-unwind-tables
+ ifeq ($(KBUILD_TARGET),solaris)
+@@ -4683,13 +4686,13 @@ TEMPLATE_VBOXR0DRV_CFLAGS              =  \
+ 	-O2 -ffreestanding -fno-strict-aliasing -fno-common -finline-limit=8000 \
+ 	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
+ 	-nostdinc -std=c99
+-TEMPLATE_VBOXR0DRV_CFLAGS.x86          = -m32 -mno-align-long-strings -mpreferred-stack-boundary=2 -mno-mmx -mno-3dnow -mno-sse -mno-sse2
++TEMPLATE_VBOXR0DRV_CFLAGS.x86          = -m32 -mpreferred-stack-boundary=2 -mno-mmx -mno-3dnow -mno-sse -mno-sse2
+ TEMPLATE_VBOXR0DRV_CFLAGS.amd64        = -m64 --param inline-unit-growth=100 --param large-function-growth=1000 \
+ 	-fno-omit-frame-pointer -mcmodel=kernel -mno-red-zone -mfpmath=387 -mno-sse -mno-sse2 -mno-mmx \
+ 	-mno-3dnow -msoft-float -fno-asynchronous-unwind-tables -Wundef
+ TEMPLATE_VBOXR0DRV_CXXFLAGS            = -fno-exceptions -fno-rtti \
+ 	$(VBOX_GCC_WARN) -Wpointer-arith -Winline \
+-	-O2 -fno-strict-aliasing -fno-common -finline-limit=8000 \
++	-O2 -fno-builtin -fno-strict-aliasing -fno-common -finline-limit=8000 \
+ 	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
+ 	-nostdinc
+ TEMPLATE_VBOXR0DRV_CXXFLAGS.x86        = $(TEMPLATE_VBOXR0DRV_CFLAGS.x86)
+@@ -4716,7 +4719,7 @@ define TOOL_FREEBSDKMODLD_LINK_SYSMOD_CMDS
+ 		| xargs -J% objcopy % $(out)
+ 
+ ## Strip debug info (comment out if debugging or something).
+-	objcopy --strip-debug $(out)
++#	objcopy --strip-debug $(out)
+ endef
+  else # x86
+ TOOL_FREEBSDKMODLD_LINK_SYSMOD_OUTPUT = $(outbase).kld
+@@ -4730,7 +4733,7 @@ define TOOL_FREEBSDKMODLD_LINK_SYSMOD_CMDS
+ 		| xargs -J% objcopy % $(outbase).kld
+ 
+ # Link the final .ko (a shared object).
+-	ld $(flags) -Bshareable -o $(out) $(outbase).kld
++	ld $(flags) -Bshareable -znotext -o $(out) $(outbase).kld
+ endef
+  endif # x86
+ 
+@@ -5016,10 +5019,18 @@ TEMPLATE_VBOXR3EXE_LIBPATH            += \
+ TEMPLATE_VBOXR3EXE_CFLAGS             += -fno-pic
+ TEMPLATE_VBOXR3EXE_CXXFLAGS           += -fno-pic
+ TEMPLATE_VBOXR3EXE_LDFLAGS            += -fno-pic
+- else if1of ($(KBUILD_TARGET), freebsd openbsd)
++ else ifeq ($(KBUILD_TARGET),freebsd)
+ TEMPLATE_VBOXR3EXE_TOOL                = GXX3
+ TEMPLATE_VBOXR3EXE_LIBS                = pthread
++TEMPLATE_VBOXR3EXE_LDFLAGS.freebsd.x86 = -Wl,-z,notext
+ TEMPLATE_VBOXR3EXE_INCS               += \
++	/usr/local/include
++TEMPLATE_VBOXR3EXE_LIBPATH            += \
++	/usr/local/lib
++ else ifeq ($(KBUILD_TARGET),openbsd)
++TEMPLATE_VBOXR3EXE_TOOL                = GXX3
++TEMPLATE_VBOXR3EXE_LIBS                = pthread
++TEMPLATE_VBOXR3EXE_INCS               += \
+ 	/usr/include \
+ 	/usr/X11R6/include \
+ 	/usr/local/include
+@@ -5310,7 +5321,7 @@ ifeq ($(KBUILD_TARGET),win) # No CRT!
+  TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.win.amd64 = $(TEMPLATE_VBOXR3EXE_LDFLAGS.win.amd64) /entry:suplibHardenedWindowsMain
+  TEMPLATE_VBOXR3HARDENEDEXE_LIBS.x86       = $(NOT_SUCH_VARIABLE)
+  TEMPLATE_VBOXR3HARDENEDEXE_LIBS.amd64     = $(NOT_SUCH_VARIABLE)
+-else ifn1of ($(KBUILD_TARGET), os2 solaris)
++else ifn1of ($(KBUILD_TARGET), freebsd os2 solaris)
+  # We want to keep the RPATH on Solaris to be able to find libgcc_1/libstdc++ within $(VBOX_WITH_RUNPATH)
+  TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS       = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_VBOXR3EXE_LDFLAGS))
+  TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBOXR3EXE_LDFLAGS.linux))
+@@ -5837,10 +5848,18 @@ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTI
+  else ifeq ($(KBUILD_TARGET),haiku)
+ TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
+ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME) network stdc++ supc++
+- else if1of ($(KBUILD_TARGET), freebsd openbsd)
++ else ifeq ($(KBUILD_TARGET),freebsd)
+ TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
+ TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME)
++TEMPLATE_VBOXMAINEXE_LDFLAGS.freebsd.x86 = -Wl,-z,notext
+ TEMPLATE_VBOXMAINEXE_INCS               += \
++	/usr/local/include
++TEMPLATE_VBOXMAINEXE_LIBPATH            += \
++	/usr/local/lib
++ else ifeq ($(KBUILD_TARGET),openbsd)
++TEMPLATE_VBOXMAINEXE_TOOL                = GXX3
++TEMPLATE_VBOXMAINEXE_LIBS                = $(LIB_RUNTIME)
++TEMPLATE_VBOXMAINEXE_INCS               += \
+ 	/usr/include \
+ 	/usr/X11R6/include \
+ 	/usr/local/include
+@@ -6382,13 +6401,10 @@ ifdef VBOX_WITH_QTGUI
+    TEMPLATE_VBOXQTGUIEXE_LIBPATH += \
+ 	$(VBOX_LIBPATH_X11)
+    ifeq ($(KBUILD_TARGET),freebsd)
++    TEMPLATE_VBOXQTGUIEXE_LDFLAGS.freebsd.x86 = -Wl,-z,notext
+     TEMPLATE_VBOXQTGUIEXE_INCS += \
+-	/usr/include \
+-	/usr/X11R6/include \
+ 	/usr/local/include
+     TEMPLATE_VBOXQTGUIEXE_LIBPATH += \
+-	/usr/lib \
+-	/usr/X11R6/lib \
+ 	/usr/local/lib
+    endif
+    ifeq ($(KBUILD_TARGET),solaris)
+@@ -6617,12 +6633,8 @@ TEMPLATE_VBoxBldProg_LIBPATH            += \
+ TEMPLATE_VBoxBldProg_TOOL                = GXX3
+ TEMPLATE_VBoxBldProg_LIBS                = pthread
+ TEMPLATE_VBoxBldProg_INCS               += \
+-	/usr/include \
+-	/usr/X11R6/include \
+ 	/usr/local/include
+ TEMPLATE_VBoxBldProg_LIBPATH            += \
+-	/usr/lib \
+-	/usr/X11R6/lib \
+ 	/usr/local/lib
+  else ifeq ($(KBUILD_HOST),netbsd)
+ TEMPLATE_VBoxBldProg_TOOL                = GXX3
+@@ -7008,7 +7020,7 @@
+ #
+ TEMPLATE_VBOXCROGLR3HOSTDLL                  = VBox OpenGL Host DLLs
+ TEMPLATE_VBOXCROGLR3HOSTDLL_EXTENDS         := $(if-expr "$(KBUILD_TARGET)" == "win",VBOXR3,VBOXR3NP)
+-TEMPLATE_VBOXCROGLR3HOSTDLL_EXTENDS_BY       = prepending
++TEMPLATE_VBOXCROGLR3HOSTDLL_EXTENDS_BY       = appending
+ TEMPLATE_VBOXCROGLR3HOSTDLL_DEFS             = VBOX_WITH_HGCM UNPACKS
+ TEMPLATE_VBOXCROGLR3HOSTDLL_DEFS.win         = _WIN32_WINNT=0x0500 WINDOWS=1
+ TEMPLATE_VBOXCROGLR3HOSTDLL_DEFS.linux       = Linux=1 _GNU_SOURCE
+@@ -7023,6 +7035,7 @@ TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.darwin  += \
+ 	-current_version $(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD) \
+ 	-compatibility_version $(VBOX_VERSION_MAJOR).$(VBOX_VERSION_MINOR).$(VBOX_VERSION_BUILD)
+ TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.linux    = -Wl,--no-as-needed
++TEMPLATE_VBOXCROGLR3HOSTDLL_LDFLAGS.freebsd  = -Wl,--no-as-needed
+ TEMPLATE_VBOXCROGLR3HOSTDLL_BLDDIRS          = $(VBOX_PATH_CROGL_GENFILES)/
+ ifeq ($(KBUILD_TARGET),darwin)
+  TEMPLATE_VBOXCROGLR3HOSTDLL_CFLAGS          = $(TEMPLATE_VBOXR3NP_CFLAGS) -Wno-deprecated-declarations

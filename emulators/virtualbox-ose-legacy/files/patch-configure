@@ -1,0 +1,121 @@
+--- configure.orig	2020-05-13 19:36:41 UTC
++++ configure
+@@ -138,10 +138,14 @@ CXX_FLAGS=""
+ if [ "$OS" = "freebsd" ]; then
+   INCCURL="-I/usr/local/include"
+   LIBCURL="-L/usr/local/lib -lcurl"
++  INCALSA="-I/usr/local/include"
++  LIBALSA="-L/usr/local/lib"
+   INCPULSE="-I/usr/local/include"
+   LIBPULSE="-L/usr/local/lib"
+   INCPNG="-I/usr/local/include"
+   LIBPNG="-L/usr/local/lib -lpng"
++  INCVNCSERVER="-I/usr/local/include"
++  LIBVNCSERVER="-L/usr/local/lib"
+ else
+   INCCURL=""
+   LIBCURL="-lcurl"
+@@ -441,6 +445,9 @@ check_gcc()
+       elif [ $cc_maj -eq 4 -a $cc_min -eq 0 -a "$OS" = "darwin" ]; then
+         log_success "found version $cc_ver"
+       # gcc-4.0 is allowed for Darwin only
++      elif [ $cc_maj -eq 4 -a $cc_min -eq 2 -a "$OS" = "freebsd" ]; then
++        log_success "found version $cc_ver"
++      # gcc-4.2 is allowed for FreeBSD only
+       elif [ $cc_maj -lt 4 \
+              -o \( $cc_maj -eq 4 -a $cc_min -lt 4 -a "$OS" != "darwin" \) \
+              -o \( $cc_maj -eq 4 -a $cc_min -lt 2 -a "$OS"  = "darwin" \) ]; then
+@@ -1208,7 +1215,7 @@ extern "C" int main(void)
+ #endif
+ }
+ EOF
+-  if test_compile "-lasound" asound asound; then
++  if test_compile "$INCALSA $LIBALSA -lasound" asound asound; then
+     test_execute
+   fi
+ }
+@@ -1508,8 +1515,7 @@ EOF
+         if [ $? -eq 0 ]; then
+           echo "(Qt5 from pkg-config)" >> $LOG
+           FLGQT5=`pkg-config Qt5Core --cflags`
+-          # gcc 4.8 is able to compile with C++11 (see also VBOX_GCC_std in Config.kmk)
+-          [ $cc_maj -eq 4 -a $cc_min -eq 8 ] && FLGQT5="$FLGQT5 -std=c++11"
++          FLGQT5="$FLGQT5 -std=c++11"
+           INCQT5=`strip_I "$FLGQT5"`
+           LIBDIR5=`pkg-config Qt5Core --variable=libdir`
+           LIBQT5=`pkg-config Qt5Core --libs`
+@@ -1648,7 +1654,7 @@ check_libopus()
+       fi
+       cat > $ODIR.tmp_src.cc << EOF
+ #include <cstdio>
+-#include <opus/opus.h>
++#include <opus.h>
+ extern "C" int main(void)
+ {
+   OpusEncoder *test;
+@@ -1980,8 +1986,8 @@ EOF
+         echo "compiling the following source file:" >> $LOG
+         cat $ODIR.tmp_src.cc >> $LOG
+         echo "using the following command line:" >> $LOG
+-        echo "$CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so" >> $LOG
+-        $CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so >> $LOG 2>&1
++        echo "$CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so -pthread" >> $LOG
++        $CXX -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.cc -I$p/include/$d $p/$b/lib$d.so -pthread >> $LOG 2>&1
+         if [ $? -eq 0 ]; then
+           found=1
+           break
+@@ -2453,7 +2459,7 @@ for option in "$@"; do
+     --with-openssl-dir=*)
+       OPENSSLDIR=`echo $option | cut -d'=' -f2`
+       INCCRYPTO="-I${OPENSSLDIR}/include"
+-      LIBCRYPTO="${OPENSSLDIR}/lib/libcrypto.a ${OPENSSLDIR}/lib/libssl.a"
++      LIBCRYPTO="-L${OPENSSLDIR}/lib -lssl -lcrypto"
+       ;;
+     --with-ow-dir=*)
+       WATCOM=`echo $option | cut -d'=' -f2`
+@@ -2767,7 +2773,7 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
+   check_ssl
+   check_curl
+   [ $WITH_LIBVPX -eq 1 ] && check_vpx
+-  check_libopus
++  [ $OSE -eq 0 -a "$OS" != "win" ] && check_libopus
+  [ "$OS" != "darwin"  ] && check_z
+   [ "$OS" != "darwin"  ] && check_png
+   [ $OSE -eq 0 -a "$OS" = "linux" ] && check_pam
+@@ -2788,13 +2794,20 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
+   [ $WITH_PYTHON -eq 1 ] && check_python
+   [ $WITH_JAVA   -eq 1 ] && check_java
+ 
+-  # PulseAudio
+   if [ "$OS" = "linux" -o "$OS" = "freebsd" -o "$OS" = "netbsd" ]; then
++    if [ $WITH_ALSA -eq 1 ]; then
++      check_alsa
++    else
++      cnf_append "VBOX_WITH_AUDIO_ALSA" ""
++    fi
+     if [ $WITH_PULSE -eq 1 ]; then
+       check_pulse
+     elif [ $WITH_PULSE -eq 0 ]; then
+       cnf_append "VBOX_WITH_AUDIO_PULSE" ""
+     fi
++    if [ $WITH_DBUS -eq 0 ]; then
++      cnf_append "VBOX_WITH_DBUS" ""
++    fi
+  fi
+ fi
+ 
+@@ -2810,14 +2823,6 @@ if [ "$OS" = "linux" ]; then
+     cnf_append "VBOX_WITHOUT_LINUX_TEST_BUILDS" "1"
+   fi
+   if [ $ONLY_ADDITIONS -eq 0 ]; then
+-    if [ $WITH_ALSA -eq 1 ]; then
+-      check_alsa
+-    else
+-      cnf_append "VBOX_WITH_AUDIO_ALSA" ""
+-    fi
+-    if [ $WITH_DBUS -eq 0 ]; then
+-      cnf_append "VBOX_WITH_DBUS" ""
+-    fi
+     if [ $WITH_DEVMAPPER -eq 1 ]; then
+       check_libdevmapper
+     else

@@ -1,0 +1,18 @@
+--- src/VBox/Additions/x11/Installer/98vboxadd-xclient.orig	2020-05-13 19:37:09 UTC
++++ src/VBox/Additions/x11/Installer/98vboxadd-xclient
+@@ -30,10 +30,10 @@ elif test -z "${SSH_CONNECTION}"; then
+    # This script can also be triggered by a connection over SSH, which is not
+    # what we had in mind, so we do not start VBoxClient in that case.  We do
+    # not use "exit" here as this script is "source"d, not executed.
+-  /usr/bin/VBoxClient --clipboard
+-  /usr/bin/VBoxClient --checkhostversion
+-  /usr/bin/VBoxClient --display
+-  /usr/bin/VBoxClient --seamless
+-  /usr/bin/VBoxClient --draganddrop
++  /usr/local/bin/VBoxClient --clipboard
++  /usr/local/bin/VBoxClient --checkhostversion
++  /usr/local/bin/VBoxClient --display
++  /usr/local/bin/VBoxClient --seamless
++  /usr/local/bin/VBoxClient --draganddrop
+   /usr/bin/VBoxClient --vmsvga-x11  # In case VMSVGA emulation is enabled
+ fi

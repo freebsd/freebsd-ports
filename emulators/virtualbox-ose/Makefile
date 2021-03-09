@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	5.2.44
-PORTREVISION=	4
+PORTVERSION=	6.1.18
 CATEGORIES=	emulators
-MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
+MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
 EXTRACT_ONLY=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX}
 
@@ -15,7 +14,6 @@ COMMENT=	General-purpose full virtualizer for x86 hardware
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:devel/kBuild
 BUILD_DEPENDS=	yasm:devel/yasm \
 		xsltproc:textproc/libxslt \
 		kmk:devel/kBuild \
@@ -29,7 +27,7 @@ CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64
 USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
 USE_GNOME=	libidl libxml2
 
@@ -41,8 +39,6 @@ CONFLICTS_INSTALL=	virtualbox-ose-additions-* \
 			virtualbox-ose-devel-[0-9]* \
 			virtualbox-ose-legacy-[0-9]* \
 			virtualbox-ose-lite-[0-9]*
-
-LDFLAGS=	-lpthread
 
 VBOXUSER?=	vboxusers
 VBOXWSUSER?=	vboxusers
@@ -57,7 +53,7 @@ VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxBugReport VBoxHeadless \
 VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 		VBoxSVC VBoxXPCOMIPCD
 
-OPTIONS_DEFINE=	ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO \
+OPTIONS_DEFINE=	ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS OPUS PULSEAUDIO \
 		PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
 OPTIONS_DEFAULT=	DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
 OPTIONS_SUB=	yes
@@ -66,6 +62,7 @@ DEBUG_DESC=	Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
 MANUAL_DESC=	Build with user manual
 NLS_DESC=	Native language support (requires QT5)
+OPUS_DESC=	Use libvpx for audio recording (requires VPX)
 QT5_DESC=	Build with QT5 frontend (requires X11)
 R0LOGGING_DESC=	Enable R0 logging (requires DEBUG)
 UDPTUNNEL_DESC=	Build with UDP tunnel support
@@ -82,6 +79,9 @@ DEBUG_CONFIGURE_ON=	--build-debug
 MANUAL_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
 MANUAL_CONFIGURE_OFF=	--disable-docs
 NLS_IMPLIES=		QT5
+OPUS_CONFIGURE_OFF=	--disable-libopus
+OPUS_LIB_DEPENDS=	libopus.so:audio/opus
+OPUS_IMPLIES=		VPX
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PYTHON_CONFIGURE_OFF=	--disable-python
@@ -124,6 +124,7 @@ _ELF32!=	kldstat -q -m elf32 && echo yes || echo no
 .if ${PORT_OPTIONS:MDEBUG}
 KMK_BUILDTYPE=	debug
 KMK_FLAGS+=	BUILD_TYPE=debug
+WITH_DEBUG=	yes
 .else
 KMK_BUILDTYPE=	release
 .endif
@@ -158,7 +159,7 @@ USE_QT=		buildtools_build core dbus gui linguisttools_build opengl
 USE_QT+=	printsupport widgets x11extras
 USE_XORG=	xcb
 INSTALLS_ICONS=	yes
-VBOX_PROGS+=	VirtualBox
+VBOX_PROGS+=	VirtualBox VirtualBoxVM
 VBOX_UTILS+=	VBoxTestOGL
 VBOX_WITH_QT=	1
 .else
@@ -174,7 +175,7 @@ VBOX_UTILS+=	vboxwebsrv webtest
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-USES+=		sdl
+USES+=		sdl xorg
 USE_SDL=	sdl
 USE_XORG+=	xorgproto x11 xcursor xext xinerama xmu xt
 VBOX_PROGS+=	VBoxSDL
@@ -201,6 +202,19 @@ KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
 KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
+# llvm10 in FreeBSD before r364284 miscompiles virtualbox 6.1 causing errors.
+# force llvm11 from ports
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300109
+BUILD_DEPENDS+=	clang11:devel/llvm${VBOX_LLVM_VER}
+CC=		${LOCALBASE}/bin/clang${VBOX_LLVM_VER}
+CXX=		${LOCALBASE}/bin/clang++${VBOX_LLVM_VER}
+VBOX_LLVM_VER?=	11
+.endif
+PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:devel/kBuild
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Devices-PC-ipxe-Makefile.kmk
+.endif
 
 .if ${PYTHON_MAJOR_VER} >= 3
 PLIST_SUB+=	PYTHON_PYCDIR=/__pycache__/ \
@@ -274,19 +288,20 @@ post-patch:
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO_CMD} 'VBOX_GCC_PEDANTIC_CXX = -Wshadow $$(VBOX_GCC_WARN) -Wno-long-long' >> \
 	    ${WRKSRC}/LocalConfig.kmk
-	@${REINPLACE_CMD} -E -e '/soap_socket_errno\(/s/(soap_socket_errno)(\([^)]+\))/\1/' \
-		${WRKSRC}/src/VBox/Main/webservice/vboxweb.cpp
 .endif
+.if empty(PORT_OPTIONS:MX11)
+	@${ECHO} 'VBOX_WITH_VMSVGA3D =' >> ${WRKSRC}/LocalConfig.kmk
+.endif
+.if ${CHOSEN_COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
-	    -e 's| -mpreferred-stack-boundary=2||' \
-	    -e 's|%%PYTHON_VERSION%%|${PYTHON_VERSION}|' \
-		${WRKSRC}/Config.kmk
+	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
 	@${REINPLACE_CMD} -e 's| -fpermissive||' ${WRKSRC}/Config.kmk \
 	    ${WRKSRC}/src/VBox/Main/webservice/Makefile.kmk
 	@${ECHO_CMD} 'TOOL_VBoxGccFreeBSD_LD = ${CXX}' >> ${WRKSRC}/LocalConfig.kmk
 	@${SED} -e 's|GXX3|VBoxGccFreeBSD|g' \
 	    ${LOCALBASE}/share/kBuild/tools/GXX3.kmk > \
 	    ${WRKSRC}/tools/kBuildTools/VBoxGccFreeBSD.kmk
+.endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure \
 	    ${WRKSRC}/kBuild/header.kmk ${WRKSRC}/kBuild/units/qt4.kmk \
@@ -329,7 +344,7 @@ do-install:
 
 	${MKDIR} ${STAGEDIR}${VBOX_DIR}
 	cd ${KMK_BUILDDIR}/bin && ${COPYTREE_SHARE} \
-	    "*.fd *.r0 *.rc *.so components" ${STAGEDIR}${VBOX_DIR}
+	    "*.fd *.r0 *.so components" ${STAGEDIR}${VBOX_DIR}
 .if ${PORT_OPTIONS:MPYTHON} || ${PORT_OPTIONS:MWEBSERVICE}
 	${RLN} ${STAGEDIR}${DATADIR}/sdk ${STAGEDIR}${VBOX_DIR}
 .endif

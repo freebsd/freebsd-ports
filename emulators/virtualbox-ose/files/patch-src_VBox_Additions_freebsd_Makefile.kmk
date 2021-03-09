@@ -1,4 +1,4 @@
---- src/VBox/Additions/freebsd/Makefile.kmk.orig	2019-07-12 08:42:35 UTC
+--- src/VBox/Additions/freebsd/Makefile.kmk.orig	2021-01-07 15:34:22 UTC
 +++ src/VBox/Additions/freebsd/Makefile.kmk
 @@ -23,8 +23,9 @@ $(error "The FreeBSD guest additions installer can onl
  endif
@@ -12,11 +12,12 @@
  
  #
  # Globals
-@@ -67,11 +68,13 @@ VBOX_FBSD_ADD_STRIP_BIN = \
+@@ -66,11 +67,14 @@ VBOX_FBSD_ADD_STRIP_BIN = \
+ 	vboxvideo_drv_14.so \
  	vboxvideo_drv_15.so \
  	vboxvideo_drv_16.so \
- 	vboxvideo_drv_17.so \
--	VBoxOGL.so
+-	vboxvideo_drv_17.so
++	vboxvideo_drv_17.so \
 +	$(if $(VBOX_WITH_PAM),pam_vbox.so,) \
 +	VBoxOGL.so \
 +	mount_vboxvfs

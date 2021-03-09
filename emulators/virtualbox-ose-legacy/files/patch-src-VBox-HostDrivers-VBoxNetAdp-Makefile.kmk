@@ -1,0 +1,25 @@
+Fix kmod panic when VIMAGE is disabled in the kernel and port
+
+Submitted by:	Gleb Kurtsou <gleb@freebsd.org>
+--- src/VBox/HostDrivers/VBoxNetAdp/Makefile.kmk.orig	2020-05-13 19:43:54 UTC
++++ src/VBox/HostDrivers/VBoxNetAdp/Makefile.kmk
+@@ -203,12 +203,15 @@ $$(VBoxNetAdp-src_0_OUTDIR)/Makefile: \
+ 		$$(if $$(eq $$(VBoxNetAdp/freebsd/Makefile_VBOX_HARDENED),$$(VBOX_WITH_HARDENING)),,FORCE) \
+ 		| $$(dir $$@)
+ 	$(QUIET)$(RM) -f -- $@
+- ifndef VBOX_WITH_HARDENING
+-	$(QUIET)$(SED) -e "s;-DVBOX_WITH_HARDENING;;g" --output $@ $<
+- else
+ 	$(QUIET)$(CP) -f $< $@
++ ifndef VBOX_WITH_HARDENING
++	$(QUIET)$(SED) -e "s;-DVBOX_WITH_HARDENING;;g" --output $@.tmp $@
++	${QUIET}$(MV) -f $@.tmp $@
+  endif
+-
++ ifndef VBOX_WITH_NETFLT_VIMAGE
++	$(QUIET)$(SED) -e "s;-DVIMAGE;;g" --output $@.tmp $@
++	${QUIET}$(MV) -f $@.tmp $@
++ endif
+ endif # freebsd
+ 
+ include $(FILE_KBUILD_SUB_FOOTER)

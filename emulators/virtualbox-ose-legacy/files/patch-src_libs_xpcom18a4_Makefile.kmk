@@ -1,0 +1,11 @@
+--- src/libs/xpcom18a4/Makefile.kmk.orig	2019-01-25 18:32:58 UTC
++++ src/libs/xpcom18a4/Makefile.kmk
+@@ -980,6 +980,8 @@ VBoxXPCOM_LIBS = \
+ 	$(VBox-xpcom-proxy_1_TARGET) \
+ 	$(VBox-xpcom-nspr_1_TARGET) \
+ 	$(VBoxXPCOMGlue_s_1_TARGET)
++VBoxXPCOM_LIBS.freebsd = \
++	pthread
+ VBoxXPCOM_LIBS.linux = \
+ 	pthread dl
+ 

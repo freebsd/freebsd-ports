@@ -1,6 +1,6 @@
---- include/VBox/com/array.h.orig	2019-04-12 15:47:42 UTC
+--- include/VBox/com/array.h.orig	2021-01-07 15:31:25 UTC
 +++ include/VBox/com/array.h
-@@ -168,7 +168,7 @@
+@@ -171,7 +171,7 @@
  
  #include "VBox/com/defs.h"
  
@@ -9,28 +9,28 @@
  /** @def VBOX_WITH_TYPE_TRAITS
   * Type traits are a C++ 11 feature, so not available everywhere (yet).
   * Only GCC 4.6 or newer and MSVC++ 16.0 (Visual Studio 2010) or newer.
-@@ -940,12 +940,12 @@ class SafeArray : public Traits (public)
-      */
-     T &operator[] (size_t aIdx)
+@@ -960,12 +960,12 @@ class SafeArray : public Traits (public)
      {
--        AssertReturn(m.arr != NULL,  *((T *)NULL));
--        AssertReturn(aIdx < size(), *((T *)NULL));
+         /** @todo r=klaus should do this as a AssertCompile, but cannot find a way which works. */
+         Assert(sizeof(T) <= sizeof(Zeroes));
+-        AssertReturn(m.arr != NULL, *(T *)&Zeroes[0]);
+-        AssertReturn(aIdx < size(), *(T *)&Zeroes[0]);
 +        AssertReturn(m.arr != NULL,  *((T *)1));
 +        AssertReturn(aIdx < size(), *((T *)1));
  #ifdef VBOX_WITH_XPCOM
          return m.arr[aIdx];
  #else
--        AssertReturn(m.raw != NULL,  *((T *)NULL));
+-        AssertReturn(m.raw != NULL, *(T *)&Zeroes[0]);
 +        AssertReturn(m.raw != NULL,  *((T *)1));
          return m.raw[aIdx];
  #endif
      }
-@@ -960,7 +960,7 @@ class SafeArray : public Traits (public)
+@@ -980,7 +980,7 @@ class SafeArray : public Traits (public)
  #ifdef VBOX_WITH_XPCOM
          return m.arr[aIdx];
  #else
--        AssertReturn(m.raw != NULL,  *((T *)NULL));
-+        AssertReturn(m.raw != NULL,  *((T *)1));
+-        AssertReturn(m.raw != NULL, *(const T *)&Zeroes[0]);
++         AssertReturn(m.raw != NULL,  *((T *)1));
          return m.raw[aIdx];
  #endif
      }
