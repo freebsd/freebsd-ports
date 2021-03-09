@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	croc
-PORTVERSION=	8.6.8
+PORTVERSION=	8.6.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -21,8 +21,8 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:crypto:5ea612d1eb83:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:9060382bd457:golang_net/vendor/golang.org/x/net \
-		golang:sys:7937bea0104d:golang_sys/vendor/golang.org/x/sys \
+		golang:net:e18ecbb05110:golang_net/vendor/golang.org/x/net \
+		golang:sys:8fe3ee5dd75b:golang_sys/vendor/golang.org/x/sys \
 		golang:term:6a3ed077a48d:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		kalafut:imohash:v1.0.0:kalafut_imohash/vendor/github.com/kalafut/imohash \
