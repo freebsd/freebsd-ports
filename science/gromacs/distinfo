@@ -1,3 +1,3 @@
-TIMESTAMP = 1613676352
-SHA256 (gromacs-2021.tar.gz) = efa78ab8409b0f5bf0fbca174fb8fbcf012815326b5c71a9d7c385cde9a8f87b
-SIZE (gromacs-2021.tar.gz) = 35061679
+TIMESTAMP = 1615261255
+SHA256 (gromacs-2021.1.tar.gz) = bc1d0a75c134e1fb003202262fe10d3d32c59bbb40d714bc3e5015c71effe1e5
+SIZE (gromacs-2021.1.tar.gz) = 37971732

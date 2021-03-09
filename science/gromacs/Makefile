@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gromacs
-DISTVERSION=	2021
+DISTVERSION=	2021.1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
