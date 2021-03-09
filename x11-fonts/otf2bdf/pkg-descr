@@ -1,0 +1,5 @@
+otf2bdf is a command line utility that uses the FreeType 2 font
+rendering library to generate BDF bitmap fonts from OpenType outline
+fonts at different sizes and resolutions.
+
+WWW: http://sofia.nmsu.edu/~mleisher/Software/otf2bdf/
