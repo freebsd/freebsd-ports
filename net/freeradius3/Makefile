@@ -21,6 +21,13 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
 		libtalloc.so:devel/talloc
 
+FLAVORS=	default ldap mysql pgsql sqlite3
+FLAVOR?=	${FLAVORS:[1]}
+ldap_PKGNAMESUFFIX=	-ldap
+mysql_PKGNAMESUFFIX=	-mysql
+pgsql_PKGNAMESUFFIX=	-pgsql
+sqlite3_PKGNAMESUFFIX=	-sqlite3
+
 LOGDIR?=	/var/log
 KRB5_CONFIG?=	/usr/bin/krb5-config --libs
 
@@ -52,6 +59,19 @@ OPTIONS_DEFINE=	USER LDAP MYSQL PGSQL UNIXODBC FIREBIRD REDIS \
 OPTIONS_DEFAULT=USER PERL HEIMDAL UDPFROMTO
 OPTIONS_SINGLE=	KRB
 OPTIONS_SINGLE_KRB=	NOKRB HEIMDAL HEIMDAL_PORT MITKRB_PORT
+
+.if ${FLAVOR} == ldap
+OPTIONS_DEFAULT+=	LDAP
+.endif
+.if ${FLAVOR} == mysql
+OPTIONS_DEFAULT+=	MYSQL
+.endif
+.if ${FLAVOR} == pgsql
+OPTIONS_DEFAULT+=	PGSQL
+.endif
+.if ${FLAVOR} == sqlite3
+OPTIONS_DEFAULT+=	SQLITE3
+.endif
 
 USER_DESC=		Run as user freeradius, group freeradius
 KRB_DESC=		${KERBEROS_DESC}
