@@ -7,7 +7,7 @@ include/libwbxml-1.0/wbxml/wbxml_defines.h
 include/libwbxml-1.0/wbxml/wbxml_errors.h
 lib/libwbxml2.so
 lib/libwbxml2.so.1
-lib/libwbxml2.so.1.0.6
+lib/libwbxml2.so.1.0.7
 libdata/pkgconfig/libwbxml2.pc
 share/cmake/Modules/FindLibWbxml2.cmake
 %%PORTDOCS%%%%DOCSDIR%%/BUGS

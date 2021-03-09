@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	wbxml2
-PORTVERSION=	0.11.6
+PORTVERSION=	0.11.7
 CATEGORIES=	textproc devel
-MASTER_SITES=	SF/libwbxml/libwbxml/${PORTVERSION}
 DISTNAME=	libwbxml-${PORTVERSION}
 
 MAINTAINER=	flo@FreeBSD.org
@@ -17,7 +16,10 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		cmake iconv tar:bzip2
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/libwbxml-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	libwbxml
+GH_PROJECT=	libwbxml
+GH_TAGNAME=	libwbxml-${PORTVERSION}
 
 DOCSDIR=	${PREFIX}/share/doc/libwbxml
 
