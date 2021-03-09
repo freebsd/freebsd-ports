@@ -1,26 +1,6 @@
---- setup.sh.orig	2020-07-01 17:46:39 UTC
+--- setup.sh.orig	2021-03-07 18:10:32 UTC
 +++ setup.sh
-@@ -17,17 +17,9 @@ fi
- srcdir=$wadir
- ver=`cat "$wadir/version"`
- 
--# Find temp directory
--if [ "$tempdir" = "" ]; then
--	tempdir=/tmp/.webmin
--fi
-+tempdir=/tmp/.webmin
-+mkdir -p $tempdir
- 
--if [ $? != "0" ]; then
--	echo "ERROR: Cannot find the Webmin install directory";
--	echo "";
--	exit 1;
--fi
--
- echo "***********************************************************************"
- echo "*            Welcome to the Webmin setup script, version $ver        *"
- echo "***********************************************************************"
-@@ -98,19 +90,7 @@ echo "Webmin uses separate directories for configurati
+@@ -102,19 +102,7 @@ echo "Webmin uses separate directories for configurati
  echo "Unless you want to run multiple versions of Webmin at the same time"
  echo "you can just accept the defaults."
  echo ""
@@ -41,7 +21,7 @@
  if [ ! -d $config_dir ]; then
  	mkdir $config_dir;
  	if [ $? != 0 ]; then
-@@ -210,12 +190,12 @@ else
+@@ -209,12 +197,12 @@ else
  	fi
  
  	# Ask for log directory
@@ -56,7 +36,7 @@
  	fi
  	abspath=`echo $var_dir | grep "^/"`
  	if [ "$abspath" = "" ]; then
-@@ -243,7 +223,9 @@ else
+@@ -242,7 +230,9 @@ else
  	echo "Webmin is written entirely in Perl. Please enter the full path to the"
  	echo "Perl 5 interpreter on your system."
  	echo ""
@@ -67,7 +47,7 @@
  		perldef=/usr/bin/perl
  	elif [ -x /usr/local/bin/perl ]; then
  		perldef=/usr/local/bin/perl
-@@ -444,6 +426,7 @@ else
+@@ -443,6 +433,7 @@ else
  		fi
  	fi
  
@@ -75,7 +55,7 @@
  	# Ask whether to run at boot time
  	if [ "$atboot" = "" ]; then
  		if echo "$os_type" | grep  -q "\-linux$"; then
-@@ -593,6 +576,7 @@ EOF
+@@ -594,6 +585,7 @@ EOF
  	fi
  fi
  
@@ -83,7 +63,7 @@
  if [ "$noperlpath" = "" ]; then
  	echo "Inserting path to perl into scripts.."
  	(find "$wadir" -name '*.cgi' -print ; find "$wadir" -name '*.pl' -print) | $perl "$wadir/perlpath.pl" $perl -
-@@ -603,7 +587,6 @@ fi
+@@ -604,7 +596,6 @@ fi
  echo "Creating start and stop scripts.."
  rm -f $config_dir/stop $config_dir/start $config_dir/restart $config_dir/reload
  echo "#!/bin/sh" >>$config_dir/start
@@ -91,7 +71,7 @@
  echo "trap '' 1" >>$config_dir/start
  echo "LANG=" >>$config_dir/start
  echo "export LANG" >>$config_dir/start
-@@ -754,6 +737,7 @@ if [ "$?" != "0" ]; then
+@@ -763,6 +754,7 @@ if [ "$?" != "0" ]; then
  	echo passdelay=1 >> $config_dir/miniserv.conf
  fi
  
@@ -99,7 +79,7 @@
  if [ "$nouninstall" = "" ]; then
  	echo "Creating uninstall script $config_dir/uninstall.sh .."
  	cat >$config_dir/uninstall.sh <<EOF
-@@ -791,6 +775,7 @@ for f in miniserv.conf miniserv.pem miniserv.users; do
+@@ -800,6 +792,7 @@ for f in miniserv.conf miniserv.pem miniserv.users; do
  	chmod -R og-rw $config_dir/$f
  done
  chmod +r $config_dir/version
@@ -107,7 +87,7 @@
  if [ "$nochown" = "" ]; then
  	# Make program directory non-world-writable, but executable
  	chown -R root "$wadir"
-@@ -843,6 +828,7 @@ if [ -r "$srcdir/setup-post.sh" ]; then
+@@ -852,6 +845,7 @@ if [ -r "$srcdir/setup-post.sh" ]; then
  	. "$srcdir/setup-post.sh"
  fi
  

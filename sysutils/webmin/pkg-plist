@@ -322,6 +322,7 @@ lib/webmin/acl/module.info.zh_TW.auto
 lib/webmin/acl/negativeacl
 lib/webmin/acl/openssl.cnf
 lib/webmin/acl/postinstall.pl
+lib/webmin/acl/prefs.info
 lib/webmin/acl/save_acl.cgi
 lib/webmin/acl/save_group.cgi
 lib/webmin/acl/save_pass.cgi
@@ -1424,6 +1425,7 @@ lib/webmin/apache/notes
 lib/webmin/apache/perchild.pl
 lib/webmin/apache/postinstall.pl
 lib/webmin/apache/prefork.pl
+lib/webmin/apache/prefs.info
 lib/webmin/apache/reconfig.cgi
 lib/webmin/apache/reconfig_form.cgi
 lib/webmin/apache/remove_vserv.pl
@@ -1663,6 +1665,7 @@ lib/webmin/at/module.info.zh
 lib/webmin/at/module.info.zh.auto
 lib/webmin/at/module.info.zh_TW
 lib/webmin/at/module.info.zh_TW.auto
+lib/webmin/at/negativeacl
 lib/webmin/at/openserver-lib.pl
 lib/webmin/at/rbac-mapping
 lib/webmin/at/save_allow.cgi
@@ -2883,6 +2886,10 @@ lib/webmin/authentic-theme/lib/File/Spec/OS2.pm
 lib/webmin/authentic-theme/lib/File/Spec/Unix.pm
 lib/webmin/authentic-theme/lib/File/Spec/VMS.pm
 lib/webmin/authentic-theme/lib/File/Spec/Win32.pm
+lib/webmin/authentic-theme/mconfig.cgi
+lib/webmin/authentic-theme/mconfig_save.cgi
+lib/webmin/authentic-theme/modules/filemin/config.defaults
+lib/webmin/authentic-theme/modules/filemin/config.info
 lib/webmin/authentic-theme/navigation.pl
 lib/webmin/authentic-theme/pam_login.cgi
 lib/webmin/authentic-theme/password_form.cgi
@@ -2896,10 +2903,10 @@ lib/webmin/authentic-theme/settings-editor_write.cgi
 lib/webmin/authentic-theme/settings-favorites_save.cgi
 lib/webmin/authentic-theme/settings-logos.cgi
 lib/webmin/authentic-theme/settings-logos_save.cgi
-lib/webmin/authentic-theme/settings-user.cgi
-lib/webmin/authentic-theme/settings.pl
 lib/webmin/authentic-theme/stats.cgi
 lib/webmin/authentic-theme/sysinfo.cgi
+lib/webmin/authentic-theme/tconfig-lib.pl
+lib/webmin/authentic-theme/tconfig.cgi
 lib/webmin/authentic-theme/theme-update.sh
 lib/webmin/authentic-theme/theme.info
 lib/webmin/authentic-theme/theme.info.no
@@ -5248,6 +5255,7 @@ lib/webmin/bind8/module.info.zh_TW.auto
 lib/webmin/bind8/move_zone.cgi
 lib/webmin/bind8/old_save_controls.cgi
 lib/webmin/bind8/open.cgi
+lib/webmin/bind8/prefs.info
 lib/webmin/bind8/records-lib.pl
 lib/webmin/bind8/refetch.cgi
 lib/webmin/bind8/resign.pl
@@ -7117,6 +7125,7 @@ lib/webmin/cluster-passwd/module.info.zh
 lib/webmin/cluster-passwd/module.info.zh.auto
 lib/webmin/cluster-passwd/module.info.zh_TW
 lib/webmin/cluster-passwd/module.info.zh_TW.auto
+lib/webmin/cluster-passwd/prefs.info
 lib/webmin/cluster-passwd/save_passwd.cgi
 lib/webmin/cluster-shell/cluster-shell-lib.pl
 lib/webmin/cluster-shell/help/intro.af.auto.html
@@ -7711,6 +7720,7 @@ lib/webmin/cluster-software/module.info.zh_TW
 lib/webmin/cluster-software/module.info.zh_TW.auto
 lib/webmin/cluster-software/open.cgi
 lib/webmin/cluster-software/openall.cgi
+lib/webmin/cluster-software/prefs.info
 lib/webmin/cluster-software/refresh.cgi
 lib/webmin/cluster-software/search.cgi
 lib/webmin/cluster-useradmin/CHANGELOG
@@ -7911,6 +7921,7 @@ lib/webmin/cluster-useradmin/module.info.zh
 lib/webmin/cluster-useradmin/module.info.zh.auto
 lib/webmin/cluster-useradmin/module.info.zh_TW
 lib/webmin/cluster-useradmin/module.info.zh_TW.auto
+lib/webmin/cluster-useradmin/prefs.info
 lib/webmin/cluster-useradmin/refresh.cgi
 lib/webmin/cluster-useradmin/save_group.cgi
 lib/webmin/cluster-useradmin/save_user.cgi
@@ -8111,6 +8122,7 @@ lib/webmin/cluster-usermin/module.info.zh
 lib/webmin/cluster-usermin/module.info.zh.auto
 lib/webmin/cluster-usermin/module.info.zh_TW
 lib/webmin/cluster-usermin/module.info.zh_TW.auto
+lib/webmin/cluster-usermin/prefs.info
 lib/webmin/cluster-usermin/refresh.cgi
 lib/webmin/cluster-usermin/save_acl.cgi
 lib/webmin/cluster-usermin/sync.cgi
@@ -8319,6 +8331,7 @@ lib/webmin/cluster-webmin/module.info.zh
 lib/webmin/cluster-webmin/module.info.zh.auto
 lib/webmin/cluster-webmin/module.info.zh_TW
 lib/webmin/cluster-webmin/module.info.zh_TW.auto
+lib/webmin/cluster-webmin/prefs.info
 lib/webmin/cluster-webmin/refresh.cgi
 lib/webmin/cluster-webmin/save_acl.cgi
 lib/webmin/cluster-webmin/save_config.cgi
@@ -8868,6 +8881,7 @@ lib/webmin/cron/module.info.zh_TW
 lib/webmin/cron/module.info.zh_TW.auto
 lib/webmin/cron/move.cgi
 lib/webmin/cron/postinstall.pl
+lib/webmin/cron/prefs.info
 lib/webmin/cron/range.pl
 lib/webmin/cron/rbac-mapping
 lib/webmin/cron/safeacl
@@ -10274,6 +10288,7 @@ lib/webmin/custom/module.info.zh
 lib/webmin/custom/module.info.zh.auto
 lib/webmin/custom/module.info.zh_TW
 lib/webmin/custom/module.info.zh_TW.auto
+lib/webmin/custom/prefs.info
 lib/webmin/custom/run.cgi
 lib/webmin/custom/save.cgi
 lib/webmin/custom/save_cmd.cgi
@@ -11549,6 +11564,7 @@ lib/webmin/dhcpd/module.info.zh.auto
 lib/webmin/dhcpd/module.info.zh_TW
 lib/webmin/dhcpd/module.info.zh_TW.auto
 lib/webmin/dhcpd/params-lib.pl
+lib/webmin/dhcpd/prefs.info
 lib/webmin/dhcpd/rbac-mapping
 lib/webmin/dhcpd/restart.cgi
 lib/webmin/dhcpd/save_group.cgi
@@ -14221,6 +14237,7 @@ lib/webmin/fetchmail/module.info.zh
 lib/webmin/fetchmail/module.info.zh.auto
 lib/webmin/fetchmail/module.info.zh_TW
 lib/webmin/fetchmail/module.info.zh_TW.auto
+lib/webmin/fetchmail/prefs.info
 lib/webmin/fetchmail/save_cron.cgi
 lib/webmin/fetchmail/save_global.cgi
 lib/webmin/fetchmail/save_poll.cgi
@@ -14529,12 +14546,15 @@ lib/webmin/filemin/images/icons/quick/upload.png
 lib/webmin/filemin/index.cgi
 lib/webmin/filemin/lang/af.auto
 lib/webmin/filemin/lang/ar
+lib/webmin/filemin/lang/ar.auto
 lib/webmin/filemin/lang/be.auto
 lib/webmin/filemin/lang/bg.auto
 lib/webmin/filemin/lang/ca
+lib/webmin/filemin/lang/ca.auto
 lib/webmin/filemin/lang/cs.auto
 lib/webmin/filemin/lang/da.auto
 lib/webmin/filemin/lang/de
+lib/webmin/filemin/lang/de.auto
 lib/webmin/filemin/lang/el.auto
 lib/webmin/filemin/lang/en
 lib/webmin/filemin/lang/es.auto
@@ -14542,6 +14562,7 @@ lib/webmin/filemin/lang/eu.auto
 lib/webmin/filemin/lang/fa.auto
 lib/webmin/filemin/lang/fi.auto
 lib/webmin/filemin/lang/fr
+lib/webmin/filemin/lang/fr.auto
 lib/webmin/filemin/lang/he.auto
 lib/webmin/filemin/lang/hr.auto
 lib/webmin/filemin/lang/hu.auto
@@ -14554,6 +14575,7 @@ lib/webmin/filemin/lang/ms.auto
 lib/webmin/filemin/lang/mt.auto
 lib/webmin/filemin/lang/nl.auto
 lib/webmin/filemin/lang/no
+lib/webmin/filemin/lang/no.auto
 lib/webmin/filemin/lang/pl.auto
 lib/webmin/filemin/lang/pt.auto
 lib/webmin/filemin/lang/pt_BR.auto
@@ -14656,6 +14678,7 @@ lib/webmin/filemin/module.info.zh.auto
 lib/webmin/filemin/module.info.zh_TW
 lib/webmin/filemin/module.info.zh_TW.auto
 lib/webmin/filemin/paste.cgi
+lib/webmin/filemin/prefs.info
 lib/webmin/filemin/rename.cgi
 lib/webmin/filemin/safeacl
 lib/webmin/filemin/save_config.cgi
@@ -15474,6 +15497,7 @@ lib/webmin/firewall/module.info.zh_TW.auto
 lib/webmin/firewall/move.cgi
 lib/webmin/firewall/newchain.cgi
 lib/webmin/firewall/open-ports.pl
+lib/webmin/firewall/prefs.info
 lib/webmin/firewall/redhat-linux-lib.pl
 lib/webmin/firewall/save_policy.cgi
 lib/webmin/firewall/save_rule.cgi
@@ -15752,6 +15776,7 @@ lib/webmin/firewall6/module.info.zh_TW.auto
 lib/webmin/firewall6/move.cgi
 lib/webmin/firewall6/newchain.cgi
 lib/webmin/firewall6/open-ports.pl
+lib/webmin/firewall6/prefs.info
 lib/webmin/firewall6/redhat-linux-lib.pl
 lib/webmin/firewall6/save_policy.cgi
 lib/webmin/firewall6/save_rule.cgi
@@ -18777,6 +18802,7 @@ lib/webmin/fsdump/multi.pl
 lib/webmin/fsdump/newtape.cgi
 lib/webmin/fsdump/newtape.pl
 lib/webmin/fsdump/notape.pl
+lib/webmin/fsdump/prefs.info
 lib/webmin/fsdump/restore.cgi
 lib/webmin/fsdump/restore_form.cgi
 lib/webmin/fsdump/rmulti.pl
@@ -20888,6 +20914,7 @@ lib/webmin/htaccess-htpasswd/module.info.zh
 lib/webmin/htaccess-htpasswd/module.info.zh.auto
 lib/webmin/htaccess-htpasswd/module.info.zh_TW
 lib/webmin/htaccess-htpasswd/module.info.zh_TW.auto
+lib/webmin/htaccess-htpasswd/prefs.info
 lib/webmin/htaccess-htpasswd/save_dir.cgi
 lib/webmin/htaccess-htpasswd/save_group.cgi
 lib/webmin/htaccess-htpasswd/save_user.cgi
@@ -21499,6 +21526,7 @@ lib/webmin/inetd/module.info.zh
 lib/webmin/inetd/module.info.zh.auto
 lib/webmin/inetd/module.info.zh_TW
 lib/webmin/inetd/module.info.zh_TW.auto
+lib/webmin/inetd/prefs.info
 lib/webmin/inetd/restart_inetd.cgi
 lib/webmin/inetd/save_rpc.cgi
 lib/webmin/inetd/save_serv.cgi
@@ -21816,6 +21844,7 @@ lib/webmin/init/module.info.zh
 lib/webmin/init/module.info.zh.auto
 lib/webmin/init/module.info.zh_TW
 lib/webmin/init/module.info.zh_TW.auto
+lib/webmin/init/prefs.info
 lib/webmin/init/rbac-mapping
 lib/webmin/init/reboot.cgi
 lib/webmin/init/save_action.cgi
@@ -25666,6 +25695,7 @@ lib/webmin/ldap-server/module.info.zh.auto
 lib/webmin/ldap-server/module.info.zh_TW
 lib/webmin/ldap-server/module.info.zh_TW.auto
 lib/webmin/ldap-server/perms.cgi
+lib/webmin/ldap-server/prefs.info
 lib/webmin/ldap-server/rename_browser.cgi
 lib/webmin/ldap-server/save_browser.cgi
 lib/webmin/ldap-server/save_ldif.cgi
@@ -26014,6 +26044,7 @@ lib/webmin/ldap-useradmin/module.info.zh.auto
 lib/webmin/ldap-useradmin/module.info.zh_TW
 lib/webmin/ldap-useradmin/module.info.zh_TW.auto
 lib/webmin/ldap-useradmin/postinstall.pl
+lib/webmin/ldap-useradmin/prefs.info
 lib/webmin/ldap-useradmin/raw.cgi
 lib/webmin/ldap-useradmin/save_group.cgi
 lib/webmin/ldap-useradmin/save_user.cgi
@@ -26396,6 +26427,7 @@ lib/webmin/logrotate/module.info.zh
 lib/webmin/logrotate/module.info.zh.auto
 lib/webmin/logrotate/module.info.zh_TW
 lib/webmin/logrotate/module.info.zh_TW.auto
+lib/webmin/logrotate/prefs.info
 lib/webmin/logrotate/save_log.cgi
 lib/webmin/logrotate/save_sched.cgi
 lib/webmin/lpadmin/CHANGELOG
@@ -26633,6 +26665,7 @@ lib/webmin/lpadmin/module.info.zh_TW
 lib/webmin/lpadmin/module.info.zh_TW.auto
 lib/webmin/lpadmin/old-caldera-driver.pl
 lib/webmin/lpadmin/openbsd-lib.pl
+lib/webmin/lpadmin/prefs.info
 lib/webmin/lpadmin/printconf-driver.pl
 lib/webmin/lpadmin/rbac-mapping
 lib/webmin/lpadmin/redhat-driver.pl
@@ -26812,6 +26845,7 @@ lib/webmin/lvm/module.info.zh
 lib/webmin/lvm/module.info.zh.auto
 lib/webmin/lvm/module.info.zh_TW
 lib/webmin/lvm/module.info.zh_TW.auto
+lib/webmin/lvm/prefs.info
 lib/webmin/lvm/pvmove.cgi
 lib/webmin/lvm/save_lv.cgi
 lib/webmin/lvm/save_pv.cgi
@@ -26999,6 +27033,7 @@ lib/webmin/mailboxes/module.info.zh
 lib/webmin/mailboxes/module.info.zh.auto
 lib/webmin/mailboxes/module.info.zh_TW
 lib/webmin/mailboxes/module.info.zh_TW.auto
+lib/webmin/mailboxes/prefs.info
 lib/webmin/mailboxes/reply_mail.cgi
 lib/webmin/mailboxes/safeacl
 lib/webmin/mailboxes/search_form.cgi
@@ -29291,6 +29326,7 @@ lib/webmin/mount/openbsd-mounts-3.c
 lib/webmin/mount/openbsd-mounts-4.c
 lib/webmin/mount/openbsd-mounts-5.c
 lib/webmin/mount/osf1-lib.pl
+lib/webmin/mount/prefs.info
 lib/webmin/mount/rbac-mapping
 lib/webmin/mount/save_mount.cgi
 lib/webmin/mount/smb_server.cgi
@@ -30837,6 +30873,7 @@ lib/webmin/mysql/mysql-lib.pl
 lib/webmin/mysql/newdb.cgi
 lib/webmin/mysql/newdb_form.cgi
 lib/webmin/mysql/postinstall.pl
+lib/webmin/mysql/prefs.info
 lib/webmin/mysql/root_form.cgi
 lib/webmin/mysql/save_cnf.cgi
 lib/webmin/mysql/save_cpriv.cgi
@@ -32355,6 +32392,7 @@ lib/webmin/passwd/module.info.zh.auto
 lib/webmin/passwd/module.info.zh_TW
 lib/webmin/passwd/module.info.zh_TW.auto
 lib/webmin/passwd/passwd-lib.pl
+lib/webmin/passwd/prefs.info
 lib/webmin/passwd/rbac-mapping
 lib/webmin/passwd/safeacl
 lib/webmin/passwd/save_passwd.cgi
@@ -39519,6 +39557,7 @@ lib/webmin/postfix/module.info.zh_TW
 lib/webmin/postfix/module.info.zh_TW.auto
 lib/webmin/postfix/postfinger.cgi
 lib/webmin/postfix/postfix-lib.pl
+lib/webmin/postfix/prefs.info
 lib/webmin/postfix/rate.cgi
 lib/webmin/postfix/reload.cgi
 lib/webmin/postfix/relocated.cgi
@@ -40482,6 +40521,7 @@ lib/webmin/postgresql/old/download.cgi
 lib/webmin/postgresql/old/search_form.cgi
 lib/webmin/postgresql/old/view_table.cgi
 lib/webmin/postgresql/postgresql-lib.pl
+lib/webmin/postgresql/prefs.info
 lib/webmin/postgresql/restore.cgi
 lib/webmin/postgresql/restore_form.cgi
 lib/webmin/postgresql/save_field.cgi
@@ -42588,6 +42628,7 @@ lib/webmin/proc/module.info.zh_TW.auto
 lib/webmin/proc/open_files.cgi
 lib/webmin/proc/openbsd-lib.pl
 lib/webmin/proc/osf-lib.pl
+lib/webmin/proc/prefs.info
 lib/webmin/proc/proc-lib.pl
 lib/webmin/proc/rbac-mapping
 lib/webmin/proc/renice_proc.cgi
@@ -42766,6 +42807,7 @@ lib/webmin/procmail/module.info.zh
 lib/webmin/procmail/module.info.zh.auto
 lib/webmin/procmail/module.info.zh_TW
 lib/webmin/procmail/module.info.zh_TW.auto
+lib/webmin/procmail/prefs.info
 lib/webmin/procmail/procmail-lib.pl
 lib/webmin/procmail/save_env.cgi
 lib/webmin/procmail/save_inc.cgi
@@ -43221,6 +43263,7 @@ lib/webmin/qmailadmin/old_edit_ffile.cgi
 lib/webmin/qmailadmin/old_edit_rfile.cgi
 lib/webmin/qmailadmin/old_save_ffile.cgi
 lib/webmin/qmailadmin/old_save_rfile.cgi
+lib/webmin/qmailadmin/prefs.info
 lib/webmin/qmailadmin/qmail-lib.pl
 lib/webmin/qmailadmin/save_afile.cgi
 lib/webmin/qmailadmin/save_alias.cgi
@@ -43992,6 +44035,7 @@ lib/webmin/quota/module.info.zh_TW.auto
 lib/webmin/quota/netbsd-lib.pl
 lib/webmin/quota/notes
 lib/webmin/quota/openbsd-lib.pl
+lib/webmin/quota/prefs.info
 lib/webmin/quota/quota-lib.pl
 lib/webmin/quota/save_email.cgi
 lib/webmin/quota/save_gemail.cgi
@@ -44982,6 +45026,7 @@ lib/webmin/samba/module.info.zh.auto
 lib/webmin/samba/module.info.zh_TW
 lib/webmin/samba/module.info.zh_TW.auto
 lib/webmin/samba/opts.pl.dev
+lib/webmin/samba/prefs.info
 lib/webmin/samba/rbac-mapping
 lib/webmin/samba/readonly-share.pl
 lib/webmin/samba/readwrite-share.pl
@@ -46879,6 +46924,7 @@ lib/webmin/sendmail/module.info.zh_TW
 lib/webmin/sendmail/module.info.zh_TW.auto
 lib/webmin/sendmail/move.cgi
 lib/webmin/sendmail/negativeacl
+lib/webmin/sendmail/prefs.info
 lib/webmin/sendmail/qdetach.cgi
 lib/webmin/sendmail/rbac-mapping
 lib/webmin/sendmail/save_access.cgi
@@ -47117,6 +47163,7 @@ lib/webmin/servers/module.info.zh
 lib/webmin/servers/module.info.zh.auto
 lib/webmin/servers/module.info.zh_TW
 lib/webmin/servers/module.info.zh_TW.auto
+lib/webmin/servers/prefs.info
 lib/webmin/servers/save_auto.cgi
 lib/webmin/servers/save_serv.cgi
 lib/webmin/servers/servers-lib.pl
@@ -47427,6 +47474,7 @@ lib/webmin/shell/module.info.zh
 lib/webmin/shell/module.info.zh.auto
 lib/webmin/shell/module.info.zh_TW
 lib/webmin/shell/module.info.zh_TW.auto
+lib/webmin/shell/prefs.info
 lib/webmin/shell/safeacl
 lib/webmin/shell/shell-lib.pl
 lib/webmin/shorewall/CHANGELOG
@@ -47939,6 +47987,7 @@ lib/webmin/smart-status/module.info.zh
 lib/webmin/smart-status/module.info.zh.auto
 lib/webmin/smart-status/module.info.zh_TW
 lib/webmin/smart-status/module.info.zh_TW.auto
+lib/webmin/smart-status/prefs.info
 lib/webmin/smart-status/smart-status-lib.pl
 lib/webmin/smart-status/status_monitor.pl
 lib/webmin/smf/config-solaris
@@ -52082,6 +52131,7 @@ lib/webmin/status/ping-monitor.pl
 lib/webmin/status/portsentry-monitor.pl
 lib/webmin/status/postfix-monitor.pl
 lib/webmin/status/postgresql-monitor.pl
+lib/webmin/status/prefs.info
 lib/webmin/status/proc-monitor.pl
 lib/webmin/status/proftpd-monitor.pl
 lib/webmin/status/qmailadmin-monitor.pl
@@ -52758,6 +52808,7 @@ lib/webmin/syslog-ng/module.info.zh
 lib/webmin/syslog-ng/module.info.zh.auto
 lib/webmin/syslog-ng/module.info.zh_TW
 lib/webmin/syslog-ng/module.info.zh_TW.auto
+lib/webmin/syslog-ng/prefs.info
 lib/webmin/syslog-ng/save_destination.cgi
 lib/webmin/syslog-ng/save_filter.cgi
 lib/webmin/syslog-ng/save_log.cgi
@@ -52972,6 +53023,7 @@ lib/webmin/syslog/module.info.zh
 lib/webmin/syslog/module.info.zh.auto
 lib/webmin/syslog/module.info.zh_TW
 lib/webmin/syslog/module.info.zh_TW.auto
+lib/webmin/syslog/prefs.info
 lib/webmin/syslog/rbac-mapping
 lib/webmin/syslog/restart.cgi
 lib/webmin/syslog/safeacl
@@ -56422,6 +56474,7 @@ lib/webmin/useradmin/netbsd-lib.pl
 lib/webmin/useradmin/openbsd-lib.pl
 lib/webmin/useradmin/openserver-lib.pl
 lib/webmin/useradmin/osf1-lib.pl
+lib/webmin/useradmin/prefs.info
 lib/webmin/useradmin/rbac-mapping
 lib/webmin/useradmin/save_group.cgi
 lib/webmin/useradmin/save_user.cgi
