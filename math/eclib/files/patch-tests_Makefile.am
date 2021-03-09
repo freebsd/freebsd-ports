@@ -1,0 +1,15 @@
+--- tests/Makefile.am.orig	2021-03-08 17:51:22 UTC
++++ tests/Makefile.am
+@@ -129,9 +129,9 @@ tnfd_SOURCES=tnfd.cc
+ # This is the name of a directory which will be used for newform
+ # input/output in the "make check" tests and removed afterwards.
+ 
+-export NF_DIR:=nftmp
+-export SNF_DIR:=snftmp
+-export TCURVE_DIR:=tcurves
++export NF_DIR=nftmp
++export SNF_DIR=snftmp
++export TCURVE_DIR=tcurves
+ 
+ check_g0n: g0n_tests
+ 	@echo Running g0n checks...

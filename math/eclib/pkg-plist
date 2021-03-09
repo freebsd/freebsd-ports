@@ -117,8 +117,8 @@ include/eclib/xsplit.h
 include/eclib/xsplit_data.h
 lib/libec.a
 lib/libec.so
-lib/libec.so.6
-lib/libec.so.6.0.2
+lib/libec.so.7
+lib/libec.so.7.0.0
 libdata/pkgconfig/eclib.pc
 man/man1/mwrank.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/g0n.txt
