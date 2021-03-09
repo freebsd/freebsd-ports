@@ -1,0 +1,13 @@
+U-Boot loader for OrangePi Zero Plus.
+
+To install this bootloader on an sdcard just do :
+dd if=$LOCALBASE/share/u-boot/u-boot-orangepi-zero-plus/u-boot-sunxi-with-spl.bin of=/path/to/sdcarddevice bs=128k seek=1 conv=sync
+
+This version is patched so that:
+ * API features are enabled.
+ * A boot.scr (U-Boot script) that loads ubldr.bin and execute it is included
+
+For information about running FreeBSD on Allwinner boards, see
+https://wiki.freebsd.org/FreeBSD/arm/Allwinner
+
+WWW: https://www.denx.de/wiki/U-Boot
