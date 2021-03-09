@@ -45,10 +45,8 @@ BITS=		32
 BITS=		64
 .endif
 
-.if ${ARCH} == "powerpc64"
-# .if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
+.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
 CFLAGS+=	-fnested-functions
-# .endif
 .endif
 
 .include <bsd.port.post.mk>
