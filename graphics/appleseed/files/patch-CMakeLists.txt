@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2019-08-31 15:49:01 UTC
 +++ CMakeLists.txt
-@@ -732,9 +732,16 @@ install (
+@@ -732,15 +732,27 @@ install (
          sandbox/share
          sandbox/stylesheets
      DESTINATION .
@@ -8,16 +8,28 @@
  )
  
  install (
+-    FILES
 +    DIRECTORY
 +        sandbox/share/cmake
 +    DESTINATION ../share
 +)
 +
 +install (
-     FILES
++    PROGRAMS
          scripts/cleanmany.py
          scripts/convertmany.py
-@@ -754,11 +761,6 @@ install (
+         scripts/rendermanager.py
+         scripts/rendermany.py
+         scripts/rendernode.py
++    DESTINATION bin
++)
++
++install_relative_symlink (
++    ${CMAKE_INSTALL_PREFIX}
+         ${OSL_COMPILER}
+         ${OSL_QUERY_INFO}
+         ${OSL_MAKETX}
+@@ -754,11 +766,6 @@ install (
          sandbox/schemas/settings.xsd
          sandbox/schemas/project.xsd
      DESTINATION schemas

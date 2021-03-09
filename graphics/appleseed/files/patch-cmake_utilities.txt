@@ -1,0 +1,19 @@
+--- cmake/utilities.txt.orig	2019-08-31 15:49:01 UTC
++++ cmake/utilities.txt
+@@ -150,3 +150,16 @@ function (detect_target_arch output_var)
+ 
+     set (${output_var} "${ARCH}" PARENT_SCOPE)
+ endfunction ()
++
++function (install_relative_symlink)
++    math (EXPR ac-1 "${ARGC} - 1")
++    math (EXPR ac-3 "${ARGC} - 3")
++    foreach (prog RANGE 1 ${ac-3})
++        file (RELATIVE_PATH link ${ARGV0}/${ARGV${ac-1}} ${ARGV${prog}})
++        get_filename_component (basename ${ARGV${prog}} NAME)
++        install (CODE "file (CREATE_LINK
++            ${link} \$ENV{DESTDIR}${ARGV0}/${ARGV${ac-1}}/${basename}
++            SYMBOLIC)"
++        )
++    endforeach ()
++endfunction ()

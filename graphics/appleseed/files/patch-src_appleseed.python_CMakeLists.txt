@@ -1,0 +1,20 @@
+--- src/appleseed.python/CMakeLists.txt.orig	2019-08-31 15:49:01 UTC
++++ src/appleseed.python/CMakeLists.txt
+@@ -182,7 +182,7 @@ if (WITH_PYTHON3_BINDINGS)
+     endif ()
+ 
+     target_link_libraries (appleseed.python3
+-        ${OPENGL_LIBRARY}
++        ${OPENGL_gl_LIBRARY}
+     )
+ endif ()
+ 
+@@ -288,7 +288,7 @@ endif ()
+ # Installation.
+ #--------------------------------------------------------------------------------------------------
+ 
+-set (py_module_dst "lib/python${PYTHON_MAJOR_VERSION}.${PYTHON_MINOR_VERSION}/appleseed")
++set (py_module_dst "lib/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/appleseed")
+ 
+ install (FILES __init__.py DESTINATION ${py_module_dst})
+ install (FILES logtarget.py DESTINATION ${py_module_dst})
