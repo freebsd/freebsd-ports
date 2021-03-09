@@ -24,8 +24,6 @@ GH_ACCOUNT=	symless
 GH_PROJECT=	synergy-core
 GH_TUPLE=	google:googletest:18f8200e3079b0e54fa00cb7ac55d4c39dcf6da6:google_googletest/ext/googletest
 
-CONFLICTS=	synergy-1
-
 CMAKE_ARGS=	-DSYNERGY_REVISION:STRING=${PORTVERSION:S/.//g}00 # it expects a 8-digit hash
 
 PORTEXAMPLES=	synergy.conf.example synergy.conf.example-basic \
