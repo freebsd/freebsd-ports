@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	jna
-PORTVERSION=	5.6.0
+PORTVERSION=	5.7.0
 CATEGORIES=	devel java
 
 MAINTAINER=	ports@markdixon.name
@@ -15,6 +15,8 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/AL2.0
 
 BROKEN_armv6=		fails to compile: build.xml: compilation failed
 BROKEN_armv7=		fails to compile: build.xml: compilation failed
+
+BUILD_DEPENDS=	makeinfo:print/texinfo
 
 USES=		autoreconf:build gmake libtool xorg
 USE_ANT=	yes

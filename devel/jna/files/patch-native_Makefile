@@ -1,5 +1,5 @@
---- native/Makefile.orig	2018-10-07 21:48:55 UTC
-+++ native/Makefile
+--- native/Makefile.orig	2021-02-08 18:49:25.000000000 +0000
++++ native/Makefile	2021-03-06 13:25:34.083392000 +0000
 @@ -39,6 +39,8 @@
  # protection simply by defining HAVE_PROTECTION.  This option has been only
  # been enabled for those platforms on which it has been tested successfully.
@@ -9,7 +9,7 @@
  OS=$(shell uname | sed -e 's/CYGWIN.*/win32/g' \
  	                -e 's/MINGW32.*/win32/g' \
                          -e 's/SunOS.*/solaris/g' \
-@@ -278,8 +280,11 @@ endif
+@@ -291,8 +293,11 @@
  ifneq (,$(findstring bsd,$(OS)))
  ARCH=$(shell uname -m | sed 's/i.86/i386/g')
  PCFLAGS+=-fPIC
@@ -22,12 +22,12 @@
  CDEFINES+=-DHAVE_PROTECTION -DFFI_MMAP_EXEC_WRIT -DUSE_DEAFULT_LIBNAME_ENCODING
  endif
  
-@@ -337,11 +342,11 @@ ifeq ($(CC),gcc)
+@@ -356,11 +361,11 @@
      GCC_MAJOR_VERSION = $(shell gcc -dumpversion | cut -f 1 -d '.')
      ifneq ($(GCC_MAJOR_VERSION),4)
  	ifneq ($(GCC_MAJOR_VERSION),3)
--	    LOC_CC_OPTS=-Wno-unknown-warning-option -Werror -Wno-clobbered -Wno-unused-variable
-+	    LOC_CC_OPTS=-Wno-unused-variable
+-	    LOC_CC_OPTS=-Wno-unknown-warning-option -Werror -Wno-clobbered -Wno-unused-variable -Wno-alloca-larger-than
++	    LOC_CC_OPTS=-Wno-unused-variable 
  	endif
      endif
  else
