@@ -10,3 +10,4 @@ share/rime-data/build/bopomofo_express.schema.yaml
 share/rime-data/build/bopomofo_tw.prism.bin
 share/rime-data/build/bopomofo_tw.prism.txt
 share/rime-data/build/bopomofo_tw.schema.yaml
+share/rime-data/zhuyin.yaml
