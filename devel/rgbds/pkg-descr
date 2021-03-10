@@ -1,0 +1,12 @@
+RGBDS is a free GBZ80 assembler/linker package for the Game Boy and
+Game Boy Color.  RGBDS additionally contains 2 extra tools to fix
+ROM headers, and convert PNG files to the Game Boy's planar tile
+format.
+
+The binaries it provides are:
+rgbasm(1) (assembler)
+rgblink(1) (linker)
+rgbfix(1) (checksum/header fixer)
+rgbgfx(1) (PNG-to-Game Boy graphics converter)
+
+WWW: https://rgbds.gbdev.io/

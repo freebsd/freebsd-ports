@@ -1,0 +1,13 @@
+bin/rgbasm
+bin/rgbfix
+bin/rgbgfx
+bin/rgblink
+share/man/man1/rgbasm.1.gz
+share/man/man1/rgbfix.1.gz
+share/man/man1/rgbgfx.1.gz
+share/man/man1/rgblink.1.gz
+share/man/man5/rgbasm.5.gz
+share/man/man5/rgbds.5.gz
+share/man/man5/rgblink.5.gz
+share/man/man7/gbz80.7.gz
+share/man/man7/rgbds.7.gz

@@ -1,0 +1,30 @@
+In file included from src/asm/charmap.c:22:
+include/hashmap.h:18:15: error: expected parameter declarator
+static_assert(HALF_HASH_NB_BITS * 2 == HASH_NB_BITS, "");
+              ^
+include/hashmap.h:17:27: note: expanded from macro 'HALF_HASH_NB_BITS'
+#define HALF_HASH_NB_BITS 16
+                          ^
+include/hashmap.h:18:15: error: expected ')'
+include/hashmap.h:17:27: note: expanded from macro 'HALF_HASH_NB_BITS'
+#define HALF_HASH_NB_BITS 16
+                          ^
+include/hashmap.h:18:14: note: to match this '('
+static_assert(HALF_HASH_NB_BITS * 2 == HASH_NB_BITS, "");
+             ^
+include/hashmap.h:18:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+static_assert(HALF_HASH_NB_BITS * 2 == HASH_NB_BITS, "");
+^
+1 warning and 2 errors generated.
+
+--- Makefile.orig	2021-03-10 06:20:18 UTC
++++ Makefile
+@@ -35,7 +35,7 @@ WARNFLAGS	:= -Wall
+ # Overridable CFLAGS
+ CFLAGS		?= -O3 -flto -DNDEBUG
+ # Non-overridable CFLAGS
+-REALCFLAGS	:= ${CFLAGS} ${WARNFLAGS} -std=gnu11 -D_POSIX_C_SOURCE=200809L \
++REALCFLAGS	:= ${CFLAGS} ${WARNFLAGS} -std=gnu11 \
+ 		   -Iinclude
+ # Overridable LDFLAGS
+ LDFLAGS		?=
