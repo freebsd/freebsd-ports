@@ -78,6 +78,41 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="72709326-81f7-11eb-950a-00155d646401">
+    <topic>go -- encoding/xml: infinite loop when using xml.NewTokenDecoder with a custom TokenReader; archive/zip: panic when calling Reader.Open</topic>
+    <affects>
+      <package>
+	<name>go</name>
+	<range><lt>1.16.1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://github.com/golang/go/issues/44913">
+	  <p>The Decode, DecodeElement, and Skip methods of an xml.Decoder
+	    provided by xml.NewTokenDecoder may enter an infinite loop when
+	    operating on a custom xml.TokenReader which returns an EOF in the
+	    middle of an open XML element.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/golang/go/issues/44916">
+	  <p>The Reader.Open API, new in Go 1.16, will panic when used on a ZIP
+	    archive containing files that start with "../".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-27918</cvename>
+      <url>http://golang.org/issue/44913</url>
+      <cvename>CVE-2021-27919</cvename>
+      <url>http://golang.org/issue/44916</url>
+    </references>
+    <dates>
+      <discovery>2021-03-05</discovery>
+      <entry>2021-03-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="502ba001-7ffa-11eb-911c-0800278d94f0">
     <topic>gitea -- multiple vulnerabilities</topic>
     <affects>
