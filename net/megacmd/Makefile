@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	megacmd
-DISTVERSION=	1.0.0
-PORTREVISION=	1
+DISTVERSION=	1.4.0
+DISTVERSIONSUFFIX=	_Linux
 CATEGORIES=	net
 
 MAINTAINER=	menelkir@itroll.org
@@ -20,21 +20,9 @@ USES=		autoreconf libtool sqlite:3 readline shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	meganz
 GH_PROJECT=	MEGAcmd sdk:sdk
-GH_TAGNAME=	v3.4.1:sdk
 GH_SUBDIR=	sdk:sdk
+GH_TAGNAME=	v3.7.3c:sdk
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-examples \
-		--disable-java --disable-php --disable-python \
-		--disable-chat --without-freeimage \
-		--without-termcap --without-ffmpeg --without-libraw \
-		--without-libzen --without-libmediainfo \
-		--enable-gcc-hardening \
-		--with-cares=${LOCALBASE} --with-cryptopp=${LOCALBASE} \
-		--with-curl=${LOCALBASE} --with-sodium=${LOCALBASE} \
-		--with-sqlite=${LOCALBASE} --with-libuv=${LOCALBASE} \
-		--with-zlib --with-readline=${LOCALBASE}
-CXXFLAGS+=	`pkgconf --cflags-only-other libcryptopp`
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	src/client/mega-lpwd \
@@ -89,6 +77,27 @@ SHEBANG_FILES=	src/client/mega-lpwd \
 		src/client/mega-killsession \
 		src/client/mega-sync \
 		src/client/mega-users \
-		src/client/mega-export
+		src/client/mega-export \
+		src/client/mega-cat \
+		src/client/mega-mediainfo \
+		src/client/mega-proxy \
+		src/client/mega-df \
+		src/client/mega-tree
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-examples \
+		--disable-java --disable-php --disable-python \
+		--disable-chat --without-freeimage \
+		--without-termcap --without-ffmpeg --without-libraw \
+		--without-libzen --without-libmediainfo \
+		--enable-gcc-hardening \
+		--with-cares=${LOCALBASE} --with-cryptopp=${LOCALBASE} \
+		--with-curl=${LOCALBASE} --with-sodium=${LOCALBASE} \
+		--with-sqlite=${LOCALBASE} --with-libuv=${LOCALBASE} \
+		--with-zlib --with-readline=${LOCALBASE}
+
+INSTALL_TARGET=	install-strip
+
+CXXFLAGS+=	`pkgconf --cflags-only-other libcryptopp`
 
 .include <bsd.port.mk>

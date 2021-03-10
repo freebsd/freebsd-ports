@@ -1,6 +1,7 @@
 bin/mega-attr
 bin/mega-backup
 bin/mega-cancel
+bin/mega-cat
 bin/mega-cd
 bin/mega-cmd
 bin/mega-cmd-server
@@ -9,6 +10,7 @@ bin/mega-confirmcancel
 bin/mega-cp
 bin/mega-debug
 bin/mega-deleteversions
+bin/mega-df
 bin/mega-du
 bin/mega-errorcode
 bin/mega-exclude
@@ -30,12 +32,14 @@ bin/mega-login
 bin/mega-logout
 bin/mega-lpwd
 bin/mega-ls
+bin/mega-mediainfo
 bin/mega-mkdir
 bin/mega-mount
 bin/mega-mv
 bin/mega-passwd
 bin/mega-permissions
 bin/mega-preview
+bin/mega-proxy
 bin/mega-put
 bin/mega-pwd
 bin/mega-quit
@@ -49,6 +53,7 @@ bin/mega-speedlimit
 bin/mega-sync
 bin/mega-thumbnail
 bin/mega-transfers
+bin/mega-tree
 bin/mega-userattr
 bin/mega-users
 bin/mega-version
@@ -100,6 +105,7 @@ include/mega/posix/megasys.h
 include/mega/posix/megawaiter.h
 include/mega/proxy.h
 include/mega/pubkeyaction.h
+include/mega/raid.h
 include/mega/request.h
 include/mega/serialize64.h
 include/mega/share.h
@@ -115,12 +121,13 @@ include/mega/transferslot.h
 include/mega/treeproc.h
 include/mega/types.h
 include/mega/user.h
+include/mega/useralerts.h
 include/mega/utils.h
 include/mega/version.h
 include/mega/waiter.h
 include/megaapi.h
 include/megaapi_impl.h
 lib/libmega.so
-lib/libmega.so.30401
-lib/libmega.so.30401.0.0
+lib/libmega.so.30703
+lib/libmega.so.30703.0.0
 libdata/pkgconfig/libmega.pc
