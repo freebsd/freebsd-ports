@@ -1,16 +1,31 @@
 bin/pipewire
+bin/pipewire-pulse
 bin/pw-cli
 bin/pw-dot
+bin/pw-dump
 bin/pw-metadata
 bin/pw-mididump
 bin/pw-mon
 bin/pw-profiler
+bin/pw-reserve
 bin/spa-inspect
+bin/spa-json-dump
 bin/spa-monitor
+%%ETCDIR%%/client-rt.conf
+%%ETCDIR%%/client.conf
+%%ETCDIR%%/jack.conf
+%%ETCDIR%%/media-session.d/alsa-monitor.conf
+%%ETCDIR%%/media-session.d/bluez-monitor.conf
+%%ETCDIR%%/media-session.d/media-session.conf
+%%ETCDIR%%/media-session.d/v4l2-monitor.conf
+%%ETCDIR%%/media-session.d/with-jack
+%%ETCDIR%%/media-session.d/with-pulseaudio
+%%ETCDIR%%/pipewire-pulse.conf
 @sample %%ETCDIR%%/pipewire.conf.sample
 include/pipewire-0.3/pipewire/array.h
 include/pipewire-0.3/pipewire/buffers.h
 include/pipewire-0.3/pipewire/client.h
+include/pipewire-0.3/pipewire/conf.h
 include/pipewire-0.3/pipewire/context.h
 include/pipewire-0.3/pipewire/control.h
 include/pipewire-0.3/pipewire/core.h
@@ -76,6 +91,7 @@ include/spa-0.2/spa/debug/types.h
 include/spa-0.2/spa/graph/graph.h
 include/spa-0.2/spa/monitor/device.h
 include/spa-0.2/spa/monitor/event.h
+include/spa-0.2/spa/monitor/type-info.h
 include/spa-0.2/spa/monitor/utils.h
 include/spa-0.2/spa/node/command.h
 include/spa-0.2/spa/node/event.h
@@ -122,6 +138,7 @@ include/spa-0.2/spa/support/system.h
 include/spa-0.2/spa/utils/defs.h
 include/spa-0.2/spa/utils/dict.h
 include/spa-0.2/spa/utils/hook.h
+include/spa-0.2/spa/utils/json.h
 include/spa-0.2/spa/utils/keys.h
 include/spa-0.2/spa/utils/list.h
 include/spa-0.2/spa/utils/names.h
@@ -132,7 +149,7 @@ include/spa-0.2/spa/utils/type.h
 %%GSTREAMER%%lib/gstreamer-1.0/libgstpipewire.so
 lib/libpipewire-0.3.so
 lib/libpipewire-0.3.so.0
-lib/libpipewire-0.3.so.0.311.0
+lib/libpipewire-0.3.so.0.323.0
 lib/pipewire-0.3/libpipewire-module-access.so
 lib/pipewire-0.3/libpipewire-module-adapter.so
 lib/pipewire-0.3/libpipewire-module-client-device.so
@@ -142,6 +159,7 @@ lib/pipewire-0.3/libpipewire-module-metadata.so
 lib/pipewire-0.3/libpipewire-module-portal.so
 lib/pipewire-0.3/libpipewire-module-profiler.so
 lib/pipewire-0.3/libpipewire-module-protocol-native.so
+lib/pipewire-0.3/libpipewire-module-protocol-pulse.so
 lib/pipewire-0.3/libpipewire-module-rtkit.so
 lib/pipewire-0.3/libpipewire-module-session-manager.so
 lib/pipewire-0.3/libpipewire-module-spa-device-factory.so
