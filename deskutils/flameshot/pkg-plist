@@ -1,5 +1,5 @@
 bin/flameshot
-share/applications/flameshot.desktop
+share/applications/org.flameshot.Flameshot.desktop
 share/bash-completion/completions/flameshot
 share/dbus-1/interfaces/org.flameshot.Flameshot.xml
 share/dbus-1/services/org.flameshot.Flameshot.service
@@ -7,7 +7,7 @@ share/dbus-1/services/org.flameshot.Flameshot.service
 %%DATADIR%%/translations/Internationalization_cs.qm
 %%DATADIR%%/translations/Internationalization_de_DE.qm
 %%DATADIR%%/translations/Internationalization_es.qm
-%%DATADIR%%/translations/Internationalization_eu_ES.qm
+%%DATADIR%%/translations/Internationalization_eu.qm
 %%DATADIR%%/translations/Internationalization_fr.qm
 %%DATADIR%%/translations/Internationalization_hu.qm
 %%DATADIR%%/translations/Internationalization_it_IT.qm
@@ -25,9 +25,13 @@ share/dbus-1/services/org.flameshot.Flameshot.service
 %%DATADIR%%/translations/Internationalization_tr.qm
 %%DATADIR%%/translations/Internationalization_uk.qm
 %%DATADIR%%/translations/Internationalization_zh_CN.qm
+%%DATADIR%%/translations/Internationalization_zh_HK.qm
 %%DATADIR%%/translations/Internationalization_zh_TW.qm
 share/icons/hicolor/128x128/apps/flameshot.png
+share/icons/hicolor/128x128/apps/org.flameshot.Flameshot.png
 share/icons/hicolor/48x48/apps/flameshot.png
+share/icons/hicolor/48x48/apps/org.flameshot.Flameshot.png
 share/icons/hicolor/scalable/apps/flameshot.svg
-share/metainfo/flameshot.metainfo.xml
+share/icons/hicolor/scalable/apps/org.flameshot.Flameshot.svg
+share/metainfo/org.flameshot.Flameshot.metainfo.xml
 share/zsh/site-functions/_flameshot
