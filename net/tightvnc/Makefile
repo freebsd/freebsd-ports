@@ -14,8 +14,6 @@ COMMENT=	Enhanced version of VNC
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
-BROKEN_aarch64=	Fails to build: invokes x86 asm
-BROKEN_riscv64=	Fails to build: invokes x86 asm
 
 RUN_DEPENDS=	showrgb:x11/rgb \
 		xauth:x11/xauth \
@@ -32,6 +30,7 @@ WRKSRC=		${WRKDIR}/vnc_unixsrc
 SHEBANG_FILES=	vncserver
 CFLAGS+=	-Wno-return-type
 ALL_TARGET=	World
+MAKE_ARGS=	CC=${CC}
 
 OPTIONS_DEFINE=	JVNC_VIEWER
 OPTIONS_SUB=	yes
@@ -44,6 +43,10 @@ PREFIX=${TIGHTVNC_BASE}
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*} || ${ARCH} == riscv64
+USE_GCC=	any
+.endif
 
 .if exists(${PREFIX}/share/vnc/classes/index.vnc)
 IGNORE=		vnc has already been installed, please uninstall it first
