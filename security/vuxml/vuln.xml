@@ -78,6 +78,50 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2dc8927b-54e0-11eb-9342-1c697a013f4b">
+    <topic>mantis -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mantis-php72</name>
+	<name>mantis-php73</name>
+	<name>mantis-php74</name>
+	<name>mantis-php80</name>
+	<range><lt>2.24.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mantis 2.24.4 release reports:</p>
+	<blockquote cite="https://mantisbt.org/bugs/changelog_page.php?project=mantisbt&amp;version=2.24.4">
+	  <p>Security and maintenance release, addressing 6 CVEs:</p>
+	  <ul>
+	    <li>0027726: CVE-2020-29603: disclosure of private project name</li>
+	    <li>0027727: CVE-2020-29605: disclosure of private issue summary</li>
+	    <li>0027728: CVE-2020-29604: full disclosure of private issue contents, including bugnotes and attachments</li>
+	    <li>0027361: Private category can be access/used by a non member of a private project (IDOR)</li>
+	    <li>0027779: CVE-2020-35571: XSS in helper_ensure_confirmed() calls</li>
+	    <li>0026794: User Account - Takeover</li>
+	    <li>0027363: Fixed in version can be changed to a version that doesn't exist</li>
+	    <li>0027350: When updating an issue, a Viewer user can be set as Reporter</li>
+	    <li>0027370: CVE-2020-35849: Revisions allow viewing private bugnotes id and summary</li>
+	    <li>0027495: CVE-2020-28413: SQL injection in the parameter "access" on the mc_project_get_users function throught the API SOAP.</li>
+	    <li>0027444: Printing unsanitized user input in install.php</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-28413</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28413</url>
+      <cvename>CVE-2020-35849</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35849</url>
+    </references>
+    <dates>
+      <discovery>2020-11-10</discovery>
+      <entry>2021-03-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2f3cd69e-7dee-11eb-b92e-0022489ad614">
     <topic>Node.js -- February 2021 Security Releases</topic>
     <affects>
