@@ -2,21 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	bcg729
-PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	audio
-MASTER_SITES=	https://linphone.org/releases/sources/bcg729/
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Software G729A encoder and decoder library written in C
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cmake
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DENABLE_STATIC=NO
+
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.linphone.org
+GL_ACCOUNT=	BC/public
+GL_COMMIT=	faaa895862165acde6df8add722ba4f85a25007d
 
 post-configure:
 	${SED} 's|@prefix@|${PREFIX}|g ; s|@exec_prefix@|$${prefix}|g ; \
