@@ -1,10 +1,10 @@
 TIMESTAMP = 1605336590
-SHA256 (mantisbt-2.24.3.tar.gz) = 97220d47d2b3a30eb70828a9d2c47565799b6b701c34f87be00dc86d747a864d
-SIZE (mantisbt-2.24.3.tar.gz) = 14399107
+SHA256 (mantisbt-2.24.4.tar.gz) = c1b483c8395a0fb1249bcc50ada203db584d819f4f6f606b1d1eec42c5205cb8
+SIZE (mantisbt-2.24.4.tar.gz) = 14400419
 SHA256 (mantisbt-plugins-Activity-99cf873396ebc3fec431c6746dae1a604768f322_GH0.tar.gz) = 7c9a2d08d98854c40e53ec5ae90aa84ea3849843e5dec8fceefd4cbfba6d4c88
 SIZE (mantisbt-plugins-Activity-99cf873396ebc3fec431c6746dae1a604768f322_GH0.tar.gz) = 42861
-SHA256 (mantisbt-plugins-Announce-v2.4.1_GH0.tar.gz) = b87b233afc70d61b4b6c1fdc574cbbd3f2997efdfd4b5cfde1cfebfb6097dbc3
-SIZE (mantisbt-plugins-Announce-v2.4.1_GH0.tar.gz) = 152618
+SHA256 (mantisbt-plugins-Announce-v2.4.2_GH0.tar.gz) = 8a86bb04a2bae7f9dacfffc7bf434e7ec49216156c48db76835da1cc869cec2e
+SIZE (mantisbt-plugins-Announce-v2.4.2_GH0.tar.gz) = 153807
 SHA256 (mantisbt-plugins-MantisBT-Colorized-f43dc4cc36e8851f8df1797116f904ccf5f1689d_GH0.tar.gz) = d4ca823fdcef233f041a2ab590d7b2c9e7e9209d2f92f07749967b564b128418
 SIZE (mantisbt-plugins-MantisBT-Colorized-f43dc4cc36e8851f8df1797116f904ccf5f1689d_GH0.tar.gz) = 260775
 SHA256 (mantisbt-plugins-CustomReporter-v2.0.0_GH0.tar.gz) = 91c97236e56899a79bcc84f7f0f1ab7f9e1176c8687cefbf3c9cc31a6e1d7022
@@ -27,8 +27,8 @@ SHA256 (mantisbt-plugins-piwik-a2dba46836bdc07a80b8040e889ba0606f97415e_GH0.tar.
 SIZE (mantisbt-plugins-piwik-a2dba46836bdc07a80b8040e889ba0606f97415e_GH0.tar.gz) = 2898
 SHA256 (mantisbt-plugins-SampleAuth-34856715f49a5c273f33e094c759c0e0b52b3912_GH0.tar.gz) = 0b469ad79ffb792e4fc9cbcc5d48266c686be20de3f0cd6986bf43893deca1c3
 SIZE (mantisbt-plugins-SampleAuth-34856715f49a5c273f33e094c759c0e0b52b3912_GH0.tar.gz) = 197029
-SHA256 (mantisbt-plugins-source-integration-v2.2.0_GH0.tar.gz) = 996b125d38127b1434f503d58fb373e92c2cf6fc4bee4996bc9582113e493a72
-SIZE (mantisbt-plugins-source-integration-v2.2.0_GH0.tar.gz) = 118568
+SHA256 (mantisbt-plugins-source-integration-v2.3.1_GH0.tar.gz) = c3d8a6a1436ac7a98479e0e3229fe6d89047fd84916f4a1d36207a40ce3f6a2d
+SIZE (mantisbt-plugins-source-integration-v2.3.1_GH0.tar.gz) = 118695
 SHA256 (mantisbt-plugins-Slack-9286d2eeeb8a986ed949e378711fef5f0bf182dc_GH0.tar.gz) = 2ee4569c4803ad2b8205fd5bbf9d347dbf4952b79e073381afea2e03f78f950c
 SIZE (mantisbt-plugins-Slack-9286d2eeeb8a986ed949e378711fef5f0bf182dc_GH0.tar.gz) = 115058
 SHA256 (mantisbt-plugins-Snippets-v2.2.5_GH0.tar.gz) = 7efa4d1635789fde24d1aa5385f0fee100578c5c1f730c6fcf9228304b059aa0
