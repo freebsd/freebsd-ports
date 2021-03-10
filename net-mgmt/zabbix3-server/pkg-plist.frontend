@@ -646,6 +646,9 @@
 %%WWWDIR%%/local/README
 %%WWWDIR%%/locale/README
 %%WWWDIR%%/locale/add_new_language.sh
+%%WWWDIR%%/locale/ca/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/he/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/nb/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/cs/LC_MESSAGES/frontend.mo
