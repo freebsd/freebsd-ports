@@ -16,6 +16,9 @@ USES=		uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrs-allbsd
 
+# XXX Static libraries with PIE are currently unsupported.
+MAKE_ARGS+=	WITHOUT_PIE=true
+
 PLIST_FILES=	bin/sup bin/supfilesrv bin/supscan \
 		man/man1/sup.1.gz man/man8/supfilesrv.8.gz \
 		man/man8/supscan.8.gz man/man8/supservers.8.gz
