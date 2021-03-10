@@ -12,7 +12,7 @@ COMMENT=	Profile hidden Markov models for biological sequence analysis
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le powerpcspe
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64
 ONLY_FOR_ARCHS_REASON=	requires SSE2 or AltiVec instructions
 
 USES=		compiler:c11 gmake perl5 python:3.5+,test shebangfix
