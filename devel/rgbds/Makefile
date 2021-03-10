@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		bison dos2unix pkgconfig
+USES=		bison compiler:c11 dos2unix pkgconfig
 WRKSRC=		${WRKDIR}/rgbds
 
 .include <bsd.port.mk>
