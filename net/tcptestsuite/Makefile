@@ -2,6 +2,7 @@
 
 PORTNAME=	tcptestsuite
 DISTVERSION=	g20210304
+PORTEPOCH=	1
 CATEGORIES=	net
 
 MAINTAINER=	gnn@FreeBSD.org
@@ -19,12 +20,14 @@ GH_TAGNAME=	d8ab9af
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+_TEST_DIR=	${STAGEDIR}${PREFIX}/tests/${PORTNAME}
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/run-all-tests ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${PREFIX}/tests/tcptestsuite
 	(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} "fast-open snd-syn socket-api rcv-data-segments rcv-icmp snippets state-event-engine" ${STAGEDIR}${DATADIR})
-	${INSTALL_SCRIPT} ${FILESDIR}/tcptestsuite_atf_test ${STAGEDIR}${PREFIX}/tests/
-	${INSTALL_DATA} ${FILESDIR}/Kyuafile ${STAGEDIR}${PREFIX}/tests/
+	${MKDIR} ${_TEST_DIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/tcptestsuite_atf_test ${_TEST_DIR}
+	${INSTALL_DATA} ${FILESDIR}/Kyuafile ${_TEST_DIR}
 
 .include <bsd.port.mk>
