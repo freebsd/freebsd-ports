@@ -11,7 +11,17 @@
  
  ifeq ($(COMPILE_PLATFORM),mingw32)
    ifeq ($(COMPILE_ARCH),i386)
-@@ -187,6 +187,8 @@ ifeq ($(shell which pkg-config > /dev/nu
+@@ -70,6 +74,9 @@ endif
+ ifeq ($(COMPILE_ARCH),powerpc64)
+   COMPILE_ARCH=ppc64
+ endif
++ifeq ($(COMPILE_ARCH),powerpc64le)
++  COMPILE_ARCH=ppc64le
++endif
+ 
+ ifndef ARCH
+ ARCH=$(COMPILE_ARCH)
+@@ -187,6 +194,8 @@ ifeq ($(shell which pkg-config > /dev/null; echo $$?),
    # FIXME: introduce CLIENT_CFLAGS
    SDL_CFLAGS=$(shell pkg-config --cflags sdl|sed 's/-Dmain=SDL_main//')
    SDL_LIBS=$(shell pkg-config --libs sdl)
@@ -20,7 +30,7 @@
  endif
  
  # version info
-@@ -521,44 +523,25 @@ else # ifeq mingw32
+@@ -521,45 +530,26 @@ else # ifeq mingw32
  
  ifeq ($(PLATFORM),freebsd)
  
@@ -29,8 +39,26 @@
 -  else #default to i386
 -    ARCH=i386
 -  endif #alpha test
--
--
++   ifndef HOMEPATH
++     HOMEPATH = /.ioquake3
++   endif
++ 
++   ifndef DEFAULT_LIBDIR
++     DEFAULT_LIBDIR = /usr/local/lib/ioquake3
++   endif
++ 
++  # flags
++  BASE_CFLAGS = $(shell env MACHINE_ARCH=$(ARCH) make -f /dev/null -VCFLAGS) \
++    -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
++    -DHOMEPATH=\\\"$(HOMEPATH)\\\" \
++    -DDEFAULT_LIBDIR=\\\"$(DEFAULT_LIBDIR)\\\" \
++    -DUSE_ICON -DMAP_ANONYMOUS=MAP_ANON
++  CLIENT_CFLAGS += $(SDL_CFLAGS)
++  HAVE_VM_COMPILED = true
+ 
++  OPTIMIZEVM = -O3 -funroll-loops -fomit-frame-pointer
++  OPTIMIZE = $(OPTIMIZEVM) -ffast-math
+ 
 -  BASE_CFLAGS = -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
 -    -DUSE_ICON $(shell sdl-config --cflags)
 -
@@ -60,38 +88,21 @@
 -    BASE_CFLAGS += -DNO_VM_COMPILED
 -  endif
 -  endif
-+   ifndef HOMEPATH
-+     HOMEPATH = /.ioquake3
-+   endif
-+ 
-+   ifndef DEFAULT_LIBDIR
-+     DEFAULT_LIBDIR = /usr/local/lib/ioquake3
-+   endif
-+ 
-+  # flags
-+  BASE_CFLAGS = $(shell env MACHINE_ARCH=$(ARCH) make -f /dev/null -VCFLAGS) \
-+    -Wall -fno-strict-aliasing -Wimplicit -Wstrict-prototypes \
-+    -DHOMEPATH=\\\"$(HOMEPATH)\\\" \
-+    -DDEFAULT_LIBDIR=\\\"$(DEFAULT_LIBDIR)\\\" \
-+    -DUSE_ICON -DMAP_ANONYMOUS=MAP_ANON
-+  CLIENT_CFLAGS += $(SDL_CFLAGS)
-+  HAVE_VM_COMPILED = true
- 
+-
 -  DEBUG_CFLAGS=$(BASE_CFLAGS) -g
-+  OPTIMIZEVM = -O3 -funroll-loops -fomit-frame-pointer
-+  OPTIMIZE = $(OPTIMIZEVM) -ffast-math
- 
+-
    SHLIBEXT=so
    SHLIBCFLAGS=-fPIC
-@@ -568,20 +551,52 @@ ifeq ($(PLATFORM),freebsd)
+   SHLIBLDFLAGS=-shared $(LDFLAGS)
+@@ -568,20 +558,52 @@ ifeq ($(PLATFORM),freebsd)
    # don't need -ldl (FreeBSD)
    LIBS=-lm
  
 -  CLIENT_LIBS =
--
--  CLIENT_LIBS += $(shell sdl-config --libs) -lGL
 +  CLIENT_LIBS = $(SDL_LIBS) -lGL
  
+-  CLIENT_LIBS += $(shell sdl-config --libs) -lGL
+-
 +  # optional features/libraries
    ifeq ($(USE_OPENAL),1)
 -    ifneq ($(USE_OPENAL_DLOPEN),1)
@@ -100,17 +111,17 @@
 +    CLIENT_CFLAGS += -DUSE_OPENAL
 +    ifneq ($(USE_LOCAL_HEADERS),1)
 +      CLIENT_CFLAGS += $(OPENAL_CFLAGS)
-+    endif
-+  endif
-+
+     endif
+   endif
+ 
 +  ifeq ($(USE_CURL),1)
 +    CLIENT_LIBS += $(CURL_LIBS)
 +    CLIENT_CFLAGS += -DUSE_CURL
 +    ifneq ($(USE_LOCAL_HEADERS),1)
 +      CLIENT_CFLAGS += $(CURL_CFLAGS)
-     endif
-   endif
- 
++    endif
++  endif
++
    ifeq ($(USE_CODEC_VORBIS),1)
 -    CLIENT_LIBS += -lvorbisfile -lvorbis -logg
 +    CLIENT_LIBS += $(VORBIS_LIBS)
@@ -142,7 +153,7 @@
  else # ifeq freebsd
  
  #############################################################################
-@@ -831,7 +846,7 @@ endif
+@@ -831,7 +853,7 @@ endif
  ifeq ($(USE_VOIP),1)
    BASE_CFLAGS += -DUSE_VOIP
    ifeq ($(USE_INTERNAL_SPEEX),1)
@@ -151,7 +162,7 @@
    else
      CLIENT_LIBS += -lspeex
    endif
-@@ -1442,12 +1461,18 @@
+@@ -1442,12 +1464,18 @@ ifeq ($(HAVE_VM_COMPILED),true)
    ifeq ($(ARCH),x86_64)
      Q3OBJ += $(B)/client/vm_x86_64.o $(B)/client/vm_x86_64_assembler.o
    endif
@@ -170,7 +181,7 @@
    ifeq ($(ARCH),sparc)
      Q3OBJ += $(B)/client/vm_sparc.o
    endif
-@@ -1591,10 +1616,16 @@
+@@ -1591,10 +1619,16 @@ ifeq ($(HAVE_VM_COMPILED),true)
    ifeq ($(ARCH),x86_64)
      Q3DOBJ += $(B)/ded/vm_x86_64.o $(B)/ded/vm_x86_64_assembler.o
    endif
@@ -181,9 +192,9 @@
      Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
    endif
    ifeq ($(ARCH),ppc64)
-     Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
-   endif
-+  ifeq ($(ARCH),ppc64le)
 +    Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
 +  endif
++  ifeq ($(ARCH),ppc64le)
+     Q3DOBJ += $(B)/ded/vm_powerpc.o $(B)/ded/vm_powerpc_asm.o
+   endif
    ifeq ($(ARCH),sparc)
