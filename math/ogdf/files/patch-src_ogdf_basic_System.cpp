@@ -1,6 +1,6 @@
---- src/ogdf/basic/System.cpp.orig	2015-05-29 15:36:49 UTC
+--- src/ogdf/basic/System.cpp.orig	2020-02-09 22:05:19 UTC
 +++ src/ogdf/basic/System.cpp
-@@ -52,6 +52,13 @@
+@@ -56,6 +56,13 @@
  #include <mach/vm_statistics.h>
  #include <mach/mach.h>
  #include <mach/machine.h>
@@ -14,7 +14,25 @@
  #elif defined(OGDF_SYSTEM_UNIX)
  #include <malloc.h>
  #endif
-@@ -308,6 +315,40 @@ size_t System::memoryUsedByProcess()
+@@ -67,7 +74,7 @@
+ # include <fcntl.h>
+ # include <sys/time.h>
+ #endif
+-#ifdef __GNUC__
++#if defined(__GNUC__) && (defined(__amd64__) || defined(__i386__))
+ # include <cpuid.h>
+ #endif
+ 
+@@ -81,7 +88,7 @@ static inline void cpuid(int CPUInfo[4], int infoType)
+ 	uint32_t c = 0;
+ 	uint32_t d = 0;
+ 
+-# ifdef __GNUC__
++#if defined(__GNUC__) && (defined(__amd64__) || defined(__i386__))
+ 	__get_cpuid(infoType, &a, &b, &c, &d);
+ # endif
+ 
+@@ -289,6 +296,40 @@ size_t System::memoryUsedByProcess()
  	return 0;
  }
  
@@ -55,9 +73,9 @@
  #else
  // LINUX, NOT MAC OS
  long long System::physicalMemory()
-@@ -389,6 +430,19 @@ size_t System::memoryInFreelistOfMalloc(
+@@ -370,6 +411,19 @@ size_t System::memoryInFreelistOfMalloc()
  {
- 	return mstats().chunks_free;
+ 	return mstats().bytes_free;
  }
 +
 +#elif defined(OGDF_SYSTEM_FREEBSD)
