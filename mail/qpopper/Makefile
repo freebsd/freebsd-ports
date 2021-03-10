@@ -10,11 +10,8 @@ MASTER_SITES=	http://core.ring.gr.jp/archives/net/mail/qpopper/ \
 		LOCAL/eugen
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eugen@FreeBSD.org
 COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
-
-DEPRECATED=	Unmaintained and dead upstream
-EXPIRATION_DATE=2021-05-10
 
 # BSD-style license
 LICENSE=	QUALCOMM
