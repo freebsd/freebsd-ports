@@ -2,7 +2,7 @@
 
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.26.2
+DISTVERSION=	4.27.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,10 +18,9 @@ GH_TUPLE=	\
 		DATA-DOG:go-sqlmock:v1.5.0:data_dog_go_sqlmock/vendor/github.com/DATA-DOG/go-sqlmock \
 		Gurpartap:logrus-stack:89c00d8a28f4:gurpartap_logrus_stack/vendor/github.com/Gurpartap/logrus-stack \
 		Workiva:go-datastructures:v1.0.52:workiva_go_datastructures/vendor/github.com/Workiva/go-datastructures \
-		aletheia-icu:broccoli:c5ac961a357a:aletheia_icu_broccoli_fs/vendor/aletheia.icu/broccoli \
-		andybalholm:brotli:v1.0.0:andybalholm_brotli/vendor/github.com/andybalholm/brotli \
+		andybalholm:brotli:v1.0.1:andybalholm_brotli/vendor/github.com/andybalholm/brotli \
 		asaskevich:govalidator:7a23bdc65eef:asaskevich_govalidator/vendor/github.com/asaskevich/govalidator \
-		authelia:session:v2.3.0:authelia_session_v2/vendor/github.com/authelia/session/v2 \
+		authelia:session:v2.5.7:authelia_session_v2/vendor/github.com/authelia/session/v2 \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		boombuler:barcode:6c824513bacc:boombuler_barcode/vendor/github.com/boombuler/barcode \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
@@ -31,18 +30,18 @@ GH_TUPLE=	\
 		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		duosecurity:duo_api_golang:0e07e9f869e3:duosecurity_duo_api_golang/vendor/github.com/duosecurity/duo_api_golang \
 		facebookgo:stack:751773369052:facebookgo_stack/vendor/github.com/facebookgo/stack \
-		fasthttp:router:v1.3.5:fasthttp_router/vendor/github.com/fasthttp/router \
+		fasthttp:router:v1.3.9:fasthttp_router/vendor/github.com/fasthttp/router \
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-asn1-ber:asn1-ber:v1.5.1:go_asn1_ber_asn1_ber/vendor/github.com/go-asn1-ber/asn1-ber \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-ldap:ldap:v3.2.4:go_ldap_ldap_v3/vendor/github.com/go-ldap/ldap \
-		go-redis:redis:v8.4.2:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
+		go-redis:redis:v8.3.4:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:mock:v1.4.4:golang_mock/vendor/github.com/golang/mock \
-		golang:sys:fdedc70b468f:golang_sys/vendor/golang.org/x/sys \
+		golang:crypto:5ea612d1eb83:golang_crypto/vendor/golang.org/x/crypto \
+		golang:mock:v1.5.0:golang_mock/vendor/github.com/golang/mock \
+		golang:sys:a50acf3fe073:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
@@ -55,24 +54,23 @@ GH_TUPLE=	\
 		jackc:pgservicefile:2b9c44734f2b:jackc_pgservicefile/vendor/github.com/jackc/pgservicefile \
 		jackc:pgtype:v1.6.2:jackc_pgtype/vendor/github.com/jackc/pgtype \
 		jackc:pgx:v4.10.1:jackc_pgx_v4/vendor/github.com/jackc/pgx/v4 \
-		klauspost:compress:v1.10.7:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.11.8:klauspost_compress/vendor/github.com/klauspost/compress \
 		magiconair:properties:v1.8.1:magiconair_properties/vendor/github.com/magiconair/properties \
-		mattn:go-sqlite3:v2.0.3:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		mattn:go-sqlite3:v1.14.6:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		mitchellh:mapstructure:v1.1.2:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
-		open-telemetry:opentelemetry-go:v0.14.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
-		otiai10:copy:v1.4.2:otiai10_copy/vendor/github.com/otiai10/copy \
+		open-telemetry:opentelemetry-go:v0.13.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
+		otiai10:copy:v1.5.0:otiai10_copy/vendor/github.com/otiai10/copy \
 		pelletier:go-toml:v1.4.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		philhofer:fwd:v1.1.1:philhofer_fwd/vendor/github.com/philhofer/fwd \
-		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.3.0:pquerna_otp/vendor/github.com/pquerna/otp \
-		savsgio:dictpool:d4adfdb24374:savsgio_dictpool/vendor/github.com/savsgio/dictpool \
-		savsgio:gotils:0567298fdcac:savsgio_gotils/vendor/github.com/savsgio/gotils \
+		savsgio:dictpool:85d3b37fb239:savsgio_dictpool/vendor/github.com/savsgio/dictpool \
+		savsgio:gotils:595c7e5a8a7a:savsgio_gotils/vendor/github.com/savsgio/gotils \
 		simia-tech:crypt:v0.4.3:simia_tech_crypt/vendor/github.com/simia-tech/crypt \
-		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.3.0:spf13_cast/vendor/github.com/spf13/cast \
-		spf13:cobra:v1.1.1:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.1.3:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
@@ -82,7 +80,7 @@ GH_TUPLE=	\
 		tinylib:msgp:v1.1.5:tinylib_msgp/vendor/github.com/tinylib/msgp \
 		tstranex:u2f:v1.0.0:tstranex_u2f/vendor/github.com/tstranex/u2f \
 		valyala:bytebufferpool:v1.0.0:valyala_bytebufferpool/vendor/github.com/valyala/bytebufferpool \
-		valyala:fasthttp:v1.19.0:valyala_fasthttp/vendor/github.com/valyala/fasthttp
+		valyala:fasthttp:v1.22.0:valyala_fasthttp/vendor/github.com/valyala/fasthttp
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
