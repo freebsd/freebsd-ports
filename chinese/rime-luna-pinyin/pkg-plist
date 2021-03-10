@@ -4,8 +4,6 @@ share/rime-data/build/luna_pinyin.reverse.bin
 share/rime-data/build/luna_pinyin.schema.yaml
 share/rime-data/build/luna_pinyin.table.bin
 share/rime-data/build/luna_pinyin.table.txt
-share/rime-data/build/luna_pinyin_fluency.prism.bin
-share/rime-data/build/luna_pinyin_fluency.prism.txt
 share/rime-data/build/luna_pinyin_fluency.schema.yaml
 share/rime-data/build/luna_pinyin_simp.prism.bin
 share/rime-data/build/luna_pinyin_simp.prism.txt
@@ -22,3 +20,4 @@ share/rime-data/luna_pinyin_fluency.schema.yaml
 share/rime-data/luna_pinyin_simp.schema.yaml
 share/rime-data/luna_pinyin_tw.schema.yaml
 share/rime-data/luna_quanpin.schema.yaml
+share/rime-data/pinyin.yaml
