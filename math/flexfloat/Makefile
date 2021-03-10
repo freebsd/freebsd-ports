@@ -17,6 +17,7 @@ GH_TAGNAME=	6db869087a12d763a94d53e9b0a9d52def270865
 USE_LDCONFIG=	yes
 USE_GCC=	yes # clang doesn't support __float128
 
+CFLAGS_powerpc64le=	-mfloat128
 CFLAGS_powerpc64=	-mfloat128 -mvsx
 CFLAGS_powerpc=	-mfloat128 -mvsx
 CMAKE_OFF=	BUILD_TESTS BUILD_EXAMPLES
