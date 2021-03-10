@@ -1,4 +1,8 @@
 lib/xfce4/panel/plugins/libsystemload.so
+share/icons/hicolor/128x128/apps/org.xfce.panel.systemload.png
+share/icons/hicolor/16x16/apps/org.xfce.panel.systemload.png
+share/icons/hicolor/32x32/apps/org.xfce.panel.systemload.png
+share/icons/hicolor/scalable/apps/org.xfce.panel.systemload.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-systemload-plugin.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-systemload-plugin.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfce4-systemload-plugin.mo
