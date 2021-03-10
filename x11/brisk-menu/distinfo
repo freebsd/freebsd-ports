@@ -1,3 +1,5 @@
-TIMESTAMP = 1587685268
-SHA256 (getsolus-brisk-menu-v0.6.0_GH0.tar.gz) = b04ae280f1b77663f05572e47bc8591f28511d9d8976b6ee399e8183e258aa98
-SIZE (getsolus-brisk-menu-v0.6.0_GH0.tar.gz) = 89637
+TIMESTAMP = 1615363975
+SHA256 (getsolus-brisk-menu-v0.6.2_GH0.tar.gz) = 660008746dadd0753f1a9838622188491cfada419932674ebd5d18a4cfd42f60
+SIZE (getsolus-brisk-menu-v0.6.2_GH0.tar.gz) = 80091
+SHA256 (getsolus-brisk-menu-translations-e1b55e3_GH0.tar.gz) = a72c2292fbe1297cb7b6780ac1d913ce7bd4d64191025c31248958d31150a9a3
+SIZE (getsolus-brisk-menu-translations-e1b55e3_GH0.tar.gz) = 25685
