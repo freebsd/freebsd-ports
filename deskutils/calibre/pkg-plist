@@ -1160,6 +1160,7 @@ lib/calibre/calibre/plugins/_patiencediff_c.so
 lib/calibre/calibre/plugins/bzzdec.so
 lib/calibre/calibre/plugins/cPalmdoc.so
 lib/calibre/calibre/plugins/certgen.so
+lib/calibre/calibre/plugins/fast_css_transform.so
 lib/calibre/calibre/plugins/freetype.so
 lib/calibre/calibre/plugins/html_as_json.so
 lib/calibre/calibre/plugins/html_syntax_highlighter.so
@@ -1425,6 +1426,13 @@ lib/calibre/polyglot/reprlib.py
 lib/calibre/polyglot/smtplib.py
 lib/calibre/polyglot/socketserver.py
 lib/calibre/polyglot/urllib.py
+lib/calibre/qt/__init__.py
+lib/calibre/qt/__main__.py
+lib/calibre/qt/core.py
+lib/calibre/qt/core_name_map.py
+lib/calibre/qt/loader.py
+lib/calibre/qt/webengine.py
+lib/calibre/qt/webengine_name_map.py
 lib/calibre/sgmllib.py
 lib/calibre/templite/__init__.py
 lib/calibre/tinycss/__init__.py

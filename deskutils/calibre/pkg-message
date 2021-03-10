@@ -1,34 +1,8 @@
 [
 { type: install
   message: <<EOM
-NOTE: Calibre requires Hal to be running for access to devices.  The user who
-is running Calibre also needs to be able to mount devices.  For non-root users,
-this means modifying %%PREFIX%%/etc/PolicyKit/PolicyKit.conf and adding the
-policy there.
-
-To allow a single user named "example" to mount removable devices, add the
-following:
-
-  <match action="org.freedesktop.hal.storage.mount-removable">
-    <match user="example">
-      <return result="yes" />
-    </match>
-  </match>
-
-Additional users will each need their own <match user="user"> block with a
-"yes" return result.
-
-To permit all accounts to mount removable devices (allowing a denial of access
-attack) add the following:
-
-  <match action="org.freedesktop.hal.storage.mount-removable">
-    <return result="yes" />
-  </match>
-
----
-
-In addition to the above, for USB and MTP devices the user needs
-to be able to access the device node in /dev.
+To talk to USB and MTP devices the user needs to be able to access
+the device node in /dev.
 
 to be aware of USB devices attached to the machine, the user needs
 to be a member of the operator group:
