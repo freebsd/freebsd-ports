@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rime-wubi
-DISTVERSION=	g20190908
+DISTVERSION=	g20200908
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	khng300@gmail.com
