@@ -168,7 +168,7 @@ cabal-post-extract:
 		mv ${package:C/_[0-9]+//} ${WRKSRC}/
 .    endfor
 	mkdir -p ${CABAL_HOME}/.cabal
-	touch ${CABAL_HOME}/.cabal/config
+	echo "jobs: ${MAKE_JOBS_NUMBER}" > ${CABAL_HOME}/.cabal/config
 
 cabal-post-patch:
 .    if ${cabal_ARGS:Mhpack}
