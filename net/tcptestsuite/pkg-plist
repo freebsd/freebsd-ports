@@ -1,4 +1,7 @@
 bin/run-all-tests
+tests/Kyuafile
+tests/tcptestsuite_atf_test
+@dir tests/tcptestsuite
 %%DATADIR%%/fast-open/README.md
 %%DATADIR%%/fast-open/client/all-fast-open-client-tests
 %%DATADIR%%/fast-open/client/client-handle-cookie-reject-of-length-01.pkt

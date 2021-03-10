@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	tcptestsuite
-PORTVERSION=	0.0.4
+DISTVERSION=	g20210304
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	Network stack test suite
 
 LICENSE=	BSD2CLAUSE
@@ -21,7 +21,10 @@ NO_BUILD=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/run-all-tests ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/tests/tcptestsuite
 	(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} "fast-open snd-syn socket-api rcv-data-segments rcv-icmp snippets state-event-engine" ${STAGEDIR}${DATADIR})
+	${INSTALL_SCRIPT} ${FILESDIR}/tcptestsuite_atf_test ${STAGEDIR}${PREFIX}/tests/
+	${INSTALL_DATA} ${FILESDIR}/Kyuafile ${STAGEDIR}${PREFIX}/tests/
 
 .include <bsd.port.mk>
