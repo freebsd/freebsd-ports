@@ -1,5 +1,5 @@
---- obstack.c.orig	2020-04-05 14:12:16.123238000 -0400
-+++ obstack.c	2020-04-05 14:12:16.161009000 -0400
+--- obstack.c.orig	2021-03-09 22:36:58 UTC
++++ obstack.c
 @@ -0,0 +1,511 @@
 +/* obstack.c - subroutines used implicitly by object stack macros
 +   Copyright (C) 1988,89,90,91,92,93,94,96,97 Free Software Foundation, Inc.

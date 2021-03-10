@@ -1,5 +1,5 @@
---- dwz.c.orig	2019-10-02 10:26:03.015230341 -0400
-+++ dwz.c	2020-04-05 14:12:16.054408000 -0400
+--- dwz.c.orig	2021-03-09 22:33:26 UTC
++++ dwz.c
 @@ -20,11 +20,11 @@
  
  #include <assert.h>
@@ -13,18 +13,18 @@
  #include <stdbool.h>
  #include <stddef.h>
  #include <stdint.h>
-@@ -34,7 +34,7 @@
- #include <sys/stat.h>
+@@ -36,7 +36,7 @@
  #include <sys/types.h>
+ #include <sys/times.h>
  
 -#include <obstack.h>
 +#include "obstack.h"
  
  #include <gelf.h>
  #include "dwarf2.h"
-@@ -136,6 +136,29 @@ dwz_oom (void)
-   longjmp (oom_buf, 1);
- }
+@@ -165,6 +165,29 @@ report_progress (void)
+ /* Where to longjmp on OOM.  */
+ static jmp_buf oom_buf;
  
 +/* error () wrapper based on the Linux manual page at
 +   http://man7.org/linux/man-pages/man3/error.3.html.  */
@@ -49,10 +49,10 @@
 +    exit (status);
 +}
 +
- /* General obstack for struct dw_cu, dw_die, also used for temporary
-    vectors.  */
- static struct obstack ob;
-@@ -10300,7 +10323,7 @@ fdopen_dso (int fd, const char *name)
+ /* Handle OOM situation.  If handling more than one file, we might
+    just fail to handle some large file due to OOM, but could very well
+    handle other smaller files after it.  */
+@@ -13723,7 +13746,7 @@ fdopen_dso (int fd, const char *name)
    int i;
    DSO *dso = NULL;
  
@@ -61,7 +61,7 @@
    if (elf == NULL)
      {
        error (0, 0, "cannot open ELF file: %s", elf_errmsg (-1));
-@@ -10338,7 +10361,7 @@ fdopen_dso (int fd, const char *name)
+@@ -13761,7 +13784,7 @@ fdopen_dso (int fd, const char *name)
        goto error_out;
      }
  
@@ -70,7 +70,7 @@
  
    memset (dso, 0, sizeof(DSO));
    dso->elf = elf;
-@@ -10829,7 +10852,7 @@ write_dso (DSO *dso, const char *file, struct stat *st
+@@ -14258,7 +14281,7 @@ write_dso (DSO *dso, const char *file, struct stat *st
        free (shstrtab);
        return 1;
      }
@@ -79,7 +79,7 @@
    for (i = 0; i < ehdr.e_phnum; ++i)
      {
        GElf_Phdr *phdr, phdr_mem;
-@@ -10902,7 +10925,7 @@ write_dso (DSO *dso, const char *file, struct stat *st
+@@ -14331,7 +14354,7 @@ write_dso (DSO *dso, const char *file, struct stat *st
  	}
      }
  
@@ -88,7 +88,7 @@
      {
        error (0, 0, "%s: elf_update failed", dso->filename);
        unlink (file);
-@@ -12089,7 +12112,7 @@ optimize_multifile (void)
+@@ -15917,7 +15940,7 @@ optimize_multifile (unsigned int *die_count)
        error (0, 0, "Could not create new ELF headers");
        goto fail;
      }
@@ -97,7 +97,7 @@
  
    sha1_init_ctx (&ctx);
    for (i = 0; debug_sections[i].name; i++)
-@@ -12176,7 +12199,7 @@ optimize_multifile (void)
+@@ -16010,7 +16033,7 @@ optimize_multifile (unsigned int *die_count)
    data->d_off = 0;
    data->d_align = 1;
  

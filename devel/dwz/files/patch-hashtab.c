@@ -1,5 +1,5 @@
---- hashtab.c.orig	2019-10-02 10:26:03.003230419 -0400
-+++ hashtab.c	2020-04-05 14:12:16.089254000 -0400
+--- hashtab.c.orig	2021-03-08 07:56:18 UTC
++++ hashtab.c
 @@ -37,8 +37,8 @@ Boston, MA 02110-1301, USA.  */
  #include <stdio.h>
  #include "hashtab.h"
