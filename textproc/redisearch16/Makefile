@@ -1,9 +1,10 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	redisearch
+PORTNAME=	redisearch16
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.6
+DISTVERSION=	1.6.15
+DISTNAME=	RediSearch-${DISTVERSION}
 CATEGORIES=	textproc
 
 MAINTAINER=	osa@FreeBSD.org
@@ -22,9 +23,10 @@ GH_PROJECT=	RediSearch
 
 CMAKE_ARGS=	-DGIT_DESCRIBE_VERSION:STRING=${PKGVERSION}
 
-PLIST_FILES=	lib/redisearch.so
+PLIST_FILES=	lib/redisearch16.so
 
 do-install:
-	${INSTALL_LIB} ${INSTALL_WRKSRC}/redisearch.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${INSTALL_WRKSRC}/redisearch.so \
+		${STAGEDIR}${PREFIX}/lib/redisearch16.so
 
 .include <bsd.port.mk>
