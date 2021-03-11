@@ -6,6 +6,14 @@ share/cmake/Modules/FindPartio.cmake
 share/cmake/Modules/FindSeExpr.cmake
 share/cmake/Modules/FindSeExprEditor.cmake
 share/cmake/Modules/FindXerces.cmake
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/_appleseedpython3.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/logtarget.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/test/runtests.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/test/testbasis.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/test/testdict2dict.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/test/testentitymap.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/test/testentityvector.py
 @cwd %%APPHOME%%
 bin/animatecamera
 bin/appleseed.cli
@@ -106,14 +114,6 @@ icons/rendertab_toggle_pixel_inspector.png
 icons/rendertab_toggle_pixel_inspector_hover.png
 lib/libappleseed.shared.so
 lib/libappleseed.so
-%%PYTHON%%lib/python%%PYTHON_VER%%/appleseed/__init__.py
-%%PYTHON%%lib/python%%PYTHON_VER%%/appleseed/_appleseedpython3.so
-%%PYTHON%%lib/python%%PYTHON_VER%%/appleseed/logtarget.py
-%%PYTHON%%lib/python%%PYTHON_VER%%/appleseed/test/runtests.py
-%%PYTHON%%lib/python%%PYTHON_VER%%/appleseed/test/testbasis.py
-%%PYTHON%%lib/python%%PYTHON_VER%%/appleseed/test/testdict2dict.py
-%%PYTHON%%lib/python%%PYTHON_VER%%/appleseed/test/testentitymap.py
-%%PYTHON%%lib/python%%PYTHON_VER%%/appleseed/test/testentityvector.py
 schemas/project.xsd
 schemas/settings.xsd
 settings/appleseed.cli.xml
