@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	iozone
-DISTVERSION=	3_487
-PORTREVISION=	1
+DISTVERSION=	3_491
+PORTREVISION=	0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -30,6 +30,9 @@ THREADS_DESC=	Enable threading (uses pthreads)
 
 THREADS_LDFLAGS=	-lpthread
 THREADS_CFLAGS_OFF=	-DNO_THREADS
+
+post-extract:
+	@cd ${WRKSRC} && ${GMAKE} clean
 
 post-patch-SSH-on:
 	@${REINPLACE_CMD} -e 's|shell\,\"rsh\"|shell\,\"ssh\"|' \
