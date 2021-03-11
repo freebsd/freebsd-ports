@@ -168,6 +168,7 @@
     SUBDIR += litestream
     SUBDIR += lmdb
     SUBDIR += lua-lsqlite3
+    SUBDIR += lua-pgsql
     SUBDIR += lua-resty-redis
     SUBDIR += lua-xapian
     SUBDIR += luadbi
