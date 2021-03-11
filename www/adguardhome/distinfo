@@ -1,5 +1,5 @@
-TIMESTAMP = 1614207051
-SHA256 (go/www_adguardhome/adguardhome-v0.105.1/v0.105.1.mod) = 4e594a30285860e06696a918f0b21fc3d22bf8b3250538db97b36bf32b40ec99
-SIZE (go/www_adguardhome/adguardhome-v0.105.1/v0.105.1.mod) = 1750
-SHA256 (go/www_adguardhome/adguardhome-v0.105.1/v0.105.1.zip) = d1cfc8d2e3f3d50439c4f8230b3211e837e275dd32a6527d4ca40c09085e977e
-SIZE (go/www_adguardhome/adguardhome-v0.105.1/v0.105.1.zip) = 2153429
+TIMESTAMP = 1615482485
+SHA256 (go/www_adguardhome/adguardhome-v0.105.2/v0.105.2.mod) = 327afecea8c2cb272a04733275b9df5e127fd846a32e48ff40c7cecf83ef84c4
+SIZE (go/www_adguardhome/adguardhome-v0.105.2/v0.105.2.mod) = 1750
+SHA256 (go/www_adguardhome/adguardhome-v0.105.2/v0.105.2.zip) = f72335906f3f55786e228f20fba62c7f3980e1058aeaa7d7b4d01ae0f45e87aa
+SIZE (go/www_adguardhome/adguardhome-v0.105.2/v0.105.2.zip) = 2155046
