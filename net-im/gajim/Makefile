@@ -3,6 +3,7 @@
 
 PORTNAME=	gajim
 DISTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 
@@ -21,6 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}css-parser>0:www/py-css-parser@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${PY_FLAVOR}
+LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
 USES=		cpe dos2unix gettext gnome python:3.7+ xorg
 USE_PYTHON=	autoplist distutils noflavors
