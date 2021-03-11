@@ -1,6 +1,6 @@
-TIMESTAMP = 1615357678
-SHA256 (authelia-authelia-v4.27.0_GH0.tar.gz) = cd11156c5a3383f1475b03a71bbdfdd07b749c9a4591a38d53f1c415aca50cc4
-SIZE (authelia-authelia-v4.27.0_GH0.tar.gz) = 2065059
+TIMESTAMP = 1615482359
+SHA256 (authelia-authelia-v4.27.1_GH0.tar.gz) = ec666bae7d9bdca6d1370b643f01ca3a254d90bd2b5ad969d3ad9158ab7c9e70
+SIZE (authelia-authelia-v4.27.1_GH0.tar.gz) = 2065277
 SHA256 (Azure-go-ntlmssp-66371956d46c_GH0.tar.gz) = 24b46602ef1adae845ec6938550d14ce9a93b4f2171201af0a29da421b611139
 SIZE (Azure-go-ntlmssp-66371956d46c_GH0.tar.gz) = 8131
 SHA256 (DATA-DOG-go-sqlmock-v1.5.0_GH0.tar.gz) = b78616fddfcc76892aecb5344968d7f3843128b70eba6c4752f092dc992c3b98
