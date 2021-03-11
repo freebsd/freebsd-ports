@@ -195,7 +195,7 @@ libexec/heartbeat/findif
 %%MANPAGES%%man/man7/ocf_heartbeat_apache.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_asterisk.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_aws-vpc-move-ip.7.gz
-%%MANPAGES%%man/man7/ocf_heartbeat_aws-vpc-route5%%PYTHON_VER%%.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_aws-vpc-route53.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_awseip.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_awsvip.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_azure-events.7.gz
