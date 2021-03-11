@@ -1,11 +1,13 @@
---- src/OpenDB/CMakeLists.txt.orig	2020-09-14 08:20:09 UTC
+--- src/OpenDB/CMakeLists.txt.orig	2021-03-11 04:01:41 UTC
 +++ src/OpenDB/CMakeLists.txt
-@@ -38,7 +38,7 @@ add_subdirectory(tests/cpp)
+@@ -29,7 +29,9 @@ add_subdirectory(src/zutil)
+ add_subdirectory(src/zlib)
+ add_subdirectory(src/tm)
+ add_subdirectory(src/cdl)
+-add_subdirectory(test/cpp)
++if (FREEBSD_BUILD_TESTS)
++  add_subdirectory(test/cpp)
++endif()
+ ############################################################################
  ################################# SWIG #####################################
  ############################################################################
- 
--find_package(SWIG REQUIRED 3.0)
-+find_package(SWIG REQUIRED)
- 
- include(${SWIG_USE_FILE})
- 

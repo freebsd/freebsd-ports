@@ -1,0 +1,11 @@
+--- src/OpenDB/src/swig/tcl/CMakeLists.txt.orig	2021-03-11 17:45:34 UTC
++++ src/OpenDB/src/swig/tcl/CMakeLists.txt
+@@ -15,7 +15,7 @@ target_link_libraries(opendbtcl
+     PUBLIC
+         opendb
+         utility
+-        tcl
++        tcl${FREEBSD_TCL_VER}
+         cdl
+ 	Boost::boost
+ )

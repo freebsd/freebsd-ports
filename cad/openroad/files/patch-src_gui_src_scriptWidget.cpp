@@ -1,11 +1,11 @@
---- src/gui/src/scriptWidget.cpp.orig	2020-09-14 08:51:25 UTC
+--- src/gui/src/scriptWidget.cpp.orig	2021-03-09 18:14:44 UTC
 +++ src/gui/src/scriptWidget.cpp
-@@ -41,6 +41,8 @@
+@@ -42,6 +42,8 @@
  #include <QTimer>
  #include <QVBoxLayout>
  
 +#include <sys/errno.h> // for EINVAL
 +
  #include "openroad/OpenRoad.hh"
- 
- namespace gui {
+ #include "spdlog/formatter.h"
+ #include "spdlog/sinks/base_sink.h"

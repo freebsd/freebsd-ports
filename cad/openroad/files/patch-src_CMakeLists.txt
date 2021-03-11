@@ -1,20 +1,11 @@
---- src/CMakeLists.txt.orig	2020-09-12 17:40:11 UTC
+--- src/CMakeLists.txt.orig	2021-03-09 18:14:44 UTC
 +++ src/CMakeLists.txt
-@@ -14,7 +14,7 @@
- # along with this program.  If not, see <https://www.gnu.org/licenses/>.
- 
- if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
--  link_libraries(pthread m stdc++ stdc++fs)
-+  link_libraries(pthread m stdc++)
- endif()
- 
- set(OPENSTA_HOME ${PROJECT_SOURCE_DIR}/src/OpenSTA)
-@@ -87,7 +87,7 @@ if (TCL_READLINE_H)
+@@ -57,7 +57,7 @@ if (TCL_READLINE_H)
    message(STATUS "TCL readline header: ${TCL_READLINE_H}")
  endif()
  
--find_package(SWIG REQUIRED 3.0)
+-find_package(SWIG 3.0 REQUIRED)
 +find_package(SWIG REQUIRED)
  include(UseSWIG)
- set(OPENDB_SWIG_WARNINGS "-w509,503,501,472,467,402,401,317,325,378,383,389,365,362,314,258,240,203,201")
  
+ find_package(Boost REQUIRED)

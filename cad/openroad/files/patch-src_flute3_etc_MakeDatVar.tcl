@@ -1,4 +1,4 @@
---- src/flute3/etc/MakeDatVar.tcl.orig	2020-09-14 08:48:52 UTC
+--- src/flute3/etc/MakeDatVar.tcl.orig	2021-03-11 03:51:07 UTC
 +++ src/flute3/etc/MakeDatVar.tcl
 @@ -32,7 +32,7 @@ close $var_stream
  set b64_file "[file rootname $dat_file].b64"
