@@ -34,6 +34,12 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 SUB_FILES=	${PORTNAME}
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386
+LLD_UNSAFE=	yes
+.endif
+
 post-extract:
 	${MV} ${WRKSRC_librw}/* ${WRKSRC}/vendor/librw
 	${MV} ${WRKSRC_ogg}/* ${WRKSRC}/vendor/ogg
