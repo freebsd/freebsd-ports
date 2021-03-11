@@ -129,6 +129,8 @@ lib/webmin/virtual-server/disable_spamd.cgi
 lib/webmin/virtual-server/disconnect-database.pl
 lib/webmin/virtual-server/dkim-lib.pl
 lib/webmin/virtual-server/dkim.cgi
+lib/webmin/virtual-server/dnscloud-lib.pl
+lib/webmin/virtual-server/dnsclouds.cgi
 lib/webmin/virtual-server/domain-template
 lib/webmin/virtual-server/domain_form.cgi
 lib/webmin/virtual-server/domain_setup.cgi
@@ -148,6 +150,7 @@ lib/webmin/virtual-server/edit_bucket.cgi
 lib/webmin/virtual-server/edit_cloud.cgi
 lib/webmin/virtual-server/edit_database.cgi
 lib/webmin/virtual-server/edit_defaults.cgi
+lib/webmin/virtual-server/edit_dnscloud.cgi
 lib/webmin/virtual-server/edit_domain.cgi
 lib/webmin/virtual-server/edit_domdkim.cgi
 lib/webmin/virtual-server/edit_exclude.cgi
@@ -185,7 +188,6 @@ lib/webmin/virtual-server/edit_newuser.cgi
 lib/webmin/virtual-server/edit_newvalidate.cgi
 lib/webmin/virtual-server/edit_pass.cgi
 lib/webmin/virtual-server/edit_phpmode.cgi
-lib/webmin/virtual-server/edit_phpver.cgi
 lib/webmin/virtual-server/edit_plan.cgi
 lib/webmin/virtual-server/edit_plugconfig.cgi
 lib/webmin/virtual-server/edit_postgrey.cgi
@@ -198,6 +200,7 @@ lib/webmin/virtual-server/edit_spf.cgi
 lib/webmin/virtual-server/edit_tmpl.cgi
 lib/webmin/virtual-server/edit_user.cgi
 lib/webmin/virtual-server/edit_vfile.cgi
+lib/webmin/virtual-server/edit_website.cgi
 lib/webmin/virtual-server/enable-domain.pl
 lib/webmin/virtual-server/enable-feature.pl
 lib/webmin/virtual-server/enable-limit.pl
@@ -1563,6 +1566,7 @@ lib/webmin/virtual-server/help/config_allow_upper.ru.auto.html
 lib/webmin/virtual-server/help/config_allow_upper.tr.auto.html
 lib/webmin/virtual-server/help/config_allow_upper.zh.auto.html
 lib/webmin/virtual-server/help/config_allow_upper.zh_TW.auto.html
+lib/webmin/virtual-server/help/config_always_ssl.html
 lib/webmin/virtual-server/help/config_apache_star.cs.auto.html
 lib/webmin/virtual-server/help/config_apache_star.de.auto.html
 lib/webmin/virtual-server/help/config_apache_star.es.auto.html
@@ -1608,6 +1612,7 @@ lib/webmin/virtual-server/help/config_append.ru.auto.html
 lib/webmin/virtual-server/help/config_append.tr.auto.html
 lib/webmin/virtual-server/help/config_append.zh.auto.html
 lib/webmin/virtual-server/help/config_append.zh_TW.auto.html
+lib/webmin/virtual-server/help/config_auto_letsencrypt.html
 lib/webmin/virtual-server/help/config_auto_redirect.cs.auto.html
 lib/webmin/virtual-server/help/config_auto_redirect.de.auto.html
 lib/webmin/virtual-server/help/config_auto_redirect.es.auto.html
@@ -2073,6 +2078,7 @@ lib/webmin/virtual-server/help/config_ca_tmpl.ru.auto.html
 lib/webmin/virtual-server/help/config_ca_tmpl.tr.auto.html
 lib/webmin/virtual-server/help/config_ca_tmpl.zh.auto.html
 lib/webmin/virtual-server/help/config_ca_tmpl.zh_TW.auto.html
+lib/webmin/virtual-server/help/config_can_letsencrypt.html
 lib/webmin/virtual-server/help/config_cert_tmpl.cs.auto.html
 lib/webmin/virtual-server/help/config_cert_tmpl.de.auto.html
 lib/webmin/virtual-server/help/config_cert_tmpl.es.auto.html
@@ -4608,6 +4614,7 @@ lib/webmin/virtual-server/help/config_theme_link.ru.auto.html
 lib/webmin/virtual-server/help/config_theme_link.tr.auto.html
 lib/webmin/virtual-server/help/config_theme_link.zh.auto.html
 lib/webmin/virtual-server/help/config_theme_link.zh_TW.auto.html
+lib/webmin/virtual-server/help/config_tlsa_records.html
 lib/webmin/virtual-server/help/config_trash_folder.cs.auto.html
 lib/webmin/virtual-server/help/config_trash_folder.de.auto.html
 lib/webmin/virtual-server/help/config_trash_folder.es.auto.html
@@ -5193,6 +5200,7 @@ lib/webmin/virtual-server/help/dns.ru.auto.html
 lib/webmin/virtual-server/help/dns.tr.auto.html
 lib/webmin/virtual-server/help/dns.zh.auto.html
 lib/webmin/virtual-server/help/dns.zh_TW.auto.html
+lib/webmin/virtual-server/help/dnsclouds.html
 lib/webmin/virtual-server/help/dnssec.cs.auto.html
 lib/webmin/virtual-server/help/dnssec.de.auto.html
 lib/webmin/virtual-server/help/dnssec.es.auto.html
@@ -6483,6 +6491,36 @@ lib/webmin/virtual-server/help/phpmode_suexec.ru.auto.html
 lib/webmin/virtual-server/help/phpmode_suexec.tr.auto.html
 lib/webmin/virtual-server/help/phpmode_suexec.zh.auto.html
 lib/webmin/virtual-server/help/phpmode_suexec.zh_TW.auto.html
+lib/webmin/virtual-server/help/phpmode_version.cs.auto.html
+lib/webmin/virtual-server/help/phpmode_version.de.auto.html
+lib/webmin/virtual-server/help/phpmode_version.es.auto.html
+lib/webmin/virtual-server/help/phpmode_version.fr.auto.html
+lib/webmin/virtual-server/help/phpmode_version.html
+lib/webmin/virtual-server/help/phpmode_version.it.auto.html
+lib/webmin/virtual-server/help/phpmode_version.ja.auto.html
+lib/webmin/virtual-server/help/phpmode_version.nl.auto.html
+lib/webmin/virtual-server/help/phpmode_version.no.auto.html
+lib/webmin/virtual-server/help/phpmode_version.pl.auto.html
+lib/webmin/virtual-server/help/phpmode_version.pt_BR.auto.html
+lib/webmin/virtual-server/help/phpmode_version.ru.auto.html
+lib/webmin/virtual-server/help/phpmode_version.tr.auto.html
+lib/webmin/virtual-server/help/phpmode_version.zh.auto.html
+lib/webmin/virtual-server/help/phpmode_version.zh_TW.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.cs.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.de.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.es.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.fr.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.html
+lib/webmin/virtual-server/help/phpmode_versions.it.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.ja.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.nl.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.no.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.pl.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.pt_BR.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.ru.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.tr.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.zh.auto.html
+lib/webmin/virtual-server/help/phpmode_versions.zh_TW.auto.html
 lib/webmin/virtual-server/help/phpver.cs.auto.html
 lib/webmin/virtual-server/help/phpver.de.auto.html
 lib/webmin/virtual-server/help/phpver.es.auto.html
@@ -8299,6 +8337,7 @@ lib/webmin/virtual-server/help/template_dns_also.ru.auto.html
 lib/webmin/virtual-server/help/template_dns_also.tr.auto.html
 lib/webmin/virtual-server/help/template_dns_also.zh.auto.html
 lib/webmin/virtual-server/help/template_dns_also.zh_TW.auto.html
+lib/webmin/virtual-server/help/template_dns_cloud.html
 lib/webmin/virtual-server/help/template_dns_dmarc_mode.cs.auto.html
 lib/webmin/virtual-server/help/template_dns_dmarc_mode.de.auto.html
 lib/webmin/virtual-server/help/template_dns_dmarc_mode.es.auto.html
@@ -9866,7 +9905,7 @@ lib/webmin/virtual-server/help/template_uplainpass.fr.auto.html
 lib/webmin/virtual-server/help/template_uplainpass.html
 lib/webmin/virtual-server/help/template_uplainpass.it.auto.html
 lib/webmin/virtual-server/help/template_uplainpass.ja.auto.html
-lib/webmin/virtual-server/help/template_uplainpass.nl.html
+lib/webmin/virtual-server/help/template_uplainpass.nl.auto.html
 lib/webmin/virtual-server/help/template_uplainpass.no.auto.html
 lib/webmin/virtual-server/help/template_uplainpass.pl.auto.html
 lib/webmin/virtual-server/help/template_uplainpass.pt_BR.auto.html
@@ -11313,6 +11352,7 @@ lib/webmin/virtual-server/postgrey-lib.pl
 lib/webmin/virtual-server/postgrey.cgi
 lib/webmin/virtual-server/postinstall.pl
 lib/webmin/virtual-server/postsave.cgi
+lib/webmin/virtual-server/prefs.info
 lib/webmin/virtual-server/procmail-logger.pl
 lib/webmin/virtual-server/procmail-wrapper
 lib/webmin/virtual-server/procmail-wrapper.c
@@ -11328,6 +11368,7 @@ lib/webmin/virtual-server/recovery.cgi
 lib/webmin/virtual-server/redirects-lib.pl
 lib/webmin/virtual-server/reemail.cgi
 lib/webmin/virtual-server/remote.cgi
+lib/webmin/virtual-server/remove_cert.cgi
 lib/webmin/virtual-server/rename-domain.pl
 lib/webmin/virtual-server/rename.cgi
 lib/webmin/virtual-server/rename_form.cgi
@@ -11353,6 +11394,7 @@ lib/webmin/virtual-server/save_dbname.cgi
 lib/webmin/virtual-server/save_dbpass.cgi
 lib/webmin/virtual-server/save_defaults.cgi
 lib/webmin/virtual-server/save_defplan.cgi
+lib/webmin/virtual-server/save_dnscloud.cgi
 lib/webmin/virtual-server/save_domain.cgi
 lib/webmin/virtual-server/save_domdkim.cgi
 lib/webmin/virtual-server/save_exclude.cgi
@@ -11385,7 +11427,6 @@ lib/webmin/virtual-server/save_newuser.cgi
 lib/webmin/virtual-server/save_pass.cgi
 lib/webmin/virtual-server/save_peripcerts.cgi
 lib/webmin/virtual-server/save_phpmode.cgi
-lib/webmin/virtual-server/save_phpver.cgi
 lib/webmin/virtual-server/save_plan.cgi
 lib/webmin/virtual-server/save_plugconfig.cgi
 lib/webmin/virtual-server/save_postgrey.cgi
@@ -11404,6 +11445,7 @@ lib/webmin/virtual-server/save_tmpl.cgi
 lib/webmin/virtual-server/save_user.cgi
 lib/webmin/virtual-server/save_validate.cgi
 lib/webmin/virtual-server/save_vfile.cgi
+lib/webmin/virtual-server/save_website.cgi
 lib/webmin/virtual-server/script_form.cgi
 lib/webmin/virtual-server/script_install.cgi
 lib/webmin/virtual-server/scriptlatest.pl
