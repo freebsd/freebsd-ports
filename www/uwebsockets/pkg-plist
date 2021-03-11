@@ -11,6 +11,7 @@ include/uWebSockets/HttpRouter.h
 include/uWebSockets/Loop.h
 include/uWebSockets/LoopData.h
 include/uWebSockets/MessageParser.h
+include/uWebSockets/MoveOnlyFunction.h
 include/uWebSockets/Multipart.h
 include/uWebSockets/PerMessageDeflate.h
 include/uWebSockets/ProxyParser.h
@@ -24,5 +25,3 @@ include/uWebSockets/WebSocketData.h
 include/uWebSockets/WebSocketExtensions.h
 include/uWebSockets/WebSocketHandshake.h
 include/uWebSockets/WebSocketProtocol.h
-include/uWebSockets/f2/LICENSE.txt
-include/uWebSockets/f2/function2.hpp
