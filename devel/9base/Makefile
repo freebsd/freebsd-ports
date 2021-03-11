@@ -13,7 +13,7 @@ COMMENT=	Port of various original plan9 tools
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		amd64 i386 sparc64
+ONLY_FOR_ARCHS=		amd64 i386 powerpc64le sparc64
 ONLY_FOR_ARCHS_REASON=	has low-level code unavailable for ${ARCH}
 
 USES=		shebangfix
