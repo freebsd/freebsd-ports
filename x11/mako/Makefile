@@ -11,6 +11,7 @@ PATCHFILES+=	affb38d8a4c4.patch:-p1 # https://github.com/emersion/mako/pull/311
 PATCHFILES+=	47a1b0b80ca2.patch:-p1
 PATCHFILES+=	88e0263a8481.patch:-p1 # https://github.com/emersion/mako/pull/324
 PATCHFILES+=	0e9bcb06e0c6.patch:-p1 # https://github.com/emersion/mako/pull/324
+PATCHFILES+=	d46e9fd6ced8.patch:-p1 # https://github.com/emersion/mako/pull/345
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Lightweight Wayland notification daemon
@@ -18,7 +19,8 @@ COMMENT=	Lightweight Wayland notification daemon
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>=1.14:graphics/wayland-protocols
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		wayland-protocols>=1.14:graphics/wayland-protocols
 LIB_DEPENDS=	libbasu.so:devel/basu \
 		libepoll-shim.so:devel/libepoll-shim \
 		libwayland-client.so:graphics/wayland
