@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	4.0.6
+PORTVERSION=	4.1.1
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -10,7 +10,8 @@ COMMENT=	Persistent remote applications for X
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	brotli:archivers/brotli
+BUILD_DEPENDS=	brotli:archivers/brotli \
+		pandoc:textproc/hs-pandoc
 LIB_DEPENDS=	libwebp.so:graphics/webp
 RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}bencode.py>1:converters/py-bencode.py@${PY_FLAVOR} \
@@ -30,7 +31,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		xkbcomp:x11/xkbcomp \
 		Xvfb:x11-servers/xorg-vfbserver
 
-USES=		desktop-file-utils fortran gettext-runtime gnome pkgconfig \
+USES=		desktop-file-utils gettext-runtime gnome pkgconfig \
 		python:3.6+ shared-mime-info shebangfix tar:xz xorg
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30 pygobject3
@@ -39,17 +40,17 @@ USE_XORG=	x11 xcomposite xdamage xext xfixes xi xkbfile xrandr xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER}
-SHEBANG_FILES=	cups/xpraforwarder scripts/auth_dialog scripts/xdg-open \
-		scripts/xpra_udev_product_version scripts/gnome-open \
-		scripts/gvfs-open
+SHEBANG_FILES=	fs/lib/cups/xpraforwarder fs/bin/auth_dialog fs/bin/xdg-open \
+		fs/bin/xpra_udev_product_version fs/bin/gnome-open \
+		fs/bin/gvfs-open
 SHEBANG_LANG=	sh
 sh_OLD_CMD=	/usr/bin/sh
 sh_CMD=		/bin/sh
 MAKE_ENV=	XPRA_USE_PROCESS_POLLING=1
 
-OPTIONS_DEFINE=		AVAHI AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV SWSCALE VPX \
+OPTIONS_DEFINE=		AVAHI AVCODEC CUPS FFMPEG GSTREAMER LIBYUV SWSCALE VPX \
 			WEBCAM X264 X265
-OPTIONS_DEFAULT=	AVAHI AVCODEC CUPS FFMPEG GSTREAMER HTML5 LIBYUV SWSCALE VPX \
+OPTIONS_DEFAULT=	AVAHI AVCODEC CUPS FFMPEG GSTREAMER LIBYUV SWSCALE VPX \
 			X264 X265
 OPTIONS_SUB=		yes
 
@@ -57,7 +58,6 @@ AVCODEC_DESC=	Enable avcodec2 (FFmpeg) decoder
 CUPS_DESC=	Enable CUPS for printer forwarding
 FFMPEG_DESC=	Enable FFmpeg encoder
 GSTREAMER_DESC=	Enable GStreamer for sound forwarding
-HTML5_DESC=	Install HTML5 client interface
 LIBYUV_DESC=	Enable libyuv CSC module (fastest)
 SWSCALE_DESC=	Enable swscale (FFmpeg) CSC module
 VPX_DESC=	Enable VP8 and VP9 codec
@@ -76,7 +76,6 @@ GSTREAMER_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstrea
 				gstreamer1-plugins-pulse>1:audio/gstreamer1-plugins-pulse
 GSTREAMER_USE=			GSTREAMER1=flac,lame,mpg123,ogg,opus,vorbis,wavpack
 GSTREAMER_VARS=			XPRA_OPTIONS+=sound
-HTML5_VARS=			XPRA_OPTIONS+=html5
 LIBYUV_LIB_DEPENDS=		libyuv.so:graphics/libyuv
 LIBYUV_VARS=			XPRA_OPTIONS+=csc_libyuv
 SWSCALE_LIB_DEPENDS=		libswscale.so:multimedia/ffmpeg
@@ -92,9 +91,9 @@ X265_VARS=			XPRA_OPTIONS+=enc_x265
 
 PYDISTUTILS_PKGNAME=	xpra_all
 XPRA_OPTIONS_ALL+=	${XPRA_OPTIONS_DISABLED} csc_libyuv csc_swscale \
-			dec_avcodec2 enc_ffmpeg enc_x264 enc_x265 html5 \
+			dec_avcodec2 enc_ffmpeg enc_x264 enc_x265 \
 			mdns printing sound vpx webcam
-XPRA_OPTIONS_DISABLED=	minify netdev uinput Xdummy Xdummy_wrapper
+XPRA_OPTIONS_DISABLED=	netdev service uinput Xdummy Xdummy_wrapper
 
 .include <bsd.port.options.mk>
 
@@ -117,12 +116,10 @@ PYDISTUTILS_CONFIGUREARGS+=	${PYDISTUTILS_ARGS}
 PYDISTUTILS_INSTALLARGS+=	${PYDISTUTILS_ARGS}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%GCC_RUNTIME%%|${LOCALBASE}/lib/gcc${_GCC_VER}|' \
-	    ${WRKSRC}/scripts/xpra ${WRKSRC}/scripts/xpra_launcher
 	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|' \
 	    ${WRKSRC}/xpra/platform/pycups_printing.py
 	@${REINPLACE_CMD} -e 's|/usr/sbin|${LOCALBASE}/sbin|' \
-	    ${WRKSRC}/etc/xpra/conf.d/16_printing.conf.in
+	    ${WRKSRC}/fs/etc/xpra/conf.d/16_printing.conf.in
 
 post-install:
 	@${MV} ${STAGEDIR}${ETCDIR}/xorg.conf \
