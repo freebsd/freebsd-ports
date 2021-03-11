@@ -119,7 +119,7 @@ ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=On i386, rawtherapee malfunctions under FreeBSD 11.x - upgrade to 12.x
 .endif
 
-.if (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1300000)
+.if (${OPSYS} == FreeBSD) && (${OSVERSION} >= 1400000)
 # don't waste everybody's time with Tier-2 and moving targets.
 # might add ARM64 later on if they are established by the
 # time FreeBSD 13 is out.
