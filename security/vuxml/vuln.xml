@@ -118,7 +118,7 @@ Notes:
     <affects>
       <package>
 	<name>gitea</name>
-	<range><lt>1.13.24</lt></range>
+	<range><lt>1.13.4</lt></range>
       </package>
     </affects>
     <description>
