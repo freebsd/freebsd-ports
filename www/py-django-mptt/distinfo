@@ -1,3 +1,3 @@
-TIMESTAMP = 1586258697
-SHA256 (django-mptt-0.11.0.tar.gz) = dfdb3af75ad27cdd4458b0544ec8574174f2b90f99bc2cafab6a15b4bc1895a8
-SIZE (django-mptt-0.11.0.tar.gz) = 98300
+TIMESTAMP = 1615473716
+SHA256 (django-mptt-0.12.0.tar.gz) = 8ae6c3821127b529bb2f938de27bf0771b1bcbe9dbccdfba33986af78611f13a
+SIZE (django-mptt-0.12.0.tar.gz) = 103513
