@@ -26,10 +26,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 #
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django31>=3.1.3<3.2:www/py-django31@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj31-django-cacheops>=5.1.0<5.2:www/py-dj31-django-cacheops@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj31-django-cors-headers>=3.5.0<3.6:www/py-dj31-django-cors-headers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj31-django-cors-headers>=3.5.0<3.8:www/py-dj31-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj31-django-debug-toolbar>=3.1.1<4:www/py-dj31-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj31-django-filter>=2.4.0<2.5:www/py-dj31-django-filter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj31-django-mptt>=0.11.0<0.12:www/py-dj31-django-mptt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj31-django-mptt>=0.11.0<0.13:www/py-dj31-django-mptt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj31-django-prometheus>=2.1.0<2.2:www/py-dj31-django-prometheus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj31-django-rq>=2.4.0<2.5:devel/py-dj31-django-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj31-django-tables2>=2.3.3<2.4:www/py-dj31-django-tables2@${PY_FLAVOR} \
