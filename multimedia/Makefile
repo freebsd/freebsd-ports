@@ -378,6 +378,7 @@
     SUBDIR += tautulli
     SUBDIR += tcmplex-panteltje
     SUBDIR += termplay
+    SUBDIR += tinyobjloader
     SUBDIR += tivodecode
     SUBDIR += totem
     SUBDIR += totem-pl-parser
