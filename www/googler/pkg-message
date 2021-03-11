@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Googler uses an external program to copy URL to clipboard. Install it
+manually from the following ports or corresponding packages:
+
+	x11/wl-clipboard (Wayland)
+	x11/xclip
+	x11/xsel-conrad
+EOM
+}
+]
+~
