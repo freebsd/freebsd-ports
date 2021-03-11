@@ -159,6 +159,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_content/ical.lua
 %%DATADIR%%/lualib/lua_content/init.lua
 %%DATADIR%%/lualib/lua_content/pdf.lua
+%%DATADIR%%/lualib/lua_content/vcard.lua
 %%DATADIR%%/lualib/lua_dkim_tools.lua
 %%DATADIR%%/lualib/lua_ffi/common.lua
 %%DATADIR%%/lualib/lua_ffi/dkim.lua
@@ -175,6 +176,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_maps_expressions.lua
 %%DATADIR%%/lualib/lua_meta.lua
 %%DATADIR%%/lualib/lua_mime.lua
+%%DATADIR%%/lualib/lua_mime_types.lua
 %%DATADIR%%/lualib/lua_redis.lua
 %%DATADIR%%/lualib/lua_scanners/avast.lua
 %%DATADIR%%/lualib/lua_scanners/clamav.lua
