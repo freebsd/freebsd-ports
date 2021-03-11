@@ -51,7 +51,7 @@ post-install: # unnecessarily installs bundled OpenSTA project: https://github.c
 
 do-test: # some tests are known to fail
 	@${MKDIR} ${WRKSRC}/build/src
-	@[ -e ${WRKSRC}/build/src/openroad ] || ${LN} -s ${SRAGEDIR}${PREFIX}/bin/openroad ${WRKSRC}/build/src/openroad
+	@[ -f ${WRKSRC}/build/src/openroad ] || ${LN} ${STAGEDIR}${PREFIX}/bin/openroad ${WRKSRC}/build/src/openroad
 	@${ECHO} "==> Unit tests"
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} test/regression
 	@${ECHO} "==> Flow tests"
