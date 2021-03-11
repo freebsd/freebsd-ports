@@ -1,17 +1,17 @@
 Try unsynchronized userptr if regular one fails.
 https://github.com/FreeBSDDesktop/kms-drm/issues/197
 
---- src/gallium/drivers/iris/iris_bufmgr.c.orig	2020-11-25 20:08:15 UTC
+--- src/gallium/drivers/iris/iris_bufmgr.c.orig	2021-03-10 22:23:51 UTC
 +++ src/gallium/drivers/iris/iris_bufmgr.c
 @@ -624,8 +624,20 @@ iris_bo_create_userptr(struct iris_bufmgr *bufmgr, con
        .user_ptr = (uintptr_t)ptr,
        .user_size = size,
     };
--   if (gen_ioctl(bufmgr->fd, DRM_IOCTL_I915_GEM_USERPTR, &arg))
+-   if (intel_ioctl(bufmgr->fd, DRM_IOCTL_I915_GEM_USERPTR, &arg))
 +
 +   int ret;
 +retry:
-+   ret = gen_ioctl(bufmgr->fd, DRM_IOCTL_I915_GEM_USERPTR, &arg);
++   ret = intel_ioctl(bufmgr->fd, DRM_IOCTL_I915_GEM_USERPTR, &arg);
 +   if (ret) {
 +      if (errno == ENODEV && arg.flags == 0) {
 +         arg.flags = I915_USERPTR_UNSYNCHRONIZED;
@@ -25,17 +25,17 @@ https://github.com/FreeBSDDesktop/kms-drm/issues/197
     bo->gem_handle = arg.handle;
  
     /* Check the buffer for validity before we try and use it in a batch */
---- src/intel/vulkan/anv_gem.c.orig	2020-11-25 20:08:15 UTC
---- src/intel/vulkan/anv_gem.c
+--- src/intel/vulkan/anv_gem.c.orig	2021-03-10 22:23:51 UTC
++++ src/intel/vulkan/anv_gem.c
 @@ -146,9 +146,19 @@ anv_gem_userptr(struct anv_device *device, void *mem, 
        .flags = 0,
     };
  
--   int ret = gen_ioctl(device->fd, DRM_IOCTL_I915_GEM_USERPTR, &userptr);
+-   int ret = intel_ioctl(device->fd, DRM_IOCTL_I915_GEM_USERPTR, &userptr);
 -   if (ret == -1)
 +   int ret;
 +retry:
-+   ret = gen_ioctl(device->fd, DRM_IOCTL_I915_GEM_USERPTR, &userptr);
++   ret = intel_ioctl(device->fd, DRM_IOCTL_I915_GEM_USERPTR, &userptr);
 +   if (ret == -1) {
 +      if (errno == ENODEV && userptr.flags == 0) {
 +         userptr.flags = I915_USERPTR_UNSYNCHRONIZED;
