@@ -6,5 +6,5 @@ include/gwenhywfar5/gwen-gui-fox16/fox16_htmltext.hpp
 include/gwenhywfar5/gwen-gui-fox16/theme.h
 lib/libgwengui-fox16.so
 lib/libgwengui-fox16.so.%%GWEN_SHLIB_VER%%
-lib/libgwengui-fox16.so.%%GWEN_SHLIB_VER%%.4.1
+lib/libgwengui-fox16.so.%%GWEN_SHLIB_VER%%.6.0
 libdata/pkgconfig/gwengui-fox16.pc

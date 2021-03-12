@@ -1,5 +1,5 @@
 include/gwenhywfar5/gwen-gui-gtk2/gtk2_gui.h
 lib/libgwengui-gtk2.so
 lib/libgwengui-gtk2.so.%%GWEN_SHLIB_VER%%
-lib/libgwengui-gtk2.so.%%GWEN_SHLIB_VER%%.4.1
+lib/libgwengui-gtk2.so.%%GWEN_SHLIB_VER%%.6.0
 libdata/pkgconfig/gwengui-gtk2.pc

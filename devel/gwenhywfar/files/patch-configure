@@ -1,9 +1,9 @@
 Fix dectection of fox libs
 Prevent linking to unneeded Qt5 libraries
 
---- configure.orig	2020-10-11 12:07:56 UTC
+--- configure.orig	2021-02-15 19:34:27 UTC
 +++ configure
-@@ -21622,7 +21622,7 @@ $as_echo_n "checking for fox libraries... " >&6; }
+@@ -22229,7 +22229,7 @@ $as_echo_n "checking for fox libraries... " >&6; }
  
  # Check whether --with-fox-libs was given.
  if test "${with_fox_libs+set}" = set; then :
@@ -12,7 +12,7 @@ Prevent linking to unneeded Qt5 libraries
  else
  
        ac_ext=cpp
-@@ -23218,8 +23218,8 @@ percent.commands = @echo -n "\$(\$(@))\ "
+@@ -23825,8 +23825,8 @@ percent.commands = @echo -n "\$(\$(@))\ "
  QMAKE_EXTRA_TARGETS += percent
  EOF
      $QT_QMAKE $am_have_qt_pro -o $am_have_qt_makefile
@@ -23,7 +23,7 @@ Prevent linking to unneeded Qt5 libraries
      rm $am_have_qt_pro $am_have_qt_makefile
  
      # Look for specific tools in $PATH
-@@ -23243,8 +23243,8 @@ else
+@@ -23850,8 +23850,8 @@ else
  fi
  
  
@@ -34,12 +34,3 @@ Prevent linking to unneeded Qt5 libraries
  
      # Get Qt version from qmake
      QT_DIR=`$QT_QMAKE --version | grep -o -E /.+`
-@@ -27214,7 +27214,7 @@ echo "Data Search Folder            : $gwenhywfar_data
- echo "Locale Search Folder          : $gwenhywfar_locale_searchdir"
- echo "Config Search Folder          : $gwenhywfar_cfg_searchdir"
- echo "Buffer Default Hard Limit     : $gwenhywfar_buffer_hardlimit"
--echo "Symbol Visibility             : $visibility_supported"
-+echo "Symbol Visibility             : $ac_cv_hidden_visibility_attribute"
- echo "OpenSSL Support for gct-tool  : $ssl_available"
- echo "GUI Support                   : $gwenhywfar_guis"
- echo "Use system-wide certificates  : $enable_system_certs"

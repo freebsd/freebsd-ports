@@ -1,5 +1,5 @@
 include/gwenhywfar5/gwen-gui-gtk3/gtk3_gui.h
 lib/libgwengui-gtk3.so
 lib/libgwengui-gtk3.so.%%GWEN_SHLIB_VER%%
-lib/libgwengui-gtk3.so.%%GWEN_SHLIB_VER%%.4.1
+lib/libgwengui-gtk3.so.%%GWEN_SHLIB_VER%%.6.0
 libdata/pkgconfig/gwengui-gtk3.pc

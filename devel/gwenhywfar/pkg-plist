@@ -53,6 +53,7 @@ include/gwenhywfar5/gwenhywfar/gwenhywfar.h
 include/gwenhywfar5/gwenhywfar/gwenhywfarapi.h
 include/gwenhywfar5/gwenhywfar/gwensemaphore.h
 include/gwenhywfar5/gwenhywfar/gwensignal.h
+include/gwenhywfar5/gwenhywfar/gwenthread.h
 include/gwenhywfar5/gwenhywfar/gwentime.h
 include/gwenhywfar5/gwenhywfar/hashalgo.h
 include/gwenhywfar5/gwenhywfar/htmlctx_be.h
@@ -83,6 +84,7 @@ include/gwenhywfar5/gwenhywfar/misc2.h
 include/gwenhywfar5/gwenhywfar/msgengine.h
 include/gwenhywfar5/gwenhywfar/multicache.h
 include/gwenhywfar5/gwenhywfar/mutex.h
+include/gwenhywfar5/gwenhywfar/nogui.h
 include/gwenhywfar5/gwenhywfar/o_image_be.h
 include/gwenhywfar5/gwenhywfar/padd.h
 include/gwenhywfar5/gwenhywfar/paddalgo.h
@@ -117,6 +119,7 @@ include/gwenhywfar5/gwenhywfar/tag16.h
 include/gwenhywfar5/gwenhywfar/testframework.h
 include/gwenhywfar5/gwenhywfar/testmodule.h
 include/gwenhywfar5/gwenhywfar/text.h
+include/gwenhywfar5/gwenhywfar/threadlocaldata.h
 include/gwenhywfar5/gwenhywfar/tlv.h
 include/gwenhywfar5/gwenhywfar/tree.h
 include/gwenhywfar5/gwenhywfar/tree2.h
@@ -157,10 +160,10 @@ lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/xmldb.so.0.0.1
 lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/xmldb.xml
 lib/libgwengui-cpp.so
 lib/libgwengui-cpp.so.%%GWEN_SHLIB_VER%%
-lib/libgwengui-cpp.so.%%GWEN_SHLIB_VER%%.4.1
+lib/libgwengui-cpp.so.%%GWEN_SHLIB_VER%%.6.0
 lib/libgwenhywfar.so
 lib/libgwenhywfar.so.%%GWEN_SHLIB_VER%%
-lib/libgwenhywfar.so.%%GWEN_SHLIB_VER%%.4.1
+lib/libgwenhywfar.so.%%GWEN_SHLIB_VER%%.6.0
 libdata/pkgconfig/gwenhywfar.pc
 share/aclocal/gwenhywfar.m4
 %%DATADIR%%/dialogs/dlg_input.dlg

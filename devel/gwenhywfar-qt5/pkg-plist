@@ -5,5 +5,5 @@ lib/cmake/gwengui-qt5-%%GWEN_MAJ_MIN_VER%%/gwengui-qt5-config-version.cmake
 lib/cmake/gwengui-qt5-%%GWEN_MAJ_MIN_VER%%/gwengui-qt5-config.cmake
 lib/libgwengui-qt5.so
 lib/libgwengui-qt5.so.%%GWEN_SHLIB_VER%%
-lib/libgwengui-qt5.so.%%GWEN_SHLIB_VER%%.4.1
+lib/libgwengui-qt5.so.%%GWEN_SHLIB_VER%%.6.0
 libdata/pkgconfig/gwengui-qt5.pc
