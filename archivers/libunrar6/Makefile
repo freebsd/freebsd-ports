@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libunrar6
-PORTVERSION=	6.0.3
+PORTVERSION=	6.0.4
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-${PORTVERSION}
