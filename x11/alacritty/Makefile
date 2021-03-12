@@ -3,6 +3,7 @@
 PORTNAME=	alacritty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -15,9 +16,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 TEST_DEPENDS=	dejavu>0:x11-fonts/dejavu
 
-USES=		cargo localbase:ldflags python:3.6+,build ssl:build xorg
+USES=		cargo localbase:ldflags python:3.6+,build ssl:build
 USE_GITHUB=	yes
-USE_XORG=	xcb
 
 CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 		adler32-1.2.0 \
@@ -221,6 +221,9 @@ CARGO_CRATES=	ab_glyph_rasterizer-0.1.4 \
 CARGO_USE_GITHUB=	yes
 CARGO_INSTALL_PATH=	alacritty
 
+CARGO_FEATURES+=	--no-default-features
+CARGO_CARGOTOML=	${WRKSRC}/${PORTNAME}/Cargo.toml
+
 # For xcb crate
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
@@ -234,6 +237,17 @@ PLIST_FILES=	bin/alacritty \
 PORTEXAMPLES=	alacritty.yml
 
 OPTIONS_DEFINE=	EXAMPLES
+
+BACKEND_DESC=	Display backend
+
+OPTIONS_MULTI=		BACKEND
+OPTIONS_MULTI_BACKEND=	WAYLAND X11
+OPTIONS_DEFAULT=	WAYLAND
+
+WAYLAND_VARS=	CARGO_FEATURES+=wayland
+X11_USES=	xorg
+X11_USE=	XORG=xcb
+X11_VARS=	CARGO_FEATURES+=x11
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/alacritty
