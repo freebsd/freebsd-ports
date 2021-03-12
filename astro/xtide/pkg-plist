@@ -59,14 +59,16 @@ include/tcd.h
 lib/libtcd.a
 lib/libtcd.so
 lib/libtcd.so.1
+lib/libtcd.so.1.0.2
 lib/libxtide.a
 lib/libxtide.so
 lib/libxtide.so.1
-lib/libxtide.so.1.0.2
+lib/libxtide.so.1.0.3
 man/man1/tide.1.gz
 %%X11%%man/man1/xtide.1.gz
 man/man8/xttpd.8.gz
 sbin/xttpd
+share/libtcd/libtcd.html
 %%X11%%share/pixmaps/xtide.png
 %%DATADIR%%/harmonics.tcd
 %%WVS%%%%DATADIR%%/wvs/wvs1.dat

@@ -1,9 +1,7 @@
-TIMESTAMP = 1565079145
-SHA256 (xtide-2.15.2.tar.bz2) = c81c2e8fd1b655b6e798332097056654f2e9e97fb88052c1a5582ba13fa46931
-SIZE (xtide-2.15.2.tar.bz2) = 727048
-SHA256 (libtcd-2.2.7-r2.tar.bz2) = aff1f218b84106c572d094912cd11c828e1ea212db5661cdcc0e2e6253020a94
-SIZE (libtcd-2.2.7-r2.tar.bz2) = 308959
-SHA256 (harmonics-dwf-20190620-free.tar.bz2) = 879546f30761c129610f2bcca50fa1f38c043f67721eefa51cf8c5a1e949f616
-SIZE (harmonics-dwf-20190620-free.tar.bz2) = 676075
-SHA256 (wvs.tar.bz2) = 4e996ce2e608d612ba78e35cdf50c2c73b01fce06bd5b561a7fe957ea75d6d75
-SIZE (wvs.tar.bz2) = 37461520
+TIMESTAMP = 1615566256
+SHA256 (xtide-2.15.3.tar.xz) = 50afef21b2591e92b84d0079b394351eb45414175e4dd094115498c3af2d0ccf
+SIZE (xtide-2.15.3.tar.xz) = 574816
+SHA256 (libtcd-2.2.7-r3.tar.xz) = e1dde9aafb771eab57c676a99b4b79d61c6800990a0e72782bc20057a8a2d877
+SIZE (libtcd-2.2.7-r3.tar.xz) = 272284
+SHA256 (harmonics-dwf-20210110-free.tar.xz) = af4550d36a1a1ca2e8c8b523c7d64b27845cb9dd8685c5fdfa5196b6cefa0c38
+SIZE (harmonics-dwf-20210110-free.tar.xz) = 840968
