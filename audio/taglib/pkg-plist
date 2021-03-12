@@ -109,7 +109,7 @@ include/taglib/xmproperties.h
 %%STATIC%%lib/libtag.a
 %%NO_STATIC%%lib/libtag.so
 %%NO_STATIC%%lib/libtag.so.1
-%%NO_STATIC%%lib/libtag.so.1.17.0
+%%NO_STATIC%%lib/libtag.so.1.18.0
 %%STATIC%%lib/libtag_c.a
 %%NO_STATIC%%lib/libtag_c.so
 %%NO_STATIC%%lib/libtag_c.so.0
