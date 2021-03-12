@@ -16,7 +16,7 @@ ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64/i386
 
 USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
-USE_GCC=	yes
+USE_GCC=	yes:build
 USE_GITHUB=	yes
 GH_TAGNAME=	13a6d17
 USE_PERL5=	build
@@ -131,5 +131,3 @@ do-install-EFI-on:
 .endfor
 
 .include <bsd.port.post.mk>
-
-RUN_DEPENDS:=	${RUN_DEPENDS:Ngcc*}
