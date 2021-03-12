@@ -4,6 +4,7 @@
 PORTNAME=	visualization.fishbmc
 PORTVERSION=	6.3.0
 DISTVERSIONSUFFIX=	-Matrix
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com

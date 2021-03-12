@@ -2,6 +2,7 @@
 
 PORTNAME=	imhex
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	nobutaka@FreeBSD.org
