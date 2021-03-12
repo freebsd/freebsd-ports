@@ -781,6 +781,7 @@
     SUBDIR += py-pgdbconn
     SUBDIR += py-pglast
     SUBDIR += py-pglite
+    SUBDIR += py-pgmigrate
     SUBDIR += py-pgspecial
     SUBDIR += py-pgxnclient
     SUBDIR += py-pickledb
