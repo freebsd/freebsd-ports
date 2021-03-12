@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wheel
-PORTVERSION=	0.30.0
-PORTREVISION=	1
+PORTVERSION=	0.36.2
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,5 +25,6 @@ SIGNATURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dirspec>=13.05:devel/py-dirspec@${
 
 USES=		python:3.6+
 USE_PYTHON=	distutils concurrent autoplist
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
