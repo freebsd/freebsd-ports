@@ -1,0 +1,4 @@
+libvsgpt is a library to access the GUID Partition Table (GPT) volume system
+format.
+
+WWW: https://github.com/libyal/libvsgpt

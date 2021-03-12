@@ -1378,6 +1378,7 @@
     SUBDIR += libvmdk
     SUBDIR += libvolume_id
     SUBDIR += libvshadow
+    SUBDIR += libvsgpt
     SUBDIR += libvslvm
     SUBDIR += libvterm
     SUBDIR += libwfut

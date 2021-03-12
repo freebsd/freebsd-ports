@@ -1,0 +1,17 @@
+bin/vsgptinfo
+include/libvsgpt.h
+include/libvsgpt/codepage.h
+include/libvsgpt/definitions.h
+include/libvsgpt/error.h
+include/libvsgpt/extern.h
+include/libvsgpt/features.h
+include/libvsgpt/types.h
+lib/libvsgpt.a
+lib/libvsgpt.so
+lib/libvsgpt.so.1
+lib/libvsgpt.so.1.0.0
+%%PYTHON_SITELIBDIR%%/pyvsgpt.a
+%%PYTHON_SITELIBDIR%%/pyvsgpt.so
+libdata/pkgconfig/libvsgpt.pc
+man/man1/vsgptinfo.1.gz
+man/man3/libvsgpt.3.gz
