@@ -808,6 +808,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_system_check.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_textdata.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_timing.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_tsv.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_uber_align.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_uber_proc.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_uber_skel.py
