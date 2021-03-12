@@ -1,0 +1,7 @@
+Command line tool to use the DNSDB Flexible Search API extensions on 
+systems such as:
+    * the DNSDB Flex API server at Farsight Security
+
+An API key is required for operation.
+
+WWW: https://github.com/farsightsec/dnsdbflex

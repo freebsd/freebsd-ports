@@ -1,0 +1,15 @@
+--- Makefile.orig	2020-10-14 17:44:31 UTC
++++ Makefile
+@@ -15,10 +15,10 @@
+ #
+ 
+ CURLINCL = `curl-config --cflags` 
+-JANSINCL = -I/usr/local/include
++JANSINCL = -I$(LOCALBASE)/include
+ 
+ CURLLIBS = `[ ! -z "$$(curl-config --libs)" ] && curl-config --libs || curl-config --static-libs`
+-JANSLIBS = -L/usr/local/lib -ljansson
++JANSLIBS = -L$(LOCALBASE)/lib -ljansson
+ 
+ CWARN =-W -Wall -Wextra -Wcast-qual -Wpointer-arith -Wwrite-strings \
+ 	-Wmissing-prototypes  -Wbad-function-cast -Wnested-externs \
