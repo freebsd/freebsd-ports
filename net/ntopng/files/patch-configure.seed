@@ -1,4 +1,4 @@
---- configure.seed.orig	2021-01-22 10:38:16 UTC
+--- configure.seed.orig	2021-03-10 17:29:02 UTC
 +++ configure.seed
 @@ -4,7 +4,7 @@ dnl> Do not add anything above
  
@@ -9,7 +9,7 @@
  AC_PROG_CPP
  AC_PROG_CXX
  
-@@ -77,33 +77,8 @@ fi
+@@ -128,33 +128,8 @@ fi
  # On CentOS 6 `git rev-list HEAD --count` does not work
  #
  #
@@ -44,7 +44,7 @@
  SHORT_MACHINE=`uname -m | cut -b1-3`
  
  GIT_RELEASE="@GIT_RELEASE@"
-@@ -233,7 +208,7 @@ else
+@@ -298,7 +273,7 @@ else
    fi
  fi
  
@@ -53,7 +53,7 @@
  
  AC_MSG_CHECKING(for ntopng professional edition)
  
-@@ -678,16 +653,6 @@ AC_DEFINE_UNQUOTED(_CRT_SECURE_NO_WARNINGS, 1, [Disabl
+@@ -716,11 +691,6 @@ AC_DEFINE_UNQUOTED(_CRT_SECURE_NO_WARNINGS, 1, [Disabl
  GMAKE=`which gmake`
  if test x$GMAKE = x; then
    GMAKE="make"
@@ -62,11 +62,6 @@
 -GIT=`which git`
 -if test x$GIT = x; then
 -  AC_MSG_RESULT(FATAL ERROR: git is not installed on your host)
--fi
--
--WGET=`which wget`
--if test x$WGET = x; then
--  AC_MSG_RESULT(ERROR. wget is not installed on your host: you cannot download GeoIP data)
  fi
  
  umask 002

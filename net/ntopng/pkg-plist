@@ -2749,6 +2749,8 @@ man/man8/ntopng.8.gz
 %%DATADIR%%/scripts/plugins/endpoints/slack_alert_endpoint/templates/slack_endpoint.template
 %%DATADIR%%/scripts/plugins/endpoints/slack_alert_endpoint/templates/slack_recipient.template
 %%DATADIR%%/scripts/plugins/endpoints/sqlite_alert_endpoint/alert_endpoints/sqlite.lua
+%%DATADIR%%/scripts/plugins/endpoints/syslog_alert_endpoint/http_lint.lua
+%%DATADIR%%/scripts/plugins/endpoints/syslog_alert_endpoint/locales/en.lua
 %%DATADIR%%/scripts/plugins/endpoints/sqlite_alert_endpoint/manifest.lua
 %%DATADIR%%/scripts/plugins/endpoints/sqlite_alert_endpoint/templates/sqlite_endpoint.template
 %%DATADIR%%/scripts/plugins/endpoints/sqlite_alert_endpoint/templates/sqlite_recipient.template
