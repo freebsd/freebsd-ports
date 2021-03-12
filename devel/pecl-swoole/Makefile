@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swoole
-PORTVERSION=	4.6.3
+PORTVERSION=	4.6.4
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -21,6 +21,7 @@ HTTP2_CONFIGURE_ON=	--enable-http2 --enable-openssl
 SOCKETS_USE=	PHP=sockets:build
 SOCKETS_DESC=	Use native php sockets extension
 SOCKETS_CONFIGURE_ON=	--enable-sockets
+CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ON=	--enable-swoole-curl
 JSON_CONFIGURE_ON=	--enable-swoole-json
 
