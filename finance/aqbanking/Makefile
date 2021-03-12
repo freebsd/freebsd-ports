@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	aqbanking
-PORTVERSION=	6.2.5
-PORTREVISION=	1
+PORTVERSION=	6.2.9
 CATEGORIES=	finance
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/342/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/366/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework

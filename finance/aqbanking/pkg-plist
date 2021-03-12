@@ -50,7 +50,7 @@ lib/cmake/aqbanking-%%AQB_MAJ_MIN_VER%%/aqbanking-config-version.cmake
 lib/cmake/aqbanking-%%AQB_MAJ_MIN_VER%%/aqbanking-config.cmake
 lib/libaqbanking.so
 lib/libaqbanking.so.%%AQB_SHLIB_VER%%
-lib/libaqbanking.so.%%AQB_SHLIB_VER%%.2.5
+lib/libaqbanking.so.%%AQB_SHLIB_VER%%.2.9
 libdata/pkgconfig/aqbanking.pc
 share/aclocal/aqbanking.m4
 %%DATADIR%%/aqbanking/typemaker2/c/ab_account.tm2
@@ -152,6 +152,7 @@ share/aclocal/aqbanking.m4
 %%DATADIR%%/imexporters/swift/profiles/swiftmt942.conf
 %%DATADIR%%/imexporters/xml/data/camt_052_001_02.xml
 %%DATADIR%%/imexporters/xml/data/camt_053_001_04.xml
+%%DATADIR%%/imexporters/xml/data/ofx1.xml
 %%DATADIR%%/imexporters/xml/data/ofx2.xml
 %%DATADIR%%/imexporters/xml/data/pain_001_001_03.xml
 %%DATADIR%%/imexporters/xml/data/pain_001_003_03.xml
@@ -160,6 +161,7 @@ share/aclocal/aqbanking.m4
 %%DATADIR%%/imexporters/xml/profiles/camt_052_001_02.conf
 %%DATADIR%%/imexporters/xml/profiles/camt_053_001_04.conf
 %%DATADIR%%/imexporters/xml/profiles/default.conf
+%%DATADIR%%/imexporters/xml/profiles/ofx1.conf
 %%DATADIR%%/imexporters/xml/profiles/ofx2.conf
 %%DATADIR%%/imexporters/xml/profiles/pain_001_001_03.conf
 %%DATADIR%%/imexporters/xml/profiles/pain_001_003_03.conf
