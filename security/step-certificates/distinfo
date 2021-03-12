@@ -1,6 +1,6 @@
 TIMESTAMP = 1613660263
-SHA256 (smallstep-certificates-v0.15.8_GH0.tar.gz) = f0efc073276de0bfda062b24fd1e521c10fce2ac5dfccd126196e273d0d24e30
-SIZE (smallstep-certificates-v0.15.8_GH0.tar.gz) = 17640170
+SHA256 (smallstep-certificates-v0.15.8_GH0.tar.gz) = 32157fda77fc29802fc0feb763113dc5fe4b7cd386cd1ccd358d4c06c46b7e79
+SIZE (smallstep-certificates-v0.15.8_GH0.tar.gz) = 17640158
 SHA256 (AndreasBriese-bbloom-46b345b51c96_GH0.tar.gz) = 49b41b2b20e73f31091222e4a6abf12762231cbad9de642d2227c16dae29b4ff
 SIZE (AndreasBriese-bbloom-46b345b51c96_GH0.tar.gz) = 8005
 SHA256 (DataDog-zstd-v1.4.5_GH0.tar.gz) = be75f3ea541bb7bb02c2329059ad81dff504087f89970426d23252e502a0f899
