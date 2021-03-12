@@ -3,3 +3,5 @@ SHA256 (letoram-arcan-0.6.0.1_GH0.tar.gz) = 7ae00a9dee79f9b58ac2bacbf532ff063128
 SIZE (letoram-arcan-0.6.0.1_GH0.tar.gz) = 11223434
 SHA256 (347240c18313.patch) = 251f07964e6a32461a335911016af82c8ea58aaba1bea9985bfabdc851b826f8
 SIZE (347240c18313.patch) = 1038
+SHA256 (bbdb86c8be1b.patch) = 74f8ca37bc8b659c750be1cb20c8dce1d9c01143c7af5a83441d508c184166db
+SIZE (bbdb86c8be1b.patch) = 883
