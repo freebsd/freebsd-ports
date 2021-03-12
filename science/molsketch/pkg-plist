@@ -68,7 +68,7 @@ include/libmolsketch/molview.h
 include/libmolsketch/neighboralignment.h
 include/libmolsketch/propertiesdock.h
 include/libmolsketch/propertieswidget.h
-include/libmolsketch/qtversionmacros.h
+include/libmolsketch/qtdeprecations.h
 include/libmolsketch/radicalelectron.h
 include/libmolsketch/scenepropertieswidget.h
 include/libmolsketch/scenesettings.h

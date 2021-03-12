@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2018-08-15 17:18:23 UTC
+--- CMakeLists.txt.orig	2021-03-07 18:40:16 UTC
 +++ CMakeLists.txt
-@@ -39,7 +39,7 @@ configure_file("${CMAKE_MODULE_PATH}/cma
+@@ -36,7 +36,7 @@ configure_file("${CMAKE_SOURCE_DIR}/cmake_uninstall.cm
  add_custom_target(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
  
  # Enabling debugging symbols
@@ -9,16 +9,7 @@
  
  # Enabling shared libraries
  set(BUILD_SHARED_LIBS ON)
-@@ -119,7 +119,7 @@ if( CMAKE_SIZEOF_VOID_P EQUAL 8 AND NOT 
- endif( CMAKE_SIZEOF_VOID_P EQUAL 8 AND NOT APPLE )
- 
- if(NOT FORCEQt4)
--        set(QTVERSIONSUFFIX "-qt5")
-+        set(QTVERSIONSUFFIX "")
- endif(NOT FORCEQt4)
- 
- set(OBABEL_IFACE_NAME "libobabeliface${QTVERSIONSUFFIX}.so")
-@@ -130,7 +130,7 @@ endif(WIN32 OR WIN64)
+@@ -108,7 +108,7 @@ endif(WIN32 OR WIN64)
  
  add_definitions(-DOBABEL_IFACE_LOCATION="\\\"${MSK_INSTALL_LIBS}/${OBABEL_IFACE_NAME}\\\"")
  
