@@ -1,5 +1,3 @@
-TIMESTAMP = 1598642085
-SHA256 (distcc-distcc-v3.3.3_GH0.tar.gz) = b7f37d314704fbaf006d747514ff6e4d0d722102ef7d2aea132f97cf170f5169
-SIZE (distcc-distcc-v3.3.3_GH0.tar.gz) = 1000021
-SHA256 (307f6cfe58ff3fb7e4b3ef1044a5dfc2006f95f5.patch) = bdb625de75400a79f873f323691fb980bbbe5373b24300e055edd475c6c23144
-SIZE (307f6cfe58ff3fb7e4b3ef1044a5dfc2006f95f5.patch) = 1378
+TIMESTAMP = 1615549770
+SHA256 (distcc-distcc-v3.3.5_GH0.tar.gz) = 13a4b3ce49dfc853a3de550f6ccac583413946b3a2fa778ddf503a9edc8059b0
+SIZE (distcc-distcc-v3.3.5_GH0.tar.gz) = 1002090
