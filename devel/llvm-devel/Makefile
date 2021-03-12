@@ -82,6 +82,8 @@ OPTIONS_DEFAULT_powerpc64=     ${OPTIONS_DEFAULT_powerpc64_${OSREL:R}} OPENMP
 OPTIONS_DEFAULT_powerpc64_13=  GOLD
 OPTIONS_DEFAULT_powerpc64_14=  GOLD
 OPTIONS_SUB=	yes
+_ALL_OPTIONS=	CLANG COMPILER_RT DOCS EXTRAS FLANG GOLD LIT LLD LLDB MLIR \
+		OPENMP
 
 # Pre-declared for options framework
 LIB_DEPENDS=
@@ -381,23 +383,12 @@ _COMPILER_RT_LIBS+= \
 	libclang_rt.ubsan_standalone_cxx-i386.a
 .endif
 
-.if ! ${OPTIONS_DEFINE:MCOMPILER_RT}
-# Hack to disable COMPILER_RT in plist of unsupported architectures
-PLIST_SUB+=	COMPILER_RT="@comment "
-.else
+# Comment out plist entries for unsupported options.
+.for opt in ${_ALL_OPTIONS}
+.if !${OPTIONS_DEFINE:M${opt}}
+PLIST_SUB+=	${opt}="@comment "
 .endif
-
-.if ! ${OPTIONS_DEFINE:MGOLD}
-# Hack to disable GOLD in plist of unsupported architectures
-PLIST_SUB+=	GOLD="@comment "
-.else
-.endif
-
-.if ! ${OPTIONS_DEFINE:MOPENMP}
-# Hack to disable OPENMP in plist of unsupported architectures
-PLIST_SUB+=	OPENMP="@comment "
-.else
-.endif
+.endfor
 
 post-patch:
 	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
