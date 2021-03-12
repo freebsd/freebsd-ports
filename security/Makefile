@@ -1273,6 +1273,7 @@
     SUBDIR += tthsum
     SUBDIR += u2f-devd
     SUBDIR += uacme
+    SUBDIR += ubuntu-keyring
     SUBDIR += unhide
     SUBDIR += unicornscan
     SUBDIR += vanguards-tor

@@ -1,0 +1,17 @@
+share/keyrings/ubuntu-archive-keyring.gpg
+share/keyrings/ubuntu-archive-removed-keys.gpg
+share/keyrings/ubuntu-cloud-keyring.gpg
+share/keyrings/ubuntu-cloud-removed-keys.gpg
+share/keyrings/ubuntu-cloudimage-keyring.gpg
+share/keyrings/ubuntu-cloudimage-removed-keys.gpg
+share/keyrings/ubuntu-dbgsym-keyring.gpg
+share/keyrings/ubuntu-dbgsym-removed-keys.gpg
+share/keyrings/ubuntu-keyring-2008-oem.gpg
+share/keyrings/ubuntu-keyring-2012-cdimage.gpg
+share/keyrings/ubuntu-keyring-2012-cloud-archive.gpg
+share/keyrings/ubuntu-keyring-2016-dbgsym.gpg
+share/keyrings/ubuntu-keyring-2018-archive.gpg
+share/keyrings/ubuntu-keyring-2020-oem.gpg
+share/keyrings/ubuntu-master-keyring.gpg
+share/keyrings/ubuntu-oem-keyring.gpg
+share/keyrings/ubuntu-oem-removed-keys.gpg
