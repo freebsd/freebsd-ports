@@ -7,6 +7,7 @@ CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	347240c18313.patch:-p2 # https://github.com/letoram/arcan/pull/229
+PATCHFILES+=	bbdb86c8be1b.patch:-p2 # https://github.com/letoram/arcan/pull/230
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Display Server, Multimedia Framework, Game Engine
