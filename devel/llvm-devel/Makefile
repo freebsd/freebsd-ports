@@ -228,7 +228,7 @@ MLIR_PATTERN=	${MLIR_COMMANDS:S/^/bin./:tW:C/  */|/g}|mlir|libMLIR
 
 .include <bsd.port.options.mk>
 
-# keep in sync with /usr/src/lib/clang/clang.build.mk 
+# keep in sync with /usr/src/lib/clang/clang.build.mk
 # ----------- start of sync block ------------------
 # Armv6 and armv7 uses hard float abi, unless the CPUTYPE has soft in it.
 # arm (for armv4 and armv5 CPUs) always uses the soft float ABI.
@@ -236,7 +236,7 @@ MLIR_PATTERN=	${MLIR_COMMANDS:S/^/bin./:tW:C/  */|/g}|mlir|libMLIR
 .if ${ARCH:Marmv[67]*} && (!defined(CPUTYPE) || ${CPUTYPE:M*soft*} == "")
 TARGET_ABI=	-gnueabihf
 .elif ${ARCH:Marm*}
-TARGET_ABI=	-gnueabi  
+TARGET_ABI=	-gnueabi
 .else
 TARGET_ABI=
 .endif
@@ -442,8 +442,8 @@ post-install-DOCS-off:
 post-install-CLANG-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/clang \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
-	@${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/toolchains/
+	${INSTALL_DATA} ${WRKDIR}/xtoolchain.mk \
 	    ${STAGEDIR}${PREFIX}/share/toolchains/llvm${LLVM_SUFFIX}.mk
 
 post-install-COMPILER_RT-on:
