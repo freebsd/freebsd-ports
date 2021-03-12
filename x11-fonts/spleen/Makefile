@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	spleen
-DISTVERSION=	1.8.2
+DISTVERSION=	1.9.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/fcambus/spleen/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-font
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tobik@FreeBSD.org
 COMMENT=	Monospaced bitmap fonts for Xorg and vt(4)
 
 LICENSE=	BSD2CLAUSE
@@ -27,11 +27,6 @@ TYPE_DESC=	Font type
 VT_DESC=	Install vt(4) fonts
 X11_DESC=	Install Xorg bitmap fonts
 
-# vtfontcvt is broken with large fonts, so use Dmitry Wagin's
-# improved version from https://bugs.freebsd.org/205707 that
-# doesn't have this problem.
-VT_BUILD_DEPENDS=	vtfontcvt-ng:x11-fonts/vtfontcvt-ng
-
 X11_USES=	fonts
 X11_USES_OFF=	fonts:none
 
@@ -40,7 +35,7 @@ do-build:
 
 do-build-VT-on:
 .for sz in 5x8 6x12 8x16 12x24 16x32 32x64
-	vtfontcvt-ng ${WRKSRC}/spleen-${sz}.bdf ${WRKSRC}/spleen-${sz}.fnt
+	vtfontcvt ${WRKSRC}/spleen-${sz}.bdf ${WRKSRC}/spleen-${sz}.fnt
 .endfor
 
 do-build-X11-on:
