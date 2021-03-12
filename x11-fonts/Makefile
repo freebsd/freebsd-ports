@@ -249,7 +249,6 @@
     SUBDIR += uw-ttyp0
     SUBDIR += victor-mono-ttf
     SUBDIR += vollkorn-ttf
-    SUBDIR += vtfontcvt-ng
     SUBDIR += webfonts
     SUBDIR += wqy
     SUBDIR += xfontsel

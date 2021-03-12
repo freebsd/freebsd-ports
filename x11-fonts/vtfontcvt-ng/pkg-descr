@@ -1,5 +1,0 @@
-An improved version of vtfontcvt(8) with support for all font widths
-and improved parsing of BDFs (FONT, FONTBOUNDINGBOX, BBX, etc.)
-based on patches from https://bugs.freebsd.org/205707.
-
-WWW: https://github.com/t6/vtfontcvt-ng
