@@ -4,4 +4,4 @@ in ANSI C except the network code (which is POSIX compatible), thus
 highly portable. Iksemel is released under GNU Lesser General Public
 License. A copy of the license is included in the COPYING file.
 
-WWW: http://code.google.com/p/iksemel/
+WWW: https://github.com/meduketto/iksemel

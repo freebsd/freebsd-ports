@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	iksemel
-PORTVERSION=	1.4
-PORTREVISION=	8
+PORTVERSION=	1.5
 CATEGORIES=	textproc
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	meduketto
-GH_TAGNAME=	6cddfef
+GH_TAGNAME=	978b733
 
 USES=		autoreconf libtool makeinfo pathfix pkgconfig
 GNU_CONFIGURE=	yes
