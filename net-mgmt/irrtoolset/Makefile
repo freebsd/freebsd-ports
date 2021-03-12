@@ -10,7 +10,9 @@ COMMENT=	Suite of routing policy tools to interact with the IRR
 
 LICENSE=	MIT GPLv2+ RIPE_NCC
 LICENSE_COMB=	multi
+LICENSE_NAME_RIPE_NCC=	RIPE NCC license	
 LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS_RIPE_NCC=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		autoreconf bison gmake libtool
 GNU_CONFIGURE=	yes
