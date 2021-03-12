@@ -1,15 +1,15 @@
 Find testlib (moved from ../CMakeLists.txt)
 
---- autotests/CMakeLists.txt.orig	2018-03-15 19:28:26 UTC
+--- autotests/CMakeLists.txt.orig	2020-10-23 16:11:34 UTC
 +++ autotests/CMakeLists.txt
-@@ -1,8 +1,10 @@
+@@ -1,4 +1,10 @@
  include(ECMAddTests)
- 
- if(BUILD_QT4)
++if(BUILD_QT4)
 +    find_package(Qt4 REQUIRED COMPONENTS QtTest)
-     set(TEST_LIB ${QT_QTTEST_LIBRARY})
- else()
++else()
 +    find_package(Qt5 REQUIRED COMPONENTS Test)
-     set(TEST_LIB Qt5::Test)
- endif()
- 
++endif()
++
+ set(TEST_LIB
+     alkimia
+     alkimia-internal

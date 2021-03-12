@@ -1,31 +1,21 @@
 Make tests conditional
 
---- CMakeLists.txt.orig	2018-04-11 16:05:28 UTC
+--- CMakeLists.txt.orig	2021-01-21 22:50:19 UTC
 +++ CMakeLists.txt
-@@ -15,7 +15,7 @@ include(FeatureSummary)
+@@ -37,7 +37,7 @@ include(FeatureSummary)
  # check for PkgConfig, Qt and MPIR/GMP
  find_package(PkgConfig)
  if(BUILD_QT4)
--    find_package(Qt4 REQUIRED COMPONENTS QtCore QtDBus QtTest)
-+    find_package(Qt4 REQUIRED COMPONENTS QtCore QtDBus)
+-    find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtDBus QtTest QtWebKit QtDeclarative)
++    find_package(Qt4 REQUIRED COMPONENTS QtCore QtGui QtDBus QtWebKit QtDeclarative)
      set(QT_USE_LIBSPREFIX Qt4::Qt)
      set(ALKIMIA_LIB_SUFFIX "")
      set(ALKIMIA_INCLUDE_SUFFIX "Qt4")
-@@ -23,7 +23,7 @@ if(BUILD_QT4)
-     set(PC_TARGET_QTPREFIX Qt)
-     set(PC_TARGET_SUFFIX)
- else()
--    find_package(Qt5 REQUIRED COMPONENTS Core DBus Test)
-+    find_package(Qt5 REQUIRED COMPONENTS Core DBus)
-     set(QT_USE_LIBSPREFIX Qt5::)
-     set(ALKIMIA_LIB_SUFFIX "5")
-     set(ALKIMIA_INCLUDE_SUFFIX "Qt5")
-@@ -59,4 +59,7 @@ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_F
- include_directories(${MP_INCLUDE_DIR})
+@@ -107,7 +107,6 @@ else()
  
- add_subdirectory(src)
--add_subdirectory(autotests)
-+
-+if(BUILD_TESTING)
-+    add_subdirectory(autotests)
-+endif()
+     find_package(Qt5 REQUIRED COMPONENTS
+         Core
+-        Test
+         ${QT_BROWSER_COMPONENT}
+         Qml
+     )
