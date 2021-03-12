@@ -251,6 +251,7 @@
 /%%KMODDIR%%/amdgpu_renoir_pfp_bin.ko
 /%%KMODDIR%%/amdgpu_renoir_rlc_bin.ko
 /%%KMODDIR%%/amdgpu_renoir_sdma_bin.ko
+/%%KMODDIR%%/amdgpu_renoir_ta_bin.ko
 /%%KMODDIR%%/amdgpu_renoir_vcn_bin.ko
 /%%KMODDIR%%/amdgpu_si58_mc_bin.ko
 /%%KMODDIR%%/amdgpu_stoney_ce_bin.ko
