@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/debian/copyright
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_PERL5=	run
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/keyrings
