@@ -233,6 +233,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/BIO_f_md.3.gz
 %%MAN3%%man/man3/BIO_f_null.3.gz
 %%MAN3%%man/man3/BIO_f_prefix.3.gz
+%%MAN3%%man/man3/BIO_f_readbuffer.3.gz
 %%MAN3%%man/man3/BIO_f_ssl.3.gz
 %%MAN3%%man/man3/BIO_find_type.3.gz
 %%MAN3%%man/man3/BIO_get_data.3.gz
@@ -474,6 +475,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/OSSL_CMP_exec_certreq.3.gz
 %%MAN3%%man/man3/OSSL_CMP_log_open.3.gz
 %%MAN3%%man/man3/OSSL_CMP_validate_msg.3.gz
+%%MAN3%%man/man3/OSSL_CORE_MAKE_FUNC.3.gz
 %%MAN3%%man/man3/OSSL_CRMF_MSG_get0_tmpl.3.gz
 %%MAN3%%man/man3/OSSL_CRMF_MSG_set0_validity.3.gz
 %%MAN3%%man/man3/OSSL_CRMF_MSG_set1_regCtrl_regToken.3.gz
@@ -488,6 +490,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/OSSL_ENCODER_CTX_new_for_pkey.3.gz
 %%MAN3%%man/man3/OSSL_ENCODER_to_bio.3.gz
 %%MAN3%%man/man3/OSSL_HTTP_REQ_CTX.3.gz
+%%MAN3%%man/man3/OSSL_HTTP_parse_url.3.gz
 %%MAN3%%man/man3/OSSL_HTTP_transfer.3.gz
 %%MAN3%%man/man3/OSSL_LIB_CTX.3.gz
 %%MAN3%%man/man3/OSSL_PARAM.3.gz
@@ -544,6 +547,7 @@ man/man1/tsget.1.gz
 %%MAN3%%man/man3/RAND_egd.3.gz
 %%MAN3%%man/man3/RAND_get0_primary.3.gz
 %%MAN3%%man/man3/RAND_load_file.3.gz
+%%MAN3%%man/man3/RAND_set_DRBG_type.3.gz
 %%MAN3%%man/man3/RAND_set_rand_method.3.gz
 %%MAN3%%man/man3/RC4_set_key.3.gz
 %%MAN3%%man/man3/RIPEMD160_Init.3.gz
