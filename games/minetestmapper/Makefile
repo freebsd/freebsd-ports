@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libsqlite3.so:databases/sqlite3
 
-USES=		cmake pkgconfig
+USES=		cmake compiler:c11 pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	minetest
 
