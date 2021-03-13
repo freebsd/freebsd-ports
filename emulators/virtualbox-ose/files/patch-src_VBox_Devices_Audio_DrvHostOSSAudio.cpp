@@ -4,7 +4,7 @@
  
              default:
                  rc = VERR_AUDIO_STREAM_COULD_NOT_CREATE;
-+                iFormat = -1;				
++                iFormat = -1;
                  break;
          }
  
