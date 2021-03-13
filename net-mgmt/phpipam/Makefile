@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	phpipam
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	jake@xz.cx
 COMMENT=	PHP IP Address Management IPv4/IPv6
+
+USE_GITHUB=	yes
+GH_TAGNAME=	e569141
 
 LICENSE=	GPLv3
 
@@ -15,7 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear@${PHP_FLAVOR}
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 CFGFILE=	config.php
 
