@@ -6,7 +6,7 @@ PORTVERSION=	1.1.7
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enterprise scalable realtime graphing platform
 
 LICENSE=	APACHE20
