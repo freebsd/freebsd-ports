@@ -3,7 +3,6 @@ bin/sdftool
 lib/makemkv/libdriveio.so.0
 lib/makemkv/libmakemkv.so.1
 lib/makemkv/libmmbd.so.0
-lib/makemkv/libstdc++.so.6
 man/man1/makemkvcon.1.gz
 sbin/update-makemkv-drives
 share/MakeMKV/appdata.tar
