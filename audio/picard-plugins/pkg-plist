@@ -36,8 +36,8 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/featartistsintitles.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/fix_tracknums.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/fix_tracknums.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/haikuattrs.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/haikuattrs.cpython-%%PYTHON_SUFFIX%%.pyc
+@comment %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/haikuattrs.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+@comment %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/haikuattrs.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/hyphen_unicode.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/hyphen_unicode.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/instruments.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -161,7 +161,7 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/docs/default_settings.jpg
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/options_format_performer_tags.ui
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/ui_options_format_performer_tags.py
-%%PYTHON_SITELIBDIR%%/picard/plugins/haikuattrs.py
+@comment %%PYTHON_SITELIBDIR%%/picard/plugins/haikuattrs.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/hyphen_unicode.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/instruments.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/keep.py

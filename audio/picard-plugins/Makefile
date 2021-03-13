@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	picard-plugins
-PORTVERSION=	2.0.20201203
+PORTVERSION=	2.0.20210119
 CATEGORIES=	audio python
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -10,11 +10,11 @@ COMMENT=	Plugins for Picard tagger
 LICENSE=	GPLv2+ GPLv3+ MIT WTFPL
 LICENSE_COMB=	multi
 
-USES=		python:3.5+
+USES=		python:3.6+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz
-GH_TAGNAME=	c833f54
+GH_TAGNAME=	3365403
 
 PORTSCOUT=	limit:^2\.
 
@@ -66,11 +66,5 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PLUGINSDIR}
 	(cd ${BUILD_WRKSRC}; ${COPYTREE_SHARE} . ${STAGEDIR}${PLUGINSDIR})
-
-post-install-ALBUM_COLUMN-off:
-	@${RM} -r ${STAGEDIR}${PLUGINSDIR}/add_album_column
-
-post-install-BPM-off:
-	@${RM} -r ${STAGEDIR}${PLUGINSDIR}/bpm
 
 .include <bsd.port.mk>
