@@ -156,6 +156,7 @@ man/man3/rtcUpdateGeometryBuffer.3embree3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynamic_scene
 %%ISPC%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dynamic_scene_ispc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/embree_tests
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/embree_verify
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid_geometry
 %%ISPC%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/grid_geometry_ispc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hair_geometry
@@ -266,7 +267,6 @@ man/man3/rtcUpdateGeometryBuffer.3embree3.gz
 %%ISPC%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/triangle_geometry_ispc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_geometry
 %%ISPC%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/user_geometry_ispc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/verify
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/viewer
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/viewer_anim
 %%ISPC%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/viewer_anim_ispc
