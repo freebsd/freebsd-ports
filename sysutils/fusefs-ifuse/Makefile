@@ -2,30 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	ifuse
-PORTVERSION=	1.1.3
-PORTREVISION=	3
+PORTVERSION=	1.1.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.libimobiledevice.org/downloads/
+MASTER_SITES=	https://github.com/libimobiledevice/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	FUSE-based filesystem for mounting iOS devices over USB
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libplist-2.0.so:devel/libplist \
 		libimobiledevice-1.0.so:comms/libimobiledevice
 RUN_DEPENDS=	usbmuxd:comms/usbmuxd
 
+USES=		fuse localbase gnome pkgconfig tar:bzip2
 USE_GNOME=	glib20
-USES=		fuse gnome pkgconfig tar:bzip2
+
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/${PORTNAME} man/man1/ifuse.1.gz
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\"libplist|"libplist-2.0|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
