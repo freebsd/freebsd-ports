@@ -1,7 +1,9 @@
 bin/bvm
 bin/bvmb
+bin/bvmdhcp
 @sample %%ETCDIR%%/bvm.conf.sample
 @sample %%ETCDIR%%/nat.conf.sample
 @sample %%ETCDIR%%/switch.conf.sample
+@sample %%ETCDIR%%/dhcp.conf.sample
 etc/rc.d/bvmd
 man/man8/bvm.8.gz

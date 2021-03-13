@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bvm
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	guoqiang_cn@126.com
@@ -28,9 +28,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/conf/bvm.conf ${STAGEDIR}${PREFIX}/etc/bvm/bvm.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/conf/nat.conf ${STAGEDIR}${PREFIX}/etc/bvm/nat.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/conf/switch.conf ${STAGEDIR}${PREFIX}/etc/bvm/switch.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/dhcp.conf ${STAGEDIR}${PREFIX}/etc/bvm/dhcp.conf.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/conf/bvmd ${STAGEDIR}${PREFIX}/etc/rc.d/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/bvm ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/bvmb ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/bvmdhcp ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/bvm.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 .include <bsd.port.mk>
