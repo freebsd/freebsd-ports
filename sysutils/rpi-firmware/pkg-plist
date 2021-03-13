@@ -90,6 +90,7 @@
 %%DATADIR%%/overlays/hd44780-lcd.dtbo
 %%DATADIR%%/overlays/hdmi-backlight-hwhack-gpio.dtbo
 %%DATADIR%%/overlays/hifiberry-amp.dtbo
+%%DATADIR%%/overlays/hifiberry-amp100.dtbo
 %%DATADIR%%/overlays/hifiberry-dac.dtbo
 %%DATADIR%%/overlays/hifiberry-dacplus.dtbo
 %%DATADIR%%/overlays/hifiberry-dacplusadc.dtbo
@@ -159,6 +160,9 @@
 %%DATADIR%%/overlays/pibell.dtbo
 %%DATADIR%%/overlays/pifacedigital.dtbo
 %%DATADIR%%/overlays/pifi-40.dtbo
+%%DATADIR%%/overlays/pifi-dac-hd.dtbo
+%%DATADIR%%/overlays/pifi-dac-zero.dtbo
+%%DATADIR%%/overlays/pifi-mini-210.dtbo
 %%DATADIR%%/overlays/piglow.dtbo
 %%DATADIR%%/overlays/piscreen.dtbo
 %%DATADIR%%/overlays/piscreen2r.dtbo
@@ -239,6 +243,7 @@
 %%DATADIR%%/overlays/vc4-kms-kippah-7inch.dtbo
 %%DATADIR%%/overlays/vc4-kms-v3d-pi4.dtbo
 %%DATADIR%%/overlays/vc4-kms-v3d.dtbo
+%%DATADIR%%/overlays/vc4-kms-vga666.dtbo
 %%DATADIR%%/overlays/vga666.dtbo
 %%DATADIR%%/overlays/w1-gpio-pullup.dtbo
 %%DATADIR%%/overlays/w1-gpio.dtbo
