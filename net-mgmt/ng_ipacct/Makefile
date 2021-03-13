@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ng_ipacct
-PORTVERSION=	20180401
+PORTVERSION=	20201303
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	vsevolod@FreeBSD.org
