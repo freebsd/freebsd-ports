@@ -1,0 +1,11 @@
+--- Makefile.orig	2021-02-26 22:51:55 UTC
++++ Makefile
+@@ -24,7 +24,7 @@ ${BIN}.1: ${BIN}.rst
+ 
+ install: all
+ 	install -d ${DESTDIR}${PREFIX}/bin
+-	install -m 4555 -s ${BIN} ${DESTDIR}${PREFIX}/bin
++	install -m 0555 -s ${BIN} ${DESTDIR}${PREFIX}/bin
+ 	install -d ${DESTDIR}${PREFIX}/man/man1
+ 	install -m 0444 ${BIN}.1.gz ${DESTDIR}${PREFIX}/man/man1
+ 
