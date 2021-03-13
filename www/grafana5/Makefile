@@ -9,8 +9,11 @@ PKGNAMESUFFIX=	${PORTVERSION:C/([0-9]).*/\1/1}
 DISTFILES=	grafana-${PORTVERSION}.linux-amd64${EXTRACT_SUFX}:public
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dashboard and graph editor for multiple data stores
+
+DEPRECATED=	Upstream end of life
+EXPIRATION_DATE=	2021-04-14
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
