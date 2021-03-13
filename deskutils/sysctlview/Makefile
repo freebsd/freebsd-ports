@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysctlview
-PORTVERSION=	2.0.1
-PORTREVISION=	4
+PORTVERSION=	2.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	alfix86@gmail.com
@@ -14,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libsysctlmibinfo2.so:devel/libsysctlmibinfo2
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-USES=		compiler:c++11-lang gettext-runtime gnome pkgconfig
+USES=		compiler:c++11-lang gnome pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
-GL_COMMIT=	91028a02b584eaf8c16c72d839f57cd1680b5b62
+GL_COMMIT=	6ef5c821f66d92c2a1ca3fc964b511425dacd18e
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk30 gtkmm30 \
 		libsigc++20 pango pangomm
 
@@ -29,12 +28,6 @@ DESKTOP_ENTRIES=	"Sysctlview" \
 			"sysctlview" \
 			"System;" \
 			false
-
-OPTIONS_DEFINE=	NLS
-OPTIONS_SUB=	yes
-
-NLS_USES=		gettext
-NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.pre.mk>
 
