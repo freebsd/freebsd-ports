@@ -1,0 +1,26 @@
+--- src/dock.in.orig	2021-03-13 13:10:08.665755000 -0400
++++ src/dock.in	2021-03-13 13:13:58.873312000 -0400
+@@ -615,21 +615,8 @@
+                                              dbus_interface="com.canonical.Unity.LauncherEntry",
+                                              signal_name="Update")
+ 
+-        # we need a Bamf.Matcher for matching windows to running apps
+-        self.matcher = None
+-        # wait for max 10s to ensure bamf is available
+-        # (bamf is not always immediately available after login on Linux Mint
+-        # 19 - e.g. https://forums.linuxmint.com/viewtopic.php?t=272747 and
+-        # issue #158)
+-        i = 0
+-        while i < 10:
+-            if (not self.session_bus.name_has_owner("org.ayatana.bamf")):
+-                i += 1
+-                sleep(1)
+-            else:
+-                break
+-
+-        self.matcher = Bamf.Matcher()
++        # create a Bamf.Matcher for matching windows to running apps
++        self.matcher = Bamf.Matcher.get_default()
+ 
+         # can we resize nicely on the panel?
+         try:
