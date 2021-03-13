@@ -2,7 +2,7 @@
 
 PORTNAME=	step-cli
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.15.7
+DISTVERSION=	0.15.13
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -193,10 +193,6 @@ GH_TUPLE=	\
 		sslmate:go-pkcs12:57fc603b7f52:sslmate_pkcs12/vendor/software.sslmate.com/src/go-pkcs12
 
 GL_TUPLE=	https://gitlab.howett.net:go:plist:591f970eefbbeb04d7b37f334a0c4c3256e32876:go_plist/vendor/howett.net/plist
-
-		# Mirrors for the following packages are not currently known, please look them up and handle these tuples manually:
-		#	::57fc603b7f52:group_name/vendor/software.sslmate.com/src/go-pkcs12 (from software.sslmate.com/src/go-pkcs12@57fc603b7f52)
-
 
 SHEBANG_FILES=	autocomplete/bash_autocomplete
 

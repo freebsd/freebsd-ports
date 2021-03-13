@@ -1,6 +1,6 @@
-TIMESTAMP = 1613724673
-SHA256 (smallstep-cli-v0.15.7_GH0.tar.gz) = 340ddc2801d210de8e7c200ad988653ebe45942f050bb80bd5f8adebfcf02350
-SIZE (smallstep-cli-v0.15.7_GH0.tar.gz) = 1766031
+TIMESTAMP = 1615577777
+SHA256 (smallstep-cli-v0.15.13_GH0.tar.gz) = 23b89e78f529858fcd312a97269673fae4b02213371cccbc914539e85ced68c3
+SIZE (smallstep-cli-v0.15.13_GH0.tar.gz) = 1771848
 SHA256 (AndreasBriese-bbloom-46b345b51c96_GH0.tar.gz) = 49b41b2b20e73f31091222e4a6abf12762231cbad9de642d2227c16dae29b4ff
 SIZE (AndreasBriese-bbloom-46b345b51c96_GH0.tar.gz) = 8005
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
