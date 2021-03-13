@@ -12574,6 +12574,7 @@
 %%WWWDIR%%/db/migrate/20210210210232_add_notes_create_limit_allowlist_to_application_settings.rb
 %%WWWDIR%%/db/migrate/20210211195543_add_created_by_user_for_cluster_agent_token.rb
 %%WWWDIR%%/db/migrate/20210216135504_add_created_by_to_cluster_agent.rb
+%%WWWDIR%%/db/migrate/20210301200601_rename_asset_proxy_allowlist_on_application_settings.rb
 %%WWWDIR%%/db/optional_migrations/composite_primary_keys.rb
 %%WWWDIR%%/db/post_migrate/20190102152410_delete_inconsistent_internal_id_records2.rb
 %%WWWDIR%%/db/post_migrate/20190115054215_migrate_delete_container_repository_worker.rb
@@ -12966,6 +12967,7 @@
 %%WWWDIR%%/db/post_migrate/20210205213933_drop_alerts_service_data.rb
 %%WWWDIR%%/db/post_migrate/20210205214003_remove_alerts_service_records_again.rb
 %%WWWDIR%%/db/post_migrate/20210210093901_backfill_updated_at_after_repository_storage_move.rb
+%%WWWDIR%%/db/post_migrate/20210301200959_clean_up_asset_proxy_allowlist_rename_on_application_settings.rb
 @(git,,) %%WWWDIR%%/db/schema.rb
 %%WWWDIR%%/db/schema_migrations/20181228175414
 %%WWWDIR%%/db/schema_migrations/20190102152410
@@ -14769,6 +14771,8 @@
 %%WWWDIR%%/db/schema_migrations/20210210210232
 %%WWWDIR%%/db/schema_migrations/20210211195543
 %%WWWDIR%%/db/schema_migrations/20210216135504
+%%WWWDIR%%/db/schema_migrations/20210301200601
+%%WWWDIR%%/db/schema_migrations/20210301200959
 %%WWWDIR%%/db/seeds.rb
 %%WWWDIR%%/db/structure.sql
 %%WWWDIR%%/doc/.vale/gitlab/Acronyms.yml
@@ -28627,6 +28631,7 @@
 %%WWWDIR%%/spec/lib/gitlab/json_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/jwt_authenticatable_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/kas_spec.rb
+%%WWWDIR%%/spec/lib/gitlab/kroki_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/kubernetes/cilium_network_policy_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/kubernetes/cluster_role_binding_spec.rb
 %%WWWDIR%%/spec/lib/gitlab/kubernetes/config_map_spec.rb

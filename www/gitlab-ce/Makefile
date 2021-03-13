@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	gitlab-ce
-PORTVERSION=	13.9.2
-PORTREVISION=	2
+PORTVERSION=	13.9.3
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -19,7 +19,7 @@ MY_DEPENDS=	git>=2.29:devel/git \
 	gitlab-elasticsearch-indexer>=2.9.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=13.9.1:net/gitlab-agent \
 	gitlab-pages>=1.35.0:www/gitlab-pages \
-	gitlab-shell>=13.16.1:devel/gitlab-shell \
+	gitlab-shell>=13.17.0:devel/gitlab-shell \
 	gitlab-workhorse>=8.63.2:www/gitlab-workhorse \
 	redis>=4.0.0:databases/redis \
 	yarn>=1.10.0:www/yarn \
@@ -121,7 +121,7 @@ MY_DEPENDS=	git>=2.29:devel/git \
 	rubygem-asciidoctor>=2.0.12<2.1.0:textproc/rubygem-asciidoctor \
 	rubygem-asciidoctor-include-ext>=0.3.1<0.4.0:textproc/rubygem-asciidoctor-include-ext \
 	rubygem-asciidoctor-plantuml>=0.0.12<0.1:textproc/rubygem-asciidoctor-plantuml \
-	rubygem-asciidoctor-kroki>=0.3.0<0.4:textproc/rubygem-asciidoctor-kroki \
+	rubygem-asciidoctor-kroki>=0.4.0<0.5:textproc/rubygem-asciidoctor-kroki \
 	rubygem-rouge>=3.26.0<3.27:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.11<0.8.0:textproc/rubygem-truncato \
 	rubygem-bootstrap_form>=4.2.0<4.3.0:devel/rubygem-bootstrap_form \
@@ -268,7 +268,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
 GL_PROJECT?=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT?=	189a15a911843a9059d1f8bfd31008557bea520b
+GL_COMMIT?=	ea359c58edb6ff68a04f48ec231d11930f66c79a
 
 USERS=	git
 GROUPS=	git
@@ -316,5 +316,11 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/vendor/assets/stylesheets
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}/workhorse/changelogs/unreleased
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/${PORTNAME})
+
+# Execute this target to automatically generate the correct pkg-plist
+makeplist:
+	$(MAKE) clean extract do-patch
+	php scripts/create-plist.php ${WRKSRC} > pkg-plist
+	$(MAKE) clean
 
 .include <bsd.port.mk>
