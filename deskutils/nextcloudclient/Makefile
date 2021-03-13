@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
