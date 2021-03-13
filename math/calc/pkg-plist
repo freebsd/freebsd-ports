@@ -2,10 +2,12 @@ bin/calc
 %%FULL%%include/calc/align32.h
 %%FULL%%include/calc/alloc.h
 %%FULL%%include/calc/args.h
+%%FULL%%include/calc/banned.h
 %%FULL%%include/calc/blkcpy.h
 %%FULL%%include/calc/block.h
 %%FULL%%include/calc/byteswap.h
 %%FULL%%include/calc/calc.h
+%%FULL%%include/calc/calcerr.c
 %%FULL%%include/calc/calcerr.h
 %%FULL%%include/calc/cmath.h
 %%FULL%%include/calc/conf.h
@@ -17,6 +19,7 @@ bin/calc
 %%FULL%%include/calc/fposval.h
 %%FULL%%include/calc/func.h
 %%FULL%%include/calc/hash.h
+%%FULL%%include/calc/have_ban_pragma.h
 %%FULL%%include/calc/have_const.h
 %%FULL%%include/calc/have_fpos.h
 %%FULL%%include/calc/have_fpos_pos.h
@@ -31,6 +34,8 @@ bin/calc
 %%FULL%%include/calc/have_rusage.h
 %%FULL%%include/calc/have_stdlib.h
 %%FULL%%include/calc/have_strdup.h
+%%FULL%%include/calc/have_strlcat.h
+%%FULL%%include/calc/have_strlcpy.h
 %%FULL%%include/calc/have_string.h
 %%FULL%%include/calc/have_times.h
 %%FULL%%include/calc/have_uid_t.h
@@ -50,6 +55,7 @@ bin/calc
 %%FULL%%include/calc/qmath.h
 %%FULL%%include/calc/sha1.h
 %%FULL%%include/calc/str.h
+%%FULL%%include/calc/strl.h
 %%FULL%%include/calc/symbol.h
 %%FULL%%include/calc/terminal.h
 %%FULL%%include/calc/token.h
@@ -365,7 +371,7 @@ man/man1/calc.1.gz
 %%HELP%%%%DATADIR%%/help/ptest
 %%HELP%%%%DATADIR%%/help/push
 %%HELP%%%%DATADIR%%/help/putenv
-%%HELP%%%%DATADIR%%/help/question
+%%HELP%%%%DATADIR%%/help/questions
 %%HELP%%%%DATADIR%%/help/quo
 %%HELP%%%%DATADIR%%/help/quomod
 %%HELP%%%%DATADIR%%/help/rand

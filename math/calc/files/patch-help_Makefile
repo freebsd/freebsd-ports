@@ -1,0 +1,50 @@
+Remove this patch at > 2.12.9.0
+
+From a86d62998263a8d7fa76cd89c59314b9aaf4b72e Mon Sep 17 00:00:00 2001
+From: Landon Curt Noll <github-mail@asthe.com>
+Date: Fri, 12 Mar 2021 11:31:21 -0800
+Subject: [PATCH] Fixed a typo in help/Makefile
+
+Fixed a typo typo in help/Makefile that caused the build of
+2.12.9.0 to fail in a number of cases.  Thanks to a report by
+<GitHub user balducci>.
+diff --git a/help/Makefile b/help/Makefile
+index eb48305..c40bf3d 100644
+--- help/Makefile
++++ help/Makefile
+@@ -252,7 +252,7 @@ BLT_HELP_FILES_13= bugs changes
+ 
+ STD_HELP_FILES_14= credit
+ 
+-BLT_HELP_FILES_14= contrib COPYING COPYING-LGPL question
++BLT_HELP_FILES_14= contrib COPYING COPYING-LGPL questions
+ 
+ STD_HELP_FILES_15= wishlist todo
+ 
+@@ -536,7 +536,7 @@ COPYING-LGPL: ../COPYING-LGPL
+ 	    ${TRUE}; \
+ 	fi
+ 
+-question: ../QUESTIONS
++questions: ../QUESTIONS
+ 	${RM} -f $@
+ 	${CP} ../QUESTIONS $@
+ 	${CHMOD} 0444 $@
+@@ -705,7 +705,7 @@ detail_help_list:
+ 		 ! -name mat ! -name obj.file ! -name operator \
+ 		 ! -name overview ! -name script ! -name statement \
+ 		 ! -name todo ! -name types ! -name unexpected \
+-		 ! -name variable ! -name wishlist ! -name question \
++		 ! -name variable ! -name wishlist ! -name questions \
+ 		 -print | \
+ 	   while read i; do \
+ 		if [ X"$$i" != X"/dev/null" ]; then \
+@@ -740,7 +740,7 @@ echo_inst_files:
+ 
+ clean:
+ 	${RM} -f obj mkbuiltin funclist.c funclist.o funclist${EXT}
+-	${RM} -f COPYING COPYING-LGPL question
++	${RM} -f COPYING COPYING-LGPL questions
+ 
+ clobber: clean
+ 	${RM} -f ${BLT_HELP_FILES} full .all calc
