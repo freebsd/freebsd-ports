@@ -6,9 +6,9 @@ debootstrap requires the following kernel modules to be loaded:
 
 linux64 fdescfs linprocfs linsysfs tmpfs
 
-To install Ubuntu Bionic into /compat/ubuntu, use:
+To install Ubuntu 18.04 LTS (Bionic Beaver) into /compat/ubuntu, run as root:
 
-debootstrap --no-check-gpg bionic /compat/ubuntu
+debootstrap bionic /compat/ubuntu
 EOM
 }
 ]
