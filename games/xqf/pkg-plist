@@ -9,8 +9,11 @@ share/locale/fr/LC_MESSAGES/xqf.mo
 share/locale/pl/LC_MESSAGES/xqf.mo
 share/locale/ru/LC_MESSAGES/xqf.mo
 share/applications/xqf.desktop
+share/pixmaps/xqf.png
+share/pixmaps/xqf.svg
+share/pixmaps/xqf.xpm
 share/pixmaps/xqf_22x22.png
 share/pixmaps/xqf_32x32.png
 share/pixmaps/xqf_48x48.png
 share/pixmaps/xqf_48x48_2.png
-@dir lib/xqf
+@dir libexec/xqf

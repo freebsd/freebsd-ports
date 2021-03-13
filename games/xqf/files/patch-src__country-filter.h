@@ -1,5 +1,5 @@
---- src/country-filter.h.orig	Sun Oct  5 21:53:51 2003
-+++ src/country-filter.h	Fri Nov 28 11:11:26 2003
+--- src/country-filter.h.orig	2014-11-02 00:43:18 UTC
++++ src/country-filter.h
 @@ -22,6 +22,9 @@
  
  #include <glib.h>
@@ -9,4 +9,4 @@
 +#include <netinet/in.h>
  #include <arpa/inet.h>
  
- extern const unsigned MaxCountries;
+ extern unsigned MaxCountries;

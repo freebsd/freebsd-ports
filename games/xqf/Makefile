@@ -2,20 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	xqf
-PORTVERSION=	1.0.5
-PORTREVISION=	11
+PORTVERSION=	1.0.6.2
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server browser for many popular 3D action games
 
 RUN_DEPENDS=	qstat:games/qstat
 
-USES=		gettext gmake gnome pkgconfig xorg
+USES=		autoreconf gettext gmake gnome pkgconfig xorg
 USE_GNOME=	intlhack
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	XQF
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11
