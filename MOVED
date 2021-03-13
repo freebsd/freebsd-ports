@@ -16193,3 +16193,4 @@ devel/llvm60|devel/llvm80|2021-03-06|Has expired: Uses Python 2.7 which is EOLed
 audio/fplib||2021-03-07|Dead service since 2015
 sysutils/prelink||2021-03-11|Has expired: Have no users in the ports tree
 x11-fonts/vtfontcvt-ng||2021-03-12|no longer useful on any supported releases; use vtfontcvt(8) instead
+biology/py-fastTSNE|math/py-openTSNE|2021-03-13|project renamed/reimplemented under a different name

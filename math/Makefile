@@ -817,6 +817,7 @@
     SUBDIR += py-numpoly
     SUBDIR += py-numpy
     SUBDIR += py-numpy-stl
+    SUBDIR += py-openTSNE
     SUBDIR += py-opt-einsum
     SUBDIR += py-optuna
     SUBDIR += py-or-tools
