@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gengetopt
-PORTVERSION=	2.22.6
-PORTREVISION=	3
+PORTVERSION=	2.23
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -12,6 +11,8 @@ COMMENT=	Tool for generating a C function which parses command line arguments
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		makeinfo tar:xz
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
