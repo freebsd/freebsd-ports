@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	g2
-PORTVERSION=	0.40
-PORTREVISION=	11
+PORTVERSION=	0.72
 CATEGORIES=	graphics
-MASTER_SITES=	SUNSITE/libs/graphics
+MASTER_SITES=	SF/g2gl/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use, portable, and powerful 2D graphics library
