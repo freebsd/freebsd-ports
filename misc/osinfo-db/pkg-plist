@@ -271,6 +271,7 @@ share/osinfo/os/fedoraproject.org/fedora-30.xml
 share/osinfo/os/fedoraproject.org/fedora-31.xml
 share/osinfo/os/fedoraproject.org/fedora-32.xml
 share/osinfo/os/fedoraproject.org/fedora-33.xml
+share/osinfo/os/fedoraproject.org/fedora-34.xml
 share/osinfo/os/fedoraproject.org/fedora-4.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
 share/osinfo/os/fedoraproject.org/fedora-6.xml
@@ -285,6 +286,7 @@ share/osinfo/os/fedoraproject.org/silverblue-30.xml
 share/osinfo/os/fedoraproject.org/silverblue-31.xml
 share/osinfo/os/fedoraproject.org/silverblue-32.xml
 share/osinfo/os/fedoraproject.org/silverblue-33.xml
+share/osinfo/os/fedoraproject.org/silverblue-34.xml
 share/osinfo/os/fedoraproject.org/silverblue-rawhide.xml
 share/osinfo/os/fedoraproject.org/silverblue-unknown.xml
 share/osinfo/os/freebsd.org/freebsd-1.0.xml
