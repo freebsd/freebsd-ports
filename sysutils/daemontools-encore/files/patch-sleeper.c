@@ -1,8 +1,8 @@
---- sleeper.c.orig	2014-07-27 23:16:55.000000000 +0200
-+++ sleeper.c	2014-07-27 23:18:11.000000000 +0200
-@@ -8,20 +8,18 @@
-   const char *name;
+--- sleeper.c.orig	2018-10-14 00:48:50 UTC
++++ sleeper.c
+@@ -11,16 +11,16 @@ static void catch_sig(int sig)
    int ignored;
+   int i;
    switch (sig) {
 -  case SIGALRM: name = "ALRM"; break;
 -  case SIGCONT: name = "CONT"; break;
@@ -25,9 +25,5 @@
 +  case SIGWINCH: name = "Caught WINCH\n"; break;
 +  default: name = "unknown signal\n";
    }
--  ignored = write(1, "Caught ", 7);
-   ignored = write(1, name, str_len(name));
--  ignored = write(1, "\n", 1);
-   if (sig != SIGCONT)
-     _exit(1);
- }
+   i = str_len(name);
+   byte_copy(buf+7,i,name);

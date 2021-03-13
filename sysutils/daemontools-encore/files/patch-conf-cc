@@ -1,7 +1,7 @@
---- conf-cc.orig	2014-07-27 23:11:57.000000000 +0200
-+++ conf-cc	2014-07-27 23:12:04.000000000 +0200
+--- conf-cc.orig	2018-10-14 00:48:50 UTC
++++ conf-cc
 @@ -1,3 +1,3 @@
 -gcc -O2 -Wall -Wshadow -Wcast-align -Wwrite-strings
 +cc -O2 -Wall -Wshadow -Wcast-align -Wwrite-strings
-
+ 
  This will be used to compile .c files.

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	daemontools-encore
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/daemontools-encore/
 

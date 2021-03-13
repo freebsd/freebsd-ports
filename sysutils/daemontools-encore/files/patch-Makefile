@@ -1,0 +1,11 @@
+--- Makefile.orig	2018-10-14 00:48:50 UTC
++++ Makefile
+@@ -247,7 +247,7 @@ compile iopause.c taia.h tai.h uint64.h select.h iopau
+ 	./compile iopause.c
+ 
+ it: \
+-rts sysdeps man
++programs sysdeps man
+ 
+ load: \
+ conf-ld print-ld.sh systype warn-auto.sh
