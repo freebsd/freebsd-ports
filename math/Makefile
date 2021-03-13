@@ -756,6 +756,7 @@
     SUBDIR += py-apgl
     SUBDIR += py-arviz
     SUBDIR += py-autograd
+    SUBDIR += py-baycomp
     SUBDIR += py-bayesian-optimization
     SUBDIR += py-benford_py
     SUBDIR += py-bitmath

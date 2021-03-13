@@ -1,0 +1,11 @@
+Baycomp is a library for Bayesian comparison of classifiers.
+
+Functions compare two classifiers on one or on multiple data sets. They compute
+three probabilities: the probability that the first classifier has higher scores
+than the second, the probability that differences are within the region of
+practical equivalence (rope), or that the second classifier has higher scores.
+We will refer to this probabilities as p_left, p_rope and p_right. If the
+argument rope is omitted (or set to zero), functions return only p_left and
+p_right.
+
+WWW: https://github.com/janezd/baycomp
