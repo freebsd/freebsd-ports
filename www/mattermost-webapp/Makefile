@@ -1,13 +1,13 @@
 # $FreeBSD$
 
 PORTNAME=	mattermost-webapp
-PORTVERSION=	5.30.1
+PORTVERSION=	5.32.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://releases.mattermost.com/${PORTVERSION}/
 DISTNAME=	mattermost-${PORTVERSION}-linux-amd64
 
-MAINTAINER=	loic.blot@unix-experience.fr
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Webapp of Mattermost server
 
 LICENSE=	APACHE20
@@ -30,5 +30,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	cd ${WRKDIR}/mattermost && ${COPYTREE_SHARE} client ${STAGEDIR}${WWWDIR}
 	${MKDIR} ${STAGEDIR}${WWWDIR}/client/plugins
+
+post-install:
+	(cd ${STAGEDIR}${PREFIX} && \
+		${FIND} -E -s ${WWWDIR_REL}/client -type f -regex '.*[0-9a-f]{20,}.*\.(apng|css|eot|gif|jpg|js|json|map|mp3|png|svg|ttf|woff|woff2)$$' >> ${TMPPLIST})
 
 .include <bsd.port.mk>

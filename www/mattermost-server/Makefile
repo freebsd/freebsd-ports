@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	mattermost-server
-PORTVERSION=	5.30.1
+PORTVERSION=	5.32.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
-MAINTAINER=	loic.blot@unix-experience.fr
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Open source Slack-alternative in Golang and React
 
 LICENSE=	MIT

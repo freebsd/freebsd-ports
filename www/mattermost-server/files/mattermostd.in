@@ -43,7 +43,7 @@ load_rc_config $name
 pidfile=/var/run/${name}.pid
 procname=%%PREFIX%%/bin/${name}
 command=/usr/sbin/daemon
-command_args="-p ${pidfile} -S -s ${mattermostd_priority} -l ${mattermostd_facility} -T ${mattermostd_tag} ${procname} ${mattermostd_extraflags} --config=${mattermostd_conf}"
+command_args="-p ${pidfile} -S -s ${mattermostd_priority} -l ${mattermostd_facility} -T ${mattermostd_tag} ${procname} server ${mattermostd_extraflags} --config=${mattermostd_conf}"
 start_precmd=mattermostd_startprecmd
 mattermostd_chdir=%%PREFIX%%/www/mattermost
 required_files=${mattermostd_confg}
