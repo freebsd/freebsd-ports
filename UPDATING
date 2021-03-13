@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210313:
+  AFFECTS: users of net-mgmt/phpipam
+  AUTHOR: marko.cupac@mimar.rs
+
+  ipaddresses table in phpipam database is likely to contain incorrect datetime
+  values which prevent successful upgrade.  Make sure to create backup of
+  phpipam database.  Before starting upgrade wizard in web interface run the
+  following SQL query on phpipam database:
+
+    UPDATE ipaddresses SET lastSeen='1970-01-01 00:00:01' WHERE lastSeen < '0000-01-01 00:00:00';
+
 20210310:
   AFFECTS: users of textproc/redisearch
   AUTHOR: osa@FreeBSD.org
