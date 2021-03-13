@@ -1,14 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	FreeCAD
-DISTVERSION=	0.18.6
+DISTVERSION=	0.19.1
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
 CATEGORIES=	cad
-
-PATCH_SITES=	https://github.com/FreeCAD/FreeCAD/commit/
-PATCHFILES+=	6eacb17b3e03d20.patch:-p1 # Python 3.8 compat
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
@@ -44,7 +41,7 @@ USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT=		buildtools concurrent core gui network opengl printsupport \
-		qmake_build svg webkit widgets xml
+		qmake_build svg webkit widgets xml xmlpatterns
 USE_LDCONFIG=	yes
 
 DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL
