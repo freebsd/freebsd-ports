@@ -370,6 +370,7 @@
     SUBDIR += py-QSpectrumAnalyzer
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
+    SUBDIR += py-XlsxWriter
     SUBDIR += py-alive-progress
     SUBDIR += py-cinder
     SUBDIR += py-colorbrewer

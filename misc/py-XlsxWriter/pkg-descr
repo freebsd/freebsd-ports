@@ -1,0 +1,7 @@
+XlsxWriter is a Python module for writing files in the Excel 2007+ XLSX file
+format.
+
+XlsxWriter can be used to write text, numbers, formulas and hyperlinks to
+multiple worksheets and it supports features such as formatting and many more.
+
+WWW: https://github.com/jmcnamara/XlsxWriter
