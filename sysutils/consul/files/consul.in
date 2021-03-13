@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: consul
-# REQUIRE: NETWORKING SERVERS DAEMON
+# REQUIRE: NETWORKING FILESYSTEMS defaultroute netwait resolv
 # KEYWORD: shutdown
 #
 # Add consul_enable="YES" to /etc/rc.conf to enable Consul
