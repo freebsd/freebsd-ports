@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cryptopp
-PORTVERSION=	8.4.0
+PORTVERSION=	8.5.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.cryptopp.com/
 DISTNAME=	cryptopp${PORTVERSION:S/.//g}
