@@ -1,11 +1,11 @@
 --- oxidized-web.gemspec.orig	2019-08-12 17:14:24 UTC
 +++ oxidized-web.gemspec
-@@ -27,12 +27,12 @@ Gem::Specification.new do |s|
+@@ -27,12 +27,12 @@
        s.add_runtime_dependency(%q<haml>.freeze, ["~> 5.0"])
        s.add_runtime_dependency(%q<htmlentities>.freeze, ["~> 4.3"])
        s.add_runtime_dependency(%q<oxidized>.freeze, ["~> 0.26"])
 -      s.add_runtime_dependency(%q<puma>.freeze, ["~> 3.11.4"])
-+      s.add_runtime_dependency(%q<puma>.freeze, ["~> 3.11", ">= 3.11.4"])
++      s.add_runtime_dependency(%q<puma>.freeze, ["> 3.11.3"])
        s.add_runtime_dependency(%q<sass>.freeze, ["~> 3.3"])
        s.add_runtime_dependency(%q<sinatra>.freeze, ["~> 1.4", ">= 1.4.6"])
        s.add_runtime_dependency(%q<sinatra-contrib>.freeze, ["~> 1.4", ">= 1.4.6"])
@@ -15,3 +15,22 @@
        s.add_development_dependency(%q<bundler>.freeze, ["~> 2.0"])
        s.add_development_dependency(%q<rails_best_practices>.freeze, ["~> 1.19"])
        s.add_development_dependency(%q<rake>.freeze, ["~> 10.0"])
+@@ -43,7 +43,7 @@
+       s.add_dependency(%q<haml>.freeze, ["~> 5.0"])
+       s.add_dependency(%q<htmlentities>.freeze, ["~> 4.3"])
+       s.add_dependency(%q<oxidized>.freeze, ["~> 0.26"])
+-      s.add_dependency(%q<puma>.freeze, ["~> 3.11.4"])
++      s.add_dependency(%q<puma>.freeze, ["> 3.11.3"])
+       s.add_dependency(%q<sass>.freeze, ["~> 3.3"])
+       s.add_dependency(%q<sinatra>.freeze, ["~> 1.4", ">= 1.4.6"])
+       s.add_dependency(%q<sinatra-contrib>.freeze, ["~> 1.4", ">= 1.4.6"])
+@@ -60,7 +60,7 @@
+     s.add_dependency(%q<haml>.freeze, ["~> 5.0"])
+     s.add_dependency(%q<htmlentities>.freeze, ["~> 4.3"])
+     s.add_dependency(%q<oxidized>.freeze, ["~> 0.26"])
+-    s.add_dependency(%q<puma>.freeze, ["~> 3.11.4"])
++    s.add_dependency(%q<puma>.freeze, ["> 3.11.3"])
+     s.add_dependency(%q<sass>.freeze, ["~> 3.3"])
+     s.add_dependency(%q<sinatra>.freeze, ["~> 1.4", ">= 1.4.6"])
+     s.add_dependency(%q<sinatra-contrib>.freeze, ["~> 1.4", ">= 1.4.6"])
+Only in work/oxidized-web-0.13.1: oxidized-web.gemspec.orig
