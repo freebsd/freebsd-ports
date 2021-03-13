@@ -3,8 +3,7 @@
 
 PORTNAME=	openrct2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
-PORTREVISION=	4
+DISTVERSION=	0.3.3
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -13,7 +12,7 @@ COMMENT=	Open source re-implementation of RollerCoaster Tycoon 2
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/licence.txt
 
-NOT_FOR_ARCHS=	mips mips64 powerpc powerpcspe powerpc64 sparc64
+NOT_FOR_ARCHS=	mips mips64 powerpc powerpc64 powerpcspe sparc64
 NOT_FOR_ARCHS_REASON=	Only for little-endian architectures
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
