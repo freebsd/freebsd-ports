@@ -2,7 +2,7 @@
 
 PORTNAME=	qutebrowser
 DISTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	CHEESESHOP
 
@@ -22,25 +22,27 @@ RUN_DEPENDS=	\
 
 USES=		desktop-file-utils python:3.6+ pyqt:5 qt:5
 USE_PYQT=	core opengl printsupport sql widgets qml
-USE_QT=		sql-sqlite3
 USE_PYTHON=	distutils autoplist noflavors
-
-NO_ARCH=	yes
-PLIST_FILES=	share/applications/${PORTNAME}-${PYTHON_VER}.desktop
+USE_QT=		sql-sqlite3
 
 # Upstream archive contains files with UTF-8 names
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+NO_ARCH=	yes
+PLIST_FILES=	share/applications/${PORTNAME}-${PYTHON_VER}.desktop
 
+OPTIONS_DEFINE_amd64=	ADBLOCK
+OPTIONS_DEFAULT=	WEBKIT
+OPTIONS_DEFAULT_amd64=	WEBENGINE ADBLOCK
+OPTIONS_DEFAULT_i386=	WEBENGINE
 OPTIONS_MULTI=	BACKEND
 OPTIONS_MULTI_BACKEND=	WEBKIT WEBENGINE
-OPTIONS_DEFAULT=	WEBKIT
-OPTIONS_DEFAULT_amd64=	WEBENGINE
-OPTIONS_DEFAULT_i386=	WEBENGINE
 
+ADBLOCK_DESC=		Enable the newer adblocking support
 WEBENGINE_DESC=		WebEngine webpage renderer support
 
-WEBKIT_USE=	PYQT=webkit,webkitwidgets
+ADBLOCK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}adblock>=0.4.2:www/py-adblock@${PY_FLAVOR}
 WEBENGINE_USE=	PYQT=webengine,webchannel
+WEBKIT_USE=	PYQT=webkit,webkitwidgets
 
 .include <bsd.port.pre.mk>
 
