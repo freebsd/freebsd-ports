@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	rubymine
-PORTVERSION=	2020.2
+PORTVERSION=	2020.3.2
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/ruby/ \
 		http://download.jetbrains.com/ruby/
 PKGNAMEPREFIX=	intellij-
 DISTNAME=	RubyMine-${PORTVERSION}
 
-MAINTAINER=	ports@freeBSD.org
+MAINTAINER=	rene@freeBSD.org
 COMMENT=	Ruby on Rails IDE by JetBrains
 
 LICENSE=	IntelliJ-Rubymine
@@ -22,7 +22,7 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier
 USES=		python:run shebangfix
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	11+
 
 SHEBANG_FILES=	bin/printenv.py bin/restart.py
 
