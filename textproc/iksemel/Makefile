@@ -19,6 +19,8 @@ GH_TAGNAME=	978b733
 
 USES=		autoreconf libtool makeinfo pathfix pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-gnutls=yes \
+		--disable-python
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
