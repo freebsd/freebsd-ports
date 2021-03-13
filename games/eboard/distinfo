@@ -1,6 +1,9 @@
-SHA256 (eboard-1.1.1.tar.bz2) = ad971086697c0d5a1c8a64401f6675339e832acb386dc96fa4e17da1832ca26e
-SIZE (eboard-1.1.1.tar.bz2) = 462386
+TIMESTAMP = 1615669009
+SHA256 (fbergo-eboard-v1.1.3_GH0.tar.bz2) = 2a1ba23a27c94ee4ec167bb31ab7dd6eedf148e139c9a96e8cb5ac36ec8423c1
+SIZE (fbergo-eboard-v1.1.3_GH0.tar.bz2) = 1578858
 SHA256 (eboard-extras-1pl2.tar.gz) = 6849cc104e454167db8b8e9ae0573accade5c941a140b47e58b601164e99fcc3
 SIZE (eboard-extras-1pl2.tar.gz) = 361237
 SHA256 (eboard-extras-2.tar.gz) = 0b98bd4c90b2e275f8535186c3e7cbeeef9c9bb611a7febfcd866486a9f41a9c
 SIZE (eboard-extras-2.tar.gz) = 598909
+SHA256 (fbergo-eboard-v1.1.3_GH0.tar.gz) = 2a1ba23a27c94ee4ec167bb31ab7dd6eedf148e139c9a96e8cb5ac36ec8423c1
+SIZE (fbergo-eboard-v1.1.3_GH0.tar.gz) = 1578858

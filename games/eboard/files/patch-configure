@@ -1,6 +1,6 @@
---- configure.orig	2020-01-02 23:06:25 UTC
-+++ configure
-@@ -104,7 +104,7 @@ sub run_cmd {
+--- configure.orig	2021-03-13 13:18:59.466284000 -0800
++++ configure	2021-03-13 13:18:59.474328000 -0800
+@@ -106,7 +106,7 @@
  }
  
  sub cplusplus_lang {
@@ -9,50 +9,8 @@
      my $x;
      my $program = <<EOF;
  #include <list>
-@@ -142,41 +142,6 @@ EOF
-     print TESTCC "$program";
-     close TESTCC;
+@@ -357,7 +357,7 @@
  
--    $cxx = 'no';
--    for (@compilers) {
--	$x = $_;
--	print "  trying $x ... ";
--
--	unlink('test.o','yytest');
--	log_file("test.cc");
--
--	if (run_cmd($x, '-c', 'test.cc', '-o', 'test.o') != 0) {
--	  print "compilation FAILED\n";
--	  next;
--	}
--
--	if (run_cmd($x, 'test.o', '-o', 'yytest') != 0) {
--	  print "compilation ok, linking FAILED\n";
--	  next;
--	}
--
--	$y = `./yytest`;
--	if ($y ne "1710\n") {
--	  print "compilation ok, linking ok, output FAILED\n";
--	  next;
--	}
--	
--	$cxx = $x;
--	print "it works\n";
--	last;
--    }
--    unlink('test.o','yytest','test.cc');
--
--    if ($cxx eq 'no') {
--	print "FAIL\n";
--	return 0;
--    }
--
-     return 1;
- }
- 
-@@ -354,7 +319,7 @@ sub header_check {
- 	
  	log_file("test.cc");
  
 -	if (run_cmd($cxx,@cxxflags,"-c","test.cc","-o","xxtest.o") != 0) {
@@ -60,9 +18,9 @@
  	    print ": no\n";
  	    $y = header_def($x);
  	    print CONFIGH "#undef $y\n";
-@@ -512,17 +477,9 @@ if (!header_check("stdio.h","stdlib.h","string.h","uni
+@@ -511,17 +511,9 @@
  #optional headers
- header_check("strings.h","sys/soundcard.h","sys/audioio.h","linux/joystick.h");
+ header_check("strings.h");
  
 -$t1=macro_check("netinet/in.h","IPPROTO_TCP","HAVE_IPPROTO_TCP_ON_IN_H");
 -$t2=macro_check("netinet/in.h","TCP_NODELAY","HAVE_TCP_NODELAY_ON_IN_H");
@@ -79,7 +37,7 @@
      cppdef("USE_SOCK_OPTS");
      if ($t1!=0 && $t3!=0) {
  	cppundef("NEED_TCP_H");
-@@ -536,10 +493,10 @@ if ($t2 != 0) {
+@@ -535,10 +527,10 @@
  	print "netinet/tcp.h not required, SOL_TCP present.\n";
      }
  } else {

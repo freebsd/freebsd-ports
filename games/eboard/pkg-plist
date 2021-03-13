@@ -70,6 +70,7 @@ man/man6/eboard.6.gz
 %%DATADIR%%/eboard.hu.dict
 %%DATADIR%%/eboard.pl.dict
 %%DATADIR%%/eboard.pt_BR.dict
+%%DATADIR%%/eboard.zh_CN.dict
 %%DATADIR%%/eboard_themes.conf
 %%DATADIR%%/extras1.prevconf
 %%DATADIR%%/extras2.prevconf
@@ -78,4 +79,3 @@ man/man6/eboard.6.gz
 %%DATADIR%%/themeconf.extras1
 %%DATADIR%%/themeconf.extras2
 %%DATADIR%%/timeseal.FreeBSD
-share/pixmaps/eboard.xpm
