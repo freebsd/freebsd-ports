@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-dosbox
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20201229
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	dosbox-libretro
-GH_TAGNAME=	e4ed503
+GH_TAGNAME=	aa71b67
 
 PLIST_FILES=	lib/libretro/dosbox_libretro.so
 
