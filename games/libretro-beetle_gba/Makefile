@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-beetle_gba
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210131
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-gba-libretro
-GH_TAGNAME=	135afdb
+GH_TAGNAME=	8d1e421
 
 PLIST_FILES=	lib/libretro/mednafen_gba_libretro.so
 
