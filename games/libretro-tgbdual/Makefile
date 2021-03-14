@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-tgbdual
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	tgbdual-libretro
-GH_TAGNAME=	9be31d3
+GH_TAGNAME=	18fd609
 
 PLIST_FILES=	lib/libretro/tgbdual_libretro.so
 
