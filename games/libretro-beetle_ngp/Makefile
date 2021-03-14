@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-beetle_ngp
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-ngp-libretro
-GH_TAGNAME=	6f15532
+GH_TAGNAME=	74cc0d8
 
 PLIST_FILES=	lib/libretro/mednafen_ngp_libretro.so
 
