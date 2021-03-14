@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-mu
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -16,7 +16,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	Mu
-GH_TAGNAME=	4ac4068
+GH_TAGNAME=	ff746b8
 
 PLIST_FILES=	lib/libretro/mu_libretro.so
 
