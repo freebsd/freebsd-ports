@@ -2,7 +2,7 @@
 
 PORTNAME=	symengine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
+DISTVERSION=	0.7.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -75,7 +75,7 @@ PIRANHA_BUILD_DEPENDS=	piranha>0:math/piranha
 
 LLVM_VERSION=	${LLVM_DEFAULT}
 
-do-test:
+do-test: # one test fails: https://github.com/symengine/symengine/issues/1697
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \

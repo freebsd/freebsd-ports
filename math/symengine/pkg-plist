@@ -73,6 +73,7 @@ include/symengine/symengine_config_cling.h
 include/symengine/symengine_exception.h
 include/symengine/symengine_export.h
 include/symengine/symengine_rcp.h
+include/symengine/test_visitors.h
 include/symengine/type_codes.inc
 include/symengine/visitor.h
 lib/cmake/symengine/SymEngineConfig.cmake
@@ -80,5 +81,5 @@ lib/cmake/symengine/SymEngineConfigVersion.cmake
 lib/cmake/symengine/SymEngineTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/symengine/SymEngineTargets.cmake
 lib/libsymengine.so
-lib/libsymengine.so.0.6
-lib/libsymengine.so.0.6.0
+lib/libsymengine.so.0.7
+lib/libsymengine.so.0.7.0
