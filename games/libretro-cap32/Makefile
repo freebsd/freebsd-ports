@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-cap32
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210110
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	520ab0f
+GH_TAGNAME=	ad7397f
 
 PLIST_FILES=	lib/libretro/cap32_libretro.so
 

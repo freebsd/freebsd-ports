@@ -1,4 +1,4 @@
---- libretro/retro_events.c.orig	2020-04-17 23:23:41 UTC
+--- libretro/retro_events.c.orig	2021-02-19 01:54:05 UTC
 +++ libretro/retro_events.c
 @@ -56,6 +56,8 @@ const uint8_t bit_values[8] = {0x01, 0x02, 0x04, 0x08,
  #define MAX_BUTTONS 14
