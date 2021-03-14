@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-virtualjaguar
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	virtualjaguar-libretro
-GH_TAGNAME=	a162fb7
+GH_TAGNAME=	afe223e
 
 PLIST_FILES=	lib/libretro/virtualjaguar_libretro.so
 
