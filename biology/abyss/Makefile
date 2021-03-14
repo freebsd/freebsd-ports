@@ -34,4 +34,6 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 
+PORTSCOUT=	limit:^[0-9\.]*$$ # to ignore alpha-numeric tags
+
 .include <bsd.port.mk>
