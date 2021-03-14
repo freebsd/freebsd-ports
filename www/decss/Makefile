@@ -12,6 +12,9 @@ COMMENT=	Strip cascading style sheets from webpages
 
 LICENSE=	ART10
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2021-03-31
+
 WRKSRC=		${WRKDIR}/source
 
 USES=		perl5 shebangfix
