@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-prosystem
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	prosystem-libretro
-GH_TAGNAME=	6f7e34a
+GH_TAGNAME=	a812cab
 
 PLIST_FILES=	lib/libretro/prosystem_libretro.so
 
