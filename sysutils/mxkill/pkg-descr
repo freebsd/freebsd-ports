@@ -1,0 +1,9 @@
+mxkill is a X/Motif interface to ps. Inspired by xzap by
+gerry.tomlinson@ncl.ac.uk. xzap is an X Athena widget version
+of the zap command described in Kernighan &l Pike's "The Unix
+Programming Environment". I am not a big fan of Athena widget
+set, so I had to write it in Motif.
+
+This port requires Motif or equivalent to build.
+
+WWW: https://www.muquit.com/muquit/software/mxkill/mxkill.html
