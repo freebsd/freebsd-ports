@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-vbanext
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	vba-next
-GH_TAGNAME=	019132d
+GH_TAGNAME=	c24bf52
 
 PLIST_FILES=	lib/libretro/vba_next_libretro.so
 
