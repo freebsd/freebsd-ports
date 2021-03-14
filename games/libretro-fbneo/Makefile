@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-fbneo
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210218
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -21,7 +21,7 @@ PLIST_FILES=	lib/libretro/fbneo_libretro.so
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	FBNeo
-GH_TAGNAME=	09cff81
+GH_TAGNAME=	a6d552b
 
 MAKEFILE=	Makefile.freebsd
 
