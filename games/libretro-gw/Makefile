@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-gw
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210129
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	gw-libretro
-GH_TAGNAME=	819b1dd
+GH_TAGNAME=	2be30ba
 
 PLIST_FILES=	lib/libretro/gw_libretro.so
 
