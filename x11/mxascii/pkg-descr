@@ -1,0 +1,6 @@
+mxascii is a X/Motif program to display ASCII character set (0-127)
+in decimal, hexadecimal, or octal. 
+
+This port requires Motif or equivalent to build.
+
+WWW: https://www.muquit.com/muquit/software/mxascii/mxascii.html

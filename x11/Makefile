@@ -234,6 +234,7 @@
     SUBDIR += mrxvt
     SUBDIR += mrxvt-devel
     SUBDIR += multi-aterm
+    SUBDIR += mxascii
     SUBDIR += mxico
     SUBDIR += nezd
     SUBDIR += numlockx
