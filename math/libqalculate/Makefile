@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libqalculate
-PORTVERSION=	3.16.1
+PORTVERSION=	3.17.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 
