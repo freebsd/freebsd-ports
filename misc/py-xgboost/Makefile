@@ -3,6 +3,7 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -38,7 +39,10 @@ POST_PLIST=	fix-plist
 BROKEN_i386=	undefined symbol: __atomic_load (on 11 and 12, but not on 13)
 .endif
 
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/lib/libxgboost.so
+
 fix-plist: # https://github.com/dmlc/xgboost/issues/5705
-	@${REINPLACE_CMD} 's|/libxgboost.so$$|/xgboost/lib/libxgboost.so|' ${TMPPLIST}
+	@${REINPLACE_CMD} 's|/libxgboost${PYTHON_EXT_SUFFIX}.so$$|/xgboost/lib/libxgboost.so|' ${TMPPLIST}
 
 .include <bsd.port.post.mk>
