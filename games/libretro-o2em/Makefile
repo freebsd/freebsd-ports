@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-o2em
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	b23a796
+GH_TAGNAME=	f874a75
 
 PLIST_FILES=	lib/libretro/o2em_libretro.so
 
