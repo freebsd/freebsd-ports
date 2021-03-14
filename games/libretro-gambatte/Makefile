@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-gambatte
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	gambatte-libretro
-GH_TAGNAME=	132f36e
+GH_TAGNAME=	22abc24
 
 PLIST_FILES=	lib/libretro/gambatte_libretro.so
 
