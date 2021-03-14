@@ -1,4 +1,4 @@
-TIMESTAMP = 1614729150
+TIMESTAMP = 1615712372
 SHA256 (rust/crates/aho-corasick-0.7.10.tar.gz) = 8716408b8bc624ed7f65d223ddb9ac2d044c0547b6fa4b0d554f3a9540496ada
 SIZE (rust/crates/aho-corasick-0.7.10.tar.gz) = 111039
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
@@ -125,5 +125,5 @@ SHA256 (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = ac3b87c63620426dd
 SIZE (rust/crates/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SHA256 (cantino-mcfly-v0.5.4_GH0.tar.gz) = 2bbd4f53fb74e749af93db647567b90ca39df6ecc25af7042b019d2380d74440
-SIZE (cantino-mcfly-v0.5.4_GH0.tar.gz) = 202217
+SHA256 (cantino-mcfly-v0.5.5_GH0.tar.gz) = 09d22e761c5ba5f8f07fed2922abdcbc56574bbe58184019c7ebe591874d745c
+SIZE (cantino-mcfly-v0.5.5_GH0.tar.gz) = 202611
