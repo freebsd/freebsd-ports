@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-fceumm
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	68b8f0e
+GH_TAGNAME=	91ccd3b
 
 PLIST_FILES=	lib/libretro/fceumm_libretro.so
 
