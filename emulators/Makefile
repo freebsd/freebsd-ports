@@ -52,6 +52,7 @@
     SUBDIR += hercules
     SUBDIR += higan
     SUBDIR += hugo
+    SUBDIR += hv_kvp_cmd
     SUBDIR += i386-wine
     SUBDIR += i386-wine-devel
     SUBDIR += ines
@@ -126,6 +127,7 @@
     SUBDIR += rpcs3
     SUBDIR += rtc
     SUBDIR += rubygem-fission
+    SUBDIR += sdltrs
     SUBDIR += simh
     SUBDIR += simh-hp2100
     SUBDIR += simh-hp3000
