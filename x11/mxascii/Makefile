@@ -3,7 +3,7 @@
 
 PORTNAME=	mxascii
 PORTVERSION=	1.1
-CATEGORIES+=	sysutils
+CATEGORIES+=	x11
 MASTER_SITES=	https://www.muquit.com/muquit/software/mxascii/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
