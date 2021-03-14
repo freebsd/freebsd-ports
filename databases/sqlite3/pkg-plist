@@ -1,0 +1,12 @@
+bin/sqlite3
+%%TCL%%bin/sqlite3_analyzer
+include/sqlite3.h
+include/sqlite3ext.h
+lib/libsqlite3.a
+lib/libsqlite3.so
+lib/libsqlite3.so.0
+lib/libsqlite3.so.0.8.6
+libdata/pkgconfig/sqlite3.pc
+man/man1/sqlite3.1.gz
+%%TCL%%lib/tcl%%TCL_VER%%/sqlite3/libtclsqlite3.so
+%%TCL%%lib/tcl%%TCL_VER%%/sqlite3/pkgIndex.tcl
