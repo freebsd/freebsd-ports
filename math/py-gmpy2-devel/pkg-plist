@@ -9,4 +9,4 @@
 %%PYTHON_SITELIBDIR%%/gmpy2/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/gmpy2/gmpy2.h
 %%PYTHON_SITELIBDIR%%/gmpy2/gmpy2.pxd
-%%PYTHON_SITELIBDIR%%/gmpy2/gmpy2.so
+%%PYTHON_SITELIBDIR%%/gmpy2/gmpy2%%PYTHON_EXT_SUFFIX%%.so
