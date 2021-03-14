@@ -4,3 +4,7 @@ commands, respectively:
 
 	%%APPHOME%%/bin/appleseed.cli
 	%%APPHOME%%/bin/appleseed.studio
+
+Until https://github.com/appleseedhq/appleseed/issues/2520 is resolved,
+you might want to create $HOME/shaders -> %%APPHOME%%/shaders
+symlink to help it find OSL shaders.
