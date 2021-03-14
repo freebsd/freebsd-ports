@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-opera
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -16,7 +16,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	opera-libretro
-GH_TAGNAME=	27bc265
+GH_TAGNAME=	5781f68
 
 PLIST_FILES=	lib/libretro/opera_libretro.so
 
