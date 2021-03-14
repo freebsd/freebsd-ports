@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-nxengine
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	nxengine-libretro
-GH_TAGNAME=	f39250e
+GH_TAGNAME=	10c4381
 
 PLIST_FILES=	lib/libretro/nxengine_libretro.so
 
