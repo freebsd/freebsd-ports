@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-snes9x2005
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -20,7 +20,7 @@ NO_CDROM=	Commercial users must seek permission from copyright holders.
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	snes9x2005
-GH_TAGNAME=	c216559
+GH_TAGNAME=	218be8e
 
 PLIST_FILES=	lib/libretro/snes9x2005_libretro.so
 
