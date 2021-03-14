@@ -1377,8 +1377,8 @@
     SUBDIR += libvirt-java
     SUBDIR += libvmdk
     SUBDIR += libvolume_id
-    SUBDIR += libvshadow
     SUBDIR += libvsgpt
+    SUBDIR += libvshadow
     SUBDIR += libvslvm
     SUBDIR += libvterm
     SUBDIR += libwfut

@@ -128,7 +128,6 @@
     SUBDIR += rtc
     SUBDIR += rubygem-fission
     SUBDIR += sameboy
-    SUBDIR += sdltrs
     SUBDIR += simh
     SUBDIR += simh-hp2100
     SUBDIR += simh-hp3000
