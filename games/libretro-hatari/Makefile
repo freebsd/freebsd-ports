@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-hatari
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210127
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	hatari
-GH_TAGNAME=	ec1b59c
+GH_TAGNAME=	561c07e
 
 PLIST_FILES=	lib/libretro/hatari_libretro.so
 
