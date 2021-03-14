@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	w_scan2
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.11
 CATEGORIES=	multimedia
 
 MAINTAINER=	rene@FreeBSD.org
