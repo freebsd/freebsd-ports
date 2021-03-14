@@ -13,6 +13,7 @@
 %%T%%/bin/daemon.sh
 %%T%%/bin/digest.sh
 %%T%%/bin/makebase.sh
+%%T%%/bin/migrate.sh
 %%T%%/bin/setclasspath.sh
 %%T%%/bin/shutdown.sh
 %%T%%/bin/startup.sh
@@ -28,6 +29,7 @@
 %%T%%/lib/catalina.jar
 %%T%%/lib/ecj-4.18.jar
 %%T%%/lib/el-api.jar
+%%T%%/lib/jakartaee-migration-0.2.0-shaded.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
 %%T%%/lib/jaspic-api.jar
