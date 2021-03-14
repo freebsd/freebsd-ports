@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-nestopia
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	nestopia
-GH_TAGNAME=	70c53f0
+GH_TAGNAME=	2b0315c
 
 PLIST_FILES=	lib/libretro/nestopia_libretro.so
 
