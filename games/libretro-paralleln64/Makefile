@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-paralleln64
-PORTVERSION=	0.20201129
+PORTVERSION=	0.20210127
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -28,18 +28,12 @@ MAKE_ARGS=	WITH_DYNAREC=${DYNAREC}
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	parallel-n64
-GH_TAGNAME=	29e7f39
+GH_TAGNAME=	6e26fbb
 
 PLIST_FILES=	lib/libretro/parallel_n64_libretro.so
-
-.include <bsd.port.pre.mk>
-
-.if ${GCC_DEFAULT} >= 10
-BROKEN=		fails to link: ./mupen64plus-core/src/dd/dd_disk.o:(.bss+0xc): multiple definition of `CUR_BLOCK'
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
 	${INSTALL_LIB} ${WRKSRC}/parallel_n64_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
