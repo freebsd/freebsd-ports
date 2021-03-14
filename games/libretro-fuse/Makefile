@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-fuse
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210204
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	fuse-libretro
-GH_TAGNAME=	ef603d1
+GH_TAGNAME=	8b51f87
 
 PLIST_FILES=	lib/libretro/fuse_libretro.so
 
