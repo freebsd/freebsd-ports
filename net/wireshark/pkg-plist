@@ -618,10 +618,10 @@ include/wireshark/wsutil/ws_printf.h
 include/wireshark/wsutil/xtea.h
 lib/libwireshark.so
 lib/libwireshark.so.14
-lib/libwireshark.so.14.0.3
+lib/libwireshark.so.14.0.4
 lib/libwiretap.so
 lib/libwiretap.so.11
-lib/libwiretap.so.11.0.3
+lib/libwiretap.so.11.0.4
 lib/libwsutil.so
 lib/libwsutil.so.12
 lib/libwsutil.so.12.0.0
