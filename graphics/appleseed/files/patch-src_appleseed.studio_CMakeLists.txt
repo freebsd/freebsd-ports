@@ -1,0 +1,62 @@
+--- src/appleseed.studio/CMakeLists.txt.orig	2019-08-31 15:49:01 UTC
++++ src/appleseed.studio/CMakeLists.txt
+@@ -33,18 +33,13 @@
+ #--------------------------------------------------------------------------------------------------
+ 
+ # Boost.
+-if (NOT PYTHON_MAJOR_VERSION STREQUAL "2")
+-    message (FATAL_ERROR "Python 2.x needed.")
+-else ()
+-    if (Boost_VERSION GREATER_EQUAL 106700)
+-        find_package (Boost 1.61 REQUIRED COMPONENTS python27)
+-    else ()
+-        find_package (Boost 1.61 REQUIRED COMPONENTS python)
+-    endif ()
+-endif ()
++find_package (Boost 1.61 REQUIRED COMPONENTS python)
+ 
+ # OpenGL.
+ find_package (OpenGL REQUIRED)
++
++# Python 3.
++find_package (Python3 REQUIRED)
+ 
+ # Qt 5.
+ find_package (Qt5 REQUIRED COMPONENTS Concurrent Core OpenGL Widgets)
+@@ -475,7 +470,7 @@ QT5_ADD_RESOURCES (appleseed.studio_resource_files
+ 
+ add_executable (appleseed.studio
+     ${appleseed.studio_sources}
+-    $<TARGET_OBJECTS:appleseed.py2.obj>
++    $<TARGET_OBJECTS:appleseed.py3.obj>
+     ${appleseed.studio_generated_ui_files}
+     ${appleseed.studio_generated_moc_h_files}
+     ${appleseed.studio_resource_files}
+@@ -505,7 +500,7 @@ include_directories (
+     .
+     ../appleseed.shared
+     ${OPENCOLORIO_INCLUDE_DIRS}
+-    ${PYTHON_INCLUDE_DIRS}
++    ${PYTHON_INCLUDE_DIR}
+ )
+ 
+ 
+@@ -533,8 +528,8 @@ target_link_libraries (appleseed.studio
+     Qt5::Concurrent
+     Qt5::OpenGL
+     Qt5::Widgets
+-    ${OPENGL_LIBRARY}
+-    ${PYTHON_LIBRARIES}
++    ${OPENGL_gl_LIBRARY}
++    glad ${PYTHON_LIBRARY}
+ )
+ 
+ if (WITH_DISNEY_MATERIAL)
+@@ -589,5 +584,5 @@ install (DIRECTORY ../../sandbox/studio
+     DESTINATION .
+ )
+ 
+-install (DIRECTORY ../../sandbox/lib/python/site-packages DESTINATION "lib/python${PYTHON_MAJOR_VERSION}.${PYTHON_MINOR_VERSION}")
+-install (DIRECTORY python/studio DESTINATION "lib/python${PYTHON_MAJOR_VERSION}.${PYTHON_MINOR_VERSION}/appleseed")
++install (DIRECTORY ../../sandbox/lib/python/site-packages DESTINATION "../lib/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}")
++install (DIRECTORY python/studio DESTINATION "../lib/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/site-packages/appleseed")

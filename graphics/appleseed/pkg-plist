@@ -9,14 +9,19 @@ share/cmake/Modules/FindXerces.cmake
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/_appleseedpython3.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/logtarget.py
+%%STUDIO%%%%PYTHON_SITELIBDIR%%/appleseed/studio/__init__.py
+%%STUDIO%%%%PYTHON_SITELIBDIR%%/appleseed/studio/plugins.py
+%%STUDIO%%%%PYTHON_SITELIBDIR%%/appleseed/studio/ui.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/test/runtests.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/test/testbasis.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/test/testdict2dict.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/test/testentitymap.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/appleseed/test/testentityvector.py
+%%STUDIO%%%%PYTHON_SITELIBDIR%%/Qt.py
 @cwd %%APPHOME%%
 bin/animatecamera
 bin/appleseed.cli
+%%STUDIO%%bin/appleseed.studio
 bin/cleanmany.py
 bin/convertmany.py
 bin/convertmeshfile
@@ -114,6 +119,25 @@ icons/rendertab_toggle_pixel_inspector.png
 icons/rendertab_toggle_pixel_inspector_hover.png
 lib/libappleseed.shared.so
 lib/libappleseed.so
+%%STUDIO%%ocio/config.ocio
+%%STUDIO%%ocio/luts/alexalogc.spi1d
+%%STUDIO%%ocio/luts/cineon.spi1d
+%%STUDIO%%ocio/luts/panalog.spi1d
+%%STUDIO%%ocio/luts/ploglin.spi1d
+%%STUDIO%%ocio/luts/rec709.spi1d
+%%STUDIO%%ocio/luts/redlog.spi1d
+%%STUDIO%%ocio/luts/slog.spi1d
+%%STUDIO%%ocio/luts/srgb.spi1d
+%%STUDIO%%ocio/luts/srgbf.spi1d
+%%STUDIO%%ocio/luts/viperlog.spi1d
+%%STUDIO%%seexpr/clouds/blue_clouds.se
+%%STUDIO%%seexpr/geometric/checkers.se
+%%STUDIO%%seexpr/geometric/dots.se
+%%STUDIO%%seexpr/gradients/horizontal.se
+%%STUDIO%%seexpr/gradients/vertical.se
+%%STUDIO%%seexpr/noise/fbm.se
+%%STUDIO%%seexpr/noise/noise.se
+%%STUDIO%%seexpr/noise/turbulence.se
 schemas/project.xsd
 schemas/settings.xsd
 settings/appleseed.cli.xml
@@ -283,4 +307,5 @@ share/mitsuba2appleseed.py
 share/rfmdisneypresets2appleseed.py
 share/substancepainter_presets/appleseed UDIM.spexp
 share/substancepainter_presets/appleseed.spexp
+%%STUDIO%%@dir studio/plugins
 stylesheets/default.qss
