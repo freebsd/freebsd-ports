@@ -184,6 +184,7 @@ include/wine/windows/cmnquery.idl
 include/wine/windows/codecapi.h
 include/wine/windows/colinf.idl
 include/wine/windows/colordlg.h
+include/wine/windows/colrst.idl
 include/wine/windows/comcat.h
 include/wine/windows/comcat.idl
 include/wine/windows/commctrl.h
@@ -1168,6 +1169,7 @@ lib/wine/api-ms-win-core-job-l1-1-0.dll.so
 lib/wine/api-ms-win-core-job-l2-1-0.dll.so
 lib/wine/api-ms-win-core-kernel32-legacy-l1-1-0.dll.so
 lib/wine/api-ms-win-core-kernel32-legacy-l1-1-1.dll.so
+lib/wine/api-ms-win-core-kernel32-legacy-l1-1-2.dll.so
 lib/wine/api-ms-win-core-kernel32-private-l1-1-1.dll.so
 lib/wine/api-ms-win-core-largeinteger-l1-1-0.dll.so
 lib/wine/api-ms-win-core-libraryloader-l1-1-0.dll.so
@@ -1654,6 +1656,7 @@ lib/wine/fakedlls/api-ms-win-core-job-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-job-l2-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-kernel32-legacy-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-kernel32-legacy-l1-1-1.dll
+lib/wine/fakedlls/api-ms-win-core-kernel32-legacy-l1-1-2.dll
 lib/wine/fakedlls/api-ms-win-core-kernel32-private-l1-1-1.dll
 lib/wine/fakedlls/api-ms-win-core-largeinteger-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-core-libraryloader-l1-1-0.dll
@@ -3445,6 +3448,7 @@ share/applications/wine.desktop
 %%DATADIR%%/nls/c_20127.nls
 %%DATADIR%%/nls/c_20866.nls
 %%DATADIR%%/nls/c_20932.nls
+%%DATADIR%%/nls/c_20949.nls
 %%DATADIR%%/nls/c_21866.nls
 %%DATADIR%%/nls/c_28591.nls
 %%DATADIR%%/nls/c_28592.nls
