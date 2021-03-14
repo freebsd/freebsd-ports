@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-beetle_psx
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210128
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -16,7 +16,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-psx-libretro
-GH_TAGNAME=	dfab19a
+GH_TAGNAME=	3ec155d
 
 PLIST_FILES=	lib/libretro/mednafen_psx_libretro.so
 
