@@ -1,0 +1,11 @@
+--- check_ssl_cert.orig	2021-03-14 18:38:57 UTC
++++ check_ssl_cert
+@@ -349,7 +349,7 @@ EOF
+ 
+     # current version
+     
+-    OPENSSL_VERSION=$( ${OPENSSL} version | sed 's/^OpenSSL\ \([^ ]*\).*/\1/' )
++    OPENSSL_VERSION=$( ${OPENSSL} version | sed 's/^OpenSSL\ \([^ \-]*\).*/\1/' )
+ 
+     IFS='.' read -r MAJOR1 MAJOR2 MINOR <<EOF
+ ${OPENSSL_VERSION}
