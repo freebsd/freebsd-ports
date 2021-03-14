@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-px68k
-PORTVERSION=	0.20200527
+PORTVERSION=	0.20210113
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	px68k-libretro
-GH_TAGNAME=	415dd30
+GH_TAGNAME=	8455d9c
 
 PLIST_FILES=	lib/libretro/px68k_libretro.so
 
