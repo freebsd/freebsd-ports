@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-desmume2015
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210131
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -18,7 +18,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	desmume2015
-GH_TAGNAME=	93d5789
+GH_TAGNAME=	d6128e6
 
 PLIST_FILES=	lib/libretro/desmume2015_libretro.so
 
