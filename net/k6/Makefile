@@ -2,7 +2,7 @@
 
 PORTNAME=	k6
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.0
+DISTVERSION=	0.31.0
 CATEGORIES=	net
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -26,7 +26,7 @@ GH_TUPLE=	Azure:go-ntlmssp:4a21cbd618b4:azure_go_ntlmssp/vendor/github.com/Azure
 		daaku:go.zipexe:a5fe2436ffcb:daaku_go_zipexe/vendor/github.com/daaku/go.zipexe \
 		davecgh:go-spew:v1.1.0:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dlclark:regexp2:a2a8dda75c91:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
-		dop251:goja:952c20e23c35:dop251_goja/vendor/github.com/dop251/goja \
+		dop251:goja:60bc6ebb9fc1:dop251_goja/vendor/github.com/dop251/goja \
 		dustin:go-humanize:bb3d318650d4:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		eapache:go-resiliency:v1.1.0:eapache_go_resiliency/vendor/github.com/eapache/go-resiliency \
 		eapache:go-xerial-snappy:bb955e01b934:eapache_go_xerial_snappy/vendor/github.com/eapache/go-xerial-snappy \
@@ -101,7 +101,7 @@ GH_TUPLE=	Azure:go-ntlmssp:4a21cbd618b4:azure_go_ntlmssp/vendor/github.com/Azure
 		zyedidia:highlight:201131ce5cf5:zyedidia_highlight/vendor/github.com/zyedidia/highlight
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
-_BUILD_HASH=	2193de0
+_BUILD_HASH=	f0169c0
 
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
