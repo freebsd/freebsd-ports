@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-beetle_supergrafx
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-supergrafx-libretro
-GH_TAGNAME=	fadef23
+GH_TAGNAME=	c4dd156
 
 PLIST_FILES=	lib/libretro/mednafen_supergrafx_libretro.so
 
