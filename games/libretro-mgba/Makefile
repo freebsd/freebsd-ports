@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-mgba
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210128
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	mgba
-GH_TAGNAME=	f87f9ef
+GH_TAGNAME=	6186d45
 
 PLIST_FILES=	lib/libretro/mgba_libretro.so
 
