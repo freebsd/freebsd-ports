@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-bluemsx
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	blueMSX-libretro
-GH_TAGNAME=	7a1d40e
+GH_TAGNAME=	faf470e
 
 PLIST_FILES=	lib/libretro/bluemsx_libretro.so
 
