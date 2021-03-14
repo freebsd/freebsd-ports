@@ -3,7 +3,7 @@
 
 PORTNAME=	mxkill
 PORTVERSION=	1.2
-CATEGORIES+=	sysutils
+CATEGORIES=	sysutils
 MASTER_SITES=	https://www.muquit.com/muquit/software/mxkill/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
