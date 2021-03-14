@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bonzomatic
-DISTVERSION=	2021-01-29
+DISTVERSION=	2021-03-07
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -19,7 +19,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/stb/stb_image.h:devel/stb
 USES=		cmake compiler:c++11-lang gl localbase:ldflags pkgconfig xorg
 USE_GL=		gl glu glew
 USE_XORG=	x11 xext xrandr xinerama xcursor xi
-
+CMAKE_ON=	BONZOMATIC_USE_SYSTEM_GLFW \
+		BONZOMATIC_USE_SYSTEM_GLEW \
+		BONZOMATIC_USE_SYSTEM_STB
 USE_GITHUB=	yes
 GH_ACCOUNT=	Gargaj
 GH_PROJECT=	Bonzomatic
