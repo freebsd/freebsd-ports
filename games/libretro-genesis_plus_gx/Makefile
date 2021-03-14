@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-genesis_plus_gx
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -20,7 +20,7 @@ NO_CDROM=	Commercial users must seek permission from copyright holders.
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	Genesis-Plus-GX
-GH_TAGNAME=	5055106
+GH_TAGNAME=	7f83bc5
 
 PLIST_FILES=	lib/libretro/genesis_plus_gx_libretro.so
 
