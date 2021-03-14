@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-yabause
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210204
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	yabause
-GH_TAGNAME=	9be109f
+GH_TAGNAME=	ea5b118
 
 PLIST_FILES=	lib/libretro/yabause_libretro.so
 
