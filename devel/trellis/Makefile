@@ -5,6 +5,10 @@ PORTVERSION=	g20190422
 PORTREVISION=	3
 CATEGORIES=	devel
 
+# Add Python 3.8 to search list in ${WRKSRC}/libtrellis/CMakeLists.txt
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	2784291454a0307cf131acb5f0f68acc1eb4ffc3.patch:-p1
+
 MAINTAINER=	manu@FreeBSD.Org
 COMMENT=	Documenting the Lattice ECP5 bit-stream format
 
