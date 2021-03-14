@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-gpsp
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210215
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	gpsp
-GH_TAGNAME=	d8cf63b
+GH_TAGNAME=	300d0c0
 
 PLIST_FILES=	lib/libretro/gpsp_libretro.so
 
