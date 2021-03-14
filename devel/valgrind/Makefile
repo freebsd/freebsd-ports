@@ -19,6 +19,8 @@ BB_PROJECT=	valgrind-freebsd
 
 LICENSE=	GPLv2
 
+BROKEN=		fails at runtime: valgrind: mmap(0x200000, 45056) failed in UME with error 22 (Invalid argument)
+
 CONFLICTS=	valgrind-devel-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
