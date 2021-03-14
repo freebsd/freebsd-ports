@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-beetle_pce
-PORTVERSION=	0.20200527
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-pce-libretro
-GH_TAGNAME=	a54a259
+GH_TAGNAME=	945b7a7
 
 PLIST_FILES=	lib/libretro/mednafen_pce_libretro.so
 
