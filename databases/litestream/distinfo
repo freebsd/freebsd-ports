@@ -1,6 +1,6 @@
-TIMESTAMP = 1613937700
-SHA256 (benbjohnson-litestream-v0.3.2_GH0.tar.gz) = b9ce2c395060ebdbdaa0477028213e86267e119cc12b7e86688427868e75d21e
-SIZE (benbjohnson-litestream-v0.3.2_GH0.tar.gz) = 78591
+TIMESTAMP = 1615765532
+SHA256 (benbjohnson-litestream-v0.3.3_GH0.tar.gz) = 3546921d42262e57a72b25a39000ee5d157a7570267c798c1b307ce54952aa1a
+SIZE (benbjohnson-litestream-v0.3.3_GH0.tar.gz) = 83007
 SHA256 (aws-aws-sdk-go-v1.27.0_GH0.tar.gz) = 9f3dc12e43f795efad08a8ac37c5179546bbceb6485e569125f64e829f9a64dc
 SIZE (aws-aws-sdk-go-v1.27.0_GH0.tar.gz) = 13666537
 SHA256 (beorn7-perks-v1.0.1_GH0.tar.gz) = 98db84bb0224a26094e6adba91b7ee7a1a7ace28cb648d818f8e779e6a19f825
