@@ -2,7 +2,7 @@
 
 PORTNAME=	dynomite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.21
+DISTVERSION=	0.6.22
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,11 +16,12 @@ BROKEN_riscv64=		fails to configure: configure: error: /bin/sh config/config.sub
 
 USES=		autoreconf gmake libtool ssl
 GNU_CONFIGURE=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Netflix
 
-LDFLAGS+=	-lexecinfo
 CFLAGS+=	-fcommon
+LDFLAGS+=	-lexecinfo
 
 PLIST_FILES=	bin/dynomite-hash-tool \
 		man/man8/dynomite.8.gz \
