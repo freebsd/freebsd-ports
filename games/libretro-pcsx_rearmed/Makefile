@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-pcsx_rearmed
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210215
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -16,7 +16,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	pcsx_rearmed
-GH_TAGNAME=	8fda5dd
+GH_TAGNAME=	c2d67cd
 
 PLIST_FILES=	lib/libretro/pcsx_rearmed_libretro.so
 
