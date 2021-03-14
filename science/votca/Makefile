@@ -2,7 +2,7 @@
 
 PORTNAME=	votca
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.3
+DISTVERSION=	2021
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,41 +16,46 @@ BUILD_DEPENDS=	bash:shells/bash \
 		lmp:science/lammps
 RUN_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
+		libecpint.so:science/libecpint \
 		libexpat.so:textproc/expat2 \
 		libfftw3.so:math/fftw3 \
 		libgromacs_d.so:science/gromacs \
 		libhdf5.so:science/hdf5 \
+		libint2.so:science/libint2 \
 		libsz.so:science/szip \
 		libxc.so:science/libxc
 
 USES=		cmake compiler:c++14-lang eigen:3 perl5 pkgconfig python:run \
 		shebangfix
-SHEBANG_GLOB=	*.sh *.pl *.py
-SHEBANG_FILES=	csg/scripts/csg_call.in csg/scripts/csg_inverse.in tools/scripts/votca_compare.in \
-		xtp/scripts/xtp_update_mapfile.in xtp/scripts/xtp_basisset.in xtp/scripts/xtp_makeauxbasis.in xtp/share/benchmark/xtp_benchmark.in \
-		csg-manual/scripts/tex2eps
-USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
 GH_TUPLE=	\
-		votca:csg:efaa34c7f148c85493a3d15bf8cc800918d7111f:votca_csg/csg \
-		votca:csg-manual:16d27d55248fe7d2f3d78dcb2483f723ba3e38fe:votca_csg_manual/csg-manual \
-		votca:csg-tutorials:6819ffd5735cd253d55beffe1be61f0d49e6dd5e:votca_csg_tutorials/csg-tutorials \
-		votca:csgapps:4e40d2b92a5d33db2d750efa1dacdf1d502e7447:votca_csgapps/csgapps \
-		votca:tools:377b8487df371862de793dfe38287f4ce1cbafb8:votca_tools/tools \
-		votca:xtp:5879ed8d006471d37cc0b19dcbb557eac60cf898:votca_xtp/xtp \
-		votca:xtp-tutorials:b4b25d570fef22b8806e2efb2fdcc844ad8acb7e:votca_xtp_tutorials/xtp-tutorials
+		votca:tools:6c83772:tools/tools \
+		votca:csg:253f1e5:csg/csg \
+		votca:xtp:9df5eb4:xtp/xtp \
+		votca:csg-tutorials:0bbe9db:csg_tutorials/csg-tutorials \
+		votca:xtp-tutorials:4e36006:xtp_tutorials/xtp-tutorials
+
+SHEBANG_GLOB=	*.sh *.pl *.py
+SHEBANG_FILES=	csg/scripts/csg_call.in csg/scripts/csg_inverse.in \
+		tools/scripts/votca_compare.in tools/scripts/votca_help2doc.in \
+		xtp/scripts/xtp_update_mapfile.in xtp/scripts/xtp_basisset.in xtp/share/benchmark/xtp_benchmark.in xtp/scripts/xtp_autogen_mapping.in \
+		xtp/scripts/xtp_qmmm2qm.in
 
 CMAKE_ON=	BUILD_XTP
 
-OPTIONS_DEFINE=		APPS DOCS
+OPTIONS_DEFINE=		APPS
 OPTIONS_DEFAULT=	APPS
 OPTIONS_SUB=		yes
 
 APPS_DESC=		Build applications
 APPS_CMAKE_BOOL=	BUILD_CSGAPPS
 
-DOCS_CMAKE_BOOL=	BUILD_CSG_MANUAL
-DOCS_BUILD_DEPENDS=	txt2tags:textproc/txt2tags
-DOCS_USE=		TEX=latex,dvipsk:build
+do-test:
+	@cd ${BUILD_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DENABLE_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
 .include <bsd.port.mk>
