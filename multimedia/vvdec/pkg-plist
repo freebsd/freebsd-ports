@@ -1,4 +1,5 @@
 bin/vvdecapp
+include/vvdec/sei.h
 include/vvdec/version.h
 include/vvdec/vvdec.h
 include/vvdec/vvdecDecl.h
@@ -7,3 +8,4 @@ lib/cmake/vvdec/vvdecConfigVersion.cmake
 lib/cmake/vvdec/vvdecTargets-shared-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/vvdec/vvdecTargets-shared.cmake
 lib/libvvdec.so
+libdata/pkgconfig/libvvdec.pc

@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2021-03-12 15:55:41 UTC
++++ CMakeLists.txt
+@@ -12,7 +12,7 @@ endif()
+ # project name
+ project( vvdec VERSION 1.0.0.0 )
+ 
+-set( VVDEC_ENABLE_X86_SIMD TRUE )
++set( VVDEC_ENABLE_X86_SIMD ${FREEBSD_VVDEC_ENABLE_X86_SIMD} )
+ set( VVDEC_ENABLE_ARM_SIMD FALSE )
+ 
+ if( APPLE )
+@@ -37,7 +37,7 @@ endif()
+ # enable sse4.1 build for all source files for gcc and clang
+ if( VVDEC_ENABLE_X86_SIMD )
+   if( UNIX OR MINGW )
+-    add_compile_options( "-msse4.1" )
++    add_compile_options( ${FREEBSD_SIMD_CFLAGS} )
+   endif()
+ 
+   set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DTARGET_SIMD_X86" )
