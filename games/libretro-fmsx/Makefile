@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-fmsx
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	fmsx-libretro
-GH_TAGNAME=	c76e1dc
+GH_TAGNAME=	c2c26b1
 
 PLIST_FILES=	lib/libretro/fmsx_libretro.so
 
