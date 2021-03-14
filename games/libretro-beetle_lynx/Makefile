@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-beetle_lynx
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210114
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-lynx-libretro
-GH_TAGNAME=	928f7cf
+GH_TAGNAME=	35119c9
 
 PLIST_FILES=	lib/libretro/mednafen_lynx_libretro.so
 
