@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libretro-handy
-PORTVERSION=	0.20200504
+PORTVERSION=	0.20210214
 CATEGORIES=	games
 
 MAINTAINER=	menelkir@itroll.org
@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	c9fe65d
+GH_TAGNAME=	94c0ab5
 
 PLIST_FILES=	lib/libretro/handy_libretro.so
 
