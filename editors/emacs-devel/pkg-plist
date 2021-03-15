@@ -873,6 +873,7 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/light-blue-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/manoj-dark-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/misterioso-theme.el
+%%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-themes.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-operandi-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-vivendi-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/tango-dark-theme.el
@@ -2813,6 +2814,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-crypt.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-ftp.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-ftp.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-fuse.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-fuse.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-gvfs.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-gvfs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-integration.el.gz
@@ -2824,6 +2827,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sh.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-smb.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-smb.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sshfs.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sshfs.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sudoedit.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-sudoedit.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/net/tramp-uu.el.gz
