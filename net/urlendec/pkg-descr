@@ -1,6 +1,7 @@
-A set of two tools to URL encode and URL decode any stream of data, either
-from the command line or from standard input.
+A set of two tools to URL encode and URL decode any stream of data,
+read either from the command line or from standard input.  Written
+in assembly language, they are tiny and very fast.
 
-See RFC 1738, section 2.2, for an eplanation of URL encoding.
+See RFC 1738, section 2.2, for an explanation of URL encoding.
 
 WWW: http://www.whizkidtech.redprince.net/urlendec/
