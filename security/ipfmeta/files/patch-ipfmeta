@@ -1,0 +1,11 @@
+--- ipfmeta.orig	2021-03-15 10:14:10.073225000 -0700
++++ ipfmeta	2021-03-15 10:17:37.515326000 -0700
+@@ -33,7 +33,7 @@
+ 
+ # Globals
+ my $Group = 0;
+-my $Maxrec = 10;
++my $Maxrec = 20;
+ my $Objfile = "ipf.objs";
+ my $Obj; my @Objs;
+ my $Val; my %Vals;
