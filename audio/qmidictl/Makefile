@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmidictl
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang gl gmake localbase pkgconfig qt:5
 GNU_CONFIGURE=	yes
-USE_QT=		core gui widgets qmake_build buildtools_build linguisttools_build
+USE_QT=		core gui network widgets qmake_build buildtools_build linguisttools_build
 USE_GL=		gl
 
 BINARY_ALIAS=	qmake=${QMAKE}
