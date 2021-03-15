@@ -1,18 +1,18 @@
---- Makefile.orig	2017-12-03 21:01:05 UTC
+--- Makefile.orig	2021-03-08 07:47:42 UTC
 +++ Makefile
-@@ -7,10 +7,7 @@ VERSION = 1.99.8
+@@ -7,10 +7,7 @@ VERSION = 1.99.10
  DESTDIR = 
  SRCDIR = .
  
--CC = gcc
--RPM_OPT_FLAGS = -Os -Wall -g -D_FORTIFY_SOURCE=2
+-CC ?= gcc
+-RPM_OPT_FLAGS ?= -Os -Wall -g -D_FORTIFY_SOURCE=2
 -CFLAGS = $(RPM_OPT_FLAGS) $(EXTRA_CFLAGS) -DHAVE_CONFIG_H -I .
 -CFLAGS_OPT = $(CFLAGS) -O3
 +CFLAGS_OPT = $(CFLAGS) -DHAVE_CONFIG_H
- INSTALL = install
+ INSTALL ?= install
  INSTALLFLAGS = -s
  prefix = $(DESTDIR)/usr
-@@ -34,7 +31,7 @@ LIB = lib
+@@ -35,7 +32,7 @@ LIB = lib
  LIBDIR = /usr/$(LIB)
  COMPILER = $(shell $(CC) --version | head -n1)
  ID = $(shell git describe --tags || cat REL-ID)
@@ -21,8 +21,8 @@
  OUT = -o dd_rescue
  PIC = -fPIC
  PIE = -fPIE
-@@ -63,19 +60,13 @@ else
-   HAVE_OPENSSL=0
+@@ -70,19 +67,13 @@ else
+   HAVE_XATTR=0
  endif
  
 -ifeq ($(CC),wcl386)
@@ -42,7 +42,7 @@
    ISX86 := 1
    LIB = lib64
  endif
-@@ -243,7 +234,7 @@ libddr_MD5.so: libddr_hash.so
+@@ -261,7 +252,7 @@ libddr_MD5.so: libddr_hash.so
  	ln -sf $< $@
  
  libddr_lzo.so: libddr_lzo.po
@@ -51,7 +51,7 @@
  
  libddr_null.so: libddr_null.po
  	$(CC) -shared -o $@ $^
-@@ -306,7 +297,7 @@ libfalloc-static: $(SRCDIR)/dd_rescue.c 
+@@ -324,7 +315,7 @@ libfalloc-static: $(SRCDIR)/dd_rescue.c $(DDR_HEADERS)
  
  # This is the default built
  dd_rescue: $(SRCDIR)/dd_rescue.c $(DDR_HEADERS) $(OBJECTS) $(OBJECTS2)

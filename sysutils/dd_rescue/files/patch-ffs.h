@@ -1,4 +1,4 @@
---- ffs.h.orig	2015-08-27 15:45:57 UTC
+--- ffs.h.orig	2021-03-07 06:41:24 UTC
 +++ ffs.h
 @@ -27,7 +27,15 @@
  #ifdef HAVE_ENDIAN_H
@@ -39,10 +39,10 @@
  /** Find last (highest) bit set in word val, returns a val b/w __WORDSIZE and 1, 0 if no bit is set */
  static int myflsl(unsigned long val)
  {
-@@ -132,6 +137,8 @@ static int myflsl(unsigned long val)
- 	return res;
- #endif
+@@ -134,6 +139,8 @@ static int myflsl(unsigned long val)
  }
+ int myffs_sse42(unsigned long);
+ int myffsl_sse42(unsigned long);
 +#else
 +# define myflsl(x) flsl(x)
  #endif
