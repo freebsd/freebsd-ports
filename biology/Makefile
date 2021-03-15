@@ -48,6 +48,7 @@
     SUBDIR += gatk
     SUBDIR += gcta
     SUBDIR += gemma
+    SUBDIR += generand
     SUBDIR += gff2ps
     SUBDIR += gmap
     SUBDIR += gperiodic

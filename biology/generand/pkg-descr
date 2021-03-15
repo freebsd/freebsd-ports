@@ -1,0 +1,5 @@
+Generate random genomic data in FASTA/FASTQ, SAM, or VCF format, suitable for
+small academic examples or test inputs of arbitrary size.  Output can be piped
+directly to programs or redirected to a file and edited to taste.
+
+WWW: https://github.com/auerlab/generand
