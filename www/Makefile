@@ -2254,6 +2254,7 @@
     SUBDIR += vdr-plugin-live
     SUBDIR += vdradmin-am
     SUBDIR += vertx
+    SUBDIR += vger
     SUBDIR += vimb
     SUBDIR += visitors
     SUBDIR += volta

@@ -1,0 +1,23 @@
+# $FreeBSD$
+
+PORTNAME=	vger
+PORTVERSION=	0.0.20210315
+CATEGORIES=	www
+MASTER_SITES=	https://tildegit.org/solene/vger/archive/
+DISTFILES=	365e99400a8a13546c4c060f28e23bf81d68d45e.tar.gz
+
+MAINTAINER=	nc@FreeBSD.org
+COMMENT=	Simplistic and secure Gemini server
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PLIST_FILES=	bin/${PORTNAME} man/man8/${PORTNAME}.8.gz
+
+do-install:
+	${CP} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+
+.include <bsd.port.mk>
+
