@@ -1,18 +1,32 @@
 RTLD_DEEPBIND isn't available on non-Linux
 
-core/os_interface/linux/os_library_linux.cpp: In constructor 'NEO::Linux::OsLibrary::OsLibrary(const string&)':
-core/os_interface/linux/os_library_linux.cpp:35:49: error: 'RTLD_DEEPBIND' was not declared in this scope
-   35 |         constexpr auto dlopenFlag = RTLD_LAZY | RTLD_DEEPBIND;
-      |                                                 ^~~~~~~~~~~~~
+shared/source/os_interface/linux/os_library_helper.cpp:17:24: error: use of undeclared identifier 'RTLD_DEEPBIND'
+        dlopenFlag &= ~RTLD_DEEPBIND;
+                       ^
+shared/source/os_interface/linux/os_library_linux.cpp:41:39: error: use of undeclared identifier 'RTLD_DEEPBIND'
+        auto dlopenFlag = RTLD_LAZY | RTLD_DEEPBIND;
+                                      ^
 
---- shared/source/os_interface/linux/os_library_linux.cpp.orig	2020-02-28 16:16:42 UTC
+--- shared/source/os_interface/linux/os_library_helper.cpp.orig	2021-03-01 17:17:25 UTC
++++ shared/source/os_interface/linux/os_library_helper.cpp
+@@ -14,7 +14,9 @@ namespace NEO {
+ namespace Linux {
+ void adjustLibraryFlags(int &dlopenFlag) {
+     if (DebugManager.flags.DisableDeepBind.get()) {
++#ifdef RTLD_DEEPBIND
+         dlopenFlag &= ~RTLD_DEEPBIND;
++#endif
+     }
+ }
+ } // namespace Linux
+--- shared/source/os_interface/linux/os_library_linux.cpp.orig	2021-03-01 17:17:25 UTC
 +++ shared/source/os_interface/linux/os_library_linux.cpp
-@@ -29,7 +29,7 @@ OsLibrary::OsLibrary(const std::string &name) {
+@@ -35,7 +35,7 @@ OsLibrary::OsLibrary(const std::string &name) {
      if (name.empty()) {
-         this->handle = dlopen(0, RTLD_LAZY);
+         this->handle = SysCalls::dlopen(0, RTLD_LAZY);
      } else {
 -#ifdef SANITIZER_BUILD
 +#if defined(SANITIZER_BUILD) || !defined(RTLD_DEEPBIND)
-         constexpr auto dlopenFlag = RTLD_LAZY;
+         auto dlopenFlag = RTLD_LAZY;
  #else
-         constexpr auto dlopenFlag = RTLD_LAZY | RTLD_DEEPBIND;
+         auto dlopenFlag = RTLD_LAZY | RTLD_DEEPBIND;
