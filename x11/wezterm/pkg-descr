@@ -16,7 +16,7 @@ multiplexer written by @wez and implemented in Rust.
   attributes)
 - Configuration via a file with hot reloading
 - Multiple Windows (Hotkey: Super-N)
-- Splits/Panes (currently only in the nightly builds)
+- Splits/Panes
 - Tabs (Hotkey: Super-T, next/prev: Super-[ and Super-], go-to: Super-[1-9])
 - SSH client with native tabs
 - Connect to serial ports for embedded/Arduino work
