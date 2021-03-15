@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	elk
-DISTVERSION=	6.8.4
+DISTVERSION=	7.1.14
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/
 PKGNAMESUFFIX=	-chemistry
@@ -65,6 +65,6 @@ do-install-EXAMPLES-on:
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 do-test:
-	@cd ${WRKSRC}/tests && ./tests.sh
+	@cd ${WRKSRC}/tests && ./test.sh
 
 .include <bsd.port.post.mk>
