@@ -2,13 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rubberband
-DISTVERSION=	1.8.2
-PORTREVISION=	2
+DISTVERSION=	1.9.0
 CATEGORIES=	audio
 MASTER_SITES=	https://breakfastquay.com/files/releases/
-
-PATCH_SITES=	https://github.com/breakfastquay/${PORTNAME}/commit/
-PATCHFILES=	03202fa4749c0b4e264f2115bb49028267e2a572.patch:-p1
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Audio time-stretching and pitch-shifting library and utility program

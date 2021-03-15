@@ -6,7 +6,7 @@ lib/ladspa/ladspa-rubberband.so
 lib/librubberband.a
 lib/librubberband.so
 lib/librubberband.so.2
-lib/librubberband.so.2.1.1
+lib/librubberband.so.2.1.2
 lib/vamp/vamp-rubberband.cat
 lib/vamp/vamp-rubberband.so
 libdata/pkgconfig/rubberband.pc
