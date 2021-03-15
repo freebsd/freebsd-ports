@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	abipy
-DISTVERSION=	0.8.0
-PORTREVISION=	1
+DISTVERSION=	0.9.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}netCDF4>0:science/py-netCDF4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydispatcher>=2.0.5:devel/py-pydispatcher@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pymatgen>=2019.10.16:science/py-pymatgen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymatgen>=2022.0.4:science/py-pymatgen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}seaborn>0:math/py-seaborn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
