@@ -15,6 +15,8 @@ COMMENT=	Set of tools to manipulate squashfs images
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+FORBIDDEN=	Integer overflow: CVE-2015-4645
+
 USES=		alias cpe gmake
 
 PLIST_FILES=	bin/mksquashfs \
