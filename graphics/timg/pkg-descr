@@ -1,9 +1,10 @@
-timg - Terminal Image Viewer
+timg - Terminal Image and Video Viewer
 
-A viewer that uses 24-Bit color capabilities and unicode
-character blocks to display images in the terminal.
-Displays regular images, plays animated gifs or allows to
-scroll static images.
+A user-friendly viewer that uses 24-Bit color capabilities
+and unicode character blocks to display images, animations
+and videos in the terminal.
+Displays regular images, plays animated gifs, scrolls
+static images and plays videos.
 
 Very useful for if you want to have a quick visual check
 without starting a bulky image viewer or in an SSH session.
