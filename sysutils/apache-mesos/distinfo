@@ -1,5 +1,5 @@
-TIMESTAMP = 1593259602
-SHA256 (apache-mesos/mesos-1.10.0.tar.gz) = f4b9e8a1e9f905334adf4d349a2ed33a4cfa43278381cd34fb4fc7e9df9e12a1
-SIZE (apache-mesos/mesos-1.10.0.tar.gz) = 71760072
-SHA256 (apache-mesos/mesos-maven-deps-1.10.0.tar.gz) = b119a72e99499b67e1455a32bbbba80a15ae5ef21315eab76119f941f96f3d36
-SIZE (apache-mesos/mesos-maven-deps-1.10.0.tar.gz) = 36000010
+TIMESTAMP = 1615762466
+SHA256 (apache-mesos/mesos-1.11.0.tar.gz) = ce08cb648a21502a4a0c45d240a596d9ac860fcaf717f9a3dc986da9d406fe34
+SIZE (apache-mesos/mesos-1.11.0.tar.gz) = 72210031
+SHA256 (apache-mesos/mesos-maven-deps-1.11.0.tar.gz) = 98acd50b2d22018f5c79127ea14245e863c4c1bd0092c65c85ef9a147d488def
+SIZE (apache-mesos/mesos-maven-deps-1.11.0.tar.gz) = 36003620

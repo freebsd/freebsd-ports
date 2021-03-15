@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mesos
-PORTVERSION=	1.10.0
-PORTREVISION=	6
+PORTVERSION=	1.11.0
 CATEGORIES=	sysutils
 MASTER_SITES=	APACHE/mesos/${PORTVERSION}:mesos
 PKGNAMEPREFIX=	apache-
@@ -82,7 +81,7 @@ JAVA_MAKE_ENV=		MAVEN_OPTS="${MAVEN_OPTS}"
 JAVA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_java_mesos.pom.in
 
 # REVIEW: Can we figure out the current Protobuf version in ports instead of hardcoding???
-PROTOBUF_VERSION=	3.12.2
+PROTOBUF_VERSION=	3.14.0
 
 MAVEN_CMD=		mvn
 MAVEN_REPO=		${WRKDIR}/mesos-maven-deps-${PORTVERSION}

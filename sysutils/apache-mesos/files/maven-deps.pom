@@ -3,7 +3,7 @@
   <groupId>org.apache.mesos</groupId>
   <artifactId>mesos</artifactId>
   <name>mesos</name>
-  <version>1.10.0</version>
+  <version>1.11.0</version>
   <description>The Apache Mesos Java API jar.</description>
   <url>http://mesos.apache.org</url>
   <parent>
