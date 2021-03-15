@@ -1,0 +1,22 @@
+--- src/perl/Makefile.am.orig	2019-02-11 17:27:58 UTC
++++ src/perl/Makefile.am
+@@ -145,7 +145,7 @@ all-local:
+ 
+ install-exec-local:
+ 	for dir in $(perl_dirs); do \
+-	  cd $$dir && $(MAKE) install && cd ..; \
++	  cd $$dir && $(MAKE) pure_install && cd ..; \
+ 	done
+ 
+ clean-generic:
+--- src/perl/Makefile.in.orig	2019-02-11 17:35:32 UTC
++++ src/perl/Makefile.in
+@@ -898,7 +898,7 @@ all-local:
+ 
+ install-exec-local:
+ 	for dir in $(perl_dirs); do \
+-	  cd $$dir && $(MAKE) install && cd ..; \
++	  cd $$dir && $(MAKE) pure_install && cd ..; \
+ 	done
+ 
+ clean-generic:

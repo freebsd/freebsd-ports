@@ -1,0 +1,22 @@
+--- Makefile.in.orig	2019-02-11 17:35:31 UTC
++++ Makefile.in
+@@ -421,7 +421,7 @@ BUILT_SOURCES = default-config.h default-theme.h irssi
+ CLEANFILES = default-config.h default-theme.h
+ SUBDIRS = src tests docs scripts themes utils
+ confdir = $(sysconfdir)
+-conf_DATA = irssi.conf
++conf_DATA = irssi.conf.sample
+ pkginclude_HEADERS = irssi-config.h irssi-version.h
+ EXTRA_DIST = \
+ 	ChangeLog \
+@@ -980,8 +980,8 @@ uninstall-am: uninstall-confDATA uninstall-pkgincludeH
+ 
+ @MAINTAINER_MODE_TRUE@.PHONY: irssi-version.h
+ 
+-default-config.h: $(srcdir)/irssi.conf
+-	$(srcdir)/utils/file2header.sh $(srcdir)/irssi.conf default_config > default-config.h
++default-config.h: $(srcdir)/irssi.conf.sample
++	$(srcdir)/utils/file2header.sh $(srcdir)/irssi.conf.sample default_config > default-config.h
+ 
+ default-theme.h: $(srcdir)/themes/default.theme
+ 	$(srcdir)/utils/file2header.sh $(srcdir)/themes/default.theme default_theme > default-theme.h

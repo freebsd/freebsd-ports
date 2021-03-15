@@ -39,7 +39,6 @@ include/irssi/src/core/queries.h
 include/irssi/src/core/query-rec.h
 include/irssi/src/core/rawlog.h
 include/irssi/src/core/recode.h
-include/irssi/src/core/refstrings.h
 include/irssi/src/core/server-connect-rec.h
 include/irssi/src/core/server-rec.h
 include/irssi/src/core/server-setup-rec.h
@@ -94,7 +93,6 @@ include/irssi/src/fe-text/mainwindows.h
 include/irssi/src/fe-text/statusbar.h
 include/irssi/src/fe-text/statusbar-item.h
 include/irssi/src/fe-text/term.h
-include/irssi/src/fe-text/textbuffer-formats.h
 include/irssi/src/fe-text/textbuffer-view.h
 include/irssi/src/fe-text/textbuffer.h
 include/irssi/src/irc/core/bans.h
@@ -134,10 +132,10 @@ include/irssi/src/irc/notifylist/notify-setup.h
 include/irssi/src/irc/notifylist/notifylist.h
 include/irssi/src/lib-config/iconfig.h
 include/irssi/src/lib-config/module.h
-%%PERL%%lib/irssi/modules/libfe_perl.so
+%%PROXY%%lib/irssi/modules/libirc_proxy.a
 %%PROXY%%lib/irssi/modules/libirc_proxy.so
+%%OTR%%lib/irssi/modules/libotr_core.a
 %%OTR%%lib/irssi/modules/libotr_core.so
-%%PERL%%lib/irssi/modules/libperl_core.so
 %%PERL%%%%SITE_ARCH%%/Irssi.pm
 %%PERL%%%%SITE_ARCH%%/Irssi/Irc.pm
 %%PERL%%%%SITE_ARCH%%/Irssi/TextUI.pm
@@ -146,7 +144,6 @@ include/irssi/src/lib-config/module.h
 %%PERL%%%%SITE_ARCH%%/auto/Irssi/Irssi.so
 %%PERL%%%%SITE_ARCH%%/auto/Irssi/TextUI/TextUI.so
 %%PERL%%%%SITE_ARCH%%/auto/Irssi/UI/UI.so
-libdata/pkgconfig/irssi-1.pc
 man/man1/irssi.1.gz
 %%CAPSICUM%%%%PORTDOCS%%%%DOCSDIR%%/capsicum.txt
 %%PORTDOCS%%%%DOCSDIR%%/design.html
@@ -278,11 +275,14 @@ man/man1/irssi.1.gz
 %%PERL%%%%DATADIR%%/scripts/autoop.pl
 %%PERL%%%%DATADIR%%/scripts/autorejoin.pl
 %%PERL%%%%DATADIR%%/scripts/buf.pl
+%%PERL%%%%DATADIR%%/scripts/command.pl
 %%PERL%%%%DATADIR%%/scripts/dns.pl
 %%PERL%%%%DATADIR%%/scripts/kills.pl
 %%PERL%%%%DATADIR%%/scripts/mail.pl
 %%PERL%%%%DATADIR%%/scripts/mlock.pl
+%%PERL%%%%DATADIR%%/scripts/msg-event.pl
 %%PERL%%%%DATADIR%%/scripts/quitmsg.pl
+%%PERL%%%%DATADIR%%/scripts/redirect.pl
 %%PERL%%%%DATADIR%%/scripts/scriptassist.pl
 %%PERL%%%%DATADIR%%/scripts/usercount.pl
 %%DATADIR%%/themes/colorless.theme
