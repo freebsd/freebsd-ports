@@ -1,0 +1,38 @@
+[
+{ type: install
+  message: <<EOM
+The following configuration will need to be done prior to using
+webtrees for the first time:
+
+1. For installation on the apache web server, add the following to your
+   apache site configuration, and restart the web server:
+
+	Alias /webtrees20 %%WWWDIR%%/
+
+	### Add the AcceptPathInfo directive only for Apache 2.0.30
+	### or later.
+	AcceptPathInfo On
+
+	<Directory %%WWWDIR%%>
+		AllowOverride None
+		Order Allow,Deny
+		Allow from all
+	</Directory>
+
+2. Webtrees uses a MySQL database.  Configure a MySQL webtrees user
+   and database using commands such as (substitute PASSWD for something
+   of your own choosing):
+
+	mysql> create user webtrees20@localhost identified by PASSWD;
+	mysql> create database webtrees20;
+	mysql> grant all on webtrees20.* to webtrees20@localhost;
+
+3. Configure webtrees by browsing to the webtrees URL:
+	http://your.server.com/webtrees20/
+   and you should be taken to the setup wizard, which will lead you
+   through setting up webtrees: asking for the database server, database
+   user and database name, and then assist you in creating a webtrees
+   admin account, etc.
+EOM
+}
+]

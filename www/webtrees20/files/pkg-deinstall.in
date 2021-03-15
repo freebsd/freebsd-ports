@@ -1,0 +1,26 @@
+#!/bin/sh
+
+case "$2" in
+POST-DEINSTALL)
+	if [ -d %%WWWDIR%%/data ]; then
+		cat <<!
+=========================================================================
+There remains some webtrees local configuration in %%WWWDIR%%/data.
+
+If you plan on reinstalling webtrees, leave this configuration there and
+it will be reused by the new version.
+
+If you are completely uninstalling webtrees, please delete this directory
+and %%WWWDIR%% by hand.
+
+You may want to save your GEDCOM file(s) from the MySQL server, too.  To
+do that, you will need to reinstall webtrees, log on as an administrator
+and select:
+	My Page >> GEDCOM Administration >> Download
+This will let you save your family tree data in a foo.ged GEDCOM file
+which you can upload into most other ancestry software or websites.
+=========================================================================
+!
+	fi
+	;;
+esac
