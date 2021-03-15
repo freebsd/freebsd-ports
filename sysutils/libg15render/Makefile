@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	libg15render
-PORTVERSION=	1.2
+PORTVERSION=	3.0
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/g15tools/libg15render/${PORTVERSION}
+MASTER_SITES=	https://gitlab.com/menelkir/${PORTNAME}/-/archive/${PORTVERSION}/
 
 MAINTAINER=	menelkir@itroll.org
 COMMENT=	Library to render the LCD screen on Logitech keyboards

@@ -1,6 +1,6 @@
 include/libg15render.h
 lib/libg15render.a
 lib/libg15render.so
-lib/libg15render.so.1
-lib/libg15render.so.1.1.0
+lib/libg15render.so.2
+lib/libg15render.so.2.1.0
 man/man3/libg15render.3.gz
