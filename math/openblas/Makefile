@@ -4,6 +4,7 @@
 PORTNAME=	openblas
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.13
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	NL/lapack/timing/:lapack_tmg
@@ -17,7 +18,7 @@ COMMENT=	Optimized BLAS library based on GotoBLAS2
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		fortran gmake perl5 pkgconfig
+USES=		compiler:c11 fortran gmake perl5 pkgconfig
 
 CONFLICTS_INSTALL=	cblas lapacke
 
@@ -88,19 +89,7 @@ MAXTHREADS?=	64
 MANUAL_PACKAGE_BUILD=	Optimizes for the build machine.
 .endif
 
-.if ${PORT_OPTIONS:MOPENMP}
-USES+=		compiler:openmp
-.else
-USES+=		compiler:c11
-.endif
-
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MOPENMP}
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-USE_GCC=	yes
-.endif
-.endif
 
 post-extract:
 	cd ${DISTDIR}/${DIST_SUBDIR} ; \
