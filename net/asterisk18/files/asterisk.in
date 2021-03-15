@@ -13,6 +13,8 @@
 #				Default is "NO"
 # asterisk_user (string):	User asterisk runs as
 #				Default is %%ASTERISK_USER%%
+# asterisk_group (string):	Group asterisk runs as
+#				Default is %%ASTERISK_GROUP%%
 # asterisk_args (string):	Extra argumeents to pass to asterisk at startup
 # 				Default is "-n"
 # asterisk_pidfile (string):	Location of the asterisk pid file
@@ -28,19 +30,31 @@ name=asterisk
 rcvar=asterisk_enable
 desc="Asterisk PBX server"
 
+load_rc_config $name
+
+: ${asterisk_enable:=NO}
+: ${asterisk_user:=%%ASTERISK_USER%%}
+: ${asterisk_group:=%%ASTERISK_GROUP%%}
+: ${asterisk_args=-n}
+: ${asterisk_pidfile:=/var/run/asterisk/asterisk.pid}
+: ${asterisk_stopsleep:=0}
+
 extra_commands=reload
 
 start_precmd=asterisk_precmd
 stop_cmd=asterisk_stop
 reload_cmd=asterisk_reload
 
+pidfile="${asterisk_pidfile}"
+
 command="%%PREFIX%%/sbin/asterisk"
+command_args="${asterisk_args} -F -U ${asterisk_user}"
 
 asterisk_precmd()
 {
 	local rundir=${asterisk_pidfile%/*}
 	if [ ! -d $rundir ] ; then
-		install -d -m 0755 -o asterisk -g asterisk $rundir
+		install -d -m 0750 -o "${asterisk_user}" -g "${asterisk_group}" "$rundir"
 	fi
 	if [ -n "${asterisk_umask}" ]; then
 		umask ${asterisk_umask}
@@ -71,16 +85,5 @@ asterisk_reload()
 	echo 'Reloading asterisk.'
 	$command -nqrx 'reload'
 }
-
-load_rc_config $name
-
-: ${asterisk_enable:=NO}
-: ${asterisk_user:=%%ASTERISK_USER%%}
-: ${asterisk_args=-n}
-: ${asterisk_pidfile:=/var/run/asterisk/asterisk.pid}
-: ${asterisk_stopsleep:=0}
-
-command_args="${asterisk_args} -F -U ${asterisk_user}"
-pidfile=${asterisk_pidfile}
 
 run_rc_command "$1"
