@@ -11,9 +11,9 @@ bin/named-journalprint
 @sample etc/mtree/BIND.chroot.dist.sample
 @sample etc/mtree/BIND.chroot.local.dist.sample
 %%ETCDIR%%/bind.keys
-%%ETCDIR%%/master/empty.db
-%%ETCDIR%%/master/localhost-forward.db
-%%ETCDIR%%/master/localhost-reverse.db
+%%ETCDIR%%/primary/empty.db
+%%ETCDIR%%/primary/localhost-forward.db
+%%ETCDIR%%/primary/localhost-reverse.db
 @sample %%ETCDIR%%/named.conf.sample
 %%ETCDIR%%/named.root
 %%ETCDIR%%/rndc.conf.sample
@@ -320,5 +320,5 @@ sbin/rndc
 sbin/rndc-confgen
 sbin/tsig-keygen
 @dir(bind,bind,) %%ETCDIR%%/dynamic
-@dir(bind,bind,) %%ETCDIR%%/slave
+@dir(bind,bind,) %%ETCDIR%%/secondary
 @dir(bind,bind,) %%ETCDIR%%/working

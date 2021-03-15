@@ -10,9 +10,9 @@
         namedb          type=dir uname=root
             dynamic         type=dir
             ..
-            master          type=dir uname=root
+            primary         type=dir uname=root
             ..
-            slave           type=dir
+            secondary       type=dir
             ..
             working         type=dir
             ..

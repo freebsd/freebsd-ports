@@ -20,6 +20,16 @@ EOT
   type: install
 }
 {
+  type: upgrade
+  maximum_version: "9.17.10.a0.2021.03.15"
+  message: <<EOT
+The BIND9 port was changed to respect upstream's change
+concerning master and slave that were replaced by primary and
+secondary, all the references in the sample files were updated
+to reflect that.
+EOT
+}
+{
   message: <<EOT
 +------------------------------------------------------------+
 |THIS IS A DEVELOPMENT VERSION OF BIND, IT WILL EAT YOUR DATA|
