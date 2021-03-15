@@ -147,8 +147,10 @@ MAKE_ENV+=	USE_CLANG=true
 .endif
 
 .if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*}
-CONFIGURE_ARGS+=	--disable-warnings-as-errors \
-			--disable-dtrace
+CONFIGURE_ARGS+=	--disable-warnings-as-errors
+.endif
+.if ${ARCH} == aarch64 || ${ARCH} == powerpc64
+CONFIGURE_ARGS+=	--disable-dtrace
 .endif
 .if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le
 CONFIGURE_ARGS+=	--disable-precompiled-headers
