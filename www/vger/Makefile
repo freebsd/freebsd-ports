@@ -13,11 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	bin/${PORTNAME} man/man8/${PORTNAME}.8.gz
-
 do-install:
 	${CP} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/gemini
 
 .include <bsd.port.mk>
 
