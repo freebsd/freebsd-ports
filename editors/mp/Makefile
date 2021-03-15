@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mp
-DISTVERSION=	5.46
+DISTVERSION=	5.47
 CATEGORIES=	editors
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -16,7 +16,7 @@ USES=		gmake iconv
 USE_GITHUB=	yes
 GH_ACCOUNT=	ttcdt
 GH_PROJECT=	mp-5.x mpdm:mpdm mpsl:mpsl
-GH_TAGNAME=	2.70:mpdm 2.61:mpsl
+GH_TAGNAME=	2.72:mpdm 2.62:mpsl
 GH_SUBDIR=	mpdm:mpdm mpsl:mpsl
 
 HAS_CONFIGURE=	yes
