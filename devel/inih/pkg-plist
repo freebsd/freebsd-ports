@@ -1,0 +1,8 @@
+include/INIReader.h
+include/ini.h
+lib/libINIReader.so
+lib/libINIReader.so.0
+lib/libinih.so
+lib/libinih.so.0
+libdata/pkgconfig/INIReader.pc
+libdata/pkgconfig/inih.pc
