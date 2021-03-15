@@ -86,11 +86,11 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.0.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:6c48157d3f5f:storj_common/vendor/storj.io/common \
+		storj:common:970e119468ed:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.16:storj_drpc/vendor/storj.io/drpc \
-		storj:monkit-jaeger:80778fc3f91b:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
+		storj:monkit-jaeger:85f08034688c:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:private:9d2ec06f0d3c:storj_private/vendor/storj.io/private \
-		storj:uplink:48b82ce14a37:storj_uplink/vendor/storj.io/uplink \
+		storj:uplink:f7f8a3c8321a:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.6.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v70.15.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
