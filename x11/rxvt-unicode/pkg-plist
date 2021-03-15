@@ -57,4 +57,3 @@ man/man1/urxvtcd.1.gz
 man/man1/urxvtd.1.gz
 %%PERL%%man/man3/urxvtperl.3.gz
 man/man7/urxvt.7.gz
-share/misc/rxvt-unicode.terminfo

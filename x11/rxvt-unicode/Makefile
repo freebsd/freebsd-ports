@@ -3,7 +3,7 @@
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	9.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -17,16 +17,13 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig
 
-USES=			cpe perl5 pkgconfig shebangfix tar:bzip2 terminfo xorg
+USES=			cpe perl5 pkgconfig shebangfix tar:bzip2 xorg
 USE_XORG=		x11 xft xmu xpm xrender xt
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include
 LIBS+=			-lutil
 CONFIGURE_ENV=		TIC=${LOCALBASE}/bin/tic
 CONFIGURE_ARGS=		--enable-everything --with-term=rxvt
-.if !exists(/usr/bin/tic)
-CONFIGURE_ARGS+=	--with-terminfo=${LOCALBASE}/share/misc/terminfo.db
-.endif
 CPE_VENDOR=		marc_lehmann
 
 OPTIONS_DEFINE=	PERL XIM UNICODE3 ISO14755 COMBINING RXVT_SCROLLBAR	\
@@ -160,17 +157,11 @@ post-patch-IMLOCALE_FIX-on:
 	cd ${WRKSRC}/src && ./gentables
 
 pre-configure:
-.if exists(/usr/bin/tic)
 	${REINPLACE_CMD} -e "/rxvt-unicode.terminfo/d" ${WRKSRC}/doc/Makefile.in
-.endif
 	${RM} ${WRKSRC}/src/perl/kuake.orig
 
 post-build-DOCS-on:
 	${CP} ${PORTDOCS1:S|^|${WRKSRC}/|} ${WRKSRC}/doc
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/etc/rxvt-unicode.terminfo	\
-		${STAGEDIR}${PREFIX}/share/misc/
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
