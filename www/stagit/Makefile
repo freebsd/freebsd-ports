@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stagit
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	www
 MASTER_SITES=	https://codemadness.org/releases/stagit/
 
