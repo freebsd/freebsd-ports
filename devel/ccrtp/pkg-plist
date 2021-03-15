@@ -16,6 +16,6 @@ include/ccrtp/rtppkt.h
 include/ccrtp/sources.h
 lib/libccrtp.a
 lib/libccrtp.so
-lib/libccrtp.so.2
-lib/libccrtp.so.2.0.6
+lib/libccrtp.so.3
+lib/libccrtp.so.3.0.1
 libdata/pkgconfig/libccrtp.pc
