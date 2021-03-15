@@ -65,6 +65,7 @@ sbin/cluster-node-manager
 sbin/cluster-passwd-expiration
 sbin/cluster-passwd-user-expiration
 sbin/cluster-ports-update
+sbin/cluster-power-manager
 sbin/cluster-power-saver
 sbin/cluster-power-waster
 sbin/cluster-recreate-user
@@ -123,7 +124,6 @@ sbin/slurm-node-suspend
 sbin/slurm-restart
 sbin/slurm-resume-nodes
 sbin/slurm-resume-updated-nodes
-sbin/slurm-shutdown-idle-nodes
 sbin/slurm-sync-backup
 sbin/slurm-sync-config
 sbin/slurm-update-idle-nodes
