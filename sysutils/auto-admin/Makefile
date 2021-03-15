@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	auto-admin
-DISTVERSION=	0.7.0-9
-DISTVERSIONSUFFIX=	-g6dd7a6a
+DISTVERSION=	0.7.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org

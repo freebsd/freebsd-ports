@@ -61,7 +61,6 @@ sbin/auto-idrac-config
 sbin/auto-idrac-passwd
 sbin/auto-insert-line
 sbin/auto-install-infiniband-modules
-sbin/auto-install-linux-flash
 sbin/auto-install-linux_base
 sbin/auto-install-media-distname
 sbin/auto-install-packages
