@@ -93,9 +93,9 @@ EXTRA_PATCHES+= ${PATCHDIR}/extra-src_gallium_auxiliary_meson.build \
 BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 
 LLVM_DEFAULT=	10
-BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>=10.0.1_1:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 .if ${COMPONENT} != libs
-RUN_DEPENDS+=	llvm${LLVM_DEFAULT}>=10.0.1_1:devel/llvm${LLVM_DEFAULT}
+RUN_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 .endif
 
 MESON_ARGS+=	--native-file="${WRKSRC}/llvm.ini"
