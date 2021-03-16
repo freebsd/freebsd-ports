@@ -17,6 +17,8 @@ COMMENT=	AudioProcessing module from WebRTC project
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_powerpc=		fails to compile: ./webrtc/rtc_base/system/arch.h:54:2: Please add support for your architecture in rtc_base/system/arch.h
+BROKEN_powerpc64=	fails to compile: ./webrtc/rtc_base/system/arch.h:54:2: Please add support for your architecture in rtc_base/system/arch.h
 BROKEN_riscv64=		fails to compile: ./webrtc/rtc_base/system/arch.h:54:2: Please add support for your architecture in rtc_base/system/arch.h
 
 BUILD_DEPENDS=	cmake:devel/cmake
