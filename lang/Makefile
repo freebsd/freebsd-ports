@@ -177,6 +177,7 @@
     SUBDIR += maude
     SUBDIR += mawk
     SUBDIR += mdk
+    SUBDIR += mecrisp-stellaris
     SUBDIR += micropython
     SUBDIR += mit-scheme
     SUBDIR += mixal

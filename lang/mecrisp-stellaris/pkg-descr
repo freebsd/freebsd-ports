@@ -1,0 +1,10 @@
+Mecrisp Stellaris is an implementation of a standalone native code Forth
+for ARM.  It fits into 16 kb of flash and runs with at least 1 kb of
+RAM.  You can choose to compile to flash or to RAM, and it generates
+native code with folding, inlining of short words and it opcodes common
+instructions.  Note that it doesn't need to save any pointers, so it
+compiles directly into flash memory without the need for erase cycles.
+Although it is in spirit of ANS, there are a few differences: Be
+careful!
+
+WWW: http://mecrisp.sourceforge.net
