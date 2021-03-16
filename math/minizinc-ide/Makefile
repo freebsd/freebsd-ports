@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	minizinc-ide
-DISTVERSION=	2.5.3
+DISTVERSION=	2.5.4
 CATEGORIES=	math lang
 
 MAINTAINER=	yuri@FreeBSD.org
