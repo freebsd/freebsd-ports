@@ -3,7 +3,7 @@
 
 PORTNAME=	treeline
 PORTVERSION=	3.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils python
 MASTER_SITES=	https://github.com/doug-101/TreeLine/releases/download/v${PORTVERSION}/ \
 		SF/${PORTNAME}/${PORTVERSION}
