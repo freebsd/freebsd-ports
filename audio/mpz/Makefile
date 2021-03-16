@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpz
-PORTVERSION=	1.0.11
+PORTVERSION=	1.0.13
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 USE_GITHUB=	yes
 GH_ACCOUNT=	olegantonyan
 
-USES=		compiler:c++11-lang qmake qt:5
+USES=		compiler:c++11-lang desktop-file-utils qmake qt:5
 USE_GSTREAMER1=	flac libav mpg123 ogg opus vorbis
 USE_QT=		buildtools_build concurrent core dbus gui multimedia \
 		network widgets x11extras
