@@ -233,6 +233,7 @@
     SUBDIR += slime
     SUBDIR += sly
     SUBDIR += sly-named-readtables
+    SUBDIR += sly-quicklisp
     SUBDIR += ssed
     SUBDIR += sted
     SUBDIR += tamago

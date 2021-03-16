@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+To use the sly-quicklisp contrib, you must:
+1. Register sly-quicklisp into SLY. You just have to add this line to some init
+   file:
+(require 'sly-quicklisp)
+   Doing this is not strictly necessary if you want to automatically activate
+   this contrib using `sly-contribs' (see below), but it never hurts.
+   This contrib's automatic activation at load was disabled, contrary to what
+   upstream does. Upstream's autoloads file is consequently not necessary, and
+   not included in this package.
+2. Ensure that Quicklisp is loaded by your Common Lisp implementation. If this
+   is not the case, an error will be signaled at contrib activation, from which
+   you can recover by using SLY's CONTINUE restart (will disable the contrib).
+
+If you want sly-quicklisp to be automatically activated on each new SLY
+session, put it in the `sly-contribs' list. E.g., you can add something like
+this in some Emacs' init file:
+(setq sly-contribs '(sly-fancy sly-quicklisp))
+or customize the variable.
+
+To enable it on demand in already running SLY sessions instead, just use the
+`sly-enable-contrib' command, or modify `sly-contribs' and run `sly-setup'.
+EOM
+}
+]
