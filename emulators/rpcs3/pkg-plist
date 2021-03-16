@@ -14,6 +14,12 @@ share/metainfo/rpcs3.appdata.xml
 %%DATADIR%%/GuiConfigs/YoRHa by Ani.qss
 %%DATADIR%%/GuiConfigs/YoRHa-background.jpg
 %%DATADIR%%/GuiConfigs/kot-bg.jpg
+%%DATADIR%%/GuiConfigs/list_arrow_blue.png
+%%DATADIR%%/GuiConfigs/list_arrow_down_blue.png
+%%DATADIR%%/GuiConfigs/list_arrow_down_green.png
+%%DATADIR%%/GuiConfigs/list_arrow_down_white.png
+%%DATADIR%%/GuiConfigs/list_arrow_green.png
+%%DATADIR%%/GuiConfigs/list_arrow_white.png
 %%DATADIR%%/Icons/ui/L1.png
 %%DATADIR%%/Icons/ui/L2.png
 %%DATADIR%%/Icons/ui/R1.png
