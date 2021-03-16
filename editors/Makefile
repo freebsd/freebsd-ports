@@ -231,6 +231,7 @@
     SUBDIR += setzer
     SUBDIR += shed
     SUBDIR += slime
+    SUBDIR += sly
     SUBDIR += ssed
     SUBDIR += sted
     SUBDIR += tamago

@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+To enable autoloading of SLY, add this to some Emacs init file:
+(require 'sly-autoloads)
+
+You should specify some Lisp implementation. This works for both SLY and SLIME:
+(setq inferior-lisp-program "path_to_your_lisp_binary")
+SLY however has convenient specific variables for more complex
+configurations. E.g.:
+(setq sly-default-lisp 'sbcl
+      sly-lisp-implementations '((sbcl ("sbcl"))))
+Please see their documentation.
+
+Contribs in `sly-contribs' list are automatically loaded and enabled (and those
+not in it are disabled) each time a new session is launched, or `sly-setup' is
+called. If you define `sly-contribs' in some initialization file, be sure to
+include sly-fancy in it (instead, you can add to the list using `add-to-list',
+after the `require' above).
+
+If you just want to immediately enable a contrib, you can instead use
+`sly-enable-contrib', but be aware that the effect will be temporary. It will
+last up to the next connection established or `sly-setup' call, unless you add
+the contrib to `sly-contribs' in the meantime.
+EOM
+}
+]

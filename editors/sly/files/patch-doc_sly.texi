@@ -1,0 +1,25 @@
+--- doc/sly.texi.orig	2021-01-14 09:12:56 UTC
++++ doc/sly.texi
+@@ -3157,17 +3157,13 @@ buffer you can enter Lisp expressions and evaluate the
+ @unnumberedsec Hackers of the good hack
+ 
+ @SLY{} is a fork of SLIME which is itself an Extension
+-of @acronym{SLIM} by Eric Marsden. At the time of writing, the authors
+-and code-contributors of @SLY{} are:
++of @acronym{SLIM} by Eric Marsden. Please consult the Git repository
++for a list of authors and code-contributors of @SLY{}, as well as the
++bundled code from @file{hyperspec.el}, @cite{CLOCC}, and the @cite{CMU
++AI Repository}.
+ 
+-@include contributors.texi
+-
+-... not counting the bundled code from @file{hyperspec.el},
+-@cite{CLOCC}, and the @cite{CMU AI Repository}.
+-
+ Many people on the @code{sly-devel} mailing list have made non-code
+-contributions to @SLY{}. Life is hard though: you gotta send code to
+-get your name in the manual. @code{:-)}
++contributions to @SLY{}.
+ 
+ @unnumberedsec Thanks!
+ 

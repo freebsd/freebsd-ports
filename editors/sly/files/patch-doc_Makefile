@@ -1,0 +1,20 @@
+--- doc/Makefile.orig	2021-01-14 09:12:56 UTC
++++ doc/Makefile
+@@ -14,7 +14,7 @@ INSTALL_CMD=install -m 644
+ # Info files generated here.
+ infofiles=sly.info
+ 
+-TEXI = sly.texi contributors.texi
++TEXI = sly.texi
+ 
+ help:
+ 	@echo -e "\
+@@ -38,7 +38,7 @@ sly.info: $(TEXI)
+ 	makeinfo $<
+ 
+ sly.html: $(TEXI)
+-	texi2html --css-include=sly.css $<
++	makeinfo -o $@ --css-include=sly.css --html --no-split $<
+ 
+ html/index.html: $(TEXI)
+ 	makeinfo -o html --css-include=sly.css --html $<
