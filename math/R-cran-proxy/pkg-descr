@@ -1,0 +1,5 @@
+Provides an extensible framework for the efficient calculation of
+auto- and cross-proximities, along with implementations of the most
+popular ones.
+
+WWW: https://cran.r-project.org/web/packages/proxy/
