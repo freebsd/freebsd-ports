@@ -1,0 +1,23 @@
+FileBot is the ultimate tool for organizing and renaming your Movies, TV Shows
+and Anime as well as fetching subtitles and artwork. It's smart and just works.
+
+FileBot makes organizing your movies and TV shows a breeze! We'll automatically
+match your files with information from various online databases.  How you want
+your media files to be named and organized is completely up to you. Our groovy
+format engine supports pretty much anything!
+
+Fetching subtitles is just as easy, just drop it in! Besides automatic lookup
+you'll also be able to manually search and download subtitles, preview subtitles
+and fix encoding problems (e.g. force UTF-8).
+
+Use FileBot on the command-line! There is a simple CLI for core tasks like
+renaming media files and fetching subtitles as well as checking or creating SFV
+files. On top of that you can use our scripting engine to define more complex
+automated processing. There's already shared scripts for various tasks that you
+can just run right away or further customize to your needs.
+
+Setting up a fully automated media center - extract archives, organize tv shows
+and movies, download subtitles, fetch artwork and metadata, update Kodi - with
+FileBot it's that easy!
+
+WWW: https://www.filebot.net/
