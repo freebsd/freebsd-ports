@@ -3,7 +3,7 @@
 
 PORTNAME=	freeimage
 PORTVERSION=	3.18.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Source%20Distribution/${PORTVERSION}
 DISTNAME=	FreeImage${PORTVERSION:S/.//g}
@@ -28,7 +28,8 @@ DOS2UNIX_FILES=	Source/LibOpenJPEG/opj_malloc.h \
 		Source/LibRawLite/dcraw/dcraw.c \
 		Source/LibRawLite/internal/dcraw_common.cpp \
 		Source/FreeImage/PluginBMP.cpp \
-		Source/FreeImage/PluginDDS.cpp
+		Source/FreeImage/PluginDDS.cpp \
+		Source/LibPNG/pngpriv.h
 
 WRKSRC=		${WRKDIR}/FreeImage
 MAKE_ARGS=	CC="${CC}" CPP="${CPP}" CXX="${CXX}"
