@@ -2,7 +2,7 @@
 
 PORTNAME=	OpenDiablo2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1-g20210119
+DISTVERSION=	0.1-g20210312
 CATEGORIES=	games
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libglfw.so:graphics/glfw
 
 USES=		gl go:modules openal pkgconfig xorg
 USE_GITHUB=	yes
-GH_TAGNAME=	e982430
+GH_TAGNAME=	536233f
 GH_TUPLE=	\
 		JoshVarga:blast:681c804fb9f0:joshvarga_blast/vendor/github.com/JoshVarga/blast \
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
