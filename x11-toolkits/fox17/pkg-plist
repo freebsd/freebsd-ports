@@ -368,11 +368,11 @@ include/fox-%%MAJORVER%%/xincs.h
 lib/libCHART-%%MAJORVER%%.a
 lib/libCHART-%%MAJORVER%%.so
 lib/libCHART-%%MAJORVER%%.so.0
-lib/libCHART-%%MAJORVER%%.so.0.0.74
+lib/libCHART-%%MAJORVER%%.so.0.0.75
 lib/libFOX-%%MAJORVER%%.a
 lib/libFOX-%%MAJORVER%%.so
 lib/libFOX-%%MAJORVER%%.so.0
-lib/libFOX-%%MAJORVER%%.so.0.0.74
+lib/libFOX-%%MAJORVER%%.so.0.0.75
 libdata/pkgconfig/fox17.pc
 man/man1/ControlPanel-17.1.gz
 %%PORTEXAMPLES%%man/man1/PathFinder-17.1.gz

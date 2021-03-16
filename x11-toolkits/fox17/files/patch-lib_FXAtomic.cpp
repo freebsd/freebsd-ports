@@ -1,4 +1,4 @@
---- lib/FXAtomic.cpp.orig	2017-11-29 04:44:13 UTC
+--- lib/FXAtomic.cpp.orig	2020-11-30 16:10:17 UTC
 +++ lib/FXAtomic.cpp
 @@ -54,7 +54,7 @@
  
@@ -14,7 +14,7 @@
  
  // Can we use inline-assembly
 -#if (defined(__GNUC__) || defined(__INTEL_COMPILER))
-+#if (defined(__GNUC__) || defined(__INTEL_COMPILER)) || defined(__clang__)
++#if (defined(__GNUC__) || defined(__INTEL_COMPILER) || defined(__clang__))
  #define HAVE_INLINE_ASSEMBLY 1
  #endif
  

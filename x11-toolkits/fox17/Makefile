@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fox
-PORTVERSION=	1.7.74
+PORTVERSION=	1.7.75
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/
@@ -26,7 +26,9 @@ USE_XORG=	ice sm x11 xcursor xext xfixes xft xi xrandr xrender
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-opengl=yes \
+CONFIGURE_ARGS=	--with-freetype-include="`freetype-config --cflags | sed -e 's|^-I||'`" \
+		--with-freetype-library="`freetype-config --libs | sed -e 's|^-L||'`" \
+		--with-opengl=yes \
 		--with-xim \
 		--enable-png \
 		--bindir=${PREFIX}/bin/${PORTNAME}-${MAJORVER}
