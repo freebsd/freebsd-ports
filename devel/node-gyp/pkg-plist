@@ -93,3 +93,4 @@ lib/node_modules/node-gyp/macOS_Catalina_acid_test.sh
 lib/node_modules/node-gyp/package.json
 lib/node_modules/node-gyp/src/win_delay_load_hook.cc
 lib/node_modules/node-gyp/update-gyp.py
+lib/node_modules/node-gyp/node_modules

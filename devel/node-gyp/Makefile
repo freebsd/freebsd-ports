@@ -3,6 +3,7 @@
 PORTNAME=	gyp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.1.2
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	node-
 
@@ -12,6 +13,7 @@ COMMENT=	Cross-platform command-line tool written in Node.js
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/npm:www/npm
+RUN_DEPENDS=	${LOCALBASE}/bin/npm:www/npm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nodejs
@@ -27,5 +29,7 @@ do-install:
 	"! ( -name \.* -or -path *\/\.github\/* -or -name test -or -path *\/test\/* )")
 	${RLN} ${STAGEDIR}${PREFIX}/lib/node_modules/node-gyp/bin/node-gyp.js \
 		${STAGEDIR}${PREFIX}/bin/node-gyp
+	${LN} -s ${LOCALBASE}/lib/node_modules/npm/node_modules \
+		${STAGEDIR}${PREFIX}/lib/node_modules/node-gyp/node_modules
 
 .include <bsd.port.mk>
