@@ -16,7 +16,7 @@ LICENSE_NAME=	Charm++/Converse License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	none # No redistribution is allowed, no commercial use: commercial use requires a commercial license
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Not clear if it can be built on other architectures
 
 FETCH_DEPENDS=	git:devel/git
