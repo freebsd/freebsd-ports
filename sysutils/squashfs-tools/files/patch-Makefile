@@ -1,15 +1,24 @@
---- Makefile.orig	2014-05-11 18:56:00 UTC
+--- Makefile.orig	2019-08-29 01:58:04 UTC
 +++ Makefile
-@@ -38,7 +38,7 @@ GZIP_SUPPORT = 1
- # installation prefix.
+@@ -97,7 +97,7 @@ COMP_DEFAULT = gzip
+ # If your C library or build/target environment doesn't support XATTRs then
+ # comment out the next line to build Mksquashfs and Unsquashfs without XATTR
+ # support
+-XATTR_SUPPORT = 1
++# XATTR_SUPPORT = 1
+ 
+ # Select whether you wish xattrs to be stored by Mksquashfs and extracted
+ # by Unsquashfs by default.  If selected users can disable xattr support by
+@@ -105,7 +105,7 @@ XATTR_SUPPORT = 1
  #
- #LZO_SUPPORT = 1
--#LZO_DIR = /usr/local
-+#LZO_DIR = $(LOCALBASE)
+ # If unselected, Mksquashfs/Unsquashfs won't store and extract xattrs by
+ # default.  Users can enable xattrs by using the -xattrs option.
+-XATTR_DEFAULT = 1
++# XATTR_DEFAULT = 1
  
  
- ########### Building LZ4 support #############
-@@ -119,7 +119,7 @@ UNSQUASHFS_OBJS = unsquashfs.o unsquash-1.o unsquash-2
+ ###############################################
+@@ -160,7 +160,7 @@ UNSQUASHFS_OBJS = unsquashfs.o unsquash-1.o unsquash-2
  
  CFLAGS ?= -O2
  CFLAGS += $(EXTRA_CFLAGS) $(INCLUDEDIR) -D_FILE_OFFSET_BITS=64 \
@@ -18,7 +27,37 @@
  	-Wall
  
  LIBS = -lpthread -lm
-@@ -300,6 +300,6 @@ clean:
+@@ -200,6 +200,7 @@ endif
+ 
+ ifeq ($(LZO_SUPPORT),1)
+ CFLAGS += -DLZO_SUPPORT
++INCLUDEDIR += -I$(LOCALBASE)/include
+ MKSQUASHFS_OBJS += lzo_wrapper.o
+ UNSQUASHFS_OBJS += lzo_wrapper.o
+ LIBS += $(LZO_LIBDIR) -llzo2
+@@ -208,17 +209,19 @@ endif
+ 
+ ifeq ($(LZ4_SUPPORT),1)
+ CFLAGS += -DLZ4_SUPPORT
++INCLUDEDIR += -I$(LOCALBASE)/include
+ MKSQUASHFS_OBJS += lz4_wrapper.o
+ UNSQUASHFS_OBJS += lz4_wrapper.o
+-LIBS += -llz4
++LIBS += -L$(LOCALBASE)/lib -llz4
+ COMPRESSORS += lz4
+ endif
+ 
+ ifeq ($(ZSTD_SUPPORT),1)
+ CFLAGS += -DZSTD_SUPPORT
++INCLUDEDIR += -I$(LOCALBASE)/include
+ MKSQUASHFS_OBJS += zstd_wrapper.o
+ UNSQUASHFS_OBJS += zstd_wrapper.o
+-LIBS += -lzstd
++LIBS += -L$(LOCALBASE)/lib -lzstd
+ COMPRESSORS += zstd
+ endif
+ 
+@@ -360,6 +363,6 @@ clean:
  
  .PHONY: install
  install: mksquashfs unsquashfs
