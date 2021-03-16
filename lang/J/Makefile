@@ -14,6 +14,8 @@ COMMENT=	J programming language
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/jsource-${JVERSION}/license.txt
 
+BROKEN=		does not build
+
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	Not built or tested for other archs. i386 needs hostdefs and netdefs files to be generated.
 
@@ -45,12 +47,7 @@ OPENMP_MAKE_ENV=	USE_OPENMP=1
 OPENMP_LIB_DEPENDS=	libgomp.so:lang/gcc7
 
 # J wants to install jconsole, also provided by openjdk
-CONFLICTS_INSTALL=	openjdk6 \
-		openjdk6-jre \
-		openjdk7 \
-		openjdk7-jre \
-		openjdk8 \
-		openjdk8-jre
+CONFLICTS_INSTALL=	openjdk[0-9]*
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/j/bin
