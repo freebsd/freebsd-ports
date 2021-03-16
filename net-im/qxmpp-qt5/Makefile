@@ -2,7 +2,7 @@
 
 PORTNAME=	qxmpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.2
+DISTVERSION=	1.4.0
 CATEGORIES=	net-im
 PKGNAMESUFFIX=	-qt5
 
@@ -12,7 +12,7 @@ COMMENT=	XMPP client library based on Qt and C++
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.LGPL
 
-USES=		cmake compiler:c++11-lang libtool pathfix pkgconfig qt:5
+USES=		cmake compiler:c++17-lang libtool pathfix pkgconfig qt:5
 USE_QT=		core gui network xml \
 		buildtools_build qmake_build testlib_build
 
