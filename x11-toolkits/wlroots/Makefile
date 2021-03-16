@@ -31,7 +31,7 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	swaywm
 MESON_ARGS=	-Dexamples=false
 
-OPTIONS_DEFINE=	CONSOLEKIT LIBSEAT UUID X11
+OPTIONS_DEFINE=	CONSOLEKIT LIBSEAT NVIDIA UUID X11
 OPTIONS_DEFAULT=LIBSEAT UUID X11
 OPTIONS_SUB=	yes
 
@@ -48,6 +48,13 @@ CONSOLEKIT_MESON_ENABLED=	consolekit2
 LIBSEAT_DESC=		DRM sessions with/without root via libseat
 LIBSEAT_LIB_DEPENDS=	libseat.so:sysutils/seatd
 LIBSEAT_MESON_ENABLED=	libseat
+
+NVIDIA_DESC=		EGLStreams support for DRM backend (experimental)
+NVIDIA_PATCH_SITES=	https://github.com/danvd/${GH_PROJECT}-eglstreams/commit/:nvidia
+NVIDIA_PATCHFILES=	eba4b66f92ca.patch:-p1:nvidia # https://github.com/swaywm/wlroots/pull/2769
+.if make(makesum)
+.MAKEFLAGS:		WITH+=NVIDIA
+.endif
 
 # uuid_create() is random on NetBSD and OpenBSD but not DragonFly and FreeBSD
 # See also https://github.com/netbsd/src/commit/8651e9a438af
