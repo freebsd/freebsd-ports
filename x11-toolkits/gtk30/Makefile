@@ -5,6 +5,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	3.24.24
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	3
@@ -81,7 +82,8 @@ WAYLAND_CONFIGURE_ENABLE=	wayland-backend
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
 			libxkbcommon.so:x11/libxkbcommon
-WAYLAND_RUN_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
+WAYLAND_RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
+			wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_USES=		gl
 WAYLAND_USE=		GL=egl
 
