@@ -4,6 +4,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/language/translation_validated.inc.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/metadata.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/missing_keys.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/piwigo_addSimple.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/piwigo_remote.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/piwigo_upload.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pwg_rel_create.sh
@@ -30,6 +31,7 @@
 %%WWWDIR%%/admin/cat_move.php
 %%WWWDIR%%/admin/cat_options.php
 %%WWWDIR%%/admin/cat_perm.php
+%%WWWDIR%%/admin/cat_search.php
 %%WWWDIR%%/admin/comments.php
 %%WWWDIR%%/admin/configuration.php
 %%WWWDIR%%/admin/element_set_ranks.php
@@ -56,7 +58,6 @@
 %%WWWDIR%%/admin/include/image.class.php
 %%WWWDIR%%/admin/include/index.php
 %%WWWDIR%%/admin/include/languages.class.php
-%%WWWDIR%%/admin/include/mysqldump.php
 %%WWWDIR%%/admin/include/pclzip.lib.php
 %%WWWDIR%%/admin/include/photos_add_direct_prepare.inc.php
 %%WWWDIR%%/admin/include/plugins.class.php
@@ -131,14 +132,6 @@
 %%WWWDIR%%/admin/themes/clear/images/external_inactive.png
 %%WWWDIR%%/admin/themes/clear/images/missing_screenshot.png
 %%WWWDIR%%/admin/themes/clear/images/quickLocalSync.png
-%%WWWDIR%%/admin/themes/clear/images/resizable-e.gif
-%%WWWDIR%%/admin/themes/clear/images/resizable-n.gif
-%%WWWDIR%%/admin/themes/clear/images/resizable-ne.gif
-%%WWWDIR%%/admin/themes/clear/images/resizable-nw.gif
-%%WWWDIR%%/admin/themes/clear/images/resizable-s.gif
-%%WWWDIR%%/admin/themes/clear/images/resizable-se.gif
-%%WWWDIR%%/admin/themes/clear/images/resizable-sw.gif
-%%WWWDIR%%/admin/themes/clear/images/resizable-w.gif
 %%WWWDIR%%/admin/themes/clear/images/stripe-cat.png
 %%WWWDIR%%/admin/themes/clear/images/transparent.gif
 %%WWWDIR%%/admin/themes/clear/index.php
@@ -272,16 +265,21 @@
 %%WWWDIR%%/admin/themes/default/images/cancel.svg
 %%WWWDIR%%/admin/themes/default/images/cancelhover.svg
 %%WWWDIR%%/admin/themes/default/images/pbar-ani.gif
+%%WWWDIR%%/admin/themes/default/images/piwigo_app_banner.jpg
 %%WWWDIR%%/admin/themes/default/images/piwigo-grey.svg
 %%WWWDIR%%/admin/themes/default/images/piwigo-orange.svg
 %%WWWDIR%%/admin/themes/default/index.php
 %%WWWDIR%%/admin/themes/default/js/LocalStorageCache.js
 %%WWWDIR%%/admin/themes/default/js/addAlbum.js
 %%WWWDIR%%/admin/themes/default/js/batchManagerGlobal.js
+%%WWWDIR%%/admin/themes/default/js/cat_move.js
 %%WWWDIR%%/admin/themes/default/js/common.js
 %%WWWDIR%%/admin/themes/default/js/datepicker.js
 %%WWWDIR%%/admin/themes/default/js/doubleSlider.js
+%%WWWDIR%%/admin/themes/default/js/group_list.js
 %%WWWDIR%%/admin/themes/default/js/jquery.geoip.js
+%%WWWDIR%%/admin/themes/default/js/stats.js
+%%WWWDIR%%/admin/themes/default/js/tags.js
 %%WWWDIR%%/admin/themes/default/print.css
 %%WWWDIR%%/admin/themes/default/template/admin.tpl
 %%WWWDIR%%/admin/themes/default/template/album_notification.tpl
@@ -292,6 +290,7 @@
 %%WWWDIR%%/admin/themes/default/template/cat_move.tpl
 %%WWWDIR%%/admin/themes/default/template/cat_options.tpl
 %%WWWDIR%%/admin/themes/default/template/cat_perm.tpl
+%%WWWDIR%%/admin/themes/default/template/cat_search.tpl
 %%WWWDIR%%/admin/themes/default/template/check_integrity.tpl
 %%WWWDIR%%/admin/themes/default/template/comments.tpl
 %%WWWDIR%%/admin/themes/default/template/configuration_comments.tpl
@@ -313,10 +312,7 @@
 %%WWWDIR%%/admin/themes/default/template/include/autosize.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/colorbox.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/datepicker.inc.tpl
-%%WWWDIR%%/admin/themes/default/template/include/dbselect.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/install.inc.tpl
-%%WWWDIR%%/admin/themes/default/template/include/resize.inc.tpl
-%%WWWDIR%%/admin/themes/default/template/include/tag_selection.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/install.tpl
 %%WWWDIR%%/admin/themes/default/template/intro.tpl
 %%WWWDIR%%/admin/themes/default/template/languages_installed.tpl
@@ -372,14 +368,6 @@
 %%WWWDIR%%/admin/themes/roma/images/missing_screenshot.png
 %%WWWDIR%%/admin/themes/roma/images/quickLocalSync_hover.png
 %%WWWDIR%%/admin/themes/roma/images/quickLocalSync_inactiv.png
-%%WWWDIR%%/admin/themes/roma/images/resizable-e.gif
-%%WWWDIR%%/admin/themes/roma/images/resizable-n.gif
-%%WWWDIR%%/admin/themes/roma/images/resizable-ne.gif
-%%WWWDIR%%/admin/themes/roma/images/resizable-nw.gif
-%%WWWDIR%%/admin/themes/roma/images/resizable-s.gif
-%%WWWDIR%%/admin/themes/roma/images/resizable-se.gif
-%%WWWDIR%%/admin/themes/roma/images/resizable-sw.gif
-%%WWWDIR%%/admin/themes/roma/images/resizable-w.gif
 %%WWWDIR%%/admin/themes/roma/images/stripe-cat.png
 %%WWWDIR%%/admin/themes/roma/images/transparent.gif
 %%WWWDIR%%/admin/themes/roma/index.php
@@ -766,6 +754,9 @@
 %%WWWDIR%%/install/db/154-database.php
 %%WWWDIR%%/install/db/155-database.php
 %%WWWDIR%%/install/db/156-database.php
+%%WWWDIR%%/install/db/157-database.php
+%%WWWDIR%%/install/db/158-database.php
+%%WWWDIR%%/install/db/159-database.php
 %%WWWDIR%%/install/db/61-database.php
 %%WWWDIR%%/install/db/62-database.php
 %%WWWDIR%%/install/db/63-database.php
@@ -829,6 +820,7 @@
 %%WWWDIR%%/install/upgrade_2.7.0.php
 %%WWWDIR%%/install/upgrade_2.8.0.php
 %%WWWDIR%%/install/upgrade_2.9.0.php
+%%WWWDIR%%/install/upgrade_2.10.0.php
 @mode 750
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
@@ -968,6 +960,7 @@
 %%WWWDIR%%/language/cs_CZ/help/notification_by_mail.html
 %%WWWDIR%%/language/cs_CZ/help/permalinks.html
 %%WWWDIR%%/language/cs_CZ/help/photos_add_ftp.html
+%%WWWDIR%%/language/cs_CZ/help/quick_search.html
 %%WWWDIR%%/language/cs_CZ/help/search.html
 %%WWWDIR%%/language/cs_CZ/help/synchronize.html
 %%WWWDIR%%/language/cs_CZ/help/user_list.html
@@ -1184,8 +1177,10 @@
 %%WWWDIR%%/language/eu_ES/eu_ES.jpg
 %%WWWDIR%%/language/eu_ES/help/cat_move.html
 %%WWWDIR%%/language/eu_ES/help/cat_options.html
+%%WWWDIR%%/language/eu_ES/help/cat_perm.html
 %%WWWDIR%%/language/eu_ES/help/group_list.html
 %%WWWDIR%%/language/eu_ES/help/help_add_photos.html
+%%WWWDIR%%/language/eu_ES/help/quick_search.html
 %%WWWDIR%%/language/eu_ES/install.lang.php
 %%WWWDIR%%/language/eu_ES/iso.txt
 %%WWWDIR%%/language/eu_ES/upgrade.lang.php
@@ -1831,7 +1826,9 @@
 %%WWWDIR%%/language/sr_RS/about.html
 %%WWWDIR%%/language/sr_RS/admin.lang.php
 %%WWWDIR%%/language/sr_RS/common.lang.php
+%%WWWDIR%%/language/sr_RS/help/cat_move.html
 %%WWWDIR%%/language/sr_RS/help/help_groups.html
+%%WWWDIR%%/language/sr_RS/help/search.html
 %%WWWDIR%%/language/sr_RS/index.php
 %%WWWDIR%%/language/sr_RS/install.lang.php
 %%WWWDIR%%/language/sr_RS/iso.txt
@@ -2473,6 +2470,7 @@
 %%WWWDIR%%/plugins/TakeATour/language/et_EE/tour_2_7_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/eu_ES/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/eu_ES/plugin.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/eu_ES/tour_2_9_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/fa_IR/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/fa_IR/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/fa_IR/tour_2_9_0.lang.php
@@ -2487,6 +2485,8 @@
 %%WWWDIR%%/plugins/TakeATour/language/fr_CA/tour_2_7_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/fr_CA/tour_2_8_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/fr_CA/tour_2_9_0.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/fr_CA/tour_first_contact.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/fr_CA/tour_privacy.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/fr_FR/description.txt
 %%WWWDIR%%/plugins/TakeATour/language/fr_FR/index.php
 %%WWWDIR%%/plugins/TakeATour/language/fr_FR/plugin.lang.php
@@ -2515,6 +2515,7 @@
 %%WWWDIR%%/plugins/TakeATour/language/ja_JP/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/ja_JP/tour_2_8_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/ja_JP/tour_2_9_0.lang.php
+%%WWWDIR%%/plugins/TakeATour/language/ja_JP/tour_first_contact.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/lt_LT/plugin.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/lt_LT/tour_2_9_0.lang.php
 %%WWWDIR%%/plugins/TakeATour/language/lv_LV/description.txt
@@ -2823,6 +2824,8 @@
 %%WWWDIR%%/themes/default/index.php
 %%WWWDIR%%/themes/default/js/jquery.js
 %%WWWDIR%%/themes/default/js/jquery.min.js
+%%WWWDIR%%/themes/default/js/plugins/Chart.min.css
+%%WWWDIR%%/themes/default/js/plugins/Chart.min.js
 %%WWWDIR%%/themes/default/js/plugins/Jcrop.gif
 %%WWWDIR%%/themes/default/js/plugins/chosen-sprite.png
 %%WWWDIR%%/themes/default/js/plugins/chosen-sprite@2x.png
@@ -2896,6 +2899,9 @@
 %%WWWDIR%%/themes/default/js/plugins/jgrowl-alert.png
 %%WWWDIR%%/themes/default/js/plugins/jgrowl-check.png
 %%WWWDIR%%/themes/default/js/plugins/jgrowl-error.png
+%%WWWDIR%%/themes/default/js/plugins/jqtree.css
+%%WWWDIR%%/themes/default/js/plugins/jquery-confirm.min.css
+%%WWWDIR%%/themes/default/js/plugins/jquery-confirm.min.js
 %%WWWDIR%%/themes/default/js/plugins/jquery.Jcrop.css
 %%WWWDIR%%/themes/default/js/plugins/jquery.Jcrop.js
 %%WWWDIR%%/themes/default/js/plugins/jquery.Jcrop.min.js
@@ -2912,6 +2918,7 @@
 %%WWWDIR%%/themes/default/js/plugins/jquery.tipTip.minified.js
 %%WWWDIR%%/themes/default/js/plugins/jquery.tokeninput.css
 %%WWWDIR%%/themes/default/js/plugins/jquery.tokeninput.js
+%%WWWDIR%%/themes/default/js/plugins/moment-with-locales.min.js
 %%WWWDIR%%/themes/default/js/plugins/piecon.js
 %%WWWDIR%%/themes/default/js/plugins/plupload/Moxie.swf
 %%WWWDIR%%/themes/default/js/plugins/plupload/Moxie.xap
@@ -2984,6 +2991,7 @@
 %%WWWDIR%%/themes/default/js/plugins/selectize.clear.css
 %%WWWDIR%%/themes/default/js/plugins/selectize.dark.css
 %%WWWDIR%%/themes/default/js/plugins/selectize.min.js
+%%WWWDIR%%/themes/default/js/plugins/tree.jquery.js
 %%WWWDIR%%/themes/default/js/plugins/underscore.js
 %%WWWDIR%%/themes/default/js/pngfix.js
 %%WWWDIR%%/themes/default/js/rating.js
@@ -3217,7 +3225,6 @@
 %%WWWDIR%%/themes/default/template/identification.tpl
 %%WWWDIR%%/themes/default/template/include/autosize.inc.tpl
 %%WWWDIR%%/themes/default/template/include/colorbox.inc.tpl
-%%WWWDIR%%/themes/default/template/include/resize.inc.tpl
 %%WWWDIR%%/themes/default/template/index.tpl
 %%WWWDIR%%/themes/default/template/infos_errors.tpl
 %%WWWDIR%%/themes/default/template/mail/index.php
@@ -3245,6 +3252,7 @@
 %%WWWDIR%%/themes/default/template/menubar_identification.tpl
 %%WWWDIR%%/themes/default/template/menubar_links.tpl
 %%WWWDIR%%/themes/default/template/menubar_menu.tpl
+%%WWWDIR%%/themes/default/template/menubar_related_categories.tpl
 %%WWWDIR%%/themes/default/template/menubar_specials.tpl
 %%WWWDIR%%/themes/default/template/menubar_tags.tpl
 %%WWWDIR%%/themes/default/template/month_calendar.tpl
@@ -3370,6 +3378,7 @@
 %%WWWDIR%%/themes/modus/css/fontello/font/modus.svg
 %%WWWDIR%%/themes/modus/css/fontello/font/modus.ttf
 %%WWWDIR%%/themes/modus/css/fontello/font/modus.woff
+%%WWWDIR%%/themes/modus/css/fontello/font/modus.woff2
 %%WWWDIR%%/themes/modus/css/hf_base.css
 %%WWWDIR%%/themes/modus/css/iconfontello.css.tpl
 %%WWWDIR%%/themes/modus/css/iconset.css
@@ -3734,6 +3743,7 @@
 %%WWWDIR%%/themes/smartpocket/template/menubar_identification.tpl
 %%WWWDIR%%/themes/smartpocket/template/menubar_links.tpl
 %%WWWDIR%%/themes/smartpocket/template/menubar_menu.tpl
+%%WWWDIR%%/themes/smartpocket/template/menubar_related_categories.tpl
 %%WWWDIR%%/themes/smartpocket/template/menubar_specials.tpl
 %%WWWDIR%%/themes/smartpocket/template/menubar_tags.tpl
 %%WWWDIR%%/themes/smartpocket/template/navigation_bar.tpl

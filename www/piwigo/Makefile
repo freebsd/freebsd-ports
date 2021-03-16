@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	piwigo
-DISTVERSION=	2.10.2
+DISTVERSION=	11.3.0
 CATEGORIES=	www
 MASTER_SITES=	https://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
 
@@ -12,10 +12,11 @@ COMMENT=	PHP based Web Gallery
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/sodium.so:security/pecl-libsodium@${PHP_FLAVOR}
+
 USES=		cpe php:web zip
-USE_PHP=	calendar ctype dom exif filter gd gettext hash iconv json \
-		mbstring mcrypt mysqli openssl pcre pdf pdo posix session \
-		simplexml sockets spl tokenizer xml xmlreader xmlwriter zlib
+USE_PHP=	ctype dom exif filter gd hash iconv json mbstring mysqli \
+		openssl pcre pdo session simplexml spl tokenizer xml zlib
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -34,20 +35,21 @@ PLIST_SUB+=	CHOWN="${CHOWN}" \
 		WWWOWN="${WWWOWN}"
 PORTDOCS=	README_ca.txt README_en.txt README_fr.txt
 
-OPTIONS_DEFINE=		DOCS EXAMPLES IMAGICK X11
-OPTIONS_DEFAULT=	IMAGICK
+OPTIONS_DEFINE=		DOCS EXAMPLES
+OPTIONS_GROUP=		OPT
+OPTIONS_GROUP_OPT=	EXIFTOOL FFMPEG IMAGICK MEDIAINFO
 
+EXIFTOOL_DESC=	exiftool support (for plugins)
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
+MEDIAINFO_DESC=	mediainfo support (for plugins)
+OPT_DESC=	Optional dependencies
+
+EXIFTOOL_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
+FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
+IMAGICK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
+MEDIAINFO_RUN_DEPENDS=	mediainfo:multimedia/mediainfo
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MIMAGICK}
-.if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6
-.else
-RUN_DEPENDS+=	${LOCALBASE}/bin/convert:graphics/ImageMagick6-nox11
-.endif
-.endif
 
 pre-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
