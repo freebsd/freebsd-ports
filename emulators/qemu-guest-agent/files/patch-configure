@@ -1,0 +1,201 @@
+--- configure.orig	2020-09-15 19:31:13 UTC
++++ configure
+@@ -360,7 +360,7 @@
+ sdl=""
+ sdl_image=""
+ virtfs=""
+-mpath=""
++mpath="no"
+ vnc="yes"
+ sparse="no"
+ vde=""
+@@ -408,7 +408,7 @@
+ modules="no"
+ module_upgrades="no"
+ prefix="/usr/local"
+-mandir="\${prefix}/share/man"
++mandir="\${prefix}/man"
+ datadir="\${prefix}/share"
+ firmwarepath="\${prefix}/share/qemu-firmware"
+ qemu_docdir="\${prefix}/share/doc/qemu"
+@@ -493,6 +493,9 @@
+ tcmalloc="no"
+ jemalloc="no"
+ replication="yes"
++pcap="no"
++pcap_create="no"
++bpf="no"
+ vxhs=""
+ bochs="yes"
+ cloop="yes"
+@@ -509,6 +512,7 @@
+ default_devices="yes"
+ plugins="no"
+ fuzzing="no"
++libudev="no"
+ 
+ supported_cpu="no"
+ supported_os="no"
+@@ -904,7 +908,7 @@
+   kvm="yes"
+   QEMU_INCLUDES="-isystem \$(SRC_PATH)/linux-headers -isystem $PWD/linux-headers $QEMU_INCLUDES"
+   supported_os="yes"
+-  libudev="yes"
++  libudev="no"
+ ;;
+ esac
+ 
+@@ -1168,6 +1172,10 @@
+   ;;
+   --enable-vnc-png) vnc_png="yes"
+   ;;
++  --enable-pcap) pcap="yes"
++  ;;
++  --disable-pcap) pcap="no"
++  ;;
+   --disable-slirp) slirp="no"
+   ;;
+   --enable-slirp=git) slirp="git"
+@@ -3137,6 +3145,14 @@
+ fi
+ 
+ ##########################################
++# getifaddrs (for tests/test-io-channel-socket )
++
++have_ifaddrs_h=yes
++if ! check_include "ifaddrs.h" ; then
++  have_ifaddrs_h=no
++fi
++
++##########################################
+ # VTE probe
+ 
+ if test "$vte" != "no"; then
+@@ -3806,7 +3822,7 @@
+         glib_libs=$($pkg_config --libs $i)
+         QEMU_CFLAGS="$glib_cflags $QEMU_CFLAGS"
+         LIBS="$glib_libs $LIBS"
+-        libs_qga="$glib_libs $libs_qga"
++        libs_qga="$glib_libs -lintl $libs_qga"
+     else
+         error_exit "glib-$glib_req_ver $i is required to compile QEMU"
+     fi
+@@ -3926,7 +3942,7 @@
+ ##########################################
+ # pixman support probe
+ 
+-if test "$want_tools" = "no" && test "$softmmu" = "no"; then
++if test "$softmmu" = "no"; then
+   pixman_cflags=
+   pixman_libs=
+ elif $pkg_config --atleast-version=0.21.8 pixman-1 > /dev/null 2>&1; then
+@@ -4957,14 +4973,6 @@
+   fi
+   if has makeinfo && has pod2man && test "$sphinx_ok" = "yes"; then
+     docs=yes
+-  else
+-    if test "$docs" = "yes" ; then
+-      if has $sphinx_build && test "$sphinx_ok" != "yes"; then
+-        echo "Warning: $sphinx_build exists but it is either too old or uses too old a Python version" >&2
+-      fi
+-      feature_not_found "docs" "Install texinfo, Perl/perl-podlators and a Python 3 version of python-sphinx"
+-    fi
+-    docs=no
+   fi
+ fi
+ 
+@@ -5098,7 +5106,7 @@
+ 
+ # check for libusb
+ if test "$libusb" != "no" ; then
+-    if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
++    if $pkg_config libusb-1.0; then
+         libusb="yes"
+         libusb_cflags=$($pkg_config --cflags libusb-1.0)
+         libusb_libs=$($pkg_config --libs libusb-1.0)
+@@ -5501,7 +5509,51 @@
+   fi
+ fi
+ 
++##########################################
++# pcap probe
+ 
++if test "$pcap" = "yes" -a "$pcap" != "no"; then
++  cat > $TMPC << EOF
++#include <pcap.h>
++int main(void) { return (pcap_lib_version() == (char *)0 ? 1 : 0); }
++EOF
++  if test "$mingw32" = "no" ; then
++    libpcap=-lpcap
++  else
++    libpcap=-lwpcap
++  fi
++  if compile_prog "" "$libpcap" ; then
++    :
++  else
++    echo
++    echo "Error: Could not find pcap"
++    echo "Make sure to have the pcap libs and headers installed."
++    echo
++    exit 1
++  fi
++  cat > $TMPC << EOF
++#include <pcap.h>
++int main(void)
++{
++  char errbuf[PCAP_ERRBUF_SIZE];
++  return (pcap_create("foo", errbuf) == (pcap_t *)0 ? 1 : 0);
++}
++EOF
++  if compile_prog "" "$libpcap" ; then
++    pcap_create="yes"
++  fi
++  cat > $TMPC << EOF
++#define PCAP_DONT_INCLUDE_PCAP_BPF_H
++#include <pcap.h>
++#include <net/bpf.h>
++int main(void) { return (BPF_MAJOR_VERSION); }
++EOF
++  if compile_prog ; then
++    bpf="yes"
++  fi
++  libs_softmmu="$libpcap $libs_softmmu"
++fi # test "$pcap"
++
+ ##########################################
+ # check if we have open_by_handle_at
+ 
+@@ -6627,6 +6679,7 @@
+ echo "Block whitelist (rw) $block_drv_rw_whitelist"
+ echo "Block whitelist (ro) $block_drv_ro_whitelist"
+ echo "VirtFS support    $virtfs"
++echo "pcap support      $pcap"
+ echo "Multipath support $mpath"
+ echo "VNC support       $vnc"
+ if test "$vnc" = "yes" ; then
+@@ -6864,6 +6917,15 @@
+ if test "$want_tools" = "yes" ; then
+   echo "CONFIG_TOOLS=y" >> $config_host_mak
+ fi
++if test "$pcap" = "yes" ; then
++  echo "CONFIG_PCAP=y" >> $config_host_mak
++  if test "$pcap_create" = "yes" ; then
++    echo "CONFIG_PCAP_CREATE=y" >> $config_host_mak
++  fi
++  if test "$bpf" = "yes" ; then
++    echo "CONFIG_BPF=y" >> $config_host_mak
++  fi
++fi
+ if test "$slirp" != "no"; then
+   echo "CONFIG_SLIRP=y" >> $config_host_mak
+   echo "CONFIG_SMBD_COMMAND=\"$smbd\"" >> $config_host_mak
+@@ -7120,6 +7182,9 @@
+ # if this macro is set.
+ if test "$have_fsxattr" = "yes" ; then
+     echo "HAVE_FSXATTR=y" >> $config_host_mak
++fi
++if test "$have_ifaddrs_h" = "yes" ; then
++    echo "HAVE_IFADDRS_H=y" >> $config_host_mak
+ fi
+ if test "$have_copy_file_range" = "yes" ; then
+     echo "HAVE_COPY_FILE_RANGE=y" >> $config_host_mak

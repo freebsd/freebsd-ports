@@ -1,0 +1,106 @@
+--- Makefile.orig	2020-09-15 19:31:13 UTC
++++ Makefile
+@@ -361,29 +361,6 @@
+ MANUAL_BUILDDIR := docs
+ endif
+ 
+-ifdef BUILD_DOCS
+-DOCS+=$(MANUAL_BUILDDIR)/system/qemu.1
+-DOCS+=$(MANUAL_BUILDDIR)/tools/qemu-img.1
+-DOCS+=$(MANUAL_BUILDDIR)/tools/qemu-nbd.8
+-DOCS+=$(MANUAL_BUILDDIR)/interop/qemu-ga.8
+-ifeq ($(CONFIG_LINUX)$(CONFIG_SECCOMP)$(CONFIG_LIBCAP_NG),yyy)
+-DOCS+=$(MANUAL_BUILDDIR)/tools/virtiofsd.1
+-endif
+-DOCS+=$(MANUAL_BUILDDIR)/system/qemu-block-drivers.7
+-DOCS+=docs/interop/qemu-qmp-ref.html docs/interop/qemu-qmp-ref.txt docs/interop/qemu-qmp-ref.7
+-DOCS+=docs/interop/qemu-ga-ref.html docs/interop/qemu-ga-ref.txt docs/interop/qemu-ga-ref.7
+-DOCS+=$(MANUAL_BUILDDIR)/system/qemu-cpu-models.7
+-DOCS+=$(MANUAL_BUILDDIR)/index.html
+-ifdef CONFIG_VIRTFS
+-DOCS+=$(MANUAL_BUILDDIR)/tools/virtfs-proxy-helper.1
+-endif
+-ifdef CONFIG_TRACE_SYSTEMTAP
+-DOCS+=$(MANUAL_BUILDDIR)/tools/qemu-trace-stap.1
+-endif
+-else
+-DOCS=
+-endif
+-
+ SUBDIR_MAKEFLAGS=$(if $(V),,--no-print-directory --quiet) BUILD_DIR=$(BUILD_DIR)
+ SUBDIR_DEVICES_MAK=$(patsubst %, %/config-devices.mak, $(filter %-softmmu, $(TARGET_DIRS)))
+ SUBDIR_DEVICES_MAK_DEP=$(patsubst %, %.d, $(SUBDIR_DEVICES_MAK))
+@@ -878,10 +855,6 @@
+ 	$(call install-manual,user)
+ 
+ install-doc: $(DOCS) install-sphinxdocs
+-	$(INSTALL_DIR) "$(DESTDIR)$(qemu_docdir)"
+-	$(INSTALL_DATA) $(MANUAL_BUILDDIR)/index.html "$(DESTDIR)$(qemu_docdir)"
+-	$(INSTALL_DATA) docs/interop/qemu-qmp-ref.html "$(DESTDIR)$(qemu_docdir)"
+-	$(INSTALL_DATA) docs/interop/qemu-qmp-ref.txt "$(DESTDIR)$(qemu_docdir)"
+ ifdef CONFIG_POSIX
+ 	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1"
+ 	$(INSTALL_DATA) $(MANUAL_BUILDDIR)/system/qemu.1 "$(DESTDIR)$(mandir)/man1"
+@@ -889,21 +862,10 @@
+ 	$(INSTALL_DATA) docs/interop/qemu-qmp-ref.7 "$(DESTDIR)$(mandir)/man7"
+ 	$(INSTALL_DATA) $(MANUAL_BUILDDIR)/system/qemu-block-drivers.7 "$(DESTDIR)$(mandir)/man7"
+ 	$(INSTALL_DATA) $(MANUAL_BUILDDIR)/system/qemu-cpu-models.7 "$(DESTDIR)$(mandir)/man7"
+-ifeq ($(CONFIG_TOOLS),y)
+-	$(INSTALL_DATA) $(MANUAL_BUILDDIR)/tools/qemu-img.1 "$(DESTDIR)$(mandir)/man1"
+-	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man8"
+-	$(INSTALL_DATA) $(MANUAL_BUILDDIR)/tools/qemu-nbd.8 "$(DESTDIR)$(mandir)/man8"
+-endif
+ ifdef CONFIG_TRACE_SYSTEMTAP
+ 	$(INSTALL_DATA) $(MANUAL_BUILDDIR)/tools/qemu-trace-stap.1 "$(DESTDIR)$(mandir)/man1"
+ endif
+-ifneq (,$(findstring qemu-ga,$(TOOLS)))
+-	$(INSTALL_DATA) $(MANUAL_BUILDDIR)/interop/qemu-ga.8 "$(DESTDIR)$(mandir)/man8"
+-	$(INSTALL_DATA) docs/interop/qemu-ga-ref.html "$(DESTDIR)$(qemu_docdir)"
+-	$(INSTALL_DATA) docs/interop/qemu-ga-ref.txt "$(DESTDIR)$(qemu_docdir)"
+-	$(INSTALL_DATA) docs/interop/qemu-ga-ref.7 "$(DESTDIR)$(mandir)/man7"
+ endif
+-endif
+ ifdef CONFIG_VIRTFS
+ 	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1"
+ 	$(INSTALL_DATA) $(MANUAL_BUILDDIR)/tools/virtfs-proxy-helper.1 "$(DESTDIR)$(mandir)/man1"
+@@ -927,7 +889,7 @@
+ install-includedir:
+ 	$(INSTALL_DIR) "$(DESTDIR)$(includedir)"
+ 
+-install: all $(if $(BUILD_DOCS),install-doc) \
++install: all \
+ 	install-datadir install-localstatedir install-includedir \
+ 	$(if $(INSTALL_BLOBS),$(edk2-decompressed)) \
+ 	recurse-install
+@@ -974,31 +936,12 @@
+ 			"$(DESTDIR)$(qemu_datadir)/firmware/$$x"; \
+ 	done
+ endif
+-	for s in $(ICON_SIZES); do \
+-		mkdir -p "$(DESTDIR)$(qemu_icondir)/hicolor/$${s}/apps"; \
+-		$(INSTALL_DATA) $(SRC_PATH)/ui/icons/qemu_$${s}.png \
+-			"$(DESTDIR)$(qemu_icondir)/hicolor/$${s}/apps/qemu.png"; \
+-	done; \
+-	mkdir -p "$(DESTDIR)$(qemu_icondir)/hicolor/32x32/apps"; \
+-	$(INSTALL_DATA) $(SRC_PATH)/ui/icons/qemu_32x32.bmp \
+-		"$(DESTDIR)$(qemu_icondir)/hicolor/32x32/apps/qemu.bmp"; \
+-	mkdir -p "$(DESTDIR)$(qemu_icondir)/hicolor/scalable/apps"; \
+-	$(INSTALL_DATA) $(SRC_PATH)/ui/icons/qemu.svg \
+-		"$(DESTDIR)$(qemu_icondir)/hicolor/scalable/apps/qemu.svg"
+-	mkdir -p "$(DESTDIR)$(qemu_desktopdir)"
+-	$(INSTALL_DATA) $(SRC_PATH)/ui/qemu.desktop \
+-		"$(DESTDIR)$(qemu_desktopdir)/qemu.desktop"
+ ifdef CONFIG_GTK
+ 	$(MAKE) -C po $@
+ endif
+ ifeq ($(CONFIG_PLUGIN),y)
+ 	$(INSTALL_DATA) $(SRC_PATH)/include/qemu/qemu-plugin.h "$(DESTDIR)$(includedir)/qemu-plugin.h"
+ endif
+-	$(INSTALL_DIR) "$(DESTDIR)$(qemu_datadir)/keymaps"
+-	set -e; for x in $(KEYMAPS); do \
+-		$(INSTALL_DATA) $(SRC_PATH)/pc-bios/keymaps/$$x "$(DESTDIR)$(qemu_datadir)/keymaps"; \
+-	done
+-	$(INSTALL_DATA) $(BUILD_DIR)/trace-events-all "$(DESTDIR)$(qemu_datadir)/trace-events-all"
+ 
+ .PHONY: ctags
+ ctags:

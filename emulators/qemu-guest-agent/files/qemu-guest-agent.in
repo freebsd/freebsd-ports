@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# PROVIDE: qemu_guest_agent
+# REQUIRE: DAEMON
+# KEYWORD: nojail
+#
+
+#
+# Add the following lines to /etc/rc.conf to enable qemu-guest-agent:
+#
+#qemu_guest_agent_enable="YES"
+#
+# For detailed logging add flags -v and -l to /etc/rc.conf
+#
+#qemu_guest_agent_flags="-d -v -l /var/log/qemu-ga.log"
+
+. /etc/rc.subr
+
+name=qemu_guest_agent
+rcvar=qemu_guest_agent_enable
+
+load_rc_config $name
+
+qemu_guest_agent_flags=${qemu_guest_agent_flags-"-d"}
+qemu_guest_agent_enable=${qemu_guest_agent_enable:-"NO"}
+
+qemu_guest_agent_bin=/usr/local/bin/qemu-ga
+command=${qemu_guest_agent_bin}
+pidfile="/var/run/qemu-ga.pid"
+
+run_rc_command "$1"

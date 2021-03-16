@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+=======================================================
+Modify your `/etc/rc.conf` by adding these settings
+
+qemu_guest_agent_enable="YES"
+qemu_guest_agent_flags="-d -v -l /var/log/qemu-ga.log"
+
+and run
+# service qemu-guest-agent start
+
+For FreeBSD less than 12
+------------------------
+virtio_console driver in FreeBSD 11 doesn't support aliasing virtio channels in devfs. Use direct path for control device. eq:
+qemu_guest_agent_flags="-d -v -l /var/log/qemu-ga.log -p /dev/ttyV0.2"
+
+For detailed help use `qemu-ga -h`
+
+Also read port homepage https://github.com/aborche/qemu-guest-agent
+=======================================================
+EOM
+}
+]
