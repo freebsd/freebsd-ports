@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	io-console
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
