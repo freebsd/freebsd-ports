@@ -28,14 +28,23 @@ LIB_DEPENDS=	libalut.so:audio/freealut \
 WRKSRC=		${WRKDIR}/openclonk-release-${PORTVERSION}-src
 
 # make install has parallel issues with ninja
-USES=		cmake:noninja compiler:c++14-lang desktop-file-utils gl gnome \
-		jpeg openal pkgconfig sdl tar:bzip2 xorg
+USES=		cmake:noninja desktop-file-utils gl gnome jpeg openal \
+		pkgconfig sdl tar:bzip2 xorg
 USE_GL=		gl glew glu
 USE_SDL=	sdl2
 USE_XORG=	x11 xpm
 INSTALLS_ICONS=	yes
 CMAKE_ARGS=	-DAudio_TK:STRING="OpenAL"
 LDFLAGS_i386=	-Wl,-znotext
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le
+CFLAGS+=	-DNO_WARN_X86_INTRINSICS
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++14-lang
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DESTINATION games|DESTINATION bin|' \
