@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsocket
-PORTVERSION=	1.4.24
+PORTVERSION=	1.4.25
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/hackerschoice/gsocket/releases/download/v${PORTVERSION}/
 
