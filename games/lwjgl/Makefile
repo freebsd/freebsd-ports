@@ -10,7 +10,7 @@ COMMENT=	Lightweight Java Game Library
 
 LICENSE=	BSD3CLAUSE
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils \
 		${JAVAJARDIR}/jinput/jinput.jar:games/jinput
@@ -42,11 +42,11 @@ PLIST_DIRS=	${JAVAJARDIR}/${PORTNAME} \
 PLIST_FILES+=	lib/${PORTNAME}/lib${PORTNAME}.so
 .endif
 
-.if ${ARCH} == amd64 || ${ARCH} == powerpc64
+.if ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
 PLIST_FILES+=	lib/${PORTNAME}/lib${PORTNAME}64.so
 .endif
 
-.if ${ARCH} == powerpc64
+.if ${ARCH:Mpowerpc64*}
 MAKE_ARGS+=	-Dbuild.64bit.only=1
 .endif
 
@@ -56,6 +56,9 @@ post-patch:
 		${WRKSRC}/platform_build/bsd_ant/build.xml
 .if ${ARCH} == powerpc64
 	@${REINPLACE_CMD} -e 's|amd64|ppc64|g' \
+		${WRKSRC}/platform_build/bsd_ant/build.xml
+.elif ${ARCH} == powerpc64le
+	@${REINPLACE_CMD} -e 's|amd64|ppc64le|g' \
 		${WRKSRC}/platform_build/bsd_ant/build.xml
 .endif
 
@@ -70,7 +73,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}.so \
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .endif
-.if ${ARCH} == amd64 || ${ARCH} == powerpc64
+.if ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
 	${INSTALL_DATA} ${WRKSRC}/libs/freebsd/lib${PORTNAME}64.so \
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 .endif
