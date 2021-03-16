@@ -12,7 +12,7 @@ COMMENT=	Fast instrumented fuzzer
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	uses x86-only instrumentation or requires complete LLVM support
 
 BUILD_DEPENDS=	ginstall:sysutils/coreutils
