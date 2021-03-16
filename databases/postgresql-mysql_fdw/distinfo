@@ -1,3 +1,3 @@
-TIMESTAMP = 1598692519
-SHA256 (EnterpriseDB-mysql_fdw-REL-2_5_4_GH0.tar.gz) = f3c4f80a631af1933428b67923c78d06eeb59d52e867ad537384b4009a571231
-SIZE (EnterpriseDB-mysql_fdw-REL-2_5_4_GH0.tar.gz) = 54952
+TIMESTAMP = 1615849973
+SHA256 (EnterpriseDB-mysql_fdw-REL-2_5_5_GH0.tar.gz) = 16c398dfa748fc05bb8d1ce5bed05395c549880ce2c8174ff17d22ab664f13fb
+SIZE (EnterpriseDB-mysql_fdw-REL-2_5_5_GH0.tar.gz) = 60803

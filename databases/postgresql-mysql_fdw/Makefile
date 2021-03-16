@@ -3,17 +3,17 @@
 
 PORTNAME=	mysql_fdw
 DISTVERSIONPREFIX=	REL-
-DISTVERSION=	2_5_4
+DISTVERSION=	2_5_5
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tz@FreeBSD.org
 COMMENT=	PostgreSQL foreign data wrapper for MySQL
 
 LICENSE=	PostgreSQL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake pgsql:9.3-11 mysql
+USES=		gmake pgsql:9.6-13 mysql
 WANT_PGSQL=	server
 USE_GITHUB=	yes
 GH_ACCOUNT=	EnterpriseDB
