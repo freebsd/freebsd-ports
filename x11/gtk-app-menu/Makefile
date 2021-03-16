@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	appmenu-gtk-module
-DISTVERSION=	0.7.3.2
+DISTVERSION=	0.7.6
 CATEGORIES=	x11
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -10,9 +10,12 @@ COMMENT=	GTK module for putting application menubar in a global menubar
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/subprojects/appmenu-gtk-module/LICENSE
 
-USES=	cmake gnome pkgconfig
+LIB_DEPENDS=	libbamf3.so:sysutils/bamf
+BUILD_DEPENDS=	valac:lang/vala
 
-CMAKE_SOURCE_PATH=	${WRKSRC}/subprojects/appmenu-gtk-module
+USES=	meson gnome pkgconfig
+
+MESON_ARGS=	-Dvalapanel=disabled -Dxfce=disabled -Dmate=disabled -Dbudgie=disabled -Djayatana=disabled -Dregistrar=disabled -Dappmenu-gtk-module=enabled
 
 USE_GNOME=	gtk30 glib20 gtk20 gdkpixbuf2
 GLIB_SCHEMAS=	org.appmenu.gtk-module.gschema.xml
@@ -20,6 +23,6 @@ GLIB_SCHEMAS=	org.appmenu.gtk-module.gschema.xml
 USE_GITLAB=	yes
 GL_ACCOUNT=	vala-panel-project
 GL_PROJECT=	vala-panel-appmenu
-GL_COMMIT=	c2cb48f07d95079e566eed78b28880e00f31c637
+GL_COMMIT=	4e362c22ab3a23c98f13fb379c782786ee057cf6
 
 .include <bsd.port.mk>
