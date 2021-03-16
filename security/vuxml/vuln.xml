@@ -78,6 +78,32 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="eeca52dc-866c-11eb-b8d6-d4c9ef517024">
+    <topic>LibreSSL -- use-after-free</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<range><lt>3.2.4_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenBSD reports:</p>
+	<blockquote cite="https://marc.info/?l=openbsd-announce&amp;m=161582456312832&amp;w=2">
+	  <p>A TLS client using session resumption may cause a use-after-free.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://marc.info/?l=openbsd-announce&amp;m=161582456312832&amp;w=2</url>
+      <url>https://ftp.openbsd.org/pub/OpenBSD/patches/6.8/common/017_libssl.patch.sig</url>
+    </references>
+    <dates>
+      <discovery>2021-03-15</discovery>
+      <entry>2021-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b81ad6d6-8633-11eb-99c5-e09467587c17">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
