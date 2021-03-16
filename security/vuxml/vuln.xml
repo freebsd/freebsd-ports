@@ -78,6 +78,43 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b81ad6d6-8633-11eb-99c5-e09467587c17">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>89.0.4389.90</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/03/stable-channel-update-for-desktop_12.html">
+	  <p>This release includes 5 security fixes, including:</p>
+	  <ul>
+	    <li>[1167357] High CVE-2021-21191: Use after free in WebRTC.
+	      Reported by raven (@raid_akame)  on 2021-01-15</li>
+	    <li>[1181387] High CVE-2021-21192: Heap buffer overflow in tab
+	      groups. Reported by Abdulrahman Alqabandi, Microsoft Browser
+	      Vulnerability Research on 2021-02-23</li>
+	    <li>[1186287] High CVE-2021-21193: Use after free in Blink.
+	      Reported by Anonymous on 2021-03-09</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-11191</cvename>
+      <cvename>CVE-2021-11192</cvename>
+      <cvename>CVE-2021-11193</cvename>
+      <url>https://chromereleases.googleblog.com/2021/03/stable-channel-update-for-desktop_12.html</url>
+    </references>
+    <dates>
+      <discovery>2021-03-12</discovery>
+      <entry>2021-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="317487c6-85ca-11eb-80fa-14dae938ec40">
     <topic>squashfs-tools -- Integer overflow</topic>
     <affects>
