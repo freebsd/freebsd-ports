@@ -2,6 +2,7 @@
 
 PORTNAME=	river
 PORTVERSION=	s20210314
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -35,7 +36,7 @@ NO_INSTALL=	yes # strip(1) breaks runtime
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}ctl \
 		bin/${PORTNAME}tile \
-		${ETCDIR}/init \
+		"@sample ${ETCDIR}/init.sample" \
 		share/bash-completion/completions/${PORTNAME}ctl \
 		share/zsh/site-functions/_${PORTNAME}ctl \
 		${NULL}
@@ -65,5 +66,9 @@ do-build:
 
 do-test:
 	@(cd ${WRKSRC} && ${TEST_ENV} zig build test ${CONFIGURE_ARGS})
+
+post-install:
+# Let @sample handle default files under etc/
+	@${MV} ${STAGEDIR}${ETCDIR}/init ${STAGEDIR}${ETCDIR}/init.sample
 
 .include <bsd.port.mk>
