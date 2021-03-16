@@ -232,6 +232,7 @@
     SUBDIR += shed
     SUBDIR += slime
     SUBDIR += sly
+    SUBDIR += sly-named-readtables
     SUBDIR += ssed
     SUBDIR += sted
     SUBDIR += tamago

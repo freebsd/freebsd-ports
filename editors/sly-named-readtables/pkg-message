@@ -1,0 +1,26 @@
+[
+{ type: install
+  message: <<EOM
+To use the sly-named-readtables contrib, you must:
+1. Register sly-named-readtables into SLY. You just have to add this line to
+   some init file:
+(require 'sly-named-readtables)
+   Doing this is not strictly necessary if you want to automatically activate
+   this contrib using `sly-contribs' (see below), but it never hurts.
+   This contrib's automatic activation at load was disabled, contrary to what
+   upstream does. Upstream's autoloads file is consequently not necessary, and
+   not included in this package.
+2. Ensure that system NAMED-READTABLES is loaded by your Common Lisp
+   implementation.
+
+If you want sly-named-readtables to be automatically activated on each new SLY
+session, put it in the `sly-contribs' list. E.g., you can add something like
+this in some Emacs' init file:
+(setq sly-contribs '(sly-fancy sly-named-readtables))
+or customize the variable.
+
+To enable it on demand in already running SLY sessions instead, just use the
+`sly-enable-contrib' command, or modify `sly-contribs' and run `sly-setup'.
+EOM
+}
+]
