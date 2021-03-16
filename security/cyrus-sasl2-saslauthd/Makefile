@@ -16,7 +16,7 @@ CONFIGURE_ENV+=		andrew_cv_runpath_switch=none
 
 OPTIONS_DEFINE=		DOCS HTTPFORM OPENLDAP OPENLDAP_SASL
 OPTIONS_RADIO=		GSSAPI SASLDB
-OPTIONS_RADIO_SASLDB=	BDB1 BDB GDBM
+OPTIONS_RADIO_SASLDB=	BDB1 BDB GDBM LMDB
 OPTIONS_DEFAULT=	BDB1
 
 HTTPFORM_DESC=		Enable HTTP form authentication
@@ -40,6 +40,12 @@ GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_CONFIGURE_ON=	--enable-auth-sasldb \
 			--with-dblib=gdbm \
 			--with-gdbm=${LOCALBASE}
+LMDB_DESC=		OpenLDAP Lightning Memory-Mapped Database support
+LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
+LMDB_CONFIGURE_ON=	--enable-auth-sasldb \
+			--with-dblib=lmdb
+LMDB_CFLAGS=		-I${LOCALBASE}/include
+LMDB_LDFLAGS=		-L${LOCALBASE}/lib
 
 .if exists(/usr/lib/libkrb5.a)
 OPTIONS_RADIO_GSSAPI+=	GSSAPI_BASE
