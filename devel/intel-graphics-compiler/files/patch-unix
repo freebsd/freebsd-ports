@@ -159,17 +159,6 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
            if (IGC_IS_FLAG_ENABLED(EnableDPEmulation)) {
                return true;
            }
---- IGC/AdaptorOCL/OCL/sp/gtpin_igc_ocl.h.orig	2019-11-27 01:05:20 UTC
-+++ IGC/AdaptorOCL/OCL/sp/gtpin_igc_ocl.h
-@@ -38,7 +38,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- #define MY_CALLINGSTD  _fastcall
- #define MY_CDECL       _cdecl
- 
--#elif defined(ANDROID) || defined (__linux__)
-+#elif defined(__GNUC__)
- 
- // Linux, Android
- #define MY_EXTERN_C    extern "C"
 --- IGC/AdaptorOCL/ocl_igc_interface/impl/fcl_ocl_translation_ctx_impl.cpp.orig	2020-11-21 02:52:12 UTC
 +++ IGC/AdaptorOCL/ocl_igc_interface/impl/fcl_ocl_translation_ctx_impl.cpp
 @@ -64,7 +64,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
@@ -232,19 +221,19 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
          if (!FCL_IGC_IS_FLAG_ENABLED(DumpToCurrentDir) && g_shaderOutputFolder == "" && !FCL_IGC_IS_FLAG_ENABLED(DumpToCustomDir))
          {
              bool needMkdir = true;
---- IGC/VectorCompiler/lib/GenXCodeGen/GenXWrapper.cpp.orig	2020-10-30 09:08:26 UTC
-+++ IGC/VectorCompiler/lib/GenXCodeGen/GenXWrapper.cpp
-@@ -24,7 +24,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
- ======================= end_copyright_notice ==================================*/
- 
+--- IGC/VectorCompiler/lib/GenXCodeGen/SPIRVWrapper.cpp.orig	2021-03-08 06:23:56 UTC
++++ IGC/VectorCompiler/lib/GenXCodeGen/SPIRVWrapper.cpp
+@@ -48,7 +48,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #include "llvm/Support/DynamicLibrary.h"
+ #include "llvm/Support/Path.h"
+ #include "llvm/Support/Process.h"
 -#if defined(__linux__)
 +#if !defined(_WIN32)
  #include <dlfcn.h>
- #endif
- 
-@@ -121,7 +121,7 @@ translateSPIRVToIR(ArrayRef<char> Input, ArrayRef<uint
-           void *ErrUserData);
+ #endif // __linux__
+ #if defined(_WIN32)
+@@ -172,7 +172,7 @@ Expected<SpirvReadVerifyType *> getSpirvReadVerifyFunc
+   constexpr char *SpirvReadVerifyName = "spirv_read_verify_module";
  
    const std::string SpirvLibPath = findSpirvDLL();
 -#if defined(__linux__)
