@@ -232,6 +232,7 @@
     SUBDIR += shed
     SUBDIR += slime
     SUBDIR += sly
+    SUBDIR += sly-asdf
     SUBDIR += sly-named-readtables
     SUBDIR += sly-quicklisp
     SUBDIR += ssed

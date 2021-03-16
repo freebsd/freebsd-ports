@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+To use the sly-asdf contrib, you must:
+1. Register sly-asdf into SLY. You just have to add this line to some init
+   file:
+(require 'sly-asdf)
+   Doing this is not strictly necessary if you want to automatically activate
+   this contrib using `sly-contribs' (see below), but it never hurts.
+   This contrib's automatic activation at load was disabled, contrary to what
+   upstream does.
+2. Ensure that ASDF is loaded by your Common Lisp implementation.
+
+If you want sly-asdf to be automatically activated on each new SLY
+session, put it in the `sly-contribs' list. E.g., you can add something like
+this in some Emacs' init file:
+(setq sly-contribs '(sly-fancy sly-asdf))
+or customize the variable.
+
+To enable it on demand in already running SLY sessions instead, just use the
+`sly-enable-contrib' command, or modify `sly-contribs' and run `sly-setup'.
+
+NOTE: The experimental Flymake code has been elided from this port (it requires
+dependencies that are not in ports currently).
+EOM
+}
+]
