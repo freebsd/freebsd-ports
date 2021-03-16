@@ -45,13 +45,13 @@ pre-configure:
 
 do-configure:
 	(cd ${WRKSRC} && \
-		${SETENV} HOME=${WRKDIR} NODE_PATH=${LOCALBASE}/lib/node_modules/npm/node_modules \
+		${SETENV} HOME=${WRKDIR} \
 		${LOCALBASE}/bin/node-gyp configure --python=${PYTHON_CMD} \
 		--devdir=${_DEVDIR})
 
 do-build:
 	(cd ${WRKSRC} && \
-		${SETENV} HOME=${WRKDIR} NODE_PATH=${LOCALBASE}/lib/node_modules/npm/node_modules \
+		${SETENV} HOME=${WRKDIR} \
 		${LOCALBASE}/bin/node-gyp build \
 		--devdir=${_DEVDIR})
 
