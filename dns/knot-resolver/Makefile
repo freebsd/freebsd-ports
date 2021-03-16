@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot-resolver
-DISTVERSION=	5.1.3
-PORTREVISION=	1
+DISTVERSION=	5.3.0
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 		https://dns.company/downloads/knot-resolver/
@@ -15,22 +14,24 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
+		cmake:devel/cmake \
 		flake8:devel/py-flake8@${PY_FLAVOR} \
-		lua51-cqueues>=20200603_1:devel/lua-cqueues@lua51 \
-		luacheck:devel/lua-luacheck \
-		cmake:devel/cmake
+		lua51-cqueues>=20200726_1:devel/lua-cqueues@lua51 \
+		luacheck:devel/lua-luacheck
+
 LIB_DEPENDS=	libknot.so:dns/knot3-lib \
 		libdnssec.so:dns/knot3-lib \
 		libzscanner.so:dns/knot3-lib \
 		libgnutls.so:security/gnutls \
 		liblmdb.so:databases/lmdb \
 		libluajit-5.1.so:lang/luajit-openresty \
+		libnghttp2.so:www/libnghttp2 \
 		libuv.so:devel/libuv
-RUN_DEPENDS=	lua51-cqueues>=20200603_1:devel/lua-cqueues@lua51
 
-USES=		compiler:c11 compiler:c++11-lang libedit libtool \
-		meson ncurses ninja pkgconfig python:3.5+,build \
-		shebangfix tar:xz
+RUN_DEPENDS=	lua51-cqueues>=20200726_1:devel/lua-cqueues@lua51
+
+USES=		compiler:c11 libedit libtool meson ncurses ninja pkgconfig \
+		python:3.5+,build shebangfix tar:xz
 
 USE_CXXSTD=	c++11
 
@@ -42,7 +43,6 @@ SHEBANG_FILES=	scripts/bench.sh \
 		scripts/coverage_env.sh \
 		scripts/gen-cdefs.sh \
 		scripts/get-date.sh \
-		scripts/get-scanbuild-args.sh \
 		scripts/luacov_gen_empty.sh \
 		scripts/make-dev-archive.sh \
 		scripts/make-distrofiles.sh \
@@ -86,7 +86,7 @@ PLIST_SUB=	USERS=${USERS} \
 		RUNDIR=${RUNDIR}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES DNSTAP ROOTKEYS TRUSTANCHOR TEST TESTUNIT TESTCONF TESTEXTRA
-OPTIONS_DEFAULT=	DOCS EXAMPLES ROOTKEYS TRUSTANCHOR TEST TESTUNIT TESTCONF
+OPTIONS_DEFAULT=	DOCS EXAMPLES        ROOTKEYS TRUSTANCHOR TEST TESTUNIT
 
 DNSTAP_DESC=		dnstap support
 ROOTKEYS_DESC=		install root.keys
@@ -96,9 +96,9 @@ TESTUNIT_DESC=		Do unit tests
 TEST_DESC=		Do tests
 TRUSTANCHOR_DESC=	Trust anchor bootstrapping, management and stats
 
-DNSTAP_LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
+DNSTAP_LIB_DEPENDS=	libfstrm.so:devel/fstrm \
 			libprotobuf-c.so:devel/protobuf-c \
-			libfstrm.so:devel/fstrm
+			libprotobuf.so:devel/protobuf
 DNSTAP_MESON_ON=	-Ddnstap=enabled
 DNSTAP_MESON_OFF=	-Ddnstap=disabled
 DNSTAP_PLIST_FILES=	lib/knot-resolver/kres_modules/dnstap.so
@@ -107,15 +107,16 @@ ROOTKEYS_MESON_ON=	-Dinstall_root_keys=enabled
 ROOTKEYS_MESON_OFF=	-Dinstall_root_keys=disabled
 ROOTKEYS_PLIST_FILES=	${ETCDIR}/root.keys
 
+TESTCONF_BROKEN=	missing luajit basexx package
 TESTCONF_MESON_ON=	-Dconfig_tests=enabled
 TESTCONF_MESON_OFF=	-Dconfig_tests=disabled
 
-TESTEXTRA_BROKEN=	CMake Error: The source directory misses CMakeLists.txt
-TESTEXTRA_BUILD_DEPENDS=git:devel/git
-TESTEXTRA_USES=		cmake python:3
-TESTEXTRA_MESON_ON=	-Dextra_tests=enabled \
-			-Dsendmmsg=disabled
-TESTEXTRA_MESON_OFF=	-Dextra_tests=disabled
+TESTEXTRA_BROKEN=		CMake Error: The source directory misses CMakeLists.txt
+TESTEXTRA_BUILD_DEPENDS=	git:devel/git
+TESTEXTRA_USES=			cmake python:3
+TESTEXTRA_MESON_ON=		-Dextra_tests=enabled \
+				-Dsendmmsg=disabled
+TESTEXTRA_MESON_OFF=		-Dextra_tests=disabled
 
 TESTUNIT_BUILD_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
 TESTUNIT_MESON_ON=	-Dunit_tests=enabled

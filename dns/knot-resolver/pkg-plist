@@ -15,11 +15,13 @@ include/libkres/map.h
 include/libkres/module.h
 include/libkres/nsec.h
 include/libkres/nsec3.h
-include/libkres/nsrep.h
 include/libkres/pack.h
 include/libkres/queue.h
 include/libkres/resolve.h
 include/libkres/rplan.h
+include/libkres/selection.h
+include/libkres/selection_forward.h
+include/libkres/selection_iter.h
 include/libkres/signature.h
 include/libkres/ta.h
 include/libkres/trie.h
@@ -79,6 +81,7 @@ lib/knot-resolver/kres_modules/ta_update.lua
 lib/knot-resolver/kres_modules/view.lua
 lib/knot-resolver/kres_modules/watchdog.lua
 lib/knot-resolver/kres_modules/workarounds.lua
+lib/knot-resolver/krprint.lua
 lib/knot-resolver/postconfig.lua
 lib/knot-resolver/sandbox.lua
 lib/knot-resolver/trust_anchors.lua
