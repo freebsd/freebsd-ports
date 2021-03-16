@@ -294,6 +294,7 @@
     SUBDIR += rofi
     SUBDIR += rofi-calc
     SUBDIR += rofi-pass
+    SUBDIR += rofi-wayland
     SUBDIR += roxterm
     SUBDIR += rsibreak
     SUBDIR += rubygem-gnome
