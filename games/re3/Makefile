@@ -30,15 +30,11 @@ GL_COMMIT=	9a7fa478578beaba947ea867c15a25e411d641d8
 bash_CMD=	/bin/sh
 USE_XORG=	x11
 
+LDFLAGS_i386=	-Wl,-znotext
+
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 SUB_FILES=	${PORTNAME}
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == i386
-LLD_UNSAFE=	yes
-.endif
 
 post-extract:
 	${MV} ${WRKSRC_librw}/* ${WRKSRC}/vendor/librw
