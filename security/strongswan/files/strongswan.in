@@ -27,7 +27,7 @@ rcvar=strongswan_enable
 load_rc_config $name
 
 : ${strongswan_enable:=NO}
-: ${strongswan_interface:="stroke"}
+: ${strongswan_interface:="vici"}
 
 extra_commands="reload statusall"
 

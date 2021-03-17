@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210317:
+  AFFECTS: users of security/strongswan
+  AUTHOR: driesm.michiels@gmail.com
+
+  The stroke starter interface has been deprecated by upstream
+  for some time now.  The default interface for controlling the charon
+  daemon has switched from stroke to vici. Users still using the
+  legacy config files such as ipsec.conf and ipsec.secret (stroke, starter)
+  can easily revert to the old behavior by:
+
+  # sysrc strongswan_interface="stroke"
+
+  It is recommended to use the vici interface which is configured by swanctl.conf.
+  Check : https://wiki.strongswan.org/projects/strongswan/wiki/Fromipsecconf
+  to ease the transition from ipsec.* to swanctl.conf
+
 20210313:
   AFFECTS: users of net-mgmt/phpipam
   AUTHOR: marko.cupac@mimar.rs
