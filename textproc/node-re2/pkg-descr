@@ -1,4 +1,0 @@
-This project provides bindings for RE2: fast, safe alternative to
-backtracking regular expression engines.
-
-WWW: https://github.com/uhop/node-re2

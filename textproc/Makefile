@@ -472,7 +472,6 @@
     SUBDIR += nl-hyphen
     SUBDIR += nl-mythes
     SUBDIR += nn-aspell
-    SUBDIR += node-re2
     SUBDIR += nunnimcax
     SUBDIR += nuspell
     SUBDIR += nux
