@@ -5,4 +5,4 @@ Vger design is relying on inetd and a daemon to take care of TLS. The idea is
 to delegate TLS and network to daemons which proved doing it correctly, so vger
 takes its request from stdin and output the result to stdout.
 
-https://tildegit.org/solene/vger
+WWW: https://tildegit.org/solene/vger

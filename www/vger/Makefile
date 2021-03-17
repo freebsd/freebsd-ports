@@ -9,8 +9,11 @@ DISTFILES=	365e99400a8a13546c4c060f28e23bf81d68d45e.tar.gz
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Simplistic and secure Gemini server
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USE_CSTD=	c99
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -22,4 +25,3 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/gemini
 
 .include <bsd.port.mk>
-
