@@ -1,0 +1,6 @@
+A small subset of Unicode symbols, that are useful when building command line
+applications. They fall back to alternatives on terminals that do not support
+Unicode. Many symbols were taken from the 'figures' 'npm' package
+(see <https://github.com/sindresorhus/figures>).
+
+WWW: https://CRAN.R-project.org/package=clisymbols

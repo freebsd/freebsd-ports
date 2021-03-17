@@ -32,6 +32,7 @@
     SUBDIR += R-cran-classInt
     SUBDIR += R-cran-cli
     SUBDIR += R-cran-clipr
+    SUBDIR += R-cran-clisymbols
     SUBDIR += R-cran-covr
     SUBDIR += R-cran-cpp11
     SUBDIR += R-cran-crayon
