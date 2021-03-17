@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cannonball
-DISTVERSION=	g20191023
-PORTREVISION=	1
+DISTVERSION=	0.31
 CATEGORIES=	emulators games
 
 MAINTAINER=	fox@FreeBSD.org
@@ -13,18 +12,20 @@ LICENSE_NAME=	MAME license
 LICENSE_FILE=	${WRKSRC}/docs/license.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/exception/all.hpp:devel/boost-libs
 
-USES=		cmake:insource pkgconfig sdl
+USES=		cmake:insource gl pkgconfig sdl
 USE_SDL=	sdl2
+USE_GL=		gl glu
 
 CMAKE_ARGS+=	${WRKSRC}/cmake \
-		-DBSD_PREFIX_PATH=${LOCALBASE} \
-		-DTARGET=bsd
+		-DTARGET=linux.cmake
+
+CFLAGS+=	-I${LOCALBASE}/include
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	djyt
-GH_TAGNAME=	b6aa525
+GH_TAGNAME=	v${DISTVERSION}
 
 BUILD_WRKSRC=		${WRKSRC}/cmake
 CONFIGURE_WRKSRC=	${WRKSRC}/cmake
