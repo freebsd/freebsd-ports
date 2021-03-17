@@ -1,0 +1,43 @@
+# $FreeBSD$
+
+# Generated with `make gomod-vendor'
+
+GH_TUPLE=	\
+		Microsoft:go-winio:v0.4.16:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
+		Microsoft:hcsshim:v0.8.11:microsoft_hcsshim/vendor/github.com/Microsoft/hcsshim \
+		VividCortex:ewma:v1.1.1:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
+		census-instrumentation:opencensus-go:v0.22.2:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		cheggaaa:pb:v3.0.5:cheggaaa_pb_v3/vendor/github.com/cheggaaa/pb \
+		containerd:cgroups:0b889c03f102:containerd_cgroups/vendor/github.com/containerd/cgroups \
+		containerd:console:v1.0.1:containerd_console/vendor/github.com/containerd/console \
+		containerd:fifo:0724c46b320c:containerd_fifo/vendor/github.com/containerd/fifo \
+		containerd:go-runc:7016d3ce2328:containerd_go_runc/vendor/github.com/containerd/go-runc \
+		containerd:ttrpc:v1.0.2:containerd_ttrpc/vendor/github.com/containerd/ttrpc \
+		containerd:typeurl:v1.0.1:containerd_typeurl/vendor/github.com/containerd/typeurl \
+		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
+		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang:groupcache:215e87163ea7:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:69691e467435:golang_sys/vendor/golang.org/x/sys \
+		google:go-genproto:cb27e3aa2013:google_go_genproto/vendor/google.golang.org/genproto \
+		gotestyourself:gotest.tools:v3.0.3:gotestyourself_gotest_tools/vendor/gotest.tools/v3 \
+		grpc:grpc-go:v1.34.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
+		hashicorp:go-multierror:v1.1.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
+		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
+		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		opencontainers:go-digest:v1.0.0:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
+		opencontainers:image-spec:v1.0.1:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
+		opencontainers:runtime-spec:4d89ac9fbff6:opencontainers_runtime_spec/vendor/github.com/opencontainers/runtime-spec \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
+		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		samuelkarp:containerd:b667c15ed877:samuelkarp_containerd/vendor/github.com/containerd/containerd \
+		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		spf13:cobra:v1.0.0:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
+		stretchr:testify:v1.5.1:stretchr_testify/vendor/github.com/stretchr/testify
