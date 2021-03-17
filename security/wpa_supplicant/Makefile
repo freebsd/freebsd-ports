@@ -2,14 +2,16 @@
 
 PORTNAME=	wpa_supplicant
 PORTVERSION=	2.9
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security net
 MASTER_SITES=	https://w1.fi/releases/
 
-PATCH_SITES=	https://w1.fi/security/2020-1/
+PATCH_SITES=	https://w1.fi/security/2020-1/ \
+		https://w1.fi/security/2021-1/
 PATCHFILES=	0001-WPS-UPnP-Do-not-allow-event-subscriptions-with-URLs-.patch:-p1 \
 		0002-WPS-UPnP-Fix-event-message-generation-using-a-long-U.patch:-p1 \
-		0003-WPS-UPnP-Handle-HTTP-initiation-failures-for-events-.patch:-p1
+		0003-WPS-UPnP-Handle-HTTP-initiation-failures-for-events-.patch:-p1 \
+		0001-P2P-Fix-a-corner-case-in-peer-addition-based-on-PD-R.patch:-p1
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols

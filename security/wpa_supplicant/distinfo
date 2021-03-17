@@ -1,4 +1,4 @@
-TIMESTAMP = 1591652317
+TIMESTAMP = 1615939959
 SHA256 (wpa_supplicant-2.9.tar.gz) = fcbdee7b4a64bea8177973299c8c824419c413ec2e3a95db63dd6a5dc3541f17
 SIZE (wpa_supplicant-2.9.tar.gz) = 3231785
 SHA256 (0001-WPS-UPnP-Do-not-allow-event-subscriptions-with-URLs-.patch) = 2d9a5b9d616f1b4aa4a22b967cee866e2f69b798b0b46803a7928c8559842bd7
@@ -7,3 +7,5 @@ SHA256 (0002-WPS-UPnP-Fix-event-message-generation-using-a-long-U.patch) = 49feb
 SIZE (0002-WPS-UPnP-Fix-event-message-generation-using-a-long-U.patch) = 2284
 SHA256 (0003-WPS-UPnP-Handle-HTTP-initiation-failures-for-events-.patch) = a8212a2d89a5bab2824d22b6047e7740553df163114fcec94832bfa9c5c5d78a
 SIZE (0003-WPS-UPnP-Handle-HTTP-initiation-failures-for-events-.patch) = 1553
+SHA256 (0001-P2P-Fix-a-corner-case-in-peer-addition-based-on-PD-R.patch) = 7f40cfec5faf5e927ea9028ab9392cd118685bde7229ad24210caf0a8f6e9611
+SIZE (0001-P2P-Fix-a-corner-case-in-peer-addition-based-on-PD-R.patch) = 1751
