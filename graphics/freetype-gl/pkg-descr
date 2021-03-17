@@ -1,0 +1,4 @@
+A small library for displaying Unicode in OpenGL using a single texture and a
+single vertex buffer.
+
+WWW: https://github.com/rougier/freetype-gl

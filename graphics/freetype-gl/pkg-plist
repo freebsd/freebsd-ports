@@ -1,0 +1,16 @@
+include/freetype-gl/distance-field.h
+include/freetype-gl/edtaa3func.h
+include/freetype-gl/font-manager.h
+include/freetype-gl/freetype-gl.h
+include/freetype-gl/markup.h
+include/freetype-gl/opengl.h
+include/freetype-gl/platform.h
+include/freetype-gl/text-buffer.h
+include/freetype-gl/texture-atlas.h
+include/freetype-gl/texture-font.h
+include/freetype-gl/utf8-utils.h
+include/freetype-gl/vec234.h
+include/freetype-gl/vector.h
+include/freetype-gl/vertex-attribute.h
+include/freetype-gl/vertex-buffer.h
+lib/libfreetype-gl.so
