@@ -1,6 +1,6 @@
---- modules/freebsd/vmmemctl/Makefile.orig
+--- modules/freebsd/vmmemctl/Makefile.orig	2020-10-16 23:15:58 UTC
 +++ modules/freebsd/vmmemctl/Makefile
-@@ -33,8 +33,6 @@
+@@ -33,8 +33,6 @@ SRCS    += backdoorGcc32.c
  .endif
  KMOD	= vmmemctl
  PROG    = ../$(KMOD).ko
