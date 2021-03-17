@@ -3,7 +3,7 @@
 
 PORTNAME=	maia
 DISTVERSION=	1.0.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 
 MAINTAINER=	ek@purplehat.org
@@ -293,7 +293,7 @@ post-patch:
 	scripts/process-quarantine.pl scripts/resend.pl scripts/send-quarantine-digests.pl \
 	scripts/send-quarantine-reminders.pl scripts/stats-snapshot.pl
 		@${REINPLACE_CMD} -e "s|/etc/maia/maia.conf|${ETCDIR}/maia.conf|" \
-		-e "s|/usr/bin/perl|/usr/bin/env perl|" \
+		-e "s|/usr/bin/perl.*|/usr/bin/env perl|" \
 		${WRKSRC}/${m}
 .endfor
 
