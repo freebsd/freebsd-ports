@@ -2230,10 +2230,23 @@ _PKGMESSAGES+=	${PKGMESSAGE}
 
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 
+.if ${WITH_PKG} == devel
+PKG_SUFX?=	.pkg
+.if defined(PKG_NOCOMPRESS)
+PKG_OLDSUFX?=	.tar
+.else
+.if ${OSVERSION} > 1400000
+PKG_OLDSUFX?=	.tzst
+.else
+PKG_OLDSUFX?=	.txz
+.endif
+.endif
+.else
 .if defined(PKG_NOCOMPRESS)
 PKG_SUFX?=		.tar
 .else
 PKG_SUFX?=		.txz
+.endif
 .endif
 # where pkg(8) stores its data
 PKG_DBDIR?=		/var/db/pkg
@@ -2624,6 +2637,9 @@ PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
 PACKAGES:=	${PACKAGES:S/:/\:/g}
 _HAVE_PACKAGES=	yes
 PKGFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_SUFX}
+.if ${WITH_PKG} == devel
+PKGOLDFILE?=		${PKGREPOSITORY}/${PKGNAME}${PKG_OLDSUFX}
+.endif
 .else
 PKGFILE?=		${.CURDIR}/${PKGNAME}${PKG_SUFX}
 .endif
@@ -2633,6 +2649,9 @@ WRKDIR_PKGFILE=	${WRKDIR}/pkg/${PKGNAME}${PKG_SUFX}
 PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
 PKGBASE?=			${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
+.if ${WITH_PKG} == devel
+PKGOLDLATESTFILE=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_OLDSUFX}
+.endif
 
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_CMD?=		./${CONFIGURE_SCRIPT}
@@ -3415,20 +3434,34 @@ ${PKGFILE}: ${WRKDIR_PKGFILE} ${PKGREPOSITORY}
 	@${LN} -f ${WRKDIR_PKGFILE} ${PKGFILE} 2>/dev/null \
 			|| ${CP} -f ${WRKDIR_PKGFILE} ${PKGFILE}
 
+.if ${WITH_PKG} == devel
+_EXTRA_PACKAGE_TARGET_DEP+= ${PKGOLDFILE}
+${PKGOLDFILE}: ${PKGFILE}
+	${INSTALL} -l rs ${PKGFILE} ${PKGOLDFILE}
+.endif
+
 .  if ${PKGORIGIN} == "ports-mgmt/pkg" || ${PKGORIGIN} == "ports-mgmt/pkg-devel"
 _EXTRA_PACKAGE_TARGET_DEP+=	${PKGLATESTREPOSITORY}
 _PORTS_DIRECTORIES+=	${PKGLATESTREPOSITORY}
 _EXTRA_PACKAGE_TARGET_DEP+=	${PKGLATESTFILE}
 
+
 ${PKGLATESTFILE}: ${PKGFILE} ${PKGLATESTREPOSITORY}
 	${INSTALL} -l rs ${PKGFILE} ${PKGLATESTFILE}
+
+.if ${WITH_PKG} == devel
+_EXTRA_PACKAGE_TARGET_DEP+=	${PKGOLDLATESTFILE}
+
+${PKGOLDLATESTFILE}: ${PKGOLDFILE} ${PKGLATESTREPOSITORY}
+	${INSTALL} -l rs ${PKGOLDFILE} ${PKGOLDLATESTFILE}
+.endif
 .  endif
 
 .endif
 
 # from here this will become a loop for subpackages
 ${WRKDIR_PKGFILE}: ${TMPPLIST} create-manifest ${WRKDIR}/pkg
-	@if ! ${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -m ${METADIR} -p ${TMPPLIST} -f ${PKG_SUFX:S/.//} -o ${WRKDIR}/pkg ${PKGNAME}; then \
+	@if ! ${SETENV} ${PKG_ENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -m ${METADIR} -p ${TMPPLIST} -o ${WRKDIR}/pkg ${PKGNAME}; then \
 		cd ${.CURDIR} && eval ${MAKE} delete-package >/dev/null; \
 		exit 1; \
 	fi
@@ -3438,7 +3471,14 @@ _EXTRA_PACKAGE_TARGET_DEP+=	${WRKDIR_PKGFILE}
 # This will be the end of the loop
 
 .if !target(do-package)
-PKG_CREATE_ARGS=	-r ${STAGEDIR}
+.if ${WITH_PKG} == devel
+.if defined(PKG_NOCOMPRESS)
+PKG_CREATE_ARGS+= -f ${PKG_OLDSUFX:S/.//}
+.endif
+.else
+PKG_CREATE_ARGS+= -f ${PKG_SUFX:S/.//}
+.endif
+PKG_CREATE_ARGS+=	-r ${STAGEDIR}
 .  if defined(PKG_CREATE_VERBOSE)
 PKG_CREATE_ARGS+=	-v
 .  endif
