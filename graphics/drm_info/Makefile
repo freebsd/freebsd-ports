@@ -2,12 +2,8 @@
 
 PORTNAME=	drm_info
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
-PORTREVISION=	1
+DISTVERSION=	2.3.0
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	42dad741607d8.patch:-p1 # libdrm 2.4.104
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Small utility to dump info about DRM devices

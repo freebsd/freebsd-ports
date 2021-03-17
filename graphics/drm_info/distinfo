@@ -1,5 +1,3 @@
-TIMESTAMP = 1578887873
-SHA256 (ascent12-drm_info-v2.2.0_GH0.tar.gz) = 0a903e52b89ec010367f8bd008793cde0fe042f3112c4840ca33657e476e2d27
-SIZE (ascent12-drm_info-v2.2.0_GH0.tar.gz) = 13510
-SHA256 (42dad741607d8.patch) = a16d34a6d842aabfa24257e6528d559a2ba597904a532e5d802b3d7ddb4a9235
-SIZE (42dad741607d8.patch) = 1144
+TIMESTAMP = 1615881120
+SHA256 (ascent12-drm_info-v2.3.0_GH0.tar.gz) = cb7e060f8f3e444cfbeb56480ad991ab13cc13bf43af6fbff576ffa54746500c
+SIZE (ascent12-drm_info-v2.3.0_GH0.tar.gz) = 15777
