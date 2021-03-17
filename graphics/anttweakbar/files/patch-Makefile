@@ -1,0 +1,11 @@
+--- Makefile.orig	2021-03-17 22:07:56 UTC
++++ Makefile
+@@ -66,7 +66,7 @@ all: 	Makefile $(TARGET)
+ 
+ $(TARGET): $(OBJS)
+ 	@echo "===== Link $@ ====="
+-	$(LINK) $(LFLAGS) -shared -Wl,-soname,lib$(TARGET)$(SO_EXT).$(SO_VERSION) -o $(OUT_DIR)/lib$(TARGET)$(SO_EXT) $(OBJS) $(LIBS)
++	$(LINK) $(LFLAGS) -shared -Wl,-soname,lib$(TARGET)$(SO_EXT).$(SO_VERSION) -o $(OUT_DIR)/lib$(TARGET)$(SO_EXT) $(OBJS) $(LIBS) $(LDFLAGS)
+ 	$(SYMLINK) $(OUT_DIR)/lib$(TARGET)$(SO_EXT) $(OUT_DIR)/lib$(TARGET)$(SO_EXT).$(SO_VERSION)
+ 	$(AR) $(OUT_DIR)/lib$(TARGET)$(AR_EXT) $(OBJS) $(LIBS)
+ 

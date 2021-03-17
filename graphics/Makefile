@@ -53,6 +53,7 @@
     SUBDIR += ampasCTL
     SUBDIR += animorph
     SUBDIR += ansilove
+    SUBDIR += anttweakbar
     SUBDIR += aoi
     SUBDIR += apngasm
     SUBDIR += apngdis
