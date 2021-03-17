@@ -11,13 +11,6 @@ COMMENT=	C library and CLI for encrypted file transfer on the Storj network
 
 LICENSE=	LGPL21+
 
-BROKEN_aarch64=		fails to build: invokes x86 assembler
-BROKEN_armv6=		fails to build: invokes x86 assembler
-BROKEN_armv7=		fails to build: invokes x86 assembler
-BROKEN_mips=		fails to build: invokes x86 assembler
-BROKEN_mips64=		fails to build: invokes x86 assembler
-BROKEN_riscv64=		fails to build: invokes x86 assembler
-
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libuv.so:devel/libuv \
 		libcurl.so:ftp/curl \
@@ -36,5 +29,11 @@ MAKE_JOBS_UNSAFE=	yes  # ./storjtests.h:10:10: fatal error: 'mockbridgeinfo.json
 
 #CFLAGS+=	-I. -I${LOCALBASE}/include
 #LDFLAGS+=	-L. -L${LOCALBASE}/lib
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64 && ${ARCH} != i386
+USE_GCC=	yes
+.endif
 
 .include <bsd.port.mk>
