@@ -1,0 +1,13 @@
+Error: Bad symlink 'lib/libdts.a' pointing inside the stage directory
+
+--- libdca/Makefile.am.orig	2021-03-17 14:15:32 UTC
++++ libdca/Makefile.am
+@@ -12,7 +12,7 @@ pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libdca.pc libdts.pc
+ 
+ install-exec-hook:
+-	$(LN_S)f "$(DESTDIR)$(libdir)/libdca.a" "$(DESTDIR)$(libdir)/libdts.a"
++	install -l rs "$(DESTDIR)$(libdir)/libdca.a" "$(DESTDIR)$(libdir)/libdts.a"
+ 
+ uninstall-hook:
+ 	unlink "$(DESTDIR)$(libdir)/libdts.a"
