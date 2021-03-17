@@ -382,6 +382,7 @@ man/man1/gitweb.1.gz
 man/man5/gitattributes.5.gz
 man/man5/githooks.5.gz
 man/man5/gitignore.5.gz
+man/man5/gitmailmap.5.gz
 man/man5/gitmodules.5.gz
 man/man5/gitrepository-layout.5.gz
 man/man5/gitweb.conf.5.gz
@@ -712,6 +713,8 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.29.2.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.30.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.30.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.30.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.31.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1175,7 +1178,6 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/i18n.txt
 %%HTMLDOCS%%%%DOCSDIR%%/index.html
 %%HTMLDOCS%%%%DOCSDIR%%/line-range-format.txt
-%%HTMLDOCS%%%%DOCSDIR%%/mailmap.txt
 %%HTMLDOCS%%%%DOCSDIR%%/merge-options.txt
 %%HTMLDOCS%%%%DOCSDIR%%/merge-strategies.txt
 %%HTMLDOCS%%%%DOCSDIR%%/mergetools-diff.txt
@@ -1435,6 +1437,7 @@ share/git-core/templates/info/exclude
 %%NLS%%share/locale/el/LC_MESSAGES/git.mo
 %%NLS%%share/locale/es/LC_MESSAGES/git.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/git.mo
+%%NLS%%share/locale/id/LC_MESSAGES/git.mo
 %%NLS%%share/locale/is/LC_MESSAGES/git.mo
 %%NLS%%share/locale/it/LC_MESSAGES/git.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/git.mo
