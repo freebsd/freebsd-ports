@@ -4,3 +4,9 @@ lib/libhidapi.so
 lib/libhidapi.so.0
 lib/libhidapi.so.0.0.0
 libdata/pkgconfig/hidapi.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE-bsd.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE-gpl3.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE-orig.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.md

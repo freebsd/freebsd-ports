@@ -1,18 +1,18 @@
---- configure.ac.orig	2013-10-06 22:43:37 UTC
+--- configure.ac.orig	2020-11-24 11:39:27 UTC
 +++ configure.ac
-@@ -89,11 +89,11 @@ case $host in
+@@ -82,13 +82,11 @@ case $host in
  	os="freebsd"
  	threads="pthreads"
  
 -	CFLAGS="$CFLAGS -I/usr/local/include"
 -	LDFLAGS="$LDFLAGS -L/usr/local/lib"
 -	LIBS="${LIBS}"
- 	AC_CHECK_LIB([usb], [libusb_init], [LIBS_LIBUSB_PRIVATE="${LIBS_LIBUSB_PRIVATE} -lusb"], [hidapi_lib_error libusb])
+ 	PKG_CHECK_MODULES([libusb], [libusb-1.0 >= 1.0.9], true, [hidapi_lib_error libusb-1.0])
+ 	LIBS_LIBUSB_PRIVATE="${LIBS_LIBUSB_PRIVATE} $libusb_LIBS"
+ 	CFLAGS_LIBUSB="${CFLAGS_LIBUSB} $libusb_CFLAGS"
 -	AC_CHECK_LIB([iconv], [iconv_open], [LIBS_LIBUSB_PRIVATE="${LIBS_LIBUSB_PRIVATE} -liconv"], [hidapi_lib_error libiconv])
-+	AC_CHECK_DECLS([libusb_get_string_descriptor], [], [], [[#include <libusb.h>]])
-+	AC_CHECK_DECLS([libusb_handle_events_completed], [], [], [[#include <libusb.h>]])
 +	AM_ICONV
 +	LIBS_LIBUSB_PRIVATE="${LIBS_LIBUSB_PRIVATE} ${LTLIBICONV}"
- 	echo libs_priv: $LIBS_LIBUSB_PRIVATE
  	;;
- *-mingw*)
+ *-kfreebsd*)
+ 	AC_MSG_RESULT([ (kFreeBSD back-end)])

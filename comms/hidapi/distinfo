@@ -1,2 +1,3 @@
-SHA256 (signal11-hidapi-hidapi-0.8.0-rc1_GH0.tar.gz) = 3c147200bf48a04c1e927cd81589c5ddceff61e6dac137a605f6ac9793f4af61
-SIZE (signal11-hidapi-hidapi-0.8.0-rc1_GH0.tar.gz) = 101833
+TIMESTAMP = 1615890404
+SHA256 (libusb-hidapi-hidapi-0.10.1_GH0.tar.gz) = f71dd8a1f46979c17ee521bc2117573872bbf040f8a4750e492271fc141f2644
+SIZE (libusb-hidapi-hidapi-0.10.1_GH0.tar.gz) = 119581
