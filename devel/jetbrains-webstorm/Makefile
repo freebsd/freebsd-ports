@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	webstorm
-PORTVERSION=	2020.3.2
+PORTVERSION=	2020.3.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
@@ -35,10 +35,10 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 
-WRKSRC=		${WRKDIR}/WebStorm-203.7148.54
+WRKSRC=		${WRKDIR}/WebStorm-203.7717.59
 
 do-install:
-# Initial JDK 15 support
+# Initial JDK 15+ support
 	@${REINPLACE_CMD} '/UseConcMarkSweepGC/d' ${WRKSRC}/bin/${PORTNAME}.vmoptions
 	@${REINPLACE_CMD} '/UseConcMarkSweepGC/d' ${WRKSRC}/bin/${PORTNAME}64.vmoptions
 # Linux/Windows/OS X only so remove them
