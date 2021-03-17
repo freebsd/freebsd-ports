@@ -1,0 +1,74 @@
+OpenBSD 6.8 errata 017, March 12, 2021:
+
+A TLS client using session resumption may cause a use-after-free.
+
+Apply by doing:
+    signify -Vep /etc/signify/openbsd-68-base.pub -x 017_libssl.patch.sig \
+        -m - | (cd /usr/src && patch -p0)
+
+And then rebuild and install libssl and unwind:
+    cd /usr/src/lib/libssl
+    make obj
+    make
+    make install
+    cd /usr/src/sbin/unwind
+    make obj
+    make
+    make install
+
+Index: lib/libssl/s3_lib.c
+===================================================================
+RCS file: /home/cvs/src/lib/libssl/s3_lib.c,v
+retrieving revision 1.198
+diff -u -p -r1.198 s3_lib.c
+--- ssl/s3_lib.c	17 Sep 2020 15:42:14 -0000	1.198
++++ ssl/s3_lib.c	9 Mar 2021 18:50:53 -0000
+@@ -1577,6 +1577,10 @@ ssl3_free(SSL *s)
+ 
+ 	free(S3I(s)->alpn_selected);
+ 
++	/* Clear reference to sequence numbers. */
++	tls12_record_layer_clear_read_state(s->internal->rl);
++	tls12_record_layer_clear_write_state(s->internal->rl);
++
+ 	freezero(S3I(s), sizeof(*S3I(s)));
+ 	freezero(s->s3, sizeof(*s->s3));
+ 
+@@ -1648,6 +1652,11 @@ ssl3_clear(SSL *s)
+ 
+ 	s->internal->packet_length = 0;
+ 	s->version = TLS1_VERSION;
++
++	tls12_record_layer_set_read_seq_num(s->internal->rl,
++	    S3I(s)->read_sequence);
++	tls12_record_layer_set_write_seq_num(s->internal->rl,
++	    S3I(s)->write_sequence);
+ 
+ 	S3I(s)->hs.state = SSL_ST_BEFORE|((s->server) ? SSL_ST_ACCEPT : SSL_ST_CONNECT);
+ }
+Index: lib/libssl/ssl_lib.c
+===================================================================
+RCS file: /home/cvs/src/lib/libssl/ssl_lib.c,v
+retrieving revision 1.234.4.1
+diff -u -p -r1.234.4.1 ssl_lib.c
+--- ssl/ssl_lib.c	3 Feb 2021 07:06:13 -0000	1.234.4.1
++++ ssl/ssl_lib.c	9 Mar 2021 18:50:53 -0000
+@@ -253,6 +253,8 @@ SSL_new(SSL_CTX *ctx)
+ 		goto err;
+ 	if ((s->internal = calloc(1, sizeof(*s->internal))) == NULL)
+ 		goto err;
++	if ((s->internal->rl = tls12_record_layer_new()) == NULL)
++		goto err;
+ 
+ 	s->internal->min_version = ctx->internal->min_version;
+ 	s->internal->max_version = ctx->internal->max_version;
+@@ -339,9 +341,6 @@ SSL_new(SSL_CTX *ctx)
+ 	s->method = ctx->method;
+ 
+ 	if (!s->method->internal->ssl_new(s))
+-		goto err;
+-
+-	if ((s->internal->rl = tls12_record_layer_new()) == NULL)
+ 		goto err;
+ 
+ 	s->references = 1;
