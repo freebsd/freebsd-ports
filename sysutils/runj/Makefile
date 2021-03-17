@@ -15,20 +15,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	samuelkarp
 GH_TAGNAME=	42281a4
 
-.include "${.CURDIR}/Makefile.deps"
+.include "Makefile.deps"
 
-GO_TARGET=	./cmd/runj:bin/runj \
-		./cmd/runj-entrypoint:bin/runj-entrypoint \
-		./cmd/containerd-shim-runj-v1:bin/containerd-shim-runj-v1
+GO_TARGET=	./cmd/runj \
+		./cmd/runj-entrypoint \
+		./cmd/containerd-shim-runj-v1
 
 PLIST_FILES=	bin/runj \
 		bin/runj-entrypoint \
 		bin/containerd-shim-runj-v1
-
-post-install:
-	${STRIP_CMD} \
-		${STAGEDIR}${PREFIX}/bin/runj \
-		${STAGEDIR}${PREFIX}/bin/runj-entrypoint \
-		${STAGEDIR}${PREFIX}/bin/containerd-shim-runj-v1
 
 .include <bsd.port.mk>
