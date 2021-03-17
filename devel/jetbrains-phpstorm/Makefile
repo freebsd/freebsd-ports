@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpstorm
-PORTVERSION=	2020.3.2
+PORTVERSION=	2020.3.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cf.jetbrains.com/webide/
 PKGNAMEPREFIX=	jetbrains-
@@ -30,25 +30,30 @@ SHEBANG_FILES=	bin/printenv.py bin/restart.py
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-SUB_FILES=	phpstorm phpstorm.desktop pkg-message
+SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 
-WRKSRC=		${WRKDIR}/PhpStorm-203.7148.74
+WRKSRC=		${WRKDIR}/PhpStorm-203.7717.64
 
 do-install:
+# Initial JDK 15+ support
+	@${REINPLACE_CMD} '/UseConcMarkSweepGC/d' ${WRKSRC}/bin/${PORTNAME}.vmoptions
+	@${REINPLACE_CMD} '/UseConcMarkSweepGC/d' ${WRKSRC}/bin/${PORTNAME}64.vmoptions
 # Linux/Windows/OS X only so remove them
-	@${RM} -r ${WRKSRC}/bin/fsnotifier \
+	@${RM} -r \
+		${WRKSRC}/bin/fsnotifier \
 		${WRKSRC}/bin/fsnotifier-arm \
 		${WRKSRC}/bin/fsnotifier64 \
 		${WRKSRC}/jbr \
+		${WRKSRC}/jre64 \
 		${WRKSRC}/lib/pty4j-native \
 		${WRKSRC}/plugins/performanceTesting/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
-		"! -name *\.so ! -name *\.dll ! -name *\.dylib ! -name *\.pdb ! -name *\.sh")
+		"! -name *\.bak ! -name *\.so ! -name *\.dll ! -name *\.dylib ! -name *\.pdb ! -name *\.sh")
 	@(cd ${WRKSRC} && ${COPYTREE_BIN} . ${STAGEDIR}${DATADIR} "-name *\.sh")
-	${INSTALL_SCRIPT} ${WRKDIR}/phpstorm ${STAGEDIR}${PREFIX}/bin/phpstorm
-	${INSTALL_MAN} ${FILESDIR}/phpstorm.1 ${STAGEDIR}${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKDIR}/phpstorm.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
 # Use fsnotifier replacement provided by java/intellij-fsnotifier
 	${ECHO} "idea.filewatcher.executable.path=${PREFIX}/intellij/bin/fsnotifier" >> ${STAGEDIR}${DATADIR}/bin/idea.properties
 # Use pty4j replacement provided by java/intellij-pty4j
