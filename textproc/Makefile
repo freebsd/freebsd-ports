@@ -1273,6 +1273,7 @@
     SUBDIR += py-elasticsearch-async
     SUBDIR += py-elasticsearch-curator
     SUBDIR += py-elasticsearch-dsl
+    SUBDIR += py-elasticsearch-dsl6
     SUBDIR += py-elasticsearch5
     SUBDIR += py-elasticsearch6
     SUBDIR += py-elementpath

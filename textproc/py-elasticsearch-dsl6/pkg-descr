@@ -1,0 +1,17 @@
+Elasticsearch DSL is a high-level library whose aim is to help with writing
+and running queries against Elasticsearch. It is built on top of the official
+low-level client (elasticsearch-py).
+
+It provides a more convenient and idiomatic way to write and manipulate
+queries. It stays close to the Elasticsearch JSON DSL, mirroring its terminology
+and structure. It exposes the whole range of the DSL from Python either directly
+using defined classes or a queryset-like expressions.
+
+It also provides an optional wrapper for working with documents as Python
+objects: defining mappings, retrieving and saving documents, wrapping the
+document data in user-defined classes.
+
+To use the other Elasticsearch APIs (eg. cluster health) just use the underlying
+client.
+
+WWW: https://pypi.org/project/elasticsearch-dsl/
