@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libopenmpt
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 DISTVERSIONSUFFIX=	+release.autotools
 CATEGORIES=	audio
 MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/ \
@@ -21,7 +21,8 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--without-portaudiocpp
 
-OPTIONS_DEFINE=		DOCS EXAMPLES FLAC MPG123 OGG PORTAUDIO SNDFILE VORBIS
+OPTIONS_DEFINE=		DOCS EXAMPLES FLAC MPG123 OGG PORTAUDIO PULSEAUDIO \
+			SNDFILE VORBIS
 OPTIONS_DEFAULT=	FLAC MPG123 OGG PORTAUDIO SNDFILE VORBIS
 
 FLAC_LIB_DEPENDS=		libFLAC.so:audio/flac
@@ -32,6 +33,8 @@ OGG_LIB_DEPENDS=		libogg.so:audio/libogg
 OGG_CONFIGURE_WITH=		ogg
 PORTAUDIO_LIB_DEPENDS=		libportaudio.so:audio/portaudio
 PORTAUDIO_CONFIGURE_WITH=	portaudio
+PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
+PULSEAUDIO_CONFIGURE_WITH=	pulseaudio
 SNDFILE_LIB_DEPENDS=		libsndfile.so:audio/libsndfile
 SNDFILE_CONFIGURE_WITH=		sndfile
 VORBIS_LIB_DEPENDS=		libvorbis.so:audio/libvorbis
