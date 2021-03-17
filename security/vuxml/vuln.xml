@@ -78,6 +78,43 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b073677f-253a-41f9-bf2b-2d16072a25f6">
+    <topic>minio -- MITM attack</topic>
+    <affects>
+      <package>
+	<name>minio</name>
+	<range><lt>2021.03.17.02.33.02</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>minio developer report:</p>
+	<blockquote cite="https://github.com/minio/minio/security/advisories/GHSA-xr7r-7gpj-5pgp">
+	  <p>
+	    This is a security issue because it enables MITM modification of
+	    request bodies that are meant to have integrity guaranteed by chunk
+	    signatures.
+	  </p>
+	  <p>
+	    In a PUT request using aws-chunked encoding, MinIO ordinarily
+	    verifies signatures at the end of a chunk. This check can be skipped
+	    if the client sends a false chunk size that is much greater than the
+	    actual data sent: the server accepts and completes the request
+	    without ever reaching the end of the chunk + thereby without ever
+	    checking the chunk signature.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/minio/minio/security/advisories/GHSA-xr7r-7gpj-5pgp</url>
+    </references>
+    <dates>
+      <discovery>2021-03-17</discovery>
+      <entry>2021-03-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eeca52dc-866c-11eb-b8d6-d4c9ef517024">
     <topic>LibreSSL -- use-after-free</topic>
     <affects>
