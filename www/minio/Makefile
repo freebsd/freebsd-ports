@@ -2,7 +2,6 @@
 
 PORTNAME=	minio
 PORTVERSION=	${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}
-PORTREVISION=	1
 CATEGORIES=	www
 DIST_SUBDIR=	minio
 
@@ -14,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2021-03-12T00-00-47Z
-COMMIT_ID=	feafccf0072a9b5fbddc33553890ff56cb2f83b6
+GHTAG=		RELEASE.2021-03-17T02-33-02Z
+COMMIT_ID=	e197800f9055489415b53cf137e31e194aaf7ba0
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
