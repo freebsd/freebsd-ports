@@ -306,6 +306,7 @@
 %%WWWDIR%%/install/sql/import_nagios_sample.sql
 %%WWWDIR%%/install/sql/nagiosQL_v32_db_mysql.sql
 %%WWWDIR%%/install/sql/nagiosQL_v34_db_mysql.sql
+%%WWWDIR%%/install/sql/nagiosQL_v341_db_mysql.sql
 %%WWWDIR%%/install/sql/update_300_301.sql
 %%WWWDIR%%/install/sql/update_300_310.sql
 %%WWWDIR%%/install/sql/update_301_302.sql
@@ -316,6 +317,7 @@
 %%WWWDIR%%/install/sql/update_310_320.sql
 %%WWWDIR%%/install/sql/update_311_320.sql
 %%WWWDIR%%/install/sql/update_320_340.sql
+%%WWWDIR%%/install/sql/update_340_341.sql
 %%WWWDIR%%/install/step1.php
 %%WWWDIR%%/install/step2.php
 %%WWWDIR%%/install/step3.php

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagiosql
-PORTVERSION=	3.4.0
-PORTREVISION=	3
+PORTVERSION=	3.4.1
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -20,7 +19,7 @@ USE_PHP=	filter gettext mysqli session simplexml
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	wizonet
-GL_COMMIT=	0f1c063740b4d3dae98d74f293c53234f341b06e
+GL_COMMIT=	365d4e0b5edc623b12ea96e8002e8ac66aad6aac
 
 USERS?=		nagios
 GROUPS?=	nagios
