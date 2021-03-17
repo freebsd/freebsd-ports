@@ -55,9 +55,9 @@ GCC_DEFAULT?=		10
 .endif
 # Possible values: 7, 8, 9, agpl
 GHOSTSCRIPT_DEFAULT?=	agpl
-# Possible values: 6 7
+# Possible values: 6, 7
 IMAGEMAGICK_DEFAULT?=	7
-# Possible values: 7, 8, 11, 12, 13, 14, 15
+# Possible values: 7, 8, 11, 12, 13, 14, 15, 16
 JAVA_DEFAULT?=		8
 # Possible values: 2.0.10
 LAZARUS_DEFAULT?=	2.0.10
@@ -70,7 +70,7 @@ LIBRSVG2_DEFAULT?=	legacy
 # Possible values: c7
 LINUX_DEFAULT?=		c7
 # Possible values: 70, 80, 90, 10, 11, -devel (to be used when non-base compiler is required)
-# Please give notice to the Graphics Team (x11@FreeBSD.org) in advance before 
+# Please give notice to the Graphics Team (x11@FreeBSD.org) in advance before
 # bumping the LLVM version.
 LLVM_DEFAULT?=		90
 # Possible values: 5.1, 5.2, 5.3, 5.4
@@ -96,7 +96,7 @@ PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 .endif
 # Possible values: 9.5, 9.6, 10, 11, 12, 13
 PGSQL_DEFAULT?=		12
-# Possible values: 7.3, 7.4 8.0
+# Possible values: 7.3, 7.4, 8.0
 PHP_DEFAULT?=		7.4
 # Possible values: 2.7, 3.6, 3.7, 3.8, 3.9
 PYTHON_DEFAULT?=	3.7
