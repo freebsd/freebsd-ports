@@ -8,7 +8,7 @@ MASTER_SITES=	SF/squashfs/squashfs/${DISTNAME}/
 DISTNAME=	squashfs${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ashish@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Set of tools to manipulate squashfs images
 
 LICENSE=	GPLv2
