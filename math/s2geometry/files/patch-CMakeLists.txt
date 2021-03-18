@@ -1,0 +1,48 @@
+- Tests are fused with code: https://github.com/google/s2geometry/issues/179
+- Python binding is unconditional: https://github.com/google/s2geometry/issues/180
+
+--- CMakeLists.txt.orig	2021-03-16 08:18:05 UTC
++++ CMakeLists.txt
+@@ -65,7 +65,8 @@ find_package(Threads REQUIRED)
+ find_package(SWIG)
+ # Use Python3_ROOT_DIR to help find python3, if the correct location is not
+ # being found by default.
+-find_package(Python3 COMPONENTS Interpreter Development)
++#find_package(Python3 COMPONENTS Interpreter Development)
++set(Python3_FOUND FALSE)
+ 
+ if (WIN32)
+     # Use unsigned characters
+@@ -200,10 +201,10 @@ add_library(s2
+             src/s2/util/math/exactfloat/exactfloat.cc
+             src/s2/util/math/mathutil.cc
+             src/s2/util/units/length-units.cc)
+-add_library(s2testing STATIC
+-            src/s2/s2builderutil_testing.cc
+-            src/s2/s2shapeutil_testing.cc
+-            src/s2/s2testing.cc)
++#add_library(s2testing STATIC
++#            src/s2/s2builderutil_testing.cc
++#            src/s2/s2shapeutil_testing.cc
++#            src/s2/s2testing.cc)
+ target_link_libraries(
+     s2
+     ${GFLAGS_LIBRARIES} ${GLOG_LIBRARIES} ${OPENSSL_LIBRARIES}
+@@ -414,7 +415,7 @@ install(FILES src/s2/util/math/mathutil.h
+ install(FILES src/s2/util/units/length-units.h
+               src/s2/util/units/physical-units.h
+         DESTINATION include/s2/util/units)
+-install(TARGETS s2 s2testing DESTINATION lib)
++install(TARGETS s2 DESTINATION lib)
+ 
+ message("GTEST_ROOT: ${GTEST_ROOT}")
+ if (GTEST_ROOT)
+@@ -529,7 +530,7 @@ if (GTEST_ROOT)
+     add_executable(${test} ${test_cc})
+     target_link_libraries(
+         ${test}
+-        s2testing s2 gtest_main)
++        s2 gtest_main)
+     add_test(${test} ${test})
+   endforeach()
+ endif()

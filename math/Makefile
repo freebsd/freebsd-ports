@@ -923,6 +923,7 @@
     SUBDIR += rubygem-prime
     SUBDIR += rubygem-rb-gsl
     SUBDIR += rumur
+    SUBDIR += s2geometry
     SUBDIR += saga
     SUBDIR += sage
     SUBDIR += sc
