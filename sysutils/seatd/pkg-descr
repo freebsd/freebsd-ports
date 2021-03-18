@@ -1,4 +1,4 @@
-seatd is a seat management deamon, that does everything it needs to
+seatd is a seat management daemon, that does everything it needs to
 do. Nothing more, nothing less. Depends only on libc.
 
 libseat is a seat management library allowing applications to use
