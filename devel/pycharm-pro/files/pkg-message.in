@@ -1,36 +1,12 @@
 [
 { type: install
   message: <<EOM
-1. There is experimental native (faster) file watching support which is
-disabled by default.  Currently there are problems with watching large
-trees.  To enable, edit %%DATADIR%%/bin/idea.properties and append
+There is experimental native (faster) file watching support which is
+enabled by default. Currently there are problems with watching large
+trees (>600 files). To disable it, edit 
+%%DATADIR%%/bin/idea.properties and append:
 
-  idea.filewatcher.disabled=false
-  idea.filewatcher.executable.path=%%IDEA_HOME%%/bin/fsnotifier
-
-Only enable fsnotifier if your projects have < 600 files.
-
-2. Should you experience dialog boxes not accepting keyboard input (eg.
-Navigate | File) than set the custom property action.aware.typeAhead=false in
-Help | Edit Custom Properties.
-
-3. Some bundled and third party plugins depend on OpenJFX. For JDK11, the SDK
-version this PyCharm port depends on, FreeBSD does not yet have an OpenJFX port
-available. Hence these plugins will not work! 
-
-An example of that is the bundled, and by default enabled, reStructuredText
-plugin. As a result, clicking on a *.rst file does not seem to do anything. To
-verify that the missing OpenJFX library is indeed the culprit, from within
-PyCharm: 
-
-    Open: Help | Show log in <your file manager>
-    Open: idea.log
-    Scroll to the end (timestamp matching attempt to open *.rst file)
-    Look for: 'java.lang.NoClassDefFoundError: javafx/embed/swing/JFXPanel'
-
-A workaround is to simply disable the reStructuredText plugin in File |
-Settings | Plugins. It will allow *.rst to be opened and editted in the default
-text editor. 
+  idea.filewatcher.disabled=true
 EOM
 }
 ]
