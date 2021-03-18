@@ -596,6 +596,7 @@
     SUBDIR += manaplus
     SUBDIR += mancala
     SUBDIR += mangband
+    SUBDIR += marblemarcher
     SUBDIR += mari0
     SUBDIR += masterserver
     SUBDIR += maxr

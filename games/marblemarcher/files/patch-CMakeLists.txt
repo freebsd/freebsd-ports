@@ -1,0 +1,28 @@
+--- CMakeLists.txt.orig	2021-01-03 11:14:42 UTC
++++ CMakeLists.txt
+@@ -122,7 +122,7 @@ elseif(UNIX)
+ 		${OPENGL_LIBRARIES}
+ 		libAntTweakBar.so	
+ 		${GLEW_LIBRARIES}
+-		stdc++fs
++		#stdc++fs
+ 		libsfml-system.so
+ 		libsfml-window.so
+ 		libsfml-graphics.so
+@@ -130,12 +130,12 @@ elseif(UNIX)
+ 	)
+ 	install(TARGETS MarbleMarcher
+ 	    COMPONENT linapp
+-	    RUNTIME DESTINATION "/home/MMCE"
+-	    LIBRARY DESTINATION "/home/MMCE"
+-	    DESTINATION "/home/MMCE"
++	    RUNTIME DESTINATION ${FREEBSD_DATADIR}
++	    LIBRARY DESTINATION ${FREEBSD_DATADIR}
++	    DESTINATION ${FREEBSD_DATADIR}
+ 	)
+ 
+-	install(DIRECTORY "${PROJECT_SOURCE_DIR}/game_folder/" DESTINATION "/home/MMCE")
++	install(DIRECTORY "${PROJECT_SOURCE_DIR}/game_folder/" DESTINATION ${FREEBSD_DATADIR})
+ 
+ 	set(CPACK_PACKAGE_NAME "MarbleMarcher")
+ 	set(CPACK_PACKAGE_VENDOR "MarbleMarcher")
