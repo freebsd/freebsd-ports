@@ -2,7 +2,7 @@
 
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.9
+DISTVERSION=	3.11.10
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,7 +41,6 @@ GH_TUPLE=	\
 		dghubble:sling:v1.3.0:dghubble_sling/vendor/github.com/dghubble/sling \
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		geziyor:geziyor:cfb16fe1ee0e:geziyor_geziyor/vendor/github.com/geziyor/geziyor \
-		go-check:check:8fa46927fb4f:go_check_check/vendor/gopkg.in/check.v1 \
 		go-ini:ini:v1.62.0:go_ini_ini/vendor/github.com/go-ini/ini \
 		go-kit:kit:v0.8.0:go_kit_kit/vendor/github.com/go-kit/kit \
 		go-sql-driver:mysql:v1.4.1:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
@@ -72,7 +71,6 @@ GH_TUPLE=	\
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		joho:godotenv:v1.3.0:joho_godotenv/vendor/github.com/joho/godotenv \
 		knq:sysutil:15668db23d08:knq_sysutil \
-		kr:text:v0.2.0:kr_text/vendor/github.com/kr/text \
 		layeh:gopher-json:552bb3c4c3bf:layeh_gopher_json/vendor/layeh.com/gopher-json \
 		lib:pq:v1.9.0:lib_pq/vendor/github.com/lib/pq \
 		mailru:easyjson:v0.7.0:mailru_easyjson/vendor/github.com/mailru/easyjson \
@@ -80,7 +78,6 @@ GH_TUPLE=	\
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		miekg:dns:v1.1.35:miekg_dns/vendor/github.com/miekg/dns \
-		niemeyer:pretty:a10e7caefd8e:niemeyer_pretty/vendor/github.com/niemeyer/pretty \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		prometheus:client_golang:v1.0.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
