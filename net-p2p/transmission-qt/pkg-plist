@@ -1,6 +1,7 @@
 bin/transmission-qt
 man/man1/transmission-qt.1.gz
 share/applications/transmission-qt.desktop
+share/pixmaps/transmission-qt.png
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.md

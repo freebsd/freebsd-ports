@@ -2,7 +2,7 @@
 
 PORTNAME=	transmission
 DISTVERSION=	3.00
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES+=	net-p2p
 SLAVEPORT?=	cli
 PKGNAMESUFFIX?=	-cli
@@ -75,6 +75,15 @@ do-install:
 .if ${SLAVEPORT:Mdaemon}
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/home
+.endif
+
+.if ${SLAVEPORT:Mqt}
+post-install:
+	${REINPLACE_CMD} -e "s/Icon=.*/&-qt/" \
+		${STAGEDIR}${DESKTOPDIR}/transmission-qt.desktop
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/qt/icons/transmission.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/transmission-qt.png
 .endif
 
 .include <bsd.port.mk>
