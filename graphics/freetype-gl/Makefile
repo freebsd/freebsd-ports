@@ -2,6 +2,7 @@
 
 PORTNAME=	freetype-gl
 DISTVERSION=	g20210208
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -26,9 +27,9 @@ GH_ACCOUNT=	rougier
 GH_TAGNAME=	647b062
 
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	freetype-gl_BUILD_DEMOS freetype-gl_BUILD_APIDOC freetype-gl_BUILD_TESTS # DEMOS depend on graphics/anttweakbar
+CMAKE_OFF=	freetype-gl_BUILD_DEMOS freetype-gl_BUILD_APIDOC freetype-gl_BUILD_TESTS # DEMOS depend on graphics/anttweakbar, glfw3
 
-# DEMOS depend on glfw3
+LDFLAGS+=	-L${LOCALBASE}/lib -lGLEW -lfreetype # https://github.com/rougier/freetype-gl/issues/236
 
 do-test: # build breaks: https://github.com/rougier/freetype-gl/issues/234
 	@cd ${BUILD_WRKSRC} && \
