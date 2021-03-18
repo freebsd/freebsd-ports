@@ -911,7 +911,6 @@ lib/libagrum.so.%%VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/ipython.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/mn2graph.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/notebook.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/pretty_print.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/lib/proba_histogram.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/pyAgrum.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyAgrum/skbn/_MBCalcul.py
