@@ -1,0 +1,2 @@
+bin/rearx
+@sample %%ETCDIR%%/rearx.yaml.sample
