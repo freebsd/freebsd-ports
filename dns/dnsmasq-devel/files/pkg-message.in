@@ -1,0 +1,18 @@
+[
+{
+message: <<EOM
+To enable dnsmasq, edit %%PREFIX%%/etc/dnsmasq.conf and
+set dnsmasq_enable="YES" in /etc/rc.conf[.local]
+
+Further options and actions are documented inside
+%%PREFIX%%/etc/rc.d/dnsmasq
+
+SECURITY RECOMMENDATION
+~~~~~~~~~~~~~~~~~~~~~~~
+It is recommended to enable the wpad-related options
+at the end of the configuration file (you may need to
+copy them from the example file to yours) to fix
+CERT Vulnerability VU#598349.
+EOM
+}
+]
