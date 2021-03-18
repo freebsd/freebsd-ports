@@ -78,6 +78,9 @@ LZO_CONFIGURE_OFF=	--disable-liblzo
 NAS_LIB_DEPENDS=	libaudio.so:audio/nas
 NAS_CONFIGURE_OFF=	--disable-nas
 
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+
 OPENAL_USES=		openal:soft
 OPENAL_CONFIGURE_OFF=	--disable-openal
 

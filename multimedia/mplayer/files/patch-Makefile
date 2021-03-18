@@ -1,6 +1,6 @@
---- Makefile.orig	2015-06-03 11:58:05 UTC
+--- Makefile.orig	2021-03-04 14:43:07 UTC
 +++ Makefile
-@@ -752,7 +752,7 @@ mencoder$(EXESUF) mplayer$(EXESUF):
+@@ -751,7 +751,7 @@ mencoder$(EXESUF) mplayer$(EXESUF):
  codec-cfg-test$(EXESUF): HOSTCFLAGS := $(HOSTCFLAGS) -DTESTING
  codec-cfg$(EXESUF) codecs2html$(EXESUF):  HOSTCFLAGS := $(HOSTCFLAGS) -DCODECS2HTML
  codec-cfg$(EXESUF) codec-cfg-test$(EXESUF) codecs2html$(EXESUF): codec-cfg.c codec-cfg.h help_mp.h
@@ -9,18 +9,16 @@
  
  codecs.conf.h: codec-cfg$(EXESUF) etc/codecs.conf
  	./$^ > $@
-@@ -855,20 +855,17 @@ $(VIDIX_OBJS): $(VIDIX_PCI_FILES)
- install: $(INSTALL_TARGETS-yes)
- 
+@@ -865,19 +865,17 @@ install: $(INSTALL_TARGETS-yes)
  install-dirs:
--	$(INSTALL) -d $(BINDIR) $(CONFDIR) $(LIBDIR)
+ 	$(INSTALL) -d $(BINDIR) $(CONFDIR) $(LIBDIR)
  
 -install-%: %$(EXESUF) install-dirs
 -	$(INSTALL) -m 755 $(INSTALLSTRIP) $< $(BINDIR)
 +install-mplayer: mplayer$(EXESUF) install-dirs
 +	@${BSD_INSTALL_PROGRAM} mplayer$(EXESUF) $(BINDIR)
  
--install-gui: install-mplayer install-gui-icons
+-install-gui: install-mplayer install-gui-icons install-gui-msg
 -	-ln -sf mplayer$(EXESUF) $(BINDIR)/gmplayer$(EXESUF)
 -	$(INSTALL) -d $(DATADIR)/skins $(prefix)/share/applications
 -	$(INSTALL) -m 644 etc/mplayer.desktop $(prefix)/share/applications/
@@ -28,6 +26,7 @@
  
  install-gui-icons:    $(foreach size,$(GUI_ICONSIZES),install-gui-icon-$(size))
  install-gui-man:      $(foreach lang,$(MAN_LANGS),install-gui-man-$(lang))
+ install-gui-msg:      $(foreach lang,$(filter-out $(firstword $(MSG_LANGS)),$(MSG_LANGS)),install-gui-msg-$(lang))
  install-mencoder-man: $(foreach lang,$(MAN_LANGS),install-mencoder-man-$(lang))
 -install-mplayer-man:  $(foreach lang,$(MAN_LANGS),install-mplayer-man-$(lang))
 +install-mplayer-man:
