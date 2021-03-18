@@ -1,6 +1,6 @@
---- aconfigure.orig	2018-07-05 11:16:11 UTC
+--- aconfigure.orig	2021-03-17 07:34:46 UTC
 +++ aconfigure
-@@ -7085,7 +7085,7 @@ else
+@@ -7151,7 +7151,7 @@ else
  			FFMPEG_PREFIX=$with_ffmpeg
  			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: Using ffmpeg prefix... $FFMPEG_PREFIX" >&5
  $as_echo "Using ffmpeg prefix... $FFMPEG_PREFIX" >&6; }
@@ -9,7 +9,7 @@
  		fi
  
  		for ac_prog in pkg-config "python pkgconfig.py"
-@@ -8884,7 +8884,7 @@ $as_echo "Checking if libwebrtc is disabled...no" >&6;
+@@ -9162,7 +9162,7 @@ $as_echo "Checking if libwebrtc is disabled...no" >&6;
  			ac_webrtc_instset=sse2
  			ac_webrtc_cflags="-msse2"
  			;;
