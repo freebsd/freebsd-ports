@@ -78,6 +78,33 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="50e59056-87f2-11eb-b6a2-001b217b3468">
+    <topic>Gitlab -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>13.9.0</ge><lt>13.9.4</lt></range>
+	<range><ge>13.8.0</ge><lt>13.8.6</lt></range>
+	<range><ge>13.2.0</ge><lt>13.7.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gigtlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2021/03/17/security-release-gitlab-13-9-4-released/">
+	  <p>Remote code execution via unsafe user-controlled markdown rendering options</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://about.gitlab.com/releases/2021/03/17/security-release-gitlab-13-9-4-released/</url>
+    </references>
+    <dates>
+      <discovery>2021-03-17</discovery>
+      <entry>2021-03-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b72b1ff-877c-11eb-bd4f-2f1d57dafe46">
     <topic>dnsmasq -- cache poisoning vulnerability in certain configurations</topic>
     <affects>
