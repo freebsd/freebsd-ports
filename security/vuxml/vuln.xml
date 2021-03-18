@@ -83,7 +83,9 @@ Notes:
     <affects>
       <package>
 	<name>openssh-portable</name>
-	<range><ge>8.2p1,1</ge><lt>8.5p1,1</lt></range>
+	<name>openssh-portable-hpn</name>
+	<name>openssh-portable-gssapi</name>
+	<range><ge>8.2p1,1</ge><lt>8.4p1,1_4</lt></range>
       </package>
     </affects>
     <description>
