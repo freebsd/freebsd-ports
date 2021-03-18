@@ -83,11 +83,11 @@ Notes:
     <affects>
       <package>
 	<name>dnsmasq</name>
-	<range><lt>2.85r1,1</lt></range>
+	<range><lt>2.85.r1,1</lt></range>
       </package>
       <package>
 	<name>dnsmasq-devel</name>
-	<range><lt>2.85r1,1</lt></range>
+	<range><lt>2.85.r1,1</lt></range>
       </package>
     </affects>
     <description>
