@@ -10932,6 +10932,7 @@
 %%WWWDIR%%/config/initializers/jira.rb
 %%WWWDIR%%/config/initializers/kaminari_active_record_relation_methods_with_limit.rb
 %%WWWDIR%%/config/initializers/kaminari_config.rb
+%%WWWDIR%%/config/initializers/kramdown_patch.rb
 %%WWWDIR%%/config/initializers/labkit_middleware.rb
 %%WWWDIR%%/config/initializers/load_balancing.rb
 %%WWWDIR%%/config/initializers/lograge.rb
@@ -27408,6 +27409,7 @@
 %%WWWDIR%%/spec/initializers/doorkeeper_spec.rb
 %%WWWDIR%%/spec/initializers/fog_google_https_private_urls_spec.rb
 %%WWWDIR%%/spec/initializers/hangouts_chat_http_override_spec.rb
+%%WWWDIR%%/spec/initializers/kramdown_patch_spec.rb
 %%WWWDIR%%/spec/initializers/lograge_spec.rb
 %%WWWDIR%%/spec/initializers/mail_encoding_patch_spec.rb
 %%WWWDIR%%/spec/initializers/net_http_patch_spec.rb
