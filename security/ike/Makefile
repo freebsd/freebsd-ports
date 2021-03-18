@@ -36,13 +36,6 @@ LDAP_USE=	OPENLDAP=yes
 LDAP_CMAKE_ON=	-DLDAP=YES
 NATT_CMAKE_ON=	-DNATT=YES
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
-BROKEN_FreeBSD_13=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'evp_cipher_ctx_st')
-.endif
-
 post-install:
 	@if ! ${SYSCTL} -a | ${GREP} -q ipsec; then \
 	${ECHO_MSG} "===> -------------------------------------------------------------------------"; \
@@ -58,4 +51,6 @@ post-install-NATT-on:
 	@${ECHO_MSG} "===>   options IPSEC_NAT_T"
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
+
+PATCH_ARGS+=	-l
