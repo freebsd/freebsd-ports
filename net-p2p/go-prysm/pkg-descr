@@ -1,0 +1,8 @@
+Ethereum is a community-driven project aiming to decentralize the internet and
+return it to its democratic roots. It is a platform for building and running
+applications which do not need to rely on trust and cannot be controlled by
+any central authority.
+
+This is the Go implementation of the Ethereum 2.0 blockchain.
+
+WWW: https://github.com/prysmaticlabs/prysm

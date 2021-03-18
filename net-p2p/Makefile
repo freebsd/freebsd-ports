@@ -32,6 +32,7 @@
     SUBDIR += eiskaltdcpp-lib
     SUBDIR += frost
     SUBDIR += go-ethereum
+    SUBDIR += go-prysm
     SUBDIR += gtk-gnutella
     SUBDIR += gtorrentviewer
     SUBDIR += jackett
