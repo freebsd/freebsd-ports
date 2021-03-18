@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2019-09-10 10:55:00 UTC
+--- CMakeLists.txt.orig	2021-03-16 13:36:34 UTC
 +++ CMakeLists.txt
-@@ -464,16 +464,16 @@ else()
+@@ -536,25 +536,25 @@ else()
    install(TARGETS ${EXECUTABLE_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_FULL_BINDIR})
  endif()
  
@@ -12,7 +12,16 @@
 -        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 -        COMMENT "Building script reference documentation.")
 -  add_custom_target(script_reference ALL DEPENDS ${CMAKE_BINARY_DIR}/script_reference.html)
--  install(FILES ${CMAKE_BINARY_DIR}/script_reference.html DESTINATION .)
+-  
+-  # Matches install logic above.
+-  if(WIN32)
+-  	install(FILES ${CMAKE_BINARY_DIR}/script_reference.html DESTINATION .)
+-  elseif(APPLE)
+-  	install(FILES ${CMAKE_BINARY_DIR}/script_reference.html DESTINATION "EmptyEpsilon.app/Contents/Resources")
+-  elseif(NOT ANDROID)
+-	# DOCDIR already has PROJECT_NAME (EmptyEpsilon) appended (from CMake docs)
+-  	install(FILES ${CMAKE_BINARY_DIR}/script_reference.html DESTINATION "${CMAKE_INSTALL_FULL_DOCDIR}")
+-  endif()
 -endif()
 +#find_package(PythonInterp)
 +#if(PYTHONINTERP_FOUND)
@@ -22,8 +31,17 @@
 +#        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
 +#        COMMENT "Building script reference documentation.")
 +#  add_custom_target(script_reference ALL DEPENDS ${CMAKE_BINARY_DIR}/script_reference.html)
-+#  install(FILES ${CMAKE_BINARY_DIR}/script_reference.html DESTINATION .)
++#  
++#  # Matches install logic above.
++#  if(WIN32)
++#  	install(FILES ${CMAKE_BINARY_DIR}/script_reference.html DESTINATION .)
++#  elseif(APPLE)
++#  	install(FILES ${CMAKE_BINARY_DIR}/script_reference.html DESTINATION "EmptyEpsilon.app/Contents/Resources")
++#  elseif(NOT ANDROID)
++#	# DOCDIR already has PROJECT_NAME (EmptyEpsilon) appended (from CMake docs)
++#  	install(FILES ${CMAKE_BINARY_DIR}/script_reference.html DESTINATION "${CMAKE_INSTALL_FULL_DOCDIR}")
++#  endif()
 +#endif()
  
- set(CPACK_PACKAGE_EXECUTABLES ${EXECUTABLE_NAME})
- set(CPACK_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}")
+ add_custom_target(update_locale
+ 	COMMAND sed -i "/^#: /d" resources/locale/en.po
