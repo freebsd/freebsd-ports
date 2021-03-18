@@ -1,11 +1,11 @@
---- configure.ac.orig	2018-12-05 08:19:48 UTC
+--- configure.ac.orig	2021-03-18 01:55:52 UTC
 +++ configure.ac
 @@ -2,7 +2,7 @@
  # Process this file with autoconf to produce a configure script.
  
  AC_PREREQ(2.59)
--AC_INIT(latte-int, 1.7.5)
-+AC_INIT(latte-integrale, 1.7.5)
+-AC_INIT(latte-int, 1.7.6)
++AC_INIT(latte-integrale, 1.7.6)
  AC_CONFIG_MACRO_DIR([m4])
  AC_CONFIG_HEADERS([code/config.h:code/config.hin])
  AM_INIT_AUTOMAKE([gnu 1.11])  # Need 1.11 for parallel test harness in code/maple
