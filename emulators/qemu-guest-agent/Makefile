@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 DIST_SUBDIR=	qemu/${PORTVERSION}
 FILESDIR=	${.CURDIR}/files
 HAS_CONFIGURE=	yes
-USES=		gmake gnome pkgconfig python:build tar:xz
+USES=		compiler:c++11-lang gmake gnome pkgconfig python:build tar:xz
 USE_GNOME=	glib20
 USE_RC_SUBR=	qemu-guest-agent
 MAKE_ENV+=	BSD_MAKE="${MAKE}" PREFIX=${PREFIX}
