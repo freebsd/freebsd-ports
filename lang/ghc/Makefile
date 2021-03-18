@@ -95,11 +95,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
 CONFIGURE_ARGS+=	--enable-dtrace=0
 .endif
 
-# .if ${ARCH} == i386
-# EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-libraries_ghc-prim_cbits_atomic.c \
-# 		${PATCHDIR}/extra-patch-rts_posix_TTY.c
-# .endif
-
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
 BOOT_GHC_VERSION=      8.6.3
 .elif ${ARCH} == aarch64 || ${ARCH:Marmv*}
@@ -248,6 +243,7 @@ fixup-plist:
 	${BOOT_DIR}/bin/runhaskell ${PATCHDIR}/fixup-plist.hs ${.CURDIR}/pkg-plist
 
 # Create a bootstrap compiler tar ball: run this in an interactive poudriere jail
+# Set all OPTIONS to OFF when generating bootstraps
 .PHONY: create-bootstrap
 create-bootstrap:
 	cd ${WRKSRC} \
@@ -263,6 +259,7 @@ create-bootstrap:
 		&& ${STAT} -f %z ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
 
 # Much like create-bootstrap, just different naming and output format
+# Set DYNAMIC, GMP and PROFILE to ON, and DOCS to OFF when generating Stack bindist
 .PHONY: create-stack-bindist
 create-stack-bindist:
 	${REINPLACE_CMD} -e '/^mandir/d' \
