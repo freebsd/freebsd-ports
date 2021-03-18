@@ -5,7 +5,7 @@ PORTNAME=	dnsmasq
 DISTVERSION=	2.85rc1
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
 PORTREVISION=	0
-PORTEPOCH=	1
+PORTEPOCH=	3 # attn - different between -devel and dnsmasq ports!
 CATEGORIES=	dns
 MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/release-candidates/ \
 		LOCAL/mandree/
