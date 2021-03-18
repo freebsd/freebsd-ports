@@ -1,0 +1,24 @@
+--- wscript.orig	2021-03-18 23:07:57 UTC
++++ wscript
+@@ -220,20 +220,9 @@ def configure(conf):
+ 
+ 	conf.env.append_value('LIB_KDECORE', 'KF5KDELibs4Support')
+ 
+-	for x in ('', '/usr/include/KF5/KDELibs4Support', '/usr/local/include/KF5/KDELibs4Support'):
+-		conf.env.stash()
++	for x in ('@@LOCALBASE@@/include/KF5/KDELibs4Support', "bogus"):
+ 		if os.path.exists(x):
+ 			conf.env.append_value('INCLUDES_KDECORE', x)
+-		try:
+-			conf.check(fragment='#include <kio/job.h>\n#include <KDE/KDialog>\n',
+-				features='cxx qt5',
+-				msg='Checking for kdelibs4support %s' % x,
+-				use='KDECORE QT5CORE QT5GUI QT5WIDGETS')
+-			break
+-		except conf.errors.ConfigurationError:
+-			conf.env.revert()
+-		else:
+-			conf.fatal('kdelibs4support was not found, check the config.log file')
+ 
+ 	for x in ('', '/usr/local/include'):
+ 		conf.env.stash()
