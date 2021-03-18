@@ -1,14 +1,15 @@
 # $FreeBSD$
 
-PORTNAME=		libretro-core-info
-DISTVERSIONPREFIX=	v
-DISTVERSION=		1.8.4
-CATEGORIES=		games
+PORTNAME=	libretro-core-info
+DISTVERSIONPREFIX=v
+DISTVERSION=	1.9.0
+CATEGORIES=	games
 
 MAINTAINER=	greg@unrelenting.technology
 COMMENT=	Metadata about libretro cores
 
-LICENSE=	GPLv3
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
