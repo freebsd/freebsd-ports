@@ -78,6 +78,47 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5b72b1ff-877c-11eb-bd4f-2f1d57dafe46">
+    <topic>dnsmasq -- cache poisoning vulnerability in certain configurations</topic>
+    <affects>
+      <package>
+	<name>dnsmasq</name>
+	<range><lt>2.85r1,1</lt></range>
+      </package>
+      <package>
+	<name>dnsmasq-devel</name>
+	<range><lt>2.85r1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Kelley reports:</p>
+	<blockquote cite="https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2021q1/014835.html">
+	  <p>
+	    [In configurations where the forwarding server address contains an @
+	    character for specifying a sending interface or source address, the]
+	    random source port behavior was disabled, making cache poisoning
+	    attacks possible.
+	  </p>
+	</blockquote>
+	<p>
+	  This only affects configurations of the form server=1.1.1.1@em0 or
+	  server=1.1.1.1@192.0.2.1, i. e. those that specify an interface to
+	  send through, or an IP address to send from, or use together with
+	  NetworkManager.
+	</p>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.thekelleys.org.uk/pipermail/dnsmasq-discuss/2021q1/014835.html</url>
+      <cvename>CVE-2021-3448</cvename>
+    </references>
+    <dates>
+      <discovery>2021-03-17</discovery>
+      <entry>2021-03-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b073677f-253a-41f9-bf2b-2d16072a25f6">
     <topic>minio -- MITM attack</topic>
     <affects>
