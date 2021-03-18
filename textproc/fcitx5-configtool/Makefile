@@ -3,6 +3,7 @@
 
 PORTNAME=	fcitx5-configtool
 DISTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc x11
 
 MAINTAINER=	khng300@gmail.com
@@ -28,7 +29,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fcitx
 
 USE_KDE=	ecm coreaddons kdeclarative i18n itemviews kirigami2 package widgetsaddons
-USE_QT=		concurrent core gui quickcontrols2 widgets x11extras buildtools_build qmake_build
+USE_QT=		concurrent core dbus declarative gui quickcontrols2 widgets x11extras \
+		buildtools_build qmake_build
 USE_XORG=	x11 xkbfile
 USE_LDCONFIG=	yes
 
