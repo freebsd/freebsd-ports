@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.4.5.5-rc
+DISTVERSION=	0.4.6.1-alpha
 CATEGORIES=	security net
 MASTER_SITES=	TOR
 PKGNAMESUFFIX=	-devel
@@ -13,13 +13,13 @@ COMMENT=	Anonymizing overlay network for TCP
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 cpe gmake localbase pkgconfig # should be compiler:c99 or compiler:gnu99
+USES=		compiler:c11 cpe gmake pkgconfig # should be compiler:c99 or compiler:gnu99
 USE_CSTD=	gnu99 # until this bug report is closed: https://trac.torproject.org/projects/tor/ticket/27900
 
 CPE_VENDOR=	torproject
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}" \
-		--with-libevent-dir=${LOCALBASE}
+		--with-libevent-dir=${LOCALBASE} # probably not needed
 CONFIGURE_ENV=	TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include" \
 		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/" \
 		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}"
@@ -55,13 +55,13 @@ LZMA_CONFIGURE_ENABLE=		lzma
 
 # tracing options
 LTTNG_DESC=			Build with LTTng-UST instrumentation
+LTTNG_USES=			localbase
 LTTNG_CONFIGURE_ENABLE=		tracing-instrumentation-lttng
 LTTNG_LIB_DEPENDS=		liblttng-ust.so:sysutils/lttng-ust
-LTTNG_BROKEN=			fatal error: 'core/or/lttng_circuit.inc' file not found: https://gitlab.torproject.org/tpo/core/tor/-/issues/40173
 USDT_DESC=			Build with tracing USDT instrumentation
 USDT_CONFIGURE_ENABLE=		tracing-instrumentation-usdt
 USDT_LIB_DEPENDS=		liblttng-ust.so:sysutils/lttng-ust
-USDT_BROKEN=			error: use of undeclared identifier 'tor_circuit': https://gitlab.torproject.org/tpo/core/tor/-/issues/40174
+USDT_BROKEN=			error: use of undeclared identifier 'tor_circuit': https://gitlab.torproject.org/tpo/core/tor/-/issues/40174#note_2714275
 LOG_DEBUG_DESC=			Build with tracing event to debug log
 LOG_DEBUG_CONFIGURE_ENABLE=	tracing-instrumentation-log-debug
 
@@ -88,6 +88,7 @@ TOR_LIBEVENT_LIBS=	${LOCALBASE}/lib/libevent.a
 .  if ${PORT_OPTIONS:MZSTD}
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libzstd.a:archivers/zstd
 TOR_ZSTD_LIBS=		${LOCALBASE}/lib/libzstd.a
+LDFLAGS+=		-lelf # needed by libexecinfo.a
 .  endif
 .else
 CONFIGURE_ARGS+=	--enable-linker-hardening
@@ -102,7 +103,8 @@ TOR_ZSTD_LIBS=		-lzstd
 .if ${PORT_OPTIONS:MTCMALLOC}
 CONFIGURE_ARGS+=	--with-malloc=tcmalloc
 .if ${PORT_OPTIONS:MSTATIC_TOR}
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libtcmalloc.a:devel/google-perftools
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libtcmalloc.a:devel/google-perftools # for static 'tor' executable
+RUN_DEPENDS+=		google-perftool>0:devel/google-perftools # for a still-dynamic 'tor-gencert' executable
 LDFLAGS+=		-lc++ -lm # required by libtcmalloc.a and isn't cocered by google-perftools' `pkg-config --libs libtcmalloc` output
 .else
 LIB_DEPENDS+=		libtcmalloc.so:devel/google-perftools
