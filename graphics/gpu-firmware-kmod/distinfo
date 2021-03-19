@@ -1,3 +1,3 @@
-TIMESTAMP = 1607892847
-SHA256 (FreeBSDDesktop-kms-firmware-g20201213-efe0d9f_GH0.tar.gz) = e896b5311527b7e463d9f16075c50d0516c045a3ac6e4e2512278724f4176cd8
-SIZE (FreeBSDDesktop-kms-firmware-g20201213-efe0d9f_GH0.tar.gz) = 24336631
+TIMESTAMP = 1616132379
+SHA256 (freebsd-drm-kmod-firmware-g20201213-efe0d9f_GH0.tar.gz) = 4526598902985352a8c5fc53706ef413e8f88b127e0929c6782828e46e63704d
+SIZE (freebsd-drm-kmod-firmware-g20201213-efe0d9f_GH0.tar.gz) = 24340480
