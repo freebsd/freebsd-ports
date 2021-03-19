@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	manaplus
-DISTVERSION=	1.9.3.23
-PORTREVISION=	1
+DISTVERSION=	2.1.3.17
 CATEGORIES=	games
 MASTER_SITES=	http://download.evolonline.org/manaplus/download/${PORTVERSION}/
 
@@ -18,8 +17,8 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libcurl.so:ftp/curl
 
 USES=		autoreconf compiler:c++11-lang pkgconfig:build sdl tar:xz xorg
-USE_XORG=	x11
 USE_SDL=	sdl2 gfx2 image2 mixer2 net2 ttf2
+USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sdl2 \
@@ -29,14 +28,13 @@ OPTIONS_DEFINE=		OPENGL NLS
 OPTIONS_DEFAULT=	OPENGL
 OPTIONS_SUB=		yes
 
-OPENGL_CONFIGURE_WITH=	opengl
-OPENGL_USES=		gl
-OPENGL_USE=		GL=gl
-
 NLS_USES=		gettext
 NLS_USES_OFF=		gettext-tools
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
-NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
 NLS_CONFIGURE_ENABLE=	nls
+NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
+OPENGL_USES=		gl
+OPENGL_USE=		GL=gl
+OPENGL_CONFIGURE_WITH=	opengl
 
 .include <bsd.port.mk>

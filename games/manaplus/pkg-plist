@@ -2,9 +2,9 @@ bin/dyecmd
 bin/manaplus
 man/man6/manaplus.6.gz
 man/man6/manaplustest.6.gz
-share/appdata/manaplus.appdata.xml
 share/applications/manaplus.desktop
 share/applications/manaplustest.desktop
+share/icons/hicolor/scalable/apps/manaplus.svg
 %%NLS%%share/locale/ca/LC_MESSAGES/manaplus.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/manaplus.mo
 %%NLS%%share/locale/de/LC_MESSAGES/manaplus.mo
@@ -201,7 +201,6 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/graphics/sprites/manaplus_emotes.xml
 %%DATADIR%%/data/graphics/sprites/manaplus_emotions.png
 %%DATADIR%%/data/graphics/sprites/test.xml
-%%DATADIR%%/data/help/about-tmw.txt
 %%DATADIR%%/data/help/about.txt
 %%DATADIR%%/data/help/chatcommands.txt
 %%DATADIR%%/data/help/chatguild.txt
@@ -210,7 +209,6 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/help/download.txt
 %%DATADIR%%/data/help/footer.txt
 %%DATADIR%%/data/help/header.txt
-%%DATADIR%%/data/help/idx/about-tmw.idx
 %%DATADIR%%/data/help/idx/about.idx
 %%DATADIR%%/data/help/idx/chatcommands.idx
 %%DATADIR%%/data/help/idx/chatguild.idx
@@ -818,4 +816,4 @@ share/applications/manaplustest.desktop
 %%DATADIR%%/data/translations/help/ru.po
 %%DATADIR%%/data/translations/help/zh_CN.po
 %%DATADIR%%/data/translations/test/test1.po
-share/pixmaps/manaplus.png
+share/metainfo/manaplus.metainfo.xml
