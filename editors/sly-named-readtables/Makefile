@@ -10,7 +10,7 @@ COMMENT=	Support different readtables in the same file for SLY
 
 LICENSE=	PD
 
-MY_DEPENDS=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/sly/sly.el:editors/sly
+MY_DEPENDS=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/sly/sly.el:editors/sly@${EMACS_FLAVOR}
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
 
