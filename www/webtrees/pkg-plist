@@ -571,6 +571,7 @@
 %%WWWDIR%%/language/fr.mo
 %%WWWDIR%%/language/gl.mo
 %%WWWDIR%%/language/he.mo
+%%WWWDIR%%/language/hi.mo
 %%WWWDIR%%/language/hr.mo
 %%WWWDIR%%/language/hu.mo
 %%WWWDIR%%/language/id.mo
@@ -579,7 +580,9 @@
 %%WWWDIR%%/language/ja.mo
 %%WWWDIR%%/language/jv.mo
 %%WWWDIR%%/language/ka.mo
+%%WWWDIR%%/language/kk.mo
 %%WWWDIR%%/language/ko.mo
+%%WWWDIR%%/language/ku.mo
 %%WWWDIR%%/language/ln.mo
 %%WWWDIR%%/language/lt.mo
 %%WWWDIR%%/language/lv.mo
@@ -606,9 +609,11 @@
 %%WWWDIR%%/language/sw.mo
 %%WWWDIR%%/language/ta.mo
 %%WWWDIR%%/language/th.mo
+%%WWWDIR%%/language/tl.mo
 %%WWWDIR%%/language/tr.mo
 %%WWWDIR%%/language/tt.mo
 %%WWWDIR%%/language/uk.mo
+%%WWWDIR%%/language/ur.mo
 %%WWWDIR%%/language/vi.mo
 %%WWWDIR%%/language/yi.mo
 %%WWWDIR%%/language/zh-Hans.mo
@@ -2237,6 +2242,7 @@
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyRemoveScript.txt
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AllowHostnameUnderscore.txt
+%%WWWDIR%%/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AllowParseManyTags.txt
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt
@@ -2474,7 +2480,7 @@
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/maintenance/compile-doxygen.sh
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/maintenance/config-scanner.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/maintenance/flush-definition-cache.php
-%%WWWDIR%%/vendor/ezyang/htmlpurifier/maintenance/flush.php
+%%WWWDIR%%/vendor/ezyang/htmlpurifier/maintenance/flush.sh
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/maintenance/generate-entity-file.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/maintenance/generate-includes.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/maintenance/generate-ph5p-patch.php
@@ -2487,7 +2493,6 @@
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/maintenance/regenerate-docs.sh
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/maintenance/remove-trailing-whitespace.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/maintenance/rename-config.php
-%%WWWDIR%%/vendor/ezyang/htmlpurifier/maintenance/update-config.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/package.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/phpdoc.ini
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/plugins/modx.txt
@@ -2504,10 +2509,9 @@
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/plugins/phorum/settings/migrate-sigs-form.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/plugins/phorum/settings/migrate-sigs.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/plugins/phorum/settings/save.php
-%%WWWDIR%%/vendor/ezyang/htmlpurifier/release1-update.php
-%%WWWDIR%%/vendor/ezyang/htmlpurifier/release2-tag.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/test-settings.sample.php
 %%WWWDIR%%/vendor/ezyang/htmlpurifier/test-settings.travis.php
+%%WWWDIR%%/vendor/ezyang/htmlpurifier/update-for-release
 %%WWWDIR%%/vendor/fisharebest/algorithm/.codeclimate.yml
 %%WWWDIR%%/vendor/fisharebest/algorithm/CHANGELOG.md
 %%WWWDIR%%/vendor/fisharebest/algorithm/LICENSE.md
@@ -5709,6 +5713,11 @@
 %%WWWDIR%%/vendor/symfony/polyfill-php70/Resources/stubs/TypeError.php
 %%WWWDIR%%/vendor/symfony/polyfill-php70/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-php70/composer.json
+%%WWWDIR%%/vendor/symfony/polyfill-php71/LICENSE
+%%WWWDIR%%/vendor/symfony/polyfill-php71/Php71.php
+%%WWWDIR%%/vendor/symfony/polyfill-php71/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-php71/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php71/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-php72/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php72/Php72.php
 %%WWWDIR%%/vendor/symfony/polyfill-php72/README.md
@@ -5718,14 +5727,18 @@
 %%WWWDIR%%/vendor/symfony/polyfill-util/BinaryNoFuncOverload.php
 %%WWWDIR%%/vendor/symfony/polyfill-util/BinaryOnFuncOverload.php
 %%WWWDIR%%/vendor/symfony/polyfill-util/LICENSE
-%%WWWDIR%%/vendor/symfony/polyfill-util/LegacyTestListener.php
 %%WWWDIR%%/vendor/symfony/polyfill-util/README.md
 %%WWWDIR%%/vendor/symfony/polyfill-util/TestListener.php
+%%WWWDIR%%/vendor/symfony/polyfill-util/TestListenerForV5.php
+%%WWWDIR%%/vendor/symfony/polyfill-util/TestListenerForV6.php
+%%WWWDIR%%/vendor/symfony/polyfill-util/TestListenerForV7.php
 %%WWWDIR%%/vendor/symfony/polyfill-util/TestListenerTrait.php
 %%WWWDIR%%/vendor/symfony/polyfill-util/composer.json
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/.github/FUNDING.yml
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/CHANGELOG.TXT
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/LICENSE.TXT
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/README.md
+%%WWWDIR%%/vendor/tecnickcom/tcpdf/VERSION
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/composer.json
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/config/tcpdf_config.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/barcodes/example_1d_html.php
@@ -5887,7 +5900,6 @@
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/examples/tcpdf_include.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0/COPYING
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0/ChangeLog
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0/ChangeLog.9745.BAK
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/ae_fonts_2.0/README
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/aealarabiya.ctg.z
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/aealarabiya.php
@@ -5992,7 +6004,6 @@
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/freefont-20120503/COPYING
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/freefont-20120503/CREDITS
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/freefont-20120503/ChangeLog
-%%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/freefont-20120503/ChangeLog.10070.BAK
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/freefont-20120503/INSTALL
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/freefont-20120503/README
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/freefont-20120503/TROUBLESHOOTING

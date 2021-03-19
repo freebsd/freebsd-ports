@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	webtrees
-PORTVERSION=	1.7.13
+PORTVERSION=	1.7.18
 CATEGORIES=	www
 MASTER_SITES=	http://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	fbsd@opal.com
-COMMENT=	Online genealogy viewer
+COMMENT=	Online genealogy viewer (for PHP 5.3-7.3)
 
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
@@ -21,6 +21,13 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message pkg-deinstall
+SUB_LIST=	VERSION_SUFFIX=${PKGNAMESUFFIX}
+
+post-patch: .SILENT
+	${RM} -r ${WRKSRC}/webtrees/vendor/michelf/php-markdown/test
+	${RM} ${WRKSRC}/webtrees/vendor/michelf/php-markdown/.editorconfig
+	${RM} ${WRKSRC}/webtrees/vendor/michelf/php-markdown/.scrutinizer.yml
+	${RM} ${WRKSRC}/webtrees/vendor/michelf/php-markdown/phpunit.xml.dist
 
 do-install:
 	-${MKDIR} ${STAGEDIR}${WWWDIR}
@@ -28,7 +35,7 @@ do-install:
 	@(cd ${WRKSRC}/${PORTNAME}; ${FIND} . -not -type d) | ${SORT} | \
 		${SED} -ne 's,^${PORTNAME}/,${WWWDIR_REL}/,p' >> ${TMPPLIST}
 	@${ECHO_CMD} \
-		'@postexec chown -R ${WWWOWN}:${WWWGRP} %D/${WWWDIR_REL}/data' \
+		'@postexec ${CHOWN} -R ${WWWOWN}:${WWWGRP} %D/${WWWDIR_REL}/data' \
 		>> ${TMPPLIST}
 
 .include <bsd.port.mk>

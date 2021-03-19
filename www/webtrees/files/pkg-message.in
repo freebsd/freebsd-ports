@@ -7,7 +7,7 @@ webtrees for the first time:
 1. For installation on the apache web server, add the following to your
    apache site configuration, and restart the web server:
 
-	Alias /webtrees %%WWWDIR%%/
+	Alias /webtrees%%VERSION_SUFFIX%% %%WWWDIR%%/
 
 	### Add the AcceptPathInfo directive only for Apache 2.0.30
 	### or later.
@@ -23,12 +23,12 @@ webtrees for the first time:
    and database using commands such as (substitute PASSWD for something
    of your own choosing):
 
-	mysql> create user webtrees@localhost identified by PASSWD;
-	mysql> create database webtrees;
-	mysql> grant all on webtrees.* to webtrees@localhost;
+	mysql> create user webtrees%%VERSION_SUFFIX%%@localhost identified by PASSWD;
+	mysql> create database webtrees%%VERSION_SUFFIX%%;
+	mysql> grant all on webtrees%%VERSION_SUFFIX%%.* to webtrees%%VERSION_SUFFIX%%@localhost;
 
 3. Configure webtrees by browsing to the webtrees URL:
-	http://your.server.com/webtrees/
+	http://your.server.com/webtrees%%VERSION_SUFFIX%%/
    and you should be taken to the setup wizard, which will lead you
    through setting up webtrees: asking for the database server, database
    user and database name, and then assist you in creating a webtrees
