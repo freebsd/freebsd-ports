@@ -4,7 +4,6 @@
 PORTNAME=	nss_mdns
 PORTVERSION=	0.14.1.20200624
 CATEGORIES=	dns
-DISTNAME=	nss-mdns-${PORTVERSION}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	NSS module implementing multicast DNS name resolution

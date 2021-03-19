@@ -25,14 +25,13 @@ RUN_DEPENDS=	redis-server:databases/redis \
 		${PYTHON_PKGNAMEPREFIX}impacket>=0:net/py-impacket@${PY_FLAVOR}
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone
+GH_PROJECT=	${PORTNAME}-scanner
 
 USES=		bison cmake gnome pkgconfig python:3.5+
 USE_GNOME=	glib20
 
 USERS=		gvm
 GROUPS=		${USERS}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-scanner-${DISTVERSION}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/ospd

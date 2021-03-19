@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cabal-install
+DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	3.4.0.0
 CATEGORIES=	devel haskell
 
@@ -16,7 +17,6 @@ USES=		cabal:nodefault compiler:c11 python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	haskell
 GH_PROJECT=	cabal
-GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
 
 USE_CABAL=	async-2.2.2_1 \
 		base16-bytestring-0.1.1.7 \

@@ -102,8 +102,6 @@ PORTEXAMPLES=	*
 
 PORTSCOUT=	limitw:1,even # stay with stable versions only
 
-# Workaround the bug in Mk/bsd.port.mk, cf. PR#246196:
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC_SUBDIR=	core/server/
 
 USERS=		openxpki

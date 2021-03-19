@@ -3,8 +3,8 @@
 
 PORTNAME=	wbxml2
 PORTVERSION=	0.11.7
+DISTVERSIONPREFIX=	libwbxml-
 CATEGORIES=	textproc devel
-DISTNAME=	libwbxml-${PORTVERSION}
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Library & tools for converting wbxml<->xml
@@ -19,7 +19,6 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libwbxml
 GH_PROJECT=	libwbxml
-GH_TAGNAME=	libwbxml-${PORTVERSION}
 
 DOCSDIR=	${PREFIX}/share/doc/libwbxml
 

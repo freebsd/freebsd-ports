@@ -3,6 +3,7 @@
 
 PORTNAME=	sniffit
 PORTVERSION=	0.5
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net security
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=autoreconf
 USE_GITHUB=	yes
 GH_ACCOUNT=	resurrecting-open-source-projects
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 

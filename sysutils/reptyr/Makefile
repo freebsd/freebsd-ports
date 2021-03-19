@@ -3,6 +3,7 @@
 
 PORTNAME=	reptyr
 PORTVERSION=	0.8.0
+DISTVERSIONPREFIX=	reptyr-
 CATEGORIES=	sysutils
 
 MAINTAINER=	andoriyu@gmail.com
@@ -12,7 +13,6 @@ LICENSE=	MIT
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nelhage
-GH_TAGNAME=	reptyr-${PORTVERSION}
 
 MAKE_ARGS=	BASHCOMPDIR=${PREFIX}/share/bash-completion/completions \
 		MANDIR=${MANPREFIX}/man

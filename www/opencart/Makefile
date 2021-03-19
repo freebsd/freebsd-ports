@@ -15,7 +15,7 @@ GH_ACCOUNT=	opencart
 
 USES=		php
 USE_PHP=	filter mysqli curl mbstring gd zlib mcrypt session zip hash openssl
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/upload
+WRKSRC_SUBDIR=	upload
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

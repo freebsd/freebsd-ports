@@ -65,5 +65,5 @@ SHA256 (cabal/zlib-0.6.2.1/zlib-0.6.2.1.tar.gz) = f0f810ff173560b60392db448455c0
 SIZE (cabal/zlib-0.6.2.1/zlib-0.6.2.1.tar.gz) = 143424
 SHA256 (cabal/zlib-0.6.2.1/revision/1.cabal) = d34ddf5fece4d1e9d471b5298f36335bb3cfe12cb5a1b8525c42f0b665382f45
 SIZE (cabal/zlib-0.6.2.1/revision/1.cabal) = 4547
-SHA256 (cabal/haskell-cabal-3.4.0.0-cabal-install-3.4.0.0_GH0.tar.gz) = e4fbd5eb1d77400746a993679181f159aa415a37b931b26d67f5602f63ce971c
-SIZE (cabal/haskell-cabal-3.4.0.0-cabal-install-3.4.0.0_GH0.tar.gz) = 2072483
+SHA256 (cabal/haskell-cabal-cabal-install-3.4.0.0_GH0.tar.gz) = e4fbd5eb1d77400746a993679181f159aa415a37b931b26d67f5602f63ce971c
+SIZE (cabal/haskell-cabal-cabal-install-3.4.0.0_GH0.tar.gz) = 2072483

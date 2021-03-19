@@ -4,8 +4,6 @@ PORTNAME=	restic
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.0
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/restic/restic/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
-DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	gregf@beastie.tech
 COMMENT=	Fast, secure, efficient backup program

@@ -6,7 +6,6 @@ DISTVERSION=	0.6.0
 DISTVERSIONSUFFIX=	b0
 PORTREVISION=	2
 CATEGORIES=	cad
-DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Open source IFC library and geometry engine

@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	nfs-exporter
+DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
-DISTNAME=	freebsd-nfs-exporter-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	Prometheus exporter for NFS statistics
@@ -18,7 +18,6 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	Axcient
 GH_PROJECT=	freebsd-nfs-exporter
-GH_TAGNAME=	v${PORTVERSION}
 USE_RC_SUBR=	nfs_exporter
 
 CARGO_CRATES=	aho-corasick-0.7.13 \

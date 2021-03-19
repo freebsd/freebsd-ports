@@ -31,7 +31,6 @@ USES=		python:3.7+
 USE_GITHUB=	yes
 GH_ACCOUNT=	DataDog
 GH_PROJECT=	integrations-core
-GH_TAGNAME=	${DISTVERSION}
 
 ETCDIR=		${PREFIX}/etc/datadog
 

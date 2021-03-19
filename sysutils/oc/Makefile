@@ -5,7 +5,6 @@ PORTNAME=	oc
 PORTVERSION=	4.5
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	sysutils
-DISTNAME=	${GIT_COMMIT}.zip
 
 MAINTAINER=	jhixson@freebsd.org
 COMMENT=	OpenShift Command Line

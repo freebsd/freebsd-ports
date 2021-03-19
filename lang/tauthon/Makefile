@@ -7,6 +7,7 @@
 # 'pkg-message').
 # -- Olivier Certner <olce.freebsd.ports@certner.fr>
 PORTNAME=	tauthon
+DISTVERSIONPREFIX=	v
 DISTVERSION=	2.8.2
 CATEGORIES=	lang python
 
@@ -24,7 +25,6 @@ PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_GITHUB=	yes
 GH_ACCOUNT=	naftaliharris
 GH_PROJECT=	tauthon
-GH_TAGNAME=	v${DISTVERSION}
 
 USE_LDCONFIG=	yes
 # Piggyback on Python support in shebangfix

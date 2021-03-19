@@ -4,6 +4,7 @@
 
 PORTNAME?=	libv4l
 PORTVERSION=	1.20.0
+DISTVERSIONPREFIX=	v4l-utils-
 CATEGORIES=	multimedia
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -17,7 +18,6 @@ USES=		compiler:c11 tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	hselasky
 GH_PROJECT=	v4l-utils
-GH_TAGNAME=	v4l-utils-${PORTVERSION}
 
 GH_TUPLE=	hselasky:webcamd:v5.10.6.0:webcamd \
 		torvalds:linux:v5.10-rc6:linux

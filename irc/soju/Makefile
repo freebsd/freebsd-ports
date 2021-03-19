@@ -4,7 +4,6 @@ PORTNAME=	soju
 DISTVERSION=	0.0.20201214
 CATEGORIES=	irc
 MASTER_SITES=	https://git.sr.ht/~emersion/go-scfg/archive/:goscfg
-DISTNAME=	go-scfg-${GO_SCFG_REV}
 DISTFILES=	${GO_SCFG_REV}.tar.gz:goscfg
 
 MAINTAINER=	ashish@FreeBSD.org

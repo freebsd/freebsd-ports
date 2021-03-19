@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cannonball
+DISTVERSIONPREFIX=	v
 DISTVERSION=	0.31
 CATEGORIES=	emulators games
 
@@ -25,7 +26,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	djyt
-GH_TAGNAME=	v${DISTVERSION}
 
 BUILD_WRKSRC=		${WRKSRC}/cmake
 CONFIGURE_WRKSRC=	${WRKSRC}/cmake
