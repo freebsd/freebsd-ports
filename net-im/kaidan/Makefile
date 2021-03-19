@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	kaidan
-DISTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.7.0
 CATEGORIES=	net-im kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
+MASTER_SITES=	KDE/unstable/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	User-friendly XMPP client for every device
