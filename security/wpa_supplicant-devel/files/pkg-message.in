@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+To use the ports version of WPA Supplicant instead of the base, add:
+
+    wpa_supplicant_program="%%PREFIX%%/sbin/wpa_supplicant"
+
+to /etc/rc.conf
+EOM
+}
+]

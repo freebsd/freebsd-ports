@@ -241,6 +241,7 @@
     SUBDIR += hlmaster
     SUBDIR += honeyd
     SUBDIR += hostapd
+    SUBDIR += hostapd-devel
     SUBDIR += hping
     SUBDIR += hping3
     SUBDIR += hsflowd
