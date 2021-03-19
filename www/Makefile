@@ -2281,7 +2281,6 @@
     SUBDIR += webstone
     SUBDIR += webstone-ssl
     SUBDIR += webtrees
-    SUBDIR += webtrees20
     SUBDIR += wgetpaste
     SUBDIR += wikicalc
     SUBDIR += wordpress
