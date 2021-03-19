@@ -1,6 +1,6 @@
-TIMESTAMP = 1591778447
-SHA256 (aaronjanse-3mux-v1.0.1_GH0.tar.gz) = 925e23850ad69ce12069bb4c48af6e70c820bbd4bfe5a83ebf72eaefb9d8ab83
-SIZE (aaronjanse-3mux-v1.0.1_GH0.tar.gz) = 10338666
+TIMESTAMP = 1616095593
+SHA256 (aaronjanse-3mux-v1.1.0_GH0.tar.gz) = 0f4dae181914c73eaa91bdb21ee0875f21b5da64c7c9d478f6d52a2d0aa2c0ea
+SIZE (aaronjanse-3mux-v1.1.0_GH0.tar.gz) = 10341946
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
 SIZE (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 42077
 SHA256 (BurntSushi-xdg-e80d3446fea1_GH0.tar.gz) = 15598c621ff19afd29510f08b563fa733154a037e413b9b8a793dc5ea6e763e2
@@ -19,5 +19,7 @@ SHA256 (mattn-go-runewidth-v0.0.9_GH0.tar.gz) = 4f20a337ad06e071f29535afe9c5207d
 SIZE (mattn-go-runewidth-v0.0.9_GH0.tar.gz) = 16714
 SHA256 (npat-efault-poller-v2.0.0_GH0.tar.gz) = a1b5a9fa424bd003465405e7af1d0bf84c34e3ff6af0bd0bfd3f70875b14c779
 SIZE (npat-efault-poller-v2.0.0_GH0.tar.gz) = 15842
+SHA256 (nu7hatch-gouuid-179d4d0c4d8d_GH0.tar.gz) = 2ead616e5bb23c0c669a1485cb45f083d8d6752acc5faa5f668521b7e99ec2e1
+SIZE (nu7hatch-gouuid-179d4d0c4d8d_GH0.tar.gz) = 3733
 SHA256 (sevlyar-go-daemon-v0.1.5_GH0.tar.gz) = ce58c81c666ba7858b2e081c134241d6b1af8c67f9de89426bf83a1e0496c3c3
 SIZE (sevlyar-go-daemon-v0.1.5_GH0.tar.gz) = 64118
