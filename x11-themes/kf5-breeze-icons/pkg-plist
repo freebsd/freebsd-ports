@@ -10137,7 +10137,7 @@ share/icons/breeze-dark/preferences/32/preferences-kde-connect.svg
 share/icons/breeze-dark/preferences/32/preferences-log.svg
 share/icons/breeze-dark/preferences/32/preferences-other.svg
 share/icons/breeze-dark/preferences/32/preferences-plugin.svg
-share/icons/breeze-dark/preferences/32/preferences-%%CMAKE_BUILD_TYPE%%notes.svg
+share/icons/breeze-dark/preferences/32/preferences-releasenotes.svg
 share/icons/breeze-dark/preferences/32/preferences-security-apparmor.svg
 share/icons/breeze-dark/preferences/32/preferences-security-firewall.svg
 share/icons/breeze-dark/preferences/32/preferences-security-kerberos.svg
@@ -10249,7 +10249,7 @@ share/icons/breeze-dark/preferences/32/yast-nis.svg
 share/icons/breeze-dark/preferences/32/yast-ntp-client.svg
 share/icons/breeze-dark/preferences/32/yast-printer.svg
 share/icons/breeze-dark/preferences/32/yast-proxy.svg
-share/icons/breeze-dark/preferences/32/yast-%%CMAKE_BUILD_TYPE%%-notes.svg
+share/icons/breeze-dark/preferences/32/yast-release-notes.svg
 share/icons/breeze-dark/preferences/32/yast-remote.svg
 share/icons/breeze-dark/preferences/32/yast-samba-client.svg
 share/icons/breeze-dark/preferences/32/yast-samba-server.svg
@@ -21021,7 +21021,7 @@ share/icons/breeze/preferences/32/preferences-kde-connect.svg
 share/icons/breeze/preferences/32/preferences-log.svg
 share/icons/breeze/preferences/32/preferences-other.svg
 share/icons/breeze/preferences/32/preferences-plugin.svg
-share/icons/breeze/preferences/32/preferences-%%CMAKE_BUILD_TYPE%%notes.svg
+share/icons/breeze/preferences/32/preferences-releasenotes.svg
 share/icons/breeze/preferences/32/preferences-security-apparmor.svg
 share/icons/breeze/preferences/32/preferences-security-firewall.svg
 share/icons/breeze/preferences/32/preferences-security-kerberos.svg
@@ -21133,7 +21133,7 @@ share/icons/breeze/preferences/32/yast-nis.svg
 share/icons/breeze/preferences/32/yast-ntp-client.svg
 share/icons/breeze/preferences/32/yast-printer.svg
 share/icons/breeze/preferences/32/yast-proxy.svg
-share/icons/breeze/preferences/32/yast-%%CMAKE_BUILD_TYPE%%-notes.svg
+share/icons/breeze/preferences/32/yast-release-notes.svg
 share/icons/breeze/preferences/32/yast-remote.svg
 share/icons/breeze/preferences/32/yast-samba-client.svg
 share/icons/breeze/preferences/32/yast-samba-server.svg
