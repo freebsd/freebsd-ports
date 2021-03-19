@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	ocp
-PORTVERSION=	0.2.2
-DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTVERSION=	0.2.90
 PORTEPOCH=	1
 CATEGORIES=	audio
+MASTER_SITES=	https://github.com/mywave82/opencubicplayer/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Legendary Open Cubic Player
@@ -24,22 +23,16 @@ LIB_DEPENDS=	libid3tag.so:audio/libid3tag \
 		libvorbis.so:audio/libvorbis
 
 USES=		compiler:c11 dos2unix gmake gnome iconv localbase:ldflags \
-		makeinfo ncurses pkgconfig tar:xz
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	mywave82
-GH_PROJECT=	opencubicplayer
-GH_TUPLE=	mywave82:timidity:77cd92d:timidity/playgmi/timidity-git \
-		mywave82:sidplay-residfp-ocp:152551f:sidplayresidfpocp/playsid/sidplayfp-git
+		makeinfo ncurses pkgconfig tar:bz2
 
 INSTALLS_ICONS=	yes
-USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--with-dir-suffix="" \
 		--without-sdl
-CONFIGURE_ENV=	SHARED_FLAGS="${LDFLAGS} -shared"
+CONFIGURE_ENV=	SHARED_FLAGS="${LDFLAGS} -shared" \
+		XA=${PREFIX}/bin/xa65
 
 MAKE_JOBS_UNSAFE=	yes
 

@@ -6,13 +6,9 @@ lib/ocp/autoload/10-devi.so
 lib/ocp/autoload/10-hardware.so
 lib/ocp/autoload/10-mchasm.so
 lib/ocp/autoload/10-sets.so
-lib/ocp/autoload/11-framelock.so
 lib/ocp/autoload/12-poutput.so
-lib/ocp/autoload/15-keyhelp.so
 lib/ocp/autoload/20-cphelper.so
 lib/ocp/autoload/25-pfilesel.so
-lib/ocp/autoload/30-arctar.so
-lib/ocp/autoload/30-arczip.so
 lib/ocp/autoload/30-aytype.so
 %%FLAC%%lib/ocp/autoload/30-flacptype.so
 lib/ocp/autoload/30-fstypes.so
