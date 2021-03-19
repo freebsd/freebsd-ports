@@ -220,6 +220,7 @@ include/isc/taskpool.h
 include/isc/thread.h
 include/isc/time.h
 include/isc/timer.h
+include/isc/tls.h
 include/isc/tm.h
 include/isc/types.h
 include/isc/utf8.h

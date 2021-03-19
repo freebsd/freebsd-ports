@@ -1,8 +1,8 @@
 Fixup gssapi and db detection.
 
---- configure.orig	2021-02-04 11:35:16 UTC
+--- configure.orig	2021-03-11 13:20:59 UTC
 +++ configure
-@@ -17701,27 +17701,9 @@ done
+@@ -17761,27 +17761,9 @@ done
  		# problems start to show up.
  		saved_libs="$LIBS"
  		for TRY_LIBS in \
@@ -32,7 +32,7 @@ Fixup gssapi and db detection.
  		    { $as_echo "$as_me:${as_lineno-$LINENO}: checking linking as $TRY_LIBS" >&5
  $as_echo_n "checking linking as $TRY_LIBS... " >&6; }
  		    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-@@ -17764,47 +17746,7 @@ $as_echo "no" >&6; } ;;
+@@ -17824,47 +17806,7 @@ $as_echo "no" >&6; } ;;
  		no) as_fn_error $? "could not determine proper GSSAPI linkage" "$LINENO" 5 ;;
  		esac
  
@@ -81,7 +81,7 @@ Fixup gssapi and db detection.
  		DNS_GSSAPI_LIBS="$LIBS"
  
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: using GSSAPI from $use_gssapi/lib and $use_gssapi/include" >&5
-@@ -23199,7 +23141,7 @@ $as_echo "" >&6; }
+@@ -23263,7 +23205,7 @@ $as_echo "" >&6; }
  			# Check other locations for includes.
  			# Order is important (sigh).
  
