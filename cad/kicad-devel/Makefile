@@ -26,10 +26,9 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 CONFLICTS=	kicad-4.*
 
 USE_GITLAB=	yes
-GL_ACCOUNT=	kicad
-GL_PROJECT=	code/kicad
+GL_ACCOUNT=	kicad/code
+GL_PROJECT=	kicad
 GL_COMMIT=	${GIT_SRC_HASH}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${GL_COMMIT}-${GL_COMMIT}
 
 CXXFLAGS+=	--std=c++14 -I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include
 USE_GL=		gl glew glu glut
