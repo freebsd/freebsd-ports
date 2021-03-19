@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clawsker
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.4
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.claws-mail.org/tools/
 

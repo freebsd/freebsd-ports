@@ -9,9 +9,10 @@ share/icons/hicolor/64x64/apps/clawsker.png
 %%NLS%%share/locale/de/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/es/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/clawsker.mo
-%%NLS%%share/locale/id/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/clawsker.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/clawsker.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/clawsker.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/clawsker.mo
