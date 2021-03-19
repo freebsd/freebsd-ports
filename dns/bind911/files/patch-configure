@@ -3,7 +3,7 @@
 - Make sure only json-c is detected.
 - Cleanup the BDB discovery code to find more recent versions.
 
---- configure.orig	2021-02-04 13:06:04 UTC
+--- configure.orig	2021-03-09 12:49:28 UTC
 +++ configure
 @@ -15692,27 +15692,9 @@ done
  		# problems start to show up.
@@ -84,7 +84,7 @@
  		DNS_GSSAPI_LIBS="$LIBS"
  
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: using GSSAPI from $use_gssapi/lib and $use_gssapi/include" >&5
-@@ -18662,7 +18604,7 @@ case "$use_libjson" in
+@@ -18670,7 +18612,7 @@ case "$use_libjson" in
  	auto|yes)
  		for d in /usr /usr/local /opt/local
  		do
@@ -93,7 +93,7 @@
  			then
  				if test ${d} != /usr
  				then
-@@ -18670,29 +18612,16 @@ case "$use_libjson" in
+@@ -18678,29 +18620,16 @@ case "$use_libjson" in
  					LIBS="$LIBS -L${d}/lib"
  				fi
  				have_libjson="yes"
@@ -124,7 +124,7 @@
  			have_libjson_c="yes"
  		else
  			as_fn_error $? "$use_libjson/include/json{,-c}/json.h not found." "$LINENO" 5
-@@ -24987,7 +24916,7 @@ $as_echo "" >&6; }
+@@ -24995,7 +24924,7 @@ $as_echo "" >&6; }
  			# Check other locations for includes.
  			# Order is important (sigh).
  
