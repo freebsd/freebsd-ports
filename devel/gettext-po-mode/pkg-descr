@@ -1,0 +1,6 @@
+GNU gettext is a framework of libraries and tools for internationalisation
+and localisation of software.
+
+This package contains the po-mode for the emacs editor.
+
+WWW: https://www.gnu.org/software/gettext/

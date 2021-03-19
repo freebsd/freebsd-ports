@@ -793,6 +793,7 @@
     SUBDIR += gettext
     SUBDIR += gettext-lint
     SUBDIR += gettext-msghack
+    SUBDIR += gettext-po-mode
     SUBDIR += gettext-runtime
     SUBDIR += gettext-tools
     SUBDIR += gflags
