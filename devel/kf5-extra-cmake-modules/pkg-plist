@@ -15,9 +15,11 @@ share/ECM/find-modules/FindGperf.cmake
 share/ECM/find-modules/FindGradle.cmake
 share/ECM/find-modules/FindIcoTool.cmake
 share/ECM/find-modules/FindInotify.cmake
+share/ECM/find-modules/FindIsoCodes.cmake
 share/ECM/find-modules/FindKF5.cmake
 share/ECM/find-modules/FindLibExiv2.cmake
 share/ECM/find-modules/FindLibGit2.cmake
+share/ECM/find-modules/FindLibcap.cmake
 share/ECM/find-modules/FindOpenEXR.cmake
 share/ECM/find-modules/FindPhoneNumber.cmake
 share/ECM/find-modules/FindPoppler.cmake

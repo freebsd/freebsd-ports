@@ -34,6 +34,7 @@ include/KF5/KIOCore/KIO/JobUiDelegateExtension
 include/KF5/KIOCore/KIO/JobUiDelegateFactory
 include/KF5/KIOCore/KIO/ListJob
 include/KF5/KIOCore/KIO/MetaData
+include/KF5/KIOCore/KIO/MimeTypeFinderJob
 include/KF5/KIOCore/KIO/MimetypeJob
 include/KF5/KIOCore/KIO/MkdirJob
 include/KF5/KIOCore/KIO/MkpathJob
@@ -100,6 +101,7 @@ include/KF5/KIOCore/kio/jobuidelegateextension.h
 include/KF5/KIOCore/kio/jobuidelegatefactory.h
 include/KF5/KIOCore/kio/listjob.h
 include/KF5/KIOCore/kio/metadata.h
+include/KF5/KIOCore/kio/mimetypefinderjob.h
 include/KF5/KIOCore/kio/mimetypejob.h
 include/KF5/KIOCore/kio/mkdirjob.h
 include/KF5/KIOCore/kio/mkpathjob.h
@@ -207,6 +209,7 @@ include/KF5/KIOWidgets/KIO/RenameFileDialog
 include/KF5/KIOWidgets/KIO/SkipDialog
 include/KF5/KIOWidgets/KIO/SslUi
 include/KF5/KIOWidgets/KIO/ThumbCreator
+include/KF5/KIOWidgets/KIO/ThumbDevicePixelRatioDependentCreator
 include/KF5/KIOWidgets/KIO/ThumbSequenceCreator
 include/KF5/KIOWidgets/KOpenWithDialog
 include/KF5/KIOWidgets/KOverlayIconPlugin
@@ -246,6 +249,7 @@ include/KF5/KIOWidgets/kio/renamefiledialog.h
 include/KF5/KIOWidgets/kio/skipdialog.h
 include/KF5/KIOWidgets/kio/sslui.h
 include/KF5/KIOWidgets/kio/thumbcreator.h
+include/KF5/KIOWidgets/kio/thumbdevicepixelratiodependentcreator.h
 include/KF5/KIOWidgets/kio/thumbsequencecreator.h
 include/KF5/KIOWidgets/kiowidgets_export.h
 include/KF5/KIOWidgets/kopenwithdialog.h
@@ -822,6 +826,7 @@ share/doc/HTML/uk/kioslave5/telnet/index.docbook
 share/doc/HTML/uk/kioslave5/webdav/index.cache.bz2
 share/doc/HTML/uk/kioslave5/webdav/index.docbook
 share/kconf_update/filepicker.upd
+share/kdevappwizard/templates/ioslave.tar.bz2
 share/kf5/kcookiejar/domain_info
 share/knotifications5/proxyscout.notifyrc
 share/kservices5/cache.desktop
@@ -829,6 +834,7 @@ share/kservices5/cookies.desktop
 share/kservices5/data.protocol
 share/kservices5/http_cache_cleaner.desktop
 share/kservices5/kcmtrash.desktop
+share/kservices5/mailto.protocol
 share/kservices5/mms.protocol
 share/kservices5/mmst.protocol
 share/kservices5/mmsu.protocol

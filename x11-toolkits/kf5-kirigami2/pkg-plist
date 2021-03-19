@@ -59,7 +59,6 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/Separator.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ShadowedImage.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/SwipeListItem.qml
-%%QT_QMLDIR%%/org/kde/kirigami.2/Theme.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/ToolBarApplicationHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/Units.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/UrlButton.qml

@@ -2,13 +2,7 @@
 
 PORTNAME=	kio
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
-
-PATCH_SITES=	https://invent.kde.org/frameworks/kio/-/commit/
-PATCHFILES=	a8a2c08014484145a4bd2a541a1cbeb8be856bf1.diff:-p1 \
-		3134b410b98e40b34d3b80d123ee1304f6c084d4.diff:-p1 \
-		dd0cd63612edc7f65292c1aa74c70bc33dfba8af.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 resource and network access abstraction

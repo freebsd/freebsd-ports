@@ -1,9 +1,3 @@
-TIMESTAMP = 1613481341
-SHA256 (KDE/frameworks/5.79.0/kio-5.79.0.tar.xz) = 767c67aab4e1a43d1d2ebf74f9deab21791150cc5f533be561dc1346d16e25e6
-SIZE (KDE/frameworks/5.79.0/kio-5.79.0.tar.xz) = 3309016
-SHA256 (KDE/frameworks/5.79.0/a8a2c08014484145a4bd2a541a1cbeb8be856bf1.diff) = 97c9cd66b40e6a2784979dee6f6effcffd93657c050d28baae89e31d7963b1b2
-SIZE (KDE/frameworks/5.79.0/a8a2c08014484145a4bd2a541a1cbeb8be856bf1.diff) = 3265
-SHA256 (KDE/frameworks/5.79.0/3134b410b98e40b34d3b80d123ee1304f6c084d4.diff) = 079c4366721914ef8f474e9b78351607c27ec39b5c3e0f7f9018171cad7f1906
-SIZE (KDE/frameworks/5.79.0/3134b410b98e40b34d3b80d123ee1304f6c084d4.diff) = 637
-SHA256 (KDE/frameworks/5.79.0/dd0cd63612edc7f65292c1aa74c70bc33dfba8af.diff) = e76c68a6f65b4ed53076a85bd58a3fb51213a4924281fbd9a9bd8abe55f7be39
-SIZE (KDE/frameworks/5.79.0/dd0cd63612edc7f65292c1aa74c70bc33dfba8af.diff) = 625
+TIMESTAMP = 1615305411
+SHA256 (KDE/frameworks/5.80.0/kio-5.80.0.tar.xz) = 5a85fc02cec6ef550d4465e8126ac0a4d9d77c745ab7b05b6b6334a0e54e9775
+SIZE (KDE/frameworks/5.80.0/kio-5.80.0.tar.xz) = 3312052

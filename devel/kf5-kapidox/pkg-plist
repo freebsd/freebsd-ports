@@ -22,8 +22,6 @@ bin/kapidox_generate
 %%PYTHON_SITELIBDIR%%/kapidox/data/header.html
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/3rd-party/jquery/LICENSE.txt
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/3rd-party/jquery/jquery-3.1.0.min.js
-%%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/ako.webmanifest
-%%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/ako.webmanifest.license
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/css/bg.png
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/css/customdoxygen.css
 %%PYTHON_SITELIBDIR%%/kapidox/data/htmlresource/default_product.png
