@@ -9,6 +9,8 @@ MASTER_SITES=	http://github.com/fisharebest/${PORTNAME}/releases/download/${PORT
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Online genealogy viewer (for PHP 5.3-7.3)
 
+LICENSE=	GPLv3+
+
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 USES=		cpe php shebangfix zip
