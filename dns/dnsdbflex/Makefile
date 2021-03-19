@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	dnsdbflex
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	dns
 
 MAINTAINER=	truckman@FreeBSD.org
-COMMENT=	Tool to use the DNSDB Flexible Search API extensions.
+COMMENT=	Tool to use the DNSDB Flexible Search API extensions
 
 LICENSE=		APACHE20
 LICENSE_FILE_APACHE20=	${WRKSRC}/Apache-2.0
