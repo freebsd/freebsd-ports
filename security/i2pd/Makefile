@@ -41,18 +41,21 @@ UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
 HARDENING_CMAKE_BOOL=	WITH_HARDENING
 HARDENING_DESC=		Use hardening compiler flags
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/libi2pd/Reseed.cpp
+
+post-install:
 	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${INSTALL_DATA} ${WRKDIR}/i2pd.newsyslog.conf ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/i2pd.conf
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/contrib/i2pd.conf ${STAGEDIR}${ETCDIR}/i2pd.conf.sample
+	@(cd ${WRKSRC}/contrib && ${COPYTREE_SHARE} "certificates" ${STAGEDIR}${DATADIR})
 	@${MKDIR} ${STAGEDIR}/var/run/i2pd
 	@${MKDIR} ${STAGEDIR}/var/log/i2pd
 	@${MKDIR} ${STAGEDIR}/var/db/i2pd
 
-do-install-DOCS-on:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 

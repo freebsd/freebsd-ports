@@ -1,6 +1,23 @@
 bin/i2pd
 etc/newsyslog.conf.d/i2pd.conf
+lib/libi2pd.a
+lib/libi2pdclient.a
 man/man1/i2pd.1.gz
+%%DATADIR%%/certificates/family/gostcoin.crt
+%%DATADIR%%/certificates/family/i2p-dev.crt
+%%DATADIR%%/certificates/family/i2pd-dev.crt
+%%DATADIR%%/certificates/family/mca2-i2p.crt
+%%DATADIR%%/certificates/family/volatile.crt
+%%DATADIR%%/certificates/reseed/acetone_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/creativecowpat_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/echelon_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/hankhill19580_at_gmail.com.crt
+%%DATADIR%%/certificates/reseed/hottuna_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/igor_at_novg.net.crt
+%%DATADIR%%/certificates/reseed/lazygravy_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
+%%DATADIR%%/certificates/reseed/reseed_at_diva.exchange.crt
+%%DATADIR%%/certificates/router/orignal_at_mail.i2p.crt
 @sample %%ETCDIR%%/i2pd.conf.sample
 @dir(%%USER%%,%%GROUP%%,755) /var/run/i2pd
 @dir(%%USER%%,%%GROUP%%,755) /var/log/i2pd
