@@ -178,7 +178,6 @@ ask "Do you want to commit? (no = start a shell)" || (
     ask "Do you want to commit now? (no = clean up and abort)" || err "User-requested abort."
 )
 echo >> commit.txt
-echo "Approved by:	" >> commit.txt
 
 ## -- edit pre-assembled log message and commit --
 ${EDITOR} commit.txt
