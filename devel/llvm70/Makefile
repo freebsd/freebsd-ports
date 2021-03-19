@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 DISTVERSION=	7.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel lang
 MASTER_SITES=	http://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
@@ -26,7 +26,7 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
 USES=		cmake compiler:c++11-lib libedit perl5 tar:xz \
 		shebangfix
-_USES_PYTHON?=	python:2.7,build
+_USES_PYTHON?=	python,build
 USES+=		${_USES_PYTHON}
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 SHEBANG_FILES=	utils/lit/lit.py utils/llvm-lit/llvm-lit.in \
@@ -51,10 +51,10 @@ CMAKE_ARGS+=	-DLLVM_PARALLEL_LINK_JOBS=1
 CFLAGS+=	-DNDEBUG
 CXXFLAGS+=	-DNDEBUG
 
-OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD LLDB
+OPTIONS_DEFINE=	CLANG DOCS EXTRAS LIT LLD
 OPTIONS_DEFINE_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFINE_i386=	COMPILER_RT OPENMP
-OPTIONS_DEFAULT=	CLANG EXTRAS LIT LLD LLDB
+OPTIONS_DEFAULT=	CLANG EXTRAS LIT LLD
 OPTIONS_DEFAULT_amd64=	COMPILER_RT GOLD OPENMP
 OPTIONS_DEFAULT_i386=	COMPILER_RT OPENMP
 OPTIONS_SUB=	yes
@@ -82,17 +82,10 @@ GOLD_DESC=		Build the LLVM Gold plugin for LTO
 GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
 LIT_DESC=		Install lit and FileCheck test tools
-LIT_VARS=		_USES_PYTHON=python:2.7
+LIT_VARS=		_USES_PYTHON=python
 LLD_DESC=		Install lld, the LLVM linker
 LLD_DISTFILES=		lld-${DISTVERSION}.src${EXTRACT_SUFX}
 LLD_EXTRA_PATCHES=	${PATCHDIR}/lld
-LLDB_BUILD_DEPENDS=	swig:devel/swig \
-			${PY_ENUM34}
-LLDB_DESC=		Install lldb, the LLVM debugger
-LLDB_DISTFILES=		lldb-${DISTVERSION}.src${EXTRACT_SUFX}
-LLDB_EXTRA_PATCHES=	${PATCHDIR}/lldb
-LLDB_IMPLIES=		CLANG
-LLDB_VARS=		_USES_PYTHON=python:2.7
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_DISTFILES=	openmp-${DISTVERSION}.src${EXTRACT_SUFX}
 OPENMP_EXTRA_PATCHES=	${PATCHDIR}/openmp
@@ -103,7 +96,7 @@ STRIP=
 .endif
 
 # Emulate USE_GITHUB's ${WRKSRC_tag} to reduce diffs to ../llvm-devel
-.for option in CLANG COMPILER_RT EXTRAS LLD LLDB OPENMP
+.for option in CLANG COMPILER_RT EXTRAS LLD OPENMP
 WRKSRC_${option:tl}=		${WRKDIR}/${${option}_DISTFILES:S/${EXTRACT_SUFX}//}
 .endfor
 
@@ -188,10 +181,6 @@ MAN1SRCS+=	lit.1 FileCheck.1
 .if ${PORT_OPTIONS:MLLD}
 COMMANDS+=	${LLD_COMMANDS}
 PORTDOCS+=	lld
-.endif
-
-.if ${PORT_OPTIONS:MLLDB}
-COMMANDS+=	${LLDB_COMMANDS}
 .endif
 
 MAN1SRCS+=	bugpoint.1 dsymutil.1 llc.1 lli.1 llvm-ar.1 llvm-as.1 \
@@ -310,9 +299,6 @@ post-extract-EXTRAS-on:
 
 post-extract-LLD-on:
 	${MV} ${WRKSRC_lld} ${PATCH_WRKSRC}/tools/lld
-
-post-extract-LLDB-on:
-	${MV} ${WRKSRC_lldb} ${PATCH_WRKSRC}/tools/lldb
 
 post-extract-OPENMP-on:
 	${MV} ${WRKSRC_openmp} ${PATCH_WRKSRC}/projects/openmp
@@ -461,8 +447,7 @@ build-plist:
 	    if ($$0 ~ /${COMPILER_RT_PATTERN}/) \
 		{printf "%%%%COMPILER_RT%%%%"} \
 	    if ($$0 ~ /(${EXTRAS_PATTERN})/) {printf "%%%%EXTRAS%%%%"} \
-	    if ($$0 ~ /(lld|wasm-ld)/ && $$0 !~ /(lldb)/) {printf "%%%%LLD%%%%"} \
-	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
+	    if ($$0 ~ /(lld|wasm-ld)/ {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(lib.*omp|omp.h|ompt.h)/) {printf "%%%%OPENMP%%%%"} \
 	    if ($$0 ~ /(LLVMgold)/) {printf "%%%%GOLD%%%%"} \
 	    if ($$0 !~ /(libclang_rt)/) {print}}' ${PLIST}.tmp >> ${PLIST}

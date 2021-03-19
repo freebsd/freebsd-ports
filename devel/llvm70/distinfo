@@ -9,7 +9,5 @@ SHA256 (clang-tools-extra-7.0.1.src.tar.xz) = 4c93c7d2bb07923a8b272da3ef79144380
 SIZE (clang-tools-extra-7.0.1.src.tar.xz) = 901368
 SHA256 (lld-7.0.1.src.tar.xz) = 8869aab2dd2d8e00d69943352d3166d159d7eae2615f66a684f4a0999fc74031
 SIZE (lld-7.0.1.src.tar.xz) = 912812
-SHA256 (lldb-7.0.1.src.tar.xz) = 76b46be75b412a3d22f0d26279306ae7e274fe4d7988a2184c529c38a6a76982
-SIZE (lldb-7.0.1.src.tar.xz) = 19384628
 SHA256 (openmp-7.0.1.src.tar.xz) = bf16b78a678da67d68405214ec7ee59d86a15f599855806192a75dcfca9b0d0c
 SIZE (openmp-7.0.1.src.tar.xz) = 909316

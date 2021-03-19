@@ -2,7 +2,9 @@ The LLVM Project is a collection of modular and reusable compiler and
 toolchain technologies.
 
 This port includes Clang (a C/C++/Objective-C compiler), LLD (a linker),
-LLDB (a debugger), an OpenMP runtime library, and the LLVM infrastructure
-these are built on.
+an OpenMP runtime library, and the LLVM infrastructure these are built on.
+
+The LLDB debugger has been removed from this port due to its dependency
+on the obsolete python-2.7.
 
 WWW: http://llvm.org/

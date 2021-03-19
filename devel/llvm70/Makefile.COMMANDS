@@ -88,10 +88,3 @@ LLD_COMMANDS=	\
 		lld \
 		lld-link \
 		wasm-ld
-
-LLDB_COMMANDS=	\
-		lldb \
-		lldb-argdumper \
-		lldb-mi \
-		lldb-server \
-		lldb-test
