@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mtpaint
-PORTVERSION=	3.50.03
+PORTVERSION=	3.50.08
 CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -15,15 +15,15 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libfreetype.so:print/freetype2
 
-USES=		desktop-file-utils gmake gnome iconv jpeg pkgconfig tar:bzip2 xorg
+USES=		desktop-file-utils gmake gnome iconv jpeg pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	wjaguar
 GH_PROJECT=	mtPaint
-GH_TAGNAME=	40bde45
+GH_TAGNAME=	4ea607e
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man/man1 \
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/share/man/man1 \
 		--localedir=${PREFIX}/share/locale \
 		asneeded gtk3 cflags ft jpeg man tiff
 
@@ -33,7 +33,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 PORTDOCS=	NEWS README
 
 OPTIONS_DEFINE=		DOCS LCMS2 NLS OPENJPEG WEBP
-OPTIONS_DEFAULT=	LCMS2 OPENJPEG
+OPTIONS_DEFAULT=	LCMS2 OPENJPEG WEBP
 OPTIONS_SUB=		yes
 
 LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
@@ -51,7 +51,7 @@ WEBP_CONFIGURE_ON=	webp
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.png \

@@ -1,6 +1,6 @@
---- configure.orig	2021-01-23 07:22:40 UTC
+--- configure.orig	2021-03-10 19:47:48 UTC
 +++ configure
-@@ -74,6 +74,7 @@ do
+@@ -70,6 +70,7 @@ do
  	"webp" )	NWEBP=YES;;
  	"nowebp" )	NWEBP=NO;;
  	"staticwebp" )	STATIC_WEBP=WebP;;
@@ -8,7 +8,7 @@
  	"noft" )	NFT=NO;;
  	"staticft" )	STATIC_FT=FreeType;;
  	"lcms" )	NCMS=LittleCMS;;
-@@ -523,7 +524,7 @@ else # $OPTS = CFLAGS
+@@ -506,7 +507,7 @@ else # $OPTS = CFLAGS
  	MARCH=
  	# And leave CFLAGS alone
  fi
@@ -17,12 +17,12 @@
  # Set Windows-specific flags
  if [ "$OS" != "${OS#MinGW/}" ]
  then
-@@ -856,7 +857,7 @@ General
+@@ -830,7 +831,7 @@ General
  -------
  
      Version             $MT_V
 -    System              $OS
 +    System              $OSTYPE
-     Toolkit             GTK+$GTK${GTK2VERSION:+.$GTK2VERSION}
+     Toolkit             GTK+$GTK${GTKVERSION:+.$GTKVERSION}
      Lists               GTK+$MT_LISTS
      File Picker         $MT_FPICK
