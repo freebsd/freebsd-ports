@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	makemkv
-PORTVERSION=	1.16.1
+PORTVERSION=	1.16.3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.makemkv.com/download/:makemkv \
 		http://www.makemkv.com/download/old/:makemkv \
@@ -68,7 +68,8 @@ OPENSSLTARGET=	${"${LINUXARCH:Mx86_64}" != "":?linux-x86_64:linux-elf}
 
 PATCHELF_CMD?=	${LOCALBASE}/bin/patchelf
 
-CFLAGS+=	-std=c++11 -DFORCE_OPENSSL_NO_EC -I${WRKDIR}/gnuroot/include \
+CFLAGS+=	-std=c++11 -std=c11 -DFORCE_OPENSSL_NO_EC \
+		-I${WRKDIR}/gnuroot/include \
 		-I${WRKDIR}/openssl-${OPENSSLFULLVER}/include
 SSP_CFLAGS=
 LDFLAGS+=	-L${WRKDIR}/gnuroot/lib
