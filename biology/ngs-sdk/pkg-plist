@@ -83,6 +83,7 @@ include/ngs/itf/VTable.h
 include/ngs/itf/VTable.hpp
 include/ngs/itf/defs.h
 include/ngs/unix/amd64
+include/ngs/unix/arm64/atomic32.h
 include/ngs/unix/fat86/atomic32.h
 include/ngs/unix/i386/atomic32.h
 include/ngs/unix/x86_64/atomic32.h
@@ -92,4 +93,4 @@ lib/libngs-adapt-c++.a
 lib/libngs-c++.a
 lib/libngs-sdk.so
 lib/libngs-sdk.so.2
-lib/libngs-sdk.so.2.10.9
+lib/libngs-sdk.so.2.11.0
