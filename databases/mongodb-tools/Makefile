@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	mongodb-tools
-DISTVERSION=	100.3.0
+DISTVERSION=	100.3.1
 CATEGORIES=	databases
 
 MAINTAINER=	ronald-lists@klop.ws
@@ -18,8 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 GH_PROJECT=	mongo-tools
 
-GO_BUILDFLAGS=	-tags "${USE_MY_TAGS}"
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
+GO_BUILDFLAGS=	-tags "${USE_MY_TAGS}"
 
 CONFLICTS_INSTALL=	mongodb36-tools mongodb4[02]-tools
 
@@ -28,27 +28,27 @@ OPTIONS_DEFAULT=	BSONDUMP MONGODUMP MONGOEXPORT MONGOFILES MONGOIMPORT \
 			MONGORESTORE MONGOSTAT MONGOTOP \
 			SASL SSL
 OPTIONS_MULTI=		SECURITY TOOLS
+OPTIONS_MULTI_SECURITY=	SASL SSL
 OPTIONS_MULTI_TOOLS=	BSONDUMP MONGODUMP MONGOEXPORT MONGOFILES MONGOIMPORT \
 			MONGORESTORE MONGOSTAT MONGOTOP
-OPTIONS_MULTI_SECURITY=	SASL SSL
 OPTIONS_SUB=		yes
 
 BSONDUMP_DESC=		BSON files into human-readable formats
-MONGOSTAT_DESC=		Status of a running mongod or mongos instance
-MONGOFILES_DESC=	Interface to GridFS in a MongoDB instance
+MONGODUMP_DESC=		BSON data from the contents of a MongoDB instance
 MONGOEXPORT_DESC=	JSON or CSV export of MongoDB instance data
+MONGOFILES_DESC=	Interface to GridFS in a MongoDB instance
 MONGOIMPORT_DESC=	Importing JSON, CSV, or TSV into a MongoDB instance
 MONGORESTORE_DESC=	BSON data to a MongoDB instance
-MONGODUMP_DESC=		BSON data from the contents of a MongoDB instance
+MONGOSTAT_DESC=		Status of a running mongod or mongos instance
 MONGOTOP_DESC=		Track the amount of data I/O time
 
 BSONDUMP_VARS=		go_target+=./bsondump/main:bsondump
-MONGOSTAT_VARS=		go_target+=./mongostat/main:mongostat
-MONGOFILES_VARS=	go_target+=./mongofiles/main:mongofiles
+MONGODUMP_VARS=		go_target+=./mongodump/main:mongodump
 MONGOEXPORT_VARS=	go_target+=./mongoexport/main:mongoexport
+MONGOFILES_VARS=	go_target+=./mongofiles/main:mongofiles
 MONGOIMPORT_VARS=	go_target+=./mongoimport/main:mongoimport
 MONGORESTORE_VARS=	go_target+=./mongorestore/main:mongorestore
-MONGODUMP_VARS=		go_target+=./mongodump/main:mongodump
+MONGOSTAT_VARS=		go_target+=./mongostat/main:mongostat
 MONGOTOP_VARS=		go_target+=./mongotop/main:mongotop
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_USE=		my_tags=sasl
