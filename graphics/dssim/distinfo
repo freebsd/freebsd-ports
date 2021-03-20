@@ -1,6 +1,6 @@
-TIMESTAMP = 1612730839
-SHA256 (rust/crates/dssim-3.0.0.tar.gz) = 72b01e2bbd4c06aadd7a03743d0ba4db4ef20ab9f1637fe8336b3e41ec935ada
-SIZE (rust/crates/dssim-3.0.0.tar.gz) = 21042
+TIMESTAMP = 1616188156
+SHA256 (rust/crates/dssim-3.0.1.tar.gz) = b295b20f6757e2a65cde144e3a8b815f313d4e9d393ed079f98f2c334533e9d3
+SIZE (rust/crates/dssim-3.0.1.tar.gz) = 21037
 SHA256 (rust/crates/adler-0.2.3.tar.gz) = ee2a4ec343196209d6594e19543ae87a39f96d5534d7174822a3ad825dd6ed7e
 SIZE (rust/crates/adler-0.2.3.tar.gz) = 12168
 SHA256 (rust/crates/ahash-0.4.7.tar.gz) = 739f4a8db6605981345c5654f3a85b056ce52f37a39d34da03f25bf2151ea16e

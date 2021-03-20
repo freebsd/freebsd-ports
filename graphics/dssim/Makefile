@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dssim
-DISTVERSION=	3.0.0
-PORTREVISION=	1
+DISTVERSION=	3.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
