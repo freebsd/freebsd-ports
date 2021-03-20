@@ -38,6 +38,7 @@ bin/qflow
 %%DATADIR%%/scripts/magic_drc.sh
 %%DATADIR%%/scripts/magic_gds.sh
 %%DATADIR%%/scripts/magic_view.sh
+%%DATADIR%%/scripts/migrate.py
 %%DATADIR%%/scripts/netgen_lvs.sh
 %%DATADIR%%/scripts/opensta.sh
 %%DATADIR%%/scripts/opentimer.sh
