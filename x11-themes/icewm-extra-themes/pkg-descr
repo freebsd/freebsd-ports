@@ -1,0 +1,6 @@
+This is the collection of extra themes for IceWM window manager that are
+too numerous to be included with the IceWM itself.  The purpose of this
+project is to act as a source of themes for distribution maintainers of
+IceWM to select from when building and installing IceWM.
+
+WWW: https://github.com/bbidulock/icewm-extra-themes
