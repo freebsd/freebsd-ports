@@ -32,8 +32,8 @@ error[E0658]: platform intrinsics are experimental and possibly buggy
 +    println!("cargo:rustc-cfg=nightly");
  }
  
---- ../vek-237a78528b505f34f6dde5dc77db3b642388fe4a-237a78528b505f34f6dde5dc77db3b642388fe4a/build.rs.orig	2020-08-07 21:36:50 UTC
-+++ ../vek-237a78528b505f34f6dde5dc77db3b642388fe4a-237a78528b505f34f6dde5dc77db3b642388fe4a/build.rs
+--- ../vek-df6842cc874a697dec8896c66851817e744af7e8-df6842cc874a697dec8896c66851817e744af7e8/build.rs.orig	2021-03-03 21:14:39 UTC
++++ ../vek-df6842cc874a697dec8896c66851817e744af7e8-df6842cc874a697dec8896c66851817e744af7e8/build.rs
 @@ -4,19 +4,6 @@ use rustc_version::{version, version_meta, Channel};
  fn main() {
      assert!(version().unwrap().major >= 1);
