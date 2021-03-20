@@ -3,8 +3,11 @@ bin/footclient
 man/man1/foot.1.gz
 man/man1/footclient.1.gz
 man/man5/foot.ini.5.gz
+man/man7/foot-ctlseqs.7.gz
 share/applications/foot-server.desktop
 share/applications/foot.desktop
+share/bash-completion/completions/foot
+share/bash-completion/completions/footclient
 share/fish/vendor_completions.d/foot.fish
 share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/foot.ini

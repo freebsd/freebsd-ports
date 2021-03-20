@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	foot
-DISTVERSION=	1.6.4
+DISTVERSION=	1.7.0
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -24,6 +24,14 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 USES=		compiler:c11 meson pkgconfig xorg
 USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+OPTIONS_DEFINE=	NOTIFY XDG
+OPTIONS_DEFAULT=NOTIFY XDG
+
+NOTIFY_RUN_DEPENDS=	notify-send:devel/libnotify
+
+XDG_DESC=		Open files with xdg-open
+XDG_RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 .if exists(/usr/bin/tic)
 PKGMESSAGE=	${NONEXISTENT}

@@ -5,12 +5,13 @@ Features:
 - Lightweight, in dependencies, on-disk and in-memory
 - Wayland native
 - DE agnostic
+- Server/daemon mode
 - User configurable font fallback
 - On-the-fly font resize
 - On-the-fly DPI font size adjustment
 - Scrollback search
+- Keyboard driven URL detection
 - Color emoji support
-- Server/daemon mode
 - IME (via text-input-v3)
 - Multi-seat
 - Synchronized Updates
