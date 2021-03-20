@@ -1,8 +1,7 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
 
 PORTNAME=	ffmpeg
-PORTVERSION=	4.3.2
-PORTREVISION=	1
+PORTVERSION=	4.4
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -39,11 +38,11 @@ OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB AOM ARIBB24 ASM ASS BS2B CACA CDIO CELT \
 		FONTCONFIG FREETYPE FREI0R FRIBIDI GLSLANG GME GSM ICONV ILBC \
 		JACK KLVANC KVAZAAR LADSPA LAME LENSFUN LIBBLURAY LIBRSVG2 \
 		LIBXML2 LTO LV2 MFX MODPLUG MYSOFA OPENAL OPENCL OPENGL \
-		OPENH264 OPENJPEG OPENMPT OPTIMIZED_CFLAGS OPUS POCKETSPHINX \
-		PULSEAUDIO RAV1E RABBITMQ RTCPU RUBBERBAND SDL SMB SNAPPY \
+		OPENH264 OPENJPEG OPENMPT OPENVINO OPTIMIZED_CFLAGS OPUS POCKETSPHINX \
+		PULSEAUDIO RAV1E RABBITMQ RIST RTCPU RUBBERBAND SDL SMB SNAPPY \
 		SNDIO SOXR SPEEX SRT SSH SVTAV1 SVTHEVC SVTVP9 TENSORFLOW \
-		TESSERACT THEORA TWOLAME V4L VAAPI VAPOURSYNTH VDPAU VIDSTAB \
-		VMAF VO_AMRWBENC VORBIS VPX VULKAN WAVPACK WEBP X264 X265 \
+		TESSERACT THEORA TWOLAME UAVS3D V4L VAAPI VAPOURSYNTH VDPAU VIDSTAB \
+		VMAF VO_AMRWBENC VORBIS VPX VULKAN WEBP X264 X265 \
 		XAVS2 XCB XVID XVIDEO ZIMG ZMQ ZVBI
 
 OPTIONS_DEFAULT=	AOM ASM ASS DAV1D DRM FONTCONFIG FREETYPE FREI0R GMP \
@@ -60,6 +59,11 @@ OPTIONS_EXCLUDE+=	ARIBB24
 OPTIONS_EXCLUDE+=	DAVS2
 .endif
 
+.if !exists(${.CURDIR:H:H}/multimedia/uavs3d)
+# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/c952db9d68d3
+OPTIONS_EXCLUDE+=	UAVS3D
+.endif
+
 .if !exists(${.CURDIR:H:H}/multimedia/xavs2)
 # https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/85a921f4618
 OPTIONS_EXCLUDE+=	XAVS2
@@ -68,6 +72,11 @@ OPTIONS_EXCLUDE+=	XAVS2
 .if !exists(${.CURDIR:H:H}/multimedia/klvanc)
 # https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/8732dfa9954
 OPTIONS_EXCLUDE+=	KLVANC
+.endif
+
+.if !exists(${.CURDIR:H:H}/science/openvino)
+# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/ff37ebaf30e6
+OPTIONS_EXCLUDE+=	OPENVINO
 .endif
 
 .if !exists(${.CURDIR:H:H}/net/srt)
@@ -111,9 +120,11 @@ MYSOFA_DESC=	SOFAlizer binaural filter
 NONFREE_DESC=	Allow use of nonfree code
 OPENMPT_DESC=	Decoding tracked files via libopenmpt
 OPENH264_DESC=	H.264 video codec support via OpenH264
+OPENVINO_DESC=	OpenVINO as a DNN module backend for DNN based filters like dnn_processing
 POCKETSPHINX_DESC=	Automatic Speech Recognition via PocketSphinx
 RAV1E_DESC=	AV1 encoding via librav1e
 RABBITMQ_DESC=	AMQP 0-9-1 protocol via RabbitMQ
+RIST_DESC=	Reliable Internet Stream Transport protocol via librist
 RUBBERBAND_DESC=Time-stretching and pitch-shifting with librubberband
 RTCPU_DESC=	Detect CPU capabilities at runtime
 RTMP_DESC=	RTMP(T)E protocol support
@@ -124,6 +135,7 @@ SVTVP9_DESC=	VP9 encoding via SVT-VP9
 LIBRTMP_DESC=	${RTMP_DESC} via librtmp
 TENSORFLOW_DESC=TensorFlow as a DNN module backend for DNN based filters like sr
 TESSERACT_DESC=	Optical Character Recognition via Tesseract
+UAVS3D_DESC=	AVS3 decoding via libuavs3d
 VAPOURSYNTH_DESC=	VapourSynth demuxer
 VIDSTAB_DESC=	Video stabilization filter
 VMAF_DESC=	VMAF filter via libvmaf
@@ -377,6 +389,10 @@ OPENSSL_USES=		ssl
 OPENSSL_CONFIGURE_ENABLE=	${"${SSL_DEFAULT:Mlibressl*}"!="":?libtls:openssl}
 OPENSSL_IMPLIES=	NONFREE
 
+# openvino
+OPENVINO_LIB_DEPENDS=	libinference_engine_c_api.so:science/openvino
+OPENVINO_CONFIGURE_ENABLE=	libopenvino
+
 # optimizations
 OPTIMIZED_CFLAGS_CONFIGURE_ENABLE=	optimizations
 
@@ -400,6 +416,10 @@ RAV1E_CONFIGURE_ENABLE=	librav1e
 # rabbitmq
 RABBITMQ_LIB_DEPENDS=	librabbitmq.so:net/rabbitmq-c
 RABBITMQ_CONFIGURE_ENABLE=	librabbitmq
+
+# rist
+RIST_LIB_DEPENDS=	librist.so:multimedia/librist
+RIST_CONFIGURE_ENABLE=	librist
 
 # rubberband
 RUBBERBAND_LIB_DEPENDS=	librubberband.so:audio/rubberband
@@ -449,20 +469,15 @@ SRT_CONFIGURE_ENABLE=	libsrt
 # svt-av1
 SVTAV1_LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1
 SVTAV1_CONFIGURE_ON=	--enable-libsvtav1
-SVTAV1_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-AV1/raw/v0.8.4/ffmpeg_plugin/:svtav1
-SVTAV1_PATCHFILES=	0001-Add-ability-for-ffmpeg-to-run-svt-av1.patch:-p1:svtav1
 .if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
 # https://github.com/OpenVisualCloud/SVT-AV1/issues/691
 SVTAV1_LDFLAGS=		-fuse-ld=lld
-.endif
-.if make(makesum)
-.MAKEFLAGS:		WITH+=SVTAV1
 .endif
 
 # svt-hevc
 SVTHEVC_LIB_DEPENDS=	libSvtHevcEnc.so:multimedia/svt-hevc
 SVTHEVC_CONFIGURE_ON=	--enable-libsvthevc
-SVTHEVC_PATCH_SITES=	https://github.com/Intel/SVT-HEVC/raw/v1.5.0/ffmpeg_plugin/:svthevc
+SVTHEVC_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-HEVC/raw/v1.5.0-3-g86b58f77/ffmpeg_plugin/:svthevc
 SVTHEVC_PATCHFILES=	0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch:-p1:svthevc \
 			0002-doc-Add-libsvt_hevc-encoder-docs.patch:-p1:svthevc
 .if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
@@ -475,8 +490,8 @@ SVTHEVC_LDFLAGS=	-fuse-ld=lld
 # svt-vp9
 SVTVP9_LIB_DEPENDS=	libSvtVp9Enc.so:multimedia/svt-vp9
 SVTVP9_CONFIGURE_ON=	--enable-libsvtvp9
-SVTVP9_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.3.0/ffmpeg_plugin/:svtvp9
-SVTVP9_PATCHFILES=	n4.3.1-0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch:-p1:svtvp9
+SVTVP9_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.3.0-4-gabd5c59/ffmpeg_plugin/:svtvp9
+SVTVP9_PATCHFILES=	master-0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch:-p1:svtvp9
 .if exists(/usr/bin/ld.lld) && (${/usr/bin/ld:L:tA} != /usr/bin/ld.lld)
 SVTVP9_LDFLAGS=		-fuse-ld=lld
 .endif
@@ -499,6 +514,10 @@ THEORA_CONFIGURE_ENABLE=	libtheora
 # twolame
 TWOLAME_LIB_DEPENDS=	libtwolame.so:audio/twolame
 TWOLAME_CONFIGURE_ENABLE=	libtwolame
+
+# uavs3d
+UAVS3D_LIB_DEPENDS=	libuavs3d.so:multimedia/uavs3d
+UAVS3D_CONFIGURE_ENABLE=	libuavs3d
 
 # vaapi
 VAAPI_LIB_DEPENDS=	libva.so:multimedia/libva
@@ -540,10 +559,6 @@ VULKAN_BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_CONFIGURE_ENABLE=	vulkan
 VULKAN_IMPLIES=		GLSLANG
-
-# wavpack
-WAVPACK_LIB_DEPENDS=	libwavpack.so:audio/wavpack
-WAVPACK_CONFIGURE_ENABLE=	libwavpack
 
 # webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
