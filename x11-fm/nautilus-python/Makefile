@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	nautilus-python
-DISTVERSION=	1.2.2
-PORTREVISION=	1
+DISTVERSION=	1.2.3
 CATEGORIES=	x11-fm gnome python
 MASTER_SITES=	GNOME
 
