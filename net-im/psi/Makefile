@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	psi
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.5
 CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/Psi/${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Qt-based Jabber (XMPP) client
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libidn.so:dns/libidn \
 		libminizip.so:archivers/minizip
