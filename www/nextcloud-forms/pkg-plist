@@ -145,6 +145,8 @@
 %%WWWDIR%%/l10n/ro.json
 %%WWWDIR%%/l10n/ru.js
 %%WWWDIR%%/l10n/ru.json
+%%WWWDIR%%/l10n/sc.js
+%%WWWDIR%%/l10n/sc.json
 %%WWWDIR%%/l10n/si.js
 %%WWWDIR%%/l10n/si.json
 %%WWWDIR%%/l10n/sk.js
@@ -197,6 +199,7 @@
 %%WWWDIR%%/lib/Migration/Version010200Date20200323141300.php
 %%WWWDIR%%/lib/Migration/Version020002Date20200729205932.php
 %%WWWDIR%%/lib/Migration/Version020200Date20210120082018.php
+%%WWWDIR%%/lib/Migration/Version020202Date20210311150843.php
 %%WWWDIR%%/lib/Service/FormsService.php
 %%WWWDIR%%/lib/Service/SubmissionService.php
 %%WWWDIR%%/templates/expired.php
