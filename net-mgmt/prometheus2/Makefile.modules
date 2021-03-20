@@ -59,7 +59,7 @@ GH_TUPLE+=	\
 		golang:net:5f4716e94777:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:66670185b0cd:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:snappy:v0.0.2:golang_snappy/vendor/github.com/golang/snappy \
+		golang:snappy:v0.0.3:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:09787c993a3a:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:22da62e12c0c:golang_sys/vendor/golang.org/x/sys \
 		golang:term:7de9c90e9dd1:golang_term/vendor/golang.org/x/term \
