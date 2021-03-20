@@ -140,6 +140,7 @@
     SUBDIR += pop-gtk-themes
     SUBDIR += pop-icon-theme
     SUBDIR += qgnomeplatform
+    SUBDIR += qogir-gtk-themes
     SUBDIR += qt5-style-plugins
     SUBDIR += qtcurve
     SUBDIR += qtcurve-gtk2
