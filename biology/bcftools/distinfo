@@ -1,3 +1,3 @@
-TIMESTAMP = 1603028344
-SHA256 (samtools-bcftools-1.11_GH0.tar.gz) = f2d9a09fd7920754b60948b81ec047882864213b93a0cd1ef0372b0e025cba3f
-SIZE (samtools-bcftools-1.11_GH0.tar.gz) = 3004923
+TIMESTAMP = 1616112968
+SHA256 (samtools-bcftools-1.12_GH0.tar.gz) = b29e6d41ca0bb3f1761bee81be0c423329928a724a75501641c1ac5065d65526
+SIZE (samtools-bcftools-1.12_GH0.tar.gz) = 3048508

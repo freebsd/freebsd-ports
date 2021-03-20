@@ -2,6 +2,7 @@ bin/ace2sam
 bin/blast2sam.pl
 bin/bowtie2sam.pl
 bin/export2sam.pl
+bin/fasta-sanitize.pl
 bin/interpolate_sam.pl
 bin/maq2sam-long
 bin/maq2sam-short

@@ -1,16 +1,6 @@
---- Makefile.orig	2020-10-18 00:55:50 UTC
+--- Makefile.orig	2021-03-17 09:14:26 UTC
 +++ Makefile
-@@ -49,7 +49,8 @@ AOBJS=      bam_index.o bam_plcmd.o sam_view.o bam_fas
- 	    bam_ampliconclip.o amplicon_stats.o
- LZ4OBJS  =  $(LZ4DIR)/lz4.o
- 
--prefix      = /usr/local
-+PREFIX      ?= /usr/local
-+prefix      = $(PREFIX)
- exec_prefix = $(prefix)
- bindir      = $(exec_prefix)/bin
- datarootdir = $(prefix)/share
-@@ -59,14 +60,14 @@ man1dir     = $(mandir)/man1
+@@ -59,14 +59,14 @@ man1dir     = $(mandir)/man1
  # Installation location for $(MISC_PROGRAMS) and $(MISC_SCRIPTS)
  misc_bindir = $(bindir)
  
@@ -23,8 +13,8 @@
 -INSTALL_SCRIPT  = $(INSTALL_PROGRAM)
 -
 +# Use BSD_INSTALL_PROGRAM to strip when WITH_DEBUG not set
-+MKDIR_P 	= mkdir -p
-+INSTALL 	= install -p
++MKDIR_P         = mkdir -p
++INSTALL         = install -p
 +INSTALL_DATA    = ${BSD_INSTALL_DATA}
 +INSTALL_DIR     = $(MKDIR_P)
 +INSTALL_MAN     = ${BSD_INSTALL_MAN}

@@ -1,16 +1,6 @@
---- Makefile.orig	2020-10-18 00:44:56 UTC
+--- Makefile.orig	2021-03-20 15:53:14 UTC
 +++ Makefile
-@@ -40,7 +40,8 @@ EXTRA_CFLAGS_PIC = -fpic
- LDFLAGS  = -fvisibility=hidden
- LIBS     = $(htslib_default_libs)
- 
--prefix      = /usr/local
-+PREFIX      ?= /usr/local
-+prefix      = $(PREFIX)
- exec_prefix = $(prefix)
- bindir      = $(exec_prefix)/bin
- includedir  = $(prefix)/include
-@@ -53,13 +54,14 @@ man5dir     = $(mandir)/man5
+@@ -53,13 +53,14 @@ man5dir     = $(mandir)/man5
  man7dir     = $(mandir)/man7
  pkgconfigdir= $(prefix)/libdata/pkgconfig
  
@@ -32,7 +22,7 @@
  
  # Set by config.mk if plugins are enabled
  plugindir =
-@@ -100,7 +102,7 @@ BUILT_THRASH_PROGRAMS = \
+@@ -102,7 +103,7 @@ BUILT_THRASH_PROGRAMS = \
  	test/thrash_threads6 \
  	test/thrash_threads7
  
@@ -40,4 +30,4 @@
 +all: lib-static lib-shared $(BUILT_PROGRAMS) plugins \
       htslib_static.mk htslib-uninstalled.pc
  
- HTSPREFIX =
+ ALL_CPPFLAGS = -I. $(CPPFLAGS)

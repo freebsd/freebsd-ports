@@ -40,7 +40,7 @@ libexec/bcftools/smpl-stats.so
 libexec/bcftools/split-vep.so
 libexec/bcftools/split.so
 libexec/bcftools/tag2tag.so
-libexec/bcftools/trio-dnm.so
+libexec/bcftools/trio-dnm2.so
 libexec/bcftools/trio-stats.so
 libexec/bcftools/trio-switch-rate.so
 libexec/bcftools/variantkey-hex.so

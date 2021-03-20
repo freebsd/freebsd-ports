@@ -1,16 +1,6 @@
---- Makefile.orig	2020-10-18 13:31:52 UTC
+--- Makefile.orig	2021-03-17 09:16:18 UTC
 +++ Makefile
-@@ -45,7 +45,8 @@ OBJS     = main.o vcfindex.o tabix.o \
-            ccall.o em.o prob1.o kmin.o # the original samtools calling
- PLUGIN_OBJS = vcfplugin.o
- 
--prefix      = /usr/local
-+PREFIX      ?= /usr/local
-+prefix      = $(PREFIX)
- exec_prefix = $(prefix)
- bindir      = $(exec_prefix)/bin
- libdir      = $(exec_prefix)/lib
-@@ -58,13 +59,14 @@ pluginpath  = $(plugindir)
+@@ -58,13 +58,14 @@ pluginpath  = $(plugindir)
  # Installation location for $(MISC_PROGRAMS) and $(MISC_SCRIPTS)
  misc_bindir = $(bindir)
  
@@ -32,7 +22,7 @@
  
  PROGRAMS = bcftools
  MISC_SCRIPTS = \
-@@ -142,7 +144,7 @@ print-version:
+@@ -142,7 +143,7 @@ print-version:
  ifdef USE_GPL
      main.o : EXTRA_CPPFLAGS += -DUSE_GPL
      OBJS += polysomy.o peakfit.o
