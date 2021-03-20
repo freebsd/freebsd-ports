@@ -138,7 +138,7 @@ man/man1/anki.1.gz
 %%DATADIR%%/anki/template_legacy.py
 %%DATADIR%%/anki/types.py
 %%DATADIR%%/anki/utils.py
-%%DATADIR%%/ankirspy.cpython-%%PYTHON_SUFFIX%%m.so
+%%DATADIR%%/ankirspy%%_PY_SONAME%%.so
 %%DATADIR%%/aqt/__init__.py
 %%DATADIR%%/aqt/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/aqt/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc

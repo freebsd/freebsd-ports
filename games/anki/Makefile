@@ -325,6 +325,7 @@ CARGO_CARGOLOCK=	${WRKSRC}/rspy/Cargo.lock
 CARGO_CARGOTOML=	${WRKSRC}/rspy/Cargo.toml
 
 CARGO_BUILD=	no
+CARGO_INSTALL=	no
 
 MAKE_ARGS=	DEVEL="rspy pylib ts qt" PYTHON_FILE="${PYTHON_CMD}" SHELL="${LOCALBASE}/bin/bash"
 # devel/py-maturin  acts as a wrapper for "cargo" and "rustc".  Ensure that it
@@ -333,6 +334,8 @@ MAKE_ARGS+=	BUILDFLAGS="--cargo-extra-args='${CARGO_BUILD_ARGS} --verbose'"
 MAKE_ENV=	${CARGO_ENV} npm_config_offline=true
 
 ALL_TARGET=		build
+
+PLIST_SUB=	_PY_SONAME=${_PY_SONAME}
 
 OPTIONS_DEFINE=		NLS
 OPTIONS_DEFAULT=	MPV
@@ -351,6 +354,14 @@ NLS_USES=	gettext
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
 _MY_BUILDHASH=	84dcaa86
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3800
+_PY_SONAME=	.cpython-${PYTHON_SUFFIX}m
+.else
+_PY_SONAME=	${PYTHON_EXT_SUFFIX}
+.endif
 
 # Place the translation files to the appropriate directories
 post-extract:
@@ -434,4 +445,4 @@ make-npm-cache:
 		&& ${TAR} -czf ${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} .npm \
 		&& ${ECHO} "Please upload the file ${WRKDIR}/${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
