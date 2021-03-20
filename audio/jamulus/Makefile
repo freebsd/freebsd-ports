@@ -2,7 +2,7 @@
 
 PORTNAME=	jamulus
 DISTVERSIONPREFIX=	r
-DISTVERSION=	3_6_2
+DISTVERSION=	3_7_0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,18 +20,14 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	jamulussoftware
 
-NAME=		Jamulus
-
-DESKTOP_ENTRIES=	"${NAME}" "${COMMENT}" "${NAME}" \
+DESKTOP_ENTRIES=	"Jamulus" "${COMMENT}" "${PORTNAME}" \
 			"${PORTNAME}" "AudioVideo;Audio;Mixer;Qt;" true
 
-PLIST_FILES=	bin/${NAME} \
-		share/pixmaps/jamulus.png
+PLIST_FILES=	bin/${PORTNAME} \
+		share/icons/hicolor/512x512/apps/jamulus.png
+
+QMAKE_ARGS=	CONFIG+="noupcasename"
 
 PORTSCOUT=	limit:^r\d+_ # prevent malformatted tags, like 'latest'
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${NAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/src/res/fronticon.png ${STAGEDIR}${PREFIX}/share/pixmaps/jamulus.png
 
 .include <bsd.port.mk>
