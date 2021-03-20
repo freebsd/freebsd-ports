@@ -1455,7 +1455,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_35_64.cpython-35m-darwin.so
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_36_64.cpython-36m-darwin.so
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_37_64.cpython-37m-darwin.so
-%%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_38_64%%PYTHON_EXT_SUFFIX%%-darwin.so
+%%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_38_64.cpython-38-darwin.so
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_darwin_39_64.cpython-39-darwin.so
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_27_32.pyd
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_27_64.pyd
@@ -1516,13 +1516,13 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cp39-win_amd64.pyd
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-36m-darwin.so
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-37m-darwin.so
-%%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common%%PYTHON_EXT_SUFFIX%%-darwin.so
+%%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-38-darwin.so
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.cpython-39-darwin.so
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.pxd
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_common.pyx
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_36_64.cpython-36m-darwin.so
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_37_64.cpython-37m-darwin.so
-%%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_38_64%%PYTHON_EXT_SUFFIX%%-darwin.so
+%%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_38_64.cpython-38-darwin.so
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_darwin_39_64.cpython-39-darwin.so
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_py39.c
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_frame_eval/pydevd_frame_evaluator_py39.pxd
@@ -2355,8 +2355,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/zipfile.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/zipimport.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/2and3/zlib.pyi
-%%DATADIR%%/plugins/python/helpers/typeshed/stdlib/3.7/_py_abc.pyi
-%%DATADIR%%/plugins/python/helpers/typeshed/stdlib/3.7/contextvars.pyi
+%%DATADIR%%/plugins/python/helpers/typeshed/stdlib/%%PYTHON_VER%%/_py_abc.pyi
+%%DATADIR%%/plugins/python/helpers/typeshed/stdlib/%%PYTHON_VER%%/contextvars.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/3.9/graphlib.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/3.9/zoneinfo/__init__.pyi
 %%DATADIR%%/plugins/python/helpers/typeshed/stdlib/3/_bootlocale.pyi
