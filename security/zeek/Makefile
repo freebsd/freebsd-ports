@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zeek
-PORTVERSION=	3.0.13
+PORTVERSION=	4.0.0
 CATEGORIES=	security
 MASTER_SITES=	https://old.zeek.org/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -21,11 +21,8 @@ USE_LDCONFIG=	yes
 PORTSCOUT=	limit:0,even
 
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE:PATH=${PYTHON_CMD}
-CXXFLAGS+=	-std=c++11 -Wall
 
-CONFLICTS=	bro
-
-SHEBANG_FILES=	aux/zeekctl/aux/trace-summary/trace-summary
+SHEBANG_FILES=	auxil/zeekctl/auxil/trace-summary/trace-summary
 
 SUB_FILES=	pkg-message
 NO_MTREE=	yes
@@ -64,7 +61,7 @@ GEOIP2_DESC=	Build with GeoIP2 (MaxMindDB) support
 IPSUMDUMP_DESC=	Enables traffic summaries
 LBL_CF_DESC=	Unix time to formated time/date filter support
 LBL_HF_DESC=	Address to hostname filter support
-NETMAP_DESC=	Native Netmap Packet IOSource for Bro
+NETMAP_DESC=	Native Netmap Packet IOSource for Zeek
 PERFTOOLS_DESC=	Use Perftools to improve memory & CPU usage
 ZEEKCTL_DESC=	ZeekControl support (implies BROKER and IPSUMDUMP)
 
@@ -78,7 +75,7 @@ IPSUMDUMP_BUILD_DEPENDS=ipsumdump:net/ipsumdump
 IPSUMDUMP_RUN_DEPENDS=	ipsumdump:net/ipsumdump
 LBL_CF_RUN_DEPENDS=	${LOCALBASE}/bin/cf:sysutils/lbl-cf
 LBL_HF_RUN_DEPENDS=	${LOCALBASE}/bin/hf:sysutils/lbl-hf
-NETMAP_GH_TUPLE=	bro:bro-netmap:f3620df:bro_netmap
+NETMAP_GH_TUPLE=	zeek:zeek-netmap:v2.0.0:zeek_netmap
 NETMAP_USE=		GITHUB=nodefault
 PERFTOOLS_BUILD_DEPENDS=${LOCALBASE}/bin/perftools-pprof:devel/google-perftools
 PERFTOOLS_CMAKE_BOOL=	ENABLE_PERFTOOLS
@@ -98,9 +95,13 @@ USE_RC_SUBR=	zeek
 .endif
 
 post-patch:
-	# Silence the "use ZeekControl.plugin instead of BroControl.plugin" nag
-	@${REINPLACE_CMD} -e 's/^print/#&/' \
-	    ${WRKSRC}/aux/zeekctl/BroControl/__init__.py
+	${REINPLACE_CMD} -e '\|/usr/local/|s|$$| ${STAGEDIR}${PREFIX}/|' \
+	    ${WRKSRC_zeek_netmap}/cmake/FindNetmap.cmake
+	
+
+#	# Silence the "use ZeekControl.plugin instead of BroControl.plugin" nag
+#	@${REINPLACE_CMD} -e 's/^print/#&/' \
+#	    ${WRKSRC}/auxil/zeekctl/BroControl/__init__.py
 
 post-install-ZEEKCTL-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/logs
@@ -121,11 +122,17 @@ post-install:
 pre-install-ZEEKCTL-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
 
-post-build-NETMAP-on:
-	${LN} -s ../.build ${WRKSRC}/build
-	cd ${WRKSRC_bro_netmap} && ./configure --bro-dist=${WRKSRC} \
-	    --install-root=${STAGEDIR}${PREFIX}/lib/zeek/plugins && \
-	    make && make install
+post-install-NETMAP-on:
+	${MKDIR} ${WRKDIR}/zeek-bin
+	${CP} ${STAGEDIR}${PREFIX}/bin/zeek-config ${WRKDIR}/zeek-bin
+	${REINPLACE_CMD} -e 's|=/usr/local|=${STAGEDIR}${PREFIX}|' \
+	    -e '/^include_dir=/s|:/usr/local|:${STAGEDIR}${PREFIX}|' \
+	    ${WRKDIR}/zeek-bin/zeek-config
+	cd ${WRKSRC_zeek_netmap} && env PATH=${WRKDIR}/zeek-bin:${PATH} \
+	    ./configure --with-netmap=/usr \
+	    --install-root=${STAGEDIR}${PREFIX}/lib/zeek/plugins
+	cd ${WRKSRC_zeek_netmap}/build && make && make install
+
 
 .include <bsd.port.pre.mk>
 
