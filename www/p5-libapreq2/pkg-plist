@@ -4,6 +4,7 @@
 %%PERL5_MAN3%%/APR::Request::Cookie.3.gz
 %%PERL5_MAN3%%/APR::Request::Error.3.gz
 %%PERL5_MAN3%%/APR::Request::Hook.3.gz
+%%PERL5_MAN3%%/APR::Request::Magic.3.gz
 %%PERL5_MAN3%%/APR::Request::Param.3.gz
 %%PERL5_MAN3%%/APR::Request::Parser.3.gz
 %%PERL5_MAN3%%/Apache2::Cookie.3.gz
@@ -21,6 +22,7 @@
 %%SITE_ARCH%%/APR/Request/Error.pod
 %%SITE_ARCH%%/APR/Request/Hook.pm
 %%SITE_ARCH%%/APR/Request/Hook.pod
+%%SITE_ARCH%%/APR/Request/Magic.pm
 %%SITE_ARCH%%/APR/Request/Param.pm
 %%SITE_ARCH%%/APR/Request/Param.pod
 %%SITE_ARCH%%/APR/Request/Parser.pm
