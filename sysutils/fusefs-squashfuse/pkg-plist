@@ -1,0 +1,14 @@
+bin/squashfuse
+bin/squashfuse_ll
+include/squashfs_fs.h
+include/squashfuse.h
+lib/libfuseprivate.a
+lib/libfuseprivate.so
+lib/libfuseprivate.so.0
+lib/libfuseprivate.so.0.0.0
+lib/libsquashfuse.a
+lib/libsquashfuse.so
+lib/libsquashfuse.so.0
+lib/libsquashfuse.so.0.0.0
+libdata/pkgconfig/squashfuse.pc
+man/man1/squashfuse.1.gz
