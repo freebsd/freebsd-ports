@@ -776,6 +776,7 @@ include/qgis/qgsmaplayerconfigwidget.h
 include/qgis/qgsmaplayerconfigwidgetfactory.h
 include/qgis/qgsmaplayerdependency.h
 include/qgis/qgsmaplayerelevationproperties.h
+include/qgis/qgsmaplayerfactory.h
 include/qgis/qgsmaplayerlegend.h
 include/qgis/qgsmaplayerloadstyledialog.h
 include/qgis/qgsmaplayermodel.h
