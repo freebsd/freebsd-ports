@@ -2,6 +2,7 @@
 
 PORTNAME=	cm
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.multiprecision.org/downloads/
 

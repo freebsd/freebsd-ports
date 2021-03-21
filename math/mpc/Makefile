@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpc
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	math devel
 MASTER_SITES=	GNU
 
@@ -26,6 +25,6 @@ USE_LDCONFIG=	yes
 
 INFO=		mpc
 PLIST_FILES=	include/mpc.h \
-		lib/libmpc.a lib/libmpc.so lib/libmpc.so.3 lib/libmpc.so.3.1.0
+		lib/libmpc.a lib/libmpc.so lib/libmpc.so.3 lib/libmpc.so.3.2.0
 
 .include <bsd.port.mk>

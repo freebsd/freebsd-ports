@@ -2,6 +2,7 @@
 
 PORTNAME=	gcc-arm-embedded
 PORTVERSION=	10.2.20201211
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/10-2020q4/
 DISTNAME=	${ORIGINAL_PACKAGE_NAME}-src
