@@ -4,23 +4,22 @@ PORTNAME=	libsixel
 PORTVERSION=	1.8.6
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://vault.101011010.xyz/distfiles/
+MASTER_SITES=	https://github.com/saitoha/libsixel/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sue@iwmt.org
 COMMENT=	Encoder/decoder library for DEC SIXEL graphics
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig
-
 INSTALL_TARGET=	install-strip
 
-PORTDOCS=	README.md
+WRKSRC=		${WRKDIR}/sixel-${PORTVERSION}
+
+PORTDOCS=	ChangeLog NEWS
 
 OPTIONS_DEFINE=	CURL DOCS GD JPEG PIXBUF PNG PYTHON
 OPTIONS_SUB=	yes
@@ -48,7 +47,7 @@ PYTHON_USE=		python=py3kplist
 PYTHON_CONFIGURE_ENABLE=	python
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
