@@ -12,7 +12,7 @@ COMMENT=	Quick search GUI tool for Unix-like systems
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
-		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:databases/py-sqlite3@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DoTheEvo
