@@ -12,6 +12,7 @@
     SUBDIR += bedtools
     SUBDIR += bioawk
     SUBDIR += biococoa
+    SUBDIR += biolibc
     SUBDIR += bioparser
     SUBDIR += biosoup
     SUBDIR += bolt-lmm

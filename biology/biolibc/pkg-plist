@@ -1,0 +1,6 @@
+include/biostring.h
+include/dsvio.h
+include/samio.h
+include/vcfio.h
+lib/libbiolibc.a
+man/man1/biolibc.1.gz
