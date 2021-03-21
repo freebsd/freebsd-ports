@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squashfuse
-PORTVERSION=	0.1.100
+PORTVERSION=	0.1.103
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -11,12 +11,11 @@ COMMENT=	Mount a squashfs archive and treat it like a local file system
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		autoreconf fuse libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	vasi
-
-USES=		autoreconf fuse libtool pkgconfig
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/squashfuse bin/squashfuse_ll man/man1/squashfuse.1.gz
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
