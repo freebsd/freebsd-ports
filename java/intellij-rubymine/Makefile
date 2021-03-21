@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubymine
-PORTVERSION=	2020.3.2
+PORTVERSION=	2020.3.3
 CATEGORIES=	java devel
 MASTER_SITES=	https://download.jetbrains.com/ruby/ \
 		http://download.jetbrains.com/ruby/
