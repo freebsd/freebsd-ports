@@ -4,7 +4,7 @@
 PORTNAME=	dnsmasq
 DISTVERSION=	2.85rc1
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	3 # attn - different between -devel and dnsmasq ports!
 CATEGORIES=	dns
 MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/release-candidates/ \
@@ -107,7 +107,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${_intllibs} ${ICONV_LIB}
 
 post-patch:
 	${REINPLACE_CMD} -e '/^lua_/s/lua5\.2/lua-${LUA_VER}/' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's/ifr\.ifr_ifindex/ifr.ifr_index/' ${WRKSRC}/src/network.c
 
 pre-configure: pretty-print-config
 .if ${PORT_OPTIONS:MIDN}
