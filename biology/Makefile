@@ -179,6 +179,7 @@
     SUBDIR += trimadap
     SUBDIR += trimmomatic
     SUBDIR += ugene
+    SUBDIR += vcf-split
     SUBDIR += vcflib
     SUBDIR += vcftools
     SUBDIR += velvet
