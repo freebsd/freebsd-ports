@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libsixel
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.8.6
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/saitoha/libsixel/releases/download/v${PORTVERSION}/
@@ -44,7 +43,6 @@ PIXBUF_USE=		gnome=glib20,gdkpixbuf2
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_WITH=	png
 
-PYTHON_DESC=		Python interface
 PYTHON_USES=		python
 PYTHON_USE=		python=py3kplist
 PYTHON_CONFIGURE_ENABLE=	python
