@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bvm
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	guoqiang_cn@126.com
