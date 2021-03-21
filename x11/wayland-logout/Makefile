@@ -22,7 +22,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 # Cannot use C implementation without cr_pid
 .if make(makesum)
 DISTFILES=	${DISTNAME:S/${DISTVERSION}/1.3/}${EXTRACT_SUFX}
-.elif ${OPSYS} != FreeBSD || ${OSVERSION} < 1300030
+.elif ${OPSYS} != FreeBSD || ${OSVERSION} < 1202506
 DISTVERSION=	1.3
 NO_ARCH=	yes
 MESON_ARGS+=	-Dimplementation=shell
