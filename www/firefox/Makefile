@@ -13,10 +13,10 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.26:devel/nspr \
-		nss>=3.58:security/nss \
+		nss>=3.62:security/nss \
 		icu>=67.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=2.6.8:print/harfbuzz \
+		harfbuzz>=2.7.4:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
 		png>=1.6.35:graphics/png \
 		libvpx>=1.8.2:multimedia/libvpx \
