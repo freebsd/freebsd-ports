@@ -78,6 +78,34 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1431a25c-8a70-11eb-bd16-0800278d94f0">
+    <topic>gitea -- quoting in markdown text</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.13.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea Team reports for release 1.13.5:</p>
+	<blockquote cite="https://blog.gitea.io/2021/03/gitea-1.13.5-is-released/">
+	  <ul>
+	    <li>Update to goldmark 1.3.3</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.13.5</url>
+      <freebsdpr>ports/254130</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2021-03-20</discovery>
+      <entry>2021-03-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76b5068c-8436-11eb-9469-080027f515ea">
     <topic>OpenSSH -- Double-free memory corruption in ssh-agent</topic>
     <affects>
