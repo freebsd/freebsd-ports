@@ -33,6 +33,8 @@ CMAKE_OFF=	ENABLE_MATHEMATICA
 CXXFLAGS+=	-I${LOCALBASE}/include/jsoncpp
 LDFLAGS+=	-ljsoncpp
 
+PLIST_SUB=	_PY_SONAME=${_PY_SONAME}
+
 OPTIONS_DEFINE=	GUI
 OPTIONS_DEFAULT=	GUI
 
@@ -41,7 +43,15 @@ GUI_USE=	GNOME=gtkmm30,gdkpixbuf2
 GUI_CMAKE_BOOL=	ENABLE_FRONTEND
 GUI_VARS=	INSTALLS_ICONS=yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3800
+_PY_SONAME=	.cpython-${PYTHON_SUFFIX}m
+.else
+_PY_SONAME=	${PYTHON_EXT_SUFFIX}
+.endif
+
 post-extract: # unbundle
 	@${RM} -r ${WRKSRC}/libs/jsoncpp ${WRKSRC}/libs/websocketpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
