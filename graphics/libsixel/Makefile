@@ -4,7 +4,7 @@ PORTNAME=	libsixel
 PORTVERSION=	1.8.6
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	https://github.com/saitoha/libsixel/releases/download/v${PORTVERSION}/
+MASTER_SITES=	http://vault.101011010.xyz/distfiles/
 
 MAINTAINER=	sue@iwmt.org
 COMMENT=	Encoder/decoder library for DEC SIXEL graphics
