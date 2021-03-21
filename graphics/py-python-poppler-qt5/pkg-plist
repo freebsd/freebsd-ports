@@ -19,7 +19,7 @@
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/popplerqt5/timeline.sip
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/popplerqt5/types.sip
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/popplerqt5/version.sip
-%%PYTHON_SITELIBDIR%%/popplerqt5.cpython-%%PYTHON_SUFFIX%%m.so
+%%PYTHON_SITELIBDIR%%/popplerqt5%%_PY_SONAME%%.so
 %%PYTHON_SITELIBDIR%%/popplerqt5.so
 %%PYTHON_SITELIBDIR%%/python_poppler_qt5-0.75.0.dist-info/INSTALLER
 %%PYTHON_SITELIBDIR%%/python_poppler_qt5-0.75.0.dist-info/METADATA

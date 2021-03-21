@@ -16,10 +16,22 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	qmake:devel/qt5-qmake
 LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
-USES=		compiler:c++11-lang pkgconfig pyqt:5 python:3.5+ qt:5
+USES=		compiler:c++11-lang gl pkgconfig pyqt:5 python:3.5+ qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	frescobaldi
-USE_PYQT=	gui xml sip_build qtbuilder
+USE_GL=		gl
+USE_PYQT=	gui qtbuilder xml sip_build
+USE_QT=		core gui xml
+
+PLIST_SUB=	_PY_SONAME=${_PY_SONAME}
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 3800
+_PY_SONAME=	.cpython-${PYTHON_SUFFIX}m
+.else
+_PY_SONAME=	${PYTHON_EXT_SUFFIX}
+.endif
 
 do-build:
 	(cd ${WRKSRC} ; sip-build  --verbose --no-make --build-dir build ; ${MAKE} -C ./build )
@@ -28,7 +40,7 @@ do-install:
 	(cd ${WRKSRC} ; ${MAKE} -C ./build install INSTALL_ROOT=${STAGEDIR} )
 
 post-install:
-	${RLN} ${STAGEDIR}${PYTHON_SITELIBDIR}/popplerqt5.cpython-${PYTHON_SUFFIX}m.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/popplerqt5.so
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/popplerqt5.cpython-${PYTHON_SUFFIX}m.so
+	${RLN} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/popplerqt5${_PY_SONAME}.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/popplerqt5.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/popplerqt5${_PY_SONAME}.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
