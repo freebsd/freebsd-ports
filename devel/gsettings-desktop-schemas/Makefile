@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 
 PORTNAME=	gsettings-desktop-schemas
-PORTVERSION=	3.38.0
+DISTVERSION=	40.0
 CATEGORIES=	devel gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R:R}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	desktop@FreeBSD.org
