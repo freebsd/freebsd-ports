@@ -29,8 +29,9 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_PROJECT=	xrdp librfxcodec:librfxcodec libpainter:libpainter
-GH_TAGNAME=	v0.1.5:librfxcodec v0.1.1:libpainter
+GH_PROJECT=	xrdp
+GH_TUPLE=	neutrinolabs:librfxcodec:v0.1.5:librfxcodec/librfxcodec \
+		neutrinolabs:libpainter:v0.1.1:libpainter/libpainter
 
 CONFIGURE_ARGS=	--localstatedir=/var --enable-strict-locations \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
@@ -71,11 +72,6 @@ OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
 .endif
-
-post-extract:
-	# librfxcodec is provided as git submodule
-	@${CP} -r ${WRKSRC_librfxcodec}/ ${WRKSRC}/librfxcodec/
-	@${CP} -r ${WRKSRC_libpainter}/ ${WRKSRC}/libpainter/
 
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./bootstrap
