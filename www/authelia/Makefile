@@ -5,8 +5,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.27.2
 PORTREVISION=	1
 CATEGORIES=	www
-DISTFILES=	${PORTNAME}-public-html-${DISTVERSION}${EXTRACT_SUFX}:public_html # html root directory needs to be built in a special way
-MASTER_SITES=	LOCAL/yuri:public_html
+MASTER_SITES=	https://github.com/authelia/authelia/releases/download/v${DISTVERSION}/:public_html
+DISTFILES=	authelia-public_html${EXTRACT_SUFX}:public_html # html root directory needs to be built in a special way
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Single sign-on multi-factor portal for web apps
