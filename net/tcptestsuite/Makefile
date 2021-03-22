@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcptestsuite
-DISTVERSION=	g20210304
+DISTVERSION=	g20210322
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	packetdrill:net/packetdrill
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-net
 GH_PROJECT=	tcp-testsuite
-GH_TAGNAME=	d8ab9af
+GH_TAGNAME=	30b7eb8
 
 NO_ARCH=	yes
 NO_BUILD=	yes
