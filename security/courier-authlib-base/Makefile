@@ -1,7 +1,7 @@
 # Created by: Oliver Lehmann <oliver@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-base
 
 COMMENT=	Courier authentication library base

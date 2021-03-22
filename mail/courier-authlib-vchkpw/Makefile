@@ -1,7 +1,7 @@
 # Created by: Yarema <yds@CoolRat.org>
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-vchkpw
 
 COMMENT=	Vpopmail/vchkpw support for the Courier authentication library
