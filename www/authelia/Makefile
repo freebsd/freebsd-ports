@@ -3,7 +3,10 @@
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.27.2
+PORTREVISION=	1
 CATEGORIES=	www
+DISTFILES=	${PORTNAME}-public-html-${DISTVERSION}${EXTRACT_SUFX}:public_html # html root directory needs to be built in a special way
+MASTER_SITES=	LOCAL/yuri:public_html
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Single sign-on multi-factor portal for web apps
@@ -83,6 +86,12 @@ GH_TUPLE=	\
 		valyala:fasthttp:v1.22.0:valyala_fasthttp/vendor/github.com/valyala/fasthttp
 GO_TARGET=	./cmd/${PORTNAME}
 
-PLIST_FILES=	bin/${PORTNAME}
+post-extract: # extract -public-html
+	@${RM} -r ${WRKSRC}/internal/server/public_html
+	@${MV} ${WRKDIR}/public_html ${WRKSRC}/internal/server
+	@${CP} -r ${WRKSRC}/api ${WRKSRC}/internal/server/public_html/api
+
+post-install: # install the config file
+	${INSTALL_DATA} ${WRKSRC}/config.template.yml ${STAGEDIR}${PREFIX}/etc/authelia.yml.sample
 
 .include <bsd.port.mk>

@@ -1,4 +1,6 @@
-TIMESTAMP = 1615712139
+TIMESTAMP = 1616394280
+SHA256 (authelia-public-html-4.27.2.tar.gz) = ad0bdbee7eb382bf8a66b410f5cf75c0a3e87c4cf539ab2e45d51403139cef5f
+SIZE (authelia-public-html-4.27.2.tar.gz) = 967073
 SHA256 (authelia-authelia-v4.27.2_GH0.tar.gz) = b451c544a0e0741fe60f8f3d5162db9b46e2e7d7d4255eefa7b7f1023f89015d
 SIZE (authelia-authelia-v4.27.2_GH0.tar.gz) = 2065082
 SHA256 (Azure-go-ntlmssp-66371956d46c_GH0.tar.gz) = 24b46602ef1adae845ec6938550d14ce9a93b4f2171201af0a29da421b611139
