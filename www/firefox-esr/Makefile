@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-DISTVERSION=	78.8.0
+DISTVERSION=	78.9.0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build2/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build1/source
 PKGNAMESUFFIX=	-esr
 DISTFILES=	${DISTNAME}esr.source${EXTRACT_SUFX}
 
