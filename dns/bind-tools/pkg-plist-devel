@@ -17,19 +17,19 @@ bin/nsec3hash
 bin/nslookup
 bin/nsupdate
 lib/bind-tools/libbind9.so
-lib/bind-tools/libbind9-9.17.10.so
+lib/bind-tools/libbind9-9.17.11.so
 lib/bind-tools/libdns.so
-lib/bind-tools/libdns-9.17.10.so
+lib/bind-tools/libdns-9.17.11.so
 lib/bind-tools/libirs.so
-lib/bind-tools/libirs-9.17.10.so
+lib/bind-tools/libirs-9.17.11.so
 lib/bind-tools/libisc.so
-lib/bind-tools/libisc-9.17.10.so
+lib/bind-tools/libisc-9.17.11.so
 lib/bind-tools/libisccc.so
-lib/bind-tools/libisccc-9.17.10.so
+lib/bind-tools/libisccc-9.17.11.so
 lib/bind-tools/libisccfg.so
-lib/bind-tools/libisccfg-9.17.10.so
+lib/bind-tools/libisccfg-9.17.11.so
 lib/bind-tools/libns.so
-lib/bind-tools/libns-9.17.10.so
+lib/bind-tools/libns-9.17.11.so
 man/man1/arpaname.1.gz
 man/man1/delv.1.gz
 man/man1/dig.1.gz
@@ -47,6 +47,7 @@ man/man1/host.1.gz
 man/man1/mdig.1.gz
 @comment man/man1/named-checkconf.1.gz
 @comment man/man1/named-checkzone.1.gz
+@comment man/man1/named-compilezone.1.gz
 @comment man/man1/named-journalprint.1.gz
 @comment man/man1/named-nzd2nzf.1.gz
 man/man1/named-rrchecker.1.gz
@@ -56,6 +57,7 @@ man/man1/nsupdate.1.gz
 @comment man/man5/named.conf.5.gz
 @comment man/man5/rndc.conf.5.gz
 @comment man/man8/ddns-confgen.8.gz
+@comment man/man8/filter-a.8.gz
 @comment man/man8/filter-aaaa.8.gz
 @comment man/man8/named.8.gz
 @comment man/man8/rndc-confgen.8.gz
