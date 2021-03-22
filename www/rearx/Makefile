@@ -2,7 +2,7 @@
 
 PORTNAME=	rearx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1
+DISTVERSION=	0.1.3
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,6 +50,7 @@ CARGO_CRATES=	\
 		futures-sink-0.3.13 \
 		futures-task-0.3.13 \
 		futures-util-0.3.13 \
+		gag-0.1.10 \
 		getrandom-0.1.16 \
 		getrandom-0.2.2 \
 		h2-0.3.1 \
