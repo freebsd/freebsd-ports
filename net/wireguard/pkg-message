@@ -4,16 +4,14 @@
 For FreeBSD < 12.1 only the userland implementation wireguard-go is
 available.
 
-For FreeBSD >= 12.1 we default to use the kernel module if_wg(4). If
-you experience problems with it you can switch back to wireguard-go
-easily by unloading the kernel module. The userland tools wg-quick(8)
-and wg(8) try to use if_wg(4) if available and otherwise fallback to
-wireguard-go. Config files are fully compatible.
+For FreeBSD >= 12.1 we default to use the kernel module if_wg(4).
 
-To load the kernel module at boot add this to your /etc/rc.conf or
-/etc/rc.conf.d/wireguard file:
-
-kld_list="/boot/modules/if_wg.ko"
+If you experience problems with it you can switch back to wireguard-go
+by removing net/wireguard-kmod and making sure net/wireguard-go is
+installed.
+The userland tools wg-quick(8) and wg(8) try to use kernel support if 
+the kernel module is available and otherwise fall back to wireguard-go
+automatically. Config files are fully compatible.
 EOM
 }
 ]

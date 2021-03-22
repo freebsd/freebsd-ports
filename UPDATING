@@ -12,16 +12,14 @@ you update your ports collection, before attempting any port upgrades.
   A wireguard kernel implementation supporting FreeBSD 12.1 and newer was
   added as net/wireguard-kmod recently.
 
-  The new default for users of net/wireguard is the kernel module where it
-  is supported and needs to be loaded at boot time from your /etc/rc.conf
-  or /etc/rc.conf.d/wireguard file:
-
-  kld_list="/boot/modules/if_wg.ko"
+  The new default for users of net/wireguard is the kernel module.
 
   If you experience problems with it you can switch back to wireguard-go
-  easily by unloading (or not loading) the kernel module. The userland
-  tools wg-quick(8) and wg(8) try to use kernel support and otherwise fall
-  back to wireguard-go automatically. Config files are fully compatible.
+  by removing net/wireguard-kmod and making sure net/wireguard-go is
+  installed.
+  The userland tools wg-quick(8) and wg(8) try to use kernel support if
+  the kernel module is available and otherwise fall back to wireguard-go
+  automatically. Config files are fully compatible.
 
 20210317:
   AFFECTS: users of security/strongswan
