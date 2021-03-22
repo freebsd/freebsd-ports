@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cysignals
-DISTVERSION=	1.10.2
-PORTREVISION=	1
+PORTVERSION=	1.10.3
 CATEGORIES=	devel python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -12,14 +12,13 @@ COMMENT=	Interrupt and signal handling for Cython
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	cython:lang/cython
 LIB_DEPENDS=	libpari.so:math/pari
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	sagemath
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	sagemath
 
 USES=		autoreconf:build compiler:c++11-lang gettext localbase python:3.6+
-USE_PYTHON=	distutils
+USE_PYTHON=	cython distutils
 
 OPTIONS_DEFINE=		DOCS
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.6,1:textproc/py-sphinx@${PY_FLAVOR}
