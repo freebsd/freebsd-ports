@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	qtum
-PORTVERSION=	0.20.1
-DISTVERSIONPREFIX=	mainnet-ignition-v
-PORTREVISION=	1
+PORTVERSION=	0.20.2
+DISTVERSIONPREFIX=	mainnet-fastlane-v
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	vd@FreeBSD.org
@@ -44,9 +43,10 @@ CONFIGURE_ARGS=	--disable-man \
 USE_QT=		buildtools core dbus gui linguisttools network testlib widgets
 USE_GITHUB=	yes
 GH_TUPLE=	qtumproject:qtum:${DISTVERSIONPREFIX}${PORTVERSION} \
-		qtumproject:cpp-eth-qtum:397271eb2f80f21caec9e8:cppeth1/src/cpp-ethereum \
-		chfast:ethash:67a3216a5494834f7c221df93b079dac4:cppeth2/src/cpp-ethereum/ethash \
-		ethereum:evmc:bf7064dca5cbbda4def8c2548d0d7a040:cppeth3/src/cpp-ethereum/evmc
+		qtumproject:cpp-eth-qtum:3f8e2fa7a3b97:cppeth1/src/cpp-ethereum \
+		ethereum:cable:3fc90c6eed80a2cbe81e968:cppeth2/src/cpp-ethereum/cmake/cable \
+		chfast:ethash:67a3216a5494834f7c221df9:cppeth3/src/cpp-ethereum/ethash \
+		ethereum:evmc:1de783316a95fccb4fe7c24f:cppeth4/src/cpp-ethereum/evmc
 
 .include <bsd.port.pre.mk>
 
