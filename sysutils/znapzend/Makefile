@@ -11,6 +11,8 @@ COMMENT=	ZFS-centric backup tool
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails at runtime with error: Can't locate object method "delay" via package "Mojo::IOLoop"
+
 BUILD_DEPENDS=	mbuffer>=0:misc/mbuffer \
 		p5-IO-Pipely>=0:devel/p5-IO-Pipely \
 		p5-Mojo-IOLoop-ForkCall>=0.17:www/p5-Mojo-IOLoop-ForkCall \
@@ -25,14 +27,13 @@ RUN_DEPENDS=	mbuffer>=0:misc/mbuffer \
 USES=		autoreconf gmake perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	oetiker
+USE_RC_SUBR=	znapzend
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${SITE_PERL} \
 		--prefix=${PREFIX}
 CONFIGURE_ENV=	PERL5LIB=${SITE_PERL}
 NO_ARCH=	yes
-
-USE_RC_SUBR=	znapzend
 
 pre-configure:
 	@${REINPLACE_CMD} -e '/thirdparty\/Makefile/d' ${WRKSRC}/configure.ac
