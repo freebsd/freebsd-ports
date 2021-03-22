@@ -2,7 +2,7 @@
 
 PORTNAME=	wireguard-kmod
 PORTVERSION=	0.0.20210319
-CATEGORIES=	net
+CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-freebsd/snapshot/
 DISTNAME=	wireguard-freebsd-${PORTVERSION}
 
