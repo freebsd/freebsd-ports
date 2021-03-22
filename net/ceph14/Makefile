@@ -109,7 +109,7 @@ GROUPS=		ceph
 
 BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
 
-# PLIST_SUB=CMAKE_BUILD_TYPE_regex="\bdebug\b"
+# PLIST_SUB=CMAKE_BUILD_TYPE_regex="[[:<:]]debug[[:>:]]"
 
 .include <bsd.port.options.mk>
 

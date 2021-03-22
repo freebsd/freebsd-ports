@@ -172,9 +172,9 @@ OPTIMIZED_CFLAGS_CFLAGS=-O3 -funroll-loops
 DEBUG_CONFIGURE_ENABLE=	debug
 
 PLIST_SUB+=		PG_USER=${PG_USER} \
-			PG_USER_regex=\b${PG_USER}\b \
+			PG_USER_regex=[[:<:]]${PG_USER}[[:>:]] \
 			PG_GROUP=${PG_GROUP} \
-			PG_GROUP_regex=\b${PG_GROUP}\b
+			PG_GROUP_regex=[[:<:]]${PG_GROUP}[[:>:]]
 SUB_LIST+=		PG_GROUP=${PG_GROUP} \
 			PG_USER=${PG_USER} \
 			PG_UID=${PG_UID}

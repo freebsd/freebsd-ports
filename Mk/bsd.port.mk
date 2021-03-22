@@ -4543,6 +4543,8 @@ ${i:S/-//:tu}=	${WRKDIR}/${SUB_FILES:M${i}*}
 # Generate packing list.  Also tests to make sure all required package
 # files exist.
 
+PLIST_SUB_SANITIZED=	${PLIST_SUB:N*_regex=*}
+
 .if !target(generate-plist)
 generate-plist: ${WRKDIR}
 	@${ECHO_MSG} "===>   Generating temporary packing list"
@@ -4550,19 +4552,19 @@ generate-plist: ${WRKDIR}
 	@if [ ! -f ${DESCR} ]; then ${ECHO_MSG} "** Missing pkg-descr for ${PKGNAME}."; exit 1; fi
 	@>${TMPPLIST}
 	@for file in ${PLIST_FILES}; do \
-		${ECHO_CMD} $${file} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} >> ${TMPPLIST}; \
+		${ECHO_CMD} $${file} | ${SED} ${PLIST_SUB_SANITIZED:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} >> ${TMPPLIST}; \
 	done
 .if !empty(PLIST)
 .for f in ${PLIST}
 	@if [ -f "${f}" ]; then \
-		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${f} >> ${TMPPLIST}; \
+		${SED} ${PLIST_SUB_SANITIZED:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${f} >> ${TMPPLIST}; \
 		for i in owner group mode; do ${ECHO_CMD} "@$$i"; done >> ${TMPPLIST}; \
 	fi
 .endfor
 .endif
 
 .for dir in ${PLIST_DIRS}
-	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@dir ,' >> ${TMPPLIST}
+	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB_SANITIZED:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@dir ,' >> ${TMPPLIST}
 .endfor
 
 .endif
