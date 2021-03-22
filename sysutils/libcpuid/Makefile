@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcpuid
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -23,15 +23,11 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	test
 
-python_OLD_CMD=	/usr/bin/env\ python2.7
 SHEBANG_FILES=	tests/create_test.py tests/run_tests.py
 
 PORTDOCS=	AUTHORS ChangeLog Readme.md
 
 OPTIONS_DEFINE=	DOCS
-
-pre-test:
-	2to3-${PYTHON_VER} --no-diffs --write ${WRKSRC}/tests
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
