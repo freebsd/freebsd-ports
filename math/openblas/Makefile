@@ -54,7 +54,7 @@ OPTIONS_DEFAULT_amd64=	DYNAMIC_ARCH
 OPTIONS_DEFAULT_powerpc64le=	DYNAMIC_ARCH
 .endif
 
-DYNAMIC_ARCH_DESC=	Support multiple CPU types on i386 and amd64
+DYNAMIC_ARCH_DESC=	Optimize for multiple CPU types, otherwise for this CPU
 INTERFACE64_DESC=	Use 8 byte integers on 64-bit architectures
 OPENMP_DESC=		Use OpenMP for threading
 AVX_DESC=		Support Advanced Vector Extensions (AVX)
@@ -85,10 +85,6 @@ USE_GCC=		yes
 .endif
 
 MAXTHREADS?=	64
-
-.if ! ${PORT_OPTIONS:MDYNAMIC_ARCH} && ( ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "powerpc64le")
-MANUAL_PACKAGE_BUILD=	Optimizes for the build machine.
-.endif
 
 .include <bsd.port.pre.mk>
 
