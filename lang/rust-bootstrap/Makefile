@@ -46,7 +46,7 @@ powerpc64le_PKGNAMEPREFIX=	powerpc64le-
 
 USES=		perl5 python:3.6+,build tar:xz
 .if ${FLAVOR} == powerpc64_elfv1
-USE_GCC=	9
+USE_GCC=	9:build
 .endif
 # for openssl-src crate
 USE_PERL5=	build
