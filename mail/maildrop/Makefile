@@ -16,8 +16,7 @@
 # MAILDROP_MBOX_DIR=<dir>	Specify DEFAULT mailbox location
 
 PORTNAME=	maildrop
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.0.3
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -65,17 +64,19 @@ OPTIONS_MULTI=		AUTHLIB
 AUTHLIB_DESC=		Courier Auth Library support
 .endif
 
-OPTIONS_DEFINE+=	DOVECOTAUTH FAM GDBM MAILWRAPPER DOCS
+OPTIONS_DEFINE+=	DOCS DOVECOTAUTH GDBM INOTIFY MAILWRAPPER
 
 DOVECOTAUTH_DESC=	Dovecot Authentication support
+INOTIFY_DESC=		Inotify support for IDLE command
 MAILWRAPPER_DESC=	Let configure guess which sendmail binary to use
 
 OPTIONS_SUB=		yes
-GDBM_CONFIGURE_ON=	--with-db=gdbm
-GDBM_CONFIGURE_OFF=	--with-db=db
-GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
-MAILWRAPPER_CONFIGURE_OFF=	--enable-sendmail=/usr/sbin/sendmail
 DOVECOTAUTH_CONFIGURE_ENABLE=	dovecotauth
+GDBM_CONFIGURE_OFF=	--with-db=db
+GDBM_CONFIGURE_ON=	--with-db=gdbm
+GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
+INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
+MAILWRAPPER_CONFIGURE_OFF=	--enable-sendmail=/usr/sbin/sendmail
 
 .include <bsd.port.options.mk>
 
@@ -94,12 +95,6 @@ PLIST_SUB+=		MMODE='' MUID='root' MGID='mail'
 
 .if defined(MAILDROP_MBOX_DIR)
 CONFIGURE_ARGS+=	--with-default-maildrop='${MAILDROP_MBOX_DIR}'
-.endif
-
-.if ${PORT_OPTIONS:MFAM}
-USES+=			fam
-.else
-CONFIGURE_ARGS+=	ac_cv_header_fam_h=no ac_cv_lib_fam_FAMOpen=no
 .endif
 
 .if defined(MAILDROP_TRUSTED_USERS)
@@ -126,6 +121,14 @@ CONFIGURE_ARGS+=	--enable-authlib
 .else
 CONFIGURE_ARGS+=	--disable-authlib
 .endif
+
+post-patch-INOTIFY-on:
+	@${REINPLACE_CMD} -e 's|LIBS = @LIBS@|& ${LOCALBASE}/lib/libinotify.a /usr/lib/libpthread.a|' \
+		${WRKSRC}/libs/maildir/Makefile.in
+
+post-configure-INOTIFY-on:
+	@${ECHO_CMD} '#define HAVE_INOTIFY_INIT 1' >>${WRKSRC}/libs/maildir/config.h
+	@${ECHO_CMD} '#define HAVE_INOTIFY_INIT1 1' >>${WRKSRC}/libs/maildir/config.h
 
 post-install:
 .if ${PORT_OPTIONS:MDOVECOTAUTH}

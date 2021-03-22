@@ -1,6 +1,6 @@
---- Makefile.in.orig	2015-04-25 13:56:37 UTC
+--- Makefile.in.orig	2021-03-14 16:53:58 UTC
 +++ Makefile.in
-@@ -83,10 +83,10 @@ PRE_UNINSTALL = :
+@@ -93,10 +93,10 @@ PRE_UNINSTALL = :
  POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
@@ -8,14 +8,14 @@
 -@HAVE_DBLIBRARY_TRUE@am__append_2 = makedat.1
 -@HAVE_DBLIBRARY_FALSE@am__append_3 = makedat.html
 -@HAVE_DBLIBRARY_FALSE@am__append_4 = makedat.1
-+@HAVE_DBLIBRARY_TRUE@am__append_1 = 
-+@HAVE_DBLIBRARY_TRUE@am__append_2 = 
-+@HAVE_DBLIBRARY_FALSE@am__append_3 = 
-+@HAVE_DBLIBRARY_FALSE@am__append_4 = 
++@HAVE_DBLIBRARY_TRUE@am__append_1 =
++@HAVE_DBLIBRARY_TRUE@am__append_2 =
++@HAVE_DBLIBRARY_FALSE@am__append_3 =
++@HAVE_DBLIBRARY_FALSE@am__append_4 =
  subdir = .
- DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
- 	$(top_srcdir)/configure $(am__configure_deps) \
-@@ -376,7 +376,7 @@ host_alias = @host_alias@
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/configure.ac
+@@ -392,7 +392,7 @@ host_alias = @host_alias@
  host_cpu = @host_cpu@
  host_os = @host_os@
  host_vendor = @host_vendor@
@@ -24,7 +24,7 @@
  includedir = @includedir@
  infodir = @infodir@
  install_sh = @install_sh@
-@@ -412,15 +412,15 @@ EXTRA_DIST = README.html INSTALL.html UP
+@@ -428,16 +428,16 @@ EXTRA_DIST = README.html INSTALL.html UPGRADE.html REA
  	maildroptips.txt COPYING.GPL manpage.css $(HTMLWWW)
  
  scriptdir = $(pkgdatadir)/scripts
@@ -32,19 +32,22 @@
 +DELIVERQUOTAHTMLSOURCE = maildirquota.html maildrop-deliverquota.html
  DELIVERQUOTAHTML = $(DELIVERQUOTAHTMLSOURCE)
 -DELIVERQUOTAMAN = maildirquota.7 deliverquota.8
+-MAILDROPHTML = lockmail.html maildiracl.html maildirkw.html \
+-	maildirwatch.html maildirmake.html maildropex.html \
 +DELIVERQUOTAMAN = maildirquota.7 maildrop-deliverquota.8
- MAILDROPHTML = lockmail.html maildiracl.html maildirkw.html \
--	maildirmake.html maildropex.html maildir.html \
-+	maildrop-maildirmake.html maildropex.html \
- 	maildropfilter.html maildropgdbm.html maildrop.html \
- 	mailbot.html makemime.html reformail.html reformime.html \
- 	$(am__append_1)
++MAILDROPHTML = lockmail.html maildiracl.html maildrop-maildirkw.html \
++	maildirwatch.html maildrop-maildirmake.html maildropex.html \
+ 	maildir.html maildropfilter.html maildropgdbm.html \
+ 	maildrop.html mailbot.html makemime.html reformail.html \
+ 	reformime.html $(am__append_1)
 -MAILDROPMAN = lockmail.1 maildirmake.1 maildrop.1 mailbot.1 \
+-	maildropex.7 maildirkw.1 maildirwatch.1 maildir.5 \
 +MAILDROPMAN = lockmail.1 maildrop-maildirmake.1 maildrop.1 mailbot.1 \
- 	maildropex.7 maildir.5 maildropfilter.7 maildropgdbm.7 \
- 	makemime.1 reformail.1 reformime.1 $(am__append_2)
++	maildropex.7 maildrop-maildirkw.1 maildirwatch.1 maildir.5 \
+ 	maildropfilter.7 maildropgdbm.7 makemime.1 reformail.1 \
+ 	reformime.1 $(am__append_2)
  EXTRA_LTLIBRARIES = librfc822.la librfc2045.la
-@@ -1265,21 +1265,21 @@ uninstall-man: uninstall-man1 uninstall-
+@@ -1292,21 +1292,21 @@ uninstall-man: uninstall-man1 uninstall-man3 uninstall
  
  install-deliverquota:
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
@@ -72,12 +75,15 @@
  
  #  In maildrop 0.74, maildirmake was installed as bindir/maildrop.maildirmake
  #  and a soft link was created from maildirmake to maildrop.maildirmake
-@@ -1297,18 +1297,18 @@ install-maildrop:
+@@ -1324,20 +1324,20 @@ install-maildrop:
  		$(INSTALL_PROGRAM) libs/maildrop/$$f $(DESTDIR)$(bindir)/$$f ; \
  	done
  	$(INSTALL_PROGRAM) libs/liblock/lockmail $(DESTDIR)$(bindir)/lockmail
 -	$(INSTALL_PROGRAM) libs/maildir/maildirmake $(DESTDIR)$(bindir)/maildirmake
+-	$(INSTALL_PROGRAM) libs/maildir/maildirkw $(DESTDIR)$(bindir)/maildirkw
 +	$(INSTALL_PROGRAM) libs/maildir/maildirmake $(DESTDIR)$(bindir)/maildrop-maildirmake
++	$(INSTALL_PROGRAM) libs/maildir/maildirkw $(DESTDIR)$(bindir)/maildrop-maildirkw
+ 	$(INSTALL_PROGRAM) libs/maildir/maildirwatch $(DESTDIR)$(bindir)/maildirwatch
  	$(INSTALL_PROGRAM) libs/rfc2045/reformime $(DESTDIR)$(bindir)/reformime
  	$(INSTALL_PROGRAM) libs/rfc2045/makemime $(DESTDIR)$(bindir)/makemime
 -	test "@USE_DB@@USE_GDBM@" = "00" && exit 0; \
@@ -92,14 +98,22 @@
  	. libs/maildrop/uidgid ; test -z "$$uid" && exit 0; test -w /etc || exit 0; cd $(DESTDIR)$(bindir) && chown $$uid maildrop lockmail && chmod 755 maildrop lockmail
  
  uninstall-maildrop:
--	for f in maildrop mailbot maildirmake reformail lockmail makemime reformime; do \
-+	for f in maildrop mailbot maildir-maildirmake reformail lockmail makemime reformime; do \
+-	for f in maildrop mailbot maildirmake reformail lockmail makemime reformime maildirkw maildirwatch; do \
++	for f in maildrop mailbot maildrop-maildirmake reformail lockmail makemime reformime maildrop-maildirkw maildirwatch; do \
  		rm -f $(DESTDIR)$(bindir)/$$f ; \
  	done
  	test "@USE_DB@@USE_GDBM@" = "00" && exit 0; \
-@@ -1362,11 +1362,11 @@ maildiracl.html: libs/maildir/maildiracl
- maildirkw.html: libs/maildir/maildirkw.html
- 	cp -f $(srcdir)/libs/maildir/maildirkw.html maildirkw.html
+@@ -1388,20 +1388,20 @@ maildir.5: libs/maildir/maildir.5
+ maildiracl.html: libs/maildir/maildiracl.html
+ 	cp -f libs/maildir/maildiracl.html maildiracl.html
+ 
+-maildirkw.html: libs/maildir/maildirkw.html
+-	cp -f $(srcdir)/libs/maildir/maildirkw.html maildirkw.html
++maildrop-maildirkw.html: libs/maildir/maildirkw.html
++	cp -f $(srcdir)/libs/maildir/maildirkw.html maildrop-maildirkw.html
+ 
+ maildirwatch.html: libs/maildir/maildirwatch.html
+ 	cp -f $(srcdir)/libs/maildir/maildirwatch.html maildirwatch.html
  
 -maildirmake.html: libs/maildir/maildirmake.html
 -	cp -f libs/maildir/maildirmake.html maildirmake.html
@@ -111,5 +125,10 @@
 +maildrop-maildirmake.1: libs/maildir/maildirmake.1
 +	cp -f libs/maildir/maildirmake.1 maildrop-maildirmake.1
  
- maildropex.html: libs/maildrop/maildropex.html
- 	cp -f $(srcdir)/libs/maildrop/maildropex.html maildropex.html
+-maildirkw.1: libs/maildir/maildirkw.1
+-	cp -f $(srcdir)/libs/maildir/maildirkw.1 .
++maildrop-maildirkw.1: libs/maildir/maildirkw.1
++	cp -f $(srcdir)/libs/maildir/maildirkw.1 maildrop-maildirkw.1
+ 
+ maildirwatch.1: libs/maildir/maildirwatch.1
+ 	cp -f $(srcdir)/libs/maildir/maildirwatch.1 .
