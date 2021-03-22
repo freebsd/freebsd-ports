@@ -1527,6 +1527,7 @@
     SUBDIR += webalizer-geodb
     SUBDIR += whois
     SUBDIR += widentd
+    SUBDIR += wireguard
     SUBDIR += wireguard-go
     SUBDIR += wireguard-kmod
     SUBDIR += wireguard-tools
