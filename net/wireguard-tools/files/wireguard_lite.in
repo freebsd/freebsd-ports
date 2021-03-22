@@ -1,0 +1,98 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: wireguard
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# wireguard_enable (bool):        Set to "YES" to enable wireguard.
+#                                 (default: "NO")
+#
+# wireguard_interfaces (str):     List of interfaces to bring up/down
+#                                 on start/stop. (eg: "wg0 wg1")
+#                                 (default: "")
+# wireguard_<iface>_ips (str):    List of IP Addresses for iface
+# wireguard_<iface>_routes (str): List of Routes for this iface
+# wireguard_<iface>_mtu (str):    MTU for iface (default: "1500")
+
+. /etc/rc.subr
+
+load_rc_config $name
+
+: ${wireguard_enable="NO"}
+: ${wireguard_interfaces=""}
+
+name=wireguard
+rcvar=wireguard_enable
+extra_commands="reload"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+reload_cmd="${name}_reload"
+
+wireguard_start()
+{
+	for interface in ${wireguard_interfaces}; do
+		load_rc_config wireguard_${interface}
+
+		eval wireguard_ips="\${wireguard_${interface}_ips}"
+		eval wireguard_routes="\${wireguard_${interface}_routes}"
+		eval wireguard_mtu="\${wireguard_${interface}_mtu}"
+
+		ifconfig ${interface} create
+		%%PREFIX%%/bin/wg setconf ${interface} %%PREFIX%%/etc/wireguard/${interface}.conf
+
+		for ip in ${wireguard_ips}; do
+			if [ "${ip#*:}" != "${ip}" ]; then
+				ifconfig ${interface} inet6 ${ip} alias
+			else
+				ifconfig ${interface} inet ${ip} alias
+			fi
+		done
+
+		if [ ! -z "${wireguard_mtu}" ]; then
+			ifconfig ${interface} mtu ${wireguard_mtu}
+		fi
+
+		ifconfig ${interface} up
+
+		for route in ${wireguard_routes}; do
+			if [ "${route#*:}" != "${route}" ]; then
+				route -q -n add -inet6 ${route} -interface ${interface}
+			else
+				route -q -n add -inet ${route} -interface ${interface}
+			fi
+		done
+	done
+}
+
+wireguard_stop()
+{
+	for interface in ${wireguard_interfaces}; do
+		load_rc_config wireguard_${interface}
+
+		eval wireguard_routes="\${wireguard_${interface}_routes}"
+
+		for route in ${wireguard_routes}; do
+			if [ "${route#*:}" != "${route}" ]; then
+				route -q -n delete -inet6 ${route} -interface ${interface}
+			else
+				route -q -n delete -inet ${route} -interface ${interface}
+			fi
+		done
+
+		ifconfig ${interface} down
+
+		ifconfig ${interface} destroy
+	done
+}
+
+wireguard_reload()
+{
+	for interface in ${wireguard_interfaces}; do
+		%%PREFIX%%/bin/wg syncconf ${interface} %%PREFIX%%/etc/wireguard/${interface}.conf
+	done
+}
+
+run_rc_command "$1"
