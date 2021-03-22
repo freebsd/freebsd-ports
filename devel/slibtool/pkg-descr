@@ -13,4 +13,4 @@ between packages, and is most noticeable in builds that invoke libtool a large
 number of times, and which are characterized by the short compilation duration
 of individual translation units.
 
-WWW: http://git.midipix.org/cgit.cgi/slibtool/
+WWW: https://git.foss21.org/slibtool
