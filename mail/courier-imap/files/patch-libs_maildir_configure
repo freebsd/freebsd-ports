@@ -1,0 +1,22 @@
+--- libs/maildir/configure.orig	2021-03-14 17:58:25 UTC
++++ libs/maildir/configure
+@@ -17924,19 +17924,6 @@ fi
+ done
+ 
+ 
+-for ac_func in inotify_init inotify_init1
+-do :
+-  as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
+-ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
+-if eval test \"x\$"$as_ac_var"\" = x"yes"; then :
+-  cat >>confdefs.h <<_ACEOF
+-#define `$as_echo "HAVE_$ac_func" | $as_tr_cpp` 1
+-_ACEOF
+-
+-fi
+-done
+-
+-
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for missing gethostname prototype" >&5
+ $as_echo_n "checking for missing gethostname prototype... " >&6; }
+ if ${maildir_cv_SYS_GETHOSTNAME+:} false; then :
