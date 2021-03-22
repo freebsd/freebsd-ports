@@ -6,7 +6,7 @@ PORTVERSION=	4.6.4
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
-COMMENT=	Asynchronous & concurrent & distributed networking framework
+COMMENT=	Asynchronous, concurrent, and distributed networking framework
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

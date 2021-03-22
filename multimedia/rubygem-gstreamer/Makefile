@@ -6,7 +6,7 @@ CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Ruby/GStreamer is a Ruby binding for GStreamer
+COMMENT=	Ruby binding to GStreamer
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

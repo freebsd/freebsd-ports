@@ -9,7 +9,7 @@ MASTER_SITES?=	LOCAL/chinsan/fonts
 DISTNAME?=	fireflysung-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Firefly TrueType Font is combine of two arphic sung fonts
+COMMENT=	Combination of two Arphic Sung fonts
 
 CONFLICTS=	zh-opendesktop-fonts-*
 

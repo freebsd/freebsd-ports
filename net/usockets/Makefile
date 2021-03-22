@@ -6,7 +6,7 @@ DISTVERSION=	0.7.1
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Miniscule eventing, networking & crypto for async applications
+COMMENT=	Minuscule eventing, networking, and crypto for async applications
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

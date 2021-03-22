@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	ISP programmer tool for flashing NXP & Analog Devices ARM7 CPUs
+COMMENT=	ISP programmer tool for flashing NXP and Analog Devices ARM7 CPUs
 
 LICENSE=	LGPL3+
 

@@ -9,7 +9,7 @@ MASTER_SITES=	OSSP/lib/${PORTNAME}
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	OSSP ex is a small exception handling library for use in C
+COMMENT=	Small exception handling library for use in C
 
 USES=		libtool
 GNU_CONFIGURE=	yes

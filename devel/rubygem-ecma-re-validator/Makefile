@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
-COMMENT=	Regular expresionn validator against ECMA-262
+COMMENT=	Regular expression validator against ECMA-262
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,7 +9,7 @@ MASTER_SITES=	http://downloads.sourceforge.net/hessling-editor/
 DISTNAME=	THE-${PORTVERSION:S/.r/RC/}
 
 MAINTAINER=	comet.berkeley@gmail.com
-COMMENT=	THE, The Hessling Editor, is like the vm/cms xedit editor
+COMMENT=	The Hessling Editor, like the VM/CMS xedit editor
 
 LICENSE=	GPLv2
 

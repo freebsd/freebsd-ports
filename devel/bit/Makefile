@@ -6,7 +6,7 @@ DISTVERSION=	1.0.5
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
-COMMENT=	Bit is a modern Git CLI
+COMMENT=	Modern command-line interface to Git
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

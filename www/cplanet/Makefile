@@ -7,7 +7,7 @@ CATEGORIES=	www textproc
 MASTER_SITES=	http://files.etoilebsd.net/cplanet/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	RSS Feed Aggregator that generate static html
+COMMENT=	RSS Feed Aggregator that generates static HTML
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

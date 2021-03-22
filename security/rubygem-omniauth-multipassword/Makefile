@@ -6,7 +6,7 @@ CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	OmniAuth strategy using different passwort strategies
+COMMENT=	OmniAuth strategy using different password strategies
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

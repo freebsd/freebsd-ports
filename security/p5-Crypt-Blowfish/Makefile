@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl5 interface to the Blowfish encryption alogorithm
+COMMENT=	Perl interface to the Blowfish encryption algorithm
 
 LICENSE=	BSD4CLAUSE  # w/o 3'th clause
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

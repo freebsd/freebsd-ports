@@ -7,7 +7,7 @@ CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Ruby/GooCanvas is a Ruby binding of GooCanvas
+COMMENT=	Ruby binding to GooCanvas
 
 LICENSE=	LGPL21+
 

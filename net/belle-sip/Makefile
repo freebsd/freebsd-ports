@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	Belle-sip is a SIP (RFC3261) implementation written in C
+COMMENT=	SIP (RFC 3261) implementation written in C
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

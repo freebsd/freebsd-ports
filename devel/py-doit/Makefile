@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Task management & automation tool
+COMMENT=	Task management and automation tool
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

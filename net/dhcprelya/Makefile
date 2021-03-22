@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	sem@semmy.ru
-COMMENT=	Lightweight DHCP relay agent. Yandex edition
+COMMENT=	Lightweight DHCP relay agent (Yandex edition)
 
 LICENSE=	BSD3CLAUSE
 

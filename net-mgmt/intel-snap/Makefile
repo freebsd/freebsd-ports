@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Intels open telemetry framework
+COMMENT=	Intel's open telemetry framework
 
 #LICENSE=	APACHE2
 

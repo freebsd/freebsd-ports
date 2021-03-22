@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Help control rogue test, unit, autorun requirments
+COMMENT=	Help control rogue test, unit, autorun requirements
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	anes@anes.su
-COMMENT=	Determine positions for hyphens inside russian words
+COMMENT=	Determine positions for hyphens inside Russian words
 
 LICENSE=	BSD3CLAUSE
 

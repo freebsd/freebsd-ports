@@ -9,7 +9,7 @@ MASTER_SITES=	http://komquats.com/distfiles/ \
 		LOCAL/cy
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	Print lines contans IP matching a pattern in CIDR format
+COMMENT=	Print lines with IP addresses matching a pattern in CIDR format
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 

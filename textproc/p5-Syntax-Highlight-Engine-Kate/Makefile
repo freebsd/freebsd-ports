@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Port of the syntax highlight engine of the Kate texteditor
+COMMENT=	Port of the syntax highlight engine of the Kate text editor
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

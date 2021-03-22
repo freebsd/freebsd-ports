@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	ARPACK++ is an object-oriented version of the ARPACK package
+COMMENT=	Object-oriented version of the ARPACK package
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

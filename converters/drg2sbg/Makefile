@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	converters audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Convert propiatary .drg file format into SBaGen format
+COMMENT=	Convert proprietary .drg file format into SBaGen format
 
 LICENSE=	GPLv2
 

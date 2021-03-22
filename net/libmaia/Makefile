@@ -8,7 +8,7 @@ PORTREVISION=	4
 CATEGORIES=	net
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	XML-RPC lib for Qt
+COMMENT=	XML-RPC library for Qt
 
 USES=		compiler:c++11-lang gmake qmake qt:5
 USE_GITHUB=	yes

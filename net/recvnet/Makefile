@@ -9,7 +9,7 @@ MASTER_SITES=	https://www.vanheusden.com/Linux/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Recvnet (inverse telnet) is a utility for debugging tcp connections
+COMMENT=	Utility for debugging TCP connections
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt

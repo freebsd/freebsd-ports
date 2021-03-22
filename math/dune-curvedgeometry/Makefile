@@ -5,7 +5,7 @@ DISTVERSION=	g20201116
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	DUNE framework: curved dune geometries by lagrange parametrization
+COMMENT=	DUNE framework: curved dune geometries by Lagrange parameterization
 
 LICENSE=	GPLv2
 

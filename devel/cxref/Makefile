@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.gedanken.org.uk/software/cxref/download/ \
 		http://fossies.org/linux/misc/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	C program cross-referencing & documentation tool
+COMMENT=	C program cross-referencing and documentation tool
 
 LICENSE=	GPLv2
 

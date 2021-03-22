@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl module for prefixes and suffixes analisys of text
+COMMENT=	Perl module for prefixes and suffixes analysis of text
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

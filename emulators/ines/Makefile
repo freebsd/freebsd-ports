@@ -10,7 +10,7 @@ DISTNAME=	iNES30-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Nintendo Entertainment System emlator for X
+COMMENT=	Nintendo Entertainment System emulator for X11
 
 LIB_DEPENDS=	libc.so.5:misc/compat5x
 

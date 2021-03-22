@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
-COMMENT=	JsonPath is a way of addressing elements within a JSON object
+COMMENT=	Way of addressing elements within a JSON object
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

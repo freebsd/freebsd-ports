@@ -8,7 +8,7 @@ CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	Requests with Gevent to make asyncronous HTTP requests
+COMMENT=	Requests with Gevent to make asynchronous HTTP requests
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

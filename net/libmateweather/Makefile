@@ -8,7 +8,7 @@ MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Library to accessing online weather informations
+COMMENT=	Library to access online weather information
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/daemontools-encore/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Daemontools-encore is a collection of tools for managing UNIX services
+COMMENT=	Collection of tools for managing Unix services
 
 LICENSE=	MIT
 

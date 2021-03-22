@@ -8,7 +8,7 @@ CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 
 MAINTAINER=	tremere@cainites.net
-COMMENT=	Highly DNS-, DoS- and abuse-aware loadbalancer
+COMMENT=	Highly DNS-, DoS-, and abuse-aware load balancer
 
 LICENSE=	GPLv2 UNLICENSE
 LICENSE_COMB=	multi

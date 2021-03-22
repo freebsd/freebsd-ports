@@ -8,7 +8,7 @@ MASTER_SITES=	http://artifacts.elastic.co/downloads/logstash/
 PKGNAMESUFFIX=	6
 
 MAINTAINER=	elastic@FreeBSD.org
-COMMENT=	Server-side data ingest and transfomation tool
+COMMENT=	Server-side data ingestion and transformation tool
 
 LICENSE=	APACHE20
 

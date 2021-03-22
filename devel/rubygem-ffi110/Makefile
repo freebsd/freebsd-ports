@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 PKGNAMESUFFIX=	110
 
 MAINTAINER=	mfechner@FreeBSD.org
-COMMENT=	Extension for dynamic libraries & binding functions
+COMMENT=	Extension for dynamic libraries and binding functions
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

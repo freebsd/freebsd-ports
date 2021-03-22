@@ -9,7 +9,7 @@ MASTER_SITES=	SF/myitcrm/
 DISTNAME=	MyITCRM1-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	MyIT CRM is a CRM project designed for Computer Servicing and Repairs
+COMMENT=	CRM project designed for Computer Servicing and Repairs
 
 LICENSE=	GPLv3
 

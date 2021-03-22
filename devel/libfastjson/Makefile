@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	libfastjson is a fork from json-c
+COMMENT=	Fork of json-c (JSON implementation in C)
 
 LICENSE=	MIT
 

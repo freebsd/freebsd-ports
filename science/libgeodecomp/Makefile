@@ -8,7 +8,7 @@ CATEGORIES=		science devel
 MASTER_SITES=		http://www.libgeodecomp.org/archive/
 
 MAINTAINER=		kurt@kmk-computers.de
-COMMENT=		LibGeoDecomp is an auto-parallelizing library for computer simulations
+COMMENT=		Auto-parallelizing library for computer simulations
 
 LICENSE=		BSL
 LICENSE_FILE=		${WRKSRC}/LICENSE

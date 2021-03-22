@@ -7,7 +7,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	https://github.com/bbidulock/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Big collection of IceMW window manager themes
+COMMENT=	Big collection of IceWM window manager themes
 
 LICENSE=	GPLv2
 

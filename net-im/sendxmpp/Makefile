@@ -8,7 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	net-im perl5
 
 MAINTAINER=	mek@mek.uz.ua
-COMMENT=	Perl-script to send xmpp (jabber) messages
+COMMENT=	Perl script to send XMPP (Jabber) messages
 
 LICENSE=	GPLv2
 

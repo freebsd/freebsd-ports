@@ -6,7 +6,7 @@ DISTVERSION=	2021-02-04
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
-COMMENT=	Matcha is a flat Design theme for GTK 3, GTK 2 and Gnome-Shell
+COMMENT=	Flat design theme for GTK 3, GTK 2, and Gnome-Shell
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

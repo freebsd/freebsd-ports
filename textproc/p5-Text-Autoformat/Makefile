@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0\.(000)$//}
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Automatic and manual text wrapping and reformating formatting
+COMMENT=	Automatic and manual text wrapping and reformatting
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

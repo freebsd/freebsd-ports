@@ -8,7 +8,7 @@ PORTREVISION=	6
 CATEGORIES=		graphics
 
 MAINTAINER=		yuri@FreeBSD.org
-COMMENT=		Animated sprite editor & pixel art tool
+COMMENT=		Animated sprite editor and pixel art tool
 
 LICENSE=		EULA
 LICENSE_NAME=		END-USER LICENSE AGREEMENT FOR ASEPRITE

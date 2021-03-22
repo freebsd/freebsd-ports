@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	CPAN:LAWALSH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Alternative Exporter with persistant defaults and auto-ISA
+COMMENT=	Alternative Exporter with persistent defaults and auto-ISA
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

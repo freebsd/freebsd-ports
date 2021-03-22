@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	pi@FreeBSD.org
-COMMENT=	Conveniently print any Python datastructure
+COMMENT=	Conveniently print any Python data structure
 
 LICENSE=	PSFL
 

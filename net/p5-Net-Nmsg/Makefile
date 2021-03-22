@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:MSISK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	truckman@FreeBSD.org
-COMMENT=	Net::Nmsg is a perl binding to libnmsg
+COMMENT=	Perl bindings to libnmsg
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

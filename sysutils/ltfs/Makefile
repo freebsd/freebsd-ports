@@ -8,7 +8,7 @@ DISTVERSIONSUFFIX=	-10461
 CATEGORIES=		sysutils
 
 MAINTAINER=	kbowling@FreeBSD.org
-COMMENT=	Reference implementation of LTFS for stand alone tape drive
+COMMENT=	Reference implementation of LTFS for stand-alone tape drive
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE =	${WRKSRC}/LICENSE

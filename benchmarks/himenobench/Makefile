@@ -14,7 +14,7 @@ DISTFILES=	himenobmtxp_xl.zip himenobmtxp_l.zip \
 DIST_SUBDIR=	himeno
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Tool for measureing performance of floating point operation
+COMMENT=	Tool for measuring performance of floating point operations
 
 LICENSE=	LGPL20 # (or later)
 

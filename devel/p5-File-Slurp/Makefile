@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:URI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl5 module for single call read & write file routines
+COMMENT=	Perl module for single call read and write file routines
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

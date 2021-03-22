@@ -8,7 +8,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
-COMMENT=	Compile time ini file parser and writter generator for D
+COMMENT=	Compile-time .ini file parser and writer generator for D
 
 LICENSE=	BSL
 

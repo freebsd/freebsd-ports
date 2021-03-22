@@ -8,7 +8,7 @@ MASTER_SITES=	https://sortix.org/rw/release/
 DISTNAME=	rw-portable-${DISTVERSION}
 
 MAINTAINER=	jsmith@resonatingmedia.com
-COMMENT=	Simple replacement for dd wth standard command line flags
+COMMENT=	Simple replacement for dd(1) with standard command-line flags
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE

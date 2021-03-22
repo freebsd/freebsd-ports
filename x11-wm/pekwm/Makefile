@@ -9,7 +9,7 @@ PORTEPOCH=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	natbsd@instinctive.eu
-COMMENT=	Light, Unobtrusive, and configurable windowmanager
+COMMENT=	Light, unobtrusive, and configurable window manager
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

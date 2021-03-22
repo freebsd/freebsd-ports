@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	jamie@chair6.net
-COMMENT=	C library implementing Javascript Object Signing & Encryption (JOSE)
+COMMENT=	C library implementing JavaScript Object Signing and Encryption (JOSE)
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

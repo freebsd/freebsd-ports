@@ -10,7 +10,7 @@ PATCH_SITES=	https://github.com/halide/Halide/commit/
 PATCHFILES=	890a5199ae8ade759de076217670ae980bf44823.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Halide, a language for fast and portable data-parallel computation
+COMMENT=	Language for fast and portable data-parallel computation
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

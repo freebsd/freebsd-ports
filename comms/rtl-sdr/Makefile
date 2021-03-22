@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	Commandline tool that performs SDR with RTL2832-based USB sticks
+COMMENT=	Command-line tool that performs SDR with RTL2832-based USB sticks
 
 LICENSE=	GPLv2
 

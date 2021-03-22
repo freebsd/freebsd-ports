@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNU_ALPHA/ssw
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	SSW is a library for Gtk+ which provides a widget for tabular data
+COMMENT=	Library for GTK which provides widget for tabular data
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

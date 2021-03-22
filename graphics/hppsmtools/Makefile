@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://unimut.fsk.uni-heidelberg.de/demi/photosmart/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Tool for HP PhotoSmart C5340A & Konica Q-EZ digital cameras
+COMMENT=	Tool for HP PhotoSmart C5340A and Konica Q-EZ digital cameras
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

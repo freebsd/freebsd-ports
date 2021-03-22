@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.alsa-project.org/pub/utils/ \
 		GENTOO
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	ALSA compatibility utils
+COMMENT=	ALSA compatibility utilities
 
 LICENSE=	GPLv2+
 

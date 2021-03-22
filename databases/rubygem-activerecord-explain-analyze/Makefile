@@ -8,7 +8,7 @@ CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
-COMMENT=	Extends ActiveRecord#explain with additinal features
+COMMENT=	Extends ActiveRecord#explain with additional features
 
 LICENSE=	MIT
 

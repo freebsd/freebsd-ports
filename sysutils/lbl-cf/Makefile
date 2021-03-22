@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ee.lbl.gov/
 PKGNAMEPREFIX=	lbl-
 
 MAINTAINER=	leres@FreeBSD.org
-COMMENT=	Unix time to formated time and date filter
+COMMENT=	Unix time to formatted time and date filter
 
 LICENSE=	BSD3CLAUSE
 

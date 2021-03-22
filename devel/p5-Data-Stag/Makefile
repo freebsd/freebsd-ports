@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
-COMMENT=	Structured Tags datastructures
+COMMENT=	Structured Tags data structures
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

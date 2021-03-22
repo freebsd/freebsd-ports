@@ -8,7 +8,7 @@ CATEGORIES=	ports-mgmt python
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	Vladimir.Chukharev@gmail.com
-COMMENT=	Show dependences of FreeBSD port as pseudo graphical tree
+COMMENT=	Show dependencies of FreeBSD port as pseudo graphical tree
 
 LICENSE=	MIT
 

@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	${CLIENT_OR_SERVER}-devel
 DISTNAME=	${PORTNAME}-${SVNVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
-COMMENT=	Open source, completely automatic on-line backup system for UNIX
+COMMENT=	Open-source, completely automatic on-line backup system
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual

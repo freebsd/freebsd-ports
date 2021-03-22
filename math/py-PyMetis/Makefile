@@ -7,7 +7,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Python wrapper for the Metis graph partititioning software
+COMMENT=	Python wrapper for the Metis graph partitioning software
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

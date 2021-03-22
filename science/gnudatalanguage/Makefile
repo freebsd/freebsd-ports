@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 .endif
 
 MAINTAINER=	thierry@FreeBSD.org
-COMMENT?=	GDL, a free IDL compatible incremental compiler
+COMMENT?=	Free IDL-compatible incremental compiler
 
 LICENSE=	GPLv2
 

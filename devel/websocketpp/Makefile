@@ -5,7 +5,7 @@ PORTVERSION=	0.8.2
 CATEGORIES=	devel
 
 MAINTAINER=	arved@FreeBSD.org
-COMMENT=	Header only implementation of the WebSocket protocol
+COMMENT=	Header-only implementation of the WebSocket protocol
 
 LICENSE=	MIT BSD3CLAUSE ZLIB
 LICENSE_COMB=	multi
