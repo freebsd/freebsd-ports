@@ -2,6 +2,7 @@
 
 PORTNAME=	appmenu-gtk-module
 DISTVERSION=	0.7.6
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	trueos@norwegianrockcat.com

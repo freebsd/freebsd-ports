@@ -3,3 +3,5 @@ programs, converts to them MenuModel and send to them AppMenu
 (sometimes called a global menu bar) of a desktop environment like
 Plasma or Gnome. This module was originally used in Ubuntu's Unity
 Desktop Environment, but it lives on as part of the Vala project.
+
+WWW: https://gitlab.com/vala-panel-project/vala-panel-appmenu/-/tree/master/subprojects/appmenu-gtk-module
