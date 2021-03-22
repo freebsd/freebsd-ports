@@ -1,0 +1,15 @@
+TIMESTAMP = 1616443176
+SHA256 (steinbergmedia-vst3sdk-v3.7.1_build_50-1-g8199057_GH0.tar.gz) = 4bc9dafb8cd509bf28b50528f2c4ac872329b0fa5398c6acb8a8ec6b8b67eac3
+SIZE (steinbergmedia-vst3sdk-v3.7.1_build_50-1-g8199057_GH0.tar.gz) = 413312
+SHA256 (steinbergmedia-vst3_base-7b977c031f42a6bab08e8b10f4f8df0a1f516c38_GH0.tar.gz) = 4e9795de22f2c71f5e7924944463617c0b0f322d61e9a078b7c00c1cf9f927e0
+SIZE (steinbergmedia-vst3_base-7b977c031f42a6bab08e8b10f4f8df0a1f516c38_GH0.tar.gz) = 62106
+SHA256 (steinbergmedia-vst3_cmake-ed8d829631a8913143f5c0f4d5d36a31c412e42c_GH0.tar.gz) = 2269410517eb2b665f4e6afd832fbe7ea93330a8aae5cb678625c3f2a0f4a46e
+SIZE (steinbergmedia-vst3_cmake-ed8d829631a8913143f5c0f4d5d36a31c412e42c_GH0.tar.gz) = 17908
+SHA256 (steinbergmedia-vst3_doc-d8e7317751aaf7ccccbeb4d1e8103c290c2690ca_GH0.tar.gz) = d39cacbe3a415ae2bf770df5458b23b76c59425adb09a426fc4389352cb0ecd6
+SIZE (steinbergmedia-vst3_doc-d8e7317751aaf7ccccbeb4d1e8103c290c2690ca_GH0.tar.gz) = 43767244
+SHA256 (steinbergmedia-vst3_pluginterfaces-fe202edc93e9a01a1f79a614cc9a292dc9bf3e6e_GH0.tar.gz) = f1093ac8a932626f3c1615b32660c971876de0d7bd4cb40fdd3b370e6d65ddc5
+SIZE (steinbergmedia-vst3_pluginterfaces-fe202edc93e9a01a1f79a614cc9a292dc9bf3e6e_GH0.tar.gz) = 94883
+SHA256 (steinbergmedia-vst3_public_sdk-a3a3ed1b1620df0b064564f1fd5423ae110234a0_GH0.tar.gz) = 45dc7cf1236624718ab35a3d79a861e6242adead28c832a77e33ff9cc9c8e21c
+SIZE (steinbergmedia-vst3_public_sdk-a3a3ed1b1620df0b064564f1fd5423ae110234a0_GH0.tar.gz) = 12255746
+SHA256 (steinbergmedia-vstgui-83c6dc9a548729e121746839da946e2b73781b70_GH0.tar.gz) = 6250e037cdb4e3ef383fd4f03b1addd7077e1ba8776a5f8e6bc920b06a6b796f
+SIZE (steinbergmedia-vstgui-83c6dc9a548729e121746839da946e2b73781b70_GH0.tar.gz) = 3510116

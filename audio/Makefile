@@ -818,6 +818,7 @@
     SUBDIR += vorbis-tools
     SUBDIR += vorbisgain
     SUBDIR += vsound
+    SUBDIR += vst3sdk
     SUBDIR += waon
     SUBDIR += wav2cdr
     SUBDIR += wavbreaker

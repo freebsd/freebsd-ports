@@ -1,0 +1,7 @@
+The VST SDK package contains
+* The VST 3 API
+* VST 3 Implementation Helper Classes
+* AAX, AU, AUv3 and VST 2 wrappers
+* VST 3 plug-ins Examples
+
+WWW: https://github.com/steinbergmedia/vst3sdk
