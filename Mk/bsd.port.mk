@@ -1761,7 +1761,7 @@ PLIST_SUB_SED_tmp2= ${PLIST_SUB_SED_tmp1:NEXTRACT_SUFX=*:NOSREL=*:NLIB32DIR=*:NP
 PLIST_SUB_SED_tmp3?= ${PLIST_SUB_SED_tmp2:C/(${PLIST_SUB:M*_regex=*:C/_regex=.*/=.*/:Q:S/\\ /|/g:S/\\//g})//:C/(.*)_regex=(.*)/\1=\2/}
 #  Remove quotes
 #  Replace . with \. for later sed(1) usage
-PLIST_SUB_SED?= ${PLIST_SUB_SED_tmp3:C/([^=]*)="?([^"]*)"?/s!\2!%%\1%%!g;/g:C/\./\\./g}
+PLIST_SUB_SED?= ${PLIST_SUB_SED_tmp3:C/([^=]*)="?([^"]*)"?/s!\2!%%\1%%!g;/g:C/\./[.]/g}
 
 # kludge to strip trailing whitespace from CFLAGS;
 # sub-configure will not # survive double space
