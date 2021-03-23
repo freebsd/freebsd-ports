@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	libva
-PORTVERSION=	2.10.0
+DISTVERSION=	2.11.0
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	c2a431cc3cab.patch:-p1 # https://github.com/intel/libva/pull/292
-PATCHFILES+=	5cfcd31635b1.patch:-p1 # https://github.com/intel/libva/pull/292
+PATCHFILES+=	0c9e5f2fff22.patch:-p1 # https://github.com/intel/libva/pull/292
+PATCHFILES+=	657d77406161.patch:-p1 # https://github.com/intel/libva/pull/292
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	VAAPI wrapper and dummy driver
