@@ -10,7 +10,6 @@ lib/ugene/libU2Private.so
 lib/ugene/libU2Script.so
 lib/ugene/libU2Test.so
 lib/ugene/libU2View.so
-lib/ugene/libugenedb.so
 lib/ugene/plugins/CoreTests.license
 lib/ugene/plugins/CoreTests.plugin
 lib/ugene/plugins/GUITestBase.license

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ugene
-PORTVERSION=	37.0
+PORTVERSION=	38.0
 CATEGORIES=	biology science
 
 MAINTAINER=	h2+fbsdports@fsfe.org
-COMMENT=	Free, open-source, cross-platform bioinformatics toolkit
+COMMENT=	Integrated bioinformatics toolkit
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -19,7 +19,7 @@ RUN_DEPENDS=	bash:shells/bash
 USE_GITHUB=	yes
 GH_ACCOUNT=	ugeneunipro
 
-USES=		desktop-file-utils gl qmake qt:5 shared-mime-info xorg
+USES=		desktop-file-utils gl qmake qt:5 shared-mime-info sqlite xorg
 USE_GL=		gl glu
 USE_QT=		buildtools_build linguisttools_build \
 		core gui network opengl printsupport scripttools script \
@@ -29,7 +29,8 @@ USE_XORG=	x11 xtst
 
 QMAKE_ARGS=	INSTALL_PREFIX="${PREFIX}" UGENE_INSTALL_DATA="${DATADIR}" \
 		INSTALL_MANDIR="${MAN1PREFIX}/man" \
-		UGENE_LRELEASE="${LRELEASE}" UGENE_LUPDATE="${LUPDATE}"
+		UGENE_LRELEASE="${LRELEASE}" UGENE_LUPDATE="${LUPDATE}" \
+		UGENE_USE_BUNDLED_SQLITE=0
 ALL_TARGET=	release
 CXXFLAGS_i386=	-msse2
 
