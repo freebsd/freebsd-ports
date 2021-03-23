@@ -1,27 +1,28 @@
 # $FreeBSD$
 
 PORTNAME=	sonarr
-PORTVERSION=	2.0.0.5344
+PORTVERSION=	3.0.5.1144
 PORTREVISION=	0
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://download.sonarr.tv/v2/master/mono/
-DISTNAME=	NzbDrone.master.${PORTVERSION}.mono
+MASTER_SITES=	http://download.sonarr.tv/v3/main/${PORTVERSION}/
+DISTNAME=	Sonarr.main.${PORTVERSION}.linux
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	PVR for Usenet and BitTorrent users
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	mono>0:lang/mono \
-		mediainfo>0:multimedia/mediainfo \
-		sqlite3>0:databases/sqlite3
 LIB_DEPENDS=	libcurl.so:ftp/curl
+RUN_DEPENDS=	mediainfo>0:multimedia/mediainfo \
+		sqlite3>0:databases/sqlite3
+
+USES=		mono
 
 USE_RC_SUBR=	sonarr
 
 NO_ARCH=	YES
 NO_BUILD=	YES
-WRKSRC=	${WRKDIR}/NzbDrone
+WRKSRC=	${WRKDIR}/Sonarr
 
 USERS=	sonarr
 GROUPS=	sonarr
