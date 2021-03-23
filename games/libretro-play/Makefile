@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	play
-PORTVERSION=	0.33.0.20201020
+PORTVERSION=	0.38.0.20210320
 CATEGORIES=	games
 PKGNAMEPREFIX=	libretro-
 
@@ -32,10 +32,10 @@ GH_PROJECT=	Play- \
 		Play--Framework:framework \
 		Play-Dependencies:dependencies \
 		filesystem:ghc_filesystem
-GH_TAGNAME=	80b31dd8c1583b2200ee6345c1047e901dcd54ed \
-		e52d41b0c18132edf657225a422e6699c1d241c4:codegen \
-		26314863b9af9fd2c492d6410a8fbe24701eabd2:framework \
-		41b68c0dd63dee867e8519fca9b52970fc0c8ddf:dependencies \
+GH_TAGNAME=	3cd0a367b5e24c061a6310c68c9fa7f6b531ebd4 \
+		10068b1fd39efa88fbfb2fe14e820eae552fb2a1:codegen \
+		65baebea9ca9e7ce0631e71c8ede33f4e3d25a15:framework \
+		e3e6669ecd40598b4e4adc1bc9297c6967f4c929:dependencies \
 		3605e869150032ffdd9eae3db93e12f8711a0c82:ghc_filesystem
 GH_SUBDIR=	deps/CodeGen:codegen \
 		deps/Framework:framework \
@@ -49,8 +49,14 @@ CMAKE_OFF=	BUILD_AOT_CACHE \
 		BUILD_PLAY \
 		BUILD_PSFPLAYER \
 		BUILD_TESTS \
+		USE_AOT_CACHE \
 		ENABLE_AMAZON_S3
-CMAKE_ARGS=	-DSHORT_HASH=${GH_TAGNAME_DEFAULT}
+CMAKE_ARGS=	-DGIT_TAG=${GH_TAGNAME_DEFAULT} \
+		-DGIT_DESCRIBE_RESULT=0
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|execute_process(COMMAND git.*||g' \
+		${WRKSRC}/CMakeLists.txt
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
