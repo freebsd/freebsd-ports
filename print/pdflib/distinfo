@@ -1,2 +1,5 @@
+TIMESTAMP = 1614866181
 SHA256 (PDFlib-Lite-7.0.5p3.tar.gz) = e5fb30678165d28b2bf066f78d5f5787e73a2a28d4902b63e3e07ce1678616c9
 SIZE (PDFlib-Lite-7.0.5p3.tar.gz) = 8179201
+SHA256 (PDFlib-Lite-license.txt.gz) = fedc1ef76e3df5f40cf5740a0fc06df5a7844a968cf72dba3e073716f779a91b
+SIZE (PDFlib-Lite-license.txt.gz) = 2869
