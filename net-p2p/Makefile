@@ -80,7 +80,6 @@
     SUBDIR += rtorrent
     SUBDIR += shx
     SUBDIR += sonarr
-    SUBDIR += sonarr-devel
     SUBDIR += torrent-file-editor
     SUBDIR += torrentcheck
     SUBDIR += torrentsniff
