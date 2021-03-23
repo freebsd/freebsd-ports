@@ -1,0 +1,12 @@
+Weird CMake macro error coming from that
+
+--- CMakeLists.txt.orig	2021-03-22 12:21:36 UTC
++++ CMakeLists.txt
+@@ -405,7 +405,6 @@ find_package(Qt5 NO_MODULE QUIET OPTIONAL_COMPONENTS
+   Test
+   WebEngineWidgets
+   Widgets
+-  WaylandCompositor
+ )
+ 
+ set(MACOS_DISABLE_UNSUPPORTED_TESTS FALSE)
