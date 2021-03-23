@@ -222,7 +222,7 @@ seaweedfs:*:273:273::0:0:seaweedfs user:/var/db/seaweedfs:/usr/sbin/nologin
 usbmuxd:*:274:274::0:0:USB multiplexing daemon:/nonexistent:/usr/sbin/nologin
 hacluster:*:275:275::0:0:Heartbeat cluster user:/nonexistent:/usr/sbin/nologin
 frontbase:*:276:276::0:0:FrontBase Daemon:/usr/local/FrontBase/Databases:/bin/sh
-# free: 277
+unifi-poller:*:277:277::0:0:unifi-poller daemon:/nonexistent:/usr/sbin/nologin
 rtg:*:278:278::0:0:RTG daemon:/nonexistent:/usr/sbin/nologin
 mrtg:*:279:279::0:0:MRTG daemon:/nonexistent:/usr/sbin/nologin
 xymon:*:280:280::0:0:Xymon Monitor:/nonexistent:/usr/sbin/nologin
