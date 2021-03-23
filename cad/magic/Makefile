@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	magic
-DISTVERSION=	8.3.125
+DISTVERSION=	8.3.145
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/magic/archive/
 
