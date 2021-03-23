@@ -1,10 +1,12 @@
-TIMESTAMP = 1615742406
-SHA256 (git-chglog-git-chglog-v0.11.2_GH0.tar.gz) = 4dfbdf3241e87b72071adc989b74ea0850d1b3ac2f5cdb5e38eb292f71f5e46f
-SIZE (git-chglog-git-chglog-v0.11.2_GH0.tar.gz) = 539534
+TIMESTAMP = 1616493981
+SHA256 (git-chglog-git-chglog-v0.12.0_GH0.tar.gz) = 7b7f978cd7f9089ed325de7f5ee78976aadf3d56f8293a0422a54ca9af786576
+SIZE (git-chglog-git-chglog-v0.12.0_GH0.tar.gz) = 542422
 SHA256 (AlecAivazis-survey-v2.2.9_GH0.tar.gz) = 8011eadec37037a25a934f5a7a1bd9f49db05834ef5f9b1f14d00b555d05c220
 SIZE (AlecAivazis-survey-v2.2.9_GH0.tar.gz) = 1567447
 SHA256 (andygrunwald-go-jira-v1.13.0_GH0.tar.gz) = 9acf1e50bc800b1a082f1be81df568bcdf6708ec353fbbe0d27db1d3c488af6b
 SIZE (andygrunwald-go-jira-v1.13.0_GH0.tar.gz) = 447443
+SHA256 (coreos-go-semver-v0.3.0_GH0.tar.gz) = 1b72134483db366fb43f216727d6bc110086d4450ce0d226960cf4ce823d6eb9
+SIZE (coreos-go-semver-v0.3.0_GH0.tar.gz) = 10663
 SHA256 (cpuguy83-go-md2man-f79a8a8ca69d_GH0.tar.gz) = c117a3e3741ea39016b678b24db19b1f766277bac7c1c6d721237bb159610178
 SIZE (cpuguy83-go-md2man-f79a8a8ca69d_GH0.tar.gz) = 52020
 SHA256 (davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e

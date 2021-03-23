@@ -2,7 +2,7 @@
 
 PORTNAME=	git-chglog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.2
+DISTVERSION=	0.12.0
 CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -18,6 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_TUPLE=	AlecAivazis:survey:v2.2.9:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
 		andygrunwald:go-jira:v1.13.0:andygrunwald_go_jira/vendor/github.com/andygrunwald/go-jira \
+		coreos:go-semver:v0.3.0:coreos_go_semver/vendor/github.com/coreos/go-semver \
 		cpuguy83:go-md2man:f79a8a8ca69d:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
