@@ -16195,3 +16195,4 @@ sysutils/prelink||2021-03-11|Has expired: Have no users in the ports tree
 x11-fonts/vtfontcvt-ng||2021-03-12|no longer useful on any supported releases; use vtfontcvt(8) instead
 biology/py-fastTSNE|math/py-openTSNE|2021-03-13|project renamed/reimplemented under a different name
 emulators/open-vm-tools-nox11|emulators/open-vm-tools@nox11|2021-03-17|Moved to a flavored, generic, version
+math/s2geometry|graphics/s2|2021-03-22|Remove duplicate port
