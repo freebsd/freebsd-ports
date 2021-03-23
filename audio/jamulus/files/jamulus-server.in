@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: jamulus-server
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable jamulus_server:
+# jamulus_server_enable : set to "YES" to enable the daemon, default is "NO"
+# jamulus_server_flags  : any extra flags, default is ""
+#    - list of all possible flags: https://jamulus.io/wiki/Command-Line-Options
+
+. /etc/rc.subr
+
+name=jamulus_server
+rcvar=jamulus_server_enable
+
+load_rc_config $name
+
+jamulus_server_enable=${jamulus_server_enable:-"NO"}
+jamulus_server_flags=${jamulus_server_flags:-""}
+
+logfile="/var/log/${name}.log"
+
+procname=%%PREFIX%%/bin/jamulus-server
+command="/usr/sbin/daemon"
+command_args="-u %%USER%% -o ${logfile} -t ${name} %%PREFIX%%/bin/jamulus-server -s ${jamulus_server_flags}"
+
+run_rc_command "$1"
