@@ -2,6 +2,7 @@
 
 PORTNAME=	rust
 PORTVERSION=	1.50.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:rust \
 		LOCAL/mikael:armbase \
