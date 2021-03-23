@@ -1,5 +1,8 @@
 # $FreeBSD$
 
+# Once the bootstraps are available on pkg.FreeBSD.org run sync.sh
+# to upload them to ~/public_distfiles on freefall in preparation
+# for the next lang/rust update.
 PORTNAME=	rust
 PORTVERSION=	1.50.0
 PORTREVISION=	1
