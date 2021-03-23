@@ -101,13 +101,9 @@ GH_TUPLE=	AndreasBriese:bbloom:e2d15f34fcf9:andreasbriese_bbloom/vendor/github.c
 		sirupsen:logrus:v1.6.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		smallstep:certificates:v0.15.4:smallstep_certificates/vendor/github.com/smallstep/certificates \
 		smallstep:cli:v0.15.2:smallstep_cli/vendor/github.com/smallstep/cli \
-		smallstep:crypto:v0.6.0:smallstep_crypto/vendor/go.step.sm/crypto \
+		smallstep:crypto:70072f45afc0f699:smallstep_pemutil/vendor/go.step.sm/crypto \
 		smallstep:nosql:v0.3.0:smallstep_nosql/vendor/github.com/smallstep/nosql \
-		smallstep:crypto:70072f45afc0f699:smallstep_pemutil/vendor/go.step.sm/crypto/pemutil \
-		smallstep:crypto:70072f45afc0f699:smallstep_randutil/vendor/go.step.sm/crypto/randutil \
-		smallstep:crypto:70072f45afc0f699:smallstep_sshutil/vendor/go.step.sm/crypto/sshutil \
 		smallstep:truststore:v0.9.6:smallstep_truststore/vendor/github.com/smallstep/truststore \
-		smallstep:crypto:70072f45afc0f699:smallstep_x509util/vendor/go.step.sm/crypto/x509util \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
 		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
 		uber-go:atomic:v1.6.0:uber_go_atomic/vendor/go.uber.org/atomic \
