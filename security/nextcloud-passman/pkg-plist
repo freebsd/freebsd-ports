@@ -1454,6 +1454,10 @@
 %%WWWDIR%%/l10n/ro.json
 %%WWWDIR%%/l10n/ru.js
 %%WWWDIR%%/l10n/ru.json
+%%WWWDIR%%/l10n/sc.js
+%%WWWDIR%%/l10n/sc.json
+%%WWWDIR%%/l10n/si.js
+%%WWWDIR%%/l10n/si.json
 %%WWWDIR%%/l10n/si_LK.js
 %%WWWDIR%%/l10n/si_LK.json
 %%WWWDIR%%/l10n/sk.js
@@ -1468,6 +1472,8 @@
 %%WWWDIR%%/l10n/sr@latin.json
 %%WWWDIR%%/l10n/sv.js
 %%WWWDIR%%/l10n/sv.json
+%%WWWDIR%%/l10n/ta.js
+%%WWWDIR%%/l10n/ta.json
 %%WWWDIR%%/l10n/ta_LK.js
 %%WWWDIR%%/l10n/ta_LK.json
 %%WWWDIR%%/l10n/th.js
@@ -1510,6 +1516,7 @@
 %%WWWDIR%%/lib/Db/Vault.php
 %%WWWDIR%%/lib/Db/VaultMapper.php
 %%WWWDIR%%/lib/Notifier.php
+%%WWWDIR%%/lib/Search/Provider.php
 %%WWWDIR%%/lib/Service/ActivityService.php
 %%WWWDIR%%/lib/Service/CredentialRevisionService.php
 %%WWWDIR%%/lib/Service/CredentialService.php
