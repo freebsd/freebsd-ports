@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: authelia
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable authelia:
+# authelia_enable : set to "YES" to enable the daemon, default is "NO"
+
+. /etc/rc.subr
+
+name=authelia
+rcvar=authelia_enable
+
+load_rc_config $name
+
+authelia_enable=${authelia_enable:-"NO"}
+
+logfile="/var/log/${name}.log"
+
+procname=%%PREFIX%%/bin/authelia
+command="/usr/sbin/daemon"
+command_args="-u %%USER%% -o ${logfile} -t ${name} %%PREFIX%%/bin/authelia --config %%PREFIX%%/etc/authelia.yml"
+
+run_rc_command "$1"
