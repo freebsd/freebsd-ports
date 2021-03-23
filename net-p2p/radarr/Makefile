@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	radarr
-PORTVERSION=	0.2.0.1504
+PORTVERSION=	3.0.2.4552
 DISTVERSIONPREFIX=v
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Radarr/Radarr/releases/download/v${PORTVERSION}/
-DISTNAME=	Radarr.develop.${PORTVERSION}.linux
+DISTNAME=	Radarr.master.${PORTVERSION}.linux
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Movie Library Manager for Usenet and BitTorrent users

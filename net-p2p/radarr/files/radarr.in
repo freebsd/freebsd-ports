@@ -23,7 +23,7 @@ load_rc_config $name
 : ${radarr_user:="radarr"}
 : ${radarr_data_dir:="%%PREFIX%%/radarr"}
 
-pidfile="${radarr_data_dir}/nzbdrone.pid"
+pidfile="${radarr_data_dir}/radarr.pid"
 procname="%%PREFIX%%/bin/mono"
 command="/usr/sbin/daemon"
 command_args="-f ${procname} %%DATADIR%%/Radarr.exe --nobrowser --data=${radarr_data_dir}"
@@ -36,6 +36,10 @@ radarr_precmd()
 	if [ ! -d ${radarr_data_dir} ]; then
 		install -d -o ${radarr_user} ${radarr_data_dir}
 	fi
+
+	# Unwritable pids allow the service to start, but fails to work
+	# Rare, but if you are debugging as root and accidentally start the service...
+	/bin/rm -f ${pidfile}
 }
 
 run_rc_command "$1"
