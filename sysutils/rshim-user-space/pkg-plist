@@ -1,4 +1,7 @@
 etc/rc.d/rshim
+etc/rshim.conf
+@comment sbin/bfb-install
 sbin/rshim
 share/doc/rshim/README.md
 man/man8/rshim.8.gz
+@comment man/man8/bfb-install.8.gz
