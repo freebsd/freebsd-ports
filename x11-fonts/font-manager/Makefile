@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	font-manager
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	x11-fonts gnome
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -22,8 +22,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libsoup-2.4.so:devel/libsoup \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
-USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome meson \
-		pkgconfig python:3.6+ shebangfix sqlite
+USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
+		meson pkgconfig python:3.6+ shebangfix sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	FontManager
 USE_GNOME=	cairo glib20 gtk30 libxml2 pango
@@ -32,14 +32,13 @@ USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.py
 
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext-runtime
 NLS_MESON_TRUE=	enable-nls
-
-# flatpak specific changes only
-PORTSCOUT=	skipv:0.8.4-1
 
 post-patch:
 	@${REINPLACE_CMD} \
