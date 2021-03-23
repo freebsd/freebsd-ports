@@ -23,10 +23,10 @@ load_rc_config $name
 : ${sonarr_user:="sonarr"}
 : ${sonarr_data_dir:="%%PREFIX%%/sonarr"}
 
-pidfile="${sonarr_data_dir}/nzbdrone.pid"
+pidfile="${sonarr_data_dir}/sonarr.pid"
 procname="%%PREFIX%%/bin/mono"
 command="/usr/sbin/daemon"
-command_args="-f ${procname} %%DATADIR%%/NzbDrone.exe --nobrowser --data=${sonarr_data_dir}"
+command_args="-f ${procname} %%DATADIR%%/Sonarr.exe --nobrowser --data=${sonarr_data_dir}"
 start_precmd=sonarr_precmd
 
 sonarr_precmd()
@@ -36,6 +36,10 @@ sonarr_precmd()
 	if [ ! -d ${sonarr_data_dir} ]; then
 		install -d -o ${sonarr_user} ${sonarr_data_dir}
 	fi
+
+	# Unwritable pids allow the service to start, but fails to work
+	# Rare, but if you are debugging as root and accidentally start the service...
+	/bin/rm -f ${pidfile}
 }
 
 run_rc_command "$1"
