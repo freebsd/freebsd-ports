@@ -4,7 +4,7 @@
 PORTNAME=	peripheral.joystick
 DISTVERSION=	1.7.1
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/joystick.h:devel/evdev-proto
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libudev.so:devel/libudev-devd
 
-USES=		cmake:noninja compiler:c++14-lang kodi
+USES=		cmake localbase compiler:c++14-lang kodi
 USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	xbmc
