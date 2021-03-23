@@ -156,6 +156,7 @@
     SUBDIR += kodi-addon-screensaver.matrixtrails
     SUBDIR += kodi-addon-screensaver.stars
     SUBDIR += kodi-addon-visualization.fishbmc
+    SUBDIR += kodi-addon-visualization.shadertoy
     SUBDIR += kodi-addon-visualization.spectrum
     SUBDIR += kvazaar
     SUBDIR += l-smash
