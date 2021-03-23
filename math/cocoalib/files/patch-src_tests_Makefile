@@ -1,4 +1,4 @@
---- src/tests/Makefile.orig	2020-06-11 13:17:06 UTC
+--- src/tests/Makefile.orig	2020-12-04 10:17:44 UTC
 +++ src/tests/Makefile
 @@ -1,11 +1,5 @@
  # Makefile for CoCoALib/src/tests/ directory
@@ -12,7 +12,7 @@
  TESTS=test-empty.C \
        test-BigInt1.C  test-BigInt2.C  test-BigInt3.C \
        test-BigRat1.C  test-BigRat2.C  test-BigRat3.C  test-BigRat4.C \
-@@ -66,110 +60,11 @@ TESTS=test-empty.C \
+@@ -66,107 +60,11 @@ TESTS=test-empty.C \
        test-utils1.C  test-utils2.C
  #     test-RingTwinFloat3.C test-OpenMath2.C   -- skip these tests for the moment
  
@@ -26,15 +26,12 @@
 -	@echo "*** src/tests/Makefile: default target ***"
 -	@(cd $(COCOA_ROOT); $(MAKE) check)
 -
--$(COCOA_LIB):
--	@echo "Compiling CoCoALib..."
--	@(cd $(COCOA_ROOT); $(MAKE) library)
--
 -.PHONY: lib
--lib: $(COCOA_LIB)
+-lib: library
 -
 -.PHONY: library
--library: $(COCOA_LIB)
+-library:
+-	@(cd $(COCOA_ROOT); $(MAKE) library)
 -
 -
 -# This target should be made only after the CoCoA library has been compiled;

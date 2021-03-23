@@ -1,4 +1,4 @@
---- src/AlgebraicCore/TmpFactorDir/Makefile.orig	2020-03-06 20:35:15 UTC
+--- src/AlgebraicCore/TmpFactorDir/Makefile.orig	2020-10-27 09:42:42 UTC
 +++ src/AlgebraicCore/TmpFactorDir/Makefile
 @@ -1,10 +1,5 @@
  # Makefile for CoCoALib/src/AlgebraicCore/TmpFactorDir/ directory
@@ -11,7 +11,7 @@
  SUBDIRS=linalg multivariate
  
  SRCS=primes.c DUPFF.c FF.c FindPrimRoot.c DUPFFsqfrd.c DUPFFderiv.c \
-@@ -19,79 +14,11 @@ SRCS=primes.c DUPFF.c FF.c FindPrimRoot.c DUPFFsqfrd.c
+@@ -19,79 +14,13 @@ SRCS=primes.c DUPFF.c FF.c FindPrimRoot.c DUPFFsqfrd.c
       jalloc.c add_logs.c jaaerror.c debug_malloc.c \
       DUPZfactor_liftq.c mpz_lift_recip.c mpq_to_FFelem.c
  
@@ -19,6 +19,8 @@
 +all: ${SRCS:.c=.o}
 +	for x in ${SUBDIRS}; do make -C $$x; done
 +	ar rcs ../libcocoa.a ${.ALLSRC}
++	echo ${.ALLSRC} >> ../.ALLSRC
++	/bin/mv *.o ..
  
 -%.o: %.c
 -	$(COMPILE) -I. -Ilinalg -c -o $@ $<
@@ -79,7 +81,7 @@
 -	for srcfile in $(SRCS); \
 -	do \
 -	  objfile=`basename $$srcfile .c`.o; \
--	  $(CXX) $(INCLUDE) -I. -Ilinalg -Imultivariate -MM "$$srcfile" -MQ "$$objfile" >> $(DEPEND_FILE).new; \
+-	  $(CXX) $(INCLUDE_PATHS) -I. -Ilinalg -Imultivariate -MM "$$srcfile" -MQ "$$objfile" >> $(DEPEND_FILE).new; \
 -	  echo >> $(DEPEND_FILE).new; \
 -	done
 -	@if [ -s "$(DEPEND_FILE)" ] ; \

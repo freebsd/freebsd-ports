@@ -1,4 +1,4 @@
---- src/AlgebraicCore/Makefile.orig	2020-03-11 17:00:26 UTC
+--- src/AlgebraicCore/Makefile.orig	2020-10-27 09:42:18 UTC
 +++ src/AlgebraicCore/Makefile
 @@ -1,10 +1,5 @@
  # Makefile for CoCoALib/src/AlgebraicCore/ directory.
@@ -11,15 +11,19 @@
  SUBDIRS=TmpFactorDir TmpHilbertDir
  
  FROBBY_FILES=ExternalLibs-Frobby.C
-@@ -72,126 +67,17 @@ SRCS=time.C assert.C utils.C  utils-gmp.C  VectorOps.C
+@@ -74,126 +69,21 @@ SRCS=time.C assert.C utils.C  utils-gmp.C  VectorOps.C
       $(FROBBY_FILES) $(GFAN_FILES) $(GSL_FILES) \
       $(MATHSAT_FILES) $(NORMALIZ_FILES)
  
 -# (see below) OBJS depend on $(COCOA_ROOT)/configuration/autoconf.mk
 -OBJS=$(SRCS:.C=.o)
 +all: ${SRCS:.C=.o}
++	echo "" > ./.ALLSRC
 +	for x in ${SUBDIRS}; do make -C $$x; done
 +	ar rcs libcocoa.a ${.ALLSRC}
++	ranlib libcocoa.a
++	echo ${.ALLSRC} >> ./.ALLSRC
++	${CXX} -shared `cat ./.ALLSRC` -Wl,-soname,libcocoa.so.0 -o libcocoa.so.0
  
 -# The default target compiles debug_new.C and leak_checker.C as
 -# well as all the files listed in SRCS.
@@ -56,7 +60,7 @@
 -# Special compilation targets with extra CPP symbols.
 -BuildInfo.o: BuildInfo.C $(COCOA_ROOT)/include/CoCoA/BuildInfo.H
 -	@echo "Compiling BuildInfo.o (with special preprocessor flags)"
--	$(COMPILE) -c  -DCOCOA_VERSION="\"$(COCOALIB_VERSION)\""  -DCOCOA_CXX="\"$(CXX)\""  -DCOCOA_CXXFLAGS="\"$(CXXFLAGS)\""  -DCOCOA_CXXFLAGS_DEFINES="\"$(CXXFLAGS_DEFINES)\""  -o BuildInfo.o BuildInfo.C
+-	$(COMPILE) -c  -DCOCOA_VERSION="\"$(COCOALIB_VERSION)\""  -DCOCOA_CXX="\"$(CXX)\""  -DCOCOA_CXXFLAGS="\"$(CXXFLAGS)\""   -o BuildInfo.o BuildInfo.C
 -
 -IdealOfPoints.o: IdealOfPoints.C $(COCOA_ROOT)/include/CoCoA/IdealOfPoints.H
 -	@echo "Compiling IdealOfPoints --  keep your fingers crossed"
@@ -127,7 +131,7 @@
 -	@for srcfile in $(SRCS); \
 -	do \
 -	  objfile=`basename $$srcfile .C`.o; \
--	  $(CXX) $(CXXFLAGS) $(CXXFLAGS_DEFINES) $(INCLUDE) -ITmpFactorDir -ITmpFactorDir/linalg -ITmpFactorDir/multivariate -MM "$$srcfile" -MQ "$$objfile" >> $(DEPEND_FILE).new; \
+-	  $(CXX) $(CXXFLAGS) $(INCLUDE_PATHS) -ITmpFactorDir -ITmpFactorDir/linalg -ITmpFactorDir/multivariate -MM "$$srcfile" -MQ "$$objfile" >> $(DEPEND_FILE).new; \
 -	  echo >> $(DEPEND_FILE).new; \
 -	done
 -	@if [ -s "$(DEPEND_FILE)" ] ; \
@@ -145,4 +149,4 @@
 +	${CXX} ${CXXFLAGS} -DCOCOA_VERSION="\"%%DISTVERSION%%\"" -DCOCOA_CXX="\"${CXX}\"" -DCOCOA_CXXFLAGS="\"${CXXFLAGS}\"" -DCOCOA_CXXFLAGS_DEFINES="\"\"" -o BuildInfo.o -c BuildInfo.C
  
  # Next few lines are for RCS header/log
- # $Header: /Volumes/Home_1/cocoa/cvs-repository/CoCoALib-0.99/src/AlgebraicCore/Makefile,v 1.169 2020/03/11 17:00:26 abbott Exp $
+ # $Header: /Volumes/Home_1/cocoa/cvs-repository/CoCoALib-0.99/src/AlgebraicCore/Makefile,v 1.176 2020/10/27 09:42:18 abbott Exp $

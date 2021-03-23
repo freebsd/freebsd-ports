@@ -1,6 +1,6 @@
---- src/AlgebraicCore/TmpFactorDir/linalg/Makefile.orig	2020-03-06 20:35:15 UTC
+--- src/AlgebraicCore/TmpFactorDir/linalg/Makefile.orig	2020-10-27 09:43:00 UTC
 +++ src/AlgebraicCore/TmpFactorDir/linalg/Makefile
-@@ -1,73 +1,13 @@
+@@ -1,73 +1,15 @@
  # Makefile for CoCoALib/src/AlgebraicCore/TmpFactorDir/linalg/ directory
  
 -COCOA_ROOT=../../../..
@@ -15,6 +15,8 @@
 -OBJS=$(SRCS:.c=.o)
 +all: ${SRCS:.c=.o}
 +	ar rcs ../../libcocoa.a ${.ALLSRC}
++	echo ${.ALLSRC} >> ../../.ALLSRC
++	/bin/mv *.o ..
  
 -%.o: %.c
 -	$(COMPILE) -I. -I.. -c -o $@ $<
@@ -61,7 +63,7 @@
 -	for srcfile in $(SRCS); \
 -	do \
 -	  objfile=`basename $$srcfile .C`.o; \
--	  $(CXX) $(INCLUDE) -I. -I.. -MM "$$srcfile" -MQ "$$objfile" >> $(DEPEND_FILE).new; \
+-	  $(CXX) $(INCLUDE_PATHS) -I. -I.. -MM "$$srcfile" -MQ "$$objfile" >> $(DEPEND_FILE).new; \
 -	  echo >> $(DEPEND_FILE).new; \
 -	done
 -	@if [ -s "$(DEPEND_FILE)" ] ; \
