@@ -16002,7 +16002,7 @@ archivers/libunrar5|archivers/libunrar6|2021-01-19|Renamed to match current majo
 devel/electron7|devel/electron9|2021-01-21|EOLed upstream, switch to newer major version
 www/riot-web|www/element-web|2021-01-22|Project renamed
 sysutils/bareos16-client|sysutils/bareos18-client|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
-sysutils/bareos16-client-static|sysutils/bareos18-client-static|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
+sysutils/bareos16-client-static|sysutils/bareos18-client|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
 sysutils/bareos16-server|sysutils/bareos18-server|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
 www/bareos16-webui|www/bareos18-webui|2021-01-24|Has expired: Unmaintained, please migrate to a newer version of bareos
 www/sogo4|www/sogo|2021-01-28|Has expired: Unmaintained, please migrate to a newer version of sogo
@@ -16044,7 +16044,6 @@ www/p5-RT-Extension-Gravatar@rt44|www/p5-RT-Extension-Gravatar|2021-02-02|Unflav
 www/p5-RT-Extension-LDAPImport@rt42||2021-02-02|Removed, currently only supported with www/rt44
 www/p5-RT-Extension-LDAPImport@rt44|www/p5-RT-Extension-LDAPImport|2021-02-02|Unflavor, currently only supported with www/rt44
 www/p5-RT-Extension-MandatoryOnTransition@rt42||2021-02-02|Removed, currently only supported with www/rt44
-www/p5-RT-Extension-MandatoryOnTransition@rt44|www/p5-RT-Extension-MandataryOnTransition|2021-02-02|Unflavor, currently only supported with www/rt44
 www/p5-RT-Extension-RepeatTicket@rt42||2021-02-02|Removed, currently only supported with www/rt44
 www/p5-RT-Extension-RepeatTicket@rt44|www/p5-RT-Extension-RepeatTicket|2021-02-02|Unflavor, currently only supported with www/rt44
 www/p5-RTx-Calendar@rt42||2021-02-02|Removed, currently only supported with www/rt44
@@ -16174,14 +16173,14 @@ multimedia/kodi-addon-pvr-hts|multimedia/kodi-addon-pvr.hts|2021-03-01|Renamed t
 audio/beatslash-lv2||2021-03-01|Has expired: Unmaintained and doesn't build with the latest audio/lvtk version 2.x
 multimedia/kodi-addon-vfs.libarchive-devel||2021-03-01|Has expired: Depends on deprecated multimedia/kodi-devel
 multimedia/kodi-addon-peripheral.joystick-devel||2021-03-01|Has expired: Depends on deprecated multimedia/kodi-devel
-multimedia/kodi-devel|multimedia/kodi|2021-03-01|Has expired: Deprecated. Please use multimedia/kodi instead.
+multimedia/kodi-devel|multimedia/kodi|2021-03-01|Has expired: Deprecated. Please use multimedia/kodi instead
 multimedia/kodi-addon-inputstream.adaptive-devel||2021-03-01|Has expired: Depends on deprecated multimedia/kodi-devel
 print/cloud-print-connector||2021-03-01|Has expired: Google Cloud Print has been shut down by Google as of December 31, 2020
 dns/knot2|dns/knot3|2021-03-01|Has expired: Use knot3, it is functionally compatible with 2.9.x
 print/cups-cloud-print||2021-03-01|Has expired: Google Cloud Print has been shut down by Google as of December 31, 2020
 www/helma||2021-03-01|Has expired: Upstream is basically dead and recommends ringojs.org
 multimedia/kodi-addon-peripheral-joystick|multimedia/kodi-addon-peripheral.joystick|2021-03-01|Renamed to match upstream name
-sysutils/py-salt-2019|sysutils/py-salt|2021-03-02|Has expired: Deprecated. Please use sysutils/py-salt instead.
+sysutils/py-salt-2019|sysutils/py-salt|2021-03-02|Has expired: Deprecated. Please use sysutils/py-salt instead
 www/rubygem-gitlab-puma_worker_killer|www/rubygem-puma_worker_killer|2021-03-03|Obsolete, use www/rubygem-puma_worker_killer instead
 www/rubygem-gitlab-puma|www/rubygem-puma|2021-03-03|Obsolete, use www/rubygem-puma instead
 korean/man-doc||2021-03-03|Has expired: Poor quality, severely outdated and undermaintained
