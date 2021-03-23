@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	joblib
-PORTVERSION=	0.13.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,22 @@ COMMENT=	Lightweight pipelining using Python functions as jobs
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
+
 NO_ARCH=	yes
+
+TEST_ENV=	PYTHON_PATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+# Skip some tests as they're known to fail. See also:
+#
+# https://github.com/joblib/joblib/issues/57
+# https://github.com/joblib/joblib/issues/1115
+# https://github.com/joblib/joblib/issues/1141
+do-test:
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs -o addopts= \
+		-k 'not test_disk_used and not defined_in_jupyter'
 
 .include <bsd.port.mk>
