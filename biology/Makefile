@@ -4,6 +4,7 @@
     COMMENT = Biology
 
     SUBDIR += abyss
+    SUBDIR += ad2vcf
     SUBDIR += artemis
     SUBDIR += avida
     SUBDIR += babel
