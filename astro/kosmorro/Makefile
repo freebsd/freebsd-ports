@@ -52,6 +52,7 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' ${WRKSRC}/Makefile
 .if ${OSVERSION} < 1200000
 	${REINPLACE_CMD} -e 's|i18n manpages|manpages|' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e '/manpage\/kosmorro/d' ${WRKSRC}/setup.py
 .else
 
 post-build:
