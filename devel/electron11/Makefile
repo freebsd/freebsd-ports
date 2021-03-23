@@ -64,7 +64,7 @@ USE_GITHUB=	yes
 GH_TAGNAME=	${DISTVERSIONPREFIX}${ELECTRON_VER}
 GH_TUPLE=	nodejs:node:v${NODE_VER}:node \
 		nodejs:nan:${NAN_VER}:nan
-USE_GL=		gl glesv2
+USE_GL=		gbm gl glesv2
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 libxml2 libxslt pango
 USE_JAVA=	yes
 JAVA_VERSION=	1.8
