@@ -11,6 +11,9 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	X/Motif Display an ASCII table
 
 USES=		imake:noman motif
+USE_XORG=	xt x11
+
+ALL_TARGET=	mxascii
 
 PLIST_FILES=	bin/mxascii
 
