@@ -38,7 +38,7 @@ WWWDIR=		${PREFIX}/www/${PORTNAME}${PORTVERSION:R:R}
 
 .include <bsd.port.options.mk>
 
-.if ${FLAVOR} != php80
+.if ${FLAVOR} != php80 && !defined(PACKAGE_BUILDING)
 USE_PHP+=	pdf
 .endif
 
