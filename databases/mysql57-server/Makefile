@@ -174,6 +174,10 @@ CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
 CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
 .endif
 
+.if ${ARCH} == powerpc
+LLD_UNSAFE=	yes
+.endif
+
 post-extract:
 	@${RM} -rv ${WRKSRC}/sql/sql_hints.yy.cc ${WRKSRC}/sql/sql_hints.yy.h
 
