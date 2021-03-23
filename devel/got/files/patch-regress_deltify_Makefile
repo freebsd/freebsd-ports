@@ -1,0 +1,12 @@
+--- regress/deltify/Makefile.orig	2021-03-22 15:38:56 UTC
++++ regress/deltify/Makefile
+@@ -8,7 +8,7 @@ LDADD = -lz
+ 
+ NOMAN = yes
+ 
+-run-regress-deltify_test:
++regress: ${PROG} .PHONY
+ 	${.OBJDIR}/deltify_test -q
+ 
+-.include <bsd.regress.mk>
++.include <bsd.prog.mk>

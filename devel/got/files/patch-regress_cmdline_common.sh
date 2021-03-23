@@ -1,6 +1,6 @@
---- regress/cmdline/common.sh.orig	2020-10-13 22:33:10 UTC
+--- regress/cmdline/common.sh.orig	2021-03-22 10:05:11 UTC
 +++ regress/cmdline/common.sh
-@@ -25,6 +25,20 @@ export GOT_TEST_ROOT="/tmp"
+@@ -26,6 +26,20 @@ export GOT_TEST_ROOT="/tmp"
  
  export MALLOC_OPTIONS=S
  
