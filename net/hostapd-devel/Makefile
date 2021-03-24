@@ -15,6 +15,8 @@ GH_PROJECT=	hostap
 GH_TAGNAME=	37306a004
 COMMIT_DATE=	2021.03.21
 
+BROKEN_FreeBSD_11=	Does not support OpenSSL 1.0.2
+
 LICENSE=	BSD3CLAUSE
 
 USES=		cpe gmake ssl
