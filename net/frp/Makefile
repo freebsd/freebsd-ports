@@ -2,7 +2,7 @@
 
 PORTNAME=	frp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.36.1
+DISTVERSION=	0.36.2
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -74,7 +74,11 @@ GH_TUPLE=	\
 		xtaci:lossyconn:8df528c0c9ae:xtaci_lossyconn/vendor/github.com/xtaci/lossyconn
 GO_TARGET=	./cmd/frpc ./cmd/frps
 
-PLIST_FILES=	bin/frpc \
-		bin/frps
+USER=		nobody
+SUB_LIST=	USER=${USER}
+USE_RC_SUBR=	${PORTNAME}s
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/conf/frps.ini ${STAGEDIR}${PREFIX}/etc/frps.ini.sample
 
 .include <bsd.port.mk>
