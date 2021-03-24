@@ -43,8 +43,8 @@ GH_TUPLE=	AndreasBriese:bbloom:e2d15f34fcf9:andreasbriese_bbloom/vendor/github.c
 		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
 		cpuguy83:go-md2man:v2.0.0:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
-		dgraph-io:badger:09dd2e1a4195:dgraph_io_badger_v2/vendor/github.com/dgraph-io/badger/v2 \
 		dgraph-io:badger:v1.5.3:dgraph_io_badger/vendor/github.com/dgraph-io/badger \
+		dgraph-io:badger:09dd2e1a4195:dgraph_io_badger_v2/vendor/github.com/dgraph-io/badger/v2 \
 		dgraph-io:ristretto:8f368f2f2ab3:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
 		dgryski:go-farm:6a90982ecee2:dgryski_go_farm/vendor/github.com/dgryski/go-farm \
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
@@ -101,7 +101,7 @@ GH_TUPLE=	AndreasBriese:bbloom:e2d15f34fcf9:andreasbriese_bbloom/vendor/github.c
 		sirupsen:logrus:v1.6.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		smallstep:certificates:v0.15.4:smallstep_certificates/vendor/github.com/smallstep/certificates \
 		smallstep:cli:v0.15.2:smallstep_cli/vendor/github.com/smallstep/cli \
-		smallstep:crypto:70072f45afc0f699:smallstep_pemutil/vendor/go.step.sm/crypto \
+		smallstep:crypto:70072f45afc0f699:smallstep_crypto/vendor/go.step.sm/crypto \
 		smallstep:nosql:v0.3.0:smallstep_nosql/vendor/github.com/smallstep/nosql \
 		smallstep:truststore:v0.9.6:smallstep_truststore/vendor/github.com/smallstep/truststore \
 		spf13:cast:v1.3.1:spf13_cast/vendor/github.com/spf13/cast \
