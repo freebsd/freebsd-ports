@@ -78,6 +78,40 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ec04f3d0-8cd9-11eb-bb9f-206a8a720317">
+    <topic>spamassassin -- Malicious rule configuration (.cf) files can be configured to run system commands</topic>
+    <affects>
+      <package>
+	<name>spamassassin</name>
+	<range><lt>3.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache SpamAssassin project reports:</p>
+	<blockquote cite="https://mail-archives.apache.org/mod_mbox/spamassassin-announce/202103.mbox/%3C5b7cfd35-27b7-584b-1b39-b7ff0a55f586%40apache.org%3E">
+	  <p>Apache SpamAssassin 3.4.5 was recently released [1], and fixes
+	     an issue of security note where malicious rule configuration (.cf)
+	     files can be configured to run system commands.</p>
+	  <p>In Apache SpamAssassin before 3.4.5, exploits can be injected in
+	     a number of scenarios. In addition to upgrading to SA 3.4.5,
+	     users should only use update channels or 3rd party .cf files from
+	     trusted places.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://spamassassin.apache.org/news.html</url>
+      <url>https://mail-archives.apache.org/mod_mbox/spamassassin-announce/202103.mbox/%3C5b7cfd35-27b7-584b-1b39-b7ff0a55f586%40apache.org%3E</url>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=2020-1946</url>
+      <cvename>CVE-2020-1946</cvename>
+    </references>
+    <dates>
+      <discovery>2021-03-24</discovery>
+      <entry>2020-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c4d2f950-8c27-11eb-a3ae-0800278d94f0">
     <topic>gitea -- multiple vulnerabilities</topic>
     <affects>
