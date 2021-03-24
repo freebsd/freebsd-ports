@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spamassassin
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.5
 CATEGORIES?=	mail perl5
 MASTER_SITES=	APACHE/spamassassin/source CPAN/Mail
 DISTNAME=	Mail-SpamAssassin-${PORTVERSION}

@@ -131,6 +131,7 @@ lib/libspamc.so.0
 %%SITE_PERL%%/Mail/SpamAssassin/Util/TinyRedis.pm
 %%SITE_PERL%%/spamassassin-run.pod
 %%PERL5_MAN1%%/sa-awl.1.gz
+%%PERL5_MAN1%%/sa-check_%%USER%%.1.gz
 %%PERL5_MAN1%%/sa-compile.1.gz
 %%PERL5_MAN1%%/sa-learn.1.gz
 %%PERL5_MAN1%%/sa-update.1.gz
