@@ -159,6 +159,7 @@ include/folly/detail/AtomicHashUtils.h
 include/folly/detail/AtomicUnorderedMapUtils.h
 include/folly/detail/DiscriminatedPtrDetail.h
 include/folly/detail/FileUtilDetail.h
+include/folly/detail/FileUtilVectorDetail.h
 include/folly/detail/FingerprintPolynomial.h
 include/folly/detail/Futex-inl.h
 include/folly/detail/Futex.h
@@ -522,7 +523,7 @@ include/folly/io/async/test/TimeUtil.h
 include/folly/io/async/test/UndelayedDestruction.h
 include/folly/io/async/test/Util.h
 include/folly/io/coro/ServerSocket.h
-include/folly/io/coro/Socket.h
+include/folly/io/coro/Transport.h
 include/folly/json.h
 include/folly/json_patch.h
 include/folly/json_pointer.h
@@ -546,6 +547,7 @@ include/folly/lang/PropagateConst.h
 include/folly/lang/RValueReferenceWrapper.h
 include/folly/lang/SafeAssert.h
 include/folly/lang/StaticConst.h
+include/folly/lang/Thunk.h
 include/folly/lang/ToAscii.h
 include/folly/lang/TypeInfo.h
 include/folly/lang/UncaughtExceptions.h
@@ -666,6 +668,7 @@ include/folly/stats/MultiLevelTimeSeries-inl.h
 include/folly/stats/MultiLevelTimeSeries.h
 include/folly/stats/QuantileEstimator-inl.h
 include/folly/stats/QuantileEstimator.h
+include/folly/stats/StreamingStats.h
 include/folly/stats/TDigest.h
 include/folly/stats/TimeseriesHistogram-inl.h
 include/folly/stats/TimeseriesHistogram.h
