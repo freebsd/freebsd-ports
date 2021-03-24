@@ -14,6 +14,7 @@ COMMENT=	Virtual machine for dynamic languages
 LICENSE=	ART20
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
+		${P5_POD_PARSER} \
 		pcre-config:devel/pcre
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libicudata.so:devel/icu
