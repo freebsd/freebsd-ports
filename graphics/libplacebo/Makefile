@@ -5,6 +5,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	3.104.0
 CATEGORIES=	graphics
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	ac44e8f14acb.patch:-p1 # https://code.videolan.org/videolan/libplacebo/-/issues/131
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Reusable library for GPU-accelerated video/image rendering
 
