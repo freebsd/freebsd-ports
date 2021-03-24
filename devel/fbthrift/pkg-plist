@@ -98,6 +98,7 @@ include/thrift/lib/cpp/util/PausableTimer.h
 include/thrift/lib/cpp/util/THttpParser.h
 include/thrift/lib/cpp/util/VarintUtils-inl.h
 include/thrift/lib/cpp/util/VarintUtils.h
+include/thrift/lib/cpp2/Adapt.h
 include/thrift/lib/cpp2/BadFieldAccess.h
 include/thrift/lib/cpp2/CloneableIOBuf.h
 include/thrift/lib/cpp2/FieldRef.h
@@ -136,6 +137,7 @@ include/thrift/lib/cpp2/async/RequestChannel.h
 include/thrift/lib/cpp2/async/ResponseChannel.h
 include/thrift/lib/cpp2/async/RetryingRequestChannel.h
 include/thrift/lib/cpp2/async/RocketClientChannel.h
+include/thrift/lib/cpp2/async/RocketClientTestChannel.h
 include/thrift/lib/cpp2/async/RpcTypes.h
 include/thrift/lib/cpp2/async/ServerChannel.h
 include/thrift/lib/cpp2/async/ServerGeneratorStream-inl.h
@@ -216,6 +218,7 @@ include/thrift/lib/cpp2/protocol/SimpleJSONProtocol-inl.h
 include/thrift/lib/cpp2/protocol/SimpleJSONProtocol.h
 include/thrift/lib/cpp2/protocol/TableBasedForwardTypes.h
 include/thrift/lib/cpp2/protocol/TableBasedSerializer.h
+include/thrift/lib/cpp2/protocol/TableBasedSerializerImpl.h
 include/thrift/lib/cpp2/protocol/Traits.h
 include/thrift/lib/cpp2/protocol/VirtualProtocol.h
 include/thrift/lib/cpp2/protocol/detail/protocol_methods.h
@@ -271,7 +274,9 @@ include/thrift/lib/cpp2/server/BaseThriftServer.h
 include/thrift/lib/cpp2/server/Cpp2ConnContext.h
 include/thrift/lib/cpp2/server/Cpp2Connection.h
 include/thrift/lib/cpp2/server/Cpp2Worker.h
+include/thrift/lib/cpp2/server/IOWorkerContext.h
 include/thrift/lib/cpp2/server/LoggingEvent.h
+include/thrift/lib/cpp2/server/LoggingEventHelper.h
 include/thrift/lib/cpp2/server/MonitoringServerInterface.h
 include/thrift/lib/cpp2/server/QIAdmissionController.h
 include/thrift/lib/cpp2/server/RequestDebugLog.h
@@ -304,6 +309,7 @@ include/thrift/lib/cpp2/test/util/TestServerFactory.h
 include/thrift/lib/cpp2/test/util/TestThriftServerFactory.h
 include/thrift/lib/cpp2/transport/core/ClientConnectionIf.h
 include/thrift/lib/cpp2/transport/core/EnvelopeUtil.h
+include/thrift/lib/cpp2/transport/core/RequestStateMachine.h
 include/thrift/lib/cpp2/transport/core/RpcMetadataUtil.h
 include/thrift/lib/cpp2/transport/core/ThriftChannelIf.h
 include/thrift/lib/cpp2/transport/core/ThriftClient.h
@@ -469,8 +475,6 @@ lib/libconcurrency.so
 lib/libconcurrency.so.1.0.0
 lib/libmustache_lib.so
 lib/libmustache_lib.so.1.0.0
-lib/librocketupgrade.so
-lib/librocketupgrade.so.1.0.0
 lib/librpcmetadata.so
 lib/librpcmetadata.so.1.0.0
 lib/libthrift-core.so
