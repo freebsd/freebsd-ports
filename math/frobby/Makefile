@@ -1,26 +1,26 @@
 # $FreeBSD$
 
 PORTNAME=		frobby
+PORTVERSION=		0.9.1
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.9.0
 CATEGORIES=		math
-MASTER_SITES=		http://www.broune.com/frobby/
-DISTNAME=		${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software system and project for computations with monomial ideals
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake shebangfix
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	Macaulay2
+
 BINARY_ALIAS=	make=gmake
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	test/testScripts/* \
+SHEBANG_FILES=	test/testScripts/* test/runTests test/runSplitTests \
 		test/latticeFormats/runtest*
 
 OPTIONS_DEFINE=		EXEDOCS LIBDOCS TEST
@@ -42,6 +42,7 @@ TEST_BUILD_DEPENDS=	bash:shells/bash
 OPTIONS_SUB=		yes
 
 MAKE_ARGS+=	GMP_INC_DIR=${LOCALBASE}/include
+MAKE_ENV=	RANLIB=${RANLIB}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
@@ -80,7 +81,9 @@ do-install-EXECUTABLE-on:
 
 do-install-SHARED-on:
 	${INSTALL_DATA} ${WRKSRC}/src/frobby.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/bin/libfrobby.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/bin/libfrobby.so ${STAGEDIR}${PREFIX}/lib/libfrobby.so.0
+	cd ${STAGEDIR}${PREFIX}/lib &&	\
+	${LN} -sf libfrobby.so.0 ${STAGEDIR}${PREFIX}/lib/libfrobby.so
 
 do-install-STATIC-on:
 	${INSTALL_DATA} ${WRKSRC}/src/frobby.h ${STAGEDIR}${PREFIX}/include
