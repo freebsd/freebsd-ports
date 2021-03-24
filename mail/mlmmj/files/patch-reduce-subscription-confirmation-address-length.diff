@@ -1,0 +1,88 @@
+$NetBSD: patch-reduce-subscription-confirmation-address-length.diff,v 1.1 2020/03/31 20:37:47 roy Exp $
+
+From cb0788bc35c471a87fc75aca6d4e405fdbaccfd8 Mon Sep 17 00:00:00 2001
+From: Geert Stappers <stappers@stappers.it>
+Date: Thu, 25 May 2017 09:17:55 +0200
+Subject: [PATCH] Reduce subscription confirmation address length to fit RFC
+ 5321
+
+The local part of mailing list subscription confirmation addresses
+formed of:
+
+  mailing-list-name "+confsub-" 16-random-hex "-" sender-address
+
+can get very long, especially if sender-address is long.
+However, RFC limits it at 64 characters.
+
+Closes http://mlmmj.org/bugs/bug.php?id=63
+
+Reported-by: mgorny@gentoo.org
+---
+ src/mlmmj-sub.c   |  2 +-
+ src/mlmmj-unsub.c |  2 +-
+ src/strgen.c      | 23 +----------------------
+ 3 files changed, 3 insertions(+), 24 deletions(-)
+
+diff --git a/src/mlmmj-sub.c b/src/mlmmj-sub.c
+index 3335817..5c8c1ae 100644
+--- src/mlmmj-sub.c
++++ src/mlmmj-sub.c
+@@ -413,7 +413,7 @@ void generate_subconfirm(const char *listdir, const char *listaddr,
+         do {
+                 myfree(confirmfilename);
+                 myfree(randomstr);
+-		randomstr = random_plus_addr(subaddr);
++		randomstr = random_str();
+                 confirmfilename = concatstr(3, listdir, "/subconf/",
+ 					    randomstr);
+ 
+diff --git a/src/mlmmj-unsub.c b/src/mlmmj-unsub.c
+index 0fa42a1..8e13f3c 100644
+--- src/mlmmj-unsub.c
++++ src/mlmmj-unsub.c
+@@ -171,7 +171,7 @@ void generate_unsubconfirm(const char *listdir, const char *listaddr,
+         do {
+                 myfree(confirmfilename);
+                 myfree(randomstr);
+-		randomstr = random_plus_addr(subaddr);
++		randomstr = random_str();
+                 confirmfilename = concatstr(3, listdir, "/unsubconf/",
+ 					    randomstr);
+ 
+diff --git a/src/strgen.c b/src/strgen.c
+index f13db47..673f44a 100644
+--- src/strgen.c
++++ src/strgen.c
+@@ -40,31 +40,10 @@
+ 
+ char *random_str()
+ {
+-	size_t len = 17;
++	size_t len = 17; /* sixteen hex digits plus terminating zero */
+ 	char *dest = mymalloc(len);
+ 
+ 	snprintf(dest, len, "%08x%08x", random_int(), random_int());
+-
+-	return dest;
+-}
+-
+-char *random_plus_addr(const char *addr)
+-{
+-	size_t len = strlen(addr) + 128;
+-	char *dest = mymalloc(len);
+-	char *atsign;
+-	char *tmpstr;
+-
+-	tmpstr = mymalloc(len);
+-	snprintf(tmpstr, len, "%s", addr);
+-
+-	atsign = strchr(tmpstr, '@');
+-	MY_ASSERT(atsign);
+-	*atsign = '=';
+-
+-	snprintf(dest, len, "%08x%08x-%s", random_int(), random_int(), tmpstr);
+-
+-	myfree(tmpstr);
+ 	
+ 	return dest;
+ }
