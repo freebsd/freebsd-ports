@@ -19,15 +19,17 @@ include/jxl/types.h
 lib/libjxl.a
 lib/libjxl.so
 lib/libjxl.so.0
-lib/libjxl.so.0.3.4
+lib/libjxl.so.0.3.5
 lib/libjxl_dec.a
 lib/libjxl_threads.a
 lib/libjxl_threads.so
 lib/libjxl_threads.so.0
-lib/libjxl_threads.so.0.3.4
+lib/libjxl_threads.so.0.3.5
 libdata/pkgconfig/libjxl.pc
 libdata/pkgconfig/libjxl_threads.pc
 %%GIMP%%libexec/gimp/2.2/plug-ins/file-jxl/file-jxl
+%%MANPAGES%%share/man/man1/cjxl.1.gz
+%%MANPAGES%%share/man/man1/djxl.1.gz
 share/mime/packages/image-jxl.xml
 %%PIXBUF%%share/thumbnailers/jxl.thumbnailer
 %%PIXBUF%%@postexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
