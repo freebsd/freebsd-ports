@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+The rpi-firmware package installs files to /usr/local/share/rpi-firmware/.
+To update the firmware used to boot, copy these files to /boot/msdos,
+and then copy the appropriate config_<type>.txt file to
+/boot/msdos/config.txt.
+
+For example, on a Raspberry Pi 4 Model B,
+
+  cp -pr /usr/local/share/rpi-firmware/* /boot/msdos/
+  cp /boot/msdos/config_rpi4.txt /boot/msdos/config.txt
+EOM
+}
+]
