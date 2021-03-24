@@ -2,7 +2,7 @@
 
 PORTNAME=	v2ray
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.35.0
+DISTVERSION=	4.36.2
 CATEGORIES=	net
 
 MAINTAINER=	shen.elf@gmail.com
@@ -28,12 +28,12 @@ GH_TUPLE=	\
 		golang:net:e18ecbb05110:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:134d130e1a04:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:8fe3ee5dd75b:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
-		google:go-cmp:v0.5.4:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:cb27e3aa2013:google_go_genproto/vendor/google.golang.org/genproto \
-		google:starlark-go:e043a3d3c984:google_starlark_go/vendor/go.starlark.net \
+		google:starlark-go:6a590ae7f4eb:google_starlark_go/vendor/go.starlark.net \
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		grpc:grpc-go:v1.36.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		h12w:socks:v1.0.2:h12w_socks/vendor/h12.io/socks \
@@ -41,7 +41,7 @@ GH_TUPLE=	\
 		marten-seemann:qtls-go1-15:v0.1.1:marten_seemann_qtls_go1_15/vendor/github.com/marten-seemann/qtls-go1-15 \
 		marten-seemann:qtls:v0.10.0:marten_seemann_qtls/vendor/github.com/marten-seemann/qtls \
 		miekg:dns:v1.1.40:miekg_dns/vendor/github.com/miekg/dns \
-		pires:go-proxyproto:v0.4.2:pires_go_proxyproto/vendor/github.com/pires/go-proxyproto \
+		pires:go-proxyproto:v0.5.0:pires_go_proxyproto/vendor/github.com/pires/go-proxyproto \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		protocolbuffers:protobuf-go:v1.25.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		seiflotfy:cuckoofilter:bc6005554a0c:seiflotfy_cuckoofilter/vendor/github.com/seiflotfy/cuckoofilter \
