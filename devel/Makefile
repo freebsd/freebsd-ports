@@ -5208,6 +5208,7 @@
     SUBDIR += py-urwid
     SUBDIR += py-urwid-readline
     SUBDIR += py-urwidtrees
+    SUBDIR += py-us
     SUBDIR += py-user_agents
     SUBDIR += py-userpath
     SUBDIR += py-uvloop
