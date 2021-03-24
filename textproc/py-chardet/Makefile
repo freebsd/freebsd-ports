@@ -2,14 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	chardet
-PORTVERSION=	3.0.4
-PORTREVISION=	3
+PORTVERSION=	4.0.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
-COMMENT=	Universal encoding detector for Python 2 and 3
+COMMENT=	Universal Character Encoding Detector
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
