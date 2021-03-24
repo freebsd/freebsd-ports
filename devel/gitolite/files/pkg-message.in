@@ -41,7 +41,7 @@ By default, the git user is created for use by gitolite.
 
 A quick-install guide can be found in:
 
-%%DOCSDIR%%/README.txt
+%%DOCSDIR%%/README.markdown
 EOT
   type: install
 }
