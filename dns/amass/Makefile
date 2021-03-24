@@ -2,7 +2,7 @@
 
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.10
+DISTVERSION=	3.11.11
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,14 +20,15 @@ GH_TUPLE=	\
 		AndreasBriese:bbloom:46b345b51c96:andreasbriese_bbloom/vendor/github.com/AndreasBriese/bbloom \
 		PuerkitoBio:goquery:v1.6.0:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
 		VividCortex:gohistogram:v1.0.0:vividcortex_gohistogram/vendor/github.com/VividCortex/gohistogram \
+		andres-erbsen:clock:9e14626cd129:andres_erbsen_clock/vendor/github.com/andres-erbsen/clock \
 		andybalholm:cascadia:v1.1.0:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
 		beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
 		boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		caffix:eventbus:9ab42753d12d:caffix_eventbus/vendor/github.com/caffix/eventbus \
 		caffix:pipeline:503915daec5b:caffix_pipeline/vendor/github.com/caffix/pipeline \
 		caffix:queue:6e488abe1004:caffix_queue/vendor/github.com/caffix/queue \
-		caffix:service:bfa33e78ab27:caffix_service/vendor/github.com/caffix/service \
-		caffix:stringset:37e95a70826c:caffix_stringset/vendor/github.com/caffix/stringset \
+		caffix:service:3819810293b0:caffix_service/vendor/github.com/caffix/service \
+		caffix:stringset:a00bc23f59bc:caffix_stringset/vendor/github.com/caffix/stringset \
 		cayleygraph:cayley:v0.7.7:cayleygraph_cayley/vendor/github.com/cayleygraph/cayley \
 		cayleygraph:quad:v1.2.4:cayleygraph_quad/vendor/github.com/cayleygraph/quad \
 		cenkalti:backoff:v2.1.1:cenkalti_backoff/vendor/github.com/cenkalti/backoff \
@@ -92,7 +93,7 @@ GH_TUPLE=	\
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		temoto:robotstxt:v1.1.1:temoto_robotstxt/vendor/github.com/temoto/robotstxt \
 		tylertreat:BoomFilters:611b3dbe80e8:tylertreat_boomfilters/vendor/github.com/tylertreat/BoomFilters \
-		uber-go:ratelimit:v0.1.0:uber_go_ratelimit/vendor/go.uber.org/ratelimit \
+		uber-go:ratelimit:v0.2.0:uber_go_ratelimit/vendor/go.uber.org/ratelimit \
 		yl2chen:cidranger:v1.0.2:yl2chen_cidranger/vendor/github.com/yl2chen/cidranger \
 		yuin:gopher-lua:ee81675732da:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua
 GO_TARGET=	./cmd/${PORTNAME}
