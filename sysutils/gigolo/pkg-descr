@@ -2,9 +2,8 @@ Gigolo is a frontend to easily manage connections to local and
 remote filesystems using GIO/GVfs. It allows you to
 quickly connect/mount a remote filesystem and manage bookmarks of such.
 
-It is part of the Xfce Goodies project and the Subversion respository
-is hosted on the Xfce servers though it does not have any hard
-Xfce dependencies and can be used on other desktop environments as well.
-The only hard dependency is GTK2.
+It is part of the Xfce project and is hosted at Xfce gitlab server
+but does not does not have any hard Xfce dependencies and can be
+used on other desktop environments as well.
 
-WWW: https://www.uvena.de/gigolo/
+WWW: https://docs.xfce.org/apps/gigolo/start
