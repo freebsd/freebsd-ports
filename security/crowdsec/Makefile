@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	crowdsec
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -20,6 +20,8 @@ GO_BUILDFLAGS=	-ldflags "-s -w \
 
 GO_TARGET=	./cmd/crowdsec \
 		./cmd/crowdsec-cli
+
+USE_RC_SUBR=	crowdsec
 
 PLIST_FILES=	bin/crowdsec \
 		bin/crowdsec-cli

@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: crowdsec
+# REQUIRE: LOGIN DAEMON NETWORKING
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# crowdsec_enable (bool):	Set it to YES to enable crowdsec agent.
+#				Default is "NO".
+# crowdsec_config (str):	Set the agent config path.
+#				Default is "%%PREFIX%%/etc/crowdsec/config.yaml".
+# crowdsec_flags (str):	Set the extra flags to run agent.
+#				Default is ""
+
+. /etc/rc.subr
+
+name=crowdsec
+desc="Crowdsec Agent"
+rcvar=crowdsec_enable
+
+load_rc_config $name
+
+: ${crowdsec_enable:="NO"}
+: ${crowdsec_config:="%%PREFIX%%/etc/crowdsec/config.yaml"}
+: ${crowdsec_flags:=""}
+
+pidfile=/var/run/${name}.pid
+command="%%PREFIX%%/bin/${name}"
+start_cmd="${name}_start"
+configtest_cmd="${name}_configtest"
+extra_commands="configtest reload"
+
+crowdsec_start()
+{
+	/usr/sbin/daemon -f -p ${pidfile} -t "${desc}" \
+		${command} -c ${crowdsec_config} ${crowdsec_flags}
+}
+
+crowdsec_configtest()
+{
+	echo "Performing sanity check on ${name} configuration."
+	eval ${command} -c ${crowdsec_config} -t
+}
+
+run_rc_command "$1"
