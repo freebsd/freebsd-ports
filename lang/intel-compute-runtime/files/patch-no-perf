@@ -6,14 +6,14 @@ level_zero/tools/source/sysman/linux/pmu/pmu_imp.h:12:10: fatal error: 'linux/pe
 #include <linux/perf_event.h>
          ^~~~~~~~~~~~~~~~~~~~
 
---- level_zero/tools/source/sysman/engine/linux/os_engine_imp.cpp.orig	2020-09-11 07:53:58 UTC
+--- level_zero/tools/source/sysman/engine/linux/os_engine_imp.cpp.orig	2021-03-24 20:23:19 UTC
 +++ level_zero/tools/source/sysman/engine/linux/os_engine_imp.cpp
 @@ -49,9 +49,11 @@ ze_result_t LinuxEngineImp::getActivity(zes_engine_sta
          return ZE_RESULT_ERROR_UNSUPPORTED_FEATURE;
      }
      uint64_t data[2] = {};
 +#ifdef __linux__
-     if (pPmuInterface->pmuReadSingle(static_cast<int>(fd), data, sizeof(data)) < 0) {
+     if (pPmuInterface->pmuRead(static_cast<int>(fd), data, sizeof(data)) < 0) {
          return ZE_RESULT_ERROR_UNSUPPORTED_FEATURE;
      }
 +#endif
