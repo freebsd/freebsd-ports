@@ -53,6 +53,7 @@ include/proxygen/lib/http/codec/FlowControlFilter.h
 include/proxygen/lib/http/codec/HQControlCodec.h
 include/proxygen/lib/http/codec/HQFramedCodec.h
 include/proxygen/lib/http/codec/HQFramer.h
+include/proxygen/lib/http/codec/HQMultiCodec.h
 include/proxygen/lib/http/codec/HQStreamCodec.h
 include/proxygen/lib/http/codec/HQUnidirectionalCodec.h
 include/proxygen/lib/http/codec/HQUtils.h
@@ -78,7 +79,6 @@ include/proxygen/lib/http/codec/SPDYVersion.h
 include/proxygen/lib/http/codec/SPDYVersionSettings.h
 include/proxygen/lib/http/codec/SettingsId.h
 include/proxygen/lib/http/codec/TransportDirection.h
-include/proxygen/lib/http/codec/UnframedBodyOffsetTracker.h
 include/proxygen/lib/http/codec/compress/CompressionInfo.h
 include/proxygen/lib/http/codec/compress/GzipHeaderCodec.h
 include/proxygen/lib/http/codec/compress/HPACKCodec.h
