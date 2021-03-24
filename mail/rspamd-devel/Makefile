@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	2.8.a1.20210310
+PORTVERSION=	2.8.a2.20210324
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -57,7 +57,7 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 		-DDEBUG=ON \
 		-DGIT_ID=${GH_TAGNAME}
 USE_GITHUB=	yes
-GH_TAGNAME=	ba5b677
+GH_TAGNAME=	f66453cf8
 
 DEBUG_FLAGS=	-g -O0
 
@@ -88,8 +88,6 @@ CGP_RUN_DEPENDS+=	\
 .if ${ARCH:Mpowerpc*}
 LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c11
 .endif
 
 post-install:
