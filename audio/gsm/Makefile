@@ -7,7 +7,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.quut.com/gsm/ \
 		http://downloads.openwrt.org/sources/
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio converter and library for converting u-law to gsm encoding
 
 LICENSE=	TU-BERLIN
