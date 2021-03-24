@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fish
-PORTVERSION=	3.1.2
+DISTVERSION=	3.2.1
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/fish-shell/fish-shell/releases/download/${PORTVERSION}/
 
@@ -10,35 +10,39 @@ MAINTAINER=	asomers@FreeBSD.org
 COMMENT=	User friendly command line shell
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS+=	libpcre2-32.so:devel/pcre2
+LIB_DEPENDS=	libpcre2-32.so:devel/pcre2
 
 # The python dependency is only needed by shebangfix.  At runtime python is
 # only needed by some optional scripts that aren't in PATH.
-USES=		cmake cpe ncurses python:3.4+,build \
-		localbase compiler:c++11-lang shebangfix
-
+USES=		cmake compiler:c++11-lang cpe localbase ncurses python:3.6+,env \
+		shebangfix tar:xz
+CPE_VENDOR=	fishshell
 SHEBANG_FILES=	share/tools/*.py share/tools/web_config/webconfig.py
+
+# sphinx stuff seems to be racy
+MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	comms/mlan3
 
-CPE_VENDOR=	fishshell
-
 MANDIRS=	${DATADIR}/man/man1
-
-OPTIONS_DEFAULT=	MANPAGES DOCS NLS
-OPTIONS_DEFINE=	MANPAGES DOCS NLS
-OPTIONS_SUB=	yes
-
-MAKE_JOBS_UNSAFE=yes	# sphinx stuff seems to be racy
-DOCS_BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
-MANPAGES_BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
-NLS_USES=		gettext
-NLS_CMAKE_BOOL=		WITH_GETTEXT
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=		DOCS MANPAGES NLS
+OPTIONS_DEFAULT=	DOCS MANPAGES NLS
+OPTIONS_SUB=		yes
+
+NLS_USES=	gettext
+NLS_CMAKE_BOOL=	WITH_GETTEXT
+
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MMANPAGES}
+CMAKE_ARGS+=	-DBUILD_DOCS=TRUE
+BUILD_DEPENDS+=	sphinx-build:textproc/py-sphinx
+.endif
 
 .if ${NCURSESBASE:M${LOCALBASE}}
 CMAKE_ARGS+=	-DCURSES_NEED_NCURSES=TRUE

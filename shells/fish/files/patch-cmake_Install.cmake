@@ -1,20 +1,20 @@
---- cmake/Install.cmake.orig	2020-02-23 21:32:06 UTC
+--- cmake/Install.cmake.orig	2021-03-18 18:04:54 UTC
 +++ cmake/Install.cmake
-@@ -119,7 +119,7 @@ FISH_CREATE_DIRS(${rel_datadir}/fish/vendor_completion
+@@ -102,7 +102,7 @@ install(FILES share/config.fish
+ fish_create_dirs(${rel_datadir}/fish/vendor_completions.d ${rel_datadir}/fish/vendor_functions.d
+     ${rel_datadir}/fish/vendor_conf.d)
  
- # @echo "Installing pkgconfig file"
- # $v $(INSTALL) -m 644 fish.pc $(DESTDIR)$(datadir)/pkgconfig
--FISH_TRY_CREATE_DIRS(${rel_datadir}/pkgconfig)
-+FISH_TRY_CREATE_DIRS(${rel_datadir}/../libdata/pkgconfig)
- CONFIGURE_FILE(fish.pc.in fish.pc.noversion)
+-fish_try_create_dirs(${rel_datadir}/pkgconfig)
++fish_try_create_dirs(${rel_datadir}/../libdata/pkgconfig)
+ configure_file(fish.pc.in fish.pc.noversion @ONLY)
  
- ADD_CUSTOM_COMMAND(OUTPUT fish.pc
-@@ -132,7 +132,7 @@ ADD_CUSTOM_COMMAND(OUTPUT fish.pc
- ADD_CUSTOM_TARGET(build_fish_pc ALL DEPENDS fish.pc)
+ add_custom_command(OUTPUT fish.pc
+@@ -115,7 +115,7 @@ add_custom_command(OUTPUT fish.pc
+ add_custom_target(build_fish_pc ALL DEPENDS fish.pc)
  
- INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/fish.pc
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/fish.pc
 -        DESTINATION ${rel_datadir}/pkgconfig)
 +        DESTINATION ${rel_datadir}/../libdata/pkgconfig)
  
- # @echo "Installing the $(bo)fish completion library$(sgr0)...";
- # $v $(INSTALL) -m 644 $(COMPLETIONS_DIR_FILES:%='%') $(DESTDIR)$(datadir)/fish/completions/
+ install(DIRECTORY share/completions/
+         DESTINATION ${rel_datadir}/fish/completions
