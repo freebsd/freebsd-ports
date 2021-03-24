@@ -8,6 +8,9 @@ DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
 PORTREVISION=	3
 CATEGORIES=	devel python
 
+DEPRECATED=	Uses EOL Python 2.7 via www/py-qt5-webengine
+EXPIRATION_DATE=2021-06-23
+
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 

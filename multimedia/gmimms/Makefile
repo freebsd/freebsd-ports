@@ -13,6 +13,9 @@ COMMENT=	Frontend to MiMMS (Multimedia Stream ripper)
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses EOL Python 2.7 via multimedia/mimms
+EXPIRATION_DATE=2021-06-23
+
 RUN_DEPENDS=	mimms:multimedia/mimms
 
 USES=		gnome pkgconfig tar:bzip2

@@ -9,6 +9,9 @@ COMMENT=	Sieve libriares for KDEPim
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
+EXPIRATION_DATE=2021-06-23
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libsasl2.so:security/cyrus-sasl2
 

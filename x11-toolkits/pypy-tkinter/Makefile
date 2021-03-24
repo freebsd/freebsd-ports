@@ -9,6 +9,9 @@ COMMENT=	PyPy bindings to the Tk widget set
 
 USES=		tk
 
+DEPRECATED=	Uses EOL Python 2.7 via lang/pypy
+EXPIRATION_DATE=2021-06-23
+
 CFFI_MODULE=	_tkinter/tklib
 CFFI_NAME=	tkffi
 

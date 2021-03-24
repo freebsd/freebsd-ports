@@ -107,4 +107,11 @@ post-patch:
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
 
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT5}
+DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
+EXPIRATION_DATE=2021-06-23
+.endif
+
 .include <bsd.port.mk>

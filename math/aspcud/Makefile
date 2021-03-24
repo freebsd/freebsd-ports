@@ -12,6 +12,9 @@ COMMENT=	Advanced solver for package dependencies
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Uses EOL Python 2.7 via math/gringo
+EXPIRATION_DATE=2021-06-23
+
 BUILD_DEPENDS=	re2c:devel/re2c
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 RUN_DEPENDS=	gringo:math/gringo \

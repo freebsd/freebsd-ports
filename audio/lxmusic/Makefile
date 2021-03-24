@@ -13,6 +13,9 @@ LICENSE=	MIT GPLv2+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses EOL Python 2.7 via audio/xmms2
+EXPIRATION_DATE=2021-06-23
+
 LIB_DEPENDS=	libxmmsclient.so:audio/xmms2 \
 		libnotify.so:devel/libnotify
 

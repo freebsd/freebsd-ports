@@ -12,6 +12,9 @@ COMMENT=	Orange add-on: widgets for machine learning and data mining
 LICENSE=	CC-BY-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Uses EOL Python 2.7 via misc/orange3
+EXPIRATION_DATE=2021-06-23
+
 RUN_DEPENDS=	orange3>0:misc/orange3
 
 USES=		python:3.4+

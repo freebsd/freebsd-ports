@@ -11,6 +11,9 @@ COMMENT=	Shared code regarding the A-bis interface between BTS and BSC
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses EOL Python 2.7 via devel/libosmocore
+EXPIRATION_DATE=2021-06-23
+
 LIB_DEPENDS=	libosmocore.so:devel/libosmocore \
 		libtalloc.so:devel/talloc \
 		libortp.so:net/ortp

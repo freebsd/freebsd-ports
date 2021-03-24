@@ -12,6 +12,9 @@ COMMENT=	Ebook management application
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Uses EOL Python 2.7 via www/py-qt5-webengine
+EXPIRATION_DATE=2021-06-23
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
 		libwmflite.so:graphics/libwmf \

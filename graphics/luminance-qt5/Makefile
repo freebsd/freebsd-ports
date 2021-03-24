@@ -13,6 +13,9 @@ COMMENT=	Complete open source solution for HDR photography
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
+EXPIRATION_DATE=2021-06-23
+
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libHalf.so:graphics/ilmbase \

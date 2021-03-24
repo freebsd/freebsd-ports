@@ -2,6 +2,7 @@
 
 PORTNAME=	kde-baseapps
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,7 +18,6 @@ RUN_DEPENDS=	dolphin>=${KDE_APPLICATIONS_VERSION}:x11-fm/dolphin  \
 		keditbookmarks>=${KDE_APPLICATIONS_VERSION}:deskutils/keditbookmarks \
 		khelpcenter>=${KDE_APPLICATIONS_VERSION}:sysutils/khelpcenter \
 		konsole>=${KDE_APPLICATIONS_VERSION}:x11/konsole \
-		konqueror>=${KDE_APPLICATIONS_VERSION}:x11-fm/konqueror \
 		okular>=${KDE_APPLICATIONS_VERSION}:graphics/okular
 
 .include <bsd.port.mk>

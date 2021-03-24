@@ -5,8 +5,10 @@ PORTREVISION=	0
 CATEGORIES=	net www
 PKGNAMESUFFIX=	-${LIBPROXY_SLAVE}
 
-
 COMMENT=	Mozilla JavaScript plug-in for libproxy
+
+DEPRECATED=	Uses EOL Python 2.7 via lang/spidermonkey52
+EXPIRATION_DATE=2021-06-23
 
 USES=		compiler:c++11-lib
 USE_CXXSTD=	gnu++11

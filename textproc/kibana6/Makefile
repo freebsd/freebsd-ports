@@ -14,6 +14,9 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Uses EOL Python 2.7 via www/node10
+EXPIRATION_DATE=2021-06-23
+
 RUN_DEPENDS=	node10>=10.15.2:www/node10
 
 CONFLICTS=	kibana[3-5]* kibana7*

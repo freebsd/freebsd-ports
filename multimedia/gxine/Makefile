@@ -13,6 +13,9 @@ COMMENT=	Alternative GUI for the Xine media player
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Uses EOL Python 2.7 via lang/spidermonkey185
+EXPIRATION_DATE=2021-06-23
+
 LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libmozjs185.so:lang/spidermonkey185 \
 		libxine.so:multimedia/libxine

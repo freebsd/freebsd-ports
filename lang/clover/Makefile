@@ -6,6 +6,9 @@ CATEGORIES=	lang
 
 COMMENT=	Mesa OpenCL implementation for AMD GPUs
 
+DEPRECATED=	Uses EOL Python 2.7 via devel/libclc
+EXPIRATION_DATE=2021-06-23
+
 BUILD_DEPENDS=	libclc>=0.3.0:devel/libclc \
 		opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \

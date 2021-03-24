@@ -7,6 +7,9 @@ CATEGORIES=	deskutils kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Mail sieve editor
 
+DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
+EXPIRATION_DATE=2021-06-23
+
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs config configwidgets coreaddons crash \
 		dbusaddons ecm i18n iconthemes kio service wallet \

@@ -7,6 +7,9 @@ CATEGORIES=	deskutils kde kde-applications
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Calendar and scheduling Program
 
+DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
+EXPIRATION_DATE=2021-06-23
+
 LIB_DEPENDS=	libical.so:devel/libical
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext kde:5 qt:5 tar:xz
