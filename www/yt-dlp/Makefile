@@ -1,32 +1,38 @@
 # $FreeBSD$
 
 PORTNAME=	yt-dlp
-DISTVERSION=	2021.02.09
+DISTVERSION=	2021.03.21
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Command-line program to download videos from youtube & other platforms
+COMMENT=	Command-line program for downloading videos from various platforms
 
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zip:archivers/zip \
-		pandoc:textproc/hs-pandoc
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR}
-
-USES=		gmake python
-USE_PYTHON=	distutils autoplist noflavors
+USES=		gmake python shebangfix
+SHEBANG_GLOB=	devscripts/*.py
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	pukkandan
 
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}
 
 NO_ARCH=	yes
 
-POST_PLIST=	fix-plist
+OPTIONS_DEFINE=		FFMPEG MUTAGEN RTMPDUMP SYMLINK
+OPTIONS_DEFAULT=	FFMPEG RTMPDUMP
+OPTIONS_SUB=	yes
 
-pre-build:
-	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET}
+MUTAGEN_DESC=	Thumbnail support via Mutagen
+RTMPDUMP_DESC=	Use rtmpdump to download rtmp video streams
+SYMLINK_DESC=	Install youtube-dl symbolic link for executable
+
+FFMPEG_RUN_DEPENDS=	ffprobe:multimedia/ffmpeg
+MUTAGEN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR}
+RTMPDUMP_RUN_DEPENDS=	rtmpdump:multimedia/rtmpdump
+SYMLINK_CONFLICTS=	youtube_dl
+
+post-install-SYMLINK-on:
+	@${RLN} ${STAGEDIR}${PREFIX}/bin/yt-dlp ${STAGEDIR}${PREFIX}/bin/youtube-dl
 
 .include <bsd.port.mk>
