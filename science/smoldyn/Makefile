@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	smoldyn
-DISTVERSION=	2.63
+DISTVERSION=	2.64
 CATEGORIES=	science
 MASTER_SITES=	http://www.smoldyn.org/
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff
 USES=		cmake compiler:c++11-lang gl tar:tgz xorg
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
+USE_LDCONFIG=	yes
 
 CMAKE_OFF=	OPTION_PYTHON
 
