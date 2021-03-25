@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	catgirl
-DISTVERSION=	1.6
+DISTVERSION=	1.7
 CATEGORIES=	irc
 MASTER_SITES=	https://git.causal.agency/catgirl/snapshot/
 
