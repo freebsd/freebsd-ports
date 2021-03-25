@@ -100,18 +100,17 @@ QT5_PLIST_FILES=bin/${PORTNAME} \
 VULKAN_DESC=		Vulkan renderer
 VULKAN_RUN_DEPENDS=	${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
 
+.if !exists(${.CURDIR:H:H}/www/qt5-webengine)
+# Temporarily disable web applet if qt5-webengine is missing
+QT5_USE:=		${QT5_USE:S/,webengine//}
+QT5_CMAKE_BOOL:=	${QT5_CMAKE_BOOL:N*WEB_ENGINE}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/check_submodules_present()/d' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MQT5}
-DEPRECATED=	Uses EOL Python 2.7 via www/qt5-webengine
-EXPIRATION_DATE=2021-06-23
-.endif
 
 .include <bsd.port.mk>
