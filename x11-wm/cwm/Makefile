@@ -5,7 +5,7 @@ DISTVERSION=	6.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://leahneukirchen.org/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	me@emilengler.com
 COMMENT=	Minimalistic window manager for X11 based on evilwm
 
 LICENSE=	ISCL
