@@ -52,6 +52,7 @@ include/spdlog/sinks/basic_file_sink.h
 include/spdlog/sinks/daily_file_sink.h
 include/spdlog/sinks/dist_sink.h
 include/spdlog/sinks/dup_filter_sink.h
+include/spdlog/sinks/hourly_file_sink.h
 include/spdlog/sinks/msvc_sink.h
 include/spdlog/sinks/null_sink.h
 include/spdlog/sinks/ostream_sink.h
@@ -81,5 +82,5 @@ lib/cmake/spdlog/spdlogConfigTargets.cmake
 lib/cmake/spdlog/spdlogConfigVersion.cmake
 lib/libspdlog.so
 lib/libspdlog.so.1
-lib/libspdlog.so.1.8.2
+lib/libspdlog.so.1.8.3
 libdata/pkgconfig/spdlog.pc
