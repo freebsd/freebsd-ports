@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	open-vm-tools
-PORTVERSION=	11.2.0
+PORTVERSION=	11.2.5
 DISTVERSIONPREFIX=	stable-
-PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	emulators
 
@@ -25,7 +24,7 @@ nox11_PKGNAMESUFFIX=		-nox11
 nox11_CONFLICTS_INSTALL=	open-vm-tools
 nox11_COMMENT=			(without X11)
 
-USES=		autoreconf fuse gettext-runtime gnome kmod libtool localbase \
+USES=		autoreconf gettext-runtime gnome kmod libtool localbase \
 		pathfix pkgconfig
 
 USE_GITHUB=	yes
@@ -45,12 +44,12 @@ INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-Wno-deprecated-declarations
 SSP_UNSAFE=	kernel module does not support ssp
 
-CONFLICTS=	vmware-guestd[0-9]* vmware-tools[0-9]*
-
 WRKSRC_SUBDIR=	open-vm-tools
 
-OPTIONS_DEFINE=	DOCS LIBNOTIFY OPENSSL X11
-OPTIONS_DEFAULT=DOCS LIBNOTIFY OPENSSL X11
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS FUSE LIBNOTIFY OPENSSL X11
+OPTIONS_DEFAULT=DOCS FUSE LIBNOTIFY OPENSSL X11
 .if ${FLAVOR:U} == nox11
 OPTIONS_EXCLUDE:=	LIBNOTIFY X11
 .endif
@@ -60,6 +59,7 @@ LIBNOTIFY_DESC=		Desktop notification support
 
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOCS_CONFIGURE_ENABLE=	docs
+FUSE_USES=		fuse
 LIBNOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 OPENSSL_CONFIGURE_WITH=	ssl
 X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
@@ -83,9 +83,10 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers/vmblock.ko
 	${INSTALL_DATA} ${WRKSRC}/modules/freebsd/vmmemctl.ko \
 		${STAGEDIR}${PREFIX}/lib/vmware-tools/modules/drivers/vmmemctl.ko
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/tools.conf \
+		${STAGEDIR}${DATADIR}/tools.conf.sample
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/open-vm-tools/scripts/vmware/
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/open-vm-tools/scripts/
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/open-vm-tools/tests/
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.conf.d
 
 .include <bsd.port.mk>
