@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: chef_client
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable chef-client
+#
+#  chef_client_enable="YES"
+
+. /etc/rc.subr
+
+name="chef_client"
+rcvar=chef_client_enable
+
+# Read configuration and set defaults
+load_rc_config $name
+: ${chef_client_enable="NO"}
+: ${chef_client_configfile="%%PREFIX%%/etc/chef/client.rb"}
+: ${chef_client_interval="600"}
+: ${chef_client_splay="0"}
+: ${chef_client_logfile="/var/log/chef-client.log"}
+: ${chef_client_loglevel="info"}
+
+if [ -f "$chef_client_configfile" ]
+	then
+		pidfile=`awk '/^[ \t]*pid_file[ \t]+/ { print $2 }' ${chef_client_configfile}`
+		: ${chef_client_pidfile=$pidfile}
+	else
+		: ${chef_client_pidfile="/var/run/chef-client.pid"}
+fi
+
+if [ -n "$chef_client_nodename" ]
+	then
+		nodename="-N ${chef_client_nodename}"
+	else
+		nodename=""
+fi
+
+if [ -n "$chef_client_server" ]
+	then
+		server="-N ${chef_client_server}"
+	else
+		server=""
+fi
+
+command="%%PREFIX%%/bin/chef-client"
+command_interpreter="%%RUBY%%"
+pidfile=${chef_client_pidfile}
+chef_client_flags="-c ${chef_client_configfile} ${nodename}${server}-d -i ${chef_client_interval} -s ${chef_client_splay} -L ${chef_client_logfile} -l ${chef_client_loglevel} -P ${chef_client_pidfile}"
+
+load_rc_config $name
+run_rc_command "$1"

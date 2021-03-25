@@ -1,0 +1,13 @@
+OAuth 2 authentication with Azure ActiveDirectory's V2 API.
+
+https://github.com/marknadig/omniauth-azure-oauth2 is no longer
+maintained.
+https://github.com/marknadig/omniauth-azure-oauth2/pull/29 contains
+important additions.
+This gem combines the two and makes some changes to support the full
+V2 API.
+
+The ActiveDirectory V1 auth API used OpenID Connect. If you need this,
+a gem from Microsoft is available here, but seems to be abandoned.
+
+WWW: https://github.com/RIPGlobal/omniauth-azure-activedirectory-v2

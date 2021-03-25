@@ -1,0 +1,11 @@
+--- gitlab-fog-google.gemspec.orig	2021-03-20 19:07:03 UTC
++++ gitlab-fog-google.gemspec
+@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+       s.add_runtime_dependency(%q<fog-core>.freeze, ["<= 2.1.0"])
+       s.add_runtime_dependency(%q<fog-json>.freeze, ["~> 1.2"])
+       s.add_runtime_dependency(%q<fog-xml>.freeze, ["~> 0.1.0"])
+-      s.add_runtime_dependency(%q<google-api-client>.freeze, [">= 0.44.2", "< 0.51"])
++      s.add_runtime_dependency(%q<google-api-client>.freeze, [">= 0.44.2"])
+       s.add_runtime_dependency(%q<google-cloud-env>.freeze, ["~> 1.2"])
+       s.add_runtime_dependency(%q<addressable>.freeze, [">= 2.7.0"])
+       s.add_development_dependency(%q<pry>.freeze, [">= 0"])
