@@ -12,19 +12,13 @@ COMMENT=	Simulation of the HP-42S scientific calculator and HP-82240 printer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_aarch64=		fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
-BROKEN_armv6=		fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
-BROKEN_mips64=		fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
-BROKEN_powerpc64=	fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
-BROKEN_riscv64=		fails to link: c++: error: no such file or directory: 'gcc111libbid.a'
-
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
 USES=		compiler dos2unix gmake gnome localbase pkgconfig tar:tgz xorg
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
 USE_XORG=	x11 xmu
-DOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h gtk/IntelRDFPMathLib20U1/LIBRARY/float128/architecture.h
+DOS2UNIX_FILES=	gtk/IntelRDFPMathLib20U1/LIBRARY/float128/op_system.h gtk/IntelRDFPMathLib20U1/LIBRARY/float128/architecture.h gtk/IntelRDFPMathLib20U1/LIBRARY/src/bid_functions.h common/bid_functions.h gtk/IntelRDFPMathLib20U1/TESTS/test_bid_functions.h
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing -Wno-constant-conversion # to accommodate some code breaking with clang-50
