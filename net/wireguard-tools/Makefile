@@ -2,7 +2,7 @@
 
 PORTNAME=	wireguard-tools
 PORTVERSION=	1.0.20210315
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-tools/snapshot/
 
@@ -48,5 +48,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/completion/wg-quick.bash-completion \
 		${WRKSRC}/wg-quick/freebsd.bash
+
+install-rc-script:
+	@${ECHO_MSG} "===> Staging rc.d startup script(s)"
+	@for i in ${USE_RC_SUBR}; do \
+		_prefix=${PREFIX}; \
+		[ "${PREFIX}" = "/usr" ] && _prefix="" ; \
+		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}$${_prefix}/etc/rc.d/wireguard; \
+		${ECHO_CMD} "@(root,wheel,0755) $${_prefix}/etc/rc.d/wireguard" >> ${TMPPLIST}; \
+	done
 
 .include <bsd.port.mk>
