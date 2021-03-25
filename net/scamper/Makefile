@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	scamper
-DISTVERSION=	20200923
+DISTVERSION=	20210324
 CATEGORIES=	net
 MASTER_SITES=	https://www.caida.org/tools/measurement/scamper/code/
 DISTNAME=	${PORTNAME}-cvs-${PORTVERSION}
