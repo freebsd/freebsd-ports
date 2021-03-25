@@ -1,6 +1,6 @@
-TIMESTAMP = 1615583354
-SHA256 (loadimpact-k6-v0.31.0_GH0.tar.gz) = 1033faaeb3ede03c069bc487dcc36f9fe1ae349a33777d8c1930bafd88be3a7f
-SIZE (loadimpact-k6-v0.31.0_GH0.tar.gz) = 6837719
+TIMESTAMP = 1616587070
+SHA256 (loadimpact-k6-v0.31.1_GH0.tar.gz) = 449584777160096dbcfda5a7877aa21161958ccd3393c68262bb8e234647db1c
+SIZE (loadimpact-k6-v0.31.1_GH0.tar.gz) = 6838671
 SHA256 (Azure-go-ntlmssp-4a21cbd618b4_GH0.tar.gz) = e523aa100753f2d5eeab1ca55a15cad3bec30d4938f69d6536c6e748c2838190
 SIZE (Azure-go-ntlmssp-4a21cbd618b4_GH0.tar.gz) = 7842
 SHA256 (DataDog-datadog-go-e67964b4021a_GH0.tar.gz) = 26c207f71d1a65e0794c064cfc3f79c4150ed369e428f52fe42aa8120b4bf59f

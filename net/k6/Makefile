@@ -2,7 +2,7 @@
 
 PORTNAME=	k6
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.0
+DISTVERSION=	0.31.1
 CATEGORIES=	net
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -101,7 +101,7 @@ GH_TUPLE=	Azure:go-ntlmssp:4a21cbd618b4:azure_go_ntlmssp/vendor/github.com/Azure
 		zyedidia:highlight:201131ce5cf5:zyedidia_highlight/vendor/github.com/zyedidia/highlight
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
-_BUILD_HASH=	f0169c0
+_BUILD_HASH=	e9d8349
 
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
