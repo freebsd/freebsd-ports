@@ -3,7 +3,6 @@
 
 PORTNAME=	unit
 PORTVERSION=	${UNIT_VERSION}
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
 
@@ -65,7 +64,8 @@ ALL_TARGET=
 
 PLIST_DIRS?=	libexec/unit/modules \
 		libexec/unit
-PLIST_FILES?=	sbin/unitd
+PLIST_FILES?=	sbin/unitd \
+		share/man/man8/unitd.8.gz
 
 USE_RC_SUBR?=	unitd
 SUB_LIST=	PREFIX=${PREFIX} \
@@ -118,6 +118,7 @@ post-install:
 	${ECHO_CMD} @dir ${UNIT_RUNDIR} >> ${TMPPLIST}
 	${ECHO_CMD} @dir ${UNIT_TMPDIR} >> ${TMPPLIST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules
+	${INSTALL_MAN} ${WRKSRC}/build/unitd.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8
 .endif
 
 .include "../../www/unit/version.mk"
