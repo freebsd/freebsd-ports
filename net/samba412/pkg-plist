@@ -282,7 +282,6 @@ lib/samba4/private/libshares-samba4.so
 lib/samba4/private/libsmb-transport-samba4.so
 lib/samba4/private/libsmbclient-raw-samba4.so
 lib/samba4/private/libsmbd-base-samba4.so
-lib/samba4/private/libsmbd-conn-samba4.so
 lib/samba4/private/libsmbd-shim-samba4.so
 %%LDAP%%lib/samba4/private/libsmbldaphelper-samba4.so
 lib/samba4/private/libsmbpasswdparser-samba4.so
@@ -306,7 +305,6 @@ lib/samba4/private/libxattr-tdb-samba4.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_10.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_11.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_12.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_13.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_14.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_16.so
 %%AD_DC%%%%SAMBA4_MODULEDIR%%/gensec/krb5.so

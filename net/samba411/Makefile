@@ -14,6 +14,9 @@ COMMENT=			Free SMB/CIFS and AD/DC server and client for Unix
 LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
 
+DEPRECATED=			Security Support ends on 03 Dec 2020
+EXPIRATION_DATE=		2021-04-22
+
 IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 CONFLICTS_INSTALL?=		samba4-4.0.* samba4[1-9]-4.* samba41[02-9]-4.1* p5-Parse-Pidl-4.*
 
