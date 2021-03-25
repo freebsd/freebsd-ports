@@ -3,12 +3,27 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.11.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
 DISTFILES=	${PORTNAME}.1:manpage
 EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	2362d71d70ad.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14176
+PATCHFILES+=	26eca0ba3dc0.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14176
+PATCHFILES+=	6656c8a533ee.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14176
+PATCHFILES+=	2b2dae60d316.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14176
+PATCHFILES+=	b19e39efb0ca.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14176
+PATCHFILES+=	e5849d109dc2.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14176
+PATCHFILES+=	e3be3d5f7b0e.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14176
+PATCHFILES+=	0ab6f1d0804c.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14176
+PATCHFILES+=	54dd4e4c0cd7.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14176
+PATCHFILES+=	ed2610cf1a89.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14188
+PATCHFILES+=	d8e3bae2da1a.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14188
+PATCHFILES+=	9d031caa9d8b.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14188
+PATCHFILES+=	d6dc6e9d642f.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/14199
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
