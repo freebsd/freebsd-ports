@@ -546,6 +546,7 @@
     SUBDIR += onednn
     SUBDIR += openblas
     SUBDIR += openlibm
+    SUBDIR += openmesh
     SUBDIR += opensolaris-libm
     SUBDIR += openturns
     SUBDIR += optpp

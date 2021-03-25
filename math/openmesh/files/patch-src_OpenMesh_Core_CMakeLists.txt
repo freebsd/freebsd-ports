@@ -1,0 +1,11 @@
+--- src/OpenMesh/Core/CMakeLists.txt.orig	2020-03-12 13:55:54 UTC
++++ src/OpenMesh/Core/CMakeLists.txt
+@@ -41,7 +41,7 @@ if (WIN32)
+   endif()
+ 
+ else ()
+-  acg_add_library (OpenMeshCore SHAREDANDSTATIC ${sources} ${headers})
++  acg_add_library (OpenMeshCore SHARED ${sources} ${headers})
+   set_target_properties (OpenMeshCore PROPERTIES VERSION ${OPENMESH_VERSION_MAJOR}.${OPENMESH_VERSION_MINOR}
+                                                SOVERSION ${OPENMESH_VERSION_MAJOR}.${OPENMESH_VERSION_MINOR} )
+ 
