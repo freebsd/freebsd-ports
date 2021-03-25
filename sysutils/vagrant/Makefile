@@ -4,7 +4,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.2.14
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils rubygems devel
 
 MAINTAINER=	joe@thrallingpenguin.com
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 		rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
 		rubygem-main>=1.0:devel/rubygem-main
-RUN_DEPENDS=	rubygem-bcrypt_pbkdf>=1.0.0<1.1:security/rubygem-bcrypt_pbkdf \
+RUN_DEPENDS=	rubygem-bcrypt_pbkdf10>=1.0.0<1.1:security/rubygem-bcrypt_pbkdf10 \
 		rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
 		rubygem-childprocess>=4.0.0<4.1.0:devel/rubygem-childprocess \
 		rubygem-ed25519>=1.2.4<1.3:security/rubygem-ed25519 \
