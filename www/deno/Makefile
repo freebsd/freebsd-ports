@@ -2,7 +2,7 @@
 
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.2
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -25,7 +25,7 @@ USE_GNOME=	glib20
 
 MAKE_JOBS_UNSAFE=	yes
 
-RUSTY_VERS=	0.20.0
+RUSTY_VERS=	0.21.0
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -42,7 +42,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ahash-0.4.7 \
 		ahash-0.7.2 \
 		aho-corasick-0.7.15 \
-		align-data-0.1.0 \
 		alloc-no-stdlib-2.0.1 \
 		alloc-stdlib-0.2.1 \
 		ansi_term-0.11.0 \
@@ -100,9 +99,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dissimilar-1.0.2 \
 		dlopen-0.1.8 \
 		dlopen_derive-0.1.4 \
-		dprint-core-0.35.1 \
-		dprint-plugin-json-0.8.0 \
-		dprint-plugin-markdown-0.5.1 \
+		dprint-core-0.35.2 \
+		dprint-plugin-json-0.9.0 \
+		dprint-plugin-markdown-0.6.0 \
 		dprint-plugin-typescript-0.41.0 \
 		dprint-swc-ecma-ast-view-0.10.0 \
 		either-1.6.1 \
@@ -207,7 +206,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		naga-0.3.1 \
 		new_debug_unreachable-1.0.4 \
 		nibble_vec-0.1.0 \
-		nix-0.19.1 \
+		nix-0.20.0 \
 		notify-5.0.0-pre.5 \
 		ntapi-0.3.6 \
 		num-bigint-0.2.6 \
@@ -275,8 +274,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ron-0.6.4 \
 		rustc_version-0.2.3 \
 		rustls-0.19.0 \
-		rusty_v8-0.20.0 \
-		rustyline-7.1.0 \
+		rusty_v8-0.21.0 \
+		rustyline-8.0.0 \
 		rustyline-derive-0.4.0 \
 		ryu-1.0.5 \
 		same-file-1.0.6 \
@@ -345,13 +344,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		time-0.1.44 \
 		tinyvec-1.1.1 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.2.0 \
+		tokio-1.4.0 \
 		tokio-macros-1.1.0 \
 		tokio-rustls-0.22.0 \
-		tokio-stream-0.1.3 \
+		tokio-stream-0.1.5 \
 		tokio-test-0.4.0 \
 		tokio-tungstenite-0.13.0 \
-		tokio-util-0.6.3 \
+		tokio-util-0.6.5 \
 		toml-0.5.8 \
 		tower-layer-0.3.1 \
 		tower-service-0.3.1 \
