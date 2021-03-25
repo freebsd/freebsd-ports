@@ -635,6 +635,7 @@
     SUBDIR += spamass-milter
     SUBDIR += spamass-rules
     SUBDIR += spamassassin
+    SUBDIR += spamassassin-devel
     SUBDIR += spamassassin-dqs
     SUBDIR += spambnc
     SUBDIR += spamcup

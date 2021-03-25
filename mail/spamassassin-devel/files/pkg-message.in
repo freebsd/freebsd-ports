@@ -1,0 +1,33 @@
+[
+{ type: install
+  message: <<EOM
+You should complete the following post-installation tasks:
+
+	1) Read %%DOCSDIR%%/INSTALL
+	   and %%DOCSDIR%%/UPGRADE
+	   BEFORE enabling SpamAssassin for important changes
+
+	2) Edit the configuration in %%ETCDIR%%,
+	   in particular %%ETCDIR%%/init.pre
+	   You may get lots of annoying (but harmless) error messages
+	   if you skip this step.
+
+	3) To run spamd, add the following to /etc/rc.conf:
+	   spamd_enable="YES"
+
+	4) If this is a new installation, you should run sa-update
+	   and sa-compile. If this isn't a new installation, you
+	   should probably run those commands on a regular basis
+	   anyway.
+
+	5) Install mail/spamass-rules if you want some third-party
+	   spam-catching rulesets
+
+SECURITY NOTE:
+By default, spamd runs as root (the AS_ROOT option). If you wish
+to change this, add the following to /etc/rc.conf:
+
+	spamd_flags="-u spamd -H /var/spool/spamd"
+EOM
+}
+]
