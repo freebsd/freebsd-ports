@@ -81,7 +81,6 @@ BUILD_DEPENDS+=	libepoxy>0:graphics/libepoxy	# only for configure
 .endif
 
 .if ${SLAVE_PORT} == "no"
-CONFLICTS_INSTALL+=	libxcvt # bin/cvt, https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/637
 USE_GL+=	gbm
 USE_XORG+=	pciaccess
 CONFIGURE_ARGS+=--disable-dmx --disable-xephyr --disable-xnest --disable-xvfb \

@@ -10,8 +10,6 @@ COMMENT=	Calculate VESA CVT mode lines
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	xorg-server # bin/cvt
-
 USES=		meson
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
