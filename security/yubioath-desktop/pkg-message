@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+  Before running make sure that the pcscd service is enabled and running
+EOM
+}
+]
