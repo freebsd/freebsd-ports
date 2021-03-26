@@ -5,7 +5,7 @@
 # for the next lang/rust update.
 PORTNAME=	rust
 PORTVERSION=	1.50.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:rust \
 		LOCAL/mikael:armbase \
@@ -39,6 +39,7 @@ FLAVORS=	aarch64 amd64 armv6 armv7 i386 powerpc64_elfv1 powerpc64_elfv2 powerpc6
 FLAVOR?=	${FLAVORS:[1]}
 
 aarch64_PKGNAMEPREFIX=		aarch64-
+aarch64_BUILD_DEPENDS=		llvm90>0:devel/llvm90
 amd64_PKGNAMEPREFIX=		amd64-
 armv6_PKGNAMEPREFIX=		armv6-
 armv7_PKGNAMEPREFIX=		armv7-
@@ -54,6 +55,10 @@ USE_GCC=	9:build
 .endif
 # for openssl-src crate
 USE_PERL5=	build
+.if ${FLAVOR} == aarch64
+CC=		clang90
+CXX=		clang++90
+.endif
 PATCHDIR=	${.CURDIR}/../rust/files
 # Resulting packages are not specific to amd64
 NO_ARCH=	yes
