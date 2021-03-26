@@ -1,4 +1,5 @@
 bin/dehydrated
+man/man1/dehydrated.1.gz
 @sample %%ETCDIR%%/config.sample
 @sample %%ETCDIR%%/domains.txt.sample
 @sample %%ETCDIR%%/hook.sh.sample

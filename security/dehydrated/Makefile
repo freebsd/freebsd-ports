@@ -2,7 +2,7 @@
 
 PORTNAME=	dehydrated
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.5
+DISTVERSION=	0.7.0
 CATEGORIES=	security
 
 MAINTAINER=	meta@FreeBSD.org
@@ -16,7 +16,7 @@ RUN_DEPENDS=	curl:ftp/curl
 USES=		shebangfix
 USE_GITHUB=	yes
 
-GH_ACCOUNT=	lukas2511
+GH_ACCOUNT=	dehydrated-io
 NO_BUILD=	yes
 NO_ARCH=	yes
 SHEBANG_FILES=	docs/examples/hook.sh dehydrated
@@ -56,6 +56,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/config ${STAGEDIR}${ETCDIR}/config.sample
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/hook.sh ${STAGEDIR}${ETCDIR}/hook.sh.sample
 	${INSTALL_DATA} ${WRKSRC}/docs/examples/domains.txt ${STAGEDIR}${ETCDIR}/domains.txt.sample
+	${INSTALL_MAN} ${WRKSRC}/docs/man/dehydrated.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODIC_FILES} ${STAGEDIR}${PREFIX}/${PERIODIC_DIRS}/${PERIODIC_FILES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/www/dehydrated
@@ -63,8 +64,8 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-.	for d in dns-verification domains_txt ecc hook_chain import-from-official-client \
-		per-certificate-config staging troubleshooting wellknown
+.	for d in dns-verification domains_txt ecc hook_chain \
+		per-certificate-config staging tls-alpn troubleshooting wellknown
 		${INSTALL_DATA} ${WRKSRC}/docs/${d}.md ${STAGEDIR}${DOCSDIR}
 .	endfor
 
