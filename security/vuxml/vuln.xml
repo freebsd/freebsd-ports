@@ -78,6 +78,44 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5a668ab3-8d86-11eb-b8d6-d4c9ef517024">
+    <topic>OpenSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1k,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20210325.txt">
+	  <p>High: CA certificate check bypass with X509_V_FLAG_X509_STRICT
+	    (CVE-2021-3450)<br/>The X509_V_FLAG_X509_STRICT flag enables
+	    additional security checks of the certificates present in a
+	    certificate chain. It is not set by default.</p>
+	  <p>High: NULL pointer deref in signature_algorithms processing
+	    (CVE-2021-3449)<br/>An OpenSSL TLS server may crash if sent a
+	    maliciously crafted renegotiation ClientHello message from a client.
+	    If a TLSv1.2 renegotiation ClientHello omits the
+	    signature_algorithms extension (where it was present in the initial
+	    ClientHello), but includes a signature_algorithms_cert extension
+	    then a NULL pointer dereference will result, leading to a crash and
+	    a denial of service attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.openssl.org/news/secadv/20210325.txt</url>
+      <cvename>CVE-2021-3449</cvename>
+      <cvename>CVE-2021-3450</cvename>
+    </references>
+    <dates>
+      <discovery>2021-03-25</discovery>
+      <entry>2021-03-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ec04f3d0-8cd9-11eb-bb9f-206a8a720317">
     <topic>spamassassin -- Malicious rule configuration (.cf) files can be configured to run system commands</topic>
     <affects>
@@ -108,7 +146,7 @@ Notes:
     </references>
     <dates>
       <discovery>2021-03-24</discovery>
-      <entry>2020-03-24</entry>
+      <entry>2021-03-24</entry>
     </dates>
   </vuln>
 
