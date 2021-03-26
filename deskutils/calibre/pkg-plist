@@ -1222,6 +1222,7 @@ lib/calibre/calibre/srv/tests/ajax.py
 lib/calibre/calibre/srv/tests/auth.py
 lib/calibre/calibre/srv/tests/base.py
 lib/calibre/calibre/srv/tests/content.py
+lib/calibre/calibre/srv/tests/fast_css_transform.py
 lib/calibre/calibre/srv/tests/http.py
 lib/calibre/calibre/srv/tests/loop.py
 lib/calibre/calibre/srv/tests/main.py
@@ -1750,7 +1751,6 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/wizard.png
 %%DATADIR%%/jacket/stylesheet.css
 %%DATADIR%%/jacket/template.xhtml
-%%DATADIR%%/jquery.simulate.js
 %%DATADIR%%/localization/iso3166.calibre_msgpack
 %%DATADIR%%/localization/iso639.calibre_msgpack
 %%DATADIR%%/localization/locales.zip
