@@ -1,4 +1,3 @@
-@stopdaemon chillispot
 sbin/chilli
 man/man8/chilli.8.gz
 %%DATADIR%%/chilli.conf.sample

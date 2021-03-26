@@ -20,9 +20,6 @@
 @sample %%EXAMPLESDIR%%/newsyslog.sample etc/newsyslog.conf.d/nut.conf
 @sample %%EXAMPLESDIR%%/syslog.sample etc/syslog.d/nut
 %%NUT_USB%%etc/devd/nut-usb.conf
-@stopdaemon nut_upsmon
-@stopdaemon nut_upslog
-@stopdaemon nut
 bin/upsc
 bin/upscmd
 bin/upslog

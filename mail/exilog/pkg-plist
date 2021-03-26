@@ -1,4 +1,3 @@
-%%AGENT%%@stopdaemon exilog
 @owner www
 @group www
 etc/exilog.conf-dist

@@ -1,4 +1,3 @@
-@stopdaemon coovachilli
 etc/chilli.conf
 etc/chilli/defaults
 etc/chilli/down.sh
