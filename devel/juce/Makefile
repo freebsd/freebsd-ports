@@ -10,7 +10,7 @@ COMMENT=	C++ application framework to develop desktop and mobile applications
 LICENSE=	JUCE6
 LICENSE_NAME=	JUCE 6 End User License Agreement
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
 BUILD_DEPENDS=	ladspa>0:audio/ladspa
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
