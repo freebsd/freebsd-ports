@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	5.0.3
+DISTVERSION=	5.0.4
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
 		http://mirrors.ibiblio.org/wine/source/5.0/
