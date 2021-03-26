@@ -20,6 +20,22 @@
 
 actions: [file(1)]
 arguments: true
+prepackaging: <<EOS
+  if #arg == 1 then
+    if string.find(arg[1], "%.sample$") == nil then
+      io.stderr:write("@sample with 1 single argument expect \".sample\" extension\n")
+      return(1)
+    end
+  elseif #arg == 2 then
+    if arg[1] == arg[2] then
+      io.stderr:write("@sample: 2 identicals arguments are provided\n")
+      return(1)
+    end
+  else
+    io.stderr:write("@sample expect 1 or 2 arguments, got " .. #arg .. "\n")
+    return(1)
+  end
+EOS
 post-install-lua: <<EOS
   args = {}
   for arg in string.gmatch("%@", "%S+") do
