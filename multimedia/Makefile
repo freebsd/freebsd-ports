@@ -196,6 +196,7 @@
     SUBDIR += libquvi09
     SUBDIR += librav1e
     SUBDIR += librespot
+    SUBDIR += librist
     SUBDIR += librtmp
     SUBDIR += libtheora
     SUBDIR += libtuner
