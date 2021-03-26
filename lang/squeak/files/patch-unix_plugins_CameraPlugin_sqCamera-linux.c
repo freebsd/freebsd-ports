@@ -1,5 +1,5 @@
---- unix/plugins/CameraPlugin/sqCamera-linux.c.orig	2012-07-31 06:59:01.000000000 +0900
-+++ unix/plugins/CameraPlugin/sqCamera-linux.c	2012-09-24 14:44:26.000000000 +0900
+--- unix/plugins/CameraPlugin/sqCamera-linux.c.orig	2012-07-30 21:59:01 UTC
++++ unix/plugins/CameraPlugin/sqCamera-linux.c
 @@ -45,8 +45,9 @@
  #include <sys/ioctl.h>
  #include <dlfcn.h>
@@ -12,7 +12,7 @@
  #include <linux/videodev2.h>
  
  
-@@ -176,12 +177,19 @@
+@@ -176,12 +177,19 @@ libCon(void)
  	int devNum;
  	camPtr cam;
  

@@ -1,6 +1,6 @@
---- unix/plugins/ScratchPlugin/unixSeriaPort2Ops.c.org	2012-09-24 15:26:44.000000000 +0900
-+++ unix/plugins/ScratchPlugin/unixSeriaPort2Ops.c	2012-09-24 15:26:54.000000000 +0900
-@@ -337,7 +337,7 @@
+--- unix/plugins/ScratchPlugin/unixSeriaPort2Ops.c.orig	2012-07-30 21:58:07 UTC
++++ unix/plugins/ScratchPlugin/unixSeriaPort2Ops.c
+@@ -337,7 +337,7 @@ error:
  }
  
  int isSerialPortDev(char *s) {

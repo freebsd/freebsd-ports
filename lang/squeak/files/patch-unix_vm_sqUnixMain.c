@@ -1,6 +1,6 @@
---- unix/vm/sqUnixMain.c.bak	2013-12-05 13:49:51 -0800
+--- unix/vm/sqUnixMain.c.orig	2012-09-17 01:03:14 UTC
 +++ unix/vm/sqUnixMain.c
-@@ -1334,8 +1334,8 @@
+@@ -1334,8 +1334,8 @@ void imgInit(void)
  			|| defined(POWERPC) || defined(__POWERPC) || defined (__POWERPC__) )
    void mtfsfi(unsigned long long fpscr)
    {

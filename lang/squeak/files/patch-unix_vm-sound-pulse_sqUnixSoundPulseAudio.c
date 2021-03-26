@@ -1,4 +1,4 @@
---- unix/vm-sound-pulse/sqUnixSoundPulseAudio.c.orig	2012-08-08 10:34:42 +0800
+--- unix/vm-sound-pulse/sqUnixSoundPulseAudio.c.orig	2012-08-08 02:34:42 UTC
 +++ unix/vm-sound-pulse/sqUnixSoundPulseAudio.c
 @@ -995,10 +995,10 @@ DBGMSG("<sound_StartRecording()");
  static sqInt sound_StopRecording(void) {

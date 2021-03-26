@@ -1,6 +1,6 @@
---- unix/vm/build.cmake.orig	2013-06-09 22:54:13.000000000 +0200
-+++ unix/vm/build.cmake	2013-06-09 22:55:18.000000000 +0200
-@@ -90,4 +90,4 @@
+--- unix/vm/build.cmake.orig	2012-09-17 01:03:14 UTC
++++ unix/vm/build.cmake
+@@ -90,4 +90,4 @@ ADD_CUSTOM_TARGET (squeak.1
    COMMAND sh ${bld}/config ${unix}/doc/squeak.1 ${bld}/squeak.1
  )
  ADD_DEPENDENCIES (squeakvm${scriptsuffix} squeak.1)
