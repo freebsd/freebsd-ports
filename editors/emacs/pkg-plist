@@ -899,6 +899,7 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.th
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.translators
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.zh
+%%DATADIR%%/%%EMACS_VER%%/etc/w32-feature.el
 %%DATADIR%%/%%EMACS_VER%%/etc/yow.lines
 %%DATADIR%%/%%EMACS_VER%%/lisp/COPYING
 %%DATADIR%%/%%EMACS_VER%%/lisp/README
@@ -3190,6 +3191,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-plot.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-protocol.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-protocol.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-refile.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/org/org-refile.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-src.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-src.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/org/org-table.el.gz
