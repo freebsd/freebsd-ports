@@ -1,0 +1,11 @@
+--- doc/Makefile.orig	2021-03-26 23:12:34 UTC
++++ doc/Makefile
+@@ -16,7 +16,7 @@ index.html: $(INPUTS) $(HALIBUT)
+ halibut.1: manpage.but
+ 	$(HALIBUT) --man=halibut.1 manpage.but
+ 
+-install:
++install: halibut.1
+ 	mkdir -p $(man1dir)
+ 	$(INSTALL) -m 644 halibut.1 $(man1dir)/halibut.1
+ 

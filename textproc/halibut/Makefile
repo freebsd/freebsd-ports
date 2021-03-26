@@ -1,0 +1,19 @@
+# $FreeBSD$
+
+PORTNAME=	halibut
+DISTVERSION=	1.2
+CATEGORIES=	textproc
+MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/halibut/halibut-${DISTVERSION}/
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Free document preparation system
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENCE
+
+USES=		gmake perl5
+
+PLIST_FILES=	bin/halibut \
+		man/man1/halibut.1.gz
+
+.include <bsd.port.mk>
