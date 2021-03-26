@@ -1,4 +1,4 @@
-TIMESTAMP = 1616583319
+TIMESTAMP = 1616691846
 SHA256 (barmco-skcms-6437475_GH0.tar.gz) = 6818ea7aa053a964d1795d6d1d3c5e2aad5d30dff9817c8e604e324ef643ec01
 SIZE (barmco-skcms-6437475_GH0.tar.gz) = 9200034
 SHA256 (google-highway-0.11.1_GH0.tar.gz) = 4c4bb9501c02b27a0944afde8923aaab554384690d37e5b2a7f97553426ea641
@@ -7,5 +7,5 @@ SHA256 (lvandeve-lodepng-48e5364_GH0.tar.gz) = 41e0bcc686e31ee2d51a6c87c0089045f
 SIZE (lvandeve-lodepng-48e5364_GH0.tar.gz) = 239988
 SHA256 (webmproject-sjpeg-868ab55_GH0.tar.gz) = ffe757b376fed2fd94473f8625c25f82a3a23aa317fb1bbf1ac8159b6e0a7726
 SIZE (webmproject-sjpeg-868ab55_GH0.tar.gz) = 2472084
-SHA256 (wg1-jpeg-xl-f071e6c7d25984df04f4dc629646c3b0cca57de9_GL0.tar.gz) = 8995aaf69cdecfbb7156c0b61d2f2e626c928170b90547ca12e8fb996ef636ec
-SIZE (wg1-jpeg-xl-f071e6c7d25984df04f4dc629646c3b0cca57de9_GL0.tar.gz) = 14564220
+SHA256 (wg1-jpeg-xl-c2d18d95df67fe167e495d22c9876d33438d4055_GL0.tar.gz) = a0b42ba16e336a5d8990c66098cf67acf98a9191b658c04b1bc3c733f449016e
+SIZE (wg1-jpeg-xl-c2d18d95df67fe167e495d22c9876d33438d4055_GL0.tar.gz) = 14564524
