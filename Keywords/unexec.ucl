@@ -1,0 +1,11 @@
+# $FreeBSD$
+#
+# MAINTAINER:	portmgr@FreeBSD.org
+actions: []
+deprecated: true
+deprecation_message: <<EOM
+Use @preunexec/@postunexec instead
+EOM
+pre-deinstall: <<EOS
+%@
+EOS

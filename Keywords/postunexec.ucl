@@ -1,0 +1,7 @@
+# $FreeBSD$
+#
+# MAINTAINER:	portmgr@FreeBSD.org
+actions: []
+post-deinstall: <<EOS
+%@
+EOS
