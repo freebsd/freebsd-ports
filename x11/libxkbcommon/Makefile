@@ -1,5 +1,6 @@
 PORTNAME=	libxkbcommon
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://xkbcommon.org/download/
 DIST_SUBDIR=	xorg/lib
@@ -16,14 +17,17 @@ USES=		bison gnome meson pkgconfig tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Denable-docs=false \
-		-Denable-wayland=false \
 		-Dx-locale-root="${PREFIX}/lib/X11/locale" \
 		${MESON_ARGS_${OPSYS}_${OSREL:R}}
 MESON_ARGS_FreeBSD_11=	-Ddefault-rules=xorg
 
-OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=X11
+OPTIONS_DEFINE=	WAYLAND X11
+OPTIONS_DEFAULT=WAYLAND X11
 OPTIONS_SUB=	yes
+
+WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.12:graphics/wayland-protocols
+WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+WAYLAND_MESON_TRUE=	enable-wayland
 
 X11_USES=	xorg
 X11_USE=	XORG=xcb
