@@ -14,6 +14,7 @@ RUN_DEPENDS=	xkeyboard-config>0:x11/xkeyboard-config
 
 USES=		bison gnome meson pkgconfig tar:xz
 USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
 MESON_ARGS=	-Denable-docs=false \
 		-Denable-wayland=false \
 		-Dx-locale-root="${PREFIX}/lib/X11/locale" \
