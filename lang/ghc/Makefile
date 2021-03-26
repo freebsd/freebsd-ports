@@ -84,6 +84,8 @@ BOOT_LLVM_VERSION=	90
 
 PLIST_SUB=		GHC_VERSION=${GHC_VERSION} CABAL_VERSION=${CABAL_VERSION}
 
+PORTDOCS=		*
+
 .include <bsd.port.pre.mk>
 
 # This version of ncurses is needed by bootstrap compiler
