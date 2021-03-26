@@ -6,6 +6,7 @@ deprecated: true
 deprecation_message: <<EOM
 Use @preunexec/@postunexec instead
 EOM
+preformat_arguments: true
 pre-deinstall: <<EOS
 %@
 EOS
