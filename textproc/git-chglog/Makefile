@@ -2,7 +2,7 @@
 
 PORTNAME=	git-chglog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.13.0
 CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -45,7 +45,12 @@ GH_TUPLE=	AlecAivazis:survey:v2.2.9:alecaivazis_survey_v2/vendor/github.com/Alec
 		tsuyoshiwada:go-gitcmd:5f1f5f9475df:tsuyoshiwada_go_gitcmd/vendor/github.com/tsuyoshiwada/go-gitcmd \
 		urfave:cli:v2.3.0:urfave_cli_v2/vendor/github.com/urfave/cli/v2
 
+_BUILD_VERSION=	${DISTVERSIONFULL}
+
 GO_TARGET=	./cmd/${PORTNAME}
+GO_BUILDFLAGS=	-ldflags "\
+		-s -w \
+		-X main.version=${_BUILD_VERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGELOG.md CONTRIBUTING.md README.md
