@@ -35,11 +35,13 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfmt.so:devel/libfmt
 
 USES=		compiler:c++11-lib desktop-file-utils dos2unix gl gmake gnome \
-		iconv jpeg openal:al pkgconfig python:build sdl tar:xz xorg
+		iconv jpeg openal:al perl5 pkgconfig python:build sdl tar:xz \
+		xorg
 USE_GNOME=	libxml2
 USE_GL=		gl
 USE_SDL=	sdl2
 USE_XORG=	x11 xcursor
+USE_PERL5=	build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
