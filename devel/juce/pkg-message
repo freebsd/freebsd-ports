@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-You installed JUCE: C++ application framework
+You installed JUCE: C++ application framework.
 
 The main application that you probably need is Projucer. It allows you
 to develop, manage and deploy cross-platform applications.
