@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-update-icon-cache
-PORTVERSION=	3.24.24
+PORTVERSION=	3.24.26
 CATEGORIES=	graphics
 DIST_SUBDIR=	gnome
 
@@ -17,7 +17,7 @@ USE_GNOME=	gdkpixbuf2
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	Community/gentoo
-GL_COMMIT=	e63f1449334b9279fb4640ba1f2e6f57976b43e6
+GL_COMMIT=	5d5d06c43e088b527a283d8eae37e9ef3ea0d7ea
 
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
