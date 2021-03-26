@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear-data
-PORTVERSION=	2020.3.6
+PORTVERSION=	2020.3.8
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 DISTNAME=	FlightGear-${PORTVERSION}-data
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 BROKEN_mips64=		Fails to install: runaway process
 
-USES=		tar:bzip2
+USES=		tar:txz
 
 NO_BUILD=	yes
 NO_ARCH=	yes

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2020.3.6
+PORTVERSION=	2020.3.8
 CATEGORIES=	games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -54,5 +54,9 @@ QT5_CMAKE_ON=	-DENABLE_QT:BOOL=ON
 QT5_CMAKE_OFF=	-DENABLE_QT:BOOL=OFF
 QT5_USES=	qt:5
 QT5_USE=	QT=core,buildtools,linguisttools,gui,declarative,network,qmake,widgets,svg
+
+post-patch:
+# Avoid conflict with C++20 <version> - used version file is flightgear-version
+	@${RM} ${WRKSRC}/version
 
 .include <bsd.port.mk>

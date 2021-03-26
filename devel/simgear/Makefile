@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	simgear
-PORTVERSION=	2020.3.6
+PORTVERSION=	2020.3.8
 CATEGORIES=	devel games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 
@@ -39,5 +39,9 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 .if ${ARCH} != amd64 && ${ARCH} != i386
 CMAKE_ARGS+=	-DENABLE_SIMD:BOOL=OFF
 .endif
+
+post-patch:
+# Avoid conflict with C++20 <version> - used version file is simgear-version
+	@${RM} ${WRKSRC}/version
 
 .include <bsd.port.post.mk>
