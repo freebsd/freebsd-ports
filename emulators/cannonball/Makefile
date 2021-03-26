@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cannonball
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31
+DISTVERSION=	0.32
 CATEGORIES=	emulators games
 
 MAINTAINER=	fox@FreeBSD.org
