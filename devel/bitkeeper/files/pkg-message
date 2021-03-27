@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-The binaries to bitkeeper are in ${LOCALBASE}/bitkeeper/bin.
-This directory must be added to $PATH. A symbolic link to the
-bk binary will not work.
-EOM
-}
-]
