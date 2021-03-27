@@ -2,7 +2,7 @@
 
 PORTNAME=	juce
 DISTVERSION=	6.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfreetype.so:print/freetype2 \
 		libsysinfo.so:devel/libsysinfo
 
-USES=		cmake compiler:c++11-lang gl localbase:ldflags xorg
+USES=		cmake compiler:c++11-lang gl localbase:ldflags pkgconfig xorg
 USE_GL=		gl
 USE_XORG=	x11 xcomposite xcursor xext xinerama xorgproto xrandr
 
