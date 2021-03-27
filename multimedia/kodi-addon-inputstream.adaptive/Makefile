@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	inputstream.adaptive
-DISTVERSION=	2.6.7
+DISTVERSION=	2.6.8
 DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	multimedia
 
