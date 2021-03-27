@@ -39,7 +39,7 @@ OPTIONS_DEFINE=	DOCS
 CONFIGURE_ARGS+=	--disable-asm
 .endif
 
-.if ${ARCH} == "armv6"
+.if ${ARCH} == "armv6" || ${ARCH} == "armv7"
 CONFIGURE_ARGS+=	--disable-jent-support
 .endif
 
