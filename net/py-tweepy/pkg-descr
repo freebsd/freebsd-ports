@@ -1,0 +1,4 @@
+A Python library for accessing the Twitter.com API.
+Supports OAuth, covers the entire API, and streaming API.
+
+WWW: https://github.com/tweepy/tweepy
