@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=--with-python=${PYTHON_CMD} \
 		--with-mailhost=localhost \
 		--with-urlhost=localhost
 
-CONFLICTS=	ja-mailman-2.1.*
+CONFLICTS=	ja-mailman-2.1.* mailman*exim* mailman*postfix*
 
 # The Mailman port supports a number of variables that may be tweaked at
 # build time.  Getting the values of some of them right is crucial!
@@ -68,19 +68,21 @@ PORTDOCS=	ACKNOWLEDGMENTS BUGS FAQ INSTALL NEWS README README-I18N.en \
 		mailman-member.txt \
 		FreeBSD-post-install-notes
 
-OPTIONS_SINGLE=	MTA
+OPTIONS_SINGLE=		MTA
 OPTIONS_SINGLE_MTA=	COURIER EXIM4 OPENSMTPD POSTFIX SENDMAIL
-OPTIONS_DEFINE=	HTDIG NAMAZU2 NOMAILPWD NLS DOCS
+OPTIONS_DEFINE=		HTDIG NAMAZU2 NOMAILPWD NLS DOCS
 OPTIONS_DEFAULT=	SENDMAIL NOMAILPWD
-COURIER_DESC=	for use with courier
-EXIM4_DESC=	for use with exim4
-OPENSMTPD_DESC=	for use with opensmtpd - EXPERIMENTAL -
-POSTFIX_DESC=	for use with postfix
-SENDMAIL_DESC=	for use with sendmail
-HTDIG_DESC=	- EXPERIMENTAL - htdig integration patches
-NAMAZU2_DESC=	Make private archives searchable with namazu2
-NOMAILPWD_DESC=	Elide plaintext passwords from monthly reminders
-MTA_DESC=	Integrate with which MTA?
+COURIER_DESC=		for use with courier
+EXIM4_DESC=		for use with exim4
+EXIM4_RUN_DEPENDS=	exim>=0:mail/exim
+OPENSMTPD_DESC=		for use with opensmtpd - EXPERIMENTAL -
+POSTFIX_DESC=		for use with postfix
+POSTFIX_RUN_DEPENDS=	postfix:mail/postfix
+SENDMAIL_DESC=		for use with sendmail
+HTDIG_DESC=		- EXPERIMENTAL - htdig integration patches
+NAMAZU2_DESC=		Make private archives searchable with namazu2
+NOMAILPWD_DESC=		Elide plaintext passwords from monthly reminders
+MTA_DESC=		Integrate with which MTA?
 
 .include <bsd.port.options.mk>
 
@@ -109,8 +111,6 @@ MAIL_GID?=	mail
 .endif
 
 .if ${PORT_OPTIONS:MPOSTFIX}
-BUILD_DEPENDS+=	postfix:mail/postfix
-RUN_DEPENDS+=	postfix:mail/postfix
 MAIL_GID?=	mailman
 EXTRA_PATCHES+=	${FILESDIR}/postfix-verp.diff
 .endif
@@ -124,7 +124,8 @@ MAIL_GID?=	_smtpd
 .endif
 
 .if ${PORT_OPTIONS:MHTDIG}
-PKGNAMESUFFIX+=	-with-htdig
+# no whitespace here!
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-with-htdig
 # how to create PATCHFILES:
 #X identify what is the version of msapiro's patches corresponding to the release.
 #X fetch http://bazaar.launchpad.net/~msapiro/mailman/htdig/tarball/1822
