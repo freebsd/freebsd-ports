@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fido2
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,6 +24,6 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+	@cd ${WRKSRC} && ${PYTHON_CMD} -m unittest discover -v
 
 .include <bsd.port.mk>
