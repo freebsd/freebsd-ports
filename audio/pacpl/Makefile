@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pacpl
-PORTVERSION=	6.1.2
-PORTREVISION=	1
+PORTVERSION=	6.1.3
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -27,29 +26,32 @@ SHEBANG_FILES=	pacpl.in plugins/gnome/nautilus/PACPL-Convert \
 
 NO_ARCH=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-code
+
 OPTIONS_DEFINE=		APE CDPARANOIA DOCS FAAC FAAD FFMPEG KDE4 \
 			LAME LAUDIO MUSEPACK MPLAYER OPTIMFROG OPUS \
 			SNDFILE SOX SPEEX TOOLAME TTA VORBIS WAVPACK
 OPTIONS_DEFAULT=	CDPARANOIA FAAC FAAD FFMPEG LAME VORBIS
 OPTIONS_SUB=		yes
 
+KDE4_DESC=		Konqueror/Dolphin integration
+LAUDIO_DESC=		Laudio support
+OPTIMFROG_DESC=		OptimFROG lossless audio support
+OPUS_DESC=		Ogg Opus audio codec support
+SOX_DESC=		Audio conversion support via SoX
+
 APE_RUN_DEPENDS=	mac:audio/mac
 CDPARANOIA_RUN_DEPENDS=	cdparanoia:audio/cdparanoia
 FAAC_RUN_DEPENDS=	faac:audio/faac
 FAAD_RUN_DEPENDS=	faad:audio/faad
 FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
-KDE4_DESC=		Konqueror/Dolphin integration
 LAME_RUN_DEPENDS=	lame:audio/lame
-LAUDIO_DESC=		Laudio support
 LAUDIO_RUN_DEPENDS=	laudio:audio/linux-laudio
 MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 MUSEPACK_RUN_DEPENDS=	mpcenc:audio/musepack
-OPTIMFROG_DESC=		OptimFROG lossless audio support
 OPTIMFROG_RUN_DEPENDS=	ofr:audio/optimfrog
-OPUS_DESC=		Ogg Opus audio codec support
 OPUS_RUN_DEPENDS=	opusenc:audio/opus-tools
 SNDFILE_RUN_DEPENDS=	sndfile-convert:audio/libsndfile
-SOX_DESC=		Audio conversion support via SoX
 SOX_RUN_DEPENDS=	sox:audio/sox
 SPEEX_RUN_DEPENDS=	speexenc:audio/speex
 TOOLAME_RUN_DEPENDS=	toolame:audio/toolame
