@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-DISTVERSION=	2.85rc1
+DISTVERSION=	2.85rc2
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
-PORTREVISION=	1
+PORTREVISION=	0
 PORTEPOCH=	3 # attn - different between -devel and dnsmasq ports!
 CATEGORIES=	dns
 MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/release-candidates/ \
@@ -17,7 +17,7 @@ COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
 LICENSE=	GPLv2
 
 DEPRECATED=	short-lived development branch, to be removed once 2.85 is released
-EXPIRATION_DATE=2021-03-31 # this is to keep dnsmasq-devel outside the quarterly branches
+EXPIRATION_DATE=2021-04-10
 
 USES=		cpe shebangfix tar:xz
 CPE_VENDOR=	thekelleys
