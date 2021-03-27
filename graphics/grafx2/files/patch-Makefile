@@ -1,20 +1,11 @@
---- Makefile.orig	2020-02-01 17:05:20 UTC
+--- Makefile.orig	2021-03-24 19:59:20 UTC
 +++ Makefile
-@@ -91,7 +91,7 @@ TARTRANSFORM = --strip=1 --transform 's,^,grafx2/,g'
- 
- # default to gcc compiler
- ifeq (default,$(origin CC))
--  CC = gcc
-+  CC ?= gcc
- endif
- PKG_CONFIG ?= pkg-config
- 
-@@ -1224,7 +1224,8 @@ install : $(BIN)
+@@ -1242,7 +1242,8 @@ install : $(BIN)
  	test -d $(DESTDIR)$(datadir)/grafx2/fonts || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/fonts
  	test -d $(DESTDIR)$(datadir)/grafx2/skins || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/skins
  	test -d $(DESTDIR)$(datadir)/grafx2/scripts || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts
 -	test -d $(DESTDIR)$(datadir)/grafx2/scripts/libs || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/libs
-+	# seems to be empty
++	# this is an empty directory on FreeBSD, we don't need it
 +	#test -d $(DESTDIR)$(datadir)/grafx2/scripts/libs || $(MKDIR) $(DESTDIR)$(datadir)/grafx2/scripts/libs
  	test -d $(DESTDIR)$(datadir)/applications || $(MKDIR) $(DESTDIR)$(datadir)/applications
  	test -d $(DESTDIR)$(datadir)/metainfo || $(MKDIR) $(DESTDIR)$(datadir)/metainfo
