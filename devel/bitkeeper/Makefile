@@ -31,6 +31,7 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		gmake groff bison localbase tk xorg iconv pkgconfig
 USE_XORG=	x11 xrender xft
 
+MANPREFIX=	${PREFIX}/bitkeeper
 WRKSRC=		${WRKDIR}/bk-${PORTVERSION}/src
 ALL_TARGET=	p
 
@@ -40,7 +41,5 @@ do-build:
 do-install:
 	@(cd ${WRKSRC}; \
 	${MAKE_CMD} DESTDIR=${STAGEDIR}${PREFIX}/bitkeeper ${INSTALL_TARGET}); \
-	${GZIP_CMD} ${STAGEDIR}${PREFIX}/bitkeeper/man/man1/*
-
 
 .include <bsd.port.mk>
