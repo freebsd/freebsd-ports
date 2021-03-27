@@ -218,6 +218,7 @@
     SUBDIR += picpas
     SUBDIR += pluma
     SUBDIR += poedit
+    SUBDIR += poke
     SUBDIR += psgml
     SUBDIR += puff
     SUBDIR += py-babi
