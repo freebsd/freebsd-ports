@@ -3,7 +3,7 @@
 
 PORTNAME=	bitkeeper
 PORTVERSION=	7.3.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	https://www.bitkeeper.org/downloads/${PORTVERSION}/
 DISTNAME=	bk-${PORTVERSION}.src
@@ -31,8 +31,9 @@ RUN_DEPENDS=	bash:shells/bash
 USES=		gmake groff bison localbase tk xorg iconv pkgconfig
 USE_XORG=	x11 xrender xft
 
-SUB_FILES=	bk
-MANPREFIX=	${PREFIX}/bitkeeper
+SUB_FILES=	bk bk-man.conf
+MANDIRS=	${PREFIX}/bitkeeper/man
+
 WRKSRC=		${WRKDIR}/bk-${PORTVERSION}/src
 ALL_TARGET=	p
 
@@ -43,5 +44,7 @@ do-install:
 	@(cd ${WRKSRC}; \
 	${MAKE_CMD} DESTDIR=${STAGEDIR}${PREFIX}/bitkeeper ${INSTALL_TARGET}); \
 	${INSTALL_SCRIPT} ${WRKDIR}/bk ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKDIR}/bk-man.conf \
+		${STAGEDIR}${PREFIX}/etc/man.d/bk.conf
 
 .include <bsd.port.mk>

@@ -606,3 +606,4 @@ bitkeeper/www/fonts/glyphicons-halflings-regular.woff2
 bitkeeper/www/markdown.min.js
 bitkeeper/www/sorttable.js
 bitkeeper/www/trailer.gif
+etc/man.d/bk.conf
