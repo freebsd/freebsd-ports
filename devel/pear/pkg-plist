@@ -15,10 +15,7 @@ bin/pecl
 %%DATADIR%%/.channels/doc.php.net.reg
 %%DATADIR%%/.channels/pear.php.net.reg
 %%DATADIR%%/.channels/pecl.php.net.reg
-@exec touch %D/share/pear/.depdb
-@exec touch %D/share/pear/.depdblock
-@exec touch %D/share/pear/.filemap
-@exec touch %D/share/pear/.lock
+@touch share/pear/.depdb share/pear/.depdblock share/pear/.filemap share/pear/.lock
 %%DATADIR%%/.registry/archive_tar.reg
 %%DATADIR%%/.registry/console_getopt.reg
 %%DATADIR%%/.registry/pear.reg
