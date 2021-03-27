@@ -4,6 +4,7 @@
 PORTNAME=	virtual_oss
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
@@ -25,12 +26,15 @@ OPTIONS_DEFINE=	BLUETOOTH BT_SPEAKER COMMAND DEBUG EQUALIZER HTTPD
 OPTIONS_DEFAULT=BLUETOOTH COMMAND EQUALIZER
 
 MAKE_ARGS=	HAVE_CUSE="YES"
+.if exists(/usr/include/sys/sndstat.h)
+MAKE_ARGS+=	HAVE_SNDSTAT="YES"
+.endif
 
 BLUETOOTH_DESC=	Build with bluetooth support
 BLUETOOTH_MAKE_ARGS=	HAVE_BLUETOOTH="YES"
 
 BT_SPEAKER_DESC=	Build with bluetooth speaker utility
-BT_SPEAKER_PLIST_FILES= sbin/virtual_bt_speaker \
+BT_SPEAKER_PLIST_FILES=	sbin/virtual_bt_speaker \
 			man/man8/virtual_bt_speaker.8.gz
 BT_SPEAKER_MAKE_ARGS=	HAVE_BLUETOOTH_SPEAKER="YES"
 
