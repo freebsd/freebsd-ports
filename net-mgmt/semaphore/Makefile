@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	semaphore
-PORTVERSION=	2.5.2
+PORTVERSION=	2.6.8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -61,6 +61,7 @@ GH_TUPLE=	ansible-semaphore:semaphore-vendor:a44f7be:ansible/vendor/github.com/a
 		mongodb:mongo-go-driver:v1.2.1:mongodb_mongo_go_driver/vendor/go.mongodb.org/mongo-driver \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		russross:blackfriday:v1.5.2:russross_blackfriday/vendor/github.com/russross/blackfriday
+
 post-patch:
 	${REINPLACE_CMD} 's/%%PORTVERSION%%/${PORTVERSION}/g' \
 	  ${WRKSRC}/util/config.go

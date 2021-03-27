@@ -1,6 +1,6 @@
-TIMESTAMP = 1603439310
-SHA256 (ansible-semaphore-semaphore-v2.5.2_GH0.tar.gz) = f779b75f34075bb4a02d2fe7a4dd7346e530a810814e63cf0da0ccc5ae7e2d9d
-SIZE (ansible-semaphore-semaphore-v2.5.2_GH0.tar.gz) = 232148
+TIMESTAMP = 1616833567
+SHA256 (ansible-semaphore-semaphore-v2.6.8_GH0.tar.gz) = ef7404aa0d28151f3cb54d839ecad780067db127f46027cceb8a292080c337e3
+SIZE (ansible-semaphore-semaphore-v2.6.8_GH0.tar.gz) = 994428
 SHA256 (ansible-semaphore-semaphore-vendor-a44f7be_GH0.tar.gz) = 97da3534cc3415c8a84caf2dc5a236cc1463374281d14b90c18226fe0002821a
 SIZE (ansible-semaphore-semaphore-vendor-a44f7be_GH0.tar.gz) = 1288712
 SHA256 (PuerkitoBio-purell-v1.1.1_GH0.tar.gz) = 93e2ae2b12fc656ecc7ca28336009d24431247d2af59949c59fdef26ecc9a971
