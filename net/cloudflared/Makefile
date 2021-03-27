@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cloudflared
-DISTVERSION=	2021.3.2
+DISTVERSION=	2021.3.5
 CATEGORIES=	net www
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -15,10 +15,9 @@ LICENSE_PERMS=	no-dist-sell no-pkg-sell
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 USES=		cpe go:modules
-
+USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare
-
 CPE_VENDOR=	cloudflare
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}

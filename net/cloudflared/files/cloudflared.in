@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: cloudflared
+# REQUIRE: cleanvar SERVERS
+#
+# Options to configure cloudflared via /etc/rc.conf:
+#
+# cloudflared_enable (bool)	Enable service on boot
+#				Default: NO
+#
+# cloudflared_conf (str)	Config file to use
+#				Default: %%ETCDIR%%/config.yml
+#
+# cloudflared_mode (str)	Mode to run cloudflared as (tunnel, or proxy-dns)
+#				Default: tunnel
+
+. /etc/rc.subr
+
+name="cloudflared"
+rcvar="cloudflared_enable"
+logfile="/var/log/cloudflared/cloudflared.log"
+pidfile="/var/run/cloudflared.pid"
+procname="%%PREFIX%%/bin/cloudflared"
+
+load_rc_config $name
+
+: ${cloudflared_enable:="NO"}
+: ${cloudflared_conf:="%%ETCDIR%%/config.yml"}
+: ${cloudflared_mode:="tunnel"}
+
+command="/usr/sbin/daemon"
+command_args="-o ${logfile} -p ${pidfile} -f ${procname} --cred-file ${cloudflared_conf} ${cloudflared_mode}"
+
+run_rc_command "$1"
