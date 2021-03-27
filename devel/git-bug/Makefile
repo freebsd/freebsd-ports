@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	git-bug
-DISTVERSION=	0.7.1
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.7.2
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -36,7 +36,7 @@ GH_TUPLE=	99designs:gqlgen:b7a58a1c0e4b:99designs_gqlgen/vendor/github.com/99des
 		golang:oauth2:f42d05182288:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:112230192c58:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:b77594299b42:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:1e4c9ba3b0c4:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
@@ -63,7 +63,7 @@ GH_TUPLE=	99designs:gqlgen:b7a58a1c0e4b:99designs_gqlgen/vendor/github.com/99des
 		vektah:gqlparser:v1.3.1:vektah_gqlparser/vendor/github.com/vektah/gqlparser \
 		xanzy:go-gitlab:v0.29.0:xanzy_go_gitlab/vendor/github.com/xanzy/go-gitlab
 
-_BUILD_COMMIT=	2d64b85db71a17ff3277bbbf7ac9d8e81f8e416c
+_BUILD_COMMIT=	cc4a93c8ce931b1390c61035b888ad17110b7bd6
 GO_BUILDFLAGS=	-ldflags "\
 	       -s -w \
 	       -X github.com/${GH_ACCOUNT}/${GH_PROJECT}/commands.GitCommit=${_BUILD_COMMIT} \
