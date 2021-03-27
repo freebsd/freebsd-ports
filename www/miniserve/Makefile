@@ -3,6 +3,7 @@
 PORTNAME=	miniserve
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -266,7 +267,7 @@ CARGO_CRATES=	actix-codec-0.3.0 \
 		smallvec-1.6.1 \
 		socket2-0.3.19 \
 		spin-0.5.2 \
-		standback-0.2.16 \
+		standback-0.2.17 \
 		stdweb-0.4.20 \
 		stdweb-derive-0.5.3 \
 		stdweb-internal-macros-0.2.9 \

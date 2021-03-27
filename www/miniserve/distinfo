@@ -1,4 +1,4 @@
-TIMESTAMP = 1616571641
+TIMESTAMP = 1616862376
 SHA256 (rust/crates/actix-codec-0.3.0.tar.gz) = 78d1833b3838dbe990df0f1f87baf640cf6146e898166afe401839d1b001e570
 SIZE (rust/crates/actix-codec-0.3.0.tar.gz) = 9488
 SHA256 (rust/crates/actix-connect-2.0.0.tar.gz) = 177837a10863f15ba8d3ae3ec12fac1099099529ed20083a27fdfe247381d0dc
@@ -499,8 +499,8 @@ SHA256 (rust/crates/socket2-0.3.19.tar.gz) = 122e570113d28d773067fab24266b66753f
 SIZE (rust/crates/socket2-0.3.19.tar.gz) = 33782
 SHA256 (rust/crates/spin-0.5.2.tar.gz) = 6e63cff320ae2c57904679ba7cb63280a3dc4613885beafb148ee7bf9aa9042d
 SIZE (rust/crates/spin-0.5.2.tar.gz) = 12004
-SHA256 (rust/crates/standback-0.2.16.tar.gz) = decebb311175fdaf1bf8a14583716e93163c566db2ead1c1d608c3e1e4313cb8
-SIZE (rust/crates/standback-0.2.16.tar.gz) = 29014
+SHA256 (rust/crates/standback-0.2.17.tar.gz) = e113fb6f3de07a243d434a56ec6f186dfd51cb08448239fe7bcae73f87ff28ff
+SIZE (rust/crates/standback-0.2.17.tar.gz) = 29011
 SHA256 (rust/crates/stdweb-0.4.20.tar.gz) = d022496b16281348b52d0e30ae99e01a73d737b2f45d38fed4edf79f9325a1d5
 SIZE (rust/crates/stdweb-0.4.20.tar.gz) = 194102
 SHA256 (rust/crates/stdweb-derive-0.5.3.tar.gz) = c87a60a40fccc84bef0652345bbbbbe20a605bf5d0ce81719fc476f5c03b50ef
