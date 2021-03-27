@@ -3,6 +3,7 @@
 
 PORTNAME=	ncurses
 DISTVERSION=	6.2-${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/current/ \
 		https://invisible-mirror.net/archives/ncurses/current/
@@ -20,12 +21,13 @@ USES=		cpe pkgconfig shebangfix tar:tgz
 
 SNAPSHOT=		20210313
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--datadir=${PREFIX}/share/misc \
-			--with-terminfo-dirs="${PREFIX}/share/misc/terminfo:${LOCALBASE}/share/site-terminfo" \
+CONFIGURE_ARGS=		--datadir=${PREFIX}/share \
+			--with-terminfo-dirs="${PREFIX}/share/terminfo:${LOCALBASE}/share/site-terminfo" \
 			--disable-home-terminfo \
 			--disable-overwrite \
 			--disable-root-environ \
 			--disable-lib-suffixes \
+			--disable-db-install \
 			--enable-bsdpad \
 			--enable-colorfgbg \
 			--enable-getcap \
