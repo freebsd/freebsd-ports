@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stixfonts
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fonts
 
@@ -25,7 +25,7 @@ FONTNAME=	STIX
 
 OPTIONS_DEFINE=	DOCS
 
-PORTDOCS=	FONTLOG.txt STIX-Two_glyph_sets.xlsx STIXTwoMath-Regular.pdf	\
+PORTDOCS=	STIX-Two_glyph_sets.xlsx STIXTwoMath-Regular.pdf	\
 		STIXTwoText-Regular.pdf
 
 do-install:
