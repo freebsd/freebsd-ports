@@ -2,6 +2,7 @@
 
 PORTNAME=	baycomp
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	math python # statistics
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +21,13 @@ USES=		localbase:ldflags python:3.6+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
+
+POST_PLIST=	rm-tests-from-plist
+
+post-install:
+	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/tests
+
+rm-tests-from-plist:
+	@${REINPLACE_CMD} '/\/tests\//d' ${TMPPLIST}
 
 .include <bsd.port.mk>
