@@ -234,6 +234,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		wyz-0.2.0 \
 		x509-parser-0.9.0 \
 		xattr-0.2.2
+RUSTFLAGS+=	--cap-lints=warn
 
 PLIST_FILES=	bin/gleam
 
