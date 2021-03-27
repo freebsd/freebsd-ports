@@ -1,0 +1,7 @@
+This is the Microsoft Azure Identity Client Library.
+
+The Azure Identity library provides a set of credential classes for use with
+Azure SDK clients which support Azure Active Directory (AAD) token
+authentication.
+
+WWW: https://pypi.org/project/azure-identity/
