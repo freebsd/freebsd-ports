@@ -109,7 +109,6 @@ man/man1/bashdb.1.gz
 %%DATADIR%%/command/watch.sh
 %%DATADIR%%/data/shell.sh
 %%DATADIR%%/dbg-main.sh
-%%DATADIR%%/dbg-set-d-vars.inc
 %%DATADIR%%/getopts_long.sh
 %%DATADIR%%/init/io.sh
 %%DATADIR%%/init/opts.sh
@@ -149,3 +148,4 @@ man/man1/bashdb.1.gz
 %%DATADIR%%/lib/term-highlight.py
 %%DATADIR%%/lib/unescape.sh
 %%DATADIR%%/lib/validate.sh
+%%DATADIR%%/set-d-vars.sh
