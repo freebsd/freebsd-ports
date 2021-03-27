@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	azure-cli
-PORTVERSION=	2.20.0
+PORTVERSION=	2.21.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-datalake-store>=0.0.49:devel/py-azure-datalake-store@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-functions-devops-build>=0.0.22:devel/py-azure-functions-devops-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-graphrbac>=0.60.0:devel/py-azure-graphrbac@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-identity>0:devel/py-azure-identity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-keyvault>=1.1:devel/py-azure-keyvault@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-keyvault-administration>=4.0.0.b3:devel/py-azure-keyvault-administration@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-loganalytics>=0.1.0:devel/py-azure-loganalytics@${PY_FLAVOR} \
@@ -38,8 +39,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-compute>=19.0.0:devel/py-azure-mgmt-compute@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-consumption>=2.0:devel/py-azure-mgmt-consumption@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerinstance>=1.4:devel/py-azure-mgmt-containerinstance@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerregistry>=3.0.0.r16:devel/py-azure-mgmt-containerregistry@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerservice>=9.4.0:devel/py-azure-mgmt-containerservice@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerregistry>=3.0.0.r17:devel/py-azure-mgmt-containerregistry@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-containerservice>=11.1.0:devel/py-azure-mgmt-containerservice@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-cosmosdb>=3.0.0:devel/py-azure-mgmt-cosmosdb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-databoxedge>=0.2.0:devel/py-azure-mgmt-databoxedge@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-datalake-analytics>=0.2.1:devel/py-azure-mgmt-datalake-analytics@${PY_FLAVOR} \
@@ -65,11 +66,11 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-media>=3.0:devel/py-azure-mgmt-media@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-monitor>=2.0.0:devel/py-azure-mgmt-monitor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-msi>=0.2:devel/py-azure-mgmt-msi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-network>=17.0.0:devel/py-azure-mgmt-network@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-netapp>=0.15.0:devel/py-azure-mgmt-netapp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-network>=18.0.0:devel/py-azure-mgmt-network@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-netapp>=0.16.0:devel/py-azure-mgmt-netapp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-policyinsights>=0.5.0:devel/py-azure-mgmt-policyinsights@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-privatedns>=0.1.0:devel/py-azure-mgmt-privatedns@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-mgmt-rdbms>=3.1.0.r1:devel/py-azure-mgmt-rdbms@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}azure-mgmt-rdbms>=8.1.0.b2:devel/py-azure-mgmt-rdbms@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-recoveryservices>=0.4.0:devel/py-azure-mgmt-recoveryservices@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-recoveryservicesbackup>=0.11.0:devel/py-azure-mgmt-recoveryservicesbackup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-redhatopenshift>=0.1.0:devel/py-azure-mgmt-redhatopenshift@${PY_FLAVOR} \
