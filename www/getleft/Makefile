@@ -3,6 +3,7 @@
 
 PORTNAME=	getleft
 PORTVERSION=	1.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ftp
 MASTER_SITES=	SF/${PORTNAME}down/${PORTNAME}-Stable/${PORTVERSION}
@@ -11,8 +12,7 @@ DISTNAME=	Getleft-v${PORTVERSION}
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Web site downloader
 
-RUN_DEPENDS=	${LOCALBASE}/lib/Tktable2.10/libTktable2.10.so:x11-toolkits/tktable \
-		${LOCALBASE}/lib/libttkstub.a:x11-toolkits/tile
+RUN_DEPENDS=	${LOCALBASE}/lib/Tktable2.10/libTktable2.10.so:x11-toolkits/tktable
 
 USES=		tk
 PORTSCOUT=	ignore:1
