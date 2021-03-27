@@ -78,6 +78,45 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="80f9dbd3-8eec-11eb-b9e8-3525f51429a0">
+    <topic>nettle 3.7.2 -- fix serious ECDSA signature verify bug</topic>
+    <affects>
+      <package>
+	<name>nettle</name>
+	<range><lt>3.7.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Niels Möller reports:</p>
+	<blockquote cite="https://lists.lysator.liu.se/pipermail/nettle-bugs/2021/009458.html">
+	  <p>
+	    I've prepared a new bug-fix release of Nettle, a low-level
+	    cryptographics library, to fix a serious bug in the function to
+	    verify ECDSA signatures. Implications include an assertion failure,
+	    which could be used for denial-of-service, when verifying signatures
+	    on the secp_224r1 and secp521_r1 curves.
+	  </p>
+	  <p>
+	    Even when no assert is triggered in ecdsa_verify, ECC point
+	    multiplication may get invalid intermediate values as input, and
+	    produce incorrect results. [...] It appears difficult to construct
+	    an alleged signature that makes the function misbehave in such a way
+	    that an invalid signature is accepted as valid, but such attacks
+	    can't be ruled out without further analysis.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.lysator.liu.se/pipermail/nettle-bugs/2021/009458.html</url>
+    </references>
+    <dates>
+      <discovery>2021-03-21</discovery>
+      <entry>2021-03-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5a668ab3-8d86-11eb-b8d6-d4c9ef517024">
     <topic>OpenSSL -- Multiple vulnerabilities</topic>
     <affects>
