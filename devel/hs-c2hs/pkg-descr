@@ -1,7 +1,0 @@
-C->Haskell assists in the development of Haskell bindings to C libraries.
-It extracts interface information from C header files and generates Haskell
-code with foreign imports and marshaling. Unlike writing foreign imports
-by hand (or using hsch2s), this ensures that C functions are imported with
-the correct Haskell types.
-
-WWW: https://github.com/haskell/c2hs

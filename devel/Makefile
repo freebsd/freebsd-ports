@@ -931,7 +931,6 @@
     SUBDIR += hpx
     SUBDIR += hs-ShellCheck
     SUBDIR += hs-alex
-    SUBDIR += hs-c2hs
     SUBDIR += hs-cabal-install
     SUBDIR += hs-cpphs
     SUBDIR += hs-darcs
