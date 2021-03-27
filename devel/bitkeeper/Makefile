@@ -37,6 +37,10 @@ ALL_TARGET=	p
 do-build:
 	@(cd ${WRKSRC}; ${MAKE_CMD} ${ALL_TARGET})
 
+do-install:
+	@(cd ${WRKSRC}; \
+	${MAKE_CMD} DESTDIR=${STAGEDIR}${PREFIX}/bitkeeper ${INSTALL_TARGET})
+
 post-install:
 	${LN} -s ../bitkeeper/bk ${STAGEDIR}${PREFIX}/bin
 
