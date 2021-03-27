@@ -26,6 +26,13 @@ AUTHOR: gnome@FreeBSD.org
 
   	DEFAULT_VERSIONS+=librsvg2=legacy
 
+20210327;
+AUTHOR: bapt@FreeBSD.org
+
+  New @touch keyword
+  Its purpose is to ensure that a file is being created at install time
+  while not necessary tracked by the package.
+
 20201120:
 AUTHOR: pauamma@gundo.com
 
