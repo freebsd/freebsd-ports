@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	mesa
-DISTVERSION=	21.0-branchpoint-3623
-DISTVERSIONSUFFIX=	-g893aab57a85
+DISTVERSION=	21.0-branchpoint-3716
+DISTVERSIONSUFFIX=	-gba8ddc0c683
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -128,9 +128,9 @@ VDPAU_BUILD_DEPENDS=	libvdpau>0:multimedia/libvdpau
 VDPAU_MESON_ENABLED=	gallium-vdpau
 VDPAU_IMPLIES=		X11
 
-VKLAYERS_DESC=		Vulkan layers: ${VKLAYERS_MESON_TRUE:S/vulkan-//:S/-layer//:ts,} (implies ${VKLAYERS_IMPLIES})
+VKLAYERS_DESC=		Vulkan layers: ${VKLAYERS_MESON_ON:C/.*=//} (implies ${VKLAYERS_IMPLIES})
 VKLAYERS_BUILD_DEPENDS=	glslangValidator:graphics/glslang
-VKLAYERS_MESON_TRUE=	vulkan-device-select-layer vulkan-overlay-layer
+VKLAYERS_MESON_ON=	-Dvulkan-layers=device-select,overlay
 VKLAYERS_IMPLIES=	${"${PORT_OPTIONS:Mradv}":?radv:anv} # any from OPTIONS_GROUP_VULKAN
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
