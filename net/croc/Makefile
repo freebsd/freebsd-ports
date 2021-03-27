@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	croc
-PORTVERSION=	8.6.11
+PORTVERSION=	8.6.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -20,10 +20,10 @@ GH_TUPLE=	cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash 
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:e6e6c4f2bb5b:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:34ac3e1c2000:golang_net/vendor/golang.org/x/net \
-		golang:sys:c6e025ad8005:golang_sys/vendor/golang.org/x/sys \
-		golang:term:6a3ed077a48d:golang_term/vendor/golang.org/x/term \
+		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:61e056675ecf:golang_net/vendor/golang.org/x/net \
+		golang:sys:49726bf1d181:golang_sys/vendor/golang.org/x/sys \
+		golang:term:de623e64d2a6:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		kalafut:imohash:v1.0.0:kalafut_imohash/vendor/github.com/kalafut/imohash \
 		mattn:go-runewidth:v0.0.10:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
