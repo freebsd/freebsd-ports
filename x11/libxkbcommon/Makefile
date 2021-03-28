@@ -1,9 +1,13 @@
 PORTNAME=	libxkbcommon
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://xkbcommon.org/download/
 DIST_SUBDIR=	xorg/lib
+
+PATCH_SITES=	https://github.com/xkbcommon/libxkbcommon/commit/
+PATCHFILES+=	6b65be4c4e78.patch:-p1 # https://github.com/xkbcommon/libxkbcommon/pull/221
+PATCHFILES+=	c14910a0de22.patch:-p1 # 6b65be4c4e78 fixup
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Keymap handling library for toolkits and window systems
@@ -21,9 +25,13 @@ MESON_ARGS=	-Denable-docs=false \
 		${MESON_ARGS_${OPSYS}_${OSREL:R}}
 MESON_ARGS_FreeBSD_11=	-Ddefault-rules=xorg
 
-OPTIONS_DEFINE=	WAYLAND X11
-OPTIONS_DEFAULT=WAYLAND X11
+OPTIONS_DEFINE=	EVDEV WAYLAND X11
+OPTIONS_DEFAULT=EVDEV WAYLAND X11
 OPTIONS_SUB=	yes
+
+EVDEV_DESC=		Interactive debugger for XKB keymaps for evdev
+EVDEV_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
+EVDEV_USES=		localbase
 
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.12:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
