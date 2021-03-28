@@ -1,0 +1,6 @@
+These functions can be used to write XML-RPC servers and clients.
+You can find more information about XML-RPC at http://www.xmlrpc.com/,
+and more documentation on this extension and its functions at
+http://xmlrpc-epi.sourceforge.net/.
+
+WWW: https://pecl.php.net/package/xmlrpc

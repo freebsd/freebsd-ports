@@ -377,10 +377,10 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		pdo_odbc pdo_pgsql pdo_sqlite phar pgsql posix \
 		pspell radius readline redis session shmop simplexml snmp soap\
 		sockets spl sqlite3 sysvmsg sysvsem sysvshm \
-		tidy tokenizer xml xmlreader xmlwriter xsl zip zlib
+		tidy tokenizer xml xmlreader xmlrpc xmlwriter xsl zip zlib
 # version specific components
-_USE_PHP_VER73=	${_USE_PHP_ALL} interbase pdf recode sodium xmlrpc wddx
-_USE_PHP_VER74=	${_USE_PHP_ALL} ffi pdf sodium xmlrpc
+_USE_PHP_VER73=	${_USE_PHP_ALL} interbase pdf recode sodium wddx
+_USE_PHP_VER74=	${_USE_PHP_ALL} ffi pdf sodium
 _USE_PHP_VER80=	${_USE_PHP_ALL} ffi sodium
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
@@ -452,7 +452,11 @@ tokenizer_DEPENDS=	devel/php${PHP_VER}-tokenizer
 wddx_DEPENDS=	textproc/php${PHP_VER}-wddx
 xml_DEPENDS=	textproc/php${PHP_VER}-xml
 xmlreader_DEPENDS=	textproc/php${PHP_VER}-xmlreader
+.if ${PHP_VER} >= 80
+xmlrpc_DEPENDS=	net/pecl-xmlrpc@${PHP_FLAVOR}
+.else
 xmlrpc_DEPENDS=	net/php${PHP_VER}-xmlrpc
+.endif
 xmlwriter_DEPENDS=	textproc/php${PHP_VER}-xmlwriter
 xsl_DEPENDS=	textproc/php${PHP_VER}-xsl
 zip_DEPENDS=	archivers/php${PHP_VER}-zip
