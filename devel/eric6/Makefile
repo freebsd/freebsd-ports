@@ -5,7 +5,7 @@
 
 PKGNAMESUFFIX=	-qt5-${FLAVOR:U:S/_/-/}
 DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	devel python
 
 DEPRECATED=	Uses EOL Python 2.7 via www/py-qt5-webengine
@@ -54,5 +54,9 @@ post-install:
 	${LN} -sf ${DATADIR:C|${PREFIX}(/share(/pixmaps)?)?||:C|/[^/]+|../|g}eric6/icons/default/eric.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/eric6.png
 	@${MKDIR} ${STAGEDIR}${DATADIR}/i18n
+	${REINPLACE_CMD} -e 's|${STAGEDIR}|${DATADIR}|g' \
+			 -e 's|${WRKSRC}|${DATADIR}|g' \
+			${STAGEDIR}/${DATADIR}/eric6install.json
+	@${RM}	${STAGEDIR}/${DATADIR}/eric6install.json.bak
 
 .include <bsd.port.mk>
