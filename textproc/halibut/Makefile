@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 USES=		gmake perl5
 
+CFLAGS+=	-fcommon # ld: error: duplicate symbol: all_fonts
+
 PLIST_FILES=	bin/halibut \
 		man/man1/halibut.1.gz
 
