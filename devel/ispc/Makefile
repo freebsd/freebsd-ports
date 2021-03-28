@@ -4,7 +4,7 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.15.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,8 +24,10 @@ USES=		bison cmake compiler:c++14-lang python:build,test shebangfix
 USE_GITHUB=	yes
 SHEBANG_FILES=	*.py
 
-LLVM_VERSION=	-devel # Release notes https://github.com/ispc/ispc/blob/master/docs/ReleaseNotes.txt list compatible LLVM versions, but they assume that extra patches are applied to LLVM
+#LLVM_VERSION=	-devel # fails with 12: call to non-static member function without an object argument: llvm::DebugLoc::get
+		# Release notes https://github.com/ispc/ispc/blob/master/docs/ReleaseNotes.txt list compatible LLVM versions, but they assume that extra patches are applied to LLVM
 		# LLVM build script: https://github.com/ispc/ispc/blob/master/scripts/build.sh
+LLVM_VERSION=	11 # it fails with -devel (13.0.d20210308), with 12.0.0.r2 it also fails, using 11 that it succeeds with
 
 CONFIGURE_ENV=	PATH=${LOCALBASE}/llvm${LLVM_VERSION}/bin:${PATH}
 CMAKE_OFF=	ISPC_NO_DUMPS ISPC_INCLUDE_EXAMPLES
