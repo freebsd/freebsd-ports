@@ -3,7 +3,6 @@
 
     COMMENT = Programming languages
 
-    SUBDIR += Gofer
     SUBDIR += J
     SUBDIR += abcl
     SUBDIR += adacontrol
