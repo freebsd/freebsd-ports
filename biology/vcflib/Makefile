@@ -44,6 +44,13 @@ CFLAGS_i386=	-msse2
 MAKEFILE=	${FILESDIR}/Makefile.external-libs
 INSTALL_TARGET=	install-strip
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le
+CFLAGS+=	-DNO_WARN_X86_INTRINSICS
+USES+=		compiler:gcc-c++11-lib 
+.endif
+
 post-install:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libvcflib.so.1 \
 		${STAGEDIR}${PREFIX}/lib/libvcflib.so
