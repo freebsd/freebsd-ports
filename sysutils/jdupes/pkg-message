@@ -1,0 +1,9 @@
+[
+{ type: upgrade
+  maximum_version: "1.19.0"
+  message: <<EOM
+WARNING: jdupes -X/--extfilter size filtering is now INCLUSIVE instead
+of EXCLUSIVE.  Please see "jdupes -X help" for details.
+EOM
+}
+]
