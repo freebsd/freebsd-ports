@@ -2,7 +2,7 @@
 
 PORTNAME=	lazygit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.2
+DISTVERSION=	0.26.1
 CATEGORIES=	devel
 
 MAINTAINER=	meta@FreeBSD.org
@@ -19,6 +19,7 @@ GH_TUPLE=	\
 		OpenPeeDeeP:xdg:v1.0.0:openpeedeep_xdg/vendor/github.com/OpenPeeDeeP/xdg \
 		atotto:clipboard:v0.1.2:atotto_clipboard/vendor/github.com/atotto/clipboard \
 		aybabtme:humanlog:v0.4.1:aybabtme_humanlog/vendor/github.com/aybabtme/humanlog \
+		cli:safeexec:v1.0.0:cli_safeexec/vendor/github.com/cli/safeexec \
 		cloudfoundry:jibber_jabber:bcc4c8345a21:cloudfoundry_jibber_jabber/vendor/github.com/cloudfoundry/jibber_jabber \
 		creack:pty:v1.1.11:creack_pty/vendor/github.com/creack/pty \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -42,7 +43,7 @@ GH_TUPLE=	\
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		jesseduffield:go-git:341962be15a4:jesseduffield_go_git_v5_1/vendor/github.com/jesseduffield/go-git/v5 \
 		jesseduffield:go-git:v5.1.1:jesseduffield_go_git_v5/vendor/github.com/go-git/go-git/v5 \
-		jesseduffield:gocui:8a6768078fd7:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
+		jesseduffield:gocui:2eecee85583d:jesseduffield_gocui/vendor/github.com/jesseduffield/gocui \
 		jesseduffield:termbox-go:a2289ed6aafe:jesseduffield_termbox_go/vendor/github.com/jesseduffield/termbox-go \
 		jesseduffield:yaml:v2.1.0:jesseduffield_yaml/vendor/github.com/jesseduffield/yaml \
 		kardianos:osext:2bc1f35cddc0:kardianos_osext/vendor/github.com/kardianos/osext \
@@ -52,18 +53,19 @@ GH_TUPLE=	\
 		kylelemons:godebug:v1.1.0:kylelemons_godebug/vendor/github.com/kylelemons/godebug \
 		mattn:go-colorable:v0.1.7:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-runewidth:v0.0.10:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mgutz:str:v1.2.0:mgutz_str/vendor/github.com/mgutz/str \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
+		nsf:termbox-go:d04385b850e8:nsf_termbox_go/vendor/github.com/nsf/termbox-go \
 		onsi:ginkgo:v1.10.3:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
 		onsi:gomega:v1.7.1:onsi_gomega/vendor/github.com/onsi/gomega \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		sahilm:fuzzy:v0.1.0:sahilm_fuzzy/vendor/github.com/sahilm/fuzzy \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spkg:bom:59b7046e48ad:spkg_bom/vendor/github.com/spkg/bom \
 		stretchr:testify:v1.4.0:stretchr_testify/vendor/github.com/stretchr/testify \
-		tcnksm:go-gitconfig:v0.1.2:tcnksm_go_gitconfig/vendor/github.com/tcnksm/go-gitconfig \
 		xanzy:ssh-agent:v0.2.1:xanzy_ssh_agent/vendor/github.com/xanzy/ssh-agent
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
