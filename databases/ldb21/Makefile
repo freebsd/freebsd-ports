@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		ldb
-PORTVERSION=		2.1.4
+PORTVERSION=		2.1.5
 PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		databases
@@ -158,8 +158,8 @@ post-install:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/${lib}
 .endfor
 .if ${PORT_OPTIONS:MPYTHON3} && !defined(NO_PYTHON)
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util*.so
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb*.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ldb${PYTHON_EXT_SUFFIX}.so
 .endif
 
 .include <bsd.port.post.mk>
