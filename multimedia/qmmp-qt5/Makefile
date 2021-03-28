@@ -2,7 +2,7 @@
 
 PORTNAME=	qmmp
 PORTVERSION=	1.2.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/ \
 	SF/qmmp-dev/${PORTNAME}/
@@ -291,7 +291,6 @@ PLIST_SUB+=	SHLIB_VER=${PORTVERSION:C/-.*//}
 
 PATHFIX_CMAKELISTSTXT=	\\"CMakeLists.txt -exec grep -l /pkgconfig {} +\\"
 PORTDOCS=	README README.RUS AUTHORS
-INSTALLS_ICONS=	yes
 
 post-patch:
 	@${GREP} -L '${LOCALBASE}/lib/oss' \
