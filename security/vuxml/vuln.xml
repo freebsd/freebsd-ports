@@ -132,6 +132,10 @@ Notes:
 	<name>nettle</name>
 	<range><lt>3.7.2</lt></range>
       </package>
+      <package>
+	<name>linux-c7-nettle</name>
+	<range><lt>3.7.2</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
