@@ -1339,6 +1339,7 @@
     SUBDIR += py-ocrmypdf
     SUBDIR += py-openpyxl
     SUBDIR += py-openstackdocstheme
+    SUBDIR += py-orange3-text
     SUBDIR += py-os-api-ref
     SUBDIR += py-packageurl-python
     SUBDIR += py-pager

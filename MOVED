@@ -12869,7 +12869,6 @@ security/clamcour||2019-09-05|Has expired: Broken for more than 6 months
 security/honeybadger||2019-09-05|Has expired: Broken for more than 6 months
 sysutils/freefilesync||2019-09-05|Has expired: Broken for more than 6 months
 sysutils/log-courier||2019-09-05|Has expired: Broken for more than 6 months
-textproc/py-orange3-text||2019-09-05|Has expired: Broken for more than 6 months
 www/feedjack||2019-09-05|Has expired: Upstream gone
 www/havp||2019-09-05|Has expired: Broken for more than 6 months
 www/rubygem-webpack-rails-rails5|devel/rubygem-webpacker-rails5|2019-09-05|Has expired: Upstream no longer maintained, use devel/rubygem-webpacker-rails* instead
