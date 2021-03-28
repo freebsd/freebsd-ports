@@ -2,7 +2,7 @@
 
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.11
+DISTVERSION=	3.11.12
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,7 @@ GH_TUPLE=	\
 		caffix:eventbus:9ab42753d12d:caffix_eventbus/vendor/github.com/caffix/eventbus \
 		caffix:pipeline:503915daec5b:caffix_pipeline/vendor/github.com/caffix/pipeline \
 		caffix:queue:6e488abe1004:caffix_queue/vendor/github.com/caffix/queue \
+		caffix:resolvers:a83f323e2b6c:caffix_resolvers/vendor/github.com/caffix/resolvers \
 		caffix:service:3819810293b0:caffix_service/vendor/github.com/caffix/service \
 		caffix:stringset:a00bc23f59bc:caffix_stringset/vendor/github.com/caffix/stringset \
 		cayleygraph:cayley:v0.7.7:cayleygraph_cayley/vendor/github.com/cayleygraph/cayley \
@@ -55,11 +56,11 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.3.0:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:6772e930b67b:golang_net/vendor/golang.org/x/net \
+		golang:net:61e056675ecf:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:08078c50e5b5:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:09787c993a3a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:b64e53b001e4:golang_sys/vendor/golang.org/x/sys \
+		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:49726bf1d181:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
@@ -78,7 +79,7 @@ GH_TUPLE=	\
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
-		miekg:dns:v1.1.35:miekg_dns/vendor/github.com/miekg/dns \
+		miekg:dns:v1.1.41:miekg_dns/vendor/github.com/miekg/dns \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		prometheus:client_golang:v1.0.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
 		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
@@ -90,7 +91,6 @@ GH_TUPLE=	\
 		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:cobra:v1.1.3:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		temoto:robotstxt:v1.1.1:temoto_robotstxt/vendor/github.com/temoto/robotstxt \
 		tylertreat:BoomFilters:611b3dbe80e8:tylertreat_boomfilters/vendor/github.com/tylertreat/BoomFilters \
 		uber-go:ratelimit:v0.2.0:uber_go_ratelimit/vendor/go.uber.org/ratelimit \
