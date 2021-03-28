@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/AntTweakBar
 WRKSRC_SUBDIR=	src
 
-DOS2UNIX_FILES=	Makefile
+DOS2UNIX_FILES=	Makefile LoadOGLCore.h TwPrecomp.h
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11
 
