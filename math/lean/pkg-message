@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+You installed lean: The Theorem Prover.
+
+Please note that lean requires /proc to be mounted.
+
+The usual way to do this is to add this line to /etc/fstab:
+proc /proc procfs rw 0 0
+
+and then run this command as root:
+# mount /proc
+
+EOM
+}
+]
