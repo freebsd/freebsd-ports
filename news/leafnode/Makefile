@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	leafnode
-DISTVERSION=	1.11.11
+DISTVERSION=	1.11.12
 CATEGORIES=	news
 MASTER_SITES=	SF \
-		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/
+		LOCAL/mandree/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	NNTP package for offline news caching and reading
@@ -26,18 +26,21 @@ OPTIONS_DEFINE=	DOCS
 # TODO: remove this auto-selection, and tell users through UPDATING to
 # move their spool to /var/spool/leafnode, and run texpire -r
 .if exists(/var/spool/news/leaf.node) && !defined(PACKAGE_BUILDING)
-LEAFNODE_SPOOLDIR?=/var/spool/news
+LEAFNODE_SPOOLDIR?=	/var/spool/news
 .elif exists(${LOCALBASE}/var/spool/leafnode/leaf.node) && !defined(PACKAGE_BUILDING)
-LEAFNODE_SPOOLDIR?=${LOCALBASE}/var/spool/leafnode
+LEAFNODE_SPOOLDIR?=	${LOCALBASE}/var/spool/leafnode
 .endif
-LEAFNODE_SPOOLDIR?=/var/spool/leafnode
-PLIST_SUB+=	SPOOLDIR=${LEAFNODE_SPOOLDIR} REALPREFIX=${PREFIX}
+LEAFNODE_SPOOLDIR?=	/var/spool/leafnode
+PLIST_SUB+=		REALPREFIX=${PREFIX} \
+			SPOOLDIR=${LEAFNODE_SPOOLDIR}
 
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/leafnode \
-		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6 \
-		--exec-prefix=${PREFIX}
-SUB_FILES=	pkg-message pkg-install pkg-deinstall
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
+		--sysconfdir=${PREFIX}/etc/leafnode \
+		--with-ipv6 \
+		--with-spooldir=${LEAFNODE_SPOOLDIR}
+SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
+TEST_TARGET=	check
 
 MAN1_DE=	leafnode-version.1 newsq.1
 MAN8_DE=	applyfilter.8 checkgroups.8 fetchnews.8 leafnode.8 texpire.8
@@ -47,12 +50,9 @@ MAN8DIR_DE=	${MAN8PREFIX}/man/de.ISO8859-1/man8
 
 DOCS=		ADD-ONS ChangeLog COPYING CREDITS FAQ.txt FAQ.pdf FAQ.html \
 		INSTALL NEWS README ChangeLog.old README-FQDN README-FQDN.html \
-		README-daemontools leafnode.cron.daily \
-		leafnode-SA-2002-01.txt leafnode-SA-2003-01.txt \
-		leafnode-SA-2004-01.txt \
-		leafnode-SA-2005-01.txt \
-		leafnode-SA-2005-02.txt \
-		KNOWNBUGS
+		README-daemontools leafnode.cron.daily leafnode-SA-2002-01.txt \
+		leafnode-SA-2003-01.txt leafnode-SA-2004-01.txt \
+		leafnode-SA-2005-01.txt leafnode-SA-2005-02.txt KNOWNBUGS
 DOCS_DE=	INSTALL_de LIESMICH-daemontools README README_de
 
 .if ${PORT_OPTIONS:MDOCS}
