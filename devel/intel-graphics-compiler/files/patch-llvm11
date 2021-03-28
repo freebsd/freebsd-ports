@@ -20,6 +20,9 @@ IGC/Compiler/Optimizer/OpenCLPasses/WIFuncs/WIFuncResolution.cpp:308:27: error: 
         Size *= DataType->getVectorNumElements();
                 ~~~~~~~~  ^
 
+IGC/VectorCompiler/lib/GenXCodeGen/GenXDebugInfo.cpp:528:33: error: no viable conversion from 'llvm::StringRef' to 'const std::string' (aka 'const basic_string<char, char_traits<char>, allocator<char>>')
+    auto *VF = VB.GetVISAKernel(F->getName());
+                                ^~~~~~~~~~~~
 IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp:2203:5: error: no matching function for call to 'RecursivelyDeleteTriviallyDeadInstructions'
     RecursivelyDeleteTriviallyDeadInstructions(ToErase);
     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,6 +85,20 @@ void RecursivelyDeleteTriviallyDeadInstructions(
      }
      unsigned int AlignedOffset = (Offset / ElemByteSize) * ElemByteSize;
      unsigned int LoadByteSize = (Offset == AlignedOffset) ? Size : Size * 2;
+--- IGC/VectorCompiler/lib/GenXCodeGen/GenXDebugInfo.cpp.orig	2021-03-28 09:45:11 UTC
++++ IGC/VectorCompiler/lib/GenXCodeGen/GenXDebugInfo.cpp
+@@ -525,7 +525,11 @@ void GenXDebugInfo::processFunctionGroup(GenXModule &G
+   for (auto *F : IndirectlyCalledFunctions) {
+     LLVM_DEBUG(dbgs() << "  F: " << F->getName() << " called indirectly!\n");
+     // Each indirectly-called function is compiled into a separate vISA kernel
++#if LLVM_VERSION_MAJOR < 11
+     auto *VF = VB.GetVISAKernel(F->getName());
++#else
++    auto *VF = VB.GetVISAKernel(F->getName().str());
++#endif
+     processKernel(ProgramInfo{{BuildFunctionInfo(VF, F)}});
+   }
+   std::vector<ProgramInfo::FunctionInfo> PrimaryFIs;
 --- IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp.orig	2021-02-15 09:29:30 UTC
 +++ IGC/VectorCompiler/lib/GenXCodeGen/GenXPatternMatch.cpp
 @@ -2194,7 +2194,11 @@ bool GenXPatternMatch::simplifySelect(Function *F) {

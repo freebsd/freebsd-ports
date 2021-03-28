@@ -6,35 +6,29 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
 
   Please specify one, e.g.  Windows32, Linux64, Android32, ...
 
---- IGC/CMakeLists.txt.orig	2019-11-27 01:05:20 UTC
-+++ IGC/CMakeLists.txt
-@@ -834,11 +834,11 @@ function(igc_arch_detect targetArchVarName hostArchVar
+--- IGC/cmake/igc_arch_utils.cmake.orig	2021-03-28 09:45:11 UTC
++++ IGC/cmake/igc_arch_utils.cmake
+@@ -48,7 +48,7 @@ function(igc_arch_detect targetArchVarName hostArchVar
        set(_targetArchitecture "Windows32")
      endif()
    # Use system processor set by toolchain or CMake.
--  elseif(ANDROID OR (CMAKE_SYSTEM_NAME MATCHES "Linux")
-+  elseif(ANDROID OR (UNIX AND NOT APPLE)
-       )
+-  elseif(ANDROID OR (CMAKE_SYSTEM_NAME MATCHES "Linux"))
++  elseif(ANDROID OR (UNIX AND NOT APPLE))
      if(ANDROID)
        set(_targetArchOS "Android")
--    elseif(CMAKE_SYSTEM_NAME MATCHES "Linux")
-+    elseif(UNIX AND NOT APPLE)
-       set(_targetArchOS "Linux")
-     endif()
- 
-@@ -865,9 +865,9 @@ function(igc_arch_detect targetArchVarName hostArchVar
+     else()
+@@ -78,7 +78,7 @@ function(igc_arch_detect targetArchVarName hostArchVar
        set(_hostArchitecture "Windows32")
      endif()
    # Use 'uname -m' to detect kernel architecture.
--  elseif((CMAKE_HOST_SYSTEM_NAME MATCHES "Linux")
-+  elseif((UNIX AND NOT APPLE)
-       )
--    if(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux")
-+    if(UNIX AND NOT APPLE)
-       set(_hostArchOS "Linux")
-     endif()
- 
-@@ -2171,7 +2171,7 @@ endif()
+-  elseif(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux")
++  elseif(UNIX AND NOT APPLE)
+     set(_hostArchOS "Linux")
+     set(_osArchitecture "x86_64")
+     execute_process(
+--- IGC/CMakeLists.txt.orig	2021-03-28 09:45:11 UTC
++++ IGC/CMakeLists.txt
+@@ -429,7 +429,7 @@ endif()
  
  # NOTE: LLVM_ON_UNIX is also true for Android (CMAKE_SYSTEM_NAME specified by Android toolchain file is also "Linux",
  # but we should make sure so there is no errors in our assumptions).
@@ -148,17 +142,6 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
      #include "os_inc.h"
  #endif
  
---- IGC/AdaptorOCL/DriverInfoOCL.hpp.orig	2020-02-22 05:52:18 UTC
-+++ IGC/AdaptorOCL/DriverInfoOCL.hpp
-@@ -71,7 +71,7 @@ namespace TC
-         bool supportsStatelessSpacePrivateMemory() const override { return true; }
- 
-         bool NeedFP64(PRODUCT_FAMILY productFamily) const override {
--#if defined(__linux__)
-+#if !defined(__APPLE__) && !defined(_WIN32)
-           if (IGC_IS_FLAG_ENABLED(EnableDPEmulation)) {
-               return true;
-           }
 --- IGC/GenISAIntrinsics/GenIntrinsics.h.orig	2020-02-10 06:06:31 UTC
 +++ IGC/GenISAIntrinsics/GenIntrinsics.h
 @@ -67,7 +67,7 @@ namespace GenISAIntrinsic {
