@@ -78,6 +78,53 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1f6d97da-8f72-11eb-b3f1-005056a311d1">
+    <topic>samba -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>samba411</name>
+	<range><le>4.11.15</le></range>
+      </package>
+      <package>
+	<name>samba412</name>
+	<range><lt>4.12.14</lt></range>
+      </package>
+      <package>
+	<name>samba413</name>
+	<range><lt>4.13.7</lt></range>
+      </package>
+      <package>
+	<name>samba414</name>
+	<range><lt>4.14.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba Team reports:</p>
+	<blockquote cite="https://www.samba.org/samba/history/security.html">
+	  <ul>
+	  <li>CVE-2020-27840: An anonymous attacker can crash the Samba AD DC
+		LDAP server by sending easily crafted DNs as
+		part of a bind request. More serious heap corruption
+		is likely also possible.</li>
+	  <li>CVE-2021-20277: User-controlled LDAP filter strings against
+		the AD DC LDAP server may crash the LDAP server.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.samba.org/samba/security/CVE-2020-27840.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2021-20277.html</url>
+      <cvename>CVE-2020-27840</cvename>
+      <cvename>CVE-2021-20277</cvename>
+    </references>
+    <dates>
+      <discovery>2021-03-24</discovery>
+      <entry>2021-03-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="80f9dbd3-8eec-11eb-b9e8-3525f51429a0">
     <topic>nettle 3.7.2 -- fix serious ECDSA signature verify bug</topic>
     <affects>
