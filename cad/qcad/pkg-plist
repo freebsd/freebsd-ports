@@ -578,8 +578,7 @@ lib/libstemmer.a
 %%DATADIR%%/patterns/metric/xmastree-02.pat
 %%DATADIR%%/patterns/metric/zigzag.pat
 %%DATADIR%%/plugins/codecs/readme.txt
-%%DATADIR%%/plugins/designer/libqcadcustomwidgets.so
-%%DATADIR%%/plugins/designer/libqcadcustomwidgets_debug.so
+%%DATADIR%%/plugins/designer/libqcadcustomwidgets%%DEBUG_LIB_SUFFIX%%.so
 %%DATADIR%%/plugins/designer/readme.txt
 %%DATADIR%%/plugins/imageformats/libqgif.so
 %%DATADIR%%/plugins/imageformats/libqico.so
@@ -588,10 +587,8 @@ lib/libstemmer.a
 %%DATADIR%%/plugins/imageformats/libqtga.so
 %%DATADIR%%/plugins/imageformats/libqtiff.so
 %%DATADIR%%/plugins/imageformats/readme.txt
-%%DATADIR%%/plugins/libqcaddxf.so
-%%DATADIR%%/plugins/libqcaddxf_debug.so
-%%DATADIR%%/plugins/libqcadscripts.so
-%%DATADIR%%/plugins/libqcadscripts_debug.so
+%%DATADIR%%/plugins/libqcaddxf%%DEBUG_LIB_SUFFIX%%.so
+%%DATADIR%%/plugins/libqcadscripts%%DEBUG_LIB_SUFFIX%%.so
 %%DATADIR%%/plugins/printsupport/libcupsprintersupport.so
 %%DATADIR%%/plugins/printsupport/readme.txt
 %%DATADIR%%/plugins/script/libqtscript_core.so
