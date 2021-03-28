@@ -1,0 +1,41 @@
+[
+{
+  type: install
+  message: <<INSTALL
+To enable caddy:
+
+- Edit %%ETCDIR%%/Caddyfile
+  See https://caddyserver.com/docs/
+- Add caddy_enable="YES" to /etc/rc.conf
+
+%%PREFIX%%/etc/rc.d/caddy has the following defaults:
+
+- Server log: /var/log/caddy/caddy.log
+  (runtime messages, NOT an access.log)
+- Automatic SSL certificate storage: /var/db/caddy/data/caddy/
+- Runs as root:wheel (you can run as another user, like www,
+  but caddy will be unable to bind to low-numbered ports,
+  including 80 and 443)
+
+INSTALL
+}
+{
+  type: upgrade
+  maximum_version: 2.3.0
+  message: <<UPGRADE
+The default locations for caddy runtime files have changed!
+
+- Caddy's runtime log is now /var/log/caddy/caddy.log
+  (was /var/log/caddy.log)
+
+- Automatic SSL certs are now stored in /var/db/caddy/data/caddy
+  (was /root/.local/share/caddy)
+
+- Configuration autosaves are now stored in /var/db/caddy/config/caddy
+  (was /root/.config/caddy)
+
+You can change these defaults. See %%PREFIX%%/etc/rc.d/caddy
+
+UPGRADE
+}
+]

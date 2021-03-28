@@ -7,15 +7,28 @@
 # REQUIRE: LOGIN DAEMON NETWORKING
 # KEYWORD: shutdown
 
-# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
-# to enable this service:
-# caddy_enable (bool):   Set to NO by default. Set it to YES to enable caddy.
+# To enable caddy, add 'caddy_enable="YES"' to /etc/rc.conf or
+# /etc/rc.conf.local
+
+# Optional settings:
+# caddy_config (string):      Full path to caddy config file
+#                             (%%ETCDIR%%/Caddyfile)
+# caddy_adapter (string):     Config adapter type (caddyfile)
+# caddy_directory (string):   Root for caddy storage (ACME certs, etc.)
+#                             (/var/db/caddy)
+# caddy_extra_flags (string): Extra flags passed to caddy start
+# caddy_logdir (string):      Where caddy logs are stored
+#                             (/var/log/caddy)
+# caddy_logfile (string):     Location of process log (${caddy_logdir}/caddy.log)
+#                             This is for startup/shutdown/error messages.
+#                             To create an access log, see:
+#                             https://caddyserver.com/docs/caddyfile/directives/log
+# caddy_user (user):          User to run caddy (root)
+# caddy_group (group):        Group to run caddy (wheel)
 #
-# caddy_config (string):      (Optional) Full path to caddy config file
-# caddy_adapter (string):     (Optional) Adapter type if the configuration is not in caddyfile format
-# caddy_extra_flags (string): (Optional) Flags passed to caddy start
-# caddy_logfile (string):     Location of process log. This is for startup/shutdown/error messages.
-#                             To create an access log, see https://caddyserver.com/docs/caddyfile/directives/log
+# This script will honor XDG_CONFIG_HOME/XDG_DATA_HOME. Caddy will create a
+# .../caddy subdir in each of those. By default, they are subdirs of /var/db/caddy.
+# See https://caddyserver.com/docs/conventions#data-directory
 
 . /etc/rc.subr
 
@@ -27,23 +40,73 @@ load_rc_config $name
 
 # Defaults
 : ${caddy_enable:=NO}
-: ${caddy_config:=%%ETCDIR%%/Caddyfile}
 : ${caddy_adapter:=caddyfile}
+: ${caddy_config:=%%ETCDIR%%/Caddyfile}
+: ${caddy_directory:=/var/db/caddy}
 : ${caddy_extra_flags:=""}
-: ${caddy_logfile="/var/log/caddy.log"}
+: ${caddy_logdir:="/var/log/${name}"}
+: ${caddy_logfile:="${caddy_logdir}/${name}.log"}
+: ${caddy_user:="root"}
+: ${caddy_group:="wheel"}
+
+# Config and base directories
+: ${XDG_CONFIG_HOME:="${caddy_directory}/config"}
+: ${XDG_DATA_HOME:="${caddy_directory}/data"}
+export XDG_CONFIG_HOME XDG_DATA_HOME
 
 command="%%PREFIX%%/bin/${name}"
 caddy_flags="--config ${caddy_config} --adapter ${caddy_adapter}"
-pidfile="/var/run/${name}.pid"
+pidfile="/var/run/${name}/${name}.pid"
 
 required_files="${caddy_config} ${command}"
 
+start_precmd="caddy_precmd"
+start_cmd="caddy_start"
+stop_cmd="caddy_stop"
+
 # Extra Commands
 extra_commands="configtest reload"
+configtest_cmd="caddy_command validate ${caddy_flags}"
+reload_cmd="caddy_command reload ${caddy_flags}"
 
-configtest_cmd="${command} validate ${caddy_flags}"
-reload_cmd="${command} reload ${caddy_flags}"
-start_cmd="${command} start ${caddy_flags} ${caddy_extra_flags} --pidfile ${pidfile} >> ${caddy_logfile} 2>&1"
-stop_cmd="${command} stop"
+caddy_command()
+{
+	/usr/bin/su -m "${caddy_user}" -c "${command} $*"
+}
+
+caddy_precmd()
+{
+	# Create required directories and set permissions
+	/usr/bin/install -d -m 755 -o "${caddy_user}" -g "${caddy_group}" ${caddy_directory}
+	/usr/bin/install -d -m 700 -o "${caddy_user}" -g "${caddy_group}" ${caddy_directory}/config
+	/usr/bin/install -d -m 700 -o "${caddy_user}" -g "${caddy_group}" ${caddy_directory}/data
+	/usr/bin/install -d -m 755 -o "${caddy_user}" -g "${caddy_group}" ${caddy_logdir}
+	/usr/bin/install -d -m 700 -o "${caddy_user}" -g "${caddy_group}" /var/run/caddy
+}
+
+caddy_start()
+{
+	echo -n "Starting caddy... "
+	/usr/bin/su -m ${caddy_user} -c "${command} start ${caddy_flags} \
+		${caddy_extra_flags} --pidfile ${pidfile}" >> ${caddy_logfile} 2>&1
+	if [ $? -eq 0 ] && ps -ax -o pid | grep -q "$(cat ${pidfile})"; then
+		echo "done"
+		echo "Log: ${caddy_logfile}"
+	else
+		echo "Error: Caddy failed to start"
+		echo "Check the caddy log: ${caddy_logfile}"
+	fi
+}
+
+caddy_stop()
+{
+	echo -n "Stopping caddy... "
+	if caddy_command stop; then
+		echo "done"
+	else
+		echo "Error: Unable to stop caddy"
+		echo "Check the caddy log: ${caddy_logfile}"
+	fi
+}
 
 run_rc_command "$1"

@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210328:
+  AFFECTS: users of www/caddy
+  AUTHOR: adamw@FreeBSD.org
+
+  The default locations for caddy runtime files have changed.
+
+  - Caddy's runtime log is now /var/log/caddy/caddy.log
+    (was /var/log/caddy.log)
+
+  - Automatic SSL certs are now stored in /var/db/caddy/data/caddy
+    (was /root/.local/share/caddy)
+
+  - Configuration autosaves are now stored in /var/db/caddy/config/caddy
+    (was /root/.config/caddy)
+
+  You can change these defaults. See /usr/local/etc/rc.d/caddy for the
+  list of settings.
+
 20210322:
   AFFECTS: users of net/wireguard
   AUTHOR: decke@FreeBSD.org

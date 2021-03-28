@@ -4,6 +4,7 @@
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	www
 DIST_SUBDIR=	caddy
 
@@ -19,7 +20,7 @@ USES=		go:modules
 USE_RC_SUBR=	caddy
 GO_TARGET=	./cmd/caddy
 
-SUB_FILES=	caddy Caddyfile.sample
+SUB_FILES=	Caddyfile.sample caddy pkg-message
 
 PLIST_FILES=	bin/${PORTNAME} \
 		"@sample ${ETCDIR_REL}/Caddyfile.sample"
