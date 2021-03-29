@@ -3,6 +3,7 @@
 
 PORTNAME=	zynaddsubfx
 DISTVERSION=	3.0.6-rc3
+PORTEPOCH=	1
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
