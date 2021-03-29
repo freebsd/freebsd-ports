@@ -12,10 +12,9 @@ validate_env dp_ACTUAL_PACKAGE_DEPENDS dp_CATEGORIES dp_COMMENT \
 	dp_COMPLETE_OPTIONS_LIST dp_DEPRECATED dp_DESCR dp_EXPIRATION_DATE \
 	dp_GROUPS dp_LICENSE dp_LICENSE_COMB dp_MAINTAINER dp_METADIR \
 	dp_NO_ARCH dp_PKGBASE dp_PKGDEINSTALL dp_PKGINSTALL dp_PKGMESSAGES \
-	dp_PKGORIGIN dp_PKGPOSTDEINSTALL dp_PKGPOSTINSTALL dp_PKGPOSTUPGRADE \
-	dp_PKGPREDEINSTALL dp_PKGPREINSTALL dp_PKGPREUPGRADE dp_PKGUPGRADE \
-	dp_PKGVERSION dp_PKG_BIN dp_PKG_IGNORE_DEPENDS dp_PKG_NOTES \
-	dp_PORT_OPTIONS dp_PREFIX dp_USERS dp_WWW
+	dp_PKGORIGIN dp_PKGPOSTDEINSTALL dp_PKGPOSTINSTALL dp_PKGPREDEINSTALL \
+	dp_PKGPREINSTALL dp_PKGVERSION dp_PKG_BIN dp_PKG_IGNORE_DEPENDS \
+	dp_PKG_NOTES dp_PORT_OPTIONS dp_PREFIX dp_USERS dp_WWW
 
 [ -n "${DEBUG_MK_SCRIPTS}" -o -n "${DEBUG_MK_SCRIPTS_CREATE_MANIFEST}" ] && set -x
 
@@ -92,7 +91,7 @@ cp ${dp_DESCR} ${dp_METADIR}/+DESC
 
 # Concatenate all the scripts
 output_files=
-for stage in INSTALL DEINSTALL UPGRADE; do
+for stage in INSTALL DEINSTALL; do
 	for prepost in '' PRE POST; do
 		output=${dp_METADIR}/+${prepost:+${prepost}_}${stage}
 		[ -f "${output}" ] && output_files="${output_files:+${output_files} }${output}"
@@ -100,7 +99,7 @@ for stage in INSTALL DEINSTALL UPGRADE; do
 done
 [ -n "${output_files}" ] && rm -f ${output_files}
 
-for stage in INSTALL DEINSTALL UPGRADE; do
+for stage in INSTALL DEINSTALL; do
 	for prepost in '' PRE POST; do
 		eval files="\${dp_PKG${prepost}${stage}}"
 		output=${dp_METADIR}/+${prepost:+${prepost}_}${stage}

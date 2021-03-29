@@ -1933,9 +1933,6 @@ PKGPREINSTALL?=		${PKGDIR}/pkg-pre-install
 PKGPOSTINSTALL?=	${PKGDIR}/pkg-post-install
 PKGPREDEINSTALL?=	${PKGDIR}/pkg-pre-deinstall
 PKGPOSTDEINSTALL?=	${PKGDIR}/pkg-post-deinstall
-PKGPREUPGRADE?=		${PKGDIR}/pkg-pre-upgrade
-PKGPOSTUPGRADE?=	${PKGDIR}/pkg-post-upgrade
-PKGUPGRADE?=		${PKGDIR}/pkg-upgrade
 
 _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 						fonts.dir fonts.scale gtk-update-icon-cache \
@@ -4344,11 +4341,8 @@ create-manifest:
 			dp_PKGORIGIN='${PKGORIGIN}'                           \
 			dp_PKGPOSTDEINSTALL='${PKGPOSTDEINSTALL}'             \
 			dp_PKGPOSTINSTALL='${PKGPOSTINSTALL}'                 \
-			dp_PKGPOSTUPGRADE='${PKGPOSTUPGRADE}'                 \
 			dp_PKGPREDEINSTALL='${PKGPREDEINSTALL}'               \
 			dp_PKGPREINSTALL='${PKGPREINSTALL}'                   \
-			dp_PKGPREUPGRADE='${PKGPREUPGRADE}'                   \
-			dp_PKGUPGRADE='${PKGUPGRADE}'                         \
 			dp_PKGVERSION='${PKGVERSION}'                         \
 			dp_PKG_BIN='${PKG_BIN}'                               \
 			dp_PKG_IGNORE_DEPENDS='${PKG_IGNORE_DEPENDS}'         \
