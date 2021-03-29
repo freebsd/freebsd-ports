@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zynaddsubfx
-PORTVERSION=	3.0.6
-DISTVERSIONSUFFIX=	-rc3
+DISTVERSION=	3.0.6-rc3
 CATEGORIES=	audio
 
 MAINTAINER=	hselasky@FreeBSD.org
