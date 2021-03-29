@@ -12,7 +12,7 @@ COMMENT=	Grub-emu loader for bhyve
 
 LICENSE=	GPLv3
 
-BULID_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		help2man:misc/help2man
 
 ONLY_FOR_ARCHS=	amd64
