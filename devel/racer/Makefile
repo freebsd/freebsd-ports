@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racer
-DISTVERSION=	2.1.41
+DISTVERSION=	2.1.44
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
@@ -21,11 +21,7 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		atty-0.2.14 \
 		autocfg-1.0.0 \
 		bitflags-1.2.1 \
-		block-buffer-0.7.3 \
 		block-buffer-0.9.0 \
-		block-padding-0.1.5 \
-		byte-tools-0.3.1 \
-		byteorder-1.3.4 \
 		cc-1.0.53 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
@@ -38,13 +34,10 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		crossbeam-utils-0.6.6 \
 		crossbeam-utils-0.7.2 \
 		derive_more-0.99.5 \
-		digest-0.8.1 \
 		digest-0.9.0 \
 		either-1.5.3 \
 		ena-0.14.0 \
 		env_logger-0.7.1 \
-		fake-simd-0.1.2 \
-		generic-array-0.12.3 \
 		generic-array-0.14.4 \
 		getopts-0.2.21 \
 		getrandom-0.1.14 \
@@ -62,13 +55,11 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		lock_api-0.4.1 \
 		log-0.4.8 \
 		maybe-uninit-2.0.0 \
-		md-5-0.8.0 \
 		md-5-0.9.1 \
 		measureme-9.0.0 \
 		memchr-2.3.3 \
 		memoffset-0.5.4 \
 		num_cpus-1.12.0 \
-		opaque-debug-0.2.3 \
 		opaque-debug-0.3.0 \
 		parking_lot-0.11.0 \
 		parking_lot_core-0.8.0 \
@@ -77,8 +68,8 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		psm-0.1.8 \
 		quick-error-1.2.3 \
 		quote-1.0.3 \
-		racer-2.1.40 \
-		racer-cargo-metadata-0.1.1 \
+		racer-2.1.43 \
+		racer-cargo-metadata-0.1.2 \
 		racer-interner-0.1.0 \
 		racer-testutils-0.1.0 \
 		rand-0.7.3 \
@@ -90,39 +81,40 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		regex-syntax-0.6.17 \
 		remove_dir_all-0.5.2 \
 		rls-span-0.5.2 \
-		rustc-ap-rustc_arena-686.0.0 \
-		rustc-ap-rustc_arena-691.0.0 \
-		rustc-ap-rustc_ast-686.0.0 \
-		rustc-ap-rustc_ast-691.0.0 \
-		rustc-ap-rustc_ast_pretty-686.0.0 \
-		rustc-ap-rustc_ast_pretty-691.0.0 \
-		rustc-ap-rustc_data_structures-686.0.0 \
-		rustc-ap-rustc_data_structures-691.0.0 \
-		rustc-ap-rustc_errors-686.0.0 \
-		rustc-ap-rustc_errors-691.0.0 \
-		rustc-ap-rustc_feature-686.0.0 \
-		rustc-ap-rustc_feature-691.0.0 \
-		rustc-ap-rustc_fs_util-686.0.0 \
-		rustc-ap-rustc_fs_util-691.0.0 \
-		rustc-ap-rustc_graphviz-686.0.0 \
-		rustc-ap-rustc_graphviz-691.0.0 \
-		rustc-ap-rustc_index-686.0.0 \
-		rustc-ap-rustc_index-691.0.0 \
-		rustc-ap-rustc_lexer-686.0.0 \
-		rustc-ap-rustc_lexer-691.0.0 \
-		rustc-ap-rustc_lint_defs-691.0.0 \
-		rustc-ap-rustc_macros-686.0.0 \
-		rustc-ap-rustc_macros-691.0.0 \
-		rustc-ap-rustc_parse-686.0.0 \
-		rustc-ap-rustc_parse-691.0.0 \
-		rustc-ap-rustc_serialize-686.0.0 \
-		rustc-ap-rustc_serialize-691.0.0 \
-		rustc-ap-rustc_session-686.0.0 \
-		rustc-ap-rustc_session-691.0.0 \
-		rustc-ap-rustc_span-686.0.0 \
-		rustc-ap-rustc_span-691.0.0 \
-		rustc-ap-rustc_target-686.0.0 \
-		rustc-ap-rustc_target-691.0.0 \
+		rustc-ap-rustc_arena-702.0.0 \
+		rustc-ap-rustc_arena-705.0.0 \
+		rustc-ap-rustc_ast-702.0.0 \
+		rustc-ap-rustc_ast-705.0.0 \
+		rustc-ap-rustc_ast_pretty-702.0.0 \
+		rustc-ap-rustc_ast_pretty-705.0.0 \
+		rustc-ap-rustc_data_structures-702.0.0 \
+		rustc-ap-rustc_data_structures-705.0.0 \
+		rustc-ap-rustc_errors-702.0.0 \
+		rustc-ap-rustc_errors-705.0.0 \
+		rustc-ap-rustc_feature-702.0.0 \
+		rustc-ap-rustc_feature-705.0.0 \
+		rustc-ap-rustc_fs_util-702.0.0 \
+		rustc-ap-rustc_fs_util-705.0.0 \
+		rustc-ap-rustc_graphviz-702.0.0 \
+		rustc-ap-rustc_graphviz-705.0.0 \
+		rustc-ap-rustc_index-702.0.0 \
+		rustc-ap-rustc_index-705.0.0 \
+		rustc-ap-rustc_lexer-702.0.0 \
+		rustc-ap-rustc_lexer-705.0.0 \
+		rustc-ap-rustc_lint_defs-702.0.0 \
+		rustc-ap-rustc_lint_defs-705.0.0 \
+		rustc-ap-rustc_macros-702.0.0 \
+		rustc-ap-rustc_macros-705.0.0 \
+		rustc-ap-rustc_parse-702.0.0 \
+		rustc-ap-rustc_parse-705.0.0 \
+		rustc-ap-rustc_serialize-702.0.0 \
+		rustc-ap-rustc_serialize-705.0.0 \
+		rustc-ap-rustc_session-702.0.0 \
+		rustc-ap-rustc_session-705.0.0 \
+		rustc-ap-rustc_span-702.0.0 \
+		rustc-ap-rustc_span-705.0.0 \
+		rustc-ap-rustc_target-702.0.0 \
+		rustc-ap-rustc_target-705.0.0 \
 		rustc-hash-1.1.0 \
 		rustc-rayon-0.3.0 \
 		rustc-rayon-core-0.3.0 \
@@ -132,7 +124,6 @@ CARGO_CRATES=	aho-corasick-0.7.10 \
 		serde-1.0.105 \
 		serde_derive-1.0.105 \
 		serde_json-1.0.50 \
-		sha-1-0.8.2 \
 		sha-1-0.9.2 \
 		sha2-0.9.2 \
 		smallvec-1.4.2 \
