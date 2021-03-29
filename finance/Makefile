@@ -111,6 +111,7 @@
     SUBDIR += rubygem-money
     SUBDIR += skrooge
     SUBDIR += sql-ledger
+    SUBDIR += tickrs
     SUBDIR += vanitygen
     SUBDIR += venice
     SUBDIR += weberp
