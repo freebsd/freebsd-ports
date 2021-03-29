@@ -1,8 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	foundationdb-devel
-DISTVERSION=	7.0.0.a.20201228
+DISTVERSION=	7.0.0.a.20210224
 CATEGORIES=	databases
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
+PATCHFILES+=	4373.patch:-p1 # https://github.com/apple/foundationdb/pull/4373
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Distributed, transactional key-value store
@@ -25,14 +28,14 @@ USES=		compiler:c++17-lang cmake mono:build python:build shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple
 GH_PROJECT=	foundationdb
-GH_TAGNAME=	c895049
+GH_TAGNAME=	8580250
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	foundationdb
 
 SHEBANG_FILES=	bindings/c/generate_asm.py
 
 CMAKE_ARGS=	-DOPENSSL_ROOT_DIR=${OPENSSLLIB}
-CMAKE_OFF=	USE_DTRACE DISABLE_TLS
+CMAKE_OFF=	USE_DTRACE DISABLE_TLS USE_JEMALLOC
 
 USERS=		foundationdb
 GROUPS=		foundationdb
@@ -65,7 +68,7 @@ do-install:
 .endfor
 	# exposed libraries - confirm with upstream
 .for l in libfdb_c.so libfdb_flow.a libfdb_sqlite.a libfdbclient.a \
-	    libfdbrpc.a libflow.a libthirdparty.a
+	    libfdbrpc.a libflow.a
 	${STRIP_CMD} ${WRKDIR}/.build/lib/${l}
 	${INSTALL_DATA} ${WRKDIR}/.build/lib/${l} ${STAGEDIR}/${PREFIX}/lib/
 .endfor

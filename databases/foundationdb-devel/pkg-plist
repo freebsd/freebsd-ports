@@ -24,4 +24,3 @@ lib/libfdb_sqlite.a
 lib/libfdbclient.a
 lib/libfdbrpc.a
 lib/libflow.a
-lib/libthirdparty.a
