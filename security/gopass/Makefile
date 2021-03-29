@@ -3,7 +3,7 @@
 
 PORTNAME=	gopass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.4
+DISTVERSION=	1.12.5
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -35,16 +35,17 @@ GH_TUPLE=	\
 		godbus:dbus:8a1682060722:godbus_dbus/vendor/github.com/godbus/dbus \
 		gokyle:twofactor:v1.0.1:gokyle_twofactor/vendor/github.com/gokyle/twofactor \
 		golang:appengine:v1.6.6:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:eec23a3978ad:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:5f4716e94777:golang_net/vendor/golang.org/x/net \
+		golang:crypto:0c34fe9e7dc2:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:6b1517762897:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:cd4f82c27b84:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:9a76102bfb43:golang_sys/vendor/golang.org/x/sys \
-		golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
+		golang:sys:47abb6519492:golang_sys/vendor/golang.org/x/sys \
+		golang:term:de623e64d2a6:golang_term/vendor/golang.org/x/term \
 		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-github:v17.0.0:google_go_github/vendor/github.com/google/go-github \
 		google:go-github:v33.0.0:google_go_github_v33/vendor/github.com/google/go-github/v33 \
-		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
+		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
+		gopasspw:pinentry:v0.0.2:gopasspw_pinentry/vendor/github.com/gopasspw/pinentry \
 		gotestyourself:gotest.tools:v2.2.0:gotestyourself_gotest_tools/vendor/gotest.tools \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:v1.1.1:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \

@@ -20,6 +20,7 @@ etc/bash_completion.d/gopass.sh
 %%PORTDOCS%%%%DOCSDIR%%/commands/history.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/init.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/insert.md
+%%PORTDOCS%%%%DOCSDIR%%/commands/link.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/list.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/mount.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/move.md
