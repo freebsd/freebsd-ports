@@ -2,7 +2,7 @@
 
 PORTNAME=	matterircd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.1
+DISTVERSION=	0.24.0
 CATEGORIES=	net-im irc
 
 MAINTAINER=	norrland@nullbyte.se
