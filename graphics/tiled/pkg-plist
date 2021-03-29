@@ -19,6 +19,7 @@ lib/tiled/plugins/liblua.so
 lib/tiled/plugins/libreplicaisland.so
 lib/tiled/plugins/libtbin.so
 lib/tiled/plugins/libtengine.so
+lib/tiled/plugins/libyy.so
 share/applications/org.mapeditor.Tiled.desktop
 share/icons/hicolor/16x16/apps/tiled.png
 share/icons/hicolor/16x16/mimetypes/application-x-tiled.png
