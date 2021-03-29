@@ -6,7 +6,7 @@ PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
-MAINTAINER=	freebsd@geoffgarside.co.uk
+MAINTAINER=	dch@FreeBSD.org
 COMMENT=	RabbitMQ C AMQP client library
 
 LICENSE=	MIT
