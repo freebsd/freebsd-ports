@@ -20,6 +20,7 @@ include/freerdp2/freerdp/channels/audin.h
 include/freerdp2/freerdp/channels/channels.h
 include/freerdp2/freerdp/channels/cliprdr.h
 include/freerdp2/freerdp/channels/disp.h
+include/freerdp2/freerdp/channels/echo.h
 include/freerdp2/freerdp/channels/encomsp.h
 include/freerdp2/freerdp/channels/geometry.h
 include/freerdp2/freerdp/channels/log.h
