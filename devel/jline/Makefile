@@ -40,17 +40,4 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/jython.sh ${STAGEDIR}${DOCSDIR}/examples
 .endif
 
-# Next rule is for maintainer use only: Automatically (re)create the pkg-plist.
-plist:
-	@test -e ${CONFIGURE_COOKIE} || { \
-		${ECHO_MSG} >&2 "do 'make configure' first!"; exit 64; }
-	${ECHO_CMD} "%%JAVAJARDIR%%/jline-${PORTVERSION}.jar" >${PLIST}
-	${ECHO_CMD} "%%JAVAJARDIR%%/jline.jar" >>${PLIST}
-	( \
-		cd ${WRKSRC} || exit; \
-		${FIND} ./apidocs ./examples -type f | ${SORT};	\
-		${ECHO_CMD} "./examples/JLineCompleter.py";	\
-		${ECHO_CMD} "./examples/jython.sh";		\
-	) | ${SED} -e 's/\.\//%%DOCSDIR%%\//' -e 's/^/%%PORTDOCS%%/' >>${PLIST}
-
 .include <bsd.port.mk>
