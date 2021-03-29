@@ -2,6 +2,7 @@
 
 PORTNAME=	rust-analyzer
 DISTVERSION=	2021-03-08
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org

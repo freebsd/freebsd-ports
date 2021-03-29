@@ -3,6 +3,7 @@
 PORTNAME=	librespot
 PORTVERSION=	0.1.6
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	driesm.michiels@gmail.com

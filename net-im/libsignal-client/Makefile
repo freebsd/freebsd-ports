@@ -3,6 +3,7 @@
 PORTNAME=	libsignal-client
 DISTVERSIONPREFIX=	java-
 DISTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	net-im java
 
 MAINTAINER=	0mp@FreeBSD.org
