@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiawatha
-PORTVERSION=	10.11
+PORTVERSION=	10.12
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
