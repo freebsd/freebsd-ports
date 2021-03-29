@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redmine
-PORTVERSION=	4.1.1
-PORTREVISION=	6
+PORTVERSION=	4.1.2
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	4
@@ -15,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
-		rubygem-rails52>=5.2.4.2<5.2.5:www/rubygem-rails52 \
+		rubygem-rails52>=5.2.4.5<5.2.5:www/rubygem-rails52 \
 		rubygem-rouge312>=3.12.0:textproc/rubygem-rouge312 \
 		rubygem-request_store14>=1.0.5:devel/rubygem-request_store14 \
 		rubygem-mini_mime>=1.0.1:mail/rubygem-mini_mime \
@@ -24,7 +23,7 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-mimemagic>=0:misc/rubygem-mimemagic \
 		rubygem-mail>=2.7.1:mail/rubygem-mail \
 		rubygem-csv>=3.1.1:devel/rubygem-csv \
-		rubygem-nokogiri>=1.10.0:textproc/rubygem-nokogiri \
+		rubygem-nokogiri>=1.11.0:textproc/rubygem-nokogiri \
 		rubygem-i18n>=0.7:devel/rubygem-i18n \
 		rubygem-rbpdf>=1.19.6:print/rubygem-rbpdf \
 		rubygem-net-ldap>=0.16:net/rubygem-net-ldap \

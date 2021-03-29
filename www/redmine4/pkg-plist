@@ -1590,7 +1590,7 @@
 %%WWWDIR%%/public/javascripts/i18n/datepicker-vi.js
 %%WWWDIR%%/public/javascripts/i18n/datepicker-zh-CN.js
 %%WWWDIR%%/public/javascripts/i18n/datepicker-zh-TW.js
-%%WWWDIR%%/public/javascripts/jquery-2.2.4-ui-1.11.0-ujs-5.2.3.js
+%%WWWDIR%%/public/javascripts/jquery-2.2.4-ui-1.11.0-ujs-5.2.4.5.js
 %%WWWDIR%%/public/javascripts/jstoolbar/jstoolbar.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-ar.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-az.js
@@ -2009,6 +2009,7 @@
 %%WWWDIR%%/test/mocks/open_id_authentication_mock.rb
 %%WWWDIR%%/test/models/empty
 %%WWWDIR%%/test/object_helpers.rb
+%%WWWDIR%%/test/system/inline_autocomplete_test.rb
 %%WWWDIR%%/test/system/issues_import_test.rb
 %%WWWDIR%%/test/system/issues_test.rb
 %%WWWDIR%%/test/system/my_page_test.rb
@@ -2132,6 +2133,7 @@
 %%WWWDIR%%/test/unit/search_test.rb
 %%WWWDIR%%/test/unit/setting_test.rb
 %%WWWDIR%%/test/unit/time_entry_activity_test.rb
+%%WWWDIR%%/test/unit/time_entry_custom_field_test.rb
 %%WWWDIR%%/test/unit/time_entry_import_test.rb
 %%WWWDIR%%/test/unit/time_entry_query_test.rb
 %%WWWDIR%%/test/unit/time_entry_test.rb
