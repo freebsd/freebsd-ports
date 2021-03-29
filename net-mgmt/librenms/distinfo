@@ -1,5 +1,5 @@
-TIMESTAMP = 1608472644
-SHA256 (librenms-vendor-1.70.1.tar.gz) = d8f5c8e3af145f65f56bc4bbbd5881bf819f05807aba9a043524d76e2134ef71
-SIZE (librenms-vendor-1.70.1.tar.gz) = 28043632
-SHA256 (librenms-librenms-1.70.1_GH0.tar.gz) = db731e24ecf703ba566363c09103aedde08a3f6daa6ff1e6627f644bd284c1f6
-SIZE (librenms-librenms-1.70.1_GH0.tar.gz) = 47603341
+TIMESTAMP = 1616683224
+SHA256 (librenms-vendor-21.3.0.tar.gz) = e06532500ac6aba46745de24dbb263fa481345cd0884f6b667ade69a20ce39ee
+SIZE (librenms-vendor-21.3.0.tar.gz) = 28253811
+SHA256 (librenms-librenms-21.3.0_GH0.tar.gz) = cf3cc5bd4fb7ebeb68ad731fea9601a009b87ef738f7063c6a33690a47483dc0
+SIZE (librenms-librenms-21.3.0_GH0.tar.gz) = 49218982

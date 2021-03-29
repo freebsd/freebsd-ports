@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	librenms
-PORTVERSION=	1.70.1
-PORTREVISION=	2
+PORTVERSION=	21.3.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -14,12 +13,12 @@ COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 
 LICENSE=	GPLv3
 
-USES=		shebangfix python
+USES=		shebangfix python php
 
 # RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-RELEASE_TIMESTAMP=	1606919946
+RELEASE_TIMESTAMP=	1616284710
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	rrdtool:databases/rrdtool \
@@ -69,7 +68,6 @@ MYSQLD_USES_OFF=	mysql:client
 
 SHEBANG_FILES=	scripts/auth_test.php \
 		scripts/check_requirements.py \
-		scripts/deploy-docs.sh \
 		scripts/github-remove \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
