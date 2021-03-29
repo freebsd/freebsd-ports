@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	rabbitmq-c
-PORTVERSION=	0.8.0
+PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	freebsd@geoffgarside.co.uk
+MAINTAINER=	dch@FreeBSD.org
 COMMENT=	RabbitMQ C AMQP client library
 
 LICENSE=	MIT
