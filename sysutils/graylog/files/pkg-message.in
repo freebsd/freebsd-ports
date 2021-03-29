@@ -33,6 +33,12 @@ itself.
 Beginning with v4.0, Graylog Open Source is licensed under the
 Server Side Public License (SSPL). For more details, see
 https://www.graylog.org/post/graylog-v4-0-licensing-sspl
+
+If you are running on a dual-stack (ipv4+ipv6) system, you may need to
+include the additional JVM tuning parameter:
+
+    -Djava.net.preferIPv4Stack=true
+
 EOM
 }
 ]

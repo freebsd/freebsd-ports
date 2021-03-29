@@ -8,5 +8,5 @@
 @dir %%ETCDIR%%
 @dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,750) %%GRAYLOG_DATA_DIR%%
 @dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,750) %%GRAYLOG_LOGS_DIR%%
-@sample(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%ETCDIR%%/graylog.conf.example
-@sample(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%ETCDIR%%/log4j2.xml.example
+@sample(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%ETCDIR%%/graylog.conf.sample
+@sample(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,440) %%ETCDIR%%/log4j2.xml.sample

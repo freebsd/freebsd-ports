@@ -3,6 +3,7 @@
 
 PORTNAME=	graylog
 DISTVERSION=	4.0.5
+PORTREVISION=	2
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.graylog.org/releases/
 DISTFILES=	graylog/${DISTNAME}${EXTRACT_SUFX} \
@@ -55,11 +56,13 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${GRAYLOG_DATA_DIR}
 	@${MKDIR} ${STAGEDIR}${GRAYLOG_LOGS_DIR}
 	${INSTALL_DATA} ${WRKSRC}/graylog.jar ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/graylog.conf.example ${STAGEDIR}${ETCDIR}/graylog.conf.example
+	${INSTALL_DATA} ${WRKSRC}/graylog.conf.example \
+		${STAGEDIR}${ETCDIR}/graylog.conf.sample
+	${INSTALL_DATA} ${WRKDIR}/log4j2.xml \
+		${STAGEDIR}${ETCDIR}/log4j2.xml.sample
 	cd ${WRKDIR}/graylog-integrations-plugins-${DISTVERSION}/plugin && \
 	    ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/plugin/
 	cd ${WRKSRC}/plugin && \
 	    ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/plugin/
-	${INSTALL_DATA} ${WRKDIR}/log4j2.xml ${STAGEDIR}${ETCDIR}/log4j2.xml.example
 
 .include <bsd.port.mk>

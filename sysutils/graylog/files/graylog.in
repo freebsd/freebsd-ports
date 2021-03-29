@@ -66,7 +66,6 @@ load_rc_config $name
 
 java_options=" \
     -Djava.awt.headless=true \
-    -Djava.net.preferIPv4Stack=true \
     -Dapp=${name} \
     -Dlog4j.configurationFile=${graylog_log_config} \
     -Xms${graylog_min_mem} \
