@@ -891,6 +891,7 @@
     SUBDIR += paicc
     SUBDIR += paladin
     SUBDIR += pam_mount
+    SUBDIR += pam_xdg
     SUBDIR += panicmail
     SUBDIR += parafly
     SUBDIR += parallel
