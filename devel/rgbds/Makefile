@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rgbds
-DISTVERSION=	0.5.0-rc1
+DISTVERSION=	0.5.0-rc2
 CATEGORIES=	devel games
 MASTER_SITES=	https://github.com/gbdev/rgbds/releases/download/v${DISTVERSION}/
 
