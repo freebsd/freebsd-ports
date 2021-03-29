@@ -1,15 +1,7 @@
-From 9741fbd202b2b55de95abe1eb7f3d8185e312444 Mon Sep 17 00:00:00 2001
-From: Jake Goulding <jake.goulding@gmail.com>
-Date: Sat, 11 Jul 2020 09:38:01 -0400
-Subject: [PATCH] Don't allow `DESTDIR` to influence LLVM builds
-
-When running a command like `DESTDIR=foo x.py install` in a completely
-clean build directory, this will cause LLVM to be installed into
-`DESTDIR`, which then causes the build to fail later when it attempts
-to *use* those LLVM files.
----
- src/bootstrap/native.rs | 5 +++++
- 1 file changed, 5 insertions(+)
+There seems to be some kind of race when using llvm-config-wrapper
+for building rust-lld.  Attempt to improve reliability of the build
+by not using it.  llvm-config-wrapper is a hack in the first place
+that is only really needed on Windows.
 
 --- src/bootstrap/native.rs.orig	2020-08-24 15:00:49 UTC
 +++ src/bootstrap/native.rs

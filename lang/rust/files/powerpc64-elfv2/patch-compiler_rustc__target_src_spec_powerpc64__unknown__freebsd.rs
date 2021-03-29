@@ -4,9 +4,9 @@
          pointer_width: 64,
          data_layout: "E-m:e-i64:64-n32:64".to_string(),
          arch: "powerpc64".to_string(),
--        options: TargetOptions { endian: "big".to_string(), mcount: "_mcount".to_string(), ..base },
+-        options: TargetOptions { endian: Endian::Big, mcount: "_mcount".to_string(), ..base },
 +        options: TargetOptions {
-+            endian: "big".to_string(),
++            endian: Endian::Big,
 +            mcount: "_mcount".to_string(),
 +            llvm_abiname: "elfv2".to_string(),
 +            ..base },

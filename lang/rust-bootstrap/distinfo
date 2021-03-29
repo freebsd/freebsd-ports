@@ -1,6 +1,6 @@
-TIMESTAMP = 1613722755
-SHA256 (rust/rustc-1.50.0-src.tar.xz) = f54adf9204ed3cb3998cdc1baa5645b346d8cf8f18205e3b15fcae194ba5457c
-SIZE (rust/rustc-1.50.0-src.tar.xz) = 108666272
+TIMESTAMP = 1616754064
+SHA256 (rust/rustc-1.51.0-src.tar.xz) = 92c68a91fca33cbafb83442cde722d010cc387dc1ee8a2680e2fb33a575821a1
+SIZE (rust/rustc-1.51.0-src.tar.xz) = 109596164
 SHA256 (FreeBSD-12.2-RELEASE-arm64.tar.xz) = 3f82224fbcc6b2a2e1a1358cec5f32c0a08b5c5e6796e1a998369eb624a11cf3
 SIZE (FreeBSD-12.2-RELEASE-arm64.tar.xz) = 158493712
 SHA256 (FreeBSD-11.4-RELEASE-amd64.tar.xz) = 3bac8257bdd5e5b071f7b80cc591ebecd01b9314ca7839a2903096cbf82169f9
