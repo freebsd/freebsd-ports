@@ -475,13 +475,13 @@ lib/cmake/OktetaKastenGui/OktetaKastenGuiTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/OktetaKastenGui/OktetaKastenGuiTargets.cmake
 lib/libKasten4Controllers.so
 lib/libKasten4Controllers.so.0
-lib/libKasten4Controllers.so.0.4.0
+lib/libKasten4Controllers.so.0.4.1
 lib/libKasten4Core.so
 lib/libKasten4Core.so.0
-lib/libKasten4Core.so.0.4.0
+lib/libKasten4Core.so.0.4.1
 lib/libKasten4Gui.so
 lib/libKasten4Gui.so.0
-lib/libKasten4Gui.so.0.4.0
+lib/libKasten4Gui.so.0.4.1
 lib/libKasten4Okteta2Controllers.so
 lib/libKasten4Okteta2Controllers.so.0
 lib/libKasten4Okteta2Controllers.so.0.4.0
