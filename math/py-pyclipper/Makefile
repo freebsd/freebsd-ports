@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyclipper
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +12,9 @@ COMMENT=	Cython wrapper for the C++ translation of Clipper library
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.11.1:devel/py-setuptools_scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>=1.0:devel/py-setuptools_scm_git_archive@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.11.1:devel/py-setuptools_scm@${PY_FLAVOR}
 
 USES=		python:3.6+ zip
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils cython autoplist
 
 .include <bsd.port.mk>
