@@ -20,7 +20,7 @@ NO_ARCH=	yes
 PLIST_FILES=	bin/weather \
 		${PYTHON_SITELIBDIR}/weather.py \
 		${PYTHON_SITELIBDIR}/__pycache__/weather.cpython-${PYTHON_SUFFIX}.pyc \
-		${PYTHON_SITELIBDIR}/__pycache__/weather.cpython-${PYTHON_SUFFIX}.${PYTHON_PYOEXTENSION} \
+		${PYTHON_SITELIBDIR}/__pycache__/weather.cpython-${PYTHON_SUFFIX}.opt-1.pyc \
 		share/man/man1/weather.1.gz \
 		share/man/man5/weatherrc.5.gz
 PORTDATA=	airports places stations zctas zones
@@ -36,7 +36,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/weather ${STAGEDIR}${PREFIX}/bin/weather
 	${INSTALL_DATA} ${WRKSRC}/weather.py ${STAGEDIR}${PYTHON_SITELIBDIR}/
 	${INSTALL_DATA} ${WRKSRC}/__pycache__/weather.cpython-${PYTHON_SUFFIX}.pyc ${STAGEDIR}${PYTHON_SITELIBDIR}/__pycache__/
-	${INSTALL_DATA} ${WRKSRC}/__pycache__/weather.cpython-${PYTHON_SUFFIX}.${PYTHON_PYOEXTENSION} ${STAGEDIR}${PYTHON_SITELIBDIR}/__pycache__/
+	${INSTALL_DATA} ${WRKSRC}/__pycache__/weather.cpython-${PYTHON_SUFFIX}.opt-1.pyc ${STAGEDIR}${PYTHON_SITELIBDIR}/__pycache__/
 	${INSTALL_MAN} ${WRKSRC}/weather.1 ${STAGEDIR}${PREFIX}/share/man/man1/weather.1
 	${INSTALL_MAN} ${WRKSRC}/weatherrc.5 ${STAGEDIR}${PREFIX}/share/man/man5/weatherrc.5
 	${MKDIR} ${STAGEDIR}${DATADIR}/
