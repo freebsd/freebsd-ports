@@ -2,7 +2,7 @@
 +++ scripts/baculabackupreport.in
 @@ -1,4 +1,4 @@
 -#!/bin/dash
-+#!/usr/local/bin/bash
++#!/bin/sh
  #
  # baculabackupreport.sh
  #
