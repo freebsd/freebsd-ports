@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	eemeter
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.10.11
+DISTVERSION=	3.0.0
 CATEGORIES=	misc python
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,8 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}statsmodels>0:math/py-statsmodels@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_GITHUB=	yes # PyPI doesn't have the latest version for some reason
-GH_ACCOUNT=	openeemeter
 USE_PYTHON=	distutils concurrent autoplist
 
 .include <bsd.port.mk>
