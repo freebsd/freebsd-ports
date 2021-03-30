@@ -4,6 +4,7 @@
 PORTNAME=	rshim-user-space
 DISTVERSIONPREFIX=	rshim-
 DISTVERSION=		2.0.5
+PORTEPOCH=		1
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Userspace daemon for the Mellanox BlueField SoC
