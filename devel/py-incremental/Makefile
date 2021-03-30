@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	incremental
-PORTVERSION=	17.5.0
+PORTVERSION=	21.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,9 @@ COMMENT=	Library that versions your Python projects
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
