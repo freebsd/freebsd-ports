@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nettle
-PORTVERSION=	3.6
+PORTVERSION=	3.7.2
 CATEGORIES=	security
 MASTER_SITES=	GNU \
 		https://www.lysator.liu.se/~nisse/archive/
@@ -23,11 +23,10 @@ USES=		compiler:c11 gmake localbase makeinfo pathfix
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	M4="/usr/bin/m4 -g"
 GNU_CONFIGURE=	yes
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 INFO=		nettle
-PORTDOCS=	NEWS README nettle.html nettle.pdf
-PORTEXAMPLES=	*.c *.h
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -38,6 +37,7 @@ CONFIGURE_ENV+=	CCPIC=-fPIC
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/SUBDIRS = / s| examples||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/libdir=/ s|lib32|lib|' ${WRKSRC}/configure
 .if ${ARCH} == "mips64"
 	@${REINPLACE_CMD} -e 's|__sgi|__unix__|' ${WRKSRC}/configure
@@ -47,11 +47,11 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} NEWS README nettle.html nettle.pdf ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.[ch] ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
