@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stellarium
-PORTVERSION=	0.20.4
+PORTVERSION=	0.21.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
 EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
@@ -20,16 +20,14 @@ USES=		cmake compiler:c++11-lang desktop-file-utils \
 USE_QT=		qmake_build buildtools_build \
 		concurrent core gui network opengl printsupport widgets
 
-CMAKE_ARGS=	-DENABLE_GPS:BOOL=OFF	# XXX: requires Qt5Positioning
-
 GUIDE_VERSION=	${PORTVERSION}
 
 PORTDOCS=	CREDITS.md ChangeLog README.md \
 		stellarium_user_guide-${GUIDE_VERSION}-1.pdf
 
-OPTIONS_DEFINE=		DOCS MORE_STARS MULTIMEDIA NLS SCRIPTS TEXTURES \
-			TELESCOPE
-OPTIONS_DEFAULT=	MULTIMEDIA SCRIPTS TELESCOPE
+OPTIONS_DEFINE=		DOCS GPS MORE_STARS MULTIMEDIA NLS SCRIPTS \
+			TEXTURES TELESCOPE
+OPTIONS_DEFAULT=	GPS MULTIMEDIA SCRIPTS TELESCOPE
 OPTIONS_SUB=		yes
 
 MORE_STARS_DESC=	Install extra star catalogs (1.0GB)
@@ -40,6 +38,11 @@ TELESCOPE_DESC=		Telescope control plugin
 
 DOCS_MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${GUIDE_VERSION}/:ug
 DOCS_DISTFILES=		stellarium_user_guide-${GUIDE_VERSION}-1.pdf:ug
+
+GPS_DESC=		GPS (NMEA handling) support
+GPS_LIB_DEPENDS=	libgps.so:astro/gpsd
+GPS_USE=		QT=location,serialport
+GPS_CMAKE_OFF=		-DENABLE_GPS:BOOL=OFF
 
 TEXTURES_MASTER_SITES=	SF/${PORTNAME}/Extra-data-files/textures:gfx
 TEXTURES_DISTFILES=	textures-1K.zip:gfx
