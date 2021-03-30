@@ -3,12 +3,12 @@
 
 PORTNAME=	freeimage
 PORTVERSION=	3.18.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Source%20Distribution/${PORTVERSION}
 DISTNAME=	FreeImage${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple C/C++ bitmap graphics library
 
 LICENSE=		FIPL GPLv2 GPLv3
@@ -23,18 +23,24 @@ BROKEN_mips=		fails to compile: section referenced in discarded section
 BROKEN_mips64=		fails to compile: opcode not supported on this processor: mips3 (mips3) 'madd $4,$5'
 
 USES=		dos2unix gmake zip
-USE_LDCONFIG=	yes
 DOS2UNIX_FILES=	Source/LibOpenJPEG/opj_malloc.h \
 		Source/LibRawLite/dcraw/dcraw.c \
 		Source/LibRawLite/internal/dcraw_common.cpp \
 		Source/FreeImage/PluginBMP.cpp \
 		Source/FreeImage/PluginDDS.cpp \
 		Source/LibPNG/pngpriv.h
+USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/FreeImage
 MAKE_ARGS=	CC="${CC}" CPP="${CPP}" CXX="${CXX}"
 CFLAGS+=	-DPNG_ARM_NEON_OPT=0 -fexceptions -fvisibility=hidden -fPIC
 CXXFLAGS+=	-DPNG_ARM_NEON_OPT=0 -fexceptions -fvisibility=hidden -fPIC
+
+SUB_FILES=	freeimage.pc
+SUB_LIST=	name="${PORTNAME}" \
+		description="${COMMENT}" \
+		version="${PORTVERSION}"
+
+WRKSRC=		${WRKDIR}/FreeImage
 
 PLIST_FILES=	include/FreeImage.h \
 		include/FreeImagePlus.h \
@@ -45,7 +51,10 @@ PLIST_FILES=	include/FreeImage.h \
 		lib/libfreeimageplus.a \
 		lib/libfreeimageplus-${PORTVERSION}.so \
 		lib/libfreeimageplus.so.3 \
-		lib/libfreeimageplus.so
+		lib/libfreeimageplus.so \
+		libdata/pkgconfig/freeimage.pc
+
+PKGCONFIGDIR?=	${PREFIX}/libdata/pkgconfig
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}| ; s|-o root -g root || ; \
@@ -62,5 +71,6 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libfreeimageplus.so
 	${LN} -sf libfreeimageplus-${PORTVERSION}.so \
 		${STAGEDIR}${PREFIX}/lib/libfreeimageplus.so.3
+	${INSTALL_DATA} ${WRKDIR}/freeimage.pc ${STAGEDIR}${PKGCONFIGDIR}/
 
 .include <bsd.port.mk>
