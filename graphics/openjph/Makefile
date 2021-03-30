@@ -12,6 +12,9 @@ COMMENT=	Open-source implementation of JPEG2000 Part-15
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	is currently 64-bit only
+
 USES=		cmake compiler:c++11-lang pathfix
 
 CMAKE_ON=	BUILD_SHARED_LIBS
