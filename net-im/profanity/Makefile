@@ -2,6 +2,7 @@
 
 PORTNAME=	profanity
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	arved@FreeBSD.org
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libmesode.so:net-im/libmesode \
 		libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgcrypt.so:security/libgcrypt \
-		libsignal-protocol-c.so:net/libsignal \
+		libsignal-protocol-c.so:net/libsignal-protocol-c \
 		libsqlite3.so:databases/sqlite3
 
 USES=		ncurses pkgconfig ssl python readline autoreconf libtool gnome
