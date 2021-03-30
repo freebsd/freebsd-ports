@@ -159,26 +159,6 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
            if (IGC_IS_FLAG_ENABLED(EnableDPEmulation)) {
                return true;
            }
---- IGC/AdaptorOCL/ocl_igc_interface/impl/fcl_ocl_translation_ctx_impl.cpp.orig	2020-11-21 02:52:12 UTC
-+++ IGC/AdaptorOCL/ocl_igc_interface/impl/fcl_ocl_translation_ctx_impl.cpp
-@@ -64,7 +64,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- 
- #include <memory>
- 
--#if defined(__linux__)
-+#if defined(__unix__)
- #include <dlfcn.h>
- #else
- #include <Windows.h>
-@@ -132,7 +132,7 @@ llvm::Optional<std::vector<char>> readBinaryFile(const
- #if !defined(WDDM_LINUX) && (!defined(IGC_VC_DISABLED) || !IGC_VC_DISABLED)
- 
- static std::string detectCmIncludes(llvm::sys::DynamicLibrary &LibInfo) {
--#if defined(__linux__)
-+#if defined(__unix__)
- #define GetFunctionNameAsStr(s) ((void)s, #s);
-   const char *SymName = GetFunctionNameAsStr(IntelCMClangFECompile);
-   void *FAddr = LibInfo.getAddressOfSymbol(SymName);
 --- IGC/GenISAIntrinsics/GenIntrinsics.h.orig	2020-02-10 06:06:31 UTC
 +++ IGC/GenISAIntrinsics/GenIntrinsics.h
 @@ -67,7 +67,7 @@ namespace GenISAIntrinsic {
@@ -262,6 +242,17 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
  #   pragma GCC diagnostic push
  #   if __GNUC__ > 8
  #       pragma GCC diagnostic ignored "-Winit-list-lifetime"
+--- IGC/common/Stats.cpp.orig	2021-03-22 09:55:24 UTC
++++ IGC/common/Stats.cpp
+@@ -1061,7 +1061,7 @@ void TimeStats::printTimeCSV( std::string const& corpu
+     else
+         subFile += IGC::Debug::GetShaderCorpusName();
+     const std::string outputFilePath = 
+-#if defined(__linux__)
++#if !defined(_WIN32)
+     subFile + ".csv";
+ #else
+     std::string("c:\\Intel\\") + subFile + ".csv";
 --- IGC/common/igc_regkeys.hpp.orig	2019-11-27 01:05:20 UTC
 +++ IGC/common/igc_regkeys.hpp
 @@ -39,7 +39,7 @@ typedef char debugString[256];

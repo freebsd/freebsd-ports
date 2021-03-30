@@ -1,16 +1,16 @@
-IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp:158:35: error: no member named 'getVectorElementType' in 'llvm::Type'; did you mean 'getPointerElementType'?
-                ldmcs->getType()->getVectorElementType()->isFloatTy())
+IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp:156:35: error: no member named 'getVectorElementType' in 'llvm::Type'; did you mean 'getPointerElementType'?
+                ldmcs->getType()->getVectorElementType() == m_builder->getInt32Ty())
                                   ^~~~~~~~~~~~~~~~~~~~
                                   getPointerElementType
 /usr/local/llvm11/include/llvm/IR/Type.h:370:9: note: 'getPointerElementType' declared here
   Type *getPointerElementType() const {
         ^
-IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp:162:61: error: no member named 'getVectorNumElements' in 'llvm::Type'
+IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp:160:61: error: no member named 'getVectorNumElements' in 'llvm::Type'
                 uint ldmcsNumOfElements = ldmcs->getType()->getVectorNumElements();
                                           ~~~~~~~~~~~~~~~~  ^
-IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp:163:75: error: no member named 'getVectorNumElements' in 'llvm::Type'
-                uint new_mcs_callNumOfElements = new_mcs_call->getType()->getVectorNumElements();
-                                                 ~~~~~~~~~~~~~~~~~~~~~~~  ^
+IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp:161:71: error: no member named 'getVectorNumElements' in 'llvm::Type'
+                uint newLdmcsNumOfElements = new_mcs_call->getType()->getVectorNumElements();
+                                             ~~~~~~~~~~~~~~~~~~~~~~~  ^
 
 IGC/Compiler/Legalizer/InstPromoter.cpp:402:42: error: no member named 'getVectorNumElements' in 'llvm::Type'
         for (unsigned i = 0; i < DestTy->getVectorNumElements(); i++)
@@ -30,30 +30,30 @@ bool RecursivelyDeleteTriviallyDeadInstructions(
 void RecursivelyDeleteTriviallyDeadInstructions(
      ^
 
---- IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp.orig	2021-02-15 09:29:30 UTC
+--- IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp.orig	2021-03-22 09:55:24 UTC
 +++ IGC/Compiler/ConvertMSAAPayloadTo16Bit.cpp
-@@ -155,12 +155,21 @@ void ConvertMSAAPayloadTo16Bit::visitCallInst(CallInst
-             // In OGL there are uses of ldmcs other then ldms, using vec4float type.
+@@ -153,12 +153,21 @@ void ConvertMSAAPayloadTo16Bit::visitCallInst(CallInst
+             // There are uses of ldmcs other then ldms, using vector of int32 type.
              // Fix them to use newly created 16bit ldmcs.
              if (ldmcs->getType()->isVectorTy() &&
 +#if LLVM_VERSION_MAJOR < 11
-                 ldmcs->getType()->getVectorElementType()->isFloatTy())
+                 ldmcs->getType()->getVectorElementType() == m_builder->getInt32Ty())
 +#else
-+                cast<llvm::VectorType>(ldmcs->getType())->getElementType()->isFloatTy())
++                cast<llvm::VectorType>(ldmcs->getType())->getElementType() == m_builder->getInt32Ty())
 +#endif
              {
                  m_builder->SetInsertPoint(ldmcs);
  
 +#if LLVM_VERSION_MAJOR < 11
                  uint ldmcsNumOfElements = ldmcs->getType()->getVectorNumElements();
-                 uint new_mcs_callNumOfElements = new_mcs_call->getType()->getVectorNumElements();
+                 uint newLdmcsNumOfElements = new_mcs_call->getType()->getVectorNumElements();
 +#else
 +                uint ldmcsNumOfElements = cast<llvm::VectorType>(ldmcs->getType())->getNumElements();
-+                uint new_mcs_callNumOfElements = cast<llvm::VectorType>(new_mcs_call->getType())->getNumElements();
++                uint newLdmcsNumOfElements = cast<llvm::VectorType>(new_mcs_call->getType())->getNumElements();
 +#endif
  
                  // vec of 16bit ints to vec of 32bit ints
-                 Type* new_mcs_callVecType = VectorType::get(m_builder->getInt32Ty(), new_mcs_callNumOfElements);
+                 Type* newLdmcsVecType = VectorType::get(m_builder->getInt32Ty(), newLdmcsNumOfElements);
 --- IGC/Compiler/Legalizer/InstPromoter.cpp.orig	2021-02-08 08:48:29 UTC
 +++ IGC/Compiler/Legalizer/InstPromoter.cpp
 @@ -399,7 +399,11 @@ bool InstPromoter::visitBitCastInst(BitCastInst& I) {
