@@ -1,7 +1,7 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	libsignal
+PORTNAME=	libsignal-protocol-c
 PORTVERSION=	2.3.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
@@ -18,7 +18,6 @@ USES=		cmake
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 GH_ACCOUNT=	signalapp
-GH_PROJECT=	libsignal-protocol-c
 USE_GITHUB=	yes
 
 .include <bsd.port.mk>

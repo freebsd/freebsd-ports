@@ -398,7 +398,7 @@
     SUBDIR += librespeed-cli
     SUBDIR += librespeed-go
     SUBDIR += librsync
-    SUBDIR += libsignal
+    SUBDIR += libsignal-protocol-c
     SUBDIR += libsrtp2
     SUBDIR += libstorj
     SUBDIR += libtnl
