@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	gsequencer
-DISTVERSION=	3.6.21
+DISTVERSION=	3.7.50
 CATEGORIES=	audio
 MASTER_SITES=	SAVANNAH/gsequencer/${DISTVERSION:R}.x
 
@@ -26,13 +26,15 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 RUN_DEPENDS=	dssi>0:audio/dssi
 
 USES=		desktop-file-utils gettext-runtime gettext-tools gmake gnome libtool localbase pkgconfig shared-mime-info xorg
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-alsa --enable-oss --disable-introspection --disable-rt
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 libxml2 pango
 USE_XORG=	x11
+USE_GSTREAMER1=	yes
 USE_GCC=	yes # the project uses gnu99 extensions, clang fails even with USE_CSTD=gnu99. Suggestions how to build with clang are welcome.
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-alsa --enable-oss --disable-introspection --disable-rt
 
 CPPFLAGS+=	-DAGS_LICENSE_FILENAME=\\\"${LOCALBASE}/share/licenses/${PKGNAME}/${LICENSE}\\\" \
 		-DAGS_LOGO_FILENAME=\\\"${DATADIR}/images/ags.png\\\" # there should be no need to supply AGS_LOGO_FILENAME here since the app knows its location

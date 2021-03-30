@@ -1,5 +1,6 @@
 bin/gsequencer
 bin/midi2xml
+include/ags/ags_api_config.h
 include/ags/audio/ags_acceleration.h
 include/ags/audio/ags_audio.h
 include/ags/audio/ags_audio_application_context.h
@@ -368,7 +369,6 @@ include/ags/audio/thread/ags_soundcard_thread.h
 include/ags/audio/thread/ags_wave_loader.h
 include/ags/audio/wasapi/ags_wasapi_devin.h
 include/ags/audio/wasapi/ags_wasapi_devout.h
-include/ags/config.h
 include/ags/file/ags_file.h
 include/ags/file/ags_file_id_ref.h
 include/ags/file/ags_file_launch.h
@@ -540,6 +540,10 @@ share/icons/hicolor/128x128/apps/gsequencer.png
 share/icons/hicolor/32x32/apps/gsequencer.png
 share/icons/hicolor/48x48/apps/gsequencer.png
 share/icons/hicolor/64x64/apps/gsequencer.png
+share/locale/de/LC_MESSAGES/gsequencer.mo
+share/locale/fr/LC_MESSAGES/gsequencer.mo
+share/locale/it/LC_MESSAGES/gsequencer.mo
+share/locale/pl/LC_MESSAGES/gsequencer.mo
 share/metainfo/org.nongnu.gsequencer.gsequencer.appdata.xml
 share/mime/packages/gsequencer.xml
 share/xml/gsequencer/schema/dtd/%%PORTVERSION%%/ags_file.dtd
