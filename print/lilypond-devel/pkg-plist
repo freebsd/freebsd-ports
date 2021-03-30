@@ -351,7 +351,6 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/titling.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/to-xml.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/translation-functions.scm
-%%DATADIR%%/%%DISTVERSION%%/tex/lilypond-tex-metrics.tex
 %%DATADIR%%/%%DISTVERSION%%/tex/texinfo-ja.tex
 %%DATADIR%%/%%DISTVERSION%%/vim/compiler/lilypond.vim
 %%DATADIR%%/%%DISTVERSION%%/vim/ftdetect/lilypond.vim
