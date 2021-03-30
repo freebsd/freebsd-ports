@@ -17,3 +17,11 @@
  	done
  	$(INSTALL_DIR) $(DESTDIR)$(MANDIR)/man7
  	$(INSTALL_DATA) markdown.7 mkd-extensions.7 $(DESTDIR)$(MANDIR)/man7
+@@ -128,6 +128,7 @@ main.o: main.c mkdio.h config.h
+ 
+ $(MKDLIB): $(OBJS)
+ 	./librarian.sh make $(MKDLIB) VERSION $(OBJS)
++	ar crv $(MKDLIB).a $(OBJS)
+ 
+ verify: echo tools/checkbits.sh
+ 	@./echo -n "headers ... "; tools/checkbits.sh && echo "GOOD"

@@ -4,6 +4,9 @@ bin/markdown
 %%SAMPLES%%bin/theme
 include/mkdio.h
 lib/libmarkdown.a
+lib/libmarkdown.so
+lib/libmarkdown.so.2
+lib/libmarkdown.so.2.2.7
 libdata/pkgconfig/libmarkdown.pc
 %%SAMPLES%%share/man/man1/makepage.1.gz
 share/man/man1/markdown.1.gz
