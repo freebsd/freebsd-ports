@@ -499,13 +499,6 @@ PYTHONPREFIX_SITELIBDIR=	${PYTHON_SITELIBDIR:S;${PYTHONBASE};${PREFIX};}
 # Used for recording the installed files.
 _PYTHONPKGLIST=	${WRKDIR}/.PLIST.pymodtmp
 
-# PEP 0488 (https://www.python.org/dev/peps/pep-0488/)
-.if ${PYTHON_REL} < 3500
-PYTHON_PYOEXTENSION=	pyo
-.else
-PYTHON_PYOEXTENSION=	opt-1.pyc
-.endif
-
 # Ports bound to a certain python version SHOULD
 # - use the PYTHON_PKGNAMEPREFIX
 # - use directories using the PYTHON_PKGNAMEPREFIX
