@@ -27,7 +27,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ENV=	RPY2_CFFI_MODE=BOTH
 
-PLIST_FILES=	${PYTHON_SITELIBDIR}/__pycache__/_rinterface_cffi_abi.cpython-${PYTHON_SUFFIX}.${PYTHON_PYOEXTENSION} \
+PLIST_FILES=	${PYTHON_SITELIBDIR}/__pycache__/_rinterface_cffi_abi.cpython-${PYTHON_SUFFIX}.opt-1.pyc \
 		${PYTHON_SITELIBDIR}/__pycache__/_rinterface_cffi_abi.cpython-${PYTHON_SUFFIX}.pyc \
 		${PYTHON_SITELIBDIR}/_rinterface_cffi_abi.py
 
