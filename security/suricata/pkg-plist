@@ -26,6 +26,9 @@ lib/libhtp.so.2
 lib/libhtp.so.2.0.0
 libdata/pkgconfig/htp.pc
 man/man1/suricata.1.gz
+%%PYTHON%%man/man1/suricatactl-filestore.1.gz
+%%PYTHON%%man/man1/suricatactl.1.gz
+%%PYTHON%%man/man1/suricatasc.1.gz
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/Basic_Setup.txt
 %%DOCSDIR%%/GITGUIDE
