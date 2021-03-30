@@ -467,6 +467,7 @@ lib/libgnucash-guile.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/gnucash/gnucash_core_c.py
 man/man1/gnc-fq-dump.1.gz
 man/man1/gnc-fq-helper.1.gz
+man/man1/gnucash-cli.1.gz
 man/man1/gnucash.1.gz
 share/applications/gnucash.desktop
 share/metainfo/gnucash.appdata.xml
@@ -493,6 +494,7 @@ share/metainfo/gnucash.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2017
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2018
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2019
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.2020
 %%PORTDOCS%%%%DOCSDIR%%/DOCUMENTERS
 %%PORTDOCS%%%%DOCSDIR%%/HACKING
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
