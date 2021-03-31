@@ -1,0 +1,2 @@
+svn path=/head/; revision=265669
+svn path=/tags/RELEASE_6_EOL/; revision=265670; tag=6-eol

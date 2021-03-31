@@ -1,0 +1,2 @@
+svn path=/head/; revision=145533
+svn path=/tags/RELEASE_6_0_0/; revision=145534; tag=release/6.0.0

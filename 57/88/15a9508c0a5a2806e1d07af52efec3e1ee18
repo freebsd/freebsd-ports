@@ -1,0 +1,2 @@
+svn path=/head/; revision=366871
+svn path=/tags/PKG_INSTALL_EOL/; revision=366872; tag=pkg-install-eol
