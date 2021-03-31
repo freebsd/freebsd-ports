@@ -37,12 +37,16 @@ MANDIRS=	${PREFIX}/bitkeeper/man
 WRKSRC=		${WRKDIR}/bk-${PORTVERSION}/src
 ALL_TARGET=	p
 
+post-patch:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
+		's/DESTDIR/PDESTDIR/g'
+
 do-build:
 	@(cd ${WRKSRC}; ${MAKE_CMD} ${ALL_TARGET})
 
 do-install:
 	@(cd ${WRKSRC}; \
-	${MAKE_CMD} DESTDIR=${STAGEDIR}${PREFIX}/bitkeeper ${INSTALL_TARGET}); \
+	${MAKE_CMD} PDESTDIR=${STAGEDIR}${PREFIX} ${INSTALL_TARGET})
 	${INSTALL_SCRIPT} ${WRKDIR}/bk ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/bk-man.conf \
 		${STAGEDIR}${PREFIX}/etc/man.d/bk.conf
