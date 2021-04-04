@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	Coin-
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-PATCH_SITES=	https://github.com/myfreeweb/coin/commit/
+PATCH_SITES=	https://github.com/unrelentingtech/coin/commit/
 PATCHFILES+=	3053d28b74d.patch:-p1 # Unbreak non-X11
 
 MAINTAINER=	cmt@FreeBSD.org

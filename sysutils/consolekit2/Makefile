@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	2
 DISTNAME=	ConsoleKit2-${PORTVERSION}
 
 # Support for DRM/evdev
-PATCH_SITES=	https://github.com/myfreeweb/ConsoleKit2/commit/
+PATCH_SITES=	https://github.com/unrelentingtech/ConsoleKit2/commit/
 PATCHFILES=	03eaa9779f2c9c7b0acf0521a5547036bdec2245.patch:-p1 \
 		05f26e99539e7a442e57035ed6d64fdd9a50feb9.patch:-p1 \
 		ea4a569100dfa44a0c9d42b1cf7381fd8f88c837.patch:-p1 \

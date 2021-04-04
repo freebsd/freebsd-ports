@@ -38,7 +38,7 @@ OPTIONS_DEFAULT=LIBSEAT X11
 OPTIONS_SUB=	yes
 
 CONSOLEKIT_DESC=	DRM sessions without root using ConsoleKit2
-CONSOLEKIT_PATCH_SITES=	https://github.com/myfreeweb/${GH_PROJECT}/commit/:ck2
+CONSOLEKIT_PATCH_SITES=	https://github.com/unrelentingtech/${GH_PROJECT}/commit/:ck2
 CONSOLEKIT_PATCHFILES=	fcee578b13eb.patch:-p1:ck2 # https://github.com/swaywm/wlroots/pull/1467
 CONSOLEKIT_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 			libconsolekit.so:sysutils/consolekit2
