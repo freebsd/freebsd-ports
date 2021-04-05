@@ -78,6 +78,45 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dec7e4b6-961a-11eb-9c34-080027f515ea">
+    <topic>ruby -- XML round-trip vulnerability in REXML</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><ge>2.5.0,1</ge><lt>2.5.9,1</lt></range>
+	<range><ge>2.6.0,1</ge><lt>2.6.7,1</lt></range>
+	<range><ge>2.7.0,1</ge><lt>2.7.3,1</lt></range>
+	<range><ge>3.0.0.p1,1</ge><lt>3.0.1,1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rexml</name>
+	<range><lt>3.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Juho Nurminen  reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2021/04/05/xml-round-trip-vulnerability-in-rexml-cve-2021-28965/">
+	  <p>
+	    When parsing and serializing a crafted XML document, REXML gem
+	    (including the one bundled with Ruby) can create a wrong XML
+	    document whose structure is different from the original one.
+	    The impact of this issue highly depends on context, but it may
+	    lead to a vulnerability in some programs that are using REXML.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-28965</cvename>
+      <url>https://www.ruby-lang.org/en/news/2021/04/05/xml-round-trip-vulnerability-in-rexml-cve-2021-28965/</url>
+    </references>
+    <dates>
+      <discovery>2021-04-05</discovery>
+      <entry>2021-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bddadaa4-9227-11eb-99c5-e09467587c17">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
