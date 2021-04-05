@@ -214,6 +214,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/images/bookmark_add.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/cancel.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/cancel.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/checkbox-mixed.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/checked.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/checked.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/close.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/close.xpm
@@ -244,8 +246,16 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/images/diropen.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/disconnect.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/disconnect.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/down.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/exit.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/exit.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/left.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/radio-checked.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/radio-mixed.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/radio.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/right.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/unchecked.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/up.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/bits.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/bits.xpm
@@ -800,6 +810,8 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/refcards/viperCard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/rgb.txt
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/README
+%%DATADIR%%/%%EMACS_VER%%/etc/schema/OpenDocument-schema-v1.3+libreoffice.rnc
+%%DATADIR%%/%%EMACS_VER%%/etc/schema/OpenDocument-schema-v1.3.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/calstbl.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/dbcalstbl.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/dbhier.rnc
@@ -809,7 +821,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/docbook.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/locate.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/od-manifest-schema-v1.2-os.rnc
-%%DATADIR%%/%%EMACS_VER%%/etc/schema/od-schema-v1.2-os.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/rdfxml.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/relaxng.rnc
 %%DATADIR%%/%%EMACS_VER%%/etc/schema/schemas.xml
@@ -1916,7 +1927,6 @@ share/metainfo/emacs.appdata.xml
 %%DATADIR%%/%%EMACS_VER%%/lisp/fringe.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/generic-x.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/generic-x.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/gnus/.dir-locals.el
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/canlock.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/canlock.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/gnus/deuglify.el.gz
