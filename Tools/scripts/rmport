@@ -4,7 +4,7 @@
 #
 # Copyright 2006-2007 Vasil Dimov
 # Copyright 2012-2018 Chris Rees
-# Copyright 2016-2018 Rene Ladan
+# Copyright 2016-2021 René Ladan
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -32,35 +32,26 @@
 # Originally written by Vasil Dimov <vd@FreeBSD.org>
 # Others:
 # Chris Rees <crees@FreeBSD.org>
-# Rene Ladan <rene@FreeBSD.org>
-#
-# $FreeBSD$
+# René Ladan <rene@FreeBSD.org>
 #
 # MAINTAINER=	crees@FreeBSD.org
 #
 
 EDITOR=${EDITOR:-/usr/bin/vi}
 PORTSDIR=${PORTSDIR:-/usr/ports}
-INDEX=${PORTSDIR}/`make -C ${PORTSDIR} -V INDEXFILE`
+INDEX=${PORTSDIR}/$(make -C ${PORTSDIR} -V INDEXFILE)
 
-TODAY=`date -u -v+0d +%Y-%m-%d`
+TODAY=$(date -u +%Y-%m-%d)
 
 SED="sed -i .orig -E"
 # use ~/.ssh/config to set up the desired username if different than $LOGNAME
-SVNREPO=${SVNREPO:-svn+ssh://repo.FreeBSD.org/ports}
+GITREPO=${GITREPO:-git@gitrepo.FreeBSD.org:ports.git}
 
-if [ -n "$(command -v svn 2>/dev/null)" ]; then
-        SVN=svn
-elif [ -n "$(command -v svnlite 2>/dev/null)" ]; then
-        SVN=svnlite
+if [ -n "$(command -v git 2>/dev/null)" ]; then
+	GIT=git
 else
-        echo "Neither svn(1) nor svnlite(1) found.  Please install devel/subversion."
+	echo "git(1) not found.  Please install devel/git."
 	exit 1
-fi
-
-
-if ! CDIFF=$(which cdiff) ; then
-	CDIFF=${PAGER}
 fi
 
 log()
@@ -85,8 +76,8 @@ ask()
 	question=${1}
 
 	answer=x
-	while [ "${answer}" != "y" -a "${answer}" != "n" ] ; do
-		read -p "${question} [yn] " answer
+	while [ "${answer}" != "y" ] && [ "${answer}" != "n" ] ; do
+		read -p "${question}? [yn]" answer
 	done
 
 	echo ${answer}
@@ -105,13 +96,13 @@ find_catport()
 		# either absolute or relative
 
 		# get the full path
-		rp=`realpath ${arg}`
+		rp=$(realpath ${arg})
 
-		category=`basename \`dirname ${rp}\``
-		port=`basename ${rp}`
+		category=$(basename $(dirname ${rp}))
+		port=$(basename ${rp})
 		echo ${category}/${port}
 	else
-		echo "What do you mean by \`${arg}'?" >&2
+		echo "What do you mean by '${arg}'?" >&2
 		exit 1
 	fi
 }
@@ -121,7 +112,8 @@ find_expired()
 	for category in $(make -C ${PORTSDIR} -V SUBDIR); do
 		for port in $(make -C ${PORTSDIR}/${category} -V SUBDIR); do
 			DATE="$(make -C ${PORTSDIR}/${category}/${port} -V EXPIRATION_DATE)"
-			if [ -n "${DATE}" -a ! "${DATE}" \> "${TODAY}" ] ; then
+			# shellcheck disable=SC2039
+			if [ -n "${DATE}" ] && [ ! "${DATE}" \> "$${TODAY}" ] ; then
 				if [ "$1" = 1 ] ; then
 					echo -n "${DATE} ${category}/${port}: "
 					make -C ${PORTSDIR}/${category}/${port} -V DEPRECATED
@@ -133,24 +125,6 @@ find_expired()
 	done
 }
 
-# create temporary checkout directory
-mkcodir()
-{
-	log "creating temporary directory"
-	d=`mktemp -d -t rmport`
-	echo "This is the commit message, please edit it." >> ${d}/svnlog
-	log "created ${d}"
-	echo "${d}"
-}
-
-# checkout common files from the repository
-co_common()
-{
-	log "getting ports/MOVED and ports/LEGAL from repository"
-	${SVN} co --depth empty ${SVNREPO}/head ports
-	${SVN} up ports/MOVED ports/LEGAL
-}
-
 # check if some ports depend on the given port
 # XXX Very Little Chance (tm) for breaking INDEX exists:
 # /usr/ports/INDEX may be outdated and not contain recently added dependencies
@@ -158,19 +132,19 @@ check_dep_core()
 {
 	catport=${1}
 	alltorm=${2}
-	pkgname=`pkgname ${catport}`
+	pkgname=$(pkgname ${catport})
 
 	rmpkgs=""
 	rmcatports=""
 	for torm in ${alltorm} ; do
-		torm="`echo ${torm} | sed 's/\/$//'`"
-		rmpkgs="${rmpkgs:+${rmpkgs}|}`pkgname ${torm}`"
+		torm="$(echo ${torm} | sed 's/\/$//')"
+		rmpkgs="${rmpkgs:+${rmpkgs}|}$(pkgname ${torm})"
 		rmcatports="${rmcatports:+${rmcatports}|}${PORTSDIR}/${torm}/"
 	done
 
 	err=0
 
-	deps=`grep -E "${pkgname}" ${INDEX} |grep -vE "^(${rmpkgs})" || :`
+	deps=$(grep -E "${pkgname}" ${INDEX} |grep -vE "^(${rmpkgs})" || :)
 	if [ -n "${deps}" ] ; then
 		log "${catport}: some port(s) depend on ${pkgname}:"
 		echo "${deps}" >&2
@@ -178,11 +152,9 @@ check_dep_core()
 	fi
 
 	# check if some Makefiles mention the port to be deleted
-	portdir_grep="^[^#].*/`basename ${catport}`([[:space:]]|@|/|$)"
-	r="`find -H ${PORTSDIR} -mindepth 2 -maxdepth 3 \
-		\( -name "Makefile*" -or -path "*Mk/*.mk" \) \
-		|xargs grep -EH "${portdir_grep}" \
-		|grep -vE "^(${rmcatports})" || :`"
+	portdir_grep="^[^#].*/$(basename ${catport})([[:space:]]|@|/|$)"
+	r="$(${GIT} grep '${portdir_grep}' -- '**Makefile*' 'Mk/' \
+		|grep -vE "^(${rmcatports})" || :)"
 	if [ -n "${r}" ] ; then
 		if [ ${err} -eq 1 ] ; then
 			echo >&2
@@ -205,7 +177,7 @@ check_dep()
 
 	err=0
 
-	res="`check_dep_core ${catport} "${alltorm}" 2>&1`" || err=1
+	res="$(check_dep_core ${catport} "${alltorm}" 2>&1)" || err=1
 
 	if [ ${err} -eq 0 ] ; then
 		return 0
@@ -219,7 +191,7 @@ check_dep()
 
 	echo "" >&2
 	echo "you can skip ${catport} and continue with the rest or remove it anyway" >&2
-	answer=`ask "do you want to skip ${catport}?"`
+	answer=$(ask "do you want to skip ${catport}")
 	if [ "${answer}" = "y" ] ; then
 		return 1
 	else
@@ -227,8 +199,8 @@ check_dep()
 	fi
 }
 
-# query GNATS via Bugzilla, format and return the result
-get_PRs_www()
+# query Bugzilla and return the result
+get_PRs()
 {
 	catport=${1}
 	synopsis=${2}
@@ -237,7 +209,7 @@ get_PRs_www()
 
 	url="https://bugs.freebsd.org/bugzilla/buglist.cgi?quicksearch=${synopsis}"
 
-	raw="`fetch -q -T 20 -o - "${url}"`"
+	raw="$(fetch -q -T 20 -o - "${url}")"
 
 	if [ -z "${raw}" ] ; then
 		log "${catport}: empty result from URL: ${url}"
@@ -249,29 +221,20 @@ get_PRs_www()
 	|sort
 }
 
-# query GNATS and return the result
-get_PRs()
-{
-	catport=${1}
-	synopsis=${2}
-
-	get_PRs_www ${catport} ${synopsis}
-}
-
 # check if any PRs exist that are related to the port
 check_PRs()
 {
 	catport=${1}
 	synopsis=${2}
 
-	PRs="`get_PRs ${catport} "${synopsis}"`" || exit
+	PRs="$(get_PRs ${catport} "${synopsis}")" || exit
 
 	if [ -n "${PRs}" ] ; then
 		log "${catport}: PRs found, related to ${synopsis}:"
 		printf "%s\n" "${PRs}" >&2
 
 		echo "you can skip ${catport} and continue with the rest or remove it anyway" >&2
-		answer=`ask "do you want to skip ${catport}?"`
+		answer=$(ask "do you want to skip ${catport}")
 		if [ "${answer}" = "y" ] ; then
 			return 1
 		else
@@ -280,17 +243,6 @@ check_PRs()
 	fi
 
 	return 0
-}
-
-# checkout port's specific files from the repository
-co_port()
-{
-	cat=${1}
-	port=${2}
-
-	log "${cat}/${port}: getting ${cat}/Makefile and port's files from repository"
-	${SVN} up --depth empty ports/${cat} ports/$cat/Makefile
-	${SVN} up ports/${cat}/${port}
 }
 
 # check if anything about the port is mentioned in ports/LEGAL
@@ -302,11 +254,11 @@ check_LEGAL()
 	for checkstr in ${pkgname} ${catport} ; do
 		msg="${catport}: checking if ${checkstr} is in ports/LEGAL"
 		log "${msg}"
-		while grep -i ${checkstr} ports/LEGAL ; do
+		while grep -i ${checkstr} LEGAL ; do
 			echo "" >&2
-			echo "${checkstr} is in ${PWD}/ports/LEGAL" >&2
+			echo "${checkstr} is in ports/LEGAL" >&2
 			echo "remove it and hit <enter> when ready" >&2
-			echo "or hit \`s' to skip this issue and continue anyway" >&2
+			echo "or hit 's' to skip this issue and continue anyway" >&2
 			read answer
 			if [ "${answer}" = "s" ] ; then
 				break
@@ -314,6 +266,7 @@ check_LEGAL()
 			log "${msg}"
 		done
 	done
+	${GIT} add LEGAL
 }
 
 # add port's entry to ports/MOVED
@@ -321,9 +274,9 @@ edit_MOVED()
 {
 	catport=${1}
 
-	DEPRECATED="`make -C ${PORTSDIR}/${catport} -V DEPRECATED`"
+	DEPRECATED="$(make -C ${PORTSDIR}/${catport} -V DEPRECATED)"
 	DEPRECATED=${DEPRECATED:+: ${DEPRECATED}}
-	if [ -n "`make -C ${PORTSDIR}/${catport} -V EXPIRATION_DATE`" ] ; then
+	if [ -n "$(make -C ${PORTSDIR}/${catport} -V EXPIRATION_DATE)" ] ; then
 		REASON="Has expired${DEPRECATED}"
 	else
 		REASON="Removed${DEPRECATED}"
@@ -331,7 +284,8 @@ edit_MOVED()
 
 	log "${catport}: adding entry to ports/MOVED"
 
-	echo "${catport}||${TODAY}|${REASON}" >> ports/MOVED
+	echo "${catport}||${TODAY}|${REASON}" >> MOVED
+	${GIT} add MOVED
 }
 
 # remove port from category/Makefile
@@ -342,10 +296,10 @@ edit_Makefile()
 
 	log "${cat}/${port}: removing from ${cat}/Makefile"
 
-	portesc=`escape ${port}`
+	portesc=$(escape ${port})
 
-	${SED} -e "/^[[:space:]]*SUBDIR[[:space:]]*\+=[[:space:]]*${portesc}([[:space:]]+#.*)?$/d" \
-		ports/${cat}/Makefile
+	${SED} -e "/^[[:space:]]*SUBDIR[[:space:]]*\+=[[:space:]]*${portesc}([[:space:]]+#.*)?$/d" ${cat}/Makefile
+	${GIT} add ${cat}/Makefile
 }
 
 # remove port's files
@@ -355,7 +309,7 @@ rm_port()
 
 	log "${catport}: removing port's files"
 
-	${SVN} rm ports/${catport}
+	${GIT} rm -r ${catport}
 }
 
 append_Template()
@@ -364,81 +318,42 @@ append_Template()
 
 	msg=${catport}
 
-	EXPIRATION_DATE=`make -C ${PORTSDIR}/${catport} -V EXPIRATION_DATE`
+	EXPIRATION_DATE=$(make -C ${PORTSDIR}/${catport} -V EXPIRATION_DATE)
 	if [ -n "${EXPIRATION_DATE}" ] ; then
 		msg="${EXPIRATION_DATE} ${msg}"
 	fi
 
-	DEPRECATED="`make -C ${PORTSDIR}/${catport} -V DEPRECATED`"
+	DEPRECATED="$(make -C ${PORTSDIR}/${catport} -V DEPRECATED)"
 	if [ -n "${DEPRECATED}" ] ; then
 		msg="${msg}: ${DEPRECATED}"
 	fi
 
 	log "${catport}: adding entry to commit message template"
 
-	echo "${msg}" >> ./svnlog
+	echo "${msg}" >> ${gitlog}
 }
 
-# diff
-diff()
-{
-	log "creating diff"
-
-	diffout=${codir}/diff
-
-	${SVN} diff --no-diff-deleted ports > ${diffout} 2>&1 || :
-
-	read -p "hit <enter> to view svn diff output" dummy
-
-	# give this to the outside world so it can be showed to the committer
-	# and removed when we are done
-	echo ${diffout}
-}
-
-# update, ask for confirmation and commit
+# update, ask for confirmation and make a commit
 commit()
 {
-	log "running svn update"
-	${SVN} up --quiet ports 2>&1 |${PAGER:-less}
-	
-	echo >> svnlog
-	echo
-	$EDITOR svnlog
-
-	log "Your commit message is:"
-	cat svnlog
-
-	answer=y
-	while [ "${answer}" = "y" ] ; do
-		answer=`ask "Do you want to edit your commit message again?"`
-		if [ "${answer}" = "y" ] ; then
-			$EDITOR svnlog
-		fi
-	done
-
-	answer=`ask "Do you want to commit now?"`
-
+	${GIT} commit --file=${gitlog}
+	answer=$(ask "Do you want to merge and tweak the commit message")
 	if [ "${answer}" = "y" ] ; then
-		${SVN} ci --file svnlog ports
+		${GIT} checkout main 2>&1
+		${GIT} pull --ff-only 2>&1
+		${GIT} merge --squash ${branch} 2>&1 # history remains linear
+		${GIT} commit 2>&1 # modify final commit message
+		echo "All done, check the result and push when everything is OK."
 	fi
 }
 
 cleanup()
 {
-	diffout=${1}
-	codir=${2}
-
 	log "cleaning up"
 
-	rm ${diffout}
-
-	rm svnlog
-
-	# release ports directories
-	rm -rf ports
-
-	cd /
-	rmdir ${codir}
+	rm -f ${gitlog}
+	${GIT} checkout main
+	${GIT} branch -D ${branch}
 }
 
 usage()
@@ -465,7 +380,20 @@ usage()
 
 # main
 
-if [ ${#} -eq 0 -o "${1}" = "-h" -o "${1}" = "--help" ] ; then
+if ! ${GIT} diff --exit-code remotes/origin/main ; then
+	echo "you have local commits, exiting" >&2
+	exit
+fi
+git_dir="$(${GIT} rev-parse --git-dir)"
+exitcode=$?
+if [ ${exitcode} -ne 0 ] ; then
+	echo "not at a git boundary" >&2
+	exit
+else
+	cd "${git_dir}/.." || exit 1
+fi
+
+if [ ${#} -eq 0 ] || [ "${1}" = "-h" ] || [ "${1}" = "--help" ] ; then
 	usage
 fi
 
@@ -473,7 +401,7 @@ if [ ${1} = "-d" ] ; then
 	if [ ${#} -ne 2 ] ; then
 		usage
 	fi
-	catport=`find_catport ${2}`
+	catport=$(find_catport ${2})
 	check_dep ${catport} 0 ${catport}
 	exit
 fi
@@ -498,23 +426,22 @@ if [ ${1} = "-a" ] ; then
 	if [ ${#} -ne 1 ] ; then
 		usage
 	fi
-	${0} `find_expired 0`
+	${0} $(find_expired 0)
 	exit
 fi
 
-codir=`mkcodir`
-cd ${codir}
-
-co_common
+branch="rmport-$(date +%s)"
+${GIT} checkout -b ${branch} remotes/origin/main
+gitlog=$(mktemp -t gitlog)
 
 for catport in $* ; do
 	# convert to category/port
-	catport=`find_catport ${catport}`
-	cat=`dirname ${catport}`
-	port=`basename ${catport}`
+	catport=$(find_catport ${catport})
+	cat=$(dirname ${catport})
+	port=$(basename ${catport})
 	# remove any trailing slashes
 	catport="${cat}/${port}"
-	pkgname=`pkgname ${catport}`
+	pkgname=$(pkgname ${catport})
 
 	if ! check_dep ${catport} 1 "${*}" ; then
 		continue
@@ -523,8 +450,6 @@ for catport in $* ; do
 	if ! check_PRs ${catport} ${port} ; then
 		continue
 	fi
-
-	co_port ${cat} ${port}
 
 	check_LEGAL ${catport} ${pkgname}
 
@@ -543,17 +468,18 @@ done
 # the diff afterwards
 answer=y
 while [ "${answer}" = "y" ] ; do
-	diffout=$(diff)
-
-	${CDIFF} < ${diffout}
+	${GIT} diff --staged --irreversible-delete
 
 	echo "" >&2
-	echo "you can now edit files under ${codir}/ by hand" >&2
-	answer=`ask "do you want to recreate the diff?"`
+	echo "you can now edit files by hand" >&2
+	answer=$(ask "do you want to recreate the diff")
+	if [ "${answer}" = "y" ] ; then
+		${GIT} add LEGAL MOVED
+	fi
 done
 
 commit
 
-cleanup ${diffout} ${codir}
+cleanup
 
 # EOF
