@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	webdis
 DISTVERSION=	0.1.14
 CATEGORIES=	databases

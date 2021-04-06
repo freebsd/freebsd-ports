@@ -1,5 +1,4 @@
 # Created by: Serhii (Sergey) Kozlov <skozlov@FreeBSD.org>
-# $FreeBSD: head/shells/ohmyzsh/Makefile 558339 2020-12-17 23:43:18Z skozlov $
 
 PORTNAME=	ohmyzsh
 PORTVERSION=	20210331
