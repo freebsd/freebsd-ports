@@ -17,6 +17,7 @@ LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc64le=	libunwind.so:devel/libunwind
 
 USES=		cmake:noninja compiler:c++11-lang perl5 python:3.6+ shebangfix
 SHEBANG_FILES=	tools/simgrid_convert_TI_traces.py
