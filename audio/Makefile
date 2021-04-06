@@ -58,6 +58,7 @@
     SUBDIR += bjumblr-lv2
     SUBDIR += bliss
     SUBDIR += blop
+    SUBDIR += boops-lv2
     SUBDIR += bristol
     SUBDIR += bsequencer-lv2
     SUBDIR += bshapr-lv2
