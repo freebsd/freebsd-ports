@@ -3,7 +3,7 @@
 
 PORTNAME=	libdaq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
+DISTVERSION=	3.0.2
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -25,9 +25,5 @@ LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 CONFLICTS=	daq-2*
-
-post-patch:
-	${REINPLACE_CMD} 's|meta_ack_data.tcp_window_size = tcp->window;|meta_ack_data.tcp_window_size = tcp->th_win;|' \
-		${WRKSRC}/modules/fst/fst.h
 
 .include <bsd.port.mk>
