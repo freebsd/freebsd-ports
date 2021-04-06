@@ -1,5 +1,5 @@
-TIMESTAMP = 1613742073
-SHA256 (go/devel_goswagger/goswagger-v0.26.1/v0.26.1.mod) = 2a1ac4db74ee6fa8ed267e51501ed9309cdd6587f2c0ba05d7b9fa2347a2a44c
-SIZE (go/devel_goswagger/goswagger-v0.26.1/v0.26.1.mod) = 1800
-SHA256 (go/devel_goswagger/goswagger-v0.26.1/v0.26.1.zip) = 465a017241a1a533766d214479ec330db4191ad796341fbb9f97a498a63ada4d
-SIZE (go/devel_goswagger/goswagger-v0.26.1/v0.26.1.zip) = 4352951
+TIMESTAMP = 1617721053
+SHA256 (go/devel_goswagger/goswagger-v0.27.0/v0.27.0.mod) = 156414e59cf8c5f699ed09d5267bd34a08e1f963f4849fb7e125925a660ce96c
+SIZE (go/devel_goswagger/goswagger-v0.27.0/v0.27.0.mod) = 1903
+SHA256 (go/devel_goswagger/goswagger-v0.27.0/v0.27.0.zip) = 7b91234df74c2014ebb2bf3efdb26399f7d31b310d1e63e7b85d722f68e903e9
+SIZE (go/devel_goswagger/goswagger-v0.27.0/v0.27.0.zip) = 4458843
