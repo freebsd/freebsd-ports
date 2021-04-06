@@ -10,7 +10,6 @@ COMMENT=	Screen video recorder
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
 
 USES=		cmake compiler:c++11-lang pkgconfig qt:5 xorg
@@ -41,6 +40,7 @@ JACK_CMAKE_BOOL=	WITH_JACK
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 
 V4L_CMAKE_BOOL=		WITH_V4L2
+V4L_BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 
 post-install:  # https://github.com/MaartenBaert/ssr/issues/609
