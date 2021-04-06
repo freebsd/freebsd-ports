@@ -1,7 +1,7 @@
 # Created by: Matthias Andree <mandree@FreeBSD.org>
 
 PORTNAME=		openvpn
-DISTVERSION=		202049
+DISTVERSION=		202113
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://secure-computing.net/files/openvpn/
 PKGNAMESUFFIX=		-devel
