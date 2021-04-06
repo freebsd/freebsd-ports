@@ -1,6 +1,13 @@
---- ruby/Gemfile.orig	2021-03-04 13:36:33 UTC
+--- ruby/Gemfile.orig	2021-03-17 18:58:25 UTC
 +++ ruby/Gemfile
-@@ -19,15 +19,5 @@ gem 'gitlab-labkit', '~> 0.15.0'
+@@ -13,21 +13,11 @@ gem 'faraday', '~> 1.0'
+ gem 'rbtrace', require: false
+ 
+ # Labkit provides observability functionality
+-gem 'gitlab-labkit', '~> 0.15.0'
++gem 'gitlab-labkit', '~> 0.16.1'
+ 
+ # Detects the open source license the repository includes
  # This version needs to be in sync with GitLab CE/EE
  gem 'licensee', '~> 9.14.1'
  
