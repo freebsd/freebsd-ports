@@ -1,6 +1,6 @@
 
 PORTNAME=	json-yaml
-DISTVERSION=	1.1.2
+DISTVERSION=	1.2.1
 CATEGORIES=	textproc
 
 MAINTAINER=	ik@sjmulder.nl
@@ -12,12 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LIB_DEPENDS=	libyajl.so:devel/yajl \
 		libyaml.so:textproc/libyaml
 
-MAKE_ARGS+=	MANPREFIX=${PREFIX}/man
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	sjmulder
 
+MAKE_ARGS+=	MANPREFIX=${PREFIX}/man CFLAGS=-I${PREFIX}/include\ -L${PREFIX}/lib
+
 PLIST_FILES=	bin/json-yaml \
-		man/man1/json-yaml.1.gz
+		bin/yaml-json \
+		man/man1/json-yaml.1.gz \
+		man/man1/yaml-json.1.gz
 
 .include <bsd.port.mk>
