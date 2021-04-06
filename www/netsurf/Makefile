@@ -29,14 +29,15 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libwapcaplet.so:textproc/libwapcaplet \
 		libhubbub.so:www/libhubbub \
 		libexpat.so:textproc/expat2 \
-		libnspsl.so:dns/libnspsl
+		libnspsl.so:dns/libnspsl \
+		libwebp.so:graphics/webp
 RUN_DEPENDS=	duk:lang/duktape \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		bison desktop-file-utils gettext-runtime gmake gnome iconv jpeg \
-		localbase pkgconfig shebangfix ssl
+USES=		bison desktop-file-utils gmake gnome jpeg \
+		localbase pkgconfig shebangfix ssl iconv:translit
 ALL_TARGET=	#empty
-LDFLAGS+=	-L${OPENSSLLIB} -lssl -lcrypto ${ICONV_LIB}
+LDFLAGS+=	-L${OPENSSLLIB} -lssl -lcrypto
 CFLAGS+=	-I${OPENSSLINC}
 MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}" CCOPT="" HOST="${OPSYS}" \
 		TARGET="gtk3" \
@@ -47,30 +48,18 @@ USE_GNOME=	glib20 gtk30 cairo librsvg2
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
 SHEBANG_FILES=	utils/split-messages.pl
-perl_CMD=	${SETENV} perl
+perl_CMD=	${PERL}
 
-OPTIONS_DEFINE=		GSTREAMER
-OPTIONS_EXCLUDE=	GSTREAMER
-GSTREAMER_USE=		GSTREAMER=yes, good
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} '/CFLAGS/d' \
 		${WRKSRC}//Makefile.defaults
-	@${REINPLACE_CMD} 's| -O2||' \
-		${WRKSRC}/frontends/gtk/Makefile.defaults
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
-		${WRKSRC}/frontends/gtk/gui.c
+	@${CP} ${FILESDIR}/buildui.pl ${WRKSRC}/utils/
 
 do-configure:
 	@${CP} ${FILESDIR}/Makefile.config  ${WRKSRC}
-.if empty(ICONV_LIB)
-	@${REINPLACE_CMD} '/NETSURF_USE_LIBICONV_PLUG/ s|NO|YES|' \
-		${WRKSRC}/Makefile.config
-.endif
-
-do-configure-GSTREAMER-on:
-	@${REINPLACE_CMD} '/NETSURF_USE_VIDEO/ s|NO|YES|' \
-		${WRKSRC}/Makefile.config
 
 post-install:
 	cd ${STAGEDIR}${PREFIX}/bin && ${LN} -sf netsurf-gtk3 \
@@ -78,6 +67,16 @@ post-install:
 .for d in applications pixmaps
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/${d}
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/deoptions.gtk3.ui \
+		${STAGEDIR}${PREFIX}/share/netsurf
+	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/enoptions.gtk3.ui \
+		${STAGEDIR}${PREFIX}/share/netsurf
+	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/froptions.gtk3.ui \
+		${STAGEDIR}${PREFIX}/share/netsurf
+	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/itoptions.gtk3.ui \
+		${STAGEDIR}${PREFIX}/share/netsurf
+	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/nloptions.gtk3.ui \
+		${STAGEDIR}${PREFIX}/share/netsurf
 	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/netsurf-gtk.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/netsurf.xpm \

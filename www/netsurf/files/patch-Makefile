@@ -1,6 +1,23 @@
 --- Makefile.orig	2020-05-24 20:55:29 UTC
 +++ Makefile
-@@ -547,7 +547,6 @@ ifeq ($(HOST),mint)
+@@ -484,16 +484,6 @@ ifneq ($(CC_MAJOR),2)
+   COMMON_WARNFLAGS += -Wno-unused-parameter
+ endif
+ 
+-# deal with lots of unwanted warnings from javascript
+-ifeq ($(call cc_ver_ge,4,6),1)
+-  COMMON_WARNFLAGS += -Wno-unused-but-set-variable
+-endif
+-
+-# Implicit fallthrough warnings suppressed by comment
+-ifeq ($(call cc_ver_ge,7,1),1)
+-  COMMON_WARNFLAGS += -Wimplicit-fallthrough=3
+-endif
+-
+ # deal with chaging warning flags for different platforms
+ ifeq ($(HOST),OpenBSD)
+   # OpenBSD headers are not compatible with redundant declaration warning
+@@ -547,7 +537,6 @@ ifeq ($(HOST),mint)
  else
      $(eval $(call pkg_config_find_and_add_enabled,CURL,libcurl,Curl))
  endif
@@ -8,3 +25,34 @@
  
  $(eval $(call pkg_config_find_and_add_enabled,UTF8PROC,libutf8proc,utf8))
  $(eval $(call pkg_config_find_and_add_enabled,WEBP,libwebp,WEBP))
+@@ -680,14 +669,21 @@ $$(MESSAGES_TARGET)/$(1)/Messages: resources/FatMessag
+ 	$$(Q)$$(SPLIT_MESSAGES) -l $(1) -p $$(MESSAGES_FILTER) -f messages -o $$@ -z $$<
+ 
+ CLEAN_MESSAGES += $$(MESSAGES_TARGET)/$(1)/Messages
++CLEAN_MESSAGES += $$(MESSAGES_TARGET)/$(1)options.gtk3.ui
+ MESSAGES += $$(MESSAGES_TARGET)/$(1)/Messages
+ 
+ endef
+ 
++buildui: 
++	@echo "BUILDUI: options ui for each language in resources/FatMessages"
++	@$(PERL) utils/buildui.pl resources/FatMessages frontends/gtk/res/options.gtk3.ui $(MESSAGES_TARGET) options.gtk3.ui
++
+ # generate the message file rules
+ $(eval $(foreach LANG,$(MESSAGES_LANGUAGES), \
+ 	$(call split_messages,$(LANG))))
+ 
++MESSAGES += buildui
++
+ clean-messages:
+ 	$(VQ)echo "   CLEAN: $(CLEAN_MESSAGES)"
+ 	$(Q)$(RM) $(CLEAN_MESSAGES)
+@@ -710,7 +706,7 @@ OBJECTS := $(sort $(addprefix $(OBJROOT)/,$(subst /,_,
+ # Include directory flags
+ IFLAGS = $(addprefix -I,$(INCLUDE_DIRS))
+ 
+-$(EXETARGET): $(OBJECTS) $(RESOURCES) $(MESSAGES)
++$(EXETARGET): $(OBJECTS) $(RESOURCES) $(MESSAGES) 
+ 	$(VQ)echo "    LINK: $(EXETARGET)"
+ ifneq ($(TARGET)$(SUBTARGET),riscos-elf)
+ 	$(Q)$(CC) -o $(EXETARGET) $(OBJECTS) $(LDFLAGS)

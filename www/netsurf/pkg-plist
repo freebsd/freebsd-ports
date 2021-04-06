@@ -47,6 +47,11 @@ share/applications/netsurf-gtk.desktop
 %%DATADIR%%/nl/licence.html
 %%DATADIR%%/nl/welcome.html
 %%DATADIR%%/options.gtk3.ui
+%%DATADIR%%/deoptions.gtk3.ui
+%%DATADIR%%/enoptions.gtk3.ui
+%%DATADIR%%/froptions.gtk3.ui
+%%DATADIR%%/itoptions.gtk3.ui
+%%DATADIR%%/nloptions.gtk3.ui
 %%DATADIR%%/pageinfo.gtk3.ui
 %%DATADIR%%/password.gtk3.ui
 %%DATADIR%%/quirks.css

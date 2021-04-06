@@ -1,4 +1,4 @@
---- frontends/gtk/Makefile.defaults.orig	2016-11-19 13:37:41 UTC
+--- frontends/gtk/Makefile.defaults.orig	2020-05-24 20:55:29 UTC
 +++ frontends/gtk/Makefile.defaults
 @@ -4,7 +4,7 @@
  
@@ -9,3 +9,9 @@
  
  # Where to install the netsurf binary
  NETSURF_GTK_BIN := $(PREFIX)/bin/
+@@ -39,4 +39,4 @@ NETSURF_FS_BACKING_STORE := YES
+ NETSURF_GTK_MAJOR ?= 2
+ 
+ # Optimisation levels
+-CFLAGS += -O2
++CFLAGS +=
