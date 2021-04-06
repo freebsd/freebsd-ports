@@ -2,7 +2,7 @@
 
 PORTNAME=	duf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -20,11 +20,11 @@ GH_TUPLE=	golang:crypto:5c72a883971a:golang_crypto/vendor/golang.org/x/crypto \
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.10:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		muesli:termenv:v0.8.0:muesli_termenv/vendor/github.com/muesli/termenv \
+		muesli:termenv:v0.8.1:muesli_termenv/vendor/github.com/muesli/termenv \
 		rivo:uniseg:v0.1.0:rivo_uniseg/vendor/github.com/rivo/uniseg
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_SHA=	43918fe		
+_BUILD_SHA=	d1d2865
 
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
