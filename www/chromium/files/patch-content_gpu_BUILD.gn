@@ -1,9 +1,9 @@
---- content/gpu/BUILD.gn.orig	2021-01-18 21:28:57 UTC
+--- content/gpu/BUILD.gn.orig	2021-03-12 23:57:24 UTC
 +++ content/gpu/BUILD.gn
-@@ -128,7 +128,7 @@ target(link_target_type, "gpu_sources") {
- 
+@@ -137,7 +137,7 @@ target(link_target_type, "gpu_sources") {
    # Use DRI on desktop Linux builds.
-   if (current_cpu != "s390x" && current_cpu != "ppc64" && is_linux &&
+   if (current_cpu != "s390x" && current_cpu != "ppc64" &&
+       (is_linux || is_chromeos_lacros) &&
 -      (!is_chromecast || is_cast_desktop_build)) {
 +      (!is_chromecast || is_cast_desktop_build) && !is_bsd) {
      configs += [ "//build/config/linux/dri" ]

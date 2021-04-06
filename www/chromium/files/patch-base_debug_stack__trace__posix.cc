@@ -1,4 +1,4 @@
---- base/debug/stack_trace_posix.cc.orig	2021-01-18 21:28:44 UTC
+--- base/debug/stack_trace_posix.cc.orig	2021-03-12 23:57:15 UTC
 +++ base/debug/stack_trace_posix.cc
 @@ -35,7 +35,7 @@
  #include <AvailabilityMacros.h>
@@ -9,7 +9,29 @@
  #include "base/debug/proc_maps_linux.h"
  #endif
  
-@@ -696,7 +696,11 @@ class SandboxSymbolizeHelper {
+@@ -659,13 +659,21 @@ class SandboxSymbolizeHelper {
+     // Reads /proc/self/maps.
+     std::string contents;
+     if (!ReadProcMaps(&contents)) {
++#if defined(OS_BSD)
++      LOG(ERROR) << "Failed to read /proc/curproc/map";
++#else
+       LOG(ERROR) << "Failed to read /proc/self/maps";
++#endif
+       return false;
+     }
+ 
+     // Parses /proc/self/maps.
+     if (!ParseProcMaps(contents, &regions_)) {
++#if defined(OS_BSD)
++      LOG(ERROR) << "Failed to parse the contents of /proc/curproc/map";
++#else
+       LOG(ERROR) << "Failed to parse the contents of /proc/self/maps";
++#endif
+       return false;
+     }
+ 
+@@ -696,7 +704,11 @@ class SandboxSymbolizeHelper {
            // Skip regions with empty file names.
            continue;
          }

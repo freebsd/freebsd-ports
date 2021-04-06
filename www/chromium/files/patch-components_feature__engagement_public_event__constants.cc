@@ -1,4 +1,4 @@
---- components/feature_engagement/public/event_constants.cc.orig	2021-01-18 21:28:55 UTC
+--- components/feature_engagement/public/event_constants.cc.orig	2021-03-12 23:57:22 UTC
 +++ components/feature_engagement/public/event_constants.cc
 @@ -10,13 +10,13 @@ namespace feature_engagement {
  
@@ -8,9 +8,9 @@
 +#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) || \
      defined(OS_CHROMEOS)
  const char kNewTabOpened[] = "new_tab_opened";
- #endif  // defined(OS_WIN) || defined(OS_APPLE) ||
--        // defined(OS_LINUX) || defined(OS_CHROMEOS)
-+        // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||
++#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) ||
+         // defined(OS_CHROMEOS)
  
 -#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \
 +#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) || \

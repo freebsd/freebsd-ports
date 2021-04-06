@@ -1,4 +1,4 @@
---- third_party/swiftshader/src/Main/SwiftConfig.cpp.orig	2020-11-13 06:42:23 UTC
+--- third_party/swiftshader/src/Main/SwiftConfig.cpp.orig	2021-03-13 00:03:40 UTC
 +++ third_party/swiftshader/src/Main/SwiftConfig.cpp
 @@ -764,7 +764,11 @@ namespace sw
  		struct stat status;

@@ -1,4 +1,4 @@
---- tools/gn/src/gn/function_write_file_unittest.cc.orig	2020-11-16 14:57:45 UTC
+--- tools/gn/src/gn/function_write_file_unittest.cc.orig	2021-03-13 00:10:18 UTC
 +++ tools/gn/src/gn/function_write_file_unittest.cc
 @@ -13,7 +13,7 @@
  #include "gn/test_with_scope.h"

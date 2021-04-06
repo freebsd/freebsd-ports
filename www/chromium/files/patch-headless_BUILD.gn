@@ -1,6 +1,6 @@
---- headless/BUILD.gn.orig	2021-01-18 21:28:59 UTC
+--- headless/BUILD.gn.orig	2021-03-12 23:57:25 UTC
 +++ headless/BUILD.gn
-@@ -271,7 +271,7 @@ source_set("headless_shared_sources") {
+@@ -272,7 +272,7 @@ source_set("headless_shared_sources") {
    sources += generated_devtools_api
    sources += get_target_outputs(":protocol_sources")
  
@@ -18,7 +18,7 @@
      deps += [ "//components/crash/content/browser" ]
    }
    if (is_component_build && is_win) {
-@@ -455,7 +455,7 @@ component("headless_non_renderer") {
+@@ -459,7 +459,7 @@ component("headless_non_renderer") {
        "//v8",
      ]
  
@@ -27,7 +27,7 @@
        deps += [ "//components/crash/content/browser" ]
      }
      if (is_win) {
-@@ -746,7 +746,7 @@ static_library("headless_shell_lib") {
+@@ -772,7 +772,7 @@ static_library("headless_shell_lib") {
      public_deps += [ ":headless_non_renderer" ]
    }
  

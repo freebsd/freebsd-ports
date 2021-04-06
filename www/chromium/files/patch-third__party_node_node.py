@@ -1,4 +1,4 @@
---- third_party/node/node.py.orig	2020-11-13 06:37:03 UTC
+--- third_party/node/node.py.orig	2021-03-12 23:57:46 UTC
 +++ third_party/node/node.py
 @@ -13,6 +13,7 @@ import os
  def GetBinaryPath():

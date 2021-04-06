@@ -1,4 +1,4 @@
---- third_party/boringssl/src/crypto/ex_data.c.orig	2020-11-13 06:42:13 UTC
+--- third_party/boringssl/src/crypto/ex_data.c.orig	2021-03-13 00:03:31 UTC
 +++ third_party/boringssl/src/crypto/ex_data.c
 @@ -186,7 +186,9 @@ int CRYPTO_set_ex_data(CRYPTO_EX_DATA *ad, int index, 
      }

@@ -1,4 +1,4 @@
---- base/threading/platform_thread_unittest.cc.orig	2021-01-18 21:28:45 UTC
+--- base/threading/platform_thread_unittest.cc.orig	2021-03-12 23:57:15 UTC
 +++ base/threading/platform_thread_unittest.cc
 @@ -312,7 +312,7 @@ TEST(PlatformThreadTest,
  // and hardcodes what we know. Please inform scheduler-dev@chromium.org if this

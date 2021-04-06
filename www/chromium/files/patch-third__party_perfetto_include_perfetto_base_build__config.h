@@ -1,4 +1,4 @@
---- third_party/perfetto/include/perfetto/base/build_config.h.orig	2020-11-13 06:42:20 UTC
+--- third_party/perfetto/include/perfetto/base/build_config.h.orig	2021-03-13 00:03:38 UTC
 +++ third_party/perfetto/include/perfetto/base/build_config.h
 @@ -27,6 +27,7 @@
  #if defined(__ANDROID__)
@@ -30,7 +30,7 @@
  #define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_NACL() 0
 +#elif defined(__FreeBSD__)
 +#define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_ANDROID() 0
-+#define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_LINUX() 1
++#define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_LINUX() 0
 +#define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_FREEBSD() 1
 +#define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_WIN() 0
 +#define PERFETTO_BUILDFLAG_DEFINE_PERFETTO_OS_APPLE() 0

@@ -1,6 +1,6 @@
---- content/utility/BUILD.gn.orig	2020-11-17 10:17:48 UTC
+--- content/utility/BUILD.gn.orig	2021-03-12 23:57:24 UTC
 +++ content/utility/BUILD.gn
-@@ -84,7 +84,7 @@ source_set("utility") {
+@@ -93,7 +93,7 @@ source_set("utility") {
      deps += [ "//services/proxy_resolver:lib" ]
    }
  

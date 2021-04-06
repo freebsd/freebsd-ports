@@ -1,4 +1,4 @@
---- cc/test/pixel_test.cc.orig	2020-11-13 06:36:34 UTC
+--- cc/test/pixel_test.cc.orig	2021-03-12 23:57:15 UTC
 +++ cc/test/pixel_test.cc
 @@ -69,7 +69,7 @@ PixelTest::PixelTest(GraphicsBackend backend)
      init_vulkan = true;

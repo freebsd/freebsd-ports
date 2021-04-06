@@ -1,6 +1,6 @@
---- base/cpu.h.orig	2020-11-16 17:24:49 UTC
+--- base/cpu.h.orig	2021-03-12 23:57:15 UTC
 +++ base/cpu.h
-@@ -73,7 +73,7 @@ class BASE_EXPORT CPU final {
+@@ -84,7 +84,7 @@ class BASE_EXPORT CPU final {
    IntelMicroArchitecture GetIntelMicroArchitecture() const;
    const std::string& cpu_brand() const { return cpu_brand_; }
  
@@ -9,7 +9,7 @@
      defined(OS_AIX)
    enum class CoreType {
      kUnknown = 0,
-@@ -124,7 +124,7 @@ class BASE_EXPORT CPU final {
+@@ -135,7 +135,7 @@ class BASE_EXPORT CPU final {
    // cpuidle driver.
    using CoreIdleTimes = std::vector<TimeDelta>;
    static bool GetCumulativeCoreIdleTimes(CoreIdleTimes&);

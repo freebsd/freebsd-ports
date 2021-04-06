@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc.orig	2020-11-13 06:36:48 UTC
+--- third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc.orig	2021-03-12 23:57:30 UTC
 +++ third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
 @@ -61,7 +61,7 @@ AtomicString ToAtomicString(const SkString& str) {
    return AtomicString::FromUTF8(str.c_str(), str.size());

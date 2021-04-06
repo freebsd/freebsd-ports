@@ -1,4 +1,4 @@
---- media/audio/audio_manager.h.orig	2020-11-13 06:36:44 UTC
+--- media/audio/audio_manager.h.orig	2021-03-12 23:57:26 UTC
 +++ media/audio/audio_manager.h
 @@ -60,7 +60,7 @@ class MEDIA_EXPORT AudioManager {
    static std::unique_ptr<AudioManager> CreateForTesting(

@@ -1,4 +1,4 @@
---- chrome/browser/send_tab_to_self/receiving_ui_handler_registry.cc.orig	2020-11-13 06:36:37 UTC
+--- chrome/browser/send_tab_to_self/receiving_ui_handler_registry.cc.orig	2021-03-12 23:57:18 UTC
 +++ chrome/browser/send_tab_to_self/receiving_ui_handler_registry.cc
 @@ -11,7 +11,7 @@
  #include "chrome/browser/profiles/profile.h"

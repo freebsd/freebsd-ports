@@ -1,4 +1,4 @@
---- third_party/angle/src/libANGLE/renderer/driver_utils.h.orig	2021-01-18 21:31:44 UTC
+--- third_party/angle/src/libANGLE/renderer/driver_utils.h.orig	2021-03-13 00:03:31 UTC
 +++ third_party/angle/src/libANGLE/renderer/driver_utils.h
 @@ -151,7 +151,7 @@ inline bool IsWindows()
  

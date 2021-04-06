@@ -1,4 +1,4 @@
---- chrome/browser/performance_monitor/process_metrics_history.cc.orig	2020-11-13 06:36:37 UTC
+--- chrome/browser/performance_monitor/process_metrics_history.cc.orig	2021-03-12 23:57:18 UTC
 +++ chrome/browser/performance_monitor/process_metrics_history.cc
 @@ -47,7 +47,7 @@ void ProcessMetricsHistory::SampleMetrics() {
  #if defined(OS_WIN)

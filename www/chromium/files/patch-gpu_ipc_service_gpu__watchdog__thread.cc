@@ -1,6 +1,6 @@
---- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2021-01-18 21:28:59 UTC
+--- gpu/ipc/service/gpu_watchdog_thread.cc.orig	2021-03-12 23:57:25 UTC
 +++ gpu/ipc/service/gpu_watchdog_thread.cc
-@@ -77,7 +77,7 @@ GpuWatchdogThread::GpuWatchdogThread(base::TimeDelta t
+@@ -73,7 +73,7 @@ GpuWatchdogThread::GpuWatchdogThread(base::TimeDelta t
    }
  #endif
  
@@ -9,7 +9,7 @@
    tty_file_ = base::OpenFile(
        base::FilePath(FILE_PATH_LITERAL("/sys/class/tty/tty0/active")), "r");
    UpdateActiveTTY();
-@@ -105,7 +105,7 @@ GpuWatchdogThread::~GpuWatchdogThread() {
+@@ -101,7 +101,7 @@ GpuWatchdogThread::~GpuWatchdogThread() {
      CloseHandle(watched_thread_handle_);
  #endif
  
@@ -18,7 +18,7 @@
    if (tty_file_)
      fclose(tty_file_);
  #endif
-@@ -476,7 +476,7 @@ void GpuWatchdogThread::OnWatchdogTimeout() {
+@@ -440,7 +440,7 @@ void GpuWatchdogThread::OnWatchdogTimeout() {
    if (foregrounded_event_)
      num_of_timeout_after_foregrounded_++;
  
@@ -27,7 +27,7 @@
    UpdateActiveTTY();
  #endif
  
-@@ -869,7 +869,7 @@ bool GpuWatchdogThread::WithinOneMinFromForegrounded()
+@@ -773,7 +773,7 @@ bool GpuWatchdogThread::WithinOneMinFromForegrounded()
    return foregrounded_event_ && num_of_timeout_after_foregrounded_ <= count;
  }
  
@@ -36,7 +36,7 @@
  void GpuWatchdogThread::UpdateActiveTTY() {
    last_active_tty_ = active_tty_;
  
-@@ -886,7 +886,7 @@ void GpuWatchdogThread::UpdateActiveTTY() {
+@@ -790,7 +790,7 @@ void GpuWatchdogThread::UpdateActiveTTY() {
  #endif
  
  bool GpuWatchdogThread::ContinueOnNonHostX11ServerTty() {

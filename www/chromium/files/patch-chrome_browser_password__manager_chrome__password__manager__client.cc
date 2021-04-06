@@ -1,14 +1,26 @@
---- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2021-01-18 21:28:50 UTC
+--- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2021-03-12 23:57:18 UTC
 +++ chrome/browser/password_manager/chrome_password_manager_client.cc
-@@ -99,7 +99,11 @@
- #include "net/base/url_util.h"
- #include "net/cert/cert_status_flags.h"
- #include "services/metrics/public/cpp/ukm_recorder.h"
+@@ -9,6 +9,10 @@
+ #include <string>
+ #include <utility>
+ 
 +#if defined(OS_BSD)
 +#include <re2/re2.h>
-+#else
- #include "third_party/re2/src/re2/re2.h"
 +#endif
++
+ #include "base/bind.h"
+ #include "base/callback_helpers.h"
+ #include "base/command_line.h"
+@@ -101,8 +105,11 @@
+ #include "net/cert/cert_status_flags.h"
+ #include "services/metrics/public/cpp/ukm_recorder.h"
+ #include "services/network/public/cpp/is_potentially_trustworthy.h"
+-#include "third_party/re2/src/re2/re2.h"
  #include "url/url_constants.h"
++
++#if !defined(OS_BSD)
++#include "third_party/re2/src/re2/re2.h"
++#endif
  
  #if BUILDFLAG(FULL_SAFE_BROWSING)
+ #include "chrome/browser/safe_browsing/advanced_protection_status_manager.h"

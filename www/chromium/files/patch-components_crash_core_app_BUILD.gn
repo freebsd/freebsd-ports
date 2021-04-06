@@ -1,4 +1,4 @@
---- components/crash/core/app/BUILD.gn.orig	2020-11-16 15:59:38 UTC
+--- components/crash/core/app/BUILD.gn.orig	2021-03-12 23:57:22 UTC
 +++ components/crash/core/app/BUILD.gn
 @@ -3,7 +3,7 @@
  # found in the LICENSE file.

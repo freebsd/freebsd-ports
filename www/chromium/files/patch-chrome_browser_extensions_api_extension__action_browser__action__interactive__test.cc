@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/extension_action/browser_action_interactive_test.cc.orig	2021-01-18 21:28:50 UTC
+--- chrome/browser/extensions/api/extension_action/browser_action_interactive_test.cc.orig	2021-03-12 23:57:17 UTC
 +++ chrome/browser/extensions/api/extension_action/browser_action_interactive_test.cc
-@@ -280,7 +280,7 @@ IN_PROC_BROWSER_TEST_F(BrowserActionInteractiveTest, T
+@@ -281,7 +281,7 @@ IN_PROC_BROWSER_TEST_F(BrowserActionInteractiveTest, T
    frame_observer.Wait();
    // Non-Aura Linux uses a singleton for the popup, so it looks like all windows
    // have popups if there is any popup open.

@@ -1,8 +1,8 @@
---- chrome/common/features.gni.orig	2021-01-18 21:28:52 UTC
+--- chrome/common/features.gni.orig	2021-03-12 23:57:19 UTC
 +++ chrome/common/features.gni
-@@ -52,7 +52,7 @@ declare_args() {
+@@ -54,7 +54,7 @@ declare_args() {
    enable_one_click_signin =
-       is_win || is_mac || (is_linux && !is_chromeos && !is_chromecast)
+       is_win || is_mac || ((is_linux || is_chromeos_lacros) && !is_chromecast)
  
 -  enable_service_discovery = (enable_mdns && !is_android) || is_mac
 +  enable_service_discovery = (enable_mdns && !is_android) || is_mac || is_bsd

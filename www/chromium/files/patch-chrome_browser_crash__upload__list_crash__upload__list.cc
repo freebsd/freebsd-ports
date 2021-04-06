@@ -1,11 +1,11 @@
---- chrome/browser/crash_upload_list/crash_upload_list.cc.orig	2020-11-13 06:36:36 UTC
+--- chrome/browser/crash_upload_list/crash_upload_list.cc.orig	2021-03-12 23:57:17 UTC
 +++ chrome/browser/crash_upload_list/crash_upload_list.cc
-@@ -38,7 +38,7 @@ scoped_refptr<UploadList> CreateCrashUploadList() {
+@@ -39,7 +39,7 @@ scoped_refptr<UploadList> CreateCrashUploadList() {
  // ChromeOS uses crash_sender as its uploader even when Crashpad is enabled,
  // which isn't compatible with CrashUploadListCrashpad. crash_sender continues
  // to log uploads in CrashUploadList::kReporterLogFilename.
--#if !defined(OS_CHROMEOS)
-+#if !defined(OS_CHROMEOS) && !defined(OS_BSD)
+-#if !BUILDFLAG(IS_CHROMEOS_ASH)
++#if !BUILDFLAG(IS_CHROMEOS_ASH) && !defined(OS_BSD)
    if (crash_reporter::IsCrashpadEnabled()) {
      return new CrashUploadListCrashpad();
    }

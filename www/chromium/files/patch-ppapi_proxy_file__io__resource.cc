@@ -1,4 +1,4 @@
---- ppapi/proxy/file_io_resource.cc.orig	2020-11-13 06:36:46 UTC
+--- ppapi/proxy/file_io_resource.cc.orig	2021-03-12 23:57:28 UTC
 +++ ppapi/proxy/file_io_resource.cc
 @@ -284,17 +284,19 @@ int32_t FileIOResource::Write(int64_t offset,
  

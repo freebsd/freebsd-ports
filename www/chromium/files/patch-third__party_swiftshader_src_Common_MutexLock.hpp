@@ -1,4 +1,4 @@
---- third_party/swiftshader/src/Common/MutexLock.hpp.orig	2020-11-13 06:42:23 UTC
+--- third_party/swiftshader/src/Common/MutexLock.hpp.orig	2021-03-13 00:03:40 UTC
 +++ third_party/swiftshader/src/Common/MutexLock.hpp
 @@ -17,7 +17,7 @@
  

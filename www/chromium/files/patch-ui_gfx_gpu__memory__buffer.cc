@@ -1,4 +1,4 @@
---- ui/gfx/gpu_memory_buffer.cc.orig	2021-01-18 21:29:48 UTC
+--- ui/gfx/gpu_memory_buffer.cc.orig	2021-03-12 23:57:48 UTC
 +++ ui/gfx/gpu_memory_buffer.cc
 @@ -34,7 +34,7 @@ GpuMemoryBufferHandle GpuMemoryBufferHandle::Clone() c
    handle.region = region.Duplicate();

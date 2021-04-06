@@ -1,4 +1,4 @@
---- remoting/host/host_main.cc.orig	2020-11-13 06:36:46 UTC
+--- remoting/host/host_main.cc.orig	2021-03-12 23:57:28 UTC
 +++ remoting/host/host_main.cc
 @@ -48,9 +48,9 @@ int DesktopProcessMain();
  int FileChooserMain();
@@ -12,7 +12,24 @@
  
  namespace {
  
-@@ -143,10 +143,10 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
+@@ -61,10 +61,14 @@ const char kUsageMessage[] =
+     "\n"
+     "Options:\n"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_FREEBSD)
+     "  --audio-pipe-name=<pipe> - Sets the pipe name to capture audio on "
++#if defined(OS_LINUX)
+     "Linux.\n"
+-#endif  // defined(OS_LINUX)
++#else
++    "FreeBSD.\n"
++#endif
++#endif  // defined(OS_LINUX) || defined(OS_FREEBSD)
+ 
+ #if defined(OS_APPLE)
+     "  --list-audio-devices     - List all audio devices and their device "
+@@ -152,10 +156,10 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
    } else if (process_type == kProcessTypeRdpDesktopSession) {
      main_routine = &RdpDesktopSessionMain;
  #endif  // defined(OS_WIN)

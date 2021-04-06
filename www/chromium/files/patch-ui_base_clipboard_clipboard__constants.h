@@ -1,4 +1,4 @@
---- ui/base/clipboard/clipboard_constants.h.orig	2020-11-16 14:59:02 UTC
+--- ui/base/clipboard/clipboard_constants.h.orig	2021-03-12 23:57:48 UTC
 +++ ui/base/clipboard/clipboard_constants.h
 @@ -37,14 +37,14 @@ COMPONENT_EXPORT(UI_BASE_CLIPBOARD_TYPES) extern const
  COMPONENT_EXPORT(UI_BASE_CLIPBOARD_TYPES) extern const char kMimeTypePNG[];

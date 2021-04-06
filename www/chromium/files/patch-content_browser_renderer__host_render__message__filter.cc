@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_message_filter.cc.orig	2021-01-18 21:28:57 UTC
+--- content/browser/renderer_host/render_message_filter.cc.orig	2021-03-12 23:57:24 UTC
 +++ content/browser/renderer_host/render_message_filter.cc
 @@ -69,7 +69,7 @@
  #if defined(OS_MAC)

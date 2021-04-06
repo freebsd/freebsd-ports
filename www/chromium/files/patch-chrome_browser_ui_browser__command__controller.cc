@@ -1,38 +1,38 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2021-01-18 21:28:51 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2021-03-12 23:57:19 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
-@@ -83,7 +83,7 @@
- #include "components/session_manager/core/session_manager.h"
- #endif
+@@ -87,7 +87,7 @@
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
  #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
  #endif
  
-@@ -247,7 +247,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
- #endif
-   }
+@@ -256,7 +256,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-@@ -477,7 +477,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
-       break;
- #endif
+@@ -492,7 +492,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
-@@ -951,7 +951,7 @@ void BrowserCommandController::InitCommandState() {
-   command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_4, true);
-   command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_5, true);
+@@ -989,7 +989,7 @@ void BrowserCommandController::InitCommandState() {
  #endif
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    command_updater_.UpdateCommandEnabled(IDC_MINIMIZE_WINDOW, true);
    command_updater_.UpdateCommandEnabled(IDC_MAXIMIZE_WINDOW, true);
    command_updater_.UpdateCommandEnabled(IDC_RESTORE_WINDOW, true);

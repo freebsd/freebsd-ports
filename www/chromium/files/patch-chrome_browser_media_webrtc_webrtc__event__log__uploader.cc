@@ -1,8 +1,8 @@
---- chrome/browser/media/webrtc/webrtc_event_log_uploader.cc.orig	2020-11-13 06:36:37 UTC
+--- chrome/browser/media/webrtc/webrtc_event_log_uploader.cc.orig	2021-03-12 23:57:18 UTC
 +++ chrome/browser/media/webrtc/webrtc_event_log_uploader.cc
-@@ -40,6 +40,8 @@ const char kProduct[] = "Chrome_Mac";
+@@ -41,6 +41,8 @@ const char kProduct[] = "Chrome_Mac";
  const char kProduct[] = "Chrome_ChromeOS";
- #elif defined(OS_LINUX)
+ #elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
  const char kProduct[] = "Chrome_Linux";
 +#elif defined(OS_FREEBSD)
 +const char kProduct[] = "Chrome_FreeBSD";

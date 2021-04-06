@@ -1,20 +1,20 @@
---- components/autofill/core/browser/personal_data_manager.cc.orig	2021-01-18 21:28:54 UTC
+--- components/autofill/core/browser/personal_data_manager.cc.orig	2021-03-12 23:57:21 UTC
 +++ components/autofill/core/browser/personal_data_manager.cc
-@@ -1957,7 +1957,7 @@ bool PersonalDataManager::IsServerCard(const CreditCar
- 
- bool PersonalDataManager::ShouldShowCardsFromAccountOption() const {
+@@ -1917,7 +1917,7 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
  // The feature is only for Linux, Windows and Mac.
--#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_WIN) || \
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_WIN) || defined(OS_BSD) || \
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_WIN) || \
++#if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_WIN) || defined(OS_BSD) || \
      defined(OS_APPLE)
    // This option should only be shown for users that have not enabled the Sync
    // Feature and that have server credit cards available.
-@@ -1981,7 +1981,7 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
+@@ -1941,7 +1941,7 @@ bool PersonalDataManager::ShouldShowCardsFromAccountOp
    return !is_opted_in;
  #else
    return false;
--#endif  // #if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_WIN) || \
-+#endif  // #if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_WIN) || defined(OS_BSD) || \
-        //     defined(OS_APPLE)
+-#endif  // #if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) ||
++#endif  // #if (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD) ||
+         // defined(OS_WIN) || defined(OS_APPLE)
  }
  

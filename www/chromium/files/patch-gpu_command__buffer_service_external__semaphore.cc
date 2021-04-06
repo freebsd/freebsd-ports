@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/external_semaphore.cc.orig	2020-11-16 14:42:25 UTC
+--- gpu/command_buffer/service/external_semaphore.cc.orig	2021-03-12 23:57:25 UTC
 +++ gpu/command_buffer/service/external_semaphore.cc
 @@ -39,7 +39,7 @@ GLuint ImportSemaphoreHandleToGLSemaphore(SemaphoreHan
        },

@@ -1,4 +1,4 @@
---- ash/display/mirror_window_controller.cc.orig	2021-01-18 21:28:44 UTC
+--- ash/display/mirror_window_controller.cc.orig	2021-03-12 23:57:14 UTC
 +++ ash/display/mirror_window_controller.cc
 @@ -286,7 +286,11 @@ void MirrorWindowController::UpdateWindow(
                           return info.id() == iter->first;

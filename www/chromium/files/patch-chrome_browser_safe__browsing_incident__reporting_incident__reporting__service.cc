@@ -1,4 +1,4 @@
---- chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc.orig	2021-01-18 21:28:51 UTC
+--- chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc.orig	2021-03-12 23:57:18 UTC
 +++ chrome/browser/safe_browsing/incident_reporting/incident_reporting_service.cc
 @@ -708,7 +708,7 @@ void IncidentReportingService::OnEnvironmentDataCollec
    environment_collection_pending_ = false;

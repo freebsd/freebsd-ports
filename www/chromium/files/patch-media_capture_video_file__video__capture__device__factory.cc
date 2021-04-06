@@ -1,4 +1,4 @@
---- media/capture/video/file_video_capture_device_factory.cc.orig	2020-11-13 06:36:44 UTC
+--- media/capture/video/file_video_capture_device_factory.cc.orig	2021-03-12 23:57:26 UTC
 +++ media/capture/video/file_video_capture_device_factory.cc
 @@ -52,7 +52,7 @@ void FileVideoCaptureDeviceFactory::GetDevicesInfo(
        VideoCaptureApi::WIN_DIRECT_SHOW;

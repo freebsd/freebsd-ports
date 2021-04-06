@@ -1,6 +1,6 @@
---- ui/views/widget/native_widget_aura.cc.orig	2021-01-18 21:29:49 UTC
+--- ui/views/widget/native_widget_aura.cc.orig	2021-03-12 23:57:48 UTC
 +++ ui/views/widget/native_widget_aura.cc
-@@ -65,7 +65,7 @@
+@@ -68,7 +68,7 @@
  #endif
  
  #if BUILDFLAG(ENABLE_DESKTOP_AURA) && \
@@ -9,7 +9,7 @@
  #include "ui/views/linux_ui/linux_ui.h"
  #include "ui/views/widget/desktop_aura/desktop_window_tree_host_linux.h"
  #endif
-@@ -1090,7 +1090,7 @@ void NativeWidgetAura::SetInitialFocus(ui::WindowShowS
+@@ -1121,7 +1121,7 @@ void NativeWidgetAura::SetInitialFocus(ui::WindowShowS
  
  namespace {
  #if BUILDFLAG(ENABLE_DESKTOP_AURA) && \
@@ -18,7 +18,7 @@
  void CloseWindow(aura::Window* window) {
    if (window) {
      Widget* widget = Widget::GetWidgetForNativeView(window);
-@@ -1121,14 +1121,14 @@ void Widget::CloseAllSecondaryWidgets() {
+@@ -1152,14 +1152,14 @@ void Widget::CloseAllSecondaryWidgets() {
  #endif
  
  #if BUILDFLAG(ENABLE_DESKTOP_AURA) && \

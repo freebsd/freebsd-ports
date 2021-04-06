@@ -1,4 +1,4 @@
---- third_party/pdfium/core/fxge/fx_ge_linux.cpp.orig	2020-11-13 06:42:20 UTC
+--- third_party/pdfium/core/fxge/fx_ge_linux.cpp.orig	2021-03-13 00:03:39 UTC
 +++ third_party/pdfium/core/fxge/fx_ge_linux.cpp
 @@ -16,7 +16,7 @@
  #include "core/fxge/systemfontinfo_iface.h"

@@ -1,6 +1,6 @@
---- chrome/browser/ui/BUILD.gn.orig	2021-01-18 21:28:51 UTC
+--- chrome/browser/ui/BUILD.gn.orig	2021-03-12 23:57:19 UTC
 +++ chrome/browser/ui/BUILD.gn
-@@ -610,12 +610,15 @@ static_library("ui") {
+@@ -617,12 +617,15 @@ static_library("ui") {
      deps += [ "//components/autofill/content/browser/webauthn" ]
    }
  

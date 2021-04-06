@@ -1,4 +1,4 @@
---- third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp.orig	2020-11-13 06:42:23 UTC
+--- third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp.orig	2021-03-13 00:03:40 UTC
 +++ third_party/swiftshader/src/OpenGL/libEGL/libEGL.hpp
 @@ -100,7 +100,7 @@ class LibEGL (private)
  				#endif

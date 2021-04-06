@@ -1,4 +1,4 @@
---- components/gcm_driver/gcm_client_impl.cc.orig	2020-11-13 06:36:40 UTC
+--- components/gcm_driver/gcm_client_impl.cc.orig	2021-03-12 23:57:22 UTC
 +++ components/gcm_driver/gcm_client_impl.cc
 @@ -135,6 +135,9 @@ void ToCheckinProtoVersion(
      case GCMClient::PLATFORM_CROS:

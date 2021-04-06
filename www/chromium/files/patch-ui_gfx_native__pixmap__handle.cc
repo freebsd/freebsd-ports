@@ -1,4 +1,4 @@
---- ui/gfx/native_pixmap_handle.cc.orig	2020-11-13 06:37:06 UTC
+--- ui/gfx/native_pixmap_handle.cc.orig	2021-03-12 23:57:48 UTC
 +++ ui/gfx/native_pixmap_handle.cc
 @@ -9,11 +9,15 @@
  #include "base/logging.h"

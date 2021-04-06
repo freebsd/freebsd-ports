@@ -1,4 +1,4 @@
---- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig	2020-11-13 06:37:06 UTC
+--- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig	2021-03-12 23:57:48 UTC
 +++ ui/gfx/linux/client_native_pixmap_dmabuf.cc
 @@ -5,7 +5,9 @@
  #include "ui/gfx/linux/client_native_pixmap_dmabuf.h"
@@ -10,7 +10,7 @@
  #include <stddef.h>
  #include <sys/ioctl.h>
  #include <sys/mman.h>
-@@ -27,11 +29,7 @@
+@@ -28,11 +30,7 @@
  #include "ui/gfx/buffer_format_util.h"
  #include "ui/gfx/switches.h"
  

@@ -1,4 +1,4 @@
---- chrome/browser/download/download_query.cc.orig	2020-11-13 06:36:36 UTC
+--- chrome/browser/download/download_query.cc.orig	2021-03-12 23:57:17 UTC
 +++ chrome/browser/download/download_query.cc
 @@ -28,7 +28,11 @@
  #include "components/download/public/common/download_item.h"

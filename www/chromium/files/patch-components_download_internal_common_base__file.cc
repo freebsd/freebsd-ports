@@ -1,4 +1,4 @@
---- components/download/internal/common/base_file.cc.orig	2020-11-13 06:36:40 UTC
+--- components/download/internal/common/base_file.cc.orig	2021-03-12 23:57:22 UTC
 +++ components/download/internal/common/base_file.cc
 @@ -604,7 +604,7 @@ GURL GetEffectiveAuthorityURL(const GURL& source_url,
  

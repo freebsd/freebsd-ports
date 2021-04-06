@@ -1,4 +1,4 @@
---- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2020-11-13 06:36:43 UTC
+--- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2021-03-12 23:57:25 UTC
 +++ gpu/command_buffer/common/gpu_memory_buffer_support.cc
 @@ -55,7 +55,7 @@ bool IsImageSizeValidForGpuMemoryBufferFormat(const gf
  uint32_t GetPlatformSpecificTextureTarget() {

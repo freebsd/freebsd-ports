@@ -1,6 +1,13 @@
---- base/process/launch_posix.cc.orig	2020-11-13 06:36:34 UTC
+--- base/process/launch_posix.cc.orig	2021-03-12 23:57:15 UTC
 +++ base/process/launch_posix.cc
-@@ -65,6 +65,7 @@
+@@ -59,12 +59,14 @@
+ #if defined(OS_FREEBSD)
+ #include <sys/event.h>
+ #include <sys/ucontext.h>
++#include <sys/procctl.h>
+ #endif
+ 
+ #if defined(OS_APPLE)
  #error "macOS should use launch_mac.cc"
  #endif
  
@@ -8,7 +15,7 @@
  extern char** environ;
  
  namespace base {
-@@ -228,6 +229,28 @@ void CloseSuperfluousFds(const base::InjectiveMultimap
+@@ -221,6 +223,28 @@ void CloseSuperfluousFds(const base::InjectiveMultimap
    DirReaderPosix fd_dir(kFDDir);
    if (!fd_dir.IsValid()) {
      // Fallback case: Try every possible fd.
@@ -37,3 +44,37 @@
      for (size_t i = 0; i < max_fds; ++i) {
        const int fd = static_cast<int>(i);
        if (fd == STDIN_FILENO || fd == STDOUT_FILENO || fd == STDERR_FILENO)
+@@ -444,22 +468,32 @@ Process LaunchProcess(const std::vector<std::string>& 
+ 
+     // Set NO_NEW_PRIVS by default. Since NO_NEW_PRIVS only exists in kernel
+     // 3.5+, do not check the return value of prctl here.
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_AIX)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_AIX) || defined(OS_FREEBSD)
+ #ifndef PR_SET_NO_NEW_PRIVS
+ #define PR_SET_NO_NEW_PRIVS 38
+ #endif
++#if !defined(OS_FREEBSD)
+     if (!options.allow_new_privs) {
+       if (prctl(PR_SET_NO_NEW_PRIVS, 1, 0, 0, 0) && errno != EINVAL) {
+         // Only log if the error is not EINVAL (i.e. not supported).
+         RAW_LOG(FATAL, "prctl(PR_SET_NO_NEW_PRIVS) failed");
+       }
+     }
++#endif
+ 
+     if (options.kill_on_parent_death) {
++#if defined(OS_FREEBSD)
++      int procctl_value = SIGKILL;
++      if (procctl(P_PID, 0, PROC_PDEATHSIG_CTL, &procctl_value)) {
++        RAW_LOG(ERROR, "procctl(PROC_PDEATHSIG_CTL) failed");
++        _exit(127);
++      }
++#else
+       if (prctl(PR_SET_PDEATHSIG, SIGKILL) != 0) {
+         RAW_LOG(ERROR, "prctl(PR_SET_PDEATHSIG) failed");
+         _exit(127);
+       }
++#endif
+     }
+ #endif
+ 

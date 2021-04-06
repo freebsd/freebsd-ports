@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/components/web_app_shortcut.cc.orig	2021-01-18 21:28:52 UTC
+--- chrome/browser/web_applications/components/web_app_shortcut.cc.orig	2021-03-12 23:57:19 UTC
 +++ chrome/browser/web_applications/components/web_app_shortcut.cc
 @@ -33,7 +33,7 @@ namespace {
  

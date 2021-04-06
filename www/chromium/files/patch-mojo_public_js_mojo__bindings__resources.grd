@@ -1,8 +1,8 @@
---- mojo/public/js/mojo_bindings_resources.grd.orig	2021-01-18 21:29:01 UTC
+--- mojo/public/js/mojo_bindings_resources.grd.orig	2021-03-12 23:57:27 UTC
 +++ mojo/public/js/mojo_bindings_resources.grd
-@@ -80,7 +80,7 @@
+@@ -85,7 +85,7 @@
            use_base_dir="false"
-           resource_path="mojo/mojo/public/mojom/base/text_direction.mojom-lite.js"
+           resource_path="mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js"
            type="BINDATA" />
 -      <if expr="is_win or is_macosx or is_linux or is_android">
 +      <if expr="is_win or is_macosx or is_posix or is_android">

@@ -1,4 +1,4 @@
---- extensions/browser/api/declarative_webrequest/webrequest_action.cc.orig	2020-11-13 06:36:43 UTC
+--- extensions/browser/api/declarative_webrequest/webrequest_action.cc.orig	2021-03-12 23:57:25 UTC
 +++ extensions/browser/api/declarative_webrequest/webrequest_action.cc
 @@ -28,7 +28,11 @@
  #include "extensions/common/extension.h"

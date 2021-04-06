@@ -1,11 +1,11 @@
---- ui/compositor/compositor_observer.h.orig	2021-01-18 21:29:48 UTC
+--- ui/compositor/compositor_observer.h.orig	2021-03-12 23:57:48 UTC
 +++ ui/compositor/compositor_observer.h
-@@ -43,11 +43,11 @@ class COMPOSITOR_EXPORT CompositorObserver {
-   // Called when a child of the compositor is resizing.
-   virtual void OnCompositingChildResizing(Compositor* compositor) {}
+@@ -46,11 +46,11 @@ class COMPOSITOR_EXPORT CompositorObserver {
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
    // Called when a swap with new size is completed.
    virtual void OnCompositingCompleteSwapWithNewSize(ui::Compositor* compositor,
                                                      const gfx::Size& size) {}

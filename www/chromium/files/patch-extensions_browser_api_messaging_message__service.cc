@@ -1,4 +1,4 @@
---- extensions/browser/api/messaging/message_service.cc.orig	2020-11-13 06:36:43 UTC
+--- extensions/browser/api/messaging/message_service.cc.orig	2021-03-12 23:57:25 UTC
 +++ extensions/browser/api/messaging/message_service.cc
 @@ -61,7 +61,7 @@ namespace {
  

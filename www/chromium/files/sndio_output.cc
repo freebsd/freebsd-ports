@@ -159,7 +159,7 @@ void SndioAudioOutputStream::ThreadLoop(void) {
     const base::TimeDelta delay = AudioTimestampHelper::FramesToTime(hw_delay,
 	params.sample_rate());
     count = source->OnMoreData(delay, base::TimeTicks::Now(), 0, audio_bus.get());
-    audio_bus->ToInterleaved(count, SampleFormatToBytesPerChannel(kSampleFormat), buffer);
+    audio_bus->ToInterleaved<SignedInt16SampleTypeTraits>(count, reinterpret_cast<int16_t*>(buffer));
     if (count == 0) {
       // We have to submit something to the device
       count = audio_bus->frames();

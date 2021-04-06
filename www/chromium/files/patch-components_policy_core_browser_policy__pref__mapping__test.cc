@@ -1,8 +1,8 @@
---- components/policy/core/browser/policy_pref_mapping_test.cc.orig	2020-11-13 06:36:41 UTC
+--- components/policy/core/browser/policy_pref_mapping_test.cc.orig	2021-03-12 23:57:22 UTC
 +++ components/policy/core/browser/policy_pref_mapping_test.cc
-@@ -270,6 +270,8 @@ class PolicyTestCase {
+@@ -285,6 +285,8 @@ class PolicyTestCase {
      const std::string os("chromeos");
- #elif defined(OS_LINUX)
+ #elif defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
      const std::string os("linux");
 +#elif defined(OS_FREEBSD)
 +    const std::string os("freebsd");

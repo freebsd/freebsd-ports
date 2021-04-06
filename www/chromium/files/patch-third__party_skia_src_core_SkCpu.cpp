@@ -1,6 +1,6 @@
---- third_party/skia/src/core/SkCpu.cpp.orig	2020-11-13 06:42:23 UTC
+--- third_party/skia/src/core/SkCpu.cpp.orig	2021-03-13 00:03:40 UTC
 +++ third_party/skia/src/core/SkCpu.cpp
-@@ -72,6 +72,23 @@
+@@ -73,6 +73,23 @@
          return features;
      }
  

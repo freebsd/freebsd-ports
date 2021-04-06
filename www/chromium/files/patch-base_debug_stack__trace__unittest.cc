@@ -1,4 +1,4 @@
---- base/debug/stack_trace_unittest.cc.orig	2020-11-13 06:36:34 UTC
+--- base/debug/stack_trace_unittest.cc.orig	2021-03-12 23:57:15 UTC
 +++ base/debug/stack_trace_unittest.cc
 @@ -88,6 +88,7 @@ TEST_F(StackTraceTest, OutputToStream) {
              std::string::npos)
@@ -29,3 +29,12 @@
  
  // The test is used for manual testing, e.g., to see the raw output.
  TEST_F(StackTraceTest, DebugOutputToStream) {
+@@ -361,7 +363,7 @@ TEST_F(StackTraceTest, MAYBE_TraceStackFramePointers) 
+ // sometimes we read fp / pc from the place that previously held
+ // uninitialized value.
+ // TODO(crbug.com/1132511): Enable this test on Fuchsia.
+-#if defined(MEMORY_SANITIZER) || defined(OS_FUCHSIA)
++#if defined(MEMORY_SANITIZER) || defined(OS_FUCHSIA) || defined(OS_BSD)
+ #define MAYBE_TraceStackFramePointersFromBuffer \
+   DISABLED_TraceStackFramePointersFromBuffer
+ #else

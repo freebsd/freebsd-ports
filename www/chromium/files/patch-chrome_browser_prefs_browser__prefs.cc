@@ -1,20 +1,20 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2021-01-18 21:28:50 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2021-03-12 23:57:18 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -382,7 +382,7 @@
- #endif
- 
+@@ -388,7 +388,7 @@
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
--    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
  
-@@ -1012,7 +1012,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
- #endif
- 
+@@ -1080,7 +1080,7 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
--    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
  #endif
  

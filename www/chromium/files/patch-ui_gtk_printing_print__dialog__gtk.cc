@@ -1,4 +1,4 @@
---- ui/gtk/printing/print_dialog_gtk.cc.orig	2020-11-13 06:37:06 UTC
+--- ui/gtk/printing/print_dialog_gtk.cc.orig	2021-03-12 23:57:48 UTC
 +++ ui/gtk/printing/print_dialog_gtk.cc
 @@ -388,7 +388,7 @@ void PrintDialogGtk::ShowDialog(
    // Since we only generate PDF, only show printers that support PDF.

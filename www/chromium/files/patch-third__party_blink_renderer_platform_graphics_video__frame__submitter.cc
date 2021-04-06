@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/graphics/video_frame_submitter.cc.orig	2020-11-13 06:36:48 UTC
+--- third_party/blink/renderer/platform/graphics/video_frame_submitter.cc.orig	2021-03-12 23:57:30 UTC
 +++ third_party/blink/renderer/platform/graphics/video_frame_submitter.cc
 @@ -192,7 +192,7 @@ void VideoFrameSubmitter::OnBeginFrame(
      if (viz::FrameTokenGT(pair.key, *next_frame_token_))

@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/enterprise_reporting_private/device_info_fetcher.cc.orig	2020-11-13 06:36:36 UTC
+--- chrome/browser/extensions/api/enterprise_reporting_private/device_info_fetcher.cc.orig	2021-03-12 23:57:17 UTC
 +++ chrome/browser/extensions/api/enterprise_reporting_private/device_info_fetcher.cc
 @@ -10,7 +10,7 @@
  #include "chrome/browser/extensions/api/enterprise_reporting_private/device_info_fetcher_mac.h"

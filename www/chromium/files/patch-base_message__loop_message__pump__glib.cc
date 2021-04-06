@@ -1,4 +1,4 @@
---- base/message_loop/message_pump_glib.cc.orig	2020-11-20 15:15:51 UTC
+--- base/message_loop/message_pump_glib.cc.orig	2021-03-12 23:57:15 UTC
 +++ base/message_loop/message_pump_glib.cc
 @@ -8,6 +8,11 @@
  #include <glib.h>

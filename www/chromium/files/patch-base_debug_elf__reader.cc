@@ -1,4 +1,4 @@
---- base/debug/elf_reader.cc.orig	2020-11-13 06:36:34 UTC
+--- base/debug/elf_reader.cc.orig	2021-03-12 23:57:15 UTC
 +++ base/debug/elf_reader.cc
 @@ -38,7 +38,9 @@ using Nhdr = Elf64_Nhdr;
  using Word = Elf64_Word;

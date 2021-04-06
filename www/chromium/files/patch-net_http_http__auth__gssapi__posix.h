@@ -1,4 +1,4 @@
---- net/http/http_auth_gssapi_posix.h.orig	2020-11-13 06:36:45 UTC
+--- net/http/http_auth_gssapi_posix.h.orig	2021-03-12 23:57:27 UTC
 +++ net/http/http_auth_gssapi_posix.h
 @@ -21,6 +21,9 @@
  #include <GSS/gssapi.h>

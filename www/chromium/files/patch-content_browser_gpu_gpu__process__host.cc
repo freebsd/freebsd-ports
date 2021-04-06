@@ -1,15 +1,17 @@
---- content/browser/gpu/gpu_process_host.cc.orig	2021-01-18 21:28:57 UTC
+--- content/browser/gpu/gpu_process_host.cc.orig	2021-03-12 23:57:24 UTC
 +++ content/browser/gpu/gpu_process_host.cc
-@@ -228,7 +228,7 @@ static const char* const kSwitchNames[] = {
-     sandbox::policy::switches::kGpuSandboxFailuresFatal,
-     sandbox::policy::switches::kDisableGpuSandbox,
+@@ -230,8 +230,8 @@ static const char* const kSwitchNames[] = {
      sandbox::policy::switches::kNoSandbox,
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS) && !BUILDFLAG(IS_LACROS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS) && !BUILDFLAG(IS_LACROS)) || defined(OS_BSD)
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
+-#if defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
+-    !BUILDFLAG(IS_CHROMEOS_LACROS)
++#if defined(OS_BSD) || (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
++    !BUILDFLAG(IS_CHROMEOS_LACROS))
      switches::kDisableDevShmUsage,
  #endif
  #if defined(OS_WIN)
-@@ -1135,7 +1135,7 @@ bool GpuProcessHost::LaunchGpuProcess() {
+@@ -1143,7 +1143,7 @@ bool GpuProcessHost::LaunchGpuProcess() {
    std::unique_ptr<base::CommandLine> cmd_line =
        std::make_unique<base::CommandLine>(base::CommandLine::NO_PROGRAM);
  #else

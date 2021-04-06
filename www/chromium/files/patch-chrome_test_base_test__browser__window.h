@@ -1,4 +1,4 @@
---- chrome/test/base/test_browser_window.h.orig	2021-01-18 21:28:52 UTC
+--- chrome/test/base/test_browser_window.h.orig	2021-03-12 23:57:20 UTC
 +++ chrome/test/base/test_browser_window.h
 @@ -176,7 +176,7 @@ class TestBrowserWindow : public BrowserWindow {
        bool is_source_keyboard) override {}

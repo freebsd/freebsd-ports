@@ -1,6 +1,6 @@
---- chrome/app/chrome_main.cc.orig	2021-01-18 21:28:46 UTC
+--- chrome/app/chrome_main.cc.orig	2021-03-12 23:57:16 UTC
 +++ chrome/app/chrome_main.cc
-@@ -119,12 +119,12 @@ int ChromeMain(int argc, const char** argv) {
+@@ -130,12 +130,12 @@ int ChromeMain(int argc, const char** argv) {
    MainThreadStackSamplingProfiler scoped_sampling_profiler;
  
    // Chrome-specific process modes.

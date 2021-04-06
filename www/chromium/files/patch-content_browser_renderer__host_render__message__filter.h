@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_message_filter.h.orig	2021-01-18 21:28:57 UTC
+--- content/browser/renderer_host/render_message_filter.h.orig	2021-03-12 23:57:24 UTC
 +++ content/browser/renderer_host/render_message_filter.h
 @@ -80,14 +80,14 @@ class CONTENT_EXPORT RenderMessageFilter
    void GenerateRoutingID(GenerateRoutingIDCallback routing_id) override;

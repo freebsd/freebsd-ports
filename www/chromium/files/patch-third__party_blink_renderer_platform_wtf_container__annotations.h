@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/wtf/container_annotations.h.orig	2020-11-13 06:36:48 UTC
+--- third_party/blink/renderer/platform/wtf/container_annotations.h.orig	2021-03-12 23:57:30 UTC
 +++ third_party/blink/renderer/platform/wtf/container_annotations.h
 @@ -11,7 +11,7 @@
  // TODO(ochang): Remove the ARCH_CPU_X86_64 condition to enable this for X86

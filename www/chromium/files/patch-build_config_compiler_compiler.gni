@@ -1,11 +1,11 @@
---- build/config/compiler/compiler.gni.orig	2021-01-18 21:28:45 UTC
+--- build/config/compiler/compiler.gni.orig	2021-03-12 23:57:15 UTC
 +++ build/config/compiler/compiler.gni
-@@ -196,7 +196,7 @@ declare_args() {
+@@ -201,7 +201,7 @@ declare_args() {
+ 
  declare_args() {
    # Whether to use the gold linker from binutils instead of lld or bfd.
-   use_gold =
--      !use_lld && !(is_chromecast && is_linux &&
-+      !is_bsd && !use_lld && !(is_chromecast && is_linux &&
-                     (current_cpu == "arm" || current_cpu == "mipsel")) &&
-       ((is_linux && (current_cpu == "x64" || current_cpu == "x86" ||
-                      current_cpu == "arm" || current_cpu == "arm64" ||
+-  use_gold = !use_lld && !(is_chromecast && is_linux &&
++  use_gold = !is_bsd && !use_lld && !(is_chromecast && is_linux &&
+                            (current_cpu == "arm" || current_cpu == "mipsel")) &&
+              (((is_linux || is_chromeos_lacros) &&
+                (current_cpu == "x64" || current_cpu == "x86" ||

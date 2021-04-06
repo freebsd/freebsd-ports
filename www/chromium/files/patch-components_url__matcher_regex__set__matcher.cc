@@ -1,4 +1,4 @@
---- components/url_matcher/regex_set_matcher.cc.orig	2020-11-13 06:36:42 UTC
+--- components/url_matcher/regex_set_matcher.cc.orig	2021-03-12 23:57:23 UTC
 +++ components/url_matcher/regex_set_matcher.cc
 @@ -12,8 +12,13 @@
  #include "base/logging.h"

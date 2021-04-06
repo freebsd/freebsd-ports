@@ -1,4 +1,4 @@
---- third_party/libpng/pnglibconf.h.orig	2020-11-13 06:37:03 UTC
+--- third_party/libpng/pnglibconf.h.orig	2021-03-12 23:57:45 UTC
 +++ third_party/libpng/pnglibconf.h
 @@ -230,8 +230,11 @@
   * This is necessary to build multiple copies of libpng.  We need this while pdfium builds

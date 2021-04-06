@@ -1,6 +1,6 @@
---- chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc.orig	2020-11-13 06:36:37 UTC
+--- chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc.orig	2021-03-12 23:57:18 UTC
 +++ chrome/browser/media/router/providers/wired_display/wired_display_media_route_provider.cc
-@@ -112,6 +112,12 @@ void WiredDisplayMediaRouteProvider::CreateRoute(
+@@ -105,6 +105,12 @@ void WiredDisplayMediaRouteProvider::CreateRoute(
      bool off_the_record,
      CreateRouteCallback callback) {
    DCHECK(!base::Contains(presentations_, presentation_id));
@@ -13,7 +13,7 @@
    base::Optional<Display> display = GetDisplayBySinkId(sink_id);
    if (!display) {
      std::move(callback).Run(base::nullopt, nullptr,
-@@ -138,6 +144,7 @@ void WiredDisplayMediaRouteProvider::CreateRoute(
+@@ -131,6 +137,7 @@ void WiredDisplayMediaRouteProvider::CreateRoute(
    std::move(callback).Run(route, nullptr, base::nullopt,
                            RouteRequestResult::OK);
    NotifyRouteObservers();

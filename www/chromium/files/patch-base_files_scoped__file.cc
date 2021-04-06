@@ -1,4 +1,4 @@
---- base/files/scoped_file.cc.orig	2020-11-13 06:36:34 UTC
+--- base/files/scoped_file.cc.orig	2021-03-12 23:57:15 UTC
 +++ base/files/scoped_file.cc
 @@ -30,7 +30,7 @@ void ScopedFDCloseTraits::Free(int fd) {
    // a single open directory would bypass the entire security model.

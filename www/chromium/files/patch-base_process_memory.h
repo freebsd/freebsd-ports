@@ -1,4 +1,4 @@
---- base/process/memory.h.orig	2020-11-13 06:36:34 UTC
+--- base/process/memory.h.orig	2021-03-12 23:57:15 UTC
 +++ base/process/memory.h
 @@ -24,7 +24,7 @@ BASE_EXPORT void EnableTerminationOnOutOfMemory();
  // Crash reporting classifies such crashes as OOM.

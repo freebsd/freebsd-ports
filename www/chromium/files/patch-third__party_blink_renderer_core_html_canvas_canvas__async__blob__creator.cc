@@ -1,4 +1,4 @@
---- third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc.orig	2020-11-13 06:36:47 UTC
+--- third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc.orig	2021-03-12 23:57:29 UTC
 +++ third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc
 @@ -43,7 +43,7 @@ constexpr base::TimeDelta kEncodeRowSlackBeforeDeadlin
      base::TimeDelta::FromMicroseconds(100);

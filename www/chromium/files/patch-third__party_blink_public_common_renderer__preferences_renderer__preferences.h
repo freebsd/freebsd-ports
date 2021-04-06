@@ -1,4 +1,4 @@
---- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig	2021-01-19 11:50:37 UTC
+--- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig	2021-03-12 23:57:29 UTC
 +++ third_party/blink/public/common/renderer_preferences/renderer_preferences.h
 @@ -49,7 +49,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
    bool webrtc_allow_legacy_tls_protocols{false};

@@ -1,4 +1,4 @@
---- ui/gfx/native_pixmap_handle.h.orig	2020-11-13 06:37:06 UTC
+--- ui/gfx/native_pixmap_handle.h.orig	2021-03-12 23:57:48 UTC
 +++ ui/gfx/native_pixmap_handle.h
 @@ -15,7 +15,7 @@
  #include "build/build_config.h"

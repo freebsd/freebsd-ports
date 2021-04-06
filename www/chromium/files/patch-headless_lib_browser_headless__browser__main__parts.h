@@ -1,6 +1,6 @@
---- headless/lib/browser/headless_browser_main_parts.h.orig	2020-11-13 06:36:44 UTC
+--- headless/lib/browser/headless_browser_main_parts.h.orig	2021-03-12 23:57:25 UTC
 +++ headless/lib/browser/headless_browser_main_parts.h
-@@ -32,7 +32,7 @@ class HeadlessBrowserMainParts : public content::Brows
+@@ -37,7 +37,7 @@ class HeadlessBrowserMainParts : public content::Brows
  #if defined(OS_MAC)
    void PreMainMessageLoopStart() override;
  #endif

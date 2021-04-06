@@ -1,4 +1,4 @@
---- ui/base/x/x11_shm_image_pool.cc.orig	2020-11-13 06:37:05 UTC
+--- ui/base/x/x11_shm_image_pool.cc.orig	2021-03-12 23:57:48 UTC
 +++ ui/base/x/x11_shm_image_pool.cc
 @@ -16,6 +16,7 @@
  #include "base/environment.h"
@@ -7,8 +7,8 @@
 +#include "base/system/sys_info.h"
  #include "base/threading/thread_task_runner_handle.h"
  #include "build/build_config.h"
- #include "net/base/url_util.h"
-@@ -45,10 +46,14 @@ constexpr float kShmResizeShrinkThreshold =
+ #include "build/chromeos_buildflags.h"
+@@ -46,10 +47,14 @@ constexpr float kShmResizeShrinkThreshold =
      1.0f / (kShmResizeThreshold * kShmResizeThreshold);
  
  std::size_t MaxShmSegmentSizeImpl() {

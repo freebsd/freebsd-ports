@@ -1,4 +1,4 @@
---- tools/gn/src/gn/version.h.orig	2020-11-25 19:13:52 UTC
+--- tools/gn/src/gn/version.h.orig	2021-03-13 00:10:18 UTC
 +++ tools/gn/src/gn/version.h
 @@ -15,9 +15,9 @@ class Version {
  

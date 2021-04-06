@@ -1,4 +1,4 @@
---- content/renderer/renderer_blink_platform_impl.h.orig	2021-01-18 21:28:58 UTC
+--- content/renderer/renderer_blink_platform_impl.h.orig	2021-03-12 23:57:24 UTC
 +++ content/renderer/renderer_blink_platform_impl.h
 @@ -29,7 +29,7 @@
  #include "third_party/blink/public/mojom/cache_storage/cache_storage.mojom.h"
@@ -9,7 +9,16 @@
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -223,7 +223,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -183,7 +183,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+       const blink::WebURL& top_document_web_url) override;
+   gpu::GpuMemoryBufferManager* GetGpuMemoryBufferManager() override;
+   blink::WebString ConvertIDNToUnicode(const blink::WebString& host) override;
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   void SetDisplayThreadPriority(base::PlatformThreadId thread_id) override;
+ #endif
+   blink::BlameContext* GetTopLevelBlameContext() override;
+@@ -228,7 +228,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    // Return the mojo interface for making CodeCache calls.
    blink::mojom::CodeCacheHost& GetCodeCacheHost();
  
@@ -18,7 +27,7 @@
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -244,7 +244,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -249,7 +249,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    mojo::PendingRemote<blink::mojom::CodeCacheHost> code_cache_host_remote_;
    mojo::SharedRemote<blink::mojom::CodeCacheHost> code_cache_host_;
  

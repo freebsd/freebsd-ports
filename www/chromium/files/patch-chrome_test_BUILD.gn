@@ -1,6 +1,6 @@
---- chrome/test/BUILD.gn.orig	2021-01-18 21:28:52 UTC
+--- chrome/test/BUILD.gn.orig	2021-03-12 23:57:20 UTC
 +++ chrome/test/BUILD.gn
-@@ -6791,7 +6791,7 @@ test("chrome_app_unittests") {
+@@ -6915,7 +6915,7 @@ test("chrome_app_unittests") {
      "//components/safe_browsing:buildflags",
      "//pdf:pdf_ppapi",
    ]

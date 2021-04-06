@@ -1,15 +1,15 @@
---- chrome/browser/chrome_browser_main.cc.orig	2021-01-18 21:28:49 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2021-03-12 23:57:17 UTC
 +++ chrome/browser/chrome_browser_main.cc
-@@ -247,7 +247,7 @@
- #endif  // defined(OS_WIN)
- 
+@@ -251,7 +251,7 @@
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
--    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #include "chrome/browser/metrics/desktop_session_duration/touch_mode_stats_tracker.h"
  #include "chrome/browser/profiles/profile_activity_metrics_recorder.h"
-@@ -926,7 +926,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -935,7 +935,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
        AddFirstRunNewTabs(browser_creator_.get(), master_prefs_->new_tabs);
      }
  
@@ -18,25 +18,25 @@
      // Create directory for user-level Native Messaging manifest files. This
      // makes it less likely that the directory will be created by third-party
      // software with incorrect owner or permission. See crbug.com/725513 .
-@@ -935,7 +935,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -944,7 +944,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
                                   &user_native_messaging_dir));
      if (!base::PathExists(user_native_messaging_dir))
        base::CreateDirectory(user_native_messaging_dir);
 -#endif  // defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS)
 +#endif  // defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    }
- #endif  // !defined(OS_ANDROID) && !defined(OS_CHROMEOS)
+ #endif  // !defined(OS_ANDROID) && !BUILDFLAG(IS_CHROMEOS_ASH)
  
-@@ -957,7 +957,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
- #endif  // defined(OS_MAC)
- 
+@@ -968,7 +968,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+ // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
+ // of lacros-chrome is complete.
  #if defined(OS_WIN) || defined(OS_MAC) || \
--    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++    (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)
    metrics::DesktopSessionDurationTracker::Initialize();
    ProfileActivityMetricsRecorder::Initialize();
    TouchModeStatsTracker::Initialize(
-@@ -1114,6 +1114,7 @@ void ChromeBrowserMainParts::PostBrowserStart() {
+@@ -1125,6 +1125,7 @@ void ChromeBrowserMainParts::PostBrowserStart() {
        base::TimeDelta::FromMinutes(1));
  
  #if !defined(OS_ANDROID)
@@ -44,7 +44,7 @@
    if (base::FeatureList::IsEnabled(features::kWebUsb)) {
      web_usb_detector_.reset(new WebUsbDetector());
      content::GetUIThreadTaskRunner({base::TaskPriority::BEST_EFFORT})
-@@ -1121,6 +1122,7 @@ void ChromeBrowserMainParts::PostBrowserStart() {
+@@ -1132,6 +1133,7 @@ void ChromeBrowserMainParts::PostBrowserStart() {
                     base::BindOnce(&WebUsbDetector::Initialize,
                                    base::Unretained(web_usb_detector_.get())));
    }

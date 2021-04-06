@@ -1,4 +1,4 @@
---- components/feature_engagement/public/event_constants.h.orig	2021-01-18 21:28:55 UTC
+--- components/feature_engagement/public/event_constants.h.orig	2021-03-12 23:57:22 UTC
 +++ components/feature_engagement/public/event_constants.h
 @@ -12,16 +12,16 @@ namespace feature_engagement {
  namespace events {
@@ -10,9 +10,9 @@
  // The user has explicitly opened a new tab via an entry point from inside of
  // Chrome.
  extern const char kNewTabOpened[];
- #endif  // defined(OS_WIN) || defined(OS_APPLE) ||
--        // defined(OS_LINUX) || defined(OS_CHROMEOS)
-+        // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) ||
++#endif  // defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || defined(OS_BSD) ||
+         // defined(OS_CHROMEOS)
  
  // Desktop
 -#if defined(OS_WIN) || defined(OS_APPLE) || defined(OS_LINUX) || \

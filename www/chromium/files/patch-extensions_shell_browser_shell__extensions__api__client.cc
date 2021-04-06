@@ -1,4 +1,4 @@
---- extensions/shell/browser/shell_extensions_api_client.cc.orig	2021-01-18 21:28:59 UTC
+--- extensions/shell/browser/shell_extensions_api_client.cc.orig	2021-03-12 23:57:25 UTC
 +++ extensions/shell/browser/shell_extensions_api_client.cc
 @@ -19,7 +19,7 @@
  

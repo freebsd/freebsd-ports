@@ -1,4 +1,4 @@
---- media/capture/video/fake_video_capture_device_factory.cc.orig	2020-11-13 06:36:44 UTC
+--- media/capture/video/fake_video_capture_device_factory.cc.orig	2021-03-12 23:57:26 UTC
 +++ media/capture/video/fake_video_capture_device_factory.cc
 @@ -208,7 +208,7 @@ void FakeVideoCaptureDeviceFactory::GetDevicesInfo(
    int entry_index = 0;

@@ -1,4 +1,4 @@
---- base/profiler/sampling_profiler_thread_token.h.orig	2020-11-13 06:36:34 UTC
+--- base/profiler/sampling_profiler_thread_token.h.orig	2021-03-12 23:57:15 UTC
 +++ base/profiler/sampling_profiler_thread_token.h
 @@ -9,7 +9,7 @@
  #include "base/threading/platform_thread.h"

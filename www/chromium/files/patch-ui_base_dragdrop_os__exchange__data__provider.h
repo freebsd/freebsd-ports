@@ -1,4 +1,4 @@
---- ui/base/dragdrop/os_exchange_data_provider.h.orig	2021-01-19 11:53:11 UTC
+--- ui/base/dragdrop/os_exchange_data_provider.h.orig	2021-03-12 23:57:48 UTC
 +++ ui/base/dragdrop/os_exchange_data_provider.h
 @@ -73,7 +73,7 @@ class COMPONENT_EXPORT(UI_BASE_DATA_EXCHANGE) OSExchan
    virtual bool HasFile() const = 0;

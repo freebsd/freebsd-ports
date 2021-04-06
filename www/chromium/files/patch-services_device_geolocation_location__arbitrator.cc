@@ -1,4 +1,4 @@
---- services/device/geolocation/location_arbitrator.cc.orig	2020-11-13 06:36:46 UTC
+--- services/device/geolocation/location_arbitrator.cc.orig	2021-03-12 23:57:28 UTC
 +++ services/device/geolocation/location_arbitrator.cc
 @@ -156,7 +156,7 @@ LocationArbitrator::NewNetworkLocationProvider(
  

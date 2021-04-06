@@ -1,4 +1,4 @@
---- services/tracing/public/cpp/perfetto/trace_time.cc.orig	2020-11-13 06:36:46 UTC
+--- services/tracing/public/cpp/perfetto/trace_time.cc.orig	2021-03-12 23:57:28 UTC
 +++ services/tracing/public/cpp/perfetto/trace_time.cc
 @@ -12,14 +12,18 @@ namespace tracing {
  

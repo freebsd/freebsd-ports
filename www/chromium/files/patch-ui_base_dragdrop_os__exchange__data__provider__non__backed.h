@@ -1,6 +1,6 @@
---- ui/base/dragdrop/os_exchange_data_provider_non_backed.h.orig	2021-01-19 11:52:55 UTC
+--- ui/base/dragdrop/os_exchange_data_provider_non_backed.h.orig	2021-03-12 23:57:48 UTC
 +++ ui/base/dragdrop/os_exchange_data_provider_non_backed.h
-@@ -60,7 +60,7 @@ class COMPONENT_EXPORT(UI_BASE) OSExchangeDataProvider
+@@ -61,7 +61,7 @@ class COMPONENT_EXPORT(UI_BASE) OSExchangeDataProvider
    bool HasURL(FilenameToURLPolicy policy) const override;
    bool HasFile() const override;
    bool HasCustomFormat(const ClipboardFormatType& format) const override;

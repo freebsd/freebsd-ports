@@ -1,4 +1,4 @@
---- third_party/crashpad/crashpad/client/BUILD.gn.orig	2021-01-18 21:29:44 UTC
+--- third_party/crashpad/crashpad/client/BUILD.gn.orig	2021-03-12 23:57:45 UTC
 +++ third_party/crashpad/crashpad/client/BUILD.gn
 @@ -77,6 +77,12 @@ crashpad_static_library("client") {
      sources += [ "crashpad_client_fuchsia.cc" ]

@@ -1,4 +1,4 @@
---- third_party/swiftshader/third_party/llvm-10.0/configs/linux/include/llvm/Config/config.h.orig	2020-11-13 06:42:25 UTC
+--- third_party/swiftshader/third_party/llvm-10.0/configs/linux/include/llvm/Config/config.h.orig	2021-03-13 00:03:43 UTC
 +++ third_party/swiftshader/third_party/llvm-10.0/configs/linux/include/llvm/Config/config.h
 @@ -9,17 +9,21 @@
  

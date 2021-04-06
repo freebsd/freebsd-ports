@@ -1,4 +1,4 @@
---- third_party/blink/renderer/core/editing/editing_behavior.cc.orig	2020-11-13 06:36:47 UTC
+--- third_party/blink/renderer/core/editing/editing_behavior.cc.orig	2021-03-12 23:57:29 UTC
 +++ third_party/blink/renderer/core/editing/editing_behavior.cc
 @@ -274,7 +274,7 @@ bool EditingBehavior::ShouldInsertCharacter(const Keyb
    // unexpected behaviour

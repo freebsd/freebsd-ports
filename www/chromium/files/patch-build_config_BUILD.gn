@@ -1,4 +1,4 @@
---- build/config/BUILD.gn.orig	2021-01-18 21:28:45 UTC
+--- build/config/BUILD.gn.orig	2021-03-12 23:57:15 UTC
 +++ build/config/BUILD.gn
 @@ -232,9 +232,7 @@ config("default_libs") {
      ]
@@ -10,7 +10,7 @@
      ]
    }
  }
-@@ -317,7 +315,7 @@ config("executable_config") {
+@@ -313,7 +311,7 @@ config("executable_config") {
        "//build/config/ios:ios_dynamic_flags",
        "//build/config/ios:ios_executable_flags",
      ]

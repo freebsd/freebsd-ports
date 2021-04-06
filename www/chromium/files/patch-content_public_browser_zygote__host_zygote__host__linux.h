@@ -1,4 +1,4 @@
---- content/public/browser/zygote_host/zygote_host_linux.h.orig	2020-11-13 06:36:43 UTC
+--- content/public/browser/zygote_host/zygote_host_linux.h.orig	2021-03-12 23:57:24 UTC
 +++ content/public/browser/zygote_host/zygote_host_linux.h
 @@ -30,11 +30,13 @@ class ZygoteHost {
    // after the first render has been forked.

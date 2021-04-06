@@ -1,6 +1,6 @@
---- services/device/hid/hid_connection_freebsd.h.orig	2020-11-16 10:08:51 UTC
+--- services/device/hid/hid_connection_freebsd.h.orig	2021-03-15 11:01:24 UTC
 +++ services/device/hid/hid_connection_freebsd.h
-@@ -0,0 +1,65 @@
+@@ -0,0 +1,66 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -33,7 +33,8 @@
 +  HidConnectionFreeBSD(
 +      scoped_refptr<HidDeviceInfo> device_info,
 +      base::ScopedFD fd,
-+      scoped_refptr<base::SequencedTaskRunner> blocking_task_runner);
++      scoped_refptr<base::SequencedTaskRunner> blocking_task_runner,
++      bool allow_protected_reports);
 +
 + private:
 +  friend class base::RefCountedThreadSafe<HidConnectionFreeBSD>;
