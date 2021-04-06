@@ -47,7 +47,7 @@ _LLD_EMUL_armv7=	armelf_fbsd
 _LLD_EMUL_i386=		elf_i386_fbsd
 _LLD_EMUL_powerpc=	elf32ppc_fbsd
 _LLD_EMUL_powerpc64=	elf64ppc_fbsd
-_LLD_EMUL_powerpc64le=	elf64ppc_fbsd
+_LLD_EMUL_powerpc64le=	elf64lppc_fbsd
 
 post-patch:
 	@${REINPLACE_CMD} 's,[[:<:]]ld[[:>:]],ld -m${_LLD_EMUL_${ARCH}},' \
