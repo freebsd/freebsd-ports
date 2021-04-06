@@ -1,7 +1,7 @@
 /distfiles
 /packages
 /security/vuxml/vuln-flat.xml
-/*/*/Makefile.local
+Makefile.local
 /*/*/work
 /*/*/work-*
 /INDEX-[0-9]*
