@@ -68,6 +68,7 @@ include/groonga/groonga/request_timer.h
 include/groonga/groonga/result_set.h
 include/groonga/groonga/scorer.h
 include/groonga/groonga/selector.h
+include/groonga/groonga/smart_obj.hpp
 include/groonga/groonga/string.h
 include/groonga/groonga/table.h
 include/groonga/groonga/table_module.h
