@@ -178,6 +178,36 @@ Notes:
     </dates>
   </vuln>
 
+  <vuln vid="79fa9f23-9725-11eb-b530-7085c2fb2c14">
+    <topic>upnp -- stack overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>upnp</name>
+	<range><lt>1.14.5,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mitre reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-28302">
+	  <p>
+	      A stack overflow in pupnp 1.16.1 can cause the denial of service through the
+	      Parser_parseDocument() function. ixmlNode_free() will release a child node
+	      recursively, which will consume stack space and lead to a crash.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-28302</cvename>
+      <url>https://github.com/pupnp/pupnp/issues/249</url>
+    </references>
+    <dates>
+      <discovery>2021-03-12</discovery>
+      <entry>2021-04-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dec7e4b6-961a-11eb-9c34-080027f515ea">
     <topic>ruby -- XML round-trip vulnerability in REXML</topic>
     <affects>
