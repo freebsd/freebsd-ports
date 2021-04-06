@@ -1,7 +1,7 @@
 # Created by: Ulrich Spoerlein <q@uni.de>
 
 PORTNAME=	eggdrop
-PORTVERSION=	1.8.4
+PORTVERSION=	1.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	irc
 
@@ -81,7 +81,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/scripts
 .for f in CONTENTS action.fix.tcl autobotchk alltools.tcl botchk \
 	cmd_resolve.tcl compat.tcl dccwhois.tcl getops.tcl klined.tcl notes2.tcl ques5.tcl \
-	quotepass.tcl quotepong.tcl sentinel.tcl userinfo.tcl weed
+	quotepong.tcl sentinel.tcl userinfo.tcl weed
 	${INSTALL_DATA} ${WRKSRC}/scripts/${f} ${STAGEDIR}${DATADIR}/scripts
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}/scripts/help
