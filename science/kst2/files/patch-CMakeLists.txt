@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2018-04-05 13:33:30 UTC
+--- CMakeLists.txt.orig	2021-01-24 05:51:19 UTC
 +++ CMakeLists.txt
 @@ -72,12 +72,6 @@ endif()
  project(Kst)
@@ -13,7 +13,20 @@
  
  
  if(kst_sanitize)
-@@ -239,11 +233,6 @@ message(STATUS)
+@@ -116,10 +110,10 @@ elseif(kst_3rdparty_download)
+         elseif(GCC_VERSION VERSION_EQUAL 4.7 OR GCC_VERSION VERSION_GREATER 4.7)
+             set(ver 4.7)
+             set(md5 de6e8dbab1bb17eee6057941fddc93e3)
+-        else(GCC_VERSION VERSION_EQUAL 4.6 OR GCC_VERSION VERSION_GREATER 4.6)
++        elseif(GCC_VERSION VERSION_EQUAL 4.6 OR GCC_VERSION VERSION_GREATER 4.6)
+             set(ver 4.6)
+             set(md5 70d8670af9c21eb8fb466654c95d8e4d)
+-        else(GCC_VERSION VERSION_GREATER 4.4)
++        elseif(GCC_VERSION VERSION_GREATER 4.4)
+             set(ver 4.4)
+             set(md5 999248fb40a44543af4dd4cd1be0ceeb)
+         else()
+@@ -240,11 +234,6 @@ message(STATUS)
  # React on options
  
  
