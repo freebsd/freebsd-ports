@@ -1,5 +1,7 @@
 bin/qdirstat
 bin/qdirstat-cache-writer
+man/man1/qdirstat-cache-writer.1.gz
+man/man1/qdirstat.1.gz
 share/applications/qdirstat.desktop
 share/icons/hicolor/scalable/apps/qdirstat.svg
 %%PORTDOCS%%%%DOCSDIR%%/Btrfs-Free-Size.md
@@ -12,6 +14,7 @@ share/icons/hicolor/scalable/apps/qdirstat.svg
 %%PORTDOCS%%%%DOCSDIR%%/Pkg-View.md
 %%PORTDOCS%%%%DOCSDIR%%/QDirStat-for-Servers.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/Shadowed-by-Mount.md
 %%PORTDOCS%%%%DOCSDIR%%/Troubleshooting.md
 %%PORTDOCS%%%%DOCSDIR%%/Unpkg-View.md
 %%PORTDOCS%%%%DOCSDIR%%/cache-file-format.txt
