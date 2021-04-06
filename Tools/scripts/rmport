@@ -307,9 +307,9 @@ rm_port()
 {
 	catport=${1}
 
-	log "${catport}: removing port's files"
+	log "${catport}: scheduling port removal"
 
-	${GIT} rm -r ${catport}
+	echo ${catport} >> ${gitrmlist}
 }
 
 append_Template()
@@ -337,7 +337,7 @@ append_Template()
 commit()
 {
 	${GIT} commit --file=${gitlog}
-	answer=$(ask "Do you want to merge and tweak the commit message")
+	answer=$(ask "Do you want to tweak the commit message")
 	if [ "${answer}" = "y" ] ; then
 		${GIT} pull --ff-only --rebase 2>&1
 		${GIT} commit 2>&1 # modify final commit message
@@ -349,7 +349,7 @@ cleanup()
 {
 	log "cleaning up"
 
-	rm -f ${gitlog}
+	rm -f ${gitlog} ${gitrmlist}
 }
 
 usage()
@@ -380,6 +380,11 @@ if ! ${GIT} diff --exit-code remotes/origin/main ; then
 	echo "you have local commits, exiting" >&2
 	exit
 fi
+if [ ! -r ${INDEX} ] ; then
+	echo "${INDEX} not readable, exiting" >&2
+	exit
+fi
+
 git_dir="$(${GIT} rev-parse --git-dir)"
 exitcode=$?
 if [ ${exitcode} -ne 0 ] ; then
@@ -427,6 +432,10 @@ if [ ${1} = "-a" ] ; then
 fi
 
 gitlog=$(mktemp -t gitlog)
+gitrmlist=$(mktemp -t gitrmlist)
+
+echo "Remove expired ports:" > ${gitlog}
+echo "" >> ${gitlog}
 
 for catport in $* ; do
 	# convert to category/port
@@ -457,6 +466,12 @@ for catport in $* ; do
 
 	rm_port ${catport}
 done
+
+if [ -s ${gitrmlist} ] ; then
+	${GIT} rm -r $(cat ${gitrmlist})
+else
+	log "No port directories to remove"
+fi
 
 # give a chance to the committer to edit files by hand and recreate/review
 # the diff afterwards
