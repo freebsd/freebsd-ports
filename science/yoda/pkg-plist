@@ -6,6 +6,7 @@ include/YODA/Axis2D.h
 include/YODA/Bin.h
 include/YODA/Bin1D.h
 include/YODA/Bin2D.h
+include/YODA/Binned.h
 include/YODA/Config/BuildConfig.h
 include/YODA/Config/YodaConfig.h
 include/YODA/Counter.h
@@ -15,6 +16,7 @@ include/YODA/Dbn2D.h
 include/YODA/Dbn3D.h
 include/YODA/ErrorND.h
 include/YODA/Exceptions.h
+include/YODA/Fillable.h
 include/YODA/Histo1D.h
 include/YODA/Histo2D.h
 include/YODA/HistoBin1D.h
@@ -36,6 +38,7 @@ include/YODA/ReaderAIDA.h
 include/YODA/ReaderFLAT.h
 include/YODA/ReaderMethods.icc
 include/YODA/ReaderYODA.h
+include/YODA/Scatter.h
 include/YODA/Scatter1D.h
 include/YODA/Scatter2D.h
 include/YODA/Scatter3D.h
