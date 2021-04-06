@@ -6,9 +6,16 @@ share/icons/hicolor/scalable/apps/kaidan.svg
 %%DATADIR%%/images/account-deletion-from-client.svg
 %%DATADIR%%/images/chat-page-background.svg
 %%DATADIR%%/images/check-mark.svg
+%%DATADIR%%/images/check-mark-pale.svg
+%%DATADIR%%/images/cross.svg
+%%DATADIR%%/images/dots.svg
 %%DATADIR%%/images/global-drawer-banner.svg
 %%DATADIR%%/images/kaidan-bw.svg
 %%DATADIR%%/images/kaidan.svg
+%%DATADIR%%/images/mic0.svg
+%%DATADIR%%/images/mic1.svg
+%%DATADIR%%/images/mic2.svg
+%%DATADIR%%/images/mic3.svg
 %%DATADIR%%/images/onboarding/account-transfer.svg
 %%DATADIR%%/images/onboarding/automatic-registration.svg
 %%DATADIR%%/images/onboarding/custom-form.svg
