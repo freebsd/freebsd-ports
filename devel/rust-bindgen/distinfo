@@ -1,6 +1,6 @@
-TIMESTAMP = 1617455770
-SHA256 (rust/crates/bindgen-0.58.0.tar.gz) = d5d2549a1ca679efa833b9d88a424955109722c9fd95418b95414c19fd6f4bda
-SIZE (rust/crates/bindgen-0.58.0.tar.gz) = 201326
+TIMESTAMP = 1617700828
+SHA256 (rust/crates/bindgen-0.58.1.tar.gz) = 0f8523b410d7187a43085e7e064416ea32ded16bd0a4e6fc025e21616d01258f
+SIZE (rust/crates/bindgen-0.58.1.tar.gz) = 201394
 SHA256 (rust/crates/aho-corasick-0.7.15.tar.gz) = 7404febffaa47dac81aa44dba71523c9d069b1bdc50a77db41195149e17f68e5
 SIZE (rust/crates/aho-corasick-0.7.15.tar.gz) = 113071
 SHA256 (rust/crates/ansi_term-0.11.0.tar.gz) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
