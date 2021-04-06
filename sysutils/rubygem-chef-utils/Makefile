@@ -1,8 +1,8 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/sysutils/rubygem-chef-utils/Makefile 563392 2021-01-30 12:35:45Z sunpoet $
 
 PORTNAME=	chef-utils
-PORTVERSION=	16.9.29
+PORTVERSION=	16.11.7
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
