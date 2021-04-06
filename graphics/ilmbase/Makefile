@@ -2,6 +2,7 @@
 
 PORTNAME=	ilmbase
 PORTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -15,9 +16,7 @@ USE_GITHUB=	yes
 GH_TUPLE=	AcademySoftwareFoundation:openexr:v${PORTVERSION}
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS+=	--target \
-		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
-		install
+CMAKE_ARGS+=	-DCMAKE_INSTALL_PREFIX=${PREFIX}
 
 WRKSRC_SUBDIR=	IlmBase
 
