@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libturbojpeg.so:graphics/libjpeg-turbo \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc64le
+ONLY_FOR_ARCHS=	amd64 i386 powerpc64 powerpc64le
 
 CMAKE_INSTALL_PREFIX=	${LOCALBASE}/VirtualGL
 DOCSDIR=	${LOCALBASE}/VirtualGL/doc
