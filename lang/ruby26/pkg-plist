@@ -798,9 +798,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_LIBDIR%%/rubygems/specification.rb
 %%RUBY_LIBDIR%%/rubygems/specification_policy.rb
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/index.rubygems.org/GlobalSignRootCA.pem
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/rubygems.global.ssl.fastly.net/DigiCertHighAssuranceEVRootCA.pem
-%%RUBY_LIBDIR%%/rubygems/ssl_certs/rubygems.org/AddTrustExternalCARoot.pem
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA.pem
+%%RUBY_LIBDIR%%/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA_R3.pem
 %%RUBY_LIBDIR%%/rubygems/stub_specification.rb
 %%RUBY_LIBDIR%%/rubygems/syck_hack.rb
 %%RUBY_LIBDIR%%/rubygems/test_case.rb
@@ -1021,6 +1020,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d36/stringio_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d38/structmapping__buffer.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d3e/structrb__f__p__arg.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d43/ruby-2_86_87_2debug_8c__incl.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d43/ruby-2_86_87_2debug_8c__incl.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d43/ruby-2_86_87_2debug_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d44/hash_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d44/hash_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d44/hash_8c__incl.png
@@ -1048,7 +1050,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d5a/structibf__object__string.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d5c/structtr.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d61/structibf__object__header.html
-%%EXTRADOC%%%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d63/structsockcred2.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d64/structparser__params.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d65/structcls__struct__7byte.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d66/struct_r_rational.html
@@ -1072,6 +1073,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d73/structrb__env__t.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d78/struct____max__align__t.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d78/structobj__ivar__tag.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d79/ruby-2_86_87_2win32_2file_8c.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d79/ruby-2_86_87_2win32_2file_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d7e/fiddle_8h__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d7e/fiddle_8h__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d7e/fiddle_8h__incl.png
@@ -1091,8 +1094,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d8a/setproctitle_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d8a/setproctitle_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d8a/setproctitle_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d8b/ruby-2_86_86_2debug_8c.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d8b/ruby-2_86_86_2debug_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d8d/va__1_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d8d/va__1_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d95/structcls__struct__16byte.html
@@ -1101,11 +1102,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d96/date__strftime_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d9b/structfinish__writeconv__arg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/d9e/structmallinfo.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/da0/ruby-2_86_86_2include_2ruby_2version_8h__dep__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/da0/ruby-2_86_86_2include_2ruby_2version_8h__dep__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/da0/ruby-2_86_86_2include_2ruby_2version_8h__dep__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/da1/ruby-2_86_86_2ext_2fiddle_2libffi-3_82_81_2src_2debug_8c.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/da1/ruby-2_86_86_2ext_2fiddle_2libffi-3_82_81_2src_2debug_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/da5/bigdecimal_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/da5/bigdecimal_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d0/daa/gc_8h.html
@@ -1316,8 +1312,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/d8f/float__va_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/d8f/float__va_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/d90/structtimetick.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/d91/ruby-2_86_86_2file_8c.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/d91/ruby-2_86_86_2file_8c_source.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/d93/ruby-2_86_87_2ext_2fiddle_2libffi-3_82_81_2src_2debug_8c.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/d93/ruby-2_86_87_2ext_2fiddle_2libffi-3_82_81_2src_2debug_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/d94/struct_onig_match_arg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/d98/return__fl_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d1/d98/return__fl_8c_source.html
@@ -1633,9 +1629,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d1d/cls__3byte2_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d1d/ossl__x509req_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d1d/ossl__x509req_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d1d/ruby-2_86_86_2file_8c__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d1d/ruby-2_86_86_2file_8c__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d1d/ruby-2_86_86_2file_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d20/bigdecimal_8h__dep__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d20/bigdecimal_8h__dep__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d3/d20/bigdecimal_8h__dep__incl.png
@@ -1858,8 +1851,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d14/m88k_2ffi_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d14/m88k_2ffi_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d17/structno__gvl__stat__data.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d1a/ruby-2_86_86_2ext_2bigdecimal_2util_2util_8c.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d1a/ruby-2_86_86_2ext_2bigdecimal_2util_2util_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d1a/struct_r_struct.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d20/ossl__ocsp_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d20/ossl__ocsp_8c__incl.md5
@@ -1977,9 +1968,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d96/ruby__assert_8h__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/d9e/structst__features.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/da1/structequal__data.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/da2/ruby-2_86_86_2win32_2file_8c__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/da2/ruby-2_86_86_2win32_2file_8c__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/da2/ruby-2_86_86_2win32_2file_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/da7/pty_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/da7/pty_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d4/da7/pty_8c__incl.png
@@ -2246,6 +2234,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dca/strscan_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dcc/nan_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dcc/nan_8c_source.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd0/ruby-2_86_87_2file_8c.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd0/ruby-2_86_87_2file_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd1/socket_2constdefs_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd1/socket_2constdefs_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d5/dd4/arm64_2_context_8h.html
@@ -2334,6 +2324,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d2d/structibf__dump__id__list__i__arg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d2e/struct_opt_env.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d2f/structextended__cif.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d30/ruby-2_86_87_2ext_2bigdecimal_2util_2util_8c.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d30/ruby-2_86_87_2ext_2bigdecimal_2util_2util_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d31/cls__64byte_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d31/cls__64byte_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/d31/cls__pointer__stack_8c__incl.map
@@ -2488,6 +2480,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/db5/avr32_2ffi_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/db5/avr32_2ffi_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/db5/structrb__mjit__unit__list.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/db6/ruby-2_86_87_2file_8c__incl.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/db6/ruby-2_86_87_2file_8c__incl.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/db6/ruby-2_86_87_2file_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/db8/float1_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/db8/float1_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/db8/float1_8c__incl.png
@@ -2506,8 +2501,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/dc8/return__fl_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/dc8/return__fl_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/dca/structiseq__compile__data__ensure__node__stack.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/dcb/ruby-2_86_86_2util_8c.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/dcb/ruby-2_86_86_2util_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/dcb/structrb__iseq__constant__body_1_1iseq__insn__info.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/dcc/cls__uchar_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d6/dcc/cls__uchar_8c__incl.md5
@@ -2588,9 +2581,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d7/d1c/math_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d7/d1c/math_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d7/d1c/math_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d7/d1d/ruby-2_86_86_2debug_8c__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d7/d1d/ruby-2_86_86_2debug_8c__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d7/d1d/ruby-2_86_86_2debug_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d7/d1d/structibf__object__symbol.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d7/d1e/cls__8byte_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d7/d1e/cls__8byte_8c__incl.md5
@@ -2938,6 +2928,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/da5/io_8h__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/da5/io_8h__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/da5/io_8h__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/da5/ruby-2_86_87_2win32_2file_8c__incl.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/da5/ruby-2_86_87_2win32_2file_8c__incl.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/da5/ruby-2_86_87_2win32_2file_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/da7/structcls__struct__16byte1.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/da8/fiddle_8h__dep__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d8/da8/fiddle_8h__dep__incl.md5
@@ -3093,8 +3086,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3c/cls__16byte_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3c/cls__16byte_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3c/cls__16byte_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3c/ruby-2_86_86_2win32_2file_8c.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3c/ruby-2_86_86_2win32_2file_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3d/testclosure_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3d/testclosure_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/d3f/struct___nt_cmd_line_element.html
@@ -3265,6 +3256,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/df9/dln_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/df9/dln_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/df9/dln_8c__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/dfb/ruby-2_86_87_2util_8c.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/dfb/ruby-2_86_87_2util_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/dfe/inits_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/d9/dfe/inits_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/d03/struct8_8c.html
@@ -3329,6 +3322,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/d4d/inits_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/d4d/inits_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/d4f/structcdhash__set__label__struct.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/d50/ruby-2_86_87_2debug_8c.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/d50/ruby-2_86_87_2debug_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/d50/vsnprintf_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/d50/vsnprintf_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/d52/frv_2ffi_8c__incl.map
@@ -3436,6 +3431,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dc2/nextafter_8c__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dc8/cls__multi__ushort_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dc8/cls__multi__ushort_8c_source.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dc8/ruby-2_86_87_2include_2ruby_2version_8h__dep__incl.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dc8/ruby-2_86_87_2include_2ruby_2version_8h__dep__incl.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dc8/ruby-2_86_87_2include_2ruby_2version_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dcb/structrb__strterm__heredoc__struct.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dcc/socket_2init_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/da/dcc/socket_2init_8c_source.html
@@ -3661,9 +3659,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dcc/error_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dcd/struct_r_float.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dce/structcmp__opt__data.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dd1/ruby-2_86_86_2util_8c__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dd1/ruby-2_86_86_2util_8c__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dd1/ruby-2_86_86_2util_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dd5/thread_8h.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dd5/thread_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/db/dd5/x86_2ffitarget_8h.html
@@ -3696,9 +3691,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d00/ffi64_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d00/ffi64_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d00/ffi64_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d01/ruby-2_86_86_2ext_2fiddle_2libffi-3_82_81_2src_2debug_8c__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d01/ruby-2_86_86_2ext_2fiddle_2libffi-3_82_81_2src_2debug_8c__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d01/ruby-2_86_86_2ext_2fiddle_2libffi-3_82_81_2src_2debug_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d04/struct__sigjmp__buf.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d07/structiseq__catch__table__entry.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d0a/addr2line_8c__incl.map
@@ -3711,9 +3703,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d0d/load_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d0d/load_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d0d/load_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d0f/ruby-2_86_86_2version_8h__dep__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d0f/ruby-2_86_86_2version_8h__dep__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d0f/ruby-2_86_86_2version_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d11/tcpsocket_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d11/tcpsocket_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d11/win32_2_context_8h.html
@@ -3750,6 +3739,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d35/oniguruma_8h__dep__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d35/oniguruma_8h__dep__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d35/oniguruma_8h__dep__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d35/ruby-2_86_87_2version_8h__dep__incl.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d35/ruby-2_86_87_2version_8h__dep__incl.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d35/ruby-2_86_87_2version_8h__dep__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d38/ossl__cipher_8h__dep__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d38/ossl__cipher_8h__dep__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/d38/ossl__cipher_8h__dep__incl.png
@@ -3890,6 +3882,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/de6/fcntl_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/de8/pyobjc-tc_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/de8/pyobjc-tc_8c_source.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/de9/ruby-2_86_87_2version_8h.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/de9/ruby-2_86_87_2version_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/dec/structossl__verify__cb__args.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/df2/structos__each__struct.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dc/df3/rmd160init_8c.html
@@ -3909,6 +3903,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d05/cls__align__double_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d05/cls__align__double_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d05/structobjspace__and__reason.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d09/ruby-2_86_87_2util_8c__incl.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d09/ruby-2_86_87_2util_8c__incl.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d09/ruby-2_86_87_2util_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d0d/structrb__method__iseq__struct.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d10/wait_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d10/wait_8c_source.html
@@ -3919,6 +3916,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d17/constant_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d17/return__ll1_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d17/return__ll1_8c_source.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d20/ruby-2_86_87_2ext_2bigdecimal_2util_2util_8c__incl.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d20/ruby-2_86_87_2ext_2bigdecimal_2util_2util_8c__incl.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d20/ruby-2_86_87_2ext_2bigdecimal_2util_2util_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d21/ruby_2backward_2st_8h__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d21/ruby_2backward_2st_8h__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/dd/d21/ruby_2backward_2st_8h__incl.png
@@ -4256,6 +4256,8 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d83/return__sl_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d83/return__sl_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d83/return__sl_8c__incl.png
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d84/ruby-2_86_87_2include_2ruby_2version_8h.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d84/ruby-2_86_87_2include_2ruby_2version_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d87/symbol_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d87/symbol_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/d8b/structtrace__data.html
@@ -4276,14 +4278,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/da7/closure__loc__fn0_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/da7/closure__loc__fn0_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/da7/closure__loc__fn0_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/dab/ruby-2_86_86_2version_8h__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/dab/ruby-2_86_86_2version_8h__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/dab/ruby-2_86_86_2version_8h__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/daf/pa_2ffi_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/daf/pa_2ffi_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/daf/pa_2ffi_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/db2/ruby-2_86_86_2version_8h.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/db2/ruby-2_86_86_2version_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/db2/structzstream.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/db3/structlldiv__t.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/db4/function_8c__incl.map
@@ -4303,8 +4300,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/dc6/structrb__control__frame__struct.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/dca/float1_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/dca/float1_8c_source.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/dcc/ruby-2_86_86_2include_2ruby_2version_8h.html
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/dcc/ruby-2_86_86_2include_2ruby_2version_8h_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/dcd/pointer_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/dcd/pointer_8c_source.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/de/dd6/regint_8h__incl.map
@@ -4363,6 +4358,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d0b/return__dbl_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d0b/return__dbl_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d0b/structcls__struct__6byte.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d0c/ruby-2_86_87_2ext_2fiddle_2libffi-3_82_81_2src_2debug_8c__incl.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d0c/ruby-2_86_87_2ext_2fiddle_2libffi-3_82_81_2src_2debug_8c__incl.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d0c/ruby-2_86_87_2ext_2fiddle_2libffi-3_82_81_2src_2debug_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d0f/rmd160init_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d0f/rmd160init_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d0f/rmd160init_8c__incl.png
@@ -4375,9 +4373,6 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d1a/thread_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d1a/thread_8c__incl.md5
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d1a/thread_8c__incl.png
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d1b/ruby-2_86_86_2ext_2bigdecimal_2util_2util_8c__incl.map
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d1b/ruby-2_86_86_2ext_2bigdecimal_2util_2util_8c__incl.md5
-%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d1b/ruby-2_86_86_2ext_2bigdecimal_2util_2util_8c__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d24/structforeach__arg.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d2b/memcmp_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d2b/memcmp_8c__incl.md5
@@ -4407,6 +4402,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d36/structtransient__heap__block.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d38/vm__exec_8c.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d38/vm__exec_8c_source.html
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d39/ruby-2_86_87_2version_8h__incl.map
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d39/ruby-2_86_87_2version_8h__incl.md5
+%%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d39/ruby-2_86_87_2version_8h__incl.png
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d3a/struct_r_hash.html
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d3a/version_8c__incl.map
 %%CAPIDOCS%%%%RUBY_DOCDIR%%/capi/html/df/d3a/version_8c__incl.md5
@@ -14059,6 +14057,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/REXML/Parsers/BaseParser/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/Parsers/BaseParser/normalize-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/Parsers/BaseParser/parse_attributes-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/REXML/Parsers/BaseParser/parse_id-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/REXML/Parsers/BaseParser/parse_id_invalid_details-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/REXML/Parsers/BaseParser/parse_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/Parsers/BaseParser/peek-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/Parsers/BaseParser/position-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/Parsers/BaseParser/process_instruction-i.ri
@@ -14163,6 +14164,9 @@ man/man1/%%RUBY_NAME%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/REXML/QuickPath/name-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/QuickPath/parse_args-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/QuickPath/predicate-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/REXML/ReferenceWriter/cdesc-ReferenceWriter.ri
+%%RDOC%%%%RUBY_RIDIR%%/REXML/ReferenceWriter/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/REXML/ReferenceWriter/write-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/SAX2Listener/attlistdecl-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/SAX2Listener/cdata-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/REXML/SAX2Listener/cdesc-SAX2Listener.ri
