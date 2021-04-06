@@ -54,3 +54,4 @@ libdata/pkgconfig/libgvm_boreas.pc
 libdata/pkgconfig/libgvm_gmp.pc
 libdata/pkgconfig/libgvm_osp.pc
 libdata/pkgconfig/libgvm_util.pc
+@dir /var/run/gvm
