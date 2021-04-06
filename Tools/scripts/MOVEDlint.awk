@@ -25,8 +25,6 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 #
-# $FreeBSD$
-#
 # MOVEDlint - check MOVED for consistency
 #
 # Usage:
@@ -39,9 +37,7 @@ BEGIN {
     if (ARGC == 1) {
         ARGV[ARGC++] = portsdir "/MOVED"
         if (ENVIRON["BLAME"]) {
-            if (!system("test -d " portsdir "/.svn")) {
-                blame = "cd " portsdir "; svn blame MOVED 2>/dev/null"
-            } else if (!system("test -d " portsdir "/.git")) {
+	    if (!system("test -r " portsdir "/.git")) {
                 blame = "cd " portsdir "; git blame MOVED 2>/dev/null"
             }
 
