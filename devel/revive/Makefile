@@ -1,7 +1,7 @@
 
 PORTNAME=	revive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.3
+DISTVERSION=	1.0.6
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -14,17 +14,28 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	mgechev
 GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
+		chavacava:garif:87a70f3d418b:chavacava_garif/vendor/github.com/chavacava/garif \
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		fatih:structtag:v1.2.0:fatih_structtag/vendor/github.com/fatih/structtag \
 		golang:sys:b64e53b001e4:golang_sys/vendor/golang.org/x/sys \
 		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
 		mattn:go-colorable:v0.1.8:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.7:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-runewidth:v0.0.9:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mgechev:dots:c36f7dcfbb81:mgechev_dots/vendor/github.com/mgechev/dots \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
-		olekukonko:tablewriter:v0.0.4:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
+		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors
+
+_BUILD_VERSION=	${DISTVERSION}
+_BUILD_COMMIT=	f2d79cc
+_BUILD_DATE=	$$(date +%Y-%m-%d)
+
+GO_BUILDFLAGS=	-ldflags "\
+		-s -w \
+		-X main.version=${_BUILD_VERSION} \
+		-X main.commit=${_BUILD_COMMIT} \
+		-X main.date=${_BUILD_DATE}"
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPING.md \
