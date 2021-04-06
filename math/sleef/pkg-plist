@@ -9,3 +9,4 @@ lib/libsleefdft.so.3.5.0
 %%NO_PPC64%%lib/libsleefgnuabi.so
 %%NO_PPC64%%lib/libsleefgnuabi.so.3
 %%NO_PPC64%%lib/libsleefgnuabi.so.3.5
+libdata/pkgconfig/sleef.pc
