@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # bsd.tex.mk - Common part for TeX related ports
 #
 TEX_MAINTAINER=	hrs@FreeBSD.org

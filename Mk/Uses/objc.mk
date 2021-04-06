@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Objective C support
 #
 # Feature:	objc

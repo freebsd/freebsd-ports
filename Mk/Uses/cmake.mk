@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support for CMake based projects
 #
 # Feature:		cmake

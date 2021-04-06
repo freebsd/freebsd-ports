@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 AFTERPORTMK=	yes
 
 .include "bsd.port.mk"

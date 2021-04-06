@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle dependency on OpenAL
 #
 # Feature:	openal

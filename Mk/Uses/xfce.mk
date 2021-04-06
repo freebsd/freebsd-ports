@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 # Provide support for Xfce related ports.
 #
 # Feature:	xfce

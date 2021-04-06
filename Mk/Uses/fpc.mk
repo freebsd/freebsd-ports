@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 # Support for FPC-based ports. This automatically will install free pascal 
 # compiler and units.
 #

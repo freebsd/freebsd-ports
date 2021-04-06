@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support for ports requiring Emacs.  This includes flavors with proper
 # dependencies and useful variables.
 #

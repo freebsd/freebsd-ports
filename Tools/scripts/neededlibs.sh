@@ -26,9 +26,6 @@
 # SUCH DAMAGE.
 #
 
-# $FreeBSD$
-
-
 #
 # The purpose of this script is to find as much dependencies of a binary
 # as possible. A dependecy is for example a library which is directly

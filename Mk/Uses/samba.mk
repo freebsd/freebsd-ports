@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle dependency on samba
 #
 # Feature:	samba

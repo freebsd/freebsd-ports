@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # handle terminfo.db and *.terminfo files used by ncurses
 #
 # Feature:	terminfo

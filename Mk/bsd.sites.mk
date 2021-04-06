@@ -19,9 +19,6 @@
 # pick a globally representative subset.
 #
 # Note: all entries should terminate with a slash.
-#
-# $FreeBSD$
-#
 
 # Where to put distfiles that don't have any other master site
 .if !defined(IGNORE_MASTER_SITE_LOCAL)

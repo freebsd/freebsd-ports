@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # handle dependency depends on desktop-file-utils and package regen
 #
 # Feature:	desktop-file-utils

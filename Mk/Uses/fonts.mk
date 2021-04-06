@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # handle fonts
 # Feature:	fonts
 # Usage:	USES=fonts

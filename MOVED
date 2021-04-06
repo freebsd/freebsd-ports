@@ -1,8 +1,6 @@
 #
 # MOVED -- A list of (recently) moved or removed ports
 #
-# $FreeBSD$
-#
 # Each entry consists of a single line containing the following four
 # fields in the order named, separated with the pipe (`|') character:
 #

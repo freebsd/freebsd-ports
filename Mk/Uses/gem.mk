@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Support rubygem packages
 #
 # Feature:	gem

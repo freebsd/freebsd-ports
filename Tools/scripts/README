@@ -1,5 +1,3 @@
-$FreeBSD$
-
 NOTE: These scripts need work and are *NOT* safe to use unless you know
       what they do.  Use at your own risk.  Patches would be great, but
       it is preferred they pass through the maintainer of each particular

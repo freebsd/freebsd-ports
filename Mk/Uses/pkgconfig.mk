@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # handle dependency on the pkgconf port
 #
 # Feature:	pkgconfig

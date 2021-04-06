@@ -1,8 +1,6 @@
 #-*- tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD$
-#
 # Please view me with 4 column tabs!
 
 # ======================= USERS =================================

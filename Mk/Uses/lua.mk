@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support for lua
 #
 # MAINTAINER: ports@FreeBSD.org

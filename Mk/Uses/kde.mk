@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provides support for KDE and KF5-based ports.
 #
 # Feature:	kde

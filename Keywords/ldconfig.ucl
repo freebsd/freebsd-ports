@@ -1,7 +1,4 @@
-# $FreeBSD$
-#
 # MAINTAINER: portmgr@FreeBSD.org
-#
 
 post-install: <<EOD
 	if ! /usr/sbin/service ldconfig restart >/dev/null; then

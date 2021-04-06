@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # READ BEFORE EDITING:
 # - Please keep descriptions sorted alphabetically by variable name.
 #

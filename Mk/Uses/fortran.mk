@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Fortran support
 #
 # Feature:	fortran

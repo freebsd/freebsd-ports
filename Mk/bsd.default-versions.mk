@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # MAINTAINER:	ports@FreeBSD.org
 #
 # Note: before committing to this file, contact portmgr to arrange for an

@@ -1,8 +1,6 @@
 #-*- tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD$
-#
 # apache.mk - Apache related macros.
 # Author: Clement Laforet <clement@FreeBSD.org>
 # Author: Olli Hauer <ohauer@FreeBSD.org>

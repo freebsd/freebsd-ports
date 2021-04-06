@@ -1,5 +1,4 @@
 #!/usr/bin/env perl
-# $FreeBSD$
 # perltidy -bext=/ -i=8 -et=8 -l=132 -pt=2 -ce -cti=1
 
 use strict;

@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Use the PHP Extension and Application Repository
 #
 # Feature:	pear

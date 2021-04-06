@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support for Meson based projects
 #
 # Feature:		meson

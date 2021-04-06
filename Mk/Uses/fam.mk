@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # MAINTAINER: portmgr@FreeBSD.org
 #
 # Feature:	fam

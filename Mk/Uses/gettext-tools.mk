@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle dependency on the gettext-tools port
 #
 # Feature:	gettext-tools

@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # handle makeself archives
 #
 # Feature:	makeself

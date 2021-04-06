@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 #
-# $FreeBSD$
-#
 # INDEX builds visit each port once and write out each port's
 # *-depends as a list of directories, using 'make describe'.  This
 # script goes back in and maps the directories back to pkgnames,

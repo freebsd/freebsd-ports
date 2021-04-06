@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Run autoreconf in AUTORECONF_WRKSRC to update configure, Makefile.in and
 # other build scripts.
 #

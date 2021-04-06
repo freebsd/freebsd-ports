@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Bring libtool scripts up to date.
 #
 # Feature:	libtool

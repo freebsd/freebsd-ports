@@ -1,4 +1,3 @@
-# $FreeBSD$
 # SSP Support
 
 SSP_Include_MAINTAINER=	portmgr@FreeBSD.org

@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support for Firebird
 # Feature:	firebird
 # Usage:	USES=	firebird[:version]

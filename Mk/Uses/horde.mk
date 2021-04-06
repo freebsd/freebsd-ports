@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Feature:	horde
 # Usage:	USES=horde
 # Valid ARGS:	none

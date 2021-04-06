@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Shared namespace for py-azure-* ports
 # Feature:	azurepy
 # Usage:	USES=	azurepy

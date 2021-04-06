@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle dependencies on MPICH / OpenMPI
 #
 # Feature:	mpi

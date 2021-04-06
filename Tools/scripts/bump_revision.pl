@@ -1,7 +1,5 @@
 #!/usr/bin/env -S perl -wT
 
-# $FreeBSD$
-
 #
 # This script helps with bumping the PORTREVISION of all ports that depend on a
 # set of ports, for instance, when in the latter set one of the ports bumped the

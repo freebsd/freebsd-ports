@@ -1,5 +1,4 @@
-# $FreeBSD$
-#
+# MAINTAINER: portmgr@FreeBSD.org
 
 actions: []
 post-install: <<EOD

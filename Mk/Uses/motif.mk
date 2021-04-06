@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # handle dependency on motif
 #
 # Feature:	motif

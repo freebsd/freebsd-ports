@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle dependency on the fuse port
 #
 # Feature:	fuse

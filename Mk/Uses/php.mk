@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Support for PHP-based ports.
 #
 # Feature:	php

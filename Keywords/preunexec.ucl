@@ -1,6 +1,5 @@
-# $FreeBSD$
-#
 # MAINTAINER:	portmgr@FreeBSD.org
+
 actions: []
 preformat_arguments: true
 pre-deinstall: <<EOS

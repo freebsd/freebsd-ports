@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Lookup in Makefile.in to prevent a package from installing/modifying charset.alias
 #
 # Feature:	charsetfix

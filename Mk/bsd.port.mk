@@ -1,9 +1,6 @@
 #-*- tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD$
-#	$NetBSD: $
-#
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
 #

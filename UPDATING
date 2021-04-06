@@ -19048,5 +19048,3 @@ or
   The default installation is now configured for running bitlbee as user
   'nobody' by default.  Make sure any existing configuration files are
   readable by that user.
-
-$FreeBSD$

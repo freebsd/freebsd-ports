@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handles common items for kernel module ports.
 #
 # Feature:	kmod

@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # handle dependency on the iconv port
 #
 # Feature:	iconv

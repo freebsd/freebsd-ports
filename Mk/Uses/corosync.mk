@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support for corosync ports
 #
 # Feature:		corosync

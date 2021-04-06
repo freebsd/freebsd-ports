@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Replace #! interpreters in scripts by what we actually have.
 #
 # Standard templates for bash, perl, python,... are included out of

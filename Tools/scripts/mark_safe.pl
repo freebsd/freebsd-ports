@@ -1,7 +1,5 @@
 #!/usr/bin/env perl
 
-# $FreeBSD$
-#
 # MAINTAINER=   ports@FreeBSD.org
 # all committers may commit to this file without approval
 
@@ -27,7 +25,6 @@ local $SIG{__DIE__}  = \&Carp::confess;
 local $SIG{__WARN__} = \&Carp::cluck;
 
 ### version
-our $VERSION = do { my @r = (q$FreeBSD$ =~ /\d+/g); sprintf "%d." . "%02d" x $#r, @r };
 
 ### globals
 # cmdline options (standard) with defaults
@@ -193,7 +190,7 @@ sub main {
   }
 
   if ($Version) {
-    print PROGNAME . " - v$VERSION\n\n";
+    print PROGNAME . "\n\n";
     return EXIT_SUCCESS;
   }
 

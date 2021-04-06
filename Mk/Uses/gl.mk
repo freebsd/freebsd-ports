@@ -1,5 +1,3 @@
-# $FreeBSD$
-# 
 # Use OpenGL and related libraries and ports
 # 
 # Feature:	gl

@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # handle dependency on Kerberos port
 #
 # Feature:	gssapi

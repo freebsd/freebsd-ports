@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support to use the GNU make
 #
 # Feature:		gmake

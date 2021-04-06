@@ -1,6 +1,5 @@
-# $FreeBSD$
-#
 # MAINTAINER:	portmgr@FreeBSD.org
+
 actions: []
 deprecated: true
 deprecation_message: <<EOM

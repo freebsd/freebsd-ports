@@ -1,5 +1,4 @@
 #! /bin/sh
-# $FreeBSD$
 # Maintainer: portmgr@FreeBSD.org
 set -e
 set -o pipefail

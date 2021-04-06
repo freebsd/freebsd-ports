@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle gnu configure that does not properly support DESTDIR
 #
 # Feature:	desthack

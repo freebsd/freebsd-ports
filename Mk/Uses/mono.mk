@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # mono (c#) support
 #
 # Feature:	mono

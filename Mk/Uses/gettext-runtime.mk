@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle dependency on the gettext-runtime (libintl) port
 #
 # Feature:	gettext-runtime

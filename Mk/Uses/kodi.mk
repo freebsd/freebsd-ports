@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Support Kodi Home Theater Addons
 #
 # Feature:	kodi

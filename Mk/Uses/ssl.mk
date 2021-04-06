@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle dependency on *ssl ports.
 #
 # Feature:	SSL_DEFAULT

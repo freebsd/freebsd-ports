@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Use the Comprehensive R Archive Network 
 #
 # Feature:	cran

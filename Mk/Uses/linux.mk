@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Ports Linux compatibility framework
 #
 # Feature:	linux:args

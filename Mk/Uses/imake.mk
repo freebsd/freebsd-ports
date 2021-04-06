@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support for imake based projects
 #
 # Feature:		imake

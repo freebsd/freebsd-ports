@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Changes some default behaviour of build systems to allow installing as user.
 #
 # Feature:	fakeroot

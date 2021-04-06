@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Add __FreeBSD__ definition to CFLAGS
 # Used by DPorts when masquerading as FreeBSD allows port to build without
 # additional patches

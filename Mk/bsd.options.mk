@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # These variables are used in port makefiles to define the options for a port.
 #
 # OPTIONS_DEFINE		- List of options this ports accept

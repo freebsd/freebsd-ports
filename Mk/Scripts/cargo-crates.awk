@@ -1,5 +1,4 @@
 # MAINTAINER: rust@FreeBSD.org
-# $FreeBSD$
 
 BEGIN {
 	gh_tuple_len = 0

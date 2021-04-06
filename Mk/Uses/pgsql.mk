@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support for PostgreSQL (pgsql)
 #
 # Feature:	pgsql

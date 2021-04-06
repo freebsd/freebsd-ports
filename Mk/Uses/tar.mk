@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # handle tar archives
 #
 # Feature:	tar

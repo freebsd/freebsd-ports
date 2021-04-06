@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle dependencies on Blas / Lapack
 #
 # Feature:	blaslapack

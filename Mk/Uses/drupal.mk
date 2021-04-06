@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Support for Drupal ports and modules.
 #
 # Feature:	drupal

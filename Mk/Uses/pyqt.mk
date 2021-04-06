@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle PyQt related ports
 #
 # Feature:	pyqt

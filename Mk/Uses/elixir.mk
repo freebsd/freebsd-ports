@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle Elixir related ports
 #
 # Feature:	elixir

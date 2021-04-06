@@ -39,8 +39,6 @@
 #
 # If you are wondering what your port exactly does, use "make test-gcc"
 # to see some debugging.
-#
-# $FreeBSD$
 
 GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 

@@ -1,5 +1,4 @@
 #!/usr/bin/perl
-# $FreeBSD$
 
 $PORTSDIR="/usr/ports";
 $TEMPLATES=$ENV{TEMPLATES} || "${PORTSDIR}/Templates";

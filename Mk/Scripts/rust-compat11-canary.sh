@@ -1,6 +1,5 @@
 #!/bin/sh
 # MAINTAINER: rust@FreeBSD.org
-# $FreeBSD$
 set -eu
 set -o pipefail
 

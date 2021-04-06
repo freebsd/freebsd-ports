@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle GNUstep related ports
 #
 # Feature:	gnustep

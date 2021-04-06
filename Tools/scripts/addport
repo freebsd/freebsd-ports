@@ -33,7 +33,6 @@
 #
 # Id: addport,v 1.2 2000/04/02 06:21:13 will Exp (original shell script)
 # Id: addport,v 1.5 2000/04/22 22:19:43 mharo Exp (perl conversion)
-# $FreeBSD$
 #
 # MAINTAINER=	crees@FreeBSD.org
 #

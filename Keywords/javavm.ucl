@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # The argument is not registered as a file because of how the various
 # jdk/jre are made: kind of autoplist which would make the bin/java registered
 # twice

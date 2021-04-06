@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support for ghostscript ports.
 #
 # Feature:	ghostscript

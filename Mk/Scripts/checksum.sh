@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 #
 # MAINTAINER: portmgr@FreeBSD.org
 

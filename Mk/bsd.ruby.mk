@@ -1,10 +1,6 @@
-#
 # bsd.ruby.mk - Utility definitions for Ruby related ports.
 #
 # Created by: Akinori MUSHA <knu@FreeBSD.org>
-#
-# $FreeBSD$
-#
 
 .if !defined(Ruby_Include)
 

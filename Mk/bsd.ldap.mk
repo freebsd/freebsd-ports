@@ -1,8 +1,5 @@
 # -*- tab-width: 4; -*-
 # ex: ts=4
-#
-# $FreeBSD$
-#
 
 .if defined(_POSTMKINCLUDED) && !defined(Ldap_Post_Include)
 

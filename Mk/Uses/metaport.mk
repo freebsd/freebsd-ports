@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Sets the default variables to handle metaports
 #
 # Feature:	metaport

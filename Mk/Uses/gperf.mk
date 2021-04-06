@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # handle dependency on gperf
 #
 # Feature:	gperf

@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle dependency on qca
 #
 # Feature:		qca

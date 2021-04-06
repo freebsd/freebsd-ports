@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Support for SDL-based ports
 #
 # Feature:	sdl

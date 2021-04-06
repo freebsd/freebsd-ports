@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support to use perl5
 #
 # PERL5		- Set to full path of perl5, either in the system or

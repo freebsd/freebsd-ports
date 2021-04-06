@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # handle enforcing localbase in path
 #
 # Feature:	localbase

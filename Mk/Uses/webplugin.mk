@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Documentation and examples:
 #
 # Feature:	webplugin

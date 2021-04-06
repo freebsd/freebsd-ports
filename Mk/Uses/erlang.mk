@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handle Erlang related ports
 #
 # Feature:	erlang

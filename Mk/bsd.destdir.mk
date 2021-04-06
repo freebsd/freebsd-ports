@@ -5,8 +5,6 @@
 #
 # Created by: Gabor Kovesdan <gabor@FreeBSD.org>
 #
-# $FreeBSD$
-#
 # Please make sure all changes to this file are passed through the maintainer.
 
 DESTDIR_Include_MAINTAINER=		portmgr@FreeBSD.org

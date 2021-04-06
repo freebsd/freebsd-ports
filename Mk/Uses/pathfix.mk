@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Lookup common paths in Makefile.in, configure and similar files, and replace
 # their values to respect FreeBSD hier(7) for file installation.
 #

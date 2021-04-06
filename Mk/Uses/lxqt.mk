@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # This file contains some variable definitions that are supposed to make your
 # life easier, when dealing with ports related to the LXQt Desktop Environment.
 #

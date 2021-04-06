@@ -4,8 +4,6 @@
 # Date created:		12 Nov 2005
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
-# $FreeBSD$
-#
 # 4 column tabs prevent hair loss and tooth decay!
 
 # bsd.gecko.mk abstracts the selection of gecko-based backends. It allows users

@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # handle zip archives
 #
 # Feature:	zip

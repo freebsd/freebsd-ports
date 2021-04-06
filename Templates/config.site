@@ -1,4 +1,3 @@
-# $FreeBSD$
 # Do not add:
 #	- toolchain related
 #	- arch-dependent values

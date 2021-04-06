@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # There are three Qt related USES files with different access to Qt.
 #   - qmake: The port requires Qt's qmake to build -- creates the configure target
 #            - auto includes qt.mk

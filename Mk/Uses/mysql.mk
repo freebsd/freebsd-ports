@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Provide support for MySQL
 # Feature:	mysql
 # Usage:	USES=mysql or USES=mysql:args

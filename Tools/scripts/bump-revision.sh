@@ -13,8 +13,6 @@
 # Bartek Rutkowski
 # ----------------------------------------------------------------------------
 #
-# $FreeBSD$
-#
 # MAINTAINER= robak@FreeBSD.org
 
 #

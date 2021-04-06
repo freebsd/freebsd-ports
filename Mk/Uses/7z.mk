@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Extract 7-Zip archives
 #
 # Feature:	7z
