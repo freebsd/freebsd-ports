@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	meta1
-PORTVERSION=	1.1.0a.15.2
-PORTREVISION=	1
+PORTVERSION=	1.1.0a.16.0
+PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.MeTA1.org/download/.alpha/3rdt/
-DISTNAME=	${PORTNAME}-1.1.Alpha15.2
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/noise/
+DISTNAME=	${PORTNAME}-1.1.Alpha16.0
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure and efficient mail gateway
