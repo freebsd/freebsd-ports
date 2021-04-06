@@ -534,6 +534,16 @@ CONFIGURE_ARGS+=--disable-mbregex
 .	endif
 .endif
 
+.if ${PHP_MODNAME} == "openssl"
+post-stage:
+	@if ${PREFIX}/bin/php -m | grep openssl 2>/dev/null && ( [ ! -f ${PREFIX}/etc/php/ext-20-openssl.ini ] && [ ! -f ${PREFIX}/etc/php/ext-30-openssl.ini ] ); then \
+		${ECHO_CMD}; \
+		${ECHO_MSG} "===>  ${PKGNAME} "openssl module is already built with php base.; \
+		${ECHO_CMD}; \
+		${FALSE}; \
+	fi
+.endif
+
 .if ${PHP_MODNAME} == "openssl" || ${PHP_MODNAME} == "sqlite3"
 post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4

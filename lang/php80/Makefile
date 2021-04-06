@@ -4,7 +4,7 @@ PORTNAME=	php80
 DISTVERSION=	8.0.3
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
-MASTER_SITES=   PHP/distributions
+MASTER_SITES=	PHP/distributions
 DISTNAME=	php-${DISTVERSION}
 
 MAINTAINER=	tz@FreeBSD.org
@@ -27,14 +27,14 @@ CONFIGURE_ARGS+=--with-layout=GNU \
 		--with-libxml \
 		--with-password-argon2=${LOCALBASE} \
 		--program-prefix=""
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS=	-I${LOCALBASE}/include
 USES+=		autoreconf:build
 USE_GNOME=	libxml2
 
 # PR230207 Allow relocations against read-only segments (override lld default)
 LDFLAGS_i386=	-Wl,-z,notext
 
-OPTIONS_DEFINE+=CLI CGI FPM EMBED PHPDBG DEBUG DTRACE IPV6 MYSQLND LINKTHR ZTS
+OPTIONS_DEFINE+=CLI CGI FPM EMBED PHPDBG DEBUG DTRACE IPV6 MYSQLND MYSQL80 LINKTHR ZTS
 OPTIONS_DEFAULT=CLI CGI FPM EMBED MYSQLND LINKTHR DTRACE
 OPTIONS_EXCLUDE_DragonFly=	DTRACE
 # ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
@@ -58,8 +58,16 @@ FPM_DESC=	Build FPM version
 EMBED_DESC=	Build embedded library
 PHPDBG_DESC=	Interactive PHP debugger
 MYSQLND_DESC=	Build with MySQL Native Driver
+MYSQL80_DESC=	Build with MySQL caching password mechanism
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
+
+MYSQL80_CONFIGURE_ON=	--with-openssl
+MYSQL80_CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+				OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
+				PHP_OPENSSL=no
+MYSQL80_LDFLAGS=	-L${OPENSSLLIB} -lcrypto -lssl
+MYSQL80_USES=		ssl
 
 CONFLICTS=	php72-* php73-* php74-*
 
@@ -152,6 +160,14 @@ PLIST_SUB+=	DTRACE="@comment "
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
+.if ${PORT_OPTIONS:MMYSQL80}
+WARNING=	"PHP is now built with MySQL 8.0 support which has caching password mechanism. \
+	This implies php80-openssl module. Hence php80-openssl can no longer be \
+	installed alongside with php80. If you require php80-openssl module please \
+	rebuild php80 with MYSQL80 OPTION disabled. Otherwise remove php80-openssl \
+	DEPENDENCY from ports."
+.endif
+
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
@@ -168,9 +184,14 @@ post-build:
 	@${ECHO_CMD} "PHP_VER=80" > ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_SAPI=${PHP_SAPI}" >> ${WRKDIR}/php.conf
-	@${ECHO_CMD} "PHP_EXT_INC=hash json pcre spl" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} -n "PHP_EXT_DIR=" >> ${WRKDIR}/php.conf
 	@${SH} ${WRKSRC}/scripts/php-config --extension-dir | ${SED} -ne 's,^${PREFIX}/lib/php/,,p' >> ${WRKDIR}/php.conf
+
+post-build-MYSQL80-off:
+	@${ECHO_CMD} "PHP_EXT_INC=hash json pcre spl" >> ${WRKDIR}/php.conf
+
+post-build-MYSQL80-on:
+	@${ECHO_CMD} "PHP_EXT_INC=hash json openssl pcre spl" >> ${WRKDIR}/php.conf
 
 test: build
 	@(cd ${WRKSRC} && ${MAKE} test)
