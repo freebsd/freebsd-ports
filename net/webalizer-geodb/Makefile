@@ -1,7 +1,7 @@
-# $FreeBSD$
+# $FreeBSD: head/net/webalizer-geodb/Makefile 566829 2021-03-01 06:16:34Z dinoex $
 
 PORTNAME=	webalizer-geodb
-PORTVERSION=	20210301
+PORTVERSION=	20210401
 CATEGORIES+=	net
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/geodb/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
