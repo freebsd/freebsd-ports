@@ -2,6 +2,7 @@
 
 PORTNAME=	git
 DISTVERSION=	2.31.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/scm/git
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -16,15 +17,18 @@ COMMENT=	Distributed source code management tool ${COMMENT_${FLAVOR}}
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	default gui lite tiny
-default_CONFLICTS_INSTALL=	git-gui git-lite git-tiny
-gui_CONFLICTS_INSTALL=		git git-lite git-tiny
+FLAVORS=	default gui lite svn tiny
+default_CONFLICTS_INSTALL=	git-gui git-lite git-svn git-tiny
+gui_CONFLICTS_INSTALL=		git git-lite git-svn git-tiny
 gui_DESCR=			${.CURDIR}/pkg-descr-gui
 gui_PKGNAMESUFFIX=		-gui
-lite_CONFLICTS_INSTALL=		git git-gui git-tiny
+lite_CONFLICTS_INSTALL=		git git-gui git-svn git-tiny
 lite_DESCR=			${.CURDIR}/pkg-descr-lite
 lite_PKGNAMESUFFIX=		-lite
-tiny_CONFLICTS_INSTALL=		git git-gui git-lite
+svn_CONFLICTS_INSTALL=		git git-gui git-lite git-tiny
+svn_DESCR=			${.CURDIR}/pkg-descr-svn
+svn_PKGNAMESUFFIX=		-svn
+tiny_CONFLICTS_INSTALL=		git git-gui git-svn git-lite
 tiny_DESCR=			${.CURDIR}/pkg-descr-tiny
 tiny_PKGNAMESUFFIX=		-tiny
 
@@ -32,6 +36,7 @@ USES=		autoreconf gmake iconv shebangfix ssl tar:xz
 
 COMMENT_gui=	(GUI enabled flavor)
 COMMENT_lite=	(lite flavor)
+COMMENT_svn=	(SVN enabled flavor)
 COMMENT_tiny=	(tiny flavor)
 
 USERS=		git_daemon
@@ -66,11 +71,13 @@ CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 OPTIONS_DEFINE=	CONTRIB CURL CVS GITWEB GUI HTMLDOCS ICONV NLS P4 PCRE2 PERL \
 		SEND_EMAIL SUBTREE SVN
 OPTIONS_DEFAULT=CONTRIB CURL CVS GITWEB ICONV P4 PCRE2 PERL SEND_EMAIL \
-		SUBTREE SVN
+		SUBTREE
 .if ${FLAVOR:U} == gui
 OPTIONS_SLAVE+=		GUI
 .elif ${FLAVOR:U} == lite
 OPTIONS_EXCLUDE=	GUI SVN GITWEB CONTRIB P4 CVS PERL
+.elif ${FLAVOR:U} == svn
+OPTIONS_SLAVE+=		SVN
 .elif ${FLAVOR:U} == tiny
 OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NCURL}
 OPTIONS_SLAVE=		CURL
