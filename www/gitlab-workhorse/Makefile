@@ -1,8 +1,8 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/www/gitlab-workhorse/Makefile 567475 2021-03-06 10:08:29Z mfechner $
 
 PORTNAME?=	gitlab-workhorse
-PORTVERSION?=	8.63.2
+PORTVERSION?=	13.10.1
 PORTREVISION?=	0
 CATEGORIES=	www
 
@@ -17,16 +17,18 @@ RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
 
 USES=		gmake go:modules,no_targets
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
+WRKSRC_SUBDIR=	workhorse
 
 USE_GITLAB=	yes
 GL_ACCOUNT?=	gitlab-org
-# Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-workhorse/tags
-GL_COMMIT?=	d6a98839b0a1c98eea332e203a1632f8302b21e9
+GL_PROJECT=	gitlab-foss
+# Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
+GL_COMMIT?=	c93927607f55350f2e2af4bdaf03ff9dba80ab1d
 
 # for go dependencies
 USE_GITHUB=	nodefault
 # generated with: make gomod-vendor
-# 93dd
+# 94dd
 GH_TUPLE=	\
 		Azure:azure-pipeline-go:v0.2.3:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
 		Azure:azure-storage-blob-go:6df5d9af221d:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
@@ -43,6 +45,7 @@ GH_TUPLE=	\
 		aws:aws-sdk-go:v1.36.1:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-instrumentation:opencensus-go:v0.22.5:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		certifi:gocertifi:2c3bb06c6054:certifi_gocertifi/vendor/github.com/certifi/gocertifi \
 		cespare:xxhash:v2.1.1:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		client9:reopen:v1.0.0:client9_reopen/vendor/github.com/client9/reopen \
 		HdrHistogram:hdrhistogram-go:3a0bb77429bd:codahale_hdrhistogram_go/vendor/github.com/codahale/hdrhistogram \
@@ -53,7 +56,7 @@ GH_TUPLE=	\
 		dlclark:regexp2:v1.2.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dominikh:go-tools:v0.0.1-2020.1.5:dominikh_go_tools/vendor/honnef.co/go/tools \
 		form3tech-oss:jwt-go:v3.2.2:form3tech_oss_jwt_go/vendor/github.com/form3tech-oss/jwt-go \
-		getsentry:sentry-go:v0.7.0:getsentry_sentry_go/vendor/github.com/getsentry/sentry-go \
+		getsentry:raven-go:v0.2.0:getsentry_raven_go/vendor/github.com/getsentry/raven-go \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
@@ -146,3 +149,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/www/${PORTNAME}
 
 .include <bsd.port.mk>
+
+
