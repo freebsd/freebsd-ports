@@ -16197,4 +16197,4 @@ security/apg||2021-03-28|Has expired: Abandonware. Please try security/makepassw
 lang/Gofer||2021-03-28|Has expired: Old, unmaintained language
 net/libsignal|net/libsignal-protocol-c|2021-03-30|Rename to match upstream naming
 databases/redis4|databases/redis|2021-03-06|Has expired: End of life, please use modern version
-lang/ruby25||2021-04-06|Has expired: Use newer version, e.g. lang/ruby27 or above. Ruby 2.5 is in security maintenance phase and planned for EOL on March 31, 2021
+lang/ruby25|lang/ruby27|2021-04-06|Has expired: Use newer version, e.g. lang/ruby27 or above. Ruby 2.5 is in security maintenance phase and planned for EOL on March 31, 2021
