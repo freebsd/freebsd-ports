@@ -1,5 +1,4 @@
 # Created by: Sheldon Hearn <sheldonh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	DBD-Sybase
 PORTVERSION=	1.16

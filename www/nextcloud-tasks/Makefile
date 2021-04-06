@@ -1,5 +1,4 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	tasks
 PORTVERSION=	0.13.6

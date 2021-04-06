@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Bio-GFF3
 PORTVERSION=	2.0

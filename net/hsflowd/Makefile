@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hsflowd
 PORTVERSION=	1.24.1

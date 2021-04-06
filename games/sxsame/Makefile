@@ -1,5 +1,4 @@
 # Created by: Yuichi Narahara
-# $FreeBSD$
 
 PORTNAME=	sxsame
 PORTVERSION=	3.02

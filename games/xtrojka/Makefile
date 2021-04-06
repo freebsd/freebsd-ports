@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xtrojka
 PORTVERSION=	1.2.3

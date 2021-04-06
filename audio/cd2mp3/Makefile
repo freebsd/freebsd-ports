@@ -1,5 +1,4 @@
 # Created by: Jamie Heckford <jamie@blackhole.net>
-# $FreeBSD$
 
 PORTNAME=	cd2mp3
 PORTVERSION=	0.82

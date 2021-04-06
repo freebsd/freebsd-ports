@@ -1,5 +1,4 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-# $FreeBSD$
 
 PORTNAME=	POE-Component-TSTP
 PORTVERSION=	0.02

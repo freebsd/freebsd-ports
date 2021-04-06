@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hashcat
 PORTVERSION=	5.1.0

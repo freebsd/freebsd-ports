@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	oinkmaster
 PORTVERSION=	2.0

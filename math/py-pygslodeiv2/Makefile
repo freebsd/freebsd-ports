@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pygslodeiv2
 DISTVERSION=	0.9.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uncertainties
 DISTVERSION=	3.1.5

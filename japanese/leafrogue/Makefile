@@ -1,5 +1,4 @@
 # Created by: TAKAHASHI Kaoru
-# $FreeBSD$
 
 PORTNAME=	leafrogue
 PORTVERSION=	0.72

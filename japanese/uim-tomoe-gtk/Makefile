@@ -1,5 +1,4 @@
 # Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	uim-tomoe-gtk
 PORTVERSION=	0.6.0

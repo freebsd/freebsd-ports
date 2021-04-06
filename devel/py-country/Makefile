@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	country
 PORTVERSION=	18.5.26

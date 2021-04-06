@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Geo-WebService-Elevation-USGS
 PORTVERSION=	0.118

@@ -1,5 +1,4 @@
 # Created by: Dave Grochowski
-# $FreeBSD$
 
 PORTNAME=	gccmakedep
 PORTVERSION=	1.0.3

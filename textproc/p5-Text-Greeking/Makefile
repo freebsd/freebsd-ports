@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Text-Greeking
 PORTVERSION=	0.14

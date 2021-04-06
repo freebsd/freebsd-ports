@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nanoc
 PORTVERSION=	4.11.19

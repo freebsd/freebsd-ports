@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spamilter
 PORTVERSION=	0.60

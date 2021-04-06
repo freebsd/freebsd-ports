@@ -1,5 +1,4 @@
 # Created by: Staffan Ulfberg <staffanu@multivac.fatburen.org>
-# $FreeBSD$
 
 PORTNAME=	gnokii
 PORTVERSION=	0.6.31

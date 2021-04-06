@@ -1,5 +1,4 @@
 # Created by: Aaron Dalton <aaron@daltons.ca>
-# $FreeBSD$
 
 PORTNAME=	Smart-Comments
 PORTVERSION=	1.06

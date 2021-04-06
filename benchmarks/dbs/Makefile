@@ -1,5 +1,4 @@
 # Created by: Joseph Koshy <jkoshy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dbs
 PORTVERSION=	1.1.5

@@ -1,5 +1,4 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	docbook2odf
 PORTVERSION=	0.244

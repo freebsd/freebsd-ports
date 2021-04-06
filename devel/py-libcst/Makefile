@@ -1,5 +1,4 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libcst
 PORTVERSION=	0.3.17

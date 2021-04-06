@@ -1,5 +1,4 @@
 # Created by: roam@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	rname
 PORTVERSION=	1.0.2

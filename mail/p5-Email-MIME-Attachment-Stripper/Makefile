@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lth@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Email-MIME-Attachment-Stripper
 PORTVERSION=	1.317

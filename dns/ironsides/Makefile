@@ -1,5 +1,4 @@
 # Created by: John Marino <marino@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ironsides
 PORTVERSION=	${SNAPSHOT:S/_//g}

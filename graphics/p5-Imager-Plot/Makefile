@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Imager-Plot
 PORTVERSION=	0.09

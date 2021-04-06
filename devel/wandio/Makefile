@@ -1,5 +1,4 @@
 # Created by: Alistair King <alistair@caida.org>
-# $FreeBSD$
 
 PORTNAME=	wandio
 PORTVERSION=	1.0.5

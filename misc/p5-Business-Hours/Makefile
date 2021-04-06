@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman
-# $FreeBSD$
 
 PORTNAME=	Business-Hours
 PORTVERSION=	0.13

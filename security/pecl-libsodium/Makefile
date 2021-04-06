@@ -1,5 +1,4 @@
 # Created by: Gasol Wu <gasol.wu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libsodium
 PORTVERSION=	2.0.23

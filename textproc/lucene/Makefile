@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine <gerrit.beine@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	lucene
 PORTVERSION=	3.6.2

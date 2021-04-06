@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mcstas
 PORTVERSION=	2.5

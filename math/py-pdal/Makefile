@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pdal
 DISTVERSION=	2.3.5

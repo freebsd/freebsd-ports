@@ -1,5 +1,4 @@
 # Created by: db
-# $FreeBSD$
 
 PORTNAME=	nec2c
 PORTVERSION=	.9

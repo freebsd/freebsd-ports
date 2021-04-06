@@ -1,5 +1,4 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	MetaCPAN-Client
 PORTVERSION=	2.029000

@@ -1,5 +1,4 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-# $FreeBSD$
 
 PORTNAME=	python-barbicanclient
 PORTVERSION=	5.0.1

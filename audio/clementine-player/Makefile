@@ -1,5 +1,4 @@
 # Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	clementine
 DISTVERSION=	1.4.0

@@ -1,5 +1,4 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Dancer-Plugin-Database-Core
 PORTVERSION=	0.20

@@ -1,5 +1,4 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-lite
 

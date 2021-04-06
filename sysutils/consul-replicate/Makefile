@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	consul-replicate
 PORTVERSION=	0.4.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		ooni-probe-cli
 DISTVERSIONPREFIX=	v

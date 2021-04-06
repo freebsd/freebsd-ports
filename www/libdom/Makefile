@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	libdom
 PORTVERSION=	0.4.1

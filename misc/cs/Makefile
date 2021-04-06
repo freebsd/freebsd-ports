@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	cs
 PORTVERSION=	0.9.6

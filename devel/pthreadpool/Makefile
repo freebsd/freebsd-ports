@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pthreadpool
 DISTVERSION=	0.1-126

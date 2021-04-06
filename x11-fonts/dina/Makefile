@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dina
 PORTVERSION=	2.92

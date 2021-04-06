@@ -1,5 +1,4 @@
 # Created by: trasz
-# $FreeBSD$
 
 PORTNAME=	torque
 PORTVERSION=	2.5.13

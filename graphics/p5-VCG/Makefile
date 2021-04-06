@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	VCG
 PORTVERSION=	0.5

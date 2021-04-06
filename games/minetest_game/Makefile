@@ -1,5 +1,4 @@
 # Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	minetest_game
 PORTVERSION=	5.4.0

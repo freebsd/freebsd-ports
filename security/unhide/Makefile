@@ -1,5 +1,4 @@
 # Created by: ntarmos@cs.uoi.gr
-# $FreeBSD$
 
 PORTNAME=	unhide
 PORTVERSION=	20121229

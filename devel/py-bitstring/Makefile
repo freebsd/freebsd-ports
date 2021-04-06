@@ -1,5 +1,4 @@
 # Created by: Sofian Brabez <sbrabez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	bitstring
 PORTVERSION=	3.1.5

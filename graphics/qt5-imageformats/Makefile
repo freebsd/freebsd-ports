@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	imageformats
 DISTVERSION=	${QT5_VERSION}

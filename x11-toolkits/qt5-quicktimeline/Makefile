@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	quicktimeline
 DISTVERSION=	${QT5_VERSION}

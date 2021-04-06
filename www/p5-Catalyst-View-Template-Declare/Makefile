@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-View-Template-Declare
 PORTVERSION=	0.04

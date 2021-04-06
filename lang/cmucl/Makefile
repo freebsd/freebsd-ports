@@ -1,5 +1,4 @@
 # Created by: cracauer@cons.org "Martin Cracauer"
-# $FreeBSD$
 
 PORTNAME=	cmucl
 DISTVERSION=	21b

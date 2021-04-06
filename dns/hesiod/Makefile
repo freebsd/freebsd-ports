@@ -1,5 +1,4 @@
 # Created by: n@nectar.com
-# $FreeBSD$
 
 PORTNAME=	hesiod
 PORTVERSION=	3.2.1

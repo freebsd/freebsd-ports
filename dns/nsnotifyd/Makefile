@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nsnotifyd
 PORTVERSION=	1.6

@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <tiamat@telegraph.spb.ru>
-# $FreeBSD$
 
 PORTNAME=	exult
 PORTVERSION=	1.5.0.20160514

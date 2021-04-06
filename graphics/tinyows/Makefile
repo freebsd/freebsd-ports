@@ -1,5 +1,4 @@
 # Created by: Joris Dedieu <joris.dedieu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	tinyows
 PORTVERSION=	1.1.0

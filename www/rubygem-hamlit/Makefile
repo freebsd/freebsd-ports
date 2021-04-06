@@ -1,5 +1,4 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hamlit
 PORTVERSION=	2.14.4

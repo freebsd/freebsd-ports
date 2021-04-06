@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTTP-Headers-Fast
 PORTVERSION=	0.21

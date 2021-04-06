@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
-# $FreeBSD$
 
 PORTNAME=	File
 PORTVERSION=	1.4.1

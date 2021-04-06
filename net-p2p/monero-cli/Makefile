@@ -1,5 +1,4 @@
 # Created by: Vasil Dimov <vd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	monero-cli
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)

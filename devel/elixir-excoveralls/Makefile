@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	excoveralls
 PORTVERSION=	0.13.4

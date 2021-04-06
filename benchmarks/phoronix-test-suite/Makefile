@@ -1,5 +1,4 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	phoronix-test-suite
 DISTVERSIONPREFIX=	v

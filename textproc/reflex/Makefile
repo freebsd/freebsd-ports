@@ -1,5 +1,4 @@
 # Created by: bf@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	reflex
 PORTVERSION=	20200715

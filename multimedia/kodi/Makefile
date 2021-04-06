@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kodi
 DISTVERSION=	19.0

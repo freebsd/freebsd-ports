@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	traefik2
 DISTVERSIONPREFIX=	v

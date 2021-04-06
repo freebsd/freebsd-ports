@@ -1,5 +1,4 @@
 # Created by: Yuan-Chen Cheng <ycheng@sinica.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	logrotate
 PORTVERSION=	3.13.0

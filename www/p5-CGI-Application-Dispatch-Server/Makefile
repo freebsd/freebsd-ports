@@ -1,5 +1,4 @@
 # Created by: George Hartzell <hartzell@alerce.com>
-# $FreeBSD$
 
 PORTNAME=	CGI-Application-Dispatch-Server
 PORTVERSION=	0.53

@@ -1,5 +1,4 @@
 # Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	librmpd
 PORTVERSION=	0.1.1

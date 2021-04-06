@@ -1,5 +1,4 @@
 # Created by: Lewis Thompson <purple@lewiz.net>
-# $FreeBSD$
 
 PORTNAME=	remind
 PORTVERSION=	3.1.16

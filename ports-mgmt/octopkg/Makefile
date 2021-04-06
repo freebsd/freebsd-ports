@@ -1,5 +1,4 @@
 # Created by: kmoore@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	octopkg
 PORTVERSION=	0.3.1

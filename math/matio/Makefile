@@ -1,5 +1,4 @@
 # Created by: rfarmer@predatorlabs.net
-# $FreeBSD$
 
 PORTNAME=	matio
 PORTVERSION=	1.5.21

@@ -1,5 +1,4 @@
 # Created by: Udo Schweigert
-# $FreeBSD$
 
 PORTNAME=	mutt
 DISTVERSION=	2.0.6

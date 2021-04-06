@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		uhid-freebsd
 PORTVERSION=		1.2.1

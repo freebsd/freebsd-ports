@@ -1,5 +1,4 @@
 # Created by: John Hixson <john@pcbsd.org>
-# $FreeBSD$
 
 PORTNAME=	pianobar
 PORTVERSION=	2020.11.28

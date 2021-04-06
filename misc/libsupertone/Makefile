@@ -1,5 +1,4 @@
 # Created by: Max Khon <fjoe@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libsupertone
 PORTVERSION=	0.0.2

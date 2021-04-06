@@ -1,5 +1,4 @@
 # Created by: Alexander Wittig <alexander@wittig.name>
-# $FreeBSD$
 
 PORTNAME=	change_ldappass
 PORTVERSION=	2.2

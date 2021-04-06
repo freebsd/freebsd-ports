@@ -1,5 +1,4 @@
 # Created by: Aaron Dalton <aaron@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Math-Geometry-Planar-Offset
 PORTVERSION=	1.05

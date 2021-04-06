@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	adios2
 DISTVERSIONPREFIX=	v

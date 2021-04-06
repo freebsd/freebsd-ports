@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ocrmypdf
 DISTVERSION=	11.7.3

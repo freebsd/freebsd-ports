@@ -1,5 +1,4 @@
 # Created by: J.R. Oldroyd <fbsd@opal.com>
-# $FreeBSD$
 
 PORTNAME=	xfce4-power-manager
 PORTVERSION=	4.16.0

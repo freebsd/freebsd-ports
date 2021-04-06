@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cloudflare-scrape-js2py
 DISTVERSIONPREFIX=	v

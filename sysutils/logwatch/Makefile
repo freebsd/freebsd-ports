@@ -1,5 +1,4 @@
 # Created by: John D. "Trix" Farrar <trix@basement.net>
-# $FreeBSD$
 
 PORTNAME=	logwatch
 PORTVERSION=	7.5.1

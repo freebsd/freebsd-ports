@@ -1,5 +1,4 @@
 # Created by: Frerich Raabe <frerich.raabe@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	cmunge
 PORTVERSION=	1.0

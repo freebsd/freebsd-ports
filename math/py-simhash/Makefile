@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	simhash
 DISTVERSION=	2.0.0

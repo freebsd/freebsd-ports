@@ -1,5 +1,4 @@
 # Created by: Oliver Lehmann <oliver@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	varconf
 PORTVERSION=	1.0.1

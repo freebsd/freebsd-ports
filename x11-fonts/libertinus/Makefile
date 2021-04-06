@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libertinus
 DISTVERSION=	7.040

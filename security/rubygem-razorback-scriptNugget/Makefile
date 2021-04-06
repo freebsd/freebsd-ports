@@ -1,5 +1,4 @@
 # Created by: Tom Judge <tom@tomjudge.com>
-# $FreeBSD$
 
 PORTNAME=	razorback-scriptNugget
 PORTVERSION=	0.5.0

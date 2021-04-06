@@ -1,5 +1,4 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	HTTP-Tiny-UA
 PORTVERSION=	0.006

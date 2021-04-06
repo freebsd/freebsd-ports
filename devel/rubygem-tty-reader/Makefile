@@ -1,5 +1,4 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tty-reader
 PORTVERSION=	0.9.0

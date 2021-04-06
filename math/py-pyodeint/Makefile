@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyodeint
 DISTVERSION=	0.10.4

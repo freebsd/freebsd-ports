@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Perl6-Builtins
 PORTVERSION=	0.0.3

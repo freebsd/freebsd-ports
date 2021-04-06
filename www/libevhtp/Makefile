@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libevhtp
 PORTVERSION=	1.2.16

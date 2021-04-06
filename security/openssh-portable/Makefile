@@ -1,5 +1,4 @@
 # Created by: dwcjr@inethouston.net
-# $FreeBSD$
 
 PORTNAME=	openssh
 DISTVERSION=	8.4p1

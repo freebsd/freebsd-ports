@@ -1,5 +1,4 @@
 # Created by: Martin Dieringer <Martin.Dieringer@t-online.de>
-# $FreeBSD$
 
 PORTNAME=	mac
 PORTVERSION=	3.99.4.5.7

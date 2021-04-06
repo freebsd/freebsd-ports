@@ -1,5 +1,4 @@
 # Created by: hrkfrd@googlemail.com
-# $FreeBSD$
 
 PORTNAME=	mpdas
 PORTVERSION=	0.4.5

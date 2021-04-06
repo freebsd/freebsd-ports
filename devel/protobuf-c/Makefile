@@ -1,5 +1,4 @@
 # Created by: Aaron Hurt <ahurt@anbcs.com>
-# $FreeBSD$
 
 PORTNAME=		protobuf-c
 PORTVERSION=		1.3.2

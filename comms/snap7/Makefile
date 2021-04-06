@@ -1,5 +1,4 @@
 # Created by: Vladimir Grebenschikov
-# $FreeBSD$
 
 PORTNAME=	snap7
 PORTVERSION=	1.4.2

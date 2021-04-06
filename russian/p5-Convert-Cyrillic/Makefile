@@ -1,5 +1,4 @@
 # Created by: Sergey Kandaurov <pluknet@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Convert-Cyrillic
 PORTVERSION=	1.05

@@ -1,5 +1,4 @@
 # Created by: Jason Burgess <dev@fenux.net>
-# $FreeBSD$
 
 PORTNAME=	Convert-IBM390
 PORTVERSION=	0.30

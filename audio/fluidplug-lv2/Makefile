@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	FluidPlug
 PORTVERSION=	g20181209

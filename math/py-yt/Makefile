@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
-# $FreeBSD$
 
 PORTNAME=	yt
 DISTVERSION=	3.6.1

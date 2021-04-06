@@ -1,5 +1,4 @@
 # Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-# $FreeBSD$
 
 PORTNAME=	sqlite
 PORTVERSION=	3.7.17

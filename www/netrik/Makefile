@@ -1,5 +1,4 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	netrik
 PORTVERSION=	1.16.1

@@ -1,5 +1,4 @@
 # Created by: Arun Sharma <arun@sharma-home.net>
-# $FreeBSD$
 
 PORTNAME=	tbb
 PORTVERSION=	2020.3

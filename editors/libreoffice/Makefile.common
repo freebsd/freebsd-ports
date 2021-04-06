@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	libreoffice
 CATEGORIES+=	editors
 

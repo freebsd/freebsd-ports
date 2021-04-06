@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	liquibase
 PORTVERSION=	3.8.1

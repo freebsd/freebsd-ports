@@ -1,5 +1,4 @@
 # Created by: Gert Doering <gert@space.net>
-# $FreeBSD$
 
 PORTNAME=	BSD-getloadavg
 PORTVERSION=	0.03

@@ -1,5 +1,4 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pynsq
 PORTVERSION=	0.9.0b1

@@ -1,5 +1,4 @@
 # Created by: Lukasz Komsta
-# $FreeBSD$
 
 PORTNAME=	ssss
 PORTVERSION=	0.5

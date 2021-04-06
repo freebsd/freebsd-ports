@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Net-Ifconfig-Wrapper
 PORTVERSION=	0.26

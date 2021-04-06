@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DBIx-Inspector
 PORTVERSION=	0.12

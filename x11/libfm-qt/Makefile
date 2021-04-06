@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	libfm-qt
 PORTVERSION=	0.16.0

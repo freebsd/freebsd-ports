@@ -1,5 +1,4 @@
 # Created by: Juergen Lock <nox@jelal.kn-bremen.de>
-# $FreeBSD$
 
 PORTNAME=	qemu
 PORTVERSION=	4.1.1

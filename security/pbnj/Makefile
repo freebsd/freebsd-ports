@@ -1,5 +1,4 @@
 # Created by: Joshua D. Abraham <jabra@ccs.neu.edu>
-# $FreeBSD$
 
 PORTNAME=	pbnj
 PORTVERSION=	2.04

@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Math-Currency
 PORTVERSION=	0.52

@@ -1,5 +1,4 @@
 # Created by: Martin Tournoij <carpetsmoker@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	pcmanfm
 PORTVERSION=	1.3.1

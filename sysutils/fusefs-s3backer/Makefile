@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	s3backer
 DISTVERSION=	1.5.4

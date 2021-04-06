@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cson
 DISTVERSION=	0.8

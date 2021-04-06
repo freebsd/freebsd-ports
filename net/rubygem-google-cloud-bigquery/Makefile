@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	google-cloud-bigquery
 PORTVERSION=	1.18.0

@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	clutter-gtk
 PORTVERSION=	1.8.4

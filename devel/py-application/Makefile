@@ -1,5 +1,4 @@
 # Created by: Eugene Grosbein <ports@grosbein.net>
-# $FreeBSD$
 
 PORTNAME=	application
 PORTVERSION=	1.2.9

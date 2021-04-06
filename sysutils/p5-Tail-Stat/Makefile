@@ -1,5 +1,4 @@
 # Created by: Oleg A. Mamontov <oleg@mamontov.net>
-# $FreeBSD$
 
 PORTNAME=	Tail-Stat
 PORTVERSION=	0.26

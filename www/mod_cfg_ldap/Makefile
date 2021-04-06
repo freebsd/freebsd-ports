@@ -1,5 +1,4 @@
 # Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-# $FreeBSD$
 
 PORTNAME=	mod_cfg_ldap
 PORTVERSION=	1.2

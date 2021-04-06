@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bacula
 PORTVERSION=	11.0.1

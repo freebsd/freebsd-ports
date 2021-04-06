@@ -1,5 +1,4 @@
 # Created by: Abel Chow <achow@transoft.net>
-# $FreeBSD$
 
 PORTNAME?=	tidy
 DISTVERSION=	090315-cvs

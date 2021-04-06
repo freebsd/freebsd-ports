@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lidarr
 PORTVERSION=	0.7.2.1878

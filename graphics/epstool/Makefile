@@ -1,5 +1,4 @@
 # Created by: Yuzo FURUKAWA <hurukawa@kuee.kyoto-u.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	epstool
 PORTVERSION=	3.09

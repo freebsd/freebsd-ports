@@ -1,5 +1,4 @@
 # Created by: Peter Jeremy <peterjeremy@optushome.com.au>
-# $FreeBSD$
 
 PORTNAME=	jogl
 PORTVERSION=	1.1.1

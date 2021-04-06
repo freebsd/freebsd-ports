@@ -1,5 +1,4 @@
 # Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-# $FreeBSD$
 
 PORTNAME=	epsonepl
 PORTVERSION=	0.2.2

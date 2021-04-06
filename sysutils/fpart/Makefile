@@ -1,5 +1,4 @@
 # Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-# $FreeBSD$
 
 PORTNAME=	fpart
 PORTVERSION=	1.2.0

@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
-# $FreeBSD$
 
 PORTNAME=	Validate-Net
 PORTVERSION=	0.6

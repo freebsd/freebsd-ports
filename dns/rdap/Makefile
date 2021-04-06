@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rdap
 DISTVERSIONPREFIX=	v

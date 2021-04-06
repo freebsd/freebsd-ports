@@ -1,5 +1,4 @@
 # Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Template-Provider-Encode
 PORTVERSION=	0.02

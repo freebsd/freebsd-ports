@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Pod-MinimumVersion
 PORTVERSION=	50

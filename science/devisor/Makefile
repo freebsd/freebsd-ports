@@ -1,5 +1,4 @@
 # Created by: Pedro F. Giffuni
-# $FreeBSD$
 
 PORTNAME=	devisor
 PORTVERSION=	2.1

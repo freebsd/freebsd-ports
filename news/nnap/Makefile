@@ -1,5 +1,4 @@
 # Created by: Lasse L. Johnsen (lasse@freebsdcluster.org)
-# $FreeBSD$
 
 PORTNAME=	nnap
 PORTVERSION=	1.1

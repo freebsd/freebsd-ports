@@ -1,5 +1,4 @@
 # Created by: Dominic Fandrey
-# $FreeBSD$
 
 PORTNAME=	data
 PORTVERSION=	0.8.8

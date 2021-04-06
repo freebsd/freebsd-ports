@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xf86-video-vesa
 PORTVERSION=	2.5.0

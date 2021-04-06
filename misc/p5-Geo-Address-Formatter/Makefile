@@ -1,5 +1,4 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Geo-Address-Formatter
 PORTVERSION=	1.85

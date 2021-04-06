@@ -1,5 +1,4 @@
 # Created by: Romain Tartiere <romain@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mscgen
 PORTVERSION=	0.20

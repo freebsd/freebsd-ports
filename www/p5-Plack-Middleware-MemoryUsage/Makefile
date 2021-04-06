@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Middleware-MemoryUsage
 PORTVERSION=	0.03

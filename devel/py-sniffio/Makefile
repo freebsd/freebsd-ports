@@ -1,5 +1,4 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sniffio
 PORTVERSION=	1.2.0

@@ -1,5 +1,4 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	JSON-Validator
 PORTVERSION=	4.16

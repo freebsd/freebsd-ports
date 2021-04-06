@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ntpsec
 DISTVERSIONPREFIX=	NTPsec_

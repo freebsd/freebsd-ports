@@ -1,5 +1,4 @@
 # Created by: alex@kapranoff.ru
-# $FreeBSD$
 
 PORTNAME=	HTML-Template-JIT
 PORTVERSION=	0.05

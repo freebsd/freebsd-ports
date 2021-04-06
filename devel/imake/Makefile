@@ -1,5 +1,4 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	imake
 PORTVERSION=	1.0.8

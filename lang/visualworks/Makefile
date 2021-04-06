@@ -1,5 +1,4 @@
 # Created by: js@jeannot.org
-# $FreeBSD$
 
 PORTNAME=		visualworks
 PORTVERSION=		7.6

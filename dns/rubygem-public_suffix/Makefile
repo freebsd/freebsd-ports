@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	public_suffix
 PORTVERSION=	4.0.6

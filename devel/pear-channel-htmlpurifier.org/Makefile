@@ -1,5 +1,4 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	htmlpurifier.org
 PORTVERSION=	20140120

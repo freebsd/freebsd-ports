@@ -1,5 +1,4 @@
 # Created by: Satoshi Taoka <taoka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Wnn7
 PORTVERSION=	2001.10.17

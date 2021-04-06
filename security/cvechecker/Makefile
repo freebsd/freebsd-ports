@@ -1,5 +1,4 @@
 # Created by: Stefan Esser <se@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cvechecker
 DISTVERSIONPREFIX=	v

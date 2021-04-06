@@ -1,5 +1,4 @@
 # Created by: Richard Neese
-# $FreeBSD$
 
 PORTNAME=	sphinx3
 PORTVERSION=	0.8

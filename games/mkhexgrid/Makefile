@@ -1,5 +1,4 @@
 # Created by: aaron@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	mkhexgrid
 PORTVERSION=	0.1.1

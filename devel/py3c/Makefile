@@ -1,5 +1,4 @@
 # Created by: lev@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	py3c
 PORTVERSION=	1.3

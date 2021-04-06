@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	PHP_ArrayOf
 PORTVERSION=	0.2.1

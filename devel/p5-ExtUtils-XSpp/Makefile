@@ -1,5 +1,4 @@
 # Created by: Cezary Morga <cm@therek.net>
-# $FreeBSD$
 
 PORTNAME=	ExtUtils-XSpp
 PORTVERSION=	0.18

@@ -1,5 +1,4 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-# $FreeBSD$
 
 PORTNAME=	octave-forge-signal
 PORTVERSION=	1.4.1

@@ -1,5 +1,4 @@
 # Created by: Craig Manley
-# $FreeBSD$
 
 PORTNAME=	Config-Properties
 PORTVERSION=	1.80

@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau <olivierd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	iowait
 PORTVERSION=	0.2

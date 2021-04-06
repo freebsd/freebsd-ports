@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	loguru
 PORTVERSION=	0.5.3

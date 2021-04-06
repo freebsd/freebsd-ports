@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	cdash
 PORTVERSION=	2.2.3

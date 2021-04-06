@@ -1,5 +1,4 @@
 # Created by: Douglas Thrift
-# $FreeBSD$
 
 PORTNAME=	jeweler
 PORTVERSION=	2.3.9

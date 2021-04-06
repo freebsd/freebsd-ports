@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	File-Path
 PORTVERSION=	2.18

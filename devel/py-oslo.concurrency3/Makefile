@@ -1,5 +1,4 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-# $FreeBSD$
 
 PORTNAME=	oslo.concurrency
 PORTVERSION=	3.31.0

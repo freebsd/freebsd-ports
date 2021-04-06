@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
-# $FreeBSD$
 
 PORTNAME=	eschalot
 PORTVERSION=	1.2.0.20191006

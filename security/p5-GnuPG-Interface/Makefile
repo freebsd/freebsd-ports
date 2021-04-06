@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	GnuPG-Interface
 PORTVERSION=	1.01

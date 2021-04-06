@@ -1,5 +1,4 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	click-plugins
 PORTVERSION=	1.1.1

@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	Crypt-Rijndael_PP
 PORTVERSION=	0.05

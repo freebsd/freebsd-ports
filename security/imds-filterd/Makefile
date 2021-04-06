@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	imds-filterd
 DISTVERSION=	0.1

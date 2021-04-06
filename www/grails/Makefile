@@ -1,5 +1,4 @@
 # Created by: Mitchell Smith <mjs@bur.st>
-# $FreeBSD$
 
 PORTNAME=	grails
 DISTVERSION=	1.3.6

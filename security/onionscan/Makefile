@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	onionscan
 DISTVERSIONPREFIX=	OnionScan-

@@ -1,5 +1,4 @@
 # Created by: Mikhail T. <m.tsatsenko@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	sprockets
 PORTVERSION=	2.12.5

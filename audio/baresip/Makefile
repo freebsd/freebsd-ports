@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	baresip
 PORTVERSION=	0.5.8

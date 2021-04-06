@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-cognitiveservices
 PORTVERSION=	6.3.0

@@ -1,5 +1,4 @@
 # Created by: Steve Wills <steve@mouf.net>
-# $FreeBSD$
 
 PORTNAME=	Chemistry-File-MDLMol
 PORTVERSION=	0.21

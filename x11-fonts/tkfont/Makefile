@@ -1,5 +1,4 @@
 # Created by: Brett Taylor
-# $FreeBSD$
 
 PORTNAME=	tkfont
 PORTVERSION=	1.1

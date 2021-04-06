@@ -1,5 +1,4 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
-# $FreeBSD$
 
 PORTNAME=	Math-Calc-Units
 PORTVERSION=	1.07

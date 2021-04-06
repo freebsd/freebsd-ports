@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	blockenspiel
 PORTVERSION=	0.5.0

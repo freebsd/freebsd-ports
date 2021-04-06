@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iio-oscilloscope
 DISTVERSIONPREFIX=	v

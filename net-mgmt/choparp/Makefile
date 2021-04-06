@@ -1,5 +1,4 @@
 # Created by: itojun@itojun.org
-# $FreeBSD$
 
 PORTNAME=	choparp
 PORTVERSION=	20150613

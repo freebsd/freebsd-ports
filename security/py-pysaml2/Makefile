@@ -1,5 +1,4 @@
 # Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-# $FreeBSD$
 
 PORTNAME=	pysaml2
 PORTVERSION=	6.5.1

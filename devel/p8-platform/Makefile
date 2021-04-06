@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	p8-platform
 PORTVERSION=	2.1.0.1

@@ -1,5 +1,4 @@
 # Created by: chinsan <chinsan.tw@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Pod-XML
 PORTVERSION=	0.99

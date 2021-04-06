@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Date_Holidays_Discordian
 PORTVERSION=	0.1.1

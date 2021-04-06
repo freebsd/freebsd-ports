@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	Plack-Middleware-Expires
 PORTVERSION=	0.06

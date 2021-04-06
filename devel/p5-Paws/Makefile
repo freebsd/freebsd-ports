@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Paws
 PORTVERSION=	0.14

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Module-Metadata
 PORTVERSION=	1.000033

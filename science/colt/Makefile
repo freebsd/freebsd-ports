@@ -1,5 +1,4 @@
 # Created by: Wen heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	colt
 PORTVERSION=	1.2.0

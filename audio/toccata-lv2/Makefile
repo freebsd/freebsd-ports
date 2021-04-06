@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	toccata
 DISTVERSION=	g20200819

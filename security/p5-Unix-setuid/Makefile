@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Unix-setuid
 PORTVERSION=	0.02

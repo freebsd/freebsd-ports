@@ -1,5 +1,4 @@
 # Created by: Chris S.J. Peron <maneo@bsdpro.com>
-# $FreeBSD$
 
 PORTNAME=	subcalc
 DISTVERSIONPREFIX=	v

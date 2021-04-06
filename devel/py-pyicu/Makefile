@@ -1,5 +1,4 @@
 # Created by: bland@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	pyicu
 PORTVERSION=	2.4.3

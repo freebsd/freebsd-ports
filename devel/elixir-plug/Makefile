@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	plug
 PORTVERSION=	1.4.5

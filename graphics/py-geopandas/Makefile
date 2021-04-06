@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geopandas
 PORTVERSION=	0.8.1

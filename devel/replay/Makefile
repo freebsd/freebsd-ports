@@ -1,5 +1,4 @@
 # Created by: alfred@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	devel-replay
 PORTVERSION=	1.0.4

@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale <nivit@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bottle
 PORTVERSION=	0.12.18

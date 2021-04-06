@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	opencvs
 PORTVERSION=	20151230

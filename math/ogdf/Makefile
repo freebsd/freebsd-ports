@@ -1,5 +1,4 @@
 # Created by: Pietro Cerutti <gahr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ogdf
 PORTVERSION=	2020.02

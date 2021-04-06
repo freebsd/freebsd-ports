@@ -1,5 +1,4 @@
 # Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-# $FreeBSD$
 
 PORTNAME=	HTML_QuickForm_SelectFilter
 PORTVERSION=	1.0.0

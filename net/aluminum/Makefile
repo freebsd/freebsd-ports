@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Aluminum
 DISTVERSIONPREFIX=	v

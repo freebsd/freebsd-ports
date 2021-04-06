@@ -1,5 +1,4 @@
 # Created by: Matt Harris <mattdharris@users.sourceforge.net>
-# $FreeBSD$
 
 PORTNAME=	libmsocket
 PORTVERSION=	0.4

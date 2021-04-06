@@ -1,5 +1,4 @@
 # Created by: Xavier Beaudouin <kiwi@oav.net>
-# $FreeBSD$
 
 PORTNAME=	couriergraph
 PORTVERSION=	20060202

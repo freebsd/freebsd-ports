@@ -1,5 +1,4 @@
 # Created by: Ernst de Haan <znerd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	commons-beanutils
 PORTVERSION=	1.9.4

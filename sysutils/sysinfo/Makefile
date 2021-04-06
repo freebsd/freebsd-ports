@@ -1,5 +1,4 @@
 # Created by: Daniel Gerzo <danger@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sysinfo
 PORTVERSION=	1.0.1

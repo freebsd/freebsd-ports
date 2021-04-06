@@ -1,5 +1,4 @@
 # Created by: Thomas Hurst <tom@hur.st>
-# $FreeBSD$
 
 PORTNAME=	lastpass-cli
 PORTVERSION=	1.3.3

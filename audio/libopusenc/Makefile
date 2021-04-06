@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libopusenc
 PORTVERSION=	0.2.1

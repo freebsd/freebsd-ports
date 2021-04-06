@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	galculator
 PORTVERSION=	2.1.4

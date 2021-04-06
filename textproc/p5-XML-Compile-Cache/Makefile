@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	XML-Compile-Cache
 PORTVERSION=	1.06

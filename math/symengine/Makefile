@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	symengine
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Bill Fumerola <billf@chc-chimes.com>
-# $FreeBSD$
 
 PORTNAME=	nttcp
 PORTVERSION=	1.47

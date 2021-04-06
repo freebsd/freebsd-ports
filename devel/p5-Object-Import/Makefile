@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Object-Import
 PORTVERSION=	1.005

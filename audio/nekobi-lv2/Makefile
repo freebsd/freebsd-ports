@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nekobi
 DISTVERSION=	g20180825

@@ -1,5 +1,4 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	iaikPkcs11Wrapper
 PORTVERSION=	1.2.18

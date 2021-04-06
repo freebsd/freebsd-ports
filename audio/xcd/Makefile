@@ -1,5 +1,4 @@
 # Created by: Jean-Marc Zucconi <jmz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xcd
 PORTVERSION=	1.7

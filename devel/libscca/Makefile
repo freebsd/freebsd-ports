@@ -1,5 +1,4 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libscca
 DISTVERSION=	alpha-20200717

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qutip
 DISTVERSION=	4.5.2

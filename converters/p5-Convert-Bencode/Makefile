@@ -1,5 +1,4 @@
 # Created by: Oleg R. Muhutdinov <mor@WhiteLuna.com>
-# $FreeBSD$
 
 PORTNAME=	Convert-Bencode
 PORTVERSION=	1.03

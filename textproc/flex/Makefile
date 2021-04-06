@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flex
 PORTVERSION=	2.6.4

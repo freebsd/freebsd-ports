@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rebar3_hex
 PORTVERSION=	2.5.0

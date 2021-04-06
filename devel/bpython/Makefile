@@ -1,5 +1,4 @@
 # Created by: Yi-Jheng Lin <yzlin@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bpython
 PORTVERSION=	0.21

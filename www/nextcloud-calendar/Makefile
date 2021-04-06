@@ -1,5 +1,4 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	calendar
 PORTVERSION=	2.2.0

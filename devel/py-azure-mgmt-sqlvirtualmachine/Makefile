@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-sqlvirtualmachine
 PORTVERSION=	0.5.0

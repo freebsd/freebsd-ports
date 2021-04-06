@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	dlv
 PORTVERSION=	20121217

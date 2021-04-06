@@ -1,5 +1,4 @@
 # Created by: Hizbulin Ildar <hizel@vyborg.ru>
-# $FreeBSD$
 
 PORTNAME=	supervisor
 PORTVERSION=	4.2.1

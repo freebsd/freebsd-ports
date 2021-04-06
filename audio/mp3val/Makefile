@@ -1,5 +1,4 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-# $FreeBSD$
 
 PORTNAME=	mp3val
 PORTVERSION=	0.1.8

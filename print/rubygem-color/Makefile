@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	color
 PORTVERSION=	1.8

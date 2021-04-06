@@ -1,5 +1,4 @@
 # Created by: Marcello Coutinho <marcellocoutinho@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Acme-Comment
 PORTVERSION=	1.04

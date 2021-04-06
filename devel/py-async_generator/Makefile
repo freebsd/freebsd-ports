@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	async_generator
 PORTVERSION=	1.10

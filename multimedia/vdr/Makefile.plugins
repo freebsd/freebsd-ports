@@ -1,6 +1,4 @@
 # this is to be included by vdr plugin ports
-#
-# $FreeBSD$
 
 BUILD_DEPENDS+=  ${LOCALBASE}/include/linux/dvb/frontend.h:multimedia/v4l_compat
 

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SpeechRecognition
 PORTVERSION=	3.8.1

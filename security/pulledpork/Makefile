@@ -1,5 +1,4 @@
 # Created by: Olli Hauer
-# $FreeBSD$
 
 PORTNAME=	pulledpork
 PORTVERSION=	0.7.4

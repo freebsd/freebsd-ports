@@ -1,5 +1,4 @@
 # Created by: Kozlov Sergey <kozlov.sergey.404@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	preppy
 PORTVERSION=	2.4.1

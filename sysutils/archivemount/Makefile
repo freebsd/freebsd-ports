@@ -1,5 +1,4 @@
 # Created by: Evgeny Zhirnov <jirnov@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	archivemount
 DISTVERSION=	0.8.12

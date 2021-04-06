@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	File-Assets
 PORTVERSION=	0.064

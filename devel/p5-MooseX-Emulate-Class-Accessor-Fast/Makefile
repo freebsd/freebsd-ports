@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
-# $FreeBSD$
 
 PORTNAME=	MooseX-Emulate-Class-Accessor-Fast
 PORTVERSION=	0.009032

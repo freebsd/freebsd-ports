@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	another-htmllint
 PORTVERSION=	20111128

@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni
-# $FreeBSD$
 
 PORTNAME=	NetRexx
 PORTVERSION=	2.05

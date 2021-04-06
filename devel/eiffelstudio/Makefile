@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME=	eiffelstudio
 PORTVERSION=	5.7

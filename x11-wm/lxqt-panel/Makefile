@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	lxqt-panel
 PORTVERSION=	0.16.0

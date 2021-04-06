@@ -1,5 +1,4 @@
 # Created by: Marcin Jessa <yazzy@yazzy.org>
-# $FreeBSD$
 
 PORTNAME=	ezxml
 PORTVERSION=	0.8.6

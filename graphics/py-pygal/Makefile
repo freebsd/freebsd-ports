@@ -1,5 +1,4 @@
 # Created by: Jose Jachuf <jjachuf@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	pygal
 PORTVERSION=	2.4.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	RHVoice-dictionary
 DISTVERSION=	g20190109

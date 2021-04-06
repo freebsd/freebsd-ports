@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=	scimark2
 PORTVERSION=	2.0

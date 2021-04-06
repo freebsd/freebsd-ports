@@ -1,5 +1,4 @@
 # Created by: Pietro Cerutti <gahr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tdbc
 DISTVERSION=	1.1.1

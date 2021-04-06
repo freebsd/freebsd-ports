@@ -1,5 +1,4 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	iterators
 PORTVERSION=	1.0.13

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	passwd
 PORTVERSION=	5.0.7

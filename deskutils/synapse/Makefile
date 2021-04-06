@@ -1,5 +1,4 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	synapse
 DISTVERSION=	0.2.99.4

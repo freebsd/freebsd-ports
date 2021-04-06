@@ -1,5 +1,4 @@
 # Created by: petef@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Config-Setting
 PORTVERSION=	0.04

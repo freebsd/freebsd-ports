@@ -1,5 +1,4 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hexcompare
 PORTVERSION=	1.0.4

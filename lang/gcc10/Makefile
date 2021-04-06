@@ -1,5 +1,4 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gcc
 PORTVERSION=	10.2.0

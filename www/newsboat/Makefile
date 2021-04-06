@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	newsboat
 PORTVERSION=	2.22.1

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Array-LineReader
 PORTVERSION=	1.01

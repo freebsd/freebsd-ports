@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uhd
 PORTVERSION=	4.0.0.0

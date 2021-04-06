@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Flask-Uploads
 PORTVERSION=	0.2.1

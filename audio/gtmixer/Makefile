@@ -1,5 +1,4 @@
 # Created by: Putrya Statislav
-# $FreeBSD$
 
 PORTNAME=	gtmixer
 PORTVERSION=	1.0.2

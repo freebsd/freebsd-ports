@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dtc
 PORTVERSION=	1.6.0

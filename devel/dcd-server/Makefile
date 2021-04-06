@@ -1,5 +1,4 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dcd
 PORTVERSION=	0.11.0

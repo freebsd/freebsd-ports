@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libg15
 DISTVERSION=	1.2.8

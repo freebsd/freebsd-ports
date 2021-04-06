@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nn-insight
 DISTVERSION=	1.0.5

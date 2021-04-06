@@ -1,5 +1,4 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mesa-demos
 PORTVERSION=	8.4.0

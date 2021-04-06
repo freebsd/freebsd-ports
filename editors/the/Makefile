@@ -1,5 +1,4 @@
 # Created by: giffunip@asme.org
-# $FreeBSD$
 
 PORTNAME=	the
 PORTVERSION=	3.3.r4

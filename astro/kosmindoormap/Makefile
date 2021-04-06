@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kosmindoormap
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

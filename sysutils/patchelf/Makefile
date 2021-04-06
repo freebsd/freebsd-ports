@@ -1,5 +1,4 @@
 # Created by: William Grzybowski <wg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	patchelf
 DISTVERSION=	0.12

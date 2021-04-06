@@ -1,5 +1,4 @@
 # Created by: Gerald Pfeifer <gerald@pfeifer.com>
-# $FreeBSD$
 
 PORTNAME=	bibtex2html
 PORTVERSION=	1.99

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	codec2
 DISTVERSION=	0.8.1

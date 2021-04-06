@@ -1,5 +1,4 @@
 # Created by: Dan Phillips <dan-ports@dp.id.au>
-# $FreeBSD$
 
 PORTNAME=	verbiste
 PORTVERSION=	0.1.47

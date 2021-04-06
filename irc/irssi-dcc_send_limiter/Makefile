@@ -1,5 +1,4 @@
 # Created by: Timothy Redaelli <drizzt@gufi.org>
-# $FreeBSD$
 
 PORTNAME=	dcc_send_limiter
 PORTVERSION=	0.8.10

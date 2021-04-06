@@ -1,5 +1,4 @@
 # Created by: Frank Gruender <elwood@mc5sys.in-berlin.de>
-# $FreeBSD$
 
 PORTNAME=	yabasic
 PORTVERSION=	2.89.1

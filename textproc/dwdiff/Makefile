@@ -1,5 +1,4 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
-# $FreeBSD$
 
 PORTNAME=	dwdiff
 PORTVERSION=	2.1.4

@@ -1,5 +1,4 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	loook
 PORTVERSION=	0.8.6

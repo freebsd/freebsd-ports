@@ -1,5 +1,4 @@
 # Created by: Bruce M. Simpson <bms@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	c2mdoc
 PORTVERSION=	20040302

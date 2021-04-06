@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-Nmsg
 PORTVERSION=	0.17

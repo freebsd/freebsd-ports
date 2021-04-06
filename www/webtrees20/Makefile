@@ -1,5 +1,4 @@
 # Created by: J.R. Oldroyd <fbsd@opal.com>
-# $FreeBSD$
 
 PORTNAME=	webtrees
 PORTVERSION=	2.0.13

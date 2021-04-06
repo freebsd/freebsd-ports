@@ -1,5 +1,4 @@
 # Created by: Ed Schouten <ed@fxq.nl>
-# $FreeBSD$
 
 PORTNAME=	raincoat
 PORTVERSION=	0.11

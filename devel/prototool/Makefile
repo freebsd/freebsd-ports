@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	prototool
 DISTVERSIONPREFIX=	v

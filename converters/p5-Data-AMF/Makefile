@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-AMF
 PORTVERSION=	0.09

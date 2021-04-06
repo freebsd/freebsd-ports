@@ -1,5 +1,4 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
-# $FreeBSD$
 
 PORTVERSION=		2.0.4
 PKGNAMESUFFIX=		2

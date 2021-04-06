@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	composer
 DISTVERSION=	1.10.21

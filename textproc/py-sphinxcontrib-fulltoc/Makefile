@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sphinxcontrib-fulltoc
 PORTVERSION=	1.2.0

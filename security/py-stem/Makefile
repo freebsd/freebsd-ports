@@ -1,5 +1,4 @@
 # Created by: Carlo Strub
-# $FreeBSD$
 
 PORTNAME=	stem
 PORTVERSION=	1.8.0

@@ -1,5 +1,4 @@
 # Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-# $FreeBSD$
 
 PORTNAME=	gdk-pixbuf2
 PORTVERSION=	2.36.12

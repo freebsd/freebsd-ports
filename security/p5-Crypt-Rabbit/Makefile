@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan
-# $FreeBSD$
 
 PORTNAME=	Crypt-Rabbit
 PORTVERSION=	1.0.0

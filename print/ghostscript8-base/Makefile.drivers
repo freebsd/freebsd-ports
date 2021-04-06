@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 OPTIONS_SVGALIB= \
 	GS_lvga256 \
 	GS_vgalib

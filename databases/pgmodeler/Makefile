@@ -1,5 +1,4 @@
 # Created by: Loïc BARTOLETTI
-# $FreeBSD$
 
 PORTNAME=	pgmodeler
 PORTVERSION=	0.9.3

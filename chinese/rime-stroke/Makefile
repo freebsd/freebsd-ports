@@ -1,5 +1,4 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	rime-stroke
 DISTVERSION=	g20191221

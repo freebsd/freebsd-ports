@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	minio
 DISTVERSION=	4.0.21

@@ -1,5 +1,4 @@
 # Created by: Sofian Brabez <sbrabez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	pep8
 PORTVERSION=	1.7.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tokei
 DISTVERSIONPREFIX=	v

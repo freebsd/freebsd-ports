@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-SSH-Mechanize
 PORTVERSION=	0.1.3

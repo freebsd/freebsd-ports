@@ -1,5 +1,4 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	apl
 PORTVERSION=	1.8

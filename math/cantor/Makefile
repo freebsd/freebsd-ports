@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # TODO: ensure only ${PYTON_CMD} is pixked again
 

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cgl
 DISTVERSIONPREFIX=	releases/

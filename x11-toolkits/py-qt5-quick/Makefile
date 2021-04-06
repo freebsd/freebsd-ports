@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	quick
 CATEGORIES=	x11-toolkits devel python

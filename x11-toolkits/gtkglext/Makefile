@@ -1,5 +1,4 @@
 # Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-# $FreeBSD$
 
 PORTNAME=	gtkglext
 PORTVERSION=	1.2.0

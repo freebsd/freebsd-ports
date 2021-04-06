@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		hisat2
 DISTVERSION=		2.1.0-23

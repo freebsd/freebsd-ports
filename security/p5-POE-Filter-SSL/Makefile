@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POE-Filter-SSL
 PORTVERSION=	0.41

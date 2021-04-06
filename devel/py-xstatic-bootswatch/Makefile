@@ -1,5 +1,4 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-# $FreeBSD$
 
 PORTNAME=	xstatic-bootswatch
 PORTVERSION=	3.3.7.0

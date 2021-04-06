@@ -1,5 +1,4 @@
 # Created by: clsung@dragon2.net
-# $FreeBSD$
 
 PORTNAME=	XML-Validator-Schema
 PORTVERSION=	1.10

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libpuzzle
 PORTVERSION=	0.11

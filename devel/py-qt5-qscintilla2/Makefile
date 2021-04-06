@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qscintilla2
 PORTVERSION=	${QSCI2_VERSION}

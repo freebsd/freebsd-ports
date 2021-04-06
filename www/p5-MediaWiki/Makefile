@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	MediaWiki
 PORTVERSION=	1.13

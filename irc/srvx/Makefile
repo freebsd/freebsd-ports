@@ -1,5 +1,4 @@
 # Created by: Walter Venable <weaseal@hotmail.com>
-# $FreeBSD$
 
 PORTNAME=	srvx
 PORTVERSION=	1.3.1

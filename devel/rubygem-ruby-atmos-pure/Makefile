@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ruby-atmos-pure
 PORTVERSION=	1.0.5

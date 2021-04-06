@@ -1,5 +1,4 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gexiv2
 PORTVERSION=	0.12.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	myrica
 PORTVERSION=	2.012.20180119

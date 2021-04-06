@@ -1,5 +1,4 @@
 # Created by: Alan Eldridge <alane@geeksrus.net>
-# $FreeBSD$
 
 PORTNAME=	cvsbook
 PORTVERSION=	1.21

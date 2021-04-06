@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Clone
 PORTVERSION=	0.45

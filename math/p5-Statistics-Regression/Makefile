@@ -1,5 +1,4 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Statistics-Regression
 PORTVERSION=	0.53

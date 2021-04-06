@@ -1,5 +1,4 @@
 # Created by: Conor McDermottroe <ports@mcdermottroe.com>
-# $FreeBSD$
 
 PORTNAME=	jflex
 PORTVERSION=	1.8.1

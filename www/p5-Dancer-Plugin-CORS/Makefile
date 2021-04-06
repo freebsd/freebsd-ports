@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Dancer-Plugin-CORS
 PORTVERSION=	0.13

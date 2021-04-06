@@ -1,5 +1,4 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cbviewer
 PORTVERSION=	0.8

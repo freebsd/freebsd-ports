@@ -1,5 +1,4 @@
 # Created by: Paul Everlund
-# $FreeBSD$
 
 PORTNAME=	xmedcon
 PORTVERSION=	0.17.0

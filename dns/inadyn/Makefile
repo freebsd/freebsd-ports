@@ -1,5 +1,4 @@
 # Created by: Alex Samorukov <samm@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	inadyn
 PORTVERSION=	2.8.1

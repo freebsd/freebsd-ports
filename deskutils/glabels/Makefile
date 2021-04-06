@@ -1,5 +1,4 @@
 # Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-# $FreeBSD$
 
 PORTNAME=	glabels
 PORTVERSION=	3.4.1

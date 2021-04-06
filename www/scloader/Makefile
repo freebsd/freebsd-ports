@@ -1,5 +1,4 @@
 # Created by: Radim Kolar <hsn@sanatana.dharma>
-# $FreeBSD$
 
 PORTNAME=	scloader
 PORTVERSION=	0.32

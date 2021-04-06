@@ -1,5 +1,4 @@
 # Created by: db
-# $FreeBSD$
 
 PORTNAME=	nasawash
 PORTVERSION=	0.50

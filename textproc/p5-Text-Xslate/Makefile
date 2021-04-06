@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Text-Xslate
 PORTVERSION=	3.4.0

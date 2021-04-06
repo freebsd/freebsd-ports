@@ -1,5 +1,4 @@
 # Created by: Dan Rench <citric@cubicone.tmetic.com>
-# $FreeBSD$
 
 PORTNAME=	MIME-Base64-URLSafe
 PORTVERSION=	0.01

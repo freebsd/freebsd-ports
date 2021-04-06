@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
-# $FreeBSD$
 
 PORTNAME=	MooseX-Role-Parameterized
 PORTVERSION=	1.11

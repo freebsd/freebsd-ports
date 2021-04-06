@@ -1,5 +1,4 @@
 # Created by: Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
-# $FreeBSD$
 
 PORTNAME=	sendEmail
 PORTVERSION=	1.56

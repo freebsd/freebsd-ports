@@ -1,5 +1,4 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	LWP-Protocol-socks
 PORTVERSION=	1.7

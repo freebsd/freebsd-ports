@@ -1,5 +1,4 @@
 # Created by: nork@cityfujisawa.ne.jp
-# $FreeBSD$
 
 PORTNAME=	IPC-SharedCache
 PORTVERSION=	1.3

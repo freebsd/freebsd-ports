@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bpytop
 DISTVERSIONPREFIX=	v

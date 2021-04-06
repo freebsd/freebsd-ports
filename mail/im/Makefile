@@ -1,5 +1,4 @@
 # Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	im
 PORTVERSION=	153

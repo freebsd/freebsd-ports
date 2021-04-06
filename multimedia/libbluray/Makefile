@@ -1,5 +1,4 @@
 # Created by: kamikaze@bsdforen.de
-# $FreeBSD$
 
 PORTNAME=	libbluray
 DISTVERSION=	1.2.1

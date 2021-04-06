@@ -1,5 +1,4 @@
 # Created by: Takumi Takahashi <takumiiinn@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	forked-daapd
 DISTVERSION=	27.2

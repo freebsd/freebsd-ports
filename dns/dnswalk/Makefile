@@ -1,5 +1,4 @@
 # Created by: Matthew Hunt <mph@pobox.com>
-# $FreeBSD$
 
 PORTNAME=	dnswalk
 PORTVERSION=	2.0.2

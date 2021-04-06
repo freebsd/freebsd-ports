@@ -1,5 +1,4 @@
 # Created by: pvh@egenetics.com
-# $FreeBSD$
 
 PORTNAME=	zthread
 PORTVERSION=	2.3.2

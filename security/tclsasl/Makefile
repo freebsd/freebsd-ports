@@ -1,5 +1,4 @@
 # Created by: Denis Shaposhnikov <dsh@vlink.ru>
-# $FreeBSD$
 
 PORTNAME=	tclsasl
 PORTVERSION=	1.0

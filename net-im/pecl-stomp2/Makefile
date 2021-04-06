@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stomp
 PORTVERSION=	2.0.2

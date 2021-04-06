@@ -1,5 +1,4 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	faraday_middleware-aws-signers-v4
 #PORTVERSION=	0.2.0.beta

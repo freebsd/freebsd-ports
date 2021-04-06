@@ -1,5 +1,4 @@
 # Created by: Alejandro Pulver <alejandro@varnet.biz>
-# $FreeBSD$
 
 PORTNAME=	tdfsb
 PORTVERSION=	0.0.10

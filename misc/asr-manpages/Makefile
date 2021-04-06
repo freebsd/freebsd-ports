@@ -1,5 +1,4 @@
 # Created by: Max Khon <fjoe@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	asr-manpages
 PORTVERSION=	20000406

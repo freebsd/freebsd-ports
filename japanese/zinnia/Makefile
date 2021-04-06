@@ -1,5 +1,4 @@
 # Created by: Timothy Beyer <beyert@cs.ucr.edu>
-# $FreeBSD$
 
 PORTNAME=	zinnia
 PORTVERSION=	0.06

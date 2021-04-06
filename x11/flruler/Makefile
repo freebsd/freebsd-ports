@@ -1,5 +1,4 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	flruler
 PORTVERSION=	1.05

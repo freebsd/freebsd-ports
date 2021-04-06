@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale <nivit@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	variety
 PORTVERSION=	0.8.5

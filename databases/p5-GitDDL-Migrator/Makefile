@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	GitDDL-Migrator
 PORTVERSION=	0.08

@@ -1,5 +1,4 @@
 # Created by: Denis Pokataev <catone@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Authentication-Credential-HTTP
 PORTVERSION=	1.018

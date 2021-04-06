@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ucc
 PORTVERSION=	1.6.2

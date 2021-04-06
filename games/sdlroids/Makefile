@@ -1,5 +1,4 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sdlroids
 PORTVERSION=	1.3.4

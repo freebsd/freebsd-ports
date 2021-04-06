@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Apache-AuthTicket
 PORTVERSION=	0.94

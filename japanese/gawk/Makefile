@@ -1,5 +1,4 @@
 # Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
-# $FreeBSD$
 
 PORTNAME=	gawk
 PORTVERSION=	3.0.6

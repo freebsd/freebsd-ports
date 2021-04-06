@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	thewidgetfactory
 PORTVERSION=	0.2.1

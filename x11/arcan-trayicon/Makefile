@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	arcan-trayicon
 DISTVERSION=	0.6.0.1

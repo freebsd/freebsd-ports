@@ -1,5 +1,4 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	when
 PORTVERSION=	1.1.40

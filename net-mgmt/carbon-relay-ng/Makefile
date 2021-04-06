@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		carbon-relay-ng
 DISTVERSION=		0.10.0

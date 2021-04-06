@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	d1489
 PORTVERSION=	1.5.1

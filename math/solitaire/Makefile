@@ -1,5 +1,4 @@
 # Created by: dd
-# $FreeBSD$
 
 PORTNAME=	solitaire
 PORTVERSION=	19980817

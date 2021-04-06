@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	caneda
 DISTVERSION=	0.3.1

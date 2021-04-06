@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale <nivit@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	uritemplate
 PORTVERSION=	3.0.1

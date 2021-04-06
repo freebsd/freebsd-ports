@@ -1,5 +1,4 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	kops
 PORTVERSION=	1.19.0

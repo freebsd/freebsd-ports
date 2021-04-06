@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	json-ld-preloaded
 PORTVERSION=	3.1.4

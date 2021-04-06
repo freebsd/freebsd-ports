@@ -1,5 +1,4 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lugaru
 PORTVERSION=	1.2

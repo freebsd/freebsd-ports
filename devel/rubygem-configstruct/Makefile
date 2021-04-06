@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	configstruct
 PORTVERSION=	0.1.0

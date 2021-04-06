@@ -1,5 +1,4 @@
 # Created by: Chris D. Faulhaber <jedgar@fxp.org>
-# $FreeBSD$
 
 PORTNAME=	grepmail
 PORTVERSION=	5.3033

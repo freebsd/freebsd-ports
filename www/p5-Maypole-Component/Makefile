@@ -1,5 +1,4 @@
 # Created by: Marc G. Fournier
-# $FreeBSD$
 
 PORTNAME=	Maypole-Component
 PORTVERSION=	0.03

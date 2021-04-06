@@ -1,5 +1,4 @@
 # Created by: Ed Schouten <ed@fxq.nl>
-# $FreeBSD$
 
 PORTNAME=	xshttpd
 DISTVERSION=	3.6g01

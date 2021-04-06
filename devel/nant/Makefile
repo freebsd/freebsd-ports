@@ -1,5 +1,4 @@
 # Created by: Christopher Nehren <apeiron+ports@coitusmentis.info>
-# $FreeBSD$
 
 PORTNAME=	nant
 PORTVERSION=	0.92

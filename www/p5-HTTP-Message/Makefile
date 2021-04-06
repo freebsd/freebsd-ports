@@ -1,5 +1,4 @@
 # Created by: Frederic Culot <culot@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	HTTP-Message
 PORTVERSION=	6.28

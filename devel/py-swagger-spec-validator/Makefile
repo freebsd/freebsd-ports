@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	swagger-spec-validator
 DISTVERSIONPREFIX=	v

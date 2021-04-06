@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	sphinx
 PORTVERSION=	2.0.4

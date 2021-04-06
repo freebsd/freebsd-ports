@@ -1,5 +1,4 @@
 # Created by: Matt Lancereau <matt@rimasec.net>
-# $FreeBSD$
 
 PORTNAME=	xfce4-session
 PORTVERSION=	4.16.0

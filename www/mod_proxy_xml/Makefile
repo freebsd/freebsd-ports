@@ -1,5 +1,4 @@
 # Created by: Dominic Marks <dom@goodforbusiness.co.uk>
-# $FreeBSD$
 
 PORTNAME=	mod_proxy_xml
 PORTVERSION=	0.1

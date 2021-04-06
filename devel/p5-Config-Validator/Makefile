@@ -1,5 +1,4 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Config-Validator
 PORTVERSION=	1.3

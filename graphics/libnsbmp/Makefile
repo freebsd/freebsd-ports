@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	libnsbmp
 PORTVERSION=	0.1.6

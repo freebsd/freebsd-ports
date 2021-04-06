@@ -1,5 +1,4 @@
 # Created by: chuck@pkix.net
-# $FreeBSD$
 
 PORTNAME=	clean
 PORTVERSION=	3.4

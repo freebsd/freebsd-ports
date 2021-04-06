@@ -1,5 +1,4 @@
 # Created by: Zhen REN <bg1tpt@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Services_Digg
 PORTVERSION=	0.4.7

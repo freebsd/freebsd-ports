@@ -1,5 +1,4 @@
 # Created by: Gasol Wu <gasol.wu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	eio
 DISTVERSION=	2.0.4

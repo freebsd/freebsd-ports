@@ -1,5 +1,4 @@
 # Created by: Soeren Boll Overgaard <boll@tolkien.dk>
-# $FreeBSD$
 
 PORTNAME=	pdftohtml
 PORTVERSION=	0.40a

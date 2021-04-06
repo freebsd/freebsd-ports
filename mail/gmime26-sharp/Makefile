@@ -1,5 +1,4 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-# $FreeBSD$
 
 CATEGORIES=	mail
 PKGNAMESUFFIX=	26-sharp

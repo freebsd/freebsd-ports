@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oauth2-proxy
 PORTVERSION=	7.0.1

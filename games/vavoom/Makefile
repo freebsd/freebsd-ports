@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <tiamat@comset.net>
-# $FreeBSD$
 
 PORTNAME=	vavoom
 PORTVERSION=	1.33

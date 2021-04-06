@@ -1,5 +1,4 @@
 # Created by: wen@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	markupsafe
 PORTVERSION=	1.1.1

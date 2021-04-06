@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	CGI-ArgChecker
 PORTVERSION=	0.02

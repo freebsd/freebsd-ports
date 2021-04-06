@@ -1,5 +1,4 @@
 # Created by: Dan Langille <dvl@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cheetah
 DISTVERSION=	3.2.6

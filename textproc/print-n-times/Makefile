@@ -1,5 +1,4 @@
 # Created by: Aaron Straup Cope
-# $FreeBSD$
 
 PORTNAME=	print-n-times
 PORTVERSION=	1.0

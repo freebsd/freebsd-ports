@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-Perlinfo
 PORTVERSION=	1.69

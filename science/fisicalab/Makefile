@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fisicalab
 PORTVERSION=	0.3.3

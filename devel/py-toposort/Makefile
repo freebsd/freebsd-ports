@@ -1,5 +1,4 @@
 # Created by: Ed Schouten <ed@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	toposort
 PORTVERSION=	1.5

@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Agent
 PORTVERSION=	3.20

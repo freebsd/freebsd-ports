@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	awgg
 PORTVERSION=	0.6.0

@@ -1,5 +1,4 @@
 # Created by: jkh@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	sxpc
 PORTVERSION=	1.4

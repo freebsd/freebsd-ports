@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-servicebus
 PORTVERSION=	0.6.0

@@ -1,5 +1,4 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jsch
 PORTVERSION=	0.1.55

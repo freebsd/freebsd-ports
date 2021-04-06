@@ -1,5 +1,4 @@
 # Created by: lth@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	File-Finder
 PORTVERSION=	0.53

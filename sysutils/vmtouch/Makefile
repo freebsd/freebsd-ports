@@ -1,5 +1,4 @@
 # Created by: Mikolaj Golub <trociny@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vmtouch
 PORTVERSION=	1.3.1

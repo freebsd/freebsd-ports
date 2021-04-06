@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Attribute-Persistent
 PORTVERSION=	1.1

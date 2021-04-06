@@ -1,5 +1,4 @@
 # Created by: Dejan Lesjak <lesi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xbitmaps
 PORTVERSION=	1.1.2

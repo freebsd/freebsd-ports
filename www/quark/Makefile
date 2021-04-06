@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	quark
 DISTVERSION=	g20190923

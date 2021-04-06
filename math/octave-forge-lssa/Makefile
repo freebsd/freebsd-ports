@@ -1,5 +1,4 @@
 # Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	octave-forge-lssa
 PORTVERSION=	0.1.4

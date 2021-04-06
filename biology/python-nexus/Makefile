@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	python-nexus
 PORTVERSION=	1.63

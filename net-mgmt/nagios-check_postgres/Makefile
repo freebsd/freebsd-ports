@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman <matthew@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	check_postgres
 PORTVERSION=	2.25.0

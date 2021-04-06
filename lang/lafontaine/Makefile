@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	lafontaine
 PORTVERSION=	0.4.1

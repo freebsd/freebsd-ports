@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	proggy_fonts-ttf
 PORTVERSION=	1.0

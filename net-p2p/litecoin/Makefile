@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	litecoin
 PORTVERSION=	0.18.1

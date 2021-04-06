@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cdogs-sdl
 PORTVERSION=	0.10.2

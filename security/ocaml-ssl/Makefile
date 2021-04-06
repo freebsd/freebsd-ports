@@ -1,5 +1,4 @@
 # Created by: Jaap Boender <jaapb@kerguelen.org>
-# $FreeBSD$
 
 PORTNAME=	ssl
 PORTVERSION=	0.5.3

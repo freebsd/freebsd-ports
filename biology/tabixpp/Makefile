@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tabixpp
 DISTVERSIONPREFIX=	v

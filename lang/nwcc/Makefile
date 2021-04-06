@@ -1,5 +1,4 @@
 # Created by: David O'Brien (obrien@NUXI.org)
-# $FreeBSD$
 
 PORTNAME=	nwcc
 PORTVERSION=	0.8.3

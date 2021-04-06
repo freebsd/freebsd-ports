@@ -1,5 +1,4 @@
 # Created by: Emanuel Haupt <ehaupt@critical.ch>
-# $FreeBSD$
 
 PORTNAME=	Sort-Array
 DISTVERSION=	0.26

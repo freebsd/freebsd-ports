@@ -1,5 +1,4 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	umodplayer
 PORTVERSION=	0.b5.1

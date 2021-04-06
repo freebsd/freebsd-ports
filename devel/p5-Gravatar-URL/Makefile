@@ -1,5 +1,4 @@
 # Created by: andrey@kostenko.name
-# $FreeBSD$
 
 PORTNAME=	Gravatar-URL
 PORTVERSION=	1.07

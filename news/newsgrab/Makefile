@@ -1,5 +1,4 @@
 # Created by: Pete Fritchman <petef@databits.net>
-# $FreeBSD$
 
 PORTNAME=	newsgrab
 PORTVERSION=	0.4.0

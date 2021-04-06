@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Geo-METAR
 PORTVERSION=	1.15

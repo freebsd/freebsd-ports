@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale <nivit@email.it>
-# $FreeBSD$
 
 PORTNAME=	jsMath-fonts
 PORTVERSION=	1.3

@@ -1,5 +1,4 @@
 # Created by: darius@dons.net.au
-# $FreeBSD$
 
 PORTNAME=	tclreadline
 PORTVERSION=	2.3.8

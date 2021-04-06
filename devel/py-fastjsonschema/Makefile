@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fastjsonschema
 DISTVERSION=	2.15.0

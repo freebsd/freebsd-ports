@@ -1,5 +1,4 @@
 # Created by: nox@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	linux_dvbwrapper-kmod
 PORTVERSION=	1.0

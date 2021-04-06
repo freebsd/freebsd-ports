@@ -1,5 +1,4 @@
 # Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	iniparse
 PORTVERSION=	0.5

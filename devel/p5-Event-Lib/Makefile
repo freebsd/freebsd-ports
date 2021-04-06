@@ -1,5 +1,4 @@
 # Created by: Fabian Keil <fk@fabiankeil.de>
-# $FreeBSD$
 
 PORTNAME=	Event-Lib
 PORTVERSION=	1.03

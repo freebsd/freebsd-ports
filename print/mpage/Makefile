@@ -1,5 +1,4 @@
 # Created by: Kapil Chowksey
-# $FreeBSD$
 
 # To override mpage's default paper size of A4, set PAGESIZE to another
 # page type.  Some common values include "Letter" (8.5" x 11") and

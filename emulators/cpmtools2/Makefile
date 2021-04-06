@@ -1,5 +1,4 @@
 # Created by: joerg
-# $FreeBSD$
 
 PORTNAME=	cpmtools2
 PORTVERSION=	2.22

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	snmp_passpersist
 DISTVERSIONPREFIX=	v

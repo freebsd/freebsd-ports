@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Dancer2
 PORTVERSION=	0.301001

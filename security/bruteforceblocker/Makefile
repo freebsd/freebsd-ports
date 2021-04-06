@@ -1,5 +1,4 @@
 # Created by: Daniel Gerzo <danger@rulez.sk>
-# $FreeBSD$
 
 PORTNAME=	bruteforceblocker
 PORTVERSION=	1.2.6

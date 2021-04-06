@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine <gerrit.beine@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	qmailadmin_login
 PORTVERSION=	1.1

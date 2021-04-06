@@ -1,5 +1,4 @@
 # Created by: ports@c0decafe.net
-# $FreeBSD$
 
 PORTNAME=	Template-Tiny
 PORTVERSION=	1.13

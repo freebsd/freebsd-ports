@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mcjoin
 DISTVERSIONPREFIX=	v

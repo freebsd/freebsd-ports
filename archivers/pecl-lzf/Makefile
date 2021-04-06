@@ -1,5 +1,4 @@
 # Created by: chinsan <chinsan.tw@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	lzf
 PORTVERSION=	1.6.8

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Logfile-Rotate
 PORTVERSION=	1.04

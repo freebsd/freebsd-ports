@@ -1,5 +1,4 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pyramid_rpc
 PORTVERSION=	0.8

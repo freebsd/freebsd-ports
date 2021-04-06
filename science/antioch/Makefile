@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	antioch
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	filtron
 PORTVERSION=	g20180218

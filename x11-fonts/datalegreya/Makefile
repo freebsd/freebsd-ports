@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
-# $FreeBSD$
 
 PORTNAME=	datalegreya
 PORTVERSION=	0.2017.03.29

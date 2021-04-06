@@ -1,5 +1,4 @@
 # Created by: alanp@unixpower.org
-# $FreeBSD$
 
 PORTNAME=	xaric
 PORTVERSION=	0.13.7

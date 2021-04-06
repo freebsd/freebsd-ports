@@ -1,5 +1,4 @@
 # Created by: Zach Zurflu <zach@pabst.bendnet.com>
-# $FreeBSD$
 
 PORTNAME=	libshout
 PORTVERSION=	2.4.5

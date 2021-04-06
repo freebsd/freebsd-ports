@@ -1,5 +1,4 @@
 # Created by: jmacd
-# $FreeBSD$
 
 PORTNAME=	scheme48
 PORTVERSION=	1.9.2

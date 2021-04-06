@@ -1,5 +1,4 @@
 # Created by: Stephane Legrand <stephane@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gnocl
 DISTVERSION=	${BASE_VERSION}-${NIGHTLY_BUILD}

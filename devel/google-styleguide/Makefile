@@ -1,5 +1,4 @@
 # Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	styleguide
 PORTVERSION=	20210129

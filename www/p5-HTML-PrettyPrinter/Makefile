@@ -1,5 +1,4 @@
 # Created by: Vivek Khera <vivek@khera.org>
-# $FreeBSD$
 
 PORTNAME=	HTML-PrettyPrinter
 PORTVERSION=	0.03

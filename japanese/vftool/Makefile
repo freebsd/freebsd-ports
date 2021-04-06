@@ -1,5 +1,4 @@
 # Created by: KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	vftool
 PORTVERSION=	1.2

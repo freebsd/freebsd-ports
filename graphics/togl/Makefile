@@ -1,5 +1,4 @@
 # Created by: Randall Hopper <aa8vb@ipass.net>
-# $FreeBSD$
 
 PORTNAME=	togl
 DISTVERSION=	2.0

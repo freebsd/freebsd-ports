@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lars@thegler.dk>
-# $FreeBSD$
 
 PORTNAME=	Games-Bingo
 PORTVERSION=	0.18

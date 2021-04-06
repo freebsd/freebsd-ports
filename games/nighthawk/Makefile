@@ -1,5 +1,4 @@
 # Created by: Mark Pulford <mark@kyne.com.au>
-# $FreeBSD$
 
 PORTNAME=	nighthawk
 PORTVERSION=	3.0.0

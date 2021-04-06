@@ -1,5 +1,4 @@
 # Created by: Roman Shterenzon <roman@xpert.com>
-# $FreeBSD$
 
 PORTNAME=	Audio-CD
 PORTVERSION=	0.04

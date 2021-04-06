@@ -1,5 +1,4 @@
 # Created by: Neil Darlow <neil@darlow.co.uk>
-# $FreeBSD$
 
 PORTNAME=	avelsieve
 PORTVERSION=	1.9.9

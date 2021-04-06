@@ -1,5 +1,4 @@
 # Created by: Fredrik Carlsson <fredrik@wasadata.com>
-# $FreeBSD$
 
 PORTNAME=	tetrinet
 PORTVERSION=	0.11

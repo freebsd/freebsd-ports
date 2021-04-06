@@ -1,5 +1,4 @@
 # Created by: Greg Larkin <glarkin@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cvs-syncmail
 PORTVERSION=	2.1

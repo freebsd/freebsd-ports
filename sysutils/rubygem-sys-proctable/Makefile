@@ -1,5 +1,4 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
-# $FreeBSD$
 
 PORTNAME=	sys-proctable
 PORTVERSION=	1.2.6

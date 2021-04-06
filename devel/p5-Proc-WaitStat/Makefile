@@ -1,5 +1,4 @@
 # Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-# $FreeBSD$
 
 PORTNAME=	Proc-WaitStat
 PORTVERSION=	1.00

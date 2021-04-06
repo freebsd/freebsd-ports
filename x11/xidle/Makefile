@@ -1,5 +1,4 @@
 # Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xidle
 PORTVERSION=	26052015

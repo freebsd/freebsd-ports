@@ -1,5 +1,4 @@
 # Created by: Frederic Han <han@math.jussieu.fr>
-# $FreeBSD$
 
 PORTNAME=	giacxcas
 DISTVERSION=	1.6.0-7

@@ -1,5 +1,4 @@
 # Created by: Palle Girgensohn <girgen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pgbadger
 PORTVERSION=	11.5

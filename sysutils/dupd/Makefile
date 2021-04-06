@@ -1,5 +1,4 @@
 # Created by: Thomas Hurst <tom@hur.st>
-# $FreeBSD$
 
 PORTNAME=	dupd
 PORTVERSION=	1.7

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xeus
 DISTVERSION=	0.24.4

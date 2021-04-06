@@ -1,5 +1,4 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	end_to_end_encryption
 PORTVERSION=	1.7.0

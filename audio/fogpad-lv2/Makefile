@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fogpad
 DISTVERSIONPREFIX=	v

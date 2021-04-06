@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kmail-account-wizard
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

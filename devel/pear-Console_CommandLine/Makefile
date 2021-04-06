@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Console_CommandLine
 PORTVERSION=	1.2.2

@@ -1,5 +1,4 @@
 # Created by: Pete Fritchman <petef@databits.net>
-# $FreeBSD$
 
 PORTNAME=	explosions
 PORTVERSION=	0.2005.07.31

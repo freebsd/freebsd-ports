@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	calendar
 PORTVERSION=	3.5.5

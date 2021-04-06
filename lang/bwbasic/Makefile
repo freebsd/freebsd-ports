@@ -1,5 +1,4 @@
 # Created by: msmith@gsoft.com.au
-# $FreeBSD$
 
 PORTNAME=	bwbasic
 PORTVERSION=	3.20

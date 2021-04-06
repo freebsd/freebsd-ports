@@ -1,5 +1,4 @@
 # Created by: John Ferrell <jdferrell3@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-AES
 PORTVERSION=	0.02

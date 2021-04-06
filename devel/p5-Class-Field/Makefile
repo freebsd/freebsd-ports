@@ -1,5 +1,4 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Class-Field
 DISTVERSION=	0.24

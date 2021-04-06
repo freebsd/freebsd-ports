@@ -1,5 +1,4 @@
 # Created by: Dryice Liu	<dryice@dryice.name>
-# $FreeBSD$
 
 PORTNAME=	Paste
 PORTVERSION=	3.4.6

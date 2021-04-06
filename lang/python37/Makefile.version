@@ -1,5 +1,4 @@
 # Mk/Uses/python.mk includes this file, don't remove it!
-# $FreeBSD$
 
 # Do not forget to update python documentation (lang/python-doc-*)
 # Run "make -C lang/python-doc-html makesum"

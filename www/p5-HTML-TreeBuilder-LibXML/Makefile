@@ -1,5 +1,4 @@
 # Created by: TERAMOTO Masahiro <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	HTML-TreeBuilder-LibXML
 PORTVERSION=	0.23

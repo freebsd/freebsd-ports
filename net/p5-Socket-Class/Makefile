@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Socket-Class
 PORTVERSION=	2.258

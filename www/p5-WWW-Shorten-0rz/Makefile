@@ -1,5 +1,4 @@
 # Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	WWW-Shorten-0rz
 PORTVERSION=	0.074

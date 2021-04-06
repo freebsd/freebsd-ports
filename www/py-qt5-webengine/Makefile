@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webengine
 DISTVERSION=	${PYQT_VERSION}

@@ -1,5 +1,4 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tidyselect
 PORTVERSION=	1.1.0

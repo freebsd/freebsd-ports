@@ -1,5 +1,4 @@
 # Created by: Peter C. Lai <cowbert@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mk-livestatus
 PORTVERSION=	1.2.8p25

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	biber
 PORTVERSION=	2.1

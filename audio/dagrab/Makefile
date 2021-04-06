@@ -1,5 +1,4 @@
 # Created by: Chia-liang Kao <clkao@CirX.ORG>
-# $FreeBSD$
 
 PORTNAME=	dagrab
 PORTVERSION=	0.3.5

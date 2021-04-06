@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dmlc-core
 DISTVERSIONPREFIX=	v

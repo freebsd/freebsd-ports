@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyscreenshot
 PORTVERSION=	0.5.1

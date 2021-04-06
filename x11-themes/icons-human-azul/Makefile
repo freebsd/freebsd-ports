@@ -1,5 +1,4 @@
 # Created by: Phillip Neumann <pneumann@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	icons-human-azul
 PORTVERSION=	0.1

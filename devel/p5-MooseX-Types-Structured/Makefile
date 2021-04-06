@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
-# $FreeBSD$
 
 PORTNAME=	MooseX-Types-Structured
 PORTVERSION=	0.36

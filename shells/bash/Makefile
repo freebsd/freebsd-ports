@@ -1,5 +1,4 @@
 # Created by: Oliver Eikemeier
-# $FreeBSD$
 
 PORTNAME=		bash
 PATCHLEVEL=		4

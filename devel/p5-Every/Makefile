@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Every
 PORTVERSION=	0.08

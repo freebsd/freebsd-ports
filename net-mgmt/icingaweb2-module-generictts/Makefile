@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	icingaweb2-module-generictts
 DISTVERSIONPREFIX=	v

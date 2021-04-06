@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	nanoblogger
 PORTVERSION=	3.4.2

@@ -1,5 +1,4 @@
 # Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	octave-forge-level-set
 PORTVERSION=	0.3.0

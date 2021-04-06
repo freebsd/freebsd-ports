@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tempora
 PORTVERSION=	1.14.1

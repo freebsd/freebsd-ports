@@ -1,5 +1,4 @@
 # Created by: Romain Tartiere <romain@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ppsei
 PORTVERSION=	0.3

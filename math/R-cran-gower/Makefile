@@ -1,5 +1,4 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gower
 DISTVERSION=	0.2.1

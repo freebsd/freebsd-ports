@@ -1,5 +1,4 @@
 # Created by: Jon Passki <cykyc@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	unicornscan
 PORTVERSION=	0.4.2

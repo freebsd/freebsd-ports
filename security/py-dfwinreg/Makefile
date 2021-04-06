@@ -1,5 +1,4 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dfwinreg
 PORTVERSION=	20201006

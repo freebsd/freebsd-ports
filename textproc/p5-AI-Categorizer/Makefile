@@ -1,5 +1,4 @@
 # Created by: Aaron Dalton <aaron@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	AI-Categorizer
 PORTVERSION=	0.09

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flask-peewee
 PORTVERSION=	3.0.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rbenv
 PORTVERSION=	1.1.2

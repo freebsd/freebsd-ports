@@ -1,5 +1,4 @@
 # Created by: shige
-# $FreeBSD$
 
 PORTNAME=	dtd-catalogs
 PORTVERSION=	1.2

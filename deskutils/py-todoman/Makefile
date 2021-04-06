@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	todoman
 DISTVERSION=	3.9.0

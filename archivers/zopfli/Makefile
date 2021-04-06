@@ -1,5 +1,4 @@
 # Created by: Alexander Kuehn <freebsd@nagilum.org>
-# $FreeBSD$
 
 PORTNAME=	zopfli
 PORTVERSION=	1.0.3

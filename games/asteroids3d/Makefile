@@ -1,5 +1,4 @@
 # Created by: Rusmir Dusko <nemysis@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	asteroids3d
 PORTVERSION=	0.5.1

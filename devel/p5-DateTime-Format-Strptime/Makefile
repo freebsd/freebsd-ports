@@ -1,5 +1,4 @@
 # Created by: Mathieu Arnold
-# $FreeBSD$
 
 PORTNAME=	DateTime-Format-Strptime
 PORTVERSION=	1.78

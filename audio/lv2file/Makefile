@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
-# $FreeBSD$
 
 PORTNAME=	lv2file
 DISTVERSION=	0.84-31

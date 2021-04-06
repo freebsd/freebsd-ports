@@ -1,5 +1,4 @@
 # Created by: David Le Brun <david@dyn-ns.net>
-# $FreeBSD$
 
 PORTNAME=	Filesys-DiskFree
 PORTVERSION=	0.06

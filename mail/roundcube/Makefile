@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	roundcube
 DISTVERSION=	1.4.11

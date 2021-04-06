@@ -1,5 +1,4 @@
 # Created by: Palle Girgensohn <girgen@pingpong.net>
-# $FreeBSD$
 
 PORTNAME=	pgaccess
 PORTVERSION=	1.00.20140902

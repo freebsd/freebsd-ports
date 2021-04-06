@@ -1,5 +1,4 @@
 # Created by: asami
-# $FreeBSD$
 
 PORTNAME=	xlife
 PORTVERSION=	6.7.6

@@ -1,5 +1,4 @@
 # Created by: Andrey Zakhvatov
-# $FreeBSD$
 
 PORTNAME=	3dc
 PORTVERSION=	0.8.1

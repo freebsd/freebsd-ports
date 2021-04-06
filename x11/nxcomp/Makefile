@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nxcomp
 PORTVERSION=	3.5.0.32

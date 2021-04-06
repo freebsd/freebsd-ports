@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ltablex
 PORTVERSION=	1.0

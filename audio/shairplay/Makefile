@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	shairplay
 PORTVERSION=	0.9.0.20150921

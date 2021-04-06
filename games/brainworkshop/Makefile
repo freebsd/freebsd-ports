@@ -1,5 +1,4 @@
 # Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	brainworkshop
 PORTVERSION=	5.0.git20191222

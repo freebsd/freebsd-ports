@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libsonic
 DISTVERSIONPREFIX=	release-

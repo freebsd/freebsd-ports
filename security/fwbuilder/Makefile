@@ -1,5 +1,4 @@
 # Created by: Roman Shterenzon <roman@xpert.com>
-# $FreeBSD$
 
 PORTNAME=	fwbuilder
 PORTVERSION=	5.3.7

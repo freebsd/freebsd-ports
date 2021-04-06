@@ -1,5 +1,4 @@
 # Created by: Andrey Zakhvatov
-# $FreeBSD$
 
 PORTNAME=	freesweep
 PORTVERSION=	1.0.1

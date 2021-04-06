@@ -1,5 +1,4 @@
 # Created by: Christoper Key <cjk32@cam.ac.uk>
-# $FreeBSD$
 
 CATEGORIES=	textproc lang
 PKGNAMESUFFIX=	-libxml2

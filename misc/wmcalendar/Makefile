@@ -1,5 +1,4 @@
 # Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-# $FreeBSD$
 
 PORTNAME=	wmcalendar
 PORTVERSION=	0.5.2

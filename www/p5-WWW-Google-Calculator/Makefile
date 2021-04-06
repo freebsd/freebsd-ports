@@ -1,5 +1,4 @@
 # Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	WWW-Google-Calculator
 PORTVERSION=	0.07

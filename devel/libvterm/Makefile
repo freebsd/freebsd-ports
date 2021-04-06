@@ -1,5 +1,4 @@
 # Created by: Anton tornqvist <antont@inbox.lv>
-# $FreeBSD$
 
 PORTNAME=	libvterm
 PORTVERSION=	0.1.1

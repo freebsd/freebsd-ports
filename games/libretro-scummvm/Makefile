@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-scummvm
 PORTVERSION=	0.20201129

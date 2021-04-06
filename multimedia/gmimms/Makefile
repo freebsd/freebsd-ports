@@ -1,5 +1,4 @@
 # Created by: Yinghong.Liu <liu_yinghong@yahoo.com.cn>
-# $FreeBSD$
 
 PORTNAME=	gmimms
 DISTVERSION=	0.0.9

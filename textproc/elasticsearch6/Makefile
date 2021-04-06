@@ -1,5 +1,4 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	elasticsearch
 PORTVERSION=	6.8.13

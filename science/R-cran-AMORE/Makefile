@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	AMORE
 PORTVERSION=	0.2.14

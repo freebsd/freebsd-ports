@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Mock-Redis
 PORTVERSION=	0.22

@@ -1,5 +1,4 @@
 # Created by: James FitzGibbon <jfitz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	rexx-imc
 PORTVERSION=	1.76

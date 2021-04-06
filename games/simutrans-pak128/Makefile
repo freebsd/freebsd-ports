@@ -1,5 +1,4 @@
 # Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	simutrans-pak128
 DISTVERSION=	2.8.1

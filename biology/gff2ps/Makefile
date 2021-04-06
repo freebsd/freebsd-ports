@@ -1,5 +1,4 @@
 # Created by: Camson Huynh <chuynh@biolateral.com.au>
-# $FreeBSD$
 
 PORTNAME=	gff2ps
 PORTVERSION=	0.98l

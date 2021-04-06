@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	celluloid
 PORTVERSION=	0.18.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fortunate
 PORTVERSION=	3.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dotdotpwn
 PORTVERSION=	3.0.2

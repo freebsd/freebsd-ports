@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	intervaltree
 DISTVERSION=	g20151213

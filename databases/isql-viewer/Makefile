@@ -1,5 +1,4 @@
 # Created by: Stefan Schmidt <stefan.schmidt@stadtbuch.de>
-# $FreeBSD$
 
 PORTNAME=	isql-viewer
 PORTVERSION=	2.1.8

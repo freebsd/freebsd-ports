@@ -1,5 +1,4 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	restclient
 PORTVERSION=	0.11.0

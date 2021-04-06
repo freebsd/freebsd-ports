@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	CPAN-Mini
 PORTVERSION=	1.111016

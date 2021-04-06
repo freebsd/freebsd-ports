@@ -1,5 +1,4 @@
 # Created by: Andrej Zverev
-# $FreeBSD$
 
 PORTNAME=	lincity-ng
 PORTVERSION=	2.0

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Chatbot-Eliza
 PORTVERSION=	1.08

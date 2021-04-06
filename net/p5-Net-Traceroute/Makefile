@@ -1,5 +1,4 @@
 # Created by: kuriyama
-# $FreeBSD$
 
 PORTNAME=	Net-Traceroute
 PORTVERSION=	1.15

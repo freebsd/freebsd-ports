@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-picard
 DISTVERSION=	0.4

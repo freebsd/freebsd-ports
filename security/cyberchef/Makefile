@@ -1,5 +1,4 @@
 # Created by: Dan Langille <dvl@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cyberchef
 PORTVERSION=	9.27.6

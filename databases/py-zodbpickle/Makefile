@@ -1,5 +1,4 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	zodbpickle
 PORTVERSION=	2.0.0

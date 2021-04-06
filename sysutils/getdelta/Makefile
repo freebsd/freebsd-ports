@@ -1,5 +1,4 @@
 # Created by: Anton Statutov <astatutov@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	getdelta
 PORTVERSION=	0.7.8

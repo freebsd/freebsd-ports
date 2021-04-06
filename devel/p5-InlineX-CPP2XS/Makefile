@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	InlineX-CPP2XS
 PORTVERSION=	0.25

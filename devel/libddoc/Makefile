@@ -1,5 +1,4 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libddoc
 PORTVERSION=	0.6.0

@@ -1,5 +1,4 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	responders
 PORTVERSION=	3.0.1

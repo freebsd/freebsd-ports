@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=	freeglut
 PORTVERSION=	3.0.0

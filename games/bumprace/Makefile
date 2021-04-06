@@ -1,5 +1,4 @@
 # Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-# $FreeBSD$
 
 PORTNAME=	bumprace
 PORTVERSION=	1.5.8

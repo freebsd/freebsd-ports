@@ -1,5 +1,4 @@
 # Created by: TERAMOTO Masahiro <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	YAML-LibYAML
 PORTVERSION=	0.82

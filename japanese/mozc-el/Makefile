@@ -1,5 +1,4 @@
 # Created by: TAKANO, Yuji
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-el${EMACS_PKGNAMESUFFIX}
 

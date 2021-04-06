@@ -1,5 +1,4 @@
 # Created by: Aaron LI <aly@aaronly.me>
-# $FreeBSD$
 
 PORTNAME=	playerctl
 DISTVERSION=	2.3.1

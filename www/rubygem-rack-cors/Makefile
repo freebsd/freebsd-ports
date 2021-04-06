@@ -1,5 +1,4 @@
 # Created by: Michael Moll <kvedulv at kvedulv.de>
-# $FreeBSD$
 
 PORTNAME=	rack-cors
 PORTVERSION=	1.0.6

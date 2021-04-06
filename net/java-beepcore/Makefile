@@ -1,5 +1,4 @@
 # Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-# $FreeBSD$
 
 PORTNAME=	beepcore
 PORTVERSION=	0.9.08

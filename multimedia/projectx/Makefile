@@ -1,5 +1,4 @@
 # Created by: Juergen Lock <nox@jelal.kn-bremen.de>
-# $FreeBSD$
 
 PORTNAME=	projectx
 PORTVERSION=	0.91.0

@@ -1,5 +1,4 @@
 # Created by: Alexander Botero-Lowry <alex@foxybanana.com>
-# $FreeBSD$
 
 PORTNAME=	vertex
 PORTVERSION=	0.3.1

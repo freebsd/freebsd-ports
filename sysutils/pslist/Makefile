@@ -1,5 +1,4 @@
 # Created by: roam@orbitel.bg
-# $FreeBSD$
 
 PORTNAME=	pslist
 PORTVERSION=	1.4.0

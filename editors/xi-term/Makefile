@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xi-term
 DISTVERSION=	g20190913

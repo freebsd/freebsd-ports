@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	CNS11643-font
 PORTVERSION=	98.1

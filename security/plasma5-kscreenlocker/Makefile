@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kscreenlocker
 DISTVERSION=	${KDE_PLASMA_VERSION}

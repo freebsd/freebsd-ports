@@ -1,5 +1,4 @@
 # Created by: Chin-San Huang <chinsan@mail2000.com.tw>
-# $FreeBSD$
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}

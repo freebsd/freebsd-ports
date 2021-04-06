@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fifteen
 PORTVERSION=	20150410

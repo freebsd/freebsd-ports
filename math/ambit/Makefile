@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ambit
 DISTVERSIONPREFIX=	v

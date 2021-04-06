@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # Newer versions require registration to download and the site is unreliable.
 

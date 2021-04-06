@@ -1,5 +1,4 @@
 # Created by: Johann Visagie <wjv@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	phpbb
 PORTVERSION=	2.0.23

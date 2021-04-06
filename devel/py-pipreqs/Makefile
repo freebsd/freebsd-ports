@@ -1,5 +1,4 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pipreqs
 PORTVERSION=	0.4.10

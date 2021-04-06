@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-table-mysql
 PORTREVISION=	0

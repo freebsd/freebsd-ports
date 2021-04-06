@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pynleq2
 DISTVERSION=	0.0.2

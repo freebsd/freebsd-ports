@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pywdns
 PORTVERSION=	0.10.0

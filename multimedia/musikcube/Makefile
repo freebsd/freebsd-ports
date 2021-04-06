@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	musikcube
 DISTVERSION=	0.96.5

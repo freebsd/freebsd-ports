@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	elemental
 DISTVERSIONPREFIX=	v

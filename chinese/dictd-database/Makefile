@@ -1,5 +1,4 @@
 # Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	dictd-database
 PORTVERSION=	1.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	identity_smtp
 PORTVERSION=	20170914

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fontobene
 DISTVERSION=	0.2.0

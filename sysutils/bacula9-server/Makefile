@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bacula
 PORTVERSION=	9.6.7

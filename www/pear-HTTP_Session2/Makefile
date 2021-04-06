@@ -1,5 +1,4 @@
 # Created by: Alex Miller (<asm@asm.kiev.ua>)
-# $FreeBSD$
 
 PORTNAME=	HTTP_Session2
 PORTVERSION=	0.7.3

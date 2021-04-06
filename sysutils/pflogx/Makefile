@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	pflogx
 PORTVERSION=	0.86

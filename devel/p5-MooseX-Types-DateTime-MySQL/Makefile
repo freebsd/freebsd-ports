@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MooseX-Types-DateTime-MySQL
 PORTVERSION=	0.003

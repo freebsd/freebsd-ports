@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman <matthew@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Test-Email
 PORTVERSION=	0.07

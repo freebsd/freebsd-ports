@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libad9361-iio
 DISTVERSIONPREFIX=	v

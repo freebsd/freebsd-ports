@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hunspell
 PORTVERSION=	1.6.2

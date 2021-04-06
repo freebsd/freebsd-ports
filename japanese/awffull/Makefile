@@ -1,5 +1,4 @@
 # Created by: Norikatsu Shigemura <nork@FreeBSD.org>
-# $FreeBSD$
 
 CATEGORIES=	japanese www
 

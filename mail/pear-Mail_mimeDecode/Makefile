@@ -1,5 +1,4 @@
 # Created by: Zhen REN <bg1tpt@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Mail_mimeDecode
 PORTVERSION=	1.5.6

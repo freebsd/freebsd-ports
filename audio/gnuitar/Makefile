@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan
-# $FreeBSD$
 
 PORTNAME=	gnuitar
 PORTVERSION=	0.3.2

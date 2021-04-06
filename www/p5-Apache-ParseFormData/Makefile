@@ -1,5 +1,4 @@
 # Created by: Jon Nistor <nistor@snickers.org>
-# $FreeBSD$
 
 PORTNAME=	Apache-ParseFormData
 PORTVERSION=	0.09

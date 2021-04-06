@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-apimanagement
 PORTVERSION=	0.2.0

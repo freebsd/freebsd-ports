@@ -1,5 +1,4 @@
 # Created by: Qiang Guo <guoqiang_cn@126.com>
-# $FreeBSD$
 
 PORTNAME=	bvm
 PORTVERSION=	1.3.1

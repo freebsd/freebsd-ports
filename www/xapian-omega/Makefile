@@ -1,5 +1,4 @@
 # Created by: Henrik Brix Andersen <brix@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xapian-omega
 PORTVERSION=	1.4.18

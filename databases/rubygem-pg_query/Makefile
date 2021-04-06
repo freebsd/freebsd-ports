@@ -1,5 +1,4 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pg_query
 PORTVERSION=	1.3.0

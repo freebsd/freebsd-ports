@@ -1,5 +1,4 @@
 # Created by: Mikhail Teterin
-# $FreeBSD$
 
 PORTNAME=	libstocks
 PORTVERSION=	0.5.0

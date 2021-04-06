@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ptsort
 PORTVERSION=	1.20170904

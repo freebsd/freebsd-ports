@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	paros
 PORTVERSION=	3.2.13

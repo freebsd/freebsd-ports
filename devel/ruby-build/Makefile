@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ruby-build
 PORTVERSION=	20210405

@@ -1,5 +1,4 @@
 # Created by: janos.mohacsi@bsd.hu
-# $FreeBSD$
 
 PORTNAME=	hunspell
 PORTVERSION=	1.7.0

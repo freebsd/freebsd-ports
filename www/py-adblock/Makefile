@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	adblock
 DISTVERSION=	0.4.3

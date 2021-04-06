@@ -1,5 +1,4 @@
 # Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Mojolicious
 PORTVERSION=	9.14

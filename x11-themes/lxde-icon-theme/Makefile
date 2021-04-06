@@ -1,5 +1,4 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lxde-icon-theme
 PORTVERSION=	0.5.1

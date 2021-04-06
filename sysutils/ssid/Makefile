@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ssid
 PORTVERSION=	0.1

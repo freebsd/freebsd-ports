@@ -1,5 +1,4 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
-# $FreeBSD$
 
 PORTNAME=	Data-JavaScript-Anon
 PORTVERSION=	1.03

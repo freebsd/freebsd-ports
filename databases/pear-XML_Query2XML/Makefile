@@ -1,5 +1,4 @@
 # Created by: wenheping<wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	XML_Query2XML
 PORTVERSION=	1.7.2

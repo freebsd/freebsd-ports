@@ -1,5 +1,4 @@
 # Created by: Bert Burgemeister <trebbu@googlemail.com>
-# $FreeBSD$
 
 PORTNAME=	pipeglade
 PORTVERSION=	4.7.0

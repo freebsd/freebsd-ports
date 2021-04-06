@@ -1,5 +1,4 @@
 # Created by: Martin Waschbuesch <martin@waschbuesch.de>
-# $FreeBSD$
 
 PORTNAME=	Any-Daemon
 PORTVERSION=	0.95

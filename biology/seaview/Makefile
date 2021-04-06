@@ -1,5 +1,4 @@
 # Created by: frankch@waru.life.nthu.edu.tw
-# $FreeBSD$
 
 PORTNAME=	seaview
 PORTVERSION=	5.0.4

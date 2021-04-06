@@ -1,5 +1,4 @@
 # Created by: Peter Ankerstal <peter@pean.org>
-# $FreeBSD$
 
 PORTNAME=	zfs-periodic
 PORTVERSION=	1.0.20130213

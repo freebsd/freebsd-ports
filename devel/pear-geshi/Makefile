@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geshi
 PORTVERSION=	1.0.9.0

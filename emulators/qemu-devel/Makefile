@@ -1,5 +1,4 @@
 # Created by: Juergen Lock <nox@jelal.kn-bremen.de>
-# $FreeBSD$
 
 PORTNAME=	qemu
 DISTVERSION=	5.1.0.20201019

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MooX-late
 PORTVERSION=	0.015

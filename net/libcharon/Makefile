@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libCharon
 DISTVERSION=	4.8.0

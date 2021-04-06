@@ -1,5 +1,4 @@
 # Created by: Sahil Tandon <sahil@tandon.net>
-# $FreeBSD$
 
 PORTNAME=	mailzu
 DISTVERSION=	0.8rc3

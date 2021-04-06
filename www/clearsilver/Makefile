@@ -1,5 +1,4 @@
 # Created by: thinker <thinker@branda.to>
-# $FreeBSD$
 
 PORTNAME=	clearsilver
 PORTVERSION=	0.10.5

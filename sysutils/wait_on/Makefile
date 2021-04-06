@@ -1,5 +1,4 @@
 # Created by: Andrew Stevenson <andrew@ugh.net.au>
-# $FreeBSD$
 
 PORTNAME=	wait_on
 DISTVERSION=	1.1-2

@@ -1,5 +1,4 @@
 # Created by: Mark Reidel <ports@mark.reidel.info>
-# $FreeBSD$
 
 PORTNAME=	ncmpc
 PORTVERSION=	0.41

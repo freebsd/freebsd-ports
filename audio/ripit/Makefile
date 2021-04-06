@@ -1,5 +1,4 @@
 # Created by: oyvindmo@initio.no
-# $FreeBSD$
 
 PORTNAME=	ripit
 PORTVERSION=	3.9.0

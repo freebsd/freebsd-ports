@@ -1,5 +1,4 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	six
 PORTVERSION=	1.15.0

@@ -1,5 +1,4 @@
 # Created by: Morten Slot Kristensen
-# $FreeBSD$
 
 PORTNAME=	dzen
 PORTVERSION=	0.9.5

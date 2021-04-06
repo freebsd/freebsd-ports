@@ -1,5 +1,4 @@
 # Created by: Erik Greenwald <erik@smluc.org>
-# $FreeBSD$
 
 PORTNAME=	bar
 PORTVERSION=	1.4

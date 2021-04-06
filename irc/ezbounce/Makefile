@@ -1,5 +1,4 @@
 # Created by: Chris Piazza <cpiazza@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ezbounce
 PORTVERSION=	1.99.15

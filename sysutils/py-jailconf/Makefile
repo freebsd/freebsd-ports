@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jailconf
 DISTVERSIONPREFIX=	v

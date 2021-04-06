@@ -1,5 +1,4 @@
 # Created by: SeaD
-# $FreeBSD$
 
 PORTNAME=	ipguard
 PORTVERSION=	1.04

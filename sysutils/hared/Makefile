@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hared
 DISTVERSION=	1.0-45

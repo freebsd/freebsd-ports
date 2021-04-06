@@ -1,5 +1,4 @@
 # Created by: Tomoyuki Sakurai <cherry@trombik.org>
-# $FreeBSD$
 
 PORTNAME=	Gearman-Server
 PORTVERSION=	1.11

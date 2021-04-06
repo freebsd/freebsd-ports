@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kakoune
 DISTVERSION=	2020.09.01

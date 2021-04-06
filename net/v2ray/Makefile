@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	v2ray
 DISTVERSIONPREFIX=	v

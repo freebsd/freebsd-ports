@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
-# $FreeBSD$
 
 PORTNAME=	Number-Compare
 PORTVERSION=	0.03

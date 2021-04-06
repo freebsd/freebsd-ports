@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libosmocore
 PORTVERSION=	1.2.0

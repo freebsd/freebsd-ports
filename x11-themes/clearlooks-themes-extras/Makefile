@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clearlooks-themes-extras
 PORTVERSION=	0.6

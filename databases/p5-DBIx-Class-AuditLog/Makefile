@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-AuditLog
 PORTVERSION=	0.6.4

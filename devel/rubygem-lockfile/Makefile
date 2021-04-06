@@ -1,5 +1,4 @@
 # Created by: Dennis Herrmann <adox@mcx2.org>
-# $FreeBSD$
 
 PORTNAME=	lockfile
 PORTVERSION=	2.1.3

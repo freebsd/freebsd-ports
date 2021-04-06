@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libva-utils
 PORTVERSION=	2.11.1

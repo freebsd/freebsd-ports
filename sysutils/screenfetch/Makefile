@@ -1,5 +1,4 @@
 # Created by: Jason Helfman <jgh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	screenFetch
 DISTVERSIONPREFIX=	v

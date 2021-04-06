@@ -1,5 +1,4 @@
 # Created by: Ayumi M <ayu@commun.jp>
-# $FreeBSD$
 
 PORTNAME=	etqw
 PORTVERSION=	1.5

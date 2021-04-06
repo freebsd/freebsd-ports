@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Groonga
 PORTVERSION=	0.06

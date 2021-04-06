@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sniproxy
 DISTVERSION=	0.6.0

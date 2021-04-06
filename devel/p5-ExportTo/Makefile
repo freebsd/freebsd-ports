@@ -1,5 +1,4 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ExportTo
 PORTVERSION=	0.03

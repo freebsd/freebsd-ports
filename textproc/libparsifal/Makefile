@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	libparsifal
 PORTVERSION=	1.1.0

@@ -1,5 +1,4 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	azure
 PORTVERSION=	0.7.10

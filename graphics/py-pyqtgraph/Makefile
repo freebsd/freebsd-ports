@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyqtgraph
 DISTVERSION=	0.11.1

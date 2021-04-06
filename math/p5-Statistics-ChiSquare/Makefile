@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@tobez.org>
-# $FreeBSD$
 
 PORTNAME=	Statistics-ChiSquare
 PORTVERSION=	1.0000

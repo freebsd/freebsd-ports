@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Dancer-Logger-Syslog
 PORTVERSION=	0.6

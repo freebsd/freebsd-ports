@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	helpviewer
 PORTVERSION=	0.3

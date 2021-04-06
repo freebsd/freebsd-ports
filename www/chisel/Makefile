@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chisel
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dconf-editor
 PORTVERSION=	3.38.2

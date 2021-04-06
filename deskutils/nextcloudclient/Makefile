@@ -1,5 +1,4 @@
 # Created by: Mathieu Arnold
-# $FreeBSD$
 
 PORTNAME=	nextcloudclient
 PORTVERSION=	3.1.3

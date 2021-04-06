@@ -1,5 +1,4 @@
 # Created by: mwest@uct.ac.za
-# $FreeBSD$
 
 PORTNAME=	lbdb
 PORTVERSION=	0.42.1

@@ -1,5 +1,4 @@
 # Created by: Cezary Morga <cm@therek.net>
-# $FreeBSD$
 
 PORTNAME=	Parse-ExuberantCTags
 PORTVERSION=	1.02

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Scope-Container-DBI
 PORTVERSION=	0.09

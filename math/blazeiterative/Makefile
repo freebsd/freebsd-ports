@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	blazeiterative
 PORTVERSION=	g20180409

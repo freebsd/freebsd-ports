@@ -1,5 +1,4 @@
 # Created by: Andrey Zonov <andrey@zonov.org>
-# $FreeBSD$
 
 PORTNAME=	flock
 PORTVERPREFIX=	2.30

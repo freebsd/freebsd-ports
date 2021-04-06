@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	glslang
 DISTVERSION=	11.2.0

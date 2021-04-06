@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni
-# $FreeBSD$
 
 PORTNAME=	Ipopt
 DISTVERSION=	3.12.13

@@ -1,5 +1,4 @@
 # Created by: erich@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	mpeg_encode
 PORTVERSION=	1.5b

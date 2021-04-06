@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hared
 PORTVERSION=	1.0

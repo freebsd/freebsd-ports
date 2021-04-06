@@ -1,5 +1,4 @@
 # Created by: ejc@bazzle.com
-# $FreeBSD$
 
 PORTNAME=	omniORB
 DISTVERSION=	4.2.4

@@ -1,5 +1,4 @@
 # Created by: Ryan Melcer <rmelcer@iteris.com>
-# $FreeBSD$
 
 PORTNAME=		mapcache
 DISTVERSION=		1.10.0

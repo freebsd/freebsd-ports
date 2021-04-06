@@ -1,5 +1,4 @@
 # Created by: jmz
-# $FreeBSD$
 
 PORTNAME=	xmris
 PORTVERSION=	4.04

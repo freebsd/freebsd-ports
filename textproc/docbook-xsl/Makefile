@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.79.1

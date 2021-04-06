@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	viewres
 PORTVERSION=	1.0.6

@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sqlite3
 DISTVERSION=	3.34.1

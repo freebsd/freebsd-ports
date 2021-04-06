@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iptools
 DISTVERSION=	0.7.0

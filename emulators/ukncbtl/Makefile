@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ukncbtl
 DISTVERSION=	g20201017

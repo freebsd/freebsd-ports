@@ -1,5 +1,4 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-# $FreeBSD$
 
 PORTNAME=	vmd
 DISTVERSION=	1.9.3

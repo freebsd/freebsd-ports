@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mwoauth
 DISTVERSION=	0.3.7

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	asana
 PORTVERSION=	0.10.3

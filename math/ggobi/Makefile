@@ -1,5 +1,4 @@
 # Created by: Rainer Hurling <rhurlin@gwdg.de>
-# $FreeBSD$
 
 PORTNAME=	ggobi
 PORTVERSION=	2.1.11

@@ -1,5 +1,4 @@
 # Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-# $FreeBSD$
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.5.3

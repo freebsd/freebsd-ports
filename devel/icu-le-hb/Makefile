@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	icu-le-hb
 DISTVERSION=	1.0.3-3

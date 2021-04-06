@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Business-TW-TSIB-VirtualAccount
 PORTVERSION=	0.04b

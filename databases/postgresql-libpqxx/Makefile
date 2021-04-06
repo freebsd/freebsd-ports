@@ -1,5 +1,4 @@
 # Created by: Palle Girgensohn <girgen@pingpong.net>
-# $FreeBSD$
 
 PORTNAME=	libpqxx
 PORTVERSION=	7.2.0

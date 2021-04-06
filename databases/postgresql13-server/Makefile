@@ -1,5 +1,4 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME?=	postgresql
 DISTVERSION?=	13.2

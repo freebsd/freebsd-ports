@@ -1,5 +1,4 @@
 # Created by: Kirill Bezzubets <kirill@solaris.ru>
-# $FreeBSD$
 
 PORTNAME=	gammu
 PORTVERSION=	1.42.0

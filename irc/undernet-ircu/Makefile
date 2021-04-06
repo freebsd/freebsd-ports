@@ -1,5 +1,4 @@
 # Created by: Walter Venable <weaseal@users.sourceforge.net>
-# $FreeBSD$
 
 PORTNAME=	undernet-ircu
 PORTVERSION=	2.10.12.19

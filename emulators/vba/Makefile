@@ -1,5 +1,4 @@
 # Created by: Alexander Best <arundel@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	vba
 PORTVERSION=	1.7.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libpillowfight
 DISTVERSION=	0.3.0

@@ -1,5 +1,4 @@
 # Created by: andrew@scoop.co.nz
-# $FreeBSD$
 
 PORTNAME=	l5
 PORTVERSION=	1.2

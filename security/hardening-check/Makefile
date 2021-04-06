@@ -1,5 +1,4 @@
 # Created by: Jov <amutu@amutu.com>
-# $FreeBSD$
 
 PORTNAME=	hardening-check
 PORTVERSION=	2.6

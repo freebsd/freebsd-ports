@@ -1,5 +1,4 @@
 # Created by: Phil Phillips
-# $FreeBSD$
 
 PORTNAME=	Zenoss
 PORTVERSION=	1.11

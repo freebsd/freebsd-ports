@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Emulators for other operating systems
 

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	monoid
 DISTVERSION=	0.61

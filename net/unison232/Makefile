@@ -1,5 +1,4 @@
 # Created by: Dan Pelleg <dpelleg+unison@cs.cmu.edu>
-# $FreeBSD$
 
 PORTNAME=	unison
 PORTVERSION=	2.32.52

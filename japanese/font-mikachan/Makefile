@@ -1,5 +1,4 @@
 # Created by: sada
-# $FreeBSD$
 
 PORTNAME=	mikachan
 PORTVERSION=	9.1

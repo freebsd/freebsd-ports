@@ -1,5 +1,4 @@
 # Created by: David Gardner
-# $FreeBSD$
 
 PORTNAME=	gkrelltop
 PORTVERSION=	2.2.13

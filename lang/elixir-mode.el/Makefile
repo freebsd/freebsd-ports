@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	elixir-mode.el
 DISTVERSIONPREFIX=	v

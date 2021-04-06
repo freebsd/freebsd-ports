@@ -1,5 +1,4 @@
 # Created by: Eugene Mychlo <myc@barev.net>
-# $FreeBSD$
 
 PORTNAME=	yed
 DISTVERSION=	3.20.1

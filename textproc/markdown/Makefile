@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	markdown
 PORTVERSION=	1.0.1

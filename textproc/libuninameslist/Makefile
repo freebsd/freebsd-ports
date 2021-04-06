@@ -1,5 +1,4 @@
 # Created by: KANOU Hiroki <kanou@khdd.net>
-# $FreeBSD$
 
 PORTNAME=	libuninameslist
 PORTVERSION=	20200413

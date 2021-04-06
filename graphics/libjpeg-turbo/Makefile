@@ -1,5 +1,4 @@
 # Created by: Denis Podolskiy <bytestore@yandex.ru>
-# $FreeBSD$
 
 PKGNAMEPREFIX=	lib
 PORTREVISION=	0

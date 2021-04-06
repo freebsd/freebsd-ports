@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MathJax3
 DISTVERSION=	3.1.2

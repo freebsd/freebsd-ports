@@ -1,5 +1,4 @@
 # Created by: Masahiro Teramoto <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Server-IRC
 PORTVERSION=	1.54

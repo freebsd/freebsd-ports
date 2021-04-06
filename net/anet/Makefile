@@ -1,5 +1,4 @@
 # Created by: John Marino <marino@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	anet
 PORTVERSION=	0.4.1

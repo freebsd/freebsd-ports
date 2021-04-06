@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cssmin
 PORTVERSION=	1.0.3

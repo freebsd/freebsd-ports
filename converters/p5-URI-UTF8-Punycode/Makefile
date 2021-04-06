@@ -1,5 +1,4 @@
 # Created by: Timur Bakeyev <bat@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	URI-UTF8-Punycode
 PORTVERSION=	1.05

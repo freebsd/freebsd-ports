@@ -1,5 +1,4 @@
 # Created by: Yasuhiro Fukuma <yasuf@big.or.jp>
-# $FreeBSD$
 
 PORTNAME=	npc
 PORTVERSION=	0.83

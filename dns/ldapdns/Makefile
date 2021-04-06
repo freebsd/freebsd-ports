@@ -1,5 +1,4 @@
 # Created by: Paul Dlug <paul@aps.org>
-# $FreeBSD$
 
 PORTNAME=	ldapdns
 PORTVERSION=	2.07

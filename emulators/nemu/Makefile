@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nemu
 DISTVERSIONPREFIX=	v

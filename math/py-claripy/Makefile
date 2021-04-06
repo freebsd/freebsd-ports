@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	claripy
 DISTVERSIONPREFIX=	v

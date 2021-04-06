@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vrflash
 PORTVERSION=	0.24

@@ -1,5 +1,4 @@
 # Created by: Conor McDermottroe <ports@mcdermottroe.com>
-# $FreeBSD$
 
 PORTNAME=	TestGen4Web-Runner
 PORTVERSION=	0.11

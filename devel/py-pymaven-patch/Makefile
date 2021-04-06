@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pymaven-patch
 DISTVERSION=	0.3.0

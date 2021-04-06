@@ -1,5 +1,4 @@
 # Created by: dlowe
-# $FreeBSD$
 
 PORTNAME=	xmake
 PORTVERSION=	1.06

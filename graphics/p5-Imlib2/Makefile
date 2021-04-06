@@ -1,5 +1,4 @@
 # Created by: Jeremy Norris <ishmael27@home.com>
-# $FreeBSD$
 
 PORTNAME=	Imlib2
 PORTVERSION=	1.0.0

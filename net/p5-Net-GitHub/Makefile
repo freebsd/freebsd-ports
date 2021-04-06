@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Net-GitHub
 PORTVERSION=	1.01

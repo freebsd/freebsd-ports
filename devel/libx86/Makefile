@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libx86
 PORTVERSION=	1.1

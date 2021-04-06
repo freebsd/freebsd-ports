@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MooX-Role-Parameterized
 PORTVERSION=	0.082

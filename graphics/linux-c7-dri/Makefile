@@ -1,5 +1,4 @@
 # Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-# $FreeBSD$
 
 PORTNAME=	dri
 PORTVERSION=	18.3.4

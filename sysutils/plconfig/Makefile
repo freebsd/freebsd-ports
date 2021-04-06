@@ -1,5 +1,4 @@
 # Created by: Matt Peterson <matt@peterson.org>
-# $FreeBSD$
 
 PORTNAME=	plconfig
 PORTVERSION=	0.2

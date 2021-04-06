@@ -1,5 +1,4 @@
 # Created by: Jesper Dalberg <jesper@jdn.dk>
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Server-XMLRPC
 PORTVERSION=	0.05

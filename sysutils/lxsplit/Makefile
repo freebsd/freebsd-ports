@@ -1,5 +1,4 @@
 # Created by: kiesel@schlund.de
-# $FreeBSD$
 
 PORTNAME=	lxsplit
 PORTVERSION=	0.2.4

@@ -1,5 +1,4 @@
 # Created by: Zeus Panchenko <zeus@gnu.org.ua>
-# $FreeBSD$
 
 PORTNAME=	List-Regexp
 PORTVERSION=	1.03

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	immortal
 PORTVERSION=	0.24.1

@@ -1,5 +1,4 @@
 # Created by: Frederic Culot <culot@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	File-Listing
 PORTVERSION=	6.14

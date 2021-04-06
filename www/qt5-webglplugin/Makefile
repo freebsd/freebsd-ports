@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webglplugin
 DISTVERSION=	${QT5_VERSION}

@@ -1,5 +1,4 @@
 # Created by: Saulius Menkevicius <bob@nulis.lt>
-# $FreeBSD$
 
 PORTNAME=	vqcc-gtk
 PORTVERSION=	0.5

@@ -1,5 +1,4 @@
 # Created by: Jim Riggs <ports@christianserving.org>
-# $FreeBSD$
 
 PORTNAME=	hatop
 PORTVERSION=	0.7.7

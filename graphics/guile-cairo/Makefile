@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	guile-cairo
 DISTVERSION=	1.11.1

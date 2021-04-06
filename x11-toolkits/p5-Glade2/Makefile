@@ -1,5 +1,4 @@
 # Created by: ports@c0decafe.net
-# $FreeBSD$
 
 PORTNAME=	Glade
 PORTVERSION=	1.007

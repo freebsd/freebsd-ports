@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	LWP-Authen-OAuth
 PORTVERSION=	1.02

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	marker
 PORTVERSION=	2020.04.04.2

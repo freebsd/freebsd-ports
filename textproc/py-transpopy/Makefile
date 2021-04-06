@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	transpopy
 PORTVERSION=	0.2.0

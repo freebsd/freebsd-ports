@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	micro
 PORTVERSION=	2.0.8

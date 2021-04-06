@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan
-# $FreeBSD$
 
 PORTNAME=	Digest-Perl-MD5
 PORTVERSION=	1.9

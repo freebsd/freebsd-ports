@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sabnzbdplus
 DISTVERSION=	3.0.2

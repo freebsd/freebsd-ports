@@ -1,5 +1,4 @@
 # Created by: Franz Klammer <klammer@webonaut.com>
-# $FreeBSD$
 
 PORTNAME=	zenity
 PORTVERSION=	3.32.0

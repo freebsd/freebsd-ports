@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zope.cachedescriptors
 PORTVERSION=	3.5.1

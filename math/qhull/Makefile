@@ -1,5 +1,4 @@
 # Created by: pusto@web.de
-# $FreeBSD$
 
 PORTNAME=	qhull
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: john@jnielsen.net
-# $FreeBSD$
 
 PORTNAME=	autocutsel
 PORTVERSION=	0.10.0

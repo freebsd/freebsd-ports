@@ -1,5 +1,4 @@
 # Created by: antoine@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Flask-Sockets
 PORTVERSION=	0.2.1

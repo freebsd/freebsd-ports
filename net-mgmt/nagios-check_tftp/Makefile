@@ -1,5 +1,4 @@
 # Created by: hr <holgerrepp@googlemail.com>
-# $FreeBSD$
 
 PORTNAME=	check_tftp
 PORTVERSION=	1.0.1

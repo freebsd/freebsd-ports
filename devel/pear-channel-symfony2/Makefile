@@ -1,5 +1,4 @@
 # Created by: Gasol Wu <gasol.wu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	symfony2
 PORTVERSION=	20110826

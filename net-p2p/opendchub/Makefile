@@ -1,5 +1,4 @@
 # Created by: Munish Chopra <mchopra@engmail.uwaterloo.ca>
-# $FreeBSD$
 
 PORTNAME=	opendchub
 PORTVERSION=	0.8.3

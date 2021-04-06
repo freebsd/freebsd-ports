@@ -1,5 +1,4 @@
 # Created by: clsung@dragon2.net
-# $FreeBSD$
 
 PORTNAME=	Algorithm-NaiveBayes
 PORTVERSION=	0.04

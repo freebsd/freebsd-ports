@@ -1,5 +1,4 @@
 # Created by: bkhl@elektrubadur.se
-# $FreeBSD$
 
 PORTNAME=	cg
 PORTVERSION=	0.4

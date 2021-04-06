@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
-# $FreeBSD$
 
 PORTNAME=	Mail_Mime
 PORTVERSION=	1.10.10

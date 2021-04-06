@@ -1,5 +1,4 @@
 # Created by: Ben Woods <woodsb02@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Data-URIEncode
 PORTVERSION=	0.11

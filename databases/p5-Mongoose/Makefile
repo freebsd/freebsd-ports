@@ -1,5 +1,4 @@
 # Created by: Nick Hibma <n_hibma@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	Mongoose
 PORTVERSION=	2.00

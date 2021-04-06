@@ -1,5 +1,4 @@
 # Created by: Mikhail T.  <m.tsatsenko@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	backtrader
 PORTVERSION=	1.9.74.123

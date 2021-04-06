@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pixen
 PORTVERSION=	0.1

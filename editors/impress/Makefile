@@ -1,5 +1,4 @@
 # Created by: Kris Kennaway <kris@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	impress
 PORTVERSION=	1.1b9

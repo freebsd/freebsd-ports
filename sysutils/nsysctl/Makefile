@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nsysctl
 DISTVERSION=	2.0

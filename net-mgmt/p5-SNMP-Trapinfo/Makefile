@@ -1,5 +1,4 @@
 # Created by: joris
-# $FreeBSD$
 
 PORTNAME=	SNMP-Trapinfo
 PORTVERSION=	1.02

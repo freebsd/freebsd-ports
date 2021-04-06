@@ -1,5 +1,4 @@
 # Created by: Aaron Dalton <aaron@daltons.ca>
-# $FreeBSD$
 
 PORTNAME=	Data-Table
 PORTVERSION=	1.78

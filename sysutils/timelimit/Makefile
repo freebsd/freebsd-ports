@@ -1,5 +1,4 @@
 # Created by: roam@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	timelimit
 PORTVERSION=	1.9.0

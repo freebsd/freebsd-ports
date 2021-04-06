@@ -1,5 +1,4 @@
 # Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-# $FreeBSD$
 
 PORTNAME=	qca
 PORTVERSION=	2.2.1

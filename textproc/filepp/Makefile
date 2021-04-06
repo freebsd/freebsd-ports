@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	filepp
 PORTVERSION=	1.8.0

@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	WebService-Redmine
 PORTVERSION=	0.06

@@ -1,5 +1,4 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Data-Visitor
 PORTVERSION=	0.31

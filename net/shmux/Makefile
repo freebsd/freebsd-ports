@@ -1,5 +1,4 @@
 # Created by: jamundsen
-# $FreeBSD$
 
 PORTNAME=	shmux
 DISTVERSIONPREFIX=	v

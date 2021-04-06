@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Proclet
 PORTVERSION=	0.35

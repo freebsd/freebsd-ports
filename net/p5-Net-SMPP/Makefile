@@ -1,5 +1,4 @@
 # Created by: jhay
-# $FreeBSD$
 
 PORTNAME=	Net-SMPP
 PORTVERSION=	1.19

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	xmlindent
 PORTVERSION=	0.2.17

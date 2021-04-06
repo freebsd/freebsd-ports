@@ -1,5 +1,4 @@
 # Created by: Dimitry Andric <dim@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Getopt-Tabular
 PORTVERSION=	0.3

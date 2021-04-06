@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	virtus
 PORTVERSION=	1.0.5

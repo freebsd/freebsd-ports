@@ -1,5 +1,4 @@
 # Created by: Matthew Fuller <fullermd@over-yonder.net>
-# $FreeBSD$
 
 PORTNAME=	pwd_unmkdb
 PORTVERSION=	1.3.1

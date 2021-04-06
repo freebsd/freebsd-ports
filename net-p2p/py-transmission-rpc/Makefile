@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	transmission-rpc
 PORTVERSION=	2.0.4

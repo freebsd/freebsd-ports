@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	colmap
 DISTVERSION=	3.6

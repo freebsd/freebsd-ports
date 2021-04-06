@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni
-# $FreeBSD$
 
 PORTNAME=	libarea
 PORTVERSION=	20191031

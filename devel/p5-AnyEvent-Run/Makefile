@@ -1,5 +1,4 @@
 # Created by: Denis Pokataev <catone@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-Run
 PORTVERSION=	0.01

@@ -1,5 +1,4 @@
 # Created by: dhagan@cs.vt.edu
-# $FreeBSD$
 
 PORTNAME=	elm
 PORTVERSION=	2.5.8

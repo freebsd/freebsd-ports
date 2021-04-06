@@ -1,5 +1,4 @@
 # Created by: Horia Racoviceanu <horia@racoviceanu.com>
-# $FreeBSD$
 
 PORTNAME=	ent
 PORTVERSION=	0.20080128

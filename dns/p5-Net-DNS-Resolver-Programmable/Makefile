@@ -1,5 +1,4 @@
 # Created by: Koen Martens <gmc@sonologic.nl>
-# $FreeBSD$
 
 PORTNAME=	Net-DNS-Resolver-Programmable
 PORTVERSION=	0.009

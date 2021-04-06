@@ -1,5 +1,4 @@
 # Created by: Josh Gilliam <josh@quick.net>
-# $FreeBSD$
 
 PORTNAME=	urlview
 PORTVERSION=	0.9.20131021

@@ -1,5 +1,4 @@
 # Created by: Andrew Lewis <freeghb@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	luasec
 PORTVERSION=	0.9

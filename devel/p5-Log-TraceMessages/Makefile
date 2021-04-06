@@ -1,5 +1,4 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
-# $FreeBSD$
 
 PORTNAME=	Log-TraceMessages
 PORTVERSION=	1.4

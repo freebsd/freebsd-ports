@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	activemq
 PORTVERSION=	5.16.1

@@ -1,5 +1,4 @@
 # Created by: Chad J. Milios <milios@ccsys.com>
-# $FreeBSD$
 
 PORTNAME=	namecoin
 PORTVERSION=	0.19.1

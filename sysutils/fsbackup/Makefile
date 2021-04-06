@@ -1,5 +1,4 @@
 # Created by: samm
-# $FreeBSD$
 
 PORTNAME=	fsbackup
 PORTVERSION=	1.2.1

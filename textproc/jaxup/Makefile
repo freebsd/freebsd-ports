@@ -1,5 +1,4 @@
 # Created by: Herve Quiroz <hq@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jaxup
 PORTVERSION=	1.01

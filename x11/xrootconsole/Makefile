@@ -1,5 +1,4 @@
 # Created by: incabulos@mac.com
-# $FreeBSD$
 
 PORTNAME=	xrootconsole
 PORTVERSION=	0.6

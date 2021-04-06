@@ -1,5 +1,4 @@
 # Created by: Lev Serebryakov <lev@serebryakov.spb.ru>
-# $FreeBSD$
 
 PORTNAME=	XML-XUpdate-LibXML
 PORTVERSION=	0.6.0

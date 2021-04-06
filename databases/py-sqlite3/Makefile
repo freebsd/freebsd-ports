@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang
-# $FreeBSD$
 
 PORTNAME=	sqlite3
 PORTVERSION=	${PYTHON_PORTVERSION}

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wmsystemtray
 PORTVERSION=	1.4

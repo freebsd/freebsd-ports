@@ -1,5 +1,4 @@
 # Created by: Gasol Wu <gasol.wu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	PHP_CodeCoverage
 DISTVERSION=	5.2.2

@@ -1,5 +1,4 @@
 # Created by: nectar@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	esh
 PORTVERSION=	0.8.5

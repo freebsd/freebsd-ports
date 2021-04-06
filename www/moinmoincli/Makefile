@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	moinmoincli
 DISTVERSION=	4.6.0

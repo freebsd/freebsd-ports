@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cvc4
 DISTVERSION=	1.7

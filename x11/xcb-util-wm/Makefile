@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xcb-util-wm
 PORTVERSION=	0.4.1

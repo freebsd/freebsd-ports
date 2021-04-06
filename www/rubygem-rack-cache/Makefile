@@ -1,5 +1,4 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
-# $FreeBSD$
 
 PORTNAME=	rack-cache
 PORTVERSION=	1.8.0

@@ -1,5 +1,4 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-weather
 PORTVERSION=	0.0.0.20180411

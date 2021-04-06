@@ -1,5 +1,4 @@
 # Created by: shurd@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	simsmith
 PORTVERSION=	9.9

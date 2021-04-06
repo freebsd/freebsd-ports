@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	grep
 DISTVERSION=	2.6.0

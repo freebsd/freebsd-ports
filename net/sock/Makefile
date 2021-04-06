@@ -1,5 +1,4 @@
 # Created by: Steve Jacobson <sjac@cs.stanford.edu>
-# $FreeBSD$
 
 PORTNAME=	sock
 PORTVERSION=	0.4.2

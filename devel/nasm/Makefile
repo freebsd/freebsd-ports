@@ -1,5 +1,4 @@
 # Created by: Murray Stokely <murray@cdrom.com>
-# $FreeBSD$
 
 PORTNAME=	nasm
 PORTVERSION=	2.15.05

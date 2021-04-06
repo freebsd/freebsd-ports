@@ -1,5 +1,4 @@
 # Created by: Mons Anderson <mons@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	uni-perl
 PORTVERSION=	0.91

@@ -1,5 +1,4 @@
 # Created by: William Grzybowski <wg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	DoctrineCommon
 PORTVERSION=	2.3.0

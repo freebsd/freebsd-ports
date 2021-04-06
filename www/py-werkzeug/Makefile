@@ -1,5 +1,4 @@
 # Created by: Moggie <moggie@elasticmind.net>
-# $FreeBSD$
 
 PORTNAME=	werkzeug
 PORTVERSION=	1.0.1

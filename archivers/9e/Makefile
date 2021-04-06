@@ -1,5 +1,4 @@
 # Created by: Jerry Hicks
-# $FreeBSD$
 
 PORTNAME=	9e
 PORTVERSION=	1.0

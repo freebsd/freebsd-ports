@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cpp11
 PORTVERSION=	0.2.7

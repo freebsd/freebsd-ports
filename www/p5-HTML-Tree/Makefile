@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <dima@Chg.RU>
-# $FreeBSD$
 
 PORTNAME=	HTML-Tree
 PORTVERSION=	5.07

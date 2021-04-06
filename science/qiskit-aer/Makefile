@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qiskit-aer
 DISTVERSION=	0.5.2

@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=	ascii2binary
 PORTVERSION=	2.14

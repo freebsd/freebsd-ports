@@ -1,5 +1,4 @@
 # Created by: Alexandre Biancalana <ale@biancalanas.net>
-# $FreeBSD$
 
 PORTNAME=	String-HexConvert
 PORTVERSION=	0.01

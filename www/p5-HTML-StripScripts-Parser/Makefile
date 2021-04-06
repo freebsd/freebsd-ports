@@ -1,5 +1,4 @@
 # Created by: kftseng@iyard.org
-# $FreeBSD$
 
 PORTNAME=	HTML-StripScripts-Parser
 PORTVERSION=	1.03

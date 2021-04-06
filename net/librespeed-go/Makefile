@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librespeed-go
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang <perky@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dpkg
 PORTVERSION=	1.19.7

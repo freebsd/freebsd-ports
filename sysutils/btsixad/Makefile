@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	btsixad
 PORTVERSION=	0.1.1

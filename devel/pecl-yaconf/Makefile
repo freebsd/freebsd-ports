@@ -1,5 +1,4 @@
 # Created by: John Chen <johnpupu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	yaconf
 DISTVERSION=	1.1.0

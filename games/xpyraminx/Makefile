@@ -1,5 +1,4 @@
 # Created by: Andrey Zakhvatov
-# $FreeBSD$
 
 PORTNAME=	xpyraminx
 PORTVERSION=	5.5.2

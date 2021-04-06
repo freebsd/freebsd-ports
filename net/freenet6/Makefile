@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis <edwin@mavetju.org>
-# $FreeBSD$
 
 PORTNAME=	freenet6
 DISTVERSION=	6_0_1

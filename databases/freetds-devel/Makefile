@@ -1,5 +1,4 @@
 # Created by: Domas Mituzas <midom@dammit.lt>
-# $FreeBSD$
 
 PORTNAME=	freetds
 PORTVERSION=	1.2.108

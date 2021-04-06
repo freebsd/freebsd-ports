@@ -1,5 +1,4 @@
 # Created by: Garrett Wollman <wollman@lcs.mit.edu>
-# $FreeBSD$
 
 PORTNAME=	Chart-PNGgraph
 PORTVERSION=	1.21

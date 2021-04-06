@@ -1,5 +1,4 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	goldendict
 DISTVERSION=	1.5.0-g20210115

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	httpdirfs
 DISTVERSION=	1.2.0

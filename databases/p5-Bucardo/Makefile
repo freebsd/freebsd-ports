@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Bucardo
 PORTVERSION=	5.6.0

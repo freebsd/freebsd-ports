@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jtc
 DISTVERSION=	1.76

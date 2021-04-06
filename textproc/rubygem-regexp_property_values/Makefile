@@ -1,5 +1,4 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	regexp_property_values
 PORTVERSION=	1.0.0

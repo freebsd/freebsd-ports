@@ -1,5 +1,4 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-# $FreeBSD$
 
 PORTNAME=	hevea
 PORTVERSION=	2.34

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libva
 DISTVERSION=	2.11.0

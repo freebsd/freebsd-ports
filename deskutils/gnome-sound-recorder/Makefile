@@ -1,5 +1,4 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gnome-sound-recorder
 DISTVERSION=	3.38.1

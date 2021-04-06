@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	CGI-Cache
 PORTVERSION=	1.4214

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	man2web
 PORTVERSION=	0.88

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	WebService-Bloglines
 PORTVERSION=	0.12

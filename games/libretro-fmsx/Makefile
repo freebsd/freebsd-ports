@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-fmsx
 PORTVERSION=	0.20210214

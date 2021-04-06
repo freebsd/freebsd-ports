@@ -1,5 +1,4 @@
 # Created by: rene@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	ws4py
 PORTVERSION=	0.3.4

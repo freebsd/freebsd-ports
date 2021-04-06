@@ -1,5 +1,4 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bcunit
 PORTVERSION=	3.0.2

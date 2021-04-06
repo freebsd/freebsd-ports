@@ -1,5 +1,4 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
-# $FreeBSD$
 
 PORTNAME=	trophy
 PORTVERSION=	2.0.4

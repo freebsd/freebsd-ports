@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Squatting-On-PSGI
 PORTVERSION=	0.06

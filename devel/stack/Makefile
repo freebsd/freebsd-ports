@@ -1,5 +1,4 @@
 # Created by: Tobias Kortkamp <t@tobik.me>
-# $FreeBSD$
 
 PORTNAME=	stack
 PORTVERSION=	2.5.1

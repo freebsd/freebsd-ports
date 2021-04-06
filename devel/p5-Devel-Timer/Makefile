@@ -1,5 +1,4 @@
 # Created by: Cory R. King <coryking@mozimediacom>
-# $FreeBSD$
 
 PORTNAME=	Devel-Timer
 PORTVERSION=	0.04

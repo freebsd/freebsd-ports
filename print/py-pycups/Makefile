@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pycups
 PORTVERSION=	2.0.1

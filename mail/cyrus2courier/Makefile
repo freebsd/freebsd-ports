@@ -1,5 +1,4 @@
 # Created by: Emanuel Haupt <ehaupt@critical.ch>
-# $FreeBSD$
 
 PORTNAME=	cyrus2courier
 PORTVERSION=	1.4

@@ -1,5 +1,4 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	RSvgDevice
 PORTVERSION=	0.6.4.4

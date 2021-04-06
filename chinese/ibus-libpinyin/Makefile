@@ -1,5 +1,4 @@
 # Created by: Henry Hu <henry.hu.sh@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ibus-libpinyin
 PORTVERSION=	1.11.1

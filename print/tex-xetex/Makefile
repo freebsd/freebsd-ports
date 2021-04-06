@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xetex
 PORTVERSION=	0.99992

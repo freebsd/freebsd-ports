@@ -1,5 +1,4 @@
 # Created by: Rainer Hurling <rhurlin@gwdg.de>
-# $FreeBSD$
 
 PORTNAME=	pyls-black
 PORTVERSION=	0.4.6

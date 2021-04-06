@@ -1,5 +1,4 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	car
 DISTVERSION=	3.0-10

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CGI-Application-PSGI
 PORTVERSION=	1.00

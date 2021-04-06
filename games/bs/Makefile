@@ -1,5 +1,4 @@
 # Created by: Andrey Zakhvatov
-# $FreeBSD$
 
 PORTNAME=	bs
 PORTVERSION=	2.11

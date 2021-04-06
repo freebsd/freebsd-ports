@@ -1,5 +1,4 @@
 # Created by: Gary Palmer <gpalmer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cdb
 PORTVERSION=	0.75

@@ -1,5 +1,4 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
-# $FreeBSD$
 
 PORTNAME=	pkgconfig
 PORTVERSION=	1.5.2

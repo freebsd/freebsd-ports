@@ -1,5 +1,4 @@
 # Created by: rpsfa@rit.edu
-# $FreeBSD$
 
 PORTNAME=	popen4
 PORTVERSION=	0.1.4

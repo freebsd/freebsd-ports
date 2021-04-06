@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nanumcoding
 PORTVERSION=	2.0

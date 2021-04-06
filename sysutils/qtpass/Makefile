@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qtpass
 DISTVERSIONPREFIX=	v

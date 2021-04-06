@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pkg-provides
 DISTVERSIONPREFIX=	v

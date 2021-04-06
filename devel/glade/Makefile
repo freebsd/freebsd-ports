@@ -1,5 +1,4 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	glade
 PORTVERSION=	3.22.1

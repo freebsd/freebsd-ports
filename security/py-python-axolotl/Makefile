@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-axolotl
 PORTVERSION=	0.1.42

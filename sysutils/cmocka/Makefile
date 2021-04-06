@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cmocka
 PORTVERSION=	1.1.5

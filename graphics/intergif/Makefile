@@ -1,5 +1,4 @@
 # Created by: jamie
-# $FreeBSD$
 
 PORTNAME=	interGif
 PORTVERSION=	6.15

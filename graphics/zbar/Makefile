@@ -1,5 +1,4 @@
 # Created by: Oliver Heesakkers <dev2@heesakkers.info>
-# $FreeBSD$
 
 PORTNAME=	zbar
 DISTVERSION=	0.23.90

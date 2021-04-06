@@ -1,5 +1,4 @@
 # Created by: Radim Kolar
-# $FreeBSD$
 
 PORTNAME=	memtest86
 PORTVERSION=	4.3.7

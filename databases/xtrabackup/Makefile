@@ -1,5 +1,4 @@
 # Created by: Alex Samorukov <samm@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	xtrabackup
 DISTVERSION=	2.4.21

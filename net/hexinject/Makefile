@@ -1,5 +1,4 @@
 # Created by: Sofian Brabez <sbrabez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	hexinject
 PORTVERSION=	1.6

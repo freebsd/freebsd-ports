@@ -1,5 +1,4 @@
 # Created by: clement
-# $FreeBSD$
 
 PORTNAME=	pwauth
 PORTVERSION=	2.3.11

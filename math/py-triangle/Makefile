@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	triangle
 PORTVERSION=	20200424

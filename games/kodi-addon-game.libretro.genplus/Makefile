@@ -1,5 +1,4 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	game.libretro.genplus
 PORTVERSION=	1.7.4.15

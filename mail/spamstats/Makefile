@@ -1,5 +1,4 @@
 # Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	spamstats
 PORTVERSION=	0.6c

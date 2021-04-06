@@ -1,5 +1,4 @@
 # Created by: Christopher Key <cjk32@cam.ac.uk>
-# $FreeBSD$
 
 PORTNAME=	Devel-ArgNames
 PORTVERSION=	0.03

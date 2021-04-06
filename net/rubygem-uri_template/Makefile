@@ -1,5 +1,4 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	uri_template
 PORTVERSION=	0.7.0

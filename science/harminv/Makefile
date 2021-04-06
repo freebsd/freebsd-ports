@@ -1,5 +1,4 @@
 # Created by: Stas Timokhin <devel@stasyan.com>
-# $FreeBSD$
 
 PORTNAME=	harminv
 PORTVERSION=	1.3.1

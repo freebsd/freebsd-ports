@@ -1,5 +1,4 @@
 # Created by: Gruen Christian <kiki@bsdro.org>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-View-HTML-Template
 PORTVERSION=	0.03

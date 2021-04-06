@@ -1,5 +1,4 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org.ru>
-# $FreeBSD$
 
 PORTNAME=	gigabase
 PORTVERSION=	3.91

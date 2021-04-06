@@ -1,5 +1,4 @@
 # Created by: Goran Tal <goran.tal@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	dikt
 PORTVERSION=	2s4

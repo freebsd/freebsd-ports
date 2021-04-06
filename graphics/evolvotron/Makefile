@@ -1,5 +1,4 @@
 # Created by: David Yeske <dyeske@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	evolvotron
 DISTVERSION=	0.7.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dugong
 PORTVERSION=	3.7.5

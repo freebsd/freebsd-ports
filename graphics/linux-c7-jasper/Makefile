@@ -1,5 +1,4 @@
 # Created by: Piotr Kubaj <pkubaj@anongoth.pl>
-# $FreeBSD$
 
 PORTNAME=	jasper
 PORTVERSION=	1.900.1

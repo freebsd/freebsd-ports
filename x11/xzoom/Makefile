@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	xzoom
 PORTVERSION=	0.4

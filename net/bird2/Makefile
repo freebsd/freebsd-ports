@@ -1,5 +1,4 @@
 # Created by: Alexander V. Chernikov <melifaro@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bird
 DISTVERSION=	2.0.8

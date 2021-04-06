@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nautilus-python
 DISTVERSION=	1.2.3

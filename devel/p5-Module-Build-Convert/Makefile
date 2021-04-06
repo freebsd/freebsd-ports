@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Module-Build-Convert
 PORTVERSION=	0.49

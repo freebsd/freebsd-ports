@@ -1,5 +1,4 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Business-OnlinePayment-VirtualNet
 PORTVERSION=	0.02

@@ -1,5 +1,4 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	claws-mail-plugins
 PORTVERSION=	3.17.8

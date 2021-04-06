@@ -1,5 +1,4 @@
 # Created by: Martin Dieringer <martin.dieringe@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	pdf2svg
 PORTVERSION=	0.2.3

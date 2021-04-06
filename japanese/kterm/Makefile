@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kterm
 PORTVERSION=	6.2.0

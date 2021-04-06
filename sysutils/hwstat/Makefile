@@ -1,5 +1,4 @@
 # Created by: Marc Lagrange <rhaamo@gruik.at>
-# $FreeBSD$
 
 PORTNAME=	hwstat
 PORTVERSION=	0.5.1

@@ -1,5 +1,4 @@
 # Created by: Grzegorz Blach <gblach@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libmpdclient
 PORTVERSION=	2.19

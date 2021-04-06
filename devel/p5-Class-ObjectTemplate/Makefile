@@ -1,5 +1,4 @@
 # Created by: Tony Maher <tonym@biolateral.com.au>
-# $FreeBSD$
 
 PORTNAME=	Class-ObjectTemplate
 PORTVERSION=	0.7

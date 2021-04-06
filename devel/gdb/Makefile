@@ -1,5 +1,4 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gdb
 PORTVERSION=	10.1

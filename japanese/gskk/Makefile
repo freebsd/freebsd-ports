@@ -1,5 +1,4 @@
 # Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gskk
 PORTVERSION=	20041208

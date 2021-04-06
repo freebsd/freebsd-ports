@@ -1,5 +1,4 @@
 # Created by: Goran Mekić <meka@tilda.center>
-# $FreeBSD$
 
 PORTNAME=	drumgizmo
 PORTVERSION=	0.9.19

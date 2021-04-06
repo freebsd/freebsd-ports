@@ -1,5 +1,4 @@
 # Created by: Maurice Castro <maurice@castro.aus.net>
-# $FreeBSD$
 
 PORTNAME=	davical
 DISTVERSIONPREFIX=	r

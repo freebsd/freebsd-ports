@@ -1,5 +1,4 @@
 # Created by: Rong-En Fan <rafan@infor.org>
-# $FreeBSD$
 
 PORTNAME=	IO-Pager
 PORTVERSION=	2.10

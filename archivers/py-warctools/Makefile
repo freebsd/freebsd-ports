@@ -1,5 +1,4 @@
 # Created by: Poul-Henning Kamp <phk@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	warctools
 PORTVERSION=	4.10.0

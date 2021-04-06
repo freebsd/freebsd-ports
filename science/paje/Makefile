@@ -1,5 +1,4 @@
 # Created by: gurkan@phys.ethz.ch
-# $FreeBSD$
 
 PORTNAME=	paje
 PORTVERSION=	1.97

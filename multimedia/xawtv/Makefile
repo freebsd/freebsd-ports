@@ -1,5 +1,4 @@
 # Created by: George Reid <greid@ukug.uk.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	xawtv
 PORTVERSION=	3.107

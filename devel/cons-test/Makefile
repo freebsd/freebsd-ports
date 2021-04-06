@@ -1,5 +1,4 @@
 # Created by: rv@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	cons-test
 PORTVERSION=	2.2.0

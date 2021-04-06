@@ -1,5 +1,4 @@
 # Created by: Chris Howey <howeyc@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	parallel
 PORTVERSION=	20210222

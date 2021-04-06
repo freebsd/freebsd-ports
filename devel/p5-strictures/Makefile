@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	strictures
 PORTVERSION=	2.000006

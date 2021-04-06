@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DBIx-Skinny-Schema-Loader
 PORTVERSION=	0.25

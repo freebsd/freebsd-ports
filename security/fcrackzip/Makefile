@@ -1,5 +1,4 @@
 # Created by: Stefan Walter <sw@gegenunendlich.de>
-# $FreeBSD$
 
 PORTNAME=	fcrackzip
 PORTVERSION=	1.0

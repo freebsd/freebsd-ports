@@ -1,5 +1,4 @@
 # Created by: grog
-# $FreeBSD$
 
 PORTNAME=	x2x
 PORTVERSION=	1.30.20180709

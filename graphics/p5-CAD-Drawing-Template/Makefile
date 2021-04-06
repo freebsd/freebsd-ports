@@ -1,5 +1,4 @@
 # Created by: Aaron Dalton <aaron@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	CAD-Drawing-Template
 PORTVERSION=	0.01

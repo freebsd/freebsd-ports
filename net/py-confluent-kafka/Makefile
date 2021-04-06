@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	confluent-kafka
 DISTVERSION=	1.2.0

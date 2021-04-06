@@ -1,5 +1,4 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	typed-array
 PORTVERSION=	0.1.2

@@ -1,5 +1,4 @@
 # Created by: Andrew Thompson <thompsa@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	czmq
 PORTVERSION=	4.1.1

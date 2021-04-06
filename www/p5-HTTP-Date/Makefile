@@ -1,5 +1,4 @@
 # Created by: Frederic Culot <culot@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	HTTP-Date
 PORTVERSION=	6.05

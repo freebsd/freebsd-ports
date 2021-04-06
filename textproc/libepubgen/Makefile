@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libepubgen
 PORTVERSION=	0.1.1

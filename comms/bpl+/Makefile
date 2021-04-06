@@ -1,5 +1,4 @@
 # Created by: Masafumi NAKANE <max@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bpl+
 PORTVERSION=	1.0

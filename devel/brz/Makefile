@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	brz
 PORTVERSION=	3.1.0

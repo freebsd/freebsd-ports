@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xenaPython
 DISTVERSION=	1.0.14

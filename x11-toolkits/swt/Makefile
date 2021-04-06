@@ -1,5 +1,4 @@
 # Created by: Robert C. Noland III <rnoland@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	swt
 DISTVERSION=	4.11

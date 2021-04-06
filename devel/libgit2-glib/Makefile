@@ -1,5 +1,4 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
-# $FreeBSD$
 
 # Also update devel/libgit2, devel/rubygem-rugged, devel/py-pygit2
 

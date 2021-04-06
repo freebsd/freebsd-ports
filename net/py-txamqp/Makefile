@@ -1,5 +1,4 @@
 # Created by: Bruce Simpson
-# $FreeBSD$
 
 PORTNAME=	txamqp
 PORTVERSION=	0.8.2

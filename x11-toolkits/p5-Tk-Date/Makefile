@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	Tk-Date
 PORTVERSION=	0.44

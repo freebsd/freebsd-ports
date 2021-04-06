@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan
-# $FreeBSD$
 
 PORTNAME=	Digest-Pearson
 PORTVERSION=	1.00

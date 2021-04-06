@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	frr
 PORTVERSION=	7.5.1

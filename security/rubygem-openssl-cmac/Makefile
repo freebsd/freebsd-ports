@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openssl-cmac
 PORTVERSION=	2.0.1

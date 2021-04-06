@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pg_ed25519
 PORTVERSION=	0.2

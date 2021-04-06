@@ -1,5 +1,4 @@
 # Created by: Zhen REN <bg1tpt@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	phpbb
 DISTVERSION=	3.3.1

@@ -1,5 +1,4 @@
 # Created by: TAKATSU Tomonari <tota@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	quantreg
 PORTVERSION=	5.85

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	airborne
 PORTVERSION=	0.3.6

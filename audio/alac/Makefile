@@ -1,5 +1,4 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	alac
 PORTVERSION=	0.0.7

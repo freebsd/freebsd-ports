@@ -1,5 +1,4 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Horde_Xml_Element
 PORTVERSION=	2.0.4

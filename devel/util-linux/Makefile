@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	util-linux
 DISTVERSION=	2.36

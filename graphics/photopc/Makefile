@@ -1,5 +1,4 @@
 # Created by: Douglas Carmichael <dcarmich@mcs.com>
-# $FreeBSD$
 
 PORTNAME=	photopc
 PORTVERSION=	3.07

@@ -1,5 +1,4 @@
 # Created by: Alexander Novitsky <alecn2002@yandex.ru>
-# $FreeBSD$
 
 PORTNAME=	fxscintilla
 PORTVERSION=	2.28.0

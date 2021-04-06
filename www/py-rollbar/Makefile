@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rollbar
 PORTVERSION=	0.15.1

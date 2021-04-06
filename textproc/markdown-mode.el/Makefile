@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	markdown-mode.el
 PORTVERSION=	2.3

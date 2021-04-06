@@ -1,5 +1,4 @@
 # Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-# $FreeBSD$
 
 PORTNAME=	Mail-IMAPClient
 PORTVERSION=	3.42

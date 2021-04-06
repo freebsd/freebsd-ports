@@ -1,5 +1,4 @@
 # Created by: michael johnson <ahze@ahze.net>
-# $FreeBSD$
 #   $MCom: ports/devel/py-xdg/Makefile,v 1.4 2007/09/10 05:35:05 mezz Exp $
 
 PORTNAME=	xdg

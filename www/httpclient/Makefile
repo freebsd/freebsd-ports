@@ -1,5 +1,4 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	httpclient
 DISTVERSION=	4.5.12

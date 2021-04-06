@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Text-CharWidth
 DISTVERSION=	0.04

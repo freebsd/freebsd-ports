@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nheko
 DISTVERSIONPREFIX=v

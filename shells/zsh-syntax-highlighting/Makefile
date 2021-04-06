@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zsh-syntax-highlighting
 DISTVERSION=	0.7.1

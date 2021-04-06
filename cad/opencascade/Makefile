@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
-# $FreeBSD$
 
 PORTNAME=	opencascade
 PORTVERSION=	7.5.0

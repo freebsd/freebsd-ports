@@ -1,5 +1,4 @@
 # Created by: Edson Brandi <ebrandi@fugspbr.org>
-# $FreeBSD$
 
 PORTNAME=	dar
 PORTVERSION=	2.5.14

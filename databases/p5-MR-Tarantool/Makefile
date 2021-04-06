@@ -1,5 +1,4 @@
 # Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	MR-Tarantool
 PORTVERSION=	0.0.24

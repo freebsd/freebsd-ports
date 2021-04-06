@@ -1,5 +1,4 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Dancer-Logger-Log4perl
 PORTVERSION=	0.9.0

@@ -1,5 +1,4 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-# $FreeBSD$
 
 PORTNAME=	xstatic-angular-bootstrap
 PORTVERSION=	2.5.0.0

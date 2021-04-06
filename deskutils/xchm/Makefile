@@ -1,5 +1,4 @@
 # Created by: Pav Lucistnik <pav@oook.cz>
-# $FreeBSD$
 
 PORTNAME=	xchm
 PORTVERSION=	1.23

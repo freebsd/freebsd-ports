@@ -1,5 +1,4 @@
 # Created by: Kevin Lo <kevlo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	foolscap
 PORTVERSION=	20.4.0

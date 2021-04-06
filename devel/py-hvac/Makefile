@@ -1,5 +1,4 @@
 # Created by: Alessando Sagratini <ale_sagra@hotmail.com>
-# $FreeBSD$
 
 PORTNAME=	hvac
 PORTVERSION=	0.10.8

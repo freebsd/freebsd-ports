@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	molgif
 DISTVERSION=	g20180108

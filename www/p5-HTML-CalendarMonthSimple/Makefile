@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	HTML-CalendarMonthSimple
 PORTVERSION=	1.26

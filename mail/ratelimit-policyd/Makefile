@@ -1,5 +1,4 @@
 # Created by: Miroslav Lachman
-# $FreeBSD$
 
 PORTNAME=	ratelimit-policyd
 PORTVERSION=	1.0.4

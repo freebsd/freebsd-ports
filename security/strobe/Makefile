@@ -1,5 +1,4 @@
 # Created by: proff
-# $FreeBSD$
 
 PORTNAME=	strobe
 PORTVERSION=	1.06

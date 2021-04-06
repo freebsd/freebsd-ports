@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libe-book
 PORTVERSION=	0.1.3

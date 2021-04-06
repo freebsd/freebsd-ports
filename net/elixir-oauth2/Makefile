@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oauth2
 PORTVERSION=	2.0.0

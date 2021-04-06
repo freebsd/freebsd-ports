@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pam_script
 PORTVERSION=	1.1.9

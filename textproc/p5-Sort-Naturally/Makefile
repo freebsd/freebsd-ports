@@ -1,5 +1,4 @@
 # Created by: Aaron Dalton <aaron@daltons.ca>
-# $FreeBSD$
 
 PORTNAME=	Sort-Naturally
 PORTVERSION=	1.03

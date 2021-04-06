@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xmessage
 PORTVERSION=	1.0.5

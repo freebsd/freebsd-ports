@@ -1,5 +1,4 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
-# $FreeBSD$
 
 PORTNAME=	Finance-QuoteHist
 PORTVERSION=	1.29

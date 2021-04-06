@@ -1,5 +1,4 @@
 # Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	Log-Report
 PORTVERSION=	1.32

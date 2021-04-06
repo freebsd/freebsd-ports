@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	terminal-image-viewer
 DISTVERSIONPREFIX=	v

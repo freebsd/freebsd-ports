@@ -1,5 +1,4 @@
 # Created by: Martin Tournoij <carpetsmoker@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	uif2iso
 PORTVERSION=	0.1.7c

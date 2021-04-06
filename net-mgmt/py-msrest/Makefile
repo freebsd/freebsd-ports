@@ -1,5 +1,4 @@
 # Created by: Johannes Jost Meixner <johannes@perceivon.net>
-# $FreeBSD$
 
 PORTNAME=	msrest
 PORTVERSION=	0.6.21

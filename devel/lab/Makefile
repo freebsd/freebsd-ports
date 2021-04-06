@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lab
 PORTVERSION=	0.20.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	korean
 LO_I18N=	ko

@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis <edwin@mavetju.org>
-# $FreeBSD$
 
 PORTNAME=	ipv6calc
 PORTVERSION=	3.0.2

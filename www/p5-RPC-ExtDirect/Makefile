@@ -1,5 +1,4 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	RPC-ExtDirect
 PORTVERSION=	3.24

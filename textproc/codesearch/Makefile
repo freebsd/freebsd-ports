@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	codesearch
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	appointments
 PORTVERSION=	1.8.10

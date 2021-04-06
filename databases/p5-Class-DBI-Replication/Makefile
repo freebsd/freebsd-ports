@@ -1,5 +1,4 @@
 # Created by: Mathieu Arnold <m@absolight.net>
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-Replication
 PORTVERSION=	0.01

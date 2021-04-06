@@ -1,5 +1,4 @@
 # Created by: Greg Larkin <glarkin@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	XML-Pastor
 PORTVERSION=	1.0.4

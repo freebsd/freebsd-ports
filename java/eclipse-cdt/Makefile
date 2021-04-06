@@ -1,5 +1,4 @@
 # Created by: gldisater@gldis.ca
-# $FreeBSD$
 
 PORTNAME=	cdt
 PORTVERSION=	9.0.1

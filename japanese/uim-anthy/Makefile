@@ -1,5 +1,4 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-# $FreeBSD$
 
 CATEGORIES=	japanese
 .if defined(WITHOUT_X11)

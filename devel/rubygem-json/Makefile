@@ -1,5 +1,4 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	json
 PORTVERSION=	2.3.1

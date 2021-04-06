@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni
-# $FreeBSD$
 
 PORTNAME=	crayon
 DISTVERSION=	1.4.1

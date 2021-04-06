@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	portuguese
 LO_I18N=	pt

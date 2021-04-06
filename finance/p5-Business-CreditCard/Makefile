@@ -1,5 +1,4 @@
 # Created by: James FitzGibbon <jfitz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Business-CreditCard
 PORTVERSION=	0.36

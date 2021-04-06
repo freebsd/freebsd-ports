@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cf
 PORTVERSION=	6.49.0

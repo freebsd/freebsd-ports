@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tinder
 PORTVERSION=	1.10.1

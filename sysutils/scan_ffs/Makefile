@@ -1,5 +1,4 @@
 # Created by: mranner@inode.at
-# $FreeBSD$
 
 PORTNAME=	scan_ffs
 PORTVERSION=	1.2

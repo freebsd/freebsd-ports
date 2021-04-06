@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flex-sdk
 PORTVERSION=	3.5.0.12683

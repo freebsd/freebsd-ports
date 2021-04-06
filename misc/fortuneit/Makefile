@@ -1,5 +1,4 @@
 # Created by: gmarco@giovannelli.it
-# $FreeBSD$
 
 PORTNAME=	fortuneit
 PORTVERSION=	1.99

@@ -1,5 +1,4 @@
 # Created by: toni.viemero@iki.fi
-# $FreeBSD$
 
 PORTNAME=	W3C-LogValidator
 PORTVERSION=	1.4

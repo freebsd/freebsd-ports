@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	certbot-dns-ovh
 PORTVERSION=	${ACME_VERSION}

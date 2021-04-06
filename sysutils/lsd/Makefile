@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lsd
 DISTVERSION=	0.17.0

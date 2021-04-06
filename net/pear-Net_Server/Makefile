@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine (<tux@pinguru.net>)
-# $FreeBSD$
 
 PORTNAME=	Net_Server
 PORTVERSION=	1.0.3

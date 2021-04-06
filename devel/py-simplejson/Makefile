@@ -1,5 +1,4 @@
 # Created by: Alexander Botero-Lowry <alex@foxybanana.com>
-# $FreeBSD$
 
 PORTNAME=	simplejson
 PORTVERSION=	3.17.2

@@ -1,5 +1,4 @@
 # Created by: Michael Nottebrock <michaelnottebrock@gmx.net> et al
-# $FreeBSD$
 
 PORTNAME=	xvid
 PORTVERSION=	1.3.7

@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni
-# $FreeBSD$
 
 PORTNAME=	hypre
 DISTVERSIONPREFIX=	v

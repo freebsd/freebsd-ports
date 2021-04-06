@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	quantum
 PORTVERSION=	2.2.6

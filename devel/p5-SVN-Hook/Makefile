@@ -1,5 +1,4 @@
 # Created by: Greg Larkin <glarkin@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	SVN-Hook
 PORTVERSION=	0.28

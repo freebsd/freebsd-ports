@@ -1,5 +1,4 @@
 # Created by: Yarema <yds@CoolRat.org>
-# $FreeBSD$
 
 PORTNAME=	courier
 PORTVERSION=	0.65.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	heirloom-doctools
 PORTVERSION=	160308

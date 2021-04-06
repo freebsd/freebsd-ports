@@ -1,5 +1,4 @@
 # Created by: dikshie@sfc.wide.ad.jp
-# $FreeBSD$
 
 PORTNAME=	iffinder
 PORTVERSION=	1.38

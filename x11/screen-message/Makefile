@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	screen-message
 PORTVERSION=	0.25

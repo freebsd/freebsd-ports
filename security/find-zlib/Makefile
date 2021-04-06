@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	find_zlib
 PORTVERSION=	1.9

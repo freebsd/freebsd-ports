@@ -1,5 +1,4 @@
 # Created by: Dmitry Pryadko <d.pryadko@rambler-co.ru>
-# $FreeBSD$
 
 PORTNAME=	publicsuffix
 PORTVERSION=	1.1.0

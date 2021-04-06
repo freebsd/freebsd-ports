@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	agate-dbf
 PORTVERSION=	0.2.2

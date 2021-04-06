@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gotop
 DISTVERSIONPREFIX=	v

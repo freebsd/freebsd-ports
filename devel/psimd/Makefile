@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	psimd
 PORTVERSION=	g20180906

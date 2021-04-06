@@ -1,5 +1,4 @@
 # Created by: Alan Eldridge <alane@geeksrus.net>
-# $FreeBSD$
 
 PORTNAME=	ex
 PORTVERSION=	1.0.6

@@ -1,5 +1,4 @@
 # Created by: Florian Limberger <flo@snakeoilproductions.net>
-# $FreeBSD$
 
 PORTNAME=	mypy
 PORTVERSION=	0.812

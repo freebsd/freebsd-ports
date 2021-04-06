@@ -1,5 +1,4 @@
 # Created by: Philip M. Gollucci
-# $FreeBSD$
 
 PORTNAME=	bigrecord
 PORTVERSION=	0.1.1

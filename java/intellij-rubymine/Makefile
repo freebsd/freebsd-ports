@@ -1,5 +1,4 @@
 # Created by: Stefan Wendler <stefan.wendler@tngtech.com>
-# $FreeBSD$
 
 PORTNAME=	rubymine
 PORTVERSION=	2020.3.3

@@ -1,5 +1,4 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Dancer-Plugin-FlashMessage
 PORTVERSION=	0.314

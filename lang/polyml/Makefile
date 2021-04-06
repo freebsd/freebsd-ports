@@ -1,5 +1,4 @@
 # Created by: Timothy Bourke <timbob@bigpond.com>
-# $FreeBSD$
 
 PORTNAME=	polyml
 PORTVERSION=	5.8.1

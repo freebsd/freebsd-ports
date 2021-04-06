@@ -1,5 +1,4 @@
 # Created by: Ed Schouten <ed@fxq.nl>
-# $FreeBSD$
 
 PORTNAME=	directx
 PORTVERSION=	20020518

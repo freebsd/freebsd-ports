@@ -1,5 +1,4 @@
 # Created by: Dave Cottlehuber <dch@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v

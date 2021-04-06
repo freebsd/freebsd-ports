@@ -1,5 +1,4 @@
 # Created by: Alexander Nusov <alexander.nusov@nfvexpress.com>
-# $FreeBSD$
 
 PORTNAME=	cmd2
 PORTVERSION=	0.8.9

@@ -1,5 +1,4 @@
 # Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-# $FreeBSD$
 
 PORTNAME=	method_source
 PORTVERSION=	1.0.0

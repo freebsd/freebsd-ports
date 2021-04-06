@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	strawberry
 DISTVERSION=	0.9.1

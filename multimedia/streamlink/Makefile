@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	streamlink
 PORTVERSION=	2.0.0

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-AutoLoader
 PORTVERSION=	0.12

@@ -1,5 +1,4 @@
 # Created by: ports@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	gtkam
 PORTVERSION=	1.0

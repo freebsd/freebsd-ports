@@ -1,5 +1,4 @@
 # Created by: Christopher N. Harrell <cnh@ivmg.net>
-# $FreeBSD$
 
 PORTNAME=	Net-SNMP
 PORTVERSION=	6.0.1

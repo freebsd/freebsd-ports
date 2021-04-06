@@ -1,5 +1,4 @@
 # Created by: Satoshi Taoka <taoka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	wordnet-fpw
 PORTVERSION=	${WN_VER}.${WNFPW_VER}

@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman <matthew@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Data-ICal-DateTime
 PORTVERSION=	0.82

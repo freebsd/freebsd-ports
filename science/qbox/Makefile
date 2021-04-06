@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qbox
 DISTVERSIONPREFIX=	rel

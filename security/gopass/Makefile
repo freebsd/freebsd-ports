@@ -1,5 +1,4 @@
 # Created by: Sascha Holzleiter <sascha@root-login.org>
-# $FreeBSD$
 
 PORTNAME=	gopass
 DISTVERSIONPREFIX=	v

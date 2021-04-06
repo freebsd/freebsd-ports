@@ -1,5 +1,4 @@
 # Created by: petef@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	colorize
 PORTVERSION=	0.3.4

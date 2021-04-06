@@ -1,5 +1,4 @@
 # Created by: wen@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	PDF-Tiny
 DISTVERSION=	0.09

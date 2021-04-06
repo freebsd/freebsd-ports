@@ -1,5 +1,4 @@
 # Created by: Dominic Marks <dom@goodforbusiness.co.uk>
-# $FreeBSD$
 
 PORTNAME=	mod_xmlns
 PORTVERSION=	0.97

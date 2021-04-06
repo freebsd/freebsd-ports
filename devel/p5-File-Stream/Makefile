@@ -1,5 +1,4 @@
 # Created by: Tomoyuki Sakurai <cherry@trombik.org>
-# $FreeBSD$
 
 PORTNAME=	File-Stream
 PORTVERSION=	2.30

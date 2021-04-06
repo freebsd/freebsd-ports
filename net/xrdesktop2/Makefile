@@ -1,5 +1,4 @@
 # Created by: Chris Hutchinson <portmaster@BSDforge.com>
-# $FreeBSD$
 
 PORTNAME=	xrdesktop2
 PORTVERSION=	2.00

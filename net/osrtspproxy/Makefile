@@ -1,5 +1,4 @@
 # Created by: Volker Stolz <stolz@i2.informatik.rwth-aachen.de>
-# $FreeBSD$
 
 PORTNAME=	osrtspproxy
 PORTVERSION=	2.0

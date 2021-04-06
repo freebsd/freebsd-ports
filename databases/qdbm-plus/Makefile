@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	qdbm
 PORTVERSION=	1.8.78

@@ -1,5 +1,4 @@
 # Created by: grog
-# $FreeBSD$
 
 PORTNAME=	xtset
 PORTVERSION=	1.1

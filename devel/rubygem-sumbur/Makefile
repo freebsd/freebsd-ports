@@ -1,5 +1,4 @@
 # Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sumbur
 PORTVERSION=	0.1.2.2

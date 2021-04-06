@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wx
 PORTVERSION=	3.0.5.1

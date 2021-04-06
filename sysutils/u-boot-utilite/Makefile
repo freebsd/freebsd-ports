@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	u-boot
 PORTVERSION=	2015.07

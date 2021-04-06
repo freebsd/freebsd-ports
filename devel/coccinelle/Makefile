@@ -1,5 +1,4 @@
 # Created by: Andriy Gapon
-# $FreeBSD$
 
 PORTNAME=	coccinelle
 PORTVERSION=	1.0.7

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mousetrap-rails
 PORTVERSION=	1.4.6

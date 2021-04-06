@@ -1,5 +1,4 @@
 # Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	aws-sdk-databasemigrationservice
 PORTVERSION=	1.51.0

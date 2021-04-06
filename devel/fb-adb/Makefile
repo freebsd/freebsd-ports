@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fb-adb
 DISTVERSION=	1.4.4-126

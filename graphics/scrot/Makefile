@@ -1,5 +1,4 @@
 # Created by: Jeremy Norris <ishmael27@home.com>
-# $FreeBSD$
 
 PORTNAME=	scrot
 DISTVERSION=	1.5

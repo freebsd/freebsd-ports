@@ -1,5 +1,4 @@
 # Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
-# $FreeBSD$
 
 PORTNAME=	du2ps
 PORTVERSION=	3.1

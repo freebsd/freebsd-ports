@@ -1,5 +1,4 @@
 # Created by: Michael Moll <kvedulv@kvedulv.de>
-# $FreeBSD$
 
 PORTNAME=	tumblr_client
 PORTVERSION=	0.8.5

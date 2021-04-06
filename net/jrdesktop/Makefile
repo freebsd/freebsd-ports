@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	jrdesktop
 PORTVERSION=	0.3.1.0

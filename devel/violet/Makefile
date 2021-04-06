@@ -1,5 +1,4 @@
 # Created by: Aldis Berjoza <aldis@bsdroot.lv>
-# $FreeBSD$
 
 PORTNAME=	violet
 PORTVERSION=	2.1.0

@@ -1,5 +1,4 @@
 # Created by: Brian Candler <B.Candler@pobox.com>
-# $FreeBSD$
 
 PORTNAME=	SGMLSpm
 PORTVERSION=	1.03

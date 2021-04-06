@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ruby-gdsii
 PORTVERSION=	1.0.0

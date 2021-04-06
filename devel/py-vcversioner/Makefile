@@ -1,5 +1,4 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vcversioner
 PORTVERSION=	2.16.0.0

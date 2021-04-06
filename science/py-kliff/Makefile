@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kliff
 DISTVERSION=	0.2.0

@@ -1,5 +1,4 @@
 # Created by: GreenDog <fiziologus@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	lua
 DISTVERSION=	5.3.6

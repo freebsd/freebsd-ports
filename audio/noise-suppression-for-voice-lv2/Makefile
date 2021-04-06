@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	noise-suppression-for-voice
 DISTVERSIONPREFIX=	v

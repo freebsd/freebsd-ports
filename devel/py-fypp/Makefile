@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fypp
 DISTVERSION=	3.0

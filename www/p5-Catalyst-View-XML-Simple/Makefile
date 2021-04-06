@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Catalyst-View-XML-Simple
 PORTVERSION=	0.01

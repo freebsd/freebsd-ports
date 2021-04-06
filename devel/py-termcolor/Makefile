@@ -1,5 +1,4 @@
 # Created by: Volodymyr Kostyrko <c.kworr@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	termcolor
 PORTVERSION=	1.1.0

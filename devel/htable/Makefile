@@ -1,5 +1,4 @@
 # Created by: Frederic Culot <frederic@culot.org>
-# $FreeBSD$
 
 PORTNAME=	htable
 PORTVERSION=	1.2

@@ -1,5 +1,4 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	redshift
 PORTVERSION=	1.12

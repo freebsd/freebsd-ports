@@ -1,5 +1,4 @@
 # Created by: Palle Girgensohn <girgen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pg_qualstats
 PORTVERSION=	2.0.2

@@ -1,5 +1,4 @@
 # Created by: Rui Paulo <rpaulo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	App-SVN-Bisect
 PORTVERSION=	1.1

@@ -1,5 +1,4 @@
 # Created by: Emanuel Haupt <ehaupt@critical.ch>
-# $FreeBSD$
 
 PORTNAME=	colordiff
 PORTVERSION=	1.0.19

@@ -1,5 +1,4 @@
 # Created by: Frederic Culot <culot@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tomenet
 PORTVERSION=	4.6.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geckodriver
 DISTVERSION=	0.26.0

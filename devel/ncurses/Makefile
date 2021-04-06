@@ -1,5 +1,4 @@
 # Created by: Andrey Zakhvatov
-# $FreeBSD$
 
 PORTNAME=	ncurses
 DISTVERSION=	6.2-${SNAPSHOT}

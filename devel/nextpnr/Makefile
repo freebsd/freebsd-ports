@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nextpnr
 DISTVERSION=	g20200804

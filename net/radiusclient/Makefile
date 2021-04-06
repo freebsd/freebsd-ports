@@ -1,5 +1,4 @@
 # Created by: maurice
-# $FreeBSD$
 
 PORTNAME=	radiusclient
 PORTVERSION=	0.5.6

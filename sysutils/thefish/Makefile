@@ -1,5 +1,4 @@
 # Created by: Miguel Mendez <flynn@energyhq.homeip.net>
-# $FreeBSD$
 
 PORTNAME=	thefish
 PORTVERSION=	0.6.7

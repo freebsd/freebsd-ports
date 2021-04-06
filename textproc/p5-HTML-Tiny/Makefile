@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	HTML-Tiny
 PORTVERSION=	1.05

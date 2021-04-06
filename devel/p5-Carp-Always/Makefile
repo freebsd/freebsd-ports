@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Carp-Always
 PORTVERSION=	0.13

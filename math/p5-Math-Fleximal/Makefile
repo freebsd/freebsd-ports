@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman <matthew@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Math-Fleximal
 PORTVERSION=	0.06

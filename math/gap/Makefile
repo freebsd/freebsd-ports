@@ -1,5 +1,4 @@
 # Created by: keith@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	gap
 PORTVERSION=	4.11.0

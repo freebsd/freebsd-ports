@@ -1,5 +1,4 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	py_interface
 PORTVERSION=	2.3

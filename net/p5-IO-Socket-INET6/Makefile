@@ -1,5 +1,4 @@
 # Created by: Janos.Mohacsi@bsd.hu
-# $FreeBSD$
 
 PORTNAME=	IO-Socket-INET6
 PORTVERSION=	2.72

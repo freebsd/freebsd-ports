@@ -1,5 +1,4 @@
 # Created by: José García Juanino <jjuanino@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	purple-hangouts
 PORTVERSION=	20190607

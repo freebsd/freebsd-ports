@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	atompaw
 DISTVERSION=	4.1.1.0

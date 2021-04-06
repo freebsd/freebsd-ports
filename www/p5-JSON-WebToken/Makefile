@@ -1,5 +1,4 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	JSON-WebToken
 PORTVERSION=	0.10

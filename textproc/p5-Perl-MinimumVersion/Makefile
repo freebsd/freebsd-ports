@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Perl-MinimumVersion
 PORTVERSION=	1.38

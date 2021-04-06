@@ -1,5 +1,4 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	varnish-modules
 PORTVERSION=	0.17.0

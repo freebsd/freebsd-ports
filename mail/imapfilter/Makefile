@@ -1,5 +1,4 @@
 # Created by: Lefteris Chatzibarbas <lefcha@hellug.gr>
-# $FreeBSD$
 
 PORTNAME=	imapfilter
 PORTVERSION=	2.7.5

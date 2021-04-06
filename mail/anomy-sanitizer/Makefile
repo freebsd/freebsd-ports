@@ -1,5 +1,4 @@
 # Created by: janos.mohacsi@bsd.hu
-# $FreeBSD$
 
 PORTNAME=	anomy-sanitizer
 PORTVERSION=	1.76

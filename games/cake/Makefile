@@ -1,5 +1,4 @@
 # Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-# $FreeBSD$
 
 PORTNAME=	cake
 PORTVERSION=	2005.12.26

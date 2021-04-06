@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	datavis3d
 DISTVERSION=	${QT5_VERSION}

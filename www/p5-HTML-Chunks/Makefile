@@ -1,5 +1,4 @@
 # Created by: Alexander Koch <fbsd@meersau.de>
-# $FreeBSD$
 
 PORTNAME=	HTML-Chunks
 PORTVERSION=	1.55.1

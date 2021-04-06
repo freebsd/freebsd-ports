@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Net_Whois
 PORTVERSION=	1.0.6

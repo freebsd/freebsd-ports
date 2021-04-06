@@ -1,5 +1,4 @@
 # Created by: Andreas Kohn
-# $FreeBSD$
 
 PORTNAME=	mercurial
 PORTVERSION=	5.5

@@ -1,5 +1,4 @@
 # Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	backcall
 PORTVERSION=	0.2.0

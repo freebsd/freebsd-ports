@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine <gerrit.beine@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	login_notes
 PORTVERSION=	1.2

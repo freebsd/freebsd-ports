@@ -1,5 +1,4 @@
 # Created by: djp
-# $FreeBSD$
 
 PORTNAME=	fortune-mod-bible
 PORTVERSION=	1.0

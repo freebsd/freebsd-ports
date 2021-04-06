@@ -1,5 +1,4 @@
 # Created by: Patrick MARIE <mycroft@virgaria.org>
-# $FreeBSD$
 
 PORTNAME=	yaph
 PORTVERSION=	0.91

@@ -1,5 +1,4 @@
 # Created by: Emanuel Haupt <ehaupt@critical.ch>
-# $FreeBSD$
 
 PORTNAME=	spfval
 PORTVERSION=	0.0.1

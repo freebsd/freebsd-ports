@@ -1,5 +1,4 @@
 # Created by: UMENO Takashi <umeno@rr.iij4u.or.jp>
-# $FreeBSD$
 
 PORTNAME=	zphoto
 PORTVERSION=	1.2

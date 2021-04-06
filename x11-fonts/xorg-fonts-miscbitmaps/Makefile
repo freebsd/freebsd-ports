@@ -1,5 +1,4 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xorg-fonts-miscbitmaps
 PORTVERSION=	7.7

@@ -1,5 +1,4 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lttng-ust
 PORTVERSION=	2.4.1

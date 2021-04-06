@@ -1,5 +1,4 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tktreectrl
 PORTVERSION=	2.4.1

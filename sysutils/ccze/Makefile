@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ccze
 PORTVERSION=	0.2.1

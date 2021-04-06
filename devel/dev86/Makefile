@@ -1,5 +1,4 @@
 # Created by: Philip Schulz <phs@deadc0.de>
-# $FreeBSD$
 
 PORTNAME=	dev86
 PORTVERSION=	0.16.20

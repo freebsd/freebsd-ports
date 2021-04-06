@@ -1,5 +1,4 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nvidia-xconfig
 PORTVERSION=	460.67

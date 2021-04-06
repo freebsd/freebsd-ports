@@ -1,5 +1,4 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gnome-online-miners
 PORTVERSION=	3.34.0

@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
-# $FreeBSD$
 
 PORTNAME=	cosmoplayer
 PORTVERSION=	2.1.1

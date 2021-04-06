@@ -1,5 +1,4 @@
 # Created by: Ronald Klop <ronald@echteman.nl>
-# $FreeBSD$
 
 PORTNAME=	tijmp
 PORTVERSION=	0.7

@@ -1,5 +1,4 @@
 # Created by: Samy Al Bahra <samy@kerneled.org>
-# $FreeBSD$
 
 PORTNAME=	elf
 PORTVERSION=	0.5.4p1

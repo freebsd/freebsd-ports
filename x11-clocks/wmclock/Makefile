@@ -1,5 +1,4 @@
 # Created by: Per Otterstr=F6m <pelle@fukt.bth.se>
-# $FreeBSD$
 
 PORTNAME=	wmclock
 PORTVERSION=	1.0.16

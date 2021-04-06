@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dune-vtk
 DISTVERSION=	g20201220

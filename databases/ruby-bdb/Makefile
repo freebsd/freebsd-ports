@@ -1,5 +1,4 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-# $FreeBSD$
 
 PORTNAME=	bdb
 PORTVERSION=	0.6.6

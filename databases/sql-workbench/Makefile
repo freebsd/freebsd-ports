@@ -1,5 +1,4 @@
 # Created by: Aldis Berjoza <graudeejs@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	sql-workbench
 PORTVERSION=	127

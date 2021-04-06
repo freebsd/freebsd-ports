@@ -1,5 +1,4 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	taskw
 PORTVERSION=	1.2.0

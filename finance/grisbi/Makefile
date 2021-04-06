@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
-# $FreeBSD$
 
 PORTNAME=	grisbi
 PORTVERSION=	2.0.3

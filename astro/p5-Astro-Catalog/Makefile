@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Astro-Catalog
 PORTVERSION=	4.35

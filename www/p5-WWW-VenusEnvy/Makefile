@@ -1,5 +1,4 @@
 # Created by: chinsan <chinsan.tw@gmail.com>, Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	WWW-VenusEnvy
 PORTVERSION=	1.10

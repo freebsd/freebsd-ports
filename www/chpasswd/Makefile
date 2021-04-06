@@ -1,5 +1,4 @@
 # Created by: Jean Milanez Melo <jmelo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	chpasswd
 PORTVERSION=	2.2.4

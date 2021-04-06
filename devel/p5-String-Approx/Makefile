@@ -1,5 +1,4 @@
 # Created by: Ilia Chipitsine <ilia@cgu.chel.su>
-# $FreeBSD$
 
 PORTNAME=	String-Approx
 PORTVERSION=	3.28

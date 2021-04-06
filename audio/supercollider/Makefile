@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	supercollider
 DISTVERSION=	3.11.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yaswfp
 PORTVERSION=	0.9.3

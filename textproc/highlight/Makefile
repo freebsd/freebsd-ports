@@ -1,5 +1,4 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	highlight
 PORTVERSION=	4.0

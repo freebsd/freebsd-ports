@@ -1,5 +1,4 @@
 # Created by: Aldis Berjoza <aldis@bsdroot.lv>
-# $FreeBSD$
 
 PORTNAME=	zfsnap
 PORTVERSION=	1.11.1

@@ -1,5 +1,4 @@
 # Created by: gpalmer
-# $FreeBSD$
 
 PORTNAME=	smalltalk
 PORTVERSION=	3.2.5

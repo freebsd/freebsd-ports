@@ -1,5 +1,4 @@
 # Created by: anders@hack.org
-# $FreeBSD$
 
 PORTNAME=	pekwm
 DISTVERSIONPREFIX=	release-

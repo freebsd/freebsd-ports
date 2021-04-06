@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	festival
 PORTVERSION=	2.4

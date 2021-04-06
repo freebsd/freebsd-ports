@@ -1,5 +1,4 @@
 # Created by: Emanuel Haupt <ehaupt@critical.ch>
-# $FreeBSD$
 
 PORTNAME=	telak
 PORTVERSION=	0.6

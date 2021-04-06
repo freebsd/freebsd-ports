@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	russian
 LO_I18N=	ru

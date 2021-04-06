@@ -1,5 +1,4 @@
 # Created by: dikshie <dikshie@lapi.itb.ac.id>
-# $FreeBSD$
 
 PORTNAME=	IP-Country
 PORTVERSION=	2.28

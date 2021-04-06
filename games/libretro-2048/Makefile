@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-2048
 PORTVERSION=	0.20210214

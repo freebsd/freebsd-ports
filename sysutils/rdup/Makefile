@@ -1,5 +1,4 @@
 # Created by: Charlie Kester <corky1951@comcast.net>
-# $FreeBSD$
 
 PORTNAME=	rdup
 PORTVERSION=	1.1.15

@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lth@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	LWP-UserAgent-POE
 PORTVERSION=	0.05

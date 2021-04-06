@@ -1,5 +1,4 @@
 # Created by: Daichi GOTO <daichi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ibus-anthy
 PORTVERSION=	1.5.11

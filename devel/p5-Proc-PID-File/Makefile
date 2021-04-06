@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lars@thegler.dk>
-# $FreeBSD$
 
 PORTNAME=	Proc-PID-File
 PORTVERSION=	1.29

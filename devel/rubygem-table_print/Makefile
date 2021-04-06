@@ -1,5 +1,4 @@
 # Created by: Michael Moll <kvedulv@kvedulv.de>
-# $FreeBSD$
 
 PORTNAME=	table_print
 PORTVERSION=	1.5.6

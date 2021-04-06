@@ -1,5 +1,4 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	GDD
 DISTVERSION=	0.1-13.1

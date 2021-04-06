@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tabletext
 PORTVERSION=	0.1

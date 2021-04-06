@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	liblpm
 PORTVERSION=	g2020082801

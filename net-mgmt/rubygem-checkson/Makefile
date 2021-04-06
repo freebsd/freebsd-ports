@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	checkson
 DISTVERSION=	1.3

@@ -1,5 +1,4 @@
 # Created by: Edward Tomasz Napierala <trasz@pin.if.uz.zgora.pl>
-# $FreeBSD$
 
 PORTNAME=	liblo
 PORTVERSION=	0.31

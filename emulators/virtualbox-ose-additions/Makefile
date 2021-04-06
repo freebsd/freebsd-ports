@@ -1,5 +1,4 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD$
 
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.18

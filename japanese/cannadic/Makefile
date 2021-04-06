@@ -1,5 +1,4 @@
 # Created by: TOGAWA Satoshi <toga@puyo.org>
-# $FreeBSD$
 
 PORTNAME=	cannadic
 PORTVERSION=	0.95c

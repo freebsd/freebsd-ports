@@ -1,5 +1,4 @@
 # Created by: geniusj@ods.org
-# $FreeBSD$
 
 PORTNAME=	updatedd
 PORTVERSION=	2.6

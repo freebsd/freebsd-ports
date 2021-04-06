@@ -1,5 +1,4 @@
 # Created by: Christopher Boumenot <boumenot@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Class-Gomor
 PORTVERSION=	1.03

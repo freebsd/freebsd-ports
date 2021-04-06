@@ -1,5 +1,4 @@
 # Created by: jedgar@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	proj
 PORTVERSION=	7.2.1

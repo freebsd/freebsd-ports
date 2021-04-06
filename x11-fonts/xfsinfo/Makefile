@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xfsinfo
 PORTVERSION=	1.0.6

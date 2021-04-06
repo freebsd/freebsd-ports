@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Apache-Session-SQLite3
 PORTVERSION=	0.03

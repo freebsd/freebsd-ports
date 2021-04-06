@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lth@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-DynamicDefault
 PORTVERSION=	0.04

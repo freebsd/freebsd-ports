@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-Forward
 PORTVERSION=	0.100006

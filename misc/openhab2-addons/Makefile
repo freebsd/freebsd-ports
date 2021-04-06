@@ -1,5 +1,4 @@
 # Created by: Alexander Leidinger
-# $FreeBSD$
 
 PORTNAME=	openhab2-addons
 PORTVERSION=	2.5.11

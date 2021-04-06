@@ -1,5 +1,4 @@
 # Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-# $FreeBSD$
 
 PORTNAME=	libzip
 PORTVERSION=	1.7.3

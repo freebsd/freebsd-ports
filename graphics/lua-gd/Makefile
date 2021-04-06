@@ -1,5 +1,4 @@
 # Created by: Sergey V. Dyatko <sergey.dyatko@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	lua-gd
 PORTVERSION=	2.0.33r2

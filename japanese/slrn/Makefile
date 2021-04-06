@@ -1,5 +1,4 @@
 # Created by: Takashi Mega <mega@minz.org>
-# $FreeBSD$
 
 PORTNAME=	slrn
 PORTVERSION=	0.9.6.2

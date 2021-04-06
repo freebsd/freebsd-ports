@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lth@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Module-Starter-PBP
 PORTVERSION=	0.0.3

@@ -1,5 +1,4 @@
 # Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-# $FreeBSD$
 
 PORTNAME=	django-sekizai
 PORTVERSION=	1.1.0

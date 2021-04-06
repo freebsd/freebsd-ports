@@ -1,5 +1,4 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	goom
 PORTVERSION=	2k4.0

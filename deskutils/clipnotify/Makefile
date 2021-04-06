@@ -1,5 +1,4 @@
 # Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	clipnotify
 DISTVERSION=	1.0.2

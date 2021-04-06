@@ -1,5 +1,4 @@
 # Created by: Heiner Eichmann <h.eichmann@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	gdialog
 PORTVERSION=	2.5

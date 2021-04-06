@@ -1,5 +1,4 @@
 # Created by: Kurt Lidl <kurt.lidl@cello.com>
-# $FreeBSD$
 
 PORTNAME=	Data-Rx
 PORTVERSION=	0.200007

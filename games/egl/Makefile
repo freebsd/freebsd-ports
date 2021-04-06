@@ -1,5 +1,4 @@
 # Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	egl
 PORTVERSION=	0.3.1

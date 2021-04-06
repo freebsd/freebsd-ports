@@ -1,5 +1,4 @@
 # Created by: Sahil Tandon <sahil@tandon.net>
-# $FreeBSD$
 
 PORTNAME=	HTML-Field
 PORTVERSION=	1.19

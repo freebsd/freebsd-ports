@@ -1,5 +1,4 @@
 # Created by: George Hartzell <hartzell@alerce.com>
-# $FreeBSD$
 
 PORTNAME=	Test-WWW-Mechanize-CGIApp
 PORTVERSION=	0.05

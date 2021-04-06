@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	retext
 DISTVERSION=	7.0.4

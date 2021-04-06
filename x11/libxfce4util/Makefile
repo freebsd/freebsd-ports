@@ -1,5 +1,4 @@
 # Created by: James Earl <jdearl@telus.net>
-# $FreeBSD$
 
 PORTNAME=	libxfce4util
 PORTVERSION=	4.16.0

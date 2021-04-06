@@ -1,5 +1,4 @@
 # Created by: Kevin Lo <kevlo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Math-RPN
 PORTVERSION=	1.11

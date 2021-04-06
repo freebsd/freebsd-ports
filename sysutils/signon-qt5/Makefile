@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	signon
 DISTVERSION=	8.60

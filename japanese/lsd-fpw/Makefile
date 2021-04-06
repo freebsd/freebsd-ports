@@ -1,5 +1,4 @@
 # Created by: Satoshi Taoka <taoka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lsd-fpw
 PORTVERSION=	3.0.1

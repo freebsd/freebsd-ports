@@ -1,5 +1,4 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-# $FreeBSD$
 
 PORTNAME=	Validator-Custom
 PORTVERSION=	1.0201

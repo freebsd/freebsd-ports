@@ -1,5 +1,4 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	String-Diff
 PORTVERSION=	0.07

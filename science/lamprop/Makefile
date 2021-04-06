@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lamprop
 PORTVERSION=	2020.12.28

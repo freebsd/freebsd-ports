@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	B-Size2
 PORTVERSION=	2.07

@@ -1,5 +1,4 @@
 # Created by: Matt Behrens <matt@zigg.com>
-# $FreeBSD$
 
 PORTNAME=	Authen-PAM
 PORTVERSION=	0.16

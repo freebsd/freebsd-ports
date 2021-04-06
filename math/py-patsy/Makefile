@@ -1,5 +1,4 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
-# $FreeBSD$
 
 PORTNAME=	patsy
 PORTVERSION=	0.5.1

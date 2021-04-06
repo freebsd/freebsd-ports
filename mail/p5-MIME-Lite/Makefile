@@ -1,5 +1,4 @@
 # Created by: Alex Perel <veers@disturbed.net>
-# $FreeBSD$
 
 PORTNAME=	MIME-Lite
 PORTVERSION=	3.031

@@ -1,5 +1,4 @@
 # Created by: René Ladan <rene@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	scandir
 PORTVERSION=	1.10.0

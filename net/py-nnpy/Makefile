@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nnpy
 DISTVERSION=	1.4.2

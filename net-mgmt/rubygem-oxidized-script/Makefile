@@ -1,5 +1,4 @@
 # Created by: Nick Hilliard <nick@foobar.org>
-# $FreeBSD$
 
 PORTNAME=	oxidized-script
 PORTVERSION=	0.6.0

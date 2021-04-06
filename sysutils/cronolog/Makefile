@@ -1,5 +1,4 @@
 # Created by: Mark Blackman <tmb_ports@maddog.u-net.com>
-# $FreeBSD$
 
 PORTNAME=	cronolog
 PORTVERSION=	1.6.2

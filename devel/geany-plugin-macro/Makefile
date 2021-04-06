@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-plugin-macro
 PORTVERSION=	${GEANY_VER}

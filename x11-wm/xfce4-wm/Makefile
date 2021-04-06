@@ -1,5 +1,4 @@
 # Created by: James Earl <jdearl@telus.net>
-# $FreeBSD$
 
 PORTNAME=	xfce4-wm
 PORTVERSION=	4.16.1

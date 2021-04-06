@@ -1,5 +1,4 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-# $FreeBSD$
 
 PORTNAME=	mp3-archive-tools
 PORTVERSION=	0.9

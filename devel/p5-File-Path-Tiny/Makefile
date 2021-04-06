@@ -1,5 +1,4 @@
 # Created by: ports@c0decafe.net <ports@c0decafe.net>
-# $FreeBSD$
 
 PORTNAME=	File-Path-Tiny
 PORTVERSION=	0.9

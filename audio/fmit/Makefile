@@ -1,5 +1,4 @@
 # Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	fmit
 PORTVERSION=	1.2.14

@@ -1,5 +1,4 @@
 # Created by: Mathieu Arnold <m@absolight.net>
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-SAK
 PORTVERSION=	1.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	litestream
 DISTVERSIONPREFIX=	v

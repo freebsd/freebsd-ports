@@ -1,5 +1,4 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ucl
 PORTVERSION=	1.03

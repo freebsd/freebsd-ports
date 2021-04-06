@@ -1,5 +1,4 @@
 # Created by: Cheng-Lung Sung <clsung@dragon2.net>
-# $FreeBSD$
 
 PORTNAME=	UML-State
 PORTVERSION=	0.02

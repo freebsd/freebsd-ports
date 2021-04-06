@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clearsans
 PORTVERSION=	1.00

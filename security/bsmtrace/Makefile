@@ -1,5 +1,4 @@
 # Created by: alm
-# $FreeBSD$
 
 PORTNAME=	bsmtrace
 PORTVERSION=	1.4

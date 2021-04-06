@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scikit-bio
 PORTVERSION=	0.5.6

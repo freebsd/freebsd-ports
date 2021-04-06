@@ -1,5 +1,4 @@
 # Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	octave-forge-doctest
 PORTVERSION=	0.7.0

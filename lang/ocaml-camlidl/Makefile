@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-# $FreeBSD$
 
 PORTNAME=	camlidl
 PORTVERSION=	1.05

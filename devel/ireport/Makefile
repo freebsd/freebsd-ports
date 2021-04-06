@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
-# $FreeBSD$
 
 PORTNAME=	ireport
 PORTVERSION=	3.7.6

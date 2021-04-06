@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
-# $FreeBSD$
 
 PORTNAME=	MooseX-Meta-TypeConstraint-ForceCoercion
 PORTVERSION=	0.01

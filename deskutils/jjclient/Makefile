@@ -1,5 +1,4 @@
 # Created by: Lucas Holt <luke@justjournal.com>
-# $FreeBSD$
 
 PORTNAME=	jjclient
 PORTVERSION=	1.0.2

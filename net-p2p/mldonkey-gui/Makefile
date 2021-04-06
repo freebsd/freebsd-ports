@@ -1,5 +1,4 @@
 # Created by: Holger Lamm <holger@e-gitt.net>
-# $FreeBSD$
 
 OPTIONS_EXCLUDE=CORE
 

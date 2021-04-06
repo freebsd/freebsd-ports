@@ -1,5 +1,4 @@
 # Created by: Oliver Braun <obraun@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	darcs
 PORTVERSION=	2.16.3

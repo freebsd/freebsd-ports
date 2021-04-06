@@ -1,5 +1,4 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	buildbot
 PORTVERSION=	2.7.0

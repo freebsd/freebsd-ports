@@ -1,5 +1,4 @@
 # Created by: Alexander Timoshenko <gonzo@univ.kiev.ua>
-# $FreeBSD$
 
 PORTNAME=	libpri
 PORTVERSION=	1.6.0

@@ -1,5 +1,4 @@
 # Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	MP3-Find
 PORTVERSION=	0.07

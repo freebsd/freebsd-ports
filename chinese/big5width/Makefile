@@ -1,5 +1,4 @@
 # Created by: Rong-En Fan <rafan@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	big5width
 PORTVERSION=	1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	redis-rack
 DISTVERSION=	2.1.2

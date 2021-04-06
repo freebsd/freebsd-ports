@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	talkatu
 PORTVERSION=	g2019031701

@@ -1,5 +1,4 @@
 # Created by: Radim Kolar <hsn@netmag.cz>
-# $FreeBSD$
 
 PORTNAME=	lzma
 PORTVERSION=	19.00

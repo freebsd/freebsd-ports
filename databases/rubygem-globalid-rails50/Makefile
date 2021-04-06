@@ -1,5 +1,4 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
-# $FreeBSD$
 
 PORTNAME=	globalid
 PORTVERSION=	0.4.2

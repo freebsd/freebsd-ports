@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	csoap
 PORTVERSION=	1.1.0

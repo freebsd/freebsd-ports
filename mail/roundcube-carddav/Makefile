@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	carddav
 PORTVERSION=	4.0.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yamllint
 PORTVERSION=	1.26.0

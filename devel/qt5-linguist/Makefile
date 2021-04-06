@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	linguist
 DISTVERSION=	${QT5_VERSION}

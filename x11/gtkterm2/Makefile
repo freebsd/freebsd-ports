@@ -1,5 +1,4 @@
 # Created by: michael johnson <ahze@ahze.net>
-# $FreeBSD$
 
 PORTNAME=	gtkterm2
 PORTVERSION=	0.2.3

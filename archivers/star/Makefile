@@ -1,5 +1,4 @@
 # Created by: Andreas Klemm <andreas@klemm.gtn.com>
-# $FreeBSD$
 
 PORTNAME=	star
 PORTVERSION=	1.6

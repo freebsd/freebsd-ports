@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	akmos
 PORTVERSION=	0.7.2

@@ -1,5 +1,4 @@
 # Created by: Bartlomiej Rutkowski <r@robakdesign.com>
-# $FreeBSD$
 
 PORTNAME=	pftabled
 PORTVERSION=	1.09

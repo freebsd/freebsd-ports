@@ -1,5 +1,4 @@
 # Created by: Allan Jude <allanjude@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	gdnsd
 PORTVERSION=	2.4.3

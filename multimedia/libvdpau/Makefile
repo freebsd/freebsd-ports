@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libvdpau
 PORTVERSION=	1.4

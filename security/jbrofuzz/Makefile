@@ -1,5 +1,4 @@
 # Created by: Niels Heinen
-# $FreeBSD$
 
 PORTNAME=	jbrofuzz
 PORTVERSION=	2.1

@@ -1,5 +1,4 @@
 # Created by: Pete Fritchman <petef@databits.net>
-# $FreeBSD$
 
 PORTNAME=	iperf
 DISTVERSION=	2.1.0-rc2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Middleware-Debug
 PORTVERSION=	0.16

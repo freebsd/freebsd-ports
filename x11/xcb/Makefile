@@ -1,5 +1,4 @@
 # Created by: jkh
-# $FreeBSD$
 
 PORTNAME=	xcb
 PORTVERSION=	2.4

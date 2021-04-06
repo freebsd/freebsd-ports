@@ -1,5 +1,4 @@
 # Created by: Rene Ladan <rene@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lablgtk2
 PORTVERSION=	2.18.11

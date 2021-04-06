@@ -1,5 +1,4 @@
 # Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-# $FreeBSD$
 
 PORTNAME=	radius
 DISTVERSION=	1.4.0b1

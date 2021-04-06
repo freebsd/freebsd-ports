@@ -1,5 +1,4 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Horde_Role
 PORTVERSION=	1.0.1

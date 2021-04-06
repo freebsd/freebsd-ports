@@ -1,5 +1,4 @@
 # Created by: Gerhard Häring <gh@ghaering.de>
-# $FreeBSD$
 
 PORTNAME=	rdiff-backup
 DISTVERSION=	2.0.5

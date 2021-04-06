@@ -1,5 +1,4 @@
 # Created by: markm@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}

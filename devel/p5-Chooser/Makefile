@@ -1,5 +1,4 @@
 # Created by: Zane C, Bowers <vvelox@vvelox.net>
-# $FreeBSD$
 
 PORTNAME=	Chooser
 PORTVERSION=	2.0.0

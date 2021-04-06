@@ -1,5 +1,4 @@
 # Created by: Simon Dick <simond@irrelevant.org>
-# $FreeBSD$
 
 PORTNAME=	uae
 PORTVERSION=	0.8.29

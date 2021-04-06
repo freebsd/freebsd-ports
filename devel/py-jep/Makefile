@@ -1,5 +1,4 @@
 # Created by: Choe, Cheng-Dae
-# $FreeBSD$
 
 PORTNAME=	jep
 PORTVERSION=	3.9.1

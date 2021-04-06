@@ -1,5 +1,4 @@
 # Created by: Stefan Hagen <ports@textmail.me>
-# $FreeBSD$
 
 PORTNAME=	pdfstitch
 DISTVERSIONPREFIX=	v

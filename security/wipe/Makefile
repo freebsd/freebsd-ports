@@ -1,5 +1,4 @@
 # Created by: Edson Brandi <ebrandi@fugspbr.org>
-# $FreeBSD$
 
 PORTNAME=	wipe
 PORTVERSION=	2.3.1

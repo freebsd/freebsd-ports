@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	generator_spec
 PORTVERSION=	0.9.4

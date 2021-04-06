@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
-# $FreeBSD$
 
 PORTNAME=	${DICT}-aspell
 SPELLVERSION=	-nb-0.50.1-0

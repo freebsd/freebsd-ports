@@ -1,5 +1,4 @@
 # Created by: Wen heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	opencart
 PORTVERSION=	3.0.3.7

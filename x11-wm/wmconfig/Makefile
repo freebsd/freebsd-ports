@@ -1,5 +1,4 @@
 # Created by: Tommy Scheunemann <net@arrishq.org>
-# $FreeBSD$
 
 PORTNAME=	wmconfig
 PORTVERSION=	1.5.1

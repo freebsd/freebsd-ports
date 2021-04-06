@@ -1,5 +1,4 @@
 # Created by: Aldis Berjoza <aldis@bsdroot.lv>
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-I3
 PORTVERSION=	0.17

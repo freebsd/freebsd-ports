@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	uwsgitop
 PORTVERSION=	0.10

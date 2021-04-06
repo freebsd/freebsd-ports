@@ -1,5 +1,4 @@
 # Created by: Foxfair Hu <foxfair@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=		cryptlib
 PORTVERSION=		3.4.3

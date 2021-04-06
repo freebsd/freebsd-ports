@@ -1,5 +1,4 @@
 # Created by: Bartek Rutkowski robak@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	pyvmomi
 DISTVERSION=	6.5

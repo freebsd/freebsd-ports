@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sinatra-contrib
 PORTVERSION=	2.1.0

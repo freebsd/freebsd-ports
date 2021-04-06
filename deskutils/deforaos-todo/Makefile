@@ -1,5 +1,4 @@
 # Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	todo
 PORTVERSION=	0.2.1

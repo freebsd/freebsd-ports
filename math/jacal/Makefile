@@ -1,5 +1,4 @@
 # Created by: Mark R V Murray <markm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jacal
 PORTVERSION=	1c7

@@ -1,5 +1,4 @@
 # Created by: Arun Sharma <arun@sharma-home.net>
-# $FreeBSD$
 
 PORTNAME=	onetbb
 PORTVERSION=	2021.1.1

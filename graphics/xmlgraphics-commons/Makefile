@@ -1,5 +1,4 @@
 # Created by: rfarmer@predatorlabs.net
-# $FreeBSD$
 
 PORTNAME=	xmlgraphics-commons
 PORTVERSION=	2.4

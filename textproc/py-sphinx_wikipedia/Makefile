@@ -1,5 +1,4 @@
 # Created by: Dru Lavigne <dru@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sphinx_wikipedia
 PORTVERSION=	20150903

@@ -1,5 +1,4 @@
 # Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-# $FreeBSD$
 
 PORTNAME=	String-CamelCase
 PORTVERSION=	0.04

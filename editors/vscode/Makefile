@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vscode
 DISTVERSION=	1.54.3

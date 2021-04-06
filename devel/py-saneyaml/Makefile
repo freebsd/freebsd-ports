@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	saneyaml
 DISTVERSIONPREFIX=	v

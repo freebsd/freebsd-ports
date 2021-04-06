@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	samplicator
 DISTVERSION=	1.3.8rc1

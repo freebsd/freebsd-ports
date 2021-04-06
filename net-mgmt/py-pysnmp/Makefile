@@ -1,5 +1,4 @@
 # Created by: Martin Jackson <mhjacks@swbell.net>
-# $FreeBSD$
 
 PORTNAME=	pysnmp
 PORTVERSION=	4.4.9

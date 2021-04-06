@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sanoid
 PORTVERSION=	1.0.0.20191105

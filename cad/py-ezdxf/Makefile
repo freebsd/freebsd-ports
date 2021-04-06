@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ezdxf
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	vietnamese
 LO_I18N=	vi

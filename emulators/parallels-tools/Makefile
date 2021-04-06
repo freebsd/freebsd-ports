@@ -1,5 +1,4 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	parallels-tools
 PORTVERSION=	0.1.2

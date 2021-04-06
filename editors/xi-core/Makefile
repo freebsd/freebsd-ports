@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xi-core
 DISTVERSIONPREFIX=	v

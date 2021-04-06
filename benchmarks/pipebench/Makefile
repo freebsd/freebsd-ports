@@ -1,5 +1,4 @@
 # Created by: mich@freebsdcluster.org
-# $FreeBSD$
 
 PORTNAME=	pipebench
 PORTVERSION=	0.40

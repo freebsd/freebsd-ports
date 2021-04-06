@@ -1,5 +1,4 @@
 # Created by: lbartoletti <lbartoletti@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pgrouting
 DISTVERSIONPREFIX=	v

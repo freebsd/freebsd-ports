@@ -1,5 +1,4 @@
 # Created by: Julien Laffaye <jlaffaye@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pelican
 PORTVERSION=	4.2.0

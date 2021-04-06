@@ -1,5 +1,4 @@
 # Created by: Kevin Lo <kevlo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ubuntu-font
 PORTVERSION=	0.83

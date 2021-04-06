@@ -1,5 +1,4 @@
 # Created by: Lars Eggert <larse@isi.edu>
-# $FreeBSD$
 
 PORTNAME=	mod_perl
 PORTVERSION=	2.0.11

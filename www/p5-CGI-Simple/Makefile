@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lth@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	CGI-Simple
 PORTVERSION=	1.240

@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	tcl
 DISTVERSION=	${TCL_VERSION}${TCL_RC}

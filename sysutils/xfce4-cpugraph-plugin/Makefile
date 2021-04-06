@@ -1,5 +1,4 @@
 # Created by: Matt Lancereau <matt@rimasec.net>
-# $FreeBSD$
 
 PORTNAME=	xfce4-cpugraph-plugin
 PORTVERSION=	1.2.3

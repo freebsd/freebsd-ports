@@ -1,5 +1,4 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-# $FreeBSD$
 
 PORTNAME=	libchk
 PORTVERSION=	1.10.3

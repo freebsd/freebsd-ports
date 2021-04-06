@@ -1,5 +1,4 @@
 # Created by: Doug Harple
-# $FreeBSD$
 
 PORTNAME=	detox
 PORTVERSION=	1.4.2

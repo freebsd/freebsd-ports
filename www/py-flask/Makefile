@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Flask
 DISTVERSION=	1.1.2

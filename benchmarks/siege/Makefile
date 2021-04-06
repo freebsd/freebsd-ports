@@ -1,5 +1,4 @@
 # Created by: Mark Pulford <mark@kyne.com.au>
-# $FreeBSD$
 
 PORTNAME=	siege
 PORTVERSION=	4.0.7

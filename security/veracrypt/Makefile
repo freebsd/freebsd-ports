@@ -1,5 +1,4 @@
 
-# $FreeBSD$
 
 PORTNAME=	veracrypt
 PORTVERSION=	1.24

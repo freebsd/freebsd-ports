@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	foundationdb-devel
 DISTVERSION=	7.0.0.a.20210224

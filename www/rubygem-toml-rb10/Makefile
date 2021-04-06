@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	toml-rb
 PORTVERSION=	1.0.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Unicode-Tussle
 PORTVERSION=	1.111

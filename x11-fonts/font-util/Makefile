@@ -1,5 +1,4 @@
 # Created by: Pawel Worach
-# $FreeBSD$
 
 PORTNAME=	font-util
 PORTVERSION=	1.3.2

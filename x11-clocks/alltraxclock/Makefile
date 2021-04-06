@@ -1,5 +1,4 @@
 # Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
-# $FreeBSD$
 
 PORTNAME=	alltraxclock
 PORTVERSION=	2.0.2

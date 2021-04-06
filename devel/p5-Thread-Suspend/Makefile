@@ -1,5 +1,4 @@
 # Created by: Ruben van Staveren
-# $FreeBSD$
 
 PORTNAME=	Thread-Suspend
 PORTVERSION=	1.23

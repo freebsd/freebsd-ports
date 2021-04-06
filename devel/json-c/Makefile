@@ -1,5 +1,4 @@
 # Created by: gno@yahoo-inc.com
-# $FreeBSD$
 
 PORTNAME=	json-c
 PORTVERSION=	0.15

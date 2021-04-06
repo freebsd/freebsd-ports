@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	usockets
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	generics
 PORTVERSION=	0.1.0

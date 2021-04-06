@@ -1,5 +1,4 @@
 # Created by: Gleb Kurtsou <gleb@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pefs
 DISTVERSION=	2018-11-26

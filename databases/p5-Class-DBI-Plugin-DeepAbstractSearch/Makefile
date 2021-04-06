@@ -1,5 +1,4 @@
 # Created by: milki <milki@rescomp.berkeley.edy>
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-Plugin-DeepAbstractSearch
 PORTVERSION=	0.08

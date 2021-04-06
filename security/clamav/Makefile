@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clamav
 PORTVERSION=	0.103.1

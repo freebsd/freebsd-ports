@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ocsinventory-ocsreports
 PORTVERSION=	2.8

@@ -1,5 +1,4 @@
 # Created by: Kirk Strauser <kirk@strauser.com>
-# $FreeBSD$
 
 PORTNAME=	jailadmin
 PORTVERSION=	1.9

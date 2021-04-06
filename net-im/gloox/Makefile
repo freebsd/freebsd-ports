@@ -1,5 +1,4 @@
 # Created by: trasz
-# $FreeBSD$
 
 PORTNAME=	gloox
 DISTVERSION=	1.0.24

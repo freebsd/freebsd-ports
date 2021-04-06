@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xpdf
 PORTVERSION=	3.04

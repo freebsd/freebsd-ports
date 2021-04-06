@@ -1,5 +1,4 @@
 # Created by: Aaron Straup Cope <ascope@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	RDF-Simple
 PORTVERSION=	0.421

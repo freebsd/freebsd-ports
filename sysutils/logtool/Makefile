@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	logtool
 PORTVERSION=	1.3.1

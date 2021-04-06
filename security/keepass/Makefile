@@ -1,5 +1,4 @@
 # Created by: Ben Woods <woodsb02@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	keepass
 PORTVERSION=	2.46

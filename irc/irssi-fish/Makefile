@@ -1,5 +1,4 @@
 # Created by: Jens Holmqvist <zparta@hispan.se>
-# $FreeBSD$
 
 PORTNAME=	irssi-fish
 DISTVERSION=	1.6.20200629

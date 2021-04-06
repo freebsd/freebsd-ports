@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-eventhub
 PORTVERSION=	4.1.0

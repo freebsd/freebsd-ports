@@ -1,5 +1,4 @@
 # Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-# $FreeBSD$
 
 PORTNAME=	f1spirit-remake
 PORTVERSION=	1.0

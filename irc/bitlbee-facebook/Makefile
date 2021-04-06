@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	bitlbee-facebook
 PORTVERSION=	1.2.1

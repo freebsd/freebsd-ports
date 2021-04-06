@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Mojolicious-Plugin-Mail
 PORTVERSION=	1.5

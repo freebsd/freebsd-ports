@@ -1,5 +1,4 @@
 # Created by: Yuu Yashiki
-# $FreeBSD$
 
 PORTNAME=	lfview
 PORTVERSION=	1.1a

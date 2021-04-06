@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xorg-drivers
 PORTVERSION=	7.7

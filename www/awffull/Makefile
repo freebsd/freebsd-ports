@@ -1,5 +1,4 @@
 # Created by: Chadwick Sorrell chad@wickdev.com
-# $FreeBSD$
 
 PORTNAME=	awffull
 PORTVERSION=	3.10.2

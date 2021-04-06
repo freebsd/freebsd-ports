@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xboard-devel
 PORTVERSION=	4.8.0.20151020.3

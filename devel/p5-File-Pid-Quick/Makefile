@@ -1,5 +1,4 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
-# $FreeBSD$
 
 PORTNAME=	File-Pid-Quick
 PORTVERSION=	1.02

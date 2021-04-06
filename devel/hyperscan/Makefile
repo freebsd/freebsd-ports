@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hyperscan
 PORTVERSION=	5.4.0

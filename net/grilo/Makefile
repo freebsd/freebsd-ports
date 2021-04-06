@@ -1,5 +1,4 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	grilo
 PORTVERSION=	0.3.13

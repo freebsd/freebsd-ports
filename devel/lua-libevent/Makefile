@@ -1,5 +1,4 @@
 # Created by: Sir l33tname <sirl33tname@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libevent
 PORTVERSION=	0.4.6

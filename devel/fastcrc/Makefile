@@ -1,5 +1,4 @@
 # Created by: G. Adam Stanislav <adam@whizkidtech.net>
-# $FreeBSD$
 
 PORTNAME=	fastcrc
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tcsh_nls
 PORTVERSION=	1.0

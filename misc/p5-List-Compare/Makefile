@@ -1,5 +1,4 @@
 # Created by: Dmitry Morozovsky <marck@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	List-Compare
 PORTVERSION=	0.53

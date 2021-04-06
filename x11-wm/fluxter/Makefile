@@ -1,5 +1,4 @@
 # Created by: Adam Weinberger
-# $FreeBSD$
 
 PORTNAME=	fluxter
 PORTVERSION=	0.2.0

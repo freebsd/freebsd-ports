@@ -1,5 +1,4 @@
 # Created by: Ade Lovett <ade@lovett.com>
-# $FreeBSD$
 
 PORTNAME=	libglade2
 PORTVERSION=	2.6.4

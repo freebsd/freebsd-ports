@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sway
 DISTVERSION=	1.5.1

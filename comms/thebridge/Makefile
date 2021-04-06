@@ -1,5 +1,4 @@
 # Created by: db
-# $FreeBSD$
 
 PORTNAME=	thebridge
 PORTVERSION=	1.09

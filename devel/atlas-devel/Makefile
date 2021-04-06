@@ -1,5 +1,4 @@
 # Created by: Janni <jannisan@t-online.de>
-# $FreeBSD$
 
 PORTNAME=	Atlas
 PORTVERSION=	0.6.4

@@ -1,5 +1,4 @@
 # Created by: Masahiro Teramoto <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	WWW-MobileCarrierJP
 PORTVERSION=	0.65

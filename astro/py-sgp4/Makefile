@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=	sgp4
 PORTVERSION=	2.18

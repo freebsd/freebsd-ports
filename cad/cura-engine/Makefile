@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		CuraEngine
 DISTVERSION=		4.8

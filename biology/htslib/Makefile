@@ -1,5 +1,4 @@
 # Created by: Reed A. Cartwright <cartwright@asu.edu>
-# $FreeBSD$
 
 PORTNAME=	htslib
 DISTVERSION=	1.12

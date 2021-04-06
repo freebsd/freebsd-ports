@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zope.deferredimport
 PORTVERSION=	3.5.3

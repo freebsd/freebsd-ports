@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan
-# $FreeBSD$
 
 PORTNAME=	Crypt-MySQL
 PORTVERSION=	0.04

@@ -1,5 +1,4 @@
 # Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
-# $FreeBSD$
 
 PORTNAME=	wmrecord
 PORTVERSION=	1.0.5

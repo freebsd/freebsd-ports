@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flask-socketio
 PORTVERSION=	4.3.2

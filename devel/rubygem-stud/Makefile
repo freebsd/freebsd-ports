@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stud
 PORTVERSION=	0.0.23

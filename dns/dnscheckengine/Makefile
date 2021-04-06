@@ -1,5 +1,4 @@
 # Created by: dnscheckengine-port@academ.com (Stan Barber)
-# $FreeBSD$
 
 PORTNAME=	dnscheckengine
 PORTVERSION=	1.1

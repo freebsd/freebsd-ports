@@ -1,5 +1,4 @@
 # Created by: Chris D. Faulhaber <jedgar@fxp.org>
-# $FreeBSD$
 
 PORTNAME=	demoroniser
 PORTVERSION=	1.0.20030916

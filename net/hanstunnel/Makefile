@@ -1,5 +1,4 @@
 # Created by: Alexander Panyushkin <vsityz@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	hans
 DISTVERSION=	1.0

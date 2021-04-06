@@ -1,5 +1,4 @@
 # Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-# $FreeBSD$
 
 PORTNAME=	susv3
 PORTVERSION=	1.2.20050121

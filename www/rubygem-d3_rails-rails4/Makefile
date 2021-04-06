@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	d3_rails
 PORTVERSION=	3.5.17

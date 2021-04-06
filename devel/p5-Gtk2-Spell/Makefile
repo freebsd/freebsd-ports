@@ -1,5 +1,4 @@
 # Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-# $FreeBSD$
 
 PORTNAME=	Gtk2-Spell
 PORTVERSION=	1.04

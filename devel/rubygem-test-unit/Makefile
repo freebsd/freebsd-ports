@@ -1,5 +1,4 @@
 # Created by: Eric Freeman <freebsdports@chillibear.com>
-# $FreeBSD$
 
 PORTNAME=	test-unit
 PORTVERSION=	3.3.6

@@ -1,5 +1,4 @@
 # Created by: Blaz Zupan <blaz@si.FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nagios
 PORTVERSION=	3.5.1

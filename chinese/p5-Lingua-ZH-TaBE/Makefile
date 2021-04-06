@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Lingua-ZH-TaBE
 PORTVERSION=	0.07

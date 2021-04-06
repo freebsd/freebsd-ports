@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	erlang
 PORTVERSION=	21.3

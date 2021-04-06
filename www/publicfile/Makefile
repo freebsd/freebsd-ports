@@ -1,5 +1,4 @@
 # Created by: Neil Blakey-Milner
-# $FreeBSD$
 
 PORTNAME=	publicfile
 PORTVERSION=	0.52

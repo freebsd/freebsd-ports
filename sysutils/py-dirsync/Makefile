@@ -1,5 +1,4 @@
 # Created by: René Ladan <rene@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	dirsync
 PORTVERSION=	2.2.5

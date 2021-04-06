@@ -1,5 +1,4 @@
 # Created by: Johann Visagie <johann@egenetics.com>
-# $FreeBSD$
 
 PORTNAME=	fasta3
 PORTVERSION=	36.3.8

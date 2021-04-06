@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rss-bridge
 DISTVERSION=	2020-11-10

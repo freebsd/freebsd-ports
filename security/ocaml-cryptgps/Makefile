@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-# $FreeBSD$
 
 PORTNAME=	cryptgps
 PORTVERSION=	0.2.1

@@ -1,5 +1,4 @@
 # Created by: Dejan Lesjak <lesi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xtrans
 PORTVERSION=	1.4.0

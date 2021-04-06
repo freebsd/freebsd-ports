@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack
 PORTVERSION=	1.0047

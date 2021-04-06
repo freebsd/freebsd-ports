@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ffi-yajl
 PORTVERSION=	2.3.1

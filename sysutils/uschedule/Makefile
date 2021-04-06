@@ -1,5 +1,4 @@
 # Created by: Thomas Seck <tmseck@netcologne.de>
-# $FreeBSD$
 
 PORTNAME=	uschedule
 PORTVERSION=	0.7.1

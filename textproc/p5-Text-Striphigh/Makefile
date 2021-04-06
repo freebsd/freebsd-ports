@@ -1,5 +1,4 @@
 # Created by: kai
-# $FreeBSD$
 
 PORTNAME=	Text-Striphigh
 PORTVERSION=	0.02

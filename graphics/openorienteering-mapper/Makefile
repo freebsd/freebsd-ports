@@ -1,5 +1,4 @@
 # Created by: Nikolay Korotkiy <sikmir@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	openorienteering-mapper
 PORTVERSION=	0.9.2

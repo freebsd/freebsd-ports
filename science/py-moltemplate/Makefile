@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	moltemplate
 DISTVERSION=	2.19.7

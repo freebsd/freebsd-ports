@@ -1,5 +1,4 @@
 # Created by: Eugene Grosbein <eugen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pidgin-icyque
 DISTVERSION=	g20200619

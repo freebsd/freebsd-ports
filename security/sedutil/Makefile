@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sedutil
 PORTVERSION=	1.12

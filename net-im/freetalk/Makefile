@@ -1,5 +1,4 @@
 # Created by: Oleg Ginzburg  (olevole@olevole.ru)
-# $FreeBSD$
 
 PORTNAME=	freetalk
 PORTVERSION=	4.1

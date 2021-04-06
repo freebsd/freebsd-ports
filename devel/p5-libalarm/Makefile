@@ -1,5 +1,4 @@
 # Created by: Marzhan Mykola <delgod@portaone.com>
-# $FreeBSD$
 
 PORTNAME=	libalarm
 PORTVERSION=	1.0

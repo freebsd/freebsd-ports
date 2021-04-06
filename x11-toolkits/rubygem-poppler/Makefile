@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	poppler
 PORTVERSION=	3.4.3

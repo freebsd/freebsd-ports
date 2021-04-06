@@ -1,5 +1,4 @@
 # Created by: James Howard <howardj@wam.umd.edu>
-# $FreeBSD$
 
 PORTNAME=	cursive
 PORTVERSION=	0.11

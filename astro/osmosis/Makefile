@@ -1,5 +1,4 @@
 # Created by: Gleb Smirnoff <glebius@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	osmosis
 PORTVERSION=	0.48.3

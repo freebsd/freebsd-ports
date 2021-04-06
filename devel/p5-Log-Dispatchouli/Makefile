@@ -1,5 +1,4 @@
 # Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-# $FreeBSD$
 
 PORTNAME=	Log-Dispatchouli
 PORTVERSION=	2.012

@@ -1,5 +1,4 @@
 # Created by: Seiichirou Hiraoka
-# $FreeBSD$
 
 PORTNAME=	xosmulti
 PORTVERSION=	1.00

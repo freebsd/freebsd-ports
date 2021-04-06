@@ -1,5 +1,4 @@
 # Created by: Bob Eager <bob@eager.cx>
-# $FreeBSD$
 
 PORTNAME=	ecce
 DISTVERSION=	2.9d

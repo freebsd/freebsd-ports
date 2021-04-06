@@ -1,5 +1,4 @@
 # Created by: Pete Fritchman <petef@databits.net>
-# $FreeBSD$
 
 PORTNAME=	rvi
 PORTVERSION=	1.0.0

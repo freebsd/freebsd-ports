@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wayland-utils
 DISTVERSIONPREFIX=	${PORTNAME}-

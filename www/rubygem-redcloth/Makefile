@@ -1,5 +1,4 @@
 # Created by: Jonathan Weiss (<jw@innerewut.de>)
-# $FreeBSD$
 
 PORTNAME=	redcloth
 PORTVERSION=	4.3.2

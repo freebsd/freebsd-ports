@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	superiotool
 DISTVERSION=	20121019

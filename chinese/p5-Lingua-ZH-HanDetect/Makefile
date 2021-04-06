@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	Lingua-ZH-HanDetect
 PORTVERSION=	0.04

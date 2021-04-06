@@ -1,5 +1,4 @@
 # Created by: Dominik Brettnacher <domi@nonsensss.de>
-# $FreeBSD$
 
 PORTNAME=	xsane
 PORTVERSION=	0.999

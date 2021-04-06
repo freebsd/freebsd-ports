@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scrm
 DISTVERSIONPREFIX=	v

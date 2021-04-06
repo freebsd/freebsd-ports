@@ -1,5 +1,4 @@
 # Created by: Maksym Sobolyev <sobomax@pbxpress.it>
-# $FreeBSD$
 
 PORTNAME=	Net-Syslog
 PORTVERSION=	0.04

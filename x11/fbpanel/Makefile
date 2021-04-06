@@ -1,5 +1,4 @@
 # Created by: Tobias Roth <ports@fsck.ch>
-# $FreeBSD$
 
 PORTNAME=	fbpanel
 PORTVERSION=	6.1

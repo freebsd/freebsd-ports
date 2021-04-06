@@ -1,5 +1,4 @@
 # Created by: clement@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	spine
 PORTVERSION=	0.8.8h

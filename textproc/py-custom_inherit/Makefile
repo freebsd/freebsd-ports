@@ -1,5 +1,4 @@
 # Created by: skreuzer
-# $FreeBSD$
 
 PORTNAME=	custom_inherit
 PORTVERSION=	2.3.1

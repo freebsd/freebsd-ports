@@ -1,5 +1,4 @@
 # Created by: gmarco@giovannelli.it
-# $FreeBSD$
 
 PORTNAME=	abs
 PORTVERSION=	0908

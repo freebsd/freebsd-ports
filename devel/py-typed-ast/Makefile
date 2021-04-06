@@ -1,5 +1,4 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	typed-ast
 PORTVERSION=	1.4.2

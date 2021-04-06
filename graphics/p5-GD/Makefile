@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	GD
 PORTVERSION=	2.73

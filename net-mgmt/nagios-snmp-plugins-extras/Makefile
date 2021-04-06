@@ -1,5 +1,4 @@
 # Created by: Alexey V. Degtyarev
-# $FreeBSD$
 
 PORTNAME=	nagios-snmp-plugins-extras
 PORTVERSION=	1.1.2

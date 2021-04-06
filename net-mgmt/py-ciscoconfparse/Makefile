@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ciscoconfparse
 DISTVERSION=	1.5.30

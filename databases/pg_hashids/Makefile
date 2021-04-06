@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pg_hashids
 PORTVERSION=	1.3

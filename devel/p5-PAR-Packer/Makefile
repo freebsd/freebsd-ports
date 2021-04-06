@@ -1,5 +1,4 @@
 # Created by: Rong-En Fan <rafan@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	PAR-Packer
 PORTVERSION=	1.052

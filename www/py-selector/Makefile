@@ -1,5 +1,4 @@
 # Created by: Trevor Caira <trevor@bitba.se>
-# $FreeBSD$
 
 PORTNAME=	selector
 PORTVERSION=	0.10.1

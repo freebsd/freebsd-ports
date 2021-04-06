@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang
-# $FreeBSD$
 
 PORTNAME=	lzma
 PORTVERSION=	0.5.0

@@ -1,5 +1,4 @@
 # Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-# $FreeBSD$
 
 PORTNAME=	gnubg
 PORTVERSION=	1.06.002

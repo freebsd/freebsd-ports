@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nucleus
 PORTVERSION=	0.77

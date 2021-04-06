@@ -1,5 +1,4 @@
 # Created by: Chris Piazza <cpiazza@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	aumix
 PORTVERSION=	2.9.1

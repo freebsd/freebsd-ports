@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gdspy
 PORTVERSION=	1.6

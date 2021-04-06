@@ -1,5 +1,4 @@
 # Created by: Masanori Kiriake <seiken@nbs.co.jp>
-# $FreeBSD$
 
 PORTNAME=	play
 PORTVERSION=	1.0

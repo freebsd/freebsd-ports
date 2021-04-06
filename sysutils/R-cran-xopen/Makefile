@@ -1,5 +1,4 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xopen
 DISTVERSION=	1.0.0

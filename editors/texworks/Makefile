@@ -1,5 +1,4 @@
 # Created by: Diego Depaoli <trebestie@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	texworks
 DISTVERSIONPREFIX=	release-

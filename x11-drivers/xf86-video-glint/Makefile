@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xf86-video-glint
 PORTVERSION=	1.2.9

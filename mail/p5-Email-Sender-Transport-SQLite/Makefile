@@ -1,5 +1,4 @@
 # Created by: Bill Brinzer <bill.brinzer@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Email-Sender-Transport-SQLite
 PORTVERSION=	0.092002

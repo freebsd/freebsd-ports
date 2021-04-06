@@ -1,5 +1,4 @@
 # Created by: tobez
-# $FreeBSD$
 
 PORTNAME=	Devel-Constants
 PORTVERSION=	1.04

@@ -1,5 +1,4 @@
 # Created by: torstenb
-# $FreeBSD$
 
 PORTNAME=	zsh
 DISTVERSION=	5.8

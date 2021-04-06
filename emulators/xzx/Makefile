@@ -1,5 +1,4 @@
 # Created by: Sheldon Hearn <axl@iafrica.com>
-# $FreeBSD$
 
 PORTNAME=	xzx
 PORTVERSION=	4.6

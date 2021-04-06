@@ -1,5 +1,4 @@
 # Created by: imp
-# $FreeBSD$
 
 PORTNAME=	nvme-cli
 PORTVERSION=	1.8.1

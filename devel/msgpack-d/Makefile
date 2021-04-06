@@ -1,5 +1,4 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	msgpack-d
 DISTVERSION=	1.0.0-beta8

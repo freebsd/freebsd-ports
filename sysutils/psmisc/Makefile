@@ -1,5 +1,4 @@
 # Created by: rantapaa@uswest.net
-# $FreeBSD$
 
 PORTNAME=	psmisc
 PORTVERSION=	22.16

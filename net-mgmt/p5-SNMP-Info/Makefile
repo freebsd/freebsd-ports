@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	SNMP-Info
 PORTVERSION=	3.71

@@ -1,5 +1,4 @@
 # Created by: ismail@enderunix.org
-# $FreeBSD$
 
 PORTNAME=	eps
 PORTVERSION=	1.7

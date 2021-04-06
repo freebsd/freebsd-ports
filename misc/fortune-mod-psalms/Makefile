@@ -1,5 +1,4 @@
 # Created by: pfg
-# $FreeBSD$
 
 PORTNAME=	fortune-mod-psalms
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: Chris St Denis <chris@smartt.com>
-# $FreeBSD$
 
 PORTNAME=	nagiosql
 PORTVERSION=	3.4.1

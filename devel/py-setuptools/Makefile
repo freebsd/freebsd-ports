@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	setuptools
 PORTVERSION=	44.0.0

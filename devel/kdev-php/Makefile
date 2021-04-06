@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdev-php
 DISTVERSION=	5.6.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	riemann-tail
 DISTVERSION=	0.0.1

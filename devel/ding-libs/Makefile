@@ -1,5 +1,4 @@
 # Created by: Andrew Elble <aweits@rit.edu>
-# $FreeBSD$
 
 PORTNAME=	ding-libs
 PORTVERSION=	0.6.1

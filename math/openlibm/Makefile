@@ -1,5 +1,4 @@
 # Created by: Iblis Lin <iblis@hs.ntnu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	openlibm
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
-# $FreeBSD$
 
 PORTNAME=	pupynere
 PORTVERSION=	1.0.15

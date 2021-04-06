@@ -1,5 +1,4 @@
 # Created by: Issei Suzuki <issei@jp.FreeBSD.ORG>
-# $FreeBSD$
 
 PORTNAME=	topaz
 DISTVERSION=	3_41

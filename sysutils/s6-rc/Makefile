@@ -1,5 +1,4 @@
 # Created by: Andris Raugulis <moo@arthepsy.eu>
-# $FreeBSD$
 
 PORTNAME=	s6-rc
 PORTVERSION=	0.5.2.1

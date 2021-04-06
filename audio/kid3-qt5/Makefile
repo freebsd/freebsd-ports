@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kid3
 PORTVERSION=	3.8.6

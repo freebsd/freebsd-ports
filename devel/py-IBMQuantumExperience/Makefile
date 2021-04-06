@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	IBMQuantumExperience
 DISTVERSION=	2.0.4

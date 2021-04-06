@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	amtc
 PORTVERSION=	0.8.5

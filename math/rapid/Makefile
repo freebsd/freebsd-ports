@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rapid
 PORTVERSION=	2.01

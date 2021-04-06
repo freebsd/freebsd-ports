@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-codec-rar
 PORTREVISION=	2

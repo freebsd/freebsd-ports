@@ -1,5 +1,4 @@
 # Created by: se
-# $FreeBSD$
 
 PORTNAME=	unixbench
 DISTVERSIONPREFIX=	v

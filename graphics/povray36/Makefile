@@ -1,5 +1,4 @@
 # Created by: paulo@isr.uc.pt
-# $FreeBSD$
 
 PORTNAME=	povray
 PORTVERSION=	3.6.1

@@ -1,5 +1,4 @@
 # Created by: steinex
-# $FreeBSD$
 
 PORTNAME=	check_smartmon
 PORTVERSION=	20100318

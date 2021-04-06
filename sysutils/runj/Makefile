@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	runj
 DISTVERSION=	g20210315

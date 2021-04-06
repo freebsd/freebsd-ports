@@ -1,5 +1,4 @@
 # Created by: Simon Marlow <simonmar@microsoft.com>
-# $FreeBSD$
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}

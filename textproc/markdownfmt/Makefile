@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	markdownfmt
 DISTVERSIONPREFIX=	v

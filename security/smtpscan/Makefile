@@ -1,5 +1,4 @@
 # Created by: Hubert Tournier <hubert@frbsd.org>
-# $FreeBSD$
 
 PORTNAME=	smtpscan
 PORTVERSION=	0.5

@@ -1,5 +1,4 @@
 # Created by: Aldert Nooitgedagt
-# $FreeBSD$
 
 PORTNAME=	tDOM
 PORTVERSION=	0.9.1

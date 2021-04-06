@@ -1,5 +1,4 @@
 # Created by: Alan E <alane@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	kenny
 PORTVERSION=	1.7

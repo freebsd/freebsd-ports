@@ -1,5 +1,4 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	primegen
 PORTVERSION=	0.97

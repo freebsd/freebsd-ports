@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-StickyQuery-DoCoMoGUID
 PORTVERSION=	0.03

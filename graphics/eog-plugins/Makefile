@@ -1,5 +1,4 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	eog-plugins
 PORTVERSION=	3.26.6

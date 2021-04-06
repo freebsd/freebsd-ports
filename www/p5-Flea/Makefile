@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Flea
 PORTVERSION=	0.04

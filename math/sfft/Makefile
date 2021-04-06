@@ -1,5 +1,4 @@
 # Created by: bf@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	sfft
 PORTVERSION=	0.1.0

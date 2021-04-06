@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-datalake-analytics
 PORTVERSION=	0.6.0

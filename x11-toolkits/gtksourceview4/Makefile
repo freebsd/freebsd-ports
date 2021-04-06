@@ -1,5 +1,4 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gtksourceview
 PORTVERSION=	4.8.0

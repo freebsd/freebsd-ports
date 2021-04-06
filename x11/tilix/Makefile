@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tilix
 PORTVERSION=	1.9.3

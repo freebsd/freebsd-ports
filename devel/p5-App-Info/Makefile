@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	App-Info
 PORTVERSION=	0.57

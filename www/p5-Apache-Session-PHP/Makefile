@@ -1,5 +1,4 @@
 # Created by: Mathieu Arnold <m@absolight.net>
-# $FreeBSD$
 
 PORTNAME=	Apache-Session-PHP
 PORTVERSION=	0.05

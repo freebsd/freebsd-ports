@@ -1,5 +1,4 @@
 # Created by: John Oxley <john@yoafrica.com>
-# $FreeBSD$
 
 PORTNAME=	vexim
 DISTVERSIONPREFIX=	v

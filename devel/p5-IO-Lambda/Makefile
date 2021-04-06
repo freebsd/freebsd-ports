@@ -1,5 +1,4 @@
 # Created by: Vany Serezhkin <ivan@serezhkin.com>
-# $FreeBSD$
 
 PORTNAME=	IO-Lambda
 PORTVERSION=	1.23

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	arp-sk
 PORTVERSION=	0.0.16

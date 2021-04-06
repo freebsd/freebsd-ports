@@ -1,5 +1,4 @@
 # Created by: George Reid <services@nevernet.net>
-# $FreeBSD$
 
 PORTNAME=	vlock
 PORTVERSION=	2.2.3

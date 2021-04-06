@@ -1,5 +1,4 @@
 # Created by: Shell Hung <shell@shellhung.org>
-# $FreeBSD$
 
 PORTNAME=	Date-Chinese
 PORTVERSION=	1.12

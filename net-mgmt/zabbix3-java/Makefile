@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zabbix3
 PORTREVISION=	1

@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Mail-FilterXML
 PORTVERSION=	0.3

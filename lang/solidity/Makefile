@@ -1,5 +1,4 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	solidity
 PORTVERSION=	0.8.3

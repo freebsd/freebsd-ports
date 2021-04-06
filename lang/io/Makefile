@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang
-# $FreeBSD$
 
 PORTNAME=	io
 PORTVERSION=	2017.09.06

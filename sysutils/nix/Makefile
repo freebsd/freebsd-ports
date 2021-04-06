@@ -1,5 +1,4 @@
 # Created by: Mateusz Piotrowski <0mp@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nix
 DISTVERSION=	2.3.10

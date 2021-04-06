@@ -1,5 +1,4 @@
 # Created by: Craig Boston <craig@yekse.gank.org>
-# $FreeBSD$
 
 PORTNAME=	vde
 PORTVERSION=	1.5.7

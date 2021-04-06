@@ -1,5 +1,4 @@
 # Created by: Marcus Glocker <marcus@nazgul.ch>
-# $FreeBSD$
 
 PORTNAME=	wmwlmon
 PORTVERSION=	1.0

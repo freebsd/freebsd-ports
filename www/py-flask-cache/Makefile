@@ -1,5 +1,4 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Flask-Cache
 PORTVERSION=	0.13.1

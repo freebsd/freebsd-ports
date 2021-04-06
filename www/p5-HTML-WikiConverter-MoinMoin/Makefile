@@ -1,5 +1,4 @@
 # Created by: chinsan <chinsan.tw@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	HTML-WikiConverter-MoinMoin
 PORTVERSION=	0.54

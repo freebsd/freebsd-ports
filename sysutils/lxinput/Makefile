@@ -1,5 +1,4 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lxinput
 PORTVERSION=	0.3.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DateTime
 PORTVERSION=	3.0.3

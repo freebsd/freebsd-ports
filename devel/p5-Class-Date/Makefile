@@ -1,5 +1,4 @@
 # Created by: Pete Fritchman <petef@databits.net>
-# $FreeBSD$
 
 PORTNAME=	Class-Date
 PORTVERSION=	1.1.17

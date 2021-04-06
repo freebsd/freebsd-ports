@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	drm_info
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Anton Tornqvist <antont@inbox.lv>
-# $FreeBSD$
 
 PORTNAME=	sxhkd
 PORTVERSION=	0.6.2

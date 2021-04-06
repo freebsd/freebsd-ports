@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cogbot
 PORTVERSION=	0.1.13

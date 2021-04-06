@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aleph
 PORTVERSION=	1.15.2.1.r.4

@@ -1,5 +1,4 @@
 # Created by: Dan Langille <dvl@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	elasticsearch-dsl
 PORTVERSION=	7.3.0

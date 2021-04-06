@@ -1,5 +1,4 @@
 # Created by: Dan Langille <dvl@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Search-Elasticsearch-Client-5_0
 PORTVERSION=	6.00

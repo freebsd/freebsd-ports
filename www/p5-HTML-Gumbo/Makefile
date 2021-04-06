@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-Gumbo
 PORTVERSION=	0.18

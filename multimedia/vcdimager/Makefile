@@ -1,5 +1,4 @@
 # Created by: Harold Gutch <logix@foobar.franken.de>
-# $FreeBSD$
 
 PORTNAME=	vcdimager
 PORTVERSION=	2.0.1

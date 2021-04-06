@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Uranium
 DISTVERSION=	4.8

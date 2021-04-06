@@ -1,5 +1,4 @@
 # Created by: Horance Chou <horance@freedom.ie.cycu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	libffi
 PORTVERSION=	3.2.1

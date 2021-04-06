@@ -1,5 +1,4 @@
 # Created by: Alejandro Pulver <alejandro@varnet.biz>
-# $FreeBSD$
 
 PORTNAME=	abe
 PORTVERSION=	1.1

@@ -1,5 +1,4 @@
 # Created by: NAKATA Maho <maho@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	himenobench
 PORTVERSION=	2015.07.09

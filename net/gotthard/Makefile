@@ -1,5 +1,4 @@
 # Created by: Anton Karpov <toxa@toxahost.ru>
-# $FreeBSD$
 
 PORTNAME=	gotthard
 PORTVERSION=	1.3

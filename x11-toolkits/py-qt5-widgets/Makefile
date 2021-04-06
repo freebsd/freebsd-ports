@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	widgets
 CATEGORIES=	x11-toolkits devel python

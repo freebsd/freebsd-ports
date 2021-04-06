@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@tobez.org>
-# $FreeBSD$
 
 PORTNAME=	Stat-lsMode
 PORTVERSION=	0.50

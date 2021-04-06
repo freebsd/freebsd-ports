@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cronic
 PORTVERSION=	3

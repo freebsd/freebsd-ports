@@ -1,5 +1,4 @@
 # Created by: Joseph Koshy <jkoshy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Text-EtText
 PORTVERSION=	2.2

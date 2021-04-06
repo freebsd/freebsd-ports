@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alexandria
 DISTVERSION=	1.2

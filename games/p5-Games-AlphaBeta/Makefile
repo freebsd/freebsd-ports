@@ -1,5 +1,4 @@
 # Created by: Aaron Dalton <aaron@daltons.ca>
-# $FreeBSD$
 
 PORTNAME=	Games-AlphaBeta
 PORTVERSION=	0.4.7

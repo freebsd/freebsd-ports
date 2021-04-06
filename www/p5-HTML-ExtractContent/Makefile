@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-ExtractContent
 PORTVERSION=	0.11

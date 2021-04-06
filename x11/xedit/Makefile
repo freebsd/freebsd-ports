@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xedit
 PORTVERSION=	1.2.2

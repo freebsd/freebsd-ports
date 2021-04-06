@@ -1,5 +1,4 @@
 # Created by: HOTARU-YA <hotaru@tail.net>
-# $FreeBSD$
 
 PORTNAME=	oneko
 PORTVERSION=	1.2

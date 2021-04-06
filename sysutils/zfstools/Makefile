@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zfstools
 DISTVERSIONPREFIX=v

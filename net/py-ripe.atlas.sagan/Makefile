@@ -1,5 +1,4 @@
 # Created by: Massimiliano Stucchi <mstucchi@ripe.net>
-# $FreeBSD$
 
 PORTNAME=	ripe.atlas.sagan
 PORTVERSION=	1.3.0

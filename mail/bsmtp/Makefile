@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bsmtp
 PORTVERSION=	1.02

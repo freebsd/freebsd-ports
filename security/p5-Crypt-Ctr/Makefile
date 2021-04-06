@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan
-# $FreeBSD$
 
 PORTNAME=	Crypt-Ctr
 PORTVERSION=	0.01

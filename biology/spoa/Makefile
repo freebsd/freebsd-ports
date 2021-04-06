@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spoa
 DISTVERSION=	4.0.7

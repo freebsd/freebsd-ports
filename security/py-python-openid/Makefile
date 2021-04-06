@@ -1,5 +1,4 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	python-openid
 PORTVERSION=	2.2.5

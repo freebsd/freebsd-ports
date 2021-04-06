@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libwps
 PORTVERSION=	0.3.1

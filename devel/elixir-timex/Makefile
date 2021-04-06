@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	timex
 PORTVERSION=	3.3.0

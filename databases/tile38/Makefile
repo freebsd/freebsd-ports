@@ -1,5 +1,4 @@
 # Created by: olevole@olevole.ru
-# $FreeBSD$
 
 PORTNAME=	tile38
 DISTVERSION=	1.12.0

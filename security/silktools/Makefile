@@ -1,5 +1,4 @@
 # Created by: David Thiel <lx@redundancy.redundancy.org>
-# $FreeBSD$
 
 PORTNAME=	silktools
 PORTVERSION=	3.19.1

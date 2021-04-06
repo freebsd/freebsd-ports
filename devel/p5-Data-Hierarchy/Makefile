@@ -1,5 +1,4 @@
 # Created by: Autrijus Tang <autrijus@autrijus.org>
-# $FreeBSD$
 
 PORTNAME=	Data-Hierarchy
 PORTVERSION=	0.34

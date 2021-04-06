@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	2ping
 PORTVERSION=	4.5

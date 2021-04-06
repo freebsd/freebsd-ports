@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	healpix
 DISTVERSION=	3.50

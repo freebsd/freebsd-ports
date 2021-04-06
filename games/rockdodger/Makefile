@@ -1,5 +1,4 @@
 # Created by: Neil Blakey-Milner <nbm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	rockdodger
 PORTVERSION=	1.1.4

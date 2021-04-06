@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	epson-inkjet-printer-201601w
 PORTVERSION=	1.0.0

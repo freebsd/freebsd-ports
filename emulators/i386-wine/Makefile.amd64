@@ -1,5 +1,4 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
-# $FreeBSD$
 
 DISTVERSION=	5.0
 PORTEPOCH=	1

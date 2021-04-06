@@ -1,5 +1,4 @@
 # Created by: TERAMOTO Masahiro <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	rfeedfinder
 PORTVERSION=	0.9.13

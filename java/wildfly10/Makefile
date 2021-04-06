@@ -1,5 +1,4 @@
 # Created by: Alexander Yerenkow <yerenkow@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wildfly10
 PORTVERSION=	10.1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	powerdevil
 DISTVERSION=	${KDE_PLASMA_VERSION}

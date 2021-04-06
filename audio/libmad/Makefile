@@ -1,5 +1,4 @@
 # Created by: Sergey Akifyev <asa@gascom.ru>
-# $FreeBSD$
 
 PORTNAME=	libmad
 PORTVERSION=	0.15.1b

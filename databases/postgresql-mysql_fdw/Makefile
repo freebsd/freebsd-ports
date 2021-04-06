@@ -1,5 +1,4 @@
 # Created by: Jov <amutu@amutu.com>
-# $FreeBSD$
 
 PORTNAME=	mysql_fdw
 DISTVERSIONPREFIX=	REL-

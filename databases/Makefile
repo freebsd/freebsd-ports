@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Databases and related software
 

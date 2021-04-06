@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	portalocker
 PORTVERSION=	1.7.1

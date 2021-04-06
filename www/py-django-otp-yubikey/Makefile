@@ -1,5 +1,4 @@
 # Created by: Carlo Strub <cs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	django-otp-yubikey
 PORTVERSION=	1.0.0

@@ -1,5 +1,4 @@
 # Created by: Marcel Kaiser <mk@nic-nac-project.org>
-# $FreeBSD$
 
 PORTNAME=	dsbmc
 DISTVERSION=	1.2

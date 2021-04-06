@@ -1,5 +1,4 @@
 # Created by: Jakub Lach <jakub_lach@mailplus.pl>
-# $FreeBSD$
 
 PORTNAME=	mcwm
 PORTVERSION=	20130209

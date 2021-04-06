@@ -1,5 +1,4 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-# $FreeBSD$
 
 PORTNAME=	flatery-icon-themes
 DISTVERSION=	2021-02-27

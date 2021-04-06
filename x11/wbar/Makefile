@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale <nivit@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	wbar
 PORTVERSION=	2.3.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pydotplus
 DISTVERSION=	2.0.2

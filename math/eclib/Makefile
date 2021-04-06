@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=	eclib
 PORTVERSION=	20210318

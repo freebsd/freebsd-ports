@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libmill
 PORTVERSION=	1.18

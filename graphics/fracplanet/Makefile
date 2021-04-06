@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <ip@doom.homeunix.org>
-# $FreeBSD$
 
 PORTNAME=	fracplanet
 PORTVERSION=	0.5.1

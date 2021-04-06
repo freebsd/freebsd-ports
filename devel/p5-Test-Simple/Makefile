@@ -1,5 +1,4 @@
 # Created by: Shell Hung <shell@shellhung.org>
-# $FreeBSD$
 
 PORTNAME=	Test-Simple
 PORTVERSION=	1.302183

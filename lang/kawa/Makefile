@@ -1,5 +1,4 @@
 # Created by: Zach Garner <zach@neurosoft.org>
-# $FreeBSD$
 
 PORTNAME=	kawa
 PORTVERSION=	3.1.1

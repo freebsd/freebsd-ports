@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	mhwaveedit
 PORTVERSION=	1.4.24

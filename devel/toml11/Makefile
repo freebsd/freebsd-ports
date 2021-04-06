@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		toml11
 DISTVERSIONPREFIX=	v

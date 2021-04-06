@@ -1,5 +1,4 @@
 # Created by: Pietro Cerutti <gahr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libebur128
 PORTVERSION=	1.2.6

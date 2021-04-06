@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pbseqan
 DISTVERSION=	g20171011

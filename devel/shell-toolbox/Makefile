@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	shell-toolbox
 DISTVERSION=	20190528

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-appconfiguration
 PORTVERSION=	1.0.1

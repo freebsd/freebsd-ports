@@ -1,5 +1,4 @@
 # Created by: cartola (Carlos E. G. Carvalho)
-# $FreeBSD$
 
 PORTNAME=	freemind
 PORTVERSION=	1.0.1

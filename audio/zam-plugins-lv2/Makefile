@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zam-plugins
 DISTVERSION=	3.14

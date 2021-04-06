@@ -1,5 +1,4 @@
 # Created by: Joerg Pulz <Joerg.Pulz@frm2.tum.de>
-# $FreeBSD$
 
 PORTNAME=	ldapvi
 PORTVERSION=	1.7

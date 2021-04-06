@@ -1,5 +1,4 @@
 # Created by: Cezary Morga <cm@therek.net>
-# $FreeBSD$
 
 PORTNAME=	Locale-Msgfmt
 PORTVERSION=	0.15

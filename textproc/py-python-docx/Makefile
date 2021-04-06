@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-docx
 PORTVERSION=	0.8.10

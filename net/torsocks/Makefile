@@ -1,5 +1,4 @@
 # Created by: Andrei Lavreniyuk <andy.lavr@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	torsocks
 DISTVERSION=	2.3.0

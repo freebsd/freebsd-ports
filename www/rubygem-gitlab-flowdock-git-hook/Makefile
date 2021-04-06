@@ -1,5 +1,4 @@
 # Created by: Johannes Meixner <johannes@perceivon.net>
-# $FreeBSD$
 
 PORTNAME=	gitlab-flowdock-git-hook
 PORTVERSION=	1.0.1

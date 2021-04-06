@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pkg
 DISTVERSION=	1.16.99.4

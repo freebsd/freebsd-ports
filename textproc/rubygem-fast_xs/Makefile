@@ -1,5 +1,4 @@
 # Created by: Scott Sanders <scott@jssjr.com>
-# $FreeBSD$
 
 PORTNAME=	fast_xs
 PORTVERSION=	0.8.0

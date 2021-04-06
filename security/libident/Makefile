@@ -1,5 +1,4 @@
 # Created by: torstenb@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	libident
 PORTVERSION=	0.32

@@ -1,5 +1,4 @@
 # Created by: Mark Pulford <mark@kyne.com.au>
-# $FreeBSD$
 
 PORTNAME=	ppmcaption
 PORTVERSION=	1.1

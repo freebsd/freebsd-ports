@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fastqc
 DISTVERSION=	0.11.9

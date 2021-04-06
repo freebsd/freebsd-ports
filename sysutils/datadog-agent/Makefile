@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	datadog-agent
 DISTVERSION=	7.24.1

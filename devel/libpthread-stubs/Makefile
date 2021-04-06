@@ -1,5 +1,4 @@
 # Created by: wahjava
-# $FreeBSD$
 
 PORTNAME=	libpthread-stubs
 PORTVERSION=	0.4

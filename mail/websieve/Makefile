@@ -1,5 +1,4 @@
 # Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
-# $FreeBSD$
 
 PORTNAME=	websieve
 PORTVERSION=	0.63.a

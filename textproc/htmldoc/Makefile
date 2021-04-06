@@ -1,5 +1,4 @@
 # Created by: Glenn Trewitt <glenn@trewitt.org>
-# $FreeBSD$
 
 PORTNAME=		htmldoc
 PORTVERSION=		1.9.3

@@ -1,5 +1,4 @@
 # Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	brickout
 PORTVERSION=	2002.06.09

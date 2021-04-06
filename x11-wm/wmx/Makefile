@@ -1,5 +1,4 @@
 # Created by: Stefan Zehl <sec@42.org>
-# $FreeBSD$
 
 PORTNAME=	wmx
 PORTVERSION=	8

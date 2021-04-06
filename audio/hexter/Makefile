@@ -1,5 +1,4 @@
 # Created by: trasz <trasz@pin.if.uz.zgora.pl>
-# $FreeBSD$
 
 PORTNAME=	hexter
 PORTVERSION=	1.0.3

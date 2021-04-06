@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cyanrip
 DISTVERSIONPREFIX=	v

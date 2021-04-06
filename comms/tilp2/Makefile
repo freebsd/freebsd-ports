@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tilp2
 PORTVERSION=	1.18

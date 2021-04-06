@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lookbook
 DISTVERSION=	1.1.0

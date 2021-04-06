@@ -1,5 +1,4 @@
 # Created by: Frederic Culot <culot@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	CPAN-Meta-Check
 PORTVERSION=	0.014

@@ -1,5 +1,4 @@
 # Created by: jeffhung
-# $FreeBSD$
 
 PORTNAME=	Exception-Handler
 PORTVERSION=	1.004

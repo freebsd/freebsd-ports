@@ -1,5 +1,4 @@
 # Created by: Veniamin Gvozdikov <vg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	server
 PORTVERSION=	${GLPI_VER}.${FUNV_VER}

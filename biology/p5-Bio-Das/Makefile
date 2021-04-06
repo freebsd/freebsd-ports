@@ -1,5 +1,4 @@
 # Created by: Razi Khaja <razi@genet.sickkids.on.ca>
-# $FreeBSD$
 
 PORTNAME=	Bio-Das
 PORTVERSION=	1.17

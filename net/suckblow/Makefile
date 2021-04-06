@@ -1,5 +1,4 @@
 # Created by: Archie Cobbs
-# $FreeBSD$
 
 PORTNAME=	suckblow
 PORTVERSION=	1.1

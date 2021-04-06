@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
-# $FreeBSD$
 
 PORTNAME=	opster
 PORTVERSION=	4.2

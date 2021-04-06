@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	patch
 DISTVERSION=	1.16

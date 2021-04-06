@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cf
 PORTVERSION=	0.3.1

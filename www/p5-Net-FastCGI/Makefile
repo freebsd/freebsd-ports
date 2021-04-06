@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-FastCGI
 PORTVERSION=	0.14

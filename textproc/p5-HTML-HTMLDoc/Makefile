@@ -1,5 +1,4 @@
 # Created by: Konstantin Menshikov <kostjnspb@yandex.ru>
-# $FreeBSD$
 
 PORTNAME=	HTML-HTMLDoc
 PORTVERSION=	0.10

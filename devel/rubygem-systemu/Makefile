@@ -1,5 +1,4 @@
 # Created by: renchap@cocoa-x.com
-# $FreeBSD$
 
 PORTNAME=	systemu
 PORTVERSION=	2.6.5

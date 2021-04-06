@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tlsdate
 PORTVERSION=	0.0.13

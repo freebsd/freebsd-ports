@@ -1,5 +1,4 @@
 # Created by: Chris Hutchinson <portmaster@bsdforge.com>
-# $FreeBSD$
 
 PORTNAME=	sansi
 PORTVERSION=	1.0.2

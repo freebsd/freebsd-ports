@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	listserialc
 PORTVERSION=	1.1.0

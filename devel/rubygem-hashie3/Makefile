@@ -1,5 +1,4 @@
 # Created by: Cheng-Lung Sung <clsung@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hashie
 PORTVERSION=	3.6.0

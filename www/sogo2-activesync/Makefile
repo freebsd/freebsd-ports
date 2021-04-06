@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTREVISION=	5
 PKGNAMESUFFIX=		-activesync

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nflib
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@ahze.net>
-# $FreeBSD$
 
 PORTNAME=	Tk-JPEG-Lite
 PORTVERSION=	2.01500

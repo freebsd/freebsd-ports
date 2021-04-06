@@ -1,5 +1,4 @@
 # Created by: dcf@aracnet.com
-# $FreeBSD$
 
 PORTNAME=	DBI-Shell
 PORTVERSION=	11.97

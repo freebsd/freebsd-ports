@@ -1,5 +1,4 @@
 # Created by: Mohammad S. Babaei <info@babaei.net>
-# $FreeBSD$
 
 PORTNAME=	jucipp
 DISTVERSIONPREFIX=	v

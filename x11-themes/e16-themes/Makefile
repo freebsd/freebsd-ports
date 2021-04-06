@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	e16-themes
 PORTVERSION=	1.0.2

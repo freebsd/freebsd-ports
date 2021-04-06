@@ -1,5 +1,4 @@
 # Created by: torstenb@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	autoconf
 PORTVERSION=	2.13.000227

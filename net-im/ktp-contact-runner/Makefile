@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ktp-contact-runner
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

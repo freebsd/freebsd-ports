@@ -1,5 +1,4 @@
 # Created by: Jimmy Bergman jimmy@sigint.se
-# $FreeBSD$
 
 PORTNAME=	Net-DNS-Zone-Parser
 PORTVERSION=	0.02

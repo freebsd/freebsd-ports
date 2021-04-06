@@ -1,5 +1,4 @@
 # Created by: Chao Shin <quakelee@cn.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	mdtest
 PORTVERSION=	1.9.3

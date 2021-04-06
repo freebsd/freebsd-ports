@@ -1,5 +1,4 @@
 # Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gnome-color-manager
 PORTVERSION=	3.36.0

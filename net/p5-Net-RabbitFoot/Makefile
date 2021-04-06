@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-RabbitFoot
 PORTVERSION=	1.03

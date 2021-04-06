@@ -1,5 +1,4 @@
 # Created by: Steve Wills <steve@mouf.net>
-# $FreeBSD$
 
 PORTNAME=	Chemistry-FormulaPattern
 PORTVERSION=	0.10

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nextdns
 PORTVERSION=	1.9.4

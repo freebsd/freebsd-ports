@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	HTML-Copy
 PORTVERSION=	1.31

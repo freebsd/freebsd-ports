@@ -1,5 +1,4 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libfwsi
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH

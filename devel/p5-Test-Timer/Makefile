@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Timer
 PORTVERSION=	2.11

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	lm-solve
 PORTVERSION=	0.8.4

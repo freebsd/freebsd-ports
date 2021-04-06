@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	molequeue
 DISTVERSION=	0.9.0

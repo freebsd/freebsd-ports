@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	acts_as_taggable
 PORTVERSION=	2.0.2

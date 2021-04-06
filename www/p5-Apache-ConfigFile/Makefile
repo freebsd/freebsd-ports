@@ -1,5 +1,4 @@
 # Created by: Erwin Lansing <erwin@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Apache-ConfigFile
 PORTVERSION=	1.23

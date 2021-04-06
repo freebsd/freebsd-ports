@@ -1,5 +1,4 @@
 # Created by: Vivek Khera <vivek@khera.org>
-# $FreeBSD$
 
 PORTNAME=	XML-Mini
 PORTVERSION=	1.38

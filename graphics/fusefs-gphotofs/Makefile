@@ -1,5 +1,4 @@
 # Created by: Pav Lucistnik <pav@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gphotofs
 PORTVERSION=	0.5

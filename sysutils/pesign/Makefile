@@ -1,5 +1,4 @@
 # Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pesign
 PORTVERSION=	0.110

@@ -1,5 +1,4 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
-# $FreeBSD$
 
 PORTNAME=	Lingua-EN-NameCase
 PORTVERSION=	1.21

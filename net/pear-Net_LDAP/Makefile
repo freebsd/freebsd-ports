@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine (<tux@pinguru.net>)
-# $FreeBSD$
 
 PORTNAME=	Net_LDAP
 DISTVERSION=	1.1.5

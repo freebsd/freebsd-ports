@@ -1,5 +1,4 @@
 # Created by: Alan Eldridge <alane@geeksrus.net>
-# $FreeBSD$
 
 PORTNAME=	xstow
 PORTVERSION=	1.0.2

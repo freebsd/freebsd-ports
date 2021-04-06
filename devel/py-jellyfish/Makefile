@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jellyfish
 PORTVERSION=	0.8.2

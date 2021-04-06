@@ -1,5 +1,4 @@
 # Created by: Samuel Tardieu <sam@inf.enst.fr>
-# $FreeBSD$
 
 PORTNAME=	ltxml
 PORTVERSION=	1.2.9

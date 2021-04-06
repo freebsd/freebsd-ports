@@ -1,5 +1,4 @@
 # Created by: janos.mohacsi@bsd.hu
-# $FreeBSD$
 
 PORTNAME=	limesurvey
 PORTVERSION=	3.24.3

@@ -1,5 +1,4 @@
 # Created by: jupengfei <jupengfei@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Text-Extract-Word
 PORTVERSION=	0.04

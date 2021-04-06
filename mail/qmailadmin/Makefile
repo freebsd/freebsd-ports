@@ -1,5 +1,4 @@
 # Created by: Neil Blakey-Milner
-# $FreeBSD$
 
 PORTNAME=	qmailadmin
 PORTVERSION=	1.2.15

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dwarf2json
 DISTVERSION=	g20200326

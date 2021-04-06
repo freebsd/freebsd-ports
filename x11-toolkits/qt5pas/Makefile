@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qt5pas
 PORTVERSION=	2.6

@@ -1,5 +1,4 @@
 # Created by: Anes Mukhametov <anes@anes.su>
-# $FreeBSD$
 
 PORTNAME=	Crypt-RSA-Yandex
 PORTVERSION=	0.06

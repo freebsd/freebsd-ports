@@ -1,5 +1,4 @@
 # Created by: Jeremie Le Hen <jlh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bsdrcmds
 PORTVERSION=	20171003.01

@@ -1,5 +1,4 @@
 # Created by: Matthew Hunt <mph@pobox.com>
-# $FreeBSD$
 
 PORTNAME=	angband
 PORTVERSION=	4.1.3

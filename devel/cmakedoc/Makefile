@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cmakedoc
 DISTVERSION=	1.0.1

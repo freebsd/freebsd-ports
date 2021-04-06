@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kraft
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python3
 PORTVERSION=	${PYTHON_MAJOR_VER}

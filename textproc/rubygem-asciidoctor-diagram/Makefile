@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	asciidoctor-diagram
 PORTVERSION=	1.5.19

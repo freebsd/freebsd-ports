@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Spreadsheet-Read
 PORTVERSION=	0.83

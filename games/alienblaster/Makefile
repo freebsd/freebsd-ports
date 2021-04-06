@@ -1,5 +1,4 @@
 # Created by: Alejandro Pulver <alejandro@varnet.biz>
-# $FreeBSD$
 
 PORTNAME=	alienblaster
 PORTVERSION=	1.1.0

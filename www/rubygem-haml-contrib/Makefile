@@ -1,5 +1,4 @@
 # Created by: Horia Racoviceanu <horia@racoviceanu.com>
-# $FreeBSD$
 
 PORTNAME=	haml-contrib
 PORTVERSION=	1.0.0.1

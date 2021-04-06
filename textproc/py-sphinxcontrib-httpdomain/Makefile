@@ -1,5 +1,4 @@
 # Created by: William Grzybowski <wg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sphinxcontrib-httpdomain
 PORTVERSION=	1.2.1

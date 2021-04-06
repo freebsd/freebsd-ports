@@ -1,5 +1,4 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-# $FreeBSD$
 
 PORTNAME=	octave-forge-optim
 PORTVERSION=	1.6.1

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	MooseX-Storage
 PORTVERSION=	0.53

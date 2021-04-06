@@ -1,5 +1,4 @@
 # Created by: oly@world.std.com
-# $FreeBSD$
 
 PORTNAME=	lout
 PORTVERSION=	3.40

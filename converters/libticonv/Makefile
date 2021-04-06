@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libticonv
 PORTVERSION=	1.1.5

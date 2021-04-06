@@ -1,5 +1,4 @@
 # Created by: sumikawa@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	lv
 PORTVERSION=	4.51.20200728

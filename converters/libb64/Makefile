@@ -1,5 +1,4 @@
 # Created by: Ismail Yenigul <ismail.yenigul@surgate.com>
-# $FreeBSD$
 
 PORTNAME=	libb64
 PORTVERSION=	1.2.1

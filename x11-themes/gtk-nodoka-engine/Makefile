@@ -1,5 +1,4 @@
 # Created by: Romain Tartiere <romain@blogreen.org>
-# $FreeBSD$
 
 PORTNAME=	gtk-nodoka-engine
 PORTVERSION=	0.7.5

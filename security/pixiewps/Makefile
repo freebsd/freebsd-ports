@@ -1,5 +1,4 @@
 # Created by: Franz Bettag <franz@bett.ag>
-# $FreeBSD$
 
 PORTNAME=	pixiewps
 DISTVERSIONPREFIX=	v

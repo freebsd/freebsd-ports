@@ -1,5 +1,4 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
 #
 # !!!NOTE!!! Any PORTVERSION update to this port must be accompanied by
 # PORTREVISION bumps of depending ports.

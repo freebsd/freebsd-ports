@@ -1,5 +1,4 @@
 # Created by: James FitzGibbon <jfitz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Authen-Radius
 PORTVERSION=	0.32

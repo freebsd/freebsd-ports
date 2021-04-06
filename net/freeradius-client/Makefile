@@ -1,5 +1,4 @@
 # Created by: netch@netch.kiev.ua
-# $FreeBSD$
 
 PORTNAME=	freeradius-client
 PORTVERSION=	1.1.7

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Pluggable
 PORTVERSION=	1.28

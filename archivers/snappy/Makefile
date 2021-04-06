@@ -1,5 +1,4 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	snappy
 PORTVERSION=	1.1.8

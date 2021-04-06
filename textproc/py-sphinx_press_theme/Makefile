@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sphinx_press_theme
 PORTVERSION=	0.5.1

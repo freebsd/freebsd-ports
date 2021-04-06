@@ -1,5 +1,4 @@
 # Created by: Chin-San Huang <chinsan.tw@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	rar
 PORTVERSION=	4.2.0

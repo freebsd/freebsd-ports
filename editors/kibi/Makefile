@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kibi
 DISTVERSIONPREFIX=	v

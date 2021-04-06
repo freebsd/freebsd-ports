@@ -1,5 +1,4 @@
 # Created by: Karsten Pedersen <kpedersen@opencde.org>
-# $FreeBSD$
 
 PORTNAME=	radare2
 DISTVERSION=	5.1.1

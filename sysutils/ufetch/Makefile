@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ufetch
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: redcrash@gmail.com
-# $FreeBSD$
 
 PORTNAME=	papi
 PORTVERSION=	5.4.3

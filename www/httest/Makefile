@@ -1,5 +1,4 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	httest
 PORTVERSION=	2.4.24

@@ -1,5 +1,4 @@
 # Created by: Kurt Lidl <kurt.lidl@cello.com>
-# $FreeBSD$
 
 PORTNAME=	CGI-Application-Plugin-Apache
 PORTVERSION=	1.02

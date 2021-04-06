@@ -1,5 +1,4 @@
 # Created by: Alexander Botero-Lowry <alex@foxybanana.com>
-# $FreeBSD$
 
 PORTNAME=	pyflakes
 PORTVERSION=	2.3.0

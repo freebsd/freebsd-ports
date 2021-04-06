@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	YAML-AppConfig
 PORTVERSION=	0.19

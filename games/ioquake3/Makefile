@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME?=	ioquake3
 PORTVERSION?=	${IOQUAKE3VER}

@@ -1,5 +1,4 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org> et al.
-# $FreeBSD$
 
 PORTNAME=	shotwell
 PORTVERSION=	0.30.11

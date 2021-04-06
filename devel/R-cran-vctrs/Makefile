@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vctrs
 PORTVERSION=	0.3.6

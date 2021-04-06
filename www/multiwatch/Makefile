@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	multiwatch
 PORTVERSION=	1.0.0

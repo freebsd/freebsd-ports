@@ -1,5 +1,4 @@
 # Created by: Mathieu Arnold <m@absolight.net>
-# $FreeBSD$
 
 PORTNAME=	Locale-Maketext-Lexicon
 PORTVERSION=	1.00

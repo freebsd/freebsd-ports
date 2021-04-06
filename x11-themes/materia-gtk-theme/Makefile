@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	materia-gtk-theme
 DISTVERSIONPREFIX=	v

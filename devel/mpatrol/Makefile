@@ -1,5 +1,4 @@
 # Created by: Patrick MARIE <mycroft@virgaria.org>
-# $FreeBSD$
 
 PORTNAME=	mpatrol
 PORTVERSION=	1.4.8

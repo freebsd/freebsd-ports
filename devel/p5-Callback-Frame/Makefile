@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Callback-Frame
 PORTVERSION=	1.100

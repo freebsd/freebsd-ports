@@ -1,5 +1,4 @@
 # Created by: Ilia Chipitsine <ilia@jane.cgu.chel.su>
-# $FreeBSD$
 
 PORTNAME=	Unicode-String
 PORTVERSION=	2.10

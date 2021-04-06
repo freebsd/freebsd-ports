@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stardict-mueller7
 PORTVERSION=	2.4.2

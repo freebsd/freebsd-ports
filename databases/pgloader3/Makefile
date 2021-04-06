@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pgloader
 PORTVERSION=	3.6.2

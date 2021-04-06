@@ -1,5 +1,4 @@
 # Created by: Joseph Benden <joe@thrallingpenguin.com>
-# $FreeBSD$
 
 PORTNAME=	wasabi
 PORTVERSION=	3.5.0

@@ -1,5 +1,4 @@
 # Created by: Gleb Smirnoff <glebius@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gpxloggerd
 PORTVERSION=	0.2.4

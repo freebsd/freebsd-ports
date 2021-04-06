@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aspy.yaml
 PORTVERSION=	1.3.0

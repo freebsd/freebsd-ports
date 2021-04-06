@@ -1,5 +1,4 @@
 # Created by: Dennis Herrmann <dhn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	teamocil
 PORTVERSION=	1.4.2

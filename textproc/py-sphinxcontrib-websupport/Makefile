@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sphinxcontrib-websupport
 PORTVERSION=	1.2.4

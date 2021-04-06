@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dune-polygongrid
 DISTVERSION=	g20200214

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ctm
 PORTVERSION=	2.0

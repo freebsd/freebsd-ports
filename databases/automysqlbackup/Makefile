@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	automysqlbackup
 DISTVERSIONPREFIX=	v

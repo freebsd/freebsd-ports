@@ -1,5 +1,4 @@
 # Created by: Jean-Marc Zucconi <jmz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	doom
 PORTVERSION=	1.10

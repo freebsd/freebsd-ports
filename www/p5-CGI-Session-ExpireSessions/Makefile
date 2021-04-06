@@ -1,5 +1,4 @@
 # Created by: Gerard Seibert <gerard@seibercom.net>
-# $FreeBSD$
 
 PORTNAME=	CGI-Session-ExpireSessions
 PORTVERSION=	1.12

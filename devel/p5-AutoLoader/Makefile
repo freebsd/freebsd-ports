@@ -1,5 +1,4 @@
 # Created by: Rong-En Fan <rafan@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	AutoLoader
 PORTVERSION=	5.74

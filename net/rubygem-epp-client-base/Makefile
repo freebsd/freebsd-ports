@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	epp-client-base
 PORTVERSION=	0.15.2

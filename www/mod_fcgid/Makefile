@@ -1,5 +1,4 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-# $FreeBSD$
 
 PORTNAME=	mod_fcgid
 PORTVERSION=	2.3.9

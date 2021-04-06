@@ -1,5 +1,4 @@
 # Created by: Bruce M Simpson <bms@spc.org>
-# $FreeBSD$
 
 PORTNAME?=	cvstrac
 PORTVERSION=	2.0.1

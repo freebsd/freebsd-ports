@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libssm
 DISTVERSION=	1.4.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	slowcgi
 PORTVERSION=	6.3.20180905

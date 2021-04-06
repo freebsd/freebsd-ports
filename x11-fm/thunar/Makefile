@@ -1,5 +1,4 @@
 # Created by: Oliver Lehmann <oliver@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	thunar
 DISTVERSION=	4.16.6

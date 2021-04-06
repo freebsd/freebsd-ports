@@ -1,5 +1,4 @@
 # Created by: Martin Kammerhofer
-# $FreeBSD$
 
 PORTNAME=	autoconf-archive
 PORTVERSION=	0.${DISTDATE:C/-/./g}

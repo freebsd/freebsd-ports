@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	klg
 PORTVERSION=	1.5

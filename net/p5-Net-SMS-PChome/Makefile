@@ -1,5 +1,4 @@
 # Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	Net-SMS-PChome
 PORTVERSION=	0.11

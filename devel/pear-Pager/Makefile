@@ -1,5 +1,4 @@
 # Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-# $FreeBSD$
 
 PORTNAME=	Pager
 PORTVERSION=	2.5.1

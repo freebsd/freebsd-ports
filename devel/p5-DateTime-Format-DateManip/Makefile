@@ -1,5 +1,4 @@
 # Created by: Mathieu Arnold <m@absolight.net>
-# $FreeBSD$
 
 PORTNAME=	DateTime-Format-DateManip
 PORTVERSION=	0.04

@@ -1,5 +1,4 @@
 # Created by: Tomoyuki Sakurai <cherry@trombik.org>
-# $FreeBSD$
 
 PORTNAME=	Module-Recursive-Require
 PORTVERSION=	0.04

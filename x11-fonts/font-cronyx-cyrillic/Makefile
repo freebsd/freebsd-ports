@@ -1,5 +1,4 @@
 # Created by: Pawel Worach
-# $FreeBSD$
 
 PORTNAME=	font-cronyx-cyrillic
 PORTVERSION=	1.0.3

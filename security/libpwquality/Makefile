@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libpwquality
 DISTVERSION=	1.4.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	whichcraft
 PORTVERSION=	0.6.1

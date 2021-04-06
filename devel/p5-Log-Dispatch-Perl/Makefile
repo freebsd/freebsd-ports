@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lars@thegler.dk>
-# $FreeBSD$
 
 PORTNAME=	Log-Dispatch-Perl
 PORTVERSION=	0.05

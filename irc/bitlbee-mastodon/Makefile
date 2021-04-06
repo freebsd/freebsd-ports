@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bitlbee-mastodon
 DISTVERSIONPREFIX=	v

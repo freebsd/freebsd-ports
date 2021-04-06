@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xcb-util-xrm
 PORTVERSION=	1.3

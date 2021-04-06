@@ -1,5 +1,4 @@
 # Created by: Petri Totterman <petri.totterman@hmv.fi>
-# $FreeBSD$
 
 PORTNAME=	log4cplus
 PORTVERSION=	1.1.2

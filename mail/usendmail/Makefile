@@ -1,5 +1,4 @@
 # Created by: Thomas Seck <tmseck@netcologne.de>
-# $FreeBSD$
 
 PORTNAME=	usendmail
 PORTVERSION=	0.1.6

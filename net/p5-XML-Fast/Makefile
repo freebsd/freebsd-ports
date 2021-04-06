@@ -1,5 +1,4 @@
 # Created by: Dennis Herrmann <dhn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	XML-Fast
 PORTVERSION=	0.17

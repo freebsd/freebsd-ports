@@ -1,5 +1,4 @@
 # Created by: Carlo Strub
-# $FreeBSD$
 
 PORTNAME=	nyx
 PORTVERSION=	2.1.0

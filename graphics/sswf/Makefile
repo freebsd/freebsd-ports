@@ -1,5 +1,4 @@
 # Created by: anhot
-# $FreeBSD$
 
 PORTNAME=	sswf
 PORTVERSION=	1.8.4

@@ -1,5 +1,4 @@
 # Created by: Tobias Kortkamp <t@tobik.me>
-# $FreeBSD$
 
 PORTNAME=	intellij-pty4j
 PORTVERSION=	0.11.4

@@ -1,5 +1,4 @@
 # Created by: aturetta@commit.it
-# $FreeBSD$
 
 PORTNAME=	Test-LongString
 PORTVERSION=	0.17

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ncclient
 DISTVERSION=	0.6.10

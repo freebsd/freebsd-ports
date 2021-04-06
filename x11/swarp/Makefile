@@ -1,5 +1,4 @@
 # Created by: Daniel Roethlisberger <daniel@roe.ch>
-# $FreeBSD$
 
 PORTNAME=	swarp
 PORTVERSION=	0.1

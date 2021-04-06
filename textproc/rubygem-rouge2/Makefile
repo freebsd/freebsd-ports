@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rouge
 PORTVERSION=	2.2.1

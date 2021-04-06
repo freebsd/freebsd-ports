@@ -1,5 +1,4 @@
 # Created by: Jouke Witteveen <j.witteveen@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	respond
 PORTVERSION=	1.3

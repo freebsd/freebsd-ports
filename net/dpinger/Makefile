@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dpinger
 PORTVERSION=	3.0

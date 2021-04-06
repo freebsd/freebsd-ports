@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 ###########################################################################
 # This makefile was contributed by Marius Strobl.

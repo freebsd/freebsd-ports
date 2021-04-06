@@ -1,5 +1,4 @@
 # Created by: mr@freebsd.org
-# $FreeBSD$
 
 PORTNAME=	papilio-loader
 PORTVERSION=	2.8

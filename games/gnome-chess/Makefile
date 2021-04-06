@@ -1,5 +1,4 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	gnome-chess
 PORTVERSION=	3.38.1

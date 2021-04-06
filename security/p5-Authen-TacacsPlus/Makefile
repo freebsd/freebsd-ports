@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Authen-TacacsPlus
 PORTVERSION=	0.28

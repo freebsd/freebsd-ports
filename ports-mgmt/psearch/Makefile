@@ -1,5 +1,4 @@
 # Created by: Benjamin Lutz
-# $FreeBSD$
 
 PORTNAME=	psearch
 PORTVERSION=	2.1.0

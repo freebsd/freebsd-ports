@@ -1,5 +1,4 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libpinyin
 PORTVERSION=	2.3.0

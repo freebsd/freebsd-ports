@@ -1,5 +1,4 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	fyre
 PORTVERSION=	1.0.1

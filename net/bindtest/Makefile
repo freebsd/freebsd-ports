@@ -1,5 +1,4 @@
 # Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-# $FreeBSD$
 
 PORTNAME=	bindtest
 PORTVERSION=	1.56

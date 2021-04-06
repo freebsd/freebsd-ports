@@ -1,5 +1,4 @@
 # Created by: Cheng-Lung Sung <clsung@dragon2.net>
-# $FreeBSD$
 
 PORTNAME=	Mail-Mbox-MessageParser
 PORTVERSION=	1.5111

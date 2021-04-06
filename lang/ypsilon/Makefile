@@ -1,5 +1,4 @@
 # Created by: Vitaly Magerya <vmagerya@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ypsilon
 PORTVERSION=	0.9.6.3

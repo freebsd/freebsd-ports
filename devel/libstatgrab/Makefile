@@ -1,5 +1,4 @@
 # Created by: Tim Bishop <tim@bishnet.net>
-# $FreeBSD$
 
 PORTNAME=	libstatgrab
 PORTVERSION=	0.92

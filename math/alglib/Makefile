@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alglib
 DISTVERSION=	3.17.0

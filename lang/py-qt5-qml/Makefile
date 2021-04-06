@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qml
 CATEGORIES=	lang devel python

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyEDFlib
 DISTVERSION=	0.1.20

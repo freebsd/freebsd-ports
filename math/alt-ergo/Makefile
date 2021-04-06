@@ -1,5 +1,4 @@
 # Created by: b.f. <bf@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	alt-ergo
 PORTVERSION=	0.95.2

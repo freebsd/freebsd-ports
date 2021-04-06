@@ -1,5 +1,4 @@
 # Created by: Jeremy <karlj000@unbc.ca>
-# $FreeBSD$
 
 PORTNAME=	magiccube4d
 PORTVERSION=	2.2

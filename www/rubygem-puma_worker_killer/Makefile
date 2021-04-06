@@ -1,5 +1,4 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	puma_worker_killer
 PORTVERSION=	0.3.1

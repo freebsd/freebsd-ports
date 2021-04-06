@@ -1,5 +1,4 @@
 # Created by: Marko Njezic <sf@maxempire.com>
-# $FreeBSD$
 
 PORTNAME=	clamav-unofficial-sigs
 PORTVERSION=	7.0.1

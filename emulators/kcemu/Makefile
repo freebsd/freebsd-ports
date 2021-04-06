@@ -1,5 +1,4 @@
 # Created by: Hardy Schumacher <hardy.schumacher@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	kcemu
 PORTVERSION=	0.5.1

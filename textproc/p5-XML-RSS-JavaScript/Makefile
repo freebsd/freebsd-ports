@@ -1,5 +1,4 @@
 # Created by: Foxfair Hu <foxfair@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	XML-RSS-JavaScript
 PORTVERSION=	0.65

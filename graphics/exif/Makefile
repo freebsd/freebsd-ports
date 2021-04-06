@@ -1,5 +1,4 @@
 # Created by: Pav Lucistnik <pav@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	exif
 PORTVERSION=	0.6.22

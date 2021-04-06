@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	deheader
 PORTVERSION=	1.6

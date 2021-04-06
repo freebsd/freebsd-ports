@@ -1,5 +1,4 @@
 # Created by: gordon@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	p4
 PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}

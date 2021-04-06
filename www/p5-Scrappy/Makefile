@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Scrappy
 PORTVERSION=	0.94112090

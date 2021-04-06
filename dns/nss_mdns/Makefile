@@ -1,5 +1,4 @@
 # Created by: Bruce M. Simpson <bms@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nss_mdns
 PORTVERSION=	0.14.1.20200624

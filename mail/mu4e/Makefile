@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mu4e
 PORTVERSION=	1.2

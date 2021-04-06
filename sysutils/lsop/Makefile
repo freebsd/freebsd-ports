@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lsop
 PORTVERSION=	0.2

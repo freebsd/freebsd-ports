@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@tobez.org>
-# $FreeBSD$
 
 PORTNAME=	Text-PDF
 PORTVERSION=	0.31

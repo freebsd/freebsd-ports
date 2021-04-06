@@ -1,5 +1,4 @@
 # Created by: brix@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Authen-DecHpwd
 PORTVERSION=	2.007

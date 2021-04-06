@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ebusd
 PORTVERSION=	21.2

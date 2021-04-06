@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	QtAwesome
 DISTVERSION=	1.0.2

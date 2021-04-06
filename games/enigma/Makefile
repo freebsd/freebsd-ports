@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis
-# $FreeBSD$
 
 PORTNAME=	enigma
 PORTVERSION=	1.21

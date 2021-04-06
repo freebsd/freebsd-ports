@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openstackdocstheme
 DISTVERSION=	2.2.7

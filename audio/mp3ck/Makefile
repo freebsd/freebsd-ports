@@ -1,5 +1,4 @@
 # Created by: Yar Tikhiy <yar@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mp3ck
 PORTVERSION=	0.04

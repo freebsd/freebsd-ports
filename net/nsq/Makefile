@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nsq
 PORTVERSION=	1.2.0

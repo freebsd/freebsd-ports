@@ -1,5 +1,4 @@
 # Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	zfs-replicate
 PORTVERSION=	0.7

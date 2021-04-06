@@ -1,5 +1,4 @@
 # Created by: Sir l33tname <sirl33tname@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gollum
 PORTVERSION=	4.1.4

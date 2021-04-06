@@ -1,5 +1,4 @@
 # Created by: Chris St Denis (<chris@ctgameinfo.com>)
-# $FreeBSD$
 
 PORTNAME=	File_DNS
 PORTVERSION=	0.1.0

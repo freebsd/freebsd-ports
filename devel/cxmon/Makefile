@@ -1,5 +1,4 @@
 # Created by: Joachim Strombergson
-# $FreeBSD$
 
 PORTNAME=	cxmon
 PORTVERSION=	3.2

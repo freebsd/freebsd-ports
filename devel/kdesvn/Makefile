@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdesvn
 DISTVERSION=	2.1.0

@@ -1,5 +1,4 @@
 # Created by: lars.eggert@gmx.net
-# $FreeBSD$
 
 PORTNAME=	Algorithm-ChooseSubsets
 PORTVERSION=	0.02

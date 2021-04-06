@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-FromCGI
 PORTVERSION=	1.00

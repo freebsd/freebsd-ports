@@ -1,5 +1,4 @@
 # Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
-# $FreeBSD$
 
 PORTNAME=	Proc-SafeExec
 PORTVERSION=	1.5

@@ -1,5 +1,4 @@
 # Created by: dom@happygiraffe.net
-# $FreeBSD$
 
 PORTNAME=	Time-Object
 PORTVERSION=	1.00

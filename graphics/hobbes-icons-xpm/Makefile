@@ -1,5 +1,4 @@
 # Created by: pgs
-# $FreeBSD$
 
 PORTNAME=	hobbes-icons-xpm3
 PORTVERSION=	1.0

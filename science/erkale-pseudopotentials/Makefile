@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	erkale-pseudopotentials
 DISTVERSION=	g20200426

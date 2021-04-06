@@ -1,5 +1,4 @@
 # Created by: Olivier Tharan <olive@oban.frmug.org>
-# $FreeBSD$
 
 PORTNAME=	nload
 PORTVERSION=	0.7.4

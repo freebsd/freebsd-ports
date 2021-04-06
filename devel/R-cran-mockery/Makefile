@@ -1,5 +1,4 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mockery
 DISTVERSION=	0.4.2

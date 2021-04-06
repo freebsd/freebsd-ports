@@ -1,5 +1,4 @@
 # Created by: Michael Schout <mschout@gkg.net>
-# $FreeBSD$
 
 PORTNAME=	HTML_Select
 PORTVERSION=	1.3.1

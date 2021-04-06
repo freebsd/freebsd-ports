@@ -1,5 +1,4 @@
 # Created by: Jov <amutu@amutu.com>
-# $FreeBSD$
 
 PORTNAME=	cstore_fdw
 PORTVERSION=	1.7.0

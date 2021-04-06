@@ -1,5 +1,4 @@
 # Created by: Dan Langille <dvl@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	daemon-runner
 PORTVERSION=	0.0.15

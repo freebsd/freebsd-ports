@@ -1,5 +1,4 @@
 # Created by: Gasol Wu <gasol.wu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	PHPLOC
 DISTVERSION=	4.0.1

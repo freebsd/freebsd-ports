@@ -1,5 +1,4 @@
 # Created by: Jon M. Dugan <jdugan@x1024.net>
-# $FreeBSD$
 
 PORTNAME=	thrift
 PORTVERSION=	${THRIFT_PORTVERSION} # to keep in sync with thrift

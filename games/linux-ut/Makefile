@@ -1,5 +1,4 @@
 # Created by: Sean Farley <sean-freebsd@farley.org>
-# $FreeBSD$
 
 PORTNAME=	linux-ut
 PORTVERSION=	${UTVERSION}

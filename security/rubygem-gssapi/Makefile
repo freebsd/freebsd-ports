@@ -1,5 +1,4 @@
 # Created by: Joseph Benden <joe@thrallingpenguin.com>
-# $FreeBSD$
 
 PORTNAME=	gssapi
 PORTVERSION=	1.3.0

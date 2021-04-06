@@ -1,5 +1,4 @@
 # Created by: Andreas Klemm <andreas@klemm.gtn.com>
-# $FreeBSD$
 
 PORTNAME=	SpecTcl
 PORTVERSION=	1.2.2a

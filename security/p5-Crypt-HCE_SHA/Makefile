@@ -1,5 +1,4 @@
 # Created by: Gregory Neil Shapiro <gshapiro@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Crypt-HCE_SHA
 PORTVERSION=	0.70

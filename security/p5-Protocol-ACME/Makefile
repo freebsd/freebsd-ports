@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Protocol-ACME
 PORTVERSION=	0.16

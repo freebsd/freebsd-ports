@@ -1,5 +1,4 @@
 # Created by: Hiroyuki Hanai <hanai@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tokyotyrant
 PORTVERSION=	1.16

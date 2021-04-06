@@ -1,5 +1,4 @@
 # Created by: John Merryweather Cooper et al
-# $FreeBSD$
 
 CATEGORIES=	editors lang
 PKGNAMESUFFIX=	-ide

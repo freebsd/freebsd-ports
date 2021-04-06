@@ -1,5 +1,4 @@
 # Created by: Scott Sanders <scott@jssjr.com>
-# $FreeBSD$
 
 PORTNAME=	escape_utils
 PORTVERSION=	1.2.1

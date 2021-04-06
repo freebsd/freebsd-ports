@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	pbzip2
 PORTVERSION=	1.1.13

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTTP-Headers-ActionPack
 PORTVERSION=	0.09

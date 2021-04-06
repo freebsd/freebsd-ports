@@ -1,5 +1,4 @@
 # Created by: kmoore@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	grub2-bhyve
 DISTVERSIONPREFIX=	v

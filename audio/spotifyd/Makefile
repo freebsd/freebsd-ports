@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spotifyd
 DISTVERSIONPREFIX=	v

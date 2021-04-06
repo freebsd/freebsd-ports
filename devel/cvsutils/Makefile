@@ -1,5 +1,4 @@
 # Created by: knu@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	cvsutils
 PORTVERSION=	0.2.6

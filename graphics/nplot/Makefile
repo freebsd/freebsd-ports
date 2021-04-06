@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nplot
 PORTVERSION=	0.9.11

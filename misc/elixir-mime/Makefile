@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mime
 PORTVERSION=	1.3.0

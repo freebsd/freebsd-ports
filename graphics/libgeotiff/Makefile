@@ -1,5 +1,4 @@
 # Created by: Sam Lawrance
-# $FreeBSD$
 
 PORTNAME=	libgeotiff
 PORTVERSION=	1.6.0

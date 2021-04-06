@@ -1,5 +1,4 @@
 # Created by: Thomas Hurst <tom@hur.st>
-# $FreeBSD$
 
 PORTNAME=	optipng
 PORTVERSION=	0.7.7

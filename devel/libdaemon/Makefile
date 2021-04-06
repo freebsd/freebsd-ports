@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libdaemon
 PORTVERSION=	0.14

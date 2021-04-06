@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	python-twitter
 PORTVERSION=	3.4.2

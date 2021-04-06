@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	png
 PORTVERSION=	1.6.37

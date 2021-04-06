@@ -1,5 +1,4 @@
 # Created by: Anish Mistry <amistry@am-productions.biz>
-# $FreeBSD$
 
 PORTNAME=	lrmi
 PORTVERSION=	0.10

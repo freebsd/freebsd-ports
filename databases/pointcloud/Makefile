@@ -1,5 +1,4 @@
 # Created by: lbartoletti <lbartoletti@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pointcloud
 PORTVERSION=	1.2.1

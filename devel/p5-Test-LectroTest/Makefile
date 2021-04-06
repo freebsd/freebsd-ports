@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <alex@kapranoff.ru>
-# $FreeBSD$
 
 PORTNAME=	Test-LectroTest
 PORTVERSION=	0.5001

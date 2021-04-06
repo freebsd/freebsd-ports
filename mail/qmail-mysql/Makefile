@@ -1,5 +1,4 @@
 # Created by: Mario S F Ferreira <lioux@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	qmail
 PORTVERSION=	${QMAIL_VERSION}.${MYSQL_PATCH_VERSION}

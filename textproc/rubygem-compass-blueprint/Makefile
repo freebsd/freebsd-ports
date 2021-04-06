@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	compass-blueprint
 PORTVERSION=	1.0.0

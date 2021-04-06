@@ -1,5 +1,4 @@
 # Created by: rodrigc@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	hostdb
 PORTVERSION=	1.004

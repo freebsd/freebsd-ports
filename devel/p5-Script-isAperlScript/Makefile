@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Script-isAperlScript
 PORTVERSION=	1.0.0

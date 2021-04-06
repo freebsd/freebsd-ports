@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lidia
 DISTVERSION=	2.3.0

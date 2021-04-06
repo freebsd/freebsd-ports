@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alot
 DISTVERSION=	0.9

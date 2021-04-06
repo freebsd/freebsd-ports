@@ -1,5 +1,4 @@
 # Created by: Hakisho Nukama <nukama@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	scalpel
 PORTVERSION=	2.0

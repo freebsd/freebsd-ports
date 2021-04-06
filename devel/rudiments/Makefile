@@ -1,5 +1,4 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-# $FreeBSD$
 
 PORTNAME=	rudiments
 PORTVERSION=	1.2.2

@@ -1,5 +1,4 @@
 # Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	SMS-Send-TW-ShareSMS
 PORTVERSION=	0.02

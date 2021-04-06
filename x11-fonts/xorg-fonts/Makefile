@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xorg-fonts
 PORTVERSION=	7.7

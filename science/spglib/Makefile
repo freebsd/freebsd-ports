@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spglib
 DISTVERSIONPREFIX=	v

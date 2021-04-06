@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dockerpty
 PORTVERSION=	0.4.1

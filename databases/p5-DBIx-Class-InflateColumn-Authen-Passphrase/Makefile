@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-InflateColumn-Authen-Passphrase
 PORTVERSION=	0.01

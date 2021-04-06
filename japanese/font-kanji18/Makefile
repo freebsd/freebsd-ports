@@ -1,5 +1,4 @@
 # Created by: Yoshiro MIHIRA <sanpei@sanpei.org>
-# $FreeBSD$
 
 PORTNAME=	kanji
 PORTVERSION=	1.0

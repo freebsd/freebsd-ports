@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-gilt
 PORTVERSION=	1.2.2

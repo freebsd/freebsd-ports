@@ -1,5 +1,4 @@
 # Created by: renchap@cocoa-x.com
-# $FreeBSD$
 
 PORTNAME=	bunny
 PORTVERSION=	2.9.0

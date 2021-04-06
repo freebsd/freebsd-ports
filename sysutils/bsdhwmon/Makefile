@@ -1,5 +1,4 @@
 # Created by: Jeremy Chadwick <jdc@parodius.com>
-# $FreeBSD$
 
 PORTNAME=	bsdhwmon
 PORTVERSION=	20151206

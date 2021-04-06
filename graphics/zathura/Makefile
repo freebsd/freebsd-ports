@@ -1,5 +1,4 @@
 # Created by: Quentin Stievenart <acieroid@awesom.eu>
-# $FreeBSD$
 
 PORTNAME=	zathura
 DISTVERSION=	0.4.5

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	HTTP-Async
 PORTVERSION=	0.33

@@ -1,5 +1,4 @@
 # Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
-# $FreeBSD$
 
 PORTNAME=	bibtexconv
 PORTVERSION=	1.1.20

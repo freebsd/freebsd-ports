@@ -1,5 +1,4 @@
 # Created by: Jon Nistor <nistor@snickers.org>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Abstract
 PORTVERSION=	1.040

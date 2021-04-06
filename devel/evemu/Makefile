@@ -1,5 +1,4 @@
 # Created by: Vladimir Kondratyev <wulf@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	evemu
 PORTVERSION=	2.7.0

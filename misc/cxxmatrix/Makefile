@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cxxmatrix
 DISTVERSION=	g20201128

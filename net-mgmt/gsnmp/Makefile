@@ -1,5 +1,4 @@
 # Created by: Matt Peterson <matt@peterson.org>
-# $FreeBSD$
 
 PORTNAME=	gsnmp
 PORTVERSION=	0.2.0

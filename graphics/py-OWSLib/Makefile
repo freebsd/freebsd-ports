@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	OWSLib
 PORTVERSION=		0.22.0

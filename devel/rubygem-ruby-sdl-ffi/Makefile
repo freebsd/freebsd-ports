@@ -1,5 +1,4 @@
 # Created by: Christoph Kick
-# $FreeBSD$
 
 PORTNAME=	ruby-sdl-ffi
 PORTVERSION=	0.4

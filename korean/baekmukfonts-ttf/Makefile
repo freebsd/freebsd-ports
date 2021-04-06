@@ -1,5 +1,4 @@
 # Created by: Junho CHOI <junho.choi@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.2

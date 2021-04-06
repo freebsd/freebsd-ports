@@ -1,5 +1,4 @@
 # Created by: Anton Tornqvist <antont@inbox.lv>
-# $FreeBSD$
 
 PORTNAME=	libtermkey
 PORTVERSION=	0.22

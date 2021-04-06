@@ -1,5 +1,4 @@
 # Created by: Tim Welch <ports@thepentagon.org>
-# $FreeBSD$
 
 PORTNAME=	nzbperl
 PORTVERSION=	0.6.8

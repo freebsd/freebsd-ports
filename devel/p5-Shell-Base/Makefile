@@ -1,5 +1,4 @@
 # Created by: Christopher Nehren <apeiron@comcast.net>
-# $FreeBSD$
 
 PORTNAME=	Shell-Base
 PORTVERSION=	0.05

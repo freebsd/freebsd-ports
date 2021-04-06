@@ -1,5 +1,4 @@
 # Created by: osa
-# $FreeBSD$
 
 PORTNAME=	seq2
 PORTVERSION=	0.2

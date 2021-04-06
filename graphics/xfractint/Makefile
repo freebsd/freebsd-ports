@@ -1,5 +1,4 @@
 # Created by: cacho@mexicano.gdl.iteso.mx
-# $FreeBSD$
 
 PORTNAME=	xfractint
 PORTVERSION=	20.04p16

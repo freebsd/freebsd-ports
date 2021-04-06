@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	PDF-Reuse
 DISTVERSION=	0.39

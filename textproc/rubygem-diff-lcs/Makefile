@@ -1,5 +1,4 @@
 # Created by: Daniel Roethlisberger <daniel@roe.ch>
-# $FreeBSD$
 
 PORTNAME=	diff-lcs
 PORTVERSION=	1.4.4

@@ -1,5 +1,4 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
-# $FreeBSD$
 
 PORTNAME=	Metadata
 PORTVERSION=	0.24

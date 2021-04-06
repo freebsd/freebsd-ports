@@ -1,5 +1,4 @@
 # Created by: Paul Chvostek <paul@it.ca>
-# $FreeBSD$
 
 PORTNAME=	proxycheck
 PORTVERSION=	0.49a

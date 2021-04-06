@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rnnoise-nu
 DISTVERSION=	g20180916

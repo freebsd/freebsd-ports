@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	distillery
 DISTVERSION=	1.5.2

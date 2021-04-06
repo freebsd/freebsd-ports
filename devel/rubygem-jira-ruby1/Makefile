@@ -1,5 +1,4 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jira-ruby
 PORTVERSION=	1.8.0

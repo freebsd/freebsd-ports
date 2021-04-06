@@ -1,5 +1,4 @@
 # Created by: Matthew Fuller <fullermd@over-yonder.net>
-# $FreeBSD$
 
 PORTNAME=		Text-WikiCreole
 PORTVERSION=		0.07

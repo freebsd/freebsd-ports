@@ -1,5 +1,4 @@
 # Created by: rpsfa@rit.edu
-# $FreeBSD$
 
 PORTNAME=	ezprint
 PORTVERSION=	1.0.1

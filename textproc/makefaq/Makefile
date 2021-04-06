@@ -1,5 +1,4 @@
 # Created by: king@v2project.com
-# $FreeBSD$
 
 PORTNAME=	makefaq
 PORTVERSION=	2.5

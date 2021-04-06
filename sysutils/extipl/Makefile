@@ -1,5 +1,4 @@
 # Created by: KIMURA Takamichi <takamiti@tsden.org>
-# $FreeBSD$
 
 PORTNAME=	extipl
 PORTVERSION=	5.04

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	transdecoder
 DISTVERSIONPREFIX=	TransDecoder-v

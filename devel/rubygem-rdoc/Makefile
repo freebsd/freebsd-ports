@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rdoc
 PORTVERSION=	6.3.0

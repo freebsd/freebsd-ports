@@ -1,5 +1,4 @@
 # Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-# $FreeBSD$
 
 PORTNAME=	jzintv
 PORTVERSION=	1.0.20200712

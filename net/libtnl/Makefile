@@ -1,5 +1,4 @@
 # Created by: aaron@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	libtnl
 PORTVERSION=	1.5.0

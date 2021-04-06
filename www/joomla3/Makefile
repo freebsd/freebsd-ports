@@ -1,5 +1,4 @@
 # Created by: Francisco Cabrita <include@npf.pt.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	joomla
 DISTVERSION=	3-9-24

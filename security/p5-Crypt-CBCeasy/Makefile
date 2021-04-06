@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Crypt-CBCeasy
 PORTVERSION=	0.24

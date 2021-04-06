@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ktechlab
 DISTVERSIONPREFIX=	v

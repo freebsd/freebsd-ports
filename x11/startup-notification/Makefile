@@ -1,5 +1,4 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	startup-notification
 PORTVERSION=	0.12

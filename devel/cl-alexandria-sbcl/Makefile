@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alexandria
 PORTVERSION=	1.2

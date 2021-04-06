@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wlclock
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Max Khon <fjoe@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	openr2
 PORTVERSION=	1.3.3

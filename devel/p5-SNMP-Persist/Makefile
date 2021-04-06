@@ -1,5 +1,4 @@
 # Created by: Philippe Audeoud <jadawin@tuxaco.net>
-# $FreeBSD$
 
 PORTNAME=	SNMP-Persist
 PORTVERSION=	0.05

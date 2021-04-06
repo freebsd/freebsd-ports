@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <dima@Chg.RU>
-# $FreeBSD$
 
 PORTNAME=	rrdtool
 PORTVERSION=	1.7.2

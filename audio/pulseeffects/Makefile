@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pulseeffects
 DISTVERSIONPREFIX=	v

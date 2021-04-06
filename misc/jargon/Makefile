@@ -1,5 +1,4 @@
 # Created by: moeding
-# $FreeBSD$
 
 PORTNAME=	jargon
 PORTVERSION=	4.4.7

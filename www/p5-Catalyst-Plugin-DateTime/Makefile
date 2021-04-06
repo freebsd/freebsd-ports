@@ -1,5 +1,4 @@
 # Created by: Mikhail T. <michael@fun-box.ru>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-DateTime
 PORTVERSION=	0.03

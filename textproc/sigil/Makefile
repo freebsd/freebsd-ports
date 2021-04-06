@@ -1,5 +1,4 @@
 # Created by: Jonathan Chen <jonc@chen.org.nz>
-# $FreeBSD$
 
 PORTNAME=	sigil
 PORTVERSION=	1.5.1

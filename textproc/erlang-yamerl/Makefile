@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yamerl
 PORTVERSION=	0.7.0

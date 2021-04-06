@@ -1,5 +1,4 @@
 # Created by: Dave McKay <dave@mu.org>
-# $FreeBSD$
 
 PORTNAME=	seahorse
 PORTVERSION=	3.36.2

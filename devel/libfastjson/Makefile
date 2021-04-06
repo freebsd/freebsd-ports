@@ -1,5 +1,4 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libfastjson
 PORTVERSION=	0.99.9

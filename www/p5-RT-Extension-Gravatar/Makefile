@@ -1,5 +1,4 @@
 # Created by: Michael Schout <mschout@gkg.net>
-# $FreeBSD$
 
 PORTNAME=	RT-Extension-Gravatar
 PORTVERSION=	2.01

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	knock
 DISTVERSION=	4.1.0-27

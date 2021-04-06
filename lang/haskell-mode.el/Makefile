@@ -1,5 +1,4 @@
 # Created by: Josh Elsasser <jre@vineyard.net>
-# $FreeBSD$
 
 PORTNAME=	haskell-mode
 DISTVERSIONPREFIX=v

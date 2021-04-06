@@ -1,5 +1,4 @@
 # Created by: Baptiste Grenier <gwarf@gwarf.org>
-# $FreeBSD$
 
 PORTNAME=	pydf
 PORTVERSION=	12

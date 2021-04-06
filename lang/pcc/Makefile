@@ -1,5 +1,4 @@
 # Created by: David O'Brien <obrien@NUXI.org>
-# $FreeBSD$
 
 PORTNAME=	pcc
 PORTVERSION=	1.1.0

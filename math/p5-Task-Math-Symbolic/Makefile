@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Task-Math-Symbolic
 PORTVERSION=	1.01

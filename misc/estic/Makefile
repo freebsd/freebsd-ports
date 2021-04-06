@@ -1,5 +1,4 @@
 # Created by: Julian Stacey <jhs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=		estic
 PORTVERSION=		1.61

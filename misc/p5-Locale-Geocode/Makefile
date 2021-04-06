@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Locale-Geocode
 PORTVERSION=	1.20

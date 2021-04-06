@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Flask-Cors
 PORTVERSION=	3.0.8

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Fixture-DBI
 PORTVERSION=	0.09

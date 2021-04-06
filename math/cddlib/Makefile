@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cddlib
 PORTVERSION=	0.94l

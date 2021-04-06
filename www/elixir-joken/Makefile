@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	joken
 PORTVERSION=	2.3.0

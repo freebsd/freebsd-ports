@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jsonpickle
 DISTVERSION=	2.0.0

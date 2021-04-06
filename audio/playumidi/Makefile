@@ -1,5 +1,4 @@
 # Created by: Koine Yuusuke(koinec) <koinec@users.osdn.me>
-# $FreeBSD$
 
 PORTNAME=		playumidi
 PORTVERSION=		0.8.3

@@ -1,5 +1,4 @@
 # Created by: Lung-Pin Chang <changlp@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	dropbox-api-command
 PORTVERSION=	2.13

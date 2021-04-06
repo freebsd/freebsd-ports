@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cppi
 PORTVERSION=	1.18

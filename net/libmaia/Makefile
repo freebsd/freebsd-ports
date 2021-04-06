@@ -1,5 +1,4 @@
 # Created by: Pawel Pekala <pawel@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libmaia
 DISTVERSIONPREFIX=	v

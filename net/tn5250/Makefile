@@ -1,5 +1,4 @@
 # Created by: Elias Mandouvalos <ocean@compulink.gr>
-# $FreeBSD$
 
 PORTNAME=	tn5250
 PORTVERSION=	0.17.4

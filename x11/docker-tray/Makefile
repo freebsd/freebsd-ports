@@ -1,5 +1,4 @@
 # Created by: Samy Al Bahra <samy@kerneled.org>
-# $FreeBSD$
 
 PORTNAME=	docker
 PORTVERSION=	1.5

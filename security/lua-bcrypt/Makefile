@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bcrypt
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Roy Boerner
-# $FreeBSD$
 
 PORTNAME=	squirrel-sql
 PORTVERSION=	4.1.0

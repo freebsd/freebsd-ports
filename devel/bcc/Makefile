@@ -1,5 +1,4 @@
 # Created by: joerg
-# $FreeBSD$
 
 PORTNAME=	bcc
 PORTVERSION=	1995.03.12

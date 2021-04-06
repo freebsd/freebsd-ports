@@ -1,5 +1,4 @@
 # Created by: Filippo Natali <filippo@widestore.net>
-# $FreeBSD$
 
 PORTNAME=	mx4j
 PORTVERSION=	3.0.2

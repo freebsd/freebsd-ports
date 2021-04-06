@@ -1,5 +1,4 @@
 # Created by: Daniel Roethlisberger <daniel@roe.ch>
-# $FreeBSD$
 
 PORTNAME=	libspf
 DISTVERSION=	1.0.0-p5

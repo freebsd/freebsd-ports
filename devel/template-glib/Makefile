@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	template-glib
 PORTVERSION=	3.34.0

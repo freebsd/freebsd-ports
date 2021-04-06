@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gtfparse
 DISTVERSION=	1.2.1

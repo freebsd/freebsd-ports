@@ -1,5 +1,4 @@
 # Created by: Alejandro Pulver <alejandro@varnet.biz>
-# $FreeBSD$
 
 PORTNAME=	exhaust
 PORTVERSION=	1.9.2

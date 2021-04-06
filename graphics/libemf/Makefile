@@ -1,5 +1,4 @@
 # Created by: NAKATA Maho <maho@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libEMF
 PORTVERSION=	1.0.7

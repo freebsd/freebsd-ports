@@ -1,5 +1,4 @@
 # Created by: Tomoyuki Sakurai <cherry@trombik.org>
-# $FreeBSD$
 
 PORTNAME=	Class-Component
 PORTVERSION=	0.17

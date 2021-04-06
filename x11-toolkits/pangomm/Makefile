@@ -1,5 +1,4 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pangomm
 PORTVERSION=	2.40.1

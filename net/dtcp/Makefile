@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dtcp
 PORTVERSION=	20130602

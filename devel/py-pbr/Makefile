@@ -1,5 +1,4 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pbr
 PORTVERSION=	5.5.0

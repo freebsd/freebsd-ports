@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ansiweather
 PORTVERSION=	1.17.0

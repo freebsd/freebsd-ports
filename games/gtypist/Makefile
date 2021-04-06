@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gtypist
 PORTVERSION=	2.9.5

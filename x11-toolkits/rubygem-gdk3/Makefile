@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gdk3
 PORTVERSION=	3.4.3

@@ -1,5 +1,4 @@
 # Created by: bf@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	cblas
 PORTVERSION=	1.0

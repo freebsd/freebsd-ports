@@ -1,5 +1,4 @@
 # Created by: rpsfa@rit.edu
-# $FreeBSD$
 
 PORTNAME=	pdfkit
 PORTVERSION=	0.8.2

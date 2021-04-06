@@ -1,5 +1,4 @@
 # Created by: antoine@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	sortedcontainers
 PORTVERSION=	2.3.0

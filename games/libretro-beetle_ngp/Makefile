@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-beetle_ngp
 PORTVERSION=	0.20210214

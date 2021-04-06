@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	portfmt
 DISTVERSION=	g20210321

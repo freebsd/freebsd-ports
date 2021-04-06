@@ -1,5 +1,4 @@
 # Created by: elbarto
-# $FreeBSD$
 
 PORTNAME=	higan
 PORTVERSION=	106

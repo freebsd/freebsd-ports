@@ -1,5 +1,4 @@
 # Created by: Jov <amutu@amutu.com>
-# $FreeBSD$
 
 PORTNAME=	dnsforwarder
 PORTVERSION=	6.1.15

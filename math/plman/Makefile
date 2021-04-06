@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale <nivit@email.it>
-# $FreeBSD$
 
 PORTNAME=	plman
 PORTVERSION=	2.5.1

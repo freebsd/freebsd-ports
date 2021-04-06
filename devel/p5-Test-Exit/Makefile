@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Exit
 PORTVERSION=	0.11

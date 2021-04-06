@@ -1,5 +1,4 @@
 # Created by: mainland@apeiron.net
-# $FreeBSD$
 
 PORTNAME=	lhs2tex
 PORTVERSION=	1.24

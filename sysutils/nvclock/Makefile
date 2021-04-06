@@ -1,5 +1,4 @@
 # Created by: Samy Al Bahra <samy@kerneled.com>
-# $FreeBSD$
 
 PORTNAME=	nvclock
 DISTVERSION=	0.8b4

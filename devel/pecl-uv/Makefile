@@ -1,5 +1,4 @@
 # Created by: John Chen <johnpupu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	uv
 PORTVERSION=	0.2.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	textX
 PORTVERSION=	2.3.0

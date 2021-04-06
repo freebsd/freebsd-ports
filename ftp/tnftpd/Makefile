@@ -1,5 +1,4 @@
 # Created by: ports
-# $FreeBSD$
 
 PORTNAME=	tnftpd
 PORTVERSION=	20200704

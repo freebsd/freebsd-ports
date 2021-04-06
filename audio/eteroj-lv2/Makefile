@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	eteroj
 DISTVERSION=	0.8.0

@@ -1,5 +1,4 @@
 # Created by: Simun Mikecin <numisemis@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	Image_Canvas
 PORTVERSION=	0.3.2

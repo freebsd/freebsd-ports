@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DateTime-Functions
 PORTVERSION=	0.13

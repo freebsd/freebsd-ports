@@ -1,5 +1,4 @@
 # Created by: Edwin Mons
-# $FreeBSD$
 
 PORTNAME=	trojka
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: nox@jelal.kn-bremen.de
-# $FreeBSD$
 
 PORTNAME=	gramofile
 PORTVERSION=	1.6P

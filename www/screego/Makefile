@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	screego
 DISTVERSIONPREFIX=	v

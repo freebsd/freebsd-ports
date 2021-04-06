@@ -1,5 +1,4 @@
 # Created by: Michael Beer <beerml@sigma6audio.de>
-# $FreeBSD$
 
 PORTNAME=	lv2
 PORTVERSION=	1.18.2

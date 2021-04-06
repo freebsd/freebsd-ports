@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	ccid
 PORTVERSION=	1.4.32

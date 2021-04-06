@@ -1,5 +1,4 @@
 # Created by: kungfuftr <scott@surreytech.co.uk>
-# $FreeBSD$
 
 PORTNAME=	SOAP-Data-Builder
 PORTVERSION=	1

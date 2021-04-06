@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webhook
 PORTVERSION=	2.8.0

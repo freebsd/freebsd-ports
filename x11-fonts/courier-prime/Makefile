@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	courier-prime
 PORTVERSION=	g20180831

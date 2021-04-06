@@ -1,5 +1,4 @@
 # Created by: Daniel Roethlisberger <daniel@roe.ch>
-# $FreeBSD$
 
 PORTNAME=	git
 PORTVERSION=	1.7.0

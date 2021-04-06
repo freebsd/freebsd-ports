@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	parsedatetime
 PORTVERSION=	2.6

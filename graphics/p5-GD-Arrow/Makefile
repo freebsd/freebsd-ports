@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	GD-Arrow
 PORTVERSION=	0.01

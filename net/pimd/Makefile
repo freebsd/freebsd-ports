@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pimd
 PORTVERSION=	2.3.2

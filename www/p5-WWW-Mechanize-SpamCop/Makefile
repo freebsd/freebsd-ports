@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-SpamCop
 PORTVERSION=	0.08

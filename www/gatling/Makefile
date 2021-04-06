@@ -1,5 +1,4 @@
 # Created by: Thomas-Martin Seck <tmseck@netcologne.de>
-# $FreeBSD$
 
 PORTNAME=	gatling
 PORTVERSION=	0.15

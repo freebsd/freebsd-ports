@@ -1,5 +1,4 @@
 # Created by: David Sze <dsze@alumni.uwaterloo.ca>
-# $FreeBSD$
 
 PORTNAME=	rl
 PORTVERSION=	0.2.7

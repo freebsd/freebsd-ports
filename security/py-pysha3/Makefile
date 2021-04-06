@@ -1,5 +1,4 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pysha3
 DISTVERSION=	1.0.2

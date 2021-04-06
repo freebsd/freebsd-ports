@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	znc-push
 DISTVERSIONPREFIX=	v

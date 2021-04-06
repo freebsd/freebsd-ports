@@ -1,5 +1,4 @@
 # Created by: Peter Pentchev <roam@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	wmanager-addons
 PORTVERSION=	0.02

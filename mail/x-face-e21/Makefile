@@ -1,5 +1,4 @@
 # Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	x-face-e21
 PORTVERSION=	20070306

@@ -1,5 +1,4 @@
 # Created by: Mons Anderson <mons@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	ex-lib
 PORTVERSION=	0.90

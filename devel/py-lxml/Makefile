@@ -1,5 +1,4 @@
 # Created by: Robert Gogolok <gogo@cs.uni-sb.de>
-# $FreeBSD$
 
 PORTNAME=	lxml
 PORTVERSION=	4.6.3

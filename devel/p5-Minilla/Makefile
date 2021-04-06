@@ -1,5 +1,4 @@
 # Created by: Serguei Okladnikov <oklaspec@gmail.com>
-# $FreeBSD$
 # Date created: 2015-05-28
 
 PORTNAME=	Minilla

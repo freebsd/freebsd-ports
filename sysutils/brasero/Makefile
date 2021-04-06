@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	brasero
 PORTVERSION=	3.12.2

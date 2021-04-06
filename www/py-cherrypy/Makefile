@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale	<nivit@email.it>
-# $FreeBSD$
 
 PORTNAME=	cherrypy
 PORTVERSION=	17.4.2

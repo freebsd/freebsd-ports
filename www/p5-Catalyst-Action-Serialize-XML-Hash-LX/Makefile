@@ -1,5 +1,4 @@
 # Created by: Anes Mukhametov <anes@anes.su>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Action-Serialize-XML-Hash-LX
 PORTVERSION=	0.06

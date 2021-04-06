@@ -1,5 +1,4 @@
 # Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-# $FreeBSD$
 
 PORTNAME=	qmail-remove
 PORTVERSION=	0.95

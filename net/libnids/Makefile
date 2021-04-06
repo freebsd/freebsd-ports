@@ -1,5 +1,4 @@
 # Created by: kris@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	libnids
 PORTVERSION=	1.24

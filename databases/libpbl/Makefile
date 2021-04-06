@@ -1,5 +1,4 @@
 # Created by: Zach Thompson <hideo@lastamericanempire.com>
-# $FreeBSD$
 
 PORTNAME=	libpbl
 PORTVERSION=	1.04.04

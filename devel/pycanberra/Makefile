@@ -1,5 +1,4 @@
 # Created by: blubee <hello@blubee.me>
-# $FreeBSD$
 
 PORTNAME=	pycanberra
 DISTVERSION=	1

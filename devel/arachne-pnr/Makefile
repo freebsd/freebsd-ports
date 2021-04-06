@@ -1,5 +1,4 @@
 # Created by: Johnny Sorocil <jsorocil@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	arachne-pnr
 PORTVERSION=	g20181021

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gcem
 DISTVERSIONPREFIX=	v

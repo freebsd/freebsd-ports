@@ -1,5 +1,4 @@
 # Created by: janos.mohacsi@bsd.hu
-# $FreeBSD$
 
 PORTNAME=	findmtu
 PORTVERSION=	0.9

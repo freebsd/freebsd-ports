@@ -1,5 +1,4 @@
 # Created by: Parv <parv@pair.org>
-# $FreeBSD$
 
 PORTNAME=	Data-Swap
 PORTVERSION=	0.08

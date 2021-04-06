@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pybind11
 DISTVERSIONPREFIX=	v

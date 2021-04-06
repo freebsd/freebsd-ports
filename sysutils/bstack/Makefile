@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bstack
 PORTVERSION=	0.1

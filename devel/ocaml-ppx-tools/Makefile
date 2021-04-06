@@ -1,5 +1,4 @@
 # Created by: Michael Grünewald <michipili@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ppx-tools
 PORTVERSION=	5.0

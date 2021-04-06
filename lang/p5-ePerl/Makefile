@@ -1,5 +1,4 @@
 # Created by: Ralf S. Engelschall <rse@engelschall.com>
-# $FreeBSD$
 
 PORTNAME=	eperl
 PORTVERSION=	2.2.14

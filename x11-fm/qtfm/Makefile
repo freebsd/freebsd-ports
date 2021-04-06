@@ -1,5 +1,4 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	qtfm
 PORTVERSION=	6.2.0

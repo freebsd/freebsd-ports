@@ -1,5 +1,4 @@
 # Created by: James Raftery <james@now.ie>
-# $FreeBSD$
 
 PORTNAME=	Net-QMTP
 PORTVERSION=	0.06

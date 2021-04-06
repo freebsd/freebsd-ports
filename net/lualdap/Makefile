@@ -1,5 +1,4 @@
 # Created by: Piotr Florczyk <pf@itwf.pl>
-# $FreeBSD$
 
 PORTNAME=	lualdap
 PORTVERSION=	1.2.5

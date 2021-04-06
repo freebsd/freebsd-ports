@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-storages
 PORTVERSION=	1.9.1

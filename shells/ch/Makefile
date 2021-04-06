@@ -1,5 +1,4 @@
 # Created by: conrads@cox.net
-# $FreeBSD$
 
 PORTNAME=	ch
 PORTVERSION=	7.0.0

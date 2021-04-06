@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Crypt-Passwd-XS
 PORTVERSION=	0.601

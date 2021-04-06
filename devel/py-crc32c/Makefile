@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	crc32c
 PORTVERSION=	2.2

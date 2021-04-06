@@ -1,5 +1,4 @@
 # Created by: asaddi@philosophysw.com
-# $FreeBSD$
 
 PORTNAME=	newsfish
 PORTVERSION=	1.2.6

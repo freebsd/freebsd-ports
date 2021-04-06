@@ -1,5 +1,4 @@
 # Created by: John Chen <johnpupu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	event
 PORTVERSION=	3.0.2

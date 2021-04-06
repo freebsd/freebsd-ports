@@ -1,5 +1,4 @@
 # Created by: ehaupt@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	ipcalc
 PORTVERSION=	1.99.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pchecker
 PORTVERSION=	1.25

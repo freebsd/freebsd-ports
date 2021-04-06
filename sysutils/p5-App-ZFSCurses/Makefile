@@ -1,5 +1,4 @@
 # Created by: Patrice Clement <monsieurp@gentoo.org
-# $FreeBSD$
 
 PORTNAME=	App-ZFSCurses
 PORTVERSION=	1.212

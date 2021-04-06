@@ -1,5 +1,4 @@
 # Created by: Devon H. O'Dell <devon.odell@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	go
 PORTVERSION?=	1.16.2

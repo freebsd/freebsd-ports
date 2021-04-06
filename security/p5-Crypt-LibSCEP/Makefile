@@ -1,5 +1,4 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Crypt-LibSCEP
 PORTVERSION=	0.08

@@ -1,5 +1,4 @@
 # Created by: David Kalliecharan <dave@dal.ca>
-# $FreeBSD$
 
 PORTNAME=	astor
 PORTVERSION=	0.8.1

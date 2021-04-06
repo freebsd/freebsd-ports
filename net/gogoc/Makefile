@@ -1,5 +1,4 @@
 # Created by: Tomaž Muraus <kami@k5-storitve.net>
-# $FreeBSD$
 
 PORTNAME=	gogoc
 PORTVERSION=	1.2

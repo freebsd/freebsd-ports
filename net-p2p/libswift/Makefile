@@ -1,5 +1,4 @@
 # Created by: Dave Cottlehuber <dch@skunkwerks.at>
-# $FreeBSD$
 
 PORTNAME=		libswift
 PORTVERSION=		20190302

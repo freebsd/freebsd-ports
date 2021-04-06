@@ -1,5 +1,4 @@
 # Created by: Rozhuk Ivan 2018 <rozhuk.im@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	peripheral.joystick
 DISTVERSION=	1.7.1

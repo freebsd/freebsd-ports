@@ -1,5 +1,4 @@
 # Created by: Dominik Rothert <dr@domix.de>
-# $FreeBSD$
 
 PORTNAME=	wmakerconf
 PORTVERSION=	2.12

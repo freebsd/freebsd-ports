@@ -1,5 +1,4 @@
 # Created by: Norikatsu Shigemura <nork@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gsynaptics
 PORTVERSION=	0.9.16

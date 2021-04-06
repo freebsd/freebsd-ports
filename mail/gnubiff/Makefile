@@ -1,5 +1,4 @@
 # Created by: Tim Bishop <tim@bishnet.net>
-# $FreeBSD$
 
 PORTNAME=	gnubiff
 PORTVERSION=	2.2.13

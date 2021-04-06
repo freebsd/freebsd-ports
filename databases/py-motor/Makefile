@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <mitya@yandex-team.ru>
-# $FreeBSD$
 
 PORTNAME=	motor
 PORTVERSION=	1.0

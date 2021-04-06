@@ -1,5 +1,4 @@
 # Created by: Cezary Morga <cm@therek.net>
-# $FreeBSD$
 
 PORTNAME=	Module-Math-Depends
 PORTVERSION=	0.02

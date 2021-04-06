@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vte
 PORTVERSION=	3.4.3

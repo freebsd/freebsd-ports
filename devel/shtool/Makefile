@@ -1,5 +1,4 @@
 # Created by: Ralf S. Engelschall
-# $FreeBSD$
 
 PORTNAME=	shtool
 PORTVERSION=	2.0.8

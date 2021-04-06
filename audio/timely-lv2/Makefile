@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	timely
 DISTVERSION=	g20190412

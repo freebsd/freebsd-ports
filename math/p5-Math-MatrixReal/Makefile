@@ -1,5 +1,4 @@
 # Created by: Sander Vesik <sander@haldjas.folklore.ee>
-# $FreeBSD$
 
 PORTNAME=	Math-MatrixReal
 PORTVERSION=	2.13

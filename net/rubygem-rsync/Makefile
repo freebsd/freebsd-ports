@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rsync
 PORTVERSION=	1.0.9

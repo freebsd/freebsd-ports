@@ -1,5 +1,4 @@
 # Created by: Patrick Li <pat@databits.net> et al
-# $FreeBSD$
 
 PORTNAME=	wmtimer
 PORTVERSION=	2.92

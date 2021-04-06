@@ -1,5 +1,4 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
-# $FreeBSD$
 
 ###########################################################################
 # This makefile was contributed by Marius Strobl.

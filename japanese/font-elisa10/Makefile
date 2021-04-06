@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	elisa10
 PORTVERSION=	1.0

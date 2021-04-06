@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_DEFAULT}

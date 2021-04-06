@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cppurses
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Christian Lackas
-# $FreeBSD$
 
 PORTNAME=	vpnc
 PORTVERSION=	0.5.3

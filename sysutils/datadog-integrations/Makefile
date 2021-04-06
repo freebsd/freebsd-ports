@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	datadog-integrations
 DISTVERSION=	7.24.0

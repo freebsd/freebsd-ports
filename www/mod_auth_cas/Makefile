@@ -1,5 +1,4 @@
 # Created by: Kimo <kimor79@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	mod_auth_cas
 PORTVERSION=	1.2

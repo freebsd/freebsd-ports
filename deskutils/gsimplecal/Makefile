@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gsimplecal
 PORTVERSION=	2.2

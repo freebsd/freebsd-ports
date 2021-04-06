@@ -1,5 +1,4 @@
 # Created by: Janos.Mohacsi@bsd.hu
-# $FreeBSD$
 
 PORTNAME=	rancid
 PORTVERSION=	3.13

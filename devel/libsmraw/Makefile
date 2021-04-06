@@ -1,5 +1,4 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libsmraw
 DISTVERSION=	alpha-20201210

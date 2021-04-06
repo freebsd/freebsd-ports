@@ -1,5 +1,4 @@
 # Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Agda
 PORTVERSION=	2.6.1.3

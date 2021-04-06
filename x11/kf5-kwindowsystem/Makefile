@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kwindowsystem
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

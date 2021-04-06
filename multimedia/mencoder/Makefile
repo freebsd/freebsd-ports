@@ -1,5 +1,4 @@
 # Created by: Thomas E. Zander
-# $FreeBSD$
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}

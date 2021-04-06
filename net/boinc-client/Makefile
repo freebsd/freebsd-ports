@@ -1,5 +1,4 @@
 # Created by: J.R. Oldroyd <fbsd@opal.com>
-# $FreeBSD$
 
 PORTNAME=	boinc-client
 PORTVERSION=	7.8.6

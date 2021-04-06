@@ -1,5 +1,4 @@
 # Created by: Amar Takhar <verm@drunkmonk.net>
-# $FreeBSD$
 
 PORTNAME=	fastresolve
 PORTVERSION=	2.10

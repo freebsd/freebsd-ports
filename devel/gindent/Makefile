@@ -1,5 +1,4 @@
 # Created by: Kapil Chowksey <kchowksey@hss.hns.com>
-# $FreeBSD$
 
 PORTNAME=	gindent
 DISTVERSION=	2.2.12

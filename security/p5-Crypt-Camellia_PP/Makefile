@@ -1,5 +1,4 @@
 # Created by: Yoshisato YANAGISAWA
-# $FreeBSD$
 
 PORTNAME=	Crypt-Camellia_PP
 PORTVERSION=	0.02

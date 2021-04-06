@@ -1,5 +1,4 @@
 # Created by: Sebastien gioria <gioria@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Msgcat
 PORTVERSION=	1.03

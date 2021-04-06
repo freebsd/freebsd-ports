@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kquickcharts
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

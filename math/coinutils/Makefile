@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CoinUtils
 DISTVERSION=	2.11.4

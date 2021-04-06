@@ -1,5 +1,4 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	fastICA
 DISTVERSION=	1.2-1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ansible-iocage
 DISTVERSION=	g20200327

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libgav1
 DISTVERSIONPREFIX=	v

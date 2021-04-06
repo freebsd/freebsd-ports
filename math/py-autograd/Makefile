@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	autograd
 DISTVERSION=	1.3

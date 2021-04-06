@@ -1,5 +1,4 @@
 # Created by: Michael Neumann <mneumann@ntecs.de>
-# $FreeBSD$
 
 PORTNAME=	hatari
 PORTVERSION=	2.2.1

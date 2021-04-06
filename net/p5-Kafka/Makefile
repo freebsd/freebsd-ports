@@ -1,5 +1,4 @@
 # Created by: gebhart@secnetix.de
-# $FreeBSD$
 
 PORTNAME=	Kafka
 PORTVERSION=	0.8010

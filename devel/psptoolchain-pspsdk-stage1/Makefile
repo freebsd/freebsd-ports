@@ -1,5 +1,4 @@
 # Created by: Tassilo Philipp <tphilipp@potion-studios.com>
-# $FreeBSD$
 
 PORTNAME=		pspsdk
 PORTVERSION=		20111215

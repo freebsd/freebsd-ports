@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	abyss
 DISTVERSION=	2.2.5

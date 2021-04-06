@@ -1,5 +1,4 @@
 # Created by: vanilla@
-# $FreeBSD$
 
 PORTNAME=	plv8
 PORTVERSION=	1.4.8

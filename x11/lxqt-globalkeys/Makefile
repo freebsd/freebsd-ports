@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lxqt-globalkeys
 PORTVERSION=	0.16.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hledger-ui
 DISTVERSION=	1.19

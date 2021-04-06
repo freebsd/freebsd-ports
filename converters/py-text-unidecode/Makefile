@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	text-unidecode
 DISTVERSION=	1.3

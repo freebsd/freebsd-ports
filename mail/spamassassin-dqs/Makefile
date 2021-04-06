@@ -1,5 +1,4 @@
 # Created by: Larry Rosenman <ler@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=		spamassassin-dqs
 DISTVERSIONPREFIX=	v

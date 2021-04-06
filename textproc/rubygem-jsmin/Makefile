@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jsmin
 PORTVERSION=	1.0.1

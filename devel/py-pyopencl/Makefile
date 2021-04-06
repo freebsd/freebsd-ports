@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyopencl
 PORTVERSION=	2018.2

@@ -1,5 +1,4 @@
 # Created by: Shinsuke Matsui <smatsui@karashi.org>
-# $FreeBSD$
 
 PORTNAME=	HTML-Entities-ImodePictogram
 PORTVERSION=	0.06

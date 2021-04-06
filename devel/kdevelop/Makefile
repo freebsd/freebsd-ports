@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # When updating this port, also chase
 #  devel/kdev-php

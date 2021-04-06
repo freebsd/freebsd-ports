@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	upt-freebsd
 DISTVERSION=	0.3

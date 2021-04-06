@@ -1,5 +1,4 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sphinx
 PORTVERSION=	3.5.2

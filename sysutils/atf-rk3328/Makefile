@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../atf-master
 

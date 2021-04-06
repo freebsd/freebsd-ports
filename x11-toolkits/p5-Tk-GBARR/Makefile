@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	Tk-GBARR
 PORTVERSION=	2.08

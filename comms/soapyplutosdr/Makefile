@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SoapyPlutoSDR
 DISTVERSIONPREFIX=	soapy-plutosdr-

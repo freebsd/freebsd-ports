@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ultralist
 DISTVERSION=	1.7.0

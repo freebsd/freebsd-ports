@@ -1,5 +1,4 @@
 # Created by: janos.mohacsi@bsd.hu
-# $FreeBSD$
 
 PORTNAME=	jdictionary-eng-hun
 PORTVERSION=	1.4

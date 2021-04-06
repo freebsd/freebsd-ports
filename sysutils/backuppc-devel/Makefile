@@ -1,5 +1,4 @@
 # Created by: Alexander Moisseev <moiseev@mezonplus.ru>
-# $FreeBSD$
 
 PORTNAME=	backuppc
 DISTVERSION=	4.3.3.20200531

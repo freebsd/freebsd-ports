@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Validation-Class
 PORTVERSION=	7.900056

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	durden
 DISTVERSION=	0.6.1

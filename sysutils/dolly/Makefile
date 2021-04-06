@@ -1,5 +1,4 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dolly
 DISTVERSION=	0.58C

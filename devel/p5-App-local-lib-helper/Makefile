@@ -1,5 +1,4 @@
 # Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-# $FreeBSD$
 
 PORTNAME=	App-local-lib-helper
 PORTVERSION=	0.07

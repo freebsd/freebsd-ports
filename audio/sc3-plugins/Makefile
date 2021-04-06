@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sc3-plugins
 DISTVERSIONPREFIX=	Version-

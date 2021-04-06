@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-redis
 PORTVERSION=	4.12.1

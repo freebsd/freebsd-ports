@@ -1,5 +1,4 @@
 # Created by: Greg Larkin <glarkin@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	right_gogrid
 PORTVERSION=	0.1.0

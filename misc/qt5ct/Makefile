@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qt5ct
 DISTVERSION=	1.1

@@ -1,5 +1,4 @@
 # Created by: John McAree <john@mcaree.org>
-# $FreeBSD$
 
 PORTNAME=	comical
 PORTVERSION=	0.8

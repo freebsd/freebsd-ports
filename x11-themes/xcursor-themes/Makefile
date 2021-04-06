@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xcursor-themes
 PORTVERSION=	1.0.6

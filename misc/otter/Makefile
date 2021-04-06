@@ -1,5 +1,4 @@
 # Created by: Garrett Wollman <wollman@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	otter
 PORTVERSION=	3.3f

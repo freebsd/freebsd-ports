@@ -1,5 +1,4 @@
 # Created by: Stefan Esser
-# $FreeBSD$
 
 PORTNAME=	fusefs-libs3
 DISTVERSION=	3.10.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-iotcentral
 PORTVERSION=	4.1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Dump
 PORTVERSION=	1.23

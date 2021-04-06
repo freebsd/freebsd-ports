@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bibutils
 PORTVERSION=	6.10

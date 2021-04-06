@@ -1,5 +1,4 @@
 # Created by: Franz Bettag <franz@bett.ag>
-# $FreeBSD$
 
 PORTNAME=	stud
 PORTVERSION=	0.4

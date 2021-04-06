@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine <gerrit.beine@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	wetteronline
 PORTVERSION=	0.1

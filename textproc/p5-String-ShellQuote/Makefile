@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@tobez.org>
-# $FreeBSD$
 
 PORTNAME=	String-ShellQuote
 PORTVERSION=	1.04

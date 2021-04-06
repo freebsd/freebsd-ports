@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	latte
 DISTVERSIONPREFIX=	v

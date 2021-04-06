@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Horde_Compress
 PORTVERSION=	2.2.3

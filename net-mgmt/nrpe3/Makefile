@@ -1,5 +1,4 @@
 # Created by: Paul Dlug<paul@nerdlabs.com>
-# $FreeBSD$
 
 PORTNAME=	nrpe
 PORTVERSION=	3.2.1

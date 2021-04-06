@@ -1,5 +1,4 @@
 # Created by: Yoichi NAKAYAMA <yoichi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tramp
 PORTVERSION=	2.3.0

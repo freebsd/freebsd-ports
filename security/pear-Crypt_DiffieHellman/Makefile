@@ -1,5 +1,4 @@
 # Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-# $FreeBSD$
 
 PORTNAME=	Crypt_DiffieHellman
 PORTVERSION=	0.2.6

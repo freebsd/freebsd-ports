@@ -1,5 +1,4 @@
 # Created by: jkh
-# $FreeBSD$
 
 PORTNAME=	python
 PORTVERSION=	${PYTHON_DEFAULT}

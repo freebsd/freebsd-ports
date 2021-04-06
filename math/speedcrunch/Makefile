@@ -1,5 +1,4 @@
 # Created by: Yinghong.Liu <relaxbsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	speedcrunch
 PORTVERSION=	0.12.0	# XXX: should really be 0.12, change upon next update

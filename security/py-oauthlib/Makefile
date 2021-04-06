@@ -1,5 +1,4 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	oauthlib
 PORTVERSION=	1.1.2

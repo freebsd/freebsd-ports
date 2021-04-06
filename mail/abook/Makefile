@@ -1,5 +1,4 @@
 # Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	abook
 PORTVERSION=	0.6.1

@@ -1,5 +1,4 @@
 # Created by: eivind
-# $FreeBSD$
 
 PORTNAME=	etcmerge
 PORTVERSION=	0.4

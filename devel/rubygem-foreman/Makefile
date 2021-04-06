@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	foreman
 PORTVERSION=	0.87.2

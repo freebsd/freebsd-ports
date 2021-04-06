@@ -1,5 +1,4 @@
 # Created by: Mark Murray <markm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ufraw
 PORTVERSION=	0.22

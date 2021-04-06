@@ -1,5 +1,4 @@
 # Created by: William Grzybowski <william88@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	inadyn-mt
 PORTVERSION=	02.28.10

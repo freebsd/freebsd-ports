@@ -1,5 +1,4 @@
 # Created by: Pietro Cerutti <gahr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gdcm
 PORTVERSION=	${GDCM_MAJOR}.${GDCM_MINOR}.${GDCM_PATCH}

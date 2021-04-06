@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME=	libreoffice
 PORTVERSION=	6.4.7
 CATEGORIES+=	editors

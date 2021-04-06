@@ -1,5 +1,4 @@
 # Created by: Zach Thompson <lin-chi@lastamericanempire.com>
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Server-HTTP
 PORTVERSION=	0.09

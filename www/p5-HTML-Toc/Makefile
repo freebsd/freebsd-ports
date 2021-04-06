@@ -1,5 +1,4 @@
 # Created by: Alex Deiter <Alex.Deiter@Gmail.COM>
-# $FreeBSD$
 
 PORTNAME=	HTML-Toc
 PORTVERSION=	1.12

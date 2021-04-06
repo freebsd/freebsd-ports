@@ -1,5 +1,4 @@
 # Created by: Michael Moll <kvedulv@kvedulv.de>
-# $FreeBSD$
 
 PORTNAME=	clamp
 PORTVERSION=	1.1.2

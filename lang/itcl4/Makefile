@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	itcl4
 PORTVERSION=	4.2.0

@@ -1,5 +1,4 @@
 # Created by: Meno Abels <meno.abels@adviser.com>
-# $FreeBSD$
 
 PORTNAME=	fakeroot
 PORTVERSION=	1.23

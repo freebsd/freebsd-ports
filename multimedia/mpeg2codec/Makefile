@@ -1,5 +1,4 @@
 # Created by: Philippe Charnier <charnier@lirmm.fr>
-# $FreeBSD$
 
 PORTNAME=	mpeg2codec
 PORTVERSION=	1.2

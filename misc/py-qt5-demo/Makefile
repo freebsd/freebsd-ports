@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	demo
 PORTVERSION=	${PYQT5_VERSION}

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-Loader
 PORTVERSION=	0.34

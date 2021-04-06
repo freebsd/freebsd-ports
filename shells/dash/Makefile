@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dash
 PORTVERSION=	0.5.10.2

@@ -1,5 +1,4 @@
 # Created by: dglo@ssec.wisc.edu
-# $FreeBSD$
 
 PORTNAME=	nslint
 PORTVERSION=	3.1

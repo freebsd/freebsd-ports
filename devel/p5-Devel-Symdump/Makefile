@@ -1,5 +1,4 @@
 # Created by: James FitzGibbon <jfitz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Devel-Symdump
 PORTVERSION=	2.1800

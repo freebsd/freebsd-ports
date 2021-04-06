@@ -1,5 +1,4 @@
 # Created by: lx@redundancy.redundancy.org
-# $FreeBSD$
 
 PORTNAME=	minirsyslogd
 PORTVERSION=	1.02

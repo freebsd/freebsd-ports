@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Kvantum
 DISTVERSIONPREFIX=	V

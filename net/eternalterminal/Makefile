@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	eternalterminal
 DISTVERSIONPREFIX=	et-v

@@ -1,5 +1,4 @@
 # Created by: Cezary Morga <cm@therek.net>
-# $FreeBSD$
 
 PORTNAME=	Format-Human-Bytes
 PORTVERSION=	0.06

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	compiler-rt
 DISTVERSION=	11.0.1

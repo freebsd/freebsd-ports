@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xkbevd
 PORTVERSION=	1.1.4

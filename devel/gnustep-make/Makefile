@@ -1,5 +1,4 @@
 # Created by: Thomas Gellekum <tg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gnustep-make
 PORTVERSION=	2.8.0

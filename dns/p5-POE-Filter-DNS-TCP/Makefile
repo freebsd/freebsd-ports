@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	POE-Filter-DNS-TCP
 PORTVERSION=	0.06

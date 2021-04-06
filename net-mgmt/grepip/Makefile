@@ -1,5 +1,4 @@
 # Created by: Serge Maslov <serge@maslov.biz>
-# $FreeBSD$
 
 PORTNAME=	grepip
 PORTVERSION=	1.0

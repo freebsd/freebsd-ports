@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	devilutionX
 PORTVERSION=	1.1.0

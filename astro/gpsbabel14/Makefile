@@ -1,5 +1,4 @@
 # Created by: Laurent Courty
-# $FreeBSD$
 
 PORTNAME=	gpsbabel
 PORTVERSION=	1.4.4

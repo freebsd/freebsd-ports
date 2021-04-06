@@ -1,5 +1,4 @@
 # Created by: trasz <trasz@pin.if.uz.zgora.pl>
-# $FreeBSD$
 
 PORTNAME=	jack-keyboard
 DISTVERSION=	2.7.2

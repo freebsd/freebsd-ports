@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	launchy
 PORTVERSION=	2.2.0

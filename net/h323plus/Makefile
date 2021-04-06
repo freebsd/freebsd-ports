@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	h323plus
 DISTVERSIONPREFIX=      v

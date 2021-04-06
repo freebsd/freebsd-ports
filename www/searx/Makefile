@@ -1,5 +1,4 @@
 # Created by: Loic Blot <loic.blot@unix-experience.fr>
-# $FreeBSD$
 
 PORTNAME=	searx
 DISTVERSIONPREFIX=	v

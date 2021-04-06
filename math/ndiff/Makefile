@@ -1,5 +1,4 @@
 # Created by: Stefan A. Deutscher (sad@mailaps.org)
-# $FreeBSD$
 
 PORTNAME=	ndiff
 PORTVERSION=	2.00

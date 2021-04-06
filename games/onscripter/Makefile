@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	onscripter
 PORTVERSION=	20200722

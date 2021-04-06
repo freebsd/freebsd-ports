@@ -1,5 +1,4 @@
 # Created by: Anders Nordby <anders@fix.no>
-# $FreeBSD$
 
 PORTNAME=	nbsmtp
 PORTVERSION=	1.00

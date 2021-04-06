@@ -1,5 +1,4 @@
 # Created by: Jean-Sebastien Roy <js@jeannot.org>
-# $FreeBSD$
 
 PORTNAME=	xtexsh
 DISTVERSION=	1.4-2

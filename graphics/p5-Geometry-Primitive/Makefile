@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Geometry-Primitive
 PORTVERSION=	0.24

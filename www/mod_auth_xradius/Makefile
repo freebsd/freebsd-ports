@@ -1,5 +1,4 @@
 # Created by: mwlucas
-# $FreeBSD$
 
 PORTNAME=	mod_auth_xradius
 PORTVERSION=	0.4.6

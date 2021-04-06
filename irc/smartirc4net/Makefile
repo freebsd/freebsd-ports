@@ -1,5 +1,4 @@
 # Created by: Romain Tartiere <romain@blogreen.org>
-# $FreeBSD$
 
 PORTNAME=	smartirc4net
 PORTVERSION=	1.1

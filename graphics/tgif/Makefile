@@ -1,5 +1,4 @@
 # Created by: bmc@WillsCreek.COM
-# $FreeBSD$
 
 PORTNAME=	tgif
 PORTVERSION=	4.2.5

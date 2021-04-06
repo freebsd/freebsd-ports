@@ -1,5 +1,4 @@
 # Created by: ericb@thedeepsky.com
-# $FreeBSD$
 
 PORTNAME=	mp3_check
 PORTVERSION=	1.98

@@ -1,5 +1,4 @@
 # Created by: Maciek Korzen <eaquer@ceti.pl>
-# $FreeBSD$
 
 PORTNAME=	tleenx2
 PORTVERSION=	20040214

@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <dima@Chg.RU>
-# $FreeBSD$
 
 PORTNAME=	Locale-gettext
 PORTVERSION=	1.07

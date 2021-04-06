@@ -1,5 +1,4 @@
 # Created by: Alan Eldridge <alane@geeksrus.net>
-# $FreeBSD$
 
 PORTNAME=	al
 PORTVERSION=	0.9.3

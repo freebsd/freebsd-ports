@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ansible-kld
 DISTVERSION=	0.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	doas
 PORTVERSION=	6.3p4

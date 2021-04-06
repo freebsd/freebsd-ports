@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yj
 PORTVERSION=	5.0.0

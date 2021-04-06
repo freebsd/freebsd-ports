@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alsa-sndio
 DISTVERSION=	0.2

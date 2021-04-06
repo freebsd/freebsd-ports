@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dsd
 PORTVERSION=	1.6.0

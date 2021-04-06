@@ -1,5 +1,4 @@
 # Created by: Jason Helfman <jgh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jquery-rails
 PORTVERSION=	4.4.0

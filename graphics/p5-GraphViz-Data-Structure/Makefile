@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	GraphViz-Data-Structure
 PORTVERSION=	0.20

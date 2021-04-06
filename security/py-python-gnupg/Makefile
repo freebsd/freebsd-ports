@@ -1,5 +1,4 @@
 # Created by: Christer Edwards <christer.edwards@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	python-gnupg
 PORTVERSION=	0.4.5

@@ -1,5 +1,4 @@
 # Created by: lbartoletti <lbartoletti@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	librasterlite2
 PORTVERSION=	1.0.0

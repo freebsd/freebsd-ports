@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ipv6mon
 PORTVERSION=	1.0

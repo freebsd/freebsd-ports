@@ -1,5 +1,4 @@
 # Created by: Alejandro Pulver <alejandro@varnet.biz>
-# $FreeBSD$
 
 PORTNAME=	hr2
 PORTVERSION=	1.0

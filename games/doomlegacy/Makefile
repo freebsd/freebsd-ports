@@ -1,5 +1,4 @@
 # Created by: Alexander G. Chetirbock <bock@bock.nnov.ru>
-# $FreeBSD$
 
 PORTNAME=	doomlegacy
 PORTVERSION=	1.48.8

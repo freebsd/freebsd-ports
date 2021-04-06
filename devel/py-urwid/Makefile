@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang <perky@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	urwid
 PORTVERSION=	2.1.2

@@ -1,5 +1,4 @@
 # Created by: Tobias C. Berner <tcberner@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libaccounts-qt5
 DISTVERSION=	1.16

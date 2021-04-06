@@ -1,5 +1,4 @@
 # Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	HTML-ExtractMain
 PORTVERSION=	0.62

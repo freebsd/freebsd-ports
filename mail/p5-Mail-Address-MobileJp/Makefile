@@ -1,5 +1,4 @@
 # Created by: nork@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Mail-Address-MobileJp
 PORTVERSION=	0.09

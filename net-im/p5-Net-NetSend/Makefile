@@ -1,5 +1,4 @@
 # Created by: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	Net-NetSend
 PORTVERSION=	0.12

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	microsoft-gsl
 DISTVERSIONPREFIX=	v

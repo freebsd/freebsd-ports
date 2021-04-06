@@ -1,5 +1,4 @@
 # Created by: jaharkes
-# $FreeBSD$
 
 PORTNAME=	lwp
 PORTVERSION=	2.8

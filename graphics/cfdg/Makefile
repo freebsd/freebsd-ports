@@ -1,5 +1,4 @@
 # Created by: Anatoly Borodin <anatoly.borodin@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	cfdg
 PORTVERSION=	2.2.2

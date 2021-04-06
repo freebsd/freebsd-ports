@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ebview
 PORTVERSION=	0.3.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	comeonin_i18n
 PORTVERSION=	0.1.3

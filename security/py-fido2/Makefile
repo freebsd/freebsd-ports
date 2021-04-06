@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fido2
 PORTVERSION=	0.9.1

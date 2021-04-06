@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	charlock_holmes
 DISTVERSION=	0.7.7

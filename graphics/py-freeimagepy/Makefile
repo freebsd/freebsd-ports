@@ -1,5 +1,4 @@
 # Created by: Choe, Cheng-Dae
-# $FreeBSD$
 
 PORTNAME=	freeimagepy
 PORTVERSION=	2.0.1

@@ -1,5 +1,4 @@
 # Created by: Alex de Kruijff
-# $FreeBSD$
 
 PORTNAME=	samesame
 PORTVERSION=	1.10

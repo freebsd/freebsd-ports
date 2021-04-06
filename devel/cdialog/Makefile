@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cdialog
 DISTVERSION=	1.3.20201126

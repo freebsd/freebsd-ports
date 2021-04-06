@@ -1,5 +1,4 @@
 # Created by: Kris Kennaway <kris@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	OpenSSH-askpass
 PORTVERSION=	1.2.4.1

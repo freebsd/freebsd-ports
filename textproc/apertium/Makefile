@@ -1,5 +1,4 @@
 # Created by: Mykola Dzham <freebsd@levsha.org.ua>
-# $FreeBSD$
 
 PORTNAME=	apertium
 PORTVERSION=	3.6.1

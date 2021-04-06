@@ -1,5 +1,4 @@
 # Created by: Donald Burr <dburr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	atp
 PORTVERSION=	1.50

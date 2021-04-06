@@ -1,5 +1,4 @@
 # Created by: Greg Larkin <glarkin@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=		shrinksafe
 PORTVERSION=		1.9.0

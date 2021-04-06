@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Horde_Memcache
 DISTVERSION=	2.1.1

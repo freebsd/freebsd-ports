@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Graphics-ColorUtils
 PORTVERSION=	0.17

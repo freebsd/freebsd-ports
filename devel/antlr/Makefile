@@ -1,5 +1,4 @@
 # Created by: Geoffrey Mainland <mainland@apeiron.net>
-# $FreeBSD$
 
 PORTNAME=	antlr
 PORTVERSION=	2.7.7

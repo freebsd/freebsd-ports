@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chrony
 PKGNAMESUFFIX=	-lite

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	blessings
 PORTVERSION=	1.7

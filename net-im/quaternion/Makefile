@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Quaternion
 DISTVERSION=	0.0.95-beta3

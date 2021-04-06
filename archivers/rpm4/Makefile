@@ -1,5 +1,4 @@
 # Created by: Greg Lewis <glewis@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	rpm
 PORTVERSION=	4.16.1.2

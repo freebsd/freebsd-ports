@@ -1,5 +1,4 @@
 # Created by: Takumi Takahashi <takumiiinn@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	antlr3
 PORTVERSION=	3.5.2

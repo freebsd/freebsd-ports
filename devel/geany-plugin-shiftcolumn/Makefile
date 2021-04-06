@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-plugin-shiftcolumn
 PORTVERSION=	${GEANY_VER}

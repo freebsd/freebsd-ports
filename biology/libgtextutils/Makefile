@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libgtextutils
 DISTVERSION=	0.7

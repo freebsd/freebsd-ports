@@ -1,5 +1,4 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Gtk3-SimpleList
 PORTVERSION=	0.21

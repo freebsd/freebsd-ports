@@ -1,5 +1,4 @@
 # Created by: Simon Olofsson <simon@olofsson.de>
-# $FreeBSD$
 
 PORTNAME=	hub
 PORTVERSION=	2.14.2

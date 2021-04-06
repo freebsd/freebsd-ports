@@ -1,5 +1,4 @@
 # Created by: Jimmy Olgeni <olgeni@uli.it>
-# $FreeBSD$
 
 PORTNAME=	eGroupware
 PORTVERSION=	20.1.20201217

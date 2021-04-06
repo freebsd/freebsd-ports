@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kongress
 DISTVERSION=	1.0.1

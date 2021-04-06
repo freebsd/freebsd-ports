@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni <giffunip@asme.org>
-# $FreeBSD$
 
 PORTNAME=	chaco
 PORTVERSION=	2.2

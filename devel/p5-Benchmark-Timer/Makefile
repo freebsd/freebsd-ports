@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Benchmark-Timer
 PORTVERSION=	0.7112

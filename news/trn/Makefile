@@ -1,5 +1,4 @@
 # Created by: smace
-# $FreeBSD$
 
 PORTNAME=	trn
 PORTVERSION=	3.6

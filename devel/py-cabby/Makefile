@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cabby
 PORTVERSION=	0.1.20

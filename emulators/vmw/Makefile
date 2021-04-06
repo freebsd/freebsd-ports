@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vmw
 PORTVERSION=	060510

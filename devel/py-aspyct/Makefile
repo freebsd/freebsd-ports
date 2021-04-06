@@ -1,5 +1,4 @@
 # Created by: Sofian Brabez <sbrabez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	aspyct
 PORTVERSION=	3.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	turboxsl
 DISTVERSION=	b03c2c9

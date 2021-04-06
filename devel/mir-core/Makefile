@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mir-core
 PORTVERSION=	0.2.1

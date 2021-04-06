@@ -1,5 +1,4 @@
 # Created by: verm@drunkmonk.net
-# $FreeBSD$
 
 PORTNAME=	lmarbles
 PORTVERSION=	1.0.8

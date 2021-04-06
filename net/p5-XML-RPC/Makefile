@@ -1,5 +1,4 @@
 # Created by: Denis Pokataev <catone@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	XML-RPC
 PORTVERSION=	1.1

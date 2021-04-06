@@ -1,5 +1,4 @@
 # Created by: Seiichirou Hiraoka <flathill@flathill.gr.jp>
-# $FreeBSD$
 
 PORTNAME=	fkiss
 PORTVERSION=	0.33a

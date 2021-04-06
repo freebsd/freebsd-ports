@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tttcmds
 PORTVERSION=	1.0.20190920

@@ -1,5 +1,4 @@
 # Created by: Johann Visagie <johann@egenetics.com>
-# $FreeBSD$
 
 PORTNAME=	AcePerl
 PORTVERSION=	1.92

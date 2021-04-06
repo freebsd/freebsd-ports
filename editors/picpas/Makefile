@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	picpas
 PORTVERSION=	0.9.0

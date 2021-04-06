@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tagged
 PORTVERSION=	0.40

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	websocket-extensions
 PORTVERSION=	0.1.5

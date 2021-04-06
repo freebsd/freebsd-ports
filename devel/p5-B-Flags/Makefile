@@ -1,5 +1,4 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	B-Flags
 PORTVERSION=	0.17

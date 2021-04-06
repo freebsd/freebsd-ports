@@ -1,5 +1,4 @@
 # Created by: smyru@heron.pl
-# $FreeBSD$
 
 PORTNAME=	gnugadu2
 PORTVERSION=	2.3.0

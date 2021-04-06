@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-gw
 PORTVERSION=	0.20210129

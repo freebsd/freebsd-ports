@@ -1,5 +1,4 @@
 # Created by: Thomas Gellekum <tg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tix
 PORTVERSION=	8.4.3

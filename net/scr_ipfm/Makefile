@@ -1,5 +1,4 @@
 # Created by: HSIN-HSIUNG CHANG
-# $FreeBSD$
 
 PORTNAME=	scr_ipfm
 PORTVERSION=	0.64

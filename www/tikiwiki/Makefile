@@ -1,5 +1,4 @@
 # Created by: Babak Farrokhi <babak@farrokhi.net>
-# $FreeBSD$
 
 PORTNAME=	tikiwiki
 DISTVERSION=	21.2

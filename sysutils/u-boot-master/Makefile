@@ -1,4 +1,3 @@
-# $FreeBSD$
 #
 # Common infrastructure for u-boot ports
 #

@@ -1,5 +1,4 @@
 # Created by: TAKATSU Tomonari <tota@rtfm.jp>
-# $FreeBSD$
 
 PORTNAME=	ptreloaded
 PORTVERSION=	0.0.1

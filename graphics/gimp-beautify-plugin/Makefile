@@ -1,5 +1,4 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	beautify
 PORTVERSION=	2012.08.12.00

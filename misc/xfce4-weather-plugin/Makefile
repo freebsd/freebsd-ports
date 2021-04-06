@@ -1,5 +1,4 @@
 # Created by: Filippo Natali <filippo@widestore.net>
-# $FreeBSD$
 
 PORTNAME=	xfce4-weather-plugin
 PORTVERSION=	0.11.0

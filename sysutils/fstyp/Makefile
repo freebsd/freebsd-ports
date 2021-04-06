@@ -1,5 +1,4 @@
 # Created by: Sachidananda Urs
-# $FreeBSD$
 
 PORTNAME=	fstyp
 PORTVERSION=	0.1

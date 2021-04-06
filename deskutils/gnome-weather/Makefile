@@ -1,5 +1,4 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gnome-weather
 PORTVERSION=	3.36.1

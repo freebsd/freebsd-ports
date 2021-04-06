@@ -1,5 +1,4 @@
 # Created by: Seth Kingsley <sethk@meowfishies.com>
-# $FreeBSD$
 
 PORTNAME=	interchange
 PORTVERSION=	5.6.3

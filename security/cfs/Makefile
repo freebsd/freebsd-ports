@@ -1,5 +1,4 @@
 # Created by: John Polstra <jdp@polstra.com>
-# $FreeBSD$
 
 PORTNAME=	cfs
 DISTVERSION=	1.5.0.beta

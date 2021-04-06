@@ -1,5 +1,4 @@
 # Created by: Anes Mukhametov <anes@anes.su>
-# $FreeBSD$
 
 PORTNAME=	accessors-fast
 PORTVERSION=	0.03

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cairo
 PORTVERSION=	1.16.2

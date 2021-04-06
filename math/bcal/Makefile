@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bcal
 DISTVERSIONPREFIX=	v

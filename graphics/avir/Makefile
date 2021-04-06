@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	avir
 DISTVERSION=	2.6

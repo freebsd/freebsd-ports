@@ -1,5 +1,4 @@
 # Created by: Shen Chuan-Hsing
-# $FreeBSD$
 
 PORTNAME=	gcin
 PORTVERSION=	2.9.0

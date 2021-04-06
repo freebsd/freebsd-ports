@@ -1,5 +1,4 @@
 # Created by: Matthias Andree <matthias.andree@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	squash
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: Miguel Mendez <flynn@energyhq.es.eu.org>
-# $FreeBSD$
 
 PORTNAME=	addresses
 PORTVERSION=	0.4.8

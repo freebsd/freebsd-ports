@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-# $FreeBSD$
 
 PORTNAME=	pomap
 PORTVERSION=	3.0.7

@@ -1,5 +1,4 @@
 # Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sphinx-issues
 PORTVERSION=	1.2.0

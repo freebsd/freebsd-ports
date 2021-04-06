@@ -1,5 +1,4 @@
 # Created by: Mikhail T. <m.tsatsenko@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	quickfix
 PORTVERSION=	1.15.1

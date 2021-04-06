@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flexget
 DISTVERSIONPREFIX=	v

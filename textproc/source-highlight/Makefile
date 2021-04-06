@@ -1,5 +1,4 @@
 # Created by: Kris Kennaway <kris@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	source-highlight
 DISTVERSION=	3.1.9

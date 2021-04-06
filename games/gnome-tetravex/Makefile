@@ -1,5 +1,4 @@
 # Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gnome-tetravex
 PORTVERSION=	3.38.2

@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
-# $FreeBSD$
 
 PORTNAME=	Mail
 DISTVERSION=	1.4.1

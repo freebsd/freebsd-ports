@@ -1,5 +1,4 @@
 # Created by: gpalmer
-# $FreeBSD$
 
 PORTNAME=	xdaliclock
 PORTVERSION=	2.44

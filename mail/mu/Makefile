@@ -1,5 +1,4 @@
 # Created by: rea@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	mu
 PORTVERSION=	1.2

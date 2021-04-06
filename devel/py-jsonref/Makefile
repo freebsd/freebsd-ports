@@ -1,5 +1,4 @@
 # Created by: Michael Gmelin <grembo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jsonref
 PORTVERSION=	0.2

@@ -1,5 +1,4 @@
 # Created by: Archie Cobbs
-# $FreeBSD$
 
 PORTNAME=	libpdel
 PORTVERSION=	0.5.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	plasma-pass
 DISTVERSION=	1.2.0

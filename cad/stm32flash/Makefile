@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stm32flash
 DISTVERSION=	0.6

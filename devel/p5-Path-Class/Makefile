@@ -1,5 +1,4 @@
 # Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	Path-Class
 PORTVERSION=	0.37

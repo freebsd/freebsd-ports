@@ -1,5 +1,4 @@
 # Created by: Chris D. Faulhaber <jedgar@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	abclock
 PORTVERSION=	1.0d

@@ -1,5 +1,4 @@
 # Created by: Aldert Nooitgedagt
-# $FreeBSD$
 
 PORTNAME=	tclwebtest
 PORTVERSION=	1.0

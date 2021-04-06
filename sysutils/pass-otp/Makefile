@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pass-otp
 DISTVERSIONPREFIX=	v

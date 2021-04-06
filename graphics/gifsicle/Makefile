@@ -1,5 +1,4 @@
 # Created by: Brad Hendrickse <bradh@iafrica.com>
-# $FreeBSD$
 
 PORTNAME=	gifsicle
 PORTVERSION=	1.92

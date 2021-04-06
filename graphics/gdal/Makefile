@@ -1,5 +1,4 @@
 # Created by: Randall Hopper
-# $FreeBSD$
 
 PORTNAME=	gdal
 PORTVERSION=	3.2.1

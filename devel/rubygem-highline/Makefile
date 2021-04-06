@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	highline
 PORTVERSION=	2.0.3

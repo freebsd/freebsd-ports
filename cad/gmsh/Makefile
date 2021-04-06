@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni <giffunip@asme.org>
-# $FreeBSD$
 
 PORTNAME=	gmsh
 DISTVERSION=	4.6.0

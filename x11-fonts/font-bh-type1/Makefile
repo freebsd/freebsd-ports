@@ -1,5 +1,4 @@
 # Created by: Pawel Worach
-# $FreeBSD$
 
 PORTNAME=	font-bh-type1
 PORTVERSION=	1.0.3

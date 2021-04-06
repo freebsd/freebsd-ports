@@ -1,5 +1,4 @@
 # Created by: Alexey V. Degtyarev
-# $FreeBSD$
 
 PORTNAME=	mvision2
 PORTVERSION=	2

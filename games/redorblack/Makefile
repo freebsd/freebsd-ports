@@ -1,5 +1,4 @@
 # Created by: buratello@easy.com
-# $FreeBSD$
 
 PORTNAME=	redorblack
 PORTVERSION=	1.0

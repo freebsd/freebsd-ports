@@ -1,5 +1,4 @@
 # Created by: ajk@iu.edu
-# $FreeBSD$
 
 PORTNAME=	cracklib
 PORTVERSION=	2.9.7

@@ -1,5 +1,4 @@
 # Created by: Will Andrews <andrews@technologist.com>
-# $FreeBSD$
 
 PORTNAME=	wmanager
 PORTVERSION=	0.2.1

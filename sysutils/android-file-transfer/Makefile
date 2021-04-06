@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	android-file-transfer
 DISTVERSIONPREFIX=	v

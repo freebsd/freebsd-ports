@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		crystal
 DISTVERSION=		0.36.1

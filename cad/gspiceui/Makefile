@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-# $FreeBSD$
 
 PORTNAME=	gspiceui
 PORTVERSION=	1.1.00

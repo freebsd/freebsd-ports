@@ -1,5 +1,4 @@
 # Created by: Nosov Artem <chip-set@mail.ru>
-# $FreeBSD$
 
 PORTNAME=	wput
 PORTVERSION=	0.6.2

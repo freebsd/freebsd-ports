@@ -1,5 +1,4 @@
 # Created by: William Grzybowski <william88@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	enzyme
 PORTVERSION=	0.4.1

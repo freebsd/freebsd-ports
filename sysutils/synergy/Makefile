@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	synergy
 DISTVERSION=	1.13.1.41

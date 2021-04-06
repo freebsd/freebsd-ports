@@ -1,5 +1,4 @@
 # Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-# $FreeBSD$
 
 PORTNAME=	encryptor
 PORTVERSION=	3.0.0

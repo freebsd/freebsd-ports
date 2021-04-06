@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Catalyst-View-RRDGraph
 PORTVERSION=	0.10

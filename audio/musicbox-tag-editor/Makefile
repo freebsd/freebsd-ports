@@ -1,5 +1,4 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
-# $FreeBSD$
 #   $MCom: ports/audio/musicbox-tag-editor/Makefile,v 1.5 2007/09/10 05:13:24 mezz Exp $
 
 PORTNAME=	musicbox-tag-editor

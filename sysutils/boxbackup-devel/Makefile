@@ -1,5 +1,4 @@
 # Created by: James O'Gorman <james@netinertia.co.uk>
-# $FreeBSD$
 
 PORTNAME=	boxbackup
 PORTVERSION=	0.11.r${SVNVERSION:C/^[0-9\.]+_[a-z]+_([0-9]+)/\1/}

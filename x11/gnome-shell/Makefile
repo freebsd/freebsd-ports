@@ -1,5 +1,4 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gnome-shell
 PORTVERSION=	3.36.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Middleware-IEnosniff
 PORTVERSION=	0.02

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyjsparser
 DISTVERSION=	2.7.1

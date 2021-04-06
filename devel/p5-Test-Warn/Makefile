@@ -1,5 +1,4 @@
 # Created by: Brian Minard <bminard@flatfoot.ca>
-# $FreeBSD$
 
 PORTNAME=	Test-Warn
 PORTVERSION=	0.36

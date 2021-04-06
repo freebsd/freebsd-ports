@@ -1,5 +1,4 @@
 # Created by: Junho CHOI <junho.choi@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	imhangul
 PORTVERSION=	3.1.1

@@ -1,5 +1,4 @@
 # Created by: Mikolaj Golub <to.my.trociny@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mk-configure
 PORTVERSION=	0.36.0

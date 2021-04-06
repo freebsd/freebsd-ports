@@ -1,5 +1,4 @@
 # Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	desktop
 PORTVERSION=	0.1

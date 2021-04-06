@@ -1,5 +1,4 @@
 # Created by: Anton Yudin <toha@toha.org.ua>
-# $FreeBSD$
 
 PORTNAME=	poi
 PORTVERSION=	4.1.2

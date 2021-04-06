@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zoxide
 DISTVERSIONPREFIX=	v

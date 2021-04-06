@@ -1,5 +1,4 @@
 # Created by: pgs (original)
-# $FreeBSD$
 
 PORTNAME=	xbl
 PORTVERSION=	1.1.6

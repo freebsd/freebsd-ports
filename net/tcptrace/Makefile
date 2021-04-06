@@ -1,5 +1,4 @@
 # Created by: fenner
-# $FreeBSD$
 
 PORTNAME=	tcptrace
 PORTVERSION=	6.6.8

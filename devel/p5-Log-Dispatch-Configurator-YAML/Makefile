@@ -1,5 +1,4 @@
 # Created by: Oleg Mamontov <oleg@mamontov.net>
-# $FreeBSD$
 
 PORTNAME=	Log-Dispatch-Configurator-YAML
 PORTVERSION=	0.03

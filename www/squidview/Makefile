@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <stas@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	squidview
 PORTVERSION=	0.86

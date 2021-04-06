@@ -1,5 +1,4 @@
 # Created by: 1wardd@airmail.net
-# $FreeBSD$
 
 PORTNAME=	lesstif
 PORTVERSION=	0.95.2

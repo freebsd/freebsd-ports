@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	DBIx-XML_RDB
 PORTVERSION=	0.05

@@ -1,5 +1,4 @@
 # Created by: Peter <peter@vereshagin.org>
-# $FreeBSD$
 
 PORTNAME=	FCGI-Spawn
 PORTVERSION=	0.16.7

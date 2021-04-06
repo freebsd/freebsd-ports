@@ -1,5 +1,4 @@
 # Created by: jfieber
-# $FreeBSD$
 
 PORTNAME=	sgmlformat
 PORTVERSION=	1.7

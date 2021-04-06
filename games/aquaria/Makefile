@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aquaria
 DISTVERSIONPREFIX=	OSE-v

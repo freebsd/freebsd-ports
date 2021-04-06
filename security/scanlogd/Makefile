@@ -1,5 +1,4 @@
 # Created by: Roman Bogorodskiy
-# $FreeBSD$
 
 PORTNAME=	scanlogd
 PORTVERSION=	2.2.8

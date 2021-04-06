@@ -1,5 +1,4 @@
 # Created by: Wen heping <wenheping@gmail.com>)
-# $FreeBSD$
 
 PORTNAME=	Services_Facebook
 PORTVERSION=	0.2.14

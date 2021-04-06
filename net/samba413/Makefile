@@ -1,5 +1,4 @@
 # Created by: timur@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=			${SAMBA4_BASENAME}413
 PORTVERSION=			${SAMBA4_VERSION}

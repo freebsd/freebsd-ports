@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libgepub
 PORTVERSION=	0.6.0

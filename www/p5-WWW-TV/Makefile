@@ -1,5 +1,4 @@
 # Created by: Anatoliy Dmytriyev <tolid@plab.ku.dk>
-# $FreeBSD$
 
 PORTNAME=	WWW-TV
 PORTVERSION=	0.14

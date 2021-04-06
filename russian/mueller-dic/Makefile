@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <tiamat@comset.net>
-# $FreeBSD$
 
 PORTNAME=	mueller-dic
 PORTVERSION=	1.2

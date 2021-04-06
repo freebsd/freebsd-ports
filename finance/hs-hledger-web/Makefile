@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hledger-web
 DISTVERSION=	1.19

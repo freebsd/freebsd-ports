@@ -1,5 +1,4 @@
 # Created by: Adam Kranzel (adam@alameda.edu)
-# $FreeBSD$
 
 PORTNAME=	slashem
 PORTVERSION=	0.0.7E.7F.3

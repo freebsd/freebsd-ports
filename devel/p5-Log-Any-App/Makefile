@@ -1,5 +1,4 @@
 # Created by: Evgeniy Kosov <evgeniy@kosov.su>
-# $FreeBSD$
 
 PORTNAME=	Log-Any-App
 PORTVERSION=	0.540

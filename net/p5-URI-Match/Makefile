@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	URI-Match
 PORTVERSION=	0.00001

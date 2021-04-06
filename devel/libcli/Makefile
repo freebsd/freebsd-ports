@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcli
 PORTVERSION=	1.9.6

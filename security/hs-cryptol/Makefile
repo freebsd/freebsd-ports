@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cryptol
 DISTVERSION=	2.10.0

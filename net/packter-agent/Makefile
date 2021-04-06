@@ -1,5 +1,4 @@
 # Created by: Masaki TAGAWA <masaki@club.kyutech.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	packter-agent
 PORTVERSION=	2.5

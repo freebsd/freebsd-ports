@@ -1,5 +1,4 @@
 # Created by: Fumihiko Kimura <jfkimura@yahoo.co.jp>
-# $FreeBSD$
 
 CATEGORIES=	japanese www ruby
 

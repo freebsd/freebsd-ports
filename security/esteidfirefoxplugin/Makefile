@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	esteidfirefoxplugin
 PORTVERSION=	3.8.0.1115

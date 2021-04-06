@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rum
 PORTVERSION=	1.3.7

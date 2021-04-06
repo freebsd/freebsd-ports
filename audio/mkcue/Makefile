@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mkcue
 PORTVERSION=	1

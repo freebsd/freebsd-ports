@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libuecc
 PORTVERSION=	7

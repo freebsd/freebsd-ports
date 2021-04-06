@@ -1,5 +1,4 @@
 # Created by: Brent B. Powers <bbp2006@columbia.edu>
-# $FreeBSD$
 
 PORTNAME=	Net-HL7
 PORTVERSION=	0.75

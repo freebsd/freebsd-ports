@@ -1,5 +1,4 @@
 # Created by: Anes Mukhametov <anes@anes.su>
-# $FreeBSD$
 
 PORTNAME=	DateTime-Format-RSS
 PORTVERSION=	0.03000

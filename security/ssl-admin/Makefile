@@ -1,5 +1,4 @@
 # Created by: Eric Crist <ecrist@secure-computing.net>
-# $FreeBSD$
 
 PORTNAME=	ssl-admin
 DISTVERSION=	1.2.1

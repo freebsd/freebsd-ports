@@ -1,5 +1,4 @@
 # Created by: Ralf van der Enden <tremere@cainites.net>
-# $FreeBSD$
 
 PORTNAME=	sabyenc3
 PORTVERSION=	4.0.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uTox
 DISTVERSION=	0.17.2

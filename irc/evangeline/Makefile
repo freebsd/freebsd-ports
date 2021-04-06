@@ -1,5 +1,4 @@
 # Created by: Edini <ports@edini.net>
-# $FreeBSD$
 
 PORTNAME=	evangeline
 PORTVERSION=	1.1.4

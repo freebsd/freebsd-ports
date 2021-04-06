@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	milter-regex
 PORTVERSION=	2.7

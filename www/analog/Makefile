@@ -1,5 +1,4 @@
 # Created by: jfitz
-# $FreeBSD$
 
 PORTNAME=	analog
 PORTVERSION=	6.0

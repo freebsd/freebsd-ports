@@ -1,5 +1,4 @@
 # Created by: Dennis Herrmann <adox@mcx2.org>
-# $FreeBSD$
 
 PORTNAME=	cowpatty
 PORTVERSION=	4.8

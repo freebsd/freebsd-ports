@@ -1,5 +1,4 @@
 # Created by: Autrijus Tang <autrijus@autrijus.org>
-# $FreeBSD$
 
 PORTNAME=	Text-Aligner
 PORTVERSION=	0.16

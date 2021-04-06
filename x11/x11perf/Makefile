@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	x11perf
 PORTVERSION=	1.6.1

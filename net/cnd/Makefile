@@ -1,5 +1,4 @@
 # Created by: Daniel Bryan <sisko@bsdmail.com>
-# $FreeBSD$
 
 PORTNAME=	cnd
 PORTVERSION=	0.7

@@ -1,5 +1,4 @@
 # Created by: John Marino <marino@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sdl_gnat
 PORTVERSION=	2013

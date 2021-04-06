@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	STAR
 DISTVERSION=	2.7.3a

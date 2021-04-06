@@ -1,5 +1,4 @@
 # Created by: Marcin Jessa <yazzy@yazzy.org>
-# $FreeBSD$
 
 PORTNAME=	impacket
 PORTVERSION=	0.9.17

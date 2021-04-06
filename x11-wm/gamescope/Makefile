@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gamescope
 DISTVERSION=	3.7.1

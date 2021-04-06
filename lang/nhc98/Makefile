@@ -1,5 +1,4 @@
 # Created by: Oliver Braun <obraun@informatik.unibw-muenchen.de>
-# $FreeBSD$
 
 PORTNAME=	nhc98
 PORTVERSION=	1.22

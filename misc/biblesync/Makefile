@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	biblesync
 DISTVERSION=	2.1.0

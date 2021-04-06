@@ -1,5 +1,4 @@
 # Created by: snowchyld
-# $FreeBSD$
 
 PORTNAME=	libsrs2
 PORTVERSION=	1.0.18

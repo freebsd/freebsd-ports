@@ -1,5 +1,4 @@
 # Created by: Dave Cottlehuber <dch@skunkwerks.at>
-# $FreeBSD$
 
 PORTNAME=	structlog
 PORTVERSION=	18.2.0

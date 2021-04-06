@@ -1,5 +1,4 @@
 # Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-# $FreeBSD$
 
 PORTNAME=	Translation2
 DISTVERSION=	2.0.4

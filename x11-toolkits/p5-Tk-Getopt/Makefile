@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	Tk-Getopt
 PORTVERSION=	0.51

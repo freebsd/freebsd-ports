@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fortune_gem
 PORTVERSION=	0.0.9

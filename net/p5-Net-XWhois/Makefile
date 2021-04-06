@@ -1,5 +1,4 @@
 # Created by: Danny Howard <dannyman@tellme.com>
-# $FreeBSD$
 
 PORTNAME=	Net-XWhois
 PORTVERSION=	0.90

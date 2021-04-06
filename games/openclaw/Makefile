@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	OpenClaw
 DISTVERSION=	0.0-51

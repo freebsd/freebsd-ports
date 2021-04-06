@@ -1,5 +1,4 @@
 # Created by: Jason Helfman <jhelfman@experts-exchange.com>
-# $FreeBSD$
 
 PORTNAME=	compass
 PORTVERSION=	1.0.3

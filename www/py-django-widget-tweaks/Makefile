@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-widget-tweaks
 PORTVERSION=	1.4.8

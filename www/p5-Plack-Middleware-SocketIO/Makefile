@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Middleware-SocketIO
 PORTVERSION=	0.00904

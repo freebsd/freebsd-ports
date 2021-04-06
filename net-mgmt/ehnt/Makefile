@@ -1,5 +1,4 @@
 # Created by: marck@rinet.ru
-# $FreeBSD$
 
 PORTNAME=	ehnt
 PORTVERSION=	0.3

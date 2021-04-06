@@ -1,5 +1,4 @@
 # Created by: Ashish Shukla <wahjava@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	msdl
 PORTVERSION=	1.2.7r2

@@ -1,5 +1,4 @@
 # Created by: koma2@lovepeers.org
-# $FreeBSD$
 
 PORTNAME=	topless
 PORTVERSION=	1.52

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	liteide
 DISTVERSIONPREFIX=	x

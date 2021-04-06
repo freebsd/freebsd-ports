@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lager_syslog
 PORTVERSION=	3.0.3

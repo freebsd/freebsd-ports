@@ -1,5 +1,4 @@
 # Created by: Mij <mij@bitchx.it>
-# $FreeBSD$
 
 PORTNAME=	greylite
 PORTVERSION=	2.3

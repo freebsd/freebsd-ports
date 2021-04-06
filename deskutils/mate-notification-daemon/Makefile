@@ -1,5 +1,4 @@
 # Created by: Andreas Kohn <andreas@syndrom23.de>
-# $FreeBSD$
 
 PORTNAME=	mate-notification-daemon
 PORTVERSION=	1.24.1

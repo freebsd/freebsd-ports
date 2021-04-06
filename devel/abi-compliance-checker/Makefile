@@ -1,5 +1,4 @@
 # Created by: bf <bf@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	abi-compliance-checker
 DISTVERSION=	2.3

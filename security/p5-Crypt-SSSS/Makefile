@@ -1,5 +1,4 @@
 # Created by: Zeus Panchenko <zeus@gnu.org.ua>
-# $FreeBSD$
 
 PORTNAME=	Crypt-SSSS
 PORTVERSION=	0.3

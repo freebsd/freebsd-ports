@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	deal.II
 DISTVERSIONPREFIX=	v

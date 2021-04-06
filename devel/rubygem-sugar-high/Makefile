@@ -1,5 +1,4 @@
 # Created by: rpsfa@rit.edu
-# $FreeBSD$
 
 PORTNAME=	sugar-high
 PORTVERSION=	0.7.3

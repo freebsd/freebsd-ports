@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	librsync
 PORTVERSION=	2.3.1

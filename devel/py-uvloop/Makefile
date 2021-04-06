@@ -1,5 +1,4 @@
 # Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	uvloop
 PORTVERSION=	0.15.2

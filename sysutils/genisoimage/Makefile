@@ -1,5 +1,4 @@
 # Created by: Nikolai Lifanov
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-genisoimage
 

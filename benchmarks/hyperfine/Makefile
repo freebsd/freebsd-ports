@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hyperfine
 DISTVERSIONPREFIX=	v

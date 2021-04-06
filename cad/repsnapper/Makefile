@@ -1,5 +1,4 @@
 # Created by: Martin Dieringer <martin.dieringe@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	repsnapper
 DISTVERSION=	2.5a4

@@ -1,5 +1,4 @@
 # Created by: skreuzer
-# $FreeBSD$
 
 PORTNAME=	Net-OAuth-Simple
 PORTVERSION=	1.7

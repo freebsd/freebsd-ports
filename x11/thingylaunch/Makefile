@@ -1,5 +1,4 @@
 # Created by: Pietro Cerutti <gahr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	thingylaunch
 PORTVERSION=	2.0.3

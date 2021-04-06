@@ -1,5 +1,4 @@
 # Created by: Douglas Thrift <douglas@douglasthrift.net>
-# $FreeBSD$
 
 PORTNAME=	anyterm
 PORTVERSION=	1.1.29

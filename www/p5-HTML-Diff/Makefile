@@ -1,5 +1,4 @@
 # Created by: Travis Campbell <hcoyote@ghostar.org>
-# $FreeBSD$
 
 PORTNAME=	HTML-Diff
 PORTVERSION=	0.561

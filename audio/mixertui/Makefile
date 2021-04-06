@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mixertui
 DISTVERSION=	1.4.2

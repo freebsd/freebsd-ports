@@ -1,5 +1,4 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	muffin
 PORTVERSION=	4.8.0

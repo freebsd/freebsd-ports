@@ -1,5 +1,4 @@
 # Created by: Frederic Culot <frederic@culot.org>
-# $FreeBSD$
 
 PORTNAME=	Net-Google-Code
 PORTVERSION=	0.19

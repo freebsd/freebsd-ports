@@ -1,5 +1,4 @@
 # Created by: Hajimu UMEMOTO <ume@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gedy
 PORTVERSION=	0.9.0

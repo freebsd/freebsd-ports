@@ -1,5 +1,4 @@
 # Created by: Jim Mock <jim@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	wmbutton
 PORTVERSION=	0.6.1

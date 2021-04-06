@@ -1,5 +1,4 @@
 # Created by: Dennis Herrmann <dhn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	i3
 DISTVERSION=	4.19.2

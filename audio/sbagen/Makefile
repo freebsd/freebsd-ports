@@ -1,5 +1,4 @@
 # Created by: George Reid <greid@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sbagen
 PORTVERSION=	1.4.5

@@ -1,5 +1,4 @@
 # Created by: n@nectar.com
-# $FreeBSD$
 
 PORTNAME=	ding
 PORTVERSION=	1.8.1

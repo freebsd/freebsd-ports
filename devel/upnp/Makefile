@@ -1,5 +1,4 @@
 # Created by: Yen-Ming Lee <leeym@leeym.com>
-# $FreeBSD$
 
 PORTNAME=	upnp
 DISTVERSIONPREFIX=	release-

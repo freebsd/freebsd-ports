@@ -1,5 +1,4 @@
 # Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-# $FreeBSD$
 
 PORTNAME=	exilog
 PORTVERSION=	0.5

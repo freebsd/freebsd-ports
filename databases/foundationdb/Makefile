@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	foundationdb
 DISTVERSION=	6.3.11

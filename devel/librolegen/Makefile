@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librolegen
 PORTVERSION=	1.0b

@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@ahze.net>
-# $FreeBSD$
 #   $MCom: ports/net-p2p/gtorrentviewer/Makefile,v 1.4 2007/08/06 17:16:29 mezz Exp $
 
 PORTNAME=	gtorrentviewer

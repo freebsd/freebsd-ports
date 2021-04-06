@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	smbclient
 PORTVERSION=	1.0.5

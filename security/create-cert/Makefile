@@ -1,5 +1,4 @@
 # Created by: Craig Leres <leres@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	create-cert
 PORTVERSION=	2.9

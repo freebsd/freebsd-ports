@@ -1,5 +1,4 @@
 # Created by: Peter Vereshagin <peter@vereshagin.org>
-# $FreeBSD$
 
 PORTNAME=	Parse-PlainConfig
 PORTVERSION=	3.05

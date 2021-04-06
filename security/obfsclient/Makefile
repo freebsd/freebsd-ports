@@ -1,5 +1,4 @@
 # Created by: Fabian Keil <fk@fabiankeil.de>
-# $FreeBSD$
 
 PORTNAME=	obfsclient
 PORTVERSION=	0.0.2

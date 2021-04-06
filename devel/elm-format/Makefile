@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	elm-format
 PORTVERSION=	0.8.3

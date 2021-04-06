@@ -1,5 +1,4 @@
 # Created by: William Grzybowski <wg@FreeBSD.org>
-# $FreeBSD$
 
 # Also update devel/libgit2, devel/libgit2-glib, devel/rubygem-rugged
 

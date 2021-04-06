@@ -1,5 +1,4 @@
 # Created by: Steve Wills <steve@mouf.net>
-# $FreeBSD$
 
 PORTNAME=	PerlMol
 PORTVERSION=	0.3500

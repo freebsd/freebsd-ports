@@ -1,5 +1,4 @@
 # Created by: Romain Tartiere <romain@blogreen.org>
-# $FreeBSD$
 
 PORTNAME=	libnfc
 PORTVERSION=	1.7.1

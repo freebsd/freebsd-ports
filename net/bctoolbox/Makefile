@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bctoolbox
 PORTVERSION=	0.6.0

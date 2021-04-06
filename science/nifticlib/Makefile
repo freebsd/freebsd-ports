@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nifticlib
 PORTVERSION=	2.0.0

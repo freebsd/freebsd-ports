@@ -1,5 +1,4 @@
 # Created by: Joseph Benden <joe@thrallingpenguin.com>
-# $FreeBSD$
 
 PORTNAME=	mod_vroot
 DISTVERSION=	0.9.5

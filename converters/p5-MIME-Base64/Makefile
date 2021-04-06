@@ -1,5 +1,4 @@
 # Created by: ache@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	MIME-Base64
 PORTVERSION=	3.16

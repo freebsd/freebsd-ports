@@ -1,5 +1,4 @@
 # Created by: Jeremy Norris <ishmael27x@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	libltdl
 PORTREVISION=	0

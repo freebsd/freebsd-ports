@@ -1,5 +1,4 @@
 # Created by: Michael Haro <mharo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Data-Buffer
 PORTVERSION=	0.04

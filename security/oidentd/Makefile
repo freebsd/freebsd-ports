@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	oidentd
 PORTVERSION=	2.5.0

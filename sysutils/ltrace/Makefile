@@ -1,5 +1,4 @@
 # Created by: Sofian Brabez <sbz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ltrace
 PORTVERSION=	0.6.0

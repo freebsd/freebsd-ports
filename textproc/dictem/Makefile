@@ -1,5 +1,4 @@
 # Created by: Max N. Boyarov <m.boyarov@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	dictem
 PORTVERSION=	1.0.4

@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
-# $FreeBSD$
 
 PORTNAME=	zssh
 PORTVERSION=	1.5c

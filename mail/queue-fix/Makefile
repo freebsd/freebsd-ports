@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	queue-fix
 PORTVERSION=	1.4

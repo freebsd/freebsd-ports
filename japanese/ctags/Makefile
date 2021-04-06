@@ -1,5 +1,4 @@
 # Created by: issei
-# $FreeBSD$
 
 PORTNAME=	ctags
 PORTVERSION=	5.8j2

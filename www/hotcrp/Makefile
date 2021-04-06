@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hotcrp
 PORTVERSION=	2.102

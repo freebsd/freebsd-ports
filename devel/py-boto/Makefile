@@ -1,5 +1,4 @@
 # Created by: Peter Schuller <peter.schuller@infidyne.com>
-# $FreeBSD$
 
 PORTNAME=	boto
 PORTVERSION=	2.49.0

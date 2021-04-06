@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vigenere
 PORTVERSION=	1.0

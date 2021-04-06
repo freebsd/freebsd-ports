@@ -1,5 +1,4 @@
 # Created by: Tony Shadwick <tshadwick@oss-solutions.com>
-# $FreeBSD$
 
 PORTNAME=	Fax-Hylafax-Client
 PORTVERSION=	1.02

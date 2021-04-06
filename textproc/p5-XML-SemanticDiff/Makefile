@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	XML-SemanticDiff
 PORTVERSION=	1.0007

@@ -1,5 +1,4 @@
 # Created by: Mikolaj Golub <trociny@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	leo_manager_client
 PORTVERSION=	0.4.13

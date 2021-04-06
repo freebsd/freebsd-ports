@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fortune-mod-freebsd-classic
 DISTVERSION=	g20171128

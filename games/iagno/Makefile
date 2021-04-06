@@ -1,5 +1,4 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	iagno
 PORTVERSION=	3.38.1

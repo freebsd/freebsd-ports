@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zope.processlifetime
 PORTVERSION=	1.0

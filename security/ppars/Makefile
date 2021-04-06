@@ -1,5 +1,4 @@
 # Created by: Joe Barbish <ppars1@a1poweruser.com>
-# $FreeBSD$
 
 PORTNAME=	ppars
 PORTVERSION=	1.2

@@ -1,5 +1,4 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	courierpassd
 PORTVERSION=	1.1.2

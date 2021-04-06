@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sentry-sdk
 PORTVERSION=	1.0.0

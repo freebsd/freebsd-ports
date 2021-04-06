@@ -1,5 +1,4 @@
 # Created by: Lukasz Wasikowski <lukasz@wasikowski.net>
-# $FreeBSD$
 
 PORTNAME=	mod_mpm_itk
 PORTVERSION=	2.4.7

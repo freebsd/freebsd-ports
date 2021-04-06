@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xls2txt
 DISTVERSION=	1.0.1

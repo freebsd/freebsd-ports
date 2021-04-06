@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	binutils
 PORTVERSION=	2.33.1

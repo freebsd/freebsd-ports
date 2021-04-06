@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	docbook-xsd
 DISTVERSION=	1.0b1

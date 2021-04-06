@@ -1,5 +1,4 @@
 # Created by: Anish Mistry
-# $FreeBSD$
 
 PORTNAME=	sshfs
 PORTVERSION=	3.7.1

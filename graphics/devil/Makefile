@@ -1,5 +1,4 @@
 # Created by: Andreas Kohn <andreas@syndrom23.de>
-# $FreeBSD$
 
 PORTNAME=	devil
 PORTVERSION=	1.7.8

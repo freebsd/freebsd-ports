@@ -1,5 +1,4 @@
 # Created by: shurd@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	xnec2c
 PORTVERSION=	3.4

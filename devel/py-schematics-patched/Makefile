@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	schematics-patched
 DISTVERSIONPREFIX=	v

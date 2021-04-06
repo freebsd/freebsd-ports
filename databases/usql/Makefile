@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	usql
 DISTVERSIONPREFIX=	v

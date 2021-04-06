@@ -1,5 +1,4 @@
 # Created by: David O'Brien (obrien@FreeBSD.org)
-# $FreeBSD$
 
 PORTNAME=	c2t
 PORTVERSION=	1.0

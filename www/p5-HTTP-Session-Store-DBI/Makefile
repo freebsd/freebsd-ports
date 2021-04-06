@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTTP-Session-Store-DBI
 PORTVERSION=	0.02

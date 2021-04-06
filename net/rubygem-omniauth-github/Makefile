@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omniauth-github
 PORTVERSION=	1.4.0

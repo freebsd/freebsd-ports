@@ -1,5 +1,4 @@
 # Created by: Kurt Lidl <kurt.lidl@cello.com>
-# $FreeBSD$
 
 PORTNAME=	Template-Mustache
 PORTVERSION=	v0.5.1

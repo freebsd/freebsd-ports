@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	mpack
 PORTVERSION=	1.6

@@ -1,5 +1,4 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	authlogic
 PORTVERSION=	6.1.0

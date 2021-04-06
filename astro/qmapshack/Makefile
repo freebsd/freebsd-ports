@@ -1,5 +1,4 @@
 # Created by: Muhammad Moinur Rahman <bofh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	qmapshack
 PORTVERSION=	1.15.2

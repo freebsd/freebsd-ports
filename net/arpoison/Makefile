@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	arpoison
 DISTVERSION=	0.7

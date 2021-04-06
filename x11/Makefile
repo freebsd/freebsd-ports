@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Ports to support the X window system
 

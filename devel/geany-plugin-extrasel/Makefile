@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-plugin-extrasel
 PORTVERSION=	${GEANY_VER}

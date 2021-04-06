@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grpcox
 DISTVERSIONPREFIX=	v

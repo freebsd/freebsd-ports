@@ -1,5 +1,4 @@
 # Created by: Zeus Panchenko <zeus@gnu.org.ua>
-# $FreeBSD$
 
 PORTNAME=	Template-Plugin-DataPrinter
 PORTVERSION=	0.013

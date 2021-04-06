@@ -1,5 +1,4 @@
 # Created by: Sverrir Valgeirsson <e96sv@yahoo.se> and
-# $FreeBSD$
 
 PORTNAME=	dclib
 PORTVERSION=	0.3.23

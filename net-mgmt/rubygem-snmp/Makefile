@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	snmp
 PORTVERSION=	1.2.0

@@ -1,5 +1,4 @@
 # Created by: Michael Moll <kvedulv@kvedulv.de>
-# $FreeBSD$
 
 PORTNAME=	jekyll-watch
 PORTVERSION=	2.2.1

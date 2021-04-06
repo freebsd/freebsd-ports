@@ -1,5 +1,4 @@
 # Created by: Wes Peters <wes@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	poco
 DISTVERSION=	1.10.1

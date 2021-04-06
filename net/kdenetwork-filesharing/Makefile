@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdenetwork-filesharing
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

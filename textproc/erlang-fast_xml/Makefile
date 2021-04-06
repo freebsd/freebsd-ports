@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fast_xml
 PORTVERSION=	1.1.32

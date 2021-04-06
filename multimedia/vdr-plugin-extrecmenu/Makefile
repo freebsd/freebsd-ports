@@ -1,5 +1,4 @@
 # Created by: Juergen Lock <nox@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vdr-plugin-extrecmenu
 PORTVERSION=	1.2.2

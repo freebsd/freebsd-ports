@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	identify
 PORTVERSION=	1.4.30

@@ -1,5 +1,4 @@
 # Created by: olgeni@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	adacurses
 DISTVERSION=	20180127

@@ -1,5 +1,4 @@
 # Created by: <ports@c0decafe.net>
-# $FreeBSD$
 
 PORTNAME=	Protocol-XMPP
 PORTVERSION=	0.006

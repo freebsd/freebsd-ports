@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	arabic
 LO_I18N=	ar

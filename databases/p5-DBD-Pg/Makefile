@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DBD-Pg
 PORTVERSION=	3.14.2

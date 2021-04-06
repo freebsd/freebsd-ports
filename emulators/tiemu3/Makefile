@@ -1,5 +1,4 @@
 # Created by: Naram Qashat <cyberbotx@cyberbotx.com>
-# $FreeBSD$
 
 PORTNAME=	tiemu3
 PORTVERSION=	3.03

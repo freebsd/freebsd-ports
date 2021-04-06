@@ -1,5 +1,4 @@
 # Created by: Zane C. Bowers
-# $FreeBSD$
 
 PORTNAME=	X11-Resolution
 PORTVERSION=	0.0.0

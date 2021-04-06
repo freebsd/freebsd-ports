@@ -1,5 +1,4 @@
 # Created by: Oleg A. Mamontov <oleg@mamontov.net>
-# $FreeBSD$
 
 PORTNAME=	Hash-Union
 PORTVERSION=	0.03

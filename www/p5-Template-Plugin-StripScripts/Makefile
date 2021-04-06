@@ -1,5 +1,4 @@
 # Created by: Anes Mukhametov <anes@anes.su>
-# $FreeBSD$
 
 PORTNAME=	Template-Plugin-StripScripts
 PORTVERSION=	0.02

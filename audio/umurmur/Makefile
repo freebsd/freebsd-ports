@@ -1,5 +1,4 @@
 # Created by: Ayumi Mitsui <ayu@commun.jp>
-# $FreeBSD$
 
 PORTNAME=	umurmur
 DISTVERSION=	0.2.17

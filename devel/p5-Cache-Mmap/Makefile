@@ -1,5 +1,4 @@
 # Created by: Erwin Lansing <erwin@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Cache-Mmap
 PORTVERSION=	0.11

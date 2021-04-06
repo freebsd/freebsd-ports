@@ -1,5 +1,4 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
-# $FreeBSD$
 
 PORTNAME=	librtfcomp
 PORTVERSION=	1.3

@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@tobez.org>
-# $FreeBSD$
 
 PORTNAME=	Schedule-Match
 PORTVERSION=	0.07

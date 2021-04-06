@@ -1,5 +1,4 @@
 # Created by: Davíð Steinn Geirsson <david@isnic.is>
-# $FreeBSD$
 
 PORTNAME=	proxmoxer
 PORTVERSION=	1.0.4

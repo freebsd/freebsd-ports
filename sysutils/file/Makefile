@@ -1,5 +1,4 @@
 # Created by: Jason Harris <jharris@widomaker.com>
-# $FreeBSD$
 
 PORTNAME=	file
 PORTVERSION=	5.39

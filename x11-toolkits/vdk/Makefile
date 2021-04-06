@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vdk
 PORTVERSION=	2.5.1

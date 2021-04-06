@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	livereload
 DISTVERSION=	2.6.1

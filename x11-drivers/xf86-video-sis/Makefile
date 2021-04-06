@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xf86-video-sis
 PORTVERSION=	0.12.0

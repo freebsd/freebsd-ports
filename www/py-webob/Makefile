@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webob
 PORTVERSION=	1.8.6

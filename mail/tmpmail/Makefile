@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tmpmail
 DISTVERSION=	1.0.3

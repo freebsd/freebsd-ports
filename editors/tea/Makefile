@@ -1,5 +1,4 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
-# $FreeBSD$
 
 PORTNAME=	tea
 PORTVERSION=	50.1.0

@@ -1,5 +1,4 @@
 # Created by: Richard Gallamore <ultima@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	django-webpack-loader
 PORTVERSION=	0.7.0

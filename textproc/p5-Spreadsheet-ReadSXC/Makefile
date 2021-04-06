@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Spreadsheet-ReadSXC
 PORTVERSION=	0.33

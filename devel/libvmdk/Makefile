@@ -1,5 +1,4 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libvmdk
 PORTVERSION=	20200926

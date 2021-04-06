@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iobuffer
 PORTVERSION=	1.1.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nezd
 PORTVERSION=	0.1.0

@@ -1,5 +1,4 @@
 # Created by: Peter Pentchev <roam@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Qmail-Envelope
 PORTVERSION=	0.53

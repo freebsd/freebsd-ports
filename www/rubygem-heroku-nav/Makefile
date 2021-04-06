@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	heroku-nav
 PORTVERSION=	0.2.2

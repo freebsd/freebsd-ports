@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	matlab-installer
 PORTVERSION=	0.2

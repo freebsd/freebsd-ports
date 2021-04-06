@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	tclbsd
 PORTVERSION=	1.9.0

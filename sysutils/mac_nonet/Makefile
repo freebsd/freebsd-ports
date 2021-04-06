@@ -1,5 +1,4 @@
 # Created by: Jov <amutu@amutu.com>
-# $FreeBSD$
 
 PORTNAME=	mac_nonet
 DISTVERSION=	g20150821

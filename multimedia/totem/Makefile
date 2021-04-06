@@ -1,5 +1,4 @@
 # Created by: Hendrik Scholz <hendrik@scholz.net>
-# $FreeBSD$
 
 PORTNAME=	totem
 PORTVERSION=	3.38.0

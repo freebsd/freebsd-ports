@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libXScrnSaver
 PORTVERSION=	1.2.3

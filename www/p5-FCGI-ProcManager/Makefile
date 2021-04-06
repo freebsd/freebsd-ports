@@ -1,5 +1,4 @@
 # Created by: Peter <peter@vereshagin.org>
-# $FreeBSD$
 
 PORTNAME=	FCGI-ProcManager
 PORTVERSION=	0.28

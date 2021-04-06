@@ -1,5 +1,4 @@
 # Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-# $FreeBSD$
 
 PORTNAME=	GD-SVG
 PORTVERSION=	0.33

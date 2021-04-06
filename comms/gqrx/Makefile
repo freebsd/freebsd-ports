@@ -1,5 +1,4 @@
 # Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-# $FreeBSD$
 
 PORTNAME=	gqrx
 PORTVERSION=	2.14.4

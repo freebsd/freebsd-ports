@@ -1,5 +1,4 @@
 # Created by: John Marino <marino@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	templates_parser
 PORTVERSION=	17.0.0

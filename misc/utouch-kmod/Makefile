@@ -1,5 +1,4 @@
 # Created by: Vladimir Kondratyev <wulf@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	utouch-kmod
 PORTVERSION=	0.0.2

@@ -1,5 +1,4 @@
 # Created by: Kurt Kanzenbach <kurt@kmk-computers.de>
-# $FreeBSD$
 
 PORTNAME=		libgeodecomp
 PORTVERSION=		0.4.0

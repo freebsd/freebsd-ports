@@ -1,5 +1,4 @@
 # Created by: Will Andrews <will@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	postgrey
 PORTVERSION=	1.37

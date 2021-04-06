@@ -1,5 +1,4 @@
 # Created by: Daniel Eischen <deischen@FreeBSD.org>
-# $FreeBSD$
 
 # Also update	ports/japanese/plan/ (ja-plan) when this port is updated
 

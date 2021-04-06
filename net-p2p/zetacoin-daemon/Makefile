@@ -1,5 +1,4 @@
 # Created by: Daniel Morante <daniel@morante.net>
-# $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../zetacoin
 PKGNAMESUFFIX=	-daemon

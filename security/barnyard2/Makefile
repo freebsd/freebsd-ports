@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	barnyard2
 PORTVERSION=	1.13

@@ -1,5 +1,4 @@
 # Created by: Matthew N. Dodd <mdodd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=		spamprobe
 PORTVERSION=	1.4d

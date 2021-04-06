@@ -1,5 +1,4 @@
 # Created by: xaa@stack.nl
-# $FreeBSD$
 
 PORTNAME?=	xboard
 PORTVERSION?=	4.9.1

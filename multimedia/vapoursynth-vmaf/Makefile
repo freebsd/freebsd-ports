@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vmaf
 DISTVERSION=	r6

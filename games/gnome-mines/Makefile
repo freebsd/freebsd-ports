@@ -1,5 +1,4 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	gnome-mines
 PORTVERSION=	3.36.1

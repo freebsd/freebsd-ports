@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rox-filer
 PORTVERSION=	2.11

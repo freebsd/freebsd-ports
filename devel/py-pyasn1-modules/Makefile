@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyasn1-modules
 DISTVERSION=	0.2.8

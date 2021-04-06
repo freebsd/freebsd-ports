@@ -1,5 +1,4 @@
 # Created by: gena
-# $FreeBSD$
 
 PORTNAME=	xforms
 DISTVERSION=	1.2.4

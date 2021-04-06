@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libhtp
 PORTVERSION=	0.5.33

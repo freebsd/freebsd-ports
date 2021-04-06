@@ -1,5 +1,4 @@
 # Created by: Antonio Carlos Venancio Junior (<antonio@inf.ufsc.br>)
-# $FreeBSD$
 
 PORTNAME=	Net_DNSBL
 PORTVERSION=	1.3.7

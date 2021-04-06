@@ -1,5 +1,4 @@
 # Created by: Dmitriy Limonov
-# $FreeBSD$
 
 PORTNAME=	ncdc
 PORTVERSION=	1.22.1

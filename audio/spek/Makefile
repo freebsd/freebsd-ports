@@ -1,5 +1,4 @@
 # Created by: Alexander Kojevnikov <alexander@kojevnikov.com>
-# $FreeBSD$
 
 PORTNAME=	spek
 PORTVERSION=	0.8.2

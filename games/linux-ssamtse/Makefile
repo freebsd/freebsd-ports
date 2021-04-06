@@ -1,5 +1,4 @@
 # Created by: Sergey Akifyev
-# $FreeBSD$
 
 PORTNAME=	ssamtse
 PORTVERSION=	1.07b1

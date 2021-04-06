@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lfcbase
 PORTVERSION=	1.16.0

@@ -1,5 +1,4 @@
 # Created by: Wen Heping<wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Starlink-AST
 PORTVERSION=	1.05

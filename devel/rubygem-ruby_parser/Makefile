@@ -1,5 +1,4 @@
 # Created by: Espen Volden aka voldern <voldern@hoeggen.net>
-# $FreeBSD$
 
 PORTNAME=	ruby_parser
 PORTVERSION=	3.15.0

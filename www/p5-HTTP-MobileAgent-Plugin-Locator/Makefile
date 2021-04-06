@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTTP-MobileAgent-Plugin-Locator
 PORTVERSION=	0.04

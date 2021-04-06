@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-LDAP-FilterBuilder
 PORTVERSION=	1.200002

@@ -1,5 +1,4 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
-# $FreeBSD$
 
 .include "${.CURDIR}/../../devel/eric6/bsd.eric6.mk"
 

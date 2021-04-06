@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	permlib
 DISTVERSIONPREFIX=	v

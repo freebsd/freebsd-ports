@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-Storage-TxnEndHook
 PORTVERSION=	0.01

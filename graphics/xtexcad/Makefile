@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	xtexcad
 PORTVERSION=	2.4.1

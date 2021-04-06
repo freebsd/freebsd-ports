@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nstat
 PORTVERSION=	1.0

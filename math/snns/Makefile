@@ -1,5 +1,4 @@
 # Created by: reg@shale.csir.co.za
-# $FreeBSD$
 
 PORTNAME=	snns
 PORTVERSION=	4.3

@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	MooseX-Has-Sugar
 PORTVERSION=	1.000006

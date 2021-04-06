@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	DBD-MariaDB
 PORTVERSION=	1.21

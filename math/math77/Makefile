@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	math77
 PORTVERSION=	6.0

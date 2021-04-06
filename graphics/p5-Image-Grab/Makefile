@@ -1,5 +1,4 @@
 # Created by: Anatoliy Dmytriyev <tolid@plab.ku.dk>
-# $FreeBSD$
 
 PORTNAME=	Image-Grab
 PORTVERSION=	1.4.2

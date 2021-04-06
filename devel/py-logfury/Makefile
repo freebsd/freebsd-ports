@@ -1,5 +1,4 @@
 # Created by: gordon@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	logfury
 PORTVERSION=	0.1.2

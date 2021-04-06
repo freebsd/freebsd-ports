@@ -1,5 +1,4 @@
 # Created by: clsung@dragon2.net
-# $FreeBSD$
 
 PORTNAME=	Tie-DB_File-SplitHash
 PORTVERSION=	1.07

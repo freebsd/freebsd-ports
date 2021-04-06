@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	ncftp
 PORTVERSION=	3.2.6

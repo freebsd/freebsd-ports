@@ -1,5 +1,4 @@
 # Created by: Klemm <andreas@klemm.gtn.com>
-# $FreeBSD$
 
 PORTNAME=	lyx
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}

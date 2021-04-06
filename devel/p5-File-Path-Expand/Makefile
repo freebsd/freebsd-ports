@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lars@thegler.dk>
-# $FreeBSD$
 
 PORTNAME=	File-Path-Expand
 PORTVERSION=	1.02

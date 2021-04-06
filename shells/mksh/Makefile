@@ -1,5 +1,4 @@
 # Created by: Andreas Kohn <andreas@syndrom23.de>
-# $FreeBSD$
 
 PORTNAME=	mksh
 PORTVERSION=	59c

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	colormake
 PORTVERSION=	0.9

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zstandard
 DISTVERSION=	0.15.2

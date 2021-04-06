@@ -1,5 +1,4 @@
 # Created by: nadav@libagent.org
-# $FreeBSD$
 
 PORTNAME=	he2
 PORTVERSION=	0.61

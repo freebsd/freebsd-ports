@@ -1,5 +1,4 @@
 # Created by: Frederic Culot <frederic@culot.org>
-# $FreeBSD$
 
 PORTNAME=	fortune-mod-zarathoustra
 PORTVERSION=	20100905

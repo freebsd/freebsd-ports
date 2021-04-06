@@ -1,5 +1,4 @@
 # Created by: Marius Strobl <marius@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mmc-utils
 PORTVERSION=	20191004

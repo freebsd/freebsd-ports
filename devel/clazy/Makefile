@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clazy
 DISTVERSION=	1.5

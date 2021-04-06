@@ -1,5 +1,4 @@
 # Created by: Filippo Natali <filippo@widestore.net>
-# $FreeBSD$
 
 PORTNAME=	gtk-lila-theme
 PORTVERSION=	0.5.5

@@ -1,5 +1,4 @@
 # Created by: nork@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	pcf2bdf
 PORTVERSION=	1.06

@@ -1,5 +1,4 @@
 # Created by: Holger Lamm
-# $FreeBSD$
 
 PORTNAME=	win32-codecs
 DISTVERSION=	20110131

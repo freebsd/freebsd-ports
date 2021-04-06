@@ -1,5 +1,4 @@
 # Created by: bacon@smithers.neuro.mcw.edu
-# $FreeBSD$
 
 PORTNAME=	InsightToolkit
 PORTVERSION=	5.0.1

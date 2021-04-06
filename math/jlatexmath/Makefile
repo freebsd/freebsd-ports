@@ -1,5 +1,4 @@
 # Created by: rfarmer@predatorlabs.net
-# $FreeBSD$
 
 PORTNAME=	jlatexmath
 PORTVERSION=	1.0.7

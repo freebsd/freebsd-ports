@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libgme
 PORTVERSION=	0.6.1

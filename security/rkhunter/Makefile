@@ -1,5 +1,4 @@
 # Created by: Radim Kolar
-# $FreeBSD$
 
 PORTNAME=	rkhunter
 PORTVERSION=	1.4.6

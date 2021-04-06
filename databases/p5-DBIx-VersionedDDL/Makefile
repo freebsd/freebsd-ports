@@ -1,5 +1,4 @@
 # Created by: Alan Snelson <Alan@Wave2.org>
-# $FreeBSD$
 
 PORTNAME=	DBIx-VersionedDDL
 PORTVERSION=	0.17

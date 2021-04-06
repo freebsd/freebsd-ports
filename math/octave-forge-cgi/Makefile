@@ -1,5 +1,4 @@
 # Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	octave-forge-cgi
 PORTVERSION=	0.1.2

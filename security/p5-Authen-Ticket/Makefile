@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Authen-Ticket
 PORTVERSION=	0.02

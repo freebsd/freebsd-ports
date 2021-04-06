@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale <nivit@email.it>
-# $FreeBSD$
 
 PORTNAME=	gladtex
 PORTVERSION=	1.3

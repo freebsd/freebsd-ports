@@ -1,5 +1,4 @@
 # Created by: Xin LI <delphij@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=		openldap
 DISTVERSION=		2.4.58

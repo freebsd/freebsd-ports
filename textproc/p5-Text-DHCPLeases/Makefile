@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Text-DHCPLeases
 PORTVERSION=	1.0

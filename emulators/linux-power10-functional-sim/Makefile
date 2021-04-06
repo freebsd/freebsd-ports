@@ -1,5 +1,4 @@
 # Created by: Kevin Bowling <kbowling@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	power10-functional-sim
 PORTVERSION=	1.0

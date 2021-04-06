@@ -1,5 +1,4 @@
 # Created by: Chris Piazza <cpiazza@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vcdgear
 PORTVERSION=	1.6d

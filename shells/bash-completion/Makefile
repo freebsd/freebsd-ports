@@ -1,5 +1,4 @@
 # Created by: kirk@strauser.com
-# $FreeBSD$
 
 PORTNAME=	bash-completion
 PORTVERSION=	2.11

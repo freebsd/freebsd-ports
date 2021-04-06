@@ -1,5 +1,4 @@
 # Created by: Palle Girgensohn <girgen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dig_rb
 PORTVERSION=	1.0.1

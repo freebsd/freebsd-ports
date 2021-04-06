@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CHI-Driver-DBI
 PORTVERSION=	1.27

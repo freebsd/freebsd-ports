@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	petsc4py
 DISTVERSION=	3.10.0

@@ -1,5 +1,4 @@
 # Created by: Oleg Ukraincev <oleg@ht-systems.ru>
-# $FreeBSD$
 
 PORTNAME=	polib
 PORTVERSION=	1.1.0

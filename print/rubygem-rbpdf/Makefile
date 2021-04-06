@@ -1,5 +1,4 @@
 # Created by: Michael Moll <kvedulv at kvedulv.de>
-# $FreeBSD$
 
 PORTNAME=	rbpdf
 PORTVERSION=	1.20.1

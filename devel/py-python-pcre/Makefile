@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-pcre
 DISTVERSION=	0.7

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	avrdude
 PORTVERSION=	6.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rbnacl
 PORTVERSION=	5.0.0

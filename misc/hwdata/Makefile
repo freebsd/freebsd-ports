@@ -1,5 +1,4 @@
 # Created by: Ting-Wei Lan <lantw44@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	hwdata
 DISTVERSIONPREFIX=	v

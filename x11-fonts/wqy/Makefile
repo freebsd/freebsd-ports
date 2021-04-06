@@ -1,5 +1,4 @@
 # Created by: Dryice Liu <dryice@liu.com.cn>
-# $FreeBSD$
 
 PORTNAME=	wqy-fonts
 PORTVERSION=	20100803

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	focker
 DISTVERSION=	0.93-g20200628

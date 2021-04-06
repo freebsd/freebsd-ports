@@ -1,5 +1,4 @@
 # Created by: Nick Hilliard <nick@foobar.org>
-# $FreeBSD$
 
 PORTNAME=	phplist
 PORTVERSION=	3.6.1

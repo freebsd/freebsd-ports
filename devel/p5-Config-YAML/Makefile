@@ -1,5 +1,4 @@
 # Created by: Steve Wills <steve@mouf.net>
-# $FreeBSD$
 
 PORTNAME=	Config-YAML
 PORTVERSION=	1.42

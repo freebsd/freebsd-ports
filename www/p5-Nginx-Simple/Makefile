@@ -1,5 +1,4 @@
 # Created by: Simon Dick <simond@irrelevant.org>
-# $FreeBSD$
 
 PORTNAME=	Nginx-Simple
 PORTVERSION=	0.07

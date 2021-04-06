@@ -1,5 +1,4 @@
 # Created by: Richard Rose <freebsd-security@rikrose.net>
-# $FreeBSD$
 
 PORTNAME=	nologinmsg
 PORTVERSION=	1.0

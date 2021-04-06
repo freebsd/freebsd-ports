@@ -1,5 +1,4 @@
 # Created by: nectar@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	vxquery
 PORTVERSION=	0.2.1

@@ -1,5 +1,4 @@
 # Created by: roberto
-# $FreeBSD$
 
 PORTNAME=	dlmalloc
 PORTVERSION=	2.8.6

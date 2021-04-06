@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	chinese
 LO_I18N=	zh_CN

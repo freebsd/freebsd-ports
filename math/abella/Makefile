@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	abella
 DISTVERSION=	2.0.7

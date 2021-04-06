@@ -1,5 +1,4 @@
 # Created by: Peter Jeremy <peterjeremy@acm.org>
-# $FreeBSD$
 
 PORTNAME=	mspdebug
 PORTVERSION=	0.25.20200402

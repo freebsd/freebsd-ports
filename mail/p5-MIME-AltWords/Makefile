@@ -1,5 +1,4 @@
 # Created by: Dmitry Liakh <dliakh@ukr.net>
-# $FreeBSD$
 
 PORTNAME=	MIME-AltWords
 PORTVERSION=	0.12

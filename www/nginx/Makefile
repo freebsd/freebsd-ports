@@ -1,5 +1,4 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nginx
 PORTVERSION=	1.18.0

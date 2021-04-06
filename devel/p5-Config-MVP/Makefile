@@ -1,5 +1,4 @@
 # Created by: andrey@kostenko.name
-# $FreeBSD$
 
 PORTNAME=	Config-MVP
 PORTVERSION=	2.200012

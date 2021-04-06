@@ -1,5 +1,4 @@
 # Created by: asami
-# $FreeBSD$
 
 PORTNAME=	mpeg_play
 PORTVERSION=	2.4

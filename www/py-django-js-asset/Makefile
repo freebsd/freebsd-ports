@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-js-asset
 DISTVERSION=	1.2.2

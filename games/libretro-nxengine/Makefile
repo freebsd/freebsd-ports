@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-nxengine
 PORTVERSION=	0.20210214

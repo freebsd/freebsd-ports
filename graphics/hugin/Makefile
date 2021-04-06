@@ -1,5 +1,4 @@
 # Created by: Carlos Eduardo G. Carvalho <cartola@openit.com.br>
-# $FreeBSD$
 
 PORTNAME=	hugin
 PORTVERSION=	2019.2.0

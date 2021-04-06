@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zsh-autosuggestions
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sunwait
 PORTVERSION=	20041208

@@ -1,5 +1,4 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gitcreds
 DISTVERSION=	0.1.1

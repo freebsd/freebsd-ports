@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libhdhomerun
 PORTVERSION=	20190621

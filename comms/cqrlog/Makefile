@@ -1,5 +1,4 @@
 # Created by: Stephen Hurd <shurd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cqrlog
 PORTVERSION=	2.4.0

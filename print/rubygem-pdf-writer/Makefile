@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pdf-writer
 PORTVERSION=	1.1.8

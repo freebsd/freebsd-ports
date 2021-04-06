@@ -1,5 +1,4 @@
 # Created by: Victor Yagofarov <xnasx@yandex.ru>
-# $FreeBSD$
 
 PORTNAME=	kafkacat
 DISTVERSION=	1.6.0

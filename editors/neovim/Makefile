@@ -1,5 +1,4 @@
 # Created by: Anton Tornqvist <antont@inbox.lv>
-# $FreeBSD$
 
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v

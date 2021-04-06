@@ -1,5 +1,4 @@
 # Created by: Aaron Dalton <aaron@daltons.ca>
-# $FreeBSD$
 
 PORTNAME=	Tree-Simple-VisitorFactory
 PORTVERSION=	0.15

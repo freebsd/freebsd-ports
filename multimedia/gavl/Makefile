@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@ahze.net>
-# $FreeBSD$
 
 PORTNAME=	gavl
 PORTVERSION=	1.4.0

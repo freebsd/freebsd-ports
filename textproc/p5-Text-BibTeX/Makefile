@@ -1,5 +1,4 @@
 # Created by: David Bremner <bremner@unb.ca>
-# $FreeBSD$
 
 PORTNAME=	Text-BibTeX
 PORTVERSION=	0.88

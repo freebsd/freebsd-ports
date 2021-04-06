@@ -1,5 +1,4 @@
 # Created by: Jan Stocker <Jan.Stocker@t-online.de>
-# $FreeBSD$
 
 PORTNAME=	zoom
 PORTVERSION=	1.1.5

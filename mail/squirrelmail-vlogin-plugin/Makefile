@@ -1,5 +1,4 @@
 # Created by: Matt Emmerton <matt@gsicomp.on.ca>
-# $FreeBSD$
 
 PORTNAME=	vlogin
 PORTVERSION=	3.10.2

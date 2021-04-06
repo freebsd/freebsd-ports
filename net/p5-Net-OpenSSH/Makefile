@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-OpenSSH
 PORTVERSION=	0.80

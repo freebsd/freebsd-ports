@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ksnip
 DISTVERSIONPREFIX=	v

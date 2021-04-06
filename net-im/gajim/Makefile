@@ -1,5 +1,4 @@
 # Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-# $FreeBSD$
 
 PORTNAME=	gajim
 DISTVERSION=	1.3.1-2

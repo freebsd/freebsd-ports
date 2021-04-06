@@ -1,5 +1,4 @@
 # Created by: kaz
-# $FreeBSD$
 
 PORTNAME=	vrfy
 PORTVERSION=	1.0

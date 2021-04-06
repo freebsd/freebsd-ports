@@ -1,5 +1,4 @@
 # Created by: Philip M. Gollucci <philip@p6m7g8.com>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Tree
 PORTVERSION=	1.98

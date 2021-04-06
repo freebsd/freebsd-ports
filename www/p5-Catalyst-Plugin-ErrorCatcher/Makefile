@@ -1,5 +1,4 @@
 # Created by: andrey@kostenko.name
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-ErrorCatcher
 PORTVERSION=	0.0.8.21

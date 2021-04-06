@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	igv
 DISTVERSIONPREFIX=	v

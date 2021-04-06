@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	or-tools
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Andreas Klemm <andreas@klemm.gtn.com>
-# $FreeBSD$
 
 PORTNAME=	symlinks
 PORTVERSION=	1.4

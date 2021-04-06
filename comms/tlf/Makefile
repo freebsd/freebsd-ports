@@ -1,5 +1,4 @@
 # Created by: db
-# $FreeBSD$
 
 PORTNAME=	tlf
 PORTVERSION=	1.4.1

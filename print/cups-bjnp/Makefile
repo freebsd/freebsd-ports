@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cups-bjnp
 PORTVERSION=	2.0.3

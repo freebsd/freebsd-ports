@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-HTTP-LWP-UserAgent
 PORTVERSION=	0.10

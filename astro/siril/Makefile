@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	siril
 DISTVERSION=	0.99.8.1

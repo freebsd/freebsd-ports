@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	herbstluftwm
 DISTVERSIONPREFIX=	v

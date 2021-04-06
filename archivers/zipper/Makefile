@@ -1,5 +1,4 @@
 # Created by: gurkan@phys.ethz.ch
-# $FreeBSD$
 
 PORTNAME=	zipper
 PORTVERSION=	1.5

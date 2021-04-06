@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	TokyoCabinet
 PORTVERSION=	1.34

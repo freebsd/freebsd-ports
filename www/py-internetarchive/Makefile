@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	internetarchive
 DISTVERSION=	1.9.9

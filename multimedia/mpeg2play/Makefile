@@ -1,5 +1,4 @@
 # Created by: "Philippe Charnier" <charnier@lirmm.fr>
-# $FreeBSD$
 
 PORTNAME=	mpeg2play
 PORTVERSION=	1.1b

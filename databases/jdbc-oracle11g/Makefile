@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oracle11g
 PORTVERSION=	11.2.0.4

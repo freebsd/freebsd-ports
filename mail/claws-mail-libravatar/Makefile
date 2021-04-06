@@ -1,5 +1,4 @@
 # Created by: Pawel Pekala <pawel@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	libravatar
 PORTREVISION=	0

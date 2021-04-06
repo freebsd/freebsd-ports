@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan
-# $FreeBSD$
 
 PORTNAME=	Crypt-SaltedHash
 PORTVERSION=	0.09

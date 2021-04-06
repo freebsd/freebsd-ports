@@ -1,5 +1,4 @@
 # Created by: Harshavardhana
-# $FreeBSD$
 #
 
 PORTNAME=	cmockery2

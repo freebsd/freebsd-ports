@@ -1,5 +1,4 @@
 # Created by: shanee@augusta.de
-# $FreeBSD$
 
 PORTNAME=	rosegarden
 PORTVERSION=	20.06

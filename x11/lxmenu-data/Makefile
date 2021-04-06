@@ -1,5 +1,4 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lxmenu-data
 PORTVERSION=	0.1.5

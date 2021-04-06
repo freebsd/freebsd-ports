@@ -1,5 +1,4 @@
 # Created by: stas
-# $FreeBSD$
 
 PORTNAME=	libinotify
 PORTVERSION=	20180201

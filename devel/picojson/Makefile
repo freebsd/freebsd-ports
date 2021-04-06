@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	picojson
 DISTVERSIONPREFIX=	v

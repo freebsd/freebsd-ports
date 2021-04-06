@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Dumper
 PORTVERSION=	1.2.0

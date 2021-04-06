@@ -1,5 +1,4 @@
 # Created by: Rihaz Jerrin <rihaz.jerrin@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	cisco-torch
 PORTVERSION=	0.4

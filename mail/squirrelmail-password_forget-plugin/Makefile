@@ -1,5 +1,4 @@
 # Created by: Neil Darlow <neil@darlow.co.uk>
-# $FreeBSD$
 
 PORTNAME=	password_forget
 PORTVERSION=	2.3

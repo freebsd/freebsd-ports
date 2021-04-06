@@ -1,5 +1,4 @@
 # Created by: n-shigemura@ensure.jp
-# $FreeBSD$
 
 PORTNAME=	mime_pls
 PORTVERSION=	2.02

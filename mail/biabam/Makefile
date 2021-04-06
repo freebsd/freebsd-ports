@@ -1,5 +1,4 @@
 # Created by: George Reid <greid@ukug.uk.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	biabam
 PORTVERSION=	0.9.7

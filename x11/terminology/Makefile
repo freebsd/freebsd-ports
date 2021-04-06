@@ -1,5 +1,4 @@
 # Created by: Grzegorz Blach <gblach@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	terminology
 DISTVERSION=	1.9.0

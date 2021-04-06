@@ -1,5 +1,4 @@
 # Created by: M. Warner Losh <imp@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dlipower
 PORTVERSION=	1.0.176

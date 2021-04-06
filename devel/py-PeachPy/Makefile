@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	PeachPy
 DISTVERSION=	g20180225

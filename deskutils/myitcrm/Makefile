@@ -1,5 +1,4 @@
 # Created by: jamrich.majo@gmail.com
-# $FreeBSD$
 
 PORTNAME=	myitcrm
 PORTVERSION=	0.2.9.3

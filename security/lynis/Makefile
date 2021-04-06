@@ -1,5 +1,4 @@
 # Created by: Cory McIntire (loon@noncensored.com)
-# $FreeBSD$
 
 PORTNAME=	lynis
 PORTVERSION=	3.0.3

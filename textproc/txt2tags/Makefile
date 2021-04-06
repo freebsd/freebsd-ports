@@ -1,5 +1,4 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	txt2tags
 PORTVERSION=	3.7

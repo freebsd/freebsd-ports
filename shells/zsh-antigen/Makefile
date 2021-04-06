@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zsh-antigen
 DISTVERSIONPREFIX=	v

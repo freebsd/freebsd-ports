@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Crypt-OFB
 PORTVERSION=	0.01

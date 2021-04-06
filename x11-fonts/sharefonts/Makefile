@@ -1,5 +1,4 @@
 # Created by: dburr@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	sharefonts
 PORTVERSION=	0.10

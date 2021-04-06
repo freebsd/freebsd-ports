@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dasel
 DISTVERSIONPREFIX=	v

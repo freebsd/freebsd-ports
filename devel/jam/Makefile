@@ -1,5 +1,4 @@
 # Created by: Jeffrey Hsu <hsu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jam
 PORTVERSION=	2.6

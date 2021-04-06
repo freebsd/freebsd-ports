@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pysofa
 DISTVERSION=	0.1.1

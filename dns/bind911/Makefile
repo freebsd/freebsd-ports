@@ -1,4 +1,3 @@
-# $FreeBSD$
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind

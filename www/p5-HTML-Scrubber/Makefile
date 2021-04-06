@@ -1,5 +1,4 @@
 # Created by: Foxfair Hu <foxfair@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	HTML-Scrubber
 PORTVERSION=	0.19

@@ -1,5 +1,4 @@
 # Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-# $FreeBSD$
 
 PORTNAME=	Net-Connection-lsof
 PORTVERSION=	0.2.0

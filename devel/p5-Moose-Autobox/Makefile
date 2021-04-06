@@ -1,5 +1,4 @@
 # Created by: Bill Brinzer <bill.brinzer@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Moose-Autobox
 PORTVERSION=	0.15

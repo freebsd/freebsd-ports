@@ -1,5 +1,4 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
-# $FreeBSD$
 
 PORTNAME=	doom3-demo
 PORTVERSION=	1.1.1286

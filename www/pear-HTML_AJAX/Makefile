@@ -1,5 +1,4 @@
 # Created by: Simun Mikecin <numisemis at yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	HTML_AJAX
 PORTVERSION=	0.5.8

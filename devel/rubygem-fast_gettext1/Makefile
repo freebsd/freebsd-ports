@@ -1,5 +1,4 @@
 # Created by: Michael Moll <kvedulv at kvedulv.de>
-# $FreeBSD$
 
 PORTNAME=	fast_gettext
 PORTVERSION=	1.8.0

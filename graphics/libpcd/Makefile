@@ -1,5 +1,4 @@
 # Created by: Andrey Slusar <anray@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libpcd
 PORTVERSION=	1.0.1

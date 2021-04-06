@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gpx2map
 PORTVERSION=	0.2

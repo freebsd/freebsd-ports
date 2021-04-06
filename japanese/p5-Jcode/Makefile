@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Jcode
 PORTVERSION=	2.07

@@ -1,5 +1,4 @@
 # Created by: pixel
-# $FreeBSD$
 
 PORTNAME=	libdsk
 PORTVERSION=	1.4.2

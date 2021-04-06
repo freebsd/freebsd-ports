@@ -1,5 +1,4 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Class-C3-Componentised
 PORTVERSION=	1.001002

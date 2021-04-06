@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Group
 PORTVERSION=	0.20

@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Text-MultiMarkdown-ApacheHandler
 PORTVERSION=	0.01

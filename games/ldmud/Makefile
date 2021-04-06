@@ -1,5 +1,4 @@
 # Created by: glewis@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	ldmud
 PORTVERSION=	3.3.720

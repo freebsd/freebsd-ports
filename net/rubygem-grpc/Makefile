@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grpc
 PORTVERSION=	1.36.0

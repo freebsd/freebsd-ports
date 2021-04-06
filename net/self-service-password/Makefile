@@ -1,5 +1,4 @@
 # Created by: Krzysztof Stryjek <ports@bsdserwis.com>
-# $FreeBSD$
 
 PORTNAME=	self-service-password
 DISTVERSION=	1.3

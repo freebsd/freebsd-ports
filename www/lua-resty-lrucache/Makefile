@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lua-resty-lrucache
 PORTVERSION=	0.10

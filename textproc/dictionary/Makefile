@@ -1,5 +1,4 @@
 # Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-# $FreeBSD$
 
 PORTNAME=	dictionary
 PORTVERSION=	1.8.7

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rack-timeout
 PORTVERSION=	0.5.1

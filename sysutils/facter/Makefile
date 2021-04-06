@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	facter
 PORTVERSION=	3.14.16

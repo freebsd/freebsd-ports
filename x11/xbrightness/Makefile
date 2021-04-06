@@ -1,5 +1,4 @@
 # Created by: Michiel Overtoom <motoom@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	xbrightness
 PORTVERSION=	0.3

@@ -1,5 +1,4 @@
 # Created by: TAKATSU Tomonari <tota@rtfm.jp>
-# $FreeBSD$
 
 PORTNAME=	silentbob
 PORTVERSION=	3.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tai64nfrac
 PORTVERSION=	1.4

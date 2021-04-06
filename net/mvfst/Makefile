@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mvfst
 DISTVERSION=	g20201119

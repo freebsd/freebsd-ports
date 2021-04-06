@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aniso8601
 PORTVERSION=	9.0.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	algopy
 DISTVERSION=	0.5.7

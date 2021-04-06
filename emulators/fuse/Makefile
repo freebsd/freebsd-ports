@@ -1,5 +1,4 @@
 # Created by: Alexey V. Antipovsky <kemm@in-line.ru>
-# $FreeBSD$
 
 PORTNAME=	fuse
 PORTVERSION=	1.6.0

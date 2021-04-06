@@ -1,5 +1,4 @@
 # Created by: George Sorsby <george@crackpipe.net>
-# $FreeBSD$
 
 PORTNAME=	nget
 PORTVERSION=	0.27.1

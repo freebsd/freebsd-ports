@@ -1,5 +1,4 @@
 # Created by: Michael Moll <kvedulv@kvedulv.de>
-# $FreeBSD$
 
 PORTNAME=	hammer_cli
 PORTVERSION=	2.2.0

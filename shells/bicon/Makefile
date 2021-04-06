@@ -1,5 +1,4 @@
 # Created by: Carlos Jacobo Puga Medina <cpm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bicon
 PORTVERSION=	0.5

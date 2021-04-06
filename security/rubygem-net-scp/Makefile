@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	net-scp
 PORTVERSION=	1.2.1

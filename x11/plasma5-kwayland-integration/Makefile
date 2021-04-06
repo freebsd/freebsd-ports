@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kwayland-integration
 DISTVERSION=	${KDE_PLASMA_VERSION}

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-tools
 PORTVERSION=	${PYTHON_PORTVERSION}

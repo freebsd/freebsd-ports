@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tmate-ssh-server
 PORTVERSION=	g2020071601

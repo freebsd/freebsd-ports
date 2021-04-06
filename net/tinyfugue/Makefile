@@ -1,5 +1,4 @@
 # Created by: mike@binghamton.edu
-# $FreeBSD$
 
 PORTNAME=	tf
 PORTVERSION=	5.0b8

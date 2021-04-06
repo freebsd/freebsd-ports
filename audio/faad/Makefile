@@ -1,5 +1,4 @@
 # Created by: Sean McGovern <sean@sfarc.net>
-# $FreeBSD$
 
 PORTNAME=	faad2
 PORTVERSION=	2.8.8

@@ -1,5 +1,4 @@
 # Created by: Valentin Zahariev <curly@e-card.bg>
-# $FreeBSD$
 
 PORTNAME=	xca
 PORTVERSION=	2.3.0

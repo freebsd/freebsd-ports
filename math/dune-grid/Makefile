@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dune-grid
 DISTVERSIONPREFIX=	v

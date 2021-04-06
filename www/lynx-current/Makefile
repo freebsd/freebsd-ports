@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	lynx
 PORTVERSION=	2.9.0d6

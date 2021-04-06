@@ -1,5 +1,4 @@
 # Created by: Kevin Golding <ports@caomhin.org>
-# $FreeBSD$
 
 PORTNAME=	django-happenings-update
 PORTVERSION=	0.4.4

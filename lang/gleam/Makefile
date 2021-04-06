@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gleam
 DISTVERSIONPREFIX=	v

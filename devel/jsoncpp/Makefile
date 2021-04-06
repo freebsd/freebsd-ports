@@ -1,5 +1,4 @@
 # Created by: Johan Str??m <johan@stromnet.se>
-# $FreeBSD$
 
 PORTNAME=	jsoncpp
 PORTVERSION=	1.9.4

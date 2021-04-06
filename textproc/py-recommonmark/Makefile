@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	recommonmark
 PORTVERSION=	0.5.0

@@ -1,5 +1,4 @@
 # Created by: Evan Sarmiento <bsdports@wayfair.com>
-# $FreeBSD$
 
 PORTNAME=	mongo
 PORTVERSION=	2.13.0

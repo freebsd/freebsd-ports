@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Config-INI
 PORTVERSION=	0.025

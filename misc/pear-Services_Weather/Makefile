@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas (<thierry@FreeBSD.org>)
-# $FreeBSD$
 
 PORTNAME=	Services_Weather
 PORTVERSION=	1.4.6

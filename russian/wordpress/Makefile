@@ -1,5 +1,4 @@
 # Created by: Mihail Timofeev <9267096@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wordpress
 DISTVERSION=	5.5.3

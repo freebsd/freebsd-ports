@@ -1,5 +1,4 @@
 # Created by: tobez
-# $FreeBSD$
 
 PORTNAME=	PostScript-Simple
 PORTVERSION=	0.09

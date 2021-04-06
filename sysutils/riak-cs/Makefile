@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	riak-cs
 PORTVERSION=	2.1.0

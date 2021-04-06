@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-daemon
 PORTREVISION=	3

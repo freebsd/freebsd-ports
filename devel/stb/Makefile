@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stb
 PORTVERSION=	g20200205

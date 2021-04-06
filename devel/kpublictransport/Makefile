@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kpublictransport
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

@@ -1,5 +1,4 @@
 # Created by: Clement Laforet <clement@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mod_rpaf
 PORTVERSION=	0.8.4

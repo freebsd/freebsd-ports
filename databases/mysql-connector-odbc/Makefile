@@ -1,5 +1,4 @@
 # Created by: sergey@migsoft.com.ua
-# $FreeBSD$
 
 PORTNAME=	mysql-connector-odbc
 PORTVERSION=	5.3.13

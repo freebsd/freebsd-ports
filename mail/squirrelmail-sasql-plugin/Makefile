@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine <gerrit.beine@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	sasql
 PORTVERSION=	3.2.0

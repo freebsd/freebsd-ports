@@ -1,5 +1,4 @@
 # Created by: Patrice Clement <monsieurp@gentoo.org>
-# $FreeBSD$
 
 PORTNAME=	hstr
 DISTVERSION=	2.0

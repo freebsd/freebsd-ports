@@ -1,5 +1,4 @@
 # Created by: Babak Farrokhi <babak@farrokhi.net>
-# $FreeBSD$
 
 PORTNAME=	jwm
 PORTVERSION=	2.3.7

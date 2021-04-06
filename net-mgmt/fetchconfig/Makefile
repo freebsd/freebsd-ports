@@ -1,5 +1,4 @@
 # Created by: salexanov@gmail.com
-# $FreeBSD$
 
 PORTNAME=	fetchconfig
 DISTVERSION=	0.26

@@ -1,5 +1,4 @@
 # Created by: Mikhail Teterin <mi@aldan.algebra.com>
-# $FreeBSD$
 
 PORTNAME=	WordNet
 PORTVERSION=	3.0

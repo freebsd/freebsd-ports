@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kuserfeedback
 DISTVERSION=	1.0.0

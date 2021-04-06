@@ -1,5 +1,4 @@
 # Created by: Mij <mij@bitchx.it>
-# $FreeBSD$
 
 PORTNAME=	sshguard
 PORTVERSION=	2.4.1

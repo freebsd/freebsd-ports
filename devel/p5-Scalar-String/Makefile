@@ -1,5 +1,4 @@
 # Created by: brix@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Scalar-String
 PORTVERSION=	0.003

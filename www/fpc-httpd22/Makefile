@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	www lang
 PKGNAMESUFFIX=	-httpd22

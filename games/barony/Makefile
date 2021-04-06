@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	barony
 DISTVERSIONPREFIX=	v

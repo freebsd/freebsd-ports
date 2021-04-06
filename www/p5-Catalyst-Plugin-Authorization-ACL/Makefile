@@ -1,5 +1,4 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Authorization-ACL
 PORTVERSION=	0.16

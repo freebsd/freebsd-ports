@@ -1,5 +1,4 @@
 # Created by: Stefan Jahn <stefan.jahn@nemesis-sektor.de>
-# $FreeBSD$
 
 PORTNAME=	knights
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

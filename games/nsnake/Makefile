@@ -1,5 +1,4 @@
 # Created by: markand
-# $FreeBSD$
 
 PORTNAME=	nsnake
 PORTVERSION=	2.2.0

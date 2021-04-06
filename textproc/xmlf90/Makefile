@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xmlf90
 DISTVERSION=	1.5.4

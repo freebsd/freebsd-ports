@@ -1,5 +1,4 @@
 # Created by: Sergey Matveychuk <sem@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sqstat
 PORTVERSION=	1.20

@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <alex@kapranoff.ru>
-# $FreeBSD$
 
 PORTNAME=	CGI-Application-Plugin-ConfigAuto
 PORTVERSION=	1.33

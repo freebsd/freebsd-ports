@@ -1,5 +1,4 @@
 # Created by: Tomasz "CeDeROM" CEDRO (http://www.tomek.cedro.info)
-# $FreeBSD$
 
 PORTNAME=	openocd
 PORTVERSION=	0.10.0

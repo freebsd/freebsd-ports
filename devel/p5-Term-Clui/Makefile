@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Term-Clui
 PORTVERSION=	1.76

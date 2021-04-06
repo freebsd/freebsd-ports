@@ -1,5 +1,4 @@
 # Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-# $FreeBSD$
 
 CATEGORIES=	japanese
 PKGNAMESUFFIX=	-img

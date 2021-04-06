@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rails_serve_static_assets
 PORTVERSION=	0.0.5

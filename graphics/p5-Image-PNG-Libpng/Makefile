@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Image-PNG-Libpng
 PORTVERSION=	0.56

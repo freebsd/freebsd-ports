@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	pipestatus
 PORTVERSION=	0.7.0

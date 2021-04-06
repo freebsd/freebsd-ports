@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libzim
 PORTVERSION=	6.3.0

@@ -1,5 +1,4 @@
 # Created by: Johann Visagie <johann@egenetics.com>
-# $FreeBSD$
 
 PORTNAME=	biopython
 DISTVERSION=	1.78

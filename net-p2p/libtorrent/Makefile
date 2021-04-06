@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libtorrent
 PORTVERSION=	0.13.8

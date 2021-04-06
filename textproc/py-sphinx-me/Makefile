@@ -1,5 +1,4 @@
 # Created by: René Ladan <rene@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	sphinx-me
 PORTVERSION=	0.3

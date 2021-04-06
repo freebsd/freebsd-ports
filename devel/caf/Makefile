@@ -1,5 +1,4 @@
 # Created by: vanilla@
-# $FreeBSD$
 
 PORTNAME=	caf
 PORTVERSION=	0.18.2

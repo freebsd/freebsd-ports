@@ -1,5 +1,4 @@
 # Created by: Jason Helfman <jgh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xpad
 PORTVERSION=	5.4.0

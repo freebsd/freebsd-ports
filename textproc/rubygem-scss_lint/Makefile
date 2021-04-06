@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scss_lint
 PORTVERSION=	0.57.1

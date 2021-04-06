@@ -1,5 +1,4 @@
 # Created by: Mantas Kaulakys <stone@tainet.lt>
-# $FreeBSD$
 
 PORTNAME=	amavis-stats
 PORTVERSION=	0.1.12

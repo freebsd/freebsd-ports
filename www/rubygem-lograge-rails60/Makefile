@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lograge
 PORTVERSION=	0.11.2

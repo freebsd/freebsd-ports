@@ -1,5 +1,4 @@
 # Created by: George Reid <greid@ukug.uk.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	asmutils
 PORTVERSION=	0.18

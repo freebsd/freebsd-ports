@@ -1,5 +1,4 @@
 # Created by: jesusr
-# $FreeBSD$
 
 PORTNAME=	sipsak
 PORTVERSION=	0.9.6

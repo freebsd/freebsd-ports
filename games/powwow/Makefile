@@ -1,5 +1,4 @@
 # Created by: Juraj Lutter <otis@sk.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	powwow
 PORTVERSION=	1.2.22

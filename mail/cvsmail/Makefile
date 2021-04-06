@@ -1,5 +1,4 @@
 # Created by: Ben Smithurst <ben@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cvsmail
 PORTVERSION=	2.2

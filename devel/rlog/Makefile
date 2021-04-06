@@ -1,5 +1,4 @@
 # Created by: trasz <trasz@pin.if.uz.zgora.pl>
-# $FreeBSD$
 
 PORTNAME=	rlog
 PORTVERSION=	1.4

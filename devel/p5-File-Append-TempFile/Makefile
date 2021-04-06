@@ -1,5 +1,4 @@
 # Created by: Peter Pentchev <roam@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	File-Append-TempFile
 PORTVERSION=	0.07

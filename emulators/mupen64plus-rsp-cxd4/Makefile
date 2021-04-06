@@ -1,5 +1,4 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-# $FreeBSD$
 
 PORTREVISION=	5
 PKGNAMESUFFIX=	-rsp-cxd4

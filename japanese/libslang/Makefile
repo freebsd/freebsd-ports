@@ -1,5 +1,4 @@
 # Created by: IWASHITA Yoji <shuna@pop16.odn.ne.jp>
-# $FreeBSD$
 
 PORTNAME=	libslang
 PORTVERSION=	${VERSION}.j${JP_VERSION}

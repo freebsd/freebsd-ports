@@ -1,5 +1,4 @@
 # Created by: Damjan Marion <dmarion@open.hr>
-# $FreeBSD$
 
 PORTNAME=	gftp
 PORTVERSION=	2.0.19

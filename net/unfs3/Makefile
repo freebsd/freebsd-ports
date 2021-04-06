@@ -1,5 +1,4 @@
 # Created by: Clement Laforet <clement@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	unfs3
 PORTVERSION=	0.9.22

@@ -1,5 +1,4 @@
 # Created by: Wen Heping <ruby@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	treetop
 PORTVERSION=	1.6.10

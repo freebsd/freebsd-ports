@@ -1,5 +1,4 @@
 # Created by: lbartoletti <lbartoletti@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	freexl
 DISTVERSION=	1.0.6

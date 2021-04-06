@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SoapyBladeRF
 DISTVERSIONPREFIX=	soapy-bladerf-

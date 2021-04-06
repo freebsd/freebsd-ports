@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@ahze.net>
-# $FreeBSD$
 
 PORTNAME=	python-memcached
 PORTVERSION=	1.59

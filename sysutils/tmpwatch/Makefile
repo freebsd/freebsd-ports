@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tmpwatch
 PORTVERSION=	2.11

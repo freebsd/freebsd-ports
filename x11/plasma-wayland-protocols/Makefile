@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	plasma-wayland-protocols
 DISTVERSION=	1.1.1

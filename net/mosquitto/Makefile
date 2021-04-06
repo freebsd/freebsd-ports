@@ -1,5 +1,4 @@
 # Created by: Joseph Benden <joe@thrallingpenguin.com>
-# $FreeBSD$
 
 PORTNAME=	mosquitto
 PORTVERSION=	2.0.8

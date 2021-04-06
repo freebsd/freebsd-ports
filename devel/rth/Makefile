@@ -1,5 +1,4 @@
 # Created by: Jan Siml <jsi@jules.de>
-# $FreeBSD$
 
 PORTNAME=	rth
 PORTVERSION=	1.7.0

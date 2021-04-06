@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	segyio
 DISTVERSIONPREFIX=	v

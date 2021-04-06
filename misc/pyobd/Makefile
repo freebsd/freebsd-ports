@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyobd
 DISTVERSION=	0.9.3

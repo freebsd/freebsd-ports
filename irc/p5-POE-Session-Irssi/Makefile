@@ -1,5 +1,4 @@
 # Created by: Jase Thew <freebsd@beardz.net>
-# $FreeBSD$
 
 PORTNAME=	POE-Session-Irssi
 PORTVERSION=	0.50

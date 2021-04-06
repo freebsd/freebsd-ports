@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME=	alienarena
 PORTVERSION=	2013.766

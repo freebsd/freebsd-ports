@@ -1,5 +1,4 @@
 # Created by: Stephen Hurd <shurd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	freedink-data
 PORTVERSION=	1.08.${PORTVER}

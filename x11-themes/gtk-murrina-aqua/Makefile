@@ -1,5 +1,4 @@
 # Created by: Phillip Neumann <pneumann@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gtk-murrina-aqua
 PORTVERSION=	0.1

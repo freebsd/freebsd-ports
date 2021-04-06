@@ -1,5 +1,4 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	python-digitalocean
 PORTVERSION=	1.16.0

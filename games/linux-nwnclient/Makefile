@@ -1,5 +1,4 @@
 # Created by: Erik Olson <erikolson@olsonexpress.com>
-# $FreeBSD$
 
 PORTNAME=	nwnclient
 PORTVERSION=	1.69

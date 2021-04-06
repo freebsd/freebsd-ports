@@ -1,5 +1,4 @@
 # Created by: Douglas K. Rand <rand@iteris.com>
-# $FreeBSD$
 
 PORTNAME=	check_relayd_status
 PORTVERSION=	1.1

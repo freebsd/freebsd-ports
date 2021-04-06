@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	raster
 DISTVERSION=	3.4-5

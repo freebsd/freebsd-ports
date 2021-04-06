@@ -1,5 +1,4 @@
 # Created by: benlutz@datacomm.ch
-# $FreeBSD$
 
 PORTNAME=	uqm
 PORTVERSION=	0.7.0

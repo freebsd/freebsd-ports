@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qxmpp
 DISTVERSIONPREFIX=	v

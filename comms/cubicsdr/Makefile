@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cubicsdr
 DISTVERSION=	0.2.5

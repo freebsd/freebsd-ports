@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jsonpointer
 PORTVERSION=	2.0

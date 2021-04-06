@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	showdown
 DISTVERSION=	0.6

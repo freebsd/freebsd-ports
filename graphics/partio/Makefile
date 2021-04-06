@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	partio
 PORTVERSION=	1.14.0

@@ -1,5 +1,4 @@
 # Created by: ryo
-# $FreeBSD$
 
 PORTNAME=	nepenthes
 PORTVERSION=	0.2.2

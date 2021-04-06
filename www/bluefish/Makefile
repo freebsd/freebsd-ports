@@ -1,5 +1,4 @@
 # Created by: Koop Mast <einekoai@chello.nl>
-# $FreeBSD$
 
 PORTNAME=	bluefish
 PORTVERSION=	2.2.12

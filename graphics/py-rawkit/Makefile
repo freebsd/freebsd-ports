@@ -1,5 +1,4 @@
 # Created by: Martin Neubauer <m.ne@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	rawkit
 PORTVERSION=	0.6.0

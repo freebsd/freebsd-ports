@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	git-town
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Masahiro Teramoto <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	XML-FOAF
 PORTVERSION=	0.04

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	active_model_serializers
 PORTVERSION=	0.10.12

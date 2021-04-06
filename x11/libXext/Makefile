@@ -1,5 +1,4 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libXext
 PORTVERSION=	1.3.4

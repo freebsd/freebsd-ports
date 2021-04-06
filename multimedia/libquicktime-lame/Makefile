@@ -1,5 +1,4 @@
 # Created by: mm
-# $FreeBSD$
 
 PORTNAME=	libquicktime
 PORTREVISION=	6

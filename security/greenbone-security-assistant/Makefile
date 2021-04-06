@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	greenbone-security-assistant
 DISTVERSIONPREFIX=	v

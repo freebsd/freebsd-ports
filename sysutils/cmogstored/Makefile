@@ -1,5 +1,4 @@
 # Created by: Mikolaj Golub <trociny@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cmogstored
 PORTVERSION=	1.8.1

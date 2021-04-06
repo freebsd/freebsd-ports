@@ -1,5 +1,4 @@
 # Created by: John Reynolds <johnjen@reynoldsnet.org>
-# $FreeBSD$
 
 PORTNAME=	s10sh
 PORTVERSION=	0.2.2

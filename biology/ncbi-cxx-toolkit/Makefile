@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ncbi-cxx-toolkit
 DISTVERSION=	22_0_0

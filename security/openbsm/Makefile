@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openbsm
 DISTVERSION=	1.1-p2

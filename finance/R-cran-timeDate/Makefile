@@ -1,5 +1,4 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	timeDate
 DISTVERSION=	3043.102

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xrandr
 PORTVERSION=	1.5.1

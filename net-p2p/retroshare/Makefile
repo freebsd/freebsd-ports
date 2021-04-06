@@ -1,5 +1,4 @@
 # Created by: glocke@bsdstammtisch.at
-# $FreeBSD$
 
 PORTNAME=	retroshare
 DISTVERSIONPREFIX=	v

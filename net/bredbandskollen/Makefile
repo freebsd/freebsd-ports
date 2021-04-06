@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bredbandskollen
 PORTVERSION=	0.20190705

@@ -1,5 +1,4 @@
 # Created by: M.Indlekofer@gmx.de
-# $FreeBSD$
 
 PORTNAME=	asr10
 PORTVERSION=	1.0

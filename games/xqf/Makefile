@@ -1,5 +1,4 @@
 # Created by: steve farrell
-# $FreeBSD$
 
 PORTNAME=	xqf
 PORTVERSION=	1.0.6.2

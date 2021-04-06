@@ -1,5 +1,4 @@
 # Created by: Hiroki Sato <hrs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xmlformat
 PORTVERSION=	1.04

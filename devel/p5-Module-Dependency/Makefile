@@ -1,5 +1,4 @@
 # Created by: Cheng-Lung Sung
-# $FreeBSD$
 
 PORTNAME=	Module-Dependency
 PORTVERSION=	1.86

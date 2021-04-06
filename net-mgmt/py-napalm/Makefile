@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	napalm
 DISTVERSION=	3.2.0

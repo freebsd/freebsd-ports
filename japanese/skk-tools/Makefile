@@ -1,5 +1,4 @@
 # Created by: Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	skk-tools
 PORTVERSION=	1.3.3

@@ -1,5 +1,4 @@
 # Created by: nils@guru.ims.uni-stuttgart.de
-# $FreeBSD$
 
 PORTNAME=	dmake
 PORTVERSION=	4.13.1

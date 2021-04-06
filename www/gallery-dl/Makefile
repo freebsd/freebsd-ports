@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gallery-dl
 DISTVERSIONPREFIX=	v

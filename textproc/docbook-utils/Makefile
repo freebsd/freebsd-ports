@@ -1,5 +1,4 @@
 # Created by: Brian Candler <B.Candler@pobox.com>
-# $FreeBSD$
 
 PORTNAME=	docbook-utils
 PORTVERSION=	0.6.14

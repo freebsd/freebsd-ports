@@ -1,5 +1,4 @@
 # Created by: Matthew George <mdg@secureworks.net>
-# $FreeBSD$
 
 PORTNAME=	ifstated
 PORTVERSION=	5.1

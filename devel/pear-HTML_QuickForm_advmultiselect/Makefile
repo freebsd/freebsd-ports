@@ -1,5 +1,4 @@
 # Created by: Chris St Denis <chris@ctgameinfo.com>
-# $FreeBSD$
 
 PORTNAME=	HTML_QuickForm_advmultiselect
 PORTVERSION=	1.5.1

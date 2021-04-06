@@ -1,5 +1,4 @@
 # Created by: Adam McLaurin
-# $FreeBSD$
 
 PORTNAME=	cgprof
 PORTVERSION=	1.2

@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	mbox2imap
 PORTVERSION=	1.0

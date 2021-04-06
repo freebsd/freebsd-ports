@@ -1,5 +1,4 @@
 # Created by: Scott Mace <smace@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.66

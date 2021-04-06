@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-synapse-artifacts
 DISTVERSION=	0.3.0

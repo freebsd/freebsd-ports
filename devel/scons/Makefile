@@ -1,5 +1,4 @@
 # Created by: Peter Haight <peterh@sapros.com>
-# $FreeBSD$
 
 PORTNAME=	scons
 PORTVERSION=	3.1.2

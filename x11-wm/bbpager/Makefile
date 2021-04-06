@@ -1,5 +1,4 @@
 # Created by: Patrick Seal <patseal@hyperhost.net>
-# $FreeBSD$
 
 PORTNAME=	bbpager
 DISTVERSION=	0.4.7

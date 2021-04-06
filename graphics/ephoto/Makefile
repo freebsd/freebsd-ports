@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ephoto
 DISTVERSION=	1.5

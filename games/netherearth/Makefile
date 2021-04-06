@@ -1,5 +1,4 @@
 # Created by: Ginzburg Oleg
-# $FreeBSD$
 
 PORTNAME=	netherearth
 PORTVERSION=	0.51

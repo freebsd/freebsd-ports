@@ -1,5 +1,4 @@
 # Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
-# $FreeBSD$
 
 PORTNAME=	XML-NodeFilter
 PORTVERSION=	0.01

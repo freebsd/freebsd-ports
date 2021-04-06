@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yggdrasil
 DISTVERSIONPREFIX=	v

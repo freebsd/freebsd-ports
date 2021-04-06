@@ -1,5 +1,4 @@
 # Created by: Michael Beer <beerml@sigma6audio.de>
-# $FreeBSD$
 
 PORTNAME=	lilv
 PORTVERSION=	0.24.12

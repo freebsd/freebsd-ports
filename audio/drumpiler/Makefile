@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	drumpiler
 PORTVERSION=	0.9.0

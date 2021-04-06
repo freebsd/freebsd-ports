@@ -1,5 +1,4 @@
 # Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-# $FreeBSD$
 
 PORTNAME=	psvn
 PORTVERSION=	20150720.214200

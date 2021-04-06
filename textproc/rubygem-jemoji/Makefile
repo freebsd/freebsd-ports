@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jemoji
 PORTVERSION=	0.12.0

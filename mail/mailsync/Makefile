@@ -1,5 +1,4 @@
 # Created by: Maxim Tulyuk <mt@primats.org.ua>
-# $FreeBSD$
 
 PORTNAME=	mailsync
 PORTVERSION=	5.2.1

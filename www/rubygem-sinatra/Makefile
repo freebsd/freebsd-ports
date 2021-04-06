@@ -1,5 +1,4 @@
 # Created by: Daniel Roethlisberger <daniel@roe.ch>
-# $FreeBSD$
 
 PORTNAME=	sinatra
 PORTVERSION=	2.1.0

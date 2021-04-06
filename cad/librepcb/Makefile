@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librepcb
 DISTVERSION=	0.1.5

@@ -1,5 +1,4 @@
 # Created by: clsung@dragon2.net
-# $FreeBSD$
 
 PORTNAME=	Net-Amazon
 PORTVERSION=	0.62

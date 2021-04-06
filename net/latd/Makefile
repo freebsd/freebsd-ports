@@ -1,5 +1,4 @@
 # Created by: Tillman Hodgson <tillman@seekingfire.com>
-# $FreeBSD$
 
 PORTNAME=	latd
 PORTVERSION=	1.31

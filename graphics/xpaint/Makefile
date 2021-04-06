@@ -1,5 +1,4 @@
 # Created by: Steven Wallace <swallace@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xpaint
 PORTVERSION=	2.9.10.3

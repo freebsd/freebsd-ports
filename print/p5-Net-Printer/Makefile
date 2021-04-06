@@ -1,5 +1,4 @@
 # Created by: andrew@scoop.co.nz
-# $FreeBSD$
 
 PORTNAME=	Net-Printer
 PORTVERSION=	1.12

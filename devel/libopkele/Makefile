@@ -1,5 +1,4 @@
 # Created by: Sutra Zhou <zhoushuqun@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libopkele
 PORTVERSION=	2.0.4

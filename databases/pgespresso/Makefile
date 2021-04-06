@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman
-# $FreeBSD$
 
 PORTNAME=	pgespresso
 PORTVERSION=	1.2

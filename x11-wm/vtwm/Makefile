@@ -1,5 +1,4 @@
 # Created by: Bruce A. Mah <bmah@ca.sandia.gov>
-# $FreeBSD$
 
 PORTNAME=	vtwm
 PORTVERSION=	5.5.0

@@ -1,5 +1,4 @@
 # Created by: Nick Hilliard <nick@foobar.org>
-# $FreeBSD$
 
 PORTNAME=	Image_Graph
 PORTVERSION=	0.8.0

@@ -1,5 +1,4 @@
 # Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
-# $FreeBSD$
 
 PORTNAME=	String-Dump
 PORTVERSION=	0.09

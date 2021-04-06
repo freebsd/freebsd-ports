@@ -1,5 +1,4 @@
 # Created by: Lars Eggert <lars@eggert.org>
-# $FreeBSD$
 
 PORTNAME=	flowgrind
 PORTVERSION=	0.8.2

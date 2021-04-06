@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flasm
 PORTVERSION=	1.62

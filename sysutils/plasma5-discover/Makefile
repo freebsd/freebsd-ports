@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	discover
 DISTVERSION=	${KDE_PLASMA_VERSION}

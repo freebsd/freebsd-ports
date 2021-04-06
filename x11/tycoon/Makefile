@@ -1,5 +1,4 @@
 # Created by: steve@farrell.org
-# $FreeBSD$
 
 PORTNAME=	tycoon
 PORTVERSION=	1.07o

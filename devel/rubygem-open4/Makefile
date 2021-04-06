@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	open4
 PORTVERSION=	1.3.4

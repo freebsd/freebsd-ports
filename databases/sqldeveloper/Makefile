@@ -1,5 +1,4 @@
 # Created by: jjuanino@gmail.com
-# $FreeBSD$
 
 PORTNAME=	sqldeveloper
 DISTVERSION=	20.2.0.175.1842

@@ -1,5 +1,4 @@
 # Created by: Herve Quiroz <hq@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	servlet-api
 PORTVERSION=	2.5

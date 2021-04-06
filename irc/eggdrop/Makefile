@@ -1,5 +1,4 @@
 # Created by: Ulrich Spoerlein <q@uni.de>
-# $FreeBSD$
 
 PORTNAME=	eggdrop
 PORTVERSION=	1.8.4

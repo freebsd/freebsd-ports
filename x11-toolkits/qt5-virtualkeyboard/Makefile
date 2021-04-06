@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	virtualkeyboard
 DISTVERSION=	${QT5_VERSION}

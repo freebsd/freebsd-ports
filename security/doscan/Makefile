@@ -1,5 +1,4 @@
 # Created by: Janos.Mohacsi@bsd.hu
-# $FreeBSD$
 
 PORTNAME=	doscan
 PORTVERSION=	0.3.3

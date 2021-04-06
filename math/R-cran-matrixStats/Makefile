@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	matrixStats
 PORTVERSION=	0.58.0

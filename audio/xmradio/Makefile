@@ -1,5 +1,4 @@
 # Created by: Thomas Runge <runge@rostock.zgdv.de>
-# $FreeBSD$
 
 PORTNAME=	xmradio
 PORTVERSION=	1.2

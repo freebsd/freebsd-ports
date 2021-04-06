@@ -1,5 +1,4 @@
 # Created by: Lev Walkin <vlm@lionet.info>
-# $FreeBSD$
 
 PORTNAME=	asn1c
 PORTVERSION=	0.9.27

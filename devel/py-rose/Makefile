@@ -1,5 +1,4 @@
 # Created by: William Grzybowski <william88@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	rose
 PORTVERSION=	1.0.0

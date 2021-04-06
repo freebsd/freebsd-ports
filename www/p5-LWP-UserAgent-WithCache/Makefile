@@ -1,5 +1,4 @@
 # Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-# $FreeBSD$
 
 PORTNAME=	LWP-UserAgent-WithCache
 PORTVERSION=	0.13

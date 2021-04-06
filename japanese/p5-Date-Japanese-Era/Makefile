@@ -1,5 +1,4 @@
 # Created by: Kimura Fuyuki <fuyuki@mj.0038.net>
-# $FreeBSD$
 
 PORTNAME=	Date-Japanese-Era
 PORTVERSION=	0.07

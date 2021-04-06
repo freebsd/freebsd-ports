@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cloud-init
 DISTVERSION=	20.4.1

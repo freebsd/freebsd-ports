@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stlink
 PORTVERSION=	1.6.1

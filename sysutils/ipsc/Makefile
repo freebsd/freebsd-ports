@@ -1,5 +1,4 @@
 # Created by: Jeremy Shaffner <jeremy@external.org>
-# $FreeBSD$
 
 PORTNAME=	ipsc
 PORTVERSION=	0.4.3

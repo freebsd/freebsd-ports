@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Portuguese language support
 

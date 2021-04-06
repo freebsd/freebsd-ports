@@ -1,5 +1,4 @@
 # Created by: Tony Maher <tonym@biolateral.com.au>
-# $FreeBSD$
 
 PORTNAME=	primer3
 PORTVERSION=	2.3.6

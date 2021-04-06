@@ -1,5 +1,4 @@
 # Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-# $FreeBSD$
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2

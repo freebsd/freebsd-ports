@@ -1,5 +1,4 @@
 # Created by: Sascha Holzleiter <sascha@root-login.org>
-# $FreeBSD$
 
 PORTNAME=	fzf
 PORTVERSION=	0.25.1

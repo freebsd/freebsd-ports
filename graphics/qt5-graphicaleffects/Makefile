@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	graphicaleffects
 DISTVERSION=	${QT5_VERSION}

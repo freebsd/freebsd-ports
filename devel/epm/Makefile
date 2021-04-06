@@ -1,5 +1,4 @@
 # Created by: NAKATA Maho <maho@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	epm
 PORTVERSION=	4.3

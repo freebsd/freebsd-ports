@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	securecompare
 PORTVERSION=	1.0.0

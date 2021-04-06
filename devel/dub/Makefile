@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dub
 PORTVERSION=	1.14.0

@@ -1,5 +1,4 @@
 # Created by: Joseph Benden <joe@thrallingpenguin.com>
-# $FreeBSD$
 
 PORTNAME=	projectlibre
 PORTVERSION=	1.8.0

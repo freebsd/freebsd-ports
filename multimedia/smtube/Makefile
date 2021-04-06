@@ -1,5 +1,4 @@
 # Created by: Pawel Pekala <pawel@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	smtube
 DISTVERSION=	20.6.0

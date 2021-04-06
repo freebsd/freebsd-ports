@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zope.app.basicskin
 PORTVERSION=	3.5.1

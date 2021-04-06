@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
-# $FreeBSD$
 
 PORTNAME=	Net_Socket
 PORTVERSION=	1.0.14

@@ -1,5 +1,4 @@
 # Created by: asami
-# $FreeBSD$
 
 PORTNAME=	igmpproxy
 DISTVERSION=	0.3

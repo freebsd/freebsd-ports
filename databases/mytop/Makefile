@@ -1,5 +1,4 @@
 # Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mytop
 PORTVERSION=	1.7

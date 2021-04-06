@@ -1,5 +1,4 @@
 # Created by: okeeblow <root@cooltrainer.org>
-# $FreeBSD$
 
 PORTNAME=	abgx360
 PORTVERSION=	1.0.6

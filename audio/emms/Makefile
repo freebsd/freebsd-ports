@@ -1,5 +1,4 @@
 # Created by: Dryice Liu <dryice@dryice.name>
-# $FreeBSD$
 
 PORTNAME=	emms
 DISTVERSION=	5.0

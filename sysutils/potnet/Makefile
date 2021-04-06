@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	potnet
 DISTVERSION=	0.4.4

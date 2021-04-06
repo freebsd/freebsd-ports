@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman <matthew@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Symbol-Global-Name
 PORTVERSION=	0.05

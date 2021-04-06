@@ -1,5 +1,4 @@
 # Created by: Felix Hanley
-# $FreeBSD$
 
 PORTNAME=	nuster
 PORTVERSION=	5.0.4.21

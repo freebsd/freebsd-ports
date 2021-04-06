@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	vietunicode-hannom
 PORTVERSION=	2005.02.06

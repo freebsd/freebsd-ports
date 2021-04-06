@@ -1,5 +1,4 @@
 # Created by: Kirill Ponomarew <ponomarew@oberon.net>
-# $FreeBSD$
 
 PORTNAME=	kyra
 PORTVERSION=	2.1.3

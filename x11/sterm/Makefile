@@ -1,5 +1,4 @@
 # Created by: Matthew Donovan <kitchetech@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	sterm
 DISTVERSION=	0.8.4

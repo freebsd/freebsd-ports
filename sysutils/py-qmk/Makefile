@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qmk
 PORTVERSION=	0.0.40

@@ -1,5 +1,4 @@
 # Created by: Masahiro Teramoto <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	File-Mork
 PORTVERSION=	0.3

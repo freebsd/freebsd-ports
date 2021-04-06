@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	datrie
 PORTVERSION=	0.8.2

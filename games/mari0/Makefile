@@ -1,5 +1,4 @@
 # Created by: Mahdi Mokhtari <mokhi64@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mari0
 PORTVERSION=	1.6

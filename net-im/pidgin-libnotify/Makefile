@@ -1,5 +1,4 @@
 # Created by: Meethune Bhowmick <meethune@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libnotify
 PORTVERSION=	0.14

@@ -1,5 +1,4 @@
 # Created by: Bob Bomar <bob@fly.homeunix.org>
-# $FreeBSD$
 
 PORTNAME=	eights
 PORTVERSION=	1.0

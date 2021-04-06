@@ -1,5 +1,4 @@
 # Created by: Jov amutu@amutu.com
-# $FreeBSD$
 
 PORTNAME=	tds_fdw
 DISTVERSIONPREFIX=	v

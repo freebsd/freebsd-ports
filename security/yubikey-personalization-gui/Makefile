@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yubikey-personalization-gui
 PORTVERSION=	3.1.25

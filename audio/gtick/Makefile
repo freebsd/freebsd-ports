@@ -1,5 +1,4 @@
 # Created by: Liam J. Foy <liamfoy@sepulcrum.org>
-# $FreeBSD$
 
 PORTNAME=	gtick
 PORTVERSION=	0.5.5

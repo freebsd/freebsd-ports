@@ -1,5 +1,4 @@
 # Created by: Chris D. Faulhaber <jedgar@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pxtools
 PORTVERSION=	0.0.20

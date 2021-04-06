@@ -1,5 +1,4 @@
 # Created by: Niels Kristensen <niels@kristensen.io>
-# $FreeBSD$
 
 PORTNAME=	IPC-PerlSSH
 PORTVERSION=	0.17

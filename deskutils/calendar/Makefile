@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	calendar
 DISTVERSION=	0.9

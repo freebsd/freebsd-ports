@@ -1,5 +1,4 @@
 # Created by: Horia Racoviceanu <horia@racoviceanu.com>
-# $FreeBSD$
 
 PORTNAME=	html2haml
 PORTVERSION=	2.2.0

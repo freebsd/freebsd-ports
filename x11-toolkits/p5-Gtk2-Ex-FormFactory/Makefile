@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Gtk2-Ex-FormFactory
 PORTVERSION=	0.67

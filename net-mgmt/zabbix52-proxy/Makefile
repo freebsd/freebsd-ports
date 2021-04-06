@@ -1,5 +1,4 @@
 # Created by: Pakhom Golynga <pg@pakhom.spb.ru>
-# $FreeBSD$
 
 PORTNAME=	zabbix52
 CATEGORIES=	net-mgmt

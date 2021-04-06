@@ -1,5 +1,4 @@
 # Created by: Michael Moll <kvedulv@kvedulv.de>
-# $FreeBSD$
 
 PORTNAME=	hammer_cli_foreman_bootdisk
 PORTVERSION=	0.3.0

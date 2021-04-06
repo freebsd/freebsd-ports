@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qemu
 PORTVERSION=	3.1.0

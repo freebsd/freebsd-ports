@@ -1,5 +1,4 @@
 # Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	News-Article-NoCeM
 PORTVERSION=	0.09

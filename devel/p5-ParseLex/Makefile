@@ -1,5 +1,4 @@
 # Created by: Jim Pirzyk <pirzyk@uiuc.edu>
-# $FreeBSD$
 
 PORTNAME=	ParseLex
 PORTVERSION=	2.21

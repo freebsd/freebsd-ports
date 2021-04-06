@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gen_leader
 PORTVERSION=	2014.10.20

@@ -1,5 +1,4 @@
 # Created by: Yen-Ming Lee <leeym@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Finance-YahooQuote
 PORTVERSION=	0.26

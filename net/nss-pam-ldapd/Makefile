@@ -1,5 +1,4 @@
 # Created by: melifaro@ipfw.ru
-# $FreeBSD$
 
 PORTNAME=		nss-pam-ldapd
 PORTVERSION=		0.9.11

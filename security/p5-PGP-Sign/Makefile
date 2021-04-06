@@ -1,5 +1,4 @@
 # Created by: Don Croyle <croyle@gelemna.org>
-# $FreeBSD$
 
 PORTNAME=	PGP-Sign
 PORTVERSION=	1.04

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xrdb
 PORTVERSION=	1.2.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	designer
 CATEGORIES=	devel python

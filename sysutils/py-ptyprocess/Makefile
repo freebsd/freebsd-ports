@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ptyprocess
 PORTVERSION=	0.6.0

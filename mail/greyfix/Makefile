@@ -1,5 +1,4 @@
 # Created by: Keith Gaughan <k@stereochro.me>
-# $FreeBSD$
 
 PORTNAME=	greyfix
 PORTVERSION=	0.4.0

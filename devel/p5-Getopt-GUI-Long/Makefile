@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Getopt-GUI-Long
 PORTVERSION=	0.93

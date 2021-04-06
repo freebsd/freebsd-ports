@@ -1,5 +1,4 @@
 # Created by: Meno Abels <meno.abels@adviser.com>
-# $FreeBSD$
 
 PORTNAME=	crm114
 PORTVERSION=	20100106

@@ -1,5 +1,4 @@
 # Created by: Thomas Gellekum <tg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ktoblzcheck
 PORTVERSION=	1.53

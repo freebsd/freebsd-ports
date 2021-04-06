@@ -1,5 +1,4 @@
 # Created by: Zach Thompson <hideo@lastamericanempire.com>
-# $FreeBSD$
 
 PORTNAME=	Clone-PP
 PORTVERSION=	1.08

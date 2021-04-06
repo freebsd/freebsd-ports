@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xfun
 PORTVERSION=	0.22

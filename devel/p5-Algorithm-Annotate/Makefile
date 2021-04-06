@@ -1,5 +1,4 @@
 # Created by: Autrijus Tang <autrijus@autrijus.org>
-# $FreeBSD$
 
 PORTNAME=	Algorithm-Annotate
 PORTVERSION=	0.10

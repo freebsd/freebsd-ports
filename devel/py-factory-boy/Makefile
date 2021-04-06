@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	factory-boy
 PORTVERSION=	2.12.0

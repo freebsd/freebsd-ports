@@ -1,5 +1,4 @@
 # Created by: Nikolay Dachev <jadm@dachev.info>
-# $FreeBSD$
 
 PORTNAME=	jadm
 PORTVERSION=	1.0

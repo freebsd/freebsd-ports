@@ -1,5 +1,4 @@
 # Created by: Ryan T. Dean <rtdean@cytherianage.net>
-# $FreeBSD$
 
 PORTNAME=	jicmp
 PORTVERSION=	1.4.4

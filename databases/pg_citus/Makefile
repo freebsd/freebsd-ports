@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman
-# $FreeBSD$
 
 PORTNAME=	citus
 PORTVERSION=	10.0.3

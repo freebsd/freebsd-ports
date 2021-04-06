@@ -1,5 +1,4 @@
 # Created by: Jeremy Chadwick <yoshi@parodius.com>
-# $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../nethack33
 

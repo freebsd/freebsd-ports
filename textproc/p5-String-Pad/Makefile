@@ -1,5 +1,4 @@
 # Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-# $FreeBSD$
 
 PORTNAME=	String-Pad
 PORTVERSION=	0.020

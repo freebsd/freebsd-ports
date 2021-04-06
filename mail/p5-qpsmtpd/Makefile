@@ -1,5 +1,4 @@
 # Created by: Zane C. Bowers
-# $FreeBSD$
 
 PORTNAME=	qpsmtpd
 PORTVERSION=	0.93

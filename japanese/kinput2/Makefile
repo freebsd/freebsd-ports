@@ -1,5 +1,4 @@
 # Created by: Satoshi TAOKA <taoka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	kinput2
 PORTVERSION=	3.1

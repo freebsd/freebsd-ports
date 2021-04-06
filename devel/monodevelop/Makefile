@@ -1,5 +1,4 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-# $FreeBSD$
 
 PORTNAME=	monodevelop
 PORTVERSION=	7.6.11.7

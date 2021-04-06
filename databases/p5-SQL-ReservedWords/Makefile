@@ -1,5 +1,4 @@
 # Created by: Zach Thompson <hideo@lastamericanempire.com>
-# $FreeBSD$
 
 PORTNAME=	SQL-ReservedWords
 PORTVERSION=	0.8

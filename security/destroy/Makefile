@@ -1,5 +1,4 @@
 # Created by: shane@freebsdhackers.net aka modsix@gmail.com
-# $FreeBSD$
 
 PORTNAME=	destroy
 PORTVERSION=	20130926

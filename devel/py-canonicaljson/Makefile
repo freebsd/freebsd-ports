@@ -1,5 +1,4 @@
 # Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-# $FreeBSD$
 
 PORTNAME=	canonicaljson
 PORTVERSION=	1.4.0

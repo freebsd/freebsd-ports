@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cacti
 PORTVERSION=	1.2.16

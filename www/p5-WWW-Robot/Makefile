@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	WWW-Robot
 PORTVERSION=	0.026

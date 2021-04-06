@@ -1,5 +1,4 @@
 # Created by: William Grzybowski <wg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	paver
 PORTVERSION=	1.2.4

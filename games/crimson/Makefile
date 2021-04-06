@@ -1,5 +1,4 @@
 # Created by: Jan Jungnickel <jan@jungnickel.com>
-# $FreeBSD$
 
 PORTNAME=	crimson
 PORTVERSION=	0.5.3

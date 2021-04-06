@@ -1,5 +1,4 @@
 # Created by: Mikhail Teterin <mi@aldan.algebra.com>
-# $FreeBSD$
 
 PORTNAME=	Trf
 PORTVERSION=	2.1.4

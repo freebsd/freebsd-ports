@@ -1,5 +1,4 @@
 # Created by: Johannes Dieterich <jmd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	drm-fbsd11.2-kmod
 PORTVERSION=	4.11g20200420

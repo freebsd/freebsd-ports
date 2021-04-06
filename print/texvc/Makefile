@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	texvc
 PORTVERSION=	20050202

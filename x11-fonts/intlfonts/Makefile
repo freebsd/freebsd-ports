@@ -1,5 +1,4 @@
 # Created by: Satoshi TAOKA <taoka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	intlfonts
 PORTVERSION=	1.2.1

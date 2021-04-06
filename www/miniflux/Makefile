@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	miniflux
 DISTVERSION=	2.0.29

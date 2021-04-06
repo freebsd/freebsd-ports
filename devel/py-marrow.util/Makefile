@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	marrow.util
 PORTVERSION=	1.2.3

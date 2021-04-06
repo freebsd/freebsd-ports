@@ -1,5 +1,4 @@
 # Created by: argv[0] (Iouri V. Ivliev)
-# $FreeBSD$
 
 PORTNAME=	panomatic
 PORTVERSION=	0.9.4

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	WWW-NioTV
 PORTVERSION=	0.04

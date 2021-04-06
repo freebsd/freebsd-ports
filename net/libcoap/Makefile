@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcoap
 DISTVERSIONPREFIX=	v

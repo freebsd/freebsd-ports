@@ -1,5 +1,4 @@
 # Created by: Russell Francis
-# $FreeBSD$
 
 PORTNAME=	gutenfetch
 PORTVERSION=	1.5

@@ -1,5 +1,4 @@
 # Created by: Romain Tartiere <romain@blogreen.org>
-# $FreeBSD$
 
 PORTNAME=	tomboy-plugin-reminder
 PORTVERSION=	0.9.2

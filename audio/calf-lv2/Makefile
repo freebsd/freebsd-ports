@@ -1,5 +1,4 @@
 # Created by: <trasz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	calf
 DISTVERSION=	0.90.3

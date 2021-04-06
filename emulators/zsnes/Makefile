@@ -1,5 +1,4 @@
 # Created by: Stijn Hoop <stijn@win.tue.nl>
-# $FreeBSD$
 
 PORTNAME=	zsnes
 PORTVERSION=	1.51

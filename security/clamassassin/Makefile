@@ -1,5 +1,4 @@
 # Created by: Matt <matt@xtaz.net>
-# $FreeBSD$
 
 PORTNAME=	clamassassin
 PORTVERSION=	1.2.4

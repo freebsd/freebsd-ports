@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	google-cloud-logging
 PORTVERSION=	1.11.0

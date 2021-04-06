@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cica
 PORTVERSION=	5.0.2

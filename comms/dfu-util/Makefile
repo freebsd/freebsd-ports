@@ -1,5 +1,4 @@
 # Created by: Bruce Cran <bruce@cran.org.uk>
-# $FreeBSD$
 
 PORTNAME=	dfu-util
 PORTVERSION=	0.10

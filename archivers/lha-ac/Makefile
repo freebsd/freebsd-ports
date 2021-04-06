@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lha
 PORTVERSION=	1.14i

@@ -1,5 +1,4 @@
 # Created by: Grzegorz Blach <gblach@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Dancer-Session-Memcached
 PORTVERSION=	0.202

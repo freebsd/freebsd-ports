@@ -1,5 +1,4 @@
 # Created by: Mikolaj Golub <trociny@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	leo_center
 PORTVERSION=	0.4.70

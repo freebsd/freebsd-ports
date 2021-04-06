@@ -1,5 +1,4 @@
 # Created by: Nick Hilliard <nick@foobar.org>
-# $FreeBSD$
 
 PORTNAME=	tinymce
 PORTVERSION=	5.7.0

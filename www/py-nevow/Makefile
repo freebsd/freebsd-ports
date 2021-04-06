@@ -1,5 +1,4 @@
 # Created by: Choe, Cheng-Dae
-# $FreeBSD$
 
 PORTNAME=	nevow
 PORTVERSION=	0.14.0

@@ -1,5 +1,4 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libgxps
 PORTVERSION=	0.3.1

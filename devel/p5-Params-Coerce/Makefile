@@ -1,5 +1,4 @@
 # Created by: Cory R. King <coryking@mozimedia.com>
-# $FreeBSD$
 
 PORTNAME=	Params-Coerce
 PORTVERSION=	0.14

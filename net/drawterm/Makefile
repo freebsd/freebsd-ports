@@ -1,5 +1,4 @@
 # Created by: Winston Weinert <winstonw@lavabit.com>
-# $FreeBSD$
 
 PORTNAME=	drawterm
 PORTVERSION=	20140106

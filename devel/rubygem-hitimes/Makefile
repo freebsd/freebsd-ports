@@ -1,5 +1,4 @@
 # Created by: Michael Moll <kvedulv at kvedulv.de>
-# $FreeBSD$
 
 PORTNAME=	hitimes
 PORTVERSION=	2.0.0

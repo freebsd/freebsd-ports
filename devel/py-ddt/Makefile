@@ -1,5 +1,4 @@
 # Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ddt
 PORTVERSION=	1.4.1

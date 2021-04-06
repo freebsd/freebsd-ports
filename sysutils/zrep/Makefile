@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zrep
 PORTVERSION=	1.8.0

@@ -1,5 +1,4 @@
 # Created by: Mita Yoshio <mita@jp.FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lipsf
 PORTVERSION=	2.00

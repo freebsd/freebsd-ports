@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	md4c
 DISTVERSIONPREFIX=	release-

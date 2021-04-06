@@ -1,5 +1,4 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gss
 DISTVERSION=	2.2-2

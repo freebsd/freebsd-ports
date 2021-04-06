@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pkg_jail
 PORTVERSION=	2.10

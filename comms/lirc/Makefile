@@ -1,5 +1,4 @@
 # Created by: Mike Heffner <mikeh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lirc
 PORTVERSION=	0.9.0

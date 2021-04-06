@@ -1,5 +1,4 @@
 # Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-# $FreeBSD$
 
 PORTNAME=	w3m
 PORTVERSION=	0.5.3.${SNAPDATE}

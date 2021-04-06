@@ -1,5 +1,4 @@
 # Created by: marck@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	arpdig
 PORTVERSION=	0.5.6

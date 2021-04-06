@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fabla2
 DISTVERSION=	g20180331

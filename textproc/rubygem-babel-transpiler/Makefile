@@ -1,5 +1,4 @@
 # Created by: Torsten Zuehlsdorff <tz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	babel-transpiler
 PORTVERSION=	0.7.0

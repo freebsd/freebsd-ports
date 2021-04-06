@@ -1,5 +1,4 @@
 # Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-# $FreeBSD$
 
 PORTNAME=	rtl-sdr
 PORTVERSION=	0.6.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grandalf
 DISTVERSIONPREFIX=	v

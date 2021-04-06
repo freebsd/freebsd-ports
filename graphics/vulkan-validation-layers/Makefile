@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	v

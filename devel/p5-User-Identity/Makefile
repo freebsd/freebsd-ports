@@ -1,5 +1,4 @@
 # Created by: Max Campos <mcampos@bpsw.biz>
-# $FreeBSD$
 
 PORTNAME=	User-Identity
 PORTVERSION=	0.98

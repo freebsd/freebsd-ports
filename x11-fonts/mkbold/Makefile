@@ -1,5 +1,4 @@
 # Created by: KOMATSU Shinichiro
-# $FreeBSD$
 
 PORTNAME=	mkbold
 PORTVERSION=	1.0

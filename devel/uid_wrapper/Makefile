@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		uid_wrapper
 PORTVERSION=		1.2.4

@@ -1,5 +1,4 @@
 # Created by: Peter Kieser <peter@kieser.ca>
-# $FreeBSD$
 
 PORTNAME=	spamdyke
 PORTVERSION=	5.0.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	polybar
 DISTVERSION=	3.5.4

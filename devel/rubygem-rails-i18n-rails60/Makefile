@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rails-i18n
 PORTVERSION=	6.0.0

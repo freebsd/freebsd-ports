@@ -1,5 +1,4 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	migemo.el
 PORTVERSION=	1.9.2

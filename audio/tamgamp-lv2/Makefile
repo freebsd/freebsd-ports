@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tamgamp
 DISTVERSION=	g20200514

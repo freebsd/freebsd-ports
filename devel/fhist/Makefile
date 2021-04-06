@@ -1,5 +1,4 @@
 # Created by: <jkoshy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	fhist
 PORTVERSION=	1.21

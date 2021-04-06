@@ -1,5 +1,4 @@
 # Created by: John Hein <jhein@symmetricom.com>
-# $FreeBSD$
 
 PORTNAME=	blame
 PORTVERSION=	1.3.1

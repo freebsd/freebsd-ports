@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gorm
 PORTVERSION=	1.2.23

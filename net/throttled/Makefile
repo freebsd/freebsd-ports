@@ -1,5 +1,4 @@
 # Created by: quest <quest@mac.com>
-# $FreeBSD$
 
 PORTNAME=	throttled
 PORTVERSION=	0.5.2

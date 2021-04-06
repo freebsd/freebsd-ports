@@ -1,5 +1,4 @@
 # Created by: Will Andrews <andrews@technologist.com>
-# $FreeBSD$
 
 PORTNAME=	wmstock
 PORTVERSION=	0.11

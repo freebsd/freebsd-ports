@@ -1,5 +1,4 @@
 # Created by: swallace
-# $FreeBSD$
 
 PORTNAME=	xpipeman
 PORTVERSION=	1.5

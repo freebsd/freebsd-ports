@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ccextractor
 DISTVERSIONPREFIX=	v

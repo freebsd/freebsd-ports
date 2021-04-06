@@ -1,5 +1,4 @@
 # Created by: David Thiel <lx@redundancy.redundancy.org>
-# $FreeBSD$
 
 PORTNAME=	libfixbuf
 PORTVERSION=	2.3.1

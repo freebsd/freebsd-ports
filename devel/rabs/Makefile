@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rabs
 DISTVERSIONPREFIX=	v

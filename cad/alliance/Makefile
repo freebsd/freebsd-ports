@@ -1,5 +1,4 @@
 # Created by: hrs
-# $FreeBSD$
 
 PORTNAME=	alliance
 DISTVERSION=	5.1.1

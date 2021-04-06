@@ -1,5 +1,4 @@
 # Created by: gmarco@giovannelli.it
-# $FreeBSD$
 
 PORTNAME=	delay
 PORTVERSION=	1.6

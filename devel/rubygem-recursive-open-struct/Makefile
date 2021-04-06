@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	recursive-open-struct
 PORTVERSION=	1.1.3

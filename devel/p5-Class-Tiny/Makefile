@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-Tiny
 PORTVERSION=	1.006

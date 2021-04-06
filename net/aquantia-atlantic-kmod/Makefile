@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aquantia-atlantic-kmod
 PORTVERSION=	0.0.5

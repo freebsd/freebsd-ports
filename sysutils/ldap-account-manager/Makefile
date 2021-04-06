@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ldap-account-manager
 PORTVERSION=	7.3

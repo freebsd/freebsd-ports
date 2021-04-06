@@ -1,5 +1,4 @@
 # Created by: ru
-# $FreeBSD$
 
 PORTNAME=	tcpmssd
 PORTVERSION=	1.1

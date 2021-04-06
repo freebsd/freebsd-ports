@@ -1,5 +1,4 @@
 # Created by: Sergei Kolobov <sergei@kolobov.com>
-# $FreeBSD$
 
 PORTNAME=	getopt
 PORTVERSION=	1.1.6

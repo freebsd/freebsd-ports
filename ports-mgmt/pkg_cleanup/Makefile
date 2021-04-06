@@ -1,5 +1,4 @@
 # Created by: Stephen Hurd <shurd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pkg_cleanup
 PORTVERSION=	2.1

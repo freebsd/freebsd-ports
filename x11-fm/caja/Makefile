@@ -1,5 +1,4 @@
 # Created by: ade, archie
-# $FreeBSD$
 
 PORTNAME=	caja
 PORTVERSION=	1.24.0

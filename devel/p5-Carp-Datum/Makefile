@@ -1,5 +1,4 @@
 # Created by: kuriyama
-# $FreeBSD$
 
 PORTNAME=	Carp-Datum
 PORTVERSION=	0.1.3

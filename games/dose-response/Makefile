@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dose-response
 DISTVERSIONPREFIX=	v

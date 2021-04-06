@@ -1,5 +1,4 @@
 # Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	deltup
 PORTVERSION=	0.4.4

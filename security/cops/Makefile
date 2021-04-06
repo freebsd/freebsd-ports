@@ -1,5 +1,4 @@
 # Created by: oly
-# $FreeBSD$
 
 PORTNAME=	cops
 PORTVERSION=	1.04

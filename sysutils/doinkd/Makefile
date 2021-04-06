@@ -1,5 +1,4 @@
 # Created by: Andrew <andrew@ugh.net.au>, Iain Templeton <iain@ugh.net.au>
-# $FreeBSD$
 
 PORTNAME=	doinkd
 DISTVERSIONPREFIX=	v

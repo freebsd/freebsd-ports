@@ -1,5 +1,4 @@
 # Created by: Oddbjorn Steffensen <oddbjorn@tricknology.org>
-# $FreeBSD$
 
 PORTNAME=	web2ldap
 PORTVERSION=	1.5.116

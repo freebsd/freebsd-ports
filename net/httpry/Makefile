@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	httpry
 PORTVERSION=	0.1.8

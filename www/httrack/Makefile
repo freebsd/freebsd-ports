@@ -1,5 +1,4 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	httrack
 PORTVERSION=	3.49.2

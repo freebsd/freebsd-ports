@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	magic-wormhole
 PORTVERSION=	0.12.0

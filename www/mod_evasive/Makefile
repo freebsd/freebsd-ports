@@ -1,5 +1,4 @@
 # Created by: Xavier Beaudouin <kiwi@oav.net>
-# $FreeBSD$
 
 PORTNAME=	mod_evasive
 PORTVERSION=	1.10.1

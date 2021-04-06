@@ -1,5 +1,4 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libxslt
 DISTVERSION=	1.1.34

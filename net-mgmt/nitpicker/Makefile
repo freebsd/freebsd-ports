@@ -1,5 +1,4 @@
 # Created by: Michael Reifenberger <mr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nitpicker
 PORTVERSION=	1.2.1

@@ -1,5 +1,4 @@
 # Created by: kwm@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	gcab
 PORTVERSION=	1.4

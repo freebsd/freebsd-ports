@@ -1,5 +1,4 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pgxnclient
 PORTVERSION=	1.2.1

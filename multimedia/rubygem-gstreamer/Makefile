@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gstreamer
 PORTVERSION=	3.4.3

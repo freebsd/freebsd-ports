@@ -1,5 +1,4 @@
 # Created by: Devin Teske <dteske@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sysrc
 PORTVERSION=	5.2

@@ -1,5 +1,4 @@
 # Created by: sada@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	checkpassword
 PORTVERSION=	0.90

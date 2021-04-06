@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libhandy
 PORTVERSION=	0.0.13

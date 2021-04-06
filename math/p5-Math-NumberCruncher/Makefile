@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Math-NumberCruncher
 PORTVERSION=	5.00

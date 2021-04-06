@@ -1,5 +1,4 @@
 # Created by: Peter Schmiedeskamp <pschmied@qwest.net>
-# $FreeBSD$
 
 PORTNAME=	libexif
 PORTVERSION=	0.6.22

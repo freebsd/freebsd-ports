@@ -1,5 +1,4 @@
 # Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-# $FreeBSD$
 
 PORTNAME=	Net-IP
 PORTVERSION=	1.26

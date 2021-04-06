@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	choqok
 DISTVERSION=	1.7.0

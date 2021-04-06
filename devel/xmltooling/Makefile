@@ -1,5 +1,4 @@
 # Created by: Janos Mohacsi
-# $FreeBSD$
 
 PORTNAME=	xmltooling
 PORTVERSION=	3.2.0

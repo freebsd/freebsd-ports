@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-plugin-sendmail
 PORTVERSION=	${GEANY_VER}

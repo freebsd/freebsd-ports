@@ -1,5 +1,4 @@
 # Created by: Rich Neswold <rneswold@mcs.net>
-# $FreeBSD$
 
 PORTNAME=	wmtime
 PORTVERSION=	1.0b2

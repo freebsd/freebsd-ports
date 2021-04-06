@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jsonform
 PORTVERSION=	0.0.2

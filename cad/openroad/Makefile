@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openroad
 DISTVERSION=	2021_03_09

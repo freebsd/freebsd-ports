@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	asciinema
 PORTVERSION=	2.0.2

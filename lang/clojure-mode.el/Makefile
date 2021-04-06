@@ -1,5 +1,4 @@
 # Created by: Peter Schuller <peter.schuller@infidyne.com>
-# $FreeBSD$
 
 PORTNAME=	clojure-mode.el
 PORTVERSION=	5.11.0

@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <dima@Chg.RU>
-# $FreeBSD$
 
 PORTNAME=	trueprint
 PORTVERSION=	5.4

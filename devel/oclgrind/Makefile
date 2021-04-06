@@ -1,5 +1,4 @@
 # Created by: Johannes Dieterich <jmd@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	oclgrind
 PORTVERSION=	20190907

@@ -1,5 +1,4 @@
 # Created by: Vaida Bogdan
-# $FreeBSD$
 
 PORTNAME=	dmitry
 PORTVERSION=	1.3a

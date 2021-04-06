@@ -1,5 +1,4 @@
 # Created by: TAKATSU Tomonari <tota@rtfm.jp>
-# $FreeBSD$
 
 PORTNAME=	mecab-ipadic
 DISTVERSION=	2.7.0-20070801

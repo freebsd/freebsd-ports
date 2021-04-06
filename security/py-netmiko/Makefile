@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	netmiko
 DISTVERSIONPREFIX=	v

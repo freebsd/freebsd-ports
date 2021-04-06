@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Horde_Vfs
 PORTVERSION=	2.4.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	showfont
 PORTVERSION=	1.0.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	loganalyzer
 PORTVERSION=	4.1.11

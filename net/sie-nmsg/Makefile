@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sie-nmsg
 PORTVERSION=	1.2.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-augeas
 PORTVERSION=	1.0.3

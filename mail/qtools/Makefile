@@ -1,5 +1,4 @@
 # Created by: petef@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	qtools
 PORTVERSION=	0.56

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pybugz
 DISTVERSION=	0.13

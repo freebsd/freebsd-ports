@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kactivitymanagerd
 DISTVERSION=	${KDE_PLASMA_VERSION}

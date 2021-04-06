@@ -1,5 +1,4 @@
 # Created by: David W. Chapman Jr. (dwcjr@FreeBSD.org)
-# $FreeBSD$
 
 PORTNAME=	diskcheckd
 PORTVERSION=	20150220

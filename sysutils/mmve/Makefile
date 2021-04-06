@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		mmve
 PORTVERSION=		0.2.0

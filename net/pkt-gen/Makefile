@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pkt-gen
 PORTVERSION=	g2017.08.06

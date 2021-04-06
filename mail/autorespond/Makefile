@@ -1,5 +1,4 @@
 # Created by: Neil Blakey-Milner <nbm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	autorespond
 PORTVERSION=	2.0.5

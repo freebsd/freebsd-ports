@@ -1,5 +1,4 @@
 # Created by: Alex Deiter <Alex.Deiter@Gmail.COM>
-# $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-TreeBuilder
 PORTVERSION=	1.20000

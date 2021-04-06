@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	neochat
 DISTVERSION=	1.1.1

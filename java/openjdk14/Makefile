@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-

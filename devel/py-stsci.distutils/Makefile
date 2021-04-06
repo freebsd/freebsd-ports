@@ -1,5 +1,4 @@
 # Created by: William Grzybowski <wg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	stsci.distutils
 PORTVERSION=	0.3.7

@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	cvsgraph
 PORTVERSION=	1.7.0

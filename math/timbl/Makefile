@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich <yuri@tsoft.com>
-# $FreeBSD$
 
 PORTNAME=	timbl
 DISTVERSIONPREFIX=	v

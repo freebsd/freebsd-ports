@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	snzip
 PORTVERSION=	1.0.4

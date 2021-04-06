@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gobuffalo
 PORTVERSION=	0.16.21

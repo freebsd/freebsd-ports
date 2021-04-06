@@ -1,5 +1,4 @@
 # Created by: Michael Haro <mharo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Tie-EncryptedHash
 PORTVERSION=	1.24

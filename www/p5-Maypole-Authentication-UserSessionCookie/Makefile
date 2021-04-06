@@ -1,5 +1,4 @@
 # Created by: Marc G. Fournier
-# $FreeBSD$
 
 PORTNAME=	Maypole-Authentication-UserSessionCookie
 PORTVERSION=	1.4

@@ -1,5 +1,4 @@
 # Created by: Vassili Tchersky <vt@bsdjeunz.org>
-# $FreeBSD$
 
 PORTNAME=	6tunnel
 DISTVERSION=	0.13

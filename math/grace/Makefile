@@ -1,5 +1,4 @@
 # Created by: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
-# $FreeBSD$
 
 PORTNAME=	grace
 PORTVERSION=	5.1.25

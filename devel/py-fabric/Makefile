@@ -1,5 +1,4 @@
 # Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	fabric
 PORTVERSION=	2.5.0

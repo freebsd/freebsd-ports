@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	subsync
 DISTVERSION=	g20190702

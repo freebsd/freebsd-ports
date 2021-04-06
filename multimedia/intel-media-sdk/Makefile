@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	intel-media-sdk
 DISTVERSIONPREFIX=	intel-mediasdk-

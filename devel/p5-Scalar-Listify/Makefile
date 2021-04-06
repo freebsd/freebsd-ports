@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Scalar-Listify
 PORTVERSION=	0.03

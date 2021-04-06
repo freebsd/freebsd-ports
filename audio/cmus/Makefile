@@ -1,5 +1,4 @@
 # Created by: Adam Weinberger
-# $FreeBSD$
 
 PORTNAME=	cmus
 DISTVERSIONPREFIX=	v

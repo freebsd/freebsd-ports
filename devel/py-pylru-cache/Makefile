@@ -1,5 +1,4 @@
 # Created by: philip@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	pylru-cache
 PORTVERSION=	0.1.4

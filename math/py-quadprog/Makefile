@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	quadprog
 DISTVERSION=	0.1.8

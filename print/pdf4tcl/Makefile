@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	pdf4tcl
 PORTVERSION=	0.8

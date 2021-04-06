@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	thor
 PORTVERSION=	0.20.3

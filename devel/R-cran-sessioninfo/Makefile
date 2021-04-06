@@ -1,5 +1,4 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sessioninfo
 DISTVERSION=	1.1.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lfe
 PORTVERSION=	1.3

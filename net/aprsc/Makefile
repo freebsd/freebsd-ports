@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aprsc
 PORTVERSION=	2.1.8

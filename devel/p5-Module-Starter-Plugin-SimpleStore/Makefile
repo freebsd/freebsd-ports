@@ -1,5 +1,4 @@
 # Created by: George Hartzell <hartzell@alerce.com>
-# $FreeBSD$
 
 PORTNAME=	Module-Starter-Plugin-SimpleStore
 PORTVERSION=	0.144

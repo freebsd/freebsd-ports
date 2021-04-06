@@ -1,5 +1,4 @@
 # Created by: Martin Matuska <mm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tk
 DISTVERSION=	${TK_VERSION}${TK_RC}

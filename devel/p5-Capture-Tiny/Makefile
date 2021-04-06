@@ -1,5 +1,4 @@
 # Created by: Bill Brinzer <bill.brinzer@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Capture-Tiny
 PORTVERSION=	0.48

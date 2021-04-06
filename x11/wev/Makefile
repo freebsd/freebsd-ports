@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wev
 PORTVERSION=	1.0.0

@@ -1,5 +1,4 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tkinter
 CATEGORIES=	x11-toolkits python

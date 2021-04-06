@@ -1,5 +1,4 @@
 # Created by: gurkan@phys.ethz.ch
-# $FreeBSD$
 
 PORTNAME=	duncan
 PORTVERSION=	0.3

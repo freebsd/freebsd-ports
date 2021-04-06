@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-gettext
 PORTVERSION=	3.0

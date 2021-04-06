@@ -1,5 +1,4 @@
 # Created by: Denis Shaposhnikov <dsh@vlink.ru>
-# $FreeBSD$
 
 PORTNAME=	decorator
 PORTVERSION=	4.4.2

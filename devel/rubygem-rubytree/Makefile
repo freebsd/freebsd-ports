@@ -1,5 +1,4 @@
 # Created by: Mikhail T. <m.tsatsenko@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	rubytree
 PORTVERSION=	1.0.0

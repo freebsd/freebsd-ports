@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bitmap
 DISTVERSION=	g20181222

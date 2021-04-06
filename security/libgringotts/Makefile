@@ -1,5 +1,4 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libgringotts
 PORTVERSION=	1.2.1

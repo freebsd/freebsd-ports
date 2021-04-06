@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	foswiki
 PORTVERSION=	2.1.6

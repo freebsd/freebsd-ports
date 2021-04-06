@@ -1,5 +1,4 @@
 # Created by: kris@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	fortran-utils
 PORTVERSION=	1.1

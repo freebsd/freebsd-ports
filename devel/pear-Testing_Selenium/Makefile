@@ -1,5 +1,4 @@
 # Created by: Martin Wilke (miwi@FreeBSD.org)
-# $FreeBSD$
 
 PORTNAME=	Testing_Selenium
 PORTVERSION=	0.4.4

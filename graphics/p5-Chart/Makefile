@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Chart
 PORTVERSION=	2.4.10

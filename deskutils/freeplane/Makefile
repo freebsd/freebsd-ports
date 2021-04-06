@@ -1,5 +1,4 @@
 # Created by: Loïc Bartoletti <lbartoletti@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	freeplane
 DISTVERSION=	1.8.11

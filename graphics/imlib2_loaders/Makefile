@@ -1,5 +1,4 @@
 # Created by: Jeremy Norris <ishmael27@home.com>
-# $FreeBSD$
 
 PORTNAME=	imlib2_loaders
 PORTVERSION=	1.7.0

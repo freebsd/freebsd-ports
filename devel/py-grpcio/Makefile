@@ -1,5 +1,4 @@
 # Created by: vanilla@
-# $FreeBSD$
 
 PORTNAME=	grpcio
 PORTVERSION=	1.36.1

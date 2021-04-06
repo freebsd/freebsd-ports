@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	owrep
 DISTVERSION=	1.2

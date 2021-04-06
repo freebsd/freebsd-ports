@@ -1,5 +1,4 @@
 # Created by: Peter Schuller <peter.schuller@infidyne.com>
-# $FreeBSD$
 
 PORTNAME=	classifier
 PORTVERSION=	1.3.5

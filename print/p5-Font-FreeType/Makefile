@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Font-FreeType
 PORTVERSION=	0.07

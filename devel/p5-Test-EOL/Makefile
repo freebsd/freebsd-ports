@@ -1,5 +1,4 @@
 # Created by: milki@rescomp.berkeley.edu
-# $FreeBSD$
 
 PORTNAME=	Test-EOL
 PORTVERSION=	1.5

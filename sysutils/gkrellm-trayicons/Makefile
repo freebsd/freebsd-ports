@@ -1,5 +1,4 @@
 # Created by: Tobias Roth <ports@fsck.ch>
-# $FreeBSD$
 
 PORTNAME=	trayicons
 PORTVERSION=	1.03

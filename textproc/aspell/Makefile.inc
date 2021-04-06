@@ -1,4 +1,3 @@
-# $FreeBSD$
 # To be included by dictionaries ports.
 
 MASTER_SITES?=	GNU/aspell/dict/${DICT}

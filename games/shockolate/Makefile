@@ -1,5 +1,4 @@
 # Created by: Vasily Postnicov <shamaz.mazum@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	shockolate
 DISTVERSIONPREFIX=	v

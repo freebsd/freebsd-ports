@@ -1,5 +1,4 @@
 # Created by: Lucas Holt <luke@foolishgames.com>
-# $FreeBSD$
 
 PORTNAME=	ciso-maker
 PORTVERSION=	1.02

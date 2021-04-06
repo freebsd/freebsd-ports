@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dk
 PORTVERSION=	0.54

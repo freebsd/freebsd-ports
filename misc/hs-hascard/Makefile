@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hascard
 DISTVERSION=	0.3.0.1

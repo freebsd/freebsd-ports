@@ -1,5 +1,4 @@
 # Created by: <benlutz@datacomm.ch>
-# $FreeBSD$
 
 PORTNAME=	freedroid
 PORTVERSION=	1.0.2

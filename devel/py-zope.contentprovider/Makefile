@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zope.contentprovider
 PORTVERSION=	3.7.2

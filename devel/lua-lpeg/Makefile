@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lpeg
 PORTVERSION=	1.0.2

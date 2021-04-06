@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pet
 DISTVERSIONPREFIX=	v

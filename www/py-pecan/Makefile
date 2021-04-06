@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pecan
 PORTVERSION=	1.3.3

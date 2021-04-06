@@ -1,5 +1,4 @@
 # Created by: Lars Erik Gullerud <lerik@nolink.net>
-# $FreeBSD$
 
 PORTNAME=	radix
 PORTVERSION=	0.10.0

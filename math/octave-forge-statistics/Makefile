@@ -1,5 +1,4 @@
 # Created by: Stephen Montgomery-Smith <stephen@math.missouri.edu>
-# $FreeBSD$
 
 PORTNAME=	octave-forge-statistics
 PORTVERSION=	1.4.2

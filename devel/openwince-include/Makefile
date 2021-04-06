@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <ssedov@mbsd.msk.ru>
-# $FreeBSD$
 
 PORTNAME=	include
 PORTVERSION=	0.4.2

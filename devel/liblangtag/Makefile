@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	liblangtag
 PORTVERSION=	0.6.2

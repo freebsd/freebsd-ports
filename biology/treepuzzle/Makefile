@@ -1,5 +1,4 @@
 # Created by: lentferj
-# $FreeBSD$
 
 PORTNAME=	treepuzzle
 PORTVERSION=	5.2

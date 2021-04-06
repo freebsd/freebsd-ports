@@ -1,5 +1,4 @@
 # Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	confctl
 PORTVERSION=	1.2

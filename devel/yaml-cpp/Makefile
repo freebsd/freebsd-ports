@@ -1,5 +1,4 @@
 # Created by: Tim Niemueller <tim@niemueller.de>
-# $FreeBSD$
 
 PORTNAME=	yaml-cpp
 PORTVERSION=	0.6.3

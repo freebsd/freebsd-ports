@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cryptix-jce
 PORTVERSION=	20050328

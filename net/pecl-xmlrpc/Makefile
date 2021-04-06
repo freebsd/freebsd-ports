@@ -1,5 +1,4 @@
 # Created by: Derek Schrock <dereks@lifeofadishwasher.com>
-# $FreeBSD$
 
 PORTNAME=	xmlrpc
 PORTVERSION=	1.0.0

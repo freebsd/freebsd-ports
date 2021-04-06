@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman
-# $FreeBSD$
 
 PORTNAME=	GentiumPlus
 PORTREVISION=	1

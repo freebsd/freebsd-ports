@@ -1,5 +1,4 @@
 # Created by: Leland Wang <llwang@infor.org>
-# $FreeBSD$
 
 PORTNAME=	words
 PORTVERSION=	1.97F

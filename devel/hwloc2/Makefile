@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hwloc
 PORTVERSION=	2.4.1

@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang <perky@fallin.lv>
-# $FreeBSD$
 
 PORTNAME=	spl
 PORTVERSION=	1.2.1

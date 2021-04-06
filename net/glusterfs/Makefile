@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	glusterfs
 PORTVERSION=	8.0

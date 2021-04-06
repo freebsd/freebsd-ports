@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fontmatrix
 PORTVERSION=	0.9.100

@@ -1,5 +1,4 @@
 # Created by: Joseph Scott (<joseph@randomnetworks.com>)
-# $FreeBSD$
 
 PORTNAME=	HTTP_Client
 PORTVERSION=	1.2.1

@@ -1,5 +1,4 @@
 # Created by: andrew@scoop.co.nz
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-mysql
 PORTVERSION=	1.00

@@ -1,5 +1,4 @@
 # Created by: Bill Fenner <fenner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Net-NBName
 PORTVERSION=	0.26

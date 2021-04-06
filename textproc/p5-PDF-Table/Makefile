@@ -1,5 +1,4 @@
 # Created by: scheidell@secnap.net
-# $FreeBSD$
 
 PORTNAME=	PDF-Table
 DISTVERSION=	0.12

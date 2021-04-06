@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fastdfs
 DISTVERSION=	6.0.6

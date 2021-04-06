@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale	<nivit@email.it>
-# $FreeBSD$
 
 PORTNAME=	jdraw
 PORTVERSION=	1.1.5

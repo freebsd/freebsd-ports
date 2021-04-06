@@ -1,5 +1,4 @@
 # Created by: Gustau Perez <gustau.perez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	polari
 PORTVERSION=	3.38.0

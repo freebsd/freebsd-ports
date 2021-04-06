@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas (<thierry@pompo.net>)
-# $FreeBSD$
 
 PORTNAME=	Auth
 PORTVERSION=	1.6.4

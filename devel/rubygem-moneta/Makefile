@@ -1,5 +1,4 @@
 # Created by: renchap@cocoa-x.com
-# $FreeBSD$
 
 PORTNAME=	moneta
 PORTVERSION=	1.3.0

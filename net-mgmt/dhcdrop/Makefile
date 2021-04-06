@@ -1,5 +1,4 @@
 # Created by: Nick F <ffault@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	dhcdrop
 PORTVERSION=	0.5

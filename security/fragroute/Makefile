@@ -1,5 +1,4 @@
 # Created by: Dominic Marks <dominic.marks@btinternet.com>
-# $FreeBSD$
 
 PORTNAME=	fragroute
 PORTVERSION=	1.2

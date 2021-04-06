@@ -1,5 +1,4 @@
 # Created by: Sergey Kozlov <skozlov@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ix
 PORTVERSION=	3.3.14

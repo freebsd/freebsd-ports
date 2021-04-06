@@ -1,5 +1,4 @@
 # Created by: roam@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	xvkbd
 PORTVERSION=	4.1

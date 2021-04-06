@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-Caller-Perl
 PORTVERSION=	1.4

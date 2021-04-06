@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	shoulda
 PORTVERSION=	3.6.0

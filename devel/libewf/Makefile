@@ -1,5 +1,4 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libewf
 PORTVERSION=	20140811

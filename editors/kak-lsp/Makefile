@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kak-lsp
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	md5
 PORTVERSION=	1.8.5

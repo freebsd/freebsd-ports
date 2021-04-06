@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nextgo
 PORTVERSION=	3.0

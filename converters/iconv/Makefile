@@ -1,5 +1,4 @@
 # Created by: Konstantin Chuguev <Konstantin.Chuguev@dante.org.uk>
-# $FreeBSD$
 
 PORTNAME=	iconv
 PORTVERSION=	2.0

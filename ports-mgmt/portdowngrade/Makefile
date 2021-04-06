@@ -1,5 +1,4 @@
 # Created by: Heiner <h.eichmann@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	portdowngrade
 PORTVERSION=	1.7

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jquerylib
 PORTVERSION=	0.1.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	belr
 PORTVERSION=	0.1.3

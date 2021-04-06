@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	printscreen
 PORTVERSION=	1.4

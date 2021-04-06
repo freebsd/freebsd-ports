@@ -1,5 +1,4 @@
 # Created by: Ben Haga <tuximus@tuximus.mine.nu>
-# $FreeBSD$
 
 PORTNAME=	tigcc
 PORTVERSION=	0.96.b8

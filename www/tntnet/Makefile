@@ -1,5 +1,4 @@
 # Created by: Juergen Lock <nox@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tntnet
 PORTVERSION=	2.2.1

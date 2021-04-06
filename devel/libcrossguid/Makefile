@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcrossguid
 PORTVERSION=	20150803

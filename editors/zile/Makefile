@@ -1,5 +1,4 @@
 # Created by: Jason Evans <jasone@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	zile
 PORTVERSION=	2.4.14

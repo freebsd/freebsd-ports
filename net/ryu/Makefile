@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ryu
 PORTVERSION=	4.26

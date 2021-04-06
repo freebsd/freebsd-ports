@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	luit
 PORTVERSION=	20190106

@@ -1,5 +1,4 @@
 # Created by: chris
-# $FreeBSD$
 
 PORTNAME=	spampd
 PORTVERSION=	2.53

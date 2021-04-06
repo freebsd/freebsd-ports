@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	g-wrap
 DISTVERSION=	1.9.15

@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Class-Factory
 PORTVERSION=	1.06

@@ -1,5 +1,4 @@
 # Created by: Sheldon Hearn <sheldonh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Config-General
 PORTVERSION=	2.63

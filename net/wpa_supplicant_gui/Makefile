@@ -1,5 +1,4 @@
 # Created by: Ilya Bakulin <webmaster@kibab.com>
-# $FreeBSD$
 
 PORTNAME=	wpa_supplicant_gui
 DISTVERSION=	2.9

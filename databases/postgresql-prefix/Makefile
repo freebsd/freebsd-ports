@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	prefix
 PORTVERSION=	1.2.9

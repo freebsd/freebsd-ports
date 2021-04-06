@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dune-fem
 DISTVERSION=	2.6.0rc3

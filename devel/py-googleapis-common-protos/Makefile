@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	googleapis-common-protos
 PORTVERSION=	1.53.0

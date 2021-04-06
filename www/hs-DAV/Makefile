@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DAV
 PORTVERSION=	1.3.4

@@ -1,5 +1,4 @@
 # Created by: Bartoletti <lbartoletti@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lingot
 PORTVERSION=	1.0.1

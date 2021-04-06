@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zfp
 DISTVERSION=	0.5.5

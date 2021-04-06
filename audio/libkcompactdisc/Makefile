@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libkcompactdisc
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

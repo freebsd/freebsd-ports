@@ -1,5 +1,4 @@
 # Created by: oleg@bsdpower.com
-# $FreeBSD$
 
 PORTNAME=	setlayout
 DISTVERSION=	20080210

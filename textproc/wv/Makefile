@@ -1,5 +1,4 @@
 # Created by: sumikawa@kame.net
-# $FreeBSD$
 
 PORTNAME=	wv
 PORTVERSION=	1.2.9

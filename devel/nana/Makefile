@@ -1,5 +1,4 @@
 # Created by: Phil Maker <pjm@gnu.org>
-# $FreeBSD$
 
 PORTNAME=	nana
 PORTVERSION=	2.5

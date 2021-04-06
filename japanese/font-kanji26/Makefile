@@ -1,5 +1,4 @@
 # Created by: Yoshiro MIHIRA <sanpei@sanpei.org>
-# $FreeBSD$
 
 PKGNAMESUFFIX=	26
 DISTFILES?=	793.gz 794.gz 795.gz 796.gz 797.gz 798.gz 799.gz \

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	jcalendar
 PORTVERSION=	1.3.3

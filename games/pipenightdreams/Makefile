@@ -1,5 +1,4 @@
 # Created by: Mark Pulford <mark@kyne.com.au>
-# $FreeBSD$
 
 PORTNAME=	pipenightdreams
 PORTVERSION=	0.10.0

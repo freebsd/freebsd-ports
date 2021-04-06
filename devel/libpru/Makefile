@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libpru
 DISTVERSION=	0.4

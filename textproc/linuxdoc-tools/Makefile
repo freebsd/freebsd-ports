@@ -1,5 +1,4 @@
 # Created by: Felix Palmen <felix@palmen-it.de>
-# $FreeBSD$
 
 PORTNAME=	linuxdoc-tools
 PORTVERSION=	0.9.82

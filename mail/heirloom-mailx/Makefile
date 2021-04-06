@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mailx
 PORTVERSION=	12.4

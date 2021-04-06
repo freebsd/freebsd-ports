@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librtcdcpp
 DISTVERSION=	g20180627

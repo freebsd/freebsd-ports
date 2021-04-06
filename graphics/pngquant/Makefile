@@ -1,5 +1,4 @@
 # Created by: Alex Hayward <xelah@xelah.com>
-# $FreeBSD$
 
 PORTNAME=	pngquant
 PORTVERSION=	2.13.1

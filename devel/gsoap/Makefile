@@ -1,5 +1,4 @@
 # Created by: Sergey Matveychuk <sem@ciam.ru>
-# $FreeBSD$
 
 PORTNAME=	gsoap
 PORTVERSION=	2.8.111

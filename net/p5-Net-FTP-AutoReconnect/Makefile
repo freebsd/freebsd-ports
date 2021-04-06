@@ -1,5 +1,4 @@
 # Created by: Jase Thew <freebsd@beardz.net>
-# $FreeBSD$
 
 PORTNAME=	Net-FTP-AutoReconnect
 PORTVERSION=	0.3

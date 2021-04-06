@@ -1,5 +1,4 @@
 # Created by: George Reid <greid@ukug.uk.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	cryptopp
 PORTVERSION=	8.5.0

@@ -1,5 +1,4 @@
 # Created by: Cheng-Lung Sung <clsung@dragon2.net>
-# $FreeBSD$
 
 PORTNAME=	XML-Feed
 PORTVERSION=	0.61

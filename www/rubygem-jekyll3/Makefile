@@ -1,5 +1,4 @@
 # Created by: Peter Schuller <peter.schuller@infidyne.com>
-# $FreeBSD$
 
 PORTNAME=	jekyll
 PORTVERSION=	3.9.0

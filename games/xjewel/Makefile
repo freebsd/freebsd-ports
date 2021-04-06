@@ -1,5 +1,4 @@
 # Created by: jmz
-# $FreeBSD$
 
 PORTNAME=	xjewel
 PORTVERSION=	1.6

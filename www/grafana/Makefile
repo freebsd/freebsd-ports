@@ -1,5 +1,4 @@
 # Created by: Bartek Rutkowski <robak@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	grafana
 PORTVERSION=	1.9.1

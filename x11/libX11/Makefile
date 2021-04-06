@@ -1,5 +1,4 @@
 # Created by: Eric Anholt <anholt@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libX11
 PORTVERSION=	1.6.12

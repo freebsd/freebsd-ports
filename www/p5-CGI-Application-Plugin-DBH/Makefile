@@ -1,5 +1,4 @@
 # Created by: Espen Tagestad <espen@tagestad.no>
-# $FreeBSD$
 
 PORTNAME=	CGI-Application-Plugin-DBH
 PORTVERSION=	4.04

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Text-TabularDisplay
 PORTVERSION=	1.38

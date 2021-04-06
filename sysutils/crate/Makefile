@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	crate
 DISTVERSION=	0.1.3

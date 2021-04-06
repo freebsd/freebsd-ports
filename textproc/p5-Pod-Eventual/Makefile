@@ -1,5 +1,4 @@
 # Created by: Andrey Kostenko <andrey@kostenko.name>
-# $FreeBSD$
 
 PORTNAME=	Pod-Eventual
 PORTVERSION=	0.094001

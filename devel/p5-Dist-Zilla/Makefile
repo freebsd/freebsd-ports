@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Dist-Zilla
 PORTVERSION=	6.017

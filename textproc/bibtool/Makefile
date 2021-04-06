@@ -1,5 +1,4 @@
 # Created by: Rong-En Fan <rafan@infor.org>
-# $FreeBSD$
 
 PORTNAME=	bibtool
 PORTVERSION=	2.68

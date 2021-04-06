@@ -1,5 +1,4 @@
 # Created by: Nikolay Pavlov <qpadla@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	openfire
 PORTVERSION=	4.6.2

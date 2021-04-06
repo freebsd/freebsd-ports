@@ -1,5 +1,4 @@
 # Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-DNS-EtcHosts
 PORTVERSION=	0.0103

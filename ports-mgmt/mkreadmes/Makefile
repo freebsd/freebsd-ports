@@ -1,5 +1,4 @@
 # Created by: Conrad J. Sabatier <conrads@cox.net>
-# $FreeBSD$
 
 PORTNAME=	mkreadmes
 DISTVERSION=	1.3

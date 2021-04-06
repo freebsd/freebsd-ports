@@ -1,5 +1,4 @@
 # Created by: pauls@utdallas.edu
-# $FreeBSD$
 
 PORTNAME=	CIF-Client
 PORTVERSION=	0.21

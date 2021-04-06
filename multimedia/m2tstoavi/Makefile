@@ -1,5 +1,4 @@
 # Created by: Steve Wills <steve@mouf.net>
-# $FreeBSD$
 
 PORTNAME=	m2tstoavi
 PORTVERSION=	2009121901

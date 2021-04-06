@@ -1,5 +1,4 @@
 # Created by: jkh
-# $FreeBSD$
 
 PORTNAME=	xspringies
 PORTVERSION=	1.12

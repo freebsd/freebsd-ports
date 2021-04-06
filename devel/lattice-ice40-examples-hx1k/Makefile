@@ -1,5 +1,4 @@
 # Created by: Johnny Sorocil <jsorocil@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	lattice-ice40-examples-hx1k
 PORTVERSION=	g20180310

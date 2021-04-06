@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

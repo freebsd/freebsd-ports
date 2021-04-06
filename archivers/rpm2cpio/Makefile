@@ -1,5 +1,4 @@
 # Created by: Juergen Lock <nox@jelal.kn-bremen.de>
-# $FreeBSD$
 
 PORTNAME=	rpm2cpio
 PORTVERSION=	1.4

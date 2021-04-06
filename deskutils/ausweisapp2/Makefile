@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ausweisapp2
 DISTVERSION=	1.20.0

@@ -1,5 +1,4 @@
 # Created by: Jase Thew <freebsd@beardz.net>
-# $FreeBSD$
 
 PORTNAME=	Net-uFTP
 PORTVERSION=	0.161

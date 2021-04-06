@@ -1,5 +1,4 @@
 # Created by: Keith Gaughan <k@stereochro.me>
-# $FreeBSD$
 
 PORTNAME=	cheroot
 PORTVERSION=	8.5.2

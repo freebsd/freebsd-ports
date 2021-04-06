@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	lxappearance
 PORTVERSION=	0.6.3

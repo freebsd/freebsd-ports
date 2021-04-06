@@ -1,5 +1,4 @@
 # Created by: David Le Brun <david@dyn-ns.net>
-# $FreeBSD$
 
 PORTNAME=	gnupod
 PORTVERSION=	0.99.8

@@ -1,5 +1,4 @@
 # Created by: Rodrigo OSORIO <rodrigo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	podcastdl
 PORTVERSION=	0.3.3

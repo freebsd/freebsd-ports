@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	elvish
 DISTVERSIONPREFIX=	v

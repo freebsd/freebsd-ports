@@ -1,5 +1,4 @@
 # Created by: milki <milki@rescomp.berkeley.edu>
-# $FreeBSD$
 
 PORTNAME=	SQL-Tokenizer
 PORTVERSION=	0.24

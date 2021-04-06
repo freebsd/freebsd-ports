@@ -1,5 +1,4 @@
 # Created by: Janos.Mohacsi@bsd.hu
-# $FreeBSD$
 
 PORTNAME=	tcpreen
 PORTVERSION=	1.4.4

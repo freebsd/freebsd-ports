@@ -1,5 +1,4 @@
 # Created by: Denis Shaposhnikov <dsh@vlink.ru>
-# $FreeBSD$
 
 PORTNAME=	tkabber-plugins
 PORTVERSION=	1.1.2

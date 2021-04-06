@@ -1,5 +1,4 @@
 # Created by: Sergei Kolobov <sergei@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	djbdns
 PORTVERSION=	1.05

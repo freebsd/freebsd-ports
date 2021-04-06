@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	MIME-Explode
 PORTVERSION=	0.39

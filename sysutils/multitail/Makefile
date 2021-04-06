@@ -1,5 +1,4 @@
 # Created by: Oliver Braun <obraun@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	multitail
 PORTVERSION=	6.5.0

@@ -1,5 +1,4 @@
 # Created by: Brian Somers <brian@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vlc
 DISTVERSION=	3.0.12

@@ -1,5 +1,4 @@
 # Created by: Phillip Neumann <pneumann@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	murrine
 PORTVERSION=	0.98.2

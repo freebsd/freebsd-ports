@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ChaiScript
 DISTVERSIONPREFIX=	v

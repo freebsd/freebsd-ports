@@ -1,5 +1,4 @@
 # Created by: Clive Lin <clive@CirX.ORG>
-# $FreeBSD$
 
 PORTNAME=	gpa
 PORTVERSION=	0.10.0

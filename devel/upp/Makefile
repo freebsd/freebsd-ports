@@ -1,5 +1,4 @@
 # Created by: Matthias Sund <m.sund@arcor.de>
-# $FreeBSD$
 
 PORTNAME=	upp
 DISTVERSION=	15260

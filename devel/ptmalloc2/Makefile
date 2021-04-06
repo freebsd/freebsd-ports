@@ -1,5 +1,4 @@
 # Created by: is grammatically incorrect in this context.
-# $FreeBSD$
 
 PORTNAME=	ptmalloc2
 PORTVERSION=	20060605

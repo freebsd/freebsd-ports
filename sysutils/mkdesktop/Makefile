@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mkdesktop
 PORTVERSION=	4.3

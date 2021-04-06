@@ -1,5 +1,4 @@
 # Created by: Alexander Leidinger
-# $FreeBSD$
 
 PORTNAME=	fowsr
 PORTVERSION=	${FILEVER}

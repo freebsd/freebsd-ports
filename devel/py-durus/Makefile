@@ -1,5 +1,4 @@
 # Created by: Dryice Liu <dryice@dryice.name>
-# $FreeBSD$
 
 PORTNAME=	durus
 PORTVERSION=	3.9

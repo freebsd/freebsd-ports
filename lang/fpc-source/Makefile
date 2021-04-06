@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fpc
 PORTVERSION=	3.2.0

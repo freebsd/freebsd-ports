@@ -1,5 +1,4 @@
 # Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
-# $FreeBSD$
 
 PORTNAME=	milter-manager
 PORTVERSION=	2.1.1

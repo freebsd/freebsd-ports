@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	abcm2ps
 PORTVERSION=	8.13.23

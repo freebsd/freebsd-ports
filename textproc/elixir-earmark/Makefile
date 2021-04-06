@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	earmark
 PORTVERSION=	1.2.5

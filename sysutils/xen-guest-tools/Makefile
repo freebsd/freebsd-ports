@@ -1,5 +1,4 @@
 # Created by: Evan Sarmiento <esarmiento@wayfair.com>
-# $FreeBSD$
 
 PORTNAME=	xen-guest-tools
 PORTVERSION=	4.14.0

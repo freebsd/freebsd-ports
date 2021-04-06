@@ -1,5 +1,4 @@
 # Created by: jupengfei <jupengfei@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Net-Traceroute-PurePerl
 PORTVERSION=	0.10

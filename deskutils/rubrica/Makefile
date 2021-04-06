@@ -1,5 +1,4 @@
 # Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-# $FreeBSD$
 
 PORTNAME=	rubrica
 PORTVERSION=	2.1.6

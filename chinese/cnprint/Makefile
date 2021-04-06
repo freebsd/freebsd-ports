@@ -1,5 +1,4 @@
 # Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	cnprint
 PORTVERSION=	3.30b

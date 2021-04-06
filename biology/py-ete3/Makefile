@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ete3
 DISTVERSION=	3.1.2

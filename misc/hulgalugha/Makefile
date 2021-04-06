@@ -1,5 +1,4 @@
 # Created by: alfred@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	hulgalugha
 PORTVERSION=	1.0

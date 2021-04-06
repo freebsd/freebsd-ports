@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libmypaint
 DISTVERSION=	1.6.1

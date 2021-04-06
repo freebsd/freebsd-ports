@@ -1,5 +1,4 @@
 # Created by: Satoshi TAOKA <taoka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	csrd
 PORTVERSION=	1.0

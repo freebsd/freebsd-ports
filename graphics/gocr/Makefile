@@ -1,5 +1,4 @@
 # Created by: Kay Lehmann
-# $FreeBSD$
 
 PORTNAME=	gocr
 PORTVERSION=	0.52

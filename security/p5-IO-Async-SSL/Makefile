@@ -1,5 +1,4 @@
 # Created by: <ports@c0decafe.net>
-# $FreeBSD$
 
 PORTNAME=	IO-Async-SSL
 PORTVERSION=	0.22

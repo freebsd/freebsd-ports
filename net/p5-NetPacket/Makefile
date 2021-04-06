@@ -1,5 +1,4 @@
 # Created by: Anatoliy Dmytriyev
-# $FreeBSD$
 
 PORTNAME=	NetPacket
 PORTVERSION=	1.6.0

@@ -1,5 +1,4 @@
 # Created by: bf@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	kktdirect
 PORTVERSION=	0.5

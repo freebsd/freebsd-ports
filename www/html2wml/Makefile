@@ -1,5 +1,4 @@
 # Created by: George Reid <greid@ukug.uk.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	html2wml
 PORTVERSION=	0.4.11

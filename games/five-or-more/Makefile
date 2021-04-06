@@ -1,5 +1,4 @@
 # Created by: FreeBSD GNOME Team <gnome@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	five-or-more
 PORTVERSION=	3.32.2

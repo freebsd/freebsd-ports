@@ -1,5 +1,4 @@
 # Created by: jabley@automagic.org
-# $FreeBSD$
 
 PORTNAME=	xml2rfc
 PORTVERSION=	3.5.0

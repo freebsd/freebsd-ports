@@ -1,5 +1,4 @@
 # Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	edge
 PORTVERSION=	1.35

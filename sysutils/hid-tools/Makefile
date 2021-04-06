@@ -1,5 +1,4 @@
 # Created by: Vladimir Kondratyev <wulf@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hid-tools
 PORTVERSION=	0.2

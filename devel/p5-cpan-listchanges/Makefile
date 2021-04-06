@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cpan-listchanges
 PORTVERSION=	0.06

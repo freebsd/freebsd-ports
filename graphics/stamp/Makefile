@@ -1,5 +1,4 @@
 # Created by: Bill Fumerola <billf@chc-chimes.com>
-# $FreeBSD$
 
 PORTNAME=	stamp
 PORTVERSION=	2.0.8

@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <tiamat@telegraph.spb.ru>
-# $FreeBSD$
 
 PORTNAME=	gltt
 PORTVERSION=	2.5.2

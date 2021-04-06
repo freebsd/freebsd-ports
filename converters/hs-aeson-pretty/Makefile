@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aeson-pretty
 PORTVERSION=	0.8.8

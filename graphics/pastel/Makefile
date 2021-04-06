@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pastel
 DISTVERSIONPREFIX=	v

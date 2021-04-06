@@ -1,5 +1,4 @@
 # Created by: Wen heping<wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	geoserver
 PORTVERSION=	2.18.2

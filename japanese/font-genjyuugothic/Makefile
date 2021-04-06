@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	genjyuugothic
 PORTVERSION=	20150607

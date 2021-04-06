@@ -1,5 +1,4 @@
 # Created by: hsu
-# $FreeBSD$
 
 PORTNAME=	scm
 PORTVERSION=	5f2

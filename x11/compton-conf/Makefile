@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	compton-conf
 PORTVERSION=	0.16.0

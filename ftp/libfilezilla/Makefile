@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libfilezilla
 PORTVERSION=	0.15.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dakota
 DISTVERSION=	6.13.0

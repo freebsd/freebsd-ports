@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	doorkeeper
 PORTVERSION=	5.0.2

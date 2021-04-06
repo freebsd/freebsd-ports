@@ -1,5 +1,4 @@
 # Created by: Jordan Irwin <antumdeluge@gmail.com>
-# $FreeBSD$
 
 PORTNAME=		stendhal
 PORTVERSION=		1.35

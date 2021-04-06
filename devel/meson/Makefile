@@ -1,5 +1,4 @@
 # Created by: Ting-Wei Lan <lantw44@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	meson
 PORTVERSION=	0.57.1

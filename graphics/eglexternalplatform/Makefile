@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	eglexternalplatform
 DISTVERSION=	1.1

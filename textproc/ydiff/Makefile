@@ -1,5 +1,4 @@
 # Created by: eivind
-# $FreeBSD$
 
 PORTNAME=	ydiff
 DISTVERSION=	1.2

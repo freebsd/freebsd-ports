@@ -1,5 +1,4 @@
 # Created by: hrs
-# $FreeBSD$
 
 PORTNAME=	papersize-default
 PORTVERSION=	0.0.20120302

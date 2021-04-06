@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mplus
 PORTVERSION=	1.0.20060520.p1

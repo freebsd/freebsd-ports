@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ARGV-Struct
 PORTVERSION=	0.03

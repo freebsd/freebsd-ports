@@ -1,5 +1,4 @@
 # Created by: Mike Meyer <mwm@mired.org>
-# $FreeBSD$
 
 PORTNAME=	t1utils
 PORTVERSION=	1.32

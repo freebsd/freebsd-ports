@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uacme
 DISTVERSIONPREFIX=	upstream/

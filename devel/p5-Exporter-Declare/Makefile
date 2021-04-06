@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Exporter-Declare
 PORTVERSION=	0.114

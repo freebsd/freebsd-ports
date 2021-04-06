@@ -1,5 +1,4 @@
 # Created by: James Hunt <james.hunt@ubuntu.com>
-# $FreeBSD$
 
 PORTNAME=	procenv
 PORTVERSION=	0.51

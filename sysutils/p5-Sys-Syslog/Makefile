@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Sys-Syslog
 PORTVERSION=	0.36

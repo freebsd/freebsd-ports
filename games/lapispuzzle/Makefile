@@ -1,5 +1,4 @@
 # Created by: gurkan@phys.ethz.ch
-# $FreeBSD$
 
 PORTNAME=	lapispuzzle
 PORTVERSION=	1.2

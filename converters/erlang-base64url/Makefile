@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	base64url
 PORTVERSION=	1.0

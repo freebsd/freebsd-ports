@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale <nivit@email.it>
-# $FreeBSD$
 
 PORTNAME=	vttest
 PORTVERSION=	2018.08.11

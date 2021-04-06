@@ -1,5 +1,4 @@
 # Created by: Ganael Laplanche <ganael.laplanche@martymac.org>
-# $FreeBSD$
 
 PORTNAME=	openjazz
 PORTVERSION=	20190106

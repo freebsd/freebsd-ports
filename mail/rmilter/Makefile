@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rmilter
 PORTVERSION=	1.10.0

@@ -1,5 +1,4 @@
 # Created by: David Wolfskill
-# $FreeBSD$
 
 PORTNAME=	gpsman
 PORTVERSION=	6.4.4.2

@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan
-# $FreeBSD$
 
 PORTNAME=	Crypt-AppleTwoFish
 PORTVERSION=	0.051

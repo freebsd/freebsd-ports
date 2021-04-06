@@ -1,5 +1,4 @@
 # Created by: Choe, Cheng-Dae
-# $FreeBSD$
 
 PORTNAME=	formencode
 PORTVERSION=	1.3.0

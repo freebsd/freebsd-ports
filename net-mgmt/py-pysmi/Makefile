@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pysmi
 PORTVERSION=	0.3.4

@@ -1,5 +1,4 @@
 # Created by: John Alden + Eric Freeman <freebsdports@chillibear.com>
-# $FreeBSD$
 
 PORTNAME=	Config-Wrest
 PORTVERSION=	1.036

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tinytest
 DISTVERSION=	1.2.4

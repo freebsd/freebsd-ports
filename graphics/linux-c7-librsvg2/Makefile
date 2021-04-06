@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librsvg2
 PORTVERSION=	2.40.20

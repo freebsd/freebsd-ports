@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni <pfg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	viennacl
 PORTVERSION=	1.7.1

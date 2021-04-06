@@ -1,5 +1,4 @@
 # Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
-# $FreeBSD$
 
 PORTNAME=	camlp5
 PORTVERSION=	7.07

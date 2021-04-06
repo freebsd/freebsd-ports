@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	black
 PORTVERSION=	20.8b1

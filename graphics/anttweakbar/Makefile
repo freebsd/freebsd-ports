@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	anttweakbar
 DISTVERSION=	1.16

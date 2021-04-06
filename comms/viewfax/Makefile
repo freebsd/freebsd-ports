@@ -1,5 +1,4 @@
 # Created by: jmz
-# $FreeBSD$
 
 PORTNAME=	viewfax
 PORTVERSION=	2.6

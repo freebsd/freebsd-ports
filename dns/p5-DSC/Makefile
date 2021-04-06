@@ -1,5 +1,4 @@
 # Created by: Leo Vandewoestijne <freebsd@dns.company>
-# $FreeBSD$
 
 PORTNAME=	p5-DSC
 PORTVERSION=	2.04

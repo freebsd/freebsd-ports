@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	psycopg2cffi
 DISTVERSION=	2.9.0

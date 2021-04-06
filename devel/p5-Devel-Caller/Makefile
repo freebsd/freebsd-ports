@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Chen
-# $FreeBSD$
 
 PORTNAME=	Devel-Caller
 PORTVERSION=	2.06

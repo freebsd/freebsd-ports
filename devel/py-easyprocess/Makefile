@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	easyprocess
 PORTVERSION=	0.2.3

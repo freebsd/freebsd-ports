@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tmate
 PORTVERSION=	2.4.0

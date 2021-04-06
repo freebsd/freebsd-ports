@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Amon2-Lite
 PORTVERSION=	0.09

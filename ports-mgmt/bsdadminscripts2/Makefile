@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bsdadminscripts2
 PORTVERSION=	0.3.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ascent
 DISTVERSIONPREFIX=	v

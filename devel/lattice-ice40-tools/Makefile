@@ -1,5 +1,4 @@
 # Created by: Johnny Sorocil <jsorocil@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	lattice-ice40-tools
 PORTVERSION=	g20181021

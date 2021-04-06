@@ -1,5 +1,4 @@
 # Created by: Kirill Ponomarew <ponomarew@oberon.net>
-# $FreeBSD$
 
 PORTNAME=	middleman
 PORTVERSION=	1.9.1

@@ -1,5 +1,4 @@
 # Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-# $FreeBSD$
 
 PORTNAME=	IMDb
 PORTVERSION=	0.01

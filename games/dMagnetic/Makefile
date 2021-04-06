@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dMagnetic
 PORTVERSION=	0.30

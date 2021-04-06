@@ -1,5 +1,4 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libgdamm
 PORTVERSION=	4.99.11

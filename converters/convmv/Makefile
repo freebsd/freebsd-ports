@@ -1,5 +1,4 @@
 # Created by: Kuang-che Wu <kcwu@csie.org>
-# $FreeBSD$
 
 PORTNAME=	convmv
 PORTVERSION=	2.05

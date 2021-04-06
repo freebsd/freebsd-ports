@@ -1,5 +1,4 @@
 # Created by: Masahiro Teramoto <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	HTML-RobotsMETA
 PORTVERSION=	0.00004

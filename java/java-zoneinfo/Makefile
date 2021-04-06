@@ -1,5 +1,4 @@
 # Created by: Greg Lewis <glewis@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	zoneinfo
 DISTVERSION=	2021a

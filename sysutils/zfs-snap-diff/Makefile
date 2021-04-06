@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zfs-snap-diff
 PORTVERSION=	1.1.1

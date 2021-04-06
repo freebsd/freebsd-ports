@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ompl
 DISTVERSION=	1.5.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CsoundQt
 DISTVERSIONPREFIX=	v

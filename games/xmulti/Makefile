@@ -1,5 +1,4 @@
 # Created by: Toru YANO <toru@s-fine.co.jp>
-# $FreeBSD$
 
 PORTNAME=	xmulti
 PORTVERSION=	2.00b4

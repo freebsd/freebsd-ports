@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	obs-transition-matrix
 DISTVERSIONPREFIX=	v

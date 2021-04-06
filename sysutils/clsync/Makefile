@@ -1,5 +1,4 @@
 # Created by: Dmitry Yu Okunev dyokunev@ut.mephi.ru
-# $FreeBSD$
 
 PORTNAME=	clsync
 DISTVERSION=	0.4~rc2

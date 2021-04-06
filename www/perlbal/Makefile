@@ -1,5 +1,4 @@
 # Created by: Jacques Marneweck <jacques@php.net>
-# $FreeBSD$
 
 PORTNAME=	Perlbal
 PORTVERSION=	1.80

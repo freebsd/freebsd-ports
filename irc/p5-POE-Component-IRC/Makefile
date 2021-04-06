@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	POE-Component-IRC
 PORTVERSION=	6.90

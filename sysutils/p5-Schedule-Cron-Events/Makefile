@@ -1,5 +1,4 @@
 # Created by: Andrey Kuzmin <akuz84@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Schedule-Cron-Events
 PORTVERSION=	1.95

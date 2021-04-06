@@ -1,5 +1,4 @@
 # Created by: greg
-# $FreeBSD$
 
 PORTNAME=	wavplay
 PORTVERSION=	1.4

@@ -1,5 +1,4 @@
 # Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-# $FreeBSD$
 
 PORTNAME=	Net-eBay
 PORTVERSION=	0.61

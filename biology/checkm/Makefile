@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CheckM
 DISTVERSIONPREFIX=	v

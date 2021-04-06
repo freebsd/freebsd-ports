@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	apispec
 PORTVERSION=	4.3.0

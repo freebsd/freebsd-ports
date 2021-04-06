@@ -1,5 +1,4 @@
 # Created by: antoine@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	pyaff4
 DISTVERSION=	0.26.post6

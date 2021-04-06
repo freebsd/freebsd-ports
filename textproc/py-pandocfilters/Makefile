@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pandocfilters
 PORTVERSION=	1.4.3

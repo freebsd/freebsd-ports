@@ -1,5 +1,4 @@
 # Created by: kevit
-# $FreeBSD$
 
 PORTNAME=	Class-Declare
 PORTVERSION=	0.19

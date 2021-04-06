@@ -1,5 +1,4 @@
 # Created by: Andrey Chernov <ache@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Term-VT102-Boundless
 PORTVERSION=	0.05

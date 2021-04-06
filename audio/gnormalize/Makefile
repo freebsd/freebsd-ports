@@ -1,5 +1,4 @@
 # Created by: Denise H. G. <darcsis@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gnormalize
 PORTVERSION=	0.63

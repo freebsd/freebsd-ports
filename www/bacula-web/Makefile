@@ -1,5 +1,4 @@
 # Created by: Dan Langille <dan@langille.org>
-# $FreeBSD$
 
 PORTNAME=	bacula-web
 DISTVERSIONPREFIX=	v

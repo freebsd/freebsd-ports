@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	swank-clojure
 PORTVERSION=	1.2.1

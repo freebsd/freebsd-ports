@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wlrctl
 DISTVERSIONPREFIX=	v

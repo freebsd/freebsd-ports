@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	consul_exporter
 PORTVERSION=	0.3.0

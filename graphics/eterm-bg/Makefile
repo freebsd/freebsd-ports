@@ -1,5 +1,4 @@
 # Created by: Satoshi Taoka <taoka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	eterm-bg
 PORTVERSION=	0.9.6

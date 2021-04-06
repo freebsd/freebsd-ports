@@ -1,5 +1,4 @@
 # Created by: Alex Pesternikov <ap@page2rss.com>
-# $FreeBSD$
 
 PORTNAME=	ctemplate
 PORTVERSION=	0.5

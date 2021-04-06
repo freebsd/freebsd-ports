@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	adafruit-ampy
 PORTVERSION=	1.0.5

@@ -1,5 +1,4 @@
 # Created by: Revis Zinkov <rzinkov@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	moc
 PORTVERSION=	2.5.2

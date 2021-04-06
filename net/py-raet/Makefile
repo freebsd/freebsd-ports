@@ -1,5 +1,4 @@
 # Created by: Christer Edwards <christer.edwards@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	raet
 PORTVERSION=	0.6.8

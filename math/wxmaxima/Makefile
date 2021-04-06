@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale <nivit@email.it>
-# $FreeBSD$
 
 PORTNAME=	wxmaxima
 PORTVERSION=	20.04.0

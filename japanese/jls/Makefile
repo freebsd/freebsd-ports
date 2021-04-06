@@ -1,5 +1,4 @@
 # Created by: shige
-# $FreeBSD$
 
 PORTNAME=	ls
 PORTVERSION=	0.5

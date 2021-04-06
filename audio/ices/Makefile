@@ -1,5 +1,4 @@
 # Created by: Michael Nottebrock <michaelnottebrock@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	ices
 PORTVERSION=	2.0.3

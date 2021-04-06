@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	orange3
 DISTVERSION=	3.28.0

@@ -1,5 +1,4 @@
 # Created by: Uffe Jakobsen <uffe@uffe.org>
-# $FreeBSD$
 
 PORTNAME=	tass64
 PORTVERSION=	1.55.2200

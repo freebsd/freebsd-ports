@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	falkon
 DISTVERSION=	3.1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gambit
 DISTVERSION=	0.1.6

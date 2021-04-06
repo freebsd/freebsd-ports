@@ -1,5 +1,4 @@
 # Created by: Brent J. Nordquist <bjn@visi.com>
-# $FreeBSD$
 
 PORTNAME=	gdbm
 PORTVERSION=	1.19

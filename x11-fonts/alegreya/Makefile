@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alegreya
 PORTVERSION=	2.008

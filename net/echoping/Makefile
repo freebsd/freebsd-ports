@@ -1,5 +1,4 @@
 # Created by: peter
-# $FreeBSD$
 
 PORTNAME=	echoping
 PORTVERSION=	6.0.2

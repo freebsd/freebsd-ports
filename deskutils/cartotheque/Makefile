@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cartotheque
 PORTVERSION=	0.1

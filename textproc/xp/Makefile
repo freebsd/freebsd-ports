@@ -1,5 +1,4 @@
 # Created by: mike
-# $FreeBSD$
 
 PORTNAME=	xp
 PORTVERSION=	0.5

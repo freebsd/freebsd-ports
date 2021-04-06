@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	crosextrafonts-carlito
 PORTVERSION=	20130920

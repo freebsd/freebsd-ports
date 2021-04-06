@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	menulibre
 PORTVERSION=	2.2.1

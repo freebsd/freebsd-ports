@@ -1,5 +1,4 @@
 # Created by: Ross Timson <ross@rosstimson.com>
-# $FreeBSD$
 
 PORTNAME=	chruby
 PORTVERSION=	0.3.9

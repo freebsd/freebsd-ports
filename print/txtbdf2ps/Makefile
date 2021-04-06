@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	txtbdf2ps
 PORTVERSION=	0.7.1

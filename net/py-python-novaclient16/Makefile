@@ -1,5 +1,4 @@
 # Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	python-novaclient
 PORTVERSION=	16.0.0

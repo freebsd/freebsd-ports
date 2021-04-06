@@ -1,5 +1,4 @@
 # Created by: Christoph Moench-Tegeder <cmt@burggraben.net>
-# $FreeBSD$
 
 PORTNAME=	rest
 PORTVERSION=	0.8.1

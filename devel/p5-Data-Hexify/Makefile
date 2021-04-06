@@ -1,5 +1,4 @@
 # Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Data-Hexify
 PORTVERSION=	1.00

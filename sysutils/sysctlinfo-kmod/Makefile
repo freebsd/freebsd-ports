@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sysctlinfo-kmod
 DISTVERSION=	20210222

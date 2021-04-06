@@ -1,5 +1,4 @@
 # Created by: wenheping@gmail.com
-# $FreeBSD$
 
 PORTNAME=	wps
 PORTVERSION=	2.5

@@ -1,5 +1,4 @@
 # Created by: Douglas Thrift <douglas@douglasthrift.net>
-# $FreeBSD$
 
 PORTNAME=	keyring
 PORTVERSION=	18.0.1

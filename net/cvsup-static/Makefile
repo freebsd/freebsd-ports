@@ -1,5 +1,4 @@
 # Created by: Xin Li <delphij@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cvsup-static
 PORTVERSION=	16.1h

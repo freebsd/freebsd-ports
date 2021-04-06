@@ -1,5 +1,4 @@
 # Created by: Olivier Girard <Olivier.Girard@univ-angers.fr>
-# $FreeBSD$
 
 PORTNAME=	Unicode-LineBreak
 PORTVERSION=	2019.001

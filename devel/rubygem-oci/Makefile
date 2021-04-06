@@ -1,5 +1,4 @@
 # Created by: Alessandro Sagratini <ale_sagra@hotmail.com>
-# $FreeBSD$
 
 PORTNAME=	oci
 PORTVERSION=	2.12.0

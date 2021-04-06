@@ -1,5 +1,4 @@
 # Created by: TAKAHASHI Kaoru <kaoru@kaisei.org>
-# $FreeBSD$
 
 PORTNAME=	Crypt-NULL
 PORTVERSION=	1.02

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	listres
 PORTVERSION=	1.0.4

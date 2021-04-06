@@ -1,5 +1,4 @@
 # Created by: TERAMOTO Masahiro <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	XML-LibXML-Simple
 PORTVERSION=	0.95

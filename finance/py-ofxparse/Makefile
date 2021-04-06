@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ofxparse
 PORTVERSION=	0.20

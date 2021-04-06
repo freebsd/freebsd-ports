@@ -1,5 +1,4 @@
 # Created by: Nick Sayer <nsayer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	GDBM
 PORTVERSION=	1.14

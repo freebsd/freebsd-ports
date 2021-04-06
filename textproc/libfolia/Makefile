@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libfolia
 DISTVERSIONPREFIX=	v

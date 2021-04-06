@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Munge
 PORTVERSION=	0.097

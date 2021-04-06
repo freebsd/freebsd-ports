@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman
-# $FreeBSD$
 
 PORTNAME=	RT-Extension-LDAPImport
 PORTVERSION=	0.36

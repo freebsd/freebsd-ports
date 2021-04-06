@@ -1,5 +1,4 @@
 # Created by: Alexander Kriventsov <avk@vl.ru>
-# $FreeBSD$
 
 PORTNAME=	Nagios-Plugin-LDAP
 PORTVERSION=	0.04

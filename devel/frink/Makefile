@@ -1,5 +1,4 @@
 # Created by: Mikhail Teterin
-# $FreeBSD$
 
 PORTNAME=	frink
 PORTVERSION=	2.2.2p4

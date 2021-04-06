@@ -1,5 +1,4 @@
 # Created by: Yarema <yds@CoolRat.org>
-# $FreeBSD$
 
 PORTNAME=	facets
 PORTVERSION=	3.1.0

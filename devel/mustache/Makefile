@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mustache
 DISTVERSIONPREFIX=	v

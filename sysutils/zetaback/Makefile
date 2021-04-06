@@ -1,5 +1,4 @@
 # Created by: Cy Schubert <cy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	zetaback
 DISTVERSION=	1.0.7

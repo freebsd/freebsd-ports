@@ -1,5 +1,4 @@
 # Created by: Stefan Walter <sw@gegenunendlich.de>
-# $FreeBSD$
 
 PORTNAME=	pydot
 PORTVERSION=	1.4.2

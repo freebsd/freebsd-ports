@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	redo
 PORTVERSION=	1.5

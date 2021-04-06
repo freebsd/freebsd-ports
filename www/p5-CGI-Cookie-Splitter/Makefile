@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	CGI-Cookie-Splitter
 PORTVERSION=	0.05

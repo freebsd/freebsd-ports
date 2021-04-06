@@ -1,5 +1,4 @@
 # Created by: Matthew Hunt <mph@pobox.com>
-# $FreeBSD$
 
 PORTNAME=	xpat2
 PORTVERSION=	1.07

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pykml
 DISTVERSION=	0.2.0

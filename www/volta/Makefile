@@ -1,5 +1,4 @@
 # Created by: mahlon
-# $FreeBSD$
 
 PORTNAME=	volta
 PORTVERSION=	0.3.0

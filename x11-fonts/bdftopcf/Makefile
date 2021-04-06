@@ -1,5 +1,4 @@
 # Created by: Pawel Worach
-# $FreeBSD$
 
 PORTNAME=	bdftopcf
 PORTVERSION=	1.1

@@ -1,5 +1,4 @@
 # Created by: Mykola Dzham <i@levsha.me>
-# $FreeBSD$
 
 PORTNAME=	bino
 PORTVERSION=	1.6.5

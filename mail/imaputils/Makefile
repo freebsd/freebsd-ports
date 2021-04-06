@@ -1,5 +1,4 @@
 # Created by: Mikhail T. (m.tsatsenko@gmail.com)
-# $FreeBSD$
 
 PORTNAME=	imaputils
 DISTVERSION=	1.0.5

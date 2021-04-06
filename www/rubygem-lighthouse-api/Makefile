@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lighthouse-api
 PORTVERSION=	2.0

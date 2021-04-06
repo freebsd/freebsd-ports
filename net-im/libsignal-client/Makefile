@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libsignal-client
 DISTVERSIONPREFIX=	java-

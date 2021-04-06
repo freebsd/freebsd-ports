@@ -1,5 +1,4 @@
 # Created by: Søren Straarup <xride@x12.dk>
-# $FreeBSD$
 
 PORTNAME=	xnecview
 PORTVERSION=	1.36

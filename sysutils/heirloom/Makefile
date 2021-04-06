@@ -1,5 +1,4 @@
 # Created by: Cyrille Lefevre <Cyrille.Lefevre@laposte.net>
-# $FreeBSD$
 
 PORTNAME=	heirloom
 PORTVERSION=	070715

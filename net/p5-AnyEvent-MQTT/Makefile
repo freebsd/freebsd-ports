@@ -1,5 +1,4 @@
 # Created by: Alex Bakhtin <Alex.Bakhtin@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-MQTT
 PORTVERSION=	1.142640

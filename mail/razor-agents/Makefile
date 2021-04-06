@@ -1,5 +1,4 @@
 # Created by: Yen-Ming Lee <leeym@leeym.com>
-# $FreeBSD$
 
 PORTNAME=	razor-agents
 PORTVERSION=	2.84

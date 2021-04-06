@@ -1,5 +1,4 @@
 # Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-# $FreeBSD$
 
 PORTNAME=	CPAN-Uploader
 PORTVERSION=	0.103013

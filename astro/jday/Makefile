@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jday
 PORTVERSION=	2.4

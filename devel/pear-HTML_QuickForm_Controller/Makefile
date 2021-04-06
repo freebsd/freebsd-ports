@@ -1,5 +1,4 @@
 # Created by: Dmitry Karasik (<dk@catpipe.net>)
-# $FreeBSD$
 
 PORTNAME=	HTML_QuickForm_Controller
 PORTVERSION=	1.0.10

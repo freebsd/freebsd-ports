@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opennurbs
 PORTVERSION=	20130711

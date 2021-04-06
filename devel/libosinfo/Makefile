@@ -1,5 +1,4 @@
 # Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libosinfo
 PORTVERSION=	1.9.0

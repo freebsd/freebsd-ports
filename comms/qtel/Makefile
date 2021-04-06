@@ -1,5 +1,4 @@
 # Created by: shurd
-# $FreeBSD$
 
 PORTNAME=	qtel
 

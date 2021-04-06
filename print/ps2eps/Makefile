@@ -1,5 +1,4 @@
 # Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	ps2eps
 PORTVERSION=	1.64

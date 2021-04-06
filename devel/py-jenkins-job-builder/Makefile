@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jenkins-job-builder
 PORTVERSION=	3.9.0

@@ -1,5 +1,4 @@
 # Created by: perlguy@perlguy.com
-# $FreeBSD$
 
 PORTNAME=	infobot
 PORTVERSION=	0.45.3

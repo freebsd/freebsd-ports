@@ -1,5 +1,4 @@
 # Created by: Jacques Vidrine <nectar@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	im-ja
 PORTVERSION=	1.5

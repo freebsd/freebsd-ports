@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	httpoison
 PORTVERSION=	0.13.0

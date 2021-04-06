@@ -1,5 +1,4 @@
 # Created by: Shaun Amott <shaun@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bitcoin
 PORTVERSION=	0.21.0

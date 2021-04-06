@@ -1,5 +1,4 @@
 # Created by: obrien@cs.ucdavis.edu
-# $FreeBSD$
 
 PORTNAME=	tin
 PORTVERSION=	2.4.5

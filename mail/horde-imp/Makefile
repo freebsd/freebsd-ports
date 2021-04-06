@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	imp
 PORTVERSION=	6.2.27

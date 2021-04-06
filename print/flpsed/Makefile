@@ -1,5 +1,4 @@
 # Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-# $FreeBSD$
 
 PORTNAME=	flpsed
 DISTVERSION=	0.7.3

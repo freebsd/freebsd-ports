@@ -1,5 +1,4 @@
 # Created by: Felix Palmen <felix@palmen-it.de>
-# $FreeBSD$
 
 PORTNAME=	emu64
 PORTVERSION=	5.0.18

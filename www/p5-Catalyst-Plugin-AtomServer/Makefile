@@ -1,5 +1,4 @@
 # Created by: Oleg Mamontov <oleg@mamontov.net>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-AtomServer
 PORTVERSION=	0.04

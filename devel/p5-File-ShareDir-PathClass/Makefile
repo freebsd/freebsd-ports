@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	File-ShareDir-PathClass
 PORTVERSION=	1.112440

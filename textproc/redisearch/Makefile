@@ -1,5 +1,4 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	redisearch
 DISTVERSIONPREFIX=	v

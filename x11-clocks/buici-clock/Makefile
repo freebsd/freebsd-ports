@@ -1,5 +1,4 @@
 # Created by: Hendrik Scholz <hscholz@raisdorf.net>
-# $FreeBSD$
 
 PORTNAME=	buici-clock
 PORTVERSION=	0.4.9.4

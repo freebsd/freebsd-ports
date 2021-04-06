@@ -1,5 +1,4 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gitlab-derailed_benchmarks
 PORTVERSION=	1.6.1

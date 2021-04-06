@@ -1,5 +1,4 @@
 # Created by: Jacques Marneweck <jacques@php.net>
-# $FreeBSD$
 
 PORTNAME=	Danga-Socket
 PORTVERSION=	1.62

@@ -1,5 +1,4 @@
 # Created by: Satoshi TAOKA <taoka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	freepwing
 PORTVERSION=	1.4.4

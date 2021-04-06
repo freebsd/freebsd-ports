@@ -1,5 +1,4 @@
 # Created by: Johannes Jost Meixner <xmj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sprockets
 PORTVERSION=	3.7.2

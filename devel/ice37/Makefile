@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		Ice
 PORTVERSION=		3.7.2

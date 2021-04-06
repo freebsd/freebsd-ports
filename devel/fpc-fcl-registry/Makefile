@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fcl-registry

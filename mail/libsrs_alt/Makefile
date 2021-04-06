@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		libsrs_alt
 DISTVERSION=		1.0

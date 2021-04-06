@@ -1,5 +1,4 @@
 # Created by: Lawrence Chen <beastie@tardisi.com>
-# $FreeBSD$
 
 PORTNAME=	check_dhcp.pl
 PORTVERSION=	0.1

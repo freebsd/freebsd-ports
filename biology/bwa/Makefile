@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bwa
 PORTVERSION=	0.7.17

@@ -1,5 +1,4 @@
 # Created by: Alex Varju <freebsd-ports@varju.ca>
-# $FreeBSD$
 
 PORTNAME=	pmd
 PORTVERSION=	6.29.0

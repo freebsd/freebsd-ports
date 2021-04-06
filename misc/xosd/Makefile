@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang <perky@python.or.kr>
-# $FreeBSD$
 
 PORTNAME=	xosd
 PORTVERSION=	2.2.14

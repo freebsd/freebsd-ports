@@ -1,5 +1,4 @@
 # Created by: Frederic Culot <frederic@culot.org>
-# $FreeBSD$
 
 PORTNAME=	WebService-Google-Reader
 PORTVERSION=	0.23

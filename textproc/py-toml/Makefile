@@ -1,5 +1,4 @@
 # Created by: Waitman Gobble <waitman@waitman.net>
-# $FreeBSD$
 
 PORTNAME=	toml
 PORTVERSION=	0.10.2

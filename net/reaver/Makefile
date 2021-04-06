@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	reaver
 DISTVERSIONPREFIX=	v

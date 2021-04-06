@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	funnel
 PORTVERSION=	0.4.1

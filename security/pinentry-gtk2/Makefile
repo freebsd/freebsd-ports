@@ -1,5 +1,4 @@
 # Created by: Jean-Yves Lefort <jylefort@brutele.be>
-# $FreeBSD$
 
 PORTNAME=	pinentry
 PORTREVISION=	0

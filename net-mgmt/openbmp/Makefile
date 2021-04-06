@@ -1,5 +1,4 @@
 # Created by: Luca Pizzamiglio <pizzamig@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	openbmp
 DISTVERSIONPREFIX=	v

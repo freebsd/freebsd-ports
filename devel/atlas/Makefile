@@ -1,5 +1,4 @@
 # Created by: Oliver Lehmann <lehmann@ans-netz.de>
-# $FreeBSD$
 
 PORTNAME=	Atlas
 PORTVERSION=	0.5.2

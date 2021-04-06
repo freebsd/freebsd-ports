@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tomcat
 PORTVERSION=	10.0.4

@@ -1,5 +1,4 @@
 # Created by: Shaun Amott <shaun@inerd.com>
-# $FreeBSD$
 
 PORTNAME=	nuclearchess
 PORTVERSION=	1.0.0

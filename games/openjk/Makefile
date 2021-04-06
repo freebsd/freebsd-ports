@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openjk
 PORTVERSION=	g20200823

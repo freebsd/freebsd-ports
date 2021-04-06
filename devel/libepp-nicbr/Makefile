@@ -1,5 +1,4 @@
 # Created by: Jean Milanez Melo <jmelo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libepp-nicbr
 PORTVERSION=	1.15

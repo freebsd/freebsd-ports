@@ -1,5 +1,4 @@
 # Created by: Christer Edwards <christer.edwards@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	listadmin
 PORTVERSION=	2.40

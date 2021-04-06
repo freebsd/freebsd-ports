@@ -1,5 +1,4 @@
 # Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	chez-scheme
 PORTVERSION=	9.5.2

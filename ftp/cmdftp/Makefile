@@ -1,5 +1,4 @@
 # Created by: Andreas Fehlner <fehlner@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	cmdftp
 PORTVERSION=	0.9.8

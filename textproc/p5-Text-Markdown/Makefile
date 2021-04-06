@@ -1,5 +1,4 @@
 # Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-# $FreeBSD$
 
 PORTNAME=	Text-Markdown
 PORTVERSION=	1.000031

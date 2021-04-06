@@ -1,5 +1,4 @@
 # Created by: Lars Eggert <lars@eggert.org>
-# $FreeBSD$
 
 PORTNAME=	tcpsplit
 PORTVERSION=	0.2

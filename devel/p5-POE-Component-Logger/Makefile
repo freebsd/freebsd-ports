@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Logger
 PORTVERSION=	1.10

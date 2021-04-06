@@ -1,5 +1,4 @@
 # Created by: Alonso Cardenas <acmFreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	drupal8
 PORTVERSION=	8.9.13

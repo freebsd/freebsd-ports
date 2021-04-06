@@ -1,5 +1,4 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Config-Merge
 PORTVERSION=	1.04

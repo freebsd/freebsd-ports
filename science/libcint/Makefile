@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcint
 DISTVERSIONPREFIX=	v

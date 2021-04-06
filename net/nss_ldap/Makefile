@@ -1,5 +1,4 @@
 # Created by: Jacques Vidrine <nectar@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}

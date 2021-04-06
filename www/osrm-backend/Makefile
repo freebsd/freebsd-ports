@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	osrm-backend
 DISTVERSIONPREFIX=	v

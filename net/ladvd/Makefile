@@ -1,5 +1,4 @@
 # Created by: sten@blinkenlights.nl
-# $FreeBSD$
 
 PORTNAME=	ladvd
 PORTVERSION=	1.1.2

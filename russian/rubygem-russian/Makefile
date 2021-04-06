@@ -1,5 +1,4 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	russian
 PORTVERSION=	0.6.0

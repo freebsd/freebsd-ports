@@ -1,5 +1,4 @@
 # Created by: Masashi CHIBA
-# $FreeBSD$
 
 PORTNAME=	scim-honoka-plugin-wnn
 PORTVERSION=	0.9.0

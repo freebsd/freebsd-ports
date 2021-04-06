@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grr
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: andrey@kostenko.name
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Authentication-Credential-OpenID
 PORTVERSION=	0.19

@@ -1,5 +1,4 @@
 # Created by: Roland van Laar <roland@micite.net>
-# $FreeBSD$
 
 PORTNAME=	kerberos
 PORTVERSION=	1.3.0

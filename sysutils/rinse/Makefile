@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rinse
 PORTVERSION=	3.2

@@ -1,5 +1,4 @@
 # Created by: Jon Nistor <nistor@snickers.org>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Sequence
 PORTVERSION=	1.5

@@ -1,5 +1,4 @@
 # Created by: Gabor Zahemszky <Gabor@Zahemszky.HU>
-# $FreeBSD$
 
 PORTNAME=	aften
 PORTVERSION=	0.0.8

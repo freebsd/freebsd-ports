@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dnscrypt-wrapper
 PORTVERSION=	0.4.2

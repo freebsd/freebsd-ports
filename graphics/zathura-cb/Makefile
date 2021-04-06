@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zathura-cb
 DISTVERSION=	0.1.8

@@ -1,5 +1,4 @@
 # Created by: Matt Emmerton <matt@gsicomp.on.ca>
-# $FreeBSD$
 
 PORTNAME=	sntop
 PORTVERSION=	1.4.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	testssl.sh
 DISTVERSION=	3.0.4

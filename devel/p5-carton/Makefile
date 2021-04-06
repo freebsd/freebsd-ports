@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	carton
 PORTVERSION=	1.0.28

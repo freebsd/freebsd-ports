@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dsbautostart
 PORTVERSION=	1.2

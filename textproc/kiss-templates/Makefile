@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		kiss-templates
 PORTVERSION=		0.19

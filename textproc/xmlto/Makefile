@@ -1,5 +1,4 @@
 # Created by: Sergei Kolobov <sergei@kolobov.com>
-# $FreeBSD$
 
 PORTNAME=	xmlto
 PORTVERSION=	0.0.28

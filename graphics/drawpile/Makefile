@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Drawpile
 DISTVERSION=	2.1.17

@@ -1,5 +1,4 @@
 # Created by: nork@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	eawplus
 PORTVERSION=	12.1

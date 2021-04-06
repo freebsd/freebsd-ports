@@ -1,5 +1,4 @@
 # Created by: Sergey Matveychuk <sem@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	unbound
 PORTVERSION=	1.13.1

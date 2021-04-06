@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tlx
 DISTVERSIONPREFIX=	v

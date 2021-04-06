@@ -1,5 +1,4 @@
 # Created by: Phil Oleson <oz@nixil.net>
-# $FreeBSD$
 
 PORTNAME=	dvd-slideshow
 PORTVERSION=	0.8.4

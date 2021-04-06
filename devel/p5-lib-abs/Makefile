@@ -1,5 +1,4 @@
 # Created by: Mons Anderson <mons@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	lib-abs
 PORTVERSION=	0.92

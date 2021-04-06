@@ -1,5 +1,4 @@
 # Created by: Simun Mikecin <numisemis@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	XML-ApacheFOP
 PORTVERSION=	0.03

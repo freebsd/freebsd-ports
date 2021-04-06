@@ -1,5 +1,4 @@
 # Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	cleanfeed
 DISTVERSION=	20190602

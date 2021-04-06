@@ -1,5 +1,4 @@
 # Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	chaoskube
 PORTVERSION=	0.21.0

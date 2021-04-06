@@ -1,5 +1,4 @@
 # Created by: erich@rrnet.com
-# $FreeBSD$
 
 PORTNAME=	rc
 PORTVERSION=	1.7.4

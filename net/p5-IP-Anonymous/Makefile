@@ -1,5 +1,4 @@
 # Created by: Paul Schmehl <pauls@utdallas.edu>
-# $FreeBSD$
 
 PORTNAME=	IP-Anonymous
 PORTVERSION=	0.04

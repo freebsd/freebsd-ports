@@ -1,5 +1,4 @@
 # Created by: Jonathan Hanna
-# $FreeBSD$
 
 PORTNAME=	edict
 PORTVERSION=	19990714

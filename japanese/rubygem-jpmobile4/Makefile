@@ -1,5 +1,4 @@
 # Created by: TAKATSU Tomonari <tota@rtfm.jp>
-# $FreeBSD$
 
 PORTNAME=	jpmobile
 PORTVERSION=	4.2.5

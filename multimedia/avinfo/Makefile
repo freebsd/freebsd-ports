@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	avinfo
 PORTVERSION=	1.0.a15

@@ -1,5 +1,4 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	goobox
 PORTVERSION=	3.6.0

@@ -1,5 +1,4 @@
 # Created by: Christian Laursen <xi@borderworlds.dk>
-# $FreeBSD$
 
 PORTNAME=	nbd
 PORTVERSION=	3.21

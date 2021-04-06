@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Heimdal-Kadm5
 PORTVERSION=	0.08

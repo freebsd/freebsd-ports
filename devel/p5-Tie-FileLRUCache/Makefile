@@ -1,5 +1,4 @@
 # Created by: clsung@dragon2.net
-# $FreeBSD$
 
 PORTNAME=	Tie-FileLRUCache
 PORTVERSION=	1.06

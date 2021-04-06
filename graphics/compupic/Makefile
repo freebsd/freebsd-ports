@@ -1,5 +1,4 @@
 # Created by: Abel Chow <ozsanh45vds001@sneakemail.com>
-# $FreeBSD$
 
 PORTNAME=	compupic
 PORTVERSION=	5.1.1063

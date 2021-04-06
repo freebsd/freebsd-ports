@@ -1,5 +1,4 @@
 # Created by: Lars Eggert <larse@isi.edu>
-# $FreeBSD$
 
 PORTNAME=	jdb
 PORTVERSION=	1.14

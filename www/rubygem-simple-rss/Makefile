@@ -1,5 +1,4 @@
 # Created by: TERAMOTO Masahiro <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	simple-rss
 PORTVERSION=	1.3.1

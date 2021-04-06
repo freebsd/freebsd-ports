@@ -1,5 +1,4 @@
 # Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-# $FreeBSD$
 
 PORTNAME=	Validate_AU
 PORTVERSION=	0.1.4

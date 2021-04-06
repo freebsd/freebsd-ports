@@ -1,5 +1,4 @@
 # Created by: Simon Barner <barner@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	nifmon
 PORTVERSION=	1.4

@@ -1,5 +1,4 @@
 # Created by: Max Khon
-# $FreeBSD$
 
 PORTNAME=	ntfs
 PORTVERSION=	2017.3.23

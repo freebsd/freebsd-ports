@@ -1,5 +1,4 @@
 # Created by: The Anarcat <anarcat@anarcat.ath.cx>
-# $FreeBSD$
 
 PORTNAME=	mls
 PORTVERSION=	1.3

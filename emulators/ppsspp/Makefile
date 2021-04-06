@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ayu20
 PORTVERSION=	1.7.a

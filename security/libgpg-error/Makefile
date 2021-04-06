@@ -1,5 +1,4 @@
 # Created by: Sergei Kolobov <sergei@kolobov.com>
-# $FreeBSD$
 
 PORTNAME=	libgpg-error
 PORTVERSION=	1.42

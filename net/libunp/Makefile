@@ -1,5 +1,4 @@
 # Created by: james@targetnet.com
-# $FreeBSD$
 
 PORTNAME=	libunp
 PORTVERSION=	1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Alien-SDL
 PORTVERSION=	1.446

@@ -1,5 +1,4 @@
 # Created by: Eric Turgeon <ericturgeon.bsd at gmail.com>
-# $FreeBSD$
 
 PORTNAME=	lxmusic
 PORTVERSION=	0.4.7

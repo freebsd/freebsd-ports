@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vagrant_cloud
 PORTVERSION=	3.0.2

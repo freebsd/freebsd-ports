@@ -1,5 +1,4 @@
 # Created by: Daniel Thiele
-# $FreeBSD$
 
 PORTNAME=	scanbuttond
 PORTVERSION=	0.2.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yadifa
 DISTVERSION=	2.4.1

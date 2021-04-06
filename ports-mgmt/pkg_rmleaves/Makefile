@@ -1,5 +1,4 @@
 # Created by: Timothy Redaelli <drizzt@gufi.org>
-# $FreeBSD$
 
 PORTNAME=	pkg_rmleaves
 PORTVERSION=	20190108

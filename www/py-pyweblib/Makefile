@@ -1,5 +1,4 @@
 # Created by: Oddbjorn Steffensen <oddbjorn@tricknology.org>
-# $FreeBSD$
 
 PORTNAME=	pyweblib
 PORTVERSION=	1.3.13

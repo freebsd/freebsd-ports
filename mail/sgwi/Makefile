@@ -1,5 +1,4 @@
 # Created by: Lukasz Wasikowski <lukasz@wasikowski.net>
-# $FreeBSD$
 
 PORTNAME=	sgwi
 PORTVERSION=	1.1.8

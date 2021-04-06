@@ -1,5 +1,4 @@
 # Created by: jseger@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	freetype
 PORTVERSION=	1.3.1

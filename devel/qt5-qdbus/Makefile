@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qdbus
 DISTVERSION=	${QT5_VERSION}

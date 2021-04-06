@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v

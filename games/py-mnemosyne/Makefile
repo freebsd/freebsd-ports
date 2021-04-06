@@ -1,5 +1,4 @@
 # Created by: Beech Rintoul <beech@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mnemosyne
 PORTVERSION=		2.7.3

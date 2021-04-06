@@ -1,5 +1,4 @@
 # Created by: Geoff Garside
-# $FreeBSD$
 
 PORTNAME=	rabbitmq-c
 PORTVERSION=	0.10.0

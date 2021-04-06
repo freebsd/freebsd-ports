@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nest
 DISTVERSIONPREFIX=	v

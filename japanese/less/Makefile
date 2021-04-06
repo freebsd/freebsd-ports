@@ -1,5 +1,4 @@
 # Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
-# $FreeBSD$
 
 PORTNAME=	less
 PORTVERSION=	382.262.03.01

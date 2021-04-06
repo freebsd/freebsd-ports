@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gitaly
 DISTVERSION=	13.10.1

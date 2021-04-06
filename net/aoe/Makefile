@@ -1,5 +1,4 @@
 # Created by: Stacey D. Son <sds@son.org>
-# $FreeBSD$
 
 PORTNAME=	aoe
 PORTVERSION=	1.2.0

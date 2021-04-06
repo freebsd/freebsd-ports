@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openiked
 PORTVERSION=	2.2

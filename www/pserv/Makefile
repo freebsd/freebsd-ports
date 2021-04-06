@@ -1,5 +1,4 @@
 # Created by: Alex Dupre <sysadmin@alexdupre.com>
-# $FreeBSD$
 
 PORTNAME=	pserv
 PORTVERSION=	3.4

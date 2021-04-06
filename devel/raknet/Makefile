@@ -1,5 +1,4 @@
 # Created by: Andrew Baznikin <dikiy@scn.ru>
-# $FreeBSD$
 
 PORTNAME=	raknet
 PORTVERSION=	3.9.2

@@ -1,5 +1,4 @@
 # Created by: sheldonh@FreeBSD.org
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-monitor
 

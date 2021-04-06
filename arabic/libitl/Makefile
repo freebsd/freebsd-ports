@@ -1,5 +1,4 @@
 # Created by: Samy Al Bahra <samy@kerneled.org>
-# $FreeBSD$
 
 PORTNAME=	libitl
 PORTVERSION=	0.8.0

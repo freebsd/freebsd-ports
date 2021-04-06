@@ -1,5 +1,4 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	derelict-util
 PORTVERSION=	2.1.0

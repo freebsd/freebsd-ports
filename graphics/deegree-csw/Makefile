@@ -1,5 +1,4 @@
 # Created by: wenheping@gmail.com
-# $FreeBSD$
 
 PORTNAME=	csw
 PORTVERSION=	2.5

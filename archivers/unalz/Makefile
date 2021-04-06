@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang
-# $FreeBSD$
 
 PORTNAME=	unalz
 DISTVERSION=	0.66

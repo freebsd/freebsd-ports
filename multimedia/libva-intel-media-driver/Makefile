@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	media-driver
 DISTVERSIONPREFIX=	intel-media-

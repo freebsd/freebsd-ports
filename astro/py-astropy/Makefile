@@ -1,5 +1,4 @@
 # Created by: nwhitehorn
-# $FreeBSD$
 
 PORTNAME=	astropy
 DISTVERSION=	4.0.1

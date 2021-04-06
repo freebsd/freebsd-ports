@@ -1,5 +1,4 @@
 # Created by: Malte Lance <malte.lance@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	4va
 PORTVERSION=	1.21

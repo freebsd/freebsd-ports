@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	roadie-rails
 PORTVERSION=	2.1.1

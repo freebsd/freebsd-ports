@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	splix
 PORTVERSION=	2.0.0

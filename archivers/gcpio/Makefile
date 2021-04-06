@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cpio
 PORTVERSION=	2.13

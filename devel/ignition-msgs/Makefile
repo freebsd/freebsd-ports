@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ignition-msgs
 DISTVERSION=	3.0.0

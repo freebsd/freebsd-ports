@@ -1,5 +1,4 @@
 # Created by: Peter Pentchev <roam@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	scare
 PORTVERSION=	1.3.10

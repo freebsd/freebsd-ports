@@ -1,5 +1,4 @@
 # Created by: Thomas Hurst <tom@hur.st>
-# $FreeBSD$
 
 PORTNAME=	lnav
 PORTVERSION=	0.9.0

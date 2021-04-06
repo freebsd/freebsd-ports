@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	megacmd
 DISTVERSION=	1.4.0

@@ -1,5 +1,4 @@
 # Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	pam_google_authenticator
 PORTVERSION=	1.09

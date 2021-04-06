@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nerd-fonts
 DISTVERSIONPREFIX=	v

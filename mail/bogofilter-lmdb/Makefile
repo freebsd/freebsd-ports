@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bogofilter
 PORTREVISION=	2

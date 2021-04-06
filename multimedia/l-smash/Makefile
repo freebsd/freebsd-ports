@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	l-smash
 PORTVERSION=	2.14.5

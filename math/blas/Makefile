@@ -1,5 +1,4 @@
 # Created by: ljo
-# $FreeBSD$
 
 PORTNAME=	blas
 PORTREVISION=	6

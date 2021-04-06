@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTREVISION=	15
 PKGNAMESUFFIX=	-openmpi

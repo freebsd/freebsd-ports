@@ -1,5 +1,4 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
-# $FreeBSD$
 
 PORTNAME=	eventmachine
 PORTVERSION=	1.2.7

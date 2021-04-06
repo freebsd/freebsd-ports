@@ -1,5 +1,4 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	RT-Extension-MandatoryOnTransition
 DISTVERSION=	0.20

@@ -1,5 +1,4 @@
 # Created by: Stephane Legrand <stephane@freebsd-fr.org>
-# $FreeBSD$
 
 PORTNAME=	jetty
 PORTVERSION=	8.1.15

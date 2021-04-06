@@ -1,5 +1,4 @@
 # Created by: Ilia Chipitsine <ilia@jane.cgu.chel.su>
-# $FreeBSD$
 
 PORTNAME=	Unicode-Map8
 PORTVERSION=	0.13

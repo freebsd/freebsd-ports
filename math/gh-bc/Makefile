@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bc
 PORTVERSION=	4.0.0

@@ -1,5 +1,4 @@
 # Created by: The Anarcat <anarcat@anarcat.ath.cx>
-# $FreeBSD$
 
 PORTNAME=	bksh
 PORTVERSION=	1.7

@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@ahze.net>
-# $FreeBSD$
 
 PORTNAME=	dvdstyler
 PORTVERSION=	3.1

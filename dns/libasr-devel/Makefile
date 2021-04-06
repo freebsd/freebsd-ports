@@ -1,5 +1,4 @@
 # Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libasr
 PORTVERSION=	201602131606

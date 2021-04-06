@@ -1,5 +1,4 @@
 # Created by: Bill Fumerola <billf@chc-chimes.com>
-# $FreeBSD$
 
 PORTNAME=	bnc
 PORTVERSION=	2.9.4

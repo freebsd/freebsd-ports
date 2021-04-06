@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	osm2pgrouting
 DISTVERSIONPREFIX=	v

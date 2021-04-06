@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-Declare-Parser
 PORTVERSION=	0.020

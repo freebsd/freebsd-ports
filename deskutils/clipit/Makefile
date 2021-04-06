@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clipit
 PORTVERSION=	1.4.2

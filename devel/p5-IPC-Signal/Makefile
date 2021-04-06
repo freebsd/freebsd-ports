@@ -1,5 +1,4 @@
 # Created by: Rouslan Iskhakov <rouslan@rshell.net>
-# $FreeBSD$
 
 PORTNAME=	IPC-Signal
 PORTVERSION=	1.00

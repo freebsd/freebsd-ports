@@ -1,5 +1,4 @@
 # Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-# $FreeBSD$
 
 PORTNAME=	String-Errf
 PORTVERSION=	0.007

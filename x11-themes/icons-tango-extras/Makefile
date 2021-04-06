@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	icons-tango-extras
 PORTVERSION=	0.1.0

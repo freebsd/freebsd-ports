@@ -1,5 +1,4 @@
 # Created by: Heiner <h.eichmann@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	dvdisaster
 PORTVERSION=	0.79.5

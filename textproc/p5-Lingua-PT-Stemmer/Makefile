@@ -1,5 +1,4 @@
 # Created by: Thorsten Greiner <thorsten.greiner@web.de>
-# $FreeBSD$
 
 PORTNAME=	Lingua-PT-Stemmer
 PORTVERSION=	0.02

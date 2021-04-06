@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		tevent
 PORTVERSION=		0.10.2

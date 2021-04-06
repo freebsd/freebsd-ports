@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis
-# $FreeBSD$
 
 PORTNAME=	xrally
 PORTVERSION=	1.1.1

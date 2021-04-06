@@ -1,5 +1,4 @@
 # Created by: Max N. Boyarov <m.boyarov@bsd.by>
-# $FreeBSD$
 
 PORTNAME=	apache-mode.el
 PORTVERSION=	2.0

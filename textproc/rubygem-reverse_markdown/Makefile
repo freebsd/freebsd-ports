@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	reverse_markdown
 PORTVERSION=	1.0.4

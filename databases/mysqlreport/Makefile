@@ -1,5 +1,4 @@
 # Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-# $FreeBSD$
 
 PORTNAME=	mysqlreport
 PORTVERSION=	3.5

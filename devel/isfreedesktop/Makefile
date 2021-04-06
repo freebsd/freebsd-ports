@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	isfreedesktop
 PORTVERSION=	0.1.1

@@ -1,5 +1,4 @@
 # Created by: ntarmos@ceid.upatras.gr
-# $FreeBSD$
 
 PORTNAME=	battmond
 DISTVERSION=	0.4

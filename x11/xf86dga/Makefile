@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xf86dga
 PORTVERSION=	1.0.3

@@ -1,5 +1,4 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-DefaultEnd
 PORTVERSION=	0.08

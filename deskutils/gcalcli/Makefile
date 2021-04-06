@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	gcalcli
 PORTVERSION=	4.0.4

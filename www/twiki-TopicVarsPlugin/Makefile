@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	TopicVarsPlugin
 SVNREV=		16417

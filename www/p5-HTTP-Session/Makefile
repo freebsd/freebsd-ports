@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTTP-Session
 PORTVERSION=	0.49

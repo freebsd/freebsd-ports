@@ -1,5 +1,4 @@
 # Created by: Tilman Linneweh <arved@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ladspa
 PORTVERSION=	1.15

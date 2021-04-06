@@ -1,5 +1,4 @@
 # Created by: Hiroto Kagotani <hiroto.kagotani@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ibus-skk
 DISTVERSIONPREFIX=	ibus-skk-

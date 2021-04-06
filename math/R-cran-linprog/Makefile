@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	linprog
 DISTVERSION=	0.9-2

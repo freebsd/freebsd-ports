@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		measurement-kit
 DISTVERSIONPREFIX=	v

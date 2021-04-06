@@ -1,5 +1,4 @@
 # Created by: Sergey Matveychuk <sem@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ftpsesame
 PORTVERSION=	0.95

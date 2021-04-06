@@ -1,5 +1,4 @@
 # Created by: Matteo Cypriani <mcy@lm7.fr>
-# $FreeBSD$
 
 PORTNAME=	atool
 PORTVERSION=	0.39.0

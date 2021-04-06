@@ -1,5 +1,4 @@
 # Created by: John Merryweather Cooper
-# $FreeBSD$
 
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-ibase

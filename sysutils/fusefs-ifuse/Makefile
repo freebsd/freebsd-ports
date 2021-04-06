@@ -1,5 +1,4 @@
 # Created by: Gabor Zahemszky
-# $FreeBSD$
 
 PORTNAME=	ifuse
 PORTVERSION=	1.1.4

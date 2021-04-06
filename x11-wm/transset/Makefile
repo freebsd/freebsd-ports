@@ -1,5 +1,4 @@
 # Created by: Andreas Kohn <andreas@syndrom23.de>
-# $FreeBSD$
 
 PORTNAME=	transset
 PORTVERSION=	1.0.2

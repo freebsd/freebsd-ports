@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Package-Stash-XS
 PORTVERSION=	0.29

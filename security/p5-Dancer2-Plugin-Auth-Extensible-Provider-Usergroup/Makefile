@@ -1,5 +1,4 @@
 # Created by: Henk van Oers <hvo.pm@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	Dancer2-Plugin-Auth-Extensible-Provider-Usergroup
 PORTVERSION=	0.709

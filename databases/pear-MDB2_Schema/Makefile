@@ -1,5 +1,4 @@
 # Created by: Rong-En Fan <rafan@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	MDB2_Schema
 PORTVERSION=	0.8.6

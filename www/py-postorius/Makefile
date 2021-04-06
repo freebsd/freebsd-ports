@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	postorius
 PORTVERSION=	1.3.3

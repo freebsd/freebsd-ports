@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <stas@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	emprint
 PORTVERSION=	20130520

@@ -1,5 +1,4 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	fcitx-cloudpinyin
 PORTVERSION=	0.3.6

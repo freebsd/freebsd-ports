@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cec
 PORTVERSION=	0.2.7

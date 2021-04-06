@@ -1,5 +1,4 @@
 # Created by: Douglas Thrift <douglas@douglasthrift.net>
-# $FreeBSD$
 
 PORTNAME=	Net-Ping-External
 PORTVERSION=	0.15

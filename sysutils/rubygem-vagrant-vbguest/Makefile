@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vagrant-vbguest
 PORTVERSION=	0.26.0

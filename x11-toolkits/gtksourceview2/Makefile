@@ -1,5 +1,4 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
 #   $MCom: ports/x11-toolkits/gtksourceview2/Makefile,v 1.96 2010/09/29 12:42:49 kwm Exp $
 
 PORTNAME=	gtksourceview2

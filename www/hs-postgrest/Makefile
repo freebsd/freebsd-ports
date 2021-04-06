@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	postgrest
 PORTVERSION=	7.0.1

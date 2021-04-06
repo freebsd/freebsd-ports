@@ -1,5 +1,4 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
 #   $MCom: ports/sysutils/policykit/Makefile,v 1.22 2008/08/21 21:53:00 mezz Exp $
 
 PORTNAME=	policykit

@@ -1,5 +1,4 @@
 # Created by: Autrijus Tang <autrijus@autrijus.org>
-# $FreeBSD$
 
 PORTNAME=	SVN-Simple
 PORTVERSION=	0.28

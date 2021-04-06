@@ -1,5 +1,4 @@
 # Created by: ports@c0decafe.net <ports@c0decafe.net>
-# $FreeBSD$
 
 PORTNAME=	thunar-archive-plugin
 PORTVERSION=	0.4.0

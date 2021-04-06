@@ -1,5 +1,4 @@
 # Created by: Dennis Herrmann <dhn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vitunes
 PORTVERSION=	2.3

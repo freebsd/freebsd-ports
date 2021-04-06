@@ -1,5 +1,4 @@
 # Created by: Dima Sivachenko <demon@gpad.ac.ru>
-# $FreeBSD$
 
 PORTNAME=	man2html
 PORTVERSION=	3.0.1

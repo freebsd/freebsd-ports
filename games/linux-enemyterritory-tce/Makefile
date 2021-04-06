@@ -1,5 +1,4 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	enemyterritory-tce
 PORTVERSION=	0.49

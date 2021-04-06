@@ -1,5 +1,4 @@
 # Created by: Mark Pulford <mark@kyne.com.au>
-# $FreeBSD$
 
 PORTNAME=	filedupe
 PORTVERSION=	1.1

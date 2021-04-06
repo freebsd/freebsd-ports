@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ospd
 DISTVERSION=	20.8.2

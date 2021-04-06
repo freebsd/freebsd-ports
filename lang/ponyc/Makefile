@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ponyc
 DISTVERSION=	0.33.2

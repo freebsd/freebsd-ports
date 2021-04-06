@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Unix-ConfigFile
 PORTVERSION=	0.06

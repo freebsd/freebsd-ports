@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	seafobj
 DISTVERSIONPREFIX=	v

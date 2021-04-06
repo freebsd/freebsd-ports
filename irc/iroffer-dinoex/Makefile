@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iroffer
 PORTVERSION=	3.32

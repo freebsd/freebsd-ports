@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gtts
 DISTVERSIONPREFIX=	v

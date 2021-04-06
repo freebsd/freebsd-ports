@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	moonlight-embedded
 DISTVERSION=	2.4.11

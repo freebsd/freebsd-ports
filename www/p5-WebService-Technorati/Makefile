@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	WebService-Technorati
 PORTVERSION=	0.04

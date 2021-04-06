@@ -1,5 +1,4 @@
 # Created by: Angel Carpintero <ack@telefonica.net>
-# $FreeBSD$
 
 # PORTNAME block
 PORTNAME=	motion

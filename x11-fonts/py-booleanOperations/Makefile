@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	booleanOperations
 PORTVERSION=	0.8.2

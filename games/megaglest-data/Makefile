@@ -1,5 +1,4 @@
 # Created by: Sven Moeller <smoeller@nichthelfer.de>
-# $FreeBSD$
 
 PORTNAME=	megaglest
 PORTVERSION=	3.13.0

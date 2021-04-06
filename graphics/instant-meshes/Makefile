@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	instant-meshes
 DISTVERSION=	0.0-42

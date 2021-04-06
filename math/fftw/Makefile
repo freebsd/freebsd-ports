@@ -1,5 +1,4 @@
 # Created by: Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
-# $FreeBSD$
 
 PORTNAME=	fftw
 PORTVERSION=	2.1.5

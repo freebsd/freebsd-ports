@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	blend2d
 DISTVERSION=	g20200108

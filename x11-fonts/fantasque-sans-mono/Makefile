@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fantasque-sans-mono
 PORTVERSION=	1.8.0

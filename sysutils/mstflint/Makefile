@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mstflint
 DISTVERSIONPREFIX=	v

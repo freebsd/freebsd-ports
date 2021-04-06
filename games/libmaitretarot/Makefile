@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=	libmaitretarot
 PORTVERSION=	0.1.98

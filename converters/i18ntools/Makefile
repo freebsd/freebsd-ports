@@ -1,5 +1,4 @@
 # Created by: G. Adam Stanislav
-# $FreeBSD$
 
 PORTNAME=	i18ntools
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: Andrey Slusar <anray@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	newsstar
 PORTVERSION=	1.5.6

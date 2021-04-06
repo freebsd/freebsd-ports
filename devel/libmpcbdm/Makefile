@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <stas@fonon.realnet>
-# $FreeBSD$
 
 PORTNAME=	libmpcbdm
 PORTVERSION=	0.0.3

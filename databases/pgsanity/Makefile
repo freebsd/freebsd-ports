@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pgsanity
 DISTVERSIONPREFIX=	v

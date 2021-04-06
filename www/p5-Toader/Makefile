@@ -1,5 +1,4 @@
 # Created by: Zane C, Bowers-Hadley <vvelox@vvelox.net>
-# $FreeBSD$
 
 PORTNAME=	Toader
 PORTVERSION=	1.2.1

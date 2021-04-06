@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	flask-babel
 PORTVERSION=	1.0.0

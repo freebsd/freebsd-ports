@@ -1,5 +1,4 @@
 # Created by: Sahil Tandon <sahil@tandon.net>
-# $FreeBSD$
 
 PORTNAME=	ExtUtils-CChecker
 PORTVERSION=	0.10

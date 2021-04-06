@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang
-# $FreeBSD$
 
 PORTNAME=	jsl
 PORTVERSION=	0.3.0

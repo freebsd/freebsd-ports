@@ -1,5 +1,4 @@
 # Created by: Garrett Rooney <rooneg@electricjellyfish.net>
-# $FreeBSD$
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}

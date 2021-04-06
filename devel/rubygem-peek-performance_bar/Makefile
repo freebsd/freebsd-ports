@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	peek-performance_bar
 PORTVERSION=	1.3.1

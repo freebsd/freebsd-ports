@@ -1,5 +1,4 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	HTML-Tagset
 PORTVERSION=	3.20

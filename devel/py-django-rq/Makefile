@@ -1,5 +1,4 @@
 # Created by: René Ladan <rene@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	django-rq
 PORTVERSION=	2.4.0

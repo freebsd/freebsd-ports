@@ -1,5 +1,4 @@
 # Created by: roberto
-# $FreeBSD$
 
 PORTNAME=	xfig
 PORTVERSION=	3.2.7a

@@ -1,5 +1,4 @@
 # Created by: Shell Hung <shell@shellhung.org>
-# $FreeBSD$
 
 PORTNAME=	Image-Info
 PORTVERSION=	1.42

@@ -1,5 +1,4 @@
 # Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
-# $FreeBSD$
 
 PORTNAME=	Math-Int128
 PORTVERSION=	0.22

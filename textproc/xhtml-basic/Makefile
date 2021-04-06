@@ -1,5 +1,4 @@
 # Created by: nectar
-# $FreeBSD$
 
 PORTNAME=	xhtml-basic
 PORTVERSION=	1.0.${RECDATE}

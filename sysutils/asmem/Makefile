@@ -1,5 +1,4 @@
 # Created by: jack
-# $FreeBSD$
 
 PORTNAME=	asmem
 PORTVERSION=	1.12

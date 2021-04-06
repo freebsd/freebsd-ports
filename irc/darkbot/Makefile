@@ -1,5 +1,4 @@
 # Created by: A. Gabriel <backslash@BSDCode.org>
-# $FreeBSD$
 
 PORTNAME=	darkbot
 PORTVERSION=	6f6.r6

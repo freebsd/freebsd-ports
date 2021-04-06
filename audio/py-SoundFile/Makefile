@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SoundFile
 DISTVERSION=	0.10.3.post1

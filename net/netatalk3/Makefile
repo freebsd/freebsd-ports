@@ -1,5 +1,4 @@
 # Created by: stb
-# $FreeBSD$
 
 PORTNAME=	netatalk
 PORTVERSION=	3.1.12

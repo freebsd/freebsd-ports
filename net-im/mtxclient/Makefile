@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		mtxclient
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mrtparse
 PORTVERSION=	2.0.0

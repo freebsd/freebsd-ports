@@ -1,5 +1,4 @@
 # Created by: Tom Judge <tom@tomjudge.com>
-# $FreeBSD$
 
 PORTNAME=	pdfFox
 PORTVERSION=	0.5.0

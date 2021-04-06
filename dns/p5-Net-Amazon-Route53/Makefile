@@ -1,5 +1,4 @@
 # Created by: Jui-Nan Lin <jnlin@freebsd.cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	Net-Amazon-Route53
 PORTVERSION=	0.122310

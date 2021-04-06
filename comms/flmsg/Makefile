@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flmsg
 DISTVERSION=	4.0.17

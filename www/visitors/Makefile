@@ -1,5 +1,4 @@
 # Created by: Florent Thoumie <flz@xbsd.org>
-# $FreeBSD$
 
 PORTNAME=	visitors
 PORTVERSION=	0.7.0

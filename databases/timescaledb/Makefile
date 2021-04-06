@@ -1,5 +1,4 @@
 # Created by: Kevin Bowling <kbowling@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	timescaledb
 PORTVERSION=	2.1.1

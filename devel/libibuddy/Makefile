@@ -1,5 +1,4 @@
 # Created by: Rodrigo OSORIO <rodrigo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libibuddy
 PORTVERSION=	0.0.2

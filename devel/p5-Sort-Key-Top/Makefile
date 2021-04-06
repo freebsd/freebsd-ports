@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Sort-Key-Top
 PORTVERSION=	0.08

@@ -1,5 +1,4 @@
 # Created by: Lars Eggert <lars@eggert.org>
-# $FreeBSD$
 
 PORTNAME=	spp
 PORTVERSION=	0.4.2

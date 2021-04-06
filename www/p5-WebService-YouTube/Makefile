@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	WebService-YouTube
 PORTVERSION=	1.0.3

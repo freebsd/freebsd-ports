@@ -1,5 +1,4 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-# $FreeBSD$
 
 PORTNAME=	netcdf
 PORTVERSION=	4.7.4

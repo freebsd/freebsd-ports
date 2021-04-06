@@ -1,5 +1,4 @@
 # Created by: Martin Tournoij <martin@arp242.net>
-# $FreeBSD$
 
 PORTNAME=	battray
 DISTVERSIONPREFIX=	version-

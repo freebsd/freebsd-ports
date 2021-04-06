@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	topcom
 DISTVERSION=	0.17.8

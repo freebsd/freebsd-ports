@@ -1,5 +1,4 @@
 # Created by: Michael Reifenberger <mr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pcb
 PORTVERSION=	4.2.0

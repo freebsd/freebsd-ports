@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Finance-TW-TSEQuote
 PORTVERSION=	0.28

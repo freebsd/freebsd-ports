@@ -1,5 +1,4 @@
 # Created by: Johannes Dieterich <dieterich@ogolem.org>
-# $FreeBSD$
 
 PORTNAME=	clblas
 PORTVERSION=	2.10

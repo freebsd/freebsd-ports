@@ -1,5 +1,4 @@
 # Created by: jmz
-# $FreeBSD$
 
 PORTNAME=	xloadimage
 PORTVERSION=	4.1.24

@@ -1,5 +1,4 @@
 # Created by: Ricardo A. Reis <ricardo.areis@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	kldfind
 PORTVERSION=	0.61

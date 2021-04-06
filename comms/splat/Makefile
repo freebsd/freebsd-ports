@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	splat
 PORTVERSION=	1.4.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chessx
 PORTVERSION=	1.5.4

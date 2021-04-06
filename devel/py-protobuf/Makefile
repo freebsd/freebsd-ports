@@ -1,5 +1,4 @@
 # Created by: vanilla@
-# $FreeBSD$
 
 PORTNAME=	protobuf
 PORTVERSION=	3.14.0

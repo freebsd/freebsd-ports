@@ -1,5 +1,4 @@
 # Created by: Maurice Castro <maurice@serc.rmit.edu.au>
-# $FreeBSD$
 
 PORTNAME=	dc20pack
 PORTVERSION=	1.0

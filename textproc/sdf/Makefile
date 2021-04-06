@@ -1,5 +1,4 @@
 # Created by: dannyman <dannyman@tellme.com>
-# $FreeBSD$
 
 PORTNAME=	sdf
 PORTVERSION=	2.001

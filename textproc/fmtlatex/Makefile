@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fmtlatex
 DISTVERSION=	g20130930

@@ -1,5 +1,4 @@
 # Created by: Peter Schuller <peter.schuller@infidyne.com>
-# $FreeBSD$
 
 PORTNAME=	stemmer
 PORTVERSION=	1.0.1

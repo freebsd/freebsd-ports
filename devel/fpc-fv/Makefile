@@ -1,5 +1,4 @@
 # Created by: John Merryweather Cooper
-# $FreeBSD$
 
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	-fv

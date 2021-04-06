@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Search-QueryParser-SQL
 PORTVERSION=	0.010

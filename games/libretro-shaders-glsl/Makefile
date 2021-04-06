@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-shaders-glsl
 DISTVERSION=	g20200314

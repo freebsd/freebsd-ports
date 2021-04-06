@@ -1,5 +1,4 @@
 # Created by: Uffe Jakobsen <uffe@uffe.org>
-# $FreeBSD$
 
 PORTNAME=	sigrok-cli
 PORTVERSION=	0.7.1

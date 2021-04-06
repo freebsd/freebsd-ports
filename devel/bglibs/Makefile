@@ -1,5 +1,4 @@
 # Created by: Sergei Kolobov <sergei@kolobov.com>
-# $FreeBSD$
 
 PORTNAME=	bglibs
 PORTVERSION=	2.04

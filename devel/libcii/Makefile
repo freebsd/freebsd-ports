@@ -1,5 +1,4 @@
 # Created by: J Han <hjh@photino.com>
-# $FreeBSD$
 
 PORTNAME=	libcii
 PORTVERSION=	1.1

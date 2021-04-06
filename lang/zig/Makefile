@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zig
 DISTVERSION=	0.7.1

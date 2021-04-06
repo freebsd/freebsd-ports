@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gsm
 PORTVERSION=	1.0.13

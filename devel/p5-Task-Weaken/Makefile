@@ -1,5 +1,4 @@
 # Created by: lbr@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Task-Weaken
 PORTVERSION=	1.06

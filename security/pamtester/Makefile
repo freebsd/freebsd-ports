@@ -1,5 +1,4 @@
 # Created by: andy@fud.org.nz
-# $FreeBSD$
 
 PORTNAME=	pamtester
 PORTVERSION=	0.1.2

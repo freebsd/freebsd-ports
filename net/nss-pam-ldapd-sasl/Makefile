@@ -1,5 +1,4 @@
 # Created by: rflynn@acsalaska.net
-# $FreeBSD$
 
 PORTNAME=	nss-pam-ldapd
 PKGNAMESUFFIX=	-sasl

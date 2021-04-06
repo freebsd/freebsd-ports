@@ -1,5 +1,4 @@
 # Created by: Jeremy Karlson
-# $FreeBSD$
 
 PORTNAME=	adamem
 PORTVERSION=	1.0

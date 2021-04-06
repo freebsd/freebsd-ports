@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jattach
 DISTVERSIONPREFIX=	v

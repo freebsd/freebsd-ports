@@ -1,5 +1,4 @@
 # Created by: Dima Sivachenko <dima@chg.ru>
-# $FreeBSD$
 
 PORTNAME=	polygraph
 DISTVERSION=	4.13.0

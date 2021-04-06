@@ -1,5 +1,4 @@
 # Created by: Klaus Goger <klaus.goger@reflex.at>
-# $FreeBSD$
 
 PORTNAME=	SDL
 PORTVERSION=	2.548

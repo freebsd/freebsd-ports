@@ -1,5 +1,4 @@
 # Created by: snowchyld
-# $FreeBSD$
 
 PORTNAME=	libspf2
 PORTVERSION=	1.2.10

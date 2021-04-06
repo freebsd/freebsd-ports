@@ -1,5 +1,4 @@
 # Created by: Andrey Slusar <anray@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ida
 PORTVERSION=	2.14

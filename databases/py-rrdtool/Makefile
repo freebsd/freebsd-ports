@@ -1,5 +1,4 @@
 # Created by: Daniel O'Connor
-# $FreeBSD$
 
 PORTNAME=	rrdtool
 DISTVERSION=	0.1.15

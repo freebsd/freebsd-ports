@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Middleware-NoMultipleSlashes
 PORTVERSION=	0.001

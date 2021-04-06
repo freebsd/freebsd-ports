@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	valentina
 DISTVERSION=	0.7.45

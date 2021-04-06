@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scct
 PORTVERSION=	0.1

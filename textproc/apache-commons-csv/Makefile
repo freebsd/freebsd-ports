@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni <pfg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	commons-csv
 PORTVERSION=	1.8

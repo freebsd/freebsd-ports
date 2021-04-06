@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-Divert
 PORTVERSION=	0.01

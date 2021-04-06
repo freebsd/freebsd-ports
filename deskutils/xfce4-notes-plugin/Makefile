@@ -1,5 +1,4 @@
 # Created by: Thorsten Greiner <thorsten.greiner@web.de>
-# $FreeBSD$
 
 PORTNAME=	xfce4-notes-plugin
 PORTVERSION=	1.8.1

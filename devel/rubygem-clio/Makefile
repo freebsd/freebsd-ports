@@ -1,5 +1,4 @@
 # Created by: Loic Pefferkorn <loic-freebsd@loicp.eu>
-# $FreeBSD$
 
 PORTNAME=	clio
 PORTVERSION=	0.3.0

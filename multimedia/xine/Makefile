@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xine
 PORTVERSION=	0.99.12

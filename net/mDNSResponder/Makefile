@@ -1,5 +1,4 @@
 # Created by: Alfred Perlstein <alfred@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mDNSResponder
 PORTVERSION=	1310.80.1

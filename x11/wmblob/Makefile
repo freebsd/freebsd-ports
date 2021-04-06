@@ -1,5 +1,4 @@
 # Created by: Denis Shaposhnikov <dsh@vlink.ru>
-# $FreeBSD$
 
 PORTNAME=	wmblob
 PORTVERSION=	1.0.4

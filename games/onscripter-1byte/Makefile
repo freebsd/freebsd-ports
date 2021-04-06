@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-1byte
 

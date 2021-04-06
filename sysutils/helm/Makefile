@@ -1,5 +1,4 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	helm
 PORTVERSION=	3.5.2

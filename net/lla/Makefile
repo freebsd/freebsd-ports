@@ -1,5 +1,4 @@
 # Created by: Sunagawa Koji <koj@ofug.net>
-# $FreeBSD$
 
 PORTNAME=	lla
 PORTVERSION=	0.99.1

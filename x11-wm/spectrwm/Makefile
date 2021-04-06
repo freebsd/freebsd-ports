@@ -1,5 +1,4 @@
 # Created by: Aragon Gouveia <aragon@phat.za.net>
-# $FreeBSD$
 
 PORTNAME=	spectrwm
 DISTVERSIONPREFIX=	SPECTRWM_

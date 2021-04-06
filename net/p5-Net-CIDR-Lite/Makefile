@@ -1,5 +1,4 @@
 # Created by: mharo@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Net-CIDR-Lite
 PORTVERSION=	0.21

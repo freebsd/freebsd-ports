@@ -1,5 +1,4 @@
 # Created by: Jamie Hermans <jamie@hermans.ca>
-# $FreeBSD$
 
 PORTNAME=	jhead
 PORTVERSION=	3.04

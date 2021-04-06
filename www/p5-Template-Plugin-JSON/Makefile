@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Template-Plugin-JSON
 PORTVERSION=	0.06

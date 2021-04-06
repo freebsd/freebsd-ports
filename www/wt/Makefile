@@ -1,5 +1,4 @@
 # Created by: Mohammad S. Babaei <info@babaei.net>
-# $FreeBSD$
 
 PORTNAME=	wt
 DISTVERSION=	4.5.0

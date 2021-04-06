@@ -1,5 +1,4 @@
 # Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Sepia
 PORTVERSION=	0.992

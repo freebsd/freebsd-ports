@@ -1,5 +1,4 @@
 # Created by: SeaD
-# $FreeBSD$
 
 PORTNAME=	echat
 DISTVERSION=	0.04beta1

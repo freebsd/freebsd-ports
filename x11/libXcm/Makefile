@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libXcm
 PORTVERSION=	0.5.4

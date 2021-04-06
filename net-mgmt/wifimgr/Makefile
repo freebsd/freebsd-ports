@@ -1,5 +1,4 @@
 # Created by: J.R. Oldroyd <fbsd@opal.com>
-# $FreeBSD$
 
 PORTNAME=	wifimgr
 PORTVERSION=	1.13

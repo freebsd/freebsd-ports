@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=		yasm
 PORTVERSION=		1.2.0.29

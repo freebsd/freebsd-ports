@@ -1,5 +1,4 @@
 # Created by: Lars Erik Gullerud <lerik@nolink.net>
-# $FreeBSD$
 
 PORTNAME=	ripe-whois
 PORTVERSION=	3.2.2

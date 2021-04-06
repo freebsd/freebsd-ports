@@ -1,5 +1,4 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	file-roller
 PORTVERSION=	3.38.0

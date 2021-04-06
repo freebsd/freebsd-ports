@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gonic
 PORTVERSION=	0.12.2

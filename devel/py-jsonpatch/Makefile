@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jsonpatch
 DISTVERSION=	1.21

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spectra
 DISTVERSIONPREFIX=	v

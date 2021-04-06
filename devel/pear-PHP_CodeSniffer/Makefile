@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	PHP_CodeSniffer
 DISTVERSION=	3.5.4

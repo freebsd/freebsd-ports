@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	corefines
 PORTVERSION=	1.11.0

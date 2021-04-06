@@ -1,5 +1,4 @@
 # Created by: Anders Nordby <anders@fix.no>
-# $FreeBSD$
 
 PORTNAME=	hppsmtools
 PORTVERSION=	1.1

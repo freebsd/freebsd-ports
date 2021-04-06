@@ -1,5 +1,4 @@
 # Created by: Sevan Janiyan <venture37@geeklan.co.uk>
-# $FreeBSD$
 
 PORTNAME=	hashtypes
 PORTVERSION=	0.1.1

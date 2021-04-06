@@ -1,5 +1,4 @@
 # Created by: Vitaly Magerya <vmagerya@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wordgrinder
 PORTVERSION=	0.6

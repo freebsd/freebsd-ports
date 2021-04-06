@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	progress
 PORTVERSION=	1.2.2

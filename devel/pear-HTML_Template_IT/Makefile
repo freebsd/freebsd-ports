@@ -1,5 +1,4 @@
 # Created by: Alex Miller (<asm@asm.kiev.ua>)
-# $FreeBSD$
 
 PORTNAME=	HTML_Template_IT
 DISTVERSION=	1.3.1

@@ -1,5 +1,4 @@
 # Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-# $FreeBSD$
 
 PORTNAME=	spdx
 PORTVERSION=	2.5.1

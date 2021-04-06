@@ -1,5 +1,4 @@
 # Created by: Corey Smith <corsmith@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	torrus
 PORTVERSION=	2.09

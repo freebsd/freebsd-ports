@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spamass-rules
 PORTVERSION=	20190101

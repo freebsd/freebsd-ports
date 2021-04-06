@@ -1,5 +1,4 @@
 # Created by: Oleg Mamontov <oleg@mamontov.net>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Authentication-Store-DBIx-Class
 PORTVERSION=	0.1506

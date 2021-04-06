@@ -1,5 +1,4 @@
 # Created by: Devon Ryan <dpryan@dpryan.com>
-# $FreeBSD$
 
 PORTNAME=	libgpod
 PORTVERSION=	0.8.3

@@ -1,5 +1,4 @@
 # Created by: Mike Heffner <mheffner@vt.edu>
-# $FreeBSD$
 
 PORTNAME=	bfbtester
 PORTVERSION=	2.0.1

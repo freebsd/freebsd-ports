@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	WWW-Shorten
 PORTVERSION=	3.093

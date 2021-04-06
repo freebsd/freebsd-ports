@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rencode
 PORTVERSION=	1.0.6

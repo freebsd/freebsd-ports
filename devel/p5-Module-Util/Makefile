@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Module-Util
 PORTVERSION=	1.09

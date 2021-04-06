@@ -1,5 +1,4 @@
 # Created by: Sergey Kozlov <sergey.kozlov@intel.com>
-# $FreeBSD$
 
 PORTNAME?=	ixl
 PORTVERSION?=	1.12.2

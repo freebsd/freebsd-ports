@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	abx
 DISTVERSION=	0.0-b1

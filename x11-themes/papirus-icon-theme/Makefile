@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	papirus-icon-theme
 PORTVERSION=	20210302

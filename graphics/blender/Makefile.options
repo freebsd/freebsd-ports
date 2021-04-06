@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 OPTIONS_DEFINE=		\
 	ALEMBIC		\
 	ALEMBIC_HDF5	\

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tflearn
 DISTVERSION=	0.3.2-53

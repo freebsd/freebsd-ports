@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	materialdesign
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	MooseX-Clone
 PORTVERSION=	0.06

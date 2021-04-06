@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	usermin
 PORTVERSION=	1.820

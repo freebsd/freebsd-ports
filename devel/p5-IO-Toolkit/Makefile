@@ -1,5 +1,4 @@
 # Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-# $FreeBSD$
 
 PORTNAME=	IO-Toolkit
 PORTVERSION=	1.008

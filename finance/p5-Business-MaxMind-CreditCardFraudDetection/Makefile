@@ -1,5 +1,4 @@
 # Created by: Vivek Khera <vivek@khera.org>
-# $FreeBSD$
 
 PORTNAME=	Business-MaxMind-CreditCardFraudDetection
 PORTVERSION=	1.57

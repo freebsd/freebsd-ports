@@ -1,5 +1,4 @@
 # Created by: johans
-# $FreeBSD$
 
 PORTNAME=	signing-party
 PORTVERSION=	2.10

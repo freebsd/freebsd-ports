@@ -1,5 +1,4 @@
 # Created by: Jason Harris <jharris@widomaker.com>
-# $FreeBSD$
 
 PORTNAME=	units
 PORTVERSION=	2.16

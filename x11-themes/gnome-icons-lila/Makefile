@@ -1,5 +1,4 @@
 # Created by: Filippo Natali <filippo@widestore.net>
-# $FreeBSD$
 
 # Port logic gratuitously stolen from x11-themes/kde-icons-noia by
 # lioux@.  If it's not defined here and you think it should be, check

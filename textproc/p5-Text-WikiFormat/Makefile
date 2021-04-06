@@ -1,5 +1,4 @@
 # Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-# $FreeBSD$
 
 PORTNAME=	Text-WikiFormat
 PORTVERSION=	0.81

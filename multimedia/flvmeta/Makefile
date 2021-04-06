@@ -1,5 +1,4 @@
 # Created by: Earl Gay <earl@eeg3.net>
-# $FreeBSD$
 
 PORTNAME=	flvmeta
 PORTVERSION=	1.0.11

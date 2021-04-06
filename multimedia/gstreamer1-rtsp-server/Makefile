@@ -1,5 +1,4 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gstreamer1-rtsp-server
 PORTVERSION=	1.16.2

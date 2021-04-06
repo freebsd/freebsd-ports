@@ -1,5 +1,4 @@
 # Created by: Kris Kennaway <kris@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	snarf
 PORTVERSION=	7.0

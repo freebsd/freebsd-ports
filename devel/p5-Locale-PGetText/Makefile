@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Locale-PGetText
 PORTVERSION=	0.16

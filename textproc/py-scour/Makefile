@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scour
 PORTVERSION=	0.38.1

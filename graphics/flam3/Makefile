@@ -1,5 +1,4 @@
 # Created by: John Prather
-# $FreeBSD$
 
 PORTNAME=	flam3
 DISTVERSIONPREFIX=	v

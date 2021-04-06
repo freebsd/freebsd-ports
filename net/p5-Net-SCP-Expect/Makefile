@@ -1,5 +1,4 @@
 # Created by: Simun Mikecin <numisemis@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	Net-SCP-Expect
 PORTVERSION=	0.16

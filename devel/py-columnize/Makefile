@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	columnize
 PORTVERSION=	0.3.10

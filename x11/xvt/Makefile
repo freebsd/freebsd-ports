@@ -1,5 +1,4 @@
 # Created by: Chris Hutchinson <portmaster@BSDforge.com>
-# $FreeBSD$
 
 PORTNAME=	xvt
 PORTVERSION=	3.0.1

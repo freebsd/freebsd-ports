@@ -1,5 +1,4 @@
 # Created by: Christian Brueffer <chris@unixpages.org>
-# $FreeBSD$
 
 PORTNAME=	cp2fwb
 PORTVERSION=	0.6

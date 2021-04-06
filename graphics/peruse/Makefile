@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	peruse
 DISTVERSION=	1.2-502

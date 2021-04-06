@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	safecopy
 PORTVERSION=	1.7

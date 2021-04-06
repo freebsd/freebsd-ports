@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zapcc
 PORTVERSION=	g20180622

@@ -1,5 +1,4 @@
 # Created by: Carlo Strub <cs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	glide
 PORTVERSION=	0.13.2

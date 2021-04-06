@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nibabel
 DISTVERSION=	3.2.1

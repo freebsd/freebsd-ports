@@ -1,5 +1,4 @@
 # Created by: Juha Nygard <juha.nygard1@netikka.fi>
-# $FreeBSD$
 
 PORTNAME=	fluidsynth
 DISTVERSIONPREFIX=	v

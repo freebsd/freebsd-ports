@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcdr
 PORTVERSION=	0.1.6

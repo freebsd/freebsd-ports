@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zmq
 PORTVERSION=	1.1.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	octopress-deploy
 PORTVERSION=	1.3.0

@@ -1,5 +1,4 @@
 # Created by: Adam Weinberger <adam@vectors.cx>
-# $FreeBSD$
 
 PORTNAME=	gmrun
 PORTVERSION=	0.9.2

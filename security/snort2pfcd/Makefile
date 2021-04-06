@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	snort2pfcd
 PORTVERSION=	3.2

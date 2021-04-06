@@ -1,5 +1,4 @@
 # Created by: George Hartzell <hartzell@alerce.com>
-# $FreeBSD$
 
 PORTNAME=	App-Cmd
 PORTVERSION=	0.331

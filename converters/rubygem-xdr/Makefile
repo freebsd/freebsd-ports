@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xdr
 PORTVERSION=	3.0.2

@@ -1,5 +1,4 @@
 # Created by: Christer Edwards <christer.edwards@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	salt
 PORTVERSION=	3002.6

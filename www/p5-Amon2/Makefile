@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Amon2
 PORTVERSION=	6.10

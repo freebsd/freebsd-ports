@@ -1,5 +1,4 @@
 # Created by: Martin Tournoij <carpetsmoker@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	avanor
 PORTVERSION=	0.5.8

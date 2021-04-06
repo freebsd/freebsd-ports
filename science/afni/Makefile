@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		afni
 DISTVERSIONPREFIX=	AFNI_

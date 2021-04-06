@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jtransforms
 PORTVERSION=	2.4

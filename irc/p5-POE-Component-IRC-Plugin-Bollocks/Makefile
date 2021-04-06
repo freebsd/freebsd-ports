@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	POE-Component-IRC-Plugin-Bollocks
 PORTVERSION=	1.02

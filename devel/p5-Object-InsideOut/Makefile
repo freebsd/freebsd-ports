@@ -1,5 +1,4 @@
 # Created by: Geraud Continsouzas <geraud@gcu.info>
-# $FreeBSD$
 
 PORTNAME=	Object-InsideOut
 PORTVERSION=	4.05

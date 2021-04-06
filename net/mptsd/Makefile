@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mptsd
 PORTVERSION=	1.1

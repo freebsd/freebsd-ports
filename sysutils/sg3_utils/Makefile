@@ -1,5 +1,4 @@
 # Created by: Denis Barov <dindin@dindin.ru>
-# $FreeBSD$
 
 PORTNAME=	sg3_utils
 DISTVERSION=	1.45

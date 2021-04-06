@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chosen-rails
 PORTVERSION=	1.8.3

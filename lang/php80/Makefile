@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	php80
 DISTVERSION=	8.0.3

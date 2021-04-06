@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	crontab
 PORTVERSION=	1.1.3

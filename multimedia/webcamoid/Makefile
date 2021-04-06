@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webcamoid
 DISTVERSION=	8.8.0

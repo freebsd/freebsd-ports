@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pmenu
 DISTVERSIONPREFIX=	v

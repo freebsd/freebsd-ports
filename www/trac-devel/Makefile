@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	trac
 DISTVERSION=	1.5.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xcb-util-image
 PORTVERSION=	0.4.0

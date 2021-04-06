@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cabal-install
 DISTVERSIONPREFIX=	${PORTNAME}-

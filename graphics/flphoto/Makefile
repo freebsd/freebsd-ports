@@ -1,5 +1,4 @@
 # Created by: johan
-# $FreeBSD$
 
 PORTNAME=	flphoto
 PORTVERSION=	1.3.1

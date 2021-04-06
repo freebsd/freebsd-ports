@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME=	aegis
 PORTVERSION=	4.25

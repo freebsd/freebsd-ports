@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ricty
 PORTVERSION=	4.1.1

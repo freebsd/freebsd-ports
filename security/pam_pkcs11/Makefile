@@ -1,5 +1,4 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	pam_pkcs11
 PORTVERSION=	0.6.11

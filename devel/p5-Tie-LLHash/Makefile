@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Tie-LLHash
 PORTVERSION=	1.004

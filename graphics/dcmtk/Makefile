@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	dcmtk
 DISTVERSIONPREFIX=	${PORTNAME:tu}-

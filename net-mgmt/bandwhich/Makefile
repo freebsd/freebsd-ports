@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bandwhich
 DISTVERSION=	0.20.0

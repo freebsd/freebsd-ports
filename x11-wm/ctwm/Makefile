@@ -1,5 +1,4 @@
 # Created by: torstenb
-# $FreeBSD$
 
 PORTNAME=	ctwm
 DISTVERSION=	4.0.3

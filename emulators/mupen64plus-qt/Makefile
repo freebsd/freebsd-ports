@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mupen64plus-qt
 DISTVERSION=	1.14

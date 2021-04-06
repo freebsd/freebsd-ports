@@ -1,5 +1,4 @@
 # Created by: Antoine Brodin <antoine@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libfsntfs
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH

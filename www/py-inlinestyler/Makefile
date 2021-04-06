@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	inlinestyler
 PORTVERSION=	0.2.5

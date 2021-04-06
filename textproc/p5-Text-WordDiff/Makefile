@@ -1,5 +1,4 @@
 # Created by: Rod Taylor <ports@rbt.ca>
-# $FreeBSD$
 
 PORTNAME=	Text-WordDiff
 PORTVERSION=	0.09

@@ -1,5 +1,4 @@
 # Created by: jaharkes
-# $FreeBSD$
 
 PORTNAME=	rvm
 DISTVERSION=	1.20

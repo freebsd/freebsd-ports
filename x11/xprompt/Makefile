@@ -1,5 +1,4 @@
 # Created by: Matthew Hunt <mph@pobox.com>
-# $FreeBSD$
 
 PORTNAME=	xprompt
 PORTVERSION=	1.4

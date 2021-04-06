@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Text-Pipe
 PORTVERSION=	0.10

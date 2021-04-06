@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	amqp-cpp
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: erwin@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	MLDBM-Sync
 PORTVERSION=	0.30

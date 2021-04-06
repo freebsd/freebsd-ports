@@ -1,5 +1,4 @@
 # Created by: Mikhail Teterin <mi@aldan.algebra.com>
-# $FreeBSD$
 
 PORTNAME=	tcl-mmap
 PORTVERSION=	1.1

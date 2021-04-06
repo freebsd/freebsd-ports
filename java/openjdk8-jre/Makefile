@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PKGNAMESUFFIX=	${JDK_MAJOR_VERSION}-jre
 

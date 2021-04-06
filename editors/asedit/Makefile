@@ -1,5 +1,4 @@
 # Created by: Andreas Kohout <shanee@augusta.de>
-# $FreeBSD$
 
 PORTNAME=	asedit
 PORTVERSION=	1.3.2

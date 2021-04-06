@@ -1,5 +1,4 @@
 # Created by: Juergen Lock <nox@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vdr
 PORTVERSION=	1.7.29

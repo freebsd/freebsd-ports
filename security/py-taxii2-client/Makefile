@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	taxii2-client
 PORTVERSION=	2.2.2

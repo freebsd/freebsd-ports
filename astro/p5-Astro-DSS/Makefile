@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Astro-DSS
 PORTVERSION=	1.6.1

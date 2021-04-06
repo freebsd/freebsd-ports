@@ -1,5 +1,4 @@
 # Created by: Greg Lewis <glewis@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	powerman
 PORTVERSION=	2.3.20

@@ -1,5 +1,4 @@
 # Created by: Xavier Beaudouin <kiwi@oav.net>
-# $FreeBSD$
 
 PORTNAME=	Config-Fast
 PORTVERSION=	1.07

@@ -1,5 +1,4 @@
 # Created by: faber@lunabase.org
-# $FreeBSD$
 
 PORTNAME=	grap
 PORTVERSION=	1.46

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	seahub
 DISTVERSIONPREFIX=	v

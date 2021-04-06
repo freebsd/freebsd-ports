@@ -1,5 +1,4 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	rime-essay
 DISTVERSION=	g20201222

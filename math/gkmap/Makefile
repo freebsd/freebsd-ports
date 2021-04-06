@@ -1,5 +1,4 @@
 # Created by: Javad Kouhi <javad.kouhi@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gkmap
 PORTVERSION=	0.2

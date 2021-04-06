@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-statsd
 PORTVERSION=	2.1.0

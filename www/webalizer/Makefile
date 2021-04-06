@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webalizer
 PORTVERSION=	2.23.8

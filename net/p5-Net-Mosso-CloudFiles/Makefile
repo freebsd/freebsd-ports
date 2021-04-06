@@ -1,5 +1,4 @@
 # Created by: glarkin
-# $FreeBSD$
 
 PORTNAME=	Net-Mosso-CloudFiles
 PORTVERSION=	0.44

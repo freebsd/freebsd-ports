@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pgweb
 DISTVERSIONPREFIX=	v

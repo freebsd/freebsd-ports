@@ -1,5 +1,4 @@
 # Created by: Mikolaj Golub <trociny@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	MogileFS-Network
 PORTVERSION=	0.06

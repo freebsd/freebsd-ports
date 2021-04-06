@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Slurp
 PORTVERSION=	0.4

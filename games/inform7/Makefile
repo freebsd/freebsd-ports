@@ -1,5 +1,4 @@
 # Created by: Andy Kosela <akosela@andykosela.com>
-# $FreeBSD$
 
 PORTNAME=	inform7
 PORTVERSION=	6L38

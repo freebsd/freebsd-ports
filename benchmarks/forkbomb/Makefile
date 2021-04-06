@@ -1,5 +1,4 @@
 # Created by: Radim Kolar
-# $FreeBSD$
 
 PORTNAME=	forkbomb
 PORTVERSION=	1.4

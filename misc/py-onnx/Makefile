@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	onnx
 DISTVERSION=	1.8.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	m2r
 DISTVERSION=	0.2.1

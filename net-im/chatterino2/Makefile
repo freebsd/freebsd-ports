@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chatterino2
 PORTVERSION=	g2020090101

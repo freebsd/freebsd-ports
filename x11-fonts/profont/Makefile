@@ -1,5 +1,4 @@
 # Created by: Manuel Giraud <manuel.giraud@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	profont
 PORTVERSION=	400

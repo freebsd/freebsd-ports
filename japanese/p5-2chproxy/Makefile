@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	2chproxy
 PORTVERSION=	1.0.1

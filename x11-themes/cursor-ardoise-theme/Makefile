@@ -1,5 +1,4 @@
 # Created by: lightside <lightside@gmx.com>
-# $FreeBSD$
 
 PORTNAME=	ardoise
 PORTVERSION=	3.6

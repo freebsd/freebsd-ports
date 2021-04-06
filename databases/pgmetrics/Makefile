@@ -1,5 +1,4 @@
 # Created by: Palle Girgensohn <girgen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pgmetrics
 PORTVERSION=	1.10.3

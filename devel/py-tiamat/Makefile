@@ -1,5 +1,4 @@
 # Created by: Kirill Ponomarev <krion@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tiamat
 PORTVERSION=	7.6

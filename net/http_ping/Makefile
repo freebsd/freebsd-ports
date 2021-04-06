@@ -1,5 +1,4 @@
 # Created by: Dima Dorfman <dd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	http_ping
 PORTVERSION=	20050629

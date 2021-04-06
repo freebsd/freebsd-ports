@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xmore
 PORTVERSION=	1.0.3

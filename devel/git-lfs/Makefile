@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		git-lfs
 DISTVERSIONPREFIX=	v

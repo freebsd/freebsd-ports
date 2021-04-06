@@ -1,5 +1,4 @@
 # Created by: Fukang Chen <loader@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pymailq
 PORTVERSION=	0.9.0

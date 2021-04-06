@@ -1,5 +1,4 @@
 # Created by: Lev Serebryakov <lev@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vips
 PORTVERSION=	8.10.5

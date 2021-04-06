@@ -1,5 +1,4 @@
 # Created by: shipley@dis.org
-# $FreeBSD$
 
 PORTNAME=	hello
 PORTVERSION=	2.10

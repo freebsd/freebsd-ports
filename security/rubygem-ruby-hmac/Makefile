@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ruby-hmac
 PORTVERSION=	0.4.0

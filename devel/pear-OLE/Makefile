@@ -1,5 +1,4 @@
 # Created by: Pav Lucistnik <pav@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	OLE
 DISTVERSION=	1.0.0RC3

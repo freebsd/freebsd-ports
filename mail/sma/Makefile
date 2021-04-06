@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sma
 PORTVERSION=	1.4

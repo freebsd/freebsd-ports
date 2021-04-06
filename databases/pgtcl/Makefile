@@ -1,5 +1,4 @@
 # Created by: Mikhail Teterin
-# $FreeBSD$
 
 PORTNAME=	pgtcl
 PORTVERSION=	2.1.1

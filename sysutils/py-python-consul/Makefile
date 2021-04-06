@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-consul
 PORTVERSION=	1.1.0

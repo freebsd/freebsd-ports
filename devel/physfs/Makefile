@@ -1,5 +1,4 @@
 # Created by: Oliver Lehmann <oliver@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	physfs
 PORTVERSION=	3.0.2

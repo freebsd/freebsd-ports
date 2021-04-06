@@ -1,5 +1,4 @@
 # Created by: Pavel I Volkov
-# $FreeBSD$
 
 PORTNAME=	ssgless
 PORTVERSION=	1.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	statsd-instrument
 PORTVERSION=	2.3.2

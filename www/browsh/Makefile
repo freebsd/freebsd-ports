@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	browsh
 DISTVERSIONPREFIX=	v

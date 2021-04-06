@@ -1,5 +1,4 @@
 # Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-# $FreeBSD$
 
 PORTNAME=	urlimport
 PORTVERSION=	0.42b

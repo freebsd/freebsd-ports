@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <tiamat@comset.net>
-# $FreeBSD$
 
 PORTNAME=	glbsp
 PORTVERSION=	2.20

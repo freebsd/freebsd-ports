@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Lingua-JA-Moji
 PORTVERSION=	0.36

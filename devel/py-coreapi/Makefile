@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	coreapi
 DISTVERSION=	2.3.3

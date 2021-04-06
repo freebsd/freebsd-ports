@@ -1,5 +1,4 @@
 # Created by: Yuichiro AIZAWA <yaizawa@mdbl.sfc.keio.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	PDF-Template
 PORTVERSION=	0.22

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aphelia
 DISTVERSION=	g20190913

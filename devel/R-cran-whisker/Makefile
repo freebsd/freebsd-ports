@@ -1,5 +1,4 @@
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	whisker
 DISTVERSION=	0.4

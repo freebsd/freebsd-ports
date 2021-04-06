@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Astro
 PORTVERSION=	0.78

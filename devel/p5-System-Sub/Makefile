@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	System-Sub
 PORTVERSION=	0.162800

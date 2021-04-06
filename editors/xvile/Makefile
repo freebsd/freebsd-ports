@@ -1,5 +1,4 @@
 # Created by: pgf
-# $FreeBSD$
 
 PORTNAME=	vile
 PORTVERSION=	9.8u

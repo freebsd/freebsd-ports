@@ -1,5 +1,4 @@
 # Created by: jim@thehousleys.net
-# $FreeBSD$
 
 PORTNAME=	healthd
 PORTVERSION=	0.7.9

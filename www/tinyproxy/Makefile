@@ -1,5 +1,4 @@
 # Created by: Mitsuru Yoshida <mitsuru@riken.go.jp>
-# $FreeBSD$
 
 PORTNAME=	tinyproxy
 PORTVERSION=	1.10.0

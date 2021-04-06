@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pypa-docs-theme
 DISTVERSION=	g20180622

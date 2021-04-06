@@ -1,5 +1,4 @@
 # Created by: Juergen Lock <nox@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cxxtools
 PORTVERSION=	2.2.1

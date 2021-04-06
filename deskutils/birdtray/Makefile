@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	birdtray
 PORTVERSION=	1.9.0

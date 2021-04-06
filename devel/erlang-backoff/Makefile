@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	backoff
 PORTVERSION=	1.1.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pleaserun
 PORTVERSION=	0.0.31

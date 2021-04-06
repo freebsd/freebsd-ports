@@ -1,5 +1,4 @@
 # Created by: Marcin Cieslak <saper@SYSTEM.PL>
-# $FreeBSD$
 
 PORTNAME=	jtopen
 PORTVERSION=	6.2

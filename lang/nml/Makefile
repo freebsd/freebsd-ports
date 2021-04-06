@@ -1,5 +1,4 @@
 # Created by: Jaeho Shin <netj@sparcs.kaist.ac.kr>
-# $FreeBSD$
 
 PORTNAME=	nml
 PORTVERSION=	0.92b

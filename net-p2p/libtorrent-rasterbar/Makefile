@@ -1,5 +1,4 @@
 # Created by: Doug Barton <dougb@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
 DISTVERSION=	1.2.12

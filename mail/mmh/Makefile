@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mmh
 PORTVERSION=	0.4

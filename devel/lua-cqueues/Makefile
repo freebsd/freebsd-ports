@@ -1,5 +1,4 @@
 # Created by: Leo Vandewoestijne <freebsd@dns.company>
-# $FreeBSD$
 
 PORTNAME=	cqueues
 DISTVERSIONPREFIX=	rel-

@@ -1,5 +1,4 @@
 # Created by: Simeo Reig <reig.simeo@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wildfly18
 PORTVERSION=	18.0.1

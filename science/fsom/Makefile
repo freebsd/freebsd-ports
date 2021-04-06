@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fsom
 DISTVERSION=	g20151117

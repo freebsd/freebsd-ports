@@ -1,5 +1,4 @@
 # Created by: Oyvind Moll <oyvindmo@initio.no>
-# $FreeBSD$
 
 PORTNAME=	CDDB_get
 PORTVERSION=	2.28

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Perl6-Export-Attrs
 PORTVERSION=	0.000006

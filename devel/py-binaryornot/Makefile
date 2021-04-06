@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	binaryornot
 DISTVERSION=	0.4.4

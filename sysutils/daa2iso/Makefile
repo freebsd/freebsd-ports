@@ -1,5 +1,4 @@
 # Created by: Martin Tournoij <carpetsmoker@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	daa2iso
 PORTVERSION=	0.1.7e

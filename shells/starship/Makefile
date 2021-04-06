@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	starship
 DISTVERSION=	0.51.0

@@ -1,5 +1,4 @@
 # Created by: dikshie <dikshie@lapi.itb.ac.id>
-# $FreeBSD$
 
 PORTNAME=	pathload
 PORTVERSION=	1.3.2

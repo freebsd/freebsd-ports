@@ -1,5 +1,4 @@
 # Created by: hrs
-# $FreeBSD$
 
 PORTNAME=	icbirc
 PORTVERSION=	2.1

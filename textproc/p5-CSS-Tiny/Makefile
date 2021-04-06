@@ -1,5 +1,4 @@
 # Created by: Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
-# $FreeBSD$
 
 PORTNAME=	CSS-Tiny
 PORTVERSION=	1.20

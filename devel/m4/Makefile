@@ -1,5 +1,4 @@
 # Created by: mr
-# $FreeBSD$
 
 PORTNAME=	m4
 PORTVERSION=	1.4.18

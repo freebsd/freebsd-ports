@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sphinxcontrib-newsfeed
 PORTVERSION=	0.1.4

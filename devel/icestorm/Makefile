@@ -1,5 +1,4 @@
 # Created by: Johnny Sorocil <jsorocil@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	icestorm
 PORTVERSION=	g20190526

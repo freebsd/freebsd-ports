@@ -1,5 +1,4 @@
 # Created by: G. Adam Stanislav <adam@whizkidtech.net>
-# $FreeBSD$
 
 PORTNAME=	numchar
 PORTVERSION=	1.0

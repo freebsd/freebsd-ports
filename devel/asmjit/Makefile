@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	asmjit
 DISTVERSION=	g20200101

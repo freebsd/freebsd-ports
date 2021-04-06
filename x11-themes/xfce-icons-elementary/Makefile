@@ -1,5 +1,4 @@
 # Created by: Matthias Petermann <matthias@petermann-it.de>
-# $FreeBSD$
 
 PORTNAME=	elementary
 PORTVERSION=	0.15.2

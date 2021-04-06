@@ -1,5 +1,4 @@
 # Created by: Aaron Baugher
-# $FreeBSD$
 
 PORTNAME=	xlogical
 DISTVERSION=	1.0-8

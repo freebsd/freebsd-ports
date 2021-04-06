@@ -1,5 +1,4 @@
 # Created by: Kyle Evans <kevans@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	chainmap
 PORTVERSION=	1.0.3

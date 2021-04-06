@@ -1,5 +1,4 @@
 # Created by: Toni Andjelkovic <toni@soth.at>
-# $FreeBSD$
 
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.9.0

@@ -1,5 +1,4 @@
 # Created by: ports@c0decafe.net
-# $FreeBSD$
 
 PORTNAME=	Gtk2-Ex-PodViewer
 PORTVERSION=	0.18

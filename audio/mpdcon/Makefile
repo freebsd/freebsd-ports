@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mpdcon
 PORTVERSION=	1.5.1

@@ -1,5 +1,4 @@
 # Created by: clive@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	DBD-ODBC
 PORTVERSION=	1.61

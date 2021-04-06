@@ -1,5 +1,4 @@
 # Created by: Makoto Matsushita <matusita@jp.FreeBSD.ORG>
-# $FreeBSD$
 
 PORTNAME=	dbskkd-cdb
 PORTVERSION=	3.00

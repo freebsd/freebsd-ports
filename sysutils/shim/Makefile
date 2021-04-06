@@ -1,5 +1,4 @@
 # Created by: Edward Tomasz Napierala <trasz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	shim
 PORTVERSION=	0.9

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	guake
 PORTVERSION=	3.4.0

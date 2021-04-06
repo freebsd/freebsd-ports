@@ -1,5 +1,4 @@
 # Created by: Rainer Hurling <rhurlin@gwdg.de>
-# $FreeBSD$
 
 PORTNAME=	textdistance
 PORTVERSION=	4.2.1

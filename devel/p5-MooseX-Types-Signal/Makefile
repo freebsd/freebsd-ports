@@ -1,5 +1,4 @@
 # Created by: Denis Pokataev <catone@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	MooseX-Types-Signal
 PORTVERSION=	1.101932

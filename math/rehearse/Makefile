@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rehearse
 DISTVERSION=	g20190305

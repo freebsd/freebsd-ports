@@ -1,5 +1,4 @@
 # Created by: Wen heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	efront
 DISTVERSION=	3.6.14

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ecto
 PORTVERSION=	2.2.10

@@ -1,5 +1,4 @@
 # Created by: Tomokatsu SAITO <saito@a2z.co.jp>
-# $FreeBSD$
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.07

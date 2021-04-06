@@ -1,5 +1,4 @@
 # Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-# $FreeBSD$
 
 PORTNAME=	pdmenu
 PORTVERSION=	1.3.4

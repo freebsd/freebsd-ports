@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jpeg-xl
 DISTVERSIONPREFIX=	v

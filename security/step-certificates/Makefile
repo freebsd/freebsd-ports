@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	step-certificates
 DISTVERSIONPREFIX=v

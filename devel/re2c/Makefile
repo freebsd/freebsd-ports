@@ -1,5 +1,4 @@
 # Created by: Eivind Eklund <eivind@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	re2c
 PORTVERSION=	0.14.3

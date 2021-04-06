@@ -1,5 +1,4 @@
 # Created by: Jeffrey Baitis <jeff@baitis.net>
-# $FreeBSD$
 
 PORTNAME=	libsdr
 PORTVERSION=	0.1.0

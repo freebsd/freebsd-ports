@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cpprestsdk
 PORTVERSION=	2.10.16

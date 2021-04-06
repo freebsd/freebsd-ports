@@ -1,5 +1,4 @@
 # Created by: Bruce M. Simpson <bms@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	upslug
 PORTVERSION=	2.11

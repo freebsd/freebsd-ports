@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webmachine
 PORTVERSION=	1.10.9

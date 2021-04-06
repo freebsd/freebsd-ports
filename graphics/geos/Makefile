@@ -1,5 +1,4 @@
 # Created by: Leonardo Martins <lmartins@nepe.eee.ufg.br>
-# $FreeBSD$
 
 PORTNAME=	geos
 PORTVERSION=	3.9.1

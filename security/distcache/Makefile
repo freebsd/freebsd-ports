@@ -1,5 +1,4 @@
 # Created by: Marcel Prisi <marcel.prisi@virtua.ch>
-# $FreeBSD$
 
 PORTNAME=	distcache
 DISTVERSION=	1.5.1

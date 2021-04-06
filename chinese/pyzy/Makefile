@@ -1,5 +1,4 @@
 # Created by: Henry Hu <henry.hu.sh@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	pyzy
 PORTVERSION=	0.1.0

@@ -1,5 +1,4 @@
 # Created by: rpsfa@rit.edu
-# $FreeBSD$
 
 PORTNAME=	require_all
 PORTVERSION=	2.0.0

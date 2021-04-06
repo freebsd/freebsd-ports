@@ -1,5 +1,4 @@
 # Created by: Jonathan Weiss (<jw@innerewut.de>)
-# $FreeBSD$
 
 PORTNAME=	actionpack
 PORTVERSION=	5.2.4.5

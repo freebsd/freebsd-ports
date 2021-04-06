@@ -1,5 +1,4 @@
 # Created by: mi@aldan.algebra.com
-# $FreeBSD$
 
 PORTNAME=	cyr-rfx-${CYR_RFX_ENCODING}
 PORTVERSION=	1.1

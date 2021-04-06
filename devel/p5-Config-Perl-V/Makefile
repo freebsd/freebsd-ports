@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Config-Perl-V
 PORTVERSION=	0.33

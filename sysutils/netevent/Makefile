@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	netevent
 DISTVERSION=	0.2.1-79

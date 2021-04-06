@@ -1,5 +1,4 @@
 # Created by: Richard Gallamore <ultima@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	django-post_office
 DISTVERSIONPREFIX=	v

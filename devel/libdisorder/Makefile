@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libdisorder
 PORTVERSION=	0.0.2

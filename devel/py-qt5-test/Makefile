@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	test
 CATEGORIES=	devel python

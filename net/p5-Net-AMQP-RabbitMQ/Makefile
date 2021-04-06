@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-AMQP-RabbitMQ
 PORTVERSION=	2.40008

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Perl
 PORTVERSION=	0.002011

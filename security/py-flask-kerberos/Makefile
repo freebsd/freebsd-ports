@@ -1,5 +1,4 @@
 # Created by: John W. O'Brien <john@saltant.com>
-# $FreeBSD$
 
 PORTNAME=	Flask-Kerberos
 PORTVERSION=	1.0.4

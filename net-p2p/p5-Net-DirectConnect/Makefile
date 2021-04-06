@@ -1,5 +1,4 @@
 # Created by: Oleg Alexeenkov <proler@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Net-DirectConnect
 PORTVERSION=	0.14

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	itypes
 DISTVERSION=	1.1.0

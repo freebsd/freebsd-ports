@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	logisim
 PORTVERSION=	2.7.1

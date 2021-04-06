@@ -1,5 +1,4 @@
 # Created by: Juraj Lutter <otis@sk.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	libconfuse
 PORTVERSION=	3.3

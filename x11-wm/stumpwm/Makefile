@@ -1,5 +1,4 @@
 # Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	stumpwm
 DISTVERSION=	20.11-3

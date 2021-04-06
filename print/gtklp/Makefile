@@ -1,5 +1,4 @@
 # Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-# $FreeBSD$
 
 PORTNAME=	gtklp
 DISTVERSION=	1.3.4

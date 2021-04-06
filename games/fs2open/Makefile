@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fs2open
 DISTVERSIONPREFIX=	release_

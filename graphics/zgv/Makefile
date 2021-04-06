@@ -1,5 +1,4 @@
 # Created by: Radim Kolar
-# $FreeBSD$
 
 PORTNAME=	zgv
 PORTVERSION=	5.9

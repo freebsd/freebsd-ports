@@ -1,5 +1,4 @@
 # Created by: Alex Miller (<asm@asm.kiev.ua>)
-# $FreeBSD$
 
 PORTNAME=	XML_Util
 PORTVERSION=	1.4.4

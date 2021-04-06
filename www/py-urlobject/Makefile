@@ -1,5 +1,4 @@
 # Created by: Ilia Skalozubov <freebsd@skinc.ru>
-# $FreeBSD$
 
 PORTNAME=	urlobject
 PORTVERSION=	2.4.3

@@ -1,5 +1,4 @@
 # Created by: David Bushong <david@bushong.net>
-# $FreeBSD$
 
 PORTNAME=	dtmfdial
 PORTVERSION=	0.2

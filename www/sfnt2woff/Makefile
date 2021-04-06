@@ -1,5 +1,4 @@
 # Created by: Andrey Chernov <ache@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sfnt2woff
 PORTVERSION=	20091004

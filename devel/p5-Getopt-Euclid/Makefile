@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Getopt-Euclid
 PORTVERSION=	0.4.5

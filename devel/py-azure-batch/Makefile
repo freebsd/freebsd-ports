@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-batch
 PORTVERSION=	10.0.0

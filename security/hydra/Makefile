@@ -1,5 +1,4 @@
 # Created by: Laurent LEVIER <llevier@argosnet.com>
-# $FreeBSD$
 
 PORTNAME=	hydra
 DISTVERSIONPREFIX=v

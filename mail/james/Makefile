@@ -1,5 +1,4 @@
 # Created by: Nemo Liu <nemoliu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	james
 PORTVERSION=	2.3.2.1

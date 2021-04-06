@@ -1,5 +1,4 @@
 # Created by: Alexander Botero-Lowry <alex@foxybanana.com>
-# $FreeBSD$
 
 PORTNAME=	tlslite
 PORTVERSION=	0.4.9

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-gtk
 PORTREVISION=	3

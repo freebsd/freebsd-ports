@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chrono
 DISTVERSIONPREFIX=	v

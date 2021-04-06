@@ -1,5 +1,4 @@
 # Created by: Rick van der Zwet <info@rickvanderzwet.nl>
-# $FreeBSD$
 
 PORTNAME=	XML-TinyXML
 PORTVERSION=	0.34

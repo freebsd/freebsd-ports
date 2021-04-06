@@ -1,5 +1,4 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	aws-checksums
 PORTVERSION=	0.1.10

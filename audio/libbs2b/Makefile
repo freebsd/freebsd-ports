@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libbs2b
 PORTVERSION=	3.1.0

@@ -1,5 +1,4 @@
 # Created by: brett@peloton.physics.montana.edu
-# $FreeBSD$
 
 PORTNAME=	cooledit
 DISTVERSION=	3.17.28

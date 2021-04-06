@@ -1,5 +1,4 @@
 # Created by: Peter van Heusden <pvh@egenetics.com>
-# $FreeBSD$
 
 PORTNAME=	Error
 PORTVERSION=	0.17029

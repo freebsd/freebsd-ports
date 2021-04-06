@@ -1,5 +1,4 @@
 # Created by: Anders Nordby <anders@fix.no>
-# $FreeBSD$
 
 PORTNAME=	spread4
 PORTVERSION=	4.2.0

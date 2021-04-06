@@ -1,5 +1,4 @@
 # Created by: Andreas Kohout <shanee@augusta.de>
-# $FreeBSD$
 
 PORTNAME=	tkcvs
 PORTVERSION=	8.2.3

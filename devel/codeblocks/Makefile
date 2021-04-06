@@ -1,5 +1,4 @@
 # Created by: Matthias Sund <m.sund@arcor.de>
-# $FreeBSD$
 
 PORTNAME=	codeblocks
 PORTVERSION=	20.03

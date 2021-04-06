@@ -1,5 +1,4 @@
 # Created by: Ilya A. Arhipov <admin@gorodkirov.ru>
-# $FreeBSD$
 
 PORTNAME=	openmsx
 PORTVERSION=	0.3.1

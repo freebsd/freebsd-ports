@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	motsognir
 PORTVERSION=	1.0.12

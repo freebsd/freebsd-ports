@@ -1,5 +1,4 @@
 # Created by: Roman Neuhauser <neuhauser@sigpipe.cz>
-# $FreeBSD$
 
 PORTNAME=	mathomatic
 PORTVERSION=	16.0.5

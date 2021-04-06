@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyodesys
 DISTVERSION=	0.13.1

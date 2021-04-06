@@ -1,5 +1,4 @@
 # Created by: Martin Sugioarto <martin.sugioarto@udo.edu>
-# $FreeBSD$
 
 PORTNAME=	iiview
 PORTVERSION=	0.31

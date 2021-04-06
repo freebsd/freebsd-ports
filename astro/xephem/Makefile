@@ -1,5 +1,4 @@
 # Created by: erich@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	xephem
 PORTVERSION=	3.7.7

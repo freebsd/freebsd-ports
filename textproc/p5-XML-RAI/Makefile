@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	XML-RAI
 PORTVERSION=	1.3031

@@ -1,5 +1,4 @@
 # Created by: stas
-# $FreeBSD$
 
 PORTNAME=	podofo
 PORTVERSION=	0.9.6

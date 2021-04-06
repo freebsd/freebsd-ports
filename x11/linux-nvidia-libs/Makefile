@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nvidia-libs
 DISTVERSION?=	460.67

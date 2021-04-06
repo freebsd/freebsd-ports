@@ -1,5 +1,4 @@
 # Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-# $FreeBSD$
 
 PORTNAME=	jaxen
 PORTVERSION=	1.0

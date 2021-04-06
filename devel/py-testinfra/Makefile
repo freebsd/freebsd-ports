@@ -1,5 +1,4 @@
 # Created by: Sofian Brabez <sbz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	testinfra
 PORTVERSION=	3.2.0

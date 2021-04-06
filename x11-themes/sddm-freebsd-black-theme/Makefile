@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sddm-freebsd-black-theme
 DISTVERSION=	1.3

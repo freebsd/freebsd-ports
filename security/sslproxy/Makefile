@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sslproxy
 PORTVERSION=	0.8.3

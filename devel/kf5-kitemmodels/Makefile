@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kitemmodels
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

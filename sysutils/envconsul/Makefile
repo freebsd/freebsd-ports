@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	envconsul
 PORTVERSION=	0.11.0

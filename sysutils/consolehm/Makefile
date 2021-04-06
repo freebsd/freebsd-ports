@@ -1,5 +1,4 @@
 # Created by: Mike Muir <mmuir@es.co.nz>
-# $FreeBSD$
 
 PORTNAME=	consolehm
 PORTVERSION=	1.31

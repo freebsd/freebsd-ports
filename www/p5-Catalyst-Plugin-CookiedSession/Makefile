@@ -1,5 +1,4 @@
 # Created by: Denis Pokataev <catone@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-CookiedSession
 PORTVERSION=	0.35

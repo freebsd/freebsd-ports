@@ -1,5 +1,4 @@
 # Created by: Justin Hawkins <justin@hawkins.id.au>
-# $FreeBSD$
 
 PORTNAME=	twiki
 PORTVERSION=	6.1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xf86-input-wacom
 PORTVERSION=	0.39.0

@@ -1,5 +1,4 @@
 # Created by: glen.j.barber@gmail.com
-# $FreeBSD$
 
 PORTNAME=	clamd-stream-client
 DISTVERSION=	1.3

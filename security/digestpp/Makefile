@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	digestpp
 DISTVERSION=	g20200907

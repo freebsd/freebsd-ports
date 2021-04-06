@@ -1,5 +1,4 @@
 # Created by: Fukang Chen <loader@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Net-LMTP
 PORTVERSION=	0.02

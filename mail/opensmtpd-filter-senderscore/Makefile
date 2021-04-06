@@ -1,5 +1,4 @@
 # Created by: Emmanuel Vadot <manu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	opensmtpd-filter-senderscore
 PORTVERSION=	0.1.1

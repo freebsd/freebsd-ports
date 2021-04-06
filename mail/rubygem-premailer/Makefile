@@ -1,5 +1,4 @@
 # Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-# $FreeBSD$
 
 PORTNAME=	premailer
 PORTVERSION=	1.11.1

@@ -1,5 +1,4 @@
 # Created by: Glenn Johnson
-# $FreeBSD$
 
 PORTNAME=	libimg
 PORTVERSION=	1.4.12

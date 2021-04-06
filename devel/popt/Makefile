@@ -1,5 +1,4 @@
 # Created by: Yuan-Chen Cheng <ycheng@sinica.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	popt
 PORTVERSION=	1.18

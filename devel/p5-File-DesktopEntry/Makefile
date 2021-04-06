@@ -1,5 +1,4 @@
 # Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-# $FreeBSD$
 
 PORTNAME=	File-DesktopEntry
 PORTVERSION=	0.22

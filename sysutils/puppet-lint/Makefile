@@ -1,5 +1,4 @@
 # Created by: Tim Bishop <tdb@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	puppet-lint
 PORTVERSION=	2.4.2

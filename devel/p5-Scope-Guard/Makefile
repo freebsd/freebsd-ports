@@ -1,5 +1,4 @@
 # Created by: Craig Manley
-# $FreeBSD$
 
 PORTNAME=	Scope-Guard
 PORTVERSION=	0.21

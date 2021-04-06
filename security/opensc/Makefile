@@ -1,5 +1,4 @@
 # Created by: Bruce M Simpson
-# $FreeBSD$
 
 PORTNAME=	opensc
 DISTVERSION=	0.21.0

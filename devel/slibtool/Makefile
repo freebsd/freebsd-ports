@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	slibtool
 PORTVERSION=	0.5.32

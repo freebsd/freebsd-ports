@@ -1,5 +1,4 @@
 # Created by: Roderick van Domburg <r.s.a.vandomburg@student.utwente.nl>
-# $FreeBSD$
 
 PORTNAME=	net-sftp
 PORTVERSION=	2.1.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ejabberd
 PORTVERSION=	21.01

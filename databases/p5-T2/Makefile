@@ -1,5 +1,4 @@
 # Created by: Scott McWhirter <scott@surreytech.co.uk>
-# $FreeBSD$
 
 PORTNAME=	T2
 PORTVERSION=	0.10

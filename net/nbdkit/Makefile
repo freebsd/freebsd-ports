@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nbdkit
 PORTVERSION=	1.20.4

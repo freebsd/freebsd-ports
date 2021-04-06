@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bindgen
 DISTVERSION=	0.58.0

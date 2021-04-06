@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Template-Stash-AutoEscape
 PORTVERSION=	0.03

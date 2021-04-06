@@ -1,5 +1,4 @@
 # Created by: bra@fsn.hu
-# $FreeBSD$
 
 PORTNAME=	pysvn
 PORTVERSION=	1.9.12

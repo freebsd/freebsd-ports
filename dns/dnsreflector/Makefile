@@ -1,5 +1,4 @@
 # Created by: ismail.yenigul@endersys.com.tr
-# $FreeBSD$
 
 PORTNAME=	dnsreflector
 PORTVERSION=	1.02

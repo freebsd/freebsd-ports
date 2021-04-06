@@ -1,5 +1,4 @@
 # Created by: Adam Weinberger <adam@vectors.cx>
-# $FreeBSD$
 
 PORTNAME=	bbrun
 PORTVERSION=	1.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kmailtransport
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

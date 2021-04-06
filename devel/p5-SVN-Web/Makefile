@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SVN-Web
 PORTVERSION=	0.63

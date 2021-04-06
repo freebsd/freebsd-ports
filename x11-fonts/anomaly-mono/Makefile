@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	anomaly-mono
 DISTVERSION=	g20210310

@@ -1,5 +1,4 @@
 # Created by: mi@aldan.algebra.com
-# $FreeBSD$
 
 PORTNAME=	incron
 DISTVERSION=	2017-11-13

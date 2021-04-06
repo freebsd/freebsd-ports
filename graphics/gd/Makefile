@@ -1,5 +1,4 @@
 # Created by: jeff@cetlink.net
-# $FreeBSD$
 
 PORTNAME=	libgd
 PORTVERSION=	2.3.1

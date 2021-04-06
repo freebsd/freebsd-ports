@@ -1,5 +1,4 @@
 # Created by: lth@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Text-FixEOL
 PORTVERSION=	1.08

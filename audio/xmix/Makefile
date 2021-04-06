@@ -1,5 +1,4 @@
 # Created by: janek@gaja.ipan.lublin.pl
-# $FreeBSD$
 
 PORTNAME=	xmix
 PORTVERSION=	2.1

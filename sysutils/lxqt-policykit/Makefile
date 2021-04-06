@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	lxqt-policykit
 PORTVERSION=	0.16.0

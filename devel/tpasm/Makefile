@@ -1,5 +1,4 @@
 # Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-# $FreeBSD$
 
 PORTNAME=	tpasm
 PORTVERSION=	1.11

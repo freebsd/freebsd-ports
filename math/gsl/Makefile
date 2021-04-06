@@ -1,5 +1,4 @@
 # Created by: Andrew L. Neporada <andrew@chg.ru>
-# $FreeBSD$
 
 PORTNAME=	gsl
 PORTVERSION=	2.6

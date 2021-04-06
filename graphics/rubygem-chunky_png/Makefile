@@ -1,5 +1,4 @@
 # Created by: Phil Phillips <pphillips@experts-exchange.com>
-# $FreeBSD$
 
 PORTNAME=	chunky_png
 PORTVERSION=	1.3.11

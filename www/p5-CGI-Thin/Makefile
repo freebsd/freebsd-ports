@@ -1,5 +1,4 @@
 # Created by: Phil Phillips
-# $FreeBSD$
 
 PORTNAME=	CGI-Thin
 PORTVERSION=	0.52

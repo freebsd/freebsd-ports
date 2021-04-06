@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lth@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Prototype
 PORTVERSION=	1.33

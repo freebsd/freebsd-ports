@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	browser
 PORTVERSION=	4.2.0

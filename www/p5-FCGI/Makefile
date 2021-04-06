@@ -1,5 +1,4 @@
 # Created by: Kelly Yancey <kbyanc@posi.net>
-# $FreeBSD$
 
 PORTNAME=	FCGI
 PORTVERSION=	0.79

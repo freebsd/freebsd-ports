@@ -1,5 +1,4 @@
 # Created by: Denis Pokataev <catone@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-Subprocess
 PORTVERSION=	1.102912

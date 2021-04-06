@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xtoolchain
 PORTVERSION=	0.4

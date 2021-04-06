@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <kappa@FreeBSD.org.ua>
-# $FreeBSD$
 
 PORTNAME=	Class-Roles
 PORTVERSION=	0.30

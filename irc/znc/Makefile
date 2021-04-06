@@ -1,5 +1,4 @@
 # Created by: elvstone@gmail.com
-# $FreeBSD$
 
 PORTNAME=	znc
 PORTVERSION=	1.8.2

@@ -1,5 +1,4 @@
 # Created by: Kay Lehmann <kay_lehmann@web.de>
-# $FreeBSD$
 
 PORTNAME=	btparse
 PORTVERSION=	0.35

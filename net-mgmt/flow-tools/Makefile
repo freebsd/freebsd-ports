@@ -1,5 +1,4 @@
 # Created by: @BABOLO <.@babolo.ru>
-# $FreeBSD$
 
 PORTNAME=	flow-tools
 PORTVERSION=	0.68.6

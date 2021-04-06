@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tayga
 PORTVERSION=	0.9.2

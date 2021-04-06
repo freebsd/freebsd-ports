@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	File-ShareDir-Install
 PORTVERSION=	0.13

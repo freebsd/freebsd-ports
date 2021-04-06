@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	get_iplayer
 PORTVERSION=	3.27

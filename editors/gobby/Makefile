@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gobby
 PORTVERSION=	0.4.13

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cymem
 PORTVERSION=	2.0.5

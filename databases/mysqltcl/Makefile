@@ -1,5 +1,4 @@
 # Created by: Martin Matuska <martin@matuska.org>
-# $FreeBSD$
 
 PORTNAME=	mysqltcl
 PORTVERSION=	3.052

@@ -1,5 +1,4 @@
 # Created by: Zane C. Bowers
-# $FreeBSD$
 
 PORTNAME=	pm3umpdl
 PORTVERSION=	1.0.0

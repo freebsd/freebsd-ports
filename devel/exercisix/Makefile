@@ -1,5 +1,4 @@
 # Created by: Alexander Churannov <churanov.port.maintainer@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	exercisix
 PORTVERSION=	1.2

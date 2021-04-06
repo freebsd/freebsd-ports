@@ -1,5 +1,4 @@
 # Created by: Hung-Yi Chen <gaod@hychen.org>
-# $FreeBSD$
 
 PORTNAME=	sshsudo
 PORTVERSION=	1.0

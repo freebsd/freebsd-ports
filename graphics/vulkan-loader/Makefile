@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vulkan-loader
 DISTVERSIONPREFIX=	v

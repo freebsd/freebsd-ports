@@ -1,5 +1,4 @@
 # Created by: Chia-Hsing Yu <me@davidyu.org>
-# $FreeBSD$
 
 PORTNAME=	libsvm
 PORTVERSION=	3.23

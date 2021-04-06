@@ -1,5 +1,4 @@
 # Created by: Brian Buchanan <brian@CSUA.Berkeley.EDU>
-# $FreeBSD$
 
 PORTNAME=	plib
 PORTVERSION=	1.8.5

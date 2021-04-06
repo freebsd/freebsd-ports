@@ -1,5 +1,4 @@
 # Created by: Philip Paeps <philip@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	DateTime-Calendar-Discordian
 PORTVERSION=	1.0

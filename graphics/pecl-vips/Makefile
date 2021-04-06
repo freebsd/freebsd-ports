@@ -1,5 +1,4 @@
 # Created by: punkt.de Hosting Team <mops@punkt.de>
-# $FreeBSD$
 
 PORTNAME=	vips
 PORTVERSION=	1.0.10

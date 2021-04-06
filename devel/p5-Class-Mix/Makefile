@@ -1,5 +1,4 @@
 # Created by: brix@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Class-Mix
 PORTVERSION=	0.006

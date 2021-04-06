@@ -1,5 +1,4 @@
 # Created by: stas
-# $FreeBSD$
 
 PORTNAME=	data
 PORTVERSION=	1.38

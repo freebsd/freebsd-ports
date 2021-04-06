@@ -1,5 +1,4 @@
 # Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-# $FreeBSD$
 
 PORTNAME=	Imager-Graph
 PORTVERSION=	0.10

@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale	<nivit@email.it>
-# $FreeBSD$
 
 PORTNAME=	enchant
 PORTVERSION=	3.2.0

@@ -1,5 +1,4 @@
 # Created by: Shin-ya Murakami <murashin@gfd-dennou.org>
-# $FreeBSD$
 
 PORTNAME=	ruby-netcdf
 PORTVERSION=	0.7.2

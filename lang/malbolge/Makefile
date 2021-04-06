@@ -1,5 +1,4 @@
 # Created by: Dereckson <dereckson@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	malbolge
 PORTVERSION=	0.1.1

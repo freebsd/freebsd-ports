@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Sorcer
 DISTVERSIONPREFIX=	release-

@@ -1,5 +1,4 @@
 # Created by: bmc@WillsCreek.COM
-# $FreeBSD$
 
 PORTNAME=	gnuls
 PORTVERSION=	8.30

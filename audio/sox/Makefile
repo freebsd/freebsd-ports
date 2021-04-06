@@ -1,5 +1,4 @@
 # Created by: torstenb
-# $FreeBSD$
 
 PORTNAME=	sox
 PORTVERSION=	14.4.2

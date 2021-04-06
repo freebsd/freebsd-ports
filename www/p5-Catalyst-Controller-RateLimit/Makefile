@@ -1,5 +1,4 @@
 # Created by: andrey@kostenko.name
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Controller-RateLimit
 PORTVERSION=	0.28

@@ -1,5 +1,4 @@
 # Created by: Johannes Jost Meixner <xmj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sass-rails
 PORTVERSION=	6.0.0

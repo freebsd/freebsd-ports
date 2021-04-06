@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	festlex-oald
 PORTVERSION=	1.4.1

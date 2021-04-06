@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nanotime
 PORTVERSION=	0.5.2

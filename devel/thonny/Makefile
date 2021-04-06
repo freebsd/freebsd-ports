@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	thonny
 PORTVERSION=	3.3.5

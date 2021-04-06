@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	distel
 PORTVERSION=	4.1.1

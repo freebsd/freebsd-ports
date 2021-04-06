@@ -1,5 +1,4 @@
 # Created by: Daniel O'Connor <darius@dons.net.au>
-# $FreeBSD$
 
 PORTNAME=	pfstools
 DISTVERSION=	2.1.0

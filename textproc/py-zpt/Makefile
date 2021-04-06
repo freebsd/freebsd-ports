@@ -1,5 +1,4 @@
 # Created by: Benno Rice <benno@jeamland.net>
-# $FreeBSD$
 
 PORTNAME=	zpt
 PORTVERSION=	2.5

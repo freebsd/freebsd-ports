@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	TAP-Harness-JUnit
 PORTVERSION=	0.42

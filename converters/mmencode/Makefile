@@ -1,5 +1,4 @@
 # Created by: kbyanc
-# $FreeBSD$
 
 PORTNAME=	mmencode
 PORTVERSION=	2.7

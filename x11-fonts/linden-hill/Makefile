@@ -1,5 +1,4 @@
 # Created by: Florian Limberger <flo@snakeoilproductions.net>
-# $FreeBSD$
 
 PORTNAME=	linden-hill
 DISTVERSION=	g20110526

@@ -1,5 +1,4 @@
 # Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	semi
 PORTVERSION=	${SEMI_VER}.${SNAPDATE}

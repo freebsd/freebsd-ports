@@ -1,5 +1,4 @@
 # Created by: Will Andrews <andrews@technologist.com>
-# $FreeBSD$
 
 PORTNAME=	psh
 PORTVERSION=	1.8.1

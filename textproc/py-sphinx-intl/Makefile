@@ -1,5 +1,4 @@
 # Created by: Kris Moore <kmoore@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sphinx-intl
 PORTVERSION=	0.9.5

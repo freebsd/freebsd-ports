@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	verboselogs
 PORTVERSION=	1.7

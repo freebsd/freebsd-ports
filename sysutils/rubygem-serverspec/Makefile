@@ -1,5 +1,4 @@
 # Created by: Yuichiro NAITO <naito.yuichiro@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	serverspec
 PORTVERSION=	2.41.5

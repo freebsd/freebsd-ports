@@ -1,5 +1,4 @@
 # Created by: Eric A. Griff <eagriff@global2000.net>
-# $FreeBSD$
 
 PORTNAME=	apc
 PORTVERSION=	1.0

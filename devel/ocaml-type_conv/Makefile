@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <stas@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	type_conv
 PORTVERSION=	113.00.02

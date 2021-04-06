@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	inih
 DISTVERSIONPREFIX=	r

@@ -1,5 +1,4 @@
 # Created by: Sofian Brabez <sbz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	phabricator
 PORTVERSION=	0.8.1

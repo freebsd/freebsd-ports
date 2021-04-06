@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mmap2
 PORTVERSION=	2.2.9

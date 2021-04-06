@@ -1,5 +1,4 @@
 # Created by: stas
-# $FreeBSD$
 
 PORTNAME=	dm-postgres-adapter
 PORTVERSION=	1.2.0

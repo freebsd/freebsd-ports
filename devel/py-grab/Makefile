@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grab
 PORTVERSION=	0.6.41

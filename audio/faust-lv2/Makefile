@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	faust
 DISTVERSION=	1.4.20180118

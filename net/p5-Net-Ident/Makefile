@@ -1,5 +1,4 @@
 # Created by: kai
-# $FreeBSD$
 
 PORTNAME=	Net-Ident
 PORTVERSION=	1.23

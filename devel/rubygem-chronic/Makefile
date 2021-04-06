@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chronic
 PORTVERSION=	0.10.2

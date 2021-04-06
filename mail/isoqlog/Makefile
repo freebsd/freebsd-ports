@@ -1,5 +1,4 @@
 # Created by: ofsen@enderunix.org
-# $FreeBSD$
 
 PORTNAME=	isoqlog
 PORTVERSION=	2.2.1

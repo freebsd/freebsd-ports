@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	jpeginfo
 PORTVERSION=	1.6.1

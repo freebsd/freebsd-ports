@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lineedit
 PORTVERSION=	0.1.6

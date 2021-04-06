@@ -1,5 +1,4 @@
 # Created by: Evgeniy Kosov <evgeniy@kosov.su>
-# $FreeBSD$
 
 PORTNAME=	Getopt-Compact
 PORTVERSION=	0.04

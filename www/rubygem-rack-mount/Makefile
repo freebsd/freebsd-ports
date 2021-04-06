@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rack-mount
 PORTVERSION=	0.8.3

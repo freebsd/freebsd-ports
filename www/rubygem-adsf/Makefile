@@ -1,5 +1,4 @@
 # Created by: Douglas Thrift <douglas@douglasthrift.net>
-# $FreeBSD$
 
 PORTNAME=	adsf
 PORTVERSION=	1.4.1

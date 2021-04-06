@@ -1,5 +1,4 @@
 # Created by: Romain Tartiere <romain@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dot2tex
 PORTVERSION=	2.11.3

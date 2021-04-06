@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	soupsieve
 PORTVERSION=	2.0.1

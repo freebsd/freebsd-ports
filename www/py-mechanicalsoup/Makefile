@@ -1,5 +1,4 @@
 # Created by: Thomas Zander <riggs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mechanicalsoup
 PORTVERSION=	0.12.0

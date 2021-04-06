@@ -1,5 +1,4 @@
 # Created by: Koichiro IWAO <meta@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	awesome_print
 PORTVERSION=	1.8.0

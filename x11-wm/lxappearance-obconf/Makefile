@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	lxappearance-obconf
 PORTVERSION=	0.2.3

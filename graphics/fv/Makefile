@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <ip@doom.homeunix.org>
-# $FreeBSD$
 
 PORTNAME=	fv
 PORTVERSION=	1.03

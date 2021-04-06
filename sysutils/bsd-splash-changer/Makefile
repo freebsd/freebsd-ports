@@ -1,5 +1,4 @@
 # Created by: Martin Otto
-# $FreeBSD$
 
 PORTNAME=	bsd-splash-changer
 PORTVERSION=	060211

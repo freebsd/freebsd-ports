@@ -1,5 +1,4 @@
 # Created by: jmacd
-# $FreeBSD$
 
 PORTNAME=	xpilot
 PORTVERSION=	4.5.5

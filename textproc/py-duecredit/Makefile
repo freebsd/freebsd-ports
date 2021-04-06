@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	duecredit
 DISTVERSION=	0.8.1

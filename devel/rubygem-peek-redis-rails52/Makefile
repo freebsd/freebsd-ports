@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	peek-redis
 PORTVERSION=	1.2.0

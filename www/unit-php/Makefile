@@ -1,5 +1,4 @@
 # Created by: Li-Wen Hsu <lwhsu@FreeBSD.org>
-# $FreeBSD$
 
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 

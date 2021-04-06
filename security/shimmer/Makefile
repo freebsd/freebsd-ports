@@ -1,5 +1,4 @@
 # Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	shimmer
 PORTVERSION=	0.1.0

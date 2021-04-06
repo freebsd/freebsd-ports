@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	ganttproject
 DISTVERSION=	2.8.11

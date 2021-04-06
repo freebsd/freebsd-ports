@@ -1,5 +1,4 @@
 # Created by: <dmagda+libsamplerate@ee.ryerson.ca>
-# $FreeBSD$
 
 PORTNAME=	libsamplerate
 DISTVERSION=	0.2.1

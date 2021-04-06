@@ -1,5 +1,4 @@
 # Created by: Michael Haro <mharo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Crypt-OpenPGP
 PORTVERSION=	1.12

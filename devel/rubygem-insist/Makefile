@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	insist
 PORTVERSION=	1.0.0

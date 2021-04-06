@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	genie
 PORTVERSION=	g2020082801

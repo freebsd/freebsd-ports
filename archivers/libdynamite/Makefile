@@ -1,5 +1,4 @@
 # Created by: Sam Lawrance <boris@brooknet.com.au>
-# $FreeBSD$
 
 PORTNAME=	libdynamite
 PORTVERSION=	0.1.1

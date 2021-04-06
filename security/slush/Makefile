@@ -1,5 +1,4 @@
 # Created by: shipley@dis.org
-# $FreeBSD$
 
 PORTNAME=	slush
 PORTVERSION=	0.1.1

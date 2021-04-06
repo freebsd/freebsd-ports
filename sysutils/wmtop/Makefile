@@ -1,5 +1,4 @@
 # Created by: Dan Piponi <wmtop@tanelorn.demon.co.uk>
-# $FreeBSD$
 
 PORTNAME=	wmtop
 PORTVERSION=	0.84

@@ -1,5 +1,4 @@
 # Created by: J.R. Oldroyd <fbsd@opal.com>
-# $FreeBSD$
 
 PORTNAME=	assp
 PORTVERSION=	1.9.9.14158

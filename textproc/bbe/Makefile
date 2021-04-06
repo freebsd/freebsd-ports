@@ -1,5 +1,4 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
-# $FreeBSD$
 
 PORTNAME=	bbe
 PORTVERSION=	0.2.2

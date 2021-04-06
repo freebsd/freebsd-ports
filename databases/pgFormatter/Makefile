@@ -1,5 +1,4 @@
 # Created by: Jov amutu@amutu.com
-# $FreeBSD$
 
 PORTNAME=	pgFormatter
 PORTVERSION=	5.0

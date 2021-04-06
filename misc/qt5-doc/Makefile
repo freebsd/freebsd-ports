@@ -1,5 +1,4 @@
 # Created by: Marie Loise Nolden <loise@kde.org>
-# $FreeBSD$
 
 # Lock the port at 5.12.2 due to distfile changes: At the moment it seems like
 # the documentation is no longer availble as a single tarball. So while we try

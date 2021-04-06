@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	email_reply_parser
 PORTVERSION=	0.5.9

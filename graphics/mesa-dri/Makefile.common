@@ -8,8 +8,6 @@
 #    - graphics/mesa-dri
 #    - graphics/mesa-libs
 #    - lang/clover
-#
-# $FreeBSD$
 
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}

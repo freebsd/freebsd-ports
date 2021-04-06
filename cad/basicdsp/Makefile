@@ -1,5 +1,4 @@
 # Created by: Diane Bruce <db@db.net>
-# $FreeBSD$
 
 PORTNAME=	basicdsp
 PORTVERSION=	1.01

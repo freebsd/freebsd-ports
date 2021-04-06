@@ -1,5 +1,4 @@
 # Created by: Martin Dieringer <martin.dieringer@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	mupdf
 DISTVERSION=	1.18.0

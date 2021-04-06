@@ -1,5 +1,4 @@
 # Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-# $FreeBSD$
 
 PORTNAME=	omniauth-saml
 PORTVERSION=	1.10.1

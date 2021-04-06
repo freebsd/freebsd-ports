@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Module-Pluggable
 PORTVERSION=	5.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Horde_ActiveSync
 DISTVERSION=	2.41.4

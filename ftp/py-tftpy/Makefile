@@ -1,5 +1,4 @@
 # Created by: Ju Pengfei <jupengfei@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	tftpy
 PORTVERSION=	0.8.0

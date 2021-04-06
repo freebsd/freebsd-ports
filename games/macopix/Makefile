@@ -1,5 +1,4 @@
 # Created by: Shinya Esu <esu@yk.rim.or.jp>
-# $FreeBSD$
 
 PORTNAME=	macopix
 PORTVERSION=	1.7.4

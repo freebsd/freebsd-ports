@@ -1,5 +1,4 @@
 # Created by: Roger Hardiman <roger@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	ptlib
 PORTVERSION=	2.10.11

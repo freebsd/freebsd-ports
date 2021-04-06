@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Text-Distill
 PORTVERSION=	0.2

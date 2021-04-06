@@ -1,5 +1,4 @@
 # Created by: nork@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	ilmbase
 PORTVERSION=	2.5.5

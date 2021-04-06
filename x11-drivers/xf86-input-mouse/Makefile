@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xf86-input-mouse
 PORTVERSION=	1.9.3

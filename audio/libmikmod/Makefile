@@ -1,5 +1,4 @@
 # Created by: Michael Haro <mharo@area51.fremont.ca.us>
-# $FreeBSD$
 
 PORTNAME=	libmikmod
 PORTVERSION=	3.3.11.1

@@ -1,5 +1,4 @@
 # Created by: Frank Wall <fw@moov.de>
-# $FreeBSD$
 
 PORTNAME=	AuthCAS
 PORTVERSION=	1.6

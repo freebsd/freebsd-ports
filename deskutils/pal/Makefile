@@ -1,5 +1,4 @@
 # Created by: Herbert J. Skuhra <h.skuhra@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	pal
 PORTVERSION=	0.4.3

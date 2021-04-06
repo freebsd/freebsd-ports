@@ -1,5 +1,4 @@
 # Created by: citrin+bsd@citrin.ru
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Controller-SOAP
 PORTVERSION=	1.25

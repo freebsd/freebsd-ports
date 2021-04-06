@@ -1,5 +1,4 @@
 # Created by: Wen Heping
-# $FreeBSD$
 
 PORTNAME=	WebTest
 PORTVERSION=	2.0.32

@@ -1,5 +1,4 @@
 # Created by: buganini@gmail.com
-# $FreeBSD$
 
 PORTNAME=	libcue
 PORTVERSION=	2.1.0

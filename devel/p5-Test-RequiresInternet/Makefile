@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-RequiresInternet
 PORTVERSION=	0.05

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	math
 DISTVERSIONPREFIX=	v

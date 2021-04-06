@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Encode-DoubleEncodedUTF8
 PORTVERSION=	0.05

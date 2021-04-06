@@ -1,5 +1,4 @@
 # Created by: dds
-# $FreeBSD$
 
 PORTNAME=	socketpipe
 PORTVERSION=	1.10

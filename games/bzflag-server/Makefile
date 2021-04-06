@@ -1,5 +1,4 @@
 # Created by: Kevin Zheng <kevinz5000@gmail.com>
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-server
 CONFLICTS=	bzflag-2.*

@@ -1,5 +1,4 @@
 # Created by: Allie Micka <allie@pajunas.com>
-# $FreeBSD$
 
 PORTNAME=	pglogd
 PORTVERSION=	2.3

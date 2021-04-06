@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-hatari
 PORTVERSION=	0.20210127

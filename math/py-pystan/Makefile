@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pystan
 PORTVERSION=	2.19.0.0

@@ -1,5 +1,4 @@
 # Created by: mikeh@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	check
 PORTVERSION=	0.15.2

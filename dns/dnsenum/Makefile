@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dnsenum
 PORTVERSION=	1.2.4.2

@@ -1,5 +1,4 @@
 # Created by: Ayumi M <ayu@commun.jp>
-# $FreeBSD$
 
 PORTNAME=	packddir
 PORTVERSION=	0.0.6

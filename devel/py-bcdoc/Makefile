@@ -1,5 +1,4 @@
 # Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-# $FreeBSD$
 
 PORTNAME=	bcdoc
 PORTVERSION=	0.16.0

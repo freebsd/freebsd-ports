@@ -1,5 +1,4 @@
 # Created by: Stas Timokhin <devel@stasyan.com>
-# $FreeBSD$
 
 PORTNAME=	openomf
 PORTVERSION=	0.6.5

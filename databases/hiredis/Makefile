@@ -1,5 +1,4 @@
 # Created by: Grzegorz Blach <gblach@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hiredis
 PORTVERSION=	0.13.3

@@ -1,5 +1,4 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	opencc
 PORTVERSION=	1.0.5

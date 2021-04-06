@@ -1,5 +1,4 @@
 # Created by: Remington Lang <MrL0Lz@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	915resolution
 PORTVERSION=	0.5.3

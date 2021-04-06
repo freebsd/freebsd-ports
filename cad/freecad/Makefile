@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	FreeCAD
 DISTVERSION=	0.19.1

@@ -1,5 +1,4 @@
 # Created by: Janky Jay <ek@purplehat.org>
-# $FreeBSD$
 
 PORTNAME=	maia
 DISTVERSION=	1.0.4

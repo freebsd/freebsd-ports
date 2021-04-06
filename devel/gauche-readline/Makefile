@@ -1,5 +1,4 @@
 # Created by: Erik Greenwald <erik@smluc.org>
-# $FreeBSD$
 
 PORTNAME=	readline
 PORTVERSION=	0.1

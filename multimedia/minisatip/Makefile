@@ -1,5 +1,4 @@
 # Created by: Bernhard Froehlich <decke@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	minisatip
 PORTVERSION=	1.0.4

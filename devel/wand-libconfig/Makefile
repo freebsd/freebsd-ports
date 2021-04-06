@@ -1,5 +1,4 @@
 # Created by: Matt Peterson <matt@peterson.org>
-# $FreeBSD$
 
 PORTNAME=	libconfig
 PORTVERSION=	1.0.5

@@ -1,5 +1,4 @@
 # Created by: Arnaud Launay <alaunay@hlfl.org>
-# $FreeBSD$
 
 PORTNAME=	hlfl
 PORTVERSION=	0.60.1

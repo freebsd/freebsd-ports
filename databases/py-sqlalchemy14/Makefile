@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sqlalchemy
 PORTVERSION=	1.4.0b3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-mysqld
 PORTVERSION=	0.17

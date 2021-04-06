@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	monitor-core
 PORTVERSION=	3.7.2

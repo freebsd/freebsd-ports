@@ -1,5 +1,4 @@
 # Created by: rhwang@bigpanda.com
-# $FreeBSD$
 
 PORTNAME=	most
 PORTVERSION=	5.1.0

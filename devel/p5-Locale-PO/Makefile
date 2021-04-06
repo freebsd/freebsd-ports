@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Locale-PO
 PORTVERSION=	0.27

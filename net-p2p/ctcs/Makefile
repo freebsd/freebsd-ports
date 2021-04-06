@@ -1,5 +1,4 @@
 # Created by: Dereckson <dereckson@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ctcs
 PORTVERSION=	1.4.1

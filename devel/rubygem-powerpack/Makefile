@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	powerpack
 PORTVERSION=	0.1.2

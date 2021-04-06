@@ -1,5 +1,4 @@
 # Created by: Silvio Ap Silva aka kanazuchi <alvolivre@live.com>
-# $FreeBSD$
 
 PORTNAME=	wmi-query
 PORTVERSION=	0.1.4

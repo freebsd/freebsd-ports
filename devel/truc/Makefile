@@ -1,5 +1,4 @@
 # Created by: Jan Siml <jsi@jules.de>
-# $FreeBSD$
 
 PORTNAME=	truc
 PORTVERSION=	0.12.0

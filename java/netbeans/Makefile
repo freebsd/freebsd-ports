@@ -1,5 +1,4 @@
 # Created by: olgeni@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	netbeans
 DISTVERSION=	11.3

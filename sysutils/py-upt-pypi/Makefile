@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	upt-pypi
 DISTVERSION=	0.5

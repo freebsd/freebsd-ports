@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kamerka
 DISTVERSION=	0.20

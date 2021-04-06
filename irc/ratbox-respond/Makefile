@@ -1,5 +1,4 @@
 # Created by: Shaun Amott <shaun@inerd.com>
-# $FreeBSD$
 
 PORTNAME=	ratbox-respond
 PORTVERSION=	1.0

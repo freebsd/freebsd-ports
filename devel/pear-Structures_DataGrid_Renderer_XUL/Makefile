@@ -1,5 +1,4 @@
 # Created by: Nick Hilliard <nick@foobar.org>
-# $FreeBSD$
 
 PORTNAME=	Structures_DataGrid_Renderer_XUL
 PORTVERSION=	0.1.3

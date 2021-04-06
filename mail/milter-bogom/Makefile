@@ -1,5 +1,4 @@
 # Created by: Victor Balada Diaz <victor@bsdes.net>
-# $FreeBSD$
 
 PORTNAME=	bogom
 PORTVERSION=	1.9.2

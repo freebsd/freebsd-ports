@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	certbot-dns-cloudxns
 PORTVERSION=	${ACME_VERSION}

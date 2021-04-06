@@ -1,5 +1,4 @@
 # Created by: gurkan@phys.ethz.ch
-# $FreeBSD$
 
 PORTNAME=	camera
 PORTVERSION=	0.8

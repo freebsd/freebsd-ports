@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcroco
 PORTVERSION=	0.6.12

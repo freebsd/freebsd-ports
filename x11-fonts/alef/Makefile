@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alef
 PORTVERSION=	1.0

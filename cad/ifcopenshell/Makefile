@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ifcopenshell
 DISTVERSIONPREFIX=	v

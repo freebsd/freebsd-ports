@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	UNIVERSAL-require
 PORTVERSION=	0.18

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	shishi
 PORTVERSION=	1.0.2

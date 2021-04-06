@@ -1,5 +1,4 @@
 # Created by: jesper@jdn.dk
-# $FreeBSD$
 
 PORTNAME=	sipp
 PORTVERSION=	3.5.1

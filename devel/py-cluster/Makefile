@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cluster
 PORTVERSION=	1.4.1

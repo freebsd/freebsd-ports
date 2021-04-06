@@ -1,5 +1,4 @@
 # Created by: Mike Buchanon <buchanon@msu.edu>
-# $FreeBSD$
 
 PORTNAME=	bcpp
 PORTVERSION=	20210108

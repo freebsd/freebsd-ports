@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Flask-Mail
 PORTVERSION=	0.9.1

@@ -1,5 +1,4 @@
 # Created by: Andreas Fehlner (fehlner@gmx.de)
-# $FreeBSD$
 
 PORTNAME=	usermatic
 PORTVERSION=	0.6.1

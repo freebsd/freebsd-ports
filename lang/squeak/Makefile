@@ -1,5 +1,4 @@
 # Created by: Roland Jesse <roland.jesse@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	squeak
 PORTVERSION=	4.10.2

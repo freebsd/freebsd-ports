@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Paranoid-Log-Syslog
 PORTVERSION=	2.00

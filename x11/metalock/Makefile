@@ -1,5 +1,4 @@
 # Created by: Timothy Beyer <beyert@cs.ucr.edu>
-# $FreeBSD$
 
 PORTNAME=	metalock
 PORTVERSION=	0.8.0

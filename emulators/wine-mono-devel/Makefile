@@ -1,5 +1,4 @@
 # Created by: David Naylor <naylor.b.david@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wine-mono
 DISTVERSION=	6.0.0

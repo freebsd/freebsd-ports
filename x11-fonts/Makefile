@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = X11 fonts and font utilities
 

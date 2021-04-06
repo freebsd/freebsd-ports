@@ -1,5 +1,4 @@
 # Created by: ports@c0decafe.net
-# $FreeBSD$
 
 PORTNAME=	App-perlbrew
 PORTVERSION=	0.91

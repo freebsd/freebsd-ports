@@ -1,5 +1,4 @@
 # Created by: spn
-# $FreeBSD$
 
 PORTNAME=	fluxbox
 PORTVERSION=	1.3.7

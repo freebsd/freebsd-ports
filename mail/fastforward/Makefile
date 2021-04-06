@@ -1,5 +1,4 @@
 # Created by: Uffe Jakobsen <uffe@uffe.org>
-# $FreeBSD$
 
 PORTNAME=	fastforward
 PORTVERSION=	0.51

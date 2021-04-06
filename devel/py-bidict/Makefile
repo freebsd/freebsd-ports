@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bidict
 PORTVERSION=	0.18.0

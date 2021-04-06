@@ -1,5 +1,4 @@
 # Created by: asaddi@philosophysw.com
-# $FreeBSD$
 
 PORTNAME=	sha
 PORTVERSION=	1.0.4

@@ -1,5 +1,4 @@
 # Created by: Leland Wang <llwang@infor.org>
-# $FreeBSD$
 
 PORTNAME=	buddy
 PORTVERSION=	2.4

@@ -1,5 +1,4 @@
 # Created by: Rod Person <rodperson@rodperson.com>
-# $FreeBSD$
 
 PORTNAME=	dunst
 DISTVERSIONPREFIX=	v

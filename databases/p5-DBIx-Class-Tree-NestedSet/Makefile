@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-Tree-NestedSet
 PORTVERSION=	0.10

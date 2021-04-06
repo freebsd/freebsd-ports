@@ -1,5 +1,4 @@
 # Created by: Joseph Scott <joseph@randomnetworks.com>
-# $FreeBSD$
 
 PORTNAME=	webresolve
 PORTVERSION=	0.2.0

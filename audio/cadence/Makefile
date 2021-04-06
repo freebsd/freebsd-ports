@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cadence
 DISTVERSIONPREFIX=	v

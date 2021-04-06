@@ -1,5 +1,4 @@
 # Created by: ugen
-# $FreeBSD$
 
 PORTNAME=	s3mod
 PORTVERSION=	1.09

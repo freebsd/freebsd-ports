@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libpotrace
 PORTVERSION=	1.16

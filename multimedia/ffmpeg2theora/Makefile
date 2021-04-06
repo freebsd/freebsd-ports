@@ -1,5 +1,4 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ffmpeg2theora
 PORTVERSION=	0.30

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mppp
 DISTVERSIONPREFIX=	v

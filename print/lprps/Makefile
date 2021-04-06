@@ -1,5 +1,4 @@
 # Created by: David O'Brien <obrien@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lprps
 PORTVERSION=	2.5

@@ -1,5 +1,4 @@
 # Created by: Rui Lopes <rui@ruilopes.com>
-# $FreeBSD$
 
 PORTNAME=	regexxer
 PORTVERSION=	0.10

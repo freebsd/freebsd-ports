@@ -1,5 +1,4 @@
 # Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-# $FreeBSD$
 
 PORTNAME=	devise-two-factor
 # 3.0.3 does not work with newer rails version, so downgrade here

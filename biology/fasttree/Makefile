@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	FastTree
 DISTVERSION=	2.1.10

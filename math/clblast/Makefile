@@ -1,5 +1,4 @@
 # Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	clblast
 PORTVERSION=	1.1.0

@@ -1,5 +1,4 @@
 # Created by: Wen Heping<wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	System-Command
 PORTVERSION=	1.121

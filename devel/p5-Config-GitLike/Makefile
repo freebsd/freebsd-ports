@@ -1,5 +1,4 @@
 # Created by: Baptiste Daroussin
-# $FreeBSD$
 
 PORTNAME=	Config-GitLike
 PORTVERSION=	1.18

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Amon2-Plugin-Web-MobileAgent
 PORTVERSION=	0.09

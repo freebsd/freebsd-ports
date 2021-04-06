@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	HTML_QuickForm_Livesearch
 PORTVERSION=	0.4.1

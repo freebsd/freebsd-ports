@@ -1,5 +1,4 @@
 # Created by: Daniel Bond
-# $FreeBSD$
 
 PORTNAME=	rsyncbackup
 PORTVERSION=	1.1

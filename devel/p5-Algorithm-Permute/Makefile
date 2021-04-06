@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Algorithm-Permute
 PORTVERSION=	0.16

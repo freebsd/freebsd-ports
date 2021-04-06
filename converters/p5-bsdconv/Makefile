@@ -1,5 +1,4 @@
 # Created by: buganini@gmail.com
-# $FreeBSD$
 
 PORTNAME=	bsdconv
 PORTVERSION=	11.3.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sphinxcontrib-serializinghtml
 PORTVERSION=	1.1.4

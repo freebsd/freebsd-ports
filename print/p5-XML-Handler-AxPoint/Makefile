@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	XML-Handler-AxPoint
 PORTVERSION=	1.5

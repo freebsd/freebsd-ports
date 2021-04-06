@@ -1,5 +1,4 @@
 # Created by: Scott Flatman <sf@dsinw.com>
-# $FreeBSD$
 
 PORTNAME=	maxima
 PORTVERSION=	5.44.0

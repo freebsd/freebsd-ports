@@ -1,5 +1,4 @@
 # Created by: Rob Evers <rob@debank.tv>
-# $FreeBSD$
 
 PORTNAME=	moregroupware
 PORTVERSION=	0.7.4

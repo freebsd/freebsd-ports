@@ -1,5 +1,4 @@
 # Created by: Dan Rench <citric@cubicone.tmetic.com>
-# $FreeBSD$
 
 PORTNAME=	Regexp-Grammars
 PORTVERSION=	1.057

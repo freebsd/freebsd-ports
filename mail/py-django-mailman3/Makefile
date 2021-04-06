@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-mailman3
 PORTVERSION=	1.3.4

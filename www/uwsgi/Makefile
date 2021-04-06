@@ -1,5 +1,4 @@
 # Created by: Daniel Gerzo <danger@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	uwsgi
 PORTVERSION=	2.0.19.1

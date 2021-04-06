@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <stas@core.310.ru>
-# $FreeBSD$
 
 PORTNAME=	teco
 PORTVERSION=	0398

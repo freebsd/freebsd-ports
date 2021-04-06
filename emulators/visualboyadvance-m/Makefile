@@ -1,5 +1,4 @@
 # Created by: Nicole Reid <root@cooltrainer.org>
-# $FreeBSD$
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	2.0.0b2

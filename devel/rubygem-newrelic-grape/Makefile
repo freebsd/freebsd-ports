@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	newrelic-grape
 PORTVERSION=	2.1.0

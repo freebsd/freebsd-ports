@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kile
 DISTVERSIONPREFIX=	v

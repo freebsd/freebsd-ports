@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	flask-sqlalchemy
 PORTVERSION=	2.4.4

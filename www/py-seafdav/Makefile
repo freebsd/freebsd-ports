@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	seafdav
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Dave Grochowski
-# $FreeBSD$
 
 PORTNAME=	xorg-cf-files
 PORTVERSION=	1.0.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	eggtestinfo
 PORTVERSION=	0.3

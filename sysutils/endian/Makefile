@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	endian
 PORTVERSION=	1.1

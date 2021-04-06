@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ruby_expect
 PORTVERSION=	1.7.4

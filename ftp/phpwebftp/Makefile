@@ -1,5 +1,4 @@
 # Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-# $FreeBSD$
 
 PORTNAME=	phpwebftp
 PORTVERSION=	3.3b

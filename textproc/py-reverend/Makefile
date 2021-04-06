@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale	<nivit@email.it>
-# $FreeBSD$
 
 PORTNAME=	reverend
 PORTVERSION=	0.3

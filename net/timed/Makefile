@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	timed
 PORTVERSION=	8.1

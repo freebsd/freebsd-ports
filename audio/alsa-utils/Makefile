@@ -1,5 +1,4 @@
 # Created by: Aragon Gouveia <aragon@phat.za.net>
-# $FreeBSD$
 
 PORTNAME=	alsa-utils
 PORTVERSION=	1.1.2

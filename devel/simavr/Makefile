@@ -1,5 +1,4 @@
 # Created by: Felix Palmen <felix@palmen-it.de>
-# $FreeBSD$
 
 PORTNAME=	simavr
 PORTVERSION=	1.6

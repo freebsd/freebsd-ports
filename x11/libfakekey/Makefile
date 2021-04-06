@@ -1,5 +1,4 @@
 # Created by: Tobias Berner <tcberner@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libfakekey
 PORTVERSION=	0.1

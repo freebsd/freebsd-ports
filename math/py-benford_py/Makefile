@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	benford_py
 DISTVERSION=	0.3.3

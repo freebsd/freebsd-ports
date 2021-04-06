@@ -1,5 +1,4 @@
 # Created by: Ben Woods <woodsb02@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	distro
 PORTVERSION=	1.5.0

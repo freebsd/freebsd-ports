@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME=	grx
 PORTVERSION=	2.4.9

@@ -1,5 +1,4 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	XML-RSS
 PORTVERSION=	1.62

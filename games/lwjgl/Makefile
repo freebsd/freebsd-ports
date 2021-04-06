@@ -1,5 +1,4 @@
 # Created by: loader <loader@freebsdmall.com>
-# $FreeBSD$
 
 PORTNAME=	lwjgl
 DISTVERSION=	2.9.4.20161208

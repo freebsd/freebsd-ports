@@ -1,5 +1,4 @@
 # Created by: Alexey Dokuchaev <danfe@regency.nsu.ru>
-# $FreeBSD$
 
 PORTNAME=	leaktracer
 PORTVERSION=	2.4

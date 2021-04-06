@@ -1,5 +1,4 @@
 # Created by: Michael Haro <mharo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Crypt-DSA
 PORTVERSION=	1.17

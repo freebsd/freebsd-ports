@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 VOICE=	cmu_us_bdl_arctic
 

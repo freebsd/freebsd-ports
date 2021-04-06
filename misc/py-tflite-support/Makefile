@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tflite-support
 DISTVERSION=	0.1.0a1

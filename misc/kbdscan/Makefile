@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kbdscan
 PORTVERSION=	20110507

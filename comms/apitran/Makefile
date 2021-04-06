@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	apitran
 PORTVERSION=	g20180926

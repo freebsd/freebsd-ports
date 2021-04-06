@@ -1,5 +1,4 @@
 # Created by: John-Mark Gurney <jmg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tcpcrypt
 PORTVERSION=	0.5

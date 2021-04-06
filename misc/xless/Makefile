@@ -1,5 +1,4 @@
 # Created by: Conrad Sabatier <conrads@home.com>
-# $FreeBSD$
 
 PORTNAME=	xless
 PORTVERSION=	1.7

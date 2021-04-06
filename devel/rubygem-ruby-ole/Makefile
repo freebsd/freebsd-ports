@@ -1,5 +1,4 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
-# $FreeBSD$
 
 PORTNAME=	ruby-ole
 PORTVERSION=	1.2.12.1

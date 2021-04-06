@@ -1,5 +1,4 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD$
 
 PORTNAME=	zint
 PORTVERSION=	2.9.0

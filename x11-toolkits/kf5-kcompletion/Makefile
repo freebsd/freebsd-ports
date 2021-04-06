@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kcompletion
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

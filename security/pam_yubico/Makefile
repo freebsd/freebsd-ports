@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pam_yubico
 PORTVERSION=	2.26

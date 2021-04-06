@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	underscore-rails
 PORTVERSION=	1.8.3

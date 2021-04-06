@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-MessagePack
 PORTVERSION=	0.19

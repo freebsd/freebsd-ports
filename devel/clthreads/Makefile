@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clthreads
 DISTVERSION=	2.4.2

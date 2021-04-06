@@ -1,5 +1,4 @@
 # Created by: Neil Blakey-Milner
-# $FreeBSD$
 
 PORTNAME=	vsftpd
 PORTVERSION=	3.0.3

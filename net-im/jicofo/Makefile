@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jicofo
 DISTVERSION=	1.0-555

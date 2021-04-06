@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libgnuregex
 PORTVERSION=	6.0

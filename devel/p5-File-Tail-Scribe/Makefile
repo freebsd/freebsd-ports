@@ -1,5 +1,4 @@
 # Created by: Hung-Yi Chen <gaod@hychen.org>
-# $FreeBSD$
 
 PORTNAME=	File-Tail-Scribe
 PORTVERSION=	0.13

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	coverage
 PORTVERSION=	4.5.4

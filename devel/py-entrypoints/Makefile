@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	entrypoints
 PORTVERSION=	0.3

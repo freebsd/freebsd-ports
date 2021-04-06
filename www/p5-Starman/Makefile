@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Starman
 PORTVERSION=	0.4014

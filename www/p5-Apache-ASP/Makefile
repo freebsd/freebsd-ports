@@ -1,5 +1,4 @@
 # Created by: Igor Vinokurov <igor@zynaps.ru>
-# $FreeBSD$
 
 PORTNAME=	Apache-ASP
 PORTVERSION=	2.63

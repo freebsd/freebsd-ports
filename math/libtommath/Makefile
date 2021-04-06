@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libtommath
 DISTVERSION=	1.2.0

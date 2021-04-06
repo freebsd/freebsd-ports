@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xclickroot
 DISTVERSIONPREFIX=	v

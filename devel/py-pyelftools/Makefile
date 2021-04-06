@@ -1,5 +1,4 @@
 # Created by: antoine@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	pyelftools
 PORTVERSION=	0.26

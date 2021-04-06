@@ -1,5 +1,4 @@
 # Created by: searle
-# $FreeBSD$
 
 PORTNAME=	stars
 PORTVERSION=	1.0

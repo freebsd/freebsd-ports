@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rtsx
 DISTVERSION=	${GH_TAGNAME}

@@ -1,5 +1,4 @@
 # Created by: jasone
-# $FreeBSD$
 
 PORTNAME=	onyx
 PORTVERSION=	5.1.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	plasma
 DISTVERSION=	g20180708

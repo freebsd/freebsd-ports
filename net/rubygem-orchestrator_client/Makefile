@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	orchestrator_client
 PORTVERSION=	0.5.1

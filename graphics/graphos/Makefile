@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	graphos
 PORTVERSION=	0.7

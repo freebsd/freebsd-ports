@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	influxdb
 DISTVERSIONPREFIX=	v

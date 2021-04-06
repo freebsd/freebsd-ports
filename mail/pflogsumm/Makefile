@@ -1,5 +1,4 @@
 # Created by: Sergey A. Osokin <osa@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pflogsumm
 PORTVERSION=	1.1.5

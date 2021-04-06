@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	diff
 PORTVERSION=	20120705

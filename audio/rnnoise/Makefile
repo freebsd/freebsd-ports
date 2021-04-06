@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rnnoise
 DISTVERSION=	g20210122

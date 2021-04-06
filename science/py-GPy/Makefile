@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	GPy
 DISTVERSION=	1.9.9

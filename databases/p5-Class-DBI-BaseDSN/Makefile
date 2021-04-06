@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-BaseDSN
 PORTVERSION=	1.22

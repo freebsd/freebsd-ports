@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	akonadi-search
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

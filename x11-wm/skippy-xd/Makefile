@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@ahze.net>
-# $FreeBSD$
 
 PORTNAME=	skippy-xd
 PORTVERSION=	0.5.0

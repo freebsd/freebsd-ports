@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale	<nivit@email.it>
-# $FreeBSD$
 
 PORTNAME=	drjava
 DISTVERSION=	20140826-r5761

@@ -1,5 +1,4 @@
 # Created by: peter
-# $FreeBSD$
 
 PORTNAME=	paicc
 PORTVERSION=	1.4

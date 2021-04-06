@@ -1,5 +1,4 @@
 # Created by: Tom Hukins <tom@eborcom.com>
-# $FreeBSD$
 
 # You can define the following to enable further compile time
 # customizations:

@@ -1,5 +1,4 @@
 # Created by: Po-Chien Lin <linpc@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	syntax
 PORTVERSION=	0.004

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sirc
 PORTVERSION=	2.211

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tamzen-font
 DISTVERSIONPREFIX=	Tamzen-

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ox
 PORTVERSION=	2.10.0

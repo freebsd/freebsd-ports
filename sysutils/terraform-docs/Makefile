@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	terraform-docs
 PORTVERSION=	0.11.2

@@ -1,5 +1,4 @@
 # Created by: Noritaka Ishizumi <graphite@taurus.bekkoame.or.jp>
-# $FreeBSD$
 
 PORTNAME=	suck
 PORTVERSION=	4.3.4

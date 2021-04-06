@@ -1,5 +1,4 @@
 # Created by: Philip Paeps <philip@paeps.cx>
-# $FreeBSD$
 
 PORTNAME=	crip
 PORTVERSION=	3.9

@@ -1,5 +1,4 @@
 # Created by: erwin@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-Bignum
 PORTVERSION=	0.09

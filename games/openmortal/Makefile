@@ -1,5 +1,4 @@
 # Created by: krion@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	openmortal
 PORTVERSION=	0.7

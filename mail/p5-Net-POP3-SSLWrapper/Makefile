@@ -1,5 +1,4 @@
 # Created by: johnpupu <johnpupu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Net-POP3-SSLWrapper
 PORTVERSION=	0.06

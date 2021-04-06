@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	JSON-DWIW
 PORTVERSION=	0.47

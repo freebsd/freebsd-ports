@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	speech-dispatcher
 DISTVERSION=	0.8.8

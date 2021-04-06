@@ -1,5 +1,4 @@
 # Created by: janek@gaja.ipan.lublin.pl
-# $FreeBSD$
 
 PORTNAME=	xspread
 PORTVERSION=	3.1.1c

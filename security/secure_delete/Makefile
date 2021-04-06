@@ -1,5 +1,4 @@
 # Created by: Vaida Bogdan <vaida.bogdan@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	secure_delete
 PORTVERSION=	3.1

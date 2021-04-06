@@ -1,5 +1,4 @@
 # Created by: uri@keves.org
-# $FreeBSD$
 
 PORTNAME=	fonteditfs
 PORTVERSION=	1.2

@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	CGI-Application
 PORTVERSION=	4.61

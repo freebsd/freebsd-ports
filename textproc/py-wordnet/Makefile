@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang <perky@fallin.lv>
-# $FreeBSD$
 
 PORTNAME=	wordnet
 PORTVERSION=	2.0.1

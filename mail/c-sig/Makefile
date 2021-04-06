@@ -1,5 +1,4 @@
 # Created by: KIMURA Yasuhiro <yasu@utahime.org>
-# $FreeBSD$
 
 PORTNAME=	c-sig
 PORTVERSION=	3.8.0.1

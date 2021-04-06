@@ -1,5 +1,4 @@
 # Created by: dbader@ece.unm.edu
-# $FreeBSD$
 
 PORTNAME=	mpich2
 DISTVERSION=	1.5

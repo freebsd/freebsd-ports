@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opencv
 DISTVERSION=	4.5.1

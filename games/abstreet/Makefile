@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	abstreet
 DISTVERSIONPREFIX=	v

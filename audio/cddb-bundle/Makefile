@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cddb
 PORTVERSION=	0.2

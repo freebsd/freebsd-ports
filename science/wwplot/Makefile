@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wwplot
 DISTVERSIONPREFIX=	v

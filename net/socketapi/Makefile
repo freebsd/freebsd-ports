@@ -1,5 +1,4 @@
 # Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
-# $FreeBSD$
 
 PORTNAME=	socketapi
 PORTVERSION=	2.2.16

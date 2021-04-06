@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	varnish
 PORTVERSION=	4.1.11

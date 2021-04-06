@@ -1,5 +1,4 @@
 # Created by: Bill "I hate Perl" Fumerola
-# $FreeBSD$
 
 PORTNAME=	Text-Template
 PORTVERSION=	1.59

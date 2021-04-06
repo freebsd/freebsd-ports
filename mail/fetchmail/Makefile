@@ -1,5 +1,4 @@
 # Created by: Ville Eerola <ve@sci.fi>
-# $FreeBSD$
 
 PORTNAME?=	fetchmail
 DISTVERSION=	6.4.18

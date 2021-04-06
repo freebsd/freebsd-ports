@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	merkletools
 DISTVERSION=	1.0.3

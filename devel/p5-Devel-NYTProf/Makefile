@@ -1,5 +1,4 @@
 # Created by: Vladimir Timofeev <vovkasm@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Devel-NYTProf
 PORTVERSION=	6.06

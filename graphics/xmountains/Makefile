@@ -1,5 +1,4 @@
 # Created by: proff@iq.org
-# $FreeBSD$
 
 PORTNAME=	xmountains
 PORTVERSION=	2.10

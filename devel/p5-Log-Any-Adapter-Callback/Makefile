@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Log-Any-Adapter-Callback
 PORTVERSION=	0.101

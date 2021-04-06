@@ -1,5 +1,4 @@
 # Created by: faulkner@mpd.tandem.com
-# $FreeBSD$
 
 PORTNAME=	rsynth
 PORTVERSION=	2.0

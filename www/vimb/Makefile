@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vimb
 DISTVERSION=	3.6.0

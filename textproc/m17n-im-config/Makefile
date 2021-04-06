@@ -1,5 +1,4 @@
 # Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-# $FreeBSD$
 
 PORTNAME=	m17n-im-config
 PORTVERSION=	0.9.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	validate_email
 DISTVERSION=	1.3

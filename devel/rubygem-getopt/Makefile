@@ -1,5 +1,4 @@
 # Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-# $FreeBSD$
 
 PORTNAME=	getopt
 PORTVERSION=	1.5.1

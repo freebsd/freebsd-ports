@@ -1,5 +1,4 @@
 # Created by: Bill Brinzer <bill.brinzer@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Controller-RequestToken
 PORTVERSION=	0.07

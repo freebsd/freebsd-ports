@@ -1,5 +1,4 @@
 # Created by: Alonso Cardenas <acm@FreeBSD.org>
-# $FreeBSD$
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|_NONSHARED||g' ${WRKSRC}/src/filed/Makefile.in

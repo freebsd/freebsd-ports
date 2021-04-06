@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	docker-credential-pass
 DISTVERSIONPREFIX=	v

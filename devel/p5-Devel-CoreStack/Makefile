@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-CoreStack
 PORTVERSION=	1.3

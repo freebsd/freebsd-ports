@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tagutil
 PORTVERSION=	3.1

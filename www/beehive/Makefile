@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	beehive
 DISTVERSIONPREFIX=	v

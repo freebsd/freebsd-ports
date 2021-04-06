@@ -1,5 +1,4 @@
 # Created by: Andrew Hsu <ahsu@users.sf.net>
-# $FreeBSD$
 
 PORTNAME=	rolo
 PORTVERSION=	011

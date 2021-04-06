@@ -1,5 +1,4 @@
 # Created by: h2
-# $FreeBSD$
 
 PORTNAME=	seqan
 DISTVERSION=	2.4.0

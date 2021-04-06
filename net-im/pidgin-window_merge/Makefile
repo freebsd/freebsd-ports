@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	window_merge
 PORTVERSION=	0.3

@@ -1,5 +1,4 @@
 # Created by: stb@lassitu.de
-# $FreeBSD$
 
 PORTNAME=	pngnq
 PORTVERSION=	1.1

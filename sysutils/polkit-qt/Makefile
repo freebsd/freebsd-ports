@@ -1,5 +1,4 @@
 # Created by: Dima Panov <fluffy@Fluffy.Khv.RU>
-# $FreeBSD$
 
 PORTNAME=	polkit-qt-1
 DISTVERSION=	0.113.0

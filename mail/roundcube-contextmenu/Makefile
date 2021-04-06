@@ -1,5 +1,4 @@
 # Created by: Alexander Moisseev <moiseev@mezonplus.ru>
-# $FreeBSD$
 
 PORTNAME=	contextmenu
 PORTVERSION=	3.2.1

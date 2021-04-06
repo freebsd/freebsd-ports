@@ -1,5 +1,4 @@
 # Created by: Pankov Pavel <pankov_p@mail.ru>
-# $FreeBSD$
 
 PORTNAME=	vnccrack
 PORTVERSION=	1.0.0

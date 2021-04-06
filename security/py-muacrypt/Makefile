@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	muacrypt
 PORTVERSION=	0.9.1

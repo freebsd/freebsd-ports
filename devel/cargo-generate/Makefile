@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cargo-generate
 DISTVERSIONPREFIX=	v

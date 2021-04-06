@@ -1,5 +1,4 @@
 # Created by: Roman Shterenzon <roman@xpert.com>
-# $FreeBSD$
 
 PORTNAME=	cryptcat
 PORTVERSION=	1.2.1

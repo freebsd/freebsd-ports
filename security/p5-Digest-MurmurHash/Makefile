@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Digest-MurmurHash
 PORTVERSION=	0.11

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pytest-httpbin
 DISTVERSION=	1.0.0

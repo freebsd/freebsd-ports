@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dictdiffer
 DISTVERSION=	0.8.1

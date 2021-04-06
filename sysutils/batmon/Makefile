@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	batmon
 PORTVERSION=	0.8

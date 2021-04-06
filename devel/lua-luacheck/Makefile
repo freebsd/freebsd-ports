@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	luacheck
 PORTVERSION=	0.25.g20200825

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		ikona
 DISTVERSION=		1.0

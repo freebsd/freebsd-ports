@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	termstyle
 PORTVERSION=	0.1.10

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ume
 PORTVERSION=	0.0.670

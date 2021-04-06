@@ -1,5 +1,4 @@
 # Created by: Dryice Liu
-# $FreeBSD$
 
 PORTNAME=	tcping
 PORTVERSION=	1.3.6

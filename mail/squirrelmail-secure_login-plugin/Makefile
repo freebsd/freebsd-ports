@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	secure_login
 PORTVERSION=	1.4

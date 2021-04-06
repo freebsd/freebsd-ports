@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pynvim
 DISTVERSION=	0.4.2

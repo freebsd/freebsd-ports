@@ -1,5 +1,4 @@
 # Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-# $FreeBSD$
 
 PORTNAME=	omniauth-auth0
 PORTVERSION=	2.0.0

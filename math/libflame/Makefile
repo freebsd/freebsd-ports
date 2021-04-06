@@ -1,5 +1,4 @@
 # Created by: bf@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	libflame
 DISTVERSION=	5.2.0

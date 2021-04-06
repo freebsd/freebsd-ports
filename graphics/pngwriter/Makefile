@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	pngwriter
 PORTVERSION=	0.7.0

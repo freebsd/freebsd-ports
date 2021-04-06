@@ -1,5 +1,4 @@
 # Created by: Lars Köller <Lars.Koeller@Uni-Bielefeld.DE>
-# $FreeBSD$
 
 PORTNAME=	apcctrl
 PORTVERSION=	0.8.21

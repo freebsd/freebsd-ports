@@ -1,5 +1,4 @@
 # Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
-# $FreeBSD$
 
 PORTNAME=	opendkim
 PORTVERSION=	2.10.3

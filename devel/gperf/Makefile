@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gperf
 PORTVERSION=	3.1

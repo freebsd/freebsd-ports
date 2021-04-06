@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libetonyek
 PORTVERSION=	0.1.9

@@ -1,5 +1,4 @@
 # Created by: Julien Laffaye <kimelto@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	bgs
 DISTVERSIONPREFIX=	v

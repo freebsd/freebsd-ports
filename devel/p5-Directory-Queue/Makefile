@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Directory-Queue
 PORTVERSION=	2.0

@@ -1,5 +1,4 @@
 # Created by: vanhu
-# $FreeBSD$
 
 # TODO: - libipsec issue ?
 #       - cleanup...

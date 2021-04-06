@@ -1,5 +1,4 @@
 # Created by: Zeus Panchenko <zeus@gnu.org.ua>
-# $FreeBSD$
 
 PORTNAME=	Array-Utils
 PORTVERSION=	0.5

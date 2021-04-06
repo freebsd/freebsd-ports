@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pymc3
 DISTVERSIONPREFIX=	v

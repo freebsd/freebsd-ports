@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas (<thierry@thomas.as>)
-# $FreeBSD$
 
 PORTNAME=	kronolith
 PORTVERSION=	4.2.29

@@ -1,5 +1,4 @@
 # Created by: Charlie & <root@dev2.rambler.ru>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Component-InstancePerContext
 PORTVERSION=	0.001001

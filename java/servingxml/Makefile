@@ -1,5 +1,4 @@
 # Created by: jpbeconne
-# $FreeBSD$
 
 PORTNAME=	servingxml
 PORTVERSION=	1.1.2

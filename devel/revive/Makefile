@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	revive
 DISTVERSIONPREFIX=	v

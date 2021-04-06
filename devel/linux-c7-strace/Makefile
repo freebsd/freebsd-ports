@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	strace
 PORTVERSION=	4.24

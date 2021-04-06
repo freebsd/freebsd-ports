@@ -1,5 +1,4 @@
 # Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-# $FreeBSD$
 
 PORTNAME=	slop
 PORTVERSION=	3.6.0

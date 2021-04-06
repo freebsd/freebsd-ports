@@ -1,5 +1,4 @@
 # Created by: Maxime Henrion <mux@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Math-BigInt-GMP
 PORTVERSION=	1.6007

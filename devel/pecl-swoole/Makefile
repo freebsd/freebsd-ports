@@ -1,5 +1,4 @@
 # Created by: vanilla@
-# $FreeBSD$
 
 PORTNAME=	swoole
 PORTVERSION=	4.6.4

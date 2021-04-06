@@ -1,5 +1,4 @@
 # Created by: Vsevolod Stakhov <vsevolod@highsecure.ru>
-# $FreeBSD$
 
 PORTNAME=	htx
 DISTVERSION=	0.7.8

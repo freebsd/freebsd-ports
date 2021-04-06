@@ -1,5 +1,4 @@
 # Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.idv.tw>
-# $FreeBSD$
 
 PORTNAME=	Perl6-Export
 PORTVERSION=	0.07

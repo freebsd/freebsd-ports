@@ -1,5 +1,4 @@
 # Created by: Mirko Zinn <mail@derzinn.de>
-# $FreeBSD$
 
 PORTNAME=	mongoengine
 PORTVERSION=	0.20.0

@@ -1,5 +1,4 @@
 # Created by: Matthias Andree <mandree@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	db18
 PORTVERSION=	18.1.40

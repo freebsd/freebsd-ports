@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DBIx-Skinny-InflateColumn-DateTime
 PORTVERSION=	0.06

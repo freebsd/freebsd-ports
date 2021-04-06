@@ -1,5 +1,4 @@
 # Created by: Yarema <yds@CoolRat.org>
-# $FreeBSD$
 
 PORTNAME=	ini
 PORTVERSION=	0.1.1

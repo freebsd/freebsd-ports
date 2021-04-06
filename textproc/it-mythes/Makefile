@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mythes
 DISTVERSION=	02_09_l

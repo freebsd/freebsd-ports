@@ -1,5 +1,4 @@
 # Created by: Oliver Lehmann <oliver@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cegui
 PORTVERSION=	0.8.7

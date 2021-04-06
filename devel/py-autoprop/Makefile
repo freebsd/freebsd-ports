@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	autoprop
 PORTVERSION=	1.0.1

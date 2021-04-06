@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Term-ReadPassword
 PORTVERSION=	0.11

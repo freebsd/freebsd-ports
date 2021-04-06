@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sort
 PORTVERSION=	20120716

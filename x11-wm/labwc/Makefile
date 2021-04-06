@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	labwc
 DISTVERSION=	0.1.0

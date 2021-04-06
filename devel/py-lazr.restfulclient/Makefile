@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lazr.restfulclient
 PORTVERSION=	0.14.3

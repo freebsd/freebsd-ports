@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wlvncc
 PORTVERSION=	s20201206

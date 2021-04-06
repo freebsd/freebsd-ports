@@ -1,5 +1,4 @@
 # Created by: Brian Dean <bsd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	avrdude
 PORTVERSION=	6.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-compat
 PORTVERSION=	1.0.15

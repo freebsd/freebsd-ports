@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kooka
 DISTVERSION=	0.61-323

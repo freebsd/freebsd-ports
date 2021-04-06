@@ -1,5 +1,4 @@
 # Created by: Philippe Audeoud <jadawin@tuxaco.net>
-# $FreeBSD$
 
 PORTNAME=	snoopy
 PORTVERSION=	2.4.12

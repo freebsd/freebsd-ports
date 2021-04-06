@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-Plugin-Senna
 PORTVERSION=	0.01

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xorgproto
 PORTVERSION=	2020.1

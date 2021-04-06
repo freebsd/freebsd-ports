@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	matterhorn
 PORTVERSION=	50200.12.0

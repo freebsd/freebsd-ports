@@ -1,5 +1,4 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
-# $FreeBSD$
 
 PORTVERSION=		2.99.5
 PORTREVISION=		1

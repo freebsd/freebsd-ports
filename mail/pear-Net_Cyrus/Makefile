@@ -1,5 +1,4 @@
 # Created by: Attila Nagy <bra@fsn.hu>
-# $FreeBSD$
 
 PORTNAME=	Net_Cyrus
 PORTVERSION=	0.3.1

@@ -1,5 +1,4 @@
 # Created by: Maksym Sobolyev <sobomax@pbxpress.it>
-# $FreeBSD$
 
 PORTNAME=	Asterisk-FastAGI
 PORTVERSION=	0.02

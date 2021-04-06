@@ -1,5 +1,4 @@
 # Created by: Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	ddskk
 DISTVERSION=	16.2

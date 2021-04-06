@@ -1,5 +1,4 @@
 # Created by: Joe Barbish
-# $FreeBSD$
 
 PORTNAME=	qjail
 PORTVERSION=	5.4

@@ -1,5 +1,4 @@
 # Created by: Alessando Sagratini <ale_sagra@hotmail.com>
-# $FreeBSD$
 
 PORTNAME=	pyhcl
 PORTVERSION=	0.4.4

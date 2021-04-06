@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	void-zones-tools
 DISTVERSIONPREFIX=	v

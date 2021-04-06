@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cbmbasic
 PORTVERSION=	20180708

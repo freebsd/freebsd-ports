@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	signon-ui
 PORTVERSION=	0.17

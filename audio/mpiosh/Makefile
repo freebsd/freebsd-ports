@@ -1,5 +1,4 @@
 # Created by: Sergey Akifyev <asa@gascom.ru>
-# $FreeBSD$
 
 PORTNAME=	mpiosh
 PORTVERSION=	0.7.1.p2

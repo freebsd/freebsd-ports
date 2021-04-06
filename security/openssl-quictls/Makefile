@@ -1,5 +1,4 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	openssl
 PORTVERSION=	3.0.0.a12

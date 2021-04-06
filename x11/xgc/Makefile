@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xgc
 PORTVERSION=	1.0.5

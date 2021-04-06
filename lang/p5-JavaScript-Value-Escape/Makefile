@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	JavaScript-Value-Escape
 PORTVERSION=	0.07

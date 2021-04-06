@@ -1,5 +1,4 @@
 # Created by: Roman Bogorodskiy <bogorodskiy@inbox.ru>
-# $FreeBSD$
 
 PORTNAME=	hot-babe
 PORTVERSION=	0.2.2

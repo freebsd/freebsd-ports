@@ -1,5 +1,4 @@
 # Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-# $FreeBSD$
 
 PORTNAME=	curl
 PORTVERSION=	7.75.0

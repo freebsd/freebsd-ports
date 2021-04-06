@@ -1,5 +1,4 @@
 # Created by: Andrew 'derfi' Sidorov <derfi@vei.ru>
-# $FreeBSD$
 
 PORTNAME=	nagvis
 PORTVERSION=	1.9.25

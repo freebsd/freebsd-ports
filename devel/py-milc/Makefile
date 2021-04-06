@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	milc
 DISTVERSION=	1.1.0

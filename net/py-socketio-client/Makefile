@@ -1,5 +1,4 @@
 # Created by: Massimiliano Stucchi <mstucchi@ripe.net>
-# $FreeBSD$
 
 PORTNAME=	socketio-client
 PORTVERSION=	0.6.7

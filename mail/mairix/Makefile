@@ -1,5 +1,4 @@
 # Created by: Oliver Braun <obraun@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mairix
 DISTVERSION=	0.24

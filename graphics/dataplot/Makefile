@@ -1,5 +1,4 @@
 # Created by: Pedro F. Giffuni
-# $FreeBSD$
 
 PORTNAME=	dataplot
 DISTVERSION=	20200619

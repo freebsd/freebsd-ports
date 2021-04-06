@@ -1,5 +1,4 @@
 # Created by: Joseph Scott <joseph@randomnetworks.com>
-# $FreeBSD$
 
 PORTNAME=	Text_Diff
 PORTVERSION=	1.2.2

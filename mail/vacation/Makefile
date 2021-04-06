@@ -1,5 +1,4 @@
 # Created by: Adam McDougall <mcdouga9@egr.msu.edu>
-# $FreeBSD$
 
 PORTNAME=	vacation
 PORTVERSION=	3.3.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gspdf
 PORTVERSION=	0.5

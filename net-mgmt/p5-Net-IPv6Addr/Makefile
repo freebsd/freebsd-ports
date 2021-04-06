@@ -1,5 +1,4 @@
 # Created by: JJ Behrens <jj@nttmcl.com>
-# $FreeBSD$
 
 PORTNAME=	Net-IPv6Addr
 PORTVERSION=	1.01

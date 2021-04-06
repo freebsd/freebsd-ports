@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	serf
 PORTVERSION=	0.8.5

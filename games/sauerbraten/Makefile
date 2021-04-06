@@ -1,5 +1,4 @@
 # Created by: Jose Alonso Cardenas Marquez <acardenas@bsd.org.pe>
-# $FreeBSD$
 
 PORTNAME=	sauerbraten
 PORTVERSION=	20201221

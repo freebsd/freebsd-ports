@@ -1,5 +1,4 @@
 # Created by: Seiichirou Hiraoka
-# $FreeBSD$
 
 PORTNAME=	xhime
 PORTVERSION=	1.51

@@ -1,5 +1,4 @@
 # Created by: chinsan <chinsan.tw@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	XML-Handler-Dtd2Html
 PORTVERSION=	0.42

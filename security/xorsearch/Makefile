@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis <edwin@mavetju.org>
-# $FreeBSD$
 
 PORTNAME=	xorsearch
 DISTVERSION=	1_11_1

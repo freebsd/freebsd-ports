@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ktp-kded-module
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

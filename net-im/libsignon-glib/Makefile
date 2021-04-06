@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libsignon-glib
 DISTVERSION=	2.1

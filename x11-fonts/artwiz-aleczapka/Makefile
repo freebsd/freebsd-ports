@@ -1,5 +1,4 @@
 # Created by: Matt Lancereau <matt@rimasec.net>
-# $FreeBSD$
 
 PORTNAME=	artwiz-aleczapka-en
 PORTVERSION=	1.3

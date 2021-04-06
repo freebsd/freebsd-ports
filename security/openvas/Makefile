@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openvas
 DISTVERSION=	20.8.1

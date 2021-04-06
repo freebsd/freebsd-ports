@@ -1,5 +1,4 @@
 # Created by: od <od@iclub.nsu.ru>
-# $FreeBSD$
 
 PORTNAME=	wmappl
 PORTVERSION=	0.71

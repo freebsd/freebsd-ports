@@ -1,5 +1,4 @@
 # Created by: koji@jet.es
-# $FreeBSD$
 
 PORTNAME=	onis
 PORTVERSION=	0.8.2

@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <tiamat@comset.net>
-# $FreeBSD$
 
 PORTNAME=	pixie
 PORTVERSION=	2.2.6

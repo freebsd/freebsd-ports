@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tablist
 DISTVERSIONPREFIX=	v

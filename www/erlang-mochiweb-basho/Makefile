@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mochiweb
 PORTVERSION=	2.9.0p2

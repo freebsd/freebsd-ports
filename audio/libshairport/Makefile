@@ -1,5 +1,4 @@
 # Created by: Manuel Creach <manuel.creach@icloud.com>
-# $FreeBSD$
 
 PORTNAME=	libshairport
 PORTVERSION=	1.2.0.20310

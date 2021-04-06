@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-DBD-Pg
 PORTVERSION=	0.03

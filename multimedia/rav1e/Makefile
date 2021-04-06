@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rav1e
 DISTVERSIONPREFIX=	v

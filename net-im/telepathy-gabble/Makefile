@@ -1,5 +1,4 @@
 # Created by:  Florent Thoumie <flz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	telepathy-gabble
 PORTVERSION=	0.18.4

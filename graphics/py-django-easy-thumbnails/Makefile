@@ -1,5 +1,4 @@
 # Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-# $FreeBSD$
 
 PORTNAME=	easy-thumbnails
 PORTVERSION=	2.5

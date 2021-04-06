@@ -1,5 +1,4 @@
 # Created by: Volker Stolz <vs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gastex
 PORTVERSION=	3.0

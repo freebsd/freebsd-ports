@@ -1,5 +1,4 @@
 # Created by: Yinghong.Liu <relaxbsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	simdock
 PORTVERSION=	1.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	traefik
 PORTVERSION=	2.4.8

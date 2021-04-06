@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bitrot
 PORTVERSION=	1.0.0

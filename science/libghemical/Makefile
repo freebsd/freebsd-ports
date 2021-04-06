@@ -1,5 +1,4 @@
 # Created by: Nakata Maho <maho@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libghemical
 PORTVERSION=	3.0.0

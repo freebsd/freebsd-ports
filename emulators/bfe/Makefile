@@ -1,5 +1,4 @@
 # Created by: jhb
-# $FreeBSD$
 
 PORTNAME=	bfe2
 PORTVERSION=	20030723

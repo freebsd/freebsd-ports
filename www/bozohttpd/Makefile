@@ -1,5 +1,4 @@
 # Created by: Janos.Mohacsi@bsd.hu
-# $FreeBSD$
 
 PORTNAME=	bozohttpd
 PORTVERSION=	20201014

@@ -1,5 +1,4 @@
 # Created by: Björn König <bkoenig@alpha-tierchen.de>
-# $FreeBSD$
 
 PORTNAME=	libvisual
 PORTVERSION=	0.4.0

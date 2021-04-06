@@ -1,5 +1,4 @@
 # Created by: rfarmer@predatorlabs.net
-# $FreeBSD$
 
 PORTNAME=	javahelp
 PORTVERSION=	2.0.05.20170719

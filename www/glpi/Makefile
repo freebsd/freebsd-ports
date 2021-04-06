@@ -1,5 +1,4 @@
 # Created by: Mathias Monnerville <mathias@monnerville.com>
-# $FreeBSD$
 
 PORTNAME=	glpi
 PORTVERSION=	9.5.3

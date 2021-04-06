@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	content
 PORTVERSION=	2.0.6

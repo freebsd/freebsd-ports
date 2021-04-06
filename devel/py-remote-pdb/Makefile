@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	remote-pdb
 PORTVERSION=	2.1.0

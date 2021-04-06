@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pqueue
 PORTVERSION=	2.1.0

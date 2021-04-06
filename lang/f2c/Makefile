@@ -1,5 +1,4 @@
 # Created by: Steven G. Kargl
-# $FreeBSD$
 
 PORTNAME=	f2c
 PORTVERSION=	20200916

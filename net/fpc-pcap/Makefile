@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	net lang
 PKGNAMESUFFIX=	-pcap

@@ -1,5 +1,4 @@
 # Created by: Arjan van Leeuwen <avleeuwen@piwebs.com>
-# $FreeBSD$
 
 PORTNAME=	dcraw
 PORTVERSION=	9.28

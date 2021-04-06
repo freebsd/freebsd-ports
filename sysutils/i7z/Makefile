@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	i7z
 PORTVERSION=	0.27.4

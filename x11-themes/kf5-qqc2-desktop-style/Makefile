@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qqc2-desktop-style
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

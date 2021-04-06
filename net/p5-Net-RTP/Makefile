@@ -1,5 +1,4 @@
 # Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	Net-RTP
 PORTVERSION=	0.09

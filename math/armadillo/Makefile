@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	armadillo
 PORTVERSION=	10.1.1

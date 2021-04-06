@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nexpose
 PORTVERSION=	7.2.1

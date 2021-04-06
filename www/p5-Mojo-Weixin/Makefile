@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Mojo-Weixin
 PORTVERSION=	1.4.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cu2qu
 PORTVERSION=	1.6.5

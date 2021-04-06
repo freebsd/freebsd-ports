@@ -1,5 +1,4 @@
 # Created by: Alexander Yerenkow <yerenkow@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	festvox
 PORTVERSION=	0.5

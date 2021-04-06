@@ -1,5 +1,4 @@
 # Created by: dominik karczmarski <dominik@karczmarski.com>
-# $FreeBSD$
 
 PORTNAME=	fswatch
 DISTVERSION=	0.02beta5

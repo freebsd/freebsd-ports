@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Git-Sub
 PORTVERSION=	0.163320

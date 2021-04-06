@@ -1,5 +1,4 @@
 # Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-# $FreeBSD$
 
 PORTNAME=	mona
 PORTVERSION=	2.90

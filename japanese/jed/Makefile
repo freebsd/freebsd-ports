@@ -1,5 +1,4 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-# $FreeBSD$
 
 PORTNAME=	jed
 PORTVERSION=	${VERSION}.j${JP_VERSION}

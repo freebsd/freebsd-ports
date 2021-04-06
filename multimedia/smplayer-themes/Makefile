@@ -1,5 +1,4 @@
 # Created by: Diego Depaoli <trebestie@gmail.com> and Yinghong Liu <relaxbsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	smplayer-themes
 PORTVERSION=	20.11.0

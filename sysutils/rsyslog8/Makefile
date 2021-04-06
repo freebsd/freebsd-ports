@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rsyslog
 PORTVERSION=	8.2102.0

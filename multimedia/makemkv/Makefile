@@ -1,5 +1,4 @@
 # Created by: Felix Palmen <felix@palmen-it.de>
-# $FreeBSD$
 
 PORTNAME=	makemkv
 PORTVERSION=	1.16.3

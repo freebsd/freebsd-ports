@@ -1,5 +1,4 @@
 # Created by: Sahil Tandon <sahil@tandon.net>
-# $FreeBSD$
 
 PORTNAME=	Net-DNS-Async
 PORTVERSION=	1.07

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	traverso
 DISTVERSION=	0.49.6

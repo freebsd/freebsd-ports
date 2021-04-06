@@ -1,5 +1,4 @@
 # Created by: cy@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	cfengine-masterfiles
 PORTVERSION=	3.15.2

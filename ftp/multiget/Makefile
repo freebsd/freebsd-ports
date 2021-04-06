@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME=	multiget
 PORTVERSION=	1.1.3

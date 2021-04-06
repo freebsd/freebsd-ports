@@ -1,5 +1,4 @@
 # Created by: Mykola Dzham <i@levsha.me>
-# $FreeBSD$
 
 PORTNAME=	drmaa
 PORTVERSION=	0.4b3

@@ -1,5 +1,4 @@
 # Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	shellinabox
 PORTVERSION=	2.20

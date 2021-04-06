@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webmail
 PORTVERSION=	5.2.22

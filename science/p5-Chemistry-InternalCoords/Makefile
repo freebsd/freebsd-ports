@@ -1,5 +1,4 @@
 # Created by: Steve Wills <steve@mouf.net>
-# $FreeBSD$
 
 PORTNAME=	Chemistry-InternalCoords
 PORTVERSION=	0.18

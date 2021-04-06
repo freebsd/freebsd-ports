@@ -1,5 +1,4 @@
 # Created by: Martin Tournoij <carpetsmoker@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Config-ApacheFormat
 PORTVERSION=	1.2

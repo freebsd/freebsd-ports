@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-xapp
 DISTVERSION=	2.0.2

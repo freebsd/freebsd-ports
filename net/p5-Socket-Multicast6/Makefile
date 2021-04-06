@@ -1,5 +1,4 @@
 # Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	Socket-Multicast6
 PORTVERSION=	0.04

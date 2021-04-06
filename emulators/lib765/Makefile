@@ -1,5 +1,4 @@
 # Created by: Alexey V. Antipovsky <kemm@in-line.ru>
-# $FreeBSD$
 
 PORTNAME=	lib765
 PORTVERSION=	0.4.2

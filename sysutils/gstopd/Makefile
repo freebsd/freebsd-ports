@@ -1,5 +1,4 @@
 # Created by: Michael Reifenberger
-# $FreeBSD$
 
 PORTNAME=	gstopd
 PORTVERSION=	1.1

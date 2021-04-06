@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Mojolicious-Plugin-Authentication
 PORTVERSION=	1.33

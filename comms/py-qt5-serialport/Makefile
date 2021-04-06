@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	serialport
 CATEGORIES=	comms devel python

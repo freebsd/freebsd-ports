@@ -1,5 +1,4 @@
 # Created by: Foxfair Hu <foxfair@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	XML-SimpleObject-LibXML
 PORTVERSION=	0.60

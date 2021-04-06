@@ -1,5 +1,4 @@
 # Created by: desmo@bandwidth.org
-# $FreeBSD$
 
 PORTNAME=	LPRng
 PORTVERSION=	3.8.C

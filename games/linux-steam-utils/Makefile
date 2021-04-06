@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	steam-utils
 DISTVERSION=	20210303

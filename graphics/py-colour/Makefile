@@ -1,5 +1,4 @@
 # Created by: Martin Neubauer <m.ne@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	colour
 PORTVERSION=	0.1.5

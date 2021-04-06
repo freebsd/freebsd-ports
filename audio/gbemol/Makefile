@@ -1,5 +1,4 @@
 # Created by: Thomas M. Hermann <tmh.public@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gbemol
 PORTVERSION=	0.3.2

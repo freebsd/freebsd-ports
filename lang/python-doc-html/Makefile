@@ -1,5 +1,4 @@
 # Created by: Thomas Gellekum <tg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	python-doc-${DOCFORMAT}
 PORTVERSION=	${PYTHON_PORTVERSION}

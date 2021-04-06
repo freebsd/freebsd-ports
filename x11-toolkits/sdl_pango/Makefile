@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis <edwin@mavetju.org>
-# $FreeBSD$
 
 PORTNAME=	sdl_pango
 PORTVERSION=	0.1.2

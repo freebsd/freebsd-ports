@@ -1,5 +1,4 @@
 # Created by: Richard Gallamore <ultima@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	PyHamcrest
 DISTVERSIONPREFIX=	V

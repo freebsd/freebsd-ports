@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nomad-pot-driver
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Thomas Gellekum <tg@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	asl
 PORTVERSION=	1.42.183

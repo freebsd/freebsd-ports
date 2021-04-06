@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alfio
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Uffe Jakobsen <uffe@uffe.org>
-# $FreeBSD$
 
 PORTNAME=	vasm
 PORTVERSION=	1.8c

@@ -1,5 +1,4 @@
 # Created by: brd@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Net-NTP
 PORTVERSION=	1.5

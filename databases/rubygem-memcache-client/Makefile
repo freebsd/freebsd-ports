@@ -1,5 +1,4 @@
 # Created by: Jonathan Weiss (<jw@innerewut.de>)
-# $FreeBSD$
 
 PORTNAME=	memcache-client
 PORTVERSION=	1.8.5

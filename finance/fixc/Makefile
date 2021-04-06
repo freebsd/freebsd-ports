@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		fixc
 PORTVERSION=		1.2

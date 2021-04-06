@@ -1,5 +1,4 @@
 # Created by: Hung-Yi Chen <gaod@hychen.org>
-# $FreeBSD$
 
 PORTNAME=	libnatpmp
 PORTVERSION=	20150609

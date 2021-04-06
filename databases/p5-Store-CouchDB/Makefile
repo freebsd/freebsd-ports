@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Store-CouchDB
 PORTVERSION=	4.3

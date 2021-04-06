@@ -1,5 +1,4 @@
 # Created by: Doug Barton <dougb@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	qbittorrent
 DISTVERSION=	4.3.4.1

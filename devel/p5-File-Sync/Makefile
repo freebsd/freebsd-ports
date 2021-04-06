@@ -1,5 +1,4 @@
 # Created by: Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	File-Sync
 PORTVERSION=	0.11

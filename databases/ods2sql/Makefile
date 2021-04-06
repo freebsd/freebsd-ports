@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ods2sql
 DISTVERSION=	0.4.0

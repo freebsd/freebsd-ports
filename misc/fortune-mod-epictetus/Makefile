@@ -1,5 +1,4 @@
 # Created by: Andy Kosela <akosela@andykosela.com>
-# $FreeBSD$
 
 PORTNAME=	fortune-mod-epictetus
 PORTVERSION=	0.2

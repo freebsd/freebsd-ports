@@ -1,5 +1,4 @@
 # Created by: aaron@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	libs11n
 PORTVERSION=	1.2.10

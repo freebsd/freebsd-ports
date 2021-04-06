@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clojure-cider
 PORTVERSION=	1.0.0

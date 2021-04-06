@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	asonic
 PORTVERSION=	2.0.0

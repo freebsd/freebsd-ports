@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	redis
 PORTVERSION=	5.3.2

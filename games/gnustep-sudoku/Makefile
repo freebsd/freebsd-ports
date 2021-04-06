@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sudoku
 PORTVERSION=	0.7

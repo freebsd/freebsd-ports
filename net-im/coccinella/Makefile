@@ -1,5 +1,4 @@
 # Created by: Marc Bruenink
-# $FreeBSD$
 
 PORTNAME=	coccinella
 PORTVERSION=	0.96.20

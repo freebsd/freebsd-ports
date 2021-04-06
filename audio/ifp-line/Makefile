@@ -1,5 +1,4 @@
 # Created by: riggs
-# $FreeBSD$
 
 PORTNAME=	ifp-line
 PORTVERSION=	0.3

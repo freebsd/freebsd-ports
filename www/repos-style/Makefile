@@ -1,5 +1,4 @@
 # Created by: Alexander Kriventsov
-# $FreeBSD$
 
 PORTNAME=	repos-style
 PORTVERSION=	2.0

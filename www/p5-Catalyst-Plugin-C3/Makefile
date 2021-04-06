@@ -1,5 +1,4 @@
 # Created by: lbr@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-C3
 PORTVERSION=	0.03

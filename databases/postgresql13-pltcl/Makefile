@@ -1,5 +1,4 @@
 # Created by: Palle Girgensohn <girgen@partitur.se>
-# $FreeBSD$
 
 PORTNAME=	postgresql
 # Keep the ?=, it is used by the other pltcl ports.

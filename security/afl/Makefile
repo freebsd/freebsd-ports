@@ -1,5 +1,4 @@
 # Created by: Fabian Keil <fk@fabiankeil.de>
-# $FreeBSD$
 
 PORTNAME=	afl
 PORTVERSION=	2.52

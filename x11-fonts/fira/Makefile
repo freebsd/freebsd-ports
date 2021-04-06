@@ -1,5 +1,4 @@
 # Created by: Horia Racoviceanu <horia@racoviceanu.com>
-# $FreeBSD$
 
 PORTNAME=	fira
 PORTVERSION=	4.301

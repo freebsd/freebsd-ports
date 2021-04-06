@@ -1,5 +1,4 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	game.libretro.pcsx-rearmed
 PORTVERSION=	22.0.0.19

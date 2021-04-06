@@ -1,5 +1,4 @@
 # Created by: Craig Manley
-# $FreeBSD$
 
 PORTNAME=	Log-Dispatch-FileShared
 PORTVERSION=	1.02

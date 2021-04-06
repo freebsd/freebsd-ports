@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	showkeys
 DISTVERSION=	g20191004

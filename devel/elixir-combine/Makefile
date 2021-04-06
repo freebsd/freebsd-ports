@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	combine
 PORTVERSION=	0.10.0

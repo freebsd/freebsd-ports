@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Business-IS-PIN
 DISTVERSION=	0.06

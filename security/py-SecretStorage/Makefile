@@ -1,5 +1,4 @@
 # Created by: Douglas Thrift <douglas@douglasthrift.net>
-# $FreeBSD$
 
 PORTNAME=	SecretStorage
 PORTVERSION=	2.3.1

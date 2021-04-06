@@ -1,5 +1,4 @@
 # Created by: Alex "lissyara" Keda <admin@lissyara.su>
-# $FreeBSD$
 
 PORTNAME=	xneur
 PORTVERSION=	0.20.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	baloo-widgets
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

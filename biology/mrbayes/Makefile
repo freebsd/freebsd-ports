@@ -1,5 +1,4 @@
 # Created by: mzaki@biol.s.u-tokyo.ac.jp
-# $FreeBSD$
 
 PORTNAME=	mrbayes
 DISTVERSIONPREFIX=	v

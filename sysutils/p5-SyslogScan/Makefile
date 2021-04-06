@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <dima@Chg.RU>
-# $FreeBSD$
 
 PORTNAME=	SyslogScan
 PORTVERSION=	0.32

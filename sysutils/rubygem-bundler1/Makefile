@@ -1,5 +1,4 @@
 # Created by: Robert Gogolok <gogo@cs.uni-sb.de>
-# $FreeBSD$
 
 PORTNAME=	bundler
 PORTVERSION=	1.17.3

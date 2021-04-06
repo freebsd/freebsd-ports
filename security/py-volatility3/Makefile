@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	volatility3
 DISTVERSION=	g20200510

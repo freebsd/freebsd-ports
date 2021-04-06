@@ -1,5 +1,4 @@
 # Created by: Bruce M. Simpson
-# $FreeBSD$
 
 PORTNAME=	boost_build
 DISTVERSION=	4.3.0.20201229

@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis (edwin@mavetju.org)
-# $FreeBSD$
 
 PORTNAME=	smm++
 PORTVERSION=	6.1.1

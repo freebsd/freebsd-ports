@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ssh-chat
 DISTVERSIONPREFIX=	v

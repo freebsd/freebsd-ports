@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cava
 DISTVERSION=	0.7.3

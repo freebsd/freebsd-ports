@@ -1,5 +1,4 @@
 # Created by: Aaron Dalton <aaron@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-Plugin-phpBB
 PORTVERSION=	0.02

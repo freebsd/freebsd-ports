@@ -1,5 +1,4 @@
 # Created by: Simun Mikecin <numisemis@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	see
 PORTVERSION=	3.1.1424

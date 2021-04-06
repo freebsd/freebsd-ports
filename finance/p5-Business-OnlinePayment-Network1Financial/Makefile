@@ -1,5 +1,4 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Business-OnlinePayment-Network1Financial
 PORTVERSION=	0.02

@@ -1,5 +1,4 @@
 # Created by: Michael Neumann <mneumann@ntecs.de>
-# $FreeBSD$
 
 PORTNAME=	algae
 PORTVERSION=	4.3.6

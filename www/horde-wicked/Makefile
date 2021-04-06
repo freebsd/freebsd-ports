@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wicked
 PORTVERSION=	2.0.8

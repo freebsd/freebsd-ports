@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-cosmos
 PORTVERSION=	3.2.0

@@ -1,5 +1,4 @@
 # Created by: Joao Carlos Mendes Luis <jonny@jonny.eng.br>
-# $FreeBSD$
 
 PORTNAME=	buffer
 PORTVERSION=	1.19

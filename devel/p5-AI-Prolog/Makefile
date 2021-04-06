@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	AI-Prolog
 PORTVERSION=	0.741

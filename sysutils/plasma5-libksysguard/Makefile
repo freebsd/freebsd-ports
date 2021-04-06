@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libksysguard
 DISTVERSION=	${KDE_PLASMA_VERSION}

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	vietunicode-web1
 PORTVERSION=	2004.04.30

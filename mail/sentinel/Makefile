@@ -1,5 +1,4 @@
 # Created by: Peter Hollaubek <fifteen@inext.hu>
-# $FreeBSD$
 
 PORTNAME=	sentinel
 PORTVERSION=	1.7b

@@ -1,5 +1,4 @@
 # Created by: Valerio Daelli <valerio.daelli@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	geteltorito
 PORTVERSION=	0.6

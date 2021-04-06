@@ -1,5 +1,4 @@
 # Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-# $FreeBSD$
 
 PORTNAME=	bandwidthd
 PORTVERSION=	2.0.1

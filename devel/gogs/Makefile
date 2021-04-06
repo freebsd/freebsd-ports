@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gogs
 DISTVERSIONPREFIX=	v

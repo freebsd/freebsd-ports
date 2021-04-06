@@ -1,5 +1,4 @@
 # Created by: Nikolai Lifanov <lifanov@mail.lifanov.com>
-# $FreeBSD$
 
 PORTNAME=	scroll
 PORTVERSION=	1.20180421

@@ -1,5 +1,4 @@
 # Created by: Alexandr Kovalenko <never@nevermind.kiev.ua>
-# $FreeBSD$
 
 PORTNAME=	MIDI
 PORTVERSION=	0.83

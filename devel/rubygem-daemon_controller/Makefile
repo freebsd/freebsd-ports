@@ -1,5 +1,4 @@
 # Created by: Jacob Atzen <jatzen@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	daemon_controller
 PORTVERSION=	1.2.0

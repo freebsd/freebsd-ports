@@ -1,5 +1,4 @@
 # Created by: Frank Wall <fw@moov.de>
-# $FreeBSD$
 
 PORTNAME=	encode
 PORTVERSION=	6.3

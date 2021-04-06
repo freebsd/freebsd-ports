@@ -1,5 +1,4 @@
 # Created by: Rich Neswold <rneswold@mcs.net>
-# $FreeBSD$
 
 PORTNAME=	wmnet
 PORTVERSION=	1.2

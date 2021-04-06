@@ -1,5 +1,4 @@
 # Created by: Patrick Rinke <patrick@rinke-bochum.de>
-# $FreeBSD$
 
 PORTNAME=	ucspi-unix
 PORTVERSION=	1.0

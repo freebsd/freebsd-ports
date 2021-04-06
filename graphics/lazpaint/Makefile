@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lazpaint
 PORTVERSION=	7.1.6

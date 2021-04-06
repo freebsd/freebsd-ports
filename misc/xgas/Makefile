@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	xgas
 PORTVERSION=	1.0

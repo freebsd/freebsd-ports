@@ -1,5 +1,4 @@
 # Created by: Andrew St. Jean <andrew@arda.homeunix.net>
-# $FreeBSD$
 
 PORTNAME=	courierpasswd
 PORTVERSION=	1.1.3

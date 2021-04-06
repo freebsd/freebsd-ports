@@ -1,5 +1,4 @@
 # Created by: Dmitry Karasik <dmitry@karasik.eu.org>
-# $FreeBSD$
 
 PORTNAME=	UI-Dialog
 PORTVERSION=	1.21

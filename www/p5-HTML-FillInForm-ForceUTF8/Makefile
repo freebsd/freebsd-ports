@@ -1,5 +1,4 @@
 # Created by: Tomoyuki Sakurai <cherry@trombik.org>
-# $FreeBSD$
 
 PORTNAME=	HTML-FillInForm-ForceUTF8
 PORTVERSION=	0.03

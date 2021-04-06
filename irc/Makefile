@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Internet Relay Chat utilities
 

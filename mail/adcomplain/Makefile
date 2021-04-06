@@ -1,5 +1,4 @@
 # Created by: ache@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	adcomplain
 PORTVERSION=	3.52

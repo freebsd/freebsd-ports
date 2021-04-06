@@ -1,5 +1,4 @@
 # Created by: mb@imp.ch
-# $FreeBSD$
 
 PORTNAME=	jpgtn
 PORTVERSION=	2.06

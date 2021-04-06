@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-datamigration
 PORTVERSION=	4.1.0

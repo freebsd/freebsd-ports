@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	PyUtilib
 DISTVERSION=	6.0.0

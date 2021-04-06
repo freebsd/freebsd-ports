@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clash
 DISTVERSIONPREFIX=	v

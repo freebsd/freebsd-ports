@@ -1,5 +1,4 @@
 # Created by: TAOKA Fumiyoshi
-# $FreeBSD$
 
 PORTNAME=	pyproj
 PORTVERSION=	3.0.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	redsea
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Alfred Perlstein <alfred@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	Faker
 PORTVERSION=	0.8.15

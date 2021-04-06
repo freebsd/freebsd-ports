@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	guess-language
 PORTVERSION=	0.2

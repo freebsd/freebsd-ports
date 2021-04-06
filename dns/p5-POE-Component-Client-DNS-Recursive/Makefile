@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Client-DNS-Recursive
 PORTVERSION=	1.12

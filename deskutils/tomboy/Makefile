@@ -1,5 +1,4 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-# $FreeBSD$
 
 PORTNAME=	tomboy
 PORTVERSION=	1.15.7

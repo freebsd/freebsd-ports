@@ -1,5 +1,4 @@
 # Created by: Stefan Bethke <stb@lassitu.de>
-# $FreeBSD$
 
 PORTNAME=	login_auth
 PORTVERSION=	3.0

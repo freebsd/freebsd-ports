@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gpicker
 DISTVERSION=	2.3

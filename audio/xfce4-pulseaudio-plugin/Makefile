@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	xfce4-pulseaudio-plugin
 PORTVERSION=	0.4.3

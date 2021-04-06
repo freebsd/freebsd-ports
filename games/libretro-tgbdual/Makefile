@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-tgbdual
 PORTVERSION=	0.20210214

@@ -1,5 +1,4 @@
 # Created by: Peter Johnson <johnson.peter@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	zzuf
 PORTVERSION=	0.13

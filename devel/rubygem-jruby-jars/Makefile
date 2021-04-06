@@ -1,5 +1,4 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jruby-jars
 PORTVERSION=	9.2.13.0

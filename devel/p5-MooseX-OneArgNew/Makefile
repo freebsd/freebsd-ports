@@ -1,5 +1,4 @@
 # Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-# $FreeBSD$
 
 PORTNAME=	MooseX-OneArgNew
 PORTVERSION=	0.005

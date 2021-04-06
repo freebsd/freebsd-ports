@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	xdiskusage
 PORTVERSION=	1.54

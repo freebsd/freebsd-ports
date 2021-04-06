@@ -1,5 +1,4 @@
 # Created by: Stefan Hagen <sh@codevoid.de>
-# $FreeBSD$
 
 PORTNAME=	sacc
 PORTVERSION=	1.01

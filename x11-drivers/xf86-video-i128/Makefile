@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xf86-video-i128
 PORTVERSION=	1.4.0

@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <ip@doom.homeunix.org>
-# $FreeBSD$
 
 PORTNAME=	gillo
 DISTVERSION=	1.0beta1

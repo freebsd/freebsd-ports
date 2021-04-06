@@ -1,5 +1,4 @@
 # Created by: James Flemer <jflemer@alum.rpi.edu>
-# $FreeBSD$
 
 PORTNAME=	l2a
 PORTVERSION=	1.2

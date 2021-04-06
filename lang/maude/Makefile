@@ -1,5 +1,4 @@
 # Created by: Rick van der Zwet <rick@wzoeterwoude.net>
-# $FreeBSD$
 
 PORTNAME=	maude
 PORTVERSION=	2.7.1

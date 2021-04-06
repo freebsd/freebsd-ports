@@ -1,5 +1,4 @@
 # Created by: Niels Heinen
-# $FreeBSD$
 
 PORTNAME=	webscarab
 PORTVERSION=	20090427

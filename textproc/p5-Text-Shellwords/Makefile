@@ -1,5 +1,4 @@
 # Created by: George Hartzell <hartzell@fruitfly.org>
-# $FreeBSD$
 
 PORTNAME=	Text-Shellwords
 PORTVERSION=	1.08

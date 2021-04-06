@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CGI-Session-Driver-memcached
 PORTVERSION=	0.04

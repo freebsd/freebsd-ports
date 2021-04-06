@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aws-sdk-cpp
 PORTVERSION=	1.8.121

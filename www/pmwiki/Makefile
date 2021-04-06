@@ -1,5 +1,4 @@
 # Created by: Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	pmwiki
 PORTVERSION=	2.2.126

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dune-metagrid
 DISTVERSION=	g20180822

@@ -1,5 +1,4 @@
 # Created by: Dan Rench <citric@cubicone.tmetic.com>
-# $FreeBSD$
 
 PORTNAME=	DateTime-Format-RFC3339
 PORTVERSION=	1.0.5

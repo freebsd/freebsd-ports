@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mono-addins
 PORTVERSION=	1.3

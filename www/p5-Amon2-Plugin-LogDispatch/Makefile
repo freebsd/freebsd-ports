@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Amon2-Plugin-LogDispatch
 PORTVERSION=	0.01

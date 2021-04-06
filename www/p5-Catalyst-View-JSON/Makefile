@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Catalyst-View-JSON
 PORTVERSION=	0.36

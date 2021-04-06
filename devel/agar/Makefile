@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	agar
 PORTVERSION=	1.5.0

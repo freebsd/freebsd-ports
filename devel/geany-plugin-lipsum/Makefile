@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-plugin-lipsum
 PORTVERSION=	${GEANY_VER}

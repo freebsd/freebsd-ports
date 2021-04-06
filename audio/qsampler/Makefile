@@ -1,5 +1,4 @@
 # Created by: trasz <trasz@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	qsampler
 DISTVERSIONPREFIX=	qsampler_

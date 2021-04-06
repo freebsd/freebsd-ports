@@ -1,5 +1,4 @@
 # Created by: clsung@dragon2.net
-# $FreeBSD$
 
 PORTNAME=	RTF-Tokenizer
 PORTVERSION=	1.20

@@ -1,5 +1,4 @@
 # Created by: Douglas Thrift
-# $FreeBSD$
 
 PORTNAME=	dtpstree
 PORTVERSION=	1.0.3

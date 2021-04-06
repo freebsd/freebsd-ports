@@ -1,5 +1,4 @@
 # Created by: Ulrich Spoerlein <uqs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	groff
 PORTVERSION=	1.22.4

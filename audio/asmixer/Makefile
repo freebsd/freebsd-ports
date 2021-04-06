@@ -1,5 +1,4 @@
 # Created by: Mike Makonnen <mtm@identd.net>
-# $FreeBSD$
 
 PORTNAME=	asmixer
 PORTVERSION=	0.5

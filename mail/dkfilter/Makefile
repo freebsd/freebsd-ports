@@ -1,5 +1,4 @@
 # Created by: Yoshisato YANAGISAWA
-# $FreeBSD$
 
 PORTNAME=	dkfilter
 PORTVERSION=	0.11

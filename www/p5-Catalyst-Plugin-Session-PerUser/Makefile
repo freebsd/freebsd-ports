@@ -1,5 +1,4 @@
 # Created by: Anes Mukhametov <anes@anes.su>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Session-PerUser
 PORTVERSION=	0.05

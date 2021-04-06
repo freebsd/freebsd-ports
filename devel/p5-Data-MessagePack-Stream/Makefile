@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-MessagePack-Stream
 PORTVERSION=	0.07

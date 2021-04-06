@@ -1,5 +1,4 @@
 # Created by: Martin Blapp
-# $FreeBSD$
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}

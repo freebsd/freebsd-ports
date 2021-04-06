@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fortytwo
 PORTVERSION=	0.2.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dobutsu
 DISTVERSION=	2

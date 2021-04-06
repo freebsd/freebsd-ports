@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	android-tools-fastboot
 DISTVERSIONPREFIX=	platform-tools-

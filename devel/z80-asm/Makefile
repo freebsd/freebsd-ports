@@ -1,5 +1,4 @@
 # Created by: Samy Al Bahra <samy@kerneled.org>
-# $FreeBSD$
 
 PORTNAME=	z80-asm
 PORTVERSION=	2.4.p3

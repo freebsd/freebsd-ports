@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ntplib
 PORTVERSION=	0.3.4

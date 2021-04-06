@@ -1,5 +1,4 @@
 # Created by: nbm
-# $FreeBSD$
 
 PORTNAME=	sip
 PORTVERSION=	${SIP_VERSION}

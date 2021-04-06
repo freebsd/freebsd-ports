@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ksql
 PORTVERSION=	0.3.5

@@ -1,5 +1,4 @@
 # Created by: Zach Thompson <hideo@lastamericanempire.com>
-# $FreeBSD$
 
 PORTNAME=	Rose-Object
 PORTVERSION=	0.860

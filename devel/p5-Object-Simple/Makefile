@@ -1,5 +1,4 @@
 # Created by: Andrey Kostenko <andrey@kostenko.name>
-# $FreeBSD$
 
 PORTNAME=	Object-Simple
 PORTVERSION=	3.1600

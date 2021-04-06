@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openssl
 PORTVERSION=	2.1.2

@@ -1,5 +1,4 @@
 # Created by: Bernard Spil <brnrd@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	contacts
 PORTVERSION=	3.5.1

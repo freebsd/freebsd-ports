@@ -1,5 +1,4 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gnote
 PORTVERSION=	3.28.0

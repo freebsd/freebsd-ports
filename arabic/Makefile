@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Arabic language support
 

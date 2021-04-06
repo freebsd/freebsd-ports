@@ -1,5 +1,4 @@
 # Created by: pauls@utdallas.edu
-# $FreeBSD$
 
 PORTNAME=	Parse-Range
 PORTVERSION=	0.96

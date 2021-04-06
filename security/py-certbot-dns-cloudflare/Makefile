@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	certbot-dns-cloudflare
 PORTVERSION=	${ACME_VERSION}

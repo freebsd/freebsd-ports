@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xournalpp
 DISTVERSION=	1.0.20

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	testdisk
 DISTVERSION=	7.1

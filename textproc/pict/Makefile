@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pict
 DISTVERSIONPREFIX=	v

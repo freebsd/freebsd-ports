@@ -1,5 +1,4 @@
 # Created by: Kimura Fuyuki <fuyuki@hadaly.org>
-# $FreeBSD$
 
 PORTNAME=	guile-www
 PORTVERSION=	1.1.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Fliggy
 PORTVERSION=	0.009003

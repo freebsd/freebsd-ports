@@ -1,5 +1,4 @@
 # Created by: Florian Limberger <flo@snakeoilproductions.net>
-# $FreeBSD$
 
 PORTNAME=	raleway
 DISTVERSION=	4.101

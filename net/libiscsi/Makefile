@@ -1,5 +1,4 @@
 # Created by: M. Birgmeier
-# $FreeBSD$
 
 PORTNAME=	libiscsi
 DISTVERSION=	1.19.0

@@ -1,5 +1,4 @@
 # Created by: mi
-# $FreeBSD$
 
 PORTNAME=	jode
 PORTVERSION=	1.1.1.1

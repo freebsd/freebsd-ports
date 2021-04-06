@@ -1,5 +1,4 @@
 # Created by: Nick Barkas <snb@threerings.net>
-# $FreeBSD$
 
 PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.4

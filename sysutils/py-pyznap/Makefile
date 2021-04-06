@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		pyznap
 DISTVERSION=		1.6.0

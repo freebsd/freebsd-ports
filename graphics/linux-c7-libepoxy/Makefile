@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libepoxy
 PORTVERSION=	1.5.2

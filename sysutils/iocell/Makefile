@@ -1,5 +1,4 @@
 # Created by: Bartek Rutkowski <robak@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	iocell
 PORTVERSION=	2.1.2

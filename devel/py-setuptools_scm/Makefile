@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	setuptools_scm
 PORTVERSION=	4.1.2

@@ -1,5 +1,4 @@
 # Created by: Brian Dean <bsd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cdroot
 PORTVERSION=	1.2.6

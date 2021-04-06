@@ -1,5 +1,4 @@
 # Created by: Gustau Pérez i Querol <gustau.perez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	adwaita-icon-theme
 PORTVERSION=	3.38.0

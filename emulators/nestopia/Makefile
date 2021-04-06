@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nestopia
 DISTVERSION=	1.50

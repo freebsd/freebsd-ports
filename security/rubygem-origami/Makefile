@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	origami
 PORTVERSION=	2.1.0

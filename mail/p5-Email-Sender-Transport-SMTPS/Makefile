@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Email-Sender-Transport-SMTPS
 PORTVERSION=	0.03

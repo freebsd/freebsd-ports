@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcfu
 DISTVERSION=	0.04a

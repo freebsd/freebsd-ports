@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	POE-Component-IRC-Plugin-QueryDNS
 PORTVERSION=	1.04

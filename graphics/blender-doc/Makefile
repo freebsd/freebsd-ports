@@ -1,5 +1,4 @@
 # Created by: Alex Ivasyuv <siegerstein@pochta.ru>
-# $FreeBSD$
 
 PORTNAME=	blender
 PORTVERSION=	2.3

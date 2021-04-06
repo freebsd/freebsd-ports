@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phoenix_html
 PORTVERSION=	2.11.2

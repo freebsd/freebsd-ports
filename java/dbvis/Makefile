@@ -1,5 +1,4 @@
 # Created by: Anton Yudin (<contact@toha.org.ua>)
-# $FreeBSD$
 
 PORTNAME=	dbvis
 PORTVERSION=	11.0.3

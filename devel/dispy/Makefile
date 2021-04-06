@@ -1,5 +1,4 @@
 # Created by: Mikhail Teterin
-# $FreeBSD$
 
 PORTNAME=	dispy
 PORTVERSION=	4.10.6

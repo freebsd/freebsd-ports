@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	paramiko
 PORTVERSION=	1.18.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	unqlite
 PORTVERSION=	0.5.3

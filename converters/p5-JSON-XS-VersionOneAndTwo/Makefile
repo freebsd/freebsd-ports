@@ -1,5 +1,4 @@
 # Created by: Denis Pokataev <catone@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	JSON-XS-VersionOneAndTwo
 PORTVERSION=	0.31

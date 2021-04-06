@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gdsreader
 PORTVERSION=	0.3.2

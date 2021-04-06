@@ -1,5 +1,4 @@
 # Created by: Espen Tagestad <espen@tagestad.no>
-# $FreeBSD$
 
 PORTNAME=	DBD-Mock
 PORTVERSION=	1.55

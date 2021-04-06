@@ -1,5 +1,4 @@
 # Created by: nbm
-# $FreeBSD$
 
 PORTNAME=	phpMyAdmin
 DISTVERSION=	4.9.7

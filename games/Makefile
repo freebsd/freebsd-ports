@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Games and related software
 

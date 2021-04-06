@@ -1,5 +1,4 @@
 # Created by: Craig Leres <leres@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	arduino-irremote
 PORTVERSION=	2.8.1

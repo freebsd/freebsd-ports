@@ -1,5 +1,4 @@
 # Created by: Kay Lehmann
-# $FreeBSD$
 
 PORTNAME=	cdbkup
 PORTVERSION=	1.0

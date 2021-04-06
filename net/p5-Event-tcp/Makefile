@@ -1,5 +1,4 @@
 # Created by: steinex
-# $FreeBSD$
 
 PORTNAME=	Event-tcp
 PORTVERSION=	0.14

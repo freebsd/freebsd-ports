@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fire-hpp
 DISTVERSIONPREFIX=	v

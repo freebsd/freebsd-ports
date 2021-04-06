@@ -1,5 +1,4 @@
 # Created by: Sahil Tandon <sahil@tandon.net>
-# $FreeBSD$
 
 PORTNAME=	MooseX-Types-Common
 PORTVERSION=	0.001014

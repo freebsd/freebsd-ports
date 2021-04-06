@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	curlie
 DISTVERSIONPREFIX=	v

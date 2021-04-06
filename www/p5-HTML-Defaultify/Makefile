@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-Defaultify
 PORTVERSION=	1.01

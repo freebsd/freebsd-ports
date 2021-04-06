@@ -1,5 +1,4 @@
 # Created by: Xavier Beaudouin <kiwi@oav.net>
-# $FreeBSD$
 
 PORTNAME=	Test-Dir
 PORTVERSION=	1.014

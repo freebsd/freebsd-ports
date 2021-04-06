@@ -1,5 +1,4 @@
 # Created by: Ask Bjoern Hansen <ask@valueclick.com>
-# $FreeBSD$
 
 PORTNAME=	http_load
 PORTVERSION=	20160309

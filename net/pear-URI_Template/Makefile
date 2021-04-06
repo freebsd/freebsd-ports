@@ -1,5 +1,4 @@
 # Created by: wenheping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	URI_Template
 PORTVERSION=	0.3.3

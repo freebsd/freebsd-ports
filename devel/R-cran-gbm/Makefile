@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gbm
 DISTVERSION=	2.0-8

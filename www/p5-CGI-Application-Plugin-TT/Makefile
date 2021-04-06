@@ -1,5 +1,4 @@
 # Created by: George Hartzell <hartzell@alerce.com>
-# $FreeBSD$
 
 PORTNAME=	CGI-Application-Plugin-TT
 PORTVERSION=	1.05

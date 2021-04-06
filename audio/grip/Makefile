@@ -1,5 +1,4 @@
 # Created by: kbyanc@posi.net
-# $FreeBSD$
 
 PORTNAME=	grip
 PORTVERSION=	4.1.1

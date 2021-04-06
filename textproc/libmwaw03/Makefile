@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libmwaw
 PORTVERSION=	0.3.15

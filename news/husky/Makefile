@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME?=	husky
 PORTVERSION=	1.9.20191207

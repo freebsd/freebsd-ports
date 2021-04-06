@@ -1,5 +1,4 @@
 # Created by: Yuan-Chung Hsiao & <ychsiao@ychsiao.org>
-# $FreeBSD$
 
 PORTNAME=	Module-Build-Kwalitee
 PORTVERSION=	0.24

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fsv2
 PORTVERSION=	1.1.0

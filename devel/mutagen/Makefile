@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mutagen
 DISTVERSIONPREFIX=	v

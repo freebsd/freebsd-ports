@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	furl
 PORTVERSION=	2.1.0

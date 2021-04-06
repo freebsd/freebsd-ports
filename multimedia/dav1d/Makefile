@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dav1d
 DISTVERSION=	0.8.2

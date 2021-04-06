@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libaio
 PORTVERSION=	0.3.109

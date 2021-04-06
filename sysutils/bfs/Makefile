@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bfs
 DISTVERSION=	2.2

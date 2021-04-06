@@ -1,5 +1,4 @@
 # Created by: George Neville-Neil gnn@freebsd.org
-# $FreeBSD$
 
 PORTNAME=	mbgtools
 DISTVERSION=	fbsd-1.0.0

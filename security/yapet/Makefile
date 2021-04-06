@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yapet
 DISTVERSION=	2.3

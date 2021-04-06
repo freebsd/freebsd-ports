@@ -1,5 +1,4 @@
 # Created by: Vivek Khera <vivek@khera.org>
-# $FreeBSD$
 
 PORTNAME=	Template-Plugin-Autoformat
 PORTVERSION=	2.77

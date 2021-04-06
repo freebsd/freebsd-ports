@@ -1,5 +1,4 @@
 # Created by: Michael Alyn Miller <malyn@strangeGizmo.com>
-# $FreeBSD$
 
 PORTNAME=	data
 PORTVERSION=	1.0

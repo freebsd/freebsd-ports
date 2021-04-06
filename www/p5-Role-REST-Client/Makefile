@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Role-REST-Client
 PORTVERSION=	0.18

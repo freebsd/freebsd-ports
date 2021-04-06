@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	raspberrypi-gpioshutdown
 DISTVERSION=	1.0

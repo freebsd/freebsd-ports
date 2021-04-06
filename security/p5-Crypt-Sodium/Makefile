@@ -1,5 +1,4 @@
 # Created by: Thomas von Dein <freebsd@daemon.de>
-# $FreeBSD$
 
 PORTNAME=	Crypt-Sodium
 PORTVERSION=	0.11

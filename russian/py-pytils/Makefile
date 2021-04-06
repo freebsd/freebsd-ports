@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pytils
 PORTVERSION=	0.3

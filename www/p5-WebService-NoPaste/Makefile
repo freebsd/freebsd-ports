@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@netnews.NCTU.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	WebService-NoPaste
 PORTVERSION=	0.03

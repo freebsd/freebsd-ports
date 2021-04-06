@@ -1,5 +1,4 @@
 # Created by: Daniel Wijnands <daniel@itxl.nl>
-# $FreeBSD$
 
 PORTNAME=	CGI-Builder
 PORTVERSION=	1.36

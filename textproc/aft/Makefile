@@ -1,5 +1,4 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	aft
 PORTVERSION=	5.098

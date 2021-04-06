@@ -1,5 +1,4 @@
 # Created by: Daniel J. O'Connor <darius@dons.net.au>
-# $FreeBSD$
 
 PORTNAME=	quakeforge
 PORTVERSION=	0.7.2

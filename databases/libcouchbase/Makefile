@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcouchbase
 PORTVERSION=	2.10.7

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Tk-WaitBox
 PORTVERSION=	1.3

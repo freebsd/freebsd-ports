@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	yajl-tcl
 PORTVERSION=	1.7.0

@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	pngcheck
 PORTVERSION=	3.0.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spirv-tools
 DISTVERSIONPREFIX=	v

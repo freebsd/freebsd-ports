@@ -1,5 +1,4 @@
 # Created by: Andrey Slusar <anray@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mknmz-wwwoffle
 PORTVERSION=	0.7.2

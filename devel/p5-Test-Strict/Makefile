@@ -1,5 +1,4 @@
 # Created by: Zach Thompson <hideo@lastamericanempire.com>
-# $FreeBSD$
 
 PORTNAME=	Test-Strict
 PORTVERSION=	0.52

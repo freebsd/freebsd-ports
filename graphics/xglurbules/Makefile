@@ -1,5 +1,4 @@
 # Created by: Stephen Roome <steve@pepcross.com>
-# $FreeBSD$
 
 PORTNAME=	xglurbules
 PORTVERSION=	3.3

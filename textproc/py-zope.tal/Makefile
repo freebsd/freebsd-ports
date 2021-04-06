@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zope.tal
 PORTVERSION=	3.6.1

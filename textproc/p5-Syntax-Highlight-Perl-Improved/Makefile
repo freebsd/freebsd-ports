@@ -1,5 +1,4 @@
 # Created by: Mauricio Herrera Cuadra <mauricio@arareko.net>
-# $FreeBSD$
 
 PORTNAME=	Syntax-Highlight-Perl-Improved
 PORTVERSION=	1.01

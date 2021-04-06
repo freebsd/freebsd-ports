@@ -1,5 +1,4 @@
 # Created by: Philippe Rocques <phil@teaser.fr>
-# $FreeBSD$
 
 PORTNAME=	gtkpasman
 PORTVERSION=	0.12.1

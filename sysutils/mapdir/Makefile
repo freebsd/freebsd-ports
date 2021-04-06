@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mapdir
 PORTVERSION=	1.2.1

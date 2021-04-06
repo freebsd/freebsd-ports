@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	sdlmm
 PORTVERSION=	0.1.8

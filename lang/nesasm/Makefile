@@ -1,5 +1,4 @@
 # Created by: Pontus Stenetorp <ninjin@kth.se>
-# $FreeBSD$
 
 PORTNAME=	nesasm
 PORTVERSION=	20040314

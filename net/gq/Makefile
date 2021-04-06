@@ -1,5 +1,4 @@
 # Created by: Roman Shterenzon <roman@xpert.com>
-# $FreeBSD$
 
 PORTNAME=	gq
 PORTVERSION=	1.3.4

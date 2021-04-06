@@ -1,5 +1,4 @@
 # Created by: Andreas Kohn <andreas@syndrom23.de>
-# $FreeBSD$
 
 PORTNAME=	gtkperf
 PORTVERSION=	0.40

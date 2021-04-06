@@ -1,5 +1,4 @@
 # Created by: jupengfei <jupengfei@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Parse-CPAN-Packages-Fast
 PORTVERSION=	0.09

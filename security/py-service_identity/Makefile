@@ -1,5 +1,4 @@
 # Created by: Axel Rau <axel.rau@chaos1.de>
-# $FreeBSD$
 
 PORTNAME=	service_identity
 PORTVERSION=	18.1.0

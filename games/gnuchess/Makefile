@@ -1,5 +1,4 @@
 # Created by: markm
-# $FreeBSD$
 
 PORTNAME=	gnuchess
 PORTVERSION=	6.2.7

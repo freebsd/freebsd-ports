@@ -1,5 +1,4 @@
 # Created by: stolz@i2.informatik.rwth-aachen.de
-# $FreeBSD$
 
 PORTNAME=	fortune-mod-futurama
 PORTVERSION=	0.2

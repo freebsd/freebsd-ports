@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	z3-solver
 DISTVERSIONPREFIX=	z3-

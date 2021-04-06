@@ -1,5 +1,4 @@
 # Created by: shanali
-# $FreeBSD$
 
 PORTNAME=	raddump
 PORTVERSION=	0.3.1

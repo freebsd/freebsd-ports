@@ -1,5 +1,4 @@
 # Created by: Tassilo Philipp <tphilipp@potion-studios.com>
-# $FreeBSD$
 
 PORTNAME=		gdb
 PORTVERSION=		7.3.1

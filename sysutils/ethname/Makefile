@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ethname
 PORTVERSION=	2.0.1

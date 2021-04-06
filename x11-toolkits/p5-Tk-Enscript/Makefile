@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	Tk-Enscript
 PORTVERSION=	1.10

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	meta1
 PORTVERSION=	1.1.0a.16.0

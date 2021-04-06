@@ -1,5 +1,4 @@
 # Created by: Chris D. Faulhaber <jedgar@fxp.org>
-# $FreeBSD$
 
 PORTNAME=	rfc
 PORTVERSION=	3.2.3

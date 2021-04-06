@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DBIx-Skinny-Mixin-DBHResolver
 PORTVERSION=	0.04

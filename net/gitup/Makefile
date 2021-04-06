@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gitup
 DISTVERSION=	0.90

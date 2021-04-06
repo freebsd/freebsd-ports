@@ -1,5 +1,4 @@
 # Created by: CHOI Junho <cjh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	qdecoder
 PORTVERSION=	12.0.8

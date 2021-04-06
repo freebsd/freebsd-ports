@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-discord
 COMMENT=	Ricty Discord - fonts for programming

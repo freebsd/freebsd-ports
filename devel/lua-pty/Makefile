@@ -1,5 +1,4 @@
 # Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
-# $FreeBSD$
 
 PORTNAME=	pty
 PORTVERSION=	1.25

@@ -1,5 +1,4 @@
 # Created by: OKAZAKI Tetsurou
-# $FreeBSD$
 
 PORTNAME=	junit
 PORTVERSION=	4.12

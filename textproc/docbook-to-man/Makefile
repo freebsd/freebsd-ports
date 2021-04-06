@@ -1,5 +1,4 @@
 # Created by: Cyrille Lefevre <clefevre@citeweb.net>
-# $FreeBSD$
 
 PORTNAME=	docbook-to-man
 PORTVERSION=	1.0

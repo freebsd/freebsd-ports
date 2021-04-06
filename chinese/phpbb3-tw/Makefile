@@ -1,5 +1,4 @@
 # Created by: Bo-Yi Wu <appleboy.tw@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	phpbb
 PORTVERSION=	3.0.12

@@ -1,5 +1,4 @@
 # Created by: Kirill Ponomarew <ponomarew@oberon.net>
-# $FreeBSD$
 
 PORTNAME=	phoon
 PORTVERSION=	2014

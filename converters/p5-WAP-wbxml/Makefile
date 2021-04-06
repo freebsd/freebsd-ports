@@ -1,5 +1,4 @@
 # Created by: Timur I. Bakeyev <bat@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	WAP-wbxml
 PORTVERSION=	1.14

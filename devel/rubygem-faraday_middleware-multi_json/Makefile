@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	faraday_middleware-multi_json
 PORTVERSION=	0.0.6

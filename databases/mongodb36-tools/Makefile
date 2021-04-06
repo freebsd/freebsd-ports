@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mongodb36-tools
 PORTVERSION=	3.6.3

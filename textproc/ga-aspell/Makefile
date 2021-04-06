@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
-# $FreeBSD$
 
 PORTNAME=	${DICT}-aspell
 SPELLVERSION=	5-ga-4.5-0

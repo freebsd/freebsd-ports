@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mdds
 PORTVERSION=	1.7.0

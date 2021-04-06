@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ngraph
 DISTVERSIONPREFIX=	v

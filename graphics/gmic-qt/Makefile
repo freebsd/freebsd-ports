@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gmic-qt
 DISTVERSIONPREFIX=	v.

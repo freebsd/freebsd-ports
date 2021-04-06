@@ -1,5 +1,4 @@
 # Created by: Carlos A M dos Santos <unixmania@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	lndir
 PORTVERSION=	1.0.3

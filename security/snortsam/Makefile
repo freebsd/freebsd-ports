@@ -1,5 +1,4 @@
 # Created by: Danton Dorati <urisso@bsd.com.br>
-# $FreeBSD$
 
 PORTNAME=	snortsam
 PORTVERSION=	2.70

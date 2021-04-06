@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Statistics-Forecast
 PORTVERSION=	0.3

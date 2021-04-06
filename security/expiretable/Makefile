@@ -1,5 +1,4 @@
 # Created by: Cristiano Deana <cris@gufi.org>
-# $FreeBSD$
 
 PORTNAME=	expiretable
 PORTVERSION=	0.6

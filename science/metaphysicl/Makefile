@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MetaPhysicL
 DISTVERSIONPREFIX=	v

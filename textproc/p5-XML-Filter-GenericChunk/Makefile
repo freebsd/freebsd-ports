@@ -1,5 +1,4 @@
 # Created by: Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
-# $FreeBSD$
 
 PORTNAME=	XML-Filter-GenericChunk
 PORTVERSION=	0.07

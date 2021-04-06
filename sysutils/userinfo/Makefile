@@ -1,5 +1,4 @@
 # Created by: Ben Kibbey <bjk@arbornet.org>
-# $FreeBSD$
 
 PORTNAME=	userinfo
 PORTVERSION=	2.5

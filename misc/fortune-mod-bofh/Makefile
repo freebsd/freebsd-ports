@@ -1,5 +1,4 @@
 # Created by: Yonatan@Xpert.com
-# $FreeBSD$
 
 PORTNAME=	fortune-mod-bofh
 PORTVERSION=	2.0

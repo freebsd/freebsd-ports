@@ -1,5 +1,4 @@
 # Created by: kuriyama
-# $FreeBSD$
 
 PORTNAME=	chasen
 PORTVERSION=	2.4.5

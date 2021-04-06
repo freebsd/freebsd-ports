@@ -1,5 +1,4 @@
 # Created by: KalleDK <plexmaintainer@k-moeller.dk>
-# $FreeBSD$
 
 PORTNAME=	plexmediaserver
 PORTVERSION?=	1.22.1.4228

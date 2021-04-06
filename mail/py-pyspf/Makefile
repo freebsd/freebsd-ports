@@ -1,5 +1,4 @@
 # Created by: Marcus Alves Grando <mnag@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pyspf
 PORTVERSION=	2.0.14

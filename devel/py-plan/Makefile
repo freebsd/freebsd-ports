@@ -1,5 +1,4 @@
 # Created by: Bartek Rutkowski <ports@robakdesign.com>
-# $FreeBSD$
 
 PORTNAME=	plan
 PORTVERSION=	0.5

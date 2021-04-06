@@ -1,5 +1,4 @@
 # Created by: Gunter Wambaugh <gunter@six-two.net>
-# $FreeBSD$
 
 PORTNAME=	Net-Google-DataAPI
 PORTVERSION=	0.28.01

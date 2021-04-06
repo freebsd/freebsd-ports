@@ -1,5 +1,4 @@
 # Created by: Martin Blapp <mb@imp.ch>
-# $FreeBSD$
 
 PORTNAME=	mtx
 PORTVERSION=	1.3.12

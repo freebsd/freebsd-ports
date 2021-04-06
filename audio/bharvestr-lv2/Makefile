@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bharvestr
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Monitoring-Livestatus
 PORTVERSION=	0.84

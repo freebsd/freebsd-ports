@@ -1,5 +1,4 @@
 # Created by: dom
-# $FreeBSD$
 
 PORTNAME=	pcre
 PORTVERSION=	8.44

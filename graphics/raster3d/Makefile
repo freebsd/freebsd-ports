@@ -1,5 +1,4 @@
 # Created by: Shaun Amott <shaun@inerd.com>
-# $FreeBSD$
 
 PORTNAME=	raster3d
 DISTVERSION=	3.0.3

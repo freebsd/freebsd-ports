@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	PyOpenGL
 PORTVERSION=	3.1.5

@@ -1,5 +1,4 @@
 # Created by: Sean Chittenden <seanc@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	rubyinline
 PORTVERSION=	3.12.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cwstudio
 DISTVERSION=	0.9.6

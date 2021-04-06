@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	slixmpp
 DISTVERSION=	1.7.0

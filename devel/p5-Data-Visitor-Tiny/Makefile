@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Visitor-Tiny
 PORTVERSION=	0.001

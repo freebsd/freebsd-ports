@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	xerces-c
 PORTVERSION=	3.2.3

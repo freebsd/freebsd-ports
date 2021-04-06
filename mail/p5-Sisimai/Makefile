@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Sisimai
 PORTVERSION=	4.25.10

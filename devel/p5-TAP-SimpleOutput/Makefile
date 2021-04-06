@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	TAP-SimpleOutput
 PORTVERSION=	0.009

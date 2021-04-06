@@ -1,5 +1,4 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gnome_subr
 PORTVERSION=	1.0

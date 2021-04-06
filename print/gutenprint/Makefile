@@ -1,5 +1,4 @@
 # Created by: dgilbert@velocet.ca
-# $FreeBSD$
 
 PORTNAME=	gutenprint
 PORTVERSION=	5.3.3

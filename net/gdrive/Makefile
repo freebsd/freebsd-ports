@@ -1,5 +1,4 @@
 # Created by: Dmitri Goutnik <dg@syrec.org>
-# $FreeBSD$
 
 PORTNAME=	gdrive
 DISTVERSION=	2.1.0-23

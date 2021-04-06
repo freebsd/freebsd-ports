@@ -1,5 +1,4 @@
 # Created by: Alex Stangl <alex@stangl.us>
-# $FreeBSD$
 
 PORTNAME=	pauker
 DISTVERSION=	1.8

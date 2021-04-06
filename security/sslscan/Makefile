@@ -1,5 +1,4 @@
 # Created by: Matthieu BOUTHORS <matthieu@labs.fr>
-# $FreeBSD$
 
 PORTNAME=	sslscan
 DISTVERSION=	1.11.12

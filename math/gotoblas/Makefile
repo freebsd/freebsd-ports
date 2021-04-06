@@ -1,5 +1,4 @@
 # Created by: Sato Hiroki <hrs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gotoblas
 PORTVERSION=	2.${GOTOBLAS2VER}.${LAPACKVER}

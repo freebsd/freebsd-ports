@@ -1,5 +1,4 @@
 # Created by: mjhsieh
-# $FreeBSD$
 
 PORTNAME=	hypermail
 PORTVERSION=	2.4.0

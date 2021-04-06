@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	polish
 LO_I18N=	pl

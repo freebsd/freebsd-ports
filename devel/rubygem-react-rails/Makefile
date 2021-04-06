@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	react-rails
 PORTVERSION=	2.4.7

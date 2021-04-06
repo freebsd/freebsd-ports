@@ -1,5 +1,4 @@
 # Created by: Josh Gilliam <josh@quick.net>
-# $FreeBSD$
 
 PORTNAME=	mbx2mbox
 PORTVERSION=	0.34

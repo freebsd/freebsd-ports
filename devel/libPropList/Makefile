@@ -1,5 +1,4 @@
 # Created by: Glenn Johnson
-# $FreeBSD$
 
 PORTNAME=	libproplist
 PORTVERSION=	0.10.1

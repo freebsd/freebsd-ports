@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	coredns
 DISTVERSIONPREFIX=	v

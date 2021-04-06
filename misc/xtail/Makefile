@@ -1,5 +1,4 @@
 # Created by: gmarco@giovannelli.it
-# $FreeBSD$
 
 PORTNAME=	xtail
 PORTVERSION=	2.1

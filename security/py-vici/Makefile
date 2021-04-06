@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vici
 DISTVERSION=	5.8.4

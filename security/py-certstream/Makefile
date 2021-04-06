@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	certstream
 PORTVERSION=	1.11

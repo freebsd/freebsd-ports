@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ruport
 PORTVERSION=	1.7.1

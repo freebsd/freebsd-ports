@@ -1,5 +1,4 @@
 # Created by: Shinsuke Matsui <smatsui@karashi.org>
-# $FreeBSD$
 
 PORTNAME=	HTML-Selector-XPath
 PORTVERSION=	0.22

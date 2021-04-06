@@ -1,5 +1,4 @@
 # Created by: Oleksii Tsai <oleksii.tsai@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	LLnextgen
 PORTVERSION=	0.5.5

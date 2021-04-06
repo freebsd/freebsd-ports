@@ -1,5 +1,4 @@
 # Created by: Alex Pesternikov <apesternikov@page2rss.com>
-# $FreeBSD$
 
 PORTNAME=	cog
 PORTVERSION=	2.3

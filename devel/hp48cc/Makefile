@@ -1,5 +1,4 @@
 # Created by: Patrick Li <pat@databits.net>
-# $FreeBSD$
 
 PORTNAME=	hp48cc
 PORTVERSION=	1.3

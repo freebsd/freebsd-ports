@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman
-# $FreeBSD$
 
 PORTNAME=	mysql-connector-java
 PORTVERSION=	5.1.49

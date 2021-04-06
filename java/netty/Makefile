@@ -1,5 +1,4 @@
 # Created by: Mikhail T. <michael@fun-box.ru>
-# $FreeBSD$
 
 PORTNAME=	netty
 PORTVERSION=	4.1.53

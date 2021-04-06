@@ -1,5 +1,4 @@
 # Created by: Makoto YAMAKURA <makoto@pinpott.spnet.ne.jp>
-# $FreeBSD$
 
 PORTNAME=	zangband
 DISTVERSION=	2.7.5pre1

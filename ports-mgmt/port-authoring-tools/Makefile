@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	port-authoring-tools
 PORTVERSION=	1.0

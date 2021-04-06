@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libhijack
 DISTVERSIONPREFIX=	v

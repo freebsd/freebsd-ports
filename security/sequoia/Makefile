@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sequoia
 PORTVERSION=	0.19.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xxhash
 PORTVERSION=	0.8.0

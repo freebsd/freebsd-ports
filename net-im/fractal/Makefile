@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fractal
 DISTVERSION=	4.2.2

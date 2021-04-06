@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME=	cre
 DISTVERSION=	1.2beta_r2

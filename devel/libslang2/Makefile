@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libslang2
 PORTVERSION=	2.3.2

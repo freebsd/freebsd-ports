@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dhcpd
 PORTVERSION=	6.6.20200413

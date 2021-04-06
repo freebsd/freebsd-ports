@@ -1,5 +1,4 @@
 # Created by: Paul Schmehl <pauls@utdallas.edu>
-# $FreeBSD$
 
 PORTNAME=	Gtk2-GladeXML
 PORTVERSION=	1.008

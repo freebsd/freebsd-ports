@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hlint
 PORTVERSION=	3.2.7

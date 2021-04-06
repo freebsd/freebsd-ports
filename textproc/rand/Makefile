@@ -1,5 +1,4 @@
 # Created by: domi@saargate.de
-# $FreeBSD$
 
 PORTNAME=	rand
 PORTVERSION=	1.9

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xml-format
 PORTVERSION=	0.2

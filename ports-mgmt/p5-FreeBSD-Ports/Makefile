@@ -1,5 +1,4 @@
 # Created by: Tom Hukins <tom@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	FreeBSD-Ports
 PORTVERSION=	0.04

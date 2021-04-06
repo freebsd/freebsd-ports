@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
-# $FreeBSD$
 
 # Also update devel/libgit2, devel/libgit2-glib, devel/py-pygit2
 

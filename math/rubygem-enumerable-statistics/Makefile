@@ -1,5 +1,4 @@
 # Created by Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	enumerable-statistics
 PORTVERSION=	2.0.1

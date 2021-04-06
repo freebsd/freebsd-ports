@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	haven
 DISTVERSION=	2.3.1

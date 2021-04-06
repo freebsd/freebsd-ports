@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Flask-OAuthlib
 PORTVERSION=	0.9.5

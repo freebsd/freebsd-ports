@@ -1,5 +1,4 @@
 # Created by: Fabian Keil <fk@fabiankeil.de>
-# $FreeBSD$
 
 PORTNAME=	liballium
 PORTVERSION=	0.0.1

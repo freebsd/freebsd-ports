@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kanboard
 DISTVERSIONPREFIX=	v

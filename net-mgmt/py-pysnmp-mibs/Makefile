@@ -1,5 +1,4 @@
 # Created by: Martin Jackson <mhjacks@swbell.net>
-# $FreeBSD$
 
 PORTNAME=	pysnmp-mibs
 PORTVERSION=	0.1.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyosf
 DISTVERSIONPREFIX=	v

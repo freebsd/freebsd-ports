@@ -1,5 +1,4 @@
 # Created by: se
-# $FreeBSD$
 
 PORTNAME=	yersinia
 PORTVERSION=	0.8.2

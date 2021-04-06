@@ -1,5 +1,4 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	deadbeef-waveform-seekbar-plugin
 DISTVERSION=	0.0.2016.01.01

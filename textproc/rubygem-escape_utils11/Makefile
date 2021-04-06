@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	escape_utils
 PORTVERSION=	1.1.1

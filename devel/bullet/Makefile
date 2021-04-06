@@ -1,5 +1,4 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bullet
 PORTVERSION=	2.86.1

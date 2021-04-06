@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	twilio
 PORTVERSION=	6.51.0

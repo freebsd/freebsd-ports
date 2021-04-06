@@ -1,5 +1,4 @@
 # Created by: Carlo Strub <cs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	YubiOTP
 PORTVERSION=	1.0.0

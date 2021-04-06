@@ -1,5 +1,4 @@
 # Created by: Andrey Kostenko <andrey@kostenko.name>
-# $FreeBSD$
 
 PORTNAME=	Archive-SimpleExtractor
 PORTVERSION=	0.11

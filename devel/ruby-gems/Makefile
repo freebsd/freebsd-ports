@@ -1,5 +1,4 @@
 # Created by: Alexander Novitsky <alecn2002@yandex.ru>
-# $FreeBSD$
 
 PORTNAME=	gems
 PORTVERSION=	3.0.8

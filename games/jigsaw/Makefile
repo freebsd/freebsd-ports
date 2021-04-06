@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jigsaw
 PORTVERSION=	0.8

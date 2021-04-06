@@ -1,5 +1,4 @@
 # Created by: Jona Joachim <walkingshadow@grummel.net>
-# $FreeBSD$
 
 PORTNAME=	sdl_sge
 PORTVERSION=	0.030809

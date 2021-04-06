@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	converters lang
 PKGNAMESUFFIX=	-iconvenc

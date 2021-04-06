@@ -1,5 +1,4 @@
 # Created by: paul@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	ldapsdk
 PORTVERSION=	6.0.7

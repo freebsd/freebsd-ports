@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	caldav
 PORTVERSION=	0.7.1

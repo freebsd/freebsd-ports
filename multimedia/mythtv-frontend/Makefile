@@ -1,5 +1,4 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-${SLAVEPORT}
 

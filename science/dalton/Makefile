@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dalton
 DISTVERSION=	2020.0

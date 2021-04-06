@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	uploadprogress
 DISTVERSION=	1.1.3

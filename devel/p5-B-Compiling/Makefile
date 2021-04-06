@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	B-Compiling
 PORTVERSION=	0.06

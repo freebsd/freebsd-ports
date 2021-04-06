@@ -1,5 +1,4 @@
 # Created by: Andreas Dobloug <andreasd@@ifi.uio.no>
-# $FreeBSD$
 
 PORTNAME=	mgeupsd
 PORTVERSION=	0.3

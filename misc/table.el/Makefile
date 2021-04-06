@@ -1,5 +1,4 @@
 # Created by: Denis Shaposhnikov <dsh@vlink.ru>
-# $FreeBSD$
 
 PORTNAME=	table.el
 PORTVERSION=	1.5.54

@@ -1,5 +1,4 @@
 # Created by: snowchyld
-# $FreeBSD$
 
 PORTNAME=	Hash-Merge
 PORTVERSION=	0.302

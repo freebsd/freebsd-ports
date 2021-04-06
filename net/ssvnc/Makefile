@@ -1,5 +1,4 @@
 # Created by: Alejandro Pulver <alepulver@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ssvnc
 PORTVERSION=	1.0.29

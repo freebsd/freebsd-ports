@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine (<gerrit@beine-computer.de>)
-# $FreeBSD$
 
 PORTNAME=	HTML_QuickForm
 PORTVERSION=	3.2.16

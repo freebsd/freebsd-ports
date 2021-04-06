@@ -1,5 +1,4 @@
 # Created by: Kalten <kalten@gmx.at>
-# $FreeBSD$
 
 PORTNAME=	eureka
 DISTVERSION=	1.27b

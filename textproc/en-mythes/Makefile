@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mythes
 PORTVERSION=	2006.12.08

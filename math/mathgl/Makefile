@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mathgl
 DISTVERSION=	2.4.4

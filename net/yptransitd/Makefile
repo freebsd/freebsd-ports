@@ -1,5 +1,4 @@
 # Created by: Michael Joyner <mjoyner@hq.dyns.cx>
-# $FreeBSD$
 
 PORTNAME=	yptransitd
 PORTVERSION=	0.5

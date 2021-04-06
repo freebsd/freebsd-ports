@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz <rpsfa@rit.edu>
-# $FreeBSD$
 
 PORTNAME=	dm-paperclip
 PORTVERSION=	2.5.0

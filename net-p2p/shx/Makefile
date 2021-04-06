@@ -1,5 +1,4 @@
 # Created by: Devin Teske <dteske@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	shx
 PORTVERSION=	0.2.4

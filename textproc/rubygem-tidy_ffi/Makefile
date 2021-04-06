@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tidy_ffi
 PORTVERSION=	0.1.6

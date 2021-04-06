@@ -1,5 +1,4 @@
 # Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-# $FreeBSD$
 
 PORTNAME=	numlockx
 PORTVERSION=	1.2

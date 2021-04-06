@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sshout
 DISTVERSION=	1.2.0

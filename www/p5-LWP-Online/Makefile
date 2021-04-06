@@ -1,5 +1,4 @@
 # Created by: milki <milki@rescomp.berkeley.edu>
-# $FreeBSD$
 
 PORTNAME=	LWP-Online
 PORTVERSION=	1.08

@@ -1,5 +1,4 @@
 # Created by: alp@sfedu.ru
-# $FreeBSD$
 
 PORTNAME=	postgresql-repmgr
 PORTVERSION=	5.2.0

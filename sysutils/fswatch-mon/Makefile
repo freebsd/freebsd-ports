@@ -1,5 +1,4 @@
 # Created by: Enrico M. Crisostomo <enrico.m.crisostomo@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	fswatch
 DISTVERSION=	1.13.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	foo-yc20
 DISTVERSION=	1.3.0

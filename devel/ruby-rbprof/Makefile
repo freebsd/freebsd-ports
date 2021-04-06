@@ -1,5 +1,4 @@
 # Created by: Sean Chittenden <sean@chittenden.org>
-# $FreeBSD$
 
 PORTNAME=	rbprof
 PORTVERSION=	0.2.1

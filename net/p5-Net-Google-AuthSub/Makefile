@@ -1,5 +1,4 @@
 # Created by: Felippe de Meirelles Motta <lippemail@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Net-Google-AuthSub
 PORTVERSION=	0.5

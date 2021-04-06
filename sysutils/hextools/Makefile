@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hextools
 PORTVERSION=	1.1

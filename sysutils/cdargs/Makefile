@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cdargs
 PORTVERSION=	1.35

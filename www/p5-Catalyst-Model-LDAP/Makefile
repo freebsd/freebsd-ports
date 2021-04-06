@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Model-LDAP
 PORTVERSION=	0.21

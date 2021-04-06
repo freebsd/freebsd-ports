@@ -1,5 +1,4 @@
 # Created by: Brendan Molloy <brendan+freebsd@bbqsrc.net>
-# $FreeBSD$
 
 PORTNAME=	frozendict
 PORTVERSION=	1.2

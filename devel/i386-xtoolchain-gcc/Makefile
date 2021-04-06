@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PKGNAMEPREFIX=	i386-
 

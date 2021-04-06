@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iipsrv
 PORTVERSION=	1.1

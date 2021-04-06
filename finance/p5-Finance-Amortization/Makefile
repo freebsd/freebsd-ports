@@ -1,5 +1,4 @@
 # Created by: Christopher Boumenot <boumenot@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Finance-Amortization
 PORTVERSION=	0.5

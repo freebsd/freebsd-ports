@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mcweject
 PORTVERSION=	1.1

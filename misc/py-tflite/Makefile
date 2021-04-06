@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tflite
 DISTVERSIONPREFIX=	v

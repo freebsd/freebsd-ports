@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dtcpclient
 PORTVERSION=	20151002

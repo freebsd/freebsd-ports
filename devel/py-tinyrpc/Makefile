@@ -1,5 +1,4 @@
 # Created by: dpejesh@yahoo.com
-# $FreeBSD$
 
 PORTNAME=	tinyrpc
 PORTVERSION=	1.0.4

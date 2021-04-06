@@ -1,5 +1,4 @@
 # Created by: Eric L. Camachat <eric@camachat.org>
-# $FreeBSD$
 
 PORTNAME=	ibus-chewing
 PORTVERSION=	1.5.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	step-cli
 DISTVERSIONPREFIX=v

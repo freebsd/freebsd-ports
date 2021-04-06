@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	os-service-types
 PORTVERSION=	1.7.0

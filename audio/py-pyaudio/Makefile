@@ -1,5 +1,4 @@
 # Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
-# $FreeBSD$
 
 PORTNAME=	pyaudio
 PORTVERSION=	0.2.11

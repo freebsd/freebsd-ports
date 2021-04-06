@@ -1,5 +1,4 @@
 # Created by: Jesse van den Kieboom <troplosti@orcaweb.cjb.net>
-# $FreeBSD$
 
 PORTNAME=	libgksu
 PORTVERSION=	2.0.12

@@ -1,5 +1,4 @@
 # Created by: Nikolai Lifanov <lifanov@mail.lifanov.com>
-# $FreeBSD$
 
 PORTNAME=	alex4
 PORTVERSION=	1.1

@@ -1,5 +1,4 @@
 # Created by: mi@aldan.ziplink.net
-# $FreeBSD$
 
 PORTNAME=	xmdiary
 PORTVERSION=	3.0.3

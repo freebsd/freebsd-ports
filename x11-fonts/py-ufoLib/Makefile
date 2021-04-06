@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ufoLib
 PORTVERSION=	2.3.2

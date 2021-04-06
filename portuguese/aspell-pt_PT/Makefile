@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
-# $FreeBSD$
 
 PORTNAME=	aspell
 SPELLVERSION=	6-pt_PT-20070510-0

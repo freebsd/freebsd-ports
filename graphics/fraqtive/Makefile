@@ -1,5 +1,4 @@
 # Created by: Markus Brueffer <markus@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	fraqtive
 PORTVERSION=	0.4.8

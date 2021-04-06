@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nfft
 PORTVERSION=	3.5.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	formats
 PORTVERSION=	20150521

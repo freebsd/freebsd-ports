@@ -1,5 +1,4 @@
 # Created by: Ruan Wei (iamayan@gmail.com)
-# $FreeBSD$
 
 PORTNAME=	skyeye
 PORTVERSION=	1.2.5

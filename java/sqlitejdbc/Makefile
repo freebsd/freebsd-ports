@@ -1,5 +1,4 @@
 # Created by: Lapo Luchini <lapo@lapo.it>
-# $FreeBSD$
 
 PORTNAME=	sqlitejdbc
 PORTVERSION=	056

@@ -1,5 +1,4 @@
 # Created by: Lewis Thompson <purple@lewiz.net>
-# $FreeBSD$
 
 PORTNAME=	nzbget
 PORTVERSION=	21.0

@@ -1,5 +1,4 @@
 # Created by: Marcin Simonides <marcin@studio4plus.com>
-# $FreeBSD$
 
 PORTNAME=	gnome-subtitles
 PORTVERSION=	1.3

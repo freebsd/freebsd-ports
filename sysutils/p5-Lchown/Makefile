@@ -1,5 +1,4 @@
 # Created by: Jeffrey Goldberg <jeffrey@goldmark.org>
-# $FreeBSD$
 
 PORTNAME=	Lchown
 PORTVERSION=	1.01

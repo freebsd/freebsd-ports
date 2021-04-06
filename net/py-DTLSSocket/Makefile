@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DTLSSocket
 DISTVERSION=	0.1.12

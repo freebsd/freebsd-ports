@@ -1,5 +1,4 @@
 # Created by: antoine@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	acora
 PORTVERSION=	2.2

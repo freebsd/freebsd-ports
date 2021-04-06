@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dams
 PORTVERSION=	4.3.4

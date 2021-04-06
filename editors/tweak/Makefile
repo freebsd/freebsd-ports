@@ -1,5 +1,4 @@
 # Created by: Jille Timmermans (jille@quis.cx)
-# $FreeBSD$
 
 PORTNAME=	tweak
 PORTVERSION=	3.02

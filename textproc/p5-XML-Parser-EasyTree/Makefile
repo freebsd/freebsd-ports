@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	XML-Parser-EasyTree
 PORTVERSION=	0.01

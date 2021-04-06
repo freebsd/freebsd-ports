@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bbparse
 PORTVERSION=	0.1.0

@@ -1,5 +1,4 @@
 # Created by: benlutz@datacomm.ch
-# $FreeBSD$
 
 PORTNAME=	enemyterritory
 PORTVERSION=	2.60b

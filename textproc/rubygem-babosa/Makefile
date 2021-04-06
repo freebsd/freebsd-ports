@@ -1,5 +1,4 @@
 # Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-# $FreeBSD$
 
 PORTNAME=	babosa
 PORTVERSION=	1.0.2

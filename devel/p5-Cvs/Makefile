@@ -1,5 +1,4 @@
 # Created by: Philip Drapeau <pdrapeau@advanis.ca>
-# $FreeBSD$
 
 PORTNAME=	Cvs
 PORTVERSION=	0.07

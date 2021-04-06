@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Crypt-Twofish
 PORTVERSION=	2.18

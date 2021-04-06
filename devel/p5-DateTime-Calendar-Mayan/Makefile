@@ -1,5 +1,4 @@
 # Created by: Mathieu Arnold <m@absolight.net>
-# $FreeBSD$
 
 PORTNAME=	DateTime-Calendar-Mayan
 PORTVERSION=	0.0601

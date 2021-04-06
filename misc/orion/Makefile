@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	orion
 DISTVERSION=	1.6.7-12

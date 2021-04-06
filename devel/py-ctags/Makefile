@@ -1,5 +1,4 @@
 # Created by: Aaron H. K. Diep <ahkdiep@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ctags
 PORTVERSION=	1.0.5

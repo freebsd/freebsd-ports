@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	descendants_tracker
 PORTVERSION=	0.0.4

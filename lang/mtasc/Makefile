@@ -1,5 +1,4 @@
 # Created by: Marcin Cieslak <saper@SYSTEM.PL>
-# $FreeBSD$
 
 PORTNAME=	mtasc
 PORTVERSION=	1.14

@@ -1,5 +1,4 @@
 # Created by: Brad Hendrickse <bradh@uunet.co.za>
-# $FreeBSD$
 
 PORTNAME=	Net-IPv4Addr
 PORTVERSION=	0.10

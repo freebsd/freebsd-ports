@@ -1,5 +1,4 @@
 # Created by: obraun@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	cpphs
 PORTVERSION=	1.20.9.1

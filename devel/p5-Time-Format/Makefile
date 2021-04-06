@@ -1,5 +1,4 @@
 # Created by: Sergey V. Dyatko <Sergey.Dyatko@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Time-Format
 PORTVERSION=	1.12

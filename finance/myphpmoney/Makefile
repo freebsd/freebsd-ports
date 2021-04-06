@@ -1,5 +1,4 @@
 # Created by: courou <courou@users.sourceforge.net>
-# $FreeBSD$
 
 PORTNAME=	myphpmoney
 PORTVERSION=	1.3.r3

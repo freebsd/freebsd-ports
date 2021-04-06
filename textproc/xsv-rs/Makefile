@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xsv
 DISTVERSION=	0.13.0

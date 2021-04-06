@@ -1,5 +1,4 @@
 # Created by: David Yeske <dyeske@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	spiralsynthmodular
 PORTVERSION=	0.2.2a

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		fastp
 DISTVERSIONPREFIX=	v

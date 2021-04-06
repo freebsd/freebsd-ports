@@ -1,5 +1,4 @@
 # Created by: Will Andrews <andrews@technologist.com>
-# $FreeBSD$
 
 PORTNAME=	httperf
 PORTVERSION=	0.9.1

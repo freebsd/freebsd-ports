@@ -1,5 +1,4 @@
 # Created by: Vadim Vatlin
-# $FreeBSD$
 
 PORTNAME=	JSON-RPC
 PORTVERSION=	1.06

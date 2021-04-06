@@ -1,5 +1,4 @@
 # Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-# $FreeBSD$
 
 PORTNAME=	Services_TinyURL
 PORTVERSION=	0.1.2

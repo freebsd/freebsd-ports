@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xc3sprog
 PORTVERSION=	r769

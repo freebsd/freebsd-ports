@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	symphony
 DISTVERSIONPREFIX=	releases/

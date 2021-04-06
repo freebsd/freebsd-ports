@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openbgpd
 PORTVERSION=	5.2.20121209

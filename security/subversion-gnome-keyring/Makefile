@@ -1,5 +1,4 @@
 # Created by: Autrijus Tang <autrijus@autrijus.org>
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-gnome-keyring
 CATEGORIES=	security gnome

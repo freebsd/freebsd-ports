@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libmissing
 DISTVERSION=	20130815

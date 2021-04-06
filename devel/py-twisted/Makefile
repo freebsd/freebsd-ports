@@ -1,5 +1,4 @@
 # Created by: Johann Visagie <wjv@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	twisted
 PORTVERSION=	20.3.0

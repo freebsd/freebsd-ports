@@ -1,5 +1,4 @@
 # Created by: jkh
-# $FreeBSD$
 
 PORTNAME=	sup
 PORTVERSION=	2.0.20200824

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-FTP-Recursive
 PORTVERSION=	2.04

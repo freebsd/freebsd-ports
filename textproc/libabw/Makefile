@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libabw
 PORTVERSION=	0.1.3

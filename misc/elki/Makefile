@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	elki
 DISTVERSIONPREFIX=	release

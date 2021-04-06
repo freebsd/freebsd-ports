@@ -1,5 +1,4 @@
 # Created by: johans@stack.nl
-# $FreeBSD$
 
 PORTNAME=	nfsshell
 PORTVERSION=	20130510

@@ -1,5 +1,4 @@
 # Created by: Sebastian Schuetz <sschuetz@fhm.edu>
-# $FreeBSD$
 
 PORTNAME=	tpm-tools
 PORTVERSION=	1.3.9.1

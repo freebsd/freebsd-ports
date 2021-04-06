@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	abc
 DISTVERSION=	g20200322

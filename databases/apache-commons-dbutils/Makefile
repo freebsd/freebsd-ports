@@ -1,5 +1,4 @@
 # Created by: Michael Winking <mwfp@foldl.net>
-# $FreeBSD$
 
 PORTNAME=	commons-dbutils
 PORTVERSION=	1.7

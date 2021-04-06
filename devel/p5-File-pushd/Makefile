@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	File-pushd
 PORTVERSION=	1.016

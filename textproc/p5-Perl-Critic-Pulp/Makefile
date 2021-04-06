@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Perl-Critic-Pulp
 PORTVERSION=	97

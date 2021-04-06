@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rmsd
 DISTVERSION=	1.4

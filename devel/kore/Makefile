@@ -1,5 +1,4 @@
 # Created by: Tobias Kortkamp <t@tobik.me>
-# $FreeBSD$
 
 PORTNAME=	kore
 PORTVERSION=	4.1.0

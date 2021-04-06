@@ -1,5 +1,4 @@
 # Created by: Kurt Lidl <kurt.lidl@cello.com>
-# $FreeBSD$
 
 PORTNAME=	Test-Mini-Unit
 PORTVERSION=	v1.0.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	urw-core35-fonts
 DISTVERSION=	2017-08-04

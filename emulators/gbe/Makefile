@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gbe
 PORTVERSION=	0.0.22

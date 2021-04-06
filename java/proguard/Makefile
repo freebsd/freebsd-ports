@@ -1,5 +1,4 @@
 # Created by: Alex Semenyaka <alex@rinet.ru>
-# $FreeBSD$
 
 PORTNAME=	proguard
 PORTVERSION=	7.0.0

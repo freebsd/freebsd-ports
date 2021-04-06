@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Schedule
 PORTVERSION=	0.95

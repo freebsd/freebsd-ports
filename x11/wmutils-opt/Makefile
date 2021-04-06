@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wmutils-opt
 DISTVERSIONPREFIX=	v

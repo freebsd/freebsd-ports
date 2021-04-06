@@ -1,5 +1,4 @@
 # Created by: Aaron Straup Cope <ascope@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Net-Delicious
 PORTVERSION=	1.14

@@ -1,5 +1,4 @@
 # Created by: Mikhail Zakharov <zmey20000@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	empty
 PORTVERSION=	0.6.20b

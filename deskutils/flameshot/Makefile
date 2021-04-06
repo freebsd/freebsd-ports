@@ -1,5 +1,4 @@
 # Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	flameshot
 PORTVERSION=	0.9.0

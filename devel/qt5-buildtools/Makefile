@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	buildtools
 DISTVERSION=	${QT5_VERSION}

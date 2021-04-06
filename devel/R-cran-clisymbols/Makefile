@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clisymbols
 DISTVERSION=	1.2.0

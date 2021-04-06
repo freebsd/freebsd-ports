@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tkgate
 PORTVERSION=	2.1

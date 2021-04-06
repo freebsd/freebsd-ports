@@ -1,5 +1,4 @@
 # Created by: Shaun Amott <shaun@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	kaitaistruct
 PORTVERSION=	0.8

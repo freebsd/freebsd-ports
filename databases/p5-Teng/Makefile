@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Teng
 PORTVERSION=	0.28

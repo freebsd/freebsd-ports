@@ -1,5 +1,4 @@
 # Created by: Harald Wille <harald.wille@students.jku.at>
-# $FreeBSD$
 
 PORTNAME=	wmweather+
 PORTVERSION=	2.18

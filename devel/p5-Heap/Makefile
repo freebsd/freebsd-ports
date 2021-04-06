@@ -1,5 +1,4 @@
 # Created by: Anatoliy Dmytriyev
-# $FreeBSD$
 
 PORTNAME=	Heap
 PORTVERSION=	0.80

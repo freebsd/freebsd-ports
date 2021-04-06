@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flaky
 DISTVERSION=	3.7.0

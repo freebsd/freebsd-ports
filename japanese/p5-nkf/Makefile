@@ -1,5 +1,4 @@
 # Created by: max
-# $FreeBSD$
 
 PORTNAME=	nkf
 PORTVERSION=	2.1.4

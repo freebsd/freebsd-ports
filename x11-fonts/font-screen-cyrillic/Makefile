@@ -1,5 +1,4 @@
 # Created by: Pawel Worach
-# $FreeBSD$
 
 PORTNAME=	font-screen-cyrillic
 PORTVERSION=	1.0.4

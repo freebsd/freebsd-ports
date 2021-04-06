@@ -1,5 +1,4 @@
 # Created by: Stephen Montgomery-Smith <stephen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	octave-forge-bsltl
 PORTVERSION=	1.3.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	docker-compose
 PORTVERSION=	1.24.0

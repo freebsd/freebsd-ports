@@ -1,5 +1,4 @@
 # Created by: Jeremy Norris <ishmael27@home.com>
-# $FreeBSD$
 
 PORTNAME=	ferite
 PORTVERSION=	1.0.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Module-Reader
 PORTVERSION=	0.002003

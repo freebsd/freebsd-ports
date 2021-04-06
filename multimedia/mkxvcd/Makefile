@@ -1,5 +1,4 @@
 # Created by: michael johnson <ahze@ahze.net>
-# $FreeBSD$
 
 PORTNAME=	mkxvcd
 PORTVERSION=	2.0.2

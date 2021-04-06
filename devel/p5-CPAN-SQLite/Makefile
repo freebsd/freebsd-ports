@@ -1,5 +1,4 @@
 # Created by: Christopher Boumenot <boumenot@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	CPAN-SQLite
 PORTVERSION=	0.199

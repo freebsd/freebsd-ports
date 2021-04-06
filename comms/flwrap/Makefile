@@ -1,5 +1,4 @@
 # Created by: Diane Bruce <db@db.net>
-# $FreeBSD$
 
 PORTNAME=	flwrap
 PORTVERSION=	1.3.5

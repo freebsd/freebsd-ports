@@ -1,5 +1,4 @@
 # Created by: fjoe@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	wx
 PORTVERSION=	2.8.12

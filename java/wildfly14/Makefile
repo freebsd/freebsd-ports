@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wildfly14
 PORTVERSION=	14.0.1

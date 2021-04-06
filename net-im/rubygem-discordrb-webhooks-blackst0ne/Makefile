@@ -1,5 +1,4 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	discordrb-webhooks-blackst0ne
 PORTVERSION=	3.3.0

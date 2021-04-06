@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kpcli
 PORTVERSION=	3.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	calendarsupport
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

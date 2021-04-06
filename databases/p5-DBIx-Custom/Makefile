@@ -1,5 +1,4 @@
 # Created by: Andrey Kostenko <andrey@kostenko.name>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Custom
 PORTVERSION=	0.4000

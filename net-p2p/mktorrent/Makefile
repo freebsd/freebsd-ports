@@ -1,5 +1,4 @@
 # Created by: Damian Gerow <dgerow@afflictions.org>
-# $FreeBSD$
 
 PORTNAME=	mktorrent
 PORTVERSION=	1.1

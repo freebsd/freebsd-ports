@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jenkins_api_client
 PORTVERSION=	1.5.3

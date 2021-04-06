@@ -1,5 +1,4 @@
 # Created by: GreenDog <fiziologus@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	fife
 PORTVERSION=	0.4.2

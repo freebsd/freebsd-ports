@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	singular
 DISTVERSIONPREFIX=	Release-

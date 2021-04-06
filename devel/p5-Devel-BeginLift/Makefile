@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-BeginLift
 PORTVERSION=	0.001003

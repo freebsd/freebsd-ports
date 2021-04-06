@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	weboob
 PORTVERSION=	2.0

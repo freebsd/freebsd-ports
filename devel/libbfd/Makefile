@@ -1,5 +1,4 @@
 # Created by: Joerg Wunsch <joerg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libbfd
 PORTVERSION=	2.19.1

@@ -1,5 +1,4 @@
 # Created by: nork@cityfujisawa.ne.jp
-# $FreeBSD$
 
 PORTNAME=	DBD-SQLite
 PORTVERSION=	1.66

@@ -1,5 +1,4 @@
 # Created by: Jeff Molofee
-# $FreeBSD$
 
 PORTNAME=	timeless
 PORTVERSION=	1.0

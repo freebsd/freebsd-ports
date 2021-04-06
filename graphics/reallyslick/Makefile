@@ -1,5 +1,4 @@
 # Created by: David Yeske <dyeske@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	reallyslick
 PORTVERSION=	0.9.1

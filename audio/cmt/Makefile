@@ -1,5 +1,4 @@
 # Created by: Tilman Linneweh <arved@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cmt
 PORTVERSION=	1.16

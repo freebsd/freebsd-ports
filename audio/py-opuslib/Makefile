@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich
-# $FreeBSD$
 
 PORTNAME=	opuslib
 DISTVERSION=	3.0.1

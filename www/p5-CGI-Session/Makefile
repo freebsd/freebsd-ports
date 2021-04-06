@@ -1,5 +1,4 @@
 # Created by: Erwin Lansing <erwin@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	CGI-Session
 PORTVERSION=	4.48

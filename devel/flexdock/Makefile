@@ -1,5 +1,4 @@
 # Created by: Otacilio de Araujo Ramos Neto <otacilio.neto@bsd.com.br>
-# $FreeBSD$
 
 PORTNAME=	flexdock
 PORTVERSION=	1.2.4

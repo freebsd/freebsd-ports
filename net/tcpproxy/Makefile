@@ -1,5 +1,4 @@
 # Created by: Alexander Hausner <alex@hugo.bmg.gv.at>
-# $FreeBSD$
 
 PORTNAME=	tcpproxy
 PORTVERSION=	1.2

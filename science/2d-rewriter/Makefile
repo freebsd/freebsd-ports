@@ -1,5 +1,4 @@
 # Created by: Igor Serikov <iserikov@acm.org>
-# $FreeBSD$
 
 PORTNAME=	2d-rewriter
 PORTVERSION=	1.6

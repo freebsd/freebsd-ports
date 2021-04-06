@@ -1,5 +1,4 @@
 # Created by: torstenb
-# $FreeBSD$
 
 PORTNAME=	cricket
 PORTVERSION=	1.0.5

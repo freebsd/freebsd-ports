@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libmesode
 PORTVERSION=	0.10.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyftpdlib
 PORTVERSION=	1.5.6

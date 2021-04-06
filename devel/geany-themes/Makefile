@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-themes
 DISTVERSION=	1.24

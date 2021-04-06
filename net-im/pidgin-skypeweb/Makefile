@@ -1,5 +1,4 @@
 # Created by: Andrey Akhmichin <sepulkarium45@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	pidgin-skypeweb
 PORTVERSION=	1.7

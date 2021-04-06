@@ -1,5 +1,4 @@
 # Created by: Henk van Oers <hvo.pm@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	UUID-Random-Patch-UseMRS
 PORTVERSION=	0.01

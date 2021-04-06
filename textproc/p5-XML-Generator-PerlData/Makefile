@@ -1,5 +1,4 @@
 # Created by: Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
-# $FreeBSD$
 
 PORTNAME=	XML-Generator-PerlData
 PORTVERSION=	0.95

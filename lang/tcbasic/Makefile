@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tcbasic
 PORTVERSION=	2.2.0

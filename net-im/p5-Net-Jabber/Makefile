@@ -1,5 +1,4 @@
 # Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	Net-Jabber
 PORTVERSION=	2.0

@@ -1,5 +1,4 @@
 # Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-# $FreeBSD$
 
 PORTNAME=	Package-Util-Lite
 PORTVERSION=	0.001

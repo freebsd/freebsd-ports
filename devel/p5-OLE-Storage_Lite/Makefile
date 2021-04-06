@@ -1,5 +1,4 @@
 # Created by: Jason Portwood <jason@iac.net>
-# $FreeBSD$
 
 PORTNAME=	OLE-Storage_Lite
 PORTVERSION=	0.20

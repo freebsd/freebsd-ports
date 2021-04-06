@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-PerlTidy
 PORTVERSION=	20130104

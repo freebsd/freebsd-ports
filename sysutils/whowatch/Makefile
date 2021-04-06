@@ -1,5 +1,4 @@
 # Created by: Daniel Harris <dannyboy@subdimension.com>
-# $FreeBSD$
 
 PORTNAME=	whowatch
 PORTVERSION=	1.4

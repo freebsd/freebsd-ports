@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	positional
 PORTVERSION=	1.2.1

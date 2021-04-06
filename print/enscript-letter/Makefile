@@ -1,5 +1,4 @@
 # Created by: kline
-# $FreeBSD$
 
 PORTNAME=	enscript
 PORTVERSION=	1.6.6

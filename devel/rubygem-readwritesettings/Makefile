@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	readwritesettings
 PORTVERSION=	3.0.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DateTime-Format-Duration
 PORTVERSION=	1.04

@@ -1,5 +1,4 @@
 # Created by: Sean McLaughlin <sigma.zx@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	z80asm
 PORTVERSION=	1.8

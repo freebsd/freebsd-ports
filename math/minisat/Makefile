@@ -1,5 +1,4 @@
 # Created by: Vsevolod Stakhov <vsevolod@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	minisat
 PORTVERSION=	2.2.1

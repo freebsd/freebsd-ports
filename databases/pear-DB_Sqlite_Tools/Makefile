@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	DB_Sqlite_Tools
 PORTVERSION=	0.1.7

@@ -1,5 +1,4 @@
 # Created by: Anton Berezin
-# $FreeBSD$
 
 PORTNAME=	File-CountLines
 PORTVERSION=	0.0.3

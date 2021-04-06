@@ -1,5 +1,4 @@
 # Created by: Andrey Kostenko <andrey@kostenko.name>
-# $FreeBSD$
 
 PORTNAME=	Data-Section
 PORTVERSION=	0.200007

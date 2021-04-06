@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dparse
 DISTVERSION=	0.5.1

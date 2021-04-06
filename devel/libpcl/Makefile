@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libpcl
 DISTVERSION=	1.12

@@ -1,5 +1,4 @@
 # Created by: Martin Dieringer <martin.dieringer@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	rtf2latex2e
 DISTVERSION=	2-2-2

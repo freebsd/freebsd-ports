@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTTP-Proxy
 PORTVERSION=	0.304

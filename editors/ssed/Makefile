@@ -1,5 +1,4 @@
 # Created by: verm
-# $FreeBSD$
 
 PORTNAME=	sed
 PORTVERSION=	3.62

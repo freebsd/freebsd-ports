@@ -1,5 +1,4 @@
 # Created by: Antony Mawer <ports@mawer.org>
-# $FreeBSD$
 
 PORTNAME=	cntlm
 PORTVERSION=	0.92.3

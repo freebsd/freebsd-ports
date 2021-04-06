@@ -1,5 +1,4 @@
 # Created by: jfitz@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	afterstep
 PORTVERSION=	1.0

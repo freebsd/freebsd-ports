@@ -1,5 +1,4 @@
 # Created by: Warner Losh <imp@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Acme-Damn
 PORTVERSION=	0.06

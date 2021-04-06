@@ -1,5 +1,4 @@
 # Created by: ndewing@experts-exchange.com
-# $FreeBSD$
 
 PORTNAME=	mixlib-shellout
 PORTVERSION=	3.2.2

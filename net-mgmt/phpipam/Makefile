@@ -1,5 +1,4 @@
 # Created by: Jake Smith <jake@xz.cx>
-# $FreeBSD$
 
 PORTNAME=	phpipam
 PORTVERSION=	1.4.2

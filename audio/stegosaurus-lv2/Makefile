@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stegosaurus
 DISTVERSION=	0.0.3

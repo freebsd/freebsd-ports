@@ -1,5 +1,4 @@
 # Created by: kuriyama
-# $FreeBSD$
 
 PORTNAME=	ipadic
 PORTVERSION=	2.7.0

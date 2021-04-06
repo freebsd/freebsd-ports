@@ -1,5 +1,4 @@
 # Created by: Chris Piazza <cpiazza@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	smpeg
 PORTVERSION=	0.4.4

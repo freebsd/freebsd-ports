@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	importlib-resources
 PORTVERSION=	3.3.0

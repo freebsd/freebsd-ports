@@ -1,5 +1,4 @@
 # Created by: Olivier Cochard-Labbe <olivier@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libdesktop
 PORTVERSION=	0.2.2

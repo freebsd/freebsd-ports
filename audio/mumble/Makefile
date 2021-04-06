@@ -1,5 +1,4 @@
 # Created by: marius nuennerich
-# $FreeBSD$
 
 PORTNAME=	mumble
 PORTVERSION=	1.3.3

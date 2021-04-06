@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xf86-video-dummy
 PORTVERSION=	0.3.8

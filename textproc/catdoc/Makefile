@@ -1,5 +1,4 @@
 # Created by: Brion Moss <brion@queeg.com>
-# $FreeBSD$
 
 PORTNAME=	catdoc
 PORTVERSION=	0.95

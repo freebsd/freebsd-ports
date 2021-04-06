@@ -1,5 +1,4 @@
 # Created by: Espen Tagestad <espen@tagestad.no>
-# $FreeBSD$
 
 PORTNAME=	HTML-Template-Pluggable
 PORTVERSION=	0.17

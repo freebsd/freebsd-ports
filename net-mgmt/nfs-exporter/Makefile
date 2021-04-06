@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nfs-exporter
 DISTVERSIONPREFIX=	v

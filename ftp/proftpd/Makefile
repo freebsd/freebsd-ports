@@ -1,5 +1,4 @@
 # Created by: Stephane Legrand
-# $FreeBSD$
 
 PORTNAME?=	proftpd
 .if !defined(DISTVERSION)

@@ -1,5 +1,4 @@
 # Created by: Lung Sung <clsung@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	JSON-XS
 PORTVERSION=	4.03

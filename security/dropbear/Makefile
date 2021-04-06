@@ -1,5 +1,4 @@
 # Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-# $FreeBSD$
 
 PORTNAME=	dropbear
 PORTVERSION=	2020.81

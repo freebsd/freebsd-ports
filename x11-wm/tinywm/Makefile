@@ -1,5 +1,4 @@
 # Created by: Florent Thoumie <flz@xbsd.org>
-# $FreeBSD$
 
 PORTNAME=	tinywm
 PORTVERSION=	1.3

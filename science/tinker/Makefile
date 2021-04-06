@@ -1,5 +1,4 @@
 # Created by: Glenn Johnson
-# $FreeBSD$
 
 PORTNAME=	tinker
 DISTVERSION=	8.8.3

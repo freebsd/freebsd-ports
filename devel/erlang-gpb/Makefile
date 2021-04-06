@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gpb
 PORTVERSION=	4.3.3

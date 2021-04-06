@@ -1,5 +1,4 @@
 # Created by: Kentaro Inagaki <JBD01226@niftyserve.ne.jp>
-# $FreeBSD$
 
 PORTNAME=	xdvik
 PORTVERSION=	22.87

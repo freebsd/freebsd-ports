@@ -1,5 +1,4 @@
 # Created by: Glen Barber <gjb@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ruby-qmail
 PORTVERSION=	0.1.1

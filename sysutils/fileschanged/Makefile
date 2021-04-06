@@ -1,5 +1,4 @@
 # Created by: Konstantin Reznichenko <kot@premierbank.dp.ua>
-# $FreeBSD$
 
 PORTNAME=	fileschanged
 PORTVERSION=	0.6.5

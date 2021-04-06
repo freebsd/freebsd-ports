@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rapidcheck
 PORTVERSION=	g20200504

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ohsnap
 PORTVERSION=	1.8.0

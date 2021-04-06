@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	arduino
 PORTVERSION=	1.8.5

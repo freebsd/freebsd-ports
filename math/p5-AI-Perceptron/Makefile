@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	AI-Perceptron
 PORTVERSION=	1.0

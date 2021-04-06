@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-IP-XS
 PORTVERSION=	0.21

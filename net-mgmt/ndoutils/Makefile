@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ndoutils
 PORTVERSION=	2.1.3

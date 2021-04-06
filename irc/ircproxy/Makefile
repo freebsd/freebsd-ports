@@ -1,5 +1,4 @@
 # Created by: Jonas Kvinge <jonas@night-light.net>
-# $FreeBSD$
 
 PORTNAME=	ircproxy
 PORTVERSION=	1.3.6

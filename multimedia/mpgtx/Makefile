@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	mpgtx
 PORTVERSION=	1.3.1

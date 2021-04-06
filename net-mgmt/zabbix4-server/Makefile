@@ -1,5 +1,4 @@
 # Created by: Pakhom Golynga <pg@pakhom.spb.ru>
-# $FreeBSD$
 
 PORTNAME=	zabbix4
 PORTVERSION=	4.0.29

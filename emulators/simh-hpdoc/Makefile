@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hpdoc
 DISTVERSION=	3.11.0

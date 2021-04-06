@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-postgresql
 PORTVERSION=	0.09

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	prodigy-lig
 DISTVERSIONPREFIX=	v

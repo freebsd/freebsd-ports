@@ -1,5 +1,4 @@
 # Created by: Autrijus Tang <autrijus@autrijus.org>
-# $FreeBSD$
 
 PORTNAME=	Module-ScanDeps
 PORTVERSION=	1.30

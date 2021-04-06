@@ -1,5 +1,4 @@
 # Created by: Michael Nottebrock <lofi@FreeBSD.org>
-# $FreeBSD$
 
 PORTREVISION=	0
 

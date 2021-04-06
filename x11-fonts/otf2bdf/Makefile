@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	otf2bdf
 DISTVERSION=	3.1

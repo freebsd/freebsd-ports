@@ -1,5 +1,4 @@
 # Created by: Robert Felber <robtone@ek-muc.de>
-# $FreeBSD$
 
 PORTNAME=	policyd-weight
 PORTVERSION=	0.1.15.2

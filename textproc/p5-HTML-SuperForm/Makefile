@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-SuperForm
 PORTVERSION=	1.09

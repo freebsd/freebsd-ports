@@ -1,5 +1,4 @@
 # Created by: Josh Carroll <josh.carroll@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wdiag
 PORTVERSION=	0.10.2

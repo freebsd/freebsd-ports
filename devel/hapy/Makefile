@@ -1,5 +1,4 @@
 # Created by: rousskov
-# $FreeBSD$
 
 PORTNAME=	hapy
 PORTVERSION=	0.0.8

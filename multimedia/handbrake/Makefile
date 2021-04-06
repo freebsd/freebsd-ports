@@ -1,5 +1,4 @@
 # Created by: Andrew Thompson <andy@fud.org.nz>
-# $FreeBSD$
 
 PORTNAME=	handbrake
 DISTVERSION=	1.3.3

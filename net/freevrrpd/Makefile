@@ -1,5 +1,4 @@
 # Created by: Sebastien Petit <spe@phear.org>
-# $FreeBSD$
 
 PORTNAME=	freevrrpd
 PORTVERSION=	1.1

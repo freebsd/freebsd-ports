@@ -1,5 +1,4 @@
 # Created by: Joris Vandalon <joris@vandalon.nl>
-# $FreeBSD$
 
 PORTNAME=	mp3c
 PORTVERSION=	0.31

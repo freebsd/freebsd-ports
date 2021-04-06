@@ -1,5 +1,4 @@
 # Created by: Rene Ladan <rene@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	diff-match-patch
 PORTVERSION=	20200713

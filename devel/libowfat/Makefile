@@ -1,5 +1,4 @@
 # Created by: Thomas-Martin Seck <tmseck@netcologne.de>
-# $FreeBSD$
 
 PORTNAME=	libowfat
 PORTVERSION=	0.31

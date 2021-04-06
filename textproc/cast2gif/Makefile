@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cast2gif
 DISTVERSIONPREFIX=	v

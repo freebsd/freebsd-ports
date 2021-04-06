@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	throughpy
 PORTVERSION=	0.1

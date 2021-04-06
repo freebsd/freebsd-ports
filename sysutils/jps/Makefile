@@ -1,5 +1,4 @@
 # Created by: Pavel Novikov
-# $FreeBSD$
 
 PORTNAME=	jps
 PORTVERSION=	1.0

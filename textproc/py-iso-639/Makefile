@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iso-639
 PORTVERSION=	0.4.5

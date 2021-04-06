@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pROC
 PORTVERSION=	1.17.0.1

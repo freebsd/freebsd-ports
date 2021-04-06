@@ -1,5 +1,4 @@
 # Created by: Rob Farmer <rfarmer@predatorlabs.net>
-# $FreeBSD$
 
 PORTNAME=	tumble
 PORTVERSION=	0.36

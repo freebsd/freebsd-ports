@@ -1,5 +1,4 @@
 # Created by: Lev Walkin <vlm@lionet.info>
-# $FreeBSD$
 
 PORTNAME=	ipcad
 PORTVERSION=	3.7.3

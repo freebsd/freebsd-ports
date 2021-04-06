@@ -1,5 +1,4 @@
 # Created by: David MacKenzie <djm@pix.net>
-# $FreeBSD$
 
 PORTNAME=	id3v2
 PORTVERSION=	0.1.12

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	representable
 PORTVERSION=	3.0.4

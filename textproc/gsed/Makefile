@@ -1,5 +1,4 @@
 # Created by: Cyrille Lefevre <clefevre@citeweb.net>
-# $FreeBSD$
 
 PORTNAME=	sed
 PORTVERSION=	4.8

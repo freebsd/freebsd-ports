@@ -1,5 +1,4 @@
 # Created by: Joshua D. Abraham <jabra@ccs.neu.edu>
-# $FreeBSD$
 
 PORTNAME=	Nmap-Parser
 PORTVERSION=	1.37

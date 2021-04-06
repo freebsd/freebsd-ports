@@ -1,5 +1,4 @@
 # Created by: Damian Gerow <dgerow@afflictions.org>
-# $FreeBSD$
 
 PORTNAME=	openconnect
 PORTVERSION=	8.10

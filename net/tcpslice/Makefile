@@ -1,5 +1,4 @@
 # Created by: smace@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	tcpslice
 PORTVERSION=	20200819

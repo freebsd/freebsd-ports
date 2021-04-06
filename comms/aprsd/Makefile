@@ -1,5 +1,4 @@
 # Created by: db
-# $FreeBSD$
 
 PORTNAME=	aprsd
 PORTVERSION=	2.2.515

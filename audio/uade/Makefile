@@ -1,5 +1,4 @@
 # Created by: Martin Blapp <mbr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	uade
 PORTVERSION=	2.13

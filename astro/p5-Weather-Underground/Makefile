@@ -1,5 +1,4 @@
 # Created by: Simon Olofsson <simon@olofsson.de>
-# $FreeBSD$
 
 PORTNAME=	Weather-Underground
 PORTVERSION=	3.03

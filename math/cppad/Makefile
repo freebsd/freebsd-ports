@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cppad
 DISTVERSION=	20210000.6

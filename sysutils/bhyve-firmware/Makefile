@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bhyve-firmware
 PORTVERSION=	1.0

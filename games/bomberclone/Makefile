@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis
-# $FreeBSD$
 
 PORTNAME=	bomberclone
 PORTVERSION=	0.11.9

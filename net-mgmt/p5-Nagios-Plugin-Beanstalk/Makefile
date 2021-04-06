@@ -1,5 +1,4 @@
 # Created by: Andrew Thompson <thompsa@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	Nagios-Plugin-Beanstalk
 PORTVERSION=	0.04

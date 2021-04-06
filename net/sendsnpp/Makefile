@@ -1,5 +1,4 @@
 # Created by: Ion-Mihai "IOnut" Tetcu <itetcu@people.tecnik93.com>
-# $FreeBSD$
 
 PORTNAME=	sendSNPP
 DISTVERSION=	v1.03

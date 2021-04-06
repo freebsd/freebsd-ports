@@ -1,5 +1,4 @@
 # Created by: Jon Nistor <nistor@snickers.org>
-# $FreeBSD$
 
 PORTNAME=	bmon
 PORTVERSION=	4.0

@@ -1,5 +1,4 @@
 # Created by: Simon Dick <simond@irrelevant.org>
-# $FreeBSD$
 
 PORTNAME=	squirrelmail
 PORTVERSION=	20200422

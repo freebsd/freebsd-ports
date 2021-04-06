@@ -1,5 +1,4 @@
 # Created by: Mikhail Teterin
-# $FreeBSD$
 
 PORTNAME=	lemon
 PORTVERSION=	3.34

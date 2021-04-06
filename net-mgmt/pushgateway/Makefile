@@ -1,5 +1,4 @@
 # Created by: Athanasios Douitsis <aduitsis@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	pushgateway
 DISTVERSIONPREFIX=	v

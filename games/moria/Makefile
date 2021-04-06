@@ -1,5 +1,4 @@
 # Created by: glewis@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	moria
 PORTVERSION=	5.5.2

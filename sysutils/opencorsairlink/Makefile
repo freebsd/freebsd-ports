@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	OpenCorsairLink
 DISTVERSION=	g20191001

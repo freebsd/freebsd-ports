@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-Mason
 PORTVERSION=	1.59

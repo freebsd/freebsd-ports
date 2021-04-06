@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	goldrush
 PORTVERSION=	0.1.9

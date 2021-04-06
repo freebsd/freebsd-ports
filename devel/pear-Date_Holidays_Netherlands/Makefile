@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Date_Holidays_Netherlands
 PORTVERSION=	0.1.4

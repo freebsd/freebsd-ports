@@ -1,5 +1,4 @@
 # Created by: thompsa@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	fconfig
 PORTVERSION=	20080329

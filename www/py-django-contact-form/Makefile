@@ -1,5 +1,4 @@
 # Created by: René Ladan <rene@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	django-contact-form
 PORTVERSION=	1.8.2

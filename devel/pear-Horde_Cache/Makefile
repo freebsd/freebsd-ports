@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Horde_Cache
 PORTVERSION=	2.5.5

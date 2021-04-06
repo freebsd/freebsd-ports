@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ClassicSkin
 SVNREV=		17365

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-ConfigLoader
 PORTVERSION=	0.34

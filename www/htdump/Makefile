@@ -1,5 +1,4 @@
 # Created by: Maxime Henrion (mux@FreeBSD.org)
-# $FreeBSD$
 
 PORTNAME=	htdump
 PORTVERSION=	0.9y

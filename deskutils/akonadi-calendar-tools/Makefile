@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	akonadi-calendar-tools
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

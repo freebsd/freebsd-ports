@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mona
 PORTVERSION=	1.0.8

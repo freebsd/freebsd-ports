@@ -1,5 +1,4 @@
 # Created by: Nagy, Attila <bra@fsn.hu>
-# $FreeBSD$
 
 ######################################################################
 # Anytime PORTVERSION changes please bump PORTREVISION of:           #

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-beetle_psx
 PORTVERSION=	0.20210128

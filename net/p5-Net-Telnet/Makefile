@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-Telnet
 PORTVERSION=	3.04

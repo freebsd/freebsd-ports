@@ -1,5 +1,4 @@
 # Created by: bf <bf@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	DoulosSIL
 PORTVERSION=	4.112

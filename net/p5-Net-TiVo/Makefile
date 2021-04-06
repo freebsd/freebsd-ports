@@ -1,5 +1,4 @@
 # Created by: Christopher Boumenot <boumenot@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Net-TiVo
 PORTVERSION=	0.11

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Qudo
 PORTVERSION=	0.0213

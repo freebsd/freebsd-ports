@@ -1,5 +1,4 @@
 # Created by: Golyashov Sergey <svvord@soft-wizard.ru>
-# $FreeBSD$
 
 PORTNAME=	limereport
 PORTVERSION=	1.5.35

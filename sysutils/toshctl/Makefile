@@ -1,5 +1,4 @@
 # Created by: carl@servicefactory.com
-# $FreeBSD$
 
 PORTNAME=	toshctl
 PORTVERSION=	0.0.0p3

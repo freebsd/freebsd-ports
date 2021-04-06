@@ -1,5 +1,4 @@
 # Created by: Dmitri Goutnik <dg@syrec.org>
-# $FreeBSD$
 
 PORTNAME=	hhpc
 DISTVERSIONPREFIX=	v

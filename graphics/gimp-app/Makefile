@@ -1,5 +1,4 @@
 # Created by: erich@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME?=	gimp-app
 PORTVERSION=	2.10.24

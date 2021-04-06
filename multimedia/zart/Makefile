@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zart
 PORTVERSION=	g20191124

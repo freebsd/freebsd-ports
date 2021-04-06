@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	Digest-MD5
 PORTVERSION=	2.58

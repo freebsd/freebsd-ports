@@ -1,5 +1,4 @@
 # Created by: chinsan <chinsan.tw@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Text-Emoticon-GoogleTalk
 PORTVERSION=	0.01

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	s-tui
 DISTVERSIONPREFIX=	v

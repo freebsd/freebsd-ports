@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	addressable
 PORTVERSION=	2.3.8

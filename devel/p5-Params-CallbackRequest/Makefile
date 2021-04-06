@@ -1,5 +1,4 @@
 # Created by: Rod Taylor <ports@rbt.ca>
-# $FreeBSD$
 
 PORTNAME=	Params-CallbackRequest
 PORTVERSION=	1.20

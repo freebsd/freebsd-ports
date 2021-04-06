@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	popup
 PORTVERSION=	0.5

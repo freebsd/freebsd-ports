@@ -1,5 +1,4 @@
 # Created by: Satoshi Taoka <taoka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vera-fpw
 PORTVERSION=	${VERA_VER}.${VERAFPW_VER}

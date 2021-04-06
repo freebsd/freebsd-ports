@@ -1,5 +1,4 @@
 # Created by: Vladimir Kondratiev <wulf@mail.mipt.ru>
-# $FreeBSD$
 
 PORTNAME=	debugger-xml
 PORTVERSION=	0.4.1

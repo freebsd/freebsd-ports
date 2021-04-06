@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libioc
 PORTVERSION=	0.8.2

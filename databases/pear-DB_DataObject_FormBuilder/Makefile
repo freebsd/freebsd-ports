@@ -1,5 +1,4 @@
 # Created by: Antonio Carlos Venancio Junior (<antonio@php.net>)
-# $FreeBSD$
 
 PORTNAME=	DB_DataObject_FormBuilder
 PORTVERSION=	1.0.2

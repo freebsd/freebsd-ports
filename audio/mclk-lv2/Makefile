@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mclk
 DISTVERSIONPREFIX=	v

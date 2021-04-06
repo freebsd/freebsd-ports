@@ -1,5 +1,4 @@
 # Created by: mm
-# $FreeBSD$
 
 PORTNAME=	orc
 PORTVERSION=	0.4.31

@@ -1,5 +1,4 @@
 # Created by: Julien Laffaye <kimelto@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	sselp
 PORTVERSION=	0.2

@@ -1,5 +1,4 @@
 # Created by: snb@threerings.net
-# $FreeBSD$
 
 PORTNAME=	osslsigncode
 PORTVERSION=	1.7.1

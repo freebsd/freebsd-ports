@@ -1,5 +1,4 @@
 # Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-# $FreeBSD$
 
 PORTNAME=	unicode
 PORTVERSION=	0.4.4.4

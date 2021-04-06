@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ipyparallel
 PORTVERSION=	6.3.0

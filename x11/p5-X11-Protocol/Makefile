@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	X11-Protocol
 PORTVERSION=	0.56

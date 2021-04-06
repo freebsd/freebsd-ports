@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	recordmydesktop
 DISTVERSION=	0.3.8.1

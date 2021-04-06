@@ -1,5 +1,4 @@
 # Created by: Stephen J. Roznowski <sjr@home.net>
-# $FreeBSD$
 
 PORTNAME=	SNMP_Session
 PORTVERSION=	1.13

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdeclarative
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

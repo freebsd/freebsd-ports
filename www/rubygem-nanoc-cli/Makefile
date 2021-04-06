@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nanoc-cli
 PORTVERSION=	4.11.19

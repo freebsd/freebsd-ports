@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	BZ-Client
 PORTVERSION=	1.04

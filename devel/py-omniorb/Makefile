@@ -1,5 +1,4 @@
 # Created by: Johann Visagie <johann@egenetics.com>
-# $FreeBSD$
 
 PORTNAME=	omniorb
 DISTVERSION=	4.2.4

@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	POE-Component-IRC-Plugin-RSS-Headlines
 PORTVERSION=	1.10

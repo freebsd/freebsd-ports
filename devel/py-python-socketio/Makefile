@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-socketio
 PORTVERSION=	4.6.1

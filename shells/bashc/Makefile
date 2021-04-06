@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <ip@unixway.org>
-# $FreeBSD$
 
 PORTNAME=	bashc
 PORTVERSION=	5.0.9

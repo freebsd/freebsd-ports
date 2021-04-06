@@ -1,5 +1,4 @@
 # Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wmwifi
 PORTVERSION=	0.4

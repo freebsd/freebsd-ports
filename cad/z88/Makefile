@@ -1,5 +1,4 @@
 # Created by: Pedro F. Giffuni <giffunip@asme.org>
-# $FreeBSD$
 
 PORTNAME=	z88
 DISTVERSIONPREFIX=	v

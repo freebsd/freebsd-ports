@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omniauth_crowd
 PORTVERSION=	2.4.0

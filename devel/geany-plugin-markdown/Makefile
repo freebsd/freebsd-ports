@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-plugin-markdown
 PORTVERSION=	${GEANY_VER}

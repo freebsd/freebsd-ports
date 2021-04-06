@@ -1,5 +1,4 @@
 # Created by: Kuang-che Wu <kcwu@csie.org>
-# $FreeBSD$
 
 PORTNAME=	tsito
 PORTVERSION=	0.8.4

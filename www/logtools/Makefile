@@ -1,5 +1,4 @@
 # Created by: Mark Huizer; Eindhoven
-# $FreeBSD$
 
 PORTNAME=	logtools
 PORTVERSION=	0.13e

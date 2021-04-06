@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	erlang-metrics
 PORTVERSION=	2.4.0

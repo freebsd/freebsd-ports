@@ -1,5 +1,4 @@
 # Created by: Ade Lovett <ade@lovett.com>
-# $FreeBSD$
 
 PORTNAME=	gdk-pixbuf
 PORTVERSION=	2.40.0

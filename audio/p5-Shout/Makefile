@@ -1,5 +1,4 @@
 # Created by: leo
-# $FreeBSD$
 
 PORTNAME=	Shout
 PORTVERSION=	2.1

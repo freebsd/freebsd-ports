@@ -1,5 +1,4 @@
 # Created by: Alexey V. Degtyarev
-# $FreeBSD$
 
 PORTNAME=	Devel-Size-Report
 PORTVERSION=	0.13

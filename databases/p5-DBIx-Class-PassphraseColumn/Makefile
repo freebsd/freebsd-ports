@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-PassphraseColumn
 PORTVERSION=	0.02

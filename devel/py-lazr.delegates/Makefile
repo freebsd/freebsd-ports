@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lazr.delegates
 PORTVERSION=	2.0.4

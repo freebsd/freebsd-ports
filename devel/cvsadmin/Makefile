@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	cvsadmin
 PORTVERSION=	1.0.3

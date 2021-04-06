@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	WWW-Wordnik-API
 PORTVERSION=	0.0.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	optpp
 DISTVERSION=	2.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	purple-plugin-pack
 PORTVERSION=	2.8.0

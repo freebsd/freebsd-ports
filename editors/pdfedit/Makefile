@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME=	pdfedit
 PORTVERSION=	0.4.5

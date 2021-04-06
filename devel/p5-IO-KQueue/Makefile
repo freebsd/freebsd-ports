@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	IO-KQueue
 PORTVERSION=	0.39

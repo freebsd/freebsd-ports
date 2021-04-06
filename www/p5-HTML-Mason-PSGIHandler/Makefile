@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-Mason-PSGIHandler
 PORTVERSION=	0.53

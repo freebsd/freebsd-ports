@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wy60
 PORTVERSION=	2.0.9

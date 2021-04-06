@@ -1,5 +1,4 @@
 # Created by: Netherby <netherby@dancingfortune.com>
-# $FreeBSD$
 
 PORTNAME=	archivesmtp
 PORTVERSION=	1.2

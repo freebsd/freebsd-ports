@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dsbmc-cli
 PORTVERSION=	0.4

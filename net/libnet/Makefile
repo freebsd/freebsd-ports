@@ -1,5 +1,4 @@
 # Created by: shipley@dis.org
-# $FreeBSD$
 
 PORTNAME=	libnet
 PORTVERSION=	1.1.6

@@ -1,5 +1,4 @@
 # Created by: J Han <hjh@photino.com>
-# $FreeBSD$
 
 PORTNAME=	lwm
 PORTVERSION=	1.2.4

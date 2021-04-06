@@ -1,5 +1,4 @@
 # Created by: Marcin Jessa <freebsd@yazzy.org>
-# $FreeBSD$
 
 PORTNAME=	tsocks
 DISTVERSION=	1.8.b5

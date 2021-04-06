@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ipamjm
 PORTVERSION=	00601

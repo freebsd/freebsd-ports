@@ -1,5 +1,4 @@
 # Created by: Graham Todd <gtodd@bellanet.org>
-# $FreeBSD$
 
 PORTNAME=	markdown
 PORTVERSION=	2.6.11

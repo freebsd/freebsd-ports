@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	JSON-RPC-Dispatcher
 PORTVERSION=	0.0508

@@ -1,5 +1,4 @@
 # Created by: Miguel Mendez <flynn@energyhq.homeip.net>
-# $FreeBSD$
 
 PORTNAME=	newfile
 PORTVERSION=	1.0.14

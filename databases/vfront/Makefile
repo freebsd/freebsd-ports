@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vfront
 DISTVERSION=	0.96c

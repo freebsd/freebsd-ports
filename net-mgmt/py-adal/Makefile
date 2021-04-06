@@ -1,5 +1,4 @@
 # Created by: Johannes Jost Meixner <johannes@perceivon.net>
-# $FreeBSD$
 
 PORTNAME=	adal
 PORTVERSION=	1.2.6

@@ -1,5 +1,4 @@
 # Created by: Vaida Bogdan
-# $FreeBSD$
 
 PORTNAME=	netleak
 PORTVERSION=	0.1a

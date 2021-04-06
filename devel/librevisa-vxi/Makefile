@@ -1,5 +1,4 @@
 # Created by: Uffe Jakobsen <uffe@uffe.org>
-# $FreeBSD$
 
 PORTNAME=	librevisa-vxi
 PORTVERSION=	0.0.20121221

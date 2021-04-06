@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	minimp3
 PORTVERSION=	g20201127

@@ -1,5 +1,4 @@
 # Created by: Charles Swiger <chuck@pkix.net>
-# $FreeBSD$
 
 PORTNAME=	dvd+rw-tools
 PORTVERSION=	7.1

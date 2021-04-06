@@ -1,5 +1,4 @@
 # Created by: Alexander@Leidinger.net
-# $FreeBSD$
 
 PORTNAME=	modlogan
 PORTVERSION=	0.8.13

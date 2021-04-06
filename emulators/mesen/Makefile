@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mesen
 DISTVERSION=	0.9.8-4

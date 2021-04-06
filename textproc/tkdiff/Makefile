@@ -1,5 +1,4 @@
 # Created by: Kevin Lo <kevlo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tkdiff
 DISTVERSION=	4-3

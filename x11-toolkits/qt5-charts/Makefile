@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	charts
 DISTVERSION=	${QT5_VERSION}

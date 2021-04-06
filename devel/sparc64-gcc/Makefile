@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PKGNAMEPREFIX=	sparc64-
 PLIST=	${.CURDIR}/pkg-plist

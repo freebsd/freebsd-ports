@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fava
 PORTVERSION=	1.18

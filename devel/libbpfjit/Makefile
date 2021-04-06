@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libbpfjit
 PORTVERSION=	g2020082801

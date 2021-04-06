@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CommonMark
 PORTVERSION=	0.9.1

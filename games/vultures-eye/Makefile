@@ -1,5 +1,4 @@
 # Created by: Leland Wang <llwang@infor.org>
-# $FreeBSD$
 
 PORTNAME=	vultures
 PORTVERSION=	2.3.67

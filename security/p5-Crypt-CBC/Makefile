@@ -1,5 +1,4 @@
 # Created by: Mark Murray <markm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Crypt-CBC
 PORTVERSION=	3.01

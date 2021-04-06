@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-Cover
 PORTVERSION=	1.36

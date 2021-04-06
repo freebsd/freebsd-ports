@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyocr
 DISTVERSION=	0.8

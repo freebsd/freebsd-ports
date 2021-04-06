@@ -1,5 +1,4 @@
 # Created by: IWATSUKI Hiroyuki <don@na.rim.or.jp>
-# $FreeBSD$
 
 PORTNAME=	net-netrc
 PORTVERSION=	0.2.2

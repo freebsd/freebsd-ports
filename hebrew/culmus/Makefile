@@ -1,5 +1,4 @@
 # Created by: Yonatan <onatan@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	culmus
 PORTVERSION=	0.133

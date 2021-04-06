@@ -1,5 +1,4 @@
 # Created by: Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
-# $FreeBSD$
 
 PORTNAME=	xar
 PORTVERSION=	1.6.1

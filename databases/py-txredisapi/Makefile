@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	txredisapi
 DISTVERSION=	1.4.7

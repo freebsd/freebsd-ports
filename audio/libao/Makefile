@@ -1,5 +1,4 @@
 # Created by: t.vanklaveren@student.utwente.nl
-# $FreeBSD$
 
 PORTNAME=	libao
 PORTVERSION=	1.2.0

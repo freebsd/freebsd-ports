@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zsm-lib
 PORTVERSION=	0.2.0

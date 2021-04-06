@@ -1,5 +1,4 @@
 # Created by: Oliver Lehmann <oliver@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mousepad
 PORTVERSION=	0.5.4

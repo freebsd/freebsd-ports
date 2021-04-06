@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		Mojo-IOLoop-ForkCall
 PORTVERSION=		0.17

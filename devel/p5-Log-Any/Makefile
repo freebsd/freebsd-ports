@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Log-Any
 PORTVERSION=	1.707

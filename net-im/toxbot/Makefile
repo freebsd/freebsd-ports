@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	toxbot
 DISTVERSION=	g20180325

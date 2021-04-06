@@ -1,5 +1,4 @@
 # Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-# $FreeBSD$
 
 PORTNAME=	MooX-Singleton
 PORTVERSION=	1.20

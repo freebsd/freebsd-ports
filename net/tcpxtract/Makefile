@@ -1,5 +1,4 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tcpxtract
 PORTVERSION=	1.0.1

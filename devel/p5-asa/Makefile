@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	asa
 PORTVERSION=	1.03

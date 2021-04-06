@@ -1,5 +1,4 @@
 # Created by: giffunip@asme.org
-# $FreeBSD$
 
 PORTNAME=	xbanner
 PORTVERSION=	1.31

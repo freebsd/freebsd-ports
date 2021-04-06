@@ -1,5 +1,4 @@
 # Created by: Reinier de Blois <rddeblois@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	squish
 PORTVERSION=	1.10

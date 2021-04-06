@@ -1,5 +1,4 @@
 # Created by: Oleg Alexeenkov <proler@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mhddfs
 PORTVERSION=	0.1.37

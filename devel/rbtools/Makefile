@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	${ORIGNAME:tl}
 DISTVERSION=	2.0

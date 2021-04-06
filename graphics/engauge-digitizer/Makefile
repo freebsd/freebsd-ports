@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	engauge-digitizer
 DISTVERSIONPREFIX=	v

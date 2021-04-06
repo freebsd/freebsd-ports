@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flask-smorest
 PORTVERSION=	0.29.0

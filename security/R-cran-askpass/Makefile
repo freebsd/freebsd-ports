@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	askpass
 PORTVERSION=	1.1

@@ -1,5 +1,4 @@
 # Created by: Dom Mitchell <dom@myrddin.demon.co.uk>
-# $FreeBSD$
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76

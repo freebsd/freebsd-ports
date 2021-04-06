@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mblaze
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Joep Grooten <joep@di.nl>
-# $FreeBSD$
 
 PORTNAME=	doxygen
 PORTVERSION=	1.9.0

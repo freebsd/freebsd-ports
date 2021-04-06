@@ -1,5 +1,4 @@
 # Created by: Hugo Saro <hugo@barafranca.com>
-# $FreeBSD$
 
 PORTNAME=	haproxy
 DISTVERSION=	2.3.9

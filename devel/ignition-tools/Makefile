@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ignition-tools
 DISTVERSION=	0.1.0

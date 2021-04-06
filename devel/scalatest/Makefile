@@ -1,5 +1,4 @@
 # Created by: Mitsuru YOSHIDA
-# $FreeBSD$
 
 PORTNAME=	scalatest
 PORTVERSION=	1.6.1

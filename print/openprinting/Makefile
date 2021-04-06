@@ -1,5 +1,4 @@
 # Created by: Bruce M Simpson <bms@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	openprinting
 PORTVERSION=	1.0

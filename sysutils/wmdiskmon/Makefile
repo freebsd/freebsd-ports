@@ -1,5 +1,4 @@
 # Created by: pat
-# $FreeBSD$
 
 PORTNAME=	wmdiskmon
 PORTVERSION=	0.0.2

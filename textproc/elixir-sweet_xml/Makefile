@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sweet_xml
 PORTVERSION=	0.3.0

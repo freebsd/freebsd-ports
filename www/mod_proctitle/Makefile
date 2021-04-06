@@ -1,5 +1,4 @@
 # Created by: stas
-# $FreeBSD$
 
 PORTNAME=	mod_proctitle
 PORTVERSION=	0.4.1

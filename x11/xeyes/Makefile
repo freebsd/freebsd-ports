@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xeyes
 PORTVERSION=	1.1.2

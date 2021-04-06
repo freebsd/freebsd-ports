@@ -1,5 +1,4 @@
 # Created by: dm
-# $FreeBSD$
 
 PORTNAME=	avenger
 PORTVERSION=	0.8.5

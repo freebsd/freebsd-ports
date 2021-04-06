@@ -1,5 +1,4 @@
 # Created by: Dario Freni <saturnero@gufi.org>
-# $FreeBSD$
 
 PORTNAME=	proxsmtp
 PORTVERSION=	1.10

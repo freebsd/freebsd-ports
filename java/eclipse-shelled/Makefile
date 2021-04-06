@@ -1,5 +1,4 @@
 # Created by: Sutra Zhou <zhoushuqun@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ShellEd
 PORTVERSION=	1.0.2a

@@ -1,5 +1,4 @@
 # Created by: Slawomir Wojciech Wojtczak <vermaden@interia.pl>
-# $FreeBSD$
 
 PORTNAME=	automount
 DISTVERSION=	1.7.2

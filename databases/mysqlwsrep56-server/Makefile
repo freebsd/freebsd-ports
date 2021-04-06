@@ -1,5 +1,4 @@
 # Created by: Philip Stoev <philip.stoev@galeracluster.com>
-# $FreeBSD$
 
 PORTNAME=	mysqlwsrep
 PORTVERSION?=	5.6.49

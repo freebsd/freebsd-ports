@@ -1,5 +1,4 @@
 # Created by: olgeni@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	wings
 PORTVERSION=	2.2.5

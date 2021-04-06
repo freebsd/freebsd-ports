@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Markups
 PORTVERSION=	3.0.0

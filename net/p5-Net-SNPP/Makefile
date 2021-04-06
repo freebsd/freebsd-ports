@@ -1,5 +1,4 @@
 # Created by: devin@spamcop.net
-# $FreeBSD$
 
 PORTNAME=	Net-SNPP
 PORTVERSION=	1.17

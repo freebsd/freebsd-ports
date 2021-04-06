@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	connectivity
 DISTVERSION=	${QT5_VERSION}

@@ -1,5 +1,4 @@
 # Created by: Koop Mast <einekoai@chello.nl>
-# $FreeBSD$
 
 PORTNAME=	monster
 PORTVERSION=	1.8.1

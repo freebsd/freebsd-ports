@@ -1,5 +1,4 @@
 # Created by: Joshua Goodall <joshua@roughtrade.net>
-# $FreeBSD$
 
 PORTNAME=	spread
 PORTVERSION=	3.17.3

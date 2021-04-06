@@ -1,5 +1,4 @@
 # Created by: Jake Smith <jake@xz.cx>
-# $FreeBSD$
 
 PORTNAME=	libk8055
 PORTVERSION=	0.2

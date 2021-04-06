@@ -1,5 +1,4 @@
 # Created by: Alexey V. Antipovsky <kemm@in-line.ru>
-# $FreeBSD$
 
 PORTNAME=	Date-Simple
 PORTVERSION=	3.03

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wxformbuilder
 DISTVERSION=	3.5.0-beta

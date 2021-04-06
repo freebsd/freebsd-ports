@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dxirc
 PORTVERSION=	1.30.0

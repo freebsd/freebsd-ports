@@ -1,5 +1,4 @@
 # Created by: Chris D. Faulhaber <jedgar@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	parchive
 PORTVERSION=	1.1

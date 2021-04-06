@@ -1,5 +1,4 @@
 # Created by: Michael Ebert <ebert@informatik.unibw-muenchen.de>
-# $FreeBSD$
 
 PORTNAME=	pager
 PORTVERSION=	0.90.3

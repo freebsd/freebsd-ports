@@ -1,5 +1,4 @@
 # Created by: Jim Mock <jim@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	rtfreader
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: Kyle Evans <kevans@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Flask-Principal
 PORTVERSION=	0.4.0

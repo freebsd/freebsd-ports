@@ -1,5 +1,4 @@
 # Created by: Vivek Khera <vivek@khera.org>
-# $FreeBSD$
 
 PORTNAME=	Gearman
 PORTVERSION=	2.004.015

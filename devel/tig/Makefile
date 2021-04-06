@@ -1,5 +1,4 @@
 # Created by: Denise H. G. <darcsis@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	tig
 PORTVERSION=	2.5.3

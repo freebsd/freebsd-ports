@@ -1,5 +1,4 @@
 # Created by: Chifeng QU <chifeng@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	policyd2
 PORTVERSION=	2.0.14

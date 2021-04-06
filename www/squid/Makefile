@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	squid
 PORTVERSION=	4.14

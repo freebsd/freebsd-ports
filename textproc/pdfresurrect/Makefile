@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pdfresurrect
 DISTVERSIONPREFIX=	v

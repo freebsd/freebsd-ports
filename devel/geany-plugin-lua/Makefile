@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-plugin-lua
 PORTVERSION=	${GEANY_VER}

@@ -1,5 +1,4 @@
 # Created by: Aleksander Fafula <alex@BSDGuru.org>
-# $FreeBSD$
 
 PORTNAME=	vinetto
 PORTVERSION=	0.07

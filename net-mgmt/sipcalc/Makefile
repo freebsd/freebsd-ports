@@ -1,5 +1,4 @@
 # Created by: Janos.Mohacsi@dante.org.uk
-# $FreeBSD$
 
 PORTNAME=	sipcalc
 PORTVERSION=	1.1.6

@@ -1,5 +1,4 @@
 # Created by: Mikolaj Golub <to.my.trociny@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gather
 PORTVERSION=	0.4.1

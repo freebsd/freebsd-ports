@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	logstash-forwarder
 PORTVERSION=	0.4.0.20150507

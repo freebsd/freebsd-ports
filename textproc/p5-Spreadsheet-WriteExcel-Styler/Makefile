@@ -1,5 +1,4 @@
 # Created by: jupengfei <jupengfei@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Spreadsheet-WriteExcel-Styler
 PORTVERSION=	1.02

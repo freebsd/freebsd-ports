@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	decimal
 PORTVERSION=	1.4.1

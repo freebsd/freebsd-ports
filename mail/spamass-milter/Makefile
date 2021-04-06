@@ -1,5 +1,4 @@
 # Created by: Eugene M. Kim <ab@astralblue.net>
-# $FreeBSD$
 
 PORTNAME=	spamass-milter
 PORTVERSION=	0.4.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	check_mysql_health
 PORTVERSION=	2.2.2

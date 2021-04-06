@@ -1,5 +1,4 @@
 # Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-# $FreeBSD$
 
 PORTNAME=	fftw3
 PORTVERSION=	0.3

@@ -1,5 +1,4 @@
 # Created by: lightside <lightside@gmx.com>
-# $FreeBSD$
 
 PORTNAME=	wxlauncher
 PORTVERSION=	0.10.0

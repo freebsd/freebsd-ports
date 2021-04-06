@@ -1,5 +1,4 @@
 # Created by: nox@jelal.kn-bremen.de
-# $FreeBSD$
 
 PORTNAME=	gracer
 PORTVERSION=	0.1.5

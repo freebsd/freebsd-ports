@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xstdcmap
 PORTVERSION=	1.0.4

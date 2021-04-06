@@ -1,5 +1,4 @@
 # Created by: Radim Kolar
-# $FreeBSD$
 
 PORTNAME=	d2x
 PORTVERSION=	0.2.5

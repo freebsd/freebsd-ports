@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stepcode
 PORTVERSION=	0.8

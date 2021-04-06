@@ -1,5 +1,4 @@
 # Created by: Len Sassama
-# $FreeBSD$
 
 PORTNAME=	pipemeter
 PORTVERSION=	1.1.5

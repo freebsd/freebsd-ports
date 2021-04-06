@@ -1,5 +1,4 @@
 # Created by: kstailey
-# $FreeBSD$
 
 PORTNAME=	amphetadesk
 PORTVERSION=	0.93.1

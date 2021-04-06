@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-MooseColumns
 PORTVERSION=	0.22

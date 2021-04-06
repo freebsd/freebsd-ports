@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mkclean
 PORTVERSION=	0.8.7

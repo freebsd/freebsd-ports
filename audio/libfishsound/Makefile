@@ -1,5 +1,4 @@
 # Created by: Sunpoet Po-Chuan Hsieh <sunpoet@sunpoet.net>
-# $FreeBSD$
 
 PORTNAME=	libfishsound
 PORTVERSION=	1.0.0

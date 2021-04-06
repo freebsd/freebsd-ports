@@ -1,5 +1,4 @@
 # Created by: Michael Ranner <mranner@inode.at>
-# $FreeBSD$
 
 PORTNAME=	formication
 PORTVERSION=	1.0.b1

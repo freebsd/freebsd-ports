@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bsdisks
 DISTVERSION=	0.25

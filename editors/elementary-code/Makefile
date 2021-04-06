@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	elementary-code
 DISTVERSION=	3.4.1

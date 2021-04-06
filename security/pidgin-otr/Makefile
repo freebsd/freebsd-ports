@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	otr
 PORTVERSION=	4.0.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lizard
 DISTVERSIONPREFIX=	v

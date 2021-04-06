@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	RPostgreSQL
 DISTVERSION=	0.6-2

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	WWW-AtMovies-TV
 PORTVERSION=	0.04

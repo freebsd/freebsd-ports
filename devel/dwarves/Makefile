@@ -1,5 +1,4 @@
 # Created by: Conrad Meyer <cem@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dwarves
 DISTVERSION=	1.19

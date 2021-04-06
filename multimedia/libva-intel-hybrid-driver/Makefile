@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	intel-hybrid-driver
 DISTVERSION=	1.0.2

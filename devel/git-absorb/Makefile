@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	git-absorb
 DISTVERSION=	0.5.0

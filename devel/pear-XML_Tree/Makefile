@@ -1,5 +1,4 @@
 # Created by: Alex Miller (<asm@asm.kiev.ua>)
-# $FreeBSD$
 
 PORTNAME=	XML_Tree
 PORTVERSION=	1.1

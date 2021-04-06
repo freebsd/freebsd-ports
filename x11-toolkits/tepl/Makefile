@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tepl
 DISTVERSION=	5.1.1

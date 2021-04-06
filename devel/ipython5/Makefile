@@ -1,5 +1,4 @@
 # Created by: Dryice Liu
-# $FreeBSD$
 
 PORTNAME=	ipython
 PORTVERSION=	5.10.0

@@ -1,5 +1,4 @@
 # Created by: Yashin Dmitry <yashin.dm@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	uhub
 PORTVERSION=	0.5.1

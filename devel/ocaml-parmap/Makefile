@@ -1,5 +1,4 @@
 # Created by: Jean-Sébastien Pédron <dumbbell@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	parmap
 DISTVERSION=	1.0-rc9

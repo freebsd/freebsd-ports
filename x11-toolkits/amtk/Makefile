@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	amtk
 PORTVERSION=	5.2.0

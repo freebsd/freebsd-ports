@@ -1,5 +1,4 @@
 # Created by: Adam Herzog <adam@herzogdesigns.com>
-# $FreeBSD$
 
 PORTNAME=	XML-Writer
 PORTVERSION=	0.900

@@ -1,5 +1,4 @@
 # Created by: Piotr Kubaj <pkubaj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	fcode-utils
 PORTVERSION=	1.0.2

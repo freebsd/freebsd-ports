@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pooler
 PORTVERSION=	1.5.2

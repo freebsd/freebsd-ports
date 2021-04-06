@@ -1,5 +1,4 @@
 # Created by: Kevin Lo <kevlo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	owncloud
 PORTVERSION=	10.6.0

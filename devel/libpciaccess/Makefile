@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libpciaccess
 PORTVERSION=	0.16

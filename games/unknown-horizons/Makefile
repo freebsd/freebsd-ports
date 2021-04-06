@@ -1,5 +1,4 @@
 # Created by: GreenDog <fiziologus@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	unknown-horizons
 PORTVERSION=	2019.1

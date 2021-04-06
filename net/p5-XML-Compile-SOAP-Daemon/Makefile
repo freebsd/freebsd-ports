@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lth@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	XML-Compile-SOAP-Daemon
 PORTVERSION=	3.14

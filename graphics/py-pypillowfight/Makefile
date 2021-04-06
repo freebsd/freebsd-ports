@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pypillowfight
 DISTVERSION=	0.3.0

@@ -1,5 +1,4 @@
 # Created by: jupengfei <jupengfei@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	CPAN-Meta
 PORTVERSION=	2.150010

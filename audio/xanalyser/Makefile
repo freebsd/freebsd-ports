@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xanalyser
 PORTVERSION=	1.32

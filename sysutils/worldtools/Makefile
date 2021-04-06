@@ -1,5 +1,4 @@
 # Created by: anarcat
-# $FreeBSD$
 
 PORTNAME=	worldtools
 PORTVERSION=	1.3.1

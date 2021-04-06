@@ -1,5 +1,4 @@
 # Created by: Motoyuki Kasahara <m-kasahr@sra.co.jp>
-# $FreeBSD$
 
 PORTNAME=	libtool
 PORTREVISION=	1

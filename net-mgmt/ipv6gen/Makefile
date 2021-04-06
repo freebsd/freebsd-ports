@@ -1,5 +1,4 @@
 # Created by: Vladimir Kotal <vlada@devnull.cz>
-# $FreeBSD$
 
 PORTNAME=	ipv6gen
 PORTVERSION=	1.0

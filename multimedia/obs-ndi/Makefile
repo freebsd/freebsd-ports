@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	obs-ndi
 DISTVERSION=	4.9.1

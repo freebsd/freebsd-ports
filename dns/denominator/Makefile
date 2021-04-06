@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	denominator
 PORTVERSION=	4.7.1

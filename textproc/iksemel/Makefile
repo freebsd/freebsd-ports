@@ -1,5 +1,4 @@
 # Created by: trasz
-# $FreeBSD$
 
 PORTNAME=	iksemel
 PORTVERSION=	1.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	snowballstemmer
 PORTVERSION=	1.2.1

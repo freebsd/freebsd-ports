@@ -1,5 +1,4 @@
 # Created by: Pedro Garcia Freitas <sawp@sawp.com.br>
-# $FreeBSD$
 
 PORTNAME=	mahotas
 PORTVERSION=	1.4.11

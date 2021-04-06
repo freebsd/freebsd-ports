@@ -1,5 +1,4 @@
 # Created by: Bruce M Simpson <bms@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	wmxss
 PORTVERSION=	0.1

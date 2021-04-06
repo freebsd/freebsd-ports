@@ -1,5 +1,4 @@
 # Created by: Johann Visagie <wjv@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	recombine
 PORTVERSION=	1.41

@@ -1,5 +1,4 @@
 # Created by: Nikola Kolev <koue@chaosophia.net>
-# $FreeBSD$
 
 # This port recognizes the following non-boolean tunables:
 #

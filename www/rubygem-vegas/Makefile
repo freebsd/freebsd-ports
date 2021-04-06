@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vegas
 PORTVERSION=	0.1.11

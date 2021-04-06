@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-debreach
 PORTVERSION=	2.0.1

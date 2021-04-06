@@ -1,5 +1,4 @@
 # Created by: Craig Boston <craig@yekse.gank.org>
-# $FreeBSD$
 
 PORTNAME=	openvmps
 PORTVERSION=	1.4.06

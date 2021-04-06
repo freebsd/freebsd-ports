@@ -1,5 +1,4 @@
 # Created by: Timur Bakeyev <bat@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Unicode-Stringprep
 PORTVERSION=	1.105

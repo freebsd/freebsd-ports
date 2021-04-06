@@ -1,5 +1,4 @@
 # Created by: Steve Woodford <scw@netbsd.hut.fi>
-# $FreeBSD$
 
 PORTNAME=	tits
 PORTVERSION=	1.3.0

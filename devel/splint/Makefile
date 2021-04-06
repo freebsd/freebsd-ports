@@ -1,5 +1,4 @@
 # Created by: moeding
-# $FreeBSD$
 
 PORTNAME=	splint
 PORTVERSION=	3.1.2

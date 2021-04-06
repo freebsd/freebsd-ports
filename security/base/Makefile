@@ -1,5 +1,4 @@
 # Created by: Linh Pham <question+fbsdports@closedsrc.org>
-# $FreeBSD$
 
 PORTNAME=	base
 PORTVERSION=	1.4.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	halide
 DISTVERSIONPREFIX=	release_

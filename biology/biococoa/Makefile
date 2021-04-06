@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	biococoa
 PORTVERSION=	2.2.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	open-motif
 PORTVERSION=	2.3.8

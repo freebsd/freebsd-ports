@@ -1,5 +1,4 @@
 # Created by: sanpei@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	mrtg-ping-probe
 PORTVERSION=	2.2.0

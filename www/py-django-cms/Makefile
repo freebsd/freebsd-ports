@@ -1,5 +1,4 @@
 # Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-# $FreeBSD$
 
 PORTNAME=	django-cms
 PORTVERSION=	3.7.1

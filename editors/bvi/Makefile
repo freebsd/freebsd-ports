@@ -1,5 +1,4 @@
 # Created by: Chris D. Faulhaber <jedgar@fxp.org>
-# $FreeBSD$
 
 PORTNAME=	bvi
 PORTVERSION=	1.4.0

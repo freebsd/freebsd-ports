@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	termtosvg
 PORTVERSION=	1.1.0

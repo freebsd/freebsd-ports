@@ -1,5 +1,4 @@
 # Created by: Florian Limberger <flo@snakeoilproductions.net>
-# $FreeBSD$
 
 PORTNAME=	orbitron
 DISTVERSION=	g20110525

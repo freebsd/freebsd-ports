@@ -1,5 +1,4 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	geocode-glib
 PORTVERSION=	3.26.2

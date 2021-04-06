@@ -1,5 +1,4 @@
 # Created by: Mike Bristow <mike@urgle.com>
-# $FreeBSD$
 
 PORTNAME=	netmask
 PORTVERSION=	2.4

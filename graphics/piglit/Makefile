@@ -1,5 +1,4 @@
 # Created by: Jean-Sébastien Pédron <dumbbell@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	piglit
 PORTVERSION=	20200910

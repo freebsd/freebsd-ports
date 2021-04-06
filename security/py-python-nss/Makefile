@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-nss
 PORTVERSION=	1.0.1

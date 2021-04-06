@@ -1,5 +1,4 @@
 # Created by: Mustafa Arif <ma499@doc.ic.ac.uk>
-# $FreeBSD$
 
 PORTNAME=	Authen-Smb
 PORTVERSION=	0.91

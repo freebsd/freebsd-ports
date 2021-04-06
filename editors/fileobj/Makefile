@@ -1,5 +1,4 @@
 # Created by: Rimvydas Jasinskas <zrj@ef.irc>
-# $FreeBSD$
 
 PORTNAME=	fileobj
 PORTVERSION=	0.7.55

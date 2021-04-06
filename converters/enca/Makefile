@@ -1,5 +1,4 @@
 # Created by: Alexandr Kovalenko <never@nevermind.kiev.ua>
-# $FreeBSD$
 
 PORTNAME=	enca
 PORTVERSION=	1.19

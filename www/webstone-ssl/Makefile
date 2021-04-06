@@ -1,5 +1,4 @@
 # Created by: Kazumasa Nishizawa <k_nishizawa@anet.ne.jp>
-# $FreeBSD$
 
 PORTNAME=	webstone
 PORTVERSION=	2.5

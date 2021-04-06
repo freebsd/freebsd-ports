@@ -1,5 +1,4 @@
 # Created by: Timothy Beyer <beyert@cs.ucr.edu>
-# $FreeBSD$
 
 PORTNAME=	bam
 PORTVERSION=	0.4.0

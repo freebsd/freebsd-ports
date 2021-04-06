@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hourglass
 PORTVERSION=	1.0.1

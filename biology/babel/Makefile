@@ -1,5 +1,4 @@
 # Created by: frankch@waru.life.nthu.edu.tw
-# $FreeBSD$
 
 PORTNAME=	babel
 PORTVERSION=	1.6

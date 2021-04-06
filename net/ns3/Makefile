@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ns3
 PORTVERSION=	3.33

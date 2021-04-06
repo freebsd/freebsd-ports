@@ -1,5 +1,4 @@
 # Created by: erich@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	gimp
 DISTVERSION?=	2.10.24

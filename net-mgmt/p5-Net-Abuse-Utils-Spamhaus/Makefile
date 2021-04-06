@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-Abuse-Utils-Spamhaus
 PORTVERSION=	0.09

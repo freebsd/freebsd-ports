@@ -1,5 +1,4 @@
 # Created by: Tilman Linneweh <arved@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	blop
 PORTVERSION=	0.2.8

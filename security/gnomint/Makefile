@@ -1,5 +1,4 @@
 # Created by: Kevin Zheng <kevinz5000@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gnomint
 PORTVERSION=	1.2.1

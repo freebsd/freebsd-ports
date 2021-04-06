@@ -1,5 +1,4 @@
 # Created by: Tobias Kortkamp <tobias.kortkamp@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	chibi-scheme
 DISTVERSION=	0.9.1

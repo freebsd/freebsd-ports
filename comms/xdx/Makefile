@@ -1,5 +1,4 @@
 # Created by: Matt Dawson <matt@mattsnetwork.co.uk>
-# $FreeBSD$
 
 PORTNAME=	xdx
 PORTVERSION=	2.4

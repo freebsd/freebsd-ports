@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	QtBitcoinTrader
 DISTVERSION=	1.40.52

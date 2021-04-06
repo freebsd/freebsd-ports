@@ -1,5 +1,4 @@
 # Created by: Kuan-Chung Chiu <buganini@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	khmer
 PORTVERSION=	1.0

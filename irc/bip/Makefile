@@ -1,5 +1,4 @@
 # Created by: Chess Griffin <chess@chessgriffin.com>
-# $FreeBSD$
 
 PORTNAME=	bip
 DISTVERSION=	0.9.0-rc4

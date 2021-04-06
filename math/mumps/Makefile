@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni
-# $FreeBSD$
 
 PORTNAME=	mumps
 DISTVERSION=	5.1.2-aster7

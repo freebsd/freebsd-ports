@@ -1,5 +1,4 @@
 # Created by: Marcin Cieslak <saper@SYSTEM.PL>
-# $FreeBSD$
 
 PORTNAME=	jericho-html
 PORTVERSION=	3.2

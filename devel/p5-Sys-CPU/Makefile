@@ -1,5 +1,4 @@
 # Created by: Terry Sposato <terry@sucked-in.com>
-# $FreeBSD$
 
 PORTNAME=	Sys-CPU
 PORTVERSION=	0.61

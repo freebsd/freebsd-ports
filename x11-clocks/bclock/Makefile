@@ -1,5 +1,4 @@
 # Created by: Brian Handy <handy@physics.montana.edu>
-# $FreeBSD$
 
 PORTNAME=	bclock
 PORTVERSION=	1.0

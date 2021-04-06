@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fomp
 DISTVERSION=	1.2.2

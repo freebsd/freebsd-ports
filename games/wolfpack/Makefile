@@ -1,5 +1,4 @@
 # Created by: Daniel O'Connor <darius@dons.net.au>
-# $FreeBSD$
 
 PORTNAME=	wolfpack
 PORTVERSION=	4.4.0

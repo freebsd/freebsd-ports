@@ -1,5 +1,4 @@
 # Created by: Romain Tartiere <romain@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	google-gdata
 PORTVERSION=	2.2.0.0.20150610

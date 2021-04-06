@@ -1,5 +1,4 @@
 # Created by: Carlo Strub <cs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bapu
 PORTVERSION=	0.3.0

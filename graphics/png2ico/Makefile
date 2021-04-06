@@ -1,5 +1,4 @@
 # Created by: Franz Klammer <klammer@webonaut.com>
-# $FreeBSD$
 
 PORTNAME=	png2ico
 PORTVERSION=	2002.12.08

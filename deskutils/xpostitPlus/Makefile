@@ -1,5 +1,4 @@
 # Created by: mi
-# $FreeBSD$
 
 PORTNAME=	XPostitPlus
 PORTVERSION=	2.3

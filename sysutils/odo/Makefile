@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	odo
 PORTVERSION=	0.2.2

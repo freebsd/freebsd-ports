@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webview
 DISTVERSION=	${QT5_VERSION}

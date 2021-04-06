@@ -1,5 +1,4 @@
 # Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tblis
 PORTVERSION=	1.1.2

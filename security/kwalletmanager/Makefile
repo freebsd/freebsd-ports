@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kwalletmanager
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

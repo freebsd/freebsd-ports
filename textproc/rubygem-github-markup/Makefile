@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	github-markup
 PORTVERSION=	3.0.1

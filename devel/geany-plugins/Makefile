@@ -1,5 +1,4 @@
 # Created by: Aldis Berjoza <aldis@bsdroot.lv>
-# $FreeBSD$
 
 PORTNAME=	geany-plugins
 PORTVERSION=	${GEANY_VER}

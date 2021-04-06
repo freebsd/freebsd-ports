@@ -1,5 +1,4 @@
 # Created by: Mark Johnston <markj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	netdumpd
 PORTVERSION=	20191031

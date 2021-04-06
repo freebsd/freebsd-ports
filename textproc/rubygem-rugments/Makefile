@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rugments
 DISTVERSION=	1.0.0.beta8

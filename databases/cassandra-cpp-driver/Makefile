@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	cassandra-cpp-driver
 PORTVERSION=	2.16.0

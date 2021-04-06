@@ -1,5 +1,4 @@
 # Created by: Choi Jun Ho <junker@moderato.snu.ac.kr>
-# $FreeBSD$
 
 PORTNAME=	splay
 PORTVERSION=	0.9.5.2

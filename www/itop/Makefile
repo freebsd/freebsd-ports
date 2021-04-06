@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	itop
 PORTVERSION=	2.6.1

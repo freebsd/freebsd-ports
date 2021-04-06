@@ -1,5 +1,4 @@
 # Created by: KIMURA Yasuhiro <yasu@utahime.org>
-# $FreeBSD$
 
 PORTNAME=	xrsh
 PORTVERSION=	5.92

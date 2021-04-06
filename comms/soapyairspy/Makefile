@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SoapyAirspy
 DISTVERSIONPREFIX=	soapy-airspy-

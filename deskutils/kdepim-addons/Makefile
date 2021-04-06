@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdepim-addons
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

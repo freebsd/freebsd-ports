@@ -1,5 +1,4 @@
 # Created by: Ashish SHUKLA <wahjava@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	PPIx-Regexp
 PORTVERSION=	0.079

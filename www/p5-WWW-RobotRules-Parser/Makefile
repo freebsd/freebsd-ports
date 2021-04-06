@@ -1,5 +1,4 @@
 # Created by: Masahiro Teramoto <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	WWW-RobotRules-Parser
 PORTVERSION=	0.04001

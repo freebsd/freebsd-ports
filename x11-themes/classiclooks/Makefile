@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	classiclooks
 DISTVERSION=	1.4.4

@@ -1,5 +1,4 @@
 # Created by: Cristiano Rolim Pereira <cristianorolim@outlook.com>
-# $FreeBSD$
 
 PORTNAME=	vera++
 PORTVERSION=	1.3.0

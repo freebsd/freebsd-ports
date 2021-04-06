@@ -1,5 +1,4 @@
 # Created by: lbartoletti <lbartoletti@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	spatialite_gui
 PORTVERSION=	1.7.1

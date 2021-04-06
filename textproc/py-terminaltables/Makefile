@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	terminaltables
 PORTVERSION=	3.1.0

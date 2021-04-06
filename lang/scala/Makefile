@@ -1,5 +1,4 @@
 # Created by: Mitsuru YOSHIDA <mitsuru@riken.jp>
-# $FreeBSD$
 
 PORTNAME=	scala
 PORTVERSION=	2.13.1

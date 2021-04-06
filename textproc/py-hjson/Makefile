@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hjson
 DISTVERSIONPREFIX=	v

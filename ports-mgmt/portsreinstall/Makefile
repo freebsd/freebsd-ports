@@ -1,5 +1,4 @@
 # Created by: Mamoru Sakaue / MwGhennndo
-# $FreeBSD$
 
 PORTNAME=	portsreinstall
 PORTVERSION=	4.1.0

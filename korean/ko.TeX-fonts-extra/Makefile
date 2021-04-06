@@ -1,5 +1,4 @@
 # Created by: Hyogeol Lee <hyogeollee@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ko.TeX-fonts-extra
 PORTVERSION=	0.1.0

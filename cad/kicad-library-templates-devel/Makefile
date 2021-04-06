@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas <thierry@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_TMPL_DATE}

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ipdbtools
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Frank Behrens
-# $FreeBSD$
 
 PORTNAME=		zkt
 DISTVERSION=		1.1.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	google-cloud-vision
 PORTVERSION=	0.35.1

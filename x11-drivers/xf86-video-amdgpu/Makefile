@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # this port is for future amdgpu kernel support testing.
 

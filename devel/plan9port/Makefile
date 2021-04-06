@@ -1,5 +1,4 @@
 # Created by: Serge Gagnon <serge.gagnon@b2b2c.ca>
-# $FreeBSD$
 
 PORTNAME=	plan9port
 PORTVERSION=	20200816

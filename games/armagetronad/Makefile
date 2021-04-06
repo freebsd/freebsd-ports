@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	armagetronad
 DISTVERSION=	0.2.8.3.5

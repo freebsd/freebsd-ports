@@ -1,5 +1,4 @@
 # Created by: Ernst de Haan <znerd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	commons-collections
 PORTVERSION=	3.2.2

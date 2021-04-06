@@ -1,5 +1,4 @@
 # Created by: brix@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Crypt-UnixCrypt_XS
 PORTVERSION=	0.11

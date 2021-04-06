@@ -1,5 +1,4 @@
 # Created by: Stefan Lambrev <cheffo@freebsd-bg.org>
-# $FreeBSD$
 
 PORTNAME=	kapacitor
 DISTVERSIONPREFIX=	v

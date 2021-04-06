@@ -1,5 +1,4 @@
 # Created by: Shell Hung <shell@shellhung.org>
-# $FreeBSD$
 
 PORTNAME=	Date-Handler
 PORTVERSION=	1.2

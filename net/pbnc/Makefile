@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pbnc
 PORTVERSION=	1.0

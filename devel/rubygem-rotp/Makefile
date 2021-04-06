@@ -1,5 +1,4 @@
 # Created by: Torsten Zuhlsdorff <ports@toco-domains.de>
-# $FreeBSD$
 
 PORTNAME=	rotp
 PORTVERSION=	3.3.1

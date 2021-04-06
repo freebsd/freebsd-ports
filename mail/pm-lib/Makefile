@@ -1,5 +1,4 @@
 # Created by: Jeremy Norris <ishmael27@home.com>
-# $FreeBSD$
 
 PORTNAME=	pm-lib
 PORTVERSION=	20091202

@@ -1,5 +1,4 @@
 # Created by: Muhammad Moinur Rahman<bofh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	propro
 PORTVERSION=	2.1.0

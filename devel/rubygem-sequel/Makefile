@@ -1,5 +1,4 @@
 # Created by: Wen Heping<wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	sequel
 PORTVERSION=	5.15.0

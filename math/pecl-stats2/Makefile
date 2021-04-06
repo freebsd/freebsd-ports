@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stats
 PORTVERSION=	2.0.3

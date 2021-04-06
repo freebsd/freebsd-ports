@@ -1,5 +1,4 @@
 # Created by: Honza Betik
-# $FreeBSD$
 
 PORTNAME=	radsecproxy
 DISTVERSION=	1.8.2

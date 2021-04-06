@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gdk_pixbuf2
 PORTVERSION=	3.4.3

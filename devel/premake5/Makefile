@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	premake
 DISTVERSIONPREFIX=	v

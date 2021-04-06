@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wtf
 PORTVERSION=	0.35.0

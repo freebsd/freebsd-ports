@@ -1,5 +1,4 @@
 # Created by: Nakata Maho <chat95@mbox.kyoto-inet.or.jp>
-# $FreeBSD$
 
 PORTNAME=	pymol
 DISTVERSIONPREFIX=	v

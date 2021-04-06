@@ -1,5 +1,4 @@
 # Created by: Zane C, Bowers <vvelox@vvelox.net>
-# $FreeBSD$
 
 PORTNAME=	Net-LDAP-LDAPhash
 PORTVERSION=	1.0.3

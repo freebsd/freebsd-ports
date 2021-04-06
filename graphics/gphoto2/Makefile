@@ -1,5 +1,4 @@
 # Created by: Anders Nordby <anders@fix.no>
-# $FreeBSD$
 
 PORTNAME=	gphoto2
 PORTVERSION=	2.5.26

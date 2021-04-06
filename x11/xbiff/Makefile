@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xbiff
 PORTVERSION=	1.0.4

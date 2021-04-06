@@ -1,5 +1,4 @@
 # Created by: Zahemszky, Gabor <ZGabor at CoDe dot HU>
-# $FreeBSD$
 
 PORTNAME=	sslwrap
 PORTVERSION=	2.0.6

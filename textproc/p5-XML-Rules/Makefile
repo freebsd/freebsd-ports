@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	XML-Rules
 PORTVERSION=	1.16

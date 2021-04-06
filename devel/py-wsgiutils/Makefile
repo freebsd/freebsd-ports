@@ -1,5 +1,4 @@
 # Created by: Jordi Haarman
-# $FreeBSD$
 
 PORTNAME=	wsgiutils
 PORTVERSION=	0.7.2

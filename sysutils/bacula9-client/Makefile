@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bacula
 PKGNAMESUFFIX=	9-client

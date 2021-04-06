@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lumina-themes
 PORTVERSION=	201710311100

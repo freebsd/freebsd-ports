@@ -1,5 +1,4 @@
 # Created by: Toni Gundogdu <legatvs@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	quvi
 PORTVERSION=	0.4.2

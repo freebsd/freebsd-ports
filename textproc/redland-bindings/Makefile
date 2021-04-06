@@ -1,5 +1,4 @@
 # Created by: Russell Cloran <russell@rucus.ru.ac.za>
-# $FreeBSD$
 
 PORTNAME=	redland-bindings
 PORTVERSION=	1.0.17.1

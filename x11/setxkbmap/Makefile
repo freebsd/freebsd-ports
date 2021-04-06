@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	setxkbmap
 PORTVERSION=	1.3.2

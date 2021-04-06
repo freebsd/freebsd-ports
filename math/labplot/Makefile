@@ -1,5 +1,4 @@
 # Created by: Kay Lehmann <kay_lehmann@web.de>
-# $FreeBSD$
 
 PORTNAME=	labplot
 DISTVERSION=	2.8.1

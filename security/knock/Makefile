@@ -1,5 +1,4 @@
 # Created by: Shaun Amott <shaun@inerd.com>
-# $FreeBSD$
 
 PORTNAME=	knock
 PORTVERSION=	0.5

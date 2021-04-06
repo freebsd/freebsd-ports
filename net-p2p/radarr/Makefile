@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	radarr
 PORTVERSION=	3.0.2.4552

@@ -1,5 +1,4 @@
 # Created by: Archie Cobbs
-# $FreeBSD$
 
 PORTNAME=	sl2tps
 PORTVERSION=	0.4.2

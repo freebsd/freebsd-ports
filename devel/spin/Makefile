@@ -1,5 +1,4 @@
 # Created by: jhanna@home.com
-# $FreeBSD$
 
 PORTNAME=	spin
 PORTVERSION=	6.5.0

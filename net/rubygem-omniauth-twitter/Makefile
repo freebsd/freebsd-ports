@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omniauth-twitter
 PORTVERSION=	1.4.0

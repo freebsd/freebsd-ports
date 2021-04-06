@@ -1,5 +1,4 @@
 # Created by: kamikaze@bsdforen.de
-# $FreeBSD$
 
 PORTNAME=	libaacs
 DISTVERSION=	0.11.0

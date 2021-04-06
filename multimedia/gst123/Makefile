@@ -1,5 +1,4 @@
 # Created by: Herbert J. Skuhra <h.skuhra@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gst123
 PORTVERSION=	0.3.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openkim
 PORTVERSION=	1.1.1

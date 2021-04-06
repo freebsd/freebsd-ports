@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pymisp
 PORTVERSION=	2.4.128

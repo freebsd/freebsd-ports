@@ -1,5 +1,4 @@
 # Created by: William Grzybowski
-# $FreeBSD$
 
 PORTNAME=	hgtools
 PORTVERSION=	6.3

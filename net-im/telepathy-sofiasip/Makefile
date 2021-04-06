@@ -1,5 +1,4 @@
 # Created by: Yuri <yuri@tsoft.com>
-# $FreeBSD$
 
 PORTNAME=	telepathy-sofiasip
 PORTVERSION=	0.4.5

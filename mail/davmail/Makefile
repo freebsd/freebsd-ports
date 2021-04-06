@@ -1,5 +1,4 @@
 # Created by: John Prather
-# $FreeBSD$
 
 PORTNAME=	davmail
 PORTVERSION=	5.5.1

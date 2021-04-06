@@ -1,5 +1,4 @@
 # Created by: David O'Brien <obrien@cs.ucdavis.edu>
-# $FreeBSD$
 
 PORTNAME=	mp-${PAPERSIZE}
 PORTVERSION=	3.0.1

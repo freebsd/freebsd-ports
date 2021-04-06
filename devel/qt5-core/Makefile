@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	core
 DISTVERSION=	${QT5_VERSION}

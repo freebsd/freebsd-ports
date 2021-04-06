@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	docrepr
 DISTVERSION=	0.1.1

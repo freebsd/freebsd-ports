@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ticcutils
 DISTVERSIONPREFIX=	v

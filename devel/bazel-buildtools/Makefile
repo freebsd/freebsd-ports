@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bazel-buildtools
 DISTVERSION=	3.2.1

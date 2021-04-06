@@ -1,5 +1,4 @@
 # Created by: Juraj Lutter <otis@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	unifi6
 PORTVERSION=	6.0.45

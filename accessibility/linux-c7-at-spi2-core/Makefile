@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	at-spi2-core
 PORTVERSION=	2.28.0

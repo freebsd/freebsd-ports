@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dvtm
 PORTVERSION=	0.15

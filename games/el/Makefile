@@ -1,5 +1,4 @@
 # Created by: Janni
-# $FreeBSD$
 
 PORTNAME=	el
 PORTVERSION=	1.9.5.8

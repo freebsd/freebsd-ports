@@ -1,5 +1,4 @@
 # Created by: wcarey
-# $FreeBSD$
 
 PORTNAME=	ledger
 PORTVERSION=	3.2.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cursor-dmz-aa-theme
 DISTVERSION=	0.4.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wayland
 PORTVERSION=	1.15.0

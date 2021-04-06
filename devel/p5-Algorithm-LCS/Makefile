@@ -1,5 +1,4 @@
 # Created by: tiger@whitetigersd.com
-# $FreeBSD$
 
 PORTNAME=	Algorithm-LCS
 PORTVERSION=	1.04

@@ -1,5 +1,4 @@
 # Created by: Sylvio Cesar <sylvio@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mpop
 DISTVERSION=	1.4.13

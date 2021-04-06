@@ -1,5 +1,4 @@
 # Created by: Nicolas de Bari Embriz <nbari@dalmp.com>
-# $FreeBSD$
 
 PORTNAME=	dalmp
 PORTVERSION=	3.1.0

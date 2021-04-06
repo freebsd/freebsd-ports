@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <kapr@crosswinds.net>
-# $FreeBSD$
 
 PORTNAME=	Lingua-RU-Charset
 PORTVERSION=	0.02

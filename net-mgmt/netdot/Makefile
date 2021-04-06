@@ -1,5 +1,4 @@
 # Created by: Nick Hilliard
-# $FreeBSD$
 
 PORTNAME=	netdot
 PORTVERSION=	1.0.7

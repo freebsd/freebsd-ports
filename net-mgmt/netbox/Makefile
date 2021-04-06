@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v

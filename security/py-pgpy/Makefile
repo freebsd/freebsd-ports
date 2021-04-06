@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pgpy
 PORTVERSION=	0.5.3

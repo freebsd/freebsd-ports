@@ -1,5 +1,4 @@
 # Created by: Melvyn Sopacua <melvyn@magemana.nl>
-# $FreeBSD$
 
 PORTNAME=	snappy
 PORTVERSION=	0.2.0

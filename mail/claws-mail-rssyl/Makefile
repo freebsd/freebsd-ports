@@ -1,5 +1,4 @@
 # Created by: v.velox@vvelox.net
-# $FreeBSD$
 
 PORTNAME=	rssyl
 PORTREVISION=	0

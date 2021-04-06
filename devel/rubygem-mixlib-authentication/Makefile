@@ -1,5 +1,4 @@
 # Created by: renchap@cocoa-x.com
-# $FreeBSD$
 
 PORTNAME=	mixlib-authentication
 PORTVERSION=	3.0.7

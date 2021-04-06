@@ -1,5 +1,4 @@
 # Created by: Kozlov Sergey <kozlov.sergey.404@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	django-tinymce
 PORTVERSION=	3.2.0

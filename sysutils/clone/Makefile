@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		clone
 DISTVERSIONPREFIX=	v

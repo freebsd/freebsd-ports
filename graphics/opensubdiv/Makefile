@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opensubdiv
 DISTVERSIONPREFIX=	v

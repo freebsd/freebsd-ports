@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	fspclient
 PORTVERSION=	0.93.1

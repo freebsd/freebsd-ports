@@ -1,5 +1,4 @@
 # Created by: Frederic Hardy <frederic.hardy@mageekbox.net>
-# $FreeBSD$
 
 PORTNAME=	mysqlsniffer
 PORTVERSION=	1.2

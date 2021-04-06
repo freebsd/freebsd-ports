@@ -1,5 +1,4 @@
 # Created by: jfieber
-# $FreeBSD$
 
 PORTNAME=	iso8879
 PORTVERSION=	1986

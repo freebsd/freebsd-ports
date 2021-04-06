@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	genact
 DISTVERSIONPREFIX=	v

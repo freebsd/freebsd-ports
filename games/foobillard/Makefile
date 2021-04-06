@@ -1,5 +1,4 @@
 # Created by: Thomas Vogt <thomas.vogt@bsdunix.ch>
-# $FreeBSD$
 
 PORTNAME=	foobillard
 PORTVERSION=	3.0a

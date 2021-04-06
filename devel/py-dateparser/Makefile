@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dateparser
 PORTVERSION=	0.7.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zope.datetime
 PORTVERSION=	3.4.1

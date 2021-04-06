@@ -1,5 +1,4 @@
 # Created by: Michael Lyngbøl <lyngbol@wheel.dk>
-# $FreeBSD$
 
 PORTNAME=	Net-Telnet-Cisco
 PORTVERSION=	1.11

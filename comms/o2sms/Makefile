@@ -1,5 +1,4 @@
 # Created by: Conor McDermottroe <ports@mcdermottroe.com>
-# $FreeBSD$
 
 PORTNAME=	o2sms
 PORTVERSION=	3.36

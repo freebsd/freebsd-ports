@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zchunk
 DISTVERSION=	1.1.9

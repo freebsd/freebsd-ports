@@ -1,5 +1,4 @@
 # Created by: Pav Lucistnik <pav@oook.cz>
-# $FreeBSD$
 
 PORTNAME=	cue2toc
 PORTVERSION=	0.1

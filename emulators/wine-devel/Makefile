@@ -1,5 +1,4 @@
 # Created by: Gerald Pfeifer <gerald@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	wine
 DISTVERSION=	6.4

@@ -1,5 +1,4 @@
 # Created by: Willem Jan Withagen <wjw@digiware.nl>
-# $FreeBSD$
 
 PORTNAME=	ceph
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Matthew Hunt <mph@pobox.com>
-# $FreeBSD$
 
 PORTNAME=	xfrisk
 PORTVERSION=	1.2

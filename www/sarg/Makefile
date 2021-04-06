@@ -1,5 +1,4 @@
 # Created by: mt@primats.org.ua
-# $FreeBSD$
 
 PORTNAME=	sarg
 PORTVERSION=	2.4.0

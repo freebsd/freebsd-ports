@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # PORTNAME block
 PORTNAME=	libnormaliz

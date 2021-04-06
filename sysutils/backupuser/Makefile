@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	backupuser
 DISTVERSION=	1.1.1

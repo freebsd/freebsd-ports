@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vulkan-caps-viewer
 DISTVERSION=	3.0

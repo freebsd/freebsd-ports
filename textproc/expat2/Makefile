@@ -1,5 +1,4 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	expat
 PORTVERSION=	2.2.10

@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis (edwin@mavetju.org)
-# $FreeBSD$
 
 PORTNAME=	pkg_tree
 PORTVERSION=	1.1

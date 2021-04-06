@@ -1,5 +1,4 @@
 # Created by: Diane Bruce <db@db.net>
-# $FreeBSD$
 
 PORTNAME=	ibp
 PORTVERSION=	0.21

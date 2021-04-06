@@ -1,5 +1,4 @@
 # Created by: Viacheslav Mikerov <SlavaMikerov@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	json
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	orange-canvas-core
 DISTVERSION=	0.1.19

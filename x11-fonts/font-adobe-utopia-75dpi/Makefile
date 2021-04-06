@@ -1,5 +1,4 @@
 # Created by: Pawel Worach
-# $FreeBSD$
 
 PORTNAME=	font-adobe-utopia-75dpi
 PORTVERSION=	1.0.4

@@ -1,5 +1,4 @@
 # Created by: Olivier Girard <Olivier.Girard@univ-angers.fr>
-# $FreeBSD$
 
 PORTNAME=	MIME-Charset
 PORTVERSION=	1.012.2

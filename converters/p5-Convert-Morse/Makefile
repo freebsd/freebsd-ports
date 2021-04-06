@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Convert-Morse
 PORTVERSION=	0.06

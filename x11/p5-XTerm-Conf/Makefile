@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	XTerm-Conf
 PORTVERSION=	0.10

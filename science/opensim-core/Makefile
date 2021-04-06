@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	OpenSim
 DISTVERSION=	4.1

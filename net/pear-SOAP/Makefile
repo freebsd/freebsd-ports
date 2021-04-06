@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas (<thierry@FreeBSD.org>)
-# $FreeBSD$
 
 PORTNAME=	SOAP
 PORTVERSION=	0.14.0

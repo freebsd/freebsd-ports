@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	arrow
 DISTVERSION=	1.0.1

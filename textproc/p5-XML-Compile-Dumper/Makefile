@@ -1,5 +1,4 @@
 # Created by: Patrick Powell <papowell@astart.com>
-# $FreeBSD$
 
 PORTNAME=	XML-Compile-Dumper
 PORTVERSION=	0.13

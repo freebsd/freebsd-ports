@@ -1,5 +1,4 @@
 # Created by: Mathieu Arnold <m@absolight.net>
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-AbstractSearch
 PORTVERSION=	0.07

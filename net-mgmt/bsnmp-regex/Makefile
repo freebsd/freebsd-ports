@@ -1,5 +1,4 @@
 # Created by: brock@cotcomsol.com
-# $FreeBSD$
 
 PORTNAME=	bsnmp-regex
 PORTVERSION=	0.6

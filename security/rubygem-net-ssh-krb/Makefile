@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	net-ssh-krb
 DISTVERSION=	0.5.1

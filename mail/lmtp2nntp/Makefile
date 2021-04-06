@@ -1,5 +1,4 @@
 # Created by: Thomas Lotterer <thomas.lotterer@cw.com>
-# $FreeBSD$
 
 PORTNAME=	lmtp2nntp
 PORTVERSION=	1.4.1

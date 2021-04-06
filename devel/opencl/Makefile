@@ -1,5 +1,4 @@
 # Created by: O. Hartmann <ohartmann@walstatt.org>
-# $FreeBSD$
 
 PORTNAME=	opencl
 PORTVERSION=	3.0

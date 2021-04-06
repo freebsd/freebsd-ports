@@ -1,5 +1,4 @@
 # Created by: nork@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	instantclient
 PORTVERSION=	${ORACLEVERSION}.${DISTDATE}

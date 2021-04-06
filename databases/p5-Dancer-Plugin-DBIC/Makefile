@@ -1,5 +1,4 @@
 # Created by: <ports@c0decafe.net>
-# $FreeBSD$
 
 PORTNAME=	Dancer-Plugin-DBIC
 PORTVERSION=	0.2104

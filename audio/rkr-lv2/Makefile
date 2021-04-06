@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rkr
 DISTVERSIONPREFIX=	beta_

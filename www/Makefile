@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Ports related to the World Wide Web
 

@@ -1,5 +1,4 @@
 # Created by: Victor Popov
-# $FreeBSD$
 
 PORTNAME=	pam_search_list
 PORTVERSION=	0.1

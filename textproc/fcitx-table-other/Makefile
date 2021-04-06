@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fcitx-table-other
 DISTVERSION=	0.2.3

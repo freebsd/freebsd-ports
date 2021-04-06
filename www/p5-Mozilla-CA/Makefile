@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Mozilla-CA
 PORTVERSION=	20200520

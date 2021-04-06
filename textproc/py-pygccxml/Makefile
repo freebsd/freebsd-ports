@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pygccxml
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Anders Nordby <anders@fix.no>
-# $FreeBSD$
 
 PORTNAME=	maradns
 PORTVERSION=	2.0.15

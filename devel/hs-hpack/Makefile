@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hpack
 PORTVERSION=	0.34.4

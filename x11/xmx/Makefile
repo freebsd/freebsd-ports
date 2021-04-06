@@ -1,5 +1,4 @@
 # Created by: Oliver Breuninger <ob@seicom.NET>
-# $FreeBSD$
 
 PORTNAME=	xmx
 PORTVERSION=	1.1

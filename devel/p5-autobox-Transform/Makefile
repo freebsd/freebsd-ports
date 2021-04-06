@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	autobox-Transform
 PORTVERSION=	1.035

@@ -1,5 +1,4 @@
 # Created by: brett@peloton.physics.montana.edu
-# $FreeBSD$
 
 PORTNAME=	asmail
 PORTVERSION=	2.1

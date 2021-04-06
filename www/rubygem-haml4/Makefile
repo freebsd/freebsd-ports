@@ -1,5 +1,4 @@
 # Created by: Robert Gogolok <gogo@cs.uni-sb.de>
-# $FreeBSD$
 
 PORTNAME=	haml
 PORTVERSION=	4.0.7

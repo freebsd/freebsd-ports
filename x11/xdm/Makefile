@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xdm
 PORTVERSION=	1.1.12

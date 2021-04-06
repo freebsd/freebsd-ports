@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gitfs
 DISTVERSION=	0.5.2

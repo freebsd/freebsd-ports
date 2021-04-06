@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vcglib
 PORTVERSION=	2020.09

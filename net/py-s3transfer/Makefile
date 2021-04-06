@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	s3transfer
 PORTVERSION=	0.3.6

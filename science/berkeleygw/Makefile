@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	BerkeleyGW
 DISTVERSION=	2.0.0

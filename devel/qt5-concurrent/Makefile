@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	concurrent
 DISTVERSION=	${QT5_VERSION}

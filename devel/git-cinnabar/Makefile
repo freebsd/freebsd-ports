@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	git-cinnabar
 DISTVERSION=	0.5.7

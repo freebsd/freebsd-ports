@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-ParseBinary
 PORTVERSION=	0.31

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	easyexif
 DISTVERSIONPREFIX=	v

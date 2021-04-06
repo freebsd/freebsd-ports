@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		ooni-mini
 DISTVERSIONPREFIX=	v

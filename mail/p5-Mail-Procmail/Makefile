@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	Mail-Procmail
 PORTVERSION=	1.08

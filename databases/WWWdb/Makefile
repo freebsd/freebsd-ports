@@ -1,5 +1,4 @@
 # Created by: Jens Rehsack <rehsack@liwing.de>
-# $FreeBSD$
 
 PORTNAME=	WWWdb
 PORTVERSION=	0.8.3

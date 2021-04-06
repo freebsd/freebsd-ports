@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Text-Xslate-Bridge-TT2Like
 PORTVERSION=	0.00010

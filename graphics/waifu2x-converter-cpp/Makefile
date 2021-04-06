@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	waifu2x-converter-cpp
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opengl
 DISTVERSION=	${QT5_VERSION}

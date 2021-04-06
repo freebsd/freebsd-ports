@@ -1,5 +1,4 @@
 # Created by: Will Andrews <andrews@technologist.com>
-# $FreeBSD$
 
 PORTNAME=	makeself
 PORTVERSION=	2.4.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdeplasma-addons
 DISTVERSION=	${KDE_PLASMA_VERSION}

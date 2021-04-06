@@ -1,5 +1,4 @@
 # Created by: Henk van Oers <hvo.pm@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	Mojolicious-Plugin-Database
 PORTVERSION=	1.10

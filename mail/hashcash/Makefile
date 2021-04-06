@@ -1,5 +1,4 @@
 # Created by: bremner@unb.ca
-# $FreeBSD$
 
 PORTNAME=	hashcash
 PORTVERSION=	1.22

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	peek-gc
 PORTVERSION=	0.0.2

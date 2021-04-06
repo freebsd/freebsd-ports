@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	kuklomenos
 PORTVERSION=	0.4.5

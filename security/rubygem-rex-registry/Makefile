@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rex-registry
 PORTVERSION=	0.1.4

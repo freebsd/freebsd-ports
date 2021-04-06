@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gapcmon
 PORTVERSION=	0.8.9

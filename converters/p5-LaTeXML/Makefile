@@ -1,5 +1,4 @@
 # Created by: Carlos J. Puga Medina <cpm@fbsd.es>
-# $FreeBSD$
 
 PORTNAME=	LaTeXML
 PORTVERSION=	0.8.5

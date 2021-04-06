@@ -1,5 +1,4 @@
 # Created by: Johan Kerckaert <kirk@bricsnet.com>
-# $FreeBSD$
 
 PORTNAME=	picprog
 PORTVERSION=	1.9.1

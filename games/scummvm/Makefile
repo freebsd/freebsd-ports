@@ -1,5 +1,4 @@
 # Created by: Alex Trull <freebsd.alex@trull.org>
-# $FreeBSD$
 
 PORTNAME=	scummvm
 PORTVERSION=	2.2.0

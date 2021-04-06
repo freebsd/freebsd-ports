@@ -1,5 +1,4 @@
 # Created by: Konstantin Lepa <konstantin.lepa@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	vxlog
 PORTVERSION=	1.0.3

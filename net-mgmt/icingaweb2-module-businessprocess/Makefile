@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	icingaweb2-module-businessprocess
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Muhammad Moinur Rahman<bofh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	raphf
 PORTVERSION=	2.0.1

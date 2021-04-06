@@ -1,5 +1,4 @@
 # Created by: andrew@scoop.co.nz
-# $FreeBSD$
 
 PORTNAME=	Module-Reload
 PORTVERSION=	1.11

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hpilo
 PORTVERSION=	4.4.3

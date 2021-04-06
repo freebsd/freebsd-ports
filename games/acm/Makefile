@@ -1,5 +1,4 @@
 # Created by: joerg
-# $FreeBSD$
 
 PORTNAME=	acm
 PORTVERSION=	5.0

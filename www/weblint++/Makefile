@@ -1,5 +1,4 @@
 # Created by: aaron@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	weblint++
 PORTVERSION=	1.15

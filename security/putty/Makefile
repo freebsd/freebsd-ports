@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	putty
 PORTVERSION=	0.74

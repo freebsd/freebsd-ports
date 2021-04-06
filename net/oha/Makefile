@@ -1,5 +1,4 @@
 # Created by: Juraj Lutter <otis@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	oha
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pcgen
 PORTVERSION=	6.06.01

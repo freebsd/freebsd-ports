@@ -1,5 +1,4 @@
 # Created by: Maxim Ignatenko
-# $FreeBSD$
 
 PORTNAME=	irc2dc
 PORTVERSION=	0.1

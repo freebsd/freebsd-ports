@@ -1,5 +1,4 @@
 # Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-# $FreeBSD$
 
 PORTNAME=	Services_urlTea
 PORTVERSION=	0.1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	certbot-dns-cpanel
 DISTVERSION=	0.2.2

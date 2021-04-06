@@ -1,5 +1,4 @@
 # Created by: gebhart@secnetix.de
-# $FreeBSD$
 
 PORTNAME=	Data-HexDump-Range
 PORTVERSION=	0.13.59

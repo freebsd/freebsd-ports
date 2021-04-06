@@ -1,5 +1,4 @@
 # Created by: Oliver Lehmann <lehmann@ans-netz.de>
-# $FreeBSD$
 
 PORTNAME=	tv-fonts
 PORTVERSION=	1.1

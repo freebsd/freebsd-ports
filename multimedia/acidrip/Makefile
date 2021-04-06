@@ -1,5 +1,4 @@
 # Created by: michael johnson <ahze@ahze.net>
-# $FreeBSD$
 
 PORTNAME=	acidrip
 PORTVERSION=	0.14

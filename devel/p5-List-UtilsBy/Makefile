@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	List-UtilsBy
 PORTVERSION=	0.11

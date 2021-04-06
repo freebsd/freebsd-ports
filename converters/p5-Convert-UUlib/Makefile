@@ -1,5 +1,4 @@
 # Created by: Blaz Zupan <blaz@amis.net>
-# $FreeBSD$
 
 PORTNAME=	Convert-UUlib
 PORTVERSION=	1.70

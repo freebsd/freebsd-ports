@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-rtl-unicode

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	irssi
 PORTVERSION=	1.2.2

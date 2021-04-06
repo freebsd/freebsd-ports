@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xclock
 PORTVERSION=	1.0.9

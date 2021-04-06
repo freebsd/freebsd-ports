@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fontpreview
 DISTVERSION=	1.0.6

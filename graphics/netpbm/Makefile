@@ -1,5 +1,4 @@
 # Created by: Jean-Marc Zucconi <jmz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	netpbm
 DISTVERSION=	10.91.01

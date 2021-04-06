@@ -1,5 +1,4 @@
 # Created by: Neil Blakey-Milner <nbm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	scgi
 DISTVERSION=	2.0

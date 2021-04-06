@@ -1,5 +1,4 @@
 # Created by: Per Wigren
-# $FreeBSD$
 
 PORTNAME=	unadf
 PORTVERSION=	0.7.12

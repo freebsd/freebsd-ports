@@ -1,5 +1,4 @@
 # Created by: Erik Greenwald <erik@smluc.org>
-# $FreeBSD$
 
 PORTNAME=	x86info
 DISTVERSION=	1.31snap03

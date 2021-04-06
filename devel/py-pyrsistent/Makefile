@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyrsistent
 PORTVERSION=	0.14.11

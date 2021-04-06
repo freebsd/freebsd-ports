@@ -1,5 +1,4 @@
 # Created by: Jan Stocker <Jan.Stocker@t-online.de>
-# $FreeBSD$
 
 PORTNAME=	egoboo
 PORTVERSION=	2.7.5

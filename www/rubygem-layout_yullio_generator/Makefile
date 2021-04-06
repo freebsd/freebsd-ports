@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	layout_yullio_generator
 PORTVERSION=	0.9.0

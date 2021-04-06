@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	wmdrawer
 PORTVERSION=	0.10.5

@@ -1,5 +1,4 @@
 # Created by: Bill Brinzer <bill.brinzer@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	String-RewritePrefix
 PORTVERSION=	0.007

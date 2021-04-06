@@ -1,5 +1,4 @@
 # Created by: shipley@dis.org
-# $FreeBSD$
 
 PORTNAME=	tdetect
 PORTVERSION=	0.2

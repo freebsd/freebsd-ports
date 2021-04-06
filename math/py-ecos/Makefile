@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ecos
 DISTVERSION=	2.0.7

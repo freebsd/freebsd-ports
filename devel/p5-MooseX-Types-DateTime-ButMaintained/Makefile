@@ -1,5 +1,4 @@
 # Created by: Cezary Morga <cm@therek.net>
-# $FreeBSD$
 
 PORTNAME=	MooseX-Types-DateTime-ButMaintained
 PORTVERSION=	0.16

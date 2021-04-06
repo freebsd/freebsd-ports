@@ -1,5 +1,4 @@
 # Created by: Espen Volden aka voldern <voldern@hoeggen.net>
-# $FreeBSD$
 
 PORTNAME=	do_sqlite3
 PORTVERSION=	0.10.17

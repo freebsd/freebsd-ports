@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tslib
 DISTVERSION=	1.22

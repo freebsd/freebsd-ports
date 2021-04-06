@@ -1,5 +1,4 @@
 # Created by: grog
-# $FreeBSD$
 
 PORTNAME=	dirdiff
 PORTVERSION=	2.1

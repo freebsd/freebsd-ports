@@ -1,5 +1,4 @@
 # Created by: Anders Nordby <anders@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Device-Gsm
 PORTVERSION=	1.61

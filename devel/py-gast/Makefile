@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gast
 PORTVERSION=	0.4.0

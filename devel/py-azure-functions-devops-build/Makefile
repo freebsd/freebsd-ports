@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-functions-devops-build
 PORTVERSION=	0.0.22

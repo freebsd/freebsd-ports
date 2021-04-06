@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opencl-clang
 DISTVERSIONPREFIX=	v

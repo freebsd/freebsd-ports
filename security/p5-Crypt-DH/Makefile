@@ -1,5 +1,4 @@
 # Created by: jesper
-# $FreeBSD$
 
 PORTNAME=	Crypt-DH
 PORTVERSION=	0.07

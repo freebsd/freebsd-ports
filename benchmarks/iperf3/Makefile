@@ -1,5 +1,4 @@
 # Created by: Bruce A. Mah <bmah@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	iperf
 PORTVERSION=	3.9

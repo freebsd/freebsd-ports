@@ -1,5 +1,4 @@
 # Created by: John Hixson<jhixson@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ifaddr
 PORTVERSION=	0.1.7

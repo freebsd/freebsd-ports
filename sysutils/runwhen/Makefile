@@ -1,5 +1,4 @@
 # Created by: David Thiel <lx@redundancy.redundancy.org>
-# $FreeBSD$
 
 PORTNAME=	runwhen
 PORTVERSION=	2015.02.24

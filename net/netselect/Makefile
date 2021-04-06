@@ -1,5 +1,4 @@
 # Created by: Timothy Redaelli <drizzt@gufi.org>
-# $FreeBSD$
 
 PORTNAME=	netselect
 PORTVERSION=	0.4

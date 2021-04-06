@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pymysql
 PORTVERSION=	0.10.1

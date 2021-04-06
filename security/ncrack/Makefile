@@ -1,5 +1,4 @@
 # Created by: David E. Thiel <lx@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ncrack
 DISTVERSION=	0.6

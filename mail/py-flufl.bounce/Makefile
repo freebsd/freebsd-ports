@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flufl.bounce
 PORTVERSION=	3.0

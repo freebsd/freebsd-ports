@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	firstboot-growfs
 PORTVERSION=	1.0

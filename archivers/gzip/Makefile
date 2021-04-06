@@ -1,5 +1,4 @@
 # Created by: Cyrille Lefevre <cyrille.lefevre@laposte.net>
-# $FreeBSD$
 
 PORTNAME=	gzip
 PORTVERSION=	1.10

@@ -1,5 +1,4 @@
 # Created by: Vaida Bogdan <vaida.bogdan@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	manipulate_data
 PORTVERSION=	1.3

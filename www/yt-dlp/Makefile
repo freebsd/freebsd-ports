@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yt-dlp
 DISTVERSION=	2021.03.24.1

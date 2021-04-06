@@ -1,5 +1,4 @@
 # Created by: fenner
-# $FreeBSD$
 
 PORTNAME=	geomview
 PORTVERSION=	1.9.5

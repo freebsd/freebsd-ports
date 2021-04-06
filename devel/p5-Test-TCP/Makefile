@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-TCP
 PORTVERSION=	2.19

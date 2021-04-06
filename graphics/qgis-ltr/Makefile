@@ -1,5 +1,4 @@
 # Created by: Laurent Courty
-# $FreeBSD$
 
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-

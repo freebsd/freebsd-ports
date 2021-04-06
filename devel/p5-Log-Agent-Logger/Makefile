@@ -1,5 +1,4 @@
 # Created by: devin@spamcop.net
-# $FreeBSD$
 
 PORTNAME=	Log-Agent-Logger
 PORTVERSION=	0.200

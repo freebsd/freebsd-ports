@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xsd
 PORTVERSION=	4.0.0

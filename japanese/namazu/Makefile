@@ -1,5 +1,4 @@
 # Created by: Seiichirou Hiraoka
-# $FreeBSD$
 
 PORTNAME=	namazu
 PORTVERSION=	1.3.0.11

@@ -1,5 +1,4 @@
 # Created by: Alexander Timoshenko <gonzo@univ.kiev.ua>
-# $FreeBSD$
 
 PORTNAME=	asterisk-perl
 PORTVERSION=	1.08

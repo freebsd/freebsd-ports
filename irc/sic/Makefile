@@ -1,5 +1,4 @@
 # Created by: sec@42.org
-# $FreeBSD$
 
 PORTNAME=	sic
 PORTVERSION=	0.23a

@@ -1,5 +1,4 @@
 # Created by: Nik Clayton <nik@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libtap
 PORTVERSION=	1.12.0

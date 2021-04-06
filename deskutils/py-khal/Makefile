@@ -1,5 +1,4 @@
 # Created by: che@bein.link
-# $FreeBSD$
 
 PORTNAME=	khal
 DISTVERSION=	0.10.2

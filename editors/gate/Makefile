@@ -1,5 +1,4 @@
 # Created by: James Howard
-# $FreeBSD$
 
 PORTNAME=	gate
 PORTVERSION=	2.06

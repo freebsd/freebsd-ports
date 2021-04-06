@@ -1,5 +1,4 @@
 # Created by: Wen heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	elgg
 PORTVERSION=	3.3.16

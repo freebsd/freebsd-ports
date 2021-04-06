@@ -1,5 +1,4 @@
 # Created by: Tom McLaughlin <tmclaugh@sdf.lonestar.org>
-# $FreeBSD$
 
 PORTNAME=	libgdiplus
 PORTVERSION=	6.0.4

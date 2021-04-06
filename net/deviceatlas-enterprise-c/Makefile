@@ -1,5 +1,4 @@
 # Created by: David Carlier
-# $FreeBSD$
 
 PORTNAME=	deviceatlas-enterprise-c
 PORTVERSION=	2.3.4

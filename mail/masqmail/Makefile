@@ -1,5 +1,4 @@
 # Created by: Andrey Slusar <anray@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	masqmail
 PORTVERSION=	0.3.5

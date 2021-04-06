@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ros-vcstool
 DISTVERSION=	0.2.15

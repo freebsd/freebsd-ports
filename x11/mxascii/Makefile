@@ -1,5 +1,4 @@
 # Created by: Cy SChubert <cy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mxascii
 PORTVERSION=	1.1

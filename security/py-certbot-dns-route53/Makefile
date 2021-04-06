@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	certbot-dns-route53
 PORTVERSION=	${ACME_VERSION}

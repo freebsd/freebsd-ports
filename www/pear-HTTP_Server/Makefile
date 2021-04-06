@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine (<tux@pinguru.net>)
-# $FreeBSD$
 
 PORTNAME=	HTTP_Server
 PORTVERSION=	0.4.1

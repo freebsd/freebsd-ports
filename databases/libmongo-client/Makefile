@@ -1,5 +1,4 @@
 # Created by: Denis Generalov <gd.workbox@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libmongo-client
 PORTVERSION=	0.1.6.3

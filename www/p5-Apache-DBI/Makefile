@@ -1,5 +1,4 @@
 # Created by: Igor Vinokurov <igor@zynaps.ru>
-# $FreeBSD$
 
 PORTNAME=	Apache-DBI
 PORTVERSION=	1.12

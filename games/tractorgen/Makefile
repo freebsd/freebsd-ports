@@ -1,5 +1,4 @@
 # Created by: elfrink@introcom.nl
-# $FreeBSD$
 
 PORTNAME=	tractorgen
 PORTVERSION=	0.31.7

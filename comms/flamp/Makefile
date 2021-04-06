@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flamp
 DISTVERSION=	2.2.05

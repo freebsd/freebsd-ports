@@ -1,5 +1,4 @@
 # Created by: heiner Eichmann <h.eichmann@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	manu-gothica
 DISTVERSION=	0

@@ -1,5 +1,4 @@
 # Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
-# $FreeBSD$
 
 PORTNAME=	drool
 DISTVERSION=	1.1.0

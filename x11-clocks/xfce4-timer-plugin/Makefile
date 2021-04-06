@@ -1,5 +1,4 @@
 # Created by: Martin Wilke (miwi@FreeBSD.org)
-# $FreeBSD$
 
 PORTNAME=	xfce4-timer-plugin
 PORTVERSION=	1.7.1

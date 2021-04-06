@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	heroku-api
 PORTVERSION=	0.4.3

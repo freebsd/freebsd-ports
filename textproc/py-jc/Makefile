@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jc
 DISTVERSION=	1.14.4

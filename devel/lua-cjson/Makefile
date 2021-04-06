@@ -1,5 +1,4 @@
 # Created by: osa
-# $FreeBSD$
 
 PORTNAME=	cjson
 PORTVERSION=	2.1.0

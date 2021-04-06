@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	inputplug
 DISTVERSION=	0.3

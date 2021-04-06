@@ -1,5 +1,4 @@
 # Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	dm-core
 PORTVERSION=	1.2.1

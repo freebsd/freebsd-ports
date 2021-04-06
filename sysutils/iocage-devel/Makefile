@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iocage-devel
 PORTVERSION=	1.0.0.20190810

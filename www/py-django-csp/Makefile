@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-csp
 PORTVERSION=	3.5

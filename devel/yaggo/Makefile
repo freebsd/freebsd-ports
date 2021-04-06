@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yaggo
 PORTVERSION=	1.5.9

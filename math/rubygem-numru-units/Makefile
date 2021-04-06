@@ -1,5 +1,4 @@
 # Created by: Shin-ya MURAKAMI <murashin@gfd-dennou.org>
-# $FreeBSD$
 
 PORTNAME=	numru-units
 PORTVERSION=	1.9.0

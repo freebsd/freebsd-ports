@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gsd
 DISTVERSION=	2.4.1

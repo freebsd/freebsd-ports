@@ -1,5 +1,4 @@
 # Created by: Lukas Slebodnik <lukas.slebodnik@intrak.sk>
-# $FreeBSD$
 
 PORTNAME=	sssd
 PORTVERSION=	1.16.5

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Finance-QuoteTW
 PORTVERSION=	0.09

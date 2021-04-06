@@ -1,5 +1,4 @@
 # Created by: Marwan BURELLE <marwan.burelle@lri.fr>
-# $FreeBSD$
 
 PORTNAME=	ocurl
 PORTVERSION=	0.8.2

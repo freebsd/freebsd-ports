@@ -1,5 +1,4 @@
 # Created by: Michael Kohn <mike@mikekohn.net>
-# $FreeBSD$
 
 PORTNAME=	nakenchat
 DISTVERSION=	3.00b1

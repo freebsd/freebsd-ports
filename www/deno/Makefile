@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v

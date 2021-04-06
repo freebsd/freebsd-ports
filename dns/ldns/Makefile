@@ -1,5 +1,4 @@
 # Created by: Konstantin Saurbier <saurbier@math.uni-bielefeld.de>
-# $FreeBSD$
 
 PORTNAME=	ldns
 PORTVERSION=	1.7.1

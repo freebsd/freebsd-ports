@@ -1,5 +1,4 @@
 # Created by: Xin LI <delphij@FreeBSD.org>
-# $FreeBSD$
 
 CLIENT_ONLY=		sasl
 

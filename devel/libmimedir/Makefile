@@ -1,5 +1,4 @@
 # Created by: Sam Lawrance <boris@brooknet.com.au>
-# $FreeBSD$
 
 PORTNAME=	libmimedir
 PORTVERSION=	0.5.1

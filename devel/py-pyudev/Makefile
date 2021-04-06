@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyudev
 PORTVERSION=	0.22.0

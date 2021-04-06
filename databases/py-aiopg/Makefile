@@ -1,5 +1,4 @@
 # Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	aiopg
 PORTVERSION=	1.2.1

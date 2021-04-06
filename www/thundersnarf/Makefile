@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	thundersnarf
 PORTVERSION=	1.3

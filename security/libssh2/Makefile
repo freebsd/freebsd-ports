@@ -1,5 +1,4 @@
 # Created by: Alexander Leidinger <netchild@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libssh2
 PORTVERSION=	1.9.0

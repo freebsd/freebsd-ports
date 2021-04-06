@@ -1,5 +1,4 @@
 # Created by: Denis Pokataev <catone@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Cache-Memcached-Fast
 PORTVERSION=	0.14

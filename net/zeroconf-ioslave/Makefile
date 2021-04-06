@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zeroconf-ioslave
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

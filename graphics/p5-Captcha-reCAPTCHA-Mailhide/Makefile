@@ -1,5 +1,4 @@
 # Created by: gerard
-# $FreeBSD$
 
 PORTNAME=	Captcha-reCAPTCHA-Mailhide
 PORTVERSION=	0.94

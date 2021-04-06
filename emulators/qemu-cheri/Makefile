@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qemu
 PORTVERSION=	0.d${SNAPDATE}

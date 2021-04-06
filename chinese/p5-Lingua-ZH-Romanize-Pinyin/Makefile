@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Lingua-ZH-Romanize-Pinyin
 PORTVERSION=	0.23

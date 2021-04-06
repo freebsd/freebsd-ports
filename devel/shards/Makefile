@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		shards
 DISTVERSIONPREFIX=	v

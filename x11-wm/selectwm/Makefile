@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	selectwm
 PORTVERSION=	0.4.1

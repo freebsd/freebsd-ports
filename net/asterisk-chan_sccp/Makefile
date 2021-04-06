@@ -1,5 +1,4 @@
 # Created by: Diederik de Groot
-# $FreeBSD$
 
 PORTNAME=	chan_sccp
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.9.11-6

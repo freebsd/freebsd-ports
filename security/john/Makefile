@@ -1,5 +1,4 @@
 # Created by: David O'Brien <obrien@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	john
 # NB: starting from the next version, community-enhanced (jumbo) patch

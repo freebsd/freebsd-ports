@@ -1,5 +1,4 @@
 # Created by: Johan Strom <johna@stromnet.se>
-# $FreeBSD$
 
 PORTNAME=	telldus-core
 PORTVERSION=	2.1.2

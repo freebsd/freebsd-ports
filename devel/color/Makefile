@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	color
 DISTVERSION=	g20210207

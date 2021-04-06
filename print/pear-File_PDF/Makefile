@@ -1,5 +1,4 @@
 # Created by: Anish Mistry <amistry@am-productions.biz>
-# $FreeBSD$
 
 PORTNAME=	File_PDF
 PORTVERSION=	0.3.3

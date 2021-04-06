@@ -1,5 +1,4 @@
 # Created by: Keith Walker <kew@icehouse.net>
-# $FreeBSD$
 
 PORTNAME=	sscalc
 PORTVERSION=	1.0

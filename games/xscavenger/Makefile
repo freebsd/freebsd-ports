@@ -1,5 +1,4 @@
 # Created by: eivind
-# $FreeBSD$
 
 PORTNAME=	xscavenger
 PORTVERSION=	1.4.5

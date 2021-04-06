@@ -1,5 +1,4 @@
 # Created by: Mun-Kyo Seo <munggo@pmy.lv>
-# $FreeBSD$
 
 PORTNAME=	template_
 PORTVERSION=	2.2.3

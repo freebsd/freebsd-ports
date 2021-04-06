@@ -1,5 +1,4 @@
 # Created by: Andreas Klemm <andreas@klemm.gtn.com>
-# $FreeBSD$
 
 PORTNAME=	webmin
 PORTVERSION=	1.973

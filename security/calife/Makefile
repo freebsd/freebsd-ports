@@ -1,5 +1,4 @@
 # Created by: Thomas Quinot <thomas@cuivre.fr.eu.org>
-# $FreeBSD$
 
 PORTNAME=	calife
 PORTVERSION=	3.0.6

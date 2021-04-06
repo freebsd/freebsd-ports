@@ -1,5 +1,4 @@
 # Created by: bkhl
-# $FreeBSD$
 
 PORTNAME=	sheerdns
 PORTVERSION=	1.04

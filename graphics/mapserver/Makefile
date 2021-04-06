@@ -1,5 +1,4 @@
 # Created by: Douglas K. Rand <rand@meridian-enviro.com>
-# $FreeBSD$
 
 PORTNAME=		mapserver
 PORTVERSION=		7.6.2

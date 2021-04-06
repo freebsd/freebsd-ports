@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gopherus
 DISTVERSION=	1.2.1

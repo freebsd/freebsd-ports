@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lingoteach
 PORTVERSION=	0.3.9

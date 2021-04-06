@@ -1,5 +1,4 @@
 # Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
-# $FreeBSD$
 
 PORTNAME=	wmsmixer
 PORTVERSION=	0.5.1

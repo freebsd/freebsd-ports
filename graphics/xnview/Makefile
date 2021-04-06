@@ -1,5 +1,4 @@
 # Created by: Serge Negodyuck <petr@petrovich.kiev.ua>
-# $FreeBSD$
 
 PORTNAME=	xnview
 PORTVERSION=	1.70

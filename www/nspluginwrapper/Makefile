@@ -1,5 +1,4 @@
 # Created by: Dave Grochowski
-# $FreeBSD$
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.4.4

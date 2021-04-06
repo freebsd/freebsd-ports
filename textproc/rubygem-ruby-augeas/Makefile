@@ -1,5 +1,4 @@
 # Created by: Russell Jackson <raj@csub.edu>
-# $FreeBSD$
 
 PORTNAME=	ruby-augeas
 PORTVERSION=	0.5.0

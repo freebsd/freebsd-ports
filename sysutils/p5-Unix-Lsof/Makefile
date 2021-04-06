@@ -1,5 +1,4 @@
 # Created by: George Cox <gjvc@gjvc.com>
-# $FreeBSD$
 
 PORTNAME=	Unix-Lsof
 PORTVERSION=	0.1.0

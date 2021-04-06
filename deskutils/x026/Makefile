@@ -1,5 +1,4 @@
 # Created by: Marcin Cieslak <saper@saper.info>
-# $FreeBSD$
 
 PORTNAME=	x026
 PORTVERSION=	1.2

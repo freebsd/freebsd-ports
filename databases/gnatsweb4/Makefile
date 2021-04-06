@@ -1,5 +1,4 @@
 # Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
-# $FreeBSD$
 
 PORTNAME=	gnatsweb
 PORTVERSION=	4.00

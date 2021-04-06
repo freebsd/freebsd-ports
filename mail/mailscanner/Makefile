@@ -1,5 +1,4 @@
 # Created by: Jan-Peter Koopmann <j.koopmann@seceidos.de>
-# $FreeBSD$
 
 PORTNAME=	MailScanner
 DISTVERSION=	5.3.4-3

@@ -1,5 +1,4 @@
 # Created by: mi@aldan.algebra.com
-# $FreeBSD$
 
 PORTNAME=	tcltls
 PORTVERSION=	1.7.18

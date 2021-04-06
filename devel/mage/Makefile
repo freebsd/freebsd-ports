@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mage
 DISTVERSIONPREFIX=	v

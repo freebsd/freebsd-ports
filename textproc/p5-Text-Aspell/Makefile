@@ -1,5 +1,4 @@
 # Created by: lars.eggert@gmx.net
-# $FreeBSD$
 
 PORTNAME=	Text-Aspell
 PORTVERSION=	0.09

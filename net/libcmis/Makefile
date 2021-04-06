@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcmis
 PORTVERSION=	0.5.2

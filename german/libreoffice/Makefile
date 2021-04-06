@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	german
 LO_I18N=	de

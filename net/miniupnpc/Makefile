@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	miniupnpc
 PORTVERSION=	2.2.0

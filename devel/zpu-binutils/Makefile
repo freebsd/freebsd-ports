@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zpu-binutils
 PORTVERSION=	1.0

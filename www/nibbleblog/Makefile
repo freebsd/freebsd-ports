@@ -1,5 +1,4 @@
 # Created by: Marek Holienka	<marekholienka@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	nibbleblog
 PORTVERSION=	3.0.2

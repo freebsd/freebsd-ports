@@ -1,5 +1,4 @@
 # Created by: Xin LI <delphij@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	smp_utils
 PORTVERSION=	0.98

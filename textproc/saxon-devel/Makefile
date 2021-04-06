@@ -1,5 +1,4 @@
 # Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-# $FreeBSD$
 
 PORTNAME=	saxon
 PORTVERSION=	9.1.0.8

@@ -1,5 +1,4 @@
 # Created by: tux@pinguru.net
-# $FreeBSD$
 
 PORTNAME=	EPIC
 PORTVERSION=	0.6.35

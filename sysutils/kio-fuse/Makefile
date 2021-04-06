@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kio-fuse
 DISTVERSION=	5.0.1

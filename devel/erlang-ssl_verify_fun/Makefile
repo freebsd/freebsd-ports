@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ssl_verify_fun
 PORTVERSION=	1.1.4

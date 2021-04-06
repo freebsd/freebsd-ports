@@ -1,5 +1,4 @@
 # Created by: David Kalliecharan <dave@dal.ca>
-# $FreeBSD$
 
 PORTNAME=	numba
 DISTVERSION=	0.51.2

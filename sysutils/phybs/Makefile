@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phybs
 PORTVERSION=	20140717

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spago
 DISTVERSION=	0.19.1

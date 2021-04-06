@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Parse-MIME
 PORTVERSION=	1.003

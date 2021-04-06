@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	liboauth
 PORTVERSION=	1.0.3

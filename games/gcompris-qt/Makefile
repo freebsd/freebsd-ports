@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gcompris-qt
 DISTVERSION=	1.0

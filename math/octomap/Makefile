@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	octomap
 DISTVERSIONPREFIX=	v

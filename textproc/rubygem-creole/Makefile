@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	creole
 PORTVERSION=	0.5.0

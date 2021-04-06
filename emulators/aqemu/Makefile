@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aqemu
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	qnetwalk
 PORTVERSION=	1.5

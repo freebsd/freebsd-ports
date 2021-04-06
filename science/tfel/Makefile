@@ -1,5 +1,4 @@
 # Created by: Pedro F. Giffuni
-# $FreeBSD$
 
 PORTNAME=	tfel
 PORTVERSION=	3.4.0

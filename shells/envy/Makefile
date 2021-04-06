@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	envy
 DISTVERSIONPREFIX=v

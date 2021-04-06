@@ -1,5 +1,4 @@
 # Created by: Marie Loise Nolden <loise@kde.org>
-# $FreeBSD$
 
 PORTNAME=	qt5-style-plugins
 DISTVERSIONPREFIX=	v

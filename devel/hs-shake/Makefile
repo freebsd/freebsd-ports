@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	shake
 PORTVERSION=	0.19.4

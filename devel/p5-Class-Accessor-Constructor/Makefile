@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-Accessor-Constructor
 PORTVERSION=	1.111590

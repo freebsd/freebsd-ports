@@ -1,5 +1,4 @@
 # Created by: Matt Dawson <matt@mattsnetwork.co.uk>
-# $FreeBSD$
 
 PORTNAME=	grig
 PORTVERSION=	0.8.1

@@ -1,5 +1,4 @@
 # Created by: Andrey Kostenko <andrey@kostenko.name>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-RunAfterRequest
 PORTVERSION=	0.04

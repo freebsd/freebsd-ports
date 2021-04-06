@@ -1,5 +1,4 @@
 # Created by: Chris D. Faulhaber <jedgar@fxp.org>
-# $FreeBSD$
 
 PORTNAME=	grpn
 PORTVERSION=	1.5.2

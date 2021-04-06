@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Cron
 PORTVERSION=	0.021

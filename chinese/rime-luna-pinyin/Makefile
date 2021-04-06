@@ -1,5 +1,4 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	rime-luna-pinyin
 DISTVERSION=	g20210303

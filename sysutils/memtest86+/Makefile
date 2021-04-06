@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	memtest86+
 PORTVERSION=	5.01

@@ -1,5 +1,4 @@
 # Created by: Gustau Pérez i Querol <gustau.perez@gmail.com>
-# $FreeBSD$
 #   $MCom: ports/trunk/graphics/cluttermm/Makefile 19902 2014-09-20 12:15:02Z kwm $
 
 PORTNAME=	cluttermm

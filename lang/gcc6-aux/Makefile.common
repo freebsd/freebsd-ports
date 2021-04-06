@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 .include "Makefile.version"
 
 LIB_DEPENDS=		libgmp.so:math/gmp

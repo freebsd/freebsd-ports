@@ -1,5 +1,4 @@
 # Created by: Wen heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Jmol
 DISTVERSION=	14.31.35

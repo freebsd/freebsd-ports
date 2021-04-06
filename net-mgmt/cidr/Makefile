@@ -1,5 +1,4 @@
 # Created by: Domas Mituzas <midom@dammit.lt>
-# $FreeBSD$
 
 PORTNAME=	cidr
 PORTVERSION=	2.3.2

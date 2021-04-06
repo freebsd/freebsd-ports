@@ -1,5 +1,4 @@
 # Created by: Tsung-Han Yeh <snowfly@yunteche.du.tw>
-# $FreeBSD$
 
 PORTNAME=	Net-Telnet-Cisco-IOS
 PORTVERSION=	0.6

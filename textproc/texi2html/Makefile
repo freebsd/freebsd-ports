@@ -1,5 +1,4 @@
 # Created by: Ian Vaudrey <i.vaudrey@bigfoot.com>
-# $FreeBSD$
 
 PORTNAME=	texi2html
 PORTVERSION=	5.0

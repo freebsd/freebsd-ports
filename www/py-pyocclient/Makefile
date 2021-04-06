@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyocclient
 PORTVERSION=	0.6

@@ -1,5 +1,4 @@
 # Created by: keiichi@iijlab.net
-# $FreeBSD$
 
 PORTNAME=	ical2html
 PORTVERSION=	2.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gmsynth
 DISTVERSIONPREFIX=	v

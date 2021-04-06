@@ -1,5 +1,4 @@
 # Created by: Alexander Moisseev <moiseev@mezonplus.ru>
-# $FreeBSD$
 
 PORTNAME=	backuppc
 PORTVERSION=	4.4.0

@@ -1,5 +1,4 @@
 # Created by: marina@surferz.net
-# $FreeBSD$
 
 PORTNAME=	wanderer
 PORTVERSION=	3.2

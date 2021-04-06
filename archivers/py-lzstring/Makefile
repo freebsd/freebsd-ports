@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lzstring
 DISTVERSION=	1.0.4

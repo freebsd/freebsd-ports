@@ -1,5 +1,4 @@
 # Created by: Jesse Smith
-# $FreeBSD$
 
 PORTNAME=	swapexd
 PORTVERSION=	0.4

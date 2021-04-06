@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wasi-libc
 DISTVERSION=	g20201005

@@ -1,5 +1,4 @@
 # Created by: Stefan Bethke <stb@lassitu.de>
-# $FreeBSD$
 
 PORTNAME=	ttf2eot
 PORTVERSION=	0.0.3

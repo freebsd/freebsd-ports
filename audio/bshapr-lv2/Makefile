@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bshapr
 DISTVERSIONPREFIX=	v

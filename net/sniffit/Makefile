@@ -1,5 +1,4 @@
 # Created by: bsdx
-# $FreeBSD$
 
 PORTNAME=	sniffit
 PORTVERSION=	0.5

@@ -1,5 +1,4 @@
 # Created by: John Hixson <jhixson@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	conman
 PORTVERSION=	0.3.0

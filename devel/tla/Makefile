@@ -1,5 +1,4 @@
 # Created by: Sean Chittenden <seanc@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tla
 PORTVERSION=	1.3.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pgdbconn
 PORTVERSION=	0.8.0

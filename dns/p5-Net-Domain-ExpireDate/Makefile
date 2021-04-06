@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Net-Domain-ExpireDate
 PORTVERSION=	1.20

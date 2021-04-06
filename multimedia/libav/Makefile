@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libav
 PORTVERSION=	12.3

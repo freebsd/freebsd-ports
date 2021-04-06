@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mqttwarn
 DISTVERSION=	0.18.0

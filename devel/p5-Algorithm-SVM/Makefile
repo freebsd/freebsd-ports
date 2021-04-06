@@ -1,5 +1,4 @@
 # Created by: Cheng-Lung Sung	<clsung@dragon2.net>
-# $FreeBSD$
 
 PORTNAME=	Algorithm-SVM
 PORTVERSION=	0.13

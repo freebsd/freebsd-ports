@@ -1,5 +1,4 @@
 # Created by: Michael Schout <mschout@gkg.net>
-# $FreeBSD$
 
 PORTNAME=	libxml-ruby
 PORTVERSION=	3.1.0

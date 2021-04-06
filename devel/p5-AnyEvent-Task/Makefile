@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-Task
 PORTVERSION=	0.801

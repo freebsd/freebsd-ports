@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	avogadrolibs
 DISTVERSION=	1.93.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	RT-Client-REST
 PORTVERSION=	0.60

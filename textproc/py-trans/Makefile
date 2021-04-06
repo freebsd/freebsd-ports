@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	trans
 PORTVERSION=	2.1.0

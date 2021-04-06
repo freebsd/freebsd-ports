@@ -1,5 +1,4 @@
 # Created by: Scott Sanders <scott@jssjr.com>
-# $FreeBSD$
 
 PORTNAME=	merb-core
 PORTVERSION=	1.1.3

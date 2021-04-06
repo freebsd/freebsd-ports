@@ -1,5 +1,4 @@
 # Created by: Matthias Andree <matthias.andree@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	cvschk
 PORTVERSION=	1.12

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fontmake
 PORTVERSION=	1.8.0

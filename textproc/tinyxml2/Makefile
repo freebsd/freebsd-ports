@@ -1,5 +1,4 @@
 # Created by: b.f. <bf@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tinyxml2
 PORTVERSION=	8.0.0

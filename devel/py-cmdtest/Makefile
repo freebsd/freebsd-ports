@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cmdtest
 PORTVERSION=	0.33.s20191128

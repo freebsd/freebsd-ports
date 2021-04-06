@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	3mux
 DISTVERSIONPREFIX=	v

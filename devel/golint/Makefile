@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	golint
 PORTVERSION=	g20190409

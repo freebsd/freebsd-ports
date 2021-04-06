@@ -1,5 +1,4 @@
 # Created by: Philip Paeps <philip@paeps.cx>
-# $FreeBSD$
 
 PORTNAME=	Date-Roman
 PORTVERSION=	1.06

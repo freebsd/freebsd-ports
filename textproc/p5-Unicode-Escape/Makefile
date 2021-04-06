@@ -1,5 +1,4 @@
 # Created by: Vadim Vatlin
-# $FreeBSD$
 
 PORTNAME=	Unicode-Escape
 PORTVERSION=	0.0.2

@@ -1,5 +1,4 @@
 # Created by: Kenneth Vestergaard Schmidt <kvs@pil.dk>
-# $FreeBSD$
 
 PORTNAME=	emacs
 DISTVERSION=	28.0.50.20210405

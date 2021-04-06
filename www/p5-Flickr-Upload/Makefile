@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Flickr-Upload
 PORTVERSION=	1.60

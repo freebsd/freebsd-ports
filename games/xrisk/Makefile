@@ -1,5 +1,4 @@
 # Created by: swallace
-# $FreeBSD$
 
 PORTNAME=	xrisk
 PORTVERSION=	2.15

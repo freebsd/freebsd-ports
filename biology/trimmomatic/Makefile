@@ -1,5 +1,4 @@
 # Created by: Dan Siercks <dsiercks@uwm.edu>
-# $FreeBSD$
 
 PORTNAME=	trimmomatic
 DISTVERSION=	0.39

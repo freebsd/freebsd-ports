@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ufo2ft
 PORTVERSION=	2.5.0

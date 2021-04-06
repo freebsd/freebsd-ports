@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	bibcursed
 PORTVERSION=	2.0.1

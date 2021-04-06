@@ -1,5 +1,4 @@
 # Created by: Lewis Thompson <purple@lewiz.net>
-# $FreeBSD$
 
 PORTNAME=	HTML_BBCodeParser
 PORTVERSION=	1.2.3

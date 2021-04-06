@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pysasl
 DISTVERSION=	0.8.0

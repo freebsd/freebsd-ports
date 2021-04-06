@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	WWW-Scraper-ISBN
 PORTVERSION=	1.05

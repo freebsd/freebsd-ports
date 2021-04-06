@@ -1,5 +1,4 @@
 # Created by: Robert Gogolok <gogo@cs.uni-sb.de>
-# $FreeBSD$
 
 PORTNAME=	xye
 PORTVERSION=	0.12.2

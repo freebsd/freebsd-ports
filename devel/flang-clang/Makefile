@@ -1,5 +1,4 @@
 # Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	flang-clang
 DISTVERSION=	7.0-g20191020

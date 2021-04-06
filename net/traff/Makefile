@@ -1,5 +1,4 @@
 # Created by: Dan Caescu <daniel at freebsd.ro>
-# $FreeBSD$
 
 PORTNAME=	traff
 PORTVERSION=	0.7

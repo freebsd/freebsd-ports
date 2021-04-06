@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mswebrtc
 PORTVERSION=	1.1.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	slclust
 PORTVERSION=	2010.02.02

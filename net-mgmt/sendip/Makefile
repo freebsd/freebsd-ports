@@ -1,5 +1,4 @@
 # Created by: joseph@randomnetworks.com
-# $FreeBSD$
 
 PORTNAME=	sendip
 PORTVERSION=	2.5

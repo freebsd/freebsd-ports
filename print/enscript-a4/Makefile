@@ -1,5 +1,4 @@
 # Created by: kline
-# $FreeBSD$
 
 CONFLICTS=	enscript-letter-[0-9]* enscript-letterdj-[0-9]*
 

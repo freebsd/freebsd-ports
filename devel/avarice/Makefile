@@ -1,5 +1,4 @@
 # Created by: Brian Dean <bsd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	avarice
 PORTVERSION=	2.14

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	soju
 DISTVERSION=	0.0.20201214

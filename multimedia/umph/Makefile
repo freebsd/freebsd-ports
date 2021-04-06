@@ -1,5 +1,4 @@
 # Created by: Toni Gundogdu <legatvs@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	umph
 PORTVERSION=	0.2.5

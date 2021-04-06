@@ -1,5 +1,4 @@
 # Created by: Stefan Grundmann
-# $FreeBSD$
 
 PORTNAME=	pam_ocra
 DISTVERSION=	1.5

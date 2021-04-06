@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-datalake-store
 PORTVERSION=	0.5.0

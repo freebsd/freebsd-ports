@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	xmixer
 PORTVERSION=	0.9.4

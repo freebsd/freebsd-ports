@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	miniaudio
 PORTVERSION=	0.10.31

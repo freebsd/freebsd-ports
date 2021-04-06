@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	guile-lib
 PORTVERSION=	0.2.6.1

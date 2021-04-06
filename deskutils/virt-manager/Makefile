@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	virt-manager
 PORTVERSION=	3.2.0

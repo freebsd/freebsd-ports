@@ -1,5 +1,4 @@
 # Created by: Simon Barner <barner@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	xcheckers
 PORTVERSION=	2.2.3

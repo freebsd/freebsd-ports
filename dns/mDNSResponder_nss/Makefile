@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mDNSResponder
 PORTVERSION=	1310.40.42

@@ -1,5 +1,4 @@
 # Created by: Ivan Dreckman <ivannashdreckman@fastmail.fm>
-# $FreeBSD$
 
 PORTNAME=	zxfer
 PORTVERSION=	1.1.7

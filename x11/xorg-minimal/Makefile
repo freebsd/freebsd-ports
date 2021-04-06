@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xorg
 PORTVERSION=	7.5.2

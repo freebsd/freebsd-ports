@@ -1,5 +1,4 @@
 # Created by: skreuzer@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	zookeeper
 PORTVERSION=	3.6.2

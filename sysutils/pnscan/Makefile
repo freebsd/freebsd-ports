@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		pnscan
 DISTVERSIONPREFIX=	v

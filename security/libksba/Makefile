@@ -1,5 +1,4 @@
 # Created by: Tilman Linneweh <arved@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libksba
 PORTVERSION=	1.5.0

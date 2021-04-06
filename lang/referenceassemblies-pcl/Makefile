@@ -1,5 +1,4 @@
 # Created by: David Naylor <dbn@dragon.local>
-# $FreeBSD$
 
 PORTNAME=	referenceassemblies-pcl
 PORTVERSION=	4.6

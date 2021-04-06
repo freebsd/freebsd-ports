@@ -1,5 +1,4 @@
 # Created by: lightside <lightside@gmx.com>
-# $FreeBSD$
 
 PORTNAME=	pcc-libs
 PORTVERSION=	1.1.0

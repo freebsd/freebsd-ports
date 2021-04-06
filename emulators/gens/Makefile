@@ -1,5 +1,4 @@
 # Created by: Travis Poppe <tlp@liquidx.org>
-# $FreeBSD$
 
 PORTNAME=	gens
 PORTVERSION=	2.15.5

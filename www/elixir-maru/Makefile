@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	maru
 PORTVERSION=	0.12.4

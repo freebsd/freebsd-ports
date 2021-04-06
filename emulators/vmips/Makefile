@@ -1,5 +1,4 @@
 # Created by: Brian Gaeke <brg@dgate.org>
-# $FreeBSD$
 
 PORTNAME=	vmips
 PORTVERSION=	1.5.1

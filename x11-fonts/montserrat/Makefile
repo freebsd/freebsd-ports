@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	montserrat
 PORTVERSION=	7.210

@@ -1,5 +1,4 @@
 # Created by: asami
-# $FreeBSD$
 
 PORTNAME=	nethack34
 PORTVERSION=	3.4.3

@@ -1,5 +1,4 @@
 # Created by: Frederic Cambus
-# $FreeBSD$
 
 PORTNAME=	tetradraw
 PORTVERSION=	2.0.2

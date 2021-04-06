@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zeallot
 PORTVERSION=	0.1.0

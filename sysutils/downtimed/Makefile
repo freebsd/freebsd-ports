@@ -1,5 +1,4 @@
 # Created by: Janne Snabb <snabb@epipe.com>
-# $FreeBSD$
 
 PORTNAME=	downtimed
 PORTVERSION=	1.0

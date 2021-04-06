@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	midifile
 PORTVERSION=	g20200602

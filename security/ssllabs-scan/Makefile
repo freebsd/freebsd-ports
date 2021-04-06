@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		ssllabs-scan
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libgnt
 PORTVERSION=	2.14.1

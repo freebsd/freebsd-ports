@@ -1,7 +1,5 @@
 # This file lists the skins to not bloat Makefile
 #
-# $FreeBSD$
-#
 
 ABYSS_FILE=		Abyss-1.7
 ALIENMIND_FILE=		AlienMind-1.2

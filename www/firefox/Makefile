@@ -1,5 +1,4 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	firefox
 DISTVERSION=	87.0

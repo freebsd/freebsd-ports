@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	readxl
 DISTVERSION=	1.3.1

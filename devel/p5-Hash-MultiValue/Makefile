@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Hash-MultiValue
 PORTVERSION=	0.16

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xcb-util-cursor
 PORTVERSION=	0.1.3

@@ -1,5 +1,4 @@
 # Created by: Thomas Hurst <tom@hur.st>
-# $FreeBSD$
 
 PORTNAME=	k8temp
 PORTVERSION=	0.4.1

@@ -1,5 +1,4 @@
 # Created by: Oleg Ginzburg <olevole@olevole.ru>
-# $FreeBSD$
 
 PORTNAME=	ioping
 PORTVERSION=	1.2

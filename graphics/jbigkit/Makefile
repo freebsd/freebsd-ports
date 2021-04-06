@@ -1,5 +1,4 @@
 # Created by: mi
-# $FreeBSD$
 
 PORTNAME=	jbigkit
 PORTVERSION=	2.1

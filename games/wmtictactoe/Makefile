@@ -1,5 +1,4 @@
 # Created by: Jim Mock <jim@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	wmtictactoe
 DISTVERSION=	1.1-1

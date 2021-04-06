@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	goawk
 DISTVERSIONPREFIX=	v

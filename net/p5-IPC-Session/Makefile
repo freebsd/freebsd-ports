@@ -1,5 +1,4 @@
 # Created by: Alexander Kriventsov <avk@vl.ru>
-# $FreeBSD$
 
 PORTNAME=	IPC-Session
 PORTVERSION=	0.05

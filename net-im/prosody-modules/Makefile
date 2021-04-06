@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	prosody-modules
 PORTVERSION=	20200302

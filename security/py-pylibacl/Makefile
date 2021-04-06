@@ -1,5 +1,4 @@
 # Created by: joris
-# $FreeBSD$
 
 PORTNAME=	pylibacl
 PORTVERSION=	0.5.2

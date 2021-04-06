@@ -1,5 +1,4 @@
 # Created by: Dean Povey <povey@wedgetail.com>
-# $FreeBSD$
 
 PORTNAME=	taskjuggler
 PORTVERSION=	3.7.1

@@ -1,5 +1,4 @@
 # Created by: Douglas K. Rand (rand@meridian-enviro.com)
-# $FreeBSD$
 
 PORTNAME=	NetCDF
 PORTVERSION=	1.2.4

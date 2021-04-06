@@ -1,5 +1,4 @@
 # Created by: Jordan DeLong <fracture@allusion.net>
-# $FreeBSD$
 
 PORTNAME=	yadex
 PORTVERSION=	1.7.0

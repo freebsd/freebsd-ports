@@ -1,5 +1,4 @@
 # Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ffuf
 DISTVERSIONPREFIX=v

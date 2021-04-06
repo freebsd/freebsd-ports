@@ -1,5 +1,4 @@
 # Created by: Frank Mayhar <frank@exit.com>
-# $FreeBSD$
 
 PORTNAME=	Apache-Session
 PORTVERSION=	1.94

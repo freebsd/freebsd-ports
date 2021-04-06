@@ -1,5 +1,4 @@
 # Created by: Kimura Fuyuki <fuyuki@nigredo.org>
-# $FreeBSD$
 
 PORTNAME=	trang
 PORTVERSION=	20181222

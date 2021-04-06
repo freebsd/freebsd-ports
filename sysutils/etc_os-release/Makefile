@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	etc_os-release
 PORTVERSION=	0.1

@@ -1,5 +1,4 @@
 # Created by: David O'Brien (obrien@NUXI.com)
-# $FreeBSD$
 
 PORTNAME=	ngrep
 PORTVERSION=	1.45

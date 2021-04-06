@@ -1,5 +1,4 @@
 # Created by: Travis Campbell <hcoyote@ghostar.org>
-# $FreeBSD$
 
 PORTNAME=	Class-Observable
 PORTVERSION=	1.04

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gizeh
 DISTVERSION=	0.1.11

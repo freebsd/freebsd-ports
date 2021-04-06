@@ -1,5 +1,4 @@
 # Created by: Thomas Sandford <freebsduser@paradisegreen.co.uk>
-# $FreeBSD$
 
 PORTNAME=	reed-solomon
 PORTVERSION=	4.0

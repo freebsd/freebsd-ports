@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	natsort
 DISTVERSION=	7.1.1

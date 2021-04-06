@@ -1,5 +1,4 @@
 # Created by: Alex Semenyaka <alex@rinet.ru>
-# $FreeBSD$
 
 PORTNAME=	chmview
 PORTVERSION=	2.0b4

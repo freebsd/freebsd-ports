@@ -1,5 +1,4 @@
 # Created by: Ashish SHUKLA <wahjava@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Devel-REPL
 PORTVERSION=	1.003028

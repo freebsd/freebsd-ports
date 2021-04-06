@@ -1,5 +1,4 @@
 # Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
-# $FreeBSD$
 
 PORTNAME=	libvanessa_socket
 PORTVERSION=	0.0.12

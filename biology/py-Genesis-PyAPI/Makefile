@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Genesis-PyAPI
 DISTVERSION=	1.2.1

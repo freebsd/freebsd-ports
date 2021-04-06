@@ -1,5 +1,4 @@
 # Created by: Horia Racoviceanu <horia@racoviceanu.com>
-# $FreeBSD$
 
 PORTNAME=	cloud_sptheme
 PORTVERSION=	1.10.1

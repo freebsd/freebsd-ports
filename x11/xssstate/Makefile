@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xssstate
 PORTVERSION=	1.1

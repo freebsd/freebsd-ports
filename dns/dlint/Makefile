@@ -1,5 +1,4 @@
 # Created by: David O'Brien (obrien@NUXI.com)
-# $FreeBSD$
 
 PORTNAME=	dlint
 PORTVERSION=	1.4.1

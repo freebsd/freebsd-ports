@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	html2xhtml
 PORTVERSION=	1.3

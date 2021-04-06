@@ -1,5 +1,4 @@
 # Created by: Florent Thoumie <flz@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	xf86-video-scfb
 PORTVERSION=	0.0.5

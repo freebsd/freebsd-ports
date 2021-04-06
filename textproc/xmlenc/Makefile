@@ -1,5 +1,4 @@
 # Created by: Ernst de Haan <znerd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xmlenc
 PORTVERSION=	0.52

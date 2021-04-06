@@ -1,5 +1,4 @@
 # Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mdocml
 PORTVERSION=	1.14.5

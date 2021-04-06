@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Builder-Conditionals
 PORTVERSION=	0.05

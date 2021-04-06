@@ -1,5 +1,4 @@
 # Created by: erich@rrnet.com
-# $FreeBSD$
 
 PORTNAME=	sudo
 PORTVERSION=	1.9.6p1

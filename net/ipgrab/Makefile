@@ -1,5 +1,4 @@
 # Created by: Aaron Zauner <az_mail@gmx.at>
-# $FreeBSD$
 
 PORTNAME=	ipgrab
 PORTVERSION=	0.9.10

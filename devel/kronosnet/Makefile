@@ -1,5 +1,4 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	kronosnet
 PORTVERSION=	1.20

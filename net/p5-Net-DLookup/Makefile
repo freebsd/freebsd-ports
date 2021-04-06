@@ -1,5 +1,4 @@
 # Created by: Danny Howard <dannyman@tellme.com>
-# $FreeBSD$
 
 PORTNAME=	Net-DLookup
 PORTVERSION=	1.01

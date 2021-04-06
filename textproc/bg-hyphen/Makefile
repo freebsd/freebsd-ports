@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hyphen
 PORTVERSION=	4.3

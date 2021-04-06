@@ -1,5 +1,4 @@
 # Created by: Joe Kelsey
-# $FreeBSD$
 
 PORTNAME=	libical
 DISTVERSION=	3.0.8

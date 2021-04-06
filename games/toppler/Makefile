@@ -1,5 +1,4 @@
 # Created by: Dom Mitchell <dom@happygiraffe.net>
-# $FreeBSD$
 
 PORTNAME=	toppler
 PORTVERSION=	1.1.6

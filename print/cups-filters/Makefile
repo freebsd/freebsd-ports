@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cups-filters
 PORTVERSION=	1.28.6

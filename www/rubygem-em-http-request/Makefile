@@ -1,5 +1,4 @@
 # Created by: Scott Sanders <scott@jssjr.com>
-# $FreeBSD$
 
 PORTNAME=	em-http-request
 PORTVERSION=	1.1.5

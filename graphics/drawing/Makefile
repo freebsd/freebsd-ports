@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	drawing
 DISTVERSION=	0.6.5

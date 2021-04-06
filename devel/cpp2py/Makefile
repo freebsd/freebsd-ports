@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cpp2py
 DISTVERSION=	2.0.0

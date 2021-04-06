@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pdfminer.six
 PORTVERSION=	20201018

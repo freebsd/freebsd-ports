@@ -1,5 +1,4 @@
 # Created by: rflynn@acsalaska.net
-# $FreeBSD$
 # Observium version can be found by looking at ${WRKSRC}/includes/definitions/version.inc.php
 
 PORTNAME=	observium

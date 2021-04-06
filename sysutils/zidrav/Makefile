@@ -1,5 +1,4 @@
 # Created by: Cosmin Stroe <cstroe1@uic.edu>
-# $FreeBSD$
 
 PORTNAME=	zidrav
 PORTVERSION=	1.2.0

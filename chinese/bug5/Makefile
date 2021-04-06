@@ -1,5 +1,4 @@
 # Created by: buganini@gmail.com
-# $FreeBSD$
 
 PORTNAME=	bug5
 PORTVERSION=	1.18

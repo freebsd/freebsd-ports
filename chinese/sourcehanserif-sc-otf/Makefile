@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		sourcehanserif
 PORTVERSION=		1.001

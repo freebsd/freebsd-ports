@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oxygen-icons5
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

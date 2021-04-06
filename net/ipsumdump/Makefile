@@ -1,5 +1,4 @@
 # Created by: Kirill Ponomarew <krion@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ipsumdump
 PORTVERSION=	1.86

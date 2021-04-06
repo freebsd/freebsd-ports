@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alkimia
 PORTVERSION=	8.1.0

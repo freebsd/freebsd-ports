@@ -1,5 +1,4 @@
 # Created by: Nikola Kolev <koue@chaosophia.net>
-# $FreeBSD$
 
 PORTNAME=	samhain
 PORTVERSION=	4.4.3

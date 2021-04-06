@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	citeproc-py
 DISTVERSION=	0.5.1

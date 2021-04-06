@@ -1,5 +1,4 @@
 # Created by: Alonso Cardenas Marquez <acm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	derelict-gl3
 PORTVERSION=	1.0.24

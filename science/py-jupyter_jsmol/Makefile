@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=	jupyter-jsmol
 PORTVERSION=	2021.3.0

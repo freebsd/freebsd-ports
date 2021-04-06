@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <ip@doom.homeunix.org>
-# $FreeBSD$
 
 PORTNAME=	apoolGL
 PORTVERSION=	0.99.22

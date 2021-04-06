@@ -1,5 +1,4 @@
 # Created by: Sergei Vyshenski
-# $FreeBSD$
 
 PORTNAME=	SPOPS
 PORTVERSION=	0.87

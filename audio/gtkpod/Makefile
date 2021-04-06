@@ -1,5 +1,4 @@
 # Created by: David Le Brun <david@dyn-ns.net>
-# $FreeBSD$
 
 PORTNAME=	gtkpod
 PORTVERSION=	1.0.0

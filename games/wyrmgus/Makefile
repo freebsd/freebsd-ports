@@ -1,5 +1,4 @@
 # Created by: Travis Poppe <tlp@liquidx.org>
-# $FreeBSD$
 
 PORTNAME=	wyrmgus
 PORTVERSION=	4.1.3

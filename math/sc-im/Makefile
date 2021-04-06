@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		sc-im
 DISTVERSIONPREFIX=	v

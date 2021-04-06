@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	ukrainian
 LO_I18N=	uk

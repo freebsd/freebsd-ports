@@ -1,5 +1,4 @@
 # Created by: Dominique Goncalves <dominique.goncalves@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gcstar
 PORTVERSION=	1.7.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dynomite
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: adam@veda.is
-# $FreeBSD$
 
 PORTNAME=	dgd
 PORTVERSION=	1.4.23

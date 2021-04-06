@@ -1,5 +1,4 @@
 # Created by: Kirill Ponomarew <ponomarew@oberon.net>
-# $FreeBSD$
 
 PORTNAME=	atr3d
 PORTVERSION=	0.6

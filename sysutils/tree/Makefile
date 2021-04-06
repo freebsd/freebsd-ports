@@ -1,5 +1,4 @@
 # Created by: Alan Eldridge <alane@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tree
 PORTVERSION=	1.8.0

@@ -1,5 +1,4 @@
 # Created by: rene
-# $FreeBSD$
 
 PORTNAME=	bas2tap
 PORTVERSION=	2.6

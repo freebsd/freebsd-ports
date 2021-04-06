@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	addresses
 PORTVERSION=	0.4.8

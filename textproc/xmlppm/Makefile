@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	xmlppm
 PORTVERSION=	0.98.3

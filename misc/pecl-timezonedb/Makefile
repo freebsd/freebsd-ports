@@ -1,5 +1,4 @@
 # Created by: Marcus Alves Grando <mnag@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	timezonedb
 PORTVERSION=	2021.1

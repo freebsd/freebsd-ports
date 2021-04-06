@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	proxygen
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: milki <milki@rescomp.berkeley.edu>
-# $FreeBSD$
 
 PORTNAME=	Test-NoTabs
 PORTVERSION=	1.4

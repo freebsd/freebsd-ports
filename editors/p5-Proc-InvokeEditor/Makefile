@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Proc-InvokeEditor
 PORTVERSION=	1.13

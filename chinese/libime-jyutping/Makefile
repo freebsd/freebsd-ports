@@ -1,5 +1,4 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libime-jyutping
 DISTVERSION=	1.0.2

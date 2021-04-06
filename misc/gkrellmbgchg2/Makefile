@@ -1,5 +1,4 @@
 # Created by: Chris Stuart <firewolf@lightningfire.net>
-# $FreeBSD$
 
 PORTNAME=	gkrellmbgchg2
 PORTVERSION=	0.1.11

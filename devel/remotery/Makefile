@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	remotery
 DISTVERSION=	g20190209

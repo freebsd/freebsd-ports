@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		dDocent
 DISTVERSIONPREFIX=	v

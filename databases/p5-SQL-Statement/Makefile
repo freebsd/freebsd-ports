@@ -1,5 +1,4 @@
 # Created by: wolman@cs.washington.edu
-# $FreeBSD$
 
 PORTNAME=	SQL-Statement
 PORTVERSION=	1.414

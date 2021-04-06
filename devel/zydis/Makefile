@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zydis
 DISTVERSIONPREFIX=	v

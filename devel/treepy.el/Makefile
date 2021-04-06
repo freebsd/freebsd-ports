@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	treepy.el
 DISTVERSION=	0.1.2

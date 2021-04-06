@@ -1,5 +1,4 @@
 # Created by: sten@blinkenlights.nl
-# $FreeBSD$
 
 PORTNAME=	ffs2recov
 PORTVERSION=	1.0

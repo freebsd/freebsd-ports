@@ -1,5 +1,4 @@
 # Created by: Simon Barner <barner@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	irrlicht
 PORTVERSION=	1.8.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hermit
 DISTVERSION=	2.0

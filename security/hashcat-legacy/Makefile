@@ -1,5 +1,4 @@
 # Created by: Nikolai Lifanov <lifanov@mail.lifanov.com>
-# $FreeBSD$
 
 PORTNAME=	hashcat-legacy
 PORTVERSION=	2.00

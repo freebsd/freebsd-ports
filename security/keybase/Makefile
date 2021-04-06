@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	keybase
 PORTVERSION=	5.6.1

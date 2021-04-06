@@ -1,5 +1,4 @@
 # Created by: Colin Percival
-# $FreeBSD$
 
 PORTNAME=	ec2-scripts
 PORTVERSION=	1.10

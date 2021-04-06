@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	requests-credssp
 PORTVERSION=	1.2.0

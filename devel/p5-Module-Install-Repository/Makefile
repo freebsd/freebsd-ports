@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Module-Install-Repository
 PORTVERSION=	0.06

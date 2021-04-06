@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	gtkmathview
 PORTVERSION=	0.8.0

@@ -1,5 +1,4 @@
 # Created by: Danijel Tasov <danielt@pilgerer.org>
-# $FreeBSD$
 
 PORTNAME=	heirloom-sh
 PORTVERSION=	050706

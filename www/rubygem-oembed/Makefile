@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oembed
 PORTVERSION=	0.2.0

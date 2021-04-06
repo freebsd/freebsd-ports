@@ -1,5 +1,4 @@
 # Created by: ache@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	MLDBM
 PORTVERSION=	2.05

@@ -1,5 +1,4 @@
 # Created by: Bruce Simpson
-# $FreeBSD$
 
 PORTNAME=	kBuild
 DISTVERSION=	${KBUILD_VERSION}

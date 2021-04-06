@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mkdocs-nature
 DISTVERSION=	0.2.1

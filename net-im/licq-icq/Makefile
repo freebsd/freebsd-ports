@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	icq
 PORTVERSION=	1.9.0

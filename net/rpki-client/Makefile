@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rpki-client
 DISTVERSION=	6.7p1

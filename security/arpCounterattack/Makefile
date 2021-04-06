@@ -1,5 +1,4 @@
 # Created by: Boris Kochergin <spawk@acm.poly.edu>
-# $FreeBSD$
 
 PORTNAME=	arpCounterattack
 PORTVERSION=	1.2.0

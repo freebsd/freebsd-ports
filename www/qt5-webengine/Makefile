@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # QtWebEngine itself is a very thin layer of Qt code on top of a large part of
 # Chromium (everything up to the content/ layer). As such, most of the work in

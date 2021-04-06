@@ -1,5 +1,4 @@
 # Created by: Dominic Marks <dom@goodforbusiness.co.uk>
-# $FreeBSD$
 
 PORTNAME=	mod_line_edit
 PORTVERSION=	1.0.0

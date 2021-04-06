@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dm-serializer
 PORTVERSION=	1.2.2

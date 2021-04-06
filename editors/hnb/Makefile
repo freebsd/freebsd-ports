@@ -1,5 +1,4 @@
 # Created by: Patrick Li <pat@databits.net>
-# $FreeBSD$
 
 PORTNAME=	hnb
 PORTVERSION=	1.9.18

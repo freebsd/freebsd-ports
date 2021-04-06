@@ -1,5 +1,4 @@
 # Created by: Sergei Kolobov <sergei@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	t-prot
 PORTVERSION=	3.4

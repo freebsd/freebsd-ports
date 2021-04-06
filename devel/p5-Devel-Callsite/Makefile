@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-Callsite
 PORTVERSION=	1.0.1

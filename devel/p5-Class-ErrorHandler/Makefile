@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-ErrorHandler
 PORTVERSION=	0.04

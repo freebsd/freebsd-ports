@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	IO-Callback
 PORTVERSION=	1.12

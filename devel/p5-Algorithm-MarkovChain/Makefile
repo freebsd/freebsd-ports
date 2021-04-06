@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Algorithm-MarkovChain
 PORTVERSION=	0.06

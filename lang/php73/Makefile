@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	php73
 DISTVERSION=	7.3.27

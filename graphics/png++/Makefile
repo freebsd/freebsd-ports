@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	png++
 DISTVERSION=	0.2.10

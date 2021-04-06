@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xwininfo
 PORTVERSION=	1.1.5

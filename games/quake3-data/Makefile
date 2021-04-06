@@ -1,5 +1,4 @@
 # Created by: Nik Clayton <nik@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	data
 DISTVERSION=	1.32b-3

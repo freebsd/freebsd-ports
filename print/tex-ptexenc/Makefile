@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ptexenc
 PORTVERSION=	1.3.3

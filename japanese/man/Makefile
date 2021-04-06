@@ -1,5 +1,4 @@
 # Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	man
 PORTVERSION=	1.1j

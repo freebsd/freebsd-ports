@@ -1,5 +1,4 @@
 # Created by: Danny Howard <dannyman@toldme.com>
-# $FreeBSD$
 
 PORTNAME=	enteruser
 PORTVERSION=	1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pytest-randomly
 PORTVERSION=	3.5.0

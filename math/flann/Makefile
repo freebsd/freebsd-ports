@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flann
 DISTVERSION=	1.9.1-29

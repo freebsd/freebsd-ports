@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	boolean.py
 DISTVERSION=	3.8

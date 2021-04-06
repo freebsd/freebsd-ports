@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bitmap
 PORTVERSION=	1.0.9

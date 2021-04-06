@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	imhex
 PORTVERSION=	1.7.0

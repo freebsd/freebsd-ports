@@ -1,5 +1,4 @@
 # Created by: Dmitry Marakasov <amdmi3@amdmi3.ru>
-# $FreeBSD$
 
 PORTNAME=	goonies
 PORTVERSION=	1.4.1528

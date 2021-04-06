@@ -1,5 +1,4 @@
 # Created by: Janni
-# $FreeBSD$
 
 PORTNAME=	skstream
 PORTVERSION=	0.3.9

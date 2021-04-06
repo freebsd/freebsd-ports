@@ -1,5 +1,4 @@
 # Created by: John Merryweather Cooper
-# $FreeBSD$
 
 PORTNAME=	docs
 PORTVERSION=	3.2.0

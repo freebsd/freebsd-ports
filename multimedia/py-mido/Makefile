@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mido
 DISTVERSION=	1.2.9

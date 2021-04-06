@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	auto-admin
 DISTVERSION=	0.7.1-2

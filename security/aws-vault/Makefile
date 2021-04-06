@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aws-vault
 DISTVERSIONPREFIX=	v

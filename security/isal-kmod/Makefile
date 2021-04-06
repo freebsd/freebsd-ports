@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	isal
 DISTVERSION=	g20200702

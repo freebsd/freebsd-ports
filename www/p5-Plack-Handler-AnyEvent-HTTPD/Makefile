@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Handler-AnyEvent-HTTPD
 PORTVERSION=	0.03

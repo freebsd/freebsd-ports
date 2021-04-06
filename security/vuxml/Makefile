@@ -1,5 +1,4 @@
 # Created by: nectar@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	vuxml
 PORTVERSION=	1.1

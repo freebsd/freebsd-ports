@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine <tux@pinguru.net>
-# $FreeBSD$
 
 PORTNAME=	megarc
 PORTVERSION=	1.51

@@ -1,5 +1,4 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-ECDSA
 PORTVERSION=	0.08

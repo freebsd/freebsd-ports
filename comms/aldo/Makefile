@@ -1,5 +1,4 @@
 # Created by: lambert@lambertfam.org
-# $FreeBSD$
 
 PORTNAME=	aldo
 DISTVERSION=	0.7.7

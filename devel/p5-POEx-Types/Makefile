@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POEx-Types
 PORTVERSION=	1.100910

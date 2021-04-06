@@ -1,5 +1,4 @@
 # Created by: Lev Serebryakov <lev@serebryakov.spb.ru>
-# $FreeBSD$
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}

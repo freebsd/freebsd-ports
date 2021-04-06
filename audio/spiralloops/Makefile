@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	spiralloops
 PORTVERSION=	2.0.0

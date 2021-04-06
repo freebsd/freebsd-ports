@@ -1,5 +1,4 @@
 # Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	mkntpwd
 PORTVERSION=	1.0

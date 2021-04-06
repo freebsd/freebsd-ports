@@ -1,5 +1,4 @@
 # Created by: lbr@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-LogWarnings
 PORTVERSION=	0.03

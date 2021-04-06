@@ -1,5 +1,4 @@
 # Created by: Boris Lytochkin (lytboris@gmail.com)
-# $FreeBSD$
 
 PORTNAME=	mongoose
 PORTVERSION=	5.6

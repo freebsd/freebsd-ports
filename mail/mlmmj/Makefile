@@ -1,5 +1,4 @@
 # Created by: Christian Laursen <xi@borderworlds.dk>
-# $FreeBSD$
 
 PORTNAME=	mlmmj
 PORTVERSION=	1.3.0

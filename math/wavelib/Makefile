@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wavelib
 DISTVERSION=	g20200528

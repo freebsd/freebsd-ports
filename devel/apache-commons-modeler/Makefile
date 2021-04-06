@@ -1,5 +1,4 @@
 # Created by: Nemo Liu <nemoliu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	commons-modeler
 PORTVERSION=	2.0.1

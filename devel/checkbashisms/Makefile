@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	checkbashisms
 DISTVERSION=	2.19.6

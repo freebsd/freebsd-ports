@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jadetex
 PORTVERSION=	3.13

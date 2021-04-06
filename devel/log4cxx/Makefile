@@ -1,5 +1,4 @@
 # Created by: Thaddeus Covert <tcovert@grimmy.sahuagin.net>
-# $FreeBSD$
 
 PORTNAME=	log4cxx
 PORTVERSION=	0.11.0

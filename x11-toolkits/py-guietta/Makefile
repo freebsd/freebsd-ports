@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	guietta
 DISTVERSION=	0.6.1

@@ -1,5 +1,4 @@
 # Created by: Jaap Boender <jaapb@kerguelen.org>
-# $FreeBSD$
 
 PORTNAME=	text
 PORTVERSION=	0.8

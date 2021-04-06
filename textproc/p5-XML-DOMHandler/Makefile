@@ -1,5 +1,4 @@
 # Created by: Stefan Pauly <stefan@fh-mainz.de>
-# $FreeBSD$
 
 PORTNAME=	XML-DOMHandler
 PORTVERSION=	1.0

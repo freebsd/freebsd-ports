@@ -1,5 +1,4 @@
 # Created by: Juan Salaverria <rael@vectorstar.net>
-# $FreeBSD$
 
 PORTNAME=	lostirc
 PORTVERSION=	0.4.6

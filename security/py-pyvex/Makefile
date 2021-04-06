@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyvex
 DISTVERSION=	${ANGR_VERSION}

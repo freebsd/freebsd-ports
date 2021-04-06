@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-Amazon-Signature-V4
 PORTVERSION=	0.18

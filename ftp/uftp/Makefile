@@ -1,5 +1,4 @@
 # Created by: George V. Neville-Neil <gnn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	uftp
 PORTVERSION=	5.0

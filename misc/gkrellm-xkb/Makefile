@@ -1,5 +1,4 @@
 # Created by: Pav Lucistnik <pav@oook.cz>
-# $FreeBSD$
 
 PORTNAME=	gkrellm-xkb
 PORTVERSION=	1.05

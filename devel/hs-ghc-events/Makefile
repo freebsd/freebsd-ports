@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ghc-events
 PORTVERSION=	0.15.1

@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <nakai@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mono
 PORTVERSION=	5.20.1.34

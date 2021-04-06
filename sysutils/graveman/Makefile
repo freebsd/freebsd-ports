@@ -1,5 +1,4 @@
 # Created by: Anton Karpov <toxa@toxahost.ru>
-# $FreeBSD$
 
 PORTNAME=	graveman
 DISTVERSION=	0.3.12-5

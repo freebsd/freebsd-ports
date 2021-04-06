@@ -1,5 +1,4 @@
 # Created by: Ditesh Shashikant Gathani <ditesh@gathani.org>
-# $FreeBSD$
 
 PORTNAME=	Services_W3C_CSSValidator
 PORTVERSION=	0.2.3

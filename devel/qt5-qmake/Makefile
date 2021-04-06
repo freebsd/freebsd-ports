@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qmake
 DISTVERSION=	${QT5_VERSION}

@@ -1,5 +1,4 @@
 # Created by: Andy Fawcett <andy@athame.co.uk>
-# $FreeBSD$
 
 PORTNAME=	uptimed
 PORTVERSION=	0.4.3

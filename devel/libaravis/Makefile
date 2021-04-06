@@ -1,5 +1,4 @@
 # Created by: Rozhuk Ivan
-# $FreeBSD$
 
 PORTNAME=		libaravis
 DISTVERSIONPREFIX=	ARAVIS_

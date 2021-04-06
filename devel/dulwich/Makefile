@@ -1,5 +1,4 @@
 # Created by: Marco Broeder <marco.broeder@posteo.eu>
-# $FreeBSD$
 
 PORTNAME=	dulwich
 PORTVERSION=	0.19.16

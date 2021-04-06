@@ -1,5 +1,4 @@
 # Created by: Don Croyle <croyle@gelemna.org>
-# $FreeBSD$
 
 PORTNAME=	Set-IntSpan
 PORTVERSION=	1.19

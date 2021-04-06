@@ -1,5 +1,4 @@
 # Created by: Denis Barov
-# $FreeBSD$
 
 PORTNAME=	smbnetfs
 PORTVERSION=	0.6.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	getopt
 DISTVERSION=	1.20.3

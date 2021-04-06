@@ -1,5 +1,4 @@
 # Created by: Patrick Li <pat@databits.net>
-# $FreeBSD$
 
 PORTNAME=	knocker
 PORTVERSION=	0.8.0

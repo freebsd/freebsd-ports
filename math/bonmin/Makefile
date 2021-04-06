@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bonmin
 DISTVERSIONPREFIX=	releases/

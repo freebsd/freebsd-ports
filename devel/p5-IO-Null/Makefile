@@ -1,5 +1,4 @@
 # Created by: Rouslan Iskhakov <rouslan@rshell.net>
-# $FreeBSD$
 
 PORTNAME=	IO-Null
 PORTVERSION=	1.01

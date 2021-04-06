@@ -1,5 +1,4 @@
 # Created by: mm@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	adodb
 PORTVERSION=	5.21.0

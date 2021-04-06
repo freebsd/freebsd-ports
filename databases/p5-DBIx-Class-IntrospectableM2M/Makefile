@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-IntrospectableM2M
 PORTVERSION=	0.001002

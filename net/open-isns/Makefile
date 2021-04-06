@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	open-isns
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Thomas Zander <riggs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gpsoauth
 PORTVERSION=	0.4.2

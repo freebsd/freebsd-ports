@@ -1,5 +1,4 @@
 # Created by: Sander Janssen <janssen@rendo.dekooi.nl>
-# $FreeBSD$
 
 PORTNAME=	mp3rename
 PORTVERSION=	0.6

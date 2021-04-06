@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openjdk8
 PORTVERSION=	${DISTVERSION_${JDK_ARCH}}

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools

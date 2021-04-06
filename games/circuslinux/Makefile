@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis
-# $FreeBSD$
 
 PORTNAME=	circuslinux
 PORTVERSION=	1.0.3

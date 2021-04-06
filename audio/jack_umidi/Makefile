@@ -1,5 +1,4 @@
 # Created by: Hans Petter Selasky <hselasky@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jack_umidi
 PORTVERSION=	1.1.0

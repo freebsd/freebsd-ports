@@ -1,5 +1,4 @@
 # Created by: Jase Thew <freebsd@beardz.net>
-# $FreeBSD$
 
 PORTNAME=	File-Stat-ModeString
 PORTVERSION=	1.00

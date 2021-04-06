@@ -1,5 +1,4 @@
 # Created by: Mons Anderson <mons@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Object-Event
 PORTVERSION=	1.220

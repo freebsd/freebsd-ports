@@ -1,5 +1,4 @@
 # Created by: Yonatan <onatan@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	memdump
 PORTVERSION=	1.01

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-snes9x2010
 PORTVERSION=	0.20210214

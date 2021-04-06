@@ -1,5 +1,4 @@
 # Created by: David Leonard <leonard@dstc.edu.au>
-# $FreeBSD$
 
 PORTNAME=	dclock
 PORTVERSION=	2.2.2

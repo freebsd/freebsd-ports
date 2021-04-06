@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	signon-plugin-oauth2
 DISTVERSION=	0.24

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cutadapt
 DISTVERSION=	3.3

@@ -1,5 +1,4 @@
 # Created by: Andrew Thompson <andy@fud.org.nz>
-# $FreeBSD$
 
 PORTNAME=	pads
 PORTVERSION=	1.2

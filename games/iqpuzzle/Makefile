@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iqpuzzle
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Clement Laforet <sheepkiller@cultdeadsheep.org>
-# $FreeBSD$
 
 PORTNAME=	mod_auth_pam
 PORTVERSION=	1.1.1

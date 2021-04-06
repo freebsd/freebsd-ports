@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mailcap_fix
 PORTVERSION=	1.0.1

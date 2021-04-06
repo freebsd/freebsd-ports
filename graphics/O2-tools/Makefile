@@ -1,5 +1,4 @@
 # Created by: Hiroto Kagotani <hiroto.kagotani@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	O2-tools
 PORTVERSION=	2.01

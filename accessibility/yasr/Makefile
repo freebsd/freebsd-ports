@@ -1,5 +1,4 @@
 # Created by: David K. Gerry
-# $FreeBSD$
 
 PORTNAME=	yasr
 PORTVERSION=	0.6.9

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	minidb
 DISTVERSION=	2.0.4

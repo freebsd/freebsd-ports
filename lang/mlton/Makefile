@@ -1,5 +1,4 @@
 # Created by: Stephen Weeks <sweeks@sweeks.com>
-# $FreeBSD$
 
 # Previouly maintained by Jesper Louis Andersen
 # (jesper.louis.andersen@gmail.com) and Geoffrey Mainland

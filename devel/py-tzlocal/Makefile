@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tzlocal
 DISTVERSION=	1.5.1

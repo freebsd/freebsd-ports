@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iso3166
 PORTVERSION=	1.0.1

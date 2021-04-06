@@ -1,5 +1,4 @@
 # Created by: Michael Beer <beerml@sigma6audio.de>
-# $FreeBSD$
 
 PORTNAME=	ardour6
 PORTVERSION=	6.5.0

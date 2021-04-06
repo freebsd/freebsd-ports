@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webp-pixbuf-loader
 DISTVERSION=	0.0.1-5

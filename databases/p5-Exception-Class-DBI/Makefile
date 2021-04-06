@@ -1,5 +1,4 @@
 # Created by: Rod Taylor <ports@rbt.ca>
-# $FreeBSD$
 
 PORTNAME=	Exception-Class-DBI
 PORTVERSION=	1.04

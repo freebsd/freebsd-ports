@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-FormFiller
 PORTVERSION=	0.12

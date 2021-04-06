@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	serpent
 DISTVERSION=	1.28

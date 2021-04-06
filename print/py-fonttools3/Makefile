@@ -1,5 +1,4 @@
 # Created by: Joseph Koshy <jkoshy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	fonttools
 PORTVERSION=	3.44.0

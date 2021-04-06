@@ -1,5 +1,4 @@
 # Created by: Simeo Reig <reig.simeo@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wildfly17
 PORTVERSION=	17.0.1

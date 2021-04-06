@@ -1,5 +1,4 @@
 # Created by: Takuya Tsuchida <tsucchi@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Test-Module-Used
 PORTVERSION=	0.2.3

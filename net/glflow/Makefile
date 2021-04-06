@@ -1,5 +1,4 @@
 # Created by: David Thiel (lx@redundancy.redundancy.org)
-# $FreeBSD$
 
 PORTNAME=	glFlow
 PORTVERSION=	0.1.4

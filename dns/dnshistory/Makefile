@@ -1,5 +1,4 @@
 # Created by: adamw
-# $FreeBSD$
 
 PORTNAME=	dnshistory
 PORTVERSION=	1.3

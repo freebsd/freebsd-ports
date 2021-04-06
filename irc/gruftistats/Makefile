@@ -1,5 +1,4 @@
 # Created by: Matthew West <mwest@uct.ac.za>
-# $FreeBSD$
 
 PORTNAME=	gruftistats
 PORTVERSION=	0.2.4

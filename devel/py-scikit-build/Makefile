@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scikit-build
 DISTVERSION=	0.11.1

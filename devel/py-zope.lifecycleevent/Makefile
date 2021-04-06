@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zope.lifecycleevent
 PORTVERSION=	3.7.0

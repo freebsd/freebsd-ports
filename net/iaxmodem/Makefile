@@ -1,5 +1,4 @@
 # Created by: Filippo Natali <filippo.natali@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	iaxmodem
 PORTVERSION=	1.2.0

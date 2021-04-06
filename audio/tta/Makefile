@@ -1,5 +1,4 @@
 # Created by: Martin Dieringer <Martin.Dieringer@t-online.de>
-# $FreeBSD$
 
 PORTNAME=	tta
 PORTVERSION=	3.4.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	teleport
 DISTVERSIONPREFIX=	v

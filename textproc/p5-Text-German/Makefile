@@ -1,5 +1,4 @@
 # Created by: Thorsten Greiner <thorsten.greiner@web.de>
-# $FreeBSD$
 
 PORTNAME=	Text-German
 PORTVERSION=	0.06

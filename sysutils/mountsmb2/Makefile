@@ -1,5 +1,4 @@
 # Created by: Rashid N. Achilov <shelton@granch.ru>
-# $FreeBSD$
 
 PORTNAME=	mountsmb2
 PORTVERSION=	0.90.2

@@ -1,5 +1,4 @@
 # Created by: Douglas K. Rand <rand@meridian-enviro.com>
-# $FreeBSD$
 
 PORTNAME=	libirman
 PORTVERSION=	0.5.2

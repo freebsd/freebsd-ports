@@ -1,5 +1,4 @@
 # Created by: Brad Davis <brd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	JIRA-REST
 PORTVERSION=	0.020

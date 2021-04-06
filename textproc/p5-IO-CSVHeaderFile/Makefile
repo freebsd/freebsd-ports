@@ -1,5 +1,4 @@
 # Created by: Vasek Balcar <vasek@ti.cz>
-# $FreeBSD$
 
 PORTNAME=	IO-CSVHeaderFile
 PORTVERSION=	0.04

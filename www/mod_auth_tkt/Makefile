@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mod_auth_tkt
 PORTVERSION=	2.1.0

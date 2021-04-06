@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spot
 DISTVERSION=	2.9.6

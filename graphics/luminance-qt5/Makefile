@@ -1,5 +1,4 @@
 # Created by: Yinghong Liu <relaxbsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	luminance-hdr
 DISTVERSION=	2.5.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	meck
 PORTVERSION=	0.8.12

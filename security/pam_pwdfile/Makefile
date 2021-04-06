@@ -1,5 +1,4 @@
 # Created by: Michael Schout <mschout@gkg.net>
-# $FreeBSD$
 
 PORTNAME=	pam_pwdfile
 PORTVERSION=	1.0

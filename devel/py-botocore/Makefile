@@ -1,5 +1,4 @@
 # Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-# $FreeBSD$
 
 PORTNAME=	botocore
 PORTVERSION=	1.20.45

@@ -1,5 +1,4 @@
 # Created by: lars.eggert@gmx.net
-# $FreeBSD$
 
 PORTNAME=	podcastamatic
 PORTVERSION=	1.3

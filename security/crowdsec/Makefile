@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	crowdsec
 PORTVERSION=	1.0.9

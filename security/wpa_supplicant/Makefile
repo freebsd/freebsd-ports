@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wpa_supplicant
 PORTVERSION=	2.9

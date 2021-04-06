@@ -1,5 +1,4 @@
 # Created by: Jeff Brown <jabrown@caida.org>
-# $FreeBSD$
 
 PORTNAME=	clisp
 PORTVERSION=	2.49.93+

@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	clearlooks-phenix
 PORTVERSION=	7.0.1

@@ -1,5 +1,4 @@
 # Created by: pypt
-# $FreeBSD$
 
 PORTNAME=	quake3
 PORTVERSION=	1.32c

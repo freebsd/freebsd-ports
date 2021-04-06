@@ -1,5 +1,4 @@
 # Created by: wosch
-# $FreeBSD$
 
 PORTNAME=	dict
 PORTVERSION=	1.2

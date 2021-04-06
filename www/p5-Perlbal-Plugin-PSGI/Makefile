@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Perlbal-Plugin-PSGI
 PORTVERSION=	0.03

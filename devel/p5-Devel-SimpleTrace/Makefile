@@ -1,5 +1,4 @@
 # Created by: estith
-# $FreeBSD$
 
 PORTNAME=	Devel-SimpleTrace
 PORTVERSION=	0.08

@@ -1,5 +1,4 @@
 # Created by: Jim Shewmaker
-# $FreeBSD$
 
 PORTNAME=	nagios-statd
 PORTVERSION=	3.12

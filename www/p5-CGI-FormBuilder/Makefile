@@ -1,5 +1,4 @@
 # Created by: Fernan Aguero
-# $FreeBSD$
 
 PORTNAME=	CGI-FormBuilder
 PORTVERSION=	3.1000

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Localize
 PORTVERSION=	0.00027

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spotify-tui
 DISTVERSIONPREFIX=	v

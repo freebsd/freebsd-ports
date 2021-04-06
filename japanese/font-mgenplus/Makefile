@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mgenplus
 PORTVERSION=	20150602

@@ -1,5 +1,4 @@
 # Created by: arensb@ooblick.com
-# $FreeBSD$
 
 PORTNAME=	gensig
 PORTVERSION=	2.3

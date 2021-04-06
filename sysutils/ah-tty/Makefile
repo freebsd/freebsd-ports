@@ -1,5 +1,4 @@
 # Created by: Michael L. Hostbaek <mich@freebsdcluster.org>
-# $FreeBSD$
 
 PORTNAME=	ah-tty
 PORTVERSION=	0.3.12

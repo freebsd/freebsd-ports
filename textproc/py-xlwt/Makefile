@@ -1,5 +1,4 @@
 # Created by: Dikshie
-# $FreeBSD$
 
 PORTNAME=	xlwt
 PORTVERSION=	1.3.0

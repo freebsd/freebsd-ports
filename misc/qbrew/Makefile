@@ -1,5 +1,4 @@
 # Created by: David Johnson <david@usermode.org>
-# $FreeBSD$
 
 PORTNAME=	qbrew
 PORTVERSION=	0.4.1

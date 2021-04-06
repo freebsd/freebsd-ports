@@ -1,5 +1,4 @@
 # Created by: janek
-# $FreeBSD$
 
 PORTNAME=	xboing
 PORTVERSION=	2.4

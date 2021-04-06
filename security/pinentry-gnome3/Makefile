@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pinentry
 PORTREVISION=	0

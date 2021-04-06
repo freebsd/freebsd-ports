@@ -1,5 +1,4 @@
 # Created by: Dominic Fandrey <kamikaze@bsdforen.de>
-# $FreeBSD$
 
 PORTNAME=	automounter
 PORTVERSION=	1.5.1

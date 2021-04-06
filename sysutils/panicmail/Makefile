@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	panicmail
 PORTVERSION=	1.1

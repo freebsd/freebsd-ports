@@ -1,5 +1,4 @@
 # Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-# $FreeBSD$
 
 PORTNAME=	ibus-m17n
 DISTVERSION=	1.4.4

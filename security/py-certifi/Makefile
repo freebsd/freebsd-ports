@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	certifi
 PORTVERSION=	2020.12.5

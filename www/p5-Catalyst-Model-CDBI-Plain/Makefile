@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Model-CDBI-Plain
 PORTVERSION=	0.03

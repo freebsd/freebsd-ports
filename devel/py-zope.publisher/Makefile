@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zope.publisher
 PORTVERSION=	3.13.1

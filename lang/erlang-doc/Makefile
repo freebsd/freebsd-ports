@@ -1,5 +1,4 @@
 # Created by: ruslan@shevchenko.kiev.ua
-# $FreeBSD$
 
 PORTNAME=	erlang
 PORTVERSION=	21.3

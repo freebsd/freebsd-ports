@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libmodbus
 PORTVERSION=	3.1.6

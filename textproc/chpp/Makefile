@@ -1,5 +1,4 @@
 # Created by: Andrey Zakhvatov <andy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	chpp
 PORTVERSION=	0.3.5

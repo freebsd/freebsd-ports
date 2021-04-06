@@ -1,5 +1,4 @@
 # Created by: Andrew Shevtsov <nyxo@dnuc.polyn.kiae.su>
-# $FreeBSD$
 
 PORTNAME=	dbench
 PORTVERSION=	4.0

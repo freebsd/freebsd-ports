@@ -1,5 +1,4 @@
 # Created by: Devin Teske <dteske@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	zfs-stats-lite
 PORTVERSION=	1.4

@@ -1,5 +1,4 @@
 # Created by: igor@zynaps.ru
-# $FreeBSD$
 
 PORTNAME=	aclgen
 PORTVERSION=	2.02

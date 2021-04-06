@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lunardate
 PORTVERSION=	0.2.0

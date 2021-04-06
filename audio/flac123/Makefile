@@ -1,5 +1,4 @@
 # Created by: michael johnson <ahze@ahze.net>
-# $FreeBSD$
 
 PORTNAME=	flac123
 PORTVERSION=	0.0.12

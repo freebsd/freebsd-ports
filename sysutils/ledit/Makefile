@@ -1,5 +1,4 @@
 # Created by: Marwan Burelle <marwan.burelle@lri.fr>
-# $FreeBSD$
 
 PORTNAME=	ledit
 PORTVERSION=	2.04

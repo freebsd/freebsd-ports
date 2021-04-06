@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	coordgenlibs
 DISTVERSIONPREFIX=	v

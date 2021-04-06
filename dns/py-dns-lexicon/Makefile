@@ -1,5 +1,4 @@
 # Created by: Goran Mekić <meka@tilda.center>
-# $FreeBSD$
 
 PORTNAME=	dns-lexicon
 PORTVERSION=	3.5.0

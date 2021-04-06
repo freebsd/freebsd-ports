@@ -1,5 +1,4 @@
 # Created by: Henry Hu <henry.hu.sh@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ibus
 PORTVERSION=	1.5.24

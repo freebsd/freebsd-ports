@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	ttf2pt1
 PORTVERSION=	3.4.4

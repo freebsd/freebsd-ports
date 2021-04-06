@@ -1,5 +1,4 @@
 # Created by: Winston Weinert <winstonw@lavabit.com>
-# $FreeBSD$
 
 PORTNAME=	tabbed
 PORTVERSION=	0.6

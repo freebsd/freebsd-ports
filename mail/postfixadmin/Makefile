@@ -1,5 +1,4 @@
 # Created by: Rob Evers <rob@debank.tv>
-# $FreeBSD$
 
 PORTNAME=	postfixadmin
 DISTVERSIONPREFIX=	postfixadmin-

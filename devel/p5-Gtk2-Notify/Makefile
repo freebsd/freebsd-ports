@@ -1,5 +1,4 @@
 # Created by: Roman Bogorodskiy <novel@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Gtk2-Notify
 PORTVERSION=	0.05

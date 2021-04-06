@@ -1,5 +1,4 @@
 # Created by: Michaël Grünewald
-# $FreeBSD$
 
 PORTNAME=	classes
 PORTVERSION=	4.00

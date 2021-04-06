@@ -1,5 +1,4 @@
 # Created by: bf <bf@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tesseract-data
 PORTVERSION=	4.1.0

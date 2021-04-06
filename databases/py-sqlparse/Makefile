@@ -1,5 +1,4 @@
 # Created by: Roland van Laar <roland@micite.net>
-# $FreeBSD$
 
 PORTNAME=	sqlparse
 PORTVERSION=	0.4.1

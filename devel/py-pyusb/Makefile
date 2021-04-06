@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyusb
 PORTVERSION=	1.0.2

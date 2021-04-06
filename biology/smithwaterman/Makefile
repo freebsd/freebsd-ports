@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	smithwaterman
 DISTVERSION=	g20160702

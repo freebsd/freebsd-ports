@@ -1,5 +1,4 @@
 # Created by: adamw
-# $FreeBSD$
 
 PORTNAME=	Term-ProgressBar-Simple
 PORTVERSION=	0.03

@@ -1,5 +1,4 @@
 # Created by: Pawel Pekala <c0rn@o2.pl>
-# $FreeBSD$
 
 PORTNAME=	newmail
 PORTREVISION=	0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scidavis
 PORTVERSION=	2.2.0

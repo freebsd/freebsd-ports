@@ -1,5 +1,4 @@
 # Created by: jasone
-# $FreeBSD$
 
 PORTNAME=	libedit
 PORTVERSION=	${EDITVERSION}.${EDITDATE}

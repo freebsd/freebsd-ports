@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openvpn-auth-script
 DISTVERSION=	1.0.0.3

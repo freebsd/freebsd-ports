@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tzdata
 PORTVERSION=	0.5.19

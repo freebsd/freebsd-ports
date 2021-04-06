@@ -1,5 +1,4 @@
 # Created by: Sergey Akifyev <asa@gascom.ru>
-# $FreeBSD$
 
 PORTNAME=	libid3tag
 PORTVERSION=	0.15.1b

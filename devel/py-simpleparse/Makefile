@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	simpleparse
 PORTVERSION=	2.2.2

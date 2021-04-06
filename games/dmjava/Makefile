@@ -1,5 +1,4 @@
 # Created by: Oliver Lehmann <lehmann@ans-netz.de>
-# $FreeBSD$
 
 PORTNAME=	dmjava
 PORTVERSION=	1.05

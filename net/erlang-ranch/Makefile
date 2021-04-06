@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ranch
 PORTVERSION=	1.3.2

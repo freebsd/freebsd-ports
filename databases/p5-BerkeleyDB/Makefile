@@ -1,5 +1,4 @@
 # Created by: T. William Wells <bill@twwells.com>
-# $FreeBSD$
 
 PORTNAME=	BerkeleyDB
 PORTVERSION=	0.64

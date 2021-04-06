@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tcplog_dumper
 PORTVERSION=	0.1.0

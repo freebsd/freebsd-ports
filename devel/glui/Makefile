@@ -1,5 +1,4 @@
 # Created by: mwest@uct.ac.za
-# $FreeBSD$
 
 PORTNAME=	glui
 PORTVERSION=	2.36

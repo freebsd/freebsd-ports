@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	dk-milter
 PORTVERSION=	1.0.2

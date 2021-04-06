@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fvcom
 PORTVERSION=	2.7.1

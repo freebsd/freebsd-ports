@@ -1,5 +1,4 @@
 # Created by: Josh Paetzel <josh@tcbug.org>
-# $FreeBSD$
 
 PORTNAME=	epic5
 PORTVERSION=	2.1.4

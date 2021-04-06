@@ -1,5 +1,4 @@
 # Created by: Matt Lancereau
-# $FreeBSD$
 
 PORTNAME=	libexo
 PORTVERSION=	4.16.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tcptestsuite
 DISTVERSION=	g20210322

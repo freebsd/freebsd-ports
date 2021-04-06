@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	re2
 PORTVERSION=	1.2.0

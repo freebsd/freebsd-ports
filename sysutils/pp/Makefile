@@ -1,5 +1,4 @@
 # Created by: Artem Zaytsev <a.arepo@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	pp
 PORTVERSION=	1.03

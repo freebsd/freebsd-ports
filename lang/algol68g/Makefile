@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	algol68g
 PORTVERSION=	2.8.4

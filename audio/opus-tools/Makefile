@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opus-tools
 PORTVERSION=	0.2

@@ -1,5 +1,4 @@
 # Created by: Cory R. King <coryking@mozimedia.com>
-# $FreeBSD$
 
 PORTNAME=	Net-Trackback
 PORTVERSION=	1.01

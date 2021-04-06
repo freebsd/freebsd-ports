@@ -1,5 +1,4 @@
 # Created by: Marc Fournier <scrappy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Convert-BER
 PORTVERSION=	1.32

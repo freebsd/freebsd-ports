@@ -1,5 +1,4 @@
 # Created by: Zane C, Bowers <vvelox@vvelox.net>
-# $FreeBSD$
 
 PORTNAME=	Gtk2-PathButtonBar
 PORTVERSION=	0.1.2

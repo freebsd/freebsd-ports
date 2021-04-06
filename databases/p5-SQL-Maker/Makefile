@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SQL-Maker
 PORTVERSION=	1.21

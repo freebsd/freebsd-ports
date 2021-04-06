@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vger
 PORTVERSION=	0.0.20210315

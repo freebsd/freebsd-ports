@@ -1,5 +1,4 @@
 # Created by: tg
-# $FreeBSD$
 
 PORTNAME=	uemacs
 PORTVERSION=	4.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	testlib
 DISTVERSION=	${QT5_VERSION}

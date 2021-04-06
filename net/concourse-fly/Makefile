@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	concourse
 PORTVERSION=	6.7.1

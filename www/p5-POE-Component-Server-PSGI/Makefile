@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Server-PSGI
 PORTVERSION=	0.6

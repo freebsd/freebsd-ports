@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pynxos
 DISTVERSION=	0.0.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	subfinder
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Audio-Ecasound
 PORTVERSION=	1.01

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	securefs
 PORTVERSION=	0.11.1

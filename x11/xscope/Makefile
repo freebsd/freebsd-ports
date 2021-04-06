@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xscope
 PORTVERSION=	1.4.1

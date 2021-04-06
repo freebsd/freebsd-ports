@@ -1,5 +1,4 @@
 # Created by: Kelly Yancey <kbyanc@posi.net>
-# $FreeBSD$
 
 PORTNAME=	upclient
 PORTVERSION=	5.0.b8

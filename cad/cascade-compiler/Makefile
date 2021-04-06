@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cascade
 PORTVERSION=	g20200105.1

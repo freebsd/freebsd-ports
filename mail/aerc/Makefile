@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aerc
 DISTVERSION=	0.4.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	numbers
 DISTVERSION=	0.7-5

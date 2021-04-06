@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	anvil
 PORTVERSION=	0.0.18

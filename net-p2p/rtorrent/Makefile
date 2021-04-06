@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rtorrent
 PORTVERSION=	0.9.8

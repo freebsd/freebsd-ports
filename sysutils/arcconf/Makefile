@@ -1,5 +1,4 @@
 # Created by: michael@fuckner.net
-# $FreeBSD$
 
 PORTNAME=	arcconf
 DISTVERSION=	3_01_23531

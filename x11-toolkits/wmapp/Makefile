@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	wmapp
 PORTVERSION=	0.0.4.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	powermon
 PORTVERSION=	1.0.0

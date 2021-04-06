@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Chart-Gnuplot
 PORTVERSION=	0.23

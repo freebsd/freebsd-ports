@@ -1,5 +1,4 @@
 # Created by: John Marino <marino@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sphinxcontrib-adadomain
 PORTVERSION=	0.2

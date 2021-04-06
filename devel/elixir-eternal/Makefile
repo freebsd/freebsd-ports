@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	eternal
 PORTVERSION=	1.2.0

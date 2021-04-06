@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xcape
 DISTVERSIONPREFIX=	v

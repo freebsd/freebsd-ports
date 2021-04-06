@@ -1,5 +1,4 @@
 # Created by: Vsevolod Stakhov <vsevolod@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gringo
 DISTVERSION=	4.5.4

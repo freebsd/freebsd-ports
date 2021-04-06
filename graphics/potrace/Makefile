@@ -1,5 +1,4 @@
 # Created by: Piotr Smyrak <smyru@heron.pl>
-# $FreeBSD$
 
 PORTNAME=	potrace
 DISTVERSION=	1.16

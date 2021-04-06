@@ -1,5 +1,4 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	screensaver.biogenesis
 PORTVERSION=	2.5.0

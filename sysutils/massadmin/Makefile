@@ -1,5 +1,4 @@
 # Created by: Sascha Klauder <sklauder@trimind.de>
-# $FreeBSD$
 
 PORTNAME=	massadmin
 PORTVERSION=	2.3

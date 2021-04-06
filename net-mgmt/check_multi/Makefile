@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	check_multi
 PORTVERSION=	0.26

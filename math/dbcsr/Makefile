@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dbcsr
 DISTVERSIONPREFIX=	v

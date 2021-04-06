@@ -1,5 +1,4 @@
 # Created by: ijlioa
-# $FreeBSD$
 
 PORTNAME=	DBD-AnyData
 PORTVERSION=	0.110

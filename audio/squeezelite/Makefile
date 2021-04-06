@@ -1,5 +1,4 @@
 # Created by: jockl <jockl@pianojockl.org>
-# $FreeBSD$
 
 PORTNAME=	squeezelite
 PORTVERSION=	1.9.7.1253

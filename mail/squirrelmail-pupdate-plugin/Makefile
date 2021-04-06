@@ -1,5 +1,4 @@
 # Created by: Thomas Abthorpe <thomas@goodking.ca>
-# $FreeBSD$
 
 PORTNAME=	pupdate
 PORTVERSION=	0.7

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libccp4
 DISTVERSION=	6.5.1

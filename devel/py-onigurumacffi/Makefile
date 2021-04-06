@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	onigurumacffi
 PORTVERSION=	0.0.21

@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=	gnudatalanguage
 PORTVERSION=	1.0.0

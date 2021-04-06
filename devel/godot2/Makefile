@@ -1,5 +1,4 @@
 # Created by: Shane Ambler <FreeBSD@Shaneware.biz>
-# $FreeBSD$
 
 PORTNAME=	godot
 DISTVERSION=	2.1.6

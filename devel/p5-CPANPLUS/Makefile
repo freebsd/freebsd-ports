@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <kappa@rambler-co.ru>
-# $FreeBSD$
 
 PORTNAME=	CPANPLUS
 PORTVERSION=	0.9910

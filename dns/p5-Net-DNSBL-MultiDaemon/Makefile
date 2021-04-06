@@ -1,5 +1,4 @@
 # Created by: Andrew Greenwood <greenwood.andy@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Net-DNSBL-MultiDaemon
 PORTVERSION=	0.39

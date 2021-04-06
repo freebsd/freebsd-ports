@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Growl-GNTP
 PORTVERSION=	0.21

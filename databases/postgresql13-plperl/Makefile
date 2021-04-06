@@ -1,5 +1,4 @@
 # Created by: Palle Girgensohn <girgen@partitur.se>
-# $FreeBSD$
 
 PORTNAME=	postgresql
 # Keep the ?=, this port is used as master by the other plperl.

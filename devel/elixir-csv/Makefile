@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	csv
 PORTVERSION=	2.1.1

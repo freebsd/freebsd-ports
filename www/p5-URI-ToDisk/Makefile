@@ -1,5 +1,4 @@
 # Created by: Cory R King <coryking@mozimedia.com>
-# $FreeBSD$
 
 PORTNAME=	URI-ToDisk
 PORTVERSION=	1.12

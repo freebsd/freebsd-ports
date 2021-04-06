@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gatk
 DISTVERSION=	4.2.0.0

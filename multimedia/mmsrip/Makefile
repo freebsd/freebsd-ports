@@ -1,5 +1,4 @@
 # Created by: Mun-Kyo Seo <munggo@pmy.lv>
-# $FreeBSD$
 
 PORTNAME=	mmsrip
 PORTVERSION=	0.7.0

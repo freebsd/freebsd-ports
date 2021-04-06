@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tblib
 PORTVERSION=	1.7.0

@@ -1,5 +1,4 @@
 # Created by: Fukang Chen <loader@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	semantic-version
 PORTVERSION=	2.8.5

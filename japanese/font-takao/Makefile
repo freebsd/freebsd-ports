@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	takao
 PORTVERSION=	003.02.01

@@ -1,5 +1,4 @@
 # Created by: Lapo Luchini <lapo@lapo.it>
-# $FreeBSD$
 
 PORTNAME=	rclean
 PORTVERSION=	1.14

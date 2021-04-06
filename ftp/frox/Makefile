@@ -1,5 +1,4 @@
 # Created by: Sergey Matveychuk <sem@ciam.ru>
-# $FreeBSD$
 
 PORTNAME=	frox
 PORTVERSION=	0.7.18

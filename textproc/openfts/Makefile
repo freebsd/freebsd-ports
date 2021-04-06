@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openfts
 PORTVERSION=	0.40

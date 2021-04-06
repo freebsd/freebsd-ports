@@ -1,5 +1,4 @@
 # Created by: Frank Wall <fw@moov.de>
-# $FreeBSD$
 
 PORTNAME=	omping
 PORTVERSION=	0.0.4

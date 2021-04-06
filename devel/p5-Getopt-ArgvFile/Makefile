@@ -1,5 +1,4 @@
 # Created by: Eric Schnoebelen <eric@cirr.com>
-# $FreeBSD$
 
 PORTNAME=	Getopt-ArgvFile
 PORTVERSION=	1.11

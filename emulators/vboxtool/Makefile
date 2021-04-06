@@ -1,5 +1,4 @@
 # Created by: pjm
-# $FreeBSD$
 
 PORTNAME=	vboxtool
 PORTVERSION=	0.5

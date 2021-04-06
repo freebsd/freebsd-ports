@@ -1,5 +1,4 @@
 # Created by: Rong-En Fan <rafan@infor.org>
-# $FreeBSD$
 
 PORTNAME=	PerlIO-via-symlink
 PORTVERSION=	0.05

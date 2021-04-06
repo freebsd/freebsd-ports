@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni <giffunip@asme.org>
-# $FreeBSD$
 
 PORTNAME=	metis
 PORTVERSION=	5.1.0

@@ -1,5 +1,4 @@
 # Created by: Guerkan Senguen <gurkan@phys.ethz.ch>
-# $FreeBSD$
 
 PORTNAME=	junicode
 DISTVERSION=	1.002

@@ -1,5 +1,4 @@
 # Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mp3wrap
 PORTVERSION=	0.5

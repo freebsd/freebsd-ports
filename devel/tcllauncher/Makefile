@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	tcllauncher
 PORTVERSION=	1.10

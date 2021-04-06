@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openpiv
 PORTVERSION=	0.23.4

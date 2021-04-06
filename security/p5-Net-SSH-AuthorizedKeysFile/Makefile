@@ -1,5 +1,4 @@
 # Created by: Stephon Chen <stephon@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Net-SSH-AuthorizedKeysFile
 PORTVERSION=	0.18

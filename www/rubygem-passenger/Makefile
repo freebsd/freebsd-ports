@@ -1,5 +1,4 @@
 # Created by: Jacob Atzen <jatzen@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	passenger
 PORTVERSION=	6.0.8

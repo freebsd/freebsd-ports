@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	u6rd
 PORTVERSION=	1.6

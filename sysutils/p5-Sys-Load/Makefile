@@ -1,5 +1,4 @@
 # Created by: Konstantin Menshikov <kostjnspb@yandex.ru>
-# $FreeBSD$
 
 PORTNAME=	Sys-Load
 PORTVERSION=	0.2

@@ -1,5 +1,4 @@
 # Created by: Christopher Nehren <apeiron@coitusmentis.info>
-# $FreeBSD$
 
 PORTNAME=	log4net
 PORTVERSION=	1.2.10

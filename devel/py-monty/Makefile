@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	monty
 DISTVERSION=	2021.3.3

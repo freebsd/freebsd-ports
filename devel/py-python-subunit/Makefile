@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-subunit
 DISTVERSION=	1.3.0

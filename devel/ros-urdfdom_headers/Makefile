@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ros-urdfdom_headers
 DISTVERSION=	1.0.4

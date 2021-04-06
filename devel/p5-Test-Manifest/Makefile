@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Manifest
 PORTVERSION=	2.022

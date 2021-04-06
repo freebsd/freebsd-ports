@@ -1,5 +1,4 @@
 # Created by: Jie Gao <gaoj@cpsc.ucalgary.ca>
-# $FreeBSD$
 
 PORTNAME=	scim-table-imengine
 PORTVERSION=	0.5.10

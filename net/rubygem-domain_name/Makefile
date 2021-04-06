@@ -1,5 +1,4 @@
 # Created by: MIHIRA Yoshiro <sanpei@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	domain_name
 PORTVERSION=	0.5.20170404

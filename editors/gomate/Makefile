@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gomate
 DISTVERSION=	g20170711

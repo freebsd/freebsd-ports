@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rsocket-cpp
 DISTVERSIONPREFIX=	v

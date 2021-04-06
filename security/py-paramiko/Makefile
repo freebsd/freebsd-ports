@@ -1,5 +1,4 @@
 # Created by: Ulf Lilleengen
-# $FreeBSD$
 
 PORTNAME=	paramiko
 PORTVERSION=	2.7.2

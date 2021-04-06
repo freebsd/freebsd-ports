@@ -1,5 +1,4 @@
 # Created by: tim@relay.nnn.tstu.ru
-# $FreeBSD$
 
 PORTNAME=	3proxy
 PORTVERSION=	0.9.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	asql
 DISTVERSIONPREFIX=	v

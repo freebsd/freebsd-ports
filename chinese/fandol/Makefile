@@ -1,5 +1,4 @@
 # Created by: <intron@intron.ac>
-# $FreeBSD$
 
 PORTNAME=	fandol
 PORTVERSION=	0.3

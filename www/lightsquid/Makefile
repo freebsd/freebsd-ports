@@ -1,5 +1,4 @@
 # Created by: Alexander Logvinov <info@logvinov.com>
-# $FreeBSD$
 
 PORTNAME=	lightsquid
 PORTVERSION=	1.8

@@ -1,5 +1,4 @@
 # Created by: pst
-# $FreeBSD$
 
 PORTNAME=	gsm
 DISTVERSION=	1.0.19

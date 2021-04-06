@@ -1,5 +1,4 @@
 # Created by: Paul Chvostek <paul@it.ca>
-# $FreeBSD$
 
 PORTNAME=	pxytest
 PORTVERSION=	1.36

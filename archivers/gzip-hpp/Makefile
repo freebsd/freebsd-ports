@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gzip-hpp
 DISTVERSIONPREFIX=	v

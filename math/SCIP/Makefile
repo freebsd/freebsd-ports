@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich <yuri@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	SCIP
 DISTVERSION=	7.0.2

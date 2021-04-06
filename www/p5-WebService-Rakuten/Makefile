@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	WebService-Rakuten
 PORTVERSION=	0.05

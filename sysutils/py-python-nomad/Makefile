@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-nomad
 PORTVERSION=	1.2.1

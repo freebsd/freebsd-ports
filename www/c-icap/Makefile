@@ -1,5 +1,4 @@
 # Created by: Elisey Savateev <b3k@mail.ru>
-# $FreeBSD$
 
 PORTNAME=	c-icap
 PORTVERSION=	0.5.7

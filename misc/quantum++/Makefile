@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	quantum++
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: torstenb
-# $FreeBSD$
 
 PORTNAME=	ircii
 PORTVERSION=	20190117

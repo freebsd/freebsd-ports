@@ -1,5 +1,4 @@
 # Created by: Daniel B. Hemmerich <dan@spot.org>
-# $FreeBSD$
 
 PORTNAME=	Text-FIGlet
 PORTVERSION=	2.19.4

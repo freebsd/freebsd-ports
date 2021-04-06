@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mailman
 PORTVERSION=	3.3.1

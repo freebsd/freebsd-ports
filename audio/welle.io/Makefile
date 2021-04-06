@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	welle.io
 DISTVERSION=	2.2

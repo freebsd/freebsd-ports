@@ -1,5 +1,4 @@
 # Created by: Jean-Sébastien Pédron <dumbbell@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	osm-gps-map
 PORTVERSION=	1.1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jacktrip
 DISTVERSIONPREFIX=	v

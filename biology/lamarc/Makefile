@@ -1,5 +1,4 @@
 # Created by: Johann Visagie <wjv@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lamarc
 PORTVERSION=	2.1.8

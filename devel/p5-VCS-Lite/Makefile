@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	VCS-Lite
 PORTVERSION=	0.12

@@ -1,5 +1,4 @@
 # Created by: dirkx@webweaving.org
-# $FreeBSD$
 
 PORTNAME=	bluegps-linux
 PORTVERSION=	2.0

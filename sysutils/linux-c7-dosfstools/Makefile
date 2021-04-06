@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dosfstools
 PORTVERSION=	3.0.20

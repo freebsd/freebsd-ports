@@ -1,5 +1,4 @@
 # Created by: Jim Ohlstein <jim@ohlste.in>
-# $FreeBSD$
 
 PORTNAME=	ct-submit
 PORTVERSION=	1.1.2

@@ -1,5 +1,4 @@
 # Created by: Masahiro Teramoto <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	Lingua-JA-Summarize-Extract
 PORTVERSION=	0.02

@@ -1,5 +1,4 @@
 # Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
-# $FreeBSD$
 
 PORTNAME=	softhsm
 PORTVERSION=	2.6.1

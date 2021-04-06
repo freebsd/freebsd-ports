@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		bowtie2
 DISTVERSIONPREFIX=	v

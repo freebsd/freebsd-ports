@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tomsfastmath
 PORTVERSION=	0.13.1

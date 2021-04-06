@@ -1,5 +1,4 @@
 # Created by: Philippe Audeoud <jadawin@tuxaco.net>
-# $FreeBSD$
 
 PORTNAME=	banihstypos
 PORTVERSION=	0.2

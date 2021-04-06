@@ -1,5 +1,4 @@
 # Created by: Vladimir Timofeev <vovkasm@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Model-Adaptor
 PORTVERSION=	0.10

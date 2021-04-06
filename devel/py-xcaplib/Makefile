@@ -1,5 +1,4 @@
 # Created by: Eugene Grosbein <ports@grosbein.net>
-# $FreeBSD$
 
 PORTNAME=	xcaplib
 PORTVERSION=	1.2.2

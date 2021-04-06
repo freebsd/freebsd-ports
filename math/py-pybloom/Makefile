@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pybloom
 PORTVERSION=	3.0.0

@@ -1,5 +1,4 @@
 # Created by: Martti Kuparinen <martti.kuparinen@ericsson.com>
-# $FreeBSD$
 
 PORTNAME=	stunnel
 PORTVERSION=	5.58

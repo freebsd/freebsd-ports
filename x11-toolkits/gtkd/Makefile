@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gtkd
 PORTVERSION=	3.9.0

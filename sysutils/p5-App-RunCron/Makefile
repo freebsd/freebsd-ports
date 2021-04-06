@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	App-RunCron
 PORTVERSION=	0.08

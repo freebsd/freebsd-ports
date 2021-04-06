@@ -1,5 +1,4 @@
 # Created by: rene
-# $FreeBSD$
 
 PORTNAME=	boinc-setiathome
 PORTVERSION=	8.00

@@ -1,5 +1,4 @@
 # Created by: Thomas Bernard <nanard@free.fr>
-# $FreeBSD$
 
 PORTNAME=	teo
 PORTVERSION=	1.8.4

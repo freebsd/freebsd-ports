@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang <perky@fallin.lv>
-# $FreeBSD$
 
 PORTNAME=	pygsl
 PORTVERSION=	2.3.0

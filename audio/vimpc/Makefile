@@ -1,5 +1,4 @@
 # Created by: Thomas Zander <riggs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vimpc
 PORTVERSION=	0.09.2

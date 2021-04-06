@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	anongitssh
 PORTVERSION=	0.2

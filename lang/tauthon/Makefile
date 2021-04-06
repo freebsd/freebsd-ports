@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # This Makefile was copied from lang/python27 and then gradually
 # adapted/cleaned-up for Tauthon.

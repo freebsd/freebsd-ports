@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	h5z-zfp
 DISTVERSIONPREFIX=	v

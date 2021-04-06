@@ -1,5 +1,4 @@
 # Created by: Christopher N. Harrell <cnh@ivmg.net>
-# $FreeBSD$
 
 PORTNAME=	NetAddr-IP
 PORTVERSION=	4.079

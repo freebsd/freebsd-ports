@@ -1,5 +1,4 @@
 # Created by: stas
-# $FreeBSD$
 
 PORTNAME=	verilog-mode.el
 PORTVERSION=	801

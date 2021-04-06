@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	faye
 PORTVERSION=	1.2.4

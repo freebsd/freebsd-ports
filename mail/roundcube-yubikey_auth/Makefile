@@ -1,5 +1,4 @@
 # Created by: Vidar Karlsen <vidar@karlsen.tech>
-# $FreeBSD$
 
 PORTNAME=	yubikey_auth
 PORTVERSION=	g20180404

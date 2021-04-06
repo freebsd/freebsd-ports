@@ -1,5 +1,4 @@
 # Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	clipmenu
 DISTVERSION=	6.1.0

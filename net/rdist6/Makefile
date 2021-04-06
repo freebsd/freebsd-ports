@@ -1,5 +1,4 @@
 # Created by: peter
-# $FreeBSD$
 
 PORTNAME=	rdist
 PORTVERSION=	6.1.5

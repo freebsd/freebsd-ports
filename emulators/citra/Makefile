@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	citra
 PORTVERSION=	s20210403

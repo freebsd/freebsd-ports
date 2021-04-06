@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine <tux@pinguru.net>
-# $FreeBSD$
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.31.10

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	HTML-WikiConverter-GoogleCode
 PORTVERSION=	0.12

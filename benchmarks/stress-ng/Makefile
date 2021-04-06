@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stress-ng
 PORTVERSION=	0.12.06

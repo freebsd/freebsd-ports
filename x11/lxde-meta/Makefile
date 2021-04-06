@@ -1,5 +1,4 @@
 # Created by: Daniel Walter <sahne@0x90.at>
-# $FreeBSD$
 
 PORTNAME=	lxde-meta
 PORTVERSION=	1.0

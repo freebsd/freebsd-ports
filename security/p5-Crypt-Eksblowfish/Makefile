@@ -1,5 +1,4 @@
 # Created by: brix@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Crypt-Eksblowfish
 PORTVERSION=	0.009

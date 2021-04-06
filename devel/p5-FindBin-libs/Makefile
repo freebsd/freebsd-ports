@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	FindBin-libs
 PORTVERSION=	2.1100

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ffmpeg-python
 DISTVERSION=	0.2.0

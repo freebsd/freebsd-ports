@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	creduce
 DISTVERSION=	2.10.0

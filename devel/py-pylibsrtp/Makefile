@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pylibsrtp
 PORTVERSION=	0.6.7

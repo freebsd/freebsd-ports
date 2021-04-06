@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rematch
 DISTVERSION=	1.0.1

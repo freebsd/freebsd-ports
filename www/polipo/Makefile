@@ -1,5 +1,4 @@
 # Created by: Frank Behrens <frank@pinky.sax.de>
-# $FreeBSD$
 
 PORTNAME=	polipo
 PORTVERSION=	1.1.1

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	rfbproxy
 PORTVERSION=	1.1.1

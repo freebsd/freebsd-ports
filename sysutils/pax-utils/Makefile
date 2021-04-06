@@ -1,5 +1,4 @@
 # Created by: Timothy Redaelli
-# $FreeBSD$
 
 PORTNAME=	pax-utils
 PORTVERSION=	1.2.2

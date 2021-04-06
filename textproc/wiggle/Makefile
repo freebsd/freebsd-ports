@@ -1,5 +1,4 @@
 # Created by: mandree@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	wiggle
 PORTVERSION=	1.3

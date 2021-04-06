@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	http-prompt
 PORTVERSION=	1.0.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ftputil
 PORTVERSION=	3.4

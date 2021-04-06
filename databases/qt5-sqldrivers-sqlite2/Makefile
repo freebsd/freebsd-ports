@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 
 DB=		SQLite2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	avldrums
 DISTVERSIONPREFIX=	v

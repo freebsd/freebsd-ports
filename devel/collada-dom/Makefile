@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	collada-dom
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Toshiya Saitoh (<toshiya@saitoh.nu>)
-# $FreeBSD$
 
 PORTNAME=	DB_Pager
 PORTVERSION=	0.7.2

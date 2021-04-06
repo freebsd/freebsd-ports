@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lrslib
 DISTVERSION=	071

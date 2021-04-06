@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-beetle_lynx
 PORTVERSION=	0.20210114

@@ -1,5 +1,4 @@
 # Created by: Johannes Lundberg <johalun0@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libepoll-shim
 DISTVERSIONPREFIX=	v

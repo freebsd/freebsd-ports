@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	postgres_ext
 PORTVERSION=	3.0.1

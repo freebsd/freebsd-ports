@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nanumfonts
 PORTVERSION=	20170921

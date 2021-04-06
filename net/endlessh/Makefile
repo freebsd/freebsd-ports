@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	endlessh
 PORTVERSION=	1.1

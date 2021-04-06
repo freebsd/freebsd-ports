@@ -1,5 +1,4 @@
 # Created by: clive
-# $FreeBSD$
 
 PORTNAME=	bitchx
 CATEGORIES=	chinese

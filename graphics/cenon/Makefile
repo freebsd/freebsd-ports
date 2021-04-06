@@ -1,5 +1,4 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cenon
 # Per r492056, 4.0.2 is the last version which actually works with GNUstep,

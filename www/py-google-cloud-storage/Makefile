@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	google-cloud-storage
 PORTVERSION=	1.36.1

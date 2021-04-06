@@ -1,5 +1,4 @@
 # Created by: dchapes@zeus.leitch.com
-# $FreeBSD$
 
 PORTNAME=	cflow
 PORTVERSION=	2.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	synctex
 PORTVERSION=	1.17.0

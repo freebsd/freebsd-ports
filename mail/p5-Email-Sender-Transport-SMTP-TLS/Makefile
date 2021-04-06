@@ -1,5 +1,4 @@
 # Created by: Alexandre Biancalana <ale@biancalanas.net>
-# $FreeBSD$
 
 PORTNAME=	Email-Sender-Transport-SMTP-TLS
 PORTVERSION=	0.15

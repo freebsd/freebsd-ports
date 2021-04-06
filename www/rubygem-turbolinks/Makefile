@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	turbolinks
 PORTVERSION=	5.2.1

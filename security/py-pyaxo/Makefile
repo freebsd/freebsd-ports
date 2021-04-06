@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich
-# $FreeBSD$
 
 PORTNAME=	pyaxo
 DISTVERSION=	0.8.2

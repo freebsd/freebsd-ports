@@ -1,5 +1,4 @@
 # Created by: Tassilo Philipp <tphilipp@potion-studios.com>
-# $FreeBSD$
 
 PORTNAME=		newlib
 PORTVERSION=		1.20.0

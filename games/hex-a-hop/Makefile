@@ -1,5 +1,4 @@
 # Created by: jamie
-# $FreeBSD$
 
 PORTNAME=	hex-a-hop
 PORTVERSION=	1.1.0

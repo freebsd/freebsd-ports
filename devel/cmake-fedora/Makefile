@@ -1,5 +1,4 @@
 # Created by: buganini@gmail.com
-# $FreeBSD$
 
 PORTNAME=	cmake-fedora
 PORTVERSION=	2.9.2

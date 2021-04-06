@@ -1,5 +1,4 @@
 # Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
-# $FreeBSD$
 
 PORTNAME=	hipercontracer
 PORTVERSION=	1.4.8

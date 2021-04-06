@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rush
 DISTVERSION=	2.1

@@ -1,5 +1,4 @@
 # Created by: Ralf Gebhart <gebhart@secnetix.de>
-# $FreeBSD$
 
 PORTNAME=	mod_umask
 PORTVERSION=	0.1.0

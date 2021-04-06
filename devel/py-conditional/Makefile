@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	conditional
 PORTVERSION=	1.0

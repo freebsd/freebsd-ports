@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	farbfeld
 DISTVERSION=	4

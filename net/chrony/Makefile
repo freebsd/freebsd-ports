@@ -1,5 +1,4 @@
 # Created by: Masaki TAGAWA <masaki@club.kyutech.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	chrony
 DISTVERSION=	4.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	linuxdcpp
 PORTVERSION=	1.1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTTP-Session-State-MobileAgentID
 PORTVERSION=	0.46

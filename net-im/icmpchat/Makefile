@@ -1,5 +1,4 @@
 # Created by: Matthew West <mwest@uct.ac.za>
-# $FreeBSD$
 
 PORTNAME=	icmpchat
 PORTVERSION=	0.6

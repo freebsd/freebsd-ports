@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	FFaudioConverter
 DISTVERSIONPREFIX=	v

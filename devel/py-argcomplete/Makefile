@@ -1,5 +1,4 @@
 # Created by: Tony Narlock <tony@git-pull.com>
-# $FreeBSD$
 
 PORTNAME=	argcomplete
 PORTVERSION=	1.12.2

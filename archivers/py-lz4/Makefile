@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lz4
 PORTVERSION=	2.1.10

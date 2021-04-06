@@ -1,5 +1,4 @@
 # Created by: Sun Chang-Ming
-# $FreeBSD$
 
 PORTNAME=	loki
 PORTVERSION=	0.1.7

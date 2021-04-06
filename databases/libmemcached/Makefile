@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libmemcached
 PORTVERSION=	1.0.18

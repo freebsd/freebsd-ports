@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	compute-runtime
 DISTVERSION=	21.13.19438

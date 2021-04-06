@@ -1,5 +1,4 @@
 # Created by: Torsten Zühlsdorff <ports@toco-domains.de>
-# $FreeBSD$
 
 PORTNAME=	akismet
 PORTVERSION=	3.0.0

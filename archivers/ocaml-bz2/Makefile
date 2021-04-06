@@ -1,5 +1,4 @@
 # Created by: Jaap Boender <jaapb@kerguelen.org>
-# $FreeBSD$
 
 PORTNAME=	bz2
 PORTVERSION=	0.6.0

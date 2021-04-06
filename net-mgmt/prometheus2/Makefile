@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	prometheus
 DISTVERSIONPREFIX=	v

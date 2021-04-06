@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Products.PloneLanguageTool
 PORTVERSION=	3.2.7

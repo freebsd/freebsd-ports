@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cpputest
 PORTVERSION=	4.0

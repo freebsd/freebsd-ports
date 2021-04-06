@@ -1,5 +1,4 @@
 # Created by: Meno Abels <meno.abels@adviser.com>
-# $FreeBSD$
 
 PORTNAME=	ucarp
 PORTVERSION=	1.5.2.20171201

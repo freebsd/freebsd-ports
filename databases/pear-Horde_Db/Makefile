@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Horde_Db
 PORTVERSION=	2.4.0

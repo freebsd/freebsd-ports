@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		maxcso
 DISTVERSIONPREFIX=	v

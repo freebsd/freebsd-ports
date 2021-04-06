@@ -1,5 +1,4 @@
 # Created by: UMENO Takashi
-# $FreeBSD$
 
 PORTNAME=	ninix-aya
 PORTVERSION=	5.0.9

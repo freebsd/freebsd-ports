@@ -1,5 +1,4 @@
 # Created by: Herbert J. Skuhra <h.skuhra@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	calcurse
 PORTVERSION=	4.5.1

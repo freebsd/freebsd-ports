@@ -1,5 +1,4 @@
 # Created by: Martin Neubauer <m.ne@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	pymediainfo
 PORTVERSION=	4.1

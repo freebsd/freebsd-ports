@@ -1,5 +1,4 @@
 # Created by: Aaron Zauner <az_mail@gmx.at>
-# $FreeBSD$
 
 PORTNAME=	aget
 PORTVERSION=	0.4.1

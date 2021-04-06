@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-LibLO
 PORTVERSION=	0.06

@@ -1,5 +1,4 @@
 # Created by: tg@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	gv
 PORTVERSION=	3.7.4

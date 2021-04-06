@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-dbusmock
 PORTVERSION=	0.22.0

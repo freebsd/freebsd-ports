@@ -1,5 +1,4 @@
 # Created by: Dereckson <dereckson@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	rhc
 PORTVERSION=	1.32.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 
 COMMENT=	Qt ${DB_DESC} plugin

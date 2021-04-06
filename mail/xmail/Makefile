@@ -1,5 +1,4 @@
 # Created by: Stephen Roznowski <sjr1@flash.net>
-# $FreeBSD$
 
 PORTNAME=	xmail
 PORTVERSION=	1.6

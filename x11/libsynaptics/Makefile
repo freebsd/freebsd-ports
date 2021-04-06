@@ -1,5 +1,4 @@
 # Created by: Markus Brueffer <markus@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libsynaptics
 DISTVERSION=	0.14.6c

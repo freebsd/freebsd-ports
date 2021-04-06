@@ -1,5 +1,4 @@
 # Created by: Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
-# $FreeBSD$
 
 PORTNAME=	ods2reader
 PORTVERSION=	19930601

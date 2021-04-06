@@ -1,5 +1,4 @@
 # Created by: Dave McKay <dave@mu.org>
-# $FreeBSD$
 
 PORTNAME=	libcryptui
 PORTVERSION=	3.12.2

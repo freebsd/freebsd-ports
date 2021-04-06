@@ -1,5 +1,4 @@
 # Created by: Emmanuel Vadot <manu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	havoc
 PORTVERSION=	0.3.1

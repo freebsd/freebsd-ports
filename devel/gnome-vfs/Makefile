@@ -1,5 +1,4 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gnome-vfs
 PORTVERSION=	2.24.4

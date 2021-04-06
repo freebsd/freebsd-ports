@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan <gabor@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Digest-SHA-PurePerl
 PORTVERSION=	5.96

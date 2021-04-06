@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	macholib
 PORTVERSION=	1.11

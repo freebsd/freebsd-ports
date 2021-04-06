@@ -1,5 +1,4 @@
 # Created by: Juergen Lock <nox@jelal.kn-bremen.de>
-# $FreeBSD$
 
 PORTNAME=	p7zip
 PORTVERSION=	16.02

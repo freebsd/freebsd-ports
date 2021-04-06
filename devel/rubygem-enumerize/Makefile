@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	enumerize
 PORTVERSION=	2.2.2

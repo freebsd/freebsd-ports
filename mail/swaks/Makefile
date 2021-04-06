@@ -1,5 +1,4 @@
 # Created by: Oliver Eikemeier
-# $FreeBSD$
 
 PORTNAME=	swaks
 PORTVERSION=	20201010.0

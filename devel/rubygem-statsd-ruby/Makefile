@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	statsd-ruby
 PORTVERSION=	1.4.0

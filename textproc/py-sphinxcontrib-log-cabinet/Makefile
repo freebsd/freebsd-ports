@@ -1,5 +1,4 @@
 # Created by: Nicola Stanislao Vitale <nivit@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sphinxcontrib-log-cabinet
 PORTVERSION=	1.0.1

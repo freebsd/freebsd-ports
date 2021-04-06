@@ -1,5 +1,4 @@
 # Created by: MIHIRA Yoshiro <sanpei@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	unf_ext
 PORTVERSION=	0.0.7.5

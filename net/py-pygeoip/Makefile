@@ -1,5 +1,4 @@
 # Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pygeoip
 PORTVERSION=	0.3.2

@@ -1,5 +1,4 @@
 # Created by: Cyrille Szymanski <cnszym@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	dlmodeler
 DISTVERSION=	1.4-2

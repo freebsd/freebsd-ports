@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CGI-Enurl
 PORTVERSION=	1.07

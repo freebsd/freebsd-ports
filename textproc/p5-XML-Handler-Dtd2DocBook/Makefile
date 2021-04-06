@@ -1,5 +1,4 @@
 # Created by: chinsan <chinsan.tw@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	XML-Handler-Dtd2DocBook
 PORTVERSION=	0.41

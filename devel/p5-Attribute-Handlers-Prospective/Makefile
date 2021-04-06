@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Attribute-Handlers-Prospective
 PORTVERSION=	0.01

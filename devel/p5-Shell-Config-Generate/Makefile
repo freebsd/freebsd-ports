@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Shell-Config-Generate
 PORTVERSION=	0.34

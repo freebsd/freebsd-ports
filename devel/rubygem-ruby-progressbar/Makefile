@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ruby-progressbar
 PORTVERSION=	1.11.0

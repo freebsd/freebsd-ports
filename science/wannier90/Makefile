@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wannier90
 DISTVERSIONPREFIX=	v

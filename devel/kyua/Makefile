@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kyua
 PORTVERSION=	0.13

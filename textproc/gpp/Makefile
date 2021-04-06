@@ -1,5 +1,4 @@
 # Created by: Jos Backus <josb@cncdsl.com>
-# $FreeBSD$
 
 PORTNAME=	gpp
 PORTVERSION=	2.24

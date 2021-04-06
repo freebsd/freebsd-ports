@@ -1,5 +1,4 @@
 # Created by: Martin Tournoij <carpetsmoker@rwxrwxrwx.net>
-# $FreeBSD$
 
 PORTNAME=	geeqie
 PORTVERSION=	1.6

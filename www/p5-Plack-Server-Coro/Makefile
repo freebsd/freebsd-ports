@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Server-Coro
 PORTVERSION=	0.02

@@ -1,5 +1,4 @@
 # Created by: Garrett Rooney <rooneg@electricjellyfish.net>
-# $FreeBSD$
 
 PORTNAME=	marco
 PORTVERSION=	1.24.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 # Created by: Guangyuan Yang <ygy@FreeBSD.org>
 
 PORTNAME=	rversions

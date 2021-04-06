@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	crosextrafonts
 PORTVERSION=	20130214

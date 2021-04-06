@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Monetary, financial, and related applications
 

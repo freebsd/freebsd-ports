@@ -1,5 +1,4 @@
 # Created by: ericyu@mail2000.com.tw
-# $FreeBSD$
 
 PORTNAME=	xdesktopwaves
 PORTVERSION=	1.4

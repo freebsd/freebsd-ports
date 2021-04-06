@@ -1,5 +1,4 @@
 # Created by: Will Andrews <will@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	XML-TreeBuilder
 PORTVERSION=	5.4

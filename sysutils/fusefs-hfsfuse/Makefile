@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hfsfuse
 DISTVERSION=	g20180118

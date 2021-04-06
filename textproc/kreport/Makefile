@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		kreport
 DISTVERSION=		3.2.0

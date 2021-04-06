@@ -1,5 +1,4 @@
 # Created by: Vladimir Laskov <samflanker@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	megacli
 DISTVERSION=	8-07-14

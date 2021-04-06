@@ -1,5 +1,4 @@
 # Created by: chinsan <chinsan.tw@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	XML-SAXDriver-Excel
 PORTVERSION=	0.06

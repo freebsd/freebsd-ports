@@ -1,5 +1,4 @@
 # Created by: nbm
-# $FreeBSD$
 
 PORTNAME=	phppgadmin
 DISTVERSIONPREFIX=	REL_

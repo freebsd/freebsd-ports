@@ -1,5 +1,4 @@
 # Created by: rea-fbsd@codelabs.ru
-# $FreeBSD$
 
 PORTNAME=	geom
 PORTVERSION=	1.3

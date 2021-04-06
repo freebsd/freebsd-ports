@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Search-Sitemap
 PORTVERSION=	2.13

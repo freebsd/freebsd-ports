@@ -1,5 +1,4 @@
 # Created by: Michael Nottebrock <lofi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bastet
 PORTVERSION=	0.43.2

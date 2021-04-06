@@ -1,5 +1,4 @@
 # Created by: chuckr@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	global
 PORTVERSION=	6.6.5

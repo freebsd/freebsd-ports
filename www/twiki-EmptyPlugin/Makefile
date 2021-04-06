@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	EmptyPlugin
 SVNREV=		16417

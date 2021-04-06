@@ -1,5 +1,4 @@
 # Created by: Emmanuel Vadot <manu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	VVVVVV
 PORTVERSION=	v2.2

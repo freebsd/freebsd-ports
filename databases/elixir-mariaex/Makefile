@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mariaex
 PORTVERSION=	0.8.4

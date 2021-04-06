@@ -1,5 +1,4 @@
 # Created by: John Hay
-# $FreeBSD$
 
 PORTNAME=	gpsmanshp
 PORTVERSION=	1.2.3

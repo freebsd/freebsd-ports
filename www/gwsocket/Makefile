@@ -1,5 +1,4 @@
 # Created by: Daniel Morante <daniel@morante.net>
-# $FreeBSD$
 
 PORTNAME=	gwsocket
 PORTVERSION=	0.3

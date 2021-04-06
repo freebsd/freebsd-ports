@@ -1,5 +1,4 @@
 # Created by: David O'Brien (obrien@cs.ucdavis.edu)
-# $FreeBSD$
 
 PORTNAME=	aub
 PORTVERSION=	2.2

@@ -1,5 +1,4 @@
 # Created by: KIMURA Yasuhiro <yasu@utahime.org>
-# $FreeBSD$
 
 PORTNAME=	with-editor
 DISTVERSIONPREFIX=	v

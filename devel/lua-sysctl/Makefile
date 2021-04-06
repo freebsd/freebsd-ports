@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sysctl
 PORTVERSION=	2.0

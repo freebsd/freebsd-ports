@@ -1,5 +1,4 @@
 # Created by: V. Jahns <vj562001@yahoo.de>
-# $FreeBSD$
 
 PORTNAME=	wmname
 PORTVERSION=	0.1

@@ -1,5 +1,4 @@
 # Created by: torstenb@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	mc
 PORTVERSION=	4.8.26

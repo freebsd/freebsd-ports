@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	ctrlproxy
 PORTVERSION=	3.0.8

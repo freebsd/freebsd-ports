@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	routinator
 PORTVERSION=	0.8.3

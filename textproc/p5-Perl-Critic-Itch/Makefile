@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Perl-Critic-Itch
 PORTVERSION=	0.07

@@ -1,5 +1,4 @@
 # Created by: Joe Barbish
-# $FreeBSD$
 
 PORTNAME=	dynip
 PORTVERSION=	0.0

@@ -1,5 +1,4 @@
 # Created by: Dean Hollister <dean@odyssey.apana.org.au>
-# $FreeBSD$
 
 PORTNAME=	dcc-dccd
 PORTVERSION=	2.3.167

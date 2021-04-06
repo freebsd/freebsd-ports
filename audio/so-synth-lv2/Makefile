@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	so-synth
 DISTVERSIONPREFIX=	upstream/

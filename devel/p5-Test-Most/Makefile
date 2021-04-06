@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Most
 PORTVERSION=	0.37

@@ -1,5 +1,4 @@
 # Created by: pozar
-# $FreeBSD$
 
 PORTNAME=	tuneradio
 PORTVERSION=	1.3

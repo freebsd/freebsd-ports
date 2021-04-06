@@ -1,5 +1,4 @@
 # Created by: Cyrille Lefevre <clefevre@citeweb.net>
-# $FreeBSD$
 
 PORTNAME=	stow
 PORTVERSION=	2.3.1

@@ -1,5 +1,4 @@
 # Created by: Wen Heping<wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Astro-App-Satpass2
 PORTVERSION=	0.046

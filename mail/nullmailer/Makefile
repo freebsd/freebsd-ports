@@ -1,5 +1,4 @@
 # Created by: clive
-# $FreeBSD$
 
 PORTNAME=	nullmailer
 PORTVERSION=	2.2

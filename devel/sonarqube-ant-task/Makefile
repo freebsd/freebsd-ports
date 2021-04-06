@@ -1,5 +1,4 @@
 # Created by: Dusan Vejnovic <freebsd@dussan.org>
-# $FreeBSD$
 
 PORTNAME=	sonarqube-ant-task
 PORTVERSION=	2.7.0.1612

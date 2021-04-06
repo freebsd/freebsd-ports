@@ -1,5 +1,4 @@
 # Created by: demon@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	glm
 PORTVERSION=	0.9.9.8

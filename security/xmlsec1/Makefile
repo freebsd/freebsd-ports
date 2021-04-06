@@ -1,5 +1,4 @@
 # Created by: Jim Geovedi <jim@corebsd.or.id>
-# $FreeBSD$
 
 PORTNAME=	xmlsec1
 PORTVERSION=	1.2.29

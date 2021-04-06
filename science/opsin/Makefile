@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opsin
 DISTVERSION=	3.0.20190223

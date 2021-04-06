@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-rest-swagger
 DISTVERSION=	2.2.0

@@ -1,5 +1,4 @@
 # Created by: Christopher Preston <rbg@gayteenresource.org>
-# $FreeBSD$
 
 PORTNAME=	nettoe
 PORTVERSION=	1.5.1

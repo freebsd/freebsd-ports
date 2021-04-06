@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang <perky@python.or.kr>
-# $FreeBSD$
 
 PORTNAME=	libart_lgpl
 PORTVERSION=	2.3.21

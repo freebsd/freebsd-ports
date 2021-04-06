@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	hdf5
 PORTVERSION=	1.8.21 # When PORTVERSION changes, please update french/med/files/patch-configure

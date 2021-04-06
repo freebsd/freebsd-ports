@@ -1,5 +1,4 @@
 # Created by: Matthieu Guegan <matt.guegan@free.fr>
-# $FreeBSD$
 
 PORTNAME=	xmonad
 PORTVERSION=	0.15

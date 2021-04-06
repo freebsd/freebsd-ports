@@ -1,5 +1,4 @@
 # Created by: KIRIYAMA Kazuhiko <kiri@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	fop
 DISTVERSION=	2.5

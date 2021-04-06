@@ -1,5 +1,4 @@
 # Created by: Danny Warren <danny@dannywarren.com>
-# $FreeBSD$
 
 PORTNAME=	CatalystX-AppBuilder
 PORTVERSION=	0.00011

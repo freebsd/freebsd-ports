@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	llvm
 DISTVERSION=	9.0.1

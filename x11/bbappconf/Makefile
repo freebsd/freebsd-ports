@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine <tux@pinguru.net>
-# $FreeBSD$
 
 PORTNAME=	bbappconf
 PORTVERSION=	0.0.2

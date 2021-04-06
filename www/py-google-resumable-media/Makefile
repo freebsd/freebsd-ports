@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	google-resumable-media
 PORTVERSION=	1.2.0

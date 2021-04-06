@@ -1,5 +1,4 @@
 # Created by: Raffaele De Lorenzo - raffaele.delorenzo@libero.it
-# $FreeBSD$
 
 PORTNAME=	csocks
 PORTVERSION=	1.7

@@ -1,5 +1,4 @@
 # Created by: lippe
-# $FreeBSD$
 
 PORTNAME=	Test-Portability-Files
 PORTVERSION=	0.10

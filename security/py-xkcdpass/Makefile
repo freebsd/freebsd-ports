@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xkcdpass
 DISTVERSIONPREFIX=	${PORTNAME}-

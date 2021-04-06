@@ -1,5 +1,4 @@
 # Created by: Rick & Samu
-# $FreeBSD$
 
 PORTNAME=	sniff
 PORTVERSION=	1.0

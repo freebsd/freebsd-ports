@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qtpaths
 DISTVERSION=	${QT5_VERSION}

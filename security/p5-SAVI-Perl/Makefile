@@ -1,5 +1,4 @@
 # Created by: Gary Hayers <Gary@Hayers.net>
-# $FreeBSD$
 
 PORTNAME=	SAVI-Perl
 PORTVERSION=	0.30

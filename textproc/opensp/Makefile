@@ -1,5 +1,4 @@
 # Created by: kuriyama
-# $FreeBSD$
 
 PORTNAME=	OpenSP
 PORTVERSION=	1.5.2

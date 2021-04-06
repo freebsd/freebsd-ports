@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mpv-mpris
 DISTVERSION=	0.5

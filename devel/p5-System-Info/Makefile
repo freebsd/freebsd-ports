@@ -1,5 +1,4 @@
 # Created by: James E Keenan <jkeenan@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	System-Info
 PORTVERSION=	0.058

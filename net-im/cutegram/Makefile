@@ -1,5 +1,4 @@
 # Created by: Henry Hu <henry.hu.sh@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	cutegram
 PORTVERSION=	2.7.1

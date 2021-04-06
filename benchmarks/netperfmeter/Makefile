@@ -1,5 +1,4 @@
 # Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
-# $FreeBSD$
 
 PORTNAME=	netperfmeter
 PORTVERSION=	1.8.6

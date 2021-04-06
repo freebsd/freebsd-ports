@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	getmail6
 DISTVERSIONPREFIX=	v

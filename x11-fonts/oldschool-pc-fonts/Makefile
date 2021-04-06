@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oldschool-pc-fonts
 PORTVERSION=	1.0

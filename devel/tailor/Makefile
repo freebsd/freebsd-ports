@@ -1,5 +1,4 @@
 # Created by: Rui Lopes <rgl ruilopes com>
-# $FreeBSD$
 
 PORTNAME=	tailor
 PORTVERSION=	0.9.36

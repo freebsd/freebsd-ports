@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	OpenDiablo2
 DISTVERSIONPREFIX=	v

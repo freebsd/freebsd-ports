@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dustrac
 PORTVERSION=	2.0.3

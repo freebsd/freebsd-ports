@@ -1,5 +1,4 @@
 # Created by: Domas Mituzas <midom@dammit.lt>
-# $FreeBSD$
 
 PORTNAME=	sqsh
 PORTVERSION=	2.5.16.1

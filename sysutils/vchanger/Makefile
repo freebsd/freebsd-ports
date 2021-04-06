@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vchanger
 PORTVERSION=	1.0.3

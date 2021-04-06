@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kgraphviewer
 DISTVERSION=	2.4.3

@@ -1,5 +1,4 @@
 # Created by: Tyler Spivey
-# $FreeBSD$
 
 PORTNAME=	beep
 PORTVERSION=	1.0

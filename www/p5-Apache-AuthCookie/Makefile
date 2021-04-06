@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Apache-AuthCookie
 PORTVERSION=	3.30

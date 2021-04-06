@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
-# $FreeBSD$
 
 PORTNAME=	logging
 PORTVERSION=	2.3.0

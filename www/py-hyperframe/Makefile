@@ -1,5 +1,4 @@
 # Created by: Shaun Amott <shaun@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hyperframe
 PORTVERSION=	6.0.0

@@ -1,5 +1,4 @@
 # Created by: Martti Kuparinen <martti.kuparinen@iki.fi>
-# $FreeBSD$
 
 PORTNAME=	isakmpd
 PORTVERSION=	20041207

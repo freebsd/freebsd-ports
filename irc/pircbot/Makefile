@@ -1,5 +1,4 @@
 # Created by: Tim Bishop <tim@bishnet.net>
-# $FreeBSD$
 
 PORTNAME=	pircbot
 PORTVERSION=	1.5.0

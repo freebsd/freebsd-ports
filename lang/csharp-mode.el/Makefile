@@ -1,5 +1,4 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	csharp-mode.el
 PORTVERSION=	0.9.2

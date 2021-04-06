@@ -1,5 +1,4 @@
 # Created by: Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
-# $FreeBSD$
 
 PORTNAME?=	xpbiff
 PORTVERSION?=	1.27

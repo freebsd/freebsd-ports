@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	arr-pm
 PORTVERSION=	0.0.10

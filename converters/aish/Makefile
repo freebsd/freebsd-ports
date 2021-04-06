@@ -1,5 +1,4 @@
 # Created by: Masanori Kiriake <seiken@nbs.co.jp>
-# $FreeBSD$
 
 PORTNAME=	aish
 PORTVERSION=	1.13

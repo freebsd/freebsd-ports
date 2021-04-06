@@ -1,5 +1,4 @@
 # Created by: Romain Tartiere <romain@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lcov
 PORTVERSION=	1.14

@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
-# $FreeBSD$
 
 PORTNAME=	alt-aspell
 SPELLVERSION=	6-de-alt-2.1-1

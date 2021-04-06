@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kannel-sqlbox
 PORTVERSION=	1.0.1

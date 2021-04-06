@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fatal
 DISTVERSIONPREFIX=	v

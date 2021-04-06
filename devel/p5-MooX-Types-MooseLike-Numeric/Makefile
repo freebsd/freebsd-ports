@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	MooX-Types-MooseLike-Numeric
 PORTVERSION=	1.03

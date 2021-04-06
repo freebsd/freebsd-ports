@@ -1,5 +1,4 @@
 # Created by: andrej@ebert.su
-# $FreeBSD$
 
 PORTNAME=	safe
 PORTVERSION=	0.4

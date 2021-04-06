@@ -1,5 +1,4 @@
 # Created by: Dereckson <dereckson@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Text-CSV-Encoded
 PORTVERSION=	0.25

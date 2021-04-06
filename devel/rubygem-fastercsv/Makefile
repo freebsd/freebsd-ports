@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	fastercsv
 PORTVERSION=	1.5.5

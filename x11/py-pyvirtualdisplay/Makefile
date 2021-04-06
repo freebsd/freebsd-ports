@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyvirtualdisplay
 PORTVERSION=	0.2.4

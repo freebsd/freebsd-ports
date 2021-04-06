@@ -1,5 +1,4 @@
 # Created by: Christopher Knaust <jigboe@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	surf
 DISTVERSION=	2.0

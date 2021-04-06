@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	reno
 DISTVERSION=	2.9.2

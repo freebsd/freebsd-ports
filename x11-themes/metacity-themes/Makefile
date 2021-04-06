@@ -1,5 +1,4 @@
 # Created by: Remington Lang <MrL0L@charter.net>
-# $FreeBSD$
 
 # Port logic stolen from x11-themes/kde-icons-noia by
 # lioux@.

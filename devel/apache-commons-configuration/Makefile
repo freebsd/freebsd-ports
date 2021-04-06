@@ -1,5 +1,4 @@
 # Created by: Herve Quiroz <hq@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	commons-configuration
 PORTVERSION=	1.10

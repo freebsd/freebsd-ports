@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Chen
-# $FreeBSD$
 
 PORTNAME=	Devel-LexAlias
 PORTVERSION=	0.05

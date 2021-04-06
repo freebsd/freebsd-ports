@@ -1,5 +1,4 @@
 # Created by: David K. Gerry
-# $FreeBSD$
 
 PORTNAME=	eflite
 PORTVERSION=	0.4.1

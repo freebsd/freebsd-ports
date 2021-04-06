@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xcb-util-errors
 PORTVERSION=	1.0

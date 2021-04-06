@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v

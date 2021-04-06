@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clion
 PORTVERSION=	2020.3.3

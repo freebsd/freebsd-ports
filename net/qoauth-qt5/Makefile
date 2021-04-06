@@ -1,5 +1,4 @@
 # Created by: Dima Panov <fluffy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	qoauth
 PORTVERSION=	2.0.0

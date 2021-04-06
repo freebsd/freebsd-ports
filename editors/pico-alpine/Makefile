@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pico-alpine
 PORTREVISION=	0

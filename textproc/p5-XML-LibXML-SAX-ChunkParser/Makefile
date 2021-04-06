@@ -1,5 +1,4 @@
 # Created by: ports@c0decafe.net
-# $FreeBSD$
 
 PORTNAME=	XML-LibXML-SAX-ChunkParser
 PORTVERSION=	0.00008

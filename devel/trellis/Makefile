@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	trellis
 PORTVERSION=	g20190422

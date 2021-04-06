@@ -1,5 +1,4 @@
 # Created by: jfreund
-# $FreeBSD$
 
 PORTNAME=	cdeploy
 PORTVERSION=	0.2.1

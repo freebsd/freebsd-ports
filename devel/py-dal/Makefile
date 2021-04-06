@@ -1,5 +1,4 @@
 # Created by: Andriy Pylypenko <bamby@sippysoft.com>
-# $FreeBSD$
 
 PORTNAME=	dal
 PORTVERSION=	20081016

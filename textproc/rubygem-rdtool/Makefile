@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rdtool
 PORTVERSION=	0.6.38

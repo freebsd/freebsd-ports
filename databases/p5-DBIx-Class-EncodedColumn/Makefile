@@ -1,5 +1,4 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-EncodedColumn
 PORTVERSION=	0.00020

@@ -1,5 +1,4 @@
 # Created by: Samuel Tardieu <sam@rfc1149.net>
-# $FreeBSD$
 
 PORTNAME=	gputils
 DISTVERSION=	1.5.0-1

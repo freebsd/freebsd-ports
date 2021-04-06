@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	twitter-text
 DISTVERSION=	1.14.7

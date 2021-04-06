@@ -1,5 +1,4 @@
 # Created by: Rui Lopes (<rgl ruilopes com>)
-# $FreeBSD$
 
 PORTNAME=	gem_plugin
 PORTVERSION=	0.2.3

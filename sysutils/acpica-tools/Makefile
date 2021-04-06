@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	acpica
 PORTVERSION=	20210105

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	couchdb3
 DISTVERSION=	3.1.1

@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 COMMENT=	The ${PHP_MODNAME} shared extension for php
 
 USES+=	php:ext,noflavors

@@ -1,5 +1,4 @@
 # Created by: TAKANO Yuji <takano@net-chef.net>
-# $FreeBSD$
 
 PORTNAME=	irrd
 PORTVERSION=	2.3.10

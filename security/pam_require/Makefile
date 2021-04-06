@@ -1,5 +1,4 @@
 # Created by: Chris Cowart <ccowart@rescomp.berkeley.edu>
-# $FreeBSD$
 
 PORTNAME=	pam_require
 PORTVERSION=	0.7

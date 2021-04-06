@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kwallet-pam
 DISTVERSION=	${KDE_PLASMA_VERSION}

@@ -1,5 +1,4 @@
 # Created by: Tim van der Hoek <hoek@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	44bsd-more
 PORTVERSION=	${RELDATE}

@@ -1,5 +1,4 @@
 # Created by: Frank Wall <fw@moov.de>
-# $FreeBSD$
 
 PORTNAME=	mod_backtrace
 PORTVERSION=	1.0

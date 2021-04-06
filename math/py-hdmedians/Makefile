@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hdmedians
 PORTVERSION=	0.14.2

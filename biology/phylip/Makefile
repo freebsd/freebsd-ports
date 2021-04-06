@@ -1,5 +1,4 @@
 # Created by: David A. Bader <dbader@eece.unm.edu>
-# $FreeBSD$
 
 PORTNAME=	phylip
 PORTVERSION=	3.697

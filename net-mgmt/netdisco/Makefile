@@ -1,5 +1,4 @@
 # Created by: Shaun Amott <shaun@inerd.com>
-# $FreeBSD$
 
 PORTNAME=	netdisco
 DISTVERSION=	2.047002

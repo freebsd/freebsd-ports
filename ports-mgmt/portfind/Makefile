@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	portfind
 PORTVERSION=	1.6.3

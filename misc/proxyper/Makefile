@@ -1,5 +1,4 @@
 # Created by: globalpanic@gmx.net
-# $FreeBSD$
 
 PORTNAME=	proxyper
 PORTVERSION=	347

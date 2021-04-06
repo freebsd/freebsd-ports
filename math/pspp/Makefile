@@ -1,5 +1,4 @@
 # Created by: Andrew L. Neporada <andrew@chg.ru>
-# $FreeBSD$
 
 PORTNAME=	pspp
 PORTVERSION=	1.4.1

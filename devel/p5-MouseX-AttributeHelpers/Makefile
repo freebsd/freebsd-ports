@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MouseX-AttributeHelpers
 PORTVERSION=	0.07

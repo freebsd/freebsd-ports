@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	multimedia lang
 PKGNAMESUFFIX=	-libvlc

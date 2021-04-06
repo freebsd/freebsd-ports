@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Flask-Admin
 PORTVERSION=	1.5.6

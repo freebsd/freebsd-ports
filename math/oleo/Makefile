@@ -1,5 +1,4 @@
 # Created by: mr
-# $FreeBSD$
 
 PORTNAME=	oleo
 PORTVERSION=	1.99.16

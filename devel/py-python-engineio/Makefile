@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-engineio
 PORTVERSION=	3.14.2

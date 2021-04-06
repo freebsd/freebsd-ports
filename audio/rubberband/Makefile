@@ -1,5 +1,4 @@
 # Created by: mathias.picker@gmx.de
-# $FreeBSD$
 
 PORTNAME=	rubberband
 DISTVERSION=	1.9.0

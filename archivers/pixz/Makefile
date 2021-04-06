@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pixz
 PORTVERSION=	1.0.7

@@ -1,5 +1,4 @@
 # Created by: Bob Zimmermann <rpz@cse.wustl.edu>
-# $FreeBSD$
 
 PORTNAME=	gmap
 PORTVERSION=	2020.09.12

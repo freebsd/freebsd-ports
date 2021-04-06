@@ -1,5 +1,4 @@
 # Created by: Martin Tournoij <carpetsmoker@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	pqiv
 PORTVERSION=	2.11

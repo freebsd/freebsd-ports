@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	snapcast
 DISTVERSIONPREFIX=	v

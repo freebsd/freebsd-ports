@@ -1,5 +1,4 @@
 # Created by: Mikhail T. <mi@aldan.algebra.com>
-# $FreeBSD$
 
 PORTNAME=	jxgrabkey
 PORTVERSION=	0.3.2

@@ -1,5 +1,4 @@
 # Created by: Kurt Lidl <kurt.lidl@cello.com>
-# $FreeBSD$
 
 PORTNAME=	TheSchwartz-Worker-SendEmail
 PORTVERSION=	1.00

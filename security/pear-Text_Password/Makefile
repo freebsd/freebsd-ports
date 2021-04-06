@@ -1,5 +1,4 @@
 # Created by: Attila Nagy <bra@fsn.hu>
-# $FreeBSD$
 
 PORTNAME=	Text_Password
 PORTVERSION=	1.2.1

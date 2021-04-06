@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	choria
 PORTVERSION=	0.20.2

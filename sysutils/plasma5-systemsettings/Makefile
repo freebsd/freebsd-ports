@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	systemsettings
 DISTVERSION=	${KDE_PLASMA_VERSION}

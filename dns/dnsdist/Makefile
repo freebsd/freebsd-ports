@@ -1,5 +1,4 @@
 # Created by: Carlos J Puga Medina <cpm@fbsd.es>
-# $FreeBSD$
 
 PORTNAME=	dnsdist
 DISTVERSION=	1.5.1

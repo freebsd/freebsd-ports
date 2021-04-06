@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cmrtlib
 DISTVERSIONPREFIX=	intel-media-

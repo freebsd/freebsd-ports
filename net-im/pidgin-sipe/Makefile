@@ -1,5 +1,4 @@
 # Created by: John Prather
-# $FreeBSD$
 
 PORTNAME=	pidgin-sipe
 PORTVERSION=	1.24.0

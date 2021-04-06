@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Captcha-reCAPTCHA
 PORTVERSION=	0.99

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	incidenceeditor
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

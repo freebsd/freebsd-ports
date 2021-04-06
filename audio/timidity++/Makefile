@@ -1,5 +1,4 @@
 # Created by: Yoichi Asai <yatt@luna2.org>
-# $FreeBSD$
 
 PORTNAME=	timidity++
 PORTVERSION=	2.15.0

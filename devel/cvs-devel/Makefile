@@ -1,5 +1,4 @@
 # Created by: Balwinder S Dheeman <bdheeman@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	cvs
 PORTVERSION=	1.12.13

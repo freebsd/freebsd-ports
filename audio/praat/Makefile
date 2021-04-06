@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		praat
 DISTVERSIONPREFIX=	v

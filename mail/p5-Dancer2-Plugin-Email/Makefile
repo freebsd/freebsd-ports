@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Dancer2-Plugin-Email
 PORTVERSION=	0.0202

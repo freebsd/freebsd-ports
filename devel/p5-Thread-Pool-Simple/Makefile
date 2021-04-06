@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Thread-Pool-Simple
 PORTVERSION=	0.25

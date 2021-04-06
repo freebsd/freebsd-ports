@@ -1,5 +1,4 @@
 # Created by: lightside <lightside@gmx.com>
-# $FreeBSD$
 
 PORTNAME=	pioneer
 DISTVERSION=	0.0.${GH_TAGNAME}

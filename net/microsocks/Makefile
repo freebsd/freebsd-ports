@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	microsocks
 PORTVERSION=	1.0.2

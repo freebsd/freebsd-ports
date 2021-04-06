@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	regex2dfa
 DISTVERSION=	0.1.6

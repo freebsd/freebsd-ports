@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kea
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/-beta/b/:S/a/.a/:S/rc/.rc/}

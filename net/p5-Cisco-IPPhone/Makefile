@@ -1,5 +1,4 @@
 # Created by: Simun Mikecin < numisemis at yahoo dot com >
-# $FreeBSD$
 
 PORTNAME=	Cisco-IPPhone
 PORTVERSION=	0.05

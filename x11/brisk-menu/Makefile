@@ -1,5 +1,4 @@
 # Created by: Eric Turgeon <ericbsd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	brisk-menu
 DISTVERSIONPREFIX=	v

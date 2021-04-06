@@ -1,5 +1,4 @@
 # Created by: Ralf S. Engelschall <rse@gnu.org>
-# $FreeBSD$
 
 PORTNAME=	pth
 PORTVERSION=	2.0.7

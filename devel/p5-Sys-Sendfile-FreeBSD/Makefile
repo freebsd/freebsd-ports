@@ -1,5 +1,4 @@
 # Created by: Mykola Marzhan <delgod@portaone.com>
-# $FreeBSD$
 
 PORTNAME=	Sys-Sendfile-FreeBSD
 PORTVERSION=	0.01

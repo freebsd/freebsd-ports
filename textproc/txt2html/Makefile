@@ -1,5 +1,4 @@
 # Created by: Don Croyle <croyle@gelemna.org>
-# $FreeBSD$
 
 PORTNAME=	txt2html
 PORTVERSION=	2.51

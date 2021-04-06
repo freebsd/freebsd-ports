@@ -1,5 +1,4 @@
 # Created by: lesi@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	xorg-dmx
 

@@ -1,5 +1,4 @@
 # Created by: Rodrigo Graeff <delphus@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ytnef
 PORTVERSION=	1.9.3

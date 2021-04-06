@@ -1,5 +1,4 @@
 # Created by: tobez
-# $FreeBSD$
 
 PORTNAME=	Data-JavaScript
 PORTVERSION=	1.13

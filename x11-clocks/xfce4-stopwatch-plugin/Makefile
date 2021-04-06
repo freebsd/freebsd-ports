@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xfce4-stopwatch-plugin
 PORTVERSION=	0.5.0

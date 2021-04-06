@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stopit
 PORTVERSION=	1.1.2

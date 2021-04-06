@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	QtPy
 DISTVERSION=	1.9.0

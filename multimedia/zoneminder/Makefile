@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.34.21

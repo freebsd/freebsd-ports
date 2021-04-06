@@ -1,5 +1,4 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	B-C
 PORTVERSION=	1.57

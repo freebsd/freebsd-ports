@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Proc-Pidfile
 PORTVERSION=	1.06

@@ -1,5 +1,4 @@
 # Created by: Simon Olofsson <simon@olofsson.de>
-# $FreeBSD$
 
 PORTNAME=	weka
 DISTVERSION=	3-8-5

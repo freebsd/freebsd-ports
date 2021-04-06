@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	xmlwrapp
 PORTVERSION=	0.7.0

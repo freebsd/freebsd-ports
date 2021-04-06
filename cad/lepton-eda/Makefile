@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lepton-eda
 PORTVERSION=	1.9.13

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opennn
 DISTVERSION=	4.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openhantek
 DISTVERSION=	3.2

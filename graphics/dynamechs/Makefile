@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	dynamechs
 PORTVERSION=	4.0.p1

@@ -1,5 +1,4 @@
 # Created by: Dmitry Liakh <dliakh@ukr.net>
-# $FreeBSD$
 
 PORTNAME=	Lingua-DetectCyrillic
 PORTVERSION=	0.02

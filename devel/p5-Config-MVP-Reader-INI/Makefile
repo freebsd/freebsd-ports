@@ -1,5 +1,4 @@
 # Created by: Geraud CONTINSOUZAS <geraud@gcu.info>
-# $FreeBSD$
 
 PORTNAME=	Config-MVP-Reader-INI
 PORTVERSION=	2.101463

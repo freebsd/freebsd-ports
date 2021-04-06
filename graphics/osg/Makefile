@@ -1,5 +1,4 @@
 # Created by: Randall Hopper <aa8vb@nc.rr.com>
-# $FreeBSD$
 
 PORTNAME=	osg
 PORTVERSION=	3.6.5

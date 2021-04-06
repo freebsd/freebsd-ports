@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aird
 PORTVERSION=	1.0

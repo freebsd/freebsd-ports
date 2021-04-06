@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ndmpd
 PORTVERSION=	1.2

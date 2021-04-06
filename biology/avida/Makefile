@@ -1,5 +1,4 @@
 # Created by: Jeremy <karlj000@unbc.ca>
-# $FreeBSD$
 
 PORTNAME=	avida
 PORTVERSION=	2.12.4

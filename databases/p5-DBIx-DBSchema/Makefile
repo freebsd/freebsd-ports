@@ -1,5 +1,4 @@
 # Created by: Peter Avalos <pavalos@theshell.com>
-# $FreeBSD$
 
 PORTNAME=	DBIx-DBSchema
 PORTVERSION=	0.45

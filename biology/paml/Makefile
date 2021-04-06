@@ -1,5 +1,4 @@
 # Created by: dbader@eece.unm.edu
-# $FreeBSD$
 
 PORTNAME=	paml
 PORTVERSION=	4.9j

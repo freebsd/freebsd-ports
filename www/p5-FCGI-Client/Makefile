@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	FCGI-Client
 PORTVERSION=	0.08

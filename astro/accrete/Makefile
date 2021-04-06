@@ -1,5 +1,4 @@
 # Created by: chuck@pkix.net
-# $FreeBSD$
 
 PORTNAME=	accrete
 PORTVERSION=	1.0

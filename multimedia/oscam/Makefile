@@ -1,5 +1,4 @@
 # Created by: Franz Bettag <franz@bett.ag>
-# $FreeBSD$
 
 PORTNAME=	oscam
 PORTVERSION=	1.20.20201119

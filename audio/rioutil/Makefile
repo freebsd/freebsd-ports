@@ -1,5 +1,4 @@
 # Created by: George Reid <greid@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	rioutil
 PORTVERSION=	1.5.0

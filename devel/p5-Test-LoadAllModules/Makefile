@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-LoadAllModules
 PORTVERSION=	0.022

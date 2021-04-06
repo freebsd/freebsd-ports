@@ -1,5 +1,4 @@
 # Created by: Tony Maher
-# $FreeBSD$
 
 PORTNAME=	mummer
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Data-TreeDumper-Renderer-GTK
 PORTVERSION=	0.02

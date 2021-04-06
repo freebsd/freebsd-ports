@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	comic-neue
 DISTVERSION=	2.51

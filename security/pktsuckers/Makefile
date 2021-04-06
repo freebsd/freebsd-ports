@@ -1,5 +1,4 @@
 # Created by: Warren Toomey <wkt@cs.adfa.edu.au>
-# $FreeBSD$
 
 PORTNAME=	pktsuckers
 PORTVERSION=	1.2

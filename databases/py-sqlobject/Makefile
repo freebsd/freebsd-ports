@@ -1,5 +1,4 @@
 # Created by: "Choe, Cheng-Dae" whitekid
-# $FreeBSD$
 
 PORTNAME=	sqlobject
 PORTVERSION=	1.6.0

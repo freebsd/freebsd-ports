@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Scalar-Util-LooksLikeNumber
 PORTVERSION=	1.39.1

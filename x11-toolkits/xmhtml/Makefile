@@ -1,5 +1,4 @@
 # Created by: Peter Hawkins <thepish@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	XmHTML
 PORTVERSION=	1.1.10

@@ -1,5 +1,4 @@
 # Created by: Konstantin Menshikov <kostjnspb@yandex.ru>
-# $FreeBSD$
 
 PORTNAME=	File-Tee
 PORTVERSION=	0.07

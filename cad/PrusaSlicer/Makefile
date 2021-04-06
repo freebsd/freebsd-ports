@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	PrusaSlicer
 DISTVERSIONPREFIX=version_

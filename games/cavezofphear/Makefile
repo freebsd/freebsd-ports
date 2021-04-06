@@ -1,5 +1,4 @@
 # Created by: Travis Poppe <tlp@liquidx.org>
-# $FreeBSD$
 
 PORTNAME=	cavezofphear
 PORTVERSION=	0.5.1

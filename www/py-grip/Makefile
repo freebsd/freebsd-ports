@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grip
 PORTVERSION=	4.5.2

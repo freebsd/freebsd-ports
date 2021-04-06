@@ -1,5 +1,4 @@
 # Created by: Jesse Smith <jessefrgsmith@yahoo.ca>
-# $FreeBSD$
 
 PORTNAME=	cpulimit
 PORTVERSION=	2.2

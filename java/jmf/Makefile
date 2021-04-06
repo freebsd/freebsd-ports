@@ -1,5 +1,4 @@
 # Created by: Anton Yudin <toha@toha.org.ua>
-# $FreeBSD$
 
 PORTNAME=	jmf
 PORTVERSION=	2.1.1e

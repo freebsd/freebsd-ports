@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mcxtrace-comps
 DISTVERSION=	1.2

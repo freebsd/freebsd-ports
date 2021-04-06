@@ -1,5 +1,4 @@
 # Created by: ports@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	libexif-gtk
 PORTVERSION=	0.5.0

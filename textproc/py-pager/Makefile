@@ -1,5 +1,4 @@
 # Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pager
 PORTVERSION=	3.3

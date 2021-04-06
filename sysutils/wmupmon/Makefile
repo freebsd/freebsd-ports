@@ -1,5 +1,4 @@
 # Created by: pat
-# $FreeBSD$
 
 PORTNAME=	wmupmon
 PORTVERSION=	0.1.3

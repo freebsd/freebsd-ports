@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vtk
 DISTVERSION=	8.2.0

@@ -1,5 +1,4 @@
 # Created by: cartola (Carlos E. G. Carvalho)
-# $FreeBSD$
 
 PORTNAME=	vigra
 DISTVERSIONPREFIX=v

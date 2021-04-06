@@ -1,5 +1,4 @@
 # Created by: Thomas Abthorpe <thomas@goodking.ca>
-# $FreeBSD$
 
 PORTNAME=	Compress-Raw-Bzip2
 PORTVERSION=	2.101

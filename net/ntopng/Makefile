@@ -1,5 +1,4 @@
 # Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ntopng
 PORTVERSION=	4.2.d20210309

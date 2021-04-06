@@ -1,5 +1,4 @@
 # Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
-# $FreeBSD$
 
 PORTNAME=	fd
 PORTVERSION=	3.01j

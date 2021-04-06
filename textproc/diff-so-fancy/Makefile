@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	diff-so-fancy
 PORTVERSION=	1.3.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	File-Map
 PORTVERSION=	0.67

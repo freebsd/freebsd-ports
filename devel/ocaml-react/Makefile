@@ -1,5 +1,4 @@
 # Created by: Jaap Boender <jaapb@kerguelen.org>
-# $FreeBSD$
 
 PORTNAME=	react
 PORTVERSION=	1.2.1

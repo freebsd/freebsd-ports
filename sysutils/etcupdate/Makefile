@@ -1,5 +1,4 @@
 # Created by: jhb
-# $FreeBSD$
 
 PORTNAME=	etcupdate
 PORTVERSION=	1.1

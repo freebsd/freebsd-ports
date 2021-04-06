@@ -1,5 +1,4 @@
 # Created by: Ju Pengfei <jupengfei@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	psutil
 PORTVERSION=	1.2.1

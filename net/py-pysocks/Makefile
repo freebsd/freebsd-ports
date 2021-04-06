@@ -1,5 +1,4 @@
 # Created by: Neil Booth
-# $FreeBSD$
 
 PORTNAME=	pysocks
 PORTVERSION=	1.7.1

@@ -1,5 +1,4 @@
 # Created by: Fernan Aguero <fernan@iib.unsam.edu.ar>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Session-Store-DBIC
 PORTVERSION=	0.14

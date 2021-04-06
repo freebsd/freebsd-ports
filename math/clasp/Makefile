@@ -1,5 +1,4 @@
 # Created by: Vsevolod Stakhov <vsevolod@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	clasp
 PORTVERSION=	3.3.5

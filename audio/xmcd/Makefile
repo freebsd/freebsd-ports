@@ -1,5 +1,4 @@
 # Created by: Gennady Sorokopud <gena@NetVision.net.il>
-# $FreeBSD$
 
 PORTNAME=	xmcd
 PORTVERSION=	3.3.2

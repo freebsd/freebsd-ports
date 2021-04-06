@@ -1,5 +1,4 @@
 # Created by: allan@saddi.com
-# $FreeBSD$
 
 PORTNAME=	yafic
 PORTVERSION=	1.2.2

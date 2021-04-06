@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spdx-tools
 DISTVERSION=	0.6.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	shaderc
 DISTVERSIONPREFIX=	v

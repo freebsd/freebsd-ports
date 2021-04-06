@@ -1,5 +1,4 @@
 # Created by: fernan@iib.unsam.edu.ar
-# $FreeBSD$
 
 PORTNAME=	SpringGraph
 PORTVERSION=	0.05

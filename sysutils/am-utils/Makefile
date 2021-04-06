@@ -1,5 +1,4 @@
 # Created by: Jon Wilson <jon@phuq.co.uk>
-# $FreeBSD$
 
 PORTNAME=	am-utils
 PORTVERSION=	6.2

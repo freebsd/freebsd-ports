@@ -1,5 +1,4 @@
 # Created by: Dirk-Willem van Gulik / dirkx@webweaving.org
-# $FreeBSD$
 
 PORTNAME=	widentd
 PORTVERSION=	1.04

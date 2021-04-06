@@ -1,5 +1,4 @@
 # Created by: Tobias Rehbein <tobias.rehbein@web.de>
-# $FreeBSD$
 
 PORTNAME=	stonesoup
 PORTVERSION=	0.23.2

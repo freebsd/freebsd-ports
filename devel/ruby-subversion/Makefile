@@ -1,5 +1,4 @@
 # Created by: Hiroyuki Iwatsuki <don@na.rim.or.jp>
-# $FreeBSD$
 
 PKGNAMEPREFIX=	ruby-
 

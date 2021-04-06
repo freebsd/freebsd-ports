@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		kexi
 DISTVERSION=		3.2.0

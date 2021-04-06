@@ -1,5 +1,4 @@
 # Created by: Rong-En Fan <rafan@infor.org>
-# $FreeBSD$
 
 PORTNAME=	VCP-Dest-svk
 PORTVERSION=	0.29

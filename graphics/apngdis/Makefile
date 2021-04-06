@@ -1,5 +1,4 @@
 # Created by: nemysis <nemysis@gmx.ch>
-# $FreeBSD$
 
 PORTNAME=	apngdis
 PORTVERSION=	2.9

@@ -1,5 +1,4 @@
 # Created by: Yasuhiro KIMURA <yasu@utahime.org>
-# $FreeBSD$
 
 PORTNAME=	liblockfile
 PORTVERSION=	1.17

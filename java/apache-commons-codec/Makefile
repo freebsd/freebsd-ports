@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	commons-codec
 PORTVERSION=	1.15

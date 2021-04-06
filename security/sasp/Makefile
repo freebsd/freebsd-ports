@@ -1,5 +1,4 @@
 # Created by: sviat
-# $FreeBSD$
 
 PORTNAME=	sasp
 PORTVERSION=	0.1

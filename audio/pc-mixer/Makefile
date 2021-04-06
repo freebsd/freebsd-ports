@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pc-mixer
 PORTVERSION=	20171212

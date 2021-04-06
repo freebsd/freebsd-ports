@@ -1,5 +1,4 @@
 # Created by: gelf
-# $FreeBSD$
 
 PORTNAME=	fte
 PORTVERSION=	20110708

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fstobdf
 PORTVERSION=	1.0.6

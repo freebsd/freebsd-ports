@@ -1,5 +1,4 @@
 # Created by: Eric L. Hernes <erich@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ical
 PORTVERSION=	3.0.4

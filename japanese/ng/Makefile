@@ -1,5 +1,4 @@
 # Created by: Kawaguti Ginga <ginga@athena.club.ne.jp>
-# $FreeBSD$
 
 PORTNAME=	ng
 PORTVERSION=	1.4.4

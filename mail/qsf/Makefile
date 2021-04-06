@@ -1,5 +1,4 @@
 # Created by: liamfoy@sepulcrum.org
-# $FreeBSD$
 
 PORTNAME=	qsf
 PORTVERSION=	1.2.7

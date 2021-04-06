@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-context-decorator
 PORTVERSION=	1.5.0

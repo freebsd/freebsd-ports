@@ -1,5 +1,4 @@
 # Created by: Alex Deiter <Alex.Deiter@Gmail.COM>
-# $FreeBSD$
 
 PORTNAME=	udpxy
 DISTVERSION=	1.0-24.1

@@ -1,5 +1,4 @@
 # Created by: Douglas Fraser <doug@idmf.net>
-# $FreeBSD$
 
 PORTNAME=	grepcidr
 PORTVERSION=	2.0

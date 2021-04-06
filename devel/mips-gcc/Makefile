@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PKGNAMEPREFIX=	mips-
 PLIST=	${.CURDIR}/pkg-plist

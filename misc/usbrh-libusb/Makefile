@@ -1,5 +1,4 @@
 # Created by: sanpei@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	usbrh-libusb
 PORTVERSION=	0.05

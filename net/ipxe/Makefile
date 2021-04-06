@@ -1,5 +1,4 @@
 # Created by: Guerkan Karaman <gk.freebsd@googlemail.com>
-# $FreeBSD$
 
 PORTNAME=	ipxe
 DISTVERSION=	g20201129

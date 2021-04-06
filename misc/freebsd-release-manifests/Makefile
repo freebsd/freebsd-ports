@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	freebsd-release-manifests
 DISTVERSION=	20210329

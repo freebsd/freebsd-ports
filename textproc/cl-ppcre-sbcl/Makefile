@@ -1,5 +1,4 @@
 # Created by: Henrik Motakef <henrik.motakef@web.de>
-# $FreeBSD$
 
 PORTNAME=	cl-ppcre
 PORTVERSION=	2.1.1

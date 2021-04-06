@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opendbviewer
 PORTVERSION=	1.1.1

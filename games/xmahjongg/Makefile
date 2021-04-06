@@ -1,5 +1,4 @@
 # Created by: joerg@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	xmahjongg
 PORTVERSION=	3.7

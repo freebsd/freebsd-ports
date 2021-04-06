@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ttyd
 DISTVERSION=	1.6.3

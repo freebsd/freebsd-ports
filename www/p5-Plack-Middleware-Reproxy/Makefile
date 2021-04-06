@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Middleware-Reproxy
 PORTVERSION=	0.00004

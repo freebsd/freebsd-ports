@@ -1,5 +1,4 @@
 # Created by: Maxim Ignatenko
-# $FreeBSD$
 
 PORTNAME=	vsftpd-ext
 PORTVERSION=	${UPSTREAMVERSION}.${EXTVERSION}

@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Crypt-TripleDES
 PORTVERSION=	0.24

@@ -1,5 +1,4 @@
 # Created by: Oleg Ginzburg
-# $FreeBSD$
 
 PORTNAME=	retail
 PORTVERSION=	1.0.1

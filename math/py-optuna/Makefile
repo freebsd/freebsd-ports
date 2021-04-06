@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	optuna
 DISTVERSION=	2.6.0

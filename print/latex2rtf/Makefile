@@ -1,5 +1,4 @@
 # Created by: Joerg Wunsch <joerg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	latex2rtf
 DISTVERSION=	2.3.17

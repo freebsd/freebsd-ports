@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libfabric
 DISTVERSIONPREFIX=	v

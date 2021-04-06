@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bsequencer
 DISTVERSION=	1.8.8

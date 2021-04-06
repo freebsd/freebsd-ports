@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vst3sdk
 DISTVERSIONPREFIX=	v

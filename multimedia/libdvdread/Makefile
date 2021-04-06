@@ -1,5 +1,4 @@
 # Created by: Marc van Woerkom <3d@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libdvdread
 PORTVERSION=	6.1.0

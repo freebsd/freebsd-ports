@@ -1,5 +1,4 @@
 # Created by: Maxim Khon <fjoe@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dahdi
 PORTVERSION=	${DAHDI_VERSION:S/-//g}

@@ -1,5 +1,4 @@
 # Created by: Patrick Bihan-Faou <patrick@mindstep.com>
-# $FreeBSD$
 
 PORTNAME=	pipsecd
 PORTVERSION=	19991014

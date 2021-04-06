@@ -1,5 +1,4 @@
 # Created by: Boris B. Samorodov <bsam@ipt.ru>
-# $FreeBSD$
 
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

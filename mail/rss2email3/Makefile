@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rss2email
 DISTVERSIONPREFIX=	v

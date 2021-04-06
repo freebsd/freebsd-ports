@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libbind
 PORTVERSION=	6.0

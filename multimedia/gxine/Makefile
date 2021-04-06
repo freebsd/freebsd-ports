@@ -1,5 +1,4 @@
 # Created by: Grigori Goronzy <greg@chown.ath.cx>
-# $FreeBSD$
 
 PORTNAME=	gxine
 PORTVERSION=	0.5.910

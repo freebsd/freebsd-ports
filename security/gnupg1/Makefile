@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gnupg
 PORTVERSION=	1.4.23

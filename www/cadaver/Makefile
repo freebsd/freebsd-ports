@@ -1,5 +1,4 @@
 # Created by: Alex Povolotsky <tarkhil@over.ru>
-# $FreeBSD$
 
 PORTNAME=	cadaver
 PORTVERSION=	0.23.3

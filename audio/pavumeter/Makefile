@@ -1,5 +1,4 @@
 # Created by: Romain Tartière <romain@blogreen.org>
-# $FreeBSD$
 
 PORTNAME=	pavumeter
 PORTVERSION=	0.9.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ruby-termios
 PORTVERSION=	1.0.2

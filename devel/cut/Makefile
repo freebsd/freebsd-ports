@@ -1,5 +1,4 @@
 # Created by: Sergei Gnezdov <sergeiga@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	cut
 PORTVERSION=	2.7

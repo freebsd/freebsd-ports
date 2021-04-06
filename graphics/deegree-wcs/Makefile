@@ -1,5 +1,4 @@
 # Created by: wenheping@gmail.com
-# $FreeBSD$
 
 PORTNAME=	wcs
 PORTVERSION=	2.5

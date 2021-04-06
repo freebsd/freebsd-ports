@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wrapsrv
 PORTVERSION=	1.0.0

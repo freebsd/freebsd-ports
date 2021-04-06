@@ -1,5 +1,4 @@
 # Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
-# $FreeBSD$
 
 PORTNAME=	stone
 PORTVERSION=	2.3e

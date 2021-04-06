@@ -1,5 +1,4 @@
 # Created by: jkh
-# $FreeBSD$
 
 PORTNAME=	tclX
 PORTVERSION=	8.4.1

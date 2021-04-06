@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	exercism
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	munch
 PORTVERSION=	2.5.0

@@ -1,5 +1,4 @@
 # Created by: Dmitry Semkin <lslarry@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	srg
 PORTVERSION=	1.3.6

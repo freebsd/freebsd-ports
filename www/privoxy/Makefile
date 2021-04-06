@@ -1,5 +1,4 @@
 # Created by: John von Essen
-# $FreeBSD$
 
 PORTNAME=	privoxy
 PORTVERSION=	3.0.32

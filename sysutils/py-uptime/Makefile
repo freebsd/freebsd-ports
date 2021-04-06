@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uptime
 PORTVERSION=	3.0.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gr-osmosdr
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Christian Brueffer <chris@unixpages.org>
-# $FreeBSD$
 
 PORTNAME=	edith
 PORTVERSION=	1.58

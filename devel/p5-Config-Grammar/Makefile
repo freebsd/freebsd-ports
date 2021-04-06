@@ -1,5 +1,4 @@
 # Created by: Dikshie <dikshie@sfc.wide.ad.jp>
-# $FreeBSD$
 
 PORTNAME=	Config-Grammar
 PORTVERSION=	1.10

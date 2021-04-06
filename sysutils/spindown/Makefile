@@ -1,5 +1,4 @@
 # Created by: Arjan van der Velde <noresult@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	spindown
 PORTVERSION=	0.4

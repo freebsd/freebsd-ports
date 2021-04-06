@@ -1,5 +1,4 @@
 # Created by: David Thiel <lx@FreeBSD.org>
-# $FreeBSD$
 
 PORTREVISION=	1
 

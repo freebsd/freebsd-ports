@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	fluxbox-tenr-styles-pack
 PORTVERSION=	20190912

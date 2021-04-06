@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTTP-WebTest
 PORTVERSION=	2.04

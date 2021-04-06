@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Router-Boom
 PORTVERSION=	1.02

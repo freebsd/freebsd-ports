@@ -1,5 +1,4 @@
 # Created by: Harald Schmalzbauer <freebsd@omnilan.de>
-# $FreeBSD$
 
 PORTNAME=	vdmfec
 PORTVERSION=	1.0

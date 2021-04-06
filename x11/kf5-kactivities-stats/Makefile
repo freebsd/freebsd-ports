@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kactivities-stats
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

@@ -1,5 +1,4 @@
 # Created by: refugee
-# $FreeBSD$
 
 PORTNAME=	typespeed
 PORTVERSION=	0.6.5

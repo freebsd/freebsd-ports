@@ -1,5 +1,4 @@
 # Created by: alexander smishlajev
-# $FreeBSD$
 
 PORTNAME=	Extremes
 PORTVERSION=	1.1.1

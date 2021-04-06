@@ -1,5 +1,4 @@
 # Created by: Anton Voronin <anton@urc.ac.ru>
-# $FreeBSD$
 
 PORTNAME=	pr
 PORTVERSION=	1.1

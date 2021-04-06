@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	doorkeeper-openid_connect
 PORTVERSION=	1.7.5

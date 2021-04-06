@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	parpd
 DISTVERSION=	1.3

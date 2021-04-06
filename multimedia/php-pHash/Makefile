@@ -1,5 +1,4 @@
 # Created by: Naram Qashat <cyberbotx@cyberbotx.com>
-# $FreeBSD$
 
 PORTNAME=	pHash
 PORTVERSION=	0.9.6

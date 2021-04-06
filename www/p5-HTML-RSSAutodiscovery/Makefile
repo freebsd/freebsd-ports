@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	HTML-RSSAutodiscovery
 PORTVERSION=	1.21

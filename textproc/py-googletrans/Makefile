@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	googletrans
 DISTVERSION=	3.0.0

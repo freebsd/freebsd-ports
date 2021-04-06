@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	prelude
 DISTVERSION=	g20210218

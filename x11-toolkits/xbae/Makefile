@@ -1,5 +1,4 @@
 # Created by: Lars Koeller <Lars.Koeller@Uni-Bielefeld.de>
-# $FreeBSD$
 
 PORTNAME=	Xbae
 PORTVERSION=	4.60.4

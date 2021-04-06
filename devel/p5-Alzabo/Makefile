@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Alzabo
 PORTVERSION=	0.92

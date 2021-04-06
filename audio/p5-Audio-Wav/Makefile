@@ -1,5 +1,4 @@
 # Created by: Dominic Mitchell <dom@happygiraffe.net>
-# $FreeBSD$
 
 PORTNAME=	Audio-Wav
 PORTVERSION=	0.14

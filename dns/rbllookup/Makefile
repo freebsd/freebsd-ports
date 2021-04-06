@@ -1,5 +1,4 @@
 # Created by: Marcin Gondek <drixter@e-utp.net>
-# $FreeBSD$
 
 PORTNAME=	rbllookup
 PORTVERSION=	0.0.1.1

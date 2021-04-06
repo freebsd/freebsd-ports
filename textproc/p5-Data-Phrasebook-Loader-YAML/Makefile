@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Data-Phrasebook-Loader-YAML
 PORTVERSION=	0.13

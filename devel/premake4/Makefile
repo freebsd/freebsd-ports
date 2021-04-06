@@ -1,5 +1,4 @@
 # Created by: Vitaly Magerya <vmagerya@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	premake4
 PORTVERSION=	4.4.b5

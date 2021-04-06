@@ -1,5 +1,4 @@
 # Created by: Peter TKATHENKO <peter@flytrace.com>
-# $FreeBSD$
 
 PORTNAME=	evisum
 PORTVERSION=	0.5.10

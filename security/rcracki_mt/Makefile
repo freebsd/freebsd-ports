@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rcracki_mt
 PORTVERSION=	0.7.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	linux-rkbin
 DISTVERSION=	g20190719

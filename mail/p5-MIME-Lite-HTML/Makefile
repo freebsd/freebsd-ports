@@ -1,5 +1,4 @@
 # Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-# $FreeBSD$
 
 PORTNAME=	MIME-Lite-HTML
 PORTVERSION=	1.24

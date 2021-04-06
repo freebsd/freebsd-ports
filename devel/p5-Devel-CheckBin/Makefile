@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-CheckBin
 PORTVERSION=	0.04

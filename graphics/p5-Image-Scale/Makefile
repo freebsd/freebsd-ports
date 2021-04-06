@@ -1,5 +1,4 @@
 # Created by: Mark Atkinson <atkin901@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Image-Scale
 PORTVERSION=	0.12

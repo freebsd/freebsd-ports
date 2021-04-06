@@ -1,5 +1,4 @@
 # Created by: Michael Gmelin <grembo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	buildbot-console-view
 PORTVERSION=	2.7.0

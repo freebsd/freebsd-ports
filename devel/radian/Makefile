@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	radian
 DISTVERSION=	0.5.4

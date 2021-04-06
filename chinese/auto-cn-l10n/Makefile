@@ -1,5 +1,4 @@
 # Created by: Yinghong Liu <relaxbsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	auto-cn-l10n
 PORTVERSION=	1.1

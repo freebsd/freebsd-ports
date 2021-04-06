@@ -1,5 +1,4 @@
 # Created by: Jev Björsell <ports@ecadlabs.com>
-# $FreeBSD$
 
 PORTNAME=	nginx-prometheus-exporter
 PORTVERSION=	0.8.0

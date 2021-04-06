@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zap
 DISTVERSION=	0.8

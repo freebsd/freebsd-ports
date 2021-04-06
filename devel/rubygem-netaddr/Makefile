@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	netaddr
 PORTVERSION=	2.0.1

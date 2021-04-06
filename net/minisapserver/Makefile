@@ -1,5 +1,4 @@
 # Created by: michael johnson <ahze@ahze.net>
-# $FreeBSD$
 
 PORTNAME=	minisapserver
 PORTVERSION=	0.3.8

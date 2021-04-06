@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdegraphics-mobipocket
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

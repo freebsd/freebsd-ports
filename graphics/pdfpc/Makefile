@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pdfpc
 DISTVERSION=	4.5.0

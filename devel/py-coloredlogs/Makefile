@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	coloredlogs
 PORTVERSION=	15.0

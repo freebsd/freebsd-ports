@@ -1,5 +1,4 @@
 # Created by: Timothy Beyer <beyert@cs.ucr.edu>
-# $FreeBSD$
 
 PORTNAME=	racer
 DISTVERSION=	2.1.44

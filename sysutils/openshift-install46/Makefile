@@ -1,5 +1,4 @@
 # Created by: John Hixson <jhixson@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	openshift-install
 PORTVERSION=	4.6

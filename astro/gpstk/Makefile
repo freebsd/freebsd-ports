@@ -1,5 +1,4 @@
 # Created by: Bruce M Simpson <bms@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gpstk
 PORTVERSION=	8.0.0

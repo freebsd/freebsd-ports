@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fselect
 DISTVERSION=	0.7.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	z3c.zcmlhook
 PORTVERSION=	1.0b1

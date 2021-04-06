@@ -1,5 +1,4 @@
 # Created by: Yasuhiro KIMURA <yasu@utahime.org>
-# $FreeBSD$
 
 PORTNAME=	lockfile-progs
 PORTVERSION=	0.1.18

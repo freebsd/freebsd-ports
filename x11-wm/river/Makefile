@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	river
 PORTVERSION=	s20210328

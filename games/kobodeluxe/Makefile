@@ -1,5 +1,4 @@
 # Created by: Amar Takhar <verm@drunkmonk.net>
-# $FreeBSD$
 
 PORTNAME=	kobodeluxe
 PORTVERSION=	0.5.1

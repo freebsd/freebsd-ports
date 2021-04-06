@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Lingua-EN-Inflect-Phrase
 PORTVERSION=	0.18

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-libgd

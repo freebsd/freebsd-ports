@@ -1,5 +1,4 @@
 # Created by: Freddie Cash <fcash@sd73.bc.ca>
-# $FreeBSD$
 
 PORTNAME=	ripole
 PORTVERSION=	0.2.2

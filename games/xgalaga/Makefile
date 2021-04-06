@@ -1,5 +1,4 @@
 # Created by: Satoshi Asami <asami@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xgalaga
 PORTVERSION=	2.1.1.0

@@ -1,5 +1,4 @@
 # Created by: Robert Withrow <witr@rwwa.com>
-# $FreeBSD$
 
 PORTNAME=	Hyperlatex
 DISTVERSION=	2.9a

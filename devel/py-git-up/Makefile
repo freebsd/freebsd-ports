@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	git-up
 DISTVERSION=	1.4.5

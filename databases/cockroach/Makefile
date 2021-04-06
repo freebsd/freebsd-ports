@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cockroach
 DISTVERSIONPREFIX=	v

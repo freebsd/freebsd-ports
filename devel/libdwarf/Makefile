@@ -1,5 +1,4 @@
 # Created by: joerg@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	libdwarf
 PORTVERSION=	20161124

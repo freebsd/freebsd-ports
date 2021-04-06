@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	toolbox
 PORTVERSION=	0.8

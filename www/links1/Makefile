@@ -1,5 +1,4 @@
 # Created by: Michael Vasilenko <acid@stu.cn.ua>
-# $FreeBSD$
 
 PORTNAME=	links
 PORTVERSION=	1.04

@@ -1,5 +1,4 @@
 # Created by: desmo@bandwidth.org
-# $FreeBSD$
 
 PORTNAME=	xalarm
 PORTVERSION=	3.06

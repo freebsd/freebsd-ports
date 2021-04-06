@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dpf-plugins
 DISTVERSIONPREFIX=	v

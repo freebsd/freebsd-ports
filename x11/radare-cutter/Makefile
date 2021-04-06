@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	radare-cutter
 PORTVERSION=	0.1.1

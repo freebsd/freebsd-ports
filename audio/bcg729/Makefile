@@ -1,5 +1,4 @@
 # Created by: sobomax
-# $FreeBSD$
 
 PORTNAME=	bcg729
 PORTVERSION=	1.1.1

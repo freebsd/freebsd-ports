@@ -1,5 +1,4 @@
 # Created by: Pete French <pete@twisted.org.uk>
-# $FreeBSD$
 
 PORTNAME=	libobjc2
 DISTVERSIONPREFIX=v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rainloop
 DISTVERSIONPREFIX=	community-

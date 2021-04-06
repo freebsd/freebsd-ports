@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Call-Context
 PORTVERSION=	0.02

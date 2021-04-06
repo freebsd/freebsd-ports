@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kfilemetadata
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

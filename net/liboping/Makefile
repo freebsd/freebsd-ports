@@ -1,5 +1,4 @@
 # Created by: Matt Peterson <matt@peterson.org>
-# $FreeBSD$
 
 PORTNAME=	liboping
 PORTVERSION=	1.8.0

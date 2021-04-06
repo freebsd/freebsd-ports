@@ -1,5 +1,4 @@
 # Created by: Antonio Carlos Venancio Junior (<antonio@php.net>)
-# $FreeBSD$
 
 PORTNAME=	HTML_Form
 PORTVERSION=	1.3.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rack-accept
 PORTVERSION=	0.4.5

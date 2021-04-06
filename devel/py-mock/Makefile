@@ -1,5 +1,4 @@
 # Created by: jessekempf@gmail.com
-# $FreeBSD$
 
 PORTNAME=	mock
 PORTVERSION=	3.0.5

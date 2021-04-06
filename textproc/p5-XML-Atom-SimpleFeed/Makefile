@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	XML-Atom-SimpleFeed
 PORTVERSION=	0.904

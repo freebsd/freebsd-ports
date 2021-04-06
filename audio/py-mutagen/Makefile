@@ -1,5 +1,4 @@
 # Created by: Byung-Hee HWANG <bh@izb.knu.ac.kr>
-# $FreeBSD$
 
 PORTNAME=	mutagen
 PORTVERSION=	1.42.0

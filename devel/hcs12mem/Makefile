@@ -1,5 +1,4 @@
 # Created by: mk
-# $FreeBSD$
 
 PORTNAME=	hcs12mem
 PORTVERSION=	1.4.1

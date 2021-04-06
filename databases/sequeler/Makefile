@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sequeler
 DISTVERSIONPREFIX=	v

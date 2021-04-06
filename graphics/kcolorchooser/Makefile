@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kcolorchooser
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

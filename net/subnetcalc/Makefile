@@ -1,5 +1,4 @@
 # Created by: Thomas Dreibholz <dreibh@iem.uni-due.de>
-# $FreeBSD$
 
 PORTNAME=	subnetcalc
 PORTVERSION=	2.4.15

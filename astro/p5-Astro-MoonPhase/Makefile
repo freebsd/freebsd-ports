@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Astro-MoonPhase
 PORTVERSION=	0.60

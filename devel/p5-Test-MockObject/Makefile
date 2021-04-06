@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-MockObject
 PORTVERSION=	1.20200122

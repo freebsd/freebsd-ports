@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bcrypt_pbkdf
 PORTVERSION=	1.1.0

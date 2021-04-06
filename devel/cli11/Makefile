@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cli11
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-cli
 PORTVERSION=	2.21.0

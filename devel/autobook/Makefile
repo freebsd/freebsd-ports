@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis (edwin@mavetju.org)
-# $FreeBSD$
 
 PORTNAME=	autobook
 PORTVERSION=	1.5

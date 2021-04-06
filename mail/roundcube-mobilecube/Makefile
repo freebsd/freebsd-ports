@@ -1,5 +1,4 @@
 # Created by: Alexey V. Degtyarev <alexey@renatasystems.org>
-# $FreeBSD$
 
 PORTNAME=	mobilecube
 PORTVERSION=	${THEME_VERSION}.${THEME_BUILD}

@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@ahze.net>
-# $FreeBSD$
 
 PORTNAME=	ExtUtils-MakeMaker
 PORTVERSION=	7.58

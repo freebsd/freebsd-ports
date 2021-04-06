@@ -1,5 +1,4 @@
 # Created by: Alexander V. Chernikov <melifaro@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	usb_modeswitch
 PORTVERSION=	2.6.0

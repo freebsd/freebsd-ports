@@ -1,5 +1,4 @@
 # Created by: erich@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	freefonts
 PORTVERSION=	0.10

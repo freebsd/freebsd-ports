@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Tk-Clock
 PORTVERSION=	0.41

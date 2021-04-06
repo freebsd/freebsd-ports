@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cordless
 DISTVERSION=	2020-10-24

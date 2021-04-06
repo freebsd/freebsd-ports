@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	highlighterkit
 PORTVERSION=	0.1

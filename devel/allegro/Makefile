@@ -1,5 +1,4 @@
 # Created by: Jimmy Olgeni <olgeni@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	allegro
 DISTVERSION=	4.4.3.1

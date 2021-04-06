@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yices
 DISTVERSION=	2.6.2

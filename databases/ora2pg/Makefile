@@ -1,5 +1,4 @@
 # Created by: Jov amutu@amutu.com
-# $FreeBSD$
 
 PORTNAME=	ora2pg
 PORTVERSION=	21.0

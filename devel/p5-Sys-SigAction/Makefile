@@ -1,5 +1,4 @@
 # Created by: Sergei Vyshenski <svysh.fbsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Sys-SigAction
 PORTVERSION=	0.23

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Mixin-Linewise
 PORTVERSION=	0.108

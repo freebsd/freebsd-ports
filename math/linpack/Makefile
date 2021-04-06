@@ -1,5 +1,4 @@
 # Created by: ljo
-# $FreeBSD$
 
 PORTNAME=	linpack
 PORTVERSION=	1.0

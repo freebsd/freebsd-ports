@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ezc3d
 DISTVERSIONPREFIX=	Release_

@@ -1,5 +1,4 @@
 # Created by: Karsten Brandt <kbrandt@sdf-eu.org>
-# $FreeBSD$
 
 PORTNAME=	quadra
 PORTVERSION=	1.3.0

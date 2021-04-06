@@ -1,5 +1,4 @@
 # Created by: David Yeske <dyeske@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mrxvt
 PORTVERSION=	0.4.2

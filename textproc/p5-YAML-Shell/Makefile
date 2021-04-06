@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	YAML-Shell
 PORTVERSION=	0.71

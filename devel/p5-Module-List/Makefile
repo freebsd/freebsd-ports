@@ -1,5 +1,4 @@
 # Created by: Oleg A. Mamontov <oleg@mamontov.net>
-# $FreeBSD$
 
 PORTNAME=	Module-List
 PORTVERSION=	0.004

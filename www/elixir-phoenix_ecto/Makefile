@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phoenix_ecto
 PORTVERSION=	3.3.0

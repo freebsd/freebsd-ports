@@ -1,5 +1,4 @@
 # Created by: Beat Gaetzi <beat@chruetertee.ch>
-# $FreeBSD$
 
 PORTNAME=	thinkingrock
 PORTVERSION=	2.2.1

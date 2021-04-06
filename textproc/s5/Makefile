@@ -1,5 +1,4 @@
 # Created by: Peter Pentchev <roam@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	s5
 PORTVERSION=	1.1

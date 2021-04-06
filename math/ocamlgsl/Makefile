@@ -1,5 +1,4 @@
 # Created by: Klaus T. Aehlig <aehlig@linta.de>
-# $FreeBSD$
 
 PORTNAME=	ocaml-gsl
 DISTVERSIONPREFIX=v

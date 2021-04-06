@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kglobalaccel
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

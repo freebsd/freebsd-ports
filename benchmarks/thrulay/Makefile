@@ -1,5 +1,4 @@
 # Created by: shalunov
-# $FreeBSD$
 
 PORTNAME=	thrulay
 PORTVERSION=	0.9

@@ -1,5 +1,4 @@
 # Created by: MANTANI Nobutaka <nobutaka@FreeBSD.org>
-# $FreeBSD$
 
 CATEGORIES=	japanese
 MASTER_SITES=	LOCAL/nobutaka:skkdic

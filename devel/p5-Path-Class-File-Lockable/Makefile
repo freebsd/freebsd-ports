@@ -1,5 +1,4 @@
 # Created by: Tatsuya Ueda <ml+freebsd@tatsuya.info>
-# $FreeBSD$
 
 PORTNAME=	Path-Class-File-Lockable
 PORTVERSION=	0.03

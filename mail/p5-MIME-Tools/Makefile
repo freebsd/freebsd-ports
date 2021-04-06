@@ -1,5 +1,4 @@
 # Created by: Eivind Eklund <eivind@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	MIME-Tools
 PORTVERSION=	5.509

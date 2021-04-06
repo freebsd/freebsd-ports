@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ruby-fogbugz
 PORTVERSION=	0.3.0

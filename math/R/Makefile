@@ -1,5 +1,4 @@
 # Created by: Maurice Castro <maurice@serc.rmit.edu.au>
-# $FreeBSD$
 
 PORTNAME=	R
 DISTVERSION=	4.0.4

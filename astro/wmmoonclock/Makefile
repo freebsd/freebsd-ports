@@ -1,5 +1,4 @@
 # Created by: Kris Kennaway <kkennawa@physics.adelaide.edu.au>
-# $FreeBSD$
 
 PORTNAME=	wmmoonclock
 PORTVERSION=	1.30

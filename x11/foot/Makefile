@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	foot
 DISTVERSION=	1.7.1

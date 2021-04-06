@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libstrophe
 PORTVERSION=	0.10.1

@@ -1,5 +1,4 @@
 # Created by: Yoshiro MIHIRA <sanpei@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	thumbnail_index
 PORTVERSION=	1998.08.10

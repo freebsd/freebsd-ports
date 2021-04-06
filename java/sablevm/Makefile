@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sablevm
 PORTVERSION=	1.13

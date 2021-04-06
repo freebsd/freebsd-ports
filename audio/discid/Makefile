@@ -1,5 +1,4 @@
 # Created by: Oliver Breuninger <ob@breuninger.org>
-# $FreeBSD$
 
 PORTNAME=	discid
 PORTVERSION=	1.3

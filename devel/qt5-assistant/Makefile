@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	assistant
 DISTVERSION=	${QT5_VERSION}

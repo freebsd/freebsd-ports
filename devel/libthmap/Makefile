@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libthmap
 PORTVERSION=	g2020082801

@@ -1,5 +1,4 @@
 # Created by: bms@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=		calibrator
 PORTVERSION=		0.9

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phing
 PORTVERSION=	2.6.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	trimesh
 PORTVERSION=	3.5.25

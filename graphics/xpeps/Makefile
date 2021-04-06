@@ -1,5 +1,4 @@
 # Created by: petef@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	peps
 PORTVERSION=	2.0

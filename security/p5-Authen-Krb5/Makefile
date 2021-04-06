@@ -1,5 +1,4 @@
 # Created by: ajk@iu.edu
-# $FreeBSD$
 
 PORTNAME=	Authen-Krb5
 PORTVERSION=	1.9

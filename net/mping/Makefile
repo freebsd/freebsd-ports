@@ -1,5 +1,4 @@
 # Created by: Babak Farrokhi <babak@farrokhi.net>
-# $FreeBSD$
 
 PORTNAME=	mping
 PORTVERSION=	2.01

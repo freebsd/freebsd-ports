@@ -1,5 +1,4 @@
 # Created by: Ed Schouten <ed@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pyPEG2
 PORTVERSION=	2.15.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	luakit-devel
 DISTVERSION=	2.3-0

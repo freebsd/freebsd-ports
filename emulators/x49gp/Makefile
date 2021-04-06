@@ -1,5 +1,4 @@
 # Created by: Shaun Amott <shaun@FreeBSD.org>
-# $FreeBSD$
 
 # Note: sdcard64.tar.gz contains just an empty 64MB FAT-16 disk image
 

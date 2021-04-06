@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	khotkeys
 DISTVERSION=	${KDE_PLASMA_VERSION}

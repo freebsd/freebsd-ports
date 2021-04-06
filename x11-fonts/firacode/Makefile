@@ -1,5 +1,4 @@
 # Created by: Dave Cottlehuber <dch@skunkwerks.at>
-# $FreeBSD$
 
 PORTNAME=	firacode
 DISTVERSIONPREFIX=	v

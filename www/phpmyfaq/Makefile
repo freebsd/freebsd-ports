@@ -1,5 +1,4 @@
 # Created by: chinsan <chinsan@mail2000.com.tw>
-# $FreeBSD$
 
 PORTNAME=	phpmyfaq
 PORTVERSION=	3.0.7

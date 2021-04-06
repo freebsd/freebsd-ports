@@ -1,5 +1,4 @@
 # Created by: bsdx
-# $FreeBSD$
 
 PORTNAME=	bchunk
 DISTVERSION=	1.2.2

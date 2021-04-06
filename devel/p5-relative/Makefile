@@ -1,5 +1,4 @@
 # Created by: skreuzer@exit2shell.com
-# $FreeBSD$
 
 PORTNAME=	relative
 PORTVERSION=	0.04

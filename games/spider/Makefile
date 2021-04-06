@@ -1,5 +1,4 @@
 # Created by: se
-# $FreeBSD$
 
 PORTNAME=	spider
 PORTVERSION=	1.1

@@ -1,5 +1,4 @@
 # Created by: Stanislav Svirid <count@211.ru>
-# $FreeBSD$
 
 PORTNAME=	south
 PORTVERSION=	1.0.2

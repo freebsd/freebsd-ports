@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	coincurve
 DISTVERSION=	15.0.0

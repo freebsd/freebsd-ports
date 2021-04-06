@@ -1,5 +1,4 @@
 # Created by: Alexey V. Degtyarev
-# $FreeBSD$
 
 PORTNAME=	LDAPPasswordChangerPlugin
 PORTVERSION=	0.0.${SVNREV}

@@ -1,5 +1,4 @@
 # Created by: Matt Mills <matt_mills@btopenworld.com>
-# $FreeBSD$
 
 PORTNAME=	ipbt
 DISTVERSION=	r8765

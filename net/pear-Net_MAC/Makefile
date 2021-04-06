@@ -1,5 +1,4 @@
 # Created by: Zhen REN <bg1tpt@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Net_MAC
 PORTVERSION=	0.1.5

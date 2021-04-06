@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	x11 lang
 PKGNAMESUFFIX=	-x11

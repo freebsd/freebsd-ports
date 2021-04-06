@@ -1,5 +1,4 @@
 # Created by: Ryo MIYAMOTO
-# $FreeBSD$
 
 PORTNAME=	psi88
 PORTVERSION=	1.0

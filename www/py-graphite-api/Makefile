@@ -1,5 +1,4 @@
 # Created by: Dave Cottlehuber <dch@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	graphite-api
 PORTVERSION=	1.1.3

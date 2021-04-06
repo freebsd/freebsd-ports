@@ -1,5 +1,4 @@
 # Created by: Marco Steinbach <coco@webdev.c0c0.intra>
-# $FreeBSD$
 
 PORTNAME=	sqtop
 DISTVERSIONPREFIX=	v

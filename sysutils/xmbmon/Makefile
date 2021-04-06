@@ -1,5 +1,4 @@
 # Created by: kaz@kobe1995.net (NAKAMURA Kauzushi)
-# $FreeBSD$
 
 PORTNAME=	xmbmon
 PORTVERSION=	205

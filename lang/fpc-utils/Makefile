@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTREVISION=	1
 CATEGORIES=	lang

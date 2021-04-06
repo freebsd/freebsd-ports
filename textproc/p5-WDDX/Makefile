@@ -1,5 +1,4 @@
 # Created by: Eric A. Griff <eric@talesfromthereal.com>
-# $FreeBSD$
 
 PORTNAME=	WDDX
 PORTVERSION=	1.02

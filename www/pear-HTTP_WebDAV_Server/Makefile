@@ -1,5 +1,4 @@
 # Created by: Wen Heping<wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	HTTP_WebDAV_Server
 PORTVERSION=	1.0.0.r4

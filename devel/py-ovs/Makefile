@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ovs
 PORTVERSION=	2.9.0

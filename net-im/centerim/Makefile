@@ -1,5 +1,4 @@
 # Created by: Frank Altpeter <frank@altpeter.de>
-# $FreeBSD$
 
 PORTNAME=	centerim
 PORTVERSION=	4.22.10

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	poudriere
 DISTVERSION=	3.3.6

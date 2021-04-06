@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	luv
 DISTVERSION=	1.30.1-1

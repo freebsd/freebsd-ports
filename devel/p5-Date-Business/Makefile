@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Date-Business
 PORTVERSION=	1.2

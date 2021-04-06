@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ipfs-go-fs-repo-migrations
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Christopher Key <cjk32@cam.ac.uk>
-# $FreeBSD$
 
 PORTNAME=	WebService-MusicBrainz
 PORTVERSION=	1.0.5

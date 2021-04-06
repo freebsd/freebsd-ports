@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POE-Component-IRC-Plugin-Karma
 PORTVERSION=	0.003

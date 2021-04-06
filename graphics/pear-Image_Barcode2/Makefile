@@ -1,5 +1,4 @@
 # Created by: Muhammad Moinur Rahman <5u623l20@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Image_Barcode2
 PORTVERSION=	0.2.3

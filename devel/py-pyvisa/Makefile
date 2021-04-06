@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyvisa
 PORTVERSION=	1.11.3

@@ -1,5 +1,4 @@
 # Created by: jmz
-# $FreeBSD$
 
 PORTNAME=	makeindex
 PORTVERSION=	3.0.8

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	defcon
 PORTVERSION=	0.6.0

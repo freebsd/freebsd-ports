@@ -1,5 +1,4 @@
 # Created by: Jukka A. Ukkonen <jau@iki.fi>
-# $FreeBSD$
 
 PORTNAME=	Rmpfr
 DISTVERSION=	0.8-3

@@ -1,5 +1,4 @@
 # Created by: Wei-chun Chao
-# $FreeBSD$
 
 PORTNAME=	File-CounterFile
 PORTVERSION=	1.04

@@ -1,5 +1,4 @@
 # Created by: matt@bdd.net
-# $FreeBSD$
 
 PORTNAME=	xtacy
 PORTVERSION=	1.14

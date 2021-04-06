@@ -1,5 +1,4 @@
 # Created by: Tom Hukins <tom@eborcom.com>
-# $FreeBSD$
 
 PORTNAME=	serialmail
 PORTVERSION=	0.75

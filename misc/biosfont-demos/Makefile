@@ -1,5 +1,4 @@
 # Created by: rene
-# $FreeBSD$
 
 PORTNAME=	biosfont-demos
 PORTVERSION=	1.3

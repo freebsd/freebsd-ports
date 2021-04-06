@@ -1,5 +1,4 @@
 # Created by: Blaz Zupan <blaz@si.FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	monitoring-plugins
 PORTVERSION=	2.3

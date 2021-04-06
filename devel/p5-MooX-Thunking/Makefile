@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MooX-Thunking
 PORTVERSION=	0.08

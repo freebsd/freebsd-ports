@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	libdbi-drivers
 PORTVERSION=	0.9.0

@@ -1,5 +1,4 @@
 # Created by: Babak Farrokhi <farrokhi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	n2n
 PORTVERSION=	${PORT_V_MAJOR}.${PORT_V_MINOR}

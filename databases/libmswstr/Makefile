@@ -1,5 +1,4 @@
 # Created by: Rainer Hurling <rhurlin@gwdg.de>
-# $FreeBSD$
 
 PORTNAME=	libmswstr
 PORTVERSION=	0.0.1

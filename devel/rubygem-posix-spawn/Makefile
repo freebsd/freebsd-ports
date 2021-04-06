@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@rubick>
-# $FreeBSD$
 
 PORTNAME=	posix-spawn
 PORTVERSION=	0.3.15

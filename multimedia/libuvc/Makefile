@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libuvc
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	klatexformula
 PORTVERSION=	4.0.0

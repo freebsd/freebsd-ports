@@ -1,5 +1,4 @@
 # Created by: t.vanklaveren@student.utwente.nl
-# $FreeBSD$
 
 PORTNAME=	vorbis-tools
 PORTVERSION=	1.4.2

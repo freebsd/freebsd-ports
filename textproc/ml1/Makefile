@@ -1,5 +1,4 @@
 # Created by: Bob Eager <rde@ml1.org.uk>
-# $FreeBSD$
 
 PORTNAME=	ml1
 PORTVERSION=	4.12

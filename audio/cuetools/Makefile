@@ -1,5 +1,4 @@
 # Created by: Vincent Tantardini <vinc@FreeBSD-fr.org>
-# $FreeBSD$
 
 PORTNAME=	cuetools
 DISTVERSION=	1.4.1

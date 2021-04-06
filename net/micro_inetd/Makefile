@@ -1,5 +1,4 @@
 # Created by: Pankov Pavel <pankov_p@mail.ru>
-# $FreeBSD$
 
 PORTNAME=	micro_inetd
 PORTVERSION=	2014.08.14

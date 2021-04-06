@@ -1,5 +1,4 @@
 # Created by: Patrick Gardella <patrick@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sash
 PORTVERSION=	3.8

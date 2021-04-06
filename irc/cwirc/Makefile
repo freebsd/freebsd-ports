@@ -1,5 +1,4 @@
 # Created by: db
-# $FreeBSD$
 
 PORTNAME=	cwirc
 PORTVERSION=	2.0.0

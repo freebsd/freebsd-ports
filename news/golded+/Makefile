@@ -1,5 +1,4 @@
 # Created by: Max Khon
-# $FreeBSD$
 
 PORTNAME=	golded+
 PORTVERSION=	1.1.5.a${SNAPDATE}

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wlroots
 DISTVERSION=	0.12.0

@@ -1,5 +1,4 @@
 # Created by: issei <issei@jp.FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xchadance
 PORTVERSION=	1.0

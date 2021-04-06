@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	BTrees
 DISTVERSION=	4.7.2

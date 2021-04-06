@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pandoc-crossref
 PORTVERSION=	0.3.9.1

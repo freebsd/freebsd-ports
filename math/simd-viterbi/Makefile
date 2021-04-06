@@ -1,5 +1,4 @@
 # Created by: Thomas Sandford <freebsduser@paradisegreen.co.uk>
-# $FreeBSD$
 
 PORTNAME=	simd-viterbi
 PORTVERSION=	2.0.3

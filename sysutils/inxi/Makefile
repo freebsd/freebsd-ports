@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	inxi
 DISTVERSION=	3.3.03-1

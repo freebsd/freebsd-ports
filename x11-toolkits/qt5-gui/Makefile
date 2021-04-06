@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gui
 DISTVERSION=	${QT5_VERSION}

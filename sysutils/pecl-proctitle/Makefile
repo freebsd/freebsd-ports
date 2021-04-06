@@ -1,5 +1,4 @@
 # Created by: Florian Smeets <flo@smeets.im>
-# $FreeBSD$
 
 PORTNAME=	proctitle
 PORTVERSION=	0.1.2

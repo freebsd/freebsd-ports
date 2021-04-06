@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=	e-antic
 DISTVERSION=	1.0.0-rc.13

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		j2cli
 DISTVERSIONPREFIX=	v

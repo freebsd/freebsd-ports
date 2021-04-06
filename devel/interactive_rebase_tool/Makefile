@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	interactive_rebase_tool
 DISTVERSION=	2.0.0

@@ -1,5 +1,4 @@
 # Created by: Kevin Zheng <kevinz5000@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	netrek-client-cow
 PORTVERSION=	3.3.2

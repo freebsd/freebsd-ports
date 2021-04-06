@@ -1,5 +1,4 @@
 # Created by: Stefan Walter <sw@gegenunendlich.de>
-# $FreeBSD$
 
 PORTNAME=	pkg_cutleaves
 PORTVERSION=	20181216

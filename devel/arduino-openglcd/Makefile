@@ -1,5 +1,4 @@
 # Created by: Craig Leres <leres@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	arduino-openglcd
 DISTVERSION=	1.0rc3

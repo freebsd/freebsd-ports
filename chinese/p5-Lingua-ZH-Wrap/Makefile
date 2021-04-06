@@ -1,5 +1,4 @@
 # Created by: clsung@dragon2.net
-# $FreeBSD$
 
 PORTNAME=	Lingua-ZH-Wrap
 PORTVERSION=	0.03

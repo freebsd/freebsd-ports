@@ -1,5 +1,4 @@
 # Created by: Karl Dietz (Karl.Dietz@frankfurt.netsurf.de)
-# $FreeBSD$
 
 PORTNAME=	dnsutl
 PORTVERSION=	1.12

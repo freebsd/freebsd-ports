@@ -1,5 +1,4 @@
 # Created by: Martin Matuska (mm@FreeBSD.org)
-# $FreeBSD$
 
 PORTNAME=	gollem
 PORTVERSION=	3.0.13

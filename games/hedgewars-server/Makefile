@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hedgewars
 PORTVERSION=	1.0.0

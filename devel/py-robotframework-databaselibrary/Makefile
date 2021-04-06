@@ -1,5 +1,4 @@
 # Created by: Dan Langille
-# $FreeBSD$
 
 PORTNAME=	robotframework-databaselibrary
 PORTVERSION=	1.1.1

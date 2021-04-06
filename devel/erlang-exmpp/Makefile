@@ -1,5 +1,4 @@
 # Created by: Maxim Ignatenko
-# $FreeBSD$
 
 PORTNAME=	exmpp
 PORTVERSION=	0.9.9

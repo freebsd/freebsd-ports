@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stacks
 DISTVERSION=	2.4

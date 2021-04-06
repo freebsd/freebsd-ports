@@ -1,5 +1,4 @@
 # Created by: Sarod Yatawatta <sarod@cs.pdn.ac.lk>
-# $FreeBSD$
 
 PORTNAME=	pdnmesh
 PORTVERSION=	0.2.2

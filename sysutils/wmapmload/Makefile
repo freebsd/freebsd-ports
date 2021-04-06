@@ -1,5 +1,4 @@
 # Created by: pat
-# $FreeBSD$
 
 PORTNAME=	wmapmload
 PORTVERSION=	0.3.4

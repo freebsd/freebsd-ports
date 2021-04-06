@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cxxopts
 DISTVERSIONPREFIX=	v

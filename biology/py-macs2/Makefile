@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		macs2
 DISTVERSIONPREFIX=	v

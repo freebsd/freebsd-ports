@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wikicloth
 PORTVERSION=	0.8.1

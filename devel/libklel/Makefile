@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libklel
 PORTVERSION=	1.1.0

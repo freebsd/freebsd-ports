@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	awesome_nested_set
 PORTVERSION=	3.2.1

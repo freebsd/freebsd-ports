@@ -1,5 +1,4 @@
 # Created by: Lars Köller <Lars.Koeller@Uni-Bielefeld.DE>
-# $FreeBSD$
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.14.14

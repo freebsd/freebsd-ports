@@ -1,5 +1,4 @@
 # Created by: Attila Nagy <bra@fsn.hu>
-# $FreeBSD$
 
 PORTNAME=	easyzone
 PORTVERSION=	1.2.2

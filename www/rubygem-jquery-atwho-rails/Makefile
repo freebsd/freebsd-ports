@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jquery-atwho-rails
 PORTVERSION=	1.5.4

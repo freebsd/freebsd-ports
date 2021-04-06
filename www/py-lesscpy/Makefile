@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lesscpy
 DISTVERSION=	0.14.0

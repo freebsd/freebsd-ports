@@ -1,5 +1,4 @@
 # Created by: Pierre-Paul Lavoie <ppl@nbnet.nb.ca>
-# $FreeBSD$
 
 PORTNAME=	mbasecalc
 PORTVERSION=	1.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	docx2txt
 DISTVERSION=	0.8

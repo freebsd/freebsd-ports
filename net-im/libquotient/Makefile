@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libquotient
 DISTVERSION=	0.6.6

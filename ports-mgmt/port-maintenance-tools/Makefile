@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	port-maintenance-tools
 PORTVERSION=	1.0

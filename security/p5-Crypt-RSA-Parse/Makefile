@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Crypt-RSA-Parse
 PORTVERSION=	0.044

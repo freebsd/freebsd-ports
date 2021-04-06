@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v

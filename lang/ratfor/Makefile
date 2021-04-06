@@ -1,5 +1,4 @@
 # Created by: David O'Brien (obrien@NUXI.com)
-# $FreeBSD$
 
 PORTNAME=	ratfor
 PORTVERSION=	1985.06

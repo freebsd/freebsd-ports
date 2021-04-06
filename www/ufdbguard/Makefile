@@ -1,5 +1,4 @@
 # Created by: Pavel Timofeev <timp87@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ufdbGuard
 PORTVERSION=	1.35.3

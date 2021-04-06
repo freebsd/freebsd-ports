@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	prosearch
 PORTVERSION=	0.19.4

@@ -1,5 +1,4 @@
 # Created by: Jan Henrik Sylvester <me@janh.de>
-# $FreeBSD$
 
 PORTNAME=	xournal
 PORTVERSION=	0.4.8.2016

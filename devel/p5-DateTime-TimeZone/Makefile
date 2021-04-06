@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DateTime-TimeZone
 PORTVERSION=	2.47

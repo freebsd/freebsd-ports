@@ -1,5 +1,4 @@
 # Created by: Jan Hornyak <pav@oook.cz>
-# $FreeBSD$
 
 PORTNAME=	luasocket
 DISTVERSIONPREFIX=	v

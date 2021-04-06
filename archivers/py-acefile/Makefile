@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	acefile
 PORTVERSION=	0.6.12

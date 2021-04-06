@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	slurp
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Jeremie Le Hen <jlh@FreeBSD.org>
-# $FreeBSD$
 # Based on www/subsonic from Nicole Reid <root@cooltrainer.org>
 
 PORTNAME=	subsonic-standalone

@@ -1,5 +1,4 @@
 # Created by: Sam Lawrance <boris@brooknet.com.au>
-# $FreeBSD$
 
 PORTNAME=	postgis-jdbc
 PORTVERSION=	2.1.7

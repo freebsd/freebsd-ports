@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = System utilities
 

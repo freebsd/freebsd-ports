@@ -1,5 +1,4 @@
 # Created by: Bernard Spil <brnrd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mod_http2
 PORTVERSION=	1.15.16

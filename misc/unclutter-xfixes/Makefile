@@ -1,5 +1,4 @@
 # Created by: Oleh Hushchenkov <gor@clogic.com.ua>
-# $FreeBSD$
 
 PORTNAME=	unclutter-xfixes
 PORTVERSION=	1.5

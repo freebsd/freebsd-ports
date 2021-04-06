@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sentry-cli
 DISTVERSION=	1.63.1

@@ -1,5 +1,4 @@
 # Created by: David O'Brien (obrien@NUXI.com)
-# $FreeBSD$
 
 PORTNAME=	setcdboot
 PORTVERSION=	1.0

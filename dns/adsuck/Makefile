@@ -1,5 +1,4 @@
 # Created by: Philippe Pepiot <phil@philpep.org>
-# $FreeBSD$
 
 PORTNAME=	adsuck
 PORTVERSION=	2.3

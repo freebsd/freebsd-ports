@@ -1,5 +1,4 @@
 # Created by: Espen Skoglund <esk@ira.uka.de>
-# $FreeBSD$
 
 PORTNAME=	binutils
 PORTVERSION=	2.35.1

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	jgraph
 PORTVERSION=	5.13.0.4

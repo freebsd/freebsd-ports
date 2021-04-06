@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	String-RexxParse
 PORTVERSION=	1.10

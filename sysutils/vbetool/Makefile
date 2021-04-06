@@ -1,5 +1,4 @@
 # Created by: Jung-uk Kim <jkim@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vbetool
 PORTVERSION=	1.1

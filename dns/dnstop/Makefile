@@ -1,5 +1,4 @@
 # Created by: fenner
-# $FreeBSD$
 
 PORTNAME=	dnstop
 PORTVERSION=	20140915

@@ -1,5 +1,4 @@
 # Created by: Vasil Dimov <vd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	qtum
 PORTVERSION=	0.20.2

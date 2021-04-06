@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openctm
 DISTVERSION=	1.0.3

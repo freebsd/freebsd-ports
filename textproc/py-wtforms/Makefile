@@ -1,5 +1,4 @@
 # Created by: Moggie <moggie@elasticmind.net>
-# $FreeBSD$
 
 PORTNAME=	wtforms
 PORTVERSION=	2.1

@@ -1,5 +1,4 @@
 # Created by: Paolo Pisati <flag@gufi.org>
-# $FreeBSD$
 
 PORTNAME=	wmnd
 PORTVERSION=	0.4.18

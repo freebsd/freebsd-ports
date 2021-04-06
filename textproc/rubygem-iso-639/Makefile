@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iso-639
 DISTVERSION=	0.2.8

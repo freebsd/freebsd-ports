@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	paladin
 PORTVERSION=	2.0.1

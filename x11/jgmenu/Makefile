@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jgmenu
 DISTVERSIONPREFIX=	v

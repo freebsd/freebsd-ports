@@ -1,5 +1,4 @@
 # Created by: Björn König <bkoenig@alpha-tierchen.de>
-# $FreeBSD$
 
 PORTNAME=	linuxlibertine
 PORTVERSION=	4.7.5

@@ -1,5 +1,4 @@
 # Created by: Fukang Chen <loader@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	File-Copy-Link
 PORTVERSION=	0.140

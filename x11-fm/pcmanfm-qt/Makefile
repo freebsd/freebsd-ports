@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	pcmanfm-qt
 PORTVERSION=	0.16.0

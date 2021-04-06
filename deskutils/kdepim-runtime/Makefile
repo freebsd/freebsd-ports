@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdepim-runtime
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

@@ -1,5 +1,4 @@
 # Created by: shigeri <shigeri@m10.alpha-net.ne.jp>
-# $FreeBSD$
 
 PORTNAME=	sylpheed
 PORTVERSION=	3.7.0

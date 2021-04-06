@@ -1,5 +1,4 @@
 # Created by: Andrej Zverev <az@inec.ru>
-# $FreeBSD$
 
 PORTNAME=	ne
 PORTVERSION=	3.3.0

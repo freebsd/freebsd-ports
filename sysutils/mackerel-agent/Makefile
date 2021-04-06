@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mackerel-agent
 DISTVERSIONPREFIX=	v

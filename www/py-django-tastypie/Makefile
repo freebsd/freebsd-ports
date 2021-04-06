@@ -1,5 +1,4 @@
 # Created by: William Grzybowski <william88@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	django-tastypie
 PORTVERSION=	0.14.3

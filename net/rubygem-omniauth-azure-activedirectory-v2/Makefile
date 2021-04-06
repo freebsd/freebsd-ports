@@ -1,5 +1,4 @@
 # Created by Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	omniauth-azure-activedirectory-v2
 PORTVERSION=	0.1.1

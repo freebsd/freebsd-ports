@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sendmail
 PORTVERSION=	8.16.0.50

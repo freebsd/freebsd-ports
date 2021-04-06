@@ -1,5 +1,4 @@
 # Created by: Ache
-# $FreeBSD$
 
 PORTNAME=	Text-CSV_XS
 PORTVERSION=	1.46

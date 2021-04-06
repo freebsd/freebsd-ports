@@ -1,5 +1,4 @@
 # Created by: Kimo <kimor79@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	eventmachine_httpserver
 PORTVERSION=	0.2.1

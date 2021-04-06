@@ -1,5 +1,4 @@
 # Created by: Samy Al Bahra <samy@kerneled.org>
-# $FreeBSD$
 
 PORTNAME=	libpci
 PORTVERSION=	3.7.0

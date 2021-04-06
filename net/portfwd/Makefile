@@ -1,5 +1,4 @@
 # Created by: Alex Dupre <sysadmin@alexdupre.com>
-# $FreeBSD$
 
 PORTNAME=	portfwd
 PORTVERSION=	0.29

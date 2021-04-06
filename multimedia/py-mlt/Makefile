@@ -1,5 +1,4 @@
 # Created by: Charlie Kester <corky1951@comcast.net>
-# $FreeBSD$
 
 PORTREVISION=	1
 CATEGORIES=	multimedia python

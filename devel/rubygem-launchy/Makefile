@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
-# $FreeBSD$
 
 PORTNAME=	launchy
 PORTVERSION=	2.5.0

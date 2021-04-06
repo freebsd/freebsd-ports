@@ -1,5 +1,4 @@
 # Created by: JonathanChen <jonc@chen.org.nz>
-# $FreeBSD$
 
 PORTNAME=	maven
 DISTVERSION=	3.6.3

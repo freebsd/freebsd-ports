@@ -1,5 +1,4 @@
 # Created by: Norio Suzuki <nosuzuki@e-mail.ne.jp>
-# $FreeBSD$
 
 PORTNAME=	xzgv
 PORTVERSION=	0.9.2

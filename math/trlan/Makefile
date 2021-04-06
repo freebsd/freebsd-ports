@@ -1,5 +1,4 @@
 # Created by: b.f. <bf@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	trlan
 PORTVERSION=	201009

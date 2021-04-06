@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich
-# $FreeBSD$
 
 PORTNAME=	txtorcon
 DISTVERSION=	20.0.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pysym
 DISTVERSION=	0.2.3

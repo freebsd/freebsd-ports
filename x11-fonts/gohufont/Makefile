@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gohufont
 PORTVERSION=	2.1

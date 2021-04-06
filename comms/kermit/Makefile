@@ -1,5 +1,4 @@
 # Created by: Paul Traina <pst@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	kermit
 PORTVERSION=	9.0.304.24

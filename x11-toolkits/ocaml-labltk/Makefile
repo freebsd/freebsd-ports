@@ -1,5 +1,4 @@
 # Created by: Michael Grünewald <michipili@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	labltk
 PORTVERSION=	8.06.3

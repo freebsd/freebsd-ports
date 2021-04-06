@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xdo
 PORTVERSION=	0.5.7

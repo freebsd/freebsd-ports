@@ -1,5 +1,4 @@
 # Created by: Nick Sayer <nsayer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	poptop
 PORTVERSION=	1.4.0

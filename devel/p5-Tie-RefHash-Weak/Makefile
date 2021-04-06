@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Tie-RefHash-Weak
 PORTVERSION=	0.09

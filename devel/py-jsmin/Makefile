@@ -1,5 +1,4 @@
 # Created by: Po-Chien Lin <linpc@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	jsmin
 PORTVERSION=	2.2.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Rex
 PORTVERSION=	1.13.2

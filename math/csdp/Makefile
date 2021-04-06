@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	csdp
 DISTVERSIONPREFIX=	releases/

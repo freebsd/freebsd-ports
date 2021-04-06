@@ -1,5 +1,4 @@
 # Created by: Frank Laszlo <laszlof@vonostingroup.com>
-# $FreeBSD$
 
 PORTNAME=	quftp
 PORTVERSION=	1.0.7

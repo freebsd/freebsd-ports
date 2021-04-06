@@ -1,5 +1,4 @@
 # Created by: Neil Booth <kyuupichan@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	pbkdf2
 PORTVERSION=	1.3

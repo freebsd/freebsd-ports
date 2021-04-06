@@ -1,5 +1,4 @@
 # Created by: Lars Engels <lars.engels@0x20.net>
-# $FreeBSD$
 
 PORTNAME=	mucommander
 DISTVERSION=	0.9.5-1

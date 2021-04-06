@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fcitx-qt5
 DISTVERSION=	1.2.5

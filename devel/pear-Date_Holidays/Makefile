@@ -1,5 +1,4 @@
 # Created by: Thomas Abthorpe <thomas@goodking.ca>
-# $FreeBSD$
 
 PORTNAME=	Date_Holidays
 PORTVERSION=	0.21.8

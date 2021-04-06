@@ -1,5 +1,4 @@
 # Created by: Tobias Kortkamp <t@tobik.me>
-# $FreeBSD$
 
 PORTNAME=	showbeastie
 PORTVERSION=	0.3

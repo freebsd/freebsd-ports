@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pageedit
 PORTVERSION=	1.2.0

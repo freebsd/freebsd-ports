@@ -1,5 +1,4 @@
 # Created by: Tom McLaughlin <tmclaugh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gnome-sharp
 PORTVERSION=	2.24.4

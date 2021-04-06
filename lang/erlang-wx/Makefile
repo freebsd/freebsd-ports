@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-

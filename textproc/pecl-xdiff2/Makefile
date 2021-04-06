@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xdiff
 PORTVERSION=	2.0.1

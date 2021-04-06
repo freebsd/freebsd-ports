@@ -1,5 +1,4 @@
 # Created by: Valery Komarov <komarov@valerka.net>
-# $FreeBSD$
 
 PORTNAME=	yate
 PORTVERSION=	6.3.0

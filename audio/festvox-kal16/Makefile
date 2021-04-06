@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	festvox-kal16
 PORTVERSION=	1.4.0

@@ -1,5 +1,4 @@
 # Created by: mstowe@chicago.us.mensa.org
-# $FreeBSD$
 
 PORTNAME=	heyu2
 PORTVERSION=	2.10

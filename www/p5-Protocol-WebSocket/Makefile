@@ -1,5 +1,4 @@
 # Created by: Stefan `Sec` Zehl <sec@42.org>
-# $FreeBSD$
 
 PORTNAME=	Protocol-WebSocket
 PORTVERSION=	0.2300

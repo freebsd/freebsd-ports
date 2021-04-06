@@ -1,5 +1,4 @@
 # Created by: Nicole Reid <root@cooltrainer.org>
-# $FreeBSD$
 
 PORTNAME=	elementary
 PORTVERSION=	5.3.0

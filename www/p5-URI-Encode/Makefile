@@ -1,5 +1,4 @@
 # Created by: ports@c0decafe.net <ports@c0decafe.net>
-# $FreeBSD$
 
 PORTNAME=	URI-Encode
 PORTVERSION=	0.09

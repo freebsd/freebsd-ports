@@ -1,5 +1,4 @@
 # Created by: Nosov Artem <chip-set@mail.ru>
-# $FreeBSD$
 
 PORTNAME=	zisofs-tools
 PORTVERSION=	1.0.8

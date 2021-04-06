@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sabredav
 PORTVERSION=	3.2.2

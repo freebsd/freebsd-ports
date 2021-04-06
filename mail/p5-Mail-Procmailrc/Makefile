@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Mail-Procmailrc
 PORTVERSION=	1.09

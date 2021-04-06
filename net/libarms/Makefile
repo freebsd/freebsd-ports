@@ -1,5 +1,4 @@
 # Created by: shigeru@iij.ad.jp
-# $FreeBSD$
 
 PORTNAME=	libarms
 PORTVERSION=	5.01

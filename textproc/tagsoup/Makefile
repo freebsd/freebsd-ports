@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tagsoup
 PORTVERSION=	1.2.1

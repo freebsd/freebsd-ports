@@ -1,5 +1,4 @@
 # Created by: Phil Oleson
-# $FreeBSD$
 
 PORTNAME=	dv2sub
 PORTVERSION=	0.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pgsql
 PORTVERSION=	1.6.8

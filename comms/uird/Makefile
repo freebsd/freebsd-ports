@@ -1,5 +1,4 @@
 # Created by: David Thiel <lx@redundancy.redundancy.org>
-# $FreeBSD$
 
 PORTNAME=	uird
 PORTVERSION=	1.1

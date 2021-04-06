@@ -1,5 +1,4 @@
 # Created by: Xin LI <delphij@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hgsvn
 PORTVERSION=	0.5.2

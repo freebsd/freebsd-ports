@@ -1,5 +1,4 @@
 # Created by: Palle Girgensohn <girgen@pingpong.net>
-# $FreeBSD$
 
 PORTNAME=	Cache-Simple-TimedExpiry
 PORTVERSION=	0.27

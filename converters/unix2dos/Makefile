@@ -1,5 +1,4 @@
 # Created by: Oscar Bonilla <obonilla@fisicc-ufm.edu>
-# $FreeBSD$
 
 PORTNAME=	unix2dos
 PORTVERSION=	1.3

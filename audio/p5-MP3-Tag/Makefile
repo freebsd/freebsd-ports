@@ -1,5 +1,4 @@
 # Created by: Roman Bogorodskiy
-# $FreeBSD$
 
 PORTNAME=	MP3-Tag
 PORTVERSION=	1.15

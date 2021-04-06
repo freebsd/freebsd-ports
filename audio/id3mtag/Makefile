@@ -1,5 +1,4 @@
 # Created by: squell@alumina.nl
-# $FreeBSD$
 
 PORTNAME=	id3mtag
 PORTVERSION=	0.80

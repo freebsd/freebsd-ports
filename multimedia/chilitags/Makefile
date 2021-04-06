@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chilitags
 DISTVERSION=	2.0.0-169

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gscloud
 DISTVERSIONPREFIX=	v

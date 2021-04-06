@@ -1,5 +1,4 @@
 # Created by: donnex
-# $FreeBSD$
 
 PORTNAME=	pwsafe
 DISTVERSION=	0.2.0-155

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v

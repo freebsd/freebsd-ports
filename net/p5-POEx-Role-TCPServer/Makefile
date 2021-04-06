@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POEx-Role-TCPServer
 PORTVERSION=	1.102740

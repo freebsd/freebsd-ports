@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	TeX-Hyphen
 PORTVERSION=	1.16

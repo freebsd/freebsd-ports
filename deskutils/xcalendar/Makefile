@@ -1,5 +1,4 @@
 # Created by: MITA Yoshio <mita@iis.u-tokyo.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	xcalendar
 PORTVERSION=	4.0.2008

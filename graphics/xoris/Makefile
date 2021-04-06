@@ -1,5 +1,4 @@
 # Created by: Alexander Gromnitsky
-# $FreeBSD$
 
 PORTNAME=	xoris
 PORTVERSION=	0.1e

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Term-Sk
 PORTVERSION=	0.18

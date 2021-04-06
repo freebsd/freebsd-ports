@@ -1,5 +1,4 @@
 # Created by: Henk van Oers <hvo.pm@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	Unix-Passwd-File
 PORTVERSION=	0.251

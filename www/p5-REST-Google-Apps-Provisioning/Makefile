@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	REST-Google-Apps-Provisioning
 PORTVERSION=	1.1.10

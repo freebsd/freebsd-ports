@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stix2
 PORTVERSION=	2.1.0

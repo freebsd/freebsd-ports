@@ -1,5 +1,4 @@
 # Created by: James Bailie <jimmy@mammothcheese.ca>
-# $FreeBSD$
 
 PORTNAME=	munger
 PORTVERSION=	5.12

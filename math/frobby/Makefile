@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		frobby
 PORTVERSION=		0.9.1

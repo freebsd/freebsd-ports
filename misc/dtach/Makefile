@@ -1,5 +1,4 @@
 # Created by: Bjorn Lindstrom <bkhl@elektrubadur.se>
-# $FreeBSD$
 
 PORTNAME=	dtach
 PORTVERSION=	0.9

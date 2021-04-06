@@ -1,5 +1,4 @@
 # Created by: Jeremy Faulkner <gldisater@gldis.ca>
-# $FreeBSD$
 
 PORTNAME=	vuze
 PORTVERSION=	5.7.4.0

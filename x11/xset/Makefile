@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xset
 PORTVERSION=	1.2.4

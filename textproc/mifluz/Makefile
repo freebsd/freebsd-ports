@@ -1,5 +1,4 @@
 # Created by: Frederic Dubuy <fdubuy@free.fr>
-# $FreeBSD$
 
 PORTNAME=	mifluz
 PORTVERSION=	0.26.0

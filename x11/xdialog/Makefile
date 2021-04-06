@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	xdialog
 PORTVERSION=	2.3.1

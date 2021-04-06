@@ -1,5 +1,4 @@
 # Created by: Timothy Beyer <beyert@cs.ucr.edu>
-# $FreeBSD$
 
 PORTNAME=	arss
 PORTVERSION=	0.2.3

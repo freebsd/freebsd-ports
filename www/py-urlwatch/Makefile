@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	urlwatch
 DISTVERSION=	2.18

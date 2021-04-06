@@ -1,5 +1,4 @@
 # Created by: adam
-# $FreeBSD$
 
 PORTNAME=	dgd-lpmud
 PORTVERSION=	2.4.5

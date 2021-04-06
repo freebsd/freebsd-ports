@@ -1,5 +1,4 @@
 # Created by: Ozkan KIRIK <ozkan@enderunix.org>
-# $FreeBSD$
 
 PORTNAME=	netustad
 PORTVERSION=	0.3.1

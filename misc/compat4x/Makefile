@@ -1,5 +1,4 @@
 # Created by: Scot W. Hetzel
-# $FreeBSD$
 
 PORTNAME=	compat4x
 PORTVERSION=	${COMPAT4X_PORTVERSION}

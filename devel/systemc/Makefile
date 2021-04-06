@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	systemc
 DISTVERSION=	2.3.4

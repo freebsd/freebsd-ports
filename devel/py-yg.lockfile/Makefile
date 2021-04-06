@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yg.lockfile
 PORTVERSION=	2.3

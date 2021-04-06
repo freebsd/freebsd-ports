@@ -1,5 +1,4 @@
 # Created by: Rozhuk Ivan <rozhuk.im@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	screensaver.stars
 PORTVERSION=	2.4.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	acalc
 PORTVERSION=	0.3

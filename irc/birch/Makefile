@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	birch
 DISTVERSION=	g20200327

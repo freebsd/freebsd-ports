@@ -1,5 +1,4 @@
 # Created by: Patrick Powell <papowell@astart.com>
-# $FreeBSD$
 
 PORTNAME=	XML-Rewrite
 PORTVERSION=	0.10

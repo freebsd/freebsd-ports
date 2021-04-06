@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mysqlclient
 DISTVERSION=	2.0.2

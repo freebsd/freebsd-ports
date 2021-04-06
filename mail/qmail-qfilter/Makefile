@@ -1,5 +1,4 @@
 # Created by: Sergei Kolobov <sergei@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	qmail-qfilter
 PORTVERSION=	2.1

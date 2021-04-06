@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Cookie-Baker
 PORTVERSION=	0.09

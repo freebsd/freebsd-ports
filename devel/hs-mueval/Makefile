@@ -1,5 +1,4 @@
 # Created by: Giuseppe Pilichi aka Jacula Modyun <jacula@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mueval
 PORTVERSION=	0.9.3

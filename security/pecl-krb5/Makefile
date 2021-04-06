@@ -1,5 +1,4 @@
 # Created by: girgen@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	krb5
 PORTVERSION=	1.1.4

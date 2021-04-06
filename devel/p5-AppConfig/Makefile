@@ -1,5 +1,4 @@
 # Created by: Igor Vinokurov <igor@zynaps.ru>
-# $FreeBSD$
 
 PORTNAME=	AppConfig
 PORTVERSION=	1.71

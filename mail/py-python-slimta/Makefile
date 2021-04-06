@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-slimta
 PORTVERSION=	4.2.0

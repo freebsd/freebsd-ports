@@ -1,5 +1,4 @@
 # Created by: jmz
-# $FreeBSD$
 
 PORTNAME=	xkeycaps
 PORTVERSION=	2.46

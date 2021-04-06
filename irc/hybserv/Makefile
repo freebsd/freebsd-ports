@@ -1,5 +1,4 @@
 # Created by: Rick Fournier <rick@help-desk.ca>
-# $FreeBSD$
 
 PORTNAME=	hybserv
 DISTVERSIONPREFIX=	REL_

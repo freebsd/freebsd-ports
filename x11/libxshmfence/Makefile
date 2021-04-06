@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libxshmfence
 PORTVERSION=	1.3

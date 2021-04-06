@@ -1,5 +1,4 @@
 # Created by: gugu
-# $FreeBSD$
 
 PORTNAME=	HTML-FormHandler
 PORTVERSION=	0.40068

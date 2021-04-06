@@ -1,5 +1,4 @@
 # Created by: Konstantinos Konstantinidis <kkonstan@daemon.gr>
-# $FreeBSD$
 
 PORTNAME=	webfonts
 PORTVERSION=	0.30

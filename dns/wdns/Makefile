@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wdns
 PORTVERSION=	0.10.0

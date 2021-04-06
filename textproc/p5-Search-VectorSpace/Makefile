@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Search-VectorSpace
 PORTVERSION=	0.02

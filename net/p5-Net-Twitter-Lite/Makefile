@@ -1,5 +1,4 @@
 # Created by: Masafumi NAKANE <max@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Net-Twitter-Lite
 PORTVERSION=	0.12008

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fcl
 DISTVERSION=	0.5.0

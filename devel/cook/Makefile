@@ -1,5 +1,4 @@
 # Created by: jasone
-# $FreeBSD$
 
 PORTNAME=	cook
 PORTVERSION=	2.30

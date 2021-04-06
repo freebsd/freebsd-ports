@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librarian
 PORTVERSION=	0.1.2

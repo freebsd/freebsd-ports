@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Text-ParseWords
 PORTVERSION=	3.30

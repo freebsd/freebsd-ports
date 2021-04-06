@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	multimedia
 DISTVERSION=	${QT5_VERSION}

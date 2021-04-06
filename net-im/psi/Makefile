@@ -1,5 +1,4 @@
 # Created by: Jonathan Chen <jonc@chen.org.nz>
-# $FreeBSD$
 
 PORTNAME=	psi
 PORTVERSION=	1.5

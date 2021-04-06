@@ -1,5 +1,4 @@
 # Created by: Dima Sivachenko <dima@chg.ru>
-# $FreeBSD$
 
 PORTNAME=	flwm
 PORTVERSION=	1.16

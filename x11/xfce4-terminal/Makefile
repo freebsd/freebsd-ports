@@ -1,5 +1,4 @@
 # Created by: Matt Lancereau
-# $FreeBSD$
 
 PORTNAME=	xfce4-terminal
 PORTVERSION=	0.8.10

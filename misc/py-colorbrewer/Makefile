@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	colorbrewer
 DISTVERSION=	0.2.0

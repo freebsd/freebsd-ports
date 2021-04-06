@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aenum
 PORTVERSION=	2.2.4

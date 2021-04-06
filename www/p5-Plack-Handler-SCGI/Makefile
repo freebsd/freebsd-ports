@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Handler-SCGI
 PORTVERSION=	0.02

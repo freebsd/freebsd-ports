@@ -1,5 +1,4 @@
 # Created by: Eduard Martinescu
-# $FreeBSD$
 
 PORTNAME=	smartmontools
 PORTVERSION=	7.2

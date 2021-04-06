@@ -1,5 +1,4 @@
 # Created by: Janni
-# $FreeBSD$
 
 PORTNAME=	mercator
 PORTVERSION=	0.3.3

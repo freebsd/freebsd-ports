@@ -1,5 +1,4 @@
 # Created by: Roy Marples <roy@marples.name>
-# $FreeBSD$
 
 PORTNAME=	openresolv
 PORTVERSION=	1.1

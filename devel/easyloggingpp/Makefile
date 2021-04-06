@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	easyloggingpp
 DISTVERSIONPREFIX=	v

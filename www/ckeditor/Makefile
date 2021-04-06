@@ -1,5 +1,4 @@
 # Created by: Joe Horn <joehorn@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ckeditor
 PORTVERSION=	4.15.1

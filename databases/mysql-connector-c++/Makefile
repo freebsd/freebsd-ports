@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	mysql-connector-c++
 PORTVERSION=	1.1.13

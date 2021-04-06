@@ -1,5 +1,4 @@
 # Created by: Hondareyte <lhondareyte@laposte.net>
-# $FreeBSD$
 
 PORTNAME=	minipro
 PORTVERSION=	0.3

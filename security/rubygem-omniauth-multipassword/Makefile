@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omniauth-multipassword
 PORTVERSION=	0.4.2

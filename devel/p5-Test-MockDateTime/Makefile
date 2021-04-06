@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-MockDateTime
 PORTVERSION=	0.02

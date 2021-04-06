@@ -1,5 +1,4 @@
 # Created by: Antonio Querubin <tony@lava.net>
-# $FreeBSD$
 
 PORTNAME=	dbeacon
 PORTVERSION=	0.3.9.1

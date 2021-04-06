@@ -1,5 +1,4 @@
 # Created by: Alfred Perlstein <alfred@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	djangorestframework-xml
 PORTVERSION=	1.3.0

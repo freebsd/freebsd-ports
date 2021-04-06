@@ -1,5 +1,4 @@
 # Created by: scrappy
-# $FreeBSD$
 
 PORTNAME=	IO-Socket-SSL
 PORTVERSION=	2.070

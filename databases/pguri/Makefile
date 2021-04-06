@@ -1,5 +1,4 @@
 # Created by: Torsten Zuehlsdorff <ports@toco-domains.de>
-# $FreeBSD$
 
 PORTNAME=	pguri
 PORTVERSION=	1.20151224

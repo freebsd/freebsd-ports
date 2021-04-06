@@ -1,5 +1,4 @@
 # Created by: stast
-# $FreeBSD$
 
 PORTNAME=	dimes
 PORTVERSION=	0.5.2

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	imdbpy
 PORTVERSION=	2020.9.25

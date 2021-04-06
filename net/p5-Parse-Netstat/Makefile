@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Parse-Netstat
 PORTVERSION=	0.14

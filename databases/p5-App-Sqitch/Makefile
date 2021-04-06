@@ -1,5 +1,4 @@
 # Created by: Henrik Hodne <henrik@hodne.io>
-# $FreeBSD$
 
 PORTNAME=	App-Sqitch
 PORTVERSION=	0.9994

@@ -1,5 +1,4 @@
 # Created by: tenser@spitfire.ecsel.psu.edu
-# $FreeBSD$
 
 PORTNAME=	bsvc
 DISTVERSIONPREFIX=	v

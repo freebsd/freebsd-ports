@@ -1,5 +1,4 @@
 # Created by: Jui-Nan Lin <jnlin@csie.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	sslh
 PORTVERSION=	1.21c

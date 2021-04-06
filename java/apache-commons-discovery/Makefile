@@ -1,5 +1,4 @@
 # Created by: Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
-# $FreeBSD$
 
 PORTNAME=	commons-discovery
 PORTVERSION=	0.5

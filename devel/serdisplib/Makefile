@@ -1,5 +1,4 @@
 # Created by: Markus Dolze <bsdfan@nurfuerspam.de>
-# $FreeBSD$
 
 PORTNAME=	serdisplib
 PORTVERSION=	1.97.9

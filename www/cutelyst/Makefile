@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cutelyst
 DISTVERSIONPREFIX=	v

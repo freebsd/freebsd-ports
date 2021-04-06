@@ -1,5 +1,4 @@
 # Created by: Espen Tagestad <espen@tagestad.no>
-# $FreeBSD$
 
 PORTNAME=	CGI-Application-Plugin-HTDot
 PORTVERSION=	0.07

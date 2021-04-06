@@ -1,5 +1,4 @@
 # Created by: Dave Glowacki <dglo@ssec.wisc.edu>
-# $FreeBSD$
 
 PORTNAME=	jakarta-oro
 PORTVERSION=	2.0.8

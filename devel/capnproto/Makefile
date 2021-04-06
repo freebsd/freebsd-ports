@@ -1,5 +1,4 @@
 # Created by: Felix Hanley
-# $FreeBSD$
 
 PORTNAME=	capnproto
 PORTVERSION=	0.7.0

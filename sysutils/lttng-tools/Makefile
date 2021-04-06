@@ -1,5 +1,4 @@
 # Created by: Mahdi Mokhtari <mokhi64@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	lttng-tools
 PORTVERSION=	2.9.3

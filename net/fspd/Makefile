@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	fspd
 PORTVERSION=	2.8.1.29

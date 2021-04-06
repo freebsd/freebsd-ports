@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rio
 DISTVERSION=	0.5.16

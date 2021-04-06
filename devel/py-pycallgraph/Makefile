@@ -1,5 +1,4 @@
 # Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-# $FreeBSD$
 
 PORTNAME=	pycallgraph
 PORTVERSION=	0.5.1

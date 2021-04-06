@@ -1,5 +1,4 @@
 # Created by: Clement Laforet
-# $FreeBSD$
 
 PORTNAME=	haproxy
 DISTVERSION=	1.9.16

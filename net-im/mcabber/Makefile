@@ -1,5 +1,4 @@
 # Created by: vsevolod
-# $FreeBSD$
 
 PORTNAME=	mcabber
 PORTVERSION=	1.1.1

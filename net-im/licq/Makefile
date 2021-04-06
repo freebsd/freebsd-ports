@@ -1,6 +1,5 @@
 #	$FreeBSD: head/ports-mgmt/pkg_jail/files/pkg_update 411390 2016-03-19 11:00:57Z dinoex 2
 # Created by: Brian Feldman & Matt Heckaman
-# $FreeBSD$
 
 PORTNAME=	base
 PORTVERSION=	1.9.0

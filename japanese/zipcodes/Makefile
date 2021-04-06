@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zipcodes
 PORTVERSION=	20200831

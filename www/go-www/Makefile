@@ -1,5 +1,4 @@
 # Created by: Nicolas de Bari Embriz Garcia Rojas <nbari@tequila.io>
-# $FreeBSD$
 
 PORTNAME=	www
 PORTVERSION=	2.0.0

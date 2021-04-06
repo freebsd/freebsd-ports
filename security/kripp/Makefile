@@ -1,5 +1,4 @@
 # Created by: Jim Geovedi <jim@corebsd.or.id>
-# $FreeBSD$
 
 PORTNAME=	kripp
 PORTVERSION=	0.6.1

@@ -1,5 +1,4 @@
 # Created by: Gvozdikov Veniamin <g.veniamin@googlemail.com>
-# $FreeBSD$
 
 PORTNAME=	gost
 PORTVERSION=	0.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xev
 PORTVERSION=	1.2.4

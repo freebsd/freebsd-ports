@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Crypt-Rijndael
 PORTVERSION=	1.15

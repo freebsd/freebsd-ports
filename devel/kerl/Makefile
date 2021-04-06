@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kerl
 DISTVERSION=	2.1.0

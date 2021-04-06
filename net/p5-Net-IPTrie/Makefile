@@ -1,5 +1,4 @@
 # Created by: Matthew Luckie <mjl@luckie.org.nz>
-# $FreeBSD$
 
 PORTNAME=	Net-IPTrie
 PORTVERSION=	0.7

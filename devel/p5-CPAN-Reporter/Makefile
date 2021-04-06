@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CPAN-Reporter
 PORTVERSION=	1.2018

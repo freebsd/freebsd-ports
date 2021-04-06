@@ -1,5 +1,4 @@
 # Created by: Ronald Kuehn <rk@ronald.org>
-# $FreeBSD$
 
 PORTNAME=	lablgl
 PORTVERSION=	1.05

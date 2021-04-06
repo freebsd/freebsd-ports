@@ -1,5 +1,4 @@
 # Created by: perl@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Crypt-RHash
 PORTVERSION=	0.99

@@ -1,5 +1,4 @@
 # Created by: Dmitri Nikulin <setagllib@optusnet.com.au>
-# $FreeBSD$
 
 PORTNAME=	stress
 PORTVERSION=	1.0.4

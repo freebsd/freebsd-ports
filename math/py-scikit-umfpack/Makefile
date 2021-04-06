@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scikit-umfpack
 DISTVERSION=	0.3.2

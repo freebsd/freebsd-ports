@@ -1,5 +1,4 @@
 # Created by: Matthew Hunt <mph@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xinfocom
 PORTVERSION=	1.8m

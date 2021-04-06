@@ -1,5 +1,4 @@
 # Created by: Piotr Kubaj <pkubaj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	UEFITool
 DISTVERSIONPREFIX=	A

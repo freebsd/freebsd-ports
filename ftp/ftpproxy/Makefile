@@ -1,5 +1,4 @@
 # Created by: Philippe Le Berre <philippe@le-berre.com>
-# $FreeBSD$
 
 PORTNAME=	ftpproxy
 PORTVERSION=	1.2.3

@@ -1,5 +1,4 @@
 # Created by: adamw
-# $FreeBSD$
 
 PORTNAME=	Crypt-Tea_JS
 PORTVERSION=	2.23

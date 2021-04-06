@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ta-lib
 DISTVERSIONPREFIX=	TA_Lib-

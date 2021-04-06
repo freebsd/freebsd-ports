@@ -1,5 +1,4 @@
 # Created by: Dima Dorfman <dima@unixfreak.org>
-# $FreeBSD$
 
 PORTNAME=	mg
 PORTVERSION=	6.8.1

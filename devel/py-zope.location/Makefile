@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zope.location
 PORTVERSION=	3.9.1

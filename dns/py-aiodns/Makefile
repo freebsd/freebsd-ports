@@ -1,5 +1,4 @@
 # Created by: Waitman Gobble <waitman@waitman.net>
-# $FreeBSD$
 
 PORTNAME=	aiodns
 PORTVERSION=	1.1.1

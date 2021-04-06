@@ -1,5 +1,4 @@
 # Created by: Jim Ohlstein <jim@ohlste.in>
-# $FreeBSD$
 
 PORTNAME=	libdrizzle
 PORTVERSION=	5.1.4

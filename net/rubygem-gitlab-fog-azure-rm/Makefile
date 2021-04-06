@@ -1,5 +1,4 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gitlab-fog-azure-rm
 PORTVERSION=	1.0.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	plexil
 DISTVERSION=	4.5.0

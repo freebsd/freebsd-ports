@@ -1,5 +1,4 @@
 # Created by: Brian Somers <brian@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	leafnode
 DISTVERSION=	1.11.12

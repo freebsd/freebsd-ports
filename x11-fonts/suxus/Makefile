@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	suxus
 PORTVERSION=	1.5

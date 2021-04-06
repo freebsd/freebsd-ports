@@ -1,5 +1,4 @@
 # Created by: Sean Bruno
-# $FreeBSD$
 
 PORTNAME=	Cockatrice
 PORTVERSION=	2.8.0

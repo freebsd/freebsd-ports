@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	Tk-ColourChooser
 PORTVERSION=	1.52

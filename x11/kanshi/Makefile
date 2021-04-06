@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kanshi
 DISTVERSIONPREFIX=	v

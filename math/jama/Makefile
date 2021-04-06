@@ -1,5 +1,4 @@
 # Created by: Pedro F. Giffuni <giffunip@asme.org>
-# $FreeBSD$
 
 PORTNAME=	jama
 PORTVERSION=	1.2.5

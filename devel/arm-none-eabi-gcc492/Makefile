@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gcc
 PORTVERSION=	4.9.2

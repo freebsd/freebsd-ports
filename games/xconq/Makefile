@@ -1,5 +1,4 @@
 # Created by: Don Croyle <croyle@gelemna.org>
-# $FreeBSD$
 
 PORTNAME=	xconq
 DISTVERSION=	7.5.0-0pre.0.20050612

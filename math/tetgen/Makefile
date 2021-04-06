@@ -1,5 +1,4 @@
 # Created by: Pedro F. Giffuni
-# $FreeBSD$
 
 PORTNAME=	tetgen
 PORTVERSION=	1.5.1

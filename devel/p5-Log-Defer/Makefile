@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Log-Defer
 PORTVERSION=	0.311

@@ -1,5 +1,4 @@
 # Created by: Johannes Dieterich <jmd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lightweight-java-profiler
 PORTVERSION=	g20170308

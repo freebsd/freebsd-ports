@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	adb
 DISTVERSION=	1.3.0-9

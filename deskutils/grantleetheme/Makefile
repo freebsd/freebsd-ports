@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grantleetheme
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

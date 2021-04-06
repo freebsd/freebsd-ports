@@ -1,5 +1,4 @@
 # Created by: Ashish SHUKLA <ashish@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	opensmtpd
 PORTVERSION=	6.8.0

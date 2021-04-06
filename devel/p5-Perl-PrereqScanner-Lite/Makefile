@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Perl-PrereqScanner-Lite
 PORTVERSION=	0.26

@@ -1,5 +1,4 @@
 # Created by: proff@suburbia.net
-# $FreeBSD$
 
 PORTNAME=	nntpcache
 PORTVERSION=	3.0.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	frodo
 PORTVERSION=	4.1b

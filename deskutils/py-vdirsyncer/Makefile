@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vdirsyncer
 DISTVERSION=	0.16.8

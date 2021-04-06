@@ -1,5 +1,4 @@
 # Created by: dom@happygiraffe.net
-# $FreeBSD$
 
 PORTNAME=	ApacheBench
 PORTVERSION=	0.73

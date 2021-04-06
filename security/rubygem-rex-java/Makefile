@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rex-java
 PORTVERSION=	0.1.6

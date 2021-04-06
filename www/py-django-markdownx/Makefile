@@ -1,5 +1,4 @@
 # Created by: Carlo Strub
-# $FreeBSD$
 
 PORTNAME=	django-markdownx
 PORTVERSION=	3.0.1

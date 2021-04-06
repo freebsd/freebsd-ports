@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-slugify
 PORTVERSION=	4.0.1

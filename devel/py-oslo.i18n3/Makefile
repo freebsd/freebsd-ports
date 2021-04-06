@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oslo.i18n
 PORTVERSION=	3.25.1

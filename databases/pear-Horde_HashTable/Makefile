@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Horde_HashTable
 PORTVERSION=	1.2.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ugrep
 DISTVERSIONPREFIX=	v

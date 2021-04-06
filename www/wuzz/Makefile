@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wuzz
 DISTVERSIONPREFIX=	v

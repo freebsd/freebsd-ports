@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyicap
 DISTVERSION=	1.0b1

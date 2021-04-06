@@ -1,5 +1,4 @@
 # Created by: Junho CHOI <junho.choi@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	scim-hangul
 PORTVERSION=	0.4.0

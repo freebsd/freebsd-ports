@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-cacheops
 PORTVERSION=	5.1

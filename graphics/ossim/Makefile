@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ossim
 DISTVERSIONPREFIX=	OrchidIsland-

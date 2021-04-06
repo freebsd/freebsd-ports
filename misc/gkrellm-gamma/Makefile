@@ -1,5 +1,4 @@
 # Created by: Pav Lucistnik <pav@oook.cz>
-# $FreeBSD$
 
 PORTNAME=	gkrellm-gamma
 PORTVERSION=	2.03

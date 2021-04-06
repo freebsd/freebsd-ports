@@ -1,5 +1,4 @@
 # Created by: Cy Schubert <cy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xforward
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni <giffunip@asme.org>
-# $FreeBSD$
 
 PORTNAME=	saoimage
 PORTVERSION=	1.35.1

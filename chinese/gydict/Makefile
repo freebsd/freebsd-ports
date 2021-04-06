@@ -1,5 +1,4 @@
 # Created by: Chih-Hsin Chang <chihhsin@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	gydict
 PORTVERSION=	1.0

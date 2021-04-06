@@ -1,5 +1,4 @@
 # Created by: johnpupu <johnpupu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	leveldb
 PORTVERSION=	0.2.1

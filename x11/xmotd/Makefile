@@ -1,5 +1,4 @@
 # Created by: Matthew West <mwest@uct.ac.za>
-# $FreeBSD$
 
 PORTNAME=	xmotd
 DISTVERSION=	1.17.3b

@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	tivoka
 PORTVERSION=	3.5.2

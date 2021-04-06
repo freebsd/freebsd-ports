@@ -1,5 +1,4 @@
 # Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-# $FreeBSD$
 
 PORTNAME=	File-ShareDir-Tarball
 PORTVERSION=	0.2.2

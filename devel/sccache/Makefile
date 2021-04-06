@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sccache
 DISTVERSIONPREFIX=	v

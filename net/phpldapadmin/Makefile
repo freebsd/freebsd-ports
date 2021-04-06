@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman
-# $FreeBSD$
 
 PORTNAME=	phpldapadmin
 PORTVERSION=	1.2.6.2

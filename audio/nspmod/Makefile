@@ -1,5 +1,4 @@
 # Created by: jmg
-# $FreeBSD$
 
 PORTNAME=	nspmod
 PORTVERSION=	0.1

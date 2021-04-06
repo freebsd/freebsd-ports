@@ -1,5 +1,4 @@
 # Created by: Andreas Klemm <andreas@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	personality
 PORTVERSION=	1.0

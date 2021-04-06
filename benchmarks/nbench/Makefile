@@ -1,5 +1,4 @@
 # Created by: Andrey Zakhvatov <andy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nbench
 PORTVERSION=	2.2.3

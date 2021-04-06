@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Js2Py
 DISTVERSION=	0.71

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	raphael-rails
 PORTVERSION=	2.1.2

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Perl6-Rules
 PORTVERSION=	0.03

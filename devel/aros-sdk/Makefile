@@ -1,5 +1,4 @@
 # Created by: Jona Joachim <walkingshadow@grummel.net>
-# $FreeBSD$
 
 PORTNAME=	aros-sdk
 PORTVERSION=	0.20060207

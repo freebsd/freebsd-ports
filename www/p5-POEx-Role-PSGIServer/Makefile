@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POEx-Role-PSGIServer
 PORTVERSION=	1.110670

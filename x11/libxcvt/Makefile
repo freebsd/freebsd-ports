@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libxcvt
 PORTVERSION=	s20210325

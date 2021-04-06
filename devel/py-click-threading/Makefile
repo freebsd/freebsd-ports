@@ -1,5 +1,4 @@
 # Created by: Christian Geier <geier@lostpackets.de>
-# $FreeBSD$
 
 PORTNAME=	click-threading
 PORTVERSION=	0.4.2

@@ -1,5 +1,4 @@
 # Created by: Igor Vinokurov <igor@zynaps.ru>
-# $FreeBSD$
 
 PORTNAME=	tac_plus
 PORTVERSION=	F4.0.4.28

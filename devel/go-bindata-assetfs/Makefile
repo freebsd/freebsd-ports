@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	go-bindata-assetfs
 DISTVERSIONPREFIX=	v

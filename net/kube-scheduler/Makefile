@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kube-scheduler
 PORTVERSION=	1.13.3

@@ -1,5 +1,4 @@
 # Created by: Christopher Elkins <chrise@scardini.com>
-# $FreeBSD$
 
 PORTNAME=	scandoc
 PORTVERSION=	0.14

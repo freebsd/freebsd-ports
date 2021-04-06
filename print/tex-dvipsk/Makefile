@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.995

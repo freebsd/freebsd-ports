@@ -1,5 +1,4 @@
 # Created by: Mahlon E. Smith <mahlon@martini.nu>
-# $FreeBSD$
 
 PORTNAME=	mdbx
 PORTVERSION=	0.9.3

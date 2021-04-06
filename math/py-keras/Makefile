@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	keras
 DISTVERSION=	2.4.3

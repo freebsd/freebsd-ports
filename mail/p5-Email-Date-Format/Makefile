@@ -1,5 +1,4 @@
 # Created by: Anton Yuzhaninov <citrin@rambler-co.ru>
-# $FreeBSD$
 
 PORTNAME=	Email-Date-Format
 PORTVERSION=	1.005

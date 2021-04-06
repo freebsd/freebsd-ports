@@ -1,5 +1,4 @@
 # Created by: Stephen Roznowski (sjr@home.com)
-# $FreeBSD$
 
 PORTNAME=	Parse-Syslog
 PORTVERSION=	1.10

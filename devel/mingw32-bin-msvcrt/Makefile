@@ -1,5 +1,4 @@
 # Created by: Lev A. Serebryakov <lev@serebryakov.spb.ru>
-# $FreeBSD$
 
 PORTNAME=	bin-msvcrt
 PORTVERSION=	r${RUNTIMEVERSION:S/-/./}.a${APIVERSION:S/-/./}

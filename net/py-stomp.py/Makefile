@@ -1,5 +1,4 @@
 # Created by: James Elstone <james@elstone.net>
-# $FreeBSD$
 
 PORTNAME=	stomp.py
 PORTVERSION=	4.1.17

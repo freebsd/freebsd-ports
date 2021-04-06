@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	berry
 PORTVERSION=	0.1.7

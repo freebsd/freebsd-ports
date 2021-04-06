@@ -1,5 +1,4 @@
 # Created by: Loïc BARTOLETTI <lbartoletti@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	readosm
 PORTVERSION=	1.1.0

@@ -1,5 +1,4 @@
 # Created by: mi
-# $FreeBSD$
 
 PORTNAME=	Mowitz
 PORTVERSION=	0.2.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pygdbmi
 PORTVERSION=	0.10.0.0

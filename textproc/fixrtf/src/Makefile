@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PROG=	fixrtf
 SRCS=	fixrtf.l

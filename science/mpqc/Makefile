@@ -1,5 +1,4 @@
 # Created by: batman <batman@udel.edu>
-# $FreeBSD$
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1

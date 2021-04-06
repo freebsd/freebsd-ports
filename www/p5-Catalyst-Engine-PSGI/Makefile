@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Engine-PSGI
 PORTVERSION=	0.14

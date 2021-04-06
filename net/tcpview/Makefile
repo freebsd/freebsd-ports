@@ -1,5 +1,4 @@
 # Created by: Chung-Kie Tung <tung@turtle.ee.ncku.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	tcpview
 PORTVERSION=	1.0

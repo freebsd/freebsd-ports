@@ -1,5 +1,4 @@
 # Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	pygraph
 DISTVERSION=	0.2.1-4

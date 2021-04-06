@@ -1,5 +1,4 @@
 # Created by: minter@lunenburg.org
-# $FreeBSD$
 
 PORTNAME=	tornado
 PORTVERSION=	1.4

@@ -1,5 +1,4 @@
 # Created by: Samy Al Bahra <samy@kerneled.com>
-# $FreeBSD$
 
 PORTNAME=	ae_fonts1_ttf
 PORTVERSION=	1.1

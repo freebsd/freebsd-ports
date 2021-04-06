@@ -1,5 +1,4 @@
 # Created by: Brad Huntting <huntting@glarp.com>
-# $FreeBSD$
 
 PORTNAME=	qcl
 PORTVERSION=	0.6.4

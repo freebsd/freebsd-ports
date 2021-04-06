@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gns3-converter
 PORTVERSION=	1.2.4

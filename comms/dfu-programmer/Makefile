@@ -1,5 +1,4 @@
 # Created by: elbarto@ArcadeBSD.org
-# $FreeBSD$
 
 PORTNAME=	dfu-programmer
 PORTVERSION=	0.7.2

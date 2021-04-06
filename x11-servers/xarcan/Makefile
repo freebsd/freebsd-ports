@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xarcan
 DISTVERSION=	0.6.0

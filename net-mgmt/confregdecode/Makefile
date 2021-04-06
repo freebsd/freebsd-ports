@@ -1,5 +1,4 @@
 # Created by: Joe Clarke <marcus@marcuscom.com>
-# $FreeBSD$
 
 PORTNAME=	confregdecode
 PORTVERSION=	1.2.1

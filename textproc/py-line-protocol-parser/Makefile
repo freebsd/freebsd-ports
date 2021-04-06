@@ -1,5 +1,4 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	line-protocol-parser
 PORTVERSION=	1.1.0

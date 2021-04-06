@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alegreya-sans
 DISTVERSIONPREFIX=	v

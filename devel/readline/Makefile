@@ -1,5 +1,4 @@
 # Created by: Frank Laszlo <laszlof@vonostingroup.com>
-# $FreeBSD$
 
 PORTNAME=	readline
 PORTVERSION=	8.1.${PATCHLEVEL}

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	atpublic
 PORTVERSION=	1.0

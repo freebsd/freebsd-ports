@@ -1,5 +1,4 @@
 # Created by: Marcin Jessa <yazzy@yazzy.org>
-# $FreeBSD$
 
 PORTNAME=	pcapy
 PORTVERSION=	0.11.1

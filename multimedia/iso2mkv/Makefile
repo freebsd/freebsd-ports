@@ -1,5 +1,4 @@
 # Created by: Alexander Botero-Lowry <alexbl@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	iso2mkv
 DISTVERSION=	2011-05-02

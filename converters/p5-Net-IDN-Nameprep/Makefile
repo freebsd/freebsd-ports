@@ -1,5 +1,4 @@
 # Created by: Timur Bakeyev <bat@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Net-IDN-Nameprep
 PORTVERSION=	1.102

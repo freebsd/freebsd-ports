@@ -1,5 +1,4 @@
 # Created by: Konstantin Menshikov <kostjnspb@yandex.ru>
-# $FreeBSD$
 
 PORTNAME=	Crypt-Twofish_PP
 PORTVERSION=	0.17

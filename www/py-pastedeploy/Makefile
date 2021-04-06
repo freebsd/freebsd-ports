@@ -1,5 +1,4 @@
 # Created by: Dryice Liu	<dryice@dryice.name>
-# $FreeBSD$
 
 PORTNAME=	pastedeploy
 PORTVERSION=	2.1.1

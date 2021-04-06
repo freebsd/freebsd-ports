@@ -1,5 +1,4 @@
 # Created by: Torsten Blum <torstenb@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	postfix
 DISTVERSION=	3.6-20210224

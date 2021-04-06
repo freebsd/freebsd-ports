@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-arango
 DISTVERSION=	7.1.0

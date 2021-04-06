@@ -1,5 +1,4 @@
 # Created by: Leo Kim <leo@florida.sarang.net>
-# $FreeBSD$
 
 PORTNAME=	MP3-ID3v1Tag
 PORTVERSION=	1.11

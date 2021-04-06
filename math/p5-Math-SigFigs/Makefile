@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Math-SigFigs
 PORTVERSION=	1.21

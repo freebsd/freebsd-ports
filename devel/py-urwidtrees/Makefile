@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	urwidtrees
 PORTVERSION=	1.0.2

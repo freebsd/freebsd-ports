@@ -1,5 +1,4 @@
 # Created by: Marc Fonvieille <blackend@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	freebsd-doc-all
 PORTVERSION=	20210125

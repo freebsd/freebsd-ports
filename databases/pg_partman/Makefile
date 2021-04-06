@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pg_partman
 DISTVERSIONPREFIX=	v

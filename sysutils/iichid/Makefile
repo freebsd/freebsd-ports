@@ -1,5 +1,4 @@
 # Created by: jrhett@netconsonance.com
-# $FreeBSD$
 
 PORTNAME=	iichid
 DISTVERSION=	0.0.6

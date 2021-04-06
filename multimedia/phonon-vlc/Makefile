@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phonon
 DISTVERSION=	0.11.2

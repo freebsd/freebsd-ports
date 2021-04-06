@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	widgets
 DISTVERSION=	${QT5_VERSION}

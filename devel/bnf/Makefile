@@ -1,5 +1,4 @@
 # Created by: Frerich Raabe <frerich.raabe@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	bnf
 PORTVERSION=	1.6.10

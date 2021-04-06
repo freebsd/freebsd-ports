@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	font-misc-ethiopic
 PORTVERSION=	1.0.4

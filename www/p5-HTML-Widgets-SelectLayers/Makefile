@@ -1,5 +1,4 @@
 # Created by: Peter Avalos <pavalos@theshell.com>
-# $FreeBSD$
 
 PORTNAME=	HTML-Widgets-SelectLayers
 PORTVERSION=	0.07

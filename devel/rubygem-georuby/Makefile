@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	georuby
 PORTVERSION=	2.5.2

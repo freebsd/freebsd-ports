@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	coverage_enable_subprocess
 PORTVERSION=	1.0

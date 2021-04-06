@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	optimfrog
 PORTVERSION=	5.100

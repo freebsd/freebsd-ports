@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 # ===========================================================
 # Only the most important modules are enabled per default in 
 # httpd.conf, therfore build all modules not depending on other

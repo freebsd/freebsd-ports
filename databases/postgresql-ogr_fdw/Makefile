@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ogr_fdw
 DISTVERSIONPREFIX=	v

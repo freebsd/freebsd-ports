@@ -1,5 +1,4 @@
 # Created by: Craig Leres <leres@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	arduino-sevseg
 PORTVERSION=	3.5.0

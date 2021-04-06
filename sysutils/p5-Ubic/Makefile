@@ -1,5 +1,4 @@
 # Created by: Dmitry Yashin <dmitry@yashin.su>
-# $FreeBSD$
 
 PORTNAME=	Ubic
 PORTVERSION=	1.58

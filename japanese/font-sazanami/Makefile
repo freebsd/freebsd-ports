@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sazanami
 PORTVERSION=	20040629

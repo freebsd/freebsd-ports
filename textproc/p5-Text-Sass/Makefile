@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Text-Sass
 PORTVERSION=	0.97

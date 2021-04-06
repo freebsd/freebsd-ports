@@ -1,5 +1,4 @@
 # Created by: Leo Vandewoestijne <freebsd@dns-lab.com>
-# $FreeBSD$
 
 PORTNAME=	liburcu
 PORTVERSION=	0.12.1

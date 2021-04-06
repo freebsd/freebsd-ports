@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gemma
 DISTVERSION=	0.98.3

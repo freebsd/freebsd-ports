@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	voro++
 DISTVERSION=	0.4.6

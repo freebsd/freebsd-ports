@@ -1,5 +1,4 @@
 # Created by: luigi@FreeBSD.org
-# $FreeBSD$
 
 # Maintainers:		Luigi Rizzo <luigi@FreeBSD.org>
 #

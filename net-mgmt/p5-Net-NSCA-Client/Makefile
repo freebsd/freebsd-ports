@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-NSCA-Client
 PORTVERSION=	0.009002

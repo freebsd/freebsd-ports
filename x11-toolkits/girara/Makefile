@@ -1,5 +1,4 @@
 # Created by: Mike Krutov <neko@takino.org>
-# $FreeBSD$
 
 PORTNAME=	girara
 PORTVERSION=	0.3.5

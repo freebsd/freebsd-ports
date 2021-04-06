@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-AlzaboWrapper
 PORTVERSION=	0.14

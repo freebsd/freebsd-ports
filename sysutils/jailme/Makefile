@@ -1,5 +1,4 @@
 # Created by: wmoran
-# $FreeBSD$
 
 PORTNAME=	jailme
 PORTVERSION=	0.2.0

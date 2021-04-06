@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Dancer2-Plugin-Ajax
 PORTVERSION=	0.400000

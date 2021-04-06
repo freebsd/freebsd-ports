@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	STF-Dispatcher-PSGI
 PORTVERSION=	1.12

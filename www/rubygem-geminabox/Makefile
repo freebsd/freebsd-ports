@@ -1,5 +1,4 @@
 # Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
-# $FreeBSD$
 
 PORTNAME=	geminabox
 PORTVERSION=	1.1.1

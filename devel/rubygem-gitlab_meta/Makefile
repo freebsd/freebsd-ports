@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gitlab_meta
 PORTVERSION=	7.0

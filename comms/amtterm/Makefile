@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	amtterm
 PORTVERSION=	1.6

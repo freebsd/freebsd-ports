@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gogui
 DISTVERSIONPREFIX=	v

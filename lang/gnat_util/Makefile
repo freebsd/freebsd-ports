@@ -1,5 +1,4 @@
 # Created by: John Marino <marino@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gnat_util
 PORTVERSION=	${SNAPSHOT}

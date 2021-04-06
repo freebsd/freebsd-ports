@@ -1,5 +1,4 @@
 # Created by: Erwin Lansing <erwin@lansing.dk>
-# $FreeBSD$
 
 PORTNAME=	Encode-compat
 PORTVERSION=	0.07

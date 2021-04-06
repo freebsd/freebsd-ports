@@ -1,5 +1,4 @@
 # Created by: David Shane Holden <dpejesh@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=		parallax
 PORTVERSION=		1.0.6

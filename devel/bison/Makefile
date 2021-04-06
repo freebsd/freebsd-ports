@@ -1,5 +1,4 @@
 # Created by: Jerry Hicks
-# $FreeBSD$
 
 PORTNAME=	bison
 PORTVERSION=	3.7.5

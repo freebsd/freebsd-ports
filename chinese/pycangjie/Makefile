@@ -1,5 +1,4 @@
 # Created by: blubee <hello@blubee.me>
-# $FreeBSD$
 
 PORTNAME=		pycangjie
 PORTVERSION=		1.3

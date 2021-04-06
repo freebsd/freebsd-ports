@@ -1,5 +1,4 @@
 # Created by: Brian Dean <bsd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	comserv
 PORTVERSION=	1.4.4

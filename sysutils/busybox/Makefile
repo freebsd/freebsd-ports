@@ -1,5 +1,4 @@
 # Created by: luigi@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	busybox
 PORTVERSION=	1.32.1

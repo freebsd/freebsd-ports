@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webassets
 PORTVERSION=	2.0

@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz <rpsfa@rit.edu>
-# $FreeBSD$
 
 PORTNAME=	delayed_job
 PORTVERSION=	4.1.9

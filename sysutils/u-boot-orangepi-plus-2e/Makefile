@@ -1,5 +1,4 @@
 # Created by: Jov <amutu@amutu.com>
-# $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../u-boot-master
 

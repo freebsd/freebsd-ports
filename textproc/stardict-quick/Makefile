@@ -1,5 +1,4 @@
 # Created by: Timur I. Bakeyev <timur@gnome.org>
-# $FreeBSD$
 
 PORTNAME=	stardict-quick
 PORTVERSION=	2.4.2

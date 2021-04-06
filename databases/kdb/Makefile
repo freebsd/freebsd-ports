@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		kdb
 DISTVERSION=		3.2.0

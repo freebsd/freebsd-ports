@@ -1,5 +1,4 @@
 # Created by: gpalmer@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	9.22

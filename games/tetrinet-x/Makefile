@@ -1,5 +1,4 @@
 # Created by: gmarco@giovannelli.it
-# $FreeBSD$
 
 PORTNAME=	tetrinet-x
 PORTVERSION=	1.13.16

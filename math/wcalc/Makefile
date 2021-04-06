@@ -1,5 +1,4 @@
 # Created by: Amarendra Godbole <amarendra.godbole@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wcalc
 PORTVERSION=	2.5

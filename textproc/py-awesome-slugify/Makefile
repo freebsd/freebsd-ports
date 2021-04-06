@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	awesome-slugify
 PORTVERSION=	1.6.5

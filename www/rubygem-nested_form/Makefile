@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nested_form
 PORTVERSION=	0.3.2

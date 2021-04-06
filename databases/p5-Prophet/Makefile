@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Prophet
 PORTVERSION=	0.751

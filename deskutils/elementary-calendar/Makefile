@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	elementary-calendar
 DISTVERSION=	5.1.1

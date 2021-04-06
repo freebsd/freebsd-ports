@@ -1,5 +1,4 @@
 # Created by: Juergen Lock <nox@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vdr-plugin-skinenigmang
 PORTVERSION=	0.1.2s20120606

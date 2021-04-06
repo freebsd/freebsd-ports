@@ -1,5 +1,4 @@
 # Created by: Stefan Jahn <stefan.jahn@nemesis-sektor.de>
-# $FreeBSD$
 
 PORTNAME=	gqradio
 PORTVERSION=	1.9.2

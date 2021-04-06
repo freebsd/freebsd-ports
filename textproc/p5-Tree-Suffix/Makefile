@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Tree-Suffix
 PORTVERSION=	0.22

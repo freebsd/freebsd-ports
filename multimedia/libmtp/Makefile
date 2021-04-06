@@ -1,5 +1,4 @@
 # Created by: Petar Zhivkov Petrov <pesho.petrov@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libmtp
 PORTVERSION=	1.1.18

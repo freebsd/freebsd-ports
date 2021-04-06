@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xsm
 PORTVERSION=	1.0.4

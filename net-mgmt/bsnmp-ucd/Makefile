@@ -1,5 +1,4 @@
 # Created by: Mikolaj Golub <to.my.trociny@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	bsnmp-ucd
 PORTVERSION=	0.4.5

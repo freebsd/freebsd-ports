@@ -1,5 +1,4 @@
 # Created by: Max Khon
-# $FreeBSD$
 
 PORTNAME=	pgadmin3
 PORTVERSION=	1.22.2

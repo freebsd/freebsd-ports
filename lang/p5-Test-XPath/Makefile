@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-XPath
 PORTVERSION=	0.19

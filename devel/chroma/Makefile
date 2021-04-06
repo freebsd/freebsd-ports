@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chroma
 DISTVERSIONPREFIX=	v

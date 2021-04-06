@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qtermwidget
 PORTVERSION=	0.16.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	miktex
 DISTVERSION=	21.2

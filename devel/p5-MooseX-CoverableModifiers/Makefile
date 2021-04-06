@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MooseX-CoverableModifiers
 PORTVERSION=	0.30

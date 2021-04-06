@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	slimta
 PORTVERSION=	0.7.8

@@ -1,5 +1,4 @@
 # Created by: dom@happygiraffe.net
-# $FreeBSD$
 
 PORTNAME=	gkermit
 PORTVERSION=	1.0

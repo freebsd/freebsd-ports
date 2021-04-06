@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	blockattack
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	myrddin
 PORTVERSION=	0.3.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xf86-input-keyboard
 PORTVERSION=	1.9.0

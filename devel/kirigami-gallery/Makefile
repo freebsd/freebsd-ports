@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kirigami-gallery
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

@@ -1,5 +1,4 @@
 # Created by: Kimura Fuyuki <fuyuki@nigredo.org>
-# $FreeBSD$
 
 PORTNAME=	uuid
 PORTVERSION=	1.6.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kmenuedit
 DISTVERSION=	${KDE_PLASMA_VERSION}

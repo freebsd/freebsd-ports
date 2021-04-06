@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		sbws
 PORTVERSION=		1.1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hashdb
 DISTVERSIONPREFIX=	v

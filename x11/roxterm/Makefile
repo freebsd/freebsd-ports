@@ -1,5 +1,4 @@
 # Created by: Yinghong Liu <relaxbsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	roxterm
 PORTVERSION=	3.10.1

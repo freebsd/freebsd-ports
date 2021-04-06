@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dosbox-staging
 DISTVERSIONPREFIX=	v

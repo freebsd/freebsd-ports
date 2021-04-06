@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vt
 DISTVERSION=	0.57721

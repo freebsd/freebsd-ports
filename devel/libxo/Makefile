@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libxo
 PORTVERSION=	0.6.1

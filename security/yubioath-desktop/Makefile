@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yubioath-desktop
 DISTVERSIONPREFIX=	yubioath-desktop-

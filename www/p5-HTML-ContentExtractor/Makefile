@@ -1,5 +1,4 @@
 # Created by: Oleg Mamontov <oleg@mamontov.net>
-# $FreeBSD$
 
 PORTNAME=	HTML-ContentExtractor
 PORTVERSION=	0.03

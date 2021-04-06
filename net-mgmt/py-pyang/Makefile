@@ -1,5 +1,4 @@
 # Created by: Bruce Simpson
-# $FreeBSD$
 
 PORTNAME=	pyang
 PORTVERSION=	1.7.8

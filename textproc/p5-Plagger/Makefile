@@ -1,5 +1,4 @@
 # Created by: sumikawa@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Plagger
 PORTVERSION=	0.7.17

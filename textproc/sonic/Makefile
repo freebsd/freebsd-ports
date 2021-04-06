@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sonic
 DISTVERSIONPREFIX=	v

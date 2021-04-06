@@ -1,5 +1,4 @@
 # Created by: Hakisho Nukama <nukama@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	fuel
 DISTVERSION=	1.0.1

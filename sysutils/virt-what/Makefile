@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	virt-what
 PORTVERSION=	1.20

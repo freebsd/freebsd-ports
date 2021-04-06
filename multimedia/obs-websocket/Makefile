@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	obs-websocket
 DISTVERSION=	4.8.0

@@ -1,5 +1,4 @@
 # Created by: arrowd <6yearold@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Hasklig
 DISTVERSION=	1.1

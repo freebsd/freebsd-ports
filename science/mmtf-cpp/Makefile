@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mmtf-cpp
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Michael Cardell Widerkrantz <mc@hack.org>
-# $FreeBSD$
 
 PORTNAME=	radns
 DISTVERSION=	20110809-2

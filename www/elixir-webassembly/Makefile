@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webassembly
 PORTVERSION=	0.6.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vncreflector
 PORTVERSION=	1.2.4

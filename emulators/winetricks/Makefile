@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	winetricks
 PORTVERSION=	20191224

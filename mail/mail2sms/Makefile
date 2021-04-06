@@ -1,5 +1,4 @@
 # Created by: Gerhard Gonter <g.gonter@ieee.org>
-# $FreeBSD$
 
 PORTNAME=	mail2sms
 PORTVERSION=	1.3.5

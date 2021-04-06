@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	drkonqi
 DISTVERSION=	${KDE_PLASMA_VERSION}

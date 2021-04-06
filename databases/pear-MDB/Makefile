@@ -1,5 +1,4 @@
 # Created by: Oleg Sharoiko <os@rsu.ru>
-# $FreeBSD$
 
 PORTNAME=	MDB
 PORTVERSION=	1.3.0

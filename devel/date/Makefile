@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	date
 DISTVERSIONPREFIX=	v

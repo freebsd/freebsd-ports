@@ -1,5 +1,4 @@
 # Created by: Cezary Morga <cm@therek.net>
-# $FreeBSD$
 
 PORTNAME=	Parse-ErrorString-Perl
 PORTVERSION=	0.27

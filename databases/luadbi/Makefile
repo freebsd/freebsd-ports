@@ -1,5 +1,4 @@
 # Created by: Olexander Melnyk <olexander.v.melnyk@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	luadbi
 PORTVERSION=	0.7.2

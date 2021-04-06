@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	XML-Elemental
 PORTVERSION=	2.11

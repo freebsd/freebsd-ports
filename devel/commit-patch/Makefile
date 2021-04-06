@@ -1,5 +1,4 @@
 # Created by: Lapo Luchini <lapo@lapo.it>
-# $FreeBSD$
 
 PORTNAME=	commit-patch
 PORTVERSION=	2.6

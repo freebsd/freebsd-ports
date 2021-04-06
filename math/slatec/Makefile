@@ -1,5 +1,4 @@
 # Created by: Anton Shterenlikht
-# $FreeBSD$
 
 PORTNAME=	slatec
 PORTVERSION=	4.1

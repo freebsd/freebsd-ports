@@ -1,5 +1,4 @@
 # Created by: Babak Farrokhi
-# $FreeBSD$
 
 PORTNAME=	tapidbus
 PORTVERSION=	0.2.1

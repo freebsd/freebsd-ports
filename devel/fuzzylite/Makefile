@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fuzzylite
 DISTVERSIONPREFIX=	v

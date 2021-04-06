@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	shell2html
 PORTVERSION=	0.0.6

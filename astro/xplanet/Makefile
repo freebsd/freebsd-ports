@@ -1,5 +1,4 @@
 # Created by: darius@dons.net.au
-# $FreeBSD$
 
 PORTNAME=	xplanet
 PORTVERSION=	1.3.1

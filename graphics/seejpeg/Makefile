@@ -1,5 +1,4 @@
 # Created by: Donn Miller <dmmiller@cvzoom.net>
-# $FreeBSD$
 
 PORTNAME=	seejpeg
 PORTVERSION=	1.10

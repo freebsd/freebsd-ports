@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Moose-More
 PORTVERSION=	0.050

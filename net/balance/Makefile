@@ -1,5 +1,4 @@
 # Created by: Joseph Scott <joseph@randomnetworks.com>
-# $FreeBSD$
 
 PORTNAME=	balance
 PORTVERSION=	3.57

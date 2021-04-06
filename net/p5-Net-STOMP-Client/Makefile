@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-STOMP-Client
 PORTVERSION=	2.3

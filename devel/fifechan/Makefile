@@ -1,5 +1,4 @@
 # Created by: Green Dog <fiziologus@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	fifechan
 PORTVERSION=	0.1.5

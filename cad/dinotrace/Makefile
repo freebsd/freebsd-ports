@@ -1,5 +1,4 @@
 # Created by: Joachim Strombergson <watchman@ludd.ltu.se>
-# $FreeBSD$
 
 PORTNAME=	dinotrace
 PORTVERSION=	9.4c

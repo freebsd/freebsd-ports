@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pixman
 PORTVERSION=	0.40.0

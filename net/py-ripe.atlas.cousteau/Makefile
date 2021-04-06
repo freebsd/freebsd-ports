@@ -1,5 +1,4 @@
 # Created by: Massimiliano Stucchi <mstucchi@ripe.net>
-# $FreeBSD$
 
 PORTNAME=	ripe.atlas.cousteau
 DISTVERSION=	1.4.2

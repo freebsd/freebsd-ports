@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sofia-sip
 DISTVERSIONPREFIX=	v

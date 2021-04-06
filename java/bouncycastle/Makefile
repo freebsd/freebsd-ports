@@ -1,5 +1,4 @@
 # Created by: rasputin
-# $FreeBSD$
 
 PORTNAME=	bouncycastle
 PORTVERSION=	1.45

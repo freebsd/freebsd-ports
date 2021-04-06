@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	emby-server
 PORTVERSION=	4.5.4.0

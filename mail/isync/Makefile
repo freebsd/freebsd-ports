@@ -1,5 +1,4 @@
 # Created by: eivind
-# $FreeBSD$
 
 PORTNAME=	isync
 PORTVERSION=	1.4.1

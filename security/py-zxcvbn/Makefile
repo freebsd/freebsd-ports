@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zxcvbn
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mdynamix
 DISTVERSION=	5.2.8

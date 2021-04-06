@@ -1,5 +1,4 @@
 # Created by: MIHIRA Yoshiro <sanpei@jp.FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	doc
 PORTVERSION=	2.2.3

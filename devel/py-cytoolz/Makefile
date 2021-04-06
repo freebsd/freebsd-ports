@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cytoolz
 PORTVERSION=	0.11.0

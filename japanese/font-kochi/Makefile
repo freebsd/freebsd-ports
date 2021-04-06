@@ -1,5 +1,4 @@
 # Created by: KANOU Hiroki <kanou@mil.allnet.ne.jp>
-# $FreeBSD$
 
 PORTNAME=	kochi
 PORTVERSION=	20030809

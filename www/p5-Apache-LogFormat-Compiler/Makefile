@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Apache-LogFormat-Compiler
 PORTVERSION=	0.35

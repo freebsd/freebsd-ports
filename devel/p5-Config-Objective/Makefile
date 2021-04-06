@@ -1,5 +1,4 @@
 # Created by: Jim Pirzyk <pirzyk@uiuc.edu>
-# $FreeBSD$
 
 PORTNAME=	Config-Objective
 PORTVERSION=	0.9.1

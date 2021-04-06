@@ -1,5 +1,4 @@
 # Created by: Sergey Osokin <osa@FreeBSD.org>
-# $FreeBSD$
 
 MASTER_SITES=	https://unit.nginx.org/download/:unit \
 	https://repo1.maven.org/maven2/io/github/classgraph/classgraph/${CLASSGRAPH_VERSION}/:classgraph \

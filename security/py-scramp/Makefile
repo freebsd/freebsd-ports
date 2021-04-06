@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scramp
 PORTVERSION=	1.2.2

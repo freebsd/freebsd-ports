@@ -1,5 +1,4 @@
 # Created by: Dominique Goncalves <dominique.goncalves@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	squidanalyzer
 PORTVERSION=	6.5

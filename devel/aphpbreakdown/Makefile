@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aphpbreakdown
 DISTVERSION=	2.2.2

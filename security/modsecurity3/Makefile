@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	modsecurity
 DISTVERSIONPREFIX=	v

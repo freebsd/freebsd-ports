@@ -1,5 +1,4 @@
 # Created by: Choe, Cheng-Dae
-# $FreeBSD$
 
 PORTNAME=	dbutils
 PORTVERSION=	2.0

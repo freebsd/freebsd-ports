@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	colored
 DISTVERSION=	1.4.2

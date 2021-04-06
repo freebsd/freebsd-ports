@@ -1,5 +1,4 @@
 # Created by: Chris Larsen <darth@vader.dk>
-# $FreeBSD$
 
 PORTNAME=	WWW-Curl
 PORTVERSION=	4.17

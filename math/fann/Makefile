@@ -1,5 +1,4 @@
 # Created by: Tz-Huan Huang <tzhuan@csie.org>
-# $FreeBSD$
 
 PORTNAME=	fann
 PORTVERSION=	2.2.0

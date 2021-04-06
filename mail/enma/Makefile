@@ -1,5 +1,4 @@
 # Created by: Hirohisa Yamaguchi <umq@ueo.co.jp>
-# $FreeBSD$
 
 PORTNAME=	enma
 PORTVERSION=	1.2.0

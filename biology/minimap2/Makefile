@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		minimap2
 DISTVERSIONPREFIX=	v

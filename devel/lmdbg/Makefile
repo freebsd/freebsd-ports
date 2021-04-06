@@ -1,5 +1,4 @@
 # Created by: Mikolaj Golub <to.my.trociny@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	lmdbg
 PORTVERSION=	1.3.0

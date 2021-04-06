@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-Quoted
 PORTVERSION=	0.04

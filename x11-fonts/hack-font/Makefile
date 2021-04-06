@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hack-font
 PORTVERSION=	3.003

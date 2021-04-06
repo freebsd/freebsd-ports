@@ -1,5 +1,4 @@
 # Created by: Dima Sivachenko <dima@chg.ru>
-# $FreeBSD$
 
 PORTNAME=	pvm
 PORTVERSION=	3.4.6

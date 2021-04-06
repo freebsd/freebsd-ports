@@ -1,5 +1,4 @@
 # Created by: Espen Tagestad <espen@tagestad.no>
-# $FreeBSD$
 
 PORTNAME=	Excel-Template
 PORTVERSION=	0.34

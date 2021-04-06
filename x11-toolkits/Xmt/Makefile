@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Xmt
 PORTVERSION=	4.0.0

@@ -1,5 +1,4 @@
 # Created by: Sebastien Santoro <dereckson@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	tclsoap
 PORTVERSION=	1.6.7

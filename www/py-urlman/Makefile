@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	urlman
 DISTVERSION=	1.2.0

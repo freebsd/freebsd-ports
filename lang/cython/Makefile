@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wenhping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	cython
 PORTVERSION=	0.29.21

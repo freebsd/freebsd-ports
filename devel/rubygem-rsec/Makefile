@@ -1,5 +1,4 @@
 # Created by: Frank Wall <fw@moov.de>
-# $FreeBSD$
 
 PORTNAME=	rsec
 PORTVERSION=	0.4.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xload
 PORTVERSION=	1.1.3

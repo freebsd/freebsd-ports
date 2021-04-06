@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Rand
 PORTVERSION=	0.0.4

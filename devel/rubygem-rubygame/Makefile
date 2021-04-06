@@ -1,5 +1,4 @@
 # Created by: ws	Christoph Kick
-# $FreeBSD$
 
 PORTNAME=	rubygame
 PORTVERSION=	2.6.4

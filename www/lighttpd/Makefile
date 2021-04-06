@@ -1,5 +1,4 @@
 # Created by: k@123.org
-# $FreeBSD$
 
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.59

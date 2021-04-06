@@ -1,5 +1,4 @@
 # Created by: Sergey Golyashov <svvord@soft-wizard.ru>
-# $FreeBSD$
 
 PORTNAME=	Doxygen-Filter-Perl
 PORTVERSION=	1.61

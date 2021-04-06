@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ZeGrapher
 DISTVERSIONPREFIX=	v

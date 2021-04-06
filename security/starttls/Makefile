@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	starttls
 PORTVERSION=	0.10

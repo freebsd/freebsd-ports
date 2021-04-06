@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vault
 PORTVERSION=	1.6.3

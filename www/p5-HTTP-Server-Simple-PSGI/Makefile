@@ -1,5 +1,4 @@
 # Created by: ports@c0decafe.net
-# $FreeBSD$
 
 PORTNAME=	HTTP-Server-Simple-PSGI
 PORTVERSION=	0.16

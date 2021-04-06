@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rex-rop_builder
 PORTVERSION=	0.1.4

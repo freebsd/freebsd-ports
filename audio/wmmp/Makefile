@@ -1,5 +1,4 @@
 # Created by: Nicolas Herry <nicolasherry@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wmmp
 PORTVERSION=	0.12.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libstorj
 PORTVERSION=	1.0.3

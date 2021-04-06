@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xrefresh
 PORTVERSION=	1.0.6

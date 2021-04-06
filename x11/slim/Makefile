@@ -1,5 +1,4 @@
 # Created by: Tobias Roth <ports@fsck.ch>
-# $FreeBSD$
 
 PORTNAME=	slim
 PORTVERSION=	1.3.6

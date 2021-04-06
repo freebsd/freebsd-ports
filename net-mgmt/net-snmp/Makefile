@@ -1,5 +1,4 @@
 # Created by: gpalmer
-# $FreeBSD$
 
 PORTNAME=	snmp
 PORTVERSION=	5.9

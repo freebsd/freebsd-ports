@@ -1,5 +1,4 @@
 # Created by: Tilman Linneweh <arved@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	liblrdf
 DISTVERSION=	0.6.1

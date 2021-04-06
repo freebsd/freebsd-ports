@@ -1,5 +1,4 @@
 # Created by: Piotr Smyrak <smyru@heron.pl>
-# $FreeBSD$
 
 PORTNAME=	cursor-jimmac-theme
 PORTVERSION=	0.1

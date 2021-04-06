@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}

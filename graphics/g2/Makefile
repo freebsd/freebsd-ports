@@ -1,5 +1,4 @@
 # Created by: Bill Fumerola <billf@chc-chimes.com>
-# $FreeBSD$
 
 PORTNAME=	g2
 PORTVERSION=	0.72

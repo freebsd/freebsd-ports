@@ -1,5 +1,4 @@
 # Created by: Pietro Cerutti <gahr@gahr.ch>
-# $FreeBSD$
 
 PORTNAME=	scew
 PORTVERSION=	1.2.0

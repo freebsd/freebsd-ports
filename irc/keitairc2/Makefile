@@ -1,5 +1,4 @@
 # Created by: Makoto Matsushita <matusita@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	keitairc
 PORTVERSION=	2.0

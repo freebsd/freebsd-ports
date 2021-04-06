@@ -1,5 +1,4 @@
 # Created by: Vick Khera <vivek@khera.org>
-# $FreeBSD$
 
 PORTNAME=	mod_authnz_crowd
 PORTVERSION=	2.2.2

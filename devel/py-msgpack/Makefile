@@ -1,5 +1,4 @@
 # Created by: Andrey Zonov <andrey@zonov.org>
-# $FreeBSD$
 
 PORTNAME=	msgpack
 PORTVERSION=	1.0.2

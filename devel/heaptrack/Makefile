@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	heaptrack
 DISTVERSIONPREFIX=	v

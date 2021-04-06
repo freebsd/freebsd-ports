@@ -1,5 +1,4 @@
 # Created by: Qing Feng <qingfeng@douban.com>
-# $FreeBSD$
 
 PORTNAME=	Scrapy
 DISTVERSION=	1.6.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gvm-tools
 DISTVERSION=	21.1.0

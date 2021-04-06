@@ -1,5 +1,4 @@
 # Created by: Devin Teske <dteske@vicor.com>
-# $FreeBSD$
 
 PORTNAME=	host-setup
 PORTVERSION=	4.0.2

@@ -1,5 +1,4 @@
 # Created by: jabley@clear.co.nz
-# $FreeBSD$
 
 PORTNAME=	xfstt
 PORTVERSION=	1.11

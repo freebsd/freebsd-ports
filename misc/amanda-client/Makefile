@@ -1,5 +1,4 @@
 # Created by: gpalmer
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-client
 

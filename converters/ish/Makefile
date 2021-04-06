@@ -1,5 +1,4 @@
 # Created by: hosokawa
-# $FreeBSD$
 
 PORTNAME=	ish
 PORTVERSION=	2.01a5

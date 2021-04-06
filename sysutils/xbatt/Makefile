@@ -1,5 +1,4 @@
 # Created by: Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
-# $FreeBSD$
 
 PORTNAME=	xbatt
 PORTVERSION=	1.2.1

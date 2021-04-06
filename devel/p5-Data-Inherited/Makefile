@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Inherited
 PORTVERSION=	1.100860

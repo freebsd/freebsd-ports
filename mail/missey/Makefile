@@ -1,5 +1,4 @@
 # Created by: delphij@FreeBSD.org.cn
-# $FreeBSD$
 
 PORTNAME=	missey
 PORTVERSION=	1.2.0

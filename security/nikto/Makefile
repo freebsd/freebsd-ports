@@ -1,5 +1,4 @@
 # Created by: pandzilla
-# $FreeBSD$
 
 PORTNAME=	nikto
 PORTVERSION=	2.1.6

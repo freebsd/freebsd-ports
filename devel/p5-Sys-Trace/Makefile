@@ -1,5 +1,4 @@
 # Created by: Ju Pengfei <jupengfei@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Sys-Trace
 PORTVERSION=	0.03

@@ -1,5 +1,4 @@
 # Created by: markm
-# $FreeBSD$
 
 PORTNAME=	xinetd
 PORTVERSION=	2.3.15

@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Mac-FileSpec-Unixish
 PORTVERSION=	1.12

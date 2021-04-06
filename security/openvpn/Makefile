@@ -1,5 +1,4 @@
 # Created by: Matthias Andree <mandree@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=		openvpn
 DISTVERSION=		2.5.1

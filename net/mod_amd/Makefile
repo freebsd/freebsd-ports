@@ -1,5 +1,4 @@
 # Created by: Simun Mikecin <numisemis@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	mod_amd
 PORTVERSION=	g20150926

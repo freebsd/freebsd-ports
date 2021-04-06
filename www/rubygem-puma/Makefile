@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	puma
 PORTVERSION=	5.1.1

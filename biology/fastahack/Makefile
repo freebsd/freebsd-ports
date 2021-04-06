@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		fastahack
 DISTVERSIONPREFIX=	v

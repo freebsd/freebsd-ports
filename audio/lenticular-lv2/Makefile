@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lenticular
 DISTVERSIONPREFIX=	v

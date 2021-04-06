@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qwalk
 DISTVERSIONPREFIX=	v

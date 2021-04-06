@@ -1,5 +1,4 @@
 # Created by: Rong-En Fan <rafan@infor.org>
-# $FreeBSD$
 
 PORTNAME=	File-BaseDir
 PORTVERSION=	0.08

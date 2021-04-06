@@ -1,5 +1,4 @@
 # Created by: Thomas Bartelmess <thomas@bartelmess.io>
-# $FreeBSD$
 
 PORTNAME=	graylog
 DISTVERSION=	4.0.5

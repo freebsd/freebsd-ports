@@ -1,5 +1,4 @@
 # Created by: Roman Shterenzon <roman@xpert.com>
-# $FreeBSD$
 
 PORTNAME=	pdnsd
 PORTVERSION=	1.2.9a

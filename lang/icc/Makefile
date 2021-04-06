@@ -1,5 +1,4 @@
 # Created by: netchild@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	icc
 PORTVERSION=	8.1.038

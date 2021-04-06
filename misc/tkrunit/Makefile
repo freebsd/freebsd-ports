@@ -1,5 +1,4 @@
 # Created by: Stephen Farrell <steve@farrell.org>
-# $FreeBSD$
 
 PORTNAME=	tkRunIt
 PORTVERSION=	0.94.1

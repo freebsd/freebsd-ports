@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	breeze-gtk
 DISTVERSION=	${KDE_PLASMA_VERSION}

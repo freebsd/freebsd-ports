@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	puppet
 PORTVERSION=	6.21.1

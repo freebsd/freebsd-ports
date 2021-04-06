@@ -1,5 +1,4 @@
 # Created by: Matthieu Guegan <matt.guegan@free.fr>
-# $FreeBSD$
 
 PORTNAME=	gimmix
 PORTVERSION=	0.5.7.2

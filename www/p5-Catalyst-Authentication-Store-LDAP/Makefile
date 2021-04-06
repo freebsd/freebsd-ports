@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Authentication-Store-LDAP
 PORTVERSION=	1.016

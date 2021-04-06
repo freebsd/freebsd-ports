@@ -1,5 +1,4 @@
 # Created by: Janni
-# $FreeBSD$
 
 PORTNAME=	eris
 PORTVERSION=	1.3.23

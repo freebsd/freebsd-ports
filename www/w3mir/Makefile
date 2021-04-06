@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	w3mir
 PORTVERSION=	1.0.10

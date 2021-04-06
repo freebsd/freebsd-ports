@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qml-box2d
 DISTVERSION=	2.0.20180109

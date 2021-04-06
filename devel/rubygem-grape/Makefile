@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grape
 PORTVERSION=	1.5.2

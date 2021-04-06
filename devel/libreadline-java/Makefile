@@ -1,5 +1,4 @@
 # Created by: Martin Kammerhofer <mkamm@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	libreadline-java
 PORTVERSION=	0.8.0

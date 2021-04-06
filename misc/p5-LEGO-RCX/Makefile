@@ -1,5 +1,4 @@
 # Created by: Kelly Yancey <kbyanc@posi.net>
-# $FreeBSD$
 
 PORTNAME=	LEGO-RCX
 PORTVERSION=	1.01

@@ -1,5 +1,4 @@
 # Created by: Anonymous
-# $FreeBSD$
 
 PORTNAME=	wgetpaste
 PORTVERSION=	2.30

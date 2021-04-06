@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xtoolchain
 .ifndef NO_LLD_LINK

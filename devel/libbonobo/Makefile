@@ -1,5 +1,4 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-# $FreeBSD$
 #   $MCom: ports/trunk/devel/libbonobo/Makefile 18393 2013-04-26 21:23:07Z kwm $
 
 PORTNAME=	libbonobo

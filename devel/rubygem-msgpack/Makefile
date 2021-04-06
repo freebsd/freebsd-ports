@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	msgpack
 PORTVERSION=	1.4.2

@@ -1,5 +1,4 @@
 # Created by: glarkin
-# $FreeBSD$
 
 PORTNAME=	statsvn
 PORTVERSION=	0.7.0

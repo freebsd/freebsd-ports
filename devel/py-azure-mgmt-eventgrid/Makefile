@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-eventgrid
 DISTVERSION=	3.0.0rc7

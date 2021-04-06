@@ -1,5 +1,4 @@
 # Created by: Choe, Cheng-Dae <whitekid@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	freeimage
 PORTVERSION=	3.18.0

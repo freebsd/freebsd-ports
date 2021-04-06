@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-containerinstance
 PORTVERSION=	1.5.0

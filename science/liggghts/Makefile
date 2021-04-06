@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	liggghts
 DISTVERSION=	3.8.0-26

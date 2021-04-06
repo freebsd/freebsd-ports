@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cocoalib
 DISTVERSION=	0.99712

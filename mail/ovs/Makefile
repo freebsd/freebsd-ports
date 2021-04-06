@@ -1,5 +1,4 @@
 # Created by: Xavier Beaudouin <kiwi@oav.net>
-# $FreeBSD$
 
 PORTNAME=	ovs
 PORTVERSION=	1.05

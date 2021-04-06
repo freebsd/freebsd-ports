@@ -1,5 +1,4 @@
 # Created by: Dryice Liu <dryice@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	beaker
 PORTVERSION=	1.11.0

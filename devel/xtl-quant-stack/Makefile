@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xtl
 DISTVERSION=	0.7.2

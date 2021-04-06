@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dbd-mysql
 PORTVERSION=	0.4.4

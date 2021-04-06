@@ -1,5 +1,4 @@
 # Created by: Pietro Cerutti (gahr@gahr.ch)
-# $FreeBSD$
 
 PORTNAME=	tuxguitar
 PORTVERSION=	1.2

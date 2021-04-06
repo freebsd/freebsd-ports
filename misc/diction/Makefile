@@ -1,5 +1,4 @@
 # Created by: J Han <hjh@best.com>
-# $FreeBSD$
 
 PORTNAME=	diction
 PORTVERSION=	1.11

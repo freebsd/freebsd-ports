@@ -1,5 +1,4 @@
 # Created by: krion
-# $FreeBSD$
 
 PORTNAME=	xterm
 PORTVERSION=	367

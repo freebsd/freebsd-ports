@@ -1,5 +1,4 @@
 # Created by: Chris Petrik <chris@officialunix.com>
-# $FreeBSD$
 
 PORTNAME=	diakonos
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cdplayer
 PORTVERSION=	0.5.1

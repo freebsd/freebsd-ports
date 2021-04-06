@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pathspec
 PORTVERSION=	0.8.1

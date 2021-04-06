@@ -1,5 +1,4 @@
 # Created by: HONDA Yasuhiro <honda@kashio.info.mie-u.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	yc.el
 PORTVERSION=	5.2.1

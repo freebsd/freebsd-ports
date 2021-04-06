@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uiplugin
 DISTVERSION=	${QT5_VERSION}

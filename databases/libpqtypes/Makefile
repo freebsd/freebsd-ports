@@ -1,5 +1,4 @@
 # Created by: Dave Green <dg@fastmail.co.uk>
-# $FreeBSD$
 
 PORTNAME=	libpqtypes
 PORTVERSION=	1.5.1

@@ -1,5 +1,4 @@
 # Created by: patrick
-# $FreeBSD$
 
 PORTNAME=	pfe
 PORTVERSION=	0.33.71

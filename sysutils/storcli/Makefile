@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	storcli
 DISTVERSION=	7.1211

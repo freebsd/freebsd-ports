@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	virglrenderer
 DISTVERSION=	0.8.2

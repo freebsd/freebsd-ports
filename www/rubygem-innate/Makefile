@@ -1,5 +1,4 @@
 # Created by: Jyun-Yan You <jyyou@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	innate
 PORTVERSION=	2015.10.28

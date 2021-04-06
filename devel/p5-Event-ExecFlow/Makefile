@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Event-ExecFlow
 PORTVERSION=	0.64

@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	xfce4-volumed-pulse
 PORTVERSION=	0.2.3

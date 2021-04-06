@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	unsafe
 PORTVERSION=	1.0.0

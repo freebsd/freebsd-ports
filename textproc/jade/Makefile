@@ -1,5 +1,4 @@
 # Created by: jfieber
-# $FreeBSD$
 
 PORTNAME=	jade
 PORTVERSION=	1.2.1

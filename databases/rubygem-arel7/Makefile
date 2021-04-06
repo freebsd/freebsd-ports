@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	arel
 PORTVERSION=	7.1.4

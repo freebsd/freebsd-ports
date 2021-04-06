@@ -1,5 +1,4 @@
 # Created by: Jesse Kempf (jessekempf@gmail.com)
-# $FreeBSD$
 
 PORTNAME=	cmph
 PORTVERSION=	2.0

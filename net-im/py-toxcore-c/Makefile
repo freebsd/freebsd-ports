@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich
-# $FreeBSD$
 
 PORTNAME=	toxcore-c
 DISTVERSIONPREFIX=	v

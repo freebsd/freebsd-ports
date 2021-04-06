@@ -1,5 +1,4 @@
 # Created by: swallace
-# $FreeBSD$
 
 PORTNAME=	irsim
 DISTVERSION=	9.7.108

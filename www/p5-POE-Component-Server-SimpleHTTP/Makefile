@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Server-SimpleHTTP
 PORTVERSION=	2.28

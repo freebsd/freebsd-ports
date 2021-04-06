@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Crypt-URandom
 PORTVERSION=	0.36

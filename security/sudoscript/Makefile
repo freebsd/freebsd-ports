@@ -1,5 +1,4 @@
 # Created by: hbo@egbok.com
-# $FreeBSD$
 
 PORTNAME=	sudoscript
 PORTVERSION=	2.1.2

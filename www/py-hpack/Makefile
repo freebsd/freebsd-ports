@@ -1,5 +1,4 @@
 # Created by: Shaun Amott <shaun@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hpack
 PORTVERSION=	4.0.0

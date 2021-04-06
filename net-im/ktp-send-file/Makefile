@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ktp-send-file
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

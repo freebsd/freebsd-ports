@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	certbot-dns-sakuracloud
 PORTVERSION=	${ACME_VERSION}

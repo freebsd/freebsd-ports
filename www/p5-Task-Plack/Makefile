@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Task-Plack
 PORTVERSION=	0.25

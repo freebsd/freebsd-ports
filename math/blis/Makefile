@@ -1,5 +1,4 @@
 # Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	blis
 PORTVERSION=	0.8.0

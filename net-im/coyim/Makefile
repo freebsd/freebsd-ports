@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	coyim
 DISTVERSIONPREFIX=	v

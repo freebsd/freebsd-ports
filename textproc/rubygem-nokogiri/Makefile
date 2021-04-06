@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nokogiri
 PORTVERSION=	1.11.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gmt
 DISTVERSION=	6.1.1

@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
-# $FreeBSD$
 
 PORTNAME=	OpenCA-PKCS7
 PORTVERSION=	0.9.1.1.1

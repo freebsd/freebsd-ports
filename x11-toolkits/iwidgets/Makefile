@@ -1,5 +1,4 @@
 # Created by: chuckr
-# $FreeBSD$
 
 PORTNAME=	iwidgets
 PORTVERSION=	4.0.1

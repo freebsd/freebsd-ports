@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jinja2-time
 PORTVERSION=	0.2.0

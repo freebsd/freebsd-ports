@@ -1,5 +1,4 @@
 # Created by: Vladimir Gorelov <virtual.lark@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	art
 PORTVERSION=	0.9.02

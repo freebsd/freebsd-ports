@@ -1,5 +1,4 @@
 # Created by: dwm
-# $FreeBSD$
 
 PORTNAME=	icu
 DISTVERSION=	68_2

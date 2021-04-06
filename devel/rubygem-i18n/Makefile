@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	i18n
 PORTVERSION=	1.8.9

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rclint
 PORTVERSION=	1.1.0

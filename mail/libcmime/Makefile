@@ -1,5 +1,4 @@
 # Created by: Axel Steiner <ast@treibsand.com>
-# $FreeBSD$
 
 PORTNAME=	libcmime
 PORTVERSION=	0.2.1

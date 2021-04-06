@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lysdr
 PORTVERSION=	0.0.6

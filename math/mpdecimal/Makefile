@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mpdecimal
 DISTVERSION=	2.5.1

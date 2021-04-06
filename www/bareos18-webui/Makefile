@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=       bareos
 DISTVERSIONPREFIX=      Release/

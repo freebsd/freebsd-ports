@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pystring
 PORTVERSION=	1.1.3

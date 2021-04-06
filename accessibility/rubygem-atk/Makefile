@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	atk
 PORTVERSION=	3.4.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-PKCS10
 PORTVERSION=	0.16

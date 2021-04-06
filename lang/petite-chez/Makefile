@@ -1,5 +1,4 @@
 # Created by: Vitaly Magerya <vmagerya@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	petite-chez
 PORTVERSION=	8.4

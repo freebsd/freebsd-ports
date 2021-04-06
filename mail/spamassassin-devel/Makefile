@@ -1,5 +1,4 @@
 # Created by: Anthony Kim
-# $FreeBSD$
 
 PORTNAME=	spamassassin
 PORTVERSION=	${SA_COMMIT_DATE}

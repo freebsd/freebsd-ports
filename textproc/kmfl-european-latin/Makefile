@@ -1,5 +1,4 @@
 # Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-# $FreeBSD$
 
 PORTNAME=	kmfl-european-latin
 PORTVERSION=	1.6

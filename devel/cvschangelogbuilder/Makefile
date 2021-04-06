@@ -1,5 +1,4 @@
 # Created by: Matthew Will <mwill@spingen.com>
-# $FreeBSD$
 
 PORTNAME=	cvschangelogbuilder
 PORTVERSION=	2.5

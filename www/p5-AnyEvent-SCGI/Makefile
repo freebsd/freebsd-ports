@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-SCGI
 PORTVERSION=	1.1

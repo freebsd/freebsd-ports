@@ -1,5 +1,4 @@
 # Created by: Marcin Cieslak <saper@system.pl>
-# $FreeBSD$
 
 PORTNAME=	libsmi
 PORTVERSION=	0.4.8

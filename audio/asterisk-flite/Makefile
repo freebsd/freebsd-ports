@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flite
 PORTVERSION=	3.0

@@ -1,5 +1,4 @@
 # Created by: nishida@sfc.wide.ad.jp
-# $FreeBSD$
 
 PORTNAME=	tcpillust
 PORTVERSION=	2.01

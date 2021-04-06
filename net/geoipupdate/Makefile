@@ -1,5 +1,4 @@
 # Created by: adamw
-# $FreeBSD$
 
 PORTNAME=	geoipupdate
 PORTVERSION=	4.6.0

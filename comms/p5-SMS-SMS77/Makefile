@@ -1,5 +1,4 @@
 # Created by: Frank Steinborn <steinex@nognu.de>
-# $FreeBSD$
 
 PORTNAME=	SMS-SMS77
 PORTVERSION=	0.01

@@ -1,5 +1,4 @@
 # Created by: Andrew Stevenson <andrew@ugh.net.au>
-# $FreeBSD$
 
 PORTNAME=	gpart
 PORTVERSION=	0.1h

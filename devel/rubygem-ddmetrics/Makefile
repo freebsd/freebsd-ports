@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ddmetrics
 PORTVERSION=	1.0.1

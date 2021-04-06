@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mu4e-maildirs
 PORTVERSION=	0.8.20180606

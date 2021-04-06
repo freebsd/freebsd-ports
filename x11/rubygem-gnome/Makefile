@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gnome
 PORTVERSION=	3.4.3

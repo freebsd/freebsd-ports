@@ -1,5 +1,4 @@
 # Created by: Jacek Serwatynski <tutus@trynet.eu.org>
-# $FreeBSD$
 
 PORTNAME=	ADMsmb
 PORTVERSION=	0.3

@@ -1,5 +1,4 @@
 # Created by: Johannes Dieterich <jmd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	drm-kmod
 PORTVERSION=	g20190710

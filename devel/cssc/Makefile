@@ -1,5 +1,4 @@
 # Created by: Oliver Fromme
-# $FreeBSD$
 
 PORTNAME=	cssc
 PORTVERSION=	1.4.1

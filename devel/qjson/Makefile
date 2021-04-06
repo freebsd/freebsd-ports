@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qjson
 DISTVERSION=	0.9.0

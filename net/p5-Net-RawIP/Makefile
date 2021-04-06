@@ -1,5 +1,4 @@
 # Created by: Dima Sivachenko <dima@chg.ru>
-# $FreeBSD$
 
 PORTNAME=	Net-RawIP
 PORTVERSION=	0.25

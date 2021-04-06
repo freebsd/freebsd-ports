@@ -1,5 +1,4 @@
 # Created by: dieringe
-# $FreeBSD$
 
 PORTNAME=	nrg2iso
 PORTVERSION=	0.4

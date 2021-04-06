@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gitaly
 PORTVERSION=	13.9.0.pre.rc1

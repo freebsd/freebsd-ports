@@ -1,5 +1,4 @@
 # Created by: G. Adam Stanislav <adam@whizkidtech.net>
-# $FreeBSD$
 
 PORTNAME=	tuc
 PORTVERSION=	1.10

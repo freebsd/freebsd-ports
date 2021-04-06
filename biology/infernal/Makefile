@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	infernal
 PORTVERSION=	1.1.3

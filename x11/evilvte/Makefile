@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	evilvte
 DISTVERSION=	0.5.2~pre1

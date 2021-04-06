@@ -1,5 +1,4 @@
 # Created by: Matthew Fuller <fullermd@futuresouth.com>
-# $FreeBSD$
 
 PORTNAME=	bgrot
 PORTVERSION=	1.31

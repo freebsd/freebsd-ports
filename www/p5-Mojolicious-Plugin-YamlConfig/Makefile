@@ -1,5 +1,4 @@
 # Created by: Steven Kreuzer <skreuzer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Mojolicious-Plugin-YamlConfig
 PORTVERSION=	0.2.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gonepass
 DISTVERSION=	g20181221

@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <kapr@crosswinds.net>
-# $FreeBSD$
 
 PORTNAME=	Tie-Cache
 PORTVERSION=	0.21

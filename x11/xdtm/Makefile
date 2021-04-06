@@ -1,5 +1,4 @@
 # Created by: gpalmer
-# $FreeBSD$
 
 PORTNAME=	xdtm
 PORTVERSION=	2.5.8

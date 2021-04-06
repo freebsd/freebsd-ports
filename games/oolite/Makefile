@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		oolite
 PORTVERSION=		1.88

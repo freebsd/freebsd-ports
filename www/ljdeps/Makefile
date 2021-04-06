@@ -1,5 +1,4 @@
 # Created by: Ryan T. Dean <rtdean@cytherianage.net>
-# $FreeBSD$
 
 PORTNAME=	ljdeps
 PORTVERSION=	1.0

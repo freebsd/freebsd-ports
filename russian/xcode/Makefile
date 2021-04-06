@@ -1,5 +1,4 @@
 # Created by: Michael Vasilenko <acid@stu.cn.ua>
-# $FreeBSD$
 
 PORTNAME=	xcode
 PORTVERSION=	4.1

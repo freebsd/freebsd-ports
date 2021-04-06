@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sockaddr
 DISTVERSIONPREFIX=	v

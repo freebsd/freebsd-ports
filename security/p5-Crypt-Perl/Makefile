@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Crypt-Perl
 PORTVERSION=	0.34

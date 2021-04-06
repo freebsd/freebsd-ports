@@ -1,5 +1,4 @@
 # Created by: Devin Teske <dteske@vicor.com>
-# $FreeBSD$
 
 PORTNAME=	tzdialog
 PORTVERSION=	1.2

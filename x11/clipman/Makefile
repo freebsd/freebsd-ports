@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clipman
 DISTVERSIONPREFIX=	v

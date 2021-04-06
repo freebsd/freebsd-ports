@@ -1,5 +1,4 @@
 # Created by: Mike Meyer <mwm@mired.org>
-# $FreeBSD$
 
 PORTNAME=	mixer
 PORTVERSION=	1.0

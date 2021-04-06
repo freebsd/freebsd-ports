@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	${GH_PROJECT:tl}
 PORTVERSION=	0.1.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phabricator
 PORTVERSION=	20201119

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lizzie
 DISTVERSION=	0.6-105

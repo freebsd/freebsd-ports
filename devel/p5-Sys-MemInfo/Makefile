@@ -1,5 +1,4 @@
 # Created by: Terry Sposato <terry@sucked-in.com>
-# $FreeBSD$
 
 PORTNAME=	Sys-MemInfo
 PORTVERSION=	0.99

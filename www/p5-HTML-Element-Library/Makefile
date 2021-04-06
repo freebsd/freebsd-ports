@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	HTML-Element-Library
 PORTVERSION=	5.220000

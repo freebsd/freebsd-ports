@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # All *-sbcl ports and any other port with SBCL fasl files must get a
 # PORTREVISION bump when lang/sbcl is updated.  The compiled fasl files are

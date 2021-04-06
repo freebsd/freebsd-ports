@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	soapy_power
 DISTVERSION=	1.6.1

@@ -1,5 +1,4 @@
 # Created by: Andrey Chernov <ache@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	screen
 PORTVERSION=	4.8.0

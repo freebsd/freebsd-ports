@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	osqp
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	elpa
 DISTVERSION=	2019.05.002

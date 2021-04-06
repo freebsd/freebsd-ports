@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	poppler-data
 DISTVERSION=	0.4.10

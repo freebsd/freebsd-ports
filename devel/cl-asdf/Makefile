@@ -1,5 +1,4 @@
 # Created by: Henrik Motakef <henrik.motakef@web.de>
-# $FreeBSD$
 
 PORTNAME=	asdf
 DISTVERSION=	3.3.4.7

@@ -1,5 +1,4 @@
 # Created by: Thomas Sandford <freebsduser@paradisegreen.co.uk>
-# $FreeBSD$
 
 PORTNAME=	drush
 DISTVERSION=	8.3.3

@@ -1,5 +1,4 @@
 # Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-# $FreeBSD$
 
 PORTNAME=	resin
 PORTVERSION=	3.1.16

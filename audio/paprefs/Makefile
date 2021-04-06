@@ -1,5 +1,4 @@
 # Created by: Romain Tartière <romain@blogreen.org>
-# $FreeBSD$
 
 PORTNAME=	paprefs
 PORTVERSION=	1.1

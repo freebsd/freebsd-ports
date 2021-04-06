@@ -1,5 +1,4 @@
 # Created by: sec@42.org
-# $FreeBSD$
 
 PORTNAME=	sls
 PORTVERSION=	1.00

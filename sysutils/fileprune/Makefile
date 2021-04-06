@@ -1,5 +1,4 @@
 # Created by: dds
-# $FreeBSD$
 
 PORTNAME=	fileprune
 PORTVERSION=	1.12

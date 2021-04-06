@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cask
 PORTVERSION=	0.8.3

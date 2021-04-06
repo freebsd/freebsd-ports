@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 BASE_GST_ALL_PLUGINS= \
 		alsa \
 		cdparanoia \

@@ -1,5 +1,4 @@
 # Created by: Dominic Fandrey
-# $FreeBSD$
 
 PORTNAME=	oax
 PORTVERSION=	B51

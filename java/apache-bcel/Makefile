@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bcel
 PORTVERSION=	6.4.1

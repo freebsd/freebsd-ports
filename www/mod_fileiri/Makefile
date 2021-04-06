@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	mod_fileiri
 PORTVERSION=	1.15

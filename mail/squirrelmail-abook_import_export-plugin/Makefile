@@ -1,5 +1,4 @@
 # Created by: Scott Lambert <lambert@lambertfam.org>
-# $FreeBSD$
 
 PORTNAME=	abook_import_export
 PORTVERSION=	1.1

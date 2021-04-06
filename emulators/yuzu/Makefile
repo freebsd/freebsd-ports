@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yuzu
 PORTVERSION=	s20210404

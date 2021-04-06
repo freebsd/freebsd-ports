@@ -1,5 +1,4 @@
 # Created by: Maciek Korzen <eaquer@ceti.pl>
-# $FreeBSD$
 
 PORTNAME=	trf
 PORTVERSION=	0.4

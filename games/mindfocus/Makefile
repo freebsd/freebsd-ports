@@ -1,5 +1,4 @@
 # Created by: Sugimoto Sadahiro <ixtl@utmc.or.jp>
-# $FreeBSD$
 
 PORTNAME=	mindfocus
 PORTVERSION=	0.88

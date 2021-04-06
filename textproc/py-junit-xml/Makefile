@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	junit-xml
 PORTVERSION=	1.6

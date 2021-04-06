@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jamulus
 DISTVERSIONPREFIX=	r

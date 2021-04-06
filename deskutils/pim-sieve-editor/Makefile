@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pim-sieve-editor
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

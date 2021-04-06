@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas (<thierry@FreeBSD.org>)
-# $FreeBSD$
 
 PORTNAME=	Cache
 PORTVERSION=	1.5.6

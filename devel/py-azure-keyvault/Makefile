@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-keyvault
 PORTVERSION=	1.1.0

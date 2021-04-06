@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qpOASES
 DISTVERSION=	3.2.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	autojump
 PORTVERSION=	22.5.3

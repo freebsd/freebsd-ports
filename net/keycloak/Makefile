@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	keycloak
 PORTVERSION=	12.0.4

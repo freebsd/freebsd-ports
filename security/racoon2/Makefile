@@ -1,5 +1,4 @@
 # Created by: sumikawa
-# $FreeBSD$
 
 PORTNAME=	racoon2
 PORTVERSION=	${RACOON2_COMMIT_DATE}

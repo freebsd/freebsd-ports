@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	theonionbox
 DISTVERSION=	4.3.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Bento4
 PORTVERSION=	1.5.1

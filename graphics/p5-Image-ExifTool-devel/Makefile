@@ -1,5 +1,4 @@
 # Created by: Tod McQuillin <devin@spamcop.net>
-# $FreeBSD$
 
 PORTNAME=	Image-ExifTool
 PORTVERSION=	12.14

@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	integrit
 PORTVERSION=	4.1

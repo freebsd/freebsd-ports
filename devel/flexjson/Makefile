@@ -1,5 +1,4 @@
 # Created by: Nemo Liu <nemoliu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	flexjson
 DISTVERSION=	2.1

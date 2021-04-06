@@ -1,5 +1,4 @@
 # Created by: mgrooms@shrew.net
-# $FreeBSD$
 
 PORTNAME=	ike
 PORTVERSION=	2.2.1

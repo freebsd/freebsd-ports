@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tradcpp
 PORTVERSION=	0.5.3

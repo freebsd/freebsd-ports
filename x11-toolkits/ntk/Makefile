@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ntk
 DISTVERSIONPREFIX=	v

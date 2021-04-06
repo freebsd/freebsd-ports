@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sympol
 DISTVERSIONPREFIX=	v

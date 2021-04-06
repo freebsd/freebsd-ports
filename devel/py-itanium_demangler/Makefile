@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	itanium_demangler
 DISTVERSION=	1.0

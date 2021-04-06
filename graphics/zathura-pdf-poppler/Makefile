@@ -1,5 +1,4 @@
 # Created by: Mike Krutov <neko@takino.org>
-# $FreeBSD$
 
 PORTNAME=	zathura-pdf-poppler
 DISTVERSION=	0.3.0

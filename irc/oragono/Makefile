@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oragono
 DISTVERSIONPREFIX=	v

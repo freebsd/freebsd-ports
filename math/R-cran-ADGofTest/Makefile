@@ -1,5 +1,4 @@
 # Created by: Devin Teske <dteske@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ADGofTest
 PORTVERSION=	0.3

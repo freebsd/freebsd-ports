@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	docker-api
 PORTVERSION=	1.34.2

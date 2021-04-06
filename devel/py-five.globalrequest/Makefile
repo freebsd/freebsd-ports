@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	five.globalrequest
 PORTVERSION=	1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libzmq3
 PORTVERSION=	3.2.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fabio
 PORTVERSION=	1.5.14

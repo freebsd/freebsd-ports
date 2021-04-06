@@ -1,5 +1,4 @@
 # Created by: Dominic Marks <dominic.marks@btinternet.com>
-# $FreeBSD$
 
 PORTNAME=	libdnet
 PORTVERSION=	1.13

@@ -1,5 +1,4 @@
 # Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-# $FreeBSD$
 
 PORTNAME=	softflowd
 PORTVERSION=	1.0.0

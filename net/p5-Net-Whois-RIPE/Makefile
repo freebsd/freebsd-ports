@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Net-Whois-RIPE
 PORTVERSION=	2.007004

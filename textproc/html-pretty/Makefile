@@ -1,5 +1,4 @@
 # Created by: Greg Lewis <glewis@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	html-pretty
 PORTVERSION=	1.01

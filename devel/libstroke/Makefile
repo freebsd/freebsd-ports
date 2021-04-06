@@ -1,5 +1,4 @@
 # Created by: Jerry A! <jerry@thehutt.org>
-# $FreeBSD$
 
 PORTNAME=	libstroke
 PORTVERSION=	0.5.1

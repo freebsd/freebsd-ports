@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pydantic
 DISTVERSION=	1.8.1

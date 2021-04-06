@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dnscontrol
 DISTVERSIONPREFIX=v

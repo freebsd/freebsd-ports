@@ -1,5 +1,4 @@
 # Created by: Kelly Cochran <kcochran@trolans.net>
-# $FreeBSD$
 
 PORTNAME=	Net-OSCAR
 PORTVERSION=	1.928

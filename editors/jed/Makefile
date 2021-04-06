@@ -1,5 +1,4 @@
 # Created by: eric
-# $FreeBSD$
 
 PORTNAME=	jed
 DISTVERSION=	0.99-19

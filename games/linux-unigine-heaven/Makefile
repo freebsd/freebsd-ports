@@ -1,5 +1,4 @@
 # Created by: Hannes Hauswedell <h2+fbsdports@fsfe.org>
-# $FreeBSD$
 
 PORTNAME=	unigine-heaven
 PORTVERSION=	4.0

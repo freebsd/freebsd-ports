@@ -1,5 +1,4 @@
 # Created by: jraynard
-# $FreeBSD$
 
 PORTNAME=	electricfence
 PORTVERSION=	2.2.2

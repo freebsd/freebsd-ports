@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	magit
 DISTVERSIONPREFIX=	v

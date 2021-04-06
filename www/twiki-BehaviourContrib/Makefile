@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	BehaviourContrib
 SVNREV=		16417

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../mc
 PKGNAMESUFFIX=	-nox11

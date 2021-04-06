@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-Shakan
 PORTVERSION=	2.00

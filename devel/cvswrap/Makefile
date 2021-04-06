@@ -1,5 +1,4 @@
 # Created by: alfred
-# $FreeBSD$
 
 PORTNAME=	cvswrap
 PORTVERSION=	0.2

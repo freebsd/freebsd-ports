@@ -1,5 +1,4 @@
 # Created by: gahr@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	tclvfs
 PORTVERSION=	20080503

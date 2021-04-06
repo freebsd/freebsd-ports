@@ -1,5 +1,4 @@
 # Created by: Ruben van Staveren
-# $FreeBSD$
 
 PORTNAME=	Thread-Cancel
 PORTVERSION=	1.13

@@ -1,5 +1,4 @@
 # Created by: r.neese
-# $FreeBSD$
 
 PORTNAME=	sphinxbase
 PORTVERSION=	0.8

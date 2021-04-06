@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Andika
 DISTVERSION=	5.000

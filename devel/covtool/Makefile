@@ -1,5 +1,4 @@
 # Created by: novator24 <novator24@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	covtool
 PORTVERSION=	2.1

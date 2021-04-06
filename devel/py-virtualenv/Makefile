@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	virtualenv
 PORTVERSION=	16.7.5

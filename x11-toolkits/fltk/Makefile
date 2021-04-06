@@ -1,5 +1,4 @@
 # Created by: Dima Sivachenko <dima@Chg.RU>
-# $FreeBSD$
 
 PORTNAME=	fltk
 PORTVERSION=	1.3.5

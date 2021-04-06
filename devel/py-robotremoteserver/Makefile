@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	robotremoteserver
 PORTVERSION=	1.1

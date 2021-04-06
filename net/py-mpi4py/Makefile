@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mpi4py
 DISTVERSION=	3.0.3

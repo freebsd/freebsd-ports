@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rsskit
 PORTVERSION=	0.4

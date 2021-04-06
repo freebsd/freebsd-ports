@@ -1,5 +1,4 @@
 # Created by: Anthony Brown <anthony@found-it.net>
-# $FreeBSD$
 
 PORTNAME=	unifi-poller
 DISTVERSIONPREFIX=v

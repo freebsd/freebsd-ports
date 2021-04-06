@@ -1,5 +1,4 @@
 # Created by: Sevan Janiyan <venture37@geeklan.co.uk>
-# $FreeBSD$
 
 PORTNAME=	coovachilli
 PORTVERSION=	1.0.12

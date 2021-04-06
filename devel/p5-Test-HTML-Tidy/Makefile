@@ -1,5 +1,4 @@
 # Created by: rafan@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Test-HTML-Tidy
 PORTVERSION=	1.00

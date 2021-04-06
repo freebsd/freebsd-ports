@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wshowkeys
 PORTVERSION=	s20200330

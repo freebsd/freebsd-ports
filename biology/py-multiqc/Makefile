@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	multiqc
 DISTVERSION=	1.10

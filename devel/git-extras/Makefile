@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	git-extras
 PORTVERSION=	6.1.0

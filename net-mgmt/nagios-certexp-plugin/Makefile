@@ -1,5 +1,4 @@
 # Created by: ecronin@gizmolabs.org
-# $FreeBSD$
 
 PORTNAME=	nagios-certexp-plugin
 PORTVERSION=	1.9

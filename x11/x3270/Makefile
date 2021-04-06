@@ -1,5 +1,4 @@
 # Created by: janek
-# $FreeBSD$
 
 PORTNAME?=	x3270
 PORTVERSION=	4.0

@@ -1,5 +1,4 @@
 # Created by: dd
-# $FreeBSD$
 
 PORTNAME=	jarl
 PORTVERSION=	0.5001

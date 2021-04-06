@@ -1,5 +1,4 @@
 # Created by: Robert Gogolok <gogo@cs.uni-sb.de>
-# $FreeBSD$
 
 PORTNAME=	god
 PORTVERSION=	0.13.7

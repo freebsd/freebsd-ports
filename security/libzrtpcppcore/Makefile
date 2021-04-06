@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libzrtpcppcore
 PORTVERSION=	4.6.6

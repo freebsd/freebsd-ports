@@ -1,5 +1,4 @@
 # Created by: jon@witchspace.com
-# $FreeBSD$
 
 PORTNAME=	jdiskreport
 DISTVERSION=	1_4_1

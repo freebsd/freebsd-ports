@@ -1,5 +1,4 @@
 # Created by: Andrew <andrew@ugh.net.au>
-# $FreeBSD$
 
 PORTNAME=	XML-Simple
 PORTVERSION=	2.25

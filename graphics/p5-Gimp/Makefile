@@ -1,5 +1,4 @@
 # Created by: Mathieu Arnold
-# $FreeBSD$
 
 PORTNAME=	Gimp
 PORTVERSION=	2.33

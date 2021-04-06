@@ -1,5 +1,4 @@
 # Created by: Dereckson <dereckson@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	binclock
 DISTVERSION=	1.5

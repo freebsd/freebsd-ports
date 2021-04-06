@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-fuse
 PORTVERSION=	0.20210204

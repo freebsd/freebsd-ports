@@ -1,5 +1,4 @@
 # Created by: Paul Schmehl <pauls@utdallas.edu>
-# $FreeBSD$
 
 PORTNAME=	Gtk2-Ex-Utils
 PORTVERSION=	0.09

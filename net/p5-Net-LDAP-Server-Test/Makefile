@@ -1,5 +1,4 @@
 # Created by: swills@
-# $FreeBSD$
 
 PORTNAME=	Net-LDAP-Server-Test
 PORTVERSION=	0.22

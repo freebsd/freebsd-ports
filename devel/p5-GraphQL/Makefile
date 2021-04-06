@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	GraphQL
 PORTVERSION=	0.49

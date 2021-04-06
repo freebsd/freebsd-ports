@@ -1,5 +1,4 @@
 # Created by: Frank W. Josellis <frank@dynamical-systems.org>
-# $FreeBSD$
 
 PORTNAME=	siproxd
 PORTVERSION=	0.8.2

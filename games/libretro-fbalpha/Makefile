@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-fbalpha
 PORTVERSION=	0.20200504

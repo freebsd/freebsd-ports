@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	unifont
 PORTVERSION=	13.0.05

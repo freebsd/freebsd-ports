@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	filesize
 PORTVERSION=	0.2.0

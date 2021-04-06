@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-Google-Analytics
 PORTVERSION=	3.03

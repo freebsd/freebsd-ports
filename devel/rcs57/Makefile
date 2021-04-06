@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rcs
 PORTVERSION=	5.7

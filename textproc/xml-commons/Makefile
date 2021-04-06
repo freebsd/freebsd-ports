@@ -1,5 +1,4 @@
 # Created by: rfarmer@predatorlabs.net
-# $FreeBSD$
 
 PORTNAME=	xml-commons
 PORTVERSION=	1.4.01

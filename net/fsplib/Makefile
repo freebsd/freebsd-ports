@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fsplib
 PORTVERSION=	0.14

@@ -1,5 +1,4 @@
 # Created by: barnhart@genetics.wustl.edu
-# $FreeBSD$
 
 PORTNAME=	hmmer
 PORTVERSION=	3.3

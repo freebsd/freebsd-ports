@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kb
 PORTVERSION=	8.04

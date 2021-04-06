@@ -1,5 +1,4 @@
 # Created by: Takayuki Nakao <t@nakao.org>
-# $FreeBSD$
 
 PORTNAME=	icanna
 PORTVERSION=	0.9.0

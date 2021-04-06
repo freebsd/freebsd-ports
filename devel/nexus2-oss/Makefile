@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nexus2
 PORTVERSION=	2.14.18

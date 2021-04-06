@@ -1,5 +1,4 @@
 # Created by: David O'Brien (obrien@FreeBSD.org)
-# $FreeBSD$
 
 PORTNAME=	agrep
 PORTVERSION=	2.04

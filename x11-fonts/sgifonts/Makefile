@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	sgifonts
 PORTVERSION=	1.0.1

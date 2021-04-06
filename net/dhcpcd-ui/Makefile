@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dhcpcd-ui
 PORTVERSION=	0.7.8

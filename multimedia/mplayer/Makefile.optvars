@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Handling of variables using helpers
 # Include before bsd.port.(pre|options).mk
 

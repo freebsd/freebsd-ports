@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Mojo-RabbitMQ-Client
 PORTVERSION=	0.3.1

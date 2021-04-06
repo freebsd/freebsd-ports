@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gnome-pomodoro
 PORTVERSION=	0.18.0

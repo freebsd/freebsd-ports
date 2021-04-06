@@ -1,5 +1,4 @@
 # Created by: Martin Wilke (miwi@FreeBSD.org)
-# $FreeBSD$
 
 PORTNAME=	xfce4-mailwatch-plugin
 PORTVERSION=	1.3.0

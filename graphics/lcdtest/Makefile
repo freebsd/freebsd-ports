@@ -1,5 +1,4 @@
 # Created by: Eric P. Scott <eps+pbug0703@ana.com>
-# $FreeBSD$
 
 PORTNAME=	lcdtest
 PORTVERSION=	1.18

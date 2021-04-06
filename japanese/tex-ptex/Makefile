@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ptex
 PORTVERSION=	3.6

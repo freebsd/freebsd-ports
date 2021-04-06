@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		pocl
 PORTVERSION=		1.6

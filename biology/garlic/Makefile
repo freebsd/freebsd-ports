@@ -1,5 +1,4 @@
 # Created by: maho@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	garlic
 PORTVERSION=	1.6

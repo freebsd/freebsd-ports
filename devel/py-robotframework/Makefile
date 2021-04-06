@@ -1,5 +1,4 @@
 # Created by: Vladimir Chukharev
-# $FreeBSD$
 
 PORTNAME=	robotframework
 PORTVERSION=	3.1.2

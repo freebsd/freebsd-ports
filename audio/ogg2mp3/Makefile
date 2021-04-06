@@ -1,5 +1,4 @@
 # Created by: Aleksander Fafula <alex@bsdguru.org>
-# $FreeBSD$
 
 PORTNAME=	ogg2mp3
 PORTVERSION=	0.6.1

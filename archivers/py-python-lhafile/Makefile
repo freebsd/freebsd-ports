@@ -1,5 +1,4 @@
 # Created by: Carsten Larsen <cs@innolan.dk>
-# $FreeBSD$
 
 PORTNAME=	python-lhafile
 DISTVERSION=	0.2.2

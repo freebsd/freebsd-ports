@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ZopeUndo
 PORTVERSION=	2.12.0

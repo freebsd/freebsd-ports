@@ -1,5 +1,4 @@
 # Created by: hrkfrd@gmail.com
-# $FreeBSD$
 
 PORTNAME=	echinus
 PORTVERSION=	0.4.9

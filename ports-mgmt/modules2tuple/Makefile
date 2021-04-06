@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	modules2tuple
 DISTVERSIONPREFIX=	v

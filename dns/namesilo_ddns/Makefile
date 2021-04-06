@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	namesilo_ddns
 PORTVERSION=	2.2

@@ -1,5 +1,4 @@
 # Created by: trasz
-# $FreeBSD$
 
 PORTNAME=	xhomer
 DISTVERSION=	9-16-06

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xauth
 PORTVERSION=	1.1

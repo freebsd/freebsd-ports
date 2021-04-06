@@ -1,5 +1,4 @@
 # Created by: Jeremy Chadwick <freebsd@jdc.parodius.com>
-# $FreeBSD$
 
 PORTNAME=	mcelog
 PORTVERSION=	175

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyclipper
 PORTVERSION=	1.2.1

@@ -1,5 +1,4 @@
 # Created by: Dennis Herrmann <dhn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	i3lock
 PORTVERSION=	2.13

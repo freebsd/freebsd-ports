@@ -1,5 +1,4 @@
 # Created by: Oleg Mamontov <oleg@mamontov.net>
-# $FreeBSD$
 
 PORTNAME=	HTML-FormFu-Model-DBIC
 PORTVERSION=	2.03

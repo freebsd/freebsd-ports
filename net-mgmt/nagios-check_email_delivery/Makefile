@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz
-# $FreeBSD$
 
 PORTNAME=	check_email_delivery
 PORTVERSION=	0.7.1b

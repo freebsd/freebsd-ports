@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	minitube
 DISTVERSION=	3.8

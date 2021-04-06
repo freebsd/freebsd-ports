@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jekyll-archives
 PORTVERSION=	2.2.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	orange3-associate
 DISTVERSION=	1.1.8

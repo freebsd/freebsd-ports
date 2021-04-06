@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fishlim
 PORTVERSION=	0.0.19

@@ -1,5 +1,4 @@
 # Created by: Cezary Morga <cm@therek.net>
-# $FreeBSD$
 
 PORTNAME=	MooseX-MultiInitArg
 PORTVERSION=	0.02

@@ -1,5 +1,4 @@
 # Created by: Loic Pefferkorn <loic-freebsd@loicp.eu>
-# $FreeBSD$
 
 PORTNAME=	heredoc_unindent
 PORTVERSION=	1.2.0

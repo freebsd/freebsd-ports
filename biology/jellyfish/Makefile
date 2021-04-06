@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		Jellyfish
 DISTVERSIONPREFIX=	v

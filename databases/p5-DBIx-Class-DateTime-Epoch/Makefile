@@ -1,5 +1,4 @@
 # Created by: Lars Balker Rasmussen <lbr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-DateTime-Epoch
 PORTVERSION=	0.10

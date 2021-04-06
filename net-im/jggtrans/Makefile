@@ -1,5 +1,4 @@
 # Created by: Bartek Rutkowski <r@robakdesign.com>
-# $FreeBSD$
 
 PORTNAME=	jggtrans
 PORTVERSION=	2.2.6

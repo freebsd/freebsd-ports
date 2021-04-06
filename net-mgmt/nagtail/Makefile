@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz <rpsfa@rit.edu>
-# $FreeBSD$
 
 PORTNAME=	nagtail
 PORTVERSION=	0.0.31

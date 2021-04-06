@@ -1,5 +1,4 @@
 # Created by: Jon Nistor <nistor@snickers.org>
-# $FreeBSD$
 
 PORTNAME=	CDB_File
 PORTVERSION=	1.02

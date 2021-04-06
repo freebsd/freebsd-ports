@@ -1,5 +1,4 @@
 # Created by: Vladimir Kondratiev <wulf@mail.mipt.ru>
-# $FreeBSD$
 
 PORTNAME=	debugger-linecache
 PORTVERSION=	1.2.0

@@ -1,5 +1,4 @@
 # Created by: Jean-Baptiste Quenot <jb.quenot@caraldi.com>
-# $FreeBSD$
 
 PORTNAME=	website
 PORTVERSION=	2.6.0

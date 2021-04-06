@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gnutls
 PORTVERSION=	3.6.15

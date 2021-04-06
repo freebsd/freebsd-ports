@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pylama
 PORTVERSION=	7.7.1

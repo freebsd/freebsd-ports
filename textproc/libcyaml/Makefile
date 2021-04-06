@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcyaml
 DISTVERSIONPREFIX=	v

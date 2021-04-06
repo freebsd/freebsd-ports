@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pgpmoose
 PORTVERSION=	1.19

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Osi
 DISTVERSION=	0.108.6

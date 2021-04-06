@@ -1,5 +1,4 @@
 # Created by: Steve Polyack <spolyack@collaborativefusion.com>
-# $FreeBSD$
 
 PORTNAME=	phpmustache
 PORTVERSION=	2.13.0

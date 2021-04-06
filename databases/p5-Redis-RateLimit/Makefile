@@ -1,5 +1,4 @@
 # Created by: Davíð Steinn Geirsson <david@isnic.is>
-# $FreeBSD$
 
 PORTNAME=	Redis-RateLimit
 PORTVERSION=	1.0002

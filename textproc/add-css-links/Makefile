@@ -1,5 +1,4 @@
 # Created by: Aaron Straup Cope
-# $FreeBSD$
 
 PORTNAME=	add-css-links
 PORTVERSION=	1.0

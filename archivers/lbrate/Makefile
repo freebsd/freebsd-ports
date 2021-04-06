@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
-# $FreeBSD$
 
 PORTNAME=	lbrate
 PORTVERSION=	1.1

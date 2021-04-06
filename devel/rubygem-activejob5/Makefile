@@ -1,5 +1,4 @@
 # Created by: Johannes Jost Meixner <xmj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	activejob
 PORTVERSION=	5.1.7

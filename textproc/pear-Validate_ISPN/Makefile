@@ -1,5 +1,4 @@
 # Created by: Danilo G. Baio <dbaio@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Validate_ISPN
 PORTVERSION=	0.7.0

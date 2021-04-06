@@ -1,5 +1,4 @@
 # Created by: Mauricio Herrera Cuadra <mauricio@arareko.net>
-# $FreeBSD$
 
 PORTNAME=	Bio-ASN1-EntrezGene
 PORTVERSION=	1.73

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	sysutils lang
 PKGNAMESUFFIX=	-syslog

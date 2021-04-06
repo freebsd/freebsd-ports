@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aiocoap
 DISTVERSION=	0.3

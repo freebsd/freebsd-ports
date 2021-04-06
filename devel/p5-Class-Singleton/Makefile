@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Class-Singleton
 PORTVERSION=	1.6

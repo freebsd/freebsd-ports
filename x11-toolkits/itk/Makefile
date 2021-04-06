@@ -1,5 +1,4 @@
 # Created by: chuckr
-# $FreeBSD$
 
 PORTNAME=	itk
 PORTVERSION=	3.3

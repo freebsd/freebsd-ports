@@ -1,5 +1,4 @@
 # Created by: Andrey A. Chernov <ache@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	less
 PORTVERSION=	551

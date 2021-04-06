@@ -1,5 +1,4 @@
 # Created by: db
-# $FreeBSD$
 
 PORTNAME=	ephem
 PORTVERSION=	3.7.7.1

@@ -1,5 +1,4 @@
 # Created by: Leif Pedersen <bilbo@devpit.org>
-# $FreeBSD$
 
 PORTNAME=	puff
 PORTVERSION=	1.0.1

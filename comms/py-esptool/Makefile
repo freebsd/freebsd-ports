@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	esptool
 DISTVERSIONPREFIX=	v

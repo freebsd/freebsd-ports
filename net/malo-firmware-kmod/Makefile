@@ -1,5 +1,4 @@
 # Created by: cpm <cpm@fbsd.es>
-# $FreeBSD$
 
 PORTNAME=	malo-firmware
 PORTVERSION=	${FWVERSION}

@@ -1,5 +1,4 @@
 # Created by: Bruce M Simpson <bms@spc.org>
-# $FreeBSD$
 
 PORTNAME=	xmon
 PORTVERSION=	1.5.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	diffobj
 DISTVERSION=	0.3.3

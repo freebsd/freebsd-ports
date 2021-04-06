@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xmlpatterns
 DISTVERSION=	${QT5_VERSION}

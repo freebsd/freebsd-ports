@@ -1,5 +1,4 @@
 # Created by: Leo Kim <leo@florida.sarang.net>
-# $FreeBSD$
 
 PORTNAME=	B-Graph
 PORTVERSION=	0.51

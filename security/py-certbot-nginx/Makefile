@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	certbot-nginx
 PORTVERSION=	${ACME_VERSION}

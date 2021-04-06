@@ -1,5 +1,4 @@
 # Created by: Carlos J Puga Medina <cpm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	grive2
 DISTVERSIONPREFIX=	v

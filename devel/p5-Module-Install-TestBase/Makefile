@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Module-Install-TestBase
 PORTVERSION=	0.86

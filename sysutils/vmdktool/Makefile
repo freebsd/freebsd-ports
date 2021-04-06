@@ -1,5 +1,4 @@
 # Created by: Brian Somers <brian@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	vmdktool
 PORTVERSION=	1.4

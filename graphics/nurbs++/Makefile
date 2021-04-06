@@ -1,5 +1,4 @@
 # Created by: R Joseph Wright <rjoseph@mammalia.org>
-# $FreeBSD$
 
 PORTNAME=	nurbs++
 PORTVERSION=	3.0.11

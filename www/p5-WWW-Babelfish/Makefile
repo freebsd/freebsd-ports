@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	WWW-Babelfish
 PORTVERSION=	0.16

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Business-OnlinePayment-PaymenTech
 PORTVERSION=	2.07

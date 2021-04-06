@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	figtree
 DISTVERSIONPREFIX=	v

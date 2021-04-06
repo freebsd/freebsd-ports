@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	keyboard-daemon
 PORTVERSION=	0.7

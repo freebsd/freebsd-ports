@@ -1,5 +1,4 @@
 # Created by: Mikael Urankar <mikael.urankar@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	raspberrypi-userland
 PORTVERSION=	20161026

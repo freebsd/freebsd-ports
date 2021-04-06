@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	unicode_util_compat
 PORTVERSION=	0.3.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	File-Locate
 PORTVERSION=	0.62

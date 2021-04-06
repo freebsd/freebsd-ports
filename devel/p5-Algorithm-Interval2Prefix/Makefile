@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lars@thegler.dk>
-# $FreeBSD$
 
 PORTNAME=	Algorithm-Interval2Prefix
 PORTVERSION=	0.02

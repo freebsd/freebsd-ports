@@ -1,5 +1,4 @@
 # Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-# $FreeBSD$
 
 PORTNAME=	argparse
 PORTVERSION=	1.4.0

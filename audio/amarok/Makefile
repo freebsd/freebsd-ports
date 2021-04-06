@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	amarok
 DISTVERSIONPREFIX=	v

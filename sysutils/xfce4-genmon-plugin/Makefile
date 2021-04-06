@@ -1,5 +1,4 @@
 # Created by: Matt Lancereau <ports@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xfce4-genmon-plugin
 PORTVERSION=	4.1.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pysdl2
 PORTVERSION=	0.9.7

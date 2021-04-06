@@ -1,5 +1,4 @@
 # Created by: vanilla@
-# $FreeBSD$
 
 PORTNAME=	Net-TacacsPlus
 PORTVERSION=	1.10

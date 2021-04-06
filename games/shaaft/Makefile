@@ -1,5 +1,4 @@
 # Created by: Kirill Ponomarew <krion@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	shaaft
 PORTVERSION=	0.5.0

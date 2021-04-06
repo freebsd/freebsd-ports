@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	terraform-provider-gridscale
 PORTVERSION=	1.6.2

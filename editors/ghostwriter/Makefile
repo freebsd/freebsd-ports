@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ghostwriter
 DISTVERSIONPREFIX=	v

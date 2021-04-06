@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tealdeer
 DISTVERSIONPREFIX=	v

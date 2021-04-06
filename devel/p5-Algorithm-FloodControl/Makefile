@@ -1,5 +1,4 @@
 # Created by: Andrey <gugu@zoo.rambler.ru>
-# $FreeBSD$
 
 PORTNAME=	Algorithm-FloodControl
 PORTVERSION=	2.001000

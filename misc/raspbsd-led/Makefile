@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	raspbsd-led
 PORTVERSION=	0.2

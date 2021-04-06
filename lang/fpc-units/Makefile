@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	units
 PORTVERSION=	3.2.0

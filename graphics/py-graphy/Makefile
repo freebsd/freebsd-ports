@@ -1,5 +1,4 @@
 # Created by: Sahil Tandon <sahil@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	graphy
 PORTVERSION=	1.0

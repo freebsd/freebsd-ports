@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-Oracle
 PORTVERSION=	0.51

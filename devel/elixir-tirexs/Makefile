@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tirexs
 PORTVERSION=	0.8.15

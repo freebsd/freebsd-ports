@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	peek
 PORTVERSION=	1.1.0

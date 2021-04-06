@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rcadm
 PORTVERSION=	0.1

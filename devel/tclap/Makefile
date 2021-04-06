@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tclap
 PORTVERSION=	1.2.1

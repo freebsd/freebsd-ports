@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Apache-Solr
 PORTVERSION=	1.05

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pulseaudio-module-xrdp
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni
-# $FreeBSD$
 
 PORTNAME=	mumps4
 PORTVERSION=	4.10.0	# Please do not upgrade to 5+: use math/mumps

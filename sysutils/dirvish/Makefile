@@ -1,5 +1,4 @@
 # Created by: Loren M. Lang
-# $FreeBSD$
 
 PORTNAME=	dirvish
 PORTVERSION=	1.2.1

@@ -1,5 +1,4 @@
 # Created by: Mikhail T. <michael@fun-box.ru>
-# $FreeBSD$
 
 PORTNAME=	Async-Interrupt
 PORTVERSION=	1.26

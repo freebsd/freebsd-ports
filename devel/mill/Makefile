@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mill
 DISTVERSION=	0.9.5

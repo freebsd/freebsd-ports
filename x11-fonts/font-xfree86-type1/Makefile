@@ -1,5 +1,4 @@
 # Created by: Pawel Worach
-# $FreeBSD$
 
 PORTNAME=	font-xfree86-type1
 PORTVERSION=	1.0.4

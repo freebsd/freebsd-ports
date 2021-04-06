@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mcfly
 DISTVERSIONPREFIX=	v

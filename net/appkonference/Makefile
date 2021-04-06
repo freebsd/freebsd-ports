@@ -1,5 +1,4 @@
 # Created by: Alex Deiter <Alex.Deiter@Gmail.COM>
-# $FreeBSD$
 
 PORTNAME=	appkonference
 PORTVERSION=	2.8

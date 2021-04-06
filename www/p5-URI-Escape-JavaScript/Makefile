@@ -1,5 +1,4 @@
 # Created by: Konstantin Menshikov <kostjnspb@yandex.ru>
-# $FreeBSD$
 
 PORTNAME=	URI-Escape-JavaScript
 PORTVERSION=	0.04

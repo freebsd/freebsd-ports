@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pdk
 PORTVERSION=	1.13.0

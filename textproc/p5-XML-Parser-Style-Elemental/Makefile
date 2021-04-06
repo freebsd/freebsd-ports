@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	XML-Parser-Style-Elemental
 PORTVERSION=	0.50

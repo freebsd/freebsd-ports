@@ -1,5 +1,4 @@
 # Created by: jkoshy
-# $FreeBSD$
 
 PORTNAME=		cvslines
 PORTVERSION=		1.6.9

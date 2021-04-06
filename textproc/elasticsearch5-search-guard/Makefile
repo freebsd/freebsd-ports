@@ -1,5 +1,4 @@
 # Created by: Miroslav Lachman <000.fbsd@quip.cz>
-# $FreeBSD$
 
 PORTNAME=	search-guard
 DISTVERSION=	5.6.8

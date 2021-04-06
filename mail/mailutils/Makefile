@@ -1,5 +1,4 @@
 # Created by: Attila Nagy <bra@fsn.hu>
-# $FreeBSD$
 
 PORTNAME=	mailutils
 PORTVERSION=	3.12

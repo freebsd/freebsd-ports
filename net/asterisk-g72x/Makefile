@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	g72x
 PORTVERSION=	1.4.3

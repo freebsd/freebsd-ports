@@ -1,5 +1,4 @@
 # Created by: Eyal Soha <esoha@attbi.com>
-# $FreeBSD$
 
 PORTNAME=	noip
 PORTVERSION=	2.1.9

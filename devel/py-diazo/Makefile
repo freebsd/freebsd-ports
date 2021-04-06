@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	diazo
 PORTVERSION=	1.2.11

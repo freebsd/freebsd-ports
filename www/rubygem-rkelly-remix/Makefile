@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rkelly-remix
 PORTVERSION=	0.0.7

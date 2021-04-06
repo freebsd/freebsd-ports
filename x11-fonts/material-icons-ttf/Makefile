@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	material-icons
 DISTVERSION=	5.0.1

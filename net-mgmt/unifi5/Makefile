@@ -1,5 +1,4 @@
 # Created by: Alban MAIRE <a.maire@s2mi.fr>
-# $FreeBSD$
 
 PORTNAME=	unifi5
 PORTVERSION=	5.14.23

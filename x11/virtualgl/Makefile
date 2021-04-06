@@ -1,5 +1,4 @@
 # Created by: David Mackay <davidjx8p@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	virtualgl
 PORTVERSION=	2.6.3

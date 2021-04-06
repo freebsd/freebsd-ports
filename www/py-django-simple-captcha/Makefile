@@ -1,5 +1,4 @@
 # Created by: John Hixson <john@ixsystems.com>
-# $FreeBSD$
 
 PORTNAME=	django-simple-captcha
 PORTVERSION=	0.5.12

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-staticinline
 PORTVERSION=	1.3.1

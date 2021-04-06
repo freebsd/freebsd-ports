@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jiri
 PORTVERSION=	g${TIMESTAMP:S/-/./g:C/T.*//g}

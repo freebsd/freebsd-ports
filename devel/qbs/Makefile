@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qbs
 DISTVERSIONPREFIX=	src-

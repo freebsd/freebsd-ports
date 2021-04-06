@@ -1,5 +1,4 @@
 # Created by: Chris D. Faulhaber <jedgar@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xinvaders3d
 DISTVERSION=	1.3.6

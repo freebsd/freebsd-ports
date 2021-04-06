@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rack-test
 PORTVERSION=	1.1.0

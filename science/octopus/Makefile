@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	octopus
 DISTVERSION=	10.3

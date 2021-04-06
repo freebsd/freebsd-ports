@@ -1,5 +1,4 @@
 # Created by: Brad Hendrickse <bradh@uunet.co.za>
-# $FreeBSD$
 
 PORTNAME=	Date-Calc
 PORTVERSION=	6.4

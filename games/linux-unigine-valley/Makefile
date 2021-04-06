@@ -1,5 +1,4 @@
 # Created by: Hannes Hauswedell <h2+fbsdports@fsfe.org>
-# $FreeBSD$
 
 PORTNAME=	unigine-valley
 PORTVERSION=	1.0

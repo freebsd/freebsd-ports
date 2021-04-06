@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	robin-map
 DISTVERSIONPREFIX=	v

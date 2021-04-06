@@ -1,5 +1,4 @@
 # Created by: David
-# $FreeBSD$
 
 PORTNAME=	ncid
 PORTVERSION=	1.11

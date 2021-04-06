@@ -1,5 +1,4 @@
 # Created by: Cy Schubert (Cy.Schubert@uumail.gov.bc.ca)
-# $FreeBSD$
 
 PORTNAME=	aide
 PORTVERSION=	0.16.1

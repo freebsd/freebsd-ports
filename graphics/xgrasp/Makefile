@@ -1,5 +1,4 @@
 # Created by: asami
-# $FreeBSD$
 
 PORTNAME=	xgrasp
 PORTVERSION=	1.7d

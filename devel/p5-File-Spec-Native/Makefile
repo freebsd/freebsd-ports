@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	File-Spec-Native
 PORTVERSION=	1.004

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-STF-Client
 PORTVERSION=	1.01

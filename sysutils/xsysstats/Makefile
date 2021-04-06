@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xsysstats
 PORTVERSION=	1.51

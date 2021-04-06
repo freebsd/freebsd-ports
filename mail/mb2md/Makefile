@@ -1,5 +1,4 @@
 # Created by: Andy Gilligan
-# $FreeBSD$
 
 PORTNAME=	mb2md
 PORTVERSION=	3.20

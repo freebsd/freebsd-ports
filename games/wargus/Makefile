@@ -1,5 +1,4 @@
 # Created by: Travis Poppe <tlp@liquidx.org>
-# $FreeBSD$
 
 PORTNAME=	wargus
 PORTVERSION=	2.4.2

@@ -1,5 +1,4 @@
 # Created by: Alberto Villa <avilla@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	telepathy-qt
 DISTVERSION=	0.9.8

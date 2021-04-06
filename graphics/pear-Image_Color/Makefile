@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine (<tux@pinguru.net>)
-# $FreeBSD$
 
 PORTNAME=	Image_Color
 PORTVERSION=	1.0.4

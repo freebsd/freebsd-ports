@@ -1,5 +1,4 @@
 # Created by: Markus Brueffer <markus@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	kbibtex
 DISTVERSION=	0.9.2

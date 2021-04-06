@@ -1,5 +1,4 @@
 # Created by: wosch
-# $FreeBSD$
 
 PORTNAME=	info2html
 PORTVERSION=	2.0

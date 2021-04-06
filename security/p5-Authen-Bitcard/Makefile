@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Authen-Bitcard
 PORTVERSION=	0.90

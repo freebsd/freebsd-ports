@@ -1,5 +1,4 @@
 # Created by: jraynard
-# $FreeBSD$
 
 PORTNAME=	simh
 PORTVERSION=	3.9.0

@@ -1,5 +1,4 @@
 # Created by: Frank Mayhar <frank@exit.com>
-# $FreeBSD$
 
 PORTNAME=	Locale-Maketext
 PORTVERSION=	1.29

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ua
 PORTVERSION=	1.0.1

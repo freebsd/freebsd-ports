@@ -1,5 +1,4 @@
 # Created by: Martin Schuette <info@mschuette.name>
-# $FreeBSD$
 
 PORTNAME=	libcrm114
 PORTVERSION=	20100726

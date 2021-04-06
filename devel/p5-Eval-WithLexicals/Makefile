@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Eval-WithLexicals
 PORTVERSION=	1.003005

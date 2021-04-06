@@ -1,5 +1,4 @@
 # Created by: Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	jisx0213
 PORTVERSION=	20040425

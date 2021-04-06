@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uuidtools
 PORTVERSION=	2.1.5

@@ -1,5 +1,4 @@
 # Created by: Yoichi NAKAYAMA <yoichi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	elscreen
 PORTVERSION=	1.4.6.20180320

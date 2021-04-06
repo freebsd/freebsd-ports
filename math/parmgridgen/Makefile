@@ -1,5 +1,4 @@
 # Created by: Stas Timokhin <devel@stasyan.com>
-# $FreeBSD$
 
 PORTNAME=	parmgridgen
 PORTVERSION=	1.0

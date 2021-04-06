@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	namd
 DISTVERSION=	2.12

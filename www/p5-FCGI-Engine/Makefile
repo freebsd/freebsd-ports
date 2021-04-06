@@ -1,5 +1,4 @@
 # Created by: Anes Muhametov <anes@anes.su>
-# $FreeBSD$
 
 PORTNAME=	FCGI-Engine
 PORTVERSION=	0.22

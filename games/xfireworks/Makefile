@@ -1,5 +1,4 @@
 # Created by: Sakai Hiroaki <sakai@seki.ee.kagu.sut.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	xfireworks
 PORTVERSION=	1.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	3270font
 DISTVERSIONPREFIX=	v.

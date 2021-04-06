@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	PyFR
 DISTVERSION=	1.10.0

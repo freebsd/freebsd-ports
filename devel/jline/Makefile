@@ -1,5 +1,4 @@
 # Created by: Martin Kammerhofer <mkamm@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	jline
 PORTVERSION=	0.9.94

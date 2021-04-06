@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xmltex
 PORTVERSION=	1.9

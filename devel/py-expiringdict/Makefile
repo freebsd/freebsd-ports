@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	expiringdict
 PORTVERSION=	1.2.1

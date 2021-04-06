@@ -1,5 +1,4 @@
 # Created by: Christopher Elkins <chrise@scardini.com>
-# $FreeBSD$
 
 PORTNAME=	gotmail
 PORTVERSION=	0.9.0

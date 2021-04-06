@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	byacc
 PORTVERSION=	20210109

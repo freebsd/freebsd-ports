@@ -1,5 +1,4 @@
 # Created by: Mark Reidel <ports@mark.reidel.info>
-# $FreeBSD$
 
 PORTNAME=	cups-pdf
 DISTVERSION=	3.0.1

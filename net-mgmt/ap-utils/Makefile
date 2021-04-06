@@ -1,5 +1,4 @@
 # Created by: Jerry A! <jerry@thehutt.org>
-# $FreeBSD$
 
 PORTNAME=	ap-utils
 PORTVERSION=	1.4.1

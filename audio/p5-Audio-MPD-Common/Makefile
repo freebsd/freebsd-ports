@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Audio-MPD-Common
 PORTVERSION=	2.003

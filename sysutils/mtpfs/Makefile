@@ -1,5 +1,4 @@
 # Created by: John Hixson <john@pcbsd.org>
-# $FreeBSD$
 
 PORTNAME=	mtpfs
 PORTVERSION=	1.1

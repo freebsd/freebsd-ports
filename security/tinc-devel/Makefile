@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tinc
 PORTVERSION=	1.1pre17

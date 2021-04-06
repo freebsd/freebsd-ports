@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gcolor3
 DISTVERSIONPREFIX=	v

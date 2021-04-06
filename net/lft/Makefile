@@ -1,5 +1,4 @@
 # Created by: Marco P. Rodrigues <drkangel@drkangel.org>
-# $FreeBSD$
 
 PORTNAME=	lft
 PORTVERSION=	3.91

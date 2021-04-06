@@ -1,5 +1,4 @@
 # Created by: Yoshihiko Sarumaru <mistral@imasy.or.jp>
-# $FreeBSD$
 
 PORTNAME=	astah
 PORTVERSION=	6.9.0

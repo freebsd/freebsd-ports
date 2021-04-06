@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mongodb40-tools
 DISTVERSIONPREFIX=	r

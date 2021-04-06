@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cayley
 DISTVERSIONPREFIX=	v

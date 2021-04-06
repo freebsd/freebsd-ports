@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fig2dev
 PORTVERSION=	3.2.7

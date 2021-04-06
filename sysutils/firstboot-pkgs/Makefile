@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	firstboot-pkgs
 PORTVERSION=	1.6

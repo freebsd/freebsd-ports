@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rex-zip
 PORTVERSION=	0.1.4

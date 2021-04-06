@@ -1,5 +1,4 @@
 # Created by: barner
-# $FreeBSD$
 
 PORTNAME=	libfprint
 PORTVERSION=	0.7.0

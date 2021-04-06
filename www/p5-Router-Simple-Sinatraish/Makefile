@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Router-Simple-Sinatraish
 PORTVERSION=	0.03

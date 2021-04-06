@@ -1,5 +1,4 @@
 # Created by: Dreamcat4 <dreamcat4@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	dtv-scan-tables
 PORTVERSION=	20200902

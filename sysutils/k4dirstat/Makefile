@@ -1,5 +1,4 @@
 # Created by: Stefan Jahn <stefan.jahn@nemesis-sektor.de>
-# $FreeBSD$
 
 PORTNAME=	k4dirstat
 PORTVERSION=	3.2.2

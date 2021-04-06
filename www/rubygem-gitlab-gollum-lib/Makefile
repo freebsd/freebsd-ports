@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gitlab-gollum-lib
 PORTVERSION=	4.2.7.10.gitlab.1

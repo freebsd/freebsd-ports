@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	plumed
 DISTVERSIONPREFIX=	v

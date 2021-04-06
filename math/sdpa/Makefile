@@ -1,5 +1,4 @@
 # Created by: NAKATA, Maho <maho@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sdpa
 PORTVERSION=	7.3.8

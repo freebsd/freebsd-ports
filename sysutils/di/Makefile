@@ -1,5 +1,4 @@
 # Created by: Brad Lanam <bll@gentoo.com>
-# $FreeBSD$
 
 PORTNAME=	di
 PORTVERSION=	4.49

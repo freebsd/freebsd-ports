@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stanchion
 PORTVERSION=	2.1.0

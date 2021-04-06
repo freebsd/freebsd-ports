@@ -1,5 +1,4 @@
 # Created by: Kengo Ichiki <kichiki@users.sourceforge.net>
-# $FreeBSD$
 
 PORTNAME=	waon
 PORTVERSION=	0.10

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	httpbin
 PORTVERSION=	0.7.0

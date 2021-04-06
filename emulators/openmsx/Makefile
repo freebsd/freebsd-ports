@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openmsx
 PORTVERSION=	16.0

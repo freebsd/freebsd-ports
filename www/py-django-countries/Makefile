@@ -1,5 +1,4 @@
 # Created by: Alfred Perlstein <alfred@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	django-countries
 PORTVERSION=	5.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v

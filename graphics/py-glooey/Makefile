@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	glooey
 PORTVERSION=	0.3.3

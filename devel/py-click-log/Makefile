@@ -1,5 +1,4 @@
 # Created by: Christian Geier <geier@lostpackets.de>
-# $FreeBSD$
 
 PORTNAME=	click-log
 DISTVERSION=	0.3.2

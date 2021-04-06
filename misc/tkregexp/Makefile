@@ -1,5 +1,4 @@
 # Created by: Patrick Seal <patseal@hyperhost.net>
-# $FreeBSD$
 
 PORTNAME=	tkregexp
 PORTVERSION=	3.1

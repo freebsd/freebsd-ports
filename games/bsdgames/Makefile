@@ -1,5 +1,4 @@
 # Created by: Mark Murray <markm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bsdgames
 PORTVERSION=	0.75

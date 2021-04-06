@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	info_to_html
 PORTVERSION=	0.9.6

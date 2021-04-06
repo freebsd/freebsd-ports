@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Log-Log4perl
 PORTVERSION=	1.53

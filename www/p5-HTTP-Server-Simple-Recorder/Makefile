@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	HTTP-Server-Simple-Recorder
 PORTVERSION=	0.03

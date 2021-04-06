@@ -1,5 +1,4 @@
 # Created by: Dryice Dong Liu <dryice@dryice.name>
-# $FreeBSD$
 
 PORTNAME=	sqlalchemy
 PORTVERSION=	1.0.14

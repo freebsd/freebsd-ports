@@ -1,5 +1,4 @@
 # Created by: Mario S F Ferreira <lioux@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Math-FFT
 PORTVERSION=	1.36

@@ -1,5 +1,4 @@
 # Created by: mark@foster.cc
-# $FreeBSD$
 
 PORTNAME=	scavenge
 PORTVERSION=	2.0

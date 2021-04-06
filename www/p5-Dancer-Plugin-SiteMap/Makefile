@@ -1,5 +1,4 @@
 # Created by: Grzegorz Blach <gblach@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Dancer-Plugin-SiteMap
 PORTVERSION=	0.14

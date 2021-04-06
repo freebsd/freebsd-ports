@@ -1,5 +1,4 @@
 # Created by: FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	lupe
 PORTVERSION=	0.08c

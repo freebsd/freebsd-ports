@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	IO-FDPass
 PORTVERSION=	1.2

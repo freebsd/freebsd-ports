@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	znapzend
 PORTVERSION=	0.20.0

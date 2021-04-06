@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POE-Filter-HTTP-Parser
 PORTVERSION=	1.08

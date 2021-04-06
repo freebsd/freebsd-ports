@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	smtp
 PORTVERSION=	3.6

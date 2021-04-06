@@ -1,5 +1,4 @@
 # Created by: Thomas Zander <riggs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	appdirs
 PORTVERSION=	1.4.4

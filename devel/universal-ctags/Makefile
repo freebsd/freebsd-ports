@@ -1,5 +1,4 @@
 # Created by: Derek Schrock <dereks@lifeofadishwasher.com>
-# $FreeBSD$
 
 PORTNAME=	universal-ctags
 PORTVERSION=	p5.9.20210314.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyfcm
 PORTVERSION=	1.5.1

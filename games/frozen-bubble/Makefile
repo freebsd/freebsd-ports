@@ -1,5 +1,4 @@
 # Created by: Klaus Goger <klaus.goger@reflex.at>
-# $FreeBSD$
 
 PORTNAME=	frozen-bubble
 DISTVERSION=	2.213.g${SNAPDATE}

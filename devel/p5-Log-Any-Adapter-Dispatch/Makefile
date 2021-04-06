@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Log-Any-Adapter-Dispatch
 PORTVERSION=	0.06

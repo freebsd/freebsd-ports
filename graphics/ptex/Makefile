@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ptex
 PORTREVISION=	1

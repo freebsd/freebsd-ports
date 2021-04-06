@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CHI-Driver-Redis
 PORTVERSION=	0.10

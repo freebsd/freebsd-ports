@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Text processing utilities (does not include desktop publishing)
 

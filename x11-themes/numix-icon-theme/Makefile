@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	numix-icon-theme
 PORTVERSION=	20.06.07

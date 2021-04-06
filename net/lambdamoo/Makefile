@@ -1,5 +1,4 @@
 # Created by: Seiichirou Hiraoka
-# $FreeBSD$
 
 PORTNAME=	lambdamoo
 PORTVERSION=	1.8.1

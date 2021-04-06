@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	isort
 PORTVERSION=	5.7.0

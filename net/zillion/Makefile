@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zillion
 PORTVERSION=	0.1

@@ -1,5 +1,4 @@
 # Created by: olgeni@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	shared-mime-info
 DISTVERSION=	2.0

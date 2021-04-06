@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	espeak
 PORTVERSION=	4.0

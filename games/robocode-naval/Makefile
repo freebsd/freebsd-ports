@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	robocode
 PORTVERSION=	0.9.2

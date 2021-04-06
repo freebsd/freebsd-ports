@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cim
 PORTVERSION=	3.37

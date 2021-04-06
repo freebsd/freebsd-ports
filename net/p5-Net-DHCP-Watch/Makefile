@@ -1,5 +1,4 @@
 # Created by: Lawrence Chen <beastie@tardisi.com>
-# $FreeBSD$
 
 PORTNAME=	Net-DHCP-Watch
 PORTVERSION=	2.03

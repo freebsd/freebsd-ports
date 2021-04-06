@@ -1,5 +1,4 @@
 # Created by: Piotr Smyrak, piotr.smyrak@heron.pl
-# $FreeBSD$
 
 PORTNAME=	gcolor2
 PORTVERSION=	0.4

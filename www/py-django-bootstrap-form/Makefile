@@ -1,5 +1,4 @@
 # Created by: Alfred Perlstein <alfred@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	django-bootstrap-form
 PORTVERSION=	3.4

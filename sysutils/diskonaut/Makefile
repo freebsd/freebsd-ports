@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	diskonaut
 PORTVERSION=	0.11.0

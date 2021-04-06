@@ -1,5 +1,4 @@
 # Created by: Jin-Sih Lin <linpct@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	rsyncrypto
 PORTVERSION=	1.14

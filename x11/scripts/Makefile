@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scripts
 PORTVERSION=	1.0.1

@@ -1,5 +1,4 @@
 # Created by: Johan Strom <johna@stromnet.se>
-# $FreeBSD$
 
 PORTNAME=	openzwave
 PORTVERSION=	1.6.${VERSION_REV}

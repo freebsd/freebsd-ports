@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libfo
 PORTVERSION=	0.6.3

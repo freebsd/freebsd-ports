@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dssim
 DISTVERSION=	3.0.1

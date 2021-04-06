@@ -1,5 +1,4 @@
 # Created by: dmitry@karasik.eu.org
-# $FreeBSD$
 
 PORTNAME=	Prima
 PORTVERSION=	1.60

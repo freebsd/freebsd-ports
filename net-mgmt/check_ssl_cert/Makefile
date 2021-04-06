@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	check_ssl_cert
 DISTVERSIONPREFIX=	v

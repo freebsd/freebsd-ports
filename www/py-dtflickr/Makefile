@@ -1,5 +1,4 @@
 # Created by: Douglas Thrift
-# $FreeBSD$
 
 PORTNAME=	dtflickr
 PORTVERSION=	1.5

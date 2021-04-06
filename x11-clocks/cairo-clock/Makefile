@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cairo-clock
 DISTVERSION=	0.3.4

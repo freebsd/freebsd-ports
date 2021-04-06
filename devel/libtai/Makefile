@@ -1,5 +1,4 @@
 # Created by: Mario S F Ferreira <lioux@linf.unb.br> et al.
-# $FreeBSD$
 
 PORTNAME=	libtai
 PORTVERSION=	0.60

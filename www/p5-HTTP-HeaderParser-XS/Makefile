@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
-# $FreeBSD$
 
 PORTNAME=	HTTP-HeaderParser-XS
 PORTVERSION=	0.20

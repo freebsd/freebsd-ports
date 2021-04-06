@@ -1,5 +1,4 @@
 # Created by: kuriyama
-# $FreeBSD$
 
 PORTNAME=	Search-Namazu
 PORTVERSION=	0.96

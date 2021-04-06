@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POSIX-Socket
 PORTVERSION=	0.09

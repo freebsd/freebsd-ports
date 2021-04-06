@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tftpgrab
 PORTVERSION=	0.2

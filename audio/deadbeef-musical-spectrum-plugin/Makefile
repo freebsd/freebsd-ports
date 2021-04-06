@@ -1,5 +1,4 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	deadbeef-musical-spectrum-plugin
 DISTVERSION=	0.0.2015.10.13

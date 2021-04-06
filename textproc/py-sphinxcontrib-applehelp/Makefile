@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sphinxcontrib-applehelp
 PORTVERSION=	1.0.2

@@ -1,5 +1,4 @@
 # Created by: kiesel
-# $FreeBSD$
 
 PORTNAME=	reoback
 PORTVERSION=	1.0

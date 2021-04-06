@@ -1,5 +1,4 @@
 # Created by: Roland Jesse <roland.jesse@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	pho
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: Ulrich Spoerlein <uspoerlein@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wmbday
 PORTVERSION=	0.3.1

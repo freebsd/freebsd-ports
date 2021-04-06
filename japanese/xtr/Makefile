@@ -1,5 +1,4 @@
 # Created by: TANAKA Hiroyuki <kattyo@abk.nu>
-# $FreeBSD$
 
 PORTNAME=	xtr
 PORTVERSION=	1.50e.0.2

@@ -1,5 +1,4 @@
 # Created by: Nick Esborn <nick@netdot.net>
-# $FreeBSD$
 
 PORTNAME=	roadmap
 PORTVERSION=	1.2.1

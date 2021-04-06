@@ -1,5 +1,4 @@
 # Created by: Stas Timokhin <stast@bsdportal.ru>
-# $FreeBSD$
 
 PORTNAME=	eiskaltdcpp
 PORTREVISION=	20

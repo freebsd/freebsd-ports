@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mongodb
 PORTVERSION=	1.9.0

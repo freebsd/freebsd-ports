@@ -1,5 +1,4 @@
 # Created by: martin.dieringer@gmx.de
-# $FreeBSD$
 
 PORTNAME=	python-ly
 PORTVERSION=	0.9.6

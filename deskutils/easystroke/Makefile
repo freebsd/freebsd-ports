@@ -1,5 +1,4 @@
 # Created by: Tobias Kortkamp <tobias.kortkamp@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	easystroke
 PORTVERSION=	0.6.0

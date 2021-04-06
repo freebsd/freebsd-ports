@@ -1,5 +1,4 @@
 # Created by: proler@gmail.com
-# $FreeBSD$
 
 PORTNAME=	clickhouse
 PORTVERSION=	20.7.2.30

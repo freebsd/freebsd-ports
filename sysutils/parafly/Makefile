@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	parafly
 DISTVERSIONPREFIX=	v

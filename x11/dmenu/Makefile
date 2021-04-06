@@ -1,5 +1,4 @@
 # Created by: Jeroen Schot <schot@a-eskwadraat.nl>
-# $FreeBSD$
 
 PORTNAME=	dmenu
 DISTVERSION=	5.0

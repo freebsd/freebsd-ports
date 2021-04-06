@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lean
 DISTVERSIONPREFIX=	v

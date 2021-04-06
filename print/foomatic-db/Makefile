@@ -1,5 +1,4 @@
 # Created by: Dima Dorfman <dima@unixfreak.org>
-# $FreeBSD$
 
 PORTNAME=	foomatic-db
 PORTVERSION=	20201029

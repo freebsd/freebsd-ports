@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	strong_migrations
 PORTVERSION=	0.3.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pytest-xprocess
 PORTVERSION=	0.12.1

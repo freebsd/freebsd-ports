@@ -1,5 +1,4 @@
 # Created by: clive
-# $FreeBSD$
 
 PORTNAME=	Template-Toolkit
 PORTVERSION=	3.009

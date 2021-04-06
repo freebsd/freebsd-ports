@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine (<tux@pinguru.net>)
-# $FreeBSD$
 
 PORTNAME=	Net_POP3
 PORTVERSION=	1.3.8

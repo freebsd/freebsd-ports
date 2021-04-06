@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Hash-Util-FieldHash-Compat
 PORTVERSION=	0.11

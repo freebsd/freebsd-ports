@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	libgroove
 PORTVERSION=	4.3.0

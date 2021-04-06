@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omniauth-google-oauth2
 PORTVERSION=	0.6.0

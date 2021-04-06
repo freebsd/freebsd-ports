@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libwpe
 PORTVERSION=	1.4.0.1

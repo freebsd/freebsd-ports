@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cmrt
 DISTVERSION=	1.0.6

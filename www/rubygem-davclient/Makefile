@@ -1,5 +1,4 @@
 # Created by: Mikhail T. <michael@fun-box.ru>
-# $FreeBSD$
 
 PORTNAME=	davclient
 PORTVERSION=	0.0.8

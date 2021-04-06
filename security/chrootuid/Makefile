@@ -1,5 +1,4 @@
 # Created by: truckman
-# $FreeBSD$
 
 PORTNAME=	chrootuid
 PORTVERSION=	1.3

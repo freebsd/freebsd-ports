@@ -1,5 +1,4 @@
 # Created by: Slava Shwartsman <slavash@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	perftest
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rgb
 PORTVERSION=	1.0.6

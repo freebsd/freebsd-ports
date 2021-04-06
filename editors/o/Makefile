@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	o
 DISTVERSION=	2.35.1

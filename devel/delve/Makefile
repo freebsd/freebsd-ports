@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	delve
 DISTVERSIONPREFIX=	v

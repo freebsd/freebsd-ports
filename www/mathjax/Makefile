@@ -1,5 +1,4 @@
 # Created by: Lukasz Stelmach <lukasz.stelmach@iem.pw.edu.pl>
-# $FreeBSD$
 
 PORTNAME=	MathJax
 DISTVERSION=	2.7.8

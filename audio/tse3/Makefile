@@ -1,5 +1,4 @@
 # Created by: Mathew Kanner <mat@hak.cnd.mcgill.ca>
-# $FreeBSD$
 
 PORTNAME=	tse3
 PORTVERSION=	0.3.1

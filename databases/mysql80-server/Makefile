@@ -1,5 +1,4 @@
 # Created by: Mahdi Mokhtari <mokhi64@gmail.com>
-# $FreeBSD$
 
 PORTNAME?=		mysql
 PORTVERSION=		8.0.23

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libxlsxwriter
 PORTVERSION=	1.0.0

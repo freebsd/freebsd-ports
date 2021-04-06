@@ -1,5 +1,4 @@
 # Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-# $FreeBSD$
 
 PORTNAME=	qmailanalog
 PORTVERSION=	0.70

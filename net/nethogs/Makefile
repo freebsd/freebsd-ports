@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nethogs
 PORTVERSION=	0.8.5

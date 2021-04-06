@@ -1,5 +1,4 @@
 # Created by: Kyle Evans <kevans@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pylru
 PORTVERSION=	1.2.0

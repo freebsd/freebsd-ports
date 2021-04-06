@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	toil
 DISTVERSION=	5.2.0

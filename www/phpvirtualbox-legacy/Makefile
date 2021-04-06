@@ -1,5 +1,4 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD$
 
 PORTNAME=	phpvirtualbox
 DISTVERSION=	5.2-1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cctz
 PORTVERSION=	2.2

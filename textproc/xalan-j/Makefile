@@ -1,5 +1,4 @@
 # Created by: znerd@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	xalan-j
 PORTVERSION=	2.7.2

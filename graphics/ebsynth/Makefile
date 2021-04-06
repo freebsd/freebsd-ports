@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ebsynth
 PORTVERSION=	0.0.0.20190510

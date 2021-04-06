@@ -1,5 +1,4 @@
 # Created by: Zane C, Bowers <vvelox@vvelox.net>
-# $FreeBSD$
 
 PORTNAME=	Net-DNS-RR-SRV-Helper
 PORTVERSION=	0.0.0

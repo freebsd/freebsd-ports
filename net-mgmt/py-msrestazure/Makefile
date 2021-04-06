@@ -1,5 +1,4 @@
 # Created by: Johannes Jost Meixner <johannes@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	msrestazure
 DISTVERSION=	0.6.3

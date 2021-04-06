@@ -1,5 +1,4 @@
 # Created by: dikshie <dikshie@lapi.itb.ac.id>
-# $FreeBSD$
 
 PORTNAME=	Geography-Countries
 PORTVERSION=	2009041301

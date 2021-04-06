@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bugzilla2atom
 PORTVERSION=	g20190711

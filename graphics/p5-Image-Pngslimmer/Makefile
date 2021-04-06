@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Image-Pngslimmer
 PORTVERSION=	0.30

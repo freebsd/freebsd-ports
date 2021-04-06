@@ -1,5 +1,4 @@
 # Created by: dirk.meyer@dinoex.sub.org
-# $FreeBSD$
 
 PORTNAME=	gnustep-app
 PORTVERSION=	2.0.0

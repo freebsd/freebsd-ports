@@ -1,5 +1,4 @@
 # Created by: Tatsumi Hosokawa
-# $FreeBSD$
 
 PORTNAME=	kb2mb2
 PORTVERSION=	1.0

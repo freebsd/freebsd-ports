@@ -1,5 +1,4 @@
 # Created by: Kyle Evans <kevans@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	zdoom
 PORTVERSION=	2.8.1

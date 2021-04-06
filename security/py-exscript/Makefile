@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	exscript
 DISTVERSIONPREFIX=	v

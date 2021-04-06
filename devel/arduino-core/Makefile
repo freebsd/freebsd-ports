@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	arduino-core
 PORTVERSION=	1.6.18

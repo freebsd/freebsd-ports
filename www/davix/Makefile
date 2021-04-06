@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	davix
 DISTVERSION=	0.7.6

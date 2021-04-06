@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MIME-EcoEncode
 PORTVERSION=	0.95

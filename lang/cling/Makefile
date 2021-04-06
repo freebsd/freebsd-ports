@@ -1,5 +1,4 @@
 # Created by: Mahdi Mokhtari <mokhi64@gmail.com>
-# $FreeBSD$
 
 PORTNAME=		cling
 DISTVERSION=		0.5-2018-08-13

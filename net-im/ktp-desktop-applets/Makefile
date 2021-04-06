@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ktp-desktop-applets
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

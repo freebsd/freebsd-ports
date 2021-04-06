@@ -1,5 +1,4 @@
 # Created by: philip@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	tarsnapper
 PORTVERSION=	0.4

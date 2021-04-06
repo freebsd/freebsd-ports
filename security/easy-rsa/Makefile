@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	easy-rsa
 DISTVERSION=	3.0.8

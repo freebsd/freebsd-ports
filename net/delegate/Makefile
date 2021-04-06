@@ -1,5 +1,4 @@
 # Created by: Masafumi NAKANE <max@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	delegate
 PORTVERSION=	9.9.13

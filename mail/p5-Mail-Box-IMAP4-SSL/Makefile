@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Mail-Box-IMAP4-SSL
 PORTVERSION=	0.03

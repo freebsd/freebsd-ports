@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		bedtools
 DISTVERSIONPREFIX=	v

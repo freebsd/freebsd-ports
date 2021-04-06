@@ -1,5 +1,4 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	WWW-Scripter-Plugin-JavaScript
 PORTVERSION=	0.009

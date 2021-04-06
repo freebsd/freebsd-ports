@@ -1,5 +1,4 @@
 # Created by: crwhipp@gmail.com
-# $FreeBSD$
 
 PORTNAME=	foxtrotgps
 PORTVERSION=	1.2.2

@@ -1,5 +1,4 @@
 # Created by: Andrej Ebert <andrej@ebert.su>
-# $FreeBSD$
 
 PORTNAME=	rebulk
 PORTVERSION=	3.0.1

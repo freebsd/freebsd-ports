@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gtk2

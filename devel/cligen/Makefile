@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cligen
 PORTVERSION=	4.8.0

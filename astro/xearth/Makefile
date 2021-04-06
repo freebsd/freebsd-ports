@@ -1,5 +1,4 @@
 # Created by: Piero Serini <piero@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xearth
 PORTVERSION=	1.2

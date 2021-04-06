@@ -1,5 +1,4 @@
 # Created by: Kevin Golding <ports@caomhin.org>
-# $FreeBSD$
 
 PORTNAME=	django-polymorphic
 PORTVERSION=	2.1.2

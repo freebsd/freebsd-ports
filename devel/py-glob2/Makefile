@@ -1,5 +1,4 @@
 # Created by: Fukang Chen <loader@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	glob2
 PORTVERSION=	0.7

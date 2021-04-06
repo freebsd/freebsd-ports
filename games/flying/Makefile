@@ -1,5 +1,4 @@
 # Created by: searle
-# $FreeBSD$
 
 PORTNAME=	flying
 PORTVERSION=	6.20

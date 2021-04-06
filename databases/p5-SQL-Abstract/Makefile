@@ -1,5 +1,4 @@
 # Created by: Dominic Mitchell
-# $FreeBSD$
 
 PORTNAME=	SQL-Abstract
 PORTVERSION=	2.000001

@@ -1,5 +1,4 @@
 # Created by: Robert Noland <rnoland@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	compiz-bcop
 PORTVERSION=	0.8.8

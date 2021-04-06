@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gio2
 PORTVERSION=	3.4.3

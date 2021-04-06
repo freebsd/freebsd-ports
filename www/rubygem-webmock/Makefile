@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webmock
 PORTVERSION=	3.12.0

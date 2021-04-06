@@ -1,5 +1,4 @@
 # Created by: h2
-# $FreeBSD$
 
 PORTNAME=	seqan
 PORTVERSION=	1.3.1

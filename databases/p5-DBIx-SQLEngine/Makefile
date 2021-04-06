@@ -1,5 +1,4 @@
 # Created by: Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
-# $FreeBSD$
 
 PORTNAME=	DBIx-SQLEngine
 PORTVERSION=	0.93

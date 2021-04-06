@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dpkt
 PORTVERSION=	1.9.5

@@ -1,5 +1,4 @@
 # Created by: Dan Rench <citric@cubicone.tmetic.com>
-# $FreeBSD$
 
 PORTNAME=	Child
 PORTVERSION=	0.009

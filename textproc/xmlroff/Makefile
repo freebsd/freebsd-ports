@@ -1,5 +1,4 @@
 # Created by: James Earl
-# $FreeBSD$
 
 PORTNAME=	xmlroff
 PORTVERSION=	0.6.3

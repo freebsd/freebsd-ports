@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	acmed
 DISTVERSIONPREFIX=	v

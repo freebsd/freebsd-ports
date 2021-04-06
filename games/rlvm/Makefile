@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rlvm
 DISTVERSIONPREFIX=	release-

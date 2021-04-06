@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Lingua-EN-Number-IsOrdinal
 PORTVERSION=	0.05

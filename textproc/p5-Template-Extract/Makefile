@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	Template-Extract
 PORTVERSION=	0.41

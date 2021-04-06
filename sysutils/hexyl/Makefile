@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hexyl
 DISTVERSIONPREFIX=	v

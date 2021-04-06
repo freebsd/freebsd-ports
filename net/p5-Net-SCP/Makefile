@@ -1,5 +1,4 @@
 # Created by: Erich Zigler <erich@tacni.net>
-# $FreeBSD$
 
 PORTNAME=	Net-SCP
 PORTVERSION=	0.08

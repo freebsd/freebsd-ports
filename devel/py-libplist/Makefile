@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTREVISION=	0
 CATEGORIES=	devel python

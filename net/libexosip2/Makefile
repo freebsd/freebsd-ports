@@ -1,5 +1,4 @@
 # Created by: Muhammad Moinur Rahman <bd_subzero@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	libeXosip2
 PORTVERSION=	5.2.0

@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <kappa@rambler-co.ru>
-# $FreeBSD$
 
 PORTNAME=	Net-OpenID-Server
 PORTVERSION=	1.09

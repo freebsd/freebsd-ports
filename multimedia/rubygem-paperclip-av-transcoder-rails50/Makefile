@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	paperclip-av-transcoder
 PORTVERSION=	0.6.4

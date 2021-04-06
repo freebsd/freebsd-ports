@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	tintin++
 PORTVERSION=	2.02.05

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dupmerge
 PORTVERSION=	1.73

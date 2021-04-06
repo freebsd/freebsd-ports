@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libyubikey
 PORTVERSION=	1.13

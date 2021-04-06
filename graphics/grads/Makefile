@@ -1,5 +1,4 @@
 # Created by: Greg Lewis <glewis@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	grads
 PORTVERSION=	1.9b4

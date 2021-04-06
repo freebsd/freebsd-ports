@@ -1,5 +1,4 @@
 # Created by: Jeff Burchell <toxic@doobie.com>
-# $FreeBSD$
 
 PORTNAME=	libpar2
 PORTVERSION=	0.4

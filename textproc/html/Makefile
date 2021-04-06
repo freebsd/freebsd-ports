@@ -1,5 +1,4 @@
 # Created by: jfieber
-# $FreeBSD$
 
 PORTNAME=	html
 PORTVERSION=	4.01

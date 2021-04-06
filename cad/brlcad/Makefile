@@ -1,5 +1,4 @@
 # Created by: Pedro F. Giffuni <giffunip@asme.org>
-# $FreeBSD$
 
 PORTNAME=	brlcad
 PORTVERSION=	7.30.2

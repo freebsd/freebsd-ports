@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	novnc
 PORTVERSION=	1.2.0

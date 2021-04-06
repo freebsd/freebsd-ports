@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyblake2
 PORTVERSION=	1.1.2

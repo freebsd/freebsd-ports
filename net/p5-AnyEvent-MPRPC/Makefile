@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-MPRPC
 PORTVERSION=	0.20

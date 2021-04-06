@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fossil
 PORTVERSION=	2.15

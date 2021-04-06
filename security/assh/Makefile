@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	assh
 DISTVERSIONPREFIX=	v

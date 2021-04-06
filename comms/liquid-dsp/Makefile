@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	liquid-dsp
 DISTVERSIONPREFIX=	v

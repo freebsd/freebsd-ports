@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	slurm
 DISTVERSION=	20.02.1

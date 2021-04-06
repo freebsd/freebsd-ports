@@ -1,5 +1,4 @@
 # Created by: John Hixson <john@pcbsd.org>
-# $FreeBSD$
 
 PORTNAME=	pithos
 PORTVERSION=	1.5.0

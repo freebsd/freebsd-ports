@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	svn2git
 PORTVERSION=	2.4.0

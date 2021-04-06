@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	xsokoban
 PORTVERSION=	3.3c

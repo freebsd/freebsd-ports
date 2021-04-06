@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	babel
 PORTVERSION=	2010.01.16

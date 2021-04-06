@@ -1,5 +1,4 @@
 # Created by: Dermot Tynan <dtynan@kalopa.com>
-# $FreeBSD$
 
 PORTNAME=	dbow
 PORTVERSION=	0.7

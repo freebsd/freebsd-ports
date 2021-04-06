@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	igor
 PORTVERSION=	1.595

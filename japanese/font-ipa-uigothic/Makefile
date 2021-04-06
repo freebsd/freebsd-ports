@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ipa
 PORTVERSION=	00203

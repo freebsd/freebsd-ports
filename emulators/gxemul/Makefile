@@ -1,5 +1,4 @@
 # Created by: Janni
-# $FreeBSD$
 
 PORTNAME=	gxemul
 PORTVERSION=	0.6.3

@@ -1,5 +1,4 @@
 # Created by: Jeremy Chadwick <koitsu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	rrdbot
 PORTVERSION=	0.9.7.d20200312

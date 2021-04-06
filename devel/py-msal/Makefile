@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	msal
 DISTVERSION=	1.10.0

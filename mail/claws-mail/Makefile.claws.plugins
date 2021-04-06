@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 CLAWS_PLUGINS=	acpi_notifier \
 		address_keeper \
 		archive \

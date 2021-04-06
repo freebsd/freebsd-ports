@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	PySceneDetect
 PORTVERSION=	0.5.4

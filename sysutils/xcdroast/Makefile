@@ -1,5 +1,4 @@
 # Created by: Oliver Lehmann <Kai_Allard_Liao@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	xcdroast
 PORTVERSION=	0.98.a.16

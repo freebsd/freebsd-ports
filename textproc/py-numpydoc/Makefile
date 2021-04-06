@@ -1,5 +1,4 @@
 # Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	numpydoc
 PORTVERSION=	0.9.1

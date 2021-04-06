@@ -1,5 +1,4 @@
 # Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	List-Uniq
 PORTVERSION=	0.20

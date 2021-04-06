@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Firefox-Marionette
 PORTVERSION=	1.00

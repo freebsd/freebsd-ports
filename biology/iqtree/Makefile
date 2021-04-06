@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iqtree
 DISTVERSIONPREFIX=	v

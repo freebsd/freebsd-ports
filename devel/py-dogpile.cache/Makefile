@@ -1,5 +1,4 @@
 # Created by: William Grzybowski <william88@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	dogpile.cache
 PORTVERSION=	0.9.2

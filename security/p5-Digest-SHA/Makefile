@@ -1,5 +1,4 @@
 # Created by: Travis Campbell <hcoyote@ghostar.org>
-# $FreeBSD$
 
 PORTNAME=	Digest-SHA
 PORTVERSION=	6.02

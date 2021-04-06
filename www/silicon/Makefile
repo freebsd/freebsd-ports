@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	silicon
 DISTVERSIONPREFIX=	v

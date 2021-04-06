@@ -1,5 +1,4 @@
 # Created by: Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	mopac
 PORTVERSION=	7.${MOPAC_SUBVERSION}

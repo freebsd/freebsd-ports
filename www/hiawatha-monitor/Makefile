@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hiawatha-monitor
 PORTVERSION=	1.6

@@ -1,5 +1,4 @@
 # Created by: Sylvio Cesar <sylvio@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	PEAR_PackageFileManager2
 PORTVERSION=	1.0.4

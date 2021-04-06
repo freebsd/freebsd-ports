@@ -1,5 +1,4 @@
 # Created by: Julian Stecklina
-# $FreeBSD$
 
 PORTNAME=	ecl
 PORTVERSION=	20.4.24

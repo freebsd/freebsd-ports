@@ -1,5 +1,4 @@
 # Created by: Evan Sarmiento <bsdports@wayfair.com>
-# $FreeBSD$
 
 PORTNAME=	carbon
 PORTVERSION=	1.1.7

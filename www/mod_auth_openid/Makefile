@@ -1,5 +1,4 @@
 # Created by: Sutra Zhou <zhoushuqun@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mod_auth_openid
 PORTVERSION=	0.8

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rcm
 PORTVERSION=	1.3.4

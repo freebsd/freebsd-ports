@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	loompy
 DISTVERSION=	3.0.6

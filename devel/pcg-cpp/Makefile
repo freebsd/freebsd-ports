@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pcg-cpp
 DISTVERSIONPREFIX=	v

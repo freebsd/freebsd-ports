@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hex
 DISTVERSION=	0.20.5

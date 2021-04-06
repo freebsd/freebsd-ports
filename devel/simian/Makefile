@@ -1,5 +1,4 @@
 # Created by: andreas@syndrom23.de
-# $FreeBSD$
 
 PORTNAME=	simian
 PORTVERSION=	2.5.10

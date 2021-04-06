@@ -1,5 +1,4 @@
 # Created by: milki <milki@rescomp.berkeley.edu>
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Hailo
 PORTVERSION=	0.11

@@ -1,5 +1,4 @@
 # Created by: ljo
-# $FreeBSD$
 
 PORTNAME=	afm
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: bland@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	xattr
 PORTVERSION=	0.9.6

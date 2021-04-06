@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	verilator
 DISTVERSION=	4.200

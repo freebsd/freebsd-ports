@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rmagick
 PORTVERSION=	2.16.0

@@ -1,5 +1,4 @@
 # Created by: Shinsuke Matsui <smatsui@karashi.org>
-# $FreeBSD$
 
 PORTNAME=	Shell-Perl
 PORTVERSION=	0.0022

@@ -1,5 +1,4 @@
 # Created by: nork@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-DSA
 PORTVERSION=	0.19

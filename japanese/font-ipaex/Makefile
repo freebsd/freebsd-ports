@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ipaex
 PORTVERSION=	00401

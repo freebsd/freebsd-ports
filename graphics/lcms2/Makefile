@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <stas@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lcms2
 PORTVERSION=	2.12

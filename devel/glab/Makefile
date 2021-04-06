@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	glab
 DISTVERSIONPREFIX=	v

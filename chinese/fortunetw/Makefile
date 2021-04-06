@@ -1,5 +1,4 @@
 # Created by: Shen Chuan-Hsing
-# $FreeBSD$
 
 PORTNAME=	fortunetw
 PORTVERSION=	1.4

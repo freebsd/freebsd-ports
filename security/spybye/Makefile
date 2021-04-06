@@ -1,5 +1,4 @@
 # Created by: pauls
-# $FreeBSD$
 
 PORTNAME=	spybye
 PORTVERSION=	0.3

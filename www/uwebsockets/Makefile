@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uwebsockets
 DISTVERSIONPREFIX=	v

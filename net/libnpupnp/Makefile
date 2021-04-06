@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libnpupnp
 DISTVERSION=	4.1.1

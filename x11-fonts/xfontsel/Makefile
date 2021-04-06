@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xfontsel
 PORTVERSION=	1.0.6

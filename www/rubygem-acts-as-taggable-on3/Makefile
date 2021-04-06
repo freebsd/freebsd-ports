@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	acts-as-taggable-on
 PORTVERSION=	3.5.0

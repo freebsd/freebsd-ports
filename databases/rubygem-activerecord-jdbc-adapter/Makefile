@@ -1,5 +1,4 @@
 # Created by: Alexander Logvinov <ports@logvinov,com>
-# $FreeBSD$
 
 PORTNAME=	activerecord-jdbc-adapter
 PORTVERSION=	51.0

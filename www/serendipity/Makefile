@@ -1,5 +1,4 @@
 # Created by: babak@farrokhi.net
-# $FreeBSD$
 
 PORTNAME=	serendipity
 PORTVERSION=	2.3.5

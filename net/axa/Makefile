@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	axa
 PORTVERSION=	2.2.0

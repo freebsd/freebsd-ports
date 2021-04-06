@@ -1,5 +1,4 @@
 # Created by: Hiten Pandya <hiten@uk.FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	larbin
 PORTVERSION=	2.6.3

@@ -1,5 +1,4 @@
 # Created by: Anish Mistry (<amistry@am-productions.biz>)
-# $FreeBSD$
 
 PORTNAME=	Validate_Finance
 PORTVERSION=	0.5.6

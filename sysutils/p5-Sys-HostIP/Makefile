@@ -1,5 +1,4 @@
 # Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Sys-HostIP
 PORTVERSION=	1.9.3

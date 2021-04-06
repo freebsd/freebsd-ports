@@ -1,5 +1,4 @@
 # Created by: Nathan Whitehon <nwhitehorn@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	sems
 DISTVERSION=	${SEMS_VERSION}.g20200510

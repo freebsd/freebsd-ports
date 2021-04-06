@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	certbot-dns-google
 PORTVERSION=	${ACME_VERSION}

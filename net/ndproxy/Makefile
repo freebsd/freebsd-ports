@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ndproxy
 PORTVERSION=	3.2

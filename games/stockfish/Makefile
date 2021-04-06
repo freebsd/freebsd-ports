@@ -1,5 +1,4 @@
 # Created by: Gautam Mani <execve@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	stockfish
 DISTVERSIONPREFIX=	sf_

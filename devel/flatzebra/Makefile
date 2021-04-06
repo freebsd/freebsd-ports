@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis <edwin2mavetju.org>
-# $FreeBSD$
 
 PORTNAME=	flatzebra
 PORTVERSION=	0.1.7

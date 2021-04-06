@@ -1,5 +1,4 @@
 # Created by: Timur Bakeyev <bat@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Net-IDN-Encode
 PORTVERSION=	2.500

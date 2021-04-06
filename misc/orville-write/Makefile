@@ -1,5 +1,4 @@
 # Created by: James Howard <howardj@wam.umd.edu>
-# $FreeBSD$
 
 PORTNAME=	orville-write
 PORTVERSION=	2.55

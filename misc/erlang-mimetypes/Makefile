@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mimetypes
 PORTVERSION=	1.1.0

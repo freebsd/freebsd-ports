@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vcf2hap
 DISTVERSION=	0.1.2

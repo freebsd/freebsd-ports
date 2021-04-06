@@ -1,5 +1,4 @@
 # Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-# $FreeBSD$
 
 PORTNAME=	Bundle-Perl6
 PORTVERSION=	0.12

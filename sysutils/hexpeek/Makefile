@@ -1,5 +1,4 @@
 # Created by: se@freebsd.org
-# $FreeBSD$
 
 PORTNAME=	hexpeek
 DISTVERSIONPREFIX=	v

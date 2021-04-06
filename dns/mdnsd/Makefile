@@ -1,5 +1,4 @@
 # Created by: Dan Pelleg <daniel+mdnsd@pelleg.org>
-# $FreeBSD$
 
 PORTNAME=	mdnsd
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: roland.jesse@gmx.net
-# $FreeBSD$
 
 PORTNAME=	SoQt
 PORTVERSION=	1.6.0

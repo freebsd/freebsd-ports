@@ -1,5 +1,4 @@
 # Created by: Akinori MUSHA aka knu <knu@idaemons.org>
-# $FreeBSD$
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}

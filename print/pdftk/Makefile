@@ -1,5 +1,4 @@
 # Created by: Patrick Dung (patrick_dkt@yahoo.com.hk)
-# $FreeBSD$
 
 PORTNAME=	pdftk
 DISTVERSIONPREFIX=	v

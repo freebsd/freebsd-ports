@@ -1,5 +1,4 @@
 # Created by: Mike McGaughey <mmcg@cs.monash.edu.au>
-# $FreeBSD$
 
 PORTNAME=	gc
 PORTVERSION=	8.0.4

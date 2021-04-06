@@ -1,5 +1,4 @@
 # Created by: Sergei Kolobov <sergei@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cvm
 PORTVERSION=	0.97

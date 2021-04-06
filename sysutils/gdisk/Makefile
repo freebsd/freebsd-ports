@@ -1,5 +1,4 @@
 # Created by: Dmitry N Fomin <fdn@okbire.ru>
-# $FreeBSD$
 
 PORTNAME=	gdisk
 PORTVERSION=	1.0.6

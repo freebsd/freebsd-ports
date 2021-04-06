@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bootstrap_form
 PORTVERSION=	4.2.0

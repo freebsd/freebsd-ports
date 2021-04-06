@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ldap3
 PORTVERSION=	2.8.1

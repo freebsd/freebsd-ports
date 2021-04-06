@@ -1,5 +1,4 @@
 # Created by: Sergey Lyubka (valenok@gmail.com)
-# $FreeBSD$
 
 PORTNAME=	shttpd
 PORTVERSION=	1.42

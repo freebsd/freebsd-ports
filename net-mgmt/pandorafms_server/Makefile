@@ -1,5 +1,4 @@
 # Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
-# $FreeBSD$
 
 PORTNAME=	pandora_server
 PORTREVISION=	1

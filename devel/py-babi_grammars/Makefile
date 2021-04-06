@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	babi_grammars
 PORTVERSION=	0.0.21

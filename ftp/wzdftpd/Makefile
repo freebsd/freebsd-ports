@@ -1,5 +1,4 @@
 # Created by: Roman Bogorodskiy
-# $FreeBSD$
 
 PORTNAME=	wzdftpd
 PORTVERSION=	0.8.3

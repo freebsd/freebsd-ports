@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	watchdog
 PORTVERSION=	0.10.6

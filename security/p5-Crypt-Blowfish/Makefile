@@ -1,5 +1,4 @@
 # Created by: patrick@mindstep.com
-# $FreeBSD$
 
 PORTNAME=	Crypt-Blowfish
 PORTVERSION=	2.14

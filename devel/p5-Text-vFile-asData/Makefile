@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Text-vFile-asData
 PORTVERSION=	0.08

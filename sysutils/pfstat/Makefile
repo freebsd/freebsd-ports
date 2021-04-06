@@ -1,5 +1,4 @@
 # Created by: Max Laier <max@love2party.net>
-# $FreeBSD$
 
 PORTNAME=	pfstat
 PORTVERSION=	2.5

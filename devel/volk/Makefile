@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	volk
 DISTVERSIONPREFIX=	v

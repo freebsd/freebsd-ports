@@ -1,5 +1,4 @@
 # Created by: Li-Wen Hsu <lwhsu@lwhsu.org>
-# $FreeBSD$
 
 PORTNAME=	cvc3
 PORTVERSION=	2.4.1

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	gtkdatabox
 PORTVERSION=	0.9.3.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-Load
 PORTVERSION=	0.25

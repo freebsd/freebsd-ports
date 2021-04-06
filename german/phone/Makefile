@@ -1,5 +1,4 @@
 # Created by: wosch
-# $FreeBSD$
 
 PORTNAME=	phone
 PORTVERSION=	1.20170802

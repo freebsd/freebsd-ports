@@ -1,5 +1,4 @@
 # Created by: jake@checker.org
-# $FreeBSD$
 
 PORTNAME=	jlex
 PORTVERSION=	1.2.6

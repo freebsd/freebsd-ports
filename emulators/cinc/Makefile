@@ -1,5 +1,4 @@
 # Created by: verm@drunkmonk.net
-# $FreeBSD$
 
 PORTNAME=	cinc
 PORTVERSION=	2.1.3

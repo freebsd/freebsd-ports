@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	SOAP-Lite
 PORTVERSION=	1.27

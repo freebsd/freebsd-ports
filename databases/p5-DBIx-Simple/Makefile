@@ -1,5 +1,4 @@
 # Created by: Parv <parv@pair.org>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Simple
 PORTVERSION=	1.37

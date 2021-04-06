@@ -1,5 +1,4 @@
 # Created by: Maksym Sobolyev <sobomax@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cdecimal
 PORTVERSION=	2.3

@@ -1,5 +1,4 @@
 # Created by: Lars Engels <lars.engels@0x20.net>
-# $FreeBSD$
 
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.4

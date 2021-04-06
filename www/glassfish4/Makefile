@@ -1,5 +1,4 @@
 # Created by: cjr@cruwe.de
-# $FreeBSD$
 
 PORTNAME=	glassfish
 PORTVERSION=	4.1

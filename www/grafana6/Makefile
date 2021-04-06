@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grafana
 PORTVERSION=	6.7.4

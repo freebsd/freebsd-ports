@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Clamd
 PORTVERSION=	1.04

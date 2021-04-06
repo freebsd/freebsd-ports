@@ -1,5 +1,4 @@
 # Created by: matthew.closson@gmail.com
-# $FreeBSD$
 
 PORTNAME=	libCello
 PORTVERSION=	1.1.7

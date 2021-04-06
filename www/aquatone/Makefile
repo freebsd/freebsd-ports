@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aquatone
 DISTVERSIONPREFIX=	v

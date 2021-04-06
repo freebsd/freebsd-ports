@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	neverball
 PORTVERSION=	1.6.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-Tidy
 PORTVERSION=	1.60

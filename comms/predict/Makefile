@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	predict
 PORTVERSION=	2.2.7

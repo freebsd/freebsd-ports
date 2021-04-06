@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Imager-QRCode
 PORTVERSION=	0.035

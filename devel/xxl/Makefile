@@ -1,5 +1,4 @@
 # Created by: Robert Schlotterbeck <robert@rs.tarrant.tx.us>
-# $FreeBSD$
 
 PORTNAME=	xxl
 PORTVERSION=	1.0.1

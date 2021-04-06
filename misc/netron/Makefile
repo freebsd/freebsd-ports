@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	netron
 DISTVERSIONPREFIX=	v

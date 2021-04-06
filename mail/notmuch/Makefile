@@ -1,5 +1,4 @@
 # Created by: DarwinSurvivor <darwinsurvivor@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	notmuch
 PORTVERSION=	0.31.4

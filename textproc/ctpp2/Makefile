@@ -1,5 +1,4 @@
 # Created by: Andrei V. Shetuhin <reki@reki.ru>
-# $FreeBSD$
 
 PORTNAME=	ctpp2
 PORTVERSION=	2.8.3

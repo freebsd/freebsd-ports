@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	publicsuffix2
 PORTVERSION=	2.20191221

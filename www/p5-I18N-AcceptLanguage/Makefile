@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	I18N-AcceptLanguage
 PORTVERSION=	1.04

@@ -1,5 +1,4 @@
 # Created by: Joe Horn <joehorn@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Geo-IP-PurePerl
 PORTVERSION=	1.26

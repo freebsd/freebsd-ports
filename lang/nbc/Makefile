@@ -1,5 +1,4 @@
 # Created by: Ivan "Rambius" Ivanov <rambiusparkisanius@gmail.com>
-# $FreeBSD$
 
 PORTNAME=		nbc
 PORTVERSION=		1.2.1.r4

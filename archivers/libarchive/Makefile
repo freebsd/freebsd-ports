@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libarchive
 PORTVERSION=	3.5.1

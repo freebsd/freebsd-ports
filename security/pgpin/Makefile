@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pgpin
 PORTVERSION=	010323

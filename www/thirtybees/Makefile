@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=       thirtybees
 PORTVERSION=    1.1.0

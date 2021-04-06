@@ -1,5 +1,4 @@
 # Created by: David Siebörger <drs@rucus.ru.ac.za>
-# $FreeBSD$
 
 PORTNAME=	mess822
 PORTVERSION=	0.58

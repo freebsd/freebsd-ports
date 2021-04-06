@@ -1,5 +1,4 @@
 # Created by: Martin Jackson (mhjacks@swbell.net)
-# $FreeBSD$
 
 PORTNAME=	Shell-EnvImporter
 PORTVERSION=	1.07

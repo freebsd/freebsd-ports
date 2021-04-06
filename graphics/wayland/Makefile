@@ -1,5 +1,4 @@
 # Created by: kwm@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	wayland
 PORTVERSION=	1.19.0

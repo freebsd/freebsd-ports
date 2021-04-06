@@ -1,5 +1,4 @@
 # Created by: Heiner <h.eichmann@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	emovix
 PORTVERSION=	0.9.0

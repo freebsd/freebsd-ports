@@ -1,5 +1,4 @@
 # Created by: Henrik Hodne <henrik@hodne.io>
-# $FreeBSD$
 
 PORTNAME=	URI-Nested
 PORTVERSION=	0.10

@@ -1,5 +1,4 @@
 # Created by: Zach Thompson <hideo@lastamericanempire.com>
-# $FreeBSD$
 
 PORTNAME=	Finance-Currency-Convert-WebserviceX
 PORTVERSION=	0.07001

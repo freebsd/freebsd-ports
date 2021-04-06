@@ -1,5 +1,4 @@
 # Created by: Russell A. Jackson <rjackson@cserv62.csub.edu>
-# $FreeBSD$
 
 PORTNAME=	sdig
 PORTVERSION=	0.45

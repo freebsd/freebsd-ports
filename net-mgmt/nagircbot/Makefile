@@ -1,5 +1,4 @@
 # Created by: anarcat@anarcat.ath.cx
-# $FreeBSD$
 
 PORTNAME=	nagircbot
 PORTVERSION=	0.0.33

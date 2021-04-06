@@ -1,5 +1,4 @@
 # Created by: Patrick Seal <patseal@hyperhost.net>
-# $FreeBSD$
 
 PORTNAME=	bbkeys
 PORTVERSION=	0.9.1

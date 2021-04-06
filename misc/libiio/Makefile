@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libiio
 DISTVERSIONPREFIX=	v

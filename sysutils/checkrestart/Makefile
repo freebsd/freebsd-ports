@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	checkrestart
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	waypipe
 DISTVERSIONPREFIX=	v

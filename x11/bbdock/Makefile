@@ -1,5 +1,4 @@
 # Created by: Francis Bacque <idroxid01@yahoo.fr>
-# $FreeBSD$
 
 PORTNAME=	bbdock
 PORTVERSION=	0.2.9

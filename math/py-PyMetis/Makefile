@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	PyMetis
 DISTVERSION=	2020.1

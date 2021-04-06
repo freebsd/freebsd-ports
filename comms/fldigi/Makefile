@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fldigi
 PORTVERSION=	4.1.18

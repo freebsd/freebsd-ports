@@ -1,5 +1,4 @@
 # Created by: Michael Lyngbøl <lyngbol@wheel.dk>
-# $FreeBSD$
 
 PORTNAME=	Parse-Yapp
 PORTVERSION=	1.21

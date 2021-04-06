@@ -1,5 +1,4 @@
 # Created by: chuckr@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	octave
 PORTVERSION=	${OCTAVE_VERSION}

@@ -1,5 +1,4 @@
 # Created by: jamrich.majo@gmail.com
-# $FreeBSD$
 
 PORTNAME=	nagios-check_hdd_health
 PORTVERSION=	1.1

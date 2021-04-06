@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	softether
 DISTVERSION=	5.01.9674

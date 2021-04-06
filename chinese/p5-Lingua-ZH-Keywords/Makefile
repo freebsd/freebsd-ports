@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Lingua-ZH-Keywords
 PORTVERSION=	0.04

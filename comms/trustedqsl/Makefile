@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	trustedqsl
 DISTVERSION=	2.4

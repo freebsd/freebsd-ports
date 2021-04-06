@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine (<gerrit.beine@gmx.de>)
-# $FreeBSD$
 
 PORTNAME=	Image_GraphViz
 PORTVERSION=	1.3.0

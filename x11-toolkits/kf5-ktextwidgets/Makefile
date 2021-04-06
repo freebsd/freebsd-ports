@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ktextwidgets
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

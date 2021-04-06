@@ -1,5 +1,4 @@
 # Created by: mi@aldan.algebra.com
-# $FreeBSD$
 
 PORTNAME=	monaco
 PORTVERSION=	1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gluonnlp
 DISTVERSIONPREFIX=	v

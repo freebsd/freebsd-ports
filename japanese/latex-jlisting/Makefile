@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jlisting
 PORTVERSION=	0.2

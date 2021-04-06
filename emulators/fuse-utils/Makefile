@@ -1,5 +1,4 @@
 # Created by: rene
-# $FreeBSD$
 
 PORTNAME=	fuse-utils
 DISTVERSION=	1.4.3

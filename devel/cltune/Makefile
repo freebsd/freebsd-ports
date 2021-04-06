@@ -1,5 +1,4 @@
 # Created by: Johannes M Dieterich <jmd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cltune
 PORTVERSION=	2.7.0

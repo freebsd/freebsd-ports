@@ -1,5 +1,4 @@
 # Created by: Loïc BARTOLETTI <lbartoletti@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	postgis
 PORTVERSION=	3.0.3

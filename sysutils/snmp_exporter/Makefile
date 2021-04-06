@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	snmp_exporter
 PORTVERSION=	0.20.0

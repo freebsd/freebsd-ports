@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	mp3asm
 PORTVERSION=	0.1.3.1

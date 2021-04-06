@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	simpleagenda
 PORTVERSION=	0.43

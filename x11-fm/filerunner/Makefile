@@ -1,5 +1,4 @@
 # Created by: lukin
-# $FreeBSD$
 
 PORTNAME=	filerunner
 PORTVERSION=	19.07.08.17

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	farver
 PORTVERSION=	2.1.0

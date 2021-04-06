@@ -1,5 +1,4 @@
 # Created by: Michiel van Baak <michiel@vanbaak.eu
-# $FreeBSD$
 
 PORTNAME=	hockeypuck
 DISTVERSION=	g20180725

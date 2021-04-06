@@ -1,5 +1,4 @@
 # Created by: Lev Walkin <vlm@lionet.info>
-# $FreeBSD$
 
 PORTNAME=	libstrfunc
 PORTVERSION=	8.3

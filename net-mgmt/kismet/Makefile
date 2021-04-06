@@ -1,5 +1,4 @@
 # Created by: Thomas Spreng <spreng@socket.ch>
-# $FreeBSD$
 
 PORTNAME=	kismet
 DISTVERSION=	2016-07-R1

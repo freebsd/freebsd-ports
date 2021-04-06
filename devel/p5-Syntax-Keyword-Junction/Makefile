@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Syntax-Keyword-Junction
 PORTVERSION=	0.003008

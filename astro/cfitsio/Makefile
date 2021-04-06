@@ -1,5 +1,4 @@
 # Created by: Markus Brueffer <markus@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cfitsio
 PORTVERSION=	3.490

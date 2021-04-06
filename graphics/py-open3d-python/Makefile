@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	open3d-python
 DISTVERSIONPREFIX=	v

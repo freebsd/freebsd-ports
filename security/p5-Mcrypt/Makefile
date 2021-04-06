@@ -1,5 +1,4 @@
 # Created by: Tatsuki Makino <tatsuki_makino@hotmail.com>
-# $FreeBSD$
 
 PORTNAME=	Mcrypt
 PORTVERSION=	2.5.7.0

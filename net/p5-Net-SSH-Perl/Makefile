@@ -1,5 +1,4 @@
 # Created by: Jesper Skriver <jesper@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Net-SSH-Perl
 PORTVERSION=	2.14

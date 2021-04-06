@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	openzz
 DISTVERSION=	1.0.4-4

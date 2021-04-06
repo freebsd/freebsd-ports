@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kaidan
 DISTVERSION=	0.7.0

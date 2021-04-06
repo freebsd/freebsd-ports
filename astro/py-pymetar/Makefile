@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang <perky@fallin.lv>
-# $FreeBSD$
 
 PORTNAME=	pymetar
 PORTVERSION=	1.2

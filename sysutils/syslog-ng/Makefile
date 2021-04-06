@@ -1,5 +1,4 @@
 # Created by: Ivan Lago <ivan.lago@ifom-ieo-campus.it>
-# $FreeBSD$
 
 PORTNAME=	syslog-ng
 DISTVERSION=	3.31.2

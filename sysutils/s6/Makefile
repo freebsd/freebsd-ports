@@ -1,5 +1,4 @@
 # Created by: Colin Booth <colin@heliocat.net>
-# $FreeBSD$
 
 PORTNAME=	s6
 PORTVERSION=	2.10.0.0

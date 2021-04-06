@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libprojectM
 DISTVERSIONPREFIX=	v

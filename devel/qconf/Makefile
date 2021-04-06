@@ -1,5 +1,4 @@
 # Created by: Andreev Maxim <andreevmaxim@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	qconf
 DISTVERSIONPREFIX=	v

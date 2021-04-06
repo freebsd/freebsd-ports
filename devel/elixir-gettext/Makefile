@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gettext
 PORTVERSION=	0.15.0

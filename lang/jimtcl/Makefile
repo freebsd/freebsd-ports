@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jimtcl
 PORTVERSION=	0.80

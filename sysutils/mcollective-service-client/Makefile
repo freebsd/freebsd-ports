@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mcollective-service-client
 

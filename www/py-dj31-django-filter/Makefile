@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-filter
 DISTVERSION=	2.4.0

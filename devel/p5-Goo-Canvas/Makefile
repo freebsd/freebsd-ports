@@ -1,5 +1,4 @@
 # Created by: Sylvio Cesar Teixeira <sylvio@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Goo-Canvas
 PORTVERSION=	0.06

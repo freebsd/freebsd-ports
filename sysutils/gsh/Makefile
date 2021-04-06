@@ -1,5 +1,4 @@
 # Created by: <jsmith@resonatingmedia.com>
-# $FreeBSD$
 
 PORTNAME=	gsh
 PORTVERSION=	1.1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xbacklight
 PORTVERSION=	1.2.3

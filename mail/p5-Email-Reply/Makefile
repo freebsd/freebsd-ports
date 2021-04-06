@@ -1,5 +1,4 @@
 # Created by: Kay Abendroth <kay.abendroth@raxion.net>
-# $FreeBSD$
 
 PORTNAME=	Email-Reply
 PORTVERSION=	1.204

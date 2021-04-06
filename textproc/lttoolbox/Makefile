@@ -1,5 +1,4 @@
 # Created by: Mykola Dzham <freebsd@levsha.org.ua>
-# $FreeBSD$
 
 PORTNAME=	lttoolbox
 PORTVERSION=	${APVER}.${APREV}

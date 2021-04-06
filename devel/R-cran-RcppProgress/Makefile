@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	RcppProgress
 PORTVERSION=	0.4.2

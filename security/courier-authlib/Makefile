@@ -1,5 +1,4 @@
 # Created by: Oliver Lehmann
-# $FreeBSD$
 
 PORTNAME=	courier-authlib
 PORTVERSION=	0.71.2

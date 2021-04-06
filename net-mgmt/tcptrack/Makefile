@@ -1,5 +1,4 @@
 # Created by: Tor Halvard "Squat" Furulund <squat@squat.no>
-# $FreeBSD$
 
 PORTNAME=	tcptrack
 PORTVERSION=	1.4.2

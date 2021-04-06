@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	krita
 DISTVERSION=	4.4.1

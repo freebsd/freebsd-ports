@@ -1,5 +1,4 @@
 # Created by: Pavel Novikov
-# $FreeBSD$
 
 PORTNAME=	jtop
 PORTVERSION=	1.0

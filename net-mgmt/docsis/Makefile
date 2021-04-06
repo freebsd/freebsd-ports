@@ -1,5 +1,4 @@
 # Created by: James Flemer <jflemer@acm.jhu.edu>
-# $FreeBSD$
 
 PORTNAME=	docsis
 PORTVERSION=	0.9.8

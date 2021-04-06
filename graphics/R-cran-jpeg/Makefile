@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jpeg
 DISTVERSION=	0.1-8.1

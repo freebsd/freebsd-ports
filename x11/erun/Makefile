@@ -1,5 +1,4 @@
 # Created by: Kelly Yancey <kbyanc@posi.net>
-# $FreeBSD$
 
 PORTNAME=	E-Run
 PORTVERSION=	1.2

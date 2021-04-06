@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gmmlib
 DISTVERSIONPREFIX=	intel-${PORTNAME}-

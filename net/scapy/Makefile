@@ -1,5 +1,4 @@
 # Created by: vanhu <vanhu@netasq.com>
-# $FreeBSD$
 
 PORTNAME=	scapy
 PORTVERSION=	2.4.4

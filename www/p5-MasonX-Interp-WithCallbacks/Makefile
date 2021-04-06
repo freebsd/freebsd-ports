@@ -1,5 +1,4 @@
 # Created by: Rod Taylor <ports@rbt.ca>
-# $FreeBSD$
 
 PORTNAME=	MasonX-Interp-WithCallbacks
 PORTVERSION=	1.19

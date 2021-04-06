@@ -1,5 +1,4 @@
 # Created by: Vsevolod Stakhov <vsevolod@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libressl
 PORTVERSION=	3.2.5

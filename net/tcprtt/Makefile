@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tcprtt
 DISTVERSION=	g20191022

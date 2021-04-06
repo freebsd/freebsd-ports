@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hexer
 PORTVERSION=	1.0.3

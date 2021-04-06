@@ -1,5 +1,4 @@
 # Created by: Lev Serebryakov <lev@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	graid5
 PORTVERSION=	${MAINVERSION}.${VERSIONDATE}

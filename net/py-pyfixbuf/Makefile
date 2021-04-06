@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyfixbuf
 PORTVERSION=	0.8.1

@@ -1,5 +1,4 @@
 # Created by: Adam David <adam@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	procmail
 PORTVERSION=	3.22

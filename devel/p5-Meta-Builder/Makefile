@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Meta-Builder
 PORTVERSION=	0.003

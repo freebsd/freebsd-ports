@@ -1,5 +1,4 @@
 # Created by: Stephon Chen <stephon@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Net-SSL-ExpireDate
 PORTVERSION=	1.21

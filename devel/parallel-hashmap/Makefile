@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	parallel-hashmap
 DISTVERSION=	1.32-74

@@ -1,5 +1,4 @@
 # Created by: Michael Williams <ports@mgwsoftware.com>
-# $FreeBSD$
 
 PORTNAME=	dwarffortress
 DISTVERSION=	0.47.04

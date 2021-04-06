@@ -1,5 +1,4 @@
 # Created by: Alex Dupre <sysadmin@alexdupre.com>
-# $FreeBSD$
 
 PORTNAME=	pdflib
 PORTVERSION=	7.0.5

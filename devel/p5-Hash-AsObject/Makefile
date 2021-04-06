@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Hash-AsObject
 PORTVERSION=	0.13

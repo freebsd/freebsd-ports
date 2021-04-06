@@ -1,5 +1,4 @@
 # Created by: Diego Depaoli <trebestie@gmail.com> and Yinghong Liu <relaxbsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	smplayer
 DISTVERSION=	21.1.0

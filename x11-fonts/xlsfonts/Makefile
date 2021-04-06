@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xlsfonts
 PORTVERSION=	1.0.6

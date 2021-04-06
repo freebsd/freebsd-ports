@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni
-# $FreeBSD$
 
 PORTNAME=	scatterplot3d
 DISTVERSION=	0.3-41

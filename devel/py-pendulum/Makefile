@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pendulum
 PORTVERSION=	2.1.1

@@ -1,5 +1,4 @@
 # Created by: Katsuji ISHIKAWA <katsuji.ishikawa@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mosh
 PORTVERSION=	0.2.7

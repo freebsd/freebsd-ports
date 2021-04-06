@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Ouch
 PORTVERSION=	0.0409

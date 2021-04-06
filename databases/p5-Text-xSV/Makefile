@@ -1,5 +1,4 @@
 # Created by: Dmitry Liakh <dliakh@ukr.net>
-# $FreeBSD$
 
 PORTNAME=	Text-xSV
 PORTVERSION=	0.21

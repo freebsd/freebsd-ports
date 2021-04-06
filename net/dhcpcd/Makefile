@@ -1,5 +1,4 @@
 # Created by: Roy Marples <roy@marples.name>
-# $FreeBSD$
 
 PORTNAME=	dhcpcd
 PORTVERSION=	9.4.0

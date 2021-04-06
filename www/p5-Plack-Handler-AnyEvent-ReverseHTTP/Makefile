@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Handler-AnyEvent-ReverseHTTP
 PORTVERSION=	0.04

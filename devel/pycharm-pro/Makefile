@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pycharm-pro
 PORTVERSION=	2020.3.4

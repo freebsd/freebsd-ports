@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	amanda-perl-wrapper
 PORTVERSION=	1.01

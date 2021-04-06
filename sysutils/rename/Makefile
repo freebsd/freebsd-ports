@@ -1,5 +1,4 @@
 # Created by: Chad Castleberry AKA ritalin
-# $FreeBSD$
 
 PORTNAME=	rename
 PORTVERSION=	1.99.2

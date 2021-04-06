@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Path-Dispatcher-Declarative
 PORTVERSION=	0.03

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	smtprelay
 DISTVERSIONPREFIX=v

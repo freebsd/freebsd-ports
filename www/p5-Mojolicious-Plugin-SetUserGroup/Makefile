@@ -1,5 +1,4 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Mojolicious-Plugin-SetUserGroup
 PORTVERSION=	1.000

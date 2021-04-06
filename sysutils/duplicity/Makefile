@@ -1,5 +1,4 @@
 # Created by: Gerhard Häring <gh@ghaering.de>
-# $FreeBSD$
 
 PORTNAME=	duplicity
 PORTVERSION=	0.8.17

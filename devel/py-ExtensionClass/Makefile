@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ExtensionClass
 PORTVERSION=	4.3.0

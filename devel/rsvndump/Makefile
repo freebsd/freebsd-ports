@@ -1,5 +1,4 @@
 # Created by: glarkin
-# $FreeBSD$
 
 PORTNAME=	rsvndump
 PORTVERSION=	0.6

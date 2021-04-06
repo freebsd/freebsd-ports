@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	webcopy
 PORTVERSION=	0.98b7

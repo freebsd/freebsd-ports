@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fribidi
 PORTVERSION=	1.0.2

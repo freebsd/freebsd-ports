@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Pyrseas
 PORTVERSION=	0.9.0

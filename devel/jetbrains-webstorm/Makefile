@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni <pfg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	webstorm
 PORTVERSION=	2020.3.3

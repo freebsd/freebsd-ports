@@ -1,5 +1,4 @@
 # Created by: e-masson@kisoft-services.com
-# $FreeBSD$
 
 PORTNAME=	psdim
 PORTVERSION=	1.4

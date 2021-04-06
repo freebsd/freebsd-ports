@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xlogo
 PORTVERSION=	1.0.5

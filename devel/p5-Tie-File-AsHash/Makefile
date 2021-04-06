@@ -1,5 +1,4 @@
 # Created by: Ruben de Groot <rdg@bzerk.org>
-# $FreeBSD$
 
 PORTNAME=	Tie-File-AsHash
 PORTVERSION=	0.08

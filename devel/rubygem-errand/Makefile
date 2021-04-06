@@ -1,5 +1,4 @@
 # Created by: Brad Davis <brd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	errand
 PORTVERSION=	0.8.1

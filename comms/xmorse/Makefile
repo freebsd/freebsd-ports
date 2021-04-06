@@ -1,5 +1,4 @@
 # Created by: Sunry Chen <sunrychen@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	xmorse
 PORTVERSION=	20041125

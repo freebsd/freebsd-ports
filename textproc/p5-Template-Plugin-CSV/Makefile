@@ -1,5 +1,4 @@
 # Created by: Geoffroy Desvernay <dgeo@centrale-marseille.fr>
-# $FreeBSD$
 
 PORTNAME=	Template-Plugin-CSV
 PORTVERSION=	0.04

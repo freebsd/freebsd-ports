@@ -1,5 +1,4 @@
 # Created by: Alexander Nedotsukov <bland@FreeBSD.org>
-# $FreeBSD$
 
 CATEGORIES=	textproc gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

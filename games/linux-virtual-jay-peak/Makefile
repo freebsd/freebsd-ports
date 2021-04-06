@@ -1,5 +1,4 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	virtual-jay-peak
 PORTVERSION=	1.1a

@@ -1,5 +1,4 @@
 # Created by: fenner@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	idnits
 PORTVERSION=	2.16.05

@@ -1,5 +1,4 @@
 # Created by: Chao Shin <quakelee@cn.FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pnetcdf
 PORTVERSION=	1.8.1

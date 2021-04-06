@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kactivities
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

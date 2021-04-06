@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sonarqube
 DISTVERSION=	8.7.1.42226

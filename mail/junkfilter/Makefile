@@ -1,5 +1,4 @@
 # Created by: Gregory Sutter <gsutter@zer0.org>
-# $FreeBSD$
 
 PORTNAME=	junkfilter
 PORTVERSION=	20030115

@@ -1,5 +1,4 @@
 # Created by: Dan Langille
-# $FreeBSD$
 
 PORTNAME=	gixy
 PORTVERSION=	0.1.20

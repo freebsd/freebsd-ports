@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libzmf
 PORTVERSION=	0.0.2

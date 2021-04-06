@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	riemann-dash
 DISTVERSION=	0.2.14

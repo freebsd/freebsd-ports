@@ -1,5 +1,4 @@
 # Created by: Mateusz Piotrowski <0mp@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	manrope
 PORTVERSION=	4.504

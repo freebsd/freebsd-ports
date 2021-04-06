@@ -3,9 +3,6 @@
 #
 # This file is used to tune build time options.
 # Please refer FEATURES file distributed with the source for details.
-#
-# $FreeBSD$
-#
 
 .if defined(WITH_ANTICIPATE_SENDMAIL_MUNGE) && !defined(WITHOUT_ANTICIPATE_SENDMAIL_MUNGE)
 SITE_SUB+=	-e '/-D_FFR_ANTICIPATE_SENDMAIL_MUNGE/s|^dnl ||'

@@ -1,5 +1,4 @@
 # Created by: Fred Cox
-# $FreeBSD$
 
 PORTNAME=	WWW-Contact
 PORTVERSION=	0.51

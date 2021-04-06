@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Horde_Smtp
 PORTVERSION=	1.9.5

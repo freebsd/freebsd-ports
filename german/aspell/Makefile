@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas <thierry@pompo.net>
-# $FreeBSD$
 
 PORTNAME=	aspell
 MASTER_SITES=	https://j3e.de/ispell/igerman98/dict/

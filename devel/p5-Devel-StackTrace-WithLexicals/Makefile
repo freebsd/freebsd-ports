@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-StackTrace-WithLexicals
 PORTVERSION=	2.01

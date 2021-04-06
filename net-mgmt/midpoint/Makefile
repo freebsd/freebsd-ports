@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	midpoint
 PORTVERSION=	4.0.3

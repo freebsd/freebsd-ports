@@ -1,5 +1,4 @@
 # Created by: Patrick Gardella <patrick@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xlog
 PORTVERSION=	2.0.19

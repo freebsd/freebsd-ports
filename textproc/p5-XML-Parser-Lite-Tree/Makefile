@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	XML-Parser-Lite-Tree
 PORTVERSION=	0.14

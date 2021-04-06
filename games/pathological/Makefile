@@ -1,5 +1,4 @@
 # Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-# $FreeBSD$
 
 PORTNAME=	pathological
 PORTVERSION=	1.1.3

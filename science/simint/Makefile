@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	simint
 DISTVERSIONPREFIX=	v

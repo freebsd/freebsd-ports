@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nettle
 PORTVERSION=	2.7.1

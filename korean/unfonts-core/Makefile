@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang <perky@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	unfonts
 PORTVERSION=	1.0.2.080608

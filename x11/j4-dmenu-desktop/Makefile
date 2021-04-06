@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	j4-dmenu-desktop
 DISTVERSIONPREFIX=	r

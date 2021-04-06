@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phidl
 PORTVERSION=	1.0.1

@@ -1,5 +1,4 @@
 # Created by: Manuel Giraud <manuel.giraud@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	pcl
 PORTVERSION=	1.6

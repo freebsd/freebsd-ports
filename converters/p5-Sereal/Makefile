@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME?=	Sereal
 PORTVERSION=	4.018

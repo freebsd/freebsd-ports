@@ -1,5 +1,4 @@
 # Created by: krion
-# $FreeBSD$
 
 PORTNAME=	aewan
 PORTVERSION=	1.0.01

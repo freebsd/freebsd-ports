@@ -1,5 +1,4 @@
 # Created by: Moritz Warning <moritzwarning@web.de>
-# $FreeBSD$
 
 PORTNAME=	kadnode
 DISTVERSIONPREFIX=	v

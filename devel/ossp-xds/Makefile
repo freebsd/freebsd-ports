@@ -1,5 +1,4 @@
 # Created by: Kimura Fuyuki <fuyuki@nigredo.org>
-# $FreeBSD$
 
 PORTNAME=	xds
 PORTVERSION=	0.9.3

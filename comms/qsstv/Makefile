@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qsstv
 PORTVERSION=	9.3.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mini_mime
 PORTVERSION=	1.0.2

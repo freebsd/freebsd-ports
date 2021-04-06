@@ -1,5 +1,4 @@
 # Created by: Sandro Sigala
-# $FreeBSD$
 
 PORTNAME=	cutils
 PORTVERSION=	1.6

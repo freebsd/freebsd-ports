@@ -1,5 +1,4 @@
 # Created by: js@jeannot.org
-# $FreeBSD$
 
 PORTNAME=	scilab
 PORTVERSION=	6.1.0

@@ -1,5 +1,4 @@
 # Created by: Jerry Hicks <wghicks@bellsouth.net>
-# $FreeBSD$
 
 PORTNAME=	Parse-RecDescent
 PORTVERSION=	1.967015

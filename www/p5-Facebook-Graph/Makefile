@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Facebook-Graph
 PORTVERSION=	1.0801

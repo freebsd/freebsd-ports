@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	GPS-Point
 PORTVERSION=	0.20

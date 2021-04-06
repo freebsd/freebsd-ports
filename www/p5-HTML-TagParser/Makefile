@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	HTML-TagParser
 PORTVERSION=	0.20

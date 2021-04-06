@@ -1,5 +1,4 @@
 # Created by: DaJoob
-# $FreeBSD$
 
 PORTNAME=	xfce4-taskmanager
 PORTVERSION=	1.4.2

@@ -1,5 +1,4 @@
 # Created by: andrew@scoop.co.nz
-# $FreeBSD$
 
 PORTNAME=	Algorithm-Numerical-Shuffle
 PORTVERSION=	2009110301

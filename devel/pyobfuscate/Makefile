@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	pyobfuscate
 PORTVERSION=	0.3.20131129

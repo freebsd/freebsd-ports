@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mono_logger
 PORTVERSION=	1.1.0

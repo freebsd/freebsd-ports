@@ -1,5 +1,4 @@
 # Created by: Peter Haight <peterh@sapros.com>
-# $FreeBSD$
 
 PORTNAME=	m2crypto
 PORTVERSION=	0.37.1

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Google-Data-JSON
 PORTVERSION=	0.1.10

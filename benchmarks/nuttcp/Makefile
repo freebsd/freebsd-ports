@@ -1,5 +1,4 @@
 # Created by: Andy Clark <andrewclarkii@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	nuttcp
 PORTVERSION=	8.2.2

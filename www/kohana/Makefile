@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kohana
 PORTVERSION=	3.3.6

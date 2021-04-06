@@ -1,5 +1,4 @@
 # Created by: Cyrille Lefevre <clefevre@citeweb.net>
-# $FreeBSD$
 
 PORTNAME=	gengetopt
 PORTVERSION=	2.23

@@ -1,5 +1,4 @@
 # Created by: Randall Hopper <aa8vb@nc.rr.com>
-# $FreeBSD$
 
 PORTNAME=	fxtv
 PORTVERSION=	1.03

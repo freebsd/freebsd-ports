@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	linuxlibertine-g
 PORTVERSION=	20120116

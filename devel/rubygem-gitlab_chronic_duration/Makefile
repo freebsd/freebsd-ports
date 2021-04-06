@@ -1,5 +1,4 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gitlab_chronic_duration
 PORTVERSION=	0.10.6.2

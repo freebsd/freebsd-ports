@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	native-package-installer
 PORTVERSION=	1.1.1

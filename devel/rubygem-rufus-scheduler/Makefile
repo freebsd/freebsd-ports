@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rufus-scheduler
 PORTVERSION=	3.7.0

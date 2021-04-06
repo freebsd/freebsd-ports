@@ -1,5 +1,4 @@
 # Created by: nork@cityfujisawa.ne.jp
-# $FreeBSD$
 
 PORTNAME=	Digest-HMAC
 PORTVERSION=	1.03

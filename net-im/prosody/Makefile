@@ -1,5 +1,4 @@
 # Created by: Andrew Lewis <freeghb@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	prosody
 PORTVERSION=	0.11.8

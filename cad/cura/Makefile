@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Cura
 DISTVERSION=	4.8.0

@@ -1,5 +1,4 @@
 # Created by: Trevor Corpropst <tcornpropst@cox.net>
-# $FreeBSD$
 
 PORTNAME=	Net-SFTP
 PORTVERSION=	0.12

@@ -1,5 +1,4 @@
 # Created by: stephen@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	librsb
 PORTVERSION=	1.2.0.9

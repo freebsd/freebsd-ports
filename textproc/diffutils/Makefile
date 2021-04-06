@@ -1,5 +1,4 @@
 # Created by: Garrett Rooney <rooneg@electricjellyfish.net>
-# $FreeBSD$
 
 PORTNAME=	diffutils
 PORTVERSION=	3.7

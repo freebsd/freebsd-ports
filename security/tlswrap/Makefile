@@ -1,5 +1,4 @@
 # Created by: Daniel O'Connor <darius@dons.net.au>
-# $FreeBSD$
 
 PORTNAME=	tlswrap
 PORTVERSION=	1.0.4

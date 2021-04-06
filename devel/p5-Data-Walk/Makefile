@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Walk
 PORTVERSION=	2.01

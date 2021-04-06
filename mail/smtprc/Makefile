@@ -1,5 +1,4 @@
 # Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-# $FreeBSD$
 
 PORTNAME=	smtprc
 PORTVERSION=	2.0.3

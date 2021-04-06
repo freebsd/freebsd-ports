@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PKGNAMESUFFIX?=	-current-sasl
 

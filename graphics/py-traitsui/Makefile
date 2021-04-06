@@ -1,5 +1,4 @@
 # Created by: Vladimir Chukharev
-# $FreeBSD$
 
 PORTNAME=	traitsui
 PORTVERSION=	7.1.1

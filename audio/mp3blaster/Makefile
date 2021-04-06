@@ -1,5 +1,4 @@
 # Created by: Michael Vasilenko <acid@stu.cn.ua>
-# $FreeBSD$
 
 PORTNAME=	mp3blaster
 PORTVERSION=	3.2.6

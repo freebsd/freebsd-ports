@@ -1,5 +1,4 @@
 # Created by: Motoyuki Kasahara <m-kasahr@sra.co.jp>
-# $FreeBSD$
 
 PORTNAME=	ebnetd
 PORTVERSION=	1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flint2
 DISTVERSIONPREFIX=	v

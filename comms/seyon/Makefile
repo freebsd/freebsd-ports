@@ -1,5 +1,4 @@
 # Created by: Michael Elbel (me)
-# $FreeBSD$
 
 PORTNAME=	seyon
 PORTVERSION=	2.20c

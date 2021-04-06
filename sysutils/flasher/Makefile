@@ -1,5 +1,4 @@
 # Created by: Murray Nesbitt <freebsd@nesbitt.ca>
-# $FreeBSD$
 
 PORTNAME=	flasher
 PORTVERSION=	1.3

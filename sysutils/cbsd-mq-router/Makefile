@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cbsd-mq-router
 PORTVERSION=	0.2

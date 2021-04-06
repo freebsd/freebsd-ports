@@ -1,5 +1,4 @@
 # Created by: Jonathan M. Bresler (jmb)
-# $FreeBSD$
 
 PORTNAME=	vmsbackup
 PORTVERSION=	4.1.1

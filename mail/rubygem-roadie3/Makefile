@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	roadie
 PORTVERSION=	3.5.1

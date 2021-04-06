@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Middleware-CrossOrigin
 PORTVERSION=	0.014

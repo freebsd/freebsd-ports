@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Types-URI
 PORTVERSION=	0.006

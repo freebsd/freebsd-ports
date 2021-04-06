@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	movingmotif
 PORTVERSION=	2.3.0

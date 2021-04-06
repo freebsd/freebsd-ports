@@ -1,5 +1,4 @@
 # Created by: Stefan Esser <se@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gen6dns
 PORTVERSION=	1.3

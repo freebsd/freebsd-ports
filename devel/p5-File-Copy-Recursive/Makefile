@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	File-Copy-Recursive
 PORTVERSION=	0.45

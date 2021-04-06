@@ -1,5 +1,4 @@
 # Created by: gnn
-# $FreeBSD$
 
 PORTNAME=	smhasher
 PORTVERSION=	1.0

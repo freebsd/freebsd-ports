@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	LWP-Protocol-PSGI
 PORTVERSION=	0.07

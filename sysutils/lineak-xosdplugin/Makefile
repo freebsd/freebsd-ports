@@ -1,5 +1,4 @@
 # Created by: Kay Lehmann <kay_lehmann@web.de>
-# $FreeBSD$
 
 PORTNAME=	lineak-xosdplugin
 PORTVERSION=	0.9

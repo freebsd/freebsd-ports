@@ -1,5 +1,4 @@
 # Created by: Dan Rench <citric@cubicone.tmetic.com>
-# $FreeBSD$
 
 PORTNAME=	indirect
 PORTVERSION=	0.39

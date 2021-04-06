@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cscope
 DISTVERSION=	15.9

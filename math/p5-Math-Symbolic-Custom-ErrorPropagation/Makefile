@@ -1,5 +1,4 @@
 # Created by: Aaron Dalton <aaron@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Math-Symbolic-Custom-ErrorPropagation
 PORTVERSION=	0.11

@@ -1,5 +1,4 @@
 # Created by: mp39590@gmail.com
-# $FreeBSD$
 
 PORTNAME=	pyscard
 PORTVERSION=	2.0.0

@@ -1,5 +1,4 @@
 # Created by: gmarco@scotty.masternet.it
-# $FreeBSD$
 
 PORTNAME=	minimalist
 PORTVERSION=	2.5.3

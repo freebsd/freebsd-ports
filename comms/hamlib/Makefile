@@ -1,5 +1,4 @@
 # Created by: Sebastian Yepes <esn@x123.info>
-# $FreeBSD$
 
 PORTNAME=	hamlib
 PORTVERSION=	3.3

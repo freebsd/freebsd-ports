@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	mnogosearch
 PORTVERSION=	3.4.1

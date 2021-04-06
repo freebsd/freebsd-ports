@@ -1,5 +1,4 @@
 # Created by: Beech Rintoul <beech@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	eggdrop
 DISTVERSION=	1.9.0.a.20210122

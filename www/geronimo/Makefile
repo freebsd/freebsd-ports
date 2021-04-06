@@ -1,5 +1,4 @@
 # Created by: Nemo Liu <nemoliu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	geronimo
 DISTVERSION=	3.0-beta-1

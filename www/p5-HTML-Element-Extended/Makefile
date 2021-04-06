@@ -1,5 +1,4 @@
 # Created by: Garrett A. Wollman
-# $FreeBSD$
 
 PORTNAME=	HTML-Element-Extended
 PORTVERSION=	1.18

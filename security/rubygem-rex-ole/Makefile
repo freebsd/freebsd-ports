@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rex-ole
 PORTVERSION=	0.1.7

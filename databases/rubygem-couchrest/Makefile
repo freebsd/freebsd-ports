@@ -1,5 +1,4 @@
 # Created by: Mike Carlson (carlson39@llnl.gov)
-# $FreeBSD$
 
 PORTNAME=	couchrest
 PORTVERSION=	2.0.1

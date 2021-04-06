@@ -1,5 +1,4 @@
 # Created by: Zane C. Bowers <vvelox@vvelox.net>
-# $FreeBSD$
 
 PORTNAME=	Net-WhitePages
 PORTVERSION=	1.04

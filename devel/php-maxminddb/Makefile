@@ -1,5 +1,4 @@
 # Created by: Daniel Gerzo <danger@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	maxminddb
 PORTVERSION=	1.6.0

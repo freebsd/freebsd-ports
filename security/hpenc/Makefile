@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hpenc
 PORTVERSION=	3.0

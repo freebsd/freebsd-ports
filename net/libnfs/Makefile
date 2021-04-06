@@ -1,5 +1,4 @@
 # Created by: Manuel Creach <manuel.creach@icloud.com>
-# $FreeBSD$
 
 PORTNAME=	libnfs
 PORTVERSION=	4.0.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Unicode-RecursiveDowngrade
 PORTVERSION=	0.04

@@ -1,5 +1,4 @@
 # Created by: rooneg@electricjellyfish.net
-# $FreeBSD$
 
 PORTNAME?=	subversion
 PORTVERSION=	1.10.7

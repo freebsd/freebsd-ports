@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Iodef-Pb-Simple
 PORTVERSION=	0.21

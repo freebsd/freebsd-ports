@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	emerald-themes
 PORTVERSION=	0.6.0

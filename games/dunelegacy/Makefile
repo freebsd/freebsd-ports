@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dunelegacy
 PORTVERSION=	0.96.4

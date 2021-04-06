@@ -1,5 +1,4 @@
 # Created by: Timothy Bourke <timbob@bigpond.com>
-# $FreeBSD$
 
 PORTNAME=	pspresent
 PORTVERSION=	1.3

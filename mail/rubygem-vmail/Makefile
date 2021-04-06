@@ -1,5 +1,4 @@
 # Created by: Hsin-Han You <hhyou@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	vmail
 PORTVERSION=	2.9.8

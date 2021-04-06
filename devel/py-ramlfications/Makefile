@@ -1,5 +1,4 @@
 # Created by: Michael Gmelin <grembo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ramlfications
 PORTVERSION=	0.1.9

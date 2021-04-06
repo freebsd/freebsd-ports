@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hermes
 DISTVERSIONPREFIX=	v

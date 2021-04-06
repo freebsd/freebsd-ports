@@ -1,5 +1,4 @@
 # Created by: Eugene Grosbein <eugen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gost-engine
 DISTVERSION=	g20190421

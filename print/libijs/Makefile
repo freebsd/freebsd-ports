@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libijs
 PORTVERSION=	0.35

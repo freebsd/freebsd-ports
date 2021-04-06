@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cfssl
 DISTVERSIONPREFIX=	v

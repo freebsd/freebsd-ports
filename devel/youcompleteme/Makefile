@@ -1,5 +1,4 @@
 # Created by: Richard Gallamore <ultima@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	YouCompleteMe
 DISTVERSION=	g20191130

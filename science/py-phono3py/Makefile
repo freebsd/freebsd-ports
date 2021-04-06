@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phono3py
 DISTVERSION=	1.22.3

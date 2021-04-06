@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	paint
 PORTVERSION=	1.0.1

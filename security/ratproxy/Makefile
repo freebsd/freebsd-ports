@@ -1,5 +1,4 @@
 # Created by: Steven Kreuzer <skreuzer@exit2shell.com>
-# $FreeBSD$
 
 PORTNAME=	ratproxy
 PORTVERSION=	1.58

@@ -1,5 +1,4 @@
 # Created by: Ryan T. Dean <rtdean@cytherianage.net>
-# $FreeBSD$
 
 PORTNAME=	jrrd
 PORTVERSION=	1.1.4

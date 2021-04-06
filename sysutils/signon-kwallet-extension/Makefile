@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	signon-kwallet-extension
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

@@ -1,5 +1,4 @@
 # Created by: spf@xslt.cs.nccu.edu.tw
-# $FreeBSD$
 
 PORTNAME=	ifstat
 PORTVERSION=	1.1

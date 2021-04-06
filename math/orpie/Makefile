@@ -1,5 +1,4 @@
 # Created by: Dylan Simon <dylan@dylex.net>
-# $FreeBSD$
 
 PORTNAME=	orpie
 PORTVERSION=	1.5.2

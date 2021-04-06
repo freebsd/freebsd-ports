@@ -1,5 +1,4 @@
 # Created by: Dan Smith <dan@algenta.com>
-# $FreeBSD$
 
 PORTNAME=	dnsmax-perl
 PORTVERSION=	1.0.1

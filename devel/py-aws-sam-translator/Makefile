@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aws-sam-translator
 PORTVERSION=	1.19.1

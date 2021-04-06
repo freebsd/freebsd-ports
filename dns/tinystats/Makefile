@@ -1,5 +1,4 @@
 # Created by: Filippo Natali <filippo.natali@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	tinystats
 PORTVERSION=	1.1

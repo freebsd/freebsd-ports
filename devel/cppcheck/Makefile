@@ -1,5 +1,4 @@
 # Created by: Gabor Pali <pgj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cppcheck
 PORTVERSION=	2.2

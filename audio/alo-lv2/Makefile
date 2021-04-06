@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alo
 DISTVERSION=	0.9

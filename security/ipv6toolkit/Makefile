@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ipv6toolkit
 PORTVERSION=	2.0

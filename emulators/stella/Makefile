@@ -1,5 +1,4 @@
 # Created by: Jacques Vidrine <nectar@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	stella
 PORTVERSION=	6.5.1

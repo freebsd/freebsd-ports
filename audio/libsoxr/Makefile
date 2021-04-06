@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libsoxr
 PORTVERSION=	0.1.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-gitlab
 PORTVERSION=	2.6.0

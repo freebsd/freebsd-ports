@@ -1,5 +1,4 @@
 # Created by: J. Giovannangeli
-# $FreeBSD$
 
 PORTNAME=	opam
 PORTVERSION=	2.0.8

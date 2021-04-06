@@ -1,5 +1,4 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	flickcurl
 PORTVERSION=	1.26

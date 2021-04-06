@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lars@thegler.dk>
-# $FreeBSD$
 
 PORTNAME=	Email-LocalDelivery-Ezmlm
 PORTVERSION=	0.10

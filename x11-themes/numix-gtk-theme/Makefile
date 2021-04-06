@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	numix-gtk-theme
 PORTVERSION=	2.6.7

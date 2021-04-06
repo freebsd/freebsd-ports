@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	brotlipy
 PORTVERSION=	0.7.0

@@ -1,5 +1,4 @@
 # Created by: Dmitry Morozovsky <marck@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	XML-Driver-HTML
 PORTVERSION=	0.06

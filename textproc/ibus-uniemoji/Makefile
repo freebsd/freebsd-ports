@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ibus-uniemoji
 DISTVERSIONPREFIX=	v

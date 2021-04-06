@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bsdbuild
 PORTVERSION=	3.1

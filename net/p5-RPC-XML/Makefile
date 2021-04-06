@@ -1,5 +1,4 @@
 # Created by: Dominic Mitchell <dom@happygiraffe.net>
-# $FreeBSD$
 
 PORTNAME=	RPC-XML
 PORTVERSION=	0.80

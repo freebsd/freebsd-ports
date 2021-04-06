@@ -1,5 +1,4 @@
 # Created by: Alexandre Biancalana <ale@biancalanas.net>
-# $FreeBSD$
 
 PORTNAME=	Net-IPAddress
 PORTVERSION=	1.10

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chyves
 DISTVERSIONPREFIX=	v

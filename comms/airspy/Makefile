@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	airspy
 DISTVERSIONPREFIX=	v

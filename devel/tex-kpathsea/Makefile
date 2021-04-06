@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kpathsea
 PORTVERSION=	6.2.1

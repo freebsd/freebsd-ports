@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <Nakai@technologist.com>
-# $FreeBSD$
 
 PORTNAME=	slib
 PORTVERSION=	3b6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nxengine
 PORTVERSION=	2.6.4

@@ -1,5 +1,4 @@
 # Created by: Eric Turgeon <ericbsd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xcffib
 PORTVERSION=	0.9.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	magit-popup
 PORTVERSION=	2.13.3

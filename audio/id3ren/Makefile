@@ -1,5 +1,4 @@
 # Created by: Joao Carlos Mendes Luis <jonny@jonny.eng.br>
-# $FreeBSD$
 
 PORTNAME=	id3ren
 PORTVERSION=	1.1b0

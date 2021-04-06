@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ignition-common
 DISTVERSION=	3.0.0

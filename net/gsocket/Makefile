@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gsocket
 PORTVERSION=	1.4.25

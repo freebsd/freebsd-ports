@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Grutatxt
 PORTVERSION=	2.20

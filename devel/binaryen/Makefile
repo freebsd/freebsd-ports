@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	binaryen
 DISTVERSIONPREFIX=	version_

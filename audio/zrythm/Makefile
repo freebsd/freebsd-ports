@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zrythm
 DISTVERSIONPREFIX=	v

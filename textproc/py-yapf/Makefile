@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yapf
 PORTVERSION=	0.30.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	simgear
 PORTVERSION=	2020.3.8

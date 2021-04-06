@@ -1,5 +1,4 @@
 # Created by: jmz
-# $FreeBSD$
 
 PORTNAME=	calc
 PORTVERSION=	2.13.0.0

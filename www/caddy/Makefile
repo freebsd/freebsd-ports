@@ -1,5 +1,4 @@
 # Created by: fabian.freyer@physik.tu-berlin.de
-# $FreeBSD$
 
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: asmith
-# $FreeBSD$
 
 PORTNAME=	sem
 PORTVERSION=	0.0.2

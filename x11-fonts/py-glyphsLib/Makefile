@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	glyphsLib
 PORTVERSION=	3.1.4

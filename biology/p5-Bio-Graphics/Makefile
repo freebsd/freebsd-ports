@@ -1,5 +1,4 @@
 # Created by: wen@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Bio-Graphics
 PORTVERSION=	2.40

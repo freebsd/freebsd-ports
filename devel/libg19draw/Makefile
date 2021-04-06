@@ -1,5 +1,4 @@
 # Created by: Armin Pirkovitsch <armin@frozen-zone.org>
-# $FreeBSD$
 
 PORTNAME=	libg19draw
 PORTVERSION=	1.0.0

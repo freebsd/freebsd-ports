@@ -1,5 +1,4 @@
 # Created by: pat
-# $FreeBSD$
 
 PORTNAME=	lcdproc
 DISTVERSIONPREFIX=	v

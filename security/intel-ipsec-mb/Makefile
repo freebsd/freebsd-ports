@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	intel-ipsec-mb
 DISTVERSION=	0.55.0

@@ -1,5 +1,4 @@
 # Created by: Loren M. Lang
-# $FreeBSD$
 
 PORTNAME=	x11vnc
 PORTVERSION=	0.9.16

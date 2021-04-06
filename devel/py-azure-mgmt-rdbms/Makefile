@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-rdbms
 DISTVERSION=	8.1.0b2

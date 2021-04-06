@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webpacker
 PORTVERSION=	5.2.1

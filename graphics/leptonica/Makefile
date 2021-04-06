@@ -1,5 +1,4 @@
 # Created by: Hiroto Kagotani <hiroto.kagotani@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	leptonica
 PORTVERSION=	1.76.0

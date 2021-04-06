@@ -1,5 +1,4 @@
 # Created by: rdenis@simphalempin.com
-# $FreeBSD$
 
 PORTNAME=	ndisc6
 PORTVERSION=	1.0.4

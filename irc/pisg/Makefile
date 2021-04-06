@@ -1,5 +1,4 @@
 # Created by: pgl@instinct.org
-# $FreeBSD$
 
 PORTNAME=	pisg
 PORTVERSION=	0.73

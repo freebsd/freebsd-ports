@@ -1,5 +1,4 @@
 # Created by: ballen
-# $FreeBSD$
 
 PORTNAME=	phyml
 DISTVERSIONPREFIX=	v

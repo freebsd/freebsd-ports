@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	designer
 DISTVERSION=	${QT5_VERSION}

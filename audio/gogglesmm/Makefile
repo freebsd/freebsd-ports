@@ -1,5 +1,4 @@
 # Created by: Sascha Klauder <sklauder@trimind.de>
-# $FreeBSD$
 
 PORTNAME=	gogglesmm
 PORTVERSION=	1.2.2

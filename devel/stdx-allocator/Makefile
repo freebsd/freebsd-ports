@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stdx-allocator
 PORTVERSION=	3.0.2

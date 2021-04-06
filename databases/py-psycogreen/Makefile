@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	psycogreen
 PORTVERSION=	1.0

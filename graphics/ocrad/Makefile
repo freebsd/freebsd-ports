@@ -1,5 +1,4 @@
 # Created by: Ulrich Spoerlein <q@uni.de>
-# $FreeBSD$
 
 PORTNAME=	ocrad
 DISTVERSION=	0.27

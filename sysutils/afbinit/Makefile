@@ -1,5 +1,4 @@
 # Created by: marius@alchemy.franken.de
-# $FreeBSD$
 
 PORTNAME=		afbinit
 PORTVERSION=		1.0

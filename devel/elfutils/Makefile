@@ -1,5 +1,4 @@
 # Created by: Conrad Meyer <cem@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	elfutils
 PORTVERSION=	0.179

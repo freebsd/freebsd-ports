@@ -1,5 +1,4 @@
 # Created by: Yarema <yds@CoolRat.org>
-# $FreeBSD$
 
 PORTNAME=	sysconftool
 PORTVERSION=	0.18

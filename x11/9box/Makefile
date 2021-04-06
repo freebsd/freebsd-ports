@@ -1,5 +1,4 @@
 # Created by: Serge Gagnon <gagnon__s@videotron.ca>
-# $FreeBSD$
 
 PORTNAME=	9box
 PORTVERSION=	0.2.1

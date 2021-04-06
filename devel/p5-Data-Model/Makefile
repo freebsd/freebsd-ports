@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Model
 PORTVERSION=	0.00008

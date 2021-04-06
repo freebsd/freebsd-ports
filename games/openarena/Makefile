@@ -1,5 +1,4 @@
 # Created by: Josh Tolbert
-# $FreeBSD$
 
 PORTNAME=	openarena
 PORTVERSION=	${GAMEVERSION}.s${SVNREVISION}

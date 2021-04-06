@@ -1,5 +1,4 @@
 # Created by: Ralf Becker <ralf@akk.org>
-# $FreeBSD$
 
 PORTNAME=	moon-buggy
 PORTVERSION=	1.0.51

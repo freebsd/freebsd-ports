@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oyranos
 PORTVERSION=	0.9.6

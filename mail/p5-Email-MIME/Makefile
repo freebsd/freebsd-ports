@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Email-MIME
 PORTVERSION=	1.949

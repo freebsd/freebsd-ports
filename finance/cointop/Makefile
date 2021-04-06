@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cointop
 DISTVERSIONPREFIX=	v

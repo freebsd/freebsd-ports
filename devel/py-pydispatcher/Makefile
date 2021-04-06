@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pydispatcher
 PORTVERSION=	2.0.5

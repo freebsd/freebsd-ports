@@ -1,5 +1,4 @@
 # Created by: Nakata Maho <maho@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	liboglappth
 PORTVERSION=	1.0.0

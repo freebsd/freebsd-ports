@@ -1,5 +1,4 @@
 # Created by: Oliver Mahmoudi <olivermahmoudi@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	kamailio
 PORTVERSION=	5.4.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	slim-freebsd-black-theme
 DISTVERSION=	1.2

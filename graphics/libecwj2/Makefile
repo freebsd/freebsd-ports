@@ -1,5 +1,4 @@
 # Created by: glebius@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	libecwj2
 PORTVERSION=	3.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libusbmuxd
 PORTVERSION=	2.0.2

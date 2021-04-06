@@ -1,5 +1,4 @@
 # Created by: Carlos J Puga Medina <cpm@fbsd.es>
-# $FreeBSD$
 
 PORTNAME=	acme
 PORTVERSION=	${ACME_VERSION}

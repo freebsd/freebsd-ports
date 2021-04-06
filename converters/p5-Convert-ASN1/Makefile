@@ -1,5 +1,4 @@
 # Created by: Marc Fournier <scrappy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Convert-ASN1
 PORTVERSION=	0.27

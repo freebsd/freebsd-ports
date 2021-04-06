@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	xcowsay
 PORTVERSION=	1.5.1

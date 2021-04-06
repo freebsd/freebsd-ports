@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kcoreaddons
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

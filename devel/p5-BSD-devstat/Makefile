@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	BSD-devstat
 PORTVERSION=	0.02

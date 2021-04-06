@@ -1,5 +1,4 @@
 # Created by: Yin-Jieh Chen <yinjieh@csie.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	autoconvert
 PORTVERSION=	0.3.16

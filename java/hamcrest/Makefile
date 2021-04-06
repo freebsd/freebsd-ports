@@ -1,5 +1,4 @@
 # Created by: Danilo Egea Gondolfo <danilo@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	hamcrest
 PORTVERSION=	1.3

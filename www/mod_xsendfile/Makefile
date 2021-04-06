@@ -1,5 +1,4 @@
 # Created by: Andrew T. Bennett <potatosaladx@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mod_xsendfile
 PORTVERSION=	0.12

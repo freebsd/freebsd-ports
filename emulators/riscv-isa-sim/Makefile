@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	riscv-isa-sim
 DISTVERSION=	git

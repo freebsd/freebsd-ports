@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	horde
 PORTVERSION=	5.2.23

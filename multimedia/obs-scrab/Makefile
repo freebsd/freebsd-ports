@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	obs-scrab
 DISTVERSIONPREFIX=	v

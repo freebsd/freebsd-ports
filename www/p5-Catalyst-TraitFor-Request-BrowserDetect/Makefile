@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Catalyst-TraitFor-Request-BrowserDetect
 PORTVERSION=	0.02

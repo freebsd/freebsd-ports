@@ -1,5 +1,4 @@
 # Created by: Ronald Klop <ronald@echteman.nl>
-# $FreeBSD$
 
 PORTNAME=	commons-daemon
 PORTVERSION=	1.2.3

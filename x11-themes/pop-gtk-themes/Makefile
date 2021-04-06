@@ -1,5 +1,4 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-# $FreeBSD$
 
 PORTNAME=	pop-gtk-themes
 DISTVERSIONPREFIX=	v

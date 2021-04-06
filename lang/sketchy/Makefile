@@ -1,5 +1,4 @@
 # Created by: Nils M Holm <nmh@t3x.org>
-# $FreeBSD$
 
 PORTNAME=	sketchy
 PORTVERSION=	20070218

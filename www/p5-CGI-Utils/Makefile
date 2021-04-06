@@ -1,5 +1,4 @@
 # Created by: Murilo Opsfelder <mopsfelder@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	CGI-Utils
 PORTVERSION=	0.12

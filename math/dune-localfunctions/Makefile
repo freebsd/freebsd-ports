@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dune-localfunctions
 DISTVERSIONPREFIX=	v

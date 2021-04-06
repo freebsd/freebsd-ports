@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	networkauth
 PORTVERSION=	${PYQT5_VERSION}

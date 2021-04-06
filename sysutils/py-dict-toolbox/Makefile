@@ -1,5 +1,4 @@
 # Created by: Kirill Ponomarev <krion@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dict-toolbox
 PORTVERSION=	1.9

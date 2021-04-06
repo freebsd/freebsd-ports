@@ -1,5 +1,4 @@
 # Created by: gebhart@secnetix.de
-# $FreeBSD$
 
 PORTNAME=	Tree-Trie
 PORTVERSION=	1.9

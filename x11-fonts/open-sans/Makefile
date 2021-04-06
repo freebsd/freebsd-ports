@@ -1,5 +1,4 @@
 # Created by: Florian Limberger <flo@snakeoilproductions.net>
-# $FreeBSD$
 
 PORTNAME=	open-sans
 PORTVERSION=	20180831

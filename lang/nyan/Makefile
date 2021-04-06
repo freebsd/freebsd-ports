@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nyan
 PORTVERSION=	g20180708

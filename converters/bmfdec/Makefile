@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bmfdec
 DISTVERSION=	g20200512

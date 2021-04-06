@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	node
 PORTVERSION=	12.22.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kiwix-lib
 DISTVERSION=	9.4.1

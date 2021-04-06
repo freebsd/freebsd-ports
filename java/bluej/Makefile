@@ -1,5 +1,4 @@
 # Created by: Jeremy <karlj000@unbc.ca>
-# $FreeBSD$
 
 PORTNAME=	bluej
 PORTVERSION=	4.2.2

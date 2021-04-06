@@ -1,5 +1,4 @@
 # Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	wordpress
 DISTVERSION=	5.5.3

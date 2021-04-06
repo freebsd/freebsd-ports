@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pdf2djvu
 DISTVERSION=	0.9.17.1

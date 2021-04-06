@@ -1,5 +1,4 @@
 # Created by: Jim Geovedi <jim@corebsd.or.id>
-# $FreeBSD$
 
 PORTNAME=	SHA
 PORTVERSION=	2.01

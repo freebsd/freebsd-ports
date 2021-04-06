@@ -1,5 +1,4 @@
 # Created by: Stefan Bethke <stb@lassitu.de>
-# $FreeBSD$
 
 PORTNAME=	sauserprefs
 PORTVERSION=	1.10 # PLEASE MIRROR DISTFILE WITH VERSIONED DIR

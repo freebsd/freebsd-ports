@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	queuelib
 PORTVERSION=	1.5.0

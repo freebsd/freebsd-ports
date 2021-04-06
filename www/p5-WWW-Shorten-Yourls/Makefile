@@ -1,5 +1,4 @@
 # Created by: Lawrence Chen <beastie@tardisi.com>
-# $FreeBSD$
 
 PORTNAME=	WWW-Shorten-Yourls
 PORTVERSION=	0.06

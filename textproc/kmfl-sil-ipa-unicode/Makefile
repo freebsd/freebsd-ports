@@ -1,5 +1,4 @@
 # Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-# $FreeBSD$
 
 PORTNAME=	kmfl-sil-ipa-unicode
 PORTVERSION=	1.2

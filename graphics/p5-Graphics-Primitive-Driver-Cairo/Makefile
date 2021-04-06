@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Graphics-Primitive-Driver-Cairo
 PORTVERSION=	0.47

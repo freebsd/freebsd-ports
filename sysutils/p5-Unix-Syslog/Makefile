@@ -1,5 +1,4 @@
 # Created by: Blaz Zupan <blaz@amis.net>
-# $FreeBSD$
 
 PORTNAME=	Unix-Syslog
 PORTVERSION=	1.1

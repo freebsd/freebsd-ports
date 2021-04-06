@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	marrow.mailer
 PORTVERSION=	4.0.3

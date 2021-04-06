@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oslo.utils
 PORTVERSION=	4.8.0

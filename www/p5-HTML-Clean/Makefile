@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <kapr@crosswinds.net>
-# $FreeBSD$
 
 PORTNAME=	HTML-Clean
 PORTVERSION=	1.4

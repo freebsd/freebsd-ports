@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
-# $FreeBSD$
 
 PORTNAME=	inotify-tools # new fork https://github.com/ericcurtin/inotify-tools
 DISTVERSION=	3.20.11.0

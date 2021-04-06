@@ -1,5 +1,4 @@
 # Created by: Mateusz Piotrowski <0mp@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	meh
 DISTVERSIONPREFIX=	v

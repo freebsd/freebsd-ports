@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tw_cli
 PORTVERSION=	9.5.5

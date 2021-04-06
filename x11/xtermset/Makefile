@@ -1,5 +1,4 @@
 # Created by: Dominik Rothert <dr@domix.de>
-# $FreeBSD$
 
 PORTNAME=	xtermset
 PORTVERSION=	0.5.2

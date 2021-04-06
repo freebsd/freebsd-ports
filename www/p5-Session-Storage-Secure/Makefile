@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Session-Storage-Secure
 PORTVERSION=	0.010

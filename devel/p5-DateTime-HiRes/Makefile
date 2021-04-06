@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DateTime-HiRes
 PORTVERSION=	0.04

@@ -1,5 +1,4 @@
 # Created by: Garrett Wollman <wollman@lcs.mit.edu>
-# $FreeBSD$
 
 PORTNAME=	Term-Query
 PORTVERSION=	2.0

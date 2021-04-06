@@ -1,5 +1,4 @@
 # Created by: kftseng@iyard.org
-# $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-X509
 PORTVERSION=	1.902

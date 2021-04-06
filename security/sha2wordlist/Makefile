@@ -1,5 +1,4 @@
 # Created by: Peter Ankerstal <peter@pean.org>
-# $FreeBSD$
 
 PORTNAME=	sha2wordlist
 PORTVERSION=	1.0.20140124

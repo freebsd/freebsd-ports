@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcomps
 DISTVERSIONPREFIX=	${PORTNAME}-

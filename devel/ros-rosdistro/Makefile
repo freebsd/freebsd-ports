@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ros-rosdistro
 DISTVERSION=	0.7.5

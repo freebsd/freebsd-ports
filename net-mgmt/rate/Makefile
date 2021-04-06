@@ -1,5 +1,4 @@
 # Created by: mich@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	rate
 PORTVERSION=	0.9

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	automatic_addressbook
 PORTVERSION=	0.4.3

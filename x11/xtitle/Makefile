@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xtitle
 DISTVERSION=	0.4.4

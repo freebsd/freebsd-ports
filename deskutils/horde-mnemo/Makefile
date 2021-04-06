@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mnemo
 PORTVERSION=	4.2.14

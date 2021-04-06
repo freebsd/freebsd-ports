@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cucumber
 PORTVERSION=	5.3.0

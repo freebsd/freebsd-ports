@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	migmix
 PORTVERSION=	1.0.20130617

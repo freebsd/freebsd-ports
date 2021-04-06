@@ -1,5 +1,4 @@
 # Created by: Evan Sarmiento <bsdports@wayfair.com>
-# $FreeBSD$
 
 PORTNAME=	bson
 PORTVERSION=	4.10.0

@@ -1,5 +1,4 @@
 # Created by: Vidar Karlsen <vidar@karlsen.tech>
-# $FreeBSD$
 
 PORTNAME=	crunch
 PORTVERSION=	3.6

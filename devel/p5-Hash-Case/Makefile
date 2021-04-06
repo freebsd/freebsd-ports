@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin
-# $FreeBSD$
 
 PORTNAME=	Hash-Case
 PORTVERSION=	1.030

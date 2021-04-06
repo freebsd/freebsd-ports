@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kcov
 DISTVERSIONPREFIX=	v

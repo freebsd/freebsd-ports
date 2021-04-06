@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cadabra2
 DISTVERSION=	2.3.6.8

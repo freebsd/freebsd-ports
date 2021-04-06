@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	asciimatics
 PORTVERSION=	1.12.0

@@ -1,5 +1,4 @@
 # Created by: Toby Allsopp <toby@mi6.gen.nz>
-# $FreeBSD$
 
 PORTNAME=	Text-Tabs+Wrap
 PORTVERSION=	2013.0523

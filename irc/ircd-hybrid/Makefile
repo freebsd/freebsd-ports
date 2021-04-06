@@ -1,5 +1,4 @@
 # Created by: David Taylor <davidt@yadt.co.uk>
-# $FreeBSD$
 
 PORTNAME=	ircd-hybrid
 PORTVERSION=	8.2.38

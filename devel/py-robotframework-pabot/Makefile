@@ -1,5 +1,4 @@
 # Created by: Vladimir Chukharev
-# $FreeBSD$
 
 PORTNAME=	robotframework-pabot
 PORTVERSION=	0.99

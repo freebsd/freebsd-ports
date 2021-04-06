@@ -1,5 +1,4 @@
 # Created by: Adam Saponara <as@php.net>
-# $FreeBSD$
 
 PORTNAME=	termbox
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Michael L. Hostbaek (mich@freebsdcluster.org)
-# $FreeBSD$
 
 PORTNAME=	tcpsg
 PORTVERSION=	0.0.2

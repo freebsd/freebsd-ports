@@ -1,5 +1,4 @@
 # Created by: Henrik Motakef <henrik.motakef@web.de>
-# $FreeBSD$
 
 PORTNAME=	meta
 PORTVERSION=	0.1

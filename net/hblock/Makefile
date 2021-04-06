@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hblock
 DISTVERSIONPREFIX=	v

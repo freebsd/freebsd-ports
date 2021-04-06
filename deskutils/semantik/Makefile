@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	semantik
 DISTVERSION=	1.2.6

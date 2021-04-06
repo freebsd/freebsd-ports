@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pymeeus
 PORTVERSION=	0.3.6

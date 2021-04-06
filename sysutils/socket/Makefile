@@ -1,5 +1,4 @@
 # Created by: wosch
-# $FreeBSD$
 
 PORTNAME=	socket
 PORTVERSION=	1.2

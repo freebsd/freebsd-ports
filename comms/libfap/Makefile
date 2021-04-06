@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libfap
 PORTVERSION=	1.5

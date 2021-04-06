@@ -1,5 +1,4 @@
 # Created by: Igor Vinokurov <igor@zynaps.ru>
-# $FreeBSD$
 
 PORTNAME=	xruskb
 PORTVERSION=	1.15.4

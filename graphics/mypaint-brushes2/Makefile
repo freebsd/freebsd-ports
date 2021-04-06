@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mypaint-brushes
 PORTVERSION=	2.0.2

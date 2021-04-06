@@ -1,5 +1,4 @@
 # Created by: Patrick M. Hausen (pmh@hausen.com)
-# $FreeBSD$
 
 PORTNAME=		env4801
 PORTVERSION=		0.3

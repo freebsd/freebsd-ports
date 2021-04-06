@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
-# $FreeBSD$
 
 PORTNAME=	x42-plugins
 DISTVERSION=	20210114 # the version is published here: http://gareus.org/misc/x42-plugins.php

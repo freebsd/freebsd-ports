@@ -1,5 +1,4 @@
 # Created by: jpaetzel@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	catfish
 PORTVERSION=	4.16.0

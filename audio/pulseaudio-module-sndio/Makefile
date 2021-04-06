@@ -1,5 +1,4 @@
 # Created by: Tobias Kortkamp <t@tobik.me>
-# $FreeBSD$
 
 PORTNAME=	pulseaudio-module-sndio
 DISTVERSION=	13.0

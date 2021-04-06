@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 MASTERDIR=	${.CURDIR}/../bitmark
 PKGNAMESUFFIX=	-recorder

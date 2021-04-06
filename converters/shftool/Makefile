@@ -1,5 +1,4 @@
 # Created by: Joachim Strombergson <watchman@ludd.ltu.se>
-# $FreeBSD$
 
 PORTNAME=	shftool
 PORTVERSION=	1.2.0

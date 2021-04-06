@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openvsp
 DISTVERSIONPREFIX=	${GH_PROJECT}_

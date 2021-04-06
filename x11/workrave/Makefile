@@ -1,5 +1,4 @@
 # Created by: Koop Mast <einekoai@chello.nl>
-# $FreeBSD$
 
 PORTNAME=	workrave
 PORTVERSION=	1.10.44

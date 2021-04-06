@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opustags
 DISTVERSION=	1.6.0

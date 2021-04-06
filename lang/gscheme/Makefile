@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gscheme
 PORTVERSION=	0.6

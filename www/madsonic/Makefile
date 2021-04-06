@@ -1,5 +1,4 @@
 # Created by: Nicole Reid <root@cooltrainer.org>
-# $FreeBSD$
 
 PORTNAME=	madsonic
 PORTVERSION=	6.2.9040

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	csscompressor
 DISTVERSION=	0.9.5

@@ -1,5 +1,4 @@
 # Created by: Alexey V. Degtyarev
-# $FreeBSD$
 
 PORTNAME=	MooseX-SemiAffordanceAccessor
 PORTVERSION=	0.10

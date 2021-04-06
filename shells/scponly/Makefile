@@ -1,5 +1,4 @@
 # Created by: mcglk@artlogix.com
-# $FreeBSD$
 
 PORTNAME=	scponly
 PORTVERSION=	4.8.20110526

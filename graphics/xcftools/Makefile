@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xcftools
 PORTVERSION=	1.0.8.20130212

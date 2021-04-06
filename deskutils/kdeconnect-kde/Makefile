@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdeconnect-kde
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

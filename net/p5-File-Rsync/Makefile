@@ -1,5 +1,4 @@
 # Created by: petef@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	File-Rsync
 PORTVERSION=	0.49

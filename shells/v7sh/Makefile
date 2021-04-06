@@ -1,5 +1,4 @@
 # Created by: Cyrille.Lefevre@laposte.net
-# $FreeBSD$
 
 PORTNAME=	v7sh
 PORTVERSION=	1.0

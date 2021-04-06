@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	svg
 DISTVERSION=	${QT5_VERSION}

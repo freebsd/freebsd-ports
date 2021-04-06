@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Cisco-CopyConfig
 PORTVERSION=	1.4

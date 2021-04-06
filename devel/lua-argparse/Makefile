@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	argparse
 PORTVERSION=	0.7.1

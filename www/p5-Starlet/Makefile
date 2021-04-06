@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Starlet
 PORTVERSION=	0.24

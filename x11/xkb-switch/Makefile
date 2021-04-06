@@ -1,5 +1,4 @@
 # Created by: Dmitri Goutnik <dg@syrec.org>
-# $FreeBSD$
 
 PORTNAME=	xkb-switch
 PORTVERSION=	1.8.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qdirstat
 PORTVERSION=	1.7

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		libjson-rpc-cpp
 DISTVERSIONPREFIX=	v

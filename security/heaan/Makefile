@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	heaan
 DISTVERSION=	2.1-40

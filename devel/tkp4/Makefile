@@ -1,5 +1,4 @@
 # Created by: mi@aldan.algebra.com
-# $FreeBSD$
 
 PORTNAME=	tkp4
 PORTVERSION=	1.12

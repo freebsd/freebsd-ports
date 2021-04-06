@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <mitya@yandex-team.ru>
-# $FreeBSD$
 
 PORTNAME=	hbase
 PORTVERSION=	1.2.1

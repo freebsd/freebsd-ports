@@ -1,5 +1,4 @@
 # Created by: Joel Sutton <jsutton@webnet.com.au>
-# $FreeBSD$
 
 PORTNAME=	atari800
 PORTVERSION=	3.1.0

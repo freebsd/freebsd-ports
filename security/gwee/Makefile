@@ -1,5 +1,4 @@
 # Created by: chinsan <chinsan@mail2000.com.tw>
-# $FreeBSD$
 
 PORTNAME=	gwee
 PORTVERSION=	1.36

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libgcrypt
 PORTVERSION=	1.9.2

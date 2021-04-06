@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vitables
 DISTVERSIONPREFIX=	v

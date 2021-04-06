@@ -1,5 +1,4 @@
 # Created by: petef
-# $FreeBSD$
 
 PORTNAME=	Net-Traceroute6
 PORTVERSION=	0.03

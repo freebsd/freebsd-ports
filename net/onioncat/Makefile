@@ -1,5 +1,4 @@
 # Created by: <ports@c0decafe.net>
-# $FreeBSD$
 
 PORTNAME=	onioncat
 DISTVERSION=	0.3.8

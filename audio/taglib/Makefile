@@ -1,5 +1,4 @@
 # Created by: Frank Laszlo <laszlof@vonostingroup.com>
-# $FreeBSD$
 
 PORTNAME=	taglib
 DISTVERSION=	1.12

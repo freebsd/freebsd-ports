@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	terminado
 PORTVERSION=	0.8.3

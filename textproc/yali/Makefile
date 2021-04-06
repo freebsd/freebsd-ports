@@ -1,5 +1,4 @@
 # Created by: Tom Sparks <tsparks@appliedops.net>
-# $FreeBSD$
 
 PORTNAME=	yali
 PORTVERSION=	1.1

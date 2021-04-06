@@ -1,5 +1,4 @@
 # Created by: Jun Kuriyama <kuriyama@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	magit
 PORTVERSION=	2.90.1

@@ -1,5 +1,4 @@
 # Created by: Waitman Gobble <waitman@waitman.net>
-# $FreeBSD$
 
 PORTNAME=	secp256k1
 PORTVERSION=	0.13.2

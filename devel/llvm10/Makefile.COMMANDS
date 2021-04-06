@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LLVM_COMMANDS=	\
 		bugpoint \
 		dsymutil \

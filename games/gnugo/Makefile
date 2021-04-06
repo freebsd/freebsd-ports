@@ -1,5 +1,4 @@
 # Created by: jseger@scds.com
-# $FreeBSD$
 
 PORTNAME=	gnugo
 PORTVERSION=	3.8

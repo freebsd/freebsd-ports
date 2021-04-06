@@ -1,5 +1,4 @@
 # Created by: R.I.Pienaar <rip@devco.net>
-# $FreeBSD$
 
 PORTNAME=	msmtp
 PORTVERSION=	1.8.15

@@ -1,5 +1,4 @@
 # Created by: ljo
-# $FreeBSD$
 
 PORTNAME=	eispack
 PORTVERSION=	1.0

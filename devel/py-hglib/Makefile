@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hglib
 PORTVERSION=	2.6.1

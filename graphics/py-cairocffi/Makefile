@@ -1,5 +1,4 @@
 # Created by: Dave Cottlehuber <dch@skunkwerks.at>
-# $FreeBSD$
 
 PORTNAME=	cairocffi
 PORTVERSION=	1.2.0

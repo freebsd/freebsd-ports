@@ -1,5 +1,4 @@
 # Created by: vfom@narod.ru
-# $FreeBSD$
 
 PORTNAME=	TkTopNetFlows
 PORTVERSION=	0.4

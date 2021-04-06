@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	orthorobot
 DISTVERSIONPREFIX=	v

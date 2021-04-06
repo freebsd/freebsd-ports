@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jekyll-email-protect
 DISTVERSION=	1.1.0

@@ -1,5 +1,4 @@
 # Created by: patrick, trevor
-# $FreeBSD$
 
 PORTNAME=	lilypond
 DISTVERSION=	2.23.1

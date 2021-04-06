@@ -1,5 +1,4 @@
 # Created by: Dima Sivachenko
-# $FreeBSD$
 
 PORTNAME=	webcrawl
 PORTVERSION=	1.10

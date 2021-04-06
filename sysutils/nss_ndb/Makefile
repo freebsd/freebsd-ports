@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		nss_ndb
 DISTVERSIONPREFIX=	v

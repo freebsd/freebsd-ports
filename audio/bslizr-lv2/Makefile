@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bslizr
 DISTVERSION=	1.2.12

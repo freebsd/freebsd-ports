@@ -1,5 +1,4 @@
 # Created by: markm
-# $FreeBSD$
 
 PORTNAME=	xroach
 PORTVERSION=	4.4

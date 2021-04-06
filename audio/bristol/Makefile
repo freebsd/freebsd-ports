@@ -1,5 +1,4 @@
 # Created by: pjm <pierrejacqes.mimifir@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	bristol
 PORTVERSION=	0.60.10

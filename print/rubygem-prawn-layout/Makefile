@@ -1,5 +1,4 @@
 # Created by: wenheping@gmail.com
-# $FreeBSD$
 
 PORTNAME=	prawn-layout
 PORTVERSION=	0.8.4

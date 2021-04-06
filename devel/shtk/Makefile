@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	shtk
 PORTVERSION=	1.6

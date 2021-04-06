@@ -1,5 +1,4 @@
 # Created by: Will Andrews <will@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	LockFile-Simple
 PORTVERSION=	0.208

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lavalauncher
 DISTVERSIONPREFIX=	v

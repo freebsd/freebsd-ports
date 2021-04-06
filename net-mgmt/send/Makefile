@@ -1,5 +1,4 @@
 # Created by: Janos Mohacsi <mohacsi@niif.hu>
-# $FreeBSD$
 
 PORTNAME=	send
 PORTVERSION=	0.3

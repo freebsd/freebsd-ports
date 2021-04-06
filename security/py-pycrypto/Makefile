@@ -1,5 +1,4 @@
 # Created by: nbm
-# $FreeBSD$
 
 PORTNAME=	pycrypto
 PORTVERSION=	2.6.1

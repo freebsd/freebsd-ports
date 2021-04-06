@@ -1,5 +1,4 @@
 # Created by: mathias.picker@gmx.de
-# $FreeBSD$
 
 PORTNAME=	vamp-plugin-sdk
 DISTVERSION=	2.9.0

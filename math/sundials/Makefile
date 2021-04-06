@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sundials
 DISTVERSION=	3.1.2

@@ -1,5 +1,4 @@
 # Created by: Nikos Ntarmos <ntarmos@ceid.upatras.gr>
-# $FreeBSD$
 
 PORTNAME=	awesome
 PORTVERSION=	4.3

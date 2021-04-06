@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	axis2
 PORTVERSION=	1.7.9

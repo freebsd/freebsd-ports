@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Lingua-EN-AddressParse
 PORTVERSION=	1.27

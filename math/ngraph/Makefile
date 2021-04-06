@@ -1,5 +1,4 @@
 # Created by: nobu@rd.isac.co.jp
-# $FreeBSD$
 
 PORTNAME=	ngraph
 PORTVERSION=	6.3.54

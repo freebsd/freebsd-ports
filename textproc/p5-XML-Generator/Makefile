@@ -1,5 +1,4 @@
 # Created by: Andreas Heil <ah@linux-hq.de>
-# $FreeBSD$
 
 PORTNAME=	XML-Generator
 PORTVERSION=	1.04

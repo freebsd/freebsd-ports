@@ -1,5 +1,4 @@
 # Created by: Nikola Lecic <nikola.lecic@anthesphoria.net>
-# $FreeBSD$
 
 PORTNAME=	kmfl-sil-galatia
 PORTVERSION=	1.03

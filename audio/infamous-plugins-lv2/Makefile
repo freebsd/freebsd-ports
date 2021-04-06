@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	infamous-plugins
 DISTVERSIONPREFIX=	v

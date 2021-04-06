@@ -1,5 +1,4 @@
 # Created by: Sean Chittenden <seanc@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bmf
 PORTVERSION=	0.9.4

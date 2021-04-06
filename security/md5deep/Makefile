@@ -1,5 +1,4 @@
 # Created by: Frank Laszlo <laszlof@vonostingroup.com>
-# $FreeBSD$
 
 PORTNAME=	md5deep
 PORTVERSION=	4.4

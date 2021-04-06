@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=	aster
 DISTVERSION=	${ASTER_DISTVERSION}

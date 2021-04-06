@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	app-builder
 DISTVERSIONPREFIX=	v

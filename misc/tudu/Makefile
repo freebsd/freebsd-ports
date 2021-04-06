@@ -1,5 +1,4 @@
 # Created by: mp39590@gmail.com
-# $FreeBSD$
 
 PORTNAME=	tudu
 PORTVERSION=	0.10.3

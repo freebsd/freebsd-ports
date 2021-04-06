@@ -1,5 +1,4 @@
 # Created by: Rich Neese <r.neese@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	autotalent
 PORTVERSION=	0.2

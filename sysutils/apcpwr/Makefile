@@ -1,5 +1,4 @@
 # Created by: jwd
-# $FreeBSD$
 
 PORTNAME=		apcpwr
 PORTVERSION=		1.3

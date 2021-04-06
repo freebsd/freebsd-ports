@@ -1,5 +1,4 @@
 # Created by: Heinz Tschabitscher
-# $FreeBSD$
 
 PORTNAME=	sc
 PORTVERSION=	7.16

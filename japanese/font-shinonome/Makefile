@@ -1,5 +1,4 @@
 # Created by: Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	shinonome
 PORTVERSION=	0.9.11.p1

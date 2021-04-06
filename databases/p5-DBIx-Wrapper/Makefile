@@ -1,5 +1,4 @@
 # Created by: Don Owens <don@regexguy.com>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Wrapper
 PORTVERSION=	0.29

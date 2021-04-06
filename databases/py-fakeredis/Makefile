@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fakeredis
 PORTVERSION=	1.4.5

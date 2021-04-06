@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Tie-RegexpHash
 PORTVERSION=	0.17

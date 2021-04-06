@@ -1,5 +1,4 @@
 # Created by: Anonymous <swell.k@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	apngasm
 PORTVERSION=	2.91

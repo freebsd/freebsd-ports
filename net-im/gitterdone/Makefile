@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gitterdone
 PORTVERSION=	201710031257

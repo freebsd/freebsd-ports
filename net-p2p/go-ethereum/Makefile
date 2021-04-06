@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	go-ethereum
 DISTVERSIONPREFIX=	v

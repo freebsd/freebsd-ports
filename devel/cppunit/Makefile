@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cppunit
 PORTVERSION=	1.14.0

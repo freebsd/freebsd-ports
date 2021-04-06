@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libsolv
 DISTVERSION=	0.7.17

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	multidict
 PORTVERSION=	5.1.0

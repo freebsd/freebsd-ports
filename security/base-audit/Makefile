@@ -1,5 +1,4 @@
 # Created by: Miroslav Lachman
-# $FreeBSD$
 
 PORTNAME=	base-audit
 PORTVERSION=	0.4

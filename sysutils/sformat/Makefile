@@ -1,5 +1,4 @@
 # Created by: marius@alchemy.franken.de
-# $FreeBSD$
 
 PORTNAME=	sformat
 PORTVERSION=	3.5

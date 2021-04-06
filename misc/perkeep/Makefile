@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	perkeep
 DISTVERSION=	0.11

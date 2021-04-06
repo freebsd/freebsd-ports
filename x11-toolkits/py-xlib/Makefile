@@ -1,5 +1,4 @@
 # Created by: Mike Meyer <mwm@mired.org>
-# $FreeBSD$
 
 PORTNAME=	xlib
 DISTVERSION=	0.27

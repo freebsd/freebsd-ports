@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xeus-cling
 DISTVERSION=	0.8.1

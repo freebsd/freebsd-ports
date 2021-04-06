@@ -1,5 +1,4 @@
 # Created by: Cyrus Rahman <cr@jcmax.com>
-# $FreeBSD$
 
 PORTNAME=	tnef
 PORTVERSION=	1.4.12

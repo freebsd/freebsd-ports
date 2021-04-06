@@ -1,5 +1,4 @@
 # Created by: James Earl
-# $FreeBSD$
 
 PORTNAME=	pangoxsl
 PORTVERSION=	1.6.0.3

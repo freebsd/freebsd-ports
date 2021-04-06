@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Net-LDAP
 PORTVERSION=	0.07

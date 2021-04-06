@@ -1,5 +1,4 @@
 # Created by: Kevin Golding <ports@caomhin.org>
-# $FreeBSD$
 
 PORTNAME=	django-registration
 PORTVERSION=	3.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CHI-Driver-TokyoTyrant
 PORTVERSION=	0.02

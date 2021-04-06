@@ -1,5 +1,4 @@
 # Created by: KOMATSU Shinichiro <koma2@jiro.c.u-tokyo.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	skkinput3
 PORTVERSION=	3.0.6

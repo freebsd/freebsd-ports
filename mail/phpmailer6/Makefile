@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phpmailer
 PORTVERSION=	6.3.0

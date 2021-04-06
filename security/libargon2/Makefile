@@ -1,5 +1,4 @@
 # Created by: Christopher Hall <hsw@bitmark.com>
-# $FreeBSD$
 
 PORTNAME=	libargon2
 PORTVERSION=	20190702

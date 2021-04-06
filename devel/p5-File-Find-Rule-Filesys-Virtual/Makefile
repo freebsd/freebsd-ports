@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	File-Find-Rule-Filesys-Virtual
 PORTVERSION=	1.22

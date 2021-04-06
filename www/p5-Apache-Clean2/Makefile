@@ -1,5 +1,4 @@
 # Created by: Martin Matuska <martin@matuska.org>
-# $FreeBSD$
 
 PORTNAME=	Apache-Clean
 PORTVERSION=	2.00

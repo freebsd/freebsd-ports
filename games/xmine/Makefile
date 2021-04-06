@@ -1,5 +1,4 @@
 # Created by: joerg
-# $FreeBSD$
 
 PORTNAME=	xmine
 PORTVERSION=	1.0.3

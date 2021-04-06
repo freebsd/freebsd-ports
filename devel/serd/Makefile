@@ -1,5 +1,4 @@
 # Created by: meka
-# $FreeBSD$
 
 PORTNAME=	serd
 PORTVERSION=	0.30.10

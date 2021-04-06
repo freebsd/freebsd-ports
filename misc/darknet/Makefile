@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	darknet
 PORTVERSION=	3.20200507 # the upstream doesn't maintain a meaningful versioning schema, so have to use a date here

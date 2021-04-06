@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Horde_Mapi
 PORTVERSION=	1.0.10

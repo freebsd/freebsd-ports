@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Redis-Fast
 PORTVERSION=	0.28

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MooseX-RelatedClassRoles
 PORTVERSION=	0.004

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-Plugin-Pager
 PORTVERSION=	0.566

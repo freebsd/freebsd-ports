@@ -1,5 +1,4 @@
 # Created by: asami
-# $FreeBSD$
 
 PORTNAME=	xgraph
 PORTVERSION=	11.3.2.20000910

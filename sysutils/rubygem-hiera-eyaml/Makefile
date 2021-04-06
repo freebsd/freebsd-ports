@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hiera-eyaml
 PORTVERSION=	3.2.1

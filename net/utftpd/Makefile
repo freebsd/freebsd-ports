@@ -1,5 +1,4 @@
 # Created by: andreas@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	utftpd
 PORTVERSION=	0.2.4

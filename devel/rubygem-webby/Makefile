@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
-# $FreeBSD$
 
 PORTNAME=	webby
 PORTVERSION=	0.9.4

@@ -1,5 +1,4 @@
 # Created by: glewis
-# $FreeBSD$
 
 PORTNAME=	szip
 PORTVERSION=	2.1.1

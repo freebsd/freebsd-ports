@@ -1,5 +1,4 @@
 # Created by: Kris Moore <kris@pcbsd.org>
-# $FreeBSD$
 
 PORTNAME=	qtcreator
 DISTVERSION=	4.13.3

@@ -1,5 +1,4 @@
 # Created by: nemysis <nemysis@gmx.ch>
-# $FreeBSD$
 
 PORTNAME=	alure
 PORTVERSION=	1.2

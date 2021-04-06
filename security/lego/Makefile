@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lego
 DISTVERSIONPREFIX=	v

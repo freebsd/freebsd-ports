@@ -1,5 +1,4 @@
 # Created by: Stefan Ehmann <shoesoft@gmx.net>
-# $FreeBSD$
 
 PORTNAME=		Ice
 PORTVERSION=		3.6.4

@@ -1,5 +1,4 @@
 # Created by: Jeremy Shaffner <jeremy@external.org>
-# $FreeBSD$
 
 PORTNAME=	GPS
 PORTVERSION=	0.17

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aphpunit
 DISTVERSION=	2.0

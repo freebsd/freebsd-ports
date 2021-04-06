@@ -1,5 +1,4 @@
 # Created by: Nicholas Esborn <nick@netdot.net>
-# $FreeBSD$
 
 PORTNAME=	Time-Period
 PORTVERSION=	1.20

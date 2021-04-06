@@ -1,5 +1,4 @@
 # Created by: mich@freebsdcluster.org
-# $FreeBSD$
 
 PORTNAME=	spinner
 PORTVERSION=	1.2.4

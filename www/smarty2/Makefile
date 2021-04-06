@@ -1,5 +1,4 @@
 # Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-# $FreeBSD$
 
 PORTNAME=	smarty
 PORTVERSION=	2.6.31

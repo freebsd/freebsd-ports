@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	snooze
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	trean
 PORTVERSION=	1.1.10

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jsx
 PORTVERSION=	2.9.0

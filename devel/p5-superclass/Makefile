@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	superclass
 PORTVERSION=	0.003

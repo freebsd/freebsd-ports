@@ -1,5 +1,4 @@
 # Created by: Ed Schouten <ed@fxq.nl>
-# $FreeBSD$
 
 PORTNAME=	quake4
 PORTVERSION=	1.4.2

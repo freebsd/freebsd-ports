@@ -1,5 +1,4 @@
 # Created by: Ashish SHUKLA <wahjava@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	pms
 PORTVERSION=	0.42

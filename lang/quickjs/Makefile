@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	quickjs
 DISTVERSION=	2020.09.06

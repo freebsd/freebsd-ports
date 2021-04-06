@@ -1,5 +1,4 @@
 # Created by: erich@rrnet.com
-# $FreeBSD$
 
 PORTNAME=	xcoral
 PORTVERSION=	3.47

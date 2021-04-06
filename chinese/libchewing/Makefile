@@ -1,5 +1,4 @@
 # Created by: Kuang-che Wu <kcwu@csie.org>
-# $FreeBSD$
 
 PORTNAME=	libchewing
 PORTVERSION=	0.5.1

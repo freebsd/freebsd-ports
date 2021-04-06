@@ -2,8 +2,6 @@
 # Date created:		17 Feb 2005
 # Whom:			leeym
 #
-# $FreeBSD$
-#
 # The variable(s) for installing TrueType fonts.
 # TTF		- Name(s) of font file(s) installed in FONTSDIR. Mandatory.
 #

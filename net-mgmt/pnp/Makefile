@@ -1,5 +1,4 @@
 # Created by: rea-fbsd@codelabs.ru
-# $FreeBSD$
 
 PORTNAME=	pnp
 PORTVERSION=	0.6.26

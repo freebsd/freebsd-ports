@@ -1,5 +1,4 @@
 # Created by: Alex Deiter <alex.deiter@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	openipmi
 PORTVERSION=	2.0.29

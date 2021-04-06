@@ -1,5 +1,4 @@
 # Created by: Zane C. Bowers-Hadley <vvelox@vvelox.net>
-# $FreeBSD$
 
 PORTNAME=	Proc-ProcessTable-ncps
 PORTVERSION=	0.1.1

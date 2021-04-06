@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Horde_SessionHandler
 PORTVERSION=	2.2.9

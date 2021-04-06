@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	coq
 PORTVERSION=	8.6

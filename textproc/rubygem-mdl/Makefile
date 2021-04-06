@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mdl
 PORTVERSION=	0.11.0

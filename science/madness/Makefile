@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	madness
 DISTVERSION=	0.10.1.20180823

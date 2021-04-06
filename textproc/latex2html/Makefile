@@ -1,5 +1,4 @@
 # Created by: brett@peloton.physics.montana.edu
-# $FreeBSD$
 
 PORTNAME=	latex2html
 PORTVERSION=	2016

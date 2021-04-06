@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	certbot-dns-gehirn
 PORTVERSION=	${ACME_VERSION}

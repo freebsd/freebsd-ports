@@ -1,5 +1,4 @@
 # Created by: tobez
-# $FreeBSD$
 
 PORTNAME=	Bit-Vector-Minimal
 PORTVERSION=	1.3

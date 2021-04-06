@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ExtUtils-LibBuilder
 PORTVERSION=	0.08

@@ -1,5 +1,4 @@
 # Created by: wolman@cs.washington.edu
-# $FreeBSD$
 
 PORTNAME=	jgraph
 PORTVERSION=	8.3

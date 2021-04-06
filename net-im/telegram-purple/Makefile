@@ -1,5 +1,4 @@
 # Created by: Kris Moore <kmoore@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	telegram-purple
 PORTVERSION=	1.4.3

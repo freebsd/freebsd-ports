@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fts-xapian
 DISTVERSION=	1.4.8

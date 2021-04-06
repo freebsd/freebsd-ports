@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vgmplay
 PORTVERSION=	0.40.9

@@ -1,5 +1,4 @@
 # Created by: estith
-# $FreeBSD$
 
 PORTNAME=	Geo-ShapeFile
 PORTVERSION=	3.00

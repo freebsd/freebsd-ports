@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xsettingsd
 DISTVERSIONPREFIX=	v

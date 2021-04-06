@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	slowhttptest
 DISTVERSIONPREFIX=	v

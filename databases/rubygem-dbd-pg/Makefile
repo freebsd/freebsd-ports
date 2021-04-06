@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dbd-pg
 PORTVERSION=	0.3.9

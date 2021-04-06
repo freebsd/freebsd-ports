@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	goesimage
 DISTVERSION=	0.1.3

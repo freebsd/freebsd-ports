@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kim-api
 DISTVERSION=	2.2.1

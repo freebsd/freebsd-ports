@@ -1,5 +1,4 @@
 # Created by: Jie Gao <gaoj@cpsc.ucalgary.ca>
-# $FreeBSD$
 
 PORTNAME=	scim-pinyin
 PORTVERSION=	0.5.92

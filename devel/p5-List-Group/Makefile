@@ -1,5 +1,4 @@
 # Created by: Tillman Hodgson <tillman@seekingfire.com>
-# $FreeBSD$
 
 PORTNAME=	List-Group
 PORTVERSION=	1.3

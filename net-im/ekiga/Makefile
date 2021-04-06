@@ -1,5 +1,4 @@
 # Created by: Charlie & <root@ws.ipfw.ru>
-# $FreeBSD$
 #    $MCom: ports/trunk/net-im/ekiga/Makefile 19954 2014-10-15 10:03:57Z kwm $
 
 PORTNAME=	ekiga

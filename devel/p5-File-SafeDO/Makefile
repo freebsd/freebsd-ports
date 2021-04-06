@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	File-SafeDO
 PORTVERSION=	0.14

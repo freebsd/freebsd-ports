@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	knotifyconfig
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

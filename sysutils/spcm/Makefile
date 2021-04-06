@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spcm
 DISTVERSION=	0.5.4

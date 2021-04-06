@@ -1,5 +1,4 @@
 # Created by: Stefan Rumetshofer
-# $FreeBSD$
 
 PORTNAME=	mp3fs
 PORTVERSION=	0.91

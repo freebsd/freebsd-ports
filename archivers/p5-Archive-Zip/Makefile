@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Archive-Zip
 PORTVERSION=	1.68

@@ -1,5 +1,4 @@
 # Created by: Alex Samorukov <samm@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	stoken
 DISTVERSION=	0.92

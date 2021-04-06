@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	IO-Handle-Util
 PORTVERSION=	0.02

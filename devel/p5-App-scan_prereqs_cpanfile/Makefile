@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	App-scan_prereqs_cpanfile
 PORTVERSION=	1.03

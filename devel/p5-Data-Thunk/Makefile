@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Thunk
 PORTVERSION=	0.07

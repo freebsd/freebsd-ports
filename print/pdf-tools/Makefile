@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pdf-tools
 DISTVERSIONPREFIX=	v

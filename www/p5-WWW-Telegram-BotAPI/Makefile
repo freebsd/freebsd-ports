@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	WWW-Telegram-BotAPI
 PORTVERSION=	0.10

@@ -1,5 +1,4 @@
 # Created by: Antti Kaipila <anttik@iki.fi>
-# $FreeBSD$
 
 PORTNAME=	cdplay
 PORTVERSION=	0.92

@@ -1,5 +1,4 @@
 # Created by: Masafumi Otsune <info@otsune.com>
-# $FreeBSD$
 
 PORTNAME=	bsfilter
 PORTVERSION=	1.0.19

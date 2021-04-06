@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pymatgen
 DISTVERSION=	2022.0.5

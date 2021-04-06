@@ -1,5 +1,4 @@
 # Created by: torstenb@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	joe
 PORTVERSION=	4.6

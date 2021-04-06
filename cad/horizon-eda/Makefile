@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	horizon-eda
 DISTVERSIONPREFIX=	v

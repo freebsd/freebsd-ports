@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tls-check
 PORTVERSION=	1.0.2

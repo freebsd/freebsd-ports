@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wfuzz
 DISTVERSION=	3.1.0

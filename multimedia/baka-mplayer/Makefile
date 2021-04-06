@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	baka-mplayer
 DISTVERSIONPREFIX=	v

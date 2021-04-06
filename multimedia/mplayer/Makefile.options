@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Non-helper handling of option variables and build environment.
 # Include after bsd.port.pre.mk
 #

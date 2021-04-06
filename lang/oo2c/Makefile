@@ -1,5 +1,4 @@
 # Created by: Oliver Breuninger <ob@seicom.NET>
-# $FreeBSD$
 
 PORTNAME=	oo2c
 PORTVERSION=	2.1.11

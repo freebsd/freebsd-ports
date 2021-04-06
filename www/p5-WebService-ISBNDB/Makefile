@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	WebService-ISBNDB
 PORTVERSION=	0.34

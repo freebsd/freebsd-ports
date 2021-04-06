@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ros-catkin
 DISTVERSION=	0.8.9

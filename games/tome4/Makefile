@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tome4
 DISTVERSION?=	1.7.2

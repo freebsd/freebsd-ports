@@ -1,5 +1,4 @@
 # Created by: Cy Schubert <Cy.Schubert@uumail.gov.bc.ca>
-# $FreeBSD$
 
 PORTNAME=	tripwire
 PORTVERSION=	2.4.3.7

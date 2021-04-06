@@ -1,5 +1,4 @@
 # Created by: jfieber
-# $FreeBSD$
 
 PORTNAME=	iso12083
 PORTVERSION=	1993

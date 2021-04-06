@@ -1,5 +1,4 @@
 # Created by: Brian Buchanan <brian@CSUA.Berkeley.EDU>
-# $FreeBSD$
 
 PORTNAME=	flightgear
 PORTVERSION=	2020.3.8

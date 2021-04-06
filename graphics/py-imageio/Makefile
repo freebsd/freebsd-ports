@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	imageio
 PORTVERSION=	2.9.0

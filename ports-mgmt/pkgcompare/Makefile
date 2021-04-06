@@ -1,5 +1,4 @@
 # Created by: "Waitman Gobble" <uzimac@da3m0n8t3r.com>
-# $FreeBSD$
 
 PORTNAME=	pkgcompare
 PORTVERSION=	1.1

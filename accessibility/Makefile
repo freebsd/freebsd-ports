@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Ports to help disabled users
 

@@ -1,5 +1,4 @@
 # Created by: Henrik Brix Andersen <brix@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	usbutils
 PORTVERSION=	0.91

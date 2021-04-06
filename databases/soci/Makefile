@@ -1,5 +1,4 @@
 # Created by: Julien Laffaye <kimelto@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	soci
 DISTVERSION=	4.0.1

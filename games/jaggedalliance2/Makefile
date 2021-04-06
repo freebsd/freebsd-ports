@@ -1,5 +1,4 @@
 # Created by: Christoph Mallon <christoph.mallon@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	ja2
 DISTVERSIONPREFIX=	v

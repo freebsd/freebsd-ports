@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uitools
 DISTVERSION=	${QT5_VERSION}

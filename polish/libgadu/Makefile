@@ -1,5 +1,4 @@
 # Created by: Aleksander Fafula <alex@BSDGuru.org>
-# $FreeBSD$
 
 PORTNAME=	libgadu
 PORTVERSION=	1.12.2

@@ -1,5 +1,4 @@
 # Created by: Lars Eggert <lars.eggert@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	Net-XMPP
 PORTVERSION=	1.05

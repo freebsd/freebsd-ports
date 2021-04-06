@@ -1,5 +1,4 @@
 # Created by: Anton Yudin <toha@toha.org.ua>
-# $FreeBSD$
 
 PORTNAME=	commons-dbcp
 PORTVERSION=	2.8.0

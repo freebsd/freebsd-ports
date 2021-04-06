@@ -1,5 +1,4 @@
 # Created by: Matthew Hunt <mph@pobox.com>
-# $FreeBSD$
 
 PORTNAME=	Term-ReadLine-Gnu
 PORTVERSION=	1.37

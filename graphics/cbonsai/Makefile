@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cbonsai
 DISTVERSION=	1.0.4

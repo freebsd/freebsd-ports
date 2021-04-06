@@ -1,5 +1,4 @@
 # Created by: Henry Hu <henry.hu.sh@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	tg_owt
 PORTVERSION=	0.0.20210207

@@ -1,5 +1,4 @@
 # Created by: Talal Al-Dik <tad@vif.com>
-# $FreeBSD$
 
 PORTNAME=	archmbox
 PORTVERSION=	4.10.0

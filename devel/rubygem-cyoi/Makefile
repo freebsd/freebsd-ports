@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cyoi
 PORTVERSION=	0.11.3

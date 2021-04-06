@@ -1,5 +1,4 @@
 # Created by: Lars Engels <lme@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	qrcodegen
 PORTVERSION=	1.14.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aqbanking
 PORTVERSION=	6.2.9

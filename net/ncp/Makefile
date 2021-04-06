@@ -1,5 +1,4 @@
 # Created by: Matthias Teege <matthias@mteege.de>
-# $FreeBSD$
 
 PORTNAME=	ncp
 PORTVERSION=	1.2.4

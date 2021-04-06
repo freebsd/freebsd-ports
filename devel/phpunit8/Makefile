@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phpunit
 DISTVERSION=	8.5.2

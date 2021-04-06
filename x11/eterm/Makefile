@@ -1,5 +1,4 @@
 # Created by: Murray Stokely <murray@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	eterm
 PORTVERSION=	0.9.6

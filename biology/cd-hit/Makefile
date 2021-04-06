@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		cd-hit
 DISTVERSIONPREFIX=	V

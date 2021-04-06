@@ -1,5 +1,4 @@
 # Created by: Stefan Esser <se@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	open-adventure
 PORTVERSION=	1.9

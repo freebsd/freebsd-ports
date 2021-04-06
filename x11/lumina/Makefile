@@ -1,5 +1,4 @@
 # Created by: Ken Moore <ken@pcbsd.org>
-# $FreeBSD$
 
 PORTNAME=	lumina
 PORTVERSION=	1.6.0

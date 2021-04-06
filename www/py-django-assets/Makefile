@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-assets
 PORTVERSION=	2.0

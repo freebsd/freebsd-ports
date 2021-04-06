@@ -1,5 +1,4 @@
 # Created by: Emmanuel Vadot <manu@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	u-boot-tools
 DISTVERSION=	2020.07

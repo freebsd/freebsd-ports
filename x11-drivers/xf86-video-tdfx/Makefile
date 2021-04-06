@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xf86-video-tdfx
 PORTVERSION=	1.5.0

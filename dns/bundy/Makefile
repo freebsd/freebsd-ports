@@ -1,5 +1,4 @@
 # Created by: Jeremy C. Reed
-# $FreeBSD$
 
 PORTNAME=	bundy
 PORTVERSION=	0.20170618

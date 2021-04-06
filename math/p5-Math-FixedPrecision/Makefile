@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Math-FixedPrecision
 PORTVERSION=	0.21

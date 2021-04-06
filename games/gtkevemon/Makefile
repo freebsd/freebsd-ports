@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gtkevemon
 PORTVERSION=	1.10.2016.02.17

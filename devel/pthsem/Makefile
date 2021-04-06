@@ -1,5 +1,4 @@
 # Created by: Björn König <bkoenig@alpha-tierchen.de>
-# $FreeBSD$
 
 PORTNAME=	pthsem
 PORTVERSION=	2.0.8

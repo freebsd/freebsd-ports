@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTVERSION=	8.4.0
 PKGNAMEPREFIX=	arm-none-eabi-

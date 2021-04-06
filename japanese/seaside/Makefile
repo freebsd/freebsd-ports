@@ -1,5 +1,4 @@
 # Created by: mutoh@openedu.org
-# $FreeBSD$
 
 PORTNAME=	seaside
 DISTVERSION=	080908-sq39

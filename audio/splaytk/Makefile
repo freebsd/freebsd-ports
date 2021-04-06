@@ -1,5 +1,4 @@
 # Created by: Brett Taylor <brett@peloton.physics.montana.edu>
-# $FreeBSD$
 
 PORTNAME=	splaytk
 PORTVERSION=	2.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Products.ExternalEditor
 PORTVERSION=	1.1.0

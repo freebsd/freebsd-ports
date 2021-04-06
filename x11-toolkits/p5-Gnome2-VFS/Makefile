@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Gnome2-VFS
 PORTVERSION=	1.084

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libdrm
 PORTVERSION=	2.4.97

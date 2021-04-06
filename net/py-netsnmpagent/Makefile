@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	netsnmpagent
 PORTVERSION=	0.6.0

@@ -1,5 +1,4 @@
 # Created by: Pierre-Emmanuel Andre <pea@raveland.org>
-# $FreeBSD$
 
 PORTNAME=	pgfouine
 PORTVERSION=	1.2

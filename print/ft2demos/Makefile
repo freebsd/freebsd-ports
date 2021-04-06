@@ -1,5 +1,4 @@
 # Created by: KANOU Hiroki <kanou@khdd.net>
-# $FreeBSD$
 
 PORTNAME=	ft2demos
 PORTVERSION=	2.10.4

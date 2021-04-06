@@ -1,5 +1,4 @@
 # Created by: Satoshi Asami <asami@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	yeahconsole
 PORTVERSION=	0.3.4

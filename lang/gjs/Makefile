@@ -1,5 +1,4 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gjs
 PORTVERSION=	1.66.0

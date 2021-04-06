@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webvfx
 DISTVERSION=	0.4.4-20160823

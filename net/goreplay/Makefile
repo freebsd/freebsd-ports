@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	goreplay
 PORTVERSION=	1.2.0

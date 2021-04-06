@@ -1,5 +1,4 @@
 # Created by: Shen Chuan-Hsing
-# $FreeBSD$
 
 PORTNAME=	qe
 PORTVERSION=	0.1.1

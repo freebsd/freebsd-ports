@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wayland-protocols
 PORTVERSION=	1.20

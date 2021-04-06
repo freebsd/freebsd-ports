@@ -1,5 +1,4 @@
 # Created by: Volker Stolz <vs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ncc
 PORTVERSION=	2.8

@@ -1,5 +1,4 @@
 # Created by: giffunip
-# $FreeBSD$
 #    $MCom: ports/devel/lasi/Makefile,v 1.1 2006/10/04 20:25:40 ahze Exp $
 
 PORTNAME=	lasi

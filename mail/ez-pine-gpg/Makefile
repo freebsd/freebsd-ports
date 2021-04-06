@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	ez-pine-gpg
 DISTVERSION=	0.4h

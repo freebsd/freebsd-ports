@@ -1,5 +1,4 @@
 # Created by: Renaud Chaput <renchap@cocoa-x.com>
-# $FreeBSD$
 
 PORTNAME=	chef-zero
 PORTVERSION=	14.0.17

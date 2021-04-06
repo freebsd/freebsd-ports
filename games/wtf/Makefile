@@ -1,5 +1,4 @@
 # Created by: Maxime Henrion <mux@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	wtf
 PORTVERSION=	20191201

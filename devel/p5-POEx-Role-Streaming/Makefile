@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POEx-Role-Streaming
 PORTVERSION=	1.102610

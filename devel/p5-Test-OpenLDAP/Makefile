@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-OpenLDAP
 PORTVERSION=	0.05

@@ -1,5 +1,4 @@
 # Created by: William Ward <William.Ward@ericsson.com>
-# $FreeBSD$
 
 PORTNAME=	nylon
 PORTVERSION=	1.21

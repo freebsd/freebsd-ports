@@ -1,5 +1,4 @@
 # Created by: Charlie Root <se@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pwned-check
 PORTVERSION=	2.2

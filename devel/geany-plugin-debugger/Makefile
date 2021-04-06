@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-plugin-debugger
 PORTVERSION=	${GEANY_VER}

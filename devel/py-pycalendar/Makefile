@@ -1,5 +1,4 @@
 # Created by: Roland van Laar <roland@micite.net>
-# $FreeBSD$
 
 PORTNAME=	pycalendar
 PORTVERSION=	2.0

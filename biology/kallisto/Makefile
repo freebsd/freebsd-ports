@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		kallisto
 DISTVERSIONPREFIX=	v

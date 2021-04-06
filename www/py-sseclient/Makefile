@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sseclient
 DISTVERSION=	0.0.27

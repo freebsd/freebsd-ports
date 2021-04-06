@@ -1,5 +1,4 @@
 # Created by: tmartin@andrew.cmu.edu
-# $FreeBSD$
 
 PORTNAME=	senken
 PORTVERSION=	0.3.0

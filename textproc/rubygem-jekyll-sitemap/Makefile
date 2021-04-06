@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jekyll-sitemap
 PORTVERSION=	1.4.0

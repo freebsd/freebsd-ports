@@ -1,5 +1,4 @@
 # Created by: Stefan Pauly <stefan@fh-mainz.de>
-# $FreeBSD$
 
 PORTNAME=	RRDTool-OO
 PORTVERSION=	0.36

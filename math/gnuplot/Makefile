@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gnuplot
 PORTVERSION=	5.4.1

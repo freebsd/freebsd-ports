@@ -1,5 +1,4 @@
 # Created by: Oliver Lehmann
-# $FreeBSD$
 
 PORTNAME=	libwfut
 PORTVERSION=	0.2.3

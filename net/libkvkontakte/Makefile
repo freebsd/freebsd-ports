@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libkvkontakte
 DISTVERSION=	5.0.0

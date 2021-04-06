@@ -1,5 +1,4 @@
 # Created by: Wojciech A. Koszek <wkoszek@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	fxload
 PORTVERSION=	20140224

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Authen-PluggableCaptcha
 PORTVERSION=	0.05

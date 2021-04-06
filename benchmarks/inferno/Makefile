@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	inferno
 DISTVERSIONPREFIX=	v

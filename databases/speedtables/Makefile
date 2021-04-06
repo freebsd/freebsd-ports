@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	speedtables
 PORTVERSION=	1.13.10

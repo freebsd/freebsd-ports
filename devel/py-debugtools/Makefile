@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	debugtools
 PORTVERSION=	0.2.0

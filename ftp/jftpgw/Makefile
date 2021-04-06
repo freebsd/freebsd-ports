@@ -1,5 +1,4 @@
 # Created by: se
-# $FreeBSD$
 
 PORTNAME=	jftpgw
 PORTVERSION=	0.13.5

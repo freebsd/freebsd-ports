@@ -1,5 +1,4 @@
 # Created by: Sylvio Cesar <sylvio@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libHX
 PORTVERSION=	3.25

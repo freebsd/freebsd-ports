@@ -1,5 +1,4 @@
 # Created by: liamfoy@sepulcrum.org
-# $FreeBSD$
 
 PORTNAME=	gnetcat
 PORTVERSION=	0.7.1

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Module-Pluggable-Fast
 PORTVERSION=	0.19

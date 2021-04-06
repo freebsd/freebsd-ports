@@ -1,5 +1,4 @@
 # Created by: marcus@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	hicolor-icon-theme
 PORTVERSION=	0.17

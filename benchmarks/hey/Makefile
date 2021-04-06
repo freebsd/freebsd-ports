@@ -1,5 +1,4 @@
 # Created by: Brad Davis <brd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hey
 PORTVERSION=	0.1.4

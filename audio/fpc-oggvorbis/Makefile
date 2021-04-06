@@ -1,5 +1,4 @@
 # Created by: Christopher Key <cjk32@cam.ac.uk>
-# $FreeBSD$
 
 CATEGORIES=	audio lang
 PKGNAMESUFFIX=	-oggvorbis

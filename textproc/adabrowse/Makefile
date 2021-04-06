@@ -1,5 +1,4 @@
 # Created by: John Marino <draco@marino.st>
-# $FreeBSD$
 
 PORTNAME=	adabrowse
 PORTVERSION=	4.0.3

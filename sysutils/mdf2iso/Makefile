@@ -1,5 +1,4 @@
 # Created by: Andrej Zverev <az@inec.ru>
-# $FreeBSD$
 
 PORTNAME=	mdf2iso
 PORTVERSION=	0.3.1

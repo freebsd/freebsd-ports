@@ -1,5 +1,4 @@
 # Created by: Martin Kammerhofer
-# $FreeBSD$
 
 PORTNAME=	perl2html
 PORTVERSION=	0.9.2

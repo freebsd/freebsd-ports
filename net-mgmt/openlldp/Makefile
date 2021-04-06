@@ -1,5 +1,4 @@
 # Created by: Roar Pettersen <roar@uib.no>
-# $FreeBSD$
 
 PORTNAME=	openlldp
 DISTVERSION=	0.4alpha

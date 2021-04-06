@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pam_ssh_agent_auth
 PORTVERSION=	0.10.4

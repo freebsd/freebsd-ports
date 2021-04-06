@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cquery
 PORTVERSION=	20180718

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	runt
 PORTVERSION=	0.9.0

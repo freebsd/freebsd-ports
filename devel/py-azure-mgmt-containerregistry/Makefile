@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-containerregistry
 DISTVERSION=	3.0.0rc17

@@ -1,5 +1,4 @@
 # Created by: Eric van Gyzen <vangyzen@stat.duke.edu>
-# $FreeBSD$
 
 PORTNAME=	libRmath
 DISTVERSION=	4.0.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-genesis_plus_gx
 PORTVERSION=	0.20210214

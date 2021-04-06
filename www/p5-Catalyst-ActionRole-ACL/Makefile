@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-ActionRole-ACL
 PORTVERSION=	0.07

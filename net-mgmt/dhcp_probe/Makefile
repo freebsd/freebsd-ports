@@ -1,5 +1,4 @@
 # Created by: Kevin Hung <khung@nullaxiom.com>
-# $FreeBSD$
 
 PORTNAME=	dhcp_probe
 PORTVERSION=	1.3.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	6cord
 DISTVERSION=	9.6

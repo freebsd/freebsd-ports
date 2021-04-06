@@ -1,5 +1,4 @@
 # Created by: Zach Thompson <hideo@lastamericanempire.com>
-# $FreeBSD$
 
 PORTNAME=	Data-TreeDumper-Renderer-DHTML
 PORTVERSION=	0.09

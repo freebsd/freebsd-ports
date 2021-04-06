@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	glow
 DISTVERSION=	g20200721

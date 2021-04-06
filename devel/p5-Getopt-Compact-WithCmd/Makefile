@@ -1,5 +1,4 @@
 # Created by: Kan Sasaki <sasaki@fcc.ad.jp>
-# $FreeBSD$
 
 PORTNAME=	Getopt-Compact-WithCmd
 PORTVERSION=	0.22

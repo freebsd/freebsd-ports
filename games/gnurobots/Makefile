@@ -1,5 +1,4 @@
 # Created by: Aaron VonderHaar <avh4@usa.net>
-# $FreeBSD$
 
 PORTNAME=	gnurobots
 PORTVERSION=	1.2.0

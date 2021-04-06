@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wayvnc
 DISTVERSIONPREFIX=	v

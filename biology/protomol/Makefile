@@ -1,5 +1,4 @@
 # Created by: Sangwoo Shim <sangwoos@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	protomol
 PORTVERSION=	2.0.3

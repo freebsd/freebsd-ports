@@ -1,5 +1,4 @@
 # Created by: Ted Faber <faber@isi.edu>
-# $FreeBSD$
 
 PORTNAME=	xfaces
 PORTVERSION=	3.3

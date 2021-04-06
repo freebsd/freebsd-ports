@@ -1,5 +1,4 @@
 # Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	stackexchange
 PORTVERSION=	2.2.7

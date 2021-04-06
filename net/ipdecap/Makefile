@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ipdecap
 PORTVERSION=	0.7.2

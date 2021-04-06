@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	encore
 PORTVERSION=	0.3.1

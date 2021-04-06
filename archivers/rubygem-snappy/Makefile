@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	snappy
 PORTVERSION=	0.0.17

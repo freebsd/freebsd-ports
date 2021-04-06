@@ -1,5 +1,4 @@
 # Created by: Neil Blakey-Milner <nbm@rucus.ru.ac.za>
-# $FreeBSD$
 
 PORTNAME=	ezmlm
 PORTVERSION=	0.53

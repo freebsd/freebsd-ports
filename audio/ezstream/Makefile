@@ -1,5 +1,4 @@
 # Created by: Frank Laszlo <laszlof@vonostingroup.com>
-# $FreeBSD$
 
 PORTNAME=	ezstream
 PORTVERSION=	0.5.6

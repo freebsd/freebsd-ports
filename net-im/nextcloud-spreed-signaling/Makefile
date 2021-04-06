@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nextcloud-spreed-signaling
 DISTVERSIONPREFIX=	v

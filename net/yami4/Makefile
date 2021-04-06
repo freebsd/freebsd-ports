@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yami4
 PORTVERSION=	1.11.0

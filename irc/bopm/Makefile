@@ -1,5 +1,4 @@
 # Created by: Evgueni V. Gavrilov <aquatique@rusunix.org>
-# $FreeBSD$
 
 PORTNAME=	bopm
 PORTVERSION=	3.1.3

@@ -1,5 +1,4 @@
 # Created by: Tobias Rehbein <tobias.rehbein@web.de>
-# $FreeBSD$
 
 PORTNAME=	MusicBrainz-DiscID
 PORTVERSION=	0.06

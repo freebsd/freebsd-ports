@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pprof
 DISTVERSION=	g20200905

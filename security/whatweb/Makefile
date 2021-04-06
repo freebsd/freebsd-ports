@@ -1,5 +1,4 @@
 # Created by: Niels Heinen
-# $FreeBSD$
 
 PORTNAME=	whatweb
 DISTVERSION=	0.4.8-${GH_TAGNAME}

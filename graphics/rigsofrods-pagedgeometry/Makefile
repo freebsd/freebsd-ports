@@ -1,5 +1,4 @@
 # Created by: Thibault Payet <monwarez@mailoo.org>
-# $FreeBSD$
 
 PORTNAME=	rigsofrods-pagedgeometry
 PORTVERSION=	1.2.0

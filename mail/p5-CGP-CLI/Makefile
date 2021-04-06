@@ -1,5 +1,4 @@
 # Created by: Alexander Kriventsov <avk@vl.ru>
-# $FreeBSD$
 
 PORTNAME=	CGP-CLI
 PORTVERSION=	2.7.5

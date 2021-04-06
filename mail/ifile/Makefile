@@ -1,5 +1,4 @@
 # Created by: David Bushong <david+ports@bushong.net>
-# $FreeBSD$
 
 PORTNAME=	ifile
 PORTVERSION=	1.3.8

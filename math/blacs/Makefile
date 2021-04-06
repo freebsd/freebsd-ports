@@ -1,5 +1,4 @@
 # Created by: NAKATA, Maho <maho@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	blacs
 PORTVERSION=	1.7

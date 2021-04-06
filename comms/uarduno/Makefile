@@ -1,5 +1,4 @@
 # Created by: 'Big Bad Bob' Frazier <bobf@mrp3.com>
-# $FreeBSD$
 
 PORTNAME=	uarduno
 PORTVERSION=	1.02

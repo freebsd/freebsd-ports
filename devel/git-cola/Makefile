@@ -1,5 +1,4 @@
 # Created by: Jonathan Anderson <jonathan@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=		git-cola
 DISTVERSIONPREFIX=	v

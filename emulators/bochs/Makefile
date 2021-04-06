@@ -1,5 +1,4 @@
 # Created by: alex
-# $FreeBSD$
 
 PORTNAME=	bochs
 PORTVERSION=	2.6.11

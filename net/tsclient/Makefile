@@ -1,5 +1,4 @@
 # Created by: Koop Mast <einekoai@chello.nl>
-# $FreeBSD$
 
 PORTNAME=	tsclient
 PORTVERSION=	0.150

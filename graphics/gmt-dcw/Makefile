@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dcw-gmt
 DISTVERSION=	1.1.4

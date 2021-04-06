@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	String-Trim
 PORTVERSION=	0.005

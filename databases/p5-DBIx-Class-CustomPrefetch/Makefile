@@ -1,5 +1,4 @@
 # Created by: Anes Mukhametov <anes@anes.su>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-CustomPrefetch
 PORTVERSION=	0.09

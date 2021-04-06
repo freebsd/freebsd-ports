@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <mitya@yandex-team.ru>
-# $FreeBSD$
 
 PORTNAME=	django-htmlmin
 PORTVERSION=	0.9.1

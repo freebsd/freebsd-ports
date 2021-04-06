@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	abGate
 DISTVERSIONPREFIX=	v

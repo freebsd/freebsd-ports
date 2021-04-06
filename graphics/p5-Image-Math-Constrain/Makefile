@@ -1,5 +1,4 @@
 # Created by: coryking
-# $FreeBSD$
 
 PORTNAME=	Image-Math-Constrain
 PORTVERSION=	1.02

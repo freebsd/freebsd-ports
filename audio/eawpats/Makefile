@@ -1,5 +1,4 @@
 # Created by: Jonathan Lennox <lennox@cs.columbia.edu>
-# $FreeBSD$
 
 PORTNAME=	eawpats
 PORTVERSION=	12

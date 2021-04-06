@@ -1,5 +1,4 @@
 # Created by: David Holm <david@realityrift.com>
-# $FreeBSD$
 
 PORTNAME=	adabooch
 PORTVERSION=	20160321

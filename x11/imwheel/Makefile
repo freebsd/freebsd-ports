@@ -1,5 +1,4 @@
 # Created by: jhb
-# $FreeBSD$
 
 PORTNAME=	imwheel
 DISTVERSION=	1.0.0pre12

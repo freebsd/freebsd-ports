@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdesdk-thumbnailers
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

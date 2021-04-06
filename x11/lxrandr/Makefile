@@ -1,5 +1,4 @@
 # Created by: Eric Turgeon <ericturgeon.bsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	lxrandr
 PORTVERSION=	0.3.1

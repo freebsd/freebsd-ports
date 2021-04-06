@@ -1,5 +1,4 @@
 # Created by: patrick
-# $FreeBSD$
 
 PORTNAME=	ample
 PORTVERSION=	0.5.7

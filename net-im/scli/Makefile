@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scli
 DISTVERSIONPREFIX=	v

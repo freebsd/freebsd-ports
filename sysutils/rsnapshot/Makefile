@@ -1,5 +1,4 @@
 # Created by: Ralf van Dooren <r.vdooren@snow.nl>
-# $FreeBSD$
 
 PORTNAME=	rsnapshot
 PORTVERSION=	1.4.3

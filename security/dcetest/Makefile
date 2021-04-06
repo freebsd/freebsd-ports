@@ -1,5 +1,4 @@
 # Created by: Yonatan <onatan@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	dcetest
 PORTVERSION=	1.2

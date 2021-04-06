@@ -1,5 +1,4 @@
 # Created by: Nik Clayton <nik@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	docbook
 PORTVERSION=	1.5

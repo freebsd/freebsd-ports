@@ -1,5 +1,4 @@
 # Created by: dcf@aracnet.com
-# $FreeBSD$
 
 PORTNAME=	IO-Tee
 PORTVERSION=	0.66

@@ -1,5 +1,4 @@
 # Created by: Steven Wallace <swallace@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xemeraldia
 PORTVERSION=	0.4.3

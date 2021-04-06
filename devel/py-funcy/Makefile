@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	funcy
 DISTVERSION=	1.15

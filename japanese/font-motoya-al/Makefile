@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	motoya-al
 PORTVERSION=	0.0.20100921

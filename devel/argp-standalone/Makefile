@@ -1,5 +1,4 @@
 # Created by: Sergey Matveychuk <sem@ciam.ru>
-# $FreeBSD$
 
 PORTNAME=	argp-standalone
 PORTVERSION=	1.3

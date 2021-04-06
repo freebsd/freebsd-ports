@@ -1,5 +1,4 @@
 # Created by: Philippe Casidy <pcasidy@casidy.com>
-# $FreeBSD$
 
 PORTNAME=	mtf
 PORTVERSION=	0.2.1

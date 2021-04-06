@@ -1,5 +1,4 @@
 # Created by: Alexander Novitsky <alecn2002@yandex.ru>
-# $FreeBSD$
 
 PORTNAME=	fox
 PORTVERSION=	1.6.57

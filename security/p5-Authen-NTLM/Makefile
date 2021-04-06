@@ -1,5 +1,4 @@
 # Created by: James Thomason <james@divide.org>
-# $FreeBSD$
 
 PORTNAME=	Authen-NTLM
 PORTVERSION=	1.09

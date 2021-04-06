@@ -1,5 +1,4 @@
 # Created by: Mikhail T. <michael@fun-box.ru>
-# $FreeBSD$
 
 PORTNAME=	DateTime-Event-Zodiac
 PORTVERSION=	1.03

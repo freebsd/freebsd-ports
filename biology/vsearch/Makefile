@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		vsearch
 DISTVERSIONPREFIX=	v

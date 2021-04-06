@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rumur
 DISTVERSIONPREFIX=	v

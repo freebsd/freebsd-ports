@@ -1,5 +1,4 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gnome-shell-extension-mediaplayer
 PORTVERSION=	4.0

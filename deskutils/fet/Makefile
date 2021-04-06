@@ -1,5 +1,4 @@
 # Created by: Leinier Cruz Salfran <salfrancl@yahoo.es>
-# $FreeBSD$
 
 PORTNAME=	fet
 DISTVERSION=	5.49.0

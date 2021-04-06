@@ -1,5 +1,4 @@
 # Created by: ismail.yenigul@endersys.com.tr
-# $FreeBSD$
 
 PORTNAME=	filetype
 PORTVERSION=	0.1.3

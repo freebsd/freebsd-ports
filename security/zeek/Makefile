@@ -1,5 +1,4 @@
 # Created by: David O'Brien <obrien@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	zeek
 PORTVERSION=	4.0.0

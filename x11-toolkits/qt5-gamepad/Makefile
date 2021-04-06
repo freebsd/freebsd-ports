@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gamepad
 DISTVERSION=	${QT5_VERSION}

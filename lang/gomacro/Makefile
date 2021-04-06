@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gomacro
 DISTVERSIONPREFIX=	v

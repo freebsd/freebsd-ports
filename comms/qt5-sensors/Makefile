@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sensors
 DISTVERSION=	${QT5_VERSION}

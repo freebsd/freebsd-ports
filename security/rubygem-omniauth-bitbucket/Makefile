@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omniauth-bitbucket
 PORTVERSION=	0.0.2

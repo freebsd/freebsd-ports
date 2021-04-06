@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	XML-Parser
 PORTVERSION=	2.44

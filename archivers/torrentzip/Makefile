@@ -1,5 +1,4 @@
 # Created by: swhetzel@gmail.com
-# $FreeBSD$
 
 PORTNAME=	torrentzip
 PORTVERSION=	0.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aiosqlite
 PORTVERSION=	0.15.0

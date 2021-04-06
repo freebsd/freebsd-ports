@@ -1,5 +1,4 @@
 # Created by: Adrian Chadd <adrian@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mkfwimage
 DISTVERSION=	r1

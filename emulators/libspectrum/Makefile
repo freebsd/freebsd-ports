@@ -1,5 +1,4 @@
 # Created by: Alexey V. Antipovsky <kemm@in-line.ru>
-# $FreeBSD$
 
 PORTNAME=	libspectrum
 PORTVERSION=	1.5.0

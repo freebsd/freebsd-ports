@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hkdf
 PORTVERSION=	0.0.3

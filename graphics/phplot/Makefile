@@ -1,5 +1,4 @@
 # Created by: yukinopo@livedoor.com
-# $FreeBSD$
 
 PORTNAME=	phplot
 PORTVERSION=	6.2.0

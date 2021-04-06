@@ -1,5 +1,4 @@
 # Created by: Dominic Marks <dominic.marks@btinternet.com>
-# $FreeBSD$
 
 PORTNAME=	honeyd
 PORTVERSION=	1.5c

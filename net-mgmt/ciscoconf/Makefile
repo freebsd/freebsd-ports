@@ -1,5 +1,4 @@
 # Created by: jabley@clear.co.nz
-# $FreeBSD$
 
 PORTNAME=	ciscoconf
 PORTVERSION=	1.1

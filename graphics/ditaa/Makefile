@@ -1,5 +1,4 @@
 # Created by: Aldis Berjoza <aldis@bsdroot.lv>
-# $FreeBSD$
 
 PORTNAME=	ditaa
 DISTVERSION=	0_9

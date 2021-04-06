@@ -1,5 +1,4 @@
 # Created by: Mons Anderson <mons@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	constant-def
 PORTVERSION=	0.01

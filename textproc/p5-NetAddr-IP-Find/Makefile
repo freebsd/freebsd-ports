@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <kappa@FreeBSD.org.ua>
-# $FreeBSD$
 
 PORTNAME=	NetAddr-IP-Find
 PORTVERSION=	0.03

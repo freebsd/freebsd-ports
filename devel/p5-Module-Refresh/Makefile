@@ -1,5 +1,4 @@
 # Created by: aturetta@commit.it
-# $FreeBSD$
 
 PORTNAME=	Module-Refresh
 PORTVERSION=	0.17

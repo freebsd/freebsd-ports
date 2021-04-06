@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phosh
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iprange
 PORTVERSION=	1.0.4

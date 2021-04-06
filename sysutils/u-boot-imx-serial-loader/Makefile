@@ -1,5 +1,4 @@
 # Created by: Ian Lepore <ian@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	u-boot-imx-serial-loader
 PORTVERSION=	2017.01

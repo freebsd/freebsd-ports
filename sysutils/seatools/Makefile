@@ -1,5 +1,4 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=		seatools
 PORTVERSION=		2.54

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	picosha2
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: D'Arcy J.M. Cain <darcy@druid.net>
-# $FreeBSD$
 
 PORTNAME=	generate
 PORTVERSION=	2.8

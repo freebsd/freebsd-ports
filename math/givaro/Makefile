@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	givaro
 PORTVERSION=	4.1.1

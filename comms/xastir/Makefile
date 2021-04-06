@@ -1,5 +1,4 @@
 # Created by: Carl Makin <carl@stagecraft.cx>
-# $FreeBSD$
 
 PORTNAME=	xastir
 DISTVERSIONPREFIX=	Release-

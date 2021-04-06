@@ -1,5 +1,4 @@
 # Created by: Mauricio Herrera Cuadra <mauricio@arareko.net>
-# $FreeBSD$
 
 PORTNAME=	Devel-TraceUse
 PORTVERSION=	2.096

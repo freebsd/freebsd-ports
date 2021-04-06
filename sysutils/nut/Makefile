@@ -1,5 +1,4 @@
 # Created by: Boris Popov <bp@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nut
 PORTVERSION=	2.7.4

@@ -1,5 +1,4 @@
 # Created by: Andrey <gugu@zoo.rambler.ru>
-# $FreeBSD$
 
 PORTNAME=	Math-BigInt-Pari
 PORTVERSION=	1.3006

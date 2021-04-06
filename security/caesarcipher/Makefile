@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	caesarcipher
 PORTVERSION=	1.1

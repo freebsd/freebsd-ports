@@ -1,5 +1,4 @@
 # Created by: KIKUCHI Koichiro <koichiro@rworks.jp>
-# $FreeBSD$
 
 PORTNAME=	wmi
 PORTVERSION=	1.3.16

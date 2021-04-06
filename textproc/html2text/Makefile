@@ -1,5 +1,4 @@
 # Created by: Simon 'corecode' Schubert <corecode@corecode.ath.cx>
-# $FreeBSD$
 
 PORTNAME=	html2text
 PORTVERSION=	1.3.2a

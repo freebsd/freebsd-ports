@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	conan
 DISTVERSION=	1.35.0

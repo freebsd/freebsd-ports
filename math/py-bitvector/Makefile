@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bitvector
 PORTVERSION=	3.4.9

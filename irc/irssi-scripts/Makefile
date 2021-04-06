@@ -1,5 +1,4 @@
 # Created by: Alexey Mikhailov <karma@ez.pereslavl.ru>
-# $FreeBSD$
 
 PORTNAME=	irssi-scripts
 PORTVERSION=	20181120

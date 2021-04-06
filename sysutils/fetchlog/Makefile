@@ -1,5 +1,4 @@
 # Created by: Alexander Haderer <alexander.haderer@loescap.de>
-# $FreeBSD$
 
 PORTNAME=	fetchlog
 PORTVERSION=	1.4

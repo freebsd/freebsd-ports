@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	odoo
 PORTVERSION=	13.0

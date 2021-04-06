@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sec
 DISTVERSION=	2.7.12

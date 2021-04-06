@@ -1,5 +1,4 @@
 # Created by: Miguel Mendez <flynn@energyhq.homeip.net>
-# $FreeBSD$
 
 PORTNAME=	hercules
 PORTVERSION=	3.13

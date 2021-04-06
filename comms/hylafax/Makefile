@@ -1,5 +1,4 @@
 # Created by: Julian Stacey <jhs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hylafax
 PORTVERSION=	6.0.7

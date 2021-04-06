@@ -1,5 +1,4 @@
 # Created by: anarcat@anarcat.ath.cx
-# $FreeBSD$
 
 PORTNAME=	ledgersmb
 PORTVERSION=	1.2.26

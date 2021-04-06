@@ -1,5 +1,4 @@
 # Created by: Scot Hetzel <swhetzel@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	b43-fwcutter
 PORTVERSION=	019

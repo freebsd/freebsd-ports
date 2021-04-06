@@ -1,5 +1,4 @@
 # Created by: Xin LI <delphij@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sdparm
 PORTVERSION=	1.11

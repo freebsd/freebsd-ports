@@ -1,5 +1,4 @@
 # Created by: nivit@email.it
-# $FreeBSD$
 
 PORTNAME=	slimeforest
 PORTVERSION=	158

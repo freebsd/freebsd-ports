@@ -1,5 +1,4 @@
 # Created by: Dominic Mitchell
-# $FreeBSD$
 
 PORTNAME=	slime
 DISTVERSIONPREFIX=	v

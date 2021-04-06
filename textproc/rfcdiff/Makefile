@@ -1,5 +1,4 @@
 # Created by: lars.eggert@gmx.net
-# $FreeBSD$
 
 PORTNAME=	rfcdiff
 PORTVERSION=	1.33

@@ -1,5 +1,4 @@
 # Created by: Thibault Payet <monwarez@mailoo.org>
-# $FreeBSD$
 
 PORTNAME=	socketw
 PORTVERSION=	3.10.26.20180918

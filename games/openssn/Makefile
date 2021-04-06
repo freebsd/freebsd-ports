@@ -1,5 +1,4 @@
 # Created by: Jesse Smith <jessefrgsmith@yahoo.ca>
-# $FreeBSD$
 
 PORTNAME=	openssn
 PORTVERSION=	1.4

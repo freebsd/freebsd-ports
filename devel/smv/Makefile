@@ -1,5 +1,4 @@
 # Created by: Marc E.E. van Woerkom <marc.vanwoerkom@fernuni-hagen.de>
-# $FreeBSD$
 
 PORTNAME=	smv
 PORTVERSION=	2.5.4.3

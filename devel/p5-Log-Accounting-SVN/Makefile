@@ -1,5 +1,4 @@
 # Created by: Yuan-Chung Hsiao & <ychsiao@ychsiao.org>
-# $FreeBSD$
 
 PORTNAME=	Log-Accounting-SVN
 PORTVERSION=	0.01

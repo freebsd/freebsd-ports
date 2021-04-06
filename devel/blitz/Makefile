@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	blitz
 DISTVERSION=	1.0.2

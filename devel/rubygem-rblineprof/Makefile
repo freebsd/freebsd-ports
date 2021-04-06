@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rblineprof
 PORTVERSION=	0.3.7

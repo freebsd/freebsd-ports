@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	passivedns
 DISTVERSION=	1.2.1-10

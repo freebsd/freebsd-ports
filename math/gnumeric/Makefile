@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <Nakai@technologist.com>
-# $FreeBSD$
 
 PORTNAME=	gnumeric
 PORTVERSION=	1.12.48

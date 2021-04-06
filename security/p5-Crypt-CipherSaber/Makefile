@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Crypt-CipherSaber
 PORTVERSION=	1.01

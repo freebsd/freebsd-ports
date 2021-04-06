@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	laternamagica
 PORTVERSION=	0.5

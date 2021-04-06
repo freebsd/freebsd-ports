@@ -1,5 +1,4 @@
 # Created by: dbader@eece.unm.edu
-# $FreeBSD$
 
 PORTNAME=	bibview
 PORTVERSION=	2.2

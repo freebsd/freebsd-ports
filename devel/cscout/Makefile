@@ -1,5 +1,4 @@
 # Created by: netchild@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	cscout
 PORTVERSION=	3.01

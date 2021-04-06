@@ -1,5 +1,4 @@
 # Created by: Denny Lin <dennylin93@hs.ntnu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	WWW-GitHub-Gist
 PORTVERSION=	0.17

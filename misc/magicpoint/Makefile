@@ -1,5 +1,4 @@
 # Created by: itojun@itojun.org
-# $FreeBSD$
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.13a

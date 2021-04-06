@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bitmark
 DISTVERSIONPREFIX=	v

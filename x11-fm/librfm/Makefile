@@ -1,5 +1,4 @@
 # Created by: Rodrigo Osorio <rodrigo@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	librfm
 PORTVERSION=	5.3.16.4

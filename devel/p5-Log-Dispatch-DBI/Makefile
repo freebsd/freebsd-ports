@@ -1,5 +1,4 @@
 # Created by: Ralf Gebhart <gebhart@secnetix.de>
-# $FreeBSD$
 
 PORTNAME=	Log-Dispatch-DBI
 PORTVERSION=	0.02

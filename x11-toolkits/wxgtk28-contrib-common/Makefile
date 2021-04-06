@@ -1,5 +1,4 @@
 # Created by: fjoe@FreeBSD.org
-# $FreeBSD$
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWidgets GUI toolkit contributed libraries (common files)

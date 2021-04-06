@@ -1,5 +1,4 @@
 # Created by: Patrick Li <pat@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	wmsolar
 PORTVERSION=	1.1

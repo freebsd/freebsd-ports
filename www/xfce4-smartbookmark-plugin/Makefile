@@ -1,5 +1,4 @@
 # Created by: Martin Wilke (miwi@FreeBSD.org)
-# $FreeBSD$
 
 PORTNAME=	xfce4-smartbookmark-plugin
 PORTVERSION=	0.5.2

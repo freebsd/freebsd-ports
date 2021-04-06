@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cannonball
 DISTVERSION=	0.32

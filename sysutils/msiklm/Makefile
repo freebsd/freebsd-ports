@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	msiklm
 DISTVERSION=	g20200426

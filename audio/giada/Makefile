@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	giada
 DISTVERSIONPREFIX=	v

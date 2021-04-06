@@ -1,5 +1,4 @@
 # Created by: bremner@unb.ca
-# $FreeBSD$
 
 PORTNAME=	nauty
 PORTVERSION=	27r1

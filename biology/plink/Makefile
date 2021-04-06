@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		plink
 DISTVERSIONPREFIX=	v

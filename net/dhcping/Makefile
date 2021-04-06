@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis (edwin@mavetju.org)
-# $FreeBSD$
 
 PORTNAME=	dhcping
 PORTVERSION=	1.2

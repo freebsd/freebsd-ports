@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 MASTERDIR=     ${.CURDIR}/../u-boot-master
 

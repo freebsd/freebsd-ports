@@ -1,5 +1,4 @@
 # Created by: Anes Mukhametov <anes@anes.su>
-# $FreeBSD$
 
 PORTNAME=	Archive-Any-Plugin-Rar
 PORTVERSION=	0.02

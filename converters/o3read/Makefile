@@ -1,5 +1,4 @@
 # Created by: samm
-# $FreeBSD$
 
 PORTNAME=	o3read
 PORTVERSION=	0.0.4

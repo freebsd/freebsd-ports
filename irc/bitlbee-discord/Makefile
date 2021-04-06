@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bitlbee-discord
 DISTVERSION=	0.4.2-11

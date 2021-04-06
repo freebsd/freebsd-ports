@@ -1,5 +1,4 @@
 # Created by: osa
-# $FreeBSD$
 
 PORTNAME=	Subtitles
 PORTVERSION=	1.04

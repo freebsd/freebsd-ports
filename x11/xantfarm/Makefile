@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	xantfarm
 PORTVERSION=	1.16

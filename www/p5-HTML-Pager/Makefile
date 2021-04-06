@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	HTML-Pager
 PORTVERSION=	0.03

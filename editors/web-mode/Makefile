@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	web-mode
 PORTVERSION=	15.1

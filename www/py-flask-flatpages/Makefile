@@ -1,5 +1,4 @@
 # Created by: Oleg Pudeyev <oleg@bsdpower.com>
-# $FreeBSD$
 
 PORTNAME=	Flask-FlatPages
 PORTVERSION=	0.6

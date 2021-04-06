@@ -1,5 +1,4 @@
 # Created by: swallace
-# $FreeBSD$
 
 PORTNAME=	xinvaders
 PORTVERSION=	2.1.1

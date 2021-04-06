@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	veles
 DISTVERSION=	2018.05.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xml
 CATEGORIES=	textproc devel python

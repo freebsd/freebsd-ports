@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libkeduvocdocument
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

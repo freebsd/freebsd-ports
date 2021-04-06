@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zip
 DISTVERSION=	2.1.1

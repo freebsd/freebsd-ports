@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nanogui
 DISTVERSION=	g20190922

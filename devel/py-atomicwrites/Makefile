@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	atomicwrites
 DISTVERSION=	1.4.0

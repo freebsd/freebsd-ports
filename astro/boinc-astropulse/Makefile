@@ -1,5 +1,4 @@
 # Created by: rene
-# $FreeBSD$
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	6.01

@@ -1,5 +1,4 @@
 # Created by: Alexander Logvinov <ports@logvinov,com>
-# $FreeBSD$
 
 PORTNAME=	jdbc-mysql
 PORTVERSION=	5.1.44

@@ -1,5 +1,4 @@
 # Created by: Jason Heiss <jheiss@aput.biz>
-# $FreeBSD$
 
 PORTNAME=	File-Cat
 PORTVERSION=	1.2

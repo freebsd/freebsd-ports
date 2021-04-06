@@ -1,5 +1,4 @@
 # Created by: snowchyld
-# $FreeBSD$
 
 PORTNAME=	Mail-Alias
 PORTVERSION=	1.12

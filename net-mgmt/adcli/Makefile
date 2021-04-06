@@ -1,5 +1,4 @@
 # Created by: Mikhail T. <mi@aldan.algebra.com>
-# $FreeBSD$
 
 PORTNAME=	adcli
 PORTVERSION=	0.8.2

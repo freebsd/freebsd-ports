@@ -1,5 +1,4 @@
 # Created by: johans
-# $FreeBSD$
 
 PORTNAME=	paps
 PORTVERSION=	0.7.1

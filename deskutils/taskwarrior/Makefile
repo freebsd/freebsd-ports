@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	taskwarrior
 PORTVERSION=	2.5.3

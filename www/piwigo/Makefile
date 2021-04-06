@@ -1,5 +1,4 @@
 # Created by: Goran Lowkrantz <glz@hidden-powers.com>
-# $FreeBSD$
 
 PORTNAME=	piwigo
 DISTVERSION=	11.3.0

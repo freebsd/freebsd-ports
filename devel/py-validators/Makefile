@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	validators
 DISTVERSION=	0.18.2

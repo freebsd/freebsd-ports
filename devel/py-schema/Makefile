@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	schema
 DISTVERSION=	0.7.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	meek
 DISTVERSION=	0.35.0

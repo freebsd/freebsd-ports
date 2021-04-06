@@ -1,5 +1,4 @@
 # Created by: Frank Fenor <frank@fenor.de>
-# $FreeBSD$
 
 PORTNAME=	tcludp
 PORTVERSION=	1.0.11

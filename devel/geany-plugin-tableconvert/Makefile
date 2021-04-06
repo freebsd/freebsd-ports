@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-plugin-tableconvert
 PORTVERSION=	${GEANY_VER}

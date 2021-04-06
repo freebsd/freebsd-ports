@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Crypt-Cracklib
 PORTVERSION=	1.7

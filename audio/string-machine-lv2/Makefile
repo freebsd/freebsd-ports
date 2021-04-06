@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	string-machine
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Toshihiko SHIMOKAWA <toshi@tea.forus.or.jp> & ELISA Font Project
-# $FreeBSD$
 
 PORTNAME=	elisa8
 PORTVERSION=	1.0

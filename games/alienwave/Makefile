@@ -1,5 +1,4 @@
 # Created by: Travis Poppe <tlp@liquidx.org>
-# $FreeBSD$
 
 PORTNAME=	alienwave
 PORTVERSION=	0.4.0

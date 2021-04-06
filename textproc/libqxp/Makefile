@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libqxp
 PORTVERSION=	0.0.0

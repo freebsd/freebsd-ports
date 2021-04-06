@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rex-encoder
 PORTVERSION=	0.1.5

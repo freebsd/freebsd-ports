@@ -1,5 +1,4 @@
 # Created by: Derik van Zuetphen <dz@426.ch>
-# $FreeBSD$
 
 PORTNAME=	anacron
 PORTVERSION=	2.3

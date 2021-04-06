@@ -1,5 +1,4 @@
 # Created by: dd
-# $FreeBSD$
 
 PORTNAME=	syck
 PORTVERSION=	0.70

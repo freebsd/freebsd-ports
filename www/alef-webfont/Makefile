@@ -1,5 +1,4 @@
 # Created by: cpm
-# $FreeBSD$
 
 PORTNAME=	alef
 PORTVERSION=	1.0

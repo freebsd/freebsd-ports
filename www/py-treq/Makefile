@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	treq
 PORTVERSION=	17.8.0

@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang <perky@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	eyed3
 PORTVERSION=	0.9.4

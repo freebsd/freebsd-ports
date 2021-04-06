@@ -1,5 +1,4 @@
 # Created by: Dryice Liu <dryice@dryice.name>
-# $FreeBSD$
 
 PORTNAME=	nose
 PORTVERSION=	1.3.7

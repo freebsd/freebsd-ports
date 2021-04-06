@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	inflex
 PORTVERSION=	1.4.1

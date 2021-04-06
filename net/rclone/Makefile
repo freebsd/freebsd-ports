@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rclone
 DISTVERSIONPREFIX=	v

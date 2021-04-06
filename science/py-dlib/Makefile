@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dlib
 DISTVERSION=	19.21

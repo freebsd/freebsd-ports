@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-Frame-Simple
 PORTVERSION=	1.09

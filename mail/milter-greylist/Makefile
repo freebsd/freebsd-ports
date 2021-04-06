@@ -1,5 +1,4 @@
 # Created by: Cyril Guibourg
-# $FreeBSD$
 
 PORTNAME=	milter-greylist
 PORTVERSION=	4.6.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	purple-slack
 PORTVERSION=	20210301

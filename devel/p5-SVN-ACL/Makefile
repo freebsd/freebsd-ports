@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	SVN-ACL
 PORTVERSION=	0.02

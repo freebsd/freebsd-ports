@@ -1,5 +1,4 @@
 # Created by: Cyrille Lefevre <clefevre@citeweb.net>
-# $FreeBSD$
 
 PORTNAME=	gforth
 PORTVERSION=	0.7.3

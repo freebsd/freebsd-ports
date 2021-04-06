@@ -1,5 +1,4 @@
 # Created by: giffunip@asme.org
-# $FreeBSD$
 
 PORTNAME=	lzo2
 PORTVERSION=	2.10

@@ -1,5 +1,4 @@
 # Created by: Rick Elrod <codeblock@eighthbit.net>
-# $FreeBSD$
 
 PORTNAME=	imagesize
 PORTVERSION=	0.1.1

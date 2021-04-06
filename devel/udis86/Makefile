@@ -1,5 +1,4 @@
 # Created by: Lutz Boehne <lboehne@damogran.de>
-# $FreeBSD$
 
 PORTNAME=	udis86
 PORTVERSION=	1.7.2

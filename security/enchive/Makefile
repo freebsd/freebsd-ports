@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	enchive
 PORTVERSION=	3.5

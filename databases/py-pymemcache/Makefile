@@ -1,5 +1,4 @@
 # Created by: Alessando Sagratini <ale_sagra@hotmail.com>
-# $FreeBSD$
 
 PORTNAME=	pymemcache
 PORTVERSION=	3.4.1

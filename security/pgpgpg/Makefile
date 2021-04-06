@@ -1,5 +1,4 @@
 # Created by: Matt Behrens <matt@zigg.com>
-# $FreeBSD$
 
 PORTNAME=	pgpgpg
 PORTVERSION=	0.13

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	p910nd
 PORTVERSION=	0.97

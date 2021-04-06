@@ -1,5 +1,4 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
 #   $MCom: ports/graphics/svg2pdf/Makefile,v 1.2 2005/08/08 02:09:09 marcus Exp $
 
 PORTNAME=	svg2pdf

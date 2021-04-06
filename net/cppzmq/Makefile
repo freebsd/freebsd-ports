@@ -1,5 +1,4 @@
 # Created by: Vasil Dimov <vd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cppzmq
 PORTVERSION=	4.7.1

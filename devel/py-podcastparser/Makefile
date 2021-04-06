@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	podcastparser
 PORTVERSION=	0.6.6

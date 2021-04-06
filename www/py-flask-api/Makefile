@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flask-api
 PORTVERSION=	2.0

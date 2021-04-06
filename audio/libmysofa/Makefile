@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libmysofa
 PORTVERSION=	1.2

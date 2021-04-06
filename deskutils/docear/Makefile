@@ -1,5 +1,4 @@
 # Created by: Matthias Andree <mandree@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	docear
 PORTVERSION=	1.2.0

@@ -1,5 +1,4 @@
 # Created by: wolpert
-# $FreeBSD$
 
 PORTNAME=	rbl-milter
 PORTVERSION=	0.30

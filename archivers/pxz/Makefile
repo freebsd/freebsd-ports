@@ -1,5 +1,4 @@
 # Created by: mm
-# $FreeBSD$
 
 PORTNAME=	pxz
 PORTVERSION=	0.20141018

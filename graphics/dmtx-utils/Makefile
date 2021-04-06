@@ -1,5 +1,4 @@
 # Created by: johans
-# $FreeBSD$
 
 PORTNAME=	dmtx-utils
 DISTVERSIONPREFIX=	v

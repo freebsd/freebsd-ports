@@ -1,5 +1,4 @@
 # Created by: Andrew Turner <zombie@i4free.co.nz>
-# $FreeBSD$
 
 PORTNAME=	dwatch
 PORTVERSION=	0.1.1

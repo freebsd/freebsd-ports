@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kxmlrpcclient
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

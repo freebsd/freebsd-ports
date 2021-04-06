@@ -1,5 +1,4 @@
 # Created by: nox@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	linux_libusb
 PORTVERSION=	13.0r${FSVN_REV}

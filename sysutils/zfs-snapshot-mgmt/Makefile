@@ -1,5 +1,4 @@
 # Created by: Marcin Simonides <marcin@studio4plus.com>
-# $FreeBSD$
 
 PORTNAME=	zfs-snapshot-mgmt
 PORTVERSION=	20090201

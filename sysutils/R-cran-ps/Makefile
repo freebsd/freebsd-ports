@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ps
 DISTVERSION=	1.6.0

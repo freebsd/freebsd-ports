@@ -1,5 +1,4 @@
 # Created by: jesper
-# $FreeBSD$
 
 PORTNAME=	Crypt-DES_EDE3
 PORTVERSION=	0.01

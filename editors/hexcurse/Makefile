@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	hexcurse
 PORTVERSION=	1.60.0

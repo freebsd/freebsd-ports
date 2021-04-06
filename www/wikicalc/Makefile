@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wikicalc
 DISTVERSION=	1-0

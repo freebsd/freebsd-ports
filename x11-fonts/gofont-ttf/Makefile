@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gofont-ttf
 DISTVERSION=	g20180511

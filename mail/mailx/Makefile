@@ -1,5 +1,4 @@
 # Created by: Issei Suzuki <issei@jp.FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mailx
 PORTVERSION=	0.5

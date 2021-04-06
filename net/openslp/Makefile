@@ -1,5 +1,4 @@
 # Created by: Joe Clarke
-# $FreeBSD$
 
 PORTNAME=	openslp
 PORTVERSION=	2.0.0

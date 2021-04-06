@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kidentitymanagement
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

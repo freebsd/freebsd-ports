@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-dosbox
 PORTVERSION=	0.20201229

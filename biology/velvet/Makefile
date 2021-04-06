@@ -1,5 +1,4 @@
 # Created by: Motomichi Matsuzaki <mzaki@m.u-tokyo.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	velvet
 PORTVERSION=	1.2.10

@@ -1,5 +1,4 @@
 # Created by: Sergey V. Dyatko <sergey.dyatko@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	thunar-vcs-plugin
 PORTVERSION=	0.2.0

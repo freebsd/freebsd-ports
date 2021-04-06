@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cal-heatmap-rails
 PORTVERSION=	3.6.0

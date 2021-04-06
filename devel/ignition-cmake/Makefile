@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ignition-cmake
 DISTVERSION=	2.0.0

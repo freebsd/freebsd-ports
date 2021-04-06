@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Dancer
 PORTVERSION=	1.3513

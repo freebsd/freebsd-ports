@@ -1,5 +1,4 @@
 # Created by: Andrew McNaughton <andrew@scoop.co.nz>
-# $FreeBSD$
 
 PORTNAME=	MySQL-Diff
 PORTVERSION=	0.50

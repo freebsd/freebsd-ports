@@ -1,5 +1,4 @@
 # Created by: Thinker K.F. Li <thinker@eeebox.branda.to>
-# $FreeBSD$
 
 PORTNAME=	d-feet
 PORTVERSION=	0.3.15

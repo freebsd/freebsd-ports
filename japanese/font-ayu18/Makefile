@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ayu18
 PORTVERSION=	1.3.1.1

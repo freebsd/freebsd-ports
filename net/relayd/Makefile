@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	relayd
 PORTVERSION=	5.5.20140810

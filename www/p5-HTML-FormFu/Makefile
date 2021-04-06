@@ -1,5 +1,4 @@
 # Created by: Andrej Zverev <andrey.zverev@electro-com.ru>
-# $FreeBSD$
 
 PORTNAME=	HTML-FormFu
 PORTVERSION=	2.07

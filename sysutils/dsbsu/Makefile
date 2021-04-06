@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dsbsu
 PORTVERSION=	0.2

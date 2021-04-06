@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	poolboy
 PORTVERSION=	1.5.2

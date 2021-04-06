@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gem-compare
 PORTVERSION=	0.0.7

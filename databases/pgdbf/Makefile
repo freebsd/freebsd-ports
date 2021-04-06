@@ -1,5 +1,4 @@
 # Created by: kirk@daycos.com
-# $FreeBSD$
 
 PORTNAME=	pgdbf
 PORTVERSION=	0.6.2

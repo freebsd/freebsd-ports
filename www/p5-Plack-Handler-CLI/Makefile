@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Handler-CLI
 PORTVERSION=	0.05

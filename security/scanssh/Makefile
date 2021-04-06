@@ -1,5 +1,4 @@
 # Created by: kris@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	scanssh
 PORTVERSION=	2.1

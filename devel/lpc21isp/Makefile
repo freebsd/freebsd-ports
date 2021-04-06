@@ -1,5 +1,4 @@
 # Created by: Steve Franks <stevefranks@ieee.org>
-# $FreeBSD$
 
 PORTNAME=	lpc21isp
 PORTVERSION=	1.97

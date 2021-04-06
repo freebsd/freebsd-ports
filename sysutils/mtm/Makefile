@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mtm
 DISTVERSION=	1.2.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ftp
 PORTVERSION=	0.6

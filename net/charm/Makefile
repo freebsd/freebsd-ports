@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	charm
 DISTVERSION=	6.8.2

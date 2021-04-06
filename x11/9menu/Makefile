@@ -1,5 +1,4 @@
 # Created by: Eric L. Hernes <erich@rrnet.com>
-# $FreeBSD$
 
 PORTNAME=	9menu
 PORTVERSION=	1.10

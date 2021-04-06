@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DNS-ZoneParse
 PORTVERSION=	1.10

@@ -1,5 +1,4 @@
 # Created by: Sergei Vyshenski
-# $FreeBSD$
 
 PORTNAME=	Workflow
 PORTVERSION=	1.52

@@ -1,5 +1,4 @@
 # Created by: KalleDK <plexmaintainer@k-moeller.dk>
-# $FreeBSD$
 
 PORTVERSION=	1.22.1.4228
 DISTVERSIONSUFFIX=724c56e62

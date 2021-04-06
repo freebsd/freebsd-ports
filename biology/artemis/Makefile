@@ -1,5 +1,4 @@
 # Created by: camson@bilateral.com.au
-# $FreeBSD$
 
 PORTNAME=	artemis
 DISTVERSIONPREFIX=	v

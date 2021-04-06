@@ -1,5 +1,4 @@
 # Created by: Mark Reidel <ports@mark.reidle.info>
-# $FreeBSD$
 
 PORTNAME=	musicpc
 DISTVERSION=	0.33

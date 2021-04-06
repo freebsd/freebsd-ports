@@ -1,5 +1,4 @@
 # Created by: Alexander Leidinger <netchild@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cil
 PORTVERSION=	1.7.3

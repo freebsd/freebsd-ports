@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ylva
 DISTVERSIONPREFIX=	v

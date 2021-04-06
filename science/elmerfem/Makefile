@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni
-# $FreeBSD$
 
 PORTNAME=	elmerfem
 PORTVERSION=	8.4.20200708

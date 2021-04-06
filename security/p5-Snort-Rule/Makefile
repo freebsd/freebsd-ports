@@ -1,5 +1,4 @@
 # Created by: Paul Schmehl <pauls@utdallas.edu>
-# $FreeBSD$
 
 PORTNAME=	Snort-Rule
 PORTVERSION=	1.07

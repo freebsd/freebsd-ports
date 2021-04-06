@@ -1,5 +1,4 @@
 # Created by: mig
-# $FreeBSD$
 
 PORTNAME=	Config-Simple
 PORTVERSION=	4.59

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mp_doccer
 PORTVERSION=	1.2.2

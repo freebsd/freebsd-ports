@@ -1,5 +1,4 @@
 # Created by: Tuc <freebsd-ports@t-b-o-h.net>
-# $FreeBSD$
 
 PORTNAME=	Data-Validate-IP
 PORTVERSION=	0.27

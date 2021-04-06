@@ -1,5 +1,4 @@
 # Created by: Sergey Skvortsov <skv@protey.ru>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Captcha
 PORTVERSION=	0.04

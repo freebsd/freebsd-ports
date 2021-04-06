@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	erlfdb
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Paul Schmehl <pauls@utdallas.edu>
-# $FreeBSD$
 
 PORTNAME=	Net-Nessus-XMLRPC
 PORTVERSION=	0.30

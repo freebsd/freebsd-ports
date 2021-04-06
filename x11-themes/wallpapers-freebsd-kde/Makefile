@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wallpapers-freebsd-kde
 PORTVERSION=	1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	location
 DISTVERSION=	${QT5_VERSION}

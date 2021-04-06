@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cargo-c
 DISTVERSION=	0.8.0

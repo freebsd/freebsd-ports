@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	abipy
 DISTVERSION=	0.9.0

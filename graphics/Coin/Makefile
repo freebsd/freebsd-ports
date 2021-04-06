@@ -1,5 +1,4 @@
 # Created by: roland.jesse@gmx.net
-# $FreeBSD$
 
 PORTNAME=	Coin
 PORTVERSION=	4.0.0

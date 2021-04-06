@@ -1,5 +1,4 @@
 # Created by: simond@irrelevant.org
-# $FreeBSD$
 
 PORTNAME=	Module-Reload-Sel
 PORTVERSION=	1.02

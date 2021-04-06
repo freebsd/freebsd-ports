@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bzflag
 PORTVERSION=	2.4.22

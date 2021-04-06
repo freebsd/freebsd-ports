@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xmpp-client
 PORTVERSION=	20170324

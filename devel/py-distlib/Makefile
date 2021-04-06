@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	distlib
 DISTVERSION=	0.3.1

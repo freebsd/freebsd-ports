@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omniauth-cas
 PORTVERSION=	1.1.1

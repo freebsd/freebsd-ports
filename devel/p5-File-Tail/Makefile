@@ -1,5 +1,4 @@
 # Created by: Jeremy Shaffner <jeremy@external.org>
-# $FreeBSD$
 
 PORTNAME=	File-Tail
 PORTVERSION=	1.3

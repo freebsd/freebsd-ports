@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xmodem
 DISTVERSION=	0.4.5

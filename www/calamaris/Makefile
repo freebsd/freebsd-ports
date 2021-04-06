@@ -1,5 +1,4 @@
 # Created by: Dima Sivachenko <dima@Chg.RU>
-# $FreeBSD$
 
 PORTNAME=	calamaris
 PORTVERSION=	2.59

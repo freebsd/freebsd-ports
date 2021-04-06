@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	taiga
 PORTVERSION=	s20200907

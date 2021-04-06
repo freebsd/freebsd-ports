@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-solo
 DISTVERSION=	1.1.3-8

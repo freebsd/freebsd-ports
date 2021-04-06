@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	XML-AutoWriter
 PORTVERSION=	0.40

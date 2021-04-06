@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	FurlX-Coro
 PORTVERSION=	1.02

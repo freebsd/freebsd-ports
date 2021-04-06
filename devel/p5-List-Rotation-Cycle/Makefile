@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	List-Rotation-Cycle
 PORTVERSION=	1.009

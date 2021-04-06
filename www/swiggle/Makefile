@@ -1,5 +1,4 @@
 # Created by: Josef El-Rayes <j.el-rayes@daemon.li>
-# $FreeBSD$
 
 PORTNAME=	swiggle
 PORTVERSION=	0.4

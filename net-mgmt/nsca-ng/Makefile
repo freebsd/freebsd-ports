@@ -1,5 +1,4 @@
 # Created by: Alexander Sulfrian <alexander@sulfrian.net>
-# $FreeBSD$
 
 PORTNAME=	nsca-ng
 PORTVERSION=	1.6

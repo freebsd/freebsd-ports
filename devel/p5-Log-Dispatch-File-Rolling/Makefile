@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Log-Dispatch-File-Rolling
 PORTVERSION=	1.09

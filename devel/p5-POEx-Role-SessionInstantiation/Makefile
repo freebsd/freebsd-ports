@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	POEx-Role-SessionInstantiation
 PORTVERSION=	1.102610

@@ -1,5 +1,4 @@
 # Created by: nivit@users.sourceforge.net
-# $FreeBSD$
 
 PORTNAME=		tkshape
 PORTVERSION=		0.4

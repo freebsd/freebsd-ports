@@ -1,5 +1,4 @@
 # Created by: markm@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Text-CSV
 PORTVERSION=	2.00

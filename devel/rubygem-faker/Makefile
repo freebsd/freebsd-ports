@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	faker
 PORTVERSION=	2.16.0

@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz <rpsfa@rit.edu>
-# $FreeBSD$
 
 PORTNAME=	truecrypt
 PORTVERSION=	7.1a

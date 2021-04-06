@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rofi-calc
 DISTVERSIONPREFIX=	v

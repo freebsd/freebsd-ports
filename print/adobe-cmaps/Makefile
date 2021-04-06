@@ -1,5 +1,4 @@
 # Created by: KATO Tsuguru <tkato@prontomail.com>
-# $FreeBSD$
 
 PORTNAME=	adobe-cmaps
 PORTVERSION=	20051217

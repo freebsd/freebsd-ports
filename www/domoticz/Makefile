@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	domoticz
 PORTVERSION=	2020.2

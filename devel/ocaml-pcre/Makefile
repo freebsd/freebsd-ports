@@ -1,5 +1,4 @@
 # Created by: Henrik Motakef <henrik.motakef@web.de>
-# $FreeBSD$
 
 PORTNAME=	pcre
 PORTVERSION=	7.2.3

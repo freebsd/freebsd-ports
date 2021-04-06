@@ -1,5 +1,4 @@
 # Created by: Krzysztof Stryjek <ports@bsdserwis.com>
-# $FreeBSD$
 
 PORTNAME=	postsrsd
 PORTVERSION=	1.10

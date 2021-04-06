@@ -1,5 +1,4 @@
 # Created by: Babak Farrokhi <babak@farrokhi.net>
-# $FreeBSD$
 
 PORTNAME=	gtk-gray-theme
 PORTVERSION=	1.7

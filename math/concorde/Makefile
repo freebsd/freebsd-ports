@@ -1,5 +1,4 @@
 # Created by: dbader@ece.unm.edu
-# $FreeBSD$
 
 PORTNAME=	concorde
 PORTVERSION=	20031219

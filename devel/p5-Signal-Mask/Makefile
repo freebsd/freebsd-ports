@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Signal-Mask
 PORTVERSION=	0.008

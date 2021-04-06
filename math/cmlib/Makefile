@@ -1,5 +1,4 @@
 # Created by: Anton Shterenlikht <mexas@bris.ac.uk>
-# $FreeBSD$
 
 PORTNAME=	cmlib
 PORTVERSION=	3.0

@@ -1,5 +1,4 @@
 # Created by: Alexander Langer <alex@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tuxkart
 PORTVERSION=	0.4.0

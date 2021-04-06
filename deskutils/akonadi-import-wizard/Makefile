@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	akonadi-import-wizard
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

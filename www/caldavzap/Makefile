@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	caldavzap
 PORTVERSION=	0.13.1

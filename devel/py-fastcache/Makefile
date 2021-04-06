@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fastcache
 PORTVERSION=	1.1.0

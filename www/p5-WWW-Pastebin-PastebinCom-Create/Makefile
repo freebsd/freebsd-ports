@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	WWW-Pastebin-PastebinCom-Create
 PORTVERSION=	1.003

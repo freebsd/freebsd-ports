@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	HTML-TreeBuilder-XPath
 PORTVERSION=	0.14

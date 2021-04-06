@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Digest-GOST
 PORTVERSION=	0.06

@@ -1,5 +1,4 @@
 # Created by: Nicholas Esborn <nick@netdot.net>
-# $FreeBSD$
 
 PORTNAME=	Mon
 PORTVERSION=	0.11

@@ -1,5 +1,4 @@
 # Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lynx
 DISTVERSION=	${VERSION}.${MINOR_VERSION:S/.//}

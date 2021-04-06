@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	riemann-client
 DISTVERSION=	0.2.6

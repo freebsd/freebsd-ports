@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lm4tools
 PORTVERSION=	0.1.3.20160905

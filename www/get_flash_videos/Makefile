@@ -1,5 +1,4 @@
 # Created by: Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	get_flash_videos
 DISTVERSION=	1.24.${DISTFILE_DATE}

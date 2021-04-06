@@ -1,5 +1,4 @@
 # Created by: Philip Paeps <philip@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Roman
 PORTVERSION=	1.24

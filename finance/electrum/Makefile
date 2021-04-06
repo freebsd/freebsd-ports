@@ -1,5 +1,4 @@
 # Created by: Neil Booth
-# $FreeBSD$
 
 PORTNAME=	electrum
 PORTVERSION=	4.0.9

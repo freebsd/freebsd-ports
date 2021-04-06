@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pmdk
 DISTVERSION=	1.6.1

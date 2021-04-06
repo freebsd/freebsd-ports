@@ -1,5 +1,4 @@
 # Created by: Tomasz "CeDeROM" CEDRO (http://www.tomek.cedro.info)
-# $FreeBSD$
 
 PORTNAME=	hackrf
 PORTVERSION=	2017.02.1

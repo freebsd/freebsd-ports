@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	edflib
 DISTVERSION=	1.19

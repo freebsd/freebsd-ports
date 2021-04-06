@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-policyinsights
 PORTVERSION=	0.5.0

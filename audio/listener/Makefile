@@ -1,5 +1,4 @@
 # Created by: lx
-# $FreeBSD$
 
 PORTNAME=	listener
 PORTVERSION=	2.2

@@ -1,5 +1,4 @@
 # Created by: Tim Bishop <tim@bishnet.net>
-# $FreeBSD$
 
 PORTNAME=	jalbum
 PORTVERSION=	10.10.7

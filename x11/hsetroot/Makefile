@@ -1,5 +1,4 @@
 # Created by: Vincent Tantardini <vinc@freebsd-fr.org>
-# $FreeBSD$
 
 PORTNAME=	hsetroot
 PORTVERSION=	1.0.5

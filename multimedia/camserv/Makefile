@@ -1,5 +1,4 @@
 # Created by: Chuck Hein <chein@FreeBSD.org> & Jim Overholt <overholt@isdw.net>
-# $FreeBSD$
 
 PORTNAME=	camserv
 PORTVERSION=	0.5.1

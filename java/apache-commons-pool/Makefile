@@ -1,5 +1,4 @@
 # Created by: Anton Yudin <toha@toha.org.ua>
-# $FreeBSD$
 
 PORTNAME=	commons-pool
 PORTVERSION=	2.9.0

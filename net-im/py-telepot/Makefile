@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	telepot
 DISTVERSION=	12.7

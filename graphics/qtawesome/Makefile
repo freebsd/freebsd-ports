@@ -1,5 +1,4 @@
 # Created by: mi
-# $FreeBSD$
 
 PORTNAME=	qtawesome
 PORTVERSION=	20150319

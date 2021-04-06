@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ideep
 DISTVERSIONPREFIX=	v

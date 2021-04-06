@@ -1,5 +1,4 @@
 # Created by: Denis Podolskiy <bytestore@yandex.ru>
-# $FreeBSD$
 
 PORTNAME=	jpeg-turbo
 PORTVERSION=	2.0.6

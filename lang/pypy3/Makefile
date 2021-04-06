@@ -1,5 +1,4 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pypy3
 DISTNAME=	${PORTNAME}.6-v${DISTVERSION}-src

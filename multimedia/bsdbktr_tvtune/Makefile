@@ -1,5 +1,4 @@
 # Created by: Mina Naguib <webmaster@topfx.com>
-# $FreeBSD$
 
 PORTNAME=	bsdbktr_tvtune
 PORTVERSION=	0.02

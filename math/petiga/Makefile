@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	petiga
 DISTVERSION=	g20210307

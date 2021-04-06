@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Jonk
 PORTVERSION=	0.05

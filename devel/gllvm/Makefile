@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gllvm
 DISTVERSIONPREFIX=	v

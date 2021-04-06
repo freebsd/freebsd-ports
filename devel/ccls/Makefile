@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ccls
 DISTVERSION=	0.20201219

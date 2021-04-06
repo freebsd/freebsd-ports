@@ -1,5 +1,4 @@
 # Created by: Manuel Kreutz <mk@nomtec.net>
-# $FreeBSD$
 
 PORTNAME=	sysmon
 PORTVERSION=	0.93

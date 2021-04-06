@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	crispy-doom
 PORTVERSION=	5.10.0

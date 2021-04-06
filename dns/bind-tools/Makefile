@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # Define PORTREVISION in ${MASTERDIR}
 .ifdef BIND_TOOLS_DEVEL

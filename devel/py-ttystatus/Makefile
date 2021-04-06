@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ttystatus
 PORTVERSION=	0.36

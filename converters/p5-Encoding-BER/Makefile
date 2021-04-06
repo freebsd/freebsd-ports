@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Encoding-BER
 PORTVERSION=	1.02

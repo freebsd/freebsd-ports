@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-paralleln64
 PORTVERSION=	0.20210127

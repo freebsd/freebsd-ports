@@ -1,5 +1,4 @@
 # Created by: jfitz
-# $FreeBSD$
 
 PORTNAME=	swatchdog
 PORTVERSION=	3.2.4

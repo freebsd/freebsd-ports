@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	git-secret
 DISTVERSION=	0.2.5

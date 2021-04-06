@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jenkins
 PORTVERSION=	2.286

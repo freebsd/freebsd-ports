@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	p4python
 PORTVERSION=	2016.1.1447008

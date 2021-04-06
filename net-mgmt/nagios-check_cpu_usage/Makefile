@@ -1,5 +1,4 @@
 # Created by: jamrich.majo@gmail.com
-# $FreeBSD$
 
 PORTNAME=	nagios-check_cpu_usage
 PORTVERSION=	1.0

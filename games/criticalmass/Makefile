@@ -1,5 +1,4 @@
 # Created by: nbm
-# $FreeBSD$
 
 PORTNAME=	criticalmass
 PORTVERSION=	1.5.0

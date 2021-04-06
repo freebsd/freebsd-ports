@@ -1,5 +1,4 @@
 # Created by: Miklos Niedermayer <mico@bsd.hu>
-# $FreeBSD$
 
 PORTNAME=	smssend
 PORTVERSION=	3.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	String-Compare-ConstantTime
 PORTVERSION=	0.310

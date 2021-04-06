@@ -1,5 +1,4 @@
 # Created by: Russell Jackson <raj@csub.edu>
-# $FreeBSD$
 
 PORTNAME=	mcollective
 PORTVERSION=	2.12.5

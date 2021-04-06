@@ -1,5 +1,4 @@
 # Created by: Jonathan Liu <Net147@hotmail.com>
-# $FreeBSD$
 
 PORTNAME=	linrename
 PORTVERSION=	2.25.2

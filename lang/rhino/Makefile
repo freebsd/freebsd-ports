@@ -1,5 +1,4 @@
 # Created by: Nicola Vitale	<nivit@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	rhino
 DISTVERSION=	1_7R4

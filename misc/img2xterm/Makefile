@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	img2xterm
 PORTVERSION=	1.0.0

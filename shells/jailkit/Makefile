@@ -1,5 +1,4 @@
 # Created by: Sylvio Cesar <sylvio@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jailkit
 PORTVERSION=	2.21

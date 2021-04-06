@@ -1,5 +1,4 @@
 # Created by: Vladimir Ermakov <samflanker@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	netxms
 PORTVERSION=	2.2.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	obs-qtwebkit
 PORTVERSION=	g2018090201

@@ -1,5 +1,4 @@
 # Created by: Joe Horn <joehorn@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wordpress
 PORTVERSION=	5.5.3

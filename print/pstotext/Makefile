@@ -1,5 +1,4 @@
 # Created by: Oliver Breuninger <ob@seicom.NET>
-# $FreeBSD$
 
 PORTNAME=	pstotext
 PORTVERSION=	1.9

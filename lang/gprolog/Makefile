@@ -1,5 +1,4 @@
 # Created by: Douglas Anestad <yotta@dougdidit.com>
-# $FreeBSD$
 
 PORTNAME=	gprolog
 PORTVERSION=	1.4.5

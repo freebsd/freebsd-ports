@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich <yuri@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	faust
 DISTVERSION=	2.30.5

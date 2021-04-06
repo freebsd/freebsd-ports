@@ -1,5 +1,4 @@
 # Created by: MIHIRA Yoshiro <sanpei@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	unf
 PORTVERSION=	0.1.4

@@ -1,5 +1,4 @@
 # Created by: Phil Oleson <oz@nixil.net>
-# $FreeBSD$
 
 PORTNAME=	libdnsres
 PORTVERSION=	0.1a

@@ -1,5 +1,4 @@
 # Created by: Oleg Alexeenkov <proler@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	watchmen
 PORTVERSION=	0.09

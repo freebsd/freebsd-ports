@@ -1,5 +1,4 @@
 # Created by: niels <niels@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	robots
 PORTVERSION=	0.10.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pydnstable
 PORTVERSION=	0.7.2

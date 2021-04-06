@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	smoldyn
 DISTVERSION=	2.64

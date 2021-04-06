@@ -1,5 +1,4 @@
 # Created by: Brandon Fosdick <bfoz@bfoz.net>
-# $FreeBSD$
 
 PORTNAME=	WWW-iTunesConnect
 PORTVERSION=	1.16

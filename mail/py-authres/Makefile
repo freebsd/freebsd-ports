@@ -1,5 +1,4 @@
 # Created by: Yasuhiro KIMURA <yasu@utahime.org>
-# $FreeBSD$
 
 PORTNAME=	authres
 PORTVERSION=	1.2.0

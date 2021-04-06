@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Astro-SIMBAD
 PORTVERSION=	2.0.0

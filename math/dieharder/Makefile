@@ -1,5 +1,4 @@
 # Created by: bf <bf2006a@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	dieharder
 PORTVERSION=	3.31.1

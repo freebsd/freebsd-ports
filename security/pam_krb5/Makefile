@@ -1,5 +1,4 @@
 # Created by: nectar@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=		pam_krb5
 PORTVERSION=		4.9

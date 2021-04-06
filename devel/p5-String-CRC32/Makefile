@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	String-CRC32
 PORTVERSION=	2.100

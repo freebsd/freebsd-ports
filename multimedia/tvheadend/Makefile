@@ -1,5 +1,4 @@
 # Created by: Bernhard Froehlich <decke@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tvheadend
 PORTVERSION=	4.2.8

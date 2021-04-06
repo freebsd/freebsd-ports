@@ -1,5 +1,4 @@
 # Created by: Sofian Brabez <sbrabez@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	colorgcc
 PORTVERSION=	1.4.4

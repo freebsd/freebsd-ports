@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-Curl
 PORTVERSION=	0.44

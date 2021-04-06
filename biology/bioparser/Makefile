@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bioparser
 DISTVERSION=	3.0.12-2

@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 # Generated with `make gomod-vendor'
 
 GH_TUPLE=	\

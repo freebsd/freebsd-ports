@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	semver2
 PORTVERSION=	3.4.2

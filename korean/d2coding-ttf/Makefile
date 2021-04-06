@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	d2coding
 PORTVERSION=	1.3.2

@@ -1,5 +1,4 @@
 # Created by: sumikawa
-# $FreeBSD$
 
 PORTNAME=	FFmpeg-Command
 PORTVERSION=	0.19

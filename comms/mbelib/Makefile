@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mbelib
 DISTVERSIONPREFIX=	v

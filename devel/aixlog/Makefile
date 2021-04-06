@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aixlog
 DISTVERSIONPREFIX=	v

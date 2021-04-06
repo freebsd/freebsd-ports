@@ -1,5 +1,4 @@
 # Created by: Luca Pizzamiglio <pizzamig@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pot
 PORTVERSION=	0.11.6

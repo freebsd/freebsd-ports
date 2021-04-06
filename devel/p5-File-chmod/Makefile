@@ -1,5 +1,4 @@
 # Created by: Shinsuke Matsui <smatsui@karashi.org>
-# $FreeBSD$
 
 PORTNAME=	File-chmod
 PORTVERSION=	0.32

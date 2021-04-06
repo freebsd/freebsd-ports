@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mergify
 PORTVERSION=	g20180512

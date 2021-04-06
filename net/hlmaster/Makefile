@@ -1,5 +1,4 @@
 # Created by: pat@databits.net
-# $FreeBSD$
 
 PORTNAME=	hlmaster
 PORTVERSION=	0.9.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oslotest
 DISTVERSION=	4.4.1

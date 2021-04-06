@@ -1,5 +1,4 @@
 # Created by: Bartosz Fabianowski <freebsd@chillt.de>
-# $FreeBSD$
 
 PORTNAME=	widelands
 DISTVERSION=	build21

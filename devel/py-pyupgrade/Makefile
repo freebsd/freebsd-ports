@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyupgrade
 PORTVERSION=	1.27.0

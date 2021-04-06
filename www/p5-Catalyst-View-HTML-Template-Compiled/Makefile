@@ -1,5 +1,4 @@
 # Created by: Zach Thompson <hideo@lastamericanempire.com>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-View-HTML-Template-Compiled
 PORTVERSION=	0.16

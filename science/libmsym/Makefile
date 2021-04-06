@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libmsym
 DISTVERSIONPREFIX=	v

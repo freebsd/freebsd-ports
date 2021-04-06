@@ -1,5 +1,4 @@
 # Created by: Stas Timokhin <devel@stasyan.com>
-# $FreeBSD$
 
 PORTNAME=	picpuz
 PORTVERSION=	2.1.1

@@ -1,5 +1,4 @@
 # Created by: rhay
-# $FreeBSD$
 
 PORTNAME=	mtxorbd
 PORTVERSION=	1.0.2

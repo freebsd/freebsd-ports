@@ -1,5 +1,4 @@
 # Created by: bf <bf2006a@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	unuran
 PORTVERSION=	1.8.1

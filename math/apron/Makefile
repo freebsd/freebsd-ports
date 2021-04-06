@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	apron
 DISTVERSION=	0.9.12

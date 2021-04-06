@@ -1,5 +1,4 @@
 # Created by: thinker@branda.to
-# $FreeBSD$
 
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nsync
 DISTVERSION=	1.21.0

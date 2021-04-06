@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	keystone-engine
 DISTVERSION=	0.9.1-3

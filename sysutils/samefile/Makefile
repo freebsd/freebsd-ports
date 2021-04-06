@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	samefile
 PORTVERSION=	2.15

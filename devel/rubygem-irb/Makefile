@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	irb
 PORTVERSION=	1.3.5

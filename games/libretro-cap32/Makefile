@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-cap32
 PORTVERSION=	0.20210110

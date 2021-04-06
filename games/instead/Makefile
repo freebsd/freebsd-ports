@@ -1,5 +1,4 @@
 # Created by: neuroworker@gmail.com
-# $FreeBSD$
 
 PORTNAME=	instead
 PORTVERSION=	3.3.4

@@ -1,5 +1,4 @@
 # Created by: johans
-# $FreeBSD$
 
 PORTNAME=	webp
 PORTVERSION=	1.2.0

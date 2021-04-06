@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Liao
-# $FreeBSD$
 
 PORTNAME=	hte
 PORTVERSION=	2.1.1.g20161206

@@ -1,5 +1,4 @@
 # Created by: renchap@cocoa-x.com
-# $FreeBSD$
 
 PORTNAME=	wmi-lite
 PORTVERSION=	1.0.0

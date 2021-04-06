@@ -1,5 +1,4 @@
 # Created by: kevit
-# $FreeBSD$
 
 PORTNAME=	Template-Plugin-XML-Escape
 PORTVERSION=	0.02

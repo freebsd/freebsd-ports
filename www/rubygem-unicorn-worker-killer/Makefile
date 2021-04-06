@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	unicorn-worker-killer
 PORTVERSION=	0.4.4

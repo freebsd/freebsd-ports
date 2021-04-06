@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SQL-NamedPlaceholder
 PORTVERSION=	0.10

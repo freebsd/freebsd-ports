@@ -1,5 +1,4 @@
 # Created by: Jose Alonso Cardenas Marquez <acm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nazghul
 PORTVERSION=	0.7.1

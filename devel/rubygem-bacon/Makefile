@@ -1,5 +1,4 @@
 # Created by: Charlie & <root@meatwad.mouf.net>
-# $FreeBSD$
 
 PORTNAME=	bacon
 PORTVERSION=	1.2.0

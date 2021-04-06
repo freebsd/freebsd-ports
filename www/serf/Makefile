@@ -1,5 +1,4 @@
 # Created by: Craig Rodrigues <rodrigc@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	serf
 PORTVERSION=	1.3.9

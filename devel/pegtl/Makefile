@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pegtl
 DISTVERSION=	3.0.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	din
 PORTVERSION=	50.1

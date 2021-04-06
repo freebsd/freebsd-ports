@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	csvkit
 PORTVERSION=	1.0.5

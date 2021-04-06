@@ -1,5 +1,4 @@
 # Created by: philip@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	threema-msgapi
 PORTVERSION=	3.0.6

@@ -1,5 +1,4 @@
 # Created by: Brad Hendrickse <bradh@uunet.co.za>
-# $FreeBSD$
 
 PORTNAME=	isic
 PORTVERSION=	0.07

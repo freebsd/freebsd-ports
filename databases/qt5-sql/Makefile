@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sql
 DISTVERSION=	${QT5_VERSION}

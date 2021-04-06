@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	agate-sql
 PORTVERSION=	0.5.6

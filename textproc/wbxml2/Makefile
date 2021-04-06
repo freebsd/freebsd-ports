@@ -1,5 +1,4 @@
 # Created by: Clemens Zauner <czauner+ports@onlineloop.com>
-# $FreeBSD$
 
 PORTNAME=	wbxml2
 PORTVERSION=	0.11.7

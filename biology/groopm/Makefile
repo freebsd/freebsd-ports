@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	GroopM
 DISTVERSION=	0.3.4

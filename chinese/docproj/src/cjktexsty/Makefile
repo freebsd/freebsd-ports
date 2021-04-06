@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PROG=	cjktexsty
 SRCS=	cjktexsty.l

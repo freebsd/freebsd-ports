@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dm-constraints
 PORTVERSION=	1.2.0

@@ -1,5 +1,4 @@
 # Created by: Anthony Kim
-# $FreeBSD$
 
 PORTNAME=	spamassassin
 PORTVERSION=	3.4.5

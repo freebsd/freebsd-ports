@@ -1,5 +1,4 @@
 # Created by: matusita@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	popfile
 PORTVERSION=	1.1.3

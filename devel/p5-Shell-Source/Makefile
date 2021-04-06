@@ -1,5 +1,4 @@
 # Created by: Timur I. Bakeyev <bat@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Shell-Source
 PORTVERSION=	0.01

@@ -1,5 +1,4 @@
 # Created by: Bill Fenner <fenner@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	SNMP-Util
 PORTVERSION=	1.8

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcutl
 PORTVERSION=	1.10.0

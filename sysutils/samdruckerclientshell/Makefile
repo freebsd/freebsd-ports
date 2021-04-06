@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SamDruckerClientShell
 PORTVERSION=	0.2.6

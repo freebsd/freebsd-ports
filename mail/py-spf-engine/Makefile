@@ -1,5 +1,4 @@
 # Created by: Giel van Schijndel <me@mortis.eu>
-# $FreeBSD$
 
 PORTNAME=	spf-engine
 PORTVERSION=	2.9.2

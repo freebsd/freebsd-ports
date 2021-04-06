@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Cmd
 PORTVERSION=	1.09

@@ -1,5 +1,4 @@
 # Created by: Dominic Mitchell <dom@happygiraffe.net>
-# $FreeBSD$
 
 PORTNAME=	Apache-MP3
 PORTVERSION=	4.00

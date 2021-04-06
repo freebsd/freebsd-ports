@@ -1,5 +1,4 @@
 # Created by: Euan Thoms <euan@potensol.com>
-# $FreeBSD$
 
 PORTNAME=		sope2
 PORTVERSION=		2.3.23

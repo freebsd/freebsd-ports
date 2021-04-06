@@ -1,5 +1,4 @@
 # Created by: krion@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	icpld
 PORTVERSION=	1.1.5

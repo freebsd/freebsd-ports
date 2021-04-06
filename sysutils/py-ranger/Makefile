@@ -1,5 +1,4 @@
 # Created by: Jin-Sih Lin <linpct@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ranger
 PORTVERSION=	1.9.3

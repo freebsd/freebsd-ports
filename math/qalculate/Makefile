@@ -1,5 +1,4 @@
 # Created by: Sergey Akifyev <asa@gascom.ru>
-# $FreeBSD$
 
 PORTNAME=	qalculate
 PORTVERSION=	3.17.0

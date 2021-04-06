@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich <yuri@rawbw.com>
-# $FreeBSD$
 
 PORTNAME=	sqlite-ext-regexp
 PORTVERSION=	3.8.11.1

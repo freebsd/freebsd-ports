@@ -1,5 +1,4 @@
 # Created by: Kevin Golding <ports@caomhin.org>
-# $FreeBSD$
 
 PORTNAME=	django-registration-redux
 PORTVERSION=	2.8

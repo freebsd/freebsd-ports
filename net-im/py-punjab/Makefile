@@ -1,5 +1,4 @@
 # Created by: jodocus <jodocus@jodocus.org>
-# $FreeBSD$
 
 PORTNAME=	punjab
 PORTVERSION=	0.15

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	json-yaml
 DISTVERSION=	1.1.2

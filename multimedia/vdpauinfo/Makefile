@@ -1,5 +1,4 @@
 # Created by: Anonymous <swell.k@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	vdpauinfo
 PORTVERSION=	1.4

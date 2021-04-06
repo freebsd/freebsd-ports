@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	astroid
 PORTVERSION=	2.5.1

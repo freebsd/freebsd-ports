@@ -1,5 +1,4 @@
 # Created by: Mahlon E. Smith <mahlon@martini.nu>
-# $FreeBSD$
 
 PORTNAME=	BSD-Jail-Object
 PORTVERSION=	0.02

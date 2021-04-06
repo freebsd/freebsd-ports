@@ -1,5 +1,4 @@
 # Created by: Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
-# $FreeBSD$
 
 PORTNAME=	xdeview
 PORTVERSION=	0.5.20

@@ -1,5 +1,4 @@
 # Created by: ijliao@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	log4cpp
 PORTVERSION=	1.1.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	drumstick
 DISTVERSION=	1.1.3

@@ -1,5 +1,4 @@
 # Created by: Kelly Yancey <kbyanc@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Net-Radius
 PORTVERSION=	2.103

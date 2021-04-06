@@ -1,5 +1,4 @@
 # Created by: clement
-# $FreeBSD$
 
 PORTNAME=	mod_auth_cookie_mysql2
 PORTVERSION=	1.0

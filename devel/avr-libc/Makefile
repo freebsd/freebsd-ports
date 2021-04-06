@@ -1,5 +1,4 @@
 # Created by: Joerg Wunsch <joerg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	avr-libc
 PORTVERSION=	2.0.0

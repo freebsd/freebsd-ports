@@ -1,5 +1,4 @@
 # Created by: Nemo Liu <nemoliu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	commons-jxpath
 PORTVERSION=	1.3

@@ -1,5 +1,4 @@
 # Created by: Don Croyle <croyle@gelemna.org>
-# $FreeBSD$
 
 PORTNAME=	News-Newsrc
 PORTVERSION=	1.11

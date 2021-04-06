@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Compress-LZ4
 PORTVERSION=	0.25

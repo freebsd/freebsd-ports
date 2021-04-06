@@ -1,5 +1,4 @@
 # Created by: Seamus Venasse <svenasse@polaris.ca>
-# $FreeBSD$
 
 PORTNAME=	Lingua-EN-Numbers-Ordinate
 PORTVERSION=	1.04

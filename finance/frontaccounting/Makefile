@@ -1,5 +1,4 @@
 # Created by: Janky Jay <ek@purplehat.org>
-# $FreeBSD$
 
 PORTNAME=	frontaccounting
 DISTVERSION=	2.3.25

@@ -1,5 +1,4 @@
 # Created by: Sulev-Madis Silber <madis555@hot.ee>
-# $FreeBSD$
 
 PORTNAME=	Time-Stopwatch
 PORTVERSION=	1.00

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	foliate
 PORTVERSION=	2.6.3

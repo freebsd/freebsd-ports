@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kimageformats
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

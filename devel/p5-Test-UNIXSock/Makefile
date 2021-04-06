@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-UNIXSock
 PORTVERSION=	0.4

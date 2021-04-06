@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	appwrapper
 PORTVERSION=	0.1

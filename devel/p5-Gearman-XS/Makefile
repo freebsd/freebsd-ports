@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <ka@nadoby.ru>
-# $FreeBSD$
 
 PORTNAME=	Gearman-XS
 PORTVERSION=	0.12

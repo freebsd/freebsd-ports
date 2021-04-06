@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mpfrc++
 DISTVERSIONPREFIX=	${PORTNAME}-

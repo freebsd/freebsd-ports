@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Gazelle
 PORTVERSION=	0.49

@@ -1,5 +1,4 @@
 # Created by: Wei-chun Chao
-# $FreeBSD$
 
 PORTNAME=	Mail-Sendmail
 PORTVERSION=	0.80

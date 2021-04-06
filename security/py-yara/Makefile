@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yara
 PORTVERSION=	4.0.5

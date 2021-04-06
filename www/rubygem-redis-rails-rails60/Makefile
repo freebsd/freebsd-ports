@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	redis-rails
 PORTVERSION=	5.0.2

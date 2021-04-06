@@ -1,5 +1,4 @@
 # Created by: Torsten Zühlsdorff <ports@toco-domains.de>
-# $FreeBSD$
 
 PORTNAME=	dddbl
 PORTVERSION=	2.0.1

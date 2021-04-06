@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jetbrains-mono
 PORTVERSION=	2.225

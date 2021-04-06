@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fog-gridscale
 PORTVERSION=	0.1.5

@@ -1,5 +1,4 @@
 # Created by: simonm@dcs.gla.ac.uk
-# $FreeBSD$
 
 PORTNAME=	cgoban
 PORTVERSION=	1.9.14

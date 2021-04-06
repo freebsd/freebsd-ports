@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cairo
 PORTVERSION=	1.16.0 # update to 1.17.2 causes problems, see bug#249290

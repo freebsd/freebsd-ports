@@ -1,5 +1,4 @@
 # Created by: eserte
-# $FreeBSD$
 
 PORTNAME=	eval
 PORTVERSION=	113

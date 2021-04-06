@@ -1,5 +1,4 @@
 # Created by: mfechner@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	knxd
 PORTVERSION=	0.14.39

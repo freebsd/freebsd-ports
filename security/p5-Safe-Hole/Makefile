@@ -1,5 +1,4 @@
 # Created by: Seth Kingsley <sethk@meowfishies.com>
-# $FreeBSD$
 
 PORTNAME=	Safe-Hole
 PORTVERSION=	0.13

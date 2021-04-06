@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tasksh
 PORTVERSION=	1.2.0

@@ -1,5 +1,4 @@
 # Created by: Sergey Akifyev <asa@agava.com>
-# $FreeBSD$
 
 PORTNAME=	libqalculate
 PORTVERSION=	3.17.0

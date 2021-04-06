@@ -1,5 +1,4 @@
 # Created by: Michael Hsin <mhsin@mhsin.org>
-# $FreeBSD$
 
 PORTNAME=	terminus-font
 PORTVERSION=	4.48

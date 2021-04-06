@@ -1,5 +1,4 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD$
 
 PORTNAME=	mythmusic
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Mark Hannon <markhannon@optusnet.com.au>
-# $FreeBSD$
 
 PORTNAME=	gnome-ssh-askpass
 PORTVERSION=	6.6p1

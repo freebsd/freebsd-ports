@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jupyter_core
 PORTVERSION=	4.7.1

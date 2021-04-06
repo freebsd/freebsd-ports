@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ftwin
 PORTVERSION=	0.8.10

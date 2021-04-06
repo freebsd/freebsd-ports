@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rt
 DISTVERSION=	4.4.4

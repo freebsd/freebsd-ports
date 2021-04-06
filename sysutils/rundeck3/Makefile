@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rundeck
 DISTVERSION=	3.3.10

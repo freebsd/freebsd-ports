@@ -1,5 +1,4 @@
 # Created by: vazquez@iqm.unicamp.br
-# $FreeBSD$
 
 PORTNAME=	fpp
 PORTVERSION=	1.1

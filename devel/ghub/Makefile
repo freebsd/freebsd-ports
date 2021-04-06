@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ghub
 DISTVERSIONPREFIX=	v

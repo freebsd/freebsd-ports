@@ -1,5 +1,4 @@
 # Created by: Rusty Nejdl <rnejdl@ringofsaturn.com>
-# $FreeBSD$
 
 PORTNAME=	showimage
 PORTVERSION=	1.10

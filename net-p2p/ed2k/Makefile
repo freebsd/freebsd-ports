@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ed2k
 PORTVERSION=	1.4

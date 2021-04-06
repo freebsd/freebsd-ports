@@ -1,5 +1,4 @@
 # Created by: Tim Bishop <tdb@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dynamicplaylist
 PORTVERSION=	2.9.3853

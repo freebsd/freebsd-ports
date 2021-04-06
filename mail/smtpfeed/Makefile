@@ -1,5 +1,4 @@
 # Created by: Jun-ichiro Hagino <itojun@itojun.org>
-# $FreeBSD$
 
 PORTNAME=	smtpfeed
 PORTVERSION=	1.23

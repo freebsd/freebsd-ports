@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libArcus
 PORTVERSION=	4.8.0

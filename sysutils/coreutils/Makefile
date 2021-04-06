@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	coreutils
 PORTVERSION=	8.32

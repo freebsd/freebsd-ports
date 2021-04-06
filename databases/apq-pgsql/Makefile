@@ -1,5 +1,4 @@
 # Created by: John Marino <marino@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	apq-pgsql
 PORTVERSION=	${APQ_VERSION}

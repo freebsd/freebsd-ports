@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	streamripper
 PORTVERSION=	1.64.6

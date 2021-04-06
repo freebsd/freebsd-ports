@@ -1,5 +1,4 @@
 # Created by: Brent J. Nordquist <bjn@visi.com>
-# $FreeBSD$
 
 PORTNAME=	btoa
 PORTVERSION=	5.2

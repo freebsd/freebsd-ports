@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-LWP-UserAgent
 PORTVERSION=	0.030

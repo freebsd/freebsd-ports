@@ -1,5 +1,4 @@
 # Created by: Hans Petter Selasky <hselasky@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	virtual_oss_ctl
 DISTVERSIONPREFIX=	v

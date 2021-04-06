@@ -1,5 +1,4 @@
 # Created by: John Holland <john@zoner.org>
-# $FreeBSD$
 
 PORTNAME=	ubh
 PORTVERSION=	2.5

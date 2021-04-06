@@ -1,5 +1,4 @@
 # Created by: Tony Narlock <tony@git-pull.com>
-# $FreeBSD$
 
 PORTNAME=	tmuxp
 PORTVERSION=	1.7.2

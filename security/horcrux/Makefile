@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	horcrux
 DISTVERSIONPREFIX=	v

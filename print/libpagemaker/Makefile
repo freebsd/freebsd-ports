@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libpagemaker
 PORTVERSION=	0.0.4

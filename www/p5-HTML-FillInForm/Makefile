@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <kapr@crosswinds.net>
-# $FreeBSD$
 
 PORTNAME=	HTML-FillInForm
 PORTVERSION=	2.21

@@ -1,5 +1,4 @@
 # Created by: Marcus Alves Grando <mnag@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pfqueue
 PORTVERSION=	0.5.6

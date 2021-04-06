@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-Plugin-Iterator
 PORTVERSION=	0.13

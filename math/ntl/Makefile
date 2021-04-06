@@ -1,5 +1,4 @@
 # Created by: bauerm
-# $FreeBSD$
 
 PORTNAME=	ntl
 PORTVERSION=	11.4.3

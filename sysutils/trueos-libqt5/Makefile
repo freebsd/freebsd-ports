@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	trueos-libqt5
 PORTVERSION=	20171003

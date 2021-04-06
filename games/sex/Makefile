@@ -1,5 +1,4 @@
 # Created by: Nick Johnson <freebsd@spatula.net>
-# $FreeBSD$
 
 PORTNAME=	sex
 PORTVERSION=	1.0

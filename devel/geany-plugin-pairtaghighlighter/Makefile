@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-plugin-pairtaghighlighter
 PORTVERSION=	${GEANY_VER}

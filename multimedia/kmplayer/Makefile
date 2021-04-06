@@ -1,5 +1,4 @@
 # Created by: Kris Moore
-# $FreeBSD$
 
 PORTNAME=	kmplayer
 PORTVERSION=	0.12.0b

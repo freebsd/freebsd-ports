@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qwt
 PORTVERSION=	6.1.6

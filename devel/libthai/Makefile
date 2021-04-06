@@ -1,5 +1,4 @@
 # Created by: Thawatchai Piyawat <piyawat@usablelabs.com>
-# $FreeBSD$
 
 PORTNAME=	libthai
 DISTVERSION=	0.1.28

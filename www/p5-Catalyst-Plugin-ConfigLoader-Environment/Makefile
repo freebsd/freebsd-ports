@@ -1,5 +1,4 @@
 # Created by: lbr@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-ConfigLoader-Environment
 PORTVERSION=	0.07

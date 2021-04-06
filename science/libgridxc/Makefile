@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libgridxc
 DISTVERSION=	0.8.5

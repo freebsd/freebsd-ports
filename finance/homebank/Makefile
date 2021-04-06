@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	homebank
 PORTVERSION=	5.5

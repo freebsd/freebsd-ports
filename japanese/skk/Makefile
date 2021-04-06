@@ -1,5 +1,4 @@
 # Created by: Makoto Matsushita <matusita@jp.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	skk
 PORTVERSION=	9.6

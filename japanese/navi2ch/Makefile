@@ -1,5 +1,4 @@
 # Created by: FUJISHIMA Satsuki <sf@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	navi2ch
 PORTVERSION=	2.0.0.d

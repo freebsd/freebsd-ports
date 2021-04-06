@@ -1,5 +1,4 @@
 # Created by: Mathieu Arnold
-# $FreeBSD$
 
 PORTNAME=	owncloudclient
 DISTVERSION=	2.6.0

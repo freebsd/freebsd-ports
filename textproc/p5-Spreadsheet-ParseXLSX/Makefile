@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Spreadsheet-ParseXLSX
 PORTVERSION=	0.27

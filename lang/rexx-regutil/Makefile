@@ -1,5 +1,4 @@
 # Created by: Bob Eager <bob@eager.cx>
-# $FreeBSD$
 
 PORTNAME=	regutil
 PORTVERSION=	1.26

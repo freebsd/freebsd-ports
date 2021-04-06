@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	belle-sip
 PORTVERSION=	1.6.3

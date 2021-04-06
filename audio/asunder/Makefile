@@ -1,5 +1,4 @@
 # Created by: Fraser Tweedale <frase@frase.id.au>
-# $FreeBSD$
 
 PORTNAME=	asunder
 PORTVERSION=	2.9.6

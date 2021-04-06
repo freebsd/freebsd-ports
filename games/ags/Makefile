@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ags
 DISTVERSION=	3.4.4.1

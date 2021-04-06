@@ -1,5 +1,4 @@
 # Created by: Andrey Ignatov <rdna@rdna.ru>
-# $FreeBSD$
 
 PORTNAME=	Multiplex-CMD
 PORTVERSION=	0.03

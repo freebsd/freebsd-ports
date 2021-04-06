@@ -1,5 +1,4 @@
 # Created by: Yarema <yds@Necessitu.de>
-# $FreeBSD$
 
 PORTNAME=	lyaml
 PORTVERSION=	6.2.4

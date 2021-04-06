@@ -1,5 +1,4 @@
 # Created by: Daniel Solsona <daniel@ish.com.au>, Guido Falsi <madpilot@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	logstash
 PORTVERSION=	7.10.1

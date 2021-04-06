@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	localize
 PORTVERSION=	0.0.1

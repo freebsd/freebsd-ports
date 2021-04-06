@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	at-spi2-atk
 PORTVERSION=	2.26.2

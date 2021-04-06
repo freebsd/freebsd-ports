@@ -1,5 +1,4 @@
 # Created by: Steven Kreuzer <steven@exit2shell.com>
-# $FreeBSD$
 
 PORTNAME=	dtrace-toolkit
 PORTVERSION=	1.0

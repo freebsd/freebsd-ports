@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	AnyQt
 DISTVERSION=	0.0.11

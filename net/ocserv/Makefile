@@ -1,5 +1,4 @@
 # Created by: Carlos J Puga Medina <cpm@fbsd.es>
-# $FreeBSD$
 
 PORTNAME=	ocserv
 DISTVERSION=	1.1.2

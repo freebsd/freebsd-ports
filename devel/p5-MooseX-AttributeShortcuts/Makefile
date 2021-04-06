@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MooseX-AttributeShortcuts
 PORTVERSION=	0.037

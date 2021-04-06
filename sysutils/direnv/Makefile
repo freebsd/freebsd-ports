@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	direnv
 PORTVERSION=	2.27.0

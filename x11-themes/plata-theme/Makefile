@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	plata-theme
 PORTVERSION=	0.9.9

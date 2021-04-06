@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	deface
 PORTVERSION=	1.7.0

@@ -1,5 +1,4 @@
 # Created by: Groovis <groovis@groovis.net>
-# $FreeBSD$
 
 PORTNAME=	HTML-Macro
 PORTVERSION=	1.30

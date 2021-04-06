@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xdg-desktop-portal-wlr
 DISTVERSIONPREFIX=	v

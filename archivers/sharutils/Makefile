@@ -1,5 +1,4 @@
 # Created by: ache
-# $FreeBSD$
 
 PORTNAME=	sharutils
 PORTVERSION=	4.15.2

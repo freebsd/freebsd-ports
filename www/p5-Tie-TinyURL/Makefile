@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Tie-TinyURL
 PORTVERSION=	0.02

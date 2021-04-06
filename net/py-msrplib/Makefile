@@ -1,5 +1,4 @@
 # Created by: Eugene Grosbein <ports@grosbein.net>
-# $FreeBSD$
 
 PORTNAME=	msrplib
 PORTVERSION=	0.20.0

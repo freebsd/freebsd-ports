@@ -1,5 +1,4 @@
 # Created by: Bruce M. Simpson <bms@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	kde_poster
 PORTVERSION=	1.0

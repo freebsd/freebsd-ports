@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Term-ReadLine-Zoid
 PORTVERSION=	0.07

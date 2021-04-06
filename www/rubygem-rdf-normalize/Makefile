@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rdf-normalize
 DISTVERSION=	0.3.3

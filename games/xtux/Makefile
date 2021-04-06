@@ -1,5 +1,4 @@
 # Created by: Göran Runfeldt <goranrunfeldt@home.se>
-# $FreeBSD$
 
 PORTNAME=	xtux
 PORTVERSION=	20030306

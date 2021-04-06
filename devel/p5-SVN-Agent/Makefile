@@ -1,5 +1,4 @@
 # Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.org>
-# $FreeBSD$
 
 PORTNAME=	SVN-Agent
 PORTVERSION=	0.04

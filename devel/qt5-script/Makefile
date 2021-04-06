@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	script
 DISTVERSION=	${QT5_VERSION}

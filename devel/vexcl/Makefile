@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vexcl
 DISTVERSION=	1.4.1

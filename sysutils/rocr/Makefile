@@ -1,5 +1,4 @@
 # Created by: Johannes Dieterich <jmd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	rocr
 PORTVERSION=	1.9.1

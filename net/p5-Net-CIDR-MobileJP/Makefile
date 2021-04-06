@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-CIDR-MobileJP
 PORTVERSION=	0.24

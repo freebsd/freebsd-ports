@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	calecto
 PORTVERSION=	0.16.0

@@ -1,5 +1,4 @@
 # Created by: Dominik Brettnacher <domi@saargate.de>
-# $FreeBSD$
 
 PORTNAME=	Net-LibIDN
 PORTVERSION=	0.12

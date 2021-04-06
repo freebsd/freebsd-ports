@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Perl-Metrics-Simple
 PORTVERSION=	0.18

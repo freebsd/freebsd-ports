@@ -1,5 +1,4 @@
 # Created by: Anish Mistry
-# $FreeBSD$
 
 PORTNAME=	fusefs
 DISTVERSION=	2.9.9

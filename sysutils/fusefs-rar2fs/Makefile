@@ -1,5 +1,4 @@
 # Created by: Joris Vandalon
-# $FreeBSD$
 
 PORTNAME=	rar2fs
 PORTVERSION=	1.29.3

@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	HTML-Seamstress
 PORTVERSION=	6.112830

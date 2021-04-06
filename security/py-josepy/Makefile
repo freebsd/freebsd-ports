@@ -1,5 +1,4 @@
 # Created by: Carlos J Puga Medina <cpm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	josepy
 PORTVERSION=	1.5.0

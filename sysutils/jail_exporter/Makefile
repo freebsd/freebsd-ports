@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		jail_exporter
 DISTVERSIONPREFIX=	v

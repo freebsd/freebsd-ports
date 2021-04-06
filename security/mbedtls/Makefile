@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mbedtls
 PORTVERSION=	2.16.10

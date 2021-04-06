@@ -1,5 +1,4 @@
 # Created by: Timur I. Bakeyev <bat@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Net-IP-Match-Regexp
 PORTVERSION=	1.01

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libemos
 DISTVERSION=	4.5.9

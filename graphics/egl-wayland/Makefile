@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	egl-wayland
 DISTVERSION=	1.1.6

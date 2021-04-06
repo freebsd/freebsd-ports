@@ -1,5 +1,4 @@
 # Created by: dbaker
-# $FreeBSD$
 
 PORTNAME=	dnetc
 PORTVERSION=	${VERSION}

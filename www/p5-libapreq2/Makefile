@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libapreq2
 PORTVERSION=	2.16

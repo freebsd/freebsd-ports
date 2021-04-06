@@ -1,5 +1,4 @@
 # Created by: andrey@kostenko.name
-# $FreeBSD$
 
 PORTNAME=	Crypt-DH-GMP
 PORTVERSION=	0.00012

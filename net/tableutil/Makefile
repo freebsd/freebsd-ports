@@ -1,5 +1,4 @@
 # Created by: jameskamlyn@gmail.com
-# $FreeBSD$
 
 PORTNAME=	tableutil
 PORTVERSION=	0.6

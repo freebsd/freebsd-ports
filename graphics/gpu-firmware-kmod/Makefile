@@ -1,5 +1,4 @@
 # Created by: Johannes Dieterich <jmd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gpu-firmware-kmod
 PORTVERSION=	g20210224

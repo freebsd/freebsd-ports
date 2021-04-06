@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-App-Proxy
 PORTVERSION=	0.29

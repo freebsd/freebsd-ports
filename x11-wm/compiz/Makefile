@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	compiz
 PORTVERSION=	0.8.8

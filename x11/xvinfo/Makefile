@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xvinfo
 PORTVERSION=	1.1.4

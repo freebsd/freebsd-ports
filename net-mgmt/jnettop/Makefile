@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz
-# $FreeBSD$
 
 PORTNAME=	jnettop
 PORTVERSION=	0.13.0

@@ -1,5 +1,4 @@
 # Created by: Dryice Liu <dryice@dryice.name>
-# $FreeBSD$
 
 PORTNAME=	cw
 PORTVERSION=	1.0.16

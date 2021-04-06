@@ -1,5 +1,4 @@
 # Created by: Gunter Wambaugh <techgunter@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	o2em
 PORTVERSION=	1.17

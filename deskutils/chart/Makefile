@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chart
 DISTVERSIONPREFIX=	v

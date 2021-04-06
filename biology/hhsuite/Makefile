@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hhsuite
 DISTVERSIONPREFIX=	v

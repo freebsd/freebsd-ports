@@ -1,5 +1,4 @@
 # Created by: Wen Heping<wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	tinyarray
 PORTVERSION=	1.2.3

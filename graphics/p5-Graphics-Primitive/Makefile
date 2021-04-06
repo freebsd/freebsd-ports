@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Graphics-Primitive
 PORTVERSION=	0.67

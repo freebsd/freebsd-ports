@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opendht
 DISTVERSION=	1.10.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Path-Iterator-Rule
 PORTVERSION=	1.008

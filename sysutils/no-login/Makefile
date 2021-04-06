@@ -1,5 +1,4 @@
 # Created by: Donald Burr <dburr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nologin
 PORTVERSION=	1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	check_mk_agent
 DISTVERSIONPREFIX=	v

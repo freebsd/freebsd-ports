@@ -1,5 +1,4 @@
 # Created by: Wes Peters <@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	avra
 PORTVERSION=	1.4.2

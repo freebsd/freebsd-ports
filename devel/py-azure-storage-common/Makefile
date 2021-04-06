@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-storage-common
 PORTVERSION=	2.1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sent
 PORTVERSION=	1

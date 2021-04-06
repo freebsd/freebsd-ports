@@ -1,5 +1,4 @@
 # Created by: Sergey Velichkevych <serg@cad.kiev.ua>
-# $FreeBSD$
 
 PORTNAME=	wmping
 PORTVERSION=	0.2.1

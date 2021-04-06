@@ -1,5 +1,4 @@
 # Created by: Evan Sarmiento <esarmiento@wayfair.com>
-# $FreeBSD$
 
 PORTNAME=	graphite-web
 PORTVERSION=	1.1.7

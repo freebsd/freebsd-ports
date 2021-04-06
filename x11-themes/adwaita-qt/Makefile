@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	adwaita-qt
 DISTVERSION=	1.2.1

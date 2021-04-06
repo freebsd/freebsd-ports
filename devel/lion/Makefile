@@ -1,5 +1,4 @@
 # Created by: Marco Molteni <molterSPAM@gufiSPAM.org>
-# $FreeBSD$
 
 PORTNAME=	lion
 DISTVERSION=	20060630

@@ -1,5 +1,4 @@
 # Created by: SASAKI Shunsuke <ele@pop17.odn.ne.jp>
-# $FreeBSD$
 
 PORTNAME=	ne
 PORTVERSION=	3.05

@@ -1,5 +1,4 @@
 # Created by: Jeremy Shaffner <jeremy@external.org>
-# $FreeBSD$
 
 PORTNAME=	gwhich
 PORTVERSION=	2.21

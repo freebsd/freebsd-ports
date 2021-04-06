@@ -1,5 +1,4 @@
 # Created by: 
-# $FreeBSD$
 
 PORTNAME=	django-hierarkey
 PORTVERSION=	1.0.3

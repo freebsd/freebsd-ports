@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	powerdns
 DISTVERSION=	4.4.1

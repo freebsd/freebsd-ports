@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	shfmt
 DISTVERSIONPREFIX=	v

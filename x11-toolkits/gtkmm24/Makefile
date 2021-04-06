@@ -1,5 +1,4 @@
 # Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
-# $FreeBSD$
 
 PORTNAME=	gtkmm
 PORTVERSION=	2.24.5

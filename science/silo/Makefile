@@ -1,5 +1,4 @@
 # Created by: Pedro F. Giffuni <giffunip@tutopia.com>
-# $FreeBSD$
 
 PORTNAME=	silo
 PORTVERSION=	4.10.2

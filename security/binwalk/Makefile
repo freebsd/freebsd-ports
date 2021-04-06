@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	binwalk
 PORTVERSION=	2.1.1

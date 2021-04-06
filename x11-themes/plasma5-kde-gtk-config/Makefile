@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kde-gtk-config
 DISTVERSION=	${KDE_PLASMA_VERSION}

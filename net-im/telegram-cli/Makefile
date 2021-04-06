@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	telegram-cli
 DISTVERSION=	20200106

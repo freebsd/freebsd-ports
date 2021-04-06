@@ -1,5 +1,4 @@
 # Created by: Joe Horn <joehorn@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	yourls
 PORTVERSION=	1.8

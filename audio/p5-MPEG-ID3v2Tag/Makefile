@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	MPEG-ID3v2Tag
 PORTVERSION=	0.39

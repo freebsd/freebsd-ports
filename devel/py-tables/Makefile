@@ -1,5 +1,4 @@
 # Created by: ijliao@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	tables
 PORTVERSION=	3.6.1

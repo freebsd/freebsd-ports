@@ -1,5 +1,4 @@
 # Created by: rtdean@cytherianage.net
-# $FreeBSD$
 
 PORTNAME=	phpeclipse
 PORTVERSION=	1.2.3

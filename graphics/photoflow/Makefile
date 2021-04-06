@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	photoflow
 DISTVERSION=	0.2.8.20200828

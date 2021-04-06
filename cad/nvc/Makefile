@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nvc
 DISTVERSIONPREFIX=	r

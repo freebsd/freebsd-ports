@@ -1,5 +1,4 @@
 # Created by: martin.dieringer@gmx.de
-# $FreeBSD$
 
 PORTNAME=	frescobaldi
 DISTVERSIONPREFIX=	v

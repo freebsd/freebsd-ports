@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dataclasses
 PORTVERSION=	0.8

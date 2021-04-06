@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spidermonkey
 DISTVERSION=	78.7.0

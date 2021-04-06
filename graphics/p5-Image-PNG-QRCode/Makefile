@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Image-PNG-QRCode
 DISTVERSION=	0.09

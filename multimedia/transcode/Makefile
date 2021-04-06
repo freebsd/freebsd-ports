@@ -1,5 +1,4 @@
 # Created by: Hendrik Scholz <hendrik@scholz.net>
-# $FreeBSD$
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.7

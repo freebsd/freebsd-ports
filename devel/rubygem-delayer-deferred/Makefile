@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	delayer-deferred
 PORTVERSION=	2.1.3

@@ -1,5 +1,4 @@
 # Created by: Domas Mituzas <midom@dammit.lt>
-# $FreeBSD$
 
 PORTNAME=	kannel
 PORTVERSION=	1.4.4

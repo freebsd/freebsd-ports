@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	powerline-status
 PORTVERSION=	2.8.1

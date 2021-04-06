@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bchoppr
 DISTVERSION=	1.10.4

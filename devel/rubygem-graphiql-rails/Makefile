@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	graphiql-rails
 PORTVERSION=	1.4.11

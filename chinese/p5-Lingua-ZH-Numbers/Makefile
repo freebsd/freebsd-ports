@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Lingua-ZH-Numbers
 PORTVERSION=	0.04

@@ -1,5 +1,4 @@
 # Created by: Anton Yudin <toha@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	warmux
 DISTVERSION=	11.04.1

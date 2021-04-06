@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libegit2
 DISTVERSION=	g20200515

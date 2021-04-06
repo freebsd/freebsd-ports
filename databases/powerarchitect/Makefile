@@ -1,5 +1,4 @@
 # Created by: Jose Garcia Juanino <jjuanino@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	powerarchitect
 PORTVERSION=	1.0.8

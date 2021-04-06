@@ -1,5 +1,4 @@
 # Created by: Nick Sayer <nsayer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	unixODBC
 PORTVERSION=	2.3.9

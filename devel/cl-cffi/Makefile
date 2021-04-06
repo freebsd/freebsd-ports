@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cffi
 PORTVERSION=	0.16.1

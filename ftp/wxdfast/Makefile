@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME=	wxdfast
 PORTVERSION=	0.6.0

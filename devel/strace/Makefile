@@ -1,5 +1,4 @@
 # Created by: Alex Semenyaka <alex@rinet.ru>
-# $FreeBSD$
 
 PORTNAME=	strace
 PORTVERSION=	4.5.18

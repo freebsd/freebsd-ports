@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mujs
 DISTVERSION=	1.0.7

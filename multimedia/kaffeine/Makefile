@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	kaffeine
 DISTVERSION=	2.0.18

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xprop
 PORTVERSION=	1.2.5

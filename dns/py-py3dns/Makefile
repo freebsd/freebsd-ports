@@ -1,5 +1,4 @@
 # Created by: Mark Linimon <linimon@lonesome.com>
-# $FreeBSD$
 
 PORTNAME=	py3dns
 PORTVERSION=	3.2.1

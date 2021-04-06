@@ -1,5 +1,4 @@
 # Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-# $FreeBSD$
 
 PORTNAME=	django-reversion
 PORTVERSION=	3.0.7

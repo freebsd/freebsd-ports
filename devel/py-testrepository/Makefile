@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	testrepository
 DISTVERSION=	0.0.20

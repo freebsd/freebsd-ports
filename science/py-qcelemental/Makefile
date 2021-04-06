@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qcelemental
 PORTVERSION=	0.19.0

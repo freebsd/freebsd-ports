@@ -1,5 +1,4 @@
 # Created by: Thomas Quinot <thomas@cuivre.fr.eu.org>
-# $FreeBSD$
 
 PORTNAME=	proxy-suite
 PORTVERSION=	1.9.2.4

@@ -1,5 +1,4 @@
 # Created by: Jin-Sih, Lin <linpct@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mothra
 PORTVERSION=	0.0.3

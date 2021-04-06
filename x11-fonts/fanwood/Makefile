@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fanwood
 DISTVERSION=	g20110526

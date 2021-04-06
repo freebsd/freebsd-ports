@@ -1,5 +1,4 @@
 # Created by: mharo@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	ttcp
 PORTVERSION=	1.12

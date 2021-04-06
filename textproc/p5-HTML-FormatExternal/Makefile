@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-FormatExternal
 PORTVERSION=	26

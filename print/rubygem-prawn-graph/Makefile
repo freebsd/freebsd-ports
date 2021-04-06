@@ -1,5 +1,4 @@
 # Created by: Philip M. Gollucci <pgpollucci@p6m7g8.com>
-# $FreeBSD$
 
 PORTNAME=	prawn-graph
 PORTVERSION=	1.0.6

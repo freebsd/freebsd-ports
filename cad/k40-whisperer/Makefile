@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	k40-whisperer
 DISTVERSION=	0.55

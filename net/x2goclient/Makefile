@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	x2goclient
 PORTVERSION=	4.1.2.2

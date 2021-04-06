@@ -1,5 +1,4 @@
 # Created by: gpalmer
-# $FreeBSD$
 
 PORTNAME=	tvtwm
 PORTVERSION=	pl11

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Senna
 PORTVERSION=	0.51

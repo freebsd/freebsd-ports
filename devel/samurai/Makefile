@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	samurai
 DISTVERSION=	1.2

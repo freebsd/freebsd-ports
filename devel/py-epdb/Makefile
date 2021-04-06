@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	epdb
 PORTVERSION=	0.15.1

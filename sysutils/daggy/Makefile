@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	daggy
 DISTVERSION=	2.0.2

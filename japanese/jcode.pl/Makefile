@@ -1,5 +1,4 @@
 # Created by: sada
-# $FreeBSD$
 
 PORTNAME=	jcode.pl
 PORTVERSION=	2.13

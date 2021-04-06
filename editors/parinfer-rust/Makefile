@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	parinfer-rust
 DISTVERSIONPREFIX=	v

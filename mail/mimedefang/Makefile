@@ -1,5 +1,4 @@
 # Created by: Andrey V. Pevnev <andrey@mgul.ac.ru>
-# $FreeBSD$
 
 PORTNAME=	mimedefang
 PORTVERSION=	2.84

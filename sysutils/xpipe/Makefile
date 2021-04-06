@@ -1,5 +1,4 @@
 # Created by: Jose G. Juanino <jjuanino@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	xpipe
 DISTVERSION=	g20200503

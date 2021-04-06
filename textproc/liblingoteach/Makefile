@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	liblingoteach
 PORTVERSION=	0.2.1

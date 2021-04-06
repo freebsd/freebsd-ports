@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Encode-Base32-GMP
 PORTVERSION=	0.02

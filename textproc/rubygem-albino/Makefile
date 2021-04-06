@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	albino
 PORTVERSION=	1.3.3

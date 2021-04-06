@@ -1,5 +1,4 @@
 # Created by: Sébastien Santoro <dereckson@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	astrometry
 PORTVERSION=	0.80

@@ -1,5 +1,4 @@
 # Created by: adamw
-# $FreeBSD$
 
 PORTNAME=	lz4
 DISTVERSIONPREFIX=	v

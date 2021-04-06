@@ -1,5 +1,4 @@
 # Created by: Rahul Siddharthan <rsidd@online.fr>
-# $FreeBSD$
 
 PORTNAME=	vsound
 PORTVERSION=	0.6

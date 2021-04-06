@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chempy
 DISTVERSION=	0.8.1

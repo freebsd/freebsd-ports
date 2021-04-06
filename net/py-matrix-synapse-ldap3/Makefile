@@ -1,5 +1,4 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	matrix-synapse-ldap3
 PORTVERSION=	0.1.4

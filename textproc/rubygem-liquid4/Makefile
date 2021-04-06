@@ -1,5 +1,4 @@
 # Created by: peter.schuller@infidyne.com
-# $FreeBSD$
 
 PORTNAME=	liquid
 PORTVERSION=	4.0.3

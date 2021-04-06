@@ -1,5 +1,4 @@
 # Created by: Robert Withrow <witr@rwwa.com>
-# $FreeBSD$
 
 PORTNAME=	findutils
 PORTVERSION=	4.8.0

@@ -1,5 +1,4 @@
 # Created by: jmz
-# $FreeBSD$
 
 PORTNAME?=	lapack
 PORTVERSION=	3.5.0

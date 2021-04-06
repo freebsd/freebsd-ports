@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	enum-compat
 PORTVERSION=	0.0.3

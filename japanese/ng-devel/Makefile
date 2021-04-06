@@ -1,5 +1,4 @@
 # Created by: Kawaguti Ginga <ginga-freebsd@ginganet.org>
-# $FreeBSD$
 
 PORTNAME=	ng
 DISTVERSION=	1.5beta1

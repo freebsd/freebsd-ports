@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	twmn
 PORTVERSION=	g20190917

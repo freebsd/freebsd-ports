@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	websockets
 DISTVERSION=	${QT5_VERSION}

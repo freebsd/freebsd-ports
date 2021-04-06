@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <ip@unixway.org>
-# $FreeBSD$
 
 PORTNAME=	wmforecast
 DISTVERSION=	1.5

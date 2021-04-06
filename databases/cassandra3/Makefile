@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cassandra
 DISTVERSION=	3.11.10

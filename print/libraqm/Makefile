@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libraqm
 PORTVERSION=	0.6.0

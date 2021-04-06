@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	raven
 PORTVERSION=	6.10.0

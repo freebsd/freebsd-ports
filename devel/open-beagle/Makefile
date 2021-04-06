@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	open-beagle
 PORTVERSION=	3.0.3

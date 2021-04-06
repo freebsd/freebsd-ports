@@ -1,5 +1,4 @@
 # Created by: sahne
-# $FreeBSD$
 
 PORTNAME=	lxde-common
 PORTVERSION=	0.99.2

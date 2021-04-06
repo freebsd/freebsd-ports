@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Linux-Cpuinfo
 PORTVERSION=	1.12

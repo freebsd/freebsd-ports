@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Date_Holidays_PHPdotNet
 PORTVERSION=	0.1.2

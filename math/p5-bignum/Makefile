@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bignum
 PORTVERSION=	0.51

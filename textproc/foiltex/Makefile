@@ -1,5 +1,4 @@
 # Created by: Stefan Walter <sw@gegenunendlich.de>
-# $FreeBSD$
 
 PORTNAME=	foiltex
 PORTVERSION=	2.1.4b

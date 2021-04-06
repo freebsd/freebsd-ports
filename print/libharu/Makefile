@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	libharu
 DISTVERSIONPREFIX=	RELEASE_

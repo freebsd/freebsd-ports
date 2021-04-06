@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clips
 PORTVERSION=	6.30

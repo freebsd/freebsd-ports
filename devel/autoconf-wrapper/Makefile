@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME?=	autoconf-wrapper
 PORTVERSION=	20131203

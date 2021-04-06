@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	Apache-Session-SharedMem
 PORTVERSION=	0.6

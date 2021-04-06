@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	macchanger
 PORTVERSION=	1.7.0

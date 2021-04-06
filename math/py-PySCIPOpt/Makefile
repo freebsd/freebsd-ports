@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	PySCIPOpt
 DISTVERSION=	3.0.2

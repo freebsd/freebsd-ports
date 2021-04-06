@@ -1,5 +1,4 @@
 # Created by: Andrew Turner <andrew+ports@fubar.geek.nz>
-# $FreeBSD$
 
 PORTNAME=	libdfui
 PORTVERSION=	4.1.20060122

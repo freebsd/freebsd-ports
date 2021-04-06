@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Dumper
 PORTVERSION=	2.173

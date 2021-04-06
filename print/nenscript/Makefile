@@ -1,5 +1,4 @@
 # Created by: cjm2
-# $FreeBSD$
 
 PORTNAME=	nenscript
 PORTVERSION=	1.13.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xorgxrdp
 DISTVERSIONPREFIX=	v

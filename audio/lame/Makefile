@@ -1,5 +1,4 @@
 # Created by: yoshiaki Uchikawa
-# $FreeBSD$
 
 PORTNAME=	lame
 PORTVERSION=	3.100

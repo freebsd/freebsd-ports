@@ -1,5 +1,4 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Mojolicious-Plugin-NYTProf
 PORTVERSION=	0.23

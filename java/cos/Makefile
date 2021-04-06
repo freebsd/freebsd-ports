@@ -1,5 +1,4 @@
 # Created by: Jose Marques <noway@nohow.demon.co.uk>
-# $FreeBSD$
 
 PORTNAME=	cos
 PORTVERSION=	2002.11.05

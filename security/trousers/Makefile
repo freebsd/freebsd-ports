@@ -1,5 +1,4 @@
 # Created by: Sebastian Schuetz <sschuetz@fhm.edu>
-# $FreeBSD$
 
 PORTNAME=	trousers
 PORTVERSION=	0.3.14

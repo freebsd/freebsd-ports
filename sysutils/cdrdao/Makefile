@@ -1,5 +1,4 @@
 # Created by: futatuki
-# $FreeBSD$
 
 PORTNAME?=	cdrdao
 PORTVERSION=	1.2.4

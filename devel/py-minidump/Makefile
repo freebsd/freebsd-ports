@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	minidump
 DISTVERSION=	0.0.13

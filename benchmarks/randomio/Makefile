@@ -1,5 +1,4 @@
 # Created by: Sergey Kandaurov <pluknet@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	randomio
 PORTVERSION=	1.4

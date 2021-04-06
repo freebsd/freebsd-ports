@@ -1,5 +1,4 @@
 # Created by: Dario Freni <saturnero@gufi.org>
-# $FreeBSD$
 
 PORTNAME=	python-mode.el
 PORTVERSION=	1.0

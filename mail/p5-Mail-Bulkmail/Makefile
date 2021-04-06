@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Mail-Bulkmail
 PORTVERSION=	3.12

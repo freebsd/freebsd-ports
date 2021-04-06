@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	graphite2
 DISTVERSION=	1.3.14

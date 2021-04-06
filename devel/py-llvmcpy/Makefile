@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	llvmcpy
 DISTVERSIONPREFIX=	v

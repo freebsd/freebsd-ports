@@ -1,5 +1,4 @@
 # Created by: wenheping@gmail.com
-# $FreeBSD$
 
 PORTNAME=	jspwiki
 PORTVERSION=	2.8.4

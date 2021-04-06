@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gcta
 DISTVERSION=	1.26.0

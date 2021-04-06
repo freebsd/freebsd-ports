@@ -1,5 +1,4 @@
 # Created by: Muhammad Moinur Rahman <bbofh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	zeep
 PORTVERSION=	4.0.0

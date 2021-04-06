@@ -1,5 +1,4 @@
 # Created by: Matthias Andree <mandree@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pkgs_which
 PORTVERSION=	0.4.1

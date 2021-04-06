@@ -1,5 +1,4 @@
 # Created by: Yonatan <onatan@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	amap
 PORTVERSION=	5.4

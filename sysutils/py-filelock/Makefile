@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	filelock
 DISTVERSION=	3.0.12

@@ -1,5 +1,4 @@
 # Created by: Serhii (Sergey) Kozlov <skozlov@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ohmyzsh
 PORTVERSION=	20201216

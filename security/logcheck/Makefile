@@ -1,5 +1,4 @@
 # Created by: Dan Langille <dan@freebsddiary.org>
-# $FreeBSD$
 
 PORTNAME=	logcheck
 PORTVERSION=	1.3.22

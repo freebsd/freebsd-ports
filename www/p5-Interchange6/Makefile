@@ -1,5 +1,4 @@
 # Created by: <hvo.pm@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	Interchange6
 PORTVERSION=	0.120

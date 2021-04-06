@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ns1-python
 DISTVERSION=	0.16.0

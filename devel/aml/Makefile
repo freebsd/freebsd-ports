@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aml
 DISTVERSIONPREFIX=	v

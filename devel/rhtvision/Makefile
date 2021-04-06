@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang
-# $FreeBSD$
 
 PORTNAME=	rhtvision
 PORTVERSION=	2.2.1.1

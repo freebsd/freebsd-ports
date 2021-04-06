@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	4ti2
 DISTVERSIONPREFIX=	Release_

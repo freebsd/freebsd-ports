@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	folsom
 PORTVERSION=	0.8.3

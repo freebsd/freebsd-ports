@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fastprogress
 DISTVERSION=	1.0.0

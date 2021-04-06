@@ -1,5 +1,4 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	freerdp
 DISTVERSION=	2.3.2

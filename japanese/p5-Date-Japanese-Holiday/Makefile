@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Date-Japanese-Holiday
 PORTVERSION=	0.05

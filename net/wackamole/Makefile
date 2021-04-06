@@ -1,5 +1,4 @@
 # Created by: Marcin Cieslak <saper@system.pl>
-# $FreeBSD$
 
 PORTNAME=	wackamole
 PORTVERSION=	2.1.5

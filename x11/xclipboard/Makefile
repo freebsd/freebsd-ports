@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xclipboard
 PORTVERSION=	1.1.3

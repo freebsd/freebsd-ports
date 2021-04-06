@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MouseX-Types
 PORTVERSION=	0.06

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ocp
 DISTVERSION=	7.4-RC2

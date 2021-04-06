@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bluecloth
 PORTVERSION=	2.2.0

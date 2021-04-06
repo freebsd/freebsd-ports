@@ -1,5 +1,4 @@
 # Created by: Janos.Mohacsi@dante.org.uk
-# $FreeBSD$
 
 PORTNAME=	IO-Socket-Multicast
 PORTVERSION=	1.12

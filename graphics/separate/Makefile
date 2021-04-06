@@ -1,5 +1,4 @@
 # Created by: Pietro Cerutti <gahr@gahr.ch>
-# $FreeBSD$
 
 PORTNAME=	separate
 PORTVERSION=	0.5.8

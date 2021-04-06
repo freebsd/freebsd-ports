@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	blackout
 DISTVERSION=	g20140730

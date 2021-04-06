@@ -1,5 +1,4 @@
 # Created by: Rui Lopes (rgl ruilopes com)
-# $FreeBSD$
 
 PORTNAME=	tzinfo
 PORTVERSION=	1.2.9

@@ -1,5 +1,4 @@
 # Created by: Janni
-# $FreeBSD$
 
 PORTNAME=	wfmath
 PORTVERSION=	1.0.2

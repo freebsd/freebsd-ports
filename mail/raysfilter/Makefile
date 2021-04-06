@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	raysfilter
 PORTVERSION=	1.14

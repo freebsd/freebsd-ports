@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	avidemux
 PORTVERSION=	${AVIDEMUX_VERSION}

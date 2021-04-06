@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scoria
 DISTVERSION=	1.0.5

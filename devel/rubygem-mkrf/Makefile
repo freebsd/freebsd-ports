@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mkrf
 PORTVERSION=	0.2.3

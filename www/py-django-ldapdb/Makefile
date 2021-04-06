@@ -1,5 +1,4 @@
 # Created by: Alexander Kriventsov <avk@vl.ru>
-# $FreeBSD$
 
 PORTNAME=	django-ldapdb
 PORTVERSION=	1.4.0

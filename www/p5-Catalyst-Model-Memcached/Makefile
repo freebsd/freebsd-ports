@@ -1,5 +1,4 @@
 # Created by: Denis Pokataev <catone@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Model-Memcached
 PORTVERSION=	0.02

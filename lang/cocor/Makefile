@@ -1,5 +1,4 @@
 # Created by: Guy Antony Halse <guy@rucus.ru.za.za>
-# $FreeBSD$
 
 PORTNAME=	cocor
 PORTVERSION=	1.7

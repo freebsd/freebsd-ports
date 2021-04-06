@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gnulib
 PORTVERSION=	20140202

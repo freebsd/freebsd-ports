@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	terminfo
 PORTVERSION=	20201128

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Lingua-KO-Hangul-Util
 PORTVERSION=	0.28

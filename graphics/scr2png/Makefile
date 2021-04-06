@@ -1,5 +1,4 @@
 # Created by: nik
-# $FreeBSD$
 
 PORTNAME=	scr2png
 PORTVERSION=	1.2

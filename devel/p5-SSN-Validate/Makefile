@@ -1,5 +1,4 @@
 # Created by: tiger <tiger@whitetigersd.com>
-# $FreeBSD$
 
 PORTNAME=	SSN-Validate
 PORTVERSION=	0.18

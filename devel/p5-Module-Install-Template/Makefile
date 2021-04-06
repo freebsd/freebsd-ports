@@ -1,5 +1,4 @@
 # Created by: gugu
-# $FreeBSD$
 
 PORTNAME=	Module-Install-Template
 PORTVERSION=	0.08

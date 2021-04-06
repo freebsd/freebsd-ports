@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Dancer-Session-Cookie
 PORTVERSION=	0.27

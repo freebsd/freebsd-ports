@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	remotedesk
 PORTVERSION=	0.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pytest-env
 PORTVERSION=	0.6.2

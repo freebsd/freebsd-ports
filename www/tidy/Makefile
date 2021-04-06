@@ -1,5 +1,4 @@
 # Created by: Abel Chow <achow@transoft.net>
-# $FreeBSD$
 
 PORTNAME=	tidy4
 PORTVERSION=	20000804

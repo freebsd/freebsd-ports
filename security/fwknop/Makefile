@@ -1,5 +1,4 @@
 # Created by: Sean Greven <sean.greven@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	fwknop
 PORTVERSION=	2.6.10

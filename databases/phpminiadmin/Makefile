@@ -1,5 +1,4 @@
 # Created by: spam@rm-rf.kiev.ua
-# $FreeBSD$
 
 PORTNAME=	phpminiadmin
 PORTVERSION=	1.9.170730

@@ -1,5 +1,4 @@
 # Created by: Sébastien Santoro <dereckson@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	xmlgen
 PORTVERSION=	1.4

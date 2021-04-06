@@ -1,5 +1,4 @@
 # Created by: Tobias Gion <freebsd@gionet.de>
-# $FreeBSD$
 
 PORTNAME=	guichan
 PORTVERSION=	0.8.2

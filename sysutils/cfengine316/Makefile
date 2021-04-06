@@ -1,5 +1,4 @@
 # Created by: jrhett@netconsonance.com
-# $FreeBSD$
 
 PORTNAME=	cfengine
 PORTVERSION=	3.16.0

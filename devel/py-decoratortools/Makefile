@@ -1,5 +1,4 @@
 # Created by: alexander smishlajev
-# $FreeBSD$
 
 PORTNAME=	decoratortools
 PORTVERSION=	1.8

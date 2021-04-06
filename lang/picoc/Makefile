@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	picoc
 PORTVERSION=	2.1

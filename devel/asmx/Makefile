@@ -1,5 +1,4 @@
 # Created by: elbarto
-# $FreeBSD$
 
 PORTNAME=	asmx
 PORTVERSION=	1.8.2

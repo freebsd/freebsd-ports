@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # To update the port:
 # The stable v8 version follows the chromium browser

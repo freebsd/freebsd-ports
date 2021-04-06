@@ -1,5 +1,4 @@
 # Created by: clsung@dragon2.net
-# $FreeBSD$
 
 PORTNAME=	CGI-Kwiki
 PORTVERSION=	0.18

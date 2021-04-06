@@ -1,5 +1,4 @@
 # Created by: Dirk Jagdmann <doj@cubic.org>
-# $FreeBSD$
 
 PORTNAME=	quilt
 PORTVERSION=	0.66

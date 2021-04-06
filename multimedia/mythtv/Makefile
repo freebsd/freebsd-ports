@@ -1,5 +1,4 @@
 # Created by: Stacey Son <mythdev@son.org>, Ari Maniatis <ari@ish.com.au>
-# $FreeBSD$
 
 PORTNAME=	mythtv
 DISTVERSIONPREFIX=	v

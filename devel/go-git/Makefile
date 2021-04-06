@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	go-git
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Structures_DataGrid_DataSource_CSV
 PORTVERSION=	0.1.6

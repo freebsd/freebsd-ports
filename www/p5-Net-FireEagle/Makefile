@@ -1,5 +1,4 @@
 # Created by: Steven Kreuzer <skreuzer@exit2shel.com>
-# $FreeBSD$
 
 PORTNAME=	Net-FireEagle
 PORTVERSION=	1.6

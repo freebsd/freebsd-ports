@@ -1,5 +1,4 @@
 # Created by: Andrew Khlebutin <andrey@hm.perm.ru>
-# $FreeBSD$
 
 PORTNAME=	pwgen
 PORTVERSION=	2.08

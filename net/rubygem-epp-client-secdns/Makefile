@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	epp-client-secdns
 PORTVERSION=	0.15.2

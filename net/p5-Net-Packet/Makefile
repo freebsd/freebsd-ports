@@ -1,5 +1,4 @@
 # Created by: GomoR <netpkt@gomor.org>
-# $FreeBSD$
 
 PORTNAME=	Net-Packet
 DISTVERSION=	3.27

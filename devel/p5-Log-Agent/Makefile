@@ -1,5 +1,4 @@
 # Created by: Jesse McConnell <jesse@gallup.com>
-# $FreeBSD$
 
 PORTNAME=	Log-Agent
 PORTVERSION=	1.003

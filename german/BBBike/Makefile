@@ -1,5 +1,4 @@
 # Created by: Slaven Rezic <eserte@cs.tu-berlin.de>
-# $FreeBSD$
 
 PORTNAME=	BBBike
 PORTVERSION=	3.18

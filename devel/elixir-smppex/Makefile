@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	smppex
 PORTVERSION=	2.2.9

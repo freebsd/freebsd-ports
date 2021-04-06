@@ -1,5 +1,4 @@
 # Created by: Garrett Rooney <rooneg@electricjellyfish.net>
-# $FreeBSD$
 
 PORTNAME=	metacity
 PORTVERSION=	3.36.1

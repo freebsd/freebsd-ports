@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gitui
 DISTVERSIONPREFIX=	v

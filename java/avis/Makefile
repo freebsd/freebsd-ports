@@ -1,5 +1,4 @@
 # Created by: Benjamin Close <benjsc@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	avis
 PORTVERSION=	1.2.0

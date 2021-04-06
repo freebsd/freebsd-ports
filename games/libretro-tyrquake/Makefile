@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-tyrquake
 PORTVERSION=	0.20210214

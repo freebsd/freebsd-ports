@@ -1,5 +1,4 @@
 # Created by: David Xu
-# $FreeBSD$
 
 PORTNAME=	byaccj
 PORTVERSION=	1.15

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	p11-kit
 PORTVERSION=	0.23.5

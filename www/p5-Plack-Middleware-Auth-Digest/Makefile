@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Middleware-Auth-Digest
 PORTVERSION=	0.05

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-SMS-Mollie
 PORTVERSION=	0.04

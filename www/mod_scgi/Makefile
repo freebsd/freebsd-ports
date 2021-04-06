@@ -1,5 +1,4 @@
 # Created by: Neil Blakey-Milner <nbm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mod_scgi
 PORTVERSION=	2.0

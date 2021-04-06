@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	exprotobuf
 DISTVERSION=	1.2.9

@@ -1,5 +1,4 @@
 # Created by: Alexander Yerenkow <yerenkow@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	x-unikey
 PORTVERSION=	1.0.4

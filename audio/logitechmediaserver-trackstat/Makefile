@@ -1,5 +1,4 @@
 # Created by: Tim Bishop <tdb@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	trackstat
 PORTVERSION=	3.2.3951

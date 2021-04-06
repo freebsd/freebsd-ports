@@ -1,5 +1,4 @@
 # Created by: Alexander Leidinger <netchild@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ssh2
 PORTVERSION=	1.3.1

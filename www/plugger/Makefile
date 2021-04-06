@@ -1,5 +1,4 @@
 # Created by: Jay Sachs <sachs@cs.williams.edu>
-# $FreeBSD$
 
 PORTNAME=	plugger
 PORTVERSION=	5.1.5

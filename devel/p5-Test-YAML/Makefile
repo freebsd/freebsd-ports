@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-YAML
 PORTVERSION=	1.07

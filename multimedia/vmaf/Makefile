@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vmaf
 DISTVERSIONPREFIX=	v

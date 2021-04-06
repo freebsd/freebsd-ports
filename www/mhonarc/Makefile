@@ -1,5 +1,4 @@
 # Created by: koshy@india.hp.com
-# $FreeBSD$
 
 PORTNAME=	mhonarc
 PORTVERSION=	2.6.24

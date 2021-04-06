@@ -1,5 +1,4 @@
 # Created by: hm
-# $FreeBSD$
 
 PORTNAME=	mlan3
 PORTVERSION=	1.00

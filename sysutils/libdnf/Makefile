@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libdnf
 DISTVERSION=	0.60.0

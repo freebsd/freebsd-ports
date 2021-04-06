@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Bytes-Random-Secure-Tiny
 PORTVERSION=	1.008

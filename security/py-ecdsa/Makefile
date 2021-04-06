@@ -1,5 +1,4 @@
 # Created by: Neil Booth
-# $FreeBSD$
 
 PORTNAME=	ecdsa
 PORTVERSION=	0.16.0

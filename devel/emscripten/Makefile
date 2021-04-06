@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	emscripten
 DISTVERSION=	2.0.3

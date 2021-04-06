@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gen_smtp
 PORTVERSION=	0.13

@@ -1,5 +1,4 @@
 # Created by: Max N. Boyarov <m.boyarov@bsd.by>
-# $FreeBSD$
 
 PORTNAME=	jabber.el
 PORTVERSION=	0.8.92

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	neko
 DISTVERSIONPREFIX=	v

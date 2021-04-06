@@ -1,5 +1,4 @@
 # Created by: chuckr
-# $FreeBSD$
 
 PORTNAME=	itcl
 PORTVERSION=	3.4.1

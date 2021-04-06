@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clipper
 DISTVERSION=	2.1.20180802

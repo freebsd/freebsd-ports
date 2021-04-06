@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	docx2txt
 PORTVERSION=	1.4

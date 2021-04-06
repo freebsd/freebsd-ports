@@ -1,5 +1,4 @@
 # Created by: Sahil Tandon <sahil@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-Twitter-Stream
 PORTVERSION=	0.28

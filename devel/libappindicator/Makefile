@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libappindicator
 PORTVERSION=	${MAJOR_VER}.${SNAPSHOT_VER:S/.//g}.${PATCH_VER:S/ubuntu//}

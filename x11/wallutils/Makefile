@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wallutils
 DISTVERSION=	5.9.0

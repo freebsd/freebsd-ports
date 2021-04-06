@@ -1,5 +1,4 @@
 # Created by: Peter Johnson <johnson.peter@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	dblatex
 DISTVERSION=	0.3.11

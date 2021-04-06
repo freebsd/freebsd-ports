@@ -1,5 +1,4 @@
 # Created by: cfs@ing.puc.cl (original)
-# $FreeBSD$
 
 PORTNAME=	urt
 PORTVERSION=	3.1b1

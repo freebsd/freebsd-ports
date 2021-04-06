@@ -1,5 +1,4 @@
 # Created by: Steven Kreuzer <skreuzer@exit2shell.com>
-# $FreeBSD$
 
 PORTNAME=	Net-GeoPlanet
 PORTVERSION=	0.2

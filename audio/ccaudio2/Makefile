@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	ccaudio2
 PORTVERSION=	2.2.0

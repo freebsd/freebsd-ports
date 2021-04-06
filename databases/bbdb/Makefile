@@ -1,5 +1,4 @@
 # Created by: Yoichi NAKAYAMA <yoichi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bbdb
 DISTVERSIONPREFIX=	v

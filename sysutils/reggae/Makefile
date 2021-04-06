@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	reggae
 PORTVERSION=	0.1.16

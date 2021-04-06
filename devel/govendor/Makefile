@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	govendor
 DISTVERSIONPREFIX=	v

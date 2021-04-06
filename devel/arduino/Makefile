@@ -1,5 +1,4 @@
 # Created by: Warren Block <wblock@wonkity.com>
-# $FreeBSD$
 
 PORTNAME=	arduino
 PORTVERSION=	1.0.6

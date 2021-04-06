@@ -1,5 +1,4 @@
 # Created by: Manuel Rabade Garica <mig@mig-29.net>
-# $FreeBSD$
 
 PORTNAME=	xfce4-wavelan-plugin
 PORTVERSION=	0.6.2

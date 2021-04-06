@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME=	uhexen2
 PORTVERSION=	1.5.6

@@ -1,5 +1,4 @@
 # Created by: Greg Hewgill <greg@hewgill.com>
-# $FreeBSD$
 
 PORTNAME=	zebedee
 PORTVERSION=	2.5.3

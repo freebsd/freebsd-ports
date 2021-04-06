@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nuspell
 DISTVERSIONPREFIX=	v

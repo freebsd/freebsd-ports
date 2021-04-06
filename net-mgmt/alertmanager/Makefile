@@ -1,5 +1,4 @@
 # Created by: Michal Hanula <michal@hanu.la>
-# $FreeBSD$
 
 PORTNAME=	alertmanager
 DISTVERSIONPREFIX=	v

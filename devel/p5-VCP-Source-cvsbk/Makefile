@@ -1,5 +1,4 @@
 # Created by: June-Yen Huang <jihuang@gate.sinica.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	VCP-Source-cvsbk
 PORTVERSION=	0.11

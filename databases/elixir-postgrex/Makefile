@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	postgrex
 PORTVERSION=	0.13.5

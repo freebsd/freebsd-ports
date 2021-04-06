@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	evilwm
 PORTVERSION=	1.1.1

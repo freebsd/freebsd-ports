@@ -1,5 +1,4 @@
 # Created by: never@nevermind.kiev.ua
-# $FreeBSD$
 
 PORTNAME=	publib
 PORTVERSION=	0.40

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTREVISION=	0
 CATEGORIES=	x11-toolkits

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rack-oauth2
 PORTVERSION=	1.16.0

@@ -1,5 +1,4 @@
 # Created by: Xin Li <delphij@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ujson
 PORTVERSION=	3.0.0

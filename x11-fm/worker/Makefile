@@ -1,5 +1,4 @@
 # Created by: Simon Dick <simond@irrelevant.org>
-# $FreeBSD$
 
 PORTNAME=	worker
 PORTVERSION=	4.7.0

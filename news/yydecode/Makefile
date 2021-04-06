@@ -1,5 +1,4 @@
 # Created by: Mikolaj Rydzewski <miki@ceti.pl>
-# $FreeBSD$
 
 PORTNAME=	yydecode
 PORTVERSION=	0.2.10

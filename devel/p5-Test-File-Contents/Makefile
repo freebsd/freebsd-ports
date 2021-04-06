@@ -1,5 +1,4 @@
 # Created by: Rod Taylor <ports@rbt.ca>
-# $FreeBSD$
 
 PORTNAME=	Test-File-Contents
 PORTVERSION=	0.23

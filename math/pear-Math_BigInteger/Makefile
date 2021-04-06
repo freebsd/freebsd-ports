@@ -1,5 +1,4 @@
 # Created by: Piotr Rybicki <meritus@innervision.pl>
-# $FreeBSD$
 
 PORTNAME=	Math_BigInteger
 PORTVERSION=	1.0.3

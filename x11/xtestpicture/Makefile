@@ -1,5 +1,4 @@
 # Created by: joerg
-# $FreeBSD$
 
 PORTNAME=	xtestpicture
 PORTVERSION=	1.2

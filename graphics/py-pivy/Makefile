@@ -1,5 +1,4 @@
 # Created by: Pedro Giffuni <pfg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pivy
 PORTVERSION=	0.6.6

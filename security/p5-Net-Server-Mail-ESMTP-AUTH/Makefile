@@ -1,5 +1,4 @@
 # Created by: Zane C. Bowers <vvelox@vvelox.net>
-# $FreeBSD$
 
 PORTNAME=	Net-Server-Mail-ESMTP-AUTH
 PORTVERSION=	0.2

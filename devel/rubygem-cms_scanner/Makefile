@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cms_scanner
 PORTVERSION=	0.13.0

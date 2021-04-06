@@ -1,5 +1,4 @@
 # Created by: dirkx@webweaving.org
-# $FreeBSD$
 
 PORTNAME=	bluez-firmware
 PORTVERSION=	1.2

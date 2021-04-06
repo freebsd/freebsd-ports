@@ -1,5 +1,4 @@
 # Created by: wenheping <wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	oauth
 PORTVERSION=	0.5.4

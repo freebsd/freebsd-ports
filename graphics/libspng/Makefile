@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libspng
 DISTVERSIONPREFIX=	v

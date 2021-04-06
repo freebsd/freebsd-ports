@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	waifu2x-ncnn-vulkan
 DISTVERSION=	20210210

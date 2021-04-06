@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTTP-Entity-Parser
 PORTVERSION=	0.25

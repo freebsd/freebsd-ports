@@ -1,5 +1,4 @@
 # Created by: Albert Vernon <f3cun3c02@sneakemail.com>
-# $FreeBSD$
 
 PORTNAME=	lzlib
 PORTVERSION=	1.11

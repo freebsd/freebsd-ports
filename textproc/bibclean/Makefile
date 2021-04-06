@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bibclean
 DISTVERSION=	3.04

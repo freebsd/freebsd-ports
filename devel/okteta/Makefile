@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	okteta
 DISTVERSION=	0.26.6

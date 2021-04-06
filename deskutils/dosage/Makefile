@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dosage
 DISTVERSION=	2.17

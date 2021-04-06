@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ipdb
 PORTVERSION=	0.13.4

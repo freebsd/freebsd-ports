@@ -1,5 +1,4 @@
 # Created by: Naresh Venkateshappa <nareshov@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	fonts-indic
 PORTVERSION=	2.1.5

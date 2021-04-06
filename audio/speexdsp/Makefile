@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	speexdsp
 DISTVERSION=	1.2.0

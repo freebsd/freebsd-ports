@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libbigwig
 DISTVERSION=	0.4.6

@@ -1,5 +1,4 @@
 # Created by: ws	Christoph Kick
-# $FreeBSD$
 
 PORTNAME=	nice-ffi
 PORTVERSION=	0.4

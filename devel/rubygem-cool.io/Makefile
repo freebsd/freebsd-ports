@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cool.io
 PORTVERSION=	1.5.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CGI-Struct
 PORTVERSION=	1.21

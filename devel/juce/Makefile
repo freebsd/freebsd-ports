@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	juce
 DISTVERSION=	6.0.8

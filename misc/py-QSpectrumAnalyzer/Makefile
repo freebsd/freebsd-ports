@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	QSpectrumAnalyzer
 DISTVERSION=	2.1.0

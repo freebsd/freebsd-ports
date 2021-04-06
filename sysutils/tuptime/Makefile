@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tuptime
 DISTVERSION=	5.0.2

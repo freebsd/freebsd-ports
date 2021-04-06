@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pygmo2
 DISTVERSIONPREFIX=	v

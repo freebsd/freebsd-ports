@@ -1,5 +1,4 @@
 # Created by: Abel Chow <abel_chow@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	cproto
 PORTVERSION=	4.7k

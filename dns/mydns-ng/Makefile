@@ -1,5 +1,4 @@
 # Created by: Simon Dick <simond@irrelevant.org>
-# $FreeBSD$
 
 PORTNAME=	mydns-ng
 PORTVERSION=	1.2.8.31

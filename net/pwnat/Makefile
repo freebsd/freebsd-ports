@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pwnat
 PORTVERSION=	g20171222

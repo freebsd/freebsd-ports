@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fasm
 PORTVERSION=	g20190920

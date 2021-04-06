@@ -1,5 +1,4 @@
 # Created by: Mikolaj Golub <to.my.trociny@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	bsdcrashtar
 PORTVERSION=	0.1.3

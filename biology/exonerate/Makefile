@@ -1,5 +1,4 @@
 # Created by: Motomichi Matsuzaki <mzaki@niid.go.jp>
-# $FreeBSD$
 
 PORTNAME=	exonerate
 PORTVERSION=	2.4.0

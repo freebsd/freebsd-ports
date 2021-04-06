@@ -1,5 +1,4 @@
 # Created by: Nicola Stanislao Vitale <nivit@FreeBSD:org>
-# $FreeBSD$
 
 PORTNAME=	speg
 DISTVERSION=	0.3

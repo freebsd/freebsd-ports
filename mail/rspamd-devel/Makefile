@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rspamd
 PORTVERSION=	2.8.a2.20210324

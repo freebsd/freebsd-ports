@@ -1,5 +1,4 @@
 # Created by: jesper
-# $FreeBSD$
 
 PORTNAME=	Digest-BubbleBabble
 PORTVERSION=	0.02

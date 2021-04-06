@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fsmtrie
 PORTVERSION=	1.1.0

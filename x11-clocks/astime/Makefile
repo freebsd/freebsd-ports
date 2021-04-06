@@ -1,5 +1,4 @@
 # Created by: Brian Handy <handy@physics.montana.edu>
-# $FreeBSD$
 
 PORTNAME=	astime
 PORTVERSION=	2.8

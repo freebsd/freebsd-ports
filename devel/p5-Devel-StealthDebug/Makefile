@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <alex@kapranoff.ru>
-# $FreeBSD$
 
 PORTNAME=	Devel-StealthDebug
 PORTVERSION=	1.008

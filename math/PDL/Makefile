@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@plab.ku.dk>
-# $FreeBSD$
 
 PORTNAME=	PDL
 PORTVERSION=	2.019

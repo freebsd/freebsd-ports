@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openh264
 DISTVERSIONPREFIX=v

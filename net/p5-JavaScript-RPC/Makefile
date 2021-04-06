@@ -1,5 +1,4 @@
 # Created by: Tony Shadwick <tshadwick@oss-solutions.com>
-# $FreeBSD$
 
 PORTNAME=	JavaScript-RPC
 PORTVERSION=	0.3

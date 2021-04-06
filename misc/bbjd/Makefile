@@ -1,5 +1,4 @@
 # Created by: Dima Sivachenko
-# $FreeBSD$
 
 PORTNAME=	bbjd
 PORTVERSION=	1.01

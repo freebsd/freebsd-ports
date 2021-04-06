@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-SharedFork
 PORTVERSION=	0.35

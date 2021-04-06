@@ -1,5 +1,4 @@
 # Created by: tm@onepost.net
-# $FreeBSD$
 
 PORTNAME=	xisp
 PORTVERSION=	2.7p4

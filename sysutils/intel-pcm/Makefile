@@ -1,5 +1,4 @@
 # Created by: Adrian Chadd
-# $FreeBSD$
 
 PORTNAME=	intel-pcm
 PORTVERSION=	202011

@@ -1,5 +1,4 @@
 # Created by: Stefan Esser <se@StefanEsser.FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sound-of-sorting
 PORTVERSION=	0.6.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	segyio
 DISTVERSION=	1.9.6

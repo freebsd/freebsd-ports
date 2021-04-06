@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gef
 DISTVERSION=	2021.01

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	net-ssh-gateway
 PORTVERSION=	1.3.0

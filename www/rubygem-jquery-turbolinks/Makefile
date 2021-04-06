@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jquery-turbolinks
 PORTVERSION=	2.1.0

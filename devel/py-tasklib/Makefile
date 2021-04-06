@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tasklib
 DISTVERSION=	2.3.0

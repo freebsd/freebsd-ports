@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tint2
 PORTVERSION=	16.7

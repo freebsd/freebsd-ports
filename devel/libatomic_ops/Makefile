@@ -1,5 +1,4 @@
 # Created by: Stanislav Sedov <stas@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libatomic_ops
 PORTVERSION=	7.6.10

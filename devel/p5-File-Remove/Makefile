@@ -1,5 +1,4 @@
 # Created by: Justin Stanford <jus@security.za.net>
-# $FreeBSD$
 
 PORTNAME=	File-Remove
 PORTVERSION=	1.58

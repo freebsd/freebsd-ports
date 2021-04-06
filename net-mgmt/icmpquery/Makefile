@@ -1,5 +1,4 @@
 # Created by: dom@happygiraffe.net
-# $FreeBSD$
 
 PORTNAME=	icmpquery
 PORTVERSION=	1.0.3

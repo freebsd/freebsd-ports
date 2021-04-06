@@ -1,5 +1,4 @@
 # Created by: David Bremner <bremner@unb.ca>
-# $FreeBSD$
 
 PORTNAME=	ipe
 PORTVERSION=	7.2.23

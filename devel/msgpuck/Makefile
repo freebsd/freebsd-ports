@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	msgpuck
 PORTVERSION=	2.0

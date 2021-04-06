@@ -1,5 +1,4 @@
 # Created by: Alex Samorukov <samm@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	anyremote
 PORTVERSION=	6.7.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	averiagwf
 PORTVERSION=	1.00

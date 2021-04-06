@@ -1,5 +1,4 @@
 # Created by: Jordi Haarman
-# $FreeBSD$
 
 PORTNAME=	simpletal
 PORTVERSION=	4.3

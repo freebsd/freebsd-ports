@@ -1,5 +1,4 @@
 # Created by: Bruce M Simpson
-# $FreeBSD$
 
 PORTNAME=	ficl
 PORTVERSION=	4.1.0

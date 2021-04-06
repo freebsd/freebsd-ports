@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kjobwidgets
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

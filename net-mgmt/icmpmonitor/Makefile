@@ -1,5 +1,4 @@
 # Created by: nbm
-# $FreeBSD$
 
 PORTNAME=	icmpmonitor
 PORTVERSION=	1.2

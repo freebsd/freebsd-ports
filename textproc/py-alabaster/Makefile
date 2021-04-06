@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alabaster
 PORTVERSION=	0.7.6

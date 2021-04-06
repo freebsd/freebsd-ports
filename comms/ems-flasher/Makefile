@@ -1,5 +1,4 @@
 # Created by: Nicole Reid <root@cooltrainer.org>
-# $FreeBSD$
 
 PORTNAME=	ems-flasher
 PORTVERSION=	0.03

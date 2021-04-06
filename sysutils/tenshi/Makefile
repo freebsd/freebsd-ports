@@ -1,5 +1,4 @@
 # Created by: Oliver Eikemeier
-# $FreeBSD$
 
 PORTNAME=	tenshi
 PORTVERSION=	0.17

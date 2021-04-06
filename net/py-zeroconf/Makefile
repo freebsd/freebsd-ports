@@ -1,5 +1,4 @@
 # Created by: John Hixson <jhixson@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	zeroconf
 PORTVERSION=	0.28.8

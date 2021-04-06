@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libserdes
 PORTVERSION=	6.0.2

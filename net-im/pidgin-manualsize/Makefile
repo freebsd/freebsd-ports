@@ -1,5 +1,4 @@
 # Created by: Joseph S. Atkinson <jsatkinson@embarqmail.com>
-# $FreeBSD$
 
 PORTNAME=	manualsize
 PORTVERSION=	0.7

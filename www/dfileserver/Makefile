@@ -1,5 +1,4 @@
 # Created by: Dash|RD
-# $FreeBSD$
 
 PORTNAME=	DFileServer
 PORTVERSION=	1.1.3

@@ -1,5 +1,4 @@
 # Created by: Piotr Kubaj
-# $FreeBSD$
 
 PORTNAME=	linux-c7
 PORTVERSION=	${LINUX_DIST_VER}

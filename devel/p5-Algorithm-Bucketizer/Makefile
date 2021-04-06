@@ -1,5 +1,4 @@
 # Created by: Christopher Boumenot <boumenot@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Algorithm-Bucketizer
 PORTVERSION=	0.13

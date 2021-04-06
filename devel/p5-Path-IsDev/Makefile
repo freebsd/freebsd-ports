@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Path-IsDev
 PORTVERSION=	1.001002

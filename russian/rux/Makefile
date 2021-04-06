@@ -1,5 +1,4 @@
 # Created by: Vyacheslav Anikin <anikinsl@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	rux
 PORTVERSION=	0.82

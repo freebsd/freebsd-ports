@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	OpenLara
 DISTVERSION=	g20210226

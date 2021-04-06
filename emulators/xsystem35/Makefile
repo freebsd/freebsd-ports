@@ -1,5 +1,4 @@
 # Created by: Seiichirou Hiraoka
-# $FreeBSD$
 
 PORTNAME=	xsystem35
 DISTVERSION=	1.7.3-pre5

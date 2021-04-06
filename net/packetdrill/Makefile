@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	packetdrill
 PORTVERSION=	0.0.2020082101

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-Frame-Device
 PORTVERSION=	1.12

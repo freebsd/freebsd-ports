@@ -1,5 +1,4 @@
 # Created by: sumikawa
-# $FreeBSD$
 
 PORTNAME=	kbanner
 PORTVERSION=	2.1

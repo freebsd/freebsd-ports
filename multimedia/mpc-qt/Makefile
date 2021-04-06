@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mpc-qt
 DISTVERSIONPREFIX=	v

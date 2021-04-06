@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	metasm
 PORTVERSION=	1.0.4

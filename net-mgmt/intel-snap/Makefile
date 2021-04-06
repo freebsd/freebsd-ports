@@ -1,5 +1,4 @@
 # Created by: Brad Davis <brd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	intel-snap
 PORTVERSION=	0.0.1

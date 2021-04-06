@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyipopt
 DISTVERSION=	g20180409

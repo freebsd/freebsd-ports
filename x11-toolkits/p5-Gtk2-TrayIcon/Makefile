@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Gtk2-TrayIcon
 PORTVERSION=	0.06

@@ -1,5 +1,4 @@
 # Created by: Bob Eager <bob@eager.cx>
-# $FreeBSD$
 
 PORTNAME=	regmath
 PORTVERSION=	1.00

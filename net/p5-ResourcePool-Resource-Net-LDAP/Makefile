@@ -1,5 +1,4 @@
 # Created by: erwin@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	ResourcePool-Resource-Net-LDAP
 PORTVERSION=	1.0003

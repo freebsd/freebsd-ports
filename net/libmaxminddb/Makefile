@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libmaxminddb
 PORTVERSION=	1.5.0

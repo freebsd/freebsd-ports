@@ -1,5 +1,4 @@
 # Created by: Christian Brueffer <chris@unixpages.org)
-# $FreeBSD$
 
 PORTNAME=	ldapdiff
 PORTVERSION=	1.4.1

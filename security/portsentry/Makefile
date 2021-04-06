@@ -1,5 +1,4 @@
 # Created by: chris@still.whet.org
-# $FreeBSD$
 
 PORTNAME=	portsentry
 PORTVERSION=	1.2

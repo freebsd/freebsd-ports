@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	basic-engines
 PORTVERSION=	20150521

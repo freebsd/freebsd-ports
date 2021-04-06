@@ -1,5 +1,4 @@
 # Created by: Andreev Maxim
-# $FreeBSD$
 
 PORTNAME=	xarchiver
 PORTVERSION=	0.5.4.15

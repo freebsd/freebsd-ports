@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qownnotes
 DISTVERSION=	19.2.0

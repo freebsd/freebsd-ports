@@ -1,5 +1,4 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	LWP-Authen-Negotiate
 PORTVERSION=	0.08

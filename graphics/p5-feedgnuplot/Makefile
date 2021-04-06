@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	feedgnuplot
 PORTVERSION=	1.55

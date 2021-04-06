@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	squidGuard
 PORTVERSION=	1.4

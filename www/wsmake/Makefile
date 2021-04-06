@@ -1,5 +1,4 @@
 # Created by: Joseph Koshy <jkoshy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	wsmake
 PORTVERSION=	0.7.901

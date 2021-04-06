@@ -1,5 +1,4 @@
 # Created by: D'Arcy Cain <darcy@druid.net>
-# $FreeBSD$
 
 PORTNAME=	weasyprint
 PORTVERSION=	51

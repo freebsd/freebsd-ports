@@ -1,5 +1,4 @@
 # Created by: James White <whitejv81@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	fqdn
 PORTVERSION=	1.4.0

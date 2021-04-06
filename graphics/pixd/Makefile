@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pixd
 DISTVERSIONPREFIX=v

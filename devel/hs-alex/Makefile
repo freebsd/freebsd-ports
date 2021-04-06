@@ -1,5 +1,4 @@
 # Created by: Volker Stolz <stolz@i2.informatik.rwth-aachen.de>
-# $FreeBSD$
 
 PORTNAME=	alex
 PORTVERSION=	3.2.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	timfel-krb5-auth
 PORTVERSION=	0.8.3

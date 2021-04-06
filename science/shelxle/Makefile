@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	shelxle
 DISTVERSION=	1.0.1235

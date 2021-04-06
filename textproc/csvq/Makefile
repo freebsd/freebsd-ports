@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	csvq
 DISTVERSIONPREFIX=	v

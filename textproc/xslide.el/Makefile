@@ -1,5 +1,4 @@
 # Created by: Leo Kim <leo@florida.sarang.net>
-# $FreeBSD$
 
 PORTNAME=	xslide.el
 PORTVERSION=	0.2.2

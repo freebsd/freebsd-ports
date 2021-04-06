@@ -1,5 +1,4 @@
 # Created by: ijliao@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	yaml
 PORTVERSION=	5.3.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dolibarr
 DISTVERSION=	13.0.1

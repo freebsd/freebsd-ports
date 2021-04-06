@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dbus-java
 PORTVERSION=	2.7

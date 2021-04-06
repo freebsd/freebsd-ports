@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chainer-chemistry
 DISTVERSION=	0.7.1

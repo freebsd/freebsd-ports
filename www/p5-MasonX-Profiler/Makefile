@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MasonX-Profiler
 PORTVERSION=	0.06

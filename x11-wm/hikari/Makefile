@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hikari
 DISTVERSION=	2.2.3

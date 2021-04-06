@@ -1,5 +1,4 @@
 # Created by: Alexey Bobkov <mr.deadlystorm@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mysqld_exporter
 PORTVERSION=	0.12.1

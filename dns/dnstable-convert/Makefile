@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dnstable-convert
 PORTVERSION=	0.10.0

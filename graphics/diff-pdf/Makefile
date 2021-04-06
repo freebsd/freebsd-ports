@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	diff-pdf
 DISTVERSIONPREFIX=	v

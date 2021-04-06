@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xcbautolock
 PORTVERSION=	0.2.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pinocchio
 PORTVERSION=	0.4.2

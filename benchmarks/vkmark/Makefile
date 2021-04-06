@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vkmark
 DISTVERSION=	2017.08-24

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	twpsk
 PORTVERSION=	4.3

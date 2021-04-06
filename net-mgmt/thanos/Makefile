@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	thanos
 DISTVERSIONPREFIX=	v

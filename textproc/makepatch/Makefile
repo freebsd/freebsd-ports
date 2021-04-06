@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	makepatch
 PORTVERSION=	2.05

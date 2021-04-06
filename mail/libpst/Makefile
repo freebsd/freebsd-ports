@@ -1,5 +1,4 @@
 # Created by: Nate Underwood <natey@natey.com>
-# $FreeBSD$
 
 PORTNAME=	libpst
 PORTVERSION=	0.6.75

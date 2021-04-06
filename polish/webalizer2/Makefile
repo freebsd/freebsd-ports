@@ -1,5 +1,4 @@
 # Created by: wtp@bsdguru.org
-# $FreeBSD$
 
 CATEGORIES=	polish
 

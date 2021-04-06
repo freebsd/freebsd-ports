@@ -1,5 +1,4 @@
 # Created by: Mark Kane <mark@mkproductions.org>
-# $FreeBSD$
 
 PORTNAME=	xarchive
 DISTVERSION=	0.2.8-6

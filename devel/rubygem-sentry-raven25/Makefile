@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sentry-raven
 PORTVERSION=	2.5.3

@@ -1,5 +1,4 @@
 # Created by: Emil J.V. Björsell (Jev)
-# $FreeBSD$
 
 PORTNAME=	barcode
 PORTVERSION=	0.98

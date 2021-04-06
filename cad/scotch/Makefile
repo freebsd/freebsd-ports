@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=	scotch
 DISTVERSION=	6.0.4-aster7

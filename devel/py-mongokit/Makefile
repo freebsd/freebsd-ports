@@ -1,5 +1,4 @@
 # Created by: Mirko Zinn <mail@derzinn.de>
-# $FreeBSD$
 
 PORTNAME=		mongokit
 PORTVERSION=		0.9.1.1

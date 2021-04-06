@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dspdfviewer
 PORTVERSION=	1.15.1

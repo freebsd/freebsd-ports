@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Crypt-SMIME
 PORTVERSION=	0.27

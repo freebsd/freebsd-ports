@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 # The attempt to upgrade to version 6.4.1 was done incorrectly.
 # When 6.5.1 is released, set the SNAPSHOT to the release date,
 # but also set BUILD_RELEASE to "yes".  Otherwise snapshots will

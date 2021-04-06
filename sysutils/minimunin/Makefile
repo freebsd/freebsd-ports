@@ -1,5 +1,4 @@
 # Created by: Dirk Engling <erdgeist@erdgeist.org>
-# $FreeBSD$
 
 PORTNAME=	minimunin
 PORTVERSION=	0.5

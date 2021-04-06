@@ -1,5 +1,4 @@
 # Created by: Alexander Novitsky
-# $FreeBSD$
 
 PORTNAME=	smbpasswd
 PORTVERSION=	1.0.2

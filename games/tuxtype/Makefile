@@ -1,5 +1,4 @@
 # Created by: Patrick Li <pat@databits.net>
-# $FreeBSD$
 
 PORTNAME=	tuxtype
 PORTVERSION=	1.8.3

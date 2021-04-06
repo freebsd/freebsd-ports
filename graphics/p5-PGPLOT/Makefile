@@ -1,5 +1,4 @@
 # Created by: jmz
-# $FreeBSD$
 
 PORTNAME=	PGPLOT
 PORTVERSION=	2.21

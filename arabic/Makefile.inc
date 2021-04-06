@@ -1,4 +1,2 @@
-# $FreeBSD$
-#
 
 PKGNAMEPREFIX?=	ar-

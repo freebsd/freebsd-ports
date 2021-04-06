@@ -1,5 +1,4 @@
 # Created by: Andrea Venturoli <freebsd@netfence.it>
-# $FreeBSD$
 
 PORTNAME=	Mail-Field-Received
 PORTVERSION=	0.26

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	siesta
 DISTVERSION=	4.0.2

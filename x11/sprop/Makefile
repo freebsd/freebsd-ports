@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sprop
 PORTVERSION=	0.1

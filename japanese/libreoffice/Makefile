@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	japanese
 LO_I18N=	ja

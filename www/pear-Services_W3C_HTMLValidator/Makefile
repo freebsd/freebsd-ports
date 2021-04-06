@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Services_W3C_HTMLValidator
 PORTVERSION=	1.0.0

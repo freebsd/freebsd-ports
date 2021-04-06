@@ -1,5 +1,4 @@
 # Created by: milki <milki@rescomp.berkeley.edu>
-# $FreeBSD$
 
 PORTNAME=	Bot-Training-MegaHAL
 PORTVERSION=	0.03

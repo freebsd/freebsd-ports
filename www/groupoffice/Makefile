@@ -1,5 +1,4 @@
 # Created by: Aron Schlesinger <as@bsdgroup.de>
-# $FreeBSD$
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-

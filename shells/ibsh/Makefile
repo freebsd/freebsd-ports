@@ -1,5 +1,4 @@
 # Created by: Vaida Bogdan
-# $FreeBSD$
 
 PORTNAME=	ibsh
 PORTVERSION=	0.3e

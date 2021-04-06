@@ -1,5 +1,4 @@
 # Created by: Michael Ranner
-# $FreeBSD$
 
 PORTNAME=	KVIrc
 DISTVERSION=	5.0.0-73

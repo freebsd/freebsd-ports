@@ -1,5 +1,4 @@
 # Created by: mich@freebsdcluster.org
-# $FreeBSD$
 
 PORTNAME=	gubby
 PORTVERSION=	0.5.5

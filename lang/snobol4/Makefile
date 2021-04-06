@@ -1,5 +1,4 @@
 # Created by: Wes Peters <wes@softweyr.com>
-# $FreeBSD$
 
 PORTNAME=	snobol4
 PORTVERSION=	2.2.1

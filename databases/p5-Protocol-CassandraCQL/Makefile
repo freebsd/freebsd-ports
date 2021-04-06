@@ -1,5 +1,4 @@
 # Created by: Denis Shaposhnikov <dsh@bamus.cz>
-# $FreeBSD$
 
 PORTNAME=	Protocol-CassandraCQL
 PORTVERSION=	0.11

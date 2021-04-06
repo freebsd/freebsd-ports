@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spylls
 DISTVERSION=	0.1.4

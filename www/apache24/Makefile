@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	apache24
 PORTVERSION=	2.4.46

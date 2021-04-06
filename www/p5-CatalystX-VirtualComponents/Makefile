@@ -1,5 +1,4 @@
 # Created by: Danny Warren <danny@dannywarren.com>
-# $FreeBSD$
 
 PORTNAME=	CatalystX-VirtualComponents
 PORTVERSION=	0.00004

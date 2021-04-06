@@ -1,5 +1,4 @@
 # Created by: Jeremy Norris <ishmael127@home.com>
-# $FreeBSD$
 
 PORTNAME=	feh
 PORTVERSION=	3.5

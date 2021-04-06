@@ -1,5 +1,4 @@
 # Created by: Peter Vereshagin <peter@vereshagin.org>
-# $FreeBSD$
 
 PORTNAME=	IPC-MMA
 PORTVERSION=	0.81

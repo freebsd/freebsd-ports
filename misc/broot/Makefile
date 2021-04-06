@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	broot
 DISTVERSIONPREFIX=	v

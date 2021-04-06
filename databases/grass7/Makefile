@@ -1,5 +1,4 @@
 # Created by: Mikael URANKAR and Loïc BARTOLETTI
-# $FreeBSD$
 
 PORTNAME=	grass
 PORTVERSION=	7.8.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lua-resty-redis
 DISTVERSIONPREFIX=	v

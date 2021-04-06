@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clingo
 DISTVERSIONPREFIX=	v

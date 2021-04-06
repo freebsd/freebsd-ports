@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	waiho
 PORTVERSION=	0.2

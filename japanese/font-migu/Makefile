@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	migu
 PORTVERSION=	1.0.20130617

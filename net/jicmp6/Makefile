@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jicmp6
 PORTVERSION=	1.2.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openzfs
 PORTVERSION=	2021030100

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	artifactory
 DISTVERSION=	5.8.3

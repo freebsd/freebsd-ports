@@ -1,5 +1,4 @@
 # Created by: Martin Kraft <martin.kraft@fal.de>
-# $FreeBSD$
 
 PORTNAME=	dekagen
 PORTVERSION=	1.0.2

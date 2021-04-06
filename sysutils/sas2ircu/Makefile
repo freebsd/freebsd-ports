@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sas2ircu
 PORTVERSION=	20.00.00.00

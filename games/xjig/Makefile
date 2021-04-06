@@ -1,5 +1,4 @@
 # Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
-# $FreeBSD$
 
 PORTNAME=	xjig
 PORTVERSION=	2.4

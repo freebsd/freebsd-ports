@@ -1,5 +1,4 @@
 # Created by: Masahiro Teramoto <markun@onohara.to>
-# $FreeBSD$
 
 PORTNAME=	DateTime-Calendar-Chinese
 PORTVERSION=	1.00

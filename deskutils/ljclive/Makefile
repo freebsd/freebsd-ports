@@ -1,5 +1,4 @@
 # Created by: johans
-# $FreeBSD$
 
 PORTNAME=	ljclive
 PORTVERSION=	0.4.10

@@ -1,5 +1,4 @@
 # Created by: Dan Smith <dan@algenta.com>
-# $FreeBSD$
 
 PORTNAME=	crossip
 DISTVERSION=	1.2

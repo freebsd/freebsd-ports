@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kwidgetsaddons
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

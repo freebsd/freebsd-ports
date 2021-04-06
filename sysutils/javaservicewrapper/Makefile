@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME=	javaservicewrapper
 PORTVERSION=	3.5.45

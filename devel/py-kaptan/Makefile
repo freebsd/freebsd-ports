@@ -1,5 +1,4 @@
 # Created by: Tony Narlock <tony@git-pull.com>
-# $FreeBSD$
 
 PORTNAME=	kaptan
 PORTVERSION=	0.5.12

@@ -1,5 +1,4 @@
 # Created by: Lawrence Chen <beastie@tardisi.com>
-# $FreeBSD$
 
 PORTNAME=	LWP-Protocol-connect
 PORTVERSION=	6.09

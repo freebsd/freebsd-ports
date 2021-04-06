@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xfce4-panel-profiles
 PORTVERSION=	1.0.13

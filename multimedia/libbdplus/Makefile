@@ -1,5 +1,4 @@
 # Created by: kamikaze@bsdforen.de
-# $FreeBSD$
 
 PORTNAME=	libbdplus
 DISTVERSION=	0.1.2

@@ -1,5 +1,4 @@
 # Created by: christian
-# $FreeBSD$
 
 PORTNAME=	Text-LevenshteinXS
 PORTVERSION=	0.03

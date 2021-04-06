@@ -1,5 +1,4 @@
 # Created by: Frank W. Josellis <frank@dynamical-systems.org>
-# $FreeBSD$
 
 PORTNAME=	xmoontool
 PORTVERSION=	3.0.3

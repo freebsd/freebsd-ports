@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pytest-flask
 PORTVERSION=	0.15.1

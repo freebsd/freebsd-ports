@@ -1,5 +1,4 @@
 # Created by: Eugene Ossintsev
-# $FreeBSD$
 
 PORTNAME=	ocaml-nox11
 CATEGORIES=	lang

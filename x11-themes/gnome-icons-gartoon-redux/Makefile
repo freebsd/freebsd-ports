@@ -1,5 +1,4 @@
 # Created by: Jonathan Chen <jonc@chen.org.nz>
-# $FreeBSD$
 
 PORTNAME=	gartoon-redux
 PORTVERSION=	1.11

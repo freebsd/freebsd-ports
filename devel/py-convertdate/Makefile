@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	convertdate
 PORTVERSION=	2.2.0

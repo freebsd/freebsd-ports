@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	graphpath
 PORTVERSION=	1.2

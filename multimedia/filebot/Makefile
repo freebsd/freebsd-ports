@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	filebot
 DISTVERSION=	4.9.3

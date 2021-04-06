@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Template-Plugin-Lingua-EN-Inflect
 PORTVERSION=	0.04

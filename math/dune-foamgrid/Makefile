@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dune-foamgrid
 DISTVERSION=	g20200106

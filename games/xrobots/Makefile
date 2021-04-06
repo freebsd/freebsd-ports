@@ -1,5 +1,4 @@
 # Created by: swallace
-# $FreeBSD$
 
 PORTNAME=	xrobots
 PORTVERSION=	1.0

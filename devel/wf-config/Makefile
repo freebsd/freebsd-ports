@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wf-config
 DISTVERSIONPREFIX=	v

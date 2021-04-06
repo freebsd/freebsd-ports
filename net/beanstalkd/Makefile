@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	beanstalkd
 PORTVERSION=	1.10

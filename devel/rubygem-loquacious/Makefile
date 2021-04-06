@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
-# $FreeBSD$
 
 PORTNAME=	loquacious
 PORTVERSION=	1.9.1

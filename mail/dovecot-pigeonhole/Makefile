@@ -1,5 +1,4 @@
 # Created by: Nils Vogels <nivo+kw+ports.bfa274@is-root.com>
-# $FreeBSD$
 
 PORTNAME=	dovecot-pigeonhole
 PORTVERSION=	0.5.13

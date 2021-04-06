@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ajaxzip2
 PORTVERSION=	20081102

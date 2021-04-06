@@ -1,5 +1,4 @@
 # Created by: stas
-# $FreeBSD$
 
 PORTNAME=	safe-iop
 PORTVERSION=	0.3.1

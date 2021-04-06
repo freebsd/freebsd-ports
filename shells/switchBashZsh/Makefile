@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	switchBashZsh
 PORTVERSION=	1.1

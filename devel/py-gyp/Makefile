@@ -1,5 +1,4 @@
 # Created by: Daichi GOTO <daichi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gyp
 PORTVERSION=	20200512

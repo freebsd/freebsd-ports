@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cfiles
 DISTVERSIONPREFIX=	v

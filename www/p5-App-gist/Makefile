@@ -1,5 +1,4 @@
 # Created by: Denny Lin <dennylin93@hs.ntnu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	App-gist
 PORTVERSION=	0.16

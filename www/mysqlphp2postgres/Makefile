@@ -1,5 +1,4 @@
 # Created by: uwe.pierau@tu-clausthal.de
-# $FreeBSD$
 
 PORTNAME=	mysqlphp2postgres
 PORTVERSION=	0.95

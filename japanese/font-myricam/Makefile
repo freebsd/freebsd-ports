@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	myricam
 PORTVERSION=	2.012.20180119

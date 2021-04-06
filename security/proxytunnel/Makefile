@@ -1,5 +1,4 @@
 # Created by: Hammurabi Mendes <hmendes@brturbo.com>
-# $FreeBSD$
 
 PORTNAME=	proxytunnel
 PORTVERSION=	1.10.20210128

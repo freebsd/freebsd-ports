@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mygpoclient
 PORTVERSION=	1.8

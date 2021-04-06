@@ -1,5 +1,4 @@
 # Created by: Ozkan KIRIK <ozkan@enderunix.org>
-# $FreeBSD$
 
 PORTNAME=	checkdns
 PORTVERSION=	0.5

@@ -1,5 +1,4 @@
 # Created by: Dikshie <dikshie@sfc.wide.ad.jp>
-# $FreeBSD$
 
 PORTNAME=	yaf
 PORTVERSION=	2.11.0

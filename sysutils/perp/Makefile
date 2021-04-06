@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	perp
 PORTVERSION=	2.07

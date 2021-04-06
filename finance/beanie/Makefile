@@ -1,5 +1,4 @@
 # Created by: Dermot Tynan <dtynan@kalopa.com>
-# $FreeBSD$
 
 PORTNAME=	beanie
 PORTVERSION=	0.8.2

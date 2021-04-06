@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xnotify
 DISTVERSIONPREFIX=	v

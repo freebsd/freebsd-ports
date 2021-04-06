@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grpcui
 DISTVERSIONPREFIX=	v

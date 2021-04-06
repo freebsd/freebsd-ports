@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nwchem-data
 DISTVERSIONPREFIX=	v

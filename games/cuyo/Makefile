@@ -1,5 +1,4 @@
 # Created by: Matthew Gibson <mdg583@hotmail.com>
-# $FreeBSD$
 
 PORTNAME=	cuyo
 PORTVERSION=	2.1.0

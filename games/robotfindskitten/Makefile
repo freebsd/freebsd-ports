@@ -1,5 +1,4 @@
 # Created by: Ceri Davies (ceri@FreeBSD.org)
-# $FreeBSD$
 
 PORTNAME=	robotfindskitten
 PORTVERSION=	2.8284271.702

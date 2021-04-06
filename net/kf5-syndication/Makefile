@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	syndication
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

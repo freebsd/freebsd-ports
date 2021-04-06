@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	inilike
 PORTVERSION=	1.1.0

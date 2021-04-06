@@ -1,5 +1,4 @@
 # Created by: Nick Sayer <nsayer@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Device-SerialPort
 PORTVERSION=	1.040000

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xf86-video-openchrome
 PORTVERSION=	0.6.0

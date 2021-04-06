@@ -1,5 +1,4 @@
 # Created by: Pierre David <pdagog@gmail.com>, Jean Benoit <jean@unistra.fr>
-# $FreeBSD$
 
 PORTNAME?=	netmagis
 PORTVERSION?=	2.3.4

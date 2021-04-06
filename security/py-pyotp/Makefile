@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyotp
 PORTVERSION=	2.6.0

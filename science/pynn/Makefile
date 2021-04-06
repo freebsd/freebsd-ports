@@ -1,5 +1,4 @@
 # Created by: Ju Pengfei <jupengfei@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	pynn
 PORTVERSION=	0.9.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gemojione
 PORTVERSION=	3.2.0

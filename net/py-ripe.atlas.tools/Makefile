@@ -1,5 +1,4 @@
 # Created by: Massimiliano Stucchi <mstucchi@ripe.net>
-# $FreeBSD$
 
 PORTNAME=	ripe.atlas.tools
 PORTVERSION=	2.3.0

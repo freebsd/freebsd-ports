@@ -1,5 +1,4 @@
 # Created by: netch@netch.kiev.ua
-# $FreeBSD$
 
 PORTNAME=	linuxfdisk
 PORTVERSION=	2.11z

@@ -1,5 +1,4 @@
 # Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	Text-VimColor
 PORTVERSION=	0.26

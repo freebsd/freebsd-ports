@@ -1,5 +1,4 @@
 # Created by: joseph@randomnetworks.com
-# $FreeBSD$
 
 PORTNAME=	e3
 PORTVERSION=	2.8

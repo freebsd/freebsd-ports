@@ -1,5 +1,4 @@
 # Created by: Brooks Davis
-# $FreeBSD$
 
 PORTNAME=	compiler-rt
 DISTVERSION=	0.r${SVN_REV}

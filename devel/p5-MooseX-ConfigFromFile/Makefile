@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MooseX-ConfigFromFile
 PORTVERSION=	0.14

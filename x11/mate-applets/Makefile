@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mate-applets
 PORTVERSION=	1.24.1

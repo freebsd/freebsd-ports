@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nilearn
 DISTVERSION=	0.7.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mime-types
 PKGNAMESUFFIX=	1

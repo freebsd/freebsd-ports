@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	spiralsynth
 PORTVERSION=	0.1.7

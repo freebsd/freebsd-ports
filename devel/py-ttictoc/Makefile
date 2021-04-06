@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ttictoc
 PORTVERSION=	0.5.6

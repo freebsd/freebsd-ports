@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bareos
 PKGNAMESUFFIX=	-traymonitor

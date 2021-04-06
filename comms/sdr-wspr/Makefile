@@ -1,5 +1,4 @@
 # Created by: Jeffrey Baitis <jeff@baitis.net>
-# $FreeBSD$
 
 PORTNAME=	sdr-wspr
 PORTVERSION=	0.1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	actiona
 DISTVERSIONPREFIX=	v

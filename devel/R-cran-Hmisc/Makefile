@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Hmisc
 DISTVERSION=	3.10-1

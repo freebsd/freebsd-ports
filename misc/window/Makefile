@@ -1,5 +1,4 @@
 # Created by: Tom Rhodes <trhodes@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	window
 PORTVERSION=	1.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	easydiff
 PORTVERSION=	0.4.0

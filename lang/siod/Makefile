@@ -1,5 +1,4 @@
 # Created by: jkoshy
-# $FreeBSD$
 
 PORTNAME=	siod
 PORTVERSION=	3.6.2

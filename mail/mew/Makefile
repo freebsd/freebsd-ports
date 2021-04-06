@@ -1,5 +1,4 @@
 # Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	mew
 PORTVERSION=	6.8

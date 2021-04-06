@@ -1,5 +1,4 @@
 # Created by: HIYAMA Takeshi <th@cis.ibaraki.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	sl
 PORTVERSION=	5.02

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Email-MIME-Creator-ISO_2022_JP
 PORTVERSION=	0.02

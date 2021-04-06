@@ -1,5 +1,4 @@
 # Created by: Steve Wills <steve@meatwad.mouf.net>
-# $FreeBSD$
 
 PORTNAME=	opengl
 PORTVERSION=	0.10.0

@@ -1,5 +1,4 @@
 # Created by: Alexey Illarionov <littlesavage@rambler.ru>
-# $FreeBSD$
 
 PORTNAME=	paratype
 PORTVERSION=	2.005

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	App-Nopaste
 PORTVERSION=	1.013

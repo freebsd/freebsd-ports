@@ -1,5 +1,4 @@
 # Created by: Florent Thoumie <flz@xbsd.org>
-# $FreeBSD$
 
 PORTNAME=	wmctrl
 PORTVERSION=	1.07

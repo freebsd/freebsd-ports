@@ -1,5 +1,4 @@
 # Created by: Joel Sutton <jsutton@bbcon.com.au>
-# $FreeBSD$
 
 PORTNAME=	dvi2tty
 PORTVERSION=	5.3.4

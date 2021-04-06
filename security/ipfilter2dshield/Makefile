@@ -1,5 +1,4 @@
 # Created by: Joe Barbish <fbsd_user@a1poweruser.com>
-# $FreeBSD$
 
 PORTNAME=	ipfilter2dshield
 PORTVERSION=	1.0

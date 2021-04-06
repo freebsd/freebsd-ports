@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cfn-lint
 PORTVERSION=	0.27.1

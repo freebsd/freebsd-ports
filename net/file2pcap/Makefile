@@ -1,5 +1,4 @@
 # Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	file2pcap
 PORTVERSION=	1.27.b.${SNAPDATE}

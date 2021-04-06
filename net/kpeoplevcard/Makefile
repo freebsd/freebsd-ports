@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kpeoplevcard
 DISTVERSION=	0.1

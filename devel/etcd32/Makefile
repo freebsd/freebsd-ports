@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	etcd
 PORTVERSION=	3.2.32

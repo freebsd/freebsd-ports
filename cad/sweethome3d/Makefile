@@ -1,5 +1,4 @@
 # Created by: Matthias Petermann <matthias@petermann-it.de>
-# $FreeBSD$
 
 PORTNAME=	sweethome3d
 PORTVERSION=	6.4.2

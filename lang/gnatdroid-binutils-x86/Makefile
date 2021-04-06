@@ -1,5 +1,4 @@
 # Created by: John Marino <marino@FreeBSD.org>
-# $FreeBSD$
 
 PORTREVISION=	0
 PKGNAMESUFFIX=	-x86

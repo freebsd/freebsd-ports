@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openobex
 PORTVERSION=	1.7.2

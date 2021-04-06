@@ -1,5 +1,4 @@
 # Created by: Peter Wemm <peter@FreeBSD.org>
-# $FreeBSD$
 
 # "+=" and "?=" lines are for sharing this Makefile with japanese/exmh2.
 

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	PyWavelets
 PORTVERSION=	1.1.1

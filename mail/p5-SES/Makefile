@@ -1,5 +1,4 @@
 # Created by: Stephon Chen <stephon@pixnet.tw>
-# $FreeBSD$
 
 PORTNAME=	SES
 PORTVERSION=	1.01

@@ -1,5 +1,4 @@
 # Created by: Iblis Lin <iblis@hs.ntnu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	marisa-tire
 PORTVERSION=	0.24

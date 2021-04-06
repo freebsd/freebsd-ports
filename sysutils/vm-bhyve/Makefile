@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vm-bhyve
 PORTVERSION=	1.4.2

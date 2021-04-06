@@ -1,5 +1,4 @@
 # Created by: matusita@jp.FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	jwhois
 PORTVERSION=	4.0

@@ -1,5 +1,4 @@
 # Created by: Joseph Scott <joseph@randomnetworks.com>
-# $FreeBSD$
 
 PORTNAME=	activitymail
 PORTVERSION=	1.26

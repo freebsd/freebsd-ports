@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	hungarian
 LO_I18N=	hu

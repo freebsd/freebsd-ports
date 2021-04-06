@@ -1,5 +1,4 @@
 # Created by: Daniel Morante <daniel@morante.net>
-# $FreeBSD$
 
 PORTNAME=	zetacoin
 PORTVERSION=	0.13.2.1

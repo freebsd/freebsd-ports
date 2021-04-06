@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	simplecov
 PORTVERSION=	0.19.0

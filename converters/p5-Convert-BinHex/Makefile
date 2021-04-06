@@ -1,5 +1,4 @@
 # Created by: Jan-Peter Koopmann <j.koopmann@seceidos.de>
-# $FreeBSD$
 
 PORTNAME=	Convert-BinHex
 PORTVERSION=	1.125

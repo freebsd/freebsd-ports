@@ -1,5 +1,4 @@
 # Created by: vsevolod
-# $FreeBSD$
 
 PORTNAME=	libev
 DISTVERSION=	4.33

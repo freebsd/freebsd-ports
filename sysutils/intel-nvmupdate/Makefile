@@ -1,5 +1,4 @@
 # Created by: Sergey Kozlov <sergey.kozlov@intel.com>
-# $FreeBSD$
 
 PORTNAME=	nvmupdate
 DISTVERSION=	8_00

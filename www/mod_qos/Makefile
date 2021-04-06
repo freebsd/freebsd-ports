@@ -1,5 +1,4 @@
 # Created by: Andrea Cervesato <andrea@cervesato.it>
-# $FreeBSD$
 
 PORTNAME=	mod_qos
 DISTVERSION=	11.66

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	delta
 DISTVERSION=	0.5.1

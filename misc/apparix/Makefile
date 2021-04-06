@@ -1,5 +1,4 @@
 # Created by: Frank Steinborn <steinex@nognu.de>
-# $FreeBSD$
 
 PORTNAME=	apparix
 PORTVERSION=	20110303

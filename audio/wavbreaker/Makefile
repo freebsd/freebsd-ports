@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wavbreaker
 PORTVERSION=	0.13

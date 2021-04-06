@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	i3ipc
 PORTVERSION=	2.2.1

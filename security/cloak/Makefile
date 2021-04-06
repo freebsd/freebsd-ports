@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cloak
 DISTVERSIONPREFIX=	v

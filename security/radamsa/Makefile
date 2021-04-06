@@ -1,5 +1,4 @@
 # Created by: Jukka Ukkonen <jau@iki.fi>
-# $FreeBSD$
 
 PORTNAME=	radamsa
 PORTVERSION=	0.5

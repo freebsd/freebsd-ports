@@ -1,5 +1,4 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-Helpers
 PORTVERSION=	2.036000

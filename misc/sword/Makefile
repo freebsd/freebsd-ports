@@ -1,5 +1,4 @@
 # Created by: Willem van Engen <wvengen@stack.nl>
-# $FreeBSD$
 
 PORTNAME=	sword
 PORTVERSION=	1.8.1

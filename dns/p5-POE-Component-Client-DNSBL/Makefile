@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Client-DNSBL
 PORTVERSION=	1.08

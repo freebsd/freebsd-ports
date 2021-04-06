@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wsjtx
 DISTVERSION=	2.1.2

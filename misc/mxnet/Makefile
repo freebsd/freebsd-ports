@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mxnet
 DISTVERSION=	1.7.0

@@ -1,5 +1,4 @@
 # Created by: Loren M. Lang <lorenl@alzatex.com>
-# $FreeBSD$
 
 PORTNAME=	blobwars
 PORTVERSION=	2.00

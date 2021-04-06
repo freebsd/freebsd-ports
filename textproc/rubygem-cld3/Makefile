@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cld3
 DISTVERSION=	3.3.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	compton
 PORTVERSION=	20160907

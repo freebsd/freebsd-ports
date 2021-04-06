@@ -1,5 +1,4 @@
 # Created by: Gerrit Beine (<gerrit@beine-computer.de>)
-# $FreeBSD$
 
 PORTNAME=	PHPDoc
 PORTVERSION=	0.1.0

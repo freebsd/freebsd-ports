@@ -1,5 +1,4 @@
 # Created by: Thorsten Greiner <thorsten.greiner@web.de>
-# $FreeBSD$
 
 PORTNAME=	xfce4-systemload-plugin
 PORTVERSION=	1.3.1

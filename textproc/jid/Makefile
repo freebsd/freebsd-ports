@@ -1,5 +1,4 @@
 # Created by: Sofian Brabez <sbz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jid
 PORTVERSION=	0.7.6

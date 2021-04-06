@@ -1,5 +1,4 @@
 # Created by: Takuya Tsuchida <tsucchi@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Module-Used
 PORTVERSION=	v1.2.0

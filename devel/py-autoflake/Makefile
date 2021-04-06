@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	autoflake
 PORTVERSION=	1.3.1

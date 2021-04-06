@@ -1,5 +1,4 @@
 # Created by: Stephen Fisher
-# $FreeBSD$
 
 PORTNAME=	ansiprint
 PORTVERSION=	1.0

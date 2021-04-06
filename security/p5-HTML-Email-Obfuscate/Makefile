@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	HTML-Email-Obfuscate
 PORTVERSION=	1.00

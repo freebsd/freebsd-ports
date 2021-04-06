@@ -1,5 +1,4 @@
 # Created by: mp39590@gmail.com
-# $FreeBSD$
 
 PORTNAME=	acsccid
 PORTVERSION=	1.1.8

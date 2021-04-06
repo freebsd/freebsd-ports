@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	piranha
 DISTVERSIONPREFIX=	v

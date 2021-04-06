@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libvdwxc
 DISTVERSION=	0.4.6.20190510

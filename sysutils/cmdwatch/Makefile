@@ -1,5 +1,4 @@
 # Created by: bjohnson@wedgie.org
-# $FreeBSD$
 
 PORTNAME=	cmdwatch
 PORTVERSION=	0.2.0

@@ -1,5 +1,4 @@
 # Created by: Brian Skrab <brian@quynh-and-brian.org>
-# $FreeBSD$
 
 PORTNAME=	Class-Hook
 PORTVERSION=	0.05

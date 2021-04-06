@@ -1,5 +1,4 @@
 # Created by: Alexander Vereeken <Alexander88207@protonmail.com>
-# $FreeBSD$
 
 PORTNAME=	sierra-gtk-themes
 DISTVERSION=	2019-12-16

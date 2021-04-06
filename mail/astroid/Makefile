@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	astroid
 DISTVERSIONPREFIX=	v

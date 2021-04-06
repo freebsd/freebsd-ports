@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	daemons
 PORTVERSION=	1.3.1

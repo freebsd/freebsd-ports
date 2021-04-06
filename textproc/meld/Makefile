@@ -1,5 +1,4 @@
 # Created by: Pav Lucistnik <pav@oook.cz>
-# $FreeBSD$
 
 PORTNAME=	meld
 PORTVERSION=	3.20.1

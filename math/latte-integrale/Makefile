@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	latte-integrale
 DISTVERSIONPREFIX=	version_

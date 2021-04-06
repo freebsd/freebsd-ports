@@ -1,5 +1,4 @@
 # Created by: Naram Qashat <cyberbotx@cyberbotx.com>
-# $FreeBSD$
 
 PORTNAME=	SGML-Parser-OpenSP
 PORTVERSION=	0.994

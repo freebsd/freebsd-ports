@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DRAWxtl
 DISTVERSION=	5.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-virtualjaguar
 PORTVERSION=	0.20210214

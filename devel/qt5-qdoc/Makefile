@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qdoc
 DISTVERSION=	${QT5_VERSION}

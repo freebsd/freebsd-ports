@@ -1,5 +1,4 @@
 # Created by: Steve Wills <steve@mouf.net>
-# $FreeBSD$
 
 PORTNAME=	CGI-Application-Plugin-Config-YAML
 PORTVERSION=	0.01

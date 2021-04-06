@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jsonapi-renderer
 PORTVERSION=	0.2.2

@@ -1,5 +1,4 @@
 # Created by: Mykola Dzham <i@levsha.me>
-# $FreeBSD$
 
 PORTNAME=	libbpm
 PORTVERSION=	0.3

@@ -1,5 +1,4 @@
 # Created by: Denis Generalov <gd.workbox@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	knc
 PORTVERSION=	1.7.1

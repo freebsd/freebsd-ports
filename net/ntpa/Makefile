@@ -1,5 +1,4 @@
 # Created by: Carsten Larsen <cs@innolan.dk>
-# $FreeBSD$
 
 PORTNAME=	ntpa
 PORTVERSION=	0.8.2

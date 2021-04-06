@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	retro12
 DISTVERSION=	2021.2

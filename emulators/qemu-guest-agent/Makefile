@@ -1,5 +1,4 @@
 # Created by: Kaltashkin Eugene <zhecka@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	qemu
 DISTVERSION=	5.0.1

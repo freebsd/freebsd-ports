@@ -1,5 +1,4 @@
 # Created by: David Naylor <dbn@dragon.local>
-# $FreeBSD$
 
 PORTNAME=	msbuild
 DISTVERSIONPREFIX=	v

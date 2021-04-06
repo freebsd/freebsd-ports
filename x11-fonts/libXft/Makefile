@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libXft
 DISTVERSION=	2.3.3

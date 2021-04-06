@@ -1,5 +1,4 @@
 # Created by: Jille Timmermans (jille@quis.cx)
-# $FreeBSD$
 
 PORTNAME=	oggvideotools
 PORTVERSION=	0.9.1

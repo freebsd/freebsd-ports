@@ -1,5 +1,4 @@
 # Created by: Juergen Unger <j.unger@choin.net>
-# $FreeBSD$
 
 PORTNAME=	fly
 PORTVERSION=	2.0.1

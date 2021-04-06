@@ -1,5 +1,4 @@
 # Created by: LEVAI Daniel <leva@ecentrum.hu>
-# $FreeBSD$
 
 PORTNAME=		kc
 PORTVERSION=		2.4.2

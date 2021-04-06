@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ntlm-auth
 DISTVERSION=	1.5.0

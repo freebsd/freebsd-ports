@@ -1,5 +1,4 @@
 # Created by: Evgueni V. Gavrilov <aquatique@rusunix.org>
-# $FreeBSD$
 
 PORTNAME=	silc-toolkit
 PORTVERSION=	1.1.12

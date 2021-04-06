@@ -1,5 +1,4 @@
 # Created by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
-# $FreeBSD$
 
 PORTNAME=	geshi
 DISTVERSION=	1.0.9.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nsa
 PORTVERSION=	0.2.7

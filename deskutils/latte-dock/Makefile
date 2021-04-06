@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	latte-dock
 DISTVERSION=	0.9.11

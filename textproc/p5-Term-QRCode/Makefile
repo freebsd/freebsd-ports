@@ -1,5 +1,4 @@
 # Created by: Stephon Chen <stephon@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Term-QRCode
 PORTVERSION=	0.01

@@ -1,5 +1,4 @@
 # Created by: Kirill Ponomarev <krion@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=		pop
 PORTVERSION=	16.1

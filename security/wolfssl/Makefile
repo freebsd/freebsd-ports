@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wolfssl
 PORTVERSION=	4.7.0

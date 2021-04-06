@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	ebnf2yacc
 PORTVERSION=	0.1.1

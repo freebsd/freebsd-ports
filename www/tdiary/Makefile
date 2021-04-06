@@ -1,5 +1,4 @@
 # Created by: Fumihiko Kimura <jfkimura@yahoo.co.jp>
-# $FreeBSD$
 
 PORTNAME=	tdiary
 PORTVERSION=	5.1.5

@@ -1,5 +1,4 @@
 # Created by: giffunip
-# $FreeBSD$
 
 PORTNAME=	gsfonts
 PORTVERSION=	8.11

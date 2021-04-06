@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rbnacl-libsodium
 PORTVERSION=	1.0.16

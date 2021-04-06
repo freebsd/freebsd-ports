@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	X11-GUITest
 PORTVERSION=	0.28

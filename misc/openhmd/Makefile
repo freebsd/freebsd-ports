@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	OpenHMD
 DISTVERSION=	0.3.0

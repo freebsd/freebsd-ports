@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdiagram
 DISTVERSION=	2.8.0

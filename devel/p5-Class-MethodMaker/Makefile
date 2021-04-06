@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	Class-MethodMaker
 PORTVERSION=	2.24

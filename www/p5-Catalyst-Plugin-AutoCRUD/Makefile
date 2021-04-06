@@ -1,5 +1,4 @@
 # Created by: gugu
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-AutoCRUD
 PORTVERSION=	2.200002

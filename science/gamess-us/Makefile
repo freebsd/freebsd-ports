@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gamess
 DISTVERSION=	20181013

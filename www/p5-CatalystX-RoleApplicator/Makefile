@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CatalystX-RoleApplicator
 PORTVERSION=	0.005

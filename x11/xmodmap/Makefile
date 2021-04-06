@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xmodmap
 PORTVERSION=	1.0.10

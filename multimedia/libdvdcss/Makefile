@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	libdvdcss
 DISTVERSION=	1.4.2

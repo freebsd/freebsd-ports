@@ -1,5 +1,4 @@
 # Created by: Oliver Braun <obraun@informatik.unibw-muenchen.de>
-# $FreeBSD$
 
 PORTNAME=	haddock
 PORTVERSION=	2.24.0

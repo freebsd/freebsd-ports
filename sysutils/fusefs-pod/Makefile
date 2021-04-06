@@ -1,5 +1,4 @@
 # Created by: Max Khon
-# $FreeBSD$
 
 PORTNAME=	pod
 PORTVERSION=	0.5.2

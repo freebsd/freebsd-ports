@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	XML-RSS-SimpleGen
 PORTVERSION=	11.11

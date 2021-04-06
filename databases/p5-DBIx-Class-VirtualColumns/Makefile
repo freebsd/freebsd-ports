@@ -1,5 +1,4 @@
 # Created by: Anes Mukhametov <anes@anes.su>
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-VirtualColumns
 PORTVERSION=	1.03

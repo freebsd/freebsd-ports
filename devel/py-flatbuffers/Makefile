@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flatbuffers
 PORTVERSION=	1.11

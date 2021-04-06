@@ -1,5 +1,4 @@
 # Created by: El Vampiro <vampiro@rootshell.ru>
-# $FreeBSD$
 
 PORTNAME=	bpft
 PORTVERSION=	4.20040506

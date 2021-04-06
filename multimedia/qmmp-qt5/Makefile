@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qmmp
 PORTVERSION=	1.2.0

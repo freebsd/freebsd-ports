@@ -1,5 +1,4 @@
 # Created by: Ryo MIYAMOTO
-# $FreeBSD$
 
 PORTNAME=	dungeon
 PORTVERSION=	3.2

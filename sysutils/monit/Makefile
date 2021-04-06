@@ -1,5 +1,4 @@
 # Created by: Martin Pala <martinp@tildeslash.com>
-# $FreeBSD$
 
 PORTNAME=	monit
 PORTVERSION=	5.28.0

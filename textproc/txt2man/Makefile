@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	txt2man
 DISTVERSIONPREFIX=	txt2man-

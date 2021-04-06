@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Domain Name Service tools
 

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	local-lib
 PORTVERSION=	2.000018

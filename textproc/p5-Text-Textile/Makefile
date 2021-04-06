@@ -1,5 +1,4 @@
 # Created by: Travis Campbell <hcoyote@ghostar.org>
-# $FreeBSD$
 
 PORTNAME=	Text-Textile
 PORTVERSION=	2.12

@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Algorithm-Diff
 PORTVERSION=	1.1903

@@ -1,5 +1,4 @@
 # Created by: otaviof@gmail.com
-# $FreeBSD$
 
 PORTNAME=	Apache-Htgroup
 PORTVERSION=	1.23

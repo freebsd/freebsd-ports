@@ -1,5 +1,4 @@
 # Created by: Patrice Clement <monsieurp@gentoo.org>
-# $FreeBSD$
 
 PORTNAME=	colorful
 PORTVERSION=	0.4.1

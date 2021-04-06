@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Crypt-LE
 PORTVERSION=	0.36

@@ -1,5 +1,4 @@
 # Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Parse-Win32Registry
 PORTVERSION=	1.1

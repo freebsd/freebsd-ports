@@ -1,5 +1,4 @@
 # Created by: doconnor@gsoft.com.au
-# $FreeBSD$
 
 PORTNAME=	netpipes
 PORTVERSION=	4.2

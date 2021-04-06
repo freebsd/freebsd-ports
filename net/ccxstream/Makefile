@@ -1,5 +1,4 @@
 # Created by: Michael Handler <handler@grendel.net>
-# $FreeBSD$
 
 PORTNAME=	ccxstream
 PORTVERSION=	1.0.15

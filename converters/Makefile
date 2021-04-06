@@ -1,4 +1,3 @@
-# $FreeBSD$
 #
 
     COMMENT = Character code converters

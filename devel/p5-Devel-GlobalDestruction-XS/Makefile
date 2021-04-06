@@ -1,5 +1,4 @@
 # Created by: Frederic Culot <culot@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Devel-GlobalDestruction-XS
 PORTVERSION=	0.03

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bcmatroska2
 PORTVERSION=	0.23

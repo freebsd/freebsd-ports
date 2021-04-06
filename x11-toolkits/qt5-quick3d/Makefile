@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	quick3d
 DISTVERSION=	${QT5_VERSION}

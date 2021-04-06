@@ -1,5 +1,4 @@
 # Created by: Tobias Roth <ports@fsck.ch>
-# $FreeBSD$
 
 PORTNAME=	testoob
 PORTVERSION=	1.15

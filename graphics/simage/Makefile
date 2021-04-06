@@ -1,5 +1,4 @@
 # Created by: roland.jesse@gmx.net
-# $FreeBSD$
 
 PORTNAME=	simage
 PORTVERSION=	1.7.0

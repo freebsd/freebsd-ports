@@ -1,5 +1,4 @@
 # Created by: lev@FreeBSD.org
-# $FreeBSD$
 
 WITH_SUBVERSION_VER?=	114
 

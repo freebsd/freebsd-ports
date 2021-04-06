@@ -1,5 +1,4 @@
 # Created by: Jing-Tang Keith Jang <keith@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	moettf
 PORTVERSION=	2.0

@@ -1,5 +1,4 @@
 # Created by: tcberner
-# $FreeBSD$
 
 PORTNAME=	kirigami2
 PORTVERSION=	${KDE_FRAMEWORKS_VERSION}

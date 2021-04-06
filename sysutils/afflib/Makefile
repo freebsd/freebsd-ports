@@ -1,5 +1,4 @@
 # Created by: Chris Calvey <chris@securityforensics.co.uk>
-# $FreeBSD$
 
 PORTNAME=	afflib
 PORTVERSION=	3.7.16

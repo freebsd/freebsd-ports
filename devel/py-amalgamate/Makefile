@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	amalgamate
 PORTVERSION=	0.1.3

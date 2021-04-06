@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	maven33
 DISTVERSION=	3.3.9

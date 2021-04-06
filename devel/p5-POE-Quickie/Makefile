@@ -1,5 +1,4 @@
 # Created by: Takefu
-# $FreeBSD$
 
 PORTNAME=	POE-Quickie
 PORTVERSION=	0.18

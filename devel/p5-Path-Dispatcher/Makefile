@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Path-Dispatcher
 PORTVERSION=	1.08

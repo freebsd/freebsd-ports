@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 CARGO_CRATES=	aes-0.3.2 \
 		aes-ctr-0.3.0 \
 		aes-soft-0.3.3 \

@@ -1,5 +1,4 @@
 # Created by: NIIMI Satoshi <sa2c@sa2c.net>
-# $FreeBSD$
 
 PORTNAME=	xf86-input-vmmouse
 PORTVERSION=	13.1.0

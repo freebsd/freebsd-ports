@@ -1,5 +1,4 @@
 # Created by: Beñat Gonzalez Etxepare <bbtruk@users.sourceforge.net>
-# $FreeBSD$
 
 PORTNAME=	doublecmd
 PORTVERSION=	0.9.10

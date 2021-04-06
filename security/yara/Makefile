@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yara
 DISTVERSION=	4.0.5

@@ -1,5 +1,4 @@
 # Created by: mm
-# $FreeBSD$
 
 PORTNAME=	cciss_vol_status
 PORTVERSION=	1.12

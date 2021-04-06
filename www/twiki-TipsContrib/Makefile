@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	TipsContrib
 SVNREV=		16417

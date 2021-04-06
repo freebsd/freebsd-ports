@@ -1,5 +1,4 @@
 # Created by: Matthias Petermann <matthias@petermann-it.de>
-# $FreeBSD$
 
 PORTNAME=	peewee
 DISTVERSION=	3.8.0

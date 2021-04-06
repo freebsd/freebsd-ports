@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fdm_materials
 PORTEPOCH=	1

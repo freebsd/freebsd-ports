@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hurley
 PORTVERSION=	0.2

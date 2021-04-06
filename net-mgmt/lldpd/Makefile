@@ -1,5 +1,4 @@
 # Created by: Mathieu Simon <freebsd@simweb.ch>
-# $FreeBSD$
 
 PORTNAME=	lldpd
 PORTVERSION=	1.0.8

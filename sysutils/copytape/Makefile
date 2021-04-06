@@ -1,5 +1,4 @@
 # Created by: Stephen J. Roznowski <sjr@home.net>
-# $FreeBSD$
 
 PORTNAME=		copytape
 PORTVERSION=		1.0

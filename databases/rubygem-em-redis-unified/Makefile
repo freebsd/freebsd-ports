@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	em-redis-unified
 PORTVERSION=	1.0.1

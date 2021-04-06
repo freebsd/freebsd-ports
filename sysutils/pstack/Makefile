@@ -1,5 +1,4 @@
 # Created by: Peter Edwards <pmedwards@eircom.net>
-# $FreeBSD$
 
 PORTNAME=	pstack
 PORTVERSION=	1.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	liblxi
 DISTVERSIONPREFIX=	v

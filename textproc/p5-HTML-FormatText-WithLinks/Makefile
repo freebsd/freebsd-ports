@@ -1,5 +1,4 @@
 # Created by: Fukang Chen <loader@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	HTML-FormatText-WithLinks
 PORTVERSION=	0.14

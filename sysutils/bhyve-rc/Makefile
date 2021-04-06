@@ -1,5 +1,4 @@
 # Created by: Michael Gmelin <freebsd@grem.de>
-# $FreeBSD$
 
 PORTNAME=	bhyve-rc
 PORTVERSION=	3

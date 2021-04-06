@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zipangu
 PORTVERSION=	0.2.3

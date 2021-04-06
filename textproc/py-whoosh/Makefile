@@ -1,5 +1,4 @@
 # Created by: gugabsd <gugabsd@mundounix.com.br>
-# $FreeBSD$
 
 PORTNAME=	whoosh
 PORTVERSION=	2.7.4

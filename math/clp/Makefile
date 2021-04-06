@@ -1,5 +1,4 @@
 # Created by: Robin Schilham
-# $FreeBSD$
 
 PORTNAME=	Clp
 DISTVERSION=	1.17.3

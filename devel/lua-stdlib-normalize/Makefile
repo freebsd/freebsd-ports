@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stdlib-normalize
 PORTVERSION=	2.0.3

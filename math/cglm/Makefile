@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cglm
 DISTVERSIONPREFIX=	v

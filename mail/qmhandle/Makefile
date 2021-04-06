@@ -1,5 +1,4 @@
 # Created by: petef
-# $FreeBSD$
 
 PORTNAME=	qmhandle
 PORTVERSION=	1.3.2

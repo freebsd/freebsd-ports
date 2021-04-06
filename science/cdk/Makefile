@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cdk
 DISTVERSIONPREFIX=	cdk-

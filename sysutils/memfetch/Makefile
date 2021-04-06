@@ -1,5 +1,4 @@
 # Created by: Yonatan <onatan@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	memfetch
 PORTVERSION=	0.05b

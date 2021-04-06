@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	soco
 PORTVERSION=	0.21.1

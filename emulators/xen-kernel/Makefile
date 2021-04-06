@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xen
 PORTVERSION=	4.14.1

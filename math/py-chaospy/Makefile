@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chaospy
 DISTVERSION=	4.2.4

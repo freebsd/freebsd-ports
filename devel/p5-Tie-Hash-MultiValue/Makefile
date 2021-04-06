@@ -1,5 +1,4 @@
 # Created by: Frederic Culot <frederic@culot.org>
-# $FreeBSD$
 
 PORTNAME=	Tie-Hash-MultiValue
 PORTVERSION=	1.05

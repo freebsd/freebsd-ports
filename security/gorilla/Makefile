@@ -1,5 +1,4 @@
 # Created by: Kay Lehmann <kay_lehmann@web.de>
-# $FreeBSD$
 
 PORTNAME=	gorilla
 PORTVERSION=	1.5.3.6

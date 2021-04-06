@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sysv_ipc
 PORTVERSION=	1.0.1

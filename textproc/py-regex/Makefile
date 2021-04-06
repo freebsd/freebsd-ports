@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	regex
 PORTVERSION=	2020.7.14

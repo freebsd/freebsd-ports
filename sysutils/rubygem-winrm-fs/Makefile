@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	winrm-fs
 PORTVERSION=	1.3.4

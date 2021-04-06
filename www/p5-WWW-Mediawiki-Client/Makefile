@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	WWW-Mediawiki-Client
 PORTVERSION=	0.31

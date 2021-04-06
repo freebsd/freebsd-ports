@@ -1,5 +1,4 @@
 # Created by: john@zoner.org
-# $FreeBSD$
 
 PORTNAME=	pyx12
 PORTVERSION=	2.3.3

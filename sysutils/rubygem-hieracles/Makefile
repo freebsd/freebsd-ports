@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hieracles
 PORTVERSION=	0.4.2

@@ -1,5 +1,4 @@
 # Created by: Alessando Sagratini <ale_sagra@hotmail.com>
-# $FreeBSD$
 
 PORTNAME=	mcsim
 PORTVERSION=	6.2.0

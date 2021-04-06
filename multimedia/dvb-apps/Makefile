@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dvb-apps
 PORTVERSION=	1.1.2.1505

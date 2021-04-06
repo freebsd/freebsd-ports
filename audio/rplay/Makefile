@@ -1,5 +1,4 @@
 # Created by: rmallory@csusb.edu
-# $FreeBSD$
 
 PORTNAME=	rplay
 PORTVERSION=	3.3.2

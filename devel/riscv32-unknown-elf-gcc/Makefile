@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTVERSION=	8.4.0
 PKGNAMEPREFIX=	riscv32-unknown-elf-

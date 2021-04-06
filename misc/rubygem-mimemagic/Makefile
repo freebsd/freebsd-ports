@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mimemagic
 PORTVERSION=	0.3.10

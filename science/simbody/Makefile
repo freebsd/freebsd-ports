@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	simbody
 DISTVERSIONPREFIX=	Simbody-

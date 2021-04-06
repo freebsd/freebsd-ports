@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PKGNAMEPREFIX=	
 PORTNAME=	oxygen-fonts

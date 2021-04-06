@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	corrade
 DISTVERSIONPREFIX=	v

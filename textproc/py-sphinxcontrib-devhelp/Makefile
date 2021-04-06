@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sphinxcontrib-devhelp
 PORTVERSION=	1.0.2

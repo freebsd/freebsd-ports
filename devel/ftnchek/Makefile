@@ -1,5 +1,4 @@
 # Created by: kargl@apl.washington.edu
-# $FreeBSD$
 
 PORTNAME=	ftnchek
 PORTVERSION=	3.3.1

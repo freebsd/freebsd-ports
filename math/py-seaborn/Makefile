@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	seaborn
 PORTVERSION=	0.11.0

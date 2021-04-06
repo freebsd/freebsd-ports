@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	multiprocess
 DISTVERSION=	0.70.11.1

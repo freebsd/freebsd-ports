@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	v4l_compat
 

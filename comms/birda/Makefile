@@ -1,5 +1,4 @@
 # Created by: Brandon S. Allbery KF8NH <allbery@ece.cmu.edu>
-# $FreeBSD$
 
 PORTNAME=	birda
 PORTVERSION=	1.3

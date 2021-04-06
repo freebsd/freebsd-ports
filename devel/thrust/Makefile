@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	thrust
 DISTVERSION=	1.9.5

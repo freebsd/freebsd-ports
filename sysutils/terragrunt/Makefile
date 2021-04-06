@@ -1,5 +1,4 @@
 # Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	terragrunt
 PORTVERSION=	0.28.7

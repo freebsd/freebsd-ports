@@ -1,5 +1,4 @@
 # Created by: Jose Jachuf <jjachuf@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	firebirdsql
 DISTVERSION=	1.1.4

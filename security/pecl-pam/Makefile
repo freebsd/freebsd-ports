@@ -1,5 +1,4 @@
 # Created by: wen@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	pam
 PORTVERSION=	1.0.3

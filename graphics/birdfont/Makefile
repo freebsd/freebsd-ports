@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	birdfont
 DISTVERSION=	2.29.1

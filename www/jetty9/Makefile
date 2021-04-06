@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jetty
 PORTVERSION=	9.4.29

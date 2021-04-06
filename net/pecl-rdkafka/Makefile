@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rdkafka
 PORTVERSION=	4.0.4

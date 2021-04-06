@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ggrepel
 DISTVERSION=	0.9.1

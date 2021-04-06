@@ -1,5 +1,4 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	angrysearch
 PORTVERSION=	1.0.2 # untagged, but specified in the setup.py

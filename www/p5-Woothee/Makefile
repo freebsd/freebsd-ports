@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Woothee
 PORTVERSION=	1.10.0

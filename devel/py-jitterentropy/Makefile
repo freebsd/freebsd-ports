@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jitterentropy
 PORTVERSION=	0.1

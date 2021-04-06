@@ -1,5 +1,4 @@
 # Created by: mikael.urankar@gmail.com
-# $FreeBSD$
 
 PORTNAME=	omxplayer
 PORTVERSION=	20161004

@@ -1,5 +1,4 @@
 # Created by: Mohammad S. Babaei <info@babaei.net>
-# $FreeBSD$
 
 PORTNAME=	dbixx
 PORTVERSION=	0.0.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	acfgfs
 DISTVERSION=	0.6.0.1

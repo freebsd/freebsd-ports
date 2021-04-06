@@ -1,5 +1,4 @@
 # Created by: MITA Yoshio <mita@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xpdf
 PORTVERSION=	4.02

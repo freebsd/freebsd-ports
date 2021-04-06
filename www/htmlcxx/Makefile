@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	htmlcxx
 PORTVERSION=	0.87

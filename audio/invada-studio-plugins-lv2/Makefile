@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	invada-studio-plugins
 DISTVERSIONPREFIX=	lv2_

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kinfocenter
 DISTVERSION=	${KDE_PLASMA_VERSION}

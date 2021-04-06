@@ -1,5 +1,4 @@
 # Created by: toni.viemero@iki.fi
-# $FreeBSD$
 
 PORTNAME=	WebService-Validator-HTML-W3C
 PORTVERSION=	0.28

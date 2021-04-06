@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas (<thierry@FreeBSD.org>)
-# $FreeBSD$
 
 PORTNAME=	VFS
 PORTVERSION=	0.3.0

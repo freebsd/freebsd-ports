@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bingrep
 DISTVERSIONPREFIX=	v

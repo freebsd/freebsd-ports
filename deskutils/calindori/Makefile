@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	calindori
 DISTVERSION=	1.4

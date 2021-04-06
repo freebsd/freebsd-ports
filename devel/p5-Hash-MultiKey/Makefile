@@ -1,5 +1,4 @@
 # Created by: Marzhan Mykola <delgod@portaone.com>
-# $FreeBSD$
 
 PORTNAME=	Hash-MultiKey
 PORTVERSION=	0.06

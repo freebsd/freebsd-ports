@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz
-# $FreeBSD$
 
 PORTNAME=	check_mysql_slave
 PORTVERSION=	0.1.1

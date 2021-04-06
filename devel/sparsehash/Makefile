@@ -1,5 +1,4 @@
 # Created by: Vasil Dimov <vd@datamax.bg>
-# $FreeBSD$
 
 PORTNAME=	sparsehash
 PORTVERSION=	2.0.4

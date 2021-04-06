@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-FindPerl
 PORTVERSION=	0.015

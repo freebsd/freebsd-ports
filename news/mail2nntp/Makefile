@@ -1,5 +1,4 @@
 # Created by: gary@hayers.org
-# $FreeBSD$
 
 PORTNAME=	mail2nntp
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: Cory R. King <coryking@mozimedia.com>
-# $FreeBSD$
 
 PORTNAME=	Digest-TransformPath
 PORTVERSION=	1.00

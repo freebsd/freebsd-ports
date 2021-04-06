@@ -1,5 +1,4 @@
 # Created by: cartola@openit.com.br
-# $FreeBSD$
 
 PORTNAME=	enblend
 PORTVERSION=	4.2

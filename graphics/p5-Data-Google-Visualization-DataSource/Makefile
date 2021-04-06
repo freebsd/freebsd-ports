@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Google-Visualization-DataSource
 PORTVERSION=	0.01

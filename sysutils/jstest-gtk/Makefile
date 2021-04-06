@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jstest-gtk
 PORTVERSION=	20180710

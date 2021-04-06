@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rmlint
 DISTVERSIONPREFIX=	v

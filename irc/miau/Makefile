@@ -1,5 +1,4 @@
 # Created by: Oliver Eikemeier
-# $FreeBSD$
 
 PORTNAME=	miau
 PORTVERSION=	0.6.6

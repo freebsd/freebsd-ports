@@ -1,5 +1,4 @@
 # Created by: Rodrigo Osorio <rodrigo@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	libtubo
 PORTVERSION=	5.0.14

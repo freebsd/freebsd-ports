@@ -1,5 +1,4 @@
 # Created by: niels <niels@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	anemone
 PORTVERSION=	0.7.2

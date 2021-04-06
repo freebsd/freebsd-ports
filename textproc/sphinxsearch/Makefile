@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman
-# $FreeBSD$
 
 # Note: the Sphinx Storage Engine MySQL plugin is not supported by
 # this port.  You need a patched version of mysql server for that.

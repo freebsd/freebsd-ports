@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libpostal
 DISTVERSIONPREFIX=	v

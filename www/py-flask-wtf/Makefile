@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Flask-WTF
 PORTVERSION=	0.14.3

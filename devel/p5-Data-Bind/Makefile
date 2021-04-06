@@ -1,5 +1,4 @@
 # Created by: Ying-Chieh Chen
-# $FreeBSD$
 
 PORTNAME=	Data-Bind
 PORTVERSION=	0.30

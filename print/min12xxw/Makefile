@@ -1,5 +1,4 @@
 # Created by: Tim McCormick <tim@pcbsd.org>
-# $FreeBSD$
 
 PORTNAME=	min12xxw
 PORTVERSION=	0.0.9

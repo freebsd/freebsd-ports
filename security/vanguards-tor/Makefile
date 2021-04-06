@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vanguards
 DISTVERSION=	0.3.1

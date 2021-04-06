@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	alive-progress
 DISTVERSION=	1.6.2

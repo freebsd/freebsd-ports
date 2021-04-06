@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qterminal
 PORTVERSION=	0.16.0

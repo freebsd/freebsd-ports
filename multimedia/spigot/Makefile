@@ -1,5 +1,4 @@
 # Created by: james@cs.uwm.edu
-# $FreeBSD$
 
 PORTNAME=	spigot
 PORTVERSION=	1.7

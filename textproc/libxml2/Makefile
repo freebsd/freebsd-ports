@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <Nakai@technologist.com>
-# $FreeBSD$
 
 PORTNAME=	libxml2
 DISTVERSION=	2.9.10

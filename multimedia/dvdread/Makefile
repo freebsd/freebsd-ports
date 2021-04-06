@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dvdread
 DISTVERSION=	g20160701

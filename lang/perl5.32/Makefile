@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	perl
 DISTVERSION=	${PERL_VERSION}

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phply
 PORTVERSION=	1.2.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	srain
 DISTVERSION=	1.1.0

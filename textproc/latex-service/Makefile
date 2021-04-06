@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	latex
 PORTVERSION=	0.1

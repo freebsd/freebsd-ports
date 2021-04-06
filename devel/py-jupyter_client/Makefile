@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jupyter_client
 PORTVERSION=	6.1.12

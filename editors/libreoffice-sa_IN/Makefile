@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 LO_I18N=	sa_IN
 

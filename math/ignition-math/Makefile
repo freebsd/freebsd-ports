@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ignition-math
 DISTVERSION=	6.0.0

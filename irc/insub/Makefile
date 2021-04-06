@@ -1,5 +1,4 @@
 # Created by: Alfred Perlstein <alfred@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	insub
 PORTVERSION=	16.0

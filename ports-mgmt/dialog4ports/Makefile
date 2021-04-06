@@ -1,5 +1,4 @@
 # Created by: Ilya A. Arkhipov <rum1cro@yandex.ru>
-# $FreeBSD$
 
 PORTNAME=	dialog4ports
 PORTVERSION=	0.1.6

@@ -1,5 +1,4 @@
 # Created by: David Chaplin-Loebell <direct@klatha.com>
-# $FreeBSD$
 
 PORTNAME=	Tie-CPHash
 PORTVERSION=	1.04

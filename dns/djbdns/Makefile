@@ -1,5 +1,4 @@
 # Created by: Neil Blakey-Milner
-# $FreeBSD$
 
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}

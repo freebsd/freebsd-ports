@@ -1,5 +1,4 @@
 # Created by: Kawaguti Ginga <ginga@athena.club.ne.jp>
-# $FreeBSD$
 
 PORTNAME=	kappa20
 PORTVERSION=	0.396

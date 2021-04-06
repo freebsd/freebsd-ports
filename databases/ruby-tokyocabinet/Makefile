@@ -1,5 +1,4 @@
 # Created by: Damian Gerow <dgerow@afflictions.org>
-# $FreeBSD$
 
 PORTNAME=	tokyocabinet
 PORTVERSION=	1.31

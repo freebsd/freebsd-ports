@@ -1,5 +1,4 @@
 # Created by: Stas Timokhin <stast@bsdportal.ru>
-# $FreeBSD$
 
 PORTNAME=	opensonic
 PORTVERSION=	0.1.4

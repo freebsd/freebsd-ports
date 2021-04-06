@@ -1,5 +1,4 @@
 # Created by: jkoshy
-# $FreeBSD$
 
 PORTNAME=	rxp
 PORTVERSION=	1.4.4

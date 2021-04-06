@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hash
 DISTVERSION=	g20200929

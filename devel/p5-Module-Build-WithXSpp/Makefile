@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Module-Build-WithXSpp
 PORTVERSION=	0.14

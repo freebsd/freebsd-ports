@@ -1,5 +1,4 @@
 # Created by: Rusty Nejdl
-# $FreeBSD$
 
 PORTNAME=	apsw
 PORTVERSION=	3.34.0

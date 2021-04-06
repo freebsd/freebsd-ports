@@ -1,5 +1,4 @@
 # Created by: Matthew X. Economou <xenophon+fbsdports@irtnog.org>
-# $FreeBSD$
 
 PORTNAME=	django-filer
 PORTVERSION=	1.7.0

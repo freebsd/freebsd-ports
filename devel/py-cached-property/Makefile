@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cached-property
 PORTVERSION=	1.5.1

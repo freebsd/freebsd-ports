@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iCal-Parser
 PORTVERSION=	1.20

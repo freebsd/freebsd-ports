@@ -1,5 +1,4 @@
 # Created by: alepulver@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	menumaker
 PORTVERSION=	0.99.12

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	android-tools-simpleperf
 DISTVERSIONPREFIX=	android-

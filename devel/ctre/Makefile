@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ctre
 DISTVERSIONPREFIX=	v

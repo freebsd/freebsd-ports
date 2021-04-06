@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iohyve
 PORTVERSION=	0.7.9

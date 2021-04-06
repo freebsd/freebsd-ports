@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Text-Roman
 PORTVERSION=	3.5

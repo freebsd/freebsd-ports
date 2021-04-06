@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lars@thegler.dk>
-# $FreeBSD$
 
 PORTNAME=	Log-Dispatch-FileRotate
 PORTVERSION=	1.36

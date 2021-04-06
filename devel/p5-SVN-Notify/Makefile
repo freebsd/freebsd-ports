@@ -1,5 +1,4 @@
 # Created by: dom@happygiraffe.net
-# $FreeBSD$
 
 PORTNAME=	SVN-Notify
 PORTVERSION=	2.87

@@ -1,5 +1,4 @@
 # Created by: Markus Brueffer <markus@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	kst
 DISTVERSION=	${KST_VERSION}.${KST_DATE}

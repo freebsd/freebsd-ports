@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	solaar
 DISTVERSION=	1.0.1

@@ -1,5 +1,4 @@
 # Created by: Masashi CHIBA
-# $FreeBSD$
 
 PORTNAME=	scim-honoka
 PORTVERSION=	0.9.1

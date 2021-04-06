@@ -1,5 +1,4 @@
 # Created by: Michael Butschky <butsch@computi.erols.com>
-# $FreeBSD$
 
 PORTNAME=	swi-pl
 DISTVERSION=	8.2.3

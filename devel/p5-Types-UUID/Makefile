@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Types-UUID
 PORTVERSION=	0.004

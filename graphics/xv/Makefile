@@ -1,5 +1,4 @@
 # Created by: smace
-# $FreeBSD$
 
 PORTNAME=	xv
 PORTVERSION=	3.10a

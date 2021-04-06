@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	print lang
 PKGNAMESUFFIX=	-libcups

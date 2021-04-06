@@ -1,5 +1,4 @@
 # Created by: Manuel Kasper <mk@neon1.net>
-# $FreeBSD$
 
 PORTNAME=	mod_auth_pubtkt
 PORTVERSION=	0.13

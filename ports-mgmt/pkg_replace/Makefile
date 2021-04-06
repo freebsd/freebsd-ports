@@ -1,5 +1,4 @@
 # Created by: Securedog <securedog@users.sourceforge.jp>
-# $FreeBSD$
 
 PORTNAME=	pkg_replace
 PORTVERSION=	20200821

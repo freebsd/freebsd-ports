@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kcalendarcore
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

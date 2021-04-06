@@ -1,5 +1,4 @@
 # Created by: Andy Pavlo <amp0928@rit.edu>
-# $FreeBSD$
 
 PORTNAME=	hotkeys
 PORTVERSION=	0.5.7.1

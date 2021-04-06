@@ -1,5 +1,4 @@
 # Created by: Jean-Sébastien Pédron <dumbbell@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	waffle
 DISTVERSION=	1.6.1-15

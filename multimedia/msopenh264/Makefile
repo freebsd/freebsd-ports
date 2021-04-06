@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	msopenh264
 PORTVERSION=	1.2.1

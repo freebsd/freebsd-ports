@@ -1,5 +1,4 @@
 # Created by: Hakisho Nukama <nukama@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gpgdir
 PORTVERSION=	1.9.5

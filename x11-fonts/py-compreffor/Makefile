@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	compreffor
 PORTVERSION=	0.4.6

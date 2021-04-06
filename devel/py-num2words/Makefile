@@ -1,5 +1,4 @@
 # Created by: Jonas Palm <jonaspalm@posteo.de>
-# $FreeBSD$
 
 PORTNAME=	num2words
 PORTVERSION=	0.5.9

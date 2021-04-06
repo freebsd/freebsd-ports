@@ -1,5 +1,4 @@
 # Created by: Gabriel Dutra <0xdutra@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	whois
 PORTVERSION=	0.9.7

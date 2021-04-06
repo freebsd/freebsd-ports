@@ -1,5 +1,4 @@
 # Created by: Ralf S. Engelschall
-# $FreeBSD$
 
 PORTNAME=	str
 PORTVERSION=	0.9.12

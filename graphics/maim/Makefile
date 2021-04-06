@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	maim
 DISTVERSIONPREFIX=	v

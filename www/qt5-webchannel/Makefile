@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webchannel
 DISTVERSION=	${QT5_VERSION}

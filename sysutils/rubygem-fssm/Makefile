@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fssm
 PORTVERSION=	0.2.10

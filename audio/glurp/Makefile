@@ -1,5 +1,4 @@
 # Created by: Mark Reidel <ports@mark.reidel.info>
-# $FreeBSD$
 
 PORTNAME=	glurp
 PORTVERSION=	0.12.3

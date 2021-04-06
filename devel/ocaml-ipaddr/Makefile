@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ipaddr
 PORTVERSION=	2.6.1

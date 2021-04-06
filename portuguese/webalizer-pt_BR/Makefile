@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	portuguese
 PKGNAMEPREFIX?=	pt_BR-

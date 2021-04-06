@@ -1,5 +1,4 @@
 # Created by: Neil Booth
-# $FreeBSD$
 
 PORTNAME=	qrcode
 PORTVERSION=	6.1

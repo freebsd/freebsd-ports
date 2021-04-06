@@ -1,5 +1,4 @@
 # Created by: Igor Pokrovsky <tiamat@telegraph.spb.ru>
-# $FreeBSD$
 
 PORTNAME=	szip
 PORTVERSION=	1.12b

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ase
 DISTVERSION=	3.21.1

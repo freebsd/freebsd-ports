@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	camerakit
 PORTVERSION=	0.0.1

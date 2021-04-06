@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Expect
 PORTVERSION=	1.35

@@ -1,5 +1,4 @@
 # Created by: Alexander Zhuravlev <zaa@zaa.pp.ru>
-# $FreeBSD$
 
 PORTNAME=	Mail-DeliveryStatus-BounceParser
 PORTVERSION=	1.543

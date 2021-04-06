@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openal-soft
 PORTVERSION=	1.20.1

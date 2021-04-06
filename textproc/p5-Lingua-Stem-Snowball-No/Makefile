@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Lingua-Stem-Snowball-No
 PORTVERSION=	1.2

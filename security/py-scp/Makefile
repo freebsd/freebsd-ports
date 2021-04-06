@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scp
 DISTVERSION=	0.13.3

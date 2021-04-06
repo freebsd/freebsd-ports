@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sdformat
 DISTVERSION=	8.0.0

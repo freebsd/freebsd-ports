@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Lektor
 PORTVERSION=	3.2.0

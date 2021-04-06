@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	vietunicode-trichlor
 PORTVERSION=	2004.04.30

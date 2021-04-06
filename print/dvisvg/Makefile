@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	dvisvg
 DISTVERSION=	0.7.1d

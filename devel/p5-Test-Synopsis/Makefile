@@ -1,5 +1,4 @@
 # Created by: Takuya Tsuchida <tsucchi@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Test-Synopsis
 PORTVERSION=	0.06

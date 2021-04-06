@@ -1,5 +1,4 @@
 # Created by: Samy Al Bahra <samy@kerneled.com>
-# $FreeBSD$
 
 PORTNAME=	khotot
 PORTVERSION=	1.0

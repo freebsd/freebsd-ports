@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pghero
 PORTVERSION=	2.7.0

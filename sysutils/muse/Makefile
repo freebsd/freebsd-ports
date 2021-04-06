@@ -1,5 +1,4 @@
 # Created by: freebsd@spatula.net
-# $FreeBSD$
 
 PORTNAME=	muse
 PORTVERSION=	0.2

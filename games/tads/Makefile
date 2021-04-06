@@ -1,5 +1,4 @@
 # Created by: kris@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	tads
 PORTVERSION=	2.5.9

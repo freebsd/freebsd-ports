@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	brise
 PORTVERSION=	0.35

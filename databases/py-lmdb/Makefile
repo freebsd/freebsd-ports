@@ -1,5 +1,4 @@
 # Created by: Keith Gaughan <k@sterechro.me>
-# $FreeBSD$
 
 PORTNAME=	lmdb
 PORTVERSION=	0.97

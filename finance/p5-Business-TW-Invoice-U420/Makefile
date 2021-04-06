@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Business-TW-Invoice-U420
 PORTVERSION=	0.01

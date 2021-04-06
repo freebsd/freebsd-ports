@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	StreetAddress
 PORTVERSION=	1.0.6

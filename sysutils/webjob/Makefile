@@ -1,5 +1,4 @@
 # Created by: Klayton Monroe <klm@uidzero.org>
-# $FreeBSD$
 
 PORTNAME=	webjob
 PORTVERSION=	1.9.0

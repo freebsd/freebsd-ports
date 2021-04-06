@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	google-cloud-translate
 PORTVERSION=	1.3.1

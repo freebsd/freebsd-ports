@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	qimageblitz
 PORTVERSION=	0.1.0 # a made-up version also used in some linux distros, otherwise we need to add PORTEPOCH

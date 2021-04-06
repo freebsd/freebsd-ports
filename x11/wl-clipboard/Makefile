@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wl-clipboard
 DISTVERSIONPREFIX=	v

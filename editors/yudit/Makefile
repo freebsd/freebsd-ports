@@ -1,5 +1,4 @@
 # Created by: rch@richard.eu.org
-# $FreeBSD$
 
 PORTNAME=	yudit
 PORTVERSION=	3.0.7

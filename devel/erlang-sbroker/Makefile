@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sbroker
 DISTVERSIONPREFIX=	v

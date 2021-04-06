@@ -1,5 +1,4 @@
 # Created by: Roman Shterenzon <romanbsd@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	rspec
 PORTVERSION=	3.10.0

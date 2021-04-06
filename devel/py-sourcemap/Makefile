@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sourcemap
 PORTVERSION=	0.2.1

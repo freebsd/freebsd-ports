@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	guidolib
 DISTVERSIONPREFIX=	v

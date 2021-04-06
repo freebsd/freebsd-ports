@@ -1,5 +1,4 @@
 # Created by: Matthew Hunt <mph@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	intercal
 PORTVERSION=	0.31

@@ -1,5 +1,4 @@
 # Created by: tobez
-# $FreeBSD$
 
 PORTNAME=	GraphViz-DBI
 PORTVERSION=	1.100860

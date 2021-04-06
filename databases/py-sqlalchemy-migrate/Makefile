@@ -1,5 +1,4 @@
 # Created by: elvstone@gmail.com
-# $FreeBSD$
 
 PORTNAME=	sqlalchemy-migrate
 PORTVERSION=	0.13.0

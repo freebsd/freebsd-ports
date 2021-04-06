@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pam_kde
 PORTVERSION=	1.0

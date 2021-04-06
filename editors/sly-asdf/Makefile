@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sly-asdf
 PORTVERSION=	20210308

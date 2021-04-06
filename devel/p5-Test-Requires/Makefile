@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Requires
 PORTVERSION=	0.11

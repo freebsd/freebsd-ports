@@ -1,5 +1,4 @@
 # Created by: Qing Feng <qingfeng@douban.com>
-# $FreeBSD$
 
 PORTNAME=	tokyopromenade
 PORTVERSION=	0.9.25

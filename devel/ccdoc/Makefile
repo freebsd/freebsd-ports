@@ -1,5 +1,4 @@
 # Created by: lonewolf@flame.org
-# $FreeBSD$
 
 PORTNAME=	ccdoc
 PORTVERSION=	0.8r41

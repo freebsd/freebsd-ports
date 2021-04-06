@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libxkbcommon
 PORTVERSION=	0.7.1

@@ -1,5 +1,4 @@
 # Created by: NIIMI Satoshi <sa2c@sa2c.net>
-# $FreeBSD$
 
 PORTNAME=	vlgothic
 PORTVERSION=	20200720

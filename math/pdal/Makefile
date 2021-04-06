@@ -1,5 +1,4 @@
 # Created by: bart <lbartoletti@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pdal
 DISTVERSION=	2.2.0

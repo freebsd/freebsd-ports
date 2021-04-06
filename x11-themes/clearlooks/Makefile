@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD$
 #   $MCom: ports/x11-themes/clearlooks/Makefile,v 1.8 2007/08/07 04:34:29 mezz Exp $
 
 PORTNAME?=	clearlooks

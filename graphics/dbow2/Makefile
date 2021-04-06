@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dbow2
 DISTVERSIONPREFIX=	v

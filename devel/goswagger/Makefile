@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	goswagger
 DISTVERSIONPREFIX=	v

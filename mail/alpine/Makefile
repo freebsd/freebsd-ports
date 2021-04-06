@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME?=	alpine
 DISTVERSION=	2.24

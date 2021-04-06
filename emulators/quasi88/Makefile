@@ -1,5 +1,4 @@
 # Created by: Nishika <nishika@cheerful.com>
-# $FreeBSD$
 
 PORTNAME=	quasi88
 PORTVERSION=	0.6.4

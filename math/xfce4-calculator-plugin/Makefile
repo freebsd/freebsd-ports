@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	xfce4-calculator-plugin
 PORTVERSION=	0.7.1

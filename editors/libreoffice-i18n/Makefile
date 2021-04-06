@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 .include "${.CURDIR}/../../editors/libreoffice/Makefile.common"
 

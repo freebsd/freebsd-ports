@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pagmo2
 DISTVERSIONPREFIX=	v

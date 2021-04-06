@@ -1,5 +1,4 @@
 # Created by: Emmanuel Richiardone (err@tollari.org)
-# $FreeBSD$
 
 PORTNAME=	netembryo
 PORTVERSION=	0.1.1

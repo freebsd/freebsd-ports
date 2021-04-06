@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	magnum-plugins
 DISTVERSIONPREFIX=	v

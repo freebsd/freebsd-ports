@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SQL-Abstract-Plugin-InsertMulti
 PORTVERSION=	0.04

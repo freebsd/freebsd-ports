@@ -1,5 +1,4 @@
 # Created by: Tony Maher
-# $FreeBSD$
 
 PORTNAME=	xml-security-c
 PORTVERSION=	2.0.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTTP-Server-Simple-Static
 PORTVERSION=	0.14

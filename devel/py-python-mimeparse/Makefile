@@ -1,5 +1,4 @@
 # Created by: William Grzybowski
-# $FreeBSD$
 
 PORTNAME=	python-mimeparse
 PORTVERSION=	1.6.0

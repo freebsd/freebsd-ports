@@ -1,5 +1,4 @@
 # Created by: Michael Reifenberger <mr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	bitwarden_rs
 DISTVERSION=	1.19.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hidapi
 DISTVERSIONPREFIX=	${PORTNAME}-

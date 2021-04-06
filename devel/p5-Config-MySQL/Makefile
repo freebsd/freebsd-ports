@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Config-MySQL
 PORTVERSION=	0.02

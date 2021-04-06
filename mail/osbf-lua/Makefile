@@ -1,5 +1,4 @@
 # Created by: RicardoSSP <ricardo.katz@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	osbf-lua
 PORTVERSION=	2.0.4

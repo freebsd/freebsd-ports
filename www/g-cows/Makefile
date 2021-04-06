@@ -1,5 +1,4 @@
 # Created by: Andrea Sozzi <as@g-cows.org>
-# $FreeBSD$
 
 PORTNAME=	g-cows
 PORTVERSION=	1.12

@@ -1,5 +1,4 @@
 # Created by: Ashish SHUKLA <wahjava@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	squashfs-tools
 PORTVERSION=	4.4

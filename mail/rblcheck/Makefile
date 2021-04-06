@@ -1,5 +1,4 @@
 # Created by: itojun@itojun.org
-# $FreeBSD$
 
 PORTNAME=	rblcheck
 PORTVERSION=	1.5

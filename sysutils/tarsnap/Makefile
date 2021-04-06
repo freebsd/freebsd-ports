@@ -1,5 +1,4 @@
 # Created by: Colin Percival
-# $FreeBSD$
 
 PORTNAME=	tarsnap
 PORTVERSION=	1.0.39

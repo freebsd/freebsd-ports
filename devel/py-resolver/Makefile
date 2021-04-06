@@ -1,5 +1,4 @@
 # Created by: Trevor Caira <trevor@bitba.se>
-# $FreeBSD$
 
 PORTNAME=	resolver
 PORTVERSION=	0.2.1

@@ -1,5 +1,4 @@
 # Created by: Janos Mohacsi <janos.mohacsi@bsd.hu>
-# $FreeBSD$
 
 PORTNAME=	openct
 PORTVERSION=	0.6.20

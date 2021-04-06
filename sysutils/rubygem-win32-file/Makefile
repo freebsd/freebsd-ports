@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	win32-file
 PORTVERSION=	0.8.2

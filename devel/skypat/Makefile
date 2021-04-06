@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	skypat
 DISTVERSIONPREFIX=	v

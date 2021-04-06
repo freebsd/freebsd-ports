@@ -1,5 +1,4 @@
 # Created by: Diane Bruce <db@db.net>
-# $FreeBSD$
 
 PORTNAME=	chu
 PORTVERSION=	0.1.29

@@ -1,5 +1,4 @@
 # Created by: wghicks@bellsouth.net
-# $FreeBSD$
 
 PORTNAME=	tkcon
 PORTVERSION=	2.5

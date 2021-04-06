@@ -1,5 +1,4 @@
 # Created by: John Chen <johnpupu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ev
 PORTVERSION=	1.0.9

@@ -1,5 +1,4 @@
 # Created by: torstenb@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	recode
 PORTVERSION=	3.6

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	recmpeg
 PORTVERSION=	1.0.5

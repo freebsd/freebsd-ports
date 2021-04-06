@@ -1,5 +1,4 @@
 # Created by: dliakh
-# $FreeBSD$
 
 PORTNAME=	Email-AddressParser
 PORTVERSION=	0.04

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bitter
 DISTVERSIONPREFIX=	v.

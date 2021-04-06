@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-beetle_pcfx
 PORTVERSION=	0.20200504

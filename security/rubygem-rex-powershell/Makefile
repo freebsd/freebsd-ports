@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rex-powershell
 PORTVERSION=	0.1.88

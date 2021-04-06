@@ -1,5 +1,4 @@
 # Created by: Michael Grunewald
-# $FreeBSD$
 
 PORTNAME=	cppo
 PORTVERSION=	0.9.2

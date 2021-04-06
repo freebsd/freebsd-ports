@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas (<thierry@FreeBSD.org>)
-# $FreeBSD$
 
 PORTNAME=	HTTP_Request
 PORTVERSION=	1.4.4

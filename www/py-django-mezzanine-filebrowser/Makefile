@@ -1,5 +1,4 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	django-mezzanine-filebrowser
 PORTVERSION=	0.5.0

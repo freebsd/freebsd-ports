@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	asterisk
 PORTVERSION=	13.38.2

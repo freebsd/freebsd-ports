@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	poyo
 PORTVERSION=	0.5.0

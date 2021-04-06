@@ -1,5 +1,4 @@
 # Created by: Peter Wemm <peter@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hexpert
 PORTVERSION=	2.4.1

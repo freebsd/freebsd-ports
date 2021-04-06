@@ -1,5 +1,4 @@
 # Created by: gslin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	MRTG-Parse
 PORTVERSION=	0.03

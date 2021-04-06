@@ -1,5 +1,4 @@
 # Created by: Xin Li <delphij@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ddpt
 PORTVERSION=	0.95

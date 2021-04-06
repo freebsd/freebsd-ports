@@ -1,5 +1,4 @@
 # Created by: NAKATA, Maho <maho@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lapack95
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: Ju Pengfei <ju.pengfei@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	numexpr
 PORTVERSION=	2.7.2

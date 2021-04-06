@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qdldl
 DISTVERSION=	0.1.5.post0

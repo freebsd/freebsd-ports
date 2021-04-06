@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Memoize
 PORTVERSION=	1.03

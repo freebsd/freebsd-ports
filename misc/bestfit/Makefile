@@ -1,5 +1,4 @@
 # Created by: Steven Enderle <enderle@mdn.de>
-# $FreeBSD$
 
 PORTNAME=	bestfit
 PORTVERSION=	0.2.0

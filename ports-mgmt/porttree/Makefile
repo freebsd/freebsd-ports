@@ -1,5 +1,4 @@
 # Created by: Vladimir Chukharev
-# $FreeBSD$
 
 PORTNAME=	porttree
 PORTVERSION=	1.1.r${SVN_REV}

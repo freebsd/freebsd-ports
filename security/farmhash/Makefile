@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	farmhash
 DISTVERSION=	g20190513

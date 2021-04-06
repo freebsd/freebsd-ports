@@ -1,5 +1,4 @@
 # Created by: mwest@uct.ac.za
-# $FreeBSD$
 
 PORTNAME=	rdesktop
 PORTVERSION=	1.9.0

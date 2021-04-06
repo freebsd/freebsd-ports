@@ -1,5 +1,4 @@
 # Created by: Ulrich Spoerlein <q@uni.de>
-# $FreeBSD$
 
 PORTNAME=	mp3splt
 PORTVERSION=	2.6.2

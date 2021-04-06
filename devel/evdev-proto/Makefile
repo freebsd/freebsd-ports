@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	evdev-proto
 PORTVERSION=	5.8

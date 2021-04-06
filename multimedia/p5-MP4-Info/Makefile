@@ -1,5 +1,4 @@
 # Created by: Lars Eggert <lars.eggert@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	MP4-Info
 PORTVERSION=	1.13

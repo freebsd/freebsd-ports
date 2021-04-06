@@ -1,5 +1,4 @@
 # Created by: marcus@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	poppler
 DISTVERSION=	21.03.0

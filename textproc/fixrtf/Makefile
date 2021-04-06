@@ -1,5 +1,4 @@
 # Created by: Xin LI <delphij@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	fixrtf
 PORTVERSION=	0.1.20060303

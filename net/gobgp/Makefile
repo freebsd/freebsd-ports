@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gobgp
 PORTVERSION=	2.23.0

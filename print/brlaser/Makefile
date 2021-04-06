@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	brlaser
 DISTVERSIONPREFIX=	v

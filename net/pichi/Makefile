@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pichi
 DISTVERSION=	1.3.1

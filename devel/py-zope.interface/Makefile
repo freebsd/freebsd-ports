@@ -1,5 +1,4 @@
 # Created by: Neal Nelson <neal@nelson.name>
-# $FreeBSD$
 
 PORTNAME=	zope.interface
 PORTVERSION=	5.3.0

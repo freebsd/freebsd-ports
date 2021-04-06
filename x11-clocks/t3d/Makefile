@@ -1,5 +1,4 @@
 # Created by: J Han <hjh@best.com>
-# $FreeBSD$
 
 PORTNAME=	t3d
 PORTVERSION=	1.1

@@ -1,5 +1,4 @@
 # Created by: Rodrigo OSORIO <rodrigo@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libsoldout
 PORTVERSION=	0.02

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gfan
 DISTVERSION=	0.6.2

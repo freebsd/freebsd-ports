@@ -1,5 +1,4 @@
 # Created by: Joe Clarke <marcus@marcuscom.com>
-# $FreeBSD$
 
 PORTNAME=	pam_ldap
 PORTVERSION=	186

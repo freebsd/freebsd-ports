@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pructl
 DISTVERSION=	0.2

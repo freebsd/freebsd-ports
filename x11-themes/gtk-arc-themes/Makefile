@@ -1,5 +1,4 @@
 # Created by: archfan <mail_me@riseup.net>
-# $FreeBSD$
 
 PORTNAME=	gtk-arc-themes
 DISTVERSION=	20210127

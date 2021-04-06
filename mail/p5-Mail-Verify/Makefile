@@ -1,5 +1,4 @@
 # Created by: Pete Fritchman <petef@databits.net >
-# $FreeBSD$
 
 PORTNAME=	Mail-Verify
 PORTVERSION=	0.02

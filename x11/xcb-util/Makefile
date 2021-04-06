@@ -1,5 +1,4 @@
 # Created by: Nikos Ntarmos <ntarmos@ceid.upatras.gr>
-# $FreeBSD$
 
 PORTNAME=	xcb-util
 PORTVERSION=	0.4.0

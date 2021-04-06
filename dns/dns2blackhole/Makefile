@@ -1,5 +1,4 @@
 # Created by: Joe Barbish
-# $FreeBSD$
 
 PORTNAME=	dns2blackhole
 PORTVERSION=	0.1

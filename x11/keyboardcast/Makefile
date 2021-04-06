@@ -1,5 +1,4 @@
 # Created by: eimar.koort
-# $FreeBSD$
 
 PORTNAME=	keyboardcast
 PORTVERSION=	0.1.1

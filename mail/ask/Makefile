@@ -1,5 +1,4 @@
 # Created by: Marcelo Araujo <araujobsd@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ask
 PORTVERSION=	2.5.3

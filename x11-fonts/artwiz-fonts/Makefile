@@ -1,5 +1,4 @@
 # Created by: Dominic Marks <dominic.marks@btinternet.com>
-# $FreeBSD$
 
 PORTNAME=	artwiz-fonts
 PORTVERSION=	1.0

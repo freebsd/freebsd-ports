@@ -1,5 +1,4 @@
 # Created by: Stephane Legrand <stephane@lituus.fr>
-# $FreeBSD$
 
 PORTNAME=	bugs
 PORTVERSION=	4.1.1

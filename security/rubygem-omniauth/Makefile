@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omniauth
 PORTVERSION=	1.9.1

@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Mail-Freshmeat
 PORTVERSION=	1.20

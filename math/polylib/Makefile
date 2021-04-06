@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	polylib
 DISTVERSION=	5.22.5

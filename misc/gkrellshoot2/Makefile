@@ -1,5 +1,4 @@
 # Created by: Andrew Stuart <elitetek@tekrealm.net>
-# $FreeBSD$
 
 PORTNAME=	gkrellshoot
 PORTVERSION=	0.4.4

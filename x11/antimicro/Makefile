@@ -1,5 +1,4 @@
 # Created by: Anton Toernqvist <antont@inbox.lv>
-# $FreeBSD$
 
 PORTNAME=	antimicro
 PORTVERSION=	2.23

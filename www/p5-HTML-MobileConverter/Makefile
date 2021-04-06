@@ -1,5 +1,4 @@
 # Created by: Dmitry Liakh <dliakh@ukr.net>
-# $FreeBSD$
 
 PORTNAME=	HTML-MobileConverter
 PORTVERSION=	0.011

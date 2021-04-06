@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Log-Contextual
 PORTVERSION=	0.007000

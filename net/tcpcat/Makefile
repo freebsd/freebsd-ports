@@ -1,5 +1,4 @@
 # Created by: roam@orbitel.bg
-# $FreeBSD$
 
 PORTNAME=	tcpcat
 PORTVERSION=	1.2.0

@@ -1,5 +1,4 @@
 # Created by: obrien@NUXI.com
-# $FreeBSD$
 
 PORTNAME=	rclock
 PORTVERSION=	2.7.10

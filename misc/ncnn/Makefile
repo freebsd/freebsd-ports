@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ncnn
 DISTVERSION=	20210322

@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lars@thegler.dk>
-# $FreeBSD$
 
 PORTNAME=	Class-DBI-Plugin-RetrieveAll
 PORTVERSION=	1.04

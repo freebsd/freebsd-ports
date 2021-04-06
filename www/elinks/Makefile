@@ -1,5 +1,4 @@
 # Created by: Michael Vasilenko <acid@stu.cn.ua>
-# $FreeBSD$
 
 PORTNAME=	elinks
 DISTVERSION=	0.11.7

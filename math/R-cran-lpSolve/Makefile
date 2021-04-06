@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lpSolve
 PORTVERSION=	5.6.15

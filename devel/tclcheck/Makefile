@@ -1,5 +1,4 @@
 # Created by: Sander Vesik <sander@haldjas.folklore.ee>
-# $FreeBSD$
 
 PORTNAME=	tclcheck
 PORTVERSION=	1.1.13

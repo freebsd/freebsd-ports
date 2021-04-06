@@ -1,5 +1,4 @@
 # Created by: Mikhail T. <mi@aldan.algebra.com>
-# $FreeBSD$
 
 PORTNAME=	lepton
 PORTVERSION=	0.2016.07.16

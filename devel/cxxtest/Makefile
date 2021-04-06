@@ -1,5 +1,4 @@
 # Created by: andrew morton
-# $FreeBSD$
 
 PORTNAME=	cxxtest
 PORTVERSION=	4.4

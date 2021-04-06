@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Zopkio
 PORTVERSION=	0.2.5

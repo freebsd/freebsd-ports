@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Text-LTSV
 PORTVERSION=	0.08

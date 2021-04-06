@@ -1,5 +1,4 @@
 # Created by: Andrew J. Caines <A.J.Caines@halplant.com>
-# $FreeBSD$
 
 PORTNAME=	postfinger
 PORTVERSION=	1.30

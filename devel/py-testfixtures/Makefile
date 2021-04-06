@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	testfixtures
 PORTVERSION=	6.17.1

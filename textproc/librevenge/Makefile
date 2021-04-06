@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librevenge
 PORTVERSION=	0.0.4

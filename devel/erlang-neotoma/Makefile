@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	neotoma
 PORTVERSION=	1.7.4

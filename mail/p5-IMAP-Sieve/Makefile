@@ -1,5 +1,4 @@
 # Created by: Oliver Eikemeier <eikemeier@fillmore-labs.com>
-# $FreeBSD$
 
 PORTNAME=	IMAP-Sieve
 PORTVERSION=	0.4.9

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libcelero
 DISTVERSIONPREFIX=	v

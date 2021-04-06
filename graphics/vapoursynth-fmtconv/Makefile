@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fmtconv
 PORTVERSION=	r22

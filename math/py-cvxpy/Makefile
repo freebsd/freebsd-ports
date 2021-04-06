@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cvxpy
 DISTVERSION=	1.1.11

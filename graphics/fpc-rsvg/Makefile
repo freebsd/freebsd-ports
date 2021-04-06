@@ -1,5 +1,4 @@
 # Created by: Christopher Key <cjk32@cam.ac.uk>
-# $FreeBSD$
 
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-rsvg

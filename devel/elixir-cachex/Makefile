@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cachex
 PORTVERSION=	3.0.3

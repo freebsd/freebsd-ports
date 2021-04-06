@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	onlykey
 PORTVERSION=	1.2.2

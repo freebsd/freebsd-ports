@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gtk-layer-shell
 DISTVERSIONPREFIX=	v

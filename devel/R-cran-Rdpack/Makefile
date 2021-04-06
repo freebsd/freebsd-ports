@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Rdpack
 DISTVERSION=	2.1.1

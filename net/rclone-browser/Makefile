@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rclone-browser
 DISTVERSION=	1.8.0

@@ -1,5 +1,4 @@
 # Created by: Cezary Morga <cm@therek.net>
-# $FreeBSD$
 
 PORTNAME=	DateTime-Format-Flexible
 PORTVERSION=	0.32

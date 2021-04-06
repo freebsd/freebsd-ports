@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	eprover
 DISTVERSIONPREFIX=	E-

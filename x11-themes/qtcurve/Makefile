@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qtcurve
 PORTVERSION=	1.9.0

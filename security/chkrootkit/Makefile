@@ -1,5 +1,4 @@
 # Created by: Luiz Eduardo R. Cordeiro
-# $FreeBSD$
 
 PORTNAME=	chkrootkit
 PORTVERSION=	0.53

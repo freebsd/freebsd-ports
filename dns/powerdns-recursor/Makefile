@@ -1,5 +1,4 @@
 # Created by: sten@blinkenlights.nl
-# $FreeBSD$
 
 PORTNAME=	recursor
 DISTVERSION=	4.4.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	drf-yasg
 DISTVERSION=	1.20.0

@@ -1,5 +1,4 @@
 # Created by: Kurt Lidl (kurt.lidl@cello.com)
-# $FreeBSD$
 
 PORTNAME=	HTML-GenerateUtil
 PORTVERSION=	1.20

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	erkale
 DISTVERSION=	g20200426

@@ -1,5 +1,4 @@
 # Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	flim
 PORTVERSION=	1.14.9.${SNAPDATE}

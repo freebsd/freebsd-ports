@@ -1,5 +1,4 @@
 # Created by: René Ladan <rene@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jsonfield
 PORTVERSION=	3.1.0

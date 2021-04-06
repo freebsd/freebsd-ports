@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pysmt
 DISTVERSIONPREFIX=	v

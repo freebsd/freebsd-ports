@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SoapyRemote
 DISTVERSIONPREFIX=	soapy-remote-

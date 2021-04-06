@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gitinspector
 PORTVERSION=	0.4.4

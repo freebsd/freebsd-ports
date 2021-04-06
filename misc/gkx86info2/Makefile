@@ -1,5 +1,4 @@
 # Created by: Tobias Roth <ports@fsck.ch>
-# $FreeBSD$
 
 PORTNAME=	gkx86info2
 PORTVERSION=	0.0.2

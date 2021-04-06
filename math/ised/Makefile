@@ -1,5 +1,4 @@
 # Created by: Charlie Kester <corky1951@comcast.net>
-# $FreeBSD$
 
 PORTNAME=	ised
 PORTVERSION=	2.7.1

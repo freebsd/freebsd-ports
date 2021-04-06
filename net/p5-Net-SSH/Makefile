@@ -1,5 +1,4 @@
 # Created by: Vadim Belman <vab@lflat.vas.mobilix.dk>
-# $FreeBSD$
 
 PORTNAME=	Net-SSH
 PORTVERSION=	0.09

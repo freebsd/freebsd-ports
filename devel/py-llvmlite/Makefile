@@ -1,5 +1,4 @@
 # Created by: David Kalliecharan <dave@dal.ca>
-# $FreeBSD$
 
 PORTNAME=	llvmlite
 DISTVERSION=	0.34.0

@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis (edwin@mavetju.org)
-# $FreeBSD$
 
 PORTNAME=	dhcperf
 PORTVERSION=	1.0.1.0

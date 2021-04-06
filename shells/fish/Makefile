@@ -1,5 +1,4 @@
 # Created by: Kai Wang <kaiw27@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	fish
 DISTVERSION=	3.2.1

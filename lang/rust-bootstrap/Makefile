@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # Once the bootstraps are available on pkg.FreeBSD.org run sync.sh
 # to upload them to ~/public_distfiles on freefall in preparation

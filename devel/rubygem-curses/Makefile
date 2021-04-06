@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	curses
 PORTVERSION=	1.3.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dtaus
 PORTVERSION=	0.9

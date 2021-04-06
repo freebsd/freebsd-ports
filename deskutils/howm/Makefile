@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	howm
 PORTVERSION=	1.4.3

@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-table-postgresql
 PORTREVISION=	0

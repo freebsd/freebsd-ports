@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flask-babelex
 PORTVERSION=	0.9.4

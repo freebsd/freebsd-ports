@@ -1,5 +1,4 @@
 # Created by: chinsan	<chinsan@mail2000.com.tw>
-# $FreeBSD$
 
 PORTNAME=	scim-input-pad
 PORTVERSION=	0.1.3.1

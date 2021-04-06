@@ -1,5 +1,4 @@
 # Created by: Florent Thoumie <flz@xbsd.org>
-# $FreeBSD$
 
 PORTNAME=	progsreiserfs
 DISTVERSION=	0.3.1-rc8

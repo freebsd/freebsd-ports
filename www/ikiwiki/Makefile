@@ -1,5 +1,4 @@
 # Created by: Henrik Brix Andersen <henrik@brixandersen.dk>
-# $FreeBSD$
 
 PORTNAME=	ikiwiki
 DISTVERSION=	3.20200202.3

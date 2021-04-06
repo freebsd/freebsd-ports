@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wayland
 DISTVERSION=	${QT5_VERSION}

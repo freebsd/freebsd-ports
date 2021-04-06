@@ -1,5 +1,4 @@
 # Created by: Frank Fenor <frank@fenor.de>
-# $FreeBSD$
 
 PORTNAME=	tclsyslog
 PORTVERSION=	2.1

@@ -1,5 +1,4 @@
 # Created by: Serge Gagnon <gagnon__s@videotron.ca>
-# $FreeBSD$
 
 PORTNAME=	utftools
 PORTVERSION=	1.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gntp
 PORTVERSION=	1.0.3

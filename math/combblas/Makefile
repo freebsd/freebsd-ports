@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CombBLAS
 DISTVERSION=	1.6.2

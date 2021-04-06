@@ -1,5 +1,4 @@
 # Created by: Evan Sarmiento <bsdports@wayfair.com>
-# $FreeBSD$
 
 PORTNAME=	statsd
 PORTVERSION=	0.5.4

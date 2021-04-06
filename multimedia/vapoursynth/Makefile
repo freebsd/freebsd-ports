@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vapoursynth
 DISTVERSION=	R52

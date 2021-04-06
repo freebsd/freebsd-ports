@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yesod-bin
 PORTVERSION=	1.6.1

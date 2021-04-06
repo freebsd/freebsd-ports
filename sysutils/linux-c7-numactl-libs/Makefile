@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	numactl
 PORTVERSION=	2.0.12

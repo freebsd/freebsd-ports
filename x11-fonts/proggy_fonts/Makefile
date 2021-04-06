@@ -1,5 +1,4 @@
 # Created by: Leland Wang <llwang@infor.org>
-# $FreeBSD$
 
 PORTNAME=	proggy_fonts
 PORTVERSION=	1.0

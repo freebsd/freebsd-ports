@@ -1,5 +1,4 @@
 # Created by: Jeroen Ruigrok van der Werven <asmodai@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tuxnes
 PORTVERSION=	0.75

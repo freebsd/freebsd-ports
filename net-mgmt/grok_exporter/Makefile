@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grok_exporter
 DISTVERSIONPREFIX=v

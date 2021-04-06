@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=	rankwidth	# Also known as: rw
 PORTVERSION=	0.9

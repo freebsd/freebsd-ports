@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mod_security
 PORTVERSION=	2.9.3

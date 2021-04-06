@@ -1,5 +1,4 @@
 # Created by: Kiyoshi Matsui <kmatsui@t3.rim.or.jp>
-# $FreeBSD$
 
 PORTNAME=	mcpp
 PORTVERSION=	2.7.2

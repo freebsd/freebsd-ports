@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	threadweaver
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

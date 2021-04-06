@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qof
 PORTVERSION=	0.8.8

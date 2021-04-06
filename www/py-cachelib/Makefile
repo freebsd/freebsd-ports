@@ -1,5 +1,4 @@
 # Created by: Gilbert Morgan <gmm@tutanota.com>
-# $FreeBSD$
 #
 
 PORTNAME=	cachelib

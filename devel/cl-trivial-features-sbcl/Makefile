@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	trivial-features
 PORTVERSION=	2010.01.16

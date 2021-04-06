@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ustreamer
 DISTVERSIONPREFIX=	v

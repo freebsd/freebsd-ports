@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	swaybg
 DISTVERSION=	1.0

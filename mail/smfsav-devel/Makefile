@@ -1,5 +1,4 @@
 # Created by: Anton Lysenok <bart@tapolsky.net.ua>
-# $FreeBSD$
 
 PORTNAME=	smfsav
 PORTVERSION=	2.1

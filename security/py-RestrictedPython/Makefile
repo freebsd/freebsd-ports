@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	RestrictedPython
 PORTVERSION=	3.6.0

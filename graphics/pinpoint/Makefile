@@ -1,5 +1,4 @@
 # Created by: lichray@gmail.com
-# $FreeBSD$
 
 PORTNAME=	pinpoint
 DISTVERSION=	0.1.4

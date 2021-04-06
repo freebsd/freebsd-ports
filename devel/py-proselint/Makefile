@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	proselint
 PORTVERSION=	0.10.2

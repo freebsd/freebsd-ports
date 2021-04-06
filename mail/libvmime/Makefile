@@ -1,5 +1,4 @@
 # Created by: delphij@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	libvmime
 PORTVERSION=	0.9.2

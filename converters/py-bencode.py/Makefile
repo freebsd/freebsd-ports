@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bencode.py
 PORTVERSION=	4.0.0

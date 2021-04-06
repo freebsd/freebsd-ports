@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ldap
 DISTVERSION=	3.3.1

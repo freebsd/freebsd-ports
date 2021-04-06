@@ -1,5 +1,4 @@
 # Created by: krion
-# $FreeBSD$
 
 PORTNAME=	dnsflood
 PORTVERSION=	1.20

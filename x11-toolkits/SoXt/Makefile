@@ -1,5 +1,4 @@
 # Created by: roland.jesse@gmx.net
-# $FreeBSD$
 
 PORTNAME=	SoXt
 PORTVERSION=	1.3.0

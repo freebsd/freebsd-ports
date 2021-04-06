@@ -1,5 +1,4 @@
 # Created by: Juraj Lutter <juraj@lutter.sk>
-# $FreeBSD$
 
 PORTNAME=	logswan
 DISTVERSION=	2.1.10

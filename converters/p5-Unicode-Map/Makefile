@@ -1,5 +1,4 @@
 # Created by: Ryan T. Dean <rtdean@cytherianage.net>
-# $FreeBSD$
 
 PORTNAME=	Unicode-Map
 PORTVERSION=	0.112

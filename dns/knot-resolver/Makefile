@@ -1,5 +1,4 @@
 # Created by: Leo Vandewoestijne <freebsd@dns.company>
-# $FreeBSD$
 
 PORTNAME=	knot-resolver
 DISTVERSION=	5.3.0

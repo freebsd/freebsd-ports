@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyinsane2
 DISTVERSION=	2.0.13

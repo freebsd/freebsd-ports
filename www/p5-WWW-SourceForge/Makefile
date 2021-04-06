@@ -1,5 +1,4 @@
 # Created by: Yuan-Chung Hsiao <ychsiao@ychsiao.idv.tw>
-# $FreeBSD$
 
 PORTNAME=	WWW-SourceForge
 PORTVERSION=	0.70

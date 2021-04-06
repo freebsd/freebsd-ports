@@ -1,5 +1,4 @@
 # Created by: Matthias Schmidt
-# $FreeBSD$
 
 PORTNAME=	pkg_search
 PORTVERSION=	1.3

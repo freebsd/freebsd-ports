@@ -1,5 +1,4 @@
 # Created by: Yoichi NAKAYAMA <yoichi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	xface.el
 PORTVERSION=	1.3.6.24

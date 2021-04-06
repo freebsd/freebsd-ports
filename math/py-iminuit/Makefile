@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iminuit
 DISTVERSION=	2.4.0

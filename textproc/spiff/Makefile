@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spiff
 PORTVERSION=	1.0.8

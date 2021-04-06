@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	golangci-lint
 DISTVERSIONPREFIX=	v

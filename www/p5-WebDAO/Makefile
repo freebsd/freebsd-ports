@@ -1,5 +1,4 @@
 # Created by: Zahatski Aliaksandr <zag@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	WebDAO
 PORTVERSION=	2.25

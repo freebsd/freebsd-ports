@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uuid
 DISTVERSION=	0.1-4

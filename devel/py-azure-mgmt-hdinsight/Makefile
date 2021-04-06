@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-hdinsight
 PORTVERSION=	2.2.0

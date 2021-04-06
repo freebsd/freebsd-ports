@@ -1,5 +1,4 @@
 # Created by: Talal Al Dik (tad@vif.com)
-# $FreeBSD$
 
 PORTNAME=	sngrep
 DISTVERSION=	1.4.8

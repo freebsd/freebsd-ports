@@ -1,5 +1,4 @@
 # Created by: Andrej Zverev <andrey.zverev@electro-com.ru>
-# $FreeBSD$
 
 PORTNAME=	Regexp-Copy
 PORTVERSION=	0.06

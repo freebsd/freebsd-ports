@@ -1,5 +1,4 @@
 # Created by: Tony Maher <tonym@biolateral.com.au>
-# $FreeBSD$
 
 PORTNAME=	wise
 PORTVERSION=	2.4.1

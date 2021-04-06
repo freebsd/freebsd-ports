@@ -1,5 +1,4 @@
 # Created by: Dave Walton <dwalton@acm.org>
-# $FreeBSD$
 
 PORTNAME=	taipan
 PORTVERSION=	0.9

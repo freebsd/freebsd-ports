@@ -1,5 +1,4 @@
 # Created by: Lars Eggert <lars.eggert@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	HTML-TokeParser-Simple
 PORTVERSION=	3.16

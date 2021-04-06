@@ -1,5 +1,4 @@
 # Created by: Michael Ranner <michael@ranner.eu>
-# $FreeBSD$
 
 PORTNAME=	iXhash
 PORTVERSION=	1.5.5

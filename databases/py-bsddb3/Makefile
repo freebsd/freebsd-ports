@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang <perky@python.or.kr>
-# $FreeBSD$
 
 PORTNAME=	bsddb3
 PORTVERSION=	6.2.9

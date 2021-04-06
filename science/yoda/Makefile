@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yoda
 DISTVERSION=	1.8.5

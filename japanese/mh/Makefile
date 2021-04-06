@@ -1,5 +1,4 @@
 # Created by: Akito FUJITA <fujita@zoo.ncl.omron.co.jp>
-# $FreeBSD$
 
 PORTNAME=	mh
 PORTVERSION=	${VERSION}.j${JP_VERSION}

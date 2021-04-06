@@ -1,5 +1,4 @@
 # Created by: johnpupu <johnpupu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	yaf
 DISTVERSION=	3.2.5

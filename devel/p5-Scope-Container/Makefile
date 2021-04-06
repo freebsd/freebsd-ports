@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Scope-Container
 PORTVERSION=	0.04

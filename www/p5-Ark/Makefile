@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Ark
 PORTVERSION=	0.1.r1

@@ -1,5 +1,4 @@
 # Created by: jeffhung
-# $FreeBSD$
 
 PORTNAME=	Class-OOorNO
 PORTVERSION=	0.011

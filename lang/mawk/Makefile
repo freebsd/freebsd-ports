@@ -1,5 +1,4 @@
 # Created by: Pedro F. Giffuni <giffunip@asme.org>
-# $FreeBSD$
 
 PORTNAME=	mawk
 DISTVERSION=	1.3.4-20190203

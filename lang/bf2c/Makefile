@@ -1,5 +1,4 @@
 # Created by: rene
-# $FreeBSD$
 
 PORTNAME=	bf2c
 PORTVERSION=	1.3.1

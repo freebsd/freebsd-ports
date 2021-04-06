@@ -1,5 +1,4 @@
 # Created by: Bartek Rutkowski <ports@robakdesign.com>
-# $FreeBSD$
 
 PORTNAME=	click
 PORTVERSION=	6.7

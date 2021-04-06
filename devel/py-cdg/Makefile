@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cdg
 PORTVERSION=	0.1.3

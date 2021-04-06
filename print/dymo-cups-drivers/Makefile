@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dymo-cups-drivers
 PORTVERSION=	1.4.0

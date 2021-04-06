@@ -1,5 +1,4 @@
 # Created by: Leland Wang <llwang@infor.org>
-# $FreeBSD$
 
 PORTNAME=	sgflib
 PORTVERSION=	1.0

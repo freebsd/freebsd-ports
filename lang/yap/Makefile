@@ -1,5 +1,4 @@
 # Created by: Danilo Egea Gondolfo <danilogondolfo@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	yap
 PORTVERSION=	6.2.2

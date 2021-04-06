@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	casadi
 DISTVERSION=	3.5.5

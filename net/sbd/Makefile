@@ -1,5 +1,4 @@
 # Created by: David Thiel (lx@redundancy.redundancy.org)
-# $FreeBSD$
 
 PORTNAME=	sbd
 PORTVERSION=	1.37

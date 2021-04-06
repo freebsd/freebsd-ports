@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sqliteconvert
 DISTVERSIONPREFIX=	VERSION_

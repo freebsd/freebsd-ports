@@ -1,5 +1,4 @@
 # Created by: Muhammad Moinur Rahmanh <5u623l20@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	commons-math
 PORTVERSION=	3.6.1

@@ -1,5 +1,4 @@
 # Created by: Rick Elrod <codeblock@eighthbit.net>
-# $FreeBSD$
 
 PORTNAME=	callsign
 PORTVERSION=	2.2.0

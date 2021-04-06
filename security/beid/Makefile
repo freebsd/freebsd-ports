@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	beid
 PORTVERSION=	5.0.8

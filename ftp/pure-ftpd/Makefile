@@ -1,5 +1,4 @@
 # Created by: Frank DENIS
-# $FreeBSD$
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.49

@@ -1,5 +1,4 @@
 # Created by: kaz
-# $FreeBSD$
 
 PORTNAME=	nsf
 PORTVERSION=	1.0

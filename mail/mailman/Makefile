@@ -1,5 +1,4 @@
 # Created by: n_hibma@qubesoft.com
-# $FreeBSD$
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.34

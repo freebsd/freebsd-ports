@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lowdown
 PORTVERSION=	0.8.3

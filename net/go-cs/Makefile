@@ -1,5 +1,4 @@
 # Created by: Andy Kosela <akosela@andykosela.com>
-# $FreeBSD$
 
 PORTNAME=	go-cs
 PORTVERSION=	0.9

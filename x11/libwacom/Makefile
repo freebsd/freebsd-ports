@@ -1,5 +1,4 @@
 # Created by: johalun0@gmail.com
-# $FreeBSD$
 
 PORTNAME=	libwacom
 DISTVERSION=	1.5

@@ -1,5 +1,4 @@
 # Created by: mich@freebsdcluster.org
-# $FreeBSD$
 
 PORTNAME=	hackbot
 PORTVERSION=	2.21

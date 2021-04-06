@@ -1,5 +1,4 @@
 # Created by: Russell Jackson <raj@csub.edu>
-# $FreeBSD$
 
 PORTNAME=	augeas
 PORTVERSION=	1.12.0

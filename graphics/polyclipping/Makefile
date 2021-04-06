@@ -1,5 +1,4 @@
 # Created by: Nikolay Korotkiy <sikmir@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	polyclipping
 PORTVERSION=	6.4.2

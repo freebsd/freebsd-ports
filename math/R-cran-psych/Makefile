@@ -1,5 +1,4 @@
 # Created by: Dan Rue <drue@therub.org>
-# $FreeBSD$
 
 PORTNAME=	psych
 PORTVERSION=	1.2.1

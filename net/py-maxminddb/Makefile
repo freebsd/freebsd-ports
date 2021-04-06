@@ -1,5 +1,4 @@
 # Created by: Olivier Cochard-Labbé <olivier@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	maxminddb
 PORTVERSION=	2.0.2

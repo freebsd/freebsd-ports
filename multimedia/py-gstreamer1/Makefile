@@ -1,5 +1,4 @@
 # Created by: Koop Mast <kwm@rainbow-runner.nl>
-# $FreeBSD$
 
 PORTNAME=	gstreamer
 DISTVERSION=	1.16.3

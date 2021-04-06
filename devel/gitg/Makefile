@@ -1,5 +1,4 @@
 # Created by: kipz <somicide@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gitg
 PORTVERSION=	3.32.1

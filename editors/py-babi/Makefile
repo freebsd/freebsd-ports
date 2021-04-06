@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	babi
 PORTVERSION=	0.0.19

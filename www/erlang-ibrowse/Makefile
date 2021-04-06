@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ibrowse
 PORTVERSION=	4.4.0

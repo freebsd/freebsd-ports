@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pynndescent
 DISTVERSION=	0.4.8

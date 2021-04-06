@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cpu_features
 PORTVERSION=	0.5.0

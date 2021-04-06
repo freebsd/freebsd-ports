@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omniauth-shibboleth
 PORTVERSION=	1.3.0

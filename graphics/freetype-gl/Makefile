@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	freetype-gl
 DISTVERSION=	g20210208

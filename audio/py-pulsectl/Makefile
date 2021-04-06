@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pulsectl
 DISTVERSION=	20.5.1

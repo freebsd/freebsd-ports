@@ -1,5 +1,4 @@
 # Created by: kappa@FreeBSD.org.ua
-# $FreeBSD$
 
 PORTNAME=	JavaScript-SpiderMonkey
 PORTVERSION=	0.25

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME?=	mcollective-service-common
 PORTVERSION=	3.2.0

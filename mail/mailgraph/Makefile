@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
-# $FreeBSD$
 
 PORTNAME=	mailgraph
 PORTVERSION=	1.14

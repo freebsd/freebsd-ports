@@ -1,5 +1,4 @@
 # Created by: dave@dogwood.com
-# $FreeBSD$
 
 PORTNAME=	olsrd
 DISTVERSIONPREFIX=	v

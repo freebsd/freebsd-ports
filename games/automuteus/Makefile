@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	automuteus
 DISTVERSION=	6.11.2

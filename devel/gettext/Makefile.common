@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 # NOTE: before committing to this port, contact portmgr to arrange for an
 # experimental ports run.  Untested commits may be backed out at portmgr's
 # discretion.

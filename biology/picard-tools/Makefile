@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	picard
 DISTVERSION=	2.22.9

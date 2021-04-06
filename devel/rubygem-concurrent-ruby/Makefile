@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	concurrent-ruby
 PORTVERSION=	1.1.8

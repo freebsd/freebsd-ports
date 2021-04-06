@@ -1,5 +1,4 @@
 # Created by: clement@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	spine
 PORTVERSION=	1.2.16

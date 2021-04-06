@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	transient
 DISTVERSIONPREFIX=	v

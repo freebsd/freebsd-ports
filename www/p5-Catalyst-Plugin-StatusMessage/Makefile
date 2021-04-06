@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-StatusMessage
 PORTVERSION=	1.002000

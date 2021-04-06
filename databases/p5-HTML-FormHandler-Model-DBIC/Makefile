@@ -1,5 +1,4 @@
 # Created by: Vladimir Timofeev <vovkasm@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	HTML-FormHandler-Model-DBIC
 PORTVERSION=	0.29

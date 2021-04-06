@@ -1,5 +1,4 @@
 # Created by: Max Baryshnikov <mephius@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libsphinxclient
 DISTVERSION=	2.0.9

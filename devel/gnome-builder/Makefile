@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gnome-builder
 PORTVERSION=	3.38.1

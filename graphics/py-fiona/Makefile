@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Fiona
 DISTVERSION=	1.8.18

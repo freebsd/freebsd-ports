@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lucene++
 PORTVERSION=	3.0.8

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	svg_path
 PORTVERSION=	4.0.2

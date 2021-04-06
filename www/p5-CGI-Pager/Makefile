@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CGI-Pager
 PORTVERSION=	1.01

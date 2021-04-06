@@ -1,5 +1,4 @@
 # Created by: tremere@cainites.net
-# $FreeBSD$
 
 PORTNAME=	opendbx
 PORTVERSION=	1.4.6

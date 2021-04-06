@@ -1,5 +1,4 @@
 # Created by: Terry Sposato
-# $FreeBSD$
 
 PORTNAME=	prepflog
 PORTVERSION=	0.4.1

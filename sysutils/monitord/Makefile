@@ -1,5 +1,4 @@
 # Created by: walt
-# $FreeBSD$
 
 PORTNAME=	monitord
 PORTVERSION=	0.4.1

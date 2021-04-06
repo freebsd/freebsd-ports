@@ -1,5 +1,4 @@
 # Created by: Marc Fonvieille <blackend@FreeBSD.org>
-# $FreeBSD$
 
 CATEGORIES=	misc docs
 PKGNAMEPREFIX=	ja-

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	beancount
 PORTVERSION=	2.3.3

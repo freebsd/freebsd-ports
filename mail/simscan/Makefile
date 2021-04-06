@@ -1,5 +1,4 @@
 # Created by: Anton Karpov <toxa@toxahost.ru>
-# $FreeBSD$
 
 PORTNAME=	simscan
 PORTVERSION=	1.4.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bgpuma
 PORTVERSION=	20151209

@@ -1,5 +1,4 @@
 # Created by: Leo Kim <leo@florida.sarang.net>
-# $FreeBSD$
 
 PORTNAME=	MP3-Info
 PORTVERSION=	1.24

@@ -1,5 +1,4 @@
 # Created by: ports@rbt.ca
-# $FreeBSD$
 
 PORTNAME=	GD-SecurityImage
 PORTVERSION=	1.75

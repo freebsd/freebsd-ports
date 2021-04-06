@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Audio tools
 

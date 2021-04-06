@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Text-Brew
 PORTVERSION=	0.02

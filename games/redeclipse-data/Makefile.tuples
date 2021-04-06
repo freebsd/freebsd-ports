@@ -1,4 +1,3 @@
-# $FreeBSD$
 GH_TUPLE=	redeclipse:acerspyro:b28f9b5:acerspyro/acerspyro \
 		redeclipse:actors:3964c6f:actors/actors \
 		redeclipse:appleflap:7ecdaf1:appleflap/appleflap \

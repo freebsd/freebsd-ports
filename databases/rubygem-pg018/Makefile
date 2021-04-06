@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pg
 PORTVERSION=	0.18.4

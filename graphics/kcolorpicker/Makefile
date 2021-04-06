@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kColorPicker
 DISTVERSIONPREFIX=	v

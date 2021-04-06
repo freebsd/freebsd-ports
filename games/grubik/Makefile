@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grubik
 PORTVERSION=	0.1

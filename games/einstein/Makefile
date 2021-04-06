@@ -1,5 +1,4 @@
 # Created by: edwin@mavetju.org
-# $FreeBSD$
 
 PORTNAME=	einstein
 PORTVERSION=	2.0

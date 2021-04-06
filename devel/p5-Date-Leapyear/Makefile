@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Date-Leapyear
 PORTVERSION=	1.72

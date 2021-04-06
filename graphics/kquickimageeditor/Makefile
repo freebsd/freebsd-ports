@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kquickimageeditor
 DISTVERSION=	0.1.2

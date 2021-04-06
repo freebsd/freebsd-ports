@@ -1,5 +1,4 @@
 # Created by: Chris D. Faulhaber <jedgar@fxp.org>
-# $FreeBSD$
 
 PORTNAME=	kdbg
 DISTVERSIONPREFIX=	${PORTNAME}-

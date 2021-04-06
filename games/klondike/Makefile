@@ -1,5 +1,4 @@
 # Created by: johnh@isi.edu
-# $FreeBSD$
 
 PORTNAME=	klondike
 PORTVERSION=	1.9

@@ -1,5 +1,4 @@
 # Created by: Mario Sergio Fujikawa Ferreira <liouxFreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	rp-pppoe
 PORTVERSION=	3.14

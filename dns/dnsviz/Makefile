@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dnsviz
 PORTVERSION=	0.9.2

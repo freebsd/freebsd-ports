@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sayaka
 PORTVERSION=	3.5.1

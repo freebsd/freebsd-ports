@@ -1,5 +1,4 @@
 # Created by: Hendrik Scholz <hendrik@scholz.net>
-# $FreeBSD$
 
 PORTNAME=	fbdesk
 PORTVERSION=	1.4.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hepmc3
 DISTVERSION=	3.2.3

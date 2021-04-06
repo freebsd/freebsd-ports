@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-SAML
 PORTVERSION=	1.42

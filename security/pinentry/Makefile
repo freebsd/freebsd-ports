@@ -1,5 +1,4 @@
 # Created by: Michael Nottebrock <lofi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pinentry
 PORTVERSION=	1.1.1

@@ -1,5 +1,4 @@
 # Created by: Steven Kreuzer <skreuzer@exit2shell.com>
-# $FreeBSD$
 
 PORTNAME=	Data-Validate
 PORTVERSION=	0.09

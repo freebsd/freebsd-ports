@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	leela-zero
 DISTVERSIONPREFIX=	v

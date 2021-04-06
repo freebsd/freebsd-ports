@@ -1,5 +1,4 @@
 # Created by: jsellens
-# $FreeBSD$
 
 PORTNAME=	xmsg
 PORTVERSION=	1.1

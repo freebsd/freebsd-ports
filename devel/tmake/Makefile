@@ -1,5 +1,4 @@
 # Created by: jesse@cs.uni-magdeburg.de
-# $FreeBSD$
 
 PORTNAME=	tmake
 PORTVERSION=	2.12

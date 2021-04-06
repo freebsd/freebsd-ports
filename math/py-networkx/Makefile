@@ -1,5 +1,4 @@
 # Created by: dikshie
-# $FreeBSD$
 
 PORTNAME=	networkx
 DISTVERSION=	2.5

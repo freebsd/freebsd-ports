@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ssh-vault
 PORTVERSION=	0.12.6

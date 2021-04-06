@@ -1,5 +1,4 @@
 # Created by: Ashish Shukla <wahjava@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	inconsolata-ttf
 PORTVERSION=	2.001

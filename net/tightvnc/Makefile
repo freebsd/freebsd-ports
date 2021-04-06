@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	tightvnc
 PORTVERSION=	1.3.10

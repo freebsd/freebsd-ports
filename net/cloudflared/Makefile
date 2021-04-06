@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cloudflared
 DISTVERSION=	2021.3.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lcapy
 DISTVERSION=	g20171202

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ros-console_bridge
 DISTVERSION=	1.0.1

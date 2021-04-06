@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mlvpn
 PORTVERSION=	2.3.1

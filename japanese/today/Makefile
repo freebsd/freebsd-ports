@@ -1,5 +1,4 @@
 # Created by: ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
-# $FreeBSD$
 
 PORTNAME=	today
 PORTVERSION=	2.12

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Proc-Guard
 PORTVERSION=	0.07

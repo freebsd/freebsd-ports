@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Roo
 PORTVERSION=	1.004

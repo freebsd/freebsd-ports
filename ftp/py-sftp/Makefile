@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pysftp
 DISTVERSION=	0.2.9

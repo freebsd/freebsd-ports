@@ -1,5 +1,4 @@
 # Created by: Max Laier <max@love2party.net>
-# $FreeBSD$
 
 PORTNAME=	spamd
 PORTVERSION=	4.9.1

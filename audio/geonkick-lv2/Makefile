@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geonkick
 DISTVERSIONPREFIX=	v

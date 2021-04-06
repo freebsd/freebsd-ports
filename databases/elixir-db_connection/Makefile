@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	db_connection
 DISTVERSION=	1.1.3

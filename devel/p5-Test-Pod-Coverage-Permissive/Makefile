@@ -1,5 +1,4 @@
 # Created by: andrey@kostenko.name
-# $FreeBSD$
 
 PORTNAME=	Test-Pod-Coverage-Permissive
 PORTVERSION=	0.05

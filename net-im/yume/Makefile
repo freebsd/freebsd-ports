@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yume
 DISTVERSIONPREFIX=	v

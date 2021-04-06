@@ -1,5 +1,4 @@
 # Created by: Kamila Souckova <kamila@ksp.sk>
-# $FreeBSD$
 
 PORTNAME=	tarsnap-periodic
 PORTVERSION=	1.0.20170413

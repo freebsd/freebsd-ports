@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	termit
 PORTVERSION=	3.1

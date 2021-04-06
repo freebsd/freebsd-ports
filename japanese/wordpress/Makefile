@@ -1,5 +1,4 @@
 # Created by: Takefu
-# $FreeBSD$
 
 PORTNAME=	wordpress
 DISTVERSION=	5.5.3

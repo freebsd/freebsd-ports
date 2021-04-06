@@ -1,5 +1,4 @@
 # Created by: Mathias Monnerville <mathias@monnerville.com>
-# $FreeBSD$
 
 PORTNAME=	sextractor
 PORTVERSION=	2.5.0

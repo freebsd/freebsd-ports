@@ -1,5 +1,4 @@
 # Created by: William Grzybowski <sunpoet@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	jaraco.timing
 PORTVERSION=	2.0

@@ -1,5 +1,4 @@
 # Created by: John Chen <johnpupu@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	APCu
 PORTVERSION=	5.1.19

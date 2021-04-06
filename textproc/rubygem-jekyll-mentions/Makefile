@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jekyll-mentions
 PORTVERSION=	1.6.0

@@ -1,5 +1,4 @@
 # Created by: Rodrigo Graeff <delphus@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gdmap
 PORTVERSION=	0.8.1

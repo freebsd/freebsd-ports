@@ -1,5 +1,4 @@
 # Created by: Diane Bruce <db@db.net>
-# $FreeBSD$
 
 PORTNAME=	cwdaemon
 PORTVERSION=	0.10.2

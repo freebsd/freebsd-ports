@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	trousers
 PORTVERSION=	0.3.14

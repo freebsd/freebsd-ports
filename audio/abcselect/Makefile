@@ -1,5 +1,4 @@
 # Created by: Sue Blake <sue@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	abcselect
 PORTVERSION=	1.5

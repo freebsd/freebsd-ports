@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tremc
 DISTVERSION=	0.9.2

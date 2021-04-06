@@ -1,5 +1,4 @@
 # Created by: James E Keenan <jkeenan@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Devel-Platform-Info
 PORTVERSION=	1.00

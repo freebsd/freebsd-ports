@@ -1,5 +1,4 @@
 # Created by: KIRIYAMA Kazuhiko <kiri@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	sdocbook-xml
 PORTVERSION=	1.1

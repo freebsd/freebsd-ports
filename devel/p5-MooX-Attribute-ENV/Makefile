@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MooX-Attribute-ENV
 PORTVERSION=	0.02

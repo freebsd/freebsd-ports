@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libdiff
 PORTVERSION=	0.1.0

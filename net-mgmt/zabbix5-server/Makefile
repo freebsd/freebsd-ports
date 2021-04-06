@@ -1,5 +1,4 @@
 # Created by: Pakhom Golynga <pg@pakhom.spb.ru>
-# $FreeBSD$
 
 PORTNAME=	zabbix5
 DISTVERSION=	5.0.9

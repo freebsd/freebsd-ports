@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	neovim-qt
 DISTVERSIONPREFIX=	v

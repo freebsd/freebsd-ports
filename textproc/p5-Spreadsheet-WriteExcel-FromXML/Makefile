@@ -1,5 +1,4 @@
 # Created by: Bill Swingle <unfurl@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Spreadsheet-WriteExcel-FromXML
 PORTVERSION=	1.1

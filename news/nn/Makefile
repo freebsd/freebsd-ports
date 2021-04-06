@@ -1,5 +1,4 @@
 # Created by: adam
-# $FreeBSD$
 
 PORTNAME=	nn
 PORTVERSION=	6.7.3

@@ -1,5 +1,4 @@
 # Created by: markm
-# $FreeBSD$
 
 PORTNAME=	xneko
 PORTVERSION=	1.0

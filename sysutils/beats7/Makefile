@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	beats
 DISTVERSIONPREFIX=	v

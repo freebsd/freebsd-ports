@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	syncthing
 PORTVERSION=	1.13.1

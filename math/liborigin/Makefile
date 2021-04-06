@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	liborigin
 PORTVERSION=	3.0.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	webargs
 PORTVERSION=	7.0.1

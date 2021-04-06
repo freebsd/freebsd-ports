@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	onnx-tf
 DISTVERSION=	1.6.0

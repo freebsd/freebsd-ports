@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Bit-Vector
 PORTVERSION=	7.4

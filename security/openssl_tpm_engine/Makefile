@@ -1,5 +1,4 @@
 # Created by: Sebastian Schuetz <sschuetz@fhm.edu>
-# $FreeBSD$
 
 PORTNAME=	openssl_tpm_engine
 PORTVERSION=	0.5.0

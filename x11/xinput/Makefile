@@ -1,5 +1,4 @@
 # Created by: Martin Ranne <gasp@ridcully.dnsalias.org>
-# $FreeBSD$
 
 PORTNAME=	xinput
 PORTVERSION=	1.6.3

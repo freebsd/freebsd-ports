@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	msglint
 PORTVERSION=	1.04

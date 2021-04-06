@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	prettyunits
 PORTVERSION=	1.1.1

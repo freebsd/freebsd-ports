@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gstreamer1-plugins-sndio
 DISTVERSIONPREFIX=	v

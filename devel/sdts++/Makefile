@@ -1,5 +1,4 @@
 # Created by: erik@habatech.no
-# $FreeBSD$
 
 PORTNAME=	sdts++
 PORTVERSION=	1.5.1

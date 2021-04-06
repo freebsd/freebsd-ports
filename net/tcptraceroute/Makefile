@@ -1,5 +1,4 @@
 # Created by: jeff@cetlink.net
-# $FreeBSD$
 
 PORTNAME=	tcptraceroute
 PORTVERSION=	1.5beta7

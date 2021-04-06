@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		arbtt
 PORTVERSION=		0.10.2

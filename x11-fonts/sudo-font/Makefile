@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sudo-font
 DISTVERSIONPREFIX=	v

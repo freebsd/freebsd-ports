@@ -1,5 +1,4 @@
 # Created by: Jeff Putsch <jdputsch@comcast.net>
-# $FreeBSD$
 
 PORTNAME=	POE-Component-Jabber
 PORTVERSION=	3.00

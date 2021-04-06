@@ -1,5 +1,4 @@
 # Created by: Travis Campbell <hcoyote@ghostar.org>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Textile
 PORTVERSION=	0.01

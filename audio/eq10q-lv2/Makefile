@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	eq10q
 DISTVERSION=	2.2

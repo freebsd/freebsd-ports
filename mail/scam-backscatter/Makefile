@@ -1,5 +1,4 @@
 # Created by: Janne Snabb <snabb@epipe.com>
-# $FreeBSD$
 
 PORTNAME=	scam-backscatter
 PORTVERSION=	1.5.1

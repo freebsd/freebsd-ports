@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-handy
 PORTVERSION=	0.20210214

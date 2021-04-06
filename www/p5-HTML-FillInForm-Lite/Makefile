@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTML-FillInForm-Lite
 PORTVERSION=	1.13

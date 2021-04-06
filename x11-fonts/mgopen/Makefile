@@ -1,5 +1,4 @@
 # Created by: past@ebs.gr
-# $FreeBSD$
 
 PORTNAME=	mgopen
 PORTVERSION=	1.1

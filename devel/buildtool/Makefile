@@ -1,5 +1,4 @@
 # Created by: Jos Backus <jos@catnook.com>
-# $FreeBSD$
 
 PORTNAME=	buildtool
 PORTVERSION=	0.16

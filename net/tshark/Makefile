@@ -1,5 +1,4 @@
 # Created by: Bill Fumerola <billf@mu.org>
-# $FreeBSD$
 
 PORTNAME=	tshark
 CATEGORIES=	net

@@ -1,5 +1,4 @@
 # Created by: Fabiano Sidler <fabianosidler@swissonline.ch>
-# $FreeBSD$
 
 PORTNAME=	fpdf
 PORTVERSION=	1.7.2

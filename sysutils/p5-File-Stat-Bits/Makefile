@@ -1,5 +1,4 @@
 # Created by: Jim Pirzyk pirzyk@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	File-Stat-Bits
 PORTVERSION=	1.01

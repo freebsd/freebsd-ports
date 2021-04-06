@@ -1,5 +1,4 @@
 # Created by: Steven Kreuzer <skreuzer@exit2shell.com>
-# $FreeBSD$
 
 PORTNAME=	stringencoders
 PORTVERSION=	3.10.3

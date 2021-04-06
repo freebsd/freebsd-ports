@@ -1,5 +1,4 @@
 # Created by: Maho Nakata <maho@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	suitesparse
 PORTVERSION=	5.9.0

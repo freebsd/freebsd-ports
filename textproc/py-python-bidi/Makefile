@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-bidi
 DISTVERSION=	0.4.2

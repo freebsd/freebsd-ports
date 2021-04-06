@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chainer
 DISTVERSION=	7.7.0

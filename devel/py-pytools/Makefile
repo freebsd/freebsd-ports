@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pytools
 PORTVERSION=	2018.5

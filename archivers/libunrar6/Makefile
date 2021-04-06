@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libunrar6
 PORTVERSION=	6.0.4

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Regexp-Bind
 PORTVERSION=	0.05

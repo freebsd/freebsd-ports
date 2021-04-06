@@ -1,5 +1,4 @@
 # Created by: Meikel Brandmeyer <ocaml-ounit-port@kotka.de>
-# $FreeBSD$
 
 PORTNAME=	ounit
 PORTVERSION=	1.0.3

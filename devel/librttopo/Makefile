@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librttopo
 DISTVERSION=	1.1.0

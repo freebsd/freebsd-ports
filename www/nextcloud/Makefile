@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nextcloud
 PORTVERSION=	21.0.0

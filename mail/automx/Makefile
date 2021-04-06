@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	automx
 PORTVERSION=	0.10.2

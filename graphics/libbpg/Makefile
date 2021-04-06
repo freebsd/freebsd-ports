@@ -1,5 +1,4 @@
 # Created by: Matthieu Volat <mazhe@alkumuna.eu>
-# $FreeBSD$
 
 PORTNAME=	libbpg
 PORTVERSION=	0.9.7

@@ -1,5 +1,4 @@
 # Created by: Dom Mitchell <dom@happygiraffe.net>
-# $FreeBSD$
 
 PORTNAME=	npadmin
 PORTVERSION=	0.8.7

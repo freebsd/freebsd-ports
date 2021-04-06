@@ -1,5 +1,4 @@
 # Created by: Joseph Koshy <koshy@india.hp.com>
-# $FreeBSD$
 
 PORTNAME=	xaos
 DISTVERSIONPREFIX=	release-

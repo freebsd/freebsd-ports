@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cuttlefish
 PORTVERSION=	2.0.11

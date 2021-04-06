@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-o2em
 PORTVERSION=	0.20210214

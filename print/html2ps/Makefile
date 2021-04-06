@@ -1,5 +1,4 @@
 # Created by: Andreas Klemm <andreas@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	html2ps
 DISTVERSION=	1.0b7

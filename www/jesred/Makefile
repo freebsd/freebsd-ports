@@ -1,5 +1,4 @@
 # Created by: dsh@vlink.ru
-# $FreeBSD$
 
 PORTNAME=	jesred
 PORTVERSION=	1.2.1

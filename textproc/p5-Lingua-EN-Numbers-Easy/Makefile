@@ -1,5 +1,4 @@
 # Created by: Maxim Sobolev <sobomax@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Lingua-EN-Numbers-Easy
 PORTVERSION=	2014120401

@@ -1,5 +1,4 @@
 # Created by: janek@gaja.ipan.lublin.pl
-# $FreeBSD$
 
 PORTNAME=	cpmemu
 PORTVERSION=	0.2.1.1

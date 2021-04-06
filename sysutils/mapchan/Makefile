@@ -1,5 +1,4 @@
 # Created by: Konstantin Reznichenko <kot@premierbank.dp.ua>
-# $FreeBSD$
 
 PORTNAME=	mapchan
 PORTVERSION=	3.2

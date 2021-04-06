@@ -1,5 +1,4 @@
 # Created by: Joey Mingrone <joey@mingrone.org>
-# $FreeBSD$
 
 PORTNAME=	parcellite
 PORTVERSION=	1.2.1

@@ -1,5 +1,4 @@
 # Created by: Evgeny Zhirnov <jirnov@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	avfs
 PORTVERSION=	1.1.3

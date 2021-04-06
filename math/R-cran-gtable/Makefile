@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gtable
 PORTVERSION=	0.3.0

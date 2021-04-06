@@ -1,5 +1,4 @@
 # Created by: Steven Kreuzer
-# $FreeBSD$
 
 PORTNAME=	ezcrypto
 PORTVERSION=	0.7.2

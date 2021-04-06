@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Sys-Sendfile
 PORTVERSION=	0.16

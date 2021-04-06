@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ldap2pw
 PORTVERSION=	20170922

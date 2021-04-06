@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	c-nocem
 PORTVERSION=	3.7

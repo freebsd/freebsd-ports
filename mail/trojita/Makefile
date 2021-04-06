@@ -1,5 +1,4 @@
 # Created by: Marco Broeder <marco.broeder@posteo.eu>
-# $FreeBSD$
 
 PORTNAME=	trojita
 PORTVERSION=	0.7

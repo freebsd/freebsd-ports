@@ -1,5 +1,4 @@
 # Created by: Wu Ching-hong <woju@freebsd.ee.ntu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	queso
 PORTVERSION=	980922

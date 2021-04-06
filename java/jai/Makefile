@@ -1,5 +1,4 @@
 # Created by: OISHI Masakuni <yamasa@bsdhouse.org>
-# $FreeBSD$
 
 PORTNAME=	jai
 DISTVERSION=	1_1_3

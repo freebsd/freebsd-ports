@@ -1,5 +1,4 @@
 # Created by: ivoras
-# $FreeBSD$
 
 PORTNAME=	sqlcached
 PORTVERSION=	r6

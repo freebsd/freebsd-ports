@@ -1,5 +1,4 @@
 # Created by: petef@databits.net
-# $FreeBSD$
 
 PORTNAME=	PDF-Create
 PORTVERSION=	1.46

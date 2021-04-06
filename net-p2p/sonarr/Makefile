@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sonarr
 PORTVERSION=	3.0.5.1144

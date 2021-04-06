@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	inifile
 PORTVERSION=	0.4

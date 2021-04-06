@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Proc-Daemon
 PORTVERSION=	0.23

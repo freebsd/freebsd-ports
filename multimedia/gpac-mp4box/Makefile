@@ -1,5 +1,4 @@
 # Created by: Pascal Vizeli <pvizeli@yahoo.de>
-# $FreeBSD$
 
 PORTNAME=	mp4box
 DISTVERSIONPREFIX=	v

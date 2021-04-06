@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nag
 PORTVERSION=	4.2.19

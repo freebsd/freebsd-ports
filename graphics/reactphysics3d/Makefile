@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	reactphysics3d
 DISTVERSIONPREFIX=	v

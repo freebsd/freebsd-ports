@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	litmus
 PORTVERSION=	0.13

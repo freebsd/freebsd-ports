@@ -1,5 +1,4 @@
 # Created by: gtodd@bellanet.org
-# $FreeBSD$
 
 PORTNAME=	freebsd-snapshot
 DISTVERSION=	20091208.1

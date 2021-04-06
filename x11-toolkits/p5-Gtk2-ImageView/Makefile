@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Gtk2-ImageView
 PORTVERSION=	0.05

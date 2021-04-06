@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	django-timezone-field
 DISTVERSION=	4.1.2

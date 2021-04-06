@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libdazzle
 DISTVERSION=	3.38.0

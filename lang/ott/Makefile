@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ott
 PORTVERSION=	0.28

@@ -1,5 +1,4 @@
 # Created by: Petr Holub <hopet@ics.muni.cz>
-# $FreeBSD$
 
 PORTNAME=	xcalib
 PORTVERSION=	0.10

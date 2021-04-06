@@ -1,5 +1,4 @@
 # Created by: nbm
-# $FreeBSD$
 
 PORTNAME=	vqadmin
 PORTVERSION=	2.3.6

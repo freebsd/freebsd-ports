@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rubocop
 PORTVERSION=	1.7.0

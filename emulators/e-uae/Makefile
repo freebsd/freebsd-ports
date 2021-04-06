@@ -1,5 +1,4 @@
 # Created by: Miguel Mendez <flynn@energyhq.es.eu.org>
-# $FreeBSD$
 
 PORTNAME=	e-uae
 DISTVERSION=	0.8.29.w4

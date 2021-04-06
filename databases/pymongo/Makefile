@@ -1,5 +1,4 @@
 # Created by: wen@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	pymongo
 PORTVERSION=	3.11.3

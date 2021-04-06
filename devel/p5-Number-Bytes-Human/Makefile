@@ -1,5 +1,4 @@
 # Created by: Sulev-Madis Silber <madis555@hot.ee>
-# $FreeBSD$
 
 PORTNAME=	Number-Bytes-Human
 PORTVERSION=	0.11

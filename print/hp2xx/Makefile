@@ -1,5 +1,4 @@
 # Created by: Lars Koeller
-# $FreeBSD$
 
 PORTNAME=	hp2xx
 PORTVERSION=	3.4.4

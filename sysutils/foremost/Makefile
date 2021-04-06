@@ -1,5 +1,4 @@
 # Created by: Yonatan <Yonatan@xpert.com>
-# $FreeBSD$
 
 PORTNAME=	foremost
 PORTVERSION=	1.5.7

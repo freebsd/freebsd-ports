@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uh-layout
 PORTVERSION=	0.5.2

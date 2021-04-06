@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	App-SD
 PORTVERSION=	0.75

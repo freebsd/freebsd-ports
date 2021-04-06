@@ -1,5 +1,4 @@
 # Created by: Frank Laszlo <laszlof@freebsdmatrix.net>
-# $FreeBSD$
 
 PORTNAME=	euchre
 PORTVERSION=	0.8

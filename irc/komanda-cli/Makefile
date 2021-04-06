@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	komanda-cli
 DISTVERSION=	g20190920

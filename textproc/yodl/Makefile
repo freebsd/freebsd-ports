@@ -1,5 +1,4 @@
 # Created by: Donald Burr <dburr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	yodl
 PORTVERSION=	3.10.00

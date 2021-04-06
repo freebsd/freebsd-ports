@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ldc
 PORTVERSION=	1.23.0

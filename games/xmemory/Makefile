@@ -1,5 +1,4 @@
 # Created by: Dave Chapeskie <dchapes@ddm.on.ca>
-# $FreeBSD$
 
 PORTNAME=	xmemory
 PORTVERSION=	3.7

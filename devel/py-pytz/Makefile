@@ -1,5 +1,4 @@
 # Created by: Khairil Yusof <kaeru@inigo-tech.com>
-# $FreeBSD$
 
 PORTNAME=	pytz
 PORTVERSION=	2020.5

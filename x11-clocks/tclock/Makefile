@@ -1,5 +1,4 @@
 # Created by: Lars Koeller <lkoeller@cc.fh-lippe.de>
-# $FreeBSD$
 
 PORTNAME=	tclock
 PORTVERSION=	1.0.1

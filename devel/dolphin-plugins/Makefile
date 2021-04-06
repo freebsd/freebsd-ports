@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dolphin-plugins
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

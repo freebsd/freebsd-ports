@@ -1,5 +1,4 @@
 # Created by: eric
-# $FreeBSD$
 
 PORTNAME=	stardict
 PORTVERSION=	3.0.6

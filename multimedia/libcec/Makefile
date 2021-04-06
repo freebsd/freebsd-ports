@@ -1,5 +1,4 @@
 # Created by: Manuel Creach <manuel.creach@icloud.com>
-# $FreeBSD$
 
 PORTNAME=	libcec
 PORTVERSION=	6.0.2

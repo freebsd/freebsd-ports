@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	GitDDL
 PORTVERSION=	0.03

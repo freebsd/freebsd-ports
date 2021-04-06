@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	indicators
 DISTVERSIONPREFIX=	v

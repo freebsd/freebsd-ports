@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Process-Status
 PORTVERSION=	0.009

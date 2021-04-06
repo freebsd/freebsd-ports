@@ -1,5 +1,4 @@
 # Created by: Thomas-Martin Seck <tmseck@web.de>
-# $FreeBSD$
 
 PORTNAME=	libecap
 PORTVERSION=	1.0.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xiphos
 DISTVERSION=	4.2.1

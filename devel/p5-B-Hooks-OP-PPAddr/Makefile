@@ -1,5 +1,4 @@
 # Created by: Anton Berezin <tobez@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	B-Hooks-OP-PPAddr
 PORTVERSION=	0.06

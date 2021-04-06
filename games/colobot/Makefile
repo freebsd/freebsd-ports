@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	colobot
 DISTVERSIONPREFIX=	${PORTNAME}-gold-

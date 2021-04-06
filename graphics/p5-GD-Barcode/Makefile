@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	GD-Barcode
 PORTVERSION=	1.15

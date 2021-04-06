@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spass
 DISTVERSIONPREFIX=	v

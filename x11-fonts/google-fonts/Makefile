@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	google-fonts
 DISTVERSION=	0.0.0.20210120

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chamfer
 DISTVERSION=	s20210218

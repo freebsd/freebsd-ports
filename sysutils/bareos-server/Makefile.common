@@ -1,5 +1,4 @@
 # Created by: Alonso Cardenas <acm@FreeBSD.org>
-# $FreeBSD$
 post-patch:
 	@${REINPLACE_CMD}  '76,79d' ${WRKSRC}/CMakeLists.txt
 

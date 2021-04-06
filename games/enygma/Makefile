@@ -1,5 +1,4 @@
 # Created by: Wouter Reckman <gennerate@zonnet.nl>
-# $FreeBSD$
 
 PORTNAME=	enygma
 PORTVERSION=	1.04

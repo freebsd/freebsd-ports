@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	Plucene-Analysis-CJKAnalyzer
 PORTVERSION=	0.02

@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	e16-docs
 PORTVERSION=	0.16.8.0.2

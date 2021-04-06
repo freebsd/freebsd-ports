@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	YAML-Tiny-Color
 PORTVERSION=	0.04

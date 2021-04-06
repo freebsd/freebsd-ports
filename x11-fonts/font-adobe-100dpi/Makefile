@@ -1,5 +1,4 @@
 # Created by: Pawel Worach
-# $FreeBSD$
 
 PORTNAME=	font-adobe-100dpi
 PORTVERSION=	1.0.3

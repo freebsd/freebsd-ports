@@ -1,5 +1,4 @@
 # Created by: michaelnottebrock@gmx.net and lioux@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	portaudio
 PORTVERSION=	19.6.0

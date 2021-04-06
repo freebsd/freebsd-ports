@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	quickjail
 PORTVERSION=	0.2.1

@@ -1,5 +1,4 @@
 # Created by: glarkin
-# $FreeBSD$
 
 PORTNAME=	MooseX-StrictConstructor
 PORTVERSION=	0.21

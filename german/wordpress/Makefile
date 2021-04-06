@@ -1,5 +1,4 @@
 # Created by: miwi
-# $FreeBSD$
 
 PORTNAME=	wordpress
 DISTVERSION=	5.5.3

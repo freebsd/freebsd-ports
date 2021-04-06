@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	websockets
 CATEGORIES=	www net devel python

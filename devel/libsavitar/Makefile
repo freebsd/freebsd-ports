@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libSavitar
 DISTVERSION=	4.5.0

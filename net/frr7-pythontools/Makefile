@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 COMMENT=	Provide configuration reload functionality for FRR
 

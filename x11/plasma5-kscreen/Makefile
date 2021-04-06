@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kscreen
 DISTVERSION=	${KDE_PLASMA_VERSION}

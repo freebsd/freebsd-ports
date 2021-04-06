@@ -1,5 +1,4 @@
 # Created by: Mykola Marzhan <delgod@portaone.com>
-# $FreeBSD$
 
 PORTNAME=	HTTP-Daemon-SSL
 PORTVERSION=	1.04

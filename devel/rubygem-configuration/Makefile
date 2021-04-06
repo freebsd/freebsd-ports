@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz (<rpsfa@rit.edu>)
-# $FreeBSD$
 
 PORTNAME=	configuration
 PORTVERSION=	1.3.4

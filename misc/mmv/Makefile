@@ -1,5 +1,4 @@
 # Created by: Michael Elbel (me)
-# $FreeBSD$
 
 PORTNAME=	mmv
 PORTVERSION=	1.01b.19

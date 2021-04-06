@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cmh
 DISTVERSION=	1.1.0

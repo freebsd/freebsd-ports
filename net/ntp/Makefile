@@ -1,5 +1,4 @@
 # Created by: andreas
-# $FreeBSD$
 
 PORTNAME=	ntp
 PORTVERSION=	4.2.8p15

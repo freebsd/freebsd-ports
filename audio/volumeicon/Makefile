@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	volumeicon
 PORTVERSION=	0.5.1

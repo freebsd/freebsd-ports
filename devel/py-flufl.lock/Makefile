@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flufl.lock
 PORTVERSION=	3.2

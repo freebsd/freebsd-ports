@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	matplotlib
 DISTVERSION=	2.2.4

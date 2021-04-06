@@ -1,5 +1,4 @@
 # Created by: vanilla@
-# $FreeBSD$
 
 PORTNAME=	Test-Nginx
 PORTVERSION=	0.29

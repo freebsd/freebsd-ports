@@ -1,5 +1,4 @@
 # Created by: roam@orbitel.bg
-# $FreeBSD$
 
 PORTNAME=	bogosort
 PORTVERSION=	0.4.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	triton
 DISTVERSIONPREFIX=	v

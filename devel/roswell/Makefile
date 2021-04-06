@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	roswell
 DISTVERSIONPREFIX=	v

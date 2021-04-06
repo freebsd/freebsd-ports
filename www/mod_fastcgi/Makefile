@@ -1,5 +1,4 @@
 # Created by: JunSeon Oh <hollywar@mail.holywar.net>
-# $FreeBSD$
 
 PORTNAME=	mod_fastcgi
 PORTVERSION=	2.4.7.1

@@ -1,5 +1,4 @@
 # Created by: Charlie Kester <corky1951#comcast.net>
-# $FreeBSD$
 
 PORTNAME=	osmo
 PORTVERSION=	0.4.4

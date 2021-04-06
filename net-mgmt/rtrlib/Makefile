@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rtrlib
 PORTVERSION=	0.6.3

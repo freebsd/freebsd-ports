@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ctop
 DISTVERSIONPREFIX=	v

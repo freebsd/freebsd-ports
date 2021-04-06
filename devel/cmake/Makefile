@@ -1,5 +1,4 @@
 # Created by: Kyle Martin <mkm@ieee.org>
-# $FreeBSD$
 
 PORTNAME=	cmake
 # Remember to update devel/cmake-doc and devel/cmake-gui as well.

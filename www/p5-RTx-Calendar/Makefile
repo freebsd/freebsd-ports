@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman <m.seaman@infracaninophile.co.uk>
-# $FreeBSD$
 
 PORTNAME=	RTx-Calendar
 PORTVERSION=	1.03

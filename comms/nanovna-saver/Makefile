@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nanovna-saver
 DISTVERSIONPREFIX=	v

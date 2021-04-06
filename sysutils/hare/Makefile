@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hare
 DISTVERSION=	1.0

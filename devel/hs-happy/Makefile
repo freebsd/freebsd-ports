@@ -1,5 +1,4 @@
 # Created by: Simon Marlow <simonmar@microsoft.com>
-# $FreeBSD$
 
 PORTNAME=	happy
 PORTVERSION=	1.20.0

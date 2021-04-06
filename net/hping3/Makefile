@@ -1,5 +1,4 @@
 # Created by: Eugene Grosbein <eugen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hping3
 PORTVERSION=	20051105

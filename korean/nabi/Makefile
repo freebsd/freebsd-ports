@@ -1,5 +1,4 @@
 # Created by: Hye-Shik Chang <perky@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nabi
 PORTVERSION=	1.0.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lsblk
 PORTVERSION=	1.1

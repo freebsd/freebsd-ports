@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xcm
 PORTVERSION=	0.5.4

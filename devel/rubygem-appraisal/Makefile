@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	appraisal
 PORTVERSION=	2.3.0

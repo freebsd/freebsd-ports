@@ -1,5 +1,4 @@
 # Created by: jack
-# $FreeBSD$
 
 PORTNAME=	asmon
 PORTVERSION=	0.61

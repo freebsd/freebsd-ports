@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Plack-Server-POE
 PORTVERSION=	0.4

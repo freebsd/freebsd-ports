@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scrcpy
 DISTVERSIONPREFIX=	v

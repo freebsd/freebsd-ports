@@ -1,5 +1,4 @@
 # Created by: peter.thoenen@yahoo.com
-# $FreeBSD$
 
 PORTNAME=	tor
 DISTVERSION=	0.4.5.7

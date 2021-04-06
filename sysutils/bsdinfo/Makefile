@@ -1,5 +1,4 @@
 # Created by: samu <freebsd-ports@samu.pl>
-# $FreeBSD$
 
 PORTNAME=	bsdinfo
 PORTVERSION=	0.22

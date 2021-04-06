@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	dhttpd
 PORTVERSION=	1.02a

@@ -1,5 +1,4 @@
 # Created by: Mahlon E. Smith <mahlon@martini.nu>
-# $FreeBSD$
 
 PORTNAME=	shelldap
 PORTVERSION=	1.5.1

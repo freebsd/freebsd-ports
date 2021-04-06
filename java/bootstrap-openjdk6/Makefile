@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openjdk6
 PORTVERSION=	${DISTVERSION_${ARCH}}

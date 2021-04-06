@@ -1,5 +1,4 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
-# $FreeBSD$
 #   $MCom: ports/trunk/net-im/telepathy-salut/Makefile 19802 2014-08-13 12:13:08Z gusi $
 
 PORTNAME=	telepathy-salut

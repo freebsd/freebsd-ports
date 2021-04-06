@@ -1,5 +1,4 @@
 # Created by: Donald Burr <dburr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	netrek-BRMH
 PORTVERSION=	2.2.2
