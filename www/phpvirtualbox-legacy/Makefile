@@ -2,8 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	phpvirtualbox
-DISTVERSION=	6.1
+DISTVERSION=	5.2-1
+PORTREVISION=	1
 CATEGORIES=	www
+PKGNAMESUFFIX=	-legacy
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	AJAX Web Interface for VirtualBox
@@ -17,14 +19,16 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 USE_GITHUB=	yes
-GH_TAGNAME=	cf82d58f2
 
 DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
+WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 ETCDIR=		${WWWDIR}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#/usr/share/phpvirtualbox#${WWWDIR}#g' \
-		${WRKSRC}/phpvirtualbox.conf
+	@${MV} ${WRKSRC}/phpvirtualbox.conf ${WRKSRC}/phpvirtualbox-legacy.conf
+	@${REINPLACE_CMD} -e 's#Alias /phpvirtualbox#Alias /phpvirtualbox-legacy#' \
+		-e 's#/usr/share/phpvirtualbox#${WWWDIR}#g' \
+		${WRKSRC}/phpvirtualbox-legacy.conf
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}

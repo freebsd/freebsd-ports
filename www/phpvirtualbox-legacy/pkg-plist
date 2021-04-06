@@ -31,11 +31,7 @@
 %%WWWDIR%%/endpoints/lib/vboxServiceWrappers.php
 %%WWWDIR%%/endpoints/lib/vboxconnector.php
 %%WWWDIR%%/endpoints/lib/vboxweb-5.2.wsdl
-%%WWWDIR%%/endpoints/lib/vboxweb-6.0.wsdl
-%%WWWDIR%%/endpoints/lib/vboxweb-6.1.wsdl
 %%WWWDIR%%/endpoints/lib/vboxwebService-5.2.wsdl
-%%WWWDIR%%/endpoints/lib/vboxwebService-6.0.wsdl
-%%WWWDIR%%/endpoints/lib/vboxwebService-6.1.wsdl
 %%WWWDIR%%/endpoints/rdp.php
 %%WWWDIR%%/endpoints/screen.php
 %%WWWDIR%%/images/30white.png
@@ -265,7 +261,6 @@
 %%WWWDIR%%/images/vbox/os_win2k.png
 %%WWWDIR%%/images/vbox/os_win2k12_64.png
 %%WWWDIR%%/images/vbox/os_win2k16_64.png
-%%WWWDIR%%/images/vbox/os_win2k19_64.png
 %%WWWDIR%%/images/vbox/os_win2k3.png
 %%WWWDIR%%/images/vbox/os_win2k3_64.png
 %%WWWDIR%%/images/vbox/os_win2k8.png
@@ -414,10 +409,6 @@
 %%WWWDIR%%/images/vbox/video_capture_on_16px.png
 %%WWWDIR%%/images/vbox/video_capture_on_disabled_16px.png
 %%WWWDIR%%/images/vbox/video_capture_settings_16px.png
-%%WWWDIR%%/images/vbox/virtio_scsi_add_16px.png
-%%WWWDIR%%/images/vbox/virtio_scsi_add_disabled_16px.png
-%%WWWDIR%%/images/vbox/virtio_scsi_collapse_16px.png
-%%WWWDIR%%/images/vbox/virtio_scsi_expand_16px.png
 %%WWWDIR%%/images/vbox/virtualbox-hdd.png
 %%WWWDIR%%/images/vbox/virtualbox-ova.png
 %%WWWDIR%%/images/vbox/virtualbox-ovf.png
@@ -502,7 +493,6 @@
 %%WWWDIR%%/js/phpvirtualbox.js
 %%WWWDIR%%/js/utils.js
 %%WWWDIR%%/languages/cs.xml
-%%WWWDIR%%/languages/da.xml
 %%WWWDIR%%/languages/de.xml
 %%WWWDIR%%/languages/en.xml
 %%WWWDIR%%/languages/es.xml
@@ -532,8 +522,6 @@
 %%WWWDIR%%/languages/source/zh_tw.dat
 %%WWWDIR%%/languages/zh_cn.xml
 %%WWWDIR%%/languages/zh_tw.xml
-%%WWWDIR%%/packaging/install-scripts/install.bash
-%%WWWDIR%%/packaging/install-scripts/uninstall.bash
 %%WWWDIR%%/panes/about.html
 %%WWWDIR%%/panes/chooser.html
 %%WWWDIR%%/panes/guestNetAdapters.html
@@ -581,7 +569,7 @@
 %%WWWDIR%%/panes/wizardNewHDAdvanced.html
 %%WWWDIR%%/panes/wizardNewVM.html
 %%WWWDIR%%/panes/wizardNewVMAdvanced.html
-%%WWWDIR%%/phpvirtualbox.conf
+%%WWWDIR%%/phpvirtualbox-legacy.conf
 %%WWWDIR%%/rdpweb/RDPClientUI.swf
 %%WWWDIR%%/rdpweb/license_3rd.txt
 %%WWWDIR%%/rdpweb/swfobject.js

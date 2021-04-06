@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210406:
+  AFFECTS: users of www/phpvirtualbox
+  AUTHOR: dereks@lifeofadishwasher.com
+
+  www/phpvirtualbox has been updated to version 6.1. This new version
+  only supports version 6.1 of VirtualBox.
+
+  Version 5.x of phpvirtualbox has been preserved as
+  www/phpvirtualbox-legacy. If you require support for VirtualBox
+  5.x please install this version. Remember to copy your configuration
+  file in the new legacy installation.
+
 20210328:
   AFFECTS: users of www/caddy
   AUTHOR: adamw@FreeBSD.org
