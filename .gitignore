@@ -1,5 +1,6 @@
 /distfiles
 /packages
+/security/vuxml/vuln-flat.xml
 /*/*/Makefile.local
 /*/*/work
 /*/*/work-*
