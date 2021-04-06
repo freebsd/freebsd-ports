@@ -1,8 +1,8 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/devel/rubygem-gitlab-license/Makefile 567040 2021-03-03 09:30:42Z mfechner $
 
 PORTNAME=	gitlab-license
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
