@@ -1,7 +1,7 @@
-# $FreeBSD$
+# $FreeBSD: head/www/gitlab-pages/Makefile 567050 2021-03-03 09:39:52Z mfechner $
 
 PORTNAME=	gitlab-pages
-PORTVERSION=	1.35.0
+PORTVERSION=	1.36.0
 CATEGORIES=	www
 
 MAINTAINER=	swills@FreeBSD.org
@@ -17,7 +17,7 @@ USE_GITHUB=	nodefault
 
 GL_ACCOUNT=	gitlab-org
 # Find the here: https://gitlab.com/gitlab-org/gitlab-pages/tags
-GL_COMMIT=	2eefcef73409cf7510d7ecacce76b299a8340a4c
+GL_COMMIT=	3d68f89c6ef3c7d3cd13838e4ab521301ac5754e
 
 # Build with: make gomod-vendor
 # 62dd
