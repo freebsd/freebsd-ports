@@ -310,6 +310,10 @@
 %%DATADIR%%/plugins/history-substring-search/update-from-upstream.zsh
 %%DATADIR%%/plugins/history/README.md
 %%DATADIR%%/plugins/history/history.plugin.zsh
+%%DATADIR%%/plugins/hitchhiker/.gitignore
+%%DATADIR%%/plugins/hitchhiker/README.md
+%%DATADIR%%/plugins/hitchhiker/fortunes/hitchhiker
+%%DATADIR%%/plugins/hitchhiker/hitchhiker.plugin.zsh
 %%DATADIR%%/plugins/hitokoto/README.md
 %%DATADIR%%/plugins/hitokoto/hitokoto.plugin.zsh
 %%DATADIR%%/plugins/homestead/README.md
@@ -399,6 +403,8 @@
 %%DATADIR%%/plugins/mix-fast/mix-fast.plugin.zsh
 %%DATADIR%%/plugins/mix/README.md
 %%DATADIR%%/plugins/mix/_mix
+%%DATADIR%%/plugins/mongocli/README.md
+%%DATADIR%%/plugins/mongocli/mongocli.plugin.zsh
 %%DATADIR%%/plugins/mosh/README.md
 %%DATADIR%%/plugins/mosh/mosh.plugin.zsh
 %%DATADIR%%/plugins/mvn/README.md
@@ -588,6 +594,8 @@
 %%DATADIR%%/plugins/taskwarrior/README.md
 %%DATADIR%%/plugins/taskwarrior/_task
 %%DATADIR%%/plugins/taskwarrior/taskwarrior.plugin.zsh
+%%DATADIR%%/plugins/term_tab/README
+%%DATADIR%%/plugins/term_tab/term_tab.plugin.zsh
 %%DATADIR%%/plugins/terminitor/README.md
 %%DATADIR%%/plugins/terminitor/_terminitor
 %%DATADIR%%/plugins/terraform/README.md
@@ -626,6 +634,9 @@
 %%DATADIR%%/plugins/ubuntu/ubuntu.plugin.zsh
 %%DATADIR%%/plugins/ufw/README.md
 %%DATADIR%%/plugins/ufw/_ufw
+%%DATADIR%%/plugins/universalarchive/README.md
+%%DATADIR%%/plugins/universalarchive/_universalarchive
+%%DATADIR%%/plugins/universalarchive/universalarchive.plugin.zsh
 %%DATADIR%%/plugins/urltools/README.md
 %%DATADIR%%/plugins/urltools/urltools.plugin.zsh
 %%DATADIR%%/plugins/vagrant-prompt/README.md
@@ -677,6 +688,8 @@
 %%DATADIR%%/plugins/z/z.1
 %%DATADIR%%/plugins/z/z.plugin.zsh
 %%DATADIR%%/plugins/z/z.sh
+%%DATADIR%%/plugins/zbell/README.md
+%%DATADIR%%/plugins/zbell/zbell.plugin.zsh
 %%DATADIR%%/plugins/zeus/README.md
 %%DATADIR%%/plugins/zeus/_zeus
 %%DATADIR%%/plugins/zeus/zeus.plugin.zsh

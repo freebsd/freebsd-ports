@@ -1,7 +1,8 @@
 # Created by: Serhii (Sergey) Kozlov <skozlov@FreeBSD.org>
+# $FreeBSD: head/shells/ohmyzsh/Makefile 558339 2020-12-17 23:43:18Z skozlov $
 
 PORTNAME=	ohmyzsh
-PORTVERSION=	20201216
+PORTVERSION=	20210331
 CATEGORIES=	shells
 
 MAINTAINER=	skozlov@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	zsh:shells/zsh
 
 USE_GITHUB=	yes
-GH_TAGNAME=	b28665a
+GH_TAGNAME=	2d40b562e5da4c885babc1f7f09aa33a8a891eb2
 
 NO_ARCH=	yes
 NO_BUILD=	yes
