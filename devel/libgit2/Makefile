@@ -37,7 +37,7 @@ THREADS_CMAKE_BOOL=	THREADSAFE
 .if ${SSL_DEFAULT} == base
 post-patch:
 	@${REINPLACE_CMD} -e "/LIBGIT2_PC_REQUIRES.*openssl/ d" \
-		${WRKSRC}/cmake/Modules/SelectHTTPSBackend.cmake
+		${WRKSRC}/cmake/SelectHTTPSBackend.cmake
 .endif
 
 do-test:
