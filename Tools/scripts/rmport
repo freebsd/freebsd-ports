@@ -339,9 +339,7 @@ commit()
 	${GIT} commit --file=${gitlog}
 	answer=$(ask "Do you want to merge and tweak the commit message")
 	if [ "${answer}" = "y" ] ; then
-		${GIT} checkout main 2>&1
-		${GIT} pull --ff-only 2>&1
-		${GIT} merge --squash ${branch} 2>&1 # history remains linear
+		${GIT} pull --ff-only --rebase 2>&1
 		${GIT} commit 2>&1 # modify final commit message
 		echo "All done, check the result and push when everything is OK."
 	fi
@@ -352,8 +350,6 @@ cleanup()
 	log "cleaning up"
 
 	rm -f ${gitlog}
-	${GIT} checkout main
-	${GIT} branch -D ${branch}
 }
 
 usage()
@@ -430,8 +426,6 @@ if [ ${1} = "-a" ] ; then
 	exit
 fi
 
-branch="rmport-$(date +%s)"
-${GIT} checkout -b ${branch} remotes/origin/main
 gitlog=$(mktemp -t gitlog)
 
 for catport in $* ; do
@@ -459,9 +453,9 @@ for catport in $* ; do
 
 	edit_Makefile ${cat} ${port}
 
-	rm_port ${catport}
-
 	append_Template ${catport}
+
+	rm_port ${catport}
 done
 
 # give a chance to the committer to edit files by hand and recreate/review
