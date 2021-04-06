@@ -15,7 +15,7 @@ BUILD_DEPENDS=	binutils>0:devel/binutils \
 		gn:devel/gn \
 		libunwind>0:devel/libunwind
 
-USES=	cargo ninja pkgconfig:build python:3.6+,build
+USES=		cargo ninja:build pkgconfig:build python:3.6+,build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
@@ -27,7 +27,7 @@ RUSTY_VERS=	0.21.0
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
-		NINJA=${PREFIX}/bin/ninja \
+		NINJA=${NINJA_CMD} \
 		V8_FROM_SOURCE=1
 RUSTFLAGS+=	-C link-arg=-fuse-ld=lld
 

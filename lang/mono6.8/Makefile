@@ -79,7 +79,7 @@ MONODEV_CONFIGURE_ON=	--enable-icall-symbol-map --enable-icall-export --with-cra
 
 NINJA_DESC=	Use ninja to build wherever possible
 NINJA_CONFIGURE_ON=	ninja
-NINJA_BUILD_DEPENDS=	ninja>0:devel/ninja
+NINJA_USES=	ninja:build
 
 NLS_DESC=	NLS Localization Support
 NLS_CONFIGURE_OFF=	--disable-nls
