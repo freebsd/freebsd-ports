@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: fusioninventory
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

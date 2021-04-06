@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 [ \! -d "${HOME}/.pcgen" ] && mkdir "${HOME}/.pcgen"
 cd "%%DATADIR%%"

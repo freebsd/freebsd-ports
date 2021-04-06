@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 CXXFLAGS+= -MMD `fltk-config --cxxflags` `sdl-config --cflags`
 PREFIX	?= /usr/local
 INSTALL_PROGRAM	?=	${INSTALL} -o root -g wheel -m 755

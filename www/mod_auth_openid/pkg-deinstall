@@ -2,9 +2,6 @@
 #
 # Try to de-activate authopenid_module in the installed httpd.conf and warn
 # if this fails.
-#
-# $FreeBSD$
-#
 
 if [ "$2" != "POST-DEINSTALL" ]; then
 	exit 0

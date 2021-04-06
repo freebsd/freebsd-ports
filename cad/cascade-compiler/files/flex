@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-
 # call the real flex
 flex.real "$@"
 

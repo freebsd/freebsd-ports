@@ -1,4 +1,3 @@
-# $FreeBSD$
 s,@CC@,%%CC%%,
 s,@INSTALL@,/usr/bin/install,
 s,@SH@,/bin/sh,

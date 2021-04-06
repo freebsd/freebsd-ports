@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 SRCS!=	${MAKE} -VBDFFILES -f Makefile.in
 
 .SUFFIXES:

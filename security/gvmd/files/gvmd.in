@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: gvmd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

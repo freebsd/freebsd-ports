@@ -1,6 +1,4 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/lang/tcl-wrapper/files/wrapper.in,v 1.1 2007-03-27 10:52:18 miwi Exp $
-#
 # Wrapper for the %%TX_PORT%% shell "%%TX_SHELL%%"
 
 %%TX_SHELL_U%%=

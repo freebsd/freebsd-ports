@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-#$FreeBSD$
-#
+
 # PROVIDE: pipsecd
 # REQUIRE: root mountcritlocal
 # BEFORE:  DAEMON

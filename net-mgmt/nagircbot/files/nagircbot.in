@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: nagircbot
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown

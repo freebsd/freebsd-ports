@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: samplicator
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

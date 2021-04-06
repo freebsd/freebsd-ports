@@ -1,7 +1,6 @@
 #!/bin/sh
 #
 # $NetBSD: sharedindexupdate.sh,v 1.2 2005/02/18 22:12:50 jlam Exp $
-# $FreeBSD: /tmp/pcvs/ports/mail/courier/files/sharedindexupdate.in,v 1.1 2006-02-14 12:00:05 lawrance Exp $
 #
 # This script updates the index of shared folders on the system and is
 # only needed if Courier-IMAP or SqWebMail used to serve mail and shared

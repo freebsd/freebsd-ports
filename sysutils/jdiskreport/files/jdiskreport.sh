@@ -1,5 +1,5 @@
 #! /bin/sh
-# $FreeBSD$
+
 JDISKDIR="%%JDISKDIR%%"
 JAVAVM="%%JAVAVM%%"
 PORTVERSION="%%PORTVERSION%%"

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-
 # PROVIDE: mailscanner
 # REQUIRE: mta
 # KEYWORD: shutdown

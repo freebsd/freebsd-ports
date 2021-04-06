@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 LLVM_PREFIX="%%LLVM_PREFIX%%"
 LLVM_SUFFIX="%%LLVM_SUFFIX%%"

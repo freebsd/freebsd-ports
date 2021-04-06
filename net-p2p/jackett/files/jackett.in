@@ -1,9 +1,6 @@
 #!/bin/sh
 #
 # Author: Mark Felder <feld@FreeBSD.org>
-#
-# $FreeBSD$
-#
 
 # PROVIDE: jackett
 # REQUIRE: LOGIN

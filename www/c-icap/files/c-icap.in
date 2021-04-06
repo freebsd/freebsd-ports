@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: c-icap
 # REQUIRE: DAEMON cleanvar

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # Salt Master startup script
 #
 # PROVIDE: salt_master

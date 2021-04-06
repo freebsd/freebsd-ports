@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 case "${HOME}" in
 "")
 	export POPFILE_USER_DEFAULT=/var/db/popfile

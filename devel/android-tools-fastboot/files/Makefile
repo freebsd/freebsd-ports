@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PROG_CXX=fastboot
 BINDIR?=/usr/bin
 FILESDIR?=${DOCDIR}/${PROG}

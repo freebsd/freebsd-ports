@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: nodemanager
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

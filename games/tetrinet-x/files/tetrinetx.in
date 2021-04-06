@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: tetrinetx
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

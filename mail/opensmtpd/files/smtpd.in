@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: smtpd mail
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

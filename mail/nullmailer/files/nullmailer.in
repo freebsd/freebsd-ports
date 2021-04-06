@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: nullmailer
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

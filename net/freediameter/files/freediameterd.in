@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: freediameterd
 # REQUIRE: LOGIN syslogd
 # KEYWORD: shutdown

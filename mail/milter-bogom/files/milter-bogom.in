@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: milterbogom
 # REQUIRE: LOGIN
 # BEFORE: sendmail

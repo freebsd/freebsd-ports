@@ -1,7 +1,4 @@
 #! /bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: tox_bootstrapd
 # REQUIRE: NETWORKING DAEMON

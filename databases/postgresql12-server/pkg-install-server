@@ -1,7 +1,5 @@
 #! /bin/sh
 
-# $FreeBSD$
-
 PATH=/bin:/usr/bin:/usr/sbin
 
 backupwarning() {

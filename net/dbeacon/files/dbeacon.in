@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: dbeacon
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

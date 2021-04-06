@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: netatalk
 # REQUIRE: DAEMON %%ZEROCONF%%
 # KEYWORD: shutdown

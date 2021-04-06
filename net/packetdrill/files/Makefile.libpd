@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LIB=	pd
 SRCS=	checksum.c code.c config.c hash.c hash_map.c ip_address.c	\
 	ip_prefix.c netdev.c net_utils.c packet.c			\

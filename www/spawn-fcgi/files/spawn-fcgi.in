@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: spawn_fcgi
 # REQUIRE: %%REQUIRE%%
 # BEFORE:  LOGIN

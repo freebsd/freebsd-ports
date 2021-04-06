@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: p0f2
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

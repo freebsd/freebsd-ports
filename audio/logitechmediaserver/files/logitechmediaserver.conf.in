@@ -1,5 +1,4 @@
 # newsyslog configuration file for %%PORTNAME%%
-# $FreeBSD$
 #
 # see newsyslog.conf(5) for details
 #

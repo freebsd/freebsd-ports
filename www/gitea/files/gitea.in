@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: gitea
 # REQUIRE: NETWORKING SYSLOG
 # KEYWORD: shutdown

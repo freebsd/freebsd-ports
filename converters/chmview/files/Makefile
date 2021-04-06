@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 BINDIR?=	${PREFIX}/bin
 
 CFLAGS+=	-DUNIX -I${LOCALBASE}/include

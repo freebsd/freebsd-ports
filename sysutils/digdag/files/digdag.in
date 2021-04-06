@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: digdag
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

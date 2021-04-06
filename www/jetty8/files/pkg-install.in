@@ -3,8 +3,6 @@
 # Checks if the requested user and group exist. If they don't, then
 # an attempt is made to create both.
 #
-# $FreeBSD$
-#
 # Borrowed from the jakarta-tomcat port
 #
 

@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: snmptt
 # REQUIRE: LOGIN

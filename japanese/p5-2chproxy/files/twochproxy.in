@@ -1,10 +1,8 @@
 #!/bin/sh
-#
+
 # PROVIDE: twochproxy
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
-#
-# $FreeBSD$
 
 . /etc/rc.subr
 

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: tenshi
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

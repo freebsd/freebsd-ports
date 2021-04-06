@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PREFIX=		%%PREFIX%%
 STAGEDIR=	%%STAGEDIR%%
 CC=			%%CC%%

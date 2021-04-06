@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: 3dm2
 # REQUIRE: NETWORKING SERVERS

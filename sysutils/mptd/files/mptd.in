@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: mptd
 # REQUIRE: dumpon root ldconfig devfs syslogd mail

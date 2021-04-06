@@ -1,8 +1,5 @@
 #!/bin/sh
 #
-# $FreeBSD$
-#   $MCom: ports/x11/libgnome/files/pkg-deinstall.in,v 1.29 2010/09/28 15:55:50 kwm Exp $
-#
 # Restore gconf keys of gnomevfs2.
 
 if [ "$2" != "POST-DEINSTALL" ]; then

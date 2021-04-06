@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LIB=socketbind
 SHLIB_MAJOR=1
 

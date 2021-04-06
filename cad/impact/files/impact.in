@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 cd %%DATADIR%%
 "%%LOCALBASE%%/bin/java" -Xmx1000m -Xss1m -cp .:doc:bin run.Impact "$@"

@@ -7,8 +7,6 @@
 # with multi-instance contribution from Denis Shaposhnikov, Gleb Kozyrev
 # and Vasil Dimov
 # softrestart feature suggested by Nick Hibma
-#
-# $FreeBSD$
 # 
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free Software

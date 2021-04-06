@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PROG=		pxe-pdhcp
 SRCS=		pdhcp.c pxe-pdhcp.c
 MAN=		${PROG}.8

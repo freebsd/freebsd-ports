@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: servatrice
 # REQUIRE: LOGIN %%mysql%%

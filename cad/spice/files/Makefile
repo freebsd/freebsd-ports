@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-#
 all:
 	${SH} util/build FreeBSD default
 

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: namenode
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

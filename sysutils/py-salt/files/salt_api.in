@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # Salt API startup script
 #
 # PROVIDE: salt_api

@@ -1,4 +1,3 @@
-# $FreeBSD$
 # LXM3200 - additional driver for Lexmark 3200/Z12/Z22/Z31/Z32
 MASTER_SITES+=	http://www.linuxprinting.org/download/printing/:lxm3200
 DISTFILES+=	lxm3200-tweaked-20030501.tar.gz:lxm3200

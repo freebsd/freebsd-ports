@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: payara
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

@@ -1,5 +1,3 @@
-/* $FreeBSD$ */
-
 /* dummy implementation of glibc functions needed by plugins */
 
 #include <stdarg.h>

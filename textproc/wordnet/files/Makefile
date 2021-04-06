@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 SUBDIR=		include \
 		lib \
 		lib/wnres \

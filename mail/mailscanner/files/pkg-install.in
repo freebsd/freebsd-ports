@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 CHMOD=/bin/chmod
 CP=/bin/cp

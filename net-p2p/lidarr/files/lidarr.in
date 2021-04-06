@@ -1,9 +1,6 @@
 #!/bin/sh
 #
 # Author: Michiel van Baak <michiel@vanbaak.eu>
-#
-# $FreeBSD$
-#
 
 # PROVIDE: lidarr
 # REQUIRE: LOGIN

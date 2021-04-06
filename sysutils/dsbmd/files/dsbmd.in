@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: dsbmd
 # REQUIRE: LOGIN devfs devd mountlate
 # KEYWORD: shutdown

@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" \
 -cp Domination.jar net.yura.domination.ui.swinggui.SwingGUIFrame "${@}"

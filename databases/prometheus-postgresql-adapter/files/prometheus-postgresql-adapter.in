@@ -1,6 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
-#
+
 # PROVIDE: prometheus_postgresql_adapter
 # REQUIRE: DAEMON NETWORKING
 # BEFORE: LOGIN

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: courier_authdaemond
 # REQUIRE: DAEMON mysql ldconfig
 # BEFORE: mail imap

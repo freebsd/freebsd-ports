@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD
 
 # PROVIDE: arpcounterattack
 # REQUIRE: DAEMON

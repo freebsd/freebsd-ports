@@ -3,9 +3,6 @@
 # Shows status of 3ware RAID controllers: twa(4), twe(4)
 #
 # Authors: Bjoern A. Zeeb, Dmitry Frolov
-#
-# $FreeBSD$
-#
 
 # If there is a global system configuration file, suck it in.
 #

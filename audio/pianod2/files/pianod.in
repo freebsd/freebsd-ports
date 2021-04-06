@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: pianod
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

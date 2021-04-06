@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: openradius
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: qadsl 
 # REQUIRE: NETWORK
 # BEFORE: DAEMON SERVERS LOGIN

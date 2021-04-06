@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # bsd.cl-asdf.mk - Common Lisp related macros
 #
 # SBCL		- Path to the Steel Bank Common Lisp compiler

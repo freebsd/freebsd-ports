@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: davmail
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

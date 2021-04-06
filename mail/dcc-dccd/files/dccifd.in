@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: dccifd
 # REQUIRE: LOGIN
 # BEFORE: mail

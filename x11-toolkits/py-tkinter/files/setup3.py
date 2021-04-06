@@ -3,8 +3,6 @@
 #       python setup.py install
 #
 
-__version__ = "$FreeBSD$"
-
 import os, string
 
 try:

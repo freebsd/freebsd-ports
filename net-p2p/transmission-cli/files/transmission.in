@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: transmission
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

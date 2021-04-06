@@ -1,7 +1,3 @@
-#
-# $FreeBSD$
-#
-
 CXX ?=	c++
 
 IDIR =	-I./bialib

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # periodic(8) script that runs sa-update on a nightly basis, updating
 # SpamAssassin rules if needed. Relies on sa-update command.
 #

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: apcupsd
 # REQUIRE: SERVERS
 # BEFORE: DAEMON

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: cf-execd
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

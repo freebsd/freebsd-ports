@@ -2,8 +2,6 @@
 #
 # FreeBSD-specific script for Apache Rat.
 #
-# $FreeBSD$
-#
 # See: http://creadur.apache.org/rat/apache-rat/
 
 JAVACMD="${JAVACMD:-"%%LOCALBASE%%/bin/java"}"

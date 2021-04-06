@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 # PROVIDE: kapacitord
 # REQUIRE: DAEMON NETWORKING

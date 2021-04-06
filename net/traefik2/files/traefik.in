@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: traefik
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

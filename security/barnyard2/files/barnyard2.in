@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: barnyard2
 # REQUIRE: DAEMON%%MYSQL%%%%PGSQL%%
 #

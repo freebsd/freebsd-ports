@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: volmand
 # REQUIRE: LOGIN
 # KEYWORD: shutdown nojail

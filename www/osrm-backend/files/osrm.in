@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-
 # PROVIDE: osrm
 # REQUIRE: LOGIN cleanvar
 # KEYWORD: shutdown

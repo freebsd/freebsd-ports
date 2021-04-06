@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 .if exists(/usr/lib/libncursesw.so)
 LDLIBS += -lncursesw
 .else

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: olsrd
 # REQUIRE: NETWORKING SERVERS
 

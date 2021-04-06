@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: %%NAME%%
 # REQUIRE: NETWORKING SERVERS

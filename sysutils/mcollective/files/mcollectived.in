@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: mcollectived
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

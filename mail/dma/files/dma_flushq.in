@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: dma mail
 # REQUIRE: LOGIN cleanvar
 # KEYWORD: shutdown

@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 # By default, this writes to /var/cache/owasp-dependency-check/data/dc.h2.db to cache vulnerability databases.
 # Both read and write access to the cached database requires an exclusive lock file inside the same directory

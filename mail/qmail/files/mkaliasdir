@@ -3,8 +3,6 @@
 #  Script to populate a Qmail ~alias directory with entries from
 #  an [SZ]mail{er} or sendmail-like aliases file
 #
-# $FreeBSD$
-#
 #  Dan Cross <tenser@spitfire.ecsel.psu.edu>
 #
 

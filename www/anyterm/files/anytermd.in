@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: anytermd
 # REQUIRE: NETWORKING DAEMON LOGIN cleanvar devfs

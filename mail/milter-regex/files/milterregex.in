@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: milterregex
 # REQUIRE: DAEMON
 # BEFORE: mail

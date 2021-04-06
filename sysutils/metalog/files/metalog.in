@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: metalog
 # REQUIRE: mountcritremote cleanvar newsyslog ldconfig

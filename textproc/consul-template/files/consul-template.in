@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: consul_template
 # REQUIRE: NETWORKING SERVERS DAEMON
 # KEYWORD: shtudown

@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 if [ "x$2" = "xPOST-DEINSTALL" ]; then
 	rmdir %%SPOOLDIR%%/incoming %%SPOOLDIR%%/outgoing \

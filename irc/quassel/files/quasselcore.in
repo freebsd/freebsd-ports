@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: quasselcore
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

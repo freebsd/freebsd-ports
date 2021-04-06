@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: pbs_server
 # REQUIRE: DAEMON
 # BEFORE: LOGIN

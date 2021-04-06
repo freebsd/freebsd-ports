@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LIB=		gdc
 CFLAGS+=	-I${LOCALBASE}/include
 LDADD=		-L${LOCALBASE}/lib \

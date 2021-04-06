@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: ldmud
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

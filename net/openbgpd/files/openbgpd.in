@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: bgpd dynamicrouting
 # REQUIRE: LOGIN abi

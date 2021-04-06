@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: elasticsearch
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: DAEMON

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: nslcd
 # REQUIRE: NETWORKING slapd ldconfig resolv kstart
 # BEFORE: syslogd

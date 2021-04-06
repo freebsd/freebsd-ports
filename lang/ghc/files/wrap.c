@@ -1,5 +1,4 @@
 /* -*- ugly-hack-mode -*- */
-/* $FreeBSD$ */
 
 #include <sys/stat.h>
 

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: routinator
 # REQUIRE: DAEMON
 # BEFORE:  LOGIN

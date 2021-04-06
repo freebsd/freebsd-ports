@@ -1,5 +1,4 @@
 ;; leim-list.el --- Mozc setup for leim API
-;; $FreeBSD$$
 ;;
 ;; Copyright (c) 2013 Hiroki Sato <hrs@FreeBSD.org>.  All rights reserved.
 ;;

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: krescachegc
 # REQUIRE: SERVERS cleanvar
 # KEYWORD: shutdown

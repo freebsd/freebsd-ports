@@ -1,3 +1,2 @@
-# $FreeBSD$
 !ping_exporter
 *.*						/var/log/ping_exporter.log

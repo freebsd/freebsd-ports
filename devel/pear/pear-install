@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $FreeBSD$
-#
 # Register the package $1 in the port registry
 
 PREFIX=${PKG_PREFIX:=%%PREFIX%%}

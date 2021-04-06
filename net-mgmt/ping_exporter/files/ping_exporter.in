@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: ping_exporter
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

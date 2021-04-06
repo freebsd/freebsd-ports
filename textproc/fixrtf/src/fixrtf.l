@@ -32,7 +32,6 @@
  */
 
 #include <sys/cdefs.h>
-__FBSDID("$FreeBSD: /tmp/pcvs/ports/textproc/fixrtf/src/fixrtf.l,v 1.1 2006-03-16 07:50:15 delphij Exp $");
 
 #include <err.h>
 #include <assert.h>

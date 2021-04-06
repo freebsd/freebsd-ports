@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: vdr
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

@@ -1,7 +1,6 @@
 # ex:ts=4 sw=4
 #
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
-# $FreeBSD$
 #
 # For more info, please go to http://wiki.FreeBSD.org/TWiki
 #

@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
 

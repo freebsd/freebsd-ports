@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $FreeBSD$
-#
 # Adapted for FreeBSD from courier.sysvinit
 #
 # NOTE: The 'restart' here does a "hard" stop, and a start.  Be gentle, use

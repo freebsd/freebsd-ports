@@ -27,8 +27,6 @@
 # PROVIDE: socksd
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown
-#
-# $FreeBSD$
 
 . /etc/rc.subr
 

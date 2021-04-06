@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: neo4j
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

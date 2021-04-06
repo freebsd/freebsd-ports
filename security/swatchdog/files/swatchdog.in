@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: swatchdog
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

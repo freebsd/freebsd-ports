@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: jicofo
 # REQUIRE: NETWORKING SERVERS
 # KEYWORD: shutdown

@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 .MAKE.FreeBSD_UL=yes
 PREFIX?=	/usr/local
 LOCALBASE?=	/usr/local

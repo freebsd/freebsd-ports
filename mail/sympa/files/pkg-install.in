@@ -1,6 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
-#
 
 if [ "$2" = "POST_INSTALL" ]; then
 	if [ ! -f %%ETCDIR%%/sympa.conf -o ! -f %%ETCDIR%%/data_structure.version ]; then

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: netxmsd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

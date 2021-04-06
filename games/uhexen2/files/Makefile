@@ -1,8 +1,5 @@
 # GNU Makefile wrapper for games/uhexen2.
 # The source tree does not have a main Makefile.
-#
-# $FreeBSD$
-#
 
 all:
 ifeq ($(BUILD_HEXEN2),yes)

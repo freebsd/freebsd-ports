@@ -5,8 +5,6 @@
 # machine. Also, we know where the jar is.
 #
 # Conor McDermottroe <ports@mcdermottroe.com>
-#
-# $FreeBSD$
 
 # Allow the user to override where JFlex.jar lives
 JAVAJARDIR="${JAVAJARDIR:-"%%JAVAJARDIR%%"}"

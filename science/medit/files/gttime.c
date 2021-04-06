@@ -22,7 +22,6 @@
  ***************************************************************************/
 
 /***************************************************************************
- * $FreeBSD$
  * Downloaded by thierry@FreeBSD.org on Nov. 22 2012
  * from ftp://legacy.gsfc.nasa.gov/software/ftools/release/FTools_4.2/ftools_42/src/ftoolslib/unx/gttime.c
  * See http://heasarc.gsfc.nasa.gov/docs/software/ftools/ftools_menu.html

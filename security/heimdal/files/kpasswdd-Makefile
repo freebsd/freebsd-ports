@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 all: kpasswdd-cracklib.so
 
 kpasswdd-cracklib.so: kpasswdd-cracklib.c

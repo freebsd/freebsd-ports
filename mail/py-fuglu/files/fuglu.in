@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: fuglu
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

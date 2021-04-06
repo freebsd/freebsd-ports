@@ -1,6 +1,3 @@
-# $FreeBSD$
-#
-
 # Installation prefix:
 PREFIX?=/usr/local
 BINDIR=${PREFIX}/bin

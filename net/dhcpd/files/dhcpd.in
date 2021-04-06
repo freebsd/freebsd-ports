@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: dhcpd
 # REQUIRE: DAEMON
 # BEFORE:  LOGIN

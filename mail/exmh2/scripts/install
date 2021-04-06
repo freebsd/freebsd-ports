@@ -1,7 +1,4 @@
 #! /bin/sh
-#
-# $FreeBSD$
-#
 
 VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
 

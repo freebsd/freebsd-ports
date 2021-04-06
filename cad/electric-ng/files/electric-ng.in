@@ -1,7 +1,4 @@
 #!/bin/csh
-#
-# $MBSDlabs$
-# $FreeBSD$
 
 set JAVA = "%%LOCALBASE%%/bin/java"
 set LIBFILES = "%%LIBFILES%%"

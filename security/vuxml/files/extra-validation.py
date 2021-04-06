@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# $FreeBSD$
 
 import datetime
 import xml.etree.ElementTree as ET

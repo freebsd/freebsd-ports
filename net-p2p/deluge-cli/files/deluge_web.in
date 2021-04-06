@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: deluge_web
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

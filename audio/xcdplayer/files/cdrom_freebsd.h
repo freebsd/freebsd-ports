@@ -1,4 +1,3 @@
-/* $FreeBSD$ */
 /*
  * Copyright (C) 1990 Regents of the University of California.
  *

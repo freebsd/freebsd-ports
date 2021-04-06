@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: mailgraph
 # REQUIRE: DAEMON
 #

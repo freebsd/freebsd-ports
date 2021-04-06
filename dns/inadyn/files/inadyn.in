@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: inadyn
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown

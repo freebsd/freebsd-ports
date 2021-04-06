@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-
 # PROVIDE: vmpsd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

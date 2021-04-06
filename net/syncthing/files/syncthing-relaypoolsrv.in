@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: syncthingrelaypoolsrv
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

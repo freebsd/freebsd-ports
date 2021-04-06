@@ -31,8 +31,6 @@
  *
  * Reliably print the entire contents of the proc filesystem's "map" files.
  *
- * $FreeBSD$
- *
  ****************************************************************************/
 
 #include <stdio.h>

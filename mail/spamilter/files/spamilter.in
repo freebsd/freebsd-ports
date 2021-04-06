@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: spamilter
 # REQUIRE: DAEMON
 # BEFORE: mail

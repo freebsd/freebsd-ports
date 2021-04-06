@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: datadog_agent
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

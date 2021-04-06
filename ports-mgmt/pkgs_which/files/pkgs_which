@@ -438,10 +438,6 @@ L<pkg_info>(8), L<portmaster>(8), L<portupgrade>(8), L<pkg_which>(8)
 0.1.0 2011-03-12
   - pkgs_which made its first appearance in the FreeBSD ports tree
 
-The current CVS Version tag is:
-
- $FreeBSD$
-
 =head1 AUTHORS
 
 Copyright 2011, 2013 Matthias Andree <mandree@FreeBSD.org>.

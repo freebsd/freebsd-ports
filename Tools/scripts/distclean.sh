@@ -14,8 +14,6 @@
 # Maxim Sobolev
 # ----------------------------------------------------------------------------
 #
-# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.18 2010-11-18 11:28:05 pav Exp $
-#
 # MAINTAINER= ports@FreeBSD.org
 
 PATH=/sbin:/bin:/usr/bin

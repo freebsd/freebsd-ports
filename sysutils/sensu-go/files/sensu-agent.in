@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 # PROVIDE: sensu-agent
 # REQUIRE: LOGIN

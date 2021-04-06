@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: perdition_pop3
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

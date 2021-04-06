@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: tasktracker
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

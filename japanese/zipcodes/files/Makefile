@@ -1,4 +1,3 @@
-# $FreeBSD$
 .SUFFIXES: .csv .euc-csv
 
 CSV=	ken_all.csv

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: google_accounts_daemon
 # BEFORE: LOGIN
 # REQUIRE: NETWORKING syslogd google_instance_setup google_network_daemon

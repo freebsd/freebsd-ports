@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE:	microcode_update
 # REQUIRE:	root mountcritlocal

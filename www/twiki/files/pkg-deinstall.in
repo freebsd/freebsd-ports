@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD: /tmp/pcvs/ports/www/twiki/files/pkg-deinstall.in,v 1.1 2008-04-22 08:36:40 sat Exp $
-#
 
 TWDIR=%%TWDIR%%
 WWWDIR=%%WWWDIR%%

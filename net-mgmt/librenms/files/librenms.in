@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: librenms
 # REQUIRE: SERVERS mysql
 # KEYWORD: shutdown

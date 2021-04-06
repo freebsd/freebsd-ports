@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: urbackup_server
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

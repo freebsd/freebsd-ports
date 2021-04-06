@@ -25,8 +25,6 @@
 # Greg Lewis
 # ----------------------------------------------------------------------------
 #
-# $FreeBSD$
-#
 # MAINTAINER=java@FreeBSD.org
 
 _JAVAVM_SAVE_PATH=${PATH}

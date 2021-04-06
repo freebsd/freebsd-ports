@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: google_clock_skew_daemon
 # BEFORE: LOGIN
 # REQUIRE: NETWORKING syslogd ntpd google_instance_setup google_network_daemon

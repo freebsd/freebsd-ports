@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: aird
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

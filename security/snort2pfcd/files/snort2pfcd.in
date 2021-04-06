@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: snort2pfcd
 # REQUIRE: DAEMON pf snort
 # KEYWORD: shutdown

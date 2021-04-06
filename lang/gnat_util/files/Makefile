@@ -1,6 +1,5 @@
 # To avoid a cirular dependency with GPRBuild, this custom BSD Makefile is
 # used instead of the provided asis.gpr file.
-# $FreeBSD$
 
 CP=		cp -p
 MKDIR=		mkdir -p

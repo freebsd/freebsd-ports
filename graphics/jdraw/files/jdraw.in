@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 LOOK_AND_FEEL="%%PLASTIC3D%%"
 

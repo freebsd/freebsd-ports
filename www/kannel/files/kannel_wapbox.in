@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: wapbox
 # REQUIRE: LOGIN bearerbox
 # KEYWORD: shutdown

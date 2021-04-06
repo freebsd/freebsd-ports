@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: ha_logd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: sec
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

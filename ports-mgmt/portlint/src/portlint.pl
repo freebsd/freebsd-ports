@@ -14,7 +14,6 @@
 # bsd.port.mk.  There are significant differences in those so non-FreeBSD code
 # was removed.
 #
-# $FreeBSD$
 # $MCom: portlint/portlint.pl,v 1.522 2020/12/27 19:19:02 jclarke Exp $
 #
 

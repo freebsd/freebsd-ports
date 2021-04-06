@@ -1,7 +1,5 @@
 # Makefile for knobs
 # Whom:         Maho Nakata <maho@FreeBSD.org>
-# $FreeBSD$
-# Makefile for knobs
 
 CONFIGURE_ARGS+=	--with-lang=${LOCALIZED_LANG}
 

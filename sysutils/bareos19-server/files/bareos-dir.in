@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD: head/sysutils/bareos-server/files/bareos-dir.in 323275 2013-07-19 09:44:58Z rm $
-#
+
 # PROVIDE: bareos_dir
 # REQUIRE: DAEMON %%REQ_MYSQL%% %%REQ_PGSQL%%
 # KEYWORD: shutdown

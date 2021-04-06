@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD: /tmp/pcvs/ports/devel/maven3/files/mvn.sh.in,v 1.1 2011-09-01 21:53:01 hq Exp $
 
 if [ -f /etc/mavenrc ] ; then
 	. /etc/mavenrc

@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: quagga dynamicrouting
 # REQUIRE: netif routing

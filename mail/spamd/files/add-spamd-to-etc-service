@@ -2,8 +2,6 @@
 #
 # ex:ts=4:sw=4:noet
 #-*- mode: makefile; tab-width: 4; -*-
-#
-# $FreeBSD$
 
 ETC_SERVICES="/etc/services"
 

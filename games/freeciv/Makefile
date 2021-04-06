@@ -1,5 +1,4 @@
 # Created by: ada@bsd.org
-# $FreeBSD: head/games/freeciv/Makefile 567934 2021-03-09 14:13:47Z mat $
 
 PORTNAME=	freeciv
 PORTVERSION=	2.6.4

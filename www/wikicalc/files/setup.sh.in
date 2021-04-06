@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 ask_noyes()
 {

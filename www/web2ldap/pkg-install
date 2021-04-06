@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 PREFIX=${PKG_PREFIX:-/usr/local}
 DATADIR=${PREFIX}/share/web2ldap

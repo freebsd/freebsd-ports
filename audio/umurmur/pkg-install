@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 PATH=/bin:/usr/sbin
 USER=umurmur

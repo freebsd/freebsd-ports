@@ -17,8 +17,6 @@
 # /*                                                                    */
 # /*--------------------------------------------------------------------*/
 #
-# $FreeBSD$
-#
 # $Log: tMakefile,v $
 # Revision 1.1.1.1  1995/02/19 09:25:45  hsu
 # vcg - a visualization tool for compiler graphs

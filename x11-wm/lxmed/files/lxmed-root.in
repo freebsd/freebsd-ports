@@ -1,6 +1,3 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 cd "%%DATADIR%%" && exec pc-su "${@}"

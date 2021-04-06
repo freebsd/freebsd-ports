@@ -1,7 +1,5 @@
 #! /bin/sh
 
-# $FreeBSD: head/www/gitlab-ce/files/gitlab.in 565466 2021-02-16 22:22:27Z mfechner $
-
 ### BEGIN INIT INFO
 # Provides:          gitlab
 # Required-Start:    $local_fs $remote_fs $network $syslog redis-server

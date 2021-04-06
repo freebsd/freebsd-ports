@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: bbstored
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown

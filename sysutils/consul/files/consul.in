@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: consul
 # REQUIRE: NETWORKING FILESYSTEMS defaultroute netwait resolv
 # KEYWORD: shutdown

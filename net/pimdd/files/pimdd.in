@@ -1,6 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
-#
+
 # PROVIDE: pimdd
 # REQUIRE: netif routing
 # KEYWORD: nojail

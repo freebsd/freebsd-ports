@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD: head/net/boinc-client/files/pkg-install.in 325489 2013-08-27 21:37:47Z rene $
-#
 
 PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
 

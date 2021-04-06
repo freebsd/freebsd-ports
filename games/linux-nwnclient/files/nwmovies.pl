@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # There is a Perl script that accompanies the NWMovies distfile, however, it
 # would require Linux Perl to be installed when a simple shell script will

@@ -1,5 +1,3 @@
-// $FreeBSD$
-
 /*
  *  mntent
  *  mntent.h - compatability header for FreeBSD

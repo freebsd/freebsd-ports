@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: automuteus
 # REQUIRE: DAEMON FILESYSTEMS NETWORKING
 # KEYWORD: shutdown

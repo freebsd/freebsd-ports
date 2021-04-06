@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: slapd
 # REQUIRE: FILESYSTEMS ldconfig netif

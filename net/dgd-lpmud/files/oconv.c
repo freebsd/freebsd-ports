@@ -1,5 +1,4 @@
 /* convert old LPmud .o files to new DGD .o format */
-/* $FreeBSD$ */
 # include <ctype.h>
 # include <stdio.h>
 # include <stdlib.h>

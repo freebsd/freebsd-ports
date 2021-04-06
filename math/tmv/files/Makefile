@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 # lib/libtmv.so
 LST1= TMV_Vector TMV_MultVV TMV_AddVV TMV_MultXV TMV_BaseMatrix TMV_Matrix TMV_MultXM TMV_AddMM TMV_MultMV TMV_Rank1_VVM TMV_MultMM_CCC TMV_MultMM_CRC TMV_MultMM_RCC TMV_MultMM_Block TMV_IntegerDet TMV_DiagMatrix TMV_MultDV TMV_AddDM TMV_MultDM TMV_TriMatrix TMV_TriDiv TMV_MultUV TMV_MultXU TMV_AddUU TMV_MultUM TMV_MultUL TMV_MultUU TMV_MultDU TMV_Givens TMV_Householder TMV_LUD TMV_LUDecompose TMV_LUDiv TMV_LUInverse TMV_QRD TMV_QRDecompose TMV_QRDiv TMV_PackedQ TMV_QRInverse TMV_GetQFromQR TMV_QRUpdate TMV_QRDowndate TMV_QRPD TMV_SVD TMV_SVDecompose TMV_SVDecompose_Bidiag TMV_SVDecompose_QR TMV_SVDiv TMV_TriDiv_V TMV_TriDiv_M TMV_TriDiv_L TMV_TriInverse TMV_MultMM TMV_MultMM_OpenMP TMV_SVDecompose_DC TMV_QRPDecompose
 LIB1=      libtmv.so.0

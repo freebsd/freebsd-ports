@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $FreeBSD$
-#
 # Initialize the desktop directories and MIME cache.
 
 if [ "$2" != "POST-INSTALL" ]; then

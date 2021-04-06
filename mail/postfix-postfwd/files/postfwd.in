@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: postfwd
 # REQUIRE: LOGIN cleanvar
 # KEYWORD: shutdown

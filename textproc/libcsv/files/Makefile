@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LIB = 	csv
 SRCS=	libcsv.c
 INCS=	csv.h

@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
 # PROVIDE: buildbot-worker
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

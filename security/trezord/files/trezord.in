@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: trezord
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

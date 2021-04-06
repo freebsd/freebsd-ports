@@ -7,9 +7,6 @@
 #
 # * Checks if the '%%USER%%' user exists. If it does, then it displays
 #   a message.
-#
-# $FreeBSD$
-#
 
 USER=%%USER%%
 PID_FILE=%%PID_FILE%%

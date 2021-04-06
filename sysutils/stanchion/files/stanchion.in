@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 # PROVIDE: stanchion
 # REQUIRE: LOGIN cleanvar

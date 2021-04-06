@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: seaweedfs
 # REQUIRE: DAEMON LOGIN
 # KEYWORD: shutdown

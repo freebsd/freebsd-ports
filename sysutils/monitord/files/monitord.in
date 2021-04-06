@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: monitord
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

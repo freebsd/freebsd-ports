@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 SAXON_CLASSPATH=""
 for jarfile in %%SAXON_JARS%%

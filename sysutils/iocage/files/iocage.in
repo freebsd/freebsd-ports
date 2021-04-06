@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: iocage
 # REQUIRE: LOGIN cleanvar sshd ZFS

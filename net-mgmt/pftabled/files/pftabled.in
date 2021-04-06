@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: pftabled
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: DAEMON

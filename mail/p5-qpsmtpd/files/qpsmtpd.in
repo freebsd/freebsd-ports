@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: qpsmtpd
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

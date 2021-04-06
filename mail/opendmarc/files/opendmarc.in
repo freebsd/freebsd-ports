@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 # PROVIDE: opendmarc
 # REQUIRE: LOGIN

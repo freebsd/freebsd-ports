@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PROG=	ipv6mon
 LDADD=	-lpcap
 

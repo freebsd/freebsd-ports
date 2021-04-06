@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTDOCS+=	pcl3
 PORTDOC_FILES+= pcl3/NEWS pcl3/BUGS pcl3/README pcl3/gs-pcl3.html	\
 	pcl3/how-to-report.txt pcl3/pcl3opts.html

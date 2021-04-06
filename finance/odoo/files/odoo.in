@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: odoo
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: tvheadend
 # REQUIRE: DAEMON webcamd
 # KEYWORD: shutdown

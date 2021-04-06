@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # unbound freebsd startup rc.d script
 # uses the default unbound installation path and pidfile location.
 # copy this to %%PREFIX%%/etc/rc.d/unbound

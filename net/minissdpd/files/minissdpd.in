@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: minissdpd
 # REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv

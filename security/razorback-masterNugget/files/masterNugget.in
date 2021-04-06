@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: masterNugget
 # REQUIRE: dispatcher clamd
 # KEYWORD: shutdown

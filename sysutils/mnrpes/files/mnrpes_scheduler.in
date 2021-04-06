@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # mnrpes_scheduler startup script
 #
 # PROVIDE: mnrpes_scheduler

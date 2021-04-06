@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: ipfs_go
 # REQUIRE: DAEMON NETWORKING

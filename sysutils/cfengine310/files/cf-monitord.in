@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: cf-monitord
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

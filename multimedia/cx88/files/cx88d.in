@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: cx88d
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

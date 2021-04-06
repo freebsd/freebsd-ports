@@ -1,4 +1,3 @@
-# $FreeBSD$
 # DMPRT - additional driver for generic dot matrix printers
 
 DISTFILES+=		dmprt-2.01.tar.gz:ports_jp_gs

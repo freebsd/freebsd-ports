@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 sphinx_usr=%%SPHINX_USR%%
 sphinx_grp=%%SPHINX_GRP%%

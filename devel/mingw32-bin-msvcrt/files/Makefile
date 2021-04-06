@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 all:
 
 install:

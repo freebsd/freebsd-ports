@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 XCC=%%PREFIX%%/llvm%%LLVM_SUFFIX%%/bin/clang
 XCXX=%%PREFIX%%/llvm%%LLVM_SUFFIX%%/bin/clang++
 XCPP=%%PREFIX%%/llvm%%LLVM_SUFFIX%%/bin/clang-cpp

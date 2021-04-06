@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 if [ "$2" = "POST-DEINSTALL" ]; then
     echo ""

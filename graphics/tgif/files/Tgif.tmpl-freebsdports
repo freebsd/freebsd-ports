@@ -1,4 +1,3 @@
-XCOMM $FreeBSD$
 #ifdef WITH_NLS
 #define IHaveSubdirs
 SUBDIRS=		po

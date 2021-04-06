@@ -1,6 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
+
 # PROVIDE: minecraft
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

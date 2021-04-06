@@ -1,6 +1,4 @@
 #!/usr/bin/perl
-#
-# $FreeBSD$
 
 use strict;
 use warnings;

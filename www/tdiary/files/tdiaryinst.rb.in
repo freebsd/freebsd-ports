@@ -3,9 +3,6 @@
 # tdiaryinstall.rb - tDiary user directory copy script
 # Date created:                        13 July 2003
 # Whom:                                KAMIYA Satosi  <mimoriso@gmail.com>
-#
-# $FreeBSD$
-#
 
 require 'getoptlong'
 require 'etc.so'

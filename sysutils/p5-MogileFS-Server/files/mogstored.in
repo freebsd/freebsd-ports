@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: mogstored
 # REQUIRE: LOGIN cleanvar
 # KEYWORD: shutdown

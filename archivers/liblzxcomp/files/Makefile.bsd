@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LIB = 	lzxcomp
 SRCS=	lz_nonslide.c lzx_layer.c
 INCS=	lzx_compress.h lzx_constants.h

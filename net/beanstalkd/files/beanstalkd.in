@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: beanstalkd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

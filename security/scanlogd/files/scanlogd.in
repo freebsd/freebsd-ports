@@ -1,7 +1,6 @@
 #!/bin/sh
 
 # Start or stop scanlogd
-# $FreeBSD$
 
 # PROVIDE: scanlogd
 # REQUIRE: LOGIN

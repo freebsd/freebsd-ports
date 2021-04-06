@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: lightdm
 # REQUIRE: LOGIN cleanvar moused syscons dbus
 # KEYWORD: shutdown

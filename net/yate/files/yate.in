@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: yate
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

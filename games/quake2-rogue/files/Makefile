@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 SHLIB=		game
 SHLIB_NAME=	game.so
 

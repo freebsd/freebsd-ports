@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: stubby
 # REQUIRE: NETWORKING SERVERS

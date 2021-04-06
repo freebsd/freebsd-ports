@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PREFIX?=	/usr/local
 
 CC?=	gcc

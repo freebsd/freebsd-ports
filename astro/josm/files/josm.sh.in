@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 JAVA="%%LOCALBASE%%/bin/java"
 JARPATH="%%JAVALIBDIR%%"

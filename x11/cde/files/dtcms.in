@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: dtcms
 # REQUIRE: rpcbind
 # KEYWORD: shutdown

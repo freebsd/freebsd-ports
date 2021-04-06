@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-#	$FreeBSD$
-#
 # Return information about the local GD library installation
 #
 # Modeled for ports:

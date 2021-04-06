@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: bacula_sd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

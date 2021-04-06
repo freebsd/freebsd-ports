@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: openhab2
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

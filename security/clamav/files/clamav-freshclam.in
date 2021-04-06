@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: clamav_freshclam
 # REQUIRE: LOGIN clamav_clamd

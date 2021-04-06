@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: nzbhydra2
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

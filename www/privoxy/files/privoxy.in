@@ -1,8 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
-#
+
 # PROVIDE: privoxy
 # REQUIRE: DAEMON
 # BEFORE: LOGIN

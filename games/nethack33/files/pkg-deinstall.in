@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 if [ "${2}" = "POST-DEINSTALL" ]; then
 	if [ -d "${PKG_PREFIX}/%%HACKDIR%%" ]; then

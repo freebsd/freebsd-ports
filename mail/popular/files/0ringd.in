@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: ringd
 # REQUIRE: NETWORKING SERVERS

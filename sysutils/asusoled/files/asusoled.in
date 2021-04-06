@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: asusoled
 # REQUIRE: DAEMON
 # KEYWORD: nojail shutdown

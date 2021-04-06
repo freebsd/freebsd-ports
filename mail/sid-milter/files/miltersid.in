@@ -1,8 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
-#
+
 # PROVIDE: miltersid
 # REQUIRE: DAEMON
 # BEFORE: mail localpkg

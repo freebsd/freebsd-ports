@@ -1,6 +1,5 @@
 <!-- Under a BSDL license. Copyright by Mario S F Ferreira <lioux@FreeBSD.org> 2005- -->
 <!-- Under a BSDL license. Copyright by jrandom 2005- -->
-<!-- $FreeBSD$ -->
 <project basedir="." default="dist" name="azureus">
      <description>
 	Builds Azureus

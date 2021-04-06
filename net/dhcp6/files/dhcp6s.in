@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: dhcp6s
 # REQUIRE: dhcp6c DAEMON

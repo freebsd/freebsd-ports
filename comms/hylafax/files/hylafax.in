@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: hylafax
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

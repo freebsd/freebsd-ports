@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 SHLIB=		pty
 SHLIB_NAME=	lpty.so
 

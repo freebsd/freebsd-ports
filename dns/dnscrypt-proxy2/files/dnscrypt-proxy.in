@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: dnscrypt_proxy
 # REQUIRE: cleanvar SERVERS
 # BEFORE:  dnsmasq local_unbound named nsmasq pdns unbound

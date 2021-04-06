@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Allow members of group operator to access hardware wallet devices
 
 ## Ledger Nano S

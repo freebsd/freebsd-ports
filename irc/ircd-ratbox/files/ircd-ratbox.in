@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: ircd-ratbox
 # REQUIRE: DAEMON
 # BEFORE:  LOGIN

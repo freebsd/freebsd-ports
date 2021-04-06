@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: cinder_scheduler
 # REQUIRE: LOGIN

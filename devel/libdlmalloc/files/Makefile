@@ -10,9 +10,6 @@
 #  preliminary VERSION 2.8.4
 #
 #  working version; unreleased.
-#
-# $FreeBSD$
-#
 
 VER=2.8.6
 

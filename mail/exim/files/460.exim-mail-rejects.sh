@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $FreeBSD$
-#
 # Check for rejected mail
 # Log lines that end with ' : IGNORE' will not be reported
 # 

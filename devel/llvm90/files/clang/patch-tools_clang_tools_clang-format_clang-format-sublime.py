@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/clang/tools/clang-format/clang-format-sublime.py.orig
 +++ tools/clang/tools/clang-format/clang-format-sublime.py
 @@ -18,7 +18,7 @@

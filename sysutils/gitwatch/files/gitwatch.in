@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD:$
-#
+
 # PROVIDE: gitwatch
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

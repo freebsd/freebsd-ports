@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME?=logwatch
 PREFIX?=/usr/local/${PORTNAME}
 ETCDIR?=${PREFIX}/etc/${PORTNAME}

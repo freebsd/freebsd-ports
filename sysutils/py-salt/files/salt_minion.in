@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # Salt Minion startup script
 #
 # PROVIDE: salt_minion

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: ndpmonitor
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

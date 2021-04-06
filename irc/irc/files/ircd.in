@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: ircd
 # REQUIRE: NETWORKING SERVERS

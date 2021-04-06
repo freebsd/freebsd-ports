@@ -1,7 +1,3 @@
-#
-# $FreeBSD$
-#
-
 To use ccache for ports, just add WITH_CCACHE_BUILD=yes to
 /etc/make.conf. The rest of this guide is for building
 /usr/src and other checkouts.

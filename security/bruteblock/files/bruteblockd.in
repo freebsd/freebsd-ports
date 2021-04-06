@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: bruteblockd
 # REQUIRE: NETWORKING syslogd ldconfig
 # BEFORE: syslogd

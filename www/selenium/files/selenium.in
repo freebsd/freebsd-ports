@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: selenium
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

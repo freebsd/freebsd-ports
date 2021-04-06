@@ -4,9 +4,7 @@
 #
 # Created:  20001015  Shigeyuki Fukushima <shige@FreeBSD.org>.
 # Modified: 20001019  Hiroki Sato <hrs@FreeBSD.org>.
-#
-# $FreeBSD$
-#
+
 sh_basename ()
 {
     l_value=$1

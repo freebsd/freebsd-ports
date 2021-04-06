@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: nrpe3
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

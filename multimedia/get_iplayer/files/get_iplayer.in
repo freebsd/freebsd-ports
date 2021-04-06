@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: get_iplayer
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

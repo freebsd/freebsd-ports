@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # Start or stop vbsfilter
 #
 # PROVIDE: vbsfilter

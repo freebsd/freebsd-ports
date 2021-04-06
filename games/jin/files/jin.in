@@ -1,4 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
+
 cd %%DATADIR%%
 exec "%%LOCALBASE%%/bin/java" -cp %%JAVAJARDIR%%/bsh.jar:%%JINJAR%% free.jin.JinApplication "$@"

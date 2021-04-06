@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD: head/www/gitlab-pages/files/gitlab_pages.in 468171 2018-04-24 01:01:37Z swills $
-#
+
 # PROVIDE: gitlab_pages
 # REQUIRE: DAEMON NETWORKING
 # KEYWORD: shutdown

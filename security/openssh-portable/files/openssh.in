@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: openssh
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

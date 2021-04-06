@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: immortaldir
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

@@ -1,5 +1,4 @@
 #!/bin/csh
-# $FreeBSD$
 
 set JAVA = "%%LOCALBASE%%/bin/java"
 set JARPATH = "%%JAVALIBDIR%%"

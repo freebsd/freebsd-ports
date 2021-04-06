@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: jamulus-server
 # REQUIRE: DAEMON NETWORKING
 # KEYWORD: shutdown

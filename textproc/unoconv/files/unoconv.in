@@ -1,6 +1,3 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 exec %%DATADIR%%/unoconv "$@"

@@ -1,6 +1,5 @@
 #!/bin/sh
 # Created by: l33tname <sirl33tname@gmail.com>
-# $FreeBSD$
 #
 # PROVIDE: gollum
 # REQUIRE: LOGIN

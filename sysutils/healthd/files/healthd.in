@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # $Id: healthd.sh,v 1.1.2.7 2004/06/23 14:11:57 housley Exp $
 
 # PROVIDE: healthd

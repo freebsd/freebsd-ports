@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: zrepl
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

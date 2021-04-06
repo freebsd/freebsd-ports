@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: jggtrans
 # REQUIRE: DAEMON %%JABBER_USER%%
 # BEFORE: LOGIN

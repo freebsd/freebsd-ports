@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LIB = 	domainkeys
 SRCS=	dns_txt.c domainkeys.c dktrace.c
 INCS=	domainkeys.h dktrace.h

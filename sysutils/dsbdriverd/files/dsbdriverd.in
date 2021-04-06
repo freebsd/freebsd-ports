@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: dsbdriverd
 # REQUIRE: devd
 # BEFORE: netwait

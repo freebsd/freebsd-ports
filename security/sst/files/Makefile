@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PROG=sst
 
 BINDIR=${PREFIX}/sbin

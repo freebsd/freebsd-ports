@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: credns
 # REQUIRE: DAEMON
 # REQUIRE: LOGIN

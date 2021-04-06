@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 # PROVIDE: web2ldap
 # REQUIRE: DAEMON NETWORKING

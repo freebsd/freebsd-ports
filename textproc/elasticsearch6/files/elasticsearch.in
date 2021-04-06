@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: elasticsearch
 # REQUIRE: DAEMON
 # BEFORE: LOGIN

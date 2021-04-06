@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # Common code for PEAR channels
 
 PKGNAMEPREFIX?=	${PEAR_PKGNAMEPREFIX}channel-

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: ncs_signaling
 # REQUIRE: DAEMON nats
 # KEYWORD: shutdown

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: jobtracker
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

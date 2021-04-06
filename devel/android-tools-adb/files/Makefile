@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PROG_CXX=adb
 NOMAN= # DragonFly, NetBSD, OpenBSD
 MAN= # FreeBSD

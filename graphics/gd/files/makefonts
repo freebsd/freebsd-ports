@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 target="${1}"
 shift

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: wazuh_agent
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

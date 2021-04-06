@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: comsatd
 # REQUIRE: DAEMON
 # BEFORE: mail

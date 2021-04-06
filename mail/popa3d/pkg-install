@@ -1,6 +1,3 @@
-# $FreeBSD$
-#
-
 if [ "$2" != "PRE-INSTALL" ]; then
     exit 0
 fi

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: masterNugget_safed
 # REQUIRE: masterNugget
 # KEYWORD: shutdown

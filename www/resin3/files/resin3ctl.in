@@ -4,7 +4,6 @@
 # Author:        Jean-Baptiste Quenot <jb.quenot@caraldi.com>
 # Purpose:       Manage resin pid file and log files
 # Date Created:  2005-01-21 15:43:19
-# Revision:      $FreeBSD: /tmp/pcvs/ports/www/resin3/files/resin3ctl.in,v 1.1 2012-03-13 16:29:23 jgh Exp $
 ################################################################################
 # Copyright (c) 2004, Jean-Baptiste Quenot <jb.quenot@caraldi.com>
 # All rights reserved.

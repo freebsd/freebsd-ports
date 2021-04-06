@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: zerotier
 # REQUIRE: FILESYSTEMS devfs
 # BEFORE:  pf ipfw

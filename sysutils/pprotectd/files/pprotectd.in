@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: pprotectd
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

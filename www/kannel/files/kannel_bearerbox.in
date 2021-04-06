@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: bearerbox
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: oled_clock
 # REQUIRE: DAEMON
 # KEYWORD: nojail shutdown

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: spybye
 # REQUIRE: DAEMON
 # BEFORE: LOGIN

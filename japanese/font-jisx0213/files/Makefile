@@ -1,4 +1,3 @@
-# $FreeBSD$
 .SUFFIXES:
 .SUFFIXES: .bdf .pcf
 

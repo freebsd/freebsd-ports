@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: ifdepd
 # REQUIRE: netif routing
 # KEYWORD: shutdown

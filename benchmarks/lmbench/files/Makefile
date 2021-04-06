@@ -1,6 +1,5 @@
 # A Makefile for the installed lmbench
-# $FreeBSD$
-#
+
 OS != scripts/os
 BINDIR = bin/${OS}
 

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: umurmur
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

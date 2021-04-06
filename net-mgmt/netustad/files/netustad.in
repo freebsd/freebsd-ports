@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: netustad
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: DAEMON

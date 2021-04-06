@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: pyspf_milter
 # REQUIRE: LOGIN
 # BEFORE: mail

@@ -1,5 +1,3 @@
- #$FreeBSD$
-
 PORTNAME=	libmediawiki
 DISTVERSION=	5.37.0
 PORTREVISION=	3

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: deluged
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

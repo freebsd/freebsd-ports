@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 SHLIB_NAME=	game.so
 
 SRCS!=		ls *.c

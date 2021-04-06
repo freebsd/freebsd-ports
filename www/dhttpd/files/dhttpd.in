@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: dhttpd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

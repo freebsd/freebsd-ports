@@ -1,6 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
-#
+
 # PROVIDE: openxpki
 # REQUIRE: LOGIN
 # REQUIRE: postgresql

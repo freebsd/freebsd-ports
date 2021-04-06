@@ -1,8 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
-
 
 # The executable needs to be run from its data directory, and needs to store
 # configuration in it. We therefore mirror the data directory hierarchy in

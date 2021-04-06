@@ -1,6 +1,5 @@
-# $FreeBSD$
 #!/bin/sh
-#
+
 # PROVIDE: tuptime
 # REQUIRE: DAEMON
 # KEYWORD: nojail shutdown

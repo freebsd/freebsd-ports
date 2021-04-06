@@ -1,6 +1,3 @@
-#
-# $FreeBSD$
-
 CFLAGS+=	-DINLINE
 
 COBJS=	compiler/cmdlib.o \

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: tpm2_abrmd
 # REQUIRE: DAEMON %%DBUS_DAEMON%%
 # KEYWORD: shutdown

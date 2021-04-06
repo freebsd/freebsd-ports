@@ -1,9 +1,6 @@
 #!/bin/sh
 #
 # Author: Mark Felder <feld@FreeBSd.org>
-#
-# $FreeBSD$
-#
 
 # PROVIDE: miniflux
 # REQUIRE: LOGIN

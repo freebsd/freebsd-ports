@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: dtlogin
 # REQUIRE: LOGIN dbus dtspc
 # KEYWORD: shutdown

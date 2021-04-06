@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: tcsd
 # REQUIRE: SERVERS tpmd
 # BEFORE:  named hastd kerberos

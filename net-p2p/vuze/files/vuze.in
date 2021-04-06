@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD: /tmp/pcvs/ports/net-p2p/vuze/files/vuze.in,v 1.2 2009-12-01 21:05:21 rnoland Exp $
 
 # java
 export JAVA_OS="%%JAVA_OS%%"

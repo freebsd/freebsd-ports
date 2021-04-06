@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: stone
 # REQUIRE: DAEMON
 # BEFORE: LOGIN

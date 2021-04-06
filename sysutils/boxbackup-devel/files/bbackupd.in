@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: bbackupd
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown

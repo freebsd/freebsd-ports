@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD
-#
 
 # PROVIDE: sonarqube
 # REQUIRE: NETWORKING SERVERS

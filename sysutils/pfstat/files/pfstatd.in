@@ -1,9 +1,5 @@
 #!/bin/sh
 
-#
-# $FreeBSD$
-#
-
 # PROVIDE: pfstatd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

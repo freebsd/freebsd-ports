@@ -1,4 +1,3 @@
-" $FreeBSD$
 " vim:ts=8
 "
 "   VIQR input

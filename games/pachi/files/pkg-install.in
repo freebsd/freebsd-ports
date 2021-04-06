@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 [ "$2" != "POST-INSTALL" ] && exit 0
 [ -e "%%SCOREFILE%%" ] && exit 0

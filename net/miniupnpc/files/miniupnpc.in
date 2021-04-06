@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: miniupnpc
 # REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
 # KEYWORD: shutdown

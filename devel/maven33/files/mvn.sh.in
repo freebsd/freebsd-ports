@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 if [ -f /etc/mavenrc ] ; then
 	. /etc/mavenrc

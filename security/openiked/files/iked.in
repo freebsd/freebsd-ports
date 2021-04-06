@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: iked
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

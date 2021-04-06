@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: oauth2_proxy
 # REQUIRE: NETWORKING SERVERS
 # KEYWORD: shutdown

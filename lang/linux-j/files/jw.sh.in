@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
+
 JPATHj%%PORTVERSION%%=%%PREFIX%%/lib/j
 export JPATHj%%PORTVERSION%%
 if [ ! -d ${HOME}/J ]

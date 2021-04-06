@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: couriergraph
 # REQUIRE: DAEMON
 # BEFORE: mail

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: radiusd
 # REQUIRE: %%REQUIRE%%
 # KEYWORD: shutdown

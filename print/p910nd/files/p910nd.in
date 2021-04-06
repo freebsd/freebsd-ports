@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-# 
 # PROVIDE: p910nd
 # REQUIRE: DAEMON
 # BEFORE:  LOGIN

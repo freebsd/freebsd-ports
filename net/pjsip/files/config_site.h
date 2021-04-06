@@ -1,7 +1,5 @@
 /*
  * Custom options imported from asterisk provided customizations.
- *
- * $FreeBSD$
  */
 
 #include <sys/select.h>

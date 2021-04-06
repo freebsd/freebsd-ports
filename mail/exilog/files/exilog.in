@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: exilog
 # REQUIRE: %%SERVER%%
 # KEYWORD: shutdown

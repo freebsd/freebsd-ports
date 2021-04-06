@@ -6,8 +6,6 @@
 
 # Written for FreeBSD.
 #
-# $FreeBSD$
-#
 # Copy this file into /usr/local/etc/rc.d as /usr/local/etc/rc.d/smfsav
 # Add this line to /etc/rc.conf:
 #

@@ -1,6 +1,5 @@
 # Makefile of Sample program
 # Written by NAKATA, Maho <maho@FreeBSD.org>
-# $FreeBSD$
 
 all: densg densg2
 

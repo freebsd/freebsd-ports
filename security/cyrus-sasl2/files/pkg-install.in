@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-#	$FreeBSD$
-#
+
 # Created by: stb@FreeBSD.org for the cyrus imap server
 # Added to the cyrus-sasl port by hetzels@westbend.net
 

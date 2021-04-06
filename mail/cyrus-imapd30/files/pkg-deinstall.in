@@ -1,6 +1,5 @@
 #!/bin/sh
 #
-# $FreeBSD$
 # Created by: hetzels@westbend.net
 
 #set -vx

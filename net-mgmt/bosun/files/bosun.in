@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD: head/net-mgmt/bosun/files/bosun.in 528773 2020-03-20 11:58:01Z girgen $
 
 # PROVIDE: bosun
 # REQUIRE: DAEMON NETWORKING

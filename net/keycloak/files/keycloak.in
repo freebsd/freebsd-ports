@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: %%PORTNAME%%
 # REQUIRE: NETWORKING SERVERS
 # KEYWORD: shutdown

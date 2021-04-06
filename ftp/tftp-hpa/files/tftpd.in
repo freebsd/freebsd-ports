@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: tftpd
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown

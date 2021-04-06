@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
-#
-# $FreeBSD$
 
 exec %%PREFIX%%/bin/$(basename $0) ${1+"$@"}

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-
 # Start or stop noattach
 
 # PROVIDE: noattach

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: slim
 # REQUIRE: LOGIN dbus
 # KEYWORD: shutdown

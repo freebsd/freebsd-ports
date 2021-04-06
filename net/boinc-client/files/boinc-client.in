@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: boinc-client
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

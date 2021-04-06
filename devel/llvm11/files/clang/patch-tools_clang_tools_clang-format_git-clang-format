@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- tools/clang/tools/clang-format/git-clang-format.orig
 +++ tools/clang/tools/clang-format/git-clang-format
 @@ -90,7 +90,7 @@

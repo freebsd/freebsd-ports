@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: sapserver
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown

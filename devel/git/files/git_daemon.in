@@ -1,7 +1,4 @@
 #! /bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: git_daemon
 # REQUIRE: DAEMON

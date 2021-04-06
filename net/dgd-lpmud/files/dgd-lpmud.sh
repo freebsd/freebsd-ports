@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 DGD_CONF=%%PREFIX%%/etc/dgd-lpmud/lpmud.dgd
 DGD_USER=mud

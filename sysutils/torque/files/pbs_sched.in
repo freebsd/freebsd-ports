@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: pbs_sched
 # REQUIRE: pbs_server
 # BEFORE: LOGIN

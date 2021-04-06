@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # mtree -deU -f files/BIND.etc.dist -p tmp
 # mtree -cjnb -k uname,gname,mode -p tmp
 

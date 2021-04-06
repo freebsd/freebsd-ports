@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
+
 # PROVIDE: devmon
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

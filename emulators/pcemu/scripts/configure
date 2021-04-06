@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # Author:		Jörg Wunsch <joerg@FreeBSD.org>
 # Date of creation:	Mar 27, 1995
 #

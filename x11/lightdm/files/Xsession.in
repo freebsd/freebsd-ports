@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 # LightDM wrapper to run around X sessions.
 
 echo "Running X session wrapper"

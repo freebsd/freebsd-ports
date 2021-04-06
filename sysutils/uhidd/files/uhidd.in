@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: uhidd
 # REQUIRE: DAEMON cleanvar

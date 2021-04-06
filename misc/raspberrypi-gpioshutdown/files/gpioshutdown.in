@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE:  gpioshutdown
 # REQUIRE:  syslogd
 # BEFORE:   LOGIN

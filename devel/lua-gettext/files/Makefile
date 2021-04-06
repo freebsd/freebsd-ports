@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 SHLIB=		gettext
 SHLIB_NAME=	lgettext.so
 

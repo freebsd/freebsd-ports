@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: knockd
 # REQUIRE: DAEMON
 # BEFORE:  LOGIN

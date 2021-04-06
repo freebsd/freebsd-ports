@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-#	$FreeBSD$
-#
 
 PKG_BATCH=${BATCH:=NO}
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}

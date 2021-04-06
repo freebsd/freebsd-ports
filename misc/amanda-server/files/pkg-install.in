@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 if [ "$2" != "POST-INSTALL" ]; then
 	exit 0

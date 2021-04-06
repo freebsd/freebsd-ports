@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: tclhttpd
 # REQUIRE: NETWORKING SERVERS
 # KEYWORD: shutdown

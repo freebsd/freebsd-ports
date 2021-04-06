@@ -1,4 +1,3 @@
-# $FreeBSD$
 # DJ970 - additional driver for HP DeskJet 970, supports duplex printing
 # http://www.harsch.net/Ghostscript/ghostscript.html
 

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: couchdb3
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

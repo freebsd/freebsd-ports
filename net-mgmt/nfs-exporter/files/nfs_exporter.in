@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 # PROVIDE: nfs_exporter
 # REQUIRE: LOGIN

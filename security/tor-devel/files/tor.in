@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: tor
 # REQUIRE: DAEMON FILESYSTEMS
 # BEFORE: LOGIN

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: nncp-daemon
 # REQUIRE: DAEMON NETWORKING FILESYSTEMS
 # KEYWORD: shutdown

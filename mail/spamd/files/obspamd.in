@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: obspamd
 # REQUIRE: NETWORKING SERVERS syslogd named

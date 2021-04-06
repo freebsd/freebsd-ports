@@ -1,7 +1,3 @@
-#
-# $FreeBSD$
-#
-
 all: sq usq
 
 sq: sq.o tr1.o tr2.o sqio.o

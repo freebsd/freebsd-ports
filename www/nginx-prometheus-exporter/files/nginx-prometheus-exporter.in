@@ -1,9 +1,5 @@
 #!/bin/sh
 
-#
-# $FreeBSD$
-#
-
 # PROVIDE: nginx_prometheus_exporter
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

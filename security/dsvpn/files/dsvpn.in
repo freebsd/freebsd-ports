@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: dsvpn
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

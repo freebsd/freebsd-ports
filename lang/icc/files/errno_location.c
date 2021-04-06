@@ -24,8 +24,6 @@
  * SUCH DAMAGE.
  *
  * copied over from: FreeBSD: ports/lang/compaq-cc/files/errno_location.c,v 1.1 2000/12/08 13:27:29 obrien Exp
- *
- * $FreeBSD$
  */
 
 #include <errno.h>

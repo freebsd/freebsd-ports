@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
 # KEYWORD: firstboot
 # PROVIDE: firstboot_pkgs
 # REQUIRE: NETWORKING

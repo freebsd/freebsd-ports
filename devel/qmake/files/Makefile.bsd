@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 _OBJS!=	${MAKE} -f Makefile.unix -V OBJS -V QOBJS
 # We'd like to avoid using qconfig.cpp, but can't -- see the comment
 # next to -DHAVE_CONFIG_CPP below: 

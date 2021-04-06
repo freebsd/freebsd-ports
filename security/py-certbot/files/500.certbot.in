@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # Automatically renew Let's Encrypt certificates each week
 #
 # Add the following lines to /etc/periodic.conf:

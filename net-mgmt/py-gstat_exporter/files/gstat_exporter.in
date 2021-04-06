@@ -1,6 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
-#
+
 # PROVIDE: gstat_exporter
 # REQUIRE: LOGIN NETWORKING
 # KEYWORD: shutdown

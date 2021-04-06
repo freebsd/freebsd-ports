@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: fluentd
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

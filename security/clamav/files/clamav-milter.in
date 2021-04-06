@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: clamav_milter
 # REQUIRE: LOGIN clamav_clamd

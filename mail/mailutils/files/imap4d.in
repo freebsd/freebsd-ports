@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $FreeBSD$
-#
 # PROVIDE: imap4d
 # REQUIRE: DAEMON
 # BEFORE: mail

@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# @(#) $FreeBSD$
 
 # PROVIDE: %%PORTNAME%%
 # REQUIRE: LOGIN abi

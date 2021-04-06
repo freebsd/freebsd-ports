@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LOCALBASE?=	/usr/local
 PROTOC_FLAGS=	-I. -I$(LOCALBASE)/include
 

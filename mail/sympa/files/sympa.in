@@ -1,11 +1,9 @@
 #!/bin/sh
-#
+
 # PROVIDE: sympa
 # REQUIRE: LOGIN cleanvar %%REQ_MYSQL%% %%REQ_PGSQL%% 
 # KEYWORD: shutdown
-#
-# $FreeBSD$
-#
+
 # Written by Michel Bouissou  20/07/2000
 #
 # Modified by Olivier Salaun 27/07/2000

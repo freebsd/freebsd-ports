@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: secondarynamenode
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

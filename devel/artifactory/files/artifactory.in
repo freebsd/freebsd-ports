@@ -2,8 +2,6 @@
 #
 # artifactory startup script.
 #
-# $FreeBSD$
-#
 # Make sure you have the artifactory user and artifactory home or set them below accordingly!
 
 # PROVIDE: artifactory

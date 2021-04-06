@@ -1,8 +1,6 @@
 #!/bin/sh
 # Created by: Michiel van Baak <michiel@vanbaak.eu>
-#
-# $FreeBSD$
-#
+
 # PROVIDE: hockeypuck
 # REQUIRE: DAEMON
 

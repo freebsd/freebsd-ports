@@ -6,9 +6,6 @@
 # FreeBSD-specific startup script for Apache Ant.
 #
 # See: http://ant.apache.org/
-#
-# $FreeBSD$
-#
 
 
 DEFAULT_JIKES=false

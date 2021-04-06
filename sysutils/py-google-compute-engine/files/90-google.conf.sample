@@ -1,4 +1,3 @@
-# $FreeBSD$
 # Google Compute Engine default console logging.
 #
 # daemon: logging from Google provided daemons.

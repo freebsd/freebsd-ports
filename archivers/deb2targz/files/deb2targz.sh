@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $FreeBSD$
-#
 # Distributed under the BSD 2-clause Simplified License.
 #
 

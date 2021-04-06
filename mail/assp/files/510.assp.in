@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $FreeBSD$
-#
 # Run ASSP's nightly housekeeping script, rebuildspamdb.pl
 # Delete old ASSP log files
 

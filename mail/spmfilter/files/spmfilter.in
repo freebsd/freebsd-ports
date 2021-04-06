@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: spmfilter
 # REQUIRE: %%REQUIRE%%
 # BEFORE:  mail

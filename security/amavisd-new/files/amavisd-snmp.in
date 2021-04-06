@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: amavisd_snmp
 # REQUIRE: snmpd
 # KEYWORD: shutdown

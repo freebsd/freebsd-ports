@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 PATH=/usr/sbin:/usr/bin:/bin ; export PATH
 

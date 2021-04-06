@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # Rhino shell
 "%%LOCALBASE%%/bin/java" -cp "%%RHINOJAR%%:%%JLINEJAR%%" org.mozilla.javascript.tools.shell.Main $@

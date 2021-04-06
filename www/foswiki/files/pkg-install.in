@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 FWDIR=%%FWDIR%%
 WWWDIR=%%WWWDIR%%

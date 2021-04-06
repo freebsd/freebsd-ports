@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: mydns
 # REQUIRE: DAEMON mysql postgresql

@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 .PATH: ${.CURDIR}/../..
 PROG=	exiftran
 SRCS=	exiftran.c genthumbnail.c jpegtools.c filter.c op.c readers.c

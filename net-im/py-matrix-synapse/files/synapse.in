@@ -1,8 +1,6 @@
 #!/bin/sh
 #
 # Created by: Mark Felder <feld@FreeBSD.org>
-# $FreeBSD$
-#
 
 # PROVIDE: synapse
 # REQUIRE: LOGIN postgresql

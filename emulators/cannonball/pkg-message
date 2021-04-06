@@ -1,8 +1,6 @@
 [
 { type: install
   message: <<EOM
-$FreeBSD$
-
 In order for Cannonball to work you need to provide a copy of the
 OutRun revision B romset to the roms subdirectory. Rename the files if
 necessary.

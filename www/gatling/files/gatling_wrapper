@@ -1,5 +1,5 @@
 #!/bin/sh -T
-#
+
 #-
 # Copyright 2009 Thomas-Martin Seck. All rights reserved.
 #
@@ -23,9 +23,7 @@
 # LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
-#
-# $FreeBSD$
-#
+
 # gatling_wrapper {gatling|tlsgatling} [options]
 #
 # A simple wrapper script for gatling (or any other program that does not

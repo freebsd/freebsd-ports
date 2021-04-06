@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: racoon
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

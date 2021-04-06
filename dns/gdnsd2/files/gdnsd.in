@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: gdnsd
 # REQUIRE: DAEMON
 # REQUIRE: LOGIN

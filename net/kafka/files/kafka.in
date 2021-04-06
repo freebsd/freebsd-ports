@@ -1,6 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
-#
+
 # PROVIDE: kafka
 # REQUIRE: NETWORKING SERVERS DAEMON
 # KEYWORD: shutdown

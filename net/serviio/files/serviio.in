@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: serviio
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

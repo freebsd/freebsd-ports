@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 How to cross build initial toolchain
 
 Example with sparc64

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-
 # (c) 2010 Tom Judge
 
 # PROVIDE: softflowd

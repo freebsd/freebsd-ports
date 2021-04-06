@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PROG=	hhm
 
 LDADD=	-L${PREFIX}/lib -llzxcomp -lm

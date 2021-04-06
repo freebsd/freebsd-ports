@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: ioc
 # REQUIRE: LOGIN cleanvar sshd ZFS

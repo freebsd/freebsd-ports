@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 : ${MOZCDIR:="${HOME}/.mozc"}
 
 # Mozc does not run by priviledged user.  Ignore silently.

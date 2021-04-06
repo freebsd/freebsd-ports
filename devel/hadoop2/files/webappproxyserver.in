@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: webappproxyserver
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: rspamd
 # REQUIRE: LOGIN redis
 # BEFORE:  mail

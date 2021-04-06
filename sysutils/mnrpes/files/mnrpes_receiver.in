@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # mnrpes_receiver startup script
 #
 # PROVIDE: mnrpes_receiver

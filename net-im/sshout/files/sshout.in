@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: sshout
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

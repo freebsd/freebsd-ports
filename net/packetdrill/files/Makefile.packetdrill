@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PROG=	packetdrill
 
 .include <bsd.prog.mk>

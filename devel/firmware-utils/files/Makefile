@@ -1,8 +1,5 @@
 # Custom Makefile to build all firmware utilities. OpenWrt has its own build
 # system for these which would be overkill to replicate here.
-#
-# $FreeBSD$
-#
 
 SIMPLES=	add_header addpattern airlink dgfirmware encode_crc \
 	lzma2eva makeamitbin mkcasfw mkchkimg mkcsysimg mkdniimg \

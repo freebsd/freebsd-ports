@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PREFIX	= /usr/local
 LIBDIR	= $(PREFIX)/lib
 INCSDIR	= $(PREFIX)/include

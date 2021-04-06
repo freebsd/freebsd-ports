@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: ovs_vswitchd
 # REQUIRE: LOGIN ovsdb_server

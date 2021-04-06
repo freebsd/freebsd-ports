@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 BINDIR=		${PREFIX}/bin
 PROG=		msiklm
 SRCS=		src/main.c src/msiklm.c 

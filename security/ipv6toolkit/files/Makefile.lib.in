@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LIB=	ipv6
 SRCS=	libipv6.c
 

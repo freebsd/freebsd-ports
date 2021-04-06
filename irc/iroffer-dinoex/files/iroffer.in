@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: iroffer
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

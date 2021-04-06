@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # This entry starts the Apple mobile device muxer 'usbmuxd' upon device attach
 # of a matching Apple product including iPhone, iPad, and iPod. It also allows
 # members of the '%%GROUPS%%' group to access the devices.

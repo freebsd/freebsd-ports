@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD: /tmp/pcvs/ports/www/resin3/files/resin3.in,v 1.2 2012-04-04 17:38:13 jgh Exp $
-#
 
 # PROVIDE: %%APP_NAME%%
 # REQUIRE: LOGIN NETWORKING SERVERS

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: keyboard_daemon
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

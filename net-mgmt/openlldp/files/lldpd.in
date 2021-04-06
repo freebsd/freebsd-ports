@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: lldpd
 # REQUIRE: NETWORKING
 # KEYWORD: shutdown

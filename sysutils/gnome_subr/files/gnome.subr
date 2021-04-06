@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 # Add the following to /etc/rc.conf to start GNOME services (dbus,
 # gdm, and so on) at boot time:
 #

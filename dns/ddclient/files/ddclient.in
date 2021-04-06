@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: ddclient
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

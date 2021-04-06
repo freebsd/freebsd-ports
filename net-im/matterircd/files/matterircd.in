@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: matterircd
 # REQUIRE: DAEMON NETWORKING
 # BEFORE: LOGIN

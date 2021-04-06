@@ -1,8 +1,5 @@
 #!/bin/csh
 #
-# SCCS-info %W% %E%
-# $FreeBSD$
-#
 # ====================== Change area ============================
 
 alias OUTP  /bin/echo

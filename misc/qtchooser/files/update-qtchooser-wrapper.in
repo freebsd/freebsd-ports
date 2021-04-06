@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-
 # If a port installs Qt version-specific binaries (e.g. "designer" which
 # existed as a Qt4 application and exists as a Qt5 application and will
 # probably be a Qt6 application) which should have a qtchooser-based

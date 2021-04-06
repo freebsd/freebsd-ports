@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: ntopng
 # REQUIRE: LOGIN netif mysql
 # KEYWORD: shutdown

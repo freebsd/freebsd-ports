@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: consul_exporter
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

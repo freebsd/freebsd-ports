@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 # PROVIDE: logstash_forwarder
 # REQUIRE: DAEMON

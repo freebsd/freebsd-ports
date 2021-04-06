@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: kippo
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

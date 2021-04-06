@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: nsqadmin
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

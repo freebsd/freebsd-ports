@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: htcacheclean
 #
 # Configuration settings for htcacheclean in /etc/rc.conf

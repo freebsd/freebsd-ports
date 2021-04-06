@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PROG=	thumbnail.cgi
 
 .PATH: ${.CURDIR}/../..

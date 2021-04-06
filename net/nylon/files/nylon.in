@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: nylon
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

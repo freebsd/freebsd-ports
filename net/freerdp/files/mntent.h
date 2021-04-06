@@ -27,8 +27,6 @@
  * SUCH DAMAGE.
  */
 
-// $FreeBSD$
-
 #if defined(HAVE_MNTENT_H)
 #include <mntent.h>
 #else

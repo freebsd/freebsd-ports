@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: consul-replicate
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

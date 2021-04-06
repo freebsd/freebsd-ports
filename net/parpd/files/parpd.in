@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: parpd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD: /tmp/pcvs/ports/mail/dbmail/files/dbmail-pop3d.in,v 1.1 2012-03-18 19:17:12 rm Exp $
-#
 
 # PROVIDE: dbmail-pop3d
 # REQUIRE: DAEMON

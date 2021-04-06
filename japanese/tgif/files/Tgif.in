@@ -1,4 +1,3 @@
-! $FreeBSD$
 Tgif.UseNKF:			true
 Tgif.CopyAndPasteJIS:		true
 Tgif.GridSystem:		Metric

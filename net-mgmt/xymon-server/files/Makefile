@@ -1,5 +1,4 @@
 # Toplevel Makefile for Xymon
-# $FreeBSD$
 
 BUILDTOPDIR=`pwd`
 

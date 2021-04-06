@@ -1,7 +1,4 @@
 #! /bin/sh
-#
-# $FreeBSD$
-#
 
 VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
 DATE="`sed -ne 's/^set date \(.*\)/\1/p' ${WRKSRC}/exmh.install`"

@@ -1,6 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
-#
+
 # PROVIDE: wnn
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

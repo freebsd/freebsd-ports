@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: honeytrap
 # REQUIRE: NETWORKING SERVERS DAEMON
 # KEYWORD: shutdown

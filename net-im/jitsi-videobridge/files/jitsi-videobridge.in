@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: jitsi-videobridge
 # REQUIRE: NETWORKING SERVERS
 # KEYWORD: shutdown

@@ -1,4 +1,3 @@
 #!/bin/sh
-# $FreeBSD$
 
 exec %%LOCALBASE%%/bin/java -jar %%JAVAJARDIR%%/htmlcompressor.jar "$@"

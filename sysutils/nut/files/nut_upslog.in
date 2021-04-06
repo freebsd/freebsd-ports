@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: nut_upslog
 # REQUIRE: NETWORKING nut

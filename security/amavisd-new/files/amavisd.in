@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: amavisd
 # REQUIRE: LOGIN mysql postgresql amavis_p0fanalyzer
 # BEFORE: mail

@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 # PROVIDE: ioq3ded
 # REQUIRE: LOGIN

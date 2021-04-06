@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # This entry runs the 'msiklm' utility upon device attach to set
 # a default keyboard backlight theme.
 

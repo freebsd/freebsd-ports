@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: bird6 dynamicrouting
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

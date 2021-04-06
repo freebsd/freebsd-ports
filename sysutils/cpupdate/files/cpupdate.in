@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: cpupdate
 # REQUIRE: FILESYSTEMS kldxref
 # BEFORE:  netif

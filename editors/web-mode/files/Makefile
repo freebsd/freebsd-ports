@@ -1,4 +1,3 @@
-# $FreeBSD$
 SRCS=	web-mode.el
 OBJS=	${SRCS:C/.el$/.elc/}
 

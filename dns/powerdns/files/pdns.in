@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: pdns_server
 # REQUIRE: DAEMON SERVERS mysql postgresql slapd

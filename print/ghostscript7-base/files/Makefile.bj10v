@@ -1,4 +1,3 @@
-# $FreeBSD$
 # for Canon BJ-10V
 
 DISTFILES+=	gdev10v.tar.gz:ports_jp_gs

@@ -1,4 +1,3 @@
-/* $FreeBSD$ */
 #if 0
 #define HAVE_HEIMDAL 1
 #endif

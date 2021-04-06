@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 GZIP_CMD?=	gzip
 MKBOLD_CMD?=	mkbold
 MKITALIC_CMD?=	mkitalic

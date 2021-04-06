@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: %%NEXUS_RC%%
 # REQUIRE: LOGIN FILESYSTEMS NETWORKING
 # KEYWORD: shutdown

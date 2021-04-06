@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $FreeBSD$
-#
 # PROVIDE: journalnode
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

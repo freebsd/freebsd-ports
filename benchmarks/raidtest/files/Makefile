@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PROG=	raidtest
 MAN=
 WARNS?=	6

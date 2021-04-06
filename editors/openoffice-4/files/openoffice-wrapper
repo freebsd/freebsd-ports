@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 program=`echo $0 | sed -e 's|.*%%EXECBASE%%-||'`
 

@@ -1,5 +1,4 @@
 #!/usr/bin/awk -f
-# $FreeBSD$
 
 BEGIN {
 	group = "yarn";

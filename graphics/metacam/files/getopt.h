@@ -1,5 +1,4 @@
 /*	$NetBSD: getopt.h,v 1.4 2000/07/07 10:43:54 ad Exp $	*/
-/*	$FreeBSD: /tmp/pcvs/ports/graphics/metacam/files/getopt.h,v 1.1 2005-09-04 15:22:59 pav Exp $ */
 
 /*-
  * Copyright (c) 2000 The NetBSD Foundation, Inc.

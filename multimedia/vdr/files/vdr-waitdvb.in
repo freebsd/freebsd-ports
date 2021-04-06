@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD: /tmp/pcvs/ports/multimedia/vdr/files/vdr-waitdvb.in,v 1.1 2012-01-21 17:32:50 nox Exp $
-#
 
 command="%%PREFIX%%/bin/vdr"
 

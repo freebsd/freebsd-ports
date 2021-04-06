@@ -1,6 +1,5 @@
 #!/bin/sh
 # Start or stop strongswan
-# $FreeBSD$
 
 # PROVIDE: strongswan
 # REQUIRE: DAEMON

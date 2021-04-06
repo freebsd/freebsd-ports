@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: inspircd
 # REQUIRE: DAEMON
 # BEFORE: LOGIN mysql postgresql

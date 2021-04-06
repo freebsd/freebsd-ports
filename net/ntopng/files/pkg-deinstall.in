@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 [ "$2" != "DEINSTALL" ] && exit 0
 

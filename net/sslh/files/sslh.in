@@ -1,9 +1,7 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # sslh startup script
-#
+
 # PROVIDE: sslh
 # REQUIRE: LOGIN FILESYSTEMS ldconfig sshd
 # KEYWORD: shutdown

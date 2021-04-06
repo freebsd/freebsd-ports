@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: pwnat
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

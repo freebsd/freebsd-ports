@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: shairport_sync
 # REQUIRE: LOGIN avahi_daemon
 # KEYWORD: shutdown

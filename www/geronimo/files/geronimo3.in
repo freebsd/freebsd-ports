@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD: /tmp/pcvs/ports/www/geronimo/files/geronimo3.sh.in,v 1.1 2012-07-09 13:36:34 gahr Exp $
-#
 
 # PROVIDE: %%APP_SHORTNAME%%
 # REQUIRE: NETWORKING SERVERS

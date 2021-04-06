@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: postfix-policyd-sf
 # REQUIRE: LOGIN mysql

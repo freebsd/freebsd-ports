@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PREFIX?=	/usr/local
 OPENSSLLIB?=	/usr/lib
 OPENSSLINC?=	/usr/include/openssl

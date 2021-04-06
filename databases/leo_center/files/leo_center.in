@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: leo_center
 # REQUIRE: LOGIN cleanvar
 # KEYWORD: shutdown

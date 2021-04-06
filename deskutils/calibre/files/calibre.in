@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: calibre
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 GEANY_VER=		1.37
 GEANY_PLUGINS_GTK2=	multiterm
 

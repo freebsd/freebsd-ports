@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: openttd
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

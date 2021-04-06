@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: forked-daapd
 # REQUIRE: avahi_daemon dbus
 # KEYWORD: shutdown

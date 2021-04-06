@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # Salt Synic startup script
 #
 # PROVIDE: salt_syndic

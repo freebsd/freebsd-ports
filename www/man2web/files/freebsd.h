@@ -1,5 +1,3 @@
-/* $FreeBSD$ */
-
 /* default section entries that are used if configuration file is disabled*/
 #define SECTION_COUNT 9
 struct section_entry section_matrix[] = {

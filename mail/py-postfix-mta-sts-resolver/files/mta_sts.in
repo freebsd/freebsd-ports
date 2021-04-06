@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: mta_sts
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

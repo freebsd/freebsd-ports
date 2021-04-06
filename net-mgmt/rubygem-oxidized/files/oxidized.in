@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: oxidized
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

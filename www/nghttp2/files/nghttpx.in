@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 # PROVIDE: nghttpx
 # REQUIRE: LOGIN cleanvar

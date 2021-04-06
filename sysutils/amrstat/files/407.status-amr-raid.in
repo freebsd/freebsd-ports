@@ -1,9 +1,6 @@
 #!/bin/sh
 #
 # Show status of LSI Logic's MegaRAID RAID controllers.
-#
-# $FreeBSD$
-#
 
 # If there is a global system configuration file, suck it in.
 #

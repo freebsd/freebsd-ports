@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: riemann
 # REQUIRE: LOGIN NETWORKING SERVERS
 # KEYWORD: shutdown

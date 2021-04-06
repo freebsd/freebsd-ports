@@ -1,8 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD$
 # Obtained from: FreeBSD: head/libexec/rc/rc.d/amd 298514 2016-04-23 16:10:54Z lme
-#
 
 # PROVIDE: amd
 # REQUIRE: rpcbind ypset nfsclient FILESYSTEMS ldconfig

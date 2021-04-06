@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 DESTDIR=
 BINDIR=	${PREFIX}/bin
 

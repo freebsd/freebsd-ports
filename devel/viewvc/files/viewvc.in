@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: viewvc
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

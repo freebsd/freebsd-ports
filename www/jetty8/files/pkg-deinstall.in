@@ -8,8 +8,6 @@
 # * Checks if the 'www' user exists. If it does, then it displays
 #   a message.
 #
-# $FreeBSD$
-#
 # Borrowed from the jakarta-tomcat port
 #
 

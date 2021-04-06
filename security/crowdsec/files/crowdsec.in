@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: crowdsec
 # REQUIRE: LOGIN DAEMON NETWORKING
 # KEYWORD: shutdown

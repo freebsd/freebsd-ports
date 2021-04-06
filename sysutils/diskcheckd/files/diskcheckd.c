@@ -27,9 +27,6 @@
  * <perryh@pluto.rain.com>, licensed on the same terms as above.
  */
 
-static const char rcsid[] =
-	"$FreeBSD$";
-
 #include <sys/param.h>
 #include <sys/sysctl.h>
 

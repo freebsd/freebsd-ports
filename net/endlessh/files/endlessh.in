@@ -1,9 +1,6 @@
 #!/bin/sh
 #
 # Author: Bernard Spil <brnrd@FreeBSD.org>
-#
-# $FreeBSD$
-#
 
 # PROVIDE: endlessh
 # REQUIRE: LOGIN

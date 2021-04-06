@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: kresd
 # REQUIRE: NETWORKING
 # BEFORE: SERVERS

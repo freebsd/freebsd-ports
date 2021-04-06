@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: dnscrypt_wrapper
 # REQUIRE: LOGIN

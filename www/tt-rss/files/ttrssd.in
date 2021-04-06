@@ -1,7 +1,4 @@
 #! /bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: ttrssd
 # REQUIRE: LOGIN mysql postgresql

@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 BDFTOPCF_CMD=	%%BDFTOPCF_CMD%%
 GZIP_CMD=	%%GZIP_CMD%%
 

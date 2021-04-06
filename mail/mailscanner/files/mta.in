@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # mta - start multiple MTA instances, e.g. for MailScanner
 
 # PROVIDE: mta mail

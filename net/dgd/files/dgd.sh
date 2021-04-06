@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 DGD_CONF=%%PREFIX%%/etc/dgd/kernel.dgd
 DGD_USER=mud

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: vtunclient
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

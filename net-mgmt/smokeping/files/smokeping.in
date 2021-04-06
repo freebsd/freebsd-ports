@@ -1,8 +1,6 @@
 #!/bin/sh
 # Created by: Sean McAfee <smcafee@collaborativefusion.com>
 
-# $FreeBSD$
-
 # PROVIDE: smokeping
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

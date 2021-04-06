@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # this is a bare bones sample .fvwm2rc/system.fvwm2rc file for fvwm.
 # It should be customized before install.  See other sample .fvwm2rc files
 # for hints, as well as pointers from the various links on the official

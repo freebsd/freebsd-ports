@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: h2o
 # REQUIRE: LOGIN DAEMON NETWORKING

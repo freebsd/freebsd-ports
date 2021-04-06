@@ -1,8 +1,5 @@
 # Jailrc README
 # Martin Matuska <mm@FreeBSD.org>
-#
-# $FreeBSD$
-#
 
 Jailrc is an improved startup/shutdown script for FreeBSD jails.
 

@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: webfsd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

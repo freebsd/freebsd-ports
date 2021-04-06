@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 if [ "$2" = "POST-DEINSTALL" -a -d "%%VARDIR%%" ]; then
 	echo ""

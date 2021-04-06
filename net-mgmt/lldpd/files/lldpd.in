@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: lldpd
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

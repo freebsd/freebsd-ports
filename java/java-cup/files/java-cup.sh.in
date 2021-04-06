@@ -1,8 +1,6 @@
 #!/bin/sh
 #
 # Derived from a similar script for ports/java/jflex.
-#
-# $FreeBSD$
 
 # Allow the user to override where java-cup.jar lives
 JAVAJARDIR="${JAVAJARDIR:-"%%JAVAJARDIR%%"}"

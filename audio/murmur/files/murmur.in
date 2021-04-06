@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: murmur
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

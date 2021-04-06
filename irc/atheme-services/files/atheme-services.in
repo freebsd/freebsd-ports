@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: atheme_services
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

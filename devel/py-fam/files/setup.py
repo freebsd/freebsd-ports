@@ -1,4 +1,3 @@
-# $FreeBSD$
 from distutils.core import setup, Extension
 import os
 LOCALBASE = os.environ.get('LOCALBASE', '/usr/local')

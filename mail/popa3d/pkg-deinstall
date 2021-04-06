@@ -1,6 +1,3 @@
-# $FreeBSD$
-#
-
 if [ "$2" != "POST-DEINSTALL" ]; then
     exit 0
 fi

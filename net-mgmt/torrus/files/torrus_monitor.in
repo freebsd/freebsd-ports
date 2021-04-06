@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD $
-#
+
 # PROVIDE: torrus_monitor
 # REQUIRE: DAEMON
 #

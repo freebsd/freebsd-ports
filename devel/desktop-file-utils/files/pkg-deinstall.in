@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $FreeBSD$
-#
 # Remove leftover mimeinfo.cache files.
 
 if [ "$2" != "POST-DEINSTALL" ]; then

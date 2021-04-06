@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 : ${OPENHAB_USERDATA:="/var/db/openhab2/userdata"}
 : ${OPENHAB_RUNTIME:="%%PREFIX%%/libexec/openhab2/runtime"}

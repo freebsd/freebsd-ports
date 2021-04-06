@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LOCALBASE?=	/usr/local
 CXXFLAGS+=	-std=c++14 -Wall -Wextra -Wno-unused-parameter -DSPDLOG_FMT_EXTERNAL=1
 CPPFLAGS+=	-I. -I../include -I../api -I$(LOCALBASE)/include \

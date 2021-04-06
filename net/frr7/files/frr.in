@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: frr dynamicrouting
 # REQUIRE: netif routing

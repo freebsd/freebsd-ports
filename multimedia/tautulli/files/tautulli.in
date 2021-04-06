@@ -1,8 +1,6 @@
 #!/bin/sh
 # Created by: Mark Felder <feld@FreeBSD.org>
-#
-# $FreeBSD$
-#
+
 # PROVIDE: tautulli
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

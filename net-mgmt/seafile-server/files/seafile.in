@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: seafile
 # REQUIRE: LOGIN cleanvar mysql

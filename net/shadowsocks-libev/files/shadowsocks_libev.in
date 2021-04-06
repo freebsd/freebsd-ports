@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 # PROVIDE: shadowsocks-libev
 # REQUIRE: LOGIN cleanvar

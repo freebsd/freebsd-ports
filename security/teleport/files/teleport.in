@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: teleport
 # REQUIRE: NETWORKING SERVERS DAEMON
 # KEYWORD: shutdown

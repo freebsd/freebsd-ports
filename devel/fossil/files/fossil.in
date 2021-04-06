@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # fossil startup script
 #
 # PROVIDE: fossil

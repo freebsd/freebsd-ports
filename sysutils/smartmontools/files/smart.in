@@ -1,8 +1,5 @@
 #!/bin/sh
 # This script is in the public domain.  Original author: Garrett Wollman
-#
-# $FreeBSD$
-#
 
 if [ -r /etc/defaults/periodic.conf ]; then
     . /etc/defaults/periodic.conf

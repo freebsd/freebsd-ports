@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-
 # PROVIDE: jabberd
 # REQUIRE: %%REQUIRE%%
 # KEYWORD: shutdown

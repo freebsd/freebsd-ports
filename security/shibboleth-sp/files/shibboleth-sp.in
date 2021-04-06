@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: shibboleth_sp
 # REQUIRE: DAEMON
 #

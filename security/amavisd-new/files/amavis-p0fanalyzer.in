@@ -1,6 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
-#
+
 # PROVIDE: amavis_p0fanalyzer
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

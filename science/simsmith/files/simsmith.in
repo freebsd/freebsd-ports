@@ -1,5 +1,3 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 "%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/%%DISTNAME%%.jar" "$@"

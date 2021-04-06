@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # Shell in a Box Daemon startup script
 #
 # PROVIDE: shellinaboxd

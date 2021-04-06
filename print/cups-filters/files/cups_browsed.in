@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: cups_browsed
 # REQUIRE: cupsd %%AVAHI_DAEMON%%
 # KEYWORD: shutdown

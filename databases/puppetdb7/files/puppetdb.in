@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: puppetdb
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

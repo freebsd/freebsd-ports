@@ -1,9 +1,5 @@
 #!/bin/sh
 
-#
-# $FreeBSD$
-#
-
 # PROVIDE: redis_exporter
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

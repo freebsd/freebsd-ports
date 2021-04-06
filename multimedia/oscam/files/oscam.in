@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: oscam
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

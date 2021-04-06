@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 .include "${.CURDIR}/../../devel/geany-plugins/files/bsd.geany-plugins.mk"
 
 MASTER_SITES=	http://plugins.geany.org/geany-plugins/

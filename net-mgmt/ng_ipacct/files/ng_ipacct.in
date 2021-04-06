@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: ng_ipacct
 # REQUIRE: LOGIN abi

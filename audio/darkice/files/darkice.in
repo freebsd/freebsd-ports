@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: darkice
 # REQUIRE: LOGIN
 # KEYWORD: SHUTDOWN

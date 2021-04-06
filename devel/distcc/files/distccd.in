@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#    $MCom: ports/devel/distcc/files/distccd.sh.in,v 1.1 2007/05/19 17:43:14 ahze Exp $
 
 # PROVIDE: distccd
 # REQUIRE: NETWORKING ldconfig

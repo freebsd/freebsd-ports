@@ -1,5 +1,4 @@
 # Under a BSDL license. Copyright by Mario S F Ferreira <lioux@FreeBSD.org>
-# $FreeBSD$
 +2005-12-31
 +2008-12-31
 +2012-06-30

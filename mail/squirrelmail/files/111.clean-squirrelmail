@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $FreeBSD$
-#
 # This script copied from /etc/periodic/daily/110.clean-tmps,v 1.6.2.4 2002/10/13 19:59:01
 #
 # Perform attachment directory cleaning so that long-lived systems

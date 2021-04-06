@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LIB = 	NunniMCAX
 SRCS=	NunniCXMLParser.c NunniCXMLParserFSM.c NunniHashtable.c NunniStack.c
 INCS=	NunniMCAX.h

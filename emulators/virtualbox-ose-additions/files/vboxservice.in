@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-
 # PROVIDE: vboxservice
 # REQUIRE: DAEMON vboxguest
 # BEFORE: LOGIN

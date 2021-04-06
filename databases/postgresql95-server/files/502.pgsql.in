@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # Maintenance shell script to vacuum and backup database
 # Put this in /usr/local/etc/periodic/daily, and it will be run 
 # every night

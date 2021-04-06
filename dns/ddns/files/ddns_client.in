@@ -1,6 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
-#
+
 # PROVIDE: ddns_client
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

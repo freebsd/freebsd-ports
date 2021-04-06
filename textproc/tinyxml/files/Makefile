@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LIB_CXX= 	tinyxml
 SRCS=	tinystr.cpp tinyxmlerror.cpp tinyxml.cpp tinyxmlparser.cpp
 INCS=	tinyxml.h tinystr.h

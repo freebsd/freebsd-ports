@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: daemonlogger
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

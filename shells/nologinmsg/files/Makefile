@@ -1,4 +1,3 @@
-# $FreeBSD$
 PROG=	nologinmsg
 SRCS=	nologinmsg.c
 BINDIR=	${PREFIX}/bin

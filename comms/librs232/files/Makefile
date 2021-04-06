@@ -1,7 +1,4 @@
 # BSD Makefile for librs232
-#
-# $FreeBSD$
-#
 
 SRCS=	rs232.c
 

@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 cd "%%DATADIR%%" && exec "%%LOCALBASE%%/bin/java" -Xmx512M \
 -cp "libs/robocode.jar" robocode.NavalRobocode "${@}"

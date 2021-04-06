@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: srelay
 # REQUIRE: DAEMON jail
 # BEFORE: LOGIN

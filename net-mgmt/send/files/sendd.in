@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 # PROVIDE sendd
 # REQUIRE NETWORKING
 

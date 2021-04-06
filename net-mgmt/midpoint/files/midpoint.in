@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: midpoint
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD: /tmp/pcvs/ports/mail/dbmail/files/dbmail-timsieved.in,v 1.2 2012-06-24 19:19:06 beech Exp $
-#
 
 # PROVIDE: dbmail-timsieved
 # REQUIRE: DAEMON

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: foreman-proxy
 # BEFORE: LOGIN
 # KEYWORD: shutdown

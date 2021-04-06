@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
 
 PROJECTLIBRE_HOME="%%DATADIR%%"
 export PROJECTLIBRE_HOME

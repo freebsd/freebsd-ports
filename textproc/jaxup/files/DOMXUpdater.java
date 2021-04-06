@@ -1,7 +1,5 @@
 /**
  * DOMXUpdater: a command-line XUpdate processor.
- * 
- * $FreeBSD$
  */
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;

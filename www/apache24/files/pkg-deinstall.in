@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 MPM_FALLBACK="%%ETCDIR%%/modules.d/%%MPMF%%"
 

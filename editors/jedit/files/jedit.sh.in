@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 # Java heap size, in megabytes
 JAVA_HEAP_SIZE=32

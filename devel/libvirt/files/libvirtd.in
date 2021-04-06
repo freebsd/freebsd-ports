@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: libvirtd
 # REQUIRE: LOGIN virtlogd
 # KEYWORD: shutdown

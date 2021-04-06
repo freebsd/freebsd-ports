@@ -1,7 +1,5 @@
 #!/bin/sh
 #
 # Wrapper for the real fetchmailconf.
-#
-# $FreeBSD$
 
 exec %%PYTHON_CMD%% %%PYTHON_SITELIBDIR%%/fetchmailconf.py "$@"

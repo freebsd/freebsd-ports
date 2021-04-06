@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: motion
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

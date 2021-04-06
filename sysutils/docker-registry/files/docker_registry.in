@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: docker_registry
 # REQUIRE: LOGIN
 # KEYWORD: shutdown

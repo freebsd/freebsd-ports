@@ -1,7 +1,4 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
 
 # PROVIDE: e2guardian
 # REQUIRE: NETWORKING SERVERS squid clamav_clamd

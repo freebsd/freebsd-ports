@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: qbittorrent
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

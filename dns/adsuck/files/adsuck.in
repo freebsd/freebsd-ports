@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# $FreeBSD$
-#
 # PROVIDE: adsuck
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

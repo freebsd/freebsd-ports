@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: watchd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown

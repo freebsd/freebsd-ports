@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-# $FreeBSD$
-#
+
 # PROVIDE: authelia
 # REQUIRE: DAEMON NETWORKING
 # KEYWORD: shutdown

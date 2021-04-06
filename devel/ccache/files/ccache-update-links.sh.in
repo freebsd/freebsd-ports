@@ -1,9 +1,6 @@
 #!/bin/sh
 #
 # Author: Emanuel Haupt <ehaupt@FreeBSD.org>
-#
-# $FreeBSD$
-#
 
 CCACHE_COMPILERS="%%CCACHE_COMPILERS%% ${EXTRA_COMPILERS}"
 CCLINKDIR="%%CCLINKDIR%%"

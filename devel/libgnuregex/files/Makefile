@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 LIB=			gnuregex
 SHLIB_MAJOR=	6
 

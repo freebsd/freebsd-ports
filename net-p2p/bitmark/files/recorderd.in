@@ -1,5 +1,4 @@
 #!/bin/sh
-# $FreeBSD$
 
 # PROVIDE: recorderd
 # REQUIRE: LOGIN cleanvar

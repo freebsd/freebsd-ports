@@ -1,6 +1,5 @@
-# $FreeBSD$
 #!/bin/sh
-#
+
 # PROVIDE: spoofer
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
