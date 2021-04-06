@@ -74,6 +74,7 @@ include/caf/detail/apply_args.hpp
 include/caf/detail/arg_wrapper.hpp
 include/caf/detail/as_mutable_ref.hpp
 include/caf/detail/assign_inspector_try_result.hpp
+include/caf/detail/base64.hpp
 include/caf/detail/behavior_impl.hpp
 include/caf/detail/behavior_stack.hpp
 include/caf/detail/blocking_behavior.hpp
@@ -105,6 +106,7 @@ include/caf/detail/invoke_result_visitor.hpp
 include/caf/detail/io_export.hpp
 include/caf/detail/is_complete.hpp
 include/caf/detail/is_one_of.hpp
+include/caf/detail/json.hpp
 include/caf/detail/limited_vector.hpp
 include/caf/detail/local_group_module.hpp
 include/caf/detail/log_level.hpp
@@ -114,7 +116,9 @@ include/caf/detail/mask_bits.hpp
 include/caf/detail/message_builder_element.hpp
 include/caf/detail/message_data.hpp
 include/caf/detail/meta_object.hpp
+include/caf/detail/monotonic_buffer_resource.hpp
 include/caf/detail/move_if_not_ptr.hpp
+include/caf/detail/mtl_util.hpp
 include/caf/detail/network_order.hpp
 include/caf/detail/offset_at.hpp
 include/caf/detail/openssl_export.hpp
@@ -320,6 +324,8 @@ include/caf/is_error_code_enum.hpp
 include/caf/is_message_sink.hpp
 include/caf/is_timeout_or_catch_all.hpp
 include/caf/is_typed_actor.hpp
+include/caf/json_reader.hpp
+include/caf/json_writer.hpp
 include/caf/load_inspector.hpp
 include/caf/load_inspector_base.hpp
 include/caf/local_actor.hpp
@@ -355,6 +361,7 @@ include/caf/mixin/requester.hpp
 include/caf/mixin/sender.hpp
 include/caf/mixin/subscriber.hpp
 include/caf/monitorable_actor.hpp
+include/caf/mtl.hpp
 include/caf/no_stages.hpp
 include/caf/node_id.hpp
 include/caf/none.hpp
@@ -500,6 +507,7 @@ lib/libcaf_openssl.so.%%PORTVERSION%%
 %%DATADIR%%/examples/custom_type/custom_types_1.cpp
 %%DATADIR%%/examples/custom_type/custom_types_2.cpp
 %%DATADIR%%/examples/custom_type/custom_types_3.cpp
+%%DATADIR%%/examples/custom_type/custom_types_4.cpp
 %%DATADIR%%/examples/dynamic_behavior/dining_philosophers.cpp
 %%DATADIR%%/examples/dynamic_behavior/skip_messages.cpp
 %%DATADIR%%/examples/hello_world.cpp
