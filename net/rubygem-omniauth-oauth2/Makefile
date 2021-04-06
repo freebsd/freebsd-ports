@@ -1,7 +1,7 @@
-# $FreeBSD$
+# $FreeBSD: head/net/rubygem-omniauth-oauth2/Makefile 513707 2019-10-03 18:25:42Z sunpoet $
 
 PORTNAME=	omniauth-oauth2
-PORTVERSION=	1.5.0
+PORTVERSION=	1.7.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,8 @@ COMMENT=	Abstract OAuth2 strategy for OmniAuth
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-oauth2>=1.1<2:net/rubygem-oauth2 \
-		rubygem-omniauth>=1.2<2:security/rubygem-omniauth
+RUN_DEPENDS=	rubygem-oauth2>=1.4<2:net/rubygem-oauth2 \
+		rubygem-omniauth>=1.9<3:security/rubygem-omniauth
 
 USES=		gem
 USE_RUBY=	yes
