@@ -1,8 +1,8 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/devel/rubygem-scientist/Makefile 558867 2020-12-21 23:23:49Z mfechner $
 
 PORTNAME=	scientist
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
