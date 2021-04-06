@@ -16198,3 +16198,4 @@ x11-toolkits/tile||2021-03-27|Has expired: The Tile widget set is part of Tk 8.5
 security/apg||2021-03-28|Has expired: Abandonware. Please try security/makepasswd or security/rndpassw instead
 lang/Gofer||2021-03-28|Has expired: Old, unmaintained language
 net/libsignal|net/libsignal-protocol-c|2021-03-30|Rename to match upstream naming
+databases/redis4|databases/redis|2021-03-06|Has expired: End of life, please use modern version
