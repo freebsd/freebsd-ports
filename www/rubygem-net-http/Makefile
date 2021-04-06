@@ -12,8 +12,6 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 
-BROKEN_RUBY25=	yes
-
 RUN_DEPENDS=	rubygem-net-protocol>=0:net/rubygem-net-protocol \
 		rubygem-uri>=0:net/rubygem-uri
 
