@@ -1,3 +1,5 @@
-TIMESTAMP = 1614624603
-SHA256 (iurie-sw-geonkick-v2.7.2_GH0.tar.gz) = ee4afd97657620ffdcae34192c1d51953059b79d382bc4f165252085b6e24010
-SIZE (iurie-sw-geonkick-v2.7.2_GH0.tar.gz) = 2161566
+TIMESTAMP = 1617735358
+SHA256 (iurie-sw-geonkick-v2.8.0_GH0.tar.gz) = ec656e76df13ae1226bba6eeb8146c4f0ddbae2c34d28a89db473c16497eaff4
+SIZE (iurie-sw-geonkick-v2.8.0_GH0.tar.gz) = 2623041
+SHA256 (9dd43995ec37853893db14bce7f420a03ff4194b.patch) = 7fc7e234f26f641ddb9147973e2d519e7566bb2c266255c495479a3b0bfbe194
+SIZE (9dd43995ec37853893db14bce7f420a03ff4194b.patch) = 826

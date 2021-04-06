@@ -1,11 +1,11 @@
---- standalone/CMakeLists.txt.orig	2019-08-07 16:23:18 UTC
+--- standalone/CMakeLists.txt.orig	2021-04-03 10:55:30 UTC
 +++ standalone/CMakeLists.txt
-@@ -7,7 +7,7 @@ add_executable(geonkick
- 
+@@ -8,7 +8,7 @@ add_executable(geonkick
  add_dependencies(geonkick api_standalone)
- target_link_libraries(geonkick  geonkick_common api_standalone)
+ add_dependencies(geonkick redkite)
+ target_link_libraries(geonkick  geonkick_common api_standalone redkite)
 -target_link_libraries(geonkick "-lstdc++fs")
 +#target_link_libraries(geonkick "-lstdc++fs")
- target_link_libraries(geonkick "-lredkite -lX11 -ljack -lsndfile -lrt -lm -ldl -lpthread -lcairo")
+ target_link_libraries(geonkick "-lX11 -ljack -lsndfile -lrt -lm -ldl -lpthread -lcairo")
  
  install(TARGETS geonkick DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
