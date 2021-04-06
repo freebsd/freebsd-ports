@@ -1531,7 +1531,6 @@
     SUBDIR += modd
     SUBDIR += mongo-c-driver
     SUBDIR += mono-addins
-    SUBDIR += monodevelop
     SUBDIR += monotone
     SUBDIR += mpatrol
     SUBDIR += mph

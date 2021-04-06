@@ -235,8 +235,6 @@
     SUBDIR += thinkingrock
     SUBDIR += timewarrior
     SUBDIR += todo
-    SUBDIR += tomboy
-    SUBDIR += tomboy-plugin-reminder
     SUBDIR += toolboxkit
     SUBDIR += tpb
     SUBDIR += treeline

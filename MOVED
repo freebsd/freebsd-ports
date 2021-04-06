@@ -16198,3 +16198,15 @@ lang/Gofer||2021-03-28|Has expired: Old, unmaintained language
 net/libsignal|net/libsignal-protocol-c|2021-03-30|Rename to match upstream naming
 databases/redis4|databases/redis|2021-03-06|Has expired: End of life, please use modern version
 lang/ruby25|lang/ruby27|2021-04-06|Has expired: Use newer version, e.g. lang/ruby27 or above. Ruby 2.5 is in security maintenance phase and planned for EOL on March 31, 2021
+www/gtkhtml3|www/gtkhtml4|2021-04-06|Has expired: Obsolete by upstream, doesn't build with recent versions of pango
+deskutils/tomboy||2021-04-06|Has expired: Unmaintained and dead upstream, depends on deprecated libraries  such as www/gtkhtml3. Upstream project is now called tomboy-ng.
+deskutils/tomboy-plugin-reminder||2021-04-06|Removed, part of deskutils/tomboy
+devel/monodevelop||2021-04-06|Has expired: outdated, depends on deprecated library www/gtkhtml3
+sysutils/syslog-ng327|sysutils/syslog-ng|2021-04-06|Has expired: Not officially supported by upstream
+sysutils/logstash5|sysutils/logstash6|2021-04-06|Has expired: End of life since release of 7.3.0
+www/decss||2021-04-06|Has expired: Abandonware
+textproc/elasticsearch5|textproc/elasticsearch6|2021-04-06|Has expired: End of life since release of 7.3.0
+textproc/elasticsearch5-search-guard||2021-04-06|Has expired: textproc/elasticsearch5 is scheduled for removal
+multimedia/gnome-subtitles||2021-04-06|Has expired: outdated, depends on deprecated library www/gtkhtml3
+net/libproxy-mozjs||2021-04-06|Has expired: Uses EOL Python 2.7 via lang/spidermonkey52
+lang/spidermonkey52|lang/spidermonkey78|2021-04-06|Has expired: Uses Python 2.7 which is EOLed upstream
