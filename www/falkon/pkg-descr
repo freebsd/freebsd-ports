@@ -1,14 +1,19 @@
-Falkon was orignially known as Qupzila.
+Falkon is a new-ish and very fast QtWebEngine browser. It aims to be a
+lightweight web browser available on all major platforms. Falkon
+has all standard functions you expect from a web browser. It includes
+bookmarks, history (both also in sidebar) and tabs. Beyond that, you
+block ads with a builtin AdBlock plugin, block Flash content with
+Click2Flash and edit the local CA Certificates database with an SSL Manager.
 
-Falkon is a new and very fast QtWebEngine browser. It aims to be a lightweight
-web browser available through all major platforms. This project has been
-originally started only for educational purposes. But from its start, Falkon
-has grown into a feature-rich browser.
-
-Falkon has all standard functions you expect from a web browser. It includes
-bookmarks, history (both also in sidebar) and tabs. Above that, you can manage
-RSS feeds with an included RSS reader, block ads with a builtin AdBlock plugin,
-block Flash content with Click2Flash and edit the local CA Certificates
-database with an SSL Manager.
+Falkon has a wide range of features supported by KDE Frameworks
+and many integration points with KDE Plasma. A "-qtonly" flavor is
+available without these features:
+- spellchecking
+- word completion
+- crash reporting
+- progress notifications
+- KIO (virtual filesystem) support
+- wallet integration
+- content-sharing
 
 WWW: https://www.falkon.org/
