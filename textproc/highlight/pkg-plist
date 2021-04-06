@@ -1,8 +1,9 @@
 bin/highlight
 @sample %%ETCDIR%%/filetypes.conf.sample
+@sample %%ETCDIR%%/lsp.conf.sample
 man/man1/highlight.1.gz
 man/man5/filetypes.conf.5.gz
-%%DATADIR%%/langDefs/abap4.lang
+%%DATADIR%%/langDefs/abap.lang
 %%DATADIR%%/langDefs/abc.lang
 %%DATADIR%%/langDefs/abnf.lang
 %%DATADIR%%/langDefs/actionscript.lang
@@ -49,7 +50,7 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/clp.lang
 %%DATADIR%%/langDefs/cmake.lang
 %%DATADIR%%/langDefs/cobol.lang
-%%DATADIR%%/langDefs/coffee.lang
+%%DATADIR%%/langDefs/coffeescript.lang
 %%DATADIR%%/langDefs/coldfusion.lang
 %%DATADIR%%/langDefs/conf.lang
 %%DATADIR%%/langDefs/crk.lang
@@ -61,7 +62,7 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/dart.lang
 %%DATADIR%%/langDefs/delphi.lang
 %%DATADIR%%/langDefs/diff.lang
-%%DATADIR%%/langDefs/docker.lang
+%%DATADIR%%/langDefs/dockerfile.lang
 %%DATADIR%%/langDefs/dts.lang
 %%DATADIR%%/langDefs/dylan.lang
 %%DATADIR%%/langDefs/ebnf.lang
@@ -108,7 +109,7 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/io.lang
 %%DATADIR%%/langDefs/jasmin.lang
 %%DATADIR%%/langDefs/java.lang
-%%DATADIR%%/langDefs/js.lang
+%%DATADIR%%/langDefs/javascript.lang
 %%DATADIR%%/langDefs/js_regex.lang
 %%DATADIR%%/langDefs/json.lang
 %%DATADIR%%/langDefs/jsp.lang
@@ -127,7 +128,7 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/lotus.lang
 %%DATADIR%%/langDefs/lua.lang
 %%DATADIR%%/langDefs/luban.lang
-%%DATADIR%%/langDefs/make.lang
+%%DATADIR%%/langDefs/makefile.lang
 %%DATADIR%%/langDefs/maple.lang
 %%DATADIR%%/langDefs/markdown.lang
 %%DATADIR%%/langDefs/matlab.lang
@@ -175,10 +176,10 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/polygen.lang
 %%DATADIR%%/langDefs/pony.lang
 %%DATADIR%%/langDefs/pov.lang
+%%DATADIR%%/langDefs/powershell.lang
 %%DATADIR%%/langDefs/pro.lang
 %%DATADIR%%/langDefs/progress.lang
 %%DATADIR%%/langDefs/ps.lang
-%%DATADIR%%/langDefs/ps1.lang
 %%DATADIR%%/langDefs/psl.lang
 %%DATADIR%%/langDefs/pure.lang
 %%DATADIR%%/langDefs/purebasic.lang
@@ -195,9 +196,9 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/rnc.lang
 %%DATADIR%%/langDefs/rpg.lang
 %%DATADIR%%/langDefs/rpl.lang
-%%DATADIR%%/langDefs/rs.lang
 %%DATADIR%%/langDefs/rst.lang
 %%DATADIR%%/langDefs/ruby.lang
+%%DATADIR%%/langDefs/rust.lang
 %%DATADIR%%/langDefs/s.lang
 %%DATADIR%%/langDefs/sam.lang
 %%DATADIR%%/langDefs/sas.lang
@@ -205,7 +206,7 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/scala.lang
 %%DATADIR%%/langDefs/scilab.lang
 %%DATADIR%%/langDefs/scss.lang
-%%DATADIR%%/langDefs/sh.lang
+%%DATADIR%%/langDefs/shellscript.lang
 %%DATADIR%%/langDefs/slim.lang
 %%DATADIR%%/langDefs/small.lang
 %%DATADIR%%/langDefs/smalltalk.lang
@@ -226,11 +227,11 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/langDefs/terraform.lang
 %%DATADIR%%/langDefs/tex.lang
 %%DATADIR%%/langDefs/toml.lang
-%%DATADIR%%/langDefs/ts.lang
 %%DATADIR%%/langDefs/tsql.lang
 %%DATADIR%%/langDefs/tsx.lang
 %%DATADIR%%/langDefs/ttcn3.lang
 %%DATADIR%%/langDefs/txt.lang
+%%DATADIR%%/langDefs/typescript.lang
 %%DATADIR%%/langDefs/upc.lang
 %%DATADIR%%/langDefs/vala.lang
 %%DATADIR%%/langDefs/vb.lang
@@ -278,7 +279,6 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/plugins/outhtml_ie7_webctrl.lua
 %%DATADIR%%/plugins/outhtml_keyword_matcher.lua
 %%DATADIR%%/plugins/outhtml_ligature_fonts.lua
-%%DATADIR%%/plugins/outhtml_lsp_clangd.lua
 %%DATADIR%%/plugins/outhtml_modern_fonts.lua
 %%DATADIR%%/plugins/outhtml_parantheses_matcher.lua
 %%DATADIR%%/plugins/outhtml_tooltips.lua
@@ -384,7 +384,6 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/themes/base16/railscasts.theme
 %%DATADIR%%/themes/base16/rebecca.theme
 %%DATADIR%%/themes/base16/seti.theme
-%%DATADIR%%/themes/base16/shapeshifter.theme
 %%DATADIR%%/themes/base16/snazzy.theme
 %%DATADIR%%/themes/base16/solarflare.theme
 %%DATADIR%%/themes/base16/solarized-dark.theme
@@ -401,7 +400,6 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/themes/base16/unikitty-reversible.theme
 %%DATADIR%%/themes/base16/woodland.theme
 %%DATADIR%%/themes/base16/xcode-dusk.theme
-%%DATADIR%%/themes/base16/zenburn.theme
 %%DATADIR%%/themes/baycomb.theme
 %%DATADIR%%/themes/bclear.theme
 %%DATADIR%%/themes/biogoo.theme
@@ -447,7 +445,7 @@ man/man5/filetypes.conf.5.gz
 %%DATADIR%%/themes/edit-vim.theme
 %%DATADIR%%/themes/edit-xcode.theme
 %%DATADIR%%/themes/ekvoli.theme
-%%DATADIR%%/themes/fine_blue.theme
+%%DATADIR%%/themes/fineblue.theme
 %%DATADIR%%/themes/freya.theme
 %%DATADIR%%/themes/fruit.theme
 %%DATADIR%%/themes/github.theme

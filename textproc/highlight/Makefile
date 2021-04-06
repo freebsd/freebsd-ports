@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	highlight
-PORTVERSION=	3.60
+PORTVERSION=	4.0
 PORTEPOCH=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
@@ -27,8 +27,9 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@cd ${STAGEDIR}${PREFIX}/etc/highlight && ${MV} filetypes.conf \
-		filetypes.conf.sample
+.for cfg in filetypes lsp
+	@cd ${STAGEDIR}${ETCDIR} && ${MV} ${cfg}.conf ${cfg}.conf.sample
+.endfor
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/highlight
 
 .include <bsd.port.mk>
