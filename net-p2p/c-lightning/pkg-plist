@@ -5,6 +5,7 @@ bin/lightningd
 libexec/c-lightning/lightning_channeld
 libexec/c-lightning/lightning_closingd
 libexec/c-lightning/lightning_connectd
+libexec/c-lightning/lightning_dualopend
 libexec/c-lightning/lightning_gossipd
 libexec/c-lightning/lightning_hsmd
 libexec/c-lightning/lightning_onchaind
@@ -19,6 +20,7 @@ libexec/c-lightning/plugins/spenderp
 libexec/c-lightning/plugins/txprepare
 man/man1/lightning-cli.1.gz
 man/man5/lightningd-config.5.gz
+man/man7/lightning-addgossip.7.gz
 man/man7/lightning-autocleaninvoice.7.gz
 man/man7/lightning-check.7.gz
 man/man7/lightning-checkmessage.7.gz
@@ -32,6 +34,7 @@ man/man7/lightning-delexpiredinvoice.7.gz
 man/man7/lightning-delinvoice.7.gz
 man/man7/lightning-delpay.7.gz
 man/man7/lightning-dev-sendcustommsg.7.gz
+man/man7/lightning-disableoffer.7.gz
 man/man7/lightning-disconnect.7.gz
 man/man7/lightning-feerates.7.gz
 man/man7/lightning-fetchinvoice.7.gz
@@ -53,6 +56,7 @@ man/man7/lightning-listforwards.7.gz
 man/man7/lightning-listfunds.7.gz
 man/man7/lightning-listinvoices.7.gz
 man/man7/lightning-listnodes.7.gz
+man/man7/lightning-listoffers.7.gz
 man/man7/lightning-listpays.7.gz
 man/man7/lightning-listpeers.7.gz
 man/man7/lightning-listsendpays.7.gz
@@ -63,6 +67,8 @@ man/man7/lightning-newaddr.7.gz
 man/man7/lightning-notifications.7.gz
 man/man7/lightning-offer.7.gz
 man/man7/lightning-offerout.7.gz
+man/man7/lightning-openchannel_abort.7.gz
+man/man7/lightning-openchannel_bump.7.gz
 man/man7/lightning-openchannel_init.7.gz
 man/man7/lightning-openchannel_signed.7.gz
 man/man7/lightning-openchannel_update.7.gz
