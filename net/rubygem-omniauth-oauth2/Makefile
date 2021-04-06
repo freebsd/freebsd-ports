@@ -1,4 +1,4 @@
-# $FreeBSD: head/net/rubygem-omniauth-oauth2/Makefile 513707 2019-10-03 18:25:42Z sunpoet $
+# $FreeBSD$
 
 PORTNAME=	omniauth-oauth2
 PORTVERSION=	1.7.1

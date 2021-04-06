@@ -1,4 +1,4 @@
-# $FreeBSD: head/misc/rubygem-mimemagic/Makefile 534142 2020-05-06 05:14:30Z sunpoet $
+# $FreeBSD$
 
 PORTNAME=	mimemagic
 PORTVERSION=	0.3.10

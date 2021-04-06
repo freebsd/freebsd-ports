@@ -1,4 +1,4 @@
-# $FreeBSD: head/security/rubygem-bcrypt_pbkdf/Makefile 497946 2019-04-05 10:10:11Z mfechner $
+# $FreeBSD$
 
 PORTNAME=	bcrypt_pbkdf
 PORTVERSION=	1.1.0

@@ -1,5 +1,5 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
-# $FreeBSD: head/devel/rubygem-rugged/Makefile 540390 2020-06-25 13:31:12Z mfechner $
+# $FreeBSD$
 
 # Also update devel/libgit2, devel/libgit2-glib, devel/py-pygit2
 

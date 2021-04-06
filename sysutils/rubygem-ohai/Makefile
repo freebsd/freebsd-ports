@@ -1,5 +1,5 @@
 # Created by: Renaud Chaput <renchap@cocoa-x.com>
-# $FreeBSD: head/sysutils/rubygem-ohai/Makefile 559164 2020-12-24 13:57:33Z sunpoet $
+# $FreeBSD$
 
 PORTNAME=	ohai
 PORTVERSION=	16.10.7

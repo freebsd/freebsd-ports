@@ -1,4 +1,4 @@
-# $FreeBSD: head/mail/rubygem-gitlab-mail_room/Makefile 558919 2020-12-22 16:35:55Z mfechner $
+# $FreeBSD$
 
 PORTNAME=	gitlab-mail_room
 PORTVERSION=	0.0.9

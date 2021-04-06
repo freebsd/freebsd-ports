@@ -1,5 +1,5 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD: head/devel/rubygem-graphql/Makefile 551923 2020-10-10 12:24:15Z mfechner $
+# $FreeBSD$
 
 PORTNAME=	graphql
 PORTVERSION=	1.11.8

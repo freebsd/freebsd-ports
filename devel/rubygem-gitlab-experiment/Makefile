@@ -1,5 +1,5 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD: head/devel/rubygem-gitlab-experiment/Makefile 567038 2021-03-03 09:29:15Z mfechner $
+# $FreeBSD$
 
 PORTNAME=	gitlab-experiment
 PORTVERSION=	0.5.1

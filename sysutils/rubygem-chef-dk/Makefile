@@ -1,5 +1,5 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
-# $FreeBSD: head/sysutils/rubygem-chef-dk/Makefile 558729 2020-12-20 08:51:33Z mfechner $
+# $FreeBSD$
 
 PORTNAME=	chef-dk
 PORTVERSION=	4.13.3

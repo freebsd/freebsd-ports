@@ -1,5 +1,5 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD: head/devel/rubygem-gitlab-labkit/Makefile 567039 2021-03-03 09:29:51Z mfechner $
+# $FreeBSD$
 
 PORTNAME=	gitlab-labkit
 PORTVERSION=	0.16.2

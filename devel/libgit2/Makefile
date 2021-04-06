@@ -1,4 +1,4 @@
-# $FreeBSD: head/devel/libgit2/Makefile 539732 2020-06-20 11:49:08Z tobik $
+# $FreeBSD$
 
 # Also update devel/libgit2-glib, devel/rubygem-rugged, devel/py-pygit2
 # Make sure you bump revision of depending ports, if SONAME changes
