@@ -87,6 +87,7 @@ include/gegl-%%GEGL_VER%%/sc/sc-sample.h
 %%OPENEXR%%lib/gegl-%%GEGL_VER%%/exr-save.so
 %%FFMPEG%%lib/gegl-%%GEGL_VER%%/ff-load.so
 %%FFMPEG%%lib/gegl-%%GEGL_VER%%/ff-save.so
+lib/gegl-%%GEGL_VER%%/dropshadow2.json
 lib/gegl-%%GEGL_VER%%/gegl-common-cxx.so
 lib/gegl-%%GEGL_VER%%/gegl-common-gpl3.so
 lib/gegl-%%GEGL_VER%%/gegl-common.so
@@ -163,6 +164,7 @@ share/locale/ro/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/ru/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/sk/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/sl/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
+share/locale/sr@latin/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/sr/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/sv/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
 share/locale/tr/LC_MESSAGES/gegl-%%GEGL_VER%%.mo
