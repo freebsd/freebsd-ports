@@ -18,7 +18,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfreetype.so:print/freetype2 \
 		libsysinfo.so:devel/libsysinfo
 
-USES=		cmake compiler:c++11-lang gl localbase:ldflags pkgconfig xorg
+USES=		cmake compiler:c++11-lang dos2unix gl localbase:ldflags pkgconfig xorg
+DOS2UNIX_FILES=	modules/juce_core/juce_core.h
 USE_GL=		gl
 USE_XORG=	x11 xcomposite xcursor xext xinerama xorgproto xrandr
 
@@ -30,7 +31,7 @@ GH_TAGNAME=	f37e9a1
 CMAKE_ON=	JUCE_BUILD_EXTRAS
 
 CXXFLAGS+=	-I${LOCALBASE}/include/freetype2
-LDFLAGS+=	-pthread -lfreetype
+LDFLAGS+=	-pthread -lfreetype -lpng16
 LDFLAGS+=	-lGL # while building NetworkGraphicsDemo ld: error: undefined symbol: glXGetCurrentContext referenced by ld-temp.o
 LDFLAGS+=	-lasound # while building AudioPerformanceTest ld: error: undefined symbol: snd_seq_system_info_sizeof
 LDFLAGS+=	-lsysinfo # while building Projucer ld: error: undefined symbol: sysinfo
