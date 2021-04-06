@@ -1,8 +1,8 @@
 
 PORTNAME=	noise-suppression-for-voice
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.91-1
-DISTVERSIONSUFFIX=	-ge391a9b
+DISTVERSION=	0.91-2
+DISTVERSIONSUFFIX=	-g6466b34
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -20,8 +20,8 @@ GH_ACCOUNT=	werman
 
 CMAKE_OFF=	BUILD_VST_PLUGIN BUILD_LADSPA_PLUGIN # https://github.com/werman/noise-suppression-for-voice/issues/65
 
-PLIST_FILES=	lib/lv2/rnnoise.lv2/librnnoise_lv2.so \
-		lib/lv2/rnnoise.lv2/manifest.ttl \
-		lib/lv2/rnnoise.lv2/rnnoise.ttl
+PLIST_FILES=	lib/lv2/rnnoise.lv2/manifest.ttl \
+		lib/lv2/rnnoise.lv2/rnnoise.ttl \
+		lib/lv2/rnnoise.lv2/rnnoise_lv2.so
 
 .include <bsd.port.mk>
