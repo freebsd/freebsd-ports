@@ -1,50 +1,38 @@
---- configure.orig	2021-01-27 20:02:59 UTC
+--- configure.orig	2021-03-24 16:30:40 UTC
 +++ configure
-@@ -13223,6 +13223,11 @@ freebsd*)
-         RTL_ARCH=PowerPC_64
-         PLATFORMID=freebsd_powerpc64
-         ;;
-+    powerpc64le)
-+        CPUNAME=POWERPC64
-+        RTL_ARCH=PowerPC_64
-+        PLATFORMID=freebsd_powerpc64_le
-+        ;;
-     powerpc|powerpcspe)
-         CPUNAME=POWERPC
-         RTL_ARCH=PowerPC
-@@ -30505,12 +30510,12 @@ if test -n "$MDDS_CFLAGS"; then
+@@ -31720,12 +31720,12 @@ if test -n "$MDDS_CFLAGS"; then
      pkg_cv_MDDS_CFLAGS="$MDDS_CFLAGS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mdds-1.5 >= 1.5.0\""; } >&5
+-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mdds-1.5 >= 1.5.0\""; } >&5
 -  ($PKG_CONFIG --exists --print-errors "mdds-1.5 >= 1.5.0") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mdds-1.7 >= 1.7.0\""; } >&5
++    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mdds-1.7 >= 1.7.0\""; } >&5
 +  ($PKG_CONFIG --exists --print-errors "mdds-1.7 >= 1.7.0") 2>&5
    ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
 -  pkg_cv_MDDS_CFLAGS=`$PKG_CONFIG --cflags "mdds-1.5 >= 1.5.0" 2>/dev/null`
 +  pkg_cv_MDDS_CFLAGS=`$PKG_CONFIG --cflags "mdds-1.7 >= 1.7.0" 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -30522,12 +30527,12 @@ if test -n "$MDDS_LIBS"; then
+@@ -31737,12 +31737,12 @@ if test -n "$MDDS_LIBS"; then
      pkg_cv_MDDS_LIBS="$MDDS_LIBS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mdds-1.5 >= 1.5.0\""; } >&5
+-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mdds-1.5 >= 1.5.0\""; } >&5
 -  ($PKG_CONFIG --exists --print-errors "mdds-1.5 >= 1.5.0") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mdds-1.7 >= 1.7.0\""; } >&5
++    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"mdds-1.7 >= 1.7.0\""; } >&5
 +  ($PKG_CONFIG --exists --print-errors "mdds-1.7 >= 1.7.0") 2>&5
    ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
 -  pkg_cv_MDDS_LIBS=`$PKG_CONFIG --libs "mdds-1.5 >= 1.5.0" 2>/dev/null`
 +  pkg_cv_MDDS_LIBS=`$PKG_CONFIG --libs "mdds-1.7 >= 1.7.0" 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -30548,14 +30553,14 @@ else
+@@ -31763,14 +31763,14 @@ else
          _pkg_short_errors_supported=no
  fi
          if test $_pkg_short_errors_supported = yes; then
