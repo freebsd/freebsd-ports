@@ -1,6 +1,6 @@
 #! /bin/sh
 
-# $FreeBSD$
+# $FreeBSD: head/www/gitlab-ce/files/gitlab.in 565466 2021-02-16 22:22:27Z mfechner $
 
 ### BEGIN INIT INFO
 # Provides:          gitlab
