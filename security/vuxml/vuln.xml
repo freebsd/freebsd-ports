@@ -78,6 +78,55 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bddadaa4-9227-11eb-99c5-e09467587c17">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>89.0.4389.114</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2021/03/stable-channel-update-for-desktop_30.html">
+	  <p>This update contains 8 security fixes, including:</p>
+	  <ul>
+	    <li>[1181228] High CVE-2021-21194: Use after free in screen capture.
+	      Reported by Leecraso and Guang Gong of 360 Alpha Lab on
+	      2021-02-23</li>
+	    <li>[1182647] High CVE-2021-21195: Use after free in V8.
+	      Reported by Bohan Liu (@P4nda20371774) and Moon Liang of Tencent
+	      Security Xuanwu Lab on 2021-02-26</li>
+	    <li>[1175992] High CVE-2021-21196: Heap buffer overflow in
+	      TabStrip. Reported by Khalil Zhani on 2021-02-08</li>
+	    <li>[1173903] High CVE-2021-21197: Heap buffer overflow in
+	      TabStrip. Reported by Abdulrahman Alqabandi, Microsoft Browser
+	      Vulnerability Research on 2021-02-03</li>
+	    <li>[1184399] High CVE-2021-21198: Out of bounds read in IPC.
+	      Reported by Mark Brand of Google Project Zero on 2021-03-03</li>
+	    <li>[1179635] High CVE-2021-21199: Use Use after free in Aura.
+	      Reported by Weipeng Jiang (@Krace) from Codesafe Team of
+	      Legendsec at Qi'anxin Group and Evangelos Foutras</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-21194</cvename>
+      <cvename>CVE-2021-21195</cvename>
+      <cvename>CVE-2021-21196</cvename>
+      <cvename>CVE-2021-21197</cvename>
+      <cvename>CVE-2021-21198</cvename>
+      <cvename>CVE-2021-21199</cvename>
+      <url>https://chromereleases.googleblog.com/2021/03/stable-channel-update-for-desktop_30.html</url>
+    </references>
+    <dates>
+      <discovery>2021-03-31</discovery>
+      <entry>2021-03-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="56abf87b-96ad-11eb-a218-001b217b3468">
     <topic>Gitlab -- Multiple vulnerabilities</topic>
     <affects>
