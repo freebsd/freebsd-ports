@@ -6,7 +6,7 @@
 # that 'make fetchindex' sees it.
 #
 # When INDEX is broken, assemble the list of committers who touched files
-# on the most recent 'svn update', and put those committers "on the hook".
+# on the most recent 'git pull', and put those committers "on the hook".
 # These committers all stay on the hook until INDEX is buildable again.
 #
 # MAINTAINER= portmgr@FreeBSD.org
@@ -44,10 +44,7 @@ fi
 blame() {
   # Find out who is responsible for current version of file $1
 
-  # Fastest way to extract is from svn info
-  who=$(${SVN} info $1 2>/dev/null | grep '^Last Changed Author' | awk '{print $4}')
-
-  echo $who
+  git log --no-patch --max-count=1 --format='%ce' $1
 }
 
 indexfail() {
@@ -78,7 +75,7 @@ indexfail() {
 
     # Find out which committers are on the hook
 
-    commits=$(grep ^U ${PORTSDIR}/svn.log | grep -v INDEX | awk '{print $2}')
+    commits=$(${GIT} diff --name-only ${OLD_HEAD})
     for i in ${commits}; do
 	blame $i >> ${PORTSDIR}/hook
     done
@@ -89,8 +86,8 @@ indexfail() {
     tr -s '\n' ' ' < ${PORTSDIR}/hook
     echo
     echo 
-    echo "Most recent SVN update was:";
-    grep -v '/work$' svn.log | grep -v '^\?'
+    echo "Most recent Git update was:";
+    (IFS=""; echo ${commits})
   ) | mail -s "INDEX build failed for ${BRANCH}" ${REPORT_ADDRESS}
   exit 1
 }
@@ -131,10 +128,10 @@ OSVERSION14=$(awk '/^#define[[:blank:]]__FreeBSD_version/ {print $3}' < ${SRCDIR
 
 cd ${PORTSDIR}
 rm -f INDEX-11 INDEX-11.bz2 INDEX-12 INDEX-12.bz2 INDEX-13 INDEX-13.bz2 INDEX-14 INDEX-14.bz2
-(${SVN} up 2>1 ) > svn.log
-if grep -q ^C svn.log ; then
-  (echo "svn update failed with conflicts:";
-    grep ^C svn.log) | mail -s "Ports svn up failed" ${ERROR_ADDRESS}
+OLD_HEAD=$(${GIT} rev-parse HEAD)
+if ! ${GIT} pull --ff-only > git.log 2>&1 ; then
+  (echo "Git update failed with conflicts:";
+    cat git.log) | mail -s "Ports Git update failed" ${ERROR_ADDRESS}
     exit 1
 fi
 
@@ -148,7 +145,7 @@ for branch in 11.x 12.x 13.x 14.x; do
 
     echo "Building INDEX for ${branch} with OSVERSION=${OSVERSION}"
     cd ${PORTSDIR}
-    ((make index 2> index.err) > index.out) || indexfail ${branch}
+    ( (make index 2> index.err) > index.out) || indexfail ${branch}
     if [ -s index.err ]; then
         indexfail ${branch}
     fi
