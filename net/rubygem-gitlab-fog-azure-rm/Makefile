@@ -1,8 +1,8 @@
 # Created by: Matthias Fechner <mfechner@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/net/rubygem-gitlab-fog-azure-rm/Makefile 551751 2020-10-09 07:52:29Z mfechner $
 
 PORTNAME=	gitlab-fog-azure-rm
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
