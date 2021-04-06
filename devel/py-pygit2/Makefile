@@ -1,10 +1,11 @@
 # Created by: William Grzybowski <wg@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/devel/py-pygit2/Makefile 550428 2020-09-28 14:08:19Z mfechner $
 
 # Also update devel/libgit2, devel/libgit2-glib, devel/rubygem-rugged
 
 PORTNAME=	pygit2
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
