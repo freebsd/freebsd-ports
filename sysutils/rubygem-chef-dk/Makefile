@@ -1,8 +1,9 @@
 # Created by: Ryan Steinmetz <zi@FreeBSD.org>
-# $FreeBSD$
+# $FreeBSD: head/sysutils/rubygem-chef-dk/Makefile 558729 2020-12-20 08:51:33Z mfechner $
 
 PORTNAME=	chef-dk
 PORTVERSION=	4.13.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable25>=2.3.5<2.6:www/rubygem-addressable25 \
-		rubygem-chef>=15.0<16:sysutils/rubygem-chef \
+		rubygem-chef15>=15.0<16:sysutils/rubygem-chef15 \
 		rubygem-cookbook-omnifetch>=0.5<1:devel/rubygem-cookbook-omnifetch \
 		rubygem-diff-lcs>=1.0<2:textproc/rubygem-diff-lcs \
 		rubygem-ffi-yajl>=1.0<3.0:devel/rubygem-ffi-yajl \
