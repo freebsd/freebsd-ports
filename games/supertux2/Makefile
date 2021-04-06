@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	supertux
 DISTVERSIONPREFIX=	v

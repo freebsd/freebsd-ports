@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Selenium-Remote-Driver
 PORTVERSION=	1.37

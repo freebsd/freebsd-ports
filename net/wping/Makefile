@@ -1,5 +1,4 @@
 # Created by: Michael L. Hostbaek <mich@freebsdcluster.org>
-# $FreeBSD$
 
 PORTNAME=	wping
 PORTVERSION=	0.1a

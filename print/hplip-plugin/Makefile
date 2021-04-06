@@ -1,5 +1,4 @@
 # Created by: amistry@am-productions.biz
-# $FreeBSD$
 
 PORTNAME=	hplip-plugin
 PORTVERSION=	3.20.6

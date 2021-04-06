@@ -1,5 +1,4 @@
 # Created by: gebhart@secnetix.de
-# $FreeBSD$
 
 PORTNAME=	Scalar-Util-Numeric
 PORTVERSION=	0.40

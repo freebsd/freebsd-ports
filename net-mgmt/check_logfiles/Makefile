@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	check_logfiles
 PORTVERSION=	3.13

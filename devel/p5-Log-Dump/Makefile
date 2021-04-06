@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Log-Dump
 PORTVERSION=	0.14

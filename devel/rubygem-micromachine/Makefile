@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	micromachine
 PORTVERSION=	3.0.0

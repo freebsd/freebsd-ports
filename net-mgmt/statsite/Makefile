@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	statsite
 PORTVERSION=	0.8.0

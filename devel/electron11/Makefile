@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	electron
 DISTVERSIONPREFIX=	v

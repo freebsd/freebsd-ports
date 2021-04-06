@@ -1,5 +1,4 @@
 # Created by: Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libretto-config
 PORTVERSION=	1.0.b5

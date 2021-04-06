@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cp2k-data
 DISTVERSIONPREFIX=	v

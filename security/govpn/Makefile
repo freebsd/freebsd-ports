@@ -1,5 +1,4 @@
 # Created by: Sergey Matveev <stargrave@stargrave.org>
-# $FreeBSD$
 
 PORTNAME=	govpn
 DISTVERSION=	7.5

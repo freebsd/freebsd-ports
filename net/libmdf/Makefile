@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libmdf
 PORTVERSION=	1.0.21

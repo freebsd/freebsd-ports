@@ -1,5 +1,4 @@
 # Created by: jonny
-# $FreeBSD$
 
 PORTNAME=	xtoolwait
 PORTVERSION=	1.3

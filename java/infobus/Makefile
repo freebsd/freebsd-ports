@@ -1,5 +1,4 @@
 # Created by: Jose Marques
-# $FreeBSD$
 
 PORTNAME=	infobus
 PORTVERSION=	1.2

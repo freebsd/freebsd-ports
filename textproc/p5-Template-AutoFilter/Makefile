@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Template-AutoFilter
 PORTVERSION=	0.143050

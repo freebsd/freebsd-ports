@@ -1,5 +1,4 @@
 # Created by: Anton Yuzhaninov <citrin@citrin.ru>
-# $FreeBSD$
 
 PORTNAME=	Queue-Beanstalk
 PORTVERSION=	0.02

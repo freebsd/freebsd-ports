@@ -1,5 +1,4 @@
 # Created by: Alexander Botero-Lowry <alexbl@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	magic
 PORTVERSION=	5.39

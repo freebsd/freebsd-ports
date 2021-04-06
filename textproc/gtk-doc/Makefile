@@ -1,5 +1,4 @@
 # Created by: fenner
-# $FreeBSD$
 
 PORTNAME=	gtk-doc
 DISTVERSION=	1.33.2

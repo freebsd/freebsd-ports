@@ -1,5 +1,4 @@
 # Created by: dawe <daweonline@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Statistics-TTest
 PORTVERSION=	1.1.0

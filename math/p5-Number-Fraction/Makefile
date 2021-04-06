@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Number-Fraction
 PORTVERSION=	3.0.3

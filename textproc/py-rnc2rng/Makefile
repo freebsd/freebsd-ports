@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rnc2rng
 DISTVERSION=	2.6.5

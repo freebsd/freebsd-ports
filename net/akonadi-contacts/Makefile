@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	akonadi-contacts
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

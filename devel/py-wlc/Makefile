@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wlc
 PORTVERSION=	1.11

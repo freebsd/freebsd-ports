@@ -1,5 +1,4 @@
 # Created by: ptiJo
-# $FreeBSD$
 
 PORTNAME=	xfe
 PORTVERSION=	1.44

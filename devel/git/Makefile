@@ -1,5 +1,4 @@
 # Created by: Eric Anholt
-# $FreeBSD$
 
 PORTNAME=	git
 DISTVERSION=	2.31.1

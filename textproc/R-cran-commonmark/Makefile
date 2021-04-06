@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	commonmark
 DISTVERSION=	1.7

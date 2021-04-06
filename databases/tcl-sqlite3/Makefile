@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.34.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		sourcehansans
 PORTVERSION=		2.000

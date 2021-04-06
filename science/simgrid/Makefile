@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SimGrid
 DISTVERSION=	3.26

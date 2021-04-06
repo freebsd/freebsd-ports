@@ -1,5 +1,4 @@
 # Created by: Oleg Pudeyev <oleg@bsdpower.com>
-# $FreeBSD$
 
 PORTNAME=	Frozen-Flask
 PORTVERSION=	0.11

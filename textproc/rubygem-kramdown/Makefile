@@ -1,5 +1,4 @@
 # Created by: Steve Wills <swills@rubick>
-# $FreeBSD$
 
 PORTNAME=	kramdown
 PORTVERSION=	2.3.0

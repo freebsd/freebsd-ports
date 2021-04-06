@@ -1,5 +1,4 @@
 # Created by: Vasil Dimov <vd@datamax.bg>
-# $FreeBSD$
 
 PORTNAME=	portsearch
 PORTVERSION=	1.3.5

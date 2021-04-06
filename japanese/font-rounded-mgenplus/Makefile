@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rounded-mgenplus
 PORTVERSION=	20150602

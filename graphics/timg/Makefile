@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	timg
 PORTVERSION=	1.2.0

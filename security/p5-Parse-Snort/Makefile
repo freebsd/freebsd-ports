@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Parse-Snort
 PORTVERSION=	0.9

@@ -1,5 +1,4 @@
 # Created by: Brian Handy <handy@physics.montana.edu>
-# $FreeBSD$
 
 PORTNAME=	blackbox
 PORTVERSION=	0.70.1

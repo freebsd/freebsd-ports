@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	murmur-cli
 PORTVERSION=	0.0.0.20200528

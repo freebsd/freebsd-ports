@@ -1,5 +1,4 @@
 # Created by: Renaud Chaput <renchap@cocoa-x.com>
-# $FreeBSD$
 
 PORTNAME=	net-ssh-multi
 PORTVERSION=	1.2.1

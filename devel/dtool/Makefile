@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dtool
 DISTVERSIONPREFIX=	v

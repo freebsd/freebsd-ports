@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	guile-gnome-platform
 DISTVERSION=	2.16.5

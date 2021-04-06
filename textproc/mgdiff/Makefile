@@ -1,5 +1,4 @@
 # Created by: andreas@marvin.robin.de
-# $FreeBSD$
 
 PORTNAME=	mgdiff
 PORTVERSION=	1.0

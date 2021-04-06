@@ -1,5 +1,4 @@
 # Created by: Vladimir Perepelitsa <mons@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	ToolSet
 PORTVERSION=	1.00

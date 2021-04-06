@@ -1,5 +1,4 @@
 # Created by: Gabor Kovesdan
-# $FreeBSD$
 
 PORTNAME=	symbion-sslproxy
 PORTVERSION=	1.0.5

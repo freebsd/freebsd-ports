@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Color-Scheme
 PORTVERSION=	1.07

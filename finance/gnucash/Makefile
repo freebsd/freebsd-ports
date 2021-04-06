@@ -1,4 +1,3 @@
-# $FreeBSD$
 #   $MCom: ports/finance/gnucash/Makefile,v 1.26 2008/12/31 03:25:18 mezz Exp $
 
 PORTNAME=	gnucash

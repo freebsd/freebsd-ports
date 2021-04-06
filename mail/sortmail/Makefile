@@ -1,5 +1,4 @@
 # Created by: Lasse L. Johnsen (lasse@freebsdcluster.org)
-# $FreeBSD$
 
 PORTNAME=	sortmail
 PORTVERSION=	1.20

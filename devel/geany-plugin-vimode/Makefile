@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-plugin-vimode
 PORTVERSION=	${GEANY_VER}

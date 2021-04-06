@@ -1,5 +1,4 @@
 # Created by: jmz
-# $FreeBSD$
 
 PORTNAME=	ExtUtils-F77
 PORTVERSION=	1.24

@@ -1,5 +1,4 @@
 # Created by: se@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	dvbcut
 PORTVERSION=	0.7.3

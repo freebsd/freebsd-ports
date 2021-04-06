@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	timex_ecto
 PORTVERSION=	3.3.0

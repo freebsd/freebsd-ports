@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pssh
 PORTVERSION=	2.3.4

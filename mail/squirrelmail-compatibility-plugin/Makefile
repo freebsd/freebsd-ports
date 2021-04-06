@@ -1,5 +1,4 @@
 # Created by: Alexander Wittig <alexander@wittig.name>
-# $FreeBSD$
 
 PORTNAME=	compatibility
 PORTVERSION=	2.0.16

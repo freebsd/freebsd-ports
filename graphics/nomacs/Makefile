@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nomacs
 PORTVERSION=	3.16

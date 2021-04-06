@@ -1,5 +1,4 @@
 # Created by: ichiro@ichiro.org
-# $FreeBSD$
 
 CATEGORIES=	japanese
 

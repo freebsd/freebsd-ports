@@ -1,5 +1,4 @@
 # Created by: Timur I. Bakeyev <bat@cpan.org>
-# $FreeBSD$
 
 PORTNAME=	Relations
 PORTVERSION=	0.95

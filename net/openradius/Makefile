@@ -1,5 +1,4 @@
 # Created by: Adam Jette <jettea46@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	openradius
 PORTVERSION=	0.9.12c

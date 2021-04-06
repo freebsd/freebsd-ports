@@ -1,5 +1,4 @@
 # Created by: Pieter Danhieux <opr@bsdaemon.be>
-# $FreeBSD$
 
 PORTNAME=	autopsy
 PORTVERSION=	2.24

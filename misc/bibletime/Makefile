@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bibletime
 PORTVERSION=	2.11.2

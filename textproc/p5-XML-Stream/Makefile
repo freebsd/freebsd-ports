@@ -1,5 +1,4 @@
 # Created by: Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	XML-Stream
 DISTVERSION=	1.24

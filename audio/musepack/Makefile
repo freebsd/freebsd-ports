@@ -1,5 +1,4 @@
 # Created by: Stefan Ehmann <shoesoft@gmx.net>
-# $FreeBSD$
 
 PORTNAME=	musepack
 PORTVERSION=	2011.08.10

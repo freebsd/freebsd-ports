@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mesa
 DISTVERSION=	21.0-branchpoint-4158

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	asciidoctor
 PORTVERSION=	2.0.12

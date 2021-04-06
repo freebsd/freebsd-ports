@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gtkplatform
 DISTVERSION=	0.2.4-11

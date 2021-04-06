@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cpan-upload-http
 PORTVERSION=	2.4

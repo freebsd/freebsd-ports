@@ -1,5 +1,4 @@
 # Created by: Rodrigo Nicola Lombardo <rodnic@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	url_mount
 PORTVERSION=	0.2.1

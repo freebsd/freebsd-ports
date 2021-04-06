@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	socksify
 PORTVERSION=	1.7.1

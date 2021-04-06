@@ -1,5 +1,4 @@
 # Created by: Mosconi <mosconi.rmg@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-CA
 PORTVERSION=	0.24

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	signatures
 PORTVERSION=	0.14

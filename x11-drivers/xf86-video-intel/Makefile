@@ -1,5 +1,4 @@
 # Created by: lesi@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	xf86-video-intel
 DISTVERSION=	2.99.917-916

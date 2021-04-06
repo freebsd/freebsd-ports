@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	peek
 DISTVERSION=	1.5.1

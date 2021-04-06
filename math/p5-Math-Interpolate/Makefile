@@ -1,5 +1,4 @@
 # Created by: Mario S F Ferreira <lioux@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Math-Interpolate
 PORTVERSION=	1.06

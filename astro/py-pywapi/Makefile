@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pywapi
 PORTVERSION=	0.3.8

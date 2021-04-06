@@ -1,5 +1,4 @@
 # Created by: Michael Reifenberger (mike@Reifenberger.com)
-# $FreeBSD$
 
 PORTNAME=	pyla
 PORTVERSION=	1.1.7.1

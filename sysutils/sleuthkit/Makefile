@@ -1,5 +1,4 @@
 # Created by: Pieter Danhieux <opr@bsdaemon.be>
-# $FreeBSD$
 
 PORTNAME=	sleuthkit
 PORTVERSION=	4.7.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Font-TTF
 PORTVERSION=	1.06

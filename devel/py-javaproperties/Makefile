@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	javaproperties
 DISTVERSION=	0.5.2

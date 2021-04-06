@@ -1,5 +1,4 @@
 # Created by: Brian Handy <handy@physics.montana.edu>
-# $FreeBSD$
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.95.9

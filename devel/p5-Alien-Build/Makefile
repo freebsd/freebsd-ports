@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Alien-Build
 PORTVERSION=	2.38

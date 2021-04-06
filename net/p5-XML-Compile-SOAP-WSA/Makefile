@@ -1,5 +1,4 @@
 # Created by: Patrick Powell <papowell@astart.com>
-# $FreeBSD$
 
 PORTNAME=	XML-Compile-SOAP-WSA
 PORTVERSION=	0.12

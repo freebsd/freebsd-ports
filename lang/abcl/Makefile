@@ -1,5 +1,4 @@
 # Created by: Frank Fischer
-# $FreeBSD$
 
 PORTNAME=	abcl
 PORTVERSION=	1.7.0

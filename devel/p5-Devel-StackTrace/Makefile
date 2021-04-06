@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Devel-StackTrace
 PORTVERSION=	2.04

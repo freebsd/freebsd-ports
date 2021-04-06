@@ -1,5 +1,4 @@
 # Created by: Daniel Kahn Gillmor <dkg@fifthhorseman.net>
-# $FreeBSD$
 
 PORTNAME=	monkeysphere
 PORTVERSION=	0.42

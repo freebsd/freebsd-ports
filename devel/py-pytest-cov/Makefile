@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pytest-cov
 PORTVERSION=	2.9.0

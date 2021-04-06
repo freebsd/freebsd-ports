@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 JDK_ARCH?=	${ARCH:C/armv.*/arm/:S/powerpc/ppc/}
 JDK_PORT?=	openjdk8
 JDK_ROOT?=	bootstrap-${JDK_PORT}

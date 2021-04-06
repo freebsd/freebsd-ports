@@ -1,5 +1,4 @@
 # Created by: Richard Neese <r.neese@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	fusionpbx
 PORTVERSION=	4.4.1

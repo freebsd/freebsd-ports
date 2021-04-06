@@ -1,5 +1,4 @@
 # Created by: Yuri Pankov <yuri.pankov@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libunibreak
 PORTVERSION=	4.3

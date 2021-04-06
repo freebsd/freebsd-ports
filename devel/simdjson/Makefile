@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	simdjson
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	symbola
 PORTVERSION=	12

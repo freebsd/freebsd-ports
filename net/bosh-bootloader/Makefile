@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bosh-bootloader
 PORTVERSION=	7.6.0

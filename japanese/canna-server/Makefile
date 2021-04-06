@@ -1,5 +1,4 @@
 # Created by: hrs
-# $FreeBSD$
 
 PORTNAME=	canna
 PORTVERSION=	3.7p3

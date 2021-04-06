@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	color-widgets
 DISTVERSION=	2.2.0

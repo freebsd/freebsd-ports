@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Convert-Moji
 PORTVERSION=	0.10

@@ -1,5 +1,4 @@
 # Created by: Oleg Mamontov <oleg@mamontov.net>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Log-Dispatch
 PORTVERSION=	0.121

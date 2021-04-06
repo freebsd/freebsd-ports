@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ezjail
 PORTVERSION=	3.4.2

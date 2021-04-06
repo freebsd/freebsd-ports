@@ -1,5 +1,4 @@
 # Created by: Simeo Reig <reig.simeo@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wildfly12
 PORTVERSION=	12.0.0

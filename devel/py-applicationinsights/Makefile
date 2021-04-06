@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	applicationinsights
 PORTVERSION=	0.11.9

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pypugjs
 PORTVERSION=	5.9.8

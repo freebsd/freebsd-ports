@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	x11extras
 DISTVERSION=	${QT5_VERSION}

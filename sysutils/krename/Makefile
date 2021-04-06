@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	krename
 PORTVERSION=	5.0.1

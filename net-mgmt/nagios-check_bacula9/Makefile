@@ -1,5 +1,4 @@
 # Created by: Anders Troback
-# $FreeBSD$
 
 PORTNAME=	bacula
 CATEGORIES=	net-mgmt

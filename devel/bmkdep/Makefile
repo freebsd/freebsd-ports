@@ -1,5 +1,4 @@
 # Created by: trociny
-# $FreeBSD$
 
 PORTNAME=	bmkdep
 PORTVERSION=	20140112

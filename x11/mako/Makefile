@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mako
 DISTVERSIONPREFIX=	v

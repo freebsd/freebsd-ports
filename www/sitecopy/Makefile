@@ -1,5 +1,4 @@
 # Created by: nik
-# $FreeBSD$
 
 PORTNAME=	sitecopy
 PORTVERSION=	0.16.6

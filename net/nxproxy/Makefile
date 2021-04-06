@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	nxproxy
 DISTVERSION=	3.5.99.20

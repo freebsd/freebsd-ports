@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	textnote
 DISTVERSIONPREFIX=	v

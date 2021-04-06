@@ -1,5 +1,4 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD$
 #   $MCom: ports/net/avahi/Makefile,v 1.30 2011/03/13 17:23:19 kwm Exp $
 
 PORTNAME=	avahi

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	volpack
 PORTVERSION=	1.0b3

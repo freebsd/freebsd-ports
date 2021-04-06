@@ -1,5 +1,4 @@
 # Created by: Soren Dossing <sauber@netcom.com>
-# $FreeBSD$
 
 PORTNAME=	webstone
 PORTVERSION=	2.5

@@ -1,5 +1,4 @@
 # Created by: Marcin Cieslak <saper@SYSTEM.PL>
-# $FreeBSD$
 
 PORTNAME=	c64bdf
 PORTVERSION=	1.0

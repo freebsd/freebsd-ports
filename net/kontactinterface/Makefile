@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kontactinterface
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

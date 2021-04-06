@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-PPPort
 PORTVERSION=	3.62

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flask-restx
 PORTVERSION=	0.3.0

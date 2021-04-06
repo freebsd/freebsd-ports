@@ -1,5 +1,4 @@
 # Created by: Koichiro IWAO <meta@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	koruri
 PORTVERSION=	20180915

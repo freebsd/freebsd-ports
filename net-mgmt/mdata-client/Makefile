@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mdata-client
 PORTVERSION=	20151001

@@ -1,5 +1,4 @@
 # Created by: Zak Johnson <zakj@nox.cx>
-# $FreeBSD$
 
 PORTNAME=	sendok
 PORTVERSION=	0.9.2

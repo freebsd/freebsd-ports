@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ykpers
 PORTVERSION=	1.19.0

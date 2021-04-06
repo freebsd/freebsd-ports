@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yubikey-manager
 PORTVERSION=	4.0.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mffpy
 DISTVERSION=	0.6.2

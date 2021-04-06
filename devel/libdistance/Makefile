@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libdistance
 PORTVERSION=	0.2.2

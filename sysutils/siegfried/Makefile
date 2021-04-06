@@ -1,5 +1,4 @@
 # Created by: Steffen Fritz <steffen@fritz.wtf>
-# $FreeBSD$
 
 PORTNAME=	siegfried
 DISTVERSIONPREFIX=	v

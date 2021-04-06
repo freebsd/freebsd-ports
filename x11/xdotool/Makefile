@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xdotool
 DISTVERSIONPREFIX=	v

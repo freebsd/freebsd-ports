@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	npth
 PORTVERSION=	1.6

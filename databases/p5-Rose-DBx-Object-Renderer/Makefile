@@ -1,5 +1,4 @@
 # Created by: Wen Heping
-# $FreeBSD$
 
 PORTNAME=	Rose-DBx-Object-Renderer
 PORTVERSION=	0.77

@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 GNAT_SRCS= \
 	ali-util.adb \
 	ali-util.ads \

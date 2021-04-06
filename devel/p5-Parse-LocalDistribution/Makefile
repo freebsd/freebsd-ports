@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Parse-LocalDistribution
 PORTVERSION=	0.15

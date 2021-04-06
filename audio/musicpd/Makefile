@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	musicpd
 PORTVERSION=	0.22.6

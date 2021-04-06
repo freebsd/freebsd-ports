@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Time
 PORTVERSION=	0.04

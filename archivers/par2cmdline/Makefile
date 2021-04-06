@@ -1,5 +1,4 @@
 # Created by: Chris Larsen <darth@vader.dk>
-# $FreeBSD$
 
 PORTNAME=	par2cmdline
 PORTVERSION=	0.8.1

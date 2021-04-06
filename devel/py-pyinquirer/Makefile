@@ -1,5 +1,4 @@
 # Created by: Gilbert Morgan <gmm@tutanota.com>
-# $FreeBSD$
 
 PORTNAME=	PyInquirer
 PORTVERSION=	1.0.3

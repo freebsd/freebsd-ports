@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Bit-ShiftReg
 PORTVERSION=	2.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gumbo
 PORTVERSION=	0.10.1

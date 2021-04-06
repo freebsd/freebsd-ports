@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sunxi-tools
 PORTVERSION=	1.4.2

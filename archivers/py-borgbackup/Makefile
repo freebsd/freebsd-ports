@@ -1,5 +1,4 @@
 # Created by: José García Juanino <jjuanino@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	borgbackup
 DISTVERSION=	1.1.15

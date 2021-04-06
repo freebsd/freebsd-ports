@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyfda
 PORTVERSION=	0.1

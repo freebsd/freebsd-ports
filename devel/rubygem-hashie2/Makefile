@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hashie
 PORTVERSION=	2.1.2

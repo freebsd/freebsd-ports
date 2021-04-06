@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lato
 PORTVERSION=	g20180831

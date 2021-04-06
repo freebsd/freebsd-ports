@@ -1,5 +1,4 @@
 # Created by: krion
-# $FreeBSD$
 
 PORTNAME=	xbraitenberg
 PORTVERSION=	0.9

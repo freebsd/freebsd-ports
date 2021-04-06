@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tkeca
 PORTVERSION=	4.4.3

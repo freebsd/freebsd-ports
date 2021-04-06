@@ -1,5 +1,4 @@
 # Created by: pat
-# $FreeBSD$
 
 PORTNAME=	wmmaiload
 PORTVERSION=	2.3.0

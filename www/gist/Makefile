@@ -1,5 +1,4 @@
 # Created by: Ricky E. <codeblock@eighthbit.net>
-# $FreeBSD$
 
 PORTNAME=	gist
 PORTVERSION=	5.1.0

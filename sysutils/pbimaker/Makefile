@@ -1,5 +1,4 @@
 # Created by: Jesse
-# $FreeBSD$
 
 PORTNAME=	pbimaker
 PORTVERSION=	1.3

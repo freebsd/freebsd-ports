@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vampire
 DISTVERSION=	4.5.1

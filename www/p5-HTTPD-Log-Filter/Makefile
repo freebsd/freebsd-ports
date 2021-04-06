@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	HTTPD-Log-Filter
 PORTVERSION=	1.08

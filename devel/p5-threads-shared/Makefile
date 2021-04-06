@@ -1,5 +1,4 @@
 # Created by: Ruben van Staveren
-# $FreeBSD$
 
 PORTNAME=	threads-shared
 PORTVERSION=	1.59

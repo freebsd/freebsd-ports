@@ -1,5 +1,4 @@
 # Created by: Vladimir Chukharev
-# $FreeBSD$
 
 PORTNAME=	robotframework-seleniumlibrary
 PORTVERSION=	3.3.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-fceumm
 PORTVERSION=	0.20210214

@@ -1,5 +1,4 @@
 # Created by: Luke Jee <lukejee@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gvp
 PORTVERSION=	0.3.0

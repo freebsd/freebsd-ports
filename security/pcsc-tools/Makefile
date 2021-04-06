@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	pcsc-tools
 PORTVERSION=	1.5.7

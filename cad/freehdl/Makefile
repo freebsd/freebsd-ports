@@ -1,5 +1,4 @@
 # Created by: lon_kamikaze@gmx.de
-# $FreeBSD$
 
 PORTNAME=	freehdl
 PORTVERSION=	0.0.7

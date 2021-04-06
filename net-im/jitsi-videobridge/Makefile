@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jitsi
 DISTVERSION=	2.1-183

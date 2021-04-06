@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jackett
 PORTVERSION=	0.17.568

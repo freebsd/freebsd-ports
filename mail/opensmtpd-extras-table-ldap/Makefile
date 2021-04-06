@@ -1,5 +1,4 @@
 # Created by: fluffy
-# $FreeBSD$
 
 PKGNAMESUFFIX=		-table-ldap
 PORTREVISION=		0

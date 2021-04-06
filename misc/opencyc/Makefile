@@ -1,5 +1,4 @@
 # Created by: Alex Semenyaka <alex@rinet.ru>
-# $FreeBSD$
 
 PORTNAME=	opencyc
 PORTVERSION=	0.7.0

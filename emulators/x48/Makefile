@@ -1,5 +1,4 @@
 # Created by: Eric L. Hernes <erich@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	x48
 PORTVERSION=	0.6.4

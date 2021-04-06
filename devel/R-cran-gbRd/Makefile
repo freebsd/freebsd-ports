@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gbRd
 DISTVERSION=	0.4-11

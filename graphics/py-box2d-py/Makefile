@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	box2d-py
 DISTVERSION=	2.3.8

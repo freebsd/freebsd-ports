@@ -1,5 +1,4 @@
 # Created by: Bartek Rutkowski <robak@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mcollective-shell-client
 PORTVERSION=	0.0.2

@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz
-# $FreeBSD$
 
 PORTNAME=	check_hp_bladechassis
 PORTVERSION=	1.0.1

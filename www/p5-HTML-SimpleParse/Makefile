@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	HTML-SimpleParse
 PORTVERSION=	0.12

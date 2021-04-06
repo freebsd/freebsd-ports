@@ -1,5 +1,4 @@
 # Created by: Aaron Zauner <az_mail@gmx.at>
-# $FreeBSD$
 
 PORTNAME=	aop
 PORTVERSION=	0.6

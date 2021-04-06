@@ -1,5 +1,4 @@
 # Created by: gmc@sonologic.nl
-# $FreeBSD$
 
 PORTNAME=	Mail-SPF
 PORTVERSION=	2.9.0

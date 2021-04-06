@@ -1,5 +1,4 @@
 # Created by: Shane Ambler
-# $FreeBSD$
 
 PORTREVISION=	8
 CATEGORIES=	graphics multimedia python

@@ -1,5 +1,4 @@
 # Created by: rokaz
-# $FreeBSD$
 
 PORTNAME=	belier
 PORTVERSION=	1.2

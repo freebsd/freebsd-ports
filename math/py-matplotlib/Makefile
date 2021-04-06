@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	matplotlib
 PORTVERSION=	3.3.3

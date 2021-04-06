@@ -1,5 +1,4 @@
 # Created by: Vasil Dimov <vd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mysqlwsrep
 PORTVERSION?=	5.7.31

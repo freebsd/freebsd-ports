@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Exception-Class
 PORTVERSION=	1.44

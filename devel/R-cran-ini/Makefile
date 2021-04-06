@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ini
 DISTVERSION=	0.3.1

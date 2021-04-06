@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pywinrm
 PORTVERSION=	0.4.1

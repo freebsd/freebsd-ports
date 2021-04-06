@@ -1,5 +1,4 @@
 # Created by: Daisuke Aoyama <aoyama@peach.ne.jp>
-# $FreeBSD$
 
 PORTNAME=	istgt
 PORTVERSION=	20150713

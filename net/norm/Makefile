@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	norm
 PORTVERSION=	1.5r6

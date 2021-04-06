@@ -1,5 +1,4 @@
 # Created by: Jeffrey H. Johnson <CPE1704TKS@bellsouth.net>
-# $FreeBSD$
 
 PORTNAME=	slst
 PORTVERSION=	0.2

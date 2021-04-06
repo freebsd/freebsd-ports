@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MooseX-LazyRequire
 PORTVERSION=	0.11

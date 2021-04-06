@@ -1,5 +1,4 @@
 # Created by: Nik Clayton <nik@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	docproj
 PORTVERSION=	2.0

@@ -1,5 +1,4 @@
 # Created by: Ralf S. Engelschall
-# $FreeBSD$
 
 PORTNAME=	mm
 PORTVERSION=	1.4.2

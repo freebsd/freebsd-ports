@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		libsweep-lidar
 DISTVERSIONPREFIX=	v

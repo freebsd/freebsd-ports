@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	coverex
 PORTVERSION=	1.4.15

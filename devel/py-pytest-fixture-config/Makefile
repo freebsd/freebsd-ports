@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pytest-fixture-config
 PORTVERSION=	1.7.0

@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Mail-Audit
 PORTVERSION=	2.228

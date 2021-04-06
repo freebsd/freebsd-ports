@@ -1,5 +1,4 @@
 # Created by: Alexey Mikhailov <karma@ez.pereslavl.ru>
-# $FreeBSD$
 
 PORTNAME=	trayer
 PORTVERSION=	1.1.8

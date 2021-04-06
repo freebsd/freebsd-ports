@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tllist
 DISTVERSION=	1.0.5

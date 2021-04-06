@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	seqtk
 DISTVERSION=	1.2-8

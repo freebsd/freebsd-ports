@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libvmod-dynamic
 PORTVERSION=	20201026

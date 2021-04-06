@@ -1,5 +1,4 @@
 # Created by: Nobuhiro Yasutomi
-# $FreeBSD$
 
 PORTNAME=	emiclock
 PORTVERSION=	2.0.2

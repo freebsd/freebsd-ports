@@ -1,5 +1,4 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME?=	dotnet-runtime
 DISTVERSION?=	2.0.7

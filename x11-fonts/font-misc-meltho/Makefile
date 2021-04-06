@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	font-misc-meltho
 PORTVERSION=	1.0.3

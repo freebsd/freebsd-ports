@@ -1,5 +1,4 @@
 # Created by: Thierry Thomas <tthomas@mail.dotcom.fr>
-# $FreeBSD$
 
 PORTNAME=	newsx
 PORTVERSION=	1.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hpx
 DISTVERSION=	1.2.1

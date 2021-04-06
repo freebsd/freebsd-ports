@@ -1,5 +1,4 @@
 # Created by: petef
-# $FreeBSD$
 
 PORTNAME=	tdl
 PORTVERSION=	1.5.2

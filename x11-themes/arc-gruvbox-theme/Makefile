@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	arc-gruvbox
 DISTVERSION=	g20161220

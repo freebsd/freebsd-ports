@@ -1,5 +1,4 @@
 # Created by: Josh Gilliam <josh@quick.net>
-# $FreeBSD$
 
 PORTNAME=	nawk
 PORTVERSION=	20121220

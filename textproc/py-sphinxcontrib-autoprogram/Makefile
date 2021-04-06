@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sphinxcontrib-autoprogram
 PORTVERSION=	0.1.7

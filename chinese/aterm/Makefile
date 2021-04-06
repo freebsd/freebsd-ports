@@ -1,5 +1,4 @@
 # Created by: gugod@gugod.org
-# $FreeBSD$
 
 PORTNAME=	aterm
 PORTVERSION=	1.0.1

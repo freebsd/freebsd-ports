@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Data-Hexdumper
 PORTVERSION=	3.0001

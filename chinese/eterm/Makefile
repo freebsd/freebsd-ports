@@ -1,5 +1,4 @@
 # Created by: Michael C. Wu
-# $FreeBSD$
 
 CATEGORIES=	chinese
 

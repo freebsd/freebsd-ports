@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	polyphone
 DISTVERSION=	2.2.0.20210109

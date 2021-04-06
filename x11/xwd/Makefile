@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xwd
 PORTVERSION=	1.0.7

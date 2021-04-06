@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	FAudio
 DISTVERSION=	21.01

@@ -1,5 +1,4 @@
 # Created by: dikshie <dikshie@lapi.itb.ac.id>
-# $FreeBSD$
 
 PORTNAME=	pathrate
 PORTVERSION=	2.4.1

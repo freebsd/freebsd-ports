@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	imlib2-webp
 PORTVERSION=	20160601

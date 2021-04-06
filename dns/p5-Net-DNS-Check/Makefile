@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz <rpsfa@rit.edu>
-# $FreeBSD$
 
 PORTNAME=	Net-DNS-Check
 PORTVERSION=	0.45

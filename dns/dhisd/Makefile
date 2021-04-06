@@ -1,5 +1,4 @@
 # Created by: Bas Kruit <baskruit@bsltwr.dhis.org>
-# $FreeBSD$
 
 PORTNAME=	dhisd
 PORTVERSION=	5.5

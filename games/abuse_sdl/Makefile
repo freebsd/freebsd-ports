@@ -1,5 +1,4 @@
 # Created by: Dag-Erling C. Smørgrav <des@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	abuse_sdl
 PORTVERSION=	0.8

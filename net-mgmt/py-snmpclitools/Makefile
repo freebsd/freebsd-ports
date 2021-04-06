@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	snmpclitools
 PORTVERSION=	0.6.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	slop
 PORTVERSION=	7.5

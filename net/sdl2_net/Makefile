@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sdl2_net
 PORTVERSION=	2.0.1

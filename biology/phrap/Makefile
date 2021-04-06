@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phrap
 PORTVERSION=	1.090518

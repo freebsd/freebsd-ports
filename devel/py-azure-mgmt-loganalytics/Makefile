@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	azure-mgmt-loganalytics
 PORTVERSION=	8.0.0

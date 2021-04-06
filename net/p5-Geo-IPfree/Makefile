@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Geo-IPfree
 PORTVERSION=	1.151940

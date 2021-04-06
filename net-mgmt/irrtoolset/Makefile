@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	irrtoolset
 DISTVERSIONPREFIX=	release-

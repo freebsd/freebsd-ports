@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	curv
 DISTVERSION=	0.4-417

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyjwt
 PORTVERSION=	1.7.1

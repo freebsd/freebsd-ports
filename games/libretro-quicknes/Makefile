@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-quicknes
 PORTVERSION=	0.20210214

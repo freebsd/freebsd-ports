@@ -1,5 +1,4 @@
 # Created by: Boris Lytochkin <lytboris@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ipaddress
 PORTVERSION=	0.8.3

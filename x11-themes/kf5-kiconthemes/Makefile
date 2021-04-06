@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kiconthemes
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

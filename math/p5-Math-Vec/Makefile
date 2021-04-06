@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Math-Vec
 PORTVERSION=	1.01

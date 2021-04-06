@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Pod-Readme
 PORTVERSION=	1.2.3

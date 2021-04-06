@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=		\
 	DOCS		\

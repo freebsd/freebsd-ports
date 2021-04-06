@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cage
 DISTVERSIONPREFIX=	v

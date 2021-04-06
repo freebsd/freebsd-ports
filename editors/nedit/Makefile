@@ -1,5 +1,4 @@
 # Created by: Daniel Eischen <deischen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nedit
 PORTVERSION=	5.7

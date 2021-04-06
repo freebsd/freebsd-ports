@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ailment
 DISTVERSIONPREFIX=	v

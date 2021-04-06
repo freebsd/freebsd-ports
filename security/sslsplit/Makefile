@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sslsplit
 PORTVERSION=	0.5.5

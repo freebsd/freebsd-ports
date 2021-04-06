@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	clojure
 PORTVERSION=	1.10.1.447

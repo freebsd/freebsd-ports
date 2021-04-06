@@ -1,5 +1,4 @@
 # Created by: Matthew Dillon <dillon@backplane.com>
-# $FreeBSD$
 
 PORTNAME=	cpdup
 PORTVERSION=	1.22

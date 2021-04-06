@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	deepdiff
 DISTVERSION=	5.2.3

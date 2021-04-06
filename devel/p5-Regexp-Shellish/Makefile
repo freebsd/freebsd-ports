@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Regexp-Shellish
 PORTVERSION=	0.93

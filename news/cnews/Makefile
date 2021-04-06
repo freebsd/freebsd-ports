@@ -1,5 +1,4 @@
 # Created by: adam
-# $FreeBSD$
 
 PORTNAME=	cnews
 PORTVERSION=	cr.g

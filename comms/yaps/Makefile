@@ -1,5 +1,4 @@
 # Created by: se
-# $FreeBSD$
 
 PORTNAME=	yaps
 PORTVERSION=	0.96

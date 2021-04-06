@@ -1,5 +1,4 @@
 # Created by: David Barksdale <amatus@gnu.org>
-# $FreeBSD$
 
 PORTNAME=	libmicrohttpd
 DISTVERSION=	0.9.72

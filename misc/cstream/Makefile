@@ -1,5 +1,4 @@
 # Created by: cracauer@cons.org "Martin Cracauer"
-# $FreeBSD$
 
 PORTNAME=	cstream
 PORTVERSION=	3.1.1

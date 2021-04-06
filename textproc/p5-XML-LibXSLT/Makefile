@@ -1,5 +1,4 @@
 # Created by: Dom Mitchell <dom@happygiraffe.net>
-# $FreeBSD$
 
 PORTNAME=	XML-LibXSLT
 PORTVERSION=	1.99

@@ -1,5 +1,4 @@
 # Created by: knu@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	cvs2cl
 PORTVERSION=	2.73

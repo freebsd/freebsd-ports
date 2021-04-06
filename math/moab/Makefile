@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	moab
 DISTVERSION=	5.2.1

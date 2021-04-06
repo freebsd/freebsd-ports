@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-DNS-Match
 PORTVERSION=	0.05

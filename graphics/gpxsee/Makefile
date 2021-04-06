@@ -1,5 +1,4 @@
 # Created by: Nikolay Korotkiy <sikmir@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	gpxsee
 DISTVERSION=	7.32

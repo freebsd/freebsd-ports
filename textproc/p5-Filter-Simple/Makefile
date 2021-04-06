@@ -1,5 +1,4 @@
 # Created by: philip@p6m7g8.com
-# $FreeBSD$
 
 PORTNAME=	Filter-Simple
 PORTVERSION=	0.94

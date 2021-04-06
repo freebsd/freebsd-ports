@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	euclid-wm
 PORTVERSION=	0.4.3

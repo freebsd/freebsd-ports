@@ -1,5 +1,4 @@
 # Created by: Armin Pirkovitsch <armin@frozen-zone.org>
-# $FreeBSD$
 
 PORTNAME=	libg19
 PORTVERSION=	1.1.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	managesieve3
 PORTVERSION=	1.1

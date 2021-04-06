@@ -1,5 +1,4 @@
 # Created by: Mark Reidel <ports@mark.reidel.info>
-# $FreeBSD$
 
 PORTNAME=	gmpc
 PORTVERSION=	11.8.16

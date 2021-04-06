@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aws-sdk-core
 PORTVERSION=	2.11.632

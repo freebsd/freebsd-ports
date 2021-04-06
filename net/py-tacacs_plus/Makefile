@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tacacs_plus
 DISTVERSION=	2.6

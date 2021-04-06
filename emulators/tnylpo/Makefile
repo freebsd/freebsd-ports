@@ -1,5 +1,4 @@
 # Created by: Joerg Wunsch <joerg@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	tnylpo
 DISTVERSION=	1.1.2

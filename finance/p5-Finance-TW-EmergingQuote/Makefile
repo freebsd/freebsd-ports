@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Finance-TW-EmergingQuote
 PORTVERSION=	0.26

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdbusaddons
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

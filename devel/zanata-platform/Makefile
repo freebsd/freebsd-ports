@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zanata-platform
 PORTVERSION=	4.6.2

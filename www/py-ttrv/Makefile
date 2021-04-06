@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ttrv
 DISTVERSION=	1.27.3

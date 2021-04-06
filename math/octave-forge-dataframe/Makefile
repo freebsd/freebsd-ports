@@ -1,5 +1,4 @@
 # Created by: Stephen Montgomery-Smith <stephen@missouri.edu>
-# $FreeBSD$
 
 PORTNAME=	octave-forge-dataframe
 PORTVERSION=	1.2.0

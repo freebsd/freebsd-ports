@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pcaprub
 PORTVERSION=	0.13.0

@@ -1,5 +1,4 @@
 # Created by: Rui Lopes (<rgl ruilopes com>)
-# $FreeBSD$
 
 PORTNAME=	daemons
 PORTVERSION=	1.3.1

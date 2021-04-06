@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	termcolor
 DISTVERSIONPREFIX=	v

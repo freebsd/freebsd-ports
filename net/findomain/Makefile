@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	findomain
 DISTVERSION=	3.1.0

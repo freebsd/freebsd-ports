@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	crosti
 DISTVERSION=	1.14.0

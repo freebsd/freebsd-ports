@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sowon
 DISTVERSION=	g20201203

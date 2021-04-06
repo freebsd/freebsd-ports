@@ -1,5 +1,4 @@
 # Created by: Elvis Chiang <elvis@sslab.cs.ccu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	IO-All
 PORTVERSION=	0.87

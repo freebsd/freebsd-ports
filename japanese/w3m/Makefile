@@ -1,5 +1,4 @@
 # Created by: SADA Kenji <sada@FreeBSD.org>
-# $FreeBSD$
 
 CATEGORIES=	japanese
 

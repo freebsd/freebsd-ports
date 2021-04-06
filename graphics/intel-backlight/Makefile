@@ -1,5 +1,4 @@
 # Created by: Michael Gmelin <freebsd@grem.de>
-# $FreeBSD$
 
 PORTNAME=		intel-backlight
 DISTVERSION=		20200418

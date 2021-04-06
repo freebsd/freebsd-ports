@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	textql
 PORTVERSION=	g20200203

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	java-simple-serial-connector
 PORTVERSION=	2.8.0

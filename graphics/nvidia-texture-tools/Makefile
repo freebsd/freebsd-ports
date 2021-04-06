@@ -1,5 +1,4 @@
 # Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	nvidia-texture-tools
 PORTVERSION=	2.0.8.1 # needed to not bump PORTEPOCH; remove on next update

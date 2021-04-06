@@ -1,5 +1,4 @@
 # Created by: Eugeny Kuzakov <CoreDumped@CoreDumped.null.ru>
-# $FreeBSD$
 
 PORTNAME=	tircproxy
 PORTVERSION=	0.4.5

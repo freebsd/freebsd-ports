@@ -1,5 +1,4 @@
 # Created by: Yarema <yds@CoolRat.org>
-# $FreeBSD$
 
 PORTNAME=	mulberry
 DISTVERSION=	4_0_8

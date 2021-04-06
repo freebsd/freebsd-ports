@@ -1,5 +1,4 @@
 # Created by: Arne Lundberg <arlu@telia.com>
-# $FreeBSD$
 
 PORTNAME=	qadsl
 PORTVERSION=	1.3.3

@@ -1,5 +1,4 @@
 # Created by: Eugene Grosbein <eugen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	cpupdate
 DISTVERSION=	g20180513

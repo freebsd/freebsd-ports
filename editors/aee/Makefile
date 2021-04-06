@@ -1,5 +1,4 @@
 # Created by: Kelly Yancey <kbyanc@posi.net>
-# $FreeBSD$
 
 PORTNAME=	aee
 PORTVERSION=	2.2.21

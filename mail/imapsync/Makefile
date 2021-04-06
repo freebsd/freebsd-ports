@@ -1,5 +1,4 @@
 # Created by: Alex Deiter <tiamat@komi.mts.ru>
-# $FreeBSD$
 
 PORTNAME=	imapsync
 PORTVERSION=	1.977

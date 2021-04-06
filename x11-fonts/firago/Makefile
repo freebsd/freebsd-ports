@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	firago
 PORTREVISION=	1

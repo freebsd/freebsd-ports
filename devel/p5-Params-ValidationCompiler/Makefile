@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Params-ValidationCompiler
 PORTVERSION=	0.30

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	taskflow
 DISTVERSIONPREFIX=	v

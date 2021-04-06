@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kmediaplayer
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

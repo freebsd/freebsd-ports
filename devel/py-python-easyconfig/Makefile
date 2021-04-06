@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-easyconfig
 PORTVERSION=	0.1.7

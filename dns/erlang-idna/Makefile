@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	idna
 PORTVERSION=	5.1.2

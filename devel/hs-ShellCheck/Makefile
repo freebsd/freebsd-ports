@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ShellCheck
 DISTVERSION=	0.7.1

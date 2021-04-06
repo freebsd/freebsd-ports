@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Exporter-Tidy
 PORTVERSION=	0.08

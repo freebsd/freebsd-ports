@@ -1,5 +1,4 @@
 # Created by: Juha Erkkilä <erkkila@cc.jyu.fi>
-# $FreeBSD$
 
 PORTNAME=	etktab
 PORTVERSION=	3.2

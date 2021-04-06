@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Corona
 PORTVERSION=	0.1004

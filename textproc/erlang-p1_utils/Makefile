@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	p1_utils
 PORTVERSION=	1.0.12

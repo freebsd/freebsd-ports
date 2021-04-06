@@ -1,5 +1,4 @@
 # Created by: Eckart "Isegrim" Hofmann
-# $FreeBSD$
 
 PORTNAME=	xteddy
 PORTVERSION=	2.2

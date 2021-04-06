@@ -1,5 +1,4 @@
 # Created by: Victor Popov <v.a.popov@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Crypt-PBKDF2
 PORTVERSION=	0.161520

@@ -1,5 +1,4 @@
 # Created by: Bjorn Konig <bkoenig@alpha-tierchen.de>
-# $FreeBSD$
 
 PORTNAME=	linknx
 PORTVERSION=	0.0.1.32

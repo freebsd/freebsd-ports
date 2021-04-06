@@ -1,5 +1,4 @@
 # Created by: Oyvind Albrigtsen
-# $FreeBSD$
 
 PORTNAME=	fvwm-themes
 PORTVERSION=	0.7.0

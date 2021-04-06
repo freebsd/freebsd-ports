@@ -1,5 +1,4 @@
 # Created by: Martin Jackson <mhjacks@swbell.net>
-# $FreeBSD$
 
 PORTNAME=	pyasn1
 PORTVERSION=	0.4.7

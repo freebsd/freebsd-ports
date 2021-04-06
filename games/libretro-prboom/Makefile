@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libretro-prboom
 PORTVERSION=	0.20210214

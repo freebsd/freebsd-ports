@@ -1,5 +1,4 @@
 # Created by: Ayumi M <ayu@commun.jp>
-# $FreeBSD$
 
 PORTNAME=	murmur
 PORTVERSION=	1.3.3

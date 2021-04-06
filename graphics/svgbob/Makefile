@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	svgbob
 DISTVERSION=	g20190412

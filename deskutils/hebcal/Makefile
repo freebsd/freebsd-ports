@@ -1,5 +1,4 @@
 # Created by: Edwin Groothuis
-# $FreeBSD$
 
 PORTNAME=	hebcal
 PORTVERSION=	4.13

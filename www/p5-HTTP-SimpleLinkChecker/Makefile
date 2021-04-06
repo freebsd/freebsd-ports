@@ -1,5 +1,4 @@
 # Created by: Aaron Dalton <aaron@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	HTTP-SimpleLinkChecker
 PORTVERSION=	1.167

@@ -1,5 +1,4 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Mojolicious-Plugin-HamlRenderer
 PORTVERSION=	2.100000

@@ -1,5 +1,4 @@
 # Created by: Alexander Yerenkow <yerenkow@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wildfly90
 PORTVERSION=	9.0.2

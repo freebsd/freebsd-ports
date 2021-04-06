@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wizardkit
 PORTVERSION=	0.1

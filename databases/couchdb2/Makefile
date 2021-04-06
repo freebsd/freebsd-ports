@@ -1,5 +1,4 @@
 # Created by: Dave Cottlehuber <dch@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	couchdb2
 DISTVERSION=	2.3.1

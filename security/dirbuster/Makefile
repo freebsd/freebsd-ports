@@ -1,5 +1,4 @@
 # Created by: Niels Heinen
-# $FreeBSD$
 
 PORTNAME=	dirbuster
 PORTVERSION=	1.0r1

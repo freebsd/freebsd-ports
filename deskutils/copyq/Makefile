@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	copyq
 DISTVERSIONPREFIX=	v

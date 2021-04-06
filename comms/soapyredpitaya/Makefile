@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SoapyRedPitaya
 DISTVERSIONPREFIX=	soapy-redpitaya-

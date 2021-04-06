@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	activerecord-deprecated_finders
 PORTVERSION=	1.0.4

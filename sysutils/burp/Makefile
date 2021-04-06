@@ -1,5 +1,4 @@
 # Created by: Loic Pefferkorn <loic-freebsd@loicp.eu>
-# $FreeBSD$
 
 PORTNAME=	burp
 PORTVERSION=	2.2.18

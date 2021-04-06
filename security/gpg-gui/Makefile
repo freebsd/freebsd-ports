@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gpg-gui
 DISTVERSIONPREFIX=	v

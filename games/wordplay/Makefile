@@ -1,5 +1,4 @@
 # Created by: Ben Smithurst <ben@scientia.demon.co.uk>
-# $FreeBSD$
 
 PORTNAME=	wordplay
 PORTVERSION=	7.22

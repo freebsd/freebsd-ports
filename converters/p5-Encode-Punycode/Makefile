@@ -1,5 +1,4 @@
 # Created by: Timur Bakeyev <timur@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Encode-Punycode
 PORTVERSION=	1.002

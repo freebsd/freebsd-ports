@@ -1,5 +1,4 @@
 # Created by: Kimo <kimor79@yahoo.com>
-# $FreeBSD$
 
 PORTNAME=	mysql2
 PORTVERSION=	0.4.10

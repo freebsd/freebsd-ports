@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Any-Moose
 PORTVERSION=	0.26

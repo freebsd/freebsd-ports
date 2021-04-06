@@ -1,5 +1,4 @@
 # Created by: ntarmos@ceid.upatras.gr
-# $FreeBSD$
 
 PORTNAME=	libhid
 PORTVERSION=	0.2.16

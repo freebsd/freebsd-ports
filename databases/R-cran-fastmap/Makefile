@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fastmap
 PORTVERSION=	1.1.0

@@ -1,5 +1,4 @@
 # Created by: Vany <ivan@serezhkin.com>
-# $FreeBSD$
 
 PORTNAME=	Perl-Critic-Bangs
 PORTVERSION=	1.08

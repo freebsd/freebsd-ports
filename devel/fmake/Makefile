@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fmake
 PORTVERSION=	r250982

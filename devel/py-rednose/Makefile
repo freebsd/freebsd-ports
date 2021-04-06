@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rednose
 PORTVERSION=	1.3.0

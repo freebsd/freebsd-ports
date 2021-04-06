@@ -1,5 +1,4 @@
 # Created by: kwm@rainbow-runner.nl
-# $FreeBSD$
 
 PORTNAME=	libtremor
 PORTVERSION=	1.2.1.s20180316

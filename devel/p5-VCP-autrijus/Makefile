@@ -1,5 +1,4 @@
 # Created by: autrijus@autrijus.org
-# $FreeBSD$
 
 PORTNAME=	VCP
 PORTVERSION=	0.9.20050110

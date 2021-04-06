@@ -1,5 +1,4 @@
 # Created by: Jordan Hubbard <jkh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	spegla
 PORTVERSION=	1.1p5

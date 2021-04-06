@@ -1,5 +1,4 @@
 # Created by: Evgeni Dimitrov <evgeni.dimitrov@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	lemonbar
 DISTVERSIONPREFIX=v

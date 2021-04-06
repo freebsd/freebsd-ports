@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	micropython
 PORTVERSION=	1.5.1

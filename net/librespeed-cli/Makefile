@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librespeed-cli
 DISTVERSIONPREFIX=	v

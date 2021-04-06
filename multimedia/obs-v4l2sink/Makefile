@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	obs-v4l2sink
 DISTVERSION=	0.1.0-12

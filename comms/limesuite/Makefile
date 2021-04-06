@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	limesuite
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libtsm
 DISTVERSION=	3

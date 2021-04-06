@@ -1,5 +1,4 @@
 # Created by: Chuck Robey <chuckr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mosml
 PORTVERSION=	2.10.1

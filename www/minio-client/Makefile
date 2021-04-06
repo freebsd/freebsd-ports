@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	minio-client
 PORTVERSION=	${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}

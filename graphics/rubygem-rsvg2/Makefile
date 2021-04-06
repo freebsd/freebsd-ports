@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rsvg2
 PORTVERSION=	3.4.3

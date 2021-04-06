@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Parse-PMFile
 PORTVERSION=	0.36

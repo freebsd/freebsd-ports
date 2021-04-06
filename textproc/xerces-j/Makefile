@@ -1,5 +1,4 @@
 # Created by: Marcin Cieslak
-# $FreeBSD$
 
 PORTNAME=	xerces-j
 PORTVERSION=	2.12.0

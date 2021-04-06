@@ -1,5 +1,4 @@
 # Created by: Nobutaka Mantani <nobutaka@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Mac-PropertyList
 PORTVERSION=	1.502

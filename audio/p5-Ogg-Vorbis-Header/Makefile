@@ -1,5 +1,4 @@
 # Created by: Simon Barner <barner@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	Ogg-Vorbis-Header
 PORTVERSION=	0.11

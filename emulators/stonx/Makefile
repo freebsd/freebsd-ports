@@ -1,5 +1,4 @@
 # Created by: Tobias Reifenberger <tr@freebsd.mayn.de>
-# $FreeBSD$
 
 PORTNAME=	stonx
 PORTVERSION=	0.6.7e.6

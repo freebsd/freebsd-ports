@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grape-path-helpers
 PORTVERSION=	1.6.1

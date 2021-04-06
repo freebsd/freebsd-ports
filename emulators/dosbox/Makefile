@@ -1,5 +1,4 @@
 # Created by: Tom Carrick <knyghtmare@knyghtmare.com>
-# $FreeBSD$
 
 PORTNAME=	dosbox
 DISTVERSION=	0.74-3

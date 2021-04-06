@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	erlware_commons
 PORTVERSION=	1.1.0

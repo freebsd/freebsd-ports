@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phpgroupware
 PORTVERSION=	0.9.16.017

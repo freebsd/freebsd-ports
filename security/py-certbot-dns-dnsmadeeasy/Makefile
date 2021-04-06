@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	certbot-dns-dnsmadeeasy
 PORTVERSION=	${ACME_VERSION}

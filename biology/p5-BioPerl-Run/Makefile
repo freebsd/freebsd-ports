@@ -1,5 +1,4 @@
 # Created by: Mauricio Herrera Cuadra <mauricio@arareko.net>
-# $FreeBSD$
 
 PORTNAME=	BioPerl-Run
 PORTVERSION=	1.007003

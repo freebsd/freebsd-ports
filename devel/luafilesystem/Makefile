@@ -1,5 +1,4 @@
 # Created by: Kelly Hays <kelly.hays@jkhfamily.org>
-# $FreeBSD$
 
 PORTNAME=	luafilesystem
 DISTVERSIONPREFIX=	v

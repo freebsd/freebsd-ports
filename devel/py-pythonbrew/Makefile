@@ -1,5 +1,4 @@
 # Created by: Lung-Pin Chang <changlp@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	pythonbrew
 PORTVERSION=	1.3

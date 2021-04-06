@@ -1,5 +1,4 @@
 # Created by: Pedro F. Giffuni <giffunip@asme.org>
-# $FreeBSD$
 
 PORTNAME=	xcircuit
 PORTVERSION=	3.10.29

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	elementpath
 DISTVERSION=	2.1.4

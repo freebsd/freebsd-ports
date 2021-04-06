@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vdbench
 PORTVERSION=	5.04.07

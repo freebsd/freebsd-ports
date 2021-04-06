@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Net_Geo
 PORTVERSION=	1.0.5

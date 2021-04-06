@@ -1,5 +1,4 @@
 # Created by: Jimmy Olgeni <olgeni@uli.it>
-# $FreeBSD$
 
 PORTNAME=	blender
 DISTVERSION=	2.91.0

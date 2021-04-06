@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xgamma
 PORTVERSION=	1.0.6

@@ -1,5 +1,4 @@
 # Created by: Ralf S. Engelschall <rse@engelschall.com>
-# $FreeBSD$
 
 PORTNAME=	iselect
 PORTVERSION=	1.4.0

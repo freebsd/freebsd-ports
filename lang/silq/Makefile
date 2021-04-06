@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	silq
 PORTVERSION=	20202003

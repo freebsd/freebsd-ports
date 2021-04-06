@@ -1,5 +1,4 @@
 # Created by: Phillip Neumann <pneumann@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	fsharp
 PORTVERSION=	10.2.1

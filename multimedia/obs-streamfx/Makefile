@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	obs-streamfx
 DISTVERSION=	0.9.3

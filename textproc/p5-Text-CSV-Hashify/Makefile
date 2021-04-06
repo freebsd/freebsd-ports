@@ -1,5 +1,4 @@
 # Created by: tj@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Text-CSV-Hashify
 PORTVERSION=	0.11

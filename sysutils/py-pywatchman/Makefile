@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pywatchman
 PORTVERSION=	4.9.0

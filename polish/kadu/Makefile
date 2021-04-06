@@ -1,5 +1,4 @@
 # Created by: Jacek Pelka <jacek@combit.com.pl>
-# $FreeBSD$
 
 PORTNAME=	kadu
 PORTVERSION=	4.3

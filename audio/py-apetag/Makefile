@@ -1,5 +1,4 @@
 # Created by: Chao Shin <quakelee@cn.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	apetag
 PORTVERSION=	1.2

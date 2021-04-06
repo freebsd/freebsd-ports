@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Astro-FITS-Header
 PORTVERSION=	3.08

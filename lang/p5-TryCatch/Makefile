@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	TryCatch
 PORTVERSION=	1.003002

@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	gnu-cobol
 PORTVERSION=	3.1.2

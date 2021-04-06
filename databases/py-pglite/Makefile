@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pglite
 DISTVERSION=	1.0.13

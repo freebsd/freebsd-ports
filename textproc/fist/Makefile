@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fist
 PORTVERSION=	4.0

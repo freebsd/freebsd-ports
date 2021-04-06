@@ -1,5 +1,4 @@
 # Created by: Jim Pirzyk pirzyk@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Unix-Mknod
 PORTVERSION=	0.04

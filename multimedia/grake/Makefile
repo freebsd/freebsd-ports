@@ -1,5 +1,4 @@
 # Created by: Pierre Guinoiseau <geekounet@poildetroll.net>
-# $FreeBSD$
 
 PORTNAME=	grake
 PORTVERSION=	0.1.0

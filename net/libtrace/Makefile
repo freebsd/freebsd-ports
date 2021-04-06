@@ -1,5 +1,4 @@
 # Created by: Matt Peterson <matt@peterson.org>
-# $FreeBSD$
 
 PORTNAME=	libtrace
 PORTVERSION=	3.0.19

@@ -1,5 +1,4 @@
 # Created by: Chuck Robey <chuckr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	a2ps
 PORTVERSION=	4.13b

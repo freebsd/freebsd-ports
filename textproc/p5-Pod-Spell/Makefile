@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Pod-Spell
 PORTVERSION=	1.20

@@ -1,5 +1,4 @@
 # Created by: giffunip@asme.org
-# $FreeBSD$
 
 PORTNAME=	rayshade
 PORTVERSION=	4.0.6

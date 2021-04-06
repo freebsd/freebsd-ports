@@ -1,5 +1,4 @@
 # Created by: Manuel Creach <manuel.creach@icloud.com>
-# $FreeBSD$
 
 PORTNAME=	afpfs-ng
 PORTVERSION=	0.8.1

@@ -1,5 +1,4 @@
 # Created by: Kristaps Kulis <kristaps.kulis@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	django-haystack
 PORTVERSION=	2.8.1

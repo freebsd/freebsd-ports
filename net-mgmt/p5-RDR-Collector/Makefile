@@ -1,5 +1,4 @@
 # Created by: Eugene Grosbein <eugen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	RDR-Collector
 PORTVERSION=	1.0000

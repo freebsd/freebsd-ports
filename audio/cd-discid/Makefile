@@ -1,5 +1,4 @@
 # Created by: Munish Chopra <mchopra@engmail.uwaterloo.ca>
-# $FreeBSD$
 
 PORTNAME=	cd-discid
 PORTVERSION=	0.9

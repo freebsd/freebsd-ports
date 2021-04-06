@@ -1,5 +1,4 @@
 # Created by: Leo Vandewoestijne <freebsd@dns.company>
-# $FreeBSD$
 
 PORTNAME=	dsc
 PORTVERSION=	2.11.1

@@ -1,5 +1,4 @@
 # Created by: kbyanc
-# $FreeBSD$
 
 PORTNAME=	nqc
 PORTVERSION=	3.1.r6

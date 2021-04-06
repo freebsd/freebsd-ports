@@ -1,5 +1,4 @@
 # Created by: Seth Kingsley <sethk@osd.bsdi.com>
-# $FreeBSD$
 
 PORTNAME=	kdrill
 PORTVERSION=	6.5

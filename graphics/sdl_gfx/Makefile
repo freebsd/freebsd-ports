@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	sdl_gfx
 PORTVERSION=	2.0.26

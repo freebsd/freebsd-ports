@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mod_gnutls
 PORTVERSION=	0.8.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libu2f-host
 PORTVERSION=	1.1.10

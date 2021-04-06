@@ -1,5 +1,4 @@
 # Created by: Bruce M. Simpson
-# $FreeBSD$
 
 PORTNAME=	libstdc++_stldoc_4.2.2
 PORTVERSION=	20071101

@@ -1,5 +1,4 @@
 # Created by: Jonathan Liu <Net147@hotmail.com>
-# $FreeBSD$
 
 PORTNAME=	nitrogen
 DISTVERSION=	1.6.1

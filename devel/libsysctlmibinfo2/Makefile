@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libsysctlmibinfo2
 DISTVERSION=	2.0.1

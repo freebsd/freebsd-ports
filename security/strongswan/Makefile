@@ -1,5 +1,4 @@
 # Created by: Riaan Kruger <riaank@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	strongswan
 DISTVERSION=	5.9.2

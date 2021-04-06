@@ -1,5 +1,4 @@
 # Created by: Bartek Rutkowski <r@robakdesign.com>
-# $FreeBSD$
 
 PORTNAME=	pgtop
 PORTVERSION=	0.11

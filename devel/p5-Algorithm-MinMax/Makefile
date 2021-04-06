@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Algorithm-MinMax
 PORTVERSION=	0.01

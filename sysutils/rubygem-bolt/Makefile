@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bolt
 PORTVERSION=	3.4.0

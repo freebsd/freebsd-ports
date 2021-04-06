@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lv2proc
 DISTVERSION=	0.5.1

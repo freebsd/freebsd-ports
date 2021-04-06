@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v

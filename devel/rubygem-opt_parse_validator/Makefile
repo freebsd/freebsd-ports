@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	opt_parse_validator
 PORTVERSION=	1.9.3

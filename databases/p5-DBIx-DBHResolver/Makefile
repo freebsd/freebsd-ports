@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DBIx-DBHResolver
 PORTVERSION=	0.17

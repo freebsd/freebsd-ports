@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	configkit
 PORTVERSION=	0.4.20080902

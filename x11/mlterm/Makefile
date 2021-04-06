@@ -1,5 +1,4 @@
 # Created by: MANTANI Nobutaka <nobutaka@nobutaka.com>
-# $FreeBSD$
 
 PORTNAME=	mlterm
 PORTVERSION=	3.9.1

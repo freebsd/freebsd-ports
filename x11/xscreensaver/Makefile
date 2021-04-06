@@ -1,5 +1,4 @@
 # Created by: dom@myrddin.demon.co.uk
-# $FreeBSD$
 
 PORTNAME=	xscreensaver
 PORTVERSION=	5.44

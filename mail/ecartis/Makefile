@@ -1,5 +1,4 @@
 # Created by: Trish Lynch <trish@bsdunix.net>
-# $FreeBSD$
 
 PORTNAME=	ecartis
 DISTVERSION=	1.0.0-snap20060813

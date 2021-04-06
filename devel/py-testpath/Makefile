@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	testpath
 PORTVERSION=	0.4.4

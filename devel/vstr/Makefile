@@ -1,5 +1,4 @@
 # Created by: Robert Schlotterbeck <robert@rs.tarrant.tx.us>
-# $FreeBSD$
 
 PORTNAME=	vstr
 PORTVERSION=	1.0.15

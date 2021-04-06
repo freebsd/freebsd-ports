@@ -1,5 +1,4 @@
 # Created by: tobez
-# $FreeBSD$
 
 PORTNAME=	Object-Realize-Later
 PORTVERSION=	0.21

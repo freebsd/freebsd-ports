@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	tap-plugins
 PORTVERSION=	0.7.2

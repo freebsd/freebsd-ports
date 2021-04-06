@@ -1,5 +1,4 @@
 # Created by: Michael Ranner <michael@ranner.eu>
-# $FreeBSD$
 
 PORTNAME=	duply
 PORTVERSION=	2.1

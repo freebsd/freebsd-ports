@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Tie-IxHash
 PORTVERSION=	1.23

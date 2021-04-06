@@ -1,5 +1,4 @@
 # Created by: Mike Bristow <mike@urgle.com>
-# $FreeBSD$
 
 PORTNAME=	XML-Descent
 PORTVERSION=	1.04

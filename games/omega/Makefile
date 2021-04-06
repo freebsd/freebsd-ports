@@ -1,5 +1,4 @@
 # Created by: Andrey Zakhvatov <andy@icc.surw.chel.su>
-# $FreeBSD$
 
 PORTNAME=	omega
 PORTVERSION=	0.90.4

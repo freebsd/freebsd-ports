@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Net-FTPServer
 PORTVERSION=	1.125

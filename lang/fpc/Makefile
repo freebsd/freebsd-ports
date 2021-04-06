@@ -1,5 +1,4 @@
 # Created by: John Merryweather Cooper et al
-# $FreeBSD$
 
 PORTNAME=	fpc
 PORTVERSION=	3.2.0

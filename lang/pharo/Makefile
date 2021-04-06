@@ -1,5 +1,4 @@
 # Created by: mutoh@openedu.org
-# $FreeBSD$
 
 PORTNAME=	pharo
 DISTVERSION=	1.4

@@ -1,5 +1,4 @@
 # Created by: Kay Lehmann
-# $FreeBSD$
 
 PORTNAME=	lgrind
 PORTVERSION=	3.67

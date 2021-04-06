@@ -1,5 +1,4 @@
 # Created by: andrew@ugh.net.au
-# $FreeBSD$
 
 PORTNAME=	BIND-Conf_Parser
 PORTVERSION=	0.95

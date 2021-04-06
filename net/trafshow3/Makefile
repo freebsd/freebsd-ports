@@ -1,5 +1,4 @@
 # Created by: igor@zynaps.ru
-# $FreeBSD$
 
 PORTNAME=	trafshow
 PORTVERSION=	3.1

@@ -1,5 +1,4 @@
 # Created by: Carey Jones <mcj@acquiesce.org>
-# $FreeBSD$
 
 PORTNAME=	slrn
 PORTVERSION=	1.0.3a

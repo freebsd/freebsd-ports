@@ -1,5 +1,4 @@
 # Created by: wosch@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	checkbot
 PORTVERSION=	1.80

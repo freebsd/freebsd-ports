@@ -1,5 +1,4 @@
 # Created by: Martin Matuska <martin@matuska.org>
-# $FreeBSD$
 
 PORTNAME=	luasql
 PORTVERSION=	2.6.0

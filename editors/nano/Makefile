@@ -1,5 +1,4 @@
 # Created by: Philippe Lefebvre <nemesis@balistik.net>
-# $FreeBSD$
 
 PORTNAME=	nano
 DISTVERSION=	5.5

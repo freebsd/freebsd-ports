@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ros-catkin_pkg
 DISTVERSION=	0.4.14

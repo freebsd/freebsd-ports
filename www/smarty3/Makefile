@@ -1,5 +1,4 @@
 # Created by: Michael Fausten <ports@michael-fausten.de>
-# $FreeBSD$
 
 PORTNAME=	smarty
 DISTVERSIONPREFIX=	v

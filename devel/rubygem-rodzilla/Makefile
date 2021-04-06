@@ -1,5 +1,4 @@
 # Created by: Jin-Sih, Lin <linpct@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	rodzilla
 PORTVERSION=	0.3.6

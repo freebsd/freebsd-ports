@@ -1,5 +1,4 @@
 # Created by: Jim Pirzyk <pirzyk@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Sys-Filesystem
 PORTVERSION=	1.401

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	collective.checkdocs
 PORTVERSION=	0.2

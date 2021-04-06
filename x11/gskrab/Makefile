@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gskrab
 PORTVERSION=	0.0.1

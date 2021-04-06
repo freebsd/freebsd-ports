@@ -1,5 +1,4 @@
 # Created by: demon@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	gource
 PORTVERSION=	0.51

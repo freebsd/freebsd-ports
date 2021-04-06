@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jgraphx
 PORTVERSION=	4.2.2

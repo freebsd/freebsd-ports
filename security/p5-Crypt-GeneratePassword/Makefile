@@ -1,5 +1,4 @@
 # Created by: andrew@scoop.co.nz
-# $FreeBSD$
 
 PORTNAME=	Crypt-GeneratePassword
 PORTVERSION=	0.05

@@ -1,5 +1,4 @@
 # Created by: smace
-# $FreeBSD$
 
 PORTNAME=	trn
 PORTVERSION=	4.0.b77

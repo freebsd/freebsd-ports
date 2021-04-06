@@ -1,5 +1,4 @@
 # Created by: xenophon+fbsdports@irtnog.org
-# $FreeBSD$
 
 PORTNAME=	yapps2
 PORTVERSION=	2.1.1

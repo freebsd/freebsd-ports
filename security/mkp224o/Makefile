@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mkp224o
 DISTVERSIONPREFIX=	v

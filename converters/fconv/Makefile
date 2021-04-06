@@ -1,5 +1,4 @@
 # Created by: Chris Costello <chris@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	fconv
 PORTVERSION=	1.1

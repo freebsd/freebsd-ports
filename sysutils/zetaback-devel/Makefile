@@ -1,5 +1,4 @@
 # Created by: Cy Schubert <cy@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	zetaback
 DISTVERSION=	${ZETABACK_COMMIT_DATE}

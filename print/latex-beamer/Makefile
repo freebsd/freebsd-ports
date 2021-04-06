@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	latex-beamer
 PORTVERSION=	3.57

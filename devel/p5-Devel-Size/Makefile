@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-Size
 PORTVERSION=	0.83

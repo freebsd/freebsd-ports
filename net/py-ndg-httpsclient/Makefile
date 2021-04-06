@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	ndg-httpsclient
 PORTVERSION=	0.5.1

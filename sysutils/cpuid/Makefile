@@ -1,5 +1,4 @@
 # Created by: uffe@uffe.org
-# $FreeBSD$
 
 PORTNAME=	cpuid
 DISTVERSION=	20200127

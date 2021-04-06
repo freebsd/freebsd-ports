@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTREVISION=	1
 PKGNAMEPREFIX=	riscv64-

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pdftotext
 PORTVERSION=	2.1.5

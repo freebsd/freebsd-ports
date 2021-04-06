@@ -1,5 +1,4 @@
 # Created by: Anes Muhametov <anes@anes.su>
-# $FreeBSD$
 
 PORTNAME=	Declare-Constraints-Simple
 PORTVERSION=	0.03

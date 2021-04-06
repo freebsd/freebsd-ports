@@ -1,5 +1,4 @@
 # Created by: Dominic Mitchell <dom@happygiraffe.net>
-# $FreeBSD$
 
 PORTNAME=	libvorbis
 PORTVERSION=	0.05

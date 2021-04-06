@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	affiche
 PORTVERSION=	0.6.0

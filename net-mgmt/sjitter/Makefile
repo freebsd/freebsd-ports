@@ -1,5 +1,4 @@
 # Created by: babak@farrokhi.net
-# $FreeBSD$
 
 PORTNAME=	sjitter
 PORTVERSION=	0.18.1b

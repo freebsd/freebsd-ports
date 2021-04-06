@@ -1,5 +1,4 @@
 # Created by: Denise H. G. <darcsis@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	wavegain
 PORTVERSION=	1.2.8

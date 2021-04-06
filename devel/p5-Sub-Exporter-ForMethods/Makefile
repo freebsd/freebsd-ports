@@ -1,5 +1,4 @@
 # Created by: Wen Heping <wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Sub-Exporter-ForMethods
 PORTVERSION=	0.100052

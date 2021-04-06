@@ -1,5 +1,4 @@
 # Created by: Kay Lehmann
-# $FreeBSD$
 
 PORTNAME=	lineakd
 PORTVERSION=	0.9

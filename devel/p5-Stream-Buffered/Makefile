@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Stream-Buffered
 PORTVERSION=	0.03

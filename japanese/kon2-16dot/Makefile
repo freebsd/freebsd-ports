@@ -1,5 +1,4 @@
 # Created by: Makoto Matsushita <matusita@jp.freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	kon2
 PORTVERSION=	0.3

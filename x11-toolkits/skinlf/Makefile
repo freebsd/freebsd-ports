@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	skinlf
 PORTVERSION=	6.7

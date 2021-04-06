@@ -1,5 +1,4 @@
 # Created by: michaelnottebrock@gmx.net
-# $FreeBSD$
 
 PORTNAME=	dirmngr
 PORTVERSION=	1.1.0

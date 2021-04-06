@@ -1,5 +1,4 @@
 # Created by: Vladimir Kondratiev <wulf@cicgroup.ru>
-# $FreeBSD$
 
 PORTNAME=	cataclysm-dda
 DISTVERSION=	0.E

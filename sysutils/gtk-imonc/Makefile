@@ -1,5 +1,4 @@
 # Created by: Steffen Vogelreuter
-# $FreeBSD$
 
 PORTNAME=	gtk-imonc
 PORTVERSION=	0.6.4.1

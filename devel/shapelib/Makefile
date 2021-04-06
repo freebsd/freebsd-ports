@@ -1,5 +1,4 @@
 # Created by: Randall Hopper <aa8vb@nc.rr.com>
-# $FreeBSD$
 
 PORTNAME=	shapelib
 PORTVERSION=	1.5.0

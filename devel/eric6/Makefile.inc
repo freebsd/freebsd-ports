@@ -1,5 +1,4 @@
 # Created by: Boris Samorodov <bsam@FreeBSD.org>
-# $FreeBSD$
 #
 # This is a set of Makefile macros which allow to build the
 # localized language packages for devel/eric6:

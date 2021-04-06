@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xwindiff
 PORTVERSION=	1.1.6

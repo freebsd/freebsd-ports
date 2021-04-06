@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Pod-Coverage-Moose
 PORTVERSION=	0.07

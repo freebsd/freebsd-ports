@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zabbix52
 CATEGORIES=	net-mgmt

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oneshot
 DISTVERSIONPREFIX=	v

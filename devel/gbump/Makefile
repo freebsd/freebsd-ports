@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gbump
 PORTVERSION=	1.0.1

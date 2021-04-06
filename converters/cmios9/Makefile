@@ -1,5 +1,4 @@
 # Created by: M.Indlekofer@gmx.de
-# $FreeBSD$
 
 PORTNAME=	cmios9
 PORTVERSION=	2.1

@@ -1,5 +1,4 @@
 # Created by: jkoshy
-# $FreeBSD$
 
 PORTNAME=	cbrowser
 PORTVERSION=	0.8

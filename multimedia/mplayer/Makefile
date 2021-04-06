@@ -1,5 +1,4 @@
 # Created by: Thomas E. Zander with help from Vladimir Kushnir
-# $FreeBSD$
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}.${MPLAYER_SNAPSHOT_DATE:S/-//g}

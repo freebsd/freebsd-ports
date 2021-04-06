@@ -1,5 +1,4 @@
 # Created by: Yoshiro MIHIRA <sanpei@sanpei.org>
-# $FreeBSD$
 
 PORTNAME=	cdif
 PORTVERSION=	2.14.20170401

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	scdoc
 DISTVERSION=	1.11.1

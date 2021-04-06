@@ -1,5 +1,4 @@
 # Created by: Yi-Jheng Lin <yzlin@cs.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	py
 PORTVERSION=	1.9.0

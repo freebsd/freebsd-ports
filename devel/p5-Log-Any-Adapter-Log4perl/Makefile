@@ -1,5 +1,4 @@
 # Created by: Evgeniy Kosov <evgeniy@kosov.su>
-# $FreeBSD$
 
 PORTNAME=	Log-Any-Adapter-Log4perl
 PORTVERSION=	0.09

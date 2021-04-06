@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grpcurl
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Dom Mitchell <dom@happygiraffe.net>
-# $FreeBSD$
 
 PORTNAME=	ucspi-tcp
 PORTVERSION=	0.88

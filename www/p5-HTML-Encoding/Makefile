@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	HTML-Encoding
 PORTVERSION=	0.61

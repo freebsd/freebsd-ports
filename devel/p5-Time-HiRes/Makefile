@@ -1,5 +1,4 @@
 # Created by: Stephen J. Roznowski <sjr@home.net>
-# $FreeBSD$
 
 PORTNAME=	Time-HiRes
 PORTVERSION=	1.9764

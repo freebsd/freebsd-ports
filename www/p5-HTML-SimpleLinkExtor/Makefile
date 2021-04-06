@@ -1,5 +1,4 @@
 # Created by: Andrey Chernov <ache@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	HTML-SimpleLinkExtor
 PORTVERSION=	1.273

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bsmtrace
 PORTVERSION=	3.1

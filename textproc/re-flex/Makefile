@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	re-flex
 PORTVERSION=	3.0.2

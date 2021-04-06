@@ -1,5 +1,4 @@
 # Created by: Simeon Simeonov <sgs@pichove.org>
-# $FreeBSD$
 
 PORTNAME=	pyotp2289
 PORTVERSION=	1.0.0

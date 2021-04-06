@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	numpy-stl
 DISTVERSION=	2.11.3

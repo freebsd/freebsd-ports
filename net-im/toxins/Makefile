@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	toxins
 DISTVERSION=	g20180217

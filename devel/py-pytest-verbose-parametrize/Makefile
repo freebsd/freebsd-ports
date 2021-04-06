@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pytest-verbose-parametrize
 PORTVERSION=	1.7.0

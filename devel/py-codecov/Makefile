@@ -1,5 +1,4 @@
 # Created by: Carlos J. Puga Medina <cpm@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	codecov
 PORTVERSION=	2.1.11

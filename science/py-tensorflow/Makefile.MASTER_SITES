@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 DISTFILES+=	v0.18.tar.gz:mkldnn \
 		daf381e8535a1f1f1b8a75966a74e7cca63dee89.tar.gz:abseil \
 		a0d250e79c79.tar.gz:eigen \

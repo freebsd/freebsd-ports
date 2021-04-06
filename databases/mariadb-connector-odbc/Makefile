@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mariadb
 PORTVERSION=	3.1.11

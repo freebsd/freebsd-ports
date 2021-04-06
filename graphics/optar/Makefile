@@ -1,5 +1,4 @@
 # Created by: antonakis@gmail.com
-# $FreeBSD$
 
 PORTNAME=	optar
 PORTVERSION=	2015.02.09

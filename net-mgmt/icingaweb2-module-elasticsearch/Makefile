@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	icingaweb2-module-elasticsearch
 DISTVERSIONPREFIX=	v

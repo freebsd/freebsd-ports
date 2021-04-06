@@ -1,5 +1,4 @@
 # Created by: dbader@eece.unm.edu
-# $FreeBSD$
 
 PORTNAME=	clustalw
 PORTVERSION=	2.1

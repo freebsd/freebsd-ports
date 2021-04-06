@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	swappy
 DISTVERSIONPREFIX=	v

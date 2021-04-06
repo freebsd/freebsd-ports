@@ -1,5 +1,4 @@
 # Created by: Andrew Thompson <thompsa@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pwcview
 PORTVERSION=	1.4.1

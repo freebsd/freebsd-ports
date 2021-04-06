@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kde-dev-scripts
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

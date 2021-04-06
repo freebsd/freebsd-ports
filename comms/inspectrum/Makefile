@@ -1,5 +1,4 @@
 # Created by: <mr@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	inspectrum
 PORTVERSION=	g20191102

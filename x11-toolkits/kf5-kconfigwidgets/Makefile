@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kconfigwidgets
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

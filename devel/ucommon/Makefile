@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	ucommon
 PORTVERSION=	7.0.0

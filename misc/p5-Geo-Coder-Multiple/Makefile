@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Geo-Coder-Multiple
 PORTVERSION=	0.60

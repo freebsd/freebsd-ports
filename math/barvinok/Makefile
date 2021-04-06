@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	barvinok
 DISTVERSION=	0.41.4

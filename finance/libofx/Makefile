@@ -1,5 +1,4 @@
 # Created by: Glenn Johnson <glennpj@charter.net>
-# $FreeBSD$
 
 PORTNAME=	libofx
 PORTVERSION=	0.10.1

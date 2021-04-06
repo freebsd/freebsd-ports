@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sdump
 PORTVERSION=	2015.01.16

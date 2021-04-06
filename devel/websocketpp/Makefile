@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	websocketpp
 PORTVERSION=	0.8.2

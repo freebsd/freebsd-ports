@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bosh-gen
 PORTVERSION=	0.101.2

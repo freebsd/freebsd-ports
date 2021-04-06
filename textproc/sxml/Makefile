@@ -1,5 +1,4 @@
 # Created by: Kouichi ABE (WALL) <kouichi@mysticwall.com>
-# $FreeBSD$
 
 PORTNAME=	sxml
 PORTVERSION=	1.0.7

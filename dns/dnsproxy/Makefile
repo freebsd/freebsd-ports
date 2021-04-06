@@ -1,5 +1,4 @@
 # Created by: Clement Laforet <clement@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	dnsproxy
 PORTVERSION=	1.17

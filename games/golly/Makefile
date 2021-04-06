@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	golly
 PORTVERSION=	3.3

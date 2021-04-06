@@ -1,5 +1,4 @@
 # Created by: Tony Shadwick <tshadwick@oss-solutions.com>
-# $FreeBSD$
 
 PORTNAME=	htop
 DISTVERSION=	3.0.4

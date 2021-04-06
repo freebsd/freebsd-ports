@@ -1,5 +1,4 @@
 # Created by: Mike Fisher <Michael_Fisher@URMC.Rochester.edu>
-# $FreeBSD$
 
 PORTNAME=	Data-Page-Pageset
 PORTVERSION=	1.02

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openage
 DISTVERSIONPREFIX=	v

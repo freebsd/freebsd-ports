@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	rdkit
 DISTVERSIONPREFIX=	Release_

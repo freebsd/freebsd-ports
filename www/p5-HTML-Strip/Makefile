@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	HTML-Strip
 PORTVERSION=	2.10

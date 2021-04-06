@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Dist-Metadata
 PORTVERSION=	0.926

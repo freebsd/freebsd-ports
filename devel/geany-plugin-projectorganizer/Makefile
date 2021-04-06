@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	geany-plugin-projectorganizer
 PORTVERSION=	${GEANY_VER}

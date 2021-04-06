@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xray-core
 DISTVERSIONPREFIX=	v

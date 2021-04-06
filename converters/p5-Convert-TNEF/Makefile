@@ -1,5 +1,4 @@
 # Created by: roman@xpert.com
-# $FreeBSD$
 
 PORTNAME=	Convert-TNEF
 PORTVERSION=	0.18

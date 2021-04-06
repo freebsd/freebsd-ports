@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gitleaks
 DISTVERSIONPREFIX=	v

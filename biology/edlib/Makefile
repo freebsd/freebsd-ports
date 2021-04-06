@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	edlib
 DISTVERSION=	1.2.6.20201202

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	CGI-Emulate-PSGI
 PORTVERSION=	0.20

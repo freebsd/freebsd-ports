@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dua-cli
 DISTVERSIONPREFIX=	v

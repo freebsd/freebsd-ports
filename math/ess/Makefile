@@ -1,5 +1,4 @@
 # Created by: Christopher J. Ruwe
-# $FreeBSD$
 
 PORTNAME=	ess
 DISTVERSION=	18.10.2

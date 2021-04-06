@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	FreeBSD-ports
 PORTVERSION=	0.0.9

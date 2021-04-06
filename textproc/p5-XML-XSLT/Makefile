@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	XML-XSLT
 PORTVERSION=	0.48

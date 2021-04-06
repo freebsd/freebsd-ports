@@ -1,5 +1,4 @@
 # Created by: Gaspar Chilingarov <nm@web.am>
-# $FreeBSD$
 
 PORTNAME=	socketbind
 PORTVERSION=	1

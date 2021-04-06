@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	castxml
 PORTVERSION=	g20181115

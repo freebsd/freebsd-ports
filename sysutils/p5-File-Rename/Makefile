@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	File-Rename
 PORTVERSION=	1.10

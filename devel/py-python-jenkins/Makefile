@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-jenkins
 PORTVERSION=	1.7.0

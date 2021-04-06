@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mkvalidator
 PORTVERSION=	0.5.0

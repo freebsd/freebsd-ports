@@ -1,5 +1,4 @@
 # Created by: Kostya Lukin <lukin@okbmei.msk.su>
-# $FreeBSD$
 
 PORTNAME=	adns
 PORTVERSION=	1.6.0

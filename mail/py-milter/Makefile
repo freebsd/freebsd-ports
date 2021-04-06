@@ -1,5 +1,4 @@
 # Created by: Vsevolod Lobko <seva@sevasoft.kiev.ua>
-# $FreeBSD$
 
 PORTNAME=	milter
 PORTVERSION=	1.0.4

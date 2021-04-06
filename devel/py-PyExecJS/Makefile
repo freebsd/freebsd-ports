@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	PyExecJS
 DISTVERSION=	1.5.1

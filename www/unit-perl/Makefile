@@ -1,5 +1,4 @@
 # Created by: Sergey Osokin <osa@FreeBSD.org>
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-${UNIT_MODNAME}
 

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bzrtp
 PORTVERSION=	1.0.6

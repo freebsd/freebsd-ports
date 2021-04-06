@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bemenu
 DISTVERSION=	0.5.0

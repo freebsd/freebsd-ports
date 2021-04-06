@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	String-Util
 PORTVERSION=	1.31

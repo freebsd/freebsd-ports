@@ -1,5 +1,4 @@
 # Created by: Philip M. Gollucci <pgollucci@p6m7g8.com>
-# $FreeBSD$
 
 PORTNAME=	freebsd-bugzilla-cli
 PORTVERSION=	0.15.1

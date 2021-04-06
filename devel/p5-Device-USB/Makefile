@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Device-USB
 PORTVERSION=	0.35

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	solarus
 PORTVERSION=	1.6.4

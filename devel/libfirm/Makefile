@@ -1,5 +1,4 @@
 # Created by: Christoph Mallon <christoph.mallon@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	libfirm
 PORTVERSION=	1.21.0

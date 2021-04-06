@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v

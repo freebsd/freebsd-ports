@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pymaging-png
 PORTREVISION=	1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	maltrail
 PORTVERSION=	0.30

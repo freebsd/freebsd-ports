@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gen_stage
 PORTVERSION=	0.14.0

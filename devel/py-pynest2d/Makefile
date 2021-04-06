@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pynest2d
 DISTVERSION=	4.8.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	transmission
 DISTVERSION=	3.00

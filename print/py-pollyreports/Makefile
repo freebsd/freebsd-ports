@@ -1,5 +1,4 @@
 # Created by: Jose Jachuf <jjachuf@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	PollyReports
 PORTVERSION=	1.8

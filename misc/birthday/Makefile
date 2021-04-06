@@ -1,5 +1,4 @@
 # Created by: Niek Bergboer <niek@bergboer.net>
-# $FreeBSD$
 
 PORTNAME=	birthday
 PORTVERSION=	1.6.2

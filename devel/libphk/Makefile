@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libphk
 PORTVERSION=	0.3.20080902

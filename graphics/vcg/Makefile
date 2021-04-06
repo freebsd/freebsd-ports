@@ -1,5 +1,4 @@
 # Created by: hsu
-# $FreeBSD$
 
 PORTNAME=	vcg
 PORTVERSION=	1.30

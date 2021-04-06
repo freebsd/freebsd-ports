@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libyang
 PORTVERSION=	1.0.184

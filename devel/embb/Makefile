@@ -1,5 +1,4 @@
 # Created by: Thomas Zander <riggs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	embb
 PORTVERSION=	1.0.0

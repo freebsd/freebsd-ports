@@ -1,5 +1,4 @@
 # Created by: mtm@identd.net
-# $FreeBSD$
 
 PORTNAME=	asmix
 PORTVERSION=	1.5

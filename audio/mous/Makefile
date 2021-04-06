@@ -1,5 +1,4 @@
 # Created by: Yanhui Shen <shen.elf@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mous
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vine
 PORTVERSION=	1.3.0

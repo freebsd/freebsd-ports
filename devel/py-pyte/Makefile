@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyte
 PORTVERSION=	0.8.0

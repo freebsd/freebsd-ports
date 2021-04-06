@@ -1,5 +1,4 @@
 # Created by: erik@smluc.org
-# $FreeBSD$
 
 PORTNAME=	qscheme
 PORTVERSION=	0.5.1

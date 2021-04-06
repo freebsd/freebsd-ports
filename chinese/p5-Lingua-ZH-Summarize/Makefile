@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Lingua-ZH-Summarize
 PORTVERSION=	0.01

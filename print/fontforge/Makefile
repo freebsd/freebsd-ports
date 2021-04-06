@@ -1,5 +1,4 @@
 # Created by: KANOU Hiroki <kanou@khdd.net>
-# $FreeBSD$
 
 PORTNAME=	fontforge
 PORTVERSION=	20201107

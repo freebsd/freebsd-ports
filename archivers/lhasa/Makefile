@@ -1,5 +1,4 @@
 # Created by: Carsten Larsen <cs@innolan.dk>
-# $FreeBSD$
 
 PORTNAME=	lhasa
 PORTVERSION=	0.3.1

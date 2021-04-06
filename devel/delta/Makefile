@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	delta
 PORTVERSION=	2006.08.03

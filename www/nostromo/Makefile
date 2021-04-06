@@ -1,5 +1,4 @@
 # Created by: Adrian Steinmann <ast@marabu.ch>
-# $FreeBSD$
 
 PORTNAME=	nostromo
 PORTVERSION=	1.9.6

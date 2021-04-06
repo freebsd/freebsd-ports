@@ -1,5 +1,4 @@
 # Created by: Tim Cas <ports@stdrand.com>
-# $FreeBSD$
 
 PORTNAME=	ChipmunkPhysics
 PORTVERSION=	7.0.1

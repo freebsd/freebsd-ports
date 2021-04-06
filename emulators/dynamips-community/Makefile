@@ -1,5 +1,4 @@
 # Created by: Pavel I Volkov <pavelivolkov@googlemail.com>
-# $FreeBSD$
 
 PORTNAME=	dynamips
 PORTVERSION=	0.2.17

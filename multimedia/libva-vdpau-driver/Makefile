@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libva-vdpau-driver
 PORTVERSION=	0.7.4

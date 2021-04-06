@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Module-Install-ReadmeFromPod
 PORTVERSION=	0.30

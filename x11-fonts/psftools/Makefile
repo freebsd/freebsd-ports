@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	psftools
 PORTVERSION=	1.0.13

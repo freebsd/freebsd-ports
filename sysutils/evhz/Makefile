@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	evhz
 DISTVERSION=	g20170201

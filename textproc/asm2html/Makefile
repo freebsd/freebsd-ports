@@ -1,5 +1,4 @@
 # Created by: Ben Haga <tuxsuximus@hotmail.com>
-# $FreeBSD$
 
 PORTNAME=	asm2html
 PORTVERSION=	1.7

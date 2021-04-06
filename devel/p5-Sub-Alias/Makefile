@@ -1,5 +1,4 @@
 # Created by: Peter Vereshagin <peter@vereshagin.org>
-# $FreeBSD$
 
 PORTNAME=	Sub-Alias
 PORTVERSION=	1.0.0

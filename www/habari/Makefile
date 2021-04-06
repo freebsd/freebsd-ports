@@ -1,5 +1,4 @@
 # Created by: Ayumi M <ayu@commun.jp>
-# $FreeBSD$
 
 PORTNAME=	habari
 PORTVERSION=	0.8

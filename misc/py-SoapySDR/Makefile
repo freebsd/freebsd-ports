@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SoapySDR
 DISTVERSIONPREFIX=	soapy-sdr-

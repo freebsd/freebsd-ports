@@ -1,5 +1,4 @@
 # Created by: frankch@waru.life.nthu.edu.tw
-# $FreeBSD$
 
 PORTNAME=	aview
 DISTVERSION=	1.3.0rc1

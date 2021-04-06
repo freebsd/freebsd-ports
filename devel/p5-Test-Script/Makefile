@@ -1,5 +1,4 @@
 # Created by: lth@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	Test-Script
 PORTVERSION=	1.27

@@ -1,5 +1,4 @@
 # Created by: Cecile Neu <neu@mycontrol.de>
-# $FreeBSD$
 
 PORTNAME=	tomee
 PORTVERSION=	1.7.4

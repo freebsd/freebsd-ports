@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libotr
 PORTVERSION=	3.2.1

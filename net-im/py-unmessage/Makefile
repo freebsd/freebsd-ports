@@ -1,5 +1,4 @@
 # Created by: Yuri Victorovich
-# $FreeBSD$
 
 PORTNAME=	unmessage
 DISTVERSION=	0.2.0

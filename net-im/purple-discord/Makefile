@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	purple-discord
 PORTVERSION=	g20200802

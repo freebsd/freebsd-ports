@@ -1,5 +1,4 @@
 # Created by: Eric Anholt
-# $FreeBSD$
 
 PORTNAME=	tuxracer
 PORTVERSION=	0.61

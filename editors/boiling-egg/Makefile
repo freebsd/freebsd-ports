@@ -1,5 +1,4 @@
 # Created by: Yoichi NAKAYAMA <yoichi@eken.phys.nagoya-u.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	boiling-egg
 PORTVERSION=	0.02

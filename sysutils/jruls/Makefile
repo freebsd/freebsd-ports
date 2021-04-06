@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jruls
 PORTVERSION=	0.2

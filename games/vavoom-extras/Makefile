@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME=	vavoom-extras
 PORTVERSION=	1.30

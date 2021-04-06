@@ -1,5 +1,4 @@
 # Created by: Markus Brueffer <brueffer@phoenix-systems.de>
-# $FreeBSD$
 
 PORTNAME=	basket
 DISTVERSIONPREFIX=	v

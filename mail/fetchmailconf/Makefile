@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fetchmailconf
 PORTREVISION=	0

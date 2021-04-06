@@ -1,5 +1,4 @@
 # Created by: clement
-# $FreeBSD$
 
 PORTNAME=	weechat
 DISTVERSION=	3.1

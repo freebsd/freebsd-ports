@@ -1,5 +1,4 @@
 # Created by: jmacd
-# $FreeBSD$
 
 PORTNAME=	xdelta
 PORTVERSION=	1.1.4

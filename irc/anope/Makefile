@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	anope
 PORTVERSION=	2.0.9

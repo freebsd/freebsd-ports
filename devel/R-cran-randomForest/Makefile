@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	randomForest
 DISTVERSION=	4.6-14

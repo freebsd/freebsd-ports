@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	comfortaa-ttf
 PORTVERSION=	3.001

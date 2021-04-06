@@ -1,5 +1,4 @@
 # Created by: Dominic Marks <dom@cus.org.uk>
-# $FreeBSD$
 
 PORTNAME=	dancer
 PORTVERSION=	4.16

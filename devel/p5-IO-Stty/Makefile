@@ -1,5 +1,4 @@
 # Created by: Stephon Chen <stephon@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	IO-Stty
 PORTVERSION=	0.04

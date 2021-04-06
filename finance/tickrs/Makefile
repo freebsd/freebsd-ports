@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tickrs
 DISTVERSIONPREFIX=	v

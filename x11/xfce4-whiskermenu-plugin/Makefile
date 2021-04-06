@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	xfce4-whiskermenu-plugin
 PORTVERSION=	2.5.3

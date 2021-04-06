@@ -1,5 +1,4 @@
 # Created by: Brett Taylor <brett@peloton.physics.montana.edu>
-# $FreeBSD$
 
 PORTNAME=	afterstep
 PORTVERSION=	2.2.12

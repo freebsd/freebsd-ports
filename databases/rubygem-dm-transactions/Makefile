@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dm-transactions
 PORTVERSION=	1.2.0

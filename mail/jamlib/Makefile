@@ -1,5 +1,4 @@
 # Created by: CyrilM <cyrilm@tower.pp.ru>
-# $FreeBSD$
 
 PORTNAME=	jamlib
 PORTVERSION=	1.4.7

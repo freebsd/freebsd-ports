@@ -1,5 +1,4 @@
 # Created by: Landon Fuller <landonf@opendarwin.org>
-# $FreeBSD$
 
 PORTNAME=	zconfig
 PORTVERSION=	3.0.4

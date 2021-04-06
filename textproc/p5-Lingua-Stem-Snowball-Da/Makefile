@@ -1,5 +1,4 @@
 # Created by: Thorsten Greiner <thorsten.greiner@web.de>
-# $FreeBSD$
 
 PORTNAME=	Lingua-Stem-Snowball-Da
 PORTVERSION=	1.01

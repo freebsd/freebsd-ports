@@ -1,5 +1,4 @@
 # Created by: Marcello Coutinho
-# $FreeBSD$
 
 PORTNAME=	GnuPG
 PORTVERSION=	0.19

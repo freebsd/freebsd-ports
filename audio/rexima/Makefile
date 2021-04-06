@@ -1,5 +1,4 @@
 # Created by: Jerry Eriksson <jerry@freebsd.se>
-# $FreeBSD$
 
 PORTNAME=	rexima
 PORTVERSION=	1.4

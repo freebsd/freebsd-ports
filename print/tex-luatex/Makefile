@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	luatex
 PORTVERSION=	0.80.0

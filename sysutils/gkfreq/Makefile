@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gkrellm-gkfreq
 PORTVERSION=	2.2

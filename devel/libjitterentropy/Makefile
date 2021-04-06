@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libjitterentropy
 PORTVERSION=	3.0.1

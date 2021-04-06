@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libglvnd
 PORTVERSION=	1.0.1

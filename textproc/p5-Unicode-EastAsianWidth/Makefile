@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Unicode-EastAsianWidth
 PORTVERSION=	12.0

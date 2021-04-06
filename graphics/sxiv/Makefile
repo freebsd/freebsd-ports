@@ -1,5 +1,4 @@
 # Created by: Solène RAPENNE <solene@bsd.zplay.eu>
-# $FreeBSD$
 
 PORTNAME=	sxiv
 DISTVERSIONPREFIX=	v

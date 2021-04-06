@@ -1,5 +1,4 @@
 # Created by: Charles Mercadal <mercadal@diablonet.net>
-# $FreeBSD$
 
 PORTNAME=	ctronome
 PORTVERSION=	0.5.6

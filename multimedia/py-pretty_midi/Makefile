@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pretty_midi
 DISTVERSION=	0.2.9

@@ -1,5 +1,4 @@
 # Created by: Johannes Dieterich <jmd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	drm-devel-kmod
 PORTVERSION=	5.4.92.g20210128

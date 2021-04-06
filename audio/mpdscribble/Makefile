@@ -1,5 +1,4 @@
 # Created by: Stepan Zastupov [RedChrom] <redchrom@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	mpdscribble
 PORTVERSION=	0.22

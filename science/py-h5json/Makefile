@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	h5json
 DISTVERSION=	1.1.3

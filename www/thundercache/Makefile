@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	thundercache
 PORTVERSION=	6.1

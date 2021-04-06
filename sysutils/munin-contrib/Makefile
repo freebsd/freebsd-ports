@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	contrib
 DISTVERSION=	git.2019-06-28

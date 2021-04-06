@@ -1,5 +1,4 @@
 # Created by: dchapes@ddm.on.ca
-# $FreeBSD$
 
 PORTNAME=	vice
 PORTVERSION=	3.5

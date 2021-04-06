@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flexfloat
 DISTVERSION=	g20190814

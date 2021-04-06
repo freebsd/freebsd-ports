@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Time-Crontab
 PORTVERSION=	0.02

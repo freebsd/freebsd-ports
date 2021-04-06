@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	morty
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	clx
 DISTVERSION=	0.7.5-65

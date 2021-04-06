@@ -1,5 +1,4 @@
 # Created by: Leinier Cruz Salfran <salfrancl@yahoo.es>
-# $FreeBSD$
 
 PORTNAME=	aegisub
 PORTVERSION=	3.2.2

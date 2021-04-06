@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	otter-browser
 DISTVERSIONPREFIX=	v

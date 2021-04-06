@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Gnome2-Canvas
 PORTVERSION=	1.006

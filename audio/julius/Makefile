@@ -1,5 +1,4 @@
 # Created by: numisemis at yahoo dot com
-# $FreeBSD$
 
 PORTNAME=	julius
 PORTVERSION=	4.1.2

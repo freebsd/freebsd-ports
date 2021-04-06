@@ -1,5 +1,4 @@
 # Created by: Jesse <jessefrgsmith@yahoo.ca>
-# $FreeBSD$
 
 PORTNAME=	imagination
 PORTVERSION=	3.0

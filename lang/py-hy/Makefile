@@ -1,5 +1,4 @@
 # Created by: David Kalliecharan <dave@dal.ca>
-# $FreeBSD$
 
 PORTNAME=	hy
 PORTVERSION=	0.19.0

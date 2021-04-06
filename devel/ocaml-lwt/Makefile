@@ -1,5 +1,4 @@
 # Created by: jaapb@kerguelen.org
-# $FreeBSD$
 
 PORTNAME=	lwt
 PORTVERSION=	2.5.2

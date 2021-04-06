@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libphonenumber
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Martin Wilke <miwi@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Test-Fixture-DBIC-Schema
 PORTVERSION=	0.04

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	beebeep
 DISTVERSIONPREFIX=code-

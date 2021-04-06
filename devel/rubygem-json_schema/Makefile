@@ -1,5 +1,4 @@
 # Created by: Stéphane D'Alu <sdalu@sdalu.com>
-# $FreeBSD$
 
 PORTNAME=	json_schema
 PORTVERSION=	0.20.9

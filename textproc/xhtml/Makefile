@@ -1,5 +1,4 @@
 # Created by: kuriyama
-# $FreeBSD$
 
 PORTNAME=	xhtml
 PORTVERSION=	1.0.20020801

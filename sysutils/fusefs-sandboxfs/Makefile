@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sandboxfs
 DISTVERSIONPREFIX=	sandboxfs-

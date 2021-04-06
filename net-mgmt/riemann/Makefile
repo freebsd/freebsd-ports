@@ -1,5 +1,4 @@
 # Created by: Dave Cottlehuber <dch@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	riemann
 DISTVERSION=	0.3.6

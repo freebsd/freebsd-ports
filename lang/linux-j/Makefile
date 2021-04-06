@@ -1,5 +1,4 @@
 # Created by: js@jeannot.org
-# $FreeBSD$
 
 PORTNAME=	j
 PORTVERSION=	504b

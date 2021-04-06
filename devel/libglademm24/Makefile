@@ -1,5 +1,4 @@
 # Created by: Alexander Nedotsukov <bland@mail.ru>
-# $FreeBSD$
 #   $MCom: ports/devel/libglademm24/Makefile,v 1.10 2008/09/22 11:42:53 kwm Exp $
 
 PORTNAME=	libglademm

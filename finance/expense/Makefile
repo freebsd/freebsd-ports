@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	expense
 PORTVERSION=	0.1

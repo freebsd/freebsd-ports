@@ -1,5 +1,4 @@
 # Created by: Fernan Aguero <fernan.aguero@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	PostScript
 PORTVERSION=	0.06

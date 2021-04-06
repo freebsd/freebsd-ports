@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pdfchain
 PORTVERSION=	0.4.4.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MutatorMath
 PORTVERSION=	2.1.2

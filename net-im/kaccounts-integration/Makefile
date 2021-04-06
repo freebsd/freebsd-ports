@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kaccounts-integration
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

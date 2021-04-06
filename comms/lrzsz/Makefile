@@ -1,5 +1,4 @@
 # Created by: David O'Brien <obrien@cs.ucdavis.edu>
-# $FreeBSD$
 
 PORTNAME=	lrzsz
 PORTVERSION=	0.12.20

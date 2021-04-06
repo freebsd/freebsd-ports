@@ -1,5 +1,4 @@
 # Created by: Denis N. Peplin <info@volginfo.ru>
-# $FreeBSD$
 
 PORTNAME=	utcount
 PORTVERSION=	0.1

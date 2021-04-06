@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	UUID-URandom
 PORTVERSION=	0.001

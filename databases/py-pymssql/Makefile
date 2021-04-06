@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pymssql
 PORTVERSION=	2.1.4

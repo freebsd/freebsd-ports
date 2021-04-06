@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dnsdbq
 PORTVERSION=	2.5.3

@@ -1,5 +1,4 @@
 # Created by: Martin Kammerhofer
-# $FreeBSD$
 
 PORTNAME=	portless
 PORTVERSION=	0.2.7

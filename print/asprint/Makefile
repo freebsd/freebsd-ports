@@ -1,5 +1,4 @@
 # Created by: brett@peloton.physics.montana.edu
-# $FreeBSD$
 
 PORTNAME=	asprint
 PORTVERSION=	1.0

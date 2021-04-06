@@ -1,5 +1,4 @@
 # Created by: Anton Lysenok <bart@tapolsky.net.ua>
-# $FreeBSD$
 
 PORTNAME=	clonehdd
 PORTVERSION=	2.0.3

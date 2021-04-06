@@ -1,5 +1,4 @@
 # Created by: Miguel Mendez <flynn@energyhq.homeip.net>
-# $FreeBSD$
 
 PORTNAME=	xpk
 PORTVERSION=	0.1.4

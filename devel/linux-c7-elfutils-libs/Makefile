@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	elfutils
 PORTVERSION=	0.176

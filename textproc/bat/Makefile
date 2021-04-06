@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bat
 DISTVERSIONPREFIX=	v

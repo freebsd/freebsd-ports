@@ -1,5 +1,4 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
-# $FreeBSD$
 
 # Please do not submit untested updates.  Be sure to start hadoop in
 # distributed mode and to run few map/reduce.  Be sure there are no exception

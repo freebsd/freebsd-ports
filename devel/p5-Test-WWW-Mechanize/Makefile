@@ -1,5 +1,4 @@
 # Created by: aturetta@commit.it
-# $FreeBSD$
 
 PORTNAME=	Test-WWW-Mechanize
 PORTVERSION=	1.54

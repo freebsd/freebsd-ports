@@ -1,5 +1,4 @@
 # Created by: Ashish SHUKLA <wahjava@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	POD2-Base
 PORTVERSION=	0.043

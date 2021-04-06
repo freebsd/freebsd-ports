@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	minecraft-server
 PORTVERSION=	1.16.5

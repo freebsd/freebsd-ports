@@ -1,5 +1,4 @@
 # Created by: jseger@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	freetype2
 DISTVERSION=	2.10.4

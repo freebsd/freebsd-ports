@@ -1,5 +1,4 @@
 # Created by: Nikos Ntarmos <ntarmos@ceid.upatras.gr>
-# $FreeBSD$
 
 PORTNAME=	libconfig
 PORTVERSION=	1.7.2

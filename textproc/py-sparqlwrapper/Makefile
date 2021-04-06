@@ -1,5 +1,4 @@
 # Created by: Olivier Duchateau
-# $FreeBSD$
 
 PORTNAME=	sparqlwrapper
 PORTVERSION=	1.8.5

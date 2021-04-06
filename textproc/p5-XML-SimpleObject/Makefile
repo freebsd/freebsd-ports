@@ -1,5 +1,4 @@
 # Created by: steve
-# $FreeBSD$
 
 PORTNAME=	XML-SimpleObject
 PORTVERSION=	0.53

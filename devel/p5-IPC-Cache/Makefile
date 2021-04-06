@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	IPC-Cache
 PORTVERSION=	0.02

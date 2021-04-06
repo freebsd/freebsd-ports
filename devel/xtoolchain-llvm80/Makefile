@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 LLVM_SUFFIX=80
 

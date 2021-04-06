@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Flask-Bootstrap
 PORTVERSION=	3.3.7.1

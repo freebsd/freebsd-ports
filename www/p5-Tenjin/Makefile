@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Tenjin
 PORTVERSION=	0.070001

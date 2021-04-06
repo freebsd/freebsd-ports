@@ -1,5 +1,4 @@
 # Created by: Jason Harmening <jason.harmening@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	cx88
 PORTVERSION=	1.5.3

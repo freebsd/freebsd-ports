@@ -1,5 +1,4 @@
 # Created by: Maxim Maximov (mcsi@agava.com)
-# $FreeBSD$
 
 PORTNAME=	enum
 PORTVERSION=	1.110

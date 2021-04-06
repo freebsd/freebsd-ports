@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Image-OCR-Tesseract
 PORTVERSION=	1.26

@@ -1,5 +1,4 @@
 # Created by: Felix Palmen <felix@palmen-it.de>
-# $FreeBSD$
 
 OCBM_VERSION=	0.4.99.102
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Brion Moss <brion@queeg.com>
-# $FreeBSD$
 
 PORTNAME=	xtide
 PORTVERSION=	2.15.3

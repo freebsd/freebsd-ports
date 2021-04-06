@@ -1,5 +1,4 @@
 # Created by: nkazushi@highway.or.jp
-# $FreeBSD$
 
 PORTNAME=	xskyroot
 PORTVERSION=	920428

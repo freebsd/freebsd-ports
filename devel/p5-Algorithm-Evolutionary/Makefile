@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	Algorithm-Evolutionary
 PORTVERSION=	0.80

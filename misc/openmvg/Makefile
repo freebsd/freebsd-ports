@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openmvg
 DISTVERSIONPREFIX=	v

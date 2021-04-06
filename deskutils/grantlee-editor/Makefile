@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grantlee-editor
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

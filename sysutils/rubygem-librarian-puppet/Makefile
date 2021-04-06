@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librarian-puppet
 PORTVERSION=	3.0.0

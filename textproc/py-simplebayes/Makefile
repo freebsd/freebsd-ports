@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	simplebayes
 PORTVERSION=	1.5.8

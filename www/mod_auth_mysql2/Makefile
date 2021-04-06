@@ -1,5 +1,4 @@
 # Created by: Clement Laforet <clement@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	mod_auth_mysql
 PORTVERSION=	1.11

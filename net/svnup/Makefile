@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	svnup
 PORTVERSION=	1.08

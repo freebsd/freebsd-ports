@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	btor2tools
 DISTVERSION=	g20190418

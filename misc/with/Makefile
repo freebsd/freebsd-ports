@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	with
 DISTVERSION=	g20180520

@@ -1,5 +1,4 @@
 # Created by: lon_kamikaze@gmx.de
-# $FreeBSD$
 
 PORTNAME=	veditor
 PORTVERSION=	1.2.2

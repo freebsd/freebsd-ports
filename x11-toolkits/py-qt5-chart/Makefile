@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chart
 PORTVERSION=	${PYQT5_VERSION}

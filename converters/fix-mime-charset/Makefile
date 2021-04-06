@@ -1,5 +1,4 @@
 # Created by: Nosov Artem <chip-set@mail.ru>
-# $FreeBSD$
 
 PORTNAME=	fix-mime-charset
 PORTVERSION=	0.5.3

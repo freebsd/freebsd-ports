@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	riemann-rabbitmq
 DISTVERSION=	0.1.3

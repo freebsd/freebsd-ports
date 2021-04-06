@@ -1,5 +1,4 @@
 # Created by: Ryan Steinmetz
-# $FreeBSD$
 
 PORTNAME=	SNMP4Nagios
 PORTVERSION=	0.4

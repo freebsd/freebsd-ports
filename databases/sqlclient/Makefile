@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sqlclient
 PORTVERSION=	1.8.1

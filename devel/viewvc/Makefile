@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	viewvc
 DISTVERSION=	1.2.1

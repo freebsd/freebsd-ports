@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nitroshare
 DISTVERSION=	0.3.4-642

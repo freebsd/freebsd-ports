@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	serialbus
 DISTVERSION=	${QT5_VERSION}

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bear
 PORTVERSION=	0.8.5

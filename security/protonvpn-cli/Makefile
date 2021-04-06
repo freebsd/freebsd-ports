@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	protonvpn-cli
 DISTVERSIONPREFIX=	v

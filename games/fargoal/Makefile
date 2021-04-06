@@ -1,5 +1,4 @@
 # Created by: chris_pressey@yahoo.ca
-# $FreeBSD$
 
 PORTNAME=	fargoal
 PORTVERSION=	20040629

@@ -1,5 +1,4 @@
 # Created by: David Kalliecharan <dave@dal.ca>
-# $FreeBSD$
 
 PORTNAME=	rply
 PORTVERSION=	0.7.7

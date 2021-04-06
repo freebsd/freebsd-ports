@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omniauth-gitlab
 PORTVERSION=	1.0.4

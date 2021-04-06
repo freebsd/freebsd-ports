@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	plex-ttf
 DISTVERSION=	5.1.3

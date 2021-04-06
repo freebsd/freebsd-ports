@@ -1,5 +1,4 @@
 # Created by: Yoshiro MIHIRA <sanpei@jp.FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	ngraph-fonts
 PORTVERSION=	1.0

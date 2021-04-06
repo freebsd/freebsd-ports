@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	recog
 PORTVERSION=	2.3.17

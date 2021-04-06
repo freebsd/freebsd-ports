@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	graywolf
 DISTVERSION=	0.1.6-4

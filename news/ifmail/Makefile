@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ifmail
 PORTVERSION=	2.15

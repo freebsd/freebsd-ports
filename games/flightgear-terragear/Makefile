@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	flightgear-terragear
 PORTVERSION=	20171007

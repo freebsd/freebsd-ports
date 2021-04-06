@@ -1,5 +1,4 @@
 # Created by: Koichiro IWAO <meta+ports@vmeta.jp>
-# $FreeBSD$
 
 PKGNAMEPREFIX=	ja-uim-
 

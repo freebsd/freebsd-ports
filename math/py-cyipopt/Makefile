@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cyipopt
 DISTVERSIONPREFIX=	v

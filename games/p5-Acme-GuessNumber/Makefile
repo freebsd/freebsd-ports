@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Acme-GuessNumber
 PORTVERSION=	0.04

@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	x2goclient-cli
 DISTVERSION=	3.0.1-1.2

@@ -1,5 +1,4 @@
 # Created by: Wen Heping<wen@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	BibTeX-Parser
 PORTVERSION=	1.02

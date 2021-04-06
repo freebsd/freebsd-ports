@@ -1,5 +1,4 @@
 # Created by: Leif Pedersen <pedersen@meridian-enviro.com>
-# $FreeBSD$
 
 PORTNAME=	Parse-PerlConfig
 PORTVERSION=	0.05

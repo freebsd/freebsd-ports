@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kickpass
 PORTVERSION=	0.2.0

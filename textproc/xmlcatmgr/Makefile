@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xmlcatmgr
 PORTVERSION=	2.2

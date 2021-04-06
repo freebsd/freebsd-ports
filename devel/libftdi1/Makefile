@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libftdi1
 PORTVERSION=	1.5

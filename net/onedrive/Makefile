@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	onedrive
 DISTVERSIONPREFIX=	v

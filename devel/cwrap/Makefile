@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		cwrap
 PORTVERSION=		1.1.0

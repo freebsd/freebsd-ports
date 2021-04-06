@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Algorithm-Line-Bresenham
 PORTVERSION=	0.11

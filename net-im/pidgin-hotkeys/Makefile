@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pidgin-hotkeys
 PORTVERSION=	0.2.4

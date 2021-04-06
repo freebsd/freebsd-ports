@@ -1,5 +1,4 @@
 # Created by: luigi@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	fio
 PORTVERSION=	3.26

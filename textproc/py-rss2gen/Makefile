@@ -1,5 +1,4 @@
 # Created by: "Choe, Cheng-Dae" whitekid
-# $FreeBSD$
 
 PORTNAME=	rss2gen
 PORTVERSION=	1.1

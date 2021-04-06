@@ -1,5 +1,4 @@
 # Created by: John Hixson <jhixson@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	oc
 PORTVERSION=	4.5

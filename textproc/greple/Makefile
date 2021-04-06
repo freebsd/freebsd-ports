@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	greple
 PORTVERSION=	8.3304

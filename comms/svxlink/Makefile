@@ -1,5 +1,4 @@
 # Created by: shurd
-# $FreeBSD$
 
 PORTNAME?=	svxlink
 PORTVERSION=	19.09.1

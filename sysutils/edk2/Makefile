@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	edk2
 PORTVERSION=	g202005

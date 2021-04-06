@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xdemorse
 DISTVERSION=	3.6.2

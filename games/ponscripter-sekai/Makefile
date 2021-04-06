@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ponscripter-sekai
 PORTVERSION=	0.0.6

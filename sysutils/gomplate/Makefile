@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gomplate
 DISTVERSIONPREFIX=	v

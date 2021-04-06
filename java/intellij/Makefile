@@ -1,5 +1,4 @@
 # Created by: Tobias Kortkamp <t@tobik.me>
-# $FreeBSD$
 
 # Based on the devel/intellij port from OpenBSD by
 # Vadim Zhukov <zhuk@openbsd.org>

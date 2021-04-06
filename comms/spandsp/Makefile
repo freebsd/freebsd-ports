@@ -1,5 +1,4 @@
 # Created by: wlloyd@slap.net
-# $FreeBSD$
 
 PORTNAME=	spandsp
 PORTVERSION=	0.0.6

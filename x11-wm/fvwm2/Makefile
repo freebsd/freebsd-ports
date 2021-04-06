@@ -1,5 +1,4 @@
 # Created by: peter
-# $FreeBSD$
 
 PORTNAME=	fvwm
 PORTVERSION=	2.6.9

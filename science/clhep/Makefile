@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	clhep
 PORTVERSION=	2.4.1.0

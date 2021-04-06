@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	xbindkeys
 PORTVERSION=	1.8.6

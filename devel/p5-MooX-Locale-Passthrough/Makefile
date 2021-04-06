@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MooX-Locale-Passthrough
 PORTVERSION=	0.001

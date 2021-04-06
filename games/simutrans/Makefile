@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	simutrans
 DISTVERSION=	121-0

@@ -1,5 +1,4 @@
 # Created by: Ben Kaduk <kaduk@mit.edu>
-# $FreeBSD$
 
 PORTREVISION=	0
 CATEGORIES=	devel

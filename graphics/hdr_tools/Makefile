@@ -1,5 +1,4 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	hdr_tools
 PORTVERSION=	0.0.2010.11.23	# unspecified by the author, so use the date

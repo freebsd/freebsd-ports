@@ -1,5 +1,4 @@
 # Created by: Philippe Casidy <pcasidy@casidy.com>
-# $FreeBSD$
 
 PORTNAME=	whatpix
 PORTVERSION=	1.2

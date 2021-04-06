@@ -1,5 +1,4 @@
 # Created by: Juli Mallett
-# $FreeBSD$
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	2.99.3

@@ -1,5 +1,4 @@
 # Created by: Yarema <yds@Necessitu.de>
-# $FreeBSD$
 
 PORTNAME=	lsqlite3
 PORTVERSION=	0.9.5

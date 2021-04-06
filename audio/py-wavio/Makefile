@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wavio
 DISTVERSION=	0.0.4

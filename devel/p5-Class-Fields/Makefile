@@ -1,5 +1,4 @@
 # Created by: Sergei Vyshenski
-# $FreeBSD$
 
 PORTNAME=	Class-Fields
 PORTVERSION=	0.204

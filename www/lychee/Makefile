@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lychee
 DISTVERSIONPREFIX=	v

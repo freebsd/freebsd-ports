@@ -1,5 +1,4 @@
 # Created by: Julian Jenkins <kaveman@magna.com.au>
-# $FreeBSD$
 
 PORTNAME=	spice
 PORTVERSION=	3f5.2

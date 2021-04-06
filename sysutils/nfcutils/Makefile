@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nfcutils
 PORTVERSION=	0.1.2

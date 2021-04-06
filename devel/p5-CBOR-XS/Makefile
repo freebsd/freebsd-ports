@@ -1,5 +1,4 @@
 # Created by: Kurt Jaeger <fbsd-ports@opsec.eu>
-# $FreeBSD$
 
 PORTNAME=	CBOR-XS
 PORTVERSION=	1.30

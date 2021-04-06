@@ -1,5 +1,4 @@
 # Created by: Lars Thegler <lars@thegler.dk>
-# $FreeBSD$
 
 PORTNAME=	Lingua-EN-Inflect-Number
 PORTVERSION=	1.12

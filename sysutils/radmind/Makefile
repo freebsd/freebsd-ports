@@ -1,5 +1,4 @@
 # Created by: Paul Dlug <paul@aps.org>
-# $FreeBSD$
 
 PORTNAME=	radmind
 PORTVERSION=	1.15.3

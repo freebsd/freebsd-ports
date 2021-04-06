@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	stamp
 PORTVERSION=	0.6.0

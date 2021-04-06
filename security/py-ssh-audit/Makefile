@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ssh-audit
 DISTVERSIONPREFIX=	v

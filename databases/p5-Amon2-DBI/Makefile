@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Amon2-DBI
 PORTVERSION=	0.33

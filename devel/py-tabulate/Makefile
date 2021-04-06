@@ -1,5 +1,4 @@
 # Created by: Nikolay Dachev <freebsd@dacehv.info>
-# $FreeBSD$
 
 PORTNAME=	tabulate
 PORTVERSION=	0.8.6

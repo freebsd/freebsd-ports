@@ -1,5 +1,4 @@
 # Created by: Archie Cobbs
-# $FreeBSD$
 
 PORTNAME=	mpd
 DISTVERSION=	5.9

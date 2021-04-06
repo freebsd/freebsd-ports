@@ -1,5 +1,4 @@
 # Created by: Holger Lamm <holger@e-gitt.net>
-# $FreeBSD$
 
 PORTNAME=	mldonkey
 PORTVERSION=	3.1.5

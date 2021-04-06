@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	noson-app
 DISTVERSION=	4.4.9

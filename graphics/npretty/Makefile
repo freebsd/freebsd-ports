@@ -1,5 +1,4 @@
 # Created by: Peter Ankerstal <peter@pean.org>
-# $FreeBSD$
 
 PORTNAME=	npretty
 DISTVERSIONPREFIX=	n

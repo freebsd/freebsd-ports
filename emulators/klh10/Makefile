@@ -1,5 +1,4 @@
 # Created by: kstailey
-# $FreeBSD$
 
 PORTNAME=	klh10
 PORTVERSION=	2.0a

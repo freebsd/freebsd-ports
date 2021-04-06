@@ -1,5 +1,4 @@
 # Created by: Anton Tornqvist <antont@inbox.lv>
-# $FreeBSD$
 
 PORTNAME=	bspwm
 DISTVERSION=	0.9.10

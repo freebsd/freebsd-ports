@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Serializable
 PORTVERSION=	0.41.0

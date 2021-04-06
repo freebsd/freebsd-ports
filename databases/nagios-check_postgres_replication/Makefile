@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	check_postgres_replication
 PORTVERSION=	2010.12.16

@@ -1,5 +1,4 @@
 # Created by: Stefan A. Deutscher (sad@mailaps.org)
-# $FreeBSD$
 
 PORTNAME=	renattach
 PORTVERSION=	1.2.4

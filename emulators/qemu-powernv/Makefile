@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qemu-powernv
 PORTVERSION=	3.0.50

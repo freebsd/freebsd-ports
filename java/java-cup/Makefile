@@ -1,5 +1,4 @@
 # Created by: nordwick@xcf.berkeley.edu
-# $FreeBSD$
 
 PORTNAME=	cup
 PORTVERSION=	11b.20160615

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Automat
 PORTVERSION=	20.2.0

@@ -1,5 +1,4 @@
 # Created by: Alexander Matey <matey@cis.ohio-state.edu>
-# $FreeBSD$
 
 PORTNAME=	xxkb
 PORTVERSION=	1.11.1

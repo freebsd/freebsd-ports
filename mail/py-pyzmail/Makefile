@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyzmail
 DISTVERSION=	1.0.3

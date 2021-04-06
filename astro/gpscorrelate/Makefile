@@ -1,5 +1,4 @@
 # Created by: Lukas Maly <Iam@LukasMaly.NET>
-# $FreeBSD$
 
 PORTNAME=	gpscorrelate
 PORTVERSION=	1.6.1

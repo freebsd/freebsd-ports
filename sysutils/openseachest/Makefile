@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	openseachest
 PORTVERSION=	21.03.01

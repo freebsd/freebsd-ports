@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-ReverseHTTP
 PORTVERSION=	0.05

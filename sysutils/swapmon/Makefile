@@ -1,5 +1,4 @@
 # Created by: Alexander Kuehn <freebsd@nagilum.org>
-# $FreeBSD$
 
 PORTNAME=	swapmon
 PORTVERSION=	1.5

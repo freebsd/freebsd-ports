@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gammy
 DISTVERSIONPREFIX=	v

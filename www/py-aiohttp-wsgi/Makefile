@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	aiohttp-wsgi
 PORTVERSION=	0.8.2

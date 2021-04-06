@@ -1,5 +1,4 @@
 # Created by: Geistteufel <geistteufel@yahoo.fr>
-# $FreeBSD$
 
 PORTNAME=	Dancer-Debug
 PORTVERSION=	0.03

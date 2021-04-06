@@ -1,5 +1,4 @@
 # Created by: James Raftery <james@now.ie>
-# $FreeBSD$
 
 PORTNAME=	Text-Netstring
 PORTVERSION=	0.07

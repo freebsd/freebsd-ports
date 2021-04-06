@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Test-Perl-Critic
 PORTVERSION=	1.04

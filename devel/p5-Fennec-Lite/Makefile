@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Fennec-Lite
 PORTVERSION=	0.004

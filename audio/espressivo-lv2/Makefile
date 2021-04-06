@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	espressivo
 DISTVERSION=	g20190421

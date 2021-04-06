@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	choria-mcorpc-support
 DISTVERSION=	2.24.1

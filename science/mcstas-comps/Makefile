@@ -1,5 +1,4 @@
 # Created by: Erik B Knudsen
-# $FreeBSD$
 
 PORTNAME=	mcstas-comps
 PORTVERSION=	2.5

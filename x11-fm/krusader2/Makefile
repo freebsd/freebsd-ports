@@ -1,5 +1,4 @@
 # Created by: Heiner <h.eichmann@gmx.de>
-# $FreeBSD$
 
 PORTNAME=	krusader
 DISTVERSION=	2.7.2

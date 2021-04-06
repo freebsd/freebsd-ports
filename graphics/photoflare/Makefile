@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	photoflare
 DISTVERSIONPREFIX=	v

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bloaty
 PORTVERSION=	1.1

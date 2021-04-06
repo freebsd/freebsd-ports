@@ -1,5 +1,4 @@
 # Created by: Goran Tal
-# $FreeBSD$
 
 PORTNAME=	dico
 PORTVERSION=	2.10

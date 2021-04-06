@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Twiggy-TLS
 PORTVERSION=	0.0019

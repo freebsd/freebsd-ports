@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xmag
 PORTVERSION=	1.0.6

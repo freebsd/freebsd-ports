@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		nginx-ultimate-bad-bot-blocker
 DISTVERSIONPREFIX=	V

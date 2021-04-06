@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	converseen
 DISTVERSIONPREFIX=	v

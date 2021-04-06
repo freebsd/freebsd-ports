@@ -1,5 +1,4 @@
 # Created by: Chuck Robey <chuckr@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	plotutils
 PORTVERSION=	2.6

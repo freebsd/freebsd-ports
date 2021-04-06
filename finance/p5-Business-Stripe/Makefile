@@ -1,5 +1,4 @@
 # Created by: Vick Khera <vivek@khera.org>
-# $FreeBSD$
 
 PORTNAME=	Business-Stripe
 PORTVERSION=	0.07

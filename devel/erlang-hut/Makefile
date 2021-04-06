@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hut
 PORTVERSION=	1.2.0

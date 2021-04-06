@@ -1,5 +1,4 @@
 # Created by: Vasiliy Ch <blttll@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ciso
 PORTVERSION=	1.0.0

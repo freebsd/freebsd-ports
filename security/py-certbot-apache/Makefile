@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	certbot-apache
 PORTVERSION=	${ACME_VERSION}

@@ -1,5 +1,4 @@
 # Created by: amir.husaini@gmail.com
-# $FreeBSD$
 
 PORTNAME=	tablix2
 PORTVERSION=	0.3.5

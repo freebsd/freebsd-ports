@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	patiencediff
 PORTVERSION=	0.2.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	oclock
 PORTVERSION=	1.0.4

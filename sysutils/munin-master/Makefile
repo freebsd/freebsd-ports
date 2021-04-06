@@ -1,5 +1,4 @@
 # Created by: Lupe Christoph <lupe@lupe-christoph.de>
-# $FreeBSD$
 
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}

@@ -1,5 +1,4 @@
 # Created by: Nosov Artem <chip-set@mail.ru>
-# $FreeBSD$
 
 PORTNAME=	webcpp
 PORTVERSION=	0.8.4

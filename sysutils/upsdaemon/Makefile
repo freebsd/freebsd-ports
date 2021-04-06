@@ -1,5 +1,4 @@
 # Created by: Ederson de Moura <ederbs@ederbs.org>
-# $FreeBSD$
 
 PORTNAME=	upsdaemon
 PORTVERSION=	1.0

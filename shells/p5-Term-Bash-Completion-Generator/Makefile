@@ -1,5 +1,4 @@
 # Created by: gebhart@secnetix.de
-# $FreeBSD$
 
 PORTNAME=	Term-Bash-Completion-Generator
 PORTVERSION=	0.02.8

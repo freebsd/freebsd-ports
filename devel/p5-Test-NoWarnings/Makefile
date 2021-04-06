@@ -1,5 +1,4 @@
 # Created by: Alex Kapranoff <alex@kapranoff.ru>
-# $FreeBSD$
 
 PORTNAME=	Test-NoWarnings
 PORTVERSION=	1.04

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 VERSIONS=		3 4
 XPDF_VERSION?=		4

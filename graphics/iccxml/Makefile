@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iccxml
 PORTVERSION=	0.9.8

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hgreviewboard
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: Michael Durian <durian@shadetreesoftware.com>
-# $FreeBSD$
 
 PORTNAME=	eagle5
 PORTVERSION=	${EAGLEVERSION}

@@ -1,5 +1,4 @@
 # Created by: Eivind Eklund <eivind@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	IO-Stringy
 PORTVERSION=	2.113

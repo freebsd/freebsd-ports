@@ -1,5 +1,4 @@
 # Created by: kuriyama
-# $FreeBSD$
 
 PORTNAME=	openjade
 PORTVERSION=	1.3.3p1

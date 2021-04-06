@@ -1,5 +1,4 @@
 # Created by: Dusan Vejnovic <freebsd@dussan.org>
-# $FreeBSD$
 
 PORTNAME=	gitblit
 PORTVERSION=	1.8.0

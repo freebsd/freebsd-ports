@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tsearch_extras
 PORTVERSION=	0.3

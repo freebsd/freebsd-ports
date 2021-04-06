@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Math-Bezier
 PORTVERSION=	0.01

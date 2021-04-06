@@ -1,5 +1,4 @@
 # Created by: John Hixson <jhixson@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pianod2
 PORTVERSION=	329

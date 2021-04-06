@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <Nacai@iname.com>
-# $FreeBSD$
 
 PORTNAME=	SOCKS
 PORTVERSION=	0.03

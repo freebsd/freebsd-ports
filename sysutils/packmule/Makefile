@@ -1,5 +1,4 @@
 # Created by: Austin Shafer <ashafer@badland.io>
-# $FreeBSD$
 
 PORTNAME=	packmule
 DISTVERSIONPREFIX=v

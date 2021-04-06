@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	font-tex-gyre-bonum-math
 DISTVERSION=	1.005

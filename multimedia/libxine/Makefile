@@ -1,5 +1,4 @@
 # Created by: alex
-# $FreeBSD$
 
 PORTNAME=	xine
 DISTVERSION=	1.2.11

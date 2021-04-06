@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	portal
 PORTVERSION=	0.4

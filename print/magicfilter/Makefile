@@ -1,5 +1,4 @@
 # Created by: CHOI Junho <cjh@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	magicfilter
 PORTVERSION=	2.3.h

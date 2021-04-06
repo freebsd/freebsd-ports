@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pyshp
 PORTVERSION=	1.2.12

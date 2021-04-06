@@ -1,5 +1,4 @@
 # Created by: David Naylor <dbn@FreeBSD.org>
-# $FreeBSD$
 
 # Use the wine port to do most of the heavy lifting
 MASTERDIR=	${.CURDIR}/../wine-devel

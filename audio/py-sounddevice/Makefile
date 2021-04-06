@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sounddevice
 DISTVERSION=	0.4.1

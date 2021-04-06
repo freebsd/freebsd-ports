@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MDAnalysis
 DISTVERSION=	0.19.2

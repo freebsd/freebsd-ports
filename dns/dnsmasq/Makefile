@@ -1,5 +1,4 @@
 # Created by: Steven Honson
-# $FreeBSD$
 
 PORTNAME=	dnsmasq
 DISTVERSION=	2.84

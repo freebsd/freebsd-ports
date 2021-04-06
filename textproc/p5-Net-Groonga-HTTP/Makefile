@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-Groonga-HTTP
 PORTVERSION=	0.03

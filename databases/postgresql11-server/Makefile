@@ -1,5 +1,4 @@
 # Created by: Marc G. Fournier <scrappy@FreeBSD.org>
-# $FreeBSD$
 
 DISTVERSION?=	11.11
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and

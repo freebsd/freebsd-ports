@@ -1,5 +1,4 @@
 # Created by: refugee
-# $FreeBSD$
 
 PORTNAME=	dungeoncrawl
 PORTVERSION=	4.0.0.b26

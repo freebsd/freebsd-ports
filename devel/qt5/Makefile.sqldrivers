@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 PORTNAME?=	${DB:tl}
 DISTVERSION?=	${QT5_VERSION}
 CATEGORIES?=	databases

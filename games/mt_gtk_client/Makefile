@@ -1,5 +1,4 @@
 # Created by: thierry@pompo.net
-# $FreeBSD$
 
 PORTNAME=		mt_gtk_client
 PORTVERSION=		0.1.98

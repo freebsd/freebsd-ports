@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	raylib
 DISTVERSION=	3.5.0

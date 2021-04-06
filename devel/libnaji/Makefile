@@ -1,5 +1,4 @@
 # Created by: NECDET COKYAZICI <cokyazici@yahoo.co.uk>
-# $FreeBSD$
 
 PORTNAME=	libnaji
 PORTVERSION=	0.6.4

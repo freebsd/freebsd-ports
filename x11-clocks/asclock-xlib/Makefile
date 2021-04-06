@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	asclock-xlib
 PORTVERSION=	2.0.11

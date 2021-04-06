@@ -1,5 +1,4 @@
 # Created by: vanilla@
-# $FreeBSD$
 
 PORTNAME=	spdlog
 DISTVERSIONPREFIX=	v

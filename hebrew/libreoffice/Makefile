@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 CATEGORIES=	hebrew
 LO_I18N=	he

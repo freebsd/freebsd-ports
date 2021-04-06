@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bashtop
 DISTVERSION=	0.9.25

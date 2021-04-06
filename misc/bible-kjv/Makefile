@@ -1,5 +1,4 @@
 # Created by: Kim Scarborough <user@unknown.nu>
-# $FreeBSD$
 
 PORTNAME=	bible-kjv
 PORTVERSION=	4.30

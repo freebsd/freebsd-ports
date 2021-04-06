@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	grim
 DISTVERSIONPREFIX=	v

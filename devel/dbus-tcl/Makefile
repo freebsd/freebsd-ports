@@ -1,5 +1,4 @@
 # Created by: gahr
-# $FreeBSD$
 
 PORTNAME=	dbus-tcl
 PORTVERSION=	2.1

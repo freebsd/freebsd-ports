@@ -1,5 +1,4 @@
 # Created by: Filippo Natali <filippo@widestore.net>
-# $FreeBSD$
 
 PORTNAME=	whois
 DISTVERSIONPREFIX=	v

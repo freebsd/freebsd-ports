@@ -1,5 +1,4 @@
 # Created by: chris@shagged.org
-# $FreeBSD$
 
 PORTNAME=	tpop3d
 PORTVERSION=	1.5.5

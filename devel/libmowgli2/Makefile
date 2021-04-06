@@ -1,5 +1,4 @@
 # Created by: tdb
-# $FreeBSD$
 
 PORTNAME=	libmowgli2
 PORTVERSION=	2.1.3

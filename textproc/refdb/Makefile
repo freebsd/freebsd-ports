@@ -1,5 +1,4 @@
 # Created by: paulh@logicsquad.net
-# $FreeBSD$
 
 PORTNAME=	refdb
 PORTVERSION=	0.9.9

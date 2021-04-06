@@ -1,5 +1,4 @@
 # Created by: Ian Vaudrey <i.vaudrey@bigfoot.com>
-# $FreeBSD$
 
 PORTNAME=	makedepend
 PORTVERSION=	1.0.6

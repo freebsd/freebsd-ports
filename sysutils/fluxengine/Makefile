@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fluxengine
 DISTVERSION=	572

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	elixir-bson
 PORTVERSION=	0.4.4

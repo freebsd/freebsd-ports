@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	linrad
 PORTVERSION=	4.02

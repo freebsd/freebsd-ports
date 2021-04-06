@@ -1,5 +1,4 @@
 # Created by: Lukasz Wasikowski <lukasz@wasikowski.net>
-# $FreeBSD$
 
 PORTNAME=	modman
 PORTVERSION=	1.12

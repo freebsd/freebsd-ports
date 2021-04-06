@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tk
 PORTVERSION=	0.2.0

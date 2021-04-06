@@ -1,5 +1,4 @@
 # Created by: arved
-# $FreeBSD$
 
 PORTNAME=	libcdio
 PORTVERSION=	2.1.0

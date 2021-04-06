@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	unicorn
 DISTVERSION=	1.0.2

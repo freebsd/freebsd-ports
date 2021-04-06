@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	MouseX-Getopt
 PORTVERSION=	0.3600

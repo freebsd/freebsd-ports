@@ -1,5 +1,4 @@
 # Created by: Jeremy Chadwick <koitsu@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Markup-Perl
 PORTVERSION=	0.5

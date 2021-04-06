@@ -1,5 +1,4 @@
 # Created by: KIMURA Yasuhiro <yasu@utahime.org>
-# $FreeBSD$
 
 PORTNAME=	git-modes
 DISTVERSION=	1.2.8

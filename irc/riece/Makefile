@@ -1,5 +1,4 @@
 # Created by: KIMURA Yasuhiro <yasu@utahime.org>
-# $FreeBSD$
 
 PORTNAME=	riece
 PORTVERSION=	9.0.0

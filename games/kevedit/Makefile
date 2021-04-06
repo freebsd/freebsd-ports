@@ -1,5 +1,4 @@
 # Created by: Raymond Pasco <ray@cultofray.net>
-# $FreeBSD$
 
 PORTNAME=	kevedit
 PORTVERSION=	0.5.1

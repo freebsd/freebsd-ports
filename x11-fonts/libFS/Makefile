@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libFS
 PORTVERSION=	1.0.8

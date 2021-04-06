@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pencil2d
 DISTVERSIONPREFIX=	v

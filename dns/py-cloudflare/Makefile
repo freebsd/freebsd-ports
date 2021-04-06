@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cloudflare
 PORTVERSION=	2.8.15

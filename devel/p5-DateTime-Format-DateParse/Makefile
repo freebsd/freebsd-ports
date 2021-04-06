@@ -1,5 +1,4 @@
 # Created by: Sergei Vyshenski <svysh@pn.sinp.msu.ru>
-# $FreeBSD$
 
 PORTNAME=	DateTime-Format-DateParse
 PORTVERSION=	0.05

@@ -1,5 +1,4 @@
 # Created by: Samy Al Bahra <sbahra@kerneled.org>
-# $FreeBSD$
 
 PORTNAME=	xmobar
 PORTVERSION=	0.37

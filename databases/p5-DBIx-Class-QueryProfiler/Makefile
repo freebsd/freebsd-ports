@@ -1,5 +1,4 @@
 # Created by: andrey@kostenko.name
-# $FreeBSD$
 
 PORTNAME=	DBIx-Class-QueryProfiler
 PORTVERSION=	0.05

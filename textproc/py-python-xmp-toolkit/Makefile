@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-xmp-toolkit
 DISTVERSION=	2.0.1

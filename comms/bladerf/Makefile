@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bladeRF
 DISTVERSION=	2019.07

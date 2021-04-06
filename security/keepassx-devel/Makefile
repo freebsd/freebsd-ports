@@ -1,5 +1,4 @@
 # Created by: Eric Camachat <eric@camachat.org>
-# $FreeBSD$
 
 PORTNAME=	keepassx
 PORTVERSION=	2.0.3

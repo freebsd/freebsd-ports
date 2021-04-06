@@ -1,5 +1,4 @@
 # Created by: Vladimir Kondratiev <wulf@mail.mipt.ru>
-# $FreeBSD$
 
 PORTNAME=	cyrus2dovecot
 PORTVERSION=	1.3

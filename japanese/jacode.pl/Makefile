@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	jacode.pl
 PORTVERSION=	2.13.4.24

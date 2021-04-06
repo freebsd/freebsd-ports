@@ -1,5 +1,4 @@
 # Created by: Guy P.
-# $FreeBSD$
 
 PORTNAME=	CGI-Response
 PORTVERSION=	0.03

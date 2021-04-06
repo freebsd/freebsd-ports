@@ -1,5 +1,4 @@
 # Created by: Guillaume Paquet <amyfoub@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	xpad
 PORTVERSION=	3.1

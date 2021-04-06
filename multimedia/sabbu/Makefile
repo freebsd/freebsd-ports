@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sabbu
 PORTVERSION=	0.3.0

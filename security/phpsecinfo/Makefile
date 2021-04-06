@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	phpsecinfo
 PORTVERSION=	0.2.1

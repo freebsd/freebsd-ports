@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	paredit-mode.el
 PORTVERSION=	24

@@ -1,5 +1,4 @@
 # Created by: Dmitry Marakasov <amdmi3@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Math-Geometry-Planar-GPC-PolygonXS
 PORTVERSION=	0.052

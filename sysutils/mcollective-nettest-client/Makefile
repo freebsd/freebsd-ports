@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mcollective-nettest-client
 

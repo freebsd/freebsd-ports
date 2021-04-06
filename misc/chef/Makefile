@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	chef
 PORTVERSION=	19930426

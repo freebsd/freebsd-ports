@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omniauth-authentiq
 PORTVERSION=	0.3.3

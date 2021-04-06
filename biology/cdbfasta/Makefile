@@ -1,5 +1,4 @@
 # Created by: Dan Siercks <dsiercks@uwm.edu>
-# $FreeBSD$
 
 PORTNAME=	cdbfasta
 PORTVERSION=	2010.07.22

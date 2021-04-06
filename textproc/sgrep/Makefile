@@ -1,5 +1,4 @@
 # Created by: <koshy@india.hp.com>
-# $FreeBSD$
 
 PORTNAME=	sgrep
 PORTVERSION=	0.99

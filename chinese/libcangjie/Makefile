@@ -1,5 +1,4 @@
 # Created by: blubee <hello@blubee.me>
-# $FreeBSD$
 
 PORTNAME=		libcangjie
 PORTVERSION=		1.3

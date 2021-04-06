@@ -1,5 +1,4 @@
 # Created by: MITA Yoshio <mita@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	efax
 DISTVERSION=	0.9a-001114a7

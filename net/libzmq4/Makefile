@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libzmq4
 DISTVERSIONPREFIX=	v

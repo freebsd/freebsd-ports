@@ -1,5 +1,4 @@
 # Created by: Michael Frey <frey@raum3.de>
-# $FreeBSD$
 
 PORTNAME=	Net_IDNA
 PORTVERSION=	0.8.1

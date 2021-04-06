@@ -1,5 +1,4 @@
 # Created by: Mageirias Anastasios <anastmag@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	clamfs
 PORTVERSION=	1.1.0

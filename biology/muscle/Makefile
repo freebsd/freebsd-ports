@@ -1,5 +1,4 @@
 # Created by: Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	muscle
 PORTVERSION=	3.8.1551

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	redkite
 DISTVERSIONPREFIX=	v

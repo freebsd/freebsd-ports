@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	ulxmlrpcpp
 PORTVERSION=	1.7.5

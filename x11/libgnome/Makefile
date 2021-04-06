@@ -1,5 +1,4 @@
 # Created by: Yukihiro Nakai <Nakai@technologist.com>
-# $FreeBSD$
 #   $MCom: ports/x11/libgnome/Makefile,v 1.135 2010/09/27 20:06:45 kwm Exp $
 
 PORTNAME=	libgnome

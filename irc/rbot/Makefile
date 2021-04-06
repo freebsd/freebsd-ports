@@ -1,5 +1,4 @@
 # Created by: David Bushong <david+ports@bushong.net>
-# $FreeBSD$
 
 PORTNAME=	rbot
 PORTVERSION=	20160325

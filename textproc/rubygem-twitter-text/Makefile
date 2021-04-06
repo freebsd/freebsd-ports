@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	twitter-text
 PORTVERSION=	3.0.0

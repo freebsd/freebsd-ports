@@ -1,5 +1,4 @@
 # Created by: Axel Rau <axel.rau@chaos1.de>
-# $FreeBSD$
 
 PORTNAME=	characteristic
 PORTVERSION=	14.3.0

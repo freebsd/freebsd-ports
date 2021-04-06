@@ -1,5 +1,4 @@
 # Created by: Chuck Hein <geekdude@pacbell.net>
-# $FreeBSD$
 
 PORTNAME=	mpexpr
 PORTVERSION=	1.2

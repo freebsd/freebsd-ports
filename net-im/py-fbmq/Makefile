@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fbmq
 PORTVERSION=	2.5.0

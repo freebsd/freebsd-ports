@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tuir
 DISTVERSION=	1.29.0

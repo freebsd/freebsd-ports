@@ -1,5 +1,4 @@
 # Created by: Josh Gilliam <josh@quick.net>
-# $FreeBSD$
 
 PORTNAME=	emil
 PORTVERSION=	2.1b9

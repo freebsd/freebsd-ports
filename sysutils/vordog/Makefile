@@ -1,5 +1,4 @@
 # Created by: Kueifeng Li <thinker@branda.to>
-# $FreeBSD$
 
 PORTNAME=	vordog
 PORTVERSION=	20080708

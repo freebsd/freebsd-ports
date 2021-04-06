@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DateTime-Fiscal-Year
 PORTVERSION=	0.02

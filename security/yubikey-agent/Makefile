@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	yubikey-agent
 DISTVERSIONPREFIX=	v

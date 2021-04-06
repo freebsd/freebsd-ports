@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libass
 DISTVERSION=	0.15.0

@@ -1,5 +1,4 @@
 # Created by: Sergey V. Dyatko <sergey.dyatko@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	lunit
 PORTVERSION=	0.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		ldb
 PORTVERSION=		2.1.5

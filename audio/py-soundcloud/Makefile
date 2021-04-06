@@ -1,5 +1,4 @@
 # Created by: Bernard Spil <brnrd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	soundcloud
 PORTVERSION=	0.5.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librepo
 DISTVERSION=	1.13.0

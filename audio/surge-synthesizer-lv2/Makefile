@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	surge-synthesizer
 DISTVERSIONPREFIX=	release_

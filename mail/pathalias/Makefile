@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pathalias
 PORTVERSION=	9.16

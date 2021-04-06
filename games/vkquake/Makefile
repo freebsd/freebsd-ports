@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vkquake
 DISTVERSION=	1.03.0

@@ -1,5 +1,4 @@
 # Created by: frase@frase.id.au
-# $FreeBSD$
 
 PORTNAME=	git-annex
 PORTVERSION=	8.20210223

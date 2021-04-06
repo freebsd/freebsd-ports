@@ -1,5 +1,4 @@
 # Created by: Aaron Dalton <aaron@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-Pluggable
 PORTVERSION=	1.14

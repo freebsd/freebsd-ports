@@ -1,5 +1,4 @@
 # Created by: Marcello Coutinho
-# $FreeBSD$
 
 PORTNAME=	e2guardian
 PORTVERSION=	5.3.4

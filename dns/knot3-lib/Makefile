@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 # Define PORTREVISION in ${MASTERDIR}
 COMMENT=	Knot3 lib (required by knot-resolver)

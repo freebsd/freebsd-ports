@@ -1,5 +1,4 @@
 # Created by: TATEISHI Katsuyuki <katsu@iec.hiroshima-u.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	gimageview
 PORTVERSION=	0.2.27

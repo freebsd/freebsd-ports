@@ -1,5 +1,4 @@
 # Created by: trevor
-# $FreeBSD$
 
 PORTNAME=	l0phtcrack
 PORTVERSION=	1.5

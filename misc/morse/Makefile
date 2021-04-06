@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	morse
 DISTVERSION=	1.4-154

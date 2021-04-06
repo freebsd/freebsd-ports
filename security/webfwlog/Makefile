@@ -1,5 +1,4 @@
 # Created by: Bob Hockney <zeus@ix.netcom.com>
-# $FreeBSD$
 
 PORTNAME=	webfwlog
 PORTVERSION=	1.1.1

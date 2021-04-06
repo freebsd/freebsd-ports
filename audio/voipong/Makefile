@@ -1,5 +1,4 @@
 # Created by: Necati Ersen SISECI <siseci@enderunix.org>
-# $FreeBSD$
 
 PORTNAME=	voipong
 PORTVERSION=	2.0

@@ -1,5 +1,4 @@
 # Created by: chuynh@biolateral.com.au
-# $FreeBSD$
 
 PORTNAME=	tRNAscan-SE
 PORTVERSION=	2.0.5

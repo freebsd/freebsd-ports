@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	icontheme
 PORTVERSION=	1.2.2

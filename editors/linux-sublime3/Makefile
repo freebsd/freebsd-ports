@@ -1,5 +1,4 @@
 # Created by: Miguel Clara <miguelmclara@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	sublime
 PORTVERSION=	3.2.2

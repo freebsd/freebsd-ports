@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	breeze-icons
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

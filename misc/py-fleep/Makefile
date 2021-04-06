@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fleep
 DISTVERSION=	1.0.1

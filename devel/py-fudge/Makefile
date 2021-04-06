@@ -1,5 +1,4 @@
 # Created by: Yi-Huan Chan <yhchan@csie.nctu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	fudge
 PORTVERSION=	1.1.0

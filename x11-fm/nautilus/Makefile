@@ -1,5 +1,4 @@
 # Created by: ade, archie
-# $FreeBSD$
 
 PORTNAME=	nautilus
 PORTVERSION=	3.36.3

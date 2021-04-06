@@ -1,5 +1,4 @@
 # Created by: andrewb@cs.cmu.edu
-# $FreeBSD$
 
 PORTNAME=	twelf
 PORTVERSION=	1.7.1

@@ -1,5 +1,4 @@
 # Created by: Zsolt Udvari <udvzsolt@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	zathura-pdf-mupdf
 DISTVERSION=	0.3.5

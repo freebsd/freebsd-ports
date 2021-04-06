@@ -1,5 +1,4 @@
 # Created by: Renaud Chaput <renchap@cocoa-x.com>
-# $FreeBSD$
 
 PORTNAME=	rest-client
 PORTVERSION=	2.0.2

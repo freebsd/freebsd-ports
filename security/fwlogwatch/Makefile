@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	fwlogwatch
 PORTVERSION=	1.5

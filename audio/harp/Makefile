@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	harp
 PORTVERSION=	0.6.0

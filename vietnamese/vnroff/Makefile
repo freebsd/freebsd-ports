@@ -1,5 +1,4 @@
 # Created by: David O'Brien (obrien@cs.ucdavis.edu)
-# $FreeBSD$
 
 PORTNAME=	vnroff
 PORTVERSION=	2.1

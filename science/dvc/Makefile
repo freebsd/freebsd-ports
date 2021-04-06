@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dvc
 DISTVERSION=	0.30.1

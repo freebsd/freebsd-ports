@@ -1,5 +1,4 @@
 # Created by: Tim Bishop <tdb@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	lazysearch
 PORTVERSION=	3.6.5

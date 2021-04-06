@@ -1,5 +1,4 @@
 # Created by: Andrey Simonenko
-# $FreeBSD$
 
 PORTNAME=	ipa
 PORTVERSION=	2.1.2

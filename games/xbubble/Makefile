@@ -1,5 +1,4 @@
 # Created by: Klaus Goger <klaus.goger@reflex.at>
-# $FreeBSD$
 
 PORTNAME=	xbubble
 PORTVERSION=	0.5.8

@@ -1,5 +1,4 @@
 # Created by: Alex Keda <admin@lissyara.su>
-# $FreeBSD$
 
 PORTNAME=	rcctools
 PORTVERSION=	0.1.1

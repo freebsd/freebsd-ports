@@ -1,5 +1,4 @@
 # Created by: Alexander Y. Grigoryev <alexander.4mail@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Crypt-PWSafe3
 PORTVERSION=	1.22

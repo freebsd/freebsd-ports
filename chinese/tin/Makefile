@@ -1,5 +1,4 @@
 # Created by: Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
-# $FreeBSD$
 
 CATEGORIES=	chinese
 

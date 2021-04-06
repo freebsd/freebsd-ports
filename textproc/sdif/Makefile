@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sdif
 PORTVERSION=	2.8.20170401

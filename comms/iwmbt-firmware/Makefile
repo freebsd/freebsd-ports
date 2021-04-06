@@ -1,5 +1,4 @@
 # Created by: Vladimir Kondratyev <wulf@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	iwmbt-firmware
 PORTVERSION=	20190717

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Getopt-EX
 PORTVERSION=	1.15.0

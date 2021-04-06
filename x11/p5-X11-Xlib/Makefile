@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	X11-Xlib
 PORTVERSION=	0.18

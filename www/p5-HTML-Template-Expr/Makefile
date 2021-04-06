@@ -1,5 +1,4 @@
 # Created by: nork@cityfujisawa.ne.jp
-# $FreeBSD$
 
 PORTNAME=	HTML-Template-Expr
 PORTVERSION=	0.07

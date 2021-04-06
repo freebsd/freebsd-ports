@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	urh
 DISTVERSION=	2.9.1

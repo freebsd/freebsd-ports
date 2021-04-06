@@ -1,5 +1,4 @@
 # Created by: cracauer@cons.org "Martin Cracauer"
-# $FreeBSD$
 
 PORTNAME=	opengl-man
 PORTVERSION=	657.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	phalcon
 DISTVERSIONPREFIX=v

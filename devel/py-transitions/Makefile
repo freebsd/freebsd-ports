@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	transitions
 DISTVERSION=	0.8.7

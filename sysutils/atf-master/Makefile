@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	atf
 PORTVERSION?=	${ATF_VERSION}

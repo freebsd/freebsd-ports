@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pc-networkmanager
 PORTVERSION=	201710031301

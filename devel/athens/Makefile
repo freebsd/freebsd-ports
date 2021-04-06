@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	athens
 PORTVERSION=	0.10.0

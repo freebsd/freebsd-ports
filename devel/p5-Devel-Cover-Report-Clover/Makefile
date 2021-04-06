@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-Cover-Report-Clover
 PORTVERSION=	0.35

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ipfs
 DISTVERSIONPREFIX=	v

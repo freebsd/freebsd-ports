@@ -1,5 +1,4 @@
 # Created by: erikhb@bgnett.no
-# $FreeBSD$
 
 PORTNAME=	libiodbc
 DISTVERSIONPREFIX=	v

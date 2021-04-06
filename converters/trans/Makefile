@@ -1,5 +1,4 @@
 # Created by: Andrey A. Chernov <ache@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	trans
 PORTVERSION=	1.20

@@ -1,5 +1,4 @@
 # Created by: Andrey Lykhin <lan31@inbox.ru>
-# $FreeBSD$
 
 PORTNAME=	bfhist
 PORTVERSION=	0.4

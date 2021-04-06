@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Data-Dumper-Simple
 PORTVERSION=	0.11

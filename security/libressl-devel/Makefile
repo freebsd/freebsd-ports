@@ -1,5 +1,4 @@
 # Created by: Bernard Spil <brnrd@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	libressl
 PORTVERSION=	3.3.1

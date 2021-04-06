@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	iso-schematron-xslt
 PORTVERSION=	20130313

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lurker
 PORTVERSION=	2.3

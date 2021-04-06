@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pcem
 DISTVERSION=	14

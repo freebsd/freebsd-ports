@@ -1,5 +1,4 @@
 # Created by: Natacha Porte <natbsd@instinctive.eu>
-# $FreeBSD$
 
 PORTNAME=	ddns
 PORTVERSION=	1.0

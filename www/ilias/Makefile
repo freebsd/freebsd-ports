@@ -1,5 +1,4 @@
 # Created by: Bartlomiej Rutkowski <r@robakdesign.com>
-# $FreeBSD$
 
 PORTNAME=	ilias
 PORTVERSION=	5.4.19

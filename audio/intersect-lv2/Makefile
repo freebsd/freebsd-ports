@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	intersect
 PORTVERSION=	1.3

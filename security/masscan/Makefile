@@ -1,5 +1,4 @@
 # Created by: Chie Taguchi <taguchi.ch@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	masscan
 PORTVERSION=	1.0.4

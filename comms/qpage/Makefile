@@ -1,5 +1,4 @@
 # Created by: joes@seaport.net
-# $FreeBSD$
 
 PORTNAME=	qpage
 PORTVERSION=	3.3

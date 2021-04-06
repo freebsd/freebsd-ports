@@ -1,5 +1,4 @@
 # Created by: RaRa Rasputin <rasputin@submonkey.net>
-# $FreeBSD$
 
 PORTNAME=	steghide
 PORTVERSION=	0.5.1

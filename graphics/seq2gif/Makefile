@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	seq2gif
 PORTVERSION=	0.10.4

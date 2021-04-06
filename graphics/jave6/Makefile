@@ -1,5 +1,4 @@
 # Created by: Andreas Daehn <ad001@uni-rostock.de>
-# $FreeBSD$
 
 PORTNAME=	jave6
 PORTVERSION=	0.1

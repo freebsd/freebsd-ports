@@ -1,5 +1,4 @@
 # Created by: Brad Jones <brad@kazrak.com>
-# $FreeBSD$
 
 PORTNAME=	Term-Size
 PORTVERSION=	0.207

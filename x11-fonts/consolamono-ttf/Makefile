@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	consolamono-ttf
 PORTVERSION=	20130127

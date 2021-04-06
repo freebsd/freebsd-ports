@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	SOAP-Transport-HTTP-Plack
 PORTVERSION=	0.03

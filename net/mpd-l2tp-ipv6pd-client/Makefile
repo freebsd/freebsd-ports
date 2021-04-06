@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mpd-l2tp-ipv6pd-client
 PORTVERSION=	20150430

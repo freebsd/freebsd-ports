@@ -1,5 +1,4 @@
 # Created by: nork@cityfujisawa.ne.jp
-# $FreeBSD$
 
 PORTNAME=	Crypt-OpenSSL-Random
 PORTVERSION=	0.15

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DocSet
 PORTVERSION=	0.19

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	snmptt
 PORTVERSION=	1.4.2

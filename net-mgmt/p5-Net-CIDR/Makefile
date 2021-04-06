@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-CIDR
 PORTVERSION=	0.20

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	AnyEvent-Filesys-Notify
 PORTVERSION=	1.21

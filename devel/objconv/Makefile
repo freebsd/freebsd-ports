@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	objconv
 DISTVERSION=	2.52

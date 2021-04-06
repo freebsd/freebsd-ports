@@ -1,5 +1,4 @@
 # Created by: jeffhung
-# $FreeBSD$
 
 PORTNAME=	File-Util
 PORTVERSION=	4.161950

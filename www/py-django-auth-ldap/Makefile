@@ -1,5 +1,4 @@
 # Created by: Alexander Kriventsov <avk@vl.ru>
-# $FreeBSD$
 
 PORTNAME=	django-auth-ldap
 PORTVERSION=	2.3.0

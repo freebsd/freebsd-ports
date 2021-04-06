@@ -1,5 +1,4 @@
 # Created by: Gabriel M. Dutra <0xdutra@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	terraform-switcher
 PORTVERSION=	0.10.1010

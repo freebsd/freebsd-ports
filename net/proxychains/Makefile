@@ -1,5 +1,4 @@
 # Created by: Patrick MARIE <mycroft@virgaria.org>
-# $FreeBSD$
 
 PORTNAME=	proxychains
 PORTVERSION=	3.1

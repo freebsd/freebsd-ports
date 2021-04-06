@@ -1,5 +1,4 @@
 # Created by: Dave Grochowski <malus.x@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	libdlna
 PORTVERSION=	0.2.3

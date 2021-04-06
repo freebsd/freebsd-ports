@@ -1,5 +1,4 @@
 # Created by: James Bailie <jimmy@mammothcheese.ca>
-# $FreeBSD$
 
 PORTNAME=	dkns
 PORTVERSION=	1.100

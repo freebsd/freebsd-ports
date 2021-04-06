@@ -1,5 +1,4 @@
 # Created by: Li-Lun Wang <llwang@infor.org>
-# $FreeBSD$
 
 PORTNAME=	mdp
 PORTVERSION=	3.5

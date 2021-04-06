@@ -1,5 +1,4 @@
 # Created by: Andrei Antoukh <niwi@niwi.be>
-# $FreeBSD$
 
 PORTNAME=	CouchDB
 PORTVERSION=	1.1

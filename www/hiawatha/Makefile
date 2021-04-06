@@ -1,5 +1,4 @@
 # Created by: Hugo Leisink
-# $FreeBSD$
 
 PORTNAME=	hiawatha
 PORTVERSION=	10.12

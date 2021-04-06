@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ncspot
 DISTVERSIONPREFIX=	v

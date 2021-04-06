@@ -1,5 +1,4 @@
 # Created by: <hvo.pm@xs4all.nl>
-# $FreeBSD$
 
 PORTNAME=	Dancer2-Session-DBIC
 PORTVERSION=	0.120

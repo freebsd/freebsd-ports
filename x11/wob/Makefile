@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wob
 DISTVERSION=	0.11

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fox
 DISTVERSION=	4.1.2-91

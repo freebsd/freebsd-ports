@@ -1,5 +1,4 @@
 # Created by: Frederic Cambus
-# $FreeBSD$
 
 PORTNAME=	mmail
 DISTVERSION=	0.52

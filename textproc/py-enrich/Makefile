@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	enrich
 PORTVERSION=	1.2.6

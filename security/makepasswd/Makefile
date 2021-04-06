@@ -1,5 +1,4 @@
 # Created by: Toni Viemerö <toni.viemero@iki.fi>
-# $FreeBSD$
 
 PORTNAME=	makepasswd
 PORTVERSION=	1.10

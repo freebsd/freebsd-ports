@@ -1,5 +1,4 @@
 # Created by: <janos.mohacsi@bsd.hu>
-# $FreeBSD$
 
 PORTNAME=	njam
 PORTVERSION=	1.25

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Crypt-PassGen
 PORTVERSION=	0.06

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nbxmpp
 DISTVERSION=	2.0.2

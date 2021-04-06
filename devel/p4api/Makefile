@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	p4api
 PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}

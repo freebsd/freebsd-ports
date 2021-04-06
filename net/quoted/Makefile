@@ -1,5 +1,4 @@
 # Created by: Bob Frazier
-# $FreeBSD$
 
 PORTNAME=	quoted
 PORTVERSION=	1.01

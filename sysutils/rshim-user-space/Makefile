@@ -1,5 +1,4 @@
 # Created by: Hans Petter Selasky <hselasky@freebsd.org>
-# $FreeBSD$
 
 PORTNAME=	rshim-user-space
 DISTVERSIONPREFIX=	rshim-

@@ -1,5 +1,4 @@
 # Created by: Frederic Cambus
-# $FreeBSD$
 
 PORTNAME=	huc
 PORTVERSION=	3.21

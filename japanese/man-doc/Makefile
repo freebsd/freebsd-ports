@@ -1,5 +1,4 @@
 # Created by: Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	man-doc
 PORTVERSION=	5.4.20050911

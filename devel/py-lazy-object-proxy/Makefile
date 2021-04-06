@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lazy-object-proxy
 PORTVERSION=	1.5.2

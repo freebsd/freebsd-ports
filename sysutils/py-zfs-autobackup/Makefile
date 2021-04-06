@@ -1,5 +1,4 @@
 # Created by: Sergey Kozlov <skozlov@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	zfs-autobackup
 DISTVERSION=	3.0

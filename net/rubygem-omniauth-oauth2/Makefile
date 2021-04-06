@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	omniauth-oauth2
 PORTVERSION=	1.7.1

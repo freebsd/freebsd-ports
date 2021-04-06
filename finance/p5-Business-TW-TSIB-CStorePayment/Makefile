@@ -1,5 +1,4 @@
 # Created by: chinsan
-# $FreeBSD$
 
 PORTNAME=	Business-TW-TSIB-CStorePayment
 PORTVERSION=	0.04

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTREVISION=	7
 CATEGORIES=	graphics

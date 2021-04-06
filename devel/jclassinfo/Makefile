@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	jclassinfo
 PORTVERSION=	0.19.1

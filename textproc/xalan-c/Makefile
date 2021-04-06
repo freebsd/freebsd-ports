@@ -1,5 +1,4 @@
 # Created by: Roger Leigh <rleigh@codelibre.net>
-# $FreeBSD$
 
 PORTNAME=	xalan-c
 PORTVERSION=	1.12

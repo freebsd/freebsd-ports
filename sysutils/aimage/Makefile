@@ -1,5 +1,4 @@
 # Created by: Chris Calvey <chris@securityforensics.co.uk>
-# $FreeBSD$
 
 PORTNAME=	aimage
 PORTVERSION=	3.2.5

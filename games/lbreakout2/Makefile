@@ -1,5 +1,4 @@
 # Created by: verm@drunkmonk.net
-# $FreeBSD$
 
 PORTNAME=	lbreakout2
 PORTVERSION=	2.6.5

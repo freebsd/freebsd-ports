@@ -1,5 +1,4 @@
 # Created by: Kim Scarborough <user@unknown.nu>
-# $FreeBSD$
 
 PORTNAME=	micro_httpd
 PORTVERSION=	2014.08.14

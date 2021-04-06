@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librecad
 DISTVERSION=	2.2.0-rc2

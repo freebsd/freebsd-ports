@@ -1,5 +1,4 @@
 # Created by: Zane C. Bowers <vvelox@vvelox.net>
-# $FreeBSD$
 
 PORTNAME=	Phone-Info
 PORTVERSION=	0.0.1

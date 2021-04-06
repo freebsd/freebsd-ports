@@ -1,5 +1,4 @@
 # Created by: Matthew Seaman
-# $FreeBSD$
 
 PORTNAME=	FreeBSD-Portindex
 PORTVERSION=	3.6

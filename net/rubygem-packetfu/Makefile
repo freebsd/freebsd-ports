@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	packetfu
 PORTVERSION=	1.1.13

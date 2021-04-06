@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Eval-Closure
 PORTVERSION=	0.14

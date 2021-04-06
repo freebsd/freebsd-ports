@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Net-RabbitMQ
 PORTVERSION=	0.2.8

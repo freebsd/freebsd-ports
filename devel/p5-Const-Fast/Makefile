@@ -1,5 +1,4 @@
 # Created by: Philip M. Gollucci
-# $FreeBSD$
 
 PORTNAME=	Const-Fast
 PORTVERSION=	0.014

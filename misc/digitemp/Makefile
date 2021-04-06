@@ -1,5 +1,4 @@
 # Created by: Evaldas Auryla <ea@zaib.as>
-# $FreeBSD$
 
 PORTNAME=	digitemp
 PORTVERSION=	3.7.2

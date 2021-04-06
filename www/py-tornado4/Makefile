@@ -1,5 +1,4 @@
 # Created by: Guixing Bai <khsing.cn@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	tornado
 PORTVERSION=	4.5.3

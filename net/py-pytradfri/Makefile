@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pytradfri
 DISTVERSION=	7.0.6

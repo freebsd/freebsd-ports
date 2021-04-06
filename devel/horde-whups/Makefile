@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	whups
 DISTVERSION=	3.0.12

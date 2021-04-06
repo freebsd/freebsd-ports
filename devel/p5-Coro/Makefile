@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Coro
 PORTVERSION=	6.570

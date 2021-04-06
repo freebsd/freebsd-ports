@@ -1,5 +1,4 @@
 # Created by: Qian Jin <eric.siroh@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	vatnumber
 PORTVERSION=	1.2

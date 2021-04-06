@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Tiffany
 PORTVERSION=	1.01

@@ -1,5 +1,4 @@
 # Created by: Corey Smith <corsmith@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	zerotier
 DISTVERSION=	1.6.4

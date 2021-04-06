@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=			nginx-vts-exporter
 DISTVERSIONPREFIX=	v

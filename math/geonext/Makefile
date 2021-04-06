@@ -1,5 +1,4 @@
 # Created by: Andreas Fehlner (fehlner@gmx.de)
-# $FreeBSD$
 
 PORTNAME=	geonext
 PORTVERSION=	1.74

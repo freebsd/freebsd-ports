@@ -1,5 +1,4 @@
 # Created by: ijliao
-# $FreeBSD$
 
 PORTNAME=	DBIx-TableHash
 CATEGORIES=	databases perl5

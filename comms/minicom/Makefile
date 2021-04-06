@@ -1,5 +1,4 @@
 # Created by: obrien@cs.ucdavis.edu
-# $FreeBSD$
 
 PORTNAME=	minicom
 PORTVERSION=	2.7.1

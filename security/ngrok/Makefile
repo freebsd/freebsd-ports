@@ -1,5 +1,4 @@
 # Created by: John Hixson <jhixson@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	ngrok
 PORTVERSION=	2.2.8

@@ -1,5 +1,4 @@
 # Created by: Renaud Chaput <renchap@cocoa-x.com>
-# $FreeBSD$
 
 PORTNAME=	ohai
 PORTVERSION=	15.12.0

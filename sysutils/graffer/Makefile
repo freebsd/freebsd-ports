@@ -1,5 +1,4 @@
 # Created by: Nikola Kolev <koue@chaosophia.net>
-# $FreeBSD$
 
 PORTNAME=	graffer
 PORTVERSION=	1.1

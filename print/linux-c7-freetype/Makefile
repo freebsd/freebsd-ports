@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	freetype
 PORTVERSION=	2.8

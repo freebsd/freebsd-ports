@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ammonite
 DISTVERSION=	2.3.8

@@ -1,5 +1,4 @@
 # Created by: Lin, Cheng-Tao <b89605222@ntu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	lxpanel
 PORTVERSION=	0.9.3

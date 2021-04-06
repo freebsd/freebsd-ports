@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ptvsd
 PORTVERSION=	3.1.0

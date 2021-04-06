@@ -1,5 +1,4 @@
 # Created by: Dorit Rottner (<rottner@punkt.de>)
-# $FreeBSD$
 
 PORTNAME=	Payment_DTA
 PORTVERSION=	1.4.3

@@ -1,5 +1,4 @@
 # Created by: tobez
-# $FreeBSD$
 
 PORTNAME=	Class-ReturnValue
 PORTVERSION=	0.55

@@ -1,5 +1,4 @@
 # Created by: Stefan Walter <swalter@lettermax.de>
-# $FreeBSD$
 
 PORTNAME=	vifm
 PORTVERSION=	0.11

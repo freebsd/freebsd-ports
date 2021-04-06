@@ -1,5 +1,4 @@
 # Created by: pandzilla
-# $FreeBSD$
 
 PORTNAME=	libwhisker
 PORTVERSION=	2.5

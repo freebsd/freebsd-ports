@@ -1,5 +1,4 @@
 # Created by: Michal Bielicki <m.bielicki@llizardfs.com>
-# $FreeBSD$
 
 PORTNAME=	isa-l_crypto
 PORTVERSION=	2.21.0

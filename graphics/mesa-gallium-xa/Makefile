@@ -1,5 +1,4 @@
 # Created by: johalun
-# $FreeBSD$
 
 PORTNAME=	mesa-gallium-xa
 PORTVERSION=	${MESAVERSION}

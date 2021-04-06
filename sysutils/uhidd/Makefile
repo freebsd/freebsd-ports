@@ -1,5 +1,4 @@
 # Created by: Kai Wang <kaiwang27@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	uhidd
 PORTVERSION=	0.2.1

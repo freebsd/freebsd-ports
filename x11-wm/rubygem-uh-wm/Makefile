@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	uh-wm
 PORTVERSION=	0.2.1

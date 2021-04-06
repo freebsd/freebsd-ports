@@ -1,5 +1,4 @@
 # Created by: Alexander Timoshenko <gonzo@univ.kiev.ua>
-# $FreeBSD$
 
 PORTNAME=	tkabber
 PORTVERSION=	1.1.2

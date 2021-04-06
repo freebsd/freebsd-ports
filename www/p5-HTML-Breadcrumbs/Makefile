@@ -1,5 +1,4 @@
 # Created by: andrew@scoop.co.nz
-# $FreeBSD$
 
 PORTNAME=	HTML-Breadcrumbs
 PORTVERSION=	0.7

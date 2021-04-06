@@ -1,5 +1,4 @@
 # Created by: Nakata Maho <maho@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	atlas
 PORTVERSION=	3.8.4

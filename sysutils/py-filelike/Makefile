@@ -1,5 +1,4 @@
 # Created by: Dikshie
-# $FreeBSD$
 
 PORTNAME=	filelike
 PORTVERSION=	0.4.1

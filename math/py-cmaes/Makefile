@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cmaes
 DISTVERSION=	0.7.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	confuse
 PORTVERSION=	1.1.0

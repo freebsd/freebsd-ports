@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Log-Dispatch-Screen-Color
 PORTVERSION=	0.04

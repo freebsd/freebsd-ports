@@ -1,5 +1,4 @@
 # Created by: John Reynolds <johnjen@reynoldsnet.org>
-# $FreeBSD$
 
 PORTNAME=	flexbackup
 PORTVERSION=	1.2.1

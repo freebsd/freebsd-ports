@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Module-CPANfile
 PORTVERSION=	1.1004

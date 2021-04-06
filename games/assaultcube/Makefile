@@ -1,5 +1,4 @@
 # Created by: alepulver
-# $FreeBSD$
 
 PORTNAME=	assaultcube
 PORTVERSION=	1.2.0.2

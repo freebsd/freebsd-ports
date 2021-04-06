@@ -1,5 +1,4 @@
 # Created by: Peter Wemm <peter@netplex.com.au>
-# $FreeBSD$
 
 PORTNAME=	transproxy
 PORTVERSION=	1.6

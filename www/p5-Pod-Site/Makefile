@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Pod-Site
 PORTVERSION=	0.56

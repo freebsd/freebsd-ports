@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	python-gvm
 DISTVERSION=	21.1.3

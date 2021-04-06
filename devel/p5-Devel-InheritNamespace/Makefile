@@ -1,5 +1,4 @@
 # Created by: Danny Warren <danny@dannywarren.com>
-# $FreeBSD$
 
 PORTNAME=	Devel-InheritNamespace
 PORTVERSION=	0.00003

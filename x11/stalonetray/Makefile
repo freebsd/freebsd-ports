@@ -1,5 +1,4 @@
 # Created by: Stepan Zastupov [RedChrom] <redchrom@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	stalonetray
 PORTVERSION=	0.8.3

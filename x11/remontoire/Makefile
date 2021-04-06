@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	remontoire
 DISTVERSION=	1.4.0

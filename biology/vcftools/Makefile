@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vcftools
 PORTVERSION=	0.1.16

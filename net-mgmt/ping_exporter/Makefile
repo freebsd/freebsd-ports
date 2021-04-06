@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ping_exporter
 DISTVERSION=	0.44

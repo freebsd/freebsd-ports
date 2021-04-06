@@ -1,5 +1,3 @@
-# $FreeBSD$
-#
 
     COMMENT = Astronomical ports
 

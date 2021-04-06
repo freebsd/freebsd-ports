@@ -1,5 +1,4 @@
 # Created by: Mark A. Wicks <mwicks@kettering.edu>
-# $FreeBSD$
 
 PORTNAME=	monotone
 PORTVERSION=	1.1

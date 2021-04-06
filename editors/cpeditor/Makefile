@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cpeditor
 DISTVERSION=	6.8.1

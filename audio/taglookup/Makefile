@@ -1,5 +1,4 @@
 # Created by: Alex Allan <alex@kamaz.org.uk>
-# $FreeBSD$
 
 PORTNAME=	taglookup
 PORTVERSION=	0.2

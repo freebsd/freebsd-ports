@@ -1,5 +1,4 @@
 # Created by: Remington Lang <MrL0Lz@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	geany
 PORTVERSION=	1.37.1

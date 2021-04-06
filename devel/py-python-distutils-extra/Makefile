@@ -1,5 +1,4 @@
 # Created by: Ju Pengfei <jupengfei@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	python-distutils-extra
 PORTVERSION=	2.45

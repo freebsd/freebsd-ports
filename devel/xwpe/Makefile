@@ -1,5 +1,4 @@
 # Created by: David O'Brien (obrien@FreeBSD.org)
-# $FreeBSD$
 
 PORTNAME=	xwpe
 PORTVERSION=	1.5.30a

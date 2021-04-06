@@ -1,5 +1,4 @@
 # Created by: Edward Chuang <edwardchuang@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	fluent-logger
 PORTVERSION=	0.9.2

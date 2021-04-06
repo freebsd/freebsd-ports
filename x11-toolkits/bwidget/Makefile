@@ -1,5 +1,4 @@
 # Created by: Alexander Kabaev <ak03@gte.com>
-# $FreeBSD$
 
 PORTNAME=	bwidget
 PORTVERSION=	1.9.14

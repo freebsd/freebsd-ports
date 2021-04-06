@@ -1,5 +1,4 @@
 # Created by: -
-# $FreeBSD$
 
 PORTNAME=	Lingua-Ispell
 PORTVERSION=	0.07

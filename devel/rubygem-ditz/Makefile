@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ditz
 PORTVERSION=	0.5

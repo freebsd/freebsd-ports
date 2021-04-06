@@ -1,5 +1,4 @@
 # Created by: jessekempf@gmail.com
-# $FreeBSD$
 
 PORTNAME=	daemon
 PORTVERSION=	2.0.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Util
 PORTVERSION=	0.63

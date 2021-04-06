@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	journey
 PORTVERSION=	1.0.4

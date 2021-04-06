@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lifecycle
 PORTVERSION=	1.0.0

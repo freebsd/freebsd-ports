@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	calligraplan
 DISTVERSION=	3.3.0

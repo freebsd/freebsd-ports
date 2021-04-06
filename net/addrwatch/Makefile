@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	addrwatch
 DISTVERSIONPREFIX=v

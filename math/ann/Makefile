@@ -1,5 +1,4 @@
 # Created by: Tz-Huan Huang <tzhuan@csie.org>
-# $FreeBSD$
 
 PORTNAME=	ann
 PORTVERSION=	1.1.2

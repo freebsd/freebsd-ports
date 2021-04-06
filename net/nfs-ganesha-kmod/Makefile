@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nfs-ganesha-kmod
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	xblood
 PORTVERSION=	2.0

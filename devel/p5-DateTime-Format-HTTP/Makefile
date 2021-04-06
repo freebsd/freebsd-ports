@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	DateTime-Format-HTTP
 PORTVERSION=	0.42

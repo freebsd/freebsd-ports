@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	orange3-educational
 DISTVERSION=	0.1.8

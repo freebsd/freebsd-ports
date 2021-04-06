@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	html-xml-utils
 PORTVERSION=	7.9

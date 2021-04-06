@@ -1,5 +1,4 @@
 # Created by: coryking
-# $FreeBSD$
 
 PORTNAME=	HTML-Location
 PORTVERSION=	1.03

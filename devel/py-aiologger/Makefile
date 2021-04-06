@@ -1,5 +1,4 @@
 # Created by: Kirill Ponomarev <krion@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=		aiologger
 PORTVERSION=	0.6.0

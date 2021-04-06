@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	librespot
 PORTVERSION=	0.1.6

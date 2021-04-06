@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	lazarus
 PORTVERSION=	2.0.10

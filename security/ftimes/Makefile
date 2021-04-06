@@ -1,5 +1,4 @@
 # Created by: Klayton Monroe <klm@uidzero.org>
-# $FreeBSD$
 
 PORTNAME=		ftimes
 PORTVERSION=		3.11.0

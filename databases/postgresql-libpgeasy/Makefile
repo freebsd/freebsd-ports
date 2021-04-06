@@ -1,5 +1,4 @@
 # Created by: Palle Girgensohn <girgen@pingpong.net>
-# $FreeBSD$
 
 PKGNAMEPREFIX=	postgresql-
 PORTNAME=	libpgeasy

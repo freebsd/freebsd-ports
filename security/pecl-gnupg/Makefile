@@ -1,5 +1,4 @@
 # Created by: mnag@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	gnupg
 PORTVERSION=	1.4.0

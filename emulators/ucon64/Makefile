@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ucon64
 PORTVERSION=	2.2.1

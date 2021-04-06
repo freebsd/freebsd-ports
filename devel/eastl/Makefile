@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	eastl
 DISTVERSION=	3.13.06

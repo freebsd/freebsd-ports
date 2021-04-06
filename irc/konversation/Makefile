@@ -1,5 +1,4 @@
 # Created by: Kirill Ponomarew <ponomarew@oberon.net>
-# $FreeBSD$
 
 PORTNAME=	konversation
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}

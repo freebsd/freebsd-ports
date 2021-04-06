@@ -1,5 +1,4 @@
 # Created by: Andrey Cherkashin <andoriyu@gmail.com>
-# $FreeBSD$
 
 # Based on the java/intellij port
 

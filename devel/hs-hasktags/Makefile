@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	hasktags
 PORTVERSION=	0.71.2

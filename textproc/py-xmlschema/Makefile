@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xmlschema
 DISTVERSION=	1.5.3

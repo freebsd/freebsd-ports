@@ -1,5 +1,4 @@
 # Created by: lazyklimm <lazyklimm@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	qsynth
 PORTVERSION=	0.9.2

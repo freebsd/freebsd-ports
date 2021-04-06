@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wtf-peewee
 PORTVERSION=	3.0.2

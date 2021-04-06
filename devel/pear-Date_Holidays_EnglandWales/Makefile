@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Date_Holidays_EnglandWales
 PORTVERSION=	0.1.5

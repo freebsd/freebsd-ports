@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	RPC-EPC-Service
 PORTVERSION=	0.0.11

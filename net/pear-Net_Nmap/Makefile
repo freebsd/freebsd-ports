@@ -1,5 +1,4 @@
 # Created by: Wen Heping<wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	Net_Nmap
 PORTVERSION=	1.0.5

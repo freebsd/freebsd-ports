@@ -1,5 +1,4 @@
 # Created by: minoura@netbsd.org
-# $FreeBSD$
 
 PORTNAME=	xcruiser
 PORTVERSION=	0.30

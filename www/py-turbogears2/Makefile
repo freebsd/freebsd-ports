@@ -1,5 +1,4 @@
 # Created by: Wen Heping	<wenheping@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	TurboGears2
 PORTVERSION=	2.3.12

@@ -1,5 +1,4 @@
 # This file lists the options to not bloat Makefile
-# $FreeBSD$
 
 OPTIONS_MULTI=	DICT
 OPTIONS_MULTI_DICT=	AF_ZA BG CA HR CS DA NL EN_AU EN_CA \

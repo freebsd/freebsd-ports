@@ -1,5 +1,4 @@
 # Created by: Chris Rees <utisoft@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	jstrack
 PORTVERSION=	3.4.0

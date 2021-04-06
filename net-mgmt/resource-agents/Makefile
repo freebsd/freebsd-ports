@@ -1,5 +1,4 @@
 # Created by: dpejesh@yahoo.com
-# $FreeBSD$
 
 PORTNAME=	resource-agents
 PORTVERSION=	4.8.0

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pytest-translations
 PORTVERSION=	2.0.0

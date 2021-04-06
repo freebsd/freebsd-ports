@@ -1,5 +1,4 @@
 # Created by: nadav@cs.technion.ac.il
-# $FreeBSD$
 
 PORTNAME=	elmar
 PORTVERSION=	3.3

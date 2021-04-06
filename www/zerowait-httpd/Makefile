@@ -1,5 +1,4 @@
 # Created by: Vsevolod Stakhov
-# $FreeBSD$
 
 PORTNAME=	zerowait
 PORTVERSION=	0.8d

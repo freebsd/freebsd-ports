@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	liblognorm
 PORTVERSION=	2.0.6

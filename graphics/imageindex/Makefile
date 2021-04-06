@@ -1,5 +1,4 @@
 # Created by: John Reynolds <johnjen@reynoldsnet.org>
-# $FreeBSD$
 
 PORTNAME=	imageindex
 PORTVERSION=	2.0

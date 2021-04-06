@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vid.stab
 PORTVERSION=	0.98.2

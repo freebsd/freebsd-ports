@@ -1,5 +1,4 @@
 # Created by: Shen Chun-Hsing <statue@freebsd.netlab.cse.yzu.edu.tw>
-# $FreeBSD$
 
 PORTNAME=	stardict-rptts
 PORTVERSION=	2.1.0

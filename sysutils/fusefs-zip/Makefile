@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	fuse-zip
 PORTVERSION=	0.4.4

@@ -1,5 +1,4 @@
 # Created by: Oliver Braun <obraun@informatik.unibw-muenchen.de>
-# $FreeBSD$
 
 PORTNAME=	slrnface
 PORTVERSION=	2.1.1

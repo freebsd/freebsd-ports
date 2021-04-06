@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	epl.el
 PORTVERSION=	0.8

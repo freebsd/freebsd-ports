@@ -1,5 +1,4 @@
 # Created by: Douglas Carmichael <dcarmich@mcs.com>
-# $FreeBSD$
 
 PORTNAME=	amiwm
 PORTVERSION=	0.21.pl2

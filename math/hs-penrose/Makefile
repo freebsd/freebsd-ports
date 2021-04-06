@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	penrose
 DISTVERSIONPREFIX=	v

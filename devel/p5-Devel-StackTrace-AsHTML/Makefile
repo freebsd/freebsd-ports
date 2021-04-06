@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Devel-StackTrace-AsHTML
 PORTVERSION=	0.15

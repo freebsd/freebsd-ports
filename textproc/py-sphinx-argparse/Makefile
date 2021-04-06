@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	sphinx-argparse
 PORTVERSION=	0.2.5

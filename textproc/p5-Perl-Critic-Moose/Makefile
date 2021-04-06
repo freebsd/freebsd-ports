@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Perl-Critic-Moose
 PORTVERSION=	1.05

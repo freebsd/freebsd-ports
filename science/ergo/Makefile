@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	ergo
 DISTVERSION=	3.8

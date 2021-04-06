@@ -1,5 +1,4 @@
 # Created by: nm@web.am
-# $FreeBSD$
 
 PORTNAME=	osd
 PORTVERSION=	1.9.0

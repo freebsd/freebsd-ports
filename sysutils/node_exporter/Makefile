@@ -1,5 +1,4 @@
 # Created by: Jev Björsell <ports@ecadlabs.com>
-# $FreeBSD$
 
 PORTNAME=	node_exporter
 PORTVERSION=	1.1.2

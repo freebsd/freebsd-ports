@@ -1,5 +1,4 @@
 # Created by: Jordan DeLong <fracture@allusion.net>
-# $FreeBSD$
 
 PORTNAME=	prboom
 PORTVERSION=	2.5.0

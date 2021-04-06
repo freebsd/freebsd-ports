@@ -1,5 +1,4 @@
 # Created by: Yi-Jheng Lin <yzlin@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	shflags
 PORTVERSION=	1.2.3

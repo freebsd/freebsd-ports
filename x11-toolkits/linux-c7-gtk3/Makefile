@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gtk3
 PORTVERSION=	3.22.30

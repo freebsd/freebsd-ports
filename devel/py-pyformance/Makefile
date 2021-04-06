@@ -1,5 +1,4 @@
 # Created by: Waitman Gobble <waitman@waitman.net>
-# $FreeBSD$
 
 PORTNAME=	pyformance
 PORTVERSION=	0.4

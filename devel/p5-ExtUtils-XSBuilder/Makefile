@@ -1,5 +1,4 @@
 # Created by: vanilla
-# $FreeBSD$
 
 PORTNAME=	ExtUtils-XSBuilder
 PORTVERSION=	0.28

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	firstboot-freebsd-update
 PORTVERSION=	1.2

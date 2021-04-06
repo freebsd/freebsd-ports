@@ -1,5 +1,4 @@
 # Created by: Yanhui Shen <shen.elf@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	pkg-rmleaf
 PORTVERSION=	0.4

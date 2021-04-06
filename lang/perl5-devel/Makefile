@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	perl
 # XXX Remove second line, uncomment first

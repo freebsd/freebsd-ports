@@ -1,5 +1,4 @@
 # Created by: Douglas Thrift
-# $FreeBSD$
 
 PORTNAME=	hardlink
 PORTVERSION=	0.3.0

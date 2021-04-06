@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	tortoisehg
 DISTVERSION=	5.7.0

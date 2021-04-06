@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	shellplay
 PORTVERSION=	0.1.9

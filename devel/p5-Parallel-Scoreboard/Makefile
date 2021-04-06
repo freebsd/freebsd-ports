@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Parallel-Scoreboard
 PORTVERSION=	0.07

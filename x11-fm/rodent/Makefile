@@ -1,5 +1,4 @@
 # Created by: Jens K. Loewe <bsd@tuxproject.de>
-# $FreeBSD$
 
 PORTNAME=	rodent
 PORTVERSION=	5.3.16.3

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	apex
 PORTVERSION=	1.2.1

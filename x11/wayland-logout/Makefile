@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	wayland-logout
 DISTVERSIONPREFIX=	v

@@ -1,5 +1,4 @@
 # Created by: Nicolas Embriz <nbari@tequila.io>
-# $FreeBSD$
 
 PORTNAME=	gitflow
 PORTVERSION=	1.12.3

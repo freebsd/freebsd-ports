@@ -1,5 +1,4 @@
 # Created by: jmacd@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	mit-scheme
 PORTVERSION=	9.2

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME?=	mcollective-nrpe-common
 PORTVERSION=	3.1.0

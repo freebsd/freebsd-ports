@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	qhttpengine
 DISTVERSION=	1.0.1-5

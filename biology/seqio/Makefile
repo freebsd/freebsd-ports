@@ -1,5 +1,4 @@
 # Created by: Tony Maher
-# $FreeBSD$
 
 PORTNAME=	seqio
 PORTVERSION=	1.2.2

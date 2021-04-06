@@ -1,5 +1,4 @@
 # Created by: Geyer Klaus
-# $FreeBSD$
 
 PORTNAME=	catseye-fm
 PORTVERSION=	4.2.0.0

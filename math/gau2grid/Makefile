@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	gau2grid
 DISTVERSIONPREFIX=	v

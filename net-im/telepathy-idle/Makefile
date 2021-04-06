@@ -1,5 +1,4 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
-# $FreeBSD$
 #    $MCom: ports/trunk/net-im/telepathy-idle/Makefile 20041 2014-11-04 11:13:49Z kwm $
 
 PORTNAME=	telepathy-idle

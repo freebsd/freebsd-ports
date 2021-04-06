@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mio2jack
 PORTVERSION=	g20180501

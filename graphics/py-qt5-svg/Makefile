@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	svg
 CATEGORIES=	graphics devel python

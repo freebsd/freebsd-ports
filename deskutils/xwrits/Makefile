@@ -1,5 +1,4 @@
 # Created by: Matt Braithwaite <mab@red-bean.com>
-# $FreeBSD$
 
 PORTNAME=	xwrits
 PORTVERSION=	2.26

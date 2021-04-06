@@ -1,5 +1,4 @@
 # Created by: Stéphane D'Alu <sdalu@sdalu.com>
-# $FreeBSD$
 
 PORTNAME=	ddmemoize
 PORTVERSION=	1.0.0

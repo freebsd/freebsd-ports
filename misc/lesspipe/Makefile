@@ -1,5 +1,4 @@
 # Created by: Slaven Rezic <slaven@rezic.de>
-# $FreeBSD$
 
 PORTNAME=	lesspipe
 PORTVERSION=	1.83

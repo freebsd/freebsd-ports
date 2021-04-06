@@ -1,5 +1,4 @@
 # Created by: Lukasz Komsta
-# $FreeBSD$
 
 PORTNAME=	seccure
 PORTVERSION=	0.5

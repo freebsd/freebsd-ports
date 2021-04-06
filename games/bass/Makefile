@@ -1,5 +1,4 @@
 # Created by: Alex Trull <freebsd.alex@trull.org>
-# $FreeBSD$
 
 PORTNAME=	bass
 PORTVERSION=	1.2

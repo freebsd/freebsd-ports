@@ -1,5 +1,4 @@
 # Created by: lth@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	sql-ledger
 PORTVERSION=	3.2.9

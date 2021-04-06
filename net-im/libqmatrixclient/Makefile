@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libqmatrixclient
 DISTVERSION=	0.5.3.2

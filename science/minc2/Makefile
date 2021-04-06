@@ -1,5 +1,4 @@
 # Created by: jbacon
-# $FreeBSD$
 
 PORTNAME=	minc
 PORTVERSION=	2.2.00

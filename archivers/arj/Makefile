@@ -1,5 +1,4 @@
 # Created by: Konstantin Reznichenko <kot@premierbank.dp.ua>
-# $FreeBSD$
 
 PORTNAME=	arj
 PORTVERSION=	3.10.22

@@ -1,5 +1,4 @@
 # Created by: Christoph Moench-Tegeder <cmt@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	kicad
 PORTVERSION=	5.1.9

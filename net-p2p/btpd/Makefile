@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	btpd
 DISTVERSIONPREFIX=	v

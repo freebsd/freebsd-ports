@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	cascadia-code
 PORTVERSION=	2102.25

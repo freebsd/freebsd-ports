@@ -1,5 +1,4 @@
 # Created by: Pete Fritchman <petef@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	synaesthesia
 PORTVERSION=	2.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=		bioawk
 DISTVERSIONPREFIX=	v

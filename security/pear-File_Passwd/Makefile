@@ -1,5 +1,4 @@
 # Created by: Antonio Carlos Venancio Junior <antonio@inf.ufsc.br>
-# $FreeBSD$
 
 PORTNAME=	File_Passwd
 PORTVERSION=	1.1.7

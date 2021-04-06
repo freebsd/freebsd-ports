@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	vipster
 DISTVERSIONPREFIX=	v

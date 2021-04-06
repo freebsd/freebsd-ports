@@ -1,5 +1,4 @@
 # Created by: Jaap Akkerhuis <jaap@NLnetLabs.nl>
-# $FreeBSD$
 
 PORTNAME=	opendmarc
 PORTVERSION=	1.3.2

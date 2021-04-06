@@ -1,5 +1,4 @@
 # Created by: Paul Dlug <paul@nerdlabs.com>
-# $FreeBSD$
 
 PORTNAME=	nsca
 PORTVERSION=	2.7.2

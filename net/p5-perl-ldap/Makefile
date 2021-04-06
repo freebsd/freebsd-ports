@@ -1,5 +1,4 @@
 # Created by: scrappy@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	perl-ldap
 PORTVERSION=	0.6800

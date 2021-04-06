@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Server-Starter
 PORTVERSION=	0.34

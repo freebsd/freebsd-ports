@@ -1,5 +1,4 @@
 # Created by: joseph@randomnetworks.com
-# $FreeBSD$
 
 PORTNAME=	adtool
 PORTVERSION=	1.3.3

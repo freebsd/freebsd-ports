@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	payara
 PORTVERSION=	5.2020.4

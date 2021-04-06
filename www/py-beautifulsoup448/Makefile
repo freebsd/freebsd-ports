@@ -1,5 +1,4 @@
 # Created by: Mike Meyer
-# $FreeBSD$
 
 PORTNAME=	beautifulsoup4
 PORTVERSION=	4.8.2

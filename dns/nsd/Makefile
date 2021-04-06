@@ -1,5 +1,4 @@
 # Created by: alexis
-# $FreeBSD$
 
 PORTNAME=	nsd
 PORTVERSION=	4.3.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	archiva
 PORTVERSION=	2.2.3

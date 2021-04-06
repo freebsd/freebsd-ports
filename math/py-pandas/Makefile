@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pandas
 PORTVERSION=	1.2.0

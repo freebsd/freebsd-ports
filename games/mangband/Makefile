@@ -1,5 +1,4 @@
 # Created by: driedfruit
-# $FreeBSD$
 
 PORTNAME=	mangband
 PORTVERSION=	1.5.3

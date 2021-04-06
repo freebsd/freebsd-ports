@@ -1,5 +1,4 @@
 # Created by: asami
-# $FreeBSD$
 
 PORTNAME=	lmbench
 PORTVERSION=	3.0.a9

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Horde_Mime
 DISTVERSION=	2.11.0

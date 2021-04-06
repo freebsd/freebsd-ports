@@ -1,5 +1,4 @@
 # Created by: sf
-# $FreeBSD$
 
 PORTNAME=	localedata
 PORTVERSION=	5.4

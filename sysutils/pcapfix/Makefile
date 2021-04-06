@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pcapfix
 PORTVERSION=	1.1.4

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	xrootd
 DISTVERSION=	4.10.0

@@ -1,5 +1,4 @@
 # Created by: dk
-# $FreeBSD$
 
 PORTNAME=	fmsx
 PORTVERSION=	5.4

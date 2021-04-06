@@ -1,5 +1,4 @@
 # Created by: will
-# $FreeBSD$
 
 PORTNAME=	Astro-SunTime
 PORTVERSION=	0.06

@@ -1,5 +1,4 @@
 # Created by: Jason Burgess <dev@fenux.net>
-# $FreeBSD$
 
 PORTNAME=	Text-Chomp
 PORTVERSION=	0.02

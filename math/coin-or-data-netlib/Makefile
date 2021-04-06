@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Data-Netlib
 DISTVERSION=	1.2.9

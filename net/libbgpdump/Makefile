@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libbgpdump
 PORTVERSION=	1.6.0

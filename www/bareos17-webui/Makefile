@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bareos17-webui
 PORTVERSION=	17.2.5

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	dune-pdelab
 DISTVERSIONPREFIX=	v

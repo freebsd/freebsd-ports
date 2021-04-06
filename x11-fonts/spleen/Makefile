@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	spleen
 DISTVERSION=	1.9.0

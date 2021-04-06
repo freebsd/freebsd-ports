@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	naarad
 PORTVERSION=	1.0.15

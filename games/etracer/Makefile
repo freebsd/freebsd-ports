@@ -1,5 +1,4 @@
 # Created by: Peter Dunning
-# $FreeBSD$
 
 PORTNAME=	etr
 PORTVERSION=	0.8.0

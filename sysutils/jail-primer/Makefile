@@ -1,5 +1,4 @@
 # Created by: Joe Barbish <jail-primer1@a1poweruser.com>
-# $FreeBSD$
 
 PORTNAME=	jail-primer
 PORTVERSION=	0.2

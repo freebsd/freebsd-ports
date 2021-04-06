@@ -1,5 +1,4 @@
 # Created by: Koop Mast <kwm@rainbow-runner.nl>
-# $FreeBSD$
 
 PORTNAME=	libtheora
 PORTVERSION=	1.1.1

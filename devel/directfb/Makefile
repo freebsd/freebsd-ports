@@ -1,5 +1,4 @@
 # Created by: Devaux Fabien <fab@gcu.info>
-# $FreeBSD$
 
 PORTNAME=	directfb
 PORTVERSION=	1.4.17

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	packer
 PORTVERSION=	1.6.0

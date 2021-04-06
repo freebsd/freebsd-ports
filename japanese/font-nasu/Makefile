@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	nasu
 PORTVERSION=	20141215

@@ -1,5 +1,4 @@
 # Created by: Mike Carlson <carlson39@llnl.gov>
-# $FreeBSD$
 
 PORTNAME=	stompserver
 PORTVERSION=	0.9.9

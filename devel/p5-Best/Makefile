@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Best
 PORTVERSION=	0.15

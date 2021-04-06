@@ -1,5 +1,4 @@
 # Created by: Corey Smith <corsmith@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	freeswitch
 PORTVERSION=	1.10.3

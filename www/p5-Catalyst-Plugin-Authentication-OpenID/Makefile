@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin <gslin@gslin.org>
-# $FreeBSD$
 
 PORTNAME=	Catalyst-Plugin-Authentication-OpenID
 PORTVERSION=	0.02

@@ -1,5 +1,4 @@
 # Created by: Jan Srzednicki <w@wrzask.pl>
-# $FreeBSD$
 
 PORTNAME=	gkrellmoon2
 PORTVERSION=	0.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Perl-Critic-Tics
 PORTVERSION=	0.009

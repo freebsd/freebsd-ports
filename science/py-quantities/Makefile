@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	quantities
 DISTVERSION=	0.12.4

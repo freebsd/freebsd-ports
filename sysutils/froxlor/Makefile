@@ -1,5 +1,4 @@
 # Created by: Marco Steinbach <coco@executive-computing.de>
-# $FreeBSD$
 
 PORTNAME=	froxlor
 PORTVERSION=	0.9.38.7

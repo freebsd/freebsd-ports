@@ -1,5 +1,4 @@
 # Created by: clsung
-# $FreeBSD$
 
 PORTNAME=	Net-Twitter
 PORTVERSION=	4.01043

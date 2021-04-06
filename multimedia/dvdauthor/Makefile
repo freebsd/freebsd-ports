@@ -1,5 +1,4 @@
 # Created by: pb@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	dvdauthor
 PORTVERSION=	0.7.2.20190419

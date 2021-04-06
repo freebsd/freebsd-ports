@@ -1,5 +1,4 @@
 # Created by: Jeremy Messenger <mezz@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	gnome-tweaks
 PORTVERSION=	3.34.1

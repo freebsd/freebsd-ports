@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Test-Filename
 PORTVERSION=	0.03

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	swt
 PORTVERSION=	0.3.1

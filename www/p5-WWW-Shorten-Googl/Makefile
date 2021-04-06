@@ -1,5 +1,4 @@
 # Created by: Jonathan Pater <cowboyneal@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	WWW-Shorten-Googl
 PORTVERSION=	1.02

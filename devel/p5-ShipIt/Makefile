@@ -1,5 +1,4 @@
 # Created by: Gea-Suan Lin
-# $FreeBSD$
 
 PORTNAME=	ShipIt
 PORTVERSION=	0.60

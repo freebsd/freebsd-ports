@@ -1,5 +1,4 @@
 # Created by: Yi-Hsuan Hsin <mhsin@mhsin.org>
-# $FreeBSD$
 
 PORTNAME=	WWW-Plurk
 PORTVERSION=	0.02

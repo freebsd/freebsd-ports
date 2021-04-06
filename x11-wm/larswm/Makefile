@@ -1,5 +1,4 @@
 # Created by: lab@fnurt.net
-# $FreeBSD$
 
 PORTNAME=	larswm
 PORTVERSION=	7.5.3

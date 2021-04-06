@@ -1,5 +1,4 @@
 # Created by: Daisuke Kawahara <kawahara@pine.kuee.kyoto-u.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	e2ps
 PORTVERSION=	4.34

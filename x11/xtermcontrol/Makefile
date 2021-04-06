@@ -1,5 +1,4 @@
 # Created by: krion
-# $FreeBSD$
 
 PORTNAME=	xtermcontrol
 PORTVERSION=	3.6

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	pQuery
 PORTVERSION=	0.24

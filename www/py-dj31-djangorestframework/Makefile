@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	djangorestframework
 PORTVERSION=	3.12.4

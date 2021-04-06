@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	libvisio
 PORTVERSION=	0.1.7

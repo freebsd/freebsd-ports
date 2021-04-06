@@ -1,5 +1,4 @@
 # Created by: Thibault Payet <monwarez@mailoo.org>
-# $FreeBSD$
 
 PORTNAME=	nitrokey-app
 DISTVERSIONPREFIX=	v

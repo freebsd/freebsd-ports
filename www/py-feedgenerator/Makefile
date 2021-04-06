@@ -1,5 +1,4 @@
 # Created by: Julien Laffaye <jlaffaye@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	feedgenerator
 PORTVERSION=	1.9.1

@@ -1,5 +1,4 @@
 # Created by: Andrey Fesenko <andrey@bsdnir.info>
-# $FreeBSD$
 
 PORTNAME=	emkatic
 PORTVERSION=	0.38

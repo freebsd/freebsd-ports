@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	html_sanitize_ex
 PORTVERSION=	1.3.0

@@ -1,5 +1,3 @@
-# $FreeBSD$
-
 OPTIONS_DEFINE=	NTPSNMPD \
 		SSL \
 		IPV6 \

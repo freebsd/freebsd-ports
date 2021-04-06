@@ -1,5 +1,4 @@
 # Created by: Toni Gundogdu <legatvs@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	cclive
 PORTVERSION=	0.7.16

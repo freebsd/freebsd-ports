@@ -1,5 +1,4 @@
 # Created by: Cristiano Rolim Pereira <cristianorolim@hotmail.com>
-# $FreeBSD$
 
 PORTNAME=	libawl
 DISTVERSIONPREFIX=	r

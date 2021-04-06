@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	zenxml
 PORTVERSION=	2.4

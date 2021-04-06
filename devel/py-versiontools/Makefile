@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	versiontools
 PORTVERSION=	1.9.1

@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	peda
 DISTVERSIONPREFIX=	v

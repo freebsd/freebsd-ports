@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	Log-Dispatch
 PORTVERSION=	2.70

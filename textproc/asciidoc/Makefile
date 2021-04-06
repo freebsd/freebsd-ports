@@ -1,5 +1,4 @@
 # Created by: anholt@FreeBSD.org
-# $FreeBSD$
 
 PORTNAME=	asciidoc
 PORTVERSION=	9.0.5

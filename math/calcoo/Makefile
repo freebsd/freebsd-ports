@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	calcoo
 PORTVERSION=	1.3.18

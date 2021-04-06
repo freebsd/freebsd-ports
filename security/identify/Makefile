@@ -1,5 +1,4 @@
 # Created by: nsayer@quack.kfu.com
-# $FreeBSD$
 
 PORTNAME=	identify
 PORTVERSION=	0.7

@@ -1,5 +1,4 @@
 # Created by: Michael Grünewald <michipili@gmail.com>
-# $FreeBSD$
 
 PORTNAME=	camlp4
 PORTVERSION=	4.05+2

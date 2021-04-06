@@ -1,5 +1,4 @@
 # Created by: Daichi GOTO <daichi@FreeBSD.org>
-# $FreeBSD$
 
 PKGNAMESUFFIX=	-tool
 

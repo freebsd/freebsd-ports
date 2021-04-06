@@ -1,5 +1,4 @@
 # Created by: Michael Winking <mwfp@foldl.net>
-# $FreeBSD$
 
 PORTNAME=	hsqldb
 PORTVERSION=	2.3.4

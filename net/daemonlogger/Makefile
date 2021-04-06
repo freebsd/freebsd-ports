@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	daemonlogger
 PORTVERSION=	1.2.1

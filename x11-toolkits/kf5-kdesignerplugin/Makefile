@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	kdesignerplugin
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}

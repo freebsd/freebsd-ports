@@ -1,5 +1,4 @@
 # Created by: Fanying Jen <fanying@fynet.com>
-# $FreeBSD$
 
 PORTNAME=	WWW-Search-AltaVista
 PORTVERSION=	2.154

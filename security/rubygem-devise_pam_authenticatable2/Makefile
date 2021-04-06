@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	devise_pam_authenticatable2
 PORTVERSION=	9.2.0

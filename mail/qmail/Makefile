@@ -1,5 +1,4 @@
 # Created by: Mario S F Ferreira <lioux@linf.unb.br>
-# $FreeBSD$
 
 PORTNAME=	${QMAIL_PORTNAME}
 PORTVERSION?=	${QMAIL_VERSION}

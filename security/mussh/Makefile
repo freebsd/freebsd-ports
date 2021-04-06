@@ -1,5 +1,4 @@
 # Created by: Yen-Ming Lee <leeym@leeym.com>
-# $FreeBSD$
 
 PORTNAME=	mussh
 PORTVERSION=	1.0

@@ -1,5 +1,4 @@
 # Created by: Matt Dawson <matt@mattsnetwork.co.uk>
-# $FreeBSD$
 
 PORTNAME=	gpredict
 DISTVERSION=	2.2.1

@@ -1,5 +1,4 @@
 # Created by: Klaus Aehlig <aehlig@linta.de>
-# $FreeBSD$
 
 PORTNAME=	bazel
 DISTVERSION=	0.29.0

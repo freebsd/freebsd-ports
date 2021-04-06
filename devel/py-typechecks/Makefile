@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	typechecks
 DISTVERSION=	0.1.0

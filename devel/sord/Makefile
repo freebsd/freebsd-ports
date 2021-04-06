@@ -1,5 +1,4 @@
 # Created by: Michael Beer <beerml@sigma6audio.de>
-# $FreeBSD$
 
 PORTNAME=	sord
 PORTVERSION=	0.16.6

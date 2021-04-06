@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	mtrc
 DISTVERSION=	0.0.4

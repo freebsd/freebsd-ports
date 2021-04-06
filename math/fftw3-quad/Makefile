@@ -1,5 +1,4 @@
 # Created by: b.f. <bf@FreeBSD.org>
-# $FreeBSD$
 
 COMMENT=	Fast Discrete Fourier Transform (Quad Precision C Routines)
 

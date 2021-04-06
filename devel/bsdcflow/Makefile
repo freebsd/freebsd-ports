@@ -1,4 +1,3 @@
-# $FreeBSD$
 
 PORTNAME=	bsdcflow
 PORTVERSION=	0.0.6

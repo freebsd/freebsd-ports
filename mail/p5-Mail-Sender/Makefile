@@ -1,5 +1,4 @@
 # Created by: Ben Smithurst <ben@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	Mail-Sender
 PORTVERSION=	0.903

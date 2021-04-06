@@ -1,5 +1,4 @@
 # Created by: Paul Mather <paul@gromit.dlib.vt.edu>
-# $FreeBSD$
 
 PORTNAME=	pydrive
 PORTVERSION=	1.3.1

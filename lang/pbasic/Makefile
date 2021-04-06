@@ -1,5 +1,4 @@
 # Created by: Julian H. Stacey <jhs@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	pbasic
 PORTVERSION=	2.1

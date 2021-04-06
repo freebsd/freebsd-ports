@@ -1,5 +1,4 @@
 # Created by: Bryan Drewery <bryan@shatow.net>
-# $FreeBSD$
 
 PORTNAME=	backports
 PORTVERSION=	3.18.1

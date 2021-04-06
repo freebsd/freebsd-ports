@@ -1,5 +1,4 @@
 # Created by: Christoph Kick
-# $FreeBSD$
 
 PORTNAME=	ffi
 PORTVERSION=	1.14.2

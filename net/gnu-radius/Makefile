@@ -1,5 +1,4 @@
 # Created by: lance@evitel.net
-# $FreeBSD$
 
 PORTNAME=	gnu-radius
 PORTVERSION=	1.6.1

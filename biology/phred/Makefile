@@ -1,5 +1,4 @@
 # Created by: Motomichi Matsuzaki <mzaki@biol.s.u-tokyo.ac.jp>
-# $FreeBSD$
 
 PORTNAME=	phred
 PORTVERSION=	0.020425.c

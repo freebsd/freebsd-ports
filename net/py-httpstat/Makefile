@@ -1,5 +1,4 @@
 # Created by: Danilo G. Baio <dbaio@FreeBSD.org>
-# $FreeBSD$
 
 PORTNAME=	httpstat
 PORTVERSION=	1.3.0
