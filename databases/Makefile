@@ -38,7 +38,6 @@
     SUBDIR += cegobridge
     SUBDIR += clickhouse
     SUBDIR += cockroach
-    SUBDIR += couchdb2
     SUBDIR += couchdb3
     SUBDIR += courier-authlib-mysql
     SUBDIR += courier-authlib-pgsql
