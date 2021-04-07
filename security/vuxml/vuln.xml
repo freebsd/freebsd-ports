@@ -76,6 +76,41 @@ Notes:
   * Do not forget port variants (linux-f10-libxml2, libxml2, etc.)
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="13d37672-9791-11eb-b87a-901b0ef719ab">
+    <topic>FreeBSD -- Memory disclosure by stale virtual memory mapping</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>12.2</ge><lt>12.2_6</lt></range>
+	<range><ge>11.4</ge><lt>11.4_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>A particular case of memory sharing is mishandled in the virtual memory
+	system.  It is possible and legal to establish a relationship where
+	multiple descendant processes share a mapping which shadows memory of an
+	ancestor process.  In this scenario, when one process modifies memory
+	through such a mapping, the copy-on-write logic fails to invalidate
+	other mappings of the source page.  These stale mappings may remain even
+	after the mapped pages have been reused for another purpose.</p>
+	<h1>Impact:</h1>
+	<p>An unprivileged local user process can maintain a mapping of a page
+	after it is freed, allowing that process to read private data belonging
+	to other processes or the kernel.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-29626</cvename>
+      <freebsdsa>SA-21:08.vm</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2021-04-06</discovery>
+      <entry>2021-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dec7e4b6-961a-11eb-9c34-080027f515ea">
     <topic>ruby -- XML round-trip vulnerability in REXML</topic>
     <affects>
