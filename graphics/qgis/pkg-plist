@@ -1614,7 +1614,7 @@ lib/qgis/plugins/libwcsprovider.so
 lib/qgis/plugins/libwfsprovider.so
 lib/qgis/plugins/libwmsprovider.so
 %%SERVER%%lib/qgis/server/libdummy.so
-lib/qgis/server/liblandingpage.so
+%%SERVER%%lib/qgis/server/liblandingpage.so
 %%SERVER%%lib/qgis/server/libwcs.so
 %%SERVER%%lib/qgis/server/libwfs.so
 %%SERVER%%lib/qgis/server/libwfs3.so
