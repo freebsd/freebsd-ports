@@ -2,6 +2,7 @@
 #
 # PROVIDE: nats
 # REQUIRE: DAEMON
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to run NATS:
 #
@@ -13,12 +14,12 @@
 
 . /etc/rc.subr
 
-name="nats"
+name=nats
 rcvar=`set_rcvar`
 
 load_rc_config ${name}
-: ${nats_enable="NO"}
-: ${nats_user="nobody"}
+: ${nats_enable:=NO}
+: ${nats_user:=nobody}
 : ${nats_options="-c %%PREFIX%%/etc/nats.conf"}
 
 command=/usr/sbin/daemon

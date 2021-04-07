@@ -16,6 +16,7 @@ bin/nats-server
 %%PORTDOCS%%%%DOCSDIR%%/configs/include_conf_check_a.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/include_conf_check_b.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/include_conf_check_c.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/js-op.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/listen-1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/listen.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/listen_port.conf
@@ -25,6 +26,7 @@ bin/nats-server
 %%PORTDOCS%%%%DOCSDIR%%/configs/multiple_errors.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/multiple_users.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/new_style_authorization.conf
+%%PORTDOCS%%%%DOCSDIR%%/configs/one.creds
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/authorization_1.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/authorization_2.conf
 %%PORTDOCS%%%%DOCSDIR%%/configs/reload/basic.conf
