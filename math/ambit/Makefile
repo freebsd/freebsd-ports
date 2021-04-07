@@ -15,7 +15,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libopenblas.so:math/openblas \
 		libsz.so:science/szip
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++11-lang python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	jturney
 USE_LDCONFIG=	yes
