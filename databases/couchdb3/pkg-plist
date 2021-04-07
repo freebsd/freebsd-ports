@@ -153,11 +153,11 @@ libexec/couchdb3/lib/dreyfus-%%VERSION%%/priv/stats_descriptions.cfg
 libexec/couchdb3/lib/fabric-%%VERSION%%/ebin/fabric_db_partition_info.beam
 libexec/couchdb3/lib/fabric-%%VERSION%%/ebin/fabric_ring.beam
 libexec/couchdb3/lib/fabric-%%VERSION%%/ebin/fabric_streams.beam
-libexec/couchdb3/lib/jwtf-%%VERSION%%/ebin/jwtf.app
-libexec/couchdb3/lib/jwtf-%%VERSION%%/ebin/jwtf.beam
-libexec/couchdb3/lib/jwtf-%%VERSION%%/ebin/jwtf_app.beam
-libexec/couchdb3/lib/jwtf-%%VERSION%%/ebin/jwtf_keystore.beam
-libexec/couchdb3/lib/jwtf-%%VERSION%%/ebin/jwtf_sup.beam
+libexec/couchdb3/lib/jwtf-3.1.2/ebin/jwtf.app
+libexec/couchdb3/lib/jwtf-3.1.2/ebin/jwtf.beam
+libexec/couchdb3/lib/jwtf-3.1.2/ebin/jwtf_app.beam
+libexec/couchdb3/lib/jwtf-3.1.2/ebin/jwtf_keystore.beam
+libexec/couchdb3/lib/jwtf-3.1.2/ebin/jwtf_sup.beam
 libexec/couchdb3/lib/ken-%%VERSION%%/ebin/ken.app
 libexec/couchdb3/lib/ken-%%VERSION%%/ebin/ken.beam
 libexec/couchdb3/lib/ken-%%VERSION%%/ebin/ken_app.beam
