@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: wireguard
-# REQUIRE: DAEMON
+# REQUIRE: NETWORKING
 # KEYWORD: shutdown
 #
 # wireguard_enable (bool):        Set to "YES" to enable wireguard.
@@ -10,16 +10,13 @@
 # wireguard_interfaces (str):     List of interfaces to bring up/down
 #                                 on start/stop. (eg: "wg0 wg1")
 #                                 (default: "")
+# wireguard_confdir (str):        Config directory that contains wg0.conf
+#                                 (default: "%%PREFIX%%/etc/wireguard")
 # wireguard_<iface>_ips (str):    List of IP Addresses for iface
 # wireguard_<iface>_routes (str): List of Routes for this iface
 # wireguard_<iface>_mtu (str):    MTU for iface (default: "1500")
 
 . /etc/rc.subr
-
-load_rc_config $name
-
-: ${wireguard_enable="NO"}
-: ${wireguard_interfaces=""}
 
 name=wireguard
 rcvar=wireguard_enable
@@ -39,7 +36,7 @@ wireguard_start()
 		eval wireguard_mtu="\${wireguard_${interface}_mtu}"
 
 		ifconfig ${interface} create
-		%%PREFIX%%/bin/wg setconf ${interface} %%PREFIX%%/etc/wireguard/${interface}.conf
+		%%PREFIX%%/bin/wg setconf ${interface} ${wireguard_confdir}/${interface}.conf
 
 		for ip in ${wireguard_ips}; do
 			if [ "${ip#*:}" != "${ip}" ]; then
@@ -96,8 +93,14 @@ wireguard_stop()
 wireguard_reload()
 {
 	for interface in ${wireguard_interfaces}; do
-		%%PREFIX%%/bin/wg syncconf ${interface} %%PREFIX%%/etc/wireguard/${interface}.conf
+		%%PREFIX%%/bin/wg syncconf ${interface} ${wireguard_confdir}/${interface}.conf
 	done
 }
+
+load_rc_config $name
+
+: ${wireguard_enable="NO"}
+: ${wireguard_interfaces=""}
+: ${wireguard_confdir="%%PREFIX%%/etc/wireguard"}
 
 run_rc_command "$1"
