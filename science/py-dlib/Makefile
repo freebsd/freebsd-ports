@@ -1,6 +1,6 @@
 
 PORTNAME=	dlib
-DISTVERSION=	19.21
+DISTVERSION=	19.22
 CATEGORIES=	science devel math python
 MASTER_SITES=	http://dlib.net/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -41,7 +41,7 @@ GIF_VARS_OFF=		gifargs="--no DLIB_GIF_SUPPORT"
 SQLITE_USES=		sqlite
 SQLITE_VARS_OFF=	sqliteargs="--no DLIB_LINK_WITH_SQLITE3"
 
-BLASLAPACK_USES=	blaslapack
+BLASLAPACK_USES=	blaslapack:openblas
 BLASLAPACK_VARS_OFF=	blaslapackargs="--no DLIB_USE_BLAS --no DLIB_USE_LAPACK --no DLIB_USE_MKL_FFT"
 
 AVX_VARS_OFF=		avxargs="--no USE_AVX_INSTRUCTIONS"

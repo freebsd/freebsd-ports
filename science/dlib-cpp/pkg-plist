@@ -139,6 +139,8 @@ include/dlib/cuda/tensor.h
 include/dlib/cuda/tensor_abstract.h
 include/dlib/cuda/tensor_tools.h
 include/dlib/data_io.h
+include/dlib/data_io/cifar.h
+include/dlib/data_io/cifar_abstract.h
 include/dlib/data_io/image_dataset_metadata.h
 include/dlib/data_io/libsvm_io.h
 include/dlib/data_io/libsvm_io_abstract.h
@@ -173,6 +175,7 @@ include/dlib/dnn/layers.h
 include/dlib/dnn/layers_abstract.h
 include/dlib/dnn/loss.h
 include/dlib/dnn/loss_abstract.h
+include/dlib/dnn/misc.h
 include/dlib/dnn/solvers.h
 include/dlib/dnn/solvers_abstract.h
 include/dlib/dnn/trainer.h
@@ -539,6 +542,8 @@ include/dlib/matrix/lapack/pbtrf.h
 include/dlib/matrix/lapack/potrf.h
 include/dlib/matrix/lapack/syev.h
 include/dlib/matrix/lapack/syevr.h
+include/dlib/matrix/fft_size.h
+include/dlib/matrix/kiss_fft.h
 include/dlib/matrix/matrix.h
 include/dlib/matrix/matrix_abstract.h
 include/dlib/matrix/matrix_assign.h
@@ -574,6 +579,7 @@ include/dlib/matrix/matrix_subexp_abstract.h
 include/dlib/matrix/matrix_trsm.h
 include/dlib/matrix/matrix_utilities.h
 include/dlib/matrix/matrix_utilities_abstract.h
+include/dlib/matrix/mkl_fft.h
 include/dlib/matrix/symmetric_matrix_cache.h
 include/dlib/matrix/symmetric_matrix_cache_abstract.h
 include/dlib/md5.h
@@ -953,6 +959,7 @@ include/dlib/test/checkerboard.h
 include/dlib/test/cmd_line_parser.h
 include/dlib/test/conditioning_class.h
 include/dlib/test/create_iris_datafile.h
+include/dlib/test/fftr_good_data.h
 include/dlib/test/optimization_test_functions.h
 include/dlib/test/tester.h
 include/dlib/test_for_odr_violations.h
@@ -1029,7 +1036,7 @@ lib/cmake/dlib/dlib.cmake
 lib/cmake/dlib/dlibConfig.cmake
 lib/cmake/dlib/dlibConfigVersion.cmake
 lib/libdlib.so
-lib/libdlib.so.19.21.0
+lib/libdlib.so.19.22.0
 libdata/pkgconfig/dlib-1.pc
 @dir include/dlib/all
 @dir include/dlib/appveyor
